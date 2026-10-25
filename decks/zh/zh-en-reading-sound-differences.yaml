@@ -1,0 +1,64 @@
+schema: 1
+id: "zh-en-reading-sound-differences"
+name: "Chinese reading: sounds English lacks"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "zh-ch-sh-and-j-q-x"
+    title: "Curled and flat"
+    sentences:
+      - text: "知，鸡。"
+        reading: "zhī, jī."
+      - text: "池，旗。"
+        reading: "chí, qí."
+      - text: "石，习。"
+        reading: "shí, xí."
+      - text: "炉，驴。"
+        reading: "lú, lǘ."
+    questions:
+      - id: "zh-0151"
+        prompt: { en: "Which word in the first line means 'chicken'?" }
+        options:
+          - { en: "知 (zhī)" }
+          - { en: "鸡 (jī)" }
+        answer: 2
+      - id: "zh-0152"
+        prompt: { en: "知 (zhī) and 鸡 (jī) differ only in their first sound." }
+        answer: true
+      - id: "zh-0153"
+        prompt: { en: "Which word in the last line means 'donkey'?" }
+        options:
+          - { en: "炉 (lú)" }
+          - { en: "驴 (lǘ)" }
+        answer: 2
+  - id: "zh-sound-pairs-list"
+    title: "Pairs that differ by one sound"
+    sentences:
+      - text: "饱，跑。"
+        reading: "bǎo, pǎo."
+      - text: "都，偷。"
+        reading: "dōu, tōu."
+      - text: "苦，鼓。"
+        reading: "kǔ, gǔ."
+      - text: "字，次。"
+        reading: "zì, cì."
+    questions:
+      - id: "zh-0154"
+        prompt: { en: "Which word in the first line means 'to run'?" }
+        options:
+          - { en: "饱 (bǎo)" }
+          - { en: "跑 (pǎo)" }
+        answer: 2
+      - id: "zh-0155"
+        prompt: { en: "都 (dōu) and 偷 (tōu) differ by a breath after the first sound." }
+        answer: true
+      - id: "zh-0156"
+        prompt: { en: "Which word in the third line means 'drum'?" }
+        options:
+          - { en: "苦 (kǔ)" }
+          - { en: "鼓 (gǔ)" }
+        answer: 2

@@ -1,45 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
-import '../../core/models/drill_mode.dart';
+import '../../core/progress/practice_week.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_bar.dart';
-import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/segmented.dart';
-import '../../ui/widgets/stat_tile.dart';
-import 'heatmap.dart';
+import 'hours_tiles.dart';
 import 'leeches.dart';
+import 'practice_week_card.dart';
+import 'progress_mastery.dart';
+import 'progress_tiles.dart';
+import 'skill_star.dart';
 import 'stats_numbers.dart';
+import 'stats_section.dart';
 
-/// The Progress tab: range, stat tiles, the activity grid, correct by skill with How you learn under it, weakest tags, leeches. Shows a disabled empty state while `Feature.stats` is incoming.
+/// The Progress tab (#678): the words mastered and the course's level, the
+/// last seven days, the six-skill star (which opens the charts over time),
+/// the weakest tags and the leeches. Shows a disabled empty state while
+/// `Feature.stats` is incoming.
 ///
-/// Design screen `stats`. Every number is computed from the review log and
-/// the current scheduling states (`StatsNumbers`), none from the design.
+/// Design screen `stats`. Every number is computed from the review log, the
+/// decks and the paths (`ProgressMastery`), none from the design.
 ///
 /// The numbers are the language the language bar at the top shows (#528),
 /// or with the bar's All button on, every review together, those whose
 /// language cannot be told too.
-class StatsPage extends StatefulWidget {
-  const StatsPage({super.key, this.initialRange = StatsRange.month});
-
-  /// The range shown first: 30 days, as in the design.
-  final StatsRange initialRange;
-
-  @override
-  State<StatsPage> createState() => _StatsPageState();
-}
-
-class _StatsPageState extends State<StatsPage> {
-  late StatsRange _range = widget.initialRange;
+class StatsPage extends StatelessWidget {
+  const StatsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,17 +69,9 @@ class _StatsPageState extends State<StatsPage> {
           );
         }
         return _Frame(
-          controls: Padding(
-            padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
-            child: _RangeChoice(
-              range: _range,
-              onSelected: (range) => setState(() => _range = range),
-            ),
-          ),
           child: _StatsBody(
             state: state,
             actions: actions,
-            range: _range,
             language: language,
             languageOf: languageOf,
           ),
@@ -95,45 +81,10 @@ class _StatsPageState extends State<StatsPage> {
   }
 }
 
-/// 7 days, 30 days or All.
-class _RangeChoice extends StatelessWidget {
-  const _RangeChoice({required this.range, required this.onSelected});
-
-  final StatsRange range;
-  final ValueChanged<StatsRange> onSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
-      child: Segmented<StatsRange>(
-        // The 48dp tap target, which the default 40 falls short of when
-        // small text leaves the labels room to spare (#491).
-        height: 48,
-        semanticLabel: l10n.statsRangeGroup,
-        selected: range,
-        onSelected: onSelected,
-        options: <SegmentOption<StatsRange>>[
-          for (final range in StatsRange.values)
-            SegmentOption<StatsRange>(
-              value: range,
-              label: range.days == null
-                  ? l10n.statsRangeAll
-                  : l10n.statsRangeDays(range.days!),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-/// The language bar (#528) and the range choice, fixed over the tab's
-/// scrolling content.
+/// The language bar (#528), fixed over the tab's scrolling content.
 class _Frame extends StatelessWidget {
-  const _Frame({required this.child, this.controls});
+  const _Frame({required this.child});
 
-  final Widget? controls;
   final Widget child;
 
   @override
@@ -143,7 +94,6 @@ class _Frame extends StatelessWidget {
       child: LanguageBarFrame(
         screen: LanguageBarScreen.progress,
         reportDetail: 'Progress',
-        below: controls,
         child: child,
       ),
     ),
@@ -154,14 +104,12 @@ class _StatsBody extends StatelessWidget {
   const _StatsBody({
     required this.state,
     required this.actions,
-    required this.range,
     required this.language,
     required this.languageOf,
   });
 
   final AppState state;
   final LeechActions actions;
-  final StatsRange range;
 
   /// The language counted, by code, or null for every review.
   final String? language;
@@ -173,15 +121,23 @@ class _StatsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
+    final scheme = Theme.of(context).colorScheme;
     final cardOf = cardLookupOf(state);
+    final mastery = ProgressMastery.of(state, language);
+    final chosen = language;
+    final counts = chosen == null
+        ? state.unlockCountsAll
+        : state.unlockCountsFor(chosen);
+    // The weakest tags are over all time: the star is not ranged.
+    const range = StatsRange.all;
     final numbers = StatsNumbers.of(
       state.progress,
       now: state.now(),
       range: range,
       cardOf: cardOf,
       deckFilter: language == null ? null : _counts,
+      parametersOf: (e) =>
+          state.progress.parameters.of(languageOf(e.deckId) ?? '', e.mode),
     );
     final leeches = findLeeches(state.progress, cardOf: cardOf)
         .where(
@@ -191,45 +147,6 @@ class _StatsBody extends StatelessWidget {
         )
         .length;
 
-    final count = NumberFormat.decimalPattern(l10n.localeName);
-    final remembered = numbers.remembered;
-    final all = range == StatsRange.all;
-    final tiles = <(String, String)>[
-      (count.format(numbers.reviews), l10n.statsReviews),
-      (
-        remembered == null
-            ? '–' // ui-literal-ok: a dash for "no value" is not language
-            : l10n.commonPercent(remembered),
-        l10n.statsRemembered,
-      ),
-      if (all)
-        (count.format(numbers.longestStreak), l10n.statsLongestStreak)
-      else
-        (count.format(numbers.streak), l10n.statsDayStreak),
-      (
-        count.format(numbers.learned),
-        all ? l10n.statsCardsLearned : l10n.statsNewCardsLearned,
-      ),
-    ];
-
-    Widget tileRow(int first) => IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          for (var i = first; i < first + 2; i++) ...<Widget>[
-            if (i > first) const SizedBox(width: 8),
-            Expanded(
-              child: StatTile(
-                value: tiles[i].$1,
-                label: tiles[i].$2,
-                variant: StatTileVariant.large,
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-
     BarRow bar(String label, Tally tally, {Color? color}) => BarRow(
       label: label,
       value: tally.ratio,
@@ -238,46 +155,34 @@ class _StatsBody extends StatelessWidget {
       color: color,
     );
 
-    // Until some skill is adjusted, what will happen and where: Settings.
-    // A fit that kept the defaults is not adjusted (Today agrees).
-    final howYouLearn = PaceStrip(
-      title: l10n.howYouLearnTitle,
-      subtitle: state.pacing.adjusted
-          ? l10n.howYouLearnCardMore
-          : l10n.howYouLearnCardBefore,
-      onTap: () => AppNavigator.openHowYouLearn(context, language: language),
-    );
-
     return ListView(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
       children: <Widget>[
-        tileRow(0),
+        ProgressTiles(
+          counts: counts,
+          level: mastery.level,
+          started: mastery.started,
+          allLanguages: language == null,
+        ),
         const SizedBox(height: 8),
-        tileRow(2),
+        PracticeWeekCard(week: mastery.week, quota: kDefaultDailyQuota),
         const SizedBox(height: 16),
-        ReviewHeatmap(numbers: numbers),
-        const SizedBox(height: 16),
-        // One skills section: the bars, then How you learn, which says
-        // what the learner's answers have done to each skill's pace.
-        if (numbers.bySkill.isNotEmpty || numbers.scriptSkills.isNotEmpty)
-          StatsSection(
-            title: l10n.statsBySkill,
-            children: <Widget>[
-              for (final MapEntry(key: skill, value: tally)
-                  in numbers.bySkill.entries)
-                bar(skill.label(l10n), tally),
-              for (final MapEntry(key: skill, value: tally)
-                  in numbers.scriptSkills.entries)
-                bar(scriptSkillLabel(l10n, skill), tally),
-              howYouLearn,
-            ],
-          )
-        else
-          howYouLearn,
+        SkillStarCard(
+          mastery: mastery.now,
+          onTap: () => AppNavigator.openOverTime(context),
+        ),
+        // Under the star, so that the three counts, the Level tile and the
+        // week leave the star on the screen at 1.4x text.
+        const SizedBox(height: 8),
+        HoursTiles(hours: ProgressHours.of(state, language)),
         if (numbers.weakestTags.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           StatsSection(
             title: l10n.statsWeakestTags,
+            trailing: TextButton(
+              onPressed: () => AppNavigator.openAllTags(context, range),
+              child: Text(l10n.statsAllTags),
+            ),
             children: <Widget>[
               for (final MapEntry(key: tag, value: tally)
                   in numbers.weakestTags.entries)
@@ -287,17 +192,6 @@ class _StatsBody extends StatelessWidget {
         ],
         const SizedBox(height: 16),
         _LeechesRow(count: leeches, language: language),
-        const SizedBox(height: 16),
-        Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-          child: Text(
-            l10n.statsFootnote,
-            style: theme.textTheme.bodySmall!.copyWith(
-              fontSize: 13,
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-        ),
       ],
     );
   }
@@ -398,14 +292,4 @@ class _LeechesRow extends StatelessWidget {
           )
         : MergeSemantics(child: tile);
   }
-}
-
-/// [skill]'s name on Progress (#653): Read or Write and its script's own
-/// name, "Read Devanagari"; Read script or Write script for a script with
-/// no name.
-String scriptSkillLabel(AppLocalizations l10n, ScriptSkill skill) {
-  final name = l10n.scriptName(skill.script);
-  final read = skill.mode == DrillMode.readScript;
-  if (name.isEmpty) return read ? l10n.skillReadScript : l10n.skillWriteScript;
-  return read ? l10n.skillReadScriptIn(name) : l10n.skillWriteScriptIn(name);
 }

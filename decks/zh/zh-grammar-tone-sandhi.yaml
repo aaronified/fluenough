@@ -1,0 +1,100 @@
+schema: 1
+id: "zh-grammar-tone-sandhi"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["written", "said"]
+  entries:
+    - lemma: "你好"
+      key: "nihao"
+      reading: "nǐ hǎo"
+      forms:
+        "written": "你好"
+        "said": "你好"
+      readings:
+        "written": "nǐ hǎo"
+        "said": "ní hǎo"
+    - lemma: "买马"
+      key: "maima"
+      reading: "mǎi mǎ"
+      forms:
+        "written": "买马"
+        "said": "买马"
+      readings:
+        "written": "mǎi mǎ"
+        "said": "mái mǎ"
+    - lemma: "九点"
+      key: "jiudian"
+      reading: "jiǔ diǎn"
+      forms:
+        "written": "九点"
+        "said": "九点"
+      readings:
+        "written": "jiǔ diǎn"
+        "said": "jiú diǎn"
+    - lemma: "不是"
+      key: "bushi"
+      reading: "bù shì"
+      forms:
+        "written": "不是"
+        "said": "不是"
+      readings:
+        "written": "bù shì"
+        "said": "bú shì"
+    - lemma: "不去"
+      key: "buqu"
+      reading: "bù qù"
+      forms:
+        "written": "不去"
+        "said": "不去"
+      readings:
+        "written": "bù qù"
+        "said": "bú qù"
+    - lemma: "不骂"
+      key: "buma"
+      reading: "bù mà"
+      forms:
+        "written": "不骂"
+        "said": "不骂"
+      readings:
+        "written": "bù mà"
+        "said": "bú mà"
+    - lemma: "不吃"
+      key: "buchi"
+      reading: "bù chī"
+      forms:
+        "written": "不吃"
+        "said": "不吃"
+      readings:
+        "written": "bù chī"
+        "said": "bù chī"
+    - lemma: "一个"
+      key: "yige"
+      reading: "yī ge"
+      forms:
+        "written": "一个"
+        "said": "一个"
+      readings:
+        "written": "yī ge"
+        "said": "yí ge"
+    - lemma: "一百"
+      key: "yibai"
+      reading: "yī bǎi"
+      forms:
+        "written": "一百"
+        "said": "一百"
+      readings:
+        "written": "yī bǎi"
+        "said": "yì bǎi"
+    - lemma: "一次"
+      key: "yici"
+      reading: "yī cì"
+      forms:
+        "written": "一次"
+        "said": "一次"
+      readings:
+        "written": "yī cì"
+        "said": "yí cì"

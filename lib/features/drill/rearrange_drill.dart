@@ -45,6 +45,12 @@ class RearrangeDrill extends StatelessWidget {
     final tiles = session.tiles;
     final placed = session.placed;
     final reading = card.reading;
+    // The tiles lay out in the direction of what they are written in, not
+    // the interface's: an Urdu sentence reads from the right in an English
+    // app (#619). Latin letters read from the left whatever the deck.
+    final direction = !latin && writing.rtl
+        ? TextDirection.rtl
+        : TextDirection.ltr;
 
     Widget word(int index, {required bool inAnswer}) => _WordTile(
       text: tiles[index],
@@ -114,6 +120,7 @@ class RearrangeDrill extends StatelessWidget {
               ),
             ),
             child: Wrap(
+              textDirection: direction,
               spacing: 8,
               runSpacing: 8,
               children: <Widget>[
@@ -127,6 +134,7 @@ class RearrangeDrill extends StatelessWidget {
             container: true,
             label: l10n.drillRearrangeWords,
             child: Wrap(
+              textDirection: direction,
               alignment: WrapAlignment.center,
               spacing: 8,
               runSpacing: 8,

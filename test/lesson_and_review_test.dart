@@ -15,6 +15,7 @@ import 'dart:math';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/daily_plan.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
@@ -42,7 +43,10 @@ import 'package:fluenough/core/models/reading.dart';
 import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/numbers/number_speller.dart';
+import 'package:fluenough/core/scheduling/daily_budget.dart';
+import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/core/scheduling/script_split.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/lesson_sets.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -70,14 +74,14 @@ import 'package:fluenough/features/drill/rtl_fixture.dart';
 import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/drill/speaking_drill.dart';
 import 'package:fluenough/features/drill/taught_details.dart';
+import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/script/script_guide_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
+import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/features/today/due_card.dart';
-import 'package:fluenough/features/today/lesson_card.dart';
-import 'package:fluenough/features/today/quick_revision.dart';
 import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
@@ -94,6 +98,7 @@ import 'package:fluenough/ui/widgets/play_button.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart' hide Card;
+import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/braille_course.dart';
@@ -236,7 +241,7 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: $native, iso639_3: ${native == 'en' ? 'eng' : 'ben'}, name: ${native == 'en' ? 'English' : 'Bengali'} }
 license: CC0-1.0
 cards:
-  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [production] }
+  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [recognition, listening, speaking] }
 ''';
   final order = <String>[
     first,
@@ -292,6 +297,7 @@ AppState spanishLearner() => AppState.test(
 /// The session the drill page is running.
 DrillSession sessionOf(WidgetTester tester) {
   for (final widget in <Widget>[
+    ...tester.widgetList(find.byType(SetDrill)),
     ...tester.widgetList(find.byType(GrammarDrill)),
     ...tester.widgetList(find.byType(TeachDrill)),
     ...tester.widgetList(find.byType(ChoiceDrill)),
@@ -299,6 +305,7 @@ DrillSession sessionOf(WidgetTester tester) {
     ...tester.widgetList(find.byType(RearrangeDrill)),
   ]) {
     return switch (widget) {
+      SetDrill(:final session) => session,
       GrammarDrill(:final session?) => session,
       TeachDrill(:final session) => session,
       ChoiceDrill(:final session) => session,
@@ -316,7 +323,7 @@ Future<void> finishLesson(WidgetTester tester) async {
     final session = sessionOf(tester);
     final card = session.item.card;
     switch (session.ask) {
-      case Ask.teach || Ask.showSet:
+      case Ask.teach || Ask.showSet || Ask.teachRule:
         session.learnt();
       case Ask.chooseMeaning ||
           Ask.chooseWord ||
@@ -942,7 +949,7 @@ Card cellSetCards(String row, String slot, String target) => Card(
   deckId: 'te-en-grammar-verb-present',
   target: target,
   native: '$row $slot',
-  modes: const <DrillMode>{DrillMode.grammar},
+  modes: DrillMode.vocabulary,
   rule: RuleCell(
     ruleId: 'te-rule-present',
     word: 'te-$row',
@@ -1821,7 +1828,14 @@ void main() {
         () {
           final queue = build(
             [
-              card('a', modes: {DrillMode.listening}),
+              card(
+                'a',
+                modes: {
+                  DrillMode.recognition,
+                  DrillMode.production,
+                  DrillMode.speaking,
+                },
+              ),
               card('b'),
             ],
             states: {
@@ -1918,20 +1932,34 @@ void main() {
         final state = await loaded(features: vocabOnly);
         expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
         final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
-        expect(lesson.where((i) => i.ask == Ask.teach), hasLength(9));
+        // Nine words, and more when a set one of them belongs to comes whole
+        // (the lesson's cap does not hold back a set's members).
+        expect(
+          lesson.where((i) => i.ask == Ask.teach),
+          hasLength(greaterThanOrEqualTo(9)),
+        );
 
         {
           final state = await loaded(features: vocabOnly)
             ..showLanguage('es');
           final lesson = DrillRequest.lesson(language: 'es');
-          final check = state.lessonFor(lesson)[1];
+          // The set cards come first and record nothing; the first question
+          // is the first item that is neither a teaching card nor a set.
+          final check = state
+              .lessonFor(lesson)
+              .firstWhere((i) => i.ask != Ask.teach && i.ask != Ask.showSet);
           state.record(check, 4);
           expect(state.isTaught(check.card), isTrue);
           final today = state.buildSession(const DrillRequest.today());
           expect(today.fresh.map((i) => i.card.id), <String>[check.card.id]);
           expect(today.fresh.single.mode, isNot(check.mode));
+          // A set card still shows a taught member, marked Known; it is not
+          // taught or asked again.
           expect(
-            state.lessonFor(lesson).map((i) => i.card.id),
+            state
+                .lessonFor(lesson)
+                .where((i) => i.ask != Ask.showSet)
+                .map((i) => i.card.id),
             isNot(contains(check.card.id)),
           );
         }
@@ -2113,7 +2141,8 @@ void main() {
         for (var i = 0; i < 5; i++) cardLesson('h$i', 'hola', pos: 'phrase'),
       ];
 
-      test('takes the first three of each difficulty, easy first', () {
+      test('takes the next nine in path order, easy first, with no quota of '
+          'each difficulty', () {
         final mixed = <Card>[
           hard[0],
           medium[0],
@@ -2132,12 +2161,30 @@ void main() {
           'e0',
           'e1',
           'e2',
+          'e3',
           'm0',
           'm1',
-          'm2',
           'h0',
           'h1',
           'h2',
+        ]);
+      });
+
+      test('a lesson takes fewer new items while words in progress have not '
+          'reached the bar, never fewer than two', () {
+        expect(lessonRoom(0), 9);
+        expect(lessonRoom(3), 6);
+        expect(lessonRoom(20), 2);
+        expect(idsLesson(lessonItems(easy, room: lessonRoom(3))), <String>[
+          'e0',
+          'e1',
+          'e2',
+          'e3',
+          'e4',
+        ]);
+        expect(idsLesson(lessonItems(easy, room: lessonRoom(20))), <String>[
+          'e0',
+          'e1',
         ]);
       });
     });
@@ -2200,7 +2247,7 @@ void main() {
             'h2:speaking:own',
           ]);
 
-          final cell = cardLesson('g', 'voy', modes: {DrillMode.grammar});
+          final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
           expect(plan(<Card>[cell]), <String>[
             'g:grammar:teach',
             'g:grammar:own',
@@ -2227,31 +2274,126 @@ void main() {
   });
 
   group('a lesson on screen', () {
-    testWidgets('Today offers the lesson; it teaches each word, then asks it, '
-        'and once done offers another', (tester) async {
+    testWidgets(
+      'a word is taught on one card: the IPA opens the pronunciation, the '
+      'meaning the dictionary, and a swipe goes on to its question',
+      (tester) async {
+        usePhone(tester);
+        final state = AppState.test(
+          decks: MemoryDeckSource(<String, String>{
+            'decks/es/es-en-teach.yaml': '''
+schema: 1
+id: es-en-teach
+name: "Teach"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: es-en-teach-0001
+    target: "hola"
+    native: "hello"
+    ipa: "ˈola"
+    notes: "Said when you meet."
+    examples:
+      - target: "Hola, Ana."
+        native: "Hello, Ana."
+  - id: es-en-teach-0002
+    target: "adiós"
+    native: "goodbye"
+''',
+          }),
+        );
+        await pumpScreen(
+          tester,
+          DrillPage(
+            request: DrillRequest.lesson(language: 'es', deckId: 'es-en-teach'),
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final first = sessionOf(tester).item.card;
+        expect(first.id, 'es-en-teach-0001');
+        expect(find.byType(TeachCard), findsOneWidget);
+        expect(find.text('hola'), findsOneWidget);
+        expect(find.text('Said when you meet.'), findsOneWidget);
+        expect(find.text(l10n.commonContinue), findsNothing);
+
+        // The IPA is a button: it opens the pronunciation, which asks for the
+        // IPA course where it is not on the phone.
+        await tester.tap(find.text(l10n.wordSheetIpa('ˈola')));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachPronunciationBody), findsOneWidget);
+        expect(find.text(l10n.ipaSymbolsNone), findsOneWidget);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachPronunciationBody), findsNothing);
+
+        // The meaning is the dictionary button, with the examples in it.
+        expect(find.text('Hola, Ana.'), findsNothing);
+        await tester.tap(find.text('hello'));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachDictionaryBody), findsOneWidget);
+        expect(find.text('Hola, Ana.'), findsOneWidget);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
+
+        // Nothing behind the first card: a swipe toward the end edge is held
+        // back, and the card is where it was.
+        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(sessionOf(tester).ask, Ask.teach);
+        expect(find.byType(TeachCard), findsOneWidget);
+
+        // A swipe toward the start edge goes on, and records nothing.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsNothing);
+        expect(find.byType(TeachDrill), findsNothing);
+        expect(find.byType(DrillPage), findsOneWidget);
+        expect(state.progress.log, isEmpty);
+      },
+    );
+
+    testWidgets('Today\'s one button starts the day: with nothing to review it '
+        'teaches the new words, each taught, then asked', (tester) async {
       usePhone(tester);
       final state = spanishLearner();
       await pumpScreen(tester, const TodayPage(), state: state);
       final l10n = l10nOf(tester);
-      expect(find.byType(LessonCard), findsOneWidget);
-      expect(find.text(l10n.todayLessonTitle), findsOneWidget);
-      expect(find.text(l10n.todayLessonWords(9)), findsOneWidget);
-      // Nothing to review yet: new words come in lessons.
-      expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
+      expect(find.byType(DailyCard), findsOneWidget);
+      expect(find.text(l10n.todayDailyStart), findsOneWidget);
+      // The split: nothing to review yet, a lesson's nine words new.
+      expect(find.text(l10n.todayDailyReviews(0)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNew(9)), findsOneWidget);
+      expect(find.text(l10n.todayDailyProgress(0, 15)), findsOneWidget);
+      // Nine words, plus the members of a set one of them belongs to, which
+      // come whole.
+      final taught = lessonCardCount(
+        state.lessonFor(DrillRequest.lesson(language: 'es')),
+      );
+      expect(taught, greaterThanOrEqualTo(9));
 
       final planned = <SessionItem>[
         for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
-          if (item.ask != Ask.teach)
+          if (item.ask != Ask.teach && item.ask != Ask.showSet)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
-      await tester.tap(find.text(l10n.todayLessonStart));
+      await tester.tap(find.text(l10n.todayDailyStart));
       await tester.pumpAndSettle();
-      // The first word is taught before it is asked, and nothing is recorded.
+      // A set card comes first, whole or in parts, and records nothing; then
+      // the first word is taught before it is asked.
+      while (sessionOf(tester).ask == Ask.showSet) {
+        expect(find.byType(SetDrill), findsOneWidget);
+        sessionOf(tester).learnt();
+        await tester.pumpAndSettle();
+      }
       expect(find.byType(TeachDrill), findsOneWidget);
-      expect(find.text(l10n.drillTeachTitle), findsOneWidget);
+      expect(find.byType(TeachCard), findsOneWidget);
       final first = sessionOf(tester).item.card;
       expect(find.text(first.native), findsOneWidget);
-      await tester.tap(find.text(l10n.commonContinue));
+      // No Continue: the chevron goes on, as a swipe does.
+      expect(find.text(l10n.commonContinue), findsNothing);
+      await tester.tap(find.byTooltip(l10n.drillNextCard));
       await tester.pumpAndSettle();
       expect(find.byType(ChoiceDrill), findsOneWidget);
       expect(sessionOf(tester).item.card.id, first.id);
@@ -2259,10 +2401,10 @@ void main() {
 
       await finishLesson(tester);
       expect(find.byType(SummaryPage), findsOneWidget);
-      // Nine words, each recorded in two skills but a grammar cell, which has
+      // Every word taught, each recorded in two skills but a grammar cell, which has
       // one, all right.
       final log = state.progress.log;
-      expect(log.map((e) => e.cardId).toSet(), hasLength(9));
+      expect(log.map((e) => e.cardId).toSet(), hasLength(taught));
       expect(log, hasLength(planned));
       // A right choice in Hear or Write records 3, a right choice or match
       // of a meaning seen 4 (ADR-0034): every answer is right.
@@ -2275,14 +2417,20 @@ void main() {
       );
       expect(state.lessonDoneToday('es'), isTrue);
 
-      // The summary offers another; back on Today, so does its card.
+      // The summary offers another; back on Today, the day goes on.
+      // The summary's list is lazy, and what the lesson unlocked sits above
+      // the buttons: scroll to them.
+      await tester.scrollUntilVisible(
+        find.text(l10n.summaryAnotherLesson),
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text(l10n.summaryAnotherLesson), findsOneWidget);
       Navigator.of(tester.element(find.byType(SummaryPage)))
           .popUntil((route) => route.isFirst);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.todayLessonDoneTitle), findsOneWidget);
-      expect(find.text(l10n.todayAnotherLesson), findsOneWidget);
-      expect(find.text(l10n.todayNewWords(9)), findsOneWidget);
+      expect(find.byType(DailyCard), findsOneWidget);
+      expect(find.text(l10n.todayNewWords(taught)), findsOneWidget);
     });
 
     testWidgets('Start review asks the words taught in their other skills', (
@@ -2675,7 +2823,7 @@ void main() {
       const numbersBig = 'hi-en-numbers-big';
 
       /// The generated number on screen now.
-      NumberCard current(WidgetTester tester) {
+      Card current(WidgetTester tester) {
         final drill = tester.widget(
           find.byWidgetPredicate(
             (w) => w is RecognitionDrill || w is TypedDrill,
@@ -2684,7 +2832,7 @@ void main() {
         final session = drill is RecognitionDrill
             ? drill.session
             : (drill as TypedDrill).session;
-        return session.item.card as NumberCard;
+        return session.item.card;
       }
 
       testWidgets(
@@ -2729,7 +2877,7 @@ void main() {
           await tester.tap(find.byType(PlayButton));
           await tester.pumpAndSettle();
           expect(tts.spoken.single.text, card.target);
-          final n = card.number;
+          final n = int.parse(card.native);
           await typeAndCheck(
             tester,
             '${n ~/ 1000},${(n % 1000).toString().padLeft(3, '0')}',
@@ -3055,8 +3203,21 @@ void main() {
     group('script practice', () {
       testWidgets('a card is typed as heard, in the script', (tester) async {
         usePhone(tester);
+        final decks = MemoryDeckSource(const <String, String>{
+          'decks/hi/hi-en-script-reading.yaml': '''
+schema: 1
+id: hi-en-script-reading
+name: "Script reading"
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: hi-9001, target: "क", native: "ka", reading: "ka", pos: "letter" }
+  - { id: hi-9002, target: "ख", native: "kha", reading: "kha", pos: "letter" }
+''',
+        });
         final card = (await () async {
-          final s = AppState.test();
+          final s = AppState.test(decks: decks);
           await s.load();
           return s.deckById(script)!.cards.firstWhere((c) => c.reading != null);
         }());
@@ -3066,7 +3227,10 @@ void main() {
             request: DrillRequest.untaught(script, skill: Skill.listening),
             preset: DrillPreset(target: card.target),
           ),
-          state: AppState.test(tts: FixedTtsEngine(const <String>{'hi'})),
+          state: AppState.test(
+            decks: decks,
+            tts: FixedTtsEngine(const <String>{'hi'}),
+          ),
         );
         final l10n = l10nOf(tester);
         final session = tester
@@ -4028,7 +4192,7 @@ void main() {
         isEmpty,
       );
 
-      final card = NumberCard(
+      final card = numberCard(
         number: 2020,
         spellings: spellNumber(hi, 2020),
         rulesId: hi.id,
@@ -4245,6 +4409,22 @@ void main() {
   });
 
   group('quick revision', () {
+    test('a tag\'s practice is a capped set of taught words carrying the tag, '
+        'and records every answer', () async {
+      final state = await knowing(8);
+      final tag = state.deckById('hi-en-phrasebook')!.cards.first.tags.first;
+      final request = DrillRequest.tag(tag, count: 3, language: 'hi');
+      expect(request.recordsRevision, isTrue);
+      final items = state.sessionItems(request);
+      final words = <String>{for (final item in items) item.card.id};
+      expect(words, isNotEmpty);
+      expect(words.length, lessThanOrEqualTo(3));
+      for (final item in items) {
+        expect(item.card.tags, contains(tag));
+        expect(state.isTaught(item.card), isTrue);
+      }
+    });
+
     test('quick revision revises that many known words once each, and records '
         'every answer', () async {
       final state = await knowing(8);
@@ -4306,7 +4486,8 @@ void main() {
 
   group('Today', () {
     testWidgets(
-      'the due count comes from the session, and Start review opens it',
+      'the skill tiles count what the session asks, and the one button opens '
+      'the day\'s session',
       (tester) async {
         usePhone(tester);
         final state = await pumpToday(tester, state: await fixtureState());
@@ -4316,19 +4497,33 @@ void main() {
         expect(queue.length, greaterThan(0));
         final numbers = TodayNumbers.of(state);
         expect(numbers.due, queue.length);
+        // Each language's day: its reviews add up to the session's, and the
+        // card shows each one's split and minutes spent (none yet today).
+        final plans = numbers.daily;
+        expect(plans, isNotEmpty);
+        expect(plans.map((p) => p.due).fold(0, (a, b) => a + b), queue.length);
+        expect(find.byType(DailyCard), findsOneWidget);
         expect(
-          find.byWidgetPredicate(
-            (w) =>
-                w is Text &&
-                w.data == '${queue.length}' &&
-                w.style?.fontSize == 72,
-          ),
-          findsOneWidget,
+          find.text(l10n.todayDailyStart),
+          findsNWidgets(plans.where((p) => !p.done && !p.inProgress).length),
         );
-        expect(find.text(l10n.todayWordsDue(queue.length)), findsOneWidget);
-        expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
+        for (final plan in plans) {
+          expect(plan.spent, Duration.zero);
+          expect(
+            find.text(l10n.todayDailyReviews(plan.split.reviews)),
+            findsNWidgets(
+              plans.where((p) => p.split.reviews == plan.split.reviews).length,
+            ),
+          );
+          expect(
+            find.text(l10n.todayDailyProgress(0, plan.minutes)),
+            findsNWidgets(plans.where((p) => p.minutes == plan.minutes).length),
+          );
+        }
 
-        final byMode = queue.countByMode();
+        // The script decks' Recognition and Write are the Script tile's.
+        final byMode = ScriptSplit(state.progress.skills.scriptDecks)
+            .countByMode(queue);
         // Recognition is scheduled, so it has a tile (ADR-0034).
         expect(
           find.descendant(
@@ -4364,13 +4559,322 @@ void main() {
             const <String>['hi'],
           ),
         );
-        await tapVisible(tester, find.text(l10nOf(tester).todayStartReview));
+        await tapVisible(
+          tester,
+          find.descendant(
+            of: find.byType(DailyCard),
+            matching: find.byType(FilledButton),
+          ),
+        );
         final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+        expect(drill.request.daily, isTrue);
+        expect(drill.request.language, 'hi');
         expect(drill.request.deckIds, isNull);
-        expect(drill.request.newOnly, isFalse);
-        expect(drill.request.language, isNull, reason: 'one language');
+        expect(drill.request.revise, isFalse);
       },
     );
+
+    testWidgets(
+      'the day\'s session holds the words due, then the new words, and a '
+      'shorter day buys fewer cards',
+      (tester) async {
+        usePhone(tester);
+        final state = await hindiReviewed(<DrillMode, Duration>{
+          DrillMode.production: const Duration(days: 3),
+        });
+        final hindi = state.languages.firstWhere((l) => l.code == 'hi');
+        final plan = state.dailyPlanFor(hindi);
+        expect(plan.goalMinutes, 15);
+        expect(plan.due, 8);
+        expect(plan.split.catchingUp, isFalse);
+        expect(plan.split.reviews, 8);
+        expect(plan.split.newWords, greaterThanOrEqualTo(3));
+
+        final dueIds = <String>{
+          for (final item
+              in state
+                  .buildSession(const DrillRequest.today(language: 'hi'))
+                  .items)
+            item.card.id,
+        };
+        final items = state.dailyItems(
+          const DrillRequest.daily(language: 'hi'),
+        );
+        final askedIds = <String>{
+          for (final item in items)
+            for (final entry
+                in item.group.isEmpty ? <SessionItem>[item] : item.group)
+              entry.card.id,
+        };
+        expect(askedIds.containsAll(dueIds), isTrue);
+        // The reviews come first, the lesson's teaching after them.
+        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
+        expect(firstTeach, greaterThan(0));
+        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
+
+        // A 5 minute day buys 17 cards: the 8 reviews and the new words fill
+        // them, and a day over by a few reviews keeps its 3 new words.
+        state.settings.setDailyMinutes('hi', 5);
+        final five = state.dailyPlanFor(hindi);
+        expect(five.split.reviews + five.split.newWords, 17);
+        expect(five.split.newWords, greaterThanOrEqualTo(3));
+      },
+    );
+
+    testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '
+        'while a long press takes five away', (tester) async {
+      usePhone(tester);
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = DailyPlan(
+        language: spanish,
+        goalMinutes: 15,
+        extraMinutes: 0,
+        spent: Duration.zero,
+        secondsPerCard: 17.5,
+        due: 160,
+        newAvailable: 9,
+        split: DailyBudget.split(due: 160, budget: 51),
+      );
+      expect(plan.split.catchingUp, isTrue);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(child: DailyCard(plans: [plan])),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.todayDailyCatchingUp), findsOneWidget);
+      expect(
+        find.text(l10n.todayDailyCatchingUpPlan(160, 47, 15, 4)),
+        findsOneWidget,
+      );
+      // No new words in the split.
+      expect(find.text(l10n.todayDailyNew(0)), findsOneWidget);
+      final add = find.text(l10n.todayDailyAddMinutes(5));
+      await tester.tap(add);
+      await tester.pump();
+      await tester.tap(add);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 10);
+      await tester.longPress(add);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+
+      // A screen reader gets the same two actions on the button's own node:
+      // a tap adds five, a custom action takes five away.
+      final handle = tester.ensureSemantics();
+      final button = find.byType(OutlinedButton);
+      expect(
+        tester.getSemantics(button),
+        isSemantics(
+          label: l10n.todayDailyAddMinutes(5),
+          hint: l10n.todayDailyAddHint(5),
+          isButton: true,
+          hasTapAction: true,
+          customActions: <CustomSemanticsAction>[
+            CustomSemanticsAction(label: l10n.todayDailyTakeAway(5)),
+          ],
+        ),
+      );
+      final buttonNode = find.semantics.byLabel(l10n.todayDailyAddMinutes(5));
+      tester.semantics.tap(buttonNode);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 10);
+      final takeAway = CustomSemanticsAction.getIdentifier(
+        CustomSemanticsAction(label: l10n.todayDailyTakeAway(5)),
+      );
+      tester.semantics.performAction(
+        buttonNode,
+        SemanticsAction.customAction,
+        args: takeAway,
+      );
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+      handle.dispose();
+    });
+
+    test('the extra minutes last the day: the next day starts at the goal, '
+        'and a day never goes below five minutes', () async {
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['es'],
+      );
+      final today = DateTime(2026, 9, 28, 19);
+      final state = AppState.test(settings: settings, now: today);
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+
+      state.addDailyMinutes('es', 10);
+      expect(state.dailyPlanFor(spanish).extraMinutes, 10);
+      expect(state.dailyPlanFor(spanish).minutes, 25);
+
+      // Tomorrow, with the same settings, it is the goal again.
+      final tomorrow = AppState.test(
+        settings: settings,
+        now: today.add(const Duration(days: 1)),
+      );
+      await tomorrow.load();
+      final plan = tomorrow.dailyPlanFor(
+        tomorrow.languages.firstWhere((l) => l.code == 'es'),
+      );
+      expect(plan.extraMinutes, 0);
+      expect(plan.minutes, 15);
+
+      // Taking minutes away stops at five minutes in all, however often.
+      for (var i = 0; i < 5; i++) {
+        state.addDailyMinutes('es', -5);
+      }
+      expect(state.dailyPlanFor(spanish).minutes, 5);
+      expect(state.dailyPlanFor(spanish).extraMinutes, 5 - 15);
+      state.addDailyMinutes('es', 5);
+      expect(state.dailyPlanFor(spanish).minutes, 10);
+    });
+
+    test('the extra minutes are saved with their day and restored, and '
+        'dropped the next day', () {
+      final day = DateTime(2026, 9, 28, 19);
+      final settings = SettingsNotifier()..setDailyExtra('es', 10, day);
+      final restored = SettingsNotifier()..restore(settings.toStored());
+      expect(restored.dailyExtraFor('es', day), 10);
+      expect(
+        restored.dailyExtraFor('es', day.add(const Duration(hours: 3))),
+        10,
+      );
+      expect(restored.dailyExtraFor('es', day.add(const Duration(days: 1))), 0);
+      expect(restored.dailyExtraFor('hi', day), 0);
+    });
+
+    test('with 14 minutes 47 seconds spent, the ring reads 14 of 15, the '
+        'button stays on Continue, and Keep going is not yet needed', () async {
+      final base = spanishLearner();
+      await base.load();
+      final card = base.decks
+          .firstWhere((d) => d.language.code == 'es')
+          .cards
+          .first;
+      final progress = MemoryProgress();
+      for (var i = 0; i < 50; i++) {
+        progress.record(
+          deckId: card.deckId,
+          cardId: card.id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: base.now(),
+          elapsed: Duration(seconds: i < 49 ? 18 : 5),
+        );
+      }
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        ),
+        progress: progress,
+      );
+      await state.load();
+      final plan = state.dailyPlanFor(
+        state.languages.firstWhere((l) => l.code == 'es'),
+      );
+      expect(plan.spent, const Duration(seconds: 49 * 18 + 5));
+      expect(plan.budgetDone, isFalse);
+      expect(plan.minutesDone, 14);
+      expect(plan.inProgress, isTrue);
+      // Under one card of time is left, and there are new words to teach:
+      // the day is not done and the split still has a card to ask.
+      expect(plan.split.cards, greaterThan(0));
+      expect(plan.done, isFalse);
+    });
+
+    test('the time spent is counted again when the log grows', () async {
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      expect(state.dailyPlanFor(spanish).spent, Duration.zero);
+      final card = state.decks
+          .firstWhere((d) => d.language.code == 'es')
+          .cards
+          .first;
+      state.progress.record(
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: state.now(),
+        elapsed: const Duration(seconds: 30),
+      );
+      expect(state.dailyPlanFor(spanish).spent, const Duration(seconds: 30));
+    });
+
+    testWidgets('Quick revision\'s minus and plus change the minutes and the '
+        'number of cards it asks for', (tester) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.production: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      IconButton minus() => tester.widget<IconButton>(
+        find.widgetWithIcon(IconButton, Icons.remove),
+      );
+      expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
+      expect(minus().onPressed, isNull);
+
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      expect(find.text(l10n.todayRevisionStart(15)), findsOneWidget);
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionLess(5)));
+      expect(find.text(l10n.todayRevisionStart(10)), findsOneWidget);
+      expect(minus().onPressed, isNotNull);
+
+      await tapVisible(tester, find.text(l10n.todayRevisionStart(10)));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.revise, isTrue);
+      expect(
+        drill.request.limit,
+        DailyBudget.cardsFor(10, secondsPerCard: state.secondsPerCardIn(null)),
+      );
+      expect(drill.request.limit, 34);
+    });
+
+    testWidgets('with the minutes spent the button reads Done for today, and '
+        'Keep going starts five more', (tester) async {
+      usePhone(tester);
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = DailyPlan(
+        language: spanish,
+        goalMinutes: 15,
+        extraMinutes: 0,
+        spent: const Duration(minutes: 15),
+        secondsPerCard: 17.5,
+        due: 10,
+        newAvailable: 9,
+        split: DailyBudget.split(due: 10, budget: 17),
+      );
+      expect(plan.done, isTrue);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(child: DailyCard(plans: [plan])),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.todayDailyDone), findsOneWidget);
+      expect(find.text(l10n.todayDailyProgress(15, 15)), findsOneWidget);
+      expect(find.text(l10n.todayDailyStart), findsNothing);
+      // The split is for a day still to do.
+      expect(find.text(l10n.todayDailyNew(7)), findsNothing);
+      await tester.tap(find.text(l10n.todayDailyKeepGoing));
+      await tester.pumpAndSettle();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.daily, isTrue);
+      expect(drill.request.language, 'es');
+    });
 
     testWidgets(
       'Quick revision offers its sizes, and a tile with cards due reviews '
@@ -4381,14 +4885,15 @@ void main() {
         final l10n = l10nOf(tester);
         expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
         expect(find.byType(DeckTile), findsNothing);
-        for (final size in QuickRevision.sizes) {
-          expect(find.text('$size'), findsOneWidget);
-        }
-        // Nothing taught yet: the buttons are off, and the line says why.
+        // Five minutes to begin with, between a minus and a plus.
+        expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.todayRevisionLess(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.todayRevisionMore(5)), findsOneWidget);
+        // Nothing taught yet: the start button is off, and the line says why.
         expect(find.text(l10n.todayRevisionNone), findsOneWidget);
         final five = tester.widget<FilledButton>(
           find.ancestor(
-            of: find.text('5'),
+            of: find.text(l10n.todayRevisionStart(5)),
             matching: find.byType(FilledButton),
           ),
         );
@@ -4431,7 +4936,9 @@ void main() {
       },
     );
 
-    testWidgets('with everything answered, Today is all done', (tester) async {
+    testWidgets('with everything answered, no skill tile is due', (
+      tester,
+    ) async {
       usePhone(tester);
       final state = await fixtureState();
       await state.load();
@@ -4439,9 +4946,19 @@ void main() {
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
 
-      expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
-      expect(find.text(l10n.todayAllDoneBody), findsOneWidget);
-      expect(find.text(l10n.todayStartReview), findsNothing);
+      final numbers = TodayNumbers.of(state);
+      expect(numbers.allDone, isTrue);
+      // Nothing is left to review in any language: each day's card says so,
+      // with no reviews badge unless new words are still to come.
+      final plans = numbers.daily;
+      expect(plans, isNotEmpty);
+      expect(plans.every((p) => p.due == 0 && p.split.reviews == 0), isTrue);
+      final splitting = plans.where((p) => p.showsSplit).length;
+      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(splitting));
+      expect(
+        find.text(l10n.todayDailyDone),
+        findsNWidgets(plans.length - splitting),
+      );
       // Today now counts towards the streak.
       expect(find.text(l10n.todayStreak(13)), findsOneWidget);
     });
@@ -4658,5 +5175,232 @@ void main() {
         expect(state.shellTab.value, ShellTab.today);
       },
     );
+  });
+  group('a deck\'s known cards come up a few at a time', () {
+    final cards = <Card>[
+      for (var i = 0; i < 12; i++)
+        Card(
+          id: 'k$i',
+          deckId: 'known',
+          target: 't$i',
+          native: 'n$i',
+          modes: const {DrillMode.recognition},
+        ),
+    ];
+
+    /// A known card due a day before [at], last reviewed [daysAgo] days
+    /// before it.
+    FsrsState known(DateTime at, {int daysAgo = 30}) => FsrsState(
+      stability: 20,
+      difficulty: 5,
+      repetitions: 3,
+      intervalDays: 20,
+      dueAt: at.subtract(const Duration(days: 1)),
+      lastReviewAt: at.subtract(Duration(days: daysAgo)),
+      recallAtReview: 0.92,
+    );
+
+    /// A known card reviewed right at [at], so not due for weeks.
+    FsrsState passed(DateTime at) => FsrsState(
+      stability: 25,
+      difficulty: 5,
+      repetitions: 4,
+      intervalDays: 25,
+      dueAt: at.add(const Duration(days: 25)),
+      lastReviewAt: at,
+      recallAtReview: 0.93,
+    );
+
+    FsrsState missed(DateTime at) => FsrsState(
+      stability: 1,
+      difficulty: 6,
+      repetitions: 0,
+      intervalDays: 1,
+      dueAt: at.add(const Duration(days: 1)),
+      lastReviewAt: at,
+      lapses: 1,
+    );
+
+    List<String> due(
+      Map<String, FsrsState> states, {
+      DateTime? at,
+      int take = 12,
+    }) => SessionQueue.build(
+      cards: cards.take(take),
+      stateOf: (c, m) => states[c.id],
+      hasVoice: (_) => false,
+      now: at ?? now,
+      newCardLimit: 0,
+      sampleKnown: true,
+    ).due.map((i) => i.card.id).toList();
+
+    // k0 was reviewed longest ago, then k1, and so on.
+    Map<String, FsrsState> pending() => {
+      for (var i = 0; i < 12; i++) 'k$i': known(now, daysAgo: 60 - i),
+    };
+
+    test('a pending deck shows two, the ones reviewed longest ago', () {
+      expect(due(pending()), <String>['k0', 'k1']);
+    });
+
+    test('a passed sample holds the rest for the day, and the cards not '
+        'sampled have their turn before any is sampled again', () {
+      final states = pending();
+      for (final id in <String>['k0', 'k1']) {
+        states[id] = passed(now);
+      }
+      expect(due(states), isEmpty);
+      // The next day the deck is sampled again, the cards not yet reviewed
+      // first, though the others are due too.
+      final later = now.add(const Duration(days: 1));
+      expect(due(states, at: later), <String>['k2', 'k3']);
+    });
+
+    test('a failed sample asks more, and a second failure brings every due '
+        'known card of the deck', () {
+      final states = pending();
+      states['k0'] = missed(now);
+      states['k1'] = passed(now);
+      final more = due(states);
+      expect(more.length, inInclusiveRange(3, 5));
+      expect(more.first, 'k2');
+      states['k2'] = missed(now);
+      expect(due(states), <String>[for (var i = 3; i < 12; i++) 'k$i']);
+    });
+
+    test('a card is known when it was likely recalled at its last review, '
+        'not by how long its interval is', () {
+      final states = pending();
+      // k0 and k1 were remembered at 60%, reviewed late: not known, so they
+      // come up whatever the sample is.
+      for (final id in <String>['k0', 'k1']) {
+        final s = states[id]!;
+        states[id] = FsrsState(
+          stability: s.stability,
+          difficulty: s.difficulty,
+          repetitions: s.repetitions,
+          intervalDays: 60,
+          dueAt: s.dueAt,
+          lastReviewAt: s.lastReviewAt,
+          recallAtReview: 0.6,
+        );
+      }
+      expect(
+        due(states),
+        containsAll(<String>['k0', 'k1']),
+        reason: 'not known, so never held back',
+      );
+      expect(due(states), hasLength(4), reason: 'and two known samples');
+    });
+
+    /// A known card reviewed on time: last reviewed [interval] days before
+    /// it came due, a minute apart per [i], so the order is fixed.
+    FsrsState onTime(DateTime at, int i, {int interval = 20}) {
+      final dueAt = at.subtract(Duration(minutes: 11 - i));
+      return FsrsState(
+        stability: interval + 0.4,
+        difficulty: 5,
+        repetitions: 3,
+        intervalDays: interval,
+        dueAt: dueAt,
+        lastReviewAt: dueAt.subtract(Duration(days: interval)),
+        recallAtReview: 0.9,
+      );
+    }
+
+    /// Plays days of sessions on a deck of 12 known cards, all due on day 0,
+    /// each shown card reviewed right when it is shown. Returns the day each
+    /// card was reviewed on, and checks the day's rules on the way.
+    Map<String, int> playDays(int interval, int days) {
+      final states = <String, FsrsState>{
+        for (var i = 0; i < 12; i++) 'k$i': onTime(now, i, interval: interval),
+      };
+      final reviewedOn = <String, int>{};
+      for (var day = 0; day < days; day++) {
+        final at = now.add(Duration(days: day));
+        final shown = due(states, at: at);
+        expect(
+          shown.length,
+          lessThanOrEqualTo(kSampleSize),
+          reason: 'day $day: only a small sample of the known cards',
+        );
+        for (final id in shown) {
+          expect(
+            reviewedOn,
+            isNot(contains(id)),
+            reason: '$id asked again before every card had a turn',
+          );
+          states[id] = Fsrs.next(states[id], 4, now: at);
+          expect(
+            isKnownState(states[id]!),
+            isTrue,
+            reason: '$id is still known after a right review on time',
+          );
+          reviewedOn[id] = day;
+        }
+        expect(
+          due(states, at: at),
+          isEmpty,
+          reason: 'day $day: a passed sample holds the rest until tomorrow',
+        );
+      }
+      return reviewedOn;
+    }
+
+    test('sampling rotates through the whole deck, so every card is '
+        'eventually reviewed, the ones reviewed longest ago first', () {
+      final reviewedOn = playDays(20, 12);
+      expect(reviewedOn, hasLength(12));
+      // Two a day, in the order they were last reviewed.
+      expect(reviewedOn.keys.toList(), <String>[
+        for (var i = 0; i < 12; i++) 'k$i',
+      ]);
+    });
+
+    test('a known card due waits a few days, not its whole interval, for '
+        'its turn', () {
+      // At 30-day intervals, holding the deck for the samples' interval
+      // would leave the last of 12 cards waiting months.
+      final reviewedOn = playDays(30, 12);
+      expect(reviewedOn, hasLength(12));
+      expect(
+        reviewedOn.values.reduce(max),
+        lessThanOrEqualTo(12 ~/ kSampleSize - 1),
+        reason: 'every card is reviewed within six days of being due',
+      );
+    });
+
+    test('a card missed and then answered right the same day is not '
+        'known, and its miss still counts as a failed sample', () {
+      var s = FsrsState(
+        stability: 20.4,
+        difficulty: 5,
+        repetitions: 3,
+        intervalDays: 20,
+        dueAt: now.add(const Duration(days: 15)),
+        lastReviewAt: now.subtract(const Duration(days: 5)),
+        recallAtReview: 0.9,
+      );
+      s = Fsrs.review(s, Rating.again, now: now);
+      expect(s.recallAtReview, greaterThan(0.9), reason: 'it was well known');
+      s = Fsrs.review(s, Rating.good, now: now.add(const Duration(hours: 1)));
+      expect(s.repetitions, 1);
+      expect(isKnownState(s), isFalse);
+
+      final states = pending();
+      states['k0'] = s;
+      expect(
+        due(states, at: now.add(const Duration(hours: 1))).length,
+        inInclusiveRange(kStressMin, kStressTotal),
+        reason: 'the failed sample asks more, not the usual two',
+      );
+    });
+
+    test('cards still being learned are not sampled', () {
+      final states = <String, FsrsState>{
+        for (var i = 0; i < 5; i++) 'k$i': dueDaysAgo(1),
+      };
+      expect(due(states, take: 5), hasLength(5));
+    });
   });
 }

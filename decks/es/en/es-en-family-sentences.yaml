@@ -1,0 +1,115 @@
+schema: 1
+id: "es-en-family-sentences"
+kind: "layer"
+core: "es-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: family"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about family, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0188":
+    native: "My mother and my father are doctors."
+    bases:
+      "madre": "mother"
+      "padre": "father"
+      "médicos": "doctors"
+    confusables:
+      "sister": { why: "Hermana is sister, not mother." }
+      "son": { why: "Hijo is son. This sentence is about the parents." }
+  "es-0189":
+    native: "Ana's daughter is seven years old."
+    bases:
+      "La": "the"
+      "hija": "daughter"
+      "de": "of"
+      "Ana": "Ana"
+      "siete": "seven"
+      "años": "years"
+    confusables:
+      "granddaughter": { why: "Nieta is granddaughter: the child of a child." }
+      "sister": { why: "Hermana is sister, not daughter." }
+  "es-0190":
+    native: "Luis's grandfather is very friendly."
+    bases:
+      "El": "the"
+      "abuelo": "grandfather"
+      "de": "of"
+      "Luis": "Luis"
+      "muy": "very"
+      "simpático": "friendly"
+    confusables:
+      "father": { why: "Padre is father, not grandfather." }
+      "uncle": { why: "Tío is uncle: a brother of a parent." }
+  "es-0191":
+    native: "Ana is Luis's girlfriend."
+    bases:
+      "Ana": "Ana"
+      "la": "the"
+      "novia": "girlfriend; fiancée"
+      "de": "of"
+      "Luis": "Luis"
+    confusables:
+      "wife": { why: "Esposa is wife: a married woman." }
+      "cousin": { why: "Prima is cousin, a relative, not a partner." }
+  "es-0192":
+    native: "Rosa's brothers are twins."
+    bases:
+      "Los": "the"
+      "hermanos": "brothers; siblings"
+      "de": "of"
+      "Rosa": "Rosa"
+      "gemelos": "twins"
+    confusables:
+      "sister": { why: "Hermana is one sister; hermanos is the plural of hermano." }
+      "brother-in-law": { why: "Cuñado is a brother-in-law, not a brother." }
+  "es-0193":
+    native: "My mother-in-law lives near us."
+    bases:
+      "suegra": "mother-in-law"
+      "de": "of"
+    confusables:
+      "wife": { why: "Esposa is wife, not mother-in-law." }
+      "aunt": { why: "Tía is aunt, a sister of a parent." }
+  "es-0194":
+    native: "Rosa's husband is an engineer."
+    bases:
+      "El": "the"
+      "marido": "husband (informal)"
+      "de": "of"
+      "Rosa": "Rosa"
+      "ingeniero": "engineer"
+    confusables:
+      "boyfriend": { why: "Novio is boyfriend or fiancé, not husband." }
+      "father-in-law": { why: "Suegro is father-in-law: a father of a spouse." }
+  "es-0195":
+    native: "My nephews play in the park."
+    bases:
+      "Mis": "my"
+      "sobrinos": "nephews"
+      "juegan": "play"
+      "en": "in"
+      "el": "the"
+    confusables:
+      "cousin": { why: "Primo is cousin, not nephew." }
+      "godson": { why: "Ahijado is godson, a child you are godparent to." }
+  "es-0196":
+    native: "My goddaughter lives with her mother."
+    bases:
+      "ahijada": "goddaughter"
+      "con": "with"
+      "madre": "mother"
+    confusables:
+      "daughter": { why: "Hija is daughter, your own child." }
+      "grandmother": { why: "Abuela is grandmother, a parent of a parent." }
+  "es-0197":
+    native: "My sister-in-law is my husband's sister."
+    bases:
+      "cuñada": "sister-in-law"
+      "la": "the"
+      "hermana": "sister"
+      "de": "of"
+      "esposo": "husband"
+    confusables:
+      "brother-in-law": { why: "Cuñado is for a man: this sentence is about a woman." }
+      "mother-in-law": { why: "Suegra is mother-in-law, not sister-in-law." }

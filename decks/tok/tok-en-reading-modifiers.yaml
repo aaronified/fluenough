@@ -1,0 +1,52 @@
+schema: 1
+id: "tok-en-reading-modifiers"
+name: "Reading: describing words and numbers"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the modifiers unit: someone chooses between a big thing and a small one (heard), and a lost-and-found notice describing what is missing (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-which-one"
+    title: "Which one?"
+    sentences:
+      - text: "ijo suli anu ijo lili?"
+      - text: "ijo suli li pona."
+      - text: "ijo lili tu li ike ala."
+    questions:
+      - id: "tok-0239"
+        prompt: { en: "What does the first line offer?" }
+        options:
+          - { en: "A choice between a big thing and a small thing" }
+          - { en: "A choice between two people" }
+        answer: 1
+      - id: "tok-0240"
+        prompt: { en: "The big thing is good." }
+        answer: true
+      - id: "tok-0241"
+        prompt: { en: "The two small things are bad." }
+        answer: false
+  - id: "tok-lost-and-found"
+    title: "Lost and found"
+    sentences:
+      - text: "kili suwi wan li lon ala."
+      - text: "ijo lili tu li lon."
+      - text: "jan pona li kama."
+    questions:
+      - id: "tok-0242"
+        prompt: { en: "What is missing, according to the first line?" }
+        options:
+          - { en: "One sweet fruit" }
+          - { en: "Two cold waters" }
+        answer: 1
+      - id: "tok-0243"
+        prompt: { en: "Two small things are here." }
+        answer: true
+      - id: "tok-0244"
+        prompt: { en: "Who comes, according to the last line?" }
+        options:
+          - { en: "A good person" }
+          - { en: "A bad person" }
+        answer: 1

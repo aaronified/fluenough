@@ -17,7 +17,7 @@ import '../models/grammar_pattern.dart';
 /// - **target** the cell's form, and **alt_target** the others it accepts
 ///   (#144); **native** the prompt with `{lemma}`,
 ///   `{gloss}` and `{slot}` filled in; **notes** the pattern's notes, shown
-///   after answering; **modes** `grammar` only.
+///   after answering; **modes** the four vocabulary skills, so that it is only a grammar cell.
 ///
 /// A cell whose form is null (a defective verb) is skipped, not drilled.
 /// Returns no cards for a deck without a pattern.
@@ -49,7 +49,7 @@ List<Card> expandPattern(Deck deck) {
               if (pattern.notes case final notes? when notes.trim().isNotEmpty)
                 CardNote(id: '1', kind: NoteKind.note, text: notes),
             ],
-            modes: const <DrillMode>{DrillMode.grammar},
+            modes: DrillMode.vocabulary,
           ),
   ];
 }

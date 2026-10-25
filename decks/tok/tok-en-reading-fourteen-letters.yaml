@@ -1,0 +1,36 @@
+schema: 1
+id: "tok-en-reading-fourteen-letters"
+name: "Reading: the fourteen letters"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "The fourteen letters of Toki Pona, each with a word that starts with it. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-fourteen-letters"
+    title: "The fourteen letters"
+    sentences:
+      - text: "a: ala. e: esun. i: ilo. j: jan. k: kon."
+      - text: "l: lipu. m: mi. n: nimi. o: ona. p: pona."
+      - text: "s: sina. t: toki. u: utala. w: wile."
+    questions:
+      - id: "tok-0041"
+        prompt: { en: "Which word starts with the letter j?" }
+        options:
+          - { en: "ilo" }
+          - { en: "jan" }
+        answer: 2
+      - id: "tok-0042"
+        prompt: { en: "Which letter does utala start with?" }
+        options:
+          - { en: "t" }
+          - { en: "u" }
+        answer: 2
+      - id: "tok-0043"
+        prompt: { en: "Which letter does ona start with?" }
+        options:
+          - { en: "o" }
+          - { en: "n" }
+        answer: 1

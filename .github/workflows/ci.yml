@@ -34,7 +34,11 @@ jobs:
       - run: pip install pyyaml
       # Runs on every PR because YAML fails quietly: a bare `no` becomes a
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
+      # The index is regenerated on main after each merge (deck-index.yml),
+      # so it is not checked here (owner, 2026-10-23).
       - run: python3 tools/validate_decks.py decks/
+        env:
+          FLUENOUGH_SKIP_INDEX_CHECK: "1"
       # Rule 10: no user-visible string is a literal in a widget. Checked here
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
@@ -52,7 +56,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest pytest-xdist
+      - run: pip install pyyaml pytest pytest-xdist fonttools
       - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
 
   # The required check "Validate decks": passes only if both jobs above did.
@@ -88,6 +92,16 @@ jobs:
           cp -r decks release/decks
           mkdir -p release/test/release_reader
           cp tools/release_reader/release_reader_test.dart release/test/release_reader/
+      # The release reads decks/index.json and checks each listed file's
+      # hash, and the committed index is regenerated only after merge, so
+      # write this change's own index first.
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Regenerate the index for this change's decks
+        run: python3 tools/deck_index.py
+      - run: cp decks/index.json release/decks/index.json
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
@@ -181,6 +195,15 @@ jobs:
       # generated file. Without this step the first PR that lands a drift
       # schema fails analyse, test and build on a file CI never made.
       - run: dart run build_runner build
+      # The tests read decks/index.json (RepositoryDeckSource, the catalog
+      # tests), and the committed one is regenerated only after merge, so
+      # write this change's own first.
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Regenerate the index for this change's decks
+        run: python3 tools/deck_index.py
       - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
 
   # Real downloads from GitHub through the app's own fetcher: 0.4.0

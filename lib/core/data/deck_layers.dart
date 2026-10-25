@@ -80,6 +80,10 @@ class CoreWritten extends CoreCard {
     this.targetScripts = const <String, String>{},
     this.words,
     this.pos,
+    this.hears,
+    this.warning,
+    this.notSoundsLike = const <String>[],
+    this.notLooksLike = const <String>[],
     this.gender,
     this.tags = const <String>[],
     this.audio,
@@ -87,6 +91,7 @@ class CoreWritten extends CoreCard {
     this.examples = const <CoreExample>[],
     this.modes = const <DrillMode>{},
     this.picture,
+    this.pictureAsk = false,
     this.image,
     this.imageCredit,
     this.notes = const <CoreNote>[],
@@ -111,6 +116,17 @@ class CoreWritten extends CoreCard {
   /// [target]'s words, where the core gives them (`words`).
   final List<String>? words;
   final String? pos;
+  final String? hears;
+
+  /// Which warning the teach card shows (`warning`, #691): the id of a pair,
+  /// homograph or lookalike note, "senses", or "none". Null: the fixed order.
+  final String? warning;
+
+  /// The ids of the offensive words a reviewer found this card does not sound
+  /// like, or look like (`not_sounds_like`, `not_looks_like`, #808). The app
+  /// reads them so that a deck may use them; nothing shows them.
+  final List<String> notSoundsLike;
+  final List<String> notLooksLike;
   final String? gender;
   final List<String> tags;
   final String? audio;
@@ -118,6 +134,7 @@ class CoreWritten extends CoreCard {
   final List<CoreExample> examples;
   final Set<DrillMode> modes;
   final String? picture;
+  final bool pictureAsk;
   final String? image;
   final MediaCredit? imageCredit;
   final List<CoreNote> notes;
@@ -457,7 +474,7 @@ class LayerPattern {
   const LayerPattern({
     required this.name,
     required this.slotName,
-    required this.prompt,
+    this.prompt,
     required this.entries,
     this.slots = const <String, LayerText>{},
     this.notes,
@@ -465,7 +482,9 @@ class LayerPattern {
 
   final String name;
   final String slotName;
-  final String prompt;
+
+  /// Retired (ADR-0039): the layer may still give one.
+  final String? prompt;
 
   /// Slot labels, by slot.
   final Map<String, LayerText> slots;
@@ -784,6 +803,8 @@ class _Merge {
       words: card.words,
       altNative: entry.altNative ?? const <String>[],
       pos: card.pos,
+      hears: card.hears,
+      warning: card.warning,
       gender: card.gender,
       tags: card.tags,
       notes: notes,
@@ -795,6 +816,7 @@ class _Merge {
       // Notes).
       pair: notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: card.picture,
+      pictureAsk: card.pictureAsk,
       image: card.image,
       imageCredit: card.imageCredit,
       phrasebook: card.phrasebook,
@@ -810,6 +832,14 @@ class _Merge {
       confusables: items(card, entry, 'confusables', path),
       forms: items(card, entry, 'forms', path),
       senses: senses(card.senses, entry.senses, '$path.senses'),
+      dictionary: switch (entry.dictionary) {
+        final d? => CardDictionary(
+          senses: d.senses,
+          etymology: d.etymology,
+          source: d.source,
+        ),
+        null => null,
+      },
     );
   }
 
@@ -1059,7 +1089,7 @@ class _Merge {
       name: words.name,
       slotName: words.slotName,
       slots: forms.slots,
-      prompt: words.prompt,
+      prompt: words.prompt ?? kPatternPrompt,
       notes: words.notes,
       slotLabels: Map<String, String>.unmodifiable(<String, String>{
         for (final MapEntry(key: slot, value: label) in words.slots.entries)

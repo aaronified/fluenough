@@ -1,0 +1,30 @@
+"schema": 1
+"id": "tok-en-grammar-preverbs"
+"kind": "layer"
+"core": "tok-grammar-preverbs"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Preverbs before a verb"
+"license": "CC-BY-SA-4.0"
+"description": "A preverb is a word of its own that comes before a verb and tells what the verb does: wile to want, ken can, awen keep on, sona know how, lukin try, open start, pini finish. Kama before a describing word means becoming that thing. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Preverbs before a verb"
+  "slot_name": "preverb"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "wile": "want to (wile)"
+    "ken": "can (ken)"
+    "awen": "keep on (awen)"
+    "sona": "know how to (sona)"
+    "lukin": "try to (lukin)"
+    "open": "start to (open)"
+    "pini": "finish (pini)"
+    "kama": "become, begin to (kama)"
+  "entries":
+    "toki": "to talk"
+    "suli": "big"
+  "notes": "The verb keeps one form: mi wile toki is I want to talk, and mi kama suli is I am growing big. Kama before a describing word, as in kama suli, is becoming big."

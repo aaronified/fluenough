@@ -1,0 +1,129 @@
+schema: 1
+id: "as-en-quantities"
+kind: "layer"
+core: "as-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+license: "CC-BY-SA-4.0"
+description: "Counting things and amounts: a few, many, a pair, a piece, a litre. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2257":
+    native: "many; much; a lot"
+    notes:
+      "n1": "অনেক (ônek) is used with a plural or a mass noun, as in অনেক মানুহ (ônek mānuh), many people."
+    examples:
+      "অনেক মানুহ আহিছে।": { native: "Many people have come.", bases: { "মানুহ": "people", "আহিছে": "have come" } }
+      "মোৰ অনেক কিতাপ আছে।": { native: "I have many books.", bases: { "মোৰ": "my", "কিতাপ": "book", "আছে": "have" } }
+  "as-2258":
+    native: "one (a thing)"
+    notes:
+      "n1": "এটা (etā) means one: এটা কিতাপ (etā kitāp) is one book."
+    examples:
+      "মোক এটা কলম দিয়ক।": { native: "Give me one pen.", bases: { "কলম": "pen", "দিয়ক": "give, please", "মোক": "me" } }
+      "ঘৰটোত এটা কোঠা আছে।": { native: "The house has one room.", bases: { "ঘৰটোত": "in the house", "কোঠা": "room", "আছে": "has" } }
+  "as-2259":
+    native: "two (things)"
+    notes:
+      "n1": "দুটা (dutā) means two, as in দুটা কিতাপ (dutā kitāp), two books."
+    examples:
+      "মোৰ দুটা ভাই আছে।": { native: "I have two brothers.", bases: { "মোৰ": "my", "ভাই": "brother", "আছে": "have" } }
+      "দুটা চাহ দিয়ক।": { native: "Please give two teas.", bases: { "চাহ": "tea", "দিয়ক": "give, please" } }
+  "as-2260":
+    native: "three (things)"
+    notes:
+      "n1": "তিনিটা (tinitā) is the classifier for three things, as in তিনিটা কলম (tinitā kôlôm)."
+    examples:
+      "তিনিটা কলম ইয়াত।": { native: "Three pens are here.", bases: { "কলম": "pen" } }
+      "মই তিনিটা কিতাপ পঢ়িলোঁ।": { native: "I read three books.", bases: { "কিতাপ": "book", "পঢ়িলোঁ": "read", "মই": "I" } }
+  "as-2261":
+    native: "four (things)"
+    notes:
+      "n1": "চাৰিটা (sāritā) is the classifier for four things."
+    examples:
+      "চাৰিটা আপেল আছে।": { native: "There are four apples.", bases: { "আপেল": "apple", "আছে": "are" } }
+      "মোক চাৰিটা কলা দিয়ক।": { native: "Give me four bananas.", bases: { "কলা": "banana", "দিয়ক": "give, please", "মোক": "me" } }
+  "as-2262":
+    native: "five (things)"
+    notes:
+      "n1": "পাঁচটা (pām̐sôtā) is the classifier for five things."
+    examples:
+      "পাঁচটা কিতাপ টেবুলত।": { native: "Five books are on the table.", bases: { "কিতাপ": "book", "টেবুলত": "on the table" } }
+      "মই পাঁচটা বজাৰত কিনিলোঁ।": { native: "I bought five at the market.", bases: { "বজাৰত": "at the market", "কিনিলোঁ": "bought", "মই": "I" } }
+  "as-2263":
+    native: "whole; entire"
+    notes:
+      "n1": "গোটেই (gutei) comes before a noun: গোটেই দিন (gutei din), the whole day."
+    examples:
+      "গোটেই দিন বৰষুণ পৰিছে।": { native: "It has rained the whole day.", bases: { "দিন": "day", "বৰষুণ": "rain", "পৰিছে": "has fallen" } }
+      "গোটেই ঘৰটো পৰিষ্কাৰ।": { native: "The whole house is clean.", bases: { "ঘৰটো": "the house", "পৰিষ্কাৰ": "clean" } }
+  "as-2264":
+    native: "every; each"
+    notes:
+      "n1": "প্ৰত্যেক (prôtyek) comes before a noun: প্ৰত্যেক মানুহ (prôtyek mānuh), every person."
+    examples:
+      "প্ৰত্যেক মানুহ আহিছে।": { native: "Every person has come.", bases: { "মানুহ": "person", "আহিছে": "has come" } }
+      "প্ৰত্যেক দিনে মই যাওঁ।": { native: "I go every day.", bases: { "দিনে": "every day", "যাওঁ": "go", "মই": "I" } }
+  "as-2265":
+    native: "once; one time"
+    notes:
+      "n1": "এবাৰ (ebār) means one time, as in এবাৰ (ebār) আকৌ (ākôu), once again."
+    examples:
+      "মই এবাৰ যাওঁ।": { native: "I go once.", bases: { "যাওঁ": "go", "মই": "I" } }
+      "এবাৰ কওক।": { native: "Please say it once.", bases: { "কওক": "say, please" } }
+  "as-2266":
+    native: "twice; two times"
+    notes:
+      "n1": "দুবাৰ (dubār) means two times."
+    examples:
+      "মই দুবাৰ খালোঁ।": { native: "I ate twice.", bases: { "খালোঁ": "ate", "মই": "I" } }
+      "তেওঁ দুবাৰ আহিল।": { native: "He came twice.", bases: { "আহিল": "came", "তেওঁ": "he; she (polite)" } }
+  "as-2267":
+    native: "a few"
+    notes:
+      "n1": "কেইটামান (keitāmān) means some, a few, not many."
+    examples:
+      "কেইটামান কিতাপ ইয়াত।": { native: "A few books are here.", bases: { "কিতাপ": "book" } }
+      "মোৰ কেইটামান বন্ধু আছে।": { native: "I have a few friends.", bases: { "মোৰ": "my", "বন্ধু": "friend", "আছে": "have" } }
+  "as-2268":
+    native: "many; a lot of"
+    notes:
+      "n1": "বহুতো (bohutu) is a little less than অনেক (ônek); it is often used with people."
+    examples:
+      "বহুতো মানুহ ইয়াত আছে।": { native: "Many people are here.", bases: { "মানুহ": "people", "আছে": "are" } }
+      "বহুতো চাহ লাগে।": { native: "A lot of tea is needed.", bases: { "চাহ": "tea", "লাগে": "is needed" } }
+  "as-2269":
+    native: "a little; slight"
+    notes:
+      "n1": "সামান্য (sāmāny) means a small amount, as in সামান্য চাহ (sāmāny sāh), a little tea."
+    examples:
+      "মোক সামান্য পানী দিয়ক।": { native: "Give me a little water.", bases: { "পানী": "water", "দিয়ক": "give, please", "মোক": "me" } }
+      "ইয়াত সামান্য ভিৰ আছে।": { native: "There is a small crowd here.", bases: { "ভিৰ": "crowd", "আছে": "is" } }
+  "as-2270":
+    native: "gram"
+    notes:
+      "n1": "A gram is a small measure of weight: গ্ৰাম (grām)."
+    examples:
+      "পাঁচশ গ্ৰাম চাউল।": { native: "Five hundred grams of rice.", bases: { "চাউল": "rice" } }
+      "এক গ্ৰাম লবণ।": { native: "One gram of salt.", bases: { "এক": "one", "লবণ": "salt" } }
+  "as-2271":
+    native: "litre"
+    notes:
+      "n1": "A litre is a measure of liquid: লিটাৰ (litār)."
+    examples:
+      "এক লিটাৰ পানী।": { native: "One litre of water.", bases: { "এক": "one", "পানী": "water" } }
+      "দুধ এক লিটাৰ।": { native: "Milk is one litre.", bases: { "দুধ": "milk", "এক": "one" } }
+  "as-2272":
+    native: "pair"
+    notes:
+      "n1": "জোৰা (zurā) is used for things that come in two, as in জোৰা জোতা (zurā zutā), a pair of shoes."
+    examples:
+      "মোৰ এজোৰ জোতা নতুন।": { native: "My pair of shoes is new.", bases: { "মোৰ": "my", "এজোৰ": "a pair of", "জোতা": "shoes", "নতুন": "new" } }
+      "এজোৰ মোজা দিয়ক।": { native: "Please give a pair of socks.", bases: { "এজোৰ": "a pair of", "মোজা": "socks", "দিয়ক": "give, please" } }
+  "as-2273":
+    native: "piece"
+    notes:
+      "n1": "টুকুৰা (tukurā) means a piece of something, as in এটা টুকুৰা (etā tukurā), one piece."
+    examples:
+      "এটা টুকুৰা পিঠা দিয়ক।": { native: "Please give one piece of cake.", bases: { "এটা": "one", "পিঠা": "cake", "দিয়ক": "give, please" } }
+      "কাগজৰ টুকুৰা ইয়াত।": { native: "The piece of paper is here.", bases: { "কাগজৰ": "of the paper" } }

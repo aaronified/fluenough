@@ -7,21 +7,108 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-10-25
+
+### Added
+
+- Braille is drawn with shadow dots: every cell shows all six positions, raised dots solid and unraised ones as thin rings, so that a lone dot's column and row can be read on a phone. The app carries its own small braille font (OFL, built by `tools/make_braille_font.py`), used for braille on cards, notes, the typed answer and the braille keyboard, never the phone's font (#835).
+- Settings has a "Support with a cup of tea" row, which opens a page saying that a tip is simply a show of support, brings no preferential treatment or access to anything extra, and that reviewing decks and sending bug reports help just as much, if not more. "Open my UPI app" opens a `upi://pay` link to das.arani@pingpay with no amount, and says so if no app can open it; "Copy UPI ID" copies the ID for a phone with no UPI app. The release's manifest gets a query for `upi` links.
+- A language's sheet, seen when the language is picked and on Languages I'm learning, can suggest up to three other ways to learn it, in a card above the course with a short line and a "Visit" button that opens the site in the browser; the learner can hide a suggestion for good on Languages I'm learning. A language's suggestions are its `decks/<lang>/<lang>-resources.yaml`, listed in the index apart from the decks so the released app is unaffected, and Japanese suggests the game Wagotabi (#832).
+
+### Changed
+
+- Today's skill tiles are thinner, three to a row, each showing only the skill's icon, an arrow up or down when its pace is adjusted, and the number due, with the skill's name in small type under them; the words "More reviews" and "Fewer reviews" are gone, the arrow keeping them for a screen reader. A new Script tile, in a course with script decks, holds script reading and writing together (the script decks' Recognition and Write), and tapping it drills those; they no longer count in Recognition's and Write's tiles or pace.
+
+- Japanese's Chinese-character script is named "Kanji", and Mandarin's two are "Simplified Hanzi" and "Traditional Hanzi", wherever the app and the README name a script; they were "Han", "Simplified Han" and "Traditional Han". Only the names shown change, never the script codes.
+
+## [0.6.1] - 2026-10-24
+
+### Added
+
+- `tools/deck_similarity.py` lists, for a reviewer, the words of a language that sound alike (IPA one segment apart, only between very close sounds: short and long, unaspirated and aspirated, dental and retroflex), the same spelling with another sound, and spellings a nukta, or a chandrabindu and an anusvara, apart, marking each pair a `pair`, `homograph` or `lookalike` note already explains; it only warns and changes no deck (#692).
+- A deck of offensive words no native speaker has rated is reviewer-only: tagged `offensive` and not yet `rated`, it is in no learner's lessons, Today, review or deck list, with Adult content on or off, and only the language's Offensive words review lists it, where its words are rated; once its raters' median has set each band the deck gains the tag `rated` and follows the adult gate. The tag is an ordinary deck tag, so no app needs to be updated to read decks that use it, and the validator rejects `rated` on a deck not tagged `offensive` (#630).
+- The Offensive words review lists a deck of offensive words no native speaker has rated only when Adult content is on, as it lists a rated one; with it off, the unrated deck is not there either (#630).
+- `tools/offensive_alikes.py` lists the words of a language that sound (IPA, at most one segment apart) or look (script or ISO 15919-based reading, at most one letter or mark apart) like one of its offensive words, for a reviewer to keep or reject; the deck validator warns of a close pair no `pair` note (sound) or `lookalike` or `homograph` note (writing) explains (#629).
+- A reviewer who rejects a sound-alike or look-alike pair of an offensive word records it on the card with the new core-card keys `not_sounds_like` and `not_looks_like`, a list of the offensive words' ids; the app reads the keys, `tools/offensive_alikes.py` lists the pair as explained and the validator no longer warns of it. Released apps reject a card key they do not know, so no deck uses the keys until a release carrying this one is out (#808).
+- The README states the app's main features (FSRS scheduling, the Indian courses, the Progress stats, several scripts, Hear, Say, Read and Write, community reviews), and its list of languages, with their scripts and the highest level written, is filled from `decks/index.json` by `tools/readme_languages.py` each time the decks change.
+- The font check (#611): a course asks, once for each script it is read in, whether you can read a sample line, and downloads the script's font only if you say it shows boxes, then shows the sample again in it; Settings, Look and language, Script fonts, lists each script with where it stands and checks again. Fonts a course brought before stay. Noto Sans SC (Chinese), JP (Japanese kana and kanji) and KR (Korean) join the fonts a course can download, 17.8, 9.6 and 10.4 MB.
+- Noto Sans TC (Traditional Chinese, 11.9 MB) joins the fonts a course can download, and Japanese's kanji (`han`) draw in Noto Sans JP, 9.6 MB, as its kana do; the font check asks about each script with a sample line (#611).
+- The transcriber reads Japanese kana (Hepburn and IPA), Korean Hangul (Revised Romanization with its sound changes between syllables), Mandarin (Wiktionary's pinyin as the hint) and Toki Pona (IPA); the Wiktionary importer uses them, takes only a Mandarin IPA for Chinese, and leaves Maithili and the other Devanagari languages with their own rules unread instead of reading them by Hindi's (#612). Tamil, Malayalam, Odia, Gurmukhi, Urdu and the sign tables are not done.
+- The deck validator rejects a unit whose planned theme comes with a grammar list beside `planned`, as the app already does, and a planned grammar unit may give its grammar beside `planned` (#622).
+- A path may set its own words per level with `levels:` (for example `{ A1: 120, A2: 60, B1: 80 }`), which the deck validator and the app both read; a planned theme unit may plan 0 words, and phrases count toward no level's words (#615).
+- Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under the mastery star; tapping it opens a popup with each language's hours (#227).
+
+### Changed
+
+- A grammar pattern's `prompt` is optional and retired: without one, the app asks a cell as the lemma, its meaning and the slot, "hablar (to speak) — nosotros", and a deck that gives one is read as written; the deck validator accepts a pattern or a layer without one and warns of one given. Shipped decks keep theirs until the apps that require it are out of use (#522, ADR-0039).
+- A word or rule is known as Progress counts known, in the unit page and the unlock gate too: your last review in each skill was right and the app gave you at least 85% recall then, in place of 9 of your last 10 answers right; a word reviewed once is not known yet (#416).
+- Progress shows three tiles, Words, Rules and Sentences, in place of the Words tile, counted against what is taught so far with words counted by base word; the Level tile sits alone below them. The end of a lesson says how many words and rules it made known and how many sentences it opened (#418).
+- A rule is taught on its own card before its first question: its name, what it means and its forms on words you know. A grammar question asks you to choose among the forms of one word first, then to type; after an answer the word's forms in the rule are shown with the one asked marked. A rule's table on the unit page shows only words you know or have been asked, each form marked known, learning or not asked yet (#417).
+- A lesson takes the next items in the path's order instead of three of each difficulty, fewer new ones while the words and rules you were taught are not yet known, and a sentence waits until every word and rule in it is known. A rules table's cell is taught only for a word you know. The unit page counts sentences open by that rule, lists the phrasebook on its own, and greys a closed sentence with what it waits for; a tap says why (#416).
+- The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
+- Languages you know lists the living and constructed languages the course paths teach: French, Spanish, German, Mandarin Chinese, Japanese, Korean, Esperanto, Toki Pona, Lojban and Interslavic, in new families (Romance, Sinitic, Koreanic, Japonic, Constructed) with names for the Han (simplified and traditional), Kana, Hangul and Cyrillic scripts. Ancient languages nobody speaks (Sumerian, Egyptian, Mycenaean Greek, Proto-Indo-European) stay off the list (#613).
+- The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
+- With Adult content off (the default), a deck of offensive words and any rude card (tagged or registered `offensive`) are hidden everywhere: not listed, not taught in lessons, and not in Today, reviews or practice; they come back when Adult content is turned on. The warning on a word that sounds like a rude one still shows, without the rude word (#628).
+
+### Fixed
+
+- The deck validator reads an apostrophe inside an Assamese word in a note, as in ক'লা or ম'হ, as part of the word, so one reading beside it is enough; a quote around a word still ends it.
+- A typed answer no longer loses transliteration letters: pinyin's caron vowels (ǎ ǐ ǒ ǔ ǚ), Egyptian ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ (typed 3, a, kh, ch, th, dh, q, so that ḫrw and hrw stay different words), Proto-Indo-European ḱ ǵ ḗ ṓ, subscript digits (du₃, h₂) and ʰ ʷ are folded to what a keyboard types, so `lu` is right for lǔ and `h2owis` for h₂ówis (#616). Arabic-script, Lojban and Mycenaean typing are not done.
+- The language bar is expanded at launch, not only after the first drag; its glyphs sit evenly a detent apart on both sides of the expanded name; the further a glyph is from the centre the smaller and fainter it is, at rest as well as while dragged; and nothing is drawn under the bug button (#774).
+
+## [0.6.0] - 2026-10-23
+
+### Added
+
+- After placement, choose per course how the placed words are reviewed: Set in stone (kept out of Today and counted as known; from a deck page the words can still be revised or practised, without writing reviews), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews. A placement taken before this release has no saved placement time, so the choice does not apply to it (#761).
+- Progress shows the words mastered, the course's level (bronze, silver or gold) with its start date, a 7-day calendar with the streak as a line, and a six-skill mastery star that opens charts over time, in place of the stat tiles and the 12-week grid (#678).
+- Today has one button for the day (#521, #485): a ring that fills toward your minutes a day, with "12 of 15 min" under it and the split of reviews and new words, which mixes both in one session, the reviews you are most likely to have forgotten first; when the minutes are done it reads "Done for today", with a smaller "Keep going" for five more. When reviews have piled up beyond three days of your minutes, Today says so with how long they take and how soon you will catch up, and a "+ 5 min" button adds five minutes each tap (a long press takes five away). Quick revision is now a separate minus, start and plus: 5 minutes to begin with, in steps of 5, reviewing only. Each language you are learning has a Minutes a day setting in Languages I'm learning, 15 to begin with, from 5 to 60. A Situations card for cheatsheets of everyday phrases (#724) waits below, marked as incoming.
+- A lesson asks each skill as the first question type the card's data allows (the registry, not a switch on difficulty), and reads a card's single-base siblings, so a card with sibling forms, or a pattern cell with siblings, is also asked its grammar skills (form questions); lessons of cards without siblings are unchanged (#522).
+- `letter` and `digit` are parts of speech of a card, and a card may be marked `hears: form`; Hear asks for the form of such a card, and of a generated number, by the card's own data, not by whether its deck is on the alphabet list (#522, step 7).
+- `modes` on a card is now an opt-out: the skills it is excluded from, so a card with none is asked every skill its data allows, including the grammar skills where it has single-base siblings; `tools/convert_modes.py` converts the shipped lists, merged with the release that reads them this way (#522, step 6).
+- A generated number is an ordinary card whose data says it is practice only (never logged) and heard as its form, no longer a special class; reading passages are unchanged (#522, step 9a).
+- Rearranging is eligible by the card's data (three or more words in the target, or two in a phrase) through the question-type registry, which never rearranges a reading question, with the same questions as before (#522, step 5).
+- The two grammar question types are now eligible by whether the card's word has other forms (`Card.hasOtherForms`) or has sibling cards (`formSiblings`: each has exactly one base, the same card), and a rules cell's lesson questions come from the registry, with the same questions as before (#522, step 4).
+- Wrong options in a choice question are now taken first from cards that share the answer's word family, part of speech or tags (`lib/core/scheduling/distractors.dart`), with the same pool as before (#522, step 3).
+- A question-type registry in `lib/core/scheduling/question_type.dart`: how a review asks each item is now chosen by one list of types, each with its skill and when it is eligible, with the same questions as before (#522, step 2).
+- Progress: Weakest tags has an "All tags ›" button to a page of every tag with its bar and share remembered in the chosen range, and a Practise button on each: a random set of up to 20 taught words with that tag, in the language chosen at the top, with every answer recorded (#499).
+- The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
+- A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
+### Changed
+
+- Progress: Weakest tags and All tags rank by what you know now, not by the share of right answers all time: a tag's weakness is the share of its taught words and forms that are not known now (the star's rule), ties going to the lower recall now, then the name; the bars show the share known. The Over time page ends with a How you learn entry that opens that page (#678).
+- The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
+- The four tabs slide: the pages follow the finger and settle on a tab with a spring (stiffness 400, damping ratio 0.75, no bounce on a slow release), a tap on the bar slides in 0.3 s, a touch catches the pages mid-way, and the pages rubber-band at Today and Settings (#683).
+- The deck validator ends a failing run with an `Errors:` section repeating every error (cross-file ones, and each file's with its file), so CI's log shows them at its tail; a passing run is unchanged.
+- A word is taught on one screen with no scrolling (#691): the word large with its reading, speaker and IPA, the picture beside it, the meaning across the full width, a note and one warning. Tap the IPA for each sound of the word, from the IPA course, with its practice; tap the meaning for the dictionary, with its etymology and examples. There is no Continue button: swipe the card, which follows your finger and settles on a spring, or tap the chevron that shows while you touch the screen.
+- A deck's card can say which warning its teach card shows, with a `warning` key (#691): the id of one of its sound-alike, homograph or look-alike notes, "senses" for its other meanings, or "none". Without it the teach card keeps the order it had; the word sheet still shows every warning. The validator checks the key, and `tools/pick_warning.py` picks it for existing decks (a rude word only when it is very close and very rude).
+- A deck's page lists every word with its meaning and where you stand with it, and its tag chips filter the words as you tap them. At the foot, Practice asks which skills and drills the words in view in them, due or not, and + Learn, with a badge counting the words in view not taught yet, teaches them; once every word of the deck is taught it becomes Relearn, which walks through the words in view (all of them with no filter, only the filtered ones with one) on the teach card, swiping or with the chevrons, and writes nothing (#694). The per-skill buttons and Inspect are gone: a word's sheet now shows everything its card has, unfolded, including how it is said symbol by symbol, its dictionary entry, every example and warning with its title, and how hard you have found it in each skill (#693).
+- Words you know come up a few at a time (#680). A word is known when FSRS gave it an 85% or better chance of being remembered at its last review. When a deck's known words come due, Today asks two of them a day, the ones you reviewed longest ago; once they are right, the deck's other due known words wait for another day, so each has its turn within a few days and none is left out. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
+- A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
+
+### Fixed
+
+- Perso-Arabic letters, such as the three dots of پ, no longer overlap the reading under them in the word sheet and sit centred in their rows: a script that runs right to left (Hindustani's Perso-Arabic as well as Urdu) gets the tall line height with its extra space shared evenly above and below, wherever it is drawn (#762).
+- CI: the deck tools' tests no longer fail on every deck pull request for a stale `decks/index.json`; the test that validates the real decks skips the index check, which is regenerated on main after merge and still tested on its own.
+- A read-aloud question in the placement check no longer ends the moment the phone's recogniser hears nothing: it says it did not hear, and lets the learner speak again or say they don't know, as the speaking drill does.
+- A one-word label on a number tile, such as "Remembered" on Progress, shrinks to fit at large text instead of breaking mid-word (#492).
+- The session result counts the time spent answering, each answer capped at 60 seconds, instead of the time the app was open, so a short lesson no longer reads 31 minutes (#486, minutes only; the card count is still open).
+
 ## [0.5.4] - 2026-10-21
+
+0.5.3 was never published: its build failed, so its changes ship here.
 
 ### Added
 
 - The Decks tab search finds cards (#527): a word, its spelling in another script, its reading or its meaning, ignoring case and accents, one row for each card, listed after the units and decks. Tapping a row opens the word.
 - The deck reader accepts the `homograph` and `lookalike` note kinds and a layer's `dictionary` entry (#692). Nothing shows them yet.
 
-## [0.5.3] - 2026-10-20
-
 ### Changed
 
 - A sideways swipe on Home, Decks, Progress or Settings moves to the next or previous tab, stopping at the ends (#683). An upright drag still scrolls the page, and the language bar keeps its own swipe.
 - The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
-
 - Find my level credits what it found (#677). A script you read is credited Read and Write on Progress; one it stopped part-way in is credited Read for its letters and joined letters only. The cards of the decks it placed are recorded as Easy answers today, as if mastered, so they come up rarely. A card you have already reviewed keeps its own.
 
 ### Fixed

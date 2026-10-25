@@ -1,0 +1,157 @@
+schema: 1
+id: "tok-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0008"
+    target: "toki!"
+    ipa: "ˈtoki"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "toki", ref: "tok-0001" }
+  - id: "tok-0009"
+    target: "mi pona."
+    ipa: "mi ˈpona"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "pona", ref: "tok-0002" }
+  - id: "tok-0010"
+    target: "sina pona ala pona?"
+    ipa: "ˈsina ˈpona ˈala ˈpona"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "pona", ref: "tok-0002" }
+      - { word: "ala", ref: "tok-0005" }
+  - id: "tok-0011"
+    target: "nimi mi li Ana."
+    ipa: "ˈnimi mi li ˈana"
+    pos: "phrase"
+    tags: ["introduce"]
+    phrasebook: true
+    bases:
+      - { word: "nimi", ref: "tok-0006" }
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "Ana", base: "Ana" }
+  - id: "tok-0012"
+    target: "nimi sina li seme?"
+    ipa: "ˈnimi ˈsina li ˈseme"
+    pos: "phrase"
+    tags: ["introduce"]
+    phrasebook: true
+    bases:
+      - { word: "nimi", ref: "tok-0006" }
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "seme", ref: "tok-0044" }
+  - id: "tok-0013"
+    target: "mi toki pona."
+    ipa: "mi ˈtoki ˈpona"
+    pos: "phrase"
+    tags: ["language"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "toki", ref: "tok-0001" }
+      - { word: "pona", ref: "tok-0002" }
+  - id: "tok-0014"
+    target: "toki pona li pona."
+    ipa: "ˈtoki ˈpona li ˈpona"
+    pos: "phrase"
+    tags: ["language"]
+    phrasebook: true
+    bases:
+      - { word: "toki", ref: "tok-0001" }
+      - { word: "pona", ref: "tok-0002" }
+      - { word: "li", ref: "tok-0101" }
+  - id: "tok-0015"
+    target: "mi sona."
+    ipa: "mi ˈsona"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "sona", ref: "tok-0007" }
+  - id: "tok-0016"
+    target: "mi sona ala."
+    ipa: "mi ˈsona ˈala"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "sona", ref: "tok-0007" }
+      - { word: "ala", ref: "tok-0005" }
+  - id: "tok-0017"
+    target: "mi sona ala e ni."
+    ipa: "mi ˈsona ˈala e ni"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "sona", ref: "tok-0007" }
+      - { word: "ala", ref: "tok-0005" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "ni", ref: "tok-0063" }
+  - id: "tok-0018"
+    target: "ni li seme?"
+    ipa: "ni li ˈseme"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases:
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "seme", ref: "tok-0044" }
+  - id: "tok-0019"
+    target: "mi wile e telo."
+    ipa: "mi ˈwile e ˈtelo"
+    pos: "phrase"
+    tags: ["needs"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "telo", ref: "tok-0192" }
+  - id: "tok-0020"
+    target: "mi wile moku."
+    ipa: "mi ˈwile ˈmoku"
+    pos: "phrase"
+    tags: ["needs"]
+    phrasebook: true
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "moku", ref: "tok-0080" }
+  - id: "tok-0021"
+    target: "awen pona!"
+    ipa: "ˈawen ˈpona"
+    pos: "phrase"
+    tags: ["leaving"]
+    phrasebook: true
+    bases:
+      - { word: "awen", ref: "tok-0299" }
+      - { word: "pona", ref: "tok-0002" }
+  - id: "tok-0022"
+    target: "tawa pona!"
+    ipa: "ˈtawa ˈpona"
+    pos: "phrase"
+    tags: ["leaving"]
+    phrasebook: true
+    bases:
+      - { word: "tawa", ref: "tok-0088" }
+      - { word: "pona", ref: "tok-0002" }

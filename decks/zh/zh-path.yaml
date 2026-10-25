@@ -6,9 +6,10 @@
 # This is also Mandarin's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, planned, with its size in words,
 # its grammar topics, the three milestones, and for each unit its listening
-# and reading passages. Only the first unit is written (the phrasebook and
-# the first words); every other unit is planned: the course teaches it as
-# "Coming" until a deck is written. A
+# and reading passages. The units that list "decks" are written
+# (from the phrasebook and the first words to the first grammar units); every
+# unit marked "planned" is not: the course teaches it as "Coming" until a
+# deck is written. A
 # theme named here that decks/themes.yaml does not list yet is added to it
 # with its first deck.
 #
@@ -115,9 +116,13 @@ regions:
   - id: "singapore-malaysia"
     name: { "en": "Singapore and Malaysia (Singapore, Kuala Lumpur, Penang, Johor Bahru)" }
 # The decks that need the script: a learner who learns without it skips
-# them. No script deck is written yet; the planned script units (strokes
-# and radicals, and the seven character sets) join this list as each is
-# written, so it is left out until then.
+# them. The planned script units (strokes and radicals, and the seven
+# character sets) join this list as each is written.
+alphabet:
+  - "zh-strokes-radicals"
+  - "zh-reading-strokes-radicals"
+  - "zh-characters-1"
+  - "zh-reading-characters-1"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -127,42 +132,51 @@ units:
   - decks: ["zh-phrasebook", "zh-first-words", "*"]
     words: 12
   # 2. The first word units, read in pinyin: the tones first.
-  - planned: { id: "zh-tones", theme: "tones", words: 16 }
+  - decks: ["zh-tones", "zh-tones-sentences", "zh-reading-tones", "*"]
+    words: 16
     listening_passages:
       - { id: "four-tones", text: { "en": "One syllable in the four tones and the neutral tone: ma, mother, hemp, horse, to scold" } }
     reading_passages:
       - { id: "tone-pairs-list", text: { "en": "A list of word pairs in pinyin told apart only by their tone marks" } }
-  - planned: { id: "zh-pinyin", grammar: ["pinyin-spelling", "tone-sandhi"] }
+  - decks: ["zh-pinyin", "zh-pinyin-sentences", "zh-reading-pinyin", "zh-grammar-pinyin-spelling", "zh-grammar-tone-sandhi"]
+    words: 8
+    grammar: ["pinyin-spelling", "tone-sandhi"]
     listening_passages:
       - { id: "ni-hao-is-ni-hao", text: { "en": "Hearing two third tones meet: ni hao said as ni hao with a rising first syllable, and yi and bu changing their tone" } }
     reading_passages:
       - { id: "pinyin-spelling-chart", text: { "en": "A chart of pinyin spellings: where the tone mark sits, yu and u after j, q and x, and the shortened iu, ui and un" } }
-  - planned: { id: "zh-sound-differences", theme: "sound-differences", words: 16 }
+  - decks: ["zh-sound-differences", "zh-sound-differences-sentences", "zh-reading-sound-differences", "*"]
+    words: 16
     listening_passages:
       - { id: "zh-ch-sh-and-j-q-x", text: { "en": "Pairs of words told apart by sounds English lacks: zhi and ji, chi and qi, shi and xi, lu and lü" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs in pinyin that differ by one sound" } }
-  - planned: { id: "zh-questions", theme: "questions", words: 15 }
+  - decks: ["zh-questions", "zh-questions-sentences", "zh-reading-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
       - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
-  - planned: { id: "zh-addressing", theme: "addressing", words: 20 }
+  - decks: ["zh-addressing", "zh-addressing-sentences", "zh-reading-addressing", "*"]
+    words: 20
     listening_passages:
       - { id: "teacher-and-classmate", text: { "en": "Meeting a teacher and a classmate: surnames, laoshi, xiansheng and nin" } }
     reading_passages:
       - { id: "name-cards", text: { "en": "Business cards exchanged at a meeting, surname first" } }
-  - planned: { id: "zh-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["zh-pronouns", "zh-pronouns-sentences", "zh-reading-pronouns", "*"]
+    words: 10
     listening_passages:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, you, he, she, we" } }
     reading_passages:
       - { id: "class-photo-caption", text: { "en": "A caption under a class photo naming each person" } }
-  - planned: { id: "zh-family", theme: "family", words: 35 }
+  - decks: ["zh-family", "zh-family-sentences", "zh-reading-family", "*"]
+    words: 14
     listening_passages:
       - { id: "my-family", text: { "en": "Talking about your family, with the separate words for older and younger brothers and sisters" } }
     reading_passages:
       - { id: "family-introduction", text: { "en": "A short self-introduction naming the family" } }
-  - planned: { id: "zh-numbers-1-20", theme: "numbers-1-20", words: 25 }
+  - decks: ["zh-numbers-1-20", "zh-numbers-1-20-sentences", "zh-reading-numbers", "*"]
+    words: 9
     listening_passages:
       - { id: "counting-on-fingers", text: { "en": "Counting from one to twenty, and the two words for two: er and liang" } }
     reading_passages:
@@ -171,54 +185,64 @@ units:
   # who learns without it). Strokes, stroke order and the common radicals
   # first, then the first set of characters: numbers, people and the
   # simplest pictures.
-  - planned: { id: "zh-strokes-radicals", grammar: "script-strokes-radicals", words: 0 }
+  - decks: ["zh-strokes-radicals", "zh-reading-strokes-radicals"]
+    words: 10
     listening_passages:
       - { id: "naming-the-strokes", text: { "en": "A teacher names the basic strokes and the order they are written in, while writing ren, person, and kou, mouth" } }
     reading_passages:
       - { id: "radical-chart", text: { "en": "A chart of common radicals with their meanings: water, hand, mouth, person, wood" } }
-  - planned: { id: "zh-characters-1", grammar: "script-characters-1", words: 0 }
+  - decks: ["zh-characters-1", "zh-reading-characters-1"]
+    words: 10
     listening_passages:
       - { id: "one-two-three", text: { "en": "Hearing the words whose characters are taught: the numbers, person, big, small, I, you" } }
     reading_passages:
       - { id: "number-signs", text: { "en": "Simple signs in characters: floor numbers, prices, big and small sizes" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "zh-about-me", theme: "about-me", words: 20 }
+  - decks: ["zh-about-me", "zh-about-me-sentences", "zh-reading-about-me", "*"]
+    words: 20
     listening_passages:
       - { id: "self-introduction", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
       - { id: "registration-card", text: { "en": "A registration card: name, age, country, job" } }
-  - planned: { id: "zh-everyday-verbs", theme: "everyday-verbs", words: 35 }
+  - decks: ["zh-everyday-verbs", "zh-everyday-verbs-sentences", "zh-reading-everyday-verbs", "*"]
+    words: 35
     listening_passages:
       - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "note-on-the-table", text: { "en": "A note on the table: what to eat, what to drink, when to come home" } }
-  - planned: { id: "zh-adverbs", theme: "adverbs", words: 30 }
+  - decks: ["zh-adverbs", "zh-adverbs-sentences", "zh-reading-adverbs", "*"]
+    words: 30
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how much: always, also, all, very, too" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "zh-quantities", theme: "quantities", words: 25 }
+  - decks: ["zh-quantities", "zh-quantities-sentences", "zh-reading-quantities", "*"]
+    words: 25
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery: ji and duoshao" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
-  - planned: { id: "zh-describing", theme: "describing", words: 35 }
+  - decks: ["zh-describing", "zh-describing-sentences", "zh-reading-describing", "*"]
+    words: 36
     listening_passages:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
       - { id: "postcard-from-hangzhou", text: { "en": "A short postcard: the weather, the food, the people" } }
-  - planned: { id: "zh-time", theme: "time", words: 25 }
+  - decks: ["zh-time", "zh-time-sentences", "zh-reading-time", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "zh-location", theme: "location", words: 15 }
+  - decks: ["zh-location", "zh-location-sentences", "zh-reading-location", "*"]
+    words: 18
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "zh-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["zh-more-verbs", "zh-more-verbs-sentences", "zh-reading-more-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
@@ -226,64 +250,85 @@ units:
   # 5. Rules as forms, practised on the words known: shi and bu, the
   # questions, word order, de, you and zai, adjectives with hen, and the
   # first measure words.
-  - planned: { id: "zh-grammar-shi", grammar: ["shi", "bu-negation"] }
+  - decks: ["zh-grammar-shi", "zh-grammar-bu-negation", "zh-grammar-shi-sentences"]
+    words: 0
+    grammar: ["shi", "bu-negation"]
     listening_passages:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A profile card: what each person is and is not" } }
-  - planned: { id: "zh-grammar-questions", grammar: ["question-ma", "question-words", "a-not-a"] }
+  - decks: ["zh-grammar-question-ma", "zh-grammar-question-words", "zh-grammar-a-not-a", "zh-grammar-questions-sentences"]
+    words: 0
+    grammar: ["question-ma", "question-words", "a-not-a"]
     listening_passages:
       - { id: "is-it-yours", text: { "en": "Asking with ma, with a question word, and with the verb said twice: shi bu shi" } }
     reading_passages:
       - { id: "quiz-card", text: { "en": "A short quiz of questions and answers" } }
-  - planned: { id: "zh-grammar-word-order", grammar: ["svo", "time-place-order"] }
+  - decks: ["zh-grammar-svo", "zh-grammar-time-place-order", "zh-grammar-word-order-sentences"]
+    words: 0
+    grammar: ["svo", "time-place-order"]
     listening_passages:
       - { id: "when-and-where", text: { "en": "Saying when and where you do things, both before the verb: I eat at home at seven" } }
     reading_passages:
       - { id: "week-plan", text: { "en": "A week's plan: who does what, when and where" } }
-  - planned: { id: "zh-grammar-de", grammar: ["de-possessive", "de-attributive"] }
+  - decks: ["zh-grammar-de-possessive", "zh-grammar-de-attributive", "zh-grammar-de-sentences"]
+    words: 0
+    grammar: ["de-possessive", "de-attributive"]
     listening_passages:
       - { id: "whose-bag", text: { "en": "Asking whose things these are: my book, the teacher's bag, the red one" } }
     reading_passages:
       - { id: "lost-and-found", text: { "en": "A lost-and-found board naming whose each thing is" } }
-  - planned: { id: "zh-grammar-you-zai", grammar: ["you", "mei-you", "zai-location"] }
+  - decks: ["zh-grammar-you", "zh-grammar-mei-you", "zh-grammar-zai-location", "zh-grammar-you-zai-sentences"]
+    words: 0
+    grammar: ["you", "mei-you", "zai-location"]
     listening_passages:
       - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and where it is" } }
     reading_passages:
       - { id: "floor-guide", text: { "en": "A floor guide in a department store: what is on each floor" } }
-  - planned: { id: "zh-grammar-adjectives", grammar: ["hen-adjective", "adjective-predicate"] }
+  - decks: ["zh-grammar-hen-adjective", "zh-grammar-adjective-predicate", "zh-grammar-adjectives-sentences"]
+    words: 0
+    grammar: ["hen-adjective", "adjective-predicate"]
     listening_passages:
       - { id: "a-quiet-town", text: { "en": "Describing a town with hen and no verb for is: quiet, busy, not expensive" } }
     reading_passages:
       - { id: "hotel-review", text: { "en": "A short hotel review: the room, the staff, the food" } }
-  - planned: { id: "zh-grammar-measure-words", grammar: ["measure-ge", "number-measure-noun", "zhe-na-measure"] }
+  - decks: ["zh-grammar-measure-ge", "zh-grammar-number-measure-noun", "zh-grammar-zhe-na-measure", "zh-grammar-measure-sentences"]
+    words: 0
+    grammar: ["measure-ge", "number-measure-noun", "zhe-na-measure"]
     listening_passages:
       - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop with ge: this one, that one, which one, three of them" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels in a shop window counting its goods" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "zh-work", theme: "work", words: 35 }
+  - decks: ["zh-work", "zh-work-sentences", "zh-reading-work", "*"]
+    words: 35
     listening_passages:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "job-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "zh-numbers-big", theme: "numbers-big", words: 35 }
+  - decks: ["zh-numbers-big", "zh-numbers-big-sentences", "zh-reading-numbers-big", "*"]
+    words: 35
     listening_passages:
       - { id: "prices-and-years", text: { "en": "Hearing prices in yuan, years and phone numbers, with wan for ten thousand" } }
     reading_passages:
       - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
-  - planned: { id: "zh-grammar-money-dates", grammar: ["money-kuai-mao", "dates", "clock-time"] }
+  - decks: ["zh-grammar-money-kuai-mao", "zh-grammar-dates", "zh-grammar-clock-time", "zh-grammar-money-dates-sentences"]
+    words: 0
+    grammar: ["money-kuai-mao", "dates", "clock-time"]
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Paying at a stall: kuai and mao, and the date on the receipt" } }
     reading_passages:
       - { id: "bus-ticket", text: { "en": "A bus ticket with its date, time and fare" } }
-  - planned: { id: "zh-market", theme: "market", words: 40 }
+  - decks: ["zh-market", "zh-market-sentences", "zh-reading-market", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-wet-market", text: { "en": "Buying fruit and vegetables by the jin at a market stall" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "zh-grammar-measure-words-2", grammar: "measure-words-common" }
+  - decks: ["zh-grammar-measure-words-common", "zh-grammar-measure-common-sentences"]
+    words: 0
+    grammar: ["measure-words-common"]
     listening_passages:
       - { id: "two-books-three-cups", text: { "en": "Ordering and buying with the right measure word: a cup of tea, two books, a sheet of paper" } }
     reading_passages:

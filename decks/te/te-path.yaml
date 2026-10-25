@@ -11,6 +11,10 @@
 # and are one number for every native language. A theme named here that
 # decks/themes.yaml does not list yet is added to it with its first deck.
 #
+# Tense order (the tense, number and gender audit, 2026-10-23): the
+# imperatives come after the eating-out theme, the first unit whose words
+# they need (review, 2026-10-23); the perfect and the past continuous come
+# after past-more.
 # The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
 # and 2026-10-17: "build the path files for all present languages via an
 # opus agent, as per our current path design"):
@@ -266,6 +270,20 @@ units:
   - decks: ["te-grammar-past-more"]
     words: 0
     grammar: ["past-more"]
+  - decks: ["te-grammar-perfect"]
+    words: 0
+    grammar: ["perfect"]
+    listening_passages:
+      - { id: "a-friend-has-done", text: { "en": "A friend says what they have already done this week" } }
+    reading_passages:
+      - { id: "to-do-ticks", text: { "en": "A to-do list with the finished items ticked" } }
+  - decks: ["te-grammar-past-continuous"]
+    words: 0
+    grammar: ["past-continuous"]
+    listening_passages:
+      - { id: "what-was-going-on", text: { "en": "Saying what was going on when the bell rang" } }
+    reading_passages:
+      - { id: "witness-note", text: { "en": "A short note from a witness of a busy street" } }
   - decks: ["te-shopping", "*"]
     words: 55
     listening_passages:
@@ -283,6 +301,13 @@ units:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
   - decks: ["te-eating-out", "*"]
     words: 9
+  - decks: ["te-grammar-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and not to do" } }
   - decks: ["te-restaurant", "*"]
     words: 7
   - decks: ["te-dishes", "*"]
@@ -318,13 +343,6 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - decks: ["te-grammar-imperatives"]
-    words: 0
-    grammar: ["imperatives"]
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and not to do" } }
   - decks: ["te-chores", "*"]
     words: 45
     listening_passages:
@@ -411,6 +429,10 @@ units:
       - { id: "a-letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
   - decks: ["te-slang"]
     words: 10
+  # Offensive words: insults, swears and slurs, for adults. Unrated, so no
+  # learner sees the deck until native speakers have rated each word (#630).
+  - decks: ["te-offensive"]
+    words: 12
   - decks: ["te-grammar-relative-participle"]
     words: 0
     grammar: ["relative-past", "relative-nonpast"]

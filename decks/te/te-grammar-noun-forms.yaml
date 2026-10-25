@@ -10,7 +10,9 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["noun"]
-    except: ["te-0179", "te-0180", "te-0310", "te-0455", "te-0489", "te-0490", "te-0491", "te-0512", "te-0513", "te-0514", "te-0515", "te-0516", "te-0517", "te-0518", "te-0519", "te-0520", "te-0521", "te-0524", "te-0529", "te-0531"]
+    # te-6557 to te-6569 are the unrated offensive words (te-offensive): a rules
+    # cell carries no register, so a row would show them to every learner.
+    except: ["te-0179", "te-0180", "te-0310", "te-0455", "te-0489", "te-0490", "te-0491", "te-0512", "te-0513", "te-0514", "te-0515", "te-0516", "te-0517", "te-0518", "te-0519", "te-0520", "te-0521", "te-0524", "te-0529", "te-0531", "te-6557", "te-6558", "te-6559", "te-6560", "te-6561", "te-6562", "te-6564", "te-6565", "te-6566", "te-6567", "te-6568", "te-6569"]
   slots: ["plural", "lo", "ki", "to", "nunci", "ni"]
   rows:
     - word: "te-0181"

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
@@ -67,7 +68,7 @@ class AnswerField extends StatelessWidget {
     final scheme = theme.colorScheme;
     final settings = AppScope.of(context).settings;
     final script = !latin && !digits;
-    final rtl = language.rtl && script;
+    final rtl = language.rightToLeft && script;
     final keyboard = script ? language.keyboard : null;
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppRadii.tile),
@@ -113,9 +114,14 @@ class AnswerField extends StatelessWidget {
                   ? TextInputType.number
                   : null,
               style: TextStyle(
+                // Braille cells are drawn with their shadow dots (#835).
+                fontFamily: keyboard == ScriptKeyboard.braille
+                    ? brailleFontFamily
+                    : null,
                 fontSize: script ? 22 * cardTextScaleOf(context, settings) : 22,
                 color: scheme.onSurface,
                 height: rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
+                leadingDistribution: rtl ? TextLeadingDistribution.even : null,
               ),
               decoration: InputDecoration(
                 filled: true,

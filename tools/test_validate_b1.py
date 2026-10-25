@@ -16,10 +16,12 @@ from __future__ import annotations
 
 import contextlib
 import io
+import os
 import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import yaml
@@ -288,7 +290,8 @@ class CoreHeader(B1Case):
     def _the_names_of_the_files_beside_the_decks_are_reserved(self) -> None:
         names = {"facts": "facts file", "numbers": "number rules",
                  "romanisation": "romanisation file", "script": "script guide",
-                 "sounds": "sounds file", "path": "path"}
+                 "sounds": "sounds file", "path": "path",
+                 "resources": "resources file"}
         for name, what in names.items():
             with self.subTest(name):
                 rel = f"zz-{name}.yaml"
@@ -1036,6 +1039,11 @@ class Phrasebook(B1Case):
         self.assertError(EXTRA, "ref zz-9101", "a ref cannot give 'phrasebook': it belongs "
                                                "to the card itself, where it is written")
 
+    def _a_ref_cannot_give_picture_ask(self) -> None:
+        self.put(EXTRA, single(cards=[{"ref": "zz-9101", "picture_ask": True}]))
+        self.assertError(EXTRA, "ref zz-9101", "a ref cannot give 'picture_ask': it belongs "
+                                               "to the card itself, where it is written")
+
     def _a_course_has_15_to_25_phrasebook_cards(self) -> None:
         for n, ok in ((14, False), (15, True), (25, True), (26, False)):
             with self.subTest(n=n):
@@ -1176,6 +1184,7 @@ class Phrasebook(B1Case):
         cases = (
             self._phrasebook_is_true_or_left_out,
             self._a_ref_cannot_give_phrasebook,
+            self._a_ref_cannot_give_picture_ask,
             self._a_course_has_15_to_25_phrasebook_cards,
             self._none_is_an_error_only_with_a_plan,
             self._a_course_with_no_written_deck_has_no_phrasebook_size,
@@ -1220,6 +1229,13 @@ class RulesCore(B1Case):
         self.assertError(RULES, "table.applies_to.pos",
                          "must be a non-empty list of parts of speech from ['adj', 'adv', "
                          "'noun', 'other', 'particle', 'pronoun', 'verb'], got ['phrase']")
+        for pos in ("letter", "digit"):
+            # A letter or a digit is a card's pos, never a rules deck's row kind.
+            self.table(lambda t, pos=pos: t.update(applies_to={"pos": [pos]}))
+            self.assertError(RULES, "table.applies_to.pos",
+                             "must be a non-empty list of parts of speech from ['adj', "
+                             "'adv', 'noun', 'other', 'particle', 'pronoun', 'verb'], "
+                             f"got ['{pos}']")
         self.table(lambda t: t.update(applies_to={"pos": ["noun"], "tags": "x",
                                                   "except": ["foo"]}))
         self.assertError(RULES, "table.applies_to", "tags must be a list")
@@ -1934,6 +1950,58 @@ class BaseStems(B1Case):
                     fresh.doCleanups()
 
 
+class PathLevels(B1Case):
+    """A path's own words per level (#615, ADR-0045)."""
+
+    def levels(self, value) -> None:
+        self.edit(PATH, lambda d: d.__setitem__("levels", value))
+
+    def test_levels_replace_the_fixed_sizes_for_that_path(self) -> None:
+        # The fixture plans A1 4, A2 0, B1 60, 64 in all.
+        self.levels({"A1": 4, "A2": 1, "B1": 60})
+        lines = self.assertClean()
+        self.assertEqual(self.section(lines, PATH), [
+            "  info    units: B1 plan: A1 4 words (about 4), A2 +0 (about 1), B1 +60 "
+            "(about 60); 64 in all; 4 grammar topics; 1 units planned",
+        ])
+
+    def test_a_level_far_from_its_own_size_is_warned_of(self) -> None:
+        self.levels({"A1": 40, "A2": 1, "B1": 60})
+        self.assertWarned(PATH, "units", "A1 plans 4 words, far from about 40 (20–60)")
+        self.levels({"A1": 4, "A2": 1, "B1": 600})
+        self.assertWarned(PATH, "units", "plans 64 words up to B1, outside 302–907; "
+                                         "check the sizes")
+
+    def test_a_path_without_levels_keeps_the_defaults(self) -> None:
+        self.assertWarned(PATH, "units", "A1 plans 4 words, far from about 700 (350–1,050)")
+
+    def test_levels_are_checked(self) -> None:
+        cases = (
+            ({"A1": 4, "A2": 1}, "levels", "needs B1; give the words for A1, A2 and B1"),
+            ({"A1": 4, "A2": 1, "B1": 6, "C1": 2}, "levels",
+             "unknown level 'C1'; the levels are A1, A2 and B1"),
+            ({"A1": 0, "A2": 1, "B1": 6}, "levels.A1",
+             "must be a whole number of words, 1 or more, got 0"),
+            ({"A1": True, "A2": 1, "B1": 6}, "levels.A1",
+             "must be a whole number of words, 1 or more, got True"),
+            ([4, 1, 6], "levels", "must be a mapping of the words per level, such as "
+                                  "{ A1: 120, A2: 60, B1: 80 }, got [4, 1, 6]"),
+        )
+        for value, where, msg in cases:
+            with self.subTest(value=value):
+                self.setUp()
+                self.levels(value)
+                self.assertError(PATH, where, msg)
+
+    def test_a_phrase_is_not_a_word_of_a_level(self) -> None:
+        phrase = {"id": "zz-1", "target": "tomo tawa", "pos": "phrase"}
+        noun = {"id": "zz-2", "target": "tomo tawa", "pos": "noun"}
+        word = {"id": "zz-3", "target": "tomo", "pos": "noun"}
+        self.assertFalse(validate_decks.counts_as_word(phrase, "vocab"))
+        self.assertTrue(validate_decks.counts_as_word(noun, "vocab"))
+        self.assertTrue(validate_decks.counts_as_word(word, "vocab"))
+
+
 class PathUnits(B1Case):
     """Section 10.2: a path's units, list or mapping, and its B1 plan."""
 
@@ -1974,8 +2042,12 @@ class PathUnits(B1Case):
         self.put(PATH, text.replace("words: 4", "words: 1_000"))
         self.assertIn("units[0].words: must be a whole number of words, 0 or more, got "
                       "'1_000'", self.errors(PATH))
-        self.assertUnits(lambda u: u[2]["planned"].update(words=0),
-                         "units[2].words: must be a whole number of words, 1 or more, got 0")
+        # A planned theme unit with no new roots plans 0 words (#615).
+        self.setUp()
+        self.assertEqual(self.units(lambda u: u[2]["planned"].update(words=0)), [])
+        self.assertUnits(lambda u: u[2]["planned"].update(words=-1),
+                         "units[2].words: must be a whole number of words, 0 or more, "
+                         "got -1")
         self.setUp()
         self.assertNotIn("units[0].words", " ".join(self.units(
             lambda u: u[0].update(words=0))))
@@ -2018,6 +2090,10 @@ class PathUnits(B1Case):
                          "units[2].planned.id: must be a core id of zz, zz- and a name, "
                          "such as zz-health, got 'yy-health'")
         self.assertUnits(lambda u: u[2]["planned"].update(grammar="if"),
+                         "units[2].planned: names theme or grammar, not both")
+        # Nor may the unit's own grammar beside a planned theme (#622), as the app
+        # reads it.
+        self.assertUnits(lambda u: u[2].update(grammar="if"),
                          "units[2].planned: names theme or grammar, not both")
         self.assertUnits(lambda u: u[2]["planned"].pop("theme"),
                          "units[2].planned: needs a theme or a grammar topic")
@@ -2412,6 +2488,65 @@ class PathUnits(B1Case):
                     fresh.doCleanups()
 
 
+class ResourcesFile(B1Case):
+    """A language's resources file (#832): where else to learn it."""
+
+    FILE = "zz-resources.yaml"
+
+    @staticmethod
+    def resource(**change: object) -> dict:
+        found = {"id": "zz-res-wagotabi", "name": "Wagotabi",
+                 "url": "https://www.wagotabi.com/", "kind": "game",
+                 "why": "A fun game. We are not linked to it. Try it too!"}
+        found.update(change)
+        return found
+
+    def file(self, *resources: dict, **change: object) -> None:
+        data = {"schema": 1, "kind": "resources", "id": "zz-resources",
+                "language": "zz", "resources": list(resources) or [self.resource()]}
+        data.update(change)
+        self.put(self.FILE, data)
+
+    def test_a_good_file_passes(self) -> None:
+        self.file()
+        self.assertEqual(self.errors(self.FILE), [])
+
+    def test_the_rules_of_the_file_and_each_resource(self) -> None:
+        bad = {
+            "an unknown key": (self.resource(level="A1"), "unknown field 'level'"),
+            "a url that is not https": (
+                self.resource(url="http://www.wagotabi.com/"),
+                "url must be an https address"),
+            "a kind not in the list": (
+                self.resource(kind="podcast"), "kind must be one of"),
+            "an id of another language": (
+                self.resource(id="ja-res-wagotabi"), "must start with zz-res-"),
+            "a why that is too long": (
+                self.resource(why="word " * 40), "keep it to 160"),
+        }
+        for name, (resource, message) in bad.items():
+            with self.subTest(name):
+                self.file(resource)
+                self.assertTrue(
+                    any(message in e for e in self.errors(self.FILE)),
+                    self.errors(self.FILE))
+
+    def test_at_most_three_and_no_id_twice(self) -> None:
+        many = [self.resource(id=f"zz-res-a{i}") for i in range(4)]
+        self.file(*many)
+        self.assertTrue(any("at most 3" in e for e in self.errors(self.FILE)))
+        self.file(self.resource(), self.resource())
+        self.assertTrue(any("used twice" in e for e in self.errors(self.FILE)))
+
+    def test_a_bare_boolean_for_a_kind_is_refused(self) -> None:
+        self.put(self.FILE, 'schema: 1\nkind: "resources"\nid: "zz-resources"\n'
+                            'language: "zz"\nresources:\n  - id: "zz-res-a"\n'
+                            '    name: "A"\n    url: "https://a.org/"\n'
+                            '    kind: no\n    why: "A."\n')
+        self.assertTrue(any("kind must be one of" in e
+                            for e in self.errors(self.FILE)))
+
+
 class ScriptInProse(B1Case):
     """Section 11: a layer's prose is its native language's; a core's is the
     language learnt's."""
@@ -2509,7 +2644,12 @@ class Compatibility(unittest.TestCase):
 
     def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The committed index is regenerated on main after each merge, so a
+        # deck change is not checked against it here; this test is about the
+        # decks' own messages. The index check has tests of its own
+        # (test_validate_decks.py, test_deck_index.py).
+        with mock.patch.dict(os.environ, {"FLUENOUGH_SKIP_INDEX_CHECK": "1"}), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
                                         str(validate_decks.ROOT / "decks")])
         lines = out.getvalue().splitlines()

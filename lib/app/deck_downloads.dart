@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
+import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -155,6 +156,17 @@ class DeckDownloads extends ChangeNotifier {
   final DateTime Function() _clock;
   final AppLog? _log;
 
+  /// Whether a course's download brings the font of [script] (#611): true
+  /// once the learner answered the font check "No, it shows boxes". Null
+  /// brings every font, as before the check. A font already on the phone is
+  /// kept up to date whatever it says.
+  bool Function(String script)? wantsFont;
+
+  /// Whether the font of [script] on the phone is drawn with: false after
+  /// the learner said the phone's own font draws it. Null draws with every
+  /// font on the phone.
+  bool Function(String script)? usesFont;
+
   /// Called once files on the phone have changed, so that the catalog is
   /// read again. Set by `AppState`.
   Future<void> Function()? onFilesChanged;
@@ -164,6 +176,7 @@ class DeckDownloads extends ChangeNotifier {
   DeckDownloadFailure? _indexFailure;
   Map<String, IndexFile> _onPhone = const <String, IndexFile>{};
   Map<String, IndexFont> _fontsOnPhone = const <String, IndexFont>{};
+  final Set<String> _fontsFetching = <String>{};
   final Map<String, List<String>> _fontScripts = <String, List<String>>{};
   DateTime? _checkedAt;
   String? _declined;
@@ -185,6 +198,61 @@ class DeckDownloads extends ChangeNotifier {
   Future<void> _lock = Future<void>.value();
   late final FairSlots _slots = FairSlots(maxConcurrentFetches);
   bool _disposed = false;
+
+  // ---------------------------------------------------------------------------
+  // Resources
+
+  final Map<String, ({String sha256, List<LanguageResource> found})>
+  _resources = <String, ({String sha256, List<LanguageResource> found})>{};
+  final Map<String, Future<List<LanguageResource>>> _resourceJobs =
+      <String, Future<List<LanguageResource>>>{};
+
+  /// Where else to learn [language] (#832): the suggestions of its resources
+  /// file, at most three, or none when the index lists no file, the file
+  /// cannot be had, or it is not whole. The file is not a deck: it is
+  /// fetched when first wanted, checked against the index's hash, kept as
+  /// a note, and read from there until the index lists another. Never
+  /// throws, and never waits on anything but its one small file.
+  Future<List<LanguageResource>> resourcesFor(String language) {
+    final listed = _index?.language(language)?.resources;
+    if (listed == null || listed.isEmpty) {
+      return Future<List<LanguageResource>>.value(const <LanguageResource>[]);
+    }
+    final file = listed.first;
+    final known = _resources[language];
+    if (known != null && known.sha256 == file.sha256) {
+      return Future<List<LanguageResource>>.value(known.found);
+    }
+    return _resourceJobs[language] ??= _readResources(language, file)
+        .whenComplete(() {
+          // A block, not an arrow: `remove` returns this very future, which
+          // `whenComplete` would then wait on for ever.
+          _resourceJobs.remove(language);
+        });
+  }
+
+  Future<List<LanguageResource>> _readResources(
+    String language,
+    IndexFile file,
+  ) async {
+    final note = 'resources-$language.yaml';
+    try {
+      var text = await files.readNote(note);
+      if (text == null || sha256Hex(utf8.encode(text)) != file.sha256) {
+        final fetched = await _fetchChecked(file);
+        final bytes = fetched.bytes;
+        if (bytes == null) return const <LanguageResource>[];
+        text = utf8.decode(bytes);
+        await files.writeNote(note, text);
+      }
+      final found = parseLanguageResources(text);
+      _resources[language] = (sha256: file.sha256, found: found);
+      return found;
+    } on Object catch (e) {
+      _log?.warning('Resources of $language could not be read: $e');
+      return const <LanguageResource>[];
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // The index
@@ -251,6 +319,7 @@ class DeckDownloads extends ChangeNotifier {
   Future<void> _loadFonts() async {
     for (final font in _fontsOnPhone.values.toList()) {
       if (fonts.isLoaded(font)) continue;
+      if (usesFont != null && !usesFont!(font.script)) continue;
       try {
         final bytes = await files.readFont(font.path);
         if (bytes != null && !await fonts.load(font, bytes)) {
@@ -417,8 +486,71 @@ class DeckDownloads extends ChangeNotifier {
   /// The fonts of [entry] not on the phone, or changed since.
   List<IndexFont> _fontsToFetch(IndexLanguage entry) => <IndexFont>[
     for (final font in entry.fonts)
-      if (_fontsOnPhone[font.path]?.sha256 != font.sha256) font,
+      if (_fontsOnPhone[font.path]?.sha256 != font.sha256 &&
+          (wantsFont == null ||
+              wantsFont!(font.script) ||
+              _fontsOnPhone.containsKey(font.path)))
+        font,
   ];
+
+  /// The font of [script] the index offers, or null.
+  IndexFont? fontOffered(String script) {
+    for (final language in _index?.languages ?? const <IndexLanguage>[]) {
+      for (final font in language.fonts) {
+        if (font.script == script) return font;
+      }
+    }
+    return null;
+  }
+
+  /// Whether the font of [script] is on the phone.
+  bool hasFont(String script) =>
+      _fontsOnPhone.values.any((font) => font.script == script);
+
+  /// Whether the font of [script] is downloading on its own ([downloadFont]).
+  bool isFontDownloading(String script) => _fontsFetching.contains(script);
+
+  /// Downloads the font of [script] alone, as the learner asked in the font
+  /// check (#611), checks it as every font is, and loads it. Null once it
+  /// is on the phone, else why not.
+  Future<DeckDownloadFailure?> downloadFont(String script) async {
+    if (_fontsFetching.contains(script)) return null;
+    _fontsFetching.add(script);
+    _notify();
+    final key = 'font:$script';
+    try {
+      if (!await ensureIndex()) return _indexFailure;
+      final font = fontOffered(script);
+      if (font == null) return DeckDownloadFailure.notOffered;
+      final failure = await _downloadFonts(key, <IndexFont>[font], (_) {});
+      // One already on the phone, from a course, is loaded at once.
+      if (failure == null) await _loadFonts();
+      return failure;
+    } finally {
+      _failures.remove(key);
+      _fontsFetching.remove(script);
+      _notify();
+    }
+  }
+
+  /// Deletes the downloaded font of [script], when the learner asks to
+  /// (#611). It stays drawn with the phone's own font; a course that needs
+  /// it downloads it again only if the learner says so.
+  Future<void> removeFont(String script) async {
+    final paths = <String>[
+      for (final font in _fontsOnPhone.values)
+        if (font.script == script) font.path,
+    ];
+    fonts.unload(script);
+    if (paths.isEmpty) return;
+    try {
+      await files.removeFonts(paths);
+      _fontsOnPhone = await files.fontManifest();
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: could not remove fonts: $e');
+    }
+    _notify();
+  }
 
   /// How much of [language] a learner who speaks [spoken] has on the phone,
   /// with what has arrived of a download under way: its decks (a deck

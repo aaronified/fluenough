@@ -1,0 +1,59 @@
+schema: 1
+id: "bn-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1614"
+    target: "আজ আকাশে মেঘ আছে।"
+    reading: "āj ākāśe megh āche."
+    ipa: "adʒ akaʃe meɡʱ atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases: [{ word: "আকাশে", ref: "bn-1571" }, { word: "আছে", base: "আছে", reading: "āche", ipa: "atʃʰe" }]
+  - ref: "bn-0158"
+  - id: "bn-1616"
+    target: "আমি ছাতা নিয়ে যাই।"
+    reading: "āmi chātā niye jāi."
+    ipa: "ami tʃʰat̪a nije dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "নিয়ে", base: "নেওয়া", reading: "neoyā", ipa: "neoja" }, { word: "যাই", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }]
+  - id: "bn-1617"
+    target: "বর্ষায় প্রায়ই বৃষ্টি হয়।"
+    reading: "bôrśāy prāei briśṭi hôy."
+    ipa: "bɔrʃaj praei briʃʈi ɦɔj"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases: [{ word: "বর্ষায়", ref: "bn-1606" }, { word: "প্রায়ই", ref: "bn-1524" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }]
+  - id: "bn-1618"
+    target: "শীতে সকালে কুয়াশা থাকে।"
+    reading: "śite śôkāle kuyāśā thāke."
+    ipa: "ʃit̪e ʃɔkale kujaʃa t̪ʰake"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases: [{ word: "শীতে", ref: "bn-1595" }, { word: "সকালে", base: "সকাল", reading: "śôkāl", ipa: "ʃɔkal" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }]
+  - id: "bn-1619"
+    target: "আপনি ছাতা নিন।"
+    reading: "āpni chātā nin."
+    ipa: "apni tʃʰat̪a nin"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases: [{ word: "নিন", base: "নেওয়া", reading: "neoyā", ipa: "neoja" }]
+  - id: "bn-1620"
+    target: "আজ বিদ্যুৎ নেই।"
+    reading: "āj biddut nei."
+    ipa: "adʒ bid̪d̪ut̪ nei"
+    pos: "phrase"
+    bases: [{ word: "নেই", base: "নেই", reading: "nei", ipa: "nei" }]
+  - id: "bn-1621"
+    target: "বৃষ্টির পর রামধনু ওঠে।"
+    reading: "briśṭir pôr rāmdhonu oṭhe."
+    ipa: "briʃʈir pɔr ramd̪ʱonu oʈʰe"
+    pos: "phrase"
+    rules: ["bn-rule-gen", "bn-rule-present-third"]
+    bases: [{ word: "বৃষ্টির", ref: "bn-1574" }, { word: "ওঠে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }]

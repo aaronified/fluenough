@@ -1,0 +1,68 @@
+schema: 1
+id: "tok-food"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0192"
+    target: "telo"
+    ipa: "ˈtelo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "water", kind: "usage" }
+      - { id: "drink", kind: "behaviour" }
+    examples:
+      - { target: "telo li lete.", ipa: "ˈtelo li ˈlete", bases: [{ word: "telo", base: "telo" }, { word: "li", ref: "tok-0101" }, { word: "lete", ref: "tok-0196" }] }
+      - { target: "mi moku e telo.", ipa: "mi ˈmoku e ˈtelo", bases: [{ word: "mi", ref: "tok-0003" }, { word: "moku", ref: "tok-0080" }, { word: "e", ref: "tok-0102" }, { word: "telo", base: "telo" }] }
+  - id: "tok-0193"
+    target: "kili"
+    ipa: "ˈkili"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "fruit", kind: "usage" }
+      - { id: "eat", kind: "behaviour" }
+    examples:
+      - { target: "kili ni li suwi.", ipa: "ˈkili ni li ˈsuwi", bases: [{ word: "kili", base: "kili" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suwi", ref: "tok-0194" }] }
+      - { target: "mi moku e kili.", ipa: "mi ˈmoku e ˈkili", bases: [{ word: "mi", ref: "tok-0003" }, { word: "moku", ref: "tok-0080" }, { word: "e", ref: "tok-0102" }, { word: "kili", base: "kili" }] }
+  - id: "tok-0194"
+    target: "suwi"
+    ipa: "ˈsuwi"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "sweet", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "kili suwi li pona.", ipa: "ˈkili ˈsuwi li ˈpona", bases: [{ word: "kili", ref: "tok-0193" }, { word: "suwi", base: "suwi" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "moku ni li suwi.", ipa: "ˈmoku ni li ˈsuwi", bases: [{ word: "moku", ref: "tok-0080" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suwi", base: "suwi" }] }
+  - id: "tok-0195"
+    target: "seli"
+    ipa: "ˈseli"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "fire", kind: "usage" }
+      - { id: "see", kind: "behaviour" }
+    examples:
+      - { target: "seli li suli.", ipa: "ˈseli li ˈsuli", bases: [{ word: "seli", base: "seli" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "mi lukin e seli.", ipa: "mi ˈlukin e ˈseli", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "seli", base: "seli" }] }
+    antonyms:
+      - { id: "lete", ref: "tok-0196" }
+  - id: "tok-0196"
+    target: "lete"
+    ipa: "ˈlete"
+    pos: "adj"
+    bases: "self"
+    antonyms:
+      - { id: "seli", ref: "tok-0195" }
+    notes:
+      - { id: "cold", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "moku ni li lete.", ipa: "ˈmoku ni li ˈlete", bases: [{ word: "moku", ref: "tok-0080" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "lete", base: "lete" }] }
+      - { target: "kili li lete.", ipa: "ˈkili li ˈlete", bases: [{ word: "kili", ref: "tok-0193" }, { word: "li", ref: "tok-0101" }, { word: "lete", base: "lete" }] }

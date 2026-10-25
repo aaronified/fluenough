@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../core/models/aksharas.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -13,12 +14,15 @@ import 'drill_frame.dart';
 /// Every piece of target-language text goes through this, because it gets
 /// three things right in one place:
 ///
-/// - **Direction** from the deck ([LanguageInfo.rtl]), not from the
-///   interface language: an Urdu card is right to left in an English app.
+/// - **Direction** from the deck ([LanguageInfo.rightToLeft]), not from the
+///   interface language: an Urdu card is right to left in an English app,
+///   and so is Hindustani in its Perso-Arabic script.
 /// - **Locale** from the deck's language code, so a character shared between
 ///   scripts takes the right regional form.
 /// - **Line height** of 1.9 for right-to-left scripts, whose Nastaliq forms
-///   climb and descend far more than Latin, and 1.25 otherwise.
+///   climb and descend far more than Latin, shared evenly above and below
+///   so that the glyphs sit in the middle of their line (#762), and 1.25
+///   otherwise.
 /// - **Font** of the script, once the course's font is downloaded and loaded
 ///   (ADR-0042): phones often draw Indic and Nastaliq text wrongly or lack
 ///   the script. Until then, or without one, the phone's own font.
@@ -153,6 +157,9 @@ class TargetText extends StatelessWidget {
     // script fonts notify on their own.
     final scope = context.getInheritedWidgetOfExactType<AppScope>();
     final fonts = scope?.notifier?.deckDownloads?.fonts;
+    // Braille is always drawn in its own shadow-dot font, which ships with
+    // the app (#835): never the phone's.
+    if (language.isBraille) return _sized(context, brailleFontFamily);
     if (fonts == null) return _sized(context, null);
     return ListenableBuilder(
       listenable: fonts,
@@ -200,7 +207,9 @@ class TargetText extends StatelessWidget {
       shown,
       semanticsLabel: shown == text ? null : text,
       textAlign: textAlign,
-      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: language.rightToLeft
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       locale: targetLocale(language),
       style: TextStyle(
         fontSize: size,
@@ -208,7 +217,12 @@ class TargetText extends StatelessWidget {
         fontFamily: family,
         fontVariations: _variations(family, fontWeight),
         color: color,
-        height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
+        height: language.rightToLeft
+            ? TargetSizes.rtlHeight
+            : TargetSizes.ltrHeight,
+        leadingDistribution: language.rightToLeft
+            ? TextLeadingDistribution.even
+            : null,
       ),
     );
   }
@@ -244,7 +258,9 @@ class TargetText extends StatelessWidget {
         ),
         locale: targetLocale(language),
       ),
-      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: language.rightToLeft
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       textScaler: MediaQuery.textScalerOf(context),
       maxLines: 1,
     )..layout();
@@ -269,10 +285,20 @@ Locale targetLocale(LanguageInfo language) => switch (language.script) {
   _ => Locale(language.code),
 };
 
+/// Right-to-left isolate and pop directional isolate (Unicode bidi).
+const String _rli = '\u2067';
+const String _pdi = '\u2069';
+
 /// [text], an interface string that quotes deck content, with each of
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a
 /// screen reader in its voice, while the rest stays the interface's (#26).
 /// "Answer: el niño" is read in English up to the colon and in Spanish after.
+///
+/// A quote in a right-to-left language is wrapped in a bidi isolate (#619),
+/// so that the interface's words around it never reorder it, nor it them:
+/// a trailing full stop stays at the end of the sentence, not beside the
+/// quote's last letter. Left-to-right quotes in the left-to-right interface
+/// need none.
 TextSpan quotingTarget(
   String text,
   Iterable<String> quotes,
@@ -298,7 +324,9 @@ TextSpan quotingTarget(
     }
     if (found == null) break;
     if (at > start) spans.add(TextSpan(text: text.substring(start, at)));
-    spans.add(TextSpan(text: found, locale: locale));
+    spans.add(
+      TextSpan(text: language.rtl ? '$_rli$found$_pdi' : found, locale: locale),
+    );
     start = at + found.length;
   }
   if (start < text.length) spans.add(TextSpan(text: text.substring(start)));

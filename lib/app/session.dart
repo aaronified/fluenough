@@ -1,4 +1,6 @@
 import '../core/scheduling/fsrs.dart';
+import '../core/scheduling/script_split.dart';
+import '../core/scheduling/study_hours.dart';
 import 'skill.dart';
 
 /// What a drill session should cover. Passed to the drill route, which asks
@@ -14,9 +16,11 @@ class DrillRequest {
     this.untaught = false,
     this.revise = false,
     this.lesson = false,
+    this.daily = false,
     this.language,
     this.limit,
     this.cardIds,
+    this.script = ScriptScope.any,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -34,14 +38,40 @@ class DrillRequest {
     Set<String> tags = const <String>{},
   }) : this(deckIds: <String>{deckId}, skill: skill, tags: tags);
 
+  /// The day's session in [language] (#521): the reviews and new words the
+  /// daily minutes buy (#485), in one session.
+  const DrillRequest.daily({required String language})
+    : this(daily: true, language: language);
+
   /// A lesson (ADR-0024): new words from [language]'s pending units, or with
-  /// [deckId] from that deck, taught, checked and practised.
-  DrillRequest.lesson({required String language, String? deckId})
-    : this(
-        deckIds: deckId == null ? null : <String>{deckId},
-        lesson: true,
-        language: language,
-      );
+  /// [deckId] from that deck, taught, checked and practised. With [tags], only
+  /// words carrying one of them: a deck page's "+ Learn" as its tag chips
+  /// filter it.
+  DrillRequest.lesson({
+    required String language,
+    String? deckId,
+    Set<String> tags = const <String>{},
+  }) : this(
+         deckIds: deckId == null ? null : <String>{deckId},
+         lesson: true,
+         language: language,
+         tags: tags,
+       );
+
+  /// Practice of the words of one deck, as a deck page's Practice asks it:
+  /// every word taught, due or not, in [skills] (every skill switched on when
+  /// null), narrowed by [tags]. Like any revision, every answer is
+  /// recorded (ADR-0033).
+  DrillRequest.practice(
+    String deckId, {
+    Set<Skill>? skills,
+    Set<String> tags = const <String>{},
+  }) : this(
+         deckIds: <String>{deckId},
+         skills: skills,
+         tags: tags,
+         revise: true,
+       );
 
   /// Number practice in the language of [deckId], a number deck: generated
   /// numbers, drilled and not recorded (#54, ADR-0011).
@@ -54,9 +84,8 @@ class DrillRequest {
   DrillRequest.untaught(String deckId, {Skill? skill})
     : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
-  /// Every card already learned in one deck, due or not, and not recorded:
-  /// a finished deck's "Revise". Recording an early review would stretch
-  /// its interval as if it had been remembered for the whole of it.
+  /// Every card already learned in one deck, due or not: a finished deck's
+  /// "Revise". Every answer is recorded, like a quick revision's (ADR-0033).
   DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
     : this(deckIds: <String>{deckId}, tags: tags, revise: true);
 
@@ -73,8 +102,26 @@ class DrillRequest {
   /// Every word known in [skill], from every language learned, due or not:
   /// a skill's tile on Today with nothing due. Like a quick revision, every
   /// answer is recorded (ADR-0030, ADR-0033).
-  const DrillRequest.reviseSkill(Skill skill)
-    : this(revise: true, skill: skill);
+  ///
+  /// With [script], the script decks' share: [ScriptScope.without] for a
+  /// word skill's tile, [ScriptScope.only] for the Script tile.
+  const DrillRequest.reviseSkill(
+    Skill skill, {
+    ScriptScope script = ScriptScope.any,
+  }) : this(revise: true, skill: skill, script: script);
+
+  /// Today's Script tile: the script decks' due Recognition and Write, script
+  /// reading and writing together (owner, 2026-10-24). With [revise], every
+  /// one already learned, due or not.
+  const DrillRequest.script({bool revise = false})
+    : this(script: ScriptScope.only, revise: revise);
+
+  /// Practice of one [tag] from Progress's All tags page: up to [count]
+  /// words the learner has been taught that carry it, picked at random, due
+  /// or not. Only [language]'s, the one the bar at the top shows, or every
+  /// language's when null. Every answer is recorded (ADR-0033).
+  DrillRequest.tag(String tag, {required int count, String? language})
+    : this(revise: true, tags: <String>{tag}, limit: count, language: language);
 
   /// The sounds of a word (ADR-0041): the IPA course's cards [cardIds], in
   /// their order, each taught, checked and practised as a lesson does. Every
@@ -100,6 +147,10 @@ class DrillRequest {
   /// learner has switched on.
   Set<Skill>? get named => skills ?? (skill == null ? null : <Skill>{skill!});
 
+  /// Which part of the script decks the session takes: all of it, only the
+  /// script decks' Recognition and Write, or everything else.
+  final ScriptScope script;
+
   /// Only cards carrying at least one of these tags; empty means every card.
   final Set<String> tags;
 
@@ -119,6 +170,10 @@ class DrillRequest {
   /// A lesson, in [language], from [deckIds] if given.
   final bool lesson;
 
+  /// The day's mixed session in [language]: reviews, then new words, sized
+  /// by the daily minutes ([AppState.dailyItems]).
+  final bool daily;
+
   /// Only decks in this language, by code; null for every language.
   final String? language;
 
@@ -126,25 +181,31 @@ class DrillRequest {
   /// all of them, in order.
   final int? limit;
 
-  /// Whether answers are recorded although the session revises: a revision
-  /// from Today, of every deck (ADR-0029, ADR-0030, as ADR-0033 amends
-  /// them). A deck's Revise records nothing.
-  bool get recordsRevision => revise && deckIds == null;
+  /// Whether answers are recorded although the session revises: every
+  /// revision of cards, from Today, a finished deck's Revise or a tag
+  /// (ADR-0029, ADR-0030, as ADR-0033 amends them). Only number practice,
+  /// which has no cards, records nothing.
+  bool get recordsRevision => revise;
 
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
       'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
-      'untaught: $untaught, revise: $revise, lesson: $lesson, '
-      'language: $language, limit: $limit, cards: $cardIds)';
+      'untaught: $untaught, revise: $revise, lesson: $lesson, daily: $daily, '
+      'language: $language, limit: $limit, cards: $cardIds, '
+      'script: ${script.name})';
 }
 
 /// One answer in a finished session, for the summary.
 class SessionAnswer {
-  const SessionAnswer({required this.skill, required this.grade});
+  const SessionAnswer({required this.skill, required this.grade, this.time});
 
   final Skill skill;
+
+  /// How long the answer took, from the question showing to the answer;
+  /// null where it was not timed.
+  final Duration? time;
 
   /// The grade recorded, 0–5 ([Fsrs.ratingOf]). Minimal pairs, which the scheduler does
   /// not know yet, use the same scale.
@@ -195,10 +256,21 @@ class SessionResult {
 
   Duration get elapsed => endedAt.difference(startedAt);
 
+  /// The time spent: each timed answer's time, capped as hours spent caps it
+  /// (#227), so a pause or the app in the background adds nothing. A result
+  /// whose answers are not timed gives the time between start and end.
+  Duration get spent {
+    if (answers.every((a) => a.time == null)) return elapsed;
+    var sum = Duration.zero;
+    for (final a in answers) {
+      sum += StudyHours.capped(a.time ?? Duration.zero);
+    }
+    return sum;
+  }
+
   /// Whole minutes spent, rounded, and at least 1 for any session.
-  int get minutes => total == 0
-      ? 0
-      : (elapsed.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
+  int get minutes =>
+      total == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
 
   /// One score per skill drilled, in [Skill] order; skills not drilled are
   /// left out.

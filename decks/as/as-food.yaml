@@ -1,0 +1,573 @@
+schema: 1
+id: "as-food"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "assamese", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2314"
+    target: "ৰুটি"
+    reading: "ruti"
+    ipa: "ɹuti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ৰুটি খাওঁ।", reading: "moi ruti khāum̐.", ipa: "moi ɹuti kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "সি বিহানা ৰুটি খায়।", reading: "si bihānā ruti khāy.", ipa: "si bihana ɹuti kʰaj", bases: [{"word": "বিহানা", "base": "বিহানা", "reading": "bihānā"}, {"word": "খায়", "ref": "as-0109"}] }
+  - id: "as-2315"
+    target: "দৈ"
+    reading: "dôi"
+    ipa: "dɔi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই দৈ খাওঁ।", reading: "moi dôi khāum̐.", ipa: "moi dɔi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "দৈ ঠাণ্ডা।", reading: "dôi thāndā.", ipa: "dɔi tʰanda", bases: [] }
+  - id: "as-2316"
+    target: "মাখন"
+    reading: "mākhôn"
+    ipa: "makʰɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মাখন খাওঁ।", reading: "moi mākhôn khāum̐.", ipa: "moi makʰɔn kʰaʊ̃", bases: [{"word": "মাখন", "ref": "as-0180"}, {"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ৰুটিত মাখন ভাল।", reading: "rutit mākhôn bhāl.", ipa: "ɹutit makʰɔn bʱal", bases: [{"word": "ৰুটিত", "ref": "as-2314"}, {"word": "মাখন", "ref": "as-0180"}] }
+  - id: "as-2317"
+    target: "ঘী"
+    reading: "ghi"
+    ipa: "ɡʱi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ভাতত ঘী খাওঁ।", reading: "moi bhātôt ghi khāum̐.", ipa: "moi bʱatɔt ɡʱi kʰaʊ̃", bases: [{"word": "ভাতত", "ref": "as-0111"}, {"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ঘী গৰম।", reading: "ghi gôrôm.", ipa: "ɡʱi ɡɔɹɔm", bases: [] }
+  - id: "as-2318"
+    target: "চিনি"
+    reading: "sini"
+    ipa: "sini"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "চাহত চিনি দিয়ক।", reading: "sāhôt sini diyôk.", ipa: "sahɔt sini dijɔk", bases: [{"word": "চাহত", "ref": "as-0409"}, {"word": "দিয়ক", "ref": "as-2218"}] }
+      - { target: "মোক চিনি লাগে।", reading: "muk sini lāge.", ipa: "mʊk sini laɡe", bases: [{"word": "লাগে", "base": "লগা", "reading": "lôgā"}] }
+  - id: "as-2319"
+    target: "মধু"
+    reading: "modhu"
+    ipa: "modʱu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মধু খাওঁ।", reading: "moi modhu khāum̐.", ipa: "moi modʱu kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মধু বৰ মিঠা।", reading: "modhu bôr mithā.", ipa: "modʱu bɔɹ mitʰa", bases: [{"word": "বৰ", "ref": "as-0055"}] }
+  - id: "as-2320"
+    target: "গুৰ"
+    reading: "gur"
+    ipa: "ɡuɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই গুৰ খাওঁ।", reading: "moi gur khāum̐.", ipa: "moi ɡuɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "গুৰ মিঠা।", reading: "gur mithā.", ipa: "ɡuɹ mitʰa", bases: [] }
+  - id: "as-2321"
+    target: "আম"
+    reading: "ām"
+    ipa: "am"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই আম খাওঁ।", reading: "moi ām khāum̐.", ipa: "moi am kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "আমটো পকা।", reading: "āmôtu pôkā.", ipa: "amɔtʊ pɔka", bases: [{"word": "আমটো", "base": "আম", "reading": "ām"}] }
+  - id: "as-2322"
+    target: "আপেল"
+    reading: "āpel"
+    ipa: "apel"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই আপেল খাওঁ।", reading: "moi āpel khāum̐.", ipa: "moi apel kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "আপেল মিঠা।", reading: "āpel mithā.", ipa: "apel mitʰa", bases: [] }
+  - id: "as-2323"
+    target: "কমলা"
+    reading: "kômôlā"
+    ipa: "kɔmɔla"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই কমলা খাওঁ।", reading: "moi kômôlā khāum̐.", ipa: "moi kɔmɔla kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "কমলা টেঙা।", reading: "kômôlā teṅā.", ipa: "kɔmɔla teŋa", bases: [] }
+  - id: "as-2324"
+    target: "আনাৰস"
+    reading: "ānārôs"
+    ipa: "anaɹɔs"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই আনাৰস খাওঁ।", reading: "moi ānārôs khāum̐.", ipa: "moi anaɹɔs kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "আনাৰস মিঠা।", reading: "ānārôs mithā.", ipa: "anaɹɔs mitʰa", bases: [] }
+  - id: "as-2325"
+    target: "তৰমুজ"
+    reading: "tôromuz"
+    ipa: "tɔɹomuz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই তৰমুজ খাওঁ।", reading: "moi tôromuz khāum̐.", ipa: "moi tɔɹomuz kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "তৰমুজ ঠাণ্ডা।", reading: "tôromuz thāndā.", ipa: "tɔɹomuz tʰanda", bases: [] }
+  - id: "as-2326"
+    target: "আঙুৰ"
+    reading: "āṅur"
+    ipa: "aŋuɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই আঙুৰ খাওঁ।", reading: "moi āṅur khāum̐.", ipa: "moi aŋuɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "আঙুৰ মিঠা।", reading: "āṅur mithā.", ipa: "aŋuɹ mitʰa", bases: [] }
+  - id: "as-2327"
+    target: "নাৰিকল"
+    reading: "nārikôl"
+    ipa: "naɹikɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই নাৰিকল খাওঁ।", reading: "moi nārikôl khāum̐.", ipa: "moi naɹikɔl kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "নাৰিকলৰ পানী ভাল।", reading: "nārikôlôr pāni bhāl.", ipa: "naɹikɔlɔɹ pani bʱal", bases: [{"word": "নাৰিকলৰ", "base": "নাৰিকল", "reading": "nārikôl"}] }
+  - ref: "as-0291"
+  - id: "as-2329"
+    target: "বেঙেনা"
+    reading: "beṅenā"
+    ipa: "beŋena"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই বেঙেনা খাওঁ।", reading: "moi beṅenā khāum̐.", ipa: "moi beŋena kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "বেঙেনা ভাজি ভাল।", reading: "beṅenā bhāzi bhāl.", ipa: "beŋena bʱazi bʱal", bases: [] }
+  - id: "as-2330"
+    target: "টমেটো"
+    reading: "tômetu"
+    ipa: "tɔmetʊ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই টমেটো খাওঁ।", reading: "moi tômetu khāum̐.", ipa: "moi tɔmetʊ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "টমেটো টেঙা।", reading: "tômetu teṅā.", ipa: "tɔmetʊ teŋa", bases: [] }
+  - id: "as-2331"
+    target: "গাজৰ"
+    reading: "gāzôr"
+    ipa: "ɡazɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই গাজৰ খাওঁ।", reading: "moi gāzôr khāum̐.", ipa: "moi ɡazɔɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "গাজৰ মিঠা।", reading: "gāzôr mithā.", ipa: "ɡazɔɹ mitʰa", bases: [] }
+  - ref: "as-0282"
+  - id: "as-2333"
+    target: "ৰসুন"
+    reading: "rosun"
+    ipa: "ɹosun"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ৰসুন খাওঁ।", reading: "moi rosun khāum̐.", ipa: "moi ɹosun kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ৰসুন ঝাল।", reading: "rosun zāl.", ipa: "ɹosun zal", bases: [{"word": "ঝাল", "base": "ঝাল", "reading": "zāl"}] }
+  - id: "as-2334"
+    target: "হালধি"
+    reading: "hālodhi"
+    ipa: "halodʱi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ভাতত হালধি দিয়ক।", reading: "bhātôt hālodhi diyôk.", ipa: "bʱatɔt halodʱi dijɔk", bases: [{"word": "ভাতত", "ref": "as-0111"}, {"word": "দিয়ক", "ref": "as-2218"}] }
+      - { target: "হালধি তিতা।", reading: "hālodhi titā.", ipa: "halodʱi tita", bases: [] }
+  - id: "as-2335"
+    target: "মৰিচ"
+    reading: "moris"
+    ipa: "moɹis"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মৰিচ খাওঁ।", reading: "moi moris khāum̐.", ipa: "moi moɹis kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মৰিচ বৰ ঝাল।", reading: "moris bôr zāl.", ipa: "moɹis bɔɹ zal", bases: [{"word": "বৰ", "ref": "as-0055"}, {"word": "ঝাল", "base": "ঝাল", "reading": "zāl"}] }
+  - id: "as-2336"
+    target: "ভুটা"
+    reading: "bhutā"
+    ipa: "bʱuta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ভুটা খাওঁ।", reading: "moi bhutā khāum̐.", ipa: "moi bʱuta kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ভুটা মিঠা।", reading: "bhutā mithā.", ipa: "bʱuta mitʰa", bases: [] }
+  - id: "as-2337"
+    target: "বিস্কুট"
+    reading: "biskut"
+    ipa: "biskut"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই বিস্কুট খাওঁ।", reading: "moi biskut khāum̐.", ipa: "moi biskut kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "বিস্কুট মিঠা।", reading: "biskut mithā.", ipa: "biskut mitʰa", bases: [] }
+  - id: "as-2338"
+    target: "চকলেট"
+    reading: "sôkôlet"
+    ipa: "sɔkɔlet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই চকলেট খাওঁ।", reading: "moi sôkôlet khāum̐.", ipa: "moi sɔkɔlet kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "চকলেট বৰ মিঠা।", reading: "sôkôlet bôr mithā.", ipa: "sɔkɔlet bɔɹ mitʰa", bases: [{"word": "বৰ", "ref": "as-0055"}] }
+  - id: "as-2339"
+    target: "মিঠাই"
+    reading: "mithāi"
+    ipa: "mitʰai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মিঠাই খাওঁ।", reading: "moi mithāi khāum̐.", ipa: "moi mitʰai kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মিঠাই বৰ মিঠা।", reading: "mithāi bôr mithā.", ipa: "mitʰai bɔɹ mitʰa", bases: [{"word": "বৰ", "ref": "as-0055"}] }
+  - id: "as-2340"
+    target: "পায়েচ"
+    reading: "pāyes"
+    ipa: "pajes"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই পায়েচ খাওঁ।", reading: "moi pāyes khāum̐.", ipa: "moi pajes kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "পায়েচ ভাল।", reading: "pāyes bhāl.", ipa: "pajes bʱal", bases: [] }
+  - id: "as-2341"
+    target: "মুৰি"
+    reading: "muri"
+    ipa: "muɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মুৰি খাওঁ।", reading: "moi muri khāum̐.", ipa: "moi muɹi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মুৰি হালকা।", reading: "muri hālôkā.", ipa: "muɹi halɔka", bases: [{"word": "হালকা", "base": "হালকা", "reading": "hālôkā"}] }
+  - id: "as-2342"
+    target: "চিৰা"
+    reading: "sirā"
+    ipa: "siɹa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই চিৰা খাওঁ।", reading: "moi sirā khāum̐.", ipa: "moi siɹa kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "চিৰা শুকান।", reading: "sirā xukān.", ipa: "siɹa xukan", bases: [{"word": "শুকান", "base": "শুকান", "reading": "xukān"}] }
+  - id: "as-2343"
+    target: "ভাজি"
+    reading: "bhāzi"
+    ipa: "bʱazi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ভাজি খাওঁ।", reading: "moi bhāzi khāum̐.", ipa: "moi bʱazi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ভাজি গৰম।", reading: "bhāzi gôrôm.", ipa: "bʱazi ɡɔɹɔm", bases: [] }
+  - id: "as-2344"
+    target: "ঝোল"
+    reading: "zul"
+    ipa: "zʊl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ঝোল খাওঁ।", reading: "moi zul khāum̐.", ipa: "moi zʊl kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ঝোল গৰম।", reading: "zul gôrôm.", ipa: "zʊl ɡɔɹɔm", bases: [] }
+  - id: "as-2345"
+    target: "ছুপ"
+    reading: "sup"
+    ipa: "sup"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ছুপ খাওঁ।", reading: "moi sup khāum̐.", ipa: "moi sup kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ছুপ গৰম।", reading: "sup gôrôm.", ipa: "sup ɡɔɹɔm", bases: [] }
+  - id: "as-2346"
+    target: "খিচডী"
+    reading: "khisodi"
+    ipa: "kʰisodi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই খিচডী খাওঁ।", reading: "moi khisodi khāum̐.", ipa: "moi kʰisodi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "খিচডী ভাল।", reading: "khisodi bhāl.", ipa: "kʰisodi bʱal", bases: [] }
+  - id: "as-2347"
+    target: "বিৰিয়ানী"
+    reading: "biriyāni"
+    ipa: "biɹijani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই বিৰিয়ানী খাওঁ।", reading: "moi biriyāni khāum̐.", ipa: "moi biɹijani kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "বিৰিয়ানী বৰ ভাল।", reading: "biriyāni bôr bhāl.", ipa: "biɹijani bɔɹ bʱal", bases: [{"word": "বৰ", "ref": "as-0055"}] }
+  - id: "as-2348"
+    target: "পনীৰ"
+    reading: "ponir"
+    ipa: "poniɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই পনীৰ খাওঁ।", reading: "moi ponir khāum̐.", ipa: "moi poniɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "পনীৰ নৰম।", reading: "ponir nôrôm.", ipa: "poniɹ nɔɹɔm", bases: [] }
+  - id: "as-2349"
+    target: "ওমলেট"
+    reading: "umôlet"
+    ipa: "ʊmɔlet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ওমলেট খাওঁ।", reading: "moi umôlet khāum̐.", ipa: "moi ʊmɔlet kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ওমলেট গৰম।", reading: "umôlet gôrôm.", ipa: "ʊmɔlet ɡɔɹɔm", bases: [] }
+  - id: "as-2350"
+    target: "পুৰি"
+    reading: "puri"
+    ipa: "puɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই পুৰি খাওঁ।", reading: "moi puri khāum̐.", ipa: "moi puɹi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "পুৰি গৰম।", reading: "puri gôrôm.", ipa: "puɹi ɡɔɹɔm", bases: [] }
+  - id: "as-2351"
+    target: "লুচি"
+    reading: "lusi"
+    ipa: "lusi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই লুচি খাওঁ।", reading: "moi lusi khāum̐.", ipa: "moi lusi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "লুচি ভাল।", reading: "lusi bhāl.", ipa: "lusi bʱal", bases: [] }
+  - id: "as-2352"
+    target: "কেক"
+    reading: "kek"
+    ipa: "kek"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই কেক খাওঁ।", reading: "moi kek khāum̐.", ipa: "moi kek kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "কেক মিঠা।", reading: "kek mithā.", ipa: "kek mitʰa", bases: [] }
+  - id: "as-2353"
+    target: "পাউৰুটি"
+    reading: "pāuruti"
+    ipa: "pauɹuti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই পাউৰুটি খাওঁ।", reading: "moi pāuruti khāum̐.", ipa: "moi pauɹuti kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "পাউৰুটি নৰম।", reading: "pāuruti nôrôm.", ipa: "pauɹuti nɔɹɔm", bases: [] }
+  - id: "as-2354"
+    target: "নেবু"
+    reading: "nebu"
+    ipa: "nebu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই নেবু খাওঁ।", reading: "moi nebu khāum̐.", ipa: "moi nebu kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "নেবু টেঙা।", reading: "nebu teṅā.", ipa: "nebu teŋa", bases: [] }
+  - id: "as-2355"
+    target: "বাদাম"
+    reading: "bādām"
+    ipa: "badam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই বাদাম খাওঁ।", reading: "moi bādām khāum̐.", ipa: "moi badam kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "বাদাম ভাল।", reading: "bādām bhāl.", ipa: "badam bʱal", bases: [] }
+  - id: "as-2356"
+    target: "পপিতা"
+    reading: "popitā"
+    ipa: "popita"
+    pos: "noun"
+    synonyms:
+      - { id: "pempe", word: "পেঁপে", reading: "pem̐pe", ipa: "pẽpe" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই পপিতা খাওঁ।", reading: "moi popitā khāum̐.", ipa: "moi popita kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "পপিতা মিঠা।", reading: "popitā mithā.", ipa: "popita mitʰa", bases: [] }
+  - id: "as-2357"
+    target: "ৰস"
+    reading: "rôs"
+    ipa: "ɹɔs"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ৰস খাওঁ।", reading: "moi rôs khāum̐.", ipa: "moi ɹɔs kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "কমলাৰ ৰস মিঠা।", reading: "kômôlār rôs mithā.", ipa: "kɔmɔlaɹ ɹɔs mitʰa", bases: [{"word": "কমলাৰ", "ref": "as-2323"}] }
+  - id: "as-2358"
+    target: "শাক"
+    reading: "xāk"
+    ipa: "xak"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই শাক খাওঁ।", reading: "moi xāk khāum̐.", ipa: "moi xak kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "শাক ভাল।", reading: "xāk bhāl.", ipa: "xak bʱal", bases: [] }
+  - id: "as-2359"
+    target: "কাঁঠাল"
+    reading: "kām̐thāl"
+    ipa: "kãtʰal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই কাঁঠাল খাওঁ।", reading: "moi kām̐thāl khāum̐.", ipa: "moi kãtʰal kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "কাঁঠাল মিঠা।", reading: "kām̐thāl mithā.", ipa: "kãtʰal mitʰa", bases: [] }
+  - id: "as-2360"
+    target: "মটৰ"
+    reading: "môtôr"
+    ipa: "mɔtɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই মটৰ খাওঁ।", reading: "moi môtôr khāum̐.", ipa: "moi mɔtɔɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মটৰ ভাল।", reading: "môtôr bhāl.", ipa: "mɔtɔɹ bʱal", bases: [] }
+  - id: "as-2361"
+    target: "ফুলকবি"
+    reading: "phulôkobi"
+    ipa: "pʰulɔkobi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই ফুলকবি খাওঁ।", reading: "moi phulôkobi khāum̐.", ipa: "moi pʰulɔkobi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "ফুলকবি ভাল।", reading: "phulôkobi bhāl.", ipa: "pʰulɔkobi bʱal", bases: [] }
+  - id: "as-2362"
+    target: "খাদ্য"
+    reading: "khādy"
+    ipa: "kʰadj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "এইটো খাদ্য।", reading: "eitu khādy.", ipa: "eitʊ kʰadj", bases: [] }
+      - { target: "খাদ্য ভাল।", reading: "khādy bhāl.", ipa: "kʰadj bʱal", bases: [] }
+  - id: "as-2363"
+    target: "পানীয়"
+    reading: "pāniy"
+    ipa: "panij"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "এইটো পানীয়।", reading: "eitu pāniy.", ipa: "eitʊ panij", bases: [] }
+      - { target: "মই পানীয় খাওঁ।", reading: "moi pāniy khāum̐.", ipa: "moi panij kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2364"
+    target: "কাঁচা"
+    reading: "kām̐sā"
+    ipa: "kãsa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "আমটো এতিয়াও কাঁচা।", reading: "āmôtu etiyāu kām̐sā.", ipa: "amɔtʊ etijaʊ kãsa", bases: [{"word": "আমটো", "ref": "as-2321"}] }
+      - { target: "নেবু কাঁচা।", reading: "nebu kām̐sā.", ipa: "nebu kãsa", bases: [] }
+  - id: "as-2365"
+    target: "পকা"
+    reading: "pôkā"
+    ipa: "pɔka"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "আমটো পকা।", reading: "āmôtu pôkā.", ipa: "amɔtʊ pɔka", bases: [{"word": "আমটো", "ref": "as-2321"}] }
+      - { target: "কলটো পকা।", reading: "kôlôtu pôkā.", ipa: "kɔlɔtʊ pɔka", bases: [{"word": "কলটো", "ref": "as-0297"}] }
+  - id: "as-2524"
+    target: "লাড়ু"
+    reading: "lāru"
+    ipa: "laɹu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "লাড়ু মিঠা।", reading: "lāru mithā.", ipa: "laɹu mitʰa", bases: [] }
+      - { target: "মই লাড়ু খাওঁ।", reading: "moi lāru khāum̐.", ipa: "moi laɹu kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2525"
+    target: "খেজুৰ"
+    reading: "khezur"
+    ipa: "kʰezuɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "খেজুৰটো মিঠা।", reading: "khezurôtu mithā.", ipa: "kʰezuɹɔtʊ mitʰa", bases: [{"word": "খেজুৰটো", "base": "খেজুৰ", "reading": "khezur"}] }
+      - { target: "মই খেজুৰ খাওঁ।", reading: "moi khezur khāum̐.", ipa: "moi kʰezuɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2526"
+    target: "কদু"
+    reading: "kodu"
+    ipa: "kodu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "কদুটো ডাঙৰ।", reading: "kodutu dāṅôr.", ipa: "kodutʊ daŋɔɹ", bases: [{"word": "কদুটো", "base": "কদু", "reading": "kodu"}] }
+      - { target: "মই কদু খাওঁ।", reading: "moi kodu khāum̐.", ipa: "moi kodu kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2527"
+    target: "ধনীয়া"
+    reading: "dhoniyā"
+    ipa: "dʱonija"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ধনীয়া ভাল।", reading: "dhoniyā bhāl.", ipa: "dʱonija bʱal", bases: [] }
+      - { target: "মই ধনীয়া খাওঁ।", reading: "moi dhoniyā khāum̐.", ipa: "moi dʱonija kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2528"
+    target: "বান্ধাকবি"
+    reading: "bāndhākobi"
+    ipa: "bandʱakobi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "বান্ধাকবিটো ডাঙৰ।", reading: "bāndhākobitu dāṅôr.", ipa: "bandʱakobitʊ daŋɔɹ", bases: [{"word": "বান্ধাকবিটো", "base": "বান্ধাকবি", "reading": "bāndhākobi"}] }
+      - { target: "মই বান্ধাকবি খাওঁ।", reading: "moi bāndhākobi khāum̐.", ipa: "moi bandʱakobi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+  - id: "as-2530"
+    target: "মুগ"
+    reading: "mug"
+    ipa: "muɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মুগটো ভাল।", reading: "mugôtu bhāl.", ipa: "muɡɔtʊ bʱal", bases: [{"word": "মুগটো", "base": "মুগ", "reading": "mug"}] }
+      - { target: "মই মুগ খাওঁ।", reading: "moi mug khāum̐.", ipa: "moi muɡ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }

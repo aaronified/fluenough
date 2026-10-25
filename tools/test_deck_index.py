@@ -28,7 +28,8 @@ class DeckIndex(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
-        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py"):
+        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
+                     "offensive_alikes.py", "pick_warning.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
         shutil.copytree(REPO / "assets" / "pictures", self.tmp / "assets" / "pictures")
         (self.tmp / "assets" / "languages.yaml").write_text(
@@ -182,6 +183,23 @@ class DeckIndex(unittest.TestCase):
         self.assertIn('\n      "fonts": [\n        {"family": "Noto Sans Devanagari"',
                       text)
 
+
+    def _the_resources_file_is_listed_apart_from_files(self) -> None:
+        # #832: a language's resources file is no deck, under a key of its
+        # own that the released app ignores, and not in the language's size.
+        text = ('schema: 1\nkind: "resources"\nid: "es-resources"\n'
+                'language: "es"\nresources:\n  - id: "es-res-x"\n'
+                '    name: "X"\n    url: "https://example.org/"\n'
+                '    kind: "site"\n    why: "A site."\n')
+        (self.tmp / "decks" / "es" / "es-resources.yaml").write_text(
+            text, encoding="utf-8")
+        es = self.language(self.index(), "es")
+        self.assertEqual([r["path"] for r in es["resources"]],
+                         ["decks/es/es-resources.yaml"])
+        self.assertEqual(es["resources"][0]["kind"], "resources")
+        self.assertNotIn("decks/es/es-resources.yaml",
+                         [f["path"] for f in es["files"]])
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
 
     def _the_fonts_folder_is_not_a_language(self) -> None:
         self.add_font("devanagari", "NotoSansDevanagari.ttf", b"deva-font")
@@ -349,6 +367,7 @@ class DeckIndex(unittest.TestCase):
             self._images_are_listed_under_media,
             self._a_guide_of_another_script_is_listed_apart,
             self._fonts_are_listed_per_language_apart_from_files,
+            self._the_resources_file_is_listed_apart_from_files,
             self._the_fonts_folder_is_not_a_language,
         )
         for case in cases:
@@ -471,6 +490,40 @@ class DeckIndex(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+class ScriptFonts(unittest.TestCase):
+    """The fonts the repository offers (ADR-0042, #611): every Chinese and
+    Japanese script has one, each with its licence and a sample line the
+    font check can show."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(TOOLS))
+        import deck_index
+        cls.fonts = deck_index.FONTS
+        cls.dart = (REPO / "lib" / "core" / "decks" / "font_check.dart"
+                    ).read_text(encoding="utf-8")
+
+    def test_every_chinese_and_japanese_script_has_a_font(self) -> None:
+        for script in ("han_simplified", "han_traditional", "han", "kana"):
+            self.assertIn(script, self.fonts)
+
+    def test_each_font_is_in_its_scripts_folder_with_its_licence(self) -> None:
+        for script, (_family, name) in self.fonts.items():
+            folder = REPO / "decks" / "fonts" / script
+            with self.subTest(script):
+                self.assertTrue((folder / name).is_file())
+                self.assertTrue((folder / "OFL.txt").is_file())
+
+    def test_each_font_has_a_sample_for_the_font_check(self) -> None:
+        for script in self.fonts:
+            with self.subTest(script):
+                self.assertIn(f"  '{script}': ScriptSample(", self.dart)
+
+    def test_japanese_kanji_use_noto_sans_jp(self) -> None:
+        self.assertEqual(self.fonts["han"][0], "Noto Sans JP")
+        self.assertEqual(self.fonts["han_traditional"][0], "Noto Sans TC")
 
 
 class ContentBytes(unittest.TestCase):

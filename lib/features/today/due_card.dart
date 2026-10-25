@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/scheduling/script_split.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -19,30 +20,19 @@ import 'today_numbers.dart';
 /// a skill's pace and keeps its full contrast.
 const double _emptyTileOpacity = 0.55;
 
-/// Above this text scale the skill tiles stack in one column, so that a
-/// skill's name keeps room to be read.
-const double _twoColumnMaxScale = 1.5;
-
-/// From this text scale, while the tiles are two to a row, a tile's mark
-/// shortens to its arrow and one word ("Fewer"); the strip and the screen
-/// reader keep the full words.
-const double _shortMarkScale = 1.3;
-
-/// What a skill tile spends beside its name when its pill, name and count
-/// share a line: its side padding, the small pill, and the gaps either
-/// side of the name.
-const double _tilePadding = 24;
-const double _pillWidth = 36;
-const double _tileGap = 10;
-
-/// Today's first card: how many words are due and roughly how long they take,
-/// the four skills, and Start review. Or, with nothing due, "All done".
+/// The skill tiles under Today's one button (#521): what is due in each
+/// skill, and a tile starts a review of its skill alone (ADR-0030). The
+/// start and the count moved to the button ([DailyCard]). A Script tile
+/// follows the skills when a learned course has script decks: script
+/// reading and writing together, kept out of Recognition's and Write's
+/// (owner, 2026-10-24).
 ///
 /// Once some skill is adjusted to the learner ([TodayNumbers.pace]), the
-/// settled "Adjusted to you" strip sits under the count, with the 30-day
-/// change, and opens How you learn; each adjusted skill's tile carries a
-/// mark (mockup `docs/mockups/adapted-to-you.html`, screen 2). Before the
-/// first fit, neither shows.
+/// settled "Adjusted to you" strip sits above the tiles, with the 30-day
+/// change, and opens How you learn; each adjusted skill's tile carries an
+/// arrow, up for more reviews and down for fewer. Before the
+/// first fit, neither shows. With nothing due, the card holds the strip
+/// alone, or nothing.
 ///
 /// Design screen `today`, the `primaryContainer` section named "Due now".
 class DueCard extends StatelessWidget {
@@ -54,103 +44,29 @@ class DueCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    return Semantics(
-      container: true,
-      explicitChildNodes: true,
-      label: l10n.todayDueSection,
-      child: Container(
-        padding: const EdgeInsetsDirectional.all(24),
-        decoration: BoxDecoration(
-          color: scheme.primaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.hero),
+    final pace = numbers.pace;
+    if (numbers.allDone && pace == null) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: 16),
+      child: Semantics(
+        container: true,
+        explicitChildNodes: true,
+        label: l10n.todayDueSection,
+        child: Container(
+          padding: const EdgeInsetsDirectional.all(24),
+          decoration: BoxDecoration(
+            color: scheme.primaryContainer,
+            borderRadius: BorderRadius.circular(AppRadii.hero),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              if (pace != null) _AdjustedStrip(pace: pace),
+              if (pace != null && !numbers.allDone) const SizedBox(height: 16),
+              if (!numbers.allDone) _SkillGrid(numbers: numbers),
+            ],
+          ),
         ),
-        child: numbers.allDone
-            ? Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  const _AllDone(),
-                  if (numbers.pace case final pace?) ...<Widget>[
-                    const SizedBox(height: 16),
-                    _AdjustedStrip(pace: pace),
-                  ],
-                ],
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  _DueCount(due: numbers.due, minutes: numbers.minutes),
-                  if (numbers.pace case final pace?) ...<Widget>[
-                    const SizedBox(height: 16),
-                    _AdjustedStrip(pace: pace),
-                    const SizedBox(height: 16),
-                  ] else
-                    const SizedBox(height: 20),
-                  _SkillGrid(numbers: numbers),
-                  const SizedBox(height: 20),
-                  FilledButton.icon(
-                    style: AppButtonStyles.tall(context),
-                    onPressed: () =>
-                        AppNavigator.startDrill(context, numbers.start),
-                    icon: const Icon(Icons.play_arrow_rounded, size: 24),
-                    label: Text(
-                      numbers.languages.length > 1
-                          ? l10n.todayStartLanguage(
-                              numbers.languages.first.name,
-                            )
-                          : l10n.todayStartReview,
-                    ),
-                  ),
-                ],
-              ),
-      ),
-    );
-  }
-}
-
-/// "41 words due, about 14 min": the large number and its two lines, which
-/// move under the number when they do not fit beside it.
-class _DueCount extends StatelessWidget {
-  const _DueCount({required this.due, required this.minutes});
-
-  final int due;
-  final int minutes;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final fg = theme.colorScheme.onPrimaryContainer;
-    final locale = Localizations.localeOf(context).toLanguageTag();
-    return MergeSemantics(
-      child: Wrap(
-        spacing: 12,
-        runSpacing: 4,
-        crossAxisAlignment: WrapCrossAlignment.end,
-        children: <Widget>[
-          Text(
-            NumberFormat.decimalPattern(locale).format(due),
-            style: theme.textTheme.hero.copyWith(color: fg),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(bottom: 6),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  l10n.todayWordsDue(due),
-                  style: theme.textTheme.sectionTitle.copyWith(color: fg),
-                ),
-                Text(
-                  l10n.todayMinutes(minutes),
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: fg.withValues(alpha: 0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -180,71 +96,21 @@ class _AdjustedStrip extends StatelessWidget {
   }
 }
 
-/// With nothing due: a tick, "All done for now" and when more arrives.
-class _AllDone extends StatelessWidget {
-  const _AllDone();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final fg = theme.colorScheme.onPrimaryContainer;
-    return MergeSemantics(
-      child: Row(
-        children: <Widget>[
-          Icon(Icons.task_alt, size: 40, color: fg),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  l10n.todayAllDoneTitle,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: fg,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  l10n.todayAllDoneBody,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: fg.withValues(alpha: 0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// The skill tiles, two by two, or in one column at large text sizes. An
-/// odd last tile keeps its half of the row. The two tiles of a row are as
-/// tall as each other, and with marks shown, every tile keeps a line for
-/// one, so that names and marks sit level across the row.
+/// The skill tiles, three to a row, thin: each shows only the skill's icon,
+/// its pace arrow if adjusted, the number due, and the name in small type
+/// (owner, 2026-10-24). A row's tiles are as tall as each other; the last
+/// row's missing tiles keep their place.
 class _SkillGrid extends StatelessWidget {
   const _SkillGrid({required this.numbers});
 
   final TodayNumbers numbers;
 
-  @override
-  Widget build(BuildContext context) => LayoutBuilder(
-    builder: (context, constraints) => _grid(context, constraints.maxWidth),
-  );
+  /// Tiles to a row.
+  static const int _perRow = 3;
 
-  Widget _grid(BuildContext context, double width) {
-    final scale = MediaQuery.textScalerOf(context).scale(100) / 100;
+  @override
+  Widget build(BuildContext context) {
     final pace = numbers.pace;
-    // Two to a row, and a name that does not fit beside its pill and count
-    // in a tile that wide: every tile stacks its name under them, as the
-    // tiles with marks do, instead of cutting it short (#478).
-    final stacked =
-        pace == null &&
-        scale <= _twoColumnMaxScale &&
-        !_namesFit(context, (width - 8) / 2);
     final tiles = <Widget>[
       for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries)
         _SkillTile(
@@ -253,29 +119,24 @@ class _SkillGrid extends StatelessWidget {
           due: numbers.dueIn[skill] ?? 0,
           revisable: numbers.revisable[skill] ?? 0,
           noVoice: skill.needsVoice && numbers.noVoice,
-          marked: pace != null,
-          stacked: stacked,
           mark: pace?.marks[skill],
-          // Kept level with the tile beside it; alone in its row, a tile
-          // needs no empty line.
-          keepMarkLine: scale <= _twoColumnMaxScale,
-          shortMark: scale >= _shortMarkScale && scale <= _twoColumnMaxScale,
+        ),
+      if (numbers.script case final script?)
+        _SkillTile(
+          count: script.count,
+          due: script.due,
+          revisable: script.revisable,
+          noVoice: false,
+          mark: pace?.scriptMark,
         ),
     ];
-    if (scale > _twoColumnMaxScale) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 8,
-        children: tiles,
-      );
-    }
-    Widget pair(Widget a, Widget b) => IntrinsicHeight(
+    Widget row(List<Widget> tiles) => IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: 8,
         children: <Widget>[
-          Expanded(child: a),
-          Expanded(child: b),
+          for (var i = 0; i < _perRow; i++)
+            Expanded(child: i < tiles.length ? tiles[i] : const SizedBox()),
         ],
       ),
     );
@@ -283,108 +144,41 @@ class _SkillGrid extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 8,
       children: <Widget>[
-        for (var i = 0; i < tiles.length; i += 2)
-          pair(
-            tiles[i],
-            i + 1 < tiles.length ? tiles[i + 1] : const SizedBox.shrink(),
-          ),
+        for (var i = 0; i < tiles.length; i += _perRow)
+          row(tiles.sublist(i, math.min(i + _perRow, tiles.length))),
       ],
     );
   }
-
-  /// Whether every tile's name fits on one line beside its pill and its
-  /// count (or icon) in a tile [tileWidth] wide, at the text size in force.
-  bool _namesFit(BuildContext context, double tileWidth) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final locale = Localizations.localeOf(context).toLanguageTag();
-    final direction = Directionality.of(context);
-    final scaler = MediaQuery.textScalerOf(context);
-    final nameStyle = theme.textTheme.bodyMedium!.copyWith(
-      fontWeight: FontWeight.w600,
-    );
-    final countStyle = theme.textTheme.bodyMedium!.copyWith(
-      fontWeight: FontWeight.w700,
-    );
-    double measure(String text, TextStyle style) {
-      final painter = TextPainter(
-        text: TextSpan(text: text, style: style),
-        textDirection: direction,
-        textScaler: scaler,
-        maxLines: 1,
-      )..layout();
-      final width = painter.width;
-      painter.dispose();
-      return width;
-    }
-
-    for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries) {
-      final noVoice = skill.needsVoice && numbers.noVoice;
-      var name = measure(skill.label(l10n), nameStyle);
-      if (noVoice) {
-        name = math.max(
-          name,
-          measure(l10n.commonNoVoice, theme.textTheme.bodySmall!),
-        );
-      }
-      final trailing = isIncoming(context, skill.feature)
-          ? 18.0
-          : noVoice
-          ? 20.0
-          : measure(
-              NumberFormat.decimalPattern(locale).format(count),
-              countStyle,
-            );
-      if (_tilePadding + _pillWidth + 2 * _tileGap + name + trailing >
-          tileWidth) {
-        return false;
-      }
-    }
-    return true;
-  }
 }
 
-/// One skill: its pill, its name, and how many of today's cards drill it.
-/// Tapped, it reviews what is due in the skill, in every language learned.
-/// With nothing due, it asks whether to revise every word known in the
-/// skill (ADR-0030).
+/// One skill: its icon, the arrow of its pace, how many of today's cards
+/// drill it, and its name under them. Without a [skill] it is the Script
+/// tile. Tapped, it reviews what is due in the skill, in every language
+/// learned. With nothing due, it asks whether to revise every word known in
+/// the skill (ADR-0030).
 ///
 /// Three other looks, kept apart as ADR-0008 asks:
 /// - **nothing due:** dimmed, as the design draws it;
-/// - **no voice on this phone** (listening only): the reason under the name,
-///   and the tile opens Voices, where one is set up;
+/// - **no voice on this phone** (listening only): a chevron where the count
+///   would be and the reason under the name, and the tile opens Voices,
+///   where one is set up;
 /// - **incoming** (grammar until #2): dimmed, an hourglass where the count
 ///   would be, and "Feature incoming" when tapped.
 class _SkillTile extends StatelessWidget {
   const _SkillTile({
-    required this.skill,
+    this.skill,
     required this.count,
     required this.due,
     required this.revisable,
     required this.noVoice,
-    this.marked = false,
-    this.stacked = false,
     this.mark,
-    this.keepMarkLine = true,
-    this.shortMark = false,
   });
 
-  final Skill skill;
+  /// The skill, or null for the Script tile.
+  final Skill? skill;
 
-  /// Whether the tiles show the learner's pace: then each keeps a line
-  /// under its name for a [mark], which an adjusted skill fills.
-  final bool marked;
-
-  /// Whether the pill and count sit above the name, which is the layout
-  /// [marked] tiles have, for a name that would not fit beside them.
-  final bool stacked;
+  /// The arrow: which way the skill's pace moved; null if not adjusted.
   final PaceDirection? mark;
-
-  /// Whether a tile with no [mark] keeps the line for one.
-  final bool keepMarkLine;
-
-  /// The [mark] in one word, for large text.
-  final bool shortMark;
 
   /// Today's cards in this skill, as the tile shows.
   final int count;
@@ -397,9 +191,22 @@ class _SkillTile extends StatelessWidget {
   final int revisable;
   final bool noVoice;
 
+  String _label(AppLocalizations l10n) =>
+      skill?.label(l10n) ?? l10n.skillScript;
+
+  /// What each tap starts: Script's own tiles' sessions are the script
+  /// decks' Recognition and Write; a skill's leave those out.
+  DrillRequest get _review => skill == null
+      ? const DrillRequest.script()
+      : DrillRequest(skill: skill, script: ScriptScope.without);
+
+  DrillRequest get _revision => skill == null
+      ? const DrillRequest.script(revise: true)
+      : DrillRequest.reviseSkill(skill!, script: ScriptScope.without);
+
   Future<void> _revise(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
-    final label = skill.label(l10n);
+    final label = _label(l10n);
     final revise = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -418,120 +225,47 @@ class _SkillTile extends StatelessWidget {
       ),
     );
     if (revise == true && context.mounted) {
-      await AppNavigator.startDrill(context, DrillRequest.reviseSkill(skill));
+      await AppNavigator.startDrill(context, _revision);
     }
   }
 
-  /// With marks shown (mockup screen 2): the pill and the count on top,
-  /// the name under them, then the mark's line, kept even when empty, at
-  /// the foot, so that the lines of the two tiles of a row sit level.
-  /// [opacity] dims all but the mark.
-  Widget _markedBody(
-    BuildContext context,
-    Widget name,
-    Widget trailing, {
-    required double opacity,
-  }) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final locale = Localizations.localeOf(context).toLanguageTag();
-    final small = theme.textTheme.bodySmall!;
-    final markLine =
-        MediaQuery.textScalerOf(context).scale(small.fontSize!) *
-        (small.height ?? 1.2);
-    final moved = mark;
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 12, 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Opacity(
-            opacity: opacity,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    ModePill(
-                      skill: skill,
-                      size: ModePillSize.small,
-                      muted: noVoice,
-                    ),
-                    const Spacer(),
-                    // As tall as a count in every tile, an hourglass's or a
-                    // chevron's too, so that the names sit level.
-                    Stack(
-                      alignment: AlignmentDirectional.centerEnd,
-                      children: <Widget>[
-                        Visibility.maintain(
-                          visible: false,
-                          child: Text(
-                            NumberFormat.decimalPattern(locale).format(0),
-                            style: theme.textTheme.bodyMedium!.copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                        trailing,
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                name,
-                if (noVoice)
-                  Text(
-                    l10n.commonNoVoice,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: small.copyWith(color: scheme.onSurfaceVariant),
-                  ),
-              ],
-            ),
-          ),
-          if (moved != null || (marked && keepMarkLine))
-            Padding(
-              padding: const EdgeInsetsDirectional.only(top: 2),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: markLine),
-                child: moved == null
-                    ? const SizedBox.shrink()
-                    : PaceMark(direction: moved, short: shortMark),
-              ),
-            ),
-        ],
+  /// The Script tile's pill: a letter form, in the theme's secondary pair
+  /// (the word skills have fixed colours of their own).
+  Widget _scriptPill(ColorScheme scheme) => ExcludeSemantics(
+    child: Container(
+      width: 36,
+      height: 28,
+      decoration: BoxDecoration(
+        color: scheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(14),
       ),
-    );
-  }
+      child: Icon(Icons.abc, size: 22, color: scheme.onSecondaryContainer),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final label = skill.label(l10n);
-    final incoming = isIncoming(context, skill.feature);
+    final label = _label(l10n);
+    final incoming = skill != null && isIncoming(context, skill!.feature);
     final locale = Localizations.localeOf(context).toLanguageTag();
+    final small = theme.textTheme.bodySmall!;
 
-    final name = Text(
-      label,
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-      style: theme.textTheme.bodyMedium!.copyWith(
-        fontWeight: FontWeight.w600,
-        color: scheme.onSurface,
-      ),
+    Widget fitted(Widget child, {AlignmentGeometry? alignment}) => FittedBox(
+      fit: BoxFit.scaleDown,
+      alignment: alignment ?? AlignmentDirectional.centerStart,
+      child: child,
     );
-    final Widget trailing = incoming
+    final Widget number = incoming
         ? Icon(Icons.hourglass_empty, size: 18, color: scheme.onSurfaceVariant)
         : noVoice
         ? Icon(Icons.chevron_right, size: 20, color: scheme.onSurfaceVariant)
         : Text(
             NumberFormat.decimalPattern(locale).format(count),
-            style: theme.textTheme.bodyMedium!.copyWith(
+            maxLines: 1,
+            style: theme.textTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w700,
               color: scheme.onSurface,
             ),
@@ -541,62 +275,79 @@ class _SkillTile extends StatelessWidget {
     final opacity = count == 0 && !incoming && !noVoice
         ? _emptyTileOpacity
         : 1.0;
-    final body = marked || stacked
-        ? _markedBody(context, name, trailing, opacity: opacity)
-        : Opacity(
+    final moved = mark;
+    final body = Padding(
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 6,
+        vertical: 8,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          // The arrow keeps its full contrast on a dimmed tile, the only
+          // place Today shows a skill's pace. Its room is kept when there
+          // is none, so that the tiles sit level.
+          Row(
+            children: <Widget>[
+              Opacity(
+                opacity: opacity,
+                child: skill == null
+                    ? _scriptPill(scheme)
+                    : ModePill(
+                        skill: skill!,
+                        size: ModePillSize.small,
+                        muted: noVoice,
+                      ),
+              ),
+              const Spacer(),
+              SizedBox.square(
+                dimension: PaceMark.size,
+                child: moved == null ? null : PaceMark(direction: moved),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          Opacity(opacity: opacity, child: fitted(number)),
+          Opacity(
             opacity: opacity,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 48),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                child: Row(
-                  children: <Widget>[
-                    ModePill(
-                      skill: skill,
-                      size: ModePillSize.small,
-                      muted: noVoice,
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: noVoice
-                          ? Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                name,
-                                Text(
-                                  l10n.commonNoVoice,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: theme.textTheme.bodySmall!.copyWith(
-                                    color: scheme.onSurfaceVariant,
-                                  ),
-                                ),
-                              ],
-                            )
-                          : name,
-                    ),
-                    const SizedBox(width: 10),
-                    trailing,
-                  ],
+            child: fitted(
+              Text(
+                label,
+                maxLines: 1,
+                softWrap: false,
+                style: small.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: scheme.onSurfaceVariant,
                 ),
               ),
             ),
-          );
+          ),
+          if (noVoice)
+            Opacity(
+              opacity: opacity,
+              child: fitted(
+                Text(
+                  l10n.commonNoVoice,
+                  maxLines: 1,
+                  softWrap: false,
+                  style: small.copyWith(color: scheme.onSurfaceVariant),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
 
     final radius = BorderRadius.circular(AppRadii.small);
     void setUp() => AppNavigator.openVoices(context);
     final VoidCallback? start = due > 0
-        ? () => AppNavigator.startDrill(context, DrillRequest(skill: skill))
+        ? () => AppNavigator.startDrill(context, _review)
         : revisable > 0
         ? () => _revise(context)
         : null;
     final onTap = incoming ? null : (noVoice ? setUp : start);
     // The fill is dimmed as the content is, so that the tile looks as one
-    // dimmed whole, while the mark keeps its contrast.
+    // dimmed whole, while the arrow keeps its contrast.
     final tile = Material(
       color: scheme.surfaceContainerLowest.withValues(alpha: opacity),
       borderRadius: radius,
@@ -606,7 +357,7 @@ class _SkillTile extends StatelessWidget {
 
     if (incoming) {
       return IncomingFeature(
-        feature: skill.feature,
+        feature: skill!.feature,
         label: label,
         badge: IncomingBadgePlacement.none,
         child: tile,
@@ -623,7 +374,6 @@ class _SkillTile extends StatelessWidget {
         child: tile,
       );
     }
-    final moved = mark;
     return Semantics(
       container: true,
       button: start != null,

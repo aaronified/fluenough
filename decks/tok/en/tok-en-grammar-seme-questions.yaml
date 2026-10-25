@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-seme-questions"
+kind: "layer"
+core: "tok-grammar-seme-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking with seme"
+license: "CC-BY-SA-4.0"
+description: "Seme takes the place of the thing you do not know, in the same place as the answer. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Asking with seme"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "statement": "a statement (with bread)", "question": "a question (with what)" }
+  entries:
+    "moku": "to eat"
+    "wile": "to want"
+    "lukin": "to see"
+    "pali": "to make; to work"
+    "kute": "to hear"
+    "jo": "to have"
+  notes: "The statement names the thing: sina moku e pan is you eat bread. The question puts seme where pan was: sina moku e seme? is What do you eat? The word order stays the same, so seme is the only change."

@@ -16,6 +16,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
 
@@ -80,6 +81,7 @@ class ChoiceDrill extends StatelessWidget {
           _ => _wordCard(context, card, language, answered),
         },
         ...answeredSetList(context, session, answered: answered),
+        ...answeredRuleForms(context, session, answered: answered),
       ],
       belowCard: <Widget>[
         Semantics(

@@ -132,6 +132,7 @@ const _headerFields = {
 final _scriptId = RegExp(r'^[a-z]+(?:_[a-z]+)*$');
 
 const _cardFields = {
+  'hears',
   'id',
   'target',
   'native',
@@ -151,6 +152,7 @@ const _cardFields = {
   'modes',
   'pair',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'phrasebook',
@@ -222,6 +224,10 @@ const _layerHeaderFields = {
   'rules',
 };
 const _coreCardFields = {
+  'hears',
+  'warning',
+  'not_sounds_like',
+  'not_looks_like',
   'id',
   'target',
   'reading',
@@ -237,6 +243,7 @@ const _coreCardFields = {
   'examples',
   'modes',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'notes',
@@ -851,6 +858,7 @@ class _Reader {
       words: words(fields, path),
       altNative: fields.strings('alt_native'),
       pos: fields.optionalString('pos', allowEmpty: false),
+      hears: hears(fields, path),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       notes: notes,
@@ -867,6 +875,7 @@ class _Reader {
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -969,6 +978,15 @@ class _Reader {
   bool exampleSounds(_Fields fields, String path) =>
       fields.optionalBool('sounds') ?? true;
 
+  /// A card's `hears`: only `form`, or left out (#522, step 7).
+  String? hears(_Fields fields, String path) {
+    final value = fields.optionalString('hears', allowEmpty: false);
+    if (value != null && value != 'form') {
+      fail(fields.node('hears')!, '$path.hears must be "form", got "$value"');
+    }
+    return value;
+  }
+
   /// Empty, meaning every applicable mode, when the card names none.
   Set<DrillMode> modes(YamlNode? node, String path) {
     if (node == null || _value(node) == null) return const <DrillMode>{};
@@ -1002,6 +1020,16 @@ class _Reader {
   }
 
   // The B1 format's card fields (DECK-FORMAT.md, Vocab decks).
+
+  /// `picture_ask: true`: the picture wears a "?" badge. It needs a
+  /// `picture`, as the validator requires.
+  bool pictureAsk(_Fields fields, String path) {
+    final ask = mark(fields, 'picture_ask', path, _pictureAskRule);
+    if (ask && fields.optionalString('picture', allowEmpty: false) == null) {
+      fail(fields.node('picture_ask')!, '$path: picture_ask needs a picture');
+    }
+    return ask;
+  }
 
   /// A mark such as `phrasebook: true`: true, or left out. False is refused
   /// too, as the validator refuses it. [rule] says what it must be.
@@ -1599,6 +1627,10 @@ class _Reader {
       ),
       words: words(fields, path),
       pos: fields.optionalString('pos', allowEmpty: false),
+      hears: hears(fields, path),
+      warning: fields.optionalString('warning', allowEmpty: false),
+      notSoundsLike: fields.strings('not_sounds_like'),
+      notLooksLike: fields.strings('not_looks_like'),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),
@@ -1609,6 +1641,7 @@ class _Reader {
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -2355,7 +2388,7 @@ class _Reader {
     return LayerPattern(
       name: fields.string('name'),
       slotName: fields.string('slot_name'),
-      prompt: fields.string('prompt'),
+      prompt: fields.optionalString('prompt'),
       slots: fields.has('slots')
           ? layerTexts(
               fields.require('slots'),
@@ -2609,7 +2642,7 @@ class _Reader {
     fields.allowOnly(_patternFields);
     final name = fields.string('name');
     final slotName = fields.string('slot_name');
-    final prompt = fields.string('prompt');
+    final prompt = fields.optionalString('prompt');
     final notes = fields.optionalString('notes');
     final slots = this.slots(fields.require('slots'));
 
@@ -2627,7 +2660,7 @@ class _Reader {
       name: name,
       slotName: slotName,
       slots: slots,
-      prompt: prompt,
+      prompt: prompt ?? kPatternPrompt,
       entries: List.unmodifiable(entries),
       notes: notes,
     );
@@ -2950,6 +2983,7 @@ typedef _NoteItem = ({
   List<String> regions,
 });
 
+const _pictureAskRule = 'true, unquoted, or left out';
 const _phrasebookRule = 'true, unquoted, or left out';
 const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 

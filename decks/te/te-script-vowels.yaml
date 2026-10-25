@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "te-script-vowels"
 part: "core"
@@ -10,78 +11,91 @@ cards:
     target: "అ"
     reading: "a"
     ipa: "a"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0002"
     target: "ఆ"
     reading: "ā"
     ipa: "aː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0003"
     target: "ఇ"
     reading: "i"
     ipa: "i"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0004"
     target: "ఈ"
     reading: "ī"
     ipa: "iː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0005"
     target: "ఉ"
     reading: "u"
     ipa: "u"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0006"
     target: "ఊ"
     reading: "ū"
     ipa: "uː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0007"
     target: "ఋ"
     reading: "ru"
     ipa: "ru"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0008"
     target: "ఎ"
     reading: "e"
     ipa: "e"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0009"
     target: "ఏ"
     reading: "ē"
     ipa: "eː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0010"
     target: "ఐ"
     reading: "ai"
     ipa: "ai"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0011"
     target: "ఒ"
     reading: "o"
     ipa: "o"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0012"
     target: "ఓ"
     reading: "ō"
     ipa: "oː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0013"
     target: "ఔ"
     reading: "au"
     ipa: "au"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }

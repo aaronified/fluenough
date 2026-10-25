@@ -76,10 +76,14 @@ BUNDLED = {"decks/themes.yaml"}
 
 # The fonts the app downloads with a course (ADR-0042): for each script that
 # phones often draw wrongly or lack, one OFL-licensed Noto font in
-# `decks/fonts/<script>/`, with its OFL.txt. Chinese, Japanese and Korean
-# are left out: phones have them, and they are too large. The key is the
-# script as `assets/languages.yaml` and the deck files name it; the value,
-# the font's family name and its file.
+# `decks/fonts/<script>/`, with its OFL.txt. The Noto CJK fonts (simplified
+# and traditional Han, kana, Hangul) are 10 to 18 MB each: they download
+# only when the learner says the phone's own font shows boxes (#611).
+# Japanese's `han` (kanji) is Noto Sans JP too, as `kana` is: the app keeps
+# a font by its path, which must sit in its script's folder, so the file is
+# there twice rather than shared. The key is the script as
+# `assets/languages.yaml` and the deck files name it; the value, the
+# font's family name and its file.
 FONTS = {
     "perso_arabic": ("Noto Nastaliq Urdu", "NotoNastaliqUrdu.ttf"),
     "devanagari": ("Noto Sans Devanagari", "NotoSansDevanagari.ttf"),
@@ -95,13 +99,19 @@ FONTS = {
         "Noto Sans Egyptian Hieroglyphs", "NotoSansEgyptianHieroglyphs.ttf"),
     "cuneiform": ("Noto Sans Cuneiform", "NotoSansCuneiform.ttf"),
     "linear_b": ("Noto Sans Linear B", "NotoSansLinearB.ttf"),
+    "han_simplified": ("Noto Sans SC", "NotoSansSC.ttf"),
+    "han_traditional": ("Noto Sans TC", "NotoSansTC.ttf"),
+    "han": ("Noto Sans JP", "NotoSansJP.ttf"),
+    "kana": ("Noto Sans JP", "NotoSansJP.ttf"),
+    "hangul": ("Noto Sans KR", "NotoSansKR.ttf"),
 }
 FONTS_DIR = DECKS / "fonts"
 
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
 # out of the index.
-NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
+NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+             "resources"}
 
 
 # The core a layer names when it is the layer of a script guide for one of a
@@ -339,6 +349,10 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         lang = ctx.lang(code)
         block = _language_block(files)
         entries = [_file_entry(p, by_path.get(p.resolve())) for p in files]
+        # The resources file (#832) is no deck: listed apart, below.
+        resources = [e for e in entries if e["kind"] == "resources"]
+        files = [p for p, e in zip(files, entries) if e["kind"] != "resources"]
+        entries = [e for e in entries if e["kind"] != "resources"]
         guides = [e for p, e in zip(files, entries) if _other_script_guide(p, e)]
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
@@ -394,6 +408,11 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         fonts = _font_entries(_scripts_of(code, block, own_scripts))
         if fonts:
             language["fonts"] = fonts
+        # Apart from `files` and from the size too: the released app passes
+        # an unknown key by, and the app that knows it fetches the file
+        # alone, when a sheet wants it (#832).
+        if resources:
+            language["resources"] = resources
         out.append(language)
     return {
         "version": INDEX_VERSION,
@@ -417,7 +436,7 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        lists = ("files", "script_guides", "media", "fonts")
+        lists = ("files", "script_guides", "media", "fonts", "resources")
         keys = [k for k in language if k not in ("units", *lists)]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')

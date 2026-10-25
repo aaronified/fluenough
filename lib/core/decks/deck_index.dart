@@ -315,6 +315,7 @@ class IndexLanguage {
     this.files = const <IndexFile>[],
     this.media = const <IndexFile>[],
     this.fonts = const <IndexFont>[],
+    this.resources = const <IndexFile>[],
   });
 
   final String code;
@@ -354,6 +355,12 @@ class IndexLanguage {
   /// with the decks and kept apart from [files], so that an app too old to
   /// read them passes them by. Not counted in [size].
   final List<IndexFont> fonts;
+
+  /// The language's resources file (#832), `kind: resources`: where else to
+  /// learn it. Listed apart from [files], so that an app too old to read it
+  /// passes it by, and not counted in [size]. The app fetches it on its own,
+  /// not with the decks; at most one.
+  final List<IndexFile> resources;
 
   /// The native languages a learner who speaks [spoken], best known first,
   /// is taught this language from: those of [spoken] it has decks for, or
@@ -437,6 +444,17 @@ class IndexLanguage {
     ];
   }
 
+  /// The resources file [json] describes, or null when it is not one: a bad
+  /// entry costs the suggestion and never the decks.
+  static IndexFile? _tryParseResources(Object? json, String code) {
+    try {
+      final file = IndexFile._parse(json);
+      return file.path == 'decks/$code/$code-resources.yaml' ? file : null;
+    } on FormatException {
+      return null;
+    }
+  }
+
   static IndexLanguage _parse(Object? json) {
     if (json is! Map) {
       throw const FormatException('a language is not an object');
@@ -491,6 +509,10 @@ class IndexLanguage {
       media: media,
       fonts: <IndexFont>[
         for (final font in _list(json['fonts'])) ?IndexFont.tryParse(font),
+      ],
+      resources: <IndexFile>[
+        for (final file in _list(json['resources']))
+          ?_tryParseResources(file, code),
       ],
     );
   }

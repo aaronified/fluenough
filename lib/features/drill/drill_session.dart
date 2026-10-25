@@ -16,8 +16,9 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
-import '../../core/numbers/number_practice.dart';
+import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
+import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
@@ -102,7 +103,10 @@ class DrillSession extends ChangeNotifier {
     this.recordsRevision = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
-       assert(!revising || !recorded, 'revising is never recorded'),
+       assert(
+         !revising || !recorded,
+         'a revision records through recordsRevision, not recorded',
+       ),
        _state = state,
        _chosenMode = inputMode,
        _random = random ?? state.random,
@@ -123,16 +127,15 @@ class DrillSession extends ChangeNotifier {
   final DateTime startedAt;
 
   /// Whether answers go to the review log. False for number practice, which
-  /// has no schedule, for [revising], and for quick revision, which
-  /// [recordsRevision] records instead.
+  /// has no schedule, and for [revising], which [recordsRevision] records
+  /// instead.
   final bool recorded;
 
-  /// Revising a finished deck's cards ahead of their dates. Titled with the
-  /// deck, like a recorded session, but never [recorded]: a deck's Revise
-  /// records nothing.
+  /// Revising cards ahead of their dates: a finished deck's, titled with the
+  /// deck, or a tag's. Never [recorded], but see [recordsRevision].
   final bool revising;
 
-  /// Whether answers are recorded although the session is not: a quick
+  /// Whether answers are recorded although the session is not: every
   /// revision (ADR-0029, as ADR-0033 amends it). FSRS takes an early review
   /// for what it is, so a right answer stretches the interval only a little,
   /// and a miss brings the card back sooner.
@@ -233,7 +236,7 @@ class DrillSession extends ChangeNotifier {
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
       !hearsMeaning &&
-      item.card is! NumberCard &&
+      !item.card.practiceOnly &&
       item.card.reading != null &&
       deck.language.needsReading &&
       !_state.needsAlphabet(deck);
@@ -394,7 +397,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Whether the answer is a number in digits: a generated number heard.
   bool get typesDigits =>
-      item.card is NumberCard && item.mode == DrillMode.listening;
+      item.card.heardAs != null && item.mode == DrillMode.listening;
 
   /// Grades [typed]. A near miss waits for [judge]; every other outcome is
   /// recorded now.
@@ -945,8 +948,17 @@ class DrillSession extends ChangeNotifier {
 
   /// How the current item is asked. Grammar understood is only ever
   /// asked by choosing the meaning (DECK-FORMAT.md, Rules decks), whatever
-  /// built the item.
-  Ask get ask => item.mode == DrillMode.grammarUnderstood && item.ask == Ask.own
+  /// built the item, where the card's forms allow it ([chooseFormMeaningType]).
+  Ask get ask =>
+      item.mode == DrillMode.grammarUnderstood &&
+          item.ask == Ask.own &&
+          chooseFormMeaningType.eligible(
+            item,
+            QuestionContext(
+              canChoose: (_) => true,
+              siblingsOf: _state.siblingsOf,
+            ),
+          )
       ? Ask.chooseFormMeaning
       : item.ask;
 
@@ -973,12 +985,18 @@ class DrillSession extends ChangeNotifier {
   /// hand-picked wrong alternatives, its [Card.confusables] that name a card
   /// of the course, in random order (a confusable written out as a word is
   /// not a card, so it is not used here). The rest are drawn from
-  /// [AppState.choicePool].
+  /// [AppState.choicePool], those sharing most with the card (its word
+  /// family, part of speech, tags) first.
   List<Card> get options => _options ??= _pickOptions();
 
   List<Card> _pickOptions() {
     final card = item.card;
-    final pool = _state.choicePool(card, ask)..shuffle(_random);
+    // The pool by what its cards share with this one (rankDistractors),
+    // shuffled within each rank, so that the likelier mistakes come first.
+    final pool = <Card>[
+      for (final group in rankDistractors(card, _state.choicePool(card, ask)))
+        ...group..shuffle(_random),
+    ];
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
     final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
@@ -1164,7 +1182,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded || recordsRevision) {
+    if ((recorded || recordsRevision) && !_state.keepsOutOfLog(entry)) {
       _state.record(
         entry,
         grade,
@@ -1174,7 +1192,13 @@ class DrillSession extends ChangeNotifier {
         asked: ask,
       );
     }
-    _answers.add(SessionAnswer(skill: Skill.of(entry.mode), grade: grade));
+    _answers.add(
+      SessionAnswer(
+        skill: Skill.of(entry.mode),
+        grade: grade,
+        time: _watch.elapsed,
+      ),
+    );
   }
 
   /// Whether the current typed answer was graded as its reading, in Latin

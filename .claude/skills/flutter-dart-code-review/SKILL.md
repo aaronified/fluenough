@@ -5,6 +5,8 @@ metadata:
   origin: ECC
 ---
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 # Flutter/Dart Code Review Best Practices
 
 Comprehensive, library-agnostic checklist for reviewing Flutter/Dart applications. These principles apply regardless of which state management solution, routing library, or DI framework is used.
@@ -195,6 +197,8 @@ class UserError extends UserState {
 ## 6. Testing
 
 ### Test types and expectations:
+This repository: tests check behaviour, and a change adds one only for a behaviour no test covers (AGENTS.md, "Tests check behaviour"). The coverage items below do not apply; do not flag a missing test unless the change adds an uncovered behaviour.
+
 - [ ] **Unit tests**: Cover all business logic (state managers, repositories, utility functions)
 - [ ] **Widget tests**: Cover individual widget behavior, interactions, and visual output
 - [ ] **Integration tests**: Cover critical user flows end-to-end

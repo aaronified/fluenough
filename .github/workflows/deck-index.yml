@@ -1,0 +1,64 @@
+name: Deck index
+
+# Regenerates decks/index.json (and the README's languages badge and list) on main
+# after a merge that touched decks/ (owner, 2026-10-23). Pull requests are
+# not failed for a stale index and builders do not run tools/deck_index.py.
+#
+# Pushing to protected main needs a token that may bypass the rules: it uses
+# the secret WIKI_TOKEN (a fine-grained token with Contents: write), else
+# GITHUB_TOKEN, which cannot bypass the pull-request rule. WIKI_TOKEN's owner
+# must be allowed to bypass it in main's ruleset.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "decks/**"
+      - "!decks/index.json"
+  workflow_dispatch:
+
+# One at a time; a second waits rather than cancelling the first.
+concurrency:
+  group: deck-index
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  index:
+    name: Regenerate decks/index.json
+    timeout-minutes: 90
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python3 tools/deck_index.py
+      # The README's languages list (between its languages: markers).
+      - run: python3 tools/readme_languages.py
+      - name: Commit and push
+        run: |
+          if git diff --quiet -- decks/index.json README.md; then
+            echo "Index is current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add decks/index.json README.md
+          git commit -m "Regenerate decks/index.json"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the regenerated decks/index.json to main. Most likely the token may not bypass main's pull-request rule: WIKI_TOKEN must be allowed to bypass it in the ruleset (GITHUB_TOKEN cannot)."
+          exit 1
