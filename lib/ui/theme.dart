@@ -38,10 +38,11 @@ abstract final class AppTheme {
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
     bool pureBlack = false,
-  }) => _darks.putIfAbsent(
-    (seed, highContrast, pureBlack),
-    () => _dark(seed, highContrast, pureBlack),
-  );
+  }) => _darks.putIfAbsent((
+    seed,
+    highContrast,
+    pureBlack,
+  ), () => _dark(seed, highContrast, pureBlack));
 
   static ThemeData _dark(ThemeSeed seed, bool highContrast, bool pureBlack) {
     final scheme = _scheme(seed, Brightness.dark, highContrast);

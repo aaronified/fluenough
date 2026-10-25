@@ -142,38 +142,40 @@ void main() {
     }
   });
 
-  test('a change to every language rebuilds the others, not just the answered',
-      () async {
-    final touching = _TouchingProgress();
-    final other = AppState.test(
-      decks: MemoryDeckSource(_course()),
-      progress: _twoYears(touching),
-      speech: FixedSpeechEngine(onDevice: const <String>{}),
-      settings: SettingsNotifier(
-        spokenLanguages: const <String>['en'],
-        learningLanguages: _codes,
-        learningChosen: true,
-      ),
-    );
-    addTearDown(other.dispose);
-    await other.load();
-    other.lazyOff = true;
-    for (final code in _codes) {
-      other.buildSession(today(code));
-    }
-    final before = Map<String, int>.of(other.sessionBuilds);
+  test(
+    'a change to every language rebuilds the others, not just the answered',
+    () async {
+      final touching = _TouchingProgress();
+      final other = AppState.test(
+        decks: MemoryDeckSource(_course()),
+        progress: _twoYears(touching),
+        speech: FixedSpeechEngine(onDevice: const <String>{}),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: _codes,
+          learningChosen: true,
+        ),
+      );
+      addTearDown(other.dispose);
+      await other.load();
+      other.lazyOff = true;
+      for (final code in _codes) {
+        other.buildSession(today(code));
+      }
+      final before = Map<String, int>.of(other.sessionBuilds);
 
-    touching.touchOnRecord = true;
-    final item = other.buildSession(today('xa')).items.first;
-    other.record(item, 4);
-    other.buildSession(today('xb'));
+      touching.touchOnRecord = true;
+      final item = other.buildSession(today('xa')).items.first;
+      other.record(item, 4);
+      other.buildSession(today('xb'));
 
-    expect(
-      other.sessionBuilds['xb'],
-      before['xb']! + 1,
-      reason: 'a replay of every language invalidates xb\'s cached queue',
-    );
-  });
+      expect(
+        other.sessionBuilds['xb'],
+        before['xb']! + 1,
+        reason: 'a replay of every language invalidates xb\'s cached queue',
+      );
+    },
+  );
 
   test('a change to the decks or voices rebuilds every language', () async {
     for (final code in _codes) {

@@ -117,9 +117,7 @@ StatsNumbers _numbersFor(
   final progress = state.progress;
   final now = state.now();
   final key = (
-    version: language == null
-        ? progress.version
-        : progress.versionOf(language),
+    version: language == null ? progress.version : progress.versionOf(language),
     day: calendarDay(now),
     cardOf: cardOf,
     range: range,

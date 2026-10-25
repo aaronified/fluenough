@@ -341,10 +341,7 @@ class _DecksPageState extends State<DecksPage> {
                       onUpNextRow: (row) => _upNextRow = row,
                       onOpen: (unit) => unit.onPath
                           ? AppNavigator.openUnit(context, unit.decks.first.id)
-                          : AppNavigator.openDeck(
-                              context,
-                              unit.decks.first.id,
-                            ),
+                          : AppNavigator.openDeck(context, unit.decks.first.id),
                     ),
                     SliverToBoxAdapter(
                       child: Column(
@@ -359,12 +356,15 @@ class _DecksPageState extends State<DecksPage> {
                               outerRadius: AppRadii.card,
                               gap: 4,
                               children: <Widget>[
-                                for (final entry in view.otherDecks) ...<Widget>[
+                                for (final entry
+                                    in view.otherDecks) ...<Widget>[
                                   DeckTile(
                                     entry: entry,
                                     badge: DeckBadge.forEntry(state, entry),
-                                    onTap: () =>
-                                        AppNavigator.openDeck(context, entry.id),
+                                    onTap: () => AppNavigator.openDeck(
+                                      context,
+                                      entry.id,
+                                    ),
                                   ),
                                   if (hasNumberPractice(state, entry))
                                     NumberPracticeTile(deck: entry),

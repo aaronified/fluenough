@@ -1254,10 +1254,12 @@ class AppState extends ChangeNotifier {
   /// [language]'s decks also give each card in (`target_scripts`). The
   /// Perso-Arabic decks are voiced `ur-PK`; with only the Hindi voice,
   /// `hi-IN`, installed, it says each card's Devanagari spelling.
-  LanguageInfo? backupVoice(LanguageInfo language) => derived<LanguageInfo?>(
-    ('backupVoice', language.ttsTag, language.code, language.script),
-    () => _backupVoice(language),
-  );
+  LanguageInfo? backupVoice(LanguageInfo language) => derived<LanguageInfo?>((
+    'backupVoice',
+    language.ttsTag,
+    language.code,
+    language.script,
+  ), () => _backupVoice(language));
 
   LanguageInfo? _backupVoice(LanguageInfo language) {
     // Only once the phone has said the deck's own voice is missing.
@@ -1772,10 +1774,7 @@ class AppState extends ChangeNotifier {
     if (_lazyScheduled || _disposed) return;
     _lazyScheduled = true;
     try {
-      SchedulerBinding.instance.scheduleTask<void>(
-        _runLazy,
-        Priority.idle,
-      );
+      SchedulerBinding.instance.scheduleTask<void>(_runLazy, Priority.idle);
     } catch (_) {
       _lazyScheduled = false;
       _lazyOffNow();
@@ -2069,11 +2068,10 @@ class AppState extends ChangeNotifier {
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
-  bool isFinished(DeckEntry entry) => keptFor<bool>(
-    entry.language.code,
-    ('isFinished', entry.id),
-    () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0,
-  );
+  bool isFinished(DeckEntry entry) => keptFor<bool>(entry.language.code, (
+    'isFinished',
+    entry.id,
+  ), () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0);
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and

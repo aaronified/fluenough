@@ -70,11 +70,7 @@ class ProgressIndex {
     for (final language in _languages.values) {
       if (threshold == kLeechLapses) {
         for (final key in language.leeches) {
-          yield (
-            key: key,
-            deckId: _lastDeck[key]!,
-            lapses: _runs[key]!.lapses,
-          );
+          yield (key: key, deckId: _lastDeck[key]!, lapses: _runs[key]!.lapses);
         }
       }
     }
