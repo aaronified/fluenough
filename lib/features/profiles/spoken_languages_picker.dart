@@ -47,9 +47,15 @@ class SpokenLanguagesPicker extends StatefulWidget {
     this.readsScript = const <String, bool>{},
     this.onScriptsChanged,
     this.locales,
+    this.gutter = PickerGutter.onboarding,
   });
 
   static const String asset = 'assets/languages.yaml';
+
+  /// The side padding of the search field, chips, rows and headings: 24 in
+  /// onboarding, [AppSizes.gutter] on a Settings page, in line with the
+  /// other Settings pages.
+  final double gutter;
 
   /// The chosen codes, best known first.
   final List<String> initial;
@@ -226,7 +232,12 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       if (!any) {
         body.add(
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 16),
+            padding: EdgeInsetsDirectional.fromSTEB(
+              widget.gutter,
+              16,
+              widget.gutter,
+              16,
+            ),
             child: Text(
               l10n.knownSearchNone(query),
               style: theme.textTheme.bodyLarge,
@@ -251,7 +262,12 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
           ..add(PickerHeading(l10n.knownTopPicks))
           ..add(
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
+              padding: EdgeInsetsDirectional.fromSTEB(
+                widget.gutter,
+                0,
+                widget.gutter,
+                8,
+              ),
               child: Wrap(
                 spacing: 8,
                 runSpacing: 4,
@@ -273,7 +289,9 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       }
     }
 
-    return Scrollbar(
+    return PickerGutter(
+      gutter: widget.gutter,
+      child: Scrollbar(
       controller: _scroll,
       thumbVisibility: true,
       child: ListView(
@@ -281,7 +299,12 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
         children: <Widget>[
           ?widget.header,
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
+            padding: EdgeInsetsDirectional.fromSTEB(
+              widget.gutter,
+              0,
+              widget.gutter,
+              8,
+            ),
             child: TextField(
               key: const ValueKey<String>('known-search'),
               controller: _search,
@@ -337,7 +360,10 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
     final same = language.ownName == language.name;
     return ListTile(
       key: ValueKey<String>('lang-${language.code}'),
-      contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
+      contentPadding: EdgeInsetsDirectional.only(
+        start: widget.gutter,
+        end: widget.gutter - 8,
+      ),
       title: on && !same
           ? Text.rich(_ownNameMarked(l10n, language))
           : Text(language.name),
@@ -405,7 +431,10 @@ class FamilyRow extends StatelessWidget {
       onTap: onToggle,
       child: ListTile(
         key: ValueKey<String>('family-$id'),
-        contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
+        contentPadding: EdgeInsetsDirectional.only(
+          start: PickerGutter.of(context),
+          end: PickerGutter.of(context) - 8,
+        ),
         title: Text(name),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
@@ -437,7 +466,12 @@ class PickerHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 4),
+      padding: EdgeInsetsDirectional.fromSTEB(
+        PickerGutter.of(context),
+        16,
+        PickerGutter.of(context),
+        4,
+      ),
       // A wrap, not a row: at large text a note too long for the line goes
       // under the label instead of overflowing.
       child: Wrap(
@@ -808,7 +842,12 @@ class PickerNote extends StatelessWidget {
     final theme = Theme.of(context);
     final colour = theme.colorScheme.onSurfaceVariant;
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(24, 12, 24, 4),
+      padding: EdgeInsetsDirectional.fromSTEB(
+        PickerGutter.of(context),
+        12,
+        PickerGutter.of(context),
+        4,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -824,4 +863,22 @@ class PickerNote extends StatelessWidget {
       ),
     );
   }
+}
+
+/// The side padding the picker's rows, headings and notes use, set by
+/// [SpokenLanguagesPicker.gutter].
+class PickerGutter extends InheritedWidget {
+  const PickerGutter({super.key, required this.gutter, required super.child});
+
+  /// Onboarding's 24 px line.
+  static const double onboarding = 24;
+
+  final double gutter;
+
+  static double of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<PickerGutter>()?.gutter ??
+      onboarding;
+
+  @override
+  bool updateShouldNotify(PickerGutter old) => gutter != old.gutter;
 }

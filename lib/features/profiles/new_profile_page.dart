@@ -123,7 +123,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
         children: <Widget>[
           Expanded(
             child: ListView(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 24),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
               children: <Widget>[
                 Text(l10n.newProfileShape, style: label),
                 const SizedBox(height: 12),
@@ -245,7 +245,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
           SafeArea(
             top: false,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 12, 24, 24),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 24),
               child: FilledButton(
                 onPressed: canCreate ? create : null,
                 style: FilledButton.styleFrom(
