@@ -111,7 +111,8 @@ class _QuickRevisionState extends State<QuickRevision> {
             label: l10n.todayRevisionSkillsLabel,
             child: Wrap(
               spacing: 8,
-              runSpacing: 8,
+              // The chips' 48 px tap targets already put 12 px between rows.
+              runSpacing: 0,
               children: <Widget>[
                 for (final c in choices)
                   ChoiceChip(

@@ -96,10 +96,12 @@ class _Week extends StatelessWidget {
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 6,
+      // Fixed 36 px columns, the first and last at the card's padding.
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         for (final day in days)
-          Expanded(
+          SizedBox(
+            width: 36,
             child: Semantics(
               container: true,
               label: l10n.todayWeekDay(name.format(day.date), day.status.name),

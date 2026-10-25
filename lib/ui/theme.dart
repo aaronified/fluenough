@@ -142,11 +142,6 @@ abstract final class AppTheme {
         ),
       ),
       chipTheme: ChipThemeData(
-        // The chip is its own tap target (about 48 px tall with this
-        // padding), so the 8 px Wrap gaps are the gaps that show. The
-        // default 48 px target added an invisible 12 px between rows.
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadii.chip),
         ),

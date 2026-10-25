@@ -1133,9 +1133,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 child: widget.firstRun && !searching
                     ? Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                          AppSizes.gutter + 8,
+                          AppSizes.gutter + AppSizes.textInset,
                           8,
-                          AppSizes.gutter,
+                          AppSizes.gutter + AppSizes.textInset,
                           0,
                         ),
                         child: Text(
