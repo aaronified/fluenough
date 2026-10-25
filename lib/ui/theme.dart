@@ -15,19 +15,36 @@ import '../app/skill.dart';
 /// Component shapes and sizes follow the design: 56 px stadium buttons, 10 px
 /// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
+  // A theme is worked out once for what it reads (#854): a settings change
+  // that is not the seed, the contrast or pure black, hands MaterialApp the
+  // identical object, so nothing under it restyles.
+  static final Map<(ThemeSeed, bool), ThemeData> _lights =
+      <(ThemeSeed, bool), ThemeData>{};
+  static final Map<(ThemeSeed, bool, bool), ThemeData> _darks =
+      <(ThemeSeed, bool, bool), ThemeData>{};
+
   static ThemeData light({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
-  }) => fromScheme(
-    _scheme(seed, Brightness.light, highContrast),
-    modes: highContrast ? ModeColors.lightHigh : ModeColors.light,
+  }) => _lights.putIfAbsent(
+    (seed, highContrast),
+    () => fromScheme(
+      _scheme(seed, Brightness.light, highContrast),
+      modes: highContrast ? ModeColors.lightHigh : ModeColors.light,
+    ),
   );
 
   static ThemeData dark({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
     bool pureBlack = false,
-  }) {
+  }) => _darks.putIfAbsent((
+    seed,
+    highContrast,
+    pureBlack,
+  ), () => _dark(seed, highContrast, pureBlack));
+
+  static ThemeData _dark(ThemeSeed seed, bool highContrast, bool pureBlack) {
     final scheme = _scheme(seed, Brightness.dark, highContrast);
     return fromScheme(
       pureBlack

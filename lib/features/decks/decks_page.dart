@@ -13,6 +13,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/language_glyph.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/visible_listenable_builder.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_hours.dart';
@@ -94,9 +95,37 @@ class _DecksPageState extends State<DecksPage> {
     _scrollToUpNext(animate: animate);
   }
 
+  /// The path's row of the unit up next, or -1.
+  int _upNextRow = -1;
+
   void _scrollToUpNext({required bool animate}) {
     final target = _upNext.currentContext;
-    if (target == null) return;
+    if (target == null) {
+      // The unit is not built, as the path builds only the rows on screen
+      // (#853): go to where it should be, and then to it.
+      final row = _upNextRow;
+      if (row < 0 || !_scroll.hasClients) return;
+      // The same place the unit is put at once built (alignment 0.3), so a
+      // course that starts at its first unit stays at the top, its card in
+      // view.
+      final position = _scroll.position;
+      _scroll.jumpTo(
+        (row * CoursePathSliver.estimatedRowHeight +
+                220 -
+                0.3 * position.viewportDimension)
+            .clamp(0.0, position.maxScrollExtent),
+      );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _upNext.currentContext != null) {
+          Scrollable.ensureVisible(
+            _upNext.currentContext!,
+            alignment: 0.3,
+            duration: Duration.zero,
+          );
+        }
+      });
+      return;
+    }
     Scrollable.ensureVisible(
       target,
       alignment: 0.3,
@@ -244,7 +273,7 @@ class _DecksPageState extends State<DecksPage> {
         ],
       );
     }
-    return ListenableBuilder(
+    return VisibleListenableBuilder(
       listenable: Listenable.merge(<Listenable>[
         state.progress,
         state.settings,
@@ -272,69 +301,93 @@ class _DecksPageState extends State<DecksPage> {
             if (mounted) _toUpNext(animate: false);
           });
         }
-        return SingleChildScrollView(
+        return CustomScrollView(
           controller: _scroll,
-          // Clear of the buttons that float over the path's end (#466):
-          // their margin, their height and a gap, above any system inset.
-          padding: EdgeInsetsDirectional.fromSTEB(
-            16,
-            4,
-            16,
-            fabClearance + MediaQuery.paddingOf(context).bottom,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              _searchField(l10n),
-              if (_searching)
-                SearchResults(
-                  query: _search.text,
-                  languages: languages,
-                  planOf: widget.planOf,
-                )
-              else if (view != null) ...<Widget>[
-                CourseCard(
-                  view: view,
-                  glyph: languageGlyph(view.language, state.decks),
-                  hours: courseHours(state, code!),
-                ),
-                const SizedBox(height: 20),
-                CoursePathView(
-                  view: view,
-                  state: state,
-                  upNextKey: _upNext,
-                  onOpen: (unit) => unit.onPath
-                      ? AppNavigator.openUnit(context, unit.decks.first.id)
-                      : AppNavigator.openDeck(context, unit.decks.first.id),
-                ),
-                const SizedBox(height: 32),
-                const BeyondTheCourse(),
-                if (view.otherDecks.isNotEmpty) ...<Widget>[
-                  const SizedBox(height: 24),
-                  GroupedList(
-                    header: l10n.pathOtherDecks,
-                    outerRadius: AppRadii.card,
-                    gap: 4,
-                    children: <Widget>[
-                      for (final entry in view.otherDecks) ...<Widget>[
-                        DeckTile(
-                          entry: entry,
-                          badge: DeckBadge.forEntry(state, entry),
-                          onTap: () => AppNavigator.openDeck(context, entry.id),
-                        ),
-                        if (hasNumberPractice(state, entry))
-                          NumberPracticeTile(deck: entry),
+          slivers: <Widget>[
+            // Clear of the buttons that float over the path's end (#466):
+            // their margin, their height and a gap, above any system inset.
+            SliverPadding(
+              padding: EdgeInsetsDirectional.fromSTEB(
+                16,
+                4,
+                16,
+                fabClearance + MediaQuery.paddingOf(context).bottom,
+              ),
+              sliver: SliverMainAxisGroup(
+                slivers: <Widget>[
+                  SliverToBoxAdapter(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        _searchField(l10n),
+                        if (_searching)
+                          SearchResults(
+                            query: _search.text,
+                            languages: languages,
+                            planOf: widget.planOf,
+                          )
+                        else if (view != null) ...<Widget>[
+                          CourseCard(
+                            view: view,
+                            glyph: languageGlyph(view.language, state.decks),
+                            hours: courseHours(state, code!),
+                          ),
+                          const SizedBox(height: 20),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
+                  if (!_searching && view != null) ...<Widget>[
+                    CoursePathSliver(
+                      view: view,
+                      state: state,
+                      upNextKey: _upNext,
+                      onUpNextRow: (row) => _upNextRow = row,
+                      onOpen: (unit) => unit.onPath
+                          ? AppNavigator.openUnit(context, unit.decks.first.id)
+                          : AppNavigator.openDeck(context, unit.decks.first.id),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          const SizedBox(height: 32),
+                          const BeyondTheCourse(),
+                          if (view.otherDecks.isNotEmpty) ...<Widget>[
+                            const SizedBox(height: 24),
+                            GroupedList(
+                              header: l10n.pathOtherDecks,
+                              outerRadius: AppRadii.card,
+                              gap: 4,
+                              children: <Widget>[
+                                for (final entry
+                                    in view.otherDecks) ...<Widget>[
+                                  DeckTile(
+                                    entry: entry,
+                                    badge: DeckBadge.forEntry(state, entry),
+                                    onTap: () => AppNavigator.openDeck(
+                                      context,
+                                      entry.id,
+                                    ),
+                                  ),
+                                  if (hasNumberPractice(state, entry))
+                                    NumberPracticeTile(deck: entry),
+                                ],
+                              ],
+                            ),
+                          ],
+                          if (state.brokenDecks.isNotEmpty) ...<Widget>[
+                            const SizedBox(height: 24),
+                            _BrokenFiles(files: state.brokenDecks),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
                 ],
-                if (state.brokenDecks.isNotEmpty) ...<Widget>[
-                  const SizedBox(height: 24),
-                  _BrokenFiles(files: state.brokenDecks),
-                ],
-              ],
-            ],
-          ),
+              ),
+            ),
+          ],
         );
       },
     );

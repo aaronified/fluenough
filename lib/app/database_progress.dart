@@ -54,6 +54,15 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   bool get persists => true;
 
   @override
+  int get version => _memory.version;
+
+  @override
+  int versionOf(String language) => _memory.versionOf(language);
+
+  @override
+  ProgressIndex get index => _memory.index;
+
+  @override
   FsrsState? stateOf(String cardId, DrillMode mode) =>
       _memory.stateOf(cardId, mode);
 
