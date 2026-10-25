@@ -1518,7 +1518,12 @@ void main() {
           final l10n = l10nOf(tester);
           await tester.drag(downward.first, const Offset(0, -3000));
           await tester.pumpAndSettle();
-          expect(onScreen(tester, find.text(l10n.pathUpNext)), isFalse);
+          // Scrolled away, the unit is off screen, and may not be built.
+          final upNext = find.text(l10n.pathUpNext);
+          expect(
+            upNext.evaluate().isEmpty || !onScreen(tester, upNext),
+            isTrue,
+          );
           await tester.tap(fab('where-i-am'));
           await tester.pumpAndSettle();
           expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);

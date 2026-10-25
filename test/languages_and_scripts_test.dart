@@ -43,6 +43,7 @@ import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
+import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
@@ -2357,6 +2358,25 @@ void main() {
           expect(plans.map((p) => p.language.code), <String>['es']);
           expect(pillFilled(tester), isTrue);
           state.shellTab.value = ShellTab.decks;
+          await tester.pumpAndSettle();
+          // The page opens at the unit up next, which may be far down the
+          // path; the course card is built only while near the screen
+          // (#853), so go back to the top to read it.
+          tester
+              .state<ScrollableState>(
+                find
+                    .descendant(
+                      of: find.byType(DecksPage),
+                      matching: find.byWidgetPredicate(
+                        (w) =>
+                            w is Scrollable &&
+                            w.axisDirection == AxisDirection.down,
+                      ),
+                    )
+                    .first,
+              )
+              .position
+              .jumpTo(0);
           await tester.pumpAndSettle();
           expect(
             tester
