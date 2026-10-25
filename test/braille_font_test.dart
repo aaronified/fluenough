@@ -33,12 +33,13 @@ void main() {
         await tester.pumpWidget(
           MaterialApp(
             theme: dark ? AppTheme.dark() : AppTheme.light(),
-            builder: (context, child) => MediaQuery(
-              data: MediaQuery.of(
-                context,
-              ).copyWith(textScaler: const TextScaler.linear(1.4)),
-              child: child!,
-            ),
+            builder: (context, child) {
+              final media = MediaQuery.of(context);
+              return MediaQuery(
+                data: media.copyWith(textScaler: const TextScaler.linear(1.4)),
+                child: child!,
+              );
+            },
             home: const Scaffold(
               body: Column(
                 children: <Widget>[
@@ -57,9 +58,11 @@ void main() {
           ),
         );
 
-        Text textIn(Finder f) => tester.widget<Text>(
-          find.descendant(of: f, matching: find.byType(Text)).first,
-        );
+        Text textIn(Finder f) {
+          final texts = find.descendant(of: f, matching: find.byType(Text));
+          return tester.widget<Text>(texts.first);
+        }
+
         final cells = textIn(find.byKey(const ValueKey<String>('cells')));
         expect(cells.style!.fontFamily, brailleFontFamily);
         // One face with no bold: a synthetic bold would fill the rings.
@@ -70,7 +73,9 @@ void main() {
 
         // Braille quoted in any other text falls back to the same font,
         // not the phone's.
-        final note = tester.element(find.byKey(const ValueKey<String>('note')));
+        final note = tester.element(
+          find.byKey(const ValueKey<String>('note')),
+        );
         expect(
           Theme.of(note).textTheme.bodyMedium!.fontFamilyFallback,
           contains(brailleFontFamily),
