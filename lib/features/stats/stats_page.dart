@@ -101,6 +101,47 @@ class _Frame extends StatelessWidget {
   );
 }
 
+final Expando<Map<String?, ({Object key, StatsNumbers value})>> _numbersMemo =
+    Expando<Map<String?, ({Object key, StatsNumbers value})>>('StatsNumbers');
+
+/// The numbers for [language] (all when null) over [range], worked out again
+/// only when that language's progress, the day, the catalog or the range
+/// changed: they walk the log, and the page builds more often than that.
+StatsNumbers _numbersFor(
+  AppState state,
+  String? language,
+  CardLookup cardOf,
+  bool Function(String deckId) counts,
+  StatsRange range,
+) {
+  final progress = state.progress;
+  final now = state.now();
+  final key = (
+    version: language == null
+        ? progress.version
+        : progress.versionOf(language),
+    day: calendarDay(now),
+    cardOf: cardOf,
+    range: range,
+  );
+  final byLanguage = _numbersMemo[progress] ??=
+      <String?, ({Object key, StatsNumbers value})>{};
+  final cached = byLanguage[language];
+  if (cached != null && cached.key == key) return cached.value;
+  final languageOf = languageLookupOf(state);
+  final value = StatsNumbers.of(
+    progress,
+    now: now,
+    range: range,
+    cardOf: cardOf,
+    deckFilter: language == null ? null : counts,
+    parametersOf: (e) =>
+        progress.parameters.of(languageOf(e.deckId) ?? '', e.mode),
+  );
+  byLanguage[language] = (key: key, value: value);
+  return value;
+}
+
 class _StatsBody extends StatelessWidget {
   const _StatsBody({
     required this.state,
@@ -131,15 +172,7 @@ class _StatsBody extends StatelessWidget {
         : state.unlockCountsFor(chosen);
     // The weakest tags are over all time: the star is not ranged.
     const range = StatsRange.all;
-    final numbers = StatsNumbers.of(
-      state.progress,
-      now: state.now(),
-      range: range,
-      cardOf: cardOf,
-      deckFilter: language == null ? null : _counts,
-      parametersOf: (e) =>
-          state.progress.parameters.of(languageOf(e.deckId) ?? '', e.mode),
-    );
+    final numbers = _numbersFor(state, language, cardOf, _counts, range);
     final leeches = findLeeches(state.progress, cardOf: cardOf)
         .where(
           (l) =>

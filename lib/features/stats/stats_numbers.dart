@@ -61,12 +61,13 @@ List<LanguageInfo> practisedLanguages(
   required List<LanguageInfo> languages,
   required LanguageLookup languageOf,
 }) {
-  // From the index, which keeps each language's latest review as answers
-  // come: no walk of the log. It places a review by its card's language.
-  final latest = <String, DateTime>{
-    for (final code in progress.index.languages)
-      if (progress.index.latestIn(code) case final at?) code: at,
-  };
+  final latest = <String, DateTime>{};
+  for (final e in progress.log) {
+    final code = languageOf(e.deckId);
+    if (code == null) continue;
+    final at = latest[code];
+    if (at == null || e.at.isAfter(at)) latest[code] = e.at;
+  }
   final practised = <LanguageInfo>[
     for (final language in languages)
       if (latest.containsKey(language.code)) language,

@@ -310,7 +310,10 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     );
     _log.add(event);
     _index.add(event);
+    // Under the card's language and the deck's, which name the same one
+    // (`te-0053`, `te-en-core-100`) but are read by different callers.
     _languageTick[skillOf(key).language] = ++_tick;
+    _languageTick[deckId.split('-').first] = _tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.
