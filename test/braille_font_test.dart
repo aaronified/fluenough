@@ -26,62 +26,57 @@ const LanguageInfo spanish = LanguageInfo(
 
 void main() {
   for (final dark in <bool>[false, true]) {
-    testWidgets(
-      'braille cells are drawn in the shadow-dot font, '
-      'in the ${dark ? 'dark' : 'light'} theme at 1.4x text',
-      (tester) async {
-        await tester.pumpWidget(
-          MaterialApp(
-            theme: dark ? AppTheme.dark() : AppTheme.light(),
-            builder: (context, child) {
-              final media = MediaQuery.of(context);
-              return MediaQuery(
-                data: media.copyWith(textScaler: const TextScaler.linear(1.4)),
-                child: child!,
-              );
-            },
-            home: const Scaffold(
-              body: Column(
-                children: <Widget>[
-                  TargetText(
-                    '⠁⠈⠂⠃⠿',
-                    language: braille,
-                    fontSize: 48,
-                    key: ValueKey<String>('cells'),
-                  ),
-                  TargetText('hola', language: spanish, fontSize: 48),
-                  // A note, in the interface's own text, that quotes cells.
-                  Text('Dots 1-2: ⠃ (b)', key: ValueKey<String>('note')),
-                ],
-              ),
+    testWidgets('braille cells are drawn in the shadow-dot font, '
+        'in the ${dark ? 'dark' : 'light'} theme at 1.4x text', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: dark ? AppTheme.dark() : AppTheme.light(),
+          builder: (context, child) {
+            final media = MediaQuery.of(context);
+            return MediaQuery(
+              data: media.copyWith(textScaler: const TextScaler.linear(1.4)),
+              child: child!,
+            );
+          },
+          home: const Scaffold(
+            body: Column(
+              children: <Widget>[
+                TargetText(
+                  '⠁⠈⠂⠃⠿',
+                  language: braille,
+                  fontSize: 48,
+                  key: ValueKey<String>('cells'),
+                ),
+                TargetText('hola', language: spanish, fontSize: 48),
+                // A note, in the interface's own text, that quotes cells.
+                Text('Dots 1-2: ⠃ (b)', key: ValueKey<String>('note')),
+              ],
             ),
           ),
-        );
+        ),
+      );
 
-        Text textIn(Finder f) {
-          final texts = find.descendant(of: f, matching: find.byType(Text));
-          return tester.widget<Text>(texts.first);
-        }
+      Text textIn(Finder f) {
+        final texts = find.descendant(of: f, matching: find.byType(Text));
+        return tester.widget<Text>(texts.first);
+      }
 
-        final cells = textIn(find.byKey(const ValueKey<String>('cells')));
-        expect(cells.style!.fontFamily, brailleFontFamily);
-        // One face with no bold: a synthetic bold would fill the rings.
-        expect(cells.style!.fontWeight, FontWeight.normal);
+      final cells = textIn(find.byKey(const ValueKey<String>('cells')));
+      expect(cells.style!.fontFamily, brailleFontFamily);
+      // One face with no bold: a synthetic bold would fill the rings.
+      expect(cells.style!.fontWeight, FontWeight.normal);
 
-        final spanishText = textIn(find.widgetWithText(TargetText, 'hola'));
-        expect(spanishText.style!.fontFamily, isNot(brailleFontFamily));
+      final spanishText = textIn(find.widgetWithText(TargetText, 'hola'));
+      expect(spanishText.style!.fontFamily, isNot(brailleFontFamily));
 
-        // Braille quoted in any other text falls back to the same font,
-        // not the phone's.
-        final note = tester.element(
-          find.byKey(const ValueKey<String>('note')),
-        );
-        expect(
-          Theme.of(note).textTheme.bodyMedium!.fontFamilyFallback,
-          contains(brailleFontFamily),
-        );
-      },
-    );
+      // Braille quoted in any other text falls back to the same font,
+      // not the phone's.
+      final note = tester.element(find.byKey(const ValueKey<String>('note')));
+      expect(
+        Theme.of(note).textTheme.bodyMedium!.fontFamilyFallback,
+        contains(brailleFontFamily),
+      );
+    });
   }
 
   test('the font ships with the app and is registered under its family', () {
