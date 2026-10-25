@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.3] - 2026-10-25
+
 ### Fixed
 
 - Speaking Hindustani on a Samsung phone always said "Didn't catch that": the recogniser's final result came after Android's done signal, and the app had already given up. The app now waits a moment for the final result and uses the last partial one if none comes, and the app log says whether the listen ended with done before a result or with an empty result.
