@@ -77,7 +77,9 @@ class _QuickRevisionState extends State<QuickRevision> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 4),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Semantics(
             header: true,
             child: Text(
@@ -88,7 +90,9 @@ class _QuickRevisionState extends State<QuickRevision> {
         ),
         const SizedBox(height: 4),
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 4),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Text(
             knownAtAll == 0
                 ? l10n.todayRevisionNone

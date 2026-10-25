@@ -43,7 +43,9 @@ class _SupportPageState extends State<SupportPage> {
       title: l10n.settingsRowSupport,
       builder: (context) => <Widget>[
         Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -78,7 +80,9 @@ class _SupportPageState extends State<SupportPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
               child: Text(
                 l10n.supportPayee(AppLinks.supportName, AppLinks.supportUpiId),
                 style: theme.textTheme.bodyMedium!.copyWith(
@@ -95,7 +99,12 @@ class _SupportPageState extends State<SupportPage> {
             ),
             if (_noUpiApp)
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4, 12, 4, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                  AppSizes.textInset,
+                  12,
+                  AppSizes.textInset,
+                  0,
+                ),
                 child: Text(
                   l10n.supportNoUpiApp,
                   style: theme.textTheme.bodyMedium!.copyWith(

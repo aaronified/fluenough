@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/theme.dart';
 import 'adjust_section.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
@@ -95,7 +96,9 @@ class ActivitiesPage extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Text(
             l10n.settingsActivitiesAlwaysAsked,
             style: settingsHelpStyle(Theme.of(context)),

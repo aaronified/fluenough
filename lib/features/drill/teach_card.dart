@@ -230,9 +230,10 @@ class TeachCard extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) => SingleChildScrollView(
-        // The card never scrolls: it is laid out to the screen's height.
-        physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 8),
+        // Laid out to the screen's height. It scrolls only when large text
+        // makes the content taller than that, rather than cutting a note.
+        physics: const ClampingScrollPhysics(),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: constraints.hasBoundedHeight
@@ -246,7 +247,7 @@ class TeachCard extends StatelessWidget {
             children: <Widget>[
               hero,
               meaning,
-              if (note != null) NoteBlock(text: note, maxLines: 2),
+              if (note != null) NoteBlock(text: note, maxLines: 4),
               for (final alike in rude)
                 AlikeWarning(
                   kind: alike.kind,

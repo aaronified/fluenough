@@ -95,7 +95,9 @@ class _BodyState extends State<_Body> {
       SettingsHeading(l10n.settingsDataLog),
       const SizedBox(height: 8),
       Padding(
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: AppSizes.textInset,
+        ),
         child: Text(l10n.settingsDataLogIntro(log.length), style: help),
       ),
       const SizedBox(height: 12),
@@ -138,7 +140,9 @@ class _BodyState extends State<_Body> {
       if (all.length > events.length || _expanded) ...<Widget>[
         const SizedBox(height: 16),
         Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Text(
             l10n.settingsDataLogShowing(events.length, all.length),
             style: help,

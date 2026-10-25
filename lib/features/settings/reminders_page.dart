@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/theme.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
 
@@ -81,7 +82,9 @@ class RemindersPage extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
               child: Text(
                 l10n.settingsRemindersAbout,
                 style: settingsHelpStyle(Theme.of(context)),

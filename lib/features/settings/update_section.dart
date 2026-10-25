@@ -307,10 +307,7 @@ class _ActionRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     // Beside the text at normal sizes; under it when the text is large, as
     // the profile card's Switch button goes.
-    final stacked =
-        below ||
-        actions.length > 1 ||
-        isLargeText(context);
+    final stacked = below || actions.length > 1 || isLargeText(context);
     final bar = progress;
     final text = MergeSemantics(
       child: Semantics(
