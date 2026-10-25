@@ -191,33 +191,44 @@ class _PlacementMatchState extends State<PlacementMatch> {
       required String? pair,
       required bool selected,
       required VoidCallback onTap,
-    }) => Padding(
-      padding: const EdgeInsetsDirectional.only(bottom: 8),
-      child: OutlinedButton(
-        key: key,
-        style: OutlinedButton.styleFrom(
-          backgroundColor: selected
-              ? scheme.primaryContainer
-              : pair != null
-              ? scheme.secondaryContainer
-              : null,
-          minimumSize: const Size.fromHeight(56),
+    }) => OutlinedButton(
+      key: key,
+      style: OutlinedButton.styleFrom(
+        backgroundColor: selected
+            ? scheme.primaryContainer
+            : pair != null
+            ? scheme.secondaryContainer
+            : null,
+        minimumSize: const Size.fromHeight(56),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
-        onPressed: onTap,
-        child: Row(
-          children: <Widget>[
-            SizedBox(
-              width: 28,
-              child: pair == null
-                  ? null
-                  : Text(
-                      pair, // ui-literal-ok: a pair's number, not language
-                      style: TextStyle(color: scheme.onSecondaryContainer),
-                    ),
+        // Symmetric, with room at both ends for the number badge, so the
+        // label sits in the middle.
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 28,
+          vertical: 12,
+        ),
+      ),
+      onPressed: onTap,
+      child: Stack(
+        alignment: Alignment.center,
+        clipBehavior: Clip.none,
+        children: <Widget>[
+          Center(child: child),
+          if (pair != null)
+            PositionedDirectional(
+              start: -22,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: Text(
+                  pair, // ui-literal-ok: a pair's number, not language
+                  style: TextStyle(color: scheme.onSecondaryContainer),
+                ),
+              ),
             ),
-            Expanded(child: Center(child: child)),
-          ],
-        ),
+        ],
       ),
     );
 
@@ -225,14 +236,15 @@ class _PlacementMatchState extends State<PlacementMatch> {
       number: widget.number,
       title: Text(l10n.placementMatchQuestion),
       children: <Widget>[
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              child: Column(
+        for (final (i, card) in q.cards.indexed)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(bottom: 8),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  for (final (i, card) in q.cards.indexed)
-                    cell(
+                  Expanded(
+                    child: cell(
                       key: ValueKey<String>('match-left-$i'),
                       pair: numberOf(i),
                       selected: _left == i,
@@ -243,26 +255,21 @@ class _PlacementMatchState extends State<PlacementMatch> {
                         fontSize: 28,
                       ),
                     ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  for (final (j, answer) in q.answers.indexed)
-                    cell(
-                      key: ValueKey<String>('match-right-$j'),
-                      pair: numberOfRight(j),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: cell(
+                      key: ValueKey<String>('match-right-$i'),
+                      pair: numberOfRight(i),
                       selected: false,
-                      onTap: () => _tapRight(j),
-                      child: Text(answer, textAlign: TextAlign.center),
+                      onTap: () => _tapRight(i),
+                      child: Text(q.answers[i], textAlign: TextAlign.center),
                     ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
         const SizedBox(height: 8),
         FilledButton(
           onPressed: _pairs.length == q.cards.length
@@ -436,11 +443,16 @@ class PlacementSay extends StatefulWidget {
     required this.question,
     required this.number,
     required this.onAnswer,
+    this.onCantSpeak,
   });
 
   final SayQuestion question;
   final int number;
   final ValueChanged<bool> onAnswer;
+
+  /// "I can't speak now": skips the question, neither right nor wrong. Null
+  /// where it cannot be skipped.
+  final VoidCallback? onCantSpeak;
 
   @override
   State<PlacementSay> createState() => _PlacementSayState();
@@ -496,7 +508,7 @@ class _PlacementSayState extends State<PlacementSay> {
         ),
         if (_unheard != null && !_listening)
           Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.symmetric(vertical: 12),
             child: Semantics(
               liveRegion: true,
               child: Text(
@@ -506,6 +518,13 @@ class _PlacementSayState extends State<PlacementSay> {
                     .copyWith(color: Theme.of(context).colorScheme.error),
               ),
             ),
+          ),
+        if (widget.onCantSpeak case final skip?)
+          TextButton.icon(
+            key: const ValueKey<String>('placement-cant-speak'),
+            onPressed: _listening ? null : skip,
+            icon: const Icon(Icons.mic_off_outlined),
+            label: Text(l10n.drillCantSpeak, textAlign: TextAlign.center),
           ),
         _DontKnow(onTap: () => widget.onAnswer(false)),
       ],
