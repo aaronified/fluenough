@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/decks/script_fonts.dart';
 import '../../core/models/braille.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
@@ -143,6 +144,7 @@ class _BrailleKeyboardState extends State<BrailleKeyboard> {
                       brailleCell(_dots),
                       textScaler: TextScaler.noScaling,
                       style: TextStyle(
+                        fontFamily: brailleFontFamily,
                         fontSize: 56,
                         height: 1,
                         color: scheme.onSurface,
