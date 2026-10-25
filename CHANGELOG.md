@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-10-25
+
 ### Added
 
 - Braille is drawn with shadow dots: every cell shows all six positions, raised dots solid and unraised ones as thin rings, so that a lone dot's column and row can be read on a phone. The app carries its own small braille font (OFL, built by `tools/make_braille_font.py`), used for braille on cards, notes, the typed answer and the braille keyboard, never the phone's font (#835).
