@@ -624,6 +624,27 @@ void main() {
       expect(fakes.links.asked, isEmpty, reason: 'not through the browser');
     });
 
+    testWidgets('the Download action sits beside the text at 1x and under it '
+        'at 1.4x text', (tester) async {
+      Future<void> pumpAndCheck(double textScale) async {
+        await _pump(tester, LatestRelease(_newer), textScale: textScale);
+        final l10n = l10nOf(tester);
+        await _tap(tester, find.text(l10n.settingsUpdateCheck));
+        final text = tester.getRect(
+          find.text(l10n.settingsUpdateAvailable(_newer)),
+        );
+        final action = tester.getRect(find.text(l10n.settingsUpdateDownload));
+        if (textScale > 1.3) {
+          expect(action.top, greaterThanOrEqualTo(text.bottom));
+        } else {
+          expect(action.left, greaterThanOrEqualTo(text.right));
+        }
+      }
+
+      await pumpAndCheck(1.0);
+      await pumpAndCheck(1.4);
+    });
+
     testWidgets('each install failure says why, with Try again and the '
         'download page', (tester) async {
       final fakes = await _pump(
