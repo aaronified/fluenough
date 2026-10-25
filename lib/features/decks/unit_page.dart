@@ -635,7 +635,7 @@ class _SectionHeading extends StatelessWidget {
       child: Wrap(
         crossAxisAlignment: WrapCrossAlignment.center,
         spacing: 12,
-        runSpacing: 4,
+        runSpacing: 8,
         children: <Widget>[
           Semantics(
             header: true,
@@ -646,7 +646,6 @@ class _SectionHeading extends StatelessWidget {
               aside,
               style: theme.textTheme.labelMedium!.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
-                fontWeight: FontWeight.w600,
               ),
             ),
         ],
@@ -875,6 +874,7 @@ class _RuleCard extends StatelessWidget {
           Align(
             alignment: AlignmentDirectional.centerStart,
             child: TextButton.icon(
+              style: AppButtonStyles.inline(context),
               onPressed: onToggle,
               icon: Icon(open ? Icons.expand_less : Icons.expand_more),
               label: Text(

@@ -108,16 +108,18 @@ class _SymbolRow extends StatelessWidget {
                   ),
                 Row(
                   children: <Widget>[
-                    if (heard != null)
-                      SpeakerIcon(
-                        onPlay: () => state.speak(heard.word, heard.language),
-                        label: l10n.ipaExamplePlay(heard.word),
-                      ),
+                    // Practise first, so it starts on the text column in
+                    // every row, with or without a speaker.
                     OutlinedButton(
                       style: AppButtonStyles.compact(context),
                       onPressed: () => openSoundPractice(context, symbol),
                       child: Text(l10n.ipaSymbolPractise),
                     ),
+                    if (heard != null)
+                      SpeakerIcon(
+                        onPlay: () => state.speak(heard.word, heard.language),
+                        label: l10n.ipaExamplePlay(heard.word),
+                      ),
                   ],
                 ),
               ],
