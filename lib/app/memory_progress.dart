@@ -148,6 +148,11 @@ abstract interface class ProgressStore implements Listenable {
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
+  /// How many times progress has been replayed from the whole log, for tests
+  /// to assert that recording an answer does not.
+  @visibleForTesting
+  static int replays = 0;
+
   /// Progress rebuilt from [events], oldest first, [leechActions] and the
   /// [fitted] parameters, by replaying them as the database does
   /// (ADR-0005, [replayReviews]).
@@ -164,6 +169,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       fitted: fitted,
       lastStudied: _lastStudied(reviews),
     );
+    replays++;
     final replayed = replayReviews(
       reviews,
       effects: LeechEffects(actions),
@@ -330,6 +336,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   }) {
     final action = LeechAction(at: now, key: key, kind: kind);
     _leechActions.add(action);
+    replays++;
     final replayed = replayReviews(
       _log.map(logged),
       effects: LeechEffects(_leechActions),

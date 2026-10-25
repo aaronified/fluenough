@@ -1,4 +1,5 @@
 import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
@@ -11,11 +12,19 @@ import '../../core/progress/tag_strength.dart';
 /// cards are deleted (AGENTS.md rule 1), so history can outlive them.
 typedef CardLookup = Card? Function(String cardId, {String? deckId});
 
-/// A [CardLookup] over [state]'s catalog, indexed once.
+final Expando<CardLookup> _lookups = Expando<CardLookup>();
+
+/// A [CardLookup] over [state]'s catalog, indexed once for as long as the
+/// catalog's list is the same one: every screen and rebuild shares it.
 CardLookup cardLookupOf(AppState state) {
+  final decks = state.decks;
+  return _lookups[decks] ??= _indexCards(decks);
+}
+
+CardLookup _indexCards(List<DeckEntry> decks) {
   final listed = <String, Card>{};
   final first = <String, Card>{};
-  for (final entry in state.decks) {
+  for (final entry in decks) {
     for (final card in entry.cards) {
       listed['${entry.id}/${card.id}'] = card;
       first.putIfAbsent(card.id, () => card);
@@ -52,13 +61,12 @@ List<LanguageInfo> practisedLanguages(
   required List<LanguageInfo> languages,
   required LanguageLookup languageOf,
 }) {
-  final latest = <String, DateTime>{};
-  for (final e in progress.log) {
-    final code = languageOf(e.deckId);
-    if (code == null) continue;
-    final at = latest[code];
-    if (at == null || e.at.isAfter(at)) latest[code] = e.at;
-  }
+  // From the index, which keeps each language's latest review as answers
+  // come: no walk of the log. It places a review by its card's language.
+  final latest = <String, DateTime>{
+    for (final code in progress.index.languages)
+      if (progress.index.latestIn(code) case final at?) code: at,
+  };
   final practised = <LanguageInfo>[
     for (final language in languages)
       if (latest.containsKey(language.code)) language,
