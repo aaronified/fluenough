@@ -8,6 +8,7 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 
 /// Forty synthetic languages, thirty words each, taught from English.
@@ -33,8 +34,8 @@ ${[for (var i = 1; i <= 30; i++) '  - { id: $code-en-words-${i.toString().padLef
 
 /// About two years of answers: every word of every language reviewed on
 /// five days spread over 700.
-MemoryProgress _twoYears() {
-  final progress = MemoryProgress();
+MemoryProgress _twoYears([MemoryProgress? into]) {
+  final progress = into ?? MemoryProgress();
   final start = DateTime(2024, 6, 1, 9);
   for (var round = 0; round < 5; round++) {
     for (final code in _codes) {
@@ -50,6 +51,45 @@ MemoryProgress _twoYears() {
     }
   }
   return progress;
+}
+
+/// Touches every language while an answer is being recorded, as a change
+/// of the baseline parameters does (it replays every state).
+class _TouchingProgress extends MemoryProgress {
+  bool touchOnRecord = false;
+
+  @override
+  ReviewEvent record({
+    required String deckId,
+    required String cardId,
+    required DrillMode mode,
+    required int grade,
+    required DateTime now,
+    Duration elapsed = Duration.zero,
+    String? answerGiven,
+    String? script,
+    Ask? asked,
+  }) {
+    final event = super.record(
+      deckId: deckId,
+      cardId: cardId,
+      mode: mode,
+      grade: grade,
+      now: now,
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+      script: script,
+      asked: asked,
+    );
+    if (touchOnRecord) {
+      actOnLeech(
+        (cardId: 'xb-en-words-0001', mode: DrillMode.recognition),
+        LeechActionKind.reset,
+        now: now,
+      );
+    }
+    return event;
+  }
 }
 
 void main() {
@@ -100,6 +140,39 @@ void main() {
         reason: code == 'xa' ? 'rebuilt once' : '$code stays cached',
       );
     }
+  });
+
+  test('a change to every language rebuilds the others, not just the answered',
+      () async {
+    final touching = _TouchingProgress();
+    final other = AppState.test(
+      decks: MemoryDeckSource(_course()),
+      progress: _twoYears(touching),
+      speech: FixedSpeechEngine(onDevice: const <String>{}),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: _codes,
+        learningChosen: true,
+      ),
+    );
+    addTearDown(other.dispose);
+    await other.load();
+    other.lazyOff = true;
+    for (final code in _codes) {
+      other.buildSession(today(code));
+    }
+    final before = Map<String, int>.of(other.sessionBuilds);
+
+    touching.touchOnRecord = true;
+    final item = other.buildSession(today('xa')).items.first;
+    other.record(item, 4);
+    other.buildSession(today('xb'));
+
+    expect(
+      other.sessionBuilds['xb'],
+      before['xb']! + 1,
+      reason: 'a replay of every language invalidates xb\'s cached queue',
+    );
   });
 
   test('a change to the decks or voices rebuilds every language', () async {

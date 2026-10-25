@@ -49,7 +49,7 @@ class _VisibleListenableBuilderState extends State<VisibleListenableBuilder> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     // Showing the tab again rebuilds only if something changed meanwhile.
-    final now = TickerMode.of(context);
+    final now = TickerMode.valuesOf(context).enabled;
     // Any other inherited change (theme, locale) must still rebuild.
     if (now == _visible) _stale = true;
     _visible = now;

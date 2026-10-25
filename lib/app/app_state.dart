@@ -1592,8 +1592,8 @@ class AppState extends ChangeNotifier {
             ) ??
             false)
           all[code]!,
-  ];
-}
+    ];
+  }
 
   /// The languages the summary after [finished]'s part of Today offers
   /// next (#528): the others of [languageChoices], in their order, with
@@ -1661,10 +1661,10 @@ class AppState extends ChangeNotifier {
   }
 
   // Versions that say what a cached queue was built from (#852). An answer
-  // bumps its own language's; any other change to progress, a settings
+  // follows the progress store's own version of its language (a baseline
+  // change touches them all); any other change to progress, a settings
   // change and a structural change (decks, voices, profile) bump the rest.
   final Map<String, _SessionCache> _sessions = <String, _SessionCache>{};
-  final Map<String, int> _languageVersion = <String, int>{};
   int _anyProgressVersion = 0;
   int _otherProgressVersion = 0;
   int _settingsVersion = 0;
@@ -1689,8 +1689,6 @@ class AppState extends ChangeNotifier {
         _answerTimes.clear();
         _timesRead = 0;
       }
-    } else {
-      _languageVersion[language] = (_languageVersion[language] ?? 0) + 1;
     }
   }
 
@@ -1719,7 +1717,7 @@ class AppState extends ChangeNotifier {
   /// from. Approximation: the clock counts in 30 second steps, so a card
   /// that falls due shows up to 30 seconds late in a kept value.
   Object _stampOf(String scope) => (
-    scope == '*' ? _anyProgressVersion : _languageVersion[scope] ?? 0,
+    scope == '*' ? _anyProgressVersion : progress.versionOf(scope),
     _otherProgressVersion,
     _settingsVersion,
     _structureVersion,
@@ -1903,166 +1901,6 @@ class AppState extends ChangeNotifier {
               !settings.isOffFor(Skill.speaking, entry.language.code),
       },
     );
-    final leeches = progress.leechEffects;
-    return progress.dueTomorrow(
-      now(),
-      counts: (key) =>
-          learned.contains(key.cardId) &&
-          modes.contains(key.mode) &&
-          !leeches.isSetAside(key),
-    );
-  }
-
-  /// Whether this version can drill anything in [entry]: some card has a
-  /// mode whose drill is available. A grammar deck cannot until its drill
-  /// ships (#14). The learner's own skill switches do not count here.
-  bool canDrill(DeckEntry entry) {
-    final shipped = <DrillMode>{
-      for (final skill in Skill.values)
-        if (features.isAvailable(skill.feature)) ...skill.modes,
-    };
-    return entry.cards.any(
-      (card) => card
-          .modesIn(ttsAvailable: true, siblings: siblingsOf(card))
-          .any(shipped.contains),
-    );
-  }
-
-  /// The languages with something to do in Today's session, each its own
-  /// session (`DrillRequest.today(language:)`), in the order the learner
-  /// chose to learn them, then the decks' order.
-  List<LanguageInfo> get todayLanguages {
-    final all = <String, LanguageInfo>{
-      for (final entry in profileDecks) entry.language.code: entry.language,
-    };
-    final chosen = settings.learningLanguages;
-    return <LanguageInfo>[
-      for (final code in <String>[
-        ...chosen.where(all.containsKey),
-        ...all.keys.where((code) => !chosen.contains(code)),
-      ])
-        if (buildSession(DrillRequest.today(language: code)).isNotEmpty)
-          all[code]!,
-    ];
-  }
-
-  /// The languages the summary after [finished]'s part of Today offers
-  /// next (#528): the others of [languageChoices], in their order, with
-  /// something left in their own session. Starting one switches the
-  /// language bar to it.
-  List<LanguageInfo> nextTodayLanguages(String finished) => <LanguageInfo>[
-    for (final language in languageChoices)
-      if (language.code != finished &&
-          buildSession(DrillRequest.today(language: language.code)).isNotEmpty)
-        language,
-  ];
-
-  /// The queue for [request], built by [SessionQueue] from the catalog, the
-  /// progress store, the settings, the feature registry and the voices.
-  ///
-  /// Today's counts, a deck's counts and the drill itself all come from
-  /// here, so they always agree.
-  /// [ignorePauses] builds it as if no skill were paused: a pause lasts an
-  /// hour and does not make a deck finished, so [notStudiedIn] ignores it.
-  SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
-    // A queue is immutable, so one built for the same request is shared
-    // until progress, settings or this state change (#852). The clock's
-    // second is in the key, as a card falls due with time.
-    List<String>? sorted(Iterable<String>? values) =>
-        values == null ? null : (values.toList()..sort());
-    final key = (
-      'buildSession',
-      sorted(request.deckIds)?.join('\u0000'),
-      request.skill,
-      sorted(request.skills?.map((s) => s.name))?.join(','),
-      sorted(request.tags)?.join('\u0000'),
-      request.newOnly,
-      request.numbers,
-      request.untaught,
-      request.revise,
-      request.lesson,
-      request.daily,
-      request.language,
-      request.limit,
-      sorted(request.cardIds)?.join('\u0000'),
-      request.script,
-      ignorePauses,
-      now().millisecondsSinceEpoch ~/ 1000,
-    );
-    return derived<SessionQueue>(
-      key,
-      () => _buildSession(request, ignorePauses: ignorePauses),
-    );
-  }
-
-  SessionQueue _buildSession(
-    DrillRequest request, {
-    bool ignorePauses = false,
-  }) {
-    final ids = request.deckIds;
-    final language = request.language;
-    // A request that names a language takes its decks even while the bar
-    // shows another, as the summary offers the next language (#528).
-    final decks = ids == null
-        ? <DeckEntry>[
-            for (final entry
-                in language == null
-                    ? profileDecks
-                    : _learnedDecks(onlyShown: false))
-              if (language == null || entry.language.code == language) entry,
-          ]
-        : <DeckEntry>[
-            for (final entry in this.decks)
-              if (ids.contains(entry.id)) entry,
-          ];
-    final tags = request.tags;
-    List<Card> tagged(Iterable<Card> cards) => <Card>[
-      for (final card in cards)
-        if (tags.isEmpty || card.tags.any(tags.contains)) card,
-    ];
-    // The script decks' Recognition and Write are the Script tile's, apart
-    // from the word skills' (owner, 2026-10-24).
-    final split = ScriptSplit(progress.skills.scriptDecks);
-    final scope = request.script;
-    final cards = split.cardsFor(
-      scope,
-      tagged(<Card>[for (final entry in decks) ...entry.cards]),
-    );
-
-    // A named skill is drilled even if switched off in Settings, as the
-    // deck page offers it, but not while it is paused.
-    final named = request.named;
-    final modes = split.modesFor(
-      scope,
-      named == null
-          ? _modes(ignorePauses: ignorePauses)
-          : <DrillMode>{
-              for (final skill in named)
-                if (features.isAvailable(skill.feature) &&
-                    (ignorePauses || !settings.isPaused(skill, now())))
-                  ...skill.modes,
-            },
-    );
-
-    // A new pair is a new skill of a word already taught: a word is new
-    // once, in its lesson (ADR-0024). Only an untaught request takes those
-    // of words not taught yet.
-    final newLimit = request.revise ? 0 : cards.length;
-
-    // A skill switched off for a language is not drilled in it (#89), and
-    // nothing is heard while sound is off.
-    final voiced = <String, bool>{
-      for (final entry in this.decks)
-        entry.id:
-            canSpeak(entry.language) &&
-            !settings.isOffFor(Skill.listening, entry.language.code),
-    };
-    final heard = <String, bool>{
-      for (final entry in this.decks)
-        entry.id:
-            canHear(entry.language) &&
-            !settings.isOffFor(Skill.speaking, entry.language.code),
-    };
     final leeches = progress.leechEffects;
     final fromToday =
         ids == null &&

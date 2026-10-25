@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import '../core/data/database.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
-import '../core/progress/progress_index.dart';
 import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
