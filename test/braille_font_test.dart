@@ -39,18 +39,18 @@ void main() {
               ).copyWith(textScaler: const TextScaler.linear(1.4)),
               child: child!,
             ),
-            home: Scaffold(
+            home: const Scaffold(
               body: Column(
                 children: <Widget>[
                   TargetText(
                     '⠁⠈⠂⠃⠿',
                     language: braille,
                     fontSize: 48,
-                    key: const ValueKey<String>('cells'),
+                    key: ValueKey<String>('cells'),
                   ),
                   TargetText('hola', language: spanish, fontSize: 48),
                   // A note, in the interface's own text, that quotes cells.
-                  const Text('Dots 1-2: ⠃ (b)', key: ValueKey<String>('note')),
+                  Text('Dots 1-2: ⠃ (b)', key: ValueKey<String>('note')),
                 ],
               ),
             ),
