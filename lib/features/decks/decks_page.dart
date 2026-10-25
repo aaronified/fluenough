@@ -105,11 +105,15 @@ class _DecksPageState extends State<DecksPage> {
       // (#853): go to where it should be, and then to it.
       final row = _upNextRow;
       if (row < 0 || !_scroll.hasClients) return;
+      // The same place the unit is put at once built (alignment 0.3), so a
+      // course that starts at its first unit stays at the top, its card in
+      // view.
+      final position = _scroll.position;
       _scroll.jumpTo(
-        (row * CoursePathSliver.estimatedRowHeight + 220).clamp(
-          0.0,
-          _scroll.position.maxScrollExtent,
-        ),
+        (row * CoursePathSliver.estimatedRowHeight +
+                220 -
+                0.3 * position.viewportDimension)
+            .clamp(0.0, position.maxScrollExtent),
       );
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && _upNext.currentContext != null) {

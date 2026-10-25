@@ -6,6 +6,7 @@
 // leeches append and never delete.
 
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
@@ -1450,27 +1451,66 @@ void main() {
           ),
           findsOneWidget,
         );
-        expect(
-          find.bySemanticsLabel(
-            RegExp('^Work, unit 22, ${l10n.pathUnitAhead}'),
-          ),
-          findsOneWidget,
+        // The path builds only the rows near the screen (#853), so the rest
+        // of it is read by walking down it from the top.
+        final position = tester.state<ScrollableState>(downward.first).position;
+        final aheadWork = find.bySemanticsLabel(
+          RegExp('^Work, unit 22, ${l10n.pathUnitAhead}'),
         );
-        // Milestones: the first deck finished, words learned, the script.
-        expect(find.text(l10n.pathFirstDeck), findsOneWidget);
-        expect(find.text(l10n.pathWordsLearned(50)), findsOneWidget);
-        expect(find.text(l10n.pathScriptLearned), findsOneWidget);
-        expect(find.text(l10n.pathScriptToGo(2)), findsOneWidget);
+        var sawWork = false;
+        var sawFirstDeck = false;
+        var sawWords = false;
+        var sawScriptLearned = false;
+        var sawScriptToGo = false;
+        final headers = <(CefrLevel, bool)>{};
+        final marks = <Object>{};
+        position.jumpTo(0);
+        await tester.pump();
+        while (true) {
+          sawWork |= aheadWork.evaluate().isNotEmpty;
+          // Milestones: the first deck finished, words learned, the script.
+          sawFirstDeck |= find.text(l10n.pathFirstDeck).evaluate().isNotEmpty;
+          sawWords |= find
+              .text(l10n.pathWordsLearned(50))
+              .evaluate()
+              .isNotEmpty;
+          sawScriptLearned |= find
+              .text(l10n.pathScriptLearned)
+              .evaluate()
+              .isNotEmpty;
+          sawScriptToGo |= find
+              .text(l10n.pathScriptToGo(2))
+              .evaluate()
+              .isNotEmpty;
+          for (final h in tester.widgetList<LevelHeader>(
+            find.byType(LevelHeader),
+          )) {
+            headers.add((h.step.level, h.step.current));
+          }
+          for (final m in tester.widgetList<AchievementMark>(
+            find.byType(AchievementMark),
+          )) {
+            marks.add(m.step);
+          }
+          if (position.pixels >= position.maxScrollExtent) break;
+          position.jumpTo(
+            math.min(position.pixels + 400, position.maxScrollExtent),
+          );
+          await tester.pump();
+        }
+        expect(sawWork, isTrue);
+        expect(sawFirstDeck, isTrue);
+        expect(sawWords, isTrue);
+        expect(sawScriptLearned, isTrue);
+        expect(sawScriptToGo, isTrue);
         // Telugu's path marks A1, A2 and B1 (ADR-0036), so each level is
         // drawn, with its achievement, the learner's own, A1, current.
-        expect(find.byType(LevelHeader), findsNWidgets(3));
-        expect(find.byType(AchievementMark), findsNWidgets(3));
-        expect(
-          tester
-              .widgetList<LevelHeader>(find.byType(LevelHeader))
-              .map((h) => (h.step.level, h.step.current)),
-          [(CefrLevel.a1, true), (CefrLevel.a2, false), (CefrLevel.b1, false)],
-        );
+        expect(headers, {
+          (CefrLevel.a1, true),
+          (CefrLevel.a2, false),
+          (CefrLevel.b1, false),
+        });
+        expect(marks, hasLength(3));
 
         {
           usePhone(tester);
