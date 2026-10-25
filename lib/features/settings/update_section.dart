@@ -10,6 +10,7 @@ import '../../core/updates/release_check.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/card_text_scale.dart';
 
 /// Settings' Updates group, above the version line (ADR-0017): "Check for
 /// updates", which says what the check found, downloads it with its
@@ -309,7 +310,7 @@ class _ActionRow extends StatelessWidget {
     final stacked =
         below ||
         actions.length > 1 ||
-        MediaQuery.textScalerOf(context).scale(1) > 1.3;
+        isLargeText(context);
     final bar = progress;
     final text = MergeSemantics(
       child: Semantics(

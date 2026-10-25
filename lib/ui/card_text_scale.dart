@@ -21,6 +21,12 @@ double maxCardTextScaleFor(double phoneScale) {
 double phoneTextScaleOf(BuildContext context) =>
     MediaQuery.textScalerOf(context).scale(14) / 14;
 
+/// Whether the phone's text is large enough that rows put their actions
+/// under the text instead of beside it. The one check for it: always the
+/// scale at body size ([phoneTextScaleOf]), never `scale(1)`, which is
+/// outside Android's nonlinear font table and is not the body size's factor.
+bool isLargeText(BuildContext context) => phoneTextScaleOf(context) > 1.3;
+
 /// The largest card text size the phone's text allows here.
 double maxCardTextScaleOf(BuildContext context) =>
     maxCardTextScaleFor(phoneTextScaleOf(context));

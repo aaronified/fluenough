@@ -22,6 +22,7 @@ import 'review_sheets.dart';
 import 'review_waiting.dart';
 import 'review_words.dart';
 import 'send_reviews_sheet.dart';
+import '../../ui/card_text_scale.dart';
 
 /// Reviewing a unit (the owner's design, "Review a unit"): the rater code
 /// and how far the review has got at the top; each card with "Suggest a
@@ -486,7 +487,7 @@ class ReviewFoot extends StatelessWidget {
       icon: const Icon(Icons.send_outlined, size: 20),
       label: Text(l10n.reviewSend, textAlign: TextAlign.center),
     );
-    final stacked = MediaQuery.textScalerOf(context).scale(1) > 1.3;
+    final stacked = isLargeText(context);
     return BottomActions(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
       child: Column(

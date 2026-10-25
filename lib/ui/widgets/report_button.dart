@@ -7,6 +7,7 @@ import '../../app/links.dart';
 import '../../app/routes.dart';
 import '../../core/feedback/report.dart';
 import '../../l10n/app_localizations.dart';
+import '../card_text_scale.dart';
 import '../theme.dart';
 import 'snack.dart';
 
@@ -22,7 +23,7 @@ Map<String, String> deviceInfo(BuildContext context, {required String system}) {
     'App': 'fluenough ${AppInfo.version}',
     'System': system,
     'Screen size': '${size.width.round()} × ${size.height.round()} dp',
-    'Text scale': MediaQuery.textScalerOf(context).scale(1).toStringAsFixed(2),
+    'Text scale': phoneTextScaleOf(context).toStringAsFixed(2),
     'App language': Localizations.localeOf(context).toLanguageTag(),
     'Learning': <String>[
       for (final language in state.languages)

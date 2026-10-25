@@ -442,7 +442,7 @@ class _SeedPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final columns = MediaQuery.textScalerOf(context).scale(1) > 1.5 ? 2 : 4;
+    final columns = isLargeText(context) ? 2 : 4;
     final seeds = ThemeSeed.values;
 
     Widget tile(ThemeSeed seed) {

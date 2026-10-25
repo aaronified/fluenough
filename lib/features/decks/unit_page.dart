@@ -33,6 +33,7 @@ import 'unreviewed_notice.dart';
 import 'why_closed_sheet.dart';
 import 'word_mastery.dart';
 import 'word_sheet.dart';
+import '../../ui/card_text_scale.dart';
 
 /// A unit of a course's path (the owner's design): its level and number,
 /// its name and description, how many of its words and rules are known and
@@ -180,7 +181,7 @@ class _UnitPageState extends State<UnitPage> {
           for (final card in content.sentences)
             if (!card.phrasebook) card,
         ];
-        final large = MediaQuery.textScalerOf(context).scale(1) > 1.5;
+        final large = isLargeText(context);
         final ids = <String>{for (final e in decks) e.id};
         final due = state.buildSession(DrillRequest(deckIds: ids)).due.length;
         // The next lesson: from the first deck with words left to teach.
