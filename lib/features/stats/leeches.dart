@@ -2,46 +2,39 @@ import 'package:flutter/foundation.dart';
 
 import '../../app/memory_progress.dart';
 import '../../core/models/card.dart';
-import '../../core/scheduling/replay.dart';
-import '../../core/scheduling/fsrs.dart';
 import 'stats_numbers.dart';
 
 /// Lapses at which a pair counts as a leech: #19's default. The copy takes it
 /// as a placeholder (`leechesIntro`), so making it a setting changes no text.
-const int kLeechThreshold = 5;
+const int kLeechThreshold = kLeechLapses;
 
-/// One pair missed again and again: [FsrsState.lapses] at or over the
+/// One pair missed again and again: lifetime lapses at or over the
 /// threshold.
 class Leech {
-  const Leech({required this.key, required this.card, required this.state});
+  const Leech({required this.key, required this.card, required this.lapses});
 
   final ProgressKey key;
   final Card card;
-  final FsrsState state;
-
-  int get lapses => state.lapses;
+  final int lapses;
 }
 
 /// The pairs in [progress] with at least [threshold] lapses over their
 /// whole history, most missed first. Lifetime lapses, so that a leech the
-/// learner has reset stays listed and its reset can be undone. A pair whose card has left its deck is skipped: it cannot be drilled
-/// or shown, and its history stays in the log.
+/// learner has reset stays listed and its reset can be undone. A pair whose
+/// card has left its deck is skipped: it cannot be drilled or shown, and its
+/// history stays in the log.
+///
+/// Read from [ProgressStore.index], which counts lapses answer by answer, so
+/// that this costs what the leeches cost and not the length of the log.
 List<Leech> findLeeches(
   ProgressStore progress, {
   required CardLookup cardOf,
   int threshold = kLeechThreshold,
 }) {
-  // A pair is shown in the deck it was last answered in.
-  final lastDeck = <ProgressKey, String>{
-    for (final event in progress.log) event.key: event.deckId,
-  };
   final leeches = <Leech>[
-    for (final MapEntry(:key, :value) in replayReviews(
-      progress.log.map(logged),
-    ).states.entries)
-      if (value.lapses >= threshold)
-        if (cardOf(key.cardId, deckId: lastDeck[key]) case final card?)
-          Leech(key: key, card: card, state: value),
+    for (final found in progress.index.leeches(threshold: threshold))
+      if (cardOf(found.key.cardId, deckId: found.deckId) case final card?)
+        Leech(key: found.key, card: card, lapses: found.lapses),
   ];
   leeches.sort((a, b) {
     final byLapses = b.lapses.compareTo(a.lapses);

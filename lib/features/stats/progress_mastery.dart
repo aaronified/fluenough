@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart' show Listenable;
-
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
@@ -28,25 +26,25 @@ class ProgressMastery {
   /// out again only when the progress, the decks or the day has changed:
   /// the weekly snapshots walk the whole log.
   factory ProgressMastery.of(AppState state, String? language) {
-    final memo = _memos[state] ??= _Memo(state.progress);
+    final memo = _memos[state] ??= _Memo();
+    final progress = state.progress;
     final key = (
-      progress: state.progress,
+      progress: progress,
+      // A language's own version: an answer in another language leaves this
+      // one's numbers as they were. All languages go by the whole progress.
+      version: language == null
+          ? progress.version
+          : progress.versionOf(language),
       decks: state.decks,
       day: calendarDay(state.now()),
       native: language == null ? null : state.courseNative(language),
     );
     final cached = memo.byLanguage[language];
-    if (cached != null &&
-        cached.revision == memo.revision &&
-        cached.key == key) {
+    if (cached != null && cached.key == key) {
       return cached.value;
     }
     final value = ProgressMastery._compute(state, language);
-    memo.byLanguage[language] = (
-      revision: memo.revision,
-      key: key,
-      value: value,
-    );
+    memo.byLanguage[language] = (key: key, value: value);
     return value;
   }
 
@@ -220,14 +218,8 @@ class _Part {
   final Set<String> scriptCards;
 }
 
-/// What [ProgressMastery.of] has worked out for one state, and the number of
-/// times its progress has changed since.
+/// What [ProgressMastery.of] has worked out for one state, by language.
 class _Memo {
-  _Memo(Listenable progress) {
-    progress.addListener(() => revision++);
-  }
-
-  int revision = 0;
-  final Map<String?, ({int revision, Object key, ProgressMastery value})>
-  byLanguage = <String?, ({int revision, Object key, ProgressMastery value})>{};
+  final Map<String?, ({Object key, ProgressMastery value})> byLanguage =
+      <String?, ({Object key, ProgressMastery value})>{};
 }

@@ -176,25 +176,26 @@ class TodayNumbers {
 
     final today = dateOnly(now);
     // Words taught today: first drilled today, in any skill.
-    final earlier = <String>{
-      for (final e in progress.log)
-        if (e.at.isBefore(today)) e.cardId,
-    };
-    final newWords = <String>{
-      for (final e in progress.log)
-        if (isSameDay(e.at, now) && !earlier.contains(e.cardId)) e.cardId,
-    }.length;
+    final newWords = state.newWordsToday(now);
 
     // Each language's day, in the order the learner chose them. A language
     // with nothing left today and nothing spent has no ring of its own, but
     // the first keeps one, so that Today always says where the day stands.
     final chosen = state.settings.learningLanguages;
+    final order = <String>[
+      ...chosen.where(languages.containsKey),
+      ...languages.keys.where((code) => !chosen.contains(code)),
+    ];
+    // The first few languages' days are worked out now, the rest in idle
+    // slots, one at a time (#852): until then the last one shows.
     final plans = <DailyPlan>[
-      for (final code in <String>[
-        ...chosen.where(languages.containsKey),
-        ...languages.keys.where((code) => !chosen.contains(code)),
-      ])
-        state.dailyPlanFor(languages[code]!),
+      for (final (index, code) in order.indexed)
+        ?state.lazyFor<DailyPlan>(
+          'plan',
+          code,
+          () => state.dailyPlanFor(languages[code]!),
+          first: AppState.firstLanguage(index),
+        ),
     ];
     final daily = <DailyPlan>[
       for (final plan in plans)

@@ -1,4 +1,5 @@
 import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
@@ -11,11 +12,19 @@ import '../../core/progress/tag_strength.dart';
 /// cards are deleted (AGENTS.md rule 1), so history can outlive them.
 typedef CardLookup = Card? Function(String cardId, {String? deckId});
 
-/// A [CardLookup] over [state]'s catalog, indexed once.
+final Expando<CardLookup> _lookups = Expando<CardLookup>();
+
+/// A [CardLookup] over [state]'s catalog, indexed once for as long as the
+/// catalog's list is the same one: every screen and rebuild shares it.
 CardLookup cardLookupOf(AppState state) {
+  final decks = state.decks;
+  return _lookups[decks] ??= _indexCards(decks);
+}
+
+CardLookup _indexCards(List<DeckEntry> decks) {
   final listed = <String, Card>{};
   final first = <String, Card>{};
-  for (final entry in state.decks) {
+  for (final entry in decks) {
     for (final card in entry.cards) {
       listed['${entry.id}/${card.id}'] = card;
       first.putIfAbsent(card.id, () => card);

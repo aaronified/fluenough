@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
@@ -206,6 +207,9 @@ class AppState extends ChangeNotifier {
     for (final source in <Listenable>[this, this.settings, progress]) {
       source.addListener(_forgetPending);
     }
+    progress.addListener(_progressChanged);
+    this.settings.addListener(_settingsChanged);
+    addListener(_structureChanged);
     _loggedTab = shellTab.value;
     shellTab.addListener(_logTab);
     shellTabMoving.addListener(_logTab);
@@ -710,7 +714,10 @@ class AppState extends ChangeNotifier {
   /// the learner speaks, best known first (#53); otherwise the catalog's
   /// order holds. A review takes a card shared across native languages from
   /// the first deck that has it, so it is shown as the course teaches it.
-  List<DeckEntry> get profileDecks => _learnedDecks(onlyShown: true);
+  List<DeckEntry> get profileDecks => derived<List<DeckEntry>>(
+    'profileDecks',
+    () => _learnedDecks(onlyShown: true),
+  );
 
   List<DeckEntry> _learnedDecks({required bool onlyShown}) {
     final profile = currentProfile;
@@ -1247,7 +1254,14 @@ class AppState extends ChangeNotifier {
   /// [language]'s decks also give each card in (`target_scripts`). The
   /// Perso-Arabic decks are voiced `ur-PK`; with only the Hindi voice,
   /// `hi-IN`, installed, it says each card's Devanagari spelling.
-  LanguageInfo? backupVoice(LanguageInfo language) {
+  LanguageInfo? backupVoice(LanguageInfo language) => derived<LanguageInfo?>((
+    'backupVoice',
+    language.ttsTag,
+    language.code,
+    language.script,
+  ), () => _backupVoice(language));
+
+  LanguageInfo? _backupVoice(LanguageInfo language) {
     // Only once the phone has said the deck's own voice is missing.
     if (language.isNotation || _voices[language.ttsTag] != false) return null;
     for (final other in voiceLanguages) {
@@ -1264,10 +1278,13 @@ class AppState extends ChangeNotifier {
 
   /// Whether a deck voiced as [language] gives its cards in [script] too,
   /// not only names the script among the language's.
-  bool _spelledIn(LanguageInfo language, String script) => decks.any(
-    (d) =>
-        d.language.ttsTag == language.ttsTag &&
-        d.deck.cards.any((c) => c.targetScripts.containsKey(script)),
+  bool _spelledIn(LanguageInfo language, String script) => derived<bool>(
+    ('spelledIn', language.ttsTag, script),
+    () => decks.any(
+      (d) =>
+          d.language.ttsTag == language.ttsTag &&
+          d.deck.cards.any((c) => c.targetScripts.containsKey(script)),
+    ),
   );
 
   /// Every voice the course of [code] uses, one language block per voice
@@ -1562,12 +1579,20 @@ class AppState extends ChangeNotifier {
       for (final entry in profileDecks) entry.language.code: entry.language,
     };
     final chosen = settings.learningLanguages;
+    final order = <String>[
+      ...chosen.where(all.containsKey),
+      ...all.keys.where((code) => !chosen.contains(code)),
+    ];
     return <LanguageInfo>[
-      for (final code in <String>[
-        ...chosen.where(all.containsKey),
-        ...all.keys.where((code) => !chosen.contains(code)),
-      ])
-        if (buildSession(DrillRequest.today(language: code)).isNotEmpty)
+      for (final (index, code) in order.indexed)
+        // A language not worked out yet has nothing shown until it is.
+        if (lazyFor<bool>(
+              'hasToday',
+              code,
+              () => buildSession(DrillRequest.today(language: code)).isNotEmpty,
+              first: firstLanguage(index),
+            ) ??
+            false)
           all[code]!,
     ];
   }
@@ -1591,6 +1616,220 @@ class AppState extends ChangeNotifier {
   /// [ignorePauses] builds it as if no skill were paused: a pause lasts an
   /// hour and does not make a deck finished, so [notStudiedIn] ignores it.
   SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
+    // A queue is immutable, so one built for the same request is shared
+    // until progress, settings or this state change (#852).
+    List<String>? sorted(Iterable<String>? values) =>
+        values == null ? null : (values.toList()..sort());
+    final key = (
+      'buildSession',
+      sorted(request.deckIds)?.join('\u0000'),
+      request.skill,
+      sorted(request.skills?.map((s) => s.name))?.join(','),
+      sorted(request.tags)?.join('\u0000'),
+      request.newOnly,
+      request.numbers,
+      request.untaught,
+      request.revise,
+      request.lesson,
+      request.daily,
+      request.language,
+      request.limit,
+      sorted(request.cardIds)?.join('\u0000'),
+      request.script,
+      ignorePauses,
+    );
+    // The cache is per language, so an answer in one leaves the others'
+    // queues cached (#852). A request over several languages is scoped '*'.
+    var scope = request.language;
+    if (scope == null && request.deckIds != null) {
+      for (final id in request.deckIds!) {
+        final code = deckById(id)?.language.code;
+        scope = scope == null || scope == code ? code : '*';
+      }
+    }
+    scope ??= '*';
+    // Approximation: the clock counts in 30 second steps, so a card that
+    // falls due shows up to 30 seconds late in a cached queue.
+    final stamp = _stampOf(scope);
+    final cache = _sessions.putIfAbsent(scope, _SessionCache.new);
+    if (cache.stamp != stamp) {
+      cache.queues.clear();
+      cache.stamp = stamp;
+    }
+    return cache.queues.putIfAbsent(key, () {
+      sessionBuilds[scope!] = (sessionBuilds[scope] ?? 0) + 1;
+      return _buildSession(request, ignorePauses: ignorePauses);
+    });
+  }
+
+  // Versions that say what a cached queue was built from (#852). An answer
+  // follows the progress store's own version of its language (a baseline
+  // change touches them all); any other change to progress, a settings
+  // change and a structural change (decks, voices, profile) bump the rest.
+  final Map<String, _SessionCache> _sessions = <String, _SessionCache>{};
+  int _anyProgressVersion = 0;
+  int _otherProgressVersion = 0;
+  int _settingsVersion = 0;
+  int _structureVersion = 0;
+  String? _recordingLanguage;
+
+  /// How many queues were built, by scope, for the tests: no answer may
+  /// build one for a language it did not touch.
+  @visibleForTesting
+  final Map<String, int> sessionBuilds = <String, int>{};
+
+  void _progressChanged() {
+    _anyProgressVersion++;
+    final language = _recordingLanguage;
+    if (language == null) {
+      _otherProgressVersion++;
+      // An import or a restore changes the log other than at its end; a
+      // refit does not, and keeps what was counted.
+      final length = progress.log.length;
+      if (_newWordsAt?.read != length) _newWordsAt = null;
+      if (_timesRead != length) {
+        _answerTimes.clear();
+        _timesRead = 0;
+      }
+    }
+  }
+
+  void _settingsChanged() => _settingsVersion++;
+
+  final Map<String, _Kept> _keptValues = <String, _Kept>{};
+
+  /// [compute]'s value for [key] about language [code], kept until that
+  /// language's progress, the settings or the structure change: an answer
+  /// in another language leaves it (#853).
+  T keptFor<T>(String code, Object key, T Function() compute) {
+    final stamp = _stampOf(code);
+    final kept = _keptValues.putIfAbsent(code, _Kept.new);
+    if (kept.stamp != stamp) {
+      kept.values.clear();
+      kept.stamp = stamp;
+    }
+    return kept.values.putIfAbsent(key, compute) as T;
+  }
+
+  void _structureChanged() {
+    if (!_lazyNotifying) _structureVersion++;
+  }
+
+  /// What a value kept for language [scope] ('*' for all) was worked out
+  /// from. Approximation: the clock counts in 30 second steps, so a card
+  /// that falls due shows up to 30 seconds late in a kept value.
+  Object _stampOf(String scope) => (
+    scope == '*' ? _anyProgressVersion : progress.versionOf(scope),
+    _otherProgressVersion,
+    _settingsVersion,
+    _structureVersion,
+    now().millisecondsSinceEpoch ~/ 30000,
+  );
+
+  // Batching (#852): Today's value for a language that is not among the
+  // first few is worked out in an idle slot, one language at a time, and
+  // until then the last one worked out shows, so that no frame works out
+  // every language of a learner of forty.
+  static const int _lazyAfter = 4;
+  final Map<String, (Object, Object?)> _lazy = <String, (Object, Object?)>{};
+  final Map<String, void Function()> _lazyPending = <String, void Function()>{};
+  bool _lazyScheduled = false;
+  bool _lazyNotifying = false;
+
+  /// [compute]'s value for [kind] of language [code], the one worked out
+  /// for the current stamp, or when [first] (one of the first languages)
+  /// worked out now. Otherwise the last value, or null when there is none
+  /// yet, and a refresh is queued.
+  T? lazyFor<T>(
+    String kind,
+    String code,
+    T Function() compute, {
+    required bool first,
+  }) {
+    final key = '$kind/$code';
+    final stamp = _stampOf(code);
+    final kept = _lazy[key];
+    if (kept != null && kept.$1 == stamp) return kept.$2 as T?;
+    if (first || _lazyOff) {
+      final value = compute();
+      _lazy[key] = (stamp, value);
+      _lazyPending.remove(key);
+      return value;
+    }
+    _lazyPending[key] = () => _lazy[key] = (_stampOf(code), compute());
+    _scheduleLazy();
+    return kept?.$2 as T?;
+  }
+
+  /// Whether the language at [index] of Today's order is one of those
+  /// worked out at once.
+  static bool firstLanguage(int index) => index < _lazyAfter;
+
+  /// Set by the tests, which have no idle slots to wait for.
+  @visibleForTesting
+  bool lazyOff = false;
+  bool get _lazyOff => lazyOff;
+
+  void _scheduleLazy() {
+    if (_lazyScheduled || _disposed) return;
+    _lazyScheduled = true;
+    try {
+      SchedulerBinding.instance.scheduleTask<void>(_runLazy, Priority.idle);
+    } catch (_) {
+      _lazyScheduled = false;
+      _lazyOffNow();
+    }
+  }
+
+  /// Without a scheduler there is nothing to wait for: work the queue out.
+  void _lazyOffNow() {
+    while (_lazyPending.isNotEmpty) {
+      _lazyPending.remove(_lazyPending.keys.first)!();
+    }
+  }
+
+  void _runLazy() {
+    _lazyScheduled = false;
+    if (_disposed || _lazyPending.isEmpty) return;
+    _lazyPending.remove(_lazyPending.keys.first)!();
+    // Tell the screens without making every kept value stale.
+    _lazyNotifying = true;
+    try {
+      notifyListeners();
+    } finally {
+      _lazyNotifying = false;
+    }
+    if (_lazyPending.isNotEmpty) _scheduleLazy();
+  }
+
+  /// Words first drilled today, counted from the log once and then from
+  /// the answers added since, so an answer costs one event and not the
+  /// whole log. [now] is the clock.
+  int newWordsToday(DateTime now) {
+    final today = dateOnly(now);
+    final log = progress.log;
+    var at = _newWordsAt;
+    if (at == null || at.day != today || log.length < at.read) {
+      at = _newWordsAt = _NewWords(today);
+    }
+    for (var i = at.read; i < log.length; i++) {
+      final e = log[i];
+      if (e.at.isBefore(today)) {
+        at.earlier.add(e.cardId);
+      } else if (isSameDay(e.at, now)) {
+        at.todays.add(e.cardId);
+      }
+    }
+    at.read = log.length;
+    return at.todays.where((id) => !at!.earlier.contains(id)).length;
+  }
+
+  _NewWords? _newWordsAt;
+
+  SessionQueue _buildSession(
+    DrillRequest request, {
+    bool ignorePauses = false,
+  }) {
     final ids = request.deckIds;
     final language = request.language;
     // A request that names a language takes its decks even while the bar
@@ -1643,18 +1882,24 @@ class AppState extends ChangeNotifier {
 
     // A skill switched off for a language is not drilled in it (#89), and
     // nothing is heard while sound is off.
-    final voiced = <String, bool>{
-      for (final entry in this.decks)
-        entry.id:
-            canSpeak(entry.language) &&
-            !settings.isOffFor(Skill.listening, entry.language.code),
-    };
-    final heard = <String, bool>{
-      for (final entry in this.decks)
-        entry.id:
-            canHear(entry.language) &&
-            !settings.isOffFor(Skill.speaking, entry.language.code),
-    };
+    final voiced = derived<Map<String, bool>>(
+      'voiced',
+      () => <String, bool>{
+        for (final entry in this.decks)
+          entry.id:
+              canSpeak(entry.language) &&
+              !settings.isOffFor(Skill.listening, entry.language.code),
+      },
+    );
+    final heard = derived<Map<String, bool>>(
+      'heard',
+      () => <String, bool>{
+        for (final entry in this.decks)
+          entry.id:
+              canHear(entry.language) &&
+              !settings.isOffFor(Skill.speaking, entry.language.code),
+      },
+    );
     final leeches = progress.leechEffects;
     final fromToday =
         ids == null &&
@@ -1709,6 +1954,7 @@ class AppState extends ChangeNotifier {
   Set<String>? _placed;
 
   void _forgetPending() {
+    if (_lazyNotifying) return;
     _pendingUnits = null;
     _placed = null;
     _derived.clear();
@@ -1822,8 +2068,10 @@ class AppState extends ChangeNotifier {
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
-  bool isFinished(DeckEntry entry) =>
-      isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0;
+  bool isFinished(DeckEntry entry) => keptFor<bool>(entry.language.code, (
+    'isFinished',
+    entry.id,
+  ), () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0);
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
@@ -2284,42 +2532,42 @@ class AppState extends ChangeNotifier {
   static const int dailyNewCap = 9;
 
   /// What the log says of the time answers took, for [language] (every
-  /// language when null), worked out again only when the log has grown or
-  /// the day has changed: Today asks for it on every build.
+  /// language when null). The log is read once, each answer added to its
+  /// language's tally as it comes, so an answer costs one event however
+  /// long the log is (#852).
   final Map<String?, _AnswerTimes> _answerTimes = <String?, _AnswerTimes>{};
+  int _timesRead = 0;
+  Object? _timesFirst;
 
   _AnswerTimes _timesIn(String? language, DateTime at) {
     final log = progress.log;
-    final cached = _answerTimes[language];
-    if (cached != null &&
-        cached.logLength == log.length &&
-        identical(cached.lastEvent, log.lastOrNull) &&
-        isSameDay(cached.day, at)) {
-      return cached;
+    // A replayed or replaced log is read again from its start.
+    if (_timesRead > log.length ||
+        (_timesRead > 0 && !identical(_timesFirst, log.first))) {
+      _answerTimes.clear();
+      _timesRead = 0;
     }
-    final seconds = <double>[];
-    var spent = Duration.zero;
-    for (final e in log) {
-      if (language != null && Abilities.languageOf(e.cardId) != language) {
-        continue;
-      }
+    if (_timesRead == 0 && log.isNotEmpty) _timesFirst = log.first;
+    for (var i = _timesRead; i < log.length; i++) {
+      final e = log[i];
       final time = StudyHours.capped(e.elapsed);
-      seconds.add(time.inMilliseconds / 1000);
-      if (isSameDay(e.at, at)) spent += time;
+      final day = dateOnly(e.at);
+      for (final key in <String?>{Abilities.languageOf(e.cardId), null}) {
+        final tally = _answerTimes.putIfAbsent(key, _AnswerTimes.new);
+        tally.seconds.add(time.inMilliseconds / 1000);
+        tally.byDay[day] = (tally.byDay[day] ?? Duration.zero) + time;
+      }
     }
-    return _answerTimes[language] = _AnswerTimes(
-      logLength: log.length,
-      lastEvent: log.lastOrNull,
-      day: at,
-      seconds: seconds,
-      spent: spent,
-    );
+    _timesRead = log.length;
+    final tally = _answerTimes.putIfAbsent(language, _AnswerTimes.new);
+    tally.day = at;
+    return tally;
   }
 
   /// Seconds a card takes this learner in [language] (every language when
   /// null): their own median once they have answered 20 cards, else 17.5.
   double secondsPerCardIn(String? language) =>
-      DailyBudget.secondsPerCard(_timesIn(language, now()).seconds);
+      _timesIn(language, now()).secondsPerCard;
 
   /// [language]'s day: its minutes, what is spent, what waits, and what
   /// the rest of the budget buys.
@@ -2331,7 +2579,7 @@ class AppState extends ChangeNotifier {
     final minutes = max(DailyBudget.minMinutes, goal + extra);
     final times = _timesIn(code, at);
     final spent = times.spent;
-    final perCard = DailyBudget.secondsPerCard(times.seconds);
+    final perCard = times.secondsPerCard;
     final due = buildSession(DrillRequest.today(language: code)).length;
     final newAvailable = min(dailyNewCap, untaughtCards(code).length);
     final left = minutes * 60 - spent.inSeconds;
@@ -2781,13 +3029,17 @@ class AppState extends ChangeNotifier {
   /// drill (ADR-0024). None left means the deck is finished: its badge says
   /// Done when nothing is due, and it can be revised. A taught word's other
   /// skills come with its reviews.
-  int notStudiedIn(DeckEntry deck) => <String>{
-    for (final item in buildSession(
-      DrillRequest.untaught(deck.id),
-      ignorePauses: true,
-    ).fresh)
-      if (!isTaught(item.card)) item.card.id,
-  }.length;
+  int notStudiedIn(DeckEntry deck) => keptFor<int>(
+    deck.language.code,
+    ('notStudiedIn', deck.id),
+    () => <String>{
+      for (final item in buildSession(
+        DrillRequest.untaught(deck.id),
+        ignorePauses: true,
+      ).fresh)
+        if (!isTaught(item.card)) item.card.id,
+    }.length,
+  );
 
   /// [notStudiedIn] without the cards a lesson may not teach yet: a closed
   /// sentence, a cell of a word not known yet (ADR-0046). The path moves on
@@ -2897,6 +3149,25 @@ class AppState extends ChangeNotifier {
     String? script,
     Ask? asked,
   }) {
+    _recordingLanguage = deckById(item.card.deckId)?.language.code;
+    final ReviewEvent event;
+    try {
+      event = _record(item, grade, elapsed, answerGiven, script, asked);
+    } finally {
+      _recordingLanguage = null;
+    }
+    if (settings.autoAdjust) tuner.afterReview(event);
+    return event;
+  }
+
+  ReviewEvent _record(
+    SessionItem item,
+    int grade,
+    Duration elapsed,
+    String? answerGiven,
+    String? script,
+    Ask? asked,
+  ) {
     final event = progress.record(
       deckId: item.card.deckId,
       cardId: item.card.id,
@@ -2908,7 +3179,6 @@ class AppState extends ChangeNotifier {
       script: script,
       asked: asked,
     );
-    if (settings.autoAdjust) tuner.afterReview(event);
     return event;
   }
 
@@ -2922,6 +3192,9 @@ class AppState extends ChangeNotifier {
       ..removeListener(_reviewerToDownloads)
       ..removeListener(_languageShownChanged);
     progress.removeListener(_forgetPending);
+    progress.removeListener(_progressChanged);
+    settings.removeListener(_settingsChanged);
+    removeListener(_structureChanged);
     shellTab
       ..removeListener(_logTab)
       ..dispose();
@@ -2952,23 +3225,54 @@ typedef TodayFact = ({
 
 /// The time answers took in one language, as [AppState] caches it.
 class _AnswerTimes {
-  const _AnswerTimes({
-    required this.logLength,
-    required this.lastEvent,
-    required this.day,
-    required this.seconds,
-    required this.spent,
-  });
-
-  /// The log's length and last event when this was worked out (a replayed
-  /// log makes new events), and the day it counts.
-  final int logLength;
-  final Object? lastEvent;
-  final DateTime day;
-
   /// What each answer took, in seconds, each capped as hours spent caps it.
-  final List<double> seconds;
+  final List<double> seconds = <double>[];
+
+  /// The time answers took, by day.
+  final Map<DateTime, Duration> byDay = <DateTime, Duration>{};
+
+  /// The day [spent] asks about.
+  DateTime day = DateTime.fromMillisecondsSinceEpoch(0);
 
   /// The time answers took on [day].
-  final Duration spent;
+  Duration get spent => byDay[dateOnly(day)] ?? Duration.zero;
+
+  double _perCard = DailyBudget.defaultSecondsPerCard;
+  int _perCardAt = -1;
+
+  /// The median answer time. Approximation: the median of a long log moves
+  /// little with one answer, so it is worked out again only every 25
+  /// answers once the learner has the 20 that count.
+  double get secondsPerCard {
+    if (_perCardAt < 0 ||
+        seconds.length < DailyBudget.ownTimeAnswers + 25 ||
+        seconds.length - _perCardAt >= 25) {
+      _perCard = DailyBudget.secondsPerCard(seconds);
+      _perCardAt = seconds.length;
+    }
+    return _perCard;
+  }
+}
+
+/// One language's, or every language's, queues built for [AppState]
+/// requests, with what they were built from.
+class _SessionCache {
+  Object? stamp;
+  final Map<Object, SessionQueue> queues = <Object, SessionQueue>{};
+}
+
+/// The words first drilled today, counted as far as [read] answers of the
+/// log.
+class _NewWords {
+  _NewWords(this.day);
+  final DateTime day;
+  int read = 0;
+  final Set<String> earlier = <String>{};
+  final Set<String> todays = <String>{};
+}
+
+/// Values kept for one language, with what they were worked out from.
+class _Kept {
+  Object? stamp;
+  final Map<Object, Object?> values = <Object, Object?>{};
 }

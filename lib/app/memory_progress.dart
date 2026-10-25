@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
@@ -5,6 +7,7 @@ import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
+import '../core/progress/progress_index.dart';
 import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
@@ -14,6 +17,7 @@ import '../core/scheduling/skill_parameters.dart';
 export '../core/data/restore_record.dart' show RestoreRecord;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
+export '../core/progress/progress_index.dart';
 export '../core/scheduling/skill_parameters.dart'
     show FittedParameters, SkillKey, SkillParameters, skillOf;
 
@@ -29,6 +33,21 @@ abstract interface class ProgressStore implements Listenable {
   /// The state of one pair, or null if it has never been reviewed. A pair is
   /// a card and a mode, in whichever deck lists the card (ADR-0018).
   FsrsState? stateOf(String cardId, DrillMode mode);
+
+  /// Counts up on every change to the progress. Anything worked out from it
+  /// stays good while this stays the same.
+  int get version;
+
+  /// [version] as it concerns [language]: unchanged by answers in other
+  /// languages, and changed by anything that touches every language (a
+  /// restore, an import, a leech action, new parameters). Caches of one
+  /// language's numbers key on this, so that a Telugu answer leaves Hindi's
+  /// valid.
+  int versionOf(String language);
+
+  /// Aggregates kept up to date answer by answer: per-language counts,
+  /// days, lifetime lapses (see [ProgressIndex]). Read-only.
+  ProgressIndex get index;
 
   /// Every pair that has been reviewed, with its current state.
   Map<ProgressKey, FsrsState> get states;
@@ -129,6 +148,11 @@ abstract interface class ProgressStore implements Listenable {
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
+  /// How many times progress has been replayed from the whole log, for tests
+  /// to assert that recording an answer does not.
+  @visibleForTesting
+  static int replays = 0;
+
   /// Progress rebuilt from [events], oldest first, [leechActions] and the
   /// [fitted] parameters, by replaying them as the database does
   /// (ADR-0005, [replayReviews]).
@@ -145,6 +169,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       fitted: fitted,
       lastStudied: _lastStudied(reviews),
     );
+    replays++;
     final replayed = replayReviews(
       reviews,
       effects: LeechEffects(actions),
@@ -158,7 +183,10 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       .._states.addAll(replayed.states)
       .._scriptLog.addAll(replayed.scriptEvents)
       .._scriptStates.addAll(replayed.scriptStates)
-      .._leechActions.addAll(actions);
+      .._leechActions.addAll(actions)
+      .._index.rebuild(replayed.events)
+      .._floor = 1
+      .._tick = 1;
   }
 
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
@@ -168,6 +196,30 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
   SkillParameters _parameters = SkillParameters.none;
+  final ProgressIndex _index = ProgressIndex();
+
+  // Versions: every change takes the next tick; a change to one language
+  // gives it the tick, a change to all raises the floor under them.
+  int _tick = 0;
+  int _floor = 0;
+  final Map<String, int> _languageTick = <String, int>{};
+
+  @override
+  int get version => _tick;
+
+  @override
+  int versionOf(String language) {
+    final own = _languageTick[language] ?? 0;
+    return own > _floor ? own : _floor;
+  }
+
+  @override
+  ProgressIndex get index => _index;
+
+  void _touchAll() {
+    _floor = ++_tick;
+    _languageTick.clear();
+  }
 
   @override
   SkillParameters get parameters => _parameters;
@@ -201,18 +253,17 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       _states[(cardId: cardId, mode: mode)];
 
   @override
-  Map<ProgressKey, FsrsState> get states =>
-      Map<ProgressKey, FsrsState>.unmodifiable(_states);
+  Map<ProgressKey, FsrsState> get states => UnmodifiableMapView(_states);
 
   @override
-  List<ReviewEvent> get log => List<ReviewEvent>.unmodifiable(_log);
+  List<ReviewEvent> get log => UnmodifiableListView(_log);
 
   @override
   Map<ScriptKey, FsrsState> get scriptStates =>
-      Map<ScriptKey, FsrsState>.unmodifiable(_scriptStates);
+      UnmodifiableMapView(_scriptStates);
 
   @override
-  List<ReviewEvent> get scriptLog => List<ReviewEvent>.unmodifiable(_scriptLog);
+  List<ReviewEvent> get scriptLog => UnmodifiableListView(_scriptLog);
 
   @override
   ReviewEvent record({
@@ -258,6 +309,11 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       parameters: _parameters,
     );
     _log.add(event);
+    _index.add(event);
+    // Under the card's language and the deck's, which name the same one
+    // (`te-0053`, `te-en-core-100`) but are read by different callers.
+    _languageTick[skillOf(key).language] = ++_tick;
+    _languageTick[deckId.split('-').first] = _tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.
@@ -273,8 +329,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   }
 
   @override
-  List<LeechAction> get leechActions =>
-      List<LeechAction>.unmodifiable(_leechActions);
+  List<LeechAction> get leechActions => UnmodifiableListView(_leechActions);
 
   @override
   LeechAction actOnLeech(
@@ -284,6 +339,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   }) {
     final action = LeechAction(at: now, key: key, kind: kind);
     _leechActions.add(action);
+    replays++;
     final replayed = replayReviews(
       _log.map(logged),
       effects: LeechEffects(_leechActions),
@@ -299,6 +355,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _scriptLog
       ..clear()
       ..addAll(replayed.scriptEvents);
+    _touchAll();
     notifyListeners();
     return action;
   }
@@ -382,6 +439,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _leechActions
       ..clear()
       ..addAll(actions);
+    _index.rebuild(_log);
+    _touchAll();
     notifyListeners();
   }
 }
@@ -402,11 +461,15 @@ extension ProgressQueries on ProgressStore {
   /// script skills' only the full reviews, in the script decks: a part of
   /// one (#653) is not a review to fit. [log] alone is what the learner
   /// did, answer by answer.
-  List<ReviewEvent> get skillLog => <ReviewEvent>[
-    ...log,
-    for (final e in scriptLog)
-      if (e.share >= 1) e,
-  ];
+  List<ReviewEvent> get skillLog {
+    final words = log;
+    final scripts = scriptLog;
+    return <ReviewEvent>[
+      ...words,
+      for (final e in scripts)
+        if (e.share >= 1) e,
+    ];
+  }
 
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);

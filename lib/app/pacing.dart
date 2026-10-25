@@ -90,7 +90,8 @@ class Pacing extends ChangeNotifier {
     final now = _clock();
     // The script skills' reviews too (#556): they have paces of their own.
     final log = progress.skillLog;
-    final actions = progress.leechActions;
+    // A copy: the job outlives this call, and the store keeps growing.
+    final actions = progress.leechActions.toList();
     final key = (
       log.length,
       log.isEmpty ? null : log.last,

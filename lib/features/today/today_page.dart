@@ -12,6 +12,7 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
+import '../../ui/widgets/visible_listenable_builder.dart';
 import '../placement/native_choice.dart';
 import 'daily_card.dart';
 import 'due_card.dart';
@@ -66,7 +67,7 @@ class TodayPage extends StatelessWidget {
           ),
         ],
       ),
-      CatalogStatus.ready => ListenableBuilder(
+      CatalogStatus.ready => VisibleListenableBuilder(
         listenable: Listenable.merge(<Listenable>[
           state.progress,
           state.settings,
