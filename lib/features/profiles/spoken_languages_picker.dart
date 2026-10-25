@@ -292,44 +292,45 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
     return PickerGutter(
       gutter: widget.gutter,
       child: Scrollbar(
-      controller: _scroll,
-      thumbVisibility: true,
-      child: ListView(
         controller: _scroll,
-        children: <Widget>[
-          ?widget.header,
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(
-              widget.gutter,
-              0,
-              widget.gutter,
-              8,
-            ),
-            child: TextField(
-              key: const ValueKey<String>('known-search'),
-              controller: _search,
-              textInputAction: TextInputAction.search,
-              decoration: InputDecoration(
-                labelText: l10n.knownSearchHint,
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: query.isEmpty
-                    ? null
-                    : IconButton(
-                        tooltip: MaterialLocalizations.of(context)
-                            .clearButtonTooltip,
-                        icon: const Icon(Icons.close),
-                        onPressed: _search.clear,
-                      ),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(28)),
+        thumbVisibility: true,
+        child: ListView(
+          controller: _scroll,
+          children: <Widget>[
+            ?widget.header,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(
+                widget.gutter,
+                0,
+                widget.gutter,
+                8,
+              ),
+              child: TextField(
+                key: const ValueKey<String>('known-search'),
+                controller: _search,
+                textInputAction: TextInputAction.search,
+                decoration: InputDecoration(
+                  labelText: l10n.knownSearchHint,
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: query.isEmpty
+                      ? null
+                      : IconButton(
+                          tooltip: MaterialLocalizations.of(context)
+                              .clearButtonTooltip,
+                          icon: const Icon(Icons.close),
+                          onPressed: _search.clear,
+                        ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(28)),
+                  ),
                 ),
               ),
             ),
-          ),
-          ...body,
-          ?widget.footer,
-          const SizedBox(height: 16),
-        ],
+            ...body,
+            ?widget.footer,
+            const SizedBox(height: 16),
+          ],
+        ),
       ),
     );
   }
