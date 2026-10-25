@@ -1696,6 +1696,21 @@ class AppState extends ChangeNotifier {
 
   void _settingsChanged() => _settingsVersion++;
 
+  final Map<String, _Kept> _keptValues = <String, _Kept>{};
+
+  /// [compute]'s value for [key] about language [code], kept until that
+  /// language's progress, the settings or the structure change: an answer
+  /// in another language leaves it (#853).
+  T keptFor<T>(String code, Object key, T Function() compute) {
+    final stamp = _stampOf(code);
+    final kept = _keptValues.putIfAbsent(code, _Kept.new);
+    if (kept.stamp != stamp) {
+      kept.values.clear();
+      kept.stamp = stamp;
+    }
+    return kept.values.putIfAbsent(key, compute) as T;
+  }
+
   void _structureChanged() {
     if (!_lazyNotifying) _structureVersion++;
   }
@@ -2216,7 +2231,8 @@ class AppState extends ChangeNotifier {
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
-  bool isFinished(DeckEntry entry) => derived<bool>(
+  bool isFinished(DeckEntry entry) => keptFor<bool>(
+    entry.language.code,
     ('isFinished', entry.id),
     () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0,
   );
@@ -3177,7 +3193,8 @@ class AppState extends ChangeNotifier {
   /// drill (ADR-0024). None left means the deck is finished: its badge says
   /// Done when nothing is due, and it can be revised. A taught word's other
   /// skills come with its reviews.
-  int notStudiedIn(DeckEntry deck) => derived<int>(
+  int notStudiedIn(DeckEntry deck) => keptFor<int>(
+    deck.language.code,
     ('notStudiedIn', deck.id),
     () => <String>{
       for (final item in buildSession(
@@ -3416,4 +3433,10 @@ class _NewWords {
   int read = 0;
   final Set<String> earlier = <String>{};
   final Set<String> todays = <String>{};
+}
+
+/// Values kept for one language, with what they were worked out from.
+class _Kept {
+  Object? stamp;
+  final Map<Object, Object?> values = <Object, Object?>{};
 }
