@@ -91,6 +91,7 @@ class TeachCard extends StatelessWidget {
           target: card.target,
           language: language,
           fontSize: 52,
+          alignment: CrossAxisAlignment.start,
         ),
       );
     } else {
