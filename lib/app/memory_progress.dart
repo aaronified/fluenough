@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
@@ -201,18 +203,17 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       _states[(cardId: cardId, mode: mode)];
 
   @override
-  Map<ProgressKey, FsrsState> get states =>
-      Map<ProgressKey, FsrsState>.unmodifiable(_states);
+  Map<ProgressKey, FsrsState> get states => UnmodifiableMapView(_states);
 
   @override
-  List<ReviewEvent> get log => List<ReviewEvent>.unmodifiable(_log);
+  List<ReviewEvent> get log => UnmodifiableListView(_log);
 
   @override
   Map<ScriptKey, FsrsState> get scriptStates =>
-      Map<ScriptKey, FsrsState>.unmodifiable(_scriptStates);
+      UnmodifiableMapView(_scriptStates);
 
   @override
-  List<ReviewEvent> get scriptLog => List<ReviewEvent>.unmodifiable(_scriptLog);
+  List<ReviewEvent> get scriptLog => UnmodifiableListView(_scriptLog);
 
   @override
   ReviewEvent record({
@@ -273,8 +274,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   }
 
   @override
-  List<LeechAction> get leechActions =>
-      List<LeechAction>.unmodifiable(_leechActions);
+  List<LeechAction> get leechActions => UnmodifiableListView(_leechActions);
 
   @override
   LeechAction actOnLeech(
@@ -402,11 +402,15 @@ extension ProgressQueries on ProgressStore {
   /// script skills' only the full reviews, in the script decks: a part of
   /// one (#653) is not a review to fit. [log] alone is what the learner
   /// did, answer by answer.
-  List<ReviewEvent> get skillLog => <ReviewEvent>[
-    ...log,
-    for (final e in scriptLog)
-      if (e.share >= 1) e,
-  ];
+  List<ReviewEvent> get skillLog {
+    final words = log;
+    final scripts = scriptLog;
+    return <ReviewEvent>[
+      ...words,
+      for (final e in scripts)
+        if (e.share >= 1) e,
+    ];
+  }
 
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);
