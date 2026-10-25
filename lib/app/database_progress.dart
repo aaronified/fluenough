@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../core/data/database.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
+import '../core/progress/progress_index.dart';
 import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
@@ -52,6 +53,15 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
 
   @override
   bool get persists => true;
+
+  @override
+  int get version => _memory.version;
+
+  @override
+  int versionOf(String language) => _memory.versionOf(language);
+
+  @override
+  ProgressIndex get index => _memory.index;
 
   @override
   FsrsState? stateOf(String cardId, DrillMode mode) =>

@@ -7,6 +7,7 @@ import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
+import '../core/progress/progress_index.dart';
 import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
@@ -16,6 +17,7 @@ import '../core/scheduling/skill_parameters.dart';
 export '../core/data/restore_record.dart' show RestoreRecord;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
+export '../core/progress/progress_index.dart';
 export '../core/scheduling/skill_parameters.dart'
     show FittedParameters, SkillKey, SkillParameters, skillOf;
 
@@ -31,6 +33,21 @@ abstract interface class ProgressStore implements Listenable {
   /// The state of one pair, or null if it has never been reviewed. A pair is
   /// a card and a mode, in whichever deck lists the card (ADR-0018).
   FsrsState? stateOf(String cardId, DrillMode mode);
+
+  /// Counts up on every change to the progress. Anything worked out from it
+  /// stays good while this stays the same.
+  int get version;
+
+  /// [version] as it concerns [language]: unchanged by answers in other
+  /// languages, and changed by anything that touches every language (a
+  /// restore, an import, a leech action, new parameters). Caches of one
+  /// language's numbers key on this, so that a Telugu answer leaves Hindi's
+  /// valid.
+  int versionOf(String language);
+
+  /// Aggregates kept up to date answer by answer: per-language counts,
+  /// days, lifetime lapses (see [ProgressIndex]). Read-only.
+  ProgressIndex get index;
 
   /// Every pair that has been reviewed, with its current state.
   Map<ProgressKey, FsrsState> get states;
@@ -160,7 +177,10 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       .._states.addAll(replayed.states)
       .._scriptLog.addAll(replayed.scriptEvents)
       .._scriptStates.addAll(replayed.scriptStates)
-      .._leechActions.addAll(actions);
+      .._leechActions.addAll(actions)
+      .._index.rebuild(replayed.events)
+      .._floor = 1
+      .._tick = 1;
   }
 
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
@@ -170,6 +190,30 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
   SkillParameters _parameters = SkillParameters.none;
+  final ProgressIndex _index = ProgressIndex();
+
+  // Versions: every change takes the next tick; a change to one language
+  // gives it the tick, a change to all raises the floor under them.
+  int _tick = 0;
+  int _floor = 0;
+  final Map<String, int> _languageTick = <String, int>{};
+
+  @override
+  int get version => _tick;
+
+  @override
+  int versionOf(String language) {
+    final own = _languageTick[language] ?? 0;
+    return own > _floor ? own : _floor;
+  }
+
+  @override
+  ProgressIndex get index => _index;
+
+  void _touchAll() {
+    _floor = ++_tick;
+    _languageTick.clear();
+  }
 
   @override
   SkillParameters get parameters => _parameters;
@@ -259,6 +303,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       parameters: _parameters,
     );
     _log.add(event);
+    _index.add(event);
+    _languageTick[skillOf(key).language] = ++_tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.
@@ -299,6 +345,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _scriptLog
       ..clear()
       ..addAll(replayed.scriptEvents);
+    _touchAll();
     notifyListeners();
     return action;
   }
@@ -382,6 +429,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _leechActions
       ..clear()
       ..addAll(actions);
+    _index.rebuild(_log);
+    _touchAll();
     notifyListeners();
   }
 }
