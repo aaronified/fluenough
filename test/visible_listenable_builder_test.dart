@@ -8,18 +8,17 @@ void main() {
   ) async {
     final notifier = ValueNotifier<int>(0);
     var builds = 0;
+    // One widget instance, so only TickerMode changes reach the builder.
+    final tab = VisibleListenableBuilder(
+      listenable: notifier,
+      builder: (context, _) {
+        builds++;
+        return Text('${notifier.value}');
+      },
+    );
     Widget app({required bool visible}) => Directionality(
       textDirection: TextDirection.ltr,
-      child: TickerMode(
-        enabled: visible,
-        child: VisibleListenableBuilder(
-          listenable: notifier,
-          builder: (context, _) {
-            builds++;
-            return Text('${notifier.value}');
-          },
-        ),
-      ),
+      child: TickerMode(enabled: visible, child: tab),
     );
 
     await tester.pumpWidget(app(visible: true));
