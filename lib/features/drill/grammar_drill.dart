@@ -485,7 +485,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       final empty = _controller.text.trim().isEmpty;
       foot = Row(
         children: <Widget>[
-          Flexible(
+          Expanded(
             child: OutlinedButton(
               onPressed: live(moves.dontKnow),
               style: outlined,

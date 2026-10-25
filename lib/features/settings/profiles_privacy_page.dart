@@ -5,6 +5,7 @@ import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/theme.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
 
@@ -96,7 +97,9 @@ class ProfilesPrivacyPage extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
               child: Text(
                 l10n.settingsProfilesAbout,
                 style: settingsHelpStyle(Theme.of(context)),

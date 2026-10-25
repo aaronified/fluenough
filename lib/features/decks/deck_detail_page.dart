@@ -278,12 +278,17 @@ class _Header extends StatelessWidget {
     final guide = entry.isScript
         ? AppScope.of(context).scriptGuideFor(language)
         : null;
-    return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
+    // Only the text is inset: the notice and the Tips button are cards and
+    // keep the 16 px edge of the stat tiles below.
+    const inset = EdgeInsetsDirectional.symmetric(
+      horizontal: AppSizes.textInset,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: inset,
+          child: Row(
             children: <Widget>[
               DeckGlyph(glyph: entry.glyph, language: language, size: 64),
               const SizedBox(width: 12),
@@ -319,42 +324,48 @@ class _Header extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 12),
-          Semantics(
+        ),
+        const SizedBox(height: 12),
+        Padding(
+          padding: inset,
+          child: Semantics(
             header: true,
             child: Text(entry.deck.name, style: theme.textTheme.headlineMedium),
           ),
-          if (description != null && description.isNotEmpty) ...<Widget>[
-            const SizedBox(height: 12),
-            Text(
+        ),
+        if (description != null && description.isNotEmpty) ...<Widget>[
+          const SizedBox(height: 12),
+          Padding(
+            padding: inset,
+            child: Text(
               description,
               style: theme.textTheme.bodyLarge!.copyWith(
                 color: scheme.onSurfaceVariant,
               ),
             ),
-          ],
-          if (UnreviewedNotice.appliesTo(entry)) ...<Widget>[
-            const SizedBox(height: 12),
-            UnreviewedNotice(entry: entry),
-          ],
-          // How the script works (#30): Tips, as Duolingo's script pages
-          // have above their chart.
-          if (guide != null) ...<Widget>[
-            const SizedBox(height: 12),
-            OutlinedButton.icon(
-              style: OutlinedButton.styleFrom(
-                minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-              ),
-              onPressed: () => AppNavigator.openScriptGuide(context, guide.key),
-              icon: const Icon(Icons.lightbulb_outline),
-              label: Text(
-                l10n.deckScriptTips(guide.name),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
+          ),
         ],
-      ),
+        if (UnreviewedNotice.appliesTo(entry)) ...<Widget>[
+          const SizedBox(height: 12),
+          UnreviewedNotice(entry: entry),
+        ],
+        // How the script works (#30): Tips, as Duolingo's script pages
+        // have above their chart.
+        if (guide != null) ...<Widget>[
+          const SizedBox(height: 12),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: () => AppNavigator.openScriptGuide(context, guide.key),
+            icon: const Icon(Icons.lightbulb_outline),
+            label: Text(
+              l10n.deckScriptTips(guide.name),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
@@ -464,12 +475,12 @@ class _WordRow extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: 4,
                     children: <Widget>[
                       Text(
                         card.native,
-                        textAlign: TextAlign.end,
+                        textAlign: TextAlign.start,
                         style: theme.textTheme.bodyMedium,
                       ),
                       MasteryChip(mastery: mastery, notOpen: notOpen),

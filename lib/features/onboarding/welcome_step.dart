@@ -4,6 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/expressive_shape.dart';
 import '../../ui/widgets/fluenough_mark.dart';
 import 'onboarding_step.dart';
+import '../../ui/card_text_scale.dart';
 
 /// The first screen of a new install: the mark, the name, what the app does.
 final OnboardingStep welcomeStep = OnboardingStep(
@@ -30,7 +31,7 @@ class WelcomeContent extends StatelessWidget {
     final scheme = theme.colorScheme;
     final muted = scheme.onSurfaceVariant;
     final dark = theme.brightness == Brightness.dark;
-    final large = MediaQuery.textScalerOf(context).scale(16) > 21;
+    final large = isLargeText(context);
     final plays = entrance && !MediaQuery.disableAnimationsOf(context);
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: plays ? 0 : 1, end: 1),

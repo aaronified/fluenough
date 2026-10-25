@@ -108,7 +108,7 @@ class HoursTiles extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
-                flex: 7,
+                flex: 1,
                 child: ProgressTile(
                   color: scheme.surfaceContainerLow,
                   title: l10n.progressHoursSpentTitle,
@@ -120,7 +120,7 @@ class HoursTiles extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Expanded(
-                flex: 8,
+                flex: 1,
                 child: ProgressTile(
                   color: scheme.surfaceContainerLow,
                   title: l10n.progressHoursLeftTitle,

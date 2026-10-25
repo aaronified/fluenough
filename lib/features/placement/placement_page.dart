@@ -238,6 +238,12 @@ class _PlacementPageState extends State<PlacementPage> {
     if (check.isFinished) _scriptDone(state, check.standing);
   });
 
+  /// "I can't speak now": skips the read-aloud question, unanswered.
+  void _scriptSkipSay(AppState state) => setState(() {
+    final check = _check!..skipSay();
+    if (check.isFinished) _scriptDone(state, check.standing);
+  });
+
   void _scriptDone(AppState state, ScriptStanding standing) {
     _standings[_script.script] = standing;
     _check = null;
@@ -430,6 +436,7 @@ class _PlacementPageState extends State<PlacementPage> {
             _check!.question!,
             (right) => _scriptAnswer(state, right),
             inScript: _script.language,
+            onCantSpeak: () => _scriptSkipSay(state),
           ),
           _Stage.walk => _question(
             state,
@@ -514,6 +521,7 @@ class _PlacementPageState extends State<PlacementPage> {
     PlacementAsk ask,
     ValueChanged<bool> onAnswer, {
     LanguageInfo? inScript,
+    VoidCallback? onCantSpeak,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final number = _number + 1;
@@ -543,6 +551,7 @@ class _PlacementPageState extends State<PlacementPage> {
           question: ask,
           number: number,
           onAnswer: onAnswer,
+          onCantSpeak: onCantSpeak,
         );
       case TypeQuestion(produce: false):
         return PlacementType(

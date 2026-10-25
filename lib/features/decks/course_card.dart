@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/card_text_scale.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -149,7 +150,7 @@ class _ProgressBar extends StatelessWidget {
               builder: (context, constraints) {
                 final width = constraints.maxWidth;
                 return SizedBox(
-                  height: 22 * MediaQuery.textScalerOf(context).scale(1),
+                  height: 22 * phoneTextScaleOf(context),
                   child: Stack(
                     children: <Widget>[
                       for (final (label, at) in ends)

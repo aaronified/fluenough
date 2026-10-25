@@ -19,6 +19,7 @@ class AppLanguagePicker extends StatelessWidget {
     this.value,
     required this.onChanged,
     this.decoration,
+    this.fullWidth = false,
   });
 
   /// The locale shown as chosen. Null shows the interface language in use,
@@ -33,6 +34,10 @@ class AppLanguagePicker extends StatelessWidget {
   /// of the screen wide. Otherwise a form field as wide as it is given, with
   /// this decoration: its label, border and help.
   final InputDecoration? decoration;
+
+  /// Whether the compact box takes the width it is given, for a row that
+  /// puts it under its title at large text, instead of 45% of the screen.
+  final bool fullWidth;
 
   /// The translation that ships closest to the interface language in use:
   /// the same language, or else the first supported locale.
@@ -88,7 +93,9 @@ class AppLanguagePicker extends StatelessWidget {
     }
 
     return SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.45,
+      width: fullWidth
+          ? double.infinity
+          : MediaQuery.sizeOf(context).width * 0.45,
       child: Container(
         constraints: const BoxConstraints(minHeight: AppSizes.compactButton),
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),

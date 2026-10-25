@@ -8,6 +8,7 @@ import '../../core/scheduling/skill_fit.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/mode_pill.dart';
+import '../../ui/theme.dart';
 import 'settings_controls.dart';
 
 /// Settings' "Adjust to me": FSRS fitted to the learner, per skill and
@@ -109,7 +110,9 @@ class AdjustSection extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

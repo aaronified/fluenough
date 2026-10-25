@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
@@ -233,8 +235,17 @@ class _SlideViewState extends State<_SlideView> {
           return height;
         }
 
-        final words =
-            8 + height(title, titleStyle) + 12 + height(body, bodyStyle) + 16;
+        // Judged on the tallest slide, not this one, so the picture has one
+        // size and the title one place on every slide.
+        var tallest = 0.0;
+        for (final other in tourSlides) {
+          tallest = math.max(
+            tallest,
+            height(other.title(l10n), titleStyle) +
+                height(other.body(l10n), bodyStyle),
+          );
+        }
+        final words = 8 + tallest + 12 + 16;
         final room = box.maxHeight - words - 32;
         final size = room < 96 ? 0.0 : room.clamp(96.0, 300.0);
         return Scrollbar(
@@ -250,7 +261,8 @@ class _SlideViewState extends State<_SlideView> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      const Spacer(),
+                      // Top-aligned: the picture and title start at the same
+                      // place whatever the words below are.
                       if (size > 0) ...<Widget>[
                         ExcludeSemantics(
                           child: SizedBox(

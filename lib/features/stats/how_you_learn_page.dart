@@ -192,7 +192,9 @@ class _Body extends StatelessWidget {
     children.addAll(<Widget>[
       const SizedBox(height: 12),
       Padding(
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: AppSizes.textInset,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

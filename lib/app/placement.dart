@@ -268,6 +268,7 @@ class ScriptCheck {
     this.canSay = false,
     Random? random,
   }) : _random = random ?? Random(),
+       _canSayNow = canSay,
        _words = _distinctWords(words) {
     _ask();
   }
@@ -286,6 +287,9 @@ class ScriptCheck {
 
   final Random _random;
   final List<ScriptWord> _words;
+
+  /// [canSay], until the learner says they cannot speak now.
+  bool _canSayNow;
 
   int _level = 0;
   bool _missed = false;
@@ -353,6 +357,17 @@ class ScriptCheck {
     }
   }
 
+  /// "I can't speak now" on a read-aloud question (owner, 2026-10-25: "I
+  /// cannot speak now means I can skip"): the question is not answered, so
+  /// it counts neither right nor wrong, and is replaced by a word to write
+  /// in Latin letters. Nothing is asked aloud again in this check. Without
+  /// such a word the check ends at the level it has reached.
+  void skipSay() {
+    if (_question is! SayQuestion) return;
+    _canSayNow = false;
+    _question = _build(ScriptLevel.values[_level]);
+  }
+
   /// Ends the check where it is: the levels passed stay passed.
   void stop() {
     _stopped = true;
@@ -392,7 +407,7 @@ class ScriptCheck {
     ScriptLevel.joined => _joined(),
     ScriptLevel.transliterate => _transliterate(harder: false),
     ScriptLevel.hear => canHear ? _hear() : _transliterate(harder: true),
-    ScriptLevel.say => canSay ? _say() : _transliterate(harder: true),
+    ScriptLevel.say => _canSayNow ? _say() : _transliterate(harder: true),
   };
 
   /// Four letters and what each is, none asked before.

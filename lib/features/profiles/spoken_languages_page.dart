@@ -58,6 +58,7 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
               onChanged: (ranked) => setState(() => _ranked = ranked),
               readsScript: _scripts,
               onScriptsChanged: (answers) => setState(() => _scripts = answers),
+              gutter: AppSizes.gutter,
               header: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
                 child: Text(
@@ -72,7 +73,7 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
           SafeArea(
             top: false,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[

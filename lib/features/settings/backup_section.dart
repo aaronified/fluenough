@@ -12,6 +12,8 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/snack.dart';
 import 'restore_sheet.dart';
 import 'settings_controls.dart';
+import '../../ui/card_text_scale.dart';
+import '../../ui/theme.dart';
 
 /// Backup and restore, the first group of Your data (#470, #473;
 /// docs/BACKUP-FORMAT.md): Back up now and Restore from a file, the Cloud
@@ -77,7 +79,9 @@ class _BackupSectionState extends State<BackupSection> {
     final state = AppScope.read(context);
     final help = settingsHelpStyle(Theme.of(context));
     Widget line(String text) => Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: AppSizes.textInset,
+      ),
       child: Text(text, style: help),
     );
     return ListenableBuilder(
@@ -310,7 +314,7 @@ class _BackupRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final large = MediaQuery.textScalerOf(context).scale(1) > 1.3;
+    final large = isLargeText(context);
     Widget action(
       IconData icon,
       String label,

@@ -521,7 +521,8 @@ class _WordsButton extends StatelessWidget {
   final LanguageInfo language;
 
   @override
-  Widget build(BuildContext context) => Center(
+  Widget build(BuildContext context) => Align(
+    alignment: AlignmentDirectional.centerStart,
     child: OutlinedButton.icon(
       onPressed: () => showModalBottomSheet<void>(
         context: context,

@@ -10,6 +10,7 @@ import '../review/review_waiting.dart' show unitToReview;
 import 'deck_content.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
+import '../../ui/card_text_scale.dart';
 
 /// A course's path, winding down the screen (the owner's design):
 /// each unit a slightly rounded rectangle, playfully off-centre, joined by a
@@ -47,8 +48,10 @@ class CoursePathView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final width = constraints.maxWidth;
-        final scale = MediaQuery.textScalerOf(context).scale(1);
-        final nodeWidth = math.min(width * (scale > 1.3 ? 0.86 : 0.64), 300.0);
+        final nodeWidth = math.min(
+          width * (isLargeText(context) ? 0.86 : 0.64),
+          300.0,
+        );
 
         // Each step's centre across the path, as a share of [width].
         var node = 0;

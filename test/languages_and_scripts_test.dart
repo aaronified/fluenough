@@ -1882,6 +1882,31 @@ void main() {
         });
       }
     });
+
+    test('"I can\'t speak now" on the read-aloud question skips it: it is '
+        'not a miss, so the result is what answering it right would reach '
+        'and the check goes on', () {
+      final c = check(sound: true);
+      while (c.question is! SayQuestion) {
+        c.answer(true);
+      }
+      final before = c.level;
+      c.skipSay();
+      expect(c.question, isNot(isA<SayQuestion>()));
+      expect(c.level, before, reason: 'skipping neither passes nor fails');
+      expect(c.isFinished, isFalse);
+      c.answer(true);
+      expect(c.standing, ScriptStanding.reads);
+
+      // Skipped, then a miss is the first miss, not the second.
+      final d = check(sound: true);
+      while (d.question is! SayQuestion) {
+        d.answer(true);
+      }
+      d.skipSay();
+      d.answer(false);
+      expect(d.isFinished, isFalse);
+    });
   });
 
   group('the deck walk', () {

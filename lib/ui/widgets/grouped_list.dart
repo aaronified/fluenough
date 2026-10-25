@@ -1,6 +1,9 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
+import '../card_text_scale.dart';
 import '../theme.dart';
 import 'incoming.dart';
 
@@ -208,6 +211,10 @@ class GroupedTile extends StatelessWidget {
        trailingGap = 16,
        _toggle = (value: value, onChanged: onChanged);
 
+  /// A 24 px blank for [leading], on a tile with no icon in a group whose
+  /// other tiles have one, so the titles share one left edge.
+  static const Widget noIcon = SizedBox(width: 24);
+
   /// The design's rows: 20 at the sides, 14 above and below.
   static const EdgeInsetsGeometry defaultPadding =
       EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 14);
@@ -324,7 +331,7 @@ class GroupedTile extends StatelessWidget {
             color: titleColor ?? foreground,
           ),
         ),
-        if (line case final line?)
+        if (line case final line? when line.isNotEmpty)
           Text(
             line,
             style: theme.textTheme.bodyMedium!.copyWith(
@@ -342,17 +349,35 @@ class GroupedTile extends StatelessWidget {
           )
         : trailing;
 
+    // With large text the text block is tall, and an icon centred on it
+    // floats mid-tile: it sits beside the title instead. The trailing
+    // control follows it, so the row has one top edge.
+    final topAligned = isLargeText(context) || incoming;
+    final titleStyle = theme.textTheme.titleMedium!;
+    final titleLine = MediaQuery.textScalerOf(context)
+        .scale(titleStyle.fontSize! * (titleStyle.height ?? 1.3));
+    Widget onTitleLine(Widget child) => topAligned
+        ? ConstrainedBox(
+            constraints: BoxConstraints(minHeight: math.max(titleLine, 24)),
+            child: Center(child: child),
+          )
+        : child;
     final row = Padding(
       padding: padding,
       child: Row(
+        crossAxisAlignment: topAligned
+            ? CrossAxisAlignment.start
+            : CrossAxisAlignment.center,
         children: <Widget>[
           if (leading != null) ...<Widget>[
-            dimmed(
-              IconTheme.merge(
-                data: IconThemeData(
-                  color: titleColor ?? foreground ?? scheme.onSurfaceVariant,
+            onTitleLine(
+              dimmed(
+                IconTheme.merge(
+                  data: IconThemeData(
+                    color: titleColor ?? foreground ?? scheme.onSurfaceVariant,
+                  ),
+                  child: leading!,
                 ),
-                child: leading!,
               ),
             ),
             SizedBox(width: leadingGap),
@@ -389,7 +414,7 @@ class GroupedTile extends StatelessWidget {
           ),
           if (end != null) ...<Widget>[
             SizedBox(width: trailingGap),
-            dimmed(IgnorePointer(ignoring: incoming, child: end)),
+            onTitleLine(dimmed(IgnorePointer(ignoring: incoming, child: end))),
           ],
         ],
       ),

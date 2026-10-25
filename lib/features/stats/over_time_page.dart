@@ -371,7 +371,12 @@ class _LinesPainter extends CustomPainter {
           ..strokeCap = StrokeCap.round,
         style.dash,
       );
-      for (var i = 2; i < values.length; i += 3) {
+      // Markers at the weeks the axis names, so each label sits under one.
+      for (final i in <int>{
+        0,
+        (values.length - 1) ~/ 3,
+        (values.length - 1) * 2 ~/ 3,
+      }) {
         paintLineMarker(
           canvas,
           Offset(x(i), y(values[i])),

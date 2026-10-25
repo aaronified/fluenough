@@ -5,6 +5,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/card_text_scale.dart';
 
 /// Under the answer field for a script that needs its own keyboard: "No
 /// Hindi keyboard? Try HeliBoard.", and "Get HeliBoard", which opens
@@ -21,7 +22,7 @@ class KeyboardHint extends StatelessWidget {
     final scheme = theme.colorScheme;
     // At large text sizes the button goes under the text, which would
     // otherwise be squeezed to nothing beside it.
-    final large = MediaQuery.textScalerOf(context).scale(16) >= 24;
+    final large = isLargeText(context);
     final hint = Text(
       l10n.drillKeyboardHint(language.name),
       style: theme.textTheme.bodySmall!.copyWith(

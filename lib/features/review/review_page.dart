@@ -22,6 +22,7 @@ import 'review_sheets.dart';
 import 'review_waiting.dart';
 import 'review_words.dart';
 import 'send_reviews_sheet.dart';
+import '../../ui/card_text_scale.dart';
 
 /// Reviewing a unit (the owner's design, "Review a unit"): the rater code
 /// and how far the review has got at the top; each card with "Suggest a
@@ -343,25 +344,74 @@ class _ReviewRow extends StatelessWidget {
     Widget said(String text, String label) =>
         Semantics(label: label, excludeSemantics: true, child: Text(text));
     final meaning = card.native;
+    // At large text the word beside the icon took half the row, and the
+    // controls fell into ragged columns: the mark is the icon alone, its
+    // word kept as tooltip and spoken label.
+    final large = isLargeText(context);
+    Widget markButton({
+      required IconData icon,
+      required String word,
+      required String label,
+      required VoidCallback onPressed,
+      required bool tonal,
+      ButtonStyle? style,
+    }) {
+      if (large) {
+        final button = tonal
+            ? IconButton.filledTonal(
+                tooltip: word,
+                onPressed: onPressed,
+                style: style,
+                icon: Icon(icon, size: 20, semanticLabel: label),
+              )
+            : IconButton.filled(
+                tooltip: word,
+                onPressed: onPressed,
+                style: style,
+                icon: Icon(icon, size: 20, semanticLabel: label),
+              );
+        return button;
+      }
+      final iconWidget = Icon(icon, size: 18);
+      return tonal
+          ? FilledButton.tonalIcon(
+              style: style,
+              onPressed: onPressed,
+              icon: iconWidget,
+              label: said(word, label),
+            )
+          : FilledButton.icon(
+              onPressed: onPressed,
+              icon: iconWidget,
+              label: said(word, label),
+            );
+    }
+
     final Widget mark = switch (review) {
-      CardReview(suggestions: [_, ...]) => FilledButton.tonalIcon(
+      CardReview(suggestions: [_, ...]) => markButton(
+        icon: Icons.edit_outlined,
+        word: l10n.reviewSuggested,
+        label: l10n.reviewSuggestedFor(meaning),
         onPressed: onSuggest,
-        icon: const Icon(Icons.edit_outlined, size: 18),
-        label: said(l10n.reviewSuggested, l10n.reviewSuggestedFor(meaning)),
+        tonal: true,
       ),
-      CardReview(right: true) => FilledButton.icon(
+      CardReview(right: true) => markButton(
+        icon: Icons.check,
+        word: l10n.reviewRight,
+        label: l10n.reviewRightFor(meaning),
         onPressed: () => state.reviewing.markRight(deck, card, right: false),
-        icon: const Icon(Icons.check, size: 18),
-        label: said(l10n.reviewRight, l10n.reviewRightFor(meaning)),
+        tonal: false,
       ),
-      _ => FilledButton.tonalIcon(
+      _ => markButton(
+        icon: Icons.check,
+        word: l10n.reviewCheck,
+        label: l10n.reviewCheckFor(meaning),
+        onPressed: () => state.reviewing.markRight(deck, card),
+        tonal: true,
         style: FilledButton.styleFrom(
           backgroundColor: scheme.surfaceContainerHighest,
           foregroundColor: scheme.onSurface,
         ),
-        onPressed: () => state.reviewing.markRight(deck, card),
-        icon: const Icon(Icons.check, size: 18),
-        label: said(l10n.reviewCheck, l10n.reviewCheckFor(meaning)),
       ),
     };
     final proposals = waitingProposals(state.decks, deck, card).length;
@@ -486,7 +536,7 @@ class ReviewFoot extends StatelessWidget {
       icon: const Icon(Icons.send_outlined, size: 20),
       label: Text(l10n.reviewSend, textAlign: TextAlign.center),
     );
-    final stacked = MediaQuery.textScalerOf(context).scale(1) > 1.3;
+    final stacked = isLargeText(context);
     return BottomActions(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
       child: Column(

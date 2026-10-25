@@ -24,6 +24,16 @@ class SystemSpeechEngine implements SpeechEngine {
   bool _listeningOnDevice = true;
   bool _started = false;
 
+  /// The best reading of the latest partial result, kept as a fallback for
+  /// a listen whose final result never comes (see [_onStatus]).
+  List<SpeechAlternative> _partial = const <SpeechAlternative>[];
+  Timer? _doneTimer;
+
+  /// How long to wait for a final result after Android says it is done.
+  /// Some recognisers (Samsung's offline one) end the listen on the
+  /// plugin's one-second end-of-speech timer, before the final result.
+  static const Duration _doneGrace = Duration(milliseconds: 2500);
+
   /// How long past `listenFor` a listen may take to report before it is
   /// given up as no match.
   static const Duration _grace = Duration(seconds: 4);
@@ -97,6 +107,8 @@ class SystemSpeechEngine implements SpeechEngine {
     }
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
     final done = _listening = Completer<SpeechHeard>();
+    _partial = const <SpeechAlternative>[];
+    _doneTimer?.cancel();
     _listeningOnDevice = onDevice;
     try {
       await _plugin.listen(
@@ -111,7 +123,10 @@ class SystemSpeechEngine implements SpeechEngine {
           // learner had begun. Android ends a listen itself once speech
           // stops.
           listenMode: ListenMode.confirmation,
-          partialResults: false,
+          // Partial results are on only as a fallback: a done status can
+          // come before the final result, and then the last partial is
+          // what was heard.
+          partialResults: true,
           cancelOnError: true,
         ),
       );
@@ -122,8 +137,11 @@ class SystemSpeechEngine implements SpeechEngine {
       listenFor + _grace,
       onTimeout: () {
         _plugin.cancel();
+        _doneTimer?.cancel();
         _listening = null;
-        return const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
+        return _partial.isNotEmpty
+            ? SpeechHeard(_partial)
+            : const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
       },
     );
   }
@@ -138,19 +156,28 @@ class SystemSpeechEngine implements SpeechEngine {
   }
 
   void _finish(SpeechHeard heard) {
+    _doneTimer?.cancel();
+    _doneTimer = null;
     final done = _listening;
     _listening = null;
     if (done != null && !done.isCompleted) done.complete(heard);
   }
 
   void _onResult(SpeechRecognitionResult result) {
-    if (!result.finalResult) return;
     final alternatives = alternativesOf(result);
-    _finish(
-      alternatives.isEmpty
-          ? const SpeechHeard.failed(SpeechFailure.noMatch)
-          : SpeechHeard(alternatives),
-    );
+    if (!result.finalResult) {
+      if (alternatives.isNotEmpty) _partial = alternatives;
+      return;
+    }
+    if (alternatives.isNotEmpty) {
+      _finish(SpeechHeard(alternatives));
+    } else if (_partial.isNotEmpty) {
+      _finish(SpeechHeard(_partial));
+    } else {
+      _finish(
+        const SpeechHeard.failed(SpeechFailure.noMatch, code: 'empty-result'),
+      );
+    }
   }
 
   /// A final result's readings, best first, without empty ones. The plugin
@@ -177,10 +204,20 @@ class SystemSpeechEngine implements SpeechEngine {
   );
 
   void _onStatus(String status) {
-    // Done with no final result: nothing was heard.
-    if (status == SpeechToText.doneStatus) {
-      _finish(const SpeechHeard.failed(SpeechFailure.noMatch));
-    }
+    if (status != SpeechToText.doneStatus || _listening == null) return;
+    // Done: the final result may still be on its way, so give it a moment,
+    // then fall back on the last partial, else nothing was heard.
+    _doneTimer?.cancel();
+    _doneTimer = Timer(_doneGrace, () {
+      _finish(
+        _partial.isNotEmpty
+            ? SpeechHeard(_partial)
+            : const SpeechHeard.failed(
+                SpeechFailure.noMatch,
+                code: 'done-before-result',
+              ),
+      );
+    });
   }
 
   /// The plugin's error codes, as the reasons the app tells apart. A

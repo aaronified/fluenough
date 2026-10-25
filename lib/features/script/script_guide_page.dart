@@ -98,10 +98,15 @@ class ScriptGuideView extends StatelessWidget {
           24,
         ).clearingSystemBar(context),
         children: <Widget>[
-          Text(
-            guide.intro,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: AppSizes.textInset,
+            ),
+            child: Text(
+              guide.intro,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
             ),
           ),
           for (final feature in guide.features) ...<Widget>[

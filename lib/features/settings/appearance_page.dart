@@ -70,6 +70,13 @@ class AppearancePage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final settings = state.settings;
+    Widget languagePicker({bool fullWidth = false}) => AppLanguagePicker(
+      fullWidth: fullWidth,
+      onChanged: (locale) => showAppSnackBar(
+        context,
+        l10n.settingsAppLanguageChanged(AppLanguagePicker.ownName(locale)),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.appearanceTitle),
@@ -207,23 +214,38 @@ class AppearancePage extends StatelessWidget {
               // more row here, with no page of its own. Until #46 there is
               // only English, and no setting to hold another choice.
               _Block(
-                child: GroupedTile(
-                  leading: const Icon(Icons.translate),
-                  title: l10n.settingsAppLanguage,
-                  feature: Feature.uiLanguage,
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 20,
-                    vertical: 12,
-                  ),
-                  trailing: AppLanguagePicker(
-                    onChanged: (locale) => showAppSnackBar(
-                      context,
-                      l10n.settingsAppLanguageChanged(
-                        AppLanguagePicker.ownName(locale),
+                child: isLargeText(context)
+                    // Large text: the picker goes under its title, as wide
+                    // as the row, rather than squeeze the title beside it.
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          GroupedTile(
+                            leading: const Icon(Icons.translate),
+                            title: l10n.settingsAppLanguage,
+                            feature: Feature.uiLanguage,
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                              20,
+                              0,
+                              20,
+                              14,
+                            ),
+                            child: languagePicker(fullWidth: true),
+                          ),
+                        ],
+                      )
+                    : GroupedTile(
+                        leading: const Icon(Icons.translate),
+                        title: l10n.settingsAppLanguage,
+                        feature: Feature.uiLanguage,
+                        padding: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 20,
+                          vertical: 12,
+                        ),
+                        trailing: languagePicker(),
                       ),
-                    ),
-                  ),
-                ),
               ),
               const SizedBox(height: 24),
               // Which scripts the phone draws and which need a downloaded
@@ -442,7 +464,7 @@ class _SeedPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final columns = MediaQuery.textScalerOf(context).scale(1) > 1.5 ? 2 : 4;
+    final columns = isLargeText(context) ? 2 : 4;
     final seeds = ThemeSeed.values;
 
     Widget tile(ThemeSeed seed) {
