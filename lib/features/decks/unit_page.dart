@@ -473,12 +473,17 @@ class _Header extends StatelessWidget {
           (e) => UnreviewedNotice.appliesTo(e) && !reviewing.helpedBuild(e),
         )
         .firstOrNull;
-    return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          MergeSemantics(
+    // Only the heading text is inset: the notices are cards and keep the
+    // 16 px edge of the tiles below.
+    const inset = EdgeInsetsDirectional.symmetric(
+      horizontal: AppSizes.textInset,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: inset,
+          child: MergeSemantics(
             child: Row(
               children: <Widget>[
                 if (level != null) ...<Widget>[
@@ -498,33 +503,39 @@ class _Header extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 8),
-          Semantics(
+        ),
+        const SizedBox(height: 8),
+        Padding(
+          padding: inset,
+          child: Semantics(
             header: true,
             child: Text(title, style: theme.textTheme.headlineMedium),
           ),
-          if (described != null) ...<Widget>[
-            const SizedBox(height: 10),
-            Text(
+        ),
+        if (described != null) ...<Widget>[
+          const SizedBox(height: 10),
+          Padding(
+            padding: inset,
+            child: Text(
               described,
               style: theme.textTheme.bodyLarge!.copyWith(
                 color: scheme.onSurfaceVariant,
               ),
             ),
-          ],
-          if (helped != null) ...<Widget>[
-            const SizedBox(height: 12),
-            ThanksNotice(
-              code: '${reviewing.code}',
-              others: reviewing.reviewerCount(helped) - 1,
-            ),
-          ],
-          if (unchecked != null) ...<Widget>[
-            const SizedBox(height: 12),
-            UnreviewedNotice(entry: unchecked),
-          ],
+          ),
         ],
-      ),
+        if (helped != null) ...<Widget>[
+          const SizedBox(height: 12),
+          ThanksNotice(
+            code: '${reviewing.code}',
+            others: reviewing.reviewerCount(helped) - 1,
+          ),
+        ],
+        if (unchecked != null) ...<Widget>[
+          const SizedBox(height: 12),
+          UnreviewedNotice(entry: unchecked),
+        ],
+      ],
     );
   }
 }
@@ -714,18 +725,16 @@ class CardRow extends StatelessWidget {
           ),
       ],
     );
-    final Widget status = closed
+    // A phrasebook row has no mark of its own: its section is headed
+    // "Phrasebook", and the pill took 45% of the row at large text.
+    final Widget? status = closed
         ? Icon(
             Icons.lock_outline,
             color: muted,
             semanticLabel: l10n.unitNotOpen,
           )
         : phrasebook
-        ? Pill(
-            text: l10n.unitPhrasebook,
-            background: scheme.tertiaryContainer,
-            foreground: scheme.onTertiaryContainer,
-          )
+        ? null
         : MasteryChip(mastery: mastery, notOpen: notOpen);
     return Semantics(
       hint: closed ? l10n.unitWhyClosedHint : l10n.unitOpenWord,
@@ -735,7 +744,7 @@ class CardRow extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 60),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(14, 10, 12, 10),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 12, 10),
               // A sentence takes the row's width over its meaning; a word
               // sits beside it.
               child: sentence
@@ -751,8 +760,10 @@ class CardRow extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        status,
+                        if (status != null) ...<Widget>[
+                          const SizedBox(width: 8),
+                          status,
+                        ],
                       ],
                     )
                   : Row(
@@ -760,8 +771,18 @@ class CardRow extends StatelessWidget {
                         Expanded(flex: 4, child: target),
                         const SizedBox(width: 10),
                         Expanded(flex: 5, child: meaning),
-                        const SizedBox(width: 8),
-                        status,
+                        if (status != null) ...<Widget>[
+                          const SizedBox(width: 8),
+                          // A slot as wide for every row, so the meaning
+                          // column starts at the same x whatever the mark.
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(minWidth: 96),
+                            child: Align(
+                              alignment: AlignmentDirectional.centerEnd,
+                              child: status,
+                            ),
+                          ),
+                        ],
                       ],
                     ),
             ),
