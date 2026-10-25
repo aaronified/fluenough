@@ -322,6 +322,7 @@ class _UnitPageState extends State<UnitPage> {
                   Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: TextButton(
+                      style: AppButtonStyles.inline(context),
                       onPressed: () => setState(() => _allWords = !_allWords),
                       child: Text(
                         _allWords

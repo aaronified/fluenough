@@ -325,6 +325,20 @@ abstract final class AppRadii {
 /// `FilledButton(style: AppButtonStyles.tall(context), …)`. They take their
 /// text from the theme's type scale, so they keep its font.
 abstract final class AppButtonStyles {
+  /// A text button that sits under a column of text: its label starts where
+  /// the text above it starts, not 12 px in (the button's own padding).
+  static ButtonStyle inline(BuildContext context) => TextButton.styleFrom(
+    padding: const EdgeInsetsDirectional.only(end: 12),
+    alignment: AlignmentDirectional.centerStart,
+  );
+
+  /// A text button at the end of a heading's line: its label ends where the
+  /// column of values below ends.
+  static ButtonStyle trailing(BuildContext context) => TextButton.styleFrom(
+    padding: const EdgeInsetsDirectional.only(start: 12),
+    alignment: AlignmentDirectional.centerEnd,
+  );
+
   /// 64 px, 18 px bold: the main action of a screen.
   static ButtonStyle tall(BuildContext context) => ButtonStyle(
     minimumSize: const WidgetStatePropertyAll(Size(64, AppSizes.tallButton)),
