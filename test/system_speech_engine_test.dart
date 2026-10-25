@@ -53,8 +53,6 @@ SpeechRecognitionResult _said(String words, {required bool isFinal}) =>
     ], isFinal ? ResultType.finalResult.value : ResultType.partial.value);
 
 void main() {
-  Future<SpeechHeard> listen(
- void main() {
   /// Starts a listen, plays Android's callbacks, and gives what was heard.
   Future<SpeechHeard> heard(
     WidgetTester tester,
@@ -65,7 +63,8 @@ void main() {
         .listen(bcp47: 'hi-IN', onDevice: true);
     await tester.pump();
     await play();
-    await tester.pump(const Duration(seconds: 5));
+    // Past the listen's own deadline (listenFor 8 s + 4 s grace).
+    await tester.pump(const Duration(seconds: 15));
     return listening;
   }
 
@@ -89,6 +88,17 @@ void main() {
     final h = await heard(tester, android, () async {
       android.result!(_said('नमस्ते', isFinal: false));
       android.status!('done');
+    });
+    expect(h.failed, isFalse);
+    expect(h.alternatives.single.text, 'नमस्ते');
+  });
+
+  testWidgets('the last partial result is heard when the deadline passes', (
+    tester,
+  ) async {
+    final android = _Android();
+    final h = await heard(tester, android, () async {
+      android.result!(_said('नमस्ते', isFinal: false));
     });
     expect(h.failed, isFalse);
     expect(h.alternatives.single.text, 'नमस्ते');

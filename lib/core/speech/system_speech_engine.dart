@@ -139,7 +139,9 @@ class SystemSpeechEngine implements SpeechEngine {
         _plugin.cancel();
         _doneTimer?.cancel();
         _listening = null;
-        return const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
+        return _partial.isNotEmpty
+            ? SpeechHeard(_partial)
+            : const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
       },
     );
   }
