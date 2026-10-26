@@ -41,14 +41,14 @@ Before you start:
   are updated in the same change. New text for the learner goes in each
   native layer.
 - **Narrow IPA (`[ ]`) is never written by hand** (owner, 2026-10-26, wiki:
-  Plan-Ipa-Revamp-And-Language-Phonology). `ipa` stays broad. A card's
-  phonetic form, `phonetic: "[ˈkʰæt]"`, comes only from Wiktionary through
-  `tools/import_phonetic.py`, run over the finished deck after the unit is
-  written, and only for a word Wiktionary gives a form for; a builder does not
-  derive one from rules or write one from memory, since the exceptions
-  (English most of all) make that unreliable. **Status: the field and the tool
-  are not built yet.** Until a release reads `phonetic` (released apps reject
-  unknown fields), leave it out and do not add one.
+  Plan-Ipa-Revamp-And-Language-Phonology). `ipa` stays broad ("the weak
+  notation keeps being used as is"). A card's phonetic form, `phonetic:
+  "[ˈkʰæt]"`, with `phonetic_source: "wiktionary"` or `"rules"`, is written
+  only by the tools: `tools/import_phonetic.py` takes Wiktionary's form where
+  there is one, and `tools/derive_phonetic.py` derives the rest from the
+  language's rule file. A builder does not write one from memory or from rules
+  in their head. **Status: the fields and the tools are not built yet.** Until
+  a release reads them (released apps reject unknown fields), leave them out.
 - Every question-word card (where, when, who, what, why, how, which, how
   many) gets a `picture` plus `picture_ask: true` (DECK-FORMAT, "A question
   word's picture"; owner, 2026-10-22, #707: "So that all future decks can
