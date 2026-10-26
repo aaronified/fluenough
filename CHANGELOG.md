@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Progress is redrawn: two count tiles on top (words and rules) with an icon and a bar, the level tile filled before A1, icons on the hours tiles, a check when there are no leeches, and a larger mastery star whose skill names are each always in their own colour, the same in light and dark and on every theme.
+- All tags is two lines and a thin bar a row, with a round play button inline, "Nothing taught yet" for a tag with no taught word, and a sort menu (weakest first, A to Z, most words).
 - A wrong spoken answer now shows what was heard and, when the word is in a deck, its IPA on a second line; it no longer repeats the answer shown on the card.
 - Today's skill tiles put the number on the icon row with the pace arrow, in two lines; the arrow is hidden above 99 cards.
 - The course card on Decks has a sync button that looks for deck updates and downloads them, with the download shown on the bar and a toast when there is nothing to download; the hours left are one line under the bar.

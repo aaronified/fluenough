@@ -442,7 +442,7 @@ void main() {
       state.showLanguage('es', allOff: true);
       await tester.pumpAndSettle();
       expect(find.text(l10n.progressLevelTitle), findsOneWidget);
-      expect(find.byType(UnlockTile), findsNWidgets(3));
+      expect(find.byType(UnlockTile), findsNWidgets(2));
       expect(find.byType(LevelTile), findsOneWidget);
       expect(find.byType(PracticeWeekCard), findsOneWidget);
       expect(find.byType(SkillStarCard), findsOneWidget);
