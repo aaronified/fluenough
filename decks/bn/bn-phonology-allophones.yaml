@@ -1,0 +1,165 @@
+schema: 1
+id: "bn-phonology-allophones"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Bengali phonology; Help:IPA/Bengali)", url: "https://en.wikipedia.org/wiki/Bengali_phonology" }
+source: "Khan (2010), 'Bengali (Bangladeshi Standard)', Illustration of the IPA, Journal of the International Phonetic Association 40(2): 221-225, doi 10.1017/S0025100310000071 (named in Wikipedia's references; the article itself was not read); also as cited by Wikipedia: Ferguson and Chowdhury (1960), Language 36(1): 22-59; Chatterji (1921), Bulletin of the School of Oriental and African Studies 2: 1-25; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Hayes and Lahiri (1991), Natural Language and Linguistic Theory 9: 47-96; Bhattacharya (2000), Bangla (Bengali). Text adapted from Wikipedia, 'Bengali phonology' and 'Help:IPA/Bengali', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Bengali_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "bn-2063"
+    target: "ɖ"
+    ipa: "ɖ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ডিম", reading: "ḍim", ipa: "ɖim" }
+      - { target: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }
+    notes:
+      - { id: "n1", kind: "note", source: "Ferguson and Chowdhury (1960), Language 36(1), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0)" }
+  - id: "bn-2064"
+    target: "n"
+    ipa: "n"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ঘণ্টা", reading: "ghônṭā", ipa: "ɡʱɔnʈa" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2065"
+    target: "ɦ"
+    ipa: "ɦ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "হাত", reading: "hāt", ipa: "ɦat̪" }
+      - { target: "শহর", reading: "śôhor", ipa: "ʃɔɦor" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard; Wikipedia, Help:IPA/Bengali (CC BY-SA 4.0)" }
+  - id: "bn-2066"
+    target: "pʰ"
+    ipa: "pʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ফল", reading: "phôl", ipa: "pʰɔl" }
+      - { target: "ফোন", reading: "phon", ipa: "pʰon" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2067"
+    target: "bʱ"
+    ipa: "bʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ভাত", reading: "bhāt", ipa: "bʱat̪" }
+      - { target: "ভাই", reading: "bhāi", ipa: "bʱai" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2068"
+    target: "r"
+    ipa: "r"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ঘর", reading: "ghôr", ipa: "ɡʱɔr" }
+      - { target: "পর", reading: "pôr", ipa: "pɔr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard; Ferguson and Chowdhury (1960), Language 36(1), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0)" }
+  - id: "bn-2069"
+    target: "tʃ"
+    ipa: "tʃ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "চা", reading: "cā", ipa: "tʃa" }
+      - { target: "জল", reading: "jôl", ipa: "dʒɔl" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2070"
+    target: "ʃ"
+    ipa: "ʃ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "পছন্দ", reading: "pôchondo", ipa: "pɔtʃʰond̪o" }
+      - { target: "শহর", reading: "śôhor", ipa: "ʃɔɦor" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2071"
+    target: "z"
+    ipa: "z"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "সবজি", reading: "śôbji", ipa: "ʃɔbdʒi" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2072"
+    target: "a"
+    ipa: "a"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "মাছ", reading: "māch", ipa: "matʃʰ" }
+      - { target: "পাখি", reading: "pākhi", ipa: "pakʰi" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard; Khan (2010), JIPA 40(2), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0)" }
+  - id: "bn-2073"
+    target: "u"
+    ipa: "u"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "দুধ", reading: "dudh", ipa: "d̪ud̪ʱ" }
+      - { target: "ঘুম", reading: "ghum", ipa: "ɡʱum" }
+    notes:
+      - { id: "n1", kind: "note", source: "Khan (2010), JIPA 40(2), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0)" }
+  - id: "bn-2074"
+    target: "i̯"
+    ipa: "i̯"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ভাই", reading: "bhāi", ipa: "bʱai" }
+      - { target: "নয়", reading: "nôy", ipa: "nɔj" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard; Wikipedia, Help:IPA/Bengali (CC BY-SA 4.0)" }
+  - id: "bn-2075"
+    target: "ts"
+    ipa: "ts"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2076"
+    target: "x"
+    ipa: "x"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2077"
+    target: "ʈ"
+    ipa: "ʈ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2078"
+    target: "ɾ"
+    ipa: "ɾ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard" }
+  - id: "bn-2079"
+    target: "h"
+    ipa: "h"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Bengali phonology (CC BY-SA 4.0); the vowel chart and several of its notes are from Khan (2010), JIPA 40(2), which describes Bangladeshi Standard; Khan (2010), JIPA 40(2), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0)" }

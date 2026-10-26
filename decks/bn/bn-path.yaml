@@ -611,4 +611,9 @@ units:
     milestone: "B1"
   # After B1: spelling.
   - ["bn-spelling"]
+  # The phonology decks (owner, 2026-10-26: "add the language level IPA decks"):
+  # optional, for learners who know the IPA or want to learn it. The path has no
+  # field for an optional deck yet, so they sit in a unit of their own after B1;
+  # how they are offered is to be decided (wiki: Plan-Ipa-Revamp-And-Language-Phonology).
+  - ["bn-phonology-consonants", "bn-phonology-vowels", "bn-phonology-prosody", "bn-phonology-syllables", "bn-phonology-allophones", "bn-phonology-spelling"]
   - ["*"]

@@ -1,0 +1,108 @@
+schema: 1
+id: "bn-en-phonology-spelling"
+kind: "layer"
+core: "bn-phonology-spelling"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Bengali spelling to sound (IPA)"
+description: "How Bengali script is read, with its exceptions, in IPA: one card each. For learners who know the IPA or want to learn it. Variety taught: Standard Colloquial Bengali of Kolkata, with a note wherever Bangladeshi Standard (Dhaka) differs. This is a proposal, not yet confirmed by the owner, a Bengali speaker or a phonetician. The only JIPA illustration found, by Khan (2010), describes Bangladeshi Standard, so facts taken from it are marked as that; Wikipedia's page covers both and says where it knows they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Bengali phonology; Help:IPA/Bengali)", url: "https://en.wikipedia.org/wiki/Bengali_phonology" }
+source: "Khan (2010), 'Bengali (Bangladeshi Standard)', Illustration of the IPA, Journal of the International Phonetic Association 40(2): 221-225, doi 10.1017/S0025100310000071 (named in Wikipedia's references; the article itself was not read); also as cited by Wikipedia: Ferguson and Chowdhury (1960), Language 36(1): 22-59; Chatterji (1921), Bulletin of the School of Oriental and African Studies 2: 1-25; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Hayes and Lahiri (1991), Natural Language and Linguistic Theory 9: 47-96; Bhattacharya (2000), Bangla (Bengali). Text adapted from Wikipedia, 'Bengali phonology' and 'Help:IPA/Bengali', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Bengali_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "bn-2080":
+    native: "the inherent vowel অ (ô): ɔ or o, or silent"
+    notes:
+      "n1": "Every consonant carries a vowel unless a sign changes it: most often the open ɔ of অ (ô) and sometimes a closed o. So ক (kô) alone is kɔ, and কলম (kôlom) has no vowel written at all. The help page gives অ (ô) as ɔ in অমর (amar) and as o in অঙ্কুর (aṅkur)."
+    examples:
+      "জল": "water"
+      "ঘর": "room"
+  "bn-2081":
+    native: "the last inherent vowel is usually not said"
+    notes:
+      "n1": "At the end of most words the carried vowel goes quiet: ঘর (ghôr) is ghɔr, not ghɔro. Some words keep it, such as বড় (bôṛo, big), so each word is learnt as said."
+    examples:
+      "ঘর": "room"
+      "জল": "water"
+  "bn-2082":
+    native: "ই (i) and ঈ (i) are one sound, and so are উ (u) and ঊ (u)"
+    notes:
+      "n1": "Bengali does not contrast vowel length: ই (i) and ঈ (i), and উ (u) and ঊ (u), are said alike, and this course reads them i and u. Older print writes ঈ (i) in words that are not from Sanskrit, as in পাখী (pākhi); today's spelling writes ই (i) there: পাখি (pākhi), bird, as this course's spelling deck says."
+    examples:
+      "পাখি": "bird"
+  "bn-2083":
+    native: "এ (e) is e in some words and æ in others"
+    notes:
+      "n1": "The letter এ (e) is said e in মেদিনী (medini) and æ in খেলা (khelā), the help page says, and the sign ্যা (yā) is æ in ত্যাগ (tyāg). This course reads এ (e) as e, and writes ê where it is said æ, as in ব্যাগ (bêg); its own card for খেলা (khelā), to play, writes kʰela. So the help page and the course differ on খেলা (khelā), and a Bengali speaker needs to settle it."
+    examples:
+      "কেন": "why"
+      "ব্যাগ": "bag"
+  "bn-2084":
+    native: "the য-ফলা (jô-phôla): it doubles a consonant or changes a vowel"
+    notes:
+      "n1": "After a consonant য (jô) is written as a hook (ব্য), and ব (bô) as a small mark (স্ব). Neither is usually said as itself: they double the consonant before them or change its vowel, as in ব্যবসা (bêbśā), business, said bæbʃa."
+    examples:
+      "ব্যবসা": "business"
+  "bn-2085":
+    native: "জ (jô) and য (jô): dʒ, or z in foreign words"
+    notes:
+      "n1": "Both জ (jô) and য (jô) are dʒ in native words and can stand for z in foreign words; many speakers say dʒ even then. The letter য় (yô), with a dot, is another letter: the help page gives it as the semivowel e̯ or j."
+    examples:
+      "জল": "water"
+      "সবজি": "vegetable; vegetables"
+  "bn-2086":
+    native: "ন (nô) and ণ (nô) are both n; ং (ôṅ) and ঙ (ṅô) are both ŋ"
+    notes:
+      "n1": "The help page gives n for both ন (nô) and ণ (nô), and ŋ for both ঙ (ṅô) and ং (ôṅ), as in বাঙালি (bāṅāli) and অংশ (ôṅśô). Both nasals are the same sound in this course's readings."
+    examples:
+      "রং": "colour; paint"
+      "আঙুর": "grape; grapes"
+  "bn-2087":
+    native: "শ (śô), ষ (śô) and স (śô): ʃ, and s in clusters"
+    notes:
+      "n1": "Bengali writes three sibilants; the help page gives all of শ (śô), ষ (śô) and স (śô) as ʃ. This course reads them ś where they are said sh and s where they are said s, as in স্ত্রী (stri), wife, and স্কুল (skul)."
+    examples:
+      "স্ত্রী": "wife"
+      "সে": "he; she; that person"
+  "bn-2088":
+    native: "the visarga ঃ (ôh): ɦ"
+    notes:
+      "n1": "The help page gives the visarga ঃ (ôh) as the same sound as হ (hô), with the example বাঃ (bāh)."
+  "bn-2089":
+    native: "the moon-and-dot ঁ (candrabindu): the vowel is nasal"
+    notes:
+      "n1": "The moon and dot above a letter makes its vowel nasal, said through the nose as well, and it changes the word: বাধা (bādhā) is an obstacle, বাঁধা (bām̐dhā) is tied."
+    examples:
+      "বাঁ": "left (side)"
+      "দাঁত": "tooth"
+  "bn-2090":
+    native: "the conjunct ক্ষ (kkhô)"
+    notes:
+      "n1": "The help page gives ক্ষ (kkhô) as kʰ, as in ক্ষমা (kṣamā); this course reads it as a long kkʰ, as in শিক্ষক (śikkhok), teacher. The sources differ, and a Bengali speaker needs to settle it."
+    examples:
+      "শিক্ষক": "teacher"
+      "দক্ষিণ": "south"
+  "bn-2091":
+    native: "the conjunct জ্ঞ (ggô)"
+    notes:
+      "n1": "This course reads জ্ঞ (ggô) as gg, as said. The source writes জ্ঞান (knowledge) as /ggæn/ said gæn without a prefix, and with a long consonant after one, as in বিজ্ঞান (science)."
+  "bn-2092":
+    native: "ড় (ṛô) and ঢ় (ṛô): ɽ"
+    notes:
+      "n1": "The help page gives both ড় (ṛô) and ঢ় (ṛô) as ɽ, as in বড় (bôṛo). They are the letters ড (ḍô) and ঢ (ḍhô) with a dot below, which are ɖ and ɖʱ without it."
+    examples:
+      "পড়া": "to read; to fall"
+      "ঘোড়া": "horse"
+  "bn-2093":
+    native: "the letter ৎ (khanda-tô): t̪"
+    notes:
+      "n1": "The letter ৎ (khanda-tô) is a form of ত (tô) with no vowel, and the help page gives it as the same dental stop t̪."
+  "bn-2094":
+    native: "ফ (phô): pʰ, or ɸ or f"
+    notes:
+      "n1": "The letter ফ (phô) is pʰ, said as a stop or commonly a fricative; in foreign words such as ফ্যান (fan) it is f or ɸ."
+    examples:
+      "ফল": "fruit"
+      "ফোন": "phone; telephone"

@@ -1,0 +1,38 @@
+schema: 1
+id: "bn-en-phonology-syllables"
+kind: "layer"
+core: "bn-phonology-syllables"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Bengali syllables and clusters (IPA)"
+description: "What syllables Bengali allows and what consonant clusters it takes: one card each. For learners who know the IPA or want to learn it. Variety taught: Standard Colloquial Bengali of Kolkata, with a note wherever Bangladeshi Standard (Dhaka) differs. This is a proposal, not yet confirmed by the owner, a Bengali speaker or a phonetician. The only JIPA illustration found, by Khan (2010), describes Bangladeshi Standard, so facts taken from it are marked as that; Wikipedia's page covers both and says where it knows they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Bengali phonology; Help:IPA/Bengali)", url: "https://en.wikipedia.org/wiki/Bengali_phonology" }
+source: "Khan (2010), 'Bengali (Bangladeshi Standard)', Illustration of the IPA, Journal of the International Phonetic Association 40(2): 221-225, doi 10.1017/S0025100310000071 (named in Wikipedia's references; the article itself was not read); also as cited by Wikipedia: Ferguson and Chowdhury (1960), Language 36(1): 22-59; Chatterji (1921), Bulletin of the School of Oriental and African Studies 2: 1-25; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Hayes and Lahiri (1991), Natural Language and Linguistic Theory 9: 47-96; Bhattacharya (2000), Bangla (Bengali). Text adapted from Wikipedia, 'Bengali phonology' and 'Help:IPA/Bengali', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Bengali_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "bn-2059":
+    native: "the native syllable: at most one vowel with a consonant on each side"
+    notes:
+      "n1": "Native Bengali words do not allow consonant clusters at the start of a word, so their longest syllable is CVC. Many speakers keep to this even for Sanskrit and English words: গেরাম (geram) for গ্রাম (grām), village, and ইস্কুল (iskul) for স্কুল (skul), school."
+    examples:
+      "গ্রাম": "village"
+      "স্কুল": "school"
+  "bn-2060":
+    native: "clusters at the start of a word, in Sanskrit words and loans"
+    notes:
+      "n1": "Words borrowed from Sanskrit have many clusters, and the longest syllable becomes CCCVC. Some, such as mr in মৃত্যু (mrittu), death, and sp in স্পষ্ট (spôṣṭo), clear, are common enough to count as permitted clusters. English loans such as ট্রেন (ṭren), train, and গ্লাস (glās), glass, add more."
+    examples:
+      "ট্রেন": "train"
+      "গ্লাস": "glass; a drinking glass"
+  "bn-2061":
+    native: "clusters at the end of a word: rare"
+    notes:
+      "n1": "Final clusters are rare. Most came from English, as in লিফ্ট (lifṭ), lift, and ব্যাংক (bêṅk), bank. A few native words have one, such as গঞ্জ (gônj), found in many town names. In some eastern dialects a final nasal and stop are common, as in চান্দ (chand), moon; Standard Bengali has চাঁদ (chām̐d), with a nasal vowel instead."
+    examples:
+      "ব্যাংক": "bank"
+  "bn-2062":
+    native: "two vowels in a row: one syllable or two"
+    notes:
+      "n1": "Almost any vowel pair can occur, but a pair that is not one of the true diphthongs falls across two syllables, as in কুয়া (kua), well, said u.a. Up to 25 vowel combinations are found, and some of the more recent ones are still two syllables and have not become diphthongs."
