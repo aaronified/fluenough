@@ -1,0 +1,46 @@
+schema: 1
+id: "ipa-en-notation"
+kind: "layer"
+core: "ipa-notation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How to read a transcription"
+description: "The brackets a transcription is written in, broad and narrow transcription, and the convention this course and app keep."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ipa-0187":
+    native: "the brackets / / for a broad transcription: the sounds that tell words apart"
+    notes:
+      "n1": "Between slashes is a broad transcription, usually a phonemic one: the sounds that tell words apart in that language, and nothing finer. English cat is /kæt/. Square brackets, not slashes, hold a transcription that adds detail. Source: English Wikipedia, International Phonetic Alphabet, on brackets and transcription delimiters. In the examples, the card's idea is a broad transcription."
+    examples:
+      "cat": "cat (English): a broad transcription, so it takes slashes, /kæt/"
+      "pin": "pin (English): written with its puff of breath, so it is narrow and takes square brackets, not slashes"
+  "ipa-0188":
+    native: "the brackets [ ] for a narrow transcription: the sounds exactly as said"
+    notes:
+      "n1": "Between square brackets is a phonetic transcription: the sounds as they are actually said, with as much detail as you want. English pin is /pɪn/ between slashes but [pʰɪn] in brackets, because the p has a puff of breath. English never uses that puff to tell words apart, but the brackets can show it. Source: English Wikipedia, International Phonetic Alphabet, on brackets and transcription delimiters. In the examples, the card's idea is a narrow transcription."
+    examples:
+      "pin": "pin (English): the p has a puff of breath, so it is written pʰ"
+      "spin": "spin (English): the p after s has no puff, so it is written p: two different p sounds, shown only in brackets"
+      "cat": "cat (English): a broad transcription is enough when you need no detail, so it takes slashes"
+  "ipa-0189":
+    native: "the brackets < > for spelling: the letters as written, not the sounds"
+    notes:
+      "n1": "Angle brackets hold the letters of a word as it is spelt, so that the spelling and the sound can be told apart: the spelling is <knight> and the sound is /naɪt/. Source: English Wikipedia, International Phonetic Alphabet, on brackets and transcription delimiters. In the examples, the card's letter is k."
+    examples:
+      "kit": "kit (English): the letter <k> is said /k/"
+      "knight": "knight (English): the letter <k> is written but not said, so /naɪt/ has no k"
+  "ipa-0190":
+    native: "a broad transcription gives only what tells words apart; a narrow one adds detail"
+    notes:
+      "n1": "How much to write is a choice. A broad transcription, as /kiː/ for key, is short and the same for every speaker of the language. A narrow one, as [kʰiː], adds what the speaker really does, such as the puff of breath. Neither is wrong: use the one that fits what you need. Source: English Wikipedia, Phonetic transcription. In the examples, the card's idea is a narrow transcription."
+    examples:
+      "key": "key (English): a narrow transcription, with the puff of breath on the k written ʰ"
+      "sky": "sky (English): a broad transcription, with no extra detail: it does not write that this k has no puff"
+  "ipa-0191":
+    native: "every transcription in this course is broad and has no slashes, and a narrow one is in square brackets"
+    notes:
+      "n1": "In this course and app, the IPA of a word is written broad and without slashes, as kæt for cat, and the app adds the slashes when it shows it. Where an example needs detail, it is written narrow in square brackets, as [pʰɪn]. So a transcription shown between slashes is the course's broad one, and one in square brackets is narrow. Source: this repository's ADR-0025 and docs/DECK-FORMAT.md."
+    examples:
+      "cat": "cat (English): written kæt in the deck and shown /kæt/"
+      "pin": "pin (English): written [pʰɪn] with its brackets, as it is narrow: the one kind of transcription that is not broad"

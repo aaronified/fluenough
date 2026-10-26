@@ -1,0 +1,90 @@
+# The first unit of the IPA course: what the IPA is, why it was made, and how
+# the chart is built. A concept card: its target is a term, not a symbol
+# (docs/plans: wiki/Plan-Ipa-Revamp-And-Language-Phonology.md, section 2).
+# In its examples, "has this sound" marks a word that shows the idea and
+# "does not" one that does not, as the card's translations say.
+schema: 1
+id: "ipa-what"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC-BY-SA-4.0"
+source: "The IPA chart, 2020 revision, and the principles of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart); Handbook of the International Phonetic Association (Cambridge University Press, 1999); English Wikipedia, International Phonetic Alphabet"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0180"
+    target: "International Phonetic Alphabet"
+    tags: ["core"]
+    examples:
+      - target: "ship"
+        language: "en"
+        ipa: "ʃɪp"
+      - target: "chef"
+        language: "fr"
+        ipa: "ʃɛf"
+      - target: "chat"
+        language: "en"
+        ipa: "tʃæt"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+  - id: "ipa-0181"
+    target: "spelling is not sound"
+    tags: ["core"]
+    examples:
+      - target: "tough"
+        language: "en"
+        ipa: "tʌf"
+      - target: "though"
+        language: "en"
+        ipa: "ðəʊ"
+        sounds: false
+      - target: "through"
+        language: "en"
+        ipa: "θruː"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/though" }
+  - id: "ipa-0182"
+    target: "International Phonetic Association"
+    tags: ["core"]
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Association" }
+      - { id: "n2", kind: "note", source: "https://en.wikipedia.org/wiki/History_of_the_International_Phonetic_Alphabet" }
+  - id: "ipa-0183"
+    target: "consonants: place, manner and voicing"
+    tags: ["core"]
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://www.internationalphoneticassociation.org/content/ipa-chart" }
+      - { id: "n2", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+  - id: "ipa-0184"
+    target: "vowels: height, backness and rounding"
+    tags: ["core"]
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://www.internationalphoneticassociation.org/content/ipa-chart" }
+  - id: "ipa-0185"
+    target: "diacritics"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "[pʰɪn]"
+      - target: "spin"
+        language: "en"
+        ipa: "[spɪn]"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://www.internationalphoneticassociation.org/content/ipa-chart" }
+      - { id: "n2", kind: "note", source: "https://en.wikipedia.org/wiki/Aspiration_(phonetics)" }
+  - id: "ipa-0186"
+    target: "length, stress and tone"
+    tags: ["core"]
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://www.internationalphoneticassociation.org/content/ipa-chart" }

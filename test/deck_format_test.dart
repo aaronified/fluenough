@@ -1639,6 +1639,8 @@ pattern:
             // romanisation files sit beside the decks but are not decks, nor
             // is the layer of a script guide or sounds file (#498).
             .where((p) => !index.filesByPath[p]!.isLanguageFile)
+            // A recording or an image is a binary file, not a deck.
+            .where((p) => !index.filesByPath[p]!.isMedia)
             .where(
               (p) => !{
                 'facts',

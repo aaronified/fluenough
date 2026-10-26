@@ -32,8 +32,14 @@ class RepositoryDeckSource implements DeckSource {
           if (path is String) path,
     ];
     final index = DeckIndex.parse(text);
+    // A recording or an image is a binary file, not a deck file: it is not
+    // read as text.
     return <String, String>{
-      for (final path in <String>[...bundled, ...index.filesByPath.keys])
+      for (final path in <String>[
+        ...bundled,
+        for (final entry in index.filesByPath.entries)
+          if (!entry.value.isMedia) entry.key,
+      ])
         path: File('$root/$path').readAsStringSync(),
     };
   }

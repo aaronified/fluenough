@@ -1,0 +1,87 @@
+# The third unit of the IPA course: the brackets a transcription is written
+# in, broad and narrow, and the convention this course and app keep.
+# A concept card: its target is a term, not a symbol. In its examples, "has
+# this sound" marks a word that shows the idea and "does not" one that does
+# not, as the card's translations say.
+schema: 1
+id: "ipa-notation"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC-BY-SA-4.0"
+source: "Handbook of the International Phonetic Association (Cambridge University Press, 1999); English Wikipedia, Phonetic transcription and International Phonetic Alphabet; this repository's ADR-0025 and docs/DECK-FORMAT.md for the course's own convention"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0187"
+    target: "slashes"
+    tags: ["core"]
+    examples:
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+      - target: "pin"
+        language: "en"
+        ipa: "[pʰɪn]"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+  - id: "ipa-0188"
+    target: "square brackets"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "[pʰɪn]"
+      - target: "spin"
+        language: "en"
+        ipa: "[spɪn]"
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+  - id: "ipa-0189"
+    target: "angle brackets"
+    tags: ["core"]
+    examples:
+      - target: "kit"
+        language: "en"
+        ipa: "kɪt"
+      - target: "knight"
+        language: "en"
+        ipa: "naɪt"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+  - id: "ipa-0190"
+    target: "broad and narrow"
+    tags: ["core"]
+    examples:
+      - target: "key"
+        language: "en"
+        ipa: "[kʰiː]"
+      - target: "sky"
+        language: "en"
+        ipa: "skaɪ"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Phonetic_transcription" }
+  - id: "ipa-0191"
+    target: "this course's convention"
+    tags: ["core"]
+    examples:
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+      - target: "pin"
+        language: "en"
+        ipa: "[pʰɪn]"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "docs/adr/0025-iso-15919-and-ipa.md and docs/DECK-FORMAT.md (the ipa field), in this repository" }

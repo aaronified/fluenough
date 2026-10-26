@@ -2,6 +2,11 @@
 # decks/index.json (ADR-0037), which tools/deck_index.py computes from the
 # bytes on disk. Keep them the bytes GitHub serves, whatever the platform.
 decks/** text eol=lf
+# A card's own image and recording are binary (DECK-FORMAT.md, `image` and
+# `audio`): the rule above would rewrite bytes in a WebP that happen to be
+# a carriage return and a line feed.
+decks/*/images/** binary
+decks/*/audio/** binary
 # Fonts are binary: the line-ending rule above would rewrite bytes in them and
 # break the SHA-256 the app checks (ADR-0042).
 decks/fonts/** binary
