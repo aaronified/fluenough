@@ -7,17 +7,18 @@ import 'dart:typed_data';
 /// what lets `FsrsFit` put its batches in `fsrs-rs`'s order.
 ///
 /// Checked against Rust's own output in `test/rust_std_rng_test.dart`.
-/// Uses 64-bit integer arithmetic, as the Dart VM does it; not for the web.
+/// The two products that pass 2^53 (PCG32's 64-bit state, and a word times
+/// the bound) go through [BigInt], so the same numbers come out on the web,
+/// where an `int` is a double.
 class RustStdRng {
   /// rand_core 0.9.5 `seed_from_u64`: PCG32 fills the 32-byte key, four
   /// bytes at a time, little-endian.
   RustStdRng.seedFromU64(int seed) {
-    var state = seed;
+    var state = BigInt.from(seed).toUnsigned(64);
     for (var i = 0; i < 8; i++) {
-      // 6364136223846793005 and 11634580027462260723, wrapping mod 2^64.
-      state = state * 6364136223846793005 + -6812164046247290893;
-      final xorshifted = (((state >>> 18) ^ state) >>> 27) & _mask32;
-      _input[4 + i] = _rotateRight(xorshifted, state >>> 59);
+      state = (state * _pcgMultiplier + _pcgIncrement).toUnsigned(64);
+      final xorshifted = (((state >> 18) ^ state) >> 27).toUnsigned(32).toInt();
+      _input[4 + i] = _rotateRight(xorshifted, (state >> 59).toInt());
     }
     // "expand 32-byte k"; words 12-13 count blocks, 14-15 (the stream) are 0.
     _input
@@ -28,6 +29,11 @@ class RustStdRng {
   }
 
   static const int _mask32 = 0xFFFFFFFF;
+
+  // PCG32's multiplier and increment, written as strings because the web
+  // cannot hold them as integer literals.
+  static final BigInt _pcgMultiplier = BigInt.parse('6364136223846793005');
+  static final BigInt _pcgIncrement = BigInt.parse('11634580027462260723');
 
   final Uint32List _input = Uint32List(16);
   final Uint32List _block = Uint32List(16);
@@ -52,7 +58,7 @@ class RustStdRng {
 
   void _nextBlock() {
     _input[12] = _counter & _mask32;
-    _input[13] = _counter >>> 32;
+    _input[13] = _counter ~/ 0x100000000;
     _counter++;
     final x = _x..setAll(0, _input);
     void quarterRound(int a, int b, int c, int d) {
@@ -85,11 +91,12 @@ class RustStdRng {
   /// one more word when the low half is in the biased zone
   /// (`UniformInt::sample_single_inclusive`, without `unbiased`).
   int _below(int bound) {
-    final product = nextU32() * bound;
-    var result = product >>> 32;
-    final low = product & _mask32;
+    final product = BigInt.from(nextU32()) * BigInt.from(bound);
+    var result = (product >> 32).toInt();
+    final low = product.toUnsigned(32).toInt();
     if (low > 0x100000000 - bound) {
-      final high = (nextU32() * bound) >>> 32;
+      final high = ((BigInt.from(nextU32()) * BigInt.from(bound)) >> 32)
+          .toInt();
       if (low + high > _mask32) result++;
     }
     return result;
