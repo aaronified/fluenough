@@ -110,8 +110,10 @@ class _Star extends StatelessWidget {
 
   /// The lines a label is given room for: the skill's name and its two
   /// shares, each of which may wrap. A name that breaks mid-word in the
-  /// narrow side box takes two lines and the shares three.
-  static const int _lines = 5;
+  /// narrow side box takes two lines (in the larger bold size) and the
+  /// shares three.
+  static const int _nameLines = 2;
+  static const int _shareLines = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -124,11 +126,12 @@ class _Star extends StatelessWidget {
       color: scheme.onSurface,
       height: 1.25,
     );
-    final labelHeight =
-        (MediaQuery.textScalerOf(context).scale(style.fontSize!) *
-                style.height! *
-                _lines)
-            .ceilToDouble();
+    final scaler = MediaQuery.textScalerOf(context);
+    // Bold at 14 sp or more is a large text: 3:1 is enough for it.
+    final nameSize = math.max(14.0, style.fontSize!);
+    final line = (scaler.scale(style.fontSize!) * style.height!).ceilToDouble();
+    final nameLine = (scaler.scale(nameSize) * style.height!).ceilToDouble();
+    final labelHeight = nameLine * _nameLines + line * _shareLines;
 
     return LayoutBuilder(
       builder: (context, box) {
@@ -144,10 +147,6 @@ class _Star extends StatelessWidget {
           radius: radius,
           rtl: rtl,
         );
-
-        final line = labelHeight / _lines;
-        // Bold at 14 sp or more is a large text: 3:1 is enough for it.
-        final nameSize = math.max(14.0, style.fontSize!);
 
         Widget label(int i) {
           final skill = kStarSkills[i];
