@@ -10069,9 +10069,20 @@
   "@pickerChangeScripts": {
     "description": "Language sheet of a language learned: opens the script screen, with the scripts learned now ticked, to add or stop one."
   },
-  "pickerAddScript": "Add this script",
-  "@pickerAddScript": {
-    "description": "Language sheet: opens the script screen to add a script."
+  "pickerScriptsLearnt": "{names} ({count}/{total})",
+  "@pickerScriptsLearnt": {
+    "description": "Language sheet of a language learned: one line naming the scripts being learnt, with how many of the language's scripts that is, such as Devanagari (1/2).",
+    "placeholders": {
+      "names": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "pickerScriptLearning": "{script} · learning",
   "@pickerScriptLearning": {

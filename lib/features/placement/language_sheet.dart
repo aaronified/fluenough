@@ -467,6 +467,20 @@ class _LanguageSheetState extends State<LanguageSheet> {
         if (widget.learned && _hasScripts) ...<Widget>[
           PickerHeading(l10n.pickerSectionScripts),
           for (final script in widget.scripts) _learnedScript(context, script),
+          if (widget.scripts.any((s) => s.learning))
+            _Block(
+              child: Text(
+                l10n.pickerScriptsLearnt(
+                  [
+                    for (final s in widget.scripts)
+                      if (s.learning) l10n.scriptNameOr(s.code, language.name),
+                  ].join(', '),
+                  widget.scripts.where((s) => s.learning).length,
+                  widget.scripts.length,
+                ),
+                key: const ValueKey<String>('sheet-scripts-learnt'),
+              ),
+            ),
           // The way to stop a script, or to add one, with those learned now
           // ticked (#555: the setting is changed nowhere else).
           _Block(
@@ -648,11 +662,6 @@ class _LanguageSheetState extends State<LanguageSheet> {
                       ),
                     ],
                   ),
-                ),
-                TextButton(
-                  key: const ValueKey<String>('sheet-add-script'),
-                  onPressed: () => setState(() => _step = _Step.scripts),
-                  child: Text(l10n.pickerAddScript),
                 ),
               ],
             )

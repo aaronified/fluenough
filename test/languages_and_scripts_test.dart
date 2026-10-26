@@ -2951,7 +2951,7 @@ void main() {
 
       await openSheet(tester, 'hi');
       await tester.tap(
-        find.byKey(const ValueKey<String>('sheet-add-script')).first,
+        find.byKey(const ValueKey<String>('sheet-change-scripts')),
       );
       await tester.pumpAndSettle();
       await tester.tap(
@@ -2971,6 +2971,41 @@ void main() {
       );
       expect(state.settings.learnsAlphabet('hi'), isTrue);
       expect(state.settings.learnsAlphabet('bn'), isTrue);
+    });
+  });
+
+  group('the scripts line', () {
+    testWidgets('names the scripts learnt with how many of the language\'s '
+        'scripts that is', (tester) async {
+      usePhone(tester);
+      tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
+      await pumpScreen(
+        tester,
+        LanguagePickerPage(spokenList: pickerSpokenList),
+        state: learningScriptSwitch(),
+      );
+      final l10n = l10nOf(tester);
+      await openSheet(tester, 'hi');
+      expect(
+        find.text(l10n.pickerScriptsLearnt('Devanagari', 1, 2)),
+        findsOneWidget,
+      );
+      await tester.tap(
+        find.byKey(const ValueKey<String>('sheet-change-scripts')),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(
+        find.byKey(const ValueKey<String>('sheet-script-perso_arabic')),
+      );
+      await tester.pumpAndSettle();
+      await finishSheet(tester);
+      await tester.tap(find.text(l10n.commonContinue));
+      await tester.pumpAndSettle();
+      await openSheet(tester, 'hi');
+      expect(
+        find.text(l10n.pickerScriptsLearnt('Devanagari, Perso-Arabic', 2, 2)),
+        findsOneWidget,
+      );
     });
   });
 
