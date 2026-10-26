@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The app's text looked wide, with large gaps between words, on phones whose system answers the request for Roboto with another font: Roboto is now bundled and used for all interface text.
 
+### Changed
+
+- Decks may carry a narrow IPA form for a word, with its source (`phonetic` and `phonetic_source`, from Wiktionary or from rules). The app reads them and does not show them yet; the decks will use them from the release after this one.
+
 ## [0.6.5] - 2026-10-26
 
 ### Changed

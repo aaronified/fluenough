@@ -1885,4 +1885,34 @@ cards:
       expect(countsAsWord(one, DeckKind.vocab), isTrue);
     });
   });
+
+  group('a narrow transcription (phonetic)', () {
+    test('a single-file card carries it with its source', () {
+      final card = parseProbe(
+        probeCard(
+          '    phonetic: "[kʰɐlɐm]"\n    phonetic_source: "wiktionary"\n',
+        ),
+      ).cards.single;
+      expect(card.phonetic, '[kʰɐlɐm]');
+      expect(card.phoneticSource, 'wiktionary');
+    });
+
+    test('a core card carries it through its layer', () {
+      final card = merged(
+        '    pos: "noun"\n'
+            '    phonetic: "[kʰɐlɐm]"\n'
+            '    phonetic_source: "rules"\n',
+        '',
+      );
+      expect(card.phonetic, '[kʰɐlɐm]');
+      expect(card.phoneticSource, 'rules');
+    });
+
+    test('a card without one has neither, and ipa is untouched', () {
+      final card = parseProbe(probeCard('    ipa: "kalam"\n')).cards.single;
+      expect(card.phonetic, isNull);
+      expect(card.phoneticSource, isNull);
+      expect(card.ipa, 'kalam');
+    });
+  });
 }

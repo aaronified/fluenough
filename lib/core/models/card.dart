@@ -324,6 +324,10 @@ class CardRef {
       reading: reading ?? written.reading,
       altReading: reading == null ? written.altReading : const <String>[],
       ipa: ipa ?? written.ipa,
+      // The narrow form is of the word's own `ipa`; a ref that gives another
+      // `ipa` has no narrow form for it.
+      phonetic: ipa == null ? written.phonetic : null,
+      phoneticSource: ipa == null ? written.phoneticSource : null,
       altTarget: written.altTarget,
       targetScripts: written.targetScripts,
       words: written.words,
@@ -382,6 +386,8 @@ class Card {
     required this.native,
     this.reading,
     this.ipa,
+    this.phonetic,
+    this.phoneticSource,
     this.altReading = const <String>[],
     this.altTarget = const <String>[],
     this.targetScripts = const <String, String>{},
@@ -441,6 +447,16 @@ class Card {
   /// How the word is said, in the IPA: broad, without the slashes, as
   /// `paːlu` (ADR-0025).
   final String? ipa;
+
+  /// How the word is said in a narrow transcription, in square brackets, as
+  /// `[ˈkʰæt]`: the card's `phonetic`. [ipa] stays the broad form. Read, not
+  /// shown yet; null where no narrow form is known.
+  final String? phonetic;
+
+  /// Where [phonetic] came from: `wiktionary` (taken from a Wiktionary
+  /// entry) or `rules` (derived by the language's rules, so less certain).
+  /// Null exactly when [phonetic] is.
+  final String? phoneticSource;
 
   /// The readings of [altTarget], for a grammar cell that lists several
   /// forms: accepted too when the answer is typed in Latin letters (#47).

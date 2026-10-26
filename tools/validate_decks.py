@@ -155,7 +155,7 @@ HEADER_KEYS = {
     "theme", "passages",
 }
 CARD_KEYS = {
-    "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
+    "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
     "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
@@ -191,7 +191,8 @@ LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
                      "description", "license", "authors", "source", "tags",
                      "cards", "pattern", "table", "rules"}
 CORE_KINDS = ("vocab", "grammar", "rules")
-CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos", "hears",
+CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "phonetic",
+                  "phonetic_source", "alt_target", "pos", "hears",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "picture_ask",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
@@ -1912,6 +1913,42 @@ def check_ipa(r: Report, raw: dict) -> None:
                            f"letters and marks only, without / / or [ ]")
 
 
+PHONETIC_SOURCES = ("wiktionary", "rules")
+
+
+def check_phonetic(r: Report, raw: dict) -> None:
+    """A card's `phonetic` is a narrow IPA transcription written inside square
+    brackets, `[ˈkʰæt]`, and `phonetic_source` says where it came from:
+    `wiktionary` or `rules`. Each needs the other. `ipa` stays broad."""
+    cards = raw.get("cards")
+    if not isinstance(cards, list):
+        return
+    for card in cards:
+        if not isinstance(card, dict):
+            continue
+        where = f"cards[{card.get('id')}]"
+        phonetic = card.get("phonetic")
+        source = card.get("phonetic_source")
+        if phonetic is None and source is None:
+            continue
+        if phonetic is None:
+            r.error(where, "phonetic_source is given without phonetic")
+            continue
+        if not isinstance(phonetic, str):
+            r.error(where, "phonetic must be text")
+            continue
+        if phonetic != unicodedata.normalize("NFC", phonetic):
+            r.error(where, f"phonetic {phonetic!r} is not NFC-normalised")
+        elif not (len(phonetic) > 2 and phonetic[0] == "[" and phonetic[-1] == "]"
+                  and IPA_RE.fullmatch(phonetic[1:-1])):
+            r.error(where, f"phonetic {phonetic!r} must be IPA letters and marks "
+                           f"inside square brackets, as [ˈkʰæt]")
+        if source not in PHONETIC_SOURCES:
+            r.error(where, f"phonetic_source must be one of "
+                           f"{', '.join(PHONETIC_SOURCES)} when phonetic is given, "
+                           f"not {source!r}")
+
+
 def _readings_in(node: object):
     """Every romanisation in a file: the values of `reading` and `readings`
     keys, wherever they are."""
@@ -2414,6 +2451,7 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         return r
     check_romanised(r, raw, path)
     check_ipa(r, raw)
+    check_phonetic(r, raw)
     if raw.get("kind") == "sounds":
         check_sounds_file(r, raw, path)
         return r

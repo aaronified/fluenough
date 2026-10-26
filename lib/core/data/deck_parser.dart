@@ -138,6 +138,8 @@ const _cardFields = {
   'native',
   'reading',
   'ipa',
+  'phonetic',
+  'phonetic_source',
   'alt_target',
   'target_scripts',
   'words',
@@ -232,6 +234,8 @@ const _coreCardFields = {
   'target',
   'reading',
   'ipa',
+  'phonetic',
+  'phonetic_source',
   'alt_target',
   'target_scripts',
   'words',
@@ -849,6 +853,11 @@ class _Reader {
       native: fields.string('native'),
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
+      phonetic: fields.optionalString('phonetic', allowEmpty: false),
+      phoneticSource: fields.optionalString(
+        'phonetic_source',
+        allowEmpty: false,
+      ),
       altTarget: fields.strings('alt_target'),
       targetScripts: targetScripts(
         fields.node('target_scripts'),
@@ -1619,6 +1628,11 @@ class _Reader {
       target: fields.string('target'),
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
+      phonetic: fields.optionalString('phonetic', allowEmpty: false),
+      phoneticSource: fields.optionalString(
+        'phonetic_source',
+        allowEmpty: false,
+      ),
       altTarget: fields.strings('alt_target'),
       targetScripts: targetScripts(
         fields.node('target_scripts'),
