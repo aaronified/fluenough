@@ -43,6 +43,8 @@ And on the card UI (owner, 2026-10-26):
 | 13 | No Indic letter or akshara tiles. Indic script answers are built from word tiles of the script text, the same word tiles as meanings. Letter tiles with the count-badged keyboard are Latin and Cyrillic only | "this doesn't exist? if not this can just be text words put in tiles. why will this need mockup!" (owner, 2026-10-26) |
 | 14 | Single-word Indic cards: a word-tile tray is close to a choice question, and that is accepted. No extra rung. Closes the earlier Still open item | "that is fine." (owner, 2026-10-26) |
 | 15 | Decoys come from the card's confusables first, then the ranked pool. The tighter options apply to every tile tray and choice list. Accepted answers are never decoys | "but the options need to be tighter everywhere. confusables were designed for this, no?" (owner, 2026-10-26) |
+| 16 | The owner supplies the screenshots of the teach cards, for phase 0's mockup. Whether the teach revamp is its own plan stays open until then (Still open 1) | "the teach-card screenshots: i will do that" (owner, 2026-10-26) |
+| 17 | The coding for this plan starts next week; no slot is taken from the Today chain in 0.7.0 this week. Closes Still open 3 | "the Sonnet slot for the question-engine plan: next week" (owner, 2026-10-26) |
 
 Per-skill 70% of 7 scored items means 5 of 7 correct (decision 12, 2026-10-26). Overall stays 80%.
 
@@ -180,9 +182,7 @@ Phase 0: 12 to 20 hours with its mockup. Word tiles 6 to 8. Letter tiles 12 to 1
 2. **The LLM's fit.** Embedding similarity rates "with mother" and "with father" alike, so any model is advisory, never the sole gate, and never in an exam (author's inference). Not for 0.7.0.
    - Advisory only: a wrong answer goes to self-judgment, as near misses do today. Downside: learners can always accept.
    - Grades alone. Downside: wrong in either direction.
-3. **Slot for this plan's coding.** 0.7.0 also holds the Today chain, focus tracks and cheatsheets (CLAUDE.md slots: one Haiku and one Sonnet on decks and reviews, one Sonnet on the Today chain).
-   - Take the Today Sonnet after the chain. Downside: this plan starts late.
-   - Defer some steps to 0.8.0. Downside: the exam gate slips.
+3. ~~Slot for this plan's coding~~ Decided: next week (decision 17).
 4. **Tray size for word tiles.** Set after step 1's count.
    - Accepted answers plus 2 to 3 decoys. Downside: more to read.
    - The full accepted set. Downside: easier.
