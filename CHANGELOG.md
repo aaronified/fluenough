@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.4] - 2026-10-26
+
 ### Fixed
 
 - The app froze for about a second after answers and taps: hidden tabs no longer rebuild, and sessions, progress and themes are kept per language and worked out once per change, so one language's answer leaves the others alone, even with dozens of languages and years of reviews.
