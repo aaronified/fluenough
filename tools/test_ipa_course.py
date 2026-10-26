@@ -16,6 +16,11 @@ NO_SOUNDING_EXAMPLE_YET = {
     "ipa-0170", "ipa-0171", "ipa-0172", "ipa-0173", "ipa-0174", "ipa-0176",
     "ipa-0177", "ipa-0178", "ipa-0179",
 }
+# The concept units (2026-10-26): their cards are terms and ideas, not
+# symbols. `ipa-terms` and `ipa-notation` keep the contrast rule below;
+# `ipa-what` holds history and structure, which have no sound to contrast, so
+# its examples are optional, but any it gives still name their language.
+CONCEPT_DECKS_WITHOUT_CONTRAST = {"ipa-what"}
 CONFUSABLE = [("ɒ", "ɔ"), ("ʈ", "t̪"), ("ɪ", "i"), ("ɾ", "r"), ("ɖ", "d̪"),
               ("θ", "ð"), ("e", "ɛ"), ("ɹ", "ɾ"), ("ʃ", "ɕ"), ("ɑ", "ɒ")]
 
@@ -30,13 +35,15 @@ def decks():
 class IpaCourse(unittest.TestCase):
     def _ids_are_kept(self):
         ids = sorted(c["id"] for _, cards in decks() for c in cards)
-        self.assertEqual(ids, [f"ipa-{i:04d}" for i in range(1, 180)])
+        self.assertEqual(ids, [f"ipa-{i:04d}" for i in range(1, 200)])
 
     def _every_symbol_has_examples_of_both_kinds(self):
         for deck, cards in decks():
             for c in cards:
                 ex = c.get("examples") or []
                 self.assertTrue(all("language" in e for e in ex), c["id"])
+                if deck in CONCEPT_DECKS_WITHOUT_CONTRAST:
+                    continue
                 self.assertTrue(any(e.get("sounds") is False for e in ex),
                                 f"{c['id']} has no example without the sound")
                 if c["id"] not in NO_SOUNDING_EXAMPLE_YET:

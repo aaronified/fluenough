@@ -12,6 +12,10 @@
 # chart, and the symbols of the languages the learner learns, chosen by the
 # language codes in each card's tags (and `core` for every learner).
 #
+# The first three units are the concept units (2026-10-26): what the IPA is
+# and how its chart is built, the eight terms the course uses, and the
+# brackets a transcription is written in. They come before any symbol.
+#
 # Every ipa deck is listed, by its core id, exactly once. See ADR-0013 and
 # docs/DECK-FORMAT.md.
 schema: 1
@@ -21,6 +25,9 @@ language: ipa
 # No theme decks here, so no unit but the last can end in "*": a deck a
 # learner adds goes in the last unit.
 units:
+  - [ipa-what]
+  - [ipa-terms]
+  - [ipa-notation]
   - [ipa-basics]
   - [ipa-familiar]
   - [ipa-places]
