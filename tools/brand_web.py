@@ -8,12 +8,14 @@ flutter create writes web/ with Flutter's name, colours and description.
 web/ is never committed (AGENTS.md rule 4), so this runs after every flutter
 create for the Pages build (.github/workflows/pages.yml). It sets the name,
 which has one source, `appTitle` in lib/l10n/app_en.arb, and the colours and
-description in the manifest and the page. The icons are Flutter's own until
-the brand's are sized for the web.
+description in the manifest and the page, and copies fluenough-brand/web/
+over web/: the favicon and the manifest's icons, rendered from
+fluenough-app-icon.svg (the maskable ones are the same square, whose mark
+sits inside the safe zone).
 """
 
 import json
-import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -25,6 +27,7 @@ BACKGROUND = "#F6FBF4"
 
 def main() -> int:
     name = json.loads((ROOT / "lib/l10n/app_en.arb").read_text())["appTitle"]
+    shutil.copytree(ROOT / "fluenough-brand/web", ROOT / "web", dirs_exist_ok=True)
     manifest_path = ROOT / "web/manifest.json"
     manifest = json.loads(manifest_path.read_text())
     manifest.update(

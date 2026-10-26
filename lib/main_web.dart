@@ -8,15 +8,18 @@ import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
+import 'app/pacing.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/web_deck_fetcher.dart';
+import 'core/scheduling/skill_fit.dart';
 import 'core/tts/system_tts_engine.dart';
 
 /// The web build's entry point (`.github/workflows/pages.yml`). Like
 /// `main.dart` it is the one place that names concrete services, but it
 /// names none that reads files, runs a platform channel or installs an APK:
-/// the browser has none of them. Everything left out is the `AppState`
+/// the browser has none of them, and runs fitting and pacing in place, as it
+/// has no isolates. Everything left out is the `AppState`
 /// default, which does nothing.
 ///
 /// Progress and settings are kept in the browser's storage by drift. The
@@ -46,6 +49,9 @@ Future<void> main() async {
         progress: storage.progress,
         settings: storage.settings,
         tts: SystemTtsEngine(),
+        // A browser has no isolates: fitting and pacing run in place.
+        fitRunner: (job) async => SkillFit.run(job),
+        paceRunner: paceInPlace,
         log: log,
       ),
     ),
