@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- A wrong spoken answer now shows what was heard and, when the word is in a deck, its IPA on a second line; it no longer repeats the answer shown on the card.
+- Today's skill tiles put the number on the icon row with the pace arrow, in two lines; the arrow is hidden above 99 cards.
+- The course card on Decks has a sync button that looks for deck updates and downloads them, with the download shown on the bar and a toast when there is nothing to download; the hours left are one line under the bar.
+
 ## [0.6.6] - 2026-10-26
 
 ### Added
