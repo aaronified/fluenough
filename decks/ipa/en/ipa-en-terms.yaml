@@ -1,0 +1,78 @@
+schema: 1
+id: "ipa-en-terms"
+kind: "layer"
+core: "ipa-terms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The words of sound"
+description: "The eight terms the course uses, each with an example contrast: phoneme, allophone, minimal pair, voicing, place of articulation, manner of articulation, alveolar ridge and hard palate. In the examples, has this sound marks a word that shows the term and does not marks one that does not."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ipa-0192":
+    native: "the smallest sound that tells words apart in a language"
+    notes:
+      "n1": "A phoneme is a sound that can change one word into another in a language. English p and b are two phonemes, because pin and bin are different words. A phoneme is written between slashes: /p/. Speakers may say one phoneme in several ways, and those ways are its allophones. Source: English Wikipedia, Phoneme. In the examples, the card's phoneme is /p/."
+    examples:
+      "pin": "pin (English): it starts with the phoneme /p/"
+      "bin": "bin (English): it starts with /b/, a different phoneme: swapping it for /p/ makes a different word"
+  "ipa-0193":
+    native: "one of the ways a phoneme is said, in a language where the difference does not tell words apart"
+    notes:
+      "n1": "English p is said with a puff of breath in pin, [pʰ], and without one in spin, [p]. The two are allophones of one phoneme /p/: an English speaker hears one sound, and swapping them never makes a new word. The allophone that appears depends on where the sound is in the word. Source: English Wikipedia, Allophone. In the examples, the card's idea is that p and pʰ are allophones."
+      "n2": "Whether two sounds are allophones depends on the language. In Hindi the same two sounds are different phonemes, so पल (pal), a moment, and फल (phal), fruit, are different words. Source: English Wikipedia, Aspiration (phonetics). The picture is a decision chart, from Wikimedia Commons, for telling allophones from separate phonemes."
+    examples:
+      "pin": "pin (English): the p is pʰ, with a puff of breath"
+      "spin": "spin (English): the p is plain p, with no puff: an allophone of the same phoneme as the p of pin"
+      "फल": "fruit (Hindi): its pʰ is a phoneme of its own, not an allophone of p, as पल (pal), a moment, is another word"
+  "ipa-0194":
+    native: "two words that differ in only one sound, in the same place"
+    notes:
+      "n1": "A minimal pair is two words that are the same except for one sound in the same position, such as pin and bin. Because swapping that one sound changes the word, the two sounds are different phonemes. Linguists use minimal pairs to find out which sounds a language treats as different. Source: English Wikipedia, Minimal pair. In the examples, has this sound marks a word that is in a minimal pair with pin."
+    examples:
+      "pin": "pin (English): with bin, it is a minimal pair, only the first sound differs"
+      "bin": "bin (English): with pin, it is a minimal pair, only the first sound differs"
+      "thing": "thing (English): with pin it is not a minimal pair, since two sounds differ, the first and the last"
+  "ipa-0195":
+    native: "whether the vocal folds hum while a sound is made"
+    notes:
+      "n1": "A voiced sound is made with the vocal folds humming, and a voiceless one without. Put a finger on your throat and say z, then s: you feel the hum only in z. On the consonant chart, the right-hand symbol of a pair is the voiced one: s z, p b. Source: English Wikipedia, Voice (phonetics). In the examples, has this sound marks a word with a voiced consonant at the start."
+      "n2": "Voice onset time, VOT, is the time between the release of a stop, such as p or b, and the moment the vocal folds start to hum. It is long and positive for English p, which is why it has a puff of breath. For English b it is short, so the hum often starts only just after the release. Spanish b is voiced from before the release. The picture, from Wikimedia Commons, shows VOT. Sources: English Wikipedia, Voice onset time; Lisker and Abramson, A cross-language study of voicing in initial stops, Word 20(3), 1964."
+    examples:
+      "zoo": "zoo (English): the z is voiced, with the hum"
+      "baño": "bath (Spanish): the b is voiced, with the hum from before the release"
+      "sue": "sue (English): the s is voiceless, with no hum"
+      "paño": "cloth (Spanish): the p is voiceless: baño and paño are a minimal pair for voicing"
+  "ipa-0196":
+    native: "where in the mouth or throat a sound is made"
+    notes:
+      "n1": "The place of articulation is the rough place along the vocal tract where a consonant is made. A constriction is made between an active articulator, which moves, such as the lower lip or the tongue, and a passive one, which stays still, such as the upper lip, the teeth or the roof of the mouth. Along with manner and voicing, the place gives a consonant its sound. The picture, from Wikimedia Commons, is a side view of the head: lips, tongue, palate, throat and larynx. Source: English Wikipedia, Place of articulation. In the examples, has this sound marks words that start at three different places."
+    examples:
+      "pin": "pin (English): the p is made with both lips"
+      "tin": "tin (English): the t is made with the tongue tip on the ridge behind the upper teeth"
+      "kin": "kin (English): the k is made with the back of the tongue against the soft palate"
+  "ipa-0197":
+    native: "how the air is stopped or let through when a sound is made"
+    notes:
+      "n1": "The manner of articulation is how the speech organs come together and what that does to the airflow: how closely they approach, and whether the air goes through the mouth or the nose. Along with place and voicing, the manner gives a consonant its sound. The rows of the consonant chart are manners. Source: English Wikipedia, Manner of articulation. In the examples, has this sound marks the three manners: stop, nasal and fricative."
+    examples:
+      "bat": "bat (English): the b is a stop, with the air blocked and then let go"
+      "mat": "mat (English): the m is a nasal, with the air let out through the nose"
+      "vat": "vat (English): the v is a fricative, with the air squeezed through a narrow gap to make a buzz"
+  "ipa-0198":
+    native: "the bony ridge just behind the upper front teeth"
+    notes:
+      "n1": "Run your tongue back from the upper teeth: the bumpy ridge you feel before the roof of the mouth rises is the alveolar ridge. English t, d, s, z, n and l are made with the tongue tip or blade on it, and the chart calls them alveolar. Source: English Wikipedia, Alveolar ridge, and the IPA chart. In the examples, has this sound marks words that start on the ridge. The course has no picture of the ridge."
+    examples:
+      "tin": "tin (English): the t is made on the alveolar ridge"
+      "sin": "sin (English): the s is made on the alveolar ridge"
+      "thin": "thin (English): the th is made with the tongue tip at the teeth, not on the ridge"
+      "she": "she (English): the sh is made just behind the ridge, not on it"
+  "ipa-0199":
+    native: "the hard, bony roof of the mouth, behind the alveolar ridge and in front of the soft palate"
+    notes:
+      "n1": "Slide your tongue back along the roof of your mouth: after the ridge behind the teeth comes the hard palate, and then the soft, fleshy palate. A sound made with the middle of the tongue raised to the hard palate is palatal. English y, the sound at the start of yes, is palatal. Sources: English Wikipedia, Hard palate; the IPA chart, palatal column. The picture, from Wikimedia Commons, is a view into the open mouth, with the hard palate, the soft palate and the uvula labelled. In the examples, has this sound marks words with a palatal sound."
+    examples:
+      "yes": "yes (English): the y is made with the middle of the tongue on the hard palate"
+      "año": "year (Spanish): the ñ is made with the middle of the tongue on the hard palate"
+      "kin": "kin (English): the k is made further back, on the soft palate"
+      "tin": "tin (English): the t is made further forward, on the alveolar ridge"

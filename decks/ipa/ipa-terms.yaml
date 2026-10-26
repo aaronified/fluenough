@@ -1,0 +1,164 @@
+# The terms the IPA course uses, one card each, with an example contrast
+# and, where a licence-cleared Wikimedia Commons file fits, its picture.
+# A concept card: its target is a term, not a symbol. In its examples, "has
+# this sound" marks a word that shows the term and "does not" one that does
+# not, as the card's translations say. A term with no cleared picture has none.
+schema: 1
+id: "ipa-terms"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC-BY-SA-4.0"
+source: "Handbook of the International Phonetic Association (Cambridge University Press, 1999); the IPA chart, 2020 revision (https://www.internationalphoneticassociation.org/content/ipa-chart); English Wikipedia, the page of each term; Lisker and Abramson, A cross-language study of voicing in initial stops, Word 20(3), 1964"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0192"
+    target: "phoneme"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "pɪn"
+      - target: "bin"
+        language: "en"
+        ipa: "bɪn"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Phoneme" }
+  - id: "ipa-0193"
+    target: "allophone"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "[pʰɪn]"
+      - target: "spin"
+        language: "en"
+        ipa: "[spɪn]"
+      - target: "फल"
+        language: "hi"
+        reading: "phal"
+        ipa: "pʰəl"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Allophone" }
+      - { id: "n2", kind: "note", source: "https://en.wikipedia.org/wiki/Aspiration_(phonetics)" }
+  - id: "ipa-0194"
+    target: "minimal pair"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "pɪn"
+      - target: "bin"
+        language: "en"
+        ipa: "bɪn"
+      - target: "thing"
+        language: "en"
+        ipa: "θɪŋ"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Minimal_pair" }
+  - id: "ipa-0195"
+    target: "voicing"
+    tags: ["core"]
+    examples:
+      - target: "zoo"
+        language: "en"
+        ipa: "zuː"
+      - target: "baño"
+        language: "es"
+        ipa: "ˈbaɲo"
+      - target: "sue"
+        language: "en"
+        ipa: "suː"
+        sounds: false
+      - target: "paño"
+        language: "es"
+        ipa: "ˈpaɲo"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Voice_(phonetics)" }
+      - { id: "n2", kind: "note", source: "https://en.wikipedia.org/wiki/Voice_onset_time; Lisker and Abramson, Word 20(3), 1964" }
+  - id: "ipa-0196"
+    target: "place of articulation"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "pɪn"
+      - target: "tin"
+        language: "en"
+        ipa: "tɪn"
+      - target: "kin"
+        language: "en"
+        ipa: "kɪn"
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Place_of_articulation" }
+    image: "decks/ipa/images/ipa-0196.webp"
+    image_credit: { source: "https://commons.wikimedia.org/wiki/File:Illu01_head_neck.jpg", license: "public-domain", credit: "Arcadian (uploader), from an illustration of the U.S. National Cancer Institute, SEER Training Modules; a work of the U.S. federal government" }
+  - id: "ipa-0197"
+    target: "manner of articulation"
+    tags: ["core"]
+    examples:
+      - target: "bat"
+        language: "en"
+        ipa: "bæt"
+      - target: "mat"
+        language: "en"
+        ipa: "mæt"
+      - target: "vat"
+        language: "en"
+        ipa: "væt"
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Manner_of_articulation" }
+  - id: "ipa-0198"
+    target: "alveolar ridge"
+    tags: ["core"]
+    examples:
+      - target: "tin"
+        language: "en"
+        ipa: "tɪn"
+      - target: "sin"
+        language: "en"
+        ipa: "sɪn"
+      - target: "thin"
+        language: "en"
+        ipa: "θɪn"
+        sounds: false
+      - target: "she"
+        language: "en"
+        ipa: "ʃiː"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Alveolar_ridge" }
+  - id: "ipa-0199"
+    target: "hard palate"
+    tags: ["core"]
+    examples:
+      - target: "yes"
+        language: "en"
+        ipa: "jɛs"
+      - target: "año"
+        language: "es"
+        ipa: "ˈaɲo"
+      - target: "kin"
+        language: "en"
+        ipa: "kɪn"
+        sounds: false
+      - target: "tin"
+        language: "en"
+        ipa: "tɪn"
+        sounds: false
+    modes: ["listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Hard_palate" }
+    image: "decks/ipa/images/ipa-0199.webp"
+    image_credit: { source: "https://commons.wikimedia.org/wiki/File:Illu_mouth.jpg", license: "public-domain", credit: "U.S. National Cancer Institute, SEER Training Modules; a work of the U.S. federal government" }
