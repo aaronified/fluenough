@@ -28,9 +28,13 @@ import 'ui/widgets/tab_pager.dart';
 /// for a newer one if the learner has switched that on and no check has
 /// reached GitHub in the last day.
 class FluenoughApp extends StatefulWidget {
-  const FluenoughApp({super.key, required this.state});
+  const FluenoughApp({super.key, required this.state, this.frame});
 
   final AppState state;
+
+  /// Wraps everything under [MaterialApp], inside the text cap: the web
+  /// build's phone-shaped frame (`webPhoneFrame`). Null on a phone.
+  final TransitionBuilder? frame;
 
   @override
   State<FluenoughApp> createState() => _FluenoughAppState();
@@ -78,7 +82,10 @@ class _FluenoughAppState extends State<FluenoughApp> {
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
           navigatorObservers: _observers,
-          builder: capTextScale,
+          builder: widget.frame == null
+              ? capTextScale
+              : (context, child) =>
+                    widget.frame!(context, capTextScale(context, child)),
           // The first launch: welcome, tour and the languages the learner
           // speaks (#118, #53), then which they want to learn, their first
           // decks downloaded (#210), and placement (#117). Each answer saved
