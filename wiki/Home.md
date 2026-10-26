@@ -66,5 +66,6 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 - [Releasing](Releasing): how a release is cut
 - [ADR Index](ADR-Index): every architecture decision
 - [Mockups and Skills](Mockups-and-Skills): mockup rules and repo skills
+- [Design guidelines](Design-Guidelines): what the UI says and shows
 
 Each plan and each ADR has its own page, listed in [Plans Index](Plans-Index) and [ADR Index](ADR-Index).
