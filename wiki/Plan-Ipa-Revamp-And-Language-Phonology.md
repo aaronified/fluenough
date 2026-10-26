@@ -46,6 +46,10 @@ On what to do where Wiktionary has no narrow form, after the coverage numbers (o
 
 > add all from wikitionary, then use rules for the rest, add a field to denote the source. the app will use them accordingly. the weak notation keeps being used as is
 
+And (owner, 2026-10-26):
+
+> ok. the IPA deck should also define what a plosive or a implosive is, as well. all terminology, basically
+
 The term is the **alveolar ridge**, not "bridge": the bony ridge behind the
 upper teeth. The glossary uses it.
 
@@ -213,14 +217,30 @@ Where an existing deck already teaches the symbols (places, breath,
 retroflex, vowels), the new deck teaches the dimension and refers to those
 cards by `ref`; a symbol is still taught once (ipa-path.yaml's rule).
 
-**Terms.** Each term is a card with an image and an example contrast, built
-from machinery that exists: `image` for the picture, `examples` with
-`sounds: true` and `false` for the contrast. A term is introduced in the unit
-whose idea needs it. First list: phoneme, allophone, minimal pair, voicing,
-aspiration, place and manner of articulation, lips, teeth, **alveolar
-ridge**, hard palate, soft palate (velum), uvula, glottis, tongue tip, blade
-and back, retroflex, nasal and oral, stop, fricative, approximant, vowel
-height, backness, rounding, length, stress, tone.
+**Terms (owner, 2026-10-26: "all terminology, basically").** `ipa-terms`
+defines every technical term the course uses, each as a card with a plain
+definition, an image where one was found (never one of ours), and an example
+sound contrast (`sounds: true` and `false`). **The rule (Proposed):** a term
+a card's notes use has a card in `ipa-terms`, and its card comes before the
+first card that uses it; a test in `tools/test_ipa_course.py` checks both.
+The IPA chart's own vocabulary (its place, manner, airstream, height,
+backness and tone lists, read from the IPA's interactive chart on 2026-10-26)
+is the spine; the list below is the author's start, to be completed against
+every note in the course:
+
+| Group | Terms |
+|---|---|
+| The units | phoneme, allophone, minimal pair, broad and narrow transcription, diacritic, tie bar and ligature, syllable |
+| Articulators | lips, teeth, alveolar ridge, hard palate, soft palate (velum), uvula, pharynx, epiglottis, larynx, vocal folds, glottis, tongue tip, blade, body and root |
+| Places | bilabial, labiodental, dental, alveolar, postalveolar, retroflex, palatal, velar, uvular, pharyngeal, epiglottal, glottal; labial-velar, labial-palatal |
+| Manners | plosive (stop), nasal, trill, tap or flap, fricative, lateral fricative, approximant, lateral approximant, affricate |
+| Airstream | pulmonic, egressive and ingressive, **ejective, implosive, click** (non-pulmonic) |
+| Phonation | voiced, voiceless, aspirated and unaspirated, breathy voice, creaky voice, voice onset time |
+| Oral and nasal; central and lateral | oral, nasal, central (median), lateral |
+| Vowels | close, close-mid, open-mid, open; front, central, back; rounded and unrounded; diphthong, nasalised vowel, length |
+| Secondary articulation | palatalisation, velarisation, labialisation, pharyngealisation, coarticulation |
+| Prosody | stress, tone (level and contour), intonation |
+| The extensions | extIPA and VoQS: named and explained in a line each in the script guide, not taught |
 
 - **Images (decided, owner, 2026-10-26): fetched from elsewhere, never our
   drawings.** Searched on Wikidata (SPARQL) and Wikimedia Commons, 2026-10-26.
