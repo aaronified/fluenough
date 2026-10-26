@@ -366,7 +366,13 @@ class _ActionRow extends StatelessWidget {
           ),
           if (!stacked && actions.isNotEmpty) ...<Widget>[
             const SizedBox(width: 16),
-            buttons,
+            // In a 48 px slot at the end, as a GroupedTile's trailing
+            // control is (#848).
+            Container(
+              constraints: const BoxConstraints(minWidth: 48),
+              alignment: AlignmentDirectional.centerEnd,
+              child: buttons,
+            ),
           ],
         ],
       ),

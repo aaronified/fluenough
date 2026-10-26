@@ -430,7 +430,21 @@ class GroupedTile extends StatelessWidget {
           ),
           if (end != null) ...<Widget>[
             SizedBox(width: trailingGap),
-            onTitleLine(dimmed(IgnorePointer(ignoring: incoming, child: end))),
+            // In a 48 px slot, aligned to the end, so that a switch, a
+            // chevron and a value end on one right edge (#848, owner,
+            // 2026-10-25).
+            onTitleLine(
+              dimmed(
+                IgnorePointer(
+                  ignoring: incoming,
+                  child: Container(
+                    constraints: const BoxConstraints(minWidth: 48),
+                    alignment: AlignmentDirectional.centerEnd,
+                    child: end,
+                  ),
+                ),
+              ),
+            ),
           ],
         ],
       ),
