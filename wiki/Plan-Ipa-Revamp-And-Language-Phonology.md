@@ -34,6 +34,14 @@ Later the same day (owner, 2026-10-26):
 
 > the IPA deck should teach me the different manners of articulation, places, phonation, oral/nasal, median-lateral, airstream meachanism, etc as well.
 
+And (owner, 2026-10-26), on what "the IPA extras" meant:
+
+> no to first, i meant the extra decks needed for IPA. just mention extIPA and VoQS.
+
+> and also add [] IPA to all decks using a code via haiku
+
+> and add that to the deck building guideline
+
 The term is the **alveolar ridge**, not "bridge": the bony ridge behind the
 upper teeth. The glossary uses it.
 
@@ -96,6 +104,18 @@ language), which the owner rejected.
   broad one. The field needs a release that reads it before a deck uses it
   (released apps reject unknown fields), a validator rule (square brackets,
   IPA letters only), a credit line, and the accent it is for.
+- **How it reaches every deck (owner, 2026-10-26): a tool, run by Haiku.** A
+  tool, `tools/import_phonetic.py` (written and reviewed by Sonnet, since it
+  is code), reads a Wiktextract dump and writes `phonetic` on each card whose
+  word Wiktionary gives a hand-entered `[…]` form for, with the accent and a
+  credit. Haiku runs it language by language and opens one pull request per
+  language, which Sonnet reviews once. It writes only what Wiktionary has, so
+  "all decks" means every card Wiktionary covers, not every card. Order: the
+  field, its validator rule and the coverage table first (a pull request,
+  then a release that reads it, since released apps reject unknown fields);
+  the import pull requests go to `decks-next` after that release. Until
+  then a deck builder writes no narrow form by hand (see
+  `.claude/skills/build-deck/SKILL.md`).
 - **A word not on Wiktionary** (inflected forms, phrases, example
   sentences) has no narrow form until someone writes one. Not generated.
 - **The checker itself is a separate project.** `speech_to_text` returns
@@ -117,7 +137,7 @@ no card id changes (ids are permanent).
 | 4 to 9 | the existing units, in their order | basics, familiar, places, breath, retroflex, fricatives |
 | 10 | The whole chart | the pulmonic chart read as a map, once its rows and columns are known; **placed after the vowels**, so each axis has been met |
 | 11 | Diacritics, rare sounds, fine detail | the existing units |
-| 12 | extIPA and VoQS, not taught | one explanatory card set: what the extensions are for (speech disorders, voice quality), that they exist, where to read them. No drills |
+| 12 | extIPA and VoQS: a mention only | one note in the course's script guide, "How the IPA works": the Extensions to the IPA exist for disordered speech and VoQS for voice quality, and where to read them (the 2025 and 2016 charts below). No deck, no cards, no drills |
 
 **The dimensions the course teaches (owner, 2026-10-26), each a unit with
 images and sound contrasts.** Proposed order and wording; the unit list in the
@@ -135,11 +155,34 @@ table above is regrouped around them.
 | Secondary articulation and coarticulation | palatalised, velarised, labialised, pharyngealised; labial-velar | /t/ and /tʲ/; /w/ |
 | Suprasegmentals | stress, tone, length, intonation | tone minimal pairs |
 | Reading the whole chart | each cell as the meeting of these dimensions, once all have been met | after vowels |
-| extIPA and VoQS | what they are for, one explanatory set, with the 2025 chart (CC BY-SA 4.0) and the VoQS chart; not taught | none |
+| extIPA and VoQS | a mention only, in the script guide (owner, 2026-10-26: "just mention extIPA and VoQS") | none |
 
 Examples take their languages from the course's tags (Hindustani, Bengali,
 Telugu, Spanish and others), as the existing cards do; where the app has no
 language with the sound, another language is used, as the cards already do.
+
+**The extra decks (owner, 2026-10-26: "the extra decks needed for IPA").**
+Proposed names and order, each a deck in `decks/ipa/` with an English layer,
+new card ids only; the eleven existing decks stay as they are.
+
+| Deck | Holds |
+|---|---|
+| `ipa-what` | what the IPA is, why it was made, how it is built |
+| `ipa-notation` | brackets (`/ /`, `[ ]`, `< >`), broad and narrow, how to read a transcription |
+| `ipa-terms` | the glossary: one card per term, with its image and its contrast |
+| `ipa-place` | the places of articulation, one card each, with the diagram |
+| `ipa-manner` | stop, nasal, trill, tap, fricative, approximant, affricate |
+| `ipa-phonation` | voiced, voiceless, breathy, creaky, aspiration (voice onset time) |
+| `ipa-nasal-lateral` | oral and nasal; central (median) and lateral |
+| `ipa-airstream` | pulmonic; ejective and implosive; clicks |
+| `ipa-vowel-dimensions` | height, backness, rounding, length, nasalisation |
+| `ipa-secondary` | palatalised, velarised, labialised, pharyngealised; labial-velar |
+| `ipa-suprasegmentals` | stress, tone, length, intonation |
+| `ipa-chart` | the whole chart read by its axes |
+
+Where an existing deck already teaches the symbols (places, breath,
+retroflex, vowels), the new deck teaches the dimension and refers to those
+cards by `ref`; a symbol is still taught once (ipa-path.yaml's rule).
 
 **Terms.** Each term is a card with an image and an example contrast, built
 from machinery that exists: `image` for the picture, `examples` with
@@ -166,11 +209,23 @@ height, backness, rounding, length, stress, tone.
   | extIPA and VoQS | `ExtIPA chart (2025).pdf` (CC BY-SA 4.0), `ExtIPA chart (2021).pdf` (CC BY-SA 3.0), `ExtIPA chart (2015).pdf` (public domain), `VOQS chart (2016).pdf` (public domain) | as listed |
   | Phoneme and allophone | `Phoneme-allophone-determination-chart.svg` | public domain |
 
-  **Not found yet:** voicing and aspiration (a voice-onset-time figure),
-  tone, stress, minimal pairs, the airstream mechanisms (ejective, implosive,
-  click), lateral and the nasal-versus-oral contrast as a pair. Commons'
-  search is weak for these; next try its categories and the IPA symbols'
-  own pages.
+  **Not found in the first search** (the second, below, found most): voicing
+  and aspiration, tone, minimal pairs, the airstream mechanisms, lateral and
+  the nasal-versus-oral contrast.
+  **Second search (Commons categories), 2026-10-26:**
+
+  | For | Files and licence as listed |
+  |---|---|
+  | Voicing and aspiration | `Vot.svg` (voice onset time, public domain); `Bilabial plosives English.svg`, `… French.svg`, `… Mandarin.svg`, `… Thai.svg` (the same contrast in four languages, CC0) |
+  | Airstream | `Ipa-chart-consonants-nonpulmonic.png` (the non-pulmonic chart, CC BY-SA 3.0); `Doke … nasal click.svg` (clicks, CC BY-SA 4.0) |
+  | Lateral | `Lateral-l-variation.svg` (CC BY 3.0) |
+  | Nasal | `Bilabial Nasal.png` (public domain) |
+  | Tone | `Amoy tones.JPG` (public domain), `Teochew tones.svg` (CC BY-SA 3.0) |
+  | **Audio**, a recording per sound | Commons holds recordings for ejectives, implosives, clicks, laterals, nasals and aspirated consonants (`Alveolar ejective plosive.ogg`, `Voiced bilabial implosive.ogg`, `Velar click.ogg`, `Alveolar lateral approximant.ogg`, `Alveolar nasal.ogg` and many more), CC BY-SA 3.0 or 4.0, some CC0. They fit "optional sound for both" examples (Plan-Ipa-Course) |
+
+  Still not found: stress, a sagittal diagram for the lateral, breathy and
+  creaky phonation, and a diagram for ejective and implosive airstreams.
+
   **Checks before any file is used:** the licence on the file page itself
   (this list is from the API), the author and credit line for
   `image_credit`, and the deck licence. Decks are CC BY-SA 4.0; CC0, public
@@ -220,7 +275,7 @@ Bengali as the pilot because the owner named it (**Proposed**).
 | 2 | IPA course units 1 to 3 and 12 | they read in the app at 1.4x; the validator passes |
 | 3 | The whole-chart unit | the chart is shown and read by axes |
 | 4 | Phonology deck for Bengali, parts 1 to 6, | a Bengali speaker or phonetician has checked the inventory |
-| 5 | The `phonetic` field: format, validator, release, then an import tool from the dump with credit | the validator accepts it; imported forms match Wiktionary's |
+| 5 | The `phonetic` field: format, validator and `tools/import_phonetic.py` (Sonnet), then a release; then Haiku runs the tool per language, one pull request each on `decks-next`, one Sonnet review each | the validator accepts it; imported forms match Wiktionary's; coverage per language is reported |
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 
