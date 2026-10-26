@@ -321,7 +321,23 @@ class _SkillTile extends StatelessWidget {
                 ),
             ],
           ),
+          // The name is pinned to the bottom of the tile, so that the names
+          // in a row share a baseline whatever else a tile holds (#849,
+          // owner, 2026-10-25): a voiceless tile's note sits above its name.
           const SizedBox(height: 4),
+          const Spacer(),
+          if (noVoice)
+            Opacity(
+              opacity: opacity,
+              child: fitted(
+                Text(
+                  l10n.commonNoVoice,
+                  maxLines: 1,
+                  softWrap: false,
+                  style: small.copyWith(color: scheme.onSurfaceVariant),
+                ),
+              ),
+            ),
           Opacity(
             opacity: opacity,
             child: fitted(
@@ -336,18 +352,6 @@ class _SkillTile extends StatelessWidget {
               ),
             ),
           ),
-          if (noVoice)
-            Opacity(
-              opacity: opacity,
-              child: fitted(
-                Text(
-                  l10n.commonNoVoice,
-                  maxLines: 1,
-                  softWrap: false,
-                  style: small.copyWith(color: scheme.onSurfaceVariant),
-                ),
-              ),
-            ),
         ],
       ),
     );
