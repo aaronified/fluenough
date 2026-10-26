@@ -101,7 +101,7 @@ Releases next, by GitHub milestone (owner, 2026-10-11):
 | 0.4.5 | Dropped (owner, 2026-10-17: "Leave it. We go 0.5 directly"). The Wiktionary source check (#518) is on main; card images (#523) moved to 0.5.0 |
 | 0.5.0 | Cut 2026-10-18 (owner: "Cut the release now"): backup and restore (#470), Read script and Write script (#556), facts on cards (#546), Waiting for review (#471), base words in Suggest a change (#476), the path rebuild (#562), the script work (#551–#555), the Recognition tile (#478). Everything still open moved to 0.6.0 (owner, 2026-10-18) |
 | 0.6.0 | Moved from 0.5.0 (owner, 2026-10-18), in order: the path fix (#416, #417, #418); review pipeline (#477, #508, #519); the question engine (#522, step 1 done in #568); card images (#523), deck search (#527), All tags (#499), a "Toward B1" bar per skill (#575, mockup first); bugs (#483, #486, #487, #492); minor (#475, #227, #484); backup (#470, #112, #493). Then profiles (#204, #97); reminders (#90); Your decks (#495) |
-| 0.7.0 | Placement v2 (#481); onboarding journey (#474); daily commitment (#485) |
+| 0.7.0 | Placement v2 (#481); onboarding journey (#474); daily commitment (#485); question engine revamp and milestone exams (`plan-question-engine-2-and-exams`, owner, 2026-10-26; gated by one card UI for teach and question) |
 
 The numbered milestones below are the longer tracks.
 

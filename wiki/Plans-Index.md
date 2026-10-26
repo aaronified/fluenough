@@ -25,6 +25,7 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Profiles](Plan-Profiles): profiles, a PIN lock, and parental supervision
 - [Progress Revamp](Plan-Progress-Revamp): progress screen revamp — mastery across all skills
 - [Question Engine](Plan-Question-Engine): the question engine, derived from card data
+- [Question Engine 2 And Exams](Plan-Question-Engine-2-And-Exams): question engine revamp and milestone exams
 - [Release Signing](Plan-Release-Signing): sign and publish the first release
 - [Research And Standards](Plan-Research-And-Standards): a Research and standards page, with the sources
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
