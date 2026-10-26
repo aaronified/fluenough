@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The app runs in a browser, at https://aaronified.github.io/fluenough/ once Pages is on: progress stays in the browser, and decks download on each visit (wiki: Plan-Web-Pwa).
 - In the browser the app is drawn phone-shaped and centred, not across the whole window.
 
+### Fixed
+
+- The app's text looked wide, with large gaps between words, on phones whose system answers the request for Roboto with another font: Roboto is now bundled and used for all interface text.
+
 ## [0.6.5] - 2026-10-26
 
 ### Changed

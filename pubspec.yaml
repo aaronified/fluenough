@@ -82,6 +82,17 @@ flutter:
   # downloaded, since braille can appear in any deck's notes. Built by
   # tools/make_braille_font.py.
   fonts:
+    # The interface font, bundled so that it looks the same on every phone:
+    # on Android, Flutter asks the phone for "Roboto", and some phones answer
+    # with another font (wide word gaps after a One UI update). Apache-2.0,
+    # assets/fonts/ROBOTO-LICENSE.txt.
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
     - family: FluenoughBraille
       fonts:
         - asset: assets/fonts/BrailleShadow.ttf
