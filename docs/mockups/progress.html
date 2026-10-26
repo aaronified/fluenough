@@ -197,6 +197,15 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .legend span{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:700}
 .legend svg.i{width:18px;height:18px}
 .gl{font-weight:700}
+.tiles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 8px}
+.tile .hd2{display:flex;align-items:center;gap:8px;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600}
+.tile .hd1{font-size:calc(12px*var(--t));line-height:1.2;font-weight:600}
+.tile .fig1{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:2px}
+.tile .fig1 .fg{font-size:calc(24px*var(--t));line-height:1.1;font-weight:700;font-variant-numeric:tabular-nums}
+.tile .fig1 .un{font-size:calc(12px*var(--t));font-weight:600}
+.tile.cmp{padding:10px 12px;gap:0}
+.tile.cmp .fig1 .fg{font-size:calc(22px*var(--t))}
+.tile.cmp .of{font-size:calc(11px*var(--t))}
 </style></head>
 <body>
 <div class="wrap" id="wrap">
@@ -249,7 +258,7 @@ const D={
  bn:{lang:'Bengali',other:'Hindustani',gl:'ব',words:[27,70],rules:[4,10],sents:[18,40],since:'Oct 9, 2026',hours:['2.2','624'],
   m:{grammar:[1,12],script:[2,41],read:[5,48],write:[2,35],hear:[1,18],say:[0,0]},
   tags:[['case-endings',3],['aspiration',9],['negation',22]],week:['on','on','off','on','off','on','today']}};
-const S={theme:'dark',pal:'clay',course:'hi',tiles:'one',view:'radar',scr:'P',ink:'fixed',len:'phone',hl:'1'};
+const S={theme:'dark',pal:'clay',course:'hi',tiles:'one',top:'2a',view:'radar',scr:'P',ink:'fixed',len:'phone',hl:'1'};
 const root=document.getElementById('root');
 const ink=k=>(S.ink==='fixed'?INK.fixed:INK[S.theme])[k==='script'?'script'+S.scr:k];
 function lang(d){
@@ -293,17 +302,25 @@ function phoneToday(d){
  <div class="leech"><span class="chip" style="color:var(--onS)">${svg('warn')}</span><span class="tx"><b>No leeches</b><small>Cards you keep missing</small></span>${svg('chev')}</div>
  </div>${nav()}`}
 /* ---- Proposed ---- */
-function tileNew(kind,title,fig,kn,of,frac){
+function tileNew(kind,title,fig,kn,of,frac,compact){
  const three=S.tiles==='three';
  const sch={words:['pc','onPc'],rules:['sc','onSc'],sents:['tc','onTc']}[kind];
  const bg=three?`var(--${sch[0]})`:'var(--sHigh)',fg=three?`var(--${sch[1]})`:'var(--onS)';
  const ic={words:'words',rules:'grammar',sents:'sent'}[kind];
- return `<div class="tile" style="background:${bg};color:${fg}"><div class="hd"><span class="chip" style="background:${three?'rgba(127,127,127,.2)':'var(--pc)'};color:${three?fg:'var(--onPc)'}">${svg(ic)}</span>${title}</div><div class="fig">${fig}</div><div class="mbar" style="background:${three?'rgba(127,127,127,.3)':'var(--sHst)'}" role="img" aria-label="${fig} ${kn} ${of}"><i style="width:${Math.round(frac*100)}%;background:${three?fg:'var(--p)'}"></i></div><div class="kn">${kn}</div><div class="of">${of}</div></div>`}
+ const chip=`<span class="chip" style="background:${three?'rgba(127,127,127,.2)':'var(--pc)'};color:${three?fg:'var(--onPc)'}">${svg(ic)}</span>`;
+ const bar=`<div class="mbar" style="background:${three?'rgba(127,127,127,.3)':'var(--sHst)'}" role="img" aria-label="${fig} ${kn} ${of}"><i style="width:${Math.round(frac*100)}%;background:${three?fg:'var(--p)'}"></i></div>`;
+ if(compact)return `<div class="tile cmp" style="background:${bg};color:${fg}"><div class="hd1">${title}</div><div class="fig1"><span class="fg">${fig}</span><span class="un">${kn}</span></div>${bar}<div class="of">${of}</div></div>`;
+ return `<div class="tile" style="background:${bg};color:${fg}"><div class="hd2">${chip}<span>${title}</span></div><div class="fig1"><span class="fg">${fig}</span><span class="un">${kn}</span></div>${bar}<div class="of">${of}</div></div>`}
+function topTiles(d){
+ const w=tileNew('words','Words',0,'known','of '+d.words[1]+' taught',0,S.top==='3');
+ const r=tileNew('rules','Rules',0,'known','of 0 taught',0,S.top==='3');
+ const s=tileNew('sents','Sentences',d.sents[0],'open','of '+d.sents[1]+' taught',d.sents[0]/d.sents[1],S.top==='3');
+ return S.top==='2a'?w+r:S.top==='2b'?w+s:w+r+s}
 function phoneNew(d){
  const wf=d.words[0]&&0,sf=d.sents[0]/d.sents[1];
  const c=S.hl==='1'?' chg upd':'';
  return `${lang(d)}<div class="scroll" style="padding-top:0">
- <div class="tiles3${c}">${tileNew('words','Words',0,'known','of '+d.words[1]+' taught',0)}${tileNew('rules','Rules',0,'known','of 0 taught',0)}${tileNew('sents','Sentences',d.sents[0],'open','of '+d.sents[1]+' taught',sf)}</div>
+ <div class="${S.top==='3'?'tiles3':'tiles2'}${c}">${topTiles(d)}</div>
  <div class="lvl${c}" style="background:var(--pc);color:var(--onPc)"><span class="chip" style="background:var(--p);color:var(--onP)">${svg('trophy')}</span><div class="tx"><small style="font-weight:600">Level</small><span class="big">Not yet</span><div class="ladder"><b>A1</b><b>A2</b><b>B1</b></div></div><small style="text-align:right;max-width:34%">Started ${d.since}</small></div>
  <div class="card2${c}"><div class="cap"><h3>This week</h3><span class="t-sm">${d.week.filter(x=>x!=='off').length} of 7 days</span></div>${week(d)}</div>
  <div class="card2${c}"><div class="cap"><h3>Mastery by skill</h3><span class="more">Over time ${svg('chev')}</span></div><p class="t-body" style="color:var(--onSv)">Overall mastery 0%</p>${S.view==='radar'?radar(d,true):bars(d)}</div>
@@ -321,7 +338,7 @@ function render(){
  root.innerHTML=`<section class="opt"><h2>Progress, ${d.lang}</h2>
  <p class="note">Same structure. New: each skill has one colour, the colours of the Today tile icons, and its name is always written in it; the count tiles get an icon and a bar; Level is the one filled tile; Hours get icons. The six skill colours on this theme:</p>
  <div class="legend">${SKILLS.map(([k,n])=>`<span style="color:${ink(k)}">${svg(k)}${n}</span>`).join('')}</div>
- <div class="tw">${seg('pal',[['clay','Clay (your phone)'],['forest','Forest (default)']],'Colour seed')}${seg('tiles',[['one','One accent'],['three','Three accents']],'Count tiles')}${seg('view',[['radar','Radar'],['bars','Bars']],'Mastery')}${seg('ink',[['fixed','Fixed (same in light and dark)'],['theme','Per theme (Today pills)']],'Skill colours')}${seg('scr',[['P','Pink'],['Y','Yellow']],'Script colour')}${seg('len',[['phone','Phone'],['full','Full length']],'Show')}</div>
+ <div class="tw">${seg('pal',[['clay','Clay (your phone)'],['forest','Forest (default)']],'Colour seed')}${seg('top',[['2a','2: Words, Rules'],['2b','2: Words, Sentences'],['3','3, shorter']],'Top tiles')}${seg('tiles',[['one','One accent'],['three','Three accents']],'Tile colours')}${seg('view',[['radar','Radar'],['bars','Bars']],'Mastery')}${seg('ink',[['fixed','Fixed (same in light and dark)'],['theme','Per theme (Today pills)']],'Skill colours')}${seg('scr',[['P','Pink'],['Y','Yellow']],'Script colour')}${seg('len',[['phone','Phone'],['full','Full length']],'Show')}</div>
  <div class="frames">${frame('Today (as built)',phoneToday(d))}${frame('Proposed',phoneNew(d))}</div></section>`;
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
 }
