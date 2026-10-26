@@ -5265,13 +5265,7 @@ cards:
         'so its tile and its session agree', () {
       final two = <Card>[
         for (var i = 0; i < 12; i++)
-          Card(
-            id: 'm$i',
-            deckId: 'known',
-            target: 't$i',
-            native: 'n$i',
-            modes: const {DrillMode.recognition, DrillMode.production},
-          ),
+          Card(id: 'm$i', deckId: 'known', target: 't$i', native: 'n$i'),
       ];
       // Two known Recognition cards were right today, ten wait, and one
       // Write was missed today: the deck is stressed.
