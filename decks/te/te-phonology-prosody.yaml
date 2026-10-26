@@ -1,0 +1,42 @@
+schema: 1
+id: "te-phonology-prosody"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Telugu language; Help:IPA/Telugu)", url: "https://en.wikipedia.org/wiki/Telugu_language" }
+source: "Bhaskararao and Ray (2017), 'Illustrations of the IPA: Telugu', Journal of the International Phonetic Association 47(2): 231-241, doi 10.1017/S0025100316000207 (named in Wikipedia's references; the article itself was not read); Krishnamurti (2003), The Dravidian Languages, Cambridge University Press, and Lisker and Krishnamurti (1991), Proceedings of the XIIth International Congress of Phonetic Sciences 2: 90-93 (both as cited by Wikipedia). Text adapted from Wikipedia, 'Telugu language' (section Phonology) and 'Help:IPA/Telugu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Telugu_language"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "te-6618"
+    target: "ˈ"
+    ipa: "ˈ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Lisker and Krishnamurti (1991), ICPhS XII 2: 90-93, as cited by Wikipedia, Telugu language (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }
+  - id: "te-6619"
+    target: "Vː"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "పాలు", reading: "pālu", ipa: "paːlu" }
+      - { target: "కాలం", reading: "kālaṁ", ipa: "kaːlam" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Telugu speaker)", words: [{ word: "పలు", reading: "palu" }, { word: "పాలు", reading: "pālu" }] }
+      - { id: "n3", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Telugu speaker)", words: [{ word: "కలం", reading: "kalaṁ" }, { word: "కాలం", reading: "kālaṁ" }] }
+  - id: "te-6620"
+    target: "Cː"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "కల్ల", reading: "kalla", ipa: "kalːa" }
+      - { target: "కన్ను", reading: "kannu", ipa: "kanːu" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Telugu speaker)", words: [{ word: "కల", reading: "kala" }, { word: "కల్ల", reading: "kalla" }] }
+      - { id: "n3", kind: "note", source: "Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }

@@ -1,0 +1,138 @@
+schema: 1
+id: "te-phonology-spelling"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Telugu language; Help:IPA/Telugu)", url: "https://en.wikipedia.org/wiki/Telugu_language" }
+source: "Bhaskararao and Ray (2017), 'Illustrations of the IPA: Telugu', Journal of the International Phonetic Association 47(2): 231-241, doi 10.1017/S0025100316000207 (named in Wikipedia's references; the article itself was not read); Krishnamurti (2003), The Dravidian Languages, Cambridge University Press, and Lisker and Krishnamurti (1991), Proceedings of the XIIth International Congress of Phonetic Sciences 2: 90-93 (both as cited by Wikipedia). Text adapted from Wikipedia, 'Telugu language' (section Phonology) and 'Help:IPA/Telugu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Telugu_language"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "te-6633"
+    target: "క"
+    reading: "ka"
+    ipa: "ka"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "కాలు", reading: "kālu", ipa: "kaːlu" }
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-script-consonants deck (not yet checked by a Telugu speaker)" }
+  - id: "te-6634"
+    target: "్"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "కల్ల", reading: "kalla", ipa: "kalːa" }
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-script-consonants deck (not yet checked by a Telugu speaker)" }
+  - id: "te-6635"
+    target: "క్క"
+    reading: "kka"
+    ipa: "kːa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "కల్ల", reading: "kalla", ipa: "kalːa" }
+      - { target: "కన్ను", reading: "kannu", ipa: "kanːu" }
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-script-consonants deck (not yet checked by a Telugu speaker); Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }
+  - id: "te-6636"
+    target: "ం"
+    reading: "ṁ"
+    ipa: "m"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "వారం", reading: "vāraṁ", ipa: "ʋaːram" }
+      - { target: "పండు", reading: "paṇḍu", ipa: "paɳɖu" }
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-romanisation file and te-spelling deck (not yet checked by a Telugu speaker); Sastry, A study of Telugu regional and social dialects: a prosodic analysis, as cited by Wikipedia, Telugu language (CC BY-SA 4.0)" }
+  - id: "te-6637"
+    target: "ః"
+    reading: "ḥ"
+    ipa: "h"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }
+  - id: "te-6638"
+    target: "ఁ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-romanisation file and te-spelling deck (not yet checked by a Telugu speaker)" }
+  - id: "te-6639"
+    target: "ఋ"
+    reading: "ru"
+    ipa: "ɾu"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "రుతువు", reading: "rutuvu", ipa: "ɾut̪uʋu" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0); this course's te-romanisation file and te-spelling deck (not yet checked by a Telugu speaker)" }
+  - id: "te-6640"
+    target: "ఫ"
+    reading: "pha"
+    ipa: "pʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ఫలితం", reading: "phalitaṁ", ipa: "pʰalit̪am" }
+      - { target: "ఫోన్", reading: "fōn", ipa: "foːn" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2); Sastry, A study of Telugu regional and social dialects: a prosodic analysis, as cited by Wikipedia, Telugu language (CC BY-SA 4.0)" }
+  - id: "te-6641"
+    target: "శ"
+    reading: "śa"
+    ipa: "ʃa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ఆశ", reading: "āśa", ipa: "aːʃa" }
+      - { target: "భాష", reading: "bhāṣa", ipa: "bʱaːʂa" }
+      - { target: "బస", reading: "basa", ipa: "basa" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2); Sastry, A study of Telugu regional and social dialects: a prosodic analysis, as cited by Wikipedia, Telugu language (CC BY-SA 4.0)" }
+  - id: "te-6642"
+    target: "చ"
+    reading: "ca"
+    ipa: "tʃa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "చేప", reading: "cēpa", ipa: "tʃeːpa" }
+      - { target: "జేబు", reading: "jēbu", ipa: "dʒeːbu" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2); Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }
+  - id: "te-6643"
+    target: "ఞ"
+    reading: "ña"
+    ipa: "ɲa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "జ్ఞానం", reading: "jñānaṁ", ipa: "dʒɲaːnam" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0); Wikipedia, Telugu language, Phonology (CC BY-SA 4.0), after Bhaskararao and Ray (2017), JIPA 47(2)" }
+  - id: "te-6644"
+    target: "ళ్ళ"
+    reading: "ḷḷa"
+    ipa: "ɭɭa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "మళ్ళీ", reading: "maḷḷī", ipa: "maɭːiː" }
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-romanisation file and te-spelling deck (not yet checked by a Telugu speaker)" }
+  - id: "te-6645"
+    target: "ఱ"
+    reading: "ṟa"
+    ipa: "r"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "this course's te-romanisation file and te-spelling deck (not yet checked by a Telugu speaker); Wikipedia, Help:IPA/Telugu (CC BY-SA 4.0)" }
