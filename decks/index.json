@@ -1460,9 +1460,12 @@
       "script": "ipa",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 240264,
-      "path": ["ipa-basics", "ipa-familiar", "ipa-places", "ipa-breath", "ipa-retroflex", "ipa-fricatives", "ipa-liquids", "ipa-vowels", "ipa-diacritics", "ipa-rare", "ipa-narrow"],
+      "size": 301938,
+      "path": ["ipa-what", "ipa-terms", "ipa-notation", "ipa-basics", "ipa-familiar", "ipa-places", "ipa-breath", "ipa-retroflex", "ipa-fricatives", "ipa-liquids", "ipa-vowels", "ipa-diacritics", "ipa-rare", "ipa-narrow"],
       "units": [
+        {"decks": ["ipa-what"], "has": {"en": 1}},
+        {"decks": ["ipa-terms"], "has": {"en": 3}},
+        {"decks": ["ipa-notation"], "has": {"en": 1}},
         {"decks": ["ipa-basics"], "has": {"en": 3}},
         {"decks": ["ipa-familiar"], "has": {"en": 17}},
         {"decks": ["ipa-places"], "has": {"en": 14}},
@@ -1485,12 +1488,15 @@
         {"content_sha256": "b39892ac16444f6f8fa22296e58d4218728fbebdb6c0c75cc254c62ed36b60fd", "deck": "ipa-fricatives", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-fricatives.yaml", "schema": 1, "sha256": "b39892ac16444f6f8fa22296e58d4218728fbebdb6c0c75cc254c62ed36b60fd", "size": 8944},
         {"content_sha256": "b1a3fb4b00a9cf7f20d984c3c5240dfeed1292cd2e3bdbb38ff6d424aa7467ba", "deck": "ipa-liquids", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-liquids.yaml", "schema": 1, "sha256": "b1a3fb4b00a9cf7f20d984c3c5240dfeed1292cd2e3bdbb38ff6d424aa7467ba", "size": 7919},
         {"content_sha256": "1ed65158a2284e5788e8eda35ada491bdc713a822da53dd1c63f0b6d42df89ff", "deck": "ipa-narrow", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-narrow.yaml", "schema": 1, "sha256": "1ed65158a2284e5788e8eda35ada491bdc713a822da53dd1c63f0b6d42df89ff", "size": 8532},
-        {"content_sha256": "6f854e248c3e5510310ea7f3f53bd3fff690814cf0a3f01defb4ea3226312c13", "kind": "path", "path": "decks/ipa/ipa-path.yaml", "schema": 1, "sha256": "6f854e248c3e5510310ea7f3f53bd3fff690814cf0a3f01defb4ea3226312c13", "size": 1362},
+        {"content_sha256": "ea693aa6a1ee7197d9650e9b09bb84793866f0b866186e20823a6f604cb5be80", "deck": "ipa-notation", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-notation.yaml", "schema": 1, "sha256": "ea693aa6a1ee7197d9650e9b09bb84793866f0b866186e20823a6f604cb5be80", "size": 2877},
+        {"content_sha256": "5c496ce27a1d7ae2a457cb2c408d8a87fa32b0c7f4800517263ae37acf7fc712", "kind": "path", "path": "decks/ipa/ipa-path.yaml", "schema": 1, "sha256": "5c496ce27a1d7ae2a457cb2c408d8a87fa32b0c7f4800517263ae37acf7fc712", "size": 1632},
         {"content_sha256": "018e73039ff35fd5e231680e767557857ca06f02687de3fbe2dcba07d3e16adb", "deck": "ipa-places", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-places.yaml", "schema": 1, "sha256": "018e73039ff35fd5e231680e767557857ca06f02687de3fbe2dcba07d3e16adb", "size": 8511},
         {"content_sha256": "4ebf3723d9eaf3b774691b380d52bc9b6f9fdfd3626fc6428d9ae533839c8de5", "deck": "ipa-rare", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-rare.yaml", "schema": 1, "sha256": "4ebf3723d9eaf3b774691b380d52bc9b6f9fdfd3626fc6428d9ae533839c8de5", "size": 11572},
         {"content_sha256": "ecd371ed99b9c9c843f7d458c71429463418d7212a52dc348b87d68f0c372517", "deck": "ipa-retroflex", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-retroflex.yaml", "schema": 1, "sha256": "ecd371ed99b9c9c843f7d458c71429463418d7212a52dc348b87d68f0c372517", "size": 5590},
         {"content_sha256": "d57f2146384e970d9171d5b44790bd808f83e4a61d1f7722725a65e677b86728", "kind": "script", "part": "core", "path": "decks/ipa/ipa-script.yaml", "schema": 1, "sha256": "d57f2146384e970d9171d5b44790bd808f83e4a61d1f7722725a65e677b86728", "size": 1486},
+        {"content_sha256": "c0882e31b34ab07962ad76e9796e8bd25efa01d6a5d925d6fb63ae8afc33e5f9", "deck": "ipa-terms", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-terms.yaml", "schema": 1, "sha256": "c0882e31b34ab07962ad76e9796e8bd25efa01d6a5d925d6fb63ae8afc33e5f9", "size": 5834},
         {"content_sha256": "ba4739aecbf84fa703fd8ab2c5ad23c52175ec7c2efee0c869eb4129edc31c22", "deck": "ipa-vowels", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-vowels.yaml", "schema": 1, "sha256": "ba4739aecbf84fa703fd8ab2c5ad23c52175ec7c2efee0c869eb4129edc31c22", "size": 15329},
+        {"content_sha256": "6f1f39d6686061dac4bf3dedf77a61b953443139e915301c59372350e0f00453", "deck": "ipa-what", "kind": "vocab", "part": "core", "path": "decks/ipa/ipa-what.yaml", "schema": 1, "sha256": "6f1f39d6686061dac4bf3dedf77a61b953443139e915301c59372350e0f00453", "size": 3548},
         {"content_sha256": "34e9ac1b204df3ebc3055ee6159247282af362a2ef36cb07c262d0faa896fb50", "deck": "ipa-basics", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-basics.yaml", "schema": 1, "sha256": "34e9ac1b204df3ebc3055ee6159247282af362a2ef36cb07c262d0faa896fb50", "size": 3886},
         {"content_sha256": "a8ce37b3de20c8f66eaaef33e4e0318f240ee051c5c8589d4f9adc8fe7467ab6", "deck": "ipa-breath", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-breath.yaml", "schema": 1, "sha256": "a8ce37b3de20c8f66eaaef33e4e0318f240ee051c5c8589d4f9adc8fe7467ab6", "size": 9824},
         {"content_sha256": "49c65ef29049024a95c07bf31a80db770d24d7e3ab1334fb672b7e3cf72f65b3", "deck": "ipa-diacritics", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-diacritics.yaml", "schema": 1, "sha256": "49c65ef29049024a95c07bf31a80db770d24d7e3ab1334fb672b7e3cf72f65b3", "size": 7730},
@@ -1498,11 +1504,19 @@
         {"content_sha256": "e50a45815e12a25d61a0166a40b4fe1ec00b21fa7f4bc450c780b467fd8e82d0", "deck": "ipa-fricatives", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-fricatives.yaml", "schema": 1, "sha256": "e50a45815e12a25d61a0166a40b4fe1ec00b21fa7f4bc450c780b467fd8e82d0", "size": 8146},
         {"content_sha256": "546587d4749a16692dbfd37e104955249b348f759ed8a424fe511c291a72a6d5", "deck": "ipa-liquids", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-liquids.yaml", "schema": 1, "sha256": "546587d4749a16692dbfd37e104955249b348f759ed8a424fe511c291a72a6d5", "size": 7650},
         {"content_sha256": "94e13019c74edf158ca5a860187b9670296be7c33de5f607766c8fcaf3b0ca4a", "deck": "ipa-narrow", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-narrow.yaml", "schema": 1, "sha256": "94e13019c74edf158ca5a860187b9670296be7c33de5f607766c8fcaf3b0ca4a", "size": 9236},
+        {"content_sha256": "f40f0d9bfadb38bb24f7ff01abc8fdba3c3f7ec1aa5b15799a3b8c23fc836388", "deck": "ipa-notation", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-notation.yaml", "schema": 1, "sha256": "f40f0d9bfadb38bb24f7ff01abc8fdba3c3f7ec1aa5b15799a3b8c23fc836388", "size": 4123},
         {"content_sha256": "9c9d183d9c11d8d29e302c036d1f66112e89222af7076d56d9605145eca643df", "deck": "ipa-places", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-places.yaml", "schema": 1, "sha256": "9c9d183d9c11d8d29e302c036d1f66112e89222af7076d56d9605145eca643df", "size": 8231},
         {"content_sha256": "60bb1d70b2d73cf6ae1d064f6ecb6808135ca5c76cfcbddb94fd49e2064d0321", "deck": "ipa-rare", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-rare.yaml", "schema": 1, "sha256": "60bb1d70b2d73cf6ae1d064f6ecb6808135ca5c76cfcbddb94fd49e2064d0321", "size": 11173},
         {"content_sha256": "9e8b2173cb457242472f79325ac0ea9bda5f0c420fcbb2ddf4a94b63144cd6d5", "deck": "ipa-retroflex", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-retroflex.yaml", "schema": 1, "sha256": "9e8b2173cb457242472f79325ac0ea9bda5f0c420fcbb2ddf4a94b63144cd6d5", "size": 4918},
         {"content_sha256": "a1e43baf0b1de91e8a497983fb1d3d4ca50777a9739ae6be4b6ecc40469579d0", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-script.yaml", "schema": 1, "sha256": "a1e43baf0b1de91e8a497983fb1d3d4ca50777a9739ae6be4b6ecc40469579d0", "size": 4952},
-        {"content_sha256": "9b3543e6c695ffd1bd6cccba28c3db4fae3ef2276eaf360394c632ed176c09c8", "deck": "ipa-vowels", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-vowels.yaml", "schema": 1, "sha256": "9b3543e6c695ffd1bd6cccba28c3db4fae3ef2276eaf360394c632ed176c09c8", "size": 13055}
+        {"content_sha256": "a4b90e8f85b2d87431d91fa1979d4ef768b8b707ad5486374f2b5c534f315c9b", "deck": "ipa-terms", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-terms.yaml", "schema": 1, "sha256": "a4b90e8f85b2d87431d91fa1979d4ef768b8b707ad5486374f2b5c534f315c9b", "size": 8433},
+        {"content_sha256": "9b3543e6c695ffd1bd6cccba28c3db4fae3ef2276eaf360394c632ed176c09c8", "deck": "ipa-vowels", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-vowels.yaml", "schema": 1, "sha256": "9b3543e6c695ffd1bd6cccba28c3db4fae3ef2276eaf360394c632ed176c09c8", "size": 13055},
+        {"content_sha256": "8707755e524ad3b46eeeb883bbae1499fcaa42e50dcdce82961005e9f913a13f", "deck": "ipa-what", "kind": "layer", "native": "en", "path": "decks/ipa/en/ipa-en-what.yaml", "schema": 1, "sha256": "8707755e524ad3b46eeeb883bbae1499fcaa42e50dcdce82961005e9f913a13f", "size": 5791}
+      ],
+      "media": [
+        {"kind": "image", "path": "decks/ipa/images/ipa-0193.webp", "sha256": "398cfcac75b03c1b40fa9409b9af97f9a3ff74b830d59a7ea35f0193071d69b4", "size": 12074},
+        {"kind": "image", "path": "decks/ipa/images/ipa-0196.webp", "sha256": "e389b5619fabc11f01b2b633fc766f047707dce98c4d3281a67b0611674519b0", "size": 10486},
+        {"kind": "image", "path": "decks/ipa/images/ipa-0199.webp", "sha256": "cfaa9e68426cc82564a7e000232795272724a0cb673c37c830b5bb05f67b44ed", "size": 8238}
       ]
     },
     {
