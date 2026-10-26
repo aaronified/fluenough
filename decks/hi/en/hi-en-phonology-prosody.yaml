@@ -1,0 +1,46 @@
+schema: 1
+id: "hi-en-phonology-prosody"
+kind: "layer"
+core: "hi-phonology-prosody"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hindustani stress, length and rhythm (IPA)"
+description: "How Hindustani uses stress, vowel length, doubled consonants, pitch and nasalisation: one card each. The sources describe no tone. For learners who know the IPA or want to learn it. Variety taught: the standard Delhi variety of Hindustani, Hindi and Urdu together. This is a proposal, not yet confirmed by the owner, a Hindi or Urdu speaker or a phonetician. Where a sound belongs to Urdu or to Persian and Arabic loans only, the card says so, and the Urdu script is given beside the Devanagari wherever they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "hi-1212":
+    native: "stress: on the heaviest syllable"
+    notes:
+      "n1": "Hindustani has a stress accent, but it matters less than in English. Stress goes on the heaviest syllable, and on the last such syllable if there is a tie; the last mora of the word is ignored. A light syllable ends in a short vowel; a heavy one ends in a long vowel, or in a short vowel and a consonant; an extra-heavy one ends in a long vowel and a consonant, or a short vowel and two consonants. If every syllable is light, the penultimate is stressed."
+      "n2": "The source's examples: किधर (kidhar), where, is stressed on its second syllable; जनाब (janāb), sir, on its second; समिति (samiti), committee, also on its second, since the last mora is ignored; रेज़गारी (rēzgārī), coins, on its first."
+  "hi-1213":
+    native: "vowel length: three short vowels, seven long ones"
+    notes:
+      "n1": "The vowels ə, ɪ and ʊ are always short, and aː, iː, uː, eː, oː, ɛː and ɔː are usually counted long. The difference between short and long is often described as tenseness, the short vowels being lax and the long ones tense. Vowels are somewhat longer before voiced stops than before voiceless ones."
+      "n2": "Minimal pair among this course's words: {1}, less; few, and {2}, work, differ only in the vowel, ə against aː."
+      "n3": "Minimal pair among this course's words: {1}, day, and {2}, poor; humble, differ only in the vowel, ɪ against iː."
+    examples:
+      "काम": "work"
+      "बीस": "20, twenty"
+  "hi-1214":
+    native: "doubled consonants (geminates)"
+    notes:
+      "n1": "Most native consonants may be doubled, in length; the exceptions are ɽ, ɽʱ and ɦ. A doubled consonant is always between vowels and is preceded by a short vowel, ə, ɪ or ʊ. All occur within one morpheme except ʃː, which occurs only in a few Sanskrit loans where a morpheme boundary can be posited, as in niśśīl, without shame."
+      "n2": "Minimal pair among this course's words: {1}, left over; survived, and {2}, child, differ only in the length of the consonant, tʃ against tʃː."
+      "n3": "Minimal pair among this course's words: {1}, cooked; ripe, and {2}, firm; certain, differ only in the length of the consonant, k against kː."
+      "n4": "Minimal pair among this course's words: {1}, to go, and {2}, to know, differ only in the length of the consonant, n against nː."
+    examples:
+      "बच्चा": "child"
+      "पक्का": "firm; certain"
+  "hi-1215":
+    native: "rhythm and pitch: low, then a rise"
+    notes:
+      "n1": "Content words normally begin on a low pitch and then rise. Strictly, Hindustani, like most Indian languages, is syllable-timed. The schwa ə has a strong tendency to vanish if its syllable is unaccented."
+  "hi-1216":
+    native: "nasalisation: phonemic or not"
+    notes:
+      "n1": "There are nasal vowels, as in French and Portuguese, but the sources disagree about their nature. The source gives four views of Hindustani nasalisation (Masica 1991): that there are no ẽː and õː; that all vowels have phonemic nasalisation; that all nasalisation is predictable; and, the one Masica supports, that long vowels are nasalised phonemically at the end of a word and before voiceless stops, with nasal short vowels, and nasal long vowels before voiced stops, only allophonic. The English-loan vowel æː is seldom nasalised."

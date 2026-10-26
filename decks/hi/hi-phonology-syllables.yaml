@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-phonology-syllables"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "hi-1217"
+    target: "Weight"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0); Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1218"
+    target: "Schwa"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "कल", reading: "kal", ipa: "kəl" }
+      - { target: "शहर", reading: "śahar", ipa: "ʃəɦər" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1219"
+    target: "CC"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "प्रतीक्षा", reading: "pratīkśā", ipa: "prət̪iːkʃaː" }
+      - { target: "रास्ता", reading: "rāstā", ipa: "raːst̪aː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Schmidt (2003), 'Urdu', as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0); this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker)" }
+  - id: "hi-1220"
+    target: "CCC"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "तनख़्वाह", reading: "tank͟hvāh", ipa: "t̪ənxʋaːɦ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Schmidt (2003), 'Urdu', as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0); this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker)" }
+  - id: "hi-1221"
+    target: "C#"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "दूध", reading: "dūdh", ipa: "d̪uːd̪ʱ" }
+      - { target: "साथ", reading: "sāth", ipa: "saːt̪ʰ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
