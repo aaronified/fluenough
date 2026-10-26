@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- A language's sheet names the scripts being learnt in one line, such as "Devanagari (1/2)", above the Change scripts button, and no longer has a button for each script (#859).
+
 ### Fixed
 
 - Set in stone did not stop reviews of words you had already reviewed before placing their deck: a placed deck now follows the course's placed-review choice for every card in it, whatever its history (#860).
