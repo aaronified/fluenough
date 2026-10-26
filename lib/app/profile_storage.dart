@@ -21,7 +21,17 @@ String databaseFileName(Profile profile) => 'fluenough-${profile.id}';
 /// rather than there being no app.
 Future<ProfileStorage> openProfileStorage(Profile profile) async {
   try {
-    final db = AppDatabase(driftDatabase(name: databaseFileName(profile)));
+    final db = AppDatabase(
+      driftDatabase(
+        name: databaseFileName(profile),
+        // Read only on the web, where `pages.yml` puts both files beside
+        // the page.
+        web: DriftWebOptions(
+          sqlite3Wasm: Uri.parse('sqlite3.wasm'),
+          driftWorker: Uri.parse('drift_worker.js'),
+        ),
+      ),
+    );
     return (
       progress: await DatabaseProgress.open(db),
       settings: (await StoredSettings.open(db)).settings,
