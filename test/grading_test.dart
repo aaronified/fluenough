@@ -762,7 +762,6 @@ void main() {
               'খাল',
               'canal',
               'a breath after the consonant',
-              'কাল',
             ),
           ),
           findsOneWidget,

@@ -20,6 +20,9 @@ import 'today_numbers.dart';
 /// a skill's pace and keeps its full contrast.
 const double _emptyTileOpacity = 0.55;
 
+/// Above this many cards a tile drops its pace arrow, for room for the number.
+const int _arrowMax = 99;
+
 /// The skill tiles under Today's one button (#521): what is due in each
 /// skill, and a tile starts a review of its skill alone (ADR-0030). The
 /// start and the count moved to the button ([DailyCard]). A Script tile
@@ -96,9 +99,9 @@ class _AdjustedStrip extends StatelessWidget {
   }
 }
 
-/// The skill tiles, three to a row, thin: each shows only the skill's icon,
-/// its pace arrow if adjusted, the number due, and the name in small type
-/// (owner, 2026-10-24). A row's tiles are as tall as each other; the last
+/// The skill tiles, three to a row, thin, in two lines: the skill's icon, the
+/// number due and its pace arrow if adjusted, then the name in small type
+/// (owner, 2026-10-24, 2026-10-26). A row's tiles are as tall as each other; the last
 /// row's missing tiles keep their place.
 class _SkillGrid extends StatelessWidget {
   const _SkillGrid({required this.numbers});
@@ -284,10 +287,13 @@ class _SkillTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          // The arrow keeps its full contrast on a dimmed tile, the only
-          // place Today shows a skill's pace. Its room is kept when there
-          // is none, so that the tiles sit level.
+          // The icon, the number and the arrow share a row (owner,
+          // 2026-10-26). The arrow keeps its full contrast on a dimmed tile,
+          // the only place Today shows a skill's pace; its room is kept when
+          // there is none, so that the tiles sit level, and given to the
+          // number above 99.
           Row(
+            spacing: 4,
             children: <Widget>[
               Opacity(
                 opacity: opacity,
@@ -299,15 +305,23 @@ class _SkillTile extends StatelessWidget {
                         muted: noVoice,
                       ),
               ),
-              const Spacer(),
-              SizedBox.square(
-                dimension: PaceMark.size,
-                child: moved == null ? null : PaceMark(direction: moved),
+              Expanded(
+                child: Opacity(
+                  opacity: opacity,
+                  child: fitted(
+                    number,
+                    alignment: AlignmentDirectional.centerEnd,
+                  ),
+                ),
               ),
+              if (count <= _arrowMax || incoming || noVoice)
+                SizedBox.square(
+                  dimension: PaceMark.size,
+                  child: moved == null ? null : PaceMark(direction: moved),
+                ),
             ],
           ),
           const SizedBox(height: 4),
-          Opacity(opacity: opacity, child: fitted(number)),
           Opacity(
             opacity: opacity,
             child: fitted(

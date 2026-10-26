@@ -1217,26 +1217,6 @@
       }
     }
   },
-  "pathUpdatesTitle": "Deck updates",
-  "@pathUpdatesTitle": {
-    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Updates the course's language as Settings > Deck downloads does (#464)."
-  },
-  "pathUpdatesBody": "Your progress is kept",
-  "@pathUpdatesBody": {
-    "description": "Second line of the deck updates row when an update waits: updating a deck keeps the learner's history."
-  },
-  "pathUpdatesButton": "Update",
-  "@pathUpdatesButton": {
-    "description": "Button on the deck updates row, shown when an update waits for the course's language."
-  },
-  "pathUpdatesUpToDate": "Up to date",
-  "@pathUpdatesUpToDate": {
-    "description": "Second line of the deck updates row on the course card when no update waits for the course's language."
-  },
-  "pathHoursTitle": "Hours left in the decks so far",
-  "@pathHoursTitle": {
-    "description": "Row on the course card: about how many hours of study are left in the course's decks written so far, not to the end of the course at B1. It grows as decks are added (#227)."
-  },
   "pathHoursBody": "{left} · {spent}",
   "@pathHoursBody": {
     "description": "Second line of the hours row: the hours left (pathHoursLeft), then the hours spent (pathHoursSpent).",
@@ -3663,36 +3643,30 @@
       }
     }
   },
-  "feedbackSaidContrast": "You said “{said}”. The difference is {contrast}. Answer: {answer}",
+  "feedbackSaidContrast": "You said “{said}”. The difference is {contrast}.",
   "@feedbackSaidContrast": {
     "description": "Speaking drill, wrong: the word heard is the answer with one sound changed (#89). {contrast} comes from the language's sounds file, such as 'a breath after the consonant'.",
     "placeholders": {
       "said": {"type": "String", "example": "খাল"},
-      "contrast": {"type": "String", "example": "a breath after the consonant"},
-      "answer": {"type": "String", "example": "কাল"}
+      "contrast": {"type": "String", "example": "a breath after the consonant"}
     }
   },
-  "feedbackSaidContrastMeaning": "You said “{said}”, which means {meaning}. The difference is {contrast}. Answer: {answer}",
+  "feedbackSaidContrastMeaning": "You said “{said}”, which means {meaning}. The difference is {contrast}.",
   "@feedbackSaidContrastMeaning": {
     "description": "As feedbackSaidContrast, when a deck has the word heard: {meaning} is its meaning.",
     "placeholders": {
       "said": {"type": "String", "example": "খাল"},
       "meaning": {"type": "String", "example": "canal"},
-      "contrast": {"type": "String", "example": "a breath after the consonant"},
-      "answer": {"type": "String", "example": "কাল"}
+      "contrast": {"type": "String", "example": "a breath after the consonant"}
     }
   },
-  "feedbackSaidAnswer": "You said “{said}”. Answer: {answer}",
+  "feedbackSaidAnswer": "You said “{said}”",
   "@feedbackSaidAnswer": {
     "description": "Speaking: detail under a wrong answer, with what the recogniser heard.",
     "placeholders": {
       "said": {
         "type": "String",
         "example": "फल"
-      },
-      "answer": {
-        "type": "String",
-        "example": "पल"
       }
     }
   },
@@ -5010,6 +4984,10 @@
         "example": "Hindi"
       }
     }
+  },
+  "deckDownloadsNoUpdates": "No updates available",
+  "@deckDownloadsNoUpdates": {
+    "description": "Toast after the course card's update button finds nothing to download."
   },
   "deckDownloadsUpdated": "Decks updated",
   "@deckDownloadsUpdated": {

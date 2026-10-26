@@ -5,6 +5,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/feedback_banner.dart';
+import '../../ui/widgets/ipa_line.dart';
 import 'drill_session.dart';
 
 /// The feedback banner for a typed answer: which of the design's five
@@ -113,24 +114,37 @@ class AnswerFeedback extends StatelessWidget {
         l10n.feedbackWrong,
         !spoken
             ? l10n.feedbackAnswer(shown(null))
-            : switch ((answer.contrast, answer.heardCard)) {
-                // The word heard is the answer with one sound changed:
-                // name the sound, and what the other word means (#89).
-                (final contrast?, final heard?) =>
-                  l10n.feedbackSaidContrastMeaning(
-                    answer.typed,
-                    heard.native,
-                    contrast.name,
-                    shown(null),
-                  ),
-                (final contrast?, null) => l10n.feedbackSaidContrast(
-                  answer.typed,
-                  contrast.name,
-                  shown(null),
-                ),
-                _ => l10n.feedbackSaidAnswer(answer.typed, shown(null)),
-              },
+            : _heard(context, l10n, answer),
       ),
     };
+  }
+
+  /// What was heard, in the script as recognised, then its IPA when the word
+  /// is a card in a deck. The answer is on the card above, so it is not
+  /// repeated; a sound contrast, when there is one, is named (#89).
+  String _heard(
+    BuildContext context,
+    AppLocalizations l10n,
+    TypedAnswer answer,
+  ) {
+    final heard = answer.heardCard;
+    final said = switch ((answer.contrast, heard)) {
+      (final contrast?, final heard?) => l10n.feedbackSaidContrastMeaning(
+        answer.typed,
+        heard.native,
+        contrast.name,
+      ),
+      (final contrast?, null) => l10n.feedbackSaidContrast(
+        answer.typed,
+        contrast.name,
+      ),
+      _ => l10n.feedbackSaidAnswer(answer.typed),
+    };
+    final ipa = ipaToShow(
+      context,
+      heard?.phonetic ?? heard?.ipa,
+      target: heard?.target,
+    );
+    return ipa == null ? said : '$said\n${l10n.wordSheetIpa(ipa)}';
   }
 }

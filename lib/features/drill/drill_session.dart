@@ -780,10 +780,10 @@ class DrillSession extends ChangeNotifier {
           contrast = sounds.between(said.text, answer);
           if (contrast != null) break;
         }
-        if (contrast != null) {
-          heardCard = _state.cardSaying(deck.language, said.text);
-        }
       }
+      // The word heard, for its meaning and its IPA, whether or not it
+      // differs from the answer by a named sound.
+      heardCard = _state.cardSaying(deck.language, said.text);
     }
     return TypedAnswer(
       typed: said.text,
