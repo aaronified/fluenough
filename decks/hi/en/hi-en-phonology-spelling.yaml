@@ -1,0 +1,146 @@
+schema: 1
+id: "hi-en-phonology-spelling"
+kind: "layer"
+core: "hi-phonology-spelling"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hindustani spelling to sound (IPA)"
+description: "How Devanagari and the Perso-Arabic script of Urdu are read, with their exceptions, in IPA: one card each, the Devanagari first. For learners who know the IPA or want to learn it. Variety taught: the standard Delhi variety of Hindustani, Hindi and Urdu together. This is a proposal, not yet confirmed by the owner, a Hindi or Urdu speaker or a phonetician. Where a sound belongs to Urdu or to Persian and Arabic loans only, the card says so, and the Urdu script is given beside the Devanagari wherever they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "hi-1233":
+    native: "every Devanagari consonant carries ə, and it often goes quiet"
+    notes:
+      "n1": "Every consonant letter carries the short a, said like the u of 'but', unless a sign changes it: क (ka) alone is kə. At the end of most words the carried a goes quiet: घर (ghar) is ghar, कमल (kamal) is kamal. Inside long words it can go quiet too, so each word is learnt as said."
+    examples:
+      "घर": "house; home"
+  "hi-1234":
+    native: "the signs ि (i) and ी (ī): ɪ and iː, and a final short vowel said long"
+    notes:
+      "n1": "The sign ि (i) is ɪ and ी (ī) is iː; ु (u) is ʊ and ू (ū) is uː. The source says a short close vowel at the end of a word is said long, so शक्ति (śakti) is said śaktī."
+    examples:
+      "दिन": "day"
+      "बीस": "20, twenty"
+  "hi-1235":
+    native: "ऐ (ai) and औ (au) are single vowels"
+    notes:
+      "n1": "ऐ (ai) is the vowel ɛː, as in है (hai), and औ (au) is ɔː, as in और (aur); ऑ (ô) is the short ɔ of English loans, and ऍ (ê) the æː of English loans."
+    examples:
+      "है": "is"
+      "और": "and"
+  "hi-1236":
+    native: "the moon-and-dot ँ (m̐) and the dot ं (ṁ): nasal vowels and homorganic nasals"
+    notes:
+      "n1": "The help page gives ँ (candrabindu) as heavy nasalisation of the vowel before it, like the 'an' of 'can't' in rapid American English, and ं (anusvara) as a nasal that fits the consonant after it, like the 'n' of 'jungle' or 'branch', with light nasalisation of the vowel. The course's script guide says the dot alone is an n or m before the next consonant. Urdu writes nasalisation with ں (nūn ġunna)."
+    examples:
+      "हाँ": "yes"
+      "जंगल": "forest"
+  "hi-1237":
+    native: "the dot below a letter: a sound from Persian, Arabic or English"
+    notes:
+      "n1": "A dot below a letter, the nukta, marks a sound from Persian, Arabic or English: ज (ja) is j and ज़ (za) is z, फ (pha) is ph and फ़ (fa) is f; क़ (qa), ख़ (k͟ha), ग़ (ġa) and झ़ (z͟ha) are q, x, ɣ and ʒ. Hindi speakers may replace these with kʰ, dʒ, dʒʱ, ɡ, k and pʰ."
+    examples:
+      "मेज़": "table"
+      "साफ़": "clean"
+  "hi-1238":
+    native: "ड़ (ṛa) and ढ़ (ṛha): ɽ and ɽʱ"
+    notes:
+      "n1": "ड़ (ṛa) and ढ़ (ṛha) have the same dot but are Hindi's own sounds: the tongue is placed as for ड (ḍa) and ढ (ḍha) but does not touch the roof of the mouth, the course's script guide says. They are the flap ɽ and the breathy flap ɽʱ."
+    examples:
+      "बड़ा": "big"
+      "पढ़ना": "to read"
+  "hi-1239":
+    native: "ष (ṣa) and ण (ṇa): Sanskrit letters Urdu replaces"
+    notes:
+      "n1": "ष (ṣa) is ʂ and ण (ṇa) is ɳ in Sanskrit loans, predominantly in Hindi; Urdu usually says ʃ and n instead, and spells नष्ट (naṣṭ), ruined, نشٹ (naṣṭ) with ش (śa). This course's own cards write ʃ for ष (śa), as in भाषा (bhāśā)."
+    examples:
+      "भाषा": "language"
+      "अंडा": "egg"
+  "hi-1240":
+    native: "व (va) and و (va): ʋ, v or w"
+    notes:
+      "n1": "Hindi writes ʋ with व (va) and Urdu with و (va); it is said ʋ, v or w by position (see the allophones deck). Urdu و (va) is also a vowel letter: ū, ō and the au of the vowel ɔː."
+    examples:
+      "वह": "that; he, she (far)"
+      "चावल": "rice"
+  "hi-1241":
+    native: "ह (ha) and ः (ḥ): ɦ"
+    notes:
+      "n1": "ह (ha) is ɦ. The visarga ः (ḥ) is an h after the vowel, as in कः (kaḥ), which the course's vowel-sign deck reads kəh. In Urdu the sound is spelled ہ (ha) and ح (ha), as in हुक्म (hukm), حکم (hukm); ھ (ha), the do-chashmi he, is not said alone but marks an aspirate."
+    examples:
+      "है": "is"
+  "hi-1242":
+    native: "the halant: it takes the vowel away"
+    notes:
+      "n1": "The small slanting stroke below a letter, ्, means no vowel after it. Two consonants with no vowel between them usually join instead: प्यार (pyār), love. बच्चा (baccā) has a doubled च्च (cca), said as a long consonant."
+    examples:
+      "बच्चा": "child"
+  "hi-1243":
+    native: "Urdu ا (ā) and آ (ā): aː"
+    notes:
+      "n1": "ا (ā) is the long vowel aː, and آ (ā) is aː at the start of a word, as in آج (āj), today."
+      "n2": "Minimal pair among this course's words: {1}, less; few, and {2}, work, differ only in the vowel, ə against aː."
+    examples:
+      "आज": "today"
+  "hi-1244":
+    native: "Urdu's short vowel marks: zabar, zer and pesh"
+    notes:
+      "n1": "A word shows its consonants and long vowels, and the short vowels a, i and u are usually left unwritten, so each word is read from what the reader knows: کتاب (kitāb, book) is written k-t-ā-b. They have marks, زبر (zabar) for a above the letter, زیر (zer) for i below it and پیش (peś) for u above it, as in بَ (ba), بِ (bi) and بُ (bu), but these appear only in teaching texts."
+    examples:
+      "कल": "tomorrow; yesterday"
+  "hi-1245":
+    native: "Urdu ع (a) and ء (hamza): ə, ʔ or nothing"
+    notes:
+      "n1": "The letters ع (a) and ء (hamza) are sometimes said as a glottal stop, ʔ, in Urdu; Hindi usually does not say or write it, except when the Urdu spelling is carried over. This course's Urdu vowel deck reads ع (a) as ə and ء (hamza) as ʔ."
+  "hi-1246":
+    native: "Urdu س (sa), ث (sa) and ص (sa): all s"
+    notes:
+      "n1": "Three Urdu letters stand for the one sound s: س (sa), ث (sa) and ص (sa). Which one a word takes is learnt with the word, since Devanagari writes स (sa) for all three."
+    examples:
+      "दस": "10, ten"
+      "सौ": "100, a hundred"
+  "hi-1247":
+    native: "Urdu ز (za), ذ (za), ض (za) and ظ (za): all z"
+    notes:
+      "n1": "Four Urdu letters stand for the one sound z: ز (za), ذ (za), ض (za) and ظ (za). Devanagari writes ज़ (za) for all four."
+    examples:
+      "मेज़": "table"
+      "रोज़": "every day"
+  "hi-1248":
+    native: "Urdu ت (ta) and ط (ta): both t̪"
+    notes:
+      "n1": "ت (ta) and ط (ta) are the same dental t̪. The help page's example of ط (ta) is लतीफ़ा (latīfa), joke, spelled لطیفہ (latīfa)."
+    examples:
+      "तीन": "3, three"
+      "सात": "7, seven"
+  "hi-1249":
+    native: "Urdu ہ (ha), ح (ha) and ھ (ha)"
+    notes:
+      "n1": "ہ (ha), the choṭī he, is the plain ɦ, and so is ح (ha). ھ (ha), the do-chashmi he, is written after a plain letter to make an aspirate: ب (ba) with ھ (ha) is بھ (bha), and ک (ka) with ھ (ha) is کھ (kha). It is never said alone. Do not mix it up with ہ (ha)."
+    examples:
+      "है": "is"
+      "हाथ": "hand; arm"
+  "hi-1250":
+    native: "Urdu ں (m̐), the nasalising nūn"
+    notes:
+      "n1": "At the end of a word, ں (m̐), a ن (na) with its dot left out, is the nūn ġunna. It makes the vowel before it nasal, said through the nose with no n sound after it: ہاں (hām̐, yes), میں (maim̐, I). The ordinary ن (na), with its dot, is a full n at the end of a word, as in دن (din, day)."
+    examples:
+      "हाँ": "yes"
+      "मैं": "I"
+  "hi-1251":
+    native: "Urdu's shadda: a doubled consonant"
+    notes:
+      "n1": "The mark ّ (shadda) above a letter doubles it: ڈھکّن (ḍhakkan), with a long k, and ذرّہ (zarra), particle. This course's Urdu vowel deck reads بّ (bb) as a long b, bː."
+    examples:
+      "बच्चा": "child"
+  "hi-1252":
+    native: "Urdu ے (ē), ی (ī) and و (ū): vowels that are also consonant letters"
+    notes:
+      "n1": "ے (ē) is the vowel eː at the end of a word; ی (ī) is iː or the consonant j (ya), and و (va) is ū, ō or the consonant ʋ, so a letter of this kind is read as a vowel or a consonant from its word."
+    examples:
+      "देश": "country"
+      "चाय": "tea"

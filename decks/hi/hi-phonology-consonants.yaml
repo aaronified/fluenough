@@ -1,0 +1,499 @@
+schema: 1
+id: "hi-phonology-consonants"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "hi-1149"
+    target: "p"
+    reading: "p"
+    ipa: "p"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "पास", reading: "pās", ipa: "paːs" }
+      - { target: "कप", reading: "kap", ipa: "kəp" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "कब", reading: "kab" }, { word: "कप", reading: "kap" }] }
+  - id: "hi-1150"
+    target: "pʰ"
+    reading: "ph"
+    ipa: "pʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "फल", reading: "phal", ipa: "pʰəl" }
+      - { target: "फिर", reading: "phir", ipa: "pʰɪr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "पल", reading: "pal" }, { word: "फल", reading: "phal" }] }
+  - id: "hi-1151"
+    target: "b"
+    reading: "b"
+    ipa: "b"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "बाल", reading: "bāl", ipa: "baːl" }
+      - { target: "बस", reading: "bas", ipa: "bəs" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "कब", reading: "kab" }, { word: "कप", reading: "kap" }] }
+  - id: "hi-1152"
+    target: "bʱ"
+    reading: "bh"
+    ipa: "bʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "भी", reading: "bhī", ipa: "bʱiː" }
+      - { target: "अभी", reading: "abhī", ipa: "əbʱiː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Shapiro (2003), 'Hindi', as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "भी", reading: "bhī" }, { word: "घी", reading: "ghī" }] }
+  - id: "hi-1153"
+    target: "t̪"
+    reading: "t"
+    ipa: "t̪"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "तीन", reading: "tīn", ipa: "t̪iːn" }
+      - { target: "सात", reading: "sāt", ipa: "saːt̪" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दीन", reading: "dīn" }, { word: "तीन", reading: "tīn" }] }
+  - id: "hi-1154"
+    target: "t̪ʰ"
+    reading: "th"
+    ipa: "t̪ʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "साथ", reading: "sāth", ipa: "saːt̪ʰ" }
+      - { target: "हाथ", reading: "hāth", ipa: "ɦaːt̪ʰ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "सात", reading: "sāt" }, { word: "साथ", reading: "sāth" }] }
+  - id: "hi-1155"
+    target: "d̪"
+    reading: "d"
+    ipa: "d̪"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "दो", reading: "dō", ipa: "d̪oː" }
+      - { target: "दस", reading: "das", ipa: "d̪əs" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दीन", reading: "dīn" }, { word: "तीन", reading: "tīn" }] }
+      - { id: "n3", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दाल", reading: "dāl" }, { word: "डाल", reading: "ḍāl" }] }
+  - id: "hi-1156"
+    target: "d̪ʱ"
+    reading: "dh"
+    ipa: "d̪ʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "दूध", reading: "dūdh", ipa: "d̪uːd̪ʱ" }
+      - { target: "धोना", reading: "dhōnā", ipa: "d̪ʱoːnaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दान", reading: "dān" }, { word: "धान", reading: "dhān" }] }
+  - id: "hi-1157"
+    target: "ʈ"
+    reading: "ṭ"
+    ipa: "ʈ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "पेट", reading: "pēṭ", ipa: "peːʈ" }
+      - { target: "सीट", reading: "sīṭ", ipa: "siːʈ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1158"
+    target: "ʈʰ"
+    reading: "ṭh"
+    ipa: "ʈʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "आठ", reading: "āṭh", ipa: "aːʈʰ" }
+      - { target: "मीठा", reading: "mīṭhā", ipa: "miːʈʰaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "साथ", reading: "sāth" }, { word: "साठ", reading: "sāṭh" }] }
+  - id: "hi-1159"
+    target: "ɖ"
+    reading: "ḍ"
+    ipa: "ɖ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "डाल", reading: "ḍāl", ipa: "ɖaːl" }
+      - { target: "अंडा", reading: "aṇḍā", ipa: "əɳɖaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दाल", reading: "dāl" }, { word: "डाल", reading: "ḍāl" }] }
+  - id: "hi-1160"
+    target: "ɖʱ"
+    reading: "ḍh"
+    ipa: "ɖʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "ढाई", reading: "ḍhāī", ipa: "ɖʱaːiː" }
+      - { target: "ढेर", reading: "ḍhēr", ipa: "ɖʱeːr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "भाई", reading: "bhāī" }, { word: "ढाई", reading: "ḍhāī" }] }
+  - id: "hi-1161"
+    target: "tʃ"
+    reading: "c"
+    ipa: "tʃ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "चार", reading: "cār", ipa: "tʃaːr" }
+      - { target: "चाय", reading: "cāy", ipa: "tʃaːj" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "चाय", reading: "cāy" }, { word: "गाय", reading: "gāy" }] }
+  - id: "hi-1162"
+    target: "tʃʰ"
+    reading: "ch"
+    ipa: "tʃʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "छह", reading: "chah", ipa: "tʃʰəɦ" }
+      - { target: "कुछ", reading: "kuch", ipa: "kʊtʃʰ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "छानना", reading: "chānnā" }, { word: "जानना", reading: "jānnā" }] }
+  - id: "hi-1163"
+    target: "dʒ"
+    reading: "j"
+    ipa: "dʒ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "आज", reading: "āj", ipa: "aːdʒ" }
+      - { target: "जून", reading: "jūn", ipa: "dʒuːn" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "जानना", reading: "jānnā" }, { word: "छानना", reading: "chānnā" }] }
+  - id: "hi-1164"
+    target: "dʒʱ"
+    reading: "jh"
+    ipa: "dʒʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "झील", reading: "jhīl", ipa: "dʒʱiːl" }
+      - { target: "समझना", reading: "samjhnā", ipa: "səmdʒʱnaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1165"
+    target: "k"
+    reading: "k"
+    ipa: "k"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "कब", reading: "kab", ipa: "kəb" }
+      - { target: "एक", reading: "ēk", ipa: "eːk" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "गहना", reading: "gahnā" }, { word: "कहना", reading: "kahnā" }] }
+  - id: "hi-1166"
+    target: "kʰ"
+    reading: "kh"
+    ipa: "kʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "खूब", reading: "khūb", ipa: "kʰuːb" }
+      - { target: "आँख", reading: "ām̐kh", ipa: "ãːkʰ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "रहना", reading: "rahnā" }, { word: "रखना", reading: "rakhnā" }] }
+  - id: "hi-1167"
+    target: "ɡ"
+    reading: "g"
+    ipa: "ɡ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "आगे", reading: "āgē", ipa: "aːɡeː" }
+      - { target: "लोग", reading: "lōg", ipa: "loːɡ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "गहना", reading: "gahnā" }, { word: "कहना", reading: "kahnā" }] }
+  - id: "hi-1168"
+    target: "ɡʱ"
+    reading: "gh"
+    ipa: "ɡʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "घर", reading: "ghar", ipa: "ɡʱər" }
+      - { target: "घी", reading: "ghī", ipa: "ɡʱiː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "बाघ", reading: "bāgh" }, { word: "बाग़", reading: "bāġ" }] }
+  - id: "hi-1169"
+    target: "m"
+    reading: "m"
+    ipa: "m"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "मई", reading: "maī", ipa: "məiː" }
+      - { target: "नाम", reading: "nām", ipa: "naːm" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "काम", reading: "kām" }, { word: "कान", reading: "kān" }] }
+  - id: "hi-1170"
+    target: "n"
+    reading: "n"
+    ipa: "n"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "नौ", reading: "nau", ipa: "nɔː" }
+      - { target: "दान", reading: "dān", ipa: "d̪aːn" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दिन", reading: "din" }, { word: "दिल", reading: "dil" }] }
+  - id: "hi-1171"
+    target: "ŋ"
+    reading: "ṅ"
+    ipa: "ŋ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "जंगल", reading: "jaṅgal", ipa: "dʒəŋɡəl" }
+      - { target: "पंखा", reading: "paṅkhā", ipa: "pəŋkʰaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1172"
+    target: "ɳ"
+    reading: "ṇ"
+    ipa: "ɳ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "अंडा", reading: "aṇḍā", ipa: "əɳɖaː" }
+      - { target: "ठंडा", reading: "ṭhaṇḍā", ipa: "ʈʰəɳɖaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1173"
+    target: "ɲ"
+    reading: "ñ"
+    ipa: "ɲ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "इंजीनियर", reading: "iñjīniyar", ipa: "ɪɲdʒiːnɪjər" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1174"
+    target: "r"
+    reading: "r"
+    ipa: "r"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "घर", reading: "ghar", ipa: "ɡʱər" }
+      - { target: "चार", reading: "cār", ipa: "tʃaːr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "पल", reading: "pal" }, { word: "पर", reading: "par" }] }
+  - id: "hi-1175"
+    target: "ɽ"
+    reading: "ṛ"
+    ipa: "ɽ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "सड़क", reading: "saṛak", ipa: "səɽək" }
+      - { target: "बड़ा", reading: "baṛā", ipa: "bəɽaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); Masica (1991), The Indo-Aryan Languages, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "बचा", reading: "bacā" }, { word: "बड़ा", reading: "baṛā" }] }
+  - id: "hi-1176"
+    target: "ɽʱ"
+    reading: "ṛh"
+    ipa: "ɽʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "पढ़ना", reading: "paṛhnā", ipa: "pəɽʱnaː" }
+      - { target: "साढ़े", reading: "sāṛhē", ipa: "saːɽʱeː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); Gupta (1982), Indo-Iranian Journal 24(3), as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "पड़ना", reading: "paṛnā" }, { word: "पढ़ना", reading: "paṛhnā" }] }
+  - id: "hi-1177"
+    target: "l"
+    reading: "l"
+    ipa: "l"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "कल", reading: "kal", ipa: "kəl" }
+      - { target: "आलू", reading: "ālū", ipa: "aːluː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दिन", reading: "din" }, { word: "दिल", reading: "dil" }] }
+  - id: "hi-1178"
+    target: "ʋ"
+    reading: "v"
+    ipa: "ʋ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "वह", reading: "vah", ipa: "ʋəɦ" }
+      - { target: "चावल", reading: "cāval", ipa: "tʃaːʋəl" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "वह", reading: "vah" }, { word: "यह", reading: "yah" }] }
+  - id: "hi-1179"
+    target: "j"
+    reading: "y"
+    ipa: "j"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "चाय", reading: "cāy", ipa: "tʃaːj" }
+      - { target: "यार", reading: "yār", ipa: "jaːr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "वह", reading: "vah" }, { word: "यह", reading: "yah" }] }
+  - id: "hi-1180"
+    target: "s"
+    reading: "s"
+    ipa: "s"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "दस", reading: "das", ipa: "d̪əs" }
+      - { target: "सौ", reading: "sau", ipa: "sɔː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker); Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "सास", reading: "sās" }, { word: "सात", reading: "sāt" }] }
+  - id: "hi-1181"
+    target: "ɦ"
+    reading: "h"
+    ipa: "ɦ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "है", reading: "hai", ipa: "ɦɛː" }
+      - { target: "शहर", reading: "śahar", ipa: "ʃəɦər" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "हाथ", reading: "hāth" }, { word: "साथ", reading: "sāth" }] }
+  - id: "hi-1182"
+    target: "ʃ"
+    reading: "ś"
+    ipa: "ʃ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "शहर", reading: "śahar", ipa: "ʃəɦər" }
+      - { target: "देश", reading: "dēś", ipa: "d̪eːʃ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1183"
+    target: "ʂ"
+    reading: "ṣ"
+    ipa: "ʂ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "भाषा", reading: "bhāśā", ipa: "bʱaːʃaː" }
+      - { target: "निषेध", reading: "niśēdh", ipa: "nɪʃeːd̪ʱ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1184"
+    target: "f"
+    reading: "f"
+    ipa: "f"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "साफ़", reading: "sāf", ipa: "saːf" }
+      - { target: "काफ़ी", reading: "kāfī", ipa: "kaːfiː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "साफ़", reading: "sāf" }, { word: "साथ", reading: "sāth" }] }
+  - id: "hi-1185"
+    target: "z"
+    reading: "z"
+    ipa: "z"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "मेज़", reading: "mēz", ipa: "meːz" }
+      - { target: "रोज़", reading: "rōz", ipa: "roːz" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; this course's Hindi and Urdu script decks (hi-script-*; not yet checked by a Hindi or Urdu speaker)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "प्यार", reading: "pyār" }, { word: "प्याज़", reading: "pyāz" }] }
+  - id: "hi-1186"
+    target: "ʒ"
+    reading: "z͟h"
+    ipa: "ʒ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "अझ़दहा", reading: "az͟hdahā", ipa: "əʒd̪əɦaː", bases: [{ word: "अझ़दहा", base: "अझ़दहा", reading: "az͟hdahā" }] }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1187"
+    target: "q"
+    reading: "q"
+    ipa: "q"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "क़िस्मत", reading: "qismat", ipa: "qɪsmət̪", bases: [{ word: "क़िस्मत", base: "क़िस्मत", reading: "qismat" }] }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); Kachru (2006), Hindi, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+  - id: "hi-1188"
+    target: "x"
+    reading: "k͟h"
+    ipa: "x"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "तारीख़", reading: "tārīk͟h", ipa: "t̪aːriːx" }
+      - { target: "ख़रीदना", reading: "k͟harīdnā", ipa: "xəriːd̪naː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1189"
+    target: "ɣ"
+    reading: "ġ"
+    ipa: "ɣ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "बाग़", reading: "bāġ", ipa: "baːɣ" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "बाघ", reading: "bāgh" }, { word: "बाग़", reading: "bāġ" }] }
+  - id: "hi-1190"
+    target: "ʔ"
+    reading: "'"
+    ipa: "ʔ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }

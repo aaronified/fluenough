@@ -1,0 +1,45 @@
+schema: 1
+id: "hi-en-phonology-syllables"
+kind: "layer"
+core: "hi-phonology-syllables"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hindustani syllables and clusters (IPA)"
+description: "Syllable weight, schwa deletion, final stops and the consonant clusters of Sanskrit, Hindi, Persian and Arabic words: one card each. For learners who know the IPA or want to learn it. Variety taught: the standard Delhi variety of Hindustani, Hindi and Urdu together. This is a proposal, not yet confirmed by the owner, a Hindi or Urdu speaker or a phonetician. Where a sound belongs to Urdu or to Persian and Arabic loans only, the card says so, and the Urdu script is given beside the Devanagari wherever they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "hi-1217":
+    native: "syllable weight: light, heavy and extra-heavy"
+    notes:
+      "n1": "A light syllable (one mora) ends in a short vowel: V. A heavy syllable (two moras) ends in a long vowel, or in a short vowel and a consonant: VV, VC. An extra-heavy syllable (three moras) ends in a long vowel and a consonant, or a short vowel and two consonants: VVC, VCC. Stress counts these (see the prosody deck)."
+  "hi-1218":
+    native: "ə often drops out of an unaccented syllable"
+    notes:
+      "n1": "The schwa ə has a strong tendency to vanish if its syllable is unaccented, and is subject to schwa deletion within a word in some contexts. This course's script guide says the same: the carried a of घर (ghar) goes quiet at the end of the word, and inside long words it can go quiet too, so each word is learnt as it is said."
+    examples:
+      "कल": "tomorrow; yesterday"
+      "शहर": "city"
+  "hi-1219":
+    native: "clusters of Sanskrit and Hindi words"
+    notes:
+      "n1": "Schmidt (2003) lists these two-consonant clusters as distinctively Sanskrit or Hindi: kj, kr, kl, kʃ, sk, st, sʋ, ʃr, ʃʋ, sn, sp, sm, sj, nj, tj, tʋ, dj, dʋ, lj, rj, mj, nʋ, lʋ, rʋ, mʋ, dʒj, dʒʋ, tʃj, tʃʋ, ʂk, ʂʈ, ʂɳ, ʂp, ʂm, ʂj and ʂʋ. This course's script deck has many: क्ष (kśa), स्त (sta), स्क (ska), प्य (pya)."
+    examples:
+      "प्रतीक्षा": "waiting; everyday इंतज़ार (intazār)"
+      "रास्ता": "way; route"
+  "hi-1220":
+    native: "clusters of Persian and Arabic words, mainly Urdu"
+    notes:
+      "n1": "Schmidt (2003) lists these as distinctively Perso-Arabic or Urdu: ʃt, ʃk, ʒd, ʒɡ, fʃ, ʃf, ft, tf, fr, lx, xl, rf, xf, mt, ms, mz, bl, nz, zf, fz, zq, qz, xr, rx, xt, qt, tq, nf, fn, nx, xn, mx, xm, xʃ, ɣz and rɣ. In this course तनख़्वाह (tank͟hvāh), salary, has nx."
+    examples:
+      "तनख़्वाह": "salary; pay"
+  "hi-1221":
+    native: "word-final stops: not released, but still four-way"
+    notes:
+      "n1": "Stops at the end of a word are not released, yet they keep the four-way difference of phonation. Standalone aspirates at the end of a syllable tend to lose their breath, particularly before another consonant (see the allophones deck)."
+    examples:
+      "दूध": "milk"
+      "साथ": "together"

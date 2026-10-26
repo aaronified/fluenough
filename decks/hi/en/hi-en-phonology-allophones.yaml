@@ -1,0 +1,92 @@
+schema: 1
+id: "hi-en-phonology-allophones"
+kind: "layer"
+core: "hi-phonology-allophones"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hindustani sound variants (IPA)"
+description: "Some of the ways Hindustani sounds vary, and which sounds Hindi replaces: one card each, taught with example words and never used to work out how a word is said. For learners who know the IPA or want to learn it. Variety taught: the standard Delhi variety of Hindustani, Hindi and Urdu together. This is a proposal, not yet confirmed by the owner, a Hindi or Urdu speaker or a phonetician. Where a sound belongs to Urdu or to Persian and Arabic loans only, the card says so, and the Urdu script is given beside the Devanagari wherever they differ."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "hi-1222":
+    native: "ʋ said as w between a consonant and a vowel"
+    notes:
+      "n1": "Hindustani does not tell v and w apart: they are conditional variants of ʋ. It is said w in an onglide, between an onset consonant and a following vowel, as in द्वीप (dvīp), island, and v elsewhere, as in व्रत (vrat), vow; native speakers are usually unaware of the difference. After a consonant that follows a vowel the choice is free, so अद्वैत (advait) may be said with w, with v, or in between. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "द्वीप":
+        native: "island"
+        bases:
+          "द्वीप": "island"
+      "व्रत":
+        native: "vow"
+        bases:
+          "व्रत": "vow"
+  "hi-1223":
+    native: "ə said as ɛ or ɔ near ɦ"
+    notes:
+      "n1": "Before ɦ plus a short vowel or a deleted schwa, the short a shifts to ɛ, or to ɔ if the short vowel is u. This is part of the prestige dialect of Delhi, may not occur to the full degree for every speaker, and can go further: the vowel after ɦ becomes ɛ or ɔ too, ɦ is lost, and the vowels join into a long ɛː or ɔː. बहुत (bahut), very, goes bahut, bɔhut, bɔhɔt, bɔːt; कहना (kahnā), to say, goes kahnā, kɛhnā, kɛːnā, though कहेगा (kahēgā), he will say, stays regular. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "बहुत": "very, a lot of, many"
+      "कहना": "to say"
+  "hi-1224":
+    native: "ɖ said as ɽ between vowels and at the end of a word"
+    notes:
+      "n1": "In many Indo-Aryan languages, and in Standard Hindi, ɖ and ɖʱ occur at the start of a word, in a geminate and after a nasal, and ɽ and ɽʱ between vowels and at the end of a word. In Hindi this follows the start of a morpheme more than the start of a word, so निडर (niḍar), fearless, from ni- plus ḍar, has ɖ inside the word. The source's example of ɽ is नीड़ज (nīṛaj), bird. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "डाल": "branch"
+      "बड़ा": "big"
+      "अंडा": "egg"
+  "hi-1225":
+    native: "ɽʱ said as ɽ in colloquial western Hindi"
+    notes:
+      "n1": "ɽʱ tends, though not always, to lose its breath and be said ɽ in colloquial western Hindi, and is kept as a separate sound in eastern Hindi. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "पढ़ना": "to read"
+      "साढ़े": "half past; and a half"
+  "hi-1226":
+    native: "an aspirate at the end of a syllable loses its breath"
+    notes:
+      "n1": "A stand-alone aspirate at the end of a syllable tends to lose its breath, particularly before another consonant. The source's examples are साठ सौ (sāṭh sau), sixty hundred, पढ़ना (paṛhnā), to read, and मुझ से (mujh sē), from me, said without the breath. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "साठ": "60, sixty"
+      "पढ़ना": "to read"
+  "hi-1227":
+    native: "r said as a tap or a trill"
+    notes:
+      "n1": "r is usually flapped or trilled. Between vowels it may be a single tap, but it may also be a clear trill, especially at the start of a word and at the end of a syllable, and a doubled rr is always a trill in Arabic and Persian loans: ज़रा (zarā), a little, against ज़र्रा (zarrā), particle, which is well trilled. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "घर": "house; home"
+      "चार": "4, four"
+  "hi-1228":
+    native: "z said for s beside voiced consonants, and v devoiced"
+    notes:
+      "n1": "z is a foreign sound, but it is also found as an allophone of s beside voiced consonants, as in रसगुल्ला (rasgullā) and नसबंदी (nasbandī). In the same way v can be devoiced before voiceless consonants, as when बेवक़ूफ़ (bēvqūf), foolish, is said. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+  "hi-1229":
+    native: "Hindi often replaces the Persian and Arabic sounds"
+    notes:
+      "n1": "Hindi speakers may replace x, z, ʒ, ɣ, q and f with kʰ, dʒ, dʒʱ, ɡ, k and pʰ, except in the careful speech of educated speakers; the source says x, ɣ, z and q are mostly replaced by kʰ, ɡ, dʒ and k in Hindi, and ʒ is often replaced by z, or dʒ, or in rarer cases dʒʱ. f and z are now well established in Hindi, but x, ɣ, q and ʒ are still seen as Urdu's. Urdu speakers, for their part, usually replace ɳ and ʂ with n and ʃ."
+    examples:
+      "तारीख़": "date"
+      "ख़रीदना": "to buy"
+  "hi-1230":
+    native: "ɦ and h: no difference"
+    notes:
+      "n1": "ɦ is typically voiced, especially between vowels, but there is no phonemic difference between it and its voiceless counterpart h. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "हाथ": "hand; arm"
+      "शहर": "city"
+  "hi-1231":
+    native: "ŋ before velars, and ṅ said as ṅg"
+    notes:
+      "n1": "ŋ mostly occurs only before a velar, as in अंकित (aṅkit), but words such as मुम्किन (mumkin) and तिनका (tinkā) make it a phoneme. A Sanskrit loan with ṅ elsewhere is said ṅg: वाङ्मय (vāṅmaya) is said vāṅ(g)maya. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "जंगल": "forest"
+      "पंखा": "fan"
+  "hi-1232":
+    native: "Urdu's final short a, which Hindi does not keep apart"
+    notes:
+      "n1": "Urdu has a short a at the end of a word, spelled ہ (ha), as in کمرہ (kamra), room, which contrasts with the long aː spelled ا (ā), as in لڑکا (laṛkā), boy. Urdu speakers often do not make the contrast, and Hindi never does: both are aː."

@@ -1,0 +1,117 @@
+schema: 1
+id: "hi-phonology-allophones"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "hi-1222"
+    target: "ʋ"
+    ipa: "ʋ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "द्वीप", reading: "dvīp", ipa: "d̪ʋiːp", bases: [{ word: "द्वीप", base: "द्वीप", reading: "dvīp" }] }
+      - { target: "व्रत", reading: "vrat", ipa: "ʋrət̪", bases: [{ word: "व्रत", base: "व्रत", reading: "vrat" }] }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1223"
+    target: "ə"
+    ipa: "ə"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "बहुत", reading: "bahut", ipa: "bəɦʊt̪" }
+      - { target: "कहना", reading: "kahnā", ipa: "kəɦnaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1224"
+    target: "ɖ"
+    ipa: "ɖ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "डाल", reading: "ḍāl", ipa: "ɖaːl" }
+      - { target: "बड़ा", reading: "baṛā", ipa: "bəɽaː" }
+      - { target: "अंडा", reading: "aṇḍā", ipa: "əɳɖaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1225"
+    target: "ɽʱ"
+    ipa: "ɽʱ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "पढ़ना", reading: "paṛhnā", ipa: "pəɽʱnaː" }
+      - { target: "साढ़े", reading: "sāṛhē", ipa: "saːɽʱeː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Gupta (1982), Indo-Iranian Journal 24(3), as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+  - id: "hi-1226"
+    target: "kʰ"
+    ipa: "kʰ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "साठ", reading: "sāṭh", ipa: "saːʈʰ" }
+      - { target: "पढ़ना", reading: "paṛhnā", ipa: "pəɽʱnaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1227"
+    target: "r"
+    ipa: "r"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "घर", reading: "ghar", ipa: "ɡʱər" }
+      - { target: "चार", reading: "cār", ipa: "tʃaːr" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0)" }
+  - id: "hi-1228"
+    target: "z"
+    ipa: "z"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1229"
+    target: "x"
+    ipa: "x"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "तारीख़", reading: "tārīk͟h", ipa: "t̪aːriːx" }
+      - { target: "ख़रीदना", reading: "k͟harīdnā", ipa: "xəriːd̪naː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Wikipedia, Help:IPA/Hindi and Urdu (CC BY-SA 4.0); Kachru (2006), Hindi, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+  - id: "hi-1230"
+    target: "ɦ"
+    ipa: "ɦ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "हाथ", reading: "hāth", ipa: "ɦaːt̪ʰ" }
+      - { target: "शहर", reading: "śahar", ipa: "ʃəɦər" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1231"
+    target: "ŋ"
+    ipa: "ŋ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "जंगल", reading: "jaṅgal", ipa: "dʒəŋɡəl" }
+      - { target: "पंखा", reading: "paṅkhā", ipa: "pəŋkʰaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1232"
+    target: "a"
+    ipa: "a"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }

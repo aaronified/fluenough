@@ -1,0 +1,55 @@
+schema: 1
+id: "hi-phonology-prosody"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Hindustani phonology; Help:IPA/Hindi and Urdu)", url: "https://en.wikipedia.org/wiki/Hindustani_phonology" }
+source: "Ohala (1999), 'Hindi', in the Handbook of the International Phonetic Association, Cambridge University Press, pp. 100-103 (the IPA's own Handbook; Wikipedia names no 'Illustration of the IPA' in the Journal of the International Phonetic Association for Hindi or Urdu, and none could be checked); also as cited by Wikipedia: Shapiro (2003), 'Hindi', and Schmidt (2003), 'Urdu', in Cardona and Jain (eds), The Indo-Aryan Languages, Routledge; Masica (1991), The Indo-Aryan Languages, Cambridge University Press; Kachru (2006), Hindi; Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu. Text adapted from Wikipedia, 'Hindustani phonology' and 'Help:IPA/Hindi and Urdu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Hindustani_phonology"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  - id: "hi-1212"
+    target: "ˈ"
+    ipa: "ˈ"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Hussein (1997), Phonetic Correlates of Lexical Stress in Urdu, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0); Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+      - { id: "n2", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1213"
+    target: "Vː"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "काम", reading: "kām", ipa: "kaːm" }
+      - { target: "बीस", reading: "bīs", ipa: "biːs" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Kachru (2006), Hindi, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "कम", reading: "kam" }, { word: "काम", reading: "kām" }] }
+      - { id: "n3", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "दिन", reading: "din" }, { word: "दीन", reading: "dīn" }] }
+  - id: "hi-1214"
+    target: "Cː"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    examples:
+      - { target: "बच्चा", reading: "baccā", ipa: "bətʃtʃaː" }
+      - { target: "पक्का", reading: "pakkā", ipa: "pəkkaː" }
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+      - { id: "n2", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "बचा", reading: "bacā" }, { word: "बच्चा", reading: "baccā" }] }
+      - { id: "n3", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "पका", reading: "pakā" }, { word: "पक्का", reading: "pakkā" }] }
+      - { id: "n4", kind: "note", source: "words are cards of this course, meanings from its English layer (not yet checked by a Hindi or Urdu speaker)", words: [{ word: "जाना", reading: "jānā" }, { word: "जानना", reading: "jānnā" }] }
+  - id: "hi-1215"
+    target: "Intonation"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there" }
+  - id: "hi-1216"
+    target: "Nasalisation"
+    pos: "other"
+    modes: ["production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note", source: "Wikipedia, Hindustani phonology (CC BY-SA 4.0), after Ohala (1999) and the sources named there; Masica (1991), The Indo-Aryan Languages, as cited by Wikipedia, Hindustani phonology (CC BY-SA 4.0)" }
