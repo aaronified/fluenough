@@ -26,6 +26,14 @@ Answers (owner, 2026-10-26, to the questions in this plan's first draft):
 
 > IPA transcription (phonetic [kʰæt] on every card): wikitionary has this. i dont trust rules here because a lot of languages have a lot of exceptions (e.g. engllish)
 
+Later the same day (owner, 2026-10-26):
+
+> the other 26 terms, including alveolar ridge, hard palate, glottis and the manner terms, have no image on Wikidata. They need to be fetched from elsewhere and must not be our drawings.
+
+> add the IPA extras, and find the images
+
+> the IPA deck should teach me the different manners of articulation, places, phonation, oral/nasal, median-lateral, airstream meachanism, etc as well.
+
 The term is the **alveolar ridge**, not "bridge": the bony ridge behind the
 upper teeth. The glossary uses it.
 
@@ -111,6 +119,28 @@ no card id changes (ids are permanent).
 | 11 | Diacritics, rare sounds, fine detail | the existing units |
 | 12 | extIPA and VoQS, not taught | one explanatory card set: what the extensions are for (speech disorders, voice quality), that they exist, where to read them. No drills |
 
+**The dimensions the course teaches (owner, 2026-10-26), each a unit with
+images and sound contrasts.** Proposed order and wording; the unit list in the
+table above is regrouped around them.
+
+| Dimension | What it teaches | Contrast examples (sounds that differ in only this) |
+|---|---|---|
+| Place | where the airflow is shaped: bilabial to glottal, with the diagrams above | /p/ and /t/ and /k/ |
+| Manner | stop, nasal, trill, tap or flap, fricative, approximant, affricate | /t/ and /s/; /s/ and /ɹ/ |
+| Phonation | voiced and voiceless; breathy and creaky voice; aspiration | /p/ and /b/; /pʰ/ and /p/; Hindustani /b/ and /bʱ/ |
+| Oral and nasal | whether air also goes through the nose | /d/ and /n/ |
+| Central (median) and lateral | air over the middle of the tongue, or over its sides | /s/ and /ɬ/; /ɹ/ and /l/ |
+| Airstream mechanism | pulmonic (lungs); glottalic: ejective and implosive; velaric: clicks | /k/ and /kʼ/; /b/ and /ɓ/; clicks in Zulu |
+| Vowels | height, backness, rounding, length, nasalisation | /i/ and /u/ and /y/ |
+| Secondary articulation and coarticulation | palatalised, velarised, labialised, pharyngealised; labial-velar | /t/ and /tʲ/; /w/ |
+| Suprasegmentals | stress, tone, length, intonation | tone minimal pairs |
+| Reading the whole chart | each cell as the meeting of these dimensions, once all have been met | after vowels |
+| extIPA and VoQS | what they are for, one explanatory set, with the 2025 chart (CC BY-SA 4.0) and the VoQS chart; not taught | none |
+
+Examples take their languages from the course's tags (Hindustani, Bengali,
+Telugu, Spanish and others), as the existing cards do; where the app has no
+language with the sound, another language is used, as the cards already do.
+
 **Terms.** Each term is a card with an image and an example contrast, built
 from machinery that exists: `image` for the picture, `examples` with
 `sounds: true` and `false` for the contrast. A term is introduced in the unit
@@ -120,20 +150,36 @@ ridge**, hard palate, soft palate (velum), uvula, glottis, tongue tip, blade
 and back, retroflex, nasal and oral, stop, fricative, approximant, vowel
 height, backness, rounding, length, stress, tone.
 
-- **Images.** Original line drawings (mid-sagittal sections for place, one
-  per place; a mouth-and-tongue view for vowels), made for the course and
-  shipped as `image` webp with `image_credit`; or Wikimedia Commons figures
-  under a compatible licence, credited. **Checked 2026-10-26 (partial):**
-  Wikidata and Commons are blocked from this environment (the proxy refuses
-  them), so I could not read Wikidata's `image` property. Through English
-  Wikipedia's API I saw its lead images for three terms: *Allophone*
-  (`Phoneme-allophone-determination-chart.svg`), *Manner of articulation*
-  (`Illu01_head_neck.jpg`) and *Place of articulation*
-  (`Places_of_articulation.svg`); *Alveolar ridge*, *Phoneme*, *Minimal
-  pair*, *Voice* and *Aspiration* have none. Their licences are not read yet
-  (the API was rate limited), so none is cleared. Most terms will likely need
-  our own drawings. Primary downside of drawing our own: accuracy depends on
-  a reviewer.
+- **Images (decided, owner, 2026-10-26): fetched from elsewhere, never our
+  drawings.** Searched on Wikidata (SPARQL) and Wikimedia Commons, 2026-10-26.
+  Wikidata's `image` property covers 17 of 43 terms, mostly ordinary photos;
+  Commons has what the course needs, as whole series:
+
+  | What | Files on Commons (as found) | Licence as listed |
+  |---|---|---|
+  | One sagittal diagram per sound, plosives | `IPA t Sagittal Section.svg`, `IPA d …`, `IPA g …`, `IPA q …`, `IPA ɢ …`, and others | CC0 |
+  | One diagram per sound, fricatives, approximants, nasals, trills, uvular and pharyngeal | `Voiceless alveolar fricative articulation.svg`, `Voiced retroflex approximant.svg`, `Voiced uvular nasal.svg`, `Voiceless pharyngeal fricative articulation.svg`, and others | CC BY-SA 4.0 (one CC BY 4.0) |
+  | The places, one image each | `Bilabial.svg`, `Dental.png`, `Alveolar.svg`, `Retroflex.svg`, `Palataal.svg`, `Velar.svg`, `Glotal.svg`, `Laryngaal.svg`, `Epiglotal consonant.svg`, `Faryngal consonant.svg`, `Labiodentaal.svg` | public domain, CC BY-SA 3.0 (Bilabial, Alveolar), CC BY 3.0 (Dental) |
+  | Mouth, palate, soft palate, uvula, larynx (alveolar ridge, hard palate, glottis) | `Illu mouth.jpg`, `Illu01 head neck.jpg`, `Gray855.png`, `Gaumen.png`, `Labeled Human Mouth.jpg`, `Larynx.svg` | public domain, CC BY-SA 3.0 and 4.0, CC0 |
+  | Vowel charts | `IPA vowels.svg` (CC0), `IPA vowel chart.svg`, `Cardinal vowels on a vowel chart.svg` (CC BY-SA 4.0), the IPA's 2015 vowels (CC BY-SA 3.0) | as listed |
+  | The whole chart | `IPA chart 2020.svg` and `.pdf` | CC BY-SA 3.0 |
+  | extIPA and VoQS | `ExtIPA chart (2025).pdf` (CC BY-SA 4.0), `ExtIPA chart (2021).pdf` (CC BY-SA 3.0), `ExtIPA chart (2015).pdf` (public domain), `VOQS chart (2016).pdf` (public domain) | as listed |
+  | Phoneme and allophone | `Phoneme-allophone-determination-chart.svg` | public domain |
+
+  **Not found yet:** voicing and aspiration (a voice-onset-time figure),
+  tone, stress, minimal pairs, the airstream mechanisms (ejective, implosive,
+  click), lateral and the nasal-versus-oral contrast as a pair. Commons'
+  search is weak for these; next try its categories and the IPA symbols'
+  own pages.
+  **Checks before any file is used:** the licence on the file page itself
+  (this list is from the API), the author and credit line for
+  `image_credit`, and the deck licence. Decks are CC BY-SA 4.0; CC0, public
+  domain and BY-SA 4.0 files fit it; a BY-SA 3.0 file is shown unmodified
+  with its own licence and credit, and whether it may sit in a 4.0 deck is
+  to be confirmed. SVG and PDF files are rasterised to the webp the `image`
+  field takes, with the credit kept. The Commons and Wikidata APIs rate
+  limited this environment repeatedly (HTTP 429), so the list is from slow,
+  batched reads.
 - **"Immaculate."** I can build it; I cannot certify phonetic accuracy. No
   unit is marked `reviewed` until a phonetician has read it, and the whole
   course stays `unreviewed` until then, as every deck does.
@@ -199,8 +245,7 @@ the `phonetic` field and import tool 10 to 16 hours. Confidence: low.
    now; the second waits on B1, which few languages have.
 6. **Does this lift "decks stop at A1" (2026-10-23) for IPA decks?** The owner
    asked for them, so I read it as yes, for IPA decks only.
-7. **Images:** our own drawings, or Wikimedia figures. Own: accuracy rests on
-   us. Commons: credit and licence per figure.
+7. ~~Images~~ Decided: fetched, never our drawings (see Images). Left: the sounds' images not found yet, and the BY-SA 3.0 question above.
 
 See also: [Plan-Ipa-Course](Plan-Ipa-Course) · [Roadmap](Roadmap) ·
 [Plans-Index](Plans-Index) · [Home](Home)
