@@ -76,6 +76,8 @@ class CoreWritten extends CoreCard {
     required this.target,
     this.reading,
     this.ipa,
+    this.phonetic,
+    this.phoneticSource,
     this.altTarget = const <String>[],
     this.targetScripts = const <String, String>{},
     this.words,
@@ -108,6 +110,11 @@ class CoreWritten extends CoreCard {
   final String target;
   final String? reading;
   final String? ipa;
+
+  /// The narrow `[ ]` transcription and its source (`phonetic`,
+  /// `phonetic_source`).
+  final String? phonetic;
+  final String? phoneticSource;
   final List<String> altTarget;
 
   /// The word in the language's other scripts (`target_scripts`).
@@ -798,6 +805,8 @@ class _Merge {
       native: native,
       reading: card.reading,
       ipa: card.ipa,
+      phonetic: card.phonetic,
+      phoneticSource: card.phoneticSource,
       altTarget: card.altTarget,
       targetScripts: card.targetScripts,
       words: card.words,

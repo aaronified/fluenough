@@ -392,6 +392,43 @@ class Iso6393Codes(Validated):
                     fresh.doCleanups()
 
 
+class PhoneticField(Validated):
+    """A card's narrow `[ ]` transcription and where it came from."""
+
+    CARD = VOCAB + '    ipa: "ɡʱər"\n'
+
+    def _with(self, *lines: str) -> str:
+        return self.CARD + "".join(f"    {line}\n" for line in lines)
+
+    def test_a_narrow_form_with_its_source_is_valid(self) -> None:
+        for source in ("wiktionary", "rules"):
+            with self.subTest(source):
+                self.assertValid(self._with('phonetic: "[ɡʱɐɾ]"',
+                                            f'phonetic_source: "{source}"'))
+
+    def test_a_card_without_either_is_unchanged(self) -> None:
+        self.assertValid(self.CARD)
+
+    def test_the_source_and_the_form_need_each_other(self) -> None:
+        self.assertRejected(self._with('phonetic: "[ɡʱɐɾ]"'), "phonetic_source must be")
+        self.assertRejected(self._with('phonetic_source: "rules"'),
+                            "phonetic_source is given without phonetic")
+
+    def test_the_source_is_one_of_two(self) -> None:
+        self.assertRejected(self._with('phonetic: "[ɡʱɐɾ]"', 'phonetic_source: "guess"'),
+                            "phonetic_source must be")
+
+    def test_the_form_is_ipa_in_square_brackets(self) -> None:
+        for bad in ('"ɡʱɐɾ"', '"/ɡʱɐɾ/"', '"[ɡʱ ɐɾ!]"', '"[]"'):
+            with self.subTest(bad):
+                self.assertRejected(
+                    self._with(f"phonetic: {bad}", 'phonetic_source: "rules"'),
+                    "square brackets")
+
+    def test_ipa_stays_broad(self) -> None:
+        self.assertRejected(VOCAB + '    ipa: "[ɡʱɐɾ]"\n', "broad IPA")
+
+
 class DeckIds(Validated):
     """A deck id names the language learned, then the one it is taught from."""
 
