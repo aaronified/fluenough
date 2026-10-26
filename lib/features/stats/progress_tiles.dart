@@ -7,9 +7,9 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import 'level_badge.dart';
 
-/// The top of Progress (#418, owner, 2026-10-23: "3 tiles of taught"): a row
-/// of three tiles, words, rules and sentences, counted against what is taught
-/// so far, then the Level tile alone below.
+/// The top of Progress (#418, owner, 2026-10-23: "3 tiles of taught"; two
+/// tiles, owner, 2026-10-26): a row of two tiles, words and rules, counted
+/// against what is taught so far, then the Level tile alone below.
 class ProgressTiles extends StatelessWidget {
   const ProgressTiles({
     super.key,
