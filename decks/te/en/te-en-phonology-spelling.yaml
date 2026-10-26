@@ -1,0 +1,92 @@
+schema: 1
+id: "te-en-phonology-spelling"
+kind: "layer"
+core: "te-phonology-spelling"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Telugu spelling to sound (IPA)"
+description: "How Telugu script is read, with its exceptions, in IPA: one card each. For learners who know the IPA or want to learn it. Variety taught: standard (Coastal Andhra) colloquial Telugu. This is a proposal, not yet confirmed by the owner, a Telugu speaker or a phonetician. Where a source describes another dialect, the card says so."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Telugu language; Help:IPA/Telugu)", url: "https://en.wikipedia.org/wiki/Telugu_language" }
+source: "Bhaskararao and Ray (2017), 'Illustrations of the IPA: Telugu', Journal of the International Phonetic Association 47(2): 231-241, doi 10.1017/S0025100316000207 (named in Wikipedia's references; the article itself was not read); Krishnamurti (2003), The Dravidian Languages, Cambridge University Press, and Lisker and Krishnamurti (1991), Proceedings of the XIIth International Congress of Phonetic Sciences 2: 90-93 (both as cited by Wikipedia). Text adapted from Wikipedia, 'Telugu language' (section Phonology) and 'Help:IPA/Telugu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Telugu_language"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "te-6633":
+    native: "a consonant letter carries the short a"
+    notes:
+      "n1": "Every consonant letter carries the short a, written అ (a), unless a vowel sign or the virama ్ changes it. క (ka) is k plus a."
+    examples:
+      "కాలు": "leg; foot"
+  "te-6634":
+    native: "the virama: it takes the vowel off a letter"
+    notes:
+      "n1": "The virama ్ takes the vowel away from a consonant letter and joins it to the next one in a conjunct. క్క (kka), for example, is a long k."
+    examples:
+      "కల్ల": "lie; falsehood"
+  "te-6635":
+    native: "a doubled letter writes a long consonant"
+    notes:
+      "n1": "A letter written twice, as in క్క (kka), ప్ప (ppa), న్న (nna) or ల్ల (lla), stands for a long consonant, which can change a word: కల (kala, dream) against కల్ల (kalla, falsehood). Wikipedia's IPA help page gives ː for a doubled consonant."
+    examples:
+      "కల్ల": "lie; falsehood"
+      "కన్ను": "eye"
+  "te-6636":
+    native: "the sunna: a nasal that is m at the end of a word"
+    notes:
+      "n1": "The sunna ం (ṁ) is read as the nasal that is said: ṇ before ḍ in పండు (paṇḍu, fruit), and m at the end of a word, as in వారం (vāraṁ, week). This course's readings write a word-final ం (ṁ) as ṁ. In colloquial speech a later or final m can be said as a nasalised w."
+    examples:
+      "వారం": "week"
+      "పండు": "fruit; ripe"
+  "te-6637":
+    native: "the visarga: an h after the vowel"
+    notes:
+      "n1": "The visarga ః (ḥ) is said h. Wikipedia's IPA help page gives అంతఃకరణ (antaḥkaraṇa) as its example, and cites Omniglot for the sign."
+  "te-6638":
+    native: "the arasunna: a half nasal no longer said"
+    notes:
+      "n1": "The half circle ఁ (arasunna) marked a light nasal, as in older spellings such as అతఁడు (ataḍu, he). It is no longer said, and today's spelling leaves it out."
+  "te-6639":
+    native: "the vowel letter ఋ (ru)"
+    notes:
+      "n1": "A vowel letter from Sanskrit. Wikipedia's IPA help page gives it as the syllabic r̩ (ṛ) and compares it to the r of 'rule'; this course's romanisation reads it ru, as in రుతువు (rutuvu, season). The sources differ, and a Telugu speaker needs to settle which one this course should teach."
+    examples:
+      "రుతువు": "season"
+  "te-6640":
+    native: "ఫ (pha) is pʰ in Sanskrit words and f in English loans"
+    notes:
+      "n1": "The letter ఫ (pha) is pʰ in words from Sanskrit and Prakrit, such as ఫలితం (phalitaṁ, result), and f in loans from English, such as ఫోన్ (fōn, phone). In colloquial speech pʰ also becomes f."
+    examples:
+      "ఫలితం": "result"
+      "ఫోన్": "phone"
+  "te-6641":
+    native: "three s letters: శ (ś), ష (ṣ) and స (s)"
+    notes:
+      "n1": "Telugu writes three sibilants: శ (śa) is ʃ, ష (ṣa) is the curled-back ʂ, and స (sa) is s. In colloquial speech శ (ś), and ష (ṣ) in some words, often come out as s (see the allophones deck)."
+    examples:
+      "ఆశ": "hope"
+      "భాష": "language"
+      "బస": "stay (a time spent in a place, such as a hotel)"
+  "te-6642":
+    native: "చ (ca) and జ (ja): tʃ and dʒ, and ts and dz in native words"
+    notes:
+      "n1": "చ (ca) is tʃ and జ (ja) is dʒ. Before a, ā, u or o in native words the source has ts and dz, which modern spelling writes with the same letters చ (ca) and జ (ja); the old letters ౘ (tsa) and ౙ (dza) marked them. This course's other cards write tʃ and dʒ everywhere, and a Telugu speaker needs to settle which words differ."
+    examples:
+      "చేప": "fish"
+      "జేబు": "pocket"
+  "te-6643":
+    native: "ఞ (ñ) and ఙ (ṅ): nasals seen in conjuncts"
+    notes:
+      "n1": "Wikipedia's IPA help page gives ఞ (ña) as ɲ and ఙ (ṅa) as ŋ, with the examples జ్ఞానం (jñānaṁ) and వాఙ్మయం (vāṅmayaṁ). Neither is a phoneme in the JIPA-based inventory, which lists m, n and ɳ only. This course's transcription tool reads జ్ఞానం (jñānaṁ, knowledge) with ɲ."
+    examples:
+      "జ్ఞానం": "knowledge; wisdom"
+  "te-6644":
+    native: "a long ɭ is spelled ళ్ళ (ḷḷa) or ళ్ల (ḷla)"
+    notes:
+      "n1": "The long curled-back l is written ళ్ళ (ḷḷa) or ళ్ల (ḷla): మళ్ళీ (maḷḷī, again) and వెళ్లు (veḷlu) are both seen, and both are common."
+    examples:
+      "మళ్ళీ": "again"
+  "te-6645":
+    native: "old letters no longer used: ఱ (ṟa) and ఴ (ḻa)"
+    notes:
+      "n1": "ఱ (ṟa) once marked a trill, and modern spelling writes ర (ra); older print has it in words like మఱియు (mariyu, and), today మరియు (mariyu). Wikipedia's IPA help page lists ఴ (ḻa) for ɻ and says it is absent in modern Telugu."
