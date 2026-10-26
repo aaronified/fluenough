@@ -172,7 +172,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .radar{position:relative;width:100%;height:250px}
 .radar>svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible}
 .rl{position:absolute;display:flex;flex-direction:column;line-height:1.2;white-space:nowrap;width:max-content}
-.rl b{font-size:calc(13px*var(--t));font-weight:700;display:flex;align-items:center;gap:4px}
+.rl b{font-size:calc(14px*var(--t));font-weight:700;display:flex;align-items:center;gap:4px}
 .rl b svg.i{width:16px;height:16px}
 .rl .vl{font-size:calc(12px*var(--t));font-variant-numeric:tabular-nums;color:var(--onSv)}
 .rl.l{align-items:flex-end;text-align:right}.rl.r{align-items:flex-start}.rl.c{align-items:center;text-align:center}
@@ -212,10 +212,11 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 <script>
 /* ===== palettes: ColorScheme.fromSeed (tonal spot) of the clay seed #8F4C36 (the owner's phone) and the forest seed #3F6C51 (the default), ThemeSeed in lib/app/settings.dart, generated with material_color_utilities ===== */
 const PALS={"forest_light":{"p":"#296a48","onP":"#ffffff","pc":"#aef2c6","onPc":"#085231","sc":"#d1e8d6","onSc":"#374b3e","tt":"#3b6471","tc":"#bfe9f8","onTc":"#224c58","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sMid":"#eaefe8","sHigh":"#e4eae3","sHst":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"},"forest_dark":{"p":"#92d5ab","onP":"#003920","pc":"#085231","onPc":"#aef2c6","sc":"#374b3e","onSc":"#d1e8d6","tt":"#a3cddc","tc":"#224c58","onTc":"#bfe9f8","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sMid":"#1b211d","sHigh":"#262b27","sHst":"#313632","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},"clay_light":{"p":"#8f4c36","onP":"#ffffff","pc":"#ffdbd0","onPc":"#723521","sc":"#ffdbd0","onSc":"#5d4037","tt":"#6a5e2f","tc":"#f4e2a7","onTc":"#52461a","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLow":"#fff1ed","sMid":"#fceae5","sHigh":"#f7e4df","sHst":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","E":"#ba1a1a","onE":"#ffffff"},"clay_dark":{"p":"#ffb59e","onP":"#55200d","pc":"#723521","onPc":"#ffdbd0","sc":"#5d4037","onSc":"#ffdbd0","tt":"#d7c68d","tc":"#52461a","onTc":"#f4e2a7","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLow":"#231917","sMid":"#271d1b","sHigh":"#322825","sHst":"#3d322f","ol":"#a08d87","olv":"#53433f","E":"#ffb4ab","onE":"#690005"}};
-/* ===== skill inks: ModeColors, a fixed colour per skill whatever the seed (lib/ui/theme.dart).
-   Ink (text, bars, icons) = light theme: the dark set's container; dark theme: its onContainer. Both are existing ModeColors values.
-   Script has no ModeColor of its own today (its tile follows the seed): pink (the pair set) or yellow (the reading set) is a tweak. ===== */
+/* ===== skill inks. FIXED (the default; owner, 2026-10-26: "The skill colours must not change with theme"): one colour per skill, the same on light and dark and on every seed. They are the Today pills' hues (blue, orange, purple, green, teal, pink) at HCT tone 53 and chroma 56, the tone where the contrast against a light and a dark surface is best and equal (about 3.1 to 3.4:1 against every surface).
+   THEMED (to compare): today's ModeColors pairs, which change between light and dark: ink = light theme: the dark set's container; dark theme: its onContainer.
+   Script has no ModeColor of its own today (its tile follows the seed): pink or yellow is a tweak. ===== */
 const INK={
+ fixed:{read:'#2f80d9',write:'#c06800',hear:'#7e70db',say:'#518d2c',grammar:'#008f7c',scriptP:'#bc5ca6',scriptY:'#977c00'},
  light:{read:'#284777',write:'#6e3900',hear:'#4f378b',say:'#255023',grammar:'#00504a',scriptP:'#7a2963',scriptY:'#524700'},
  dark:{read:'#d6e3ff',write:'#ffdcc2',hear:'#eaddff',say:'#bdf0b3',grammar:'#b8f0e4',scriptP:'#ffd8ec',scriptY:'#f6e388'}};
 const ICONS={
@@ -248,9 +249,9 @@ const D={
  bn:{lang:'Bengali',other:'Hindustani',gl:'ব',words:[27,70],rules:[4,10],sents:[18,40],since:'Oct 9, 2026',hours:['2.2','624'],
   m:{grammar:[1,12],script:[2,41],read:[5,48],write:[2,35],hear:[1,18],say:[0,0]},
   tags:[['case-endings',3],['aspiration',9],['negation',22]],week:['on','on','off','on','off','on','today']}};
-const S={theme:'dark',pal:'clay',course:'hi',tiles:'one',view:'radar',scr:'P',len:'phone',hl:'1'};
+const S={theme:'dark',pal:'clay',course:'hi',tiles:'one',view:'radar',scr:'P',ink:'fixed',len:'phone',hl:'1'};
 const root=document.getElementById('root');
-const ink=k=>INK[S.theme][k==='script'?'script'+S.scr:k];
+const ink=k=>(S.ink==='fixed'?INK.fixed:INK[S.theme])[k==='script'?'script'+S.scr:k];
 function lang(d){
  return `<div class="lbar"><span class="pill">All</span><span class="pill on"><span class="gl script">${d.gl}</span> ${d.lang}</span><span class="pill">${d.other}</span><span class="sp"></span><span class="ib" style="width:32px;height:32px">${svg('bug')}</span></div>`}
 function nav(){return `<div class="nav">${[['home','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']].map(([i,l])=>`<div class="${l==='Progress'?'on':''}"><span class="pl">${svg(i)}</span>${l}</div>`).join('')}</div>`}
@@ -320,7 +321,7 @@ function render(){
  root.innerHTML=`<section class="opt"><h2>Progress, ${d.lang}</h2>
  <p class="note">Same structure. New: each skill has one colour, the colours of the Today tile icons, and its name is always written in it; the count tiles get an icon and a bar; Level is the one filled tile; Hours get icons. The six skill colours on this theme:</p>
  <div class="legend">${SKILLS.map(([k,n])=>`<span style="color:${ink(k)}">${svg(k)}${n}</span>`).join('')}</div>
- <div class="tw">${seg('pal',[['clay','Clay (your phone)'],['forest','Forest (default)']],'Colour seed')}${seg('tiles',[['one','One accent'],['three','Three accents']],'Count tiles')}${seg('view',[['radar','Radar'],['bars','Bars']],'Mastery')}${seg('scr',[['P','Pink'],['Y','Yellow']],'Script colour')}${seg('len',[['phone','Phone'],['full','Full length']],'Show')}</div>
+ <div class="tw">${seg('pal',[['clay','Clay (your phone)'],['forest','Forest (default)']],'Colour seed')}${seg('tiles',[['one','One accent'],['three','Three accents']],'Count tiles')}${seg('view',[['radar','Radar'],['bars','Bars']],'Mastery')}${seg('ink',[['fixed','Fixed (same in light and dark)'],['theme','Per theme (Today pills)']],'Skill colours')}${seg('scr',[['P','Pink'],['Y','Yellow']],'Script colour')}${seg('len',[['phone','Phone'],['full','Full length']],'Show')}</div>
  <div class="frames">${frame('Today (as built)',phoneToday(d))}${frame('Proposed',phoneNew(d))}</div></section>`;
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
 }
@@ -353,9 +354,15 @@ window.__contrast=[];
  add('week dot on card',P.p,P.sLow,3);
  add('week empty ring on card',P.ol,P.sLow,3);
  Object.entries(INK[t]).forEach(([k,v])=>{
-  add('skill '+k+' text on card',v,P.sLow,4.5);
-  add('skill '+k+' text on page',v,P.s,4.5);
-  add('skill '+k+' bar on track',v,P.sHst,3);
+  add('skill '+k+' themed text on card',v,P.sLow,4.5);
+  add('skill '+k+' themed text on page',v,P.s,4.5);
+  add('skill '+k+' themed bar on track',v,P.sHst,3);
+ });
+ Object.entries(INK.fixed).forEach(([k,v])=>{
+  add('skill '+k+' fixed name on card (large bold)',v,P.sLow,3);
+  add('skill '+k+' fixed name on page (large bold)',v,P.s,3);
+  add('skill '+k+' fixed name on tile (large bold)',v,P.sHigh,3);
+  add('skill '+k+' fixed bar or icon on track',v,P.sHst,3);
  });
 }));
 console.log('contrast fails',JSON.stringify(window.__contrast.filter(x=>!x.pass)),'of',window.__contrast.length);

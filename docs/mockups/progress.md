@@ -6,7 +6,7 @@ Phone 360 dp at 1.4x text (#505). Colours are `ColorScheme.fromSeed` of the clay
 
 ## What the proposal changes
 
-1. **One colour per skill, always.** The six skills use the colours of the Today tile icons, which are the existing `ModeColors`: Read blue, Write orange, Hear purple, Say green, Grammar teal, Script pink (or yellow, a tweak). The skill's name is written in its colour wherever it appears, with its icon. On a light theme the ink is the dark set's container (`#284777` for Read); on a dark theme it is the dark set's `onContainer` (`#d6e3ff`). Both are values the app already has, so no new colours.
+1. **One colour per skill, the same in every theme** (owner, 2026-10-26: "The skill colours must not change with theme"). The six skills use the hues of the Today tile icons: Read blue, Write orange, Hear purple, Say green, Grammar teal, Script pink (or yellow, a tweak). Each is one fixed colour, the same on light and dark and on every seed: the pill's hue at HCT tone 53 and chroma 56 (`#2f80d9`, `#c06800`, `#7e70db`, `#518d2c`, `#008f7c`, `#bc5ca6`; yellow `#977c00`). The skill's name is written in it wherever it appears, with its icon. The *Per theme* control shows today's pill pairs instead (dark ink on light, pale ink on dark) to compare. **Downside:** no single colour can reach 4.5:1 on both a light and a dark surface, so a fixed colour gets 3.05 to 3.8:1; that is the WCAG bar for large bold text (the names are 14 dp bold at 1.4x, about 19.6 px), icons and bars, and the figures stay in the neutral text colour. The Today tiles' pills change with the theme today and would need these colours too, for the skill to look the same everywhere.
 2. **Mastery by skill:** the radar labels carry the skill icon and colour, and each corner's dot is the skill's colour; the area stays the theme's primary. A **Bars** variant gives each skill a row of its own colour. The numbers are unchanged.
 3. **Count tiles (Words, Rules, Sentences):** an icon chip, a bar of how much of what is taught is known, then the figure and "known of N taught" as today. *One accent* is neutral tiles with the primary bar; *Three accents* uses the seed's primary, secondary and tertiary containers.
 4. **Level** is the one filled tile (primary container), with a trophy, "Not yet" and the A1, A2, B1 ladder with the current level filled once reached, and the start date.
@@ -25,7 +25,7 @@ Phone 360 dp at 1.4x text (#505). Colours are `ColorScheme.fromSeed` of the clay
 
 ## Self-check results
 
-WCAG contrast, computed in the page's JS (`window.__contrast`, console only) for clay and forest, light and dark, and run in Chromium. Text 4.5:1, icons and bars 3:1. The lowest ratio across the 4 theme and seed combinations is shown; all 144 pairs pass. The skill rows are the worst of 28 each (7 inks, including both Script choices, on 4 themes).
+WCAG contrast, computed in the page's JS (`window.__contrast`, console only) for clay and forest, light and dark, and run in Chromium. Text 4.5:1; icons, bars and large bold text 3:1. The lowest ratio across the 4 theme and seed combinations is shown; all 256 pairs pass. The skill rows are the worst of 28 each (7 colours, including both Script choices, on 4 themes).
 
 | Pair | Lowest | Needs | Combinations | Result |
 |---|---|---|---|---|
@@ -44,8 +44,12 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) for
 | tag bar on its track | 5.01 : 1 | 3 : 1 | 4 | pass |
 | week dot on card | 5.85 : 1 | 3 : 1 | 4 | pass |
 | week empty ring on card | 4.06 : 1 | 3 : 1 | 4 | pass |
-| skill name on card | 8.17 : 1 | 4.5 : 1 | 28 | pass |
-| skill name on page | 8.61 : 1 | 4.5 : 1 | 28 | pass |
-| skill bar on its track | 7.00 : 1 | 3 : 1 | 28 | pass |
+| skill name, fixed, on card (large bold) | 3.63 : 1 | 3 : 1 | 28 | pass |
+| skill name, fixed, on page (large bold) | 3.83 : 1 | 3 : 1 | 28 | pass |
+| skill name, fixed, on a tile (large bold) | 3.27 : 1 | 3 : 1 | 28 | pass |
+| skill bar or icon, fixed, on its track | 3.05 : 1 | 3 : 1 | 28 | pass |
+| skill name, per theme, on card | 8.17 : 1 | 4.5 : 1 | 28 | pass |
+| skill name, per theme, on page | 8.61 : 1 | 4.5 : 1 | 28 | pass |
+| skill bar, per theme, on its track | 7.00 : 1 | 3 : 1 | 28 | pass |
 
 Checked in Chromium at 1.4x, light and dark, Hindustani and Bengali, radar and bars: no page errors, no overflow. Not checked: other text sizes (the app caps at 1.4x), the high-contrast and pure-black themes, and a real phone.
