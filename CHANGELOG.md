@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- A wrong spoken answer now shows what was heard and, when the word is in a deck, its IPA on a second line; it no longer repeats the answer shown on the card.
+
 ## [0.6.6] - 2026-10-26
 
 ### Added

@@ -3309,20 +3309,13 @@ cards:
           final speech = FixedSpeechEngine(onDevice: <String>{'es'});
           final state = await pumpSpeaking(tester, speech);
           final l10n = l10nOf(tester);
-          final card = state
-              .buildSession(
-                DrillRequest.untaught(spanish, skill: Skill.speaking),
-              )
-              .items
-              .first
-              .card;
           speech.next = const <SpeechAlternative>[
             SpeechAlternative('el perro'),
           ];
           await speak(tester);
           expect(find.text(l10n.feedbackWrong), findsOneWidget);
           expect(
-            find.text(l10n.feedbackSaidAnswer('el perro', card.target)),
+            find.text(l10n.feedbackSaidAnswer('el perro')),
             findsOneWidget,
           );
           expect(state.progress.log.single.grade, 1);
