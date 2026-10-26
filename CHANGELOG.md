@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.6] - 2026-10-26
+
 ### Added
 
 - The app runs in a browser, at https://aaronified.github.io/fluenough/ once Pages is on: progress stays in the browser, and decks download on each visit (wiki: Plan-Web-Pwa).
