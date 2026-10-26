@@ -124,7 +124,8 @@ void main() {
       final code = deck.language.code;
       final placedAt = state.now().subtract(const Duration(days: 90));
       placed = deck.cards.take(5).toList();
-      learnt = deck.cards[6];
+      // A card of a deck that was not placed: placement is by deck (#860).
+      learnt = state.deckById('es-en-first-words')!.cards.first;
       for (final card in placed) {
         state.progress.record(
           deckId: deck.id,
