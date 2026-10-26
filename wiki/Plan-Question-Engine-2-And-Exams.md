@@ -41,6 +41,8 @@ And on the card UI (owner, 2026-10-26):
 | 11 | Teach cards and question cards merge into one card UI. The teach cards are revamped too, and this lands first | 2026-10-26 (quote above) |
 | 12 | Milestone exam: 7 scored items per skill, no separate spares. Per-skill minimum 70% (5 of 7 correct); overall 80% unchanged. Supersedes decision 8 and changes #509 answer 4's 60% for this plan | "Draw the 2 spares into the scored set (7 scored) and increase the skill requirement to 70% from 60%. so 5 in 7 needs correct answer. this was 3 in 5 before." (owner, 2026-10-26) |
 | 13 | No Indic letter or akshara tiles. Indic script answers are built from word tiles of the script text, the same word tiles as meanings. Letter tiles with the count-badged keyboard are Latin and Cyrillic only | "this doesn't exist? if not this can just be text words put in tiles. why will this need mockup!" (owner, 2026-10-26) |
+| 14 | Single-word Indic cards: a word-tile tray is close to a choice question, and that is accepted. No extra rung. Closes the earlier Still open item | "that is fine." (owner, 2026-10-26) |
+| 15 | Decoys come from the card's confusables first, then the ranked pool. The tighter options apply to every tile tray and choice list. Accepted answers are never decoys | "but the options need to be tighter everywhere. confusables were designed for this, no?" (owner, 2026-10-26) |
 
 Per-skill 70% of 7 scored items means 5 of 7 correct (decision 12, 2026-10-26). Overall stays 80%.
 
@@ -86,7 +88,7 @@ Choose, then tiles, then typed. This is the already-approved ability rule (Plan-
 
 ## Letter tiles (Latin and Cyrillic only)
 
-- **Latin and Cyrillic:** a QWERTY-shaped tray at the full width of a system keyboard, a count badge on each key (the number of times the answer needs it, the owner's "budget"), spent keys greyed, a few extra letters. Accent keys for Spanish (á é í ó ú ñ ü). (Author's design from the owner's idea.)
+- **Latin and Cyrillic:** a QWERTY-shaped tray at the full width of a system keyboard, a count badge on each key (the number of times the answer needs it, the owner's "budget"), spent keys greyed, a few extra letters (where a confusable applies, the extras are its letters first; decision 15). Accent keys for Spanish (á é í ó ú ñ ü). (Author's design from the owner's idea.)
 - **Indic scripts: no letter tiles.** There are no Indic letter or akshara tiles (owner, 2026-10-26, decision 13). Indic script answers are built from word tiles of the script text, as in *Word tiles for meanings* below.
 - **Mockup:** the Latin and Cyrillic keyboard needs one before any code (`docs/mockups/README.md`). Nothing else in this section does.
 - Check at 1.4x text and for tap targets (48 dp) before approval; a full-width QWERTY at 360 dp is about 36 dp a key, which is below that (author's arithmetic, to check in the mockup).
@@ -95,10 +97,14 @@ Choose, then tiles, then typed. This is the already-approved ability rule (Plan-
 ## Word tiles for meanings
 
 - The English meaning or sentence is built from word tiles on the rearrange machinery (`tilesOf`, `DrillSession` tile checks). Tiles are lowercase without edge marks, as #347 decided.
-- **Tray rule (author's):** a tray never contains a word that is an accepted alternative of another tray word, and grading accepts any accepted meaning (`meaningKeys` over `Card.meanings` and `altNative`). Reuse the idea of "distractors never include an accepted answer"; that test is **not in the repo today** (see above).
+- **Decoys (owner, 2026-10-26, decision 15):** every tile tray (meanings, script text, cloze, and letter-tile extras where a confusable applies) and every choice list takes its decoys in this order:
+  1. the card's `confusables` that name a card of the course (`ref`), as `DrillSession` does for choice today;
+  2. the ranked pool (`rankDistractors`: word family via `bases`, then `pos`, then tags), the same order as choice.
+  A decoy is never an accepted answer or alternative of the card (`Card.meanings`, `altNative`, `altTarget`). **This exclusion is not in the code today:** `DrillSession` drops only a duplicate of the text shown. It is a test to add in step 2. Word-only confusables (no `ref`) are not used by choice today; proposed: a tray takes them as words (DECK-FORMAT, Confusables: "shared wrong alternatives").
+- Grading accepts any accepted meaning (`meaningKeys` over `Card.meanings` and `altNative`).
 - Duolingo precedent (indicative, company blog): the word bank shows one translation, and a keyboard toggle was added later. <https://blog.duolingo.com/improving-how-duolingo-teaches-chinese-and-other-languages> and <https://blog.duolingo.com/how-machine-learning-helps-duolingo-prioritize-course-improvements>.
 - Tiles remove the synonym problem for gating only if the tray is curated; a learner who knows "mom" finds no "mom" tile and is not wrong, but is constrained. Measure first (step 1).
-- **Indic script answers** (owner, 2026-10-26, decision 13) use these same word tiles, built from the script text, with a decoy tray. The tray rule applies to them too.
+- **Indic script answers** (owner, 2026-10-26, decision 13) use these same word tiles, built from the script text, with the decoy order above.
 
 ## Dictation (script only)
 
@@ -148,11 +154,11 @@ Each is one pull request. Mockup first for any screen (`docs/mockups/README.md`)
 |---|---|---|
 | 0 | Mockup then build: one card UI for teach and question (phase 0) | a teach card and a question card render in the same shell at 1.4x; going on works by the same gesture; a teach card records nothing |
 | 1 | Measure: count rejected typed meaning answers from in-app reports (ADR-0021) | none; the count decides the tray's size |
-| 2 | Word tiles for meanings, with the tray rule | a tray holds no accepted alternative of another tray word; any accepted meaning is right; a wrong word is wrong |
-| 3 | Letter tiles, Latin and Cyrillic | a spent key cannot be tapped; the count matches the answer; an accented answer needs the accent key |
+| 2 | Word tiles for meanings, with the decoy order (decision 15) | decoys come from the card's confusables first, then the ranked pool; no decoy is an accepted answer or alternative; any accepted meaning is right; a wrong word is wrong |
+| 3 | Letter tiles, Latin and Cyrillic | a spent key cannot be tapped; the count matches the answer; an accented answer needs the accent key; extras come from a confusable where one applies |
 | 4 | Word tiles for Indic script answers, on step 2's machinery (no Indic letter tiles, so no mockup) | the words rejoin to the answer's script text; a decoy never rejoins to it |
 | 5 | Dictation, script only: letter tiles (Latin, Cyrillic) or word tiles (Indic) | only `hearsForm` cards are dictated; a meaning is never dictated |
-| 6 | Cloze, choice then tiles | eligible only with an example or a text of 2+ words; the tier steps up with stability and back one on a miss |
+| 6 | Cloze, choice then tiles | eligible only with an example or a text of 2+ words; decoys follow the decoy order; the tier steps up with stability and back one on a miss |
 | 7 | Dialogue reply, transformation, odd one out and sort, error spotting | each is eligible only with its data and never returned for a card without it |
 | 8 | Exam item bank, draw and grading | the draw never repeats an item across retakes; 7 per skill; the same seed gives the same draw |
 | 9 | Exam screen, gate, fail and retake | pass is 80% overall and 5 of 7 per skill; speaking and listening never fail an otherwise passing exam; a fail pushes units to review and opens the retake next day; a learner past the milestone is not blocked |
@@ -160,7 +166,7 @@ Each is one pull request. Mockup first for any screen (`docs/mockups/README.md`)
 
 ## Tests to add
 
-Those in the Steps table, plus: reading questions are never returned by the review registry (exists in the engine plan's list); an exam answer moves the word's schedule; the log replays to the same schedule after each step.
+Those in the Steps table, plus: no decoy is ever an accepted answer or alternative of its card (not in the code today, step 2); a choice or tray takes its decoys from confusables before the ranked pool; reading questions are never returned by the review registry (exists in the engine plan's list); an exam answer moves the word's schedule; the log replays to the same schedule after each step.
 
 ## Estimate (mine, not the owner's)
 
@@ -169,15 +175,20 @@ Phase 0: 12 to 20 hours with its mockup. Word tiles 6 to 8. Letter tiles 12 to 1
 ## Still open
 
 1. **Is the teach revamp one plan or part of this one?** (owner not yet decided)
-   - Part of this plan: one set of steps and one mockup; the main downside is that this plan then waits on a screen redesign before anything ships.
-   - Its own plan: this plan's blocked-by is clearer and the teach work can be reviewed alone; the main downside is two plans edit the same files and the shell is designed twice.
-2. **The LLM's fit.** Embedding similarity rates "with mother" and "with father" alike, so any model must be an NLI or judge-style advisory step, never the sole gate, and never in an exam (author's inference). Options: advisory only (a wrong answer is offered for self-judgment as near misses are today; downside: learners may always accept); grades alone (downside: wrong in either direction). Not for 0.7.0.
-3. **Slot for this plan's coding.** 0.7.0 also holds the Today chain, focus tracks and cheatsheets. The owner's slots are one Haiku and one Sonnet on decks and reviews, and one Sonnet on the Today chain. Options: take the Today Sonnet after the chain; add a third Sonnet (downside: the rule allows at most two Sonnet at a time); defer some steps to 0.8.0 (downside: the exam gate slips).
-4. **Tray size for word tiles.** After step 1's count. Options: the accepted answers plus 2 to 3 decoys; the full accepted set (downside: easier).
+   - Part of this plan: one set of steps and one mockup. Downside: this plan waits on a screen redesign before anything ships.
+   - Its own plan: this plan's blocked-by is clearer and the teach work reviews alone. Downside: two plans edit the same files and the shell is designed twice.
+2. **The LLM's fit.** Embedding similarity rates "with mother" and "with father" alike, so any model is advisory, never the sole gate, and never in an exam (author's inference). Not for 0.7.0.
+   - Advisory only: a wrong answer goes to self-judgment, as near misses do today. Downside: learners can always accept.
+   - Grades alone. Downside: wrong in either direction.
+3. **Slot for this plan's coding.** 0.7.0 also holds the Today chain, focus tracks and cheatsheets (CLAUDE.md slots: one Haiku and one Sonnet on decks and reviews, one Sonnet on the Today chain).
+   - Take the Today Sonnet after the chain. Downside: this plan starts late.
+   - Defer some steps to 0.8.0. Downside: the exam gate slips.
+4. **Tray size for word tiles.** Set after step 1's count.
+   - Accepted answers plus 2 to 3 decoys. Downside: more to read.
+   - The full accepted set. Downside: easier.
 5. **Is "longer passages in later sections" an exam item?** Read so here (decision 7); confirm.
-6. **Per-language data target.** The numbers above are mine; downside of too high is the plan waits on content.
+6. **Per-language data target.** The numbers above are the author's. Downside of too high: the plan waits on content.
 7. **Exam length in minutes.** About 21 to 35 scored items: 35 with all five skills, 21 with speaking and listening absent (7 per skill, no spares, decision 12). Unmeasured.
-8. **Does Indic single-word script production need another rung?** For a single-word card a word-tile tray is close to a choice question. Options: no extra rung (downside: close to choice, so little harder); a letter-level rung for single words only (downside: reverses decision 13); typed script answers (downside: no grader or model supports Indic script typing today).
 
 ## Not in this plan
 
