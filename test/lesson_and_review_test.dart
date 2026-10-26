@@ -5261,6 +5261,56 @@ cards:
       expect(due(states), <String>[for (var i = 3; i < 12; i++) 'k$i']);
     });
 
+    test('a skill\'s own review sees the deck\'s misses in the other skills, '
+        'so its tile and its session agree', () {
+      final two = <Card>[
+        for (var i = 0; i < 12; i++)
+          Card(
+            id: 'm$i',
+            deckId: 'known',
+            target: 't$i',
+            native: 'n$i',
+            modes: const {DrillMode.recognition, DrillMode.production},
+          ),
+      ];
+      // Two known Recognition cards were right today, ten wait, and one
+      // Write was missed today: the deck is stressed.
+      FsrsState? stateOf(Card c, DrillMode m) {
+        final i = int.parse(c.id.substring(1));
+        if (m == DrillMode.recognition) {
+          return i < 2 ? passed(now) : known(now, daysAgo: 60 - i);
+        }
+        if (m == DrillMode.production && i == 5) return missed(now);
+        return null;
+      }
+
+      List<String> session(Set<DrillMode> modes, {Set<DrillMode>? sample}) =>
+          SessionQueue.build(
+            cards: two,
+            stateOf: stateOf,
+            hasVoice: (_) => false,
+            now: now,
+            newCardLimit: 0,
+            sampleKnown: true,
+            sampleModes: sample,
+            modes: modes,
+          ).due.map((i) => '${i.card.id}/${i.mode.name}').toList();
+
+      const both = <DrillMode>{DrillMode.recognition, DrillMode.production};
+      const read = <DrillMode>{DrillMode.recognition};
+      expect(session(both), isNotEmpty, reason: 'Today asks more');
+      expect(
+        session(read),
+        isEmpty,
+        reason: 'the bug: Recognition alone does not see the miss',
+      );
+      expect(
+        session(read, sample: both),
+        isNotEmpty,
+        reason: 'Recognition sampled by every skill\'s pairs agrees',
+      );
+    });
+
     test('a card is known when it was likely recalled at its last review, '
         'not by how long its interval is', () {
       final states = pending();

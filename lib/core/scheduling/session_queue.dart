@@ -194,6 +194,12 @@ class SessionQueue {
   /// them, as [sampleCount] says, the ones reviewed longest ago first; the
   /// rest wait for another day's sample (#680).
   ///
+  /// With [sampleKnown], [sampleModes] are the modes whose pair states say
+  /// what the deck has had today (the known pairs passed, the pairs missed),
+  /// whatever [modes] the session itself holds: a session of one skill sees
+  /// the misses and passes of the others, as Today's does, so that its count
+  /// is not smaller than the tile's. [modes] when null.
+  ///
   /// [placedOf] says how a pair placement credited is reviewed (#761): a
   /// [PlacedReview.setInStone] pair is never offered, and with [sampleKnown]
   /// a [PlacedReview.spotCheck] pair counts as known until the learner has
@@ -219,6 +225,7 @@ class SessionQueue {
     bool reviseAll = false,
     bool newEvenIfDue = false,
     bool sampleKnown = false,
+    Set<DrillMode>? sampleModes,
     PlacedLookup? placedOf,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
@@ -325,7 +332,10 @@ class SessionQueue {
           speechAvailable: canHear?.call(card) ?? false,
         );
         for (final mode in DrillMode.drills) {
-          if (!allowed.contains(mode) || !modes.contains(mode)) continue;
+          if (!allowed.contains(mode) ||
+              !(sampleModes ?? modes).contains(mode)) {
+            continue;
+          }
           final state = stateOf(card, mode);
           if (state != null) (byDeck[card.deckId] ??= <FsrsState>[]).add(state);
         }
