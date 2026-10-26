@@ -4,6 +4,10 @@ import '../app/settings.dart';
 import '../core/decks/script_fonts.dart';
 import '../app/skill.dart';
 
+/// The family all interface text is drawn in: Roboto, bundled in `pubspec.yaml`
+/// so that no phone can answer the request for it with another font.
+const String interfaceFontFamily = 'Roboto';
+
 /// The app's Material 3 themes, built from the learner's colour seed.
 ///
 /// The design's "Forest" is the M3 tonal-spot scheme from seed `#3F6C51`, so
@@ -72,6 +76,7 @@ abstract final class AppTheme {
     final base = ThemeData(
       colorScheme: scheme,
       useMaterial3: true,
+      fontFamily: interfaceFontFamily,
       fontFamilyFallback: const <String>[brailleFontFamily],
     );
     final text = _textTheme(base.textTheme);
