@@ -4,6 +4,15 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
+  the progress screen. The overall structure is fine, just think on the
+  colours, accents, etc. Each skill should have one colour associated with
+  it always"). One colour per skill, from the Today tile icons, with the
+  skill's name always written in it; redrawn count, Level and Hours tiles.
+  Today's screen beside the proposal, clay and forest, light and dark,
+  1.4x, Hindustani and Bengali. Tweak controls and open choices are in
+  `progress.md`, with the self-check.
+
 - `all-tags.html`: the All tags page (#499), beautified (owner, 2026-10-24:
   "Beautify the all tags page. This needs a small mockup, as not much is
   happening here anyway."). Today's page beside a proposal: Practise as an

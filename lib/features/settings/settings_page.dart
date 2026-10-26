@@ -18,7 +18,6 @@ import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'settings_controls.dart';
 import 'support_page.dart';
-import 'your_decks_page.dart';
 
 /// The Settings tab: the profile card, then one row per section, each with
 /// a line on what is set, in two groups (docs/mockups/settings.html, owner
@@ -29,7 +28,7 @@ import 'your_decks_page.dart';
 /// log, Updates and Support with a cup of tea. Each row opens a page that
 /// holds what the section held on this tab: [LanguagesSettingsPage],
 /// [ActivitiesPage], [AppearancePage] (with the app language),
-/// `ReviewSection`, `YourDecksPage`, [RemindersPage], [YourDataPage],
+/// `ReviewSection`, [RemindersPage], [YourDataPage],
 /// [AppLogPage], [UpdatesPage] and [SupportPage]. The profile card is one target that opens [ProfilesPrivacyPage].
 ///
 /// Reminders is incoming until #90 (`Feature.reminder`), so its row shows
@@ -166,13 +165,6 @@ class SettingsPage extends StatelessWidget {
             ? l10n.settingsSumReviewingOn
             : l10n.settingsSumReviewingOff,
         route: AppRoutes.settingsReviewing,
-      ),
-      _row(
-        context,
-        icon: Icons.style_outlined,
-        title: l10n.settingsRowDecks,
-        line: l10n.settingsSumDecks(YourDecksPage.ownDecks(state.decks).length),
-        route: AppRoutes.settingsDecks,
       ),
     ];
   }

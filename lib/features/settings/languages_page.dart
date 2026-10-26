@@ -9,11 +9,13 @@ import '../../ui/widgets/grouped_list.dart';
 import '../placement/native_choice.dart';
 import 'settings_section_page.dart';
 import 'sources_page.dart';
+import 'your_decks_page.dart';
 import '../../core/models/deck.dart';
 
 /// Settings' Your languages page: the languages known and learned, the
 /// readings, IPA and adult content switches, the language an
-/// ambiguous course is learned from, and the sources the decks name.
+/// ambiguous course is learned from, the sources the decks name, and the
+/// decks the learner added.
 ///
 /// What the Learning section held before the Settings tab became a list of
 /// pages (docs/mockups/settings.html).
@@ -90,6 +92,18 @@ class LanguagesSettingsPage extends StatelessWidget {
           ),
         // Where the decks' texts come from (#98), on a page of its own.
         _sources(context, state),
+        // Decks the learner added (#475), moved here from the Settings list
+        // (owner, 2026-10-26).
+        GroupedTile(
+          leading: const Icon(Icons.style_outlined),
+          title: l10n.settingsRowDecks,
+          subtitle: l10n.settingsSumDecks(
+            YourDecksPage.ownDecks(state.decks).length,
+          ),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () =>
+              AppNavigator.openSettingsPage(context, AppRoutes.settingsDecks),
+        ),
       ],
     );
   }
