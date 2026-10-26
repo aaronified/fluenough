@@ -418,7 +418,7 @@ void main() {
       }
     }
 
-    testWidgets('Progress shows three tiles, words, rules and sentences, '
+    testWidgets('Progress shows two tiles, words and rules, '
         'counted against what is taught so far, at 1.4x', (tester) async {
       usePhone(tester, textScale: 1.4);
       final state = await bengali();
@@ -430,7 +430,6 @@ void main() {
       expect(tiles.map((t) => t.title), <String>[
         l10n.progressWordsTitle,
         l10n.progressRulesTitle,
-        l10n.progressSentencesTitle,
       ]);
       final words = tiles.first;
       expect(words.figure, '1');

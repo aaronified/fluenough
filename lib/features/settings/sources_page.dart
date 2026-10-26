@@ -211,10 +211,10 @@ class SourcesPage extends StatelessWidget {
                   GroupedTile(
                     leading: const Icon(Icons.perm_media_outlined),
                     title: language.name,
-                    subtitle: <String>[
+                    subtitleLines: <String>[
                       for (final line in lines)
                         l10n.sourcesMediaLine(line.credit, line.license),
-                    ].join('\n'),
+                    ],
                   ),
               ],
             ),
@@ -227,10 +227,10 @@ class SourcesPage extends StatelessWidget {
                   GroupedTile(
                     leading: const Icon(Icons.menu_book_outlined),
                     title: language.name,
-                    subtitle: <String>[
+                    subtitleLines: <String>[
                       for (final line in lines)
                         l10n.settingsSourceLine(line.source, line.kind.name),
-                    ].join('\n'),
+                    ],
                   ),
               ],
             ),
