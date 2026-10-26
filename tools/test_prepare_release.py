@@ -83,6 +83,37 @@ class PrepareReleaseTest(unittest.TestCase):
             "# Changelog\n\n## [Unreleased]\n\n## [0.6.0] - 2026-10-20\n\n- Only.\n",
         )
 
+    def _notes_are_the_versions_section(self):
+        self.assertEqual(
+            prepare_release.notes_for(CHANGELOG, "0.5.1"), "### Fixed\n\n- An old thing.\n"
+        )
+        prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
+        self.assertEqual(
+            prepare_release.notes_for(self.read("CHANGELOG.md"), "0.5.2"),
+            "### Added\n\n- A new thing (#1).\n",
+        )
+
+    def _notes_of_a_missing_or_empty_version_fail(self):
+        with self.assertRaisesRegex(prepare_release.ReleaseError, "no section"):
+            prepare_release.notes_for(CHANGELOG, "0.9.9")
+        with self.assertRaisesRegex(prepare_release.ReleaseError, "empty"):
+            prepare_release.notes_for("## [0.9.9] - 2026-01-01\n\n## [0.9.8] - x\n- a\n", "0.9.9")
+
+    def test_notes_come_from_the_changelog(self) -> None:
+        cases = (
+            self._notes_are_the_versions_section,
+            self._notes_of_a_missing_or_empty_version_fail,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
     def test_bumps_both_version_files(self) -> None:
         cases = (
             self._bumps_version_files,

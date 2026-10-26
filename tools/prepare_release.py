@@ -4,6 +4,7 @@
 Usage:
     python3 tools/prepare_release.py 0.5.2           # in the repository root
     python3 tools/prepare_release.py 0.5.2 --root path/to/copy
+    python3 tools/prepare_release.py --notes 0.5.2   # print that version's notes
 
 Exit status: 0 on success, 1 when the release cannot be prepared (nothing is
 written then), 2 if the arguments are wrong.
@@ -14,6 +15,10 @@ What it changes, all or nothing:
   - CHANGELOG.md: the body of `## [Unreleased]` moves under a new
     `## [X.Y.Z] - <today, UTC>` heading, and `## [Unreleased]` is left empty
     above it.
+With --notes it changes nothing and prints the body of `## [X.Y.Z]` from
+CHANGELOG.md: the release workflow publishes that as the release's notes, so
+the CHANGELOG is the one list of what changed (deck additions are not in it,
+and so not in the notes the app's "What's new" shows).
 It then runs the same check as tools/check_release_version.py. It refuses an
 empty Unreleased section and a version that is not higher than the current
 one. The release workflow runs it (.github/workflows/release.yml) and commits
@@ -97,6 +102,19 @@ def move_unreleased(text: str, version: str, today: str) -> str:
     return new
 
 
+def notes_for(text: str, version: str) -> str:
+    """The body of `## [version] - <date>` in CHANGELOG.md: the release notes."""
+    parse(version)
+    start = re.search(rf"^## \[{re.escape(version)}\][^\n]*\n", text, re.MULTILINE)
+    if not start:
+        raise ReleaseError(f"CHANGELOG.md has no section for {version}.")
+    following = HEADING.search(text, start.end())
+    body = text[start.end() : following.start() if following else len(text)].strip()
+    if not body:
+        raise ReleaseError(f"CHANGELOG.md's section for {version} is empty.")
+    return body + "\n"
+
+
 def prepare(root: Path, version: str, today: str) -> None:
     parse(version)
     files = {
@@ -126,6 +144,14 @@ def main(argv: list[str]) -> int:
     if len(args) == 3 and args[1] == "--root":
         root = Path(args[2])
         args = args[:1]
+    if len(args) == 2 and args[0] == "--notes":
+        try:
+            changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
+            print(notes_for(changelog, args[1]), end="")
+        except (ReleaseError, OSError) as error:
+            print(f"::error::{error}")
+            return 1
+        return 0
     if len(args) != 1:
         print(__doc__.strip().split("\n\n")[1], file=sys.stderr)
         return 2
