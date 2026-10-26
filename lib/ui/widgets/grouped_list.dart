@@ -169,6 +169,7 @@ class GroupedTile extends StatelessWidget {
     super.key,
     required this.title,
     this.subtitle,
+    this.subtitleLines,
     this.leading,
     this.trailing,
     this.onTap,
@@ -203,6 +204,7 @@ class GroupedTile extends StatelessWidget {
     this.padding = defaultPadding,
     this.leadingGap = 16,
   }) : subtitle = null,
+       subtitleLines = null,
        expanded = null,
        trailing = null,
        onTap = null,
@@ -223,6 +225,10 @@ class GroupedTile extends StatelessWidget {
 
   /// The line under the title. For [GroupedTile.toggle], see [line].
   final String? subtitle;
+
+  /// Lines under the title, each its own text with a 6 px gap between them,
+  /// in place of [subtitle]: one source to a line (#844, owner, 2026-10-25).
+  final List<String>? subtitleLines;
 
   /// A [GroupedTile.toggle]'s line while it is on, and while it is off.
   /// Null for any other row.
@@ -336,6 +342,16 @@ class GroupedTile extends StatelessWidget {
             line,
             style: theme.textTheme.bodyMedium!.copyWith(
               color: foreground ?? scheme.onSurfaceVariant,
+            ),
+          ),
+        for (final (i, extra) in (subtitleLines ?? const <String>[]).indexed)
+          Padding(
+            padding: EdgeInsetsDirectional.only(top: i == 0 ? 0 : 6),
+            child: Text(
+              extra,
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: foreground ?? scheme.onSurfaceVariant,
+              ),
             ),
           ),
       ],
