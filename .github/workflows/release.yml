@@ -345,6 +345,27 @@ jobs:
           fi
           echo "APK is signed with the release key (certificate SHA-256 $apk_sha)."
 
+      # The release notes are the CHANGELOG's section for this version, the
+      # one list of what changed: GitHub's generated list of merged pull
+      # requests would name every deck pull request too, and the app's
+      # "What's new" shows these notes (ADR-0031). A tag pushed by hand has no
+      # dated section, so it gets a pointer to the CHANGELOG instead.
+      - name: Write the release notes from the CHANGELOG
+        run: |
+          version="${TAG#v}"
+          notes="$RUNNER_TEMP/release_notes.md"
+          if python3 tools/prepare_release.py --notes "$version" > "$RUNNER_TEMP/changelog_section.md"; then
+            cp "$RUNNER_TEMP/changelog_section.md" "$notes"
+          else
+            echo "::warning::No CHANGELOG section for $version; the notes point to the CHANGELOG."
+            echo "See CHANGELOG.md in the source for this build." > "$notes"
+          fi
+          {
+            echo
+            echo "Fluenough is GPL-3.0 with an App Store Distribution Exception."
+            echo "Source for this exact build is the tag it was made from."
+          } >> "$notes"
+
       # The universal APK only: it installs on any device, and a single file
       # leaves nobody guessing which build is theirs.
       - name: Attach the APK to the release
@@ -354,10 +375,8 @@ jobs:
           # action take it from the ref.
           tag_name: ${{ env.TAG }}
           files: build/app/outputs/flutter-apk/app-release.apk
-          generate_release_notes: true
-          body: |
-            Fluenough is GPL-3.0 with an App Store Distribution Exception.
-            Source for this exact build is the tag it was made from.
+          generate_release_notes: false
+          body_path: ${{ runner.temp }}/release_notes.md
 
       # always(), so this runs even when a step above failed. The runner
       # empties $RUNNER_TEMP after the job anyway, but on a self-hosted runner
