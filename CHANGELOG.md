@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.5] - 2026-10-26
+
 ### Changed
 
 - A language's sheet names the scripts being learnt in one line, such as "Devanagari (1/2)", above the Change scripts button, and no longer has a button for each script (#859).
