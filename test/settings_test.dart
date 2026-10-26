@@ -37,7 +37,6 @@ import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/support_page.dart';
 import 'package:fluenough/features/settings/updates_page.dart';
 import 'package:fluenough/features/settings/your_data_page.dart';
-import 'package:fluenough/features/settings/your_decks_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/theme.dart';
@@ -346,7 +345,6 @@ void main() {
             l10n.settingsRowActivities: ActivitiesPage,
             l10n.settingsRowLook: AppearancePage,
             l10n.settingsRowReviewing: ReviewingPage,
-            l10n.settingsRowDecks: YourDecksPage,
             l10n.settingsRowData: YourDataPage,
             l10n.settingsRowLog: AppLogPage,
             l10n.settingsRowUpdates: UpdatesPage,
