@@ -226,24 +226,28 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
                   label: Text(l10n.drillStopHearing),
                 ),
               ] else
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 12,
-                  runSpacing: 8,
-                  children: <Widget>[
-                    if (word != null)
+                // Two equal halves, 8 px apart, on the title's edges; stacked
+                // only when a label does not fit its half on one line
+                // (#846, owner, 2026-10-25).
+                _halves(context, <(Widget, String)>[
+                  if (word != null)
+                    (
                       FilledButton.icon(
                         onPressed: () => _listen(word),
                         icon: const Icon(Icons.mic_none),
                         label: Text(l10n.voicesSayWord),
                       ),
+                      l10n.voicesSayWord,
+                    ),
+                  (
                     OutlinedButton.icon(
                       onPressed: () => _listen(null),
                       icon: const Icon(Icons.record_voice_over_outlined),
                       label: Text(l10n.voicesSayAnything),
                     ),
-                  ],
-                ),
+                    l10n.voicesSayAnything,
+                  ),
+                ]),
               if (!_listening && _heard != null) ...<Widget>[
                 const SizedBox(height: 20),
                 _result(context, _heard!),
@@ -252,6 +256,47 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
           ),
         ),
       ),
+    );
+  }
+
+  /// [buttons] in a row of equal halves, or one above the other when a
+  /// label, with its icon and padding, does not fit its half on one line.
+  Widget _halves(BuildContext context, List<(Widget, String)> buttons) {
+    final style = Theme.of(context).textTheme.labelLarge!;
+    final scaler = MediaQuery.textScalerOf(context);
+    final direction = Directionality.of(context);
+    return LayoutBuilder(
+      builder: (context, box) {
+        const gap = 8.0;
+        // The icon (18), its gap (8) and the button's padding (16 + 24).
+        const chrome = 66.0;
+        final half =
+            (box.maxWidth - gap * (buttons.length - 1)) / buttons.length;
+        var fits = true;
+        for (final (_, label) in buttons) {
+          final painter = TextPainter(
+            text: TextSpan(text: label, style: style),
+            textDirection: direction,
+            textScaler: scaler,
+            maxLines: 1,
+          )..layout();
+          if (painter.width + chrome > half) fits = false;
+          painter.dispose();
+        }
+        if (!fits || buttons.length == 1) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            spacing: gap,
+            children: <Widget>[for (final (button, _) in buttons) button],
+          );
+        }
+        return Row(
+          spacing: gap,
+          children: <Widget>[
+            for (final (button, _) in buttons) Expanded(child: button),
+          ],
+        );
+      },
     );
   }
 
