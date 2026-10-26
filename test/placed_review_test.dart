@@ -224,22 +224,24 @@ void main() {
 
     tearDown(() => state.dispose());
 
-    Set<String> dueIn() => {
-      for (final item
-          in state.buildSession(DrillRequest.deck('es-en-core-100')).due)
-        item.card.id,
+    Set<String> dueIn(DrillRequest request) => {
+      for (final item in state.buildSession(request).due) item.card.id,
     };
 
-    test('Set in stone leaves none of them due', () {
+    const today = DrillRequest.today(language: 'es');
+
+    test('Set in stone leaves none of them due in Today', () {
       state.settings.setPlacedReview('es', PlacedReview.setInStone);
-      expect(dueIn().intersection(reviewed), isEmpty);
+      expect(dueIn(today).intersection(reviewed), isEmpty);
     });
 
-    test('Keep reviewing asks them as usual, and switching refreshes it', () {
+    test('Keep reviewing asks them as usual, and switching refreshes the '
+        'session', () {
       state.settings.setPlacedReview('es', PlacedReview.setInStone);
-      dueIn();
+      expect(dueIn(today).intersection(reviewed), isEmpty);
       state.settings.setPlacedReview('es', PlacedReview.keepReviewing);
-      expect(dueIn(), containsAll(reviewed));
+      expect(dueIn(today).intersection(reviewed), isNotEmpty);
+      expect(dueIn(DrillRequest.deck('es-en-core-100')), containsAll(reviewed));
     });
   });
 }
