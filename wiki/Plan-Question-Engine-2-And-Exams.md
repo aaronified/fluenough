@@ -32,15 +32,17 @@ And on the card UI (owner, 2026-10-26):
 | 2 | A small English-only on-device LLM is a later step, for meaning answers only. Not in 0.7.0 | "cannot be done next week" |
 | 3 | Romanised (transliteration) answers stay typed and unchanged | owner: "is already fine" (as relayed to the author, 2026-10-26); ADR-0022 |
 | 4 | Script typing is retired for letter tiles ("rearranging letters only") where no model supports it | 2026-10-26 |
-| 5 | Dictation is script only: hear, then build the script spelling from letter tiles | "dictation must only be for script" |
+| 5 | Dictation is script only: hear, then build the script spelling from letter tiles (Latin, Cyrillic) or word tiles of the script text (Indic, decision 13) | "dictation must only be for script" |
 | 6 | Agreed: cloze (choice then tiles tiers, ADR-0034's tiers), dialogue reply, sentence transformation, odd one out and synonym/antonym sort, error spotting, passage items | "i agree on the other question types" |
 | 7 | Reading passages stay exam-only (2026-10-13). Read here as: "longer passages in later sections" means exam items. **Assumption, to confirm** | #506, Plan-Question-Engine "Reading passages" |
-| 8 | Milestone exam: 5 scored items per skill, plus 2 spare per skill | "5 questions each skill, and extra 2 each skill" |
-| 9 | #509 answers stand: 80% overall, each skill at least 60%, required to continue, retake next day after the pushed reviews, offered-not-blocking for learners already past | Plan-Question-Engine, answers 2 to 6 |
+| 8 | Superseded by 12 (2026-10-26). Was: milestone exam, 5 scored items per skill plus 2 spare per skill | "5 questions each skill, and extra 2 each skill" |
+| 9 | #509 answers stand: 80% overall, required to continue, retake next day after the pushed reviews, offered-not-blocking for learners already past. #509 answer 4 (the per-skill minimum, 60%) is changed for this plan to 70% (decision 12, 2026-10-26) | Plan-Question-Engine, answers 2 to 6 |
 | 10 | Speaking and listening items are present and graded where the device supports them, but never gate; without them the gating skills are tested harder | 2026-10-26 |
 | 11 | Teach cards and question cards merge into one card UI. The teach cards are revamped too, and this lands first | 2026-10-26 (quote above) |
+| 12 | Milestone exam: 7 scored items per skill, no separate spares. Per-skill minimum 70% (5 of 7 correct); overall 80% unchanged. Supersedes decision 8 and changes #509 answer 4's 60% for this plan | "Draw the 2 spares into the scored set (7 scored) and increase the skill requirement to 70% from 60%. so 5 in 7 needs correct answer. this was 3 in 5 before." (owner, 2026-10-26) |
+| 13 | No Indic letter or akshara tiles. Indic script answers are built from word tiles of the script text, the same word tiles as meanings. Letter tiles with the count-badged keyboard are Latin and Cyrillic only | "this doesn't exist? if not this can just be text words put in tiles. why will this need mockup!" (owner, 2026-10-26) |
 
-Per-skill 60% of 5 scored items means 3 of 5.
+Per-skill 70% of 7 scored items means 5 of 7 correct (decision 12, 2026-10-26). Overall stays 80%.
 
 ## What exists (verified against the code, 2026-10-26)
 
@@ -79,13 +81,14 @@ Choose, then tiles, then typed. This is the already-approved ability rule (Plan-
 | Rung | Meaning answers | Script answers | Romanised answers |
 |---|---|---|---|
 | Easy | choose | choose | choose |
-| Middle | word tiles | letter tiles | n/a |
-| Hard | LATER step: free typing assisted by a model (see Still open) | none: letter tiles stay | typed, as today |
+| Middle | word tiles | letter tiles (Latin, Cyrillic); word tiles of the script text (Indic, decision 13) | n/a |
+| Hard | LATER step: free typing assisted by a model (see Still open) | none: letter tiles (Latin, Cyrillic) or word tiles (Indic) stay | typed, as today |
 
-## Letter tiles
+## Letter tiles (Latin and Cyrillic only)
 
 - **Latin and Cyrillic:** a QWERTY-shaped tray at the full width of a system keyboard, a count badge on each key (the number of times the answer needs it, the owner's "budget"), spent keys greyed, a few extra letters. Accent keys for Spanish (á é í ó ú ñ ü). (Author's design from the owner's idea.)
-- **Indic scripts:** a tray of only the answer's pieces plus decoys, not a full keyboard. Whether a piece is a code point or an akshara (consonant plus vowel sign, conjuncts) is **decided by a mockup**, not here.
+- **Indic scripts: no letter tiles.** There are no Indic letter or akshara tiles (owner, 2026-10-26, decision 13). Indic script answers are built from word tiles of the script text, as in *Word tiles for meanings* below.
+- **Mockup:** the Latin and Cyrillic keyboard needs one before any code (`docs/mockups/README.md`). Nothing else in this section does.
 - Check at 1.4x text and for tap targets (48 dp) before approval; a full-width QWERTY at 360 dp is about 36 dp a key, which is below that (author's arithmetic, to check in the mockup).
 - Grading is by the tiles placed, as rearrange does today.
 
@@ -95,10 +98,11 @@ Choose, then tiles, then typed. This is the already-approved ability rule (Plan-
 - **Tray rule (author's):** a tray never contains a word that is an accepted alternative of another tray word, and grading accepts any accepted meaning (`meaningKeys` over `Card.meanings` and `altNative`). Reuse the idea of "distractors never include an accepted answer"; that test is **not in the repo today** (see above).
 - Duolingo precedent (indicative, company blog): the word bank shows one translation, and a keyboard toggle was added later. <https://blog.duolingo.com/improving-how-duolingo-teaches-chinese-and-other-languages> and <https://blog.duolingo.com/how-machine-learning-helps-duolingo-prioritize-course-improvements>.
 - Tiles remove the synonym problem for gating only if the tray is curated; a learner who knows "mom" finds no "mom" tile and is not wrong, but is constrained. Measure first (step 1).
+- **Indic script answers** (owner, 2026-10-26, decision 13) use these same word tiles, built from the script text, with a decoy tray. The tray rule applies to them too.
 
 ## Dictation (script only)
 
-Hear the word, then build the script spelling from letter tiles. Only where what is heard is the form (`Card.hearsForm`, Plan-Question-Engine step 7). Meaning is not dictated; Hear of a word's meaning stays a choice (ADR-0034).
+Hear the word, then build the script spelling: from letter tiles for Latin and Cyrillic, from word tiles of the script text for Indic (decision 13; there are no Indic letter tiles). Only where what is heard is the form (`Card.hearsForm`, Plan-Question-Engine step 7). Meaning is not dictated; Hear of a word's meaning stays a choice (ADR-0034).
 
 ## New question types
 
@@ -121,18 +125,18 @@ Every new deck key follows the two-release rule (released apps reject unknown ke
 
 | Item | Proposed unless marked |
 |---|---|
-| Items | 5 scored plus 2 spare per skill (owner) |
-| Skills | recognition, Hear (listening), Say (speaking), Write (production), grammar; 7 per skill is one draw (author's reading of ADR-0034's skills) |
-| Bank | a retake must not repeat, so about 14 per skill per milestone (7 per draw, two draws). Seeded draw without repeats |
+| Items | 7 scored per skill, no separate spares (owner, 2026-10-26, decision 12) |
+| Skills | recognition, Hear (listening), Say (speaking), Write (production), grammar; 7 per skill is one draw, the scored set (author's reading of ADR-0034's skills) |
+| Bank | a retake must not repeat, so about 14 per skill per milestone (one draw is 7, so two draws; the estimate stands). Seeded draw without repeats |
 | Grading | no free typing: choice, tiles, sort, passage choice. Romanised typing is not used in exams either, so no exam relies on a grader pass or a model |
 | Speaking and listening | present and graded where the device supports them (owner); never gate (owner); where absent, the gating skills carry more weight (owner), how much is open, below |
-| Pass | 80% overall and at least 60% per skill (#509); 3 of 5 per skill |
+| Pass | 80% overall and at least 70% per skill (owner, 2026-10-26, decision 12; #509 answer 4 said 60%, changed for this plan); 5 of 7 per skill |
 | Where | on the unit the path marks `milestone: A1`, `A2`, `B1` (Plan-B1-Plans); the units after it stay locked until it is passed (#509) |
 | On a fail | the result names the missed units and words; they are pushed into review; the retake opens the next day after those reviews (#509) |
 | Answers | move the words' FSRS schedules like practice (#509) |
 | Already past | offered, not blocking (#509) |
 
-Screens needing mockups (after phase 0): exam start, an exam item of each kind, the result with weak units, the locked state on the path, the retake wait.
+Screens needing mockups (after phase 0): the Latin and Cyrillic letter-tile keyboard, exam start, an exam item of each kind, the result with weak units, the locked state on the path, the retake wait.
 
 Assumption to confirm: placement (#481) shares the item types but is not this plan.
 
@@ -146,12 +150,12 @@ Each is one pull request. Mockup first for any screen (`docs/mockups/README.md`)
 | 1 | Measure: count rejected typed meaning answers from in-app reports (ADR-0021) | none; the count decides the tray's size |
 | 2 | Word tiles for meanings, with the tray rule | a tray holds no accepted alternative of another tray word; any accepted meaning is right; a wrong word is wrong |
 | 3 | Letter tiles, Latin and Cyrillic | a spent key cannot be tapped; the count matches the answer; an accented answer needs the accent key |
-| 4 | Letter tiles, Indic, after the mockup picks the piece | the pieces rejoin to the answer; decoys never rejoin to it |
-| 5 | Dictation as letter tiles, script only | only `hearsForm` cards are dictated; a meaning is never dictated |
+| 4 | Word tiles for Indic script answers, on step 2's machinery (no Indic letter tiles, so no mockup) | the words rejoin to the answer's script text; a decoy never rejoins to it |
+| 5 | Dictation, script only: letter tiles (Latin, Cyrillic) or word tiles (Indic) | only `hearsForm` cards are dictated; a meaning is never dictated |
 | 6 | Cloze, choice then tiles | eligible only with an example or a text of 2+ words; the tier steps up with stability and back one on a miss |
 | 7 | Dialogue reply, transformation, odd one out and sort, error spotting | each is eligible only with its data and never returned for a card without it |
 | 8 | Exam item bank, draw and grading | the draw never repeats an item across retakes; 7 per skill; the same seed gives the same draw |
-| 9 | Exam screen, gate, fail and retake | pass is 80% overall and 3 of 5 per skill; speaking and listening never fail an otherwise passing exam; a fail pushes units to review and opens the retake next day; a learner past the milestone is not blocked |
+| 9 | Exam screen, gate, fail and retake | pass is 80% overall and 5 of 7 per skill; speaking and listening never fail an otherwise passing exam; a fail pushes units to review and opens the retake next day; a learner past the milestone is not blocked |
 | Later | An English-only on-device model as an advisory step for meaning answers | not scheduled |
 
 ## Tests to add
@@ -160,7 +164,7 @@ Those in the Steps table, plus: reading questions are never returned by the revi
 
 ## Estimate (mine, not the owner's)
 
-Phase 0: 12 to 20 hours with its mockup. Word tiles 6 to 8. Letter tiles 12 to 16 with the Indic mockup. Dictation 4. Four new types 20 to 30 as code, plus data per language (examples alone were estimated at 40 hours per language in the engine plan). Exams 16 to 24. Total about 70 to 100 hours of code before data, and more than one week of one coder.
+Phase 0: 12 to 20 hours with its mockup. Word tiles 6 to 8. Letter tiles 12 to 16 (Latin and Cyrillic, with its mockup; no Indic letter tiles). Dictation 4. Four new types 20 to 30 as code, plus data per language (examples alone were estimated at 40 hours per language in the engine plan). Exams 16 to 24. Total about 70 to 100 hours of code before data, and more than one week of one coder.
 
 ## Still open
 
@@ -168,13 +172,12 @@ Phase 0: 12 to 20 hours with its mockup. Word tiles 6 to 8. Letter tiles 12 to 1
    - Part of this plan: one set of steps and one mockup; the main downside is that this plan then waits on a screen redesign before anything ships.
    - Its own plan: this plan's blocked-by is clearer and the teach work can be reviewed alone; the main downside is two plans edit the same files and the shell is designed twice.
 2. **The LLM's fit.** Embedding similarity rates "with mother" and "with father" alike, so any model must be an NLI or judge-style advisory step, never the sole gate, and never in an exam (author's inference). Options: advisory only (a wrong answer is offered for self-judgment as near misses are today; downside: learners may always accept); grades alone (downside: wrong in either direction). Not for 0.7.0.
-3. **How much stronger the gating skills are tested when speaking and listening are absent.** Not decided. Options: draw the 2 spares into the scored set (7 scored; downside: no spare when the algorithm needs one, and a retake bank is no larger); raise to 7 scored plus 2 spare (downside: a longer exam and a bank of about 18 per skill); add harder item types (downside: depends on data most languages lack); keep it as is (downside: a learner with no microphone is tested on less).
-4. **Slot for this plan's coding.** 0.7.0 also holds the Today chain, focus tracks and cheatsheets. The owner's slots are one Haiku and one Sonnet on decks and reviews, and one Sonnet on the Today chain. Options: take the Today Sonnet after the chain; add a third Sonnet (downside: the rule allows at most two Sonnet at a time); defer some steps to 0.8.0 (downside: the exam gate slips).
-5. **Tray size for word tiles.** After step 1's count. Options: the accepted answers plus 2 to 3 decoys; the full accepted set (downside: easier).
-6. **Piece granularity for Indic letter tiles.** Code point or akshara; downside of code points is exposing vowel signs alone, of aksharas a larger tray.
-7. **Is "longer passages in later sections" an exam item?** Read so here (decision 7); confirm.
-8. **Per-language data target.** The numbers above are mine; downside of too high is the plan waits on content.
-9. **Exam length in minutes.** About 25 to 35 items depending on skills present; unmeasured.
+3. **Slot for this plan's coding.** 0.7.0 also holds the Today chain, focus tracks and cheatsheets. The owner's slots are one Haiku and one Sonnet on decks and reviews, and one Sonnet on the Today chain. Options: take the Today Sonnet after the chain; add a third Sonnet (downside: the rule allows at most two Sonnet at a time); defer some steps to 0.8.0 (downside: the exam gate slips).
+4. **Tray size for word tiles.** After step 1's count. Options: the accepted answers plus 2 to 3 decoys; the full accepted set (downside: easier).
+5. **Is "longer passages in later sections" an exam item?** Read so here (decision 7); confirm.
+6. **Per-language data target.** The numbers above are mine; downside of too high is the plan waits on content.
+7. **Exam length in minutes.** About 21 to 35 scored items: 35 with all five skills, 21 with speaking and listening absent (7 per skill, no spares, decision 12). Unmeasured.
+8. **Does Indic single-word script production need another rung?** For a single-word card a word-tile tray is close to a choice question. Options: no extra rung (downside: close to choice, so little harder); a letter-level rung for single words only (downside: reverses decision 13); typed script answers (downside: no grader or model supports Indic script typing today).
 
 ## Not in this plan
 
