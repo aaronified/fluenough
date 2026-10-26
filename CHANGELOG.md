@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Decks may carry a narrow IPA form for a word, with its source (`phonetic` and `phonetic_source`, from Wiktionary or from rules). The app reads them and does not show them yet; the decks will use them from the release after this one.
+- A release's notes, which "What's new" shows, are now this changelog's section for that version and nothing else: GitHub's list of merged pull requests, which named every deck pull request, is no longer added.
 
 ## [0.6.5] - 2026-10-26
 
