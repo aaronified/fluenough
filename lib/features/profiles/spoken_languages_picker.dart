@@ -44,6 +44,7 @@ class SpokenLanguagesPicker extends StatefulWidget {
     this.choices,
     this.header,
     this.footer,
+    this.dividerBelow = false,
     this.readsScript = const <String, bool>{},
     this.onScriptsChanged,
     this.locales,
@@ -83,6 +84,11 @@ class SpokenLanguagesPicker extends StatefulWidget {
 
   /// Scrolls with the list, below it.
   final Widget? footer;
+
+  /// Whether a 1 px divider ends the list, where it meets whatever is below
+  /// it (onboarding's button), so a row is not cut off hard against that
+  /// (#845, owner, 2026-10-25). Needs a bounded height.
+  final bool dividerBelow;
 
   @override
   State<SpokenLanguagesPicker> createState() => _SpokenLanguagesPickerState();
@@ -289,7 +295,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       }
     }
 
-    return PickerGutter(
+    final list = PickerGutter(
       gutter: widget.gutter,
       child: Scrollbar(
         controller: _scroll,
@@ -332,6 +338,17 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
           ],
         ),
       ),
+    );
+    if (!widget.dividerBelow) return list;
+    return Column(
+      children: <Widget>[
+        Expanded(child: list),
+        Divider(
+          height: 1,
+          thickness: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+      ],
     );
   }
 
