@@ -45,13 +45,7 @@ void main() {
       return p;
     }
 
-    Set<ProgressKey> placedOf(MemoryProgress p) => placedPairs(
-      p.log,
-      placedAt: (_) => <int>{placedAt.millisecondsSinceEpoch ~/ 1000},
-    );
-
     List<String> due(MemoryProgress p, PlacedReview choice) {
-      final placed = placedOf(p);
       return SessionQueue.build(
         cards: cards,
         stateOf: (c, m) => p.stateOf(c.id, m),
@@ -59,8 +53,9 @@ void main() {
         now: later,
         newCardLimit: 0,
         sampleKnown: true,
-        placedOf: (card, mode) => placed.contains((cardId: card.id, mode: mode))
-            ? (choice == PlacedReview.keepReviewing ? null : choice)
+        placedOf: (card, mode) =>
+            card.id != 'later' && choice != PlacedReview.keepReviewing
+            ? choice
             : null,
       ).due.map((i) => i.card.id).toList();
     }
@@ -129,7 +124,8 @@ void main() {
       final code = deck.language.code;
       final placedAt = state.now().subtract(const Duration(days: 90));
       placed = deck.cards.take(5).toList();
-      learnt = deck.cards[6];
+      // A card of a deck that was not placed: placement is by deck (#860).
+      learnt = state.deckById('es-en-first-words')!.cards.first;
       for (final card in placed) {
         state.progress.record(
           deckId: deck.id,
@@ -141,6 +137,7 @@ void main() {
       }
       state.settings
         ..addPlacedAt(code, placedAt.millisecondsSinceEpoch ~/ 1000)
+        ..placedDecks = <String>{deck.id}
         ..setPlacedReview(code, PlacedReview.setInStone)
         ..learningLanguages = <String>[code];
     });
@@ -196,6 +193,55 @@ void main() {
     test('the deck counts them as learnt', () {
       final counts = state.countsFor(state.deckById('es-en-core-100')!);
       expect(counts.learned, greaterThanOrEqualTo(placed.length));
+    });
+  });
+
+  group('a deck placed after its cards were reviewed (#860)', () {
+    late AppState state;
+    late Set<String> reviewed;
+
+    setUp(() async {
+      state = AppState.test();
+      await state.load();
+      final deck = state.deckById('es-en-core-100')!;
+      reviewed = {for (final c in deck.cards.take(5)) c.id};
+      final earlier = state.now().subtract(const Duration(days: 30));
+      for (final id in reviewed) {
+        state.progress.record(
+          deckId: deck.id,
+          cardId: id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: earlier,
+        );
+      }
+      // Placement credits no pair that already has a review, so none of
+      // these has a placement event.
+      state.settings
+        ..placedDecks = <String>{deck.id}
+        ..learningLanguages = <String>[deck.language.code];
+    });
+
+    tearDown(() => state.dispose());
+
+    Set<String> dueIn(DrillRequest request) => {
+      for (final item in state.buildSession(request).due) item.card.id,
+    };
+
+    const today = DrillRequest.today(language: 'es');
+
+    test('Set in stone leaves none of them due in Today', () {
+      state.settings.setPlacedReview('es', PlacedReview.setInStone);
+      expect(dueIn(today).intersection(reviewed), isEmpty);
+    });
+
+    test('Keep reviewing asks them as usual, and switching refreshes the '
+        'session', () {
+      state.settings.setPlacedReview('es', PlacedReview.setInStone);
+      expect(dueIn(today).intersection(reviewed), isEmpty);
+      state.settings.setPlacedReview('es', PlacedReview.keepReviewing);
+      expect(dueIn(today).intersection(reviewed), isNotEmpty);
+      expect(dueIn(DrillRequest.deck('es-en-core-100')), containsAll(reviewed));
     });
   });
 }
