@@ -1,0 +1,70 @@
+schema: 1
+id: "te-en-phonology-allophones"
+kind: "layer"
+core: "te-phonology-allophones"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Telugu sound variants (IPA)"
+description: "Some of the ways Telugu sounds vary, as the sources used describe them: one card each, taught with example words and never used to work out how a word is said. For learners who know the IPA or want to learn it. Variety taught: standard (Coastal Andhra) colloquial Telugu. This is a proposal, not yet confirmed by the owner, a Telugu speaker or a phonetician. Where a source describes another dialect, the card says so."
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+  - { name: "Wikipedia contributors (Telugu language; Help:IPA/Telugu)", url: "https://en.wikipedia.org/wiki/Telugu_language" }
+source: "Bhaskararao and Ray (2017), 'Illustrations of the IPA: Telugu', Journal of the International Phonetic Association 47(2): 231-241, doi 10.1017/S0025100316000207 (named in Wikipedia's references; the article itself was not read); Krishnamurti (2003), The Dravidian Languages, Cambridge University Press, and Lisker and Krishnamurti (1991), Proceedings of the XIIth International Congress of Phonetic Sciences 2: 90-93 (both as cited by Wikipedia). Text adapted from Wikipedia, 'Telugu language' (section Phonology) and 'Help:IPA/Telugu', CC BY-SA 4.0, https://en.wikipedia.org/wiki/Telugu_language"
+tags: ["ipa", "phonology", "unreviewed"]
+cards:
+  "te-6624":
+    native: "dz said as z between vowels"
+    notes:
+      "n1": "Between vowels dz can become z. The source's example is the word రాజు (rāju), said with a z. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "రాజు": "king"
+  "te-6625":
+    native: "ʋ rounded near rounded vowels"
+    notes:
+      "n1": "The approximant ʋ can be said with rounded lips around rounded vowels: the sound after the sign on this card. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "నువ్వు": "you (to a friend, a child or someone younger)"
+      "వీధి": "street"
+  "te-6626":
+    native: "ʃ said as s in colloquial speech"
+    notes:
+      "n1": "In Standard Telugu and most dialects the letter శ (ś) is said s. Telangana dialects merge ś with ṣ instead. The source's examples are iṣṭam and dēśam, said istaw̃ and dēsaw̃ or dēṣaw̃. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "దేశం": "country"
+      "ఇష్టం": "liking; dear to someone"
+  "te-6627":
+    native: "ɳ and ɭ merge with n and l in some colloquial speech"
+    notes:
+      "n1": "In some colloquial speech ṇ and ḷ merge completely with n and l, except in clusters with curled-back stops. Historically many old ɳ and ɭ merged with n and l. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "వీణ": "veena (a South Indian string instrument)"
+      "కళ": "art (painting, music, dance and the like)"
+  "te-6628":
+    native: "m said as a nasal w away from the start of a word"
+    notes:
+      "n1": "A later or final m tends to be said as a nasalised w, w̃. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "వారం": "week"
+      "నమ్మకం": "trust; belief; confidence"
+  "te-6629":
+    native: "va and vā losing their v"
+    notes:
+      "n1": "Colloquially va and vā at the start of a word become (w)o, or ā or ō, as in vāḍu said āḍu or ōḍu. Before a front vowel v becomes y, as in vennela said yennela. The source's own examples are given here without Telugu script, since no card of this course has these words."
+  "te-6630":
+    native: "pʰ, ts and dz becoming f, s and j"
+    notes:
+      "n1": "In colloquial speech ph, ts and dz become f, s and j."
+    examples:
+      "ఫలితం": "result"
+  "te-6631":
+    native: "aspirates softening to h or g, and h dropping"
+    notes:
+      "n1": "Some aspirates may be said as h, and an h that was there may be dropped: mukham is said muhaw̃ or mugaw̃, and mahā is said mā. Telangana speech tends to have fewer aspirates. The example words show the context the rule names; the sources give no recordings or measurements of these words, so a speaker may say them differently."
+    examples:
+      "ముఖం": "face"
+  "te-6632":
+    native: "the plural of కన్ను (kannu), eye, in three dialects"
+    notes:
+      "n1": "Suffixing differs by region: kannu plus lu is kaḷḷu in Coastal Andhra, kaṇḍḷu or kaṇḷu in Rayalaseema, and kanlu in Telangana."
+    examples:
+      "కన్ను": "eye"
