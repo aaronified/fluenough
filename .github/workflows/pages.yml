@@ -1,0 +1,83 @@
+name: Web
+
+# The app in a browser, on GitHub Pages: https://aaronified.github.io/fluenough/
+# (wiki: Plan-Web-Pwa). Built on every pull request, so the page can be
+# opened from its artifact before merge; deployed on every push to main. The
+# repository's Pages source must be "GitHub Actions" (Settings > Pages).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: "3.47.6"
+
+jobs:
+  build:
+    name: "Web: build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # web/ is generated like android/, so CI recreates it.
+      - run: flutter create . --org app --project-name fluenough --platforms=web
+      - run: rm -f test/widget_test.dart
+      - run: python3 tools/brand_web.py
+      - run: flutter pub get
+      - run: dart run build_runner build
+
+      # lib/main_web.dart names only services a browser has. CanvasKit is
+      # bundled rather than fetched from Google's CDN.
+      - run: >
+          flutter build web --release -t lib/main_web.dart
+          --base-href /fluenough/ --no-web-resources-cdn --no-wasm-dry-run
+
+      # drift on the web needs SQLite compiled to WebAssembly and its worker
+      # beside the page (lib/app/profile_storage.dart). Each is released with
+      # the package version the lockfile holds.
+      - name: Fetch drift's web files
+        run: |
+          version() { awk -v p="  $1:" '$0 == p { f = 1 } f && /version:/ { gsub(/"/, "", $2); print $2; exit }' pubspec.lock; }
+          curl -fsSL -o build/web/sqlite3.wasm "https://github.com/simolus3/sqlite3.dart/releases/download/sqlite3-$(version sqlite3)/sqlite3.wasm"
+          curl -fsSL -o build/web/drift_worker.js "https://github.com/simolus3/drift/releases/download/drift-$(version drift)/drift_worker.js"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name == 'push'
+        with:
+          path: build/web
+      - uses: actions/upload-artifact@v7
+        if: github.event_name == 'pull_request'
+        with:
+          name: web
+          path: build/web
+
+  deploy:
+    name: "Web: deploy"
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
