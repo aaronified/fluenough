@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Set in stone did not stop reviews of words you had already reviewed before placing their deck: a placed deck now follows the course's placed-review choice for every card in it, whatever its history (#860).
+
 ## [0.6.4] - 2026-10-26
 
 ### Fixed

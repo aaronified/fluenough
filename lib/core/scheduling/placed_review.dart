@@ -1,6 +1,5 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
-import '../models/review_event.dart';
 import 'deck_sampling.dart';
 import 'fsrs.dart';
 
@@ -44,22 +43,3 @@ bool isPlacementOnly(FsrsState state) =>
 /// ([isKnownState]), or not yet reviewed since placement credited it.
 bool isPlacedKnown(FsrsState state) =>
     isKnownState(state) || isPlacementOnly(state);
-
-/// The pairs placement credited, found in [log] (oldest first): those whose
-/// first review was written at one of the seconds [placedAt] gives for its
-/// deck, as placement writes all its credit at one moment. A pair reviewed
-/// before placement, or after it by the learner, is not one of them.
-Set<ProgressKey> placedPairs(
-  Iterable<ReviewEvent> log, {
-  required Set<int> Function(String deckId) placedAt,
-}) {
-  final seen = <ProgressKey>{};
-  final placed = <ProgressKey>{};
-  for (final event in log) {
-    final key = (cardId: event.cardId, mode: event.mode);
-    if (!seen.add(key)) continue;
-    final seconds = event.at.millisecondsSinceEpoch ~/ 1000;
-    if (placedAt(event.deckId).contains(seconds)) placed.add(key);
-  }
-  return placed;
-}

@@ -1987,25 +1987,15 @@ class AppState extends ChangeNotifier {
   bool isPlaced(DeckEntry entry) =>
       (_placed ??= _placedAcross()).contains(entry.id);
 
-  /// How the pair of [card] in [mode] is reviewed, if placement credited it
-  /// (#761): by its course's choice, [SettingsNotifier.placedReviewOf]. Null for a
-  /// word learned after placement, and for a course set to Keep reviewing,
-  /// whose placed words are reviewed as any are.
+  /// How [card] is reviewed when its deck is placed (#761, #860): by its
+  /// course's choice, [SettingsNotifier.placedReviewOf], whatever the card's
+  /// history, as placement is by deck. Null for a card of a deck that is not
+  /// placed, and for a course set to Keep reviewing, whose placed words are
+  /// reviewed as any are.
   PlacedReview? placedReviewOf(Card card, DrillMode mode) {
-    final pairs = derived<Set<ProgressKey>>(
-      #placedPairs,
-      () => settings.hasPlacedCredit
-          ? placedPairs(
-              progress.log,
-              placedAt: (deckId) =>
-                  settings.placedAtOf(deckById(deckId)?.language.code ?? ''),
-            )
-          : const <ProgressKey>{},
-    );
-    if (!pairs.contains((cardId: card.id, mode: mode))) return null;
-    final code = deckById(card.deckId)?.language.code;
-    if (code == null) return null;
-    final choice = settings.placedReviewOf(code);
+    final entry = deckById(card.deckId);
+    if (entry == null || !isPlaced(entry)) return null;
+    final choice = settings.placedReviewOf(entry.language.code);
     return choice == PlacedReview.keepReviewing ? null : choice;
   }
 

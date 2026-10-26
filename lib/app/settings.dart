@@ -585,12 +585,8 @@ class SettingsNotifier extends ChangeNotifier {
   }
 
   /// The moments, in whole seconds since the epoch, at which placement
-  /// credited [language]'s words: the reviews it wrote then are the placed
-  /// words (`placedPairs`).
+  /// credited [language]'s words, as placement writes all its credit at once.
   Set<int> placedAtOf(String language) => _placedAt[language] ?? const <int>{};
-
-  /// Whether placement has credited any course's words.
-  bool get hasPlacedCredit => _placedAt.isNotEmpty;
 
   void addPlacedAt(String language, int seconds) {
     final was = _placedAt[language] ?? const <int>{};
