@@ -12,6 +12,7 @@ import 'app/pacing.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/web_deck_fetcher.dart';
+import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
 import 'core/tts/system_tts_engine.dart';
 
@@ -35,6 +36,7 @@ Future<void> main() async {
   final downloaded = MemoryDownloadedDecks();
   runApp(
     FluenoughApp(
+      frame: webPhoneFrame,
       state: AppState(
         catalog: DeckCatalog(
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
