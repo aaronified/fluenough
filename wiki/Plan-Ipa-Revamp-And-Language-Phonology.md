@@ -18,6 +18,14 @@ built. Everything marked **Proposed** is the author's, not a decision.
 
 > All languages should also have optional IPA decks that will be shown to people who knows IPA or want to learn it (will decide the structure later, now the focus is on the decks). these will contain the phonology / phonemic inventory of the language. and how to pronounce their words (will come a little later in sequence, maybe after B1 in path). for example: https://en.wikipedia.org/wiki/Bengali_phonology for bengali
 
+Answers (owner, 2026-10-26, to the questions in this plan's first draft):
+
+> Decision for you: write a plan page first, as with the question-engine plan, before any deck work? yes. plan it.
+
+> Images: try checking wikidata for these.
+
+> IPA transcription (phonetic [kʰæt] on every card): wikitionary has this. i dont trust rules here because a lot of languages have a lot of exceptions (e.g. engllish)
+
 The term is the **alveolar ridge**, not "bridge": the bony ridge behind the
 upper teeth. The glossary uses it.
 
@@ -48,28 +56,45 @@ upper teeth. The glossary uses it.
 ## 1. Narrow ("phonetic") transcription of every card
 
 **Not a find-and-replace.** `/kæt/` to `[kʰæt]` needs the language's own
-rules and the word's context: aspiration, flapping, dark l, vowel length
-before voiced stops, nasalisation, devoicing, tone and stress. A script or a
-Haiku can apply rules a phonetician has written; it cannot know them, and
-would invent detail where the rule is missing.
+rules and the word's context, and, as the owner says, rules have many
+exceptions (English most of all). A script or a Haiku can apply rules; it
+cannot know the exceptions.
 
-**Proposed: derive, do not store.**
+**Decided (owner, 2026-10-26): do not derive by rules; take the transcription
+from Wiktionary.** This replaces the author's first proposal (a rule file per
+language), which the owner rejected.
 
-- Keep `ipa` broad and authoritative. Storing narrow forms would break the
-  validator's rule, the sounds files and the speaking drill's contrast
-  detection, which compare broad forms, and would change 11,000 lines at once.
-- Add `decks/<lang>/<lang>-phonetics.yaml`: ordered allophone rules over broad
-  symbols, per language and variety. A function in `lib/core` applies them to
-  a broad `ipa` to give the narrow form, tested on pairs a phonetician
-  supplies. The phonology decks below teach the same rules, so one rule file
-  serves the learner and the checker.
-- Primary downside: the rules cover only what is written, and varieties
-  differ, so each rule file names its variety.
+- **What Wiktionary has** (verified for one word): its English entry for
+  *cat* gives `/ˈkæt/` with `[ˈkʰæt]` for RP and for General American, and
+  other accents' narrow forms, through `{{IPA|en|/ˈkæt/|[ˈkʰæt]|a=RP}}`.
+  A word has one form per accent, so a card needs to say which accent its
+  narrow form is.
+- **Licence:** Wiktionary's text is CC BY-SA 4.0, the decks' licence
+  (ADR-0040), so it can be used with attribution (page, revision, licence).
+  I checked neither the current Wiktionary licence nor the attribution it
+  asks for; do that before any import.
+- **Coverage is unmeasured.** I tried to sample 20 words in each of six
+  languages through Wiktionary's API and was rate limited (HTTP 429), so I
+  have no figure. Do not assume other languages are like English: many
+  Wiktionary entries give only `/…/`, and some give IPA that a template
+  generates from the spelling by rules, which is the thing the owner distrusts.
+  Measure first, from a Wiktextract dump (kaikki.org, reachable from here),
+  not from the live API: for each language, the share of the app's words that
+  have a hand-entered `[…]` form, a generated one, a `/…/` only, or none.
+- **Where it is stored (Proposed):** a new optional card field, `phonetic`,
+  one quoted string in square brackets, beside `ipa`, which stays broad and
+  keeps its validator rule, its sounds files and the speaking drill. A card
+  with no Wiktionary narrow form has none; the checker falls back to the
+  broad one. The field needs a release that reads it before a deck uses it
+  (released apps reject unknown fields), a validator rule (square brackets,
+  IPA letters only), a credit line, and the accent it is for.
+- **A word not on Wiktionary** (inflected forms, phrases, example
+  sentences) has no narrow form until someone writes one. Not generated.
 - **The checker itself is a separate project.** `speech_to_text` returns
   spelled text, not sounds. Checking against IPA needs an on-device
   phone-recognition model. That is not planned here. My inference (Medium
   confidence) is that such models are compared against broad forms with
-  allophone tolerance, so narrow storage may not be needed at all.
+  allophone tolerance, so narrow forms may help less than the owner expects.
 
 ## 2. The IPA course revamp
 
@@ -98,8 +123,17 @@ height, backness, rounding, length, stress, tone.
 - **Images.** Original line drawings (mid-sagittal sections for place, one
   per place; a mouth-and-tongue view for vowels), made for the course and
   shipped as `image` webp with `image_credit`; or Wikimedia Commons figures
-  under a compatible licence, credited. Primary downside of drawing our own:
-  accuracy depends on a reviewer.
+  under a compatible licence, credited. **Checked 2026-10-26 (partial):**
+  Wikidata and Commons are blocked from this environment (the proxy refuses
+  them), so I could not read Wikidata's `image` property. Through English
+  Wikipedia's API I saw its lead images for three terms: *Allophone*
+  (`Phoneme-allophone-determination-chart.svg`), *Manner of articulation*
+  (`Illu01_head_neck.jpg`) and *Place of articulation*
+  (`Places_of_articulation.svg`); *Alveolar ridge*, *Phoneme*, *Minimal
+  pair*, *Voice* and *Aspiration* have none. Their licences are not read yet
+  (the API was rate limited), so none is cleared. Most terms will likely need
+  our own drawings. Primary downside of drawing our own: accuracy depends on
+  a reviewer.
 - **"Immaculate."** I can build it; I cannot certify phonetic accuracy. No
   unit is marked `reviewed` until a phonetician has read it, and the whole
   course stays `unreviewed` until then, as every deck does.
@@ -114,11 +148,10 @@ height, backness, rounding, length, stress, tone.
 2. Vowels and diphthongs, the same way.
 3. Prosody: stress, tone, length, nasalisation, as the language has them.
 4. Syllable structure and what clusters are allowed.
-5. Allophony: the rules of section 1, each with words that show it.
+5. Allophony: the language's main allophone rules, each with words that show it (taught, not used to generate forms).
 6. Spelling to sound: how the script is read, with the exceptions.
 7. **Pronouncing words** (later; "maybe after B1"): word cards that give the
-   narrow form `[ ]` beside the broad one, drawn from the language's own
-   decks, using the rule file.
+   narrow form `[ ]` beside the broad one, from the `phonetic` field.
 
 **Sources, in this order:** the language's "Illustration of the IPA" in the
 *Journal of the International Phonetic Association* where one exists, then
@@ -136,24 +169,22 @@ Bengali as the pilot because the owner named it (**Proposed**).
 
 | # | Step | Done when |
 |---|---|---|
-| 0 | Answer the Still open questions | the owner has decided |
+| 0 | Measure Wiktionary's narrow-form coverage per language from a Wiktextract dump; read the images' licences from a machine that reaches Commons; answer the Still open questions | a table per language; the owner has decided |
 | 1 | Terms glossary, ten terms with images and contrasts | a phonetician has read them; the card shape is settled |
 | 2 | IPA course units 1 to 3 and 12 | they read in the app at 1.4x; the validator passes |
 | 3 | The whole-chart unit | the chart is shown and read by axes |
-| 4 | Phonology deck for Bengali, parts 1 to 6, with its rule file | a Bengali speaker or phonetician has checked the inventory |
-| 5 | The rule function in `lib/core` and its tests | derived narrow forms equal the reviewer's pairs |
+| 4 | Phonology deck for Bengali, parts 1 to 6, | a Bengali speaker or phonetician has checked the inventory |
+| 5 | The `phonetic` field: format, validator, release, then an import tool from the dump with credit | the validator accepts it; imported forms match Wiktionary's |
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 
 Estimate (mine): steps 1 to 3 about 30 to 50 hours of content and 6 to 10 of
 code if cards need no new field; one language's phonology deck 8 to 14 hours;
-the rule function 8 to 12 hours. Confidence: low.
+the `phonetic` field and import tool 10 to 16 hours. Confidence: low.
 
 ## Still open
 
-1. **Derive or store the narrow form?** Derive: rules cover only what is
-   written. Store: breaks the broad rule and the contrast detection. (I
-   recommend derive.)
+1. ~~Derive or store the narrow form?~~ Decided: take it from Wiktionary (section 1). Left: the field's name and shape, and the accent per form.
 2. **Who writes it?** CLAUDE.md gives decks to Haiku; the IPA course was
    built by Sonnet (ADR-0041). Sonnet: costs more. Haiku: phonetics is
    where a weaker model invents, and one review may not catch it.
