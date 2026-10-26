@@ -418,7 +418,7 @@ void main() {
       }
     }
 
-    testWidgets('Progress shows three tiles, words, rules and sentences, '
+    testWidgets('Progress shows two tiles, words and rules, '
         'counted against what is taught so far, at 1.4x', (tester) async {
       usePhone(tester, textScale: 1.4);
       final state = await bengali();
