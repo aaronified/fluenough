@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.7] - 2026-10-26
+
 ### Fixed
 
 - A Today skill tile that showed 1 due no longer opens "Nothing due": a skill's own review now samples a deck's known cards by what the deck had today in every skill, as Today's does.
