@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progress</title>
+<meta name="description" content="The Progress screen: one colour per skill and better tiles. Today beside a proposal, light and dark, 1.4x text, Hindustani and Bengali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+
+/* Progress */
+.ph.full{height:auto}.ph.full .scroll{overflow:visible}
+.tiles3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 8px}
+.tile{border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tile .hd{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-size:calc(12px*var(--t));line-height:1.2;font-weight:600;letter-spacing:.2px}
+.tile .chip{flex:none;width:28px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.tile .chip svg.i{width:18px;height:18px}
+.tile .fig{font-size:calc(24px*var(--t));line-height:1.1;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px}
+.tile .kn{font-size:calc(12px*var(--t));line-height:1.25;font-weight:600}
+.tile .of{font-size:calc(11px*var(--t));line-height:1.25;opacity:.85}
+.mbar{height:6px;border-radius:3px;margin:6px 0 2px;overflow:hidden}
+.mbar i{display:block;height:100%;border-radius:3px}
+.card2{border-radius:24px;background:var(--sLow);padding:14px 16px;margin:0 0 8px}
+.cap{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:0 0 4px}
+.cap h3{margin:0;font-size:calc(16px*var(--t));line-height:1.25;font-weight:600}
+.more{font-size:calc(14px*var(--t));font-weight:600;color:var(--p);display:inline-flex;align-items:center;white-space:nowrap}
+.more svg.i{width:20px;height:20px}
+.lvl{display:flex;align-items:center;gap:12px;border-radius:24px;padding:12px 16px;margin:0 0 8px}
+.lvl .chip{flex:none;width:44px;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:center}
+.lvl .tx{flex:1;min-width:0}
+.lvl .big{display:block;font-size:calc(24px*var(--t));line-height:1.1;font-weight:700}
+.lvl small{display:block;font-size:calc(12px*var(--t));line-height:1.3}
+.ladder{display:flex;gap:4px;margin-top:6px}
+.ladder b{font-size:calc(11px*var(--t));line-height:1;font-weight:700;padding:4px 8px;border-radius:calc(11px*var(--t));box-shadow:inset 0 0 0 1px currentColor;opacity:.75}
+.week{display:flex;justify-content:space-between;padding:6px 0 0}
+.wd{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:calc(12px*var(--t));color:var(--onSv);position:relative;flex:1}
+.wd i{width:28px;height:28px;border-radius:14px;box-sizing:border-box;position:relative;z-index:1;display:block}
+.wd i.on{background:var(--p)}
+.wd i.off{box-shadow:inset 0 0 0 2px var(--ol)}
+.wd i.today{box-shadow:0 0 0 3px var(--pc)}
+.wd .lk{position:absolute;top:10px;height:8px;background:var(--p);left:-50%;width:100%;z-index:0}
+.wd.b{color:var(--onS);font-weight:700}
+.radar{position:relative;width:100%;height:250px}
+.radar>svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible}
+.rl{position:absolute;display:flex;flex-direction:column;line-height:1.2;white-space:nowrap;width:max-content}
+.rl b{font-size:calc(13px*var(--t));font-weight:700;display:flex;align-items:center;gap:4px}
+.rl b svg.i{width:16px;height:16px}
+.rl .vl{font-size:calc(12px*var(--t));font-variant-numeric:tabular-nums;color:var(--onSv)}
+.rl.l{align-items:flex-end;text-align:right}.rl.r{align-items:flex-start}.rl.c{align-items:center;text-align:center}
+.sbars{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.sb{display:grid;grid-template-columns:calc(84px*var(--t)) minmax(0,1fr);gap:2px 8px;align-items:center}
+.sb .nm{display:flex;align-items:center;gap:6px;font-size:calc(14px*var(--t));font-weight:700}
+.sb .nm svg.i{width:18px;height:18px;flex:none}
+.sb .tr{height:10px;border-radius:5px;background:var(--sHst);position:relative;overflow:hidden}
+.sb .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:5px}
+.sb .v{grid-column:1/3;font-size:calc(12px*var(--t));font-variant-numeric:tabular-nums;color:var(--onSv);margin-top:-2px}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 8px}
+.hours .tile{background:var(--sHigh)}
+.wk{display:flex;align-items:center;gap:8px;min-height:calc(30px*var(--t))}
+.wk .nm{flex:none;width:calc(96px*var(--t));font-size:calc(14px*var(--t));line-height:1.25;overflow-wrap:anywhere}
+.wk .tr{flex:1;height:10px;border-radius:5px;background:var(--sHst);overflow:hidden}
+.wk .tr i{display:block;height:100%;background:var(--tt);border-radius:5px}
+.wk .pc{flex:none;min-width:40px;text-align:right;font-size:calc(14px*var(--t));font-weight:700;font-variant-numeric:tabular-nums}
+.leech{display:flex;align-items:center;gap:12px;border-radius:24px;background:var(--sLow);padding:14px 16px;margin:0 0 8px}
+.leech .chip{flex:none;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center}
+.leech .tx{flex:1}.leech b{display:block;font-size:calc(16px*var(--t));line-height:1.25}.leech small{font-size:calc(12px*var(--t));color:var(--onSv)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 12px}
+.legend span{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:700}
+.legend svg.i{width:18px;height:18px}
+.gl{font-weight:700}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Progress</h1>
+<p class="cap1">The Progress tab (owner, 2026-10-26: "Redesign the progress screen. The overall structure is fine, just think on the colours, accents, etc. Each skill should have one colour associated with it always (maybe use the home icon colours). The skills will always be written in that colour. Also, the tiles need better designs."). Phone 360 dp at 1.4x text. Today's screen is drawn from the owner's screenshot.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palettes: ColorScheme.fromSeed (tonal spot) of the clay seed #8F4C36 (the owner's phone) and the forest seed #3F6C51 (the default), ThemeSeed in lib/app/settings.dart, generated with material_color_utilities ===== */
+const PALS={"forest_light":{"p":"#296a48","onP":"#ffffff","pc":"#aef2c6","onPc":"#085231","sc":"#d1e8d6","onSc":"#374b3e","tt":"#3b6471","tc":"#bfe9f8","onTc":"#224c58","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sMid":"#eaefe8","sHigh":"#e4eae3","sHst":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"},"forest_dark":{"p":"#92d5ab","onP":"#003920","pc":"#085231","onPc":"#aef2c6","sc":"#374b3e","onSc":"#d1e8d6","tt":"#a3cddc","tc":"#224c58","onTc":"#bfe9f8","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sMid":"#1b211d","sHigh":"#262b27","sHst":"#313632","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},"clay_light":{"p":"#8f4c36","onP":"#ffffff","pc":"#ffdbd0","onPc":"#723521","sc":"#ffdbd0","onSc":"#5d4037","tt":"#6a5e2f","tc":"#f4e2a7","onTc":"#52461a","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLow":"#fff1ed","sMid":"#fceae5","sHigh":"#f7e4df","sHst":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","E":"#ba1a1a","onE":"#ffffff"},"clay_dark":{"p":"#ffb59e","onP":"#55200d","pc":"#723521","onPc":"#ffdbd0","sc":"#5d4037","onSc":"#ffdbd0","tt":"#d7c68d","tc":"#52461a","onTc":"#f4e2a7","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLow":"#231917","sMid":"#271d1b","sHigh":"#322825","sHst":"#3d322f","ol":"#a08d87","olv":"#53433f","E":"#ffb4ab","onE":"#690005"}};
+/* ===== skill inks: ModeColors, a fixed colour per skill whatever the seed (lib/ui/theme.dart).
+   Ink (text, bars, icons) = light theme: the dark set's container; dark theme: its onContainer. Both are existing ModeColors values.
+   Script has no ModeColor of its own today (its tile follows the seed): pink (the pair set) or yellow (the reading set) is a tweak. ===== */
+const INK={
+ light:{read:'#284777',write:'#6e3900',hear:'#4f378b',say:'#255023',grammar:'#00504a',scriptP:'#7a2963',scriptY:'#524700'},
+ dark:{read:'#d6e3ff',write:'#ffdcc2',hear:'#eaddff',say:'#bdf0b3',grammar:'#b8f0e4',scriptP:'#ffd8ec',scriptY:'#f6e388'}};
+const ICONS={
+ read:'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z',
+ write:'M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z',
+ hear:'M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.78l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z',
+ say:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ grammar:'M2.5 4v3h5v12h3V7h5V4h-13zm19 5h-9v3h3v7h3v-7h3V9z',
+ script:'M9.93 13.5h4.14L12 7.98 9.93 13.5zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5l-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z',
+ words:'M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z',
+ sent:'M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ trophy:'M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z',
+ clock:'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
+ hourglass:'M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z',
+ warn:'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
+ ok:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+ chev:'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
+ home:'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z'};
+const svg=p=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[p]}"/></svg>`;
+const SKILLS=[['grammar','Grammar'],['script','Script'],['read','Read'],['write','Write'],['hear','Hear'],['say','Say']];
+/* mastery: [first, second] as the screen's "a% · b%"; null = none; the polygon is the second. Hindustani and Bengali numbers are made up. */
+const D={
+ hi:{lang:'Hindustani',other:'Bengali',gl:'ह',words:[12,64],rules:[3,8],sents:[21,30],since:'Oct 4, 2026',hours:['3.4','610'],
+  m:{grammar:[0,0],script:[0,null],read:[2,62],write:[1,71],hear:[1,24],say:[0,0]},
+  tags:[['postpositions',0],['aspiration',0],['honorific',17]],week:['on','on','on','off','off','on','today']},
+ bn:{lang:'Bengali',other:'Hindustani',gl:'ব',words:[27,70],rules:[4,10],sents:[18,40],since:'Oct 9, 2026',hours:['2.2','624'],
+  m:{grammar:[1,12],script:[2,41],read:[5,48],write:[2,35],hear:[1,18],say:[0,0]},
+  tags:[['case-endings',3],['aspiration',9],['negation',22]],week:['on','on','off','on','off','on','today']}};
+const S={theme:'dark',pal:'clay',course:'hi',tiles:'one',view:'radar',scr:'P',len:'phone',hl:'1'};
+const root=document.getElementById('root');
+const ink=k=>INK[S.theme][k==='script'?'script'+S.scr:k];
+function lang(d){
+ return `<div class="lbar"><span class="pill">All</span><span class="pill on"><span class="gl script">${d.gl}</span> ${d.lang}</span><span class="pill">${d.other}</span><span class="sp"></span><span class="ib" style="width:32px;height:32px">${svg('bug')}</span></div>`}
+function nav(){return `<div class="nav">${[['home','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']].map(([i,l])=>`<div class="${l==='Progress'?'on':''}"><span class="pl">${svg(i)}</span>${l}</div>`).join('')}</div>`}
+function week(d){
+ return `<div class="week">${d.week.map((s,i)=>{const link=s!=='off'&&i>0&&d.week[i-1]!=='off'?'<span class="lk"></span>':'';
+  return `<div class="wd ${s==='today'?'b':''}">${link}<i class="${s==='off'?'off':'on'} ${s==='today'?'today':''}"></i>${'WTFSSMT'[i]}</div>`}).join('')}</div>`}
+/* the radar: six axes clockwise from the top: Grammar, Script, Read, Write, Hear, Say (as today) */
+function radar(d,coloured){
+ const W=296,cx=W/2,cy=124,R=52,H=248,pts=[],labels=[];
+ SKILLS.forEach(([k,name],i)=>{const a=(-90+i*60)*Math.PI/180,m=d.m[k],v=m[1]==null?0:m[1]/100;
+  const c=Math.cos(a),s=Math.sin(a);
+  pts.push([cx+c*R*Math.max(v,.03),cy+s*R*Math.max(v,.03)]);
+  const lx=cx+c*(R+10),ly=cy+s*(R+10),side=c>.3?'r':c<-.3?'l':'c';
+  const col=coloured?ink(k):'var(--onS)';
+  const x=side==='r'?`left:${lx}px;`:side==='l'?`right:${W-lx}px;`:`left:${lx}px;transform:translateX(-50%);`;
+  const y=s<-.3?`bottom:calc(100% - ${ly}px);`:s>.3?`top:${ly}px;`:`top:${ly-18}px;`;
+  labels.push(`<div class="rl ${side}" style="${x}${y}"><b style="color:${col}">${coloured?svg(k):''}<em style="font-style:normal">${name}</em></b><span class="vl">${m[0]}% · ${m[1]==null?'–':m[1]+'%'}</span></div>`)});
+ const ring=f=>SKILLS.map((_,i)=>{const a=(-90+i*60)*Math.PI/180;return `${cx+Math.cos(a)*R*f},${cy+Math.sin(a)*R*f}`}).join(' ');
+ const rings=[.25,.5,.75,1].map(f=>`<polygon points="${ring(f)}" fill="none" stroke="var(--olv)" stroke-width="1"/>`).join('');
+ const spokes=SKILLS.map((_,i)=>{const a=(-90+i*60)*Math.PI/180;return `<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(a)*R}" y2="${cy+Math.sin(a)*R}" stroke="var(--olv)"/>`}).join('');
+ const col=coloured?'var(--p)':'#7fc4e8';
+ const poly=`<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="${col}" fill-opacity="${coloured?.2:.15}" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>`;
+ const dots=pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${coloured?5:4}" fill="${coloured?ink(SKILLS[i][0]):'var(--s)'}" stroke="${coloured?'var(--sLow)':'#7fc4e8'}" stroke-width="2"/>`).join('');
+ return `<div class="radar"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMin meet" role="img" aria-label="Mastery by skill">${rings}${spokes}${poly}${dots}</svg>${labels.join('')}</div>`}
+function bars(d){
+ return `<div class="sbars">${SKILLS.map(([k,name])=>{const m=d.m[k],c=ink(k);
+  return `<div class="sb"><span class="nm" style="color:${c}">${svg(k)}${name}</span><span class="tr" role="img" aria-label="${name} ${m[1]==null?'none':m[1]+' percent'}"><i style="width:${m[1]||0}%;background:${c}"></i></span><span class="v">${m[0]}% · ${m[1]==null?'–':m[1]+'%'}</span></div>`}).join('')}</div>`}
+const tags=d=>d.tags.map(([t,p])=>`<div class="wk"><span class="nm">${t}</span><span class="tr"><i style="width:${p}%"></i></span><span class="pc">${p}%</span></div>`).join('');
+/* ---- Today (as built), drawn from the owner's screenshot ---- */
+function phoneToday(d){
+ const tile=(t,f,k,o)=>`<div class="tile" style="background:var(--sLow)"><div style="font-size:calc(14px*var(--t));font-weight:500">${t}</div><div class="fig" style="font-size:calc(30px*var(--t))">${f}</div><div style="font-size:calc(14px*var(--t));line-height:1.25;color:var(--onSv)">${k}<br>${o}</div></div>`;
+ return `${lang(d)}<div class="scroll" style="padding-top:0">
+ <div class="tiles3">${tile('Words',0,'known','of '+d.words[1]+' taught')}${tile('Rules',0,'known','of 0 taught')}${tile('Sentences',d.sents[0],'open','of '+d.sents[1]+' taught')}</div>
+ <div class="lvl" style="background:var(--sLow)"><span style="font-size:calc(28px*var(--t));font-weight:700">Not yet</span><span><small style="font-size:calc(14px*var(--t));font-weight:500">Level</small><small style="font-size:calc(14px*var(--t))">Started ${d.since}</small></span></div>
+ <div class="card2">${week(d)}</div>
+ <div class="card2"><div class="cap"><h3 style="font-size:calc(20px*var(--t))">Mastery by skill</h3><span class="more">Over time ${svg('chev')}</span></div><p class="t-body" style="color:var(--onSv)">Overall mastery 0%</p>${radar(d,false)}</div>
+ <div class="hours" style="grid-template-columns:1fr 1.15fr"><div class="tile" style="background:var(--sLow)"><div style="font-size:calc(14px*var(--t));font-weight:500">Hours spent</div><div class="fig" style="font-size:calc(30px*var(--t))">${d.hours[0]}</div></div><div class="tile" style="background:var(--sLow)"><div style="font-size:calc(14px*var(--t));font-weight:500">Hours left</div><div style="font-size:calc(16px*var(--t));color:var(--onSv)">About <b style="font-size:calc(30px*var(--t));color:var(--onS)">${d.hours[1]}</b></div><div style="font-size:calc(14px*var(--t))">to the end of B1</div></div></div>
+ <div class="card2"><div class="cap"><h3 style="font-size:calc(20px*var(--t))">Weakest tags</h3><span class="more">All tags ›</span></div>${tags(d)}</div>
+ <div class="leech"><span class="chip" style="color:var(--onS)">${svg('warn')}</span><span class="tx"><b>No leeches</b><small>Cards you keep missing</small></span>${svg('chev')}</div>
+ </div>${nav()}`}
+/* ---- Proposed ---- */
+function tileNew(kind,title,fig,kn,of,frac){
+ const three=S.tiles==='three';
+ const sch={words:['pc','onPc'],rules:['sc','onSc'],sents:['tc','onTc']}[kind];
+ const bg=three?`var(--${sch[0]})`:'var(--sHigh)',fg=three?`var(--${sch[1]})`:'var(--onS)';
+ const ic={words:'words',rules:'grammar',sents:'sent'}[kind];
+ return `<div class="tile" style="background:${bg};color:${fg}"><div class="hd"><span class="chip" style="background:${three?'rgba(127,127,127,.2)':'var(--pc)'};color:${three?fg:'var(--onPc)'}">${svg(ic)}</span>${title}</div><div class="fig">${fig}</div><div class="mbar" style="background:${three?'rgba(127,127,127,.3)':'var(--sHst)'}" role="img" aria-label="${fig} ${kn} ${of}"><i style="width:${Math.round(frac*100)}%;background:${three?fg:'var(--p)'}"></i></div><div class="kn">${kn}</div><div class="of">${of}</div></div>`}
+function phoneNew(d){
+ const wf=d.words[0]&&0,sf=d.sents[0]/d.sents[1];
+ const c=S.hl==='1'?' chg upd':'';
+ return `${lang(d)}<div class="scroll" style="padding-top:0">
+ <div class="tiles3${c}">${tileNew('words','Words',0,'known','of '+d.words[1]+' taught',0)}${tileNew('rules','Rules',0,'known','of 0 taught',0)}${tileNew('sents','Sentences',d.sents[0],'open','of '+d.sents[1]+' taught',sf)}</div>
+ <div class="lvl${c}" style="background:var(--pc);color:var(--onPc)"><span class="chip" style="background:var(--p);color:var(--onP)">${svg('trophy')}</span><div class="tx"><small style="font-weight:600">Level</small><span class="big">Not yet</span><div class="ladder"><b>A1</b><b>A2</b><b>B1</b></div></div><small style="text-align:right;max-width:34%">Started ${d.since}</small></div>
+ <div class="card2${c}"><div class="cap"><h3>This week</h3><span class="t-sm">${d.week.filter(x=>x!=='off').length} of 7 days</span></div>${week(d)}</div>
+ <div class="card2${c}"><div class="cap"><h3>Mastery by skill</h3><span class="more">Over time ${svg('chev')}</span></div><p class="t-body" style="color:var(--onSv)">Overall mastery 0%</p>${S.view==='radar'?radar(d,true):bars(d)}</div>
+ <div class="hours${c}"><div class="tile"><div class="hd"><span class="chip" style="background:var(--sc);color:var(--onSc)">${svg('clock')}</span>Hours spent</div><div class="fig">${d.hours[0]}</div></div><div class="tile"><div class="hd"><span class="chip" style="background:var(--sc);color:var(--onSc)">${svg('hourglass')}</span>Hours left</div><div class="fig"><span style="font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv)">About </span>${d.hours[1]}</div><div class="of" style="color:var(--onSv)">to the end of B1</div></div></div>
+ <div class="card2"><div class="cap"><h3>Weakest tags</h3><span class="more">All tags ${svg('chev')}</span></div>${tags(d)}</div>
+ <div class="leech${c}"><span class="chip" style="background:var(--pc);color:var(--onPc)">${svg('ok')}</span><span class="tx"><b>No leeches</b><small>Cards you keep missing</small></span>${svg('chev')}</div>
+ </div>${nav()}`}
+const frame=(cap,inner)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph ${S.len==='full'?'full':''}">${inner}</div></div>`;
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${S[k]===v}">${l}</button>`).join('')}</span></div>`;
+function render(){
+ const d=D[S.course];document.documentElement.setAttribute('data-theme',S.theme);
+ const pal=PALS[S.pal+'_'+S.theme];
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(pal).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.innerHTML=`<section class="opt"><h2>Progress, ${d.lang}</h2>
+ <p class="note">Same structure. New: each skill has one colour, the colours of the Today tile icons, and its name is always written in it; the count tiles get an icon and a bar; Level is the one filled tile; Hours get icons. The six skill colours on this theme:</p>
+ <div class="legend">${SKILLS.map(([k,n])=>`<span style="color:${ink(k)}">${svg(k)}${n}</span>`).join('')}</div>
+ <div class="tw">${seg('pal',[['clay','Clay (your phone)'],['forest','Forest (default)']],'Colour seed')}${seg('tiles',[['one','One accent'],['three','Three accents']],'Count tiles')}${seg('view',[['radar','Radar'],['bars','Bars']],'Mastery')}${seg('scr',[['P','Pink'],['Y','Yellow']],'Script colour')}${seg('len',[['phone','Phone'],['full','Full length']],'Show')}</div>
+ <div class="frames">${frame('Today (as built)',phoneToday(d))}${frame('Proposed',phoneNew(d))}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){S[b.parentNode.dataset.sk]=b.dataset.v;render()}
+});
+render();
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+window.__contrast=[];
+['clay','forest'].forEach(seed=>['light','dark'].forEach(t=>{const P=PALS[seed+'_'+t];
+ const add=(n,f,b,need)=>{const r=cr(f,b);window.__contrast.push({seed,theme:t,pair:n,ratio:+r.toFixed(2),need,pass:r>=need})};
+ add('body text on page',P.onS,P.s,4.5);
+ add('secondary text on card',P.onSv,P.sLow,4.5);
+ add('secondary text on tile',P.onSv,P.sHigh,4.5);
+ add('tile text on tile',P.onS,P.sHigh,4.5);
+ add('Level text on primary container',P.onPc,P.pc,4.5);
+ add('Count text on secondary container',P.onSc,P.sc,4.5);
+ add('Count text on tertiary container',P.onTc,P.tc,4.5);
+ add('Level icon on its disc',P.onP,P.p,3);
+ add('chip icon on primary container',P.onPc,P.pc,3);
+ add('chip icon on secondary container',P.onSc,P.sc,3);
+ add('link text on card',P.p,P.sLow,4.5);
+ add('count bar on its track',P.p,P.sHst,3);
+ add('tag bar on its track',P.tt,P.sHst,3);
+ add('week dot on card',P.p,P.sLow,3);
+ add('week empty ring on card',P.ol,P.sLow,3);
+ Object.entries(INK[t]).forEach(([k,v])=>{
+  add('skill '+k+' text on card',v,P.sLow,4.5);
+  add('skill '+k+' text on page',v,P.s,4.5);
+  add('skill '+k+' bar on track',v,P.sHst,3);
+ });
+}));
+console.log('contrast fails',JSON.stringify(window.__contrast.filter(x=>!x.pass)),'of',window.__contrast.length);
+</script>
+</body></html>
