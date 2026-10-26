@@ -430,7 +430,6 @@ void main() {
       expect(tiles.map((t) => t.title), <String>[
         l10n.progressWordsTitle,
         l10n.progressRulesTitle,
-        l10n.progressSentencesTitle,
       ]);
       final words = tiles.first;
       expect(words.figure, '1');

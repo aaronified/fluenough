@@ -46,6 +46,9 @@ class ProgressTiles extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: UnlockTile(
+                  icon: Icons.translate,
+                  taught: counts.wordsTaught,
+                  count: counts.wordsKnown,
                   title: l10n.progressWordsTitle,
                   figure: count.format(counts.wordsKnown),
                   known: l10n.progressKnown,
@@ -60,6 +63,9 @@ class ProgressTiles extends StatelessWidget {
               ),
               Expanded(
                 child: UnlockTile(
+                  icon: Icons.text_fields,
+                  taught: counts.rulesTaught,
+                  count: counts.rulesKnown,
                   title: l10n.progressRulesTitle,
                   figure: count.format(counts.rulesKnown),
                   known: l10n.progressKnown,
@@ -72,20 +78,6 @@ class ProgressTiles extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: UnlockTile(
-                  title: l10n.progressSentencesTitle,
-                  figure: count.format(counts.sentencesOpen),
-                  known: l10n.progressOpen,
-                  outOf: l10n.progressOfTaught(
-                    count.format(counts.sentencesTotal),
-                  ),
-                  semantics: l10n.progressSentencesSemantics(
-                    count.format(counts.sentencesOpen),
-                    count.format(counts.sentencesTotal),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
@@ -95,21 +87,31 @@ class ProgressTiles extends StatelessWidget {
   }
 }
 
-/// A tile of the three counts: its title, **312** on one line at any text
-/// size (it shrinks to fit rather than wrap), and under it what is counted,
-/// "known", and "of 540 taught", which may take two lines.
+/// A tile of the two counts, words and rules (owner, 2026-10-26: two tiles
+/// on top, not three): an icon and its title, **312** on one line at any text
+/// size (it shrinks to fit rather than wrap) with what is counted, "known",
+/// beside it, a thin bar of how much of what is taught is known, and under
+/// it "of 540 taught", which may take two lines.
 class UnlockTile extends StatelessWidget {
   const UnlockTile({
     super.key,
+    required this.icon,
     required this.title,
     required this.figure,
+    required this.count,
+    required this.taught,
     required this.known,
     required this.outOf,
     required this.semantics,
   });
 
+  final IconData icon;
   final String title;
   final String figure;
+
+  /// The figure and what it is out of, for the bar.
+  final int count;
+  final int taught;
 
   /// What the figure counts: known, or open.
   final String known;
@@ -122,35 +124,83 @@ class UnlockTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final share = taught <= 0 ? 0.0 : (count / taught).clamp(0.0, 1.0);
     return Semantics(
       container: true,
       excludeSemantics: true,
       label: semantics,
-      child: ProgressTile(
-        color: scheme.surfaceContainerLow,
-        title: title,
-        titleColor: scheme.onSurfaceVariant,
+      child: Container(
+        padding: const EdgeInsetsDirectional.all(12),
+        decoration: BoxDecoration(
+          color: scheme.surfaceContainerHigh,
+          borderRadius: BorderRadius.circular(AppRadii.group),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Row(
+              spacing: 8,
+              children: <Widget>[
+                Container(
+                  width: 28,
+                  height: 28,
+                  decoration: BoxDecoration(
+                    color: scheme.primaryContainer,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(icon, size: 18, color: scheme.onPrimaryContainer),
+                ),
+                Flexible(
+                  child: Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.titleSmall!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
             FittedBox(
               fit: BoxFit.scaleDown,
               alignment: AlignmentDirectional.centerStart,
-              child: Text(
-                figure,
-                maxLines: 1,
-                style: theme.textTheme.headlineMedium!.copyWith(
-                  fontWeight: FontWeight.w800,
-                  color: scheme.onSurface,
-                ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                spacing: 6,
+                children: <Widget>[
+                  Text(
+                    figure,
+                    maxLines: 1,
+                    style: theme.textTheme.headlineMedium!.copyWith(
+                      fontWeight: FontWeight.w800,
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                  Text(
+                    known,
+                    style: theme.textTheme.titleSmall!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                ],
               ),
             ),
-            Text(
-              known,
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: scheme.onSurfaceVariant,
+            const SizedBox(height: 6),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(3),
+              child: LinearProgressIndicator(
+                value: share,
+                minHeight: 6,
+                color: scheme.primary,
+                backgroundColor: scheme.surfaceContainerHighest,
               ),
             ),
+            const SizedBox(height: 4),
             Text(
               outOf,
               style: theme.textTheme.bodySmall!.copyWith(
@@ -196,8 +246,19 @@ class LevelTile extends StatelessWidget {
         : DateFormat.yMMMd(l10n.localeName).format(started!);
     final shown = allLanguages ? null : level;
     final badge = shown == null ? null : LevelBadge.of(shown);
-    final ink = badge == null ? scheme.onSurface : LevelBadge.text;
-    final soft = badge == null ? scheme.onSurfaceVariant : LevelBadge.text;
+    // Before A1 the tile is the primary container, with a trophy, so that
+    // the level is the one filled tile on Progress (owner, 2026-10-26).
+    final notYet = !allLanguages && shown == null;
+    final ink = badge != null
+        ? LevelBadge.text
+        : notYet
+        ? scheme.onPrimaryContainer
+        : scheme.onSurface;
+    final soft = badge != null
+        ? LevelBadge.text
+        : notYet
+        ? scheme.onPrimaryContainer
+        : scheme.onSurfaceVariant;
 
     final String label;
     if (allLanguages) {
@@ -229,13 +290,27 @@ class LevelTile extends StatelessWidget {
           vertical: 12,
         ),
         decoration: BoxDecoration(
-          color: scheme.surfaceContainerLow,
+          color: notYet ? scheme.primaryContainer : scheme.surfaceContainerLow,
           gradient: badge?.gradient,
           borderRadius: BorderRadius.circular(AppRadii.group),
         ),
         child: Row(
           spacing: 12,
           children: <Widget>[
+            if (notYet)
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: scheme.primary,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.emoji_events_outlined,
+                  size: 22,
+                  color: scheme.onPrimary,
+                ),
+              ),
             Flexible(
               child: fit(
                 Text(
@@ -291,7 +366,11 @@ class ProgressTile extends StatelessWidget {
     required this.titleColor,
     required this.child,
     this.gradient,
+    this.icon,
   });
+
+  /// An icon in a round chip before the title, or none.
+  final IconData? icon;
 
   final Color color;
   final Gradient? gradient;
@@ -313,12 +392,33 @@ class ProgressTile extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: Theme.of(context).textTheme.labelLarge!
-              .copyWith(color: titleColor),
+        Row(
+          spacing: 8,
+          children: <Widget>[
+            if (icon != null)
+              Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  icon,
+                  size: 18,
+                  color: Theme.of(context).colorScheme.onSecondaryContainer,
+                ),
+              ),
+            Flexible(
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.labelLarge!
+                    .copyWith(color: titleColor),
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 4),
         child,

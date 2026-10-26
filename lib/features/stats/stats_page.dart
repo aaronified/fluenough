@@ -261,7 +261,16 @@ class _LeechesRow extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(18, 16, 16, 16),
       child: Row(
         children: <Widget>[
-          dim(Icon(Icons.warning_amber_rounded, color: fg)),
+          dim(
+            Icon(
+              // A check when there are none (owner, 2026-10-26), not a
+              // warning about a problem that is not there.
+              hasLeeches
+                  ? Icons.warning_amber_rounded
+                  : Icons.check_circle_outline,
+              color: fg,
+            ),
+          ),
           const SizedBox(width: 16),
           Expanded(
             child: Column(

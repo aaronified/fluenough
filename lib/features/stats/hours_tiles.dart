@@ -110,7 +110,8 @@ class HoursTiles extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: ProgressTile(
-                  color: scheme.surfaceContainerLow,
+                  icon: Icons.schedule,
+                  color: scheme.surfaceContainerHigh,
                   title: l10n.progressHoursSpentTitle,
                   titleColor: scheme.onSurfaceVariant,
                   child: fit(
@@ -122,7 +123,8 @@ class HoursTiles extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: ProgressTile(
-                  color: scheme.surfaceContainerLow,
+                  icon: Icons.hourglass_empty,
+                  color: scheme.surfaceContainerHigh,
                   title: l10n.progressHoursLeftTitle,
                   titleColor: scheme.onSurfaceVariant,
                   child: Column(

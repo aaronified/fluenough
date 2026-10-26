@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/progress/mastery.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/skill_ink.dart';
 import '../../ui/theme.dart';
 import 'skill_lines.dart';
 
@@ -55,7 +56,7 @@ class SkillStarCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsetsDirectional.all(18),
+            padding: const EdgeInsetsDirectional.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,12 +100,12 @@ class _Star extends StatelessWidget {
 
   final Mastery mastery;
 
-  static const double _maxRadius = 70;
-  static const double _minRadius = 40;
+  static const double _maxRadius = 84;
+  static const double _minRadius = 48;
 
   /// The least width a label beside the star is given, so the star shrinks
   /// to leave it, rather than the label running out of the card.
-  static const double _sideWidth = 84;
+  static const double _sideWidth = 76;
   static const double _gap = 6;
 
   /// The lines a label is given room for: the skill's name and its two
@@ -145,6 +146,8 @@ class _Star extends StatelessWidget {
         );
 
         final line = labelHeight / _lines;
+        // Bold at 14 sp or more is a large text: 3:1 is enough for it.
+        final nameSize = math.max(14.0, style.fontSize!);
 
         Widget label(int i) {
           final skill = kStarSkills[i];
@@ -192,9 +195,24 @@ class _Star extends StatelessWidget {
             height: labelHeight,
             child: Align(
               alignment: alignment,
-              child: Text(
-                '${masterySkillLabel(l10n, skill)}\n'
-                '${l10n.progressStarAxis(fill, shownOutline)}',
+              child: Text.rich(
+                TextSpan(
+                  children: <InlineSpan>[
+                    // The name is always in its skill's colour (owner,
+                    // 2026-10-26), bold, so the 3:1 of a large text holds.
+                    TextSpan(
+                      text: masterySkillLabel(l10n, skill),
+                      style: TextStyle(
+                        color: skillInk(skill),
+                        fontWeight: FontWeight.w700,
+                        fontSize: nameSize,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '\n${l10n.progressStarAxis(fill, shownOutline)}',
+                    ),
+                  ],
+                ),
                 key: ValueKey<String>('star-label-$i'),
                 textAlign: align,
                 style: style,
