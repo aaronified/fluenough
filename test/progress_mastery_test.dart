@@ -421,52 +421,58 @@ void main() {
   });
 
   group('the Progress tab', () {
-    testWidgets('shows words, rules, sentences, level, the week and the star; the star opens '
-        'the two charts over time; All languages shows the start date '
-        'only', (tester) async {
-      usePhone(tester, textScale: 1.4);
-      final app = AppState.test();
-      await app.load();
-      final state = GalleryFixtures.state(app, features: FeatureRegistry.all());
-      await pumpScreen(tester, const StatsPage(), state: state);
-      await tester.tap(
-        find.descendant(
-          of: find.byType(LanguageBar),
-          matching: find.text(l10nOf(tester).languageBarAll),
-        ),
-      );
-      await tester.pumpAndSettle();
-      final l10n = l10nOf(tester);
-      expect(find.text(l10n.progressStartedTitle), findsOneWidget);
-      expect(find.text(l10n.progressLevelTitle), findsNothing);
-      state.showLanguage('es', allOff: true);
-      await tester.pumpAndSettle();
-      expect(find.text(l10n.progressLevelTitle), findsOneWidget);
-      expect(find.byType(UnlockTile), findsNWidgets(3));
-      expect(find.byType(LevelTile), findsOneWidget);
-      expect(find.byType(PracticeWeekCard), findsOneWidget);
-      expect(find.byType(SkillStarCard), findsOneWidget);
-      expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
+    testWidgets(
+      'shows words, rules, level, the week and the star; the star opens '
+      'the two charts over time; All languages shows the start date '
+      'only',
+      (tester) async {
+        usePhone(tester, textScale: 1.4);
+        final app = AppState.test();
+        await app.load();
+        final state = GalleryFixtures.state(
+          app,
+          features: FeatureRegistry.all(),
+        );
+        await pumpScreen(tester, const StatsPage(), state: state);
+        await tester.tap(
+          find.descendant(
+            of: find.byType(LanguageBar),
+            matching: find.text(l10nOf(tester).languageBarAll),
+          ),
+        );
+        await tester.pumpAndSettle();
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.progressStartedTitle), findsOneWidget);
+        expect(find.text(l10n.progressLevelTitle), findsNothing);
+        state.showLanguage('es', allOff: true);
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.progressLevelTitle), findsOneWidget);
+        expect(find.byType(UnlockTile), findsNWidgets(2));
+        expect(find.byType(LevelTile), findsOneWidget);
+        expect(find.byType(PracticeWeekCard), findsOneWidget);
+        expect(find.byType(SkillStarCard), findsOneWidget);
+        expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
 
-      // The star is in reach without scrolling at 1.4x.
-      await tester.tap(find.byType(SkillStarCard));
-      await tester.pumpAndSettle();
-      expect(find.byType(OverTimePage), findsOneWidget);
-      expect(find.text(l10n.progressMasteryChart), findsOneWidget);
-      expect(find.text(l10n.progressTaughtChart), findsOneWidget);
-      expect(tester.takeException(), isNull);
+        // The star is in reach without scrolling at 1.4x.
+        await tester.tap(find.byType(SkillStarCard));
+        await tester.pumpAndSettle();
+        expect(find.byType(OverTimePage), findsOneWidget);
+        expect(find.text(l10n.progressMasteryChart), findsOneWidget);
+        expect(find.text(l10n.progressTaughtChart), findsOneWidget);
+        expect(tester.takeException(), isNull);
 
-      // How you learn is an entry below the two charts.
-      await tester.scrollUntilVisible(
-        find.text(l10n.howYouLearnTitle),
-        200,
-        scrollable: find.byType(Scrollable).first,
-      );
-      await tester.tap(find.text(l10n.howYouLearnTitle));
-      await tester.pumpAndSettle();
-      expect(find.byType(HowYouLearnPage), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        // How you learn is an entry below the two charts.
+        await tester.scrollUntilVisible(
+          find.text(l10n.howYouLearnTitle),
+          200,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.tap(find.text(l10n.howYouLearnTitle));
+        await tester.pumpAndSettle();
+        expect(find.byType(HowYouLearnPage), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 
   group('Progress hours', () {
@@ -697,7 +703,7 @@ void main() {
         of: find.byType(ProgressTiles),
         matching: find.byType(FittedBox),
       );
-      expect(fitted, findsNWidgets(5), reason: 'three counts, the level');
+      expect(fitted, findsNWidgets(4), reason: 'two counts, the level');
       for (final box in fitted.evaluate()) {
         final render = box.renderObject! as RenderFittedBox;
         final child = render.child!.size;

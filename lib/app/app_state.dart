@@ -1930,6 +1930,10 @@ class AppState extends ChangeNotifier {
       // for the deck (#680); a deck's own review, a lesson and revising
       // show them all.
       sampleKnown: fromToday,
+      // A session of one skill samples a deck by what the deck had today in
+      // every skill that is on, as Today's does: else a miss in another
+      // skill makes Today ask more cards than the skill's tile then finds.
+      sampleModes: fromToday ? _modes(ignorePauses: ignorePauses) : null,
       // What placement credited follows its course's choice (#761), but
       // only in Today: from a deck page the learner can revise or practise
       // placed words, whatever the choice.

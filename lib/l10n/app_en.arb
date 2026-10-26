@@ -3908,13 +3908,32 @@
       }
     }
   },
-  "statsTagNothingTaught": "No word with this tag is taught yet",
-  "@statsTagNothingTaught": {
-    "description": "Tooltip of a disabled Practise button: no taught word carries the tag."
+  "statsTagWordsTaught": "{count, plural, =1{1 word taught} other{{count} words taught}}",
+  "@statsTagWordsTaught": {
+    "description": "Second line of a row on the All tags page: how many taught words carry the tag.",
+    "placeholders": {
+      "count": {"type": "int", "example": "64"}
+    }
   },
-  "statsTagPractise": "Practise",
-  "@statsTagPractise": {
-    "description": "Button beside a tag: practise a random set of the words taught that carry it. Answers are recorded."
+  "statsTagNothingTaughtYet": "Nothing taught yet",
+  "@statsTagNothingTaughtYet": {
+    "description": "Second line of a row on the All tags page for a tag no taught word carries; its play button is then off."
+  },
+  "statsTagSort": "Sort",
+  "@statsTagSort": {
+    "description": "Tooltip of the All tags page's sort button."
+  },
+  "statsTagSortWeakest": "Weakest first",
+  "@statsTagSortWeakest": {
+    "description": "A sort of the All tags page: the tags with the lowest share known first, those with no answer last."
+  },
+  "statsTagSortAz": "A to Z",
+  "@statsTagSortAz": {
+    "description": "A sort of the All tags page: by tag name."
+  },
+  "statsTagSortWords": "Most words",
+  "@statsTagSortWords": {
+    "description": "A sort of the All tags page: the tag with the most taught words first."
   },
   "statsTagPractiseLabel": "Practise {tag}",
   "@statsTagPractiseLabel": {

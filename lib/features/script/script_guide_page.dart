@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/script_guide.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/report_button.dart';
@@ -153,86 +154,95 @@ class _FeatureRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final term = feature.term;
     final reading = feature.reading;
+    final tile = Container(
+      width: 88,
+      height: 88,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: scheme.primaryContainer,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: TargetText(
+            feature.example,
+            language: language,
+            fontSize: 44,
+            color: scheme.onPrimaryContainer,
+          ),
+        ),
+      ),
+    );
+    final text = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Semantics(
+          header: true,
+          child: Text(feature.name, style: theme.textTheme.titleMedium),
+        ),
+        if (term != null)
+          TargetText(
+            term,
+            language: language,
+            fontSize: theme.textTheme.bodyLarge!.fontSize!,
+            fontWeight: FontWeight.w500,
+            color: scheme.primary,
+            textAlign: TextAlign.start,
+          ),
+        if (showReading && reading != null)
+          Text(
+            reading,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+        const SizedBox(height: 4),
+        Text(feature.text, style: theme.textTheme.bodyLarge),
+        if (feature.letters.isNotEmpty) ...<Widget>[
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: <Widget>[
+              for (final letter in feature.letters)
+                Container(
+                  constraints: const BoxConstraints(minWidth: 40),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: scheme.surfaceContainerHigh,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TargetText(letter, language: language, fontSize: 22),
+                ),
+            ],
+          ),
+        ],
+      ],
+    );
+    // At large text the tile goes above the text, which then takes the full
+    // width (owner, 2026-10-25, #843): beside it the text is a 270 px column
+    // that wraps to 5 to 7 lines.
+    if (isLargeText(context)) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 12,
+        children: <Widget>[
+          tile,
+          SizedBox(width: double.infinity, child: text),
+        ],
+      );
+    }
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Container(
-          width: 88,
-          height: 88,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: scheme.primaryContainer,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: TargetText(
-                feature.example,
-                language: language,
-                fontSize: 44,
-                color: scheme.onPrimaryContainer,
-              ),
-            ),
-          ),
-        ),
+        tile,
         const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Semantics(
-                header: true,
-                child: Text(feature.name, style: theme.textTheme.titleMedium),
-              ),
-              if (term != null)
-                TargetText(
-                  term,
-                  language: language,
-                  fontSize: theme.textTheme.bodyLarge!.fontSize!,
-                  fontWeight: FontWeight.w500,
-                  color: scheme.primary,
-                  textAlign: TextAlign.start,
-                ),
-              if (showReading && reading != null)
-                Text(
-                  reading,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              const SizedBox(height: 4),
-              Text(feature.text, style: theme.textTheme.bodyLarge),
-              if (feature.letters.isNotEmpty) ...<Widget>[
-                const SizedBox(height: 8),
-                Wrap(
-                  spacing: 6,
-                  runSpacing: 6,
-                  children: <Widget>[
-                    for (final letter in feature.letters)
-                      Container(
-                        constraints: const BoxConstraints(minWidth: 40),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: scheme.surfaceContainerHigh,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TargetText(
-                          letter,
-                          language: language,
-                          fontSize: 22,
-                        ),
-                      ),
-                  ],
-                ),
-              ],
-            ],
-          ),
-        ),
+        Expanded(child: text),
       ],
     );
   }

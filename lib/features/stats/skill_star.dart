@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/progress/mastery.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/skill_ink.dart';
 import '../../ui/theme.dart';
 import 'skill_lines.dart';
 
@@ -55,7 +56,7 @@ class SkillStarCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsetsDirectional.all(18),
+            padding: const EdgeInsetsDirectional.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,18 +100,18 @@ class _Star extends StatelessWidget {
 
   final Mastery mastery;
 
-  static const double _maxRadius = 70;
-  static const double _minRadius = 40;
+  static const double _maxRadius = 84;
+  static const double _minRadius = 48;
 
   /// The least width a label beside the star is given, so the star shrinks
   /// to leave it, rather than the label running out of the card.
-  static const double _sideWidth = 84;
+  static const double _sideWidth = 76;
   static const double _gap = 6;
 
-  /// The lines a label is given room for: the skill's name and its two
-  /// shares, each of which may wrap. A name that breaks mid-word in the
-  /// narrow side box takes two lines and the shares three.
-  static const int _lines = 5;
+  /// The empty space kept above the star's first label, besides the card's
+  /// 8 px: 16 px in all, and the card's own padding below (#847, owner,
+  /// 2026-10-25: "Trim to 16 px").
+  static const double _pad = 8;
 
   @override
   Widget build(BuildContext context) {
@@ -123,11 +124,52 @@ class _Star extends StatelessWidget {
       color: scheme.onSurface,
       height: 1.25,
     );
-    final labelHeight =
-        (MediaQuery.textScalerOf(context).scale(style.fontSize!) *
-                style.height! *
-                _lines)
-            .ceilToDouble();
+    final scaler = MediaQuery.textScalerOf(context);
+    // Bold at 14 sp or more is a large text: 3:1 is enough for it.
+    final nameSize = math.max(14.0, style.fontSize!);
+    final line = (scaler.scale(style.fontSize!) * style.height!).ceilToDouble();
+    final direction = Directionality.of(context);
+
+    InlineSpan spanOf(int i) {
+      final skill = kStarSkills[i];
+      final outline = mastery[skill].outline;
+      // A dash while nothing is taught.
+      final shownOutline = outline == null
+          ? '–' // ui-literal-ok: a dash for "nothing taught" is not language
+          : l10n.commonPercent(outline);
+      return TextSpan(
+        style: style,
+        children: <InlineSpan>[
+          // The name is always in its skill's colour (owner, 2026-10-26),
+          // bold, so the 3:1 of a large text holds.
+          TextSpan(
+            text: masterySkillLabel(l10n, skill),
+            style: TextStyle(
+              color: skillInk(skill),
+              fontWeight: FontWeight.w700,
+              fontSize: nameSize,
+            ),
+          ),
+          TextSpan(
+            text:
+                '\n${l10n.progressStarAxis(l10n.commonPercent(mastery[skill].fill), shownOutline)}',
+          ),
+        ],
+      );
+    }
+
+    // How tall a label is at [width]: what its text takes, measured, so that
+    // the star keeps no room a label does not use.
+    double heightOf(int i, double width) {
+      final painter = TextPainter(
+        text: spanOf(i),
+        textDirection: direction,
+        textScaler: scaler,
+      )..layout(maxWidth: width);
+      final h = painter.height.ceilToDouble() + 1;
+      painter.dispose();
+      return h;
+    }
 
     return LayoutBuilder(
       builder: (context, box) {
@@ -136,34 +178,44 @@ class _Star extends StatelessWidget {
         final radius = math
             .min(_maxRadius, (cx - _sideWidth - _gap) / math.cos(math.pi / 6))
             .clamp(_minRadius, _maxRadius);
-        final cy = labelHeight + _gap + radius;
-        final height = cy + radius + _gap + labelHeight;
+        final topWidth = math.min(width, 2 * radius * math.cos(math.pi / 6));
+        final sideWidth = cx - radius * math.cos(math.pi / 6) - _gap;
+        final heights = <double>[
+          for (var i = 0; i < 6; i++)
+            heightOf(i, i == 0 || i == 3 ? topWidth : sideWidth),
+        ];
+        // The first label above the star, the upper side labels on their
+        // vertex and the lower hanging from theirs, and the last below it.
+        final cy =
+            _pad +
+            math.max(
+              heights[0] + _gap + radius,
+              math.max(heights[1], heights[5]) - line + radius / 2,
+            );
+        final height =
+            cy +
+            math.max(
+              radius + _gap + heights[3],
+              radius / 2 - line + math.max(heights[2], heights[4]),
+            );
         final star = _StarShape(
           center: Offset(cx, cy),
           radius: radius,
           rtl: rtl,
         );
 
-        final line = labelHeight / _lines;
-
         Widget label(int i) {
-          final skill = kStarSkills[i];
           final p = star.at(i);
-          final fill = l10n.commonPercent(mastery[skill].fill);
-          final outline = mastery[skill].outline;
-          // A dash while nothing is taught.
-          final shownOutline = outline == null
-              ? '–' // ui-literal-ok: a dash for "nothing taught" is not language
-              : l10n.commonPercent(outline);
+          final h = heights[i];
           final double left;
           final double top;
           final double boxWidth;
           final TextAlign align;
           final Alignment alignment;
           if (i == 0 || i == 3) {
-            boxWidth = math.min(width, 2 * radius * math.cos(math.pi / 6));
+            boxWidth = topWidth;
             left = cx - boxWidth / 2;
-            top = i == 0 ? p.dy - _gap - labelHeight : p.dy + _gap;
+            top = i == 0 ? p.dy - _gap - h : p.dy + _gap;
             align = TextAlign.center;
             alignment = i == 0 ? Alignment.bottomCenter : Alignment.topCenter;
           } else {
@@ -180,7 +232,7 @@ class _Star extends StatelessWidget {
             // The upper labels sit on their vertex and the lower hang from
             // theirs, so that two on one side never overlap.
             final upper = i == 1 || i == 5;
-            top = upper ? p.dy - labelHeight + line : p.dy - line;
+            top = upper ? p.dy - h + line : p.dy - line;
             alignment = upper
                 ? (right ? Alignment.bottomLeft : Alignment.bottomRight)
                 : (right ? Alignment.topLeft : Alignment.topRight);
@@ -189,12 +241,11 @@ class _Star extends StatelessWidget {
             left: left,
             top: top,
             width: boxWidth,
-            height: labelHeight,
+            height: h,
             child: Align(
               alignment: alignment,
-              child: Text(
-                '${masterySkillLabel(l10n, skill)}\n'
-                '${l10n.progressStarAxis(fill, shownOutline)}',
+              child: Text.rich(
+                spanOf(i),
                 key: ValueKey<String>('star-label-$i'),
                 textAlign: align,
                 style: style,

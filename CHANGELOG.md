@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- A Today skill tile that showed 1 due no longer opens "Nothing due": a skill's own review now samples a deck's known cards by what the deck had today in every skill, as Today's does.
+
 ### Changed
 
+- Layout follow-ups from the 1.4x screenshot review: the script guide puts a letter tile above its text at large text; each source on Sources is its own line; the onboarding languages list has a divider above its button; the speaking test buttons are two equal halves; trailing controls in Settings rows share one right edge; Today's skill tile names share a baseline; the mastery star keeps 16 px above and below instead of about 60.
+- Progress is redrawn: two count tiles on top (words and rules) with an icon and a bar, the level tile filled before A1, icons on the hours tiles, a check when there are no leeches, and a larger mastery star whose skill names are each always in their own colour, the same in light and dark and on every theme.
+- All tags is two lines and a thin bar a row, with a round play button inline, "Nothing taught yet" for a tag with no taught word, and a sort menu (weakest first, A to Z, most words).
 - A wrong spoken answer now shows what was heard and, when the word is in a deck, its IPA on a second line; it no longer repeats the answer shown on the card.
 - Today's skill tiles put the number on the icon row with the pace arrow, in two lines; the arrow is hidden above 99 cards.
 - The course card on Decks has a sync button that looks for deck updates and downloads them, with the download shown on the bar and a toast when there is nothing to download; the hours left are one line under the bar.
