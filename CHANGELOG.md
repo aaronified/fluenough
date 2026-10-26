@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- A Today skill tile that showed 1 due no longer opens "Nothing due": a skill's own review now samples a deck's known cards by what the deck had today in every skill, as Today's does.
+
 ### Changed
 
 - Progress is redrawn: two count tiles on top (words and rules) with an icon and a bar, the level tile filled before A1, icons on the hours tiles, a check when there are no leeches, and a larger mastery star whose skill names are each always in their own colour, the same in light and dark and on every theme.
