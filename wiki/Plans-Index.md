@@ -15,6 +15,7 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Course](Plan-Ipa-Course): the IPA, taught like a language
+- [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
 - [Iso 15919 Deck](Plan-Iso-15919-Deck): a deck that teaches ISO 15919, in each language
 - [Language Paths](Plan-Language-Paths): language paths, pacing by difficulty, and every language in the scheme
 - [Language Paths Scheme](Plan-Language-Paths-Scheme): Language Learning Paths (English Base, 30 min/day)
