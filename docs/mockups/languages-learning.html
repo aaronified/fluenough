@@ -75,6 +75,36 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .chip.on{background:var(--sc);color:var(--onSc);border-color:transparent}
 .chip svg{width:18px;height:18px}
 .est{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:0 0 8px}
+.meta{display:flex;align-items:center;gap:10px;padding-left:52px;margin:0 0 4px;min-height:36px;flex-wrap:wrap}
+.meta .mn{display:inline-flex;align-items:center;gap:4px;font-size:calc(14px*var(--t));color:var(--onSv);font-weight:500}
+.meta .mn svg{width:20px;height:20px}
+.tile.sm{width:28px;height:28px;border-radius:14px;font-size:calc(13px*var(--t))}
+.rbtn{flex:none;width:48px;height:48px;border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center}
+.rbtn span{width:36px;height:36px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:var(--p);color:var(--onP)}
+.rbtn span.x{background:none;color:var(--onSv);box-shadow:inset 0 0 0 2px var(--ol)}
+.rbtn svg{width:22px;height:22px}
+.dl{padding-left:52px;display:flex;align-items:center;gap:12px;margin:0 0 4px}
+.dl .bar{flex:1;margin:0}
+.dl b{font-size:calc(14px*var(--t));font-variant-numeric:tabular-nums}
+.stp{display:flex;align-items:center;gap:8px;margin:2px 0}
+.stp button{flex:none;width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;padding:0;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.stp button svg{width:24px;height:24px}
+.stp button[aria-disabled="true"]{opacity:.38;cursor:default}
+.stp .mv{flex:1;text-align:center;font-size:calc(20px*var(--t));font-weight:600;font-variant-numeric:tabular-nums;min-width:0}
+.bottom .btn+.btn{margin-top:8px}
+.btn.err{background:none;border:1px solid var(--E);color:var(--E)}
+.dlg.chg{position:absolute}
+.scrim2{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:5}
+.dlg{position:absolute;z-index:6;left:16px;right:16px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.dlg h4{margin:0;font-size:calc(22px*var(--t));line-height:1.2;font-weight:500}
+.dlg p{margin:0;font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv)}
+.dlg label{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onS)}
+.dlg input{width:100%;min-height:56px;border-radius:4px;border:1px solid var(--ol);background:none;color:var(--onS);font:inherit;font-size:calc(16px*var(--t));padding:0 16px}
+.dlg input:focus{outline:2px solid var(--p);outline-offset:0;border-color:var(--p)}
+.dlg .acts{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.dlg .acts button{min-height:48px;border-radius:24px;border:0;background:none;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;padding:0 16px}
+.dlg .acts button.del{background:var(--E);color:var(--onE)}
+.dlg .acts button.del:disabled{background:var(--sHst);color:var(--onSv);opacity:.6;cursor:default}
 .bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
 .bottom.pg{background:var(--sMid)}
 /* sheet */
@@ -175,6 +205,9 @@ const IC={
  list:'M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h13v-4H8v4zm0 5h13v-4H8v4zM8 5v4h13V5H8z',
  edit:'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z',
  braille:'M7 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
+ timer:'M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z',
+ plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ minus:'M19 13H5v-2h14v2z',
  layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z'};
 const svg=(p,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[p]}"/></svg>`;
 
@@ -194,31 +227,38 @@ const C={
   scripts:[
    {n:'Bengali',rtl:false,decks:7,done:4,shared:'Assamese',state:true}]}};
 const BRAILLE={name:'English Braille',words:193,size:'89 KB',unitsDone:15,unitsAll:16};
-const S={theme:'light',pal:'clay',course:'hi',scr:'sw',hl:'1'};
+const S={theme:'light',pal:'clay',course:'hi',scr:'sw',hl:'1',mins:{hi:5,bn:10,brl:5,es:5}};
+const TY={};
+const cards=m=>Math.round(m*60/17.5);
+const GLF={'English':'A','Bengali':'অ','Hindustani':'अ'};
 /* switch states per phone, so each one can be tried; a phone that is not listed uses the course's own */
 const ST={};
 const root=document.getElementById('root');
 const tick=()=>`<span class="tick">${svg('check',20)}</span>`;
 const H=(cls)=>S.scr==='sw'?` chg ${cls||''}`:'';
+const N=cls=>` chg new ${cls||''}`;
 
 /* ----- the list page ----- */
+function minutes(k){
+ return `<div class="kvr">${tile('timer','')}<div class="blk"><p class="lab">Minutes a day</p>
+  <div class="stp"><button data-mn="-" data-k="${k}" aria-label="5 minutes less">${svg('minus')}</button><b class="mv" data-k="${k}" aria-live="polite">${S.mins[k]} min</b><button data-mn="+" data-k="${k}" aria-label="5 minutes more">${svg('plus')}</button></div>
+  <p class="val sm estv" data-k="${k}">About ${cards(S.mins[k])} cards</p></div></div>`;
+}
 function listBody(c){
- const row=(name,badge,you,open,ic)=>`<div class="row"><div class="hd">${ic==='braille'?tile('braille','tc'):tile('translate','')}<span class="nm">${name}</span>${tick()}</div>
-  <div class="st"><span class="badge${badge==='Complete'?' pc':''}">${badge}</span><span class="you">${you}</span></div>
-  ${open?`<div class="sub"><span>Up to date · ${c.size}</span><span class="ib" style="color:var(--p)">${svg('close')}</span></div>
-  <div class="mins"><span>Minutes a day</span><b>5 min</b></div>
-  <div class="chips"><span class="chip on">${svg('check')}5</span><span class="chip">10</span><span class="chip">15</span><span class="chip">20</span><span class="chip">30</span><span class="chip">Custom</span></div>
-  <p class="est">About 17 cards a day</p>`:''}</div>`;
+ const row=(o)=>`<div class="row"><div class="hd">${o.ic==='braille'?tile('braille','tc'):tile('translate','')}<span class="nm">${o.name}</span><button class="rbtn" tabindex="-1" aria-label="${o.dl?'Cancel download':'Stop learning'}"><span class="${o.dl?'x':''}">${svg(o.dl?'close':'check')}</span></button></div>
+  ${o.dl?`<div class="dl"><div class="bar"><u style="width:${o.dl}%"></u></div><b>${o.dl}%</b></div>`:`<div class="meta"><span class="mn">${svg('timer')}<span class="mn-v" data-k="${o.k}">${S.mins[o.k]} min</span></span>${(o.scripts||[]).filter(x=>x.state).map(x=>gl(x.n,true).replace('class="tile','class="tile sm')).join('')}<span class="tile off sm script" role="img" aria-label="Taught from ${o.from}">${GLF[o.from]}</span></div>`}</div>`;
  const hi=S.course==='hi';
+ const A=hi?C.hi:C.bn,B=hi?C.bn:C.hi;
  return `<div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">Languages I’m learning</span><span class="ib">${svg('bug')}</span></div>
  <div class="scroll"><span class="btn tonal upd">${svg('sync')}Check for deck updates</span>
  <p class="last">Last checked Tue, Oct 27, 8:27 AM</p>
  <div class="auto"><div class="tx"><b>Check automatically</b></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>
  <div class="search">${svg('search')}Search languages</div>
- <div class="sec">Learning · 3</div>
- ${hi?row(C.hi.title,'Beta','You: 26%',true):row(C.bn.title,'Beta','You: 41%',true)}
- ${row(BRAILLE.name,'Complete','You: 0 words learned',false,'braille')}
- ${hi?row(C.bn.title,'Beta','You: 41%',false):row(C.hi.title,'Beta','You: 26%',false)}
+ <div class="sec">Learning · 4</div>
+ ${row({name:A.title,k:S.course,scripts:A.scripts,from:'English'})}
+ ${row({name:BRAILLE.name,k:'brl',ic:'braille',from:'English'})}
+ ${row({name:B.title,k:hi?'bn':'hi',scripts:B.scripts,from:'English'})}
+ ${row({name:'Spanish',k:'es',dl:62,from:'English'})}
  </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
 }
 
@@ -265,15 +305,15 @@ function langSheet(c,learned,id){
  else if(sw) scripts=scriptsBefore(c,id);
  const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', '),'translate',''):'';
  const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Taught from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
- const body=`${header}${learned?levelBlock(c):''}${scripts}
+ const body=`${header}${learned?levelBlock(c):''}${learned?`<div class="${N()}" style="border-radius:12px;margin-bottom:14px">${minutes(S.course)}</div>`:''}${scripts}
   <div style="height:14px"></div>${courseLine(c)}${built}${native}${kv('Size',c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}`;
- const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
+ const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span><span class="btn err full${N()}" style="min-height:calc(48px*var(--t))">Delete data</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
  return {body,btn};
 }
 function scriptSheet(learned){
  const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words</span>':''}</div>
-  <div style="height:14px"></div>${kv('Course size',BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll,'list','pc')}`;
- const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
+  ${learned?`<div class="${N()}" style="border-radius:12px;margin:14px 0">${minutes('brl')}</div>`:'<div style="height:14px"></div>'}${kv('Course size',BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll,'list','pc')}`;
+ const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span><span class="btn err full${N()}" style="min-height:calc(48px*var(--t))">Delete data</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
  return {body,btn};
 }
 /* the "as built" step after Learn this language: scripts as boxes */
@@ -290,6 +330,16 @@ function phone(cap,inner,key,focus){
 }
 function sheetPhone(cap,key,s,focus){
  const inner=listBody(C[S.course]).replace(/<div class="bottom pg">[\s\S]*$/,'')+`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${cap}"><div class="grab"></div><div class="scroll" data-focus="${focus||''}">${s.body}</div><div class="bottom">${s.btn}</div></div>`;
+ return phone(cap,inner,key);
+}
+function dialogPhone(cap,key,name,typed,learnedSheet){
+ const id='ty-'+key;
+ if(TY[id]==null)TY[id]=typed;
+ const ok=TY[id]===name;
+ const inner=listBody(C[S.course]).replace(/<div class="bottom pg">[\s\S]*$/,'')+`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${learnedSheet.body}</div><div class="bottom">${learnedSheet.btn}</div></div><div class="scrim2"></div>
+ <div class="dlg chg new" role="alertdialog" aria-labelledby="${id}-h"><h4 id="${id}-h">Delete ${name} data?</h4><p>All reviews and deck data. This cannot be undone.</p>
+ <label for="${id}">Type ${name} to confirm</label><input id="${id}" data-name="${name}" data-ty="${id}" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="${TY[id]}">
+ <div class="acts"><button tabindex="-1">Cancel</button><button class="del" data-del="${id}" ${ok?'':'disabled'}>Delete</button></div></div>`;
  return phone(cap,inner,key);
 }
 function init(){
@@ -309,11 +359,12 @@ function render(){
  const ids=combos.map((cb,i)=>set('c'+i,cb));
  /* the Hindustani example before learning starts with the first script on, as a first guess */
  const frames=[];
- frames.push(`<section class="opt"><h2>List</h2><div class="frames">${phone('Languages I’m learning',listBody(c),'list')}</div></section>`);
+ frames.push(`<section class="opt"><h2>List</h2><div class="frames">${phone('Languages I’m learning',listBody(c),'list').replace('class="ph"','class="ph" style="height:900px"')}</div></section>`);
  frames.push(`<section class="opt"><h2>Script only: ${BRAILLE.name}</h2><div class="frames">${sheetPhone('Before learning','b0',scriptSheet(false))}${sheetPhone('Learning','b1',scriptSheet(true))}</div></section>`);
  const lu=langSheet(c,false,idU),ll=langSheet(c,true,idL);
  frames.push(`<section class="opt"><h2>Language with scripts: ${c.name}</h2><div class="frames">${sheetPhone('Before learning','l0',lu,'')}${sheetPhone('Learning','l1',ll,'')}${S.scr==='built'?sheetPhone('As built: step after Learn','l2',stepBuilt(c,idU),''):''}</div></section>`);
  frames.push(`<section class="opt"><h2>Script switches: ${c.name}</h2><div class="frames">${combos.map((cb,i)=>sheetPhone(['One on','Both on','None on'][c.scripts.length>1?i:i===0?0:2]||'',`s${i}`,langSheet(c,true,ids[i]),'Scripts')).join('')}</div></section>`);
+ frames.push(`<section class="opt"><h2>Delete data: ${c.name}</h2><div class="frames">${dialogPhone('Name not typed','d0',c.name,'',ll)}${dialogPhone('Name typed','d1',c.name,c.name,ll)}</div></section>`);
  root.innerHTML=frames.join('');
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
  document.querySelectorAll('.ph').forEach(p=>{
@@ -323,7 +374,33 @@ function render(){
  });
  document.title="Languages I'm learning";
 }
+/* minutes a day: 5 to 60 in steps of 5; a long press repeats every 0.3 s */
+const MN={min:5,max:60,step:5,tick:300};
+function showMins(k){
+ const v=S.mins[k];
+ document.querySelectorAll(`.mv[data-k="${k}"]`).forEach(e=>e.textContent=v+' min');
+ document.querySelectorAll(`.mn-v[data-k="${k}"]`).forEach(e=>e.textContent=v+' min');
+ document.querySelectorAll(`.estv[data-k="${k}"]`).forEach(e=>e.textContent='About '+cards(v)+' cards');
+ document.querySelectorAll(`[data-mn][data-k="${k}"]`).forEach(b=>b.setAttribute('aria-disabled',String(b.dataset.mn==='-'?v<=MN.min:v>=MN.max)));
+}
+function stepMins(k,d){const v=Math.min(MN.max,Math.max(MN.min,S.mins[k]+d*MN.step));if(v!==S.mins[k]){S.mins[k]=v;showMins(k)}}
+let hold=null,held=false;
+function stopHold(){clearInterval(hold);clearTimeout(hold);hold=null}
+document.addEventListener('pointerdown',e=>{
+ const b=e.target.closest('[data-mn]');if(!b)return;
+ const k=b.dataset.k,d=b.dataset.mn==='+'?1:-1;held=true;stepMins(k,d);stopHold();
+ hold=setTimeout(()=>{hold=setInterval(()=>stepMins(k,d),MN.tick)},MN.tick);
+});
+['pointerup','pointercancel','pointerleave'].forEach(t=>document.addEventListener(t,e=>{if(hold!=null&&(t!=='pointerleave'||e.target.closest&&e.target.closest('[data-mn]')))stopHold()},true));
+document.addEventListener('contextmenu',e=>{if(e.target.closest('[data-mn]'))e.preventDefault()});
+document.addEventListener('input',e=>{
+ const i=e.target.closest('[data-ty]');if(!i)return;
+ TY[i.dataset.ty]=i.value;
+ const d=document.querySelector(`[data-del="${i.dataset.ty}"]`);if(d)d.disabled=i.value!==i.dataset.name;
+});
 document.addEventListener('click',e=>{
+ const m=e.target.closest('[data-mn]');
+ if(m){if(held){held=false}else stepMins(m.dataset.k,m.dataset.mn==='+'?1:-1);return}
  const gb=e.target.closest('#g-tw .seg button');
  if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
  const s=e.target.closest('[data-sw]');
@@ -333,7 +410,7 @@ render();
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3]];
+const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Delete data text on the sheet','E','sLow',4.5],['Delete button text','onE','E',4.5],['input outline','ol','sHigh',3],['dialog body text','onSv','sHigh',4.5],['stepper icon on its button','onSc','sc',4.5],['check on its round button','onP','p',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3]];
 window.__contrast=[];
 ['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const P=PALS[pl+'_'+t];const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
 console.log('contrast',JSON.stringify(window.__contrast));
