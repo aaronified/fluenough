@@ -4,6 +4,13 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `languages-learning.html`: the Languages I'm learning page and its sheets
+  (owner, 2026-10-27): a script-only course and a language with scripts,
+  before and after learning started, and the scripts as switches in place of
+  the "Change scripts" step. Clay and forest, light and dark, 1.4x,
+  Hindustani and Bengali. Tweak controls and open choices are in
+  `languages-learning.md`, with the self-check.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with

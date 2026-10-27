@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Languages I'm learning</title>
+<meta name="description" content="The Languages I'm learning page and its sheets: a script-only course and a language with scripts, before and after learning starts, and the script switches. Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Naskh Arabic",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:820px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:820px}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed). Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. ===== */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Naskh Arabic",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali","Noto Naskh Arabic",Roboto,sans-serif}
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 20px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.full{width:100%}
+/* list page */
+.upd{margin:8px 0 0;align-self:flex-start;min-height:56px;padding:0 24px}
+.last{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);margin:8px 0 6px}
+.auto{display:flex;align-items:center;gap:12px;padding:4px 0}
+.auto .tx{flex:1;min-width:0}
+.auto b{display:block;font-size:calc(14px*var(--t));line-height:1.25;font-weight:600}
+.auto small{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.search{display:flex;align-items:center;gap:16px;min-height:56px;border-radius:28px;background:var(--sHigh);color:var(--onSv);padding:0 16px;margin:12px 0 8px;font-size:calc(16px*var(--t))}
+.sec{font-size:calc(14px*var(--t));line-height:1.3;font-weight:700;color:var(--p);margin:16px 0 6px}
+.row{padding:10px 0;border-top:1px solid var(--olv)}
+.row:first-of-type{border-top:0}
+.row .hd{display:flex;align-items:center;gap:8px;min-height:48px}
+.row .nm{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.25;font-weight:600}
+.row .st{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 4px}
+.tick{flex:none;width:32px;height:32px;border-radius:16px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;margin:0 8px 0 0}
+.tick svg{width:20px;height:20px}
+.badge{display:inline-flex;align-items:center;height:calc(24px*var(--t));padding:0 12px;border-radius:calc(8px*var(--t));font-size:calc(12px*var(--t));font-weight:700;background:var(--tc);color:var(--onTc)}
+.you{font-size:calc(12px*var(--t));line-height:1.3;font-weight:700;color:var(--p)}
+.sub{display:flex;align-items:center;font-size:calc(14px*var(--t));color:var(--onSv);min-height:48px;gap:8px}
+.sub span:first-child{flex:1}
+.mins{display:flex;justify-content:space-between;align-items:center;font-size:calc(16px*var(--t));min-height:48px}
+.mins b{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px 8px;margin:4px 0 8px}
+.chip{min-height:48px;min-width:56px;padding:0 16px;border-radius:12px;border:1px solid var(--ol);background:none;font-size:calc(14px*var(--t));font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.chip.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+.chip svg{width:18px;height:18px}
+.est{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:0 0 8px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+.bottom.pg{background:var(--sMid)}
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:94%;color:var(--onS)}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.5;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 16px}
+.sheet h3{margin:6px 0 8px;font-size:calc(20px*var(--t));font-weight:700;line-height:1.2}
+.sheet .bottom{background:var(--sLow)}
+.badges{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;margin:0 0 4px}
+.badges .meta{font-size:calc(14px*var(--t));color:var(--onS)}
+.h{font-size:calc(14px*var(--t));line-height:1.3;font-weight:700;color:var(--p);margin:20px 0 8px}
+.blk{margin:0 0 14px}
+.lab{font-size:calc(14px*var(--t));line-height:1.3;font-weight:700;color:var(--onSv);margin:0}
+.val{font-size:calc(16px*var(--t));line-height:1.35;margin:0}
+.val.sm{font-size:calc(14px*var(--t));color:var(--onSv)}
+.two{display:flex;align-items:center;gap:12px}
+.two .tx{flex:1;min-width:0}
+.cline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}
+.cline i{display:block;height:6px;border-radius:3px;background:var(--sHst);overflow:hidden}
+.cline i u{display:block;height:100%;background:var(--p);border-radius:3px}
+.cline span{display:block;font-size:calc(12px*var(--t));font-weight:700;color:var(--onSv);margin-top:6px}
+.bar{height:6px;border-radius:3px;background:var(--sHst);overflow:hidden;margin:6px 0 0}
+.bar u{display:block;height:100%;background:var(--p);border-radius:3px}
+.link{display:flex;align-items:center;gap:12px;min-height:56px;padding:4px 0}
+.link .ic{flex:none;color:var(--onSv)}
+.link .tx{flex:1;min-width:0}
+.link .tx b{display:block;font-size:calc(16px*var(--t));line-height:1.25;font-weight:700}
+.link .tx small{display:block;font-size:calc(14px*var(--t));color:var(--onSv);line-height:1.3}
+.chev{color:var(--onSv)}
+.shared{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:6px 0 0}
+.off-note{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:0 0 8px}
+.srow{padding:8px 0;border-top:1px solid var(--olv)}
+.srow:first-of-type{border-top:0}
+.cb{flex:none;width:24px;height:24px;border-radius:4px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center;background:none;padding:0}
+.cb[aria-checked="true"]{background:var(--p);border-color:var(--p)}
+.cb svg{width:18px;height:18px;fill:var(--onP);opacity:0}
+.cb[aria-checked="true"] svg{opacity:1}
+.nat{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+/* M3 switch */
+.sw{flex:none;width:52px;height:32px;border-radius:16px;border:2px solid var(--ol);background:var(--sHst);position:relative;padding:0;display:block}
+.sw::after{content:"";position:absolute;top:50%;left:6px;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--ol);transition:all .12s}
+.sw[aria-checked="true"]{background:var(--p);border-color:var(--p)}
+.sw[aria-checked="true"]::after{left:24px;width:24px;height:24px;margin-top:-12px;left:22px;background:var(--onP)}
+.swhit{flex:none;width:56px;height:48px;display:flex;align-items:center;justify-content:center;border:0;background:none;padding:0}
+/* highlight of what changed */
+.chg{position:relative}
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;border-radius:14px}
+.hl-on .chg::after{content:"changed";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.new::after{content:"new"}
+.hide{display:none!important}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Languages I'm learning</h1>
+<p class="cap1">The list page (<code>Languages I'm learning</code>) and the sheet a course opens, for a script-only course and for a language with scripts, before and after learning starts, with the scripts as switches. Phone 360 dp at 1.4x text, <code>ColorScheme.fromSeed</code> of the clay seed (the owner's phone) and the forest seed. Hindustani and Bengali. The notes, the open choices and the self-check are in <code>languages-learning.md</code>.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Colour seed <span class="seg" data-k="pal"><button data-v="clay">Clay</button><button data-v="forest">Forest</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Scripts in the sheet <span class="seg" data-k="scr"><button data-v="sw">Switches (proposed)</button><button data-v="built">Step after Learn (as built)</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palettes: ColorScheme.fromSeed (tonal spot) of the clay seed #8F4C36 and the forest seed #3F6C51, ThemeSeed in lib/app/settings.dart ===== */
+const PALS={"forest_light":{"p":"#296a48","onP":"#ffffff","pc":"#aef2c6","onPc":"#085231","sc":"#d1e8d6","onSc":"#374b3e","tt":"#3b6471","tc":"#bfe9f8","onTc":"#224c58","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sMid":"#eaefe8","sHigh":"#e4eae3","sHst":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"},"forest_dark":{"p":"#92d5ab","onP":"#003920","pc":"#085231","onPc":"#aef2c6","sc":"#374b3e","onSc":"#d1e8d6","tt":"#a3cddc","tc":"#224c58","onTc":"#bfe9f8","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sMid":"#1b211d","sHigh":"#262b27","sHst":"#313632","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},"clay_light":{"p":"#8f4c36","onP":"#ffffff","pc":"#ffdbd0","onPc":"#723521","sc":"#ffdbd0","onSc":"#5d4037","tt":"#6a5e2f","tc":"#f4e2a7","onTc":"#52461a","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLow":"#fff1ed","sMid":"#fceae5","sHigh":"#f7e4df","sHst":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","E":"#ba1a1a","onE":"#ffffff"},"clay_dark":{"p":"#ffb59e","onP":"#55200d","pc":"#723521","onPc":"#ffdbd0","sc":"#5d4037","onSc":"#ffdbd0","tt":"#d7c68d","tc":"#52461a","onTc":"#f4e2a7","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLow":"#231917","sMid":"#271d1b","sHigh":"#322825","sHst":"#3d322f","ol":"#a08d87","olv":"#53433f","E":"#ffb4ab","onE":"#690005"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
+ sync:'M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z',
+ search:'M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+ check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z'};
+const svg=(p,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[p]}"/></svg>`;
+
+/* ===== data. Hindustani is one course with two scripts (CLAUDE.md, 2026-10-18); Bengali has one. ===== */
+const C={
+ hi:{name:'Hindustani',title:'Hindustani · <span class="script">हिन्दुस्तानी</span> · <span class="script" dir="rtl">ہندوستانی</span>',pct:26,stage:'A2',
+  units:'31 of 118 units written',words:'1,240 words',size:'4.2 MB',native:['English','Bengali'],levels:[1,.02,.01,0],
+  scripts:[
+   {n:'Devanagari',rtl:false,decks:6,done:2,shared:'Marathi',state:false},
+   {n:'Perso-Arabic',rtl:true,decks:8,done:3,shared:null,state:true}]},
+ bn:{name:'Bengali',title:'Bengali · <span class="script">বাংলা</span>',pct:41,stage:'A2',
+  units:'52 of 118 units written',words:'1,410 words',size:'4.6 MB',native:['English','Hindustani'],levels:[1,.2,.03,0],
+  scripts:[
+   {n:'Bengali',rtl:false,decks:7,done:4,shared:'Assamese',state:true}]}};
+const BRAILLE={name:'English Braille',words:193,size:'89 KB',unitsDone:15,unitsAll:16};
+const S={theme:'light',pal:'clay',course:'hi',scr:'sw',hl:'1'};
+/* switch states per phone, so each one can be tried; a phone that is not listed uses the course's own */
+const ST={};
+const root=document.getElementById('root');
+const tick=()=>`<span class="tick">${svg('check',20)}</span>`;
+const H=(cls)=>S.scr==='sw'?` chg ${cls||''}`:'';
+
+/* ----- the list page ----- */
+function listBody(c){
+ const row=(name,badge,you,open)=>`<div class="row"><div class="hd"><span class="nm">${name}</span>${tick()}</div>
+  <div class="st"><span class="badge">${badge}</span><span class="you">${you}</span></div>
+  ${open?`<div class="sub"><span>Up to date · ${c.size}</span><span class="ib" style="color:var(--p)">${svg('close')}</span></div>
+  <div class="mins"><span>Minutes a day</span><b>5 min</b></div>
+  <div class="chips"><span class="chip on">${svg('check')}5</span><span class="chip">10</span><span class="chip">15</span><span class="chip">20</span><span class="chip">30</span><span class="chip">Custom</span></div>
+  <p class="est">About 17 cards a day, at 17.5 seconds a card. Reviews come first; some new words always fit.</p>`:''}</div>`;
+ const hi=S.course==='hi';
+ return `<div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">Languages I’m learning</span><span class="ib">${svg('bug')}</span></div>
+ <div class="scroll"><span class="btn tonal upd">${svg('sync')}Check for deck updates</span>
+ <p class="last">Last checked Tue, Oct 27, 8:27 AM</p>
+ <div class="auto"><div class="tx"><b>Check automatically</b><small>Checks GitHub for deck updates once a day, when the app opens</small></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>
+ <div class="search">${svg('search')}Search languages</div>
+ <div class="sec">Learning · 3</div>
+ ${hi?row(C.hi.title,'Beta','You: 26%',true):row(C.bn.title,'Beta','You: 41%',true)}
+ ${row(BRAILLE.name,'Complete','You: 0 words learned',false)}
+ ${hi?row(C.bn.title,'Beta','You: 41%',false):row(C.hi.title,'Beta','You: 26%',false)}
+ </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
+}
+
+/* ----- sheet pieces ----- */
+const kv=(l,v,s)=>`<div class="blk"><p class="lab">${l}</p><p class="val">${v}</p>${s?`<p class="val sm">${s}</p>`:''}</div>`;
+function courseLine(c){
+ return `<div class="cline" role="img" aria-label="Course written: A1 ${Math.round(c.levels[0]*100)}%">${['A1','A2','B1','Culture'].map((l,i)=>`<div><i><u style="width:${Math.round(c.levels[i]*100)}%"></u></i><span>${l}</span></div>`).join('')}</div>`;
+}
+function swtch(id,i,on,label){return `<button class="swhit" data-sw="${id}:${i}" aria-label="${label}"><span class="sw" role="switch" aria-checked="${on}"></span></button>`}
+function shared(s,course){return s.shared?`<p class="shared">${s.n} is also used by ${s.shared}, which you are learning.</p>`:''}
+function scriptsLearned(c,id){
+ const st=ST[id];const n=st.filter(Boolean).length;
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx">
+   <p class="lab">${st[i]?s.n+' · learning':s.n}</p>
+   <p class="val">${st[i]?`${s.done} of ${s.decks} script decks learned`:'Not learning this script'}</p>
+   ${st[i]?`<div class="bar" aria-hidden="true"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:''}
+   ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
+ const sum=n?`<p class="val sm" style="margin:8px 0 0">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`
+  :`<p class="off-note" style="margin:8px 0 0">Latin letters only. Words show their reading first, and the script decks are left out.</p>`;
+ return `<div class="h">Scripts</div><div class="${H()}" style="border-radius:12px">${rows}${sum}</div>`;
+}
+function scriptsBefore(c,id){
+ const st=ST[id];
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx">
+   <p class="val" style="font-weight:500">${s.n}</p>
+   <p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>
+   ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
+ const none=st.every(x=>!x);
+ return `<div class="h">Scripts to learn<span style="font-weight:400;color:var(--onSv)"> · pick any</span></div><div class="${H()}" style="border-radius:12px">${rows}
+  <p class="off-note" style="margin-top:8px">${none?'Latin letters only. Words show their reading first, and the script decks are left out.':'Leave every switch off to learn with Latin letters only.'}</p></div>`;
+}
+function scriptsBuiltLearned(c,id){
+ const st=ST[id];const names=c.scripts.map(s=>s.n);
+ const blocks=c.scripts.map((s,i)=>`<div class="blk">${st[i]?`<p class="lab">${s.n} · learning</p><p class="val">${s.done} of ${s.decks} script decks learned</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p><p class="val">Not learning this script</p>`}${shared(s)}</div>`).join('');
+ const n=st.filter(Boolean).length;
+ return `<div class="h">Scripts</div>${blocks}${n?`<p class="val sm" style="margin:0 0 12px">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`:''}<button class="btn out" style="margin:0 0 4px" tabindex="-1">Change scripts</button>`;
+}
+function levelBlock(c){
+ return `<div class="h">Level</div><div class="blk two"><p class="val sm" style="flex:1;color:var(--onS)">Check where you are in ${c.name} again. Your progress is kept.${c.scripts.length>1?' Each script is placed on its own, apart from the language.':''}</p><span class="btn tonal" style="flex:none;min-width:calc(100px*var(--t))">Find my level</span></div>
+ <div class="link"><span class="ic">${svg('layers')}</span><div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`;
+}
+function langSheet(c,learned,id){
+ const stateNone=ST[id];
+ const header=`<h3>${c.title}</h3><div class="badges"><span class="badge">Beta</span><span class="meta">${c.pct}% of B1 written</span>${learned?`<span class="you">You: ${c.pct}% of B1</span>`:''}</div>`;
+ const sw=S.scr==='sw';
+ let scripts='';
+ if(learned) scripts=sw?scriptsLearned(c,id):scriptsBuiltLearned(c,id);
+ else if(sw) scripts=scriptsBefore(c,id);
+ const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', ')):'';
+ const native=learned?kv('Taught from','English'):`<div class="blk"><p class="lab">Learn ${c.name} from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div>`;
+ const body=`${header}${learned?levelBlock(c):''}${scripts}
+  <div class="h">Course</div>${courseLine(c)}${kv('Written toward B1',c.pct+'% · '+c.stage+' in progress')}${built}${native}${kv('Size',learned?'On the phone · '+c.size:'Not on the phone · '+c.size)}${kv('Units',c.units)}`;
+ const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
+ return {body,btn};
+}
+function scriptSheet(learned){
+ const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge">Complete</span>${learned?'<span class="you">You: 0 words learned</span>':''}</div>
+  <div class="h">Course</div>${kv('Course size','Course size: '+BRAILLE.words+' words')}${kv('Taught from','English')}${kv('Size',learned?'On the phone · '+BRAILLE.size:'Not on the phone · '+BRAILLE.size)}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll+' units written')}`;
+ const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
+ return {body,btn};
+}
+/* the "as built" step after Learn this language: scripts as boxes */
+function stepBuilt(c,id){
+ const st=ST[id];
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>${shared(s)}</div>
+  <button class="cb" role="checkbox" aria-checked="${st[i]}" aria-label="${s.n}" data-sw="${id}:${i}"><svg viewBox="0 0 24 24"><path d="${IC.check}"/></svg></button></div></div>`).join('');
+ return {body:`<p class="lab" style="margin:6px 0 0">Step 1 of 2 · Script</p><div class="h" style="margin-top:6px">Scripts to learn<span style="font-weight:400;color:var(--onSv)"> · pick any</span></div>${rows}<p class="off-note" style="margin-top:8px">Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.</p>`,
+  btn:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Next</span>`};
+}
+
+function phone(cap,inner,key,focus){
+ return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" data-key="${key}">${inner}</div></div>`;
+}
+function sheetPhone(cap,key,s,focus){
+ const inner=listBody(C[S.course]).replace(/<div class="bottom pg">[\s\S]*$/,'')+`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${cap}"><div class="grab"></div><div class="scroll" data-focus="${focus||''}">${s.body}</div><div class="bottom">${s.btn}</div></div>`;
+ return phone(cap,inner,key);
+}
+function init(){
+ const c=C[S.course];
+ const cur=c.scripts.map(s=>s.state);
+ const combos=c.scripts.length>1?[[true,false],[true,true],[false,false]]:[[true],[false]];
+ const set=(k,v)=>{if(!ST[S.course+k])ST[S.course+k]=v.slice();return S.course+k};
+ return {c,cur,combos,set};
+}
+function render(){
+ const keep={};document.querySelectorAll('.ph').forEach(p=>{const s=p.querySelector('.scroll[data-focus]');if(s)keep[p.dataset.key]=s.scrollTop});
+ const d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ const {c,cur,combos,set}=init();
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(PALS[S.pal+'_'+S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const idU=set('u',c.scripts.map(()=>true).map((x,i)=>i===0)),idL=set('l',cur);
+ const ids=combos.map((cb,i)=>set('c'+i,cb));
+ /* the Hindustani example before learning starts with the first script on, as a first guess */
+ const frames=[];
+ frames.push(`<section class="opt"><h2>The page</h2><p class="note">As built; the screens below open from a row. Tapping a course row opens its sheet. Today's page is unchanged in this proposal.</p><div class="frames">${phone('Languages I’m learning',listBody(c),'list')}</div></section>`);
+ frames.push(`<section class="opt"><h2>A script-only course: ${BRAILLE.name}</h2><p class="note">A course with a script and no language. It has no Level and no Scripts section, so there is nothing to switch. The button names what is learned: "Learn this script" in place of "Learn this language".</p><div class="frames">${sheetPhone('Before learning starts','b0',scriptSheet(false))}${sheetPhone('After learning started','b1',scriptSheet(true))}</div></section>`);
+ const lu=langSheet(c,false,idU),ll=langSheet(c,true,idL);
+ frames.push(`<section class="opt"><h2>A language with scripts: ${c.name}</h2><p class="note">Before learning starts the sheet shows the course, the book it is taught from and, in the proposal, the scripts as switches: the choice is made here, and the "Step 1 of 2 · Script" screen after Learn this language is dropped. After learning started the same switches stop or start a script at once, in place of "Change scripts". Try the switches.</p><div class="frames">${sheetPhone('Before learning starts','l0',lu,'')}${sheetPhone('After learning started','l1',ll,'')}${S.scr==='built'?sheetPhone('As built: the step after Learn this language','l2',stepBuilt(c,idU),''):''}</div></section>`);
+ frames.push(`<section class="opt"><h2>The script switches, every state: ${c.name}</h2><p class="note">The learned sheet scrolled to Scripts. ${c.scripts.length>1?'One script, both scripts, none. With none on, the sheet says the course is learned with Latin letters only.':'On and off.'} A shared script says which other course you are learning that uses it.</p><div class="frames">${combos.map((cb,i)=>sheetPhone(['One script on','Both scripts on','No script on'][c.scripts.length>1?i:i===0?0:2]||'',`s${i}`,langSheet(c,true,ids[i]),'Scripts')).join('')}</div></section>`);
+ root.innerHTML=frames.join('');
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.querySelectorAll('.ph').forEach(p=>{
+  const sc=p.querySelector('.scroll[data-focus]');if(!sc)return;
+  if(keep[p.dataset.key]!=null)sc.scrollTop=keep[p.dataset.key];
+  else if(sc.dataset.focus==='Scripts'){const h=[...sc.querySelectorAll('.h')].find(x=>x.textContent.startsWith('Scripts'));if(h)sc.scrollTop=h.offsetTop-12}
+ });
+ document.title="Languages I'm learning";
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const s=e.target.closest('[data-sw]');
+ if(s){const [id,i]=s.dataset.sw.split(':');ST[id][+i]=!ST[id][+i];render()}
+});
+render();
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3]];
+window.__contrast=[];
+['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const P=PALS[pl+'_'+t];const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>
