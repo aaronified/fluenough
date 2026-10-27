@@ -59,14 +59,14 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .sec{font-size:calc(14px*var(--t));line-height:1.3;font-weight:700;color:var(--p);margin:16px 0 6px}
 .row{padding:10px 0;border-top:1px solid var(--olv)}
 .row:first-of-type{border-top:0}
-.row .hd{display:flex;align-items:center;gap:8px;min-height:48px}
+.row .hd{gap:12px;display:flex;align-items:center;gap:8px;min-height:48px}
 .row .nm{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.25;font-weight:600}
-.row .st{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 4px}
+.row .st{padding-left:52px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 4px}
 .tick{flex:none;width:32px;height:32px;border-radius:16px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;margin:0 8px 0 0}
 .tick svg{width:20px;height:20px}
 .badge{display:inline-flex;align-items:center;height:calc(24px*var(--t));padding:0 12px;border-radius:calc(8px*var(--t));font-size:calc(12px*var(--t));font-weight:700;background:var(--tc);color:var(--onTc)}
 .you{font-size:calc(12px*var(--t));line-height:1.3;font-weight:700;color:var(--p)}
-.sub{display:flex;align-items:center;font-size:calc(14px*var(--t));color:var(--onSv);min-height:48px;gap:8px}
+.sub{padding-left:52px;display:flex;align-items:center;font-size:calc(14px*var(--t));color:var(--onSv);min-height:48px;gap:8px}
 .sub span:first-child{flex:1}
 .mins{display:flex;justify-content:space-between;align-items:center;font-size:calc(16px*var(--t));min-height:48px}
 .mins b{font-weight:700}
@@ -105,6 +105,22 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .link .tx b{display:block;font-size:calc(16px*var(--t));line-height:1.25;font-weight:700}
 .link .tx small{display:block;font-size:calc(14px*var(--t));color:var(--onSv);line-height:1.3}
 .chev{color:var(--onSv)}
+.tile{flex:none;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc);font-size:calc(16px*var(--t));font-weight:600;line-height:1}
+.tile svg{width:22px;height:22px}
+.tile.p{background:var(--p);color:var(--onP)}
+.tile.pc{background:var(--pc);color:var(--onPc)}
+.tile.tc{background:var(--tc);color:var(--onTc)}
+.tile.off{background:var(--sHst);color:var(--onSv)}
+.kvr{display:flex;gap:14px;align-items:flex-start;margin:0 0 14px}
+.kvr .blk{margin:0;flex:1;min-width:0}
+.h{display:flex;align-items:center;gap:8px}
+.h svg{width:20px;height:20px}
+.badge.pc{background:var(--pc);color:var(--onPc)}
+.cline div:nth-child(2) u{background:var(--tt)}
+.cline div:nth-child(3) u{background:var(--onSc)}
+.cline div:nth-child(1) span{color:var(--p)}
+.cline div:nth-child(2) span{color:var(--tt)}
+.cline div:nth-child(3) span{color:var(--onSc)}
 .shared{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:6px 0 0}
 .off-note{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:0 0 8px}
 .srow{padding:8px 0;border-top:1px solid var(--olv)}
@@ -151,9 +167,21 @@ const IC={
  check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
  close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
  chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ translate:'M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z',
+ flag:'M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z',
+ school:'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z',
+ book:'M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z',
+ phone:'M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z',
+ list:'M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h13v-4H8v4zm0 5h13v-4H8v4zM8 5v4h13V5H8z',
+ edit:'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z',
+ braille:'M7 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
  layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z'};
 const svg=(p,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[p]}"/></svg>`;
 
+const tile=(ic,cls)=>`<span class="tile ${cls||''}" aria-hidden="true">${svg(ic)}</span>`;
+const hd=(ic,t,extra)=>`<div class="h">${svg(ic)}<span>${t}${extra||''}</span></div>`;
+const GL={'Devanagari':'अ','Perso-Arabic':'ب','Bengali':'অ'};
+const gl=(n,on)=>`<span class="tile ${on?'p':'off'} script" aria-hidden="true">${GL[n]}</span>`;
 /* ===== data. Hindustani is one course with two scripts (CLAUDE.md, 2026-10-18); Bengali has one. ===== */
 const C={
  hi:{name:'Hindustani',title:'Hindustani · <span class="script">हिन्दुस्तानी</span> · <span class="script" dir="rtl">ہندوستانی</span>',pct:26,stage:'A2',
@@ -175,8 +203,8 @@ const H=(cls)=>S.scr==='sw'?` chg ${cls||''}`:'';
 
 /* ----- the list page ----- */
 function listBody(c){
- const row=(name,badge,you,open)=>`<div class="row"><div class="hd"><span class="nm">${name}</span>${tick()}</div>
-  <div class="st"><span class="badge">${badge}</span><span class="you">${you}</span></div>
+ const row=(name,badge,you,open,ic)=>`<div class="row"><div class="hd">${ic==='braille'?tile('braille','tc'):tile('translate','')}<span class="nm">${name}</span>${tick()}</div>
+  <div class="st"><span class="badge${badge==='Complete'?' pc':''}">${badge}</span><span class="you">${you}</span></div>
   ${open?`<div class="sub"><span>Up to date · ${c.size}</span><span class="ib" style="color:var(--p)">${svg('close')}</span></div>
   <div class="mins"><span>Minutes a day</span><b>5 min</b></div>
   <div class="chips"><span class="chip on">${svg('check')}5</span><span class="chip">10</span><span class="chip">15</span><span class="chip">20</span><span class="chip">30</span><span class="chip">Custom</span></div>
@@ -189,13 +217,13 @@ function listBody(c){
  <div class="search">${svg('search')}Search languages</div>
  <div class="sec">Learning · 3</div>
  ${hi?row(C.hi.title,'Beta','You: 26%',true):row(C.bn.title,'Beta','You: 41%',true)}
- ${row(BRAILLE.name,'Complete','You: 0 words learned',false)}
+ ${row(BRAILLE.name,'Complete','You: 0 words learned',false,'braille')}
  ${hi?row(C.bn.title,'Beta','You: 41%',false):row(C.hi.title,'Beta','You: 26%',false)}
  </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
 }
 
 /* ----- sheet pieces ----- */
-const kv=(l,v,s)=>`<div class="blk"><p class="lab">${l}</p><p class="val">${v}</p>${s?`<p class="val sm">${s}</p>`:''}</div>`;
+const kv=(l,v,ic,cls)=>`<div class="kvr">${tile(ic,cls)}<div class="blk"><p class="lab">${l}</p><p class="val">${v}</p></div></div>`;
 function courseLine(c){
  return `<div class="cline" role="img" aria-label="Course written: A1 ${Math.round(c.levels[0]*100)}%">${['A1','A2','B1','Culture'].map((l,i)=>`<div><i><u style="width:${Math.round(c.levels[i]*100)}%"></u></i><span>${l}</span></div>`).join('')}</div>`;
 }
@@ -203,34 +231,34 @@ function swtch(id,i,on,label){return `<button class="swhit" data-sw="${id}:${i}"
 function shared(s,course){return s.shared?`<p class="shared">${s.n} is also used by ${s.shared}, which you are learning.</p>`:''}
 function scriptsLearned(c,id){
  const st=ST[id];const n=st.filter(Boolean).length;
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx">
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
    <p class="lab">${st[i]?s.n+' · learning':s.n}</p>
    <p class="val">${st[i]?`${s.done} of ${s.decks} script decks learned`:'Not learning this script'}</p>
    ${st[i]?`<div class="bar" aria-hidden="true"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:''}
    ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
  const sum=n?`<p class="val sm" style="margin:8px 0 0">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`
   :`<p class="off-note" style="margin:8px 0 0">Latin letters only. Words show their reading first, and the script decks are left out.</p>`;
- return `<div class="h">Scripts</div><div class="${H()}" style="border-radius:12px">${rows}${sum}</div>`;
+ return `${hd('translate','Scripts')}<div class="${H()}" style="border-radius:12px">${rows}${sum}</div>`;
 }
 function scriptsBefore(c,id){
  const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx">
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
    <p class="val" style="font-weight:500">${s.n}</p>
    <p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>
    ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
  const none=st.every(x=>!x);
- return `<div class="h">Scripts to learn<span style="font-weight:400;color:var(--onSv)"> · pick any</span></div><div class="${H()}" style="border-radius:12px">${rows}
+ return `${hd('translate','Scripts to learn','<span style="font-weight:400;color:var(--onSv)"> · pick any</span>')}<div class="${H()}" style="border-radius:12px">${rows}
   <p class="off-note" style="margin-top:8px">${none?'Latin letters only. Words show their reading first, and the script decks are left out.':'Leave every switch off to learn with Latin letters only.'}</p></div>`;
 }
 function scriptsBuiltLearned(c,id){
  const st=ST[id];const names=c.scripts.map(s=>s.n);
- const blocks=c.scripts.map((s,i)=>`<div class="blk">${st[i]?`<p class="lab">${s.n} · learning</p><p class="val">${s.done} of ${s.decks} script decks learned</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p><p class="val">Not learning this script</p>`}${shared(s)}</div>`).join('');
+ const blocks=c.scripts.map((s,i)=>`<div class="kvr">${gl(s.n,st[i])}<div class="blk">${st[i]?`<p class="lab">${s.n} · learning</p><p class="val">${s.done} of ${s.decks} script decks learned</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p><p class="val">Not learning this script</p>`}${shared(s)}</div></div>`).join('');
  const n=st.filter(Boolean).length;
- return `<div class="h">Scripts</div>${blocks}${n?`<p class="val sm" style="margin:0 0 12px">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`:''}<button class="btn out" style="margin:0 0 4px" tabindex="-1">Change scripts</button>`;
+ return `${hd('translate','Scripts')}${blocks}${n?`<p class="val sm" style="margin:0 0 12px">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`:''}<button class="btn out" style="margin:0 0 4px" tabindex="-1">Change scripts</button>`;
 }
 function levelBlock(c){
- return `<div class="h">Level</div><div class="blk two"><p class="val sm" style="flex:1;color:var(--onS)">Check where you are in ${c.name} again. Your progress is kept.${c.scripts.length>1?' Each script is placed on its own, apart from the language.':''}</p><span class="btn tonal" style="flex:none;min-width:calc(100px*var(--t))">Find my level</span></div>
- <div class="link"><span class="ic">${svg('layers')}</span><div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`;
+ return `${hd('flag','Level')}<div class="blk two"><p class="val sm" style="flex:1;color:var(--onS)">Check where you are in ${c.name} again. Your progress is kept.${c.scripts.length>1?' Each script is placed on its own, apart from the language.':''}</p><span class="btn tonal" style="flex:none;min-width:calc(100px*var(--t))">Find my level</span></div>
+ <div class="link">${tile('layers','tc')}<div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`;
 }
 function langSheet(c,learned,id){
  const stateNone=ST[id];
@@ -239,25 +267,25 @@ function langSheet(c,learned,id){
  let scripts='';
  if(learned) scripts=sw?scriptsLearned(c,id):scriptsBuiltLearned(c,id);
  else if(sw) scripts=scriptsBefore(c,id);
- const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', ')):'';
- const native=learned?kv('Taught from','English'):`<div class="blk"><p class="lab">Learn ${c.name} from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div>`;
+ const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', '),'translate',''):'';
+ const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Learn ${c.name} from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
  const body=`${header}${learned?levelBlock(c):''}${scripts}
-  <div class="h">Course</div>${courseLine(c)}${kv('Written toward B1',c.pct+'% · '+c.stage+' in progress')}${built}${native}${kv('Size',learned?'On the phone · '+c.size:'Not on the phone · '+c.size)}${kv('Units',c.units)}`;
+  ${hd('book','Course')}${courseLine(c)}${kv('Written toward B1',c.pct+'% · '+c.stage+' in progress','edit','pc')}${built}${native}${kv('Size',learned?'On the phone · '+c.size:'Not on the phone · '+c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}`;
  const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
  return {body,btn};
 }
 function scriptSheet(learned){
- const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge">Complete</span>${learned?'<span class="you">You: 0 words learned</span>':''}</div>
-  <div class="h">Course</div>${kv('Course size','Course size: '+BRAILLE.words+' words')}${kv('Taught from','English')}${kv('Size',learned?'On the phone · '+BRAILLE.size:'Not on the phone · '+BRAILLE.size)}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll+' units written')}`;
+ const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words learned</span>':''}</div>
+  ${hd('book','Course')}${kv('Course size','Course size: '+BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',learned?'On the phone · '+BRAILLE.size:'Not on the phone · '+BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll+' units written','list','pc')}`;
  const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
  return {body,btn};
 }
 /* the "as built" step after Learn this language: scripts as boxes */
 function stepBuilt(c,id){
  const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two"><div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>${shared(s)}</div>
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>${shared(s)}</div>
   <button class="cb" role="checkbox" aria-checked="${st[i]}" aria-label="${s.n}" data-sw="${id}:${i}"><svg viewBox="0 0 24 24"><path d="${IC.check}"/></svg></button></div></div>`).join('');
- return {body:`<p class="lab" style="margin:6px 0 0">Step 1 of 2 · Script</p><div class="h" style="margin-top:6px">Scripts to learn<span style="font-weight:400;color:var(--onSv)"> · pick any</span></div>${rows}<p class="off-note" style="margin-top:8px">Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.</p>`,
+ return {body:`<p class="lab" style="margin:6px 0 0">Step 1 of 2 · Script</p>${hd('translate','Scripts to learn','<span style="font-weight:400;color:var(--onSv)"> · pick any</span>')}${rows}<p class="off-note" style="margin-top:8px">Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.</p>`,
   btn:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Next</span>`};
 }
 
@@ -309,7 +337,7 @@ render();
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3]];
+const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3]];
 window.__contrast=[];
 ['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const P=PALS[pl+'_'+t];const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
 console.log('contrast',JSON.stringify(window.__contrast));
