@@ -146,7 +146,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 <body>
 <div class="wrap" id="wrap">
 <h1>Languages I'm learning</h1>
-<p class="cap1">The list page (<code>Languages I'm learning</code>) and the sheet a course opens, for a script-only course and for a language with scripts, before and after learning starts, with the scripts as switches. Phone 360 dp at 1.4x text, <code>ColorScheme.fromSeed</code> of the clay seed (the owner's phone) and the forest seed. Hindustani and Bengali. The notes, the open choices and the self-check are in <code>languages-learning.md</code>.</p>
+<p class="cap1">Phone 360 dp, 1.4x text. Notes and open choices: <code>languages-learning.md</code>.</p>
 <div class="sticky tw" id="g-tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Colour seed <span class="seg" data-k="pal"><button data-v="clay">Clay</button><button data-v="forest">Forest</button></span></div>
@@ -185,12 +185,12 @@ const gl=(n,on)=>`<span class="tile ${on?'p':'off'} script" aria-hidden="true">$
 /* ===== data. Hindustani is one course with two scripts (CLAUDE.md, 2026-10-18); Bengali has one. ===== */
 const C={
  hi:{name:'Hindustani',title:'Hindustani · <span class="script">हिन्दुस्तानी</span> · <span class="script" dir="rtl">ہندوستانی</span>',pct:26,stage:'A2',
-  units:'31 of 118 units written',words:'1,240 words',size:'4.2 MB',native:['English','Bengali'],levels:[1,.02,.01,0],
+  units:'31 of 118',words:'1,240 words',size:'4.2 MB',native:['English','Bengali'],levels:[1,.02,.01,0],
   scripts:[
    {n:'Devanagari',rtl:false,decks:6,done:2,shared:'Marathi',state:false},
    {n:'Perso-Arabic',rtl:true,decks:8,done:3,shared:null,state:true}]},
  bn:{name:'Bengali',title:'Bengali · <span class="script">বাংলা</span>',pct:41,stage:'A2',
-  units:'52 of 118 units written',words:'1,410 words',size:'4.6 MB',native:['English','Hindustani'],levels:[1,.2,.03,0],
+  units:'52 of 118',words:'1,410 words',size:'4.6 MB',native:['English','Hindustani'],levels:[1,.2,.03,0],
   scripts:[
    {n:'Bengali',rtl:false,decks:7,done:4,shared:'Assamese',state:true}]}};
 const BRAILLE={name:'English Braille',words:193,size:'89 KB',unitsDone:15,unitsAll:16};
@@ -208,12 +208,12 @@ function listBody(c){
   ${open?`<div class="sub"><span>Up to date · ${c.size}</span><span class="ib" style="color:var(--p)">${svg('close')}</span></div>
   <div class="mins"><span>Minutes a day</span><b>5 min</b></div>
   <div class="chips"><span class="chip on">${svg('check')}5</span><span class="chip">10</span><span class="chip">15</span><span class="chip">20</span><span class="chip">30</span><span class="chip">Custom</span></div>
-  <p class="est">About 17 cards a day, at 17.5 seconds a card. Reviews come first; some new words always fit.</p>`:''}</div>`;
+  <p class="est">About 17 cards a day</p>`:''}</div>`;
  const hi=S.course==='hi';
  return `<div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">Languages I’m learning</span><span class="ib">${svg('bug')}</span></div>
  <div class="scroll"><span class="btn tonal upd">${svg('sync')}Check for deck updates</span>
  <p class="last">Last checked Tue, Oct 27, 8:27 AM</p>
- <div class="auto"><div class="tx"><b>Check automatically</b><small>Checks GitHub for deck updates once a day, when the app opens</small></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>
+ <div class="auto"><div class="tx"><b>Check automatically</b></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>
  <div class="search">${svg('search')}Search languages</div>
  <div class="sec">Learning · 3</div>
  ${hi?row(C.hi.title,'Beta','You: 26%',true):row(C.bn.title,'Beta','You: 41%',true)}
@@ -228,64 +228,60 @@ function courseLine(c){
  return `<div class="cline" role="img" aria-label="Course written: A1 ${Math.round(c.levels[0]*100)}%">${['A1','A2','B1','Culture'].map((l,i)=>`<div><i><u style="width:${Math.round(c.levels[i]*100)}%"></u></i><span>${l}</span></div>`).join('')}</div>`;
 }
 function swtch(id,i,on,label){return `<button class="swhit" data-sw="${id}:${i}" aria-label="${label}"><span class="sw" role="switch" aria-checked="${on}"></span></button>`}
-function shared(s,course){return s.shared?`<p class="shared">${s.n} is also used by ${s.shared}, which you are learning.</p>`:''}
+function shared(s,course){return s.shared?`<p class="shared">Also in ${s.shared}</p>`:''}
 function scriptsLearned(c,id){
- const st=ST[id];const n=st.filter(Boolean).length;
+ const st=ST[id];
  const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
-   <p class="lab">${st[i]?s.n+' · learning':s.n}</p>
-   <p class="val">${st[i]?`${s.done} of ${s.decks} script decks learned`:'Not learning this script'}</p>
-   ${st[i]?`<div class="bar" aria-hidden="true"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:''}
-   ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
- const sum=n?`<p class="val sm" style="margin:8px 0 0">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`
-  :`<p class="off-note" style="margin:8px 0 0">Latin letters only. Words show their reading first, and the script decks are left out.</p>`;
- return `${hd('translate','Scripts')}<div class="${H()}" style="border-radius:12px">${rows}${sum}</div>`;
+   <p class="val" style="font-weight:500">${s.n}</p>
+   ${st[i]?`<p class="val sm">${s.done} of ${s.decks} decks</p><div class="bar" aria-hidden="true"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:''}
+   ${shared(s)}</div>${swtch(id,i,st[i],s.n)}</div></div>`).join('');
+ const none=st.every(x=>!x);
+ return `${hd('translate','Scripts')}<div class="${H()}" style="border-radius:12px">${rows}${none?'<p class="off-note" style="margin:8px 0 0 52px">Latin letters only</p>':''}</div>`;
 }
 function scriptsBefore(c,id){
  const st=ST[id];
  const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
    <p class="val" style="font-weight:500">${s.n}</p>
-   <p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>
-   ${shared(s)}</div>${swtch(id,i,st[i],'Learn the '+s.n+' script')}</div></div>`).join('');
+   <p class="val sm">${s.decks} decks</p>
+   ${shared(s)}</div>${swtch(id,i,st[i],s.n)}</div></div>`).join('');
  const none=st.every(x=>!x);
- return `${hd('translate','Scripts to learn','<span style="font-weight:400;color:var(--onSv)"> · pick any</span>')}<div class="${H()}" style="border-radius:12px">${rows}
-  <p class="off-note" style="margin-top:8px">${none?'Latin letters only. Words show their reading first, and the script decks are left out.':'Leave every switch off to learn with Latin letters only.'}</p></div>`;
+ return `${hd('translate','Scripts')}<div class="${H()}" style="border-radius:12px">${rows}${none?'<p class="off-note" style="margin:8px 0 0 52px">Latin letters only</p>':''}</div>`;
 }
 function scriptsBuiltLearned(c,id){
  const st=ST[id];const names=c.scripts.map(s=>s.n);
- const blocks=c.scripts.map((s,i)=>`<div class="kvr">${gl(s.n,st[i])}<div class="blk">${st[i]?`<p class="lab">${s.n} · learning</p><p class="val">${s.done} of ${s.decks} script decks learned</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p><p class="val">Not learning this script</p>`}${shared(s)}</div></div>`).join('');
+ const blocks=c.scripts.map((s,i)=>`<div class="kvr">${gl(s.n,st[i])}<div class="blk">${st[i]?`<p class="lab">${s.n}</p><p class="val">${s.done} of ${s.decks} decks</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p>`}${shared(s)}</div></div>`).join('');
  const n=st.filter(Boolean).length;
  return `${hd('translate','Scripts')}${blocks}${n?`<p class="val sm" style="margin:0 0 12px">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`:''}<button class="btn out" style="margin:0 0 4px" tabindex="-1">Change scripts</button>`;
 }
 function levelBlock(c){
- return `${hd('flag','Level')}<div class="blk two"><p class="val sm" style="flex:1;color:var(--onS)">Check where you are in ${c.name} again. Your progress is kept.${c.scripts.length>1?' Each script is placed on its own, apart from the language.':''}</p><span class="btn tonal" style="flex:none;min-width:calc(100px*var(--t))">Find my level</span></div>
+ return `<div class="link">${tile('flag','')}<div class="tx"><b>Find my level</b></div><span class="chev">${svg('chev')}</span></div>
  <div class="link">${tile('layers','tc')}<div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`;
 }
 function langSheet(c,learned,id){
- const stateNone=ST[id];
- const header=`<h3>${c.title}</h3><div class="badges"><span class="badge">Beta</span><span class="meta">${c.pct}% of B1 written</span>${learned?`<span class="you">You: ${c.pct}% of B1</span>`:''}</div>`;
+ const header=`<h3>${c.title}</h3><div class="badges"><span class="badge">Beta</span><span class="meta">${c.pct}% of B1</span>${learned?`<span class="you">You: ${c.pct}%</span>`:''}</div>`;
  const sw=S.scr==='sw';
  let scripts='';
  if(learned) scripts=sw?scriptsLearned(c,id):scriptsBuiltLearned(c,id);
  else if(sw) scripts=scriptsBefore(c,id);
  const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', '),'translate',''):'';
- const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Learn ${c.name} from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
+ const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Taught from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
  const body=`${header}${learned?levelBlock(c):''}${scripts}
-  ${hd('book','Course')}${courseLine(c)}${kv('Written toward B1',c.pct+'% · '+c.stage+' in progress','edit','pc')}${built}${native}${kv('Size',learned?'On the phone · '+c.size:'Not on the phone · '+c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}`;
+  <div style="height:14px"></div>${courseLine(c)}${built}${native}${kv('Size',c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}`;
  const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
  return {body,btn};
 }
 function scriptSheet(learned){
- const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words learned</span>':''}</div>
-  ${hd('book','Course')}${kv('Course size','Course size: '+BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',learned?'On the phone · '+BRAILLE.size:'Not on the phone · '+BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll+' units written','list','pc')}`;
+ const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words</span>':''}</div>
+  <div style="height:14px"></div>${kv('Course size',BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll,'list','pc')}`;
  const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
  return {body,btn};
 }
 /* the "as built" step after Learn this language: scripts as boxes */
 function stepBuilt(c,id){
  const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.rtl?'Written right to left.':'Written left to right.'} Includes ${s.decks} decks on letters, spelling and reading.</p>${shared(s)}</div>
+ const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.decks} decks</p>${shared(s)}</div>
   <button class="cb" role="checkbox" aria-checked="${st[i]}" aria-label="${s.n}" data-sw="${id}:${i}"><svg viewBox="0 0 24 24"><path d="${IC.check}"/></svg></button></div></div>`).join('');
- return {body:`<p class="lab" style="margin:6px 0 0">Step 1 of 2 · Script</p>${hd('translate','Scripts to learn','<span style="font-weight:400;color:var(--onSv)"> · pick any</span>')}${rows}<p class="off-note" style="margin-top:8px">Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.</p>`,
+ return {body:`${hd('translate','Scripts')}${rows}`,
   btn:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Next</span>`};
 }
 
@@ -313,11 +309,11 @@ function render(){
  const ids=combos.map((cb,i)=>set('c'+i,cb));
  /* the Hindustani example before learning starts with the first script on, as a first guess */
  const frames=[];
- frames.push(`<section class="opt"><h2>The page</h2><p class="note">As built; the screens below open from a row. Tapping a course row opens its sheet. Today's page is unchanged in this proposal.</p><div class="frames">${phone('Languages I’m learning',listBody(c),'list')}</div></section>`);
- frames.push(`<section class="opt"><h2>A script-only course: ${BRAILLE.name}</h2><p class="note">A course with a script and no language. It has no Level and no Scripts section, so there is nothing to switch. The button names what is learned: "Learn this script" in place of "Learn this language".</p><div class="frames">${sheetPhone('Before learning starts','b0',scriptSheet(false))}${sheetPhone('After learning started','b1',scriptSheet(true))}</div></section>`);
+ frames.push(`<section class="opt"><h2>List</h2><div class="frames">${phone('Languages I’m learning',listBody(c),'list')}</div></section>`);
+ frames.push(`<section class="opt"><h2>Script only: ${BRAILLE.name}</h2><div class="frames">${sheetPhone('Before learning','b0',scriptSheet(false))}${sheetPhone('Learning','b1',scriptSheet(true))}</div></section>`);
  const lu=langSheet(c,false,idU),ll=langSheet(c,true,idL);
- frames.push(`<section class="opt"><h2>A language with scripts: ${c.name}</h2><p class="note">Before learning starts the sheet shows the course, the book it is taught from and, in the proposal, the scripts as switches: the choice is made here, and the "Step 1 of 2 · Script" screen after Learn this language is dropped. After learning started the same switches stop or start a script at once, in place of "Change scripts". Try the switches.</p><div class="frames">${sheetPhone('Before learning starts','l0',lu,'')}${sheetPhone('After learning started','l1',ll,'')}${S.scr==='built'?sheetPhone('As built: the step after Learn this language','l2',stepBuilt(c,idU),''):''}</div></section>`);
- frames.push(`<section class="opt"><h2>The script switches, every state: ${c.name}</h2><p class="note">The learned sheet scrolled to Scripts. ${c.scripts.length>1?'One script, both scripts, none. With none on, the sheet says the course is learned with Latin letters only.':'On and off.'} A shared script says which other course you are learning that uses it.</p><div class="frames">${combos.map((cb,i)=>sheetPhone(['One script on','Both scripts on','No script on'][c.scripts.length>1?i:i===0?0:2]||'',`s${i}`,langSheet(c,true,ids[i]),'Scripts')).join('')}</div></section>`);
+ frames.push(`<section class="opt"><h2>Language with scripts: ${c.name}</h2><div class="frames">${sheetPhone('Before learning','l0',lu,'')}${sheetPhone('Learning','l1',ll,'')}${S.scr==='built'?sheetPhone('As built: step after Learn','l2',stepBuilt(c,idU),''):''}</div></section>`);
+ frames.push(`<section class="opt"><h2>Script switches: ${c.name}</h2><div class="frames">${combos.map((cb,i)=>sheetPhone(['One on','Both on','None on'][c.scripts.length>1?i:i===0?0:2]||'',`s${i}`,langSheet(c,true,ids[i]),'Scripts')).join('')}</div></section>`);
  root.innerHTML=frames.join('');
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
  document.querySelectorAll('.ph').forEach(p=>{
