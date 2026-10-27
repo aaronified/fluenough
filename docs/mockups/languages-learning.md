@@ -18,7 +18,8 @@ Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the c
 1. **Scripts are switches in the sheet**, before and after learning. Before: a "Scripts to learn · pick any" section with a switch each, so the checkbox step after Learn this language is dropped. After: each script's row has a switch, "Not learning this script" or "learning" with its deck progress bar, and "Change scripts" is gone. The "Devanagari, Perso-Arabic (2/2)" summary stays. With none on, the sheet says it is Latin letters only.
 2. **A script-only course's button says "Learn this script"** in place of "Learn this language".
 3. **Icons and colours** (owner, 2026-10-27), all from the scheme: a tinted icon tile on each detail row (Course size and Units in the primary container, Size in the tertiary container, Taught from and Scripts in the secondary container) and on each list row (a translate icon, or Braille dots); an icon before each section heading; a script tile with the script's first letter (अ, ب, অ), filled in the primary colour while the script is learned and grey while it is not; the course line's A1, A2 and B1 segments and labels in the primary, tertiary and on-secondary colours; and Complete in the primary container, Beta in the tertiary container.
-4. Everything else is as built.
+4. **Fewer words** (owner, 2026-10-27): the Course heading, the Level text, "Written toward B1", the script and decks descriptions, the shared-script sentence (now "Also in Marathi") and the update and cards-a-day sentences are cut to what is needed; sizes and units are bare values.
+5. Everything else is as built.
 
 ## Open questions
 
