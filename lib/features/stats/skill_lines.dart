@@ -18,6 +18,17 @@ String masterySkillLabel(AppLocalizations l10n, MasterySkill skill) =>
       MasterySkill.say => l10n.skillSpeaking,
     };
 
+/// [skill]'s icon: the one its drill mode has on Today and in the decks
+/// (`SkillVisuals`); script, which has no mode of its own, is a letter.
+IconData masterySkillIcon(MasterySkill skill) => switch (skill) {
+  MasterySkill.grammar => Icons.text_fields,
+  MasterySkill.script => Icons.abc,
+  MasterySkill.read => Icons.visibility_outlined,
+  MasterySkill.write => Icons.keyboard_outlined,
+  MasterySkill.hear => Icons.hearing,
+  MasterySkill.say => Icons.mic_none,
+};
+
 /// How a skill's line is drawn on the charts over time: colour, dash and
 /// marker, so that colour is never the only cue.
 enum LineMarker { circle, square, diamond, triangle, triangleDown, ring }

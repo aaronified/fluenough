@@ -19,6 +19,7 @@ import 'package:fluenough/features/stats/over_time_page.dart';
 import 'package:fluenough/features/stats/progress_tiles.dart';
 import 'package:fluenough/features/stats/practice_week_card.dart';
 import 'package:fluenough/features/stats/progress_mastery.dart';
+import 'package:fluenough/features/stats/skill_lines.dart';
 import 'package:fluenough/features/stats/skill_star.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
@@ -937,6 +938,25 @@ void main() {
       expect(still.duration, Duration.zero);
       expect(still.tween.begin, 1.0, reason: 'drawn full-grown at once');
       expect(tester.binding.transientCallbackCount, 0);
+    });
+
+    testWidgets('each skill name has its own icon before it', (tester) async {
+      await pumpStar(tester, mastery: full(10));
+      final icons = <int>{};
+      for (var i = 0; i < 6; i++) {
+        final label = tester
+            .widget<Text>(find.byKey(ValueKey<String>('star-label-$i')))
+            .textSpan!;
+        final glyph = (label as TextSpan).children!.first as TextSpan;
+        final code = glyph.text!.runes.first;
+        expect(
+          code,
+          masterySkillIcon(kStarSkills[i]).codePoint,
+          reason: 'label $i',
+        );
+        icons.add(code);
+      }
+      expect(icons, hasLength(6), reason: 'no two skills share an icon');
     });
 
     testWidgets('nothing is written under the star', (tester) async {
