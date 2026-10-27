@@ -91,8 +91,9 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .stp button svg{width:24px;height:24px}
 .stp button[aria-disabled="true"]{opacity:.38;cursor:default}
 .stp .mv{flex:1;text-align:center;font-size:calc(20px*var(--t));font-weight:600;font-variant-numeric:tabular-nums;min-width:0}
-.bottom .btn+.btn{margin-top:8px}
-.btn.err{background:none;border:1px solid var(--E);color:var(--E)}
+.brow{display:flex;gap:12px;align-items:stretch}
+.dbtn{flex:none;width:calc(48px*var(--t));min-height:calc(48px*var(--t));border-radius:calc(24px*var(--t));border:1px solid var(--ol);background:none;color:var(--E);display:flex;align-items:center;justify-content:center;padding:0}
+.dbtn svg{width:24px;height:24px}
 .dlg.chg{position:absolute}
 .scrim2{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:5}
 .dlg{position:absolute;z-index:6;left:16px;right:16px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:12px}
@@ -207,6 +208,7 @@ const IC={
  braille:'M7 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
  timer:'M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z',
  plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ bin:'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
  minus:'M19 13H5v-2h14v2z',
  layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z'};
 const svg=(p,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[p]}"/></svg>`;
@@ -307,13 +309,13 @@ function langSheet(c,learned,id){
  const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Taught from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
  const body=`${header}${learned?levelBlock(c):''}${learned?`<div class="${N()}" style="border-radius:12px;margin-bottom:14px">${minutes(S.course)}</div>`:''}${scripts}
   <div style="height:14px"></div>${courseLine(c)}${built}${native}${kv('Size',c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}`;
- const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span><span class="btn err full${N()}" style="min-height:calc(48px*var(--t))">Delete data</span>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
+ const btn=learned?`<div class="brow"><button class="dbtn${N()}" tabindex="-1" aria-label="Delete data">${svg('bin')}</button><span class="btn out" style="flex:1;min-height:calc(48px*var(--t))">Stop learning</span></div>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
  return {body,btn};
 }
 function scriptSheet(learned){
  const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words</span>':''}</div>
   ${learned?`<div class="${N()}" style="border-radius:12px;margin:14px 0">${minutes('brl')}</div>`:'<div style="height:14px"></div>'}${kv('Course size',BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll,'list','pc')}`;
- const btn=learned?`<span class="btn out full" style="min-height:calc(48px*var(--t))">Stop learning</span><span class="btn err full${N()}" style="min-height:calc(48px*var(--t))">Delete data</span>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
+ const btn=learned?`<div class="brow"><button class="dbtn${N()}" tabindex="-1" aria-label="Delete data">${svg('bin')}</button><span class="btn out" style="flex:1;min-height:calc(48px*var(--t))">Stop learning</span></div>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
  return {body,btn};
 }
 /* the "as built" step after Learn this language: scripts as boxes */
@@ -410,7 +412,7 @@ render();
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Delete data text on the sheet','E','sLow',4.5],['Delete button text','onE','E',4.5],['input outline','ol','sHigh',3],['dialog body text','onSv','sHigh',4.5],['stepper icon on its button','onSc','sc',4.5],['check on its round button','onP','p',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3]];
+const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Delete data bin on the sheet','E','sLow',3],['Delete button text','onE','E',4.5],['input outline','ol','sHigh',3],['dialog body text','onSv','sHigh',4.5],['stepper icon on its button','onSc','sc',4.5],['check on its round button','onP','p',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3]];
 window.__contrast=[];
 ['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const P=PALS[pl+'_'+t];const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
 console.log('contrast',JSON.stringify(window.__contrast));
