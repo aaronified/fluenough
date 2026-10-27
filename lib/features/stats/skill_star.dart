@@ -132,6 +132,7 @@ class _Star extends StatelessWidget {
 
     InlineSpan spanOf(int i) {
       final skill = kStarSkills[i];
+      final icon = masterySkillIcon(skill);
       final outline = mastery[skill].outline;
       // A dash while nothing is taught.
       final shownOutline = outline == null
@@ -140,6 +141,17 @@ class _Star extends StatelessWidget {
       return TextSpan(
         style: style,
         children: <InlineSpan>[
+          // The icon is a glyph of the icon font, so the label's height is
+          // measured as text, in the skill's colour like its name.
+          TextSpan(
+            text: '${String.fromCharCode(icon.codePoint)}\u00A0',
+            style: TextStyle(
+              color: skillInk(skill),
+              fontFamily: icon.fontFamily,
+              package: icon.fontPackage,
+              fontSize: nameSize + 2,
+            ),
+          ),
           // The name is always in its skill's colour (owner, 2026-10-26),
           // bold, so the 3:1 of a large text holds.
           TextSpan(
