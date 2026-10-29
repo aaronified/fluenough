@@ -6,7 +6,7 @@ Source of truth: this wiki page.
 For the owner. The review bot ([ADR-0038](ADR-0038-Review-Proposals),
 #441) turns review mails into proposals in the decks and merges a change
 to learners once enough other reviewers accept it. It runs inside the
-hourly mail workflow, `.github/workflows/feedback-mail.yml`, and does
+mail workflow, `.github/workflows/feedback-mail.yml`, and does
 nothing until the steps below are done: until then reviews are filed as
 issues, as now, and the workflow's log says the bot is not set up.
 

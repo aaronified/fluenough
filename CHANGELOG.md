@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The teach card's swipe chevrons no longer flicker on every touch: a tap, a scroll or the speaker button shows nothing, and they show for 1 s when the card first appears, then only when a swipe begins, and go 1 s after it ends.
+- Reports mailed from the app are filed as issues within about 15 minutes, not hours (GitHub may still delay scheduled runs; the workflow can be run by hand), and the public issue no longer carries the sender's mail address or signature.
 
 ## [0.6.7] - 2026-10-26
 
