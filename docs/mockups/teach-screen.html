@@ -37,7 +37,7 @@ section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-lin
 .hl-on .tab span.chg{border-radius:24px 0 0 24px}
 .hl-on .chg::after{white-space:nowrap}
 .hl-on .chg.upd::after{content:"changed"}
-.hl-on .chg.swp::after{content:"swipe"}
+.hl-on .chg.swp::after{content:"swipe = Good"}
 .wb{position:relative}
 /* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
    Sizes are calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
@@ -72,13 +72,13 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .foot{flex:none;padding:12px 16px 20px;display:flex;flex-direction:column;gap:10px}
 .btn{min-height:64px;border-radius:32px;border:0;background:var(--p);color:var(--onP);font-size:calc(18px*var(--t));line-height:1.3;font-weight:700;display:flex;align-items:center;justify-content:center;width:100%;padding:8px 16px}
 .rprompt{text-align:center;font-size:calc(16px*var(--t));line-height:1.4;font-weight:500;color:var(--onSv)}
-.rate{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.rate button{min-height:68px;border:0;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:calc(16px*var(--t));line-height:1.3}
+.rate{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.rate button{min-height:64px;border:0;padding:4px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:calc(16px*var(--t));line-height:1.3}
 .rate button small{font-weight:400;font-size:calc(11px*var(--t));opacity:.85;line-height:1.3}
-.r1{background:var(--eC);color:var(--onEC);border-radius:28px 10px 10px 10px}
-.r2{background:var(--sc);color:var(--onSc);border-radius:10px 28px 10px 10px}
-.r3{background:var(--p);color:var(--onP);border-radius:10px 10px 10px 28px}
-.r4{background:var(--tC);color:var(--onTC);border-radius:10px 10px 28px 10px}
+.r1{background:var(--eC);color:var(--onEC);border-radius:28px 10px 10px 28px}
+.r2{background:var(--sc);color:var(--onSc);border-radius:10px}
+.r3{background:var(--p);color:var(--onP);border-radius:10px}
+.r4{background:var(--tC);color:var(--onTC);border-radius:10px 28px 28px 10px}
 /* card content */
 .rd1{font-size:calc(48px*var(--t));line-height:1.2;font-weight:600}
 .sc1{font-size:calc(32px*var(--t));line-height:1.3;color:var(--onSv)}
@@ -240,13 +240,15 @@ function reviewPhone(v,revealed){
    +v.notes.map(n=>`<div class="nt">${n}</div>`).join('')
    +(v.ex[0]?`<div class="ex"><div class="t script">${v.ex[0].t}</div><div class="n">${v.ex[0].n}</div></div>`:'');
  }
- /* the question page keeps its button (Show answer); the answer page has none: a swipe goes on */
- const foot=revealed?'':`<div class="foot"><button class="btn">Show answer</button></div>`;
+ /* built: Show answer, or the prompt over the four ratings. Proposed: the ratings in one row where Continue sits */
+ const foot=revealed
+  ?`<div class="rprompt">How well did you know it?</div><div class="rate chg upd"><button class="r1">Again<small>today</small></button><button class="r2">Hard<small>1 day</small></button><button class="r3">Good<small>3 days</small></button><button class="r4">Easy<small>7 days</small></button></div>`
+  :`<button class="btn">Show answer</button>`;
  const tab=revealed?`<div class="tab"><span class="chg swp">${svg('chev')}</span></div>`:'';
  return `<div class="ph">${head(1,revealed?.5/3:0,v.ipa)}
   <div class="body"><div class="prow"><span class="pill rec">${svg('eye')}Recognition</span><span class="deck">${C[S.course].deck}</span></div>
   <div class="dcard">${word}${det}</div></div>
-  ${foot}${tab}</div>`;
+  <div class="foot">${foot}</div>${tab}</div>`;
 }
 /* ===== the teach card as built today (lib/features/drill/teach_card.dart) ===== */
 function todayPhone(v){
@@ -286,7 +288,7 @@ function render(){
  const has={pic:!!raw.pic,ipa:!!raw.ipa,note:!!(raw.notes&&raw.notes.length),ex:(raw.ex||[]).length,forms:!!raw.forms};
  root.innerHTML=`
  <section class="opt"><h2>One family: review as built, teach before and after, ${c.lang}</h2>
- <p class="note">Left to right: the review screen asking the word, with its button, and the review screen with its answer shown, both as built (the reference), the answer screen with no Continue and a swipe to go on, the one outlined change; the teach card as built today; the teach card proposed. The proposal is the review's answer screen with the teach card's extras, in the same card: the pill row, the 40 dp card as tall as its content, content centred 12 apart, notes at 15/22, examples in the same inner box. Like the answer screen it has no button: a swipe or the end-edge chevron goes on, as built. It scrolls in the body when long.</p>
+ <p class="note">Left to right: the review screen asking the word, as built, and the review screen with its answer shown, as built apart from two outlined changes (the four ratings in one row where Continue sits, and a swipe that continues as Good); the teach card as built today; the teach card proposed. The proposal is the review's answer screen with the teach card's extras, in the same card: the pill row, the 40 dp card as tall as its content, content centred 12 apart, notes at 15/22, examples in the same inner box. Like the answer screen it has no button: a swipe or the end-edge chevron goes on, as built. It scrolls in the body when long.</p>
  <div class="tw">
   <div class="tg">Card <span class="seg" data-sk="card">${K.map(k=>`<button data-v="${k}" aria-pressed="${S.card===k}">${KL[k]}</button>`).join('')}</span></div></div>
  <div class="tw">
@@ -301,7 +303,7 @@ function render(){
   ${dseg('forms',[[1,'Forms shown'],[0,'Hidden']],'Forms',has.forms)}</div>
  <div class="frames">
   ${frame('Review, the word asked (as built)',reviewPhone(v,false))}
-  ${frame('Review, answer shown (as built, but no Continue: a swipe goes on)',reviewPhone(v,true))}
+  ${frame('Review, answer shown (as built; ratings in one row, swipe = Good)',reviewPhone(v,true))}
   ${frame('Teach card, before (as built)',todayPhone(v))}
   ${frame('Teach card, after: '+KL[S.card].toLowerCase(),afterPhone(v))}
  </div></section>
@@ -331,7 +333,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(post);
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text, header','onS','s',4.5],['meaning, word on card','onS','sHigh',4.5],['script, IPA, notes, pos line on card','onSv','sHigh',4.5],['deck name, rating prompt','onSv','s',4.5],['example text on its box','onS','sLowest',4.5],['example translation, reading, form labels','onSv','sLowest',4.5],['Show answer','onP','p',4.5],['speaker icon on its cookie','onPc','pc',3],['New pill','onTC','tC',4.5],['Recognition pill','onRc','rc',4.5],['chevron tab icon','onSc','sc',3],['book icon on card','p','sHigh',3],['IPA chip outline on page (Before)','ol','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
+const PAIRS=[['body text, header','onS','s',4.5],['meaning, word on card','onS','sHigh',4.5],['script, IPA, notes, pos line on card','onSv','sHigh',4.5],['deck name, rating prompt','onSv','s',4.5],['example text on its box','onS','sLowest',4.5],['example translation, reading, form labels','onSv','sLowest',4.5],['Show answer, Good','onP','p',4.5],['Again','onEC','eC',4.5],['Hard','onSc','sc',4.5],['speaker icon on its cookie','onPc','pc',3],['New pill, Easy','onTC','tC',4.5],['Recognition pill','onRc','rc',4.5],['chevron tab icon','onSc','sc',3],['book icon on card','p','sHigh',3],['IPA chip outline on page (Before)','ol','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
 console.log('contrast',JSON.stringify(window.__contrast));
