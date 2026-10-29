@@ -33,11 +33,18 @@ class TeachSwipe extends StatefulWidget {
     required this.child,
     required this.onNext,
     this.onBack,
+    this.enabled = true,
   });
 
   final Widget child;
   final VoidCallback onNext;
   final VoidCallback? onBack;
+
+  /// Whether a swipe or the chevron goes on. Off, the child is drawn as it
+  /// would be, but nothing moves it and no chevron shows: the review's
+  /// answer page uses it so that its card keeps its state as the answer
+  /// comes in.
+  final bool enabled;
 
   @override
   State<TeachSwipe> createState() => _TeachSwipeState();
@@ -78,9 +85,26 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _spring.addListener(() => setState(() => _dx = _spring.value));
-    // The intro: shown for 1 s as the card first appears, never again for it.
+    if (widget.enabled) _intro();
+  }
+
+  /// The intro: shown for 1 s as the card first appears, or as swiping is
+  /// first turned on, to teach that the chevrons exist.
+  void _intro() {
     _chevronsShown = true;
     _holdChevrons();
+  }
+
+  @override
+  void didUpdateWidget(TeachSwipe oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.enabled == oldWidget.enabled) return;
+    if (widget.enabled) {
+      _intro();
+    } else {
+      _hideTimer?.cancel();
+      _chevronsShown = false;
+    }
   }
 
   @override
@@ -213,10 +237,10 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
             Positioned.fill(
               child: GestureDetector(
                 behavior: HitTestBehavior.translucent,
-                onHorizontalDragStart: _start,
-                onHorizontalDragUpdate: _update,
-                onHorizontalDragEnd: _end,
-                onHorizontalDragCancel: _cancel,
+                onHorizontalDragStart: widget.enabled ? _start : null,
+                onHorizontalDragUpdate: widget.enabled ? _update : null,
+                onHorizontalDragEnd: widget.enabled ? _end : null,
+                onHorizontalDragCancel: widget.enabled ? _cancel : null,
                 child: ClipRect(
                   child: Transform.translate(
                     offset: Offset(_dx, 0),
@@ -225,19 +249,20 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
                 ),
               ),
             ),
-            if (widget.onBack != null)
+            if (widget.enabled && widget.onBack != null)
               _Chevron(
                 next: false,
                 shown: _chevronsShown,
                 label: l10n.drillPreviousCard,
                 onTap: () => _tapped(-1),
               ),
-            _Chevron(
-              next: true,
-              shown: _chevronsShown,
-              label: l10n.drillNextCard,
-              onTap: () => _tapped(1),
-            ),
+            if (widget.enabled)
+              _Chevron(
+                next: true,
+                shown: _chevronsShown,
+                label: l10n.drillNextCard,
+                onTap: () => _tapped(1),
+              ),
           ],
         );
       },

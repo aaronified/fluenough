@@ -6,9 +6,11 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/card_picture.dart';
+import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_bases.dart' show baseFinder;
 import '../decks/card_blocks.dart';
 import '../decks/card_notes.dart';
 import '../decks/ipa_symbols.dart';
@@ -17,26 +19,28 @@ import '../decks/word_sheet.dart' show adultContentOn;
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'ipa_examples.dart';
-import 'taught_details.dart' show TaughtReading;
+import 'taught_details.dart' show TaughtExample, TaughtReading;
 
-/// The teach card (#691, owner, 2026-10-22): a word on one screen, with no
-/// scrolling, in lessons and, later, the guided walkthrough (#694). The word
-/// sheet is the same card with everything unfolded.
+/// The teach card (#691; redrawn owner, 2026-10-29, docs/mockups/teach-screen):
+/// a word taught for the first time, laid out as the review's answer screen
+/// is, so that the two read as one family.
 ///
-/// Top to bottom, spaced evenly down the screen:
+/// In the body, which scrolls when the content is taller than the screen (a
+/// soft fade at the foot says there is more):
 ///
-/// - the word large on one line, shrunk to fit a long one, with its reading,
-///   its speaker ([audio]) and its IPA, which is a button that opens the
-///   pronunciation popup (each symbol of the word, from the IPA course,
-///   with its practice); and the picture, a square tile beside the word;
-/// - the meaning at the full width, which is the dictionary button: it opens
-///   the dictionary popup (the senses, the etymology and the examples) and
-///   shows the part of speech and gender under it;
-/// - one note, with an exclamation icon;
-/// - one warning, with no title: the one the card's `warning` names, or,
-///   without it, a rude word it is like (always), else the first of the word
-///   it sounds like, the word it looks like or its other meanings
-///   ([teachWarningOf]). The word sheet shows them all, titled.
+/// - the pill row: "New word" or "New phrase" and the deck's name, as the
+///   review's skill pill and deck name sit;
+/// - one [DrillCard], as tall as its content, its children centred 12 apart:
+///   the word (its reading first, or the script with its reading under it),
+///   the speaker ([audio]) and the IPA on one row, the IPA a button that
+///   opens the pronunciation popup; the meaning at 28 sp with a dictionary
+///   icon, which opens the dictionary popup, the part of speech under it and
+///   the picture, a small tile, beside it; every note in full; the warning
+///   the card names ([teachWarningOf]); up to three examples in the review's
+///   inner box; and a short table of the word's forms.
+///
+/// There is no button and nothing is recorded: a swipe or the end-edge
+/// chevron goes on (`TeachSwipe`).
 ///
 /// A language learned without its alphabet shows the reading first, as the
 /// card always has ([TaughtReading]).
@@ -47,6 +51,7 @@ class TeachCard extends StatelessWidget {
     required this.language,
     required this.reading,
     this.audio,
+    this.deckName,
   });
 
   final Card card;
@@ -55,9 +60,18 @@ class TeachCard extends StatelessWidget {
   /// How the word's reading shows.
   final TaughtReading reading;
 
-  /// The speaker beside the IPA, a 48 px button; null where the phone has no
+  /// The speaker beside the IPA, a 56 px button; null where the phone has no
   /// voice for the language.
   final Widget? audio;
+
+  /// The deck's name, beside the pill; none without it.
+  final String? deckName;
+
+  /// How many examples the card shows.
+  static const int maxExamples = 3;
+
+  /// How many forms its table shows.
+  static const int maxForms = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -76,45 +90,61 @@ class TeachCard extends StatelessWidget {
     final scheme = theme.colorScheme;
     final readingText = card.reading;
     final ipa = ipaToShow(context, card.ipa, target: card.target);
-    final line = joinParts(l10n, <String>[?card.pos, ?card.gender]);
-    final note = proseNotes(card).firstOrNull;
+    final isPhrase = card.pos == 'phrase';
+    final line = joinParts(l10n, <String>[
+      if (!isPhrase) ?card.pos,
+      ?card.gender,
+    ]);
+    final notes = proseNotes(card);
     final (:rude, :similar) = teachWarningOf(state, card);
     final named = adultContentOn(state);
+    final find = baseFinder(
+      state,
+      language: language.code,
+      native: state.deckOf(card)?.deck.native.code,
+    );
+    final forms = <_TeachForm>[];
+    for (final f in card.forms) {
+      if (forms.length == maxForms) break;
+      var word = f.word;
+      var formReading = f.reading;
+      final ref = f.ref;
+      if (word == null && ref != null) {
+        final other = find(ref);
+        word = other?.target;
+        formReading = other?.reading;
+      }
+      if (word == null || word.trim().isEmpty) continue;
+      forms.add(
+        _TeachForm(
+          word: word,
+          reading: formReading,
+          label: _formLabel(l10n, f.kind),
+          text: f.text,
+        ),
+      );
+    }
 
     final Widget word;
     if (readingText != null && reading == TaughtReading.first) {
-      word = FittedBox(
-        fit: BoxFit.scaleDown,
-        alignment: AlignmentDirectional.centerStart,
-        child: ReadingFirst(
-          reading: readingText,
-          target: card.target,
-          language: language,
-          fontSize: 52,
-          alignment: CrossAxisAlignment.start,
-        ),
+      word = ReadingFirst(
+        reading: readingText,
+        target: card.target,
+        language: language,
+        fontSize: 48,
       );
     } else {
       word = Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          // One line: a word too wide for its place shrinks to fit.
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: AlignmentDirectional.centerStart,
-            child: TargetText.card(
-              card.target,
-              language: language,
-              fontSize: 52,
-              fontWeight: FontWeight.w500,
-              textAlign: TextAlign.start,
-              card: card,
-            ),
-          ),
+          TargetText.hero(card.target, language: language, card: card),
           if (readingText != null)
             Text(
               readingText,
-              style: theme.textTheme.titleMedium!.copyWith(
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                fontSize: 18,
+                height: 24 / 18,
                 color: scheme.onSurfaceVariant,
               ),
             ),
@@ -122,97 +152,58 @@ class TeachCard extends StatelessWidget {
       );
     }
 
-    final hero = Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              word,
-              if (audio != null || ipa != null)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(top: 10),
-                  child: Row(
-                    children: <Widget>[
-                      ?audio,
-                      if (audio != null && ipa != null)
-                        const SizedBox(width: 8),
-                      if (ipa != null)
-                        Flexible(
-                          child: _IpaButton(
-                            ipa: ipa,
-                            onPressed: () => showPronunciation(context, card),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-            ],
-          ),
-        ),
-        if (card.hasPicture) ...<Widget>[
-          const SizedBox(width: 16),
-          Container(
-            width: 104,
-            height: 104,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: CardPicture(card, size: 64),
-          ),
-        ],
-      ],
-    );
-
-    final meaning = Semantics(
-      button: true,
-      label: l10n.teachDictionaryLabel(card.native),
-      excludeSemantics: true,
-      child: Material(
-        color: scheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(16),
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: () => showDictionary(context, card, language),
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 14, 14),
+    final meaning = Padding(
+      padding: const EdgeInsetsDirectional.only(top: 4),
+      child: Semantics(
+        button: true,
+        label: l10n.teachDictionaryLabel(card.native),
+        excludeSemantics: true,
+        child: Material(
+          type: MaterialType.transparency,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16),
+            onTap: () => showDictionary(context, card, language),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 12,
               children: <Widget>[
-                Expanded(
+                if (card.hasPicture)
+                  Container(
+                    width: 56,
+                    height: 56,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: scheme.secondaryContainer,
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: CardPicture(card, size: 32),
+                  ),
+                Flexible(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      // One line, at the full width: a long meaning shrinks.
-                      // A whole sentence, as the IPA course's cards have for
-                      // a meaning, wraps instead.
-                      if (card.native.length > 28)
-                        Text(
-                          card.native,
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        )
-                      else
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            card.native,
-                            style: theme.textTheme.headlineSmall!.copyWith(
-                              fontWeight: FontWeight.w500,
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Flexible(
+                            child: Text(
+                              card.native,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.headlineMedium,
                             ),
                           ),
-                        ),
+                          const SizedBox(width: 8),
+                          Icon(
+                            Icons.menu_book_outlined,
+                            size: 22,
+                            color: scheme.primary,
+                          ),
+                        ],
+                      ),
                       if (line.isNotEmpty)
                         Text(
                           line,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -220,8 +211,6 @@ class TeachCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 8),
-                Icon(Icons.menu_book_outlined, color: scheme.primary),
               ],
             ),
           ),
@@ -229,26 +218,67 @@ class TeachCard extends StatelessWidget {
       ),
     );
 
-    return LayoutBuilder(
-      builder: (context, constraints) => SingleChildScrollView(
-        // Laid out to the screen's height. It scrolls only when large text
-        // makes the content taller than that, rather than cutting a note.
-        physics: const ClampingScrollPhysics(),
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: constraints.hasBoundedHeight
-                ? constraints.maxHeight - 8
-                : 0,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 14,
+    return _TeachScroll(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Row(
             children: <Widget>[
-              hero,
+              Flexible(
+                child: _NewPill(
+                  label: isPhrase ? l10n.teachNewPhrase : l10n.teachNewWord,
+                ),
+              ),
+              if (deckName != null) ...<Widget>[
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    deckName!,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+          const SizedBox(height: 16),
+          DrillCard(
+            children: <Widget>[
+              word,
+              if (audio != null || ipa != null)
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: 12,
+                  children: <Widget>[
+                    ?audio,
+                    if (ipa != null)
+                      Flexible(
+                        child: _IpaButton(
+                          ipa: ipa,
+                          onPressed: () => showPronunciation(context, card),
+                        ),
+                      ),
+                  ],
+                ),
               meaning,
-              if (note != null) NoteBlock(text: note, maxLines: 4),
+              // Padding, not a max-width box, as the review's notes are.
+              for (final note in notes)
+                Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 19,
+                  ),
+                  child: Text(
+                    note,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.bodyLarge!.copyWith(
+                      fontSize: 15,
+                      height: 22 / 15,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ),
               for (final alike in rude)
                 AlikeWarning(
                   kind: alike.kind,
@@ -263,15 +293,141 @@ class TeachCard extends StatelessWidget {
                   titled: false,
                   maxLines: 2,
                 ),
+              if (card.examples.isNotEmpty && language.isIpa)
+                IpaExamples(card: card, language: language)
+              else
+                for (final example in card.examples.take(maxExamples))
+                  TaughtExample(
+                    example: example,
+                    language: language,
+                    showReading: true,
+                  ),
+              if (forms.isNotEmpty)
+                SizedBox(
+                  width: double.infinity,
+                  child: _FormsTable(forms: forms, language: language),
+                ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  static String? _formLabel(AppLocalizations l10n, String? kind) =>
+      switch (kind) {
+        'plural' => l10n.teachFormPlural,
+        'oblique' => l10n.teachFormOblique,
+        'oblique-plural' => l10n.teachFormObliquePlural,
+        'feminine' => l10n.teachFormFeminine,
+        'masculine' => l10n.teachFormMasculine,
+        _ => null,
+      };
+}
+
+/// The body of the teach card: it scrolls when the content is taller than the
+/// screen, with a soft fade at its foot while there is more below.
+class _TeachScroll extends StatefulWidget {
+  const _TeachScroll({required this.child});
+
+  final Widget child;
+
+  @override
+  State<_TeachScroll> createState() => _TeachScrollState();
+}
+
+class _TeachScrollState extends State<_TeachScroll> {
+  bool _more = false;
+
+  bool _update(ScrollMetrics metrics) {
+    final more = metrics.extentAfter > 1;
+    if (more != _more && mounted) setState(() => _more = more);
+    return false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final surface = Theme.of(context).colorScheme.surface;
+    return NotificationListener<ScrollMetricsNotification>(
+      onNotification: (n) => _update(n.metrics),
+      child: NotificationListener<ScrollNotification>(
+        onNotification: (n) => _update(n.metrics),
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            SingleChildScrollView(
+              physics: const ClampingScrollPhysics(),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
+              child: widget.child,
+            ),
+            PositionedDirectional(
+              start: 0,
+              end: 0,
+              bottom: 0,
+              height: 28,
+              child: IgnorePointer(
+                child: AnimatedOpacity(
+                  opacity: _more ? 1 : 0,
+                  duration: const Duration(milliseconds: 150),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: <Color>[surface.withValues(alpha: 0), surface],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-/// The IPA as an outlined pill, which opens the pronunciation popup.
+/// "New word" or "New phrase": the pill of a teach card, drawn as the
+/// review's skill pill is, on the tertiary container, with a star.
+class _NewPill extends StatelessWidget {
+  const _NewPill({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Container(
+      constraints: const BoxConstraints(minHeight: 32),
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
+      decoration: BoxDecoration(
+        color: scheme.tertiaryContainer,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(Icons.star, size: 16, color: scheme.onTertiaryContainer),
+          const SizedBox(width: 6),
+          Flexible(
+            child: Text(
+              label,
+              textAlign: TextAlign.start,
+              style: theme.textTheme.labelLarge!.copyWith(
+                color: scheme.onTertiaryContainer,
+                fontSize: 13,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The IPA, with a dotted underline, which opens the pronunciation popup.
 class _IpaButton extends StatelessWidget {
   const _IpaButton({required this.ipa, required this.onPressed});
 
@@ -282,26 +438,141 @@ class _IpaButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        minimumSize: const Size(48, 48),
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
-        shape: const StadiumBorder(),
-        foregroundColor: theme.colorScheme.onSurface,
-      ),
-      child: Semantics(
-        label: l10n.teachPronunciationLabel(ipa),
-        excludeSemantics: true,
-        child: Text(
-          l10n.wordSheetIpa(ipa),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textDirection: TextDirection.ltr,
-          style: theme.textTheme.bodyMedium!.copyWith(
-            fontWeight: FontWeight.w500,
-            fontFamilyFallback: IpaLine.fontFallback,
+    final color = theme.colorScheme.onSurfaceVariant;
+    return Semantics(
+      button: true,
+      label: l10n.teachPronunciationLabel(ipa),
+      excludeSemantics: true,
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(24),
+          onTap: onPressed,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
+            child: Center(
+              widthFactor: 1,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+                child: Text(
+                  l10n.wordSheetIpa(ipa),
+                  textDirection: TextDirection.ltr,
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    fontSize: 16,
+                    color: color,
+                    decoration: TextDecoration.underline,
+                    decorationStyle: TextDecorationStyle.dotted,
+                    decorationColor: color,
+                    fontFamilyFallback: IpaLine.fontFallback,
+                  ),
+                ),
+              ),
+            ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// One row of the forms table: the form, its reading, its label and its line.
+class _TeachForm {
+  const _TeachForm({
+    required this.word,
+    required this.reading,
+    required this.label,
+    required this.text,
+  });
+
+  final String word;
+  final String? reading;
+  final String? label;
+  final String? text;
+}
+
+/// A word's forms in the review's inner box: each row the form with its
+/// reading, and what the form is and means.
+class _FormsTable extends StatelessWidget {
+  const _FormsTable({required this.forms, required this.language});
+
+  final List<_TeachForm> forms;
+  final LanguageInfo language;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final small = theme.textTheme.bodySmall!.copyWith(
+      color: scheme.onSurfaceVariant,
+    );
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLowest,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 14,
+          vertical: 2,
+        ),
+        child: Column(
+          children: <Widget>[
+            for (var i = 0; i < forms.length; i++)
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  border: i == 0
+                      ? null
+                      : Border(top: BorderSide(color: scheme.outlineVariant)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(vertical: 10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TargetText.card(
+                              forms[i].word,
+                              language: language,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: scheme.onSurface,
+                              textAlign: TextAlign.start,
+                            ),
+                            if (forms[i].reading case final r?)
+                              Text(r, style: small),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            if (forms[i].label case final label?)
+                              Text(
+                                label,
+                                style: small.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            if (forms[i].text case final text?)
+                              Text(
+                                text,
+                                style: theme.textTheme.bodyMedium!.copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
     );

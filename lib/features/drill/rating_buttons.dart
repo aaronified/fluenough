@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/card_text_scale.dart';
 
 /// Recognition's four self-rating buttons: Again, Hard, Good, Easy, each
 /// with when the card would next be due.
 ///
-/// One connected row, 68 tall and 4 apart, round (28) at the group's outer
-/// ends and 10 inside, as the design draws it. At large text sizes the row
-/// becomes two rows of two, so that no label is broken mid-word.
+/// One connected row, 64 tall and 4 apart, round (28) at the group's outer
+/// ends and 10 inside, at every text size (owner, 2026-10-29: "four buttons
+/// in one row", where the Continue button sits on the other drills).
 class RatingButtons extends StatelessWidget {
   const RatingButtons({
     super.key,
@@ -31,7 +30,6 @@ class RatingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final large = isLargeText(context);
 
     Widget button(SelfGrade grade, BorderRadiusDirectional radius) => Expanded(
       child: _RatingButton(
@@ -60,65 +58,18 @@ class RatingButtons extends StatelessWidget {
 
     const o = Radius.circular(_outer);
     const n = Radius.circular(_inner);
-    final Widget content = large
-        ? Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              row(<Widget>[
-                button(
-                  SelfGrade.again,
-                  const BorderRadiusDirectional.only(
-                    topStart: o,
-                    topEnd: n,
-                    bottomStart: n,
-                    bottomEnd: n,
-                  ),
-                ),
-                button(
-                  SelfGrade.hard,
-                  const BorderRadiusDirectional.only(
-                    topStart: n,
-                    topEnd: o,
-                    bottomStart: n,
-                    bottomEnd: n,
-                  ),
-                ),
-              ]),
-              const SizedBox(height: _gap),
-              row(<Widget>[
-                button(
-                  SelfGrade.good,
-                  const BorderRadiusDirectional.only(
-                    topStart: n,
-                    topEnd: n,
-                    bottomStart: o,
-                    bottomEnd: n,
-                  ),
-                ),
-                button(
-                  SelfGrade.easy,
-                  const BorderRadiusDirectional.only(
-                    topStart: n,
-                    topEnd: n,
-                    bottomStart: n,
-                    bottomEnd: o,
-                  ),
-                ),
-              ]),
-            ],
-          )
-        : row(<Widget>[
-            button(
-              SelfGrade.again,
-              const BorderRadiusDirectional.horizontal(start: o, end: n),
-            ),
-            button(SelfGrade.hard, const BorderRadiusDirectional.all(n)),
-            button(SelfGrade.good, const BorderRadiusDirectional.all(n)),
-            button(
-              SelfGrade.easy,
-              const BorderRadiusDirectional.horizontal(start: n, end: o),
-            ),
-          ]);
+    final Widget content = row(<Widget>[
+      button(
+        SelfGrade.again,
+        const BorderRadiusDirectional.horizontal(start: o, end: n),
+      ),
+      button(SelfGrade.hard, const BorderRadiusDirectional.all(n)),
+      button(SelfGrade.good, const BorderRadiusDirectional.all(n)),
+      button(
+        SelfGrade.easy,
+        const BorderRadiusDirectional.horizontal(start: n, end: o),
+      ),
+    ]);
 
     return Semantics(
       container: true,
@@ -173,7 +124,7 @@ class _RatingButton extends StatelessWidget {
       style: FilledButton.styleFrom(
         backgroundColor: bg,
         foregroundColor: fg,
-        minimumSize: const Size(0, 68),
+        minimumSize: const Size(0, 64),
         padding: const EdgeInsetsDirectional.symmetric(
           horizontal: 4,
           vertical: 8,

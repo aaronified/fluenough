@@ -160,7 +160,7 @@ class TaughtDetails extends StatelessWidget {
           if (card.examples.isNotEmpty && language.isIpa)
             IpaExamples(card: card, language: language)
           else if (card.examples.isNotEmpty)
-            _Example(example: card.examples.first, language: language),
+            TaughtExample(example: card.examples.first, language: language),
           ...warnings,
         ];
         if (children.isEmpty) return const SizedBox.shrink();
@@ -223,12 +223,20 @@ class TaughtDetails extends StatelessWidget {
 }
 
 /// An example sentence under the meaning: the target sentence, bold, its
-/// IPA while IPA pronunciations is on, over its translation.
-class _Example extends StatelessWidget {
-  const _Example({required this.example, required this.language});
+/// IPA while IPA pronunciations is on, over its translation. With
+/// [showReading], the example's reading under the sentence, as the teach card
+/// shows it.
+class TaughtExample extends StatelessWidget {
+  const TaughtExample({
+    super.key,
+    required this.example,
+    required this.language,
+    this.showReading = false,
+  });
 
   final CardExample example;
   final LanguageInfo language;
+  final bool showReading;
 
   @override
   Widget build(BuildContext context) {
@@ -255,6 +263,14 @@ class _Example extends StatelessWidget {
               fontSize: 16,
               color: scheme.onSurface,
             ),
+            if (showReading && example.reading != null)
+              Text(
+                example.reading!,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
             if (ipaToShow(context, example.ipa, target: example.target)
                 case final ipa?)
               IpaLine(ipa),

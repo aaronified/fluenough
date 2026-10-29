@@ -2328,12 +2328,13 @@ cards:
         await tester.pumpAndSettle();
         expect(find.text(l10n.teachPronunciationBody), findsNothing);
 
-        // The meaning is the dictionary button, with the examples in it.
-        expect(find.text('Hola, Ana.'), findsNothing);
+        // The examples are on the card; the meaning is the dictionary button,
+        // which has them too.
+        expect(find.text('Hola, Ana.'), findsOneWidget);
         await tester.tap(find.text('hello'));
         await tester.pumpAndSettle();
         expect(find.text(l10n.teachDictionaryBody), findsOneWidget);
-        expect(find.text('Hola, Ana.'), findsOneWidget);
+        expect(find.text('Hola, Ana.'), findsNWidgets(2));
         await tester.tap(find.text(l10n.commonClose));
         await tester.pumpAndSettle();
 
@@ -2597,6 +2598,72 @@ cards:
       expect(progress.log.last.mode, DrillMode.recognition);
       expect(find.text(l10n.drillShowAnswer), findsOneWidget);
       expect(find.text(l10n.drillPositionShort(2, total)), findsOneWidget);
+    });
+
+    testWidgets('recognition: the four ratings are one row at large text, and '
+        'a swipe on the answer records Good', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final base = AppState.test();
+      await base.load();
+      final card = base.deckById(spanish)!.cards.first;
+      final now = base.now();
+      final progress = MemoryProgress();
+      for (final daysAgo in <int>[8, 7]) {
+        progress.record(
+          deckId: spanish,
+          cardId: card.id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: now.subtract(Duration(days: daysAgo)),
+        );
+      }
+      await pumpDrill(
+        tester,
+        DrillRequest.untaught(spanish, skill: Skill.recognition),
+        state: AppState.test(progress: progress),
+        preset: DrillPreset(target: card.target),
+      );
+      final l10n = l10nOf(tester);
+
+      // A swipe before the answer is shown goes nowhere.
+      final before = progress.log.length;
+      await tester.fling(
+        find.byType(Scaffold).first,
+        const Offset(-300, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(progress.log, hasLength(before));
+      await tester.tap(find.text(l10n.drillShowAnswer));
+      await tester.pumpAndSettle();
+
+      final labels = <String>[
+        l10n.rateAgain,
+        l10n.rateHard,
+        l10n.rateGood,
+        l10n.rateEasy,
+      ];
+      final tops = <double>{
+        for (final label in labels) tester.getTopLeft(find.text(label)).dy,
+      };
+      expect(tops, hasLength(1), reason: 'one row');
+
+      await tester.tap(find.text(l10n.rateHard));
+      await tester.pumpAndSettle();
+      expect(progress.log.last.grade, SelfGrade.hard.toGrade());
+
+      // The next card: a swipe toward the start edge is the same as Good.
+      await tester.tap(find.text(l10n.drillShowAnswer));
+      await tester.pumpAndSettle();
+      final count = progress.log.length;
+      await tester.fling(
+        find.byType(Scaffold).first,
+        const Offset(-300, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(progress.log, hasLength(count + 1));
+      expect(progress.log.last.grade, SelfGrade.good.toGrade());
     });
 
     group('production records the right grade', () {

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The teach card is redrawn like the review's answer screen: a New word or New phrase pill beside the deck name, one card as tall as its content with the word, its speaker and IPA on one row, the meaning with a dictionary icon and part of speech, the picture, every note in full, up to three examples and a short table of forms, scrolling when it is long. Review's answer page shows Again, Hard, Good and Easy in one row at every text size, and a swipe on the card (or the chevron) records Good.
+
 ### Added
 
 - When the speaking drill fails for want of a network, the app now says why: it asks `raw.githubusercontent.com` and `connectivitycheck.gstatic.com` once, with no body, cookies or headers of ours, and tells offline, GitHub blocked, Google unreachable and a failed recognition service apart.
