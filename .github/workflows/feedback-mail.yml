@@ -1,8 +1,9 @@
 name: Feedback mail to issues
 
 # Reports from the app arrive as mails to the Fluenough Gmail (#160,
-# ADR-0021). Every hour this files the new bug reports and feedback as
-# issues: text only, the sender's address never written. Review mails
+# ADR-0021). Every 15 minutes this files the new bug reports and feedback as
+# issues: text only, the sender's address never written and mail addresses
+# and signatures cut from the text. Review mails
 # (docs/plans/deck-browser.md) become issues naming only the rater code and
 # the languages; the first review with a code ties it to its sender in a
 # private record in the Gmail label fluenough/raters, and a later one from
@@ -18,13 +19,16 @@ name: Feedback mail to issues
 # GitHub App; until the secrets FLUENOUGH_BOT_APP_ID and
 # FLUENOUGH_BOT_PRIVATE_KEY are set, the bot does nothing and says so.
 #
-# Besides the hour, it runs when CI finishes on one of the bot's branches,
+# GitHub may still delay scheduled runs, by hours when it is busy; to file
+# a mail at once, run this workflow by hand from the Actions tab.
+#
+# Besides the schedule, it runs when CI finishes on one of the bot's branches,
 # to merge its PR at once, and when decks change on main, to apply what
 # was agreed.
 
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
   workflow_run:
     workflows: [CI]

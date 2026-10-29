@@ -155,6 +155,70 @@ def review_mail(subject: str | None, files: list[dict], *,
     return message
 
 
+class Scrub(unittest.TestCase):
+    def _a_signature_after_dash_dash_is_cut(self) -> None:
+        for rule in ("-- ", "--"):
+            with self.subTest(rule=rule):
+                issue = mail_to_issues.issue_from(mail(
+                    "[Fluenough] Bug: x",
+                    f"It shows twice\n\n{rule}\nA Learner\n+91 98765 43210"))
+                self.assertIn("It shows twice", issue["body"])
+                self.assertNotIn("A Learner", issue["body"])
+                self.assertNotIn("98765", issue["body"])
+
+    def _a_mail_app_advert_line_is_cut(self) -> None:
+        for advert in ("Sent from my iPhone", "Get Outlook for Android"):
+            with self.subTest(advert=advert):
+                issue = mail_to_issues.issue_from(mail(
+                    "[Fluenough] Bug: x",
+                    f"It shows twice\n\n---\nKind: Bug\nScreen: /deck\n\n{advert}"))
+                self.assertNotIn(advert, issue["body"])
+                self.assertIn("Screen: /deck", issue["body"])
+
+    def _an_address_anywhere_is_redacted(self) -> None:
+        issue = mail_to_issues.issue_from(mail(
+            "[Fluenough] Bug: from me@example.com",
+            "Mail me at me@example.com or Ann <ann.b+x@mail.example.org>.\n"
+            "On Mon, 5 Oct, Ann <ann@example.org> wrote:\n> it shows twice"))
+        text = str(issue)
+        for address in ("me@example.com", "ann.b+x@mail.example.org",
+                        "ann@example.org"):
+            self.assertNotIn(address, text)
+        self.assertIn("[address removed]", issue["body"])
+        self.assertIn("[address removed]", issue["title"])
+        self.assertIn("it shows twice", issue["body"])
+
+    def _the_apps_own_lines_are_kept(self) -> None:
+        text = ("It shows twice\n\n---\nKind: Bug\nScreen: /deck\n"
+                "Showing: Telugu unit 3")
+        issue = mail_to_issues.issue_from(mail("[Fluenough] Bug: x", text))
+        for line in ("Kind: Bug", "Screen: /deck", "Showing: Telugu unit 3"):
+            self.assertIn(line, issue["body"])
+
+    def _a_normal_report_is_unchanged(self) -> None:
+        text = "After Check the card shows twice.\n\n---\nKind: Bug\nScreen: /drill"
+        self.assertEqual(mail_to_issues.scrub(text), text)
+        issue = mail_to_issues.issue_from(mail("[Fluenough] Bug: x", text))
+        self.assertIn(text, issue["body"])
+
+    def test_the_public_issue_has_no_address_and_no_signature(self) -> None:
+        cases = (
+            self._a_signature_after_dash_dash_is_cut,
+            self._a_mail_app_advert_line_is_cut,
+            self._an_address_anywhere_is_redacted,
+            self._the_apps_own_lines_are_kept,
+            self._a_normal_report_is_unchanged,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
 class ReviewIssueFrom(unittest.TestCase):
     def _a_review_mail_names_only_the_code_and_languages(self) -> None:
         issue = mail_to_issues.review_issue_from(review_mail(
