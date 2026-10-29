@@ -2,7 +2,7 @@
 """The review bot: reviews become proposals, and agreement merges them
 (ADR-0038, docs/plans/deck-browser.md, #441).
 
-Run by `tools/mail_to_issues.py`, in the hourly mail workflow, once the
+Run by `tools/mail_to_issues.py`, in the mail workflow, once the
 GitHub App that merges is set up. Three kinds of pull request, each on a
 branch of its own under `review-bot/`, each started afresh from `main`:
 

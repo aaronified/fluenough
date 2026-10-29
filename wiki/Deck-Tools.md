@@ -86,7 +86,7 @@ python3 tools/pictures.py noto-emoji
 ## `mail_to_issues.py`
 
 Turns the report mails the app sends to the Fluenough Gmail into GitHub
-issues (#160, ADR-0021). `.github/workflows/feedback-mail.yml` runs it hourly.
+issues (#160, ADR-0021). `.github/workflows/feedback-mail.yml` runs it every 15 minutes (GitHub may delay scheduled runs; the workflow can be run by hand from the Actions tab).
 Stdlib only.
 
 It reads the inbox over IMAP and takes only mails whose subject starts with
