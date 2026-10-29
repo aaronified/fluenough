@@ -699,6 +699,9 @@ void main() {
       test('a network failure is probed, and says why: offline, GitHub '
           'blocked, Google unreachable, or the service itself', () async {
         for (final why in NetworkDiagnosis.values) {
+          // The group has no setUp, so the first pass has no state yet; each
+          // later pass disposes the previous one, the last by tearDown.
+          if (why != NetworkDiagnosis.values.first) state.dispose();
           final probe = FixedNetworkProbe(why);
           speech = FixedSpeechEngine(onDevice: <String>{'es'})
             ..failing = const SpeechHeard.failed(SpeechFailure.network);
@@ -716,7 +719,6 @@ void main() {
           expect(s.unheard, SpeechFailure.network);
           expect(s.networkWhy, why);
           expect(probe.probes, 1);
-          state.dispose();
         }
       });
     });
