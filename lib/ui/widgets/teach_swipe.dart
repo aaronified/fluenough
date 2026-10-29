@@ -16,8 +16,9 @@ import '../../l10n/app_localizations.dart';
 ///   as the release speed rises to 1500 px/s. Toward a card that is not there
 ///   the card is held back, as on a rubber band.
 /// - **Two chevrons**, one on either edge, hidden unless the card is being
-///   swiped (owner, 2026-10-29): they appear, with a wiggle, as a horizontal
-///   drag begins, stay while the card is dragged and settles, and go 1 s
+///   swiped (owner, 2026-10-29): they show for 1 s, with a wiggle, when the
+///   card first appears, to teach that they exist, and again, with a wiggle,
+///   as a horizontal drag begins; stay while the card is dragged and settles, and go 1 s
 ///   after the drag ends. A tap, a vertical scroll or a press on the speaker
 ///   shows nothing. They can be tapped whether shown or not, and a quick tap
 ///   on a hidden one both moves the card and shows them for the same 1 s.
@@ -81,6 +82,10 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _spring.addListener(() => setState(() => _dx = _spring.value));
+    // The intro: shown for 1 s as the card first appears, never again for it.
+    _chevronsShown = true;
+    _wiggle.forward(from: 0);
+    _holdChevrons();
   }
 
   @override

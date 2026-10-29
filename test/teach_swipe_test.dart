@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/harness.dart';
 
 void main() {
-  testWidgets('chevrons show on a swipe only, and clear 1 s after it', (
+  testWidgets('chevrons show as the card appears and on a swipe only, clearing 1 s after', (
     tester,
   ) async {
     await pumpScreen(
@@ -24,6 +24,10 @@ void main() {
         .widget<AnimatedOpacity>(find.byType(AnimatedOpacity).first)
         .opacity;
 
+    // The intro: shown as the card first appears, clear 1 s later.
+    expect(opacity(), greaterThan(0));
+    await tester.pump(const Duration(milliseconds: 1100));
+    await tester.pumpAndSettle();
     expect(opacity(), 0);
     await tester.tapAt(const Offset(200, 300));
     await tester.pump(const Duration(milliseconds: 500));
