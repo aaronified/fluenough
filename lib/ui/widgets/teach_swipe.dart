@@ -16,9 +16,9 @@ import '../../l10n/app_localizations.dart';
 ///   as the release speed rises to 1500 px/s. Toward a card that is not there
 ///   the card is held back, as on a rubber band.
 /// - **Two chevrons**, one on either edge, hidden unless the card is being
-///   swiped (owner, 2026-10-29): they show for 1 s, with a wiggle, when the
-///   card first appears, to teach that they exist, and again, with a wiggle,
-///   as a horizontal drag begins; stay while the card is dragged and settles, and go 1 s
+///   swiped (owner, 2026-10-29): they show for 1 s when the card
+///   first appears, to teach that they exist, and again as a horizontal drag
+///   begins; stay while the card is dragged and settles, and go 1 s
 ///   after the drag ends. A tap, a vertical scroll or a press on the speaker
 ///   shows nothing. They can be tapped whether shown or not, and a quick tap
 ///   on a hidden one both moves the card and shows them for the same 1 s.
@@ -58,10 +58,6 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   late final AnimationController _spring = AnimationController.unbounded(
     vsync: this,
   );
-  late final AnimationController _wiggle = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 250),
-  );
 
   /// How far the card is from rest, in px, positive toward the right.
   double _dx = 0;
@@ -84,7 +80,6 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     _spring.addListener(() => setState(() => _dx = _spring.value));
     // The intro: shown for 1 s as the card first appears, never again for it.
     _chevronsShown = true;
-    _wiggle.forward(from: 0);
     _holdChevrons();
   }
 
@@ -92,7 +87,6 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void dispose() {
     _hideTimer?.cancel();
     _spring.dispose();
-    _wiggle.dispose();
     super.dispose();
   }
 
@@ -187,13 +181,12 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     _go(step * _nextSign * _width, 0, step, _chevronRatio);
   }
 
-  /// Shows the chevrons, with the wiggle unless they already are. While
+  /// Shows the chevrons, fading in unless they already are shown. While
   /// [holding] is false they stay until [_holdChevrons] is called.
   void _showChevrons({required bool holding}) {
     _hideTimer?.cancel();
     if (!_chevronsShown) {
       setState(() => _chevronsShown = true);
-      _wiggle.forward(from: 0);
     }
     if (holding) _holdChevrons();
   }
@@ -233,14 +226,12 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
               _Chevron(
                 next: false,
                 shown: _chevronsShown,
-                wiggle: _wiggle,
                 label: l10n.drillPreviousCard,
                 onTap: () => _tapped(-1),
               ),
             _Chevron(
               next: true,
               shown: _chevronsShown,
-              wiggle: _wiggle,
               label: l10n.drillNextCard,
               onTap: () => _tapped(1),
             ),
@@ -253,12 +244,11 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
 /// One chevron: a `secondaryContainer` tab on an edge of the card, vertically
 /// centred, at 92 percent while shown and clear while hidden, but tappable
-/// either way. The arrow wiggles a few pixels as the tab appears.
+/// either way.
 class _Chevron extends StatelessWidget {
   const _Chevron({
     required this.next,
     required this.shown,
-    required this.wiggle,
     required this.label,
     required this.onTap,
   });
@@ -266,7 +256,6 @@ class _Chevron extends StatelessWidget {
   /// Whether it is the chevron to the next card, on the end edge.
   final bool next;
   final bool shown;
-  final Animation<double> wiggle;
   final String label;
   final VoidCallback onTap;
 
@@ -300,23 +289,9 @@ class _Chevron extends StatelessWidget {
                 child: SizedBox(
                   width: 48,
                   height: 48,
-                  child: AnimatedBuilder(
-                    animation: wiggle,
-                    builder: (context, child) => Transform.translate(
-                      // About three pixels, two and a half times over,
-                      // dying away.
-                      offset: Offset(
-                        3 *
-                            math.sin(wiggle.value * 5 * math.pi) *
-                            (1 - wiggle.value),
-                        0,
-                      ),
-                      child: child,
-                    ),
-                    child: Icon(
-                      next ? Icons.chevron_right : Icons.chevron_left,
-                      color: scheme.onSecondaryContainer,
-                    ),
+                  child: Icon(
+                    next ? Icons.chevron_right : Icons.chevron_left,
+                    color: scheme.onSecondaryContainer,
                   ),
                 ),
               ),
