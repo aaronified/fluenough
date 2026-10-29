@@ -182,27 +182,23 @@ class TeachCard extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Text.rich(
-                        TextSpan(
-                          children: <InlineSpan>[
-                            TextSpan(text: card.native),
-                            WidgetSpan(
-                              alignment: PlaceholderAlignment.middle,
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.only(
-                                  start: 8,
-                                ),
-                                child: Icon(
-                                  Icons.menu_book_outlined,
-                                  size: 22,
-                                  color: scheme.primary,
-                                ),
-                              ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Flexible(
+                            child: Text(
+                              card.native,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.headlineMedium,
                             ),
-                          ],
-                        ),
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.headlineMedium,
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(
+                            Icons.menu_book_outlined,
+                            size: 22,
+                            color: scheme.primary,
+                          ),
+                        ],
                       ),
                       if (line.isNotEmpty)
                         Text(

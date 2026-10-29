@@ -30,11 +30,18 @@ class TeachSwipe extends StatefulWidget {
     required this.child,
     required this.onNext,
     this.onBack,
+    this.enabled = true,
   });
 
   final Widget child;
   final VoidCallback onNext;
   final VoidCallback? onBack;
+
+  /// Whether a swipe or the chevron goes on. Off, the child is drawn as it
+  /// would be, but nothing moves it and no chevron shows: the review's
+  /// answer page uses it so that its card keeps its state as the answer
+  /// comes in.
+  final bool enabled;
 
   @override
   State<TeachSwipe> createState() => _TeachSwipeState();
@@ -203,18 +210,18 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
         _width = constraints.maxWidth;
         return Listener(
           behavior: HitTestBehavior.translucent,
-          onPointerDown: _touchStarted,
-          onPointerUp: _touchEnded,
-          onPointerCancel: _touchEnded,
+          onPointerDown: widget.enabled ? _touchStarted : null,
+          onPointerUp: widget.enabled ? _touchEnded : null,
+          onPointerCancel: widget.enabled ? _touchEnded : null,
           child: Stack(
             children: <Widget>[
               Positioned.fill(
                 child: GestureDetector(
                   behavior: HitTestBehavior.translucent,
-                  onHorizontalDragStart: _start,
-                  onHorizontalDragUpdate: _update,
-                  onHorizontalDragEnd: _end,
-                  onHorizontalDragCancel: _cancel,
+                  onHorizontalDragStart: widget.enabled ? _start : null,
+                  onHorizontalDragUpdate: widget.enabled ? _update : null,
+                  onHorizontalDragEnd: widget.enabled ? _end : null,
+                  onHorizontalDragCancel: widget.enabled ? _cancel : null,
                   child: ClipRect(
                     child: Transform.translate(
                       offset: Offset(_dx, 0),
@@ -223,7 +230,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-              if (widget.onBack != null)
+              if (widget.enabled && widget.onBack != null)
                 _Chevron(
                   next: false,
                   shown: _touching,
@@ -231,13 +238,14 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
                   label: l10n.drillPreviousCard,
                   onTap: () => _tapped(-1),
                 ),
-              _Chevron(
-                next: true,
-                shown: _touching,
-                wiggle: _wiggle,
-                label: l10n.drillNextCard,
-                onTap: () => _tapped(1),
-              ),
+              if (widget.enabled)
+                _Chevron(
+                  next: true,
+                  shown: _touching,
+                  wiggle: _wiggle,
+                  label: l10n.drillNextCard,
+                  onTap: () => _tapped(1),
+                ),
             ],
           ),
         );

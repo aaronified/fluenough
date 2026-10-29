@@ -108,6 +108,7 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
                 child: TeachCard(
                   card: card,
                   language: language,
+                  deckName: entry.deck.name,
                   reading: expectsScript
                       ? TaughtReading.always
                       : TaughtReading.first,
@@ -115,7 +116,7 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
                       ? Speaker(
                           onPlay: () => _play(card, language),
                           playing: _playing,
-                          size: 48,
+                          size: 56,
                           playOnAppear: true,
                         )
                       : null,

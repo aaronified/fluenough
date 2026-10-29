@@ -29,7 +29,7 @@ A right answer also counts in part for the skills it implies ([ADR-0034](ADR-003
 - **Rule.** A rule shown once before its first question: its name, what it means, and its forms on words you know. Nothing is recorded; swipe the card to go on ([ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items)).
 - **Read.** A passage with questions.
 - **Set.** A group of related words shown together in a lesson. Nothing is recorded; Continue goes on.
-- **Teach.** A new word shown before you are asked about it, on one screen with no scrolling: the word large, with its reading, a speaker and its IPA; the picture beside it; the meaning; a note; and one warning. Tap the IPA for each sound of the word, from the IPA course, with its practice. Tap the meaning for the dictionary: the senses, the etymology and the examples. There is no Continue button: swipe the card, or tap the chevron that shows while you touch the screen, to go on.
+- **Teach.** A new word shown before you are asked about it, laid out like the answer on a review card: a "New word" or "New phrase" pill with the deck's name, then one card with the word large, with its reading; a speaker and its IPA on one row; the meaning with a dictionary icon, its part of speech and the picture beside it; every note in full; up to three examples; and a short table of the word's forms, then one warning. A card too long for the screen scrolls. Tap the IPA for each sound of the word, from the IPA course, with its practice. Tap the meaning for the dictionary: the senses, the etymology and the examples. There is no Continue button: swipe the card, or tap the chevron that shows while you touch the screen, to go on.
 
 ## How answers are marked
 
@@ -45,7 +45,7 @@ After a wrong answer, the screen shows the right one, and what you typed or said
 
 ## Rating yourself
 
-For some questions, such as seen words, you decide how well you knew it. Four buttons show when the word comes back: Again, Hard, Good and Easy. Pick Again if you did not know it, Easy if it was no effort.
+For some questions, such as seen words, you decide how well you knew it. Four buttons in one row show when the word comes back: Again, Hard, Good and Easy. Pick Again if you did not know it, Easy if it was no effort. Swiping the card, or tapping the chevron that shows while you touch the screen, is Good.
 
 ## How words come back
 
