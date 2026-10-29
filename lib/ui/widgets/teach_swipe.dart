@@ -74,7 +74,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   bool _leaving = false;
 
   double _width = 0;
-  bool _shown = false;
+  bool _chevronsShown = false;
   Timer? _hideTimer;
 
   @override
@@ -186,8 +186,8 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   /// [holding] is false they stay until [_holdChevrons] is called.
   void _showChevrons({required bool holding}) {
     _hideTimer?.cancel();
-    if (!_shown) {
-      setState(() => _shown = true);
+    if (!_chevronsShown) {
+      setState(() => _chevronsShown = true);
       _wiggle.forward(from: 0);
     }
     if (holding) _holdChevrons();
@@ -197,7 +197,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void _holdChevrons() {
     _hideTimer?.cancel();
     _hideTimer = Timer(const Duration(seconds: 1), () {
-      if (mounted) setState(() => _shown = false);
+      if (mounted) setState(() => _chevronsShown = false);
     });
   }
 
@@ -227,14 +227,14 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
             if (widget.onBack != null)
               _Chevron(
                 next: false,
-                shown: _shown,
+                shown: _chevronsShown,
                 wiggle: _wiggle,
                 label: l10n.drillPreviousCard,
                 onTap: () => _tapped(-1),
               ),
             _Chevron(
               next: true,
-              shown: _shown,
+              shown: _chevronsShown,
               wiggle: _wiggle,
               label: l10n.drillNextCard,
               onTap: () => _tapped(1),
