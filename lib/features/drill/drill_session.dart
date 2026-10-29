@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
@@ -732,7 +733,7 @@ class DrillSession extends ChangeNotifier {
     if (heard.failed) {
       _unheard = heard.failure ?? SpeechFailure.noMatch;
       notifyListeners();
-      if (_unheard == SpeechFailure.network) _diagnose();
+      if (_unheard == SpeechFailure.network) unawaited(_diagnose());
       return;
     }
     checkSpoken(heard.alternatives);
@@ -872,7 +873,7 @@ class DrillSession extends ChangeNotifier {
       _retries++;
     }
     notifyListeners();
-    if (_unheard == SpeechFailure.network) _diagnose();
+    if (_unheard == SpeechFailure.network) unawaited(_diagnose());
   }
 
   // ---------------------------------------------------------------------------

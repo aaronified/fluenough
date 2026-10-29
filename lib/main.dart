@@ -20,6 +20,7 @@ import 'app/profile_storage.dart';
 import 'app/report_mail.dart';
 import 'app/system_settings.dart';
 import 'core/decks/deck_fetch.dart';
+import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
