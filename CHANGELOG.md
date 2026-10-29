@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- When the speaking drill fails for want of a network, the app now says why: it asks `raw.githubusercontent.com` and `connectivitycheck.gstatic.com` once, with no body, cookies or headers of ours, and tells offline, GitHub blocked, Google unreachable and a failed recognition service apart.
+
 ### Fixed
 
 - Reports mailed from the app are filed as issues within about 15 minutes, not hours (GitHub may still delay scheduled runs; the workflow can be run by hand), and the public issue no longer carries the sender's mail address or signature.

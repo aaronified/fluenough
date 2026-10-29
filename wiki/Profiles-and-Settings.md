@@ -58,6 +58,8 @@ The app's menus are in English only. Translation is explained in the [Translatio
 
 Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, on the Languages I'm learning page.
 
+The app contacts `raw.githubusercontent.com` for decks and `api.github.com` for updates. After a speaking drill fails for want of a network, it also contacts `connectivitycheck.gstatic.com` (and `raw.githubusercontent.com`) once, to tell you why. That is the only time it contacts `connectivitycheck.gstatic.com`; it sends only your IP address and the time, and no data of yours.
+
 ## Updates
 
 Settings > Updates checks GitHub for a new app version when you tap Check for updates. "Check automatically" is off until you switch it on. Then it checks once a day, when the app opens. A backup is made as it downloads. Then Android asks you to install it. If Android says Fluenough is not allowed to install apps, open Settings, Apps, Special app access, Install unknown apps, and allow Fluenough.

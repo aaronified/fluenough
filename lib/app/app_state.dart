@@ -24,6 +24,7 @@ import '../core/scheduling/script_split.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/scheduling/study_hours.dart';
+import '../core/network/network_probe.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/clip_player.dart';
@@ -168,6 +169,7 @@ class AppState extends ChangeNotifier {
     this._media,
     this._speech = const NullSpeechEngine(),
     this.soundCheck = const NullSoundCheck(),
+    this.networkProbe = const NullNetworkProbe(),
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
@@ -292,6 +294,7 @@ class AppState extends ChangeNotifier {
     CardMedia media = const NoCardMedia(),
     SpeechEngine speech = const NullSpeechEngine(),
     SoundCheckEngine soundCheck = const NullSoundCheck(),
+    NetworkProbe networkProbe = const NullNetworkProbe(),
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
@@ -329,6 +332,7 @@ class AppState extends ChangeNotifier {
       media: media,
       speech: speech,
       soundCheck: soundCheck,
+      networkProbe: networkProbe,
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
@@ -524,6 +528,9 @@ class AppState extends ChangeNotifier {
 
   /// The microphone and speaker, for the first launch's sound check (#89).
   final SoundCheckEngine soundCheck;
+
+  /// Asked why the network failed, once, after a speech network failure.
+  final NetworkProbe networkProbe;
   final Clock _clock;
   final bool _ownsSettings;
 
