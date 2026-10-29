@@ -6,6 +6,7 @@ import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'mode_pill.dart';
 import 'report_button.dart';
+import 'teach_swipe.dart';
 import 'wave_progress.dart';
 
 /// A button the drill's page puts in every drill's header, beside the bug
@@ -137,7 +138,18 @@ class DrillFrame extends StatelessWidget {
     this.actions = const <Widget>[],
     this.reportDetail,
     this.needsSound = false,
+    this.onSwipe,
+    this.swipeOn = true,
   });
+
+  /// Goes on from the screen under the header when the learner swipes it or
+  /// taps the end-edge chevron ([TeachSwipe]): the review's answer page, where
+  /// it records Good. Null for a drill with no such swipe.
+  final VoidCallback? onSwipe;
+
+  /// Whether [onSwipe] is live; the swipe is always in the tree, so that the
+  /// card keeps its state as it turns on.
+  final bool swipeOn;
 
   /// What a report from this drill says it showed: the card's id and deck.
   final String? reportDetail;
@@ -186,6 +198,67 @@ class DrillFrame extends StatelessWidget {
     final compact = keyboardOpen(context);
     final gap = compact ? 8.0 : 16.0;
 
+    final swipe = onSwipe;
+    final bodyAndFoot = <Widget>[
+      Expanded(
+        child: SingleChildScrollView(
+          padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  // Flexible, so that a long skill name in a
+                  // large text scale wraps inside the pill
+                  // rather than pushing the row off the screen.
+                  Flexible(child: ModePill(skill: skill)),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      deckName,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: gap),
+              // Always this one widget, so that the card's own
+              // widgets, such as a speaker that played as it
+              // appeared, keep their state as needsSound changes.
+              _NeedsSound(card: card, active: needsSound, compact: compact),
+              if (below != null)
+                for (final widget in below) ...<Widget>[
+                  SizedBox(height: gap),
+                  widget,
+                ],
+            ],
+          ),
+        ),
+      ),
+      Padding(
+        padding: compact
+            ? const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8)
+            : const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            if (feedback != null) ...<Widget>[
+              feedback!,
+              if (actions.isNotEmpty) const SizedBox(height: 10),
+            ],
+            for (var i = 0; i < actions.length; i++) ...<Widget>[
+              if (i > 0) const SizedBox(height: 10),
+              actions[i],
+            ],
+          ],
+        ),
+      ),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -198,67 +271,19 @@ class DrillFrame extends StatelessWidget {
               onClose: onClose,
               reportDetail: reportDetail ?? deckName,
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        // Flexible, so that a long skill name in a
-                        // large text scale wraps inside the pill
-                        // rather than pushing the row off the screen.
-                        Flexible(child: ModePill(skill: skill)),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            deckName,
-                            style: theme.textTheme.bodyMedium!.copyWith(
-                              color: scheme.onSurfaceVariant,
-                              fontSize: 13,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: gap),
-                    // Always this one widget, so that the card's own
-                    // widgets, such as a speaker that played as it
-                    // appeared, keep their state as needsSound changes.
-                    _NeedsSound(
-                      card: card,
-                      active: needsSound,
-                      compact: compact,
-                    ),
-                    if (below != null)
-                      for (final widget in below) ...<Widget>[
-                        SizedBox(height: gap),
-                        widget,
-                      ],
-                  ],
+            if (swipe == null)
+              ...bodyAndFoot
+            else
+              Expanded(
+                child: TeachSwipe(
+                  enabled: swipeOn,
+                  onNext: swipe,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: bodyAndFoot,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: compact
-                  ? const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8)
-                  : const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  if (feedback != null) ...<Widget>[
-                    feedback!,
-                    if (actions.isNotEmpty) const SizedBox(height: 10),
-                  ],
-                  for (var i = 0; i < actions.length; i++) ...<Widget>[
-                    if (i > 0) const SizedBox(height: 10),
-                    actions[i],
-                  ],
-                ],
-              ),
-            ),
           ],
         ),
       ),

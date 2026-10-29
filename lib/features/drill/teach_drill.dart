@@ -49,6 +49,7 @@ class TeachDrill extends StatelessWidget {
                     : TeachCard(
                         card: card,
                         language: session.deck.language,
+                        deckName: session.deck.deck.name,
                         // Reading first until the script is expected of the
                         // learner; else under the word, whatever Latin-letter
                         // readings says.
@@ -61,7 +62,7 @@ class TeachDrill extends StatelessWidget {
                             ? Speaker(
                                 onPlay: session.play,
                                 playing: session.playing,
-                                size: 48,
+                                size: 56,
                                 playOnAppear: true,
                               )
                             : null,
