@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teach Screen</title>
+<meta name="description" content="The teach card redrawn as one family with the review screens: one card as tall as its content, the same pill row, card, type scale and foot. Telugu, Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1560px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:860px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+.seg button:disabled{opacity:.4;cursor:default}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:860px}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:6;letter-spacing:.3px}
+.hl-on .tab.chg{position:absolute;border-radius:0;outline-offset:-2px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.swp::after{content:"swipe, the one change"}
+.wb{position:relative}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Sizes are calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:default}
+.ph .btn,.ph .r3{color:var(--onP)}.ph .r1{color:var(--onEC)}.ph .r2{color:var(--onSc)}.ph .r4{color:var(--onTC)}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.script{font-family:"Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+/* DrillHeader: 64 px */
+.dh{flex:none;height:64px;display:flex;align-items:center;padding:0 4px;gap:0}
+.dh .ib{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--onS);flex:none}
+.dh .wave{flex:1;min-width:0;height:8px;margin:0 12px 0 8px;position:relative}
+.dh .wave i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--p)}
+.dh .wave b{position:absolute;left:0;right:0;top:2px;bottom:2px;border-radius:2px;background:var(--olv)}
+.dh .wave u{position:absolute;top:0;width:8px;height:8px;border-radius:50%;background:var(--p);margin-left:-4px}
+.dh .pos{font-size:calc(14px*var(--t));font-weight:700;margin-right:4px;font-variant-numeric:tabular-nums;line-height:1}
+/* DrillFrame */
+.body{flex:1;min-height:0;overflow-y:auto;padding:4px 16px 16px;scrollbar-width:none;display:flex;flex-direction:column}
+.body::-webkit-scrollbar{display:none}
+.body.ctr>:first-child{margin-top:auto}.body.ctr>:last-child{margin-bottom:auto}
+.body>*{flex:none}
+.prow{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.pill{min-height:32px;padding:0 12px;border-radius:16px;display:inline-flex;align-items:center;gap:6px;font-size:calc(13px*var(--t));font-weight:500;line-height:1.2;flex:0 1 auto}
+.pill.rec{background:var(--rc);color:var(--onRc)}
+.pill.new{background:var(--tC);color:var(--onTC)}
+.pill svg.i{width:16px;height:16px}
+.deck{flex:1;min-width:0;font-size:calc(13px*var(--t));color:var(--onSv);line-height:1.3}
+.dcard{background:var(--sHigh);border-radius:40px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.dcard>*{max-width:100%}
+.foot{flex:none;padding:12px 16px 20px;display:flex;flex-direction:column;gap:10px}
+.btn{min-height:64px;border-radius:32px;border:0;background:var(--p);color:var(--onP);font-size:calc(18px*var(--t));line-height:1.3;font-weight:700;display:flex;align-items:center;justify-content:center;width:100%;padding:8px 16px}
+.rprompt{text-align:center;font-size:calc(16px*var(--t));line-height:1.4;font-weight:500;color:var(--onSv)}
+.rate{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.rate button{min-height:68px;border:0;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:calc(16px*var(--t));line-height:1.3}
+.rate button small{font-weight:400;font-size:calc(11px*var(--t));opacity:.85;line-height:1.3}
+.r1{background:var(--eC);color:var(--onEC);border-radius:28px 10px 10px 10px}
+.r2{background:var(--sc);color:var(--onSc);border-radius:10px 28px 10px 10px}
+.r3{background:var(--p);color:var(--onP);border-radius:10px 10px 10px 28px}
+.r4{background:var(--tC);color:var(--onTC);border-radius:10px 10px 28px 10px}
+/* card content */
+.rd1{font-size:calc(48px*var(--t));line-height:1.2;font-weight:600}
+.sc1{font-size:calc(32px*var(--t));line-height:1.3;color:var(--onSv)}
+.hero{font-weight:600;line-height:1.25}
+.rd2{font-size:calc(18px*var(--t));line-height:1.33;color:var(--onSv)}
+.ipa{font-size:calc(16px*var(--t));line-height:1.4;color:var(--onSv);font-family:Roboto,"Noto Sans",sans-serif}
+.ipa.tap{text-decoration:underline dotted;text-underline-offset:4px}
+.spk{width:64px;height:64px;position:relative;flex:none;border:0;background:none;padding:0}
+.spk svg.c{position:absolute;inset:0;width:100%;height:100%;fill:var(--pc)}
+.spk svg.i{position:absolute;left:50%;top:50%;margin:-12px 0 0 -12px;color:var(--onPc)}
+.spkrow{display:flex;align-items:center;justify-content:center;gap:12px}
+.divd{width:64px;height:4px;border-radius:2px;background:var(--olv);margin:8px 0}
+.mean{text-align:center;font-size:calc(28px*var(--t));line-height:1.29;font-weight:400}
+.mean svg.i{display:inline-block;vertical-align:-3px;width:22px;height:22px;color:var(--p);margin-left:8px}
+.pos2{display:block;font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);font-weight:400}
+.meanrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}
+.nt{font-size:calc(15px*var(--t));line-height:1.47;color:var(--onSv);padding:0 19px}
+.ex{background:var(--sLowest);border-radius:16px;padding:10px 14px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.ex .t{font-size:calc(16px*var(--t));line-height:1.3;color:var(--onS)}
+.ex .r{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.ex .n{font-size:calc(16px*var(--t));line-height:1.4;color:var(--onSv);margin-top:2px}
+.forms{background:var(--sLowest);border-radius:16px;padding:2px 14px;text-align:start;width:100%}
+.forms .fr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 12px;padding:10px 0;border-top:1px solid var(--olv)}
+.forms .fr:first-child{border-top:0}
+.forms .ft{font-size:calc(16px*var(--t));line-height:1.3;color:var(--onS)}
+.forms .fs{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);display:block}
+.forms .fl{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);font-weight:600;display:block}
+.forms .fn{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onS)}
+.pic{width:56px;height:56px;border-radius:18px;background:var(--sc);display:flex;align-items:center;justify-content:center;font-size:32px;line-height:1;flex:none}
+/* chevron tab (TeachSwipe) */
+.tab{position:absolute;right:0;top:0;bottom:0;display:flex;align-items:center;pointer-events:none;z-index:4}
+.tab span{width:48px;height:48px;background:var(--sc);color:var(--onSc);border-radius:24px 0 0 24px;display:flex;align-items:center;justify-content:center;opacity:.92}
+/* ===== teach card as built today ===== */
+.tbody{flex:1;min-height:0;overflow-y:auto;padding:0 16px 8px;scrollbar-width:none}
+.tbody::-webkit-scrollbar{display:none}
+.tcol{min-height:100%;display:flex;flex-direction:column;justify-content:space-evenly;gap:14px}
+.thero{display:flex;align-items:center;gap:16px}
+.thero .l{flex:1;min-width:0}
+.fit{white-space:nowrap;overflow:hidden}
+.fit>span{display:inline-block}
+.trow{display:flex;align-items:center;gap:8px;margin-top:10px}
+.tspk{width:48px;height:48px;position:relative;flex:none}
+.tspk svg.c{position:absolute;inset:0;width:48px;height:48px;fill:var(--pc)}
+.tspk svg.i{position:absolute;left:12px;top:12px;color:var(--onPc)}
+.chip{min-height:48px;border:1px solid var(--ol);border-radius:24px;padding:0 16px;display:flex;align-items:center;font-size:calc(14px*var(--t));font-weight:500;font-family:Roboto,"Noto Sans",sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tpic{width:104px;height:104px;border-radius:16px;background:var(--sc);display:flex;align-items:center;justify-content:center;font-size:56px;flex:none}
+.tmean{background:var(--sHigh);border-radius:16px;padding:14px 14px 14px 16px;display:flex;align-items:center;gap:8px}
+.tmean .x{flex:1;min-width:0}
+.tmean svg.i{color:var(--p)}
+.tblock{background:var(--sHigh);border-radius:16px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.tblock svg.i{color:var(--p);flex:none;margin-top:2px}
+.tblock p{margin:0;font-size:calc(14px*var(--t));line-height:1.43;color:var(--onS);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.fade{position:absolute;left:0;right:0;height:28px;background:linear-gradient(to bottom,transparent,var(--s));pointer-events:none;z-index:2}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Teach screen</h1>
+<p class="cap1">The teach card of a lesson (#691, ADR-0024), redrawn as one family with the review screens (owner, 2026-10-29: "Every teach screen, regardless of content depth or breadth, looks like this", and the review screens are perfect). The review screens are drawn exactly as built. The teach card takes their pill row, their one centred card, their type scale, their spacing and their foot. Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed, light and dark. Choices are tweak controls; none is decided.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palette: ColorScheme.fromSeed(forest). pc, onPc, sLowest, eC and the mode colours are approximated from the
+   seed and ModeColors (lib/ui/theme.dart); check against the app's ColorScheme when building ===== */
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","pc":"#0b5132","onPc":"#adf2c3","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8","eC":"#93000a","onEC":"#ffdad6","rc":"#284777","onRc":"#d6e3ff"},
+light:{"p":"#296a48","onP":"#ffffff","pc":"#adf2c3","onPc":"#00210f","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58","eC":"#ffdad6","onEC":"#410002","rc":"#d6e3ff","onRc":"#001b3e"}};
+const IC={
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
+ eq:'M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ eye:'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z',
+ star:'M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
+ book:'M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z',
+ err:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'};
+const svg=p=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[p]}"/></svg>`;
+/* the speaker's cookie shape: a rounded 8-lobed form */
+const COOKIE=(()=>{let d='';for(let k=0;k<96;k++){const a=k/96*2*Math.PI,r=28+2.6*Math.cos(8*a);d+=(k?'L':'M')+(32+r*Math.cos(a)).toFixed(2)+' '+(32+r*Math.sin(a)).toFixed(2)}return d+'Z'})();
+const spk=(z)=>`<button class="spk" ${z?`style="width:${z}px;height:${z}px"`:''} aria-label="Play"><svg class="c" viewBox="0 0 64 64"><path d="${COOKIE}"/></svg>${svg('vol')}</button>`;
+const tspk=()=>`<span class="tspk"><svg class="c" viewBox="0 0 64 64"><path d="${COOKIE}"/></svg>${svg('vol')}</span>`;
+/* ===== content: what a teach card can hold (Card: target, reading, ipa, native, pos, picture, notes, examples, forms) =====
+   Readings follow the courses: Telugu word-final anusvara as ṁ; Bengali with ô and no final a (jôl, bāṛi). */
+const K=['bare','note','phrase','examples','forms','long'];
+const KL={bare:'Bare word',note:'Word with a note',phrase:'Phrase with a grammar note (the screenshot)',examples:'Word with examples',forms:'Word with forms',long:'Long note'};
+const C={
+te:{lang:'Telugu',deck:'Everyday words',cards:{
+ bare:{t:'నీరు',r:'nīru',ipa:'niːru',n:'water',pos:'noun',pic:'💧'},
+ note:{t:'ఇల్లు',r:'illu',ipa:'illu',n:'house',pos:'noun',pic:'🏠',notes:['The stem changes before an ending: ఇల్లు (illu) → ఇంట్లో (iṇṭlō), in the house.']},
+ phrase:{t:'నిజమా?',r:'nijamā?',ipa:'nid͡ʒamaː',n:'Really?',pos:'phrase',phrase:1,notes:['-ఆ (-ā) at the end turns a sentence into a yes/no question: నిజం (true) → నిజమా? (true?).']},
+ examples:{t:'మంచి',r:'mañci',ipa:'mant͡ʃi',n:'good',pos:'adjective',ex:[
+  {t:'ఇది మంచి ఇల్లు.',r:'idi mañci illu.',n:'This is a good house.'},
+  {t:'అతను మంచివాడు.',r:'atanu mañcivāḍu.',n:'He is a good man.'},
+  {t:'మంచి రోజు.',r:'mañci rōju.',n:'A good day.'}]},
+ forms:{t:'వెళ్ళు',r:'veḷḷu',ipa:'ʋeɭɭu',n:'to go',pos:'verb',forms:[
+  {l:'Future',t:'నేను వెళ్తాను',r:'nēnu veḷtānu',n:'I will go'},
+  {l:'Past',t:'నేను వెళ్ళాను',r:'nēnu veḷḷānu',n:'I went'},
+  {l:'Polite command',t:'వెళ్ళండి',r:'veḷḷaṇḍi',n:'please go'}]},
+ long:{t:'మీరు',r:'mīru',ipa:'miːru',n:'you (polite)',pos:'pronoun',notes:['Telugu has two words for “you”. మీరు (mīru) is polite: use it with elders, with strangers and for more than one person. నువ్వు (nuvvu) is for friends, children and anyone younger than you. Each takes its own verb ending: మీరు వచ్చారు (mīru vaccāru), you came; నువ్వు వచ్చావు (nuvvu vaccāvu), you came. When unsure, use మీరు, which is never rude.']}}},
+hi:{lang:'Hindustani',deck:'First words',cards:{
+ bare:{t:'पानी',r:'pānī',ipa:'paːniː',n:'water',pos:'noun, masculine',pic:'💧'},
+ note:{t:'घर',r:'ghar',ipa:'ɡʱər',n:'house, home',pos:'noun, masculine',pic:'🏠',notes:['The plural does not change: एक घर (ek ghar), दो घर (do ghar), two houses.']},
+ phrase:{t:'सच में?',r:'sac meṁ?',ipa:'sət͡ʃ meːn',n:'Really?',pos:'phrase',phrase:1,notes:['A rising voice alone turns a statement into a yes/no question, or क्या (kyā) at the start: क्या यह सच है? (kyā yah sac hai?), is this true?']},
+ examples:{t:'अच्छा',r:'acchā',ipa:'ət͡ʃt͡ʃʰaː',n:'good',pos:'adjective',ex:[
+  {t:'यह बहुत अच्छा है।',r:'yah bahut acchā hai.',n:'This is very good.'},
+  {t:'मैं अच्छा हूँ।',r:'maiṁ acchā hūṁ.',n:'I am well.'},
+  {t:'अच्छा दिन।',r:'acchā din.',n:'A good day.'}]},
+ forms:{t:'जाना',r:'jānā',ipa:'d͡ʒaːnaː',n:'to go',pos:'verb',forms:[
+  {l:'Present',t:'मैं जाता हूँ',r:'maiṁ jātā hūṁ',n:'I go'},
+  {l:'Past',t:'वह गया',r:'vah gayā',n:'he went'},
+  {l:'Future',t:'मैं जाऊँगा',r:'maiṁ jāūṁgā',n:'I will go'}]},
+ long:{t:'आप',r:'āp',ipa:'aːp',n:'you (formal)',pos:'pronoun',notes:['Hindustani has three words for “you”. आप (āp) is polite: use it with elders, with strangers and with anyone you respect, and it takes a plural verb: आप कैसे हैं? (āp kaise haiṁ?). तुम (tum) is friendly, for peers and younger relatives. तू (tū) is intimate, or rude: only for close friends and children. When unsure, use आप, which is never rude.']}}},
+bn:{lang:'Bengali',deck:'First words',cards:{
+ bare:{t:'জল',r:'jôl',ipa:'d͡ʒɔl',n:'water',pos:'noun',pic:'💧'},
+ note:{t:'বাড়ি',r:'bāṛi',ipa:'baːɽi',n:'house, home',pos:'noun',pic:'🏠',notes:['-তে (-te) at the end means “in”: বাড়িতে (bāṛite), at home.']},
+ phrase:{t:'সত্যি?',r:'sôtti?',ipa:'ʃɔt̪ːi',n:'Really?',pos:'phrase',phrase:1,notes:['A rising voice alone turns a statement into a yes/no question, or কি (ki): এটা কি সত্যি? (eṭā ki sôtti?), is this true?']},
+ examples:{t:'ভালো',r:'bhālo',ipa:'bʱalo',n:'good',pos:'adjective',ex:[
+  {t:'এটা ভালো বাড়ি।',r:'eṭā bhālo bāṛi.',n:'This is a good house.'},
+  {t:'আমি ভালো আছি।',r:'āmi bhālo āchi.',n:'I am well.'},
+  {t:'ভালো দিন।',r:'bhālo din.',n:'A good day.'}]},
+ forms:{t:'যাওয়া',r:'jāoā',ipa:'d͡ʒaoa',n:'to go',pos:'verb',forms:[
+  {l:'Present',t:'আমি যাই',r:'āmi jāi',n:'I go'},
+  {l:'Past',t:'আমি গেলাম',r:'āmi gelām',n:'I went'},
+  {l:'Future',t:'আমি যাব',r:'āmi jābo',n:'I will go'}]},
+ long:{t:'আপনি',r:'āpni',ipa:'aːpni',n:'you (formal)',pos:'pronoun',notes:['Bengali has three words for “you”. আপনি (āpni) is polite: use it with elders, with strangers and with anyone you respect. তুমি (tumi) is friendly, for peers and younger relatives. তুই (tui) is intimate, or rude: only for close friends and children. The verb changes with each: আপনি আছেন (āpni āchen), তুমি আছো (tumi ācho), তুই আছিস (tui āchis). When unsure, use আপনি, which is never rude.']}}}};
+const S={theme:'light',course:'te',hl:'1',card:'phrase',word:'reading',foot:'btn',place:'top',rswipe:'off',gver:'after',dep:null};
+const fullDep=()=>({pic:1,voice:1,ipa:1,note:1,ex:3,forms:1});
+S.dep=fullDep();
+const root=document.getElementById('root');
+const gr=s=>Array.from(new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(s)).length;
+const heroPx=s=>{const g=gr(s);return g<=2?96:g<=5?64:48};
+/* a card as the depth controls leave it */
+function view(c,dep){
+ return {...c,
+  pic:dep.pic?c.pic:null,ipa:dep.ipa?c.ipa:null,voice:!!dep.voice,
+  notes:dep.note?(c.notes||[]):[],ex:(c.ex||[]).slice(0,dep.ex),forms:dep.forms?(c.forms||null):null};
+}
+/* ===== shared pieces ===== */
+function head(pos,prog,sounds){
+ return `<div class="dh"><span class="ib">${svg('close')}</span><div class="wave"><b></b><i style="width:${prog*100}%"></i><u style="left:${prog*100}%"></u></div><span class="pos">${pos}/3</span>${sounds?`<span class="ib">${svg('eq')}</span>`:''}<span class="ib">${svg('bug')}</span></div>`;
+}
+function wordBlock(v){
+ if(S.word==='reading')return `<div class="rd1">${v.r}</div><div class="sc1 script">${v.t}</div>`;
+ return `<div class="fit" style="width:100%"><span class="hero script" style="font-size:calc(${heroPx(v.t)}px*var(--t))">${v.t}</span></div><div class="rd2">${v.r}</div>`;
+}
+const fitNote='';
+/* the review screens, as built (RecognitionDrill in DrillFrame) */
+function reviewPhone(v,revealed,swipe){
+ const word=wordBlock(v)+(v.ipa?`<div class="ipa">/${v.ipa}/</div>`:'')+(v.voice?spk():'');
+ let det='';
+ if(revealed){
+  det=`<div class="divd"></div><div class="mean">${v.n}</div>`
+   +v.notes.map(n=>`<div class="nt">${n}</div>`).join('')
+   +(v.ex[0]?`<div class="ex"><div class="t script">${v.ex[0].t}</div><div class="n">${v.ex[0].n}</div></div>`:'');
+ }
+ const foot=revealed
+  ?`<div class="rprompt">How well did you know it?</div><div class="rate"><button class="r1">Again<small>today</small></button><button class="r2">Hard<small>1 day</small></button><button class="r3">Good<small>3 days</small></button><button class="r4">Easy<small>7 days</small></button></div>`
+  :`<button class="btn">Show answer</button>`;
+ const tab=swipe?`<div class="tab chg swp"><span>${svg('chev')}</span></div>`:'';
+ return `<div class="ph">${head(1,revealed?.5/3+0:0,v.ipa)}
+  <div class="body"><div class="prow"><span class="pill rec">${svg('eye')}Recognition</span><span class="deck">${C[S.course].deck}</span></div>
+  <div class="dcard">${word}${det}</div></div>
+  <div class="foot">${foot}</div>${tab}</div>`;
+}
+/* ===== the teach card as built today (lib/features/drill/teach_card.dart) ===== */
+function todayPhone(v){
+ const left=(S.word==='reading'
+  ?`<div class="fit"><span style="font-size:calc(52px*var(--t));font-weight:600;line-height:1.2">${v.r}</span></div><div class="fit"><span class="script" style="font-size:calc(52px*2/3*var(--t));color:var(--onSv);line-height:1.3">${v.t}</span></div>`
+  :`<div class="fit"><span class="script" style="font-size:calc(52px*var(--t));font-weight:500;line-height:1.25">${v.t}</span></div><div style="font-size:calc(16px*var(--t));color:var(--onSv)">${v.r}</div>`)
+  +((v.voice||v.ipa)?`<div class="trow">${v.voice?tspk():''}${v.ipa?`<span class="chip">/${v.ipa}/</span>`:''}</div>`:'');
+ const long=v.n.length>28;
+ const mean=`<div class="tmean"><div class="x">${long?`<div style="font-size:calc(16px*var(--t));font-weight:500">${v.n}</div>`:`<div class="fit"><span style="font-size:calc(24px*var(--t));font-weight:500;line-height:1.3">${v.n}</span></div>`}<div style="font-size:calc(14px*var(--t));color:var(--onSv);line-height:1.3">${v.pos}</div></div>${svg('book')}</div>`;
+ const note=v.notes[0]?`<div class="tblock">${svg('err')}<p>${v.notes[0]}</p></div>`:'';
+ return `<div class="ph">${head(1,.5/3+.0,v.ipa)}<div class="tbody"><div class="tcol"><div class="thero"><div class="l">${left}</div>${v.pic?`<div class="tpic">${v.pic}</div>`:''}</div>${mean}${note}</div></div></div>`;
+}
+/* ===== the teach card, proposed ===== */
+function afterPhone(v,opt){
+ opt=opt||{};
+ const foot=S.foot==='btn';
+ const body=wordBlock(v)
+  +((v.ipa||v.voice)?`<div class="spkrow">${v.voice?spk(56):''}${v.ipa?`<div class="ipa tap">/${v.ipa}/</div>`:''}</div>`:'')
+  +`<div class="meanrow">${v.pic?`<span class="pic">${v.pic}</span>`:''}<div class="mean">${v.n}${svg('book')}${v.pos&&!v.phrase?`<span class="pos2">${v.pos}</span>`:''}</div></div>`
+  +v.notes.map(n=>`<div class="nt">${n}</div>`).join('')
+  +v.ex.map(e=>`<div class="ex"><div class="t script">${e.t}</div><div class="r">${e.r}</div><div class="n">${e.n}</div></div>`).join('')
+  +(v.forms?`<div class="forms">${v.forms.map(f=>`<div class="fr"><div class="ft"><span class="script">${f.t}</span><span class="fs">${f.r}</span></div><div><span class="fl">${f.l}</span><span class="fn">${f.n}</span></div></div>`).join('')}</div>`:'');
+ return `<div class="ph" data-after>${head(1,.5/3,v.ipa)}
+  <div class="body ${S.place==='ctr'?'ctr':''}"><div class="prow" style="align-self:flex-start;max-width:100%"><span class="pill new">${svg('star')}New ${v.phrase?'phrase':'word'}</span><span class="deck">${C[S.course].deck}</span></div>
+  <div class="dcard ${opt.q?'':'chg upd'}">${body}</div></div>
+  ${foot?`<div class="foot ${opt.q?'':'chg upd'}"><button class="btn">Continue</button></div>`:`<div class="tab ${opt.q?'':'chg upd'}"><span>${svg('chev')}</span></div>`}
+  <div class="fade" style="bottom:${foot?96:0}px;display:none"></div></div>`;
+}
+function frame(cap,html){return `<div class="fcol"><div class="fcap">${cap}</div>${html}</div>`}
+function seg(k,opts,label,dis){return `<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${l}</button>`).join('')}</span></div>`}
+function dseg(k,opts,label,avail){return `<div class="tg">${label}<span class="seg" data-dk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" ${avail?'':'disabled'} aria-pressed="${String(S.dep[k])===String(v)}">${l}</button>`).join('')}</span></div>`}
+function render(){
+ const c=C[S.course],d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(PAL[S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const raw=c.cards[S.card],v=view(raw,S.dep);
+ const full=view(raw,fullDep());
+ const has={pic:!!raw.pic,ipa:!!raw.ipa,note:!!(raw.notes&&raw.notes.length),ex:(raw.ex||[]).length,forms:!!raw.forms};
+ root.innerHTML=`
+ <section class="opt"><h2>One family: review as built, teach before and after, ${c.lang}</h2>
+ <p class="note">Left to right: the review screen asking the word and the review screen with its answer shown, both exactly as built (the reference); the teach card as built today; the teach card proposed. The proposal is the review's answer screen with the teach card's extras, in the same card: the pill row, the 40 dp card as tall as its content, content centred 12 apart, notes at 15/22, examples in the same inner box, and the same foot. The teach screen scrolls in the body under a fixed foot, as the review does.</p>
+ <div class="tw">
+  <div class="tg">Card <span class="seg" data-sk="card">${K.map(k=>`<button data-v="${k}" aria-pressed="${S.card===k}">${KL[k]}</button>`).join('')}</span></div></div>
+ <div class="tw">
+  ${seg('word',[['reading','Reading first'],['script','Script first']],'Word shows')}
+  ${seg('foot',[['btn','Continue button'],['tab','Chevron tab only (as built)']],'Teach foot')}
+  ${seg('place',[['top','Top (as review)'],['ctr','Centred']],'Short card sits')}
+  ${seg('rswipe',[['off','Off (as built)'],['on','On']],'Swipe on the review answer')}</div>
+ <div class="tw">
+  ${dseg('pic',[[1,'Picture shown'],[0,'Hidden']],'Picture',has.pic)}
+  ${dseg('voice',[[1,'Voice'],[0,'No voice']],'Speaker',true)}
+  ${dseg('ipa',[[1,'IPA shown'],[0,'Hidden']],'IPA',has.ipa)}
+  ${dseg('note',[[1,'Note shown'],[0,'Hidden']],'Note',has.note)}
+  ${dseg('ex',[[0,'0'],[1,'1'],[2,'2'],[3,'3']],'Examples',has.ex>0)}
+  ${dseg('forms',[[1,'Forms shown'],[0,'Hidden']],'Forms',has.forms)}</div>
+ <div class="frames">
+  ${frame('Review, the word asked (as built)',reviewPhone(v,false,false))}
+  ${frame('Review, answer shown (as built)'+(S.rswipe==='on'?', with the swipe':''),reviewPhone(v,true,S.rswipe==='on'))}
+  ${frame('Teach card, before (as built)',todayPhone(v))}
+  ${frame('Teach card, after: '+KL[S.card].toLowerCase(),afterPhone(v))}
+ </div></section>
+ <section class="opt"><h2>The range, ${c.lang}</h2>
+ <p class="note">The six cards a lesson can teach, from a bare word to a long note, all at 1.4x. Nothing is pinned to the screen's edges: the card is as tall as what it holds, the foot stays put, and a card too tall for the screen scrolls under it (the long note, the word with examples).</p>
+ <div class="tw">${seg('gver',[['after','After'],['before','Before (as built)']],'Show')}</div>
+ <div class="frames">${K.map(k=>{const g=view(c.cards[k],fullDep());return frame(KL[k],S.gver==='after'?afterPhone(g,{q:1}):todayPhone(g))}).join('')}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ requestAnimationFrame(post);
+}
+/* fit one-line text (FittedBox.scaleDown in the built teach card) and show the scroll fade */
+function post(){
+ document.querySelectorAll('.fit').forEach(f=>{const s=f.firstElementChild;if(!s.dataset.fs)s.dataset.fs=s.style.fontSize;s.style.fontSize=s.dataset.fs;let px=parseFloat(getComputedStyle(s).fontSize);const w=f.clientWidth;while(s.getBoundingClientRect().width>w&&px>14){px-=1;s.style.fontSize=px+'px'}});
+ document.querySelectorAll('.ph[data-after]').forEach(p=>{const b=p.querySelector('.body'),f=p.querySelector('.fade');if(!b||!f)return;const over=b.scrollHeight>b.clientHeight+2;f.style.display=over?'block':'none';const foot=p.querySelector('.foot');f.style.bottom=(foot?foot.offsetHeight:0)+'px'});
+}
+document.addEventListener('scroll',()=>{},true);
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const dk=e.target.closest('[data-dk] button');
+ if(dk&&!dk.disabled){const k=dk.parentNode.dataset.dk;S.dep[k]=+dk.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){const k=b.parentNode.dataset.sk;S[k]=b.dataset.v;if(k==='card')S.dep=fullDep();render()}
+});
+render();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(post);
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text, header','onS','s',4.5],['meaning, word on card','onS','sHigh',4.5],['script, IPA, notes, pos line on card','onSv','sHigh',4.5],['deck name, rating prompt','onSv','s',4.5],['example text on its box','onS','sLowest',4.5],['example translation, reading, form labels','onSv','sLowest',4.5],['Continue, Good','onP','p',4.5],['speaker icon on its cookie','onPc','pc',3],['New pill, Easy','onTC','tC',4.5],['Recognition pill','onRc','rc',4.5],['Hard','onSc','sc',4.5],['Again','onEC','eC',4.5],['chevron tab icon','onSc','sc',3],['book icon on card','p','sHigh',3],['IPA chip outline on page (Before)','ol','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>
