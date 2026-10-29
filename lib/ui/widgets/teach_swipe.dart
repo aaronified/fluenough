@@ -18,7 +18,7 @@ import '../../l10n/app_localizations.dart';
 /// - **Two chevrons**, one on either edge, hidden unless the card is being
 ///   swiped (owner, 2026-10-29): they show for 1 s when the card
 ///   first appears, to teach that they exist, and again as a horizontal drag
-///   begins; stay while the card is dragged and settles, and go 1 s
+///   moves; stay while the card is dragged and settles, and go 1 s
 ///   after the drag ends. A tap, a vertical scroll or a press on the speaker
 ///   shows nothing. They can be tapped whether shown or not, and a quick tap
 ///   on a hidden one both moves the card and shows them for the same 1 s.
@@ -143,11 +143,14 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     _leaving = false;
     _dragging = true;
     _raw = _dx;
-    _showChevrons(holding: false);
   }
 
   void _update(DragUpdateDetails details) {
-    _raw += details.primaryDelta ?? 0;
+    final delta = details.primaryDelta ?? 0;
+    // Not in [_start]: with no other gesture in the arena (a tap on bare
+    // card) the drag wins at once and starts without a finger moving.
+    if (delta != 0) _showChevrons(holding: false);
+    _raw += delta;
     setState(() => _dx = _shown(_raw));
   }
 
