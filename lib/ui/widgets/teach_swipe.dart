@@ -15,10 +15,12 @@ import '../../l10n/app_localizations.dart';
 ///   goes on; a slow release damps critically, and the damping ramps to 0.75
 ///   as the release speed rises to 1500 px/s. Toward a card that is not there
 ///   the card is held back, as on a rubber band.
-/// - **Two chevrons**, one on either edge, hidden while the screen is not
-///   touched: they appear 0.1 s after a touch starts, with a wiggle, and go
-///   0.3 s after it ends. They can be tapped whether shown or not, and a
-///   quick tap on a hidden one both moves the card and shows them.
+/// - **Two chevrons**, one on either edge, hidden unless the card is being
+///   swiped (owner, 2026-10-29): they appear, with a wiggle, as a horizontal
+///   drag begins, stay while the card is dragged and settles, and go 1 s
+///   after the drag ends. A tap, a vertical scroll or a press on the speaker
+///   shows nothing. They can be tapped whether shown or not, and a quick tap
+///   on a hidden one both moves the card and shows them for the same 1 s.
 ///
 /// [onNext] runs once the card has settled on the next one; [onBack], when it
 /// is given, on the previous one. With no [onBack] there is no back chevron.
@@ -72,8 +74,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   bool _leaving = false;
 
   double _width = 0;
-  bool _touching = false;
-  Timer? _showTimer;
+  bool _shown = false;
   Timer? _hideTimer;
 
   @override
@@ -84,7 +85,6 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    _showTimer?.cancel();
     _hideTimer?.cancel();
     _spring.dispose();
     _wiggle.dispose();
@@ -144,6 +144,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     _leaving = false;
     _dragging = true;
     _raw = _dx;
+    _showChevrons(holding: false);
   }
 
   void _update(DragUpdateDetails details) {
@@ -153,6 +154,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
   void _end(DragEndDetails details) {
     _dragging = false;
+    _holdChevrons();
     final velocity = details.primaryVelocity ?? 0;
     final toward = velocity * _nextSign;
     var step = 0;
@@ -168,6 +170,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
   void _cancel() {
     _dragging = false;
+    _holdChevrons();
     _go(0, 0, 0, 1);
   }
 
@@ -175,23 +178,26 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void _tapped(int step) {
     if (_dragging || _leaving) return;
     if (step == -1 && widget.onBack == null) return;
+    _showChevrons(holding: true);
     _go(step * _nextSign * _width, 0, step, _chevronRatio);
   }
 
-  void _touchStarted(PointerDownEvent _) {
+  /// Shows the chevrons, with the wiggle unless they already are. While
+  /// [holding] is false they stay until [_holdChevrons] is called.
+  void _showChevrons({required bool holding}) {
     _hideTimer?.cancel();
-    _showTimer?.cancel();
-    _showTimer = Timer(const Duration(milliseconds: 100), () {
-      if (!mounted) return;
-      setState(() => _touching = true);
+    if (!_shown) {
+      setState(() => _shown = true);
       _wiggle.forward(from: 0);
-    });
+    }
+    if (holding) _holdChevrons();
   }
 
-  void _touchEnded(PointerEvent _) {
+  /// Hides the chevrons 1 s from now, restarting that wait.
+  void _holdChevrons() {
     _hideTimer?.cancel();
-    _hideTimer = Timer(const Duration(milliseconds: 300), () {
-      if (mounted) setState(() => _touching = false);
+    _hideTimer = Timer(const Duration(seconds: 1), () {
+      if (mounted) setState(() => _shown = false);
     });
   }
 
@@ -201,45 +207,39 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     return LayoutBuilder(
       builder: (context, constraints) {
         _width = constraints.maxWidth;
-        return Listener(
-          behavior: HitTestBehavior.translucent,
-          onPointerDown: _touchStarted,
-          onPointerUp: _touchEnded,
-          onPointerCancel: _touchEnded,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onHorizontalDragStart: _start,
-                  onHorizontalDragUpdate: _update,
-                  onHorizontalDragEnd: _end,
-                  onHorizontalDragCancel: _cancel,
-                  child: ClipRect(
-                    child: Transform.translate(
-                      offset: Offset(_dx, 0),
-                      child: widget.child,
-                    ),
+        return Stack(
+          children: <Widget>[
+            Positioned.fill(
+              child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onHorizontalDragStart: _start,
+                onHorizontalDragUpdate: _update,
+                onHorizontalDragEnd: _end,
+                onHorizontalDragCancel: _cancel,
+                child: ClipRect(
+                  child: Transform.translate(
+                    offset: Offset(_dx, 0),
+                    child: widget.child,
                   ),
                 ),
               ),
-              if (widget.onBack != null)
-                _Chevron(
-                  next: false,
-                  shown: _touching,
-                  wiggle: _wiggle,
-                  label: l10n.drillPreviousCard,
-                  onTap: () => _tapped(-1),
-                ),
+            ),
+            if (widget.onBack != null)
               _Chevron(
-                next: true,
-                shown: _touching,
+                next: false,
+                shown: _shown,
                 wiggle: _wiggle,
-                label: l10n.drillNextCard,
-                onTap: () => _tapped(1),
+                label: l10n.drillPreviousCard,
+                onTap: () => _tapped(-1),
               ),
-            ],
-          ),
+            _Chevron(
+              next: true,
+              shown: _shown,
+              wiggle: _wiggle,
+              label: l10n.drillNextCard,
+              onTap: () => _tapped(1),
+            ),
+          ],
         );
       },
     );
