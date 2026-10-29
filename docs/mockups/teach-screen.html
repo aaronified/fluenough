@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teach Screen</title>
-<meta name="description" content="The teach card redrawn as one family with the review screens: one card as tall as its content, the same pill row, card, type scale and foot. Telugu, Hindustani and Bengali, light and dark, 1.4x text.">
+<meta name="description" content="The teach card redrawn as one family with the review screens: one card as tall as its content, the same pill row, card and type scale. Telugu, Hindustani and Bengali, light and dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
@@ -34,9 +34,10 @@ section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-lin
 .sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
 .hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
 .hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:6;letter-spacing:.3px}
-.hl-on .tab.chg{position:absolute;border-radius:0;outline-offset:-2px}
+.hl-on .tab span.chg{border-radius:24px 0 0 24px}
+.hl-on .chg::after{white-space:nowrap}
 .hl-on .chg.upd::after{content:"changed"}
-.hl-on .chg.swp::after{content:"swipe, the one change"}
+.hl-on .chg.swp::after{content:"swipe"}
 .wb{position:relative}
 /* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
    Sizes are calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
@@ -109,6 +110,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .pic{width:56px;height:56px;border-radius:18px;background:var(--sc);display:flex;align-items:center;justify-content:center;font-size:32px;line-height:1;flex:none}
 /* chevron tab (TeachSwipe) */
 .tab{position:absolute;right:0;top:0;bottom:0;display:flex;align-items:center;pointer-events:none;z-index:4}
+.ph>.tab{top:64px}
 .tab span{width:48px;height:48px;background:var(--sc);color:var(--onSc);border-radius:24px 0 0 24px;display:flex;align-items:center;justify-content:center;opacity:.92}
 /* ===== teach card as built today ===== */
 .tbody{flex:1;min-height:0;overflow-y:auto;padding:0 16px 8px;scrollbar-width:none}
@@ -135,7 +137,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 <body>
 <div class="wrap" id="wrap">
 <h1>Teach screen</h1>
-<p class="cap1">The teach card of a lesson (#691, ADR-0024), redrawn as one family with the review screens (owner, 2026-10-29: "Every teach screen, regardless of content depth or breadth, looks like this", and the review screens are perfect). The review screens are drawn exactly as built. The teach card takes their pill row, their one centred card, their type scale, their spacing and their foot. Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed, light and dark. Choices are tweak controls; none is decided.</p>
+<p class="cap1">The teach card of a lesson (#691, ADR-0024), redrawn as one family with the review screens (owner, 2026-10-29: "Every teach screen, regardless of content depth or breadth, looks like this", and the review screens are perfect). The review screens are drawn exactly as built. The teach card takes their pill row, their one centred card, their type scale, and their spacing. Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed, light and dark. Choices are tweak controls; none is decided.</p>
 <div class="sticky tw" id="g-tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Course <span class="seg" data-k="course"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
@@ -208,7 +210,7 @@ bn:{lang:'Bengali',deck:'First words',cards:{
   {l:'Past',t:'আমি গেলাম',r:'āmi gelām',n:'I went'},
   {l:'Future',t:'আমি যাব',r:'āmi jābo',n:'I will go'}]},
  long:{t:'আপনি',r:'āpni',ipa:'aːpni',n:'you (formal)',pos:'pronoun',notes:['Bengali has three words for “you”. আপনি (āpni) is polite: use it with elders, with strangers and with anyone you respect. তুমি (tumi) is friendly, for peers and younger relatives. তুই (tui) is intimate, or rude: only for close friends and children. The verb changes with each: আপনি আছেন (āpni āchen), তুমি আছো (tumi ācho), তুই আছিস (tui āchis). When unsure, use আপনি, which is never rude.']}}}};
-const S={theme:'light',course:'te',hl:'1',card:'phrase',word:'reading',foot:'btn',place:'top',rswipe:'off',gver:'after',dep:null};
+const S={theme:'light',course:'te',hl:'1',card:'phrase',word:'reading',place:'top',gver:'after',dep:null};
 const fullDep=()=>({pic:1,voice:1,ipa:1,note:1,ex:3,forms:1});
 S.dep=fullDep();
 const root=document.getElementById('root');
@@ -230,7 +232,7 @@ function wordBlock(v){
 }
 const fitNote='';
 /* the review screens, as built (RecognitionDrill in DrillFrame) */
-function reviewPhone(v,revealed,swipe){
+function reviewPhone(v,revealed){
  const word=wordBlock(v)+(v.ipa?`<div class="ipa">/${v.ipa}/</div>`:'')+(v.voice?spk():'');
  let det='';
  if(revealed){
@@ -238,14 +240,13 @@ function reviewPhone(v,revealed,swipe){
    +v.notes.map(n=>`<div class="nt">${n}</div>`).join('')
    +(v.ex[0]?`<div class="ex"><div class="t script">${v.ex[0].t}</div><div class="n">${v.ex[0].n}</div></div>`:'');
  }
- const foot=revealed
-  ?`<div class="rprompt">How well did you know it?</div><div class="rate"><button class="r1">Again<small>today</small></button><button class="r2">Hard<small>1 day</small></button><button class="r3">Good<small>3 days</small></button><button class="r4">Easy<small>7 days</small></button></div>`
-  :`<button class="btn">Show answer</button>`;
- const tab=swipe?`<div class="tab chg swp"><span>${svg('chev')}</span></div>`:'';
- return `<div class="ph">${head(1,revealed?.5/3+0:0,v.ipa)}
+ /* the question page keeps its button (Show answer); the answer page has none: a swipe goes on */
+ const foot=revealed?'':`<div class="foot"><button class="btn">Show answer</button></div>`;
+ const tab=revealed?`<div class="tab"><span class="chg swp">${svg('chev')}</span></div>`:'';
+ return `<div class="ph">${head(1,revealed?.5/3:0,v.ipa)}
   <div class="body"><div class="prow"><span class="pill rec">${svg('eye')}Recognition</span><span class="deck">${C[S.course].deck}</span></div>
   <div class="dcard">${word}${det}</div></div>
-  <div class="foot">${foot}</div>${tab}</div>`;
+  ${foot}${tab}</div>`;
 }
 /* ===== the teach card as built today (lib/features/drill/teach_card.dart) ===== */
 function todayPhone(v){
@@ -261,7 +262,6 @@ function todayPhone(v){
 /* ===== the teach card, proposed ===== */
 function afterPhone(v,opt){
  opt=opt||{};
- const foot=S.foot==='btn';
  const body=wordBlock(v)
   +((v.ipa||v.voice)?`<div class="spkrow">${v.voice?spk(56):''}${v.ipa?`<div class="ipa tap">/${v.ipa}/</div>`:''}</div>`:'')
   +`<div class="meanrow">${v.pic?`<span class="pic">${v.pic}</span>`:''}<div class="mean">${v.n}${svg('book')}${v.pos&&!v.phrase?`<span class="pos2">${v.pos}</span>`:''}</div></div>`
@@ -271,8 +271,8 @@ function afterPhone(v,opt){
  return `<div class="ph" data-after>${head(1,.5/3,v.ipa)}
   <div class="body ${S.place==='ctr'?'ctr':''}"><div class="prow" style="align-self:flex-start;max-width:100%"><span class="pill new">${svg('star')}New ${v.phrase?'phrase':'word'}</span><span class="deck">${C[S.course].deck}</span></div>
   <div class="dcard ${opt.q?'':'chg upd'}">${body}</div></div>
-  ${foot?`<div class="foot ${opt.q?'':'chg upd'}"><button class="btn">Continue</button></div>`:`<div class="tab ${opt.q?'':'chg upd'}"><span>${svg('chev')}</span></div>`}
-  <div class="fade" style="bottom:${foot?96:0}px;display:none"></div></div>`;
+  <div class="tab"><span>${svg('chev')}</span></div>
+  <div class="fade" style="bottom:0;display:none"></div></div>`;
 }
 function frame(cap,html){return `<div class="fcol"><div class="fcap">${cap}</div>${html}</div>`}
 function seg(k,opts,label,dis){return `<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${l}</button>`).join('')}</span></div>`}
@@ -286,14 +286,12 @@ function render(){
  const has={pic:!!raw.pic,ipa:!!raw.ipa,note:!!(raw.notes&&raw.notes.length),ex:(raw.ex||[]).length,forms:!!raw.forms};
  root.innerHTML=`
  <section class="opt"><h2>One family: review as built, teach before and after, ${c.lang}</h2>
- <p class="note">Left to right: the review screen asking the word and the review screen with its answer shown, both exactly as built (the reference); the teach card as built today; the teach card proposed. The proposal is the review's answer screen with the teach card's extras, in the same card: the pill row, the 40 dp card as tall as its content, content centred 12 apart, notes at 15/22, examples in the same inner box, and the same foot. The teach screen scrolls in the body under a fixed foot, as the review does.</p>
+ <p class="note">Left to right: the review screen asking the word, with its button, and the review screen with its answer shown, both as built (the reference), the answer screen with no Continue and a swipe to go on, the one outlined change; the teach card as built today; the teach card proposed. The proposal is the review's answer screen with the teach card's extras, in the same card: the pill row, the 40 dp card as tall as its content, content centred 12 apart, notes at 15/22, examples in the same inner box. Like the answer screen it has no button: a swipe or the end-edge chevron goes on, as built. It scrolls in the body when long.</p>
  <div class="tw">
   <div class="tg">Card <span class="seg" data-sk="card">${K.map(k=>`<button data-v="${k}" aria-pressed="${S.card===k}">${KL[k]}</button>`).join('')}</span></div></div>
  <div class="tw">
   ${seg('word',[['reading','Reading first'],['script','Script first']],'Word shows')}
-  ${seg('foot',[['btn','Continue button'],['tab','Chevron tab only (as built)']],'Teach foot')}
-  ${seg('place',[['top','Top (as review)'],['ctr','Centred']],'Short card sits')}
-  ${seg('rswipe',[['off','Off (as built)'],['on','On']],'Swipe on the review answer')}</div>
+  ${seg('place',[['top','Top (as review)'],['ctr','Centred']],'Short card sits')}</div>
  <div class="tw">
   ${dseg('pic',[[1,'Picture shown'],[0,'Hidden']],'Picture',has.pic)}
   ${dseg('voice',[[1,'Voice'],[0,'No voice']],'Speaker',true)}
@@ -302,13 +300,13 @@ function render(){
   ${dseg('ex',[[0,'0'],[1,'1'],[2,'2'],[3,'3']],'Examples',has.ex>0)}
   ${dseg('forms',[[1,'Forms shown'],[0,'Hidden']],'Forms',has.forms)}</div>
  <div class="frames">
-  ${frame('Review, the word asked (as built)',reviewPhone(v,false,false))}
-  ${frame('Review, answer shown (as built)'+(S.rswipe==='on'?', with the swipe':''),reviewPhone(v,true,S.rswipe==='on'))}
+  ${frame('Review, the word asked (as built)',reviewPhone(v,false))}
+  ${frame('Review, answer shown (as built, but no Continue: a swipe goes on)',reviewPhone(v,true))}
   ${frame('Teach card, before (as built)',todayPhone(v))}
   ${frame('Teach card, after: '+KL[S.card].toLowerCase(),afterPhone(v))}
  </div></section>
  <section class="opt"><h2>The range, ${c.lang}</h2>
- <p class="note">The six cards a lesson can teach, from a bare word to a long note, all at 1.4x. Nothing is pinned to the screen's edges: the card is as tall as what it holds, the foot stays put, and a card too tall for the screen scrolls under it (the long note, the word with examples).</p>
+ <p class="note">The six cards a lesson can teach, from a bare word to a long note, all at 1.4x. Nothing is pinned to the screen's edges: the card is as tall as what it holds, and a card too tall for the screen scrolls (the long note, the word with examples).</p>
  <div class="tw">${seg('gver',[['after','After'],['before','Before (as built)']],'Show')}</div>
  <div class="frames">${K.map(k=>{const g=view(c.cards[k],fullDep());return frame(KL[k],S.gver==='after'?afterPhone(g,{q:1}):todayPhone(g))}).join('')}</div></section>`;
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
@@ -333,7 +331,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(post);
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text, header','onS','s',4.5],['meaning, word on card','onS','sHigh',4.5],['script, IPA, notes, pos line on card','onSv','sHigh',4.5],['deck name, rating prompt','onSv','s',4.5],['example text on its box','onS','sLowest',4.5],['example translation, reading, form labels','onSv','sLowest',4.5],['Continue, Good','onP','p',4.5],['speaker icon on its cookie','onPc','pc',3],['New pill, Easy','onTC','tC',4.5],['Recognition pill','onRc','rc',4.5],['Hard','onSc','sc',4.5],['Again','onEC','eC',4.5],['chevron tab icon','onSc','sc',3],['book icon on card','p','sHigh',3],['IPA chip outline on page (Before)','ol','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
+const PAIRS=[['body text, header','onS','s',4.5],['meaning, word on card','onS','sHigh',4.5],['script, IPA, notes, pos line on card','onSv','sHigh',4.5],['deck name, rating prompt','onSv','s',4.5],['example text on its box','onS','sLowest',4.5],['example translation, reading, form labels','onSv','sLowest',4.5],['Show answer','onP','p',4.5],['speaker icon on its cookie','onPc','pc',3],['New pill','onTC','tC',4.5],['Recognition pill','onRc','rc',4.5],['chevron tab icon','onSc','sc',3],['book icon on card','p','sHigh',3],['IPA chip outline on page (Before)','ol','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
 console.log('contrast',JSON.stringify(window.__contrast));
