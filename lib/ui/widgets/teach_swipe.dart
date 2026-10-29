@@ -15,10 +15,13 @@ import '../../l10n/app_localizations.dart';
 ///   goes on; a slow release damps critically, and the damping ramps to 0.75
 ///   as the release speed rises to 1500 px/s. Toward a card that is not there
 ///   the card is held back, as on a rubber band.
-/// - **Two chevrons**, one on either edge, hidden while the screen is not
-///   touched: they appear 0.1 s after a touch starts, with a wiggle, and go
-///   0.3 s after it ends. They can be tapped whether shown or not, and a
-///   quick tap on a hidden one both moves the card and shows them.
+/// - **Two chevrons**, one on either edge, hidden unless the card is being
+///   swiped (owner, 2026-10-29): they show for 1 s when the card
+///   first appears, to teach that they exist, and again as a horizontal drag
+///   moves; stay while the card is dragged and settles, and go 1 s
+///   after the drag ends. A tap, a vertical scroll or a press on the speaker
+///   shows nothing. They can be tapped whether shown or not, and a quick tap
+///   on a hidden one both moves the card and shows them for the same 1 s.
 ///
 /// [onNext] runs once the card has settled on the next one; [onBack], when it
 /// is given, on the previous one. With no [onBack] there is no back chevron.
@@ -62,10 +65,6 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   late final AnimationController _spring = AnimationController.unbounded(
     vsync: this,
   );
-  late final AnimationController _wiggle = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 250),
-  );
 
   /// How far the card is from rest, in px, positive toward the right.
   double _dx = 0;
@@ -79,22 +78,39 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   bool _leaving = false;
 
   double _width = 0;
-  bool _touching = false;
-  Timer? _showTimer;
+  bool _chevronsShown = false;
   Timer? _hideTimer;
 
   @override
   void initState() {
     super.initState();
     _spring.addListener(() => setState(() => _dx = _spring.value));
+    if (widget.enabled) _intro();
+  }
+
+  /// The intro: shown for 1 s as the card first appears, or as swiping is
+  /// first turned on, to teach that the chevrons exist.
+  void _intro() {
+    _chevronsShown = true;
+    _holdChevrons();
+  }
+
+  @override
+  void didUpdateWidget(TeachSwipe oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.enabled == oldWidget.enabled) return;
+    if (widget.enabled) {
+      _intro();
+    } else {
+      _hideTimer?.cancel();
+      _chevronsShown = false;
+    }
   }
 
   @override
   void dispose() {
-    _showTimer?.cancel();
     _hideTimer?.cancel();
     _spring.dispose();
-    _wiggle.dispose();
     super.dispose();
   }
 
@@ -154,12 +170,17 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   }
 
   void _update(DragUpdateDetails details) {
-    _raw += details.primaryDelta ?? 0;
+    final delta = details.primaryDelta ?? 0;
+    // Not in [_start]: with no other gesture in the arena (a tap on bare
+    // card) the drag wins at once and starts without a finger moving.
+    if (delta != 0) _showChevrons(holding: false);
+    _raw += delta;
     setState(() => _dx = _shown(_raw));
   }
 
   void _end(DragEndDetails details) {
     _dragging = false;
+    _holdChevrons();
     final velocity = details.primaryVelocity ?? 0;
     final toward = velocity * _nextSign;
     var step = 0;
@@ -175,6 +196,7 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
   void _cancel() {
     _dragging = false;
+    _holdChevrons();
     _go(0, 0, 0, 1);
   }
 
@@ -182,23 +204,25 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
   void _tapped(int step) {
     if (_dragging || _leaving) return;
     if (step == -1 && widget.onBack == null) return;
+    _showChevrons(holding: true);
     _go(step * _nextSign * _width, 0, step, _chevronRatio);
   }
 
-  void _touchStarted(PointerDownEvent _) {
+  /// Shows the chevrons, fading in unless they already are shown. While
+  /// [holding] is false they stay until [_holdChevrons] is called.
+  void _showChevrons({required bool holding}) {
     _hideTimer?.cancel();
-    _showTimer?.cancel();
-    _showTimer = Timer(const Duration(milliseconds: 100), () {
-      if (!mounted) return;
-      setState(() => _touching = true);
-      _wiggle.forward(from: 0);
-    });
+    if (!_chevronsShown) {
+      setState(() => _chevronsShown = true);
+    }
+    if (holding) _holdChevrons();
   }
 
-  void _touchEnded(PointerEvent _) {
+  /// Hides the chevrons 1 s from now, restarting that wait.
+  void _holdChevrons() {
     _hideTimer?.cancel();
-    _hideTimer = Timer(const Duration(milliseconds: 300), () {
-      if (mounted) setState(() => _touching = false);
+    _hideTimer = Timer(const Duration(seconds: 1), () {
+      if (mounted) setState(() => _chevronsShown = false);
     });
   }
 
@@ -208,46 +232,38 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
     return LayoutBuilder(
       builder: (context, constraints) {
         _width = constraints.maxWidth;
-        return Listener(
-          behavior: HitTestBehavior.translucent,
-          onPointerDown: widget.enabled ? _touchStarted : null,
-          onPointerUp: widget.enabled ? _touchEnded : null,
-          onPointerCancel: widget.enabled ? _touchEnded : null,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onHorizontalDragStart: widget.enabled ? _start : null,
-                  onHorizontalDragUpdate: widget.enabled ? _update : null,
-                  onHorizontalDragEnd: widget.enabled ? _end : null,
-                  onHorizontalDragCancel: widget.enabled ? _cancel : null,
-                  child: ClipRect(
-                    child: Transform.translate(
-                      offset: Offset(_dx, 0),
-                      child: widget.child,
-                    ),
+        return Stack(
+          children: <Widget>[
+            Positioned.fill(
+              child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onHorizontalDragStart: widget.enabled ? _start : null,
+                onHorizontalDragUpdate: widget.enabled ? _update : null,
+                onHorizontalDragEnd: widget.enabled ? _end : null,
+                onHorizontalDragCancel: widget.enabled ? _cancel : null,
+                child: ClipRect(
+                  child: Transform.translate(
+                    offset: Offset(_dx, 0),
+                    child: widget.child,
                   ),
                 ),
               ),
-              if (widget.enabled && widget.onBack != null)
-                _Chevron(
-                  next: false,
-                  shown: _touching,
-                  wiggle: _wiggle,
-                  label: l10n.drillPreviousCard,
-                  onTap: () => _tapped(-1),
-                ),
-              if (widget.enabled)
-                _Chevron(
-                  next: true,
-                  shown: _touching,
-                  wiggle: _wiggle,
-                  label: l10n.drillNextCard,
-                  onTap: () => _tapped(1),
-                ),
-            ],
-          ),
+            ),
+            if (widget.enabled && widget.onBack != null)
+              _Chevron(
+                next: false,
+                shown: _chevronsShown,
+                label: l10n.drillPreviousCard,
+                onTap: () => _tapped(-1),
+              ),
+            if (widget.enabled)
+              _Chevron(
+                next: true,
+                shown: _chevronsShown,
+                label: l10n.drillNextCard,
+                onTap: () => _tapped(1),
+              ),
+          ],
         );
       },
     );
@@ -256,12 +272,11 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
 
 /// One chevron: a `secondaryContainer` tab on an edge of the card, vertically
 /// centred, at 92 percent while shown and clear while hidden, but tappable
-/// either way. The arrow wiggles a few pixels as the tab appears.
+/// either way.
 class _Chevron extends StatelessWidget {
   const _Chevron({
     required this.next,
     required this.shown,
-    required this.wiggle,
     required this.label,
     required this.onTap,
   });
@@ -269,7 +284,6 @@ class _Chevron extends StatelessWidget {
   /// Whether it is the chevron to the next card, on the end edge.
   final bool next;
   final bool shown;
-  final Animation<double> wiggle;
   final String label;
   final VoidCallback onTap;
 
@@ -278,11 +292,14 @@ class _Chevron extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     const radius = Radius.circular(24);
     return PositionedDirectional(
-      start: next ? null : 0,
-      end: next ? 0 : null,
+      start: 0,
+      end: 0,
       top: 0,
       bottom: 0,
-      child: Center(
+      child: Align(
+        alignment: next
+            ? AlignmentDirectional.centerEnd
+            : AlignmentDirectional.centerStart,
         child: AnimatedOpacity(
           opacity: shown ? 0.92 : 0,
           duration: const Duration(milliseconds: 150),
@@ -303,23 +320,9 @@ class _Chevron extends StatelessWidget {
                 child: SizedBox(
                   width: 48,
                   height: 48,
-                  child: AnimatedBuilder(
-                    animation: wiggle,
-                    builder: (context, child) => Transform.translate(
-                      // About three pixels, two and a half times over,
-                      // dying away.
-                      offset: Offset(
-                        3 *
-                            math.sin(wiggle.value * 5 * math.pi) *
-                            (1 - wiggle.value),
-                        0,
-                      ),
-                      child: child,
-                    ),
-                    child: Icon(
-                      next ? Icons.chevron_right : Icons.chevron_left,
-                      color: scheme.onSecondaryContainer,
-                    ),
+                  child: Icon(
+                    next ? Icons.chevron_right : Icons.chevron_left,
+                    color: scheme.onSecondaryContainer,
                   ),
                 ),
               ),

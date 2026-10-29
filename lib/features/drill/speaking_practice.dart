@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/grading/answer_grader.dart';
 import '../../core/models/deck.dart';
+import '../../core/network/network_probe.dart';
 import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
@@ -13,13 +14,20 @@ import 'drill_session.dart';
 String unheardMessage(
   AppLocalizations l10n,
   SpeechFailure failure,
-  LanguageInfo language,
-) => switch (failure) {
+  LanguageInfo language, [
+  NetworkDiagnosis? why,
+]) => switch (failure) {
   SpeechFailure.noMatch => l10n.drillUnheardNoMatch,
   SpeechFailure.permissionDenied => l10n.drillUnheardPermission,
   SpeechFailure.noRecogniser => l10n.drillUnheardNoRecogniser,
   SpeechFailure.unsupported => l10n.drillUnheardUnsupported(language.name),
-  SpeechFailure.network => l10n.drillUnheardNetwork,
+  SpeechFailure.network => switch (why) {
+    null => l10n.drillUnheardNetwork,
+    NetworkDiagnosis.offline => l10n.drillNetworkOffline,
+    NetworkDiagnosis.githubBlocked => l10n.drillNetworkGithubBlocked,
+    NetworkDiagnosis.googleUnreachable => l10n.drillNetworkGoogleUnreachable,
+    NetworkDiagnosis.serviceFailed => l10n.drillNetworkServiceFailed,
+  },
   SpeechFailure.notOnDevice || SpeechFailure.other => l10n.drillUnheardOther,
 };
 
@@ -55,7 +63,7 @@ class SpeakingPractice extends StatelessWidget {
       status = l10n.drillHearingHint;
       statusStyle = hint;
     } else if (unheard != null) {
-      status = unheardMessage(l10n, unheard, language);
+      status = unheardMessage(l10n, unheard, language, session.networkWhy);
       statusStyle = error;
     } else if (retried != null) {
       final sooner = session.firstTryFailed;
