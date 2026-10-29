@@ -213,7 +213,8 @@ class Scrub(unittest.TestCase):
         self.assertIn("[address removed]", issue["title"])
 
     def _non_ascii_addresses_are_redacted(self) -> None:
-        for address in ("josé@example.com", "é@example.com", "ann@bücher.de"):
+        for address in ("josé@example.com", "é@example.com", "ann@bücher.de",
+                        "o'brien@example.com", "a&b@x.com"):
             with self.subTest(address=address):
                 text = mail_to_issues.scrub(f"Mail {address} please")
                 self.assertNotIn(address, text)

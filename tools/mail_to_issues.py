@@ -171,7 +171,7 @@ SIGNATURE_LINE = re.compile(r"^--[ \t]*$")
 ADVERT_LINE = re.compile(
     r"^\s*(?:sent (?:from|via|with) |get outlook for |get \[?outlook)", re.I)
 ADDRESS = re.compile(
-    r"<?[\w.%+\-]+@[\w\-]+(?:\.[\w\-]+)+>?", re.UNICODE)
+    r"<?[^\s<>@\"(),;:\[\]\\]+@[\w\-]+(?:\.[\w\-]+)+>?", re.UNICODE)
 ADDRESS_REMOVED = "[address removed]"
 
 
