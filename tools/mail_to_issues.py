@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Turn report mails from the app into GitHub issues (#160, ADR-0021).
 
-Run hourly by `.github/workflows/feedback-mail.yml`. Filing needs only
-the standard library.
+Run every 15 minutes by `.github/workflows/feedback-mail.yml`, when GitHub
+keeps to its schedule (it may delay scheduled runs by hours; the owner can
+run the workflow by hand). Filing needs only the standard library.
 
 It reads the Fluenough Gmail over IMAP with an app password and takes only
 mails whose subject starts with `[Fluenough]`, as the app writes it. Any
@@ -22,8 +23,13 @@ feedback.
 
 The issue is text only: the subject, as `Bug: …`, and the mail's text. A
 screenshot or the app log stays in the mail, and the issue says one came.
-The sender's address is never written to the issue, which is public.
-`@mentions` are broken, so that an issue notifies no one.
+The issue is public, so [scrub] cleans the text and the subject first: the
+signature is cut (from a line of `-- `, and trailing `Sent from my …` and
+`Get Outlook for …` lines), and every mail address in them, bare or as
+`Name <address>`, also in an `On … wrote:` line, becomes `[address
+removed]`. The app's own `Kind:`, `Screen:` and `Showing:` lines are left as
+they are. The sender's address, from the `From` header, is never read into
+the issue. `@mentions` are broken, so that an issue notifies no one.
 
 Review mails (docs/plans/deck-browser.md, "Review in the app, by mail")
 carry one JSON file per deck reviewed, each with the rater code, the
@@ -56,8 +62,8 @@ or a record cannot be written, or the mail has no single sender, the mail
 is filed marked "sender not checked", never dropped. When the connection
 drops while a record is written, the run stops before filing that mail,
 which stays in the inbox for the next run: filing it unchecked would leave
-it unlabelled, and filed again an hour later. No address and no record's
-body is ever printed: the job's log is public, so it says counts only.
+it unlabelled, and filed again on the next run. No address and no
+record's body is ever printed: the job's log is public, so it says counts only.
 
 A review's issue also counts the changes it suggests, those to base words
 by kind (added, changed, removed; #476), and the proposals it accepts and
@@ -150,13 +156,38 @@ GMAIL = ("gmail.com", "googlemail.com")
 # of a review that rejects a proposal.
 PROPOSED = "fluenough-proposed"
 REJECTED = "proposal rejected"
-REVIEW_FOOTER = ("<sub>Opened by the hourly mail workflow. The reviews stay "
+REVIEW_FOOTER = ("<sub>Opened by the mail workflow. The reviews stay "
                  "in the mail: no suggestion text, no mail address.</sub>")
 
 
 def quiet(text: str) -> str:
     """[text] with every @mention broken, so that it notifies no one."""
     return re.sub(r"@(?=[A-Za-z0-9])", "@​", text)
+
+
+# What [scrub] takes out. A signature starts at a line of `--` (with or
+# without the trailing space); a mail app's advert line is cut from the end.
+SIGNATURE_LINE = re.compile(r"^--[ \t]*$")
+ADVERT_LINE = re.compile(
+    r"^\s*(?:sent (?:from|via|with) |get outlook for |get \[?outlook)", re.I)
+ADDRESS = re.compile(
+    r"<?[^\s<>@\"(),;:\[\]\\]+@[\w\-]+(?:\.[\w\-]+)+>?", re.UNICODE)
+ADDRESS_REMOVED = "[address removed]"
+
+
+def scrub(text: str) -> str:
+    """[text] fit for a public issue: the signature cut, and every mail
+    address replaced by `[address removed]`. The app's own `Kind:`,
+    `Screen:` and `Showing:` lines are kept, but their addresses go too."""
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    for index, line in enumerate(lines):
+        if SIGNATURE_LINE.match(line):
+            lines = lines[:index]
+            break
+    while lines and (not lines[-1].strip() or ADVERT_LINE.match(lines[-1])):
+        lines.pop()
+    return "\n".join(
+        ADDRESS.sub(ADDRESS_REMOVED, line) for line in lines).strip()
 
 
 def subject_of(message: email.message.Message) -> str:
@@ -219,14 +250,14 @@ def issue_from(message: email.message.Message) -> dict | None:
         return None
     label = KINDS.get(kind.strip().capitalize()) if colon else None
     labels = [label, FROM_APP] if label and title.strip() else [FROM_APP]
-    body = [quiet(text)[:MAX_BODY] or "_No details given._"]
+    body = [quiet(scrub(text))[:MAX_BODY] or "_No details given._"]
     if has_image(message):
         body.append(SCREENSHOT_NOTE)
     if has_log(message):
         body.append(LOG_NOTE)
     body.append(FOOTER)
     return {
-        "title": quiet(rest)[:250] or "Report from the app",
+        "title": quiet(scrub(rest))[:250] or "Report from the app",
         "body": "\n\n".join(body),
         "labels": labels,
     }

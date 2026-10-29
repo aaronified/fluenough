@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Reports mailed from the app are filed as issues within about 15 minutes, not hours (GitHub may still delay scheduled runs; the workflow can be run by hand), and the public issue no longer carries the sender's mail address or signature.
+
 ## [0.6.7] - 2026-10-26
 
 ### Fixed
