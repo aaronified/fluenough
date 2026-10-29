@@ -70,7 +70,7 @@ another review, may change it first.
   reviewer mode. The validator checks its shape and nothing else in it:
   a proposal is not deck content until it is applied, and then the field
   is checked as any field is.
-- **A review mail becomes proposals at once.** The hourly mail job opens
+- **A review mail becomes proposals at once.** The mail job opens
   one PR per review mail that adds each suggestion as a proposal and
   records each acceptance in the proposal's `accepted`, then merges it as
   soon as the required checks pass. A suggestion whose field no longer
@@ -104,7 +104,7 @@ another review, may change it first.
   never merged unless its branch holds all of `main`, so a change the
   owner made meanwhile is never merged over. An agreement or outdated PR
   that `main` no longer calls for is closed. Branch names come from the
-  mail, or from the proposals' ids and dates, so an hourly rerun finds
+  mail, or from the proposals' ids and dates, so a rerun finds
   its own PR and never opens a second; a PR the owner closes is never
   reopened, while the same proposal made again on a later day is a new
   attempt with a branch of its own. Only the three checks branch

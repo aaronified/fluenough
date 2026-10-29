@@ -64,7 +64,7 @@ consent from the user." The app keeps no log yet; that is #162.
     (url_launcher, already a dependency). The mail is addressed to the
     Fluenough Gmail and its subject is `[Fluenough] Bug: …`. The reporter
     sends it; the app sends nothing itself.
-- **An hourly Action files the mails as issues** (`tools/mail_to_issues.py`,
+- **An Action, every 15 minutes, files the mails as issues** (`tools/mail_to_issues.py`,
   stdlib only).
   - It reads the inbox over IMAP with an app password held in repository
     secrets.

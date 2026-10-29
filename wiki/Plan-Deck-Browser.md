@@ -171,7 +171,7 @@ Settled with the owner, 2026-10-09:
   reviewer has already reviewed but not sent. It shows in Settings under
   "Review decks" and as a "To review" mark on each unit of the path.
 - **The sender check lives in the Fluenough Gmail** (owner, 2026-10-09,
-  replacing the keyed hash in the repository; see the next bullet): the hourly mail job
+  replacing the keyed hash in the repository; see the next bullet): the mail job
   keeps one private record per rater code in a Gmail label
   (`fluenough/raters`), holding the address its first review came from.
   Addresses are matched with case ignored, and for Gmail with dots and
@@ -385,7 +385,7 @@ Sheet. So:
 
 ## From the Sheet to issues
 
-*Superseded 2026-10-09: there is no Sheet. The hourly mail job opens one issue per review mail (#407). The canary tested the form and is not carried over.*
+*Superseded 2026-10-09: there is no Sheet. The mail job opens one issue per review mail (#407). The canary tested the form and is not carried over.*
 
 - **A scheduled workflow** reads new rows with the service account. Each
   becomes an issue:
