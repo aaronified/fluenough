@@ -3096,6 +3096,22 @@
   "@drillUnheardNetwork": {
     "description": "Speaking: online recognition failed for want of a network."
   },
+  "drillNetworkOffline": "No internet connection. Connect and try again.",
+  "@drillNetworkOffline": {
+    "description": "Speaking: online recognition failed and neither probe host answered: the phone is offline."
+  },
+  "drillNetworkGithubBlocked": "The internet works, but this app can’t reach GitHub. A firewall or DNS setting may be blocking it.",
+  "@drillNetworkGithubBlocked": {
+    "description": "Speaking: online recognition failed; Google's check host answered, GitHub did not."
+  },
+  "drillNetworkGoogleUnreachable": "Google’s servers can’t be reached from here, so online speech recognition can’t work.",
+  "@drillNetworkGoogleUnreachable": {
+    "description": "Speaking: online recognition failed; GitHub answered, Google's check host did not."
+  },
+  "drillNetworkServiceFailed": "You are online, but the speech recognition service failed. Try again.",
+  "@drillNetworkServiceFailed": {
+    "description": "Speaking: online recognition failed although both probe hosts answered."
+  },
   "drillUnheardOther": "The recogniser stopped. Try again.",
   "@drillUnheardOther": {
     "description": "Speaking: any other recogniser error."

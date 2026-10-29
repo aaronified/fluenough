@@ -146,7 +146,7 @@ class SpeakingDrill extends StatelessWidget {
         Semantics(
           liveRegion: true,
           child: Text(
-            unheardMessage(l10n, unheard, language),
+            unheardMessage(l10n, unheard, language, session.networkWhy),
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyLarge!.copyWith(color: scheme.error),
           ),
