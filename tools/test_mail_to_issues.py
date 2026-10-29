@@ -195,6 +195,35 @@ class Scrub(unittest.TestCase):
         for line in ("Kind: Bug", "Screen: /deck", "Showing: Telugu unit 3"):
             self.assertIn(line, issue["body"])
 
+    def _an_address_on_an_app_line_is_redacted(self) -> None:
+        for line in ("Screen: me@example.com",
+                     "Showing: mail me at me@example.com",
+                     "Kind: me@example.com"):
+            with self.subTest(line=line):
+                issue = mail_to_issues.issue_from(mail(
+                    "[Fluenough] Bug: x", f"It shows twice\n\n---\n{line}"))
+                self.assertNotIn("me@example.com", issue["body"])
+                self.assertIn(line.split(":")[0] + ":", issue["body"])
+                self.assertIn("[address removed]", issue["body"])
+
+    def _an_address_in_a_screen_subject_is_redacted(self) -> None:
+        issue = mail_to_issues.issue_from(mail(
+            "[Fluenough] Screen: me@example.com"))
+        self.assertNotIn("me@example.com", str(issue))
+        self.assertIn("[address removed]", issue["title"])
+
+    def _non_ascii_addresses_are_redacted(self) -> None:
+        for address in ("josé@example.com", "é@example.com", "ann@bücher.de"):
+            with self.subTest(address=address):
+                text = mail_to_issues.scrub(f"Mail {address} please")
+                self.assertNotIn(address, text)
+                self.assertEqual(text, "Mail [address removed] please")
+
+    def _prose_with_an_at_sign_is_not_an_address(self) -> None:
+        for text in ("a @ b", "thanks @aaronified for this", "at 5 @ home"):
+            with self.subTest(text=text):
+                self.assertEqual(mail_to_issues.scrub(text), text)
+
     def _a_normal_report_is_unchanged(self) -> None:
         text = "After Check the card shows twice.\n\n---\nKind: Bug\nScreen: /drill"
         self.assertEqual(mail_to_issues.scrub(text), text)
@@ -207,6 +236,10 @@ class Scrub(unittest.TestCase):
             self._a_mail_app_advert_line_is_cut,
             self._an_address_anywhere_is_redacted,
             self._the_apps_own_lines_are_kept,
+            self._an_address_on_an_app_line_is_redacted,
+            self._an_address_in_a_screen_subject_is_redacted,
+            self._non_ascii_addresses_are_redacted,
+            self._prose_with_an_at_sign_is_not_an_address,
             self._a_normal_report_is_unchanged,
         )
         for case in cases:

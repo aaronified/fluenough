@@ -171,15 +171,14 @@ SIGNATURE_LINE = re.compile(r"^--[ \t]*$")
 ADVERT_LINE = re.compile(
     r"^\s*(?:sent (?:from|via|with) |get outlook for |get \[?outlook)", re.I)
 ADDRESS = re.compile(
-    r"<?[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)+>?")
-APP_LINE = re.compile(r"^(?:Kind|Screen|Showing):", re.I)
+    r"<?[\w.%+\-]+@[\w\-]+(?:\.[\w\-]+)+>?", re.UNICODE)
 ADDRESS_REMOVED = "[address removed]"
 
 
 def scrub(text: str) -> str:
     """[text] fit for a public issue: the signature cut, and every mail
-    address replaced by `[address removed]`, except on the app's own
-    `Kind:`, `Screen:` and `Showing:` lines, which are kept as they are."""
+    address replaced by `[address removed]`. The app's own `Kind:`,
+    `Screen:` and `Showing:` lines are kept, but their addresses go too."""
     lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     for index, line in enumerate(lines):
         if SIGNATURE_LINE.match(line):
@@ -188,8 +187,7 @@ def scrub(text: str) -> str:
     while lines and (not lines[-1].strip() or ADVERT_LINE.match(lines[-1])):
         lines.pop()
     return "\n".join(
-        line if APP_LINE.match(line) else ADDRESS.sub(ADDRESS_REMOVED, line)
-        for line in lines).strip()
+        ADDRESS.sub(ADDRESS_REMOVED, line) for line in lines).strip()
 
 
 def subject_of(message: email.message.Message) -> str:
