@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- When the speaking drill fails for want of a network, the app now says why: it asks `raw.githubusercontent.com` and `connectivitycheck.gstatic.com` once, with no body, cookies or headers of ours, and tells offline, GitHub blocked, Google unreachable and a failed recognition service apart.
+
 ## [0.6.7] - 2026-10-26
 
 ### Fixed

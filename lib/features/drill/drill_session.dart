@@ -16,6 +16,7 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
+import '../../core/network/network_probe.dart';
 import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
@@ -158,6 +159,7 @@ class DrillSession extends ChangeNotifier {
   bool _playing = false;
   bool _hearing = false;
   SpeechFailure? _unheard;
+  NetworkDiagnosis? _networkWhy;
   DateTime? _endedAt;
   bool _disposed = false;
 
@@ -699,6 +701,19 @@ class DrillSession extends ChangeNotifier {
   /// for it: the learner can say it again.
   SpeechFailure? get unheard => _unheard;
 
+  /// Why the network failed, after an [unheard] of [SpeechFailure.network]
+  /// and a probe of two hosts; null until it answers, and when not asked.
+  NetworkDiagnosis? get networkWhy => _networkWhy;
+
+  /// After a network failure, asks the probe why, once, and shows it.
+  Future<void> _diagnose() async {
+    final failure = _unheard;
+    final why = await _state.networkProbe.diagnose();
+    if (_disposed || _unheard != failure) return;
+    _networkWhy = why;
+    notifyListeners();
+  }
+
   /// Listens for the current card's target and grades what was heard.
   Future<void> listen() async {
     if (item.mode != DrillMode.speaking ||
@@ -709,6 +724,7 @@ class DrillSession extends ChangeNotifier {
     final listeningIndex = _index;
     _hearing = true;
     _unheard = null;
+    _networkWhy = null;
     notifyListeners();
     final heard = await _state.listenFor(deck.language);
     if (_disposed || _index != listeningIndex) return;
@@ -716,6 +732,7 @@ class DrillSession extends ChangeNotifier {
     if (heard.failed) {
       _unheard = heard.failure ?? SpeechFailure.noMatch;
       notifyListeners();
+      if (_unheard == SpeechFailure.network) _diagnose();
       return;
     }
     checkSpoken(heard.alternatives);
@@ -738,6 +755,7 @@ class DrillSession extends ChangeNotifier {
     }
     final answer = _gradeSpoken(alternatives);
     _unheard = null;
+    _networkWhy = null;
     _answer = answer;
     _record(answer.grade!, answerGiven: answer.typed);
     _phase = DrillPhase.feedback;
@@ -839,6 +857,7 @@ class DrillSession extends ChangeNotifier {
     final listeningIndex = _index;
     _hearing = true;
     _unheard = null;
+    _networkWhy = null;
     notifyListeners();
     final heard = await _state.listenFor(deck.language);
     // Continue was tapped while it listened, here or on the last card.
@@ -853,6 +872,7 @@ class DrillSession extends ChangeNotifier {
       _retries++;
     }
     notifyListeners();
+    if (_unheard == SpeechFailure.network) _diagnose();
   }
 
   // ---------------------------------------------------------------------------
@@ -1336,6 +1356,7 @@ class DrillSession extends ChangeNotifier {
     _placed.clear();
     _hearing = false;
     _unheard = null;
+    _networkWhy = null;
     _retried = null;
     _retries = 0;
     _hearingSelf = SelfTake.idle;

@@ -19,6 +19,7 @@ import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/romanisation.dart';
 import 'package:fluenough/core/models/sound_contrasts.dart';
+import 'package:fluenough/core/network/network_probe.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
@@ -70,8 +71,13 @@ const Romanisation hindi = Romanisation(
 
 const String spanish = 'es-en-core-100';
 
-AppState speaking(FixedSpeechEngine speech, {bool on = false}) => AppState.test(
+AppState speaking(
+  FixedSpeechEngine speech, {
+  bool on = false,
+  NetworkProbe probe = const NullNetworkProbe(),
+}) => AppState.test(
   speech: speech,
+  networkProbe: probe,
   settings: SettingsNotifier(
     spokenLanguages: const <String>['en'],
     learningChosen: true,
@@ -688,6 +694,30 @@ void main() {
         s.skipUnheard();
         expect(s.item.card.id, isNot(first));
         expect(state.progress.log, isEmpty);
+      });
+
+      test('a network failure is probed, and says why: offline, GitHub '
+          'blocked, Google unreachable, or the service itself', () async {
+        for (final why in NetworkDiagnosis.values) {
+          final probe = FixedNetworkProbe(why);
+          speech = FixedSpeechEngine(onDevice: <String>{'es'})
+            ..failing = const SpeechHeard.failed(SpeechFailure.network);
+          state = speaking(speech, on: true, probe: probe);
+          await state.load();
+          await state.startSpeech();
+          final queue = state.buildSession(
+            DrillRequest.untaught(spanish, skill: Skill.speaking),
+          );
+          final s = DrillSession(state: state, items: queue.items);
+          addTearDown(s.dispose);
+          expect(s.networkWhy, isNull);
+          await s.listen();
+          await pumpEventQueue();
+          expect(s.unheard, SpeechFailure.network);
+          expect(s.networkWhy, why);
+          expect(probe.probes, 1);
+          state.dispose();
+        }
       });
     });
   });

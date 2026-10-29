@@ -72,6 +72,7 @@ Future<void> main() async {
         speech: SystemSpeechEngine(),
         volume: SystemVolumeMonitor(),
         soundCheck: SystemSoundCheck(),
+        networkProbe: SystemNetworkProbe(),
         systemSettings: const ChannelSystemSettings(),
         reports: MailReportSender(
           address: AppLinks.feedbackEmail,
