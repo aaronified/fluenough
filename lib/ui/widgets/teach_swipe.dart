@@ -264,11 +264,14 @@ class _Chevron extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     const radius = Radius.circular(24);
     return PositionedDirectional(
-      start: next ? null : 0,
-      end: next ? 0 : null,
+      start: 0,
+      end: 0,
       top: 0,
       bottom: 0,
-      child: Center(
+      child: Align(
+        alignment: next
+            ? AlignmentDirectional.centerEnd
+            : AlignmentDirectional.centerStart,
         child: AnimatedOpacity(
           opacity: shown ? 0.92 : 0,
           duration: const Duration(milliseconds: 150),

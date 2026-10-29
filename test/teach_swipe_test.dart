@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/harness.dart';
 
 void main() {
-  testWidgets('chevrons show as the card appears and on a swipe only, clearing 1 s after', (
+  testWidgets('chevrons show as the card appears and on a swipe only', (
     tester,
   ) async {
     await pumpScreen(
