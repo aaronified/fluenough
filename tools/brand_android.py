@@ -53,6 +53,16 @@ in CI, in the release workflow and on a first checkout. It
   hide them. A MainActivity written by an earlier version of this, with
   the channel but not shareFiles, is brought up to date.
 
+- sets up flutter_local_notifications, which shows the daily reminder (#90).
+  The reminder is scheduled inexactly, so there is no exact-alarm
+  permission. The plugin's own manifest declares POST_NOTIFICATIONS (asked
+  when the learner switches the reminder on, never at launch) and VIBRATE
+  but, since its version 16, not what scheduling needs, so this adds
+  RECEIVE_BOOT_COMPLETED and the plugin's two receivers: one shows a
+  scheduled notification, and one, ScheduledNotificationBootReceiver,
+  puts them back after a reboot or an app update. Tapping a notification
+  needs no receiver: it opens MainActivity;
+
 Each is added only if it is not there already, so running this twice is
 the same as running it once.
 
@@ -108,6 +118,8 @@ STORAGE = (
     "android.permission.WRITE_EXTERNAL_STORAGE",
     "android.permission.READ_EXTERNAL_STORAGE",
 )
+POST_NOTIFICATIONS = "android.permission.POST_NOTIFICATIONS"
+RECEIVE_BOOT_COMPLETED = "android.permission.RECEIVE_BOOT_COMPLETED"
 TOOLS = 'xmlns:tools="http://schemas.android.com/tools"'
 
 # ota_update's FileProvider, under the authority it asks for by default, and
@@ -130,6 +142,32 @@ PATHS = '''<?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <files-path name="internal_apk_storage" path="ota_update/"/>
 </paths>
+'''
+
+# flutter_local_notifications' receivers (its README, "AndroidManifest.xml
+# setup"): the first shows a scheduled notification, the second reschedules
+# what was scheduled after a reboot or an app update. No receiver for
+# actions: the reminder has none.
+NOTIFICATION_RECEIVER = (
+    "com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+)
+NOTIFICATION_BOOT_RECEIVER = (
+    "com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+)
+NOTIFICATION_RECEIVER_XML = f'''        <receiver
+            android:name="{NOTIFICATION_RECEIVER}"
+            android:exported="false"/>
+'''
+NOTIFICATION_BOOT_RECEIVER_XML = f'''        <receiver
+            android:name="{NOTIFICATION_BOOT_RECEIVER}"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
 '''
 
 # The FileProvider that lends shareFiles' files to the app that takes them:
@@ -382,6 +420,18 @@ def provide(text: str) -> str:
     return text
 
 
+def notify(text: str) -> str:
+    """[text], a manifest, with flutter_local_notifications' two receivers
+    last in its <application>, each unless it has it."""
+    for name, receiver in (
+        (NOTIFICATION_RECEIVER, NOTIFICATION_RECEIVER_XML),
+        (NOTIFICATION_BOOT_RECEIVER, NOTIFICATION_BOOT_RECEIVER_XML),
+    ):
+        if f'android:name="{name}"' not in text:
+            text = text.replace("    </application>", f"{receiver}    </application>", 1)
+    return text
+
+
 def desugar(text: str) -> str:
     """[text], the app's build.gradle.kts, with core library desugaring
     switched on and its library added, each unless it is there already."""
@@ -493,11 +543,17 @@ def declare(text: str) -> str:
             f"{MANIFEST} does not have one <application> element; "
             "flutter create has changed what it writes"
         )
-    for permission in (RECORD_AUDIO, INTERNET):
+    for permission in (
+        RECORD_AUDIO,
+        INTERNET,
+        POST_NOTIFICATIONS,
+        RECEIVE_BOOT_COMPLETED,
+    ):
         text = permit(text, permission)
     for permission in STORAGE:
         text = refuse(text, permission)
     text = provide(text)
+    text = notify(text)
     for action in (RECOGNITION_SERVICE, TTS_SERVICE, TTS_SETTINGS, INSTALL_TTS_DATA):
         if not queries(text, action):
             text = query(text, f'<action android:name="{action}"/>')
@@ -579,7 +635,7 @@ def main() -> int:
         print(f"brand_android: {e}", file=sys.stderr)
         return 1
     print(f"Brand applied to {RES}; launcher label {name!r}; microphone, "
-          "internet, speech recogniser, text-to-speech settings, https and upi links and "
+          "internet, notifications and their receivers, speech recogniser, text-to-speech settings, https and upi links and "
           "mail apps declared; ota_update set up; MainActivity's channel and "
           "ShareFileProvider written.")
     return 0

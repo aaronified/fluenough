@@ -1,0 +1,525 @@
+schema: 1
+id: "hi-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "festivals"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1298"
+    target: "त्योहार"
+    target_scripts: { perso_arabic: "تیوہار" }
+    reading: "tyōhār"
+    ipa: "t̪joːɦaːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हर त्योहार पर घर सजता है।", reading: "har tyōhār par ghar sajtā hai.", ipa: "ɦər t̪joːɦaːr pər ɡʱər sədʒt̪aː ɦɛː", bases: [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "पर", "ref": "hi-0275"}, {"word": "घर", "ref": "hi-0192"}, {"word": "सजता", "base": "सजना", "reading": "sajnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "त्योहार में सब खुश होते हैं।", reading: "tyōhār mēm̐ sab khuś hōtē haim̐.", ipa: "t̪joːɦaːr mẽː səb kʰʊʃ ɦoːt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "सब", "ref": "hi-0054"}, {"word": "खुश", "ref": "hi-0912"}, {"word": "होते", "ref": "hi-0780"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1299"
+    target: "उत्सव"
+    target_scripts: { perso_arabic: "اتسو" }
+    reading: "utsav"
+    ipa: "ʊt̪səʋ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह एक बड़ा उत्सव है।", reading: "yah ēk baṛā utsav hai.", ipa: "jəɦ eːk bəɽaː ʊt̪səʋ ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "एक", "ref": "hi-0198"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "शहर में रोज़ उत्सव है।", reading: "śahar mēm̐ rōz utsav hai.", ipa: "ʃəɦər mẽː roːz ʊt̪səʋ ɦɛː", bases: [{"word": "शहर", "ref": "hi-0195"}, {"word": "में", "ref": "hi-0274"}, {"word": "रोज़", "ref": "hi-0451"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1300"
+    target: "दिवाली"
+    target_scripts: { perso_arabic: "دیوالی" }
+    reading: "divālī"
+    ipa: "d̪ɪʋaːliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दिवाली पर दीये जलते हैं।", reading: "divālī par dīyē jaltē haim̐.", ipa: "d̪ɪʋaːliː pər d̪iːjeː dʒəlt̪eː ɦɛ̃ː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "दीये", "ref": "hi-1308"}, {"word": "जलते", "base": "जलना", "reading": "jalnā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "दिवाली में मिठाई बाँटते हैं।", reading: "divālī mēm̐ miṭhāī bām̐ṭatē haim̐.", ipa: "d̪ɪʋaːliː mẽː mɪʈʰaːiː bãːʈət̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "मिठाई", "ref": "hi-0998"}, {"word": "बाँटते", "ref": "hi-1336"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1301"
+    target: "होली"
+    target_scripts: { perso_arabic: "ہولی" }
+    reading: "hōlī"
+    ipa: "ɦoːliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "होली में लोग रंग खेलते हैं।", reading: "hōlī mēm̐ lōg raṅg khēltē haim̐.", ipa: "ɦoːliː mẽː loːɡ rəŋɡ kʰeːlt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "रंग", "ref": "hi-1309"}, {"word": "खेलते", "ref": "hi-0787"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "होली का दिन मज़ेदार है।", reading: "hōlī kā din mazēdār hai.", ipa: "ɦoːliː kaː d̪ɪn məzeːd̪aːr ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "दिन", "ref": "hi-0308"}, {"word": "मज़ेदार", "base": "मज़ेदार", "reading": "mazēdār"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1302"
+    target: "ईद"
+    target_scripts: { perso_arabic: "عید" }
+    reading: "īd"
+    ipa: "iːd̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ईद मुबारक!", reading: "īd mubārak!", ipa: "iːd̪ mʊbaːrək", bases: [{"word": "मुबारक", "ref": "hi-1333"}] }
+      - { target: "ईद पर सेवई बनती है।", reading: "īd par sēvaī bantī hai.", ipa: "iːd̪ pər seːʋəiː bənt̪iː ɦɛː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "सेवई", "ref": "hi-1310"}, {"word": "बनती", "base": "बनना", "reading": "bannā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1303"
+    target: "दशहरा"
+    target_scripts: { perso_arabic: "دسہرہ" }
+    reading: "daśhrā"
+    ipa: "d̪əʃɦraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दशहरे पर रावण जलता है।", reading: "daśhrē par rāvaṇ jaltā hai.", ipa: "d̪əʃɦreː pər raːʋəɳ dʒəlt̪aː ɦɛː", bases: [{"word": "दशहरे", "base": "दशहरा", "reading": "daśhrā"}, {"word": "पर", "ref": "hi-0275"}, {"word": "रावण", "base": "रावण", "reading": "rāvaṇ"}, {"word": "जलता", "base": "जलना", "reading": "jalnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "दशहरा बुराई पर अच्छाई की जीत है।", reading: "daśhrā burāī par acchāī kī jīt hai.", ipa: "d̪əʃɦraː bʊraːiː pər ətʃtʃʰaːiː kiː dʒiːt̪ ɦɛː", bases: [{"word": "बुराई", "base": "बुराई", "reading": "burāī"}, {"word": "पर", "ref": "hi-0275"}, {"word": "अच्छाई", "base": "अच्छाई", "reading": "acchāī"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "जीत", "base": "जीत", "reading": "jīt"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1304"
+    target: "बकरीद"
+    target_scripts: { perso_arabic: "بقرعید" }
+    reading: "bakrīd"
+    ipa: "bəkriːd̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बकरीद पर लोग दावत देते हैं।", reading: "bakrīd par lōg dāvat dētē haim̐.", ipa: "bəkriːd̪ pər loːɡ d̪aːʋət̪ d̪eːt̪eː ɦɛ̃ː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "दावत", "ref": "hi-1322"}, {"word": "देते", "ref": "hi-0785"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "बकरीद का त्योहार बड़ा है।", reading: "bakrīd kā tyōhār baṛā hai.", ipa: "bəkriːd̪ kaː t̪joːɦaːr bəɽaː ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "त्योहार", "ref": "hi-1298"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1305"
+    target: "क्रिसमस"
+    target_scripts: { perso_arabic: "کرسمس" }
+    reading: "krismas"
+    ipa: "krɪsməs"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "क्रिसमस पर सब केक बनाते हैं।", reading: "krismas par sab kēk banātē haim̐.", ipa: "krɪsməs pər səb keːk bənaːt̪eː ɦɛ̃ː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "सब", "ref": "hi-0054"}, {"word": "केक", "ref": "hi-1005"}, {"word": "बनाते", "base": "बनाना", "reading": "banānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "क्रिसमस की रात सुंदर होती है।", reading: "krismas kī rāt sundar hōtī hai.", ipa: "krɪsməs kiː raːt̪ sʊnd̪ər ɦoːt̪iː ɦɛː", bases: [{"word": "की", "base": "की", "reading": "kī"}, {"word": "रात", "ref": "hi-0304"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1306"
+    target: "गुरपुरब"
+    target_scripts: { perso_arabic: "گرپرب" }
+    reading: "gurpurab"
+    ipa: "ɡʊrpʊrəb"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गुरपुरब पर गुरुद्वारे में भजन होता है।", reading: "gurpurab par gurudvārē mēm̐ bhajan hōtā hai.", ipa: "ɡʊrpʊrəb pər ɡʊrʊd̪ʋaːreː mẽː bʱədʒən ɦoːt̪aː ɦɛː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "गुरुद्वारे", "ref": "hi-1330"}, {"word": "में", "ref": "hi-0274"}, {"word": "भजन", "ref": "hi-0058"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "गुरपुरब पर जुलूस निकलता है।", reading: "gurpurab par julūs nikltā hai.", ipa: "ɡʊrpʊrəb pər dʒʊluːs nɪklt̪aː ɦɛː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "जुलूस", "ref": "hi-1318"}, {"word": "निकलता", "base": "निकलना", "reading": "niklnā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1307"
+    target: "पूजा"
+    target_scripts: { perso_arabic: "پوجا" }
+    reading: "pūjā"
+    ipa: "puːdʒaː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह पूजा होती है।", reading: "subah pūjā hōtī hai.", ipa: "sʊbəɦ puːdʒaː ɦoːt̪iː ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "घर में पूजा की तैयारी है।", reading: "ghar mēm̐ pūjā kī taiyārī hai.", ipa: "ɡʱər mẽː puːdʒaː kiː t̪ɛːjaːriː ɦɛː", bases: [{"word": "घर", "ref": "hi-0192"}, {"word": "में", "ref": "hi-0274"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "तैयारी", "ref": "hi-1326"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1308"
+    target: "दीया"
+    target_scripts: { perso_arabic: "دیا" }
+    reading: "dīyā"
+    ipa: "d̪iːjaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "छत पर दीया जलाओ।", reading: "chat par dīyā jalāō.", ipa: "tʃʰət̪ pər d̪iːjaː dʒəlaːoː", bases: [{"word": "छत", "ref": "hi-0428"}, {"word": "पर", "ref": "hi-0275"}, {"word": "जलाओ", "ref": "hi-1335"}] }
+      - { target: "हर घर में दीये हैं।", reading: "har ghar mēm̐ dīyē haim̐.", ipa: "ɦər ɡʱər mẽː d̪iːjeː ɦɛ̃ː", bases: [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "घर", "ref": "hi-0192"}, {"word": "में", "ref": "hi-0274"}, {"word": "दीये", "base": "दीया", "reading": "dīyā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1309"
+    target: "रंग"
+    target_scripts: { perso_arabic: "رنگ" }
+    reading: "raṅg"
+    ipa: "rəŋɡ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "होली के रंग चमकीले हैं।", reading: "hōlī kē raṅg camkīlē haim̐.", ipa: "ɦoːliː keː rəŋɡ tʃəmkiːleː ɦɛ̃ː", bases: [{"word": "होली", "ref": "hi-1301"}, {"word": "के", "base": "के", "reading": "kē"}, {"word": "चमकीले", "base": "चमकीला", "reading": "camkīlā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "यह लाल रंग है।", reading: "yah lāl raṅg hai.", ipa: "jəɦ laːl rəŋɡ ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "लाल", "ref": "hi-0916"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1310"
+    target: "सेवई"
+    target_scripts: { perso_arabic: "سیوئی" }
+    reading: "sēvaī"
+    ipa: "seːʋəiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सेवई मीठी है।", reading: "sēvaī mīṭhī hai.", ipa: "seːʋəiː miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सेवई में दूध है।", reading: "sēvaī mēm̐ dūdh hai.", ipa: "seːʋəiː mẽː d̪uːd̪ʱ ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "दूध", "ref": "hi-0259"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1311"
+    target: "पटाखा"
+    target_scripts: { perso_arabic: "پٹاخا" }
+    reading: "paṭākhā"
+    ipa: "pəʈaːkʰaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बच्चे पटाखे चलाते हैं।", reading: "baccē paṭākhē calātē haim̐.", ipa: "bətʃtʃeː pəʈaːkʰeː tʃəlaːt̪eː ɦɛ̃ː", bases: [{"word": "बच्चे", "ref": "hi-0383"}, {"word": "पटाखे", "base": "पटाखा", "reading": "paṭākhā"}, {"word": "चलाते", "base": "चलाना", "reading": "calānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "पटाखे की आवाज़ तेज़ है।", reading: "paṭākhē kī āvāz tēz hai.", ipa: "pəʈaːkʰeː kiː aːʋaːz t̪eːz ɦɛː", bases: [{"word": "पटाखे", "base": "पटाखा", "reading": "paṭākhā"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "आवाज़", "base": "आवाज़", "reading": "āvāz"}, {"word": "तेज़", "base": "तेज़", "reading": "tēz"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1312"
+    target: "रोशनी"
+    target_scripts: { perso_arabic: "روشنی" }
+    reading: "rōśnī"
+    ipa: "roːʃniː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दिवाली की रोशनी सुंदर है।", reading: "divālī kī rōśnī sundar hai.", ipa: "d̪ɪʋaːliː kiː roːʃniː sʊnd̪ər ɦɛː", bases: [{"word": "दिवाली", "ref": "hi-1300"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "घर में रोशनी है।", reading: "ghar mēm̐ rōśnī hai.", ipa: "ɡʱər mẽː roːʃniː ɦɛː", bases: [{"word": "घर", "ref": "hi-0192"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1313"
+    target: "प्रसाद"
+    target_scripts: { perso_arabic: "پرساد" }
+    reading: "prasād"
+    ipa: "prəsaːd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मंदिर में प्रसाद बँटता है।", reading: "mandir mēm̐ prasād bam̐ṭatā hai.", ipa: "mənd̪ɪr mẽː prəsaːd̪ bə̃ʈət̪aː ɦɛː", bases: [{"word": "मंदिर", "ref": "hi-1058"}, {"word": "में", "ref": "hi-0274"}, {"word": "बँटता", "base": "बँटना", "reading": "bam̐ṭanā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "प्रसाद सबको मिलता है।", reading: "prasād sabkō miltā hai.", ipa: "prəsaːd̪ səbkoː mɪlt̪aː ɦɛː", bases: [{"word": "सबको", "ref": "hi-0054"}, {"word": "मिलता", "ref": "hi-0793"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1314"
+    target: "जन्मदिन"
+    target_scripts: { perso_arabic: "جنم دن" }
+    reading: "janmadin"
+    ipa: "dʒənməd̪ɪn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज मेरा जन्मदिन है।", reading: "āj mērā janmadin hai.", ipa: "aːdʒ meːraː dʒənməd̪ɪn ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "मेरा", "ref": "hi-0752"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "जन्मदिन पर केक काटते हैं।", reading: "janmadin par kēk kāṭtē haim̐.", ipa: "dʒənməd̪ɪn pər keːk kaːʈt̪eː ɦɛ̃ː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "केक", "ref": "hi-1005"}, {"word": "काटते", "ref": "hi-0939"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1315"
+    target: "शादी"
+    target_scripts: { perso_arabic: "شادی" }
+    reading: "śādī"
+    ipa: "ʃaːd̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "शादी में बहुत मेहमान थे।", reading: "śādī mēm̐ bahut mēhmān thē.", ipa: "ʃaːd̪iː mẽː bəɦʊt̪ meːɦmaːn t̪ʰeː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "मेहमान", "ref": "hi-1321"}, {"word": "थे", "ref": "hi-0780"}] }
+      - { target: "शादी अच्छी थी।", reading: "śādī acchī thī.", ipa: "ʃaːd̪iː ətʃtʃʰiː t̪ʰiː", bases: [{"word": "अच्छी", "ref": "hi-0898"}, {"word": "थी", "ref": "hi-0780"}] }
+  - id: "hi-1316"
+    target: "बधाई"
+    target_scripts: { perso_arabic: "بدھائی" }
+    reading: "badhāī"
+    ipa: "bəd̪ʱaːiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आपको बधाई!", reading: "āpkō badhāī!", ipa: "aːpkoː bəd̪ʱaːiː", bases: [{"word": "आपको", "ref": "hi-0134"}] }
+      - { target: "सब बधाई दे रहे हैं।", reading: "sab badhāī dē rahē haim̐.", ipa: "səb bəd̪ʱaːiː d̪eː rəɦeː ɦɛ̃ː", bases: [{"word": "सब", "ref": "hi-0054"}, {"word": "दे", "ref": "hi-0785"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1317"
+    target: "शुभकामना"
+    target_scripts: { perso_arabic: "شبھ کامنا" }
+    reading: "śubhkāmnā"
+    ipa: "ʃʊbʱkaːmnaː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आपको शुभकामनाएँ।", reading: "āpkō śubhkāmnāēm̐.", ipa: "aːpkoː ʃʊbʱkaːmnaːẽː", bases: [{"word": "आपको", "ref": "hi-0134"}, {"word": "शुभकामनाएँ", "base": "शुभकामना", "reading": "śubhkāmnā"}] }
+      - { target: "नए साल की शुभकामना।", reading: "naē sāl kī śubhkāmnā.", ipa: "nəeː saːl kiː ʃʊbʱkaːmnaː", bases: [{"word": "नए", "ref": "hi-0896"}, {"word": "साल", "ref": "hi-0318"}, {"word": "की", "base": "की", "reading": "kī"}] }
+  - id: "hi-1318"
+    target: "जुलूस"
+    target_scripts: { perso_arabic: "جلوس" }
+    reading: "julūs"
+    ipa: "dʒʊluːs"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जुलूस सड़क पर निकला।", reading: "julūs saṛak par niklā.", ipa: "dʒʊluːs səɽək pər nɪklaː", bases: [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "निकला", "base": "निकलना", "reading": "niklnā"}] }
+      - { target: "जुलूस में बहुत लोग थे।", reading: "julūs mēm̐ bahut lōg thē.", ipa: "dʒʊluːs mẽː bəɦʊt̪ loːɡ t̪ʰeː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "थे", "ref": "hi-0780"}] }
+  - id: "hi-1319"
+    target: "कथा"
+    target_scripts: { perso_arabic: "کتھا" }
+    reading: "kathā"
+    ipa: "kət̪ʰaː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दादी रोज़ कथा सुनाती हैं।", reading: "dādī rōz kathā sunātī haim̐.", ipa: "d̪aːd̪iː roːz kət̪ʰaː sʊnaːt̪iː ɦɛ̃ː", bases: [{"word": "दादी", "ref": "hi-0385"}, {"word": "रोज़", "ref": "hi-0451"}, {"word": "सुनाती", "base": "सुनाना", "reading": "sunānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "यह कथा सच्ची है।", reading: "yah kathā saccī hai.", ipa: "jəɦ kət̪ʰaː sətʃtʃiː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "सच्ची", "base": "सच्चा", "reading": "saccā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1320"
+    target: "ढोल"
+    target_scripts: { perso_arabic: "ڈھول" }
+    reading: "ḍhōl"
+    ipa: "ɖʱoːl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ढोल बजता है।", reading: "ḍhōl bajtā hai.", ipa: "ɖʱoːl bədʒt̪aː ɦɛː", bases: [{"word": "बजता", "base": "बजना", "reading": "bajnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "ढोल की आवाज़ तेज़ है।", reading: "ḍhōl kī āvāz tēz hai.", ipa: "ɖʱoːl kiː aːʋaːz t̪eːz ɦɛː", bases: [{"word": "की", "base": "की", "reading": "kī"}, {"word": "आवाज़", "base": "आवाज़", "reading": "āvāz"}, {"word": "तेज़", "base": "तेज़", "reading": "tēz"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1321"
+    target: "मेहमान"
+    target_scripts: { perso_arabic: "مہمان" }
+    reading: "mēhmān"
+    ipa: "meːɦmaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "घर में मेहमान हैं।", reading: "ghar mēm̐ mēhmān haim̐.", ipa: "ɡʱər mẽː meːɦmaːn ɦɛ̃ː", bases: [{"word": "घर", "ref": "hi-0192"}, {"word": "में", "ref": "hi-0274"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "मेहमानों को दावत दी।", reading: "mēhmānōm̐ kō dāvat dī.", ipa: "meːɦmaːnõː koː d̪aːʋət̪ d̪iː", bases: [{"word": "मेहमानों", "base": "मेहमान", "reading": "mēhmān"}, {"word": "को", "ref": "hi-0277"}, {"word": "दावत", "ref": "hi-1322"}, {"word": "दी", "ref": "hi-0785"}] }
+  - id: "hi-1322"
+    target: "दावत"
+    target_scripts: { perso_arabic: "دعوت" }
+    reading: "dāvat"
+    ipa: "d̪aːʋət̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज दावत है।", reading: "āj dāvat hai.", ipa: "aːdʒ d̪aːʋət̪ ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "दावत में खाना अच्छा है।", reading: "dāvat mēm̐ khānā acchā hai.", ipa: "d̪aːʋət̪ mẽː kʰaːnaː ətʃtʃʰaː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "खाना", "ref": "hi-0332"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1323"
+    target: "नमाज़"
+    target_scripts: { perso_arabic: "نماز" }
+    reading: "namāz"
+    ipa: "nəmaːz"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मस्जिद में नमाज़ होती है।", reading: "masjid mēm̐ namāz hōtī hai.", ipa: "məsdʒɪd̪ mẽː nəmaːz ɦoːt̪iː ɦɛː", bases: [{"word": "मस्जिद", "ref": "hi-1060"}, {"word": "में", "ref": "hi-0274"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "नमाज़ का समय है।", reading: "namāz kā samay hai.", ipa: "nəmaːz kaː səməj ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "समय", "ref": "hi-0607"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1324"
+    target: "व्रत"
+    target_scripts: { perso_arabic: "ورت" }
+    reading: "vrat"
+    ipa: "ʋrət̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैं व्रत रखती हूँ।", reading: "maim̐ vrat rakhtī hūm̐.", ipa: "mɛ̃ː ʋrət̪ rəkʰt̪iː ɦũː", bases: [{"word": "मैं", "ref": "hi-0745"}, {"word": "रखती", "ref": "hi-0950"}, {"word": "हूँ", "ref": "hi-0780"}] }
+      - { target: "व्रत में लोग सिर्फ़ फल लेते हैं।", reading: "vrat mēm̐ lōg sirf phal lētē haim̐.", ipa: "ʋrət̪ mẽː loːɡ sɪrf pʰəl leːt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "सिर्फ़", "ref": "hi-0832"}, {"word": "फल", "ref": "hi-0052"}, {"word": "लेते", "ref": "hi-0786"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1325"
+    target: "रौनक"
+    target_scripts: { perso_arabic: "رونق" }
+    reading: "raunak"
+    ipa: "rɔːnək"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बाज़ार में रौनक है।", reading: "bāzār mēm̐ raunak hai.", ipa: "baːzaːr mẽː rɔːnək ɦɛː", bases: [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "त्योहार पर रौनक बढ़ती है।", reading: "tyōhār par raunak baṛhtī hai.", ipa: "t̪joːɦaːr pər rɔːnək bəɽʱt̪iː ɦɛː", bases: [{"word": "त्योहार", "ref": "hi-1298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "बढ़ती", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1326"
+    target: "तैयारी"
+    target_scripts: { perso_arabic: "تیاری" }
+    reading: "taiyārī"
+    ipa: "t̪ɛːjaːriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब तैयारी कर रहे हैं।", reading: "sab taiyārī kar rahē haim̐.", ipa: "səb t̪ɛːjaːriː kər rəɦeː ɦɛ̃ː", bases: [{"word": "सब", "ref": "hi-0054"}, {"word": "कर", "ref": "hi-0779"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "तैयारी पूरी है।", reading: "taiyārī pūrī hai.", ipa: "t̪ɛːjaːriː puːriː ɦɛː", bases: [{"word": "पूरी", "ref": "hi-0991"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1327"
+    target: "सजावट"
+    target_scripts: { perso_arabic: "سجاوٹ" }
+    reading: "sajāvaṭ"
+    ipa: "sədʒaːʋəʈ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दीवारों पर सजावट है।", reading: "dīvārōm̐ par sajāvaṭ hai.", ipa: "d̪iːʋaːrõː pər sədʒaːʋəʈ ɦɛː", bases: [{"word": "दीवारों", "base": "दीवार", "reading": "dīvār"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सजावट सुंदर है।", reading: "sajāvaṭ sundar hai.", ipa: "sədʒaːʋəʈ sʊnd̪ər ɦɛː", bases: [{"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1328"
+    target: "खुशी"
+    target_scripts: { perso_arabic: "خوشی" }
+    reading: "khuśī"
+    ipa: "kʰʊʃiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब खुश हैं।", reading: "sab khuś haim̐.", ipa: "səb kʰʊʃ ɦɛ̃ː", bases: [{"word": "सब", "ref": "hi-0054"}, {"word": "खुश", "ref": "hi-0912"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "मेले में खुशी है।", reading: "mēlē mēm̐ khuśī hai.", ipa: "meːleː mẽː kʰʊʃiː ɦɛː", bases: [{"word": "मेले", "ref": "hi-1072"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1329"
+    target: "आरती"
+    target_scripts: { perso_arabic: "آرتی" }
+    reading: "ārtī"
+    ipa: "aːrt̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "शाम को आरती होती है।", reading: "śām kō ārtī hōtī hai.", ipa: "ʃaːm koː aːrt̪iː ɦoːt̪iː ɦɛː", bases: [{"word": "शाम", "ref": "hi-0303"}, {"word": "को", "ref": "hi-0277"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आरती में दीये जलते हैं।", reading: "ārtī mēm̐ dīyē jaltē haim̐.", ipa: "aːrt̪iː mẽː d̪iːjeː dʒəlt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "दीये", "ref": "hi-1308"}, {"word": "जलते", "base": "जलना", "reading": "jalnā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1330"
+    target: "गुरुद्वारा"
+    target_scripts: { perso_arabic: "گرودوارہ" }
+    reading: "gurudvārā"
+    ipa: "ɡʊrʊd̪ʋaːraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गुरुद्वारे में लंगर है।", reading: "gurudvārē mēm̐ laṅgar hai.", ipa: "ɡʊrʊd̪ʋaːreː mẽː ləŋɡər ɦɛː", bases: [{"word": "गुरुद्वारे", "base": "गुरुद्वारा", "reading": "gurudvārā"}, {"word": "में", "ref": "hi-0274"}, {"word": "लंगर", "base": "लंगर", "reading": "laṅgar"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "गुरुद्वारा शांत है।", reading: "gurudvārā śānt hai.", ipa: "ɡʊrʊd̪ʋaːraː ʃaːnt̪ ɦɛː", bases: [{"word": "शांत", "base": "शांत", "reading": "śānt"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1331"
+    target: "भोग"
+    target_scripts: { perso_arabic: "بھوگ" }
+    reading: "bhōg"
+    ipa: "bʱoːɡ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "भगवान को भोग लगता है।", reading: "bhagvān kō bhōg lagtā hai.", ipa: "bʱəɡʋaːn koː bʱoːɡ ləɡt̪aː ɦɛː", bases: [{"word": "भगवान", "base": "भगवान", "reading": "bhagvān"}, {"word": "को", "ref": "hi-0277"}, {"word": "लगता", "base": "लगना", "reading": "lagnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "भोग के बाद प्रसाद बँटता है।", reading: "bhōg kē bād prasād bam̐ṭatā hai.", ipa: "bʱoːɡ keː baːd̪ prəsaːd̪ bə̃ʈət̪aː ɦɛː", bases: [{"word": "के", "base": "के", "reading": "kē"}, {"word": "बाद", "base": "बाद", "reading": "bād"}, {"word": "प्रसाद", "ref": "hi-1313"}, {"word": "बँटता", "base": "बँटना", "reading": "bam̐ṭanā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1332"
+    target: "रोज़ा"
+    target_scripts: { perso_arabic: "روزہ" }
+    reading: "rōzā"
+    ipa: "roːzaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "रमज़ान में रोज़ा रखते हैं।", reading: "ramzān mēm̐ rōzā rakhtē haim̐.", ipa: "rəmzaːn mẽː roːzaː rəkʰt̪eː ɦɛ̃ː", bases: [{"word": "रमज़ान", "base": "रमज़ान", "reading": "ramzān"}, {"word": "में", "ref": "hi-0274"}, {"word": "रखते", "ref": "hi-0950"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "रोज़ा सुबह से शाम तक होता है।", reading: "rōzā subah sē śām tak hōtā hai.", ipa: "roːzaː sʊbəɦ seː ʃaːm t̪ək ɦoːt̪aː ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "से", "ref": "hi-0276"}, {"word": "शाम", "ref": "hi-0303"}, {"word": "तक", "ref": "hi-0278"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1333"
+    target: "मुबारक"
+    target_scripts: { perso_arabic: "مبارک" }
+    reading: "mubārak"
+    ipa: "mʊbaːrək"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ईद मुबारक!", reading: "īd mubārak!", ipa: "iːd̪ mʊbaːrək", bases: [{"word": "ईद", "ref": "hi-1302"}] }
+      - { target: "नया साल मुबारक!", reading: "nayā sāl mubārak!", ipa: "nəjaː saːl mʊbaːrək", bases: [{"word": "नया", "ref": "hi-0896"}, {"word": "साल", "ref": "hi-0318"}] }
+  - id: "hi-1334"
+    target: "मनाना"
+    target_scripts: { perso_arabic: "منانا" }
+    reading: "manānā"
+    ipa: "mənaːnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "लोग दिवाली मनाते हैं।", reading: "lōg divālī manātē haim̐.", ipa: "loːɡ d̪ɪʋaːliː mənaːt̪eː ɦɛ̃ː", bases: [{"word": "लोग", "ref": "hi-0761"}, {"word": "दिवाली", "ref": "hi-1300"}, {"word": "मनाते", "base": "मनाना", "reading": "manānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "हम होली धूम से मनाते हैं।", reading: "ham hōlī dhūm sē manātē haim̐.", ipa: "ɦəm ɦoːliː d̪ʱuːm seː mənaːt̪eː ɦɛ̃ː", bases: [{"word": "हम", "ref": "hi-0053"}, {"word": "होली", "ref": "hi-1301"}, {"word": "धूम", "base": "धूम", "reading": "dhūm"}, {"word": "से", "ref": "hi-0276"}, {"word": "मनाते", "base": "मनाना", "reading": "manānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1335"
+    target: "जलाना"
+    target_scripts: { perso_arabic: "جلانا" }
+    reading: "jalānā"
+    ipa: "dʒəlaːnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दीये जलाओ।", reading: "dīyē jalāō.", ipa: "d̪iːjeː dʒəlaːoː", bases: [{"word": "दीये", "ref": "hi-1308"}, {"word": "जलाओ", "base": "जलाना", "reading": "jalānā"}] }
+      - { target: "लोग मोमबत्ती जलाते हैं।", reading: "lōg mōmbattī jalātē haim̐.", ipa: "loːɡ moːmbət̪t̪iː dʒəlaːt̪eː ɦɛ̃ː", bases: [{"word": "लोग", "ref": "hi-0761"}, {"word": "मोमबत्ती", "base": "मोमबत्ती", "reading": "mōmbattī"}, {"word": "जलाते", "base": "जलाना", "reading": "jalānā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1336"
+    target: "बाँटना"
+    target_scripts: { perso_arabic: "بانٹنا" }
+    reading: "bām̐ṭanā"
+    ipa: "bãːʈənaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मिठाई बाँटो।", reading: "miṭhāī bām̐ṭō.", ipa: "mɪʈʰaːiː bãːʈoː", bases: [{"word": "मिठाई", "ref": "hi-0998"}, {"word": "बाँटो", "base": "बाँटना", "reading": "bām̐ṭanā"}] }
+      - { target: "लोग प्रसाद बाँटते हैं।", reading: "lōg prasād bām̐ṭatē haim̐.", ipa: "loːɡ prəsaːd̪ bãːʈət̪eː ɦɛ̃ː", bases: [{"word": "लोग", "ref": "hi-0761"}, {"word": "प्रसाद", "ref": "hi-1313"}, {"word": "बाँटते", "base": "बाँटना", "reading": "bām̐ṭanā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1337"
+    target: "सजाना"
+    target_scripts: { perso_arabic: "سجانا" }
+    reading: "sajānā"
+    ipa: "sədʒaːnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "घर सजाओ।", reading: "ghar sajāō.", ipa: "ɡʱər sədʒaːoː", bases: [{"word": "घर", "ref": "hi-0192"}, {"word": "सजाओ", "base": "सजाना", "reading": "sajānā"}] }
+      - { target: "बच्चे कमरा सजाते हैं।", reading: "baccē kamrā sajātē haim̐.", ipa: "bətʃtʃeː kəmraː sədʒaːt̪eː ɦɛ̃ː", bases: [{"word": "बच्चे", "ref": "hi-0383"}, {"word": "कमरा", "ref": "hi-0421"}, {"word": "सजाते", "base": "सजाना", "reading": "sajānā"}, {"word": "हैं", "ref": "hi-0113"}] }

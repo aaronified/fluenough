@@ -5620,6 +5620,40 @@
   "@settingsReminderTime": {
     "description": "Screen-reader label of the reminder time."
   },
+  "reminderNotificationTitle": "Time to practise",
+  "@reminderNotificationTitle": {
+    "description": "Title of the daily reminder notification. It never names a word or a language: a notification shows on the lock screen."
+  },
+  "reminderNotificationBody": "{count, plural, =1{1 card is due for review} other{{count} cards are due for review}}",
+  "@reminderNotificationBody": {
+    "description": "Text of the daily reminder notification: how many cards are due by the end of that day. Only the number, no card content, as it shows on the lock screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reminderChannelName": "Daily reminder",
+  "@reminderChannelName": {
+    "description": "Name of the daily reminder's notification channel, as the phone's own notification settings list it."
+  },
+  "reminderChannelDescription": "One reminder a day, on days with cards due.",
+  "@reminderChannelDescription": {
+    "description": "What the daily reminder's notification channel is for, under its name in the phone's own notification settings."
+  },
+  "reminderRefusedTitle": "Notifications are off",
+  "@reminderRefusedTitle": {
+    "description": "Title of the dialog shown when the learner switches the daily reminder on but the phone does not allow the app to show notifications."
+  },
+  "reminderRefusedBody": "The daily reminder needs notifications. Allow them for this app in your phone's settings, then switch the reminder on again. It stays off until then.",
+  "@reminderRefusedBody": {
+    "description": "Body of the dialog under reminderRefusedTitle: says how to allow notifications and that the switch stays off."
+  },
+  "reminderOpenSettings": "Open settings",
+  "@reminderOpenSettings": {
+    "description": "Button in the notifications-are-off dialog: opens the phone's notification settings for this app."
+  },
   "settingsPinLock": "PIN lock",
   "@settingsPinLock": {
     "description": "Switch: ask for a PIN."
@@ -7262,6 +7296,30 @@
   "@reviewGuideWhatYou": {
     "description": "Second paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
+  "reviewGuideRulesTitle": "The rules",
+  "@reviewGuideRulesTitle": {
+    "description": "Title of the step of How reviewing works that gives the reviewer's rules (docs/REVIEWING.md, The rules, says the same)."
+  },
+  "reviewGuideRulesBilingual": "Be bilingual. Review a course only if you know both its languages, the one taught and the one it is taught from, and read both scripts.",
+  "@reviewGuideRulesBilingual": {
+    "description": "First rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 1)."
+  },
+  "reviewGuideRulesMeaning": "The meaning never changes. You may say a card better: a more common word, another register, a correct spelling. You may not make it say something else: “Good morning” never becomes “goodbye”.",
+  "@reviewGuideRulesMeaning": {
+    "description": "Second rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 2)."
+  },
+  "reviewGuideRulesLogic": "Review the content and the logic. That is each card’s word, reading, IPA, meaning, notes, example and base words, and also whether a card belongs in its unit, whether the units come in a sensible order, and whether a grammar note is right.",
+  "@reviewGuideRulesLogic": {
+    "description": "Third rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 3)."
+  },
+  "reviewGuideRulesPlace": "Suggest where a card belongs. Under Place in Suggest a change, move it to another unit or theme the course’s B1 plan already has.",
+  "@reviewGuideRulesPlace": {
+    "description": "Fourth rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 4)."
+  },
+  "reviewGuideRulesTheme": "New themes go by pull request. A theme, or a unit the plan does not have, is added to the deck on GitHub, not in the app.",
+  "@reviewGuideRulesTheme": {
+    "description": "Fifth rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 5)."
+  },
   "reviewGuideCodeTitle": "Your code and languages",
   "@reviewGuideCodeTitle": {
     "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
@@ -7961,6 +8019,58 @@
   "reviewPartAlt": "Also heard",
   "@reviewPartAlt": {
     "description": "The name of a part in Suggest a change: the card's accepted alternative answers, other ways the word is said that are also right."
+  },
+  "reviewPartPlace": "Place",
+  "@reviewPartPlace": {
+    "description": "The name of a part in Suggest a change: where the card belongs, its unit and theme in the course's B1 plan."
+  },
+  "reviewPlaceUnit": "Unit {n} · {name}",
+  "@reviewPlaceUnit": {
+    "description": "Where a card is, or is moved to: the unit's number in the course's B1 plan, then its name.",
+    "placeholders": {
+      "n": {
+        "type": "int",
+        "example": "7"
+      },
+      "name": {
+        "type": "String",
+        "example": "About me"
+      }
+    }
+  },
+  "reviewPlaceMoveTo": "Move to",
+  "@reviewPlaceMoveTo": {
+    "description": "Label of the unit a reviewer chose for a card, in the Place box of Suggest a change."
+  },
+  "reviewMoveTitle": "Move this card",
+  "@reviewMoveTitle": {
+    "description": "Title of the sheet that lists the units a card can be moved to."
+  },
+  "reviewMoveRule": "Only the units and themes of {language}’s B1 plan. A new theme or unit needs a pull request on GitHub.",
+  "@reviewMoveRule": {
+    "description": "At the top of the sheet that lists the units a card can be moved to (docs/plans/reviewing-scope.md, rules 4 and 5).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "reviewMoveContribute": "How to contribute",
+  "@reviewMoveContribute": {
+    "description": "Button under the rule in the Move this card sheet, which opens the page on GitHub that says how to contribute a deck change."
+  },
+  "reviewMoveContributeCopied": "Link copied",
+  "@reviewMoveContributeCopied": {
+    "description": "Said in a toast when How to contribute, in the Move this card sheet, found nothing on the phone to open the link and copied it instead."
+  },
+  "reviewMovePlanned": "Planned: no deck yet",
+  "@reviewMovePlanned": {
+    "description": "Under a unit in the Move this card sheet that the course's plan has but no deck is written for, so a card cannot be moved there yet."
+  },
+  "reviewMeaningRule": "The meaning never changes. Say it more naturally, never say something else: “Good morning!” never becomes “Goodbye!”. If the card is in the wrong place, suggest a move under Place.",
+  "@reviewMeaningRule": {
+    "description": "In a box above the field when a reviewer edits a card's meaning in Suggest a change (docs/plans/reviewing-scope.md, rule 2)."
   },
   "reviewBaseRemove": "Remove the base {base}",
   "@reviewBaseRemove": {

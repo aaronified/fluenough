@@ -45,6 +45,12 @@ abstract final class AppLinks {
   static const String latestRelease =
       'https://github.com/aaronified/fluenough/releases/latest';
 
+  /// How to contribute a change to a deck on GitHub (the wiki's
+  /// Contributing page): where a new theme or unit goes, by pull request
+  /// (#477).
+  static const String contribute =
+      'https://github.com/aaronified/fluenough/wiki/Contributing';
+
   /// Every release's page, where "What's new" sends the learner for the
   /// releases it does not list.
   static const String releases =

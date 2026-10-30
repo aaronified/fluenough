@@ -18,8 +18,10 @@ import 'app/junk_cleanup.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
+import 'app/plugin_reminder_scheduler.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/system_settings.dart';
 import 'core/decks/deck_fetch.dart';
@@ -56,6 +58,14 @@ Future<void> main() async {
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
   final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  // The daily reminder's notifications (#90). Without them the reminder's
+  // switch stays off.
+  ReminderScheduler reminderScheduler = const NullReminderScheduler();
+  try {
+    reminderScheduler = await PluginReminderScheduler.start();
+  } catch (e) {
+    log.warning('Reminder error: start failed: $e');
+  }
   runApp(
     FluenoughApp(
       state: AppState(
@@ -92,6 +102,7 @@ Future<void> main() async {
         soundCheck: SystemSoundCheck(),
         networkProbe: SystemNetworkProbe(),
         systemSettings: const ChannelSystemSettings(),
+        reminderScheduler: reminderScheduler,
         reports: MailReportSender(
           address: AppLinks.feedbackEmail,
           links: const LauncherLinks(),

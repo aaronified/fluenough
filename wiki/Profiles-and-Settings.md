@@ -15,11 +15,21 @@ Settings is a list of pages.
 | Look and language | Theme, pure black, colour, contrast, card text size and the app language. |
 | Reviewing | Reviewer mode for speakers who check decks. See the [Reviewing guide](Reviewing-Guide). |
 | Your decks | Upload a deck file, get a template, send a deck to the project, remove a deck you added. |
-| Reminders | One reminder a day, only on days with cards due. Shown as "Feature incoming". |
+| Reminders | One reminder a day, only on days with cards due. See [The daily reminder](#the-daily-reminder). |
 | Your data | Backup and restore, the review log. See [Backup and restore](Backup-and-Restore). |
 | App log | What the app did, kept 7 days. See [Reporting a problem](Reporting-a-Problem). |
 | Updates | Check for a new app version, check automatically (off until you switch it on), and release notes. |
 | Profiles and privacy | See above. The profile card at the top of Settings opens it. |
+
+## The daily reminder
+
+Settings > Reminders has one switch, off until you turn it on, and a time (7:30 PM at first). When it is on, the phone shows one notification a day at that time, on days that have cards due. It says only how many ("12 cards are due for review"): no word, no language, as it shows on the lock screen. It counts every language you learn. Tapping it opens Today.
+
+- **Permission.** Android 13 and later ask to allow notifications when you switch the reminder on, never when the app starts. If you refuse, the switch stays off and a message says how to allow notifications in the phone's settings, with a button that opens them. If you take the permission back later, the reminder is switched off the next time you open the app.
+- **What counts as due.** The cards due by the end of each of the next seven days, in every language you learn and every skill that is on, not set aside as leeches. A day with nothing due gets no reminder. A time that has passed today is skipped.
+- **Inexact.** The reminder is scheduled inexactly, so it may arrive a little after the time, and the app needs no exact-alarm permission. It never fires while the app is open: today's reminder waits while you are in the app, and comes back when you leave it.
+- **When it is planned again.** When you switch it on, off or change the time, when the app opens and when it is left, so it follows what you answered. After a reboot the phone puts back what was scheduled. If you change time zone while the app is closed, the reminder keeps its old moment until you next open the app.
+- **Where it works.** On Android. In the web version the switch is shown and cannot be changed.
 
 ## Look and language
 

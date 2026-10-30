@@ -127,6 +127,7 @@ enum Feature {
     Feature.logs,
     Feature.hoursLeft,
     Feature.deckUpdates,
+    Feature.reminder,
   };
 }
 
