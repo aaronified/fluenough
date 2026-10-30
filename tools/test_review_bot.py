@@ -210,9 +210,11 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.edits, 1)
 
     def _fields_the_bot_does_not_write_are_left_for_the_owner(self) -> None:
-        # #508: an item of a list field, a flag and a teach-card warning have
-        # no field the bot writes yet, so none becomes a proposal, and the
-        # items checked "Looks right" change nothing.
+        # #508: an item of a list field and a flag have no field the bot
+        # writes, so none becomes a proposal, and the items checked "Looks
+        # right" change nothing. (A warning is one of the four scalars the
+        # bot writes now, so it is a proposal, not left; see
+        # tools/test_scalar_proposals.py.)
         files = [review_file([{
             "card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
             "items_right": ["synonyms:b"],
@@ -220,12 +222,11 @@ class ReadingReviews(unittest.TestCase):
                 {"part": "synonyms", "word": "a", "action": "edit",
                  "now": "x", "text": "y"},
                 {"part": "antonyms", "now": "", "text": "", "flag": True},
-                {"part": "warning", "now": "", "text": "none"},
                 {"part": "meaning", "now": "milk", "text": "", "flag": True},
             ]}])]
         review = rb.read_review(files, ALICE)
         self.assertEqual(review.suggestions, [])
-        self.assertEqual(review.left, 4)
+        self.assertEqual(review.left, 3)
         self.assertEqual(review.checks, [])
 
     def _a_card_with_suggestions_on_two_parts_makes_two(self) -> None:
