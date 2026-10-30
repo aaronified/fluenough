@@ -108,17 +108,41 @@ abstract final class DailyPlanner {
   /// to one teaching.
   static const double minNewShare = 1 / 6;
 
-  /// The next round (owner, 2026-10-30).
+  /// What the whole of [left] holds (owner, 2026-10-30), from counts alone:
+  /// Today shows it, and the session's rounds are cut from it, so the two
+  /// can never disagree (#886).
   ///
   /// - While reviews are [due], the new words' share of the time left is
   ///   what the due reviews leave, never below [minNewShare] (none while
-  ///   [catchingUp]); a round holds the reviews and new words in that ratio.
-  /// - With nothing due, the round teaches as many new words as the time
-  ///   holds, up to what [newAvailable] allows and [newCap] less
-  ///   [taughtSoFar], and fills the rest of the time with reviews of the
-  ///   cards [closest] to being due.
+  ///   [catchingUp]).
+  /// - With nothing due, as many new words are taught as the time holds, up
+  ///   to what [newAvailable] allows and [newCap] less [taughtSoFar], and
+  ///   the rest of the time is filled with reviews of the cards [closest]
+  ///   to being due (in [DailyRound.fillers]).
   ///
   /// A new word costs [secondsPerTeach] and [teachPasses] reviews.
+  static DailyRound whole({
+    required Duration left,
+    required int due,
+    required int newAvailable,
+    required int closest,
+    required double secondsPerReview,
+    required double secondsPerTeach,
+    int taughtSoFar = 0,
+    bool catchingUp = false,
+  }) => _outline(
+    left: left,
+    due: due,
+    newAvailable: newAvailable,
+    closest: closest,
+    secondsPerReview: secondsPerReview,
+    secondsPerTeach: secondsPerTeach,
+    taughtSoFar: taughtSoFar,
+    catchingUp: catchingUp,
+  ).total;
+
+  /// The next round (owner, 2026-10-30): a share of [whole], so that the
+  /// next is planned on what is left. See [whole] for the arguments.
   static DailyRound next({
     required Duration left,
     required int due,
@@ -129,8 +153,37 @@ abstract final class DailyPlanner {
     int taughtSoFar = 0,
     bool catchingUp = false,
   }) {
+    final outline = _outline(
+      left: left,
+      due: due,
+      newAvailable: newAvailable,
+      closest: closest,
+      secondsPerReview: secondsPerReview,
+      secondsPerTeach: secondsPerTeach,
+      taughtSoFar: taughtSoFar,
+      catchingUp: catchingUp,
+    );
+    final total = outline.total;
+    if (outline.rounds <= 1) return total;
+    return DailyRound(
+      reviews: (total.reviews / outline.rounds).ceil(),
+      newWords: (total.newWords / outline.rounds).ceil(),
+      fillers: 0,
+    );
+  }
+
+  static ({DailyRound total, int rounds}) _outline({
+    required Duration left,
+    required int due,
+    required int newAvailable,
+    required int closest,
+    required double secondsPerReview,
+    required double secondsPerTeach,
+    required int taughtSoFar,
+    required bool catchingUp,
+  }) {
     final seconds = left.inMilliseconds / 1000;
-    if (seconds <= 0) return DailyRound.none;
+    if (seconds <= 0) return (total: DailyRound.none, rounds: 1);
     final review = secondsPerReview <= 0 ? 1.0 : secondsPerReview;
     final cost = secondsPerTeach + teachPasses * review;
     final room = catchingUp
@@ -144,7 +197,10 @@ abstract final class DailyPlanner {
       final spare = seconds - teach * cost;
       var fill = math.min(closest, math.max(0, (spare / review).floor()));
       if (teach == 0) fill = math.min(fill, reviewRun);
-      return DailyRound(reviews: 0, newWords: teach, fillers: fill);
+      return (
+        total: DailyRound(reviews: 0, newWords: teach, fillers: fill),
+        rounds: 1,
+      );
     }
 
     final dueTime = due * review;
@@ -161,10 +217,13 @@ abstract final class DailyPlanner {
     final rounds = teachTotal > 0
         ? math.max(1, math.min(reviewTotal, teachTotal))
         : (reviewTotal / reviewRun).ceil();
-    return DailyRound(
-      reviews: (reviewTotal / rounds).ceil(),
-      newWords: (teachTotal / rounds).ceil(),
-      fillers: 0,
+    return (
+      total: DailyRound(
+        reviews: reviewTotal,
+        newWords: teachTotal,
+        fillers: 0,
+      ),
+      rounds: rounds,
     );
   }
 

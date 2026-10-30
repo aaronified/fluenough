@@ -36,6 +36,73 @@ void main() {
     });
   });
 
+  group('the whole of the time left', () {
+    test('is the first round when nothing is due', () {
+      for (final minutes in <int>[1, 5, 15, 40]) {
+        for (final closest in <int>[0, 3, 200]) {
+          final args = (
+            left: Duration(minutes: minutes),
+            due: 0,
+            newAvailable: 12,
+            closest: closest,
+          );
+          final whole = DailyPlanner.whole(
+            left: args.left,
+            due: args.due,
+            newAvailable: args.newAvailable,
+            closest: args.closest,
+            secondsPerReview: 17.5,
+            secondsPerTeach: 20,
+          );
+          final first = DailyPlanner.next(
+            left: args.left,
+            due: args.due,
+            newAvailable: args.newAvailable,
+            closest: args.closest,
+            secondsPerReview: 17.5,
+            secondsPerTeach: 20,
+          );
+          expect(first.toString(), whole.toString());
+        }
+      }
+    });
+
+    test('holds the reviews a session\'s rounds add up to', () {
+      final whole = DailyPlanner.whole(
+        left: const Duration(minutes: 15),
+        due: 40,
+        newAvailable: 15,
+        closest: 0,
+        secondsPerReview: 17.5,
+        secondsPerTeach: 20,
+      );
+      final first = DailyPlanner.next(
+        left: const Duration(minutes: 15),
+        due: 40,
+        newAvailable: 15,
+        closest: 0,
+        secondsPerReview: 17.5,
+        secondsPerTeach: 20,
+      );
+      expect(first.reviews, lessThanOrEqualTo(whole.reviews));
+      expect(first.newWords, lessThanOrEqualTo(whole.newWords));
+      expect(whole.isEmpty, isFalse);
+    });
+
+    test('still fills the time with reviews when nothing is untaught', () {
+      final whole = DailyPlanner.whole(
+        left: const Duration(minutes: 5),
+        due: 0,
+        newAvailable: 0,
+        closest: 30,
+        secondsPerReview: 17.5,
+        secondsPerTeach: 20,
+      );
+      expect(whole.newWords, 0);
+      expect(whole.fillers, greaterThan(0));
+    });
+  });
+
   group('the next round', () {
     DailyRound next({
       int minutes = 15,

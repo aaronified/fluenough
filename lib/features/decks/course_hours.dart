@@ -20,7 +20,8 @@ int courseHoursComputed = 0;
 /// change ([AppState.derived]).
 ///
 /// Spent counts every review of the language, each capped at a minute
-/// ([StudyHours.capped]), and the time on its teach cards (#886). Left counts only the units whose decks exist,
+/// ([StudyHours.capped]), and the time on its teach cards (#886). Left
+/// counts only the units whose decks exist,
 /// not the units planned to B1 (owner, 2026-10-10): each pair of a card in
 /// them and a mode it can be drilled in now (`AppState.drillableModes`, so
 /// skills switched off, those the phone cannot do and pairs set aside are

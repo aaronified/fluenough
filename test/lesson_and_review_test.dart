@@ -4681,14 +4681,33 @@ cards:
           }
         }
 
-        // A 5 minute day buys 17 cards: the 8 reviews and the new words fill
-        // them, and a day over by a few reviews keeps its 3 new words.
+        // A 5 minute day holds the planner's own split of 5 minutes: fewer
+        // new words than a 15 minute day, and a day over by a few reviews
+        // keeps some.
         state.settings.setDailyMinutes('hi', 5);
         final five = state.dailyPlanFor(hindi);
-        expect(five.split.reviews + five.split.newWords, 17);
-        expect(five.split.newWords, greaterThanOrEqualTo(3));
+        expect(five.split.reviews, lessThanOrEqualTo(8));
+        expect(five.split.newWords, greaterThanOrEqualTo(1));
+        expect(five.split.newWords, lessThanOrEqualTo(plan.split.newWords));
       },
     );
+
+    test('with nothing due, Today\'s numbers are the session\'s first round '
+        '(#886, #885)', () async {
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = state.dailyPlanFor(spanish);
+      expect(plan.due, 0);
+      expect(plan.nothingLeft, isFalse);
+      final run = state.startDaily('es')!;
+      final items = state.nextDailyRound(run);
+      // The words Today says are taught, and no review is promised that
+      // the session does not hold.
+      expect(run.taught, plan.split.newWords);
+      expect(plan.split.reviews, 0);
+      expect(items.where((i) => i.ask == Ask.teach), isNotEmpty);
+    });
 
     testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '
         'while a long press takes five away', (tester) async {

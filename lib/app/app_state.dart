@@ -2570,8 +2570,76 @@ class AppState extends ChangeNotifier {
   double secondsPerCardIn(String? language) =>
       _timesIn(language, now()).secondsPerCard;
 
+  /// The time spent today on [language]: answers and teach cards.
+  Duration dailySpent(String language) {
+    final at = now();
+    return _timesIn(language, at).spent +
+        settings.teachTimeOn(at, language: language);
+  }
+
+  /// What the daily planner is given for [language], and plans: the same
+  /// for Today ([dailyPlanFor]) and for the session ([nextDailyRound]), so
+  /// that Today's numbers are the session's (#886, #885).
+  DailyRound _planDaily(
+    String language, {
+    required Duration left,
+    required int due,
+    required int closest,
+    required int fresh,
+    required DateTime at,
+    int taught = 0,
+    bool whole = false,
+  }) {
+    final times = _timesIn(language, at);
+    final teach = settings.teachTimeTotal(language: language);
+    final dayCards = DailyBudget.cardsFor(
+      settings.dailyMinutesFor(language),
+      secondsPerCard: times.secondsPerCard,
+    );
+    final plan = whole ? DailyPlanner.whole : DailyPlanner.next;
+    return plan(
+      left: left,
+      due: due,
+      newAvailable: fresh,
+      closest: closest,
+      secondsPerReview: times.secondsPerCard,
+      secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
+      taughtSoFar: taught,
+      catchingUp: due > DailyBudget.backlogDays * dayCards,
+    );
+  }
+
+  /// The cards a daily round draws on in [language], none of them in
+  /// [asked]: those due, the most forgotten first, and those not due, the
+  /// closest to due first.
+  ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
+    String language,
+    DateTime at,
+    Set<String> asked,
+  ) {
+    final due = <SessionItem>[
+      for (final item in DailyBudget.mostForgottenFirst(
+        buildSession(DrillRequest.today(language: language)).items,
+        at,
+      ))
+        if (!asked.contains(item.card.id)) item,
+    ];
+    final closest = <SessionItem>[
+      for (final item in buildSession(
+        DrillRequest(revise: true, language: language),
+      ).items)
+        if (item.state != null &&
+            !item.state!.isDue(at) &&
+            !asked.contains(item.card.id))
+          item,
+    ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
+    return (due: due, closest: closest);
+  }
+
   /// [language]'s day: its minutes, what is spent, what waits, and what
-  /// the rest of the budget buys.
+  /// the rest of the budget buys. What it buys is the session's own plan
+  /// ([DailyPlanner.whole]) for the time left, so that Today and the
+  /// session agree (#886, #885).
   DailyPlan dailyPlanFor(LanguageInfo language) {
     final code = language.code;
     final at = now();
@@ -2581,32 +2649,37 @@ class AppState extends ChangeNotifier {
     final times = _timesIn(code, at);
     // Teach cards are timed like answers (#886), in the settings.
     final spent = times.spent + settings.teachTimeOn(at, language: code);
-    final perCard = times.secondsPerCard;
-    final due = buildSession(DrillRequest.today(language: code)).length;
-    final newAvailable = min(dailyNewCap, untaughtCards(code).length);
+    final pools = _dailyPools(code, at, const <String>{});
+    final fresh = untaughtCards(code).length;
     final left = minutes * 60 - spent.inSeconds;
     // With the budget spent, the split is what "Keep going" would buy.
-    // Time left, however little, still buys a card, so the last seconds of a
-    // day's budget are not a dead end with "Keep going" hidden.
-    final budget = left > 0
-        ? max(1, (left / perCard).floor())
-        : DailyBudget.cardsFor(
-            DailyBudget.stepMinutes,
-            secondsPerCard: perCard,
-          );
+    final round = _planDaily(
+      code,
+      left: left > 0
+          ? Duration(seconds: left)
+          : const Duration(minutes: DailyBudget.stepMinutes),
+      due: pools.due.length,
+      closest: pools.closest.length,
+      fresh: fresh,
+      at: at,
+      whole: true,
+    );
+    final dayCards = DailyBudget.cardsFor(
+      goal,
+      secondsPerCard: times.secondsPerCard,
+    );
     return DailyPlan(
       language: language,
       goalMinutes: goal,
       extraMinutes: extra,
       spent: spent,
-      secondsPerCard: perCard,
-      due: due,
-      newAvailable: newAvailable,
-      split: DailyBudget.split(
-        due: due,
-        budget: budget,
-        dayBudget: DailyBudget.cardsFor(goal, secondsPerCard: perCard),
-        newAvailable: newAvailable,
+      secondsPerCard: times.secondsPerCard,
+      due: pools.due.length,
+      newAvailable: min(dailyNewCap, fresh),
+      split: DailySplit(
+        reviews: round.reviews + round.fillers,
+        newWords: round.newWords,
+        catchingUp: pools.due.length > DailyBudget.backlogDays * dayCards,
       ),
     );
   }
@@ -2644,6 +2717,7 @@ class AppState extends ChangeNotifier {
             : const Duration(minutes: DailyBudget.stepMinutes),
         now: now(),
       ),
+      spentAtStart: plan.spent,
     );
   }
 
@@ -2659,40 +2733,19 @@ class AppState extends ChangeNotifier {
   List<SessionItem> nextDailyRound(DailyRun run) {
     final at = now();
     final language = run.language;
-    final times = _timesIn(language, at);
-    final teach = settings.teachTimeTotal(language: language);
-    final goal = settings.dailyMinutesFor(language);
-    final dayCards = DailyBudget.cardsFor(
-      goal,
-      secondsPerCard: times.secondsPerCard,
-    );
-    final due = <SessionItem>[
-      for (final item in DailyBudget.mostForgottenFirst(
-        buildSession(DrillRequest.today(language: language)).items,
-        at,
-      ))
-        if (!run.asked.contains(item.card.id)) item,
-    ];
-    final closest = <SessionItem>[
-      for (final item in buildSession(
-        DrillRequest(revise: true, language: language),
-      ).items)
-        if (item.state != null &&
-            !item.state!.isDue(at) &&
-            !run.asked.contains(item.card.id))
-          item,
-    ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
+    final pools = _dailyPools(language, at, run.asked);
+    final due = pools.due;
+    final closest = pools.closest;
     var fresh = untaughtCards(language).length;
     for (var attempt = 0; attempt < 2; attempt++) {
-      final round = DailyPlanner.next(
+      final round = _planDaily(
+        language,
         left: run.clock.remainingAt(at),
         due: due.length,
-        newAvailable: fresh,
         closest: closest.length,
-        secondsPerReview: times.secondsPerCard,
-        secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
-        taughtSoFar: run.taught,
-        catchingUp: due.length > DailyBudget.backlogDays * dayCards,
+        fresh: fresh,
+        at: at,
+        taught: run.taught,
       );
       if (round.isEmpty) return const <SessionItem>[];
       final pick = round.reviews > 0

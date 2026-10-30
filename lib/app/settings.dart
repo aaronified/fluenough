@@ -287,8 +287,17 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Records that a teach card of [language] took [time] on [day], capped
   /// as an answer is ([StudyHours.capped]).
-  void addTeachTime(String language, DateTime day, Duration time) {
-    final capped = StudyHours.capped(time);
+  void addTeachTime(String language, DateTime day, Duration time) =>
+      _addTime(language, day, StudyHours.capped(time), 1);
+
+  /// Records [time] of [language]'s clock on [day] that no card took, so
+  /// that the minutes Today counts are the minutes the session's clock ran
+  /// (#886). It is no card: it does not change the time a teach card takes.
+  void addClockTime(String language, DateTime day, Duration time) {
+    if (time > Duration.zero) _addTime(language, day, time, 0);
+  }
+
+  void _addTime(String language, DateTime day, Duration capped, int cards) {
     final key = _dayKey(day);
     final days = _teachTime[language] ?? const <String, List<int>>{};
     final before = days[key] ?? const <int>[0, 0];
@@ -297,7 +306,7 @@ class SettingsNotifier extends ChangeNotifier {
         ..._teachTime,
         language: <String, List<int>>{
           ...days,
-          key: <int>[before[0] + capped.inMilliseconds, before[1] + 1],
+          key: <int>[before[0] + capped.inMilliseconds, before[1] + cards],
         },
       },
     );

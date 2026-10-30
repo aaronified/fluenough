@@ -63,7 +63,8 @@ class DailyPlan {
   /// Some of today's minutes are spent, and some are left.
   bool get inProgress => spent > Duration.zero && !budgetDone;
 
-  /// Nothing waits and nothing can be taught.
+  /// Nothing waits, nothing can be taught, and no review would fill the
+  /// time: the session's own plan is empty ([DailyPlanner.whole]).
   bool get nothingLeft => split.cards == 0;
 
   /// The button reads "Done for today": the budget is spent, or there is
@@ -91,10 +92,17 @@ class DailyPlan {
 /// One day's session while it runs (#886): its clock, and what it has asked
 /// and taught so far, so that each round is planned on what is left.
 class DailyRun {
-  DailyRun({required this.language, required this.clock});
+  DailyRun({
+    required this.language,
+    required this.clock,
+    this.spentAtStart = Duration.zero,
+  });
 
   final String language;
   final DailyCountdown clock;
+
+  /// The time Today counted as spent when the session began.
+  final Duration spentAtStart;
 
   /// The cards asked or taught so far this session: none is asked twice
   /// as a review.

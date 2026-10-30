@@ -144,11 +144,29 @@ class DrillSession extends ChangeNotifier {
   Duration get timeLeft =>
       daily?.clock.remainingAt(_state.now()) ?? Duration.zero;
 
+  (int, DrillPhase)? _screen;
+
   @override
   void notifyListeners() {
-    // Anything the learner does shows a new screen: the clock runs again.
-    daily?.clock.screenShown(_state.now());
+    // A new screen shows the learner is there: the clock runs again. A
+    // notice that shows no new screen (a voice finishing, say) is not the
+    // learner coming back.
+    final screen = (_index, _phase);
+    if (_screen != screen) {
+      _screen = screen;
+      daily?.clock.screenShown(_state.now());
+    }
     super.notifyListeners();
+  }
+
+  /// The clock has run out: Today counts the minutes it ran, though a
+  /// card's time is capped differently, so the day reads done.
+  void _settleClock(DailyRun run) {
+    final target = run.spentAtStart + run.clock.budget;
+    final spent = _state.dailySpent(run.language);
+    if (spent < target) {
+      _state.settings.addClockTime(run.language, _state.now(), target - spent);
+    }
   }
 
   final DateTime startedAt;
@@ -1368,14 +1386,20 @@ class DrillSession extends ChangeNotifier {
     if (run != null) {
       if (run.clock.expiredAt(_state.now())) {
         next = items.length;
-      } else if (next >= items.length) {
-        // The round is done: the next is built on the time left.
-        final more = _state.nextDailyRound(run);
-        final from = items.length;
-        _items.addAll(more);
-        next = from;
-        while (next < items.length && !_drillable(items[next])) {
-          next++;
+        _settleClock(run);
+      } else {
+        // The round is done: the next is built on the time left. A round of
+        // cards none can be drilled is passed over for the next, a few
+        // times, so the session does not end with time left.
+        for (var tries = 0; next >= items.length && tries < 5; tries++) {
+          final more = _state.nextDailyRound(run);
+          if (more.isEmpty) break;
+          final from = items.length;
+          _items.addAll(more);
+          next = from;
+          while (next < items.length && !_drillable(items[next])) {
+            next++;
+          }
         }
       }
     }
