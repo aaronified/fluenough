@@ -346,11 +346,14 @@ units:
   - decks: ["bn-help", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
     words: 14
     grammar: ["irregular", "pitfalls"]
-  - planned: { id: "bn-school", theme: "school", words: 50 }
+  - decks: ["bn-school", "*"]
+    words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - decks: ["bn-reading-school"]
+    words: 0
   - planned: { id: "bn-hobbies", theme: "hobbies", words: 50 }
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends: football, music, adda" } }
