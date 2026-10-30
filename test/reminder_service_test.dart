@@ -55,6 +55,7 @@ void main() {
       );
 
       expect(await service.setOn(true), ReminderSetup.on);
+      await service.appPaused(); // the app is open until it is left
 
       expect(scheduler.asked, 1);
       expect(settings.reminder, isTrue);
@@ -140,6 +141,7 @@ void main() {
     due = <int>[1, 1, 7];
     final service = build();
     await service.setOn(true);
+    await service.appPaused(); // today's reminder is out while open
 
     expect(
       <String>[for (final n in scheduler.pending) n.body],
@@ -159,6 +161,12 @@ void main() {
     () async {
       final service = build();
       await service.setOn(true);
+      expect(
+        times().first,
+        DateTime(2026, 11, 1, 19, 30),
+        reason: 'the app starts open, so today is left out',
+      );
+      await service.appPaused();
       expect(times().first, DateTime(2026, 10, 30, 19, 30));
 
       await service.appResumed();
