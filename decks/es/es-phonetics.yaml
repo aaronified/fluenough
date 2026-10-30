@@ -15,13 +15,14 @@ rules:
     pattern: 'n(?=ˈ?f)'
     replace: 'ɱ'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
-  - id: "es-n-dental"
-    pattern: 'n(?=ˈ?[tdθ])'
-    replace: 'n̪'
-    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  # The palatal rule goes before the dental one: n before tʃ also has a t after it.
   - id: "es-n-palatal"
     pattern: 'n(?=ˈ?(?:tʃ|ʝ))'
     replace: 'ɲ'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  - id: "es-n-dental"
+    pattern: 'n(?=ˈ?[tdθ])'
+    replace: 'n̪'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
   - id: "es-n-velar"
     pattern: 'n(?=ˈ?[kɡx])'

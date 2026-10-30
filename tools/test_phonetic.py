@@ -267,6 +267,10 @@ class TheRulesFiles(unittest.TestCase):
         self.assertEqual(self.derive("es", "ˈkomɾo"), "[ˈkomɾo]")
         self.assertEqual(self.derive("es", "ˈandaɾ"), "[ˈan̪d̪aɾ]")
 
+    def test_spanish_n_before_tesh_is_palatal_and_before_t_is_dental(self) -> None:
+        self.assertEqual(self.derive("es", "ˈmuntʃo"), "[ˈmuɲtʃo]")
+        self.assertEqual(self.derive("es", "ˈunto"), "[ˈun̪t̪o]")
+
     def test_every_shipped_rule_has_a_source_and_a_valid_file(self) -> None:
         for lang in ("bn", "hi", "es"):
             with self.subTest(lang):
