@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
+import '../core/languages/language_skills.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
@@ -142,6 +143,41 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String>? _reviewLanguages;
   Set<String>? _reviewPairs;
   Map<String, bool> _scriptsRead = const <String, bool>{};
+  Map<String, Map<String, String>> _languageSkills =
+      const <String, Map<String, String>>{};
+  bool _reviewKnown = false;
+
+  /// Settings' Review switch (#907), off by default: whether the Languages
+  /// page asks a learner who knows a skill to fit their level before they
+  /// can review it ("Fit your level to be able to review").
+  bool get reviewKnown => _reviewKnown;
+  set reviewKnown(bool value) =>
+      _set(_reviewKnown, value, (v) => _reviewKnown = v);
+
+  /// What the learner said about each skill of [language] on the Languages
+  /// page (#907): skill id to `know` or `learn`, Leave not held. Null until
+  /// they edit the language there; its skills are then read from the older
+  /// lists (`skillsFromLegacy`). Empty is a language sent back to the pool,
+  /// kept until its decks are removed at the next app open.
+  Map<String, String>? languageSkillsOf(String language) =>
+      _languageSkills[language];
+
+  /// The languages with skills held, by code.
+  Iterable<String> get languagesWithSkills => _languageSkills.keys;
+
+  /// Keeps [skills] for [language], or with null forgets them (the language
+  /// is back to the pool, or never edited).
+  void setLanguageSkills(String language, Map<String, String>? skills) {
+    final next = Map<String, Map<String, String>>.of(_languageSkills);
+    if (skills == null) {
+      if (next.remove(language) == null) return;
+    } else {
+      if (mapEquals(next[language], skills)) return;
+      next[language] = Map<String, String>.unmodifiable(skills);
+    }
+    _languageSkills = Map<String, Map<String, String>>.unmodifiable(next);
+    notifyListeners();
+  }
 
   /// Settings' "Review decks" (docs/plans/deck-browser.md): whether this
   /// profile checks decks and sends its reviews by mail. Turning it off
@@ -1042,6 +1078,8 @@ class SettingsNotifier extends ChangeNotifier {
       final keys => (keys.toList()..sort()).join(','),
     },
     'scripts_read': jsonEncode(_scriptsRead),
+    'language_skills': jsonEncode(_languageSkills),
+    'review_known': '$_reviewKnown',
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -1371,6 +1409,20 @@ class SettingsNotifier extends ChangeNotifier {
           if (readKeyPattern.hasMatch(key) && value is bool) key: value,
       };
     }
+    if (pick('language_skills', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        final skills = LanguageSkills.fromStored(<String, Object?>{
+          for (final e in value.entries)
+            if (e.key is String) e.key as String: e.value,
+        }).toStored();
+        // An entry that reads as nothing but held keys is unreadable: it is
+        // not restored as Leave.
+        if (skills.isEmpty && value.isNotEmpty) continue;
+        setLanguageSkills(key, skills);
+      }
+    }
+    if (pick('review_known', flag) case final v?) reviewKnown = v;
     _foldUrduIntoHindustani();
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
