@@ -218,11 +218,7 @@ abstract final class DailyPlanner {
         ? math.max(1, math.min(reviewTotal, teachTotal))
         : (reviewTotal / reviewRun).ceil();
     return (
-      total: DailyRound(
-        reviews: reviewTotal,
-        newWords: teachTotal,
-        fillers: 0,
-      ),
+      total: DailyRound(reviews: reviewTotal, newWords: teachTotal, fillers: 0),
       rounds: rounds,
     );
   }

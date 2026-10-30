@@ -2363,19 +2363,26 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.byType(DailyCard), findsOneWidget);
       expect(find.text(l10n.todayDailyStart), findsOneWidget);
-      // The split: nothing to review yet, a lesson's nine words new.
+      // The split: nothing to review yet, and the new words are what the
+      // session's own plan teaches in the time (#886), not a lesson's nine.
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final words = state.dailyPlanFor(spanish).split.newWords;
+      expect(words, greaterThan(0));
       expect(find.text(l10n.todayDailyReviews(0)), findsOneWidget);
-      expect(find.text(l10n.todayDailyNew(9)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNew(words)), findsOneWidget);
       expect(find.text(l10n.todayDailyProgress(0, 15)), findsOneWidget);
-      // Nine words, plus the members of a set one of them belongs to, which
-      // come whole.
-      final taught = lessonCardCount(
-        state.lessonFor(DrillRequest.lesson(language: 'es')),
+      // Those words, plus the members of a set one of them belongs to,
+      // which come whole.
+      final lesson = state.lessonFor(
+        DrillRequest.lesson(language: 'es'),
+        words: words,
+        beyondRoom: true,
       );
-      expect(taught, greaterThanOrEqualTo(9));
+      final taught = lessonCardCount(lesson);
+      expect(taught, greaterThanOrEqualTo(words));
 
       final planned = <SessionItem>[
-        for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
+        for (final item in lesson)
           if (item.ask != Ask.teach && item.ask != Ask.showSet)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
@@ -5041,12 +5048,17 @@ cards:
       // with no reviews badge unless new words are still to come.
       final plans = numbers.daily;
       expect(plans, isNotEmpty);
-      expect(plans.every((p) => p.due == 0 && p.split.reviews == 0), isTrue);
-      final splitting = plans.where((p) => p.showsSplit).length;
-      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(splitting));
+      expect(plans.every((p) => p.due == 0), isTrue);
+      // The time left may be filled with reviews of cards not yet due
+      // (#886), which the split counts: a "0 reviews" badge shows only where
+      // none are planned.
+      final noReviews = plans
+          .where((p) => p.showsSplit && p.split.reviews == 0)
+          .length;
+      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(noReviews));
       expect(
         find.text(l10n.todayDailyDone),
-        findsNWidgets(plans.length - splitting),
+        findsNWidgets(plans.where((p) => !p.showsSplit).length),
       );
       // Today now counts towards the streak.
       expect(find.text(l10n.todayStreak(13)), findsOneWidget);
