@@ -136,7 +136,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#483](https://github.com/aaronified/fluenough/issues/483) Sound: notice when the phone's media volume is 0 and say so
-- [#486](https://github.com/aaronified/fluenough/issues/486) Session result: wrong minutes (31 for a short lesson) and wrong card count
 - [#487](https://github.com/aaronified/fluenough/issues/487) App update: a downloaded APK whose install was cancelled is downloaded again
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
