@@ -1,0 +1,25 @@
+schema: 1
+id: "hi-en-grammar-ordinals"
+kind: "layer"
+core: "hi-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Ordinals: first, second, third"
+license: "CC-BY-SA-4.0"
+description: "The ordinals, first to tenth, and how they agree with their noun. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Ordinals: agreement"
+  slot_name: "agreement"
+  prompt: "{lemma} ({gloss}), {slot}"
+  entries:
+    "ek": "one"
+    "do": "two"
+    "teen": "three"
+    "chaar": "four"
+    "paanch": "five"
+    "chhah": "six"
+    "saat": "seven"
+    "aath": "eight"
+    "nau": "nine"
+    "das": "ten"
+  notes: "The ordinal agrees with its noun like an adjective: पहला दिन (pahlā din, the first day, masculine), पहली मंज़िल (pahlī manzil, the first floor, feminine), and before a postposition or a plural पहले से (pahle se, from the first). पहला (pahlā) and दूसरा (dūsrā) do not come from their number: एक (ek) and दो (do) give them only in the sense of one and two. From तीसरा (tīsrā, third) on, the ordinal is the number changed by an ending, so तीन (tīn) gives तीसरा (tīsrā) and दस (das) gives दसवाँ (dasvāṃ)."
