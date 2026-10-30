@@ -73,6 +73,8 @@ class _FluenoughAppState extends State<FluenoughApp>
     switch (lifecycle) {
       case AppLifecycleState.resumed:
         reminders.appResumed();
+        // Android's installer, if it was open, has been closed (#487).
+        widget.state.updates.appResumed();
       case AppLifecycleState.paused:
       case AppLifecycleState.hidden:
         reminders.appPaused();
