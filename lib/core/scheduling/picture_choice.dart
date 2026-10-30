@@ -31,6 +31,7 @@ String pictureFamily(String picture) {
   final runes = picture.runes
       .where((r) => r != 0xFE0F && !(r >= 0x1F3FB && r <= 0x1F3FF))
       .toList();
+  // runes.first also merges every flag and keycap: conservative, as above.
   return runes.isEmpty ? picture : String.fromCharCode(runes.first);
 }
 

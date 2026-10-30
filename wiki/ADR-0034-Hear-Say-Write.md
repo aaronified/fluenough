@@ -182,7 +182,7 @@ are not interchangeable.
   among four of the same deck's: `Ask.choosePicture` and `Ask.hearPicture`.
   No skill and no schedule of its own; a right pick records Good in
   Recognition as choosing a meaning does, a wrong one Again. It stands in for
-  a meaning choice on every other review of a pair with a picture, so it adds
+  a meaning choice on alternate Recognition reviews of a card, unless the card is taken into a match-pairs group, so it adds
   no question to a session. The wrong pictures never repeat a picture or its
   near-twin (an emoji without skin tone or variation selector), nor mean the
   same (same meaning or target, a synonym, one family by `bases`), and the
