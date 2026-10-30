@@ -205,6 +205,16 @@ class SourcesPage extends StatelessWidget {
                   copied: l10n.sourcesLinkCopied,
                 ),
               ),
+              GroupedTile(
+                leading: const Icon(Icons.compare_arrows),
+                title: l10n.sourcesSynonyms,
+                subtitle: l10n.sourcesSynonymsLine,
+                onTap: () => openLink(
+                  context,
+                  AppLinks.wiktionary,
+                  copied: l10n.sourcesLinkCopied,
+                ),
+              ),
               if (fonts)
                 GroupedTile(
                   leading: const Icon(Icons.font_download_outlined),

@@ -134,6 +134,21 @@ with the behaviour table; in short:
    in one set; a form that is itself a member is read as that member
    first. A phrasal verb is split on its verb, not on its particle. Irregular
    forms are sets of their own.
+   **British and American -l-/-ll- spellings** (cancelled / canceled,
+   travelling / traveling, labelled / labeled) are one word by rule, for a
+   closed list of lemmas truly spelled both ways (bevel, cancel, channel,
+   chisel, counsel, dial, duel, enamel, equal, fuel, funnel, grovel, jewel,
+   label, level, libel, marvel, medal, model, panel, pedal, pencil, quarrel,
+   rival, shovel, signal, snorkel, swivel, total, travel, trowel, tunnel,
+   yodel): a doubled l before -ed, -ing, -er, -ers, -or or -ors is optional
+   on both sides, whatever the sets hold, so no lemma set is needed for
+   them. A word whose lemma is not on the list is never matched by the rule
+   (never pulled, filled, rebel, control), so a slip such as `teling` for
+   `telling` is graded by the card's own typo pass, a close typo, not exact.
+   Other regional spellings
+   (organise / organize, colour / color) are lemma sets, and their inflections
+   follow from rule 3: `organised` is `organise` with -ed, so it matches
+   `organized` when both sides carry the same ending.
 4. **Typos: yes, the same tolerance as the card's own answer** (owner,
    2026-10-30; this replaces the earlier "no typo distance on synonyms").
    After the card's own typo pass fails, the typed core is compared with

@@ -5,6 +5,7 @@ import 'app/added_decks.dart';
 import 'app/app_info.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
+import 'app/synonym_loader.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
@@ -49,6 +50,7 @@ Future<void> main() async {
           log: log,
         ),
         progress: storage.progress,
+        synonymLoader: loadSynonymSets,
         settings: storage.settings,
         tts: SystemTtsEngine(),
         // A browser has no isolates: fitting and pacing run in place.

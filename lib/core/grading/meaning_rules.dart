@@ -97,3 +97,26 @@ bool meaningsEqual(String given, String expected) {
   final key = meaningKey(given);
   return key.isNotEmpty && meaningKeys(expected).contains(key);
 }
+
+/// Whether [meaning] is written with a leading "to" and a word after it: a
+/// verb, the one kind a typed "to" is free on for the synonym sets (ADR-0050).
+bool meaningStartsWithTo(String meaning) {
+  final words = meaning
+      .replaceAll(_brackets, ' ')
+      .toLowerCase()
+      .split(_spaces)
+      .where((w) => w.isNotEmpty)
+      .toList();
+  return words.length > 1 && words.first == 'to';
+}
+
+/// The forms an expected [meaning] accepts, as [meaningKeys] gives them, each
+/// with whether that `;` part is written with a leading "to".
+List<({String key, bool verb})> meaningParts(String meaning) {
+  final unbracketed = meaning.replaceAll(_brackets, ' ');
+  return [
+    for (final part in unbracketed.split(';'))
+      if (meaningKey(part).isNotEmpty)
+        (key: meaningKey(part), verb: meaningStartsWithTo(part)),
+  ];
+}

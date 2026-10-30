@@ -3153,6 +3153,14 @@
   "@sourcesPhoneticLine": {
     "description": "The line under the pronunciations credit on the Sources screen: the narrow IPA in [ ] is adapted from Wiktionary, under CC BY-SA 4.0. Wiktionary and the licence name stay as they are."
   },
+  "sourcesSynonymsLine": "Synonym sets for typed meanings: adapted from Wiktionary and Open English WordNet, licensed CC BY-SA 4.0.",
+  "@sourcesSynonymsLine": {
+    "description": "The line on the Sources screen beside the pronunciations credit: the sets of English words that mean the same, which typed meanings are also accepted by, are adapted from Wiktionary and Open English WordNet, under CC BY-SA 4.0. The project names and the licence name stay as they are."
+  },
+  "sourcesSynonyms": "Synonyms: Wiktionary and WordNet",
+  "@sourcesSynonyms": {
+    "description": "Credit on the Sources screen for the synonym sets that typed English meanings are checked against. The project names stay as they are."
+  },
   "sourcesLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@sourcesLinkCopied": {
     "description": "SnackBar after a tap on a credit on the Sources screen when nothing on the phone could open its link, so the link was copied instead."
@@ -3745,6 +3753,20 @@
   "feedbackCorrect": "Correct",
   "@feedbackCorrect": {
     "description": "Feedback: the typed answer was right."
+  },
+  "feedbackAlsoTyped": "Also: {typed}",
+  "@feedbackAlsoTyped": {
+    "description": "Hint under a right typed meaning that was not the card's own answer but a word that means the same (a synonym): the learner's own word, one or two words. No full stop, like every hint.",
+    "placeholders": {
+      "typed": {
+        "type": "String",
+        "example": "take care"
+      }
+    }
+  },
+  "feedbackAlsoRight": "Also right",
+  "@feedbackAlsoRight": {
+    "description": "Hint under a right typed meaning that was a synonym of the card's answer, when what was typed is longer than two words, so that it is not repeated. No full stop."
   },
   "feedbackAccent": "Right, but mind the accent",
   "@feedbackAccent": {
