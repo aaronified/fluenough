@@ -462,7 +462,7 @@ class _FoldHeader extends StatelessWidget {
       child: Semantics(
         expanded: expanded,
         child: InkWell(
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           onTap: onToggle,
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 48),

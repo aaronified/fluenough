@@ -342,7 +342,7 @@ class CardFace extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: Column(
                 children: <Widget>[
@@ -417,7 +417,7 @@ class _RudeFacts extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(14),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -477,7 +477,7 @@ class _AlikeFound extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
         decoration: BoxDecoration(
           color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -1282,7 +1282,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       decoration: BoxDecoration(
         color: outlined ? null : scheme.surfaceContainerHigh,
         border: outlined ? Border.all(color: scheme.outline) : null,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1694,7 +1694,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       padding: const EdgeInsetsDirectional.fromSTEB(12, 8, 0, 8),
       decoration: BoxDecoration(
         color: scheme.primaryContainer,
-        borderRadius: BorderRadius.circular(AppRadii.innerRow),
+        borderRadius: BorderRadius.circular(AppRadii.control),
       ),
       child: Row(
         children: <Widget>[
@@ -1920,11 +1920,11 @@ class _Scale extends StatelessWidget {
                   ? scheme.primary
                   : scheme.surfaceContainerHighest,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: InkWell(
                 onTap: () => onChosen(n),
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
                 child: SizedBox.square(
                   dimension: 48,
                   // The label above says "4 of 9"; the bare number is not
@@ -1973,7 +1973,7 @@ class _Choice extends StatelessWidget {
       button: true,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 48),
           child: Row(

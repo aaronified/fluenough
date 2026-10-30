@@ -583,7 +583,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: scheme.surfaceContainerHigh,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
           border: Border.all(color: scheme.outlineVariant),
         ),
         child: Padding(
@@ -687,7 +687,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
                   const SizedBox(height: 6),
                   ExcludeSemantics(
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius: BorderRadius.circular(AppRadii.mark),
                       child: LinearProgressIndicator(
                         value: progress.share,
                         minHeight: 6,

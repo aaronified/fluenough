@@ -4,6 +4,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../theme.dart';
 import 'incoming.dart';
 
 /// A deck's one character on a rounded `secondaryContainer` tile.
@@ -172,7 +173,7 @@ class DeckBadge extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       // Sized to the text, not to whatever width the row allows.
       child: Center(

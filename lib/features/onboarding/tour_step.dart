@@ -362,7 +362,7 @@ class TourDots extends StatelessWidget {
                 decoration: BoxDecoration(
                   // `outline` is 3:1 on the surface, as a mark must be.
                   color: i == page ? scheme.primary : scheme.outline,
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(AppRadii.mark),
                 ),
               ),
           ],
@@ -416,7 +416,7 @@ class _ReviewsHero extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: last ? scheme.primary : scheme.surfaceContainerLowest,
-          borderRadius: BorderRadius.circular(AppRadii.tile),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -510,7 +510,7 @@ class _FactHero extends StatelessWidget {
         height: 10,
         decoration: BoxDecoration(
           color: scheme.outlineVariant,
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(AppRadii.mark),
         ),
       ),
     );
@@ -529,7 +529,7 @@ class _FactHero extends StatelessWidget {
             height: 44,
             decoration: BoxDecoration(
               color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(AppRadii.small),
+              borderRadius: BorderRadius.circular(AppRadii.field),
             ),
             child: Icon(
               Icons.lightbulb_outline,

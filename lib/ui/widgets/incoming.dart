@@ -42,7 +42,7 @@ class IncomingBadge extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       child: Text(
         AppLocalizations.of(context)!.incomingBadge,

@@ -101,7 +101,7 @@ class CheckTag extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(6, 2, 8, 2),
       decoration: BoxDecoration(
         border: Border.all(color: scheme.outline),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppRadii.control),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -144,7 +144,7 @@ class CheckRow extends StatelessWidget {
     return MergeSemantics(
       child: InkWell(
         onTap: () => onChanged(!value),
-        borderRadius: BorderRadius.circular(AppRadii.innerRow),
+        borderRadius: BorderRadius.circular(AppRadii.control),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 48),
           child: Row(
@@ -329,7 +329,7 @@ class IdentityPanel extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 12, 8),
         decoration: BoxDecoration(
           color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

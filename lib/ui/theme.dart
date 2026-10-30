@@ -181,7 +181,7 @@ abstract final class AppTheme {
           color: scheme.onInverseSurface,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         // Symmetric, so the start and end insets are the same in either direction.
         insetPadding: const EdgeInsets.symmetric(horizontal: 16)
@@ -189,7 +189,7 @@ abstract final class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         contentPadding: const EdgeInsetsDirectional.symmetric(
           horizontal: 16,

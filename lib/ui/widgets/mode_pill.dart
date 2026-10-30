@@ -55,7 +55,7 @@ class ModePill extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
         decoration: BoxDecoration(
           color: bg,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

@@ -35,7 +35,7 @@ class GroupedList extends StatelessWidget {
     this.headerStyle = GroupHeaderStyle.title,
     this.headerTrailing,
     this.outerRadius = AppRadii.group,
-    this.innerRadius = AppRadii.innerRow,
+    this.innerRadius = AppRadii.control,
     this.gap = 3,
     this.color,
   });

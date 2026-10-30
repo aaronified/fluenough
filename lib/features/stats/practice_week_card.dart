@@ -153,7 +153,7 @@ class PracticeWeekCard extends StatelessWidget {
                                   child: DecoratedBox(
                                     decoration: BoxDecoration(
                                       color: fire,
-                                      borderRadius: BorderRadius.circular(2),
+                                      borderRadius: BorderRadius.circular(AppRadii.mark),
                                     ),
                                   ),
                                 ),
