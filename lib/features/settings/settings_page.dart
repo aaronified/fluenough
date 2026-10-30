@@ -31,8 +31,7 @@ import 'support_page.dart';
 /// `ReviewSection`, [RemindersPage], [YourDataPage],
 /// [AppLogPage], [UpdatesPage] and [SupportPage]. The profile card is one target that opens [ProfilesPrivacyPage].
 ///
-/// Reminders is incoming until #90 (`Feature.reminder`), so its row shows
-/// the badge and does not open its page yet.
+/// Reminders opens its page, the daily reminder (#90, `Feature.reminder`).
 ///
 /// Keeps a [GalleryLink] at the foot, which draws nothing in a release build.
 class SettingsPage extends StatelessWidget {
