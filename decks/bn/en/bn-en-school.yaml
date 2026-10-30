@@ -1,0 +1,384 @@
+schema: 1
+id: "bn-en-school"
+kind: "layer"
+core: "bn-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+description: "School words: the class, the board, the exam, the subjects and the school things. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2151":
+    native: "class; a lesson"
+    notes: { "n1": "ক্লাস শুরু (klās śuru), the class starts; ক্লাস শেষ (klās śeś), the class ends." }
+    examples:
+      "আমার ক্লাস খুব ভালো।": "My class is very good."
+      "ক্লাস কখন শুরু হয়?":
+        native: "When does class start?"
+        bases: { "শুরু": "start" }
+  "bn-2152":
+    native: "board; blackboard"
+    notes: { "n1": "বোর্ডে লেখা (borde lekhā), writing on the board; the same word is used for a whiteboard." }
+    examples:
+      "শিক্ষক বোর্ডে লিখছেন।":
+        native: "The teacher is writing on the board."
+        bases: { "বোর্ডে": "board; blackboard" }
+      "বোর্ডটা একটু দেখুন।":
+        native: "Look at the board for a moment."
+        bases: { "বোর্ডটা": "board; blackboard" }
+  "bn-2153":
+    native: "bench"
+    notes: { "n1": "বেঞ্চে বসা (benche bośā), sitting on the bench." }
+    examples:
+      "বেঞ্চে বসে পড়ো।":
+        native: "Sit on the bench and read."
+        bases: { "বেঞ্চে": "bench" }
+      "বেঞ্চটা ভেঙেছে।":
+        native: "The bench has broken."
+        bases: { "বেঞ্চটা": "bench" }
+  "bn-2154":
+    native: "desk"
+    notes: { "n1": "ডেস্কে বই (deske boi), books on the desk." }
+    examples:
+      "আমার ডেস্কে বই আছে।":
+        native: "There are books on my desk."
+        bases: { "ডেস্কে": "desk", "আছে": "is; are; has" }
+      "ডেস্কটা খালি করুন।":
+        native: "Please clear the desk."
+        bases: { "ডেস্কটা": "desk" }
+  "bn-2155":
+    native: "eraser; rubber"
+    notes: { "n1": "রাবার দিয়ে মোছা (rābār diye mochā), to rub out with an eraser." }
+    examples: { "আমার রাবার কোথায়?": "Where is my eraser?", "রাবার দিয়ে ভুল মুছুন।": "Rub out the mistake with the eraser." }
+  "bn-2156":
+    native: "question (in a test or class)"
+    notes: { "n1": "প্রশ্ন করা (prôśno korā), to ask a question. An answer is জবাব (jôbāb)." }
+    examples:
+      "প্রশ্নটা কঠিন।":
+        native: "The question is hard."
+        bases: { "প্রশ্নটা": "question (in a test or class)" }
+      "এই প্রশ্নের জবাব দাও।":
+        native: "Give the answer to this question."
+        bases: { "এই": "this", "প্রশ্নের": "question (in a test or class)" }
+  "bn-2157":
+    native: "answer; reply"
+    notes: { "n1": "জবাব দেওয়া (jôbāb deoyā), to answer." }
+    examples:
+      "জবাবটা ঠিক।":
+        native: "The answer is right."
+        bases: { "জবাবটা": "answer; reply" }
+      "জবাব লেখো।": "Write the answer."
+  "bn-2158":
+    native: "mark; score; number"
+    notes: { "n1": "ভালো নম্বর (bhālo nômbôr), good marks." }
+    examples: { "পরীক্ষায় কত নম্বর পেয়েছ?": "What marks did you get in the exam?", "নম্বর ভালো হয়েছে।": "The marks are good." }
+  "bn-2159":
+    native: "to teach"
+    notes: { "n1": "পড়ানো (poṛāno) is to teach, the causative of পড়া (poṛā), to read." }
+    examples:
+      "আমাকে বাংলা পড়ান।":
+        native: "Teach me Bengali."
+        bases: { "পড়ান": "to teach" }
+      "শিক্ষক আমাদের ইংরেজি পড়ান।":
+        native: "The teacher teaches us English."
+        bases: { "পড়ান": "to teach" }
+  "bn-2160":
+    native: "learnt by heart; memorised"
+    notes: { "n1": "মুখস্থ করা (mukhôstho korā), to learn by heart." }
+    examples: { "পাঠটা মুখস্থ করো।": "Learn the lesson by heart.", "আমি সব নাম মুখস্থ করেছি।": "I have learnt all the names by heart." }
+  "bn-2161":
+    native: "snack; the break when you eat it"
+    notes: { "n1": "টিফিনের সময় (ṭiphiner śomoy), the snack break." }
+    examples:
+      "টিফিনের সময় খেলি।":
+        native: "I play during the snack break."
+        bases: { "টিফিনের": "snack; the break when you eat it" }
+      "টিফিনে কী খেয়েছ?":
+        native: "What did you eat for the snack?"
+        bases: { "টিফিনে": "snack; the break when you eat it" }
+  "bn-2162":
+    native: "homework"
+    notes: { "n1": "বাড়ির হোমওয়ার্ক (bāṛir homoārk), homework from school." }
+    examples:
+      "হোমওয়ার্কটা শেষ করো।":
+        native: "Finish the homework."
+        bases: { "হোমওয়ার্কটা": "homework", "শেষ": "end; finish" }
+      "রোজ হোমওয়ার্ক থাকে।": "There is homework every day."
+  "bn-2163":
+    native: "classmate"
+    notes: { "n1": "সহপাঠী আর বন্ধু (sôhopāṭhī ār bôndhu), a classmate and a friend." }
+    examples:
+      "আমার সহপাঠী খুব ভালো।": "My classmate is very good."
+      "সহপাঠীদের সঙ্গে খেলি।":
+        native: "I play with my classmates."
+        bases: { "সহপাঠীদের": "classmate" }
+  "bn-2164":
+    native: "subject (of study)"
+    notes: { "n1": "প্রিয় বিষয় (priyo biśoy), a favourite subject." }
+    examples: { "প্রিয় বিষয় কী?": "What is your favourite subject?", "অঙ্ক আমার প্রিয় বিষয়।": "Maths is my favourite subject." }
+  "bn-2165":
+    native: "maths; an arithmetic sum"
+    notes: { "n1": "অঙ্ক কষা (ônko kôśā), to do a sum." }
+    examples:
+      "অঙ্কটা কঠিন।":
+        native: "The maths sum is hard."
+        bases: { "অঙ্কটা": "maths; an arithmetic sum" }
+      "অঙ্ক কষো।": "Do the maths sum."
+  "bn-2166":
+    native: "English (the language)"
+    notes: { "n1": "ইংরেজি ভাষা (iṅreji bhāṣā), the English language." }
+    examples:
+      "আমি ইংরেজি পড়ি।": "I study English."
+      "ইংরেজি শব্দ লেখো।":
+        native: "Write English words."
+        bases: { "শব্দ": "word" }
+  "bn-2167":
+    native: "Bengali (the language)"
+    notes: { "n1": "বাংলা ভাষা (bāṅlā bhāṣā), the Bengali language." }
+    examples: { "আমি বাংলা শিখছি।": "I am learning Bengali.", "বাংলা ভাষা সুন্দর।": "The Bengali language is beautiful." }
+  "bn-2168":
+    native: "science"
+    notes: { "n1": "বিজ্ঞান ক্লাস (bigyān klās), the science class." }
+    examples: { "বিজ্ঞান ক্লাস মজার।": "The science class is fun.", "আমি বিজ্ঞান ভালোবাসি।": "I love science." }
+  "bn-2169":
+    native: "history"
+    notes: { "n1": "ইতিহাসের বই (itihāser boi), a history book." }
+    examples:
+      "ইতিহাস বই পড়ো।": "Read the history book."
+      "ইতিহাসের শিক্ষক ভালো।":
+        native: "The history teacher is good."
+        bases: { "ইতিহাসের": "history" }
+  "bn-2170":
+    native: "geography"
+    notes: { "n1": "ভূগোলের বই (bhūgoler boi), a geography book." }
+    examples:
+      "ভূগোলের বই খুব বড়।":
+        native: "The geography book is very big."
+        bases: { "ভূগোলের": "geography" }
+      "শিক্ষক ভূগোল পড়ান।": "The teacher teaches geography."
+  "bn-2171":
+    native: "lesson; a passage to read"
+    notes: { "n1": "আজকের পাঠ (ājker pāṭh), today's lesson." }
+    examples:
+      "আজকের পাঠ খুব সহজ।": "Today's lesson is very easy."
+      "পাঠটা পড়ো।":
+        native: "Read the lesson."
+        bases: { "পাঠটা": "lesson; a passage to read" }
+  "bn-2172":
+    native: "fee"
+    notes: { "n1": "স্কুলের ফি (skuler phi), the school fee." }
+    examples:
+      "স্কুলের ফি কত?": "What is the school fee?"
+      "মাসিক ফি কত টাকা?":
+        native: "How many rupees is the monthly fee?"
+        bases: { "মাসিক": "monthly" }
+  "bn-2173":
+    native: "private tutor"
+    notes: { "n1": "বাড়িতে গৃহশিক্ষক (bāṛite grihośikkhôk), a tutor who comes to the home." }
+    examples:
+      "আমার একজন গৃহশিক্ষক আছে।":
+        native: "I have a private tutor."
+        bases: { "আছে": "is; are; has" }
+      "গৃহশিক্ষক অঙ্ক শেখান।": "The tutor teaches maths."
+  "bn-2174":
+    native: "passed (an exam)"
+    notes: { "n1": "পরীক্ষায় উত্তীর্ণ (porikkhāy uttirṇo), passed the exam." }
+    examples: { "সে পরীক্ষায় উত্তীর্ণ হয়েছে।": "She has passed the exam.", "সবাই উত্তীর্ণ।": "Everyone has passed." }
+  "bn-2175":
+    native: "absent"
+    notes: { "n1": "আজ অনুপস্থিত (āj ônupośthit), absent today." }
+    examples: { "আজ সে অনুপস্থিত।": "She is absent today.", "অনেক ছাত্র অনুপস্থিত।": "Many students are absent." }
+  "bn-2176":
+    native: "present (here)"
+    notes: { "n1": "উপস্থিত থাকা (upośthit thākā), to be present." }
+    examples:
+      "তুমি কি উপস্থিত?":
+        native: "Are you present?"
+        bases: { "কি": "whether (a question word)" }
+      "আমি সময়মতো উপস্থিত।": "I am present on time."
+  "bn-2177":
+    native: "on time"
+    notes: { "n1": "সময়মতো আসা (sômoyômoto āsā), to come on time." }
+    examples:
+      "স্কুলে সময়মতো যাও।": "Go to school on time."
+      "ক্লাস সময়মতো শুরু হলো।":
+        native: "The class started on time."
+        bases: { "শুরু": "start" }
+  "bn-2178":
+    native: "preparation"
+    notes: { "n1": "পরীক্ষার প্রস্তুতি (porikkhār prôstuti), preparing for the exam." }
+    examples:
+      "পরীক্ষার প্রস্তুতি শুরু করো।":
+        native: "Start preparing for the exam."
+        bases: { "শুরু": "start" }
+      "প্রস্তুতি ভালো হয়েছে।": "The preparation has gone well."
+  "bn-2179":
+    native: "education"
+    notes: { "n1": "শিক্ষা আর শিক্ষক (śikkhā ār śikkhôk), education and the teacher." }
+    examples: { "শিক্ষা খুব জরুরি।": "Education is very important.", "সবার শিক্ষা দরকার।": "Everyone needs education." }
+  "bn-2180":
+    native: "chalk"
+    notes: { "n1": "চক দিয়ে লেখা (chôk diye lekhā), writing with chalk." }
+    examples:
+      "চক দিয়ে বোর্ডে লেখো।": "Write on the board with chalk."
+      "চকটা ফুরিয়েছে।":
+        native: "The chalk has run out."
+        bases: { "চকটা": "chalk", "ফুরিয়েছে": "to run out" }
+  "bn-2181":
+    native: "duster; board cloth"
+    notes: { "n1": "ডাস্টার দিয়ে বোর্ড মোছা (ḍāsṭār diye bord mochā), to wipe the board with a duster." }
+    examples:
+      "ডাস্টার দিয়ে বোর্ড মোছো।": "Wipe the board with the duster."
+      "ডাস্টারটা কোথায়?":
+        native: "Where is the duster?"
+        bases: { "ডাস্টারটা": "duster; board cloth" }
+  "bn-2182":
+    native: "exercise (physical)"
+    notes: { "n1": "সকালে ব্যায়াম (sokāle byāyām), exercise in the morning." }
+    examples: { "স্কুলে রোজ ব্যায়াম হয়।": "There is exercise at school every day.", "ব্যায়াম করা ভালো।": "Exercise is good." }
+  "bn-2183":
+    native: "identity card"
+    notes: { "n1": "স্কুলের পরিচয়পত্র (skuler pôricoypôtro), the school identity card." }
+    examples:
+      "ক্লাসে পরিচয়পত্র দেখাও।":
+        native: "Show your identity card in class."
+        bases: { "দেখাও": "to show" }
+      "পরিচয়পত্রটা ভুলবেন না।":
+        native: "Don't forget your identity card."
+        bases: { "পরিচয়পত্রটা": "identity card", "ভুলবেন": "to forget" }
+  "bn-2184":
+    native: "uniform"
+    notes: { "n1": "স্কুল ইউনিফর্ম (skul iuniphôrm), the school uniform." }
+    examples:
+      "ইউনিফর্ম পরো।": "Wear the uniform."
+      "ইউনিফর্মটা নীল।":
+        native: "The uniform is blue."
+        bases: { "ইউনিফর্মটা": "uniform" }
+  "bn-2185":
+    native: "canteen"
+    notes: { "n1": "স্কুলের ক্যান্টিন (skuler kyānṭin), the school canteen." }
+    examples:
+      "ক্যান্টিনে কী পাওয়া যায়?":
+        native: "What can be had at the canteen?"
+        bases: { "ক্যান্টিনে": "canteen" }
+      "ক্যান্টিন বন্ধ।": "The canteen is closed."
+  "bn-2186":
+    native: "examiner"
+    notes: { "n1": "পরীক্ষকের প্রশ্ন (pôrikkhôker prôśno), the examiner's questions." }
+    examples:
+      "পরীক্ষক খাতা দেখছেন।": "The examiner is checking the answer books."
+      "পরীক্ষকের প্রশ্ন কঠিন।":
+        native: "The examiner's questions are hard."
+        bases: { "পরীক্ষকের": "examiner" }
+  "bn-2187":
+    native: "student hostel"
+    notes: { "n1": "ছাত্রাবাসে থাকা (chātrābāse thākā), to live in a hostel." }
+    examples:
+      "সে ছাত্রাবাসে থাকে।":
+        native: "She lives in the hostel."
+        bases: { "ছাত্রাবাসে": "student hostel" }
+      "ছাত্রাবাসে খাবার ভালো।":
+        native: "The food at the hostel is good."
+        bases: { "ছাত্রাবাসে": "student hostel" }
+  "bn-2188":
+    native: "classroom"
+    notes: { "n1": "ক্লাসরুম আর করিডোর (klāsrum ār koriḍor), the classroom and the corridor." }
+    examples:
+      "ক্লাসরুমটা বড়।":
+        native: "The classroom is big."
+        bases: { "ক্লাসরুমটা": "classroom" }
+      "ক্লাসরুমে অনেক ছাত্র।":
+        native: "There are many students in the classroom."
+        bases: { "ক্লাসরুমে": "classroom" }
+  "bn-2189":
+    native: "studies; reading and writing"
+    notes: { "n1": "লেখাপড়া করা (lekhāporā korā), to study." }
+    examples:
+      "লেখাপড়া আমার ভালো লাগে।":
+        native: "I like studying."
+        bases: { "লাগে": "to feel; to seem" }
+      "লেখাপড়ায় মন দাও।":
+        native: "Pay attention to your studies."
+        bases: { "লেখাপড়ায়": "studies; reading and writing", "মন": "mind" }
+  "bn-2190":
+    native: "notes (written notes)"
+    notes: { "n1": "ক্লাসের নোট (klāser noṭ), class notes." }
+    examples:
+      "আমার নোট কোথায়?": "Where are my notes?"
+      "নোটটা আমাকে দাও।":
+        native: "Give me the notes."
+        bases: { "নোটটা": "notes (written notes)" }
+  "bn-2191":
+    native: "question paper"
+    notes: { "n1": "পরীক্ষার প্রশ্নপত্র (porikkhār prôśnopôtro), the exam question paper." }
+    examples:
+      "প্রশ্নপত্র পেয়েছি।": "I have got the question paper."
+      "প্রশ্নপত্রে নাম লেখো।":
+        native: "Write your name on the question paper."
+        bases: { "প্রশ্নপত্রে": "question paper" }
+  "bn-2192":
+    native: "answer sheet"
+    notes: { "n1": "উত্তরপত্র জমা দেওয়া (uttôrpôtro jômā deoyā), to hand in the answer sheet." }
+    examples:
+      "উত্তরপত্র জমা দাও।":
+        native: "Hand in the answer sheet."
+        bases: { "জমা": "handing in" }
+      "উত্তরপত্রটা ভালো লিখেছ।":
+        native: "You have written the answer sheet well."
+        bases: { "উত্তরপত্রটা": "answer sheet" }
+  "bn-2193":
+    native: "sport; games"
+    notes: { "n1": "ক্রীড়া দিবস (krīṛā dibôś), sports day." }
+    examples:
+      "ক্রীড়া দিবসে দৌড় হবে।":
+        native: "There will be a race on sports day."
+        bases: { "দিবসে": "day", "দৌড়": "race" }
+      "ক্রীড়ায় আমি ভালো।":
+        native: "I am good at sport."
+        bases: { "ক্রীড়ায়": "sport; games" }
+  "bn-2194":
+    native: "pass (in an exam)"
+    notes: { "n1": "পরীক্ষায় পাস করা (porikkhāy pās korā), to pass the exam." }
+    examples: { "পরীক্ষায় পাস করেছি।": "I have passed the exam.", "সে পাস করেছে।": "She has passed." }
+  "bn-2195":
+    native: "fail (in an exam)"
+    notes: { "n1": "পরীক্ষায় ফেল (porikkhāy phel), failing the exam." }
+    examples: { "ও ফেল করেছে।": "He has failed.", "পরীক্ষায় ফেল হয়নি।": "I did not fail the exam." }
+  "bn-2196":
+    native: "attendance"
+    notes: { "n1": "উপস্থিতি খাতা (upośthiti khātā), the attendance register." }
+    examples: { "উপস্থিতি খাতা কোথায়?": "Where is the attendance register?", "উপস্থিতি জরুরি।": "Attendance is important." }
+  "bn-2197":
+    native: "calendar"
+    notes: { "n1": "নতুন ক্যালেন্ডার (notun kyāleṇḍār), a new calendar." }
+    examples:
+      "ক্যালেন্ডারে ছুটির দিন দেখো।":
+        native: "Check the holidays on the calendar."
+        bases: { "ক্যালেন্ডারে": "calendar", "দিন": "day" }
+      "নতুন ক্যালেন্ডার কিনেছি।": "I have bought a new calendar."
+  "bn-2198":
+    native: "school (formal word)"
+    notes: { "n1": "বিদ্যালয় আর স্কুল (biddaloy ār skul), the school; স্কুল (skul) is the everyday word." }
+    examples:
+      "আমাদের বিদ্যালয় বড়।": "Our school is big."
+      "বিদ্যালয়ে যাওয়ার সময় হয়েছে।":
+        native: "It is time to go to school."
+        bases: { "বিদ্যালয়ে": "school (formal word)" }
+  "bn-2199":
+    native: "student (formal word)"
+    notes: { "n1": "শিক্ষার্থী আর ছাত্র (śikkhārthī ār chātrô): the formal word and the everyday word for a student." }
+    examples:
+      "শিক্ষার্থীরা ক্লাসে আসে।":
+        native: "The students come to class."
+        bases: { "শিক্ষার্থীরা": "student (formal word)" }
+      "সব শিক্ষার্থী উপস্থিত।": "All the students are present."
+  "bn-2200":
+    native: "class; grade (a year at school)"
+    notes: { "n1": "পঞ্চম শ্রেণি (pôñcôm śreṇi), class five." }
+    examples:
+      "আমি পঞ্চম শ্রেণিতে পড়ি।":
+        native: "I am in class five."
+        bases: { "পঞ্চম": "fifth", "শ্রেণিতে": "class; grade (a year at school)" }
+      "এই শ্রেণির ক্লাস ভালো।":
+        native: "The class of this grade is good."
+        bases: { "এই": "this", "শ্রেণির": "class; grade (a year at school)" }

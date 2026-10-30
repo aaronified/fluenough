@@ -1,0 +1,59 @@
+schema: 1
+id: "bn-en-reading-school"
+name: "Reading: school"
+kind: "reading"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A child describes a school day, to be heard, and a class timetable, to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "bn-school-day"
+    title: "A school day"
+    theme: "school"
+    sentences:
+      - { text: "আমি সকালে স্কুলে যাই।", reading: "āmi śokāle skule jāi.", ipa: "ami sɔkale skule dʒai" }
+      - { text: "প্রথম ক্লাসে বাংলা পড়ি।", reading: "prôthom klāse bāṅlā poṛi.", ipa: "prɔt̪ʰom klase baŋla poɽi" }
+      - { text: "টিফিনের সময় বন্ধুদের সঙ্গে খেলি।", reading: "ṭiphiner śomoy bôndhuder sôṅge kheli.", ipa: "ʈipʰiner sɔmoj bond̪ʱud̪er sɔŋɡe kʰeli" }
+      - { text: "বিকেলে বাড়িতে হোমওয়ার্ক করি।", reading: "bikele bāṛite homoārk kori.", ipa: "bikele baɽit̪e ɦomoark kori" }
+    questions:
+      - id: "bn-2201"
+        prompt: { en: "The child goes to school in the morning." }
+        answer: true
+      - id: "bn-2202"
+        prompt: { en: "What does the child study in the first class?" }
+        options:
+          - { en: "Bengali" }
+          - { en: "Science" }
+        answer: 1
+      - id: "bn-2203"
+        prompt: { en: "When does the child do the homework?" }
+        options:
+          - { en: "After coming home in the afternoon" }
+          - { en: "Before school" }
+        answer: 1
+  - id: "bn-class-timetable"
+    title: "A class timetable"
+    theme: "school"
+    sentences:
+      - { text: "সোমবার: বাংলা, অঙ্ক, ইংরেজি।", reading: "sombār: bāṅlā, ônko, iṅreji.", ipa: "sombar baŋla ɔŋko iŋredʒi" }
+      - { text: "মঙ্গলবার: বিজ্ঞান, ইতিহাস, ভূগোল।", reading: "mônglābār: bigyān, itihās, bhūgol.", ipa: "mɔŋɡlobar biɡɡan it̪iɦas bʱuɡol" }
+      - { text: "বুধবার: খেলা আর ব্যায়াম।", reading: "budhbār: khelā ār bêyām.", ipa: "bud̪ʱbar kʰela ar bæjam" }
+      - { text: "শুক্রবার: ছুটি।", reading: "śukrabār: chuṭi.", ipa: "sukrobar tʃʰuʈi" }
+    questions:
+      - id: "bn-2204"
+        prompt: { en: "There is no class on Friday." }
+        answer: true
+      - id: "bn-2205"
+        prompt: { en: "Which subjects are on Tuesday?" }
+        options:
+          - { en: "Science, history and geography" }
+          - { en: "Maths and English" }
+        answer: 1
+      - id: "bn-2206"
+        prompt: { en: "What is on Wednesday?" }
+        options:
+          - { en: "Sports and exercise" }
+          - { en: "Science" }
+        answer: 1
