@@ -10,7 +10,7 @@ Settings is a list of pages.
 
 | Page | What it holds |
 |---|---|
-| Your languages | Languages I know (they decide your facts and which decks you can review) and Languages I'm learning, where decks are checked for updates and updated. Switches for Latin-letter readings, IPA and Adult content. Which language to learn a course from, where a course has more than one. Sources. |
+| Your languages | Languages, one list for the languages you know and the ones you learn (see below), and a Review switch (off by default). Switches for Latin-letter readings, IPA and Adult content. Which language to learn a course from, where a course has more than one. Sources. |
 | Activities and memory | Switches for Written words, Heard words, Spoken words and Reading, and for playing words automatically. Pause hearing or speaking for an hour, or turn them off per language. Speech rate and Voices. Adjust to me and Adjust automatically fit your reviews to how you remember. |
 | Look and language | Theme, pure black, colour, contrast, card text size and the app language. |
 | Reviewing | Reviewer mode for speakers who check decks. See the [Reviewing guide](Reviewing-Guide). |
@@ -42,7 +42,7 @@ Settings > Reminders has one switch, off until you turn it on, and a time (7:30 
 
 ## Placed words
 
-In Languages I'm learning, a course you have been placed in has a "Placed words" row under Find my level. It opens a sheet with the three choices: Set in stone, Spot-check (the default) and Keep reviewing. Tapping one applies it at once.
+On the Languages page (below), a course with decks has a "Placed words" row under Find my level. It opens a sheet with the three choices: Set in stone, Spot-check (the default) and Keep reviewing. Tapping one applies it at once.
 
 - **Set in stone:** the words placement found you know stay out of Today and count as known. You can still revise or practise them from the deck's page; those answers are not logged as reviews, and the deck shows the words as learnt.
 - **Spot-check:** a few of them are tested each day, and a miss brings more of that deck back, then all of it.
@@ -66,7 +66,7 @@ The app's menus are in English only. Translation is explained in the [Translatio
 
 ## Privacy
 
-Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, on the Languages I'm learning page.
+Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, in Settings > Updates.
 
 The app contacts `raw.githubusercontent.com` for decks and `api.github.com` for updates. After a speaking drill fails for want of a network, it also contacts `connectivitycheck.gstatic.com` (and `raw.githubusercontent.com`) once, to tell you why. That is the only time it contacts `connectivitycheck.gstatic.com`; it sends only your IP address and the time, and no data of yours.
 
@@ -75,3 +75,19 @@ The app contacts `raw.githubusercontent.com` for decks and `api.github.com` for 
 Settings > Updates checks GitHub for a new app version when you tap Check for updates. "Check automatically" is off until you switch it on. Then it checks once a day, when the app opens. A backup is made as it downloads. Then Android asks you to install it. If Android says Fluenough is not allowed to install apps, open Settings, Apps, Special app access, Install unknown apps, and allow Fluenough.
 
 See also: [Learner guide](Learner-Guide), [Home](Home).
+
+## Languages (Settings > Your languages > Languages)
+
+One page for the languages you know and the ones you are learning (owner, 2026-10-30, #907). Each language has four skills: **Speak** and **Hear**, which belong to the one dialect the app teaches (named above Speak, such as Khari Boli for Hindustani), and **Read** and **Write**, which belong to a script: a language written in two scripts has a Read and a Write for each (Eastern Nagari for Bengali, Devanagari and Perso-Arabic for Hindustani).
+
+Each skill is one pill. Tap it to cycle **Leave**, **Know**, **Learn**:
+
+- **Know** is instant: no download and no test. You say what you know.
+- **Learn** downloads the language's full decks (a dialog names the size first). One Learn skill, in any script, is enough. A skill changed to Learn leaves the sheet's bottom button reading **Check**: Speak and Hear play a sample in the language's voice, Read and Write check that the phone draws the script. If a check fails the skill stays Learn, a toast says what to install, and Check stays for another try.
+- **Leave** is out. A language with every skill on Leave goes back to the pool: it leaves the list (with Undo) and Add a language finds it again. Decks nothing needs are removed the next time the app opens. **Delete data now**, the bin on the sheet, removes the decks at once.
+
+The list shows each language's skills as read-only icon chips (a tick for Know, a double tick once the language's level covers it, a cap for Learn, a dashed minus for Leave), Learning first, then Know, with filter pills (Learning, Know, Speak, Hear, Read, Write) in a row that scrolls sideways. Tapping a language opens its sheet: the pills, Find my level (Fit my level once a level is found) and Placed words, and for a language with a Learn skill the **minutes a day** stepper (5 to 60 in steps of 5, 15 until you choose). Reading and writing a script you already know from another language start as Know when you add a new language that uses it. At the top of the sheet are the update check for that language's decks, the **i** panel (course size, decks on this phone, the last update check, units built, words) and the cross.
+
+With the Review switch on in Settings, a Know skill whose level has not been found says "Fit your level to be able to review". Review decks for known scripts are not built yet.
+
+What it keeps: the skills are stored per language in Settings (`language_skills`), and kept in step with the older lists (languages learned, scripts learned, languages spoken, scripts read) that the rest of the app reads. Until you edit a language, its skills are read from those lists, so a current learner sees no change.
