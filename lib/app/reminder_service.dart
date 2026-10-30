@@ -64,6 +64,16 @@ class ReminderService {
        _wasAt = settings.reminderTime {
     settings.addListener(_settingsChanged);
     scheduler.onOpened = () => onOpened?.call();
+    unawaited(_openIfLaunchedByReminder());
+  }
+
+  // A tap that started the app arrives before onOpened is set.
+  Future<void> _openIfLaunchedByReminder() async {
+    try {
+      if (await scheduler.launchedByReminder()) onOpened?.call();
+    } catch (e) {
+      log?.call('launch details failed: $e');
+    }
   }
 
   final ReminderScheduler scheduler;

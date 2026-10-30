@@ -37,6 +37,9 @@ class FakeReminderScheduler implements ReminderScheduler {
 
   VoidCallback? _opened;
 
+  /// Whether a tap on a reminder started the app.
+  bool launched = false;
+
   /// The learner taps a reminder.
   void tap() => _opened?.call();
 
@@ -76,4 +79,7 @@ class FakeReminderScheduler implements ReminderScheduler {
 
   @override
   set onOpened(VoidCallback? callback) => _opened = callback;
+
+  @override
+  Future<bool> launchedByReminder() async => launched;
 }

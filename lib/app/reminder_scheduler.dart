@@ -65,6 +65,10 @@ abstract interface class ReminderScheduler {
 
   /// Called when the learner taps a reminder: the app opens on Today.
   set onOpened(VoidCallback? callback);
+
+  /// Whether a tap on a reminder started the app (a cold start), which the
+  /// callback in [onOpened] cannot report as it is set after the tap.
+  Future<bool> launchedByReminder();
 }
 
 /// A [ReminderScheduler] with no notifications: the web build, desktop and
@@ -97,4 +101,7 @@ class NullReminderScheduler implements ReminderScheduler {
 
   @override
   set onOpened(VoidCallback? callback) {}
+
+  @override
+  Future<bool> launchedByReminder() async => false;
 }

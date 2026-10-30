@@ -110,4 +110,10 @@ class PluginReminderScheduler implements ReminderScheduler {
 
   @override
   set onOpened(VoidCallback? callback) => _onOpened = callback;
+
+  @override
+  Future<bool> launchedByReminder() async {
+    final details = await _plugin.getNotificationAppLaunchDetails();
+    return details?.didNotificationLaunchApp ?? false;
+  }
 }

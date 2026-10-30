@@ -209,6 +209,19 @@ void main() {
     expect(taps, 1);
   });
 
+  test('a cold start from a reminder tap opens the app on Today', () async {
+    scheduler.launched = true;
+    build();
+    await Future<void>.delayed(Duration.zero);
+    expect(taps, 1);
+  });
+
+  test('a normal start does not open Today by itself', () async {
+    build();
+    await Future<void>.delayed(Duration.zero);
+    expect(taps, 0);
+  });
+
   test('changing the switch in settings directly re-plans too', () async {
     final service = build();
     settings.reminder = true;
