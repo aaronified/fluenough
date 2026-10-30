@@ -53,6 +53,7 @@ class SkillStarCard extends StatelessWidget {
         color: scheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(AppRadii.group),
         clipBehavior: Clip.antiAlias,
+        // hint-ok: shows text
         child: InkWell(
           onTap: onTap,
           child: Padding(

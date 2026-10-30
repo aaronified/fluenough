@@ -73,6 +73,7 @@ class PlacedReviewOptions extends StatelessWidget {
                       width: picked ? 2 : 1,
                     ),
                   ),
+                  // hint-ok: shows text
                   child: InkWell(
                     key: ValueKey<String>('placed-review-${choice.name}'),
                     customBorder: RoundedRectangleBorder(
