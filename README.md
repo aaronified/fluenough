@@ -20,7 +20,7 @@ offline on your phone once a language's decks are downloaded.
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
   <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
   <a href="#why-fluenough-is-different"><img src="https://img.shields.io/badge/works_offline-once_decks_are_in-2E7D32" alt="Works offline once decks are in"></a>
-  <a href="#courses"><img src="https://img.shields.io/badge/languages-12-C2621D" alt="12 languages"></a>
+  <a href="#courses"><img src="https://img.shields.io/badge/languages-13-C2621D" alt="13 languages"></a>
   <a href="https://github.com/aaronified/fluenough/issues"><img src="https://img.shields.io/github/issues/aaronified/fluenough" alt="Open issues"></a>
 </p>
 
@@ -124,6 +124,7 @@ below is written from `decks/index.json` each time the decks change.
 |---|---|---|
 | Assamese | Eastern Nagari | A1 |
 | Bengali | Eastern Nagari | A1 |
+| French | Latin | in progress |
 | Gujarati | Gujarati | in progress |
 | Hindustani | Devanagari, Perso-Arabic | A1 |
 | Japanese | Kana, Kanji | in progress |
