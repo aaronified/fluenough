@@ -199,6 +199,8 @@ milestone are written in a single PR. After that no new deck work starts;
 open deck PRs are still reviewed and merged. Conversations (#722) are a
 long-horizon ask (owner, 2026-10-23).
 
+**Bengali, Hindustani and Spanish to full B1, and French A1** (owner, 2026-10-30: "Build the bengali, hindustani, and spanish decks to full B1. And add french A1. Haiku deck builders. Sonnet reviews. Also, make all decks compliant with the full [] IPA notations."). This lifts the 2026-10-23 A1 stop for these three courses: the planned A2 and B1 units of bn, hi and es are built (Haiku builds, one Sonnet review per pull request), in that order, then French A1 (a new course: path units, cores and English layers, facts file). Every card also gets its narrow IPA in `[ ]`: the `phonetic` field of docs/plans/ipa-revamp-and-language-phonology.md, written by the tools of that plan, never by hand, and any card still lacking a broad `ipa` is given one. The A1 stop still holds for every other course.
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
