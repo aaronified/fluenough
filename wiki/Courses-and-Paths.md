@@ -28,7 +28,7 @@ At the end of a path is a part for songs, films and books, picked by interest. I
 
 ## Decks
 
-A deck is a list of cards, such as "Family". Open a deck to see its cards, to review what is due, to learn new words, or to revise when you know every card. Revising does not change when cards are next due. A search box finds decks by name, language or theme.
+A deck is a list of cards, such as "Family". Open a deck to see its cards, to review what is due, to learn new words, or to revise when you know every card. Revising does not change when cards are next due. The search bar on the Decks tab finds the units, decks and words of the course shown, and forgives a typo ("travl" finds Travel). Type a word, its reading or its meaning, in Latin letters or the course's own script. Three tokens narrow it, typed with a colon or picked from the menu the bar offers when tapped, and each becomes a chip inside the bar: `kind:` (words, grammar, script, reading), `status:` (not learnt, learning, learnt, forgetting, struggling, set aside) and `theme:` (the themes this course teaches). Each result shows its kind as a chip, and tapping it narrows the search to that kind. The ✕ clears the bar, and a second tap closes the search.
 
 A deck can say that no speaker of the language has checked it yet. If you speak the language, please report any mistake ([Reporting a problem](Reporting-a-Problem)). Checked decks say how many speakers checked them.
 

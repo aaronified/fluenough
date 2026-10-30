@@ -1,0 +1,52 @@
+/// The script a query is written in, for the offers of other scripts
+/// (#527, mockup section 7). Free of Flutter.
+library;
+
+/// The deck files' script names, with the letters each is written in.
+/// `han` stands for every Chinese variant and `kana` for Japanese's two
+/// syllabaries.
+final Map<String, RegExp> _scriptLetters = <String, RegExp>{
+  'latin': RegExp(r'\p{Script=Latin}', unicode: true),
+  'devanagari': RegExp(r'\p{Script=Devanagari}', unicode: true),
+  'bengali': RegExp(r'\p{Script=Bengali}', unicode: true),
+  'telugu': RegExp(r'\p{Script=Telugu}', unicode: true),
+  'kannada': RegExp(r'\p{Script=Kannada}', unicode: true),
+  'gujarati': RegExp(r'\p{Script=Gujarati}', unicode: true),
+  'gurmukhi': RegExp(r'\p{Script=Gurmukhi}', unicode: true),
+  'tamil': RegExp(r'\p{Script=Tamil}', unicode: true),
+  'malayalam': RegExp(r'\p{Script=Malayalam}', unicode: true),
+  'oriya': RegExp(r'\p{Script=Oriya}', unicode: true),
+  'perso_arabic': RegExp(r'\p{Script=Arabic}', unicode: true),
+  'hangul': RegExp(r'\p{Script=Hangul}', unicode: true),
+  'kana': RegExp(r'[\p{Script=Hiragana}\p{Script=Katakana}]', unicode: true),
+  'han': RegExp(r'\p{Script=Han}', unicode: true),
+  'cyrillic': RegExp(r'\p{Script=Cyrillic}', unicode: true),
+  'greek': RegExp(r'\p{Script=Greek}', unicode: true),
+  'hebrew': RegExp(r'\p{Script=Hebrew}', unicode: true),
+  'thai': RegExp(r'\p{Script=Thai}', unicode: true),
+};
+
+/// The script most of [text]'s letters are in, or null when it has none
+/// (digits and punctuation have no script and are ignored). The names are
+/// the ones deck files use; Chinese variants and the Han letters of a
+/// Japanese query all read as `han`.
+String? scriptOf(String text) {
+  String? best;
+  var most = 0;
+  for (final MapEntry(:key, :value) in _scriptLetters.entries) {
+    final n = value.allMatches(text).length;
+    if (n > most) {
+      most = n;
+      best = key;
+    }
+  }
+  return best;
+}
+
+/// Whether a course written in [courseScripts] reads a query in [script]:
+/// the Chinese variants and Han are one script to the reader, and so are
+/// Arabic and the Perso-Arabic of Urdu.
+bool scriptBelongsTo(String script, Iterable<String> courseScripts) =>
+    courseScripts.any(
+      (s) => s == script || (script == 'han' && s.startsWith('han')),
+    );

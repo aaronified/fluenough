@@ -11385,5 +11385,337 @@
         "example": "9.6 MB"
       }
     }
+  },
+  "decksSearchHintIn": "Search {language}",
+  "@decksSearchHintIn": {
+    "description": "Hint in the Decks tab's search bar (#527). The search covers the course of the language the language bar shows. {language} is its name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "decksSearchClear": "Clear search",
+  "@decksSearchClear": {
+    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527)."
+  },
+  "searchTokensHeader": "Narrow the search",
+  "@searchTokensHeader": {
+    "description": "Heading of the menu the Decks search offers on an empty bar: the tokens kind:, status: and theme: (#527)."
+  },
+  "searchTokenKindLine": "Words, grammar, script or reading",
+  "@searchTokenKindLine": {
+    "description": "The line under the kind: token in the search's menu (#527)."
+  },
+  "searchTokenStatusLine": "How well you know the word",
+  "@searchTokenStatusLine": {
+    "description": "The line under the status: token in the search's menu (#527)."
+  },
+  "searchTokenThemeLine": "The theme a deck teaches",
+  "@searchTokenThemeLine": {
+    "description": "The line under the theme: token in the search's menu (#527)."
+  },
+  "searchKindWords": "Words",
+  "@searchKindWords": {
+    "description": "Kind chip of a result and value of the kind: token: a vocabulary deck, a unit's words. (#527)"
+  },
+  "searchKindGrammar": "Grammar",
+  "@searchKindGrammar": {
+    "description": "Kind chip of a result and value of the kind: token: grammar and rule tables. (#527)"
+  },
+  "searchKindScript": "Script",
+  "@searchKindScript": {
+    "description": "Kind chip of a result and value of the kind: token: a deck that teaches a writing system. (#527)"
+  },
+  "searchKindReading": "Reading",
+  "@searchKindReading": {
+    "description": "Kind chip of a result and value of the kind: token: passages with questions. (#527)"
+  },
+  "searchKindLineWords": "Words, one row each",
+  "@searchKindLineWords": {
+    "description": "The line under the kind: words value. (#527)"
+  },
+  "searchKindLineGrammar": "Rules and their tables",
+  "@searchKindLineGrammar": {
+    "description": "The line under the kind: grammar value. (#527)"
+  },
+  "searchKindLineScript": "Writing systems",
+  "@searchKindLineScript": {
+    "description": "The line under the kind: script value. (#527)"
+  },
+  "searchKindLineReading": "Passages with questions",
+  "@searchKindLineReading": {
+    "description": "The line under the kind: reading value. (#527)"
+  },
+  "searchStatusNotLearnt": "Not learnt",
+  "@searchStatusNotLearnt": {
+    "description": "Value of the status: token, a card no skill of which has a schedule yet (#527)."
+  },
+  "searchStatusLineNotLearnt": "No skill has been drilled yet",
+  "@searchStatusLineNotLearnt": {
+    "description": "The line under the status: NotLearnt value (#527)."
+  },
+  "searchStatusLearning": "Learning",
+  "@searchStatusLearning": {
+    "description": "Value of the status: token, a card taught, some skill of which is less than 21 days out (#527)."
+  },
+  "searchStatusLineLearning": "Some skill is not yet 21 days out",
+  "@searchStatusLineLearning": {
+    "description": "The line under the status: Learning value (#527)."
+  },
+  "searchStatusLearnt": "Learnt",
+  "@searchStatusLearnt": {
+    "description": "Value of the status: token, a card every skill of which is scheduled 21 or more days out (#527)."
+  },
+  "searchStatusLineLearnt": "Every skill is 21 days out or more",
+  "@searchStatusLineLearnt": {
+    "description": "The line under the status: Learnt value (#527)."
+  },
+  "searchStatusForgetting": "Forgetting",
+  "@searchStatusForgetting": {
+    "description": "Value of the status: token, a card a review of which is due (#527)."
+  },
+  "searchStatusLineForgetting": "A review is due",
+  "@searchStatusLineForgetting": {
+    "description": "The line under the status: Forgetting value (#527)."
+  },
+  "searchStatusStruggling": "Struggling",
+  "@searchStatusStruggling": {
+    "description": "Value of the status: token, a card a skill of which is a leech (#527)."
+  },
+  "searchStatusLineStruggling": "Missed again and again",
+  "@searchStatusLineStruggling": {
+    "description": "The line under the status: Struggling value (#527)."
+  },
+  "searchStatusSetAside": "Set aside",
+  "@searchStatusSetAside": {
+    "description": "Value of the status: token, a card a skill of which was set aside (#527)."
+  },
+  "searchStatusLineSetAside": "Kept out of every session",
+  "@searchStatusLineSetAside": {
+    "description": "The line under the status: SetAside value (#527)."
+  },
+  "searchChip": "{token}: {value}",
+  "@searchChip": {
+    "description": "A token's chip inside the search bar: the token and its value, such as kind: Grammar (#527).",
+    "placeholders": {
+      "token": {
+        "type": "String",
+        "example": "kind"
+      },
+      "value": {
+        "type": "String",
+        "example": "Grammar"
+      }
+    }
+  },
+  "searchChipRemove": "Remove {chip}",
+  "@searchChipRemove": {
+    "description": "Tooltip of a chip's ✕ in the search bar (#527).",
+    "placeholders": {
+      "chip": {
+        "type": "String",
+        "example": "kind: Grammar"
+      }
+    }
+  },
+  "searchChipChange": "Change {chip}",
+  "@searchChipChange": {
+    "description": "Semantic label of a chip in the search bar, tapped to change its value (#527).",
+    "placeholders": {
+      "chip": {
+        "type": "String",
+        "example": "kind: Grammar"
+      }
+    }
+  },
+  "searchNothing": "Nothing found for “{query}”",
+  "@searchNothing": {
+    "description": "Heading of the search's empty state (#527).",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "helicoptr"
+      }
+    }
+  },
+  "searchNothingBody": "The search looks in deck and unit names, and in each word, its reading and its meaning. Try fewer letters, or another word.",
+  "@searchNothingBody": {
+    "description": "What the search looks in, under the empty state's heading (#527)."
+  },
+  "searchNoKind": "No {kind} results for “{query}”",
+  "@searchNoKind": {
+    "description": "Heading when results exist but none is of the kind chosen with kind: (#527). {kind} is the kind in lower case.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "reading"
+      },
+      "query": {
+        "type": "String",
+        "example": "numbrs"
+      }
+    }
+  },
+  "searchOtherKinds": "{count, plural, one{1 result of another kind.} other{{count} results of other kinds.}}",
+  "@searchOtherKinds": {
+    "description": "Under the heading when none is of the chosen kind: how many results of other kinds there are (#527).",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchRemoveKind": "Remove kind: {kind}",
+  "@searchRemoveKind": {
+    "description": "Button that removes the kind chip from the search bar (#527).",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Reading"
+      }
+    }
+  },
+  "searchCloseMatches": "Close matches for “{query}”",
+  "@searchCloseMatches": {
+    "description": "Line above results that were found despite a typo (#527).",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "travl"
+      }
+    }
+  },
+  "searchTagged": "Tagged {tag}",
+  "@searchTagged": {
+    "description": "Third line of a result found by a theme's tag, not its name (#527).",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchSuggestionUse": "Search for {text}",
+  "@searchSuggestionUse": {
+    "description": "Semantic label of a suggestion row, tapped to search it (#527).",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchSuggestionEdit": "Put {text} in the bar",
+  "@searchSuggestionEdit": {
+    "description": "Tooltip of a suggestion's arrow, which puts it in the bar to go on typing (#527).",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchScriptNotHere": "This script is not part of this course.",
+  "@searchScriptNotHere": {
+    "description": "Message when the query is in a script the course does not use (#527)."
+  },
+  "searchScriptTyped": "You typed in {script}.",
+  "@searchScriptTyped": {
+    "description": "Names the script of the query (#527). {script} is the script's own name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchScriptSwitchTitle": "Switch to {language}?",
+  "@searchScriptSwitchTitle": {
+    "description": "Row offering the learner's other course that uses the script (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "searchScriptIsTarget": "{script} is its target script.",
+  "@searchScriptIsTarget": {
+    "description": "Line of a switch row (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchScriptIsNative": "{script} is the script it is taught in.",
+  "@searchScriptIsNative": {
+    "description": "Line of a switch row where the script is the course's native script (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchSwitch": "Switch",
+  "@searchSwitch": {
+    "description": "Button that shows another course and runs the search there (#527)."
+  },
+  "searchScriptNoCourse": "This script is not part of this course or any other you are learning.",
+  "@searchScriptNoCourse": {
+    "description": "Message when none of the learner's courses uses the script (#527)."
+  },
+  "searchAddCourse": "Add the {language} course",
+  "@searchAddCourse": {
+    "description": "Row offering a catalog course written in the script (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Gujarati"
+      }
+    }
+  },
+  "searchAddCourseLine": "The {script} script is its target script.",
+  "@searchAddCourseLine": {
+    "description": "Line of an add-course row (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Gujarati"
+      }
+    }
+  },
+  "searchAdd": "Add",
+  "@searchAdd": {
+    "description": "Button of an offer in the search (#527)."
+  },
+  "searchAddKnown": "Add {language} to the languages you know",
+  "@searchAddKnown": {
+    "description": "Row offering to add a language written in the script to Languages you know (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Nepali"
+      }
+    }
+  },
+  "searchAddKnownLine": "{language} is written in {script}.",
+  "@searchAddKnownLine": {
+    "description": "Line of an add-known-language row (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Nepali"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
   }
 }

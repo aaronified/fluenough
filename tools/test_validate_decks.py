@@ -618,6 +618,11 @@ class Themes(Validated):
         self.assertEqual(report.errors, [])
         self.assertEqual(report.themes, ["first-words", "market"])
 
+    def _a_theme_may_carry_search_tags(self) -> None:
+        text = THEMES.replace('name: "Market"', 'name: "Market", tags: ["shop"]')
+        report = validate_decks.validate(self.write("themes.yaml", text))
+        self.assertEqual(report.errors, [])
+
     def _a_malformed_themes_file_is_rejected(self) -> None:
         for bad, needle in (
             (THEMES.replace("id: market", "id: first-words"), "listed twice"),
@@ -625,6 +630,8 @@ class Themes(Validated):
             (THEMES.replace(', name: "Market"', ""), "needs a name"),
             (THEMES + "cards: []\n", "unknown field"),
             ("schema: 1\nkind: themes\nthemes: []\n", "non-empty"),
+            (THEMES.replace('name: "Market"', 'name: "Market", tags: []'), "tags must be"),
+            (THEMES.replace('name: "Market"', 'name: "Market", tags: "x"'), "tags must be"),
         ):
             with self.subTest(needle):
                 errors = validate_decks.validate(self.write("themes.yaml", bad)).errors
@@ -658,6 +665,7 @@ class Themes(Validated):
     def test_a_theme_exists_and_is_used_once(self) -> None:
         cases = (
             self._a_themes_file_is_valid,
+            self._a_theme_may_carry_search_tags,
             self._a_malformed_themes_file_is_rejected,
             self._a_vocab_deck_may_name_a_theme,
             self._only_a_vocab_deck_takes_a_theme,
