@@ -140,7 +140,7 @@ class _DeckGroupState extends State<_DeckGroup> {
                     ? partName(l10n, s.part)
                     : suggestionPartName(l10n, c.card!, s.part, word: s.word),
                 now: s.now.isEmpty ? l10n.reviewSuggestNothing : s.now,
-                yours: yoursOf(s),
+                yours: yoursOf(l10n, s),
                 why: s.why,
               ),
           ],

@@ -47,6 +47,13 @@ FIELD_OF_PART = {
     "meaning": "native",
     "notes": "notes",
     "place": "place",
+    # The card's scalars (#508): the bot writes these four, each with a
+    # fixed set of values (see value_error). The lists, the facts and the
+    # flags stay with the owner.
+    "gender": "gender",
+    "register": "register",
+    "hears": "hears",
+    "warning": "warning",
 }
 # The order fields are written in, for a field the card did not have.
 FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "alt_target", "native")
@@ -67,6 +74,8 @@ ALT = "alt_target"
 # card's entry in its core, and applied by moving the entry, with its layers'
 # entries, to the end of the target's files, its id kept.
 PLACE = "place"
+# The fields whose value is one of a fixed set (#508).
+FIXED_FIELDS = ("gender", "register", "hears", "warning")
 # The keys of a base in a proposal, in the order they are written.
 BASE_ORDER = ("word", "ref", "base", "reading", "meaning")
 
@@ -320,6 +329,47 @@ def now_of(root: Path, lang: str, entry: Entry, p: Proposal) -> str:
         return entry.deck if entry.form == "core" else ""
     value = entry.value(p.field)
     return value if isinstance(value, str) else ""
+
+
+def genders_of(root: Path, lang: str) -> list[str]:
+    """The gender classes the language's path lists, `[]` for a language
+    without gender or a path that lists none."""
+    raw = _load(root / "decks" / lang / f"{lang}-path.yaml")
+    classes = raw.get("genders") if isinstance(raw, dict) else None
+    return [c for c in classes if isinstance(c, str)] if isinstance(classes, list) else []
+
+
+def warning_choices(entry: Entry) -> list[str]:
+    """What the card's `warning` may be (#691): the id of each of its pair,
+    homograph and lookalike notes (a note with no id by its place, "1",
+    "2"), `senses` when the card has senses, and `none`."""
+    choices = []
+    notes = entry.data.get("notes")
+    for i, note in enumerate(notes if isinstance(notes, list) else []):
+        if isinstance(note, dict) and note.get("kind") in vd.REF_NOTE_KINDS:
+            nid = note.get("id")
+            choices.append(str(i + 1) if nid is None else str(nid))
+    senses = entry.data.get("senses")
+    if isinstance(senses, list) and senses:
+        choices.append("senses")
+    return [*choices, "none"]
+
+
+def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> str | None:
+    """Why [text] may not be written as [entry]'s [name], or None. Only the
+    fixed-value fields have a rule: a gender is one of the language's
+    classes, a register one of the five, `hears` is `form`, and a warning
+    names a warning the card has. The text of any other field is free."""
+    if name == "gender":
+        classes = genders_of(root, lang)
+        if text not in classes:
+            return (f"gender {text!r} is not one of the language's classes "
+                    f"({', '.join(classes) or 'none: the language has no gender'})")
+    elif name in vd.PROPOSAL_VALUES and text not in vd.PROPOSAL_VALUES[name]:
+        return f"{name} must be one of {', '.join(vd.PROPOSAL_VALUES[name])}, got {text!r}"
+    elif name == "warning" and text not in warning_choices(entry):
+        return f"warning {text!r} is not one of {', '.join(warning_choices(entry))}"
+    return None
 
 
 def holds(root: Path, lang: str, entry: Entry, p: Proposal) -> bool:
@@ -750,6 +800,12 @@ def propose(root: Path, suggestion: Suggestion, result: Proposed) -> None:
     if entry is None:
         result.outdated.append(p)
         return
+    if p.field in FIXED_FIELDS and value_error(
+            root, suggestion.lang, entry, p.field, p.text):
+        # A value the field may not have is never written, and not outdated:
+        # it was never good.
+        result.unsupported.append(p)
+        return
     try:
         text = _Text(entry)
         text.add(p)
@@ -803,6 +859,8 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
     entry, p = found
     if not holds(root, lang, entry, p):
         return Applied("outdated", p)
+    if p.field in FIXED_FIELDS and value_error(root, lang, entry, p.field, p.text):
+        return Applied("unsupported", p)
     rivals = rivals_of(entry, p)
     gone = {o.id for o in (p, *rivals)}
     try:

@@ -60,8 +60,10 @@ class SuggestionLines extends StatelessWidget {
 }
 
 /// What [s] suggests, as text: its text, or for a base added, changed or
-/// removed (#476), the base it names.
-String yoursOf(Suggestion s) {
+/// removed (#476), the base it names, or for a flag (#508) that it is
+/// flagged.
+String yoursOf(AppLocalizations l10n, Suggestion s) {
+  if (s.flag) return l10n.reviewFlaggedYours;
   if (s.part == CardPart.place) return s.label ?? s.text;
   if (s.text.trim().isNotEmpty) return s.text;
   final b = s.base ?? s.was;

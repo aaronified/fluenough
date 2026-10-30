@@ -100,7 +100,7 @@ class ReviewedSentPage extends StatelessWidget {
                       for (final s in group)
                         SuggestionLines(
                           title: _title(l10n, s),
-                          yours: yoursOf(s.suggestion),
+                          yours: yoursOf(l10n, s.suggestion),
                           footer: _StateLine(state: s.state),
                         ),
                     ],

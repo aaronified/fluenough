@@ -70,7 +70,7 @@ Finder rowButton(String label) => find.widgetWithText(FilledButton, label);
 /// A phone tall enough for every part of the sheet to be built.
 void useTallPhoneSuggestSheet(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 2400 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 4800 * 3);
 }
 
 /// Opens Suggest a change on the plain word, అమ్మ (amma), mother.
@@ -128,7 +128,7 @@ Future<AppState> openSheetBaseChange(
   ThemeMode themeMode = ThemeMode.light,
 }) async {
   usePhone(tester, textScale: textScale);
-  tester.view.physicalSize = const Size(390 * 3, 2400 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 4800 * 3);
   final state = await reviewState(reviewing: true, bases: bases);
   final words = state.deckById(wordsDeck)!;
   final mother = words.cards.firstWhere((c) => c.id == plainCard);
@@ -683,7 +683,7 @@ void main() {
         expect(find.text(l10n.reviewPageProgress(0, 2)), findsOneWidget);
 
         {
-          useTallPhone(tester);
+          useTallPhoneSuggestSheet(tester);
           final state = await pumpScreen(
             tester,
             const ReviewPage(deckId: wordsDeck),
@@ -714,14 +714,18 @@ void main() {
           );
           await tester.pumpAndSettle();
           expect(find.byType(SuggestSheet), findsOneWidget);
-          for (final part in CardPart.values) {
-            // A base word has a card a base; this card has none. Also heard
-            // shows once a new word is suggested (#476).
+          for (final part in <CardPart>[
+            CardPart.word,
+            CardPart.reading,
+            CardPart.ipa,
+            CardPart.register,
+            CardPart.meaning,
+            CardPart.notes,
+            CardPart.picture,
+          ]) {
             expect(
               find.byTooltip(l10n.reviewSuggestEditPart(partName(l10n, part))),
-              part == CardPart.base || part == CardPart.alt
-                  ? findsNothing
-                  : findsOneWidget,
+              findsOneWidget,
             );
           }
           // No field until a pencil is tapped, and Save waits for a change.

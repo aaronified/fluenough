@@ -7,8 +7,20 @@
 library;
 
 /// The fields a proposal may change. The names are the deck's, and are
-/// written to review files, so they are permanent.
-enum ProposalField { target, reading, ipa, native, notes }
+/// written to review files, so they are permanent. [gender], [register],
+/// [hears] and [warning] (#508) are the card's own scalars: each has a fixed
+/// set of values, which the review bot checks before it writes one.
+enum ProposalField {
+  target,
+  reading,
+  ipa,
+  native,
+  notes,
+  gender,
+  register,
+  hears,
+  warning,
+}
 
 class Proposal {
   const Proposal({
