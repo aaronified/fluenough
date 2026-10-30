@@ -11,9 +11,11 @@ import '../../core/data/themes.dart' show DeckTheme;
 import '../../core/models/card.dart' hide wordsOf;
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/grammar_pattern.dart' show PatternEntry;
 import '../../core/models/leech_action.dart' show LeechEffects;
 import '../../core/models/reading.dart' show QuestionCard;
 import '../../core/models/review_event.dart' show ProgressKey;
+import '../../core/search/card_index.dart';
 import '../../core/search/fuzzy.dart';
 import '../../core/search/query.dart';
 import '../../core/search/script_of.dart';
@@ -89,9 +91,37 @@ final class DeckHit extends SearchHit {
 
 /// One card a search found: its own row, never grouped by meaning (#527).
 final class CardHit extends SearchHit {
-  const CardHit(super.language, this.card, {super.rank, super.kind});
+  const CardHit(
+    super.language,
+    this.card, {
+    required this.deck,
+    this.moreDecks = 0,
+    super.rank,
+    super.kind,
+  });
 
   final Card card;
+
+  /// The deck that teaches it first, in path order.
+  final DeckEntry deck;
+
+  /// How many other decks teach the same card: "and 1 more deck".
+  final int moreDecks;
+}
+
+/// One row of a grammar table, found as a word by its lemma, its reading
+/// and its gloss (#527, mockup section 5): opens the table's unit or deck.
+final class EntryHit extends SearchHit {
+  const EntryHit(
+    super.language,
+    this.deck,
+    this.entry, {
+    super.rank,
+    super.kind,
+  });
+
+  final DeckEntry deck;
+  final PatternEntry entry;
 }
 
 /// [text] as the search compares it: lower case, Latin diacritics folded
@@ -190,6 +220,81 @@ List<_IndexedCard> _indexOf(DeckEntry entry) =>
               ],
             ),
     ];
+
+/// A grammar table's row and its searchable text, folded once.
+typedef _IndexedEntry = ({PatternEntry entry, List<String> fields});
+
+final Expando<List<_IndexedEntry>> _entryIndex = Expando<List<_IndexedEntry>>(
+  'grammar table search index',
+);
+
+/// A grammar table's rows by what a search can find them by: the lemma, its
+/// reading and its gloss.
+List<_IndexedEntry> _entriesOf(DeckEntry entry) =>
+    _entryIndex[entry] ??= <_IndexedEntry>[
+      for (final row in entry.deck.pattern?.entries ?? const <PatternEntry>[])
+        (
+          entry: row,
+          fields: <String>[
+            for (final field in <String?>[row.lemma, row.reading, row.gloss])
+              if (field != null && field.isNotEmpty) searchForm(field),
+          ],
+        ),
+    ];
+
+/// Whether cards are looked up through the SQLite FTS5 index when the
+/// platform has one (#527, ADR-0049). Tests turn it off to run the pure-Dart
+/// matcher alone, the fallback.
+bool searchIndexEnabled = true;
+
+CardSearchIndex? _sharedIndex;
+bool _indexProbed = false;
+
+/// The index, or null where there is none: the web, or a SQLite without
+/// FTS5 or its trigram tokenizer, which the first call finds out.
+CardSearchIndex? _liveIndex() {
+  if (!searchIndexEnabled) return null;
+  if (!_indexProbed) {
+    _indexProbed = true;
+    _sharedIndex = CardSearchIndex.tryOpen();
+  }
+  return _sharedIndex;
+}
+
+/// The index each deck entry's cards were put in, so that a deck is added
+/// once and added again only when the catalog gives a new entry for it.
+final Expando<CardSearchIndex> _indexedIn = Expando<CardSearchIndex>(
+  'card index of',
+);
+
+/// The ids of the cards of [entries] that could match [words], from the FTS5
+/// index (a superset: the matcher still decides), or null when there is no
+/// index or it cannot narrow the search. Any failure turns the index off
+/// and leaves the matcher to scan everything.
+Set<String>? _candidateCards(
+  Iterable<DeckEntry> entries,
+  List<String> words,
+  bool typos,
+) {
+  final index = _liveIndex();
+  if (index == null || words.isEmpty) return null;
+  try {
+    for (final entry in entries) {
+      if (identical(_indexedIn[entry], index) && index.hasDeck(entry.id)) {
+        continue;
+      }
+      index.addDeck(entry.id, <IndexedFields>[
+        for (final c in _indexOf(entry)) (card: c.card.id, fields: c.fields),
+      ]);
+      _indexedIn[entry] = index;
+    }
+    return index.candidates(words, typos: typos);
+  } on Object {
+    _sharedIndex?.close();
+    _sharedIndex = null;
+    return null;
+  }
+}
 
 /// A card's status as the `status:` token reads it (#527): set aside is
 /// read over all the card's skills, since the drillable ones leave
@@ -481,14 +586,22 @@ List<SearchHit> _collect(
         }
       }
     }
-    final seen = <String>{};
-    for (final entry in state.decks) {
-      if (entry.language.code != code || entry.deck.native.code != native) {
-        continue;
-      }
-      if (!deckAllowed(entry)) continue;
+    final courseDecks = <DeckEntry>[
+      for (final entry in state.decks)
+        if (entry.language.code == code &&
+            entry.deck.native.code == native &&
+            deckAllowed(entry))
+          entry,
+    ];
+    final allowed = _candidateCards(courseDecks, words, typos);
+    // A card taught in several decks is one row, named by the deck that
+    // teaches it first, with the count of the others.
+    final found = <String>{};
+    final others = <String, Set<String>>{};
+    for (final entry in courseDecks) {
       final kind = searchKindOf(entry);
       for (final indexed in _indexOf(entry)) {
+        if (allowed != null && !allowed.contains(indexed.card.id)) continue;
         var rank = 0;
         if (words.isNotEmpty) {
           final r = rankAll(words, indexed.fields, typos: typos);
@@ -498,8 +611,59 @@ List<SearchHit> _collect(
         if (statusOf != null && statusOf(indexed.card) != statusChip) {
           continue;
         }
-        if (seen.add(indexed.card.id)) {
-          cards.add(CardHit(language, indexed.card, rank: rank, kind: kind));
+        final id = indexed.card.id;
+        if (!found.add(id)) {
+          others.putIfAbsent(id, () => <String>{}).add(entry.id);
+        } else {
+          cards.add(
+            CardHit(
+              language,
+              indexed.card,
+              deck: entry,
+              rank: rank,
+              kind: kind,
+            ),
+          );
+        }
+      }
+    }
+    for (final (i, hit) in cards.indexed.toList()) {
+      if (hit is CardHit && others[hit.card.id] case final more?) {
+        cards[i] = CardHit(
+          hit.language,
+          hit.card,
+          deck: hit.deck,
+          moreDecks: more.length,
+          rank: hit.rank,
+          kind: hit.kind,
+        );
+      }
+    }
+    // A grammar table's rows are found as words too, unless the course
+    // teaches the lemma as a word that was found already.
+    if (statusChip == null) {
+      final taught = <String>{
+        for (final hit in cards)
+          if (hit is CardHit && hit.language.code == code)
+            searchForm(hit.card.target),
+      };
+      for (final entry in courseDecks) {
+        if (entry.deck.pattern == null) continue;
+        for (final row in _entriesOf(entry)) {
+          if (words.isEmpty) continue;
+          final r = rankAll(words, row.fields, typos: typos);
+          if (r == null || taught.contains(searchForm(row.entry.lemma))) {
+            continue;
+          }
+          cards.add(
+            EntryHit(
+              language,
+              entry,
+              row.entry,
+              rank: r * 2,
+              kind: SearchKind.grammar,
+            ),
+          );
         }
       }
     }
@@ -742,6 +906,24 @@ class SearchResultsSliver extends StatelessWidget {
                           language: hit.language,
                         ),
                       ),
+                      if (hit.moreDecks > 0)
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            16,
+                            0,
+                            12,
+                            6,
+                          ),
+                          child: Text(
+                            l10n.searchTaughtIn(
+                              hit.deck.deck.name,
+                              hit.moreDecks,
+                            ),
+                            style: theme.textTheme.bodySmall!.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
                       _KindChipLine(kind: hit.kind, onKind: onKind),
                     ],
                   )
@@ -900,6 +1082,18 @@ class _HitTile extends StatelessWidget {
           foreground: scheme.onSurfaceVariant,
         ),
         null,
+      ),
+      EntryHit() => (
+        hit.entry.lemma,
+        joinParts(l10n, <String>[
+          language,
+          ?hit.entry.reading,
+          hit.entry.gloss,
+        ]),
+        const SizedBox.shrink(),
+        () => opensUnit(state, hit.deck.id)
+            ? AppNavigator.openUnit(context, hit.deck.id)
+            : AppNavigator.openDeck(context, hit.deck.id),
       ),
       // Drawn as a CardRow, not as a tile.
       CardHit() => (hit.card.target, language, const SizedBox.shrink(), null),
