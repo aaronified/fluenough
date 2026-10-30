@@ -221,7 +221,8 @@ cards:
     examples:
       - { target: "Je suis très bien.", ipa: "ʒə sɥi tʁɛ bjɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
       - { target: "Il est ici.", ipa: "il ɛ isi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "ici", ref: "fr-0029" }] }
-    bases: "self"
+    bases:
+      - { word: "être", base: "être" }
   - id: "fr-0022"
     target: "avoir"
     ipa: "avwaʁ"
@@ -233,7 +234,8 @@ cards:
     examples:
       - { target: "J'ai faim.", ipa: "ʒe fɛ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "faim", base: "faim" }] }
       - { target: "Nous avons beaucoup de temps.", ipa: "nu avɔ̃ boku də tɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", base: "avoir" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "temps", base: "temps" }] }
-    bases: "self"
+    bases:
+      - { word: "avoir", base: "avoir" }
   - id: "fr-0023"
     target: "parler"
     ipa: "paʁle"
@@ -245,7 +247,8 @@ cards:
     examples:
       - { target: "Je parle un peu français.", ipa: "ʒə paʁl œ̃ pø fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", base: "parler" }, { word: "un", base: "un" }, { word: "peu", base: "peu" }, { word: "français", base: "français" }] }
       - { target: "Vous parlez bien.", ipa: "vu paʁle bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "parlez", base: "parler" }, { word: "bien", ref: "fr-0032" }] }
-    bases: "self"
+    bases:
+      - { word: "parler", base: "parler" }
   - id: "fr-0024"
     target: "l'eau"
     ipa: "lo"
