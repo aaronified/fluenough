@@ -110,7 +110,7 @@ FONTS_DIR = DECKS / "fonts"
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
 # out of the index.
-NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+NOT_DECKS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
              "resources", "phonetics"}
 
 

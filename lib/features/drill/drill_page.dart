@@ -123,6 +123,14 @@ class _DrillPageState extends State<DrillPage> {
         ..addListener(_onSession);
       return;
     }
+    // A situation sheet: its new cards taught, the others revised (#724).
+    if (request.sheet) {
+      final items = state.sheetSession(request);
+      if (items.isEmpty) return;
+      _items = items;
+      _begin(state);
+      return;
+    }
     // The sounds of a word: its IPA cards, each taught, checked and
     // practised, and recorded in the IPA course (ADR-0041).
     if (request.cardIds != null) {

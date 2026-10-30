@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Situations on Today (#724): six buttons, each in a colour of its own, open sheets of key phrases and words for everyday moments, with unlearned cards marked, Practise this sheet, and an inspect view of each card. A situations file per language lists real card ids (`kind: situations`, checked by the validator); Telugu has a first taxi sheet, and courses without sheets show the buttons dimmed with an Upcoming pill.
+
 ### Changed
 
 - Languages is one page for the languages you know and the ones you learn (#907): each language has four skills, Speak, Hear, Read and Write (Read and Write per script), and one pill per skill cycles Leave, Know, Learn. One Learn skill downloads the language's full decks; a skill changed to Learn is checked (a sound test, or the script showing on the phone) from the sheet's Check button; a language with every skill Leave goes back to the pool and its decks go at the next app open. The list shows icon chips, filter pills and the minutes a day for each language (a stepper, 5 to 60); Find my level, Placed words, a deck update check and a details panel are on the sheet, and a Review switch in Settings (off by default) turns on the fit-your-level prompts. Settings has one Languages row in place of Languages I know and Languages I'm learning; current learners' lists read as skills until they edit.

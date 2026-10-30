@@ -9,6 +9,7 @@ Today is the first tab. It shows what to do now.
 - **Words due**, by skill: seen, written, heard, spoken and grammar. Each shows how many are due and about how many minutes they take. Tap one to start. A skill that needs sound shows that there is no voice on this phone if there is none.
 - **Your streak**, and a week of dots showing which days you practised.
 - **Quick revision.**
+- **Situations**: six buttons, each in a colour of its own (taxi, shops, eat, doctor, traffic, rail), under quick revision. A button opens a sheet of key phrases and words for that moment, all shown, with a dot on those you have not learnt yet; **Practise this sheet** teaches the new ones and revises the rest, and the info mark opens a card in full, one at a time. Sheets are lists of the decks' own cards, so progress is shared with the decks. Telugu has the taxi sheet first; a course without sheets shows the buttons dimmed with an Upcoming pill.
 - **A fact of the day**: one short, true thing about a language you are learning. Facts follow the languages you said you know.
 
 ## A lesson

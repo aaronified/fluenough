@@ -16,6 +16,7 @@ const int decksBeforeReady = 5;
 const Set<String> languageFileKinds = <String>{
   'path',
   'facts',
+  'situations',
   'numbers',
   'romanisation',
   'sounds',

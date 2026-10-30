@@ -332,6 +332,35 @@ class FactsNameCards(Case):
         self.assertAcross(f"{self.p(self.FACTS)}: fact zz-fact-001: cards[0] names card "
                           f"zz-9999, which no deck writes", self.FACTS)
 
+    SITUATIONS = "zz-situations.yaml"
+
+    def situations(self, *sheets: dict) -> None:
+        self.put(self.SITUATIONS, {
+            "schema": 1, "id": "zz-situations", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": list(sheets)})
+
+    def _a_situation_lists_real_cards(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"},
+                "phrases": [HOUSE], "words": ["zz-9004"]}
+        self.situations(taxi)
+        self.assertNoError(self.SITUATIONS, "situation taxi")
+        self.assertNotAcross("names card", self.SITUATIONS)
+        self.situations(dict(taxi, words=["zz-9999"]))
+        self.assertAcross(f"{self.p(self.SITUATIONS)}: situation taxi: words[0] names "
+                          f"card zz-9999, which no deck writes", self.SITUATIONS)
+
+    def _a_situation_has_its_shape(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(dict(taxi, icon="boat"), dict(taxi, id="cab"),
+                        {"id": "eat", "icon": "eat", "title": {"bn": "x"}})
+        errors = self.errors(self.SITUATIONS)
+        self.assertTrue(any("icon must be one of" in e for e in errors))
+        self.assertIn("situation cab: icon 'taxi' is on another situation: each button "
+                      "has its own", errors)
+        self.assertIn("situation eat: title needs an English entry", errors)
+        self.assertIn("situation eat: lists no cards: give phrases, words or both", errors)
+
     def _a_rank_and_its_source(self) -> None:
         self.core(HOUSE, frequency={"rank": 120, "source": "te.wikipedia.org, 2026-10"})
         self.assertNoError(CORE)
@@ -370,6 +399,8 @@ class FactsNameCards(Case):
             self._cards_are_ids_of_the_language,
             self._shape,
             self._a_card_no_deck_writes,
+            self._a_situation_lists_real_cards,
+            self._a_situation_has_its_shape,
             self._a_rank_and_its_source,
             self._frequency_shape,
             self._a_layer_gives_none,
