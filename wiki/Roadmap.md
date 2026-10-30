@@ -58,11 +58,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-23 approved open issues.
+22 approved open issues.
 
 **Enhancements**
 
-- [#485](https://github.com/aaronified/fluenough/issues/485) Daily commitment per language: chosen at onboarding, sets lesson and review sizes
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#484](https://github.com/aaronified/fluenough/issues/484) Generate docs/ROADMAP.md automatically, from the plans and the approved issues
 - [#493](https://github.com/aaronified/fluenough/issues/493) Clean up junk data regularly: old update APKs, temporary restore files, stale caches
