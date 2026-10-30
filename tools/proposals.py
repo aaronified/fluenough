@@ -1136,6 +1136,29 @@ def fill(entry: Entry, values: dict[str, str]) -> bool:
     return True
 
 
+def remove_fields(root: Path, lang: str, card: str, names: tuple[str, ...]) -> str:
+    """Takes the one-line fields [names] out of every entry of [card] that
+    has one, a line at a time (#519: a recording two reviewers flagged is
+    taken off the card, which then uses text-to-speech). "removed" when a
+    line went, "none" when the card has none of them, "unsupported" when
+    an entry cannot be edited one line at a time (a card written in flow
+    style, or a field over several lines): nothing is written for that
+    entry and it is left for the owner."""
+    outcome = "none"
+    for entry in entries(root, lang, card):
+        if not any(n in entry.data for n in names):
+            continue
+        try:
+            edit = _Text(entry)
+            for name in names:
+                edit.set_list(name, [])
+            edit.save(lambda e: not any(n in e.data for n in names))
+        except Unsupported:
+            return "unsupported"
+        outcome = "removed"
+    return outcome
+
+
 def outdated(root: Path, lang: str) -> list[tuple[Entry, Proposal]]:
     """The proposals whose field no longer says what they were proposed
     against, and those tied to a change to the word that is gone (#476)."""

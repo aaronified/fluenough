@@ -93,6 +93,7 @@ from typing import Callable, Protocol
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
+import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
 
@@ -102,6 +103,7 @@ KIND_LABELS = {
     "review": "proposals",
     "apply": "agreement",
     "outdated": "proposal outdated",
+    "questions": "daily questions",
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
@@ -340,7 +342,9 @@ class LocalGit:
         return path
 
     def push(self, root: Path, branch: str, message: str) -> bool:
-        self._git("add", "--all", "decks", cwd=root)
+        # The daily questions' answers are kept beside the decks (#519).
+        kept = ["decks", *(["review-answers"] if (root / "review-answers").is_dir() else [])]
+        self._git("add", "--all", *kept, cwd=root)
         if self._git("diff", "--cached", "--quiet", cwd=root, check=False).returncode == 0:
             return False
         self._git("-c", f"user.name={self.NAME}", "-c", f"user.email={self.EMAIL}",
@@ -870,6 +874,51 @@ class Bot:
             self.log(f"Review by {code}: sign-offs of "
                      f"{len(checked[-1].missing)} card(s) not in their deck, "
                      f"{len(checked[-1].unsupported)} left for the owner.")
+        return outcome
+
+    def questions(self, key: str, code: str, batch: qa.Batch) -> str:
+        """The PR of one daily-questions mail, by [code] (#519): its answers
+        are counted in `review-answers/`, and what two agreeing answers
+        settle is carried out in the same PR (a flagged recording is taken
+        off its card). Counts only in the log: no text, no mail address."""
+        made: list[qa.Counted] = []
+
+        def build(root: Path) -> Built | None:
+            result = qa.record(root, batch, code, self.threshold)
+            made.append(result)
+            if not result.changed:
+                return None
+            lines = [f"Answers to the daily questions by **{code}**, from the "
+                     f"mail (#519).", "",
+                     f"- Answers counted: {len(result.recorded)}"]
+            if result.settled:
+                lines.append(
+                    f"- Settled by {self.threshold + 1} agreeing answers: "
+                    + ", ".join(f"`{c}` {p} ({a})" for _, c, p, a in result.settled))
+            if result.removed:
+                lines.append("- Recording taken off, the card uses text-to-speech: "
+                             + ", ".join(f"`{c}`" for _, c in result.removed))
+            wrong = [(c, p) for _, c, p, a in result.settled if a == "no"]
+            if wrong:
+                lines.append("- **Agreed wrong, for the owner** (the answers carry "
+                             "no replacement): "
+                             + ", ".join(f"`{c}` {p}" for c, p in wrong))
+            if result.unsupported:
+                lines.append("- Recordings flagged that could not be taken off "
+                             "(the card is not written a line at a time): "
+                             + ", ".join(f"`{c}`" for _, c in result.unsupported))
+            lines += ["", FOOTER]
+            return Built(
+                title=f"Daily question answers by {code}",
+                body="\n".join(lines),
+                labels=[LABEL, KIND_LABELS["questions"]],
+                langs=sorted({lang for lang, _ in result.removed}))
+        outcome = self.job(f"{PREFIX}questions/{key}", build)
+        if made and (made[-1].missing or made[-1].ignored or batch.dropped):
+            self.log(f"Answers by {code}: {made[-1].missing} about a card "
+                     f"the language does not have, {made[-1].ignored} already "
+                     f"counted or settled, {batch.dropped} that do not read as "
+                     f"answers; the PR: {outcome}.")
         return outcome
 
     def apply(self, lang: str, proposal: pr.Proposal) -> str:

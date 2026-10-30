@@ -153,6 +153,10 @@ another review, may change it first.
   read the codes in `checked_by` (and in `authors`, as decks listed them
   before).
 
+### Amendment: daily questions (#519, 2026-10-30)
+
+The answers to the app's daily questions take the same route (a mail with one `fluenough-questions` file per language, filed as an issue with counts only, counted by the bot) but are not proposals: an answer carries no text, so there is nothing to write into a field. The bot keeps them in `review-answers/<language>.json`, outside `decks/`, so no deck hash changes and no released parser needs to read a new field: one entry per data point (`<card>|<point>`), the rater codes with their answers and fixed reasons, and `settled` once the same answer has come from the agreeing number of codes (the threshold plus the first, two by default). A reviewer's own words stay in the mail. Settling a flagged recording takes the card's `audio` and `audio_credit` and the file out of the deck in the same pull request. Open: the phone cannot read the record, so it does not know a point is settled; it asks each reviewer once, the weakest data first, the same order for everyone so that answers meet.
+
 ## Consequences
 
 - Native speakers change the decks learners download without the owner,

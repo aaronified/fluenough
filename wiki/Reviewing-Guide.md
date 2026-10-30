@@ -167,6 +167,32 @@ checked the whole unit.
   each, and for a confirmed pair write a short care note (at most 40
   letters) that learners will see.
 
+## Daily questions
+
+Besides whole decks, you can answer a few short questions a day. The app
+writes them from the cards, about the data nobody has checked yet: is this
+the right meaning of a word, is this example natural, is this a real
+confusable, is this recording correct and by a native speaker. Data written
+without a source comes before data taken from Wiktionary or Tatoeba.
+
+- **Yes or No.** A No asks why, with a few fixed reasons and an optional
+  line. The line goes in the mail for people to read and nowhere else.
+- **Recordings.** There is no recording option yet. A recording can only be
+  flagged when it is bad, and the card then uses text-to-speech.
+- **How many a day** is yours to choose, in this guide's step and later in
+  Settings under **Reviewing**, **Questions a day**. The default is 10. What
+  you do not answer waits for the next day.
+- **Sending.** Answers wait on your phone until you tap **Send answers**.
+  Your mail app opens with Fluenough's address and one file per language, the
+  same way as a review. Do not change the files.
+- **Settled by two.** A data point is settled when two reviewers give the same
+  answer; if they disagree, a third decides. Two flags on a recording take it
+  off the card. Two No answers are listed for the owner, since an answer
+  carries no replacement text. The answers are kept in `review-answers/` in
+  the repository, as rater codes and answers only.
+- **Open questions** that ask you for something new, such as a regional
+  variation, come in a later version.
+
 ## Send several decks in one mail
 
 Reviews stay on your phone until you send them. You can review several decks and

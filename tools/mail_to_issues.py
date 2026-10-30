@@ -71,6 +71,13 @@ rejects, and names each rejected proposal by id and card,
 marked "proposal rejected": a rejection only flags the change to the owner
 (ADR-0038).
 
+Daily-question mails (#519) carry one `fluenough-questions` file per language
+with the answers, and their subject starts `[Fluenough questions]`. Each opens
+one issue the same way: the rater code and the languages, from the files,
+and counts of answers (never a card or a word), with the same marks. The
+bot counts the answers in `review-answers/` and settles a data point once two
+reviewers agree; the mail then gets the label `fluenough-answered`.
+
 The review bot (`tools/review_bot.py`, ADR-0038) runs after the filing,
 once its GitHub App is set up: each filed review mail whose sender passed
 becomes a PR of proposals, and the mail gets the Gmail label
@@ -156,6 +163,15 @@ GMAIL = ("gmail.com", "googlemail.com")
 # of a review that rejects a proposal.
 PROPOSED = "fluenough-proposed"
 REJECTED = "proposal rejected"
+# Daily-question mails (#519): the subject the app writes, what the files say
+# they are, the issue's label, and the label a mail gets once the bot has
+# counted its answers.
+QUESTIONS_PREFIX = "[Fluenough questions]"
+QUESTIONS_FORMAT = "fluenough-questions"
+QUESTIONS = "questions"
+ANSWERED = "fluenough-answered"
+QUESTIONS_SUBJECT = re.compile(
+    r"^\[Fluenough questions\]\s*([^\s(]+)?\s*(?:\(([^)]*)\))?", re.I)
 REVIEW_FOOTER = ("<sub>Opened by the mail workflow. The reviews stay "
                  "in the mail: no suggestion text, no mail address.</sub>")
 
@@ -263,8 +279,11 @@ def issue_from(message: email.message.Message) -> dict | None:
     }
 
 
-def review_files(message: email.message.Message) -> list[dict]:
-    """The review files attached to [message]: JSON that says it is one."""
+def review_files(message: email.message.Message,
+                 fmt: str | None = None) -> list[dict]:
+    """The review files attached to [message]: JSON that says it is one. With
+    [fmt], files of that format instead (the questions files)."""
+    fmt = fmt or REVIEW_FORMAT
     files = []
     for part in message.walk():
         if part.get_content_disposition() != "attachment":
@@ -278,9 +297,14 @@ def review_files(message: email.message.Message) -> list[dict]:
             data = json.loads(payload.decode("utf-8"))
         except (UnicodeDecodeError, ValueError):
             continue
-        if isinstance(data, dict) and data.get("format") == REVIEW_FORMAT:
+        if isinstance(data, dict) and data.get("format") == fmt:
             files.append(data)
     return files
+
+
+def questions_files(message: email.message.Message) -> list[dict]:
+    """The daily-question files attached to [message] (#519)."""
+    return review_files(message, QUESTIONS_FORMAT)
 
 
 def _unique(items: list[str]) -> list[str]:
@@ -420,6 +444,97 @@ def review_issue_from(
         "labels": [REVIEW, FROM_APP,
                    *(f"lang: {code}" for code in languages), *marks],
     }
+
+
+def questions_issue_from(
+        message: email.message.Message,
+        check: Callable[[str], str | None] | None = None) -> dict | None:
+    """The issue a daily-questions mail becomes (#519), or None for a mail
+    that is not one. As a review's: only the rater code and the languages,
+    from the files, and counts of answers, never a card, a word or the
+    reviewer's own text. The same marks: "subject changed", "check the
+    files", and the sender check's."""
+    files = questions_files(message)
+    said = QUESTIONS_SUBJECT.match(subject_of(message))
+    if not files and not said:
+        return None
+    subject_code = rater_code(said.group(1)) if said else None
+    subject_languages = _unique([
+        code.strip().lower()
+        for code in ((said.group(2) or "") if said else "").split(",")
+        if LANGUAGE.match(code.strip().lower())
+    ])
+    file_codes = [rater_code(f.get("rater_code")) for f in files]
+    codes = _unique([c for c in file_codes if c])
+    languages = _unique([
+        f["language"] for f in files
+        if isinstance(f.get("language"), str) and LANGUAGE.match(f["language"])
+    ])
+    marks = []
+    if not files or None in file_codes or len(codes) != 1:
+        marks.append(CHECK_FILES)
+    if files and (subject_code not in codes
+                  or set(subject_languages) != set(languages)):
+        marks.append(SUBJECT_CHANGED)
+    if check is not None and CHECK_FILES not in marks:
+        mark = check(codes[0])
+        if mark:
+            marks.append(mark)
+    if not files:
+        codes = [subject_code] if subject_code else []
+        languages = subject_languages
+    shown = ", ".join(codes) or "no code"
+    title = f"Questions: {shown}"
+    if languages:
+        title += f" ({', '.join(languages)})"
+    body = [
+        "Answers to the daily questions came by mail.",
+        f"- Rater code{'s' if len(codes) > 1 else ''}: {shown}\n"
+        f"- Language{'s' if len(languages) > 1 else ''}: "
+        f"{', '.join(languages) or 'none given'}",
+    ]
+    total, yes, other = question_counts(files)
+    if total:
+        body.append(f"- Answers: {total}\n- Yes: {yes}\n"
+                    f"- No or flagged: {other}")
+    if SUBJECT_CHANGED in marks:
+        body.append("**Subject changed:** the mail's subject is missing or "
+                    "does not match the files. This issue goes by the "
+                    "files.")
+    if CHECK_FILES in marks:
+        body.append("**Check the files:** the files carry different rater "
+                    "codes, or none, or one that fails its check.")
+    if SENDER_DIFFERS in marks:
+        body.append("**Sender does not match:** this code's first mail "
+                    "came from another mail address. The owner decides.")
+    if SENDER_UNCHECKED in marks:
+        body.append("**Sender not checked:** the rater records in the "
+                    "Fluenough Gmail could not be read or written, or the "
+                    "mail had no single sender, so it was not compared.")
+    body.append(REVIEW_FOOTER)
+    return {
+        "title": title,
+        "body": "\n\n".join(body),
+        "labels": [QUESTIONS, FROM_APP,
+                   *(f"lang: {code}" for code in languages), *marks],
+    }
+
+
+def question_counts(files: list[dict]) -> tuple[int, int, int]:
+    """How many answers [files] hold, and how many say Yes and how many No
+    or flag. No text."""
+    total = yes = other = 0
+    for f in files:
+        items = f.get("answers") if isinstance(f.get("answers"), list) else []
+        for a in items:
+            if not isinstance(a, dict):
+                continue
+            total += 1
+            if a.get("answer") == "yes":
+                yes += 1
+            elif a.get("answer") in ("no", "flag"):
+                other += 1
+    return total, yes, other
 
 
 def normal_address(address: str) -> str:
@@ -614,6 +729,9 @@ def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
         raw = next(part[1] for part in data if isinstance(part, tuple))
         message = email.message_from_bytes(raw, policy=email.policy.default)
         files = review_files(message)
+        if not files and questions_files(message):
+            # The answers to daily questions are counted by answer_mails.
+            continue
         file_codes = [rater_code(f.get("rater_code")) for f in files]
         codes = _unique([c for c in file_codes if c])
         if not files or None in file_codes or len(codes) != 1:
@@ -635,6 +753,49 @@ def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
         if outcome in ("merged", "closed", "nothing", "invalid",
                        "left to the owner"):
             imap.store(number, "+X-GM-LABELS", PROPOSED)
+        counts[outcome] = counts.get(outcome, 0) + 1
+    return counts
+
+
+def answer_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
+    """Counts the answers of every daily-questions mail filed and not yet
+    counted, each through a PR of its own (#519), as [propose_mails] does for
+    reviews: the mail is labelled [ANSWERED] once its PR is merged or closed,
+    or there was nothing to count, and a mail from another sender, or with no
+    single good code, is left to the owner."""
+    import question_answers
+    counts: dict[str, int] = {}
+    _, found = imap.search(
+        None, "X-GM-RAW",
+        f'"filename:fluenough-questions label:{FILED} -label:{ANSWERED}"')
+    for number in (found[0] or b"").split():
+        _, data = imap.fetch(number, "(BODY.PEEK[])")
+        raw = next(part[1] for part in data if isinstance(part, tuple))
+        message = email.message_from_bytes(raw, policy=email.policy.default)
+        files = questions_files(message)
+        if not files:
+            continue
+        file_codes = [rater_code(f.get("rater_code")) for f in files]
+        codes = _unique([c for c in file_codes if c])
+        if None in file_codes or len(codes) != 1:
+            outcome = "left to the owner"
+        else:
+            mark = raters.check(codes[0], sender_of(message))
+            if mark == SENDER_UNCHECKED:
+                outcome = "waiting for the sender check"
+            elif mark == SENDER_DIFFERS:
+                outcome = "left to the owner"
+            else:
+                batch = question_answers.read_questions(files, codes[0])
+                try:
+                    outcome = bot.questions(mail_key(message), codes[0], batch)
+                except Exception as error:  # noqa: BLE001 - logged, next run retries
+                    print(f"::warning::The answers of a mail by {codes[0]} "
+                          f"failed: {type(error).__name__}: {error}")
+                    outcome = "failed"
+        if outcome in ("merged", "closed", "nothing", "invalid",
+                       "left to the owner"):
+            imap.store(number, "+X-GM-LABELS", ANSWERED)
         counts[outcome] = counts.get(outcome, 0) + 1
     return counts
 
@@ -700,17 +861,19 @@ def file_mails(env: dict[str, str],
         # deleted.
         _, found = imap.search(
             None, "X-GM-RAW",
-            f'"{{subject:Fluenough filename:fluenough-review}} '
-            f'-label:{FILED}"')
+            f'"{{subject:Fluenough filename:fluenough-review '
+            f'filename:fluenough-questions}} -label:{FILED}"')
         filed = 0
         for number in (found[0] or b"").split():
             _, data = imap.fetch(number, "(BODY.PEEK[])")
             raw = next(part[1] for part in data if isinstance(part, tuple))
             message = email.message_from_bytes(raw, policy=email.policy.default)
             sender = sender_of(message)
-            issue = (review_issue_from(
-                message, lambda code: raters.check(code, sender))
-                or issue_from(message))
+            def check(code: str, sender: str = sender) -> str | None:
+                return raters.check(code, sender)
+            issue = (review_issue_from(message, check)
+                     or questions_issue_from(message, check)
+                     or issue_from(message))
             if issue is None:
                 continue
             file_issue(issue)
@@ -723,6 +886,10 @@ def file_mails(env: dict[str, str],
         if bot is not None:
             counts = propose_mails(imap, raters, bot)
             print("Review mails proposed: " + (", ".join(
+                f"{n} {outcome}" for outcome, n in sorted(counts.items()))
+                or "none waiting") + ".")
+            counts = answer_mails(imap, raters, bot)
+            print("Question mails counted: " + (", ".join(
                 f"{n} {outcome}" for outcome, n in sorted(counts.items()))
                 or "none waiting") + ".")
         return filed
