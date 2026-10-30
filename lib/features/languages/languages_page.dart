@@ -596,6 +596,30 @@ class _LanguageRow extends StatelessWidget {
                   ],
                 ),
               ),
+            if (learns && downloads?.failureOf(view.code) != null)
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: 48, top: 2),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        downloadFailureText(
+                          l10n,
+                          downloads!.failureOf(view.code),
+                        ),
+                        style: theme.textTheme.bodySmall!.copyWith(
+                          color: scheme.error,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () =>
+                          unawaited(state.downloadLanguage(view.code)),
+                      child: Text(l10n.commonRetry),
+                    ),
+                  ],
+                ),
+              ),
             if (pending)
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 48, top: 4),
