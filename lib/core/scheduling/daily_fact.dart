@@ -81,3 +81,52 @@ List<({String code, String text})> factTexts(Fact fact, List<String> spoken) =>
 
 bool _sameDay(DateTime a, DateTime b) =>
     a.year == b.year && a.month == b.month && a.day == b.day;
+
+/// The languages of [known] whose box is checked on the fact card's menu
+/// (#926): [chosen] among them, or all of [known] while nothing was chosen
+/// (null) or none of the choice is known any more. Never empty if [known]
+/// is not.
+Set<String> checkedFactLanguages(List<String> known, Set<String>? chosen) {
+  final checked = <String>{
+    for (final code in known)
+      if (chosen == null || chosen.contains(code)) code,
+  };
+  return checked.isEmpty ? known.toSet() : checked;
+}
+
+/// The choice after a tap on [code]'s box: null (every known language,
+/// which follows a language learned later) when all are checked. The last
+/// checked language cannot be unchecked: the choice is returned as it is.
+Set<String>? toggledFactLanguages(
+  List<String> known,
+  Set<String>? chosen,
+  String code,
+) {
+  if (!known.contains(code)) return chosen;
+  final checked = checkedFactLanguages(known, chosen);
+  final next = checked.contains(code)
+      ? (checked.length == 1 ? checked : (checked.toSet()..remove(code)))
+      : (checked.toSet()..add(code));
+  return next.length == known.length ? null : next;
+}
+
+/// [fact]'s text for the fact card (#926): in each checked language of
+/// [known] that it is written in, in the order of [known]. A fact with no
+/// text in a checked language leaves it out; if that leaves nothing, the
+/// English text, and failing that the text in every known language.
+List<({String code, String text})> shownFactTexts(
+  Fact fact,
+  List<String> known,
+  Set<String>? chosen,
+) {
+  final checked = checkedFactLanguages(known, chosen);
+  final texts = factTexts(fact, <String>[
+    for (final code in known)
+      if (checked.contains(code)) code,
+  ]);
+  if (texts.isNotEmpty) return texts;
+  if (fact.text['en'] case final english?) {
+    return <({String code, String text})>[(code: 'en', text: english)];
+  }
+  return factTexts(fact, known);
+}

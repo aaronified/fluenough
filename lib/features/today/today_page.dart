@@ -15,6 +15,7 @@ import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/visible_listenable_builder.dart';
 import '../placement/native_choice.dart';
 import 'daily_card.dart';
+import 'fact_languages_sheet.dart';
 import 'due_card.dart';
 import 'quick_revision.dart';
 import 'situations_card.dart';
@@ -341,6 +342,7 @@ class _TodayFactCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final choices = AppScope.of(context).factLanguageChoices.length > 1;
     return Container(
       padding: const EdgeInsetsDirectional.all(20),
       decoration: BoxDecoration(
@@ -350,18 +352,23 @@ class _TodayFactCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(AppRadii.field),
+          // At the top left: the languages the fact is shown in (#926); with
+          // one language known there is nothing to choose.
+          if (choices)
+            const FactLanguagesButton()
+          else
+            Container(
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                color: scheme.secondaryContainer,
+                borderRadius: BorderRadius.circular(AppRadii.field),
+              ),
+              child: Icon(
+                Icons.lightbulb_outline,
+                color: scheme.onSecondaryContainer,
+              ),
             ),
-            child: Icon(
-              Icons.lightbulb_outline,
-              color: scheme.onSecondaryContainer,
-            ),
-          ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(

@@ -9,7 +9,7 @@ Today is the first tab. It shows what to do now.
 - **Words due**, by skill: seen, written, heard, spoken and grammar. Each shows how many are due and about how many minutes they take. Tap one to start. A skill that needs sound shows that there is no voice on this phone if there is none.
 - **Your streak**, and a week of dots showing which days you practised.
 - **Quick revision.**
-- **A fact of the day**: one short, true thing about a language you are learning. Facts follow the languages you said you know.
+- **A fact of the day**: one short, true thing about a language you are learning. Facts follow the languages you said you know. A small button at the top left of the card (long press: Languages) opens a list of the languages you know, with a box each (owner, 2026-10-30, #926); the fact is shown in the checked ones, in your order. At least one stays checked, and a language the fact has no text in is left out; if nothing is left, the English text is shown. The choice is kept for each profile, and until you make one every language you know is shown. With only one language known there is nothing to choose, and the button is not shown.
 
 ## A lesson
 
