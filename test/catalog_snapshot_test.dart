@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/repository_decks.dart';
+import 'package:fluenough/core/models/card.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// A few real files: one language's decks, the themes, and a numbers file,
@@ -47,6 +48,141 @@ String _describe(Catalog c) => jsonEncode(<String, Object?>{
       e.key: [
         e.value.join,
         e.value.words.entries.map((w) => '${w.key}:${w.value}').toList(),
+      ],
+  },
+});
+
+/// Whole languages' files, so that ref cards, optional fields, planned and
+/// native decks of a path, facts, guides, sounds, romanisation, script guides
+/// and number rules are all read: the snapshot must give back all of it.
+Future<Map<String, String>> _wholeLanguages() async {
+  final source = RepositoryDeckSource();
+  final files = <String, String>{};
+  for (final path in await source.list()) {
+    for (final lang in const ['tok', 'te', 'fr', 'hi']) {
+      if (path.startsWith('decks/$lang/')) {
+        files[path] = await source.read(path);
+      }
+    }
+    if (path == 'decks/themes.yaml') files[path] = await source.read(path);
+  }
+  return files;
+}
+
+List<Object?> _card(Card c) => [
+  c.id,
+  c.deckId,
+  c.target,
+  c.native,
+  c.reading,
+  c.ipa,
+  c.phonetic,
+  c.phoneticSource,
+  c.altReading,
+  c.altTarget,
+  c.altNative,
+  c.targetScripts,
+  c.words,
+  c.pos,
+];
+
+/// Everything the catalog holds, as JSON-able values.
+String _describeAll(Catalog c) => jsonEncode(<String, Object?>{
+  'decks': [
+    for (final d in c.decks)
+      [
+        d.path,
+        d.id,
+        d.deck.name,
+        d.deck.kind.name,
+        d.cards.map(_card).toList(),
+      ],
+  ],
+  'broken': [
+    for (final b in c.broken) [b.path, b.error.message, b.error.line],
+  ],
+  'themes': [for (final t in c.themes) t.id],
+  'facts': {
+    for (final e in c.facts.entries)
+      e.key: [
+        for (final f in e.value.facts)
+          [f.id, f.text, f.contrast, f.tags, f.source, f.cards],
+      ],
+  },
+  'numbers': {
+    for (final e in c.numberRules.entries)
+      e.key: [
+        e.value.join,
+        e.value.tensAndUnits,
+        e.value.words.entries.map((w) => '${w.key}:${w.value}').toList(),
+      ],
+  },
+  'paths': {
+    for (final e in c.paths.entries)
+      e.key: [
+        e.value.units,
+        e.value.open.toList()..sort(),
+        e.value.alphabet.toList()..sort(),
+        e.value.plan.length,
+        e.value.coveredUnits,
+        e.value.writtenUnits,
+      ],
+  },
+  'languagePaths': {
+    for (final e in c.languagePaths.entries)
+      e.key: [
+        e.value.alphabet.toList()..sort(),
+        e.value.plan.length,
+        e.value.genders,
+        [
+          for (final r in e.value.regions)
+            [
+              r.id,
+              r.names,
+              r.decks,
+              r.open,
+              r.planned != null,
+              r.words,
+              r.grammar,
+            ],
+        ],
+      ],
+  },
+  'sounds': {
+    for (final e in c.sounds.entries)
+      e.key: [
+        for (final s in e.value.contrasts)
+          [s.id, s.name, s.withinWord, s.pairs.map((p) => '${p.$1}|${p.$2}')],
+      ],
+  },
+  'romanisations': {
+    for (final e in c.romanisations.entries)
+      e.key: [
+        e.value.scheme,
+        e.value.standard,
+        e.value.typed.map((p) => '${p.$1}|${p.$2}').toList(),
+        e.value.equivalents,
+      ],
+  },
+  'scriptGuides': {
+    for (final e in c.scriptGuides.entries)
+      e.key: [
+        e.value.name,
+        e.value.intro,
+        e.value.script,
+        [
+          for (final f in e.value.features)
+            [
+              f.id,
+              f.name,
+              f.term,
+              f.reading,
+              f.ipa,
+              f.example,
+              f.text,
+              f.letters,
+            ],
+        ],
       ],
   },
 });
@@ -152,5 +288,29 @@ void main() {
     final second = await _catalog(files, store).load();
     expect(first.broken.map((b) => b.path), contains('decks/tok/x.yaml'));
     expect(_describe(second), _describe(first));
+  });
+
+  test('a snapshot gives whole languages what their YAML gives', () async {
+    final files = await _wholeLanguages();
+    final fromYaml = DeckCatalog.parseAll(files);
+    expect(fromYaml.decks, isNotEmpty);
+    expect(fromYaml.paths, isNotEmpty);
+    expect(fromYaml.languagePaths, isNotEmpty);
+    expect(fromYaml.facts, isNotEmpty);
+    expect(fromYaml.sounds, isNotEmpty);
+    expect(fromYaml.romanisations, isNotEmpty);
+    expect(fromYaml.scriptGuides, isNotEmpty);
+    expect(fromYaml.numberRules, isNotEmpty);
+
+    final store = MemorySnapshotStore();
+    final first = await _catalog(files, store).load();
+    expect(_describeAll(first), _describeAll(fromYaml));
+
+    // Fed YAML that could only parse into something else, with the same
+    // SHA-256s, the second launch is right only by reading kept trees: and
+    // those must read as YAML does, optional fields and refs included.
+    final spoiled = {for (final p in files.keys) p: ': : not yaml ['};
+    final second = await _catalog(spoiled, store, shas: _shas(files)).load();
+    expect(_describeAll(second), _describeAll(fromYaml));
   });
 }

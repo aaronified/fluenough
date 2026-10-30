@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:yaml/yaml.dart';
 
@@ -66,11 +67,153 @@ Object? plainTree(YamlNode node) {
   return node.value;
 }
 
-YamlNode _wrap(Object? tree) {
-  if (tree is Map) return YamlMap.wrap(tree);
-  if (tree is List) return YamlList.wrap(tree);
-  return YamlScalar.wrap(tree);
+/// A kept tree as nodes. Not `YamlMap.wrap` and `YamlList.wrap`: in package
+/// yaml 3.1.4 the `nodes` of those answer `containsKey('x')` with false,
+/// because their keys are `YamlScalar`s, which have no `==`, so every field
+/// read as absent. These answer as `loadYamlNode`'s nodes do.
+YamlNode _wrap(Object? tree) => _nodeFor(tree);
+
+/// A position with no place in any file, for nodes that have none.
+final _noSpan = YamlScalar.wrap(null).span;
+
+YamlNode _nodeFor(Object? value) {
+  if (value is Map) return _TreeMap(value);
+  if (value is List) return _TreeList(value);
+  return YamlScalar.wrap(value);
 }
+
+/// A [YamlMap] over a plain map, as the YAML loader makes one.
+class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
+  _TreeMap(this._map) {
+    nodes = _TreeMapNodes(_map);
+  }
+
+  final Map _map;
+
+  @override
+  late final Map<dynamic, YamlNode> nodes;
+
+  @override
+  CollectionStyle get style => CollectionStyle.ANY;
+
+  @override
+  get span => _noSpan;
+
+  @override
+  Map get value => this;
+
+  @override
+  Iterable get keys => _map.keys;
+
+  @override
+  int get length => _map.length;
+
+  @override
+  bool containsKey(Object? key) => _map.containsKey(key);
+
+  @override
+  dynamic operator [](Object? key) => nodes[key]?.value;
+
+  @override
+  void operator []=(Object? key, Object? value) => _readOnly();
+
+  @override
+  void clear() => _readOnly();
+
+  @override
+  dynamic remove(Object? key) => _readOnly();
+}
+
+/// The `nodes` of a [_TreeMap]: keys as `YamlScalar`, values as nodes, and
+/// lookups by the key's value, whether given as a plain value or a scalar.
+class _TreeMapNodes extends MapBase<dynamic, YamlNode> {
+  _TreeMapNodes(this._map);
+
+  final Map _map;
+  final Map<Object?, YamlNode> _made = <Object?, YamlNode>{};
+
+  static Object? _plain(Object? key) => key is YamlScalar ? key.value : key;
+
+  @override
+  Iterable get keys => _map.keys.map(YamlScalar.wrap);
+
+  @override
+  int get length => _map.length;
+
+  @override
+  bool containsKey(Object? key) => _map.containsKey(_plain(key));
+
+  @override
+  YamlNode? operator [](Object? key) {
+    final plain = _plain(key);
+    if (!_map.containsKey(plain)) return null;
+    return _made[plain] ??= _nodeFor(_map[plain]);
+  }
+
+  @override
+  void operator []=(dynamic key, YamlNode value) => _readOnly();
+
+  @override
+  void clear() => _readOnly();
+
+  @override
+  YamlNode? remove(Object? key) => _readOnly();
+}
+
+/// A [YamlList] over a plain list, as the YAML loader makes one.
+class _TreeList extends ListBase<dynamic> implements YamlList {
+  _TreeList(this._list) {
+    nodes = _TreeListNodes(_list);
+  }
+
+  final List _list;
+
+  @override
+  late final List<YamlNode> nodes;
+
+  @override
+  CollectionStyle get style => CollectionStyle.ANY;
+
+  @override
+  get span => _noSpan;
+
+  @override
+  List get value => this;
+
+  @override
+  int get length => _list.length;
+
+  @override
+  set length(int value) => _readOnly();
+
+  @override
+  dynamic operator [](int index) => nodes[index].value;
+
+  @override
+  void operator []=(int index, Object? value) => _readOnly();
+}
+
+class _TreeListNodes extends ListBase<YamlNode> {
+  _TreeListNodes(this._list)
+    : _made = List<YamlNode?>.filled(_list.length, null);
+
+  final List _list;
+  final List<YamlNode?> _made;
+
+  @override
+  int get length => _list.length;
+
+  @override
+  set length(int value) => _readOnly();
+
+  @override
+  YamlNode operator [](int index) => _made[index] ??= _nodeFor(_list[index]);
+
+  @override
+  void operator []=(int index, YamlNode value) => _readOnly();
+}
+
+Never _readOnly() => throw UnsupportedError('A YAML tree cannot be changed');
 
 /// The key a map takes in JSON when its keys are not all text (a number, as
 /// the number rules have), so that they keep their type.

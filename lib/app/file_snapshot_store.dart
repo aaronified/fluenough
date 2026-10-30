@@ -21,7 +21,10 @@ class FileSnapshotStore implements SnapshotStore {
   @override
   Future<void> write(String text) async {
     await file.parent.create(recursive: true);
-    final part = File('${file.path}.part');
+    // A name of its own per write, so two launches never share a part file.
+    final part = File(
+      '${file.path}.${DateTime.now().microsecondsSinceEpoch}.part',
+    );
     await part.writeAsString(text, flush: true);
     await part.rename(file.path);
   }
