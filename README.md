@@ -38,7 +38,7 @@ offline on your phone once a language's decks are downloaded.
 > decks, deck parser and validator are in, and the app's screens are built
 > from the design. Progress is saved on the phone, one database per profile,
 > and features not built yet are shown disabled, marked "Feature incoming". See
-> [docs/ROADMAP.md](docs/ROADMAP.md).
+> [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
 ## Screenshots
 
@@ -153,7 +153,7 @@ A course is tagged Alpha until its A1 units are written and Beta until its B1
 units are. Two courses teach a notation rather than a language: the
 International Phonetic Alphabet, and English Braille (uncontracted UEB, typed
 on the app's own six-dot keyboard). Each is tagged Complete once its path is
-written. See [docs/ROADMAP.md](docs/ROADMAP.md).
+written. See [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
 The app comes with no decks. It downloads a language's decks from this
 repository's `main` branch when you choose it, and you can start once its
