@@ -1,0 +1,408 @@
+schema: 1
+id: "es-animals"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "animals"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1060"
+    target: "el animal"
+    ipa: "el aniˈmal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "animal", base: "animal" }]
+    examples:
+      - { target: "Los animales necesitan agua.", ipa: "los aniˈmales neθeˈsitan ˈaɡwa", bases: [{ word: "Los", base: "los" }, { word: "animales", base: "animal" }, { word: "necesitan", ref: "es-0288" }, { word: "agua", base: "agua" }] }
+      - { target: "El animal duerme en el jardín.", ipa: "el aniˈmal ˈdweɾme en el xaɾˈdin", bases: [{ word: "El", base: "el" }, { word: "animal", base: "animal" }, { word: "duerme", ref: "es-0904" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }] }
+  - id: "es-1061"
+    target: "el perro"
+    ipa: "el ˈpero"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "perro", base: "perro" }]
+    examples:
+      - { target: "El perro de Ana come carne.", ipa: "el ˈpero de ˈana ˈkome ˈkaɾne", bases: [{ word: "El", base: "el" }, { word: "perro", base: "perro" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "come", ref: "es-0028" }, { word: "carne", ref: "es-0614" }] }
+      - { target: "Mi perro duerme mucho.", ipa: "mi ˈpero ˈdweɾme ˈmutʃo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "perro", base: "perro" }, { word: "duerme", ref: "es-0904" }, { word: "mucho", ref: "es-0053" }] }
+  - id: "es-1062"
+    target: "el gato"
+    ipa: "el ˈɡato"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "gato", base: "gato" }]
+    examples:
+      - { target: "El gato duerme en el sofá.", ipa: "el ˈɡato ˈdweɾme en el soˈfa", bases: [{ word: "El", base: "el" }, { word: "gato", base: "gato" }, { word: "duerme", ref: "es-0904" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", ref: "es-0917" }] }
+      - { target: "Los gatos beben leche.", ipa: "los ˈɡatos ˈbeben ˈletʃe", bases: [{ word: "Los", base: "los" }, { word: "gatos", base: "gato" }, { word: "beben", ref: "es-0029" }, { word: "leche", ref: "es-0014" }] }
+  - id: "es-1063"
+    target: "el pájaro"
+    ipa: "el ˈpaxaɾo"
+    pos: "noun"
+    gender: "m"
+    picture: "🐦"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "pájaro", base: "pájaro" }]
+    examples:
+      - { target: "El pájaro canta en el árbol.", ipa: "el ˈpaxaɾo ˈkanta en el ˈaɾbol", bases: [{ word: "El", base: "el" }, { word: "pájaro", base: "pájaro" }, { word: "canta", base: "cantar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "árbol", base: "árbol" }] }
+      - { target: "Un pájaro vuela sobre la casa.", ipa: "un ˈpaxaɾo ˈbwela ˈsobɾe la ˈkasa", bases: [{ word: "Un", base: "un" }, { word: "pájaro", base: "pájaro" }, { word: "vuela", ref: "es-1064" }, { word: "sobre", base: "sobre" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }] }
+  - id: "es-1065"
+    target: "el pez"
+    ipa: "el peθ"
+    pos: "noun"
+    gender: "m"
+    picture: "🐟"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "plural", kind: "behaviour" }
+    bases: [{ word: "el", base: "el" }, { word: "pez", base: "pez" }]
+    examples:
+      - { target: "El pez nada en el agua.", ipa: "el peθ ˈnada en el ˈaɡwa", bases: [{ word: "El", base: "el" }, { word: "pez", base: "pez" }, { word: "nada", ref: "es-1066" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "agua", base: "agua" }] }
+      - { target: "Los peces viven en el mar.", ipa: "los ˈpeθes ˈbiben en el maɾ", bases: [{ word: "Los", base: "los" }, { word: "peces", base: "pez" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }] }
+  - id: "es-1067"
+    target: "el caballo"
+    ipa: "el kaˈbaʝo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "caballo", base: "caballo" }]
+    examples:
+      - { target: "El caballo corre rápido.", ipa: "el kaˈbaʝo ˈkore ˈrapido", bases: [{ word: "El", base: "el" }, { word: "caballo", base: "caballo" }, { word: "corre", ref: "es-1068" }, { word: "rápido", ref: "es-0329" }] }
+      - { target: "Ana monta a caballo los domingos.", ipa: "ˈana ˈmonta a kaˈbaʝo los doˈminɡos", bases: [{ word: "Ana", base: "Ana" }, { word: "monta", base: "montar" }, { word: "a", base: "a" }, { word: "caballo", base: "caballo" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }] }
+  - id: "es-1069"
+    target: "la vaca"
+    ipa: "la ˈbaka"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "vaca", base: "vaca" }]
+    examples:
+      - { target: "La vaca da leche.", ipa: "la ˈbaka da ˈletʃe", bases: [{ word: "La", base: "la" }, { word: "vaca", base: "vaca" }, { word: "da", base: "dar" }, { word: "leche", ref: "es-0014" }] }
+      - { target: "En la granja hay muchas vacas.", ipa: "en la ˈɡɾanxa aj ˈmutʃas ˈbakas", bases: [{ word: "En", base: "en" }, { word: "la", base: "la" }, { word: "granja", ref: "es-1070" }, { word: "hay", base: "haber" }, { word: "muchas", base: "mucho" }, { word: "vacas", base: "vaca" }] }
+  - id: "es-1071"
+    target: "el cerdo"
+    ipa: "el ˈθeɾdo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cerdo", base: "cerdo" }]
+    examples:
+      - { target: "El cerdo come mucho.", ipa: "el ˈθeɾdo ˈkome ˈmutʃo", bases: [{ word: "El", base: "el" }, { word: "cerdo", base: "cerdo" }, { word: "come", ref: "es-0028" }, { word: "mucho", ref: "es-0053" }] }
+      - { target: "La carne de cerdo es barata.", ipa: "la ˈkaɾne de ˈθeɾdo es baˈɾata", bases: [{ word: "La", base: "la" }, { word: "carne", ref: "es-0614" }, { word: "de", base: "de" }, { word: "cerdo", base: "cerdo" }, { word: "es", ref: "es-0022" }, { word: "barata", ref: "es-0411" }] }
+  - id: "es-1072"
+    target: "la oveja"
+    ipa: "la oˈbexa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "oveja", base: "oveja" }]
+    examples:
+      - { target: "La oveja tiene lana.", ipa: "la oˈbexa ˈtjene ˈlana", bases: [{ word: "La", base: "la" }, { word: "oveja", base: "oveja" }, { word: "tiene", ref: "es-0024" }, { word: "lana", base: "lana" }] }
+      - { target: "Las ovejas comen en el campo.", ipa: "las oˈbexas ˈkomen en el ˈkampo", bases: [{ word: "Las", base: "las" }, { word: "ovejas", base: "oveja" }, { word: "comen", ref: "es-0028" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", base: "campo" }] }
+  - id: "es-1073"
+    target: "la gallina"
+    ipa: "la ɡaˈʝina"
+    pos: "noun"
+    gender: "f"
+    picture: "🐔"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "gallina", base: "gallina" }]
+    examples:
+      - { target: "La gallina pone huevos.", ipa: "la ɡaˈʝina ˈpone ˈwebos", bases: [{ word: "La", base: "la" }, { word: "gallina", base: "gallina" }, { word: "pone", base: "poner" }, { word: "huevos", base: "huevo" }] }
+      - { target: "Hay tres gallinas en el corral.", ipa: "aj tɾes ɡaˈʝinas en el koˈral", bases: [{ word: "Hay", base: "haber" }, { word: "tres", ref: "es-0207" }, { word: "gallinas", base: "gallina" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "corral", base: "corral" }] }
+  - id: "es-1074"
+    target: "el conejo"
+    ipa: "el koˈnexo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "conejo", base: "conejo" }]
+    examples:
+      - { target: "El conejo come zanahorias.", ipa: "el koˈnexo ˈkome θanaˈoɾjas", bases: [{ word: "El", base: "el" }, { word: "conejo", base: "conejo" }, { word: "come", ref: "es-0028" }, { word: "zanahorias", base: "zanahoria" }] }
+      - { target: "Los conejos saltan mucho.", ipa: "los koˈnexos ˈsaltan ˈmutʃo", bases: [{ word: "Los", base: "los" }, { word: "conejos", base: "conejo" }, { word: "saltan", ref: "es-1075" }, { word: "mucho", ref: "es-0053" }] }
+  - id: "es-1076"
+    target: "el ratón"
+    ipa: "el raˈton"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "ratón", base: "ratón" }]
+    examples:
+      - { target: "El ratón come queso.", ipa: "el raˈton ˈkome ˈkeso", bases: [{ word: "El", base: "el" }, { word: "ratón", base: "ratón" }, { word: "come", ref: "es-0028" }, { word: "queso", ref: "es-0603" }] }
+      - { target: "Un ratón corre por la cocina.", ipa: "un raˈton ˈkore poɾ la koˈθina", bases: [{ word: "Un", base: "un" }, { word: "ratón", base: "ratón" }, { word: "corre", ref: "es-1068" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }] }
+  - id: "es-1077"
+    target: "el león"
+    ipa: "el leˈon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "león", base: "león" }]
+    examples:
+      - { target: "El león es un animal salvaje.", ipa: "el leˈon es un aniˈmal salˈbaxe", bases: [{ word: "El", base: "el" }, { word: "león", base: "león" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "animal", ref: "es-1060" }, { word: "salvaje", ref: "es-1078" }] }
+      - { target: "Los leones viven en África.", ipa: "los leˈones ˈbiben en ˈafɾika", bases: [{ word: "Los", base: "los" }, { word: "leones", base: "león" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "África", base: "África" }] }
+  - id: "es-1079"
+    target: "el tigre"
+    ipa: "el ˈtiɡɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "tigre", base: "tigre" }]
+    examples:
+      - { target: "El tigre es muy fuerte.", ipa: "el ˈtiɡɾe es mwi ˈfweɾte", bases: [{ word: "El", base: "el" }, { word: "tigre", base: "tigre" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }] }
+      - { target: "Un tigre duerme casi todo el día.", ipa: "un ˈtiɡɾe ˈdweɾme ˈkasi ˈtodo el ˈdia", bases: [{ word: "Un", base: "un" }, { word: "tigre", base: "tigre" }, { word: "duerme", ref: "es-0904" }, { word: "casi", ref: "es-0325" }, { word: "todo", base: "todo" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }] }
+  - id: "es-1080"
+    target: "el elefante"
+    ipa: "el eleˈfante"
+    pos: "noun"
+    gender: "m"
+    picture: "🐘"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "elefante", base: "elefante" }]
+    examples:
+      - { target: "El elefante es muy grande.", ipa: "el eleˈfante es mwi ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "elefante", base: "elefante" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Los elefantes beben mucha agua.", ipa: "los eleˈfantes ˈbeben ˈmutʃa ˈaɡwa", bases: [{ word: "Los", base: "los" }, { word: "elefantes", base: "elefante" }, { word: "beben", ref: "es-0029" }, { word: "mucha", base: "mucho" }, { word: "agua", base: "agua" }] }
+  - id: "es-1081"
+    target: "el oso"
+    ipa: "el ˈoso"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "oso", base: "oso" }]
+    examples:
+      - { target: "El oso come miel.", ipa: "el ˈoso ˈkome mjel", bases: [{ word: "El", base: "el" }, { word: "oso", base: "oso" }, { word: "come", ref: "es-0028" }, { word: "miel", base: "miel" }] }
+      - { target: "Un oso vive en el bosque.", ipa: "un ˈoso ˈbibe en el ˈboske", bases: [{ word: "Un", base: "un" }, { word: "oso", base: "oso" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", base: "bosque" }] }
+  - id: "es-1082"
+    target: "la serpiente"
+    ipa: "la seɾˈpjente"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "culebra", kind: "usage" }
+    bases: [{ word: "la", base: "la" }, { word: "serpiente", base: "serpiente" }]
+    examples:
+      - { target: "La serpiente se mueve despacio.", ipa: "la seɾˈpjente se ˈmwebe desˈpaθjo", bases: [{ word: "La", base: "la" }, { word: "serpiente", base: "serpiente" }, { word: "se", base: "se" }, { word: "mueve", base: "mover" }, { word: "despacio", ref: "es-0328" }] }
+      - { target: "Hay serpientes en el bosque.", ipa: "aj seɾˈpjentes en el ˈboske", bases: [{ word: "Hay", base: "haber" }, { word: "serpientes", base: "serpiente" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", base: "bosque" }] }
+  - id: "es-1083"
+    target: "la rana"
+    ipa: "la ˈrana"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "rana", base: "rana" }]
+    examples:
+      - { target: "La rana salta al agua.", ipa: "la ˈrana ˈsalta al ˈaɡwa", bases: [{ word: "La", base: "la" }, { word: "rana", base: "rana" }, { word: "salta", ref: "es-1075" }, { word: "al", base: "a" }, { word: "agua", base: "agua" }] }
+      - { target: "Las ranas viven cerca del agua.", ipa: "las ˈranas ˈbiben ˈθeɾka del ˈaɡwa", bases: [{ word: "Las", base: "las" }, { word: "ranas", base: "rana" }, { word: "viven", ref: "es-0030" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "de" }, { word: "agua", base: "agua" }] }
+  - id: "es-1084"
+    target: "la mariposa"
+    ipa: "la maɾiˈposa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "mariposa", base: "mariposa" }]
+    examples:
+      - { target: "La mariposa vuela en el jardín.", ipa: "la maɾiˈposa ˈbwela en el xaɾˈdin", bases: [{ word: "La", base: "la" }, { word: "mariposa", base: "mariposa" }, { word: "vuela", ref: "es-1064" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }] }
+      - { target: "Una mariposa es bonita.", ipa: "ˈuna maɾiˈposa es boˈnita", bases: [{ word: "Una", base: "una" }, { word: "mariposa", base: "mariposa" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }] }
+  - id: "es-1085"
+    target: "la abeja"
+    ipa: "la aˈbexa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "abeja", base: "abeja" }]
+    examples:
+      - { target: "La abeja hace miel.", ipa: "la aˈbexa ˈaθe mjel", bases: [{ word: "La", base: "la" }, { word: "abeja", base: "abeja" }, { word: "hace", ref: "es-0025" }, { word: "miel", base: "miel" }] }
+      - { target: "Las abejas viven en grupo.", ipa: "las aˈbexas ˈbiben en ˈɡɾupo", bases: [{ word: "Las", base: "las" }, { word: "abejas", base: "abeja" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "grupo", base: "grupo" }] }
+  - id: "es-1086"
+    target: "la hormiga"
+    ipa: "la oɾˈmiɡa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "hormiga", base: "hormiga" }]
+    examples:
+      - { target: "Una hormiga camina por la mesa.", ipa: "ˈuna oɾˈmiɡa kaˈmina poɾ la ˈmesa", bases: [{ word: "Una", base: "una" }, { word: "hormiga", base: "hormiga" }, { word: "camina", ref: "es-0281" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+      - { target: "Las hormigas son muy pequeñas.", ipa: "las oɾˈmiɡas son mwi peˈkeɲas", bases: [{ word: "Las", base: "las" }, { word: "hormigas", base: "hormiga" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "pequeñas", base: "pequeño" }] }
+  - id: "es-1087"
+    target: "la jirafa"
+    ipa: "la xiˈɾafa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "jirafa", base: "jirafa" }]
+    examples:
+      - { target: "La jirafa tiene el cuello largo.", ipa: "la xiˈɾafa ˈtjene el ˈkweʝo ˈlaɾɡo", bases: [{ word: "La", base: "la" }, { word: "jirafa", base: "jirafa" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "cuello", base: "cuello" }, { word: "largo", ref: "es-0429" }] }
+      - { target: "La jirafa come hojas.", ipa: "la xiˈɾafa ˈkome ˈoxas", bases: [{ word: "La", base: "la" }, { word: "jirafa", base: "jirafa" }, { word: "come", ref: "es-0028" }, { word: "hojas", base: "hoja" }] }
+  - id: "es-1088"
+    target: "la cebra"
+    ipa: "la ˈθebɾa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cebra", base: "cebra" }]
+    examples:
+      - { target: "La cebra tiene rayas.", ipa: "la ˈθebɾa ˈtjene ˈraʝas", bases: [{ word: "La", base: "la" }, { word: "cebra", base: "cebra" }, { word: "tiene", ref: "es-0024" }, { word: "rayas", base: "raya" }] }
+      - { target: "Una cebra vive en África.", ipa: "ˈuna ˈθebɾa ˈbibe en ˈafɾika", bases: [{ word: "Una", base: "una" }, { word: "cebra", base: "cebra" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "África", base: "África" }] }
+  - id: "es-1089"
+    target: "el lobo"
+    ipa: "el ˈlobo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "lobo", base: "lobo" }]
+    examples:
+      - { target: "El lobo vive en el bosque.", ipa: "el ˈlobo ˈbibe en el ˈboske", bases: [{ word: "El", base: "el" }, { word: "lobo", base: "lobo" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", base: "bosque" }] }
+      - { target: "Los lobos aúllan de noche.", ipa: "los ˈlobos aˈuʝan de ˈnotʃe", bases: [{ word: "Los", base: "los" }, { word: "lobos", base: "lobo" }, { word: "aúllan", base: "aullar" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }] }
+  - id: "es-1090"
+    target: "la tortuga"
+    ipa: "la toɾˈtuɡa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "tortuga", base: "tortuga" }]
+    examples:
+      - { target: "La tortuga camina muy despacio.", ipa: "la toɾˈtuɡa kaˈmina mwi desˈpaθjo", bases: [{ word: "La", base: "la" }, { word: "tortuga", base: "tortuga" }, { word: "camina", ref: "es-0281" }, { word: "muy", ref: "es-0330" }, { word: "despacio", ref: "es-0328" }] }
+      - { target: "Una tortuga vive muchos años.", ipa: "ˈuna toɾˈtuɡa ˈbibe ˈmutʃos ˈaɲos", bases: [{ word: "Una", base: "una" }, { word: "tortuga", base: "tortuga" }, { word: "vive", ref: "es-0030" }, { word: "muchos", base: "mucho" }, { word: "años", base: "año" }] }
+  - id: "es-1091"
+    target: "el delfín"
+    ipa: "el delˈfin"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "delfín", base: "delfín" }]
+    examples:
+      - { target: "El delfín nada en el mar.", ipa: "el delˈfin ˈnada en el maɾ", bases: [{ word: "El", base: "el" }, { word: "delfín", base: "delfín" }, { word: "nada", ref: "es-1066" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }] }
+      - { target: "Los delfines son muy inteligentes.", ipa: "los delˈfines son mwi inteliˈxentes", bases: [{ word: "Los", base: "los" }, { word: "delfines", base: "delfín" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "inteligentes", base: "inteligente" }] }
+  - id: "es-1092"
+    target: "la araña"
+    ipa: "la aˈɾaɲa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "araña", base: "araña" }]
+    examples:
+      - { target: "La araña hace una tela.", ipa: "la aˈɾaɲa ˈaθe ˈuna ˈtela", bases: [{ word: "La", base: "la" }, { word: "araña", base: "araña" }, { word: "hace", ref: "es-0025" }, { word: "una", base: "una" }, { word: "tela", base: "tela" }] }
+      - { target: "Tengo miedo de las arañas.", ipa: "ˈtenɡo ˈmjedo de las aˈɾaɲas", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "miedo", base: "miedo" }, { word: "de", base: "de" }, { word: "las", base: "las" }, { word: "arañas", base: "araña" }] }
+  - id: "es-1093"
+    target: "la mascota"
+    ipa: "la masˈkota"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "mascota", base: "mascota" }]
+    examples:
+      - { target: "Mi mascota es un gato.", ipa: "mi masˈkota es un ˈɡato", bases: [{ word: "Mi", ref: "es-0129" }, { word: "mascota", base: "mascota" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "gato", ref: "es-1062" }] }
+      - { target: "¿Tienes una mascota?", ipa: "ˈtjenes ˈuna masˈkota", bases: [{ word: "Tienes", ref: "es-0024" }, { word: "una", base: "una" }, { word: "mascota", base: "mascota" }] }
+  - id: "es-1070"
+    target: "la granja"
+    ipa: "la ˈɡɾanxa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "granja", base: "granja" }]
+    examples:
+      - { target: "La granja tiene vacas y cerdos.", ipa: "la ˈɡɾanxa ˈtjene ˈbakas i ˈθeɾdos", bases: [{ word: "La", base: "la" }, { word: "granja", base: "granja" }, { word: "tiene", ref: "es-0024" }, { word: "vacas", ref: "es-1069" }, { word: "y", ref: "es-0048" }, { word: "cerdos", ref: "es-1071" }] }
+      - { target: "Pasamos el día en la granja.", ipa: "paˈsamos el ˈdia en la ˈɡɾanxa", bases: [{ word: "Pasamos", base: "pasar" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "granja", base: "granja" }] }
+  - id: "es-1064"
+    target: "volar"
+    ipa: "boˈlaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Los pájaros vuelan muy alto.", ipa: "los ˈpaxaɾos ˈbwelan mwi ˈalto", bases: [{ word: "Los", base: "los" }, { word: "pájaros", ref: "es-1063" }, { word: "vuelan", base: "volar" }, { word: "muy", ref: "es-0330" }, { word: "alto", base: "alto" }] }
+      - { target: "Vuelo a Lima el sábado.", ipa: "ˈbwelo a ˈlima el ˈsabado", bases: [{ word: "Vuelo", base: "volar" }, { word: "a", base: "a" }, { word: "Lima", base: "Lima" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }] }
+  - id: "es-1066"
+    target: "nadar"
+    ipa: "naˈdaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Nado todas las mañanas.", ipa: "ˈnado ˈtodas las maˈɲanas", bases: [{ word: "Nado", base: "nadar" }, { word: "todas", base: "todo" }, { word: "las", base: "las" }, { word: "mañanas", base: "mañana" }] }
+      - { target: "Mi hermana nada bien.", ipa: "mi eɾˈmana ˈnada bjen", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "nada", base: "nadar" }, { word: "bien", ref: "es-0326" }] }
+  - id: "es-1068"
+    target: "correr"
+    ipa: "koˈreɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Corro en el parque los domingos.", ipa: "ˈkoro en el ˈpaɾke los doˈminɡos", bases: [{ word: "Corro", base: "correr" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }] }
+      - { target: "Los niños corren en la calle.", ipa: "los ˈniɲos ˈkoren en la ˈkaʝe", bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "corren", base: "correr" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }] }
+  - id: "es-1075"
+    target: "saltar"
+    ipa: "salˈtaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El conejo salta en el jardín.", ipa: "el koˈnexo ˈsalta en el xaɾˈdin", bases: [{ word: "El", base: "el" }, { word: "conejo", ref: "es-1074" }, { word: "salta", base: "saltar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }] }
+      - { target: "Saltamos al agua desde la roca.", ipa: "salˈtamos al ˈaɡwa ˈdesde la ˈroka", bases: [{ word: "Saltamos", base: "saltar" }, { word: "al", base: "a" }, { word: "agua", base: "agua" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "roca", base: "roca" }] }
+  - id: "es-1094"
+    target: "ladrar"
+    ipa: "laˈdɾaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El perro ladra cuando llega alguien.", ipa: "el ˈpero ˈladɾa ˈkwando ˈʝeɡa ˈalɡjen", bases: [{ word: "El", base: "el" }, { word: "perro", ref: "es-1061" }, { word: "ladra", base: "ladrar" }, { word: "cuando", base: "cuando" }, { word: "llega", ref: "es-0290" }, { word: "alguien", ref: "es-0132" }] }
+      - { target: "Los perros ladran por la noche.", ipa: "los ˈperos ˈladɾan poɾ la ˈnotʃe", bases: [{ word: "Los", base: "los" }, { word: "perros", ref: "es-1061" }, { word: "ladran", base: "ladrar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }] }
+  - id: "es-1078"
+    target: "salvaje"
+    ipa: "salˈbaxe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En la selva viven animales salvajes.", ipa: "en la ˈselba ˈbiben aniˈmales salˈbaxes", bases: [{ word: "En", base: "en" }, { word: "la", base: "la" }, { word: "selva", base: "selva" }, { word: "viven", ref: "es-0030" }, { word: "animales", ref: "es-1060" }, { word: "salvajes", base: "salvaje" }] }
+      - { target: "Los lobos son animales salvajes.", ipa: "los ˈlobos son aniˈmales salˈbaxes", bases: [{ word: "Los", base: "los" }, { word: "lobos", ref: "es-1089" }, { word: "son", ref: "es-0022" }, { word: "animales", ref: "es-1060" }, { word: "salvajes", base: "salvaje" }] }
+  - id: "es-1095"
+    target: "doméstico"
+    ipa: "doˈmestiko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El perro es un animal doméstico.", ipa: "el ˈpero es un aniˈmal doˈmestiko", bases: [{ word: "El", base: "el" }, { word: "perro", ref: "es-1061" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "animal", ref: "es-1060" }, { word: "doméstico", base: "doméstico" }] }
+      - { target: "Los gatos y los perros son domésticos.", ipa: "los ˈɡatos i los ˈperos son doˈmestikos", bases: [{ word: "Los", base: "los" }, { word: "gatos", ref: "es-1062" }, { word: "y", ref: "es-0048" }, { word: "los", base: "los" }, { word: "perros", ref: "es-1061" }, { word: "son", ref: "es-0022" }, { word: "domésticos", base: "doméstico" }] }
+  - id: "es-1096"
+    target: "peligroso"
+    ipa: "peliˈɡɾoso"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El oso es peligroso.", ipa: "el ˈoso es peliˈɡɾoso", bases: [{ word: "El", base: "el" }, { word: "oso", ref: "es-1081" }, { word: "es", ref: "es-0022" }, { word: "peligroso", base: "peligroso" }] }
+      - { target: "Una serpiente puede ser peligrosa.", ipa: "ˈuna seɾˈpjente ˈpwede seɾ peliˈɡɾosa", bases: [{ word: "Una", base: "una" }, { word: "serpiente", ref: "es-1082" }, { word: "puede", base: "poder" }, { word: "ser", ref: "es-0022" }, { word: "peligrosa", base: "peligroso" }] }

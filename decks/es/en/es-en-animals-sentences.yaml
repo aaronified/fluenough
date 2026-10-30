@@ -1,0 +1,109 @@
+schema: 1
+id: es-en-animals-sentences
+kind: layer
+core: es-animals-sentences
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Sentences: animals'
+license: CC-BY-SA-4.0
+description: 'Eight sentences about animals, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1103:
+    native: The dog sleeps in the garden.
+    bases:
+      El: The
+      en: in
+      el: the
+    confusables:
+      cat:
+        why: Gato is a cat, a different pet.
+      rabbit:
+        why: Conejo is a rabbit, a different animal.
+  es-1104:
+    native: The sheep live on the farm.
+    bases:
+      Las: The
+      en: 'on'
+      la: the
+    confusables:
+      cow:
+        why: Vaca is a cow, a farm animal that gives milk.
+      pig:
+        why: Cerdo is a pig, another farm animal.
+  es-1105:
+    native: The birds sing in the trees.
+    bases:
+      Los: The
+      cantan: sing
+      en: in
+      los: the
+      árboles: trees
+    confusables:
+      butterfly:
+        why: Mariposa is a butterfly, which does not sing.
+      bee:
+        why: Abeja is a bee, which makes honey.
+  es-1106:
+    native: The snake is dangerous.
+    bases:
+      La: The
+    confusables:
+      frog:
+        why: Rana is a frog, which is harmless to people.
+      spider:
+        why: Araña is a spider, which is not an insect.
+  es-1107:
+    native: My pet is a white cat.
+    bases:
+      un: a
+    confusables:
+      dog:
+        why: Perro is a dog, another common pet.
+      rabbit:
+        why: Conejo is a rabbit, another small pet.
+  es-1108:
+    native: The tiger and the lion are wild animals.
+    bases:
+      El: The
+      el: the
+    confusables:
+      bear:
+        why: Oso is a bear; it is also wild, but it is not in this sentence.
+      elephant:
+        why: Elefante is an elephant, a large wild animal.
+  es-1109:
+    native: Fish swim in the sea.
+    bases:
+      Los: The
+      en: in
+      el: the
+      mar: sea
+    confusables:
+      dolphin:
+        why: Delfín is a dolphin, a mammal that also lives in the sea.
+      frog:
+        why: Rana is a frog, which lives near water, not in the sea.
+  es-1110:
+    native: A mouse eats cheese in the kitchen.
+    bases:
+      Un: A
+      en: in
+      la: the
+    confusables:
+      rabbit:
+        why: Conejo is a rabbit; it eats carrots.
+      ant:
+        why: Hormiga is an ant, a much smaller animal.
+  es-1111:
+    native: The ants walk across the table.
+    bases:
+      Las: The
+      por: across
+      la: the
+    confusables:
+      bee:
+        why: Abeja is a bee, which flies and makes honey.
+      butterfly:
+        why: Mariposa is a butterfly, which flies.
