@@ -1,0 +1,59 @@
+schema: 1
+id: "bn-en-reading-cooking"
+name: "Reading: cooking"
+kind: "reading"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Two short texts about cooking: a fish curry to be heard, and a recipe card to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "bn-fish-curry-aloud"
+    title: "A grandmother's fish curry"
+    theme: "cooking"
+    sentences:
+      - { text: "আগে মাছ ধুয়ে নিই।", reading: "āge māch dhuye ni.", ipa: "aɡe matʃʰ d̪ʱuje nii" }
+      - { text: "তারপর পেঁয়াজ কুচি করি।", reading: "tārpar pem̐yāj kuci kori.", ipa: "t̪arpor pẽjadʒ kutʃi kori" }
+      - { text: "চুলায় তেল দিয়ে মশলা কষা হয়েছে।", reading: "culāy tel diye moślā kôśā hôyeche.", ipa: "tʃulaj t̪el d̪ije mɔsla kɔsa ɦɔjetʃʰe" }
+      - { text: "শেষে মাছ দিয়ে দশ মিনিট ফুটছে।", reading: "śeṣe māch diye dôś minit phuṭche.", ipa: "sese matʃʰ d̪ije d̪ɔs miniʈ pʰuʈtʃʰe" }
+    questions:
+      - id: "bn-2145"
+        prompt: { en: "The grandmother washes the fish first." }
+        answer: true
+      - id: "bn-2146"
+        prompt: { en: "What does she do with the spices?" }
+        options:
+          - { en: "She fries them in oil" }
+          - { en: "She eats them raw" }
+        answer: 1
+      - id: "bn-2147"
+        prompt: { en: "How long does she let the fish boil?" }
+        options:
+          - { en: "Ten minutes" }
+          - { en: "Two hours" }
+        answer: 1
+  - id: "bn-recipe-card"
+    title: "A recipe card: simple dal"
+    theme: "cooking"
+    sentences:
+      - { text: "মসুর ডাল ধুয়ে জলে ভেজানো হয়েছে।", reading: "môsur ḍāl dhuye jôle bhejāno hôyeche.", ipa: "mosur ɖal d̪ʱuje dʒɔle bʱedʒano ɦɔjetʃʰe" }
+      - { text: "কড়াইতে তেল গরম করুন।", reading: "kaṛāite tel gôrom korun.", ipa: "kɔɽait̪e t̪el ɡɔrom korun" }
+      - { text: "পেঁয়াজ, আদা আর হলুদ দিয়ে নাড়ুন।", reading: "pem̐yāj, ādā ār holud diye nāṛun.", ipa: "pẽjadʒ ad̪a ar ɦolud̪ d̪ije naɽun" }
+      - { text: "ডাল সেদ্ধ হলে নুন দিন।", reading: "ḍāl śeddho hôle nun din.", ipa: "ɖal sed̪d̪ʱo ɦɔle nun d̪in" }
+    questions:
+      - id: "bn-2148"
+        prompt: { en: "The lentils should be soaked in water first." }
+        answer: true
+      - id: "bn-2149"
+        prompt: { en: "What is heated in the pan?" }
+        options:
+          - { en: "Oil" }
+          - { en: "Milk" }
+        answer: 1
+      - id: "bn-2150"
+        prompt: { en: "When is the salt added?" }
+        options:
+          - { en: "When the dal is boiled" }
+          - { en: "Before the dal is soaked" }
+        answer: 1

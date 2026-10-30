@@ -1,0 +1,59 @@
+schema: 1
+id: "bn-en-reading-hobbies"
+name: "Reading: hobbies"
+kind: "reading"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Friends talk about their weekend hobbies, to be heard, and a club poster, to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "bn-weekend-hobbies"
+    title: "Weekend hobbies"
+    theme: "hobbies"
+    sentences:
+      - { text: "শনিবার বিকেলে আমরা ফুটবল খেলি।", reading: "śanibār bikele āmrā phuṭbôl kheli.", ipa: "sonibar bikele amra pʰuʈbol kʰeli" }
+      - { text: "রবিবার আমি গান শিখি।", reading: "rôbibār āmi gān śikhi.", ipa: "robibar ami ɡan sikʰi" }
+      - { text: "সন্ধ্যায় বন্ধুরা আড্ডা দেয়।", reading: "sondhyāy bôndhurā āḍḍā dey.", ipa: "sɔnd̪d̪ʱaj bond̪ʱura aɖɖa d̪ej" }
+      - { text: "তোমার শখ কী?", reading: "tomār śokh kī?", ipa: "t̪omar sɔkʰ ki" }
+    questions:
+      - id: "bn-2257"
+        prompt: { en: "The friends play football on Saturday afternoon." }
+        answer: true
+      - id: "bn-2258"
+        prompt: { en: "What does the speaker do on Sunday?" }
+        options:
+          - { en: "Learns a song" }
+          - { en: "Goes to the market" }
+        answer: 1
+      - id: "bn-2259"
+        prompt: { en: "What do the friends do in the evening?" }
+        options:
+          - { en: "Chat together (adda)" }
+          - { en: "Go to sleep" }
+        answer: 1
+  - id: "bn-club-poster"
+    title: "A club poster"
+    theme: "hobbies"
+    sentences:
+      - { text: "প্রতি শনিবার ফুটবল, প্রতি রবিবার গান।", reading: "prôti śanibār phuṭbôl, prôti rôbibār gān.", ipa: "prot̪i sonibar pʰuʈbol prot̪i robibar ɡan" }
+      - { text: "নতুন সদস্য হতে আসুন।", reading: "nôtun sôdôśyô hôte āsun.", ipa: "not̪un sɔd̪osso ɦɔt̪e asun" }
+      - { text: "ভর্তি ফি নেই।", reading: "bhôrti phi nei.", ipa: "bʱort̪i pʰi nei" }
+      - { text: "ক্লাবে ফুটবল, গান আর ছবি আঁকা, সব আছে।", reading: "klābe phuṭbôl, gān ār chabi ām̐kā, sob āche.", ipa: "klabe pʰuʈbol ɡan ar tʃʰobi ãka sɔb atʃʰe" }
+    questions:
+      - id: "bn-2260"
+        prompt: { en: "The club has no admission fee." }
+        answer: true
+      - id: "bn-2261"
+        prompt: { en: "When is football played?" }
+        options:
+          - { en: "Every Saturday" }
+          - { en: "Every Monday" }
+        answer: 1
+      - id: "bn-2262"
+        prompt: { en: "Which activities does the club offer?" }
+        options:
+          - { en: "Football, singing and drawing" }
+          - { en: "Cooking and swimming" }
+        answer: 1

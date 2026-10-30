@@ -1,0 +1,396 @@
+schema: 1
+id: "bn-en-cooking"
+kind: "layer"
+core: "bn-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+description: "Cooking words: frying, boiling, grinding, the pots and the spices. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2095":
+    native: "cooking; a dish that has been cooked"
+    notes: { "n1": "আজ রান্না ভালো হয়েছে (āj rānnā bhālo hôyeche): today's cooking has turned out well." }
+    examples: { "আজ রান্না ভালো হয়েছে।": "Today the cooking has turned out well.", "মায়ের রান্না খুব ভালো।": "Mother's cooking is very good." }
+  "bn-2096":
+    native: "boiled"
+    notes: { "n1": "ডিম সেদ্ধ (dim śeddho), a boiled egg. Rice cooked in water is ভাত (bhāt), not সেদ্ধ (śeddho)." }
+    examples: { "আলু সেদ্ধ করুন।": "Please boil the potatoes.", "ডিম সেদ্ধ হয়েছে।": "The egg has been boiled." }
+  "bn-2097":
+    native: "to boil (of water); to bloom (of a flower)"
+    notes: { "n1": "ফোটা (phoṭā) changes its stem in the present: জল ফুটছে (jôl phuṭche), the water is boiling. The stem is ফুট (phuṭ) in those forms." }
+    examples:
+      "জল ফুটছে।":
+        native: "The water is boiling."
+        bases: { "ফুটছে": "to boil (of water)" }
+      "দুধ ফুটে গেছে।":
+        native: "The milk has boiled over."
+        bases: { "ফুটে": "to boil (of water)" }
+  "bn-2098":
+    native: "to grind on a stone (spices, chilli, ginger)"
+    notes: { "n1": "মশলা বাটা (moślā bāṭā): grinding spices into a paste on the stone, বাটনা (bāṭnā)." }
+    examples:
+      "মশলা বাটা হয়েছে।": "The spices have been ground."
+      "মা পেঁয়াজ বাটছেন।":
+        native: "Mother is grinding the onion."
+        bases: { "বাটছেন": "to grind" }
+  "bn-2099":
+    native: "to chop or pound (vegetables, spices)"
+    notes: { "n1": "কোটা (koṭā) is to chop or pound something whole; কাটা (kāṭā) is to cut." }
+    examples:
+      "রসুন কোটো।":
+        native: "Pound the garlic."
+        bases: { "কোটো": "to chop or pound" }
+      "কাঁচা লঙ্কা কোটা হয়েছে।": "The green chillies have been chopped."
+  "bn-2100":
+    native: "a dry stir-fry of vegetables"
+    notes: { "n1": "আলু ভাজি (ālu bhāji), a potato stir-fry eaten with rice." }
+    examples: { "আজ আলু ভাজি খাব।": "Today I will eat a potato stir-fry.", "মায়ের ভাজি খুব ভালো।": "Mother's stir-fry is very good." }
+  "bn-2101":
+    native: "gravy; a thin sauce of a curry"
+    notes: { "n1": "মাছের ঝোল (mācher jhol), fish in a thin gravy. A dry dish has no ঝোল (jhol)." }
+    examples:
+      "ঝোলে একটু নুন দিন।":
+        native: "Please add a little salt to the gravy."
+        bases: { "ঝোলে": "gravy; a thin sauce of a curry" }
+      "মাছের ঝোল খুব গরম।": "The fish gravy is very hot."
+  "bn-2102":
+    native: "curry; a cooked vegetable dish"
+    notes: { "n1": "তরকারি (tôrkāri) is any curry or cooked vegetable dish. Its plural is তরকারিগুলো (tôrkārigulo)." }
+    examples:
+      "আজ কী তরকারি?": "What is the curry today?"
+      "এই তরকারিতে বেশি ঝাল।":
+        native: "This curry is too spicy."
+        bases: { "এই": "this", "তরকারিতে": "curry; a cooked vegetable dish" }
+  "bn-2103":
+    native: "a dish of a meal, served with rice"
+    notes: { "n1": "ভাতের সঙ্গে তিনটি ব্যঞ্জন (bhāter sôṅge tinṭi byôñjôn), three dishes with the rice." }
+    examples: { "ভাতের সঙ্গে তিনটি ব্যঞ্জন।": "Three dishes with the rice.", "মা অনেক ব্যঞ্জন রাঁধেন।": "Mother cooks many dishes." }
+  "bn-2104":
+    native: "stove; cooking hearth"
+    notes: { "n1": "চুলায় (culāy) means on the stove. The word is the same as উনুন (unun) in many homes, but চুলা (culā) is the usual one." }
+    examples:
+      "চুলায় জল ফুটছে।":
+        native: "Water is boiling on the stove."
+        bases: { "চুলায়": "stove; cooking hearth" }
+      "চুলাটা খুব গরম।":
+        native: "The stove is very hot."
+        bases: { "চুলাটা": "stove; cooking hearth" }
+  "bn-2105":
+    native: "clay oven or hearth, for cooking over wood"
+    notes: { "n1": "উনুনে কাঠ (unune kāṭh): wood in the clay hearth. Village kitchens often use উনুন (unun)." }
+    examples:
+      "উনুনে কাঠ জ্বলছে।":
+        native: "Wood is burning in the clay hearth."
+        bases: { "উনুনে": "clay oven or hearth, for cooking over wood", "কাঠ": "wood", "জ্বলছে": "to burn" }
+      "মা উনুনে রুটি সেঁকেন।":
+        native: "Mother bakes flatbread on the clay hearth."
+        bases: { "উনুনে": "clay oven or hearth, for cooking over wood" }
+  "bn-2106":
+    native: "gas; gas stove"
+    notes: { "n1": "গ্যাসের চুলা (gêsher culā), a gas stove. Turn it off with গ্যাস বন্ধ করুন (gês bôndho korun)." }
+    examples:
+      "গ্যাস বন্ধ করুন।": "Please turn off the gas."
+      "গ্যাসটা কম করুন।":
+        native: "Please turn the gas down."
+        bases: { "গ্যাসটা": "gas; gas stove" }
+  "bn-2107":
+    native: "fire"
+    notes: { "n1": "আগুন লেগেছে (āgun legeche), there is a fire." }
+    examples:
+      "চুলায় আগুন জ্বলছে।":
+        native: "The fire is burning in the stove."
+        bases: { "জ্বলছে": "to burn" }
+      "আগুন নিভিয়ে দিন।":
+        native: "Please put the fire out."
+        bases: { "নিভিয়ে": "to put out (a fire)" }
+  "bn-2108":
+    native: "ladle"
+    notes: { "n1": "হাতায় করে ডাল দিন (hātāy kôre ḍāl din), give the dal with the ladle." }
+    examples:
+      "হাতা দিয়ে ঝোল নাড়ুন।": "Stir the gravy with the ladle."
+      "হাতাটা কোথায়?":
+        native: "Where is the ladle?"
+        bases: { "হাতাটা": "ladle" }
+  "bn-2109":
+    native: "rolling pin"
+    notes: { "n1": "বেলন দিয়ে রুটি বেলা (belon diye ruṭi belā): rolling flatbread with the rolling pin." }
+    examples:
+      "বেলন দিয়ে লুচি বেলো।":
+        native: "Roll the luchi with the rolling pin."
+        bases: { "বেলো": "to roll out" }
+      "বেলনটা কোথায়?":
+        native: "Where is the rolling pin?"
+        bases: { "বেলনটা": "rolling pin" }
+  "bn-2110":
+    native: "peel; skin of a fruit or vegetable"
+    notes: { "n1": "আলুর খোসা (ālur khosā), the potato peel." }
+    examples:
+      "আলুর খোসা ছাড়ান।":
+        native: "Peel the potatoes."
+        bases: { "ছাড়ান": "to peel or remove" }
+      "খোসাগুলো ফেলে দিন।":
+        native: "Throw away the peels."
+        bases: { "খোসাগুলো": "peel; skin of a fruit or vegetable" }
+  "bn-2111":
+    native: "to knead, smear or mix in with the hands"
+    notes: { "n1": "ময়দা মাখা (môydā mākhā), to knead the flour. The stem is মাখ (mākh) in মাখি (mākhi), I knead." }
+    examples:
+      "ময়দা মাখা হয়েছে।": "The flour has been kneaded."
+      "হাত দিয়ে মাখুন।":
+        native: "Knead it with your hands."
+        bases: { "মাখুন": "to knead" }
+  "bn-2112":
+    native: "to stir"
+    notes: { "n1": "কড়াইতে নাড়া (kaṛāite nāṛā), stirring in the wok." }
+    examples:
+      "কড়াইটা নাড়ুন।":
+        native: "Stir the wok."
+        bases: { "নাড়ুন": "to stir" }
+      "আস্তে আস্তে নাড়বেন।":
+        native: "Stir slowly."
+        bases: { "নাড়বেন": "to stir" }
+  "bn-2113":
+    native: "to fry spices until they are dark and thick"
+    notes: { "n1": "মশলা কষা (moślā kôśā): frying the spices in oil until the paste is thick and dark." }
+    examples:
+      "মশলা কষা হলে জল দিন।": "When the spices are fried, add water."
+      "ভালো করে কষুন।":
+        native: "Fry it well until it is thick."
+        bases: { "কষুন": "to fry spices until they are dark and thick" }
+  "bn-2114":
+    native: "to mix in; to blend"
+    notes: { "n1": "নুন মেশানো (nun meśāno), to mix in the salt." }
+    examples:
+      "সব মশলা মেশান।":
+        native: "Mix in all the spices."
+        bases: { "মেশান": "to mix in" }
+      "চিনিটা জলে মেশানো হয়েছে।": "The sugar has been mixed into the water."
+  "bn-2115":
+    native: "to strain (liquid through a sieve or cloth)"
+    notes: { "n1": "চা ছাঁকা (cā chām̐kā), to strain the tea." }
+    examples:
+      "চা ছেঁকে দিন।":
+        native: "Strain the tea and give it."
+        bases: { "ছেঁকে": "to strain" }
+      "ডালটা ছাঁকা হয়েছে।": "The dal has been strained."
+  "bn-2116":
+    native: "lid; cover"
+    notes: { "n1": "পাত্রের ঢাকনা (pātrer ḍhāknā), the lid of the pot." }
+    examples:
+      "ঢাকনাটা দিন।":
+        native: "Please give me the lid."
+        bases: { "ঢাকনাটা": "lid; cover" }
+      "পাত্রে ঢাকনা দিয়ে রাখুন।":
+        native: "Keep the pot covered with a lid."
+        bases: { "পাত্রে": "vessel; pot" }
+  "bn-2117":
+    native: "powder; ground spice"
+    notes: { "n1": "হলুদের গুঁড়ো (holuder gum̐ṛo), turmeric powder." }
+    examples:
+      "এক চামচ হলুদের গুঁড়ো দিন।": "Add one spoon of turmeric powder."
+      "মশলার গুঁড়োগুলো আলাদা রাখুন।":
+        native: "Keep the spice powders apart."
+        bases: { "গুঁড়োগুলো": "powder; ground spice", "আলাদা": "separate; apart" }
+  "bn-2118":
+    native: "coriander leaves"
+    notes: { "n1": "ধনেপাতা (dhônepātā) is the green leaf, and ধনে (dhône) is the seed." }
+    examples:
+      "শেষে ধনেপাতা ছড়িয়ে দিন।":
+        native: "Sprinkle coriander leaves at the end."
+        bases: { "শেষে": "end", "ছড়িয়ে": "to sprinkle" }
+      "ধনেপাতা কাঁচা খাওয়া যায়।": "Coriander leaves can be eaten raw."
+  "bn-2119":
+    native: "bay leaf"
+    notes: { "n1": "তেজপাতা (tejpātā) is a dried leaf, put whole into the pot and taken out before serving." }
+    examples: { "তেজপাতা দিন।": "Add the bay leaf.", "ঝোলে দুটো তেজপাতা।": "Two bay leaves in the gravy." }
+  "bn-2120":
+    native: "smell; scent"
+    notes: { "n1": "ভালো গন্ধ (bhālo gôndho), a good smell." }
+    examples: { "ঘরে ভালো গন্ধ।": "There is a good smell in the house.", "মশলার গন্ধ খুব ভালো।": "The smell of the spices is very good." }
+  "bn-2121":
+    native: "taste; flavour"
+    notes: { "n1": "স্বাদ ভালো (śād bhālo), it tastes good." }
+    examples:
+      "ঝোলের স্বাদ ভালো হয়েছে।": "The gravy has a good taste."
+      "এর স্বাদ টক।":
+        native: "Its taste is sour."
+        bases: { "এর": "its" }
+  "bn-2122":
+    native: "a small chopped piece"
+    notes: { "n1": "পেঁয়াজ কুচি (pem̐yāj kuci), chopped onion." }
+    examples: { "পেঁয়াজ কুচি করুন।": "Chop the onion finely.", "কুচি কুচি আদা দিন।": "Add finely chopped ginger." }
+  "bn-2123":
+    native: "to chop finely"
+    notes: { "n1": "কুচানো (kucāno) is to chop into small pieces, a stronger word than কাটা (kāṭā), to cut." }
+    examples:
+      "পেঁয়াজ কুচিয়ে নিন।":
+        native: "Chop the onion finely."
+        bases: { "কুচিয়ে": "to chop finely" }
+      "কাঁচা লঙ্কা কুচানো হয়েছে।": "The green chillies have been chopped finely."
+  "bn-2124":
+    native: "measure; amount"
+    notes: { "n1": "মাপ মতো (māp moto), by measure; in the right amount." }
+    examples:
+      "মাপ মতো নুন দিন।":
+        native: "Add the salt in the right amount."
+        bases: { "মাপ": "measure; amount", "মতো": "like; in the way of" }
+      "এর মাপ কত?":
+        native: "How much is its measure?"
+        bases: { "এর": "its" }
+  "bn-2125":
+    native: "mustard seed"
+    notes: { "n1": "সরষের তেল (sôrośer tel), mustard oil." }
+    examples:
+      "সরষের তেল আনুন।":
+        native: "Bring some mustard oil."
+        bases: { "সরষের": "mustard seed" }
+      "সরষেতে মাছ রাঁধা হয়েছে।":
+        native: "The fish has been cooked with mustard."
+        bases: { "সরষেতে": "mustard seed" }
+  "bn-2126":
+    native: "red lentil"
+    notes: { "n1": "মসুরের ডাল (môsurer ḍāl), a red lentil dal." }
+    examples:
+      "মসুরের ডাল খুব ভালো।":
+        native: "Red lentil dal is very good."
+        bases: { "মসুরের": "red lentil" }
+      "মসুর সেদ্ধ হয়েছে।": "The lentils have been boiled."
+  "bn-2127":
+    native: "chickpea; gram"
+    notes: { "n1": "ছোলা ভিজিয়ে রাখুন (cholā bhijiye rākhun), soak the chickpeas." }
+    examples:
+      "ছোলা রাতে ভিজিয়ে রাখুন।": "Soak the chickpeas overnight."
+      "ছোলা সেদ্ধ হলে নামান।":
+        native: "When the chickpeas are boiled, take them down."
+        bases: { "নামান": "to take down" }
+  "bn-2128":
+    native: "to toast or roast on heat"
+    notes: { "n1": "রুটি সেঁকা (ruṭi sem̐kā), to toast the flatbread on a hot pan." }
+    examples:
+      "রুটিটা সেঁকে দিন।":
+        native: "Toast the flatbread and give it."
+        bases: { "সেঁকে": "to toast" }
+      "পাঁপড় সেঁকা হয়েছে।": "The papadums have been toasted."
+  "bn-2129":
+    native: "steam"
+    notes: { "n1": "ভাপে সেদ্ধ (bhāpe śeddho), boiled by steam." }
+    examples:
+      "ভাপে ইলিশ রাঁধা হয়েছে।":
+        native: "Hilsa has been cooked by steam."
+        bases: { "ভাপে": "steam" }
+      "গরম ভাপ উঠছে।": "Hot steam is rising."
+  "bn-2130":
+    native: "to steam (food)"
+    notes: { "n1": "ভাপানো (bhāpāno) is to cook food by steam, as in ভাপা দই (bhāpā doi)." }
+    examples:
+      "মাছটা ভাপিয়ে দিন।":
+        native: "Steam the fish and give it."
+        bases: { "ভাপিয়ে": "to steam" }
+      "চাল ভাপানো হয়েছে।": "The rice has been steamed."
+  "bn-2131":
+    native: "to soak in water"
+    notes: { "n1": "ডাল ভেজানো (ḍāl bhejāno), to soak the dal." }
+    examples:
+      "রাতে ডাল ভিজিয়ে রাখবেন।":
+        native: "Soak the dal at night."
+        bases: { "ভিজিয়ে": "to soak" }
+      "জলে ভেজানো চাল।": "Rice soaked in water."
+  "bn-2132":
+    native: "cardamom"
+    notes: { "n1": "এলাচ দিয়ে চা (elāc diye cā), tea with cardamom." }
+    examples:
+      "এলাচ দিয়ে পায়েস।": "Payesh with cardamom."
+      "এলাচের গন্ধ ভালো।":
+        native: "The smell of cardamom is good."
+        bases: { "এলাচের": "cardamom" }
+  "bn-2133":
+    native: "cinnamon"
+    notes: { "n1": "দারুচিনি (dārucini) is the bark, used whole in a curry." }
+    examples:
+      "দারুচিনি আর এলাচ দিন।": "Add cinnamon and cardamom."
+      "ঝোলে দারুচিনির গন্ধ।":
+        native: "The gravy smells of cinnamon."
+        bases: { "দারুচিনির": "cinnamon" }
+  "bn-2134":
+    native: "clove"
+    notes: { "n1": "লবঙ্গ (lôbông), a dried flower bud used in whole spices." }
+    examples: { "চারটে লবঙ্গ দিন।": "Add four cloves.", "লবঙ্গ আর তেজপাতা।": "Cloves and bay leaves." }
+  "bn-2135":
+    native: "five-spice mix of whole seeds (panch phoron)"
+    notes: { "n1": "পাঁচফোড়ন (pām̐cphoṛon) is five whole spices fried first in hot oil." }
+    examples:
+      "তেলে পাঁচফোড়ন ফোড়ন দিন।": "Temper the oil with panch phoron."
+      "পাঁচফোড়নের গন্ধ খুব ভালো।":
+        native: "The smell of panch phoron is very good."
+        bases: { "পাঁচফোড়নের": "five-spice mix of whole seeds (panch phoron)" }
+  "bn-2136":
+    native: "to taste; as much as you like"
+    notes: { "n1": "স্বাদমতো নুন (śādomoto nun), salt to taste." }
+    examples: { "স্বাদমতো নুন দিন।": "Add salt to taste.", "চিনি স্বাদমতো দিন।": "Add sugar to taste." }
+  "bn-2137":
+    native: "serving (food to people)"
+    notes: { "n1": "পরিবেশন করা (poribeśon korā), to serve food." }
+    examples:
+      "এখন পরিবেশন করুন।": "Serve now."
+      "পরিবেশনের সময় হয়েছে।":
+        native: "It is time to serve."
+        bases: { "পরিবেশনের": "serving (food to people)" }
+  "bn-2138":
+    native: "utensils; cooking pots and plates"
+    notes: { "n1": "বাসন মাজা (bāśôn mājā), to wash the dishes." }
+    examples:
+      "বাসনগুলো ধুয়ে ফেলুন।":
+        native: "Wash the utensils."
+        bases: { "বাসনগুলো": "utensils; cooking pots and plates" }
+      "বাসন মাজা হয়ে গেছে।":
+        native: "The dishes are done."
+        bases: { "মাজা": "scrubbing; scouring" }
+  "bn-2139":
+    native: "clay or metal pot"
+    notes: { "n1": "হাঁড়িতে ভাত (hām̐ṛite bhāt), rice in the pot." }
+    examples:
+      "হাঁড়িতে ভাত ফুটছে।":
+        native: "The rice is boiling in the pot."
+        bases: { "হাঁড়িতে": "clay or metal pot" }
+      "হাঁড়িটা ঢাকনা দিয়ে ঢাকুন।":
+        native: "Cover the pot with its lid."
+        bases: { "হাঁড়িটা": "clay or metal pot", "ঢাকুন": "to cover" }
+  "bn-2140":
+    native: "large cooking pot"
+    notes: { "n1": "ডেকচিতে বিরিয়ানি (ḍekcite biriyāni), biryani in a large pot." }
+    examples:
+      "ডেকচিতে মাংস রাঁধা হচ্ছে।":
+        native: "Meat is being cooked in the large pot."
+        bases: { "ডেকচিতে": "large cooking pot" }
+      "ডেকচিটা বড়ো।":
+        native: "The large pot is big."
+        bases: { "ডেকচিটা": "large cooking pot" }
+  "bn-2141":
+    native: "a mildly spiced mixed-vegetable curry, usually with potato"
+    notes: { "n1": "ডালনা (ḍālnā), a mildly spiced vegetable curry, usually with potatoes. Despite its name, it need not have any dal." }
+    examples:
+      "আজ ডালনা রাঁধা হয়েছে।": "Dalna has been cooked today."
+      "ডালনাটা খুব সুস্বাদু।":
+        native: "The dalna is very tasty."
+        bases: { "ডালনাটা": "a mildly spiced mixed-vegetable curry, usually with potato" }
+  "bn-2142":
+    native: "puffed rice"
+    notes: { "n1": "মুড়ি (muṛi) is puffed rice, eaten as a snack or with mustard oil." }
+    examples:
+      "মুড়ির সঙ্গে কাঁচা লঙ্কা।":
+        native: "Puffed rice with green chillies."
+        bases: { "মুড়ির": "puffed rice" }
+      "মুড়ি দিয়ে সকালের নাশতা।": "Puffed rice for breakfast."
+  "bn-2143":
+    native: "tempering: spices fried in hot oil and poured over a dish"
+    notes: { "n1": "তেলে ফোড়ন দেওয়া (tele phoṛon deoyā), to temper a dish with hot oil and spices." }
+    examples:
+      "তেলে ফোড়ন দিন।": "Add the tempering to the oil."
+      "ফোড়নের গন্ধ খুব ভালো।":
+        native: "The smell of the tempering is very good."
+        bases: { "ফোড়নের": "tempering: spices fried in hot oil and poured over a dish" }
+  "bn-2144":
+    native: "papadum; a thin crisp wafer"
+    notes: { "n1": "ভাজা পাঁপড় (bhājā pām̐paṛ), fried papadum. Its word is written পাঁপড় (pām̐paṛ) in most shops." }
+    examples: { "পাঁপড় ভাজা হয়েছে।": "The papadum has been fried.", "খাবারের সঙ্গে পাঁপড় দিন।": "Serve papadum with the food." }
