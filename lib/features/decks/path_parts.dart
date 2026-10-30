@@ -127,7 +127,7 @@ class Pill extends StatelessWidget {
     padding: const EdgeInsetsDirectional.symmetric(horizontal: 10, vertical: 3),
     decoration: BoxDecoration(
       color: background,
-      borderRadius: BorderRadius.circular(13),
+      borderRadius: BorderRadius.circular(AppRadii.chip),
     ),
     child: Center(
       widthFactor: 1,
@@ -180,7 +180,7 @@ class MilestoneMark extends StatelessWidget {
           color: step.earned
               ? scheme.tertiaryContainer
               : scheme.surfaceContainerLowest,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           border: step.earned
               ? null
               : Border.all(color: scheme.outlineVariant, width: 1.5),
@@ -195,7 +195,7 @@ class MilestoneMark extends StatelessWidget {
                 color: step.earned
                     ? scheme.onTertiaryContainer
                     : scheme.surfaceContainerHigh,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(AppRadii.chip),
               ),
               child: Icon(
                 Icons.emoji_events_outlined,
@@ -367,7 +367,7 @@ class LevelHeader extends StatelessWidget {
                       color: current
                           ? scheme.onPrimaryContainer
                           : scheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(18),
+                      borderRadius: BorderRadius.circular(AppRadii.field),
                     ),
                     child: Text(
                       step.level.label,

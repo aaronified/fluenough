@@ -53,7 +53,7 @@ class LogConsent extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: theme.colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

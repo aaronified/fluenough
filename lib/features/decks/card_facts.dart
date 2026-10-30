@@ -38,7 +38,7 @@ class CardFacts extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadii.small),
+              borderRadius: BorderRadius.circular(AppRadii.field),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

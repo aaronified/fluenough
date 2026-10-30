@@ -40,6 +40,7 @@ class BarRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    // A stadium on purpose: the ends follow the bar's thickness.
     final radius = BorderRadius.circular(thickness / 2);
     final row = Row(
       children: <Widget>[

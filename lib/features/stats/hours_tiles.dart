@@ -52,7 +52,10 @@ class ProgressHours {
     final counted = <double>[for (final row in rows) ?row.left];
     return ProgressHours(
       // Every review, those whose language cannot be told too.
-      spent: StudyHours.hours(StudyHours.spent(state.progress.log)),
+      spent: StudyHours.hours(
+        StudyHours.spent(state.progress.log) +
+            state.settings.teachTimeTotal().time,
+      ),
       left: counted.isEmpty ? null : counted.fold<double>(0, (a, b) => a + b),
       rows: rows,
     );

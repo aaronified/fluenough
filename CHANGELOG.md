@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The day's session runs on a clock, not on a fixed set of cards (#886): the time is the minutes a day, the header shows a ticking countdown of the time left in place of the card count, and the clock pauses while one screen has been showing for more than 30 seconds. It builds a round at a time, reviews and new words in the ratio the time left asks for; with nothing due it teaches up to 15 new words, asks each twice with older reviews mixed in, and fills the rest of the time with the cards closest to due. Teach cards now record their time, which counts toward the day's minutes and the hours.
+
 ### Added
 
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
@@ -14,9 +18,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
+- Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
 
 ### Fixed
 
+- Opening the app replays the review log once, not twice, and reads it from the database once, not three times, so it opens sooner for a learner with a long history (#857). The numbers shown do not change.
 - Opening the app no longer freezes the first screens while every downloaded deck's YAML is read: the decks are parsed on a background isolate (#875). Nothing a learner sees changes but the wait.
 
 ## [0.6.8] - 2026-10-30

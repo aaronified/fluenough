@@ -42,7 +42,7 @@ class StreakCard extends StatelessWidget {
                   height: 44,
                   decoration: BoxDecoration(
                     color: scheme.tertiaryContainer,
-                    borderRadius: BorderRadius.circular(AppRadii.small),
+                    borderRadius: BorderRadius.circular(AppRadii.field),
                   ),
                   child: Icon(
                     Icons.local_fire_department_outlined,
