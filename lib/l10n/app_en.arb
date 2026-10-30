@@ -11743,5 +11743,739 @@
         "example": "Devanagari"
       }
     }
+  },
+  "languagesTitle": "Languages",
+  "@languagesTitle": {
+    "description": "Title of the Languages page (#907), where each language's four skills, Speak, Hear, Read and Write, are set to Know, Learn or Leave, and the Settings row that opens it."
+  },
+  "languagesSettingsSummary": "{count, plural, =0{Not learning any language} =1{1 language learning} other{{count} languages learning}}",
+  "@languagesSettingsSummary": {
+    "description": "Second line of the Languages row in Settings: how many languages have a skill set to Learn.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesReviewTitle": "Review",
+  "@languagesReviewTitle": {
+    "description": "Title of the Settings switch that turns on review of what is known (#907)."
+  },
+  "languagesReviewBody": "Review what you know once your level is fitted. Off: no fit-your-level prompts.",
+  "@languagesReviewBody": {
+    "description": "Second line of the Review switch in Settings."
+  },
+  "languagesAdd": "Add a language",
+  "@languagesAdd": {
+    "description": "Button and row on the Languages page that opens the list of languages to add."
+  },
+  "languagesEmptyTitle": "No languages yet",
+  "@languagesEmptyTitle": {
+    "description": "Title of the Languages page before any language is added."
+  },
+  "languagesEmptyBody": "For each language, set each skill to Know or Learn: speak, hear, read and write.",
+  "@languagesEmptyBody": {
+    "description": "Body of the empty Languages page."
+  },
+  "languagesNeverChecked": "Not checked yet",
+  "@languagesNeverChecked": {
+    "description": "Line under the update button before any check."
+  },
+  "languagesKeyLabel": "Key to the skill icons",
+  "@languagesKeyLabel": {
+    "description": "Screen reader label of the key above the Languages list."
+  },
+  "languagesKeyLevel": "Level found",
+  "@languagesKeyLevel": {
+    "description": "Key entry: a known skill whose level was found, shown as a double tick."
+  },
+  "languagesFilterLabel": "Filter the languages",
+  "@languagesFilterLabel": {
+    "description": "Screen reader label of the row of filter pills above the Languages list."
+  },
+  "languagesFilterLearning": "Learning",
+  "@languagesFilterLearning": {
+    "description": "Filter pill: languages with a skill set to Learn."
+  },
+  "languagesNoMatch": "No language matches this filter.",
+  "@languagesNoMatch": {
+    "description": "Shown when the filter pill on the Languages page matches no language."
+  },
+  "languagesSectionLearning": "Learning · {count}",
+  "@languagesSectionLearning": {
+    "description": "Heading of the languages with a Learn skill. {count} is how many.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesSectionKnow": "Know · {count}",
+  "@languagesSectionKnow": {
+    "description": "Heading of the languages with Know skills and none to Learn. {count} is how many.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesStateLeave": "Leave",
+  "@languagesStateLeave": {
+    "description": "A skill's state: out."
+  },
+  "languagesStateKnow": "Know",
+  "@languagesStateKnow": {
+    "description": "A skill's state: known, with nothing to download."
+  },
+  "languagesStateLearn": "Learn",
+  "@languagesStateLearn": {
+    "description": "A skill's state: learned, which downloads the full decks."
+  },
+  "languagesSkillSpeak": "Speak",
+  "@languagesSkillSpeak": {
+    "description": "The Speak skill."
+  },
+  "languagesSkillHear": "Hear",
+  "@languagesSkillHear": {
+    "description": "The Hear skill."
+  },
+  "languagesSkillRead": "Read",
+  "@languagesSkillRead": {
+    "description": "The Read skill."
+  },
+  "languagesSkillWrite": "Write",
+  "@languagesSkillWrite": {
+    "description": "The Write skill."
+  },
+  "languagesSkillReadWrite": "Read and Write",
+  "@languagesSkillReadWrite": {
+    "description": "Read and Write of one script, named together."
+  },
+  "languagesSkillScript": "{skill} {script}",
+  "@languagesSkillScript": {
+    "description": "A skill of one script of a language written in several: Read Devanagari. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesSkillState": "{skill}: {state}",
+  "@languagesSkillState": {
+    "description": "A skill and its state, for a screen reader: Speak: Know.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "state": {
+        "type": "String",
+        "example": "Know"
+      }
+    }
+  },
+  "languagesSkillStateCovered": "{skill}: {state}, level found",
+  "@languagesSkillStateCovered": {
+    "description": "A known skill the found level covers, for a screen reader.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "state": {
+        "type": "String",
+        "example": "Know"
+      }
+    }
+  },
+  "languagesTapToChange": "Tap to change to {state}",
+  "@languagesTapToChange": {
+    "description": "Hint on a skill's pill: what the next tap sets.",
+    "placeholders": {
+      "state": {
+        "type": "String",
+        "example": "Know"
+      }
+    }
+  },
+  "languagesMinutesMins": "{count} mins",
+  "@languagesMinutesMins": {
+    "description": "The minutes-a-day stepper's value: 15 mins.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesMinutesLabel": "Minutes a day, for {language}",
+  "@languagesMinutesLabel": {
+    "description": "Label above the minutes-a-day stepper.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesMinutesLess": "5 minutes less",
+  "@languagesMinutesLess": {
+    "description": "Screen reader label of the stepper's minus."
+  },
+  "languagesMinutesMore": "5 minutes more",
+  "@languagesMinutesMore": {
+    "description": "Screen reader label of the stepper's plus."
+  },
+  "languagesMinutesCards": "About {count} cards, shared by all the skills you learn",
+  "@languagesMinutesCards": {
+    "description": "Under the minutes-a-day stepper: what the minutes buy.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesLearningHeading": "Learning",
+  "@languagesLearningHeading": {
+    "description": "Heading of the sheet's learning block."
+  },
+  "languagesDialectLabel": "Dialect taught in the app",
+  "@languagesDialectLabel": {
+    "description": "Label above the one dialect a language's Speak and Hear teach."
+  },
+  "languagesDialectStandard": "Standard {language}",
+  "@languagesDialectStandard": {
+    "description": "The dialect of a language whose dialect is not named: Standard Marathi.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesSpeakHear": "Speak and hear",
+  "@languagesSpeakHear": {
+    "description": "Heading and row of Speak and Hear on the sheet."
+  },
+  "languagesScriptsRW": "Scripts: read and write",
+  "@languagesScriptsRW": {
+    "description": "Heading of the sheet's script rows for a language with several scripts."
+  },
+  "languagesScriptRW": "Script: read and write",
+  "@languagesScriptRW": {
+    "description": "Heading of the sheet's script row for a language with one script."
+  },
+  "languagesNoCourseNote": "There is no {language} course. You can set Know.",
+  "@languagesNoCourseNote": {
+    "description": "Note on the sheet of a language with no course.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesKnownFrom": "{skills} known from {language}.",
+  "@languagesKnownFrom": {
+    "description": "Under a row whose skills start as Know because the learner knows the script from another language. {skills} is Read, Write, or Read and Write.",
+    "placeholders": {
+      "skills": {
+        "type": "String",
+        "example": "Read"
+      },
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesFitLevel": "Fit your level to be able to review",
+  "@languagesFitLevel": {
+    "description": "Under a known skill when review is on and no level covers it."
+  },
+  "languagesFindLevel": "Find my level",
+  "@languagesFindLevel": {
+    "description": "Sheet row that finds the learner's level in the language."
+  },
+  "languagesFitMyLevel": "Fit my level",
+  "@languagesFitMyLevel": {
+    "description": "Sheet row that fits the learner's level again, once one is found."
+  },
+  "languagesLevelFoundSub": "Level found: covers Speak, Hear, Read and Write.",
+  "@languagesLevelFoundSub": {
+    "description": "Under Fit my level: what the found level covers."
+  },
+  "languagesLevelNotFoundSub": "Not found yet. One step checks all four skills.",
+  "@languagesLevelNotFoundSub": {
+    "description": "Under Find my level."
+  },
+  "languagesDecksRemoved": "Its decks will be removed the next time the app opens.",
+  "@languagesDecksRemoved": {
+    "description": "Notice on a language with decks on the phone and no Learn skill."
+  },
+  "languagesDone": "Done",
+  "@languagesDone": {
+    "description": "Bottom button of the sheet."
+  },
+  "languagesCheck": "Check",
+  "@languagesCheck": {
+    "description": "Bottom button of the sheet while a skill changed to Learn has not been checked yet."
+  },
+  "languagesAddLanguage": "Add {language}",
+  "@languagesAddLanguage": {
+    "description": "Bottom button of the sheet of a language not added yet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesSetOne": "Set at least one skill",
+  "@languagesSetOne": {
+    "description": "Disabled bottom button of the sheet of a language not added yet."
+  },
+  "languagesDraftMeta": "Set each skill: Know, Learn or Leave",
+  "@languagesDraftMeta": {
+    "description": "Line under the badges on the sheet of a language not added yet."
+  },
+  "languagesMetaLearning": "{count} learning",
+  "@languagesMetaLearning": {
+    "description": "Line under the badges: how many skills are Learn.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesMetaKnown": "{known}/{total} skills known",
+  "@languagesMetaKnown": {
+    "description": "Line under the badges: how many of the language's skills are Know.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "4"
+      },
+      "total": {
+        "type": "int",
+        "example": "118"
+      }
+    }
+  },
+  "languagesDeleteData": "Delete data now",
+  "@languagesDeleteData": {
+    "description": "Screen reader label of the bin on the sheet, which removes a language's decks and progress at once."
+  },
+  "languagesUpdateIcon": "Check for deck updates",
+  "@languagesUpdateIcon": {
+    "description": "Screen reader label of the sheet's update-check icon."
+  },
+  "languagesInfoIcon": "Details about {language}",
+  "@languagesInfoIcon": {
+    "description": "Screen reader label of the i on the sheet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesInfoClose": "Close details",
+  "@languagesInfoClose": {
+    "description": "Screen reader label of the details panel's cross."
+  },
+  "languagesPercentB1": "{percent}% of B1",
+  "@languagesPercentB1": {
+    "description": "In the details panel: how much of the course up to B1 is written.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "26"
+      }
+    }
+  },
+  "languagesYouPercent": "You: {percent}%",
+  "@languagesYouPercent": {
+    "description": "In the details panel: the learner's own progress toward B1.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "26"
+      }
+    }
+  },
+  "languagesInfoDialect": "Dialect taught in the app",
+  "@languagesInfoDialect": {
+    "description": "Details panel label."
+  },
+  "languagesInfoTaughtFrom": "Taught from",
+  "@languagesInfoTaughtFrom": {
+    "description": "Details panel label of the language the course is taught from."
+  },
+  "languagesInfoSize": "Size",
+  "@languagesInfoSize": {
+    "description": "Details panel label of the full decks' size."
+  },
+  "languagesInfoOnPhone": "Decks on this phone",
+  "@languagesInfoOnPhone": {
+    "description": "Details panel label of the size of the decks on the phone."
+  },
+  "languagesInfoNothingYet": "Nothing yet",
+  "@languagesInfoNothingYet": {
+    "description": "Details panel: no decks on the phone."
+  },
+  "languagesInfoLastCheck": "Last update checked",
+  "@languagesInfoLastCheck": {
+    "description": "Details panel label of when the decks were last checked for updates."
+  },
+  "languagesInfoUnits": "Units built",
+  "@languagesInfoUnits": {
+    "description": "Details panel label of how many units of the course are written."
+  },
+  "languagesInfoUnitsValue": "{written} of {total}",
+  "@languagesInfoUnitsValue": {
+    "description": "Details panel: units built of all planned.",
+    "placeholders": {
+      "written": {
+        "type": "int",
+        "example": "31"
+      },
+      "total": {
+        "type": "int",
+        "example": "118"
+      }
+    }
+  },
+  "languagesInfoWords": "Words",
+  "@languagesInfoWords": {
+    "description": "Details panel label of the course's word count."
+  },
+  "languagesInfoNoCourse": "There is no {language} course: no decks, size or units.",
+  "@languagesInfoNoCourse": {
+    "description": "Details panel for a language with no course.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDownloadTitle": "Download the full {language} decks?",
+  "@languagesDownloadTitle": {
+    "description": "Title of the dialog before a Learn skill downloads a language's full decks.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDownloadBody": "One Learn skill means the full decks: course words and audio, and the decks of every script. {size} in all. A Wi-Fi connection is best.",
+  "@languagesDownloadBody": {
+    "description": "Body of the download dialog. {size} is a size such as 3.1 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "3.1 MB"
+      }
+    }
+  },
+  "languagesDownloadGo": "Download",
+  "@languagesDownloadGo": {
+    "description": "Download dialog's action."
+  },
+  "languagesDeleteTitle": "Delete {language} data now?",
+  "@languagesDeleteTitle": {
+    "description": "Title of the dialog that removes a language's decks and progress at once.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. Skills you are learning become Leave; Know stays. Your progress stays in the review log and comes back with the decks.",
+  "@languagesDeleteBody": {
+    "description": "Body of the delete dialog.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteType": "Type {language} to confirm",
+  "@languagesDeleteType": {
+    "description": "Label of the delete dialog's text field.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesCheckSoundTitle": "Testing the sound",
+  "@languagesCheckSoundTitle": {
+    "description": "Title of the sound test dialog."
+  },
+  "languagesCheckSoundBody": "Playing a sample in the {language} voice.",
+  "@languagesCheckSoundBody": {
+    "description": "Body of the sound test while it plays.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesCheckSoundOk": "Sound works",
+  "@languagesCheckSoundOk": {
+    "description": "Sound test passed."
+  },
+  "languagesCheckSoundOkBody": "The {language} voice played. Speak and Hear can go ahead.",
+  "@languagesCheckSoundOkBody": {
+    "description": "Sound test passed, body.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesCheckSoundBad": "No sound",
+  "@languagesCheckSoundBad": {
+    "description": "Sound test failed."
+  },
+  "languagesCheckSoundBadBody": "No {language} voice played. Turn the media volume up, or install the voice in the phone's text-to-speech settings, then test again.",
+  "@languagesCheckSoundBadBody": {
+    "description": "Sound test failed, body.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesTestAgain": "Test again",
+  "@languagesTestAgain": {
+    "description": "Sound test's retry button."
+  },
+  "languagesToastSkill": "{name}: {skill} set to {state}",
+  "@languagesToastSkill": {
+    "description": "Toast after a skill's pill changes. {name} is the language, with its script in brackets for one of several scripts.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "state": {
+        "type": "String",
+        "example": "Know"
+      }
+    }
+  },
+  "languagesToastNameScript": "{language} ({script})",
+  "@languagesToastNameScript": {
+    "description": "The name in a skill toast for a language with several scripts. {script} is the script's own name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastPool": "{language} is back in the language pool. Find it again with Add a language.",
+  "@languagesToastPool": {
+    "description": "Toast and snackbar after a language's last skill is set to Leave.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesUndo": "Undo",
+  "@languagesUndo": {
+    "description": "Snackbar action that sets a language's skills back."
+  },
+  "languagesToastAdded": "{language} added",
+  "@languagesToastAdded": {
+    "description": "Toast after a language is added.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastMinutes": "{language}: {count} minutes a day",
+  "@languagesToastMinutes": {
+    "description": "Toast after the minutes-a-day stepper changes.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "languagesToastChecking": "{language}: checking for deck updates",
+  "@languagesToastChecking": {
+    "description": "Toast as an update check starts.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastUpToDate": "{language}: decks are up to date",
+  "@languagesToastUpToDate": {
+    "description": "Toast: nothing to update.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastUpdate": "{language}: an update is available",
+  "@languagesToastUpdate": {
+    "description": "Toast: the check found an update.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastCheckFailed": "{language}: could not check for updates",
+  "@languagesToastCheckFailed": {
+    "description": "Toast: the update check failed.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastDeleted": "{language} data deleted",
+  "@languagesToastDeleted": {
+    "description": "Toast after delete data now.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastSoundOk": "{language}: sound test passed",
+  "@languagesToastSoundOk": {
+    "description": "Toast after the sound test passes.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastSoundBad": "{language}: the sound test failed. Install the voice in text-to-speech settings, then tap Check.",
+  "@languagesToastSoundBad": {
+    "description": "Toast after the sound test fails.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesToastScriptOk": "{language}, {script}: script is visible on this phone",
+  "@languagesToastScriptOk": {
+    "description": "Toast after the script check passes.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastScriptBad": "{language}: {script} is not visible on this phone. Install a font for it in the phone's settings, then tap Check.",
+  "@languagesToastScriptBad": {
+    "description": "Toast after the script check fails.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastLevel": "{language}: level found",
+  "@languagesToastLevel": {
+    "description": "Toast after Find my level or Fit my level finishes.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesLevelNeedsDecks": "Set a skill to Learn to download the decks first, then find your level.",
+  "@languagesLevelNeedsDecks": {
+    "description": "Toast when Find my level is tapped for a language with no decks on the phone."
+  },
+  "languagesAddTitle": "Add a language",
+  "@languagesAddTitle": {
+    "description": "Title of the page that lists the languages to add."
+  },
+  "languagesAddSearch": "Search languages",
+  "@languagesAddSearch": {
+    "description": "Hint of the search field on the Add a language page."
+  },
+  "languagesAddNoMatch": "No language matches “{query}”.",
+  "@languagesAddNoMatch": {
+    "description": "Shown when a search on the Add a language page finds nothing.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "urdu"
+      }
+    }
+  },
+  "languagesAdded": "Added",
+  "@languagesAdded": {
+    "description": "Badge on a language already on the Languages page."
+  },
+  "languagesNoCourse": "No course yet",
+  "@languagesNoCourse": {
+    "description": "Badge on a language with no course: Know only."
   }
 }

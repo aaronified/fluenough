@@ -38,7 +38,7 @@ Tap a word to open its card: the word and its reading, how it is said in the IPA
 
 The app comes with no decks. Choosing a language downloads its decks from GitHub. This tells GitHub your phone's IP address and which files it asked for, and nothing else. You can start once the first five decks are in.
 
-Settings > Your languages > Languages I'm learning lists each language, with Update and Remove. Once a day at most, when the app opens, it asks GitHub whether decks have changed, and offers an update. Your progress is kept. You can turn that check off, and then update only when you tap Check for deck updates ([ADR-0037](ADR-0037-Decks-Download-From-Main)).
+Settings > Your languages > Languages lists each language you know or learn. A Learn skill downloads the language's full decks; the update-check icon at the top of a language's sheet looks for updates to its decks, and the sheet's i panel shows the size on the phone and when decks were last checked. Once a day at most, when the app opens, it asks GitHub whether decks have changed, and offers an update. Your progress is kept. You can turn that check off, and then update only when you tap Check for deck updates ([ADR-0037](ADR-0037-Decks-Download-From-Main)).
 
 Remove deletes a language's decks from the phone. Your progress is kept, and comes back if you download it again.
 

@@ -337,6 +337,9 @@ void main() {
 
     testWidgets('the chips and the text share a line', (tester) async {
       usePhone(tester);
+      // The test font draws every glyph a full em wide, so a chip is wider
+      // here than on a phone: a wider screen leaves the text its room.
+      tester.view.physicalSize = const Size(600 * 3, 844 * 3);
       await pumpTelugu(tester);
       await type(tester, 'kind:grammar ');
       final chip = tester.getRect(find.byType(InputChip));
