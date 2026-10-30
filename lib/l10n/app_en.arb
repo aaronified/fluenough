@@ -2561,6 +2561,20 @@
       }
     }
   },
+  "drillTimeLeft": "{time} left",
+  "@drillTimeLeft": {
+    "description": "Screen-reader value of the progress wave in the day's timed session: the time left, as in 4:32 left.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "4:32"
+      }
+    }
+  },
+  "drillTimePaused": "Paused: the clock stops after 30 seconds on one screen",
+  "@drillTimePaused": {
+    "description": "Tooltip of the pause mark beside the countdown in the day's timed session, shown while the clock is stopped."
+  },
   "drillShowAnswer": "Show answer",
   "@drillShowAnswer": {
     "description": "Recognition: reveals the meaning."

@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/skill.dart';
+import '../../core/scheduling/daily_timer.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'mode_pill.dart';
@@ -26,6 +29,107 @@ class DrillHeaderScope extends InheritedWidget {
 
   @override
   bool updateShouldNotify(DrillHeaderScope old) => true;
+}
+
+/// The clock of the day's timed session (#886), which the drill's page puts
+/// above every drill: the header then shows a ticking countdown of the time
+/// left instead of the card counter, and the wave fills with the time used
+/// (owner, 2026-10-30: "Just replace the cards with a ticking countdown,
+/// that pauses if a screen is on for more than 30 seconds").
+class DrillClockScope extends InheritedWidget {
+  const DrillClockScope({
+    super.key,
+    required this.clock,
+    required this.now,
+    required super.child,
+  });
+
+  final DailyCountdown clock;
+
+  /// The time, from the app's clock.
+  final DateTime Function() now;
+
+  static DrillClockScope? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<DrillClockScope>();
+
+  @override
+  bool updateShouldNotify(DrillClockScope old) => true;
+}
+
+/// "4:32": [time] as minutes and seconds, the seconds rounded up so that
+/// the clock reads 0:00 only when it is out.
+String clockText(Duration time) {
+  final seconds = (time.inMilliseconds / 1000).ceil();
+  final m = seconds ~/ 60;
+  final s = (seconds % 60).toString().padLeft(2, '0');
+  return '$m:$s';
+}
+
+/// The ticking countdown and the wave that fills as it runs down.
+class _Countdown extends StatefulWidget {
+  const _Countdown({required this.scope});
+
+  final DrillClockScope scope;
+
+  @override
+  State<_Countdown> createState() => _CountdownState();
+}
+
+class _CountdownState extends State<_Countdown> {
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final clock = widget.scope.clock;
+    final at = widget.scope.now();
+    final text = clockText(clock.remainingAt(at));
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: WaveProgress(
+            value: clock.fractionAt(at),
+            semanticsLabel: l10n.drillProgressLabel,
+            semanticsValue: l10n.drillTimeLeft(text),
+          ),
+        ),
+        const SizedBox(width: 12),
+        if (clock.pausedAt(at))
+          Tooltip(
+            message: l10n.drillTimePaused,
+            child: Icon(
+              Icons.pause_rounded,
+              size: 18,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ExcludeSemantics(
+          child: Text(
+            text,
+            style: theme.textTheme.labelLarge!.copyWith(
+              fontWeight: FontWeight.w700,
+              fontFeatures: const <FontFeature>[FontFeature.tabularFigures()],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 /// A drill's 64 px header, from the design: the close button, the progress
@@ -59,6 +163,7 @@ class DrillHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final clock = DrillClockScope.maybeOf(context);
     return SizedBox(
       height: 64,
       child: Padding(
@@ -71,25 +176,29 @@ class DrillHeader extends StatelessWidget {
               icon: const Icon(Icons.close),
             ),
             const SizedBox(width: 8),
-            Expanded(
-              child: WaveProgress(
-                value: progress,
-                semanticsLabel: l10n.drillProgressLabel,
-                semanticsValue: l10n.drillPosition(position, total),
-              ),
-            ),
-            const SizedBox(width: 12),
-            ExcludeSemantics(
-              child: Text(
-                l10n.drillPositionShort(position, total),
-                style: theme.textTheme.labelLarge!.copyWith(
-                  fontWeight: FontWeight.w700,
-                  fontFeatures: const <FontFeature>[
-                    FontFeature.tabularFigures(),
-                  ],
+            if (clock != null)
+              Expanded(child: _Countdown(scope: clock))
+            else ...<Widget>[
+              Expanded(
+                child: WaveProgress(
+                  value: progress,
+                  semanticsLabel: l10n.drillProgressLabel,
+                  semanticsValue: l10n.drillPosition(position, total),
                 ),
               ),
-            ),
+              const SizedBox(width: 12),
+              ExcludeSemantics(
+                child: Text(
+                  l10n.drillPositionShort(position, total),
+                  style: theme.textTheme.labelLarge!.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontFeatures: const <FontFeature>[
+                      FontFeature.tabularFigures(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             // What the page puts in the header, such as the sounds of the
             // card's word (ADR-0041).
             ?DrillHeaderScope.of(context),

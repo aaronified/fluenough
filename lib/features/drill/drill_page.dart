@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/daily_plan.dart' show DailyRun;
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
@@ -11,7 +12,8 @@ import '../../core/models/reading.dart';
 import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/widgets/drill_frame.dart' show DrillHeaderScope;
+import '../../ui/widgets/drill_frame.dart'
+    show DrillClockScope, DrillHeaderScope;
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../script/script_guide_page.dart';
@@ -70,6 +72,9 @@ class _DrillPageState extends State<DrillPage> {
   /// The queue, kept until the last guide is closed. The session is built
   /// then, so that its clock doesn't time the reading as the first answer.
   List<SessionItem> _items = const <SessionItem>[];
+
+  /// The day's session's clock and tally (#886), for a daily request.
+  DailyRun? _daily;
   bool _loaded = false;
   bool _failed = false;
   bool _summaryShown = false;
@@ -128,8 +133,12 @@ class _DrillPageState extends State<DrillPage> {
       return;
     }
     // A preset keeps each item asked its own way, but for its first.
+    if (request.daily) {
+      _daily = state.startDaily(request.language!);
+    }
+    final run = _daily;
     var items = request.daily
-        ? state.dailyItems(request)
+        ? (run == null ? const <SessionItem>[] : state.nextDailyRound(run))
         : request.lesson
         ? state.lessonFor(request)
         : preset == null
@@ -177,6 +186,7 @@ class _DrillPageState extends State<DrillPage> {
       recorded: !request.revise,
       revising: request.revise,
       recordsRevision: request.recordsRevision,
+      daily: _daily,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
@@ -302,11 +312,25 @@ class _DrillPageState extends State<DrillPage> {
         onPopInvokedWithResult: (didPop, _) {
           if (!didPop) _confirmEnd();
         },
-        child: DrillHeaderScope(
-          action: SoundsOfWordButton(card: session.item.card),
-          child: _drill(session),
+        child: _clocked(
+          session,
+          DrillHeaderScope(
+            action: SoundsOfWordButton(card: session.item.card),
+            child: _drill(session),
+          ),
         ),
       ),
+    );
+  }
+
+  /// [child] under the day's clock, for a timed session (#886).
+  Widget _clocked(DrillSession session, Widget child) {
+    final clock = session.clock;
+    if (clock == null) return child;
+    return DrillClockScope(
+      clock: clock,
+      now: AppScope.read(context).now,
+      child: child,
     );
   }
 

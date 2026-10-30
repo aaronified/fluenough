@@ -25,6 +25,24 @@ abstract final class DailyBudget {
   /// the middle of the owner's 15 to 20 (2026-10-11).
   static const double defaultSecondsPerCard = 17.5;
 
+  /// Seconds a teach card takes until the learner has [ownTeachCards] of
+  /// them timed (#886).
+  static const double defaultSecondsPerTeach = 12;
+
+  /// Teach cards timed before the learner's own average replaces the
+  /// default.
+  static const int ownTeachCards = 10;
+
+  /// Seconds a teach card takes this learner: the average of [total] over
+  /// [cards] once there are [ownTeachCards], capped at [maxSecondsPerCard];
+  /// else [defaultSecondsPerTeach].
+  static double secondsPerTeach(Duration total, int cards) {
+    if (cards < ownTeachCards) return defaultSecondsPerTeach;
+    final seconds = total.inMilliseconds / 1000 / cards;
+    if (seconds <= 0) return defaultSecondsPerTeach;
+    return seconds > maxSecondsPerCard ? maxSecondsPerCard : seconds;
+  }
+
   /// Answers before the learner's own median replaces the default.
   static const int ownTimeAnswers = 20;
 

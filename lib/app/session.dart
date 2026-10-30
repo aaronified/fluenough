@@ -39,7 +39,7 @@ class DrillRequest {
   }) : this(deckIds: <String>{deckId}, skill: skill, tags: tags);
 
   /// The day's session in [language] (#521): the reviews and new words the
-  /// daily minutes buy (#485), in one session.
+  /// daily minutes buy (#485), in one session on a clock (#886).
   const DrillRequest.daily({required String language})
     : this(daily: true, language: language);
 
@@ -171,7 +171,7 @@ class DrillRequest {
   final bool lesson;
 
   /// The day's mixed session in [language]: reviews, then new words, sized
-  /// by the daily minutes ([AppState.dailyItems]).
+  /// by the daily minutes ([AppState.nextDailyRound]).
   final bool daily;
 
   /// Only decks in this language, by code; null for every language.

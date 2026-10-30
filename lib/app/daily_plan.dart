@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import '../core/models/deck.dart';
 import '../core/scheduling/daily_budget.dart';
+import '../core/scheduling/daily_timer.dart';
 
 /// One language's day on Today (#521, #485): the minutes it is given, how
 /// many are spent, what is waiting, and how the app divides the rest of the
@@ -62,7 +63,8 @@ class DailyPlan {
   /// Some of today's minutes are spent, and some are left.
   bool get inProgress => spent > Duration.zero && !budgetDone;
 
-  /// Nothing waits and nothing can be taught.
+  /// Nothing waits, nothing can be taught, and no review would fill the
+  /// time: the session's own plan is empty ([DailyPlanner.whole]).
   bool get nothingLeft => split.cards == 0;
 
   /// The button reads "Done for today": the budget is spent, or there is
@@ -85,4 +87,27 @@ class DailyPlan {
 
   /// Reviews and new words are shown only while there is something to do.
   bool get showsSplit => !done;
+}
+
+/// One day's session while it runs (#886): its clock, and what it has asked
+/// and taught so far, so that each round is planned on what is left.
+class DailyRun {
+  DailyRun({
+    required this.language,
+    required this.clock,
+    this.spentAtStart = Duration.zero,
+  });
+
+  final String language;
+  final DailyCountdown clock;
+
+  /// The time Today counted as spent when the session began.
+  final Duration spentAtStart;
+
+  /// The cards asked or taught so far this session: none is asked twice
+  /// as a review.
+  final Set<String> asked = <String>{};
+
+  /// How many new words the session has taught.
+  int taught = 0;
 }
