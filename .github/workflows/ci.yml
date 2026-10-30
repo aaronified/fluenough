@@ -43,6 +43,9 @@ jobs:
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
       - run: python3 tools/check_ui_strings.py lib/
+      # The English synonym sets (ADR-0050): format, sorting, no word in two
+      # sets, and the decks' not_synonyms entries.
+      - run: python3 tools/validate_synonyms.py assets/synonyms/en.yaml decks/
 
   # The validator now gates CI on more than deck content — it checks that
   # decks/index.json, which the app downloads decks by, is current
