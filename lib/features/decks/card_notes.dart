@@ -9,8 +9,15 @@ import '../../core/models/card.dart';
 /// but a pair note, whose text goes with its partner's warning instead.
 /// Empty when it has none.
 List<String> shownNotes(Card card) => <String>[
+  for (final note in shownNoteList(card)) note.text,
+];
+
+/// [shownNotes] as notes: the pool the answer reveal shows one from at a
+/// time ([NoteRotation]). Unlike [proseNoteList] it keeps the homograph and
+/// lookalike notes, as the reveal shows no warning box for them.
+List<CardNote> shownNoteList(Card card) => <CardNote>[
   for (final note in card.notes)
-    if (note.kind != NoteKind.pair && note.text.trim().isNotEmpty) note.text,
+    if (note.kind != NoteKind.pair && note.text.trim().isNotEmpty) note,
 ];
 
 /// [shownNotes] as one block of text, a note a line, or null when there is
@@ -66,8 +73,7 @@ List<String> proseNotes(Card card) => <String>[
   for (final note in proseNoteList(card)) note.text,
 ];
 
-/// [proseNotes] as notes: the pool the teach card and the answer reveal
-/// show one from at a time ([NoteRotation]).
+/// [proseNotes] as notes: the pool the teach card shows one from at a time ([NoteRotation]).
 List<CardNote> proseNoteList(Card card) => <CardNote>[
   for (final note in card.notes)
     if (note.kind != NoteKind.pair &&

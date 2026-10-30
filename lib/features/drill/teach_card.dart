@@ -13,6 +13,7 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart' show baseFinder;
 import '../decks/card_blocks.dart';
+import '../decks/card_notes.dart' show proseNoteList;
 import '../decks/ipa_symbols.dart';
 import '../decks/path_parts.dart' show joinParts;
 import '../decks/word_sheet.dart' show adultContentOn;
@@ -265,7 +266,8 @@ class TeachCard extends StatelessWidget {
                 ),
               meaning,
               // Padding, not a max-width box, as the review's notes are.
-              if (OneNote.hasNote(card)) OneNote(card: card),
+              if (proseNoteList(card).isNotEmpty)
+                OneNote(card: card, notes: proseNoteList(card)),
               for (final alike in rude)
                 AlikeWarning(
                   kind: alike.kind,

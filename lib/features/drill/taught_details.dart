@@ -10,6 +10,7 @@ import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart';
+import '../decks/card_notes.dart';
 import '../review/alike_warning.dart';
 import 'drill_session.dart';
 import 'ipa_examples.dart';
@@ -42,7 +43,7 @@ enum TaughtReading {
 /// the question is answered, as the lesson's teach card showed it before the
 /// one-screen `TeachCard` (#691) replaced that: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
 /// on one line ([BaseLine], #410) and its first example, 12 apart and
-/// centred. Its note is one of its prose notes, shown one at a time
+/// centred. Its note is one of its notes but a pair note ([shownNoteList]), shown one at a time
 /// ([OneNote]); a pair note's text is the care note of the warning below.
 ///
 /// A review shows it once the question is answered, never before, so that it
@@ -129,7 +130,8 @@ class TaughtDetails extends StatelessWidget {
           // intrinsic height, and a ConstrainedBox reports its child's
           // height at the full width, so wrapped notes would overflow.
           // 19 each side is the design's 280 on a phone's 318 card.
-          if (OneNote.hasNote(card)) OneNote(card: card),
+          if (shownNoteList(card).isNotEmpty)
+            OneNote(card: card, notes: shownNoteList(card)),
           // One line, padded as a note is, so as not to crowd the card.
           if (bases.isNotEmpty)
             Padding(
