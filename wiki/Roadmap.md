@@ -58,13 +58,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-21 approved open issues.
+17 approved open issues.
 
 **Enhancements**
 
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
-- [#484](https://github.com/aaronified/fluenough/issues/484) Generate docs/ROADMAP.md automatically, from the plans and the approved issues
-- [#493](https://github.com/aaronified/fluenough/issues/493) Clean up junk data regularly: old update APKs, temporary restore files, stale caches
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
 - [#508](https://github.com/aaronified/fluenough/issues/508) Review pipeline: reviewers see and correct every card field
 - [#519](https://github.com/aaronified/fluenough/issues/519) Reviewer daily questions: app-generated questions on the weakest data, answered by mail
@@ -76,9 +74,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
-- [#90](https://github.com/aaronified/fluenough/issues/90) Daily reminder on days with words due
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
-- [#477](https://github.com/aaronified/fluenough/issues/477) Reviewing: suggest where a card belongs, the meaning never changes, and the reviewer rules in onboarding
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#527](https://github.com/aaronified/fluenough/issues/527) Decks: typo-tolerant search (FTS5) with kind chips, instead of filters
@@ -134,7 +130,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#486](https://github.com/aaronified/fluenough/issues/486) Session result: wrong minutes (31 for a short lesson) and wrong card count
 - [#487](https://github.com/aaronified/fluenough/issues/487) App update: a downloaded APK whose install was cancelled is downloaded again
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
-- [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
