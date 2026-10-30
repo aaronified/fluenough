@@ -51,6 +51,14 @@ abstract final class AppLinks {
   static const String contribute =
       'https://github.com/aaronified/fluenough/wiki/Contributing';
 
+  /// English Wiktionary, credited for the narrow IPA in a card's `phonetic`.
+  static const String wiktionary = 'https://en.wiktionary.org';
+
+  /// The CC BY-SA 4.0 licence, which the decks and Wiktionary's data are
+  /// under.
+  static const String ccBySa =
+      'https://creativecommons.org/licenses/by-sa/4.0/';
+
   /// Every release's page, where "What's new" sends the learner for the
   /// releases it does not list.
   static const String releases =
