@@ -27,7 +27,7 @@ that the card above it already showed, and did not say what was wrong.
 > possible. If a single word can suffice, that's what it will show.
 
 Every tappable control that shows no text (icon buttons, icon-only pills,
-the language bar, round buttons) shows a small hint on a long press, and on
+round buttons) shows a small hint on a long press, and on
 hover on web and desktop. An `IconButton` takes `tooltip:`; anything else is
 wrapped in `Hint(message:, child:)` (`lib/ui/widgets/hint.dart`). Both are the
 one `Tooltip` styled in `AppTheme`. The text is in `lib/l10n/app_en.arb`: one
