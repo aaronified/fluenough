@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
@@ -14,7 +13,6 @@ import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
 import '../core/models/reading.dart';
-import '../core/models/review_event.dart' show ProgressKey;
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
