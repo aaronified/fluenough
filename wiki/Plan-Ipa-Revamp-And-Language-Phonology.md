@@ -149,6 +149,51 @@ language), which the owner rejected.
   the import pull requests go to `decks-next` after that release. Until
   then a deck builder writes no narrow form by hand (see
   `.claude/skills/build-deck/SKILL.md`).
+- **Built (owner asked, 2026-10-30: "make all decks compliant with the full []
+  IPA notations"; not run on any deck yet).** The field, its two sources and
+  the validator rule exist (`phonetic`, `phonetic_source`; 0.6.6 reads them).
+  The tools are `tools/import_phonetic.py` and `tools/derive_phonetic.py`
+  (commands in [Deck-Tools](Deck-Tools)); both patch the deck text after the
+  card's `ipa:` line, skip a card that has a `phonetic`, and report coverage
+  per deck. What had to be decided, and how:
+  - **Data source.** The kaikki.org per-language JSONL
+    (`https://kaikki.org/dictionary/<Language>/kaikki.org-dictionary-<Language>.jsonl`),
+    downloaded once into the git-ignored `.cache/phonetic/`, not the live
+    API (which rate limited the first sample). `urllib` only.
+  - **Which form.** Each sound in the dump has a `note` and/or `tags`
+    naming its variety. A form is taken only if it is marked as the
+    course's variety, or is untagged (Wiktionary's default); a form with
+    another note or tag is not. Syllable dots are dropped, as the decks'
+    `ipa` has none, and Latin g is written ɡ. A word whose entries disagree is
+    left alone (ambiguous), and a form that is not IPA letters and marks in
+    brackets is counted invalid and never written.
+  - **Variety per language (open question 4, decided for the first three).**
+    Bengali: the Kolkata standard, Wiktionary's `Rarh` (the decks' broad
+    `ipa` is the Kolkata standard; Dhaka and Vanga forms exist and are not
+    taken). Hindustani: Wiktionary's "Hindi, Standard" forms and untagged
+    ones, from the Hindi dump only (Devanagari; the Urdu entries are not
+    read). Spanish: the untagged form, which Wiktionary does not say is
+    Castilian or Latin American while the decks' `ipa` writes θ, so a
+    Latin-American learner's card shows a Castilian broad form beside a
+    form of unknown accent: left for the owner. Any other language needs its
+    variety named in `VARIETIES` first.
+  - **Rules.** One YAML file per language, `decks/<lang>/<lang>-phonetics.yaml`
+    (kind `phonetics`, a new file kind, see "Phonetic rules files" in
+    [Deck-Format](Deck-Format)): ordered regular-expression rules, each with a
+    named `source`. Only well-attested rules are in: Spanish has eleven
+    (nasal place assimilation, /b d ɡ/ as approximants, /s/ voiced, dental
+    /t d/), Hindustani four and Bengali two (nasal place assimilation
+    only), because the broad `ipa` of those two already writes the dental
+    stops, aspirates, flap and nasal vowels. A rule left out is not a claim
+    it does not exist. A card the rules leave unchanged gets no `phonetic`
+    (its broad form in brackets would claim a precision nobody checked);
+    `--bracket-unchanged` writes them anyway. The owner decides which.
+  - **Not verified.** The rules and their `source` citations were written
+    from memory of the literature and Wikipedia's phonology pages and are
+    not checked against the works; nobody has run the tools on a deck. The
+    Wiktionary licence's attribution wording was not read (the plan's
+    earlier warning stands); the credit is the tool's `wiktionary` source and
+    this page.
 - **A word not on Wiktionary** (inflected forms, phrases, example
   sentences) has no narrow form until someone writes one. Not generated.
 - **The checker itself is a separate project.** `speech_to_text` returns
@@ -324,7 +369,7 @@ Bengali as the pilot because the owner named it (**Proposed**).
 | 2 | IPA course units 1 to 3 and 12 | they read in the app at 1.4x; the validator passes |
 | 3 | The whole-chart unit | the chart is shown and read by axes |
 | 4 | Phonology deck for Bengali, parts 1 to 6, | a Bengali speaker or phonetician has checked the inventory |
-| 5 | The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-next`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
+| 5 | (Fields, validator and both tools are built, 2026-10-30; the runs per language are not.) The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-next`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 
@@ -334,13 +379,13 @@ the `phonetic` field and import tool 10 to 16 hours. Confidence: low.
 
 ## Still open
 
-1. ~~Derive or store the narrow form?~~ Decided: take it from Wiktionary (section 1). Left: the field's name and shape, and the accent per form.
+1. ~~Derive or store the narrow form?~~ Decided: take it from Wiktionary, rules for the rest, a field says which (section 1). Built 2026-10-30: the field is `phonetic` with `phonetic_source`; the accent per form is not stored (only the course's variety is taken).
 2. **Who writes it?** CLAUDE.md gives decks to Haiku; the IPA course was
    built by Sonnet (ADR-0041). Sonnet: costs more. Haiku: phonetics is
    where a weaker model invents, and one review may not catch it.
 3. **Who reviews it?** A bilingual reviewer cannot check phonetics. A
    phonetician: not yet found. Without one, everything ships `unreviewed`.
-4. **Which variety per language** (for Bengali, Standard Colloquial of
+4. **Which variety per language.** Decided 2026-10-30 for bn, hi and es (section 1, "Built"); the others when their import runs. Original question: (for Bengali, Standard Colloquial of
    Kolkata or the Bangladeshi Standard): one, named, with the other's
    differences noted. Downside: a learner of the other sees differences as
    exceptions.
