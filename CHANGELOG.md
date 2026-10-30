@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- The rule for when the daily reminder fires (#90): at the learner's time on each of the next seven days that has cards due, never again on a day it already fired, and not for a time already passed. The reminder itself is not switched on yet; it waits for the notification plugin to be agreed.
+- The daily reminder (#90): Settings > Reminders has a switch and a time. It shows one notification a day, at the time you pick, on days with cards due, saying only how many are due; tapping it opens Today. Android 13 and later ask to allow notifications when you switch it on, never at launch, and a refusal leaves it off and says how to allow them. It never fires while the app is open, and is scheduled inexactly, so it needs no exact-alarm permission. It adds the `flutter_local_notifications` plugin (agreed with the owner, 2026-10-30).
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
 
 ### Fixed

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
@@ -13,6 +14,7 @@ import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
 import '../core/models/reading.dart';
+import '../core/models/review_event.dart' show ProgressKey;
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
@@ -61,6 +63,9 @@ import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'reminder_scheduler.dart';
+import 'reminder_service.dart';
+import 'reminder_words.dart';
 import 'repository_decks.dart';
 import 'backup_files.dart';
 import 'backup_store.dart';
@@ -178,6 +183,7 @@ class AppState extends ChangeNotifier {
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
+    ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
     AppLog? log,
@@ -223,7 +229,22 @@ class AppState extends ChangeNotifier {
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
     addListener(_rememberShown);
+    reminders = ReminderService(
+      scheduler: reminderScheduler,
+      settings: this.settings,
+      available: () => features.isAvailable(Feature.reminder),
+      forecast: dueForecast,
+      words: () => reminderWordsFor(PlatformDispatcher.instance.locale),
+      clock: now,
+      // A tap on a reminder opens Today.
+      onOpened: () => shellTab.value = ShellTab.today,
+      log: (message) => this.log.event(message),
+    );
   }
+
+  /// The daily reminder (#90): its permission, its plan and the
+  /// notifications. Switched on and off in Settings > Reminders.
+  late final ReminderService reminders;
 
   /// The language shown when this state last notified, so that a change
   /// in settings that shows another rebuilds every screen that reads this
@@ -305,6 +326,7 @@ class AppState extends ChangeNotifier {
     DeckStore? addedDecks,
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
+    ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
     AppLog? log,
@@ -341,6 +363,7 @@ class AppState extends ChangeNotifier {
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
+      reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
       log: log,
@@ -1545,23 +1568,35 @@ class AppState extends ChangeNotifier {
         ...skill.modes,
   };
 
-  /// Cards due tomorrow, as Today will count them: in the decks the profile
-  /// learns, in the skills switched on, and not set aside.
-  int dueTomorrow() {
+  /// Whether a pair counts as due, as Today counts it: in the decks the
+  /// profile learns, in the skills switched on, and not set aside.
+  bool Function(ProgressKey key) _countsAsDue({bool onlyShown = true}) {
     final modes = _modes(ignorePauses: true);
     final learned = <String>{
-      for (final entry in profileDecks)
+      for (final entry
+          in onlyShown ? profileDecks : _learnedDecks(onlyShown: false))
         for (final card in entry.cards) card.id,
     };
     final leeches = progress.leechEffects;
-    return progress.dueTomorrow(
-      now(),
-      counts: (key) =>
-          learned.contains(key.cardId) &&
-          modes.contains(key.mode) &&
-          !leeches.isSetAside(key),
-    );
+    return (key) =>
+        learned.contains(key.cardId) &&
+        modes.contains(key.mode) &&
+        !leeches.isSetAside(key);
   }
+
+  /// Cards due tomorrow, as Today will count them: in the decks the profile
+  /// learns, in the skills switched on, and not set aside.
+  int dueTomorrow() => progress.dueTomorrow(now(), counts: _countsAsDue());
+
+  /// Cards due by the end of each of the next [days] days, counted as Today
+  /// counts them and across every language the profile learns (the language
+  /// bar's choice does not narrow it): index 0 is today. What the daily
+  /// reminder is planned from (#90).
+  List<int> dueForecast({int days = 7}) => progress.dueByDay(
+    now(),
+    days: days,
+    counts: _countsAsDue(onlyShown: false),
+  );
 
   /// Whether this version can drill anything in [entry]: some card has a
   /// mode whose drill is available. A grammar deck cannot until its drill
@@ -3188,6 +3223,7 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    reminders.dispose();
     settings
       ..removeListener(_forgetPending)
       ..removeListener(_reviewerToDownloads)
