@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 
 import '../../app/app_state.dart';
+import '../../app/daily_plan.dart' show DailyRun;
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
@@ -18,6 +19,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
+import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
@@ -103,6 +105,7 @@ class DrillSession extends ChangeNotifier {
     this.recorded = true,
     this.revising = false,
     this.recordsRevision = false,
+    this.daily,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(
@@ -112,7 +115,7 @@ class DrillSession extends ChangeNotifier {
        _state = state,
        _chosenMode = inputMode,
        _random = random ?? state.random,
-       items = List<SessionItem>.unmodifiable(items),
+       _items = List<SessionItem>.of(items),
        startedAt = state.now(),
        _showingPassage = items.first.card is QuestionCard {
     _watch.start();
@@ -123,8 +126,48 @@ class DrillSession extends ChangeNotifier {
   /// Shuffles the options of a multiple-choice question (#148).
   final math.Random _random;
 
-  /// The whole session in the order it is drilled, built once at the start.
-  final List<SessionItem> items;
+  /// The session in the order it is drilled: all of it from the start, or,
+  /// in a [daily] session, the rounds so far, a round more added when the
+  /// last is done.
+  List<SessionItem> get items => _items;
+  final List<SessionItem> _items;
+
+  /// The day's session, run on a clock (#886), or null for one of a fixed
+  /// set of cards. It ends when the clock runs out, and the next round is
+  /// built only when the last is done.
+  final DailyRun? daily;
+
+  /// The clock of a [daily] session.
+  DailyCountdown? get clock => daily?.clock;
+
+  /// What the clock shows: the time left now.
+  Duration get timeLeft =>
+      daily?.clock.remainingAt(_state.now()) ?? Duration.zero;
+
+  (int, DrillPhase)? _screen;
+
+  @override
+  void notifyListeners() {
+    // A new screen shows the learner is there: the clock runs again. A
+    // notice that shows no new screen (a voice finishing, say) is not the
+    // learner coming back.
+    final screen = (_index, _phase);
+    if (_screen != screen) {
+      _screen = screen;
+      daily?.clock.screenShown(_state.now());
+    }
+    super.notifyListeners();
+  }
+
+  /// The clock has run out: Today counts the minutes it ran, though a
+  /// card's time is capped differently, so the day reads done.
+  void _settleClock(DailyRun run) {
+    final target = run.spentAtStart + run.clock.budget;
+    final spent = _state.dailySpent(run.language);
+    if (spent < target) {
+      _state.settings.addClockTime(run.language, _state.now(), target - spent);
+    }
+  }
 
   final DateTime startedAt;
 
@@ -961,6 +1004,15 @@ class DrillSession extends ChangeNotifier {
   /// questions are.
   void learnt() {
     if (!ask.onlyShows) return;
+    // A teach card is timed like an answer (#886): its time counts toward
+    // the day's minutes and the hours, kept beside the log.
+    if (recorded || recordsRevision) {
+      _state.settings.addTeachTime(
+        deck.language.code,
+        _state.now(),
+        _watch.elapsed,
+      );
+    }
     _advance();
   }
 
@@ -1329,6 +1381,27 @@ class DrillSession extends ChangeNotifier {
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
       next++;
+    }
+    final run = daily;
+    if (run != null) {
+      if (run.clock.expiredAt(_state.now())) {
+        next = items.length;
+        _settleClock(run);
+      } else {
+        // The round is done: the next is built on the time left. A round of
+        // cards none can be drilled is passed over for the next, a few
+        // times, so the session does not end with time left.
+        for (var tries = 0; next >= items.length && tries < 5; tries++) {
+          final more = _state.nextDailyRound(run);
+          if (more.isEmpty) break;
+          final from = items.length;
+          _items.addAll(more);
+          next = from;
+          while (next < items.length && !_drillable(items[next])) {
+            next++;
+          }
+        }
+      }
     }
     if (next >= items.length) {
       _endedAt = _state.now();
