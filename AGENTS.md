@@ -28,7 +28,7 @@ adding one means adding deck files.
 written. **The UI is built from the design** and progress is saved in a
 database; what the backend lacks is shown disabled, marked "Feature incoming"
 ([ADR-0008](docs/adr/0008-unbuilt-features-are-shown-disabled.md)). See
-[docs/ROADMAP.md](docs/ROADMAP.md).
+[wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
 **The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
 SDK available, and for a while nobody had run it. That has been done: on
@@ -252,7 +252,7 @@ labelled `plan`, which links its plan in `docs/plans/`. Read that plan on
 differ, the plan is current. A plan that a later one changes says so at its
 top. An issue waits for its own "Blocked by" links and for whatever its
 tracker or parent waits for, and the milestones give the order
-([docs/ROADMAP.md](docs/ROADMAP.md)).
+([wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap)).
 
 **Check for open PRs touching your files before you begin.** An agent that
 reads only the main branch will cheerfully rewrite something already under
@@ -321,7 +321,7 @@ documents point here.
 
 ### Files where you should expect contention
 
-`pubspec.yaml`, `lib/core/data/*`, `docs/ROADMAP.md`, `lib/core/models/card.dart`,
+`pubspec.yaml`, `lib/core/data/*`, `lib/core/models/card.dart`,
 `lib/l10n/app_en.arb`.
 Touch them in their own small PR, merged quickly, rather than as part of a
 large feature branch that sits open for a week.
