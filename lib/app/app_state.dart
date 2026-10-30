@@ -3020,9 +3020,7 @@ class AppState extends ChangeNotifier {
     final room = lessonRoom(inProgressIn(request.language!));
     final picked = lessonItems(
       taught,
-      room: words == null
-          ? room
-          : (beyondRoom ? words : min(room, words)),
+      room: words == null ? room : (beyondRoom ? words : min(room, words)),
     );
     final modesOf = drillableModesNow();
     final lesson = lessonSets(
