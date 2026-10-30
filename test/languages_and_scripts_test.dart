@@ -1196,14 +1196,16 @@ void main() {
         expect(downloads.missing('hi', const <String>['en']), isNotEmpty);
 
         // It is, from its card in Languages I'm learning (#467).
-        await tester.tap(find.text(l10n.navSettings));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text(l10n.settingsRowLanguages));
-        await tester.pumpAndSettle();
-        final page = find.text(l10n.settingsLearn);
-        await tester.ensureVisible(page);
-        await tester.pumpAndSettle();
-        await tester.tap(page);
+        // Settings opens the merged Languages page (#907); this is the older
+        // page, which first launch still uses.
+        tester
+            .state<NavigatorState>(find.byType(Navigator).first)
+            .push(
+              MaterialPageRoute<void>(
+                builder: (_) =>
+                    LanguagePickerPage(spokenList: pickerSpokenList),
+              ),
+            );
         await tester.pumpAndSettle();
         final rest = find.text(l10n.deckDownloadsGetRest);
         await tester.ensureVisible(rest);

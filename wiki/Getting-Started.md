@@ -33,7 +33,7 @@ For each language the app asks "Do you know any of it?" If you do, a short check
 - For a script it asks you to match letters, write a word in Latin letters, and write words from their meaning. If you pass, the script lessons are skipped.
 - It then says where you will start, and why. You can try again from there.
 - Your answers do not count as reviews, and you can still study anything later.
-- The last screen asks how to review the words it placed: **Set in stone** (kept out of Today, counted as known; you can still revise them from a deck page, and those answers are not logged), **Spot-check** (a few tested now and then, and a miss brings more back; picked for you) or **Keep reviewing** (like any other word). Script decks follow your choice too. You can change it later, for each course, in Languages I'm learning.
+- The last screen asks how to review the words it placed: **Set in stone** (kept out of Today, counted as known; you can still revise them from a deck page, and those answers are not logged), **Spot-check** (a few tested now and then, and a miss brings more back; picked for you) or **Keep reviewing** (like any other word). Script decks follow your choice too. You can change it later, for each course, on the Languages page.
 
 If you say you know none of it, you start from the beginning.
 

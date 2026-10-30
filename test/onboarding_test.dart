@@ -13,7 +13,6 @@ import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/profile.dart';
-import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
@@ -845,9 +844,13 @@ void main() {
           usePhone(tester);
           final state = await pumpApp(tester);
           final l10n = l10nOf(tester);
+          // Settings opens the merged Languages page (#907); this is the older
+          // spoken-languages page, which first launch still uses.
           unawaited(
-            AppNavigator.openSpokenLanguages(
-              tester.element(find.byType(AppShell)),
+            Navigator.of(tester.element(find.byType(AppShell))).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const SpokenLanguagesPage(),
+              ),
             ),
           );
           await tester.pumpAndSettle();

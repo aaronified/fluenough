@@ -55,6 +55,7 @@ import 'font_check.dart';
 import 'deck_import.dart';
 import 'features.dart';
 import 'language_choice.dart';
+import 'language_skills.dart';
 import 'links.dart';
 import 'log_files.dart';
 import 'mail_share.dart';
@@ -895,7 +896,10 @@ class AppState extends ChangeNotifier {
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
     final downloads = deckDownloads;
-    if (downloads == null || !settings.learningChosen || _disposed) return;
+    if (downloads == null || _disposed) return;
+    // What the Languages page left out is removed now, at this open (#907).
+    await removeUnneededDecks();
+    if (!settings.learningChosen || _disposed) return;
     final spoken = settings.spokenLanguages;
     await downloads.resume(learningCodes, spoken);
     if (!_disposed && downloads.checksAutomatically) {

@@ -15,6 +15,8 @@ class SpokenLanguage {
     this.scriptCanReadFor = const <String, String>{},
     this.scriptTextUnchecked = false,
     this.aliases = const <String>[],
+    this.dialect,
+    this.scriptOnly = false,
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -112,6 +114,15 @@ class SpokenLanguage {
   /// The own-script "I can read it" answer for [script] of a language
   /// written in several, or null: none written.
   String? canReadIn(String script) => scriptCanReadFor[script];
+
+  /// The one dialect the app teaches, by its proper name, such as
+  /// "Majhi (ਮਾਝੀ), the Eastern Punjabi standard" (#907), or null where the
+  /// list does not say: the page then says "Standard" and the language.
+  final String? dialect;
+
+  /// Whether the course teaches a script only, with no speech: English
+  /// Braille. Such a language has Read and Write and no Speak or Hear.
+  final bool scriptOnly;
 
   /// Other names a search finds it by (`aliases`), such as "Urdu" for
   /// Hindustani (#623).
@@ -351,6 +362,8 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         scriptCanReadFor: canReadFor,
         scripts: scripts,
         aliases: _aliases(item, i),
+        dialect: _optional(item, 'dialect', i),
+        scriptOnly: item['script_only'] == true,
       ),
     );
   }
