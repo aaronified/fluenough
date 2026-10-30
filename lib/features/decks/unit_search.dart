@@ -8,9 +8,10 @@ import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/grading/diacritics.dart';
 import '../../core/data/themes.dart' show DeckTheme;
-import '../../core/models/card.dart';
+import '../../core/models/card.dart' hide wordsOf;
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/leech_action.dart' show LeechEffects;
 import '../../core/models/reading.dart' show QuestionCard;
 import '../../core/models/review_event.dart' show ProgressKey;
 import '../../core/search/fuzzy.dart';
@@ -196,7 +197,7 @@ List<_IndexedCard> _indexOf(DeckEntry entry) =>
 /// page does.
 CardStatus Function(Card card) cardStatusReader(AppState state) {
   final modesOf = state.drillableModesNow();
-  final effects = state.progress.leechEffects;
+  final effects = LeechEffects(state.progress.leechActions);
   final now = state.now();
   final lapses = <ProgressKey, int>{
     for (final leech in state.progress.index.leeches()) leech.key: leech.lapses,

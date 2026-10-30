@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
@@ -72,6 +74,17 @@ class _DecksPageState extends State<DecksPage> {
   /// The chip whose value is being changed, its menu open.
   SearchToken? _editing;
 
+  /// The text the results are computed for: the bar's text, caught up
+  /// about 150 ms after typing stops, so that a keystroke does not rescan
+  /// every card (#527).
+  late String _applied = _search.text;
+  Timer? _debounce;
+
+  void _sync() {
+    _debounce?.cancel();
+    _applied = _search.text;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -88,6 +101,7 @@ class _DecksPageState extends State<DecksPage> {
 
   @override
   void dispose() {
+    _debounce?.cancel();
     _focus.removeListener(_onFocus);
     _focus.dispose();
     _search.dispose();
@@ -200,6 +214,15 @@ class _DecksPageState extends State<DecksPage> {
         selection: TextSelection.collapsed(offset: rest.length),
       );
     }
+    _debounce?.cancel();
+    if (_search.text.isEmpty) {
+      _applied = '';
+    } else {
+      _debounce = Timer(const Duration(milliseconds: 150), () {
+        if (!mounted) return;
+        setState(() => _applied = _search.text);
+      });
+    }
     setState(() {});
   }
 
@@ -209,6 +232,7 @@ class _DecksPageState extends State<DecksPage> {
       selection: TextSelection.collapsed(offset: text.length),
     );
     _focus.requestFocus();
+    _sync();
     setState(() {});
   }
 
@@ -227,6 +251,7 @@ class _DecksPageState extends State<DecksPage> {
       _chips.clear();
       _editing = null;
       _search.clear();
+      _sync();
       setState(() {});
     } else {
       _close();
@@ -238,6 +263,7 @@ class _DecksPageState extends State<DecksPage> {
     _editing = null;
     _search.clear();
     _focus.unfocus();
+    _sync();
     setState(() {});
   }
 
@@ -487,6 +513,10 @@ class _DecksPageState extends State<DecksPage> {
       ]),
       builder: (context, _) {
         final parsed = _parse(state);
+        final applied = parseSearch(
+          _applied,
+          themes: <String>[for (final theme in state.themes) theme.id],
+        );
         final searching = parsed.text.isNotEmpty || _chips.isNotEmpty;
         final open = _focus.hasFocus || searching;
         final language = languages.firstOrNull;
@@ -494,7 +524,7 @@ class _DecksPageState extends State<DecksPage> {
             ? runSearch(
                 state,
                 l10n,
-                text: _search.text,
+                text: _applied,
                 chips: _chips,
                 languages: languages,
                 planOf: widget.planOf,
@@ -554,16 +584,16 @@ class _DecksPageState extends State<DecksPage> {
                             ),
                           if (parsed.pending == null &&
                               _editing == null &&
-                              parsed.text.isNotEmpty &&
+                              applied.text.isNotEmpty &&
                               outcome.foreign == null)
                             SuggestionRows(
-                              typed: parsed.text,
+                              typed: applied.text,
                               suggestions: language == null
                                   ? const <SearchSuggestion>[]
                                   : searchSuggestions(
                                       state,
                                       l10n,
-                                      parsed.text,
+                                      applied.text,
                                       language,
                                     ),
                               onUse: (s) => _setText(

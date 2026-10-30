@@ -71,8 +71,9 @@ List<DeckTheme> parseThemes(String text, {String source = 'themes.yaml'}) {
     final rawTags = item['tags'];
     if (rawTags != null &&
         (rawTags is! YamlList ||
+            rawTags.isEmpty ||
             rawTags.any((t) => t is! String || t.trim().isEmpty))) {
-      throw bad('theme "$id" tags must be a list of words', item);
+      throw bad('theme "$id" tags must be a non-empty list of words', item);
     }
     themes.add(
       DeckTheme(

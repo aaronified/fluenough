@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
-import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/models/deck.dart';
@@ -57,7 +56,7 @@ class _ScriptOffersState extends State<ScriptOffers> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final script = widget.script;
-    final scriptName = l10n.scriptName(script);
+    final scriptName = l10n.scriptNameOr(script, widget.shown.name);
     final others = <LanguageInfo>[
       for (final language in state.languageChoices)
         if (language.code != widget.shown.code &&

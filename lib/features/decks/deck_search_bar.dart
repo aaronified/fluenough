@@ -130,10 +130,7 @@ class DeckSearchBar extends StatelessWidget {
                                     chipLabel(token, value),
                                   ),
                                   child: InputChip(
-                                    label: Text(
-                                      chipLabel(token, value),
-                                      softWrap: false,
-                                    ),
+                                    label: Text(chipLabel(token, value)),
                                     side: editing == token
                                         ? BorderSide(
                                             color: scheme.primary,
