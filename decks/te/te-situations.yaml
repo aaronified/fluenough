@@ -1,0 +1,19 @@
+# Telugu's situation sheets (#724): lists of card ids, never card text. Every id
+# is a card of a Telugu deck, so progress, audio and notes are the card's own.
+# Draft: the choice of cards needs a Telugu reviewer; the modern ride-hailing
+# cards (OTP, UPI, app booking) are not in the decks yet and are listed in the
+# pull request as deck work.
+schema: 1
+id: te-situations
+name: "Telugu situations"
+kind: situations
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by a Telugu speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: taxi
+    icon: taxi
+    title: { en: "Taxi" }
+    phrases: ["te-0276", "te-0275", "te-0277", "te-0278", "te-0293"]
+    words: ["te-0273", "te-0272", "te-0274", "te-0279", "te-0302", "te-0303", "te-0294", "te-0295", "te-0296", "te-0297", "te-0300", "te-0301", "te-0304", "te-1401", "te-1409", "te-1421", "te-3901"]

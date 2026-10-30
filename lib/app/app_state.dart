@@ -37,6 +37,7 @@ import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
+import '../core/models/situation.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
@@ -672,6 +673,10 @@ class AppState extends ChangeNotifier {
         (fact: fact, texts: factTexts(fact, spoken)),
     ];
   }
+
+  /// [language]'s situation sheets (#724), or null where it has none.
+  SituationsFile? situationsOf(String language) =>
+      _catalog.situations[language];
 
   /// The languages Today's fact can be shown in (#926): those the learner
   /// knows, in their order.

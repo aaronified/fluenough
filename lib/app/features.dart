@@ -117,6 +117,7 @@ enum Feature {
     Feature.stats,
     Feature.leeches,
     Feature.dailyFacts,
+    Feature.situations,
     Feature.logExport,
     Feature.logImport,
     Feature.localBackup,

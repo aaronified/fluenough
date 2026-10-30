@@ -3433,6 +3433,58 @@ fact carries its own text in every language it is written in. It has
 
 ---
 
+## Situations files
+
+Cheatsheets for everyday moments (#724): hailing a cab, shopping, the doctor.
+A language has one situations file, `decks/<code>/<code>-situations.yaml`,
+beside its decks. It holds **no card text**: each situation lists the ids of
+real cards in the language's decks, so a card fixed once is fixed on every
+sheet, and progress, the "not learnt yet" dot, audio and Practise this sheet
+all use the deck's own card. A word a situation needs that no deck has is
+added to the right deck as a new card (a new id from
+`validate_decks.py --next-id`), never written on the sheet.
+
+```yaml
+schema: 1
+id: te-situations
+name: "Telugu situations"
+kind: situations
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+license: "CC-BY-SA-4.0"
+situations:
+  - id: taxi
+    icon: taxi
+    title: { en: "Taxi" }
+    phrases: ["te-0276", "te-0275"]
+    words: ["te-0273", "te-0274"]
+```
+
+The header is a facts file's: no `native`. The file name stem is its `id`.
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | Unique in the file, `[a-z0-9-]+`, permanent. |
+| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`: it picks the button's icon and its own colour on Today. Each icon is used once per file. |
+| `title` | yes | The sheet's title keyed by language code as a fact's text is; `en` is required. The learner sees the first of the languages they speak that it is written in. |
+| `phrases` | one of these | Card ids shown first, in this order. |
+| `words` | one of these | Card ids shown after the phrases, in this order. |
+
+Every id must be a card of the language (the validator checks across the
+language's files), listed once per situation. A card may be on several
+situations. A course whose language has no situations file shows the
+Situations buttons dimmed with an "Upcoming" pill.
+
+**In the index.** The file is listed in `decks/index.json` under its own key,
+`situations`, apart from `files` (as `script_guides` are), because the
+released app has no case for `kind: situations` and would show it as a broken
+deck. The app that knows the key reads it as one of the language's files and
+downloads it with the decks; an older app never sees it. A situations
+file is counted in the language's `size`. The `situations:` key belongs to a
+situations file only, and a language has one file, named
+`<code>-situations.yaml`; the validator refuses anything else.
+
+---
+
 ## Resources files
 
 Where else to learn the language: a game, an app, a site, and later films,

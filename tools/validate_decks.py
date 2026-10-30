@@ -85,7 +85,7 @@ SCRIPT_BLOCKS = {
     "bengali": ((0x0980, 0x09FF),),
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
+KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer", "resources", "phonetics"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
@@ -125,7 +125,7 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 # the text a learner reads.
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
-NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+NOT_DECK_KINDS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
                   "resources", "phonetics"}
 # A language's phonetic rules (tools/derive_phonetic.py): the ordered rules
 # that turn a card's broad `ipa` into its narrow `phonetic`. Only the tool
@@ -157,7 +157,7 @@ SCRIPT_POS = {"letter", "digit"}
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
-    "theme", "passages",
+    "theme", "passages", "situations",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
@@ -175,6 +175,10 @@ REF_KEYS = {
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
+# A language's situation sheets (#724): the icons the app draws, in the order
+# of Today's buttons (lib/core/models/situation.dart), and a situation's keys.
+SITUATION_ICONS = ("taxi", "shops", "eat", "doctor", "traffic", "rail")
+SITUATION_KEYS = {"id", "icon", "title", "phrases", "words"}
 PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
@@ -292,7 +296,8 @@ YAML11_BOOLS = {"yes", "no", "on", "off", "true", "false", "y", "n"}
 PLACEHOLDER_RE = re.compile(r"\{([1-9][0-9]*)\}")
 NUMBERED_RE = re.compile(r"\{([0-9]+)\}")
 # The files beside the decks, whose names a core cannot take.
-RESERVED_CORES = {"facts": "facts file", "numbers": "number rules",
+RESERVED_CORES = {"facts": "facts file", "situations": "situations file",
+                  "numbers": "number rules",
                   "romanisation": "romanisation file", "script": "script guide",
                   "sounds": "sounds file", "path": "path",
                   "resources": "resources file", "phonetics": "phonetic rules file"}
@@ -580,8 +585,12 @@ class Report:
     # Each form a core card gives, (card id, where, its place, its word), for
     # the warning on a form a rules table has already (#517).
     card_forms: list[tuple[str, str, str, str]] = field(default_factory=list)
-    # A facts file's language, for the cards its facts name (#516).
+    # A facts or situations file's language, for the cards it names (#516,
+    # #724).
     facts_lang: str | None = None
+    # Set on a situations file: its language's code, for the one file per
+    # language rule (#724).
+    situations_lang: str | None = None
     # The rule ids a card's `rules` names: (rule id, where).
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
@@ -2268,6 +2277,80 @@ def check_facts(r: Report, facts: object, lang: str | None = None) -> None:
                             f"{count} daily facts, not {MIN_FACTS}")
 
 
+def check_situations(r: Report, situations: object, lang: str | None = None) -> None:
+    """A language's situation sheets (#724). See "Situations files" in
+    docs/DECK-FORMAT.md."""
+    r.facts_lang = lang
+    r.situations_lang = lang
+    if not isinstance(situations, list) or not situations:
+        r.error("situations", "must be a non-empty list")
+        return
+    id_re = card_id_re(lang or "xx")
+    seen: set[str] = set()
+    icons: set[str] = set()
+    for i, sit in enumerate(situations):
+        where = f"situations[{i}]"
+        if not isinstance(sit, dict):
+            r.error(where, "must be a mapping")
+            continue
+        sid = sit.get("id")
+        if not _is_str(sid) or not ID_RE.fullmatch(sid):
+            r.error(where, f"id must match [a-z0-9-]+, got {sid!r}")
+        else:
+            where = f"situation {sid}"
+            if sid in seen:
+                r.error(where, "duplicate situation id")
+            seen.add(sid)
+        for unknown in sorted(set(sit) - SITUATION_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+
+        icon = sit.get("icon")
+        if icon not in SITUATION_ICONS:
+            r.error(where, f"icon must be one of {', '.join(SITUATION_ICONS)}, got {icon!r}")
+        elif icon in icons:
+            r.error(where, f"icon {icon!r} is on another situation: each button has "
+                           f"its own")
+        else:
+            icons.add(icon)
+
+        title = sit.get("title")
+        if not isinstance(title, dict) or not title:
+            r.error(where, "title must map language codes to the sheet's title, "
+                           "e.g. { en: Taxi }")
+        else:
+            if "en" not in title:
+                r.error(where, "title needs an English entry")
+            for code, value in title.items():
+                if not isinstance(code, str) or not LANG_RE.fullmatch(code):
+                    r.error(where, f"title key must be a 2-3 letter language code, "
+                                   f"{_code_error(code)}")
+                elif isinstance(value, bool):
+                    r.error(where, f"title.{code} parsed as the boolean {value!r}. "
+                                   f"Quote the value.")
+                elif not _is_str(value):
+                    r.error(where, f"title.{code} must be non-empty text")
+
+        listed: set[str] = set()
+        for key in ("phrases", "words"):
+            if key not in sit:
+                continue
+            cards = sit[key]
+            if not isinstance(cards, list) or not cards:
+                r.error(where, f"{key} must be a non-empty list of {lang or 'xx'} card ids")
+                continue
+            for k, cid in enumerate(cards):
+                if not _is_str(cid) or not id_re.fullmatch(cid):
+                    r.error(where, f"{key}[{k}] must be the id of a {lang or 'xx'} "
+                                   f"card, got {cid!r}")
+                elif cid in listed:
+                    r.error(where, f"{cid} is listed twice")
+                else:
+                    listed.add(cid)
+                    r.base_refs.append((cid, where, f"{key}[{k}]"))
+        if not listed:
+            r.error(where, "lists no cards: give phrases, words or both")
+
+
 def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
     """The cards a fact is about (#516), by id, each checked across files to
     be a card of the language."""
@@ -2582,19 +2665,20 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
                 r.number_taught = (str(lang.get("code")), set())
 
     check_langblock(r, "language", raw.get("language"), full=True)
-    if kind != "facts":
+    if kind not in ("facts", "situations"):
         check_langblock(r, "native", raw.get("native"), full=False)
         lang = raw.get("language")
         if isinstance(lang, dict) and _is_str(lang.get("code")):
             icon = lang.get("icon")
             r.icon = (lang["code"], icon if _is_str(icon) else None)
     elif "native" in raw:
-        r.error("native", "a facts file has no native: each fact carries its text "
-                          "in every language it is written in")
+        r.error("native", f"a {kind} file has no native: its text is keyed by "
+                          f"the language it is written in")
 
     lang = raw.get("language")
     native = raw.get("native")
-    if kind != "facts" and _is_str(deck_id) and isinstance(lang, dict) \
+    if kind not in ("facts", "situations") and _is_str(deck_id) \
+            and isinstance(lang, dict) \
             and isinstance(native, dict) \
             and _is_str(lang.get("code")) and _is_str(native.get("code")):
         # A deck is a course, "Hindi from English", and its id says so.
@@ -2614,6 +2698,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
 
     _check_common_header(r, raw)
 
+    if kind != "situations" and "situations" in raw:
+        r.error("situations", "only valid on a situations file; add kind: situations")
     if kind != "reading" and "passages" in raw:
         r.error("passages", "only valid on a reading deck; add kind: reading")
     if kind == "vocab":
@@ -2639,6 +2725,15 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
                 r.error(key, "a facts file uses facts, not cards or a pattern")
         code = lang.get("code") if isinstance(lang, dict) else None
         check_facts(r, raw.get("facts"), code if _is_str(code) else None)
+    elif kind == "situations":
+        for key in ("cards", "pattern", "facts"):
+            if key in raw:
+                r.error(key, "a situations file uses situations, not " + key)
+        code = lang.get("code") if isinstance(lang, dict) else None
+        if _is_str(code) and path.stem != f"{code}-situations":
+            r.error("id", f"a situations file is {code}-situations.yaml, with that "
+                          f"id, got {path.stem!r}")
+        check_situations(r, raw.get("situations"), code if _is_str(code) else None)
     elif kind == "reading":
         for key in ("cards", "pattern", "facts"):
             if key in raw:
@@ -3128,6 +3223,8 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
         elif unknown in ("name", "description"):
             r.error(unknown, f"a core file's {unknown} is in each layer, in the "
                              f"learner's language")
+        elif unknown == "situations":
+            r.error("situations", "only valid on a situations file; add kind: situations")
         else:
             r.error("root", f"unknown field {unknown!r}")
     schema = raw.get("schema")
@@ -5524,6 +5621,15 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{first.path}; list it here with ref: {cid}")
             else:
                 defs[cid] = d
+
+    sheets: dict[str, list[Report]] = {}
+    for rep in reports:
+        if rep.situations_lang is not None:
+            sheets.setdefault(rep.situations_lang, []).append(rep)
+    for code, files in sorted(sheets.items()):
+        if len(files) > 1:
+            problems.append(f"more than one situations file for {code}: "
+                            + ", ".join(str(rep.path) for rep in files))
 
     def find(rep: Report, cid: str) -> CardDef | None:
         found = defs.get(cid)
