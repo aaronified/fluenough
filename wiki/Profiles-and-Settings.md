@@ -66,7 +66,7 @@ The app's menus are in English only. Translation is explained in the [Translatio
 
 ## Privacy
 
-Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, in Settings > Updates.
+Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, with the switch at the top of the Languages page.
 
 The app contacts `raw.githubusercontent.com` for decks and `api.github.com` for updates. After a speaking drill fails for want of a network, it also contacts `connectivitycheck.gstatic.com` (and `raw.githubusercontent.com`) once, to tell you why. That is the only time it contacts `connectivitycheck.gstatic.com`; it sends only your IP address and the time, and no data of yours.
 

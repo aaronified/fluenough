@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
@@ -12,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
 import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 import 'add_language_page.dart';
@@ -193,41 +193,11 @@ class _LanguagesPageState extends State<LanguagesPage> {
         if (!h.$2.anyLearn) h,
     ];
     final downloads = state.deckDownloads;
-    final checked = downloads?.checkedAt;
     return ListView(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
       children: <Widget>[
-        if (learning.isNotEmpty && downloads != null) ...<Widget>[
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: FilledButton.tonalIcon(
-              key: const ValueKey<String>('languages-check-updates'),
-              onPressed: () => unawaited(
-                downloads.checkForUpdates(
-                  state.settings.spokenLanguages,
-                  force: true,
-                ),
-              ),
-              icon: const Icon(Icons.sync),
-              label: Text(l10n.languagesCheckUpdates),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(top: 4, bottom: 2),
-            child: Text(
-              checked == null
-                  ? l10n.languagesNeverChecked
-                  : l10n.languagesLastChecked(
-                      DateFormat.MMMEd(l10n.localeName)
-                          .add_jm()
-                          .format(checked.toLocal()),
-                    ),
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ),
-        ],
+        if (learning.isNotEmpty && downloads != null)
+          DeckUpdateControls(downloads: downloads, names: _names(all)),
         const _Key(),
         _FilterRow(
           selected: _filter,
