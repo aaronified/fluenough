@@ -6443,9 +6443,31 @@
       }
     }
   },
-  "settingsUpdateInstallingDesc": "Finish in Android’s installer. If you closed it, try again.",
+  "settingsUpdateInstallingDesc": "Finish in Android’s installer. If you closed it, tap Install: nothing downloads again.",
   "@settingsUpdateInstallingDesc": {
     "description": "Under Installing …. The app is not told whether the learner installed it or closed the installer."
+  },
+  "settingsUpdateDownloaded": "{version} is downloaded",
+  "@settingsUpdateDownloaded": {
+    "description": "Title of the update row when the update is downloaded and kept, and Android's installer was closed without installing it (#487).",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.2.0"
+      }
+    }
+  },
+  "settingsUpdateDownloadedDesc": "Not installed yet. Install opens Android’s installer on the same file, with no new download.",
+  "@settingsUpdateDownloadedDesc": {
+    "description": "Under the Downloaded, not installed row."
+  },
+  "settingsUpdateInstall": "Install",
+  "@settingsUpdateInstall": {
+    "description": "Button on the update row that opens Android's installer on the file already downloaded."
+  },
+  "settingsUpdateDeleteDownload": "Delete download",
+  "@settingsUpdateDeleteDownload": {
+    "description": "Button on the downloaded update row that deletes the kept file."
   },
   "settingsUpdateInstallFailed": "Couldn’t install {version}",
   "@settingsUpdateInstallFailed": {
