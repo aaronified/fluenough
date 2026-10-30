@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The day's session runs on a clock, not on a fixed set of cards (#886): the time is the minutes a day, the header shows a ticking countdown of the time left in place of the card count, and the clock pauses while one screen has been showing for more than 30 seconds. It builds a round at a time, reviews and new words in the ratio the time left asks for; with nothing due it teaches up to 15 new words, asks each twice with older reviews mixed in, and fills the rest of the time with the cards closest to due. Teach cards now record their time, which counts toward the day's minutes and the hours.
+
 ### Added
 
 - The daily reminder (#90): Settings > Reminders has a switch and a time. It shows one notification a day, at the time you pick, on days with cards due, saying only how many are due; tapping it opens Today. Android 13 and later ask to allow notifications when you switch it on, never at launch, and a refusal leaves it off and says how to allow them. It never fires while the app is open, and is scheduled inexactly, so it needs no exact-alarm permission. It adds the `flutter_local_notifications` plugin (agreed with the owner, 2026-10-30).

@@ -10,6 +10,7 @@ import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
+import '../core/scheduling/study_hours.dart';
 import '../core/updates/release_check.dart';
 import 'language_choice.dart';
 import 'skill.dart';
@@ -272,6 +273,98 @@ class SettingsNotifier extends ChangeNotifier {
 
   static bool _sameDay(DateTime a, DateTime b) =>
       a.year == b.year && a.month == b.month && a.day == b.day;
+
+  /// Time on teach cards, which the review log does not hold (#886): by
+  /// language and day (`yyyy-mm-dd`), the milliseconds and the cards. The
+  /// log is append-only and keeps its meaning; this is read beside it.
+  Map<String, Map<String, List<int>>> _teachTime =
+      const <String, Map<String, List<int>>>{};
+
+  /// Clock time no card took, by language and day: the milliseconds.
+  Map<String, Map<String, int>> _clockTime = const <String, Map<String, int>>{};
+
+  static String _dayKey(DateTime day) =>
+      '${day.year.toString().padLeft(4, '0')}-'
+      '${day.month.toString().padLeft(2, '0')}-'
+      '${day.day.toString().padLeft(2, '0')}';
+
+  /// Records that a teach card of [language] took [time] on [day], capped
+  /// as an answer is ([StudyHours.capped]).
+  void addTeachTime(String language, DateTime day, Duration time) =>
+      _addTime(language, day, StudyHours.capped(time), 1);
+
+  /// Records [time] of [language]'s clock on [day] that no card took, so
+  /// that the minutes Today counts are the minutes the session's clock ran
+  /// (#886). It is kept apart from the teach time, so it changes neither
+  /// the time a teach card takes nor the hours spent.
+  void addClockTime(String language, DateTime day, Duration time) {
+    if (time <= Duration.zero) return;
+    final key = _dayKey(day);
+    final days = _clockTime[language] ?? const <String, int>{};
+    _clockTime = Map<String, Map<String, int>>.unmodifiable(
+      <String, Map<String, int>>{
+        ..._clockTime,
+        language: <String, int>{
+          ...days,
+          key: (days[key] ?? 0) + time.inMilliseconds,
+        },
+      },
+    );
+    notifyListeners();
+  }
+
+  /// The clock time on [day] that no card took, in [language] or in every
+  /// language when null ([addClockTime]).
+  Duration clockTimeOn(DateTime day, {String? language}) {
+    final key = _dayKey(day);
+    var ms = 0;
+    for (final MapEntry(key: code, value: days) in _clockTime.entries) {
+      if (language == null || language == code) ms += days[key] ?? 0;
+    }
+    return Duration(milliseconds: ms);
+  }
+
+  void _addTime(String language, DateTime day, Duration capped, int cards) {
+    final key = _dayKey(day);
+    final days = _teachTime[language] ?? const <String, List<int>>{};
+    final before = days[key] ?? const <int>[0, 0];
+    _teachTime = Map<String, Map<String, List<int>>>.unmodifiable(
+      <String, Map<String, List<int>>>{
+        ..._teachTime,
+        language: <String, List<int>>{
+          ...days,
+          key: <int>[before[0] + capped.inMilliseconds, before[1] + cards],
+        },
+      },
+    );
+    notifyListeners();
+  }
+
+  /// The time teach cards took on [day], in [language] or in every language
+  /// when null.
+  Duration teachTimeOn(DateTime day, {String? language}) {
+    final key = _dayKey(day);
+    var ms = 0;
+    for (final MapEntry(key: code, value: days) in _teachTime.entries) {
+      if (language == null || language == code) ms += days[key]?[0] ?? 0;
+    }
+    return Duration(milliseconds: ms);
+  }
+
+  /// All the time teach cards took, in [language] or in every language when
+  /// null, and how many cards that was.
+  ({Duration time, int cards}) teachTimeTotal({String? language}) {
+    var ms = 0;
+    var cards = 0;
+    for (final MapEntry(key: code, value: days) in _teachTime.entries) {
+      if (language != null && language != code) continue;
+      for (final tally in days.values) {
+        ms += tally[0];
+        cards += tally[1];
+      }
+    }
+    return (time: Duration(milliseconds: ms), cards: cards);
+  }
 
   /// Sets [language]'s minutes a day, held between 5 and 60.
   void setDailyMinutes(String language, int minutes) {
@@ -930,6 +1023,8 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _dailyExtra.entries)
         key: <int>[value.day.millisecondsSinceEpoch, value.minutes],
     }),
+    'teach_time': jsonEncode(_teachTime),
+    'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
     'tts_voices': jsonEncode(_voices),
@@ -1056,6 +1151,37 @@ class SettingsNotifier extends ChangeNotifier {
           );
         }
       }
+    }
+    if (pick('teach_time', _parseJsonMap) case final v?) {
+      final read = <String, Map<String, List<int>>>{};
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        final days = <String, List<int>>{};
+        for (final MapEntry(key: day, value: tally) in value.entries) {
+          if (day is String &&
+              tally is List &&
+              tally.length == 2 &&
+              tally[0] is int &&
+              tally[1] is int) {
+            days[day] = <int>[tally[0] as int, tally[1] as int];
+          }
+        }
+        read[key] = days;
+      }
+      _teachTime = Map<String, Map<String, List<int>>>.unmodifiable(read);
+      notifyListeners();
+    }
+    if (pick('clock_time', _parseJsonMap) case final v?) {
+      final read = <String, Map<String, int>>{};
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        read[key] = <String, int>{
+          for (final MapEntry(key: day, value: ms) in value.entries)
+            if (day is String && ms is int) day: ms,
+        };
+      }
+      _clockTime = Map<String, Map<String, int>>.unmodifiable(read);
+      notifyListeners();
     }
     if (pick('spoken_languages', (t) => t) case final v?) {
       spokenLanguages = <String>[
