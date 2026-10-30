@@ -33,9 +33,8 @@ rows:
 /// The same, as the tree a snapshot keeps and gives back.
 YamlNode _kept(String text) {
   final tree = plainTree(loadYamlNode(text));
-  return YamlTreeScope(<String, Object?>{
-    text: tree,
-  }).run(() => loadYamlTree(text));
+  return YamlTreeScope(<String, Object?>{text: tree})
+      .run(() => loadYamlTree(text));
 }
 
 const List<Object?> _asked = <Object?>[

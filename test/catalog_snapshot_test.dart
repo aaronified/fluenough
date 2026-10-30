@@ -135,11 +135,7 @@ String _describeAll(Catalog c) => jsonEncode(<String, Object?>{
         e.value.plan.length,
         e.value.genders,
         [
-          for (final r in e.value.regions)
-            [
-              r.id,
-              r.names,
-            ],
+          for (final r in e.value.regions) [r.id, r.names],
         ],
       ],
   },
