@@ -189,7 +189,8 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 /* list chips: read-only, icons only. know = outlined tick, checked know = double tick, learn = filled cap, leave = dashed */
 .sk{display:inline-flex;align-items:center;gap:3px;min-height:calc(26px*var(--t));padding:2px 6px;border-radius:calc(8px*var(--t));font-size:calc(12px*var(--t));line-height:1.2;font-weight:700;border:1px solid transparent;background:none;color:var(--onS)}
 .sk .g{font-size:calc(12px*var(--t));font-weight:600}
-.sk.know{border-color:var(--ol)}
+.sk.know{background:var(--sHst);border-color:transparent}
+.sk.big.know{background:none;border-color:var(--ol)}
 .sk.learn{background:var(--sc);color:var(--onSc)}
 .sk.leave{border:1px dashed var(--ol);color:var(--onSv)}
 .sk svg{width:16px;height:16px}
@@ -501,7 +502,7 @@ const groups=()=>{const ids=Object.keys(U).filter(inList);return{learn:ids.filte
 function settings(){
  const g=groups(),n=g.learn.length+g.know.length+g.leave.length;
  const inert=(a,b)=>`<div class="srv inert" aria-disabled="true"><div class="tx"><b>${a}</b><small>${b}</small></div></div>`;
- const sum=n?[`Learning ${g.learn.length}`,`Know ${g.know.length}`,g.leave.length?`Leaving ${g.leave.length}`:''].filter(Boolean).join(' · '):'None yet';
+ const nl=g.learn.length,sum=nl?`${nl} ${nl===1?'language':'languages'} learning`:'Not learning any language';
  return bar('Settings')+`<div class="scroll"><div class="sec">Your languages</div>
  <button class="srv" data-go="list"><div class="tx"><b>Languages</b><small>${sum}</small></div><span class="chev">${svg('chev')}</span></button>
  <div class="exp" role="note"><b>What each state does</b>
@@ -848,9 +849,9 @@ function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,
 const PAIRS=[
  ['body text on the page','onS','s',4.5],['label text on the page','onSv','s',4.5],['body text on the sheet','onS','sLow',4.5],['label and hint text on the sheet','onSv','sLow',4.5],
  ['section heading on the page','p','s',4.5],['section heading on the sheet','p','sLow',4.5],['filled button text','onP','p',4.5],['outlined button text on the sheet','p','sLow',4.5],['outlined button outline on the sheet','ol','sLow',3],
- ['tonal button text','onSc','sc',4.5],['Learn chip text and icon','onSc','sc',4.5],['Know chip text on the page','onS','s',4.5],['Know chip outline on the page','ol','s',3],['Leave chip text on the page','onSv','s',4.5],['Leave chip dashed outline on the page','ol','s',3],
+ ['tonal button text','onSc','sc',4.5],['Learn chip text and icon','onSc','sc',4.5],['Know chip text on the page','onS','s',4.5],['Know chip text on its neutral tint (list)','onS','sHst',4.5],['Leave chip text on the page','onSv','s',4.5],['Leave chip dashed outline on the page','ol','s',3],
  ['Know control text on the sheet','onS','sLow',4.5],['Know control outline on the sheet','ol','sLow',3],['Learn control text on its fill','onSc','sc',4.5],['Leave control text on the sheet','onSv','sLow',4.5],['Leave control dashed outline on the sheet','ol','sLow',3],
- ['Know key chip text on the sheet','onS','sLow',4.5],['Leave key chip text on the sheet','onSv','sLow',4.5],['Checked status text on the sheet','p','sLow',4.5],['Not checked status text on the sheet','onSv','sLow',4.5],['Not checked bold text on the sheet','onS','sLow',4.5],
+ ['Know key chip text on its tint (sheet)','onS','sHst',4.5],['Leave key chip text on the sheet','onSv','sLow',4.5],['Checked status text on the sheet','p','sLow',4.5],['Not checked status text on the sheet','onSv','sLow',4.5],['Not checked bold text on the sheet','onS','sLow',4.5],
  ['Settings explanation text on its card','onSc','sc',4.5],['pending-removal notice on the page','onSv','s',4.5],['pending-removal notice on the sheet','onSv','sLow',4.5],
  ['script glyph tile','onPc','pc',4.5],['filled glyph tile','onP','p',4.5],['off glyph tile','onSv','sHst',4.5],['badge','onTc','tc',4.5],['Added badge','onPc','pc',4.5],
  ['search hint','onSv','sHigh',4.5],['search text','onS','sHigh',4.5],['stepper button icon','onSc','sc',3],['progress fill on its track','p','sHst',3],['chevron on the page','onSv','s',3],
