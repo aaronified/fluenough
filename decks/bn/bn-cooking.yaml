@@ -1,0 +1,1065 @@
+schema: 1
+id: "bn-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2095"
+    target: "রান্না"
+    reading: "rānnā"
+    ipa: "ranna"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আজ রান্না ভালো হয়েছে।"
+        reading: "āj rānnā bhālo hôyeche."
+        ipa: "adʒ ranna bʱalo ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "মায়ের রান্না খুব ভালো।"
+        reading: "māyer rānnā khub bhālo."
+        ipa: "majer ranna kʰub bʱalo"
+        bases:
+          - { word: "মায়ের", ref: "bn-0424" }
+  - id: "bn-2096"
+    target: "সেদ্ধ"
+    reading: "śeddho"
+    ipa: "sed̪d̪ʱo"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আলু সেদ্ধ করুন।"
+        reading: "ālu śeddho korun."
+        ipa: "alu sed̪d̪ʱo korun"
+        bases:
+          - { word: "করুন", ref: "bn-0102" }
+      - target: "ডিম সেদ্ধ হয়েছে।"
+        reading: "dim śeddho hôyeche."
+        ipa: "ɖim sed̪d̪ʱo ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2097"
+    target: "ফোটা"
+    reading: "phoṭā"
+    ipa: "pʰoʈa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "জল ফুটছে।"
+        reading: "jôl phuṭche."
+        ipa: "dʒɔl pʰuʈtʃʰe"
+        bases:
+          - { word: "ফুটছে", base: "ফোটা", reading: "phoṭā", ipa: "pʰoʈa" }
+      - target: "দুধ ফুটে গেছে।"
+        reading: "dudh phuṭe geche."
+        ipa: "d̪ud̪ʱ pʰuʈe ɡetʃʰe"
+        bases:
+          - { word: "ফুটে", base: "ফোটা", reading: "phoṭā", ipa: "pʰoʈa" }
+          - { word: "গেছে", ref: "bn-0873" }
+  - id: "bn-2098"
+    target: "বাটা"
+    reading: "bāṭā"
+    ipa: "baʈa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মশলা বাটা হয়েছে।"
+        reading: "mośla bāṭā hôyeche."
+        ipa: "mɔsla baʈa ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "মা পেঁয়াজ বাটছেন।"
+        reading: "mā pem̐yāj bāṭchen."
+        ipa: "ma pẽjadʒ baʈtʃʰen"
+        bases:
+          - { word: "বাটছেন", base: "বাটা", reading: "bāṭā", ipa: "baʈa" }
+  - id: "bn-2099"
+    target: "কোটা"
+    reading: "koṭā"
+    ipa: "koʈa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "রসুন কোটো।"
+        reading: "rôsun koṭo."
+        ipa: "rosun koʈo"
+        bases:
+          - { word: "কোটো", base: "কোটা", reading: "koṭā", ipa: "koʈa" }
+      - target: "কাঁচা লঙ্কা কোটা হয়েছে।"
+        reading: "kām̐cā lôṅkā koṭā hôyeche."
+        ipa: "kãtʃa lɔŋka koʈa ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2100"
+    target: "ভাজি"
+    reading: "bhāji"
+    ipa: "bʱadʒi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আজ আলু ভাজি খাব।"
+        reading: "āj ālu bhāji khāb."
+        ipa: "adʒ alu bʱadʒi kʰab"
+        bases:
+          - { word: "খাব", ref: "bn-0876" }
+      - target: "মায়ের ভাজি খুব ভালো।"
+        reading: "māyer bhāji khub bhālo."
+        ipa: "majer bʱadʒi kʰub bʱalo"
+        bases:
+          - { word: "মায়ের", ref: "bn-0424" }
+  - id: "bn-2101"
+    target: "ঝোল"
+    reading: "jhol"
+    ipa: "dʒʱol"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ঝোলে একটু নুন দিন।"
+        reading: "jhole ekṭu nun din."
+        ipa: "dʒʱole ekʈu nun d̪in"
+        bases:
+          - { word: "ঝোলে", base: "ঝোল", reading: "jhol", ipa: "dʒʱol" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "মাছের ঝোল খুব গরম।"
+        reading: "mācher jhol khub gôrom."
+        ipa: "matʃʰer dʒʱol kʰub ɡɔrom"
+        bases:
+          - { word: "মাছের", ref: "bn-0266" }
+  - id: "bn-2102"
+    target: "তরকারি"
+    reading: "tôrkāri"
+    ipa: "t̪ɔrkari"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "আজ কী তরকারি?", reading: "āj kī tôrkāri?", ipa: "adʒ ki t̪ɔrkari" }
+      - target: "এই তরকারিতে বেশি ঝাল।"
+        reading: "ei tôrkāritei beśi jhāl."
+        ipa: "ei t̪ɔrkaritei beʃi dʒʱal"
+        bases:
+          - { word: "এই", base: "এই", reading: "ei", ipa: "ei" }
+          - { word: "তরকারিতে", base: "তরকারি", reading: "tôrkāri", ipa: "t̪ɔrkari" }
+  - id: "bn-2103"
+    target: "ব্যঞ্জন"
+    reading: "byôñjôn"
+    ipa: "bændʒon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ভাতের সঙ্গে তিনটি ব্যঞ্জন।"
+        reading: "bhāter sôṅge tinṭi byôñjôn."
+        ipa: "bʱat̪er sɔŋɡe t̪inʈi bændʒon"
+        bases:
+          - { word: "ভাতের", ref: "bn-0352" }
+          - { word: "তিনটি", ref: "bn-0204" }
+      - target: "মা অনেক ব্যঞ্জন রাঁধেন।"
+        reading: "mā onek byôñjôn rām̐dhen."
+        ipa: "ma ɔnek bændʒon rãd̪ʱen"
+        bases:
+          - { word: "রাঁধেন", ref: "bn-1099" }
+  - id: "bn-2104"
+    target: "চুলা"
+    reading: "culā"
+    ipa: "tʃula"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "চুলায় জল ফুটছে।"
+        reading: "culāy jôl phuṭche."
+        ipa: "tʃulaj dʒɔl pʰuʈtʃʰe"
+        bases:
+          - { word: "চুলায়", base: "চুলা", reading: "culā", ipa: "tʃula" }
+          - { word: "ফুটছে", base: "ফোটা", reading: "phoṭā", ipa: "pʰoʈa" }
+      - target: "চুলাটা খুব গরম।"
+        reading: "culāṭā khub gôrom."
+        ipa: "tʃulaʈa kʰub ɡɔrom"
+        bases:
+          - { word: "চুলাটা", base: "চুলা", reading: "culā", ipa: "tʃula" }
+  - id: "bn-2105"
+    target: "উনুন"
+    reading: "unun"
+    ipa: "unun"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "উনুনে কাঠ জ্বলছে।"
+        reading: "unune kāṭh jôlche."
+        ipa: "unune kaʈʰ dʒɔltʃʰe"
+        bases:
+          - { word: "উনুনে", base: "উনুন", reading: "unun", ipa: "unun" }
+          - { word: "কাঠ", base: "কাঠ", reading: "kāṭh", ipa: "kaʈʰ" }
+          - { word: "জ্বলছে", base: "জ্বলা", reading: "jôlā", ipa: "dʒɔla" }
+      - target: "মা উনুনে রুটি সেঁকেন।"
+        reading: "mā unune ruṭi sem̐ken."
+        ipa: "ma unune ruʈi sẽken"
+        bases:
+          - { word: "উনুনে", base: "উনুন", reading: "unun", ipa: "unun" }
+          - { word: "সেঁকেন", base: "সেঁকা", reading: "sem̐kā", ipa: "sẽka" }
+          - { word: "রুটি", ref: "bn-0353" }
+  - id: "bn-2106"
+    target: "গ্যাস"
+    reading: "gêś"
+    ipa: "ɡæʃ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "গ্যাস বন্ধ করুন।"
+        reading: "gêś bôndho korun."
+        ipa: "ɡæʃ bɔnd̪ʱo korun"
+        bases:
+          - { word: "করুন", ref: "bn-0102" }
+      - target: "গ্যাসটা কম করুন।"
+        reading: "gêśṭā kôm korun."
+        ipa: "ɡæʃʈa kɔm korun"
+        bases:
+          - { word: "গ্যাসটা", base: "গ্যাস", reading: "gêś", ipa: "ɡæʃ" }
+          - { word: "করুন", ref: "bn-0102" }
+  - id: "bn-2107"
+    target: "আগুন"
+    reading: "āgun"
+    ipa: "aɡun"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "চুলায় আগুন জ্বলছে।"
+        reading: "culāy āgun jôlche."
+        ipa: "tʃulaj aɡun dʒɔltʃʰe"
+        bases:
+          - { word: "চুলায়", ref: "bn-2104" }
+          - { word: "জ্বলছে", base: "জ্বলা", reading: "jôlā", ipa: "dʒɔla" }
+      - target: "আগুন নিভিয়ে দিন।"
+        reading: "āgun nibhiye din."
+        ipa: "aɡun nibʱije d̪in"
+        bases:
+          - { word: "নিভিয়ে", base: "নেভানো", reading: "nebhāno", ipa: "nebʱano" }
+          - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-2108"
+    target: "হাতা"
+    reading: "hātā"
+    ipa: "ɦat̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "হাতা দিয়ে ঝোল নাড়ুন।"
+        reading: "hātā diye jhol nāṛun."
+        ipa: "ɦat̪a d̪ije dʒʱol naɽun"
+        bases:
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "ঝোল", ref: "bn-2101" }
+          - { word: "নাড়ুন", base: "নাড়া", reading: "nāṛā", ipa: "naɽa" }
+      - target: "হাতাটা কোথায়?"
+        reading: "hātāṭā kothāy?"
+        ipa: "ɦat̪aʈa kot̪ʰaj"
+        bases:
+          - { word: "হাতাটা", base: "হাতা", reading: "hātā", ipa: "ɦat̪a" }
+          - { word: "কোথায়", ref: "bn-0163" }
+  - id: "bn-2109"
+    target: "বেলন"
+    reading: "belon"
+    ipa: "belon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বেলন দিয়ে লুচি বেলো।"
+        reading: "belon diye luci belo."
+        ipa: "belon d̪ije lutʃi belo"
+        bases:
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "লুচি", ref: "bn-0965" }
+          - { word: "বেলো", base: "বেলা", reading: "belā", ipa: "bela" }
+      - target: "বেলনটা কোথায়?"
+        reading: "belonṭā kothāy?"
+        ipa: "belonʈa kot̪ʰaj"
+        bases:
+          - { word: "বেলনটা", base: "বেলন", reading: "belon", ipa: "belon" }
+          - { word: "কোথায়", ref: "bn-0163" }
+  - id: "bn-2110"
+    target: "খোসা"
+    reading: "khosā"
+    ipa: "kʰosa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আলুর খোসা ছাড়ান।"
+        reading: "ālur khosā chāṛān."
+        ipa: "alur kʰosa tʃʰaɽan"
+        bases:
+          - { word: "আলুর", ref: "bn-0261" }
+          - { word: "ছাড়ান", base: "ছাড়ানো", reading: "chāṛāno", ipa: "tʃʰaɽano" }
+      - target: "খোসাগুলো ফেলে দিন।"
+        reading: "khosāgulo phele din."
+        ipa: "kʰosaɡulo pʰele d̪in"
+        bases:
+          - { word: "খোসাগুলো", base: "খোসা", reading: "khosā", ipa: "kʰosa" }
+          - { word: "ফেলে", base: "ফেলা", reading: "phelā", ipa: "pʰela" }
+          - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-2111"
+    target: "মাখা"
+    reading: "mākhā"
+    ipa: "makʰa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ময়দা মাখা হয়েছে।"
+        reading: "môyda mākhā hôyeche."
+        ipa: "mɔjd̪a makʰa ɦɔjetʃʰe"
+        bases:
+          - { word: "ময়দা", ref: "bn-0953" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "হাত দিয়ে মাখুন।"
+        reading: "hāt diye mākhun."
+        ipa: "ɦat̪ d̪ije makʰun"
+        bases:
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "মাখুন", base: "মাখা", reading: "mākhā", ipa: "makʰa" }
+  - id: "bn-2112"
+    target: "নাড়া"
+    reading: "nāṛā"
+    ipa: "naɽa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "কড়াইটা নাড়ুন।"
+        reading: "kaṛāiṭā nāṛun."
+        ipa: "kɔɽaiʈa naɽun"
+        bases:
+          - { word: "কড়াইটা", ref: "bn-0983" }
+          - { word: "নাড়ুন", base: "নাড়া", reading: "nāṛā", ipa: "naɽa" }
+      - target: "আস্তে আস্তে নাড়বেন।"
+        reading: "āste āste nāṛben."
+        ipa: "ast̪e ast̪e naɽben"
+        bases:
+          - { word: "আস্তে", ref: "bn-1556" }
+          - { word: "নাড়বেন", base: "নাড়া", reading: "nāṛā", ipa: "naɽa" }
+  - id: "bn-2113"
+    target: "কষা"
+    reading: "kôśā"
+    ipa: "kɔsa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মশলা কষা হলে জল দিন।"
+        reading: "mośla kôśā hôle jôl din."
+        ipa: "mɔsla kɔsa ɦɔle dʒɔl d̪in"
+        bases:
+          - { word: "হলে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }
+          - { word: "জল", ref: "bn-0350" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ভালো করে কষুন।"
+        reading: "bhālo kôre kôśun."
+        ipa: "bʱalo kɔre kosun"
+        bases:
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "করে", ref: "bn-0102" }
+          - { word: "কষুন", base: "কষা", reading: "kôśā", ipa: "kɔsa" }
+  - id: "bn-2114"
+    target: "মেশানো"
+    reading: "meśāno"
+    ipa: "mesano"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সব মশলা মেশান।"
+        reading: "sob mośla meśān."
+        ipa: "sɔb mɔsla mesan"
+        bases:
+          - { word: "মেশান", base: "মেশানো", reading: "meśāno", ipa: "mesano" }
+      - target: "চিনিটা জলে মেশানো হয়েছে।"
+        reading: "cinitā jôle meśāno hôyeche."
+        ipa: "tʃiniʈa dʒɔle mesano ɦɔjetʃʰe"
+        bases:
+          - { word: "চিনিটা", ref: "bn-0570" }
+          - { word: "জলে", ref: "bn-0350" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2115"
+    target: "ছাঁকা"
+    reading: "chām̐kā"
+    ipa: "tʃʰãka"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "চা ছেঁকে দিন।"
+        reading: "cā chem̐ke din."
+        ipa: "tʃa tʃʰẽke d̪in"
+        bases:
+          - { word: "ছেঁকে", base: "ছাঁকা", reading: "chām̐kā", ipa: "tʃʰãka" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ডালটা ছাঁকা হয়েছে।"
+        reading: "ḍālṭā chām̐kā hôyeche."
+        ipa: "ɖalʈa tʃʰãka ɦɔjetʃʰe"
+        bases:
+          - { word: "ডালটা", ref: "bn-0273" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2116"
+    target: "ঢাকনা"
+    reading: "ḍhāknā"
+    ipa: "ɖʱakna"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ঢাকনাটা দিন।"
+        reading: "ḍhāknāṭā din."
+        ipa: "ɖʱaknaʈa d̪in"
+        bases:
+          - { word: "ঢাকনাটা", base: "ঢাকনা", reading: "ḍhāknā", ipa: "ɖʱakna" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "পাত্রে ঢাকনা দিয়ে রাখুন।"
+        reading: "pātre ḍhāknā diye rākhun."
+        ipa: "pat̪re ɖʱakna d̪ije rakʰun"
+        bases:
+          - { word: "পাত্রে", base: "পাত্র", reading: "pātro", ipa: "pat̪ro" }
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "রাখুন", base: "রাখা", reading: "rākhā", ipa: "rakʰa" }
+  - id: "bn-2117"
+    target: "গুঁড়ো"
+    reading: "gum̐ṛo"
+    ipa: "ɡũɽo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "এক চামচ হলুদের গুঁড়ো দিন।"
+        reading: "ek camca holuder gum̐ṛo din."
+        ipa: "ek tʃamtʃo ɦolud̪er ɡũɽo d̪in"
+        bases:
+          - { word: "চামচ", ref: "bn-0981" }
+          - { word: "হলুদের", ref: "bn-0959" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "মশলার গুঁড়োগুলো আলাদা রাখুন।"
+        reading: "moślār gum̐ṛogulo ālādā rākhun."
+        ipa: "mɔslar ɡũɽoɡulo alad̪a rakʰun"
+        bases:
+          - { word: "মশলার", ref: "bn-0958" }
+          - { word: "গুঁড়োগুলো", base: "গুঁড়ো", reading: "gum̐ṛo", ipa: "ɡũɽo" }
+          - { word: "আলাদা", base: "আলাদা", reading: "ālādā", ipa: "alad̪a" }
+          - { word: "রাখুন", ref: "bn-0894" }
+  - id: "bn-2118"
+    target: "ধনেপাতা"
+    reading: "dhônepātā"
+    ipa: "d̪ʱɔnepat̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "শেষে ধনেপাতা ছড়িয়ে দিন।"
+        reading: "śeṣe dhônepātā chaṛiye din."
+        ipa: "sese d̪ʱɔnepat̪a tʃʰoɽije d̪in"
+        bases:
+          - { word: "শেষে", base: "শেষ", reading: "śeś", ipa: "ses" }
+          - { word: "ছড়িয়ে", base: "ছড়ানো", reading: "chaṛāno", ipa: "tʃʰɔɽano" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ধনেপাতা কাঁচা খাওয়া যায়।"
+        reading: "dhônepātā kām̐cā khāoyā yāy."
+        ipa: "d̪ʱɔnepat̪a kãtʃa kʰaoja dʒaj"
+        bases:
+          - { word: "কাঁচা", ref: "bn-0988" }
+          - { word: "খাওয়া", ref: "bn-0876" }
+          - { word: "যায়", ref: "bn-0873" }
+  - id: "bn-2119"
+    target: "তেজপাতা"
+    reading: "tejpātā"
+    ipa: "t̪edʒpat̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তেজপাতা দিন।"
+        reading: "tejpātā din."
+        ipa: "t̪edʒpat̪a d̪in"
+        bases:
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ঝোলে দুটো তেজপাতা।"
+        reading: "jhole duṭo tejpātā."
+        ipa: "dʒʱole d̪uʈo t̪edʒpat̪a"
+        bases:
+          - { word: "ঝোলে", ref: "bn-2101" }
+          - { word: "দুটো", ref: "bn-0203" }
+  - id: "bn-2120"
+    target: "গন্ধ"
+    reading: "gôndho"
+    ipa: "ɡɔnd̪ʱo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ঘরে ভালো গন্ধ।"
+        reading: "ghôre bhālo gôndho."
+        ipa: "ɡʱɔre bʱalo ɡɔnd̪ʱo"
+        bases:
+          - { word: "ঘরে", ref: "bn-2081" }
+      - target: "মশলার গন্ধ খুব ভালো।"
+        reading: "moślār gôndho khub bhālo."
+        ipa: "mɔslar ɡɔnd̪ʱo kʰub bʱalo"
+        bases:
+          - { word: "মশলার", ref: "bn-0958" }
+  - id: "bn-2121"
+    target: "স্বাদ"
+    reading: "śād"
+    ipa: "sad̪"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ঝোলের স্বাদ ভালো হয়েছে।"
+        reading: "jholer śād bhālo hôyeche."
+        ipa: "dʒʱoler sad̪ bʱalo ɦɔjetʃʰe"
+        bases:
+          - { word: "ঝোলের", ref: "bn-2101" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "এর স্বাদ টক।"
+        reading: "er śād ṭôk."
+        ipa: "er sad̪ ʈɔk"
+        bases:
+          - { word: "এর", base: "এর", reading: "er", ipa: "er" }
+          - { word: "টক", ref: "bn-0984" }
+  - id: "bn-2122"
+    target: "কুচি"
+    reading: "kuci"
+    ipa: "kutʃi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "পেঁয়াজ কুচি করুন।"
+        reading: "pem̐yāj kuci korun."
+        ipa: "pẽjadʒ kutʃi korun"
+        bases:
+          - { word: "করুন", ref: "bn-0102" }
+      - target: "কুচি কুচি আদা দিন।"
+        reading: "kuci kuci ādā din."
+        ipa: "kutʃi kutʃi ad̪a d̪in"
+        bases:
+          - { word: "আদা", ref: "bn-0960" }
+          - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-2123"
+    target: "কুচানো"
+    reading: "kucāno"
+    ipa: "kutʃano"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "পেঁয়াজ কুচিয়ে নিন।"
+        reading: "pem̐yāj kuciye nin."
+        ipa: "pẽjadʒ kutʃije nin"
+        bases:
+          - { word: "কুচিয়ে", base: "কুচানো", reading: "kucāno", ipa: "kutʃano" }
+          - { word: "নিন", ref: "bn-0889" }
+      - target: "কাঁচা লঙ্কা কুচানো হয়েছে।"
+        reading: "kām̐cā lôṅkā kucāno hôyeche."
+        ipa: "kãtʃa lɔŋka kutʃano ɦɔjetʃʰe"
+        bases:
+          - { word: "কাঁচা", ref: "bn-0988" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2124"
+    target: "মাপ"
+    reading: "māp"
+    ipa: "map"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মাপ মতো নুন দিন।"
+        reading: "māp moto nun din."
+        ipa: "map mɔt̪o nun d̪in"
+        bases:
+          - { word: "মাপ", base: "মাপ", reading: "māp", ipa: "map" }
+          - { word: "মতো", base: "মতো", reading: "moto", ipa: "mɔt̪o" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "এর মাপ কত?"
+        reading: "er māp kôto?"
+        ipa: "er map kɔt̪o"
+        bases:
+          - { word: "এর", base: "এর", reading: "er", ipa: "er" }
+          - { word: "কত", ref: "bn-0167" }
+  - id: "bn-2125"
+    target: "সরষে"
+    reading: "sôrośe"
+    ipa: "sɔrose"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সরষের তেল আনুন।"
+        reading: "sôrośer tel ānun."
+        ipa: "sɔroser t̪el anun"
+        bases:
+          - { word: "সরষের", base: "সরষে", reading: "sôrośe", ipa: "sɔrose" }
+          - { word: "তেল", ref: "bn-0569" }
+          - { word: "আনুন", base: "আনা", reading: "ānā", ipa: "ana" }
+      - target: "সরষেতে মাছ রাঁধা হয়েছে।"
+        reading: "sôrośete māch rām̐dhā hôyeche."
+        ipa: "sɔroset̪e matʃʰ rãd̪ʱa ɦɔjetʃʰe"
+        bases:
+          - { word: "সরষেতে", base: "সরষে", reading: "sôrośe", ipa: "sɔrose" }
+          - { word: "মাছ", ref: "bn-0266" }
+          - { word: "রাঁধা", ref: "bn-1099" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2126"
+    target: "মসুর"
+    reading: "môsur"
+    ipa: "mosur"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মসুরের ডাল খুব ভালো।"
+        reading: "môsurer ḍāl khub bhālo."
+        ipa: "mosurer ɖal kʰub bʱalo"
+        bases:
+          - { word: "মসুরের", base: "মসুর", reading: "môsur", ipa: "mosur" }
+      - target: "মসুর সেদ্ধ হয়েছে।"
+        reading: "môsur śeddho hôyeche."
+        ipa: "mosur sed̪d̪ʱo ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2127"
+    target: "ছোলা"
+    reading: "cholā"
+    ipa: "tʃʰola"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ছোলা রাতে ভিজিয়ে রাখুন।"
+        reading: "cholā rāte bhijiye rākhun."
+        ipa: "tʃʰola rat̪e bʱidʒije rakʰun"
+        bases:
+          - { word: "ভিজিয়ে", base: "ভেজানো", reading: "bhejāno", ipa: "bʱedʒano" }
+          - { word: "রাখুন", ref: "bn-0894" }
+      - target: "ছোলা সেদ্ধ হলে নামান।"
+        reading: "cholā śeddho hôle nāmān."
+        ipa: "tʃʰola sed̪d̪ʱo ɦɔle naman"
+        bases:
+          - { word: "সেদ্ধ", ref: "bn-2096" }
+          - { word: "হলে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }
+          - { word: "নামান", base: "নামানো", reading: "nāmāno", ipa: "namano" }
+  - id: "bn-2128"
+    target: "সেঁকা"
+    reading: "sem̐kā"
+    ipa: "sẽka"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "রুটিটা সেঁকে দিন।"
+        reading: "ruṭiṭā sem̐ke din."
+        ipa: "ruʈiʈa sẽke d̪in"
+        bases:
+          - { word: "রুটিটা", ref: "bn-0353" }
+          - { word: "সেঁকে", base: "সেঁকা", reading: "sem̐kā", ipa: "sẽka" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "পাঁপড় সেঁকা হয়েছে।"
+        reading: "pām̐par sem̐kā hôyeche."
+        ipa: "pãpoɽ sẽka ɦɔjetʃʰe"
+        bases:
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2129"
+    target: "ভাপ"
+    reading: "bhāp"
+    ipa: "bʱap"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ভাপে ইলিশ রাঁধা হয়েছে।"
+        reading: "bhāpe ilis rām̐dhā hôyeche."
+        ipa: "bʱape ilis rãd̪ʱa ɦɔjetʃʰe"
+        bases:
+          - { word: "ভাপে", base: "ভাপ", reading: "bhāp", ipa: "bʱap" }
+          - { word: "রাঁধা", ref: "bn-1099" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "গরম ভাপ উঠছে।"
+        reading: "gôrom bhāp uṭhche."
+        ipa: "ɡɔrom bʱap uʈʰtʃʰe"
+        bases:
+          - { word: "উঠছে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }
+  - id: "bn-2130"
+    target: "ভাপানো"
+    reading: "bhāpāno"
+    ipa: "bʱapano"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "মাছটা ভাপিয়ে দিন।"
+        reading: "māchṭā bhāpiye din."
+        ipa: "matʃʰʈa bʱapije d̪in"
+        bases:
+          - { word: "মাছটা", ref: "bn-0266" }
+          - { word: "ভাপিয়ে", base: "ভাপানো", reading: "bhāpāno", ipa: "bʱapano" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "চাল ভাপানো হয়েছে।"
+        reading: "cāl bhāpāno hôyeche."
+        ipa: "tʃal bʱapano ɦɔjetʃʰe"
+        bases:
+          - { word: "চাল", ref: "bn-0272" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2131"
+    target: "ভেজানো"
+    reading: "bhejāno"
+    ipa: "bʱedʒano"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "রাতে ডাল ভিজিয়ে রাখবেন।"
+        reading: "rāte ḍāl bhijiye rākhben."
+        ipa: "rat̪e ɖal bʱidʒije rakʰben"
+        bases:
+          - { word: "ভিজিয়ে", base: "ভেজানো", reading: "bhejāno", ipa: "bʱedʒano" }
+          - { word: "রাখবেন", ref: "bn-0894" }
+      - target: "জলে ভেজানো চাল।"
+        reading: "jôle bhejāno cāl."
+        ipa: "dʒɔle bʱedʒano tʃal"
+        bases:
+          - { word: "জলে", ref: "bn-0350" }
+          - { word: "চাল", ref: "bn-0272" }
+  - id: "bn-2132"
+    target: "এলাচ"
+    reading: "elāc"
+    ipa: "elatʃ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "এলাচ দিয়ে পায়েস।"
+        reading: "elāc diye pāyes."
+        ipa: "elatʃ d̪ije pajes"
+        bases:
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "পায়েস", ref: "bn-0964" }
+      - target: "এলাচের গন্ধ ভালো।"
+        reading: "elācer gôndho bhālo."
+        ipa: "elatʃer ɡɔnd̪ʱo bʱalo"
+        bases:
+          - { word: "এলাচের", base: "এলাচ", reading: "elāc", ipa: "elatʃ" }
+          - { word: "গন্ধ", ref: "bn-2120" }
+  - id: "bn-2133"
+    target: "দারুচিনি"
+    reading: "dārucini"
+    ipa: "d̪arutʃini"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "দারুচিনি আর এলাচ দিন।"
+        reading: "dārucini ār elāc din."
+        ipa: "d̪arutʃini ar elatʃ d̪in"
+        bases:
+          - { word: "আর", ref: "bn-0355" }
+          - { word: "এলাচ", ref: "bn-2132" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ঝোলে দারুচিনির গন্ধ।"
+        reading: "jhole dārucinir gôndho."
+        ipa: "dʒʱole d̪arutʃinir ɡɔnd̪ʱo"
+        bases:
+          - { word: "ঝোলে", ref: "bn-2101" }
+          - { word: "দারুচিনির", base: "দারুচিনি", reading: "dārucini", ipa: "d̪arutʃini" }
+          - { word: "গন্ধ", ref: "bn-2120" }
+  - id: "bn-2134"
+    target: "লবঙ্গ"
+    reading: "lôbông"
+    ipa: "lɔboŋɡ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "চারটে লবঙ্গ দিন।"
+        reading: "cārṭe lôbông din."
+        ipa: "tʃarʈe lɔboŋɡ d̪in"
+        bases:
+          - { word: "চারটে", ref: "bn-0205" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "লবঙ্গ আর তেজপাতা।"
+        reading: "lôbông ār tejpātā."
+        ipa: "lɔboŋɡ ar t̪edʒpat̪a"
+        bases:
+          - { word: "আর", ref: "bn-0355" }
+  - id: "bn-2135"
+    target: "পাঁচফোড়ন"
+    reading: "pām̐cphoṛon"
+    ipa: "pãtʃpʰoɽon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তেলে পাঁচফোড়ন ফোড়ন দিন।"
+        reading: "tele pām̐cphoṛon phoṛon din."
+        ipa: "t̪ele pãtʃpʰoɽon pʰoɽon d̪in"
+        bases:
+          - { word: "তেলে", ref: "bn-0569" }
+          - { word: "ফোড়ন", base: "ফোড়ন", reading: "phoṛon", ipa: "pʰoɽon" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "পাঁচফোড়নের গন্ধ খুব ভালো।"
+        reading: "pām̐cphoṛoner gôndho khub bhālo."
+        ipa: "pãtʃpʰoɽoner ɡɔnd̪ʱo kʰub bʱalo"
+        bases:
+          - { word: "পাঁচফোড়নের", base: "পাঁচফোড়ন", reading: "pām̐cphoṛon", ipa: "pãtʃpʰoɽon" }
+          - { word: "গন্ধ", ref: "bn-2120" }
+  - id: "bn-2136"
+    target: "স্বাদমতো"
+    reading: "śādomoto"
+    ipa: "sad̪omot̪o"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "স্বাদমতো নুন দিন।"
+        reading: "śādomoto nun din."
+        ipa: "sad̪omot̪o nun d̪in"
+        bases:
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "চিনি স্বাদমতো দিন।"
+        reading: "cini śādomoto din."
+        ipa: "tʃini sad̪omot̪o d̪in"
+        bases:
+          - { word: "চিনি", ref: "bn-0570" }
+          - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-2137"
+    target: "পরিবেশন"
+    reading: "poribeśon"
+    ipa: "poribeson"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "এখন পরিবেশন করুন।"
+        reading: "ekhon poribeśon korun."
+        ipa: "ekʰon poribeson korun"
+        bases:
+          - { word: "এখন", ref: "bn-0317" }
+          - { word: "করুন", ref: "bn-0102" }
+      - target: "পরিবেশনের সময় হয়েছে।"
+        reading: "poribeśoner śomoy hôyeche."
+        ipa: "poribesoner sɔmoj ɦɔjetʃʰe"
+        bases:
+          - { word: "পরিবেশনের", base: "পরিবেশন", reading: "poribeśon", ipa: "poribeson" }
+          - { word: "সময়", ref: "bn-0061" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+  - id: "bn-2138"
+    target: "বাসন"
+    reading: "bāśôn"
+    ipa: "bason"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বাসনগুলো ধুয়ে ফেলুন।"
+        reading: "bāśôngulo dhuye phelun."
+        ipa: "basonɡulo d̪ʱuje pʰelun"
+        bases:
+          - { word: "বাসনগুলো", base: "বাসন", reading: "bāśôn", ipa: "bason" }
+          - { word: "ধুয়ে", ref: "bn-1100" }
+          - { word: "ফেলুন", base: "ফেলা", reading: "phelā", ipa: "pʰela" }
+      - target: "বাসন মাজা হয়ে গেছে।"
+        reading: "bāśôn mājā hôye geche."
+        ipa: "bason madʒa ɦɔje ɡetʃʰe"
+        bases:
+          - { word: "মাজা", base: "মাজা", reading: "mājā", ipa: "madʒa" }
+          - { word: "হয়ে", ref: "bn-0874" }
+          - { word: "গেছে", ref: "bn-0873" }
+  - id: "bn-2139"
+    target: "হাঁড়ি"
+    reading: "hām̐ṛi"
+    ipa: "ɦãɽi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "হাঁড়িতে ভাত ফুটছে।"
+        reading: "hām̐ṛite bhāt phuṭche."
+        ipa: "ɦãɽit̪e bʱat̪ pʰuʈtʃʰe"
+        bases:
+          - { word: "হাঁড়িতে", base: "হাঁড়ি", reading: "hām̐ṛi", ipa: "ɦãɽi" }
+          - { word: "ভাত", ref: "bn-0352" }
+          - { word: "ফুটছে", base: "ফোটা", reading: "phoṭā", ipa: "pʰoʈa" }
+      - target: "হাঁড়িটা ঢাকনা দিয়ে ঢাকুন।"
+        reading: "hām̐ṛiṭā ḍhāknā diye ḍhākun."
+        ipa: "ɦãɽiʈa ɖʱakna d̪ije ɖʱakun"
+        bases:
+          - { word: "হাঁড়িটা", base: "হাঁড়ি", reading: "hām̐ṛi", ipa: "ɦãɽi" }
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "ঢাকুন", base: "ঢাকা", reading: "ḍhākā", ipa: "ɖʱaka" }
+  - id: "bn-2140"
+    target: "ডেকচি"
+    reading: "ḍekci"
+    ipa: "ɖektʃi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ডেকচিতে মাংস রাঁধা হচ্ছে।"
+        reading: "ḍekcite māṅśo rām̐dhā hôcche."
+        ipa: "ɖektʃit̪e maŋso rãd̪ʱa ɦɔtʃtʃʰe"
+        bases:
+          - { word: "ডেকচিতে", base: "ডেকচি", reading: "ḍekci", ipa: "ɖektʃi" }
+          - { word: "মাংস", ref: "bn-0267" }
+          - { word: "রাঁধা", ref: "bn-1099" }
+          - { word: "হচ্ছে", ref: "bn-0874" }
+      - target: "ডেকচিটা বড়ো।"
+        reading: "ḍekciṭā baṛo."
+        ipa: "ɖektʃiʈa bɔɽo"
+        bases:
+          - { word: "ডেকচিটা", base: "ডেকচি", reading: "ḍekci", ipa: "ɖektʃi" }
+          - { word: "বড়ো", ref: "bn-0062" }
+  - id: "bn-2141"
+    target: "ডালনা"
+    reading: "ḍālnā"
+    ipa: "ɖalna"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আজ ডালনা রাঁধা হয়েছে।"
+        reading: "āj ḍālnā rām̐dhā hôyeche."
+        ipa: "adʒ ɖalna rãd̪ʱa ɦɔjetʃʰe"
+        bases:
+          - { word: "রাঁধা", ref: "bn-1099" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "ডালনাটা খুব সুস্বাদু।"
+        reading: "ḍālnāṭā khub susbādu."
+        ipa: "ɖalnaʈa kʰub sussad̪u"
+        bases:
+          - { word: "ডালনাটা", base: "ডালনা", reading: "ḍālnā", ipa: "ɖalna" }
+          - { word: "খুব", ref: "bn-0641" }
+  - id: "bn-2142"
+    target: "মুড়ি"
+    reading: "muṛi"
+    ipa: "muɽi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মুড়ির সঙ্গে কাঁচা লঙ্কা।"
+        reading: "muṛir sôṅge kām̐cā lôṅkā."
+        ipa: "muɽir sɔŋɡe kãtʃa lɔŋka"
+        bases:
+          - { word: "মুড়ির", base: "মুড়ি", reading: "muṛi", ipa: "muɽi" }
+          - { word: "সঙ্গে", ref: "bn-0296" }
+          - { word: "কাঁচা", ref: "bn-0988" }
+      - target: "মুড়ি দিয়ে সকালের নাশতা।"
+        reading: "muṛi diye śokāler nāśtā."
+        ipa: "muɽi d̪ije sɔkaler nast̪a"
+        bases:
+          - { word: "দিয়ে", ref: "bn-0295" }
+          - { word: "সকালের", ref: "bn-0318" }
+          - { word: "নাশতা", base: "নাশতা", reading: "nāśtā", ipa: "nast̪a" }
+  - id: "bn-2143"
+    target: "ফোড়ন"
+    reading: "phoṛon"
+    ipa: "pʰoɽon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তেলে ফোড়ন দিন।"
+        reading: "tele phoṛon din."
+        ipa: "t̪ele pʰoɽon d̪in"
+        bases:
+          - { word: "তেলে", ref: "bn-0569" }
+          - { word: "দিন", ref: "bn-0888" }
+      - target: "ফোড়নের গন্ধ খুব ভালো।"
+        reading: "phoṛoner gôndho khub bhālo."
+        ipa: "pʰoɽoner ɡɔnd̪ʱo kʰub bʱalo"
+        bases:
+          - { word: "ফোড়নের", base: "ফোড়ন", reading: "phoṛon", ipa: "pʰoɽon" }
+          - { word: "গন্ধ", ref: "bn-2120" }
+  - id: "bn-2144"
+    target: "পাঁপড়"
+    reading: "pām̐paṛ"
+    ipa: "pãpoɽ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "পাঁপড় ভাজা হয়েছে।"
+        reading: "pām̐paṛ bhājā hôyeche."
+        ipa: "pãpoɽ bʱadʒa ɦɔjetʃʰe"
+        bases:
+          - { word: "ভাজা", ref: "bn-0989" }
+          - { word: "হয়েছে", ref: "bn-0874" }
+      - target: "খাবারের সঙ্গে পাঁপড় দিন।"
+        reading: "khābārer sôṅge pām̐paṛ din."
+        ipa: "kʰabarer sɔŋɡe pãpoɽ d̪in"
+        bases:
+          - { word: "খাবারের", ref: "bn-0349" }
+          - { word: "সঙ্গে", ref: "bn-0296" }
+          - { word: "দিন", ref: "bn-0888" }
