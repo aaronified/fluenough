@@ -97,10 +97,17 @@ class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
   CollectionStyle get style => CollectionStyle.ANY;
 
   @override
-  get span => _noSpan;
+  final span = _noSpan;
 
   @override
   Map get value => this;
+
+  // YamlMap mixes in UnmodifiableMapMixin, whose setters must be answered.
+  @override
+  set first(_) => _readOnly();
+
+  @override
+  set last(_) => _readOnly();
 
   @override
   Iterable get keys => _map.keys;
@@ -175,7 +182,7 @@ class _TreeList extends ListBase<dynamic> implements YamlList {
   CollectionStyle get style => CollectionStyle.ANY;
 
   @override
-  get span => _noSpan;
+  final span = _noSpan;
 
   @override
   List get value => this;

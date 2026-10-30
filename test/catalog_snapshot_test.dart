@@ -219,7 +219,7 @@ void main() {
 
     // The second launch is given YAML it could not parse: it can only be
     // right if it read the snapshot, which the same SHA-256s vouch for.
-    final spoiled = {for (final p in files.keys) p: ': : not yaml ['};
+    final spoiled = {for (final p in files.keys) p: ': : not yaml [ $p'};
     final second = await _catalog(spoiled, store, shas: _shas(files)).load();
     expect(_describe(second), _describe(fromYaml));
   });
@@ -272,7 +272,7 @@ void main() {
     final files = await _files();
     final store = MemorySnapshotStore();
     await _catalog(files, store, app: '0.6.8').load();
-    final spoiled = {for (final p in files.keys) p: ': : not yaml ['};
+    final spoiled = {for (final p in files.keys) p: ': : not yaml [ $p'};
 
     // Same SHA-256s, other version: the spoiled YAML must be read, and fail.
     final catalog = await _catalog(spoiled, store, app: '0.6.9').load();
@@ -309,7 +309,7 @@ void main() {
     // Fed YAML that could only parse into something else, with the same
     // SHA-256s, the second launch is right only by reading kept trees: and
     // those must read as YAML does, optional fields and refs included.
-    final spoiled = {for (final p in files.keys) p: ': : not yaml ['};
+    final spoiled = {for (final p in files.keys) p: ': : not yaml [ $p'};
     final second = await _catalog(spoiled, store, shas: _shas(files)).load();
     expect(_describeAll(second), _describeAll(fromYaml));
   });
