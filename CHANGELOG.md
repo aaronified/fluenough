@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
 - Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
 
 ### Fixed
