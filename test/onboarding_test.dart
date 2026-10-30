@@ -960,8 +960,10 @@ void main() {
         await tester.pumpAndSettle();
         await tester.tap(find.text(l10n.knownSave));
         await tester.pumpAndSettle();
-        expect(settings.spokenLanguages, ['as']);
-        expect(settings.scriptsRead, <String, bool>{'as': true});
+        // Saving also makes English known, last (#926).
+        expect(settings.spokenLanguages, ['as', 'en']);
+        expect(settings.scriptsRead['as'], isTrue);
+        expect(settings.scriptsRead.keys, isNot(contains('pa')));
       });
     });
   });

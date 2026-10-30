@@ -66,9 +66,13 @@ class SettingsNotifier extends ChangeNotifier {
     Map<String, Set<String>> scriptsLearned = const <String, Set<String>>{},
     this._languageChoice,
     this._progressAll = false,
+    Set<String>? factLanguages,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
+       _factLanguages = factLanguages == null
+           ? null
+           : Set<String>.unmodifiable(factLanguages),
        _spokenLanguages = List<String>.unmodifiable(spokenLanguages),
        _learningLanguages = List<String>.unmodifiable(learningLanguages),
        _placedDecks = Set<String>.unmodifiable(placedDecks),
@@ -142,6 +146,7 @@ class SettingsNotifier extends ChangeNotifier {
   Reviews _reviews = const Reviews();
   Set<String>? _reviewLanguages;
   Set<String>? _reviewPairs;
+  Set<String>? _factLanguages;
   Map<String, bool> _scriptsRead = const <String, bool>{};
   Map<String, Map<String, String>> _languageSkills =
       const <String, Map<String, String>>{};
@@ -245,6 +250,20 @@ class SettingsNotifier extends ChangeNotifier {
       return;
     }
     _reviewPairs = next;
+    notifyListeners();
+  }
+
+  /// The languages Today's fact is shown in (#926), a choice among the
+  /// languages the learner knows, or null while they have not chosen: every
+  /// language they know. Per profile, like every setting.
+  Set<String>? get factLanguages => _factLanguages;
+  set factLanguages(Set<String>? codes) {
+    final next = codes == null ? null : Set<String>.unmodifiable(codes);
+    final now = _factLanguages;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _factLanguages = next;
     notifyListeners();
   }
 
@@ -1077,6 +1096,11 @@ class SettingsNotifier extends ChangeNotifier {
       null => 'default',
       final keys => (keys.toList()..sort()).join(','),
     },
+    // Not chosen yet is "default", like review_pairs.
+    'fact_languages': switch (_factLanguages) {
+      null => 'default',
+      final codes => (codes.toList()..sort()).join(','),
+    },
     'scripts_read': jsonEncode(_scriptsRead),
     'language_skills': jsonEncode(_languageSkills),
     'review_known': '$_reviewKnown',
@@ -1402,6 +1426,14 @@ class SettingsNotifier extends ChangeNotifier {
               for (final k in v.split(','))
                 if (ReviewPair.parse(k) != null) k,
             };
+    }
+    if (pick('fact_languages', (t) => t) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      final codes = <String>{
+        for (final c in v.split(','))
+          if (code.hasMatch(c)) c,
+      };
+      factLanguages = v == 'default' || codes.isEmpty ? null : codes;
     }
     if (pick('scripts_read', _parseJsonMap) case final v?) {
       scriptsRead = <String, bool>{

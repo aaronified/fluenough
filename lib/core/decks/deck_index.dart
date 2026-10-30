@@ -16,6 +16,7 @@ const int decksBeforeReady = 5;
 const Set<String> languageFileKinds = <String>{
   'path',
   'facts',
+  'situations',
   'numbers',
   'romanisation',
   'sounds',
@@ -344,7 +345,8 @@ class IndexLanguage {
   final List<IndexUnit> units;
 
   /// Its files but not its media. The script guides of its other scripts,
-  /// which the index lists apart as `script_guides`, are among them.
+  /// which the index lists apart as `script_guides`, and the situations
+  /// file (#724), listed apart as `situations`, are among them.
   final List<IndexFile> files;
 
   /// Its cards' recordings and images (#518, #523), listed apart from
@@ -470,6 +472,9 @@ class IndexLanguage {
     final files = <IndexFile>[
       for (final file in _list(json['files'])) IndexFile._parse(file),
       for (final file in _list(json['script_guides'])) IndexFile._parse(file),
+      // The situations file (#724) is listed under its own key for the same
+      // reason: the released app has no case for its kind.
+      for (final file in _list(json['situations'])) IndexFile._parse(file),
     ];
     final media = <IndexFile>[
       for (final file in _list(json['media']))

@@ -9,6 +9,7 @@ import 'app/app_info.dart';
 import 'app/added_decks.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
+import 'app/synonym_loader.dart';
 import 'app/backup_store.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
@@ -94,6 +95,7 @@ Future<void> main() async {
           log: log,
         ),
         progress: storage.progress,
+        synonymLoader: loadSynonymSets,
         settings: storage.settings,
         tts: SystemTtsEngine(),
         clips: SystemClipPlayer(),

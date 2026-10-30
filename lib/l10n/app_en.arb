@@ -959,9 +959,148 @@
   "@todaySituationsTitle": {
     "description": "The Situations card on Today, under the buttons (#724)."
   },
-  "todaySituationsBody": "Hailing a cab, groceries, the doctor and more: key phrases, offline",
-  "@todaySituationsBody": {
-    "description": "Under Situations on Today: what the cheatsheets hold."
+  "situationsOffline": "Offline",
+  "@situationsOffline": {
+    "description": "The small mark beside Situations on Today: every sheet works without a connection."
+  },
+  "situationTaxi": "Taxi",
+  "@situationTaxi": {
+    "description": "Today's button for the taxi and getting around sheet; also shown, dimmed, for a course without sheets."
+  },
+  "situationShops": "Shops",
+  "@situationShops": {
+    "description": "Today's button for the groceries and shopping sheet."
+  },
+  "situationEat": "Eat",
+  "@situationEat": {
+    "description": "Today's button for the restaurant sheet."
+  },
+  "situationDoctor": "Doctor",
+  "@situationDoctor": {
+    "description": "Today's button for the doctor and pharmacy sheet."
+  },
+  "situationTraffic": "Traffic",
+  "@situationTraffic": {
+    "description": "Today's button for the traffic stop sheet."
+  },
+  "situationRail": "Rail",
+  "@situationRail": {
+    "description": "Today's button for the rail station sheet."
+  },
+  "situationUpcoming": "Upcoming",
+  "@situationUpcoming": {
+    "description": "The pill on a situation button for a course that has no sheet yet."
+  },
+  "situationUpcomingLabel": "{title}, upcoming",
+  "@situationUpcomingLabel": {
+    "description": "Screen-reader label of a situation button with no sheet yet.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "situationNewCount": "{count} new",
+  "@situationNewCount": {
+    "description": "Under a situation button: how many of its cards the learner has not met yet.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationButtonLabel": "{title}, {count, plural, =0{all learnt} =1{1 card not learnt yet} other{{count} cards not learnt yet}}",
+  "@situationButtonLabel": {
+    "description": "Screen-reader label of a situation button.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationPhrases": "Phrases",
+  "@situationPhrases": {
+    "description": "Heading of a sheet's phrases."
+  },
+  "situationWords": "Words",
+  "@situationWords": {
+    "description": "Heading of a sheet's words."
+  },
+  "situationNotLearnt": "Not learnt yet",
+  "@situationNotLearnt": {
+    "description": "The hint of the dot that marks a card on a sheet the learner has not met yet."
+  },
+  "situationPractise": "Practise this sheet",
+  "@situationPractise": {
+    "description": "The button that drills a situation sheet, teaching its new cards first."
+  },
+  "situationRevise": "Revise this sheet",
+  "@situationRevise": {
+    "description": "The button that revises a situation sheet when nothing on it is new."
+  },
+  "situationNothingToPractise": "Nothing on this sheet is ready to practise right now.",
+  "@situationNothingToPractise": {
+    "description": "Shown under the disabled Practise button of a situation sheet when none of its cards can be taught or revised now."
+  },
+  "situationInspect": "Inspect cards",
+  "@situationInspect": {
+    "description": "App bar button of a sheet: opens its cards one by one, in full."
+  },
+  "situationCardDetails": "Card details",
+  "@situationCardDetails": {
+    "description": "Tooltip of the info button on a sheet's row, which inspects that card."
+  },
+  "situationInspectTitle": "{title}: card {position} of {count}",
+  "@situationInspectTitle": {
+    "description": "Title of the inspect view of a sheet.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "position": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationCardJump": "Card {position}",
+  "@situationCardJump": {
+    "description": "Screen-reader label of a numbered chip that jumps to a card in the inspect view.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "situationPrevious": "Previous card",
+  "@situationPrevious": {
+    "description": "Inspect view: back one card."
+  },
+  "situationNext": "Next card",
+  "@situationNext": {
+    "description": "Inspect view: on one card."
+  },
+  "situationOpenInDeck": "Open in deck",
+  "@situationOpenInDeck": {
+    "description": "Inspect view: opens the deck the card is in."
+  },
+  "situationAlsoOn": "Also on: {sheets}",
+  "@situationAlsoOn": {
+    "description": "Inspect view: the other sheets the card is on.",
+    "placeholders": {
+      "sheets": {
+        "type": "String"
+      }
+    }
+  },
+  "situationEmpty": "None of this sheet's cards is in your decks yet.",
+  "@situationEmpty": {
+    "description": "Shown on a sheet none of whose cards the learner's decks have."
   },
   "minutesTitle": "Minutes a day",
   "@minutesTitle": {
@@ -3014,6 +3153,14 @@
   "@sourcesPhoneticLine": {
     "description": "The line under the pronunciations credit on the Sources screen: the narrow IPA in [ ] is adapted from Wiktionary, under CC BY-SA 4.0. Wiktionary and the licence name stay as they are."
   },
+  "sourcesSynonymsLine": "Synonym sets for typed meanings: adapted from Wiktionary and Open English WordNet, licensed CC BY-SA 4.0.",
+  "@sourcesSynonymsLine": {
+    "description": "The line on the Sources screen beside the pronunciations credit: the sets of English words that mean the same, which typed meanings are also accepted by, are adapted from Wiktionary and Open English WordNet, under CC BY-SA 4.0. The project names and the licence name stay as they are."
+  },
+  "sourcesSynonyms": "Synonyms: Wiktionary and WordNet",
+  "@sourcesSynonyms": {
+    "description": "Credit on the Sources screen for the synonym sets that typed English meanings are checked against. The project names stay as they are."
+  },
   "sourcesLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@sourcesLinkCopied": {
     "description": "SnackBar after a tap on a credit on the Sources screen when nothing on the phone could open its link, so the link was copied instead."
@@ -3606,6 +3753,20 @@
   "feedbackCorrect": "Correct",
   "@feedbackCorrect": {
     "description": "Feedback: the typed answer was right."
+  },
+  "feedbackAlsoTyped": "Also: {typed}",
+  "@feedbackAlsoTyped": {
+    "description": "Hint under a right typed meaning that was not the card's own answer but a word that means the same (a synonym): the learner's own word, one or two words. No full stop, like every hint.",
+    "placeholders": {
+      "typed": {
+        "type": "String",
+        "example": "take care"
+      }
+    }
+  },
+  "feedbackAlsoRight": "Also right",
+  "@feedbackAlsoRight": {
+    "description": "Hint under a right typed meaning that was a synonym of the card's answer, when what was typed is longer than two words, so that it is not repeated. No full stop."
   },
   "feedbackAccent": "Right, but mind the accent",
   "@feedbackAccent": {
@@ -12055,6 +12216,22 @@
   "hintStop": "Stop",
   "@hintStop": {
     "description": "Hint shown on a long press on the round microphone button while the phone listens, which stops it. One word, no full stop."
+  },
+  "hintFactLanguages": "Languages",
+  "@hintFactLanguages": {
+    "description": "Hint shown on a long press on the small button at the top left of Today's fact card, which opens the choice of the languages the fact is shown in (#926). One word, no full stop."
+  },
+  "factLanguagesLabel": "Choose the languages of the fact",
+  "@factLanguagesLabel": {
+    "description": "Screen-reader label of the small button at the top left of Today's fact card (#926)."
+  },
+  "factLanguagesTitle": "Show the fact in",
+  "@factLanguagesTitle": {
+    "description": "Title of the sheet where the learner ticks the languages Today's fact is shown in; each is a language they know (#926)."
+  },
+  "factLanguagesLast": "At least one stays checked",
+  "@factLanguagesLast": {
+    "description": "Shown under the one language still checked in the fact languages sheet, which cannot be unchecked (#926)."
   },
   "hintRecord": "Record",
   "@hintRecord": {
