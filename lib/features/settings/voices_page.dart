@@ -937,7 +937,7 @@ class _VoiceChoice extends StatelessWidget {
         isExpanded: true,
         decoration: InputDecoration(
           labelText: l10n.voicesVoice,
-          border: const OutlineInputBorder(),
+          border: AppRadii.fieldBorder,
           isDense: true,
         ),
         items: <DropdownMenuItem<String?>>[

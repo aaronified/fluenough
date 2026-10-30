@@ -44,7 +44,8 @@ class BrokenDeckTile extends StatelessWidget {
               height: glyphSize,
               decoration: BoxDecoration(
                 color: scheme.errorContainer,
-                borderRadius: BorderRadius.circular(glyphSize * 0.32),
+                // Follows the glyph tile's size on purpose.
+                  borderRadius: BorderRadius.circular(glyphSize * 0.32),
               ),
               child: Icon(
                 Icons.warning_amber_rounded,

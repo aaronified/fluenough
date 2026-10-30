@@ -35,6 +35,8 @@ class DeckGlyph extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: scheme.secondaryContainer,
+          // Follows the tile's size on purpose, so a glyph tile keeps its shape
+          // at any size.
           borderRadius: BorderRadius.circular(size * 0.32),
         ),
         child: Text(

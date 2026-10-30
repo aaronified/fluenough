@@ -1399,7 +1399,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
                 onChanged: (_) => setState(() {}),
                 decoration: InputDecoration(
                   labelText: l10n.reviewSuggestYours,
-                  border: const OutlineInputBorder(),
+                  border: AppRadii.fieldBorder,
                 ),
               ),
               const SizedBox(height: 12),
@@ -1411,7 +1411,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
                 onChanged: (_) => setState(() {}),
                 decoration: InputDecoration(
                   labelText: l10n.reviewSuggestWhy,
-                  border: const OutlineInputBorder(),
+                  border: AppRadii.fieldBorder,
                 ),
               ),
             ],
@@ -1509,7 +1509,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
             onChanged: (_) => setState(() {}),
             decoration: InputDecoration(
               labelText: l10n.reviewSuggestWhy,
-              border: const OutlineInputBorder(),
+              border: AppRadii.fieldBorder,
             ),
           ),
         ],
@@ -2114,7 +2114,7 @@ class _AlikeSheetState extends State<AlikeSheet> {
               labelText: l10n.reviewAlikeCare,
               hintText: l10n.reviewAlikeCareHint,
               helperText: l10n.reviewAlikeCareHelp,
-              border: const OutlineInputBorder(),
+              border: AppRadii.fieldBorder,
             ),
             buildCounter:
                 (

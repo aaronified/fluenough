@@ -375,6 +375,17 @@ abstract final class AppRadii {
 
   /// The card in a drill.
   static const double drillCard = 40;
+
+  /// The corners of a text field, for a field that sets its own border (a
+  /// plain `OutlineInputBorder()` would draw M3's 4 px instead).
+  static const BorderRadius fieldRadius = BorderRadius.all(
+    Radius.circular(field),
+  );
+
+  /// A text field's outline, in the field radius.
+  static const OutlineInputBorder fieldBorder = OutlineInputBorder(
+    borderRadius: fieldRadius,
+  );
 }
 
 /// Button styles for the design's other sizes, merged over the theme's:

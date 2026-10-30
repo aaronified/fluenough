@@ -352,7 +352,7 @@ class _PlacementTypeState extends State<PlacementType> {
           textDirection: widget.direction,
           decoration: InputDecoration(
             hintText: widget.hint,
-            border: const OutlineInputBorder(),
+            border: AppRadii.fieldBorder,
           ),
           onSubmitted: (_) => _check(),
           onChanged: (_) => setState(() {}),

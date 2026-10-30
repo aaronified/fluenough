@@ -216,7 +216,7 @@ class BaseFields extends StatelessWidget {
       onChanged: (_) => onChanged(),
       decoration: InputDecoration(
         labelText: label,
-        border: const OutlineInputBorder(),
+        border: AppRadii.fieldBorder,
       ),
     );
     return Column(
