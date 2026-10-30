@@ -36,25 +36,23 @@ class LanguagesSettingsPage extends StatelessWidget {
   Widget _learning(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
     final settings = state.settings;
-    final learning = <String>[
-      for (final language in state.languages)
-        if (state.currentProfile.learns(language.code)) language.name,
-    ].join(l10n.commonListSeparator);
+    final learning = settings.learningChosen ? state.learningCodes.length : 0;
     return GroupedList.settings(
       children: <Widget>[
         GroupedTile(
-          leading: const Icon(Icons.record_voice_over_outlined),
-          title: l10n.settingsSpoken,
-          subtitle: _spokenLine(l10n, state),
-          trailing: const Icon(Icons.chevron_right),
-          onTap: () => AppNavigator.openSpokenLanguages(context),
-        ),
-        GroupedTile(
-          leading: const Icon(Icons.school_outlined),
-          title: l10n.settingsLearn,
-          subtitle: learning,
+          leading: const Icon(Icons.translate),
+          title: l10n.languagesTitle,
+          subtitle: l10n.languagesSettingsSummary(learning),
           trailing: const Icon(Icons.chevron_right),
           onTap: () => AppNavigator.openLearnLanguages(context),
+        ),
+        GroupedTile.toggle(
+          leading: GroupedTile.noIcon,
+          title: l10n.languagesReviewTitle,
+          subtitleOn: l10n.languagesReviewBody,
+          subtitleOff: l10n.languagesReviewBody,
+          value: settings.reviewKnown,
+          onChanged: (on) => settings.reviewKnown = on,
         ),
         GroupedTile.toggle(
           leading: GroupedTile.noIcon,
@@ -126,19 +124,6 @@ class LanguagesSettingsPage extends StatelessWidget {
         .firstOrNull
         ?.native
         .name;
-  }
-
-  /// The languages the learner speaks, best known first, by the names the
-  /// decks give them, or their codes where no deck names them.
-  static String _spokenLine(AppLocalizations l10n, AppState state) {
-    final names = <String, String>{
-      for (final deck in state.decks)
-        deck.deck.native.code: deck.deck.native.name,
-      for (final language in state.languages) language.code: language.name,
-    };
-    return <String>[
-      for (final code in state.settings.spokenLanguages) names[code] ?? code,
-    ].join(l10n.commonListSeparator);
   }
 
   /// Adult content asks the learner to confirm their age as it is switched

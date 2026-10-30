@@ -11950,10 +11950,6 @@
       }
     }
   },
-  "languagesDialectNone": "Any variety: there is no course to teach one.",
-  "@languagesDialectNone": {
-    "description": "Under the dialect label of a language with no course."
-  },
   "languagesSpeakHear": "Speak and hear",
   "@languagesSpeakHear": {
     "description": "Heading and row of Speak and Hear on the sheet."
@@ -12196,7 +12192,7 @@
       }
     }
   },
-  "languagesDeleteBody": "Removes the decks and progress for {language} at once, instead of at the next app open. Skills you are learning become Leave; Know stays. This cannot be undone.",
+  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. Skills you are learning become Leave; Know stays. Your progress stays in the review log and comes back with the decks.",
   "@languagesDeleteBody": {
     "description": "Body of the delete dialog.",
     "placeholders": {
@@ -12479,6 +12475,10 @@
         "example": "Hindustani"
       }
     }
+  },
+  "languagesLevelNeedsDecks": "Set a skill to Learn to download the decks first, then find your level.",
+  "@languagesLevelNeedsDecks": {
+    "description": "Toast when Find my level is tapped for a language with no decks on the phone."
   },
   "languagesAddTitle": "Add a language",
   "@languagesAddTitle": {
