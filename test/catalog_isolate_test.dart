@@ -6,7 +6,7 @@ import 'package:fluenough/app/repository_decks.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('parsing on an isolate gives the catalog parsing in place gives', () async {
+  test('an isolate parses the catalog as parsing in place does', () async {
     final source = RepositoryDeckSource();
     final files = <String, String>{
       for (final path in await source.list())
@@ -29,7 +29,7 @@ void main() {
     expect(isolated.themes.map((t) => t.id), inPlace.themes.map((t) => t.id));
   });
 
-  test('the catalog parses what the source and the added decks hold', () async {
+  test('the catalog parses what its source and added decks hold', () async {
     Map<String, String>? seen;
     final catalog = DeckCatalog(
       MemoryDeckSource(const <String, String>{'decks/a.yaml': 'a'}),
