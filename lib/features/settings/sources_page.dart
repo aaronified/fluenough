@@ -2,11 +2,13 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/links.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 
 /// One source a deck names, and what kind of deck names it.
@@ -187,6 +189,21 @@ class SourcesPage extends StatelessWidget {
                 leading: const Icon(Icons.copyright_outlined),
                 title: l10n.sourcesLicence,
                 subtitle: l10n.sourcesLicenceLine,
+                onTap: () => openLink(
+                  context,
+                  AppLinks.ccBySa,
+                  copied: l10n.sourcesLinkCopied,
+                ),
+              ),
+              GroupedTile(
+                leading: const Icon(Icons.record_voice_over_outlined),
+                title: l10n.sourcesPhonetic,
+                subtitle: l10n.sourcesPhoneticLine,
+                onTap: () => openLink(
+                  context,
+                  AppLinks.wiktionary,
+                  copied: l10n.sourcesLinkCopied,
+                ),
               ),
               if (fonts)
                 GroupedTile(
