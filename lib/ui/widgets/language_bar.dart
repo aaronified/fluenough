@@ -12,6 +12,7 @@ import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
+import 'hint.dart';
 import 'language_glyph.dart';
 import 'report_button.dart';
 import '../card_text_scale.dart';
@@ -867,7 +868,9 @@ class _LanguageBarState extends State<LanguageBar>
                   )
                 : null,
           ),
-          Expanded(child: zone),
+          Expanded(
+            child: Hint(message: l10n.hintLanguage, child: zone),
+          ),
           ReportButton(detail: widget.reportDetail),
         ],
       ),

@@ -95,6 +95,29 @@ abstract final class AppTheme {
         titleTextStyle: text.titleLarge!.copyWith(color: scheme.onSurface),
         titleSpacing: 4,
       ),
+      // The hint of a long press on a control without text (#913): one
+      // compact line of small text, never a wrapped sentence.
+      tooltipTheme: TooltipThemeData(
+        triggerMode: TooltipTriggerMode.longPress,
+        height: 24,
+        constraints: const BoxConstraints(maxWidth: 220),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 8,
+          vertical: 4,
+        ),
+        margin: const EdgeInsets.all(4),
+        waitDuration: const Duration(milliseconds: 500),
+        showDuration: const Duration(milliseconds: 1500),
+        preferBelow: false,
+        decoration: BoxDecoration(
+          color: scheme.inverseSurface,
+          borderRadius: BorderRadius.circular(AppRadii.control),
+        ),
+        textStyle: text.labelMedium!.copyWith(
+          color: scheme.onInverseSurface,
+          fontSize: 12,
+        ),
+      ),
       navigationBarTheme: NavigationBarThemeData(
         height: 80,
         backgroundColor: scheme.surfaceContainer,
