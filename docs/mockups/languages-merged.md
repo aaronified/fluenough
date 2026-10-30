@@ -4,6 +4,36 @@ Mockup: `languages-merged.html`. One interactive page, one phone: tap through it
 
 Owner's direction (2026-10-30): "know and learning should be based on skills. speak, hear, read, write. the latter two will also be script specific. speak, hear will be dialect specific (the app only teaches one dialect for each language now anyway). use proper dialect names, not random ones. user can tick multiple." Answers to the first mockup's questions (2026-10-30, issue #907) are built in: a cycling tick with three states, read-only icon chips, no separate Stop learning, decks removed at the next app open, minutes a day per language, one onboarding step, and a check before a known skill can be reviewed.
 
+## What changed (round 4, owner's orders and answers, 2026-10-30)
+
+This round supersedes the earlier "Check to review" quiz, the double tick for "checked", the sheet's Deck updates and Decks on this phone blocks, and the info panel's Find my level and Placed words; where the older sections below still mention them, this section wins.
+
+1. **Find my level and Placed words** are rows on the sheet's first screen (language with a course, not in the add draft). The first reads "Find my level" until a level is found, then "Fit my level".
+2. **List filter pills**: one edge-masked row (fades at both edges), side scroll, order Learning, Know, Speak, Hear, Read, Write. One pill at a time; tap again to clear.
+3. **Space** between the Beta badge row and the A1 path.
+4. **Scripts**: one row per script with two logo-only pills, Read (eye) and Write (keyboard); Speak and hear is one row with its two pills. Tap cycles Leave, Know, Learn with the state mark as on the list chips. Every change on the sheet shows a toast, such as "Hindustani (Devanagari): Read set to Learn".
+5. **Top-right of the sheet**: update check, i, cross. The check covers this language's decks only, updates "Last update checked" in the i panel and toasts the result. Deck size ("Decks on this phone") and the last update check moved into the i panel; "Units" is "Units built".
+6. **Check button.** A skill changed TO Learn leaves the bottom button as "Check" (also in the add draft, before "Add"). Speak or Hear: a sound test; Read or Write: a script-visible check. One test per language for sound, one per script. Changing away from Learn needs no check; changing to Learn again repeats it. Tweak controls: "Sound test: Passes/Fails", "Script on this phone: Visible/Not visible". On a failure the dialog offers Test again or Close; the skill stays Learn, a toast says what failed and how to fix it (install a voice or a font), and the button stays "Check" for a retry. Onboarding runs no check (not drawn).
+7. **Level found, and the ticks (owner's answers).** One level per language covers all four skills; one "Fit my level" step checks them. Double tick = Know and the level covers that skill. Single tick = Know marked by the user, or a partial level that does not cover it; with Review on it shows "Fit your level to be able to review". The "Found level" tweak control (None, Partial, Complete) sets what the app data holds and what Fit my level finds; ticks follow it. Complete covers Speak, Hear, Read and Write; Partial covers Speak and Read only (mock). Review decks need Read and Write covered. Delete data now clears the level. The Review switch stays (default off); with it off the fit-your-level line is hidden.
+
+### Round 4 assumptions (every ambiguous point)
+
+- Level found "directly": a language whose level is in the app data does not get Know set for it; its Know skills show the double tick and no fit-your-level line. Add Spanish shows this.
+- The level survives a language returning to the pool; only Delete data now clears it.
+- Filter pills beyond Learning are my guess at "the other filters in the normal order": Know, then the four skills in their usual order. Filters on Speak/Hear/Read/Write match any non-Leave state.
+- Toast wording uses the language name, plus the script name when the language has several scripts ("Hindustani (Devanagari)"), not "Hindi".
+- Minutes-a-day steps, review deck on/off, fit level and update check also toast ("every change"); a language returned to the pool keeps its Undo snackbar.
+- Speak and Hear share one sound test; Read and Write of one script share one visibility check; a failure stops the queue.
+- Find my level opens nothing real here: it sets the level from the tweak control and toasts. Placed words only toasts. Neither shows in the add draft.
+- Find my level and Placed words show for every language with a course, learning or not, since Know needs the level to review.
+- The update-check icon shows only when decks are on the phone or a skill is Learn.
+- Read and Write pills have no text, so the row header is the script name and each pill has a tooltip and an accessible label.
+- Download progress for the full decks is a bar under the badges; the Learning block keeps only minutes a day.
+
+### Round 4 self-check
+
+**Contrast.** `window.__contrast`: 87 pairs x 4 (two seeds, light and dark) = 348, **0 failing**. New pairs: filter pills (text, outline, selected), the three sheet icons, check result text and icons, sound bars, script sample outline, toast, Find my level title and hint. Chromium (Playwright) at 900 px and 420 px: no sideways scroll, no page errors; screenshots of the list, Hindustani, Marathi, the i panel, Check, sound pass and fail, script failure, toast and Add Maithili in light and dark. Fonts could not load in the sandbox.
+
 ## What changed (round 3, owner's orders, 2026-10-30)
 
 1. **Skill icons and colours from the app.** Speak (mic), Hear (ear), Read (eye) and Write (keyboard) use `Skill.speaking`, `listening`, `recognition` and `production` from `lib/ui/skill_visuals.dart`, with their fixed `ModeColors` (green, purple, blue, orange; container and on-container). They colour the row tile, the pill and the list chips. A Learn skill has a 2 px accent (primary) border drawn inset, so the pill's size does not change; Know is a tick (double when checked) in the skill's ink; Leave is dashed.

@@ -276,6 +276,34 @@ h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:8px 0
 .rev .tx small{display:block;font-size:calc(13px*var(--t));line-height:1.35;color:var(--onSv)}
 .dlg.chk{max-height:92%;overflow:auto}
 .rev small svg{display:inline-block}
+
+/* round 4 */
+.cline{margin-top:12px}
+.dlg.info .cline{margin:12px 0 8px}
+.fps{display:flex;gap:8px;overflow-x:auto;margin:8px -16px 0;padding:0 16px;scrollbar-width:none;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%)}
+.fps::-webkit-scrollbar{display:none}
+.fp{flex:none;min-height:48px;padding:0 16px 0 12px;border-radius:12px;border:1px solid var(--ol);background:none;color:var(--onS);font-size:calc(14px*var(--t));font-weight:600;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.fp svg{width:18px;height:18px}
+.fp[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.sk.big.pp{padding:4px 12px;border-radius:24px;min-width:64px;gap:4px;justify-content:center}
+.sk.big.pp svg.m{width:16px;height:16px}
+.pps{display:flex;gap:8px;flex:none}
+.skr .two .tx{min-width:0}
+.skr .nmv{font-size:calc(15px*var(--t));line-height:1.25;font-weight:600;margin:0;overflow-wrap:anywhere}
+.skr .sbs{margin:2px 0 0 48px}
+.snack.up{bottom:calc(48px*var(--t) + 34px)}
+.tdisc{width:72px;height:72px;border-radius:36px;background:var(--pc);color:var(--onPc);display:flex;align-items:center;justify-content:center;align-self:center}
+.tdisc svg{width:36px;height:36px}
+.wave{display:flex;align-items:center;justify-content:center;gap:4px;height:32px}
+.wave i{display:block;width:4px;border-radius:2px;background:var(--p)}
+.wave.off i{background:var(--onSv);height:4px!important}
+.samp{border:1px solid var(--ol);border-radius:12px;padding:12px;text-align:center;font-size:calc(26px*var(--t));line-height:1.3;color:var(--onS);background:none}
+.res{display:flex;align-items:center;gap:8px;font-size:calc(16px*var(--t));font-weight:700;color:var(--onS)}
+.res.ok svg{color:var(--p)}.res.bad svg{color:var(--E)}
+.res svg{width:24px;height:24px}
+.dlg .acts button.go.pri{background:var(--p);color:var(--onP)}
+.hdr-ic{display:flex}
 </style></head>
 <body>
 <div class="wrap">
@@ -285,6 +313,9 @@ h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:8px 0
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Colour seed <span class="seg" data-k="pal"><button data-v="clay">Clay</button><button data-v="forest">Forest</button></span></div>
  <div class="tg">Review (Settings) <span class="seg" data-k="review"><button data-v="off">Off</button><button data-v="on">On</button></span></div>
+ <div class="tg">Found level <span class="seg" data-k="lvl"><button data-v="none">None</button><button data-v="partial">Partial</button><button data-v="complete">Complete</button></span></div>
+ <div class="tg">Sound test <span class="seg" data-k="snd"><button data-v="pass">Passes</button><button data-v="fail">Fails</button></span></div>
+ <div class="tg">Script on this phone <span class="seg" data-k="vis"><button data-v="yes">Visible</button><button data-v="no">Not visible</button></span></div>
  <div class="tg">Text size <span class="seg" data-k="t"><button data-v="1">1x</button><button data-v="1.4">1.4x (app cap)</button></span></div>
 </div>
 <div class="layout" id="stage">
@@ -295,9 +326,10 @@ h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:8px 0
    <button data-jump="settings">Settings entry</button>
    <button data-jump="list">The list</button>
    <button data-jump="sheet-hi">Sheet: Hindustani (learning Urdu script)</button>
-   <button data-jump="sheet-mr">Sheet: Marathi (know, write not checked; turns Review on)</button>
-   <button data-jump="check">Check to review (Marathi write; turns Review on)</button>
-   <button data-jump="sheet-as">Sheet: Assamese (know, checked, review decks; turns Review on)</button>
+   <button data-jump="sheet-mr">Sheet: Marathi (know, level not found; turns Review on)</button>
+   <button data-jump="sheet-as">Sheet: Assamese (know, level found, review deck; turns Review on)</button>
+   <button data-jump="check-sound">Sheet: Hindustani with Speak just set to Learn (button reads Check)</button>
+   <button data-jump="check-script">Sheet: Hindustani with Urdu Read and Write just set to Learn (button reads Check)</button>
    <button data-jump="add">Add a language</button>
    <button data-jump="sheet-add-es">Add Spanish (a fresh language)</button>
    <button data-jump="sheet-add-mai">Add Maithili (Devanagari known from Hindustani: Read and Write start as Know)</button>
@@ -312,12 +344,13 @@ h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:8px 0
   </div>
   <h2>Things to try</h2>
   <ul class="try">
-   <li>Settings has a Review switch (default off). Turn it on: Know skills that are not checked show a full-width Check to review button, and known and checked scripts list review decks in the sheet. Off: both go away.</li>
-   <li>Tap a skill's pill: it cycles Leave, Know, Learn, Leave. Know is instant. Learn on a language with no full decks asks to download them first (one Learn skill means the full decks).</li>
-   <li>Marathi (Review on): Write is Know but not checked. Tap Check to review, answer the three questions: the pill turns to a double tick and Review decks then offers the script.</li>
+   <li>Settings has a Review switch (default off). Turn it on: a Know skill in a language whose level is not found says "Fit your level to be able to review". Off: that line goes away.</li>
+   <li>Tap a skill's logo pill: it cycles Leave, Know, Learn. Every change shows a toast. Learn on a language with no full decks asks to download them first.</li>
+   <li>Set Speak, Hear, Read or Write to Learn: the bottom button reads Check. It tests the sound or whether the script shows on this phone. Use "Sound test" and "Script on this phone" above to see both outcomes. Changing the skill away from Learn needs no check.</li>
+   <li>Marathi (Review on): Know, level not found. Tap Find my level on the sheet: the subtext goes and the button reads Fit my level. Assamese has its level found.</li>
    <li>Assamese (Review on) is Know only, with a review deck on the phone. Set Read to Leave: the sheet says the review decks go at the next app open.</li>
    <li>Assamese: set its last skills to Leave, one by one. The language goes back to the pool and disappears from the list (Undo is offered); Add a language finds it again.</li>
-   <li>Open the sheet and tap the plain i beside the cross: every detail of the language is there.</li>
+   <li>The list's filter pills scroll sideways. The deck update check, the i and the cross are at the top of a sheet; deck size and the last update check are behind the i.</li>
    <li>Add a language, search "urdu", "বাংলা" or "east", set skills, then Add. Onboarding is one step with the same controls.</li>
   </ul>
  </div>
@@ -426,7 +459,7 @@ const MODE={light:{speak:['#BDF0B3','#002203'],hear:['#EADDFF','#21005D'],read:[
 const modeVars=t=>{const o={};Object.entries(MODE[t]).forEach(([k,[c,n]])=>{o['m-'+k]=c;o['m-'+k+'-on']=n});return o};
 const LBL={'':'Leave',know:'Know',learn:'Learn'};
 const CYI={'':'minus',know:'check',learn:'school'};
-const pillIcon=(st,ck)=>st==='know'&&ck?'checks':CYI[st];
+const pillIcon=st=>CYI[st];
 const NEXT={'':'know',know:'learn',learn:''};
 
 /* words used by the check mock (three per course script) */
@@ -441,33 +474,37 @@ function words(id,scr){
 }
 
 /* ===== state ===== */
-const S={theme:'light',pal:'clay',t:'1.4',review:'off'};
+const S={theme:'light',pal:'clay',t:'1.4',review:'off',snd:'pass',vis:'yes',lvl:'complete'};
+/* the app data: languages whose level was already found (survives leaving the list) */
+let LV={};
+const lvl=id=>!!LV[id];
+/* one level per language, covering several skills. complete covers all four; partial covers Speak and Read only (mock). A double tick = Know and covered. */
+const cov=(id,sk)=>{const v=LV[id];return v==='complete'||(v==='partial'&&(sk==='speak'||sk==='read'))};
+function applyLvl(){const ids=[...new Set(['hi','bn','as','es',...Object.keys(LV)])];ids.forEach(i=>{if(S.lvl==='none')delete LV[i];else LV[i]=S.lvl})}
 const REV=()=>S.review==='on';
-const V={screen:'settings',sheet:null,dialog:null,snack:null,q:'',oq:'',ob:{}};
+const V={filt:'',screen:'settings',sheet:null,dialog:null,snack:null,q:'',oq:'',ob:{}};
 let U={};
-const rec0=()=>({speak:'',hear:'',read:{},write:{},chk:{},auto:{},touched:{},mins:15,full:0,rev:{},dl:null,upd:'Up to date, checked Tue, Oct 27'});
+const rec0=()=>({speak:'',hear:'',read:{},write:{},pend:{},auto:{},touched:{},mins:15,full:0,rev:{},dl:null,upd:'Up to date, checked Tue, Oct 27'});
 const k2=(sk,scr)=>sk+'|'+(scr||'');
 function seed(){
- U={};
- const all=(r,sk,scr)=>{r.chk[k2(sk,scr)]=1};
- /* Hindustani: learning Perso-Arabic reading and writing, knows the rest, all checked; full decks */
- let r=U.hi=Object.assign(rec0(),{speak:'know',hear:'know',read:{deva:'know',perso:'learn'},write:{deva:'know',perso:'learn'},mins:10,full:1});
- ['speak|','hear|','read|deva','write|deva'].forEach(k=>r.chk[k]=1);
+ U={};LV={};if(S.lvl!=='none')['hi','bn','as','es'].forEach(i=>LV[i]=S.lvl);
+ /* Hindustani: learning Perso-Arabic reading and writing, knows the rest; level found; full decks */
+ U.hi=Object.assign(rec0(),{speak:'know',hear:'know',read:{deva:'know',perso:'learn'},write:{deva:'know',perso:'learn'},mins:10,full:1});
  /* Bengali: learning all four, full decks */
  U.bn=Object.assign(rec0(),{speak:'learn',hear:'learn',read:{bn:'learn'},write:{bn:'learn'},mins:15,full:1});
- /* Marathi: know all four; Write is not checked yet, so no review decks */
- r=U.mr=Object.assign(rec0(),{speak:'know',hear:'know',read:{deva:'know'},write:{deva:'know'}});
- ['speak|','hear|','read|deva'].forEach(k=>r.chk[k]=1);
- /* Assamese: know Read and Write, both checked, review decks on the phone */
- r=U.as=Object.assign(rec0(),{read:{as:'know'},write:{as:'know'},rev:{as:1}});
- ['read|as','write|as'].forEach(k=>r.chk[k]=1);
+ /* Marathi: know all four; level not found yet */
+ U.mr=Object.assign(rec0(),{speak:'know',hear:'know',read:{deva:'know'},write:{deva:'know'}});
+ /* Assamese: know Read and Write, level found, review deck on the phone */
+ U.as=Object.assign(rec0(),{read:{as:'know'},write:{as:'know'},rev:{as:1}});
 }
 const clone=o=>JSON.parse(JSON.stringify(o));
 const get=(r,sk,scr)=>(sk==='read'||sk==='write')?(r[sk][scr]||''):r[sk];
 function put(r,sk,scr,v){
  if(sk==='read'||sk==='write')r[sk][scr]=v;else r[sk]=v;
  if(r.auto)delete r.auto[k2(sk,scr)];
- if(v!=='know')delete r.chk[k2(sk,scr)];
+ r.pend=r.pend||{};
+ /* a skill changed TO Learn is unchecked until its sound or script check passes; changed away, nothing to check */
+ if(v==='learn')r.pend[k2(sk,scr)]=1;else delete r.pend[k2(sk,scr)];
 }
 function skills(id,r){const l=L[id],o=[];if(!l.only){o.push(['speak',null],['hear',null])}['read','write'].forEach(sk=>l.scripts.forEach(s=>o.push([sk,s.id])));return o.map(([sk,scr])=>({sk,scr,st:get(r,sk,scr)}))}
 const cnt=(id,r,st)=>skills(id,r).filter(x=>x.st===st).length;
@@ -482,9 +519,9 @@ const installedMb=(id,r)=>r.full?fullMb(id):Object.keys(r.rev).reduce((a,x)=>a+r
 const cards=m=>Math.round(m*60/17.5);
 const sName=(id,scr)=>scr?L[id].scripts.find(s=>s.id===scr).n:'';
 const skLabel=(id,sk,scr)=>SKN[sk]+(scr&&L[id].scripts.length>1?' '+sName(id,scr):'');
-/* review decks: a script whose Read and Write are both known and both checked */
+/* review decks: a script whose Read and Write are both Know, in a language whose level is found */
 const known2=(id,r,s)=>r.read[s.id]==='know'&&r.write[s.id]==='know';
-const elig=(id,r)=>L[id].scripts.filter(s=>learnable(id)&&known2(id,r,s)&&r.chk['read|'+s.id]&&r.chk['write|'+s.id]).map(s=>s.id);
+const elig=(id,r)=>L[id].scripts.filter(s=>learnable(id)&&known2(id,r,s)&&cov(id,'read')&&cov(id,'write')).map(s=>s.id);
 /* what the next app open does to the decks on this phone */
 function pend(id,r){
  if(cnt(id,r,'learn')||!hasDecks(r))return '';
@@ -515,12 +552,12 @@ function newDraft(id){
 }
 
 /* ===== chips: read-only, icons only (list rows) ===== */
-function chipStateIcon(st,ck){return st==='learn'?'school':st==='know'?(ck?'checks':'check'):'minus'}
-function chipTxt(id,sk,scr,st,ck){return `${skLabel(id,sk,scr)}: ${LBL[st]}${st==='know'?(ck?', checked':', not checked'):''}`}
+function chipStateIcon(st,cv){return st==='learn'?'school':st==='know'?(cv?'checks':'check'):'minus'}
+function chipTxt(id,sk,scr,st,cv){return `${skLabel(id,sk,scr)}: ${LBL[st]}${cv?', level found':''}`}
 function chipHtml(id,r,sk,scr){
- const l=L[id],st=get(r,sk,scr),ck=st==='know'&&!!r.chk[k2(sk,scr)],multi=scr&&l.scripts.length>1,sc=scr&&l.scripts.find(s=>s.id===scr);
- const t=chipTxt(id,sk,scr,st,ck);
- return `<span class="sk ks-${sk} ${st||'leave'}" role="img" title="${t}" aria-label="${t}">${svg(SKI[sk],16)}${multi?`<span class="g script" aria-hidden="true">${sc.g}</span>`:''}<svg class="i m" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[chipStateIcon(st,ck)]}"/></svg></span>`;
+ const l=L[id],st=get(r,sk,scr),multi=scr&&l.scripts.length>1,sc=scr&&l.scripts.find(s=>s.id===scr);
+ const cv=st==='know'&&cov(id,sk),t=chipTxt(id,sk,scr,st,cv);
+ return `<span class="sk ks-${sk} ${st||'leave'}" role="img" title="${t}" aria-label="${t}">${svg(SKI[sk],16)}${multi?`<span class="g script" aria-hidden="true">${sc.g}</span>`:''}<svg class="i m" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[chipStateIcon(st,cv)]}"/></svg></span>`;
 }
 function rowChips(id,r){
  const l=L[id],o=[];
@@ -528,11 +565,13 @@ function rowChips(id,r){
  ['read','write'].forEach(sk=>l.scripts.forEach(s=>o.push(chipHtml(id,r,sk,s.id))));
  return `<div class="sks">${o.join('')}</div>`;
 }
-const keyChip=(st,ck,txt)=>`<span class="sk ${st||'leave'}">${svg(chipStateIcon(st,ck),14)}<span>${txt}</span></span>`;
+const keyChip=(st,txt,cv)=>`<span class="sk ${st||'leave'}">${svg(chipStateIcon(st,cv),14)}<span>${txt}</span></span>`;
 
 /* ===== pages ===== */
 const bar=(title,back,act)=>`<div class="appbar">${back?`<button class="ib" data-go="${back}" aria-label="Back">${svg('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${title}</span>${act||''}</div>`;
-const groups=()=>{const ids=Object.keys(U).filter(inList);return{learn:ids.filter(i=>cnt(i,U[i],'learn')),know:ids.filter(i=>!cnt(i,U[i],'learn'))}};
+const FILT=[['learn','Learning','school'],['know','Know','check'],['speak','Speak','micn'],['hear','Hear','hearing'],['read','Read','eye'],['write','Write','kbd']];
+const filtOk=(id,f)=>{const r=U[id];if(!f)return true;if(f==='learn')return cnt(id,r,'learn')>0;if(f==='know')return cnt(id,r,'know')>0;return skills(id,r).some(x=>x.sk===f&&x.st)};
+const groups=()=>{const ids=Object.keys(U).filter(inList).filter(i=>filtOk(i,V.filt));return{learn:ids.filter(i=>cnt(i,U[i],'learn')),know:ids.filter(i=>!cnt(i,U[i],'learn'))}};
 function settings(){
  const g=groups(),n=g.learn.length+g.know.length;
  const inert=(a,b)=>`<div class="srv inert" aria-disabled="true"><div class="tx"><b>${a}</b><small>${b}</small></div></div>`;
@@ -541,9 +580,10 @@ function settings(){
  <button class="srv" data-go="list"><div class="tx"><b>Languages</b><small>${sum}</small></div><span class="chev">${svg('chev')}</span></button>
  <div class="exp" role="note"><b>What each state does</b>
   <p><b>Learn.</b> The full decks for the language are downloaded and kept. One Learn skill is enough.</p>
-  <p><b>Know.</b> No download and no check to set it. Read and Write start as Know when you already know that script from another language (the check is still per language). With Review on (below), a known skill can be checked, and a script with Read and Write both known and checked offers a review deck.</p>
+  <p><b>Know.</b> No download and no test to set it. Read and Write start as Know when you already know that script from another language. With Review on (below), reviewing needs your level fitted for that language (Find my level); a script with Read and Write both Know then offers a review deck.</p>
+  <p><b>Learn, then Check.</b> Learning Speak or Hear tests the sound; learning Read or Write checks that the script shows on this phone. The sheet's Done button reads Check until it passes.</p>
   <p><b>Leave.</b> The skill is out. A language cannot have every skill on Leave: setting its last skill to Leave sends the language back to the pool, and it leaves this screen (find it again with Add a language). Decks nothing needs are removed the next time the app opens.</p></div>
- <div class="sec">Practice</div><div class="srv"><div class="tx"><b>Review</b><small>Check what you know, then review it. Off: no checks or review decks.</small></div><button class="swhit" data-revsw role="switch" aria-checked="${REV()}" aria-label="Review"><span class="sw" aria-checked="${REV()}" aria-hidden="true"></span></button></div>${inert('Reminders','Off')}${inert('Daily goal','Set per language')}
+ <div class="sec">Practice</div><div class="srv"><div class="tx"><b>Review</b><small>Review what you know once your level is fitted. Off: no fit-your-level prompts or review decks.</small></div><button class="swhit" data-revsw role="switch" aria-checked="${REV()}" aria-label="Review"><span class="sw" aria-checked="${REV()}" aria-hidden="true"></span></button></div>${inert('Reminders','Off')}${inert('Daily goal','Set per language')}
  <div class="sec">Appearance</div>${inert('Theme','System')}${inert('Colour','Clay')}
  <p class="note2">Rows other than Languages are drawn for context and do nothing here.</p></div>`;
 }
@@ -557,12 +597,14 @@ function rowHtml(id){
  ${rowChips(id,r)}${dlp}${meta}${pe?`<p class="pend">${svg('info')}<span>${pe}</span></p>`:''}</button>`;
 }
 function listPage(){
- const g=groups(),n=g.learn.length+g.know.length;
+ const g=groups(),n=Object.keys(U).filter(inList).length,nf=g.learn.length+g.know.length;
  const add=`<button class="addrow" data-go="add">${tile('plus','p')}<span class="nm">Add a language</span></button>`;
  let body;
  if(!n) body=`<div class="empty"><div class="disc">${svg('translate',40)}</div><h2 class="eh">No languages yet</h2><p class="est" style="text-align:center">For each language, set each skill to Know or Learn: speak, hear, read and write.</p><button class="btn fill" data-go="add" style="margin-top:8px">${svg('plus')}Add a language</button></div>`;
- else body=`${g.learn.length?`<button class="btn tonal upd" data-updall>${svg('sync')}Check for deck updates</button><p class="last">${V.checked||'Last checked Tue, Oct 27, 8:27 AM'}</p>`:''}
-  <div class="legend" role="note" aria-label="Key to the skill icons">${keyChip('know',false,'Know')}${keyChip('know',true,'Checked')}${keyChip('learn',false,'Learn')}${keyChip('','','Leave')}</div>
+ else body=`${Object.keys(U).some(i=>inList(i)&&cnt(i,U[i],'learn'))?`<button class="btn tonal upd" data-updall>${svg('sync')}Check for deck updates</button><p class="last">${V.checked||'Last checked Tue, Oct 27, 8:27 AM'}</p>`:''}
+  <div class="legend" role="note" aria-label="Key to the skill icons">${keyChip('know','Know')}${keyChip('know','Level found',1)}${keyChip('learn','Learn')}${keyChip('','Leave')}</div>
+  <div class="fps" data-sc="fps" role="group" aria-label="Filter the languages">${FILT.map(([k,t,ic])=>`<button class="fp" data-fp="${k}" aria-pressed="${V.filt===k}">${svg(ic,18)}${t}</button>`).join('')}</div>
+  ${nf?'':'<p class="est" style="text-align:center;margin:24px 0">No language matches this filter.</p>'}
   ${g.learn.length?`<div class="sec">Learning · ${g.learn.length}</div>${g.learn.map(rowHtml).join('')}`:''}
   ${g.know.length?`<div class="sec">Know · ${g.know.length}</div>${g.know.map(rowHtml).join('')}`:''}
   <div style="height:8px"></div>${add}`;
@@ -587,18 +629,24 @@ function sRec(){return V.sheet.mode==='add'?V.sheet.draft:U[V.sheet.id]}
 const canLearn=id=>learnable(id);
 const nextState=(id,st)=>{let n=NEXT[st];if(n==='learn'&&!canLearn(id))n='';return n};
 function pillBtn(attr,ic,txt,cls,label,dis){return `<button class="cyc ${cls}" ${attr} aria-label="${label}"${dis?' disabled':''}>${svg(ic,18)}<span>${txt}</span></button>`}
-function skRow(id,r,sk,scr,ico,add){
- const l=L[id],st=get(r,sk,scr),sc=scr&&l.scripts.find(s=>s.id===scr),nx=nextState(id,st);
- const lab=skLabel(id,sk,scr),key=k2(sk,scr),ck=st==='know'&&!!r.chk[key];
- const multi=sc&&l.scripts.length>1;
- const sub=sc?`<span class="script" aria-hidden="true">${sc.g}</span> ${sc.n}`:'';
- const unch=st==='know'&&REV()&&!ck;
- const sibKnow=multi&&REV()&&st!=='know'&&l.scripts.some(o=>o.id!==scr&&r[sk][o.id]==='know');
- const auto=st==='know'&&r.auto&&r.auto[key]?`<p class="sb">Known from ${r.auto[key]}. Checked separately for ${l.name}.</p>`:'';
- const rv=unch?'<p class="sb">Reviewing decks needs this skill verified</p>':sibKnow?'<p class="sb">Reviewing decks in this script needs this skill verified</p>':'';
- const chk=unch&&!add?`<button class="btn tonal full chkb" data-check="${key}">${svg('check')}Check to review</button>`:'';
- return `<div class="skr ks-${sk}"><div class="two">${ico}<div class="tx"><p class="val" style="font-weight:600">${SKN[sk]}</p>${sub?`<p class="val sm script">${sub}</p>`:''}${auto}${rv}</div>
-  ${pillBtn(`data-cycle="${key}"`,pillIcon(st,ck),LBL[st],st||'leave',`${lab}: ${LBL[st]}${ck?', checked':''}. Tap to change to ${LBL[nx]}`)}</div>${chk}</div>`;
+function pill(id,r,sk,scr){
+ const st=get(r,sk,scr),nx=nextState(id,st),lab=skLabel(id,sk,scr),cv=st==='know'&&cov(id,sk),t=lab+': '+LBL[st]+(cv?', level found':'');
+ return `<button class="sk big pp ks-${sk} ${st||'leave'}" data-cycle="${k2(sk,scr)}" title="${t}" aria-label="${t}. Tap to change to ${LBL[nx]}">${svg(SKI[sk],24)}<svg class="i m" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[chipStateIcon(st,cv)]}"/></svg></button>`;
+}
+/* the subtext under a row: auto-Know source, then the level-fit line (only with Review on, Know, level not found) */
+function rowSubs(id,r,skl){
+ const o=[],au=skl.filter(x=>get(r,x.sk,x.scr)==='know'&&r.auto&&r.auto[k2(x.sk,x.scr)]).map(x=>[SKN[x.sk],r.auto[k2(x.sk,x.scr)]]);
+ if(au.length===2&&au[0][1]===au[1][1])o.push(`${au[0][0]} and ${au[1][0]} known from ${au[0][1]}.`);else au.forEach(a=>o.push(`${a[0]} known from ${a[1]}.`));
+ if(REV()&&skl.some(x=>get(r,x.sk,x.scr)==='know'&&!cov(id,x.sk)))o.push('Fit your level to be able to review');
+ return o.map(t=>`<p class="sb sbs">${t}</p>`).join('');
+}
+function shRow(id,r){
+ const l=L[id],skl=[{sk:'speak',scr:null},{sk:'hear',scr:null}];
+ return `<div class="skr"><div class="two">${tile('micn','')}<div class="tx"><p class="nmv">Speak and hear</p></div><div class="pps">${pill(id,r,'speak',null)}${pill(id,r,'hear',null)}</div></div>${rowSubs(id,r,skl)}</div>`;
+}
+function scriptRow(id,r,s){
+ const l=L[id],skl=[{sk:'read',scr:s.id},{sk:'write',scr:s.id}];
+ return `<div class="skr"><div class="two">${gtile(s.g,'')}<div class="tx"><p class="nmv script">${s.n}</p></div><div class="pps">${pill(id,r,'read',s.id)}${pill(id,r,'write',s.id)}</div></div>${rowSubs(id,r,skl)}</div>`;
 }
 function reviewBlock(id,r){
  const l=L[id],h=(ic,t)=>`<div class="h">${svg(ic)}<span>${t}</span></div>`;
@@ -606,52 +654,58 @@ function reviewBlock(id,r){
  if(!l.scripts.some(s=>known2(id,r,s))&&!anyKnown(id,r))return '';
  if(!learnable(id))return h('layers','Review decks')+`<p class="off-note">${svg('info')}<span>${l.course==='coming'?'Decks for '+l.name+' are coming. Review decks will be offered then.':'There is no '+l.name+' course, so there are no decks to review.'}</span></p>`;
  const rows=l.scripts.map(s=>{
-  const on=!!r.rev[s.id],dl=r.dl&&r.dl.kind==='rev'&&r.dl.scr===s.id,k2ok=known2(id,r,s),ck=r.chk['read|'+s.id]&&r.chk['write|'+s.id];
+  const on=!!r.rev[s.id],dl=r.dl&&r.dl.kind==='rev'&&r.dl.scr===s.id,k2ok=known2(id,r,s),ck=cov(id,'read')&&cov(id,'write');
   const ok=k2ok&&ck,busy=!!r.dl;
-  const sub=dl?`<div class="dl"><div class="bar"><u style="width:${Math.round(r.dl.pct)}%"></u></div><b>${Math.round(r.dl.pct)}%</b></div>`:`<p class="sb">${on?'On this phone, '+mbTxt(revMb(id,s)):!k2ok?'Needs Read and Write known':!ck?'Needs Read and Write checked':mbTxt(revMb(id,s))}</p>`;
+  const sub=dl?`<div class="dl"><div class="bar"><u style="width:${Math.round(r.dl.pct)}%"></u></div><b>${Math.round(r.dl.pct)}%</b></div>`:`<p class="sb">${on?'On this phone, '+mbTxt(revMb(id,s)):!k2ok?'Needs Read and Write known':!ck?'Needs your level to cover Read and Write':mbTxt(revMb(id,s))}</p>`;
   const st=on||dl?'learn':'leave';
   return `<div class="skr"><div class="two">${gtile(s.g,'')}<div class="tx"><p class="val script" style="font-weight:600">${s.n}</p>${sub}</div>${pillBtn(`data-revtog="${s.id}"`,on||dl?'layers':'minus',on||dl?'Review':'Leave',st,`${s.n} review deck: ${on||dl?'on':'off'}. Tap to turn ${on||dl?'off':'on'}`,!ok||(busy&&!dl&&!on)||dl)}</div></div>`;
  }).join('');
  return h('layers','Review decks')+rows;
 }
 const anyKnown=(id,r)=>cnt(id,r,'know')>0;
+function pendQ(id,r){
+ const q=[],p=r.pend||{};
+ if(p['speak|']||p['hear|'])q.push({kind:'sound',keys:['speak|','hear|'].filter(k=>p[k])});
+ L[id].scripts.forEach(s=>{const ks=['read','write'].map(sk=>k2(sk,s.id)).filter(k=>p[k]);if(ks.length)q.push({kind:'vis',scr:s.id,keys:ks})});
+ return q;
+}
 function sheetHtml(){
  const id=V.sheet.id,l=L[id],r=sRec(),add=V.sheet.mode==='add';
  const nl=cnt(id,r,'learn'),nk=cnt(id,r,'know'),any=nl+nk>0;
  const h=(ic,t)=>`<div class="h">${svg(ic)}<span>${t}</span></div>`;
  let sh='';
  if(!l.only){
-  sh+=h('micn','Speak and hear')+`<p class="dial"><span class="lab2">Dialect taught in the app</span>${l.dial?l.dial:'Any variety: there is no course to teach one.'}</p>`+
-  skRow(id,r,'speak',null,tile('micn','k'),add)+skRow(id,r,'hear',null,tile('hearing','k'),add);
+  sh+=h('micn','Speak and hear')+`<p class="dial"><span class="lab2">Dialect taught in the app</span>${l.dial?l.dial:'Any variety: there is no course to teach one.'}</p>`+shRow(id,r);
  }
- sh+=h('eye','Read'+(l.scripts.length>1?', by script':''))+l.scripts.map(s=>skRow(id,r,'read',s.id,tile('eye','k'),add)).join('');
- sh+=h('kbd','Write'+(l.scripts.length>1?', by script':''))+l.scripts.map(s=>skRow(id,r,'write',s.id,tile('kbd','k'),add)).join('');
+ sh+=h('translate',l.only?'Script: read and write':'Scripts: read and write')+l.scripts.map(s=>scriptRow(id,r,s)).join('');
  const note=l.course==='coming'?`<p class="off-note">${svg('info')}<span>The course for ${l.name} is coming. You can set Know now; Learn is not available yet.</span></p>`:l.course==='none'?`<p class="off-note">${svg('info')}<span>There is no ${l.name} course. You can set Know.</span></p>`:'';
- let learn='',dec='';
+ let learn='',dec='',lev='';
+ if(!add&&l.course==='beta'){
+  lev=`<button class="link" data-fit style="width:100%;text-align:left;background:none;border:0;color:inherit">${tile('flag','')}<div class="tx"><b>${lvl(id)?'Fit my level':'Find my level'}</b><small>${LV[id]==='complete'?'Level found: covers Speak, Hear, Read and Write.':LV[id]==='partial'?'Level found for Speak and Read only. Fit it again to cover the rest.':'Not found yet. One step checks all four skills.'}</small></div><span class="chev">${svg('chev')}</span></button>
+  <button class="link" data-placed style="width:100%;text-align:left;background:none;border:0;color:inherit">${tile('layers','tc')}<div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></button>`;
+ }
  if(!add&&nl){
-  const dl=r.dl;
   learn=h('timer','Learning')+`<div class="kvr">${tile('timer','')}<div class="blk"><p class="lab">Minutes a day, for ${l.name}</p>
   <div class="stp"><button data-mn="-" data-k="${id}" aria-label="5 minutes less" ${r.mins<=5?'aria-disabled="true"':''}>${svg('minus')}</button><b class="mv" aria-live="polite">${r.mins} min a day</b><button data-mn="+" data-k="${id}" aria-label="5 minutes more" ${r.mins>=60?'aria-disabled="true"':''}>${svg('plus')}</button></div>
-  <p class="val sm">About ${cards(r.mins)} cards, shared by all the skills you learn</p></div></div>
-  <div class="kvr">${tile('sync','')}<div class="blk"><p class="lab">Deck updates</p><p class="val">${r.upd}</p><button class="btn tonal sm" data-upd="${id}">Check now</button></div></div>
-  <div class="kvr">${tile('phone','tc')}<div class="blk"><p class="lab">Decks on this phone</p><p class="val">${r.full?'Full decks, '+mbTxt(fullMb(id)):dl?'Downloading the full decks':'Nothing yet'}</p>
-   ${dl&&dl.kind==='full'?`<div class="dl" style="padding:0"><div class="bar"><u style="width:${Math.round(dl.pct)}%"></u></div><b>${Math.round(dl.pct)}%</b></div>`:''}</div></div>`;
-  if(nk)learn+=`<p class="shared">The full decks also hold review cards for what you know${REV()?', once it is checked':''}.</p>`;
+  <p class="val sm">About ${cards(r.mins)} cards, shared by all the skills you learn</p></div></div>`;
+  if(nk)learn+=`<p class="shared">The full decks also hold review cards for what you know${REV()?', once your level is fitted':''}.</p>`;
  }
  if(!add&&!nl)dec=reviewBlock(id,r);
+ const dlp=!add&&r.dl&&r.dl.kind==='full'?`<p class="val sm" style="margin:6px 0 0">Downloading the full decks, ${Math.round(r.dl.pct)}%</p><div class="bar"><u style="width:${Math.round(r.dl.pct)}%"></u></div>`:'';
  const pe=add?'':pend(id,r);
  const empt=pe?`<p class="off-note" role="status">${svg('info')}<span>${pe}</span></p>`:'';
+ const pq=pendQ(id,r);
  let btn;
- if(add) btn=`<button class="btn fill full" data-commit ${any?'':'disabled'}>${any?`Add ${l.name}`:'Set at least one skill'}</button>`;
- else{const unch=REV()&&skills(id,r).some(x=>x.st==='know'&&!r.chk[k2(x.sk,x.scr)]);
-  btn=`<div class="brow">${hasDecks(r)?`<button class="dbtn bare" data-dlg="delete" aria-label="Delete data now">${svg('bin')}</button>`:''}<button class="btn fill" style="flex:1;min-height:calc(48px*var(--t))" ${unch?'data-donecheck':'data-closesheet'}>${unch?'Done and Check':'Done'}</button></div>`}
+ if(add) btn=pq.length?`<button class="btn fill full" data-runcheck style="min-height:calc(48px*var(--t))">Check</button>`:`<button class="btn fill full" data-commit ${any?'':'disabled'}>${any?`Add ${l.name}`:'Set at least one skill'}</button>`;
+ else btn=`<div class="brow">${hasDecks(r)?`<button class="dbtn bare" data-dlg="delete" aria-label="Delete data now">${svg('bin')}</button>`:''}<button class="btn fill" style="flex:1;min-height:calc(48px*var(--t))" ${pq.length?'data-runcheck':'data-closesheet'}>${pq.length?'Check':'Done'}</button></div>`;
  const badge=`<span class="badge${l.course==='beta'?'':' plain'}">${COURSE[l.course]}</span>`;
  const total=skills(id,r).length;
  const meta=add?'Set each skill: Know, Learn or Leave':[nl?nl+' learning':'',`${nk}/${total} skills known`].filter(Boolean).join(' · ');
+ const upd=!add&&l.course==='beta'&&(r.full||nl)?`<button class="ib" data-upd="${id}" aria-label="Check for deck updates">${svg('sync')}</button>`:'';
  return `<div class="scrim" data-closesheet></div><div class="sheet" role="dialog" aria-label="${l.name}"><div class="grab"></div>
- <div class="sheethd"><h3>${l.title}</h3><button class="ib" data-info aria-label="Details about ${l.name}"><span class="ig" aria-hidden="true">i</span></button><button class="ib" data-closesheet aria-label="Close">${svg('close')}</button></div>
- <div class="scroll" data-sc="sheet"><div class="badges">${badge}<span class="meta">${meta}</span></div>${l.course==='beta'?courseLine(l):''}
- ${note}${empt}${sh}${dec}${learn}<div style="height:6px"></div></div><div class="bottom">${btn}</div></div>`;
+ <div class="sheethd"><h3>${l.title}</h3>${upd}<button class="ib" data-info aria-label="Details about ${l.name}"><span class="ig" aria-hidden="true">i</span></button><button class="ib" data-closesheet aria-label="Close">${svg('close')}</button></div>
+ <div class="scroll" data-sc="sheet"><div class="badges">${badge}<span class="meta">${meta}</span></div>${l.course==='beta'?courseLine(l):''}${dlp}
+ ${note}${empt}${lev}${sh}${dec}${learn}<div style="height:6px"></div></div><div class="bottom">${btn}</div></div>`;
 }
 
 const courseLine=l=>`<div class="cline" role="img" aria-label="A1 completion path: A1 ${Math.round(l.levels[0]*100)}%, A2 ${Math.round(l.levels[1]*100)}%, B1 ${Math.round(l.levels[2]*100)}%">${['A1','A2','B1','Culture'].map((x,i)=>`<div><i><u style="width:${Math.round(l.levels[i]*100)}%"></u></i><span>${x}</span></div>`).join('')}</div>`;
@@ -667,37 +721,31 @@ function infoHtml(){
  <div class="badges"><span class="badge${beta?'':' plain'}">${COURSE[l.course]}</span>${beta?`<span class="meta">${l.pct}% of B1</span>`:''}${nl&&beta?`<span class="you">You: ${l.pct}%</span>`:''}</div>
  ${beta?courseLine(l):''}
  ${l.dial?kv('Dialect taught in the app',l.dial,'micn',''):''}
- ${nl&&beta?`<div class="link">${tile('flag','')}<div class="tx"><b>Find my level</b></div><span class="chev">${svg('chev')}</span></div><div class="link">${tile('layers','tc')}<div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`:''}
  ${h('translate',l.scripts.length>1?'Scripts':'Script')}${scr}
  ${from}
- ${beta?kv('Size',mbTxt(fullMb(id)),'phone','tc')+kv('Units',l.units,'list','pc')+kv(l.only?'Course size':'Words',l.words,'book','pc'):`<p class="off-note">${svg('info')}<span>${l.course==='coming'?'The course for '+l.name+' is coming: no decks, size or units yet.':'There is no '+l.name+' course.'}</span></p>`}
+ ${beta?kv('Size',mbTxt(fullMb(id)),'phone','tc')+(add?'':kv('Decks on this phone',r.full?'Full decks, '+mbTxt(fullMb(id)):r.dl?'Downloading the full decks':Object.keys(r.rev).length?'Review decks, '+mbTxt(installedMb(id,r)):'Nothing yet','phone','tc')+kv('Last update checked',r.upd,'sync',''))+kv('Units built',l.units,'list','pc')+kv(l.only?'Course size':'Words',l.words,'book','pc'):`<p class="off-note">${svg('info')}<span>${l.course==='coming'?'The course for '+l.name+' is coming: no decks, size or units yet.':'There is no '+l.name+' course.'}</span></p>`}
  </div>`;
 }
 
 /* ----- dialogs and snackbar ----- */
-function checkHtml(d){
- const l=L[d.id],lab=skLabel(d.id,d.sk,d.scr),n=d.words.length,need=Math.ceil(n*2/3);
- const rtl=d.scr==='perso'?' dir="rtl"':'';
- if(d.done){
-  const pass=d.ok>=need;
-  return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><h4 id="dh">${pass?'Checked':'Not yet'}</h4>
-  <p>${pass?`${d.ok} of ${n} right. ${lab} is checked: it shows a double tick${d.sk==='read'||d.sk==='write'?', and once Read and Write of the script are both checked, its review deck is offered':''}.`:`${d.ok} of ${n} right. ${lab} stays Know, unchecked. Try again whenever you like.`}</p>
-  <div class="acts">${pass?'':'<button data-chk-retry>Try again</button>'}<button class="go" data-chk-ok="${pass?1:0}">${pass?'Done':'Close'}</button></div></div>`;
+function testHtml(d){
+ const l=L[d.id],t=d.q[d.i],last=d.i>=d.q.length-1;
+ if(t.kind==='sound'){
+  const w=words(d.id)[0];
+  const bars=[10,20,28,16,24,12,26,18,8].map(h=>`<i style="height:${h}px"></i>`).join('');
+  if(d.stage==='run')return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="tdisc">${svg('hearing')}</div><h4 id="dh" style="text-align:center">Testing the sound</h4><div class="wave" aria-hidden="true">${bars}</div><p style="text-align:center">Playing a sample word in the ${l.name} voice: <span class="script">${w.w}</span> (${w.tr}).</p><div class="acts"><button data-dlg-x>Cancel</button></div></div>`;
+  if(d.ok)return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="res ok">${svg('check')}<span id="dh">Sound works</span></div><div class="wave" aria-hidden="true">${bars}</div><p>The ${l.name} voice played the sample word. Speak and Hear can go ahead.</p><div class="acts"><button class="go pri" data-test-ok="1">${last?'Done':'Next check'}</button></div></div>`;
+  return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="res bad">${svg('close')}<span id="dh">No sound</span></div><div class="wave off" aria-hidden="true">${bars}</div><p>No ${l.name} voice played. Turn the media volume up, or install the voice in the phone's text-to-speech settings, then test again.</p><div class="acts"><button data-test-any="1">Close</button><button class="go pri" data-test-retry>Test again</button></div></div>`;
  }
- const i=d.i,p=(i*0+((i*2+1)%n)),ord=words_ord(n,i,p),w=d.words[i];
- const o=ord.map(k=>d.words[k]);
- let q='',opt;
- if(d.sk==='read'){q=`<p class="qp">What does this say?</p><p class="qw script"${rtl}>${w.w}</p>`;opt=o.map((x,k)=>`<button class="qo" data-qo="${ord[k]}">${x.tr}</button>`)}
- else if(d.sk==='write'){q=`<p class="qp">Which one is “${w.en}” written in ${sName(d.id,d.scr)}?</p>`;opt=o.map((x,k)=>`<button class="qo script" data-qo="${ord[k]}"${rtl}>${x.w}</button>`)}
- else if(d.sk==='hear'){q=`<p class="qp">Play the word, then choose what it means.</p><button class="qpl" data-qplay>${svg('play',20)}Play</button><p class="qmock">Mock: plays “${w.tr}”</p>`;opt=o.map((x,k)=>`<button class="qo" data-qo="${ord[k]}">${x.en}</button>`)}
- else{q=`<p class="qp">How do you say “${w.en}”?</p>`;opt=o.map((x,k)=>`<button class="qo" data-qo="${ord[k]}">${x.tr}</button>`)}
- return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><h4 id="dh">Check: ${lab}</h4><p>Question ${i+1} of ${n}. Pass to mark this skill checked.</p>
- <div class="qs">${q}${opt.join('')}</div><div class="acts"><button data-dlg-x>Cancel</button></div></div>`;
+ const s=l.scripts.find(x=>x.id===t.scr),w=words(d.id,t.scr)[0],rtl=t.scr==='perso'?' dir="rtl"':'';
+ const samp=`${s.g} ${w.w}`,tofu=samp.replace(/[^\s]/g,'\u25AF');
+ if(d.stage==='run')return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="tdisc">${svg('eye')}</div><h4 id="dh" style="text-align:center">Checking the script</h4><p style="text-align:center">Drawing a sample in ${s.n} on this phone.</p><div class="acts"><button data-dlg-x>Cancel</button></div></div>`;
+ if(d.ok)return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="res ok">${svg('check')}<span id="dh">Script visible</span></div><div class="samp script"${rtl}>${samp}</div><p>This phone draws ${s.n}. Read and Write can go ahead.</p><div class="acts"><button class="go pri" data-test-ok="1">${last?'Done':'Next check'}</button></div></div>`;
+ return `<div class="scrim2"></div><div class="dlg chk" role="alertdialog" aria-labelledby="dh"><div class="res bad">${svg('close')}<span id="dh">Script not visible</span></div><div class="samp" aria-label="Boxes instead of letters">${tofu}</div><p>This phone has no font for ${s.n}, so cards would show boxes. Install a font in the phone's settings, then check again.</p><div class="acts"><button data-test-any="1">Close</button><button class="go pri" data-test-retry>Check again</button></div></div>`;
 }
-function words_ord(n,i,p){const a=[];for(let k=0;k<n;k++)a.push(((k-p+i)%n+3*n)%n);return a}
 function dialogHtml(){
  const d=V.dialog,id=d.id,l=L[id];
- if(d.kind==='check')return checkHtml(d);
+ if(d.kind==='test')return testHtml(d);
  const ok=d.typed===l.name;
  if(d.kind==='download'){
   return `<div class="scrim2"></div><div class="dlg" role="alertdialog" aria-labelledby="dh"><h4 id="dh">Download the full ${l.name} decks?</h4><p>One Learn skill means the full decks: course words and audio${l.scripts.length>1?' and the decks of every script':''}. ${mbTxt(fullMb(id))} in all. A Wi-Fi connection is best.</p><div class="acts"><button data-dlg-x>Cancel</button><button class="go" data-dlg-ok>Download</button></div></div>`;
@@ -706,9 +754,9 @@ function dialogHtml(){
   <label for="ty">Type ${l.name} to confirm</label><input id="ty" data-name="${l.name}" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="${d.typed||''}">
   <div class="acts"><button data-dlg-x>Cancel</button><button class="del" data-dlg-ok ${ok?'':'disabled'}>Delete</button></div></div>`;
 }
-const snackHtml=()=>`<div class="snack" role="status"><span>${V.snack.msg}</span>${V.snack.snap?'<button data-undo>Undo</button>':''}</div>`;
+const snackHtml=()=>`<div class="snack${V.sheet?' up':''}" role="status"><span>${V.snack.msg}</span>${V.snack.snap?'<button data-undo>Undo</button>':''}</div>`;
 let snackT=null;
-function snack(msg,snap){V.snack={msg,snap};clearTimeout(snackT);snackT=setTimeout(()=>{V.snack=null;paint()},6500)}
+function snack(msg,snap){V.snack={msg,snap};clearTimeout(snackT);snackT=setTimeout(()=>{V.snack=null;paint()},snap?6500:(/failed|not visible/.test(msg)?6500:3500))}
 
 /* ----- onboarding: one step ----- */
 const OBTOP=['en','hi','bn','mr','te','es'];
@@ -717,7 +765,7 @@ function obChips(id){
  skills(id,r).forEach(x=>{
   const sc=x.scr&&l.scripts.find(s=>s.id===x.scr),st=x.st,nx=nextState(id,st);
   const lab=SKN[x.sk]+(sc&&l.scripts.length>1?` <span class="script">${sc.g}</span>`:'');
-  o.push(`<button class="sk big ks-${x.sk} ${st||'leave'}" data-obchip="${id}|${x.sk}|${x.scr||''}" aria-label="${skLabel(id,x.sk,x.scr)}: ${LBL[st]}. Tap to change to ${LBL[nx]}">${svg(pillIcon(st,false),18)}<span>${lab}${st?': '+LBL[st]:''}</span></button>`);
+  o.push(`<button class="sk big ks-${x.sk} ${st||'leave'}" data-obchip="${id}|${x.sk}|${x.scr||''}" aria-label="${skLabel(id,x.sk,x.scr)}: ${LBL[st]}. Tap to change to ${LBL[nx]}">${svg(pillIcon(st),18)}<span>${lab}${st?': '+LBL[st]:''}</span></button>`);
  });
  return `<div class="sks">${o.join('')}</div>`;
 }
@@ -748,21 +796,20 @@ function appHtml(){
 }
 let lastSheet=null,lastScreen=null;
 function paint(){
- const keep={};root.querySelectorAll('[data-sc]').forEach(e=>keep[e.dataset.sc]=e.scrollTop);
+ const keep={},keepL={};root.querySelectorAll('[data-sc]').forEach(e=>{keep[e.dataset.sc]=e.scrollTop;keepL[e.dataset.sc]=e.scrollLeft});
  const sk=V.sheet?V.sheet.id+V.sheet.mode:null;if(sk!==lastSheet){delete keep.sheet;lastSheet=sk}
- if(V.screen!==lastScreen){delete keep.main;delete keep.add;delete keep.ob;lastScreen=V.screen}
+ if(V.screen!==lastScreen){delete keep.main;delete keep.add;delete keep.ob;delete keep.fps;lastScreen=V.screen}
  const d=document.documentElement;d.setAttribute('data-theme',S.theme);
  const pal=PALS[S.pal+'_'+S.theme];
  document.getElementById('stage').style.cssText=Object.entries(Object.assign({},pal,modeVars(S.theme))).map(([k,v])=>`--${k}:${v}`).join(';');
  root.style.setProperty('--t',S.t);
  root.innerHTML=appHtml();
- root.querySelectorAll('[data-sc]').forEach(e=>{if(keep[e.dataset.sc]!=null)e.scrollTop=keep[e.dataset.sc]});
+ root.querySelectorAll('[data-sc]').forEach(e=>{if(keep[e.dataset.sc]!=null){e.scrollTop=keep[e.dataset.sc];e.scrollLeft=keepL[e.dataset.sc]||0}});
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
  document.querySelectorAll('[data-jump]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.jump===cur())));
 }
 function cur(){
- if(V.dialog&&V.dialog.kind==='check')return 'check';
- if(V.sheet)return V.sheet.mode==='add'?'sheet-add-'+V.sheet.id:'sheet-'+V.sheet.id;
+  if(V.sheet)return V.sheet.mode==='add'?'sheet-add-'+V.sheet.id:'sheet-'+V.sheet.id;
  if(V.screen==='list'&&!Object.keys(U).filter(inList).length)return 'empty';
  return V.screen==='ob'?'ob':V.screen;
 }
@@ -781,6 +828,7 @@ function startDl(id,kind,scr){
   else paint();
  },180);
 }
+const toastTxt=(id,sk,scr,st)=>`${L[id].name}${scr&&L[id].scripts.length>1?' ('+sName(id,scr)+')':''}: ${SKN[sk]} set to ${LBL[st]}`;
 function cycle(key){
  const [sk,scr0]=key.split('|'),scr=scr0||null;
  const id=V.sheet.id,r=sRec(),add=V.sheet.mode==='add';
@@ -788,19 +836,19 @@ function cycle(key){
  if(next==='learn'&&!add&&!r.full&&!r.dl){V.dialog={kind:'download',id,then:{sk,scr}};paint();return}
  const snap=clone(U);
  put(r,sk,scr,next);
- if(next==='learn'&&!add&&!r.full&&r.dl){/* a download is already running */}
  if(!add&&!anySkill(id,r)){toPool(id,snap)}
+ else snack(toastTxt(id,sk,scr,next),null);
  paint();
 }
 function dlgOk(){
  const d=V.dialog,id=d.id;
  if(d.kind==='download'){
   if(V.sheet&&V.sheet.mode==='add'){commitAdd(true);return}
-  put(U[id],d.then.sk,d.then.scr,'learn');V.dialog=null;startDl(id,'full');paint();return}
+  put(U[id],d.then.sk,d.then.scr,'learn');V.dialog=null;startDl(id,'full');snack(toastTxt(id,d.then.sk,d.then.scr,'learn'),null);paint();return}
  if(d.kind==='delete'){
   const r=U[id];if(d.typed!==L[id].name)return;
   skills(id,r).forEach(x=>{if(x.st==='learn')put(r,x.sk,x.scr,'')});
-  r.full=0;r.rev={};r.dl=null;V.dialog=null;
+  r.full=0;r.rev={};r.dl=null;V.dialog=null;delete LV[id];
   if(!anySkill(id,r))toPool(id,null);else snack(`${L[id].name} data deleted`,null);
   paint()}
 }
@@ -828,19 +876,35 @@ function obToggle(id,sk,scr){
 function obFinish(){
  Object.keys(V.ob).forEach(id=>{
   const r=V.ob[id];if(!anySkill(id,r)||!Object.keys(r.touched).length)return;
-  U[id]=r;
+  r.pend={};U[id]=r;
   if(cnt(id,r,'learn'))startDl(id,'full');
  });
  V.ob={};V.oq='';V.screen='list';snack('Languages saved. Full decks are downloading.',null);paint();
 }
-function openCheck(key,id0){
- const [sk,scr0]=key.split('|'),scr=scr0||null,id=id0||V.sheet.id;
- V.dialog={kind:'check',id,sk,scr,words:words(id,scr),i:0,ok:0,done:false};paint();
+/* the Check button: a sound test for Speak and Hear, a script-visible check for Read and Write, one after another */
+let testT=null;
+function runCheck(){
+ const id=V.sheet.id,r=sRec(),q=pendQ(id,r);if(!q.length)return;
+ V.dialog={kind:'test',id,q,i:0,stage:'run',ok:false};startTest();
+}
+function startTest(){
+ const d=V.dialog;d.stage='run';paint();clearTimeout(testT);
+ testT=setTimeout(()=>{if(V.dialog!==d)return;const t=d.q[d.i];d.ok=t.kind==='sound'?S.snd==='pass':S.vis==='yes';d.stage='res';paint()},1100);
+}
+function testDone(passed){
+ const d=V.dialog,id=d.id,r=sRec(),t=d.q[d.i],l=L[id];
+ if(!passed){/* the skill stays Learn, the check stays pending, the Check button stays */
+  V.dialog=null;
+  snack(t.kind==='sound'?`${l.name}: the sound test failed. Install the ${l.name} voice in text-to-speech settings, then tap Check.`:`${l.name}: ${sName(id,t.scr)} is not visible on this phone. Install a font for it in the phone's settings, then tap Check.`,null);paint();return}
+ t.keys.forEach(k=>delete r.pend[k]);
+ const msg=t.kind==='sound'?`${l.name}: sound test passed`:`${l.name}, ${sName(id,t.scr)}: script is visible on this phone`;
+ if(d.i<d.q.length-1){d.i++;snack(msg,null);startTest();return}
+ V.dialog=null;snack(msg,null);paint();
 }
 
 /* minutes a day: 5 to 60 in steps of 5; a long press repeats every 0.3 s */
 const MN={min:5,max:60,step:5,tick:300};
-function stepMins(k,d){const r=U[k];const v=Math.min(MN.max,Math.max(MN.min,r.mins+d*MN.step));if(v!==r.mins){r.mins=v;paint()}}
+function stepMins(k,d){const r=U[k];const v=Math.min(MN.max,Math.max(MN.min,r.mins+d*MN.step));if(v!==r.mins){r.mins=v;snack(`${L[k].name}: ${v} min a day`,null);paint()}}
 let hold=null,held=false;
 const stopHold=()=>{clearInterval(hold);clearTimeout(hold);hold=null};
 document.addEventListener('pointerdown',e=>{
@@ -860,34 +924,34 @@ document.addEventListener('input',e=>{
 document.addEventListener('click',e=>{
  const T=e.target,c=s=>T.closest(s);
  let x;
- if(x=c('#g-tw .seg button')){S[x.parentNode.dataset.k]=x.dataset.v;paint();return}
+ if(x=c('#g-tw .seg button')){S[x.parentNode.dataset.k]=x.dataset.v;if(x.parentNode.dataset.k==='lvl')applyLvl();paint();return}
  if(x=c('[data-jump]')){jump(x.dataset.jump);return}
- if(c('#reset')){seed();S.review='off';V.checked=null;V.screen='settings';V.sheet=null;V.info=false;V.dialog=null;V.snack=null;V.q='';V.oq='';V.ob={};paint();return}
+ if(c('#reset')){seed();V.filt='';S.review='off';V.checked=null;V.screen='settings';V.sheet=null;V.info=false;V.dialog=null;V.snack=null;V.q='';V.oq='';V.ob={};paint();return}
  if(c('#reopen')){V.dialog=null;reopen();return}
  if(!c('#phone'))return;
  if(x=c('[data-obmn]')){const [id,d]=x.dataset.obmn.split('|'),r=getOb(id);r.mins=Math.min(60,Math.max(5,r.mins+5*d));paint();return}
  if(c('[data-info-x]')){V.info=false;paint();return}
  if(c('[data-info]')){V.info=true;paint();return}
- if(c('[data-donecheck]')){const id=V.sheet.id,r=U[id],q=skills(id,r).filter(x=>x.st==='know'&&!r.chk[k2(x.sk,x.scr)]).map(x=>k2(x.sk,x.scr));V.sheet=null;V.info=false;V.chkQ=q.slice(1);openCheck(q[0],id);return}
+
  if(c('[data-mn]')){if(held){held=false}else stepMins(c('[data-mn]').dataset.k,c('[data-mn]').dataset.mn==='+'?1:-1);return}
  if(x=c('[data-undo]')){if(V.snack&&V.snack.snap){U=V.snack.snap;V.snack=null;paint()}return}
- if(x=c('[data-chk-ok]')){const d=V.dialog;if(x.dataset.chkOk==='1'){const r=U[d.id];r.chk[k2(d.sk,d.scr)]=1;V.dialog=null;snack(`${skLabel(d.id,d.sk,d.scr)} checked`,null)}else V.dialog=null;
-  if(V.chkQ&&V.chkQ.length){openCheck(V.chkQ.shift(),d.id);return}
-  paint();return}
- if(c('[data-chk-retry]')){const d=V.dialog;V.dialog=Object.assign(d,{i:0,ok:0,done:false});paint();return}
- if(x=c('[data-qo]')){const d=V.dialog;if(+x.dataset.qo===d.i)d.ok++;d.i++;if(d.i>=d.words.length)d.done=true;paint();return}
- if(c('[data-qplay]'))return;
+ if(c('[data-runcheck]')){runCheck();return}
+ if(c('[data-test-ok]')){testDone(true);return}
+ if(c('[data-test-any]')){testDone(false);return}
+ if(c('[data-test-retry]')){startTest();return}
+ if(c('[data-fit]')){const id=V.sheet.id,was=lvl(id);if(S.lvl==='none'){snack(`${L[id].name}: no level found yet. Skills stay as they are (mock)`,null)}else{LV[id]=S.lvl;snack(`${L[id].name}: level ${was?'fitted again':'found'}, ${S.lvl==='complete'?'covers all four skills':'covers Speak and Read only'} (mock)`,null)}paint();return}
+ if(c('[data-placed]')){snack('Placed words opens its own screen (not drawn here)',null);paint();return}
+ if(x=c('[data-fp]')){V.filt=V.filt===x.dataset.fp?'':x.dataset.fp;paint();return}
  if(x=c('[data-dlg-ok]')){dlgOk();return}
- if(x=c('[data-dlg-x]')){V.dialog=null;V.chkQ=[];paint();return}
+ if(x=c('[data-dlg-x]')){clearTimeout(testT);V.dialog=null;paint();return}
  if(c('.scrim2'))return;
  if(x=c('[data-dlg]')){V.dialog={kind:x.dataset.dlg,id:V.sheet.id,typed:''};paint();return}
  if(x=c('[data-cycle]')){cycle(x.dataset.cycle);return}
- if(x=c('[data-check]')){openCheck(x.dataset.check);return}
- if(x=c('[data-revtog]')){const r=U[V.sheet.id],sid=x.dataset.revtog;if(r.rev[sid]){const snap=clone(U);delete r.rev[sid];snack('Review deck removed',snap);paint()}else{startDl(V.sheet.id,'rev',sid);paint()}return}
+ if(x=c('[data-revtog]')){const r=U[V.sheet.id],sid=x.dataset.revtog;if(r.rev[sid]){const snap=clone(U);delete r.rev[sid];snack('Review deck removed',snap);paint()}else{startDl(V.sheet.id,'rev',sid);snack(`${L[V.sheet.id].name}: review deck for ${sName(V.sheet.id,sid)} downloading`,null);paint()}return}
  if(c('[data-revsw]')){S.review=REV()?'off':'on';paint();return}
  if(x=c('[data-closesheet]')){closeSheet();return}
  if(c('[data-commit]')){commitAdd(false);return}
- if(x=c('[data-upd]')){const r=U[x.dataset.upd];r.upd='Checking…';paint();setTimeout(()=>{r.upd='Up to date, checked just now';paint()},900);return}
+ if(x=c('[data-upd]')){const id=x.dataset.upd,r=U[id];r.upd='Checking…';snack(`${L[id].name}: checking for deck updates`,null);paint();setTimeout(()=>{r.upd='Up to date, checked just now';snack(`${L[id].name}: decks are up to date`,null);paint()},900);return}
  if(c('[data-updall]')){V.checked='Checking…';paint();setTimeout(()=>{V.checked='Last checked just now';paint()},900);return}
  if(x=c('[data-open]')){openSheet(x.dataset.open,'edit');return}
  if(x=c('[data-addpick]')){const id=x.dataset.addpick;openSheet(id,inList(id)?'edit':'add');return}
@@ -903,7 +967,8 @@ function jump(k){
   else if(k==='list')V.screen='list';
   else if(k.startsWith('sheet-add-')){const id=k.slice(10);V.screen='add';V.sheet={id,mode:'add',draft:newDraft(id)}}
   else if(k.startsWith('sheet-')){V.screen='list';V.sheet={id:k.slice(6),mode:'edit'};if(k==='sheet-mr'||k==='sheet-as'||k==='sheet-hi')S.review='on'}
-  else if(k==='check'){S.review='on';V.screen='list';V.sheet={id:'mr',mode:'edit'};openCheck('write|deva');return}
+  else if(k==='check-sound'){V.screen='list';V.sheet={id:'hi',mode:'edit'};put(U.hi,'speak',null,'learn')}
+  else if(k==='check-script'){V.screen='list';V.sheet={id:'hi',mode:'edit'};put(U.hi,'read','perso','learn');put(U.hi,'write','perso','learn')}
   else if(k==='add')V.screen='add';
   else if(k==='ob'){V.screen='ob';V.ob={};U={}}
  }
@@ -928,7 +993,7 @@ const PAIRS=[
  ['check question text in the dialog','onS','sHigh',4.5],['check answer text in the dialog','onS','sHigh',4.5],['check answer outline in the dialog','ol','sHigh',3],['check Play button text in the dialog','p','sHigh',4.5],
  ['onboarding chip text on the page','onS','s',4.5],['onboarding Leave chip text on the page','onSv','s',4.5],['onboarding chip outline on the page','ol','s',3]];
 ['speak','hear','read','write'].forEach(k=>{const N=SKN[k];PAIRS.push([N+' pill and chip text on the skill colour','m_'+k+'_on','m_'+k,4.5],[N+' Learn inset border on the skill colour','p','m_'+k,3],[N+' skill icon on its tile','m_'+k+'_on','m_'+k,3])});
-PAIRS.push(['info glyph on the sheet','onSv','sLow',4.5],['A1 path label on the sheet','onSv','sLow',4.5],['A1 path fill on its track','p','sHst',3],['A2 path fill on its track','tt','sHst',3],['B1 path fill on its track','onSc','sHst',3],['subtext under a skill, on the sheet','onSv','sLow',4.5],['info panel text on its card','onSv','sHigh',4.5],['info panel Find my level text','onS','sHigh',4.5]);
+PAIRS.push(['filter pill text on the page','onS','s',4.5],['filter pill outline on the page','ol','s',3],['selected filter pill text on its fill','onSc','sc',4.5],['sheet top icons (update check, i, close) on the sheet','onSv','sLow',3],['sound and script check result text on the dialog','onS','sHigh',4.5],['check pass icon on the dialog','p','sHigh',3],['check fail icon on the dialog','E','sHigh',3],['check dialog action text','p','sHigh',4.5],['check dialog Next/Test again text on its fill','onP','p',4.5],['sound wave bars (pass) on the dialog','p','sHigh',3],['sound wave bars (fail) on the dialog','onSv','sHigh',3],['script sample outline on the dialog','ol','sHigh',3],['toast text on the sheet','s','onS',4.5],['Find my level title on the sheet','onS','sLow',4.5],['Find my level hint on the sheet','onSv','sLow',4.5],['info glyph on the sheet','onSv','sLow',4.5],['A1 path label on the sheet','onSv','sLow',4.5],['A1 path fill on its track','p','sHst',3],['A2 path fill on its track','tt','sHst',3],['B1 path fill on its track','onSc','sHst',3],['subtext under a skill, on the sheet','onSv','sLow',4.5],['info panel text on its card','onSv','sHigh',4.5],['info panel Find my level text','onS','sHigh',4.5]);
 window.__contrast=[];
 ['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const mv=modeVars(t),P=Object.assign({},PALS[pl+'_'+t]);Object.keys(mv).forEach(k=>P[k.replace(/-/g,'_')]=mv[k]);const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
 console.log('contrast',window.__contrast.filter(x=>!x.pass).length+' failing of '+window.__contrast.length);
