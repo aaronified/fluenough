@@ -92,9 +92,8 @@ contributor.
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
   follow it.
 - **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0). The milestone's
-  description holds its order. Until the roadmap is generated from them
-  (#484), update `docs/ROADMAP.md` by hand to match. Tidy issues and plans
-  after work lands, and close issues when done. Tag new issues to a
+  description holds its order, and the wiki's Roadmap page is generated from
+  it (#484). Tidy issues and plans after work lands, and close issues when done. Tag new issues to a
   milestone only as the owner says.
 - **Mockups** follow `docs/mockups/README.md`: build the approved specs
   exactly, never rewrite one without approval, and adapt the older ones.

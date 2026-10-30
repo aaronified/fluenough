@@ -264,7 +264,7 @@ path order"); the rest is **Proposed**.
    goes before any Wiktionary or Tatoeba data. Each change lands with its
    DECK-FORMAT entry and tests.
 2. **One issue per language:** Hindi, Bengali, Telugu, then the rest in the
-   path order (`docs/ROADMAP.md`), each "blocked by" the previous one and by
+   path order (the wiki Roadmap), each "blocked by" the previous one and by
    the format issues, with the `blocked` label, and `direct-code` once its
    questions are answered.
 3. **Per language:** examples (the largest gap, needed by cloze and
