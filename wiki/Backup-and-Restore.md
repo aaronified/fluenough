@@ -36,3 +36,21 @@ Settings > Your data also has Export review log. It saves every answer as a JSON
 The file is a plain zip of small text files, so any unzip tool opens it. See [Backup format](Backup-Format).
 
 See also: [Learner guide](Learner-Guide), [Home](Home).
+
+## Junk the app cleans up
+
+The app removes its own temporary files by itself (#493), at most once a day
+a few seconds after it starts, and again after an update. There is no button
+for it. It removes only:
+
+- update APKs other than the one waiting to install (that one goes once it
+  is installed, or after 30 days);
+- half-written `.part` files from deck downloads, and copies of a backup file
+  made for a restore, once a day old;
+- report attachments and share images, after three days.
+
+It never removes your progress, settings, the backups the app keeps (the last
+5 automatic ones are pruned as before), a backup you saved elsewhere, or
+downloaded decks. Each run that removes something writes a line to the app log,
+such as "Removed 2 old files, 70 MB". The policy is
+`lib/core/cleanup/junk_policy.dart`.

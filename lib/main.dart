@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
 import 'app/file_snapshot_store.dart';
+import 'app/junk_cleanup.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
@@ -120,5 +122,19 @@ Future<void> main() async {
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),
     ),
+  ); // Junk (old update files, half-written downloads, stale report
+  // attachments) is cleaned once a day, a little after the first frame so
+  // that it never delays the start (#493).
+  final junk = JunkCleanup(
+    files: DiskJunkFiles(
+      updates: Directory('${files.path}/ota_update'),
+      downloads: downloaded.directory,
+      cache: cache,
+    ),
+    stamp: FileJunkStamp(File('${files.path}/junk-cleanup.stamp')),
+    log: log,
+    version: AppInfo.version,
+    hasPending: () => storage.settings.pendingUpdate != null,
   );
+  unawaited(Future<void>.delayed(const Duration(seconds: 15), junk.runIfDue));
 }
