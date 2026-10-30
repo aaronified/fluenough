@@ -4,6 +4,7 @@ import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../skill_visuals.dart';
 import '../theme.dart';
+import 'hint.dart';
 
 /// The three sizes the design draws a skill's pill in.
 enum ModePillSize {
@@ -21,7 +22,8 @@ enum ModePillSize {
 ///
 /// Always carries the skill's icon, and in [ModePillSize.label] its name, so
 /// the mode never depends on colour alone. The icon-only sizes are
-/// decorative: they sit beside the skill's name, which screen readers read.
+/// decorative to screen readers (they sit beside the skill's name, which
+/// they read), but a long press shows the skill's name as a [Hint].
 ///
 /// [muted] draws it greyed, for a skill the phone cannot do (no voice).
 ///
@@ -89,7 +91,12 @@ class ModePill extends StatelessWidget {
           // A stadium on purpose: the pill follows its height.
           borderRadius: BorderRadius.circular(h / 2),
         ),
-        child: Icon(skill.icon, size: icon, color: fg),
+        child: Hint(
+          message: skill.label(AppLocalizations.of(context)!),
+          child: Center(
+            child: Icon(skill.icon, size: icon, color: fg),
+          ),
+        ),
       ),
     );
   }
