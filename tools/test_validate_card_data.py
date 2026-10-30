@@ -2214,7 +2214,8 @@ class MeaningAlternatives(Case):
         return any(self.NEEDLE in e for e in errors)
 
     def test_separate_sentences_without_a_semicolon_are_an_error(self) -> None:
-        for text in ("Hello! Hi!", "He is ill. She is ill.", "Really? Yes."):
+        for text in ("Hello! Hi!", "He is ill. She is ill.", "Really? Yes.",
+                     "No. Thanks.", "I said no. Go"):
             with self.subTest(text):
                 self.assertTrue(self.flagged(self.single_errors(text)))
 
@@ -2227,7 +2228,9 @@ class MeaningAlternatives(Case):
     def test_brackets_and_abbreviations_are_not_breaks(self) -> None:
         for text in ("Thanks (Say it. Twice) a lot", "Sorry [Stop. Go] now",
                      "Mr. Rao is here", "Ms. Rao and Dr. Rao", "Sit on St. James road",
-                     "Fruit, etc. and more"):
+                     "Meet at 9 a.m. sharp", "Ask Dr. Lee, Ph.D. now", "See fig. 2 here",
+                     "Mt. Fuji is tall", "The U.S.A. team", "Well... fine", "What?! Really?!",
+                     "Well... I think so"):
             with self.subTest(text):
                 self.assertFalse(self.flagged(self.single_errors(text)))
 

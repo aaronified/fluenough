@@ -814,16 +814,19 @@ MEANING_ALL_REQUIRED = frozenset({
 _MEANING_BRACKETS = re.compile(r"\([^)]*\)|\[[^\]]*\]")
 # Abbreviations whose full stop is not a sentence end.
 _MEANING_ABBREV = re.compile(
-    r"\b(?:mr|mrs|ms|dr|st|prof|sr|jr|vs|etc|e\.g|i\.e|no|approx)\.", re.IGNORECASE)
+    r"\b(?:mr|mrs|ms|dr|st|prof|sr|jr|vs|e\.g|i\.e|a\.m|p\.m|ph\.d|u\.s\.a|"
+    r"mt|fig|approx)\.", re.IGNORECASE)
+# An ellipsis, or a run of ?! or !?, is one pause, not a sentence break.
+_MEANING_PAUSE = re.compile(r"\.{3,}|\u2026|[?!]{2,}")
 _MEANING_BREAK = re.compile(r"[.!?]\s+\w")
 
 
 def meaning_has_separate_sentences(text: str) -> bool:
     """Whether an English meaning has a sentence break and no `;`, outside
-    brackets and abbreviations (#924)."""
+    brackets, abbreviations and pauses (#924)."""
     if ";" in text:
         return False
-    text = _MEANING_ABBREV.sub(" ", _MEANING_BRACKETS.sub(" ", text))
+    text = _MEANING_PAUSE.sub(" ", _MEANING_ABBREV.sub(" ", _MEANING_BRACKETS.sub(" ", text)))
     return _MEANING_BREAK.search(text) is not None
 
 
@@ -843,8 +846,7 @@ def check_meaning_alternatives(r: Report, where: str, cid: str | None,
         if cid in MEANING_ALL_REQUIRED:
             continue
         r.error(where, f"meaning has separate sentences; separate alternatives with "
-                       f'";" (or mark both required with a dash/or reword): {value!r}')
-
+                       f'";" (or reword it, or add the card id to MEANING_ALL_REQUIRED): {value!r}')
 
 
 def check_card(r: Report, idx: int, card: object, seen: set[str],
