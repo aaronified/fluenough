@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-calendar"
+name: "Reading: the calendar"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the week and the year: days and plans, and a birthday in May. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-una-semana"
+    title: "One week"
+    theme: "calendar"
+    sentences:
+      - text: "Hoy es martes."
+      - text: "El lunes tengo clase de inglés."
+      - text: "El jueves hay una fiesta en casa de Ana."
+      - text: "El sábado voy al cine."
+    questions:
+      - id: "es-0991"
+        prompt: { en: "What day is it?" }
+        options:
+          - { en: "Tuesday" }
+          - { en: "Monday" }
+          - { en: "Thursday" }
+        answer: 1
+      - id: "es-0992"
+        prompt: { en: "When is the party?" }
+        options:
+          - { en: "On Thursday" }
+          - { en: "On Saturday" }
+          - { en: "On Monday" }
+        answer: 1
+      - id: "es-0993"
+        prompt: { en: "When does the speaker go to the cinema?" }
+        options:
+          - { en: "On Saturday" }
+          - { en: "On Monday" }
+          - { en: "On Tuesday" }
+        answer: 1
+  - id: "es-cumpleanos-en-mayo"
+    title: "A birthday in May"
+    theme: "calendar"
+    sentences:
+      - text: "Mi cumpleaños es en mayo."
+      - text: "El próximo mes es junio."
+      - text: "En verano hace calor."
+      - text: "La fiesta es el sábado."
+    questions:
+      - id: "es-0994"
+        prompt: { en: "When is the speaker's birthday?" }
+        options:
+          - { en: "In May" }
+          - { en: "In June" }
+          - { en: "In March" }
+        answer: 1
+      - id: "es-0995"
+        prompt: { en: "Which month is next?" }
+        options:
+          - { en: "June" }
+          - { en: "May" }
+          - { en: "August" }
+        answer: 1
+      - id: "es-0996"
+        prompt: { en: "When is the party?" }
+        options:
+          - { en: "On Saturday" }
+          - { en: "On Monday" }
+          - { en: "On Sunday" }
+        answer: 1

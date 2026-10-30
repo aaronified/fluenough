@@ -1,0 +1,72 @@
+schema: 1
+id: "es-calendar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0997"
+    target: "Hoy es jueves y mañana es viernes."
+    ipa: "oj es ˈxwebes i maˈɲana es ˈbjeɾnes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "jueves", ref: "es-0961" }, { word: "y", ref: "es-0048" }, { word: "mañana", ref: "es-0978" }, { word: "es", ref: "es-0022" }, { word: "viernes", ref: "es-0962" }]
+    confusables: [{ id: "monday", ref: "es-0958", kind: "word" }, { id: "tuesday", ref: "es-0959", kind: "word" }]
+  - id: "es-0998"
+    target: "La reunión es el martes a las diez."
+    ipa: "la rewˈnjon es el ˈmaɾtes a las djeθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "reunión", ref: "es-0511" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "martes", ref: "es-0959" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "diez", ref: "es-0214" }]
+    confusables: [{ id: "thursday", ref: "es-0961", kind: "word" }, { id: "monday", ref: "es-0958", kind: "word" }]
+  - id: "es-0999"
+    target: "En enero hace frío."
+    ipa: "en eˈneɾo ˈaθe ˈfɾio"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "En", base: "en" }, { word: "enero", ref: "es-0966" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }]
+    confusables: [{ id: "february", ref: "es-0967", kind: "word" }, { id: "december", ref: "es-0977", kind: "word" }]
+  - id: "es-1000"
+    target: "Mi cumpleaños es en mayo."
+    ipa: "mi kumpleˈaɲos es en ˈmaʝo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "cumpleaños", ref: "es-0246" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }]
+    confusables: [{ id: "june", ref: "es-0971", kind: "word" }, { id: "april", ref: "es-0969", kind: "word" }]
+  - id: "es-1001"
+    target: "El aniversario de boda es el sábado."
+    ipa: "el anibeɾˈsaɾjo de ˈboda es el ˈsabado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "aniversario", ref: "es-0989" }, { word: "de", base: "de" }, { word: "boda", base: "boda" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }]
+    confusables: [{ id: "party", ref: "es-0979", kind: "word" }, { id: "sunday", ref: "es-0964", kind: "word" }]
+  - id: "es-1002"
+    target: "La agenda dice que hoy es lunes."
+    ipa: "la aˈxenda ˈdiθe ke oj es ˈlunes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "agenda", ref: "es-0985" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "lunes", ref: "es-0958" }]
+    confusables: [{ id: "calendar", ref: "es-0984", kind: "word" }, { id: "date", ref: "es-0846", kind: "word" }]
+  - id: "es-1003"
+    target: "El próximo mes es agosto."
+    ipa: "el ˈpɾoksimo mes es aˈɡosto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "próximo", ref: "es-0988" }, { word: "mes", ref: "es-0980" }, { word: "es", ref: "es-0022" }, { word: "agosto", ref: "es-0973" }]
+    confusables: [{ id: "october", ref: "es-0975", kind: "word" }, { id: "september", ref: "es-0974", kind: "word" }]
+  - id: "es-1004"
+    target: "En verano hace calor."
+    ipa: "en beˈɾano ˈaθe kaˈloɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "En", base: "en" }, { word: "verano", ref: "es-0982" }, { word: "hace", ref: "es-0025" }, { word: "calor", base: "calor" }]
+    confusables: [{ id: "winter", ref: "es-0990", kind: "word" }, { id: "spring", ref: "es-0981", kind: "word" }]
+  - id: "es-1005"
+    target: "Hoy no es fiesta."
+    ipa: "oj no es ˈfjesta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "fiesta", ref: "es-0979" }]
+    confusables: [{ id: "anniversary", ref: "es-0989", kind: "word" }, { id: "appointment", ref: "es-0844", kind: "word" }]

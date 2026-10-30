@@ -1,0 +1,634 @@
+schema: 1
+id: es-en-calendar
+kind: layer
+core: es-calendar
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Calendar
+license: CC-BY-SA-4.0
+description: 'The days of the week, the months, the seasons and words for dates and appointments. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-0957:
+    native: Days of the week
+    explanation: 'The seven days of the week. Each is masculine, with el, and is written in lower case: el lunes, el martes. Practise them together.'
+  es-0965:
+    native: Months of the year
+    explanation: 'The twelve months. Each is masculine and written in lower case, with no article after en: en enero means in January.'
+  es-0958:
+    native: Monday
+    notes:
+      n1: Lunes is Monday, the first day of the working week in most of the Spanish-speaking world.
+    bases:
+      el: the
+      lunes: Monday
+    examples:
+      El lunes tengo clase de inglés.:
+        native: On Monday I have an English class.
+        bases:
+          El: The
+          lunes: Monday
+          clase: class
+          de: (linking word)
+          inglés: English
+      Llego a casa el lunes por la noche.:
+        native: I get home on Monday night.
+        bases:
+          a: to
+          el: 'on'
+          lunes: Monday
+          por: at
+          la: the
+  es-0959:
+    native: Tuesday
+    notes:
+      n1: Martes is Tuesday. It is written in lower case, as all days are.
+    bases:
+      el: the
+      martes: Tuesday
+    examples:
+      El martes voy al mercado.:
+        native: On Tuesday I go to the market.
+        bases:
+          El: 'On'
+          martes: Tuesday
+          al: to the
+          mercado: market
+      Hoy es martes.:
+        native: Today is Tuesday.
+        bases:
+          martes: Tuesday
+  es-0960:
+    native: Wednesday
+    notes:
+      n1: Miércoles is Wednesday. It has an accent on the first e.
+    bases:
+      el: the
+      miércoles: Wednesday
+    examples:
+      El miércoles hay reunión.:
+        native: On Wednesday there is a meeting.
+        bases:
+          El: 'On'
+          miércoles: Wednesday
+          hay: there is
+      Mañana es miércoles.:
+        native: Tomorrow is Wednesday.
+        bases:
+          miércoles: Wednesday
+  es-0961:
+    native: Thursday
+    notes:
+      n1: Jueves is Thursday.
+    bases:
+      el: the
+      jueves: Thursday
+    examples:
+      El jueves hay una fiesta en casa de Ana.:
+        native: On Thursday there is a party at Ana's house.
+        bases:
+          El: 'On'
+          jueves: Thursday
+          hay: there is
+          una: a
+          en: at
+          de: (linking word)
+          Ana: Ana
+      El jueves termino el trabajo a las cinco.:
+        native: On Thursday I finish work at five.
+        bases:
+          El: 'On'
+          jueves: Thursday
+          el: the
+          a: at
+          las: (at)
+  es-0962:
+    native: Friday
+    notes:
+      n1: Viernes is Friday.
+    bases:
+      el: the
+      viernes: Friday
+    examples:
+      El viernes descanso.:
+        native: On Friday I rest.
+        bases:
+          El: 'On'
+          viernes: Friday
+      Nos vemos el viernes.:
+        native: See you on Friday.
+        bases:
+          Nos: us
+          vemos: see
+          el: 'on'
+          viernes: Friday
+  es-0963:
+    native: Saturday
+    notes:
+      n1: Sábado is Saturday, with an accent on the a.
+    bases:
+      el: the
+      sábado: Saturday
+    examples:
+      El sábado voy al cine.:
+        native: On Saturday I go to the cinema.
+        bases:
+          El: 'On'
+          sábado: Saturday
+          al: to the
+          cine: cinema
+      Los sábados hago la compra.:
+        native: On Saturdays I do the shopping.
+        bases:
+          Los: 'On'
+          sábados: Saturdays
+          la: the
+  es-0964:
+    native: Sunday
+    notes:
+      n1: Domingo is Sunday.
+    bases:
+      el: the
+      domingo: Sunday
+    examples:
+      El domingo no trabajo.:
+        native: On Sunday I don't work.
+        bases:
+          El: 'On'
+          domingo: Sunday
+      La tienda está cerrada los domingos.:
+        native: The shop is closed on Sundays.
+        bases:
+          La: The
+          cerrada: closed
+          los: 'on'
+          domingos: Sundays
+  es-0966:
+    native: January
+    notes:
+      n1: Enero is January, the first month of the year.
+    examples:
+      En enero hace frío.:
+        native: In January it is cold.
+        bases:
+          En: In
+          enero: January
+      Enero es el primer mes del año.:
+        native: January is the first month of the year.
+        bases:
+          Enero: January
+          el: the
+          primer: first
+          del: of the
+  es-0967:
+    native: February
+    notes:
+      n1: Febrero is February. Normally it has twenty-eight days.
+    examples:
+      En febrero hace menos frío.:
+        native: In February it is less cold.
+        bases:
+          En: In
+          febrero: February
+          menos: less
+      Febrero tiene veintiocho días.:
+        native: February has twenty-eight days.
+        bases:
+          Febrero: February
+          veintiocho: twenty-eight
+          días: days
+  es-0968:
+    native: March
+    notes:
+      n1: Marzo is March.
+    examples:
+      En marzo empieza la primavera.:
+        native: In March spring begins.
+        bases:
+          En: In
+          marzo: March
+          la: the
+      El examen es en marzo.:
+        native: The exam is in March.
+        bases:
+          El: The
+          examen: exam
+          en: in
+          marzo: March
+  es-0969:
+    native: April
+    notes:
+      n1: Abril is April.
+    examples:
+      En abril llueve mucho.:
+        native: In April it rains a lot.
+        bases:
+          En: In
+          abril: April
+          llueve: it rains
+      Mi reunión es en abril.:
+        native: My meeting is in April.
+        bases:
+          en: in
+          abril: April
+  es-0970:
+    native: May
+    notes:
+      n1: Mayo is May.
+    examples:
+      Mayo es un mes bonito.:
+        native: May is a nice month.
+        bases:
+          Mayo: May
+          un: a
+      En mayo hace buen tiempo.:
+        native: In May the weather is good.
+        bases:
+          En: In
+          mayo: May
+          buen: good
+          tiempo: weather
+  es-0971:
+    native: June
+    notes:
+      n1: Junio is June.
+    examples:
+      En junio empieza el verano.:
+        native: In June summer begins.
+        bases:
+          En: In
+          junio: June
+          el: the
+      Junio es el sexto mes del año.:
+        native: June is the sixth month of the year.
+        bases:
+          Junio: June
+          el: the
+          sexto: sixth
+          del: of the
+  es-0972:
+    native: July
+    notes:
+      n1: Julio is July.
+    examples:
+      En julio hace mucho calor.:
+        native: In July it is very hot.
+        bases:
+          En: In
+          julio: July
+          calor: heat
+      Julio es un mes de vacaciones.:
+        native: July is a holiday month.
+        bases:
+          Julio: July
+          un: a
+          de: of
+          vacaciones: holidays
+  es-0973:
+    native: August
+    notes:
+      n1: Agosto is August.
+    examples:
+      En agosto mucha gente viaja.:
+        native: In August many people travel.
+        bases:
+          En: In
+          agosto: August
+          mucha: many
+          gente: people
+          viaja: travel
+      Mi cumpleaños no es en agosto.:
+        native: My birthday is not in August.
+        bases:
+          en: in
+          agosto: August
+  es-0974:
+    native: September
+    notes:
+      n1: Septiembre is September.
+    examples:
+      En septiembre empieza el curso.:
+        native: In September the school year begins.
+        bases:
+          En: In
+          septiembre: September
+          el: the
+          curso: school year
+      Septiembre tiene treinta días.:
+        native: September has thirty days.
+        bases:
+          Septiembre: September
+          treinta: thirty
+          días: days
+  es-0975:
+    native: October
+    notes:
+      n1: Octubre is October.
+    examples:
+      En octubre cambia el tiempo.:
+        native: In October the weather changes.
+        bases:
+          En: In
+          octubre: October
+          cambia: changes
+          el: the
+          tiempo: weather
+      Octubre es un mes de otoño.:
+        native: October is an autumn month.
+        bases:
+          Octubre: October
+          un: a
+          de: of
+  es-0976:
+    native: November
+    notes:
+      n1: Noviembre is November.
+    examples:
+      En noviembre hace frío y llueve.:
+        native: In November it is cold and it rains.
+        bases:
+          En: In
+          noviembre: November
+          llueve: it rains
+      La fiesta es en noviembre.:
+        native: The party is in November.
+        bases:
+          La: The
+          en: in
+          noviembre: November
+  es-0977:
+    native: December
+    notes:
+      n1: Diciembre is December.
+    examples:
+      En diciembre hay muchas fiestas.:
+        native: In December there are many holidays.
+        bases:
+          En: In
+          diciembre: December
+          hay: there are
+          muchas: many
+          fiestas: holidays
+      Mi hermano cumple años en diciembre.:
+        native: My brother has a birthday in December.
+        bases:
+          hermano: brother
+          cumple: has
+          años: birthdays
+          en: in
+          diciembre: December
+  es-0980:
+    native: month
+    notes:
+      n1: Mes is a month. El mes que viene means next month.
+    bases:
+      el: the
+      mes: month
+    examples:
+      El mes que viene voy a Lima.:
+        native: Next month I am going to Lima.
+        bases:
+          El: The
+          mes: month
+          que: that
+          viene: comes
+          a: to
+          Lima: Lima
+      Este mes trabajo mucho.:
+        native: This month I work a lot.
+        bases:
+          Este: This
+          mes: month
+  es-0984:
+    native: calendar
+    notes:
+      n1: Calendario is a calendar, on a wall, on paper or in a phone.
+    bases:
+      el: the
+      calendario: calendar
+    examples:
+      El calendario está en la cocina.:
+        native: The calendar is in the kitchen.
+        bases:
+          El: The
+          calendario: calendar
+          en: in
+          la: the
+      Miro el calendario cada mañana.:
+        native: I look at the calendar every morning.
+        bases:
+          el: the
+          calendario: calendar
+  es-0985:
+    native: diary; planner
+    notes:
+      n1: La agenda is a diary or planner, on paper or in a phone.
+    bases:
+      la: the
+      agenda: diary
+    examples:
+      Escribo la cita en la agenda.:
+        native: I write the appointment in my diary.
+        bases:
+          la: the
+          agenda: diary
+          en: in
+      La agenda de Ana está llena.:
+        native: Ana's diary is full.
+        bases:
+          La: The
+          agenda: diary
+          de: of
+          Ana: Ana
+          llena: full
+  es-0986:
+    native: the day before yesterday
+    notes:
+      n1: Anteayer is the day before yesterday. Ayer is yesterday.
+    examples:
+      Hoy es jueves. Ayer, miércoles, y anteayer, martes.:
+        native: Today is Thursday. Yesterday was Wednesday, and the day before yesterday, Tuesday.
+        bases:
+          anteayer: the day before yesterday
+      ¿Qué día es anteayer?:
+        native: What day was the day before yesterday?
+        bases:
+          anteayer: the day before yesterday
+  es-0978:
+    native: tomorrow
+    notes:
+      n1: Mañana alone is tomorrow. La mañana is the morning, and pasado mañana is the day after tomorrow.
+      h1: Spelled like la mañana, the morning. This one means tomorrow.
+    examples:
+      Mañana tengo una cita.:
+        native: Tomorrow I have an appointment.
+        bases:
+          Mañana: tomorrow
+          una: an
+      Hasta mañana, Ana.:
+        native: See you tomorrow, Ana.
+        bases:
+          Hasta: Until
+          mañana: tomorrow
+          Ana: Ana
+  es-0987:
+    native: past; last
+    notes:
+      n1: Pasado means past or last, as in el año pasado, last year. Pasado mañana is the day after tomorrow.
+    examples:
+      Pasado mañana tengo una reunión.:
+        native: The day after tomorrow I have a meeting.
+        bases:
+          Pasado: after
+          una: a
+      Pasado mañana es sábado.:
+        native: The day after tomorrow is Saturday.
+        bases:
+          Pasado: after
+  es-0988:
+    native: next
+    notes:
+      n1: Próximo means next. La próxima semana is next week.
+    bases:
+      próximo: next
+    examples:
+      El próximo lunes voy al médico.:
+        native: Next Monday I am going to the doctor.
+        bases:
+          El: The
+          próximo: next
+          al: to the
+          médico: doctor
+      La próxima cita es el jueves.:
+        native: The next appointment is on Thursday.
+        bases:
+          La: The
+          próxima: next
+          el: 'on'
+  es-0979:
+    native: party; holiday
+    notes:
+      n1: Fiesta is a party, or a public holiday. Hoy es fiesta means today is a holiday.
+    bases:
+      la: the
+      fiesta: party
+    examples:
+      Hay una fiesta en casa de Ana el sábado.:
+        native: There is a party at Ana's house on Saturday.
+        bases:
+          Hay: There is
+          una: a
+          fiesta: party
+          en: at
+          de: of
+          Ana: Ana
+          el: 'on'
+      Hoy no es fiesta.:
+        native: Today is not a holiday.
+        bases:
+          fiesta: holiday
+  es-0989:
+    native: anniversary
+    notes:
+      n1: Aniversario is an anniversary, a yearly date. El aniversario de boda is the wedding anniversary.
+    bases:
+      el: the
+      aniversario: anniversary
+    examples:
+      Mañana es el aniversario de mis padres.:
+        native: Tomorrow is my parents' anniversary.
+        bases:
+          el: the
+          aniversario: anniversary
+          de: of
+          mis: my
+          padres: parents
+      El aniversario de boda es en mayo.:
+        native: The wedding anniversary is in May.
+        bases:
+          El: The
+          aniversario: anniversary
+          de: of
+          boda: wedding
+          en: in
+  es-0982:
+    native: summer
+    notes:
+      n1: Verano is summer. En verano means in summer.
+    bases:
+      el: the
+      verano: summer
+    examples:
+      En verano hace calor.:
+        native: In summer it is hot.
+        bases:
+          En: In
+          verano: summer
+          calor: heat
+      El verano es mi estación favorita.:
+        native: Summer is my favourite season.
+        bases:
+          El: The
+          verano: summer
+          favorita: favourite
+  es-0983:
+    native: autumn
+    notes:
+      n1: Otoño is autumn.
+    bases:
+      el: the
+      otoño: autumn
+    examples:
+      En otoño llueve mucho.:
+        native: In autumn it rains a lot.
+        bases:
+          En: In
+          otoño: autumn
+          llueve: it rains
+      El otoño empieza en septiembre.:
+        native: Autumn begins in September.
+        bases:
+          El: The
+          otoño: autumn
+          en: in
+  es-0990:
+    native: winter
+    notes:
+      n1: Invierno is winter.
+    bases:
+      el: the
+      invierno: winter
+    examples:
+      En invierno hace frío.:
+        native: In winter it is cold.
+        bases:
+          En: In
+          invierno: winter
+      Mi cumpleaños es en invierno.:
+        native: My birthday is in winter.
+        bases:
+          en: in
+          invierno: winter
+  es-0981:
+    native: spring
+    notes:
+      n1: Primavera is spring.
+    bases:
+      la: the
+      primavera: spring
+    examples:
+      En primavera hace buen tiempo.:
+        native: In spring the weather is good.
+        bases:
+          En: In
+          primavera: spring
+          buen: good
+          tiempo: weather
+      Me gusta la primavera.:
+        native: I like spring.
+        bases:
+          Me: (to me)
+          gusta: pleases
+          la: the
+          primavera: spring

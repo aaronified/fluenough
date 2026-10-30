@@ -153,11 +153,8 @@ units:
   - decks: ["es-grammar-reflexives", "es-reading-reflexives"]
     words: 0
     grammar: ["reflexives"]
-  - planned: { id: "es-calendar", theme: "calendar", words: 35 }
-    listening_passages:
-      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
-    reading_passages:
-      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
+  - decks: ["es-calendar", "es-calendar-sentences", "es-reading-calendar", "*"]
+    words: 32
   - planned: { id: "es-clothes", theme: "clothes", words: 35 }
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
