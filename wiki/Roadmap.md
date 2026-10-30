@@ -58,7 +58,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-22 approved open issues.
+21 approved open issues.
 
 **Enhancements**
 
@@ -83,7 +83,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#527](https://github.com/aaronified/fluenough/issues/527) Decks: typo-tolerant search (FTS5) with kind chips, instead of filters
 - [#638](https://github.com/aaronified/fluenough/issues/638) Build handwriting: stroke files, stroke animation, tracing and drawing
-- [#701](https://github.com/aaronified/fluenough/issues/701) IPA course: derive each card's language tags from the language decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
 - [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
