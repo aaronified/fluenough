@@ -6,8 +6,9 @@
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
 # its listening and reading passages. A unit with no deck yet is planned:
-# the course teaches it as "Coming" until a deck is written. No deck of
-# French is written yet, so every unit is planned; the owner (2026-10-30)
+# the course teaches it as "Coming" until a deck is written. The first five
+# units of A1 (phrasebook to pronouns) are written; the rest are planned. The
+# owner (2026-10-30)
 # has set French's A1 to be built after Bengali's, Hindustani's and
 # Spanish's B1. When a unit is written, it turns into `decks` in the same
 # change (the build-deck skill). Sizes follow the plan's levels (about 700,
@@ -114,32 +115,17 @@ units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
   # words beside it: fr-phrasebook (15-25 survival phrases, which count no
   # words) and fr-first-words when written.
-  - planned: { id: "fr-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning and the evening: bonjour, bonsoir, au revoir" } }
-    reading_passages:
-      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases" } }
+  - decks: ["fr-phrasebook", "fr-first-words", "*"]
+    words: 10
   # 2. The first word units, the sound differences first.
-  - planned: { id: "fr-sound-differences", theme: "sound-differences", words: 16 }
-    listening_passages:
-      - { id: "nasal-and-plain", text: { "en": "Pairs of words told apart by one sound: a nasal vowel or not, u or ou (bon and beau, dessus and dessous)" } }
-    reading_passages:
-      - { id: "silent-letters-list", text: { "en": "A list of everyday words whose last letters are not said" } }
-  - planned: { id: "fr-questions", theme: "questions", words: 15 }
-    listening_passages:
-      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
-    reading_passages:
-      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
-  - planned: { id: "fr-addressing", theme: "addressing", words: 15 }
-    listening_passages:
-      - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tu and vous" } }
-    reading_passages:
-      - { id: "name-badges", text: { "en": "Name badges at a meeting with titles and surnames: Monsieur, Madame" } }
-  - planned: { id: "fr-pronouns", theme: "pronouns", words: 20 }
-    listening_passages:
-      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
-    reading_passages:
-      - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
+  - decks: ["fr-sound-differences", "fr-sound-differences-sentences", "fr-reading-sound-differences", "*"]
+    words: 16
+  - decks: ["fr-questions", "fr-questions-sentences", "fr-reading-questions", "*"]
+    words: 15
+  - decks: ["fr-addressing", "fr-addressing-sentences", "fr-reading-addressing", "*"]
+    words: 15
+  - decks: ["fr-pronouns", "fr-pronouns-sentences", "fr-reading-pronouns", "*"]
+    words: 20
   - planned: { id: "fr-family", theme: "family", words: 30 }
     listening_passages:
       - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }

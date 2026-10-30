@@ -4507,9 +4507,16 @@ def check_themes_file(r: Report, raw: dict) -> None:
     ids: list[str] = []
     for i, theme in enumerate(themes):
         where = f"themes[{i}]"
-        if not isinstance(theme, dict) or set(theme) - {"id", "name"}:
-            r.error(where, "must be a mapping with only an id and a name")
+        if not isinstance(theme, dict) or set(theme) - {"id", "name", "tags"}:
+            r.error(where, "must be a mapping with an id, a name and optional tags")
             continue
+        tags = theme.get("tags")
+        if tags is not None and (
+            not isinstance(tags, list) or not tags
+            or not all(_is_str(t) and t.strip() for t in tags)
+        ):
+            r.error(where, "tags must be a non-empty list of words (the search "
+                    "finds the theme's decks by them)")
         tid = theme.get("id")
         if not _is_str(tid) or not ID_RE.fullmatch(tid):
             r.error(where, f"id must match [a-z0-9-]+, got {tid!r}")
