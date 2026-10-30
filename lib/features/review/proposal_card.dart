@@ -4,11 +4,13 @@ import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
 import '../../core/models/proposal.dart';
+import '../../core/review/card_fields.dart';
 import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import 'review_sheets.dart';
+import 'review_warning_sheet.dart';
 
 /// The part of a card "Suggest a change" names for a proposal's [field].
 CardPart partOf(ProposalField field) => switch (field) {
@@ -17,7 +19,27 @@ CardPart partOf(ProposalField field) => switch (field) {
   ProposalField.ipa => CardPart.ipa,
   ProposalField.native => CardPart.meaning,
   ProposalField.notes => CardPart.notes,
+  ProposalField.gender => CardPart.gender,
+  ProposalField.register => CardPart.register,
+  ProposalField.hears => CardPart.hears,
+  ProposalField.warning => CardPart.warning,
 };
+
+/// [text], a proposal's `now` or `text`, as the card's reviewers read it: a
+/// warning is an id, so it is shown as the warning it names, such as "Sounds
+/// like" with the note's text; any other field's text is shown as it is.
+String proposalShown(
+  AppLocalizations l10n,
+  Card card,
+  ProposalField field,
+  String text,
+) {
+  if (field != ProposalField.warning) return text;
+  final option = warningOptionsOf(card).where((o) => o.id == text).firstOrNull;
+  if (option == null) return text;
+  final name = warningName(l10n, option);
+  return option.text.isEmpty ? name : '$name: ${option.text}';
+}
 
 /// The proposals waiting on [card] of [deck] (ADR-0038), from every deck
 /// of its language in [decks], each once: a proposal is kept in the file
@@ -125,7 +147,11 @@ class ProposalCard extends StatelessWidget {
                   Text(l10n.reviewSuggestNothing)
                 else
                   Text.rich(
-                    quotingTarget(p.now, <String>[if (words) p.now], language),
+                    quotingTarget(
+                      proposalShown(l10n, card, p.field, p.now),
+                      <String>[if (words) p.now],
+                      language,
+                    ),
                     style: theme.textTheme.bodyMedium,
                   ),
               ],
@@ -137,7 +163,11 @@ class ProposalCard extends StatelessWidget {
               children: <Widget>[
                 Text(l10n.reviewProposalNew, style: small),
                 Text.rich(
-                  quotingTarget(p.text, <String>[if (words) p.text], language),
+                  quotingTarget(
+                    proposalShown(l10n, card, p.field, p.text),
+                    <String>[if (words) p.text],
+                    language,
+                  ),
                   style: theme.textTheme.bodyLarge,
                 ),
               ],
