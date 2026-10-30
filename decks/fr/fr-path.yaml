@@ -117,11 +117,8 @@ units:
   - decks: ["fr-phrasebook", "fr-first-words", "*"]
     words: 10
   # 2. The first word units, the sound differences first.
-  - planned: { id: "fr-sound-differences", theme: "sound-differences", words: 16 }
-    listening_passages:
-      - { id: "nasal-and-plain", text: { "en": "Pairs of words told apart by one sound: a nasal vowel or not, u or ou (bon and beau, dessus and dessous)" } }
-    reading_passages:
-      - { id: "silent-letters-list", text: { "en": "A list of everyday words whose last letters are not said" } }
+  - decks: ["fr-sound-differences", "fr-sound-differences-sentences", "fr-reading-sound-differences", "*"]
+    words: 16
   - planned: { id: "fr-questions", theme: "questions", words: 15 }
     listening_passages:
       - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }

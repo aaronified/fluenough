@@ -1,0 +1,74 @@
+schema: 1
+id: "fr-en-sound-differences-sentences"
+kind: "layer"
+core: "fr-sound-differences-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: sounds to tell apart"
+license: "CC-BY-SA-4.0"
+description: "Eight short sentences with the words of Sounds to tell apart and the first words, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0051":
+    native: "The wine is very good."
+    bases:
+      "Le": "the"
+    confusables:
+      "here": { why: "Ici means here, not very." }
+      "but": { why: "Mais means but, and the sentence joins nothing." }
+  "fr-0052":
+    native: "The wind is strong here."
+    bases:
+      "Le": "the"
+      "fort": "strong"
+    confusables:
+      "there": { why: "Là means there; the sentence says here." }
+      "very": { why: "Très means very, and the sentence places the wind, it does not say how strong." }
+  "fr-0053":
+    native: "My friend is in the street."
+    bases:
+      "la": "the"
+    confusables:
+      "there": { why: "Là means there, not in the street." }
+      "here": { why: "Ici means here; the sentence says where in the street." }
+  "fr-0054":
+    native: "The bench is in the sun."
+    bases:
+      "Le": "the"
+      "au": "in the; at the"
+      "soleil": "sun"
+    confusables:
+      "and": { why: "Et joins two things; this sentence joins none." }
+      "also": { why: "Aussi means also; the sentence does not add anything." }
+  "fr-0055":
+    native: "The wheel is beautiful."
+    bases:
+      "La": "the"
+      "belle": "beautiful"
+    confusables:
+      "much": { why: "Beaucoup means a lot, not beautiful." }
+      "well": { why: "Bien means well, not beautiful." }
+  "fr-0056":
+    native: "The children like milk."
+    bases:
+      "enfants": "children"
+      "aiment": "to like"
+      "le": "the"
+    confusables:
+      "and": { why: "Et joins two things; the sentence has one object." }
+      "but": { why: "Mais means but, which the sentence does not need." }
+  "fr-0057":
+    native: "The fairy says no."
+    bases:
+      "La": "the"
+      "dit": "to say"
+    confusables:
+      "yes": { why: "Oui means yes, the opposite of non." }
+      "but": { why: "Mais means but, not no." }
+  "fr-0058":
+    native: "Too bad, the cabbage is there."
+    bases:
+      "pis": "worse"
+      "le": "the"
+    confusables:
+      "in": { why: "Dans means in; it would change where the cabbage is." }
+      "yes": { why: "Oui means yes; the sentence is about the cabbage." }

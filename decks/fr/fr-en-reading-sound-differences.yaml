@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-sound-differences"
+name: "Reading: sounds to tell apart"
+kind: reading
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with the words of Sounds to tell apart: the wine and the wind, and a fairy with the children and the cabbage. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-wind-and-wine"
+    title: "Wind and wine"
+    theme: "sound-differences"
+    sentences:
+      - text: "Le vin est bon."
+      - text: "Le vent est fort ici."
+      - text: "La rue est calme."
+      - text: "Le banc est au soleil."
+    questions:
+      - id: "fr-0059"
+        prompt: { en: "Which thing does the speaker say is good?" }
+        options:
+          - { en: "The wine" }
+          - { en: "The wind" }
+          - { en: "The bench" }
+        answer: 1
+      - id: "fr-0060"
+        prompt: { en: "Where is the bench?" }
+        options:
+          - { en: "In the street" }
+          - { en: "In the sun" }
+          - { en: "In the wind" }
+        answer: 2
+      - id: "fr-0061"
+        prompt: { en: "What is strong here?" }
+        options:
+          - { en: "The wind" }
+          - { en: "The street" }
+          - { en: "The sun" }
+        answer: 1
+  - id: "fr-the-fairy-and-the-cabbage"
+    title: "The fairy and the cabbage"
+    theme: "sound-differences"
+    sentences:
+      - text: "La fée dit non."
+      - text: "Les enfants aiment le lait."
+      - text: "Le chou est vert."
+      - text: "Tant pis, le chou est là."
+    questions:
+      - id: "fr-0062"
+        prompt: { en: "What does the fairy say?" }
+        options:
+          - { en: "Yes" }
+          - { en: "Thank you" }
+          - { en: "No" }
+        answer: 3
+      - id: "fr-0063"
+        prompt: { en: "What do the children like?" }
+        options:
+          - { en: "Milk" }
+          - { en: "Cabbage" }
+          - { en: "Wine" }
+        answer: 1
+      - id: "fr-0064"
+        prompt: { en: "What colour is the cabbage?" }
+        options:
+          - { en: "Red" }
+          - { en: "Green" }
+          - { en: "White" }
+        answer: 2

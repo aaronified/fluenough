@@ -1,0 +1,121 @@
+schema: 1
+id: "fr-sound-differences-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0051"
+    target: "Le vin est très bon."
+    ipa: "lə vɛ̃ ɛ tʁɛ bɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "vin", ref: "fr-0035" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "bon", ref: "fr-0040" }
+    confusables:
+      - { id: "here", ref: "fr-0029", kind: "word" }
+      - { id: "but", ref: "fr-0028", kind: "word" }
+  - id: "fr-0052"
+    target: "Le vent est fort ici."
+    ipa: "lə vɑ̃ ɛ fɔʁ isi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "vent", ref: "fr-0036" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fort", base: "fort" }
+      - { word: "ici", ref: "fr-0029" }
+    confusables:
+      - { id: "there", ref: "fr-0030", kind: "word" }
+      - { id: "very", ref: "fr-0031", kind: "word" }
+  - id: "fr-0053"
+    target: "Mon ami est dans la rue."
+    ipa: "mɔ̃ ami ɛ dɑ̃ la ʁy"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "ami", ref: "fr-0100" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", base: "la" }
+      - { word: "rue", ref: "fr-0041" }
+    confusables:
+      - { id: "there", ref: "fr-0030", kind: "word" }
+      - { id: "here", ref: "fr-0029", kind: "word" }
+  - id: "fr-0054"
+    target: "Le banc est au soleil."
+    ipa: "lə bɑ̃ ɛ o sɔlɛj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "banc", ref: "fr-0039" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "au", base: "à" }
+      - { word: "soleil", base: "soleil" }
+    confusables:
+      - { id: "and", ref: "fr-0027", kind: "word" }
+      - { id: "also", ref: "fr-0033", kind: "word" }
+  - id: "fr-0055"
+    target: "La roue est belle."
+    ipa: "la ʁu ɛ bɛl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "roue", ref: "fr-0042" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "belle", base: "beau" }
+    confusables:
+      - { id: "much", ref: "fr-0034", kind: "word" }
+      - { id: "well", ref: "fr-0032", kind: "word" }
+  - id: "fr-0056"
+    target: "Les enfants aiment le lait."
+    ipa: "le ɑ̃fɑ̃ ɛm lə lɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "enfants", base: "enfant" }
+      - { word: "aiment", base: "aimer" }
+      - { word: "le", base: "le" }
+      - { word: "lait", ref: "fr-0044" }
+    confusables:
+      - { id: "and", ref: "fr-0027", kind: "word" }
+      - { id: "but", ref: "fr-0028", kind: "word" }
+  - id: "fr-0057"
+    target: "La fée dit non."
+    ipa: "la fe di nɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "fée", ref: "fr-0045" }
+      - { word: "dit", base: "dire" }
+      - { word: "non", ref: "fr-0026" }
+    confusables:
+      - { id: "yes", ref: "fr-0025", kind: "word" }
+      - { id: "but", ref: "fr-0028", kind: "word" }
+  - id: "fr-0058"
+    target: "Tant pis, le chou est là."
+    ipa: "tɑ̃ pi lə ʃu ɛ la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tant", ref: "fr-0050" }
+      - { word: "pis", base: "pis" }
+      - { word: "le", base: "le" }
+      - { word: "chou", ref: "fr-0047" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "in", ref: "fr-0049", kind: "word" }
+      - { id: "yes", ref: "fr-0025", kind: "word" }
