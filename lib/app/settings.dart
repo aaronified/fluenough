@@ -1416,6 +1416,9 @@ class SettingsNotifier extends ChangeNotifier {
           for (final e in value.entries)
             if (e.key is String) e.key as String: e.value,
         }).toStored();
+        // An entry that reads as nothing but held keys is unreadable: it is
+        // not restored as Leave.
+        if (skills.isEmpty && value.isNotEmpty) continue;
         setLanguageSkills(key, skills);
       }
     }

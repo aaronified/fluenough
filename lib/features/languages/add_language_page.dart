@@ -117,7 +117,7 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
                   filled: true,
                   fillColor: scheme.surfaceContainerHigh,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(28),
+                    borderRadius: BorderRadius.circular(AppRadii.field),
                     borderSide: BorderSide.none,
                   ),
                 ),

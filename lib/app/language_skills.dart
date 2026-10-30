@@ -24,9 +24,15 @@ extension LanguageSkillsOnState on AppState {
   /// Languages page, else the older lists read as skills, so that nobody
   /// sees a change before they edit.
   LanguageSkills skillsOf(SpokenLanguage language) {
-    final stored = settings.languageSkillsOf(language.code);
-    if (stored != null) return LanguageSkills.fromStored(stored);
     final code = language.code;
+    final stored = settings.languageSkillsOf(code);
+    if (stored != null) {
+      // Skills are kept for the whole app, the learned lists per profile: a
+      // profile whose own list disagrees with the stored Learn (another
+      // profile edited it) reads its own list instead.
+      final skills = LanguageSkills.fromStored(stored);
+      if (skills.anyLearn == learningCodes.contains(code)) return skills;
+    }
     final read = language.scriptsReadIn(settings.scriptsRead);
     return skillsFromLegacy(
       scripts: skillScripts(language),
@@ -87,9 +93,27 @@ extension LanguageSkillsOnState on AppState {
     } else if (spoken.contains(code) && spoken.length > 1) {
       spoken.remove(code);
       answers.removeWhere((key, _) => readKeyLanguage(key) == code);
+    } else if (spoken.contains(code)) {
+      // The sole spoken language stays listed, but reads nothing, as the
+      // page (back in the pool) says.
+      for (final script in skillScripts(language)) {
+        answers[_readKey(language, script)] = false;
+      }
     }
     settings.spokenLanguages = spoken;
     settings.scriptsRead = answers;
+  }
+
+  /// Whether any profile learns [code], by its own list or the one a profile
+  /// without its own follows.
+  bool _anyProfileLearns(String code) {
+    if (learningCodes.contains(code)) return true;
+    for (final profile in profiles) {
+      if ((profile.languages ?? settings.learningLanguages).contains(code)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /// At an app open: removes the decks of every language the Languages page
@@ -100,10 +124,16 @@ extension LanguageSkillsOnState on AppState {
     final downloads = deckDownloads;
     if (downloads == null) return;
     for (final code in settings.languagesWithSkills.toList()) {
-      final skills = LanguageSkills.fromStored(
-        settings.languageSkillsOf(code) ?? const <String, String>{},
-      );
+      final stored =
+          settings.languageSkillsOf(code) ?? const <String, String>{};
+      final skills = LanguageSkills.fromStored(stored);
       if (skills.anyLearn) continue;
+      // An entry that holds keys but reads as nothing is unreadable, not
+      // Leave: keep it and its decks.
+      if (skills.isAllLeave && stored.isNotEmpty) continue;
+      // Skills are kept for the whole app: another profile that still learns
+      // the language keeps its decks.
+      if (_anyProfileLearns(code)) continue;
       if (downloads.hasDecks(code)) await downloads.remove(code);
       if (skills.isAllLeave) settings.setLanguageSkills(code, null);
     }
