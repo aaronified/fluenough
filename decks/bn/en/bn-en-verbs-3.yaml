@@ -10,6 +10,7 @@ tags: ["beginner", "unreviewed"]
 cards:
   "bn-2343":
     native: "to comb one's hair"
+    bases: { "আঁচড়ানো": "to comb" }
     notes:
       "n1": "The first person is {1}. The verb is made of চুল (cul), hair, and the verb for combing."
     examples:
@@ -46,7 +47,7 @@ cards:
   "bn-2348":
     native: "to close; to shut"
     notes:
-      "n1": "The verb is বন্ধ (bôndh), shut, with করা (kôrā), to do. The first person is {1}."
+      "n1": "The verb is বন্ধ (bôndho), shut, with করা (kôrā), to do. The first person is {1}."
     examples:
       "আমি দরজাটা বন্ধ করি।": "I close the door."
       "দরজাটা বন্ধ করো।": "Close the door. (familiar)"
@@ -57,20 +58,6 @@ cards:
     examples:
       "আমি দুধ গরম করি।": "I heat up the milk."
       "খাবারটা গরম করো।": "Heat up the food. (familiar)"
-  "bn-2350":
-    native: "to iron"
-    notes:
-      "n1": "Ironing clothes is ইস্ত্রি করা (istri kôrā). The noun ইস্ত্রি (istri) is the iron itself."
-    examples:
-      "আমি রোজ জামা ইস্ত্রি করি।": { native: "I iron my shirt every day.", bases: { "ইস্ত্রি": "iron" } }
-      "বাবা শার্ট ইস্ত্রি করেন।": { native: "Father irons the shirt. (respectful)", bases: { "ইস্ত্রি": "iron" } }
-  "bn-2351":
-    native: "to wash the dishes"
-    notes:
-      "n1": "মাজা (mājā) is to scrub. The first person is {1}; the third person is {2}."
-    examples:
-      "আমি রাতে বাসন মাজি।": { native: "I wash the dishes at night.", bases: { "মাজি": "scrub (I scrub)" } }
-      "মা রাতে বাসন মাজেন।": { native: "Mum washes the dishes at night. (respectful)", bases: { "মাজেন": "scrubs (respectful)" } }
   "bn-2352":
     native: "to forget"
     notes:
@@ -104,7 +91,7 @@ cards:
     notes:
       "n1": "The first person is {1}; the third person is বোঝায় (bojhāy). The person being explained to takes -কে (ke)."
     examples:
-      "আমি তোমাকে বোঝাই।": { native: "I explain it to you.", bases: { "বোঝাই": "explain (I explain)" } }
+      "আমি তোমাকে ব্যাপারটা বোঝাই।": { native: "I explain the matter to you.", bases: { "ব্যাপারটা": "the matter", "বোঝাই": "explain (I explain)" } }
       "সে আমাকে ব্যাপারটা বোঝায়।": { native: "She explains the matter to me.", bases: { "ব্যাপারটা": "the matter", "বোঝায়": "explains" } }
   "bn-2357":
     native: "to know (a person); to recognise"
@@ -141,13 +128,6 @@ cards:
     examples:
       "আমি রোজ গাড়ি চালাই।": { native: "I drive a car every day.", bases: { "চালাই": "drive (I drive)" } }
       "বাবা অফিসে গাড়ি চালান।": { native: "Father drives to the office. (respectful)", bases: { "অফিসে": "at the office", "চালান": "drive (respectful)" } }
-  "bn-2362":
-    native: "to tidy up"
-    notes:
-      "n1": "The familiar command is {1}; the third person is গোছায় (gochāy)."
-    examples:
-      "ঘরটা গোছাও।": { native: "Tidy the room. (familiar)", bases: { "গোছাও": "tidy (familiar)" } }
-      "সে বইগুলো গোছায়।": { native: "She tidies the books.", bases: { "গোছায়": "tidies" } }
   "bn-2363":
     native: "to take (time)"
     notes:
@@ -178,39 +158,12 @@ cards:
       "কলটা ঘোরান।": { native: "Turn the tap. (respectful)", bases: { "কলটা": "the tap", "ঘোরান": "turn (respectful)" } }
   "bn-2367":
     native: "to start up; to switch on (a machine)"
+    bases: { "চালু": "running; on" }
     notes:
       "n1": "The verb is চালু (cālu), running, with করা (kôrā), to do: to start a machine."
     examples:
       "আমি ফোনটা চালু করি।": { native: "I start up the phone.", bases: { "চালু": "running; on" } }
       "কম্পিউটারটা চালু করুন।": { native: "Start the computer. (respectful)", bases: { "চালু": "running; on" } }
-  "bn-2368":
-    native: "to hang up"
-    notes:
-      "n1": "Used for washing hung on a line. The first person is {1}."
-    examples:
-      "আমি কাপড়গুলো ঝোলাই।": { native: "I hang the clothes up.", bases: { "ঝোলাই": "hang (I hang)" } }
-      "দড়িতে কাপড় ঝোলাও।": { native: "Hang the clothes on the line. (familiar)", bases: { "দড়িতে": "on the line", "ঝোলাও": "hang (familiar)" } }
-  "bn-2369":
-    native: "to dry"
-    notes:
-      "n1": "The third person is {1}, used for clothes drying in the sun."
-    examples:
-      "কাপড়গুলো রোদে শুকায়।": { native: "The clothes dry in the sun.", bases: { "রোদে": "in the sun", "শুকায়": "dries" } }
-      "আমি রোদে কাপড় শুকাই।": { native: "I dry the clothes in the sun.", bases: { "রোদে": "in the sun", "শুকাই": "dry (I dry)" } }
-  "bn-2370":
-    native: "to fold"
-    notes:
-      "n1": "The verb is ভাঁজ (bhām̐j), a fold, with করা (kôrā): to fold something, such as a shirt."
-    examples:
-      "আমি কাপড় ভাঁজ করি।": { native: "I fold the clothes.", bases: { "ভাঁজ": "fold" } }
-      "জামাটা ভাঁজ করো।": { native: "Fold the shirt. (familiar)", bases: { "ভাঁজ": "fold" } }
-  "bn-2371":
-    native: "to arrange; to decorate"
-    notes:
-      "n1": "The first person is {1}; the third person is সাজায় (sājāy)."
-    examples:
-      "আমি টেবিলটা সাজাই।": { native: "I set the table.", bases: { "সাজাই": "arrange (I arrange)" } }
-      "মা ঘরটা সাজায়।": { native: "Mum decorates the room.", bases: { "সাজায়": "arranges" } }
   "bn-2372":
     native: "to shave"
     notes:
@@ -227,6 +180,7 @@ cards:
       "সে মাসে একবার চুল ছাঁটে।": { native: "She trims her hair once a month.", bases: { "মাসে": "in a month", "একবার": "once", "ছাঁটে": "trims" } }
   "bn-2374":
     native: "to make; to prepare"
+    bases: { "তৈরি": "ready; made" }
     notes:
       "n1": "The verb is তৈরি (toiri), ready, with করা (kôrā), to do: to make or prepare food and things."
     examples:
@@ -234,15 +188,16 @@ cards:
       "মা রাতের খাবার তৈরি করেন।": { native: "Mum prepares the dinner. (respectful)", bases: { "তৈরি": "ready; made" } }
   "bn-2375":
     native: "to use"
+    bases: { "ব্যবহার": "use" }
     notes:
-      "n1": "The verb is ব্যবহার (bêbohār), use, with করা (kôrā), to do."
+      "n1": "The verb is ব্যবহার (bêbôhār), use, with করা (kôrā), to do."
     examples:
       "আমি রোজ ফোন ব্যবহার করি।": { native: "I use the phone every day.", bases: { "ব্যবহার": "use" } }
       "এই ব্যাগটা ব্যবহার করো।": { native: "Use this bag. (familiar)", bases: { "এই": "this", "ব্যবহার": "use" } }
   "bn-2376":
     native: "to swim"
     notes:
-      "n1": "The verb is সাঁতার (sām̐tār), swimming, with কাটা (kāṭā): to swim. The first person is {1}."
+      "n1": "The verb is সাঁতার (śām̐tār), swimming, with কাটা (kāṭā): to swim. The first person is {1}."
     examples:
       "আমি রোজ সাঁতার কাটি।": { native: "I swim every day.", bases: { "সাঁতার": "swimming", "কাটি": "swim (I swim)" } }
       "ছেলেরা পুকুরে সাঁতার কাটে।": { native: "The boys swim in the pond.", bases: { "সাঁতার": "swimming", "কাটে": "swim (they swim)" } }
