@@ -145,7 +145,10 @@ class _ScriptOffersState extends State<ScriptOffers> {
                     title: l10n.searchAddCourse(course.name),
                     line: l10n.searchAddCourseLine(scriptName),
                     button: l10n.searchAdd,
-                    onPressed: () => AppNavigator.openLearnLanguages(context),
+                    onPressed: () => AppNavigator.openLearnLanguages(
+                      context,
+                      query: course.name,
+                    ),
                   ),
                 for (final language in known)
                   row(

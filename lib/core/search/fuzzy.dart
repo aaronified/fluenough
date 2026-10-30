@@ -1,13 +1,14 @@
 /// Typo-tolerant matching for the Decks search (#527), free of Flutter.
 ///
-/// The approved mockup (docs/mockups/deck-search.html, section 10) does it
-/// in two steps: overlapping three-letter pieces (trigrams), where a field
-/// matches when it holds at least half of the word's pieces, and, when that
+/// The approved mockup (removed once built, #527) did it in two steps:
+/// overlapping three-letter pieces (trigrams), where a field matches when it
+/// holds at least half of the word's pieces, and, when that
 /// finds nothing, an edit distance to the words the search knows (at most 1
 /// for a word of up to 4 letters, 2 for a longer one, a swap of two letters
-/// counting as one). It runs here in Dart over the folded text the search
-/// holds in memory, so it works offline and adds no dependency; the same
-/// two steps are what an FTS5 trigram table plus its vocabulary would do.
+/// counting as one). This is the decision step, in Dart over the folded text,
+/// and the whole search where there is no SQLite FTS5: with it, the FTS5
+/// trigram index in `card_index.dart` retrieves the cards that could match
+/// and this still decides which do (ADR-0049).
 library;
 
 /// How well a word was found in a field, best first. The search orders its

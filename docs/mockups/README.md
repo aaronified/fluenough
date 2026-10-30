@@ -50,48 +50,6 @@ approval.
   (PIN lock, profiles, Delete this profile) from the profile card (#204);
   and destructive actions in the error colour. Approved by the owner,
   2026-10-12, with the decisions the page marks Proposed (#496).
-- `deck-search.html`: the Decks tab's one search for decks, units and
-  words, in place of the filter row (#527; owner, 2026-10-16: "I just want
-  people to quickly find stuff. The filters can be replaced by a fts5
-  search with typo tolerance and the kind can be a chip."). Revised for the
-  owner's later answers (2026-10-16): the close button is in the search
-  bar; with nothing typed the path shows under a scrim, results start with
-  the first letter, and deleting every letter leaves a blank area; Latin
-  letters search the transliteration and the English meanings, and the
-  course's script searches the words; a query in another script says "This
-  script is not part of this course." and offers each of the learner's
-  courses that uses it as its target or native script (Devanagari: Hindi
-  and Marathi), or says it is not part of any; every card, set card, deck
-  and unit is its own row ("Don't group by meaning"); and "travl" also
-  finds "Bus, auto, cab" through its theme's tag ("Yes, also transport").
-  Each result has a kind chip that narrows the search ("Both"). Revised
-  again for the owner's answers on 0777b95 (2026-10-16): `kind:`,
-  `status:` and `tag:` tokens open a dropdown combobox of their values and
-  become chips inside the bar, a result's kind chip adds `kind:`, and chips
-  combine with text; the ✕ clears, then closes; the hint is "Search
-  Hindi", this course only; the `travel` tag is on the transport theme in
-  `decks/themes.yaml`, with a build-time check that the 0.4.3 reader
-  accepts it; and a script none of the learner's courses use offers to add
-  a catalog course written in it and, for any script not yet native, to add
-  its language to the languages you know. It uses the #528 language bar,
-  edge-masked where its row does not fit. Revised again for the owner's
-  answers on 65224c7 (2026-10-16): opened with nothing typed, the search
-  offers the tokens over the darkened path, a picked token offers its
-  values, typing replaces them with suggestions (completions of what is
-  typed) above the results, and clearing all text offers the tokens again,
-  in place of the blank area; `status:` is not learnt, learning, learnt,
-  forgetting, struggling or set aside, one per card, forgetting winning
-  over learning, each defined from the app's skills, FSRS due, leeches and
-  set-aside; `theme:` replaces `tag:`, its values the themes in
-  `decks/themes.yaml`, while "travl" still finds "Bus, auto, cab" through
-  the travel tag; and a script several languages use gets one row per
-  language to add to the languages you know. Hindi and Bengali, light and
-  dark, 1.4x, and a note on how FTS5 does it. Approved by the owner,
-  2026-10-16 ("Approve"), with the decisions the page marks Proposed and
-  the last answers folded in: `theme:` offers only this course's themes
-  ("Only this course's"); the status order and the 21-day learnt line
-  stand ("Yes, both"); and the languages-you-know rows leave out languages
-  the learner already has a course in ("Leave them out").
 - `reviewer-mode.html`: reviewer mode, adapted to today's app (owner,
   2026-10-17: "Mockup first"). Waiting for review with Reviewed, not sent
   and Reviewed and sent first, each sent suggestion Accepted, Rejected or

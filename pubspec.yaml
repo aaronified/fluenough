@@ -24,6 +24,9 @@ dependencies:
   # Local database: cards, scheduling state, append-only review log.
   drift: ^2.35.0
   drift_flutter: ^0.3.1
+  # The Decks search's FTS5 index (#527, ADR-0049) opens its own in-memory
+  # database. drift already depends on it, so the version is left to drift's.
+  sqlite3: any
   http: ^1.6.0
 
   # Text to speech. Wraps android.speech.tts and AVSpeechSynthesizer.

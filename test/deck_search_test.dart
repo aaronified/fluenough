@@ -4,7 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/core/models/deck.dart' show LanguageInfo;
+import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
+import 'package:fluenough/core/models/reading.dart' show QuestionCard;
 import 'package:fluenough/core/search/query.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/unit_search.dart';
@@ -152,6 +153,102 @@ void main() {
       expect(words.every((s) => s.text != 'nam'), isTrue);
       expect(searchSuggestions(state, l10n, 'qzxvbnm', telugu.first), isEmpty);
     });
+
+    group('the FTS5 index and the matcher alone', () {
+      tearDown(() => searchIndexEnabled = true);
+
+      String describe(SearchHit hit) => switch (hit) {
+        CardHit() => 'card ${hit.card.id} ${hit.rank} ${hit.moreDecks}',
+        EntryHit() => 'entry ${hit.entry.lemma} ${hit.rank}',
+        UnitHit() => 'unit ${hit.number} ${hit.rank}',
+        DeckHit() => 'deck ${hit.entry.id} ${hit.rank}',
+        ComingHit() => 'coming ${hit.unit.title} ${hit.rank}',
+      };
+
+      test('find the same cards in the same order', () {
+        const queries = <String>[
+          'why',
+          'namaskaram',
+          'namaskarm',
+          'to go',
+          'qzxvbnm',
+          'nam',
+          'wa',
+        ];
+        for (final query in queries) {
+          searchIndexEnabled = true;
+          final indexed = find(query).map(describe).toList();
+          searchIndexEnabled = false;
+          final plain = find(query).map(describe).toList();
+          expect(indexed, plain, reason: query);
+        }
+      });
+    });
+
+    test('a grammar table row is found as a word, by lemma and gloss', () {
+      final native = state.courseNative('te');
+      final table = state.decks.firstWhere(
+        (e) =>
+            e.language.code == 'te' &&
+            e.deck.native.code == native &&
+            (e.deck.pattern?.entries.isNotEmpty ?? false),
+      );
+      final row = table.deck.pattern!.entries.first;
+      for (final query in <String>[row.lemma, row.gloss]) {
+        final hits = find(query);
+        final rows = hits.whereType<EntryHit>().where(
+          (h) => h.entry.lemma == row.lemma,
+        );
+        final taught = hits.whereType<CardHit>().where(
+          (h) => searchForm(h.card.target) == searchForm(row.lemma),
+        );
+        // Found once: as the table's row, or as the word the course teaches.
+        expect(rows.length + taught.length, greaterThan(0), reason: query);
+        expect(rows.isEmpty || taught.isEmpty, isTrue, reason: query);
+        for (final hit in rows) {
+          expect(hit.kind, SearchKind.grammar);
+        }
+      }
+    });
+
+    test(
+      'a card taught in several decks is one row with the others counted',
+      () {
+        final native = state.courseNative('te');
+        final decksOf = <String, List<String>>{};
+        for (final e in state.decks) {
+          if (e.language.code != 'te' ||
+              e.deck.native.code != native ||
+              e.deck.pattern != null ||
+              e.deck.kind == DeckKind.reading ||
+              e.deck.kind == DeckKind.rules) {
+            continue;
+          }
+          for (final card in e.cards) {
+            if (card is QuestionCard || card.practiceOnly) continue;
+            decksOf.putIfAbsent(card.id, () => <String>[]).add(e.id);
+          }
+        }
+        final shared = decksOf.entries.where((e) => e.value.toSet().length > 1);
+        if (shared.isEmpty) {
+          markTestSkipped('no card of the Telugu course is in two decks');
+          return;
+        }
+        final id = shared.first.key;
+        final decks = shared.first.value.toSet();
+        final target = state.decks
+            .firstWhere((e) => e.id == shared.first.value.first)
+            .cards
+            .firstWhere((c) => c.id == id)
+            .target;
+        final rows = find(target)
+            .whereType<CardHit>()
+            .where((h) => h.card.id == id);
+        expect(rows, hasLength(1));
+        expect(rows.single.moreDecks, decks.length - 1);
+        expect(rows.single.deck.id, shared.first.value.first);
+      },
+    );
   });
 
   group('the Decks tab', () {
@@ -236,6 +333,69 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text(l10n.searchStatusForgetting), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the chips and the text share a line', (tester) async {
+      usePhone(tester);
+      // The test font draws every glyph a full em wide, so a chip is wider
+      // here than on a phone: a wider screen leaves the text its room.
+      tester.view.physicalSize = const Size(600 * 3, 844 * 3);
+      await pumpTelugu(tester);
+      await type(tester, 'kind:grammar ');
+      final chip = tester.getRect(find.byType(InputChip));
+      final field = tester.getRect(find.byType(TextField));
+      expect(chip.right, lessThanOrEqualTo(field.left + 1));
+      expect(chip.top, lessThan(field.bottom));
+      expect(field.top, lessThan(chip.bottom));
+    });
+
+    testWidgets(
+      'a tap on the scrim closes the search, one on the bar does not',
+      (tester) async {
+        usePhone(tester);
+        await pumpTelugu(tester);
+        tester
+            .widget<CustomScrollView>(find.byType(CustomScrollView))
+            .controller!
+            .jumpTo(0);
+        await tester.pumpAndSettle();
+        await tester.tap(find.byType(TextField));
+        await tester.pumpAndSettle();
+        final l10n = l10nOf(tester);
+        expect(find.byTooltip(l10n.decksSearchClose), findsOneWidget);
+        await tester.tap(find.byType(TextField));
+        await tester.pumpAndSettle();
+        expect(find.byTooltip(l10n.decksSearchClose), findsOneWidget);
+        await tester.tapAt(const Offset(195, 780));
+        await tester.pumpAndSettle();
+        expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
+      },
+    );
+
+    testWidgets('a swipe on the bar runs the search in the next course', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final s = AppState.test();
+      await s.load();
+      s.showLanguage('te');
+      if (s.languageChoices.length < 2) {
+        markTestSkipped('the test profile learns one language');
+        return;
+      }
+      await pumpScreen(tester, const DecksPage(), state: s);
+      await type(tester, 'why');
+      await tester.fling(
+        find.byIcon(Icons.search).first,
+        const Offset(-300, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(s.shownLanguage, isNot('te'));
+      expect(
+        tester.widget<TextField>(find.byType(TextField)).controller!.text,
+        'why',
+      );
     });
   });
 }

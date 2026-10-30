@@ -11600,6 +11600,20 @@
       }
     }
   },
+  "searchTaughtIn": "In {deck} and {count, plural, one{1 more deck} other{{count} more decks}}",
+  "@searchTaughtIn": {
+    "description": "Line under a word found in several decks: the deck it is taught in first and how many others teach it (#527).",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
   "searchTagged": "Tagged {tag}",
   "@searchTagged": {
     "description": "Third line of a result found by a theme's tag, not its name (#527).",
