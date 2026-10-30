@@ -275,7 +275,9 @@ units:
   # -ی (-ī), the izafat as grammar, and the Persian "and", -o-, in pairs
   # such as صبح و شام (subh-o-śām, "morning and evening"). Each card gives
   # the Hindi-leaning word beside it where there is one.
-  - planned: { id: "hi-grammar-persian-words", grammar: ["persian-affixes", "persian-compounds"], words: 12 }
+  - decks: ["hi-grammar-persian-affixes", "hi-grammar-persian-compounds", "hi-reading-persian-words"]
+    words: 12
+    grammar: ["persian-affixes", "persian-compounds"]
     listening_passages:
       - { id: "shopkeepers-and-houses", text: { "en": "Naming people and places by what they hold: shopkeeper, post office, library" } }
     reading_passages:
