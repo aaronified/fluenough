@@ -1,0 +1,187 @@
+schema: 1
+id: "bn-en-chores"
+kind: "layer"
+core: "bn-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Household chores"
+description: "Sweeping, washing, drying and tidying the house, and sharing the work. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2263":
+    native: "broom"
+    notes:
+      "n1": "The verb for sweeping is {1}, made from the broom."
+    examples:
+      "ঝাড়ু কোথায়?": "Where is the broom?"
+      "আমার একটা নতুন ঝাড়ু আছে।": { native: "I have a new broom.", bases: { "আছে": "to be; there is" } }
+  "bn-2264":
+    native: "to sweep"
+    notes:
+      "n1": "The verb is {1}, to give, with the broom as the thing given."
+    examples:
+      "সকালে ঝাড়ু দিই।": "I sweep in the morning."
+      "তুমি ঝাড়ু দাও।": "You sweep. (familiar)"
+  "bn-2265":
+    native: "dust"
+    notes:
+      "n1": "Dusting is {1}; the verb is the one for shaking something off."
+    examples:
+      "ঘরে অনেক ধুলো।": "There is a lot of dust in the room."
+      "ধুলো ঝাড়ুন।": { native: "Please dust. (respectful)", bases: { "ঝাড়ুন": "to shake off; to dust" } }
+  "bn-2266":
+    native: "to dust"
+    notes:
+      "n1": "The verb alone is {1}: to shake or brush something off."
+    examples:
+      "আমি রোজ ধুলো ঝাড়ি।": { native: "I dust every day.", bases: { "ঝাড়ি": "dust" } }
+      "তুমি আলমারির ধুলো ঝাড়ো।": { native: "You dust the cupboard. (familiar)", bases: { "ঝাড়ো": "dust" } }
+  "bn-2267":
+    native: "dirt; rubbish"
+    synonyms: { "s1": "rubbish; refuse" }
+    antonyms: { "a1": "clean" }
+    notes:
+      "n1": "As an adjective it means dirty: {1} is dirty clothes."
+    examples:
+      "এই কাপড়গুলো ময়লা।": "These clothes are dirty."
+      "ময়লাটা ফেলে দাও।": { native: "Throw the rubbish away. (familiar)", bases: { "ময়লাটা": "the rubbish" } }
+  "bn-2268":
+    native: "rubbish bin"
+    notes:
+      "n1": "A bin for {1}, the rubbish; a {2} is a basket."
+    examples:
+      "রান্নাঘরে একটা ময়লার ঝুড়ি আছে।": { native: "There is a rubbish bin in the kitchen.", bases: { "আছে": "to be; there is" } }
+      "ময়লার ঝুড়িটা খালি করো।": "Empty the rubbish bin. (familiar)"
+  "bn-2269":
+    native: "rubbish; refuse"
+    notes:
+      "n1": "A more formal word than {1} for refuse in general."
+    examples:
+      "আবর্জনাগুলো বাইরে ফেলো।": { native: "Throw the rubbish outside. (familiar)", bases: { "আবর্জনাগুলো": "the rubbish (plural)" } }
+      "এই আবর্জনা ভারী।": "This rubbish is heavy."
+  "bn-2270":
+    native: "plate"
+    notes:
+      "n1": "{1} means all the plates and utensils together."
+    examples:
+      "থালাটা টেবিলে রাখো।": { native: "Put the plate on the table. (familiar)", bases: { "থালাটা": "the plate", "টেবিলে": "on the table", "রাখো": "put; keep" } }
+      "আমার থালায় ভাত আছে।": { native: "There is rice on my plate.", bases: { "থালায়": "on the plate", "আছে": "to be; there is" } }
+  "bn-2271":
+    native: "to wash the dishes"
+    notes:
+      "n1": "{1} is to scrub; {2} is to brush the teeth, from the same verb."
+    examples:
+      "আমি রোজ বাসন মাজি।": { native: "I wash the dishes every day.", bases: { "মাজি": "to scrub; wash" } }
+      "দাদা বাসন মাজেন।": { native: "My elder brother washes the dishes. (respectful)", bases: { "মাজেন": "to scrub; wash" } }
+  "bn-2272":
+    native: "to wash clothes"
+    notes:
+      "n1": "{1} is the verb alone: to wash clothes, or to rinse them."
+    examples:
+      "মা কাপড় কাচেন।": { native: "Mother washes the clothes. (respectful)", bases: { "কাচেন": "to wash" } }
+      "আমি এখন কাপড় কাচি।": { native: "I am washing clothes now.", bases: { "কাচি": "to wash" } }
+  "bn-2273":
+    native: "to iron"
+    notes:
+      "n1": "{1} is also the iron, the appliance; the word comes from English."
+    examples:
+      "মা জামা ইস্ত্রি করেন।": "Mother irons the shirt. (respectful)"
+      "আমি শার্টটা ইস্ত্রি করি।": "I iron the shirt."
+  "bn-2274":
+    native: "to fold"
+    notes:
+      "n1": "{1} is the fold or crease itself; the verb makes one."
+    examples:
+      "কাপড়গুলো ভাঁজ করো।": "Fold the clothes. (familiar)"
+      "চাদরটা ভাঁজ করে রাখো।": { native: "Fold the sheet and put it away. (familiar)", bases: { "রাখো": "put away; keep" } }
+  "bn-2275":
+    native: "to dry"
+    notes:
+      "n1": "Clothes and food dry in {1}, the sunlight."
+    examples:
+      "কাপড়গুলো রোদে শুকাচ্ছে।": { native: "The clothes are drying in the sun.", bases: { "রোদে": "in the sun", "শুকাচ্ছে": "drying" } }
+      "ছাদে কাপড় শুকাও।": { native: "Dry the clothes on the roof. (familiar)", bases: { "ছাদে": "on the roof", "শুকাও": "dry" } }
+  "bn-2276":
+    native: "to hang"
+    notes:
+      "n1": "Clothes hang on {1}, a rope or line, to dry."
+    examples:
+      "দড়িতে কাপড় ঝোলাও।": { native: "Hang the clothes on the line. (familiar)", bases: { "দড়িতে": "on the line", "ঝোলাও": "hang" } }
+      "জামাটা হুকে ঝোলাও।": { native: "Hang the shirt on the hook. (familiar)", bases: { "হুকে": "on the hook", "ঝোলাও": "hang" } }
+  "bn-2277":
+    native: "to tidy up"
+    notes:
+      "n1": "To put things in order before a trip, or a room in order."
+    examples:
+      "ঘরটা গুছিয়ে রাখো।": { native: "Tidy the room and keep it that way. (familiar)", bases: { "গুছিয়ে": "tidying", "রাখো": "keep" } }
+      "আমি আমার ঘর গুছিয়েছি।": { native: "I have tidied my room.", bases: { "গুছিয়েছি": "have tidied" } }
+  "bn-2278":
+    native: "to arrange; to set out"
+    notes:
+      "n1": "To set things out in order: a table for a meal, or a room for a guest."
+    examples:
+      "খাবার টেবিলে থালা সাজাও।": { native: "Set the plates on the dining table. (familiar)", bases: { "টেবিলে": "on the table", "সাজাও": "set out" } }
+      "ঘরটা সুন্দর করে সাজাও।": { native: "Arrange the room nicely. (familiar)", bases: { "সাজাও": "arrange" } }
+  "bn-2279":
+    native: "to make the bed"
+    notes:
+      "n1": "Done each morning, after getting up."
+    examples:
+      "সকালে বিছানা করি।": "I make the bed in the morning."
+      "তুমি বিছানা করো।": "You make the bed. (familiar)"
+  "bn-2280":
+    native: "bedsheet; cover"
+    notes:
+      "n1": "A sheet for the bed, or a large cloth worn over the shoulders."
+    examples:
+      "বিছানায় নতুন চাদর আছে।": { native: "There is a new sheet on the bed.", bases: { "আছে": "to be; there is" } }
+      "চাদরটা ধুয়ে শুকাও।": { native: "Wash the sheet and dry it. (familiar)", bases: { "চাদরটা": "the sheet", "শুকাও": "dry" } }
+  "bn-2281":
+    native: "pillow"
+    notes:
+      "n1": "A pillow for the head; a bed usually has one."
+    examples:
+      "আমার বালিশটা নরম।": { native: "My pillow is soft.", bases: { "বালিশটা": "the pillow" } }
+      "বালিশটা বিছানায় রাখো।": { native: "Put the pillow on the bed. (familiar)", bases: { "বালিশটা": "the pillow", "রাখো": "put" } }
+  "bn-2282":
+    native: "to share"
+    notes:
+      "n1": "{1} is a share or a part; the verb divides work or food between people."
+    examples:
+      "আমরা কাজ ভাগ করে নিই।": { native: "We share the work between us.", bases: { "নিই": "take" } }
+      "ভাই আর আমি কাজ ভাগ করি।": "My brother and I share the work."
+  "bn-2283":
+    native: "responsibility; duty"
+    notes:
+      "n1": "A duty: the work a person is expected to do, in a house or a job."
+    examples:
+      "এটা আমার দায়িত্ব।": "This is my responsibility."
+      "বাসন মাজা তোমার দায়িত্ব।": "Washing the dishes is your responsibility."
+  "bn-2284":
+    native: "rule; custom"
+    notes:
+      "n1": "Every house, class and game has its own rules."
+    examples:
+      "বাড়ির নিয়ম মানো।": { native: "Follow the house rules. (familiar)", bases: { "মানো": "obey; follow" } }
+      "এই বাড়িতে এটাই নিয়ম।": { native: "In this house, that is the rule.", bases: { "এটাই": "that (is)" } }
+  "bn-2285":
+    native: "plant; tree"
+    notes:
+      "n1": "A tree, or any plant, including one in a pot on a balcony."
+    examples:
+      "বারান্দায় একটা গাছ আছে।": { native: "There is a plant on the balcony.", bases: { "বারান্দায়": "on the balcony", "আছে": "to be; there is" } }
+      "গাছগুলো বড় হয়েছে।": { native: "The plants have grown.", bases: { "হয়েছে": "have become; have grown" } }
+  "bn-2286":
+    native: "to water the plants"
+    notes:
+      "n1": "The plants take the ending {1}, for 'on the plant'; the water goes to them."
+    examples:
+      "রোজ সকালে গাছে জল দিই।": "I water the plants every morning."
+      "গাছে জল দাও।": "Water the plants. (familiar)"
+  "bn-2287":
+    native: "housework"
+    notes:
+      "n1": "All the work of the house: cooking, washing, sweeping and tidying."
+    examples:
+      "আমরা সবাই ঘরের কাজ করি।": "We all do the housework."
+      "ভাই ঘরের কাজে আমাকে সাহায্য করে।": "My brother helps me with the housework."
