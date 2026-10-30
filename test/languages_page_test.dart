@@ -3,6 +3,8 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
@@ -70,6 +72,42 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   }
+
+  testWidgets('a long press on a skill pill shows its skill and state, and a '
+      'tap still cycles it (#913)', (tester) async {
+    final state = await pumpLanguages(tester);
+    await tapKey(tester, 'language-es');
+    final text = l10n(tester);
+    final speak = find.byKey(const ValueKey<String>('skill-speak'));
+    final before = Map.of(state.settings.languageSkillsOf('es')!);
+    await tester.longPress(speak);
+    await tester.pumpAndSettle();
+    expect(
+      find.text(
+        text.languagesSkillState(
+          SkillKind.speak.label(text),
+          SkillState.learn.label(text),
+        ),
+      ),
+      findsOneWidget,
+    );
+    expect(state.settings.languageSkillsOf('es'), before, reason: 'no cycle');
+    await tapKey(tester, 'skill-speak');
+    expect(state.settings.languageSkillsOf('es'), isNot(before));
+  });
+
+  testWidgets('the sheet and page icons show a one-word hint on a long '
+      'press (#913)', (tester) async {
+    await pumpLanguages(tester);
+    final text = l10n(tester);
+    await tester.longPress(find.byIcon(Icons.bug_report_outlined));
+    await tester.pumpAndSettle();
+    expect(find.text(text.hintReport), findsOneWidget);
+    await tapKey(tester, 'language-es');
+    await tester.longPress(find.text('i'));
+    await tester.pumpAndSettle();
+    expect(find.text(text.hintInfo), findsOneWidget);
+  });
 
   testWidgets('a tap cycles Know, Learn, Leave; the last Leave sends the '
       'language back to the pool', (tester) async {

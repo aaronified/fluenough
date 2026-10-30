@@ -89,7 +89,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
               builder: (context, _) => _held(state, all).isEmpty
                   ? const SizedBox.shrink()
                   : IconButton(
-                      tooltip: l10n.languagesAdd,
+                      tooltip: l10n.hintAdd,
                       onPressed: () => _add(state, all),
                       icon: const Icon(Icons.add),
                     ),
@@ -629,6 +629,7 @@ class _LanguageRow extends StatelessWidget {
       kind: key.kind,
       mark: markOf(st, covered: covered),
       label: skillSemantics(l10n, name, st, covered: covered),
+      tip: l10n.languagesSkillState(name, st.label(l10n)),
       glyph: script != null && several
           ? scriptGlyph(script, l10n.scriptNameOr(script, view.name))
           : null,

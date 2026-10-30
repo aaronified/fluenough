@@ -82,7 +82,7 @@ class ReportButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => IconButton(
-    tooltip: AppLocalizations.of(context)!.reportOpen,
+    tooltip: AppLocalizations.of(context)!.hintReport,
     icon: const Icon(Icons.bug_report_outlined),
     onPressed: () => open(context, detail: detail),
   );

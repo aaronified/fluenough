@@ -2164,10 +2164,6 @@
       }
     }
   },
-  "reportOpen": "Get support or report a problem",
-  "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback."
-  },
   "reportTitle": "Support and feedback",
   "@reportTitle": {
     "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
@@ -12060,6 +12056,26 @@
   "@hintRecord": {
     "description": "Hint shown on a long press on the round microphone button of the sound check, which records two seconds. One word, no full stop."
   },
+  "hintReport": "Report",
+  "@hintReport": {
+    "description": "Hint shown on a long press on the bug icon in an app bar, which opens the report screen. One word, no full stop."
+  },
+  "hintUpdate": "Update",
+  "@hintUpdate": {
+    "description": "Hint shown on a long press on the sync icon on a language sheet, which checks for deck updates. One word, no full stop."
+  },
+  "hintInfo": "Info",
+  "@hintInfo": {
+    "description": "Hint shown on a long press on the i icon on a language sheet, which opens the language details. One word, no full stop."
+  },
+  "hintDelete": "Delete",
+  "@hintDelete": {
+    "description": "Hint shown on a long press on the bin icon on a language sheet, which deletes its data. One word, no full stop."
+  },
+  "hintAdd": "Add",
+  "@hintAdd": {
+    "description": "Hint shown on a long press on the plus icon on the Languages page, which adds a language. One word, no full stop."
+  },
   "languagesTitle": "Languages",
   "@languagesTitle": {
     "description": "Title of the Languages page (#907), where each language's four skills, Speak, Hear, Read and Write, are set to Know, Learn or Leave, and the Settings row that opens it."
@@ -12385,24 +12401,6 @@
       "total": {
         "type": "int",
         "example": "118"
-      }
-    }
-  },
-  "languagesDeleteData": "Delete data now",
-  "@languagesDeleteData": {
-    "description": "Screen reader label of the bin on the sheet, which removes a language's decks and progress at once."
-  },
-  "languagesUpdateIcon": "Check for deck updates",
-  "@languagesUpdateIcon": {
-    "description": "Screen reader label of the sheet's update-check icon."
-  },
-  "languagesInfoIcon": "Details about {language}",
-  "@languagesInfoIcon": {
-    "description": "Screen reader label of the i on the sheet.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
       }
     }
   },

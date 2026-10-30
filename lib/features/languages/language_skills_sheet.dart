@@ -506,12 +506,12 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   _view.canLearn &&
                   (hasDecks || _skills.anyLearn))
                 IconButton(
-                  tooltip: l10n.languagesUpdateIcon,
+                  tooltip: l10n.hintUpdate,
                   onPressed: _checkUpdates,
                   icon: const Icon(Icons.sync),
                 ),
               IconButton(
-                tooltip: l10n.languagesInfoIcon(_view.name),
+                tooltip: l10n.hintInfo,
                 onPressed: _showInfo,
                 icon: Text(
                   'i', // ui-literal-ok: the info glyph, not prose; the tooltip is the label
@@ -640,7 +640,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
               children: <Widget>[
                 if (!widget.draft && hasDecks)
                   IconButton(
-                    tooltip: l10n.languagesDeleteData,
+                    tooltip: l10n.hintDelete,
                     onPressed: _delete,
                     icon: Icon(Icons.delete_outline, color: scheme.error),
                   ),
@@ -788,6 +788,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       big: true,
       mark: markOf(state, covered: covered),
       label: skillSemantics(l10n, name, state, covered: covered),
+      tip: l10n.languagesSkillState(name, state.label(l10n)),
       hint: l10n.languagesTapToChange(next.label(l10n)),
       onTap: () => _cycle(key),
     );
