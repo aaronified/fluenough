@@ -280,6 +280,8 @@ Rarh), Hindustani the Standard Hindi forms, Spanish the untagged form.
 Another language needs its variety named there first. Words and set phrases
 are covered; sentences are not on Wiktionary.
 
+Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The app's Sources screen carries the same line.
+
 `derive_phonetic.py` applies the ordered rules of
 `decks/<lang>/<lang>-phonetics.yaml` ([format](https://github.com/aaronified/fluenough/blob/main/docs/DECK-FORMAT.md#phonetic-rules-files))
 to the broad `ipa`. A card the rules do not change gets nothing unless
