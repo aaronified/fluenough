@@ -14,8 +14,8 @@
 # 900 and 1,200 words; low confidence): French is tier I
 # (docs/plans/language-paths-scheme.md, x1.0), so they are not scaled, and
 # the path sets no `levels:` of its own (ADR-0045: it is for languages whose
-# vocabulary the fixed sizes do not fit). The units hold about 735 words for
-# A1, 830 for A2 and 1,180 for B1, each within half to one and a half times
+# vocabulary the fixed sizes do not fit). The units hold about 741 words for
+# A1 (41 units), 830 for A2 (31 units) and 1,180 for B1 (40 units), each within half to one and a half times
 # the plan's size. They are one number for every native language. A theme
 # named here that decks/themes.yaml does not list yet (money, literature
 # and verbs-5 today) is added to it with its first deck.
@@ -61,6 +61,15 @@
 # describing words, where things are, more verbs. It was meant to come
 # from Wikipedia's counts (tools/wikipedia_frequency.py, #516): order the
 # core again from the counts once they are written.
+#
+# French is the French of France (owner, 2026-10-30): the course and its
+# TTS voice follow fr-FR. The language block's `tts: "fr-FR"` is written
+# when the first deck is.
+# The present progressive (en train de) is taught at A2, as Spanish's
+# estar + gerund is, after the present and the near future and before the
+# past tenses; the gerondif stays at B1. fr-numbers-big teaches 70 to 99
+# with the quatre-vingts system in full (the 70-99 forms plus 100, 1000 and
+# the like). The plural unit notes liaison on each card it affects.
 #
 # Every deck of French is listed exactly once.
 schema: 1
@@ -188,11 +197,11 @@ units:
       - { id: "le-or-la", text: { "en": "Naming things in a kitchen with le, la, l' and les, un and une" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels on the shelves of a small shop" } }
-  - planned: { id: "fr-grammar-plural", grammar: "plural" }
+  - planned: { id: "fr-grammar-plural", grammar: ["plural", "liaison"] }
     listening_passages:
-      - { id: "several-things", text: { "en": "Naming several things in a kitchen: les, des and the plural endings" } }
+      - { id: "several-things", text: { "en": "Naming several things in a kitchen: les, des and the plural endings, with the liaison in les amis and des enfants" } }
     reading_passages:
-      - { id: "plural-labels", text: { "en": "Shop labels for one item and for several" } }
+      - { id: "plural-labels", text: { "en": "Shop labels for one item and for several, such as les amis and des enfants on a club noticeboard" } }
   - planned: { id: "fr-grammar-adjective-agreement", grammar: ["adjective-agreement", "adjective-position"] }
     listening_passages:
       - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
@@ -250,11 +259,11 @@ units:
       - { id: "whose-is-it", text: { "en": "Sorting out whose bag, coat and keys are whose" } }
     reading_passages:
       - { id: "family-email", text: { "en": "A short email about my brother, my sister and their children" } }
-  - planned: { id: "fr-numbers-big", theme: "numbers-big", words: 35 }
+  - planned: { id: "fr-numbers-big", theme: "numbers-big", words: 40 }
     listening_passages:
-      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with soixante-dix and quatre-vingts" } }
+      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with soixante-dix, quatre-vingts and quatre-vingt-dix-neuf" } }
     reading_passages:
-      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board, from soixante-dix to quatre-vingt-dix-neuf" } }
   - planned: { id: "fr-market", theme: "market", words: 35 }
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
@@ -333,6 +342,11 @@ units:
       - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
     reading_passages:
       - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
+  - planned: { id: "fr-grammar-present-progressive", grammar: "en-train-de" }
+    listening_passages:
+      - { id: "right-now", text: { "en": "Saying what people are doing right now on the phone: je suis en train de manger" } }
+    reading_passages:
+      - { id: "busy-messages", text: { "en": "Short messages saying what each person is in the middle of doing" } }
   - planned: { id: "fr-calendar", theme: "calendar", words: 35 }
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
