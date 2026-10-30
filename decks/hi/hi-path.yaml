@@ -247,7 +247,8 @@ units:
   - decks: ["hi-daily-life", "hi-grammar-conjunct-verbs", "*"]
     words: 7
     grammar: ["conjunct-verbs"]
-  - planned: { id: "hi-weather", theme: "weather", words: 45 }
+  - decks: ["hi-weather", "hi-reading-weather", "*"]
+    words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
@@ -255,12 +256,15 @@ units:
   - decks: ["hi-calendar", "hi-grammar-past", "*"]
     words: 15
     grammar: ["past"]
-  - planned: { id: "hi-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["hi-grammar-ordinals", "hi-reading-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "hi-festivals", theme: "festivals", words: 40 }
+  - decks: ["hi-festivals", "hi-reading-festivals", "*"]
+    words: 40
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
@@ -271,7 +275,9 @@ units:
   # -ی (-ī), the izafat as grammar, and the Persian "and", -o-, in pairs
   # such as صبح و شام (subh-o-śām, "morning and evening"). Each card gives
   # the Hindi-leaning word beside it where there is one.
-  - planned: { id: "hi-grammar-persian-words", grammar: ["persian-affixes", "persian-compounds"], words: 12 }
+  - decks: ["hi-grammar-persian-affixes", "hi-grammar-persian-compounds", "hi-reading-persian-words"]
+    words: 12
+    grammar: ["persian-affixes", "persian-compounds"]
     listening_passages:
       - { id: "shopkeepers-and-houses", text: { "en": "Naming people and places by what they hold: shopkeeper, post office, library" } }
     reading_passages:
@@ -279,7 +285,8 @@ units:
   - decks: ["hi-grammar-ne", "hi-grammar-perfect"]
     words: 0
     grammar: ["ne", "perfect"]
-  - planned: { id: "hi-shopping", theme: "shopping", words: 50 }
+  - decks: ["hi-shopping", "hi-reading-shopping", "*"]
+    words: 50
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
     reading_passages:

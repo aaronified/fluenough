@@ -1,0 +1,121 @@
+schema: 1
+id: "hi-grammar-persian-affixes"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+
+cards:
+  - id: "hi-1388"
+    target: "ईमानदार"
+    target_scripts: { perso_arabic: "ایماندار" }
+    reading: "īmāndār"
+    ipa: "iːmaːnd̪aːr"
+    pos: "adj"
+    bases: [{"word": "ईमानदार", "base": "ईमान", "reading": "īmān"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह ईमानदार है।", reading: "vah īmāndār hai.", ipa: "ʋəɦ iːmaːnd̪aːr ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "ईमानदार लोग अच्छे हैं।", reading: "īmāndār lōg acchē haim̐.", ipa: "iːmaːnd̪aːr loːɡ ətʃtʃʰeː ɦɛ̃ː", bases: [{"word": "लोग", "ref": "hi-0761"}, {"word": "अच्छे", "ref": "hi-0898"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1389"
+    target: "ज़िम्मेदार"
+    target_scripts: { perso_arabic: "ذمہ دار" }
+    reading: "zimmēdār"
+    ipa: "zɪmmeːd̪aːr"
+    pos: "adj"
+    bases: [{"word": "ज़िम्मेदार", "base": "ज़िम्मा", "reading": "zimmā"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह ज़िम्मेदार है।", reading: "vah zimmēdār hai.", ipa: "ʋəɦ zɪmmeːd̪aːr ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सब ज़िम्मेदार हैं।", reading: "sab zimmēdār haim̐.", ipa: "səb zɪmmeːd̪aːr ɦɛ̃ː", bases: [{"word": "सब", "ref": "hi-0054"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1390"
+    target: "नासमझ"
+    target_scripts: { perso_arabic: "ناسمجھ" }
+    reading: "nāsmajh"
+    ipa: "naːsmədʒʱ"
+    pos: "adj"
+    bases: [{"word": "नासमझ", "base": "समझ", "reading": "samajh"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह नासमझ है।", reading: "vah nāsmajh hai.", ipa: "ʋəɦ naːsmədʒʱ ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "नासमझ बच्चा", reading: "nāsmajh baccā", ipa: "naːsmədʒʱ bətʃtʃaː", bases: [{"word": "बच्चा", "ref": "hi-0111"}] }
+  - id: "hi-1391"
+    target: "बेकार"
+    target_scripts: { perso_arabic: "بیکار" }
+    reading: "bēkār"
+    ipa: "beːkaːr"
+    pos: "adj"
+    bases: [{"word": "बेकार", "base": "कार", "reading": "kār"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह बेकार है।", reading: "yah bēkār hai.", ipa: "jəɦ beːkaːr ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "वह बेकार है।", reading: "vah bēkār hai.", ipa: "ʋəɦ beːkaːr ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1392"
+    target: "बेशक"
+    target_scripts: { perso_arabic: "بیشک" }
+    reading: "bēśak"
+    ipa: "beːʃək"
+    pos: "adv"
+    bases: [{"word": "बेशक", "base": "शक", "reading": "śak"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बेशक, मैं आऊँगा।", reading: "bēśak, maim̐ āūm̐gā.", ipa: "beːʃək mɛ̃ː aːũːɡaː", bases: [{"word": "मैं", "ref": "hi-0745"}, {"word": "आऊँगा", "ref": "hi-0778"}] }
+      - { target: "वह बेशक आएगा।", reading: "vah bēśak āēgā.", ipa: "ʋəɦ beːʃək aːeːɡaː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "आएगा", "ref": "hi-0778"}] }
+  - id: "hi-1393"
+    target: "डाकखाना"
+    target_scripts: { perso_arabic: "ڈاکخانہ" }
+    reading: "ḍākkhānā"
+    ipa: "ɖaːkkʰaːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: [{"word": "डाकखाना", "base": "डाक", "reading": "ḍāk"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डाकखाना बाज़ार में है।", reading: "ḍākkhānā bāzār mēm̐ hai.", ipa: "ɖaːkkʰaːnaː baːzaːr mẽː ɦɛː", bases: [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मैं डाकखाने जाता हूँ।", reading: "maim̐ ḍākkhānē jātā hūm̐.", ipa: "mɛ̃ː ɖaːkkʰaːneː dʒaːt̪aː ɦũː", bases: [{"word": "मैं", "ref": "hi-0745"}, {"word": "डाकखाने", "base": "डाकखाना", "reading": "ḍākkhānā"}, {"word": "जाता", "ref": "hi-0777"}, {"word": "हूँ", "ref": "hi-0780"}] }
+  - id: "hi-1394"
+    target: "किताबख़ाना"
+    target_scripts: { perso_arabic: "کتابخانہ" }
+    reading: "kitābk͟hānā"
+    ipa: "kɪt̪aːbxaːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: [{"word": "किताबख़ाना", "ref": "hi-1095"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "किताबख़ाना बड़ा है।", reading: "kitābk͟hānā baṛā hai.", ipa: "kɪt̪aːbxaːnaː bəɽaː ɦɛː", bases: [{"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मैं किताबख़ाने में पढ़ता हूँ।", reading: "maim̐ kitābk͟hānē mēm̐ paṛhtā hūm̐.", ipa: "mɛ̃ː kɪt̪aːbxaːneː mẽː pəɽʱt̪aː ɦũː", bases: [{"word": "मैं", "ref": "hi-0745"}, {"word": "किताबख़ाने", "base": "किताबख़ाना", "reading": "kitābk͟hānā"}, {"word": "में", "ref": "hi-0274"}, {"word": "पढ़ता", "ref": "hi-0114"}, {"word": "हूँ", "ref": "hi-0780"}] }
+  - id: "hi-1395"
+    target: "कारख़ाना"
+    target_scripts: { perso_arabic: "کارخانہ" }
+    reading: "kārk͟hānā"
+    ipa: "kaːrxaːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: [{"word": "कारख़ाना", "base": "कार", "reading": "kār"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कारख़ाना शहर में है।", reading: "kārk͟hānā śahar mēm̐ hai.", ipa: "kaːrxaːnaː ʃəɦər mẽː ɦɛː", bases: [{"word": "शहर", "ref": "hi-0195"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "कारख़ाने में बहुत काम है।", reading: "kārk͟hānē mēm̐ bahut kām hai.", ipa: "kaːrxaːneː mẽː bəɦʊt̪ kaːm ɦɛː", bases: [{"word": "कारख़ाने", "base": "कारख़ाना", "reading": "kārk͟hānā"}, {"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "काम", "ref": "hi-0194"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1396"
+    target: "दोस्ती"
+    target_scripts: { perso_arabic: "دوستی" }
+    reading: "dōstī"
+    ipa: "d̪oːst̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: [{"word": "दोस्ती", "ref": "hi-0185"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हमारी दोस्ती अच्छी है।", reading: "hamārī dōstī acchī hai.", ipa: "ɦəmaːriː d̪oːst̪iː ətʃtʃʰiː ɦɛː", bases: [{"word": "हमारी", "ref": "hi-0756"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "दोस्ती बहुत पुरानी है।", reading: "dōstī bahut purānī hai.", ipa: "d̪oːst̪iː bəɦʊt̪ pʊraːniː ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "पुरानी", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0112"}] }

@@ -1,0 +1,585 @@
+schema: 1
+id: "hi-weather"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1253"
+    target: "मौसम"
+    target_scripts: { perso_arabic: "موسم" }
+    reading: "mausam"
+    ipa: "mɔːsəm"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज मौसम अच्छा है।", reading: "āj mausam acchā hai.", ipa: "aːdʒ mɔːsəm ətʃtʃʰaː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मौसम सुहावना है।", reading: "mausam suhāvnā hai.", ipa: "mɔːsəm sʊɦaːʋnaː ɦɛː", bases: [{"word": "सुहावना", "ref": "hi-1286"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1254"
+    target: "बारिश"
+    target_scripts: { perso_arabic: "بارش" }
+    reading: "bāriś"
+    ipa: "baːrɪʃ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बारिश तेज़ है।", reading: "bāriś tēz hai.", ipa: "baːrɪʃ t̪eːz ɦɛː", bases: [{"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आज बारिश नहीं है।", reading: "āj bāriś nahīm̐ hai.", ipa: "aːdʒ baːrɪʃ nəɦĩː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1255"
+    target: "धूप"
+    target_scripts: { perso_arabic: "دھوپ" }
+    reading: "dhūp"
+    ipa: "d̪ʱuːp"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज धूप निकली है।", reading: "āj dhūp niklī hai.", ipa: "aːdʒ d̪ʱuːp nɪkliː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "निकली", "base": "निकलना", "reading": "niklnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "धूप में बहुत गर्मी है।", reading: "dhūp mēm̐ bahut garmī hai.", ipa: "d̪ʱuːp mẽː bəɦʊt̪ ɡərmiː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "गर्मी", "ref": "hi-1270"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1256"
+    target: "छाँव"
+    target_scripts: { perso_arabic: "چھاؤں" }
+    reading: "chām̐v"
+    ipa: "tʃʰãːʋ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पेड़ की छाँव ठंडी है।", reading: "pēṛ kī chām̐v ṭhaṇḍī hai.", ipa: "peːɽ kiː tʃʰãːʋ ʈʰəɳɖiː ɦɛː", bases: [{"word": "पेड़", "base": "पेड़", "reading": "pēṛ"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "ठंडी", "ref": "hi-0911"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "छाँव में बैठो।", reading: "chām̐v mēm̐ baiṭhō.", ipa: "tʃʰãːʋ mẽː bɛːʈʰoː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बैठो", "ref": "hi-0788"}] }
+  - id: "hi-1257"
+    target: "हवा"
+    target_scripts: { perso_arabic: "ہوا" }
+    reading: "havā"
+    ipa: "ɦəʋaː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज हवा तेज़ है।", reading: "āj havā tēz hai.", ipa: "aːdʒ ɦəʋaː t̪eːz ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "हवा ठंडी है।", reading: "havā ṭhaṇḍī hai.", ipa: "ɦəʋaː ʈʰəɳɖiː ɦɛː", bases: [{"word": "ठंडी", "ref": "hi-0911"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1258"
+    target: "आँधी"
+    target_scripts: { perso_arabic: "آندھی" }
+    reading: "ām̐dhī"
+    ipa: "ãːd̪ʱiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आँधी बहुत तेज़ है।", reading: "ām̐dhī bahut tēz hai.", ipa: "ãːd̪ʱiː bəɦʊt̪ t̪eːz ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आँधी में धूल है।", reading: "ām̐dhī mēm̐ dhūl hai.", ipa: "ãːd̪ʱiː mẽː d̪ʱuːl ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "धूल", "base": "धूल", "reading": "dhūl"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1259"
+    target: "तूफ़ान"
+    target_scripts: { perso_arabic: "طوفان" }
+    reading: "tūfān"
+    ipa: "t̪uːfaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "तूफ़ान बहुत बड़ा है।", reading: "tūfān bahut baṛā hai.", ipa: "t̪uːfaːn bəɦʊt̪ bəɽaː ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "तूफ़ान ख़तरनाक है।", reading: "tūfān k͟hatrnāk hai.", ipa: "t̪uːfaːn xət̪rnaːk ɦɛː", bases: [{"word": "ख़तरनाक", "base": "ख़तरनाक", "reading": "k͟hatrnāk"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1260"
+    target: "बादल"
+    target_scripts: { perso_arabic: "بادل" }
+    reading: "bādal"
+    ipa: "baːd̪əl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आसमान में बादल हैं।", reading: "āsmān mēm̐ bādal haim̐.", ipa: "aːsmaːn mẽː baːd̪əl ɦɛ̃ː", bases: [{"word": "आसमान", "ref": "hi-1261"}, {"word": "में", "ref": "hi-0274"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "बादल काले हैं।", reading: "bādal kālē haim̐.", ipa: "baːd̪əl kaːleː ɦɛ̃ː", bases: [{"word": "काले", "ref": "hi-0920"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1261"
+    target: "आसमान"
+    target_scripts: { perso_arabic: "آسمان" }
+    reading: "āsmān"
+    ipa: "aːsmaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आसमान साफ़ है।", reading: "āsmān sāf hai.", ipa: "aːsmaːn saːf ɦɛː", bases: [{"word": "साफ़", "ref": "hi-0901"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आसमान में चाँद है।", reading: "āsmān mēm̐ cām̐d hai.", ipa: "aːsmaːn mẽː tʃãːd̪ ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "चाँद", "ref": "hi-1263"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1262"
+    target: "सूरज"
+    target_scripts: { perso_arabic: "سورج" }
+    reading: "sūraj"
+    ipa: "suːrədʒ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सूरज निकला है।", reading: "sūraj niklā hai.", ipa: "suːrədʒ nɪklaː ɦɛː", bases: [{"word": "निकला", "base": "निकलना", "reading": "niklnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सूरज बहुत गरम है।", reading: "sūraj bahut garam hai.", ipa: "suːrədʒ bəɦʊt̪ ɡərəm ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "गरम", "ref": "hi-0910"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1263"
+    target: "चाँद"
+    target_scripts: { perso_arabic: "چاند" }
+    reading: "cām̐d"
+    ipa: "tʃãːd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज चाँद दिखा।", reading: "āj cām̐d dikhā.", ipa: "aːdʒ tʃãːd̪ d̪ɪkʰaː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "दिखा", "base": "दिखना", "reading": "dikhnā"}] }
+      - { target: "चाँद सुंदर है।", reading: "cām̐d sundar hai.", ipa: "tʃãːd̪ sʊnd̪ər ɦɛː", bases: [{"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1264"
+    target: "तारा"
+    target_scripts: { perso_arabic: "تارا" }
+    reading: "tārā"
+    ipa: "t̪aːraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आसमान में तारे हैं।", reading: "āsmān mēm̐ tārē haim̐.", ipa: "aːsmaːn mẽː t̪aːreː ɦɛ̃ː", bases: [{"word": "आसमान", "ref": "hi-1261"}, {"word": "में", "ref": "hi-0274"}, {"word": "तारे", "base": "तारा", "reading": "tārā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "तारा बहुत चमकता है।", reading: "tārā bahut camktā hai.", ipa: "t̪aːraː bəɦʊt̪ tʃəmkt̪aː ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "चमकता", "ref": "hi-1294"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1265"
+    target: "बिजली"
+    target_scripts: { perso_arabic: "بجلی" }
+    reading: "bijlī"
+    ipa: "bɪdʒliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बिजली गिरी है।", reading: "bijlī girī hai.", ipa: "bɪdʒliː ɡɪriː ɦɛː", bases: [{"word": "गिरी", "ref": "hi-0947"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आज बिजली नहीं है।", reading: "āj bijlī nahīm̐ hai.", ipa: "aːdʒ bɪdʒliː nəɦĩː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1266"
+    target: "बर्फ़"
+    target_scripts: { perso_arabic: "برف" }
+    reading: "barf"
+    ipa: "bərf"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पहाड़ पर बर्फ़ है।", reading: "pahāṛ par barf hai.", ipa: "pəɦaːɽ pər bərf ɦɛː", bases: [{"word": "पहाड़", "ref": "hi-1065"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बर्फ़ ठंडी है।", reading: "barf ṭhaṇḍī hai.", ipa: "bərf ʈʰəɳɖiː ɦɛː", bases: [{"word": "ठंडी", "ref": "hi-0911"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1267"
+    target: "कोहरा"
+    target_scripts: { perso_arabic: "کہرا" }
+    reading: "kōhrā"
+    ipa: "koːɦraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज बहुत कोहरा है।", reading: "āj bahut kōhrā hai.", ipa: "aːdʒ bəɦʊt̪ koːɦraː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सुबह कोहरा होता है।", reading: "subah kōhrā hōtā hai.", ipa: "sʊbəɦ koːɦraː ɦoːt̪aː ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1268"
+    target: "ओला"
+    target_scripts: { perso_arabic: "اولا" }
+    reading: "ōlā"
+    ipa: "oːlaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आसमान से ओले गिरे।", reading: "āsmān sē ōlē girē.", ipa: "aːsmaːn seː oːleː ɡɪreː", bases: [{"word": "आसमान", "ref": "hi-1261"}, {"word": "से", "ref": "hi-0276"}, {"word": "ओले", "base": "ओला", "reading": "ōlā"}, {"word": "गिरे", "ref": "hi-0947"}] }
+      - { target: "ओला बड़ा है।", reading: "ōlā baṛā hai.", ipa: "oːlaː bəɽaː ɦɛː", bases: [{"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1269"
+    target: "ठंड"
+    target_scripts: { perso_arabic: "ٹھنڈ" }
+    reading: "ṭhaṇḍ"
+    ipa: "ʈʰəɳɖ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज बहुत ठंड है।", reading: "āj bahut ṭhaṇḍ hai.", ipa: "aːdʒ bəɦʊt̪ ʈʰəɳɖ ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "रात में ठंड बढ़ती है।", reading: "rāt mēm̐ ṭhaṇḍ baṛhtī hai.", ipa: "raːt̪ mẽː ʈʰəɳɖ bəɽʱt̪iː ɦɛː", bases: [{"word": "रात", "ref": "hi-0304"}, {"word": "में", "ref": "hi-0274"}, {"word": "बढ़ती", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1270"
+    target: "गर्मी"
+    target_scripts: { perso_arabic: "گرمی" }
+    reading: "garmī"
+    ipa: "ɡərmiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गर्मी में पंखा चलता है।", reading: "garmī mēm̐ paṅkhā caltā hai.", ipa: "ɡərmiː mẽː pəŋkʰaː tʃəlt̪aː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "पंखा", "ref": "hi-0435"}, {"word": "चलता", "ref": "hi-0801"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आज गर्मी बहुत है।", reading: "āj garmī bahut hai.", ipa: "aːdʒ ɡərmiː bəɦʊt̪ ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1271"
+    target: "सर्दी"
+    target_scripts: { perso_arabic: "سردی" }
+    reading: "sardī"
+    ipa: "sərd̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सर्दी में ठंड है।", reading: "sardī mēm̐ ṭhaṇḍ hai.", ipa: "sərd̪iː mẽː ʈʰəɳɖ ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "ठंड", "ref": "hi-1269"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सर्दी अच्छी है।", reading: "sardī acchī hai.", ipa: "sərd̪iː ətʃtʃʰiː ɦɛː", bases: [{"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1272"
+    target: "बरसात"
+    target_scripts: { perso_arabic: "برسات" }
+    reading: "barsāt"
+    ipa: "bərsaːt̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बरसात में बहुत बारिश होती है।", reading: "barsāt mēm̐ bahut bāriś hōtī hai.", ipa: "bərsaːt̪ mẽː bəɦʊt̪ baːrɪʃ ɦoːt̪iː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "बारिश", "ref": "hi-1254"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बरसात का मौसम अच्छा है।", reading: "barsāt kā mausam acchā hai.", ipa: "bərsaːt̪ kaː mɔːsəm ətʃtʃʰaː ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "मौसम", "ref": "hi-1253"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1273"
+    target: "मानसून"
+    target_scripts: { perso_arabic: "مانسون" }
+    reading: "mānsūn"
+    ipa: "maːnsuːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मानसून आ गया है।", reading: "mānsūn ā gayā hai.", ipa: "maːnsuːn aː ɡəjaː ɦɛː", bases: [{"word": "आ", "ref": "hi-0778"}, {"word": "गया", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मानसून में बाढ़ आती है।", reading: "mānsūn mēm̐ bāṛh ātī hai.", ipa: "maːnsuːn mẽː baːɽʱ aːt̪iː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बाढ़", "ref": "hi-1276"}, {"word": "आती", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1274"
+    target: "छतरी"
+    target_scripts: { perso_arabic: "چھتری" }
+    reading: "chatrī"
+    ipa: "tʃʰət̪riː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "छतरी छोटी है।", reading: "chatrī chōṭī hai.", ipa: "tʃʰət̪riː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मेरे पास छतरी है।", reading: "mērē pās chatrī hai.", ipa: "meːreː paːs tʃʰət̪riː ɦɛː", bases: [{"word": "मेरे", "ref": "hi-0745"}, {"word": "पास", "ref": "hi-0293"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1275"
+    target: "बूँद"
+    target_scripts: { perso_arabic: "بوند" }
+    reading: "būm̐d"
+    ipa: "bũːd̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पत्ते पर एक बूँद है।", reading: "pattē par ēk būm̐d hai.", ipa: "pət̪t̪eː pər eːk bũːd̪ ɦɛː", bases: [{"word": "पत्ते", "base": "पत्ता", "reading": "pattā"}, {"word": "पर", "ref": "hi-0275"}, {"word": "एक", "ref": "hi-0198"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "छत से पानी की बूँद गिरी।", reading: "chat sē pānī kī būm̐d girī.", ipa: "tʃʰət̪ seː paːniː kiː bũːd̪ ɡɪriː", bases: [{"word": "छत", "ref": "hi-0428"}, {"word": "से", "ref": "hi-0276"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "गिरी", "ref": "hi-0947"}] }
+  - id: "hi-1276"
+    target: "बाढ़"
+    target_scripts: { perso_arabic: "باڑھ" }
+    reading: "bāṛh"
+    ipa: "baːɽʱ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "नदी में बाढ़ है।", reading: "nadī mēm̐ bāṛh hai.", ipa: "nəd̪iː mẽː baːɽʱ ɦɛː", bases: [{"word": "नदी", "ref": "hi-1064"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बाढ़ से गाँव डूबा।", reading: "bāṛh sē gām̐v ḍūbā.", ipa: "baːɽʱ seː ɡãːʋ ɖuːbaː", bases: [{"word": "से", "ref": "hi-0276"}, {"word": "गाँव", "ref": "hi-1080"}, {"word": "डूबा", "base": "डूबना", "reading": "ḍūbnā"}] }
+  - id: "hi-1277"
+    target: "सूखा"
+    target_scripts: { perso_arabic: "سوکھا" }
+    reading: "sūkhā"
+    ipa: "suːkʰaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "इस साल सूखा है।", reading: "is sāl sūkhā hai.", ipa: "ɪs saːl suːkʰaː ɦɛː", bases: [{"word": "इस", "ref": "hi-0748"}, {"word": "साल", "ref": "hi-0318"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "खेत सूखा है।", reading: "khēt sūkhā hai.", ipa: "kʰeːt̪ suːkʰaː ɦɛː", bases: [{"word": "खेत", "ref": "hi-1070"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1278"
+    target: "तापमान"
+    target_scripts: { perso_arabic: "تاپمان" }
+    reading: "tāpmān"
+    ipa: "t̪aːpmaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज तापमान बीस डिग्री है।", reading: "āj tāpmān bīs ḍigrī hai.", ipa: "aːdʒ t̪aːpmaːn biːs ɖɪɡriː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "बीस", "ref": "hi-0217"}, {"word": "डिग्री", "ref": "hi-1279"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "रात का तापमान कम है।", reading: "rāt kā tāpmān kam hai.", ipa: "raːt̪ kaː t̪aːpmaːn kəm ɦɛː", bases: [{"word": "रात", "ref": "hi-0304"}, {"word": "का", "ref": "hi-0279"}, {"word": "कम", "ref": "hi-0105"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1279"
+    target: "डिग्री"
+    target_scripts: { perso_arabic: "ڈگری" }
+    reading: "ḍigrī"
+    ipa: "ɖɪɡriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज का तापमान तीस डिग्री है।", reading: "āj kā tāpmān tīs ḍigrī hai.", ipa: "aːdʒ kaː t̪aːpmaːn t̪iːs ɖɪɡriː ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "का", "ref": "hi-0279"}, {"word": "तापमान", "ref": "hi-1278"}, {"word": "तीस", "ref": "hi-0218"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "दिल्ली में बारह डिग्री है।", reading: "dillī mēm̐ bārah ḍigrī hai.", ipa: "d̪ɪlliː mẽː baːrəɦ ɖɪɡriː ɦɛː", bases: [{"word": "दिल्ली", "base": "दिल्ली", "reading": "dillī"}, {"word": "में", "ref": "hi-0274"}, {"word": "बारह", "ref": "hi-0209"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1280"
+    target: "नमी"
+    target_scripts: { perso_arabic: "نمی" }
+    reading: "namī"
+    ipa: "nəmiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हवा में नमी है।", reading: "havā mēm̐ namī hai.", ipa: "ɦəʋaː mẽː nəmiː ɦɛː", bases: [{"word": "हवा", "ref": "hi-1257"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "नमी ज़्यादा है।", reading: "namī zyādā hai.", ipa: "nəmiː zjaːd̪aː ɦɛː", bases: [{"word": "ज़्यादा", "ref": "hi-0816"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1281"
+    target: "ओस"
+    target_scripts: { perso_arabic: "اوس" }
+    reading: "ōs"
+    ipa: "oːs"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह घास पर ओस है।", reading: "subah ghās par ōs hai.", ipa: "sʊbəɦ ɡʱaːs pər oːs ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "घास", "base": "घास", "reading": "ghās"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "ओस की बूँदें ठंडी हैं।", reading: "ōs kī būm̐dēm̐ ṭhaṇḍī haim̐.", ipa: "oːs kiː bũːd̪ẽː ʈʰəɳɖiː ɦɛ̃ː", bases: [{"word": "की", "base": "की", "reading": "kī"}, {"word": "बूँदें", "ref": "hi-1275"}, {"word": "ठंडी", "ref": "hi-0911"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1282"
+    target: "गरज"
+    target_scripts: { perso_arabic: "گرج" }
+    reading: "garaj"
+    ipa: "ɡərədʒ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दूर बादलों की गरज है।", reading: "dūr bādlōm̐ kī garaj hai.", ipa: "d̪uːr baːd̪lõː kiː ɡərədʒ ɦɛː", bases: [{"word": "दूर", "ref": "hi-0294"}, {"word": "बादलों", "ref": "hi-1260"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "गरज की आवाज़ तेज़ है।", reading: "garaj kī āvāz tēz hai.", ipa: "ɡərədʒ kiː aːʋaːz t̪eːz ɦɛː", bases: [{"word": "की", "base": "की", "reading": "kī"}, {"word": "आवाज़", "base": "आवाज़", "reading": "āvāz"}, {"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1283"
+    target: "बसंत"
+    target_scripts: { perso_arabic: "بسنت" }
+    reading: "basant"
+    ipa: "bəsənt̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बसंत का मौसम सुंदर है।", reading: "basant kā mausam sundar hai.", ipa: "bəsənt̪ kaː mɔːsəm sʊnd̪ər ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "मौसम", "ref": "hi-1253"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बसंत में फूल खिलते हैं।", reading: "basant mēm̐ phūl khiltē haim̐.", ipa: "bəsənt̪ mẽː pʰuːl kʰɪlt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "फूल", "base": "फूल", "reading": "phūl"}, {"word": "खिलते", "base": "खिलना", "reading": "khilnā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1284"
+    target: "पतझड़"
+    target_scripts: { perso_arabic: "پت جھڑ" }
+    reading: "patjhaṛ"
+    ipa: "pət̪dʒʱəɽ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पतझड़ में पत्ते गिरते हैं।", reading: "patjhaṛ mēm̐ pattē girtē haim̐.", ipa: "pət̪dʒʱəɽ mẽː pət̪t̪eː ɡɪrt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "पत्ते", "base": "पत्ता", "reading": "pattā"}, {"word": "गिरते", "ref": "hi-0947"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "पतझड़ का मौसम ठंडा है।", reading: "patjhaṛ kā mausam ṭhaṇḍā hai.", ipa: "pət̪dʒʱəɽ kaː mɔːsəm ʈʰəɳɖaː ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "मौसम", "ref": "hi-1253"}, {"word": "ठंडा", "ref": "hi-0911"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1285"
+    target: "गीला"
+    target_scripts: { perso_arabic: "گیلا" }
+    reading: "gīlā"
+    ipa: "ɡiːlaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ज़मीन गीली है।", reading: "zamīn gīlī hai.", ipa: "zəmiːn ɡiːliː ɦɛː", bases: [{"word": "ज़मीन", "base": "ज़मीन", "reading": "zamīn"}, {"word": "गीली", "base": "गीला", "reading": "gīlā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "कपड़ा गीला है।", reading: "kapṛā gīlā hai.", ipa: "kəpɽaː ɡiːlaː ɦɛː", bases: [{"word": "कपड़ा", "ref": "hi-1106"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1286"
+    target: "सुहावना"
+    target_scripts: { perso_arabic: "سہاونا" }
+    reading: "suhāvnā"
+    ipa: "sʊɦaːʋnaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मौसम सुहावना है।", reading: "mausam suhāvnā hai.", ipa: "mɔːsəm sʊɦaːʋnaː ɦɛː", bases: [{"word": "मौसम", "ref": "hi-1253"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सुबह का मौसम सुहावना था।", reading: "subah kā mausam suhāvnā thā.", ipa: "sʊbəɦ kaː mɔːsəm sʊɦaːʋnaː t̪ʰaː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "का", "ref": "hi-0279"}, {"word": "मौसम", "ref": "hi-1253"}, {"word": "था", "ref": "hi-0780"}] }
+  - id: "hi-1287"
+    target: "गरजना"
+    target_scripts: { perso_arabic: "گرجنا" }
+    reading: "garjnā"
+    ipa: "ɡərdʒnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बादल ज़ोर से गरजे।", reading: "bādal zōr sē garjē.", ipa: "baːd̪əl zoːr seː ɡərdʒeː", bases: [{"word": "बादल", "ref": "hi-1260"}, {"word": "ज़ोर", "base": "ज़ोर", "reading": "zōr"}, {"word": "से", "ref": "hi-0276"}, {"word": "गरजे", "base": "गरजना", "reading": "garjnā"}] }
+      - { target: "बादल गरजते हैं।", reading: "bādal garjtē haim̐.", ipa: "baːd̪əl ɡərdʒt̪eː ɦɛ̃ː", bases: [{"word": "बादल", "ref": "hi-1260"}, {"word": "गरजते", "base": "गरजना", "reading": "garjnā"}, {"word": "हैं", "ref": "hi-0113"}] }
+  - id: "hi-1288"
+    target: "नम"
+    target_scripts: { perso_arabic: "نم" }
+    reading: "nam"
+    ipa: "nəm"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मिट्टी नम है।", reading: "miṭṭī nam hai.", ipa: "mɪʈʈiː nəm ɦɛː", bases: [{"word": "मिट्टी", "base": "मिट्टी", "reading": "miṭṭī"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "हवा नम है।", reading: "havā nam hai.", ipa: "ɦəʋaː nəm ɦɛː", bases: [{"word": "हवा", "ref": "hi-1257"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1289"
+    target: "तेज़"
+    target_scripts: { perso_arabic: "تیز" }
+    reading: "tēz"
+    ipa: "t̪eːz"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हवा बहुत तेज़ है।", reading: "havā bahut tēz hai.", ipa: "ɦəʋaː bəɦʊt̪ t̪eːz ɦɛː", bases: [{"word": "हवा", "ref": "hi-1257"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "धूप तेज़ है।", reading: "dhūp tēz hai.", ipa: "d̪ʱuːp t̪eːz ɦɛː", bases: [{"word": "धूप", "ref": "hi-1255"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1290"
+    target: "हल्की"
+    target_scripts: { perso_arabic: "ہلکی" }
+    reading: "halkī"
+    ipa: "ɦəlkiː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हल्की हवा ठंडी है।", reading: "halkī havā ṭhaṇḍī hai.", ipa: "ɦəlkiː ɦəʋaː ʈʰəɳɖiː ɦɛː", bases: [{"word": "हवा", "ref": "hi-1257"}, {"word": "ठंडी", "ref": "hi-0911"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आज हल्की बारिश है।", reading: "āj halkī bāriś hai.", ipa: "aːdʒ ɦəlkiː baːrɪʃ ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "बारिश", "ref": "hi-1254"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1291"
+    target: "धुंधला"
+    target_scripts: { perso_arabic: "دھندلا" }
+    reading: "dhundhalā"
+    ipa: "d̪ʱʊnd̪ʱəlaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह का आसमान धुंधला है।", reading: "subah kā āsmān dhundhalā hai.", ipa: "sʊbəɦ kaː aːsmaːn d̪ʱʊnd̪ʱəlaː ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "का", "ref": "hi-0279"}, {"word": "आसमान", "ref": "hi-1261"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सड़क धुंधली है।", reading: "saṛak dhundhalī hai.", ipa: "səɽək d̪ʱʊnd̪ʱəliː ɦɛː", bases: [{"word": "सड़क", "ref": "hi-0298"}, {"word": "धुंधली", "base": "धुंधला", "reading": "dhundhalā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1292"
+    target: "बरसना"
+    target_scripts: { perso_arabic: "برسنا" }
+    reading: "barsnā"
+    ipa: "bərsnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बादल बरसते हैं।", reading: "bādal barstē haim̐.", ipa: "baːd̪əl bərst̪eː ɦɛ̃ː", bases: [{"word": "बादल", "ref": "hi-1260"}, {"word": "बरसते", "base": "बरसना", "reading": "barsnā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "रात भर पानी बरसा।", reading: "rāt bhar pānī barsā.", ipa: "raːt̪ bʱər paːniː bərsaː", bases: [{"word": "रात", "ref": "hi-0304"}, {"word": "भर", "base": "भर", "reading": "bhar"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "बरसा", "base": "बरसना", "reading": "barsnā"}] }
+  - id: "hi-1293"
+    target: "कड़कना"
+    target_scripts: { perso_arabic: "کڑکنا" }
+    reading: "kaṛknā"
+    ipa: "kəɽknaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बादल कड़कते हैं।", reading: "bādal kaṛktē haim̐.", ipa: "baːd̪əl kəɽkt̪eː ɦɛ̃ː", bases: [{"word": "बादल", "ref": "hi-1260"}, {"word": "कड़कते", "base": "कड़कना", "reading": "kaṛknā"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "बिजली कड़की।", reading: "bijlī kaṛkī.", ipa: "bɪdʒliː kəɽkiː", bases: [{"word": "बिजली", "ref": "hi-1265"}, {"word": "कड़की", "base": "कड़कना", "reading": "kaṛknā"}] }
+  - id: "hi-1294"
+    target: "चमकना"
+    target_scripts: { perso_arabic: "چمکنا" }
+    reading: "camknā"
+    ipa: "tʃəmknaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सूरज चमकता है।", reading: "sūraj camktā hai.", ipa: "suːrədʒ tʃəmkt̪aː ɦɛː", bases: [{"word": "सूरज", "ref": "hi-1262"}, {"word": "चमकता", "base": "चमकना", "reading": "camknā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बिजली चमकी।", reading: "bijlī camkī.", ipa: "bɪdʒliː tʃəmkiː", bases: [{"word": "बिजली", "ref": "hi-1265"}, {"word": "चमकी", "base": "चमकना", "reading": "camknā"}] }
+  - id: "hi-1295"
+    target: "उमस"
+    target_scripts: { perso_arabic: "اُمس" }
+    reading: "umas"
+    ipa: "ʊməs"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज उमस है।", reading: "āj umas hai.", ipa: "aːdʒ ʊməs ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "उमस में पसीना आता है।", reading: "umas mēm̐ pasīnā ātā hai.", ipa: "ʊməs mẽː pəsiːnaː aːt̪aː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "पसीना", "base": "पसीना", "reading": "pasīnā"}, {"word": "आता", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1296"
+    target: "सावन"
+    target_scripts: { perso_arabic: "ساون" }
+    reading: "sāvan"
+    ipa: "saːʋən"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सावन में बारिश होती है।", reading: "sāvan mēm̐ bāriś hōtī hai.", ipa: "saːʋən mẽː baːrɪʃ ɦoːt̪iː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "बारिश", "ref": "hi-1254"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सावन का महीना सुंदर है।", reading: "sāvan kā mahīnā sundar hai.", ipa: "saːʋən kaː məɦiːnaː sʊnd̪ər ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "महीना", "ref": "hi-0317"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1297"
+    target: "धुंध"
+    target_scripts: { perso_arabic: "دھند" }
+    reading: "dhundh"
+    ipa: "d̪ʱʊnd̪ʱ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह धुंध है।", reading: "subah dhundh hai.", ipa: "sʊbəɦ d̪ʱʊnd̪ʱ ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "धुंध में गाड़ी धीरे चलती है।", reading: "dhundh mēm̐ gāṛī dhīrē caltī hai.", ipa: "d̪ʱʊnd̪ʱ mẽː ɡaːɽiː d̪ʱiːreː tʃəlt̪iː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "गाड़ी", "base": "गाड़ी", "reading": "gāṛī"}, {"word": "धीरे", "ref": "hi-0820"}, {"word": "चलती", "ref": "hi-0801"}, {"word": "है", "ref": "hi-0112"}] }

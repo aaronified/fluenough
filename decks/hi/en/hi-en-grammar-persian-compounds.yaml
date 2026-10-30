@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-persian-compounds"
+kind: "layer"
+core: "hi-grammar-persian-compounds"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Persian pairs joined by o (and)"
+license: "CC-BY-SA-4.0"
+description: "Persian pairs joined by ओ (o), 'and': the climate, morning and evening, heart and soul. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1397":
+    native: "climate; the weather of a place"
+    notes:
+      "n1": "Two Persian words joined by ओ (o), 'and': आब (āb) is water, हवा (havā) is air. Used of the climate, not the day's weather."
+    bases: { "आब": "water" }
+    examples:
+      "यहाँ की आब ओ हवा अच्छी है।": { native: "The climate here is good.", bases: { "की": "of (f)", "आब": "water" } }
+      "पहाड़ों की आब ओ हवा साफ़ है।": { native: "The air of the mountains is clean.", bases: { "की": "of (f)", "आब": "water" } }
+  "hi-1398":
+    native: "morning and evening"
+    notes:
+      "n1": "The Persian pair, with ओ (o) for 'and'; सुबह (subah) and शाम (śām) are cards of their own."
+    examples:
+      "सुबह ओ शाम दवा लो।": { native: "Take the medicine morning and evening.", bases: { "दवा": "medicine" } }
+      "वह सुबह ओ शाम काम करता है।": { native: "He works morning and evening.", bases: {} }
+  "hi-1399":
+    native: "with all one's heart"
+    notes:
+      "n1": "Used in दिल ओ जान से (dil o jān se), with all one's heart and soul."
+    bases: { "जान": "life; soul" }
+    examples:
+      "वह दिल ओ जान से काम करता है।": { native: "He works with all his heart.", bases: { "जान": "life; soul" } }
+      "माँ दिल ओ जान से प्यार करती है।": { native: "Mother loves with all her heart.", bases: { "जान": "life; soul" } }

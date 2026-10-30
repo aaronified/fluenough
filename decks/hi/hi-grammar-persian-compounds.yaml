@@ -1,0 +1,46 @@
+schema: 1
+id: "hi-grammar-persian-compounds"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+
+cards:
+  - id: "hi-1397"
+    target: "आब ओ हवा"
+    target_scripts: { perso_arabic: "آب و ہوا" }
+    reading: "āb ō havā"
+    ipa: "aːb oː ɦəʋaː"
+    pos: "noun"
+    gender: "f"
+    bases: [{"word": "आब", "base": "आब", "reading": "āb"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "हवा", "ref": "hi-1257"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यहाँ की आब ओ हवा अच्छी है।", reading: "yahām̐ kī āb ō havā acchī hai.", ipa: "jəɦãː kiː aːb oː ɦəʋaː ətʃtʃʰiː ɦɛː", bases: [{"word": "यहाँ", "ref": "hi-0295"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "आब", "base": "आब", "reading": "āb"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "हवा", "ref": "hi-1257"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "पहाड़ों की आब ओ हवा साफ़ है।", reading: "pahāṛōm̐ kī āb ō havā sāf hai.", ipa: "pəɦaːɽõː kiː aːb oː ɦəʋaː saːf ɦɛː", bases: [{"word": "पहाड़ों", "ref": "hi-1065"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "आब", "base": "आब", "reading": "āb"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "हवा", "ref": "hi-1257"}, {"word": "साफ़", "ref": "hi-0901"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1398"
+    target: "सुबह ओ शाम"
+    target_scripts: { perso_arabic: "صبح و شام" }
+    reading: "subah ō śām"
+    ipa: "sʊbəɦ oː ʃaːm"
+    pos: "adv"
+    bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "शाम", "ref": "hi-0303"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह ओ शाम दवा लो।", reading: "subah ō śām davā lō.", ipa: "sʊbəɦ oː ʃaːm d̪əʋaː loː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "शाम", "ref": "hi-0303"}, {"word": "दवा", "base": "दवा", "reading": "davā"}, {"word": "लो", "ref": "hi-0786"}] }
+      - { target: "वह सुबह ओ शाम काम करता है।", reading: "vah subah ō śām kām kartā hai.", ipa: "ʋəɦ sʊbəɦ oː ʃaːm kaːm kərt̪aː ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "सुबह", "ref": "hi-0302"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "शाम", "ref": "hi-0303"}, {"word": "काम", "ref": "hi-0194"}, {"word": "करता", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1399"
+    target: "दिल ओ जान"
+    target_scripts: { perso_arabic: "دل و جان" }
+    reading: "dil ō jān"
+    ipa: "d̪ɪl oː dʒaːn"
+    pos: "phrase"
+    bases: [{"word": "दिल", "ref": "hi-1044"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "जान", "base": "जान", "reading": "jān"}]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह दिल ओ जान से काम करता है।", reading: "vah dil ō jān sē kām kartā hai.", ipa: "ʋəɦ d̪ɪl oː dʒaːn seː kaːm kərt̪aː ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "दिल", "ref": "hi-1044"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "जान", "base": "जान", "reading": "jān"}, {"word": "से", "ref": "hi-0276"}, {"word": "काम", "ref": "hi-0194"}, {"word": "करता", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "माँ दिल ओ जान से प्यार करती है।", reading: "mām̐ dil ō jān sē pyār kartī hai.", ipa: "mãː d̪ɪl oː dʒaːn seː pjaːr kərt̪iː ɦɛː", bases: [{"word": "माँ", "ref": "hi-0377"}, {"word": "दिल", "ref": "hi-1044"}, {"word": "ओ", "ref": "hi-0337"}, {"word": "जान", "base": "जान", "reading": "jān"}, {"word": "से", "ref": "hi-0276"}, {"word": "प्यार", "ref": "hi-0475"}, {"word": "करती", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0112"}] }

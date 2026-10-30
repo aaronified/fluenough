@@ -1,0 +1,51 @@
+schema: 1
+id: "hi-en-reading-persian-words"
+name: "Reading: shops and offices"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages with the Persian words of this unit: the people and places of a town, and the doors of an office. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-shopkeepers-and-houses"
+    title: "The shopkeeper and the houses"
+    sentences:
+      - { text: "दुकानदार बाज़ार में है।", reading: "dukāndār bāzār mēm̐ hai.", ipa: "d̪ʊkaːnd̪aːr baːzaːr mẽː ɦɛː" }
+      - { text: "डाकखाना स्टेशन के पास है।", reading: "ḍākkhānā sṭēśan kē pās hai.", ipa: "ɖaːkkʰaːnaː sʈeːʃən keː paːs ɦɛː" }
+      - { text: "किताबख़ाना बड़ा और साफ़ है।", reading: "kitābk͟hānā baṛā aur sāf hai.", ipa: "kɪt̪aːbxaːnaː bəɽaː ɔːr saːf ɦɛː" }
+      - { text: "वह बहुत ईमानदार है।", reading: "vah bahut īmāndār hai.", ipa: "ʋəɦ bəɦʊt̪ iːmaːnd̪aːr ɦɛː" }
+    questions:
+      - id: "hi-1418"
+        prompt: { en: "The post office is near the station." }
+        answer: true
+      - id: "hi-1419"
+        prompt: { en: "What is big and clean?" }
+        options:
+          - { en: "The library" }
+          - { en: "The market" }
+        answer: 1
+      - id: "hi-1420"
+        prompt: { en: "The shopkeeper is dishonest." }
+        answer: false
+  - id: "hi-office-doors"
+    title: "The doors of an office"
+    sentences:
+      - { text: "पहला दरवाज़ा: डाकखाना।", reading: "pahlā darvāzā: ḍākkhānā.", ipa: "pəɦlaː d̪ərʋaːzaː ɖaːkkʰaːnaː" }
+      - { text: "दूसरा दरवाज़ा: किताबख़ाना।", reading: "dūsrā darvāzā: kitābk͟hānā.", ipa: "d̪uːsraː d̪ərʋaːzaː kɪt̪aːbxaːnaː" }
+      - { text: "यहाँ सब ज़िम्मेदार लोग हैं।", reading: "yahām̐ sab zimmēdār lōg haim̐.", ipa: "jəɦãː səb zɪmmeːd̪aːr loːɡ ɦɛ̃ː" }
+      - { text: "बेशक यहाँ आना।", reading: "bēśak yahām̐ ānā.", ipa: "beːʃək jəɦãː aːnaː" }
+    questions:
+      - id: "hi-1421"
+        prompt: { en: "The second door leads to the post office." }
+        answer: false
+      - id: "hi-1422"
+        prompt: { en: "What is the first door?" }
+        options:
+          - { en: "The post office" }
+          - { en: "The library" }
+        answer: 1
+      - id: "hi-1423"
+        prompt: { en: "Responsible people work here." }
+        answer: true

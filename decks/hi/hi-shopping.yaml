@@ -1,0 +1,651 @@
+schema: 1
+id: "hi-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1338"
+    target: "ख़रीदारी"
+    target_scripts: { perso_arabic: "خریداری" }
+    reading: "k͟harīdārī"
+    ipa: "xəriːd̪aːriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बाज़ार में ख़रीदारी करते हैं।", reading: "bāzār mēm̐ k͟harīdārī kartē haim̐.", ipa: "baːzaːr mẽː xəriːd̪aːriː kərt̪eː ɦɛ̃ː", bases: [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "करते", "ref": "hi-0779"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "आज ख़रीदारी अच्छी थी।", reading: "āj k͟harīdārī acchī thī.", ipa: "aːdʒ xəriːd̪aːriː ətʃtʃʰiː t̪ʰiː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "थी", "ref": "hi-0780"}] }
+  - id: "hi-1339"
+    target: "ख़रीदार"
+    target_scripts: { perso_arabic: "خریدار" }
+    reading: "k͟harīdār"
+    ipa: "xəriːd̪aːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकान पर ख़रीदार हैं।", reading: "dukān par k͟harīdār haim̐.", ipa: "d̪ʊkaːn pər xəriːd̪aːr ɦɛ̃ː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "पर", "ref": "hi-0275"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "वह अच्छा ख़रीदार है।", reading: "vah acchā k͟harīdār hai.", ipa: "ʋəɦ ətʃtʃʰaː xəriːd̪aːr ɦɛː", bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1340"
+    target: "ग्राहक"
+    target_scripts: { perso_arabic: "گاہک" }
+    reading: "grāhak"
+    ipa: "ɡraːɦək"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ग्राहक दुकान में आया।", reading: "grāhak dukān mēm̐ āyā.", ipa: "ɡraːɦək d̪ʊkaːn mẽː aːjaː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "में", "ref": "hi-0274"}, {"word": "आया", "ref": "hi-0778"}] }
+      - { target: "दुकानदार ग्राहक को सामान दिखाता है।", reading: "dukāndār grāhak kō sāmān dikhātā hai.", ipa: "d̪ʊkaːnd̪aːr ɡraːɦək koː saːmaːn d̪ɪkʰaːt̪aː ɦɛː", bases: [{"word": "दुकानदार", "ref": "hi-0402"}, {"word": "को", "ref": "hi-0277"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "दिखाता", "base": "दिखाना", "reading": "dikhānā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1341"
+    target: "छूट"
+    target_scripts: { perso_arabic: "چھوٹ" }
+    reading: "chūṭ"
+    ipa: "tʃʰuːʈ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "इस पर बीस प्रतिशत छूट है।", reading: "is par bīs pratiśat chūṭ hai.", ipa: "ɪs pər biːs prət̪ɪʃət̪ tʃʰuːʈ ɦɛː", bases: [{"word": "इस", "ref": "hi-0748"}, {"word": "पर", "ref": "hi-0275"}, {"word": "बीस", "ref": "hi-0217"}, {"word": "प्रतिशत", "base": "प्रतिशत", "reading": "pratiśat"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "दुकान में छूट है।", reading: "dukān mēm̐ chūṭ hai.", ipa: "d̪ʊkaːn mẽː tʃʰuːʈ ɦɛː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1342"
+    target: "कीमत"
+    target_scripts: { perso_arabic: "قیمت" }
+    reading: "kīmat"
+    ipa: "kiːmət̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "इसकी कीमत बहुत ज़्यादा है।", reading: "iskī kīmat bahut zyādā hai.", ipa: "ɪskiː kiːmət̪ bəɦʊt̪ zjaːd̪aː ɦɛː", bases: [{"word": "इसकी", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "ज़्यादा", "ref": "hi-0816"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "कीमत कम है।", reading: "kīmat kam hai.", ipa: "kiːmət̪ kəm ɦɛː", bases: [{"word": "कम", "ref": "hi-0105"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1343"
+    target: "मूल्य"
+    target_scripts: { perso_arabic: "مولیہ" }
+    reading: "mūly"
+    ipa: "muːlj"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "इस चीज़ का मूल्य तीन सौ रुपये है।", reading: "is cīz kā mūly tīn sau rupyē hai.", ipa: "ɪs tʃiːz kaː muːlj t̪iːn sɔː rʊpjeː ɦɛː", bases: [{"word": "इस", "ref": "hi-0748"}, {"word": "चीज़", "ref": "hi-1351"}, {"word": "का", "ref": "hi-0279"}, {"word": "तीन", "ref": "hi-0200"}, {"word": "सौ", "ref": "hi-0225"}, {"word": "रुपये", "ref": "hi-0233"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मूल्य ठीक है।", reading: "mūly ṭhīk hai.", ipa: "muːlj ʈʰiːk ɦɛː", bases: [{"word": "ठीक", "base": "ठीक", "reading": "ṭhīk"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1344"
+    target: "सिक्का"
+    target_scripts: { perso_arabic: "سکہ" }
+    reading: "sikkā"
+    ipa: "sɪkkaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जेब में सिक्का है।", reading: "jēb mēm̐ sikkā hai.", ipa: "dʒeːb mẽː sɪkkaː ɦɛː", bases: [{"word": "जेब", "ref": "hi-1386"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "यह सिक्का पुराना है।", reading: "yah sikkā purānā hai.", ipa: "jəɦ sɪkkaː pʊraːnaː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1345"
+    target: "नोट"
+    target_scripts: { perso_arabic: "نوٹ" }
+    reading: "nōṭ"
+    ipa: "noːʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सौ रुपये का नोट है।", reading: "sau rupyē kā nōṭ hai.", ipa: "sɔː rʊpjeː kaː noːʈ ɦɛː", bases: [{"word": "सौ", "ref": "hi-0225"}, {"word": "रुपये", "ref": "hi-0233"}, {"word": "का", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मेरे पास नोट नहीं है।", reading: "mērē pās nōṭ nahīm̐ hai.", ipa: "meːreː paːs noːʈ nəɦĩː ɦɛː", bases: [{"word": "मेरे", "ref": "hi-0745"}, {"word": "पास", "ref": "hi-0293"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1346"
+    target: "बटुआ"
+    target_scripts: { perso_arabic: "بٹوا" }
+    reading: "baṭuā"
+    ipa: "bəʈʊaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मेरा बटुआ खो गया।", reading: "mērā baṭuā khō gayā.", ipa: "meːraː bəʈʊaː kʰoː ɡəjaː", bases: [{"word": "मेरा", "ref": "hi-0752"}, {"word": "खो", "base": "खोना", "reading": "khōnā"}, {"word": "गया", "ref": "hi-0777"}] }
+      - { target: "बटुआ जेब में है।", reading: "baṭuā jēb mēm̐ hai.", ipa: "bəʈʊaː dʒeːb mẽː ɦɛː", bases: [{"word": "जेब", "ref": "hi-1386"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1347"
+    target: "रसीद"
+    target_scripts: { perso_arabic: "رسید" }
+    reading: "rasīd"
+    ipa: "rəsiːd̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकानदार ने रसीद दी।", reading: "dukāndār nē rasīd dī.", ipa: "d̪ʊkaːnd̪aːr neː rəsiːd̪ d̪iː", bases: [{"word": "दुकानदार", "ref": "hi-0402"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "दी", "ref": "hi-0785"}] }
+      - { target: "रसीद रखो।", reading: "rasīd rakhō.", ipa: "rəsiːd̪ rəkʰoː", bases: [{"word": "रखो", "ref": "hi-0950"}] }
+  - id: "hi-1348"
+    target: "बिल"
+    target_scripts: { perso_arabic: "بل" }
+    reading: "bil"
+    ipa: "bɪl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बिल बहुत बड़ा है।", reading: "bil bahut baṛā hai.", ipa: "bɪl bəɦʊt̪ bəɽaː ɦɛː", bases: [{"word": "बहुत", "ref": "hi-0866"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बिल का भुगतान करो।", reading: "bil kā bhugtān karō.", ipa: "bɪl kaː bʱʊɡt̪aːn kəroː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "भुगतान", "base": "भुगतान", "reading": "bhugtān"}, {"word": "करो", "ref": "hi-0779"}] }
+  - id: "hi-1349"
+    target: "क़ीमती"
+    target_scripts: { perso_arabic: "قیمتی" }
+    reading: "qīmtī"
+    ipa: "qiːmt̪iː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह घड़ी क़ीमती है।", reading: "yah ghaṛī qīmtī hai.", ipa: "jəɦ ɡʱəɽiː qiːmt̪iː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "घड़ी", "ref": "hi-1096"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सोना क़ीमती है।", reading: "sōnā qīmtī hai.", ipa: "soːnaː qiːmt̪iː ɦɛː", bases: [{"word": "सोना", "ref": "hi-0450"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1350"
+    target: "सामान"
+    target_scripts: { perso_arabic: "سامان" }
+    reading: "sāmān"
+    ipa: "saːmaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह सामान अच्छा है।", reading: "yah sāmān acchā hai.", ipa: "jəɦ saːmaːn ətʃtʃʰaː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सामान बाज़ार में है।", reading: "sāmān bāzār mēm̐ hai.", ipa: "saːmaːn baːzaːr mẽː ɦɛː", bases: [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1351"
+    target: "चीज़"
+    target_scripts: { perso_arabic: "چیز" }
+    reading: "cīz"
+    ipa: "tʃiːz"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह चीज़ सस्ती है।", reading: "yah cīz sastī hai.", ipa: "jəɦ tʃiːz səst̪iː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "सस्ती", "ref": "hi-0237"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "कोई चीज़ नहीं है।", reading: "kōī cīz nahīm̐ hai.", ipa: "koːiː tʃiːz nəɦĩː ɦɛː", bases: [{"word": "कोई", "ref": "hi-0758"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1352"
+    target: "ट्रॉली"
+    target_scripts: { perso_arabic: "ٹرالی" }
+    reading: "ṭrôlī"
+    ipa: "ʈrɔliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ट्रॉली में सामान है।", reading: "ṭrôlī mēm̐ sāmān hai.", ipa: "ʈrɔliː mẽː saːmaːn ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "ट्रॉली भारी है।", reading: "ṭrôlī bhārī hai.", ipa: "ʈrɔliː bʱaːriː ɦɛː", bases: [{"word": "भारी", "ref": "hi-0908"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1353"
+    target: "टोकरी"
+    target_scripts: { perso_arabic: "ٹوکری" }
+    reading: "ṭōkrī"
+    ipa: "ʈoːkriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "टोकरी में सब्ज़ी है।", reading: "ṭōkrī mēm̐ sabzī hai.", ipa: "ʈoːkriː mẽː səbziː ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "सब्ज़ी", "ref": "hi-0249"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "टोकरी बड़ी है।", reading: "ṭōkrī baṛī hai.", ipa: "ʈoːkriː bəɽiː ɦɛː", bases: [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1354"
+    target: "हिसाब"
+    target_scripts: { perso_arabic: "حساب" }
+    reading: "hisāb"
+    ipa: "ɦɪsaːb"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकानदार हिसाब करता है।", reading: "dukāndār hisāb kartā hai.", ipa: "d̪ʊkaːnd̪aːr ɦɪsaːb kərt̪aː ɦɛː", bases: [{"word": "दुकानदार", "ref": "hi-0402"}, {"word": "करता", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "हिसाब ठीक है।", reading: "hisāb ṭhīk hai.", ipa: "ɦɪsaːb ʈʰiːk ɦɛː", bases: [{"word": "ठीक", "base": "ठीक", "reading": "ṭhīk"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1355"
+    target: "वापसी"
+    target_scripts: { perso_arabic: "واپسی" }
+    reading: "vāpsī"
+    ipa: "ʋaːpsiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सामान की वापसी नहीं है।", reading: "sāmān kī vāpsī nahīm̐ hai.", ipa: "saːmaːn kiː ʋaːpsiː nəɦĩː ɦɛː", bases: [{"word": "सामान", "ref": "hi-1350"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "वापसी के लिए रसीद चाहिए।", reading: "vāpsī kē liē rasīd cāhiē.", ipa: "ʋaːpsiː keː lɪeː rəsiːd̪ tʃaːɦɪeː", bases: [{"word": "के", "base": "के", "reading": "kē"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "रसीद", "ref": "hi-1347"}, {"word": "चाहिए", "ref": "hi-0460"}] }
+  - id: "hi-1356"
+    target: "माल"
+    target_scripts: { perso_arabic: "مال" }
+    reading: "māl"
+    ipa: "maːl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकान में माल है।", reading: "dukān mēm̐ māl hai.", ipa: "d̪ʊkaːn mẽː maːl ɦɛː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "माल नया है।", reading: "māl nayā hai.", ipa: "maːl nəjaː ɦɛː", bases: [{"word": "नया", "ref": "hi-0896"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1357"
+    target: "खुला"
+    target_scripts: { perso_arabic: "کھلا" }
+    reading: "khulā"
+    ipa: "kʰʊlaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकान खुली है।", reading: "dukān khulī hai.", ipa: "d̪ʊkaːn kʰʊliː ɦɛː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "खुली", "base": "खुला", "reading": "khulā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सुबह दुकान खुलती है।", reading: "subah dukān khultī hai.", ipa: "sʊbəɦ d̪ʊkaːn kʰʊlt̪iː ɦɛː", bases: [{"word": "सुबह", "ref": "hi-0302"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "खुलती", "base": "खुलना", "reading": "khulnā"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1358"
+    target: "बंद"
+    target_scripts: { perso_arabic: "بند" }
+    reading: "band"
+    ipa: "bənd̪"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकान बंद है।", reading: "dukān band hai.", ipa: "d̪ʊkaːn bənd̪ ɦɛː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "रविवार को दुकान बंद रहती है।", reading: "ravivār kō dukān band rahtī hai.", ipa: "rəʋɪʋaːr koː d̪ʊkaːn bənd̪ rəɦt̪iː ɦɛː", bases: [{"word": "रविवार", "ref": "hi-0316"}, {"word": "को", "ref": "hi-0277"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "रहती", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1359"
+    target: "मुफ़्त"
+    target_scripts: { perso_arabic: "مفت" }
+    reading: "muft"
+    ipa: "mʊft̪"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह सामान मुफ़्त है।", reading: "yah sāmān muft hai.", ipa: "jəɦ saːmaːn mʊft̪ ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "पानी मुफ़्त है।", reading: "pānī muft hai.", ipa: "paːniː mʊft̪ ɦɛː", bases: [{"word": "पानी", "ref": "hi-0333"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1360"
+    target: "सौदा"
+    target_scripts: { perso_arabic: "سودا" }
+    reading: "saudā"
+    ipa: "sɔːd̪aː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह अच्छा सौदा है।", reading: "yah acchā saudā hai.", ipa: "jəɦ ətʃtʃʰaː sɔːd̪aː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सौदा पक्का हो गया।", reading: "saudā pakkā hō gayā.", ipa: "sɔːd̪aː pəkkaː ɦoː ɡəjaː", bases: [{"word": "पक्का", "ref": "hi-0109"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गया", "ref": "hi-0777"}] }
+  - id: "hi-1361"
+    target: "मोलभाव"
+    target_scripts: { perso_arabic: "مول بھاؤ" }
+    reading: "mōlbhāv"
+    ipa: "moːlbʱaːʋ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मोलभाव करना पड़ता है।", reading: "mōlbhāv karnā paṛtā hai.", ipa: "moːlbʱaːʋ kərnaː pəɽt̪aː ɦɛː", bases: [{"word": "करना", "ref": "hi-0779"}, {"word": "पड़ता", "ref": "hi-0115"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बाज़ार में मोलभाव होता है।", reading: "bāzār mēm̐ mōlbhāv hōtā hai.", ipa: "baːzaːr mẽː moːlbʱaːʋ ɦoːt̪aː ɦɛː", bases: [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1362"
+    target: "नक़द"
+    target_scripts: { perso_arabic: "نقد" }
+    reading: "naqad"
+    ipa: "nəqəd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "नक़द में भुगतान करो।", reading: "naqad mēm̐ bhugtān karō.", ipa: "nəqəd̪ mẽː bʱʊɡt̪aːn kəroː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "भुगतान", "base": "भुगतान", "reading": "bhugtān"}, {"word": "करो", "ref": "hi-0779"}] }
+      - { target: "नक़द पैसे रखो।", reading: "naqad paisē rakhō.", ipa: "nəqəd̪ pɛːseː rəkʰoː", bases: [{"word": "पैसे", "ref": "hi-0234"}, {"word": "रखो", "ref": "hi-0950"}] }
+  - id: "hi-1363"
+    target: "कार्ड"
+    target_scripts: { perso_arabic: "کارڈ" }
+    reading: "kārḍ"
+    ipa: "kaːrɖ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कार्ड से भुगतान करो।", reading: "kārḍ sē bhugtān karō.", ipa: "kaːrɖ seː bʱʊɡt̪aːn kəroː", bases: [{"word": "से", "ref": "hi-0276"}, {"word": "भुगतान", "base": "भुगतान", "reading": "bhugtān"}, {"word": "करो", "ref": "hi-0779"}] }
+      - { target: "दुकान पर कार्ड चलता है।", reading: "dukān par kārḍ caltā hai.", ipa: "d̪ʊkaːn pər kaːrɖ tʃəlt̪aː ɦɛː", bases: [{"word": "दुकान", "ref": "hi-0239"}, {"word": "पर", "ref": "hi-0275"}, {"word": "चलता", "ref": "hi-0801"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1364"
+    target: "बदलना"
+    target_scripts: { perso_arabic: "بدلنا" }
+    reading: "badlnā"
+    ipa: "bəd̪lnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सामान बदलना है।", reading: "sāmān badlnā hai.", ipa: "saːmaːn bəd̪lnaː ɦɛː", bases: [{"word": "सामान", "ref": "hi-1350"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "बदलना मुश्किल है।", reading: "badlnā muśkil hai.", ipa: "bəd̪lnaː mʊʃkɪl ɦɛː", bases: [{"word": "मुश्किल", "ref": "hi-0905"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1365"
+    target: "वज़न"
+    target_scripts: { perso_arabic: "وزن" }
+    reading: "vazan"
+    ipa: "ʋəzən"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सामान का वज़न पाँच किलो है।", reading: "sāmān kā vazan pām̐c kilō hai.", ipa: "saːmaːn kaː ʋəzən pãːtʃ kɪloː ɦɛː", bases: [{"word": "सामान", "ref": "hi-1350"}, {"word": "का", "ref": "hi-0279"}, {"word": "पाँच", "ref": "hi-0202"}, {"word": "किलो", "ref": "hi-0241"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "इसका वज़न ज़्यादा है।", reading: "iskā vazan zyādā hai.", ipa: "ɪskaː ʋəzən zjaːd̪aː ɦɛː", bases: [{"word": "इसका", "ref": "hi-0748"}, {"word": "ज़्यादा", "ref": "hi-0816"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1366"
+    target: "थोक"
+    target_scripts: { perso_arabic: "تھوک" }
+    reading: "thōk"
+    ipa: "t̪ʰoːk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "थोक में सामान लेते हैं।", reading: "thōk mēm̐ sāmān lētē haim̐.", ipa: "t̪ʰoːk mẽː saːmaːn leːt̪eː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "लेते", "ref": "hi-0786"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "थोक का भाव कम है।", reading: "thōk kā bhāv kam hai.", ipa: "t̪ʰoːk kaː bʱaːʋ kəm ɦɛː", bases: [{"word": "का", "ref": "hi-0279"}, {"word": "भाव", "ref": "hi-1378"}, {"word": "कम", "ref": "hi-0105"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1367"
+    target: "थैली"
+    target_scripts: { perso_arabic: "تھیلی" }
+    reading: "thailī"
+    ipa: "t̪ʰɛːliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "थैली में सामान है।", reading: "thailī mēm̐ sāmān hai.", ipa: "t̪ʰɛːliː mẽː saːmaːn ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "थैली भारी है।", reading: "thailī bhārī hai.", ipa: "t̪ʰɛːliː bʱaːriː ɦɛː", bases: [{"word": "भारी", "ref": "hi-0908"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1368"
+    target: "पैकेट"
+    target_scripts: { perso_arabic: "پیکٹ" }
+    reading: "paikēṭ"
+    ipa: "pɛːkeːʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चीनी का पैकेट", reading: "cīnī kā paikēṭ", ipa: "tʃiːniː kaː pɛːkeːʈ", bases: [{"word": "चीनी", "ref": "hi-1015"}, {"word": "का", "ref": "hi-0279"}] }
+      - { target: "पैकेट खोलो।", reading: "paikēṭ khōlō.", ipa: "pɛːkeːʈ kʰoːloː", bases: [{"word": "खोलो", "ref": "hi-0937"}] }
+  - id: "hi-1369"
+    target: "प्लास्टिक"
+    target_scripts: { perso_arabic: "پلاسٹک" }
+    reading: "plāsṭik"
+    ipa: "plaːsʈɪk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह प्लास्टिक का थैला है।", reading: "yah plāsṭik kā thailā hai.", ipa: "jəɦ plaːsʈɪk kaː t̪ʰɛːlaː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "का", "ref": "hi-0279"}, {"word": "थैला", "ref": "hi-1089"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "प्लास्टिक हल्का है।", reading: "plāsṭik halkā hai.", ipa: "plaːsʈɪk ɦəlkaː ɦɛː", bases: [{"word": "हल्का", "ref": "hi-0909"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1370"
+    target: "दुकानदारी"
+    target_scripts: { perso_arabic: "دکانداری" }
+    reading: "dukāndārī"
+    ipa: "d̪ʊkaːnd̪aːriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकानदारी अच्छी है।", reading: "dukāndārī acchī hai.", ipa: "d̪ʊkaːnd̪aːriː ətʃtʃʰiː ɦɛː", bases: [{"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "उसकी दुकानदारी बड़ी है।", reading: "uskī dukāndārī baṛī hai.", ipa: "ʊskiː d̪ʊkaːnd̪aːriː bəɽiː ɦɛː", bases: [{"word": "उसकी", "ref": "hi-0749"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1371"
+    target: "बचत"
+    target_scripts: { perso_arabic: "بچت" }
+    reading: "bacat"
+    ipa: "bətʃət̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बचत ज़रूरी है।", reading: "bacat zarūrī hai.", ipa: "bətʃət̪ zəruːriː ɦɛː", bases: [{"word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "पैसे की बचत करो।", reading: "paisē kī bacat karō.", ipa: "pɛːseː kiː bətʃət̪ kəroː", bases: [{"word": "पैसे", "ref": "hi-0234"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "करो", "ref": "hi-0779"}] }
+  - id: "hi-1372"
+    target: "नाप"
+    target_scripts: { perso_arabic: "ناپ" }
+    reading: "nāp"
+    ipa: "naːp"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "नाप ठीक है।", reading: "nāp ṭhīk hai.", ipa: "naːp ʈʰiːk ɦɛː", bases: [{"word": "ठीक", "base": "ठीक", "reading": "ṭhīk"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "कपड़े का नाप लो।", reading: "kapṛē kā nāp lō.", ipa: "kəpɽeː kaː naːp loː", bases: [{"word": "कपड़े", "ref": "hi-1106"}, {"word": "का", "ref": "hi-0279"}, {"word": "लो", "ref": "hi-0786"}] }
+  - id: "hi-1373"
+    target: "ठेला"
+    target_scripts: { perso_arabic: "ٹھیلا" }
+    reading: "ṭhēlā"
+    ipa: "ʈʰeːlaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ठेला सड़क पर है।", reading: "ṭhēlā saṛak par hai.", ipa: "ʈʰeːlaː səɽək pər ɦɛː", bases: [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "सब्ज़ी का ठेला", reading: "sabzī kā ṭhēlā", ipa: "səbziː kaː ʈʰeːlaː", bases: [{"word": "सब्ज़ी", "ref": "hi-0249"}, {"word": "का", "ref": "hi-0279"}] }
+  - id: "hi-1374"
+    target: "मंडी"
+    target_scripts: { perso_arabic: "منڈی" }
+    reading: "maṇḍī"
+    ipa: "məɳɖiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब्ज़ी मंडी बड़ी है।", reading: "sabzī maṇḍī baṛī hai.", ipa: "səbziː məɳɖiː bəɽiː ɦɛː", bases: [{"word": "सब्ज़ी", "ref": "hi-0249"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "मंडी में भीड़ है।", reading: "maṇḍī mēm̐ bhīṛ hai.", ipa: "məɳɖiː mẽː bʱiːɽ ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "भीड़", "base": "भीड़", "reading": "bhīṛ"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1375"
+    target: "पर्ची"
+    target_scripts: { perso_arabic: "پرچی" }
+    reading: "parcī"
+    ipa: "pərtʃiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पर्ची पर लिखो।", reading: "parcī par likhō.", ipa: "pərtʃiː pər lɪkʰoː", bases: [{"word": "पर", "ref": "hi-0275"}, {"word": "लिखो", "ref": "hi-0781"}] }
+      - { target: "पर्ची में नाम है।", reading: "parcī mēm̐ nām hai.", ipa: "pərtʃiː mẽː naːm ɦɛː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "नाम", "ref": "hi-0187"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1376"
+    target: "गिनती"
+    target_scripts: { perso_arabic: "گنتی" }
+    reading: "gintī"
+    ipa: "ɡɪnt̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गिनती करो।", reading: "gintī karō.", ipa: "ɡɪnt̪iː kəroː", bases: [{"word": "करो", "ref": "hi-0779"}] }
+      - { target: "पैसे की गिनती करो।", reading: "paisē kī gintī karō.", ipa: "pɛːseː kiː ɡɪnt̪iː kəroː", bases: [{"word": "पैसे", "ref": "hi-0234"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "करो", "ref": "hi-0779"}] }
+  - id: "hi-1377"
+    target: "वारंटी"
+    target_scripts: { perso_arabic: "وارنٹی" }
+    reading: "vāraṇṭī"
+    ipa: "ʋaːrəɳʈiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "इसकी वारंटी एक साल की है।", reading: "iskī vāraṇṭī ēk sāl kī hai.", ipa: "ɪskiː ʋaːrəɳʈiː eːk saːl kiː ɦɛː", bases: [{"word": "इसकी", "ref": "hi-0748"}, {"word": "एक", "ref": "hi-0198"}, {"word": "साल", "ref": "hi-0318"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "फ़ोन की वारंटी है।", reading: "fōn kī vāraṇṭī hai.", ipa: "foːn kiː ʋaːrəɳʈiː ɦɛː", bases: [{"word": "फ़ोन", "base": "फ़ोन", "reading": "fōn"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1378"
+    target: "भाव"
+    target_scripts: { perso_arabic: "بھاؤ" }
+    reading: "bhāv"
+    ipa: "bʱaːʋ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आलू का भाव बीस रुपये है।", reading: "ālū kā bhāv bīs rupyē hai.", ipa: "aːluː kaː bʱaːʋ biːs rʊpjeː ɦɛː", bases: [{"word": "आलू", "ref": "hi-0250"}, {"word": "का", "ref": "hi-0279"}, {"word": "बीस", "ref": "hi-0217"}, {"word": "रुपये", "ref": "hi-0233"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "भाव बढ़ गया।", reading: "bhāv baṛh gayā.", ipa: "bʱaːʋ bəɽʱ ɡəjaː", bases: [{"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "गया", "ref": "hi-0777"}] }
+  - id: "hi-1379"
+    target: "नमूना"
+    target_scripts: { perso_arabic: "نمونہ" }
+    reading: "namūnā"
+    ipa: "nəmuːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह नमूना है।", reading: "yah namūnā hai.", ipa: "jəɦ nəmuːnaː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "नमूना दिखाओ।", reading: "namūnā dikhāō.", ipa: "nəmuːnaː d̪ɪkʰaːoː", bases: [{"word": "दिखाओ", "base": "दिखाना", "reading": "dikhānā"}] }
+  - id: "hi-1380"
+    target: "खुदरा"
+    target_scripts: { perso_arabic: "خردہ" }
+    reading: "khudrā"
+    ipa: "kʰʊd̪raː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "खुदरा पैसे दो।", reading: "khudrā paisē dō.", ipa: "kʰʊd̪raː pɛːseː d̪oː", bases: [{"word": "पैसे", "ref": "hi-0234"}, {"word": "दो", "ref": "hi-0199"}] }
+      - { target: "खुदरा नहीं है।", reading: "khudrā nahīm̐ hai.", ipa: "kʰʊd̪raː nəɦĩː ɦɛː", bases: [{"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1381"
+    target: "नकली"
+    target_scripts: { perso_arabic: "نقلی" }
+    reading: "naklī"
+    ipa: "nəkliː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह नकली नोट है।", reading: "yah naklī nōṭ hai.", ipa: "jəɦ nəkliː noːʈ ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "नोट", "ref": "hi-1345"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "यह असली है।", reading: "yah aslī hai.", ipa: "jəɦ əsliː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "असली", "ref": "hi-1382"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1382"
+    target: "असली"
+    target_scripts: { perso_arabic: "اصلی" }
+    reading: "aslī"
+    ipa: "əsliː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "असली सोना", reading: "aslī sōnā", ipa: "əsliː soːnaː", bases: [{"word": "सोना", "ref": "hi-0450"}] }
+      - { target: "यह असली है।", reading: "yah aslī hai.", ipa: "jəɦ əsliː ɦɛː", bases: [{"word": "यह", "ref": "hi-0748"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1383"
+    target: "गारंटी"
+    target_scripts: { perso_arabic: "گارنٹی" }
+    reading: "gāraṇṭī"
+    ipa: "ɡaːrəɳʈiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दो साल की गारंटी है।", reading: "dō sāl kī gāraṇṭī hai.", ipa: "d̪oː saːl kiː ɡaːrəɳʈiː ɦɛː", bases: [{"word": "दो", "ref": "hi-0199"}, {"word": "साल", "ref": "hi-0318"}, {"word": "की", "base": "की", "reading": "kī"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "गारंटी है।", reading: "gāraṇṭī hai.", ipa: "ɡaːrəɳʈiː ɦɛː", bases: [{"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1384"
+    target: "बिक्री"
+    target_scripts: { perso_arabic: "بکری" }
+    reading: "bikrī"
+    ipa: "bɪkriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बिक्री बढ़ी है।", reading: "bikrī baṛhī hai.", ipa: "bɪkriː bəɽʱiː ɦɛː", bases: [{"word": "बढ़ी", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "आज बिक्री कम है।", reading: "āj bikrī kam hai.", ipa: "aːdʒ bɪkriː kəm ɦɛː", bases: [{"word": "आज", "ref": "hi-0299"}, {"word": "कम", "ref": "hi-0105"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1385"
+    target: "तौलना"
+    target_scripts: { perso_arabic: "تولنا" }
+    reading: "taulnā"
+    ipa: "t̪ɔːlnaː"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दुकानदार सामान तौलता है।", reading: "dukāndār sāmān taultā hai.", ipa: "d̪ʊkaːnd̪aːr saːmaːn t̪ɔːlt̪aː ɦɛː", bases: [{"word": "दुकानदार", "ref": "hi-0402"}, {"word": "सामान", "ref": "hi-1350"}, {"word": "तौलता", "base": "तौलना", "reading": "taulnā"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "किलो में तौलो।", reading: "kilō mēm̐ taulō.", ipa: "kɪloː mẽː t̪ɔːloː", bases: [{"word": "किलो", "ref": "hi-0241"}, {"word": "में", "ref": "hi-0274"}, {"word": "तौलो", "base": "तौलना", "reading": "taulnā"}] }
+  - id: "hi-1386"
+    target: "जेब"
+    target_scripts: { perso_arabic: "جیب" }
+    reading: "jēb"
+    ipa: "dʒeːb"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जेब में पैसे हैं।", reading: "jēb mēm̐ paisē haim̐.", ipa: "dʒeːb mẽː pɛːseː ɦɛ̃ː", bases: [{"word": "में", "ref": "hi-0274"}, {"word": "पैसे", "ref": "hi-0234"}, {"word": "हैं", "ref": "hi-0113"}] }
+      - { target: "जेब खाली है।", reading: "jēb khālī hai.", ipa: "dʒeːb kʰaːliː ɦɛː", bases: [{"word": "खाली", "base": "खाली", "reading": "khālī"}, {"word": "है", "ref": "hi-0112"}] }
+  - id: "hi-1387"
+    target: "रकम"
+    target_scripts: { perso_arabic: "رقم" }
+    reading: "rakam"
+    ipa: "rəkəm"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कुल रकम पाँच सौ है।", reading: "kul rakam pām̐c sau hai.", ipa: "kʊl rəkəm pãːtʃ sɔː ɦɛː", bases: [{"word": "कुल", "base": "कुल", "reading": "kul"}, {"word": "पाँच", "ref": "hi-0202"}, {"word": "सौ", "ref": "hi-0225"}, {"word": "है", "ref": "hi-0112"}] }
+      - { target: "रकम बड़ी है।", reading: "rakam baṛī hai.", ipa: "rəkəm bəɽiː ɦɛː", bases: [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0112"}] }

@@ -1,0 +1,360 @@
+schema: 1
+id: "hi-en-shopping"
+kind: "layer"
+core: "hi-shopping"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping"
+license: "CC-BY-SA-4.0"
+description: "Shops, prices, money and buying: the words at a market stall and a shop counter. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1338":
+    native: "shopping; buying"
+    notes:
+      "n1": "The act of buying. The verb is ख़रीदना (kharīdnā)."
+    examples:
+      "बाज़ार में ख़रीदारी करते हैं।": { native: "We shop in the market.", bases: {} }
+      "आज ख़रीदारी अच्छी थी।": { native: "Today's shopping was good.", bases: {} }
+  "hi-1339":
+    native: "buyer; customer"
+    notes:
+      "n1": "Used of the person who buys, the opposite of दुकानदार (dukāndār)."
+    examples:
+      "दुकान पर ख़रीदार हैं।": { native: "There are buyers at the shop.", bases: {} }
+      "वह अच्छा ख़रीदार है।": { native: "He is a good buyer.", bases: {} }
+  "hi-1340":
+    native: "customer"
+    notes:
+      "n1": "The regular word for a customer at a shop."
+    examples:
+      "ग्राहक दुकान में आया।": { native: "A customer came into the shop.", bases: {} }
+      "दुकानदार ग्राहक को सामान दिखाता है।": { native: "The shopkeeper shows the customer the goods.", bases: { "दिखाता": "to show" } }
+  "hi-1341":
+    native: "discount"
+    notes:
+      "n1": "Money taken off the price, as छूट पर (chhūṭ par), on discount."
+    examples:
+      "इस पर बीस प्रतिशत छूट है।": { native: "There is a twenty per cent discount on this.", bases: { "प्रतिशत": "per cent" } }
+      "दुकान में छूट है।": { native: "There is a discount in the shop.", bases: {} }
+  "hi-1342":
+    native: "price (value in money)"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is मूल्य (mūlya)."
+    examples:
+      "इसकी कीमत बहुत ज़्यादा है।": { native: "Its price is very high.", bases: {} }
+      "कीमत कम है।": { native: "The price is low.", bases: {} }
+  "hi-1343":
+    native: "price; value"
+    notes:
+      "n1": "Sanskrit-leaning. In shops, कीमत (qīmat) is more usual."
+    examples:
+      "इस चीज़ का मूल्य तीन सौ रुपये है।": { native: "The price of this item is three hundred rupees.", bases: {} }
+      "मूल्य ठीक है।": { native: "The price is fair.", bases: { "ठीक": "fair; right" } }
+  "hi-1344":
+    native: "coin"
+    notes:
+      "n1": "A metal coin, as opposed to a note."
+    examples:
+      "जेब में सिक्का है।": { native: "There is a coin in the pocket.", bases: {} }
+      "यह सिक्का पुराना है।": { native: "This coin is old.", bases: {} }
+  "hi-1345":
+    native: "banknote"
+    notes:
+      "n1": "A paper note of money. The English word is used in Hindi."
+    examples:
+      "सौ रुपये का नोट है।": { native: "It is a hundred rupee note.", bases: {} }
+      "मेरे पास नोट नहीं है।": { native: "I do not have a note with me.", bases: {} }
+  "hi-1346":
+    native: "wallet"
+    notes:
+      "n1": "A small purse for notes and coins."
+    examples:
+      "मेरा बटुआ खो गया।": { native: "My wallet got lost.", bases: { "खो": "to lose" } }
+      "बटुआ जेब में है।": { native: "The wallet is in the pocket.", bases: {} }
+  "hi-1347":
+    native: "receipt"
+    notes:
+      "n1": "The paper that proves you paid."
+    examples:
+      "दुकानदार ने रसीद दी।": { native: "The shopkeeper gave the receipt.", bases: { "ने": "(marks the doer in the past)" } }
+      "रसीद रखो।": { native: "Keep the receipt.", bases: {} }
+  "hi-1348":
+    native: "bill"
+    notes:
+      "n1": "An English word, used in Hindi for the amount to pay."
+    examples:
+      "बिल बहुत बड़ा है।": { native: "The bill is very big.", bases: {} }
+      "बिल का भुगतान करो।": { native: "Pay the bill.", bases: { "भुगतान": "payment" } }
+  "hi-1349":
+    native: "valuable; expensive"
+    notes:
+      "n1": "Of things worth a lot of money. Does not change its form."
+    examples:
+      "यह घड़ी क़ीमती है।": { native: "This watch is valuable.", bases: {} }
+      "सोना क़ीमती है।": { native: "Gold is valuable.", bases: {} }
+  "hi-1350":
+    native: "goods; things"
+    notes:
+      "n1": "The things one buys or carries. The Sanskrit-leaning word is वस्तु (vastu)."
+    examples:
+      "यह सामान अच्छा है।": { native: "These goods are good.", bases: {} }
+      "सामान बाज़ार में है।": { native: "The goods are in the market.", bases: {} }
+  "hi-1351":
+    native: "thing; item"
+    notes:
+      "n1": "Any object or item in a shop."
+    examples:
+      "यह चीज़ सस्ती है।": { native: "This item is cheap.", bases: {} }
+      "कोई चीज़ नहीं है।": { native: "There is nothing.", bases: {} }
+  "hi-1352":
+    native: "trolley"
+    notes:
+      "n1": "A wheeled cart for goods in a supermarket."
+    examples:
+      "ट्रॉली में सामान है।": { native: "There are goods in the trolley.", bases: {} }
+      "ट्रॉली भारी है।": { native: "The trolley is heavy.", bases: {} }
+  "hi-1353":
+    native: "basket"
+    notes:
+      "n1": "A woven basket for vegetables, fruit or goods."
+    examples:
+      "टोकरी में सब्ज़ी है।": { native: "There are vegetables in the basket.", bases: {} }
+      "टोकरी बड़ी है।": { native: "The basket is big.", bases: {} }
+  "hi-1354":
+    native: "account; calculation"
+    notes:
+      "n1": "Persian-leaning. The money one owes or has paid, written down."
+    examples:
+      "दुकानदार हिसाब करता है।": { native: "The shopkeeper does the accounts.", bases: {} }
+      "हिसाब ठीक है।": { native: "The accounts are right.", bases: { "ठीक": "fair; right" } }
+  "hi-1355":
+    native: "return (of goods)"
+    notes:
+      "n1": "Giving back goods that were bought, for a refund or a change."
+    examples:
+      "सामान की वापसी नहीं है।": { native: "There are no returns of goods.", bases: { "की": "of (f)" } }
+      "वापसी के लिए रसीद चाहिए।": { native: "For a return one needs the receipt.", bases: { "के": "of (oblique plural)", "लिए": "for" } }
+  "hi-1356":
+    native: "goods; stock"
+    notes:
+      "n1": "The stock that a shop has for sale."
+    examples:
+      "दुकान में माल है।": { native: "There is stock in the shop.", bases: {} }
+      "माल नया है।": { native: "The stock is new.", bases: {} }
+  "hi-1357":
+    native: "open"
+    notes:
+      "n1": "Of a shop or a door."
+    examples:
+      "दुकान खुली है।": { native: "The shop is open.", bases: { "खुली": "open (f)" } }
+      "सुबह दुकान खुलती है।": { native: "The shop opens in the morning.", bases: { "खुलती": "to open" } }
+  "hi-1358":
+    native: "closed; shut"
+    notes:
+      "n1": "Of a shop or a door. Does not change its form."
+    examples:
+      "दुकान बंद है।": { native: "The shop is closed.", bases: {} }
+      "रविवार को दुकान बंद रहती है।": { native: "On Sunday the shop stays closed.", bases: {} }
+  "hi-1359":
+    native: "free (of charge)"
+    notes:
+      "n1": "Does not change its form."
+    examples:
+      "यह सामान मुफ़्त है।": { native: "These goods are free.", bases: {} }
+      "पानी मुफ़्त है।": { native: "The water is free.", bases: {} }
+  "hi-1360":
+    native: "deal; purchase"
+    notes:
+      "n1": "A bargain struck between buyer and seller, or a thing bought."
+    examples:
+      "यह अच्छा सौदा है।": { native: "This is a good deal.", bases: {} }
+      "सौदा पक्का हो गया।": { native: "The deal was settled.", bases: {} }
+  "hi-1361":
+    native: "bargaining"
+    notes:
+      "n1": "Haggling over the price."
+    examples:
+      "मोलभाव करना पड़ता है।": { native: "One has to bargain.", bases: {} }
+      "बाज़ार में मोलभाव होता है।": { native: "There is bargaining in the market.", bases: {} }
+  "hi-1362":
+    native: "cash"
+    notes:
+      "n1": "Money in notes and coins, not by card."
+    examples:
+      "नक़द में भुगतान करो।": { native: "Pay in cash.", bases: { "भुगतान": "payment" } }
+      "नक़द पैसे रखो।": { native: "Keep cash.", bases: {} }
+  "hi-1363":
+    native: "card (bank or shop)"
+    notes:
+      "n1": "An English word: a debit or credit card."
+    examples:
+      "कार्ड से भुगतान करो।": { native: "Pay by card.", bases: { "भुगतान": "payment" } }
+      "दुकान पर कार्ड चलता है।": { native: "Cards are accepted at the shop.", bases: {} }
+  "hi-1364":
+    native: "to exchange; to change"
+    notes:
+      "n1": "Of goods that are swapped for another."
+    examples:
+      "सामान बदलना है।": { native: "The goods have to be exchanged.", bases: {} }
+      "बदलना मुश्किल है।": { native: "Exchanging is difficult.", bases: {} }
+  "hi-1365":
+    native: "weight"
+    notes:
+      "n1": "How heavy something is."
+    examples:
+      "सामान का वज़न पाँच किलो है।": { native: "The weight of the goods is five kilos.", bases: {} }
+      "इसका वज़न ज़्यादा है।": { native: "Its weight is high.", bases: {} }
+  "hi-1366":
+    native: "wholesale; bulk"
+    notes:
+      "n1": "Goods sold in large amounts to shops, at the थोक भाव (thok bhāv), the wholesale price."
+    examples:
+      "थोक में सामान लेते हैं।": { native: "We buy goods in bulk.", bases: {} }
+      "थोक का भाव कम है।": { native: "The wholesale price is low.", bases: {} }
+  "hi-1367":
+    native: "plastic or cloth bag"
+    notes:
+      "n1": "A small bag for carrying goods, often made of plastic."
+    examples:
+      "थैली में सामान है।": { native: "There are goods in the bag.", bases: {} }
+      "थैली भारी है।": { native: "The bag is heavy.", bases: {} }
+  "hi-1368":
+    native: "packet"
+    notes:
+      "n1": "A small wrapped pack of something."
+    examples:
+      "चीनी का पैकेट": { native: "A packet of sugar.", bases: {} }
+      "पैकेट खोलो।": { native: "Open the packet.", bases: {} }
+  "hi-1369":
+    native: "plastic"
+    notes:
+      "n1": "An English word, used in Hindi for the material of bags and bottles."
+    examples:
+      "यह प्लास्टिक का थैला है।": { native: "This is a plastic bag.", bases: {} }
+      "प्लास्टिक हल्का है।": { native: "Plastic is light.", bases: {} }
+  "hi-1370":
+    native: "shopkeeping; trade"
+    notes:
+      "n1": "The work and business of a shop."
+    examples:
+      "दुकानदारी अच्छी है।": { native: "The shopkeeping is good.", bases: {} }
+      "उसकी दुकानदारी बड़ी है।": { native: "His business is big.", bases: {} }
+  "hi-1371":
+    native: "saving (money)"
+    notes:
+      "n1": "Money kept aside, not spent."
+    examples:
+      "बचत ज़रूरी है।": { native: "Saving is necessary.", bases: { "ज़रूरी": "necessary" } }
+      "पैसे की बचत करो।": { native: "Save your money.", bases: { "की": "of (f)" } }
+  "hi-1372":
+    native: "measure; size"
+    notes:
+      "n1": "The size of a piece of clothing, or a measurement."
+    examples:
+      "नाप ठीक है।": { native: "The size is right.", bases: { "ठीक": "fair; right" } }
+      "कपड़े का नाप लो।": { native: "Take the measure of the clothes.", bases: {} }
+  "hi-1373":
+    native: "handcart"
+    notes:
+      "n1": "A small cart that a seller pushes in the street."
+    examples:
+      "ठेला सड़क पर है।": { native: "The cart is on the road.", bases: {} }
+      "सब्ज़ी का ठेला": { native: "A vegetable cart.", bases: {} }
+  "hi-1374":
+    native: "wholesale market"
+    notes:
+      "n1": "A big market where goods are bought in bulk."
+    examples:
+      "सब्ज़ी मंडी बड़ी है।": { native: "The vegetable market is big.", bases: {} }
+      "मंडी में भीड़ है।": { native: "There is a crowd in the market.", bases: { "भीड़": "crowd" } }
+  "hi-1375":
+    native: "slip; chit"
+    notes:
+      "n1": "A small piece of paper with writing on it."
+    examples:
+      "पर्ची पर लिखो।": { native: "Write on the slip.", bases: {} }
+      "पर्ची में नाम है।": { native: "The name is on the slip.", bases: {} }
+  "hi-1376":
+    native: "counting"
+    notes:
+      "n1": "The act of counting."
+    examples:
+      "गिनती करो।": { native: "Count it.", bases: {} }
+      "पैसे की गिनती करो।": { native: "Count the money.", bases: { "की": "of (f)" } }
+  "hi-1377":
+    native: "warranty"
+    notes:
+      "n1": "An English word: the promise that a product will be repaired or replaced."
+    examples:
+      "इसकी वारंटी एक साल की है।": { native: "Its warranty is for one year.", bases: { "की": "of (f)" } }
+      "फ़ोन की वारंटी है।": { native: "The phone has a warranty.", bases: { "फ़ोन": "phone", "की": "of (f)" } }
+  "hi-1378":
+    native: "rate; price"
+    notes:
+      "n1": "The price of a thing on a given day."
+    examples:
+      "आलू का भाव बीस रुपये है।": { native: "The price of potatoes is twenty rupees.", bases: {} }
+      "भाव बढ़ गया।": { native: "The price went up.", bases: { "बढ़": "to increase" } }
+  "hi-1379":
+    native: "sample"
+    notes:
+      "n1": "A small piece shown before buying a larger amount."
+    examples:
+      "यह नमूना है।": { native: "This is a sample.", bases: {} }
+      "नमूना दिखाओ।": { native: "Show the sample.", bases: { "दिखाओ": "to show" } }
+  "hi-1380":
+    native: "loose change; retail"
+    notes:
+      "n1": "Of coins, small change; or retail, sold in small amounts."
+    examples:
+      "खुदरा पैसे दो।": { native: "Give me small change.", bases: {} }
+      "खुदरा नहीं है।": { native: "There is no small change.", bases: {} }
+  "hi-1381":
+    native: "fake"
+    notes:
+      "n1": "The opposite of असली (asalī)."
+    examples:
+      "यह नकली नोट है।": { native: "This is a fake note.", bases: {} }
+      "यह असली है।": { native: "This is genuine.", bases: {} }
+  "hi-1382":
+    native: "genuine; real"
+    notes:
+      "n1": "The opposite of नकली (naqlī)."
+    examples:
+      "असली सोना": { native: "Real gold.", bases: {} }
+      "यह असली है।": { native: "This is genuine.", bases: {} }
+  "hi-1383":
+    native: "guarantee"
+    notes:
+      "n1": "An English word, used in Hindi for a promise that goods will work well."
+    examples:
+      "दो साल की गारंटी है।": { native: "There is a two-year guarantee.", bases: { "की": "of (f)" } }
+      "गारंटी है।": { native: "There is a guarantee.", bases: {} }
+  "hi-1384":
+    native: "sale (selling)"
+    notes:
+      "n1": "The act of selling, and the amount sold."
+    examples:
+      "बिक्री बढ़ी है।": { native: "Sales have gone up.", bases: { "बढ़ी": "to increase" } }
+      "आज बिक्री कम है।": { native: "Sales are low today.", bases: {} }
+  "hi-1385":
+    native: "to weigh"
+    notes:
+      "n1": "Of goods on a scale."
+    examples:
+      "दुकानदार सामान तौलता है।": { native: "The shopkeeper weighs the goods.", bases: { "तौलता": "to weigh" } }
+      "किलो में तौलो।": { native: "Weigh it in kilos.", bases: { "तौलो": "to weigh" } }
+  "hi-1386":
+    native: "pocket"
+    notes:
+      "n1": "A pocket in clothes, where money is kept."
+    examples:
+      "जेब में पैसे हैं।": { native: "There is money in the pocket.", bases: {} }
+      "जेब खाली है।": { native: "The pocket is empty.", bases: { "खाली": "empty" } }
+  "hi-1387":
+    native: "sum (of money)"
+    notes:
+      "n1": "An amount of money."
+    examples:
+      "कुल रकम पाँच सौ है।": { native: "The total sum is five hundred.", bases: { "कुल": "total" } }
+      "रकम बड़ी है।": { native: "The sum is big.", bases: {} }
