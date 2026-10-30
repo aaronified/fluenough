@@ -1,5 +1,7 @@
 /// The file the daily questions' answers are sent as, one per language,
-/// attached to one mail to Fluenough (#519), the same route as a review.
+/// attached to the review mail to Fluenough (#519): the answers go in the
+/// same mail as the pending reviews, under the review subject
+/// (`ReviewMail.subject`; owner, 2026-10-30).
 ///
 /// Like a review's file it stands on its own: the rater code, the language,
 /// the app version and when it was made are inside, so the mail's subject
@@ -58,15 +60,4 @@ abstract final class QuestionsFile {
       ],
     });
   }
-}
-
-/// The mail the answers go in.
-abstract final class QuestionsMail {
-  /// What the subject starts with. English, whatever the app's language, as
-  /// the mail workflow reads it.
-  static const String subjectPrefix = '[Fluenough questions]';
-
-  /// `[Fluenough questions] FL-7K3M-Q9TD-6 (hi, bn)`.
-  static String subject(RaterCode code, Iterable<String> languages) =>
-      '$subjectPrefix $code (${languages.join(', ')})';
 }

@@ -49,6 +49,7 @@ class ReviewSection extends StatelessWidget {
     final code = reviewing.code;
     final on = reviewing.on && code != null;
     final waiting = reviewing.unsent.length;
+    final answersWaiting = reviewing.unsentAnswers.length;
     final lastSent = reviewing.lastSent.length;
     final reviewed = on ? reviewPairsOf(state) : const <ReviewPair>{};
     final names = languageNamesOf(state);
@@ -139,11 +140,14 @@ class ReviewSection extends StatelessWidget {
             onTap: () => showQuestionsPerDay(context),
           ),
         ],
-        if (waiting > 0)
+        if (waiting > 0 || answersWaiting > 0)
           GroupedTile(
             leading: const Icon(Icons.outbox_outlined),
             title: l10n.reviewSettingsToSend,
-            subtitle: l10n.reviewDecksWaiting(waiting),
+            subtitle: <String>[
+              if (waiting > 0) l10n.reviewDecksWaiting(waiting),
+              if (answersWaiting > 0) l10n.reviewSendAnswers(answersWaiting),
+            ].join('\n'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => showSendReviews(context),
           ),

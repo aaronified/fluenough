@@ -581,7 +581,8 @@ class _Text:
     def _new_block(self, name: str, item: str) -> None:
         """Adds field [name] with its one [item] line, last among the
         card's fields, before who checked it and its proposals."""
-        at = [i for i in (self._key_line("checked_by"), self._key_line("proposed"))
+        at = [i for i in (self._key_line("checked_by"), self._key_line("verified"),
+                          self._key_line("proposed"))
               if i is not None]
         where = min(at) if at else self.end
         self.lines[where:where] = [f"{' ' * self.fi}{name}:\n",
@@ -1202,7 +1203,11 @@ def languages(root: Path) -> list[str]:
 # it. Once every card entry of a deck file lists a code, the file's tag
 # `unreviewed` becomes `reviewed`, which learners do see.
 
-_CHECKED_IN_FLOW = re.compile(r", checked_by: \[[^\]\n]*\](?= ?\}\s*$)")
+# A list the bot writes at the end of a flow card, with the other one (a
+# card's `checked_by` and its `verified`, #519) possibly after it.
+_AFTER_IN_FLOW = r"(?=(?:, (?:checked_by|verified): \[[^\]\n]*\])* ?\}\s*$)"
+_CHECKED_IN_FLOW = re.compile(r", checked_by: \[[^\]\n]*\]" + _AFTER_IN_FLOW)
+_VERIFIED_IN_FLOW = re.compile(r", verified: \[[^\]\n]*\]" + _AFTER_IN_FLOW)
 
 
 def checked_line(codes: list[str] | tuple[str, ...]) -> str:
@@ -1263,18 +1268,26 @@ def _flow_line(entry: Entry, lines: list[str]) -> int:
 
 def _write_checked(entry: Entry, codes: list[str]) -> None:
     """Writes [codes] as [entry]'s `checked_by`, one line."""
-    def check(e: Entry) -> bool:
-        return checked_by(e) == codes
+    _write_listed(entry, "checked_by", codes,
+                  lambda e: checked_by(e) == codes)
+
+
+def _write_listed(entry: Entry, key: str, items: list[str], check) -> None:
+    """Writes [items] as [entry]'s list [key] (`checked_by` or `verified`),
+    one line: its own line in a card written as a block, last before the
+    closing brace of a card written on one line in flow style."""
+    line_of = (lambda xs: checked_line(xs)) if key == "checked_by" else verified_line
+    flow = _CHECKED_IN_FLOW if key == "checked_by" else _VERIFIED_IN_FLOW
     try:
         edit = _Text(entry)
     except Unsupported:
         edit = None
     if edit is not None:
-        line = f"{' ' * edit.fi}{checked_line(codes)}\n"
-        i = edit._key_line("checked_by")
+        line = f"{' ' * edit.fi}{line_of(items)}\n"
+        i = edit._key_line(key)
         if i is not None:
             if edit._block_end(i) != i + 1:
-                raise Unsupported("checked_by is written over several lines")
+                raise Unsupported(f"{key} is written over several lines")
             edit.lines[i] = line
         else:
             # Last among the card's fields, before its proposals.
@@ -1286,11 +1299,11 @@ def _write_checked(entry: Entry, codes: list[str]) -> None:
     i = _flow_line(entry, lines)
     body = lines[i].rstrip("\r\n")
     end = lines[i][len(body):]
-    added = f", {checked_line(codes)}"
-    if _CHECKED_IN_FLOW.search(body):
-        body = _CHECKED_IN_FLOW.sub(added, body)
-    elif "checked_by" in body:
-        raise Unsupported("checked_by is not written as the bot writes it")
+    added = f", {line_of(items)}"
+    if flow.search(body):
+        body = flow.sub(added, body)
+    elif key in body:
+        raise Unsupported(f"{key} is not written as the bot writes it")
     else:
         stripped = body.rstrip()
         cut = len(stripped) - 1
@@ -1299,6 +1312,48 @@ def _write_checked(entry: Entry, codes: list[str]) -> None:
         body = stripped[:cut] + added + stripped[cut:]
     lines[i] = body + end
     _save_lines(entry, lines, check)
+
+
+# --- Settled data points (#519) ------------------------------------------------
+# A data point two reviewers agreed is right is listed on the card's entry,
+# `verified: ["meaning", "example:1a2b3c4d", "confusable:<id>", "sound"]`,
+# written as `checked_by` is and left out of the content hash the same way.
+
+def verified_line(points: list[str] | tuple[str, ...]) -> str:
+    """`verified: [...]`, as the bot writes it."""
+    return f"verified: [{', '.join(_quoted(p) for p in points)}]"
+
+
+def verified(entry: Entry) -> list[str]:
+    """The data points [entry] lists as settled."""
+    points = entry.data.get("verified")
+    if not isinstance(points, list):
+        return []
+    return [p for p in points if isinstance(p, str)]
+
+
+def settle_points(root: Path, lang: str, card: str, points: list[str]) -> str:
+    """Lists [points] in the `verified` of every entry of [card] that
+    holds the card itself (not a layer's translation of it), each once:
+    "written" when a line changed, "none" when they were all listed
+    already, "unsupported" when an entry cannot be edited one line at a
+    time (nothing is written to that one; the rest are)."""
+    outcome = "none"
+    for e in entries(root, lang, card):
+        if e.form == "layer":
+            continue
+        have = verified(e)
+        want = [*have, *(p for p in points if p not in have)]
+        if want == have:
+            continue
+        try:
+            _write_listed(e, "verified", want, lambda x, w=want: verified(x) == w)
+        except Unsupported:
+            outcome = "unsupported"
+            continue
+        if outcome != "unsupported":
+            outcome = "written"
+    return outcome
 
 
 @dataclass

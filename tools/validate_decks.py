@@ -2866,11 +2866,13 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
 
 @dataclass
 class Checked:
-    """A card entry's `checked_by`, taken out of the file: where it was,
-    the card's id, and the codes as written."""
+    """A card entry's `checked_by` or `verified`, taken out of the file:
+    where it was, the card's id, the value as written (the codes, or the
+    settled points) and which key it was."""
     where: str
     card: object
     codes: object
+    key: str = "checked_by"
 
 
 def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
@@ -2893,18 +2895,41 @@ def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
 
 
 def strip_checks(raw: object) -> list[Checked]:
-    """Takes every card entry's `checked_by` out of [raw], a deck file as
-    loaded, and returns them, as strip_proposals does proposals: it is a
-    record of review, allowed on any card entry, and checked on its own."""
-    return [Checked(where, card, entry.pop("checked_by"))
-            for where, card, entry in _card_entries(raw) if "checked_by" in entry]
+    """Takes every card entry's `checked_by` and `verified` out of [raw], a
+    deck file as loaded, and returns them, as strip_proposals does
+    proposals: they are records of review, allowed on any card entry (a
+    single file's, a core's, a layer's), and checked on their own."""
+    return [Checked(where, card, entry.pop(key), key)
+            for where, card, entry in _card_entries(raw)
+            for key in ("checked_by", "verified") if key in entry]
+
+
+# A settled data point of `verified` (#519), as the daily questions name it:
+# the meaning, one example by the 8 hex digits of its text's hash, one
+# confusable by its id, or the recording.
+VERIFIED_POINT = re.compile(
+    r"^(?:meaning|sound|example:[0-9a-f]{8}|confusable:[A-Za-z0-9_.-]{1,64})$")
 
 
 def check_checks(r: Report, found: list[Checked]) -> None:
     """Each `checked_by`: a non-empty list of rater codes, each written as
-    the app writes it, none twice."""
+    the app writes it, none twice; each `verified` (#519): a non-empty list
+    of settled data points, none twice."""
     for c in found:
-        where = f"{c.where}.checked_by"
+        where = f"{c.where}.{c.key}"
+        if c.key == "verified":
+            if not isinstance(c.codes, list) or not c.codes:
+                r.error(where, "must be a non-empty list of settled data "
+                               'points, ["meaning", "example:1a2b3c4d", '
+                               '"confusable:<id>", "sound"]')
+            elif any(not isinstance(p, str) or not VERIFIED_POINT.fullmatch(p)
+                     for p in c.codes):
+                r.error(where, "must list data points as the daily questions "
+                               "name them: meaning, sound, example:<8 hex "
+                               "digits> or confusable:<id>")
+            elif len(set(c.codes)) != len(c.codes):
+                r.error(where, "names a data point twice")
+            continue
         if not isinstance(c.codes, list) or not c.codes:
             r.error(where, "must be a non-empty list of rater codes, "
                            '["FL-XXXX-XXXX-C"]')
@@ -2936,9 +2961,9 @@ def check_checks_hashable(r: Report, path: Path) -> None:
                               "out of content_sha256")
         return
     for c in strip_checks(rest):
-        r.error(f"{c.where}.checked_by",
+        r.error(f"{c.where}.{c.key}",
                 "must be a line of its own, or last in a card written on one "
-                "line, ending `checked_by: [...] }`; anywhere else it cannot "
+                f"line, ending `{c.key}: [...] }}`; anywhere else it cannot "
                 "be left out of content_sha256, and a sign-off would offer "
                 "learners an update")
 
@@ -3021,7 +3046,7 @@ def _check_review_tags(r: Report, raw: dict) -> None:
 # --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
-    """[path] as the checks read it: its proposals and `checked_by` taken
+    """[path] as the checks read it: its proposals, `checked_by` and `verified` taken
     out (ADR-0038)."""
     try:
         raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)

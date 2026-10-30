@@ -21,7 +21,7 @@ import mail_to_issues  # noqa: E402
 import question_answers as qa  # noqa: E402
 from test_mail_to_issues import ENV  # noqa: E402
 from test_proposals import ALICE, BOB, code  # noqa: E402
-from test_review_bot import Base, ProposingImap  # noqa: E402
+from test_review_bot import Base, ProposingImap, review_file, review_mail, suggestion  # noqa: E402
 
 CAROL = code("0Z8Q2XJ7")
 SECRET = "SECRET WHY TEXT"
@@ -114,12 +114,12 @@ class Counting(Base):
                           .read_text(encoding="utf-8"))
         return data["points"][key]
 
-    def test_one_answer_is_counted_and_two_agreeing_settle_a_point(self) -> None:
+    def test_one_answer_is_counted_and_two_agreeing_yes_settle_a_point(self) -> None:
         first = self.record(ALICE, MEANING)
         self.assertEqual(first.settled, [])
         self.assertNotIn("settled", self.point())
         second = self.record(BOB, MEANING)
-        self.assertEqual(second.settled, [("zz", "zz-9201", "meaning", "yes")])
+        self.assertEqual(second.settled, [("zz", "zz-9201", "meaning")])
         self.assertEqual(self.point()["settled"], "yes")
         self.assertEqual(sorted(self.point()["answers"]), sorted([ALICE, BOB]))
 
@@ -131,17 +131,52 @@ class Counting(Base):
         self.record(ALICE, answer("zz-9201", "meaning", "meaning", "no", "wrong"))
         self.assertEqual(self.point()["answers"][ALICE],
                          {"answer": "no", "reason": "wrong"})
-        # Alice's two answers are one voice: Bob alone does not settle.
-        self.record(BOB, MEANING)
-        self.assertNotIn("settled", self.point())
-
-    def test_a_disagreement_waits_for_a_third(self) -> None:
+        self.assertEqual(self.point()["flag"], {"by": ALICE})
+        # Taken back, the flag is gone and Alice's yes is one voice: Bob
+        # alone does not settle, Bob and Alice do.
         self.record(ALICE, MEANING)
-        self.record(BOB, answer("zz-9201", "meaning", "meaning", "no", "wrong"))
+        self.assertNotIn("flag", self.point())
         self.assertNotIn("settled", self.point())
-        third = self.record(CAROL, answer("zz-9201", "meaning", "meaning", "no"))
-        self.assertEqual(third.settled, [("zz", "zz-9201", "meaning", "no")])
-        self.assertEqual(self.point()["settled"], "no")
+        self.record(BOB, MEANING)
+        self.assertEqual(self.point()["settled"], "yes")
+
+    def test_the_first_no_flags_the_point_and_a_yes_from_another_closes_it(self) -> None:
+        self.record(ALICE, MEANING)
+        first = self.record(BOB, answer("zz-9201", "meaning", "meaning", "no", "wrong"))
+        self.assertEqual(first.flagged, [("zz", "zz-9201", "meaning")])
+        self.assertEqual(self.point()["flag"], {"by": BOB})
+        self.assertNotIn("settled", self.point())
+        # A disagreement is final: closed, never sent to a third reviewer.
+        second = self.record(CAROL, MEANING)
+        self.assertEqual(second.closed, [("zz", "zz-9201", "meaning")])
+        self.assertEqual(self.point()["settled"], "closed")
+        late = self.record(ALICE, answer("zz-9201", "meaning", "meaning", "no"))
+        self.assertEqual(late.ignored, 1)
+
+    def test_a_no_is_not_settled_by_the_record_but_decided_by_the_pull_request(self) -> None:
+        no = answer("zz-9201", "meaning", "meaning", "no")
+        self.record(ALICE, no)
+        self.record(BOB, no)
+        self.assertNotIn("settled", self.point())
+        self.assertEqual(qa.flag_state(self.point(), 1), "merge")
+        self.assertEqual(qa.flag_state(self.point(), 2), "open")
+
+    def test_a_flag_only_the_flagger_gave_waits_open(self) -> None:
+        self.record(ALICE, answer("zz-9201", "meaning", "meaning", "no"))
+        self.assertEqual(qa.flag_state(self.point(), 1), "open")
+
+    def test_settled_right_is_written_to_the_card_only_when_the_field_is_released(self) -> None:
+        self.record(ALICE, MEANING)
+        result = self.record(BOB, MEANING)
+        self.assertEqual(result.verified, [])
+        self.assertNotIn("verified", self.main_text())
+        original, qa.WRITE_VERIFIED = qa.WRITE_VERIFIED, True
+        self.addCleanup(setattr, qa, "WRITE_VERIFIED", original)
+        other = answer("zz-9201", "example:0123abcd", "example", "yes")
+        self.record(ALICE, other)
+        result = self.record(BOB, other)
+        self.assertEqual(result.verified, ["zz-9201"])
+        self.assertIn('verified: ["example:0123abcd"]', self.main_text())
 
     def test_a_settled_point_never_changes(self) -> None:
         self.record(ALICE, MEANING)
@@ -199,30 +234,82 @@ class Flagged(Base):
             [answer("zz-9202", "sound", "sound", "flag", "noisy", SECRET)],
             rater=who)], who)
 
-    def test_a_recording_two_reviewers_flag_is_taken_off_the_card(self) -> None:
+    def sweep(self, times: int = 1) -> dict[str, int]:
+        counts: dict[str, int] = {}
+        for _ in range(times):
+            counts = self.bot.sweep_flags()
+        return counts
+
+    def test_the_first_flag_opens_a_pr_that_waits(self) -> None:
         self.assertEqual(self.bot.questions("m1", ALICE, self.flag(ALICE)), "merged")
+        self.assertEqual(self.sweep(), {"open": 1, "merged": 0, "closed": 0})
+        flag = self.github.prs[-1]
+        self.assertTrue(flag["head"]["ref"].startswith("review-bot/flag/zz-zz-9202-sound-"))
+        self.assertEqual(flag["state"], "open")
+        self.assertIn("flagged answer", [l["name"] for l in flag["labels"]])
+        # Open, not merged: the card keeps its recording until the second.
         self.assertIn("audio:", self.main_text())
+        self.assertEqual(self.sweep()["open"], 1)
+        self.assertEqual(len(self.github.prs), 2)
+
+    def test_the_second_flag_merges_it_and_the_recording_goes(self) -> None:
+        pushed: dict[str, Path] = {}
+        push = self.git.push
+
+        def spy(root: Path, branch: str, message: str) -> bool:
+            pushed[branch] = root
+            return push(root, branch, message)
+        self.git.push = spy
+        self.bot.questions("m1", ALICE, self.flag(ALICE))
+        self.sweep()
+        self.bot.questions("m2", BOB, self.flag(BOB))
         before = self.git.made
-        self.assertEqual(self.bot.questions("m2", BOB, self.flag(BOB)), "merged")
-        # The file went with the line that named it: the validator refuses a
-        # recording no card plays.
-        self.assertTrue((self.git.main / "decks/zz/audio/zz-9202.opus").exists())
-        self.assertFalse((self.tmp / f"work{before + 1}" / "decks/zz/audio/zz-9202.opus").exists())
+        # The branch is behind main now: rebuilt first, merged on the next run.
+        self.sweep(2)
         text = self.main_text()
         self.assertNotIn("audio", text)
         self.assertIn('native: "water"', text)
         self.assertIn('target: "నీళ్ళు"', text)
-        pr_ = self.github.prs[-1]
-        self.assertIn("Recording taken off", pr_["body"])
-        self.assertIn("daily questions", [l["name"] for l in pr_["labels"]])
-        for text in (pr_["body"], pr_["title"], "\n".join(self.logged)):
+        # The file went with the line that named it (the fake merge copies
+        # the text of the branch, so look at the branch's own checkout).
+        self.assertGreater(self.git.made, before)
+        built = pushed[next(b for b in pushed if "/flag/" in b)]
+        self.assertFalse((built / "decks/zz/audio/zz-9202.opus").exists())
+        flag = next(p for p in self.github.prs if "/flag/" in p["head"]["ref"])
+        self.assertEqual(flag["merged_at"] is not None, True)
+        self.assertIn("takes the recording off", flag["body"])
+        point = json.loads((self.git.main / "review-answers/zz.json")
+                           .read_text(encoding="utf-8"))["points"]["zz-9202|sound"]
+        self.assertEqual(point["settled"], "no")
+        for text in (flag["body"], flag["title"], "\n".join(self.logged)):
             self.assertNotIn(SECRET, text)
 
-    def test_one_flag_changes_no_deck(self) -> None:
+    def test_a_yes_from_a_second_reviewer_closes_it_for_good(self) -> None:
         self.bot.questions("m1", ALICE, self.flag(ALICE))
+        self.sweep()
+        yes = qa.read_questions([questions_file(
+            [answer("zz-9202", "sound", "sound", "yes")], rater=BOB)], BOB)
+        self.bot.questions("m2", BOB, yes)
+        self.assertEqual(self.sweep(), {"open": 0, "merged": 0, "closed": 1})
+        flag = next(p for p in self.github.prs if "/flag/" in p["head"]["ref"])
+        self.assertEqual(flag["state"], "closed")
         self.assertIn("audio:", self.main_text())
-        self.assertIn(ALICE, (self.git.main / "review-answers/zz.json")
-                      .read_text(encoding="utf-8"))
+        # Final: a third answer changes nothing and no PR comes back.
+        self.bot.questions("m3", CAROL, self.flag(CAROL))
+        self.assertEqual(self.sweep(), {"open": 0, "merged": 0, "closed": 0})
+
+    def test_a_plain_no_is_a_flag_note_for_the_owner(self) -> None:
+        no = lambda who: qa.read_questions([questions_file(  # noqa: E731
+            [answer("zz-9201", "meaning", "meaning", "no", "wrong")], rater=who)], who)
+        self.bot.questions("m1", ALICE, no(ALICE))
+        self.sweep()
+        self.bot.questions("m2", BOB, no(BOB))
+        self.sweep(2)
+        flag = next(p for p in self.github.prs if "/flag/" in p["head"]["ref"])
+        self.assertIn("flag note for the owner", flag["body"])
+        self.assertIsNotNone(flag["merged_at"])
+        # The card is not touched; the record is.
+        self.assertIn('native: "water"', self.main_text())
 
     def test_a_confirmed_recording_stays(self) -> None:
         yes = lambda who: qa.read_questions([questions_file(  # noqa: E731
@@ -244,9 +331,12 @@ class Flagged(Base):
             '      license: "CC-BY-SA-4.0"\n      credit: "A. Speaker"\n', 1),
             encoding="utf-8")
         self.bot.questions("m1", ALICE, self.flag(ALICE))
+        self.sweep()
         self.bot.questions("m2", BOB, self.flag(BOB))
+        self.sweep(2)
         self.assertIn("audio:", self.main_text())
-        self.assertIn("could not be taken off", self.github.prs[-1]["body"])
+        flag = next(p for p in self.github.prs if "/flag/" in p["head"]["ref"])
+        self.assertIn("could not be taken off", flag["body"])
 
 
 class Pull(Base):
@@ -269,6 +359,15 @@ class Pull(Base):
             [answer("zz-0404", "meaning", "meaning", "yes")])], ALICE)
         self.assertEqual(self.bot.questions("k1", ALICE, batch), "nothing")
         self.assertEqual(self.github.prs, [])
+
+    def test_an_answers_pr_lists_what_it_flagged_and_names_no_text(self) -> None:
+        batch = qa.read_questions([questions_file([
+            answer("zz-9201", "meaning", "meaning", "no", "wrong", SECRET)])], ALICE)
+        self.bot.questions("k1", ALICE, batch)
+        body = self.github.prs[0]["body"]
+        self.assertIn("Flagged", body)
+        self.assertIn("waits for a second answer", body)
+        self.assertNotIn(SECRET, body)
 
 
 class Mails(Base):
@@ -302,6 +401,51 @@ class Mails(Base):
                          + mail_to_issues.mail_key(questions_mail([])))
         self.assertIn("fluenough-filed -label:fluenough-answered",
                       imap.searches[-1][1])
+
+    def combined(self, with_review: bool = True) -> email.message.EmailMessage:
+        """One mail, as the app sends it: the review files and the answers
+        together under the review subject (owner, 2026-10-30)."""
+        cards = [suggestion("zz-9201", "meaning", "milk", "cow's milk", SECRET)]
+        message = review_mail([review_file(cards)] if with_review else [])
+        for data in (questions_file([
+                MEANING, answer("zz-9202", "meaning", "meaning", "no", "wrong", SECRET)]),):
+            message.add_attachment(json.dumps(data).encode("utf-8"),
+                                   maintype="application", subtype="json",
+                                   filename=f"fluenough-questions-{data['language']}.json")
+        return message
+
+    def test_one_mail_carries_the_review_and_the_answers(self) -> None:
+        imap = ProposingImap([self.combined()])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(len(filed), 1)
+        issue = filed[0]
+        self.assertEqual(issue["title"], f"Review: {ALICE} (zz)")
+        self.assertIn("- Changes suggested: 1", issue["body"])
+        self.assertIn("- Question answers: 2 (1 yes, 1 no or flagged)", issue["body"])
+        self.assertNotIn(mail_to_issues.SUBJECT_CHANGED, issue["labels"])
+        self.assertNotIn(mail_to_issues.CHECK_FILES, issue["labels"])
+        # Proposed as a review and counted as answers, each by its own PR.
+        self.assertEqual(imap.proposed, [b"1"])
+        self.assertEqual(imap.answered, [b"1"])
+        heads = sorted(p["head"]["ref"].split("/")[1] for p in self.github.prs)
+        self.assertEqual(heads, ["flag", "questions", "review"])
+        for text in (str(issue), log, str(self.github.prs)):
+            self.assertNotIn(SECRET, text)
+            self.assertNotIn("anvi@example.com", text)
+
+    def test_answers_alone_under_the_review_subject_are_counted_too(self) -> None:
+        imap = ProposingImap([self.combined(with_review=False)])
+        filed, _ = self.run_tool(imap)
+        self.assertEqual(filed[0]["title"], f"Review: {ALICE} (zz)")
+        self.assertIn("- Question answers: 2", filed[0]["body"])
+        self.assertEqual(imap.proposed, [])
+        self.assertEqual(imap.answered, [b"1"])
+
+    def test_the_flag_sweep_runs_after_the_mail(self) -> None:
+        imap = ProposingImap([self.combined()])
+        _, log = self.run_tool(imap)
+        self.assertIn("Flagged question points: 1 waiting for a second answer", log)
+        self.assertTrue(any("/flag/" in p["head"]["ref"] for p in self.github.prs))
 
     def test_it_is_not_taken_for_a_review_nor_the_other_way(self) -> None:
         imap = ProposingImap([questions_mail([questions_file([MEANING])])])

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
-import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/reviewing.dart';
 import '../../core/models/deck.dart';
@@ -15,6 +14,7 @@ import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'daily_questions.dart';
+import 'send_reviews_sheet.dart' show reviewMailBody;
 
 /// Opens the daily questions (#519).
 Future<void> showDailyQuestions(BuildContext context) =>
@@ -113,10 +113,11 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
   Future<void> _send() async {
     final l10n = AppLocalizations.of(context)!;
     final reviewing = AppScope.read(context).reviewing;
-    final count = reviewing.unsentAnswers.length;
+    final state = AppScope.read(context);
     setState(() => _sending = true);
+    // Everything waiting goes in the one mail, the reviews with the answers.
     final outcome = await reviewing.sendQuestions(
-      body: l10n.reviewQuestionsMailBody(AppInfo.version, count),
+      body: reviewMailBody(l10n, state, reviewing.unsent),
     );
     if (!mounted) return;
     setState(() => _sending = false);
@@ -172,6 +173,7 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
         answered: answeredToday,
         none: answeredToday == 0 && left > 0,
         waiting: waiting,
+        decksWaiting: reviewing.unsent.length,
         sending: _sending,
         onSend: _send,
       );
@@ -482,6 +484,7 @@ class _Done extends StatelessWidget {
     required this.answered,
     required this.none,
     required this.waiting,
+    required this.decksWaiting,
     required this.sending,
     required this.onSend,
   });
@@ -491,6 +494,9 @@ class _Done extends StatelessWidget {
   /// There was no question to ask at all, rather than all of them answered.
   final bool none;
   final int waiting;
+
+  /// Decks with reviews waiting: they go in the same mail.
+  final int decksWaiting;
   final bool sending;
   final VoidCallback onSend;
 
@@ -502,9 +508,13 @@ class _Done extends StatelessWidget {
       title: none
           ? l10n.reviewQuestionsNoneTitle
           : l10n.reviewQuestionsDoneTitle,
-      body: none
-          ? l10n.reviewQuestionsNoneBody
-          : l10n.reviewQuestionsDoneBody(answered),
+      body: <String>[
+        none
+            ? l10n.reviewQuestionsNoneBody
+            : l10n.reviewQuestionsDoneBody(answered),
+        if (waiting > 0 && decksWaiting > 0)
+          l10n.reviewQuestionsSendWith(decksWaiting),
+      ].join(' '),
       action: waiting == 0
           ? null
           : _SendButton(waiting: waiting, sending: sending, onSend: onSend),

@@ -155,7 +155,40 @@ another review, may change it first.
 
 ### Amendment: daily questions (#519, 2026-10-30)
 
-The answers to the app's daily questions take the same route (a mail with one `fluenough-questions` file per language, filed as an issue with counts only, counted by the bot) but are not proposals: an answer carries no text, so there is nothing to write into a field. The bot keeps them in `review-answers/<language>.json`, outside `decks/`, so no deck hash changes and no released parser needs to read a new field: one entry per data point (`<card>|<point>`), the rater codes with their answers and fixed reasons, and `settled` once the same answer has come from the agreeing number of codes (the threshold plus the first, two by default). A reviewer's own words stay in the mail. Settling a flagged recording takes the card's `audio` and `audio_credit` and the file out of the deck in the same pull request. Open: the phone cannot read the record, so it does not know a point is settled; it asks each reviewer once, the weakest data first, the same order for everyone so that answers meet.
+The answers to the app's daily questions travel in the review mail
+itself (owner, 2026-10-30: "Send all pending review in that same mail"): one
+`fluenough-questions` file per language beside the `fluenough-review` files,
+under the same subject, `[Fluenough review] CODE (langs)`. The mail job files
+one issue that also counts the answers (counts only), and the bot handles the
+two kinds of file apart: the proposals as above, and the answers by the
+tally in `review-answers/<language>.json`, outside `decks/`, one entry per
+data point (`<card>|<point>`): the rater codes with their answers and fixed
+reasons, `settled` once decided, and `flag` for the code whose "no" opened
+a pull request. A reviewer's own words stay in the mail. A mail of only
+questions files under the earlier subject `[Fluenough questions]` is still
+read.
+
+- **Yes settles by agreement.** The same "yes" from the agreeing number of
+  codes (the threshold plus the first, two by default) settles a point as
+  right. The settled point is listed in the card's `verified` (see
+  [Deck-Format](Deck-Format)), a record of review like `checked_by`, left
+  out of `content_sha256`, which the app reads to stop asking. As with
+  `proposed` and `checked_by`, a released app refuses an unknown card key, so
+  the bot writes `verified` only once a released app reads it
+  (`WRITE_VERIFIED` in `tools/question_answers.py`, false until then): until
+  then the tally is the only record and the app asks each reviewer once.
+- **A "no" is a pull request, not a proposal** (owner, 2026-10-30: "1st
+  review opens PR. Second review either merges or closes it."). An answer
+  carries no text, so there is nothing to write into a field, and a proposal
+  changes a field only to a text. The first answer that is not a "yes" opens
+  one pull request for the data point (`review-bot/flag/...`), kept open. The
+  second reviewer's answer decides: the same answer, from the agreeing
+  number of other codes, merges it (`settled: "no"`); a "yes" from any other
+  code closes it, and that is final (`settled: "closed"`), not sent to a
+  third reviewer. What merging does: a flagged recording (`sound`) takes the
+  card's `audio` and `audio_credit` and the file out, so the card uses
+  text-to-speech; any other point is a flag note whose only change is the
+  record, for the owner to act on.
 
 ## Consequences
 

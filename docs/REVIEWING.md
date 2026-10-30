@@ -181,14 +181,31 @@ without a source comes before data taken from Wiktionary or Tatoeba.
 - **How many a day** is yours to choose, in this guide's step and later in
   Settings under **Reviewing**, **Questions a day**. The default is 10. What
   you do not answer waits for the next day.
-- **Sending.** Answers wait on your phone until you tap **Send answers**.
-  Your mail app opens with Fluenough's address and one file per language, the
-  same way as a review. Do not change the files.
-- **Settled by two.** A data point is settled when two reviewers give the same
-  answer; if they disagree, a third decides. Two flags on a recording take it
-  off the card. Two No answers are listed for the owner, since an answer
-  carries no replacement text. The answers are kept in `review-answers/` in
-  the repository, as rater codes and answers only.
+- **Sending.** Answers wait on your phone until you send them, and they go in
+  **the same mail as your reviews that wait** (owner, 2026-10-30: "Send all
+  pending review in that same mail"). Tap **Send answers** here, or **Send
+  review** in Settings under **Reviewing**: either way one mail opens in your
+  mail app with Fluenough's address, a file for each deck and a file for each
+  language of answers. The subject is the review mail's,
+  `[Fluenough review] CODE (languages)`. Do not change the files.
+- **Settled by two.** A data point is settled right when two reviewers
+  answer Yes: the other reviewers needed plus the first
+  (`REVIEW_AGREEMENTS_NEEDED`, 1 by default, so two). The point is then
+  recorded on the card as `verified` and the app stops asking about it (the
+  bot writes that only once a released app reads the field; until then it
+  only tallies the answers in `review-answers/` in the repository, as rater
+  codes and answers only).
+- **A No opens a pull request; the next answer decides it** (owner,
+  2026-10-30: "1st review opens PR. Second review either merges or closes
+  it."). The first reviewer to answer No, or to flag a recording, makes the
+  review bot open a pull request for that data point, and it stays open. The
+  next reviewer's answer decides: the same No (or flag) merges it, and a Yes
+  closes it for good; a disagreement is not sent to a third reviewer. A
+  flagged recording that is merged is taken off the card, which then uses
+  text-to-speech. For any other point the answer carries no replacement text,
+  and the proposals of a review change a field only to a new text, so the
+  pull request is a flag note: merging it only records that two reviewers
+  agree the point is wrong, and the owner changes the card.
 - **Open questions** that ask you for something new, such as a regional
   variation, come in a later version.
 

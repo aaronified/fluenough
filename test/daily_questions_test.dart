@@ -6,6 +6,7 @@
 // The words are made up (AGENTS.md: tests check behaviour).
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
@@ -13,11 +14,14 @@ import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/reviewing.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/review/question_generator.dart';
 import 'package:fluenough/core/review/question_log.dart';
 import 'package:fluenough/core/review/questions_file.dart';
+import 'package:fluenough/core/review/review_file.dart';
+import 'package:fluenough/core/review/deck_review.dart' show DeckReview;
 import 'package:fluenough/core/review/rater_code.dart';
 import 'package:fluenough/core/review/review_question.dart';
 import 'package:fluenough/features/review/daily_questions_page.dart';
@@ -49,6 +53,7 @@ Deck _deck(
   LanguageInfo language = _xx,
   List<String> tags = const <String>[],
   Map<String, List<String>> checkedBy = const <String, List<String>>{},
+  Map<String, List<String>> verified = const <String, List<String>>{},
 }) => Deck(
   id: id,
   name: id,
@@ -59,6 +64,7 @@ Deck _deck(
   cards: cards,
   tags: tags,
   checkedBy: checkedBy,
+  verified: verified,
 );
 
 Card _card(
@@ -156,6 +162,93 @@ void main() {
       final first = examplePoints(<CardExample>[a, b, c]);
       expect(first, hasLength(maxExamplesAsked));
       expect(examplePoints(<CardExample>[b, a, c]).toSet(), first.toSet());
+    });
+
+    test('a point the card lists as verified is not asked again; the rest '
+        'of the card still is', () {
+      final questions = generateQuestions(<Deck>[
+        _deck(
+          'xx-en-deck',
+          <Card>[
+            _card(
+              'xx-0001',
+              'blorp',
+              examples: const <CardExample>[
+                CardExample(target: 'blorp zan', native: 'a zan of blorp'),
+                CardExample(target: 'zan blorp', native: 'blorp of zan'),
+              ],
+              confusables: const <CardItem>[CardItem(id: 'c1', word: 'blorb')],
+              audio: 'decks/xx/audio/xx-0001.opus',
+            ),
+            _card('xx-0002', 'quint'),
+          ],
+          verified: <String, List<String>>{
+            'xx-0001': <String>[
+              'meaning',
+              'example:${pointHash('blorp zan')}',
+              'confusable:c1',
+            ],
+          },
+        ),
+      ]);
+      expect(
+        _ids(questions),
+        containsAll(<String>[
+          'xx-0001|example:${pointHash('zan blorp')}',
+          'xx-0001|sound',
+          'xx-0002|meaning',
+        ]),
+      );
+      expect(_ids(questions), isNot(contains('xx-0001|meaning')));
+      expect(
+        _ids(questions),
+        isNot(contains('xx-0001|example:${pointHash('blorp zan')}')),
+      );
+      expect(_ids(questions), isNot(contains('xx-0001|confusable:c1')));
+    });
+
+    test('the parser reads verified from a single file, and a core and its '
+        'layer give the union', () {
+      final single = DeckParser.parse('''
+schema: 1
+id: es-en-probe
+name: Probe
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: es-0001
+    target: "perro"
+    native: "dog"
+    verified: ["meaning", "sound"]
+  - id: es-0002
+    target: "gato"
+    native: "cat"
+''', source: 'es-en-probe.yaml');
+      expect(single.verified, <String, List<String>>{
+        'es-0001': <String>['meaning', 'sound'],
+      });
+      const fixtures = 'test/fixtures/b1/appendix-a/zz';
+      final core = File('$fixtures/zz-home.yaml').readAsStringSync();
+      final layer = File('$fixtures/en/zz-en-home.yaml').readAsStringSync();
+      final merged = mergeLayer(
+        DeckParser.parseCore(
+          core.replaceFirst(
+            '    pos: "noun"\n',
+            '    pos: "noun"\n    verified: ["sound", "meaning"]\n',
+          ),
+          source: 'zz-home.yaml',
+        ),
+        DeckParser.parseLayer(
+          layer.replaceFirst(
+            '    wiktionary: true\n',
+            '    wiktionary: true\n    verified: ["meaning"]\n',
+          ),
+          source: 'zz-en-home.yaml',
+        ),
+        source: 'zz-en-home.yaml',
+      );
+      expect(merged.verified['zz-9001'], <String>['sound', 'meaning']);
     });
 
     test('a card two reviewers signed off is not asked about; one sign-off '
@@ -442,10 +535,15 @@ void main() {
       expect(answers.first.containsKey('reason'), isFalse);
     });
 
-    test('the subject carries the code and the languages, in English', () {
+    test('the answers\' languages join the review mail\'s subject, in '
+        'English, each once', () {
       expect(
-        QuestionsMail.subject(code, <String>['xx', 'yy']),
-        '[Fluenough questions] FL-7K3M-Q9TD-6 (xx, yy)',
+        ReviewMail.subject(
+          code,
+          const <DeckReview>[],
+          alsoLanguages: <String>['xx', 'yy', 'xx'],
+        ),
+        '[Fluenough review] FL-7K3M-Q9TD-6 (xx, yy)',
       );
       expect(QuestionsFile.name('xx'), 'fluenough-questions-xx.json');
     });
@@ -510,7 +608,7 @@ void main() {
       );
       final mail = share.shared.last;
       expect(mail.to, <String>[AppLinks.feedbackEmail]);
-      expect(mail.subject, '[Fluenough questions] ${reviewing.code} (te)');
+      expect(mail.subject, '[Fluenough review] ${reviewing.code} (te)');
       expect(mail.files.map((f) => f.name), <String>[
         'fluenough-questions-te.json',
       ]);
@@ -524,6 +622,65 @@ void main() {
         ReviewSendOutcome.nothingToSend,
       );
     });
+
+    test('reviews and answers waiting go in the same mail, and both are '
+        'marked sent', () async {
+      final share = FixedMailShare(shares: true);
+      final state = await reviewState(
+        share: share,
+        reviewing: true,
+        settings: await reviewerSettings(),
+      );
+      addTearDown(state.dispose);
+      final reviewing = state.reviewing;
+      final deck = state.decks.first;
+      reviewing.markRight(deck, deck.deck.cards.first);
+      final questions = generateQuestions(<Deck>[
+        for (final entry in state.decks) entry.deck,
+      ]);
+      reviewing.answerQuestion(questions.first, QuestionAnswer.yes);
+      expect(reviewing.unsent, hasLength(1));
+      expect(reviewing.unsentAnswers, hasLength(1));
+
+      // Sending the answers sends the review with them, in one mail.
+      expect(
+        await reviewing.sendQuestions(body: 'For you'),
+        ReviewSendOutcome.inMailApp,
+      );
+      expect(share.shared, hasLength(1));
+      final mail = share.shared.single;
+      expect(mail.subject, '[Fluenough review] ${reviewing.code} (te)');
+      expect(mail.files.map((f) => jsonDecode(f.text)['format']), <Object?>[
+        'fluenough-review',
+        'fluenough-questions',
+      ]);
+      expect(reviewing.unsent, isEmpty);
+      expect(reviewing.unsentAnswers, isEmpty);
+    });
+
+    test(
+      'with no review waiting, sending the reviews sends the answers',
+      () async {
+        final share = FixedMailShare(shares: true);
+        final state = await reviewState(
+          share: share,
+          reviewing: true,
+          settings: await reviewerSettings(),
+        );
+        addTearDown(state.dispose);
+        final reviewing = state.reviewing;
+        final questions = generateQuestions(<Deck>[
+          for (final entry in state.decks) entry.deck,
+        ]);
+        reviewing.answerQuestion(questions.first, QuestionAnswer.yes);
+        expect(
+          await reviewing.send(reviewing.unsent, body: ''),
+          ReviewSendOutcome.inMailApp,
+        );
+        expect(share.shared.single.files.single.name, endsWith('te.json'));
+        expect(reviewing.unsentAnswers, isEmpty);
+      },
+    );
 
     test(
       'what is not answered today waits, and the count is the day\'s',

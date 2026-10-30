@@ -42,7 +42,8 @@ class ImageProposal {
 /// The questions for [decks], the weakest data first. Decks are taken in
 /// order, and a card in several decks is asked about once. Left out:
 /// decks of offensive words (reviewed apart), generated and grammar cards,
-/// letters and digits, cards at least two reviewers signed off, and every
+/// letters and digits, cards at least two reviewers signed off, the points
+/// a card's `verified` lists (settled by agreeing answers), and every
 /// id in [skip] (what this reviewer answered, or put off today).
 List<ReviewQuestion> generateQuestions(
   Iterable<Deck> decks, {
@@ -71,6 +72,7 @@ List<ReviewQuestion> generateQuestions(
           !seen.add(card.id)) {
         continue;
       }
+      final settled = (deck.verified[card.id] ?? const <String>[]).toSet();
       final signed = deck.checkedBy[card.id]?.length ?? 0;
       if (signed >= _signedOffEnough) continue;
       final language = deck.language.code;
@@ -99,7 +101,7 @@ List<ReviewQuestion> generateQuestions(
         deckId: deck.id,
       );
 
-      if (card.native.trim().isNotEmpty) {
+      if (card.native.trim().isNotEmpty && !settled.contains('meaning')) {
         out.add(make(QuestionKind.meaning, 'meaning', 0));
       }
       var asked = 0;
@@ -108,11 +110,13 @@ List<ReviewQuestion> generateQuestions(
         if (example.target.trim().isEmpty || example.native.trim().isEmpty) {
           continue;
         }
+        final point = 'example:${pointHash(example.target)}';
+        if (settled.contains(point)) continue;
         asked++;
         out.add(
           make(
             QuestionKind.example,
-            'example:${pointHash(example.target)}',
+            point,
             _semiVerified(example.source) ? 1 : 0,
             shown: example.target,
             shownReading: example.reading,
@@ -124,10 +128,12 @@ List<ReviewQuestion> generateQuestions(
         final named = item.ref == null ? null : cards[item.ref];
         final word = item.word ?? named?.target;
         if (word == null || word.trim().isEmpty) continue;
+        final point = 'confusable:${item.id}';
+        if (settled.contains(point)) continue;
         out.add(
           make(
             QuestionKind.confusable,
-            'confusable:${item.id}',
+            point,
             _semiVerified(item.source) ? 1 : 0,
             shown: word,
             shownReading: item.reading ?? named?.reading,
@@ -135,7 +141,9 @@ List<ReviewQuestion> generateQuestions(
           ),
         );
       }
-      if (card.audio != null && card.audio!.trim().isNotEmpty) {
+      if (card.audio != null &&
+          card.audio!.trim().isNotEmpty &&
+          !settled.contains('sound')) {
         final source = card.audioCredit?.source.toLowerCase() ?? '';
         out.add(
           make(

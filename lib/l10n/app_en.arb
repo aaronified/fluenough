@@ -8934,7 +8934,7 @@
   "@reviewSendFailed": {
     "description": "When the phone's share failed."
   },
-  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
   "@reviewMailBody": {
     "description": "Body of the review mail, for people only: the files are the record.",
     "placeholders": {
@@ -12818,7 +12818,7 @@
   "@reviewGuideQuestionsBody": {
     "description": "First paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideQuestionsSend": "Answers wait on your phone until you tap Send answers. Your mail app opens with Fluenough’s address and one file per language, like a review. A data point is settled when two reviewers agree; if they disagree, a third decides. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
+  "reviewGuideQuestionsSend": "Answers wait on your phone until you send them. They go in the same mail as your reviews that wait: tap Send answers here, or send from Settings under Reviewing, and one mail carries everything, a file for each deck and for each language. A data point is settled when two reviewers agree. When one says a point is wrong, that opens a proposal, and the next reviewer decides it: the same answer merges it, a Yes closes it for good. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
   "@reviewGuideQuestionsSend": {
     "description": "Second paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Send answers” must match reviewQuestionsSend."
   },
@@ -13054,6 +13054,36 @@
   "@reviewQuestionsOnlyReviewers": {
     "description": "Shown on the daily questions screen when reviewing is off."
   },
+  "reviewMailAnswers": "Daily questions: {count, plural, =1{1 answer} other{{count} answers}}",
+  "@reviewMailAnswers": {
+    "description": "A line of the review mail's body, for people only: the daily questions' answers that go in the same mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewSendAnswers": "{count, plural, =1{1 daily question answer goes in the same mail} other{{count} daily question answers go in the same mail}}",
+  "@reviewSendAnswers": {
+    "description": "In the send sheet and under Reviews to send in Settings: the answers to the daily questions that wait and are sent with the reviews.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSendWith": "{count, plural, =1{1 deck review goes in the same mail.} other{{count} deck reviews go in the same mail.}}",
+  "@reviewQuestionsSendWith": {
+    "description": "Under the daily questions' Send answers button: reviews waiting to send go in the same mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
   "reviewQuestionsSend": "{count, plural, =1{Send 1 answer} other{Send {count} answers}}",
   "@reviewQuestionsSend": {
     "description": "Button that sends the daily questions' answers by mail.",
@@ -13071,20 +13101,6 @@
   "reviewQuestionsSendFailed": "The answers could not be shared. They stay on this phone.",
   "@reviewQuestionsSendFailed": {
     "description": "Shown when the daily questions' answers could not be shared."
-  },
-  "reviewQuestionsMailBody": "Answers to Fluenough’s daily questions from app {version}: {count} in all. A file for each language. Please send without changing the files.",
-  "@reviewQuestionsMailBody": {
-    "description": "Body of the mail that carries the daily questions' answers, for people only.",
-    "placeholders": {
-      "version": {
-        "type": "String",
-        "example": "0.6.7"
-      },
-      "count": {
-        "type": "int",
-        "example": "10"
-      }
-    }
   },
   "reviewQuestionsUndo": "Undo",
   "@reviewQuestionsUndo": {

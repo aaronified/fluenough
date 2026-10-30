@@ -24,22 +24,36 @@ point:
     }
 
 A rater code has one answer to a point; answering again before it is
-settled replaces it. **A data point is settled by agreeing answers** (owner,
-2026-10-13): the other reviewers needed (REVIEW_AGREEMENTS_NEEDED, 1 unless
-the owner sets it) plus the first, so by default two. The same answer from
-that many rater codes settles it, and a disagreement leaves it open for a
-third. A settled point never changes again.
+settled replaces it.
 
-What a settled point does:
+**Yes answers settle by agreement** (owner, 2026-10-13): the other reviewers
+needed (REVIEW_AGREEMENTS_NEEDED, 1 unless the owner sets it) plus the
+first, so by default two. The same "yes" from that many rater codes settles
+the point as right (`settled: "yes"`). A settled point never changes again.
+Settled right, the point is also listed in the card's `verified` (see
+WRITE_VERIFIED) so the app stops asking about it and the generator skips it.
 
-- a recording flagged, `sound` and `flag`: the card's `audio` and
-  `audio_credit` are taken out of the deck, and the file with them (the
+**A "no" opens a pull request; the second answer merges or closes it**
+(owner, 2026-10-30: "1st review opens PR. Second review either merges or
+closes it."). The first answer that is not a "yes" (a "no", or a "flag" on a
+recording) marks the point `flag: {"by": <rater code>}`. The review bot
+(`Bot.sweep_flags`) then opens one pull request for the point, kept open:
+
+- the second reviewer's answer decides it, as the existing proposal flow's
+  agreement does. The same "no" or "flag" from REVIEW_AGREEMENTS_NEEDED other
+  rater codes merges it: the point is `settled: "no"`. A "yes" from any
+  other code closes it, and that is final (`settled: "closed"`): nothing is
+  asked about the point again, and a disagreement is not sent to a third
+  reviewer;
+- what merging does: for a recording (`sound`), the card's `audio` and
+  `audio_credit` are taken out of the deck and the file with them (the
   validator refuses a recording no card plays), so the card uses
-  text-to-speech until a new recording exists;
-- every other point is recorded, and a point settled "no" is listed for
-  the owner in the PR: the answers carry no replacement text, so there
-  is nothing the bot could write. A point settled "yes" is a data point two
-  reviewers confirmed.
+  text-to-speech until a new recording exists. Every other point has no
+  proposal that could be written: an answer is a plain "no" with no
+  replacement text, and the proposal model (ADR-0038) changes a field only
+  to a text, never blanks one. So its pull request is a flag note: its only
+  change is the record, `settled: "no"`, and the body names the card and the
+  point for the owner to act on.
 
 Never kept: what a reviewer wrote in `why`, which stays in the mail, and
 mail addresses. Only rater codes, card ids, points, answers and reasons.
@@ -47,6 +61,7 @@ mail addresses. Only rater codes, card ids, points, answers and reasons.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -57,6 +72,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
+
+# Whether the bot writes a settled-right point into the card's `verified`
+# (docs/DECK-FORMAT.md). False until a released app reads the field: a
+# released app refuses an unknown card key, and learners keep the decks they
+# have rather than take a batch with a file that fails (ADR-0037), so decks
+# carry `verified` only a release after the app that reads it ships (owner,
+# 2026-10-30). Until it is True the tally in `review-answers/` is the only
+# record and the app asks everything once, as before.
+WRITE_VERIFIED = False
 
 DIR = "review-answers"
 FORMAT = "fluenough-questions"
@@ -169,18 +193,38 @@ def save(root: Path, lang: str, data: dict) -> None:
                     + "\n", encoding="utf-8")
 
 
-def settled_answer(point: dict, needed: int) -> str:
-    """The answer [needed] rater codes agree on, "" when none yet. When two
-    answers both have enough, the one a code gave first in the record's
-    order wins: the first to be reached."""
-    tally: dict[str, int] = {}
-    for given in point.get("answers", {}).values():
-        if isinstance(given, dict) and isinstance(given.get("answer"), str):
-            tally[given["answer"]] = tally.get(given["answer"], 0) + 1
-    for answer, n in tally.items():
-        if n >= needed:
-            return answer
-    return ""
+def yes_count(point: dict) -> int:
+    """How many rater codes answered "yes" to [point]."""
+    return sum(1 for given in point.get("answers", {}).values()
+               if isinstance(given, dict) and given.get("answer") == "yes")
+
+
+def flagger(point: dict) -> str:
+    """The rater code whose answer opened [point]'s pull request, "" when
+    it has none."""
+    flag = point.get("flag")
+    by = flag.get("by") if isinstance(flag, dict) else None
+    return by if isinstance(by, str) else ""
+
+
+def flag_state(point: dict, needed: int) -> str:
+    """What the answers say of a flagged point: "close" when another code
+    said "yes", "merge" when [needed] other codes said the same "no" or
+    "flag" (as many as the proposal flow's agreement), else "open"."""
+    first = flagger(point)
+    others = [g.get("answer") for code, g in point.get("answers", {}).items()
+              if code != first and isinstance(g, dict)]
+    if "yes" in others:
+        return "close"
+    return "merge" if len(others) >= needed else "open"
+
+
+def flag_branch(lang: str, key: str) -> str:
+    """The branch of the pull request of the flagged point [key]."""
+    card, _, point = key.partition("|")
+    digest = hashlib.sha256(key.encode("utf-8")).hexdigest()[:10]
+    kind = point.split(":", 1)[0]
+    return f"review-bot/flag/{lang}-{card}-{kind}-{digest}"
 
 
 @dataclass
@@ -193,28 +237,35 @@ class Counted:
     ignored: int = 0
     # Answers about a card the language does not have.
     missing: int = 0
-    # (lang, card, point, answer) points this batch settled.
-    settled: list[tuple[str, str, str, str]] = field(default_factory=list)
-    # Recordings taken off a card.
-    removed: list[tuple[str, str]] = field(default_factory=list)
-    # Settled points the bot cannot apply: a flagged recording whose card
-    # cannot be edited a line at a time.
-    unsupported: list[tuple[str, str]] = field(default_factory=list)
+    # (lang, card, point) points two agreeing "yes" answers settled right.
+    settled: list[tuple[str, str, str]] = field(default_factory=list)
+    # Points that now have a pull request to open (a first "no"), and those
+    # a "yes" closed (a second reviewer disagreed).
+    flagged: list[tuple[str, str, str]] = field(default_factory=list)
+    closed: list[tuple[str, str, str]] = field(default_factory=list)
+    # Cards given `verified` lines (only while WRITE_VERIFIED), and those
+    # that cannot be edited a line at a time, left for the owner.
+    verified: list[str] = field(default_factory=list)
+    unsupported: list[str] = field(default_factory=list)
     touched: set[str] = field(default_factory=set)
 
     @property
     def changed(self) -> bool:
-        return bool(self.recorded or self.removed)
+        return bool(self.recorded or self.verified)
 
 
 def record(root: Path, batch: Batch, code: str, agreements: int,
            result: Counted | None = None) -> Counted:
-    """Writes [batch], by [code], into the records of `root`, and carries
-    out what the points it settles ask. [agreements] is how many other
-    reviewers must agree: a point is settled by [agreements] plus one."""
+    """Writes [batch], by [code], into the records of `root`. A point of
+    [agreements] plus one agreeing "yes" answers is settled right; a first
+    answer that is not a "yes" flags the point for a pull request of its
+    own (Bot.sweep_flags); a "yes" from another code closes a flagged
+    point. Settled-right points are written to the cards' `verified` when
+    WRITE_VERIFIED."""
     result = result or Counted()
     needed = agreements + 1
     records: dict[str, dict] = {}
+    right: dict[tuple[str, str], list[str]] = {}
     for a in batch.answers:
         if not pr.card_exists(root, a.lang, a.card):
             result.missing += 1
@@ -231,20 +282,83 @@ def record(root: Path, batch: Batch, code: str, agreements: int,
         point["answers"][code] = given
         result.recorded.append((a.lang, a.card, a.point))
         result.touched.add(a.lang)
-        agreed = settled_answer(point, needed)
-        if not agreed:
+        where = (a.lang, a.card, a.point)
+        if a.answer == "yes" and flagger(point):
+            if flagger(point) == code:
+                # The one who flagged it took it back.
+                del point["flag"]
+            else:
+                point["settled"] = "closed"
+                result.closed.append(where)
+                continue
+        if a.answer == "yes":
+            if not flagger(point) and yes_count(point) >= needed:
+                point["settled"] = "yes"
+                result.settled.append(where)
+                right.setdefault((a.lang, a.card), []).append(a.point)
             continue
-        point["settled"] = agreed
-        result.settled.append((a.lang, a.card, a.point, agreed))
-        if a.kind == "sound" and agreed == "flag":
-            outcome = pr.remove_fields(root, a.lang, a.card, ("audio", "audio_credit"))
-            if outcome == "removed":
-                # The validator refuses a recording no card plays, so the
-                # file goes with the line that named it.
-                (root / "decks" / a.lang / "audio" / f"{a.card}.opus").unlink(missing_ok=True)
-                result.removed.append((a.lang, a.card))
+        if not flagger(point):
+            point["flag"] = {"by": code}
+            result.flagged.append(where)
+    for lang, data in records.items():
+        for key, point in data["points"].items():
+            # A flag taken back leaves another code's "no" to open it.
+            if point.get("settled") or flagger(point):
+                continue
+            first = next((c for c, g in point.get("answers", {}).items()
+                          if isinstance(g, dict) and g.get("answer") != "yes"), None)
+            if first:
+                point["flag"] = {"by": first}
+                card, _, pt = key.partition("|")
+                result.flagged.append((lang, card, pt))
+    if WRITE_VERIFIED:
+        for (lang, card), points in right.items():
+            outcome = pr.settle_points(root, lang, card, points)
+            if outcome == "written":
+                result.verified.append(card)
             elif outcome == "unsupported":
-                result.unsupported.append((a.lang, a.card))
+                result.unsupported.append(card)
     for lang, data in records.items():
         save(root, lang, data)
     return result
+
+
+def flagged_points(root: Path) -> list[tuple[str, str, dict]]:
+    """Every point of `main` with a pull request to open or decide:
+    (language, key, point), flagged and not settled, in file order."""
+    out = []
+    directory = root / DIR
+    for path in sorted(directory.glob("*.json")) if directory.is_dir() else []:
+        lang = path.stem
+        if not pr.vd.LANG_RE.fullmatch(lang):
+            continue
+        for key, point in load(root, lang)["points"].items():
+            if isinstance(point, dict) and flagger(point) and not point.get("settled"):
+                out.append((lang, key, point))
+    return out
+
+
+def settle_no(root: Path, lang: str, key: str) -> str:
+    """What the pull request of the flagged point [key] changes: the point
+    is `settled: "no"`, and for a recording the card's `audio` and
+    `audio_credit` go, and the file. Returns "removed" when a recording
+    was taken off, "noted" for a flag note (the record alone), "unsupported"
+    for a recording on a card that cannot be edited a line at a time (the
+    note is still written), "" when there is nothing to settle."""
+    data = load(root, lang)
+    point = data["points"].get(key)
+    if not isinstance(point, dict) or point.get("settled") or not flagger(point):
+        return ""
+    card, _, name = key.partition("|")
+    point["settled"] = "no"
+    outcome = "noted"
+    if point.get("kind") == "sound":
+        outcome = pr.remove_fields(root, lang, card, ("audio", "audio_credit"))
+        if outcome == "removed":
+            # The validator refuses a recording no card plays, so the file
+            # goes with the line that named it.
+            (root / "decks" / lang / "audio" / f"{card}.opus").unlink(missing_ok=True)
+        elif outcome == "none":
+            outcome = "noted"
+    save(root, lang, data)
+    return outcome

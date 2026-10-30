@@ -71,12 +71,18 @@ rejects, and names each rejected proposal by id and card,
 marked "proposal rejected": a rejection only flags the change to the owner
 (ADR-0038).
 
-Daily-question mails (#519) carry one `fluenough-questions` file per language
-with the answers, and their subject starts `[Fluenough questions]`. Each opens
-one issue the same way: the rater code and the languages, from the files,
-and counts of answers (never a card or a word), with the same marks. The
-bot counts the answers in `review-answers/` and settles a data point once two
-reviewers agree; the mail then gets the label `fluenough-answered`.
+The answers to the daily questions (#519) travel in the review mail itself
+(owner, 2026-10-30: "Send all pending review in that same mail"): one
+`fluenough-questions` file per language beside the `fluenough-review` files,
+under the same subject, `[Fluenough review] CODE (langs)`; the files carry the
+code and language, so the subject may be changed. The issue then also counts
+the answers. A mail of only questions files, under the earlier subject
+`[Fluenough questions]` or the review one, is filed the same way: the rater
+code and the languages, from the files, and counts of answers (never a card
+or a word), with the same marks. The bot tallies the answers in
+`review-answers/`: two agreeing Yes settle a data point, and the first No
+opens a pull request that the next answer merges or closes; the mail then
+gets the label `fluenough-answered`.
 
 The review bot (`tools/review_bot.py`, ADR-0038) runs after the filing,
 once its GitHub App is set up: each filed review mail whose sender passed
@@ -368,9 +374,14 @@ def review_issue_from(
     When the files carry one good code, [check] is asked about it and
     returns a mark for the sender, or None when the sender passes."""
     subject = subject_of(message)
-    files = review_files(message)
+    reviews = review_files(message)
+    # The answers to the daily questions travel in the same mail (#519,
+    # owner, 2026-10-30): their files carry the code and language too.
+    answered = questions_files(message)
+    files = reviews + answered
     said = REVIEW_SUBJECT.match(subject)
-    if not files and not said:
+    if not reviews and not said:
+        # Answers alone under their own subject are questions_issue_from's.
         return None
     subject_code = rater_code(said.group(1)) if said else None
     subject_languages = _unique([
@@ -408,12 +419,16 @@ def review_issue_from(
         f"- Language{'s' if len(languages) > 1 else ''}: "
         f"{', '.join(languages) or 'none given'}",
     ]
-    suggested, accepted, rejected = review_counts(files)
+    suggested, accepted, rejected = review_counts(reviews)
     if suggested or accepted or rejected:
         body.append(f"- Changes suggested: {suggested}\n"
                     f"- Proposals accepted: {accepted}\n"
                     f"- Proposals rejected: {len(rejected)}")
-    added, changed, removed = base_counts(files)
+    total, yes, other = question_counts(answered)
+    if total:
+        body.append(f"- Question answers: {total} ({yes} yes, "
+                    f"{other} no or flagged)")
+    added, changed, removed = base_counts(reviews)
     if added or changed or removed:
         body.append(f"- Base words: {added} added, {changed} changed, "
                     f"{removed} removed")
@@ -825,6 +840,14 @@ def run(env: dict[str, str],
                   f"{counts['waiting']} waiting; {counts['outdated']} outdated.")
         except Exception as error:  # noqa: BLE001 - logged, next run retries
             print(f"::warning::The agreement sweep failed: "
+                  f"{type(error).__name__}: {error}")
+        try:
+            counts = bot.sweep_flags()
+            print(f"Flagged question points: {counts['open']} waiting for a "
+                  f"second answer, {counts['merged']} merged, "
+                  f"{counts['closed']} closed.")
+        except Exception as error:  # noqa: BLE001 - logged, next run retries
+            print(f"::warning::The flag sweep failed: "
                   f"{type(error).__name__}: {error}")
     return filed
 
