@@ -188,6 +188,8 @@ class DrillSession extends ChangeNotifier {
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
+  int _taught = 0;
+  final List<Duration> _taughtTimes = <Duration>[];
   int _index = 0;
   DrillPhase _phase = DrillPhase.prompt;
   TypedAnswer? _answer;
@@ -241,6 +243,8 @@ class DrillSession extends ChangeNotifier {
     answers: _answers,
     startedAt: startedAt,
     endedAt: _endedAt ?? _state.now(),
+    taught: _taught,
+    taughtTimes: _taughtTimes,
   );
 
   // ---------------------------------------------------------------------------
@@ -1004,6 +1008,12 @@ class DrillSession extends ChangeNotifier {
   /// questions are.
   void learnt() {
     if (!ask.onlyShows) return;
+    // A taught card is a card worked through, though not graded (#486); a
+    // set shown is not.
+    if (ask == Ask.teach || ask == Ask.teachRule) {
+      _taught++;
+      _taughtTimes.add(_watch.elapsed);
+    }
     // A teach card is timed like an answer (#886): its time counts toward
     // the day's minutes and the hours, kept beside the log.
     if (recorded || recordsRevision) {

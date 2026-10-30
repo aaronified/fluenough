@@ -44,7 +44,7 @@ class SummaryPage extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final now = state.now();
-    final empty = result.total == 0;
+    final empty = result.cards == 0;
     final finished = <LanguageInfo>[
       for (final language in state.languages)
         if (language.code == result.language) language,
@@ -90,7 +90,16 @@ class SummaryPage extends StatelessWidget {
                     Text(
                       empty
                           ? l10n.summaryEmpty
-                          : l10n.summaryLine(result.total, result.correct),
+                          : result.taught == 0
+                          ? l10n.summaryLine(result.total, result.correct)
+                          : result.total == 0
+                          ? l10n.summaryLineNewOnly(result.taught)
+                          : l10n.summaryLineNew(
+                              result.cards,
+                              result.taught,
+                              result.total,
+                              result.correct,
+                            ),
                       textAlign: TextAlign.center,
                       style: theme.textTheme.bodyLarge!.copyWith(
                         color: scheme.onSurfaceVariant,
@@ -279,7 +288,7 @@ class _Numbers extends StatelessWidget {
     );
     final tiles = <Widget>[
       StatTile(
-        value: l10n.commonPercent(result.accuracy),
+        value: result.total == 0 ? '–' : l10n.commonPercent(result.accuracy),
         label: l10n.summaryCorrect,
         variant: StatTileVariant.summaryEmphasis,
       ),

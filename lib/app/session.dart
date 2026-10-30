@@ -229,9 +229,21 @@ class SessionResult {
     required this.startedAt,
     required this.endedAt,
     this.language,
-  }) : answers = List<SessionAnswer>.unmodifiable(answers);
+    this.taught = 0,
+    List<Duration> taughtTimes = const <Duration>[],
+  }) : taughtTimes = List<Duration>.unmodifiable(taughtTimes),
+       answers = List<SessionAnswer>.unmodifiable(answers);
 
   final List<SessionAnswer> answers;
+
+  /// How many new cards the session taught (#486): shown, not graded, so
+  /// they are not in [answers] but are cards the learner worked through.
+  final int taught;
+
+  /// How long each taught card showed, counted in [spent] as an answer's
+  /// time is (#886). Fewer than [taught] where a card was not timed.
+  final List<Duration> taughtTimes;
+
   final DateTime startedAt;
   final DateTime endedAt;
 
@@ -245,9 +257,16 @@ class SessionResult {
     startedAt: startedAt,
     endedAt: endedAt,
     language: language,
+    taught: taught,
+    taughtTimes: taughtTimes,
   );
 
+  /// The graded answers given.
   int get total => answers.length;
+
+  /// Every card the learner worked through: the new ones taught and the
+  /// ones answered (#486).
+  int get cards => taught + total;
 
   int get correct => answers.where((a) => a.correct).length;
 
@@ -260,8 +279,13 @@ class SessionResult {
   /// (#227), so a pause or the app in the background adds nothing. A result
   /// whose answers are not timed gives the time between start and end.
   Duration get spent {
-    if (answers.every((a) => a.time == null)) return elapsed;
+    if (answers.every((a) => a.time == null) && taughtTimes.isEmpty) {
+      return elapsed;
+    }
     var sum = Duration.zero;
+    for (final t in taughtTimes) {
+      sum += StudyHours.capped(t);
+    }
     for (final a in answers) {
       sum += StudyHours.capped(a.time ?? Duration.zero);
     }
@@ -270,7 +294,7 @@ class SessionResult {
 
   /// Whole minutes spent, rounded, and at least 1 for any session.
   int get minutes =>
-      total == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
+      cards == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
 
   /// One score per skill drilled, in [Skill] order; skills not drilled are
   /// left out.
