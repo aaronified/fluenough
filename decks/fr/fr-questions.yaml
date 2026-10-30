@@ -1,0 +1,183 @@
+schema: 1
+id: "fr-questions"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0065"
+    target: "qui"
+    ipa: "ki"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Qui est là ?", ipa: "ki ɛ la", bases: [{ word: "Qui", base: "qui" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Qui est le professeur ?", ipa: "ki ɛ lə pʁɔfesœʁ", bases: [{ word: "Qui", base: "qui" }, { word: "est", ref: "fr-0021" }, { word: "le", base: "le" }, { word: "professeur", ref: "fr-0105" }] }
+  - id: "fr-0066"
+    target: "quoi"
+    ipa: "kwa"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quoi ? Je ne comprends pas.", ipa: "kwa ʒə nə kɔ̃pʁɑ̃ pa", bases: [{ word: "Quoi", base: "quoi" }, { word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "comprends", base: "comprendre" }, { word: "pas", base: "pas" }] }
+      - { target: "De quoi parlez-vous ?", ipa: "də kwa paʁle vu", bases: [{ word: "De", base: "de" }, { word: "quoi", base: "quoi" }, { word: "parlez", ref: "fr-0023" }, { word: "vous", ref: "fr-0096" }] }
+  - id: "fr-0067"
+    target: "où"
+    ipa: "u"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Où est la gare ?", ipa: "u ɛ la ɡaʁ", bases: [{ word: "Où", base: "où" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Où habitez-vous ?", ipa: "u abite vu", bases: [{ word: "Où", base: "où" }, { word: "habitez", base: "habiter" }, { word: "vous", ref: "fr-0096" }] }
+  - id: "fr-0068"
+    target: "quand"
+    ipa: "kɑ̃"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quand part le train ?", ipa: "kɑ̃ paʁ lə tʁɛ̃", bases: [{ word: "Quand", base: "quand" }, { word: "part", base: "partir" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Quand est la fête ?", ipa: "kɑ̃ ɛ la fɛt", bases: [{ word: "Quand", base: "quand" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "fête", base: "fête" }] }
+  - id: "fr-0069"
+    target: "comment"
+    ipa: "kɔmɑ̃"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Comment ça va ?", ipa: "kɔmɑ̃ sa va", bases: [{ word: "Comment", base: "comment" }, { word: "ça", base: "ça" }, { word: "va", base: "aller" }] }
+      - { target: "Comment allez-vous ?", ipa: "kɔmɑ̃ ale vu", bases: [{ word: "Comment", base: "comment" }, { word: "allez", base: "aller" }, { word: "vous", ref: "fr-0096" }] }
+  - id: "fr-0070"
+    target: "pourquoi"
+    ipa: "puʁkwa"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pourquoi êtes-vous là ?", ipa: "puʁkwa ɛt vu la", bases: [{ word: "Pourquoi", base: "pourquoi" }, { word: "êtes", ref: "fr-0021" }, { word: "vous", ref: "fr-0096" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Je ne sais pas pourquoi.", ipa: "ʒə nə sɛ pa puʁkwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "sais", base: "savoir" }, { word: "pas", base: "pas" }, { word: "pourquoi", base: "pourquoi" }] }
+  - id: "fr-0071"
+    target: "combien"
+    ipa: "kɔ̃bjɛ̃"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Combien coûte le train ?", ipa: "kɔ̃bjɛ̃ kut lə tʁɛ̃", bases: [{ word: "Combien", base: "combien" }, { word: "coûte", base: "coûter" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Combien de temps ?", ipa: "kɔ̃bjɛ̃ də tɑ̃", bases: [{ word: "Combien", base: "combien" }, { word: "de", base: "de" }, { word: "temps", base: "temps" }] }
+  - id: "fr-0072"
+    target: "quel"
+    ipa: "kɛl"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Quelle heure est-il ?", ipa: "kɛl œʁ ɛ til", bases: [{ word: "Quelle", base: "quel" }, { word: "heure", ref: "fr-0074" }, { word: "est", ref: "fr-0021" }, { word: "il", ref: "fr-0127" }] }
+      - { target: "Quel est votre nom ?", ipa: "kɛl ɛ vɔtʁ nɔ̃", bases: [{ word: "Quel", base: "quel" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "nom", ref: "fr-0073" }] }
+  - id: "fr-0073"
+    target: "nom"
+    ipa: "nɔ̃"
+    pos: "noun"
+    gender: "m"
+    tags: ["noun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon nom est Paul.", ipa: "mɔ̃ nɔ̃ ɛ pɔl", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "nom", base: "nom" }, { word: "est", ref: "fr-0021" }, { word: "Paul", base: "Paul" }] }
+      - { target: "Quel est le nom de la ville ?", ipa: "kɛl ɛ lə nɔ̃ də la vil", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "le", base: "le" }, { word: "nom", base: "nom" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "ville", base: "ville" }] }
+  - id: "fr-0074"
+    target: "heure"
+    ipa: "œʁ"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est l'heure du train.", ipa: "sɛ lœʁ dy tʁɛ̃", bases: [{ word: "C'est", base: "c'est" }, { word: "l'heure", base: "heure" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ce n'est pas l'heure.", ipa: "sə nɛ pa lœʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "l'heure", base: "heure" }] }
+  - id: "fr-0075"
+    target: "gare"
+    ipa: "ɡaʁ"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La gare est fermée.", ipa: "la ɡaʁ ɛ fɛʁme", bases: [{ word: "La", base: "la" }, { word: "gare", base: "gare" }, { word: "est", ref: "fr-0021" }, { word: "fermée", base: "fermer" }] }
+      - { target: "Je vais à la gare.", ipa: "ʒə vɛ a la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", base: "gare" }] }
+  - id: "fr-0076"
+    target: "train"
+    ipa: "tʁɛ̃"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train part demain.", ipa: "lə tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Le", base: "le" }, { word: "train", base: "train" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le train est en retard.", ipa: "lə tʁɛ̃ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Le", base: "le" }, { word: "train", base: "train" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
+  - id: "fr-0077"
+    target: "musée"
+    ipa: "myze"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le musée est ouvert.", ipa: "lə myze ɛ uvɛʁ", bases: [{ word: "Le", base: "le" }, { word: "musée", base: "musée" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", base: "ouvrir" }] }
+      - { target: "Où est le musée ?", ipa: "u ɛ lə myze", bases: [{ word: "Où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "le", base: "le" }, { word: "musée", base: "musée" }] }
+  - id: "fr-0078"
+    target: "demain"
+    ipa: "dəmɛ̃"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "À demain !", ipa: "a dəmɛ̃", bases: [{ word: "À", base: "à" }, { word: "demain", base: "demain" }] }
+      - { target: "Demain, je vais à Paris.", ipa: "dəmɛ̃ ʒə vɛ a paʁi", bases: [{ word: "Demain", base: "demain" }, { word: "je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-0079"
+    target: "aujourd'hui"
+    ipa: "oʒuʁdɥi"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aujourd'hui, je suis ici.", ipa: "oʒuʁdɥi ʒə sɥi isi", bases: [{ word: "Aujourd'hui", base: "aujourd'hui" }, { word: "je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Aujourd'hui, la gare est ouverte.", ipa: "oʒuʁdɥi la ɡaʁ ɛ tuvɛʁt", bases: [{ word: "Aujourd'hui", base: "aujourd'hui" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", base: "ouvrir" }] }
+  - kind: "set"
+    id: "fr-0080"
+    members: [{ ref: "fr-0065" }, { ref: "fr-0066" }, { ref: "fr-0067" }, { ref: "fr-0068" }, { ref: "fr-0069" }, { ref: "fr-0070" }, { ref: "fr-0071" }, { ref: "fr-0072" }]

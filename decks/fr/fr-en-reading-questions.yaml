@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-questions"
+name: "Reading: questions"
+kind: reading
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about asking where, when, who and what time. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-asking-the-way"
+    title: "Asking the way"
+    theme: "questions"
+    sentences:
+      - text: "Pardon, où est la gare ?"
+      - text: "La gare est fermée."
+      - text: "Quand part le train ?"
+      - text: "Le train part demain."
+    questions:
+      - id: "fr-0089"
+        prompt: { en: "What does the traveller ask first?" }
+        options:
+          - { en: "Where the station is" }
+          - { en: "When the museum opens" }
+          - { en: "Who the teacher is" }
+        answer: 1
+      - id: "fr-0090"
+        prompt: { en: "Is the station open?" }
+        options:
+          - { en: "Yes, it is open" }
+          - { en: "No, it is closed" }
+          - { en: "It is not said" }
+        answer: 2
+      - id: "fr-0091"
+        prompt: { en: "When does the train leave?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Now" }
+        answer: 2
+  - id: "fr-the-doctor-and-the-museum"
+    title: "The doctor and the museum"
+    theme: "questions"
+    sentences:
+      - text: "Qui est le docteur ?"
+      - text: "Le musée est ouvert."
+      - text: "Combien coûte ce train ?"
+      - text: "Quelle heure est-il ?"
+    questions:
+      - id: "fr-0092"
+        prompt: { en: "What is the first question about?" }
+        options:
+          - { en: "Who the doctor is" }
+          - { en: "Where the museum is" }
+          - { en: "How much the train costs" }
+        answer: 1
+      - id: "fr-0093"
+        prompt: { en: "Is the museum open?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "It is not said" }
+        answer: 1
+      - id: "fr-0094"
+        prompt: { en: "What does the last question ask?" }
+        options:
+          - { en: "What time it is" }
+          - { en: "How much time it takes" }
+          - { en: "Which day it is" }
+        answer: 1

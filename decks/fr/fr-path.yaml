@@ -119,11 +119,8 @@ units:
   # 2. The first word units, the sound differences first.
   - decks: ["fr-sound-differences", "fr-sound-differences-sentences", "fr-reading-sound-differences", "*"]
     words: 16
-  - planned: { id: "fr-questions", theme: "questions", words: 15 }
-    listening_passages:
-      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
-    reading_passages:
-      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
+  - decks: ["fr-questions", "fr-questions-sentences", "fr-reading-questions", "*"]
+    words: 15
   - planned: { id: "fr-addressing", theme: "addressing", words: 15 }
     listening_passages:
       - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tu and vous" } }

@@ -1,0 +1,68 @@
+schema: 1
+id: "fr-en-questions-sentences"
+kind: "layer"
+core: "fr-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: asking questions"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences that ask questions with the words of Questions, each with the question words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0081":
+    native: "Where is the station, please?"
+    bases:
+      "la": "the"
+      "s'il": "if"
+      "plaît": "to please"
+    confusables:
+      "when": { why: "Quand asks when, not where." }
+      "how": { why: "Comment asks how, not where." }
+  "fr-0082":
+    native: "When does the train leave?"
+    bases:
+      "part": "to leave"
+      "le": "the"
+    confusables:
+      "where": { why: "Où asks where, not when." }
+      "how-much": { why: "Combien asks how much, not when." }
+  "fr-0083":
+    native: "How are you today? (formal)"
+    bases:
+      "allez": "to go"
+    confusables:
+      "why": { why: "Pourquoi asks why, not how." }
+      "what": { why: "Quoi asks what; this sentence asks how." }
+  "fr-0084":
+    native: "Why is the station closed?"
+    bases:
+      "la": "the"
+      "fermée": "to close"
+    confusables:
+      "where": { why: "Où asks where the station is, not why it is closed." }
+      "how-much": { why: "Combien asks how much, not why." }
+  "fr-0085":
+    native: "How much does this train cost?"
+    bases:
+      "coûte": "to cost"
+    confusables:
+      "which": { why: "Quel asks which one; this sentence asks the price." }
+      "when": { why: "Quand asks when, not how much." }
+  "fr-0086":
+    native: "What time is it?"
+    confusables:
+      "how-much": { why: "Combien asks how much, not what time." }
+      "when": { why: "Quand asks when; the sentence asks the time, which is different." }
+  "fr-0087":
+    native: "Who is the doctor?"
+    bases:
+      "le": "the"
+    confusables:
+      "what": { why: "Quoi asks what, not who." }
+      "where": { why: "Où asks where, not who." }
+  "fr-0088":
+    native: "Where is the museum, tomorrow?"
+    bases:
+      "le": "the"
+    confusables:
+      "when": { why: "Quand asks when; the sentence asks where." }
+      "how-much": { why: "Combien asks how much, not where." }
