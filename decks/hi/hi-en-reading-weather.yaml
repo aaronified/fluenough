@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-reading-weather"
+name: "Reading: the weather"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages on the weather: a radio forecast and a message about the monsoon. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-weather-forecast"
+    title: "Radio forecast"
+    theme: "weather"
+    sentences:
+      - { text: "आज का मौसम अच्छा है।", reading: "āj kā mausam acchā hai.", ipa: "aːdʒ kaː mɔːsəm ətʃtʃʰaː ɦɛː" }
+      - { text: "सुबह धूप निकलेगी।", reading: "subah dhūp niklēgī.", ipa: "sʊbəɦ d̪ʱuːp nɪkleːɡiː" }
+      - { text: "दोपहर में हल्की बारिश होगी।", reading: "dōphar mēm̐ halkī bāriś hōgī.", ipa: "d̪oːpɦər mẽː ɦəlkiː baːrɪʃ ɦoːɡiː" }
+      - { text: "हवा तेज़ रहेगी।", reading: "havā tēz rahēgī.", ipa: "ɦəʋaː t̪eːz rəɦeːɡiː" }
+    questions:
+      - id: "hi-1400"
+        prompt: { en: "The morning will be sunny." }
+        answer: true
+      - id: "hi-1401"
+        prompt: { en: "What falls in the afternoon?" }
+        options:
+          - { en: "Snow" }
+          - { en: "Light rain" }
+        answer: 2
+      - id: "hi-1402"
+        prompt: { en: "The wind will be weak." }
+        answer: false
+  - id: "hi-weather-message"
+    title: "A message about the monsoon"
+    theme: "weather"
+    sentences:
+      - { text: "प्रिय दोस्त, यहाँ मानसून आ गया है।", reading: "priy dōst, yahām̐ mānsūn ā gayā hai.", ipa: "prɪj d̪oːst̪ jəɦãː maːnsuːn aː ɡəjaː ɦɛː" }
+      - { text: "रोज़ बारिश होती है और सड़कों पर पानी है।", reading: "rōz bāriś hōtī hai aur saṛkōm̐ par pānī hai.", ipa: "roːz baːrɪʃ ɦoːt̪iː ɦɛː ɔːr səɽkõː pər paːniː ɦɛː" }
+      - { text: "गर्मी अब कम है, पर उमस बहुत है।", reading: "garmī ab kam hai, par umas bahut hai.", ipa: "ɡərmiː əb kəm ɦɛː pər ʊməs bəɦʊt̪ ɦɛː" }
+      - { text: "घर से निकलो तो छतरी लेकर जाना।", reading: "ghar sē niklō tō chatrī lēkar jānā.", ipa: "ɡʱər seː nɪkloː t̪oː tʃʰət̪riː leːkər dʒaːnaː" }
+    questions:
+      - id: "hi-1403"
+        prompt: { en: "The monsoon has arrived." }
+        answer: true
+      - id: "hi-1404"
+        prompt: { en: "The writer says there is no heat now." }
+        answer: false
+      - id: "hi-1405"
+        prompt: { en: "What should the friend take?" }
+        options:
+          - { en: "A sweater" }
+          - { en: "An umbrella" }
+        answer: 2
