@@ -184,7 +184,14 @@ abstract interface class DownloadStore {
   /// there or cannot be read.
   Future<String?> sha256(String fileName);
 
-  /// Deletes [fileName], if it is there.
+  /// The text saved for [fileName] by [writeText], or null if none is.
+  Future<String?> readText(String fileName);
+
+  /// Saves [text] beside [fileName], in a small file of its own, or removes
+  /// it if [text] is null. [delete] removes it too.
+  Future<void> writeText(String fileName, String? text);
+
+  /// Deletes [fileName], and the text saved for it, if there.
   Future<void> delete(String fileName);
 }
 
@@ -200,6 +207,12 @@ class NullDownloadStore implements DownloadStore {
 
   @override
   Future<String?> sha256(String fileName) async => null;
+
+  @override
+  Future<String?> readText(String fileName) async => null;
+
+  @override
+  Future<void> writeText(String fileName, String? text) async {}
 
   @override
   Future<void> delete(String fileName) async {}
@@ -218,6 +231,9 @@ class MemoryDownloadStore implements DownloadStore {
   /// The SHA-256 of a file, by name; one with none here has none.
   final Map<String, String> hashes = <String, String>{};
 
+  /// The text saved for a file, by name.
+  final Map<String, String> texts = <String, String>{};
+
   /// Every name deleted, in order.
   final List<String> deleted = <String>[];
 
@@ -233,11 +249,24 @@ class MemoryDownloadStore implements DownloadStore {
       names.contains(fileName) ? hashes[fileName] : null;
 
   @override
+  Future<String?> readText(String fileName) async => texts[fileName];
+
+  @override
+  Future<void> writeText(String fileName, String? text) async {
+    if (text == null) {
+      texts.remove(fileName);
+    } else {
+      texts[fileName] = text;
+    }
+  }
+
+  @override
   Future<void> delete(String fileName) async {
     deleted.add(fileName);
     names.remove(fileName);
     sizes.remove(fileName);
     hashes.remove(fileName);
+    texts.remove(fileName);
   }
 }
 
@@ -273,8 +302,35 @@ class FileDownloadStore implements DownloadStore {
     }
   }
 
+  File _note(String fileName) => File('${directory.path}/$fileName.note');
+
+  @override
+  Future<String?> readText(String fileName) async {
+    try {
+      final file = _note(fileName);
+      return await file.exists() ? await file.readAsString() : null;
+    } on FileSystemException {
+      return null;
+    }
+  }
+
+  @override
+  Future<void> writeText(String fileName, String? text) async {
+    try {
+      final file = _note(fileName);
+      if (text != null) {
+        await file.writeAsString(text, flush: true);
+      } else if (await file.exists()) {
+        await file.delete();
+      }
+    } on FileSystemException {
+      // No note: the file is downloaded again after a restart.
+    }
+  }
+
   @override
   Future<void> delete(String fileName) async {
+    await writeText(fileName, null);
     final file = _file(fileName);
     try {
       if (await file.exists()) await file.delete();

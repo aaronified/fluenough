@@ -197,7 +197,12 @@ class ApplyTest(unittest.TestCase):
             == ["android.intent.action.VIEW"]
         ]
         self.assertEqual(
-            sorted(d.get(SCHEME) for v in views for d in v.findall("data")),
+            sorted(
+                d.get(SCHEME)
+                for v in views
+                for d in v.findall("data")
+                if d.get(SCHEME)
+            ),
             ["https", "upi"],
         )
 
@@ -282,6 +287,25 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         self.assertEqual(self.kotlin().count("private fun installApk"), 1)
 
+    def _the_installer_is_visible_and_not_gated_on_resolve_activity(self) -> None:
+        # #487: on Android 11+ the package installer is hidden from
+        # resolveActivity without this <queries> entry.
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        manifest = self.manifest.read_text(encoding="utf-8")
+        self.assertEqual(manifest.count("application/vnd.android.package-archive"), 1)
+        root = ET.fromstring(manifest)
+        mimes = [
+            data.get(f"{ANDROID}mimeType")
+            for data in root.findall("queries/intent/data")
+        ]
+        self.assertIn("application/vnd.android.package-archive", mimes)
+        body = self.kotlin().split("private fun installApk", 1)[1]
+        body = body.split("\n    }\n", 1)[0]
+        self.assertNotIn("resolveActivity", body)
+        self.assertNotIn("startIfHandled", body)
+        self.assertIn("catch (e: ActivityNotFoundException)", body)
+
     def earlier_activity(self) -> str:
         """MainActivity as the version before shareFiles wrote it."""
         old_imports = [
@@ -326,6 +350,7 @@ class ApplyTest(unittest.TestCase):
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,
             self._a_kept_update_reopens_the_installer_through_the_ota_provider,
+            self._the_installer_is_visible_and_not_gated_on_resolve_activity,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

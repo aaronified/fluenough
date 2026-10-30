@@ -580,6 +580,52 @@ void main() {
           }
         });
 
+        test('after a restart with no checksum from GitHub a kept file is '
+            'reused if it is the asset\'s size, this version\'s, and the file '
+            'whose SHA-256 was recorded', () async {
+          final recorded = 'ab' * 32;
+          for (final (size, hash, pending, reused)
+              in <(int, String?, String?, bool)>[
+                (5000, recorded, _newer, true),
+                (4999, recorded, _newer, false),
+                (5000, 'cd' * 32, _newer, false),
+                (5000, null, _newer, false),
+                (5000, recorded, null, false),
+              ]) {
+            final files = MemoryDownloadStore(<String>[apk])
+              ..sizes[apk] = size
+              ..hashes[apk] = recorded;
+            if (hash != null) files.texts[apk] = hash;
+            final (updates, _, installer) = checker(
+              LatestRelease(_newer, apkSize: 5000),
+              const <InstallEvent>[InstallEvent.installing()],
+              files: files,
+            );
+            updates.settings.pendingUpdate = pending;
+            await updates.checkAndInstall();
+            expect(
+              installer.reopened,
+              reused ? <String>[apk] : isEmpty,
+              reason: '$size $hash $pending',
+            );
+            expect(installer.asked, hasLength(reused ? 0 : 1));
+          }
+        });
+
+        test('a download that finishes records its SHA-256 for a later '
+            'launch', () async {
+          final files = MemoryDownloadStore()
+            ..sizes[apk] = 5000
+            ..hashes[apk] = 'ab' * 32;
+          final (updates, _, _) = checker(
+            LatestRelease(_newer),
+            const <InstallEvent>[InstallEvent.installing()],
+            files: files,
+          );
+          await updates.checkAndInstall();
+          expect(files.texts[apk], 'ab' * 32);
+        });
+
         test('a kept file of an older release is replaced by the newer '
             'one\'s download', () async {
           final files = MemoryDownloadStore()..sizes[apk] = 5000;

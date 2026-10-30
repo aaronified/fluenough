@@ -216,7 +216,11 @@ class UpdateCheckRow extends StatelessWidget {
         actions: <Widget>[
           TextButton(
             onPressed: updates.checkAndInstall,
-            child: Text(l10n.commonRetry),
+            child: Text(
+              updates.hasKeptDownload
+                  ? l10n.settingsUpdateInstall
+                  : l10n.commonRetry,
+            ),
           ),
           TextButton(
             onPressed: () => openLink(

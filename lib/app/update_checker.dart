@@ -96,7 +96,7 @@ class UpdateChecker extends ChangeNotifier {
   ReleaseCheckFailure? _failure;
   InstallFailure? _installFailure;
   int _percent = 0;
-  ({String version, String? sha256})? _checked;
+  ({String version, String? sha256, int? size})? _checked;
 
   /// The download that finished and reached Android's installer in this
   /// launch: its version and size, which a reuse checks the file against.
@@ -106,6 +106,7 @@ class UpdateChecker extends ChangeNotifier {
   bool _cancelling = false;
   bool _disposed = false;
   bool _backupFailed = false;
+  bool _hasKept = false;
 
   UpdateStatus get status => _status == UpdateStatus.idle && updateAvailable
       ? UpdateStatus.available
@@ -121,6 +122,10 @@ class UpdateChecker extends ChangeNotifier {
   /// Whether the backup made with this download failed. The update goes on
   /// without it: a failed backup never blocks an update.
   bool get backupFailed => _backupFailed;
+
+  /// Whether a download that checks out is kept, when [status] is
+  /// [UpdateStatus.installFailed]: the row then offers Install, not Try again.
+  bool get hasKeptDownload => _hasKept;
 
   /// How much of the download is done, from 0 to 100.
   int get percent => _percent;
@@ -173,7 +178,11 @@ class UpdateChecker extends ChangeNotifier {
     }
     if (release.version case final version? when release.hasApk) {
       settings.latestRelease = version;
-      _checked = (version: version, sha256: release.apkSha256);
+      _checked = (
+        version: version,
+        sha256: release.apkSha256,
+        size: release.apkSize,
+      );
       _status = isNewerVersion(version, current)
           ? UpdateStatus.available
           : UpdateStatus.upToDate;
@@ -215,6 +224,9 @@ class UpdateChecker extends ChangeNotifier {
       unawaited(_backup(backUp, version));
     }
     _downloaded = null;
+    _hasKept = false;
+    // A new download replaces the file the recorded checksum was of.
+    await _downloads.writeText(apkFileName, null);
     await _run(
       _installer.install(
         AppLinks.latestApk,
@@ -237,6 +249,7 @@ class UpdateChecker extends ChangeNotifier {
         } else {
           _installFailure = failure;
           _status = UpdateStatus.installFailed;
+          _hasKept = await _keptDownloadChecksOut();
         }
       } else if (event.installing) {
         _status = UpdateStatus.installing;
@@ -244,6 +257,9 @@ class UpdateChecker extends ChangeNotifier {
           version: version,
           size: await _downloads.size(apkFileName),
         );
+        // For a later launch, which cannot see this download finish.
+        final sha = await _downloads.sha256(apkFileName);
+        if (sha != null) await _downloads.writeText(apkFileName, sha);
       } else {
         _percent = event.percent ?? _percent;
       }
@@ -256,6 +272,7 @@ class UpdateChecker extends ChangeNotifier {
       } else {
         _installFailure = InstallFailure.download;
         _status = UpdateStatus.installFailed;
+        _hasKept = await _keptDownloadChecksOut();
       }
       notifyListeners();
     }
@@ -319,9 +336,18 @@ class UpdateChecker extends ChangeNotifier {
         ? checked.sha256
         : null;
     if (sha != null) return await _downloads.sha256(apkFileName) == sha;
-    // No checksum to compare with, and no finished download seen in this
-    // launch: a half-written file cannot be told from a whole one.
-    return downloaded != null;
+    if (downloaded != null) return true;
+    // A launch after the download: no checksum from GitHub, and no finished
+    // download seen. The file is the release's if it is the size of its
+    // asset, belongs to this version, and is the file whose SHA-256 was
+    // recorded when it finished downloading.
+    if (settings.pendingUpdate != version) return false;
+    final expected = checked != null && checked.version == version
+        ? checked.size
+        : null;
+    if (expected != null && expected != size) return false;
+    final recorded = await _downloads.readText(apkFileName);
+    return recorded != null && recorded == await _downloads.sha256(apkFileName);
   }
 
   /// Install on the downloaded row, and on Installing's: opens Android's
@@ -364,6 +390,7 @@ class UpdateChecker extends ChangeNotifier {
     }
     await _downloads.delete(apkFileName);
     _downloaded = null;
+    _hasKept = false;
     if (_disposed) return;
     settings.pendingUpdate = null;
     _status = UpdateStatus.idle;

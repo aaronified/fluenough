@@ -338,6 +338,8 @@ SHARE_MEMBERS = """    // Written by tools/brand_android.py: a mail with files a
 
 """
 
+APK_MIME = "application/vnd.android.package-archive"
+
 # What [install] adds to the channel: installApk, which reopens Android's
 # installer on a download kept in files/ota_update, with no download (#487).
 INSTALL_METHOD = '"installApk" ->'
@@ -356,7 +358,16 @@ INSTALL_MEMBERS = """    // Written by tools/brand_android.py: opens Android's i
         val view = Intent(Intent.ACTION_VIEW)
             .setDataAndType(uri, "application/vnd.android.package-archive")
             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        return startIfHandled(view)
+        // Started without asking the package manager first: on Android 11+
+        // that hides the installer unless the manifest queries for it.
+        return try {
+            startActivity(view)
+            true
+        } catch (e: ActivityNotFoundException) {
+            false
+        } catch (e: SecurityException) {
+            false
+        }
     }
 
 """
@@ -549,12 +560,15 @@ def imported(text: str) -> str:
     return text[:at] + lines + text[at:]
 
 
-def queries(text: str, action: str, scheme: str | None = None) -> bool:
+def queries(
+    text: str, action: str, scheme: str | None = None, mime: str | None = None
+) -> bool:
     """Whether [text]'s <queries> has an intent for [action], and, if
-    [scheme] is given, for data in that scheme."""
+    [scheme] or [mime] is given, for data in that scheme or of that type."""
     return any(
         f'android:name="{action}"' in intent
         and (scheme is None or f'android:scheme="{scheme}"' in intent)
+        and (mime is None or f'android:mimeType="{mime}"' in intent)
         for block in QUERIES.findall(text)
         for intent in INTENT.findall(block)
     )
@@ -613,6 +627,12 @@ def declare(text: str) -> str:
             text,
             f'<action android:name="{VIEW}"/>',
             '<data android:scheme="upi"/>',
+        )
+    if not queries(text, VIEW, mime=APK_MIME):
+        text = query(
+            text,
+            f'<action android:name="{VIEW}"/>',
+            f'<data android:mimeType="{APK_MIME}"/>',
         )
     if not queries(text, SENDTO, scheme="mailto"):
         text = query(
