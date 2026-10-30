@@ -2787,13 +2787,12 @@ class AppState extends ChangeNotifier {
         secondPass: secondPass,
       );
       if (items.isEmpty) return items;
-      run.taught += <String>{
-        for (final item in teaches.isEmpty ? firstPass : teaches)
-          for (final member in item.group.isEmpty
-              ? <SessionItem>[item]
-              : item.group)
-            member.card.id,
-      }.length;
+      final taughtIds = <String>{};
+      for (final item in teaches.isEmpty ? firstPass : teaches) {
+        final members = item.group.isEmpty ? <SessionItem>[item] : item.group;
+        taughtIds.addAll(members.map((member) => member.card.id));
+      }
+      run.taught += taughtIds.length;
       for (final item in items) {
         run.asked.add(item.card.id);
         for (final member in item.group) {
