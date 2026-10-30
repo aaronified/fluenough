@@ -33,8 +33,8 @@ cards:
       "বেঞ্চে বসে পড়ো।":
         native: "Sit on the bench and read."
         bases: { "বেঞ্চে": "bench" }
-      "বেঞ্চটা ভাঙা।":
-        native: "The bench is broken."
+      "বেঞ্চটা ভেঙেছে।":
+        native: "The bench has broken."
         bases: { "বেঞ্চটা": "bench" }
   "bn-2154":
     native: "desk"
@@ -139,11 +139,7 @@ cards:
   "bn-2168":
     native: "science"
     notes: { "n1": "বিজ্ঞান ক্লাস (bigyān klās), the science class." }
-    examples:
-      "বিজ্ঞান ক্লাস মজার।": "The science class is fun."
-      "আমি বিজ্ঞান ভালোবাসি।":
-        native: "I love science."
-        bases: { "ভালোবাসি": "to love" }
+    examples: { "বিজ্ঞান ক্লাস মজার।": "The science class is fun.", "আমি বিজ্ঞান ভালোবাসি।": "I love science." }
   "bn-2169":
     native: "history"
     notes: { "n1": "ইতিহাসের বই (itihāser boi), a history book." }
@@ -195,7 +191,11 @@ cards:
   "bn-2176":
     native: "present (here)"
     notes: { "n1": "উপস্থিত থাকা (upośthit thākā), to be present." }
-    examples: { "তুমি কি উপস্থিত?": "Are you present?", "আমি সময়মতো উপস্থিত।": "I am present on time." }
+    examples:
+      "তুমি কি উপস্থিত?":
+        native: "Are you present?"
+        bases: { "কি": "whether (a question word)" }
+      "আমি সময়মতো উপস্থিত।": "I am present on time."
   "bn-2177":
     native: "on time"
     notes: { "n1": "সময়মতো আসা (sômoyômoto āsā), to come on time." }
@@ -248,7 +248,7 @@ cards:
         bases: { "পরিচয়পত্রটা": "identity card", "ভুলবেন": "to forget" }
   "bn-2184":
     native: "uniform"
-    notes: { "n1": "স্কুল ইউনিফর্ম (skul iniform), the school uniform." }
+    notes: { "n1": "স্কুল ইউনিফর্ম (skul iuniphôrm), the school uniform." }
     examples:
       "ইউনিফর্ম পরো।": "Wear the uniform."
       "ইউনিফর্মটা নীল।":
@@ -354,7 +354,7 @@ cards:
     examples:
       "ক্যালেন্ডারে ছুটির দিন দেখো।":
         native: "Check the holidays on the calendar."
-        bases: { "ক্যালেন্ডারে": "calendar" }
+        bases: { "ক্যালেন্ডারে": "calendar", "দিন": "day" }
       "নতুন ক্যালেন্ডার কিনেছি।": "I have bought a new calendar."
   "bn-2198":
     native: "school (formal word)"

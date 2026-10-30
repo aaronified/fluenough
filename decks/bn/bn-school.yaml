@@ -66,12 +66,12 @@ cards:
           - { word: "বেঞ্চে", base: "বেঞ্চ", reading: "benc", ipa: "bentʃ" }
           - { word: "বসে", ref: "bn-0884" }
           - { word: "পড়ো", ref: "bn-0119" }
-      - target: "বেঞ্চটা ভাঙা।"
-        reading: "benchṭā bhāṅgā."
-        ipa: "bentʃʈa bʱaŋa"
+      - target: "বেঞ্চটা ভেঙেছে।"
+        reading: "benchṭā bheṅeche."
+        ipa: "bentʃʈa bʱeŋetʃʰe"
         bases:
           - { word: "বেঞ্চটা", base: "বেঞ্চ", reading: "benc", ipa: "bentʃ" }
-          - { word: "ভাঙা", ref: "bn-1102" }
+          - { word: "ভেঙেছে", ref: "bn-1102" }
   - id: "bn-2154"
     target: "ডেস্ক"
     reading: "desk"
@@ -268,7 +268,7 @@ cards:
         reading: "roj homoārk thāke."
         ipa: "rodʒ ɦomoark t̪ʰake"
         bases:
-          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "রোজ", ref: "bn-1528" }
           - { word: "থাকে", ref: "bn-0875" }
   - id: "bn-2163"
     target: "সহপাঠী"
@@ -391,7 +391,7 @@ cards:
         reading: "āmi bigyān bhālobāsi."
         ipa: "ami bigɲan bʱalobasi"
         bases:
-          - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāsā", ipa: "bʱalobasa" }
+          - { word: "ভালোবাসি", ref: "bn-2248" }
   - id: "bn-2169"
     target: "ইতিহাস"
     reading: "itihās"
@@ -555,7 +555,7 @@ cards:
         ipa: "t̪umi ki upost̪ʰit̪"
         bases:
           - { word: "তুমি", ref: "bn-0835" }
-          - { word: "কি", ref: "bn-0064" }
+          - { word: "কি", base: "কি", reading: "ki", ipa: "ki" }
       - target: "আমি সময়মতো উপস্থিত।"
         reading: "āmi sômoyômoto upośthit."
         ipa: "ami sɔmojomot̪o upost̪ʰit̪"
@@ -683,7 +683,7 @@ cards:
         ipa: "skule rodʒ bæjam ɦɔj"
         bases:
           - { word: "স্কুলে", ref: "bn-1037" }
-          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "রোজ", ref: "bn-1528" }
           - { word: "হয়", ref: "bn-0874" }
       - target: "ব্যায়াম করা ভালো।"
         reading: "byāyām korā bhālo."
@@ -715,23 +715,23 @@ cards:
           - { word: "না", ref: "bn-0160" }
   - id: "bn-2184"
     target: "ইউনিফর্ম"
-    reading: "iniform"
-    ipa: "inifɔrm"
+    reading: "iuniphôrm"
+    ipa: "junifɔrm"
     pos: "noun"
     bases: "self"
     notes:
       - { id: "n1", kind: "usage" }
     examples:
       - target: "ইউনিফর্ম পরো।"
-        reading: "iniform poro."
-        ipa: "inifɔrm pɔro"
+        reading: "iuniphôrm poro."
+        ipa: "junifɔrm pɔro"
         bases:
           - { word: "পরো", ref: "bn-0120" }
       - target: "ইউনিফর্মটা নীল।"
-        reading: "iniformṭā nil."
-        ipa: "inifɔrmʈa nil"
+        reading: "iuniphôrmṭā nil."
+        ipa: "junifɔrmʈa nil"
         bases:
-          - { word: "ইউনিফর্মটা", base: "ইউনিফর্ম", reading: "iniform", ipa: "inifɔrm" }
+          - { word: "ইউনিফর্মটা", base: "ইউনিফর্ম", reading: "iuniphôrm", ipa: "junifɔrm" }
           - { word: "নীল", ref: "bn-1205" }
   - id: "bn-2185"
     target: "ক্যান্টিন"
@@ -967,7 +967,7 @@ cards:
         reading: "o phel koreche."
         ipa: "o pʰel kɔretʃʰe"
         bases:
-          - { word: "ও", ref: "bn-0010" }
+          - { word: "ও", ref: "bn-0844" }
           - { word: "করেছে", ref: "bn-0102" }
       - target: "পরীক্ষায় ফেল হয়নি।"
         reading: "porikkhāy phel hôyni."
@@ -1010,7 +1010,7 @@ cards:
         bases:
           - { word: "ক্যালেন্ডারে", base: "ক্যালেন্ডার", reading: "kyāleṇḍār", ipa: "kælenɖar" }
           - { word: "ছুটির", ref: "bn-0463" }
-          - { word: "দিন", ref: "bn-0325" }
+          - { word: "দিন", base: "দিন", reading: "din", ipa: "d̪in" }
           - { word: "দেখো", ref: "bn-0877" }
       - target: "নতুন ক্যালেন্ডার কিনেছি।"
         reading: "notun kyāleṇḍār kinechi."
