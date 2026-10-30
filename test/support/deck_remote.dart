@@ -117,6 +117,10 @@ String indexFor(Map<String, String> files, {int version = 1}) {
       });
       continue;
     }
+    // A language's phonetic rules are for tools/derive_phonetic.py alone:
+    // the index does not list them (tools/deck_index.py), so the app never
+    // fetches them.
+    if (kind == 'phonetics') continue;
     final core = header['part'] == 'core';
     if (header['language'] case final YamlMap language) {
       names[code] = language['name'] as String? ?? code;

@@ -579,6 +579,8 @@ cards:
 | `native` | yes | The meaning, in the learner's language. |
 | `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, letters based on ISO 15919, as the word is said. Required in practice for non-Latin scripts. |
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](ADR-0025-Iso-15919-And-Ipa)). `tools/transcribe.py` writes one. |
+| `phonetic` | no | The word in a narrow IPA transcription, inside square brackets: `"[ˈkʰæt]"`. `ipa` stays broad and is still what the app compares; this is the finer form, for a pronunciation check. Written only by tools, never by hand (owner, 2026-10-26; wiki: Plan-Ipa-Revamp-And-Language-Phonology): `tools/import_phonetic.py` takes it from Wiktionary, then `tools/derive_phonetic.py` derives it by the language's [phonetic rules](#phonetic-rules-files) for a card Wiktionary has none for. Both add the two lines after the card's `ipa:` line as text and touch nothing else, and skip a card that already has a `phonetic`. IPA letters and marks only, in `[ ]`, NFC (the validator checks it). Needs `phonetic_source`. **A deck can use it only once a release that reads it is out: the released parser rejects unknown fields** (0.6.6 reads it). The app reads it and does not show it yet. |
+| `phonetic_source` | with `phonetic` | Where `phonetic` came from: `"wiktionary"` (a Wiktionary entry has this form) or `"rules"` (derived by the language's rules, so less certain). Required when `phonetic` is given, and only then. The app may treat the two differently. |
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
@@ -3486,6 +3488,46 @@ the app fetches that one file when a sheet first wants it, checks its hash,
 and keeps it. The released app does not know the key and passes it by, so
 adding or changing a file never touches what it reads. Suggestions show from
 the release that carries the reader. A deck cannot be named `<code>-resources`.
+
+## Phonetic rules files
+
+The rules that turn a card's broad `ipa` into its narrow `phonetic`, for the
+cards Wiktionary has no narrow form for (owner, 2026-10-26: "add all from
+wikitionary, then use rules for the rest, add a field to denote the source").
+A language has at most one, `decks/<code>/<code>-phonetics.yaml`, beside its
+decks, and only `tools/derive_phonetic.py` reads it:
+
+```yaml
+schema: 1
+kind: "phonetics"
+id: "es-phonetics"
+language: "es"
+variety: "Standard Spanish, as the course's broad ipa writes it"
+rules:
+  - id: "es-n-velar"
+    pattern: 'n(?=ˈ?[kɡx])'
+    replace: 'ŋ'
+    source: 'Hualde, The Sounds of Spanish (2005, CUP), ch. 6'
+```
+
+`rules` is an ordered list. The tool applies each rule's `pattern` (a Python
+regular expression) to the card's whole `ipa` with `re.sub`, replacing every
+match with `replace` (which may use `\1`), the first rule first and each on
+the result of the one before. A rule needs an `id` that starts with the
+language, a `source` naming the work that attests it (an author, a title, a
+year), and may not be guessed: a rule that is not well attested is left out.
+Single quotes keep the backslashes of a pattern as they are. The validator
+checks the keys, the ids, that each pattern compiles, and that each rule has
+a source.
+
+A card whose `ipa` the rules do not change gets no `phonetic`, unless the
+tool is run with `--bracket-unchanged`: its broad form in brackets would
+claim a precision nobody checked. A result that is not IPA letters and marks
+is refused and counted `invalid`.
+
+The file is not a deck and the app never fetches it: `tools/deck_index.py`
+leaves it out of the index and out of the language's size. A deck cannot be
+named `<code>-phonetics`.
 
 ## Number rules
 

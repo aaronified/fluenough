@@ -2547,6 +2547,49 @@ class ResourcesFile(B1Case):
                             for e in self.errors(self.FILE)))
 
 
+class PhoneticsFile(B1Case):
+    """A language's phonetic rules (tools/derive_phonetic.py)."""
+
+    FILE = "zz-phonetics.yaml"
+
+    @staticmethod
+    def rule(**change: object) -> dict:
+        found = {"id": "zz-n-velar", "pattern": "n(?=[kg])", "replace": "ŋ",
+                 "source": "Khan (2010), Journal of the IPA 40(2)"}
+        found.update(change)
+        return found
+
+    def file(self, *rules: dict, **change: object) -> None:
+        data = {"schema": 1, "kind": "phonetics", "id": "zz-phonetics",
+                "language": "zz", "variety": "The standard",
+                "rules": list(rules) or [self.rule()]}
+        data.update(change)
+        self.put(self.FILE, data)
+
+    def test_a_good_file_passes(self) -> None:
+        self.file()
+        self.assertEqual(self.errors(self.FILE), [])
+
+    def test_each_rule_needs_a_pattern_that_compiles_and_a_source(self) -> None:
+        bad = {
+            "a pattern that is not a regular expression": (
+                self.rule(pattern="n(?=[kg]"), "not a regular expression"),
+            "no source": (self.rule(source=""), "source is required"),
+            "an id of another language": (
+                self.rule(id="bn-n-velar"), "must start with zz-"),
+            "an unknown key": (self.rule(note="x"), "unknown field 'note'"),
+        }
+        for name, (rule, message) in bad.items():
+            with self.subTest(name):
+                self.file(rule)
+                self.assertTrue(any(message in e for e in self.errors(self.FILE)),
+                                self.errors(self.FILE))
+
+    def test_a_rule_id_is_not_used_twice(self) -> None:
+        self.file(self.rule(), self.rule())
+        self.assertTrue(any("used twice" in e for e in self.errors(self.FILE)))
+
+
 class ScriptInProse(B1Case):
     """Section 11: a layer's prose is its native language's; a core's is the
     language learnt's."""

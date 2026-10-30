@@ -111,7 +111,7 @@ FONTS_DIR = DECKS / "fonts"
 # language whose files are all of these has no written deck, and is left
 # out of the index.
 NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
-             "resources"}
+             "resources", "phonetics"}
 
 
 # The core a layer names when it is the layer of a script guide for one of a
@@ -353,6 +353,10 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         resources = [e for e in entries if e["kind"] == "resources"]
         files = [p for p, e in zip(files, entries) if e["kind"] != "resources"]
         entries = [e for e in entries if e["kind"] != "resources"]
+        # The phonetic rules are for tools/derive_phonetic.py alone: not
+        # listed, not fetched, not in the size.
+        files = [p for p, e in zip(files, entries) if e["kind"] != "phonetics"]
+        entries = [e for e in entries if e["kind"] != "phonetics"]
         guides = [e for p, e in zip(files, entries) if _other_script_guide(p, e)]
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the

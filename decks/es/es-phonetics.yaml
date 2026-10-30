@@ -1,0 +1,62 @@
+schema: 1
+kind: "phonetics"
+id: "es-phonetics"
+language: "es"
+variety: "Standard Spanish, as the course's broad ipa writes it (distincion, with θ)"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Contexts are the sound before, and the sound after with an optional stress mark and, for the stops, a word boundary."
+rules:
+  # Nasals take the place of the consonant after them, inside a word.
+  # source: Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).
+  - id: "es-n-bilabial"
+    pattern: 'n(?=ˈ?[pbm])'
+    replace: 'm'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  - id: "es-n-labiodental"
+    pattern: 'n(?=ˈ?f)'
+    replace: 'ɱ'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  # The palatal rule goes before the dental one: n before tʃ also has a t after it.
+  - id: "es-n-palatal"
+    pattern: 'n(?=ˈ?(?:tʃ|ʝ))'
+    replace: 'ɲ'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  - id: "es-n-dental"
+    pattern: 'n(?=ˈ?[tdθ])'
+    replace: 'n̪'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  - id: "es-n-velar"
+    pattern: 'n(?=ˈ?[kɡx])'
+    replace: 'ŋ'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  # /b d ɡ/ are stops after a pause or a nasal (and /d/ after /l/), and
+  # approximants everywhere else, across a word boundary too.
+  # source: Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".
+  - id: "es-b-approximant"
+    pattern: '([aeiouwjɾrlsθxfʝzβðɣ])([ ˈ]*)b'
+    replace: '\1\2β'
+    source: 'Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".'
+  - id: "es-d-approximant"
+    pattern: '([aeiouwjɾrsθxfʝzβðɣ])([ ˈ]*)d'
+    replace: '\1\2ð'
+    source: 'Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".'
+  - id: "es-g-approximant"
+    pattern: '([aeiouwjɾrlsθxfʝzβðɣ])([ ˈ]*)ɡ'
+    replace: '\1\2ɣ'
+    source: 'Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".'
+  # /s/ is voiced before a voiced consonant in the same word.
+  # source: Hualde (2005), ch. 7 "/s/"; Navarro Tomas (1918), on /s/ before voiced consonants; Wikipedia, Spanish phonology, "Fricatives".
+  - id: "es-s-voiced"
+    pattern: 's(?=ˈ?[bdɡβðɣmnɲlʝ])'
+    replace: 'z'
+    source: 'Hualde (2005), ch. 7 "/s/"; Navarro Tomas (1918), on /s/ before voiced consonants; Wikipedia, Spanish phonology, "Fricatives".'
+  # /t/ and /d/ are dental, not alveolar, and not before their own affricate.
+  # source: Hualde (2005), ch. 4 "Stops"; Martinez-Celdran et al. (2003), "Castilian Spanish"; Wikipedia, Spanish phonology, "Stops".
+  - id: "es-t-dental"
+    pattern: 't(?![ʃ̪])'
+    replace: 't̪'
+    source: 'Hualde (2005), ch. 4 "Stops"; Martinez-Celdran et al. (2003), "Castilian Spanish"; Wikipedia, Spanish phonology, "Stops".'
+  - id: "es-d-dental"
+    pattern: 'd(?![ʒ̪])'
+    replace: 'd̪'
+    source: 'Hualde (2005), ch. 4 "Stops"; Martinez-Celdran et al. (2003), "Castilian Spanish"; Wikipedia, Spanish phonology, "Stops".'
+

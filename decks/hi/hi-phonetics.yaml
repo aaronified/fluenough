@@ -1,0 +1,26 @@
+schema: 1
+kind: "phonetics"
+id: "hi-phonetics"
+language: "hi"
+variety: "Standard Hindustani, as the course's broad ipa writes it (Delhi standard)"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here; a rule left out is not a claim that it does not exist."
+rules:
+  # A nasal takes the place of the stop after it, inside a word.
+  # source: Ohala, "Hindi", in the Handbook of the International Phonetic Association (1999, CUP), pp. 100-103; Wikipedia, Hindustani phonology, "Consonants" (CC BY-SA 4.0).
+  - id: "hi-n-velar"
+    pattern: 'n(?=ˈ?[kɡ])'
+    replace: 'ŋ'
+    source: 'Ohala, "Hindi", in the Handbook of the International Phonetic Association (1999, CUP), pp. 100-103; Wikipedia, Hindustani phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "hi-n-palatal"
+    pattern: 'n(?=ˈ?(?:tʃ|dʒ))'
+    replace: 'ɲ'
+    source: 'Ohala, "Hindi", in the Handbook of the International Phonetic Association (1999, CUP), pp. 100-103; Wikipedia, Hindustani phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "hi-n-retroflex"
+    pattern: 'n(?=ˈ?[ʈɖ])'
+    replace: 'ɳ'
+    source: 'Ohala, "Hindi", in the Handbook of the International Phonetic Association (1999, CUP), pp. 100-103; Wikipedia, Hindustani phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "hi-n-dental"
+    pattern: 'n(?=ˈ?[td]̪)'
+    replace: 'n̪'
+    source: 'Ohala, "Hindi", in the Handbook of the International Phonetic Association (1999, CUP), pp. 100-103; Wikipedia, Hindustani phonology, "Consonants" (CC BY-SA 4.0).'
+
