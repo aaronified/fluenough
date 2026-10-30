@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- A long press on a button without text shows a small hint, one word where one word is enough (#913): the icon buttons, the skill pills, the language bar, the practise and microphone buttons. It is one themed `Tooltip` behind a shared `Hint` widget, and a test fails for a new `IconButton` without `tooltip:` or an icon-only control without a hint.
+- A long press on a button without text shows a small hint, one word where one word is enough (#913): the icon buttons, the skill pills, the practise and microphone buttons. It is one themed `Tooltip` behind a shared `Hint` widget, and a test fails for a new `IconButton` without `tooltip:` or an icon-only control without a hint.
 - The Sources screen credits Wiktionary for the narrow IPA: "Pronunciations in [ ] adapted from Wiktionary, licensed CC BY-SA 4.0." Tapping it opens Wiktionary, and the decks' licence row opens the CC BY-SA 4.0 text. The deck docs carry the same line.
 
 - The app removes its own junk, at most once a day a few seconds after it starts and again after an update (#493): update APKs other than the one waiting to install, half-written `.part` download files and copies of a backup made for a restore older than a day, and report attachments older than three days. Your backups, decks, progress and settings are never touched, and each run that removes something says so in the app log.
