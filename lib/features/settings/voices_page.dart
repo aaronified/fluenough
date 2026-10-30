@@ -462,7 +462,7 @@ class _FoldHeader extends StatelessWidget {
       child: Semantics(
         expanded: expanded,
         child: InkWell(
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           onTap: onToggle,
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 48),
@@ -937,7 +937,7 @@ class _VoiceChoice extends StatelessWidget {
         isExpanded: true,
         decoration: InputDecoration(
           labelText: l10n.voicesVoice,
-          border: const OutlineInputBorder(),
+          border: AppRadii.fieldBorder,
           isDense: true,
         ),
         items: <DropdownMenuItem<String?>>[

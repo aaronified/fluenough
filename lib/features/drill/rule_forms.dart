@@ -5,6 +5,7 @@ import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 
@@ -79,7 +80,7 @@ class RuleFormsTable extends StatelessWidget {
                       color: form.id == asked
                           ? scheme.primaryContainer
                           : scheme.surfaceContainerHigh,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(AppRadii.chip),
                     ),
                     child: Padding(
                       padding: const EdgeInsetsDirectional.symmetric(
