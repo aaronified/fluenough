@@ -122,9 +122,9 @@ void main() {
                 .copyWith(textScaler: const TextScaler.linear(1.4)),
             child: child!,
           ),
-          home: Scaffold(
+          home: const Scaffold(
             body: Center(
-              child: const Hint(
+              child: Hint(
                 message: 'Speak',
                 child: InkWell(
                   child: Padding(
