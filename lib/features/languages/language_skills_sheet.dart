@@ -514,7 +514,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 tooltip: l10n.languagesInfoIcon(_view.name),
                 onPressed: _showInfo,
                 icon: Text(
-                  'i',
+                  'i', // ui-literal-ok: the info glyph, not prose; the tooltip is the label
                   style: theme.textTheme.titleLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: scheme.onSurfaceVariant,
