@@ -2920,7 +2920,7 @@ Each is one line:
 | Field | Notes |
 |---|---|
 | `id` | Ten hex digits: the start of the SHA-256 of the card id, `field`, `now`, `text` and `by`, joined by U+001F. The validator checks it, so a proposal is never edited, only removed. |
-| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases` or `alt_target`, as the entry may give it. A note is proposed only where `notes` is plain text. |
+| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases`, `alt_target`, `gender`, `register`, `hears` or `warning`, as the entry may give it. A note is proposed only where `notes` is plain text. |
 | `now` | The field's text when the reviewer proposed the change, `""` if the card had none. |
 | `text` | The new text. Not checked as deck content until it is applied. |
 | `by` | The proposer's rater code, `FL-XXXX-XXXX-C`. |
@@ -2941,6 +2941,21 @@ now given by ref, loses its meaning in every layer of the core. An added
 base whose form is the word of another card of the language becomes a
 `ref` to it, unless the reviewer unlinked it. A proposal on `alt_target`
 has the list before and after as JSON, `["শুভ সকাল!"]`, `"[]"` for none.
+
+**Gender, register, `hears` and the warning (#508; owner, 2026-10-30:
+"Scalars + warning").** The card's own one-value fields are proposed like a
+reading, on a card written in full: a core's card or a single-file deck's,
+never a ref or a layer's entry, and `warning` on a core's card only. The
+review bot writes only a value the field may have, as above: `gender` one of
+its language's `genders`, `register` one of the five, `hears` `form`, and
+`warning` the `id` of one of the card's own `pair`, `homograph` or
+`lookalike` notes, `"senses"` when the card has `senses`, or `"none"`. The
+validator checks the `text` of a proposal on `register` or `hears`; the bot
+checks a gender against the path and a warning against the card's notes
+when it proposes and again when it applies, and a value that fails is left
+for the owner, never written. The bot never removes a field, so a
+proposal's `text` is never empty. A suggestion on a list item, a fact, or a
+flag is not proposed at all.
 
 **A new word for a card (#476).** A change to `target` sent with changes to
 the same card's bases, alternatives, notes, reading or IPA makes those

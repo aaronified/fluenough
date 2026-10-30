@@ -1008,7 +1008,13 @@ class _SuggestSheetState extends State<SuggestSheet> {
     }
     if (widget.from case final from?) {
       final _Part part = (part: partOf(from.field), word: null);
-      _edits[part] = _Edit(from.text, _savedOn(part)?.why ?? '');
+      if (part.part == CardPart.warning) {
+        // The warning is picked, not typed: Edit opens with the proposal's.
+        _warning = from.text == widget.card.warning ? null : from.text;
+        _warningWhy = _savedOn(part)?.why ?? '';
+      } else {
+        _edits[part] = _Edit(from.text, _savedOn(part)?.why ?? '');
+      }
     }
   }
 

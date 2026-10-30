@@ -135,6 +135,17 @@ checked the whole unit.
   spelling-alike or look-alike note, other meanings, or no warning) and
   nothing else: there is no "automatic" choice, and a pick is never taken
   back by the bot. Say why.
+- **What the bot applies** (owner, 2026-10-30, #508: "Scalars + warning").
+  A change to the gender, the register, the `hears` mark or the teach-card
+  warning is proposed like a reading, shown to other reviewers with
+  **Accept**, **Edit** and **Reject**, and written into the deck once enough
+  of them accept it, but only with a value the field may have: a gender is
+  one of the language's classes, a register is formal, neutral, informal,
+  slang or offensive, `hears` is only `form`, and a warning is one of the
+  card's own (a sound-alike, spelling-alike or look-alike note, other
+  meanings, or no warning). Any other text is left for the owner. The items
+  of a list, the facts and a flag are always the owner's to read: the bot
+  does not write them.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
