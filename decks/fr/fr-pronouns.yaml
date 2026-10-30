@@ -1,0 +1,243 @@
+schema: 1
+id: "fr-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0126"
+    target: "je"
+    ipa: "ʒə"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Je suis là.", ipa: "ʒə sɥi la", bases: [{ word: "Je", base: "je" }, { word: "suis", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Je parle français.", ipa: "ʒə paʁl fʁɑ̃sɛ", bases: [{ word: "Je", base: "je" }, { word: "parle", ref: "fr-0023" }, { word: "français", base: "français" }] }
+  - id: "fr-0127"
+    target: "il"
+    ipa: "il"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est professeur.", ipa: "il ɛ pʁɔfesœʁ", bases: [{ word: "Il", base: "il" }, { word: "est", ref: "fr-0021" }, { word: "professeur", ref: "fr-0105" }] }
+      - { target: "Il pleut.", ipa: "il plø", bases: [{ word: "Il", base: "il" }, { word: "pleut", base: "pleuvoir" }] }
+  - id: "fr-0128"
+    target: "elle"
+    ipa: "ɛl"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est ici.", ipa: "ɛl ɛ isi", bases: [{ word: "Elle", base: "elle" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elle parle très bien.", ipa: "ɛl paʁl tʁɛ bjɛ̃", bases: [{ word: "Elle", base: "elle" }, { word: "parle", ref: "fr-0023" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0129"
+    target: "nous"
+    ipa: "nu"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous sommes amis.", ipa: "nu sɔm ami", bases: [{ word: "Nous", base: "nous" }, { word: "sommes", ref: "fr-0021" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Nous parlons français.", ipa: "nu paʁlɔ̃ fʁɑ̃sɛ", bases: [{ word: "Nous", base: "nous" }, { word: "parlons", ref: "fr-0023" }, { word: "français", base: "français" }] }
+  - id: "fr-0130"
+    target: "ils"
+    ipa: "il"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont là.", ipa: "il sɔ̃ la", bases: [{ word: "Ils", base: "ils" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ils parlent bien.", ipa: "il paʁl bjɛ̃", bases: [{ word: "Ils", base: "ils" }, { word: "parlent", ref: "fr-0023" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0131"
+    target: "elles"
+    ipa: "ɛl"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elles sont ici.", ipa: "ɛl sɔ̃ isi", bases: [{ word: "Elles", base: "elles" }, { word: "sont", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elles aiment le lait.", ipa: "ɛl ɛm lə lɛ", bases: [{ word: "Elles", base: "elles" }, { word: "aiment", base: "aimer" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }] }
+  - id: "fr-0132"
+    target: "on"
+    ipa: "ɔ̃"
+    pos: "pronoun"
+    tags: ["subject"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On parle français ici.", ipa: "ɔ̃ paʁl fʁɑ̃sɛ isi", bases: [{ word: "On", base: "on" }, { word: "parle", ref: "fr-0023" }, { word: "français", base: "français" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "On est là.", ipa: "ɔ̃ ɛ la", bases: [{ word: "On", base: "on" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0133"
+    target: "moi"
+    ipa: "mwa"
+    pos: "pronoun"
+    tags: ["stressed"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Moi, je suis là.", ipa: "mwa ʒə sɥi la", bases: [{ word: "Moi", base: "moi" }, { word: "je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "C'est pour moi.", ipa: "sɛ puʁ mwa", bases: [{ word: "C'est", base: "c'est" }, { word: "pour", base: "pour" }, { word: "moi", base: "moi" }] }
+  - id: "fr-0134"
+    target: "toi"
+    ipa: "twa"
+    pos: "pronoun"
+    tags: ["stressed"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Et toi ?", ipa: "e twa", bases: [{ word: "Et", ref: "fr-0027" }, { word: "toi", base: "toi" }] }
+      - { target: "C'est pour toi.", ipa: "sɛ puʁ twa", bases: [{ word: "C'est", base: "c'est" }, { word: "pour", base: "pour" }, { word: "toi", base: "toi" }] }
+  - id: "fr-0135"
+    target: "lui"
+    ipa: "lɥi"
+    pos: "pronoun"
+    tags: ["stressed"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Avec lui, merci.", ipa: "avɛk lɥi mɛʁsi", bases: [{ word: "Avec", base: "avec" }, { word: "lui", base: "lui" }, { word: "merci", base: "merci" }] }
+      - { target: "Lui et moi.", ipa: "lɥi e mwa", bases: [{ word: "Lui", base: "lui" }, { word: "et", ref: "fr-0027" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0136"
+    target: "eux"
+    ipa: "ø"
+    pos: "pronoun"
+    tags: ["stressed"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pour eux.", ipa: "puʁ ø", bases: [{ word: "Pour", base: "pour" }, { word: "eux", base: "eux" }] }
+      - { target: "Avec eux, ça va.", ipa: "avɛk ø sa va", bases: [{ word: "Avec", base: "avec" }, { word: "eux", base: "eux" }, { word: "ça", base: "ça" }, { word: "va", base: "aller" }] }
+  - id: "fr-0137"
+    target: "ma"
+    ipa: "ma"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Ma voisine est là.", ipa: "ma vwazin ɛ la", bases: [{ word: "Ma", base: "ma" }, { word: "voisine", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ma rue est calme.", ipa: "ma ʁy ɛ kalm", bases: [{ word: "Ma", base: "ma" }, { word: "rue", ref: "fr-0041" }, { word: "est", ref: "fr-0021" }, { word: "calme", base: "calme" }] }
+  - id: "fr-0138"
+    target: "son"
+    ipa: "sɔ̃"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Son train est en retard.", ipa: "sɔ̃ tʁɛ̃ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Son", base: "son" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
+      - { target: "Son amie est là.", ipa: "sɔ̃ ami ɛ la", bases: [{ word: "Son", base: "son" }, { word: "amie", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0139"
+    target: "notre"
+    ipa: "nɔtʁ"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Notre gare est fermée.", ipa: "nɔtʁ ɡaʁ ɛ fɛʁme", bases: [{ word: "Notre", base: "notre" }, { word: "gare", ref: "fr-0075" }, { word: "est", ref: "fr-0021" }, { word: "fermée", base: "fermer" }] }
+      - { target: "Notre professeur est là.", ipa: "nɔtʁ pʁɔfesœʁ ɛ la", bases: [{ word: "Notre", base: "notre" }, { word: "professeur", ref: "fr-0105" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0140"
+    target: "votre"
+    ipa: "vɔtʁ"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Votre nom, s'il vous plaît.", ipa: "vɔtʁ nɔ̃ sil vu plɛ", bases: [{ word: "Votre", base: "votre" }, { word: "nom", ref: "fr-0073" }, { word: "s'il", base: "s'il" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Quelle est votre adresse ?", ipa: "kɛl ɛ vɔtʁ adʁɛs", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", base: "votre" }, { word: "adresse", base: "adresse" }] }
+  - id: "fr-0141"
+    target: "ton"
+    ipa: "tɔ̃"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Ton ami est là.", ipa: "tɔ̃ ami ɛ la", bases: [{ word: "Ton", base: "ton" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ton prénom ?", ipa: "tɔ̃ pʁenɔ̃", bases: [{ word: "Ton", base: "ton" }, { word: "prénom", ref: "fr-0103" }] }
+  - id: "fr-0142"
+    target: "leur"
+    ipa: "lœʁ"
+    pos: "pronoun"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leur train part demain.", ipa: "lœʁ tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Leur", base: "leur" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Ils aiment leur voisin.", ipa: "il ɛm lœʁ vwazɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "aiment", base: "aimer" }, { word: "leur", base: "leur" }, { word: "voisin", ref: "fr-0101" }] }
+  - id: "fr-0143"
+    target: "ce"
+    ipa: "sə"
+    pos: "pronoun"
+    tags: ["demonstrative"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Ce train est en retard.", ipa: "sə tʁɛ̃ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Ce", base: "ce" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
+      - { target: "Ce musée est ouvert.", ipa: "sə myze ɛ uvɛʁ", bases: [{ word: "Ce", base: "ce" }, { word: "musée", ref: "fr-0077" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", base: "ouvrir" }] }
+  - id: "fr-0144"
+    target: "cette"
+    ipa: "sɛt"
+    pos: "pronoun"
+    tags: ["demonstrative"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "cette", ref: "fr-0143" }
+    examples:
+      - { target: "Cette gare est belle.", ipa: "sɛt ɡaʁ ɛ bɛl", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "gare", ref: "fr-0075" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "Cette fée est ici.", ipa: "sɛt fe ɛ isi", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "fée", ref: "fr-0045" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0145"
+    target: "cela"
+    ipa: "səla"
+    pos: "pronoun"
+    tags: ["demonstrative"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cela coûte beaucoup.", ipa: "səla kut boku", bases: [{ word: "Cela", base: "cela" }, { word: "coûte", base: "coûter" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Cela est clair.", ipa: "səla ɛ klɛʁ", bases: [{ word: "Cela", base: "cela" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+  - kind: "set"
+    id: "fr-0146"
+    members: [{ ref: "fr-0126" }, { ref: "fr-0095" }, { ref: "fr-0127" }, { ref: "fr-0128" }, { ref: "fr-0129" }, { ref: "fr-0096" }, { ref: "fr-0130" }, { ref: "fr-0131" }, { ref: "fr-0132" }]
+  - kind: "set"
+    id: "fr-0147"
+    members: [{ ref: "fr-0133" }, { ref: "fr-0134" }, { ref: "fr-0135" }, { ref: "fr-0136" }]
+  - kind: "set"
+    id: "fr-0148"
+    members: [{ ref: "fr-0037" }, { ref: "fr-0137" }, { ref: "fr-0138" }, { ref: "fr-0139" }, { ref: "fr-0140" }, { ref: "fr-0141" }, { ref: "fr-0142" }]
+  - kind: "set"
+    id: "fr-0149"
+    members: [{ ref: "fr-0143" }, { ref: "fr-0144" }, { ref: "fr-0145" }]
