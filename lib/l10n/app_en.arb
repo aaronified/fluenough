@@ -10996,6 +10996,16 @@
   "@cardIpaHeading": {
     "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
   },
+  "cardWiktionaryLink": "Wiktionary: {word}",
+  "@cardWiktionaryLink": {
+    "description": "A button on a word's sheet that opens the word's page on Wiktionary in the browser. Wiktionary stays as it is. {word} is a word of the language being learned, or a base word of the card's, in its own script.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "ఇల్లు"
+      }
+    }
+  },
   "cardDictionaryHeading": "Dictionary · Wiktionary",
   "@cardDictionaryHeading": {
     "description": "Heading over a word's dictionary entry on its sheet, which comes from Wiktionary."
