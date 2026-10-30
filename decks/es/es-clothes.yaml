@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "Ana lleva una camisa roja.", ipa: "ˈana ˈʝeba ˈuna kaˈmisa ˈroxa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "una", base: "una" }, { word: "camisa", ref: "es-1017" }, { word: "roja", base: "rojo" }] }
+      - { target: "Ana lleva una camisa roja.", ipa: "ˈana ˈʝeba ˈuna kaˈmisa ˈroxa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "una", base: "una" }, { word: "camisa", ref: "es-1017" }, { word: "roja", base: "rojo" }] }
       - { target: "El semáforo es rojo.", ipa: "el seˈmafoɾo es ˈroxo", bases: [{ word: "El", base: "el" }, { word: "semáforo", ref: "es-0707" }, { word: "es", ref: "es-0022" }, { word: "rojo", base: "rojo" }] }
   - id: "es-1008"
     target: "azul"
@@ -81,7 +81,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "Llevo un abrigo marrón.", ipa: "ˈʝebo un aˈbɾiɡo maˈron", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "abrigo", ref: "es-1023" }, { word: "marrón", base: "marrón" }] }
+      - { target: "Llevo un abrigo marrón.", ipa: "ˈʝebo un aˈbɾiɡo maˈron", bases: [{ word: "Llevo", base: "llevar" }, { word: "un", base: "un" }, { word: "abrigo", ref: "es-1023" }, { word: "marrón", base: "marrón" }] }
       - { target: "La mesa es marrón.", ipa: "la ˈmesa es maˈron", bases: [{ word: "La", base: "la" }, { word: "mesa", ref: "es-0009" }, { word: "es", ref: "es-0022" }, { word: "marrón", base: "marrón" }] }
   - id: "es-1015"
     target: "naranja"
@@ -119,6 +119,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "llevar", kind: "usage" }
     bases: [{ word: "la", base: "la" }, { word: "camisa", base: "camisa" }]
     examples:
       - { target: "Esta camisa es muy grande.", ipa: "ˈesta kaˈmisa es mwi ˈɡɾande", bases: [{ word: "Esta", base: "este" }, { word: "camisa", base: "camisa" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }] }
@@ -133,7 +134,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "camiseta", base: "camiseta" }]
     examples:
       - { target: "La camiseta de Ana es azul.", ipa: "la kamiˈseta de ˈana es aˈθul", bases: [{ word: "La", base: "la" }, { word: "camiseta", base: "camiseta" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }] }
-      - { target: "Llevo una camiseta de algodón.", ipa: "ˈʝebo ˈuna kamiˈseta de alɡoˈdon", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "camiseta", base: "camiseta" }, { word: "de", base: "de" }, { word: "algodón", base: "algodón" }] }
+      - { target: "Llevo una camiseta de algodón.", ipa: "ˈʝebo ˈuna kamiˈseta de alɡoˈdon", bases: [{ word: "Llevo", base: "llevar" }, { word: "una", base: "una" }, { word: "camiseta", base: "camiseta" }, { word: "de", base: "de" }, { word: "algodón", base: "algodón" }] }
   - id: "es-1019"
     target: "el pantalón"
     ipa: "el pantaˈlon"
@@ -155,7 +156,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "falda", base: "falda" }]
     examples:
-      - { target: "Ana lleva una falda larga.", ipa: "ˈana ˈʝeba ˈuna ˈfalda ˈlaɾɡa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "una", base: "una" }, { word: "falda", base: "falda" }, { word: "larga", base: "largo" }] }
+      - { target: "Ana lleva una falda larga.", ipa: "ˈana ˈʝeba ˈuna ˈfalda ˈlaɾɡa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "una", base: "una" }, { word: "falda", base: "falda" }, { word: "larga", base: "largo" }] }
       - { target: "La falda roja es de mi hermana.", ipa: "la ˈfalda ˈroxa es de mi eɾˈmana", bases: [{ word: "La", base: "la" }, { word: "falda", base: "falda" }, { word: "roja", ref: "es-1007" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }] }
   - id: "es-1018"
     target: "el vestido"
@@ -177,7 +178,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "chaqueta", base: "chaqueta" }]
     examples:
-      - { target: "Llevo una chaqueta porque hace frío.", ipa: "ˈʝebo ˈuna tʃaˈketa ˈpoɾke ˈaθe ˈfɾio", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "chaqueta", base: "chaqueta" }, { word: "porque", base: "porque" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "Llevo una chaqueta porque hace frío.", ipa: "ˈʝebo ˈuna tʃaˈketa ˈpoɾke ˈaθe ˈfɾio", bases: [{ word: "Llevo", base: "llevar" }, { word: "una", base: "una" }, { word: "chaqueta", base: "chaqueta" }, { word: "porque", base: "porque" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
       - { target: "Esta chaqueta es cómoda.", ipa: "ˈesta tʃaˈketa es ˈkomoda", bases: [{ word: "Esta", base: "este" }, { word: "chaqueta", base: "chaqueta" }, { word: "es", ref: "es-0022" }, { word: "cómoda", base: "cómodo" }] }
   - id: "es-1023"
     target: "el abrigo"
@@ -188,7 +189,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "abrigo", base: "abrigo" }]
     examples:
-      - { target: "En invierno llevo el abrigo.", ipa: "en inˈbjeɾno ˈʝebo el aˈbɾiɡo", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "abrigo", base: "abrigo" }] }
+      - { target: "En invierno llevo el abrigo.", ipa: "en inˈbjeɾno ˈʝebo el aˈbɾiɡo", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "llevo", base: "llevar" }, { word: "el", base: "el" }, { word: "abrigo", base: "abrigo" }] }
       - { target: "El abrigo es caro.", ipa: "el aˈbɾiɡo es ˈkaɾo", bases: [{ word: "El", base: "el" }, { word: "abrigo", base: "abrigo" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }] }
   - id: "es-1028"
     target: "el jersey"
@@ -200,7 +201,7 @@ cards:
       - { id: "suter", kind: "usage" }
     bases: [{ word: "el", base: "el" }, { word: "jersey", base: "jersey" }]
     examples:
-      - { target: "Llevo un jersey verde.", ipa: "ˈʝebo un xeɾˈsej ˈbeɾde", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "jersey", base: "jersey" }, { word: "verde", ref: "es-1009" }] }
+      - { target: "Llevo un jersey verde.", ipa: "ˈʝebo un xeɾˈsej ˈbeɾde", bases: [{ word: "Llevo", base: "llevar" }, { word: "un", base: "un" }, { word: "jersey", base: "jersey" }, { word: "verde", ref: "es-1009" }] }
       - { target: "El jersey está en la silla.", ipa: "el xeɾˈsej esˈta en la ˈsiʝa", bases: [{ word: "El", base: "el" }, { word: "jersey", base: "jersey" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "silla", ref: "es-0010" }] }
   - id: "es-1025"
     target: "la blusa"
@@ -235,7 +236,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "bota", base: "bota" }]
     examples:
       - { target: "Las botas son para el invierno.", ipa: "las ˈbotas son ˈpaɾa el inˈbjeɾno", bases: [{ word: "Las", base: "las" }, { word: "botas", base: "bota" }, { word: "son", ref: "es-0022" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "invierno", ref: "es-0990" }] }
-      - { target: "Ana lleva botas marrones.", ipa: "ˈana ˈʝeba ˈbotas maˈrones", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "botas", base: "bota" }, { word: "marrones", base: "marrón" }] }
+      - { target: "Ana lleva botas marrones.", ipa: "ˈana ˈʝeba ˈbotas maˈrones", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "botas", base: "bota" }, { word: "marrones", base: "marrón" }] }
   - id: "es-1030"
     target: "el calcetín"
     ipa: "el kalθeˈtin"
@@ -245,7 +246,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "calcetín", base: "calcetín" }]
     examples:
-      - { target: "Llevo calcetines blancos.", ipa: "ˈʝebo kalθeˈtines ˈblankos", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "calcetines", base: "calcetín" }, { word: "blancos", base: "blanco" }] }
+      - { target: "Llevo calcetines blancos.", ipa: "ˈʝebo kalθeˈtines ˈblankos", bases: [{ word: "Llevo", base: "llevar" }, { word: "calcetines", base: "calcetín" }, { word: "blancos", base: "blanco" }] }
       - { target: "Necesito un calcetín.", ipa: "neθeˈsito un kalθeˈtin", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "calcetín", base: "calcetín" }] }
   - id: "es-1031"
     target: "el sombrero"
@@ -256,8 +257,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "sombrero", base: "sombrero" }]
     examples:
-      - { target: "Ana lleva un sombrero.", ipa: "ˈana ˈʝeba un somˈbɾeɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
-      - { target: "En verano uso un sombrero.", ipa: "en beˈɾano ˈuso un somˈbɾeɾo", bases: [{ word: "En", base: "en" }, { word: "verano", ref: "es-0982" }, { word: "uso", ref: "es-0287" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
+      - { target: "Ana lleva un sombrero.", ipa: "ˈana ˈʝeba un somˈbɾeɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
+      - { target: "En verano llevo un sombrero.", ipa: "en beˈɾano ˈʝebo un somˈbɾeɾo", bases: [{ word: "En", base: "en" }, { word: "verano", ref: "es-0982" }, { word: "llevo", base: "llevar" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
   - id: "es-1032"
     target: "la bufanda"
     ipa: "la buˈfanda"
@@ -278,7 +279,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "cinturón", base: "cinturón" }]
     examples:
-      - { target: "Llevo un cinturón negro.", ipa: "ˈʝebo un θintuˈɾon ˈneɡɾo", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "cinturón", base: "cinturón" }, { word: "negro", ref: "es-1011" }] }
+      - { target: "Llevo un cinturón negro.", ipa: "ˈʝebo un θintuˈɾon ˈneɡɾo", bases: [{ word: "Llevo", base: "llevar" }, { word: "un", base: "un" }, { word: "cinturón", base: "cinturón" }, { word: "negro", ref: "es-1011" }] }
       - { target: "El cinturón es muy largo.", ipa: "el θintuˈɾon es mwi ˈlaɾɡo", bases: [{ word: "El", base: "el" }, { word: "cinturón", base: "cinturón" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", ref: "es-0429" }] }
   - id: "es-1034"
     target: "la corbata"
@@ -289,7 +290,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "corbata", base: "corbata" }]
     examples:
-      - { target: "Mi padre lleva corbata en el trabajo.", ipa: "mi ˈpadɾe ˈʝeba koɾˈbata en el tɾaˈbaxo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "lleva", ref: "es-0623" }, { word: "corbata", base: "corbata" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "Mi padre lleva corbata en el trabajo.", ipa: "mi ˈpadɾe ˈʝeba koɾˈbata en el tɾaˈbaxo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "lleva", base: "llevar" }, { word: "corbata", base: "corbata" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0502" }] }
       - { target: "Esta corbata es azul.", ipa: "ˈesta koɾˈbata es aˈθul", bases: [{ word: "Esta", base: "este" }, { word: "corbata", base: "corbata" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }] }
   - id: "es-1035"
     target: "el traje"
@@ -300,7 +301,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "traje", base: "traje" }]
     examples:
-      - { target: "Mi hermano lleva un traje para la boda.", ipa: "mi eɾˈmano ˈʝeba un ˈtɾaxe ˈpaɾa la ˈboda", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "traje", base: "traje" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "boda", base: "boda" }] }
+      - { target: "Mi hermano lleva un traje para la boda.", ipa: "mi eɾˈmano ˈʝeba un ˈtɾaxe ˈpaɾa la ˈboda", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "lleva", base: "llevar" }, { word: "un", base: "un" }, { word: "traje", base: "traje" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "boda", base: "boda" }] }
       - { target: "El traje es caro.", ipa: "el ˈtɾaxe es ˈkaɾo", bases: [{ word: "El", base: "el" }, { word: "traje", base: "traje" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }] }
   - id: "es-1036"
     target: "la talla"
@@ -382,7 +383,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "Ana lleva un vestido elegante.", ipa: "ˈana ˈʝeba un besˈtido eleˈɡante", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "vestido", ref: "es-1018" }, { word: "elegante", base: "elegante" }] }
+      - { target: "Ana lleva un vestido elegante.", ipa: "ˈana ˈʝeba un besˈtido eleˈɡante", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "un", base: "un" }, { word: "vestido", ref: "es-1018" }, { word: "elegante", base: "elegante" }] }
       - { target: "Este abrigo es muy elegante.", ipa: "ˈeste aˈbɾiɡo es mwi eleˈɡante", bases: [{ word: "Este", base: "este" }, { word: "abrigo", ref: "es-1023" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "elegante", base: "elegante" }] }
   - id: "es-1043"
     target: "ancho"
