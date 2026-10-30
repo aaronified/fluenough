@@ -52,8 +52,9 @@ String kindLine(AppLocalizations l10n, SearchKind kind) => switch (kind) {
 
 /// The Decks tab's search bar (#527, the approved mockup): the search icon,
 /// the token chips the search holds, the one text field, and an end button
-/// that clears and then closes. The chips sit above the text and wrap when
-/// they do not fit, and the bar grows with them.
+/// that clears and then closes. The chips and the text share the lines: the
+/// chips wrap when they do not fit, the text follows the last, and the bar
+/// grows with them.
 class DeckSearchBar extends StatelessWidget {
   const DeckSearchBar({
     super.key,
@@ -98,6 +99,48 @@ class DeckSearchBar extends StatelessWidget {
 
   static const double _barHeight = 56;
 
+  /// The gap between two chips, and between the last chip and the text.
+  static const double _gap = 6;
+
+  /// The least room the text is given before it starts a line of its own.
+  static const double _minField = 72;
+
+  /// What a chip takes beyond its label: its padding, its ✕ and a margin
+  /// for the sizes the framework picks (an estimate; a wrong one only moves
+  /// the text to the next line or leaves it a little narrower).
+  static const double _chipExtra = 56;
+
+  /// The width of the text field when [width] holds the chips [labels]:
+  /// what is left of the last line, or the whole line when less than
+  /// [_minField] is left.
+  double _fieldWidth(
+    BuildContext context,
+    Iterable<String> labels,
+    double width,
+  ) {
+    if (labels.isEmpty || !width.isFinite) return width;
+    final style =
+        Theme.of(context).chipTheme.labelStyle ??
+        Theme.of(context).textTheme.labelLarge;
+    final scaler = MediaQuery.textScalerOf(context);
+    final direction = Directionality.of(context);
+    var used = 0.0;
+    for (final label in labels) {
+      final painter = TextPainter(
+        text: TextSpan(text: label, style: style),
+        textDirection: direction,
+        textScaler: scaler,
+        maxLines: 1,
+      )..layout();
+      final chip = (painter.width + _chipExtra).clamp(0.0, width);
+      painter.dispose();
+      if (used > 0 && used + chip > width) used = 0;
+      used += chip + _gap;
+    }
+    final left = width - used;
+    return left >= _minField ? left : width;
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -115,72 +158,82 @@ class DeckSearchBar extends StatelessWidget {
               Icon(Icons.search, color: scheme.onSurfaceVariant),
               const SizedBox(width: 12),
               Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    if (chips.isNotEmpty)
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(top: 8),
-                        child: Wrap(
-                          spacing: 6,
-                          runSpacing: 4,
-                          children: <Widget>[
-                            for (final token in SearchToken.values)
-                              if (chips[token] case final value?)
-                                Semantics(
-                                  label: l10n.searchChipChange(
-                                    chipLabel(token, value),
-                                  ),
-                                  child: InputChip(
-                                    label: Text(chipLabel(token, value)),
-                                    side: editing == token
-                                        ? BorderSide(
-                                            color: scheme.primary,
-                                            width: 2,
-                                          )
-                                        : null,
-                                    visualDensity: VisualDensity.compact,
-                                    onPressed: () => onChipTap(token),
-                                    onDeleted: () => onChipRemove(token),
-                                    deleteButtonTooltipMessage: l10n
-                                        .searchChipRemove(
-                                          chipLabel(token, value),
-                                        ),
-                                  ),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final width = constraints.maxWidth;
+                    final labels = <SearchToken, String>{
+                      for (final token in SearchToken.values)
+                        if (chips[token] case final value?)
+                          token: chipLabel(token, value),
+                    };
+                    final field = _fieldWidth(context, labels.values, width);
+                    return Padding(
+                      padding: const EdgeInsetsDirectional.symmetric(
+                        vertical: 4,
+                      ),
+                      // The chips and the text share the lines: the text
+                      // follows the last chip, or starts the next line when
+                      // too little is left (mockup, section 4).
+                      child: Wrap(
+                        spacing: _gap,
+                        runSpacing: 4,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: <Widget>[
+                          for (final entry in labels.entries)
+                            Semantics(
+                              label: l10n.searchChipChange(entry.value),
+                              child: InputChip(
+                                label: Text(entry.value),
+                                side: editing == entry.key
+                                    ? BorderSide(
+                                        color: scheme.primary,
+                                        width: 2,
+                                      )
+                                    : null,
+                                visualDensity: VisualDensity.compact,
+                                onPressed: () => onChipTap(entry.key),
+                                onDeleted: () => onChipRemove(entry.key),
+                                deleteButtonTooltipMessage: l10n
+                                    .searchChipRemove(entry.value),
+                              ),
+                            ),
+                          SizedBox(
+                            width: field,
+                            child: Focus(
+                              onKeyEvent: (node, event) {
+                                if (event is KeyDownEvent &&
+                                    event.logicalKey ==
+                                        LogicalKeyboardKey.backspace &&
+                                    controller.text.isEmpty &&
+                                    chips.isNotEmpty) {
+                                  onBackspaceEmpty();
+                                  return KeyEventResult.handled;
+                                }
+                                return KeyEventResult.ignored;
+                              },
+                              child: TextField(
+                                controller: controller,
+                                focusNode: focusNode,
+                                onChanged: onChanged,
+                                textInputAction: TextInputAction.search,
+                                decoration: InputDecoration(
+                                  hintText: chips.isEmpty ? hint : null,
+                                  border: InputBorder.none,
+                                  enabledBorder: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  filled: false,
+                                  contentPadding:
+                                      const EdgeInsetsDirectional.symmetric(
+                                        vertical: 12,
+                                      ),
                                 ),
-                          ],
-                        ),
-                      ),
-                    Focus(
-                      onKeyEvent: (node, event) {
-                        if (event is KeyDownEvent &&
-                            event.logicalKey == LogicalKeyboardKey.backspace &&
-                            controller.text.isEmpty &&
-                            chips.isNotEmpty) {
-                          onBackspaceEmpty();
-                          return KeyEventResult.handled;
-                        }
-                        return KeyEventResult.ignored;
-                      },
-                      child: TextField(
-                        controller: controller,
-                        focusNode: focusNode,
-                        onChanged: onChanged,
-                        textInputAction: TextInputAction.search,
-                        decoration: InputDecoration(
-                          hintText: chips.isEmpty ? hint : null,
-                          border: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          filled: false,
-                          contentPadding: const EdgeInsetsDirectional.symmetric(
-                            vertical: 16,
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
               if (showEnd)

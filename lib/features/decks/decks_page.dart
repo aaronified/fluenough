@@ -65,6 +65,10 @@ class _DecksPageState extends State<DecksPage> {
   );
   final ScrollController _scroll = ScrollController();
   final GlobalKey _upNext = GlobalKey();
+
+  /// The bar with its menu and offers above the results: the scrim covers
+  /// what is under it, and a tap there closes the search.
+  final GlobalKey _header = GlobalKey();
   final FocusNode _focus = FocusNode();
 
   /// The token chips the bar holds (#527): typed as `kind:grammar ` or
@@ -267,6 +271,32 @@ class _DecksPageState extends State<DecksPage> {
     setState(() {});
   }
 
+  /// A tap at [position] on the path darkened under the open search closes
+  /// it, as the ✕ does; a tap on the bar, its menu or its offers does not
+  /// (mockup section 1).
+  void _tapScrim(Offset position) {
+    final box = _header.currentContext?.findRenderObject();
+    if (box is! RenderBox || !box.attached) return;
+    final bottom = box.localToGlobal(Offset(0, box.size.height)).dy;
+    if (position.dy >= bottom) _close();
+  }
+
+  /// A swipe on the bar while searching runs the same search, chips and
+  /// all, in the next course (to the left) or the one before (to the
+  /// right; the other way round where text runs right to left).
+  void _swipeCourse(AppState state, double velocity) {
+    final choices = state.languageChoices;
+    final shown = state.shownLanguage;
+    if (choices.length < 2 || shown == null || velocity.abs() < 300) return;
+    final at = choices.indexWhere((l) => l.code == shown);
+    if (at < 0) return;
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    final forward = (velocity < 0) != rtl;
+    final next = choices[(at + (forward ? 1 : -1)) % choices.length];
+    _sync();
+    state.showLanguage(next.code);
+  }
+
   /// A kind chip on a result was tapped: the search narrows to that kind.
   void _narrowTo(SearchKind kind) => setState(() {
     _chips[SearchToken.kind] = kind.slug;
@@ -281,35 +311,42 @@ class _DecksPageState extends State<DecksPage> {
     };
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 12),
-      child: DeckSearchBar(
-        controller: _search,
-        focusNode: _focus,
-        hint: language == null
-            ? l10n.decksUnitSearchHint
-            : l10n.decksSearchHintIn(language),
-        chips: Map<SearchToken, String>.of(_chips),
-        chipLabel: (token, value) => l10n.searchChip(
-          token.key,
-          tokenValueLabel(l10n, token, value, themeNames: names),
+      child: GestureDetector(
+        onHorizontalDragEnd: (details) {
+          if (_isSearching(state)) {
+            _swipeCourse(state, details.primaryVelocity ?? 0);
+          }
+        },
+        child: DeckSearchBar(
+          controller: _search,
+          focusNode: _focus,
+          hint: language == null
+              ? l10n.decksUnitSearchHint
+              : l10n.decksSearchHintIn(language),
+          chips: Map<SearchToken, String>.of(_chips),
+          chipLabel: (token, value) => l10n.searchChip(
+            token.key,
+            tokenValueLabel(l10n, token, value, themeNames: names),
+          ),
+          editing: _editing,
+          onChanged: _onChanged,
+          onChipTap: (token) =>
+              setState(() => _editing = _editing == token ? null : token),
+          onChipRemove: (token) => setState(() {
+            _chips.remove(token);
+            if (_editing == token) _editing = null;
+          }),
+          onBackspaceEmpty: () => setState(() {
+            final last = _chips.keys.toList()
+              ..sort((a, b) => b.index.compareTo(a.index));
+            if (last.isNotEmpty) _chips.remove(last.first);
+          }),
+          showEnd: _isOpen(state),
+          endTooltip: _search.text.isNotEmpty || _chips.isNotEmpty
+              ? l10n.decksSearchClear
+              : l10n.decksSearchClose,
+          onEnd: () => _clearOrClose(state),
         ),
-        editing: _editing,
-        onChanged: _onChanged,
-        onChipTap: (token) =>
-            setState(() => _editing = _editing == token ? null : token),
-        onChipRemove: (token) => setState(() {
-          _chips.remove(token);
-          if (_editing == token) _editing = null;
-        }),
-        onBackspaceEmpty: () => setState(() {
-          final last = _chips.keys.toList()
-            ..sort((a, b) => b.index.compareTo(a.index));
-          if (last.isNotEmpty) _chips.remove(last.first);
-        }),
-        showEnd: _isOpen(state),
-        endTooltip: _search.text.isNotEmpty || _chips.isNotEmpty
-            ? l10n.decksSearchClear
-            : l10n.decksSearchClose,
-        onEnd: () => _clearOrClose(state),
       ),
     );
   }
@@ -555,136 +592,153 @@ class _DecksPageState extends State<DecksPage> {
             if (mounted) _toUpNext(animate: false);
           });
         }
-        return CustomScrollView(
-          controller: _scroll,
-          slivers: <Widget>[
-            // Clear of the buttons that float over the path's end (#466):
-            // their margin, their height and a gap, above any system inset.
-            SliverPadding(
-              padding: EdgeInsetsDirectional.fromSTEB(
-                16,
-                4,
-                16,
-                fabClearance + MediaQuery.paddingOf(context).bottom,
-              ),
-              sliver: SliverMainAxisGroup(
-                slivers: <Widget>[
-                  SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        _searchBar(l10n, state, language?.name),
-                        ?menu,
-                        if (outcome != null) ...<Widget>[
-                          if (outcome.foreign case final script?)
-                            ScriptOffers(
-                              script: script,
-                              shown: language!,
-                              spokenList: widget.spokenList,
-                            ),
-                          if (parsed.pending == null &&
-                              _editing == null &&
-                              applied.text.isNotEmpty &&
-                              outcome.foreign == null)
-                            SuggestionRows(
-                              typed: applied.text,
-                              suggestions: language == null
-                                  ? const <SearchSuggestion>[]
-                                  : searchSuggestions(
-                                      state,
-                                      l10n,
-                                      applied.text,
-                                      language,
-                                    ),
-                              onUse: (s) => _setText(
-                                s.token == null ? s.text : '${s.token!.key}:',
-                              ),
-                              onEdit: (s) => _setText(
-                                s.token == null ? '${s.text} ' : s.text,
-                              ),
-                            ),
-                        ] else if (view != null) ...<Widget>[
-                          Opacity(
-                            opacity: dim,
-                            child: CourseCard(
-                              view: view,
-                              glyph: languageGlyph(view.language, state.decks),
-                              hours: courseHours(state, code!),
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                        ],
-                      ],
-                    ),
-                  ),
-                  if (outcome != null)
-                    SearchResultsSliver(
-                      outcome: outcome,
-                      query: _search.text,
-                      onKind: _narrowTo,
-                      onRemoveKind: () =>
-                          setState(() => _chips.remove(SearchToken.kind)),
-                    ),
-                  if (!searching && view != null) ...<Widget>[
-                    SliverOpacity(
-                      opacity: dim,
-                      sliver: CoursePathSliver(
-                        view: view,
-                        state: state,
-                        upNextKey: _upNext,
-                        onUpNextRow: (row) => _upNextRow = row,
-                        onOpen: (unit) => unit.onPath
-                            ? AppNavigator.openUnit(
-                                context,
-                                unit.decks.first.id,
-                              )
-                            : AppNavigator.openDeck(
-                                context,
-                                unit.decks.first.id,
-                              ),
-                      ),
-                    ),
+        final scrim = open && !searching;
+        return GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTapUp: scrim
+              ? (details) => _tapScrim(details.globalPosition)
+              : null,
+          child: CustomScrollView(
+            controller: _scroll,
+            slivers: <Widget>[
+              // Clear of the buttons that float over the path's end (#466):
+              // their margin, their height and a gap, above any system inset.
+              SliverPadding(
+                padding: EdgeInsetsDirectional.fromSTEB(
+                  16,
+                  4,
+                  16,
+                  fabClearance + MediaQuery.paddingOf(context).bottom,
+                ),
+                sliver: SliverMainAxisGroup(
+                  slivers: <Widget>[
                     SliverToBoxAdapter(
                       child: Column(
+                        key: _header,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          const SizedBox(height: 32),
-                          const BeyondTheCourse(),
-                          if (view.otherDecks.isNotEmpty) ...<Widget>[
-                            const SizedBox(height: 24),
-                            GroupedList(
-                              header: l10n.pathOtherDecks,
-                              outerRadius: AppRadii.card,
-                              gap: 4,
-                              children: <Widget>[
-                                for (final entry
-                                    in view.otherDecks) ...<Widget>[
-                                  DeckTile(
-                                    entry: entry,
-                                    badge: DeckBadge.forEntry(state, entry),
-                                    onTap: () => AppNavigator.openDeck(
-                                      context,
-                                      entry.id,
-                                    ),
+                          _searchBar(l10n, state, language?.name),
+                          ?menu,
+                          if (outcome != null) ...<Widget>[
+                            if (outcome.foreign case final script?)
+                              ScriptOffers(
+                                script: script,
+                                shown: language!,
+                                spokenList: widget.spokenList,
+                              ),
+                            if (parsed.pending == null &&
+                                _editing == null &&
+                                applied.text.isNotEmpty &&
+                                outcome.foreign == null)
+                              SuggestionRows(
+                                typed: applied.text,
+                                suggestions: language == null
+                                    ? const <SearchSuggestion>[]
+                                    : searchSuggestions(
+                                        state,
+                                        l10n,
+                                        applied.text,
+                                        language,
+                                      ),
+                                onUse: (s) => _setText(
+                                  s.token == null ? s.text : '${s.token!.key}:',
+                                ),
+                                onEdit: (s) => _setText(
+                                  s.token == null ? '${s.text} ' : s.text,
+                                ),
+                              ),
+                          ] else if (view != null) ...<Widget>[
+                            IgnorePointer(
+                              ignoring: scrim,
+                              child: Opacity(
+                                opacity: dim,
+                                child: CourseCard(
+                                  view: view,
+                                  glyph: languageGlyph(
+                                    view.language,
+                                    state.decks,
                                   ),
-                                  if (hasNumberPractice(state, entry))
-                                    NumberPracticeTile(deck: entry),
-                                ],
-                              ],
+                                  hours: courseHours(state, code!),
+                                ),
+                              ),
                             ),
-                          ],
-                          if (state.brokenDecks.isNotEmpty) ...<Widget>[
-                            const SizedBox(height: 24),
-                            _BrokenFiles(files: state.brokenDecks),
+                            const SizedBox(height: 20),
                           ],
                         ],
                       ),
                     ),
+                    if (outcome != null)
+                      SearchResultsSliver(
+                        outcome: outcome,
+                        query: _search.text,
+                        onKind: _narrowTo,
+                        onRemoveKind: () =>
+                            setState(() => _chips.remove(SearchToken.kind)),
+                      ),
+                    if (!searching && view != null) ...<Widget>[
+                      SliverIgnorePointer(
+                        ignoring: scrim,
+                        sliver: SliverOpacity(
+                          opacity: dim,
+                          sliver: CoursePathSliver(
+                            view: view,
+                            state: state,
+                            upNextKey: _upNext,
+                            onUpNextRow: (row) => _upNextRow = row,
+                            onOpen: (unit) => unit.onPath
+                                ? AppNavigator.openUnit(
+                                    context,
+                                    unit.decks.first.id,
+                                  )
+                                : AppNavigator.openDeck(
+                                    context,
+                                    unit.decks.first.id,
+                                  ),
+                          ),
+                        ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: <Widget>[
+                            const SizedBox(height: 32),
+                            const BeyondTheCourse(),
+                            if (view.otherDecks.isNotEmpty) ...<Widget>[
+                              const SizedBox(height: 24),
+                              GroupedList(
+                                header: l10n.pathOtherDecks,
+                                outerRadius: AppRadii.card,
+                                gap: 4,
+                                children: <Widget>[
+                                  for (final entry
+                                      in view.otherDecks) ...<Widget>[
+                                    DeckTile(
+                                      entry: entry,
+                                      badge: DeckBadge.forEntry(state, entry),
+                                      onTap: () => AppNavigator.openDeck(
+                                        context,
+                                        entry.id,
+                                      ),
+                                    ),
+                                    if (hasNumberPractice(state, entry))
+                                      NumberPracticeTile(deck: entry),
+                                  ],
+                                ],
+                              ),
+                            ],
+                            if (state.brokenDecks.isNotEmpty) ...<Widget>[
+                              const SizedBox(height: 24),
+                              _BrokenFiles(files: state.brokenDecks),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ],
                   ],
-                ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );

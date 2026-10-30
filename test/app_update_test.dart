@@ -209,11 +209,17 @@ Future<_Fakes> _pump(
   usePhone(tester, textScale: textScale);
   final engine = FixedReleaseCheck(answer, gate: gate);
   final links = FixedLinks();
-  final installer = FixedApkInstaller(events, gate: installGate);
+  final files = MemoryDownloadStore();
+  final installer = FixedApkInstaller(events, gate: installGate, files: files);
   final state = await pumpScreen(
     tester,
     const UpdatesPage(),
-    state: AppState.test(releases: engine, links: links, installer: installer),
+    state: AppState.test(
+      releases: engine,
+      links: links,
+      installer: installer,
+      downloads: files,
+    ),
     themeMode: themeMode,
   );
   await _show(tester);
