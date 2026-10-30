@@ -28,6 +28,16 @@ import 'dart:convert';
 /// is moved to, never free text, and its [Suggestion.label] names the
 /// target for people. The review bot refuses a target the path does not
 /// list: a new theme goes by pull request.
+///
+/// Every field of a card can be reviewed (#508). The parts from
+/// [phonetic] on are those: a scalar ([gender], [register], [hears]) is a
+/// text suggestion like [reading]; a list ([isList]: [senses], [examples],
+/// [synonyms] and the rest) is suggested one item at a time, the item named
+/// by [Suggestion.word] and added or changed by [Suggestion.action]; and a
+/// part that only a tool writes or a recording or image the reviewer cannot
+/// change ([flagOnly]) is flagged, never edited. [warning] is the one
+/// warning the teach card shows (#691): its text is a warning's id, a note's
+/// `id`, `senses` or `none`.
 enum CardPart {
   word,
   reading,
@@ -39,6 +49,56 @@ enum CardPart {
   base,
   alt,
   place,
+  phonetic,
+  gender,
+  register,
+  hears,
+  frequency,
+  warning,
+  senses,
+  examples,
+  synonyms,
+  antonyms,
+  confusables,
+  forms,
+  collocations,
+  pairs,
+  facts,
+  dictionary,
+  image,
+  recording,
+  setCard,
+}
+
+/// What a [CardPart] is for, which says how the sheet offers it.
+extension CardPartKind on CardPart {
+  /// A list field: a suggestion on it names an item ([Suggestion.word]) and
+  /// adds or changes it, and each item can be checked "Looks right".
+  bool get isList => switch (this) {
+    CardPart.senses ||
+    CardPart.examples ||
+    CardPart.synonyms ||
+    CardPart.antonyms ||
+    CardPart.confusables ||
+    CardPart.forms ||
+    CardPart.collocations ||
+    CardPart.pairs ||
+    CardPart.facts ||
+    CardPart.dictionary => true,
+    _ => false,
+  };
+
+  /// A part reviewers only flag: written by a tool (the narrow IPA, the
+  /// frequency), or a recording, an image or a set card, which a reviewer
+  /// cannot record, draw or write.
+  bool get flagOnly => switch (this) {
+    CardPart.phonetic ||
+    CardPart.frequency ||
+    CardPart.image ||
+    CardPart.recording ||
+    CardPart.setCard => true,
+    _ => false,
+  };
 }
 
 /// What a suggestion on a base does (#476). The names are written to the
@@ -130,18 +190,26 @@ class Suggestion {
     this.was,
     this.base,
     this.label,
+    this.flag = false,
   });
 
   final CardPart part;
 
+  /// A flag (#508): the reviewer says the part is missing or wrong, and
+  /// offers no text. [now] and [text] are empty. For a list part it flags
+  /// the whole field, so there is no [word].
+  final bool flag;
+
   /// For a [CardPart.base] suggestion, the base's word as it stands in the
-  /// card's target: the key the layer gives its meaning by. Null for any
-  /// other part.
+  /// card's target: the key the layer gives its meaning by. For an item of
+  /// a list part (#508), the item's key in the field, or `new-N` for an
+  /// item added. Null for any other part.
   final String? word;
 
   /// For a [CardPart.base] suggestion since #476, whether the base is
   /// added, changed or removed; null for one from before, which changes a
-  /// base's meaning only.
+  /// base's meaning only. For an item of a list part ([CardPartKind.isList],
+  /// #508), [BaseAction.add] or [BaseAction.edit]: never a removal.
   final BaseAction? action;
 
   /// The base as it was, for a base changed or removed.
@@ -172,6 +240,7 @@ class Suggestion {
     'was': ?was?.toJson(),
     'base': ?base?.toJson(),
     'label': ?label,
+    if (flag) 'flag': true,
     'now': now,
     'text': text,
     if (why.isNotEmpty) 'why': why,
@@ -185,36 +254,49 @@ class Suggestion {
     final why = json['why'];
     final word = json['word'];
     if (part == null || now is! String || text is! String) return null;
-    if (part == CardPart.base && (word is! String || word.isEmpty)) {
+    final flag = json['flag'] == true;
+    final isBase = part == CardPart.base;
+    // An item of a list part names the item; a flag on a list part does not.
+    final isItem = part.isList && !flag;
+    if ((isBase || isItem) && (word is! String || word.isEmpty)) {
       return null;
     }
-    final isBase = part == CardPart.base;
     final label = json['label'];
-    final action = isBase
+    final action = isBase || isItem
         ? BaseAction.values.asNameMap()[json['action']]
         : null;
-    if (isBase && json['action'] != null && action == null) return null;
-    final was = action == null ? null : BaseForm.fromJson(json['was']);
-    final base = action == null ? null : BaseForm.fromJson(json['base']);
-    final complete = switch (action) {
-      null => true,
-      BaseAction.add => base != null,
-      BaseAction.edit => base != null && was != null,
-      BaseAction.remove => was != null,
-    };
+    if ((isBase || isItem) && json['action'] != null && action == null) {
+      return null;
+    }
+    if (isItem && action == BaseAction.remove) return null;
+    final was = isBase && action != null
+        ? BaseForm.fromJson(json['was'])
+        : null;
+    final base = isBase && action != null
+        ? BaseForm.fromJson(json['base'])
+        : null;
+    final complete =
+        !isBase ||
+        switch (action) {
+          null => true,
+          BaseAction.add => base != null,
+          BaseAction.edit => base != null && was != null,
+          BaseAction.remove => was != null,
+        };
     if (!complete) return null;
     return Suggestion(
       part: part,
       now: now,
       text: text,
       why: why is String ? why : '',
-      word: isBase ? word as String : null,
+      word: isBase || isItem ? word as String : null,
       action: action,
       was: action == BaseAction.add ? null : was,
       base: action == BaseAction.remove ? null : base,
       label: part == CardPart.place && label is String && label.isNotEmpty
           ? label
           : null,
+      flag: flag,
     );
   }
 }
@@ -360,9 +442,19 @@ class CardReview {
     this.rating,
     this.alike,
     this.answers = const <String, ProposalAnswer>{},
+    this.itemsRight = const <String>{},
   });
 
+  /// The key [itemsRight] holds for the item [key] of the list [part]
+  /// (#508).
+  static String itemKey(CardPart part, String key) => '${part.name}:$key';
+
   final DateTime at;
+
+  /// The items of the card's list fields this reviewer checked "Looks
+  /// right", each as [itemKey] writes it. Independent of [right], which is
+  /// the whole card, and of the suggestions.
+  final Set<String> itemsRight;
 
   /// "Looks right". Never with [suggestions].
   final bool right;
@@ -382,7 +474,11 @@ class CardReview {
 
   /// Whether there is anything to send.
   bool get isEmpty =>
-      !marked && rating == null && alike == null && answers.isEmpty;
+      !marked &&
+      rating == null &&
+      alike == null &&
+      answers.isEmpty &&
+      itemsRight.isEmpty;
 
   Map<String, Object?> toJson() => <String, Object?>{
     'at': at.toUtc().toIso8601String(),
@@ -397,6 +493,7 @@ class CardReview {
     'alike': ?alike?.toJson(),
     if (answers.isNotEmpty)
       'proposals': <Object?>[for (final a in answers.values) a.toJson()],
+    if (itemsRight.isNotEmpty) 'items_right': itemsRight.toList(),
   };
 
   static CardReview? fromJson(Object? json) {
@@ -412,8 +509,14 @@ class CardReview {
       if (!suggestions.any(s.samePart)) suggestions.add(s);
     }
     final proposals = json['proposals'];
+    final checked = json['items_right'];
     return CardReview(
       at: at,
+      itemsRight: Set<String>.unmodifiable(<String>{
+        if (checked is List)
+          for (final k in checked)
+            if (k is String && k.contains(':')) k,
+      }),
       right: json['looks_right'] == true && suggestions.isEmpty,
       suggestions: List<Suggestion>.unmodifiable(suggestions),
       rating: WordRating.fromJson(json['rating']),

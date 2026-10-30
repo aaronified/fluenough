@@ -2781,17 +2781,26 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # writes the core's line with it. `alt_target` is the accepted
 # alternatives, its `now` and `text` JSON lists. `place` is where a card
 # belongs (#477): its `now` and `text` are core deck ids, and only a core's
-# card has it.
+# card has it. `gender`, `register`, `hears` and `warning` (#508) are the
+# card's own scalars, so a card written in full has them and a ref or a
+# layer's entry does not; `warning` is a core card's only.
 PROPOSAL_FIELDS = {
-    "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
+    "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target",
+               "gender", "register", "hears"),
     "ref": ("native", "reading", "ipa", "notes"),
-    "core": ("target", "reading", "ipa", "notes", "alt_target", "place"),
+    "core": ("target", "reading", "ipa", "notes", "alt_target", "place",
+             "gender", "register", "hears", "warning"),
     "core-ref": ("reading", "ipa", "notes"),
     "layer": ("native", "bases"),
     "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
 }
 # The fields whose `now` and `text` are JSON, not the field's own text.
 PROPOSAL_JSON_FIELDS = ("bases", "alt_target")
+# The values a proposal on a fixed-value field may have, wherever the card is.
+# `gender` (the language's path lists the classes) and `warning` (the card's
+# own notes name the choices) depend on more than the proposal, and are
+# checked by the review bot against them (tools/proposals.py).
+PROPOSAL_VALUES = {"register": REGISTERS, "hears": ("form",)}
 
 
 def _proposal_json_ok(name: str, value: str) -> bool:
@@ -2903,6 +2912,9 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                 r.error(where, f"text must be non-empty text, got {text!r}")
             elif isinstance(now, str) and text == now:
                 r.error(where, "text is what the field said already")
+            elif name in PROPOSAL_VALUES and text not in PROPOSAL_VALUES[name]:
+                r.error(where, f"text of a proposal on {name} must be one of "
+                               f"{', '.join(PROPOSAL_VALUES[name])}, got {text!r}")
             tied = item.get("with")
             if tied is not None and (not isinstance(tied, str)
                                      or not PROPOSAL_ID_RE.fullmatch(tied)):

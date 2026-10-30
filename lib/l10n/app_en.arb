@@ -8149,6 +8149,312 @@
   "@reviewSuggestSaveAll": {
     "description": "Read by a screen reader, and shown on a long press, for the tick at the top of Suggest a change, which saves the suggestion on every part edited."
   },
+  "reviewPartPhonetic": "Narrow IPA",
+  "@reviewPartPhonetic": {
+    "description": "Name of a part of a card, the card's narrow IPA, in square brackets, written by a tool. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartGender": "Gender",
+  "@reviewPartGender": {
+    "description": "Name of a part of a card, the card's grammatical gender. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartRegister": "Register",
+  "@reviewPartRegister": {
+    "description": "Name of a part of a card, the card's register, such as neutral or formal. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartHears": "Hears",
+  "@reviewPartHears": {
+    "description": "Name of a part of a card, what hearing the card asks for, such as its form (`hears`). Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartFrequency": "Frequency",
+  "@reviewPartFrequency": {
+    "description": "Name of a part of a card, the card's rank in a count of its language. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartWarning": "Teach-card warning",
+  "@reviewPartWarning": {
+    "description": "Name of a part of a card, the one warning the teach card shows. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartSenses": "Other senses",
+  "@reviewPartSenses": {
+    "description": "Name of a part of a card, the card's other meanings. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartExamples": "Examples",
+  "@reviewPartExamples": {
+    "description": "Name of a part of a card, the card's examples. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartSynonyms": "Synonyms",
+  "@reviewPartSynonyms": {
+    "description": "Name of a part of a card, the card's synonyms. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartAntonyms": "Antonyms",
+  "@reviewPartAntonyms": {
+    "description": "Name of a part of a card, the card's antonyms. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartConfusables": "Confusables, with why",
+  "@reviewPartConfusables": {
+    "description": "Name of a part of a card, the words the card is confused with, each with why. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartForms": "Forms",
+  "@reviewPartForms": {
+    "description": "Name of a part of a card, the card's other forms, such as its plural. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartCollocations": "Collocations",
+  "@reviewPartCollocations": {
+    "description": "Name of a part of a card, the words the card goes with. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartPairs": "Minimal pairs",
+  "@reviewPartPairs": {
+    "description": "Name of a part of a card, the words the card sounds almost like. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartFacts": "Facts",
+  "@reviewPartFacts": {
+    "description": "Name of a part of a card, the facts that name the card. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartDictionary": "Dictionary entry",
+  "@reviewPartDictionary": {
+    "description": "Name of a part of a card, the card's imported dictionary entry. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartImage": "Image",
+  "@reviewPartImage": {
+    "description": "Name of a part of a card, the card's image. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartRecording": "Recording",
+  "@reviewPartRecording": {
+    "description": "Name of a part of a card, the card's recording. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewPartSetCard": "Set card",
+  "@reviewPartSetCard": {
+    "description": "Name of a part of a card, the set card the card is a member of. Part names are shown in small capitals, and on the pencil's tooltip."
+  },
+  "reviewGroupWord": "The word",
+  "@reviewGroupWord": {
+    "description": "Heading of a group of parts in Suggest a change: the word, its reading and IPA."
+  },
+  "reviewGroupMeaning": "Meaning",
+  "@reviewGroupMeaning": {
+    "description": "Heading of a group of parts in Suggest a change: the meaning and the other senses."
+  },
+  "reviewGroupExamples": "Examples",
+  "@reviewGroupExamples": {
+    "description": "Heading of a group of parts in Suggest a change: the examples."
+  },
+  "reviewGroupRelated": "Related words",
+  "@reviewGroupRelated": {
+    "description": "Heading of a group of parts in Suggest a change: synonyms, antonyms, confusables, minimal pairs, forms and collocations."
+  },
+  "reviewGroupNotes": "Notes",
+  "@reviewGroupNotes": {
+    "description": "Heading of a group of parts in Suggest a change: the notes and the teach-card warning."
+  },
+  "reviewGroupMedia": "Picture and sound",
+  "@reviewGroupMedia": {
+    "description": "Heading of a group of parts in Suggest a change: the picture, image and recording."
+  },
+  "reviewGroupFacts": "Facts and sets",
+  "@reviewGroupFacts": {
+    "description": "Heading of a group of parts in Suggest a change: the facts and the set card."
+  },
+  "reviewItemChecked": "You checked this",
+  "@reviewItemChecked": {
+    "description": "Under an item of a list in Suggest a change, once the reviewer checked it Looks right."
+  },
+  "reviewItemsToCheck": "{count, plural, =1{1 to check} other{{count} to check}}",
+  "@reviewItemsToCheck": {
+    "description": "Beside a list's name in Suggest a change: how many of its items are not checked Looks right yet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewItemLooksRight": "Looks right: {item}",
+  "@reviewItemLooksRight": {
+    "description": "Read by a screen reader for the Looks right button under one item of a list.",
+    "placeholders": {
+      "item": {
+        "type": "String",
+        "example": "a house"
+      }
+    }
+  },
+  "reviewAddSynonym": "Add a synonym",
+  "@reviewAddSynonym": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a synonym."
+  },
+  "reviewAddAntonym": "Add an antonym",
+  "@reviewAddAntonym": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds an antonym."
+  },
+  "reviewAddConfusable": "Add a confusable",
+  "@reviewAddConfusable": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a confusable."
+  },
+  "reviewAddForm": "Add a form",
+  "@reviewAddForm": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a form."
+  },
+  "reviewAddCollocation": "Add a collocation",
+  "@reviewAddCollocation": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a collocation."
+  },
+  "reviewAddSense": "Add a sense",
+  "@reviewAddSense": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds another meaning."
+  },
+  "reviewAddExample": "Add an example",
+  "@reviewAddExample": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds an example."
+  },
+  "reviewAddPair": "Add a minimal pair",
+  "@reviewAddPair": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a minimal pair."
+  },
+  "reviewAddFact": "Suggest a fact",
+  "@reviewAddFact": {
+    "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a fact that names the card."
+  },
+  "reviewAddRemove": "Remove the new item",
+  "@reviewAddRemove": {
+    "description": "Tooltip of the delete button of an item being added in Suggest a change."
+  },
+  "reviewFlagMissing": "Flag as missing",
+  "@reviewFlagMissing": {
+    "description": "Button on a part of a card that has no data in Suggest a change: says that data is missing, without suggesting any."
+  },
+  "reviewFlagged": "Flagged. It goes with your review.",
+  "@reviewFlagged": {
+    "description": "Shown on a part the reviewer flagged in Suggest a change."
+  },
+  "reviewFlaggedYours": "Flagged as missing or wrong",
+  "@reviewFlaggedYours": {
+    "description": "In place of a suggestion's text on the Reviewed pages, for a flag."
+  },
+  "reviewFlagRank": "Flag this rank",
+  "@reviewFlagRank": {
+    "description": "Button on the frequency of a card in Suggest a change."
+  },
+  "reviewFlagPhonetic": "Flag this narrow IPA",
+  "@reviewFlagPhonetic": {
+    "description": "Button on the narrow IPA of a card in Suggest a change."
+  },
+  "reviewFlagImage": "Flag this image",
+  "@reviewFlagImage": {
+    "description": "Button on a card's image in Suggest a change."
+  },
+  "reviewFlagRecording": "Flag this recording",
+  "@reviewFlagRecording": {
+    "description": "Button on a card's recording in Suggest a change: a flagged recording is dropped and the card uses text-to-speech."
+  },
+  "reviewFlagSet": "Flag this set card",
+  "@reviewFlagSet": {
+    "description": "Button on the set card in Suggest a change."
+  },
+  "reviewWiktionary": "Wiktionary · semi-verified",
+  "@reviewWiktionary": {
+    "description": "Mark on an item taken from Wiktionary in Suggest a change. Such items come after the others."
+  },
+  "reviewToolWritten": "Written by a tool, never by hand.",
+  "@reviewToolWritten": {
+    "description": "Under the frequency and the narrow IPA in Suggest a change: reviewers flag them, they do not edit them."
+  },
+  "reviewFrequencyRank": "Rank {rank} · {source}",
+  "@reviewFrequencyRank": {
+    "description": "The frequency of a card in Suggest a change: its rank in a count, and what was counted.",
+    "placeholders": {
+      "rank": {
+        "type": "int",
+        "example": "212"
+      },
+      "source": {
+        "type": "String",
+        "example": "hi.wikipedia.org, 2026-10"
+      }
+    }
+  },
+  "reviewFrequencyNone": "Not counted",
+  "@reviewFrequencyNone": {
+    "description": "The frequency of a card that has none, in Suggest a change."
+  },
+  "reviewImageNone": "No image: the picture shows.",
+  "@reviewImageNone": {
+    "description": "The Image box of a card that has no image, in Suggest a change."
+  },
+  "reviewRecordingNone": "No recording: the phone's voice says it.",
+  "@reviewRecordingNone": {
+    "description": "The Recording box of a card that has no recording, in Suggest a change."
+  },
+  "reviewMediaCredit": "{credit} · {license}",
+  "@reviewMediaCredit": {
+    "description": "The credit of a card's image or recording in Suggest a change.",
+    "placeholders": {
+      "credit": {
+        "type": "String",
+        "example": "A speaker on Wikimedia Commons"
+      },
+      "license": {
+        "type": "String",
+        "example": "CC-BY-SA-4.0"
+      }
+    }
+  },
+  "reviewSetNone": "Not in a set card",
+  "@reviewSetNone": {
+    "description": "The Set card box of a card that is in none, in Suggest a change."
+  },
+  "reviewSetIn": "{name} · {count, plural, =1{1 member} other{{count} members}}",
+  "@reviewSetIn": {
+    "description": "A set card the card is a member of, with how many members it has, in Suggest a change.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Plural endings"
+      },
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "reviewWarningBox": "The teach card has room for one warning. The word sheet still lists all of them.",
+  "@reviewWarningBox": {
+    "description": "Under the warning the teach card shows, in Suggest a change."
+  },
+  "reviewWarningAuto": "No choice written: the teach card keeps its fixed order.",
+  "@reviewWarningAuto": {
+    "description": "The Teach-card warning box of a card with no `warning`, in Suggest a change."
+  },
+  "reviewWarningPair": "Sounds like another word",
+  "@reviewWarningPair": {
+    "description": "A warning the teach card can show: a word it sounds almost like."
+  },
+  "reviewWarningHomograph": "Spelt like another word",
+  "@reviewWarningHomograph": {
+    "description": "A warning the teach card can show: a word with the same spelling."
+  },
+  "reviewWarningLookalike": "Looks like another word",
+  "@reviewWarningLookalike": {
+    "description": "A warning the teach card can show: a word that differs by a mark."
+  },
+  "reviewWarningSenses": "Other meanings",
+  "@reviewWarningSenses": {
+    "description": "A warning the teach card can show: the word's other meanings."
+  },
+  "reviewWarningNone": "No warning",
+  "@reviewWarningNone": {
+    "description": "A choice for the teach card: it shows no warning."
+  },
+  "reviewWarningNoneSub": "The teach card shows none.",
+  "@reviewWarningNoneSub": {
+    "description": "Under No warning in the warning picker."
+  },
+  "reviewWarningNoSenses": "This card has no other meanings. Add one under Other senses first.",
+  "@reviewWarningNoSenses": {
+    "description": "Under Other meanings in the warning picker, on a card that has none."
+  },
+  "reviewWarningRule": "Pick the one warning the teach card shows. Only a warning this card has can be picked. The word sheet still lists them all.",
+  "@reviewWarningRule": {
+    "description": "Rule at the top of the warning picker in Suggest a change."
+  },
   "reviewSuggestKept": "Kept on this phone until you send your review.",
   "@reviewSuggestKept": {
     "description": "Under the fields of Suggest a change."
