@@ -139,7 +139,9 @@ class AnswerFeedback extends StatelessWidget {
     final words = shown.split(RegExp(r'\s+')).where((w) => w.isNotEmpty);
     return words.length > 2
         ? l10n.feedbackAlsoRight
-        : l10n.feedbackAlsoTyped(shown);
+        : l10n.feedbackAlsoTyped(
+            words.length == 1 ? shown.toLowerCase() : shown,
+          );
   }
 
   /// What was heard, in the script as recognised, then its IPA when the word

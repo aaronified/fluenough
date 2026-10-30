@@ -147,7 +147,7 @@ class SynonymSets {
             continue;
           }
           // British -elled, American -eled: one word, by rule (travelling,
-          // traveling), whatever lemma the sets hold.
+          // traveling), for the listed lemmas only, whatever the sets hold.
           if (_doubledL(t.core) == _doubledL(c.core) && t.core != c.core) {
             return SynonymMatch(i, t.core);
           }
@@ -303,13 +303,34 @@ class SynonymSets {
     return i;
   }
 
-  static final RegExp _ell = RegExp(r'ell(ed|ing|ers?|est)(?=\s|$)');
+  /// A word that may carry a doubled final l: a lazy stem ending in l, an
+  /// optional second l, then an ending.
+  static final RegExp _ell = RegExp(
+    r'\b([a-z]+?l)(l?)(ed|ing|ers?|ors?)(?=\s|$)',
+  );
 
-  /// [core] with a doubled final l before an ending made single: the
-  /// British and American spellings of one word (cancelled, canceled) share
-  /// this form. Only -el- is treated so (never pulled, filled).
-  static String _doubledL(String core) =>
-      core.replaceAllMapped(_ell, (m) => 'el${m[1]}');
+  /// The lemmas the British -ll- and American -l- spellings are one word for:
+  /// travelled / traveled, counsellor / counselor. A closed list, so that a
+  /// slip such as "teling" for "telling" is never read as a spelling variant
+  /// and meets the card's own typo pass instead. Only lemmas truly spelled
+  /// both ways; a word unsure is left out (rebel, control, fulfil, pull and
+  /// fill are not here).
+  static const Set<String> _doubledLLemmas = {
+    'bevel', 'cancel', 'channel', 'chisel', 'counsel', 'dial', 'duel', //
+    'enamel', 'equal', 'fuel', 'funnel', 'grovel', 'jewel', 'label', //
+    'level', 'libel', 'marvel', 'medal', 'model', 'panel', 'pedal', //
+    'pencil', 'quarrel', 'rival', 'shovel', 'signal', 'snorkel', //
+    'swivel', 'total', 'travel', 'trowel', 'tunnel', 'yodel',
+  };
+
+  /// [core] with a doubled final l before an ending made single, for the
+  /// lemmas of [_doubledLLemmas] only: the British and American spellings of
+  /// one word (cancelled, canceled) share this form. Any other word is
+  /// returned as it is.
+  static String _doubledL(String core) => core.replaceAllMapped(
+    _ell,
+    (m) => _doubledLLemmas.contains(m[1]) ? '${m[1]}${m[3]}' : m[0]!,
+  );
 
   static const Set<String> _particles = {
     'up', 'down', 'off', 'on', 'out', 'in', 'over', 'away', 'back', //

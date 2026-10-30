@@ -137,9 +137,27 @@ void main() {
       wrong('zab', 'brontled');
     });
 
-    test('differ by -elled and -eled only as one word', () {
-      right('zavelled', 'zaveled');
-      right('zavelling', 'zaveling');
+    test('differ by -ll- and -l- only as one word, for listed lemmas', () {
+      right('travelling', 'traveling');
+      right('traveled', 'travelled');
+      right('cancelled', 'canceled');
+      right('labelling', 'labeling');
+      right('counsellor', 'counselor');
+    });
+
+    test('a slip is not a regional spelling: it is a close typo', () {
+      for (final (card, typed) in [
+        ('telling', 'teling'),
+        ('spelling', 'speling'),
+        ('selling', 'seling'),
+        ('yelling', 'yeling'),
+        ('swelling', 'sweling'),
+        ('dwelling', 'dweling'),
+      ]) {
+        final graded = grade(card, typed);
+        expect(graded.outcome, AnswerOutcome.closeTypo, reason: typed);
+        expect(graded.viaSynonym, isFalse, reason: typed);
+      }
     });
   });
 
