@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
 
+- Suggest a change has a Place box, last among the boxes: its pencil opens Move this card, which offers only the units of the course's B1 plan that have a deck (a planned one is shown greyed), never free text, and says that a new theme or unit goes by pull request. The review bot applies an agreed move by moving the card, with its layers' entries, to the end of the other deck's files with its id kept, and refuses a unit the path does not list. Editing the Meaning shows the rule that it never changes, and How reviewing works gains a step with the five reviewer rules, in `docs/REVIEWING.md` too (#477).
+
 ### Fixed
 
 - Opening the app replays the review log once, not twice, and reads it from the database once, not three times, so it opens sooner for a learner with a long history (#857). The numbers shown do not change.

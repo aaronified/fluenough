@@ -1478,7 +1478,10 @@ class _SuggestSheetState extends State<SuggestSheet> {
       path,
       from: widget.card.deckId,
       nameOf: (id) => deck(id)?.deck.name,
-      isVocab: (id) => deck(id)?.deck.kind == DeckKind.vocab,
+      // A card is never moved into the offensive words: they are rated apart.
+      isVocab: (id) =>
+          deck(id)?.deck.kind == DeckKind.vocab &&
+          !deck(id)!.deck.tags.contains('offensive'),
     );
   }
 
