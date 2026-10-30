@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The app removes its own junk, at most once a day a few seconds after it starts and again after an update (#493): update APKs other than the one waiting to install, half-written `.part` download files and copies of a backup made for a restore older than a day, and report attachments older than three days. Your backups, decks, progress and settings are never touched, and each run that removes something says so in the app log.
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
 
 ### Changed
