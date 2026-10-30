@@ -84,7 +84,7 @@ class MoveSheet extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: scheme.surfaceContainerHigh,
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.chip),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(12, 12, 12, 4),

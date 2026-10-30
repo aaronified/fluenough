@@ -2319,7 +2319,7 @@ class _MeaningRule extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.tertiaryContainer,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       child: Padding(
         padding: const EdgeInsetsDirectional.all(12),
