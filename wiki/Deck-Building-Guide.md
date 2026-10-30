@@ -117,6 +117,6 @@ are fine, and each item taken from outside names its source. The deck's
 
 ## For coding agents
 
-The build steps for agents are in [build-deck](https://github.com/aaronified/fluenough/blob/main/.claude/skills/build-deck/SKILL.md).
+The build steps for agents are in [build-deck](https://github.com/aaronified/fluenough/blob/main/.claude/skills/build-deck/SKILL.md). Deck work goes in larger pull requests: several units per branch, one review per pull request (owner, 2026-10-30).
 
 See also: [Home](Home)
