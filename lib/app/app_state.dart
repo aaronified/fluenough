@@ -673,6 +673,24 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// The languages Today's fact can be shown in (#926): those the learner
+  /// knows, in their order.
+  List<String> get factLanguageChoices => settings.spokenLanguages;
+
+  /// Those of [factLanguageChoices] whose box is checked.
+  Set<String> get factLanguagesChecked =>
+      checkedFactLanguages(factLanguageChoices, settings.factLanguages);
+
+  /// A tap on [code]'s box of the fact card's menu; the last checked one
+  /// stays checked.
+  void toggleFactLanguage(String code) {
+    settings.factLanguages = toggledFactLanguages(
+      factLanguageChoices,
+      settings.factLanguages,
+      code,
+    );
+  }
+
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known
   /// first. Choosing one records it as shown today, after this call, so
@@ -703,7 +721,7 @@ class AppState extends ChangeNotifier {
       today.add((
         language: language,
         fact: fact,
-        texts: factTexts(fact, spoken),
+        texts: shownFactTexts(fact, spoken, settings.factLanguages),
       ));
       final at = shown[fact.id];
       if (at == null || !isSameDay(at, now())) {
