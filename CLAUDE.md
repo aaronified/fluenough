@@ -133,6 +133,7 @@ contributor.
 - **Budget.** Tokens are limited: one review per change (see "Which model
   does what"), no extra verification passes, and no new work unless the owner asks for it.
 - **Larger deck pull requests** (owner, 2026-10-30: "Open larger PRs for decks, to minimize ci burden, when you restart work on decks"). CI runners are the bottleneck, so deck work goes in larger pull requests: several units (a course's next 3 to 6 units, theme and sentences decks together) per branch and per pull request, one Sonnet review per pull request, instead of one pull request per unit. Fix review findings on the same branch before opening it where possible.
+- **Deck work waits for the rest** (owner, 2026-10-30: "Don't do deck work till all else is done"). No new deck work starts (no new units, facts or decks, no deck agents) until all the other work is done: the code, app, tooling and documentation issues and pull requests. Deck pull requests already open are still reviewed and merged. When the rest is done, deck work restarts in larger pull requests (see above).
 - **Never stop anything** unless the owner explicitly asks (owner, 2026-10-23:
   "Never stop anything unless i explicitly ask to.").
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
