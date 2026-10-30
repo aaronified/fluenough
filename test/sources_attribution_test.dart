@@ -6,7 +6,6 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/links.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
