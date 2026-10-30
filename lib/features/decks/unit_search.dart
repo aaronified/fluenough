@@ -628,15 +628,18 @@ List<SearchHit> _collect(
       }
     }
     for (final (i, hit) in cards.indexed.toList()) {
-      if (hit is CardHit && others[hit.card.id] case final more?) {
-        cards[i] = CardHit(
-          hit.language,
-          hit.card,
-          deck: hit.deck,
-          moreDecks: more.length,
-          rank: hit.rank,
-          kind: hit.kind,
-        );
+      if (hit is CardHit) {
+        final more = others[hit.card.id];
+        if (more != null) {
+          cards[i] = CardHit(
+            hit.language,
+            hit.card,
+            deck: hit.deck,
+            moreDecks: more.length,
+            rank: hit.rank,
+            kind: hit.kind,
+          );
+        }
       }
     }
     // A grammar table's rows are found as words too, unless the course

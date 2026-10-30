@@ -1,7 +1,8 @@
 /// Typo-tolerant matching for the Decks search (#527), free of Flutter.
 ///
-/// The approved mockup (removed once built, #527) did it in two steps: overlapping three-letter pieces (trigrams), where a field
-/// matches when it holds at least half of the word's pieces, and, when that
+/// The approved mockup (removed once built, #527) did it in two steps:
+/// overlapping three-letter pieces (trigrams), where a field matches when it
+/// holds at least half of the word's pieces, and, when that
 /// finds nothing, an edit distance to the words the search knows (at most 1
 /// for a word of up to 4 letters, 2 for a longer one, a swap of two letters
 /// counting as one). This is the decision step, in Dart over the folded text,
