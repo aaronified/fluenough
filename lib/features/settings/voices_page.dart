@@ -461,6 +461,7 @@ class _FoldHeader extends StatelessWidget {
     return MergeSemantics(
       child: Semantics(
         expanded: expanded,
+        // hint-ok: shows text
         child: InkWell(
           borderRadius: BorderRadius.circular(AppRadii.field),
           onTap: onToggle,

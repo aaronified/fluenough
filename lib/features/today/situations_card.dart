@@ -27,6 +27,7 @@ class SituationsCard extends StatelessWidget {
       child: Material(
         color: scheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(AppRadii.group),
+        // hint-ok: shows text
         child: InkWell(
           borderRadius: BorderRadius.circular(AppRadii.group),
           onTap: () => showIncomingSnackBar(context),

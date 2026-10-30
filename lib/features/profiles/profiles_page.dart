@@ -173,6 +173,7 @@ class _ProfileTile extends StatelessWidget {
       child: Semantics(
         button: true,
         label: l10n.profilesOpen(name, languages),
+        // hint-ok: shows text
         child: InkWell(
           onTap: () => ProfilesPage.open(context, profile),
           borderRadius: BorderRadius.circular(AppRadii.group),
@@ -238,6 +239,7 @@ class _AddProfileTile extends StatelessWidget {
     final scheme = theme.colorScheme;
     final incoming = isIncoming(context, Feature.profiles);
 
+    // hint-ok: shows text
     final tile = InkWell(
       onTap: incoming ? null : () => AppNavigator.openNewProfile(context),
       borderRadius: BorderRadius.circular(AppRadii.group),

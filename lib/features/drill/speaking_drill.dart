@@ -7,6 +7,7 @@ import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
@@ -282,12 +283,15 @@ class _MicrophoneButton extends StatelessWidget {
           color: hearing ? scheme.tertiary : scheme.primary,
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: onPressed,
-            child: Icon(
-              hearing ? Icons.stop_rounded : Icons.mic,
-              size: 48,
-              color: hearing ? scheme.onTertiary : scheme.onPrimary,
+          child: Hint(
+            message: hearing ? l10n.hintStop : l10n.hintSpeak,
+            child: InkWell(
+              onTap: onPressed,
+              child: Icon(
+                hearing ? Icons.stop_rounded : Icons.mic,
+                size: 48,
+                color: hearing ? scheme.onTertiary : scheme.onPrimary,
+              ),
             ),
           ),
         ),

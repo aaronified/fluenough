@@ -4,6 +4,7 @@ import '../../app.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
+import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../decks/gallery_entries.dart';
 import '../downloads/gallery_entries.dart';
@@ -168,6 +169,7 @@ class _GalleryPreviewState extends State<GalleryPreview> {
             title: Text(widget.entry.label),
             leading: IconButton(
               icon: const Icon(Icons.close),
+              tooltip: AppLocalizations.of(context)!.commonClose,
               onPressed: () => Navigator.of(context).pop(),
             ),
           ),

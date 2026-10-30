@@ -173,6 +173,7 @@ class LanguageRow extends StatelessWidget {
           excludeSemantics: true,
           label: label,
           onTap: onTap,
+          // hint-ok: shows text
           child: InkWell(
             onTap: onTap,
             child: Padding(

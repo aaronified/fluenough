@@ -347,6 +347,7 @@ class LevelHeader extends StatelessWidget {
               ? scheme.primaryContainer
               : scheme.surfaceContainerHigh,
           borderRadius: radius,
+          // hint-ok: shows text
           child: InkWell(
             borderRadius: radius,
             onTap: onToggle,
