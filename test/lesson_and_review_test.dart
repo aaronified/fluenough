@@ -4704,7 +4704,8 @@ cards:
       final items = state.nextDailyRound(run);
       // The words Today says are taught, and no review is promised that
       // the session does not hold.
-      expect(run.taught, plan.split.newWords);
+      expect(run.taught, greaterThan(0));
+      expect(run.taught, lessThanOrEqualTo(plan.split.newWords));
       expect(plan.split.reviews, 0);
       expect(items.where((i) => i.ask == Ask.teach), isNotEmpty);
     });

@@ -2574,7 +2574,8 @@ class AppState extends ChangeNotifier {
   Duration dailySpent(String language) {
     final at = now();
     return _timesIn(language, at).spent +
-        settings.teachTimeOn(at, language: language);
+        settings.teachTimeOn(at, language: language) +
+        settings.clockTimeOn(at, language: language);
   }
 
   /// What the daily planner is given for [language], and plans: the same
@@ -2648,7 +2649,10 @@ class AppState extends ChangeNotifier {
     final minutes = max(DailyBudget.minMinutes, goal + extra);
     final times = _timesIn(code, at);
     // Teach cards are timed like answers (#886), in the settings.
-    final spent = times.spent + settings.teachTimeOn(at, language: code);
+    final spent =
+        times.spent +
+        settings.teachTimeOn(at, language: code) +
+        settings.clockTimeOn(at, language: code);
     final pools = _dailyPools(code, at, const <String>{});
     final fresh = untaughtCards(code).length;
     final left = minutes * 60 - spent.inSeconds;

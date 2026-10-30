@@ -234,4 +234,26 @@ void main() {
     );
     expect(restored.teachTimeTotal(language: 'hi').cards, 2);
   });
+
+  test('clock time counts toward the day, not the teach card average', () {
+    final settings = SettingsNotifier();
+    for (var i = 0; i < 10; i++) {
+      settings.addTeachTime('hi', start, const Duration(seconds: 20));
+    }
+    final before = settings.teachTimeTotal(language: 'hi');
+    settings.addClockTime('hi', start, const Duration(minutes: 3));
+    final after = settings.teachTimeTotal(language: 'hi');
+    expect(
+      DailyBudget.secondsPerTeach(after.time, after.cards),
+      DailyBudget.secondsPerTeach(before.time, before.cards),
+    );
+    expect(after.time, before.time);
+    expect(
+      settings.clockTimeOn(start, language: 'hi'),
+      const Duration(minutes: 3),
+    );
+    final restored = SettingsNotifier()..restore(settings.toStored());
+    expect(restored.clockTimeOn(start), const Duration(minutes: 3));
+    expect(restored.clockTimeOn(start, language: 'es'), Duration.zero);
+  });
 }

@@ -280,6 +280,9 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Map<String, List<int>>> _teachTime =
       const <String, Map<String, List<int>>>{};
 
+  /// Clock time no card took, by language and day: the milliseconds.
+  Map<String, Map<String, int>> _clockTime = const <String, Map<String, int>>{};
+
   static String _dayKey(DateTime day) =>
       '${day.year.toString().padLeft(4, '0')}-'
       '${day.month.toString().padLeft(2, '0')}-'
@@ -292,9 +295,33 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Records [time] of [language]'s clock on [day] that no card took, so
   /// that the minutes Today counts are the minutes the session's clock ran
-  /// (#886). It is no card: it does not change the time a teach card takes.
+  /// (#886). It is kept apart from the teach time, so it changes neither
+  /// the time a teach card takes nor the hours spent.
   void addClockTime(String language, DateTime day, Duration time) {
-    if (time > Duration.zero) _addTime(language, day, time, 0);
+    if (time <= Duration.zero) return;
+    final key = _dayKey(day);
+    final days = _clockTime[language] ?? const <String, int>{};
+    _clockTime = Map<String, Map<String, int>>.unmodifiable(
+      <String, Map<String, int>>{
+        ..._clockTime,
+        language: <String, int>{
+          ...days,
+          key: (days[key] ?? 0) + time.inMilliseconds,
+        },
+      },
+    );
+    notifyListeners();
+  }
+
+  /// The clock time on [day] that no card took, in [language] or in every
+  /// language when null ([addClockTime]).
+  Duration clockTimeOn(DateTime day, {String? language}) {
+    final key = _dayKey(day);
+    var ms = 0;
+    for (final MapEntry(key: code, value: days) in _clockTime.entries) {
+      if (language == null || language == code) ms += days[key] ?? 0;
+    }
+    return Duration(milliseconds: ms);
   }
 
   void _addTime(String language, DateTime day, Duration capped, int cards) {
@@ -997,6 +1024,7 @@ class SettingsNotifier extends ChangeNotifier {
         key: <int>[value.day.millisecondsSinceEpoch, value.minutes],
     }),
     'teach_time': jsonEncode(_teachTime),
+    'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
     'tts_voices': jsonEncode(_voices),
@@ -1141,6 +1169,18 @@ class SettingsNotifier extends ChangeNotifier {
         read[key] = days;
       }
       _teachTime = Map<String, Map<String, List<int>>>.unmodifiable(read);
+      notifyListeners();
+    }
+    if (pick('clock_time', _parseJsonMap) case final v?) {
+      final read = <String, Map<String, int>>{};
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        read[key] = <String, int>{
+          for (final MapEntry(key: day, value: ms) in value.entries)
+            if (day is String && ms is int) day: ms,
+        };
+      }
+      _clockTime = Map<String, Map<String, int>>.unmodifiable(read);
       notifyListeners();
     }
     if (pick('spoken_languages', (t) => t) case final v?) {
