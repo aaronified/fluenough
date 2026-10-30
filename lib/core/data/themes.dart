@@ -1,16 +1,25 @@
 import 'package:yaml/yaml.dart';
 
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 /// One theme on the shared path that vocabulary is taught along (ADR-0010).
 class DeckTheme {
-  const DeckTheme({required this.id, required this.name});
+  const DeckTheme({
+    required this.id,
+    required this.name,
+    this.tags = const <String>[],
+  });
 
   /// Permanent, like a card id: decks name their theme by it.
   final String id;
 
   /// In English, the language every beta deck is taught from.
   final String name;
+
+  /// Words the Decks search finds this theme's decks by, beside its name
+  /// (#527): `travel` on transport. Matched as text, never a token value.
+  final List<String> tags;
 
   @override
   String toString() => 'DeckTheme($id)';
@@ -31,7 +40,7 @@ List<DeckTheme> parseThemes(String text, {String source = 'themes.yaml'}) {
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text);
+    root = loadYamlTree(text);
   } on YamlException catch (e) {
     throw bad(e.message);
   }
@@ -60,7 +69,23 @@ List<DeckTheme> parseThemes(String text, {String source = 'themes.yaml'}) {
       throw bad('theme "$id" needs a name', item);
     }
     if (!seen.add(id)) throw bad('theme "$id" is listed twice', item);
-    themes.add(DeckTheme(id: id, name: name.trim()));
+    final rawTags = item['tags'];
+    if (rawTags != null &&
+        (rawTags is! YamlList ||
+            rawTags.isEmpty ||
+            rawTags.any((t) => t is! String || t.trim().isEmpty))) {
+      throw bad('theme "$id" tags must be a non-empty list of words', item);
+    }
+    themes.add(
+      DeckTheme(
+        id: id,
+        name: name.trim(),
+        tags: <String>[
+          if (rawTags is YamlList)
+            for (final t in rawTags) (t as String).trim(),
+        ],
+      ),
+    );
   }
   return themes;
 }

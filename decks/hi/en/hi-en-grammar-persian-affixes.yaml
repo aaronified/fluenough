@@ -1,0 +1,80 @@
+schema: 1
+id: "hi-en-grammar-persian-affixes"
+kind: "layer"
+core: "hi-grammar-persian-affixes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Persian word-building: the endings -dār, -khāna and -ī"
+license: "CC-BY-SA-4.0"
+description: "Words made with the Persian endings -दार (-dār), -खाना (-khāna) and -ई (-ī), and the prefixes ना (nā-) and बे (be-). Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1388":
+    native: "honest"
+    notes:
+      "n1": "-दार (-dār) means 'holder of': ईमान (īmān) is faith and trust, so ईमानदार (īmāndār) is one who holds faith, honest."
+    bases: { "ईमानदार": "faith; trust; honesty" }
+    examples:
+      "वह ईमानदार है।": { native: "He is honest.", bases: {} }
+      "ईमानदार लोग अच्छे हैं।": { native: "Honest people are good.", bases: {} }
+  "hi-1389":
+    native: "responsible"
+    notes:
+      "n1": "-दार (-dār): ज़िम्मा (zimmā) is a charge or responsibility, so ज़िम्मेदार (zimmedār) is one who holds the charge."
+    bases: { "ज़िम्मेदार": "charge; responsibility" }
+    examples:
+      "वह ज़िम्मेदार है।": { native: "He is responsible.", bases: {} }
+      "सब ज़िम्मेदार हैं।": { native: "Everyone is responsible.", bases: {} }
+  "hi-1390":
+    native: "foolish; without understanding"
+    notes:
+      "n1": "ना (nā-) means 'not' or 'un-': समझ (samajh) is understanding, so नासमझ (nāsamajh) lacks it."
+    bases: { "नासमझ": "understanding; sense" }
+    examples:
+      "वह नासमझ है।": { native: "He is foolish.", bases: {} }
+      "नासमझ बच्चा": { native: "A foolish child.", bases: {} }
+  "hi-1391":
+    native: "useless; unemployed"
+    notes:
+      "n1": "बे (be-) means 'without': कार (kār) is work, so बेकार (bekār) is without work, and so useless or unemployed."
+    bases: { "बेकार": "work; business" }
+    examples:
+      "यह बेकार है।": { native: "This is useless.", bases: {} }
+      "वह बेकार है।": { native: "He is out of work.", bases: {} }
+  "hi-1392":
+    native: "of course; certainly"
+    notes:
+      "n1": "बे (be-) and शक (shak, doubt): without doubt."
+    bases: { "बेशक": "doubt" }
+    examples:
+      "बेशक, मैं आऊँगा।": { native: "Of course, I will come.", bases: {} }
+      "वह बेशक आएगा।": { native: "He will certainly come.", bases: {} }
+  "hi-1393":
+    native: "post office"
+    notes:
+      "n1": "-खाना (-khāna) means 'house of': डाक (ḍāk) is the post, so डाकखाना (ḍākkhānā) is the house of the post. Before a postposition the stem changes: डाकखाने में (ḍākkhāne meṃ), in the post office."
+    bases: { "डाकखाना": "post; mail" }
+    examples:
+      "डाकखाना बाज़ार में है।": { native: "The post office is in the market.", bases: {} }
+      "मैं डाकखाने जाता हूँ।": { native: "I go to the post office.", bases: { "डाकखाने": "post office" } }
+  "hi-1394":
+    native: "library"
+    notes:
+      "n1": "-खाना (-khāna): किताब (kitāb), a book, so a house of books. Before a postposition the stem changes: किताबख़ाने में (kitābkhāne meṃ), in the library."
+    examples:
+      "किताबख़ाना बड़ा है।": { native: "The library is big.", bases: {} }
+      "मैं किताबख़ाने में पढ़ता हूँ।": { native: "I read in the library.", bases: { "किताबख़ाने": "library" } }
+  "hi-1395":
+    native: "factory; works"
+    notes:
+      "n1": "-खाना (-khāna): कार (kār), work, so a house of work. Here खाना (khānā) is the Persian 'house', not the food खाना (khānā). Before a postposition the stem changes: कारख़ाने में (kārkhāne meṃ), in the factory."
+    bases: { "कारख़ाना": "work; business" }
+    examples:
+      "कारख़ाना शहर में है।": { native: "The factory is in the city.", bases: {} }
+      "कारख़ाने में बहुत काम है।": { native: "There is a lot of work in the factory.", bases: { "कारख़ाने": "factory" } }
+  "hi-1396":
+    native: "friendship"
+    notes:
+      "n1": "-ई (-ī) makes a noun of a quality: दोस्त (dōst), a friend, gives दोस्ती (dostī), friendship."
+    examples:
+      "हमारी दोस्ती अच्छी है।": { native: "Our friendship is good.", bases: {} }
+      "दोस्ती बहुत पुरानी है।": { native: "The friendship is very old.", bases: {} }

@@ -20,6 +20,7 @@ import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
+import '../core/scheduling/daily_timer.dart';
 import '../core/scheduling/script_split.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
@@ -61,6 +62,9 @@ import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'reminder_scheduler.dart';
+import 'reminder_service.dart';
+import 'reminder_words.dart';
 import 'repository_decks.dart';
 import 'backup_files.dart';
 import 'backup_store.dart';
@@ -178,6 +182,7 @@ class AppState extends ChangeNotifier {
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
+    ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
     AppLog? log,
@@ -223,7 +228,22 @@ class AppState extends ChangeNotifier {
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
     addListener(_rememberShown);
+    reminders = ReminderService(
+      scheduler: reminderScheduler,
+      settings: this.settings,
+      available: () => features.isAvailable(Feature.reminder),
+      forecast: dueForecast,
+      words: () => reminderWordsFor(PlatformDispatcher.instance.locale),
+      clock: now,
+      // A tap on a reminder opens Today.
+      onOpened: () => shellTab.value = ShellTab.today,
+      log: (message) => this.log.event(message),
+    );
   }
+
+  /// The daily reminder (#90): its permission, its plan and the
+  /// notifications. Switched on and off in Settings > Reminders.
+  late final ReminderService reminders;
 
   /// The language shown when this state last notified, so that a change
   /// in settings that shows another rebuilds every screen that reads this
@@ -305,6 +325,7 @@ class AppState extends ChangeNotifier {
     DeckStore? addedDecks,
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
+    ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
     AppLog? log,
@@ -341,6 +362,7 @@ class AppState extends ChangeNotifier {
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
+      reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
       log: log,
@@ -1545,23 +1567,35 @@ class AppState extends ChangeNotifier {
         ...skill.modes,
   };
 
-  /// Cards due tomorrow, as Today will count them: in the decks the profile
-  /// learns, in the skills switched on, and not set aside.
-  int dueTomorrow() {
+  /// Whether a pair counts as due, as Today counts it: in the decks the
+  /// profile learns, in the skills switched on, and not set aside.
+  bool Function(ProgressKey key) _countsAsDue({bool onlyShown = true}) {
     final modes = _modes(ignorePauses: true);
     final learned = <String>{
-      for (final entry in profileDecks)
+      for (final entry
+          in onlyShown ? profileDecks : _learnedDecks(onlyShown: false))
         for (final card in entry.cards) card.id,
     };
     final leeches = progress.leechEffects;
-    return progress.dueTomorrow(
-      now(),
-      counts: (key) =>
-          learned.contains(key.cardId) &&
-          modes.contains(key.mode) &&
-          !leeches.isSetAside(key),
-    );
+    return (key) =>
+        learned.contains(key.cardId) &&
+        modes.contains(key.mode) &&
+        !leeches.isSetAside(key);
   }
+
+  /// Cards due tomorrow, as Today will count them: in the decks the profile
+  /// learns, in the skills switched on, and not set aside.
+  int dueTomorrow() => progress.dueTomorrow(now(), counts: _countsAsDue());
+
+  /// Cards due by the end of each of the next [days] days, counted as Today
+  /// counts them and across every language the profile learns (the language
+  /// bar's choice does not narrow it): index 0 is today. What the daily
+  /// reminder is planned from (#90).
+  List<int> dueForecast({int days = 7}) => progress.dueByDay(
+    now(),
+    days: days,
+    counts: _countsAsDue(onlyShown: false),
+  );
 
   /// Whether this version can drill anything in [entry]: some card has a
   /// mode whose drill is available. A grammar deck cannot until its drill
@@ -2528,9 +2562,8 @@ class AppState extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // The day's session (#521, #485)
 
-  /// The most new words one daily session teaches: what a lesson teaches
-  /// (ADR-0024).
-  static const int dailyNewCap = 9;
+  /// The most new words one daily session teaches (owner, 2026-10-30).
+  static const int dailyNewCap = DailyPlanner.newCap;
 
   /// What the log says of the time answers took, for [language] (every
   /// language when null). The log is read once, each answer added to its
@@ -2570,8 +2603,77 @@ class AppState extends ChangeNotifier {
   double secondsPerCardIn(String? language) =>
       _timesIn(language, now()).secondsPerCard;
 
+  /// The time spent today on [language]: answers and teach cards.
+  Duration dailySpent(String language) {
+    final at = now();
+    return _timesIn(language, at).spent +
+        settings.teachTimeOn(at, language: language) +
+        settings.clockTimeOn(at, language: language);
+  }
+
+  /// What the daily planner is given for [language], and plans: the same
+  /// for Today ([dailyPlanFor]) and for the session ([nextDailyRound]), so
+  /// that Today's numbers are the session's (#886, #885).
+  DailyRound _planDaily(
+    String language, {
+    required Duration left,
+    required int due,
+    required int closest,
+    required int fresh,
+    required DateTime at,
+    int taught = 0,
+    bool whole = false,
+  }) {
+    final times = _timesIn(language, at);
+    final teach = settings.teachTimeTotal(language: language);
+    final dayCards = DailyBudget.cardsFor(
+      settings.dailyMinutesFor(language),
+      secondsPerCard: times.secondsPerCard,
+    );
+    final plan = whole ? DailyPlanner.whole : DailyPlanner.next;
+    return plan(
+      left: left,
+      due: due,
+      newAvailable: fresh,
+      closest: closest,
+      secondsPerReview: times.secondsPerCard,
+      secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
+      taughtSoFar: taught,
+      catchingUp: due > DailyBudget.backlogDays * dayCards,
+    );
+  }
+
+  /// The cards a daily round draws on in [language], none of them in
+  /// [asked]: those due, the most forgotten first, and those not due, the
+  /// closest to due first.
+  ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
+    String language,
+    DateTime at,
+    Set<String> asked,
+  ) {
+    final due = <SessionItem>[
+      for (final item in DailyBudget.mostForgottenFirst(
+        buildSession(DrillRequest.today(language: language)).items,
+        at,
+      ))
+        if (!asked.contains(item.card.id)) item,
+    ];
+    final closest = <SessionItem>[
+      for (final item in buildSession(
+        DrillRequest(revise: true, language: language),
+      ).items)
+        if (item.state != null &&
+            !item.state!.isDue(at) &&
+            !asked.contains(item.card.id))
+          item,
+    ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
+    return (due: due, closest: closest);
+  }
+
   /// [language]'s day: its minutes, what is spent, what waits, and what
-  /// the rest of the budget buys.
+  /// the rest of the budget buys. What it buys is the session's own plan
+  /// ([DailyPlanner.whole]) for the time left, so that Today and the
+  /// session agree (#886, #885).
   DailyPlan dailyPlanFor(LanguageInfo language) {
     final code = language.code;
     final at = now();
@@ -2579,33 +2681,42 @@ class AppState extends ChangeNotifier {
     final extra = settings.dailyExtraFor(code, at);
     final minutes = max(DailyBudget.minMinutes, goal + extra);
     final times = _timesIn(code, at);
-    final spent = times.spent;
-    final perCard = times.secondsPerCard;
-    final due = buildSession(DrillRequest.today(language: code)).length;
-    final newAvailable = min(dailyNewCap, untaughtCards(code).length);
+    // Teach cards are timed like answers (#886), in the settings.
+    final spent =
+        times.spent +
+        settings.teachTimeOn(at, language: code) +
+        settings.clockTimeOn(at, language: code);
+    final pools = _dailyPools(code, at, const <String>{});
+    final fresh = untaughtCards(code).length;
     final left = minutes * 60 - spent.inSeconds;
     // With the budget spent, the split is what "Keep going" would buy.
-    // Time left, however little, still buys a card, so the last seconds of a
-    // day's budget are not a dead end with "Keep going" hidden.
-    final budget = left > 0
-        ? max(1, (left / perCard).floor())
-        : DailyBudget.cardsFor(
-            DailyBudget.stepMinutes,
-            secondsPerCard: perCard,
-          );
+    final round = _planDaily(
+      code,
+      left: left > 0
+          ? Duration(seconds: left)
+          : const Duration(minutes: DailyBudget.stepMinutes),
+      due: pools.due.length,
+      closest: pools.closest.length,
+      fresh: fresh,
+      at: at,
+      whole: true,
+    );
+    final dayCards = DailyBudget.cardsFor(
+      goal,
+      secondsPerCard: times.secondsPerCard,
+    );
     return DailyPlan(
       language: language,
       goalMinutes: goal,
       extraMinutes: extra,
       spent: spent,
-      secondsPerCard: perCard,
-      due: due,
-      newAvailable: newAvailable,
-      split: DailyBudget.split(
-        due: due,
-        budget: budget,
-        dayBudget: DailyBudget.cardsFor(goal, secondsPerCard: perCard),
-        newAvailable: newAvailable,
+      secondsPerCard: times.secondsPerCard,
+      due: pools.due.length,
+      newAvailable: min(dailyNewCap, fresh),
+      split: DailySplit(
+        reviews: round.reviews + round.fillers,
+        newWords: round.newWords,
+        catchingUp: pools.due.length > DailyBudget.backlogDays * dayCards,
       ),
     );
   }
@@ -2623,28 +2734,107 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  /// The items of the day's session for [request]: the reviews the rest of
-  /// the budget buys, the most forgotten first (lowest predicted recall,
-  /// then most overdue), then a lesson of the new words it buys.
-  List<SessionItem> dailyItems(DrillRequest request) {
-    final language = <LanguageInfo>[
+  /// The day's session in [language], run on a clock (#886): the time left
+  /// today, which is the day's minutes less what is spent, or a step of
+  /// minutes once it is all spent ("Keep going"). Null for a language the
+  /// learner has no decks of.
+  DailyRun? startDaily(String language) {
+    final info = <LanguageInfo>[
       for (final entry in decks)
-        if (entry.language.code == request.language) entry.language,
+        if (entry.language.code == language) entry.language,
     ].firstOrNull;
-    if (language == null) return const <SessionItem>[];
-    final plan = dailyPlanFor(language);
-    final due = DailyBudget.mostForgottenFirst(
-      buildSession(DrillRequest.today(language: language.code)).items,
-      now(),
+    if (info == null) return null;
+    final plan = dailyPlanFor(info);
+    final left = Duration(minutes: plan.minutes) - plan.spent;
+    return DailyRun(
+      language: language,
+      clock: DailyCountdown(
+        budget: left > Duration.zero
+            ? left
+            : const Duration(minutes: DailyBudget.stepMinutes),
+        now: now(),
+      ),
+      spentAtStart: plan.spent,
     );
-    return <SessionItem>[
-      ..._asked(due.take(plan.split.reviews).toList()),
-      if (plan.split.newWords > 0)
-        ...lessonFor(
-          DrillRequest.lesson(language: language.code),
-          words: plan.split.newWords,
-        ),
-    ];
+  }
+
+  /// The next round of [run]'s session, built only when the last is done
+  /// (#886, owner, 2026-10-29 and 2026-10-30): empty when the time is used
+  /// up or nothing is left to ask.
+  ///
+  /// The round's size follows the time left ([DailyPlanner.next]). While
+  /// reviews are due they come most forgotten first, with new words
+  /// between. With none due, new words are taught, up to 15 in all, and
+  /// asked twice with older reviews mixed in; the rest of the time is
+  /// filled with reviews of the cards closest to due.
+  List<SessionItem> nextDailyRound(DailyRun run) {
+    final at = now();
+    final language = run.language;
+    final pools = _dailyPools(language, at, run.asked);
+    final due = pools.due;
+    final closest = pools.closest;
+    var fresh = untaughtCards(language).length;
+    for (var attempt = 0; attempt < 2; attempt++) {
+      final round = _planDaily(
+        language,
+        left: run.clock.remainingAt(at),
+        due: due.length,
+        closest: closest.length,
+        fresh: fresh,
+        at: at,
+        taught: run.taught,
+      );
+      if (round.isEmpty) return const <SessionItem>[];
+      final pick = round.reviews > 0
+          ? due.take(round.reviews)
+          : closest.take(round.fillers);
+      final older = _asked(pick.toList());
+      final teaches = <SessionItem>[];
+      final firstPass = <SessionItem>[];
+      final secondPass = <SessionItem>[];
+      if (round.newWords > 0) {
+        final seen = <String>{};
+        for (final item in lessonFor(
+          DrillRequest.lesson(language: language),
+          words: round.newWords,
+          beyondRoom: true,
+        )) {
+          if (item.ask.onlyShows) {
+            teaches.add(item);
+          } else if (seen.add(item.card.id)) {
+            firstPass.add(item);
+          } else {
+            secondPass.add(item);
+          }
+        }
+        if (teaches.isEmpty && firstPass.isEmpty) {
+          // Nothing to teach after all: plan again without new words.
+          fresh = 0;
+          continue;
+        }
+      }
+      final items = DailyPlanner.arrange<SessionItem>(
+        older: older,
+        taught: teaches,
+        firstPass: firstPass,
+        secondPass: secondPass,
+      );
+      if (items.isEmpty) return items;
+      final taughtIds = <String>{};
+      for (final item in teaches.isEmpty ? firstPass : teaches) {
+        final members = item.group.isEmpty ? <SessionItem>[item] : item.group;
+        taughtIds.addAll(members.map((member) => member.card.id));
+      }
+      run.taught += taughtIds.length;
+      for (final item in items) {
+        run.asked.add(item.card.id);
+        for (final member in item.group) {
+          run.asked.add(member.card.id);
+        }
+      }
+      return items;
+    }
+    return const <SessionItem>[];
   }
 
   final Expando<FormSiblings> _siblingIndex = Expando<FormSiblings>();
@@ -2825,7 +3015,15 @@ class AppState extends ChangeNotifier {
   ///
   /// With [words], the lesson teaches that many words at most, the easiest
   /// first: the new words of a day's session (#485).
-  List<SessionItem> lessonFor(DrillRequest request, {int? words}) {
+  ///
+  /// With [beyondRoom], [words] is not held to what the mastery bar leaves
+  /// room for: the daily session's own cap says how many (#886, owner,
+  /// 2026-10-30: "Placement allows. But capped at 15").
+  List<SessionItem> lessonFor(
+    DrillRequest request, {
+    int? words,
+    bool beyondRoom = false,
+  }) {
     final cards = untaughtCards(
       request.language!,
       deckId: request.deckIds?.single,
@@ -2854,7 +3052,7 @@ class AppState extends ChangeNotifier {
     final room = lessonRoom(inProgressIn(request.language!));
     final picked = lessonItems(
       taught,
-      room: words == null ? room : min(room, words),
+      room: words == null ? room : (beyondRoom ? words : min(room, words)),
     );
     final modesOf = drillableModesNow();
     final lesson = lessonSets(
@@ -3188,6 +3386,7 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    reminders.dispose();
     settings
       ..removeListener(_forgetPending)
       ..removeListener(_reviewerToDownloads)

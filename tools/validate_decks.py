@@ -2320,7 +2320,8 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "han": 0x4E00, "han_simplified": 0x4E00,
                  "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00}
 # Keys whose values are the word itself, not prose about it.
-_WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
+# `phonetic` is IPA, which uses Greek letters (β, θ, χ) and needs no reading.
+_WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas", "phonetic",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
               "source", "scheme", "audio", "image", "icon",
@@ -2683,11 +2684,13 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # "meaning"}` or `{"word", "ref"}`, "" for none. It goes on the entry that
 # holds the base's meaning, a layer's for a core's card, and the review bot
 # writes the core's line with it. `alt_target` is the accepted
-# alternatives, its `now` and `text` JSON lists.
+# alternatives, its `now` and `text` JSON lists. `place` is where a card
+# belongs (#477): its `now` and `text` are core deck ids, and only a core's
+# card has it.
 PROPOSAL_FIELDS = {
     "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
     "ref": ("native", "reading", "ipa", "notes"),
-    "core": ("target", "reading", "ipa", "notes", "alt_target"),
+    "core": ("target", "reading", "ipa", "notes", "alt_target", "place"),
     "core-ref": ("reading", "ipa", "notes"),
     "layer": ("native", "bases"),
     "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
@@ -4505,9 +4508,16 @@ def check_themes_file(r: Report, raw: dict) -> None:
     ids: list[str] = []
     for i, theme in enumerate(themes):
         where = f"themes[{i}]"
-        if not isinstance(theme, dict) or set(theme) - {"id", "name"}:
-            r.error(where, "must be a mapping with only an id and a name")
+        if not isinstance(theme, dict) or set(theme) - {"id", "name", "tags"}:
+            r.error(where, "must be a mapping with an id, a name and optional tags")
             continue
+        tags = theme.get("tags")
+        if tags is not None and (
+            not isinstance(tags, list) or not tags
+            or not all(_is_str(t) and t.strip() for t in tags)
+        ):
+            r.error(where, "tags must be a non-empty list of words (the search "
+                    "finds the theme's decks by them)")
         tid = theme.get("id")
         if not _is_str(tid) or not ID_RE.fullmatch(tid):
             r.error(where, f"id must match [a-z0-9-]+, got {tid!r}")

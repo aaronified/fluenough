@@ -1,0 +1,119 @@
+schema: 1
+id: "fr-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0081"
+    target: "Où est la gare, s'il vous plaît ?"
+    ipa: "u ɛ la ɡaʁ sil vu plɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Où", ref: "fr-0067" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+      - { word: "s'il", base: "s'il" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "plaît", base: "plaire" }
+    confusables:
+      - { id: "when", ref: "fr-0068", kind: "word" }
+      - { id: "how", ref: "fr-0069", kind: "word" }
+  - id: "fr-0082"
+    target: "Quand part le train ?"
+    ipa: "kɑ̃ paʁ lə tʁɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quand", ref: "fr-0068" }
+      - { word: "part", base: "partir" }
+      - { word: "le", base: "le" }
+      - { word: "train", ref: "fr-0076" }
+    confusables:
+      - { id: "where", ref: "fr-0067", kind: "word" }
+      - { id: "how-much", ref: "fr-0071", kind: "word" }
+  - id: "fr-0083"
+    target: "Comment allez-vous aujourd'hui ?"
+    ipa: "kɔmɑ̃ ale vu oʒuʁdɥi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Comment", ref: "fr-0069" }
+      - { word: "allez", base: "aller" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "aujourd'hui", ref: "fr-0079" }
+    confusables:
+      - { id: "why", ref: "fr-0070", kind: "word" }
+      - { id: "what", ref: "fr-0066", kind: "word" }
+  - id: "fr-0084"
+    target: "Pourquoi la gare est-elle fermée ?"
+    ipa: "puʁkwa la ɡaʁ ɛtɛl fɛʁme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Pourquoi", ref: "fr-0070" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "elle", ref: "fr-0128" }
+      - { word: "fermée", base: "fermer" }
+    confusables:
+      - { id: "where", ref: "fr-0067", kind: "word" }
+      - { id: "how-much", ref: "fr-0071", kind: "word" }
+  - id: "fr-0085"
+    target: "Combien coûte ce train ?"
+    ipa: "kɔ̃bjɛ̃ kut sə tʁɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Combien", ref: "fr-0071" }
+      - { word: "coûte", base: "coûter" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "train", ref: "fr-0076" }
+    confusables:
+      - { id: "which", ref: "fr-0072", kind: "word" }
+      - { id: "when", ref: "fr-0068", kind: "word" }
+  - id: "fr-0086"
+    target: "Quelle heure est-il ?"
+    ipa: "kɛl œʁ ɛ til"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quelle", ref: "fr-0072" }
+      - { word: "heure", ref: "fr-0074" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "il", ref: "fr-0127" }
+    confusables:
+      - { id: "how-much", ref: "fr-0071", kind: "word" }
+      - { id: "when", ref: "fr-0068", kind: "word" }
+  - id: "fr-0087"
+    target: "Qui est le docteur ?"
+    ipa: "ki ɛ lə dɔktœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Qui", ref: "fr-0065" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "le", base: "le" }
+      - { word: "docteur", ref: "fr-0106" }
+    confusables:
+      - { id: "what", ref: "fr-0066", kind: "word" }
+      - { id: "where", ref: "fr-0067", kind: "word" }
+  - id: "fr-0088"
+    target: "Demain, où est le musée ?"
+    ipa: "dəmɛ̃ u ɛ lə myze"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Demain", ref: "fr-0078" }
+      - { word: "où", ref: "fr-0067" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "le", base: "le" }
+      - { word: "musée", ref: "fr-0077" }
+    confusables:
+      - { id: "when", ref: "fr-0068", kind: "word" }
+      - { id: "how-much", ref: "fr-0071", kind: "word" }

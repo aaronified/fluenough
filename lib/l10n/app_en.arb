@@ -2561,6 +2561,20 @@
       }
     }
   },
+  "drillTimeLeft": "{time} left",
+  "@drillTimeLeft": {
+    "description": "Screen-reader value of the progress wave in the day's timed session: the time left, as in 4:32 left.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "4:32"
+      }
+    }
+  },
+  "drillTimePaused": "Paused: the clock stops after 30 seconds on one screen",
+  "@drillTimePaused": {
+    "description": "Tooltip of the pause mark beside the countdown in the day's timed session, shown while the clock is stopped."
+  },
   "drillShowAnswer": "Show answer",
   "@drillShowAnswer": {
     "description": "Recognition: reveals the meaning."
@@ -5606,6 +5620,40 @@
   "@settingsReminderTime": {
     "description": "Screen-reader label of the reminder time."
   },
+  "reminderNotificationTitle": "Time to practise",
+  "@reminderNotificationTitle": {
+    "description": "Title of the daily reminder notification. It never names a word or a language: a notification shows on the lock screen."
+  },
+  "reminderNotificationBody": "{count, plural, =1{1 card is due for review} other{{count} cards are due for review}}",
+  "@reminderNotificationBody": {
+    "description": "Text of the daily reminder notification: how many cards are due by the end of that day. Only the number, no card content, as it shows on the lock screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reminderChannelName": "Daily reminder",
+  "@reminderChannelName": {
+    "description": "Name of the daily reminder's notification channel, as the phone's own notification settings list it."
+  },
+  "reminderChannelDescription": "One reminder a day, on days with cards due.",
+  "@reminderChannelDescription": {
+    "description": "What the daily reminder's notification channel is for, under its name in the phone's own notification settings."
+  },
+  "reminderRefusedTitle": "Notifications are off",
+  "@reminderRefusedTitle": {
+    "description": "Title of the dialog shown when the learner switches the daily reminder on but the phone does not allow the app to show notifications."
+  },
+  "reminderRefusedBody": "The daily reminder needs notifications. Allow them for this app in your phone's settings, then switch the reminder on again. It stays off until then.",
+  "@reminderRefusedBody": {
+    "description": "Body of the dialog under reminderRefusedTitle: says how to allow notifications and that the switch stays off."
+  },
+  "reminderOpenSettings": "Open settings",
+  "@reminderOpenSettings": {
+    "description": "Button in the notifications-are-off dialog: opens the phone's notification settings for this app."
+  },
   "settingsPinLock": "PIN lock",
   "@settingsPinLock": {
     "description": "Switch: ask for a PIN."
@@ -7248,6 +7296,30 @@
   "@reviewGuideWhatYou": {
     "description": "Second paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
+  "reviewGuideRulesTitle": "The rules",
+  "@reviewGuideRulesTitle": {
+    "description": "Title of the step of How reviewing works that gives the reviewer's rules (docs/REVIEWING.md, The rules, says the same)."
+  },
+  "reviewGuideRulesBilingual": "Be bilingual. Review a course only if you know both its languages, the one taught and the one it is taught from, and read both scripts.",
+  "@reviewGuideRulesBilingual": {
+    "description": "First rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 1)."
+  },
+  "reviewGuideRulesMeaning": "The meaning never changes. You may say a card better: a more common word, another register, a correct spelling. You may not make it say something else: “Good morning” never becomes “goodbye”.",
+  "@reviewGuideRulesMeaning": {
+    "description": "Second rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 2)."
+  },
+  "reviewGuideRulesLogic": "Review the content and the logic. That is each card’s word, reading, IPA, meaning, notes, example and base words, and also whether a card belongs in its unit, whether the units come in a sensible order, and whether a grammar note is right.",
+  "@reviewGuideRulesLogic": {
+    "description": "Third rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 3)."
+  },
+  "reviewGuideRulesPlace": "Suggest where a card belongs. Under Place in Suggest a change, move it to another unit or theme the course’s B1 plan already has.",
+  "@reviewGuideRulesPlace": {
+    "description": "Fourth rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 4)."
+  },
+  "reviewGuideRulesTheme": "New themes go by pull request. A theme, or a unit the plan does not have, is added to the deck on GitHub, not in the app.",
+  "@reviewGuideRulesTheme": {
+    "description": "Fifth rule of the reviewer's rules step of How reviewing works (docs/plans/reviewing-scope.md, rule 5)."
+  },
   "reviewGuideCodeTitle": "Your code and languages",
   "@reviewGuideCodeTitle": {
     "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
@@ -7947,6 +8019,58 @@
   "reviewPartAlt": "Also heard",
   "@reviewPartAlt": {
     "description": "The name of a part in Suggest a change: the card's accepted alternative answers, other ways the word is said that are also right."
+  },
+  "reviewPartPlace": "Place",
+  "@reviewPartPlace": {
+    "description": "The name of a part in Suggest a change: where the card belongs, its unit and theme in the course's B1 plan."
+  },
+  "reviewPlaceUnit": "Unit {n} · {name}",
+  "@reviewPlaceUnit": {
+    "description": "Where a card is, or is moved to: the unit's number in the course's B1 plan, then its name.",
+    "placeholders": {
+      "n": {
+        "type": "int",
+        "example": "7"
+      },
+      "name": {
+        "type": "String",
+        "example": "About me"
+      }
+    }
+  },
+  "reviewPlaceMoveTo": "Move to",
+  "@reviewPlaceMoveTo": {
+    "description": "Label of the unit a reviewer chose for a card, in the Place box of Suggest a change."
+  },
+  "reviewMoveTitle": "Move this card",
+  "@reviewMoveTitle": {
+    "description": "Title of the sheet that lists the units a card can be moved to."
+  },
+  "reviewMoveRule": "Only the units and themes of {language}’s B1 plan. A new theme or unit needs a pull request on GitHub.",
+  "@reviewMoveRule": {
+    "description": "At the top of the sheet that lists the units a card can be moved to (docs/plans/reviewing-scope.md, rules 4 and 5).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "reviewMoveContribute": "How to contribute",
+  "@reviewMoveContribute": {
+    "description": "Button under the rule in the Move this card sheet, which opens the page on GitHub that says how to contribute a deck change."
+  },
+  "reviewMoveContributeCopied": "Link copied",
+  "@reviewMoveContributeCopied": {
+    "description": "Said in a toast when How to contribute, in the Move this card sheet, found nothing on the phone to open the link and copied it instead."
+  },
+  "reviewMovePlanned": "Planned: no deck yet",
+  "@reviewMovePlanned": {
+    "description": "Under a unit in the Move this card sheet that the course's plan has but no deck is written for, so a card cannot be moved there yet."
+  },
+  "reviewMeaningRule": "The meaning never changes. Say it more naturally, never say something else: “Good morning!” never becomes “Goodbye!”. If the card is in the wrong place, suggest a move under Place.",
+  "@reviewMeaningRule": {
+    "description": "In a box above the field when a reviewer edits a card's meaning in Suggest a change (docs/plans/reviewing-scope.md, rule 2)."
   },
   "reviewBaseRemove": "Remove the base {base}",
   "@reviewBaseRemove": {
@@ -11259,6 +11383,338 @@
       "size": {
         "type": "String",
         "example": "9.6 MB"
+      }
+    }
+  },
+  "decksSearchHintIn": "Search {language}",
+  "@decksSearchHintIn": {
+    "description": "Hint in the Decks tab's search bar (#527). The search covers the course of the language the language bar shows. {language} is its name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "decksSearchClear": "Clear search",
+  "@decksSearchClear": {
+    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527)."
+  },
+  "searchTokensHeader": "Narrow the search",
+  "@searchTokensHeader": {
+    "description": "Heading of the menu the Decks search offers on an empty bar: the tokens kind:, status: and theme: (#527)."
+  },
+  "searchTokenKindLine": "Words, grammar, script or reading",
+  "@searchTokenKindLine": {
+    "description": "The line under the kind: token in the search's menu (#527)."
+  },
+  "searchTokenStatusLine": "How well you know the word",
+  "@searchTokenStatusLine": {
+    "description": "The line under the status: token in the search's menu (#527)."
+  },
+  "searchTokenThemeLine": "The theme a deck teaches",
+  "@searchTokenThemeLine": {
+    "description": "The line under the theme: token in the search's menu (#527)."
+  },
+  "searchKindWords": "Words",
+  "@searchKindWords": {
+    "description": "Kind chip of a result and value of the kind: token: a vocabulary deck, a unit's words. (#527)"
+  },
+  "searchKindGrammar": "Grammar",
+  "@searchKindGrammar": {
+    "description": "Kind chip of a result and value of the kind: token: grammar and rule tables. (#527)"
+  },
+  "searchKindScript": "Script",
+  "@searchKindScript": {
+    "description": "Kind chip of a result and value of the kind: token: a deck that teaches a writing system. (#527)"
+  },
+  "searchKindReading": "Reading",
+  "@searchKindReading": {
+    "description": "Kind chip of a result and value of the kind: token: passages with questions. (#527)"
+  },
+  "searchKindLineWords": "Words, one row each",
+  "@searchKindLineWords": {
+    "description": "The line under the kind: words value. (#527)"
+  },
+  "searchKindLineGrammar": "Rules and their tables",
+  "@searchKindLineGrammar": {
+    "description": "The line under the kind: grammar value. (#527)"
+  },
+  "searchKindLineScript": "Writing systems",
+  "@searchKindLineScript": {
+    "description": "The line under the kind: script value. (#527)"
+  },
+  "searchKindLineReading": "Passages with questions",
+  "@searchKindLineReading": {
+    "description": "The line under the kind: reading value. (#527)"
+  },
+  "searchStatusNotLearnt": "Not learnt",
+  "@searchStatusNotLearnt": {
+    "description": "Value of the status: token, a card no skill of which has a schedule yet (#527)."
+  },
+  "searchStatusLineNotLearnt": "No skill has been drilled yet",
+  "@searchStatusLineNotLearnt": {
+    "description": "The line under the status: NotLearnt value (#527)."
+  },
+  "searchStatusLearning": "Learning",
+  "@searchStatusLearning": {
+    "description": "Value of the status: token, a card taught, some skill of which is less than 21 days out (#527)."
+  },
+  "searchStatusLineLearning": "Some skill is not yet 21 days out",
+  "@searchStatusLineLearning": {
+    "description": "The line under the status: Learning value (#527)."
+  },
+  "searchStatusLearnt": "Learnt",
+  "@searchStatusLearnt": {
+    "description": "Value of the status: token, a card every skill of which is scheduled 21 or more days out (#527)."
+  },
+  "searchStatusLineLearnt": "Every skill is 21 days out or more",
+  "@searchStatusLineLearnt": {
+    "description": "The line under the status: Learnt value (#527)."
+  },
+  "searchStatusForgetting": "Forgetting",
+  "@searchStatusForgetting": {
+    "description": "Value of the status: token, a card a review of which is due (#527)."
+  },
+  "searchStatusLineForgetting": "A review is due",
+  "@searchStatusLineForgetting": {
+    "description": "The line under the status: Forgetting value (#527)."
+  },
+  "searchStatusStruggling": "Struggling",
+  "@searchStatusStruggling": {
+    "description": "Value of the status: token, a card a skill of which is a leech (#527)."
+  },
+  "searchStatusLineStruggling": "Missed again and again",
+  "@searchStatusLineStruggling": {
+    "description": "The line under the status: Struggling value (#527)."
+  },
+  "searchStatusSetAside": "Set aside",
+  "@searchStatusSetAside": {
+    "description": "Value of the status: token, a card a skill of which was set aside (#527)."
+  },
+  "searchStatusLineSetAside": "Kept out of every session",
+  "@searchStatusLineSetAside": {
+    "description": "The line under the status: SetAside value (#527)."
+  },
+  "searchChip": "{token}: {value}",
+  "@searchChip": {
+    "description": "A token's chip inside the search bar: the token and its value, such as kind: Grammar (#527).",
+    "placeholders": {
+      "token": {
+        "type": "String",
+        "example": "kind"
+      },
+      "value": {
+        "type": "String",
+        "example": "Grammar"
+      }
+    }
+  },
+  "searchChipRemove": "Remove {chip}",
+  "@searchChipRemove": {
+    "description": "Tooltip of a chip's ✕ in the search bar (#527).",
+    "placeholders": {
+      "chip": {
+        "type": "String",
+        "example": "kind: Grammar"
+      }
+    }
+  },
+  "searchChipChange": "Change {chip}",
+  "@searchChipChange": {
+    "description": "Semantic label of a chip in the search bar, tapped to change its value (#527).",
+    "placeholders": {
+      "chip": {
+        "type": "String",
+        "example": "kind: Grammar"
+      }
+    }
+  },
+  "searchNothing": "Nothing found for “{query}”",
+  "@searchNothing": {
+    "description": "Heading of the search's empty state (#527).",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "helicoptr"
+      }
+    }
+  },
+  "searchNothingBody": "The search looks in deck and unit names, and in each word, its reading and its meaning. Try fewer letters, or another word.",
+  "@searchNothingBody": {
+    "description": "What the search looks in, under the empty state's heading (#527)."
+  },
+  "searchNoKind": "No {kind} results for “{query}”",
+  "@searchNoKind": {
+    "description": "Heading when results exist but none is of the kind chosen with kind: (#527). {kind} is the kind in lower case.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "reading"
+      },
+      "query": {
+        "type": "String",
+        "example": "numbrs"
+      }
+    }
+  },
+  "searchOtherKinds": "{count, plural, one{1 result of another kind.} other{{count} results of other kinds.}}",
+  "@searchOtherKinds": {
+    "description": "Under the heading when none is of the chosen kind: how many results of other kinds there are (#527).",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchRemoveKind": "Remove kind: {kind}",
+  "@searchRemoveKind": {
+    "description": "Button that removes the kind chip from the search bar (#527).",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Reading"
+      }
+    }
+  },
+  "searchCloseMatches": "Close matches for “{query}”",
+  "@searchCloseMatches": {
+    "description": "Line above results that were found despite a typo (#527).",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "travl"
+      }
+    }
+  },
+  "searchTagged": "Tagged {tag}",
+  "@searchTagged": {
+    "description": "Third line of a result found by a theme's tag, not its name (#527).",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchSuggestionUse": "Search for {text}",
+  "@searchSuggestionUse": {
+    "description": "Semantic label of a suggestion row, tapped to search it (#527).",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchSuggestionEdit": "Put {text} in the bar",
+  "@searchSuggestionEdit": {
+    "description": "Tooltip of a suggestion's arrow, which puts it in the bar to go on typing (#527).",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "travel"
+      }
+    }
+  },
+  "searchScriptNotHere": "This script is not part of this course.",
+  "@searchScriptNotHere": {
+    "description": "Message when the query is in a script the course does not use (#527)."
+  },
+  "searchScriptTyped": "You typed in {script}.",
+  "@searchScriptTyped": {
+    "description": "Names the script of the query (#527). {script} is the script's own name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchScriptSwitchTitle": "Switch to {language}?",
+  "@searchScriptSwitchTitle": {
+    "description": "Row offering the learner's other course that uses the script (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "searchScriptIsTarget": "{script} is its target script.",
+  "@searchScriptIsTarget": {
+    "description": "Line of a switch row (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchScriptIsNative": "{script} is the script it is taught in.",
+  "@searchScriptIsNative": {
+    "description": "Line of a switch row where the script is the course's native script (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "searchSwitch": "Switch",
+  "@searchSwitch": {
+    "description": "Button that shows another course and runs the search there (#527)."
+  },
+  "searchScriptNoCourse": "This script is not part of this course or any other you are learning.",
+  "@searchScriptNoCourse": {
+    "description": "Message when none of the learner's courses uses the script (#527)."
+  },
+  "searchAddCourse": "Add the {language} course",
+  "@searchAddCourse": {
+    "description": "Row offering a catalog course written in the script (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Gujarati"
+      }
+    }
+  },
+  "searchAddCourseLine": "The {script} script is its target script.",
+  "@searchAddCourseLine": {
+    "description": "Line of an add-course row (#527).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Gujarati"
+      }
+    }
+  },
+  "searchAdd": "Add",
+  "@searchAdd": {
+    "description": "Button of an offer in the search (#527)."
+  },
+  "searchAddKnown": "Add {language} to the languages you know",
+  "@searchAddKnown": {
+    "description": "Row offering to add a language written in the script to Languages you know (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Nepali"
+      }
+    }
+  },
+  "searchAddKnownLine": "{language} is written in {script}.",
+  "@searchAddKnownLine": {
+    "description": "Line of an add-known-language row (#527).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Nepali"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
       }
     }
   }

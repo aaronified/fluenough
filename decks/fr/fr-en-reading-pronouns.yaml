@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-pronouns"
+name: "Reading: pronouns and people words"
+kind: reading
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with the pronouns of Pronouns and people words: a short letter to a friend, and a group at the station. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-letter"
+    title: "A letter"
+    theme: "pronouns"
+    sentences:
+      - text: "Cher Paul,"
+      - text: "Je suis à la gare."
+      - text: "Elle est ici."
+      - text: "Ma chère amie."
+    questions:
+      - id: "fr-0158"
+        prompt: { en: "Where is the writer?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "At the museum" }
+        answer: 1
+      - id: "fr-0159"
+        prompt: { en: "Who is the letter for?" }
+        options:
+          - { en: "Paul" }
+          - { en: "The teacher" }
+          - { en: "The doctor" }
+        answer: 1
+      - id: "fr-0160"
+        prompt: { en: "Where is 'she'?" }
+        options:
+          - { en: "Here" }
+          - { en: "At the station" }
+          - { en: "Far away" }
+        answer: 1
+  - id: "fr-at-the-station"
+    title: "At the station"
+    theme: "pronouns"
+    sentences:
+      - text: "Le docteur est là."
+      - text: "Nous sommes amis."
+      - text: "Ils sont dans la gare."
+      - text: "On parle français ici."
+    questions:
+      - id: "fr-0161"
+        prompt: { en: "Where are 'they'?" }
+        options:
+          - { en: "In the station" }
+          - { en: "In the street" }
+          - { en: "On the train" }
+        answer: 1
+      - id: "fr-0162"
+        prompt: { en: "What language do they speak?" }
+        options:
+          - { en: "French" }
+          - { en: "English" }
+          - { en: "Spanish" }
+        answer: 1
+      - id: "fr-0163"
+        prompt: { en: "Where is the doctor?" }
+        options:
+          - { en: "Over there" }
+          - { en: "At home" }
+          - { en: "At the station" }
+        answer: 1

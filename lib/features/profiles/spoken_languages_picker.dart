@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 
 /// What a learner answers on a language's sheet: reads its script, or
@@ -326,9 +327,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
                           icon: const Icon(Icons.close),
                           onPressed: _search.clear,
                         ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(28)),
-                  ),
+                  border: AppRadii.fieldBorder,
                 ),
               ),
             ),

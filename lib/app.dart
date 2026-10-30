@@ -40,7 +40,8 @@ class FluenoughApp extends StatefulWidget {
   State<FluenoughApp> createState() => _FluenoughAppState();
 }
 
-class _FluenoughAppState extends State<FluenoughApp> {
+class _FluenoughAppState extends State<FluenoughApp>
+    with WidgetsBindingObserver {
   /// Logs each screen opened (#162). Made once, as a navigator takes an
   /// observer only once.
   late final List<NavigatorObserver> _observers = <NavigatorObserver>[
@@ -50,8 +51,35 @@ class _FluenoughAppState extends State<FluenoughApp> {
   @override
   void initState() {
     super.initState();
-    widget.state.load();
+    WidgetsBinding.instance.addObserver(this);
+    // The daily reminder is planned once the decks are read, as what is due
+    // depends on them (#90).
+    widget.state.load().whenComplete(widget.state.reminders.appResumed);
     widget.state.updates.atLaunch();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// The reminder is planned again whenever the app opens or is left, so
+  /// that it follows what was answered and the phone's clock and time zone
+  /// (#90); while the app is open, today's does not fire.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState lifecycle) {
+    final reminders = widget.state.reminders;
+    switch (lifecycle) {
+      case AppLifecycleState.resumed:
+        reminders.appResumed();
+      case AppLifecycleState.paused:
+      case AppLifecycleState.hidden:
+        reminders.appPaused();
+      case AppLifecycleState.inactive:
+      case AppLifecycleState.detached:
+        break;
+    }
   }
 
   @override

@@ -425,6 +425,14 @@ class PhoneticField(Validated):
                     self._with(f"phonetic: {bad}", 'phonetic_source: "rules"'),
                     "square brackets")
 
+    def test_greek_letters_in_the_ipa_need_no_reading(self) -> None:
+        self.assertValid(self._with('phonetic: "[ˈbe\u03b2e \u03b8a]"',
+                                    'phonetic_source: "rules"'))
+
+    def test_a_greek_word_in_prose_still_needs_a_reading(self) -> None:
+        self.assertRejected(VOCAB + '    notes: "Greek \u03b2\u03af\u03bf\u03c2 is life."\n',
+                            "has no transliteration")
+
     def test_ipa_stays_broad(self) -> None:
         self.assertRejected(VOCAB + '    ipa: "[ɡʱɐɾ]"\n', "broad IPA")
 
@@ -618,6 +626,11 @@ class Themes(Validated):
         self.assertEqual(report.errors, [])
         self.assertEqual(report.themes, ["first-words", "market"])
 
+    def _a_theme_may_carry_search_tags(self) -> None:
+        text = THEMES.replace('name: "Market"', 'name: "Market", tags: ["shop"]')
+        report = validate_decks.validate(self.write("themes.yaml", text))
+        self.assertEqual(report.errors, [])
+
     def _a_malformed_themes_file_is_rejected(self) -> None:
         for bad, needle in (
             (THEMES.replace("id: market", "id: first-words"), "listed twice"),
@@ -625,6 +638,8 @@ class Themes(Validated):
             (THEMES.replace(', name: "Market"', ""), "needs a name"),
             (THEMES + "cards: []\n", "unknown field"),
             ("schema: 1\nkind: themes\nthemes: []\n", "non-empty"),
+            (THEMES.replace('name: "Market"', 'name: "Market", tags: []'), "tags must be"),
+            (THEMES.replace('name: "Market"', 'name: "Market", tags: "x"'), "tags must be"),
         ):
             with self.subTest(needle):
                 errors = validate_decks.validate(self.write("themes.yaml", bad)).errors
@@ -658,6 +673,7 @@ class Themes(Validated):
     def test_a_theme_exists_and_is_used_once(self) -> None:
         cases = (
             self._a_themes_file_is_valid,
+            self._a_theme_may_carry_search_tags,
             self._a_malformed_themes_file_is_rejected,
             self._a_vocab_deck_may_name_a_theme,
             self._only_a_vocab_deck_takes_a_theme,

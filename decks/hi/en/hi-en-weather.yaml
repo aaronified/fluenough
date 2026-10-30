@@ -1,0 +1,325 @@
+schema: 1
+id: "hi-en-weather"
+kind: "layer"
+core: "hi-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+license: "CC-BY-SA-4.0"
+description: "The weather and the seasons: rain, wind, sun, the cold and the heat. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1253":
+    native: "weather; season"
+    notes:
+      "n1": "Sanskrit-leaning: ऋतु (ṛtu) is a season of the year. मौसम (mausam) is the everyday word for the weather."
+    examples:
+      "आज मौसम अच्छा है।": { native: "The weather is good today.", bases: {} }
+      "मौसम सुहावना है।": { native: "The weather is pleasant.", bases: {} }
+  "hi-1254":
+    native: "rain"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is वर्षा (varṣā)."
+    examples:
+      "बारिश तेज़ है।": { native: "The rain is heavy.", bases: {} }
+      "आज बारिश नहीं है।": { native: "There is no rain today.", bases: {} }
+  "hi-1255":
+    native: "sunshine"
+    notes:
+      "n1": "The sun's light and heat on the ground: धूप निकली है (dhūp nikalī hai), the sun is out."
+    examples:
+      "आज धूप निकली है।": { native: "The sun is out today.", bases: { "निकली": "to come out" } }
+      "धूप में बहुत गर्मी है।": { native: "It is very hot in the sun.", bases: {} }
+  "hi-1256":
+    native: "shade"
+    notes:
+      "n1": "The Sanskrit-leaning word is छाया (chhāyā)."
+    examples:
+      "पेड़ की छाँव ठंडी है।": { native: "The shade of the tree is cool.", bases: { "पेड़": "tree", "की": "of (f)" } }
+      "छाँव में बैठो।": { native: "Sit in the shade.", bases: {} }
+  "hi-1257":
+    native: "wind; air"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word for air is वायु (vāyu)."
+    examples:
+      "आज हवा तेज़ है।": { native: "The wind is strong today.", bases: {} }
+      "हवा ठंडी है।": { native: "The breeze is cool.", bases: {} }
+  "hi-1258":
+    native: "dust storm; gale"
+    notes:
+      "n1": "A strong wind that brings dust with it."
+    examples:
+      "आँधी बहुत तेज़ है।": { native: "The gale is very strong.", bases: {} }
+      "आँधी में धूल है।": { native: "There is dust in the gale.", bases: { "धूल": "dust" } }
+  "hi-1259":
+    native: "storm"
+    notes:
+      "n1": "Bigger than आँधी (āndhī): a storm at sea or a violent storm on land."
+    examples:
+      "तूफ़ान बहुत बड़ा है।": { native: "The storm is very big.", bases: {} }
+      "तूफ़ान ख़तरनाक है।": { native: "The storm is dangerous.", bases: { "ख़तरनाक": "dangerous" } }
+  "hi-1260":
+    native: "cloud"
+    notes:
+      "n1": "The Sanskrit-leaning word is मेघ (megh). In the oblique plural, बादलों (bādalōṃ), the stem changes."
+    examples:
+      "आसमान में बादल हैं।": { native: "There are clouds in the sky.", bases: {} }
+      "बादल काले हैं।": { native: "The clouds are black.", bases: {} }
+  "hi-1261":
+    native: "sky"
+    notes:
+      "n1": "The Sanskrit-leaning word is आकाश (ākāś)."
+    examples:
+      "आसमान साफ़ है।": { native: "The sky is clear.", bases: {} }
+      "आसमान में चाँद है।": { native: "There is a moon in the sky.", bases: {} }
+  "hi-1262":
+    native: "sun"
+    notes:
+      "n1": "The Sanskrit-leaning word is सूर्य (sūrya). Both mean the sun in the sky."
+    examples:
+      "सूरज निकला है।": { native: "The sun has come out.", bases: { "निकला": "to come out" } }
+      "सूरज बहुत गरम है।": { native: "The sun is very hot.", bases: {} }
+  "hi-1263":
+    native: "moon"
+    notes:
+      "n1": "The Sanskrit-leaning word is चंद्र (candra)."
+    examples:
+      "आज चाँद दिखा।": { native: "The moon was seen today.", bases: { "दिखा": "to be seen" } }
+      "चाँद सुंदर है।": { native: "The moon is beautiful.", bases: {} }
+  "hi-1264":
+    native: "star"
+    notes:
+      "n1": "The plural is तारे (tāre)."
+    examples:
+      "आसमान में तारे हैं।": { native: "There are stars in the sky.", bases: { "तारे": "star" } }
+      "तारा बहुत चमकता है।": { native: "The star shines brightly.", bases: {} }
+  "hi-1265":
+    native: "lightning; electricity"
+    notes:
+      "n1": "In weather, lightning. The same word also means electricity: आज बिजली नहीं है (āj bijlī nahīm̐ hai), there is no power today."
+    examples:
+      "बिजली गिरी है।": { native: "Lightning has struck.", bases: {} }
+      "आज बिजली नहीं है।": { native: "There is no electricity today.", bases: {} }
+  "hi-1266":
+    native: "snow; ice"
+    notes:
+      "n1": "The Sanskrit-leaning word is हिम (him)."
+    examples:
+      "पहाड़ पर बर्फ़ है।": { native: "There is snow on the mountain.", bases: {} }
+      "बर्फ़ ठंडी है।": { native: "The ice is cold.", bases: {} }
+  "hi-1267":
+    native: "fog; mist"
+    notes:
+      "n1": "Common on winter mornings."
+    examples:
+      "आज बहुत कोहरा है।": { native: "There is a lot of fog today.", bases: {} }
+      "सुबह कोहरा होता है।": { native: "There is fog in the morning.", bases: {} }
+  "hi-1268":
+    native: "hailstone"
+    notes:
+      "n1": "Usually heard in the plural, ओले (olē), as in ओले गिरना (ole girnā), hail to fall."
+    examples:
+      "आसमान से ओले गिरे।": { native: "Hail fell from the sky.", bases: { "ओले": "hailstone" } }
+      "ओला बड़ा है।": { native: "The hailstone is big.", bases: {} }
+  "hi-1269":
+    native: "cold (weather)"
+    notes:
+      "n1": "The Sanskrit-leaning word is शीत (śīt). ठंड (ṭhand) is the everyday word for cold weather."
+    examples:
+      "आज बहुत ठंड है।": { native: "It is very cold today.", bases: {} }
+      "रात में ठंड बढ़ती है।": { native: "The cold increases at night.", bases: { "बढ़ती": "to increase" } }
+  "hi-1270":
+    native: "heat; summer"
+    notes:
+      "n1": "The hot season, and the heat itself. The Sanskrit-leaning word for summer is ग्रीष्म (grīṣm)."
+    examples:
+      "गर्मी में पंखा चलता है।": { native: "The fan runs in summer.", bases: {} }
+      "आज गर्मी बहुत है।": { native: "It is very hot today.", bases: {} }
+  "hi-1271":
+    native: "cold; winter"
+    notes:
+      "n1": "The cold season, and also a cold in the chest or nose, as in सर्दी लगना (sardī lagnā)."
+    examples:
+      "सर्दी में ठंड है।": { native: "There is cold in winter.", bases: {} }
+      "सर्दी अच्छी है।": { native: "Winter is good.", bases: {} }
+  "hi-1272":
+    native: "the rainy season"
+    notes:
+      "n1": "The Sanskrit-leaning phrase is वर्षा ऋतु (varṣā ṛtu)."
+    examples:
+      "बरसात में बहुत बारिश होती है।": { native: "There is a lot of rain in the rainy season.", bases: {} }
+      "बरसात का मौसम अच्छा है।": { native: "The rainy season is good.", bases: {} }
+  "hi-1273":
+    native: "monsoon"
+    notes:
+      "n1": "An English word, used in Hindi for the summer rains of India."
+    examples:
+      "मानसून आ गया है।": { native: "The monsoon has arrived.", bases: {} }
+      "मानसून में बाढ़ आती है।": { native: "Floods come in the monsoon.", bases: {} }
+  "hi-1274":
+    native: "umbrella (small)"
+    notes:
+      "n1": "For rain or for sun. छाता (chhātā) is the larger umbrella."
+    examples:
+      "छतरी छोटी है।": { native: "The umbrella is small.", bases: {} }
+      "मेरे पास छतरी है।": { native: "I have an umbrella.", bases: {} }
+  "hi-1275":
+    native: "drop"
+    notes:
+      "n1": "The Sanskrit-leaning word is बिंदु (bindu), a dot or a drop."
+    examples:
+      "पत्ते पर एक बूँद है।": { native: "There is a drop on the leaf.", bases: { "पत्ते": "leaf" } }
+      "छत से पानी की बूँद गिरी।": { native: "A drop of water fell from the roof.", bases: { "की": "of (f)" } }
+  "hi-1276":
+    native: "flood"
+    notes:
+      "n1": "Water that spreads over the land, as after heavy rain."
+    examples:
+      "नदी में बाढ़ है।": { native: "There is a flood in the river.", bases: {} }
+      "बाढ़ से गाँव डूबा।": { native: "The village was flooded.", bases: { "डूबा": "to sink; to drown" } }
+  "hi-1277":
+    native: "drought"
+    notes:
+      "n1": "As an adjective, सूखा (sūkhā) means dry."
+    examples:
+      "इस साल सूखा है।": { native: "There is a drought this year.", bases: {} }
+      "खेत सूखा है।": { native: "The field is dry.", bases: {} }
+  "hi-1278":
+    native: "temperature"
+    notes:
+      "n1": "Read in degrees: डिग्री (ḍigrī)."
+    examples:
+      "आज तापमान बीस डिग्री है।": { native: "Today the temperature is twenty degrees.", bases: {} }
+      "रात का तापमान कम है।": { native: "The night temperature is low.", bases: {} }
+  "hi-1279":
+    native: "degree (of temperature)"
+    notes:
+      "n1": "An English word. The number comes before it: बीस डिग्री (bīs ḍigrī), twenty degrees."
+    examples:
+      "आज का तापमान तीस डिग्री है।": { native: "Today's temperature is thirty degrees.", bases: {} }
+      "दिल्ली में बारह डिग्री है।": { native: "It is twelve degrees in Delhi.", bases: { "दिल्ली": "Delhi" } }
+  "hi-1280":
+    native: "humidity; dampness"
+    notes:
+      "n1": "Persian-leaning. Wet air in the rains is नमी से भरी (namī se bharī), full of damp."
+    examples:
+      "हवा में नमी है।": { native: "There is humidity in the air.", bases: {} }
+      "नमी ज़्यादा है।": { native: "The humidity is high.", bases: {} }
+  "hi-1281":
+    native: "dew"
+    notes:
+      "n1": "The drops that form on grass at night and in the early morning."
+    examples:
+      "सुबह घास पर ओस है।": { native: "There is dew on the grass in the morning.", bases: { "घास": "grass" } }
+      "ओस की बूँदें ठंडी हैं।": { native: "The drops of dew are cold.", bases: { "की": "of (f)" } }
+  "hi-1282":
+    native: "thunder"
+    notes:
+      "n1": "The rumble of thunder; the verb is गरजना (garajnā)."
+    examples:
+      "दूर बादलों की गरज है।": { native: "There is thunder far away.", bases: { "की": "of (f)" } }
+      "गरज की आवाज़ तेज़ है।": { native: "The sound of the thunder is loud.", bases: { "की": "of (f)", "आवाज़": "sound" } }
+  "hi-1283":
+    native: "spring (season)"
+    notes:
+      "n1": "The season after winter, before the heat."
+    examples:
+      "बसंत का मौसम सुंदर है।": { native: "Spring is a beautiful season.", bases: {} }
+      "बसंत में फूल खिलते हैं।": { native: "Flowers bloom in spring.", bases: { "फूल": "flower", "खिलते": "to bloom" } }
+  "hi-1284":
+    native: "autumn"
+    notes:
+      "n1": "Literally the falling of leaves. The season after the rains."
+    examples:
+      "पतझड़ में पत्ते गिरते हैं।": { native: "Leaves fall in autumn.", bases: { "पत्ते": "leaf" } }
+      "पतझड़ का मौसम ठंडा है।": { native: "The autumn weather is cool.", bases: {} }
+  "hi-1285":
+    native: "wet"
+    notes:
+      "n1": "Feminine गीली (gīlī), plural गीले (gīle)."
+    examples:
+      "ज़मीन गीली है।": { native: "The ground is wet.", bases: { "ज़मीन": "ground; land", "गीली": "wet" } }
+      "कपड़ा गीला है।": { native: "The cloth is wet.", bases: {} }
+  "hi-1286":
+    native: "pleasant; lovely (of weather)"
+    notes:
+      "n1": "Used of weather that is pleasant and mild."
+    examples:
+      "मौसम सुहावना है।": { native: "The weather is pleasant.", bases: {} }
+      "सुबह का मौसम सुहावना था।": { native: "The weather in the morning was pleasant.", bases: {} }
+  "hi-1287":
+    native: "to thunder; to roar"
+    notes:
+      "n1": "Of clouds and thunder."
+    examples:
+      "बादल ज़ोर से गरजे।": { native: "The clouds thundered loudly.", bases: { "ज़ोर": "force; loudly", "गरजे": "to thunder; to roar" } }
+      "बादल गरजते हैं।": { native: "The clouds thunder.", bases: { "गरजते": "to thunder; to roar" } }
+  "hi-1288":
+    native: "damp; humid"
+    notes:
+      "n1": "Does not change its form."
+    examples:
+      "मिट्टी नम है।": { native: "The soil is damp.", bases: { "मिट्टी": "soil" } }
+      "हवा नम है।": { native: "The air is damp.", bases: {} }
+  "hi-1289":
+    native: "strong; fast; sharp"
+    notes:
+      "n1": "Does not change its form: तेज़ हवा (tez havā), a strong wind."
+    examples:
+      "हवा बहुत तेज़ है।": { native: "The wind is very strong.", bases: {} }
+      "धूप तेज़ है।": { native: "The sun is strong.", bases: {} }
+  "hi-1290":
+    native: "light; mild"
+    notes:
+      "n1": "Masculine हल्का (halkā)."
+    examples:
+      "हल्की हवा ठंडी है।": { native: "The breeze is cool.", bases: {} }
+      "आज हल्की बारिश है।": { native: "There is light rain today.", bases: {} }
+  "hi-1291":
+    native: "hazy; dim"
+    notes:
+      "n1": "Feminine धुंधली (dhundhlī). Used of the sky and of far-off things."
+    examples:
+      "सुबह का आसमान धुंधला है।": { native: "The morning sky is hazy.", bases: {} }
+      "सड़क धुंधली है।": { native: "The road is hazy.", bases: { "धुंधली": "hazy; dim" } }
+  "hi-1292":
+    native: "to rain; to pour"
+    notes:
+      "n1": "Of clouds and rain."
+    examples:
+      "बादल बरसते हैं।": { native: "The clouds rain.", bases: { "बरसते": "to rain; to pour" } }
+      "रात भर पानी बरसा।": { native: "It rained all night.", bases: { "भर": "all; the whole of", "बरसा": "to rain; to pour" } }
+  "hi-1293":
+    native: "to thunder; to crackle"
+    notes:
+      "n1": "Of thunder, and of lightning that cracks."
+    examples:
+      "बादल कड़कते हैं।": { native: "The clouds thunder.", bases: { "कड़कते": "to thunder; to crackle" } }
+      "बिजली कड़की।": { native: "The lightning cracked.", bases: { "कड़की": "to thunder; to crackle" } }
+  "hi-1294":
+    native: "to shine; to flash"
+    notes:
+      "n1": "Of the sun, a star, or lightning."
+    examples:
+      "सूरज चमकता है।": { native: "The sun shines.", bases: { "चमकता": "to shine; to flash" } }
+      "बिजली चमकी।": { native: "The lightning flashed.", bases: { "चमकी": "to shine; to flash" } }
+  "hi-1295":
+    native: "muggy heat"
+    notes:
+      "n1": "Hot, damp air that makes you sweat, before the rains."
+    examples:
+      "आज उमस है।": { native: "It is muggy today.", bases: {} }
+      "उमस में पसीना आता है।": { native: "In muggy weather one sweats.", bases: { "पसीना": "sweat" } }
+  "hi-1296":
+    native: "the month of Sawan"
+    notes:
+      "n1": "A month of the rainy season in the Hindu calendar."
+    examples:
+      "सावन में बारिश होती है।": { native: "It rains in Sawan.", bases: {} }
+      "सावन का महीना सुंदर है।": { native: "The month of Sawan is beautiful.", bases: {} }
+  "hi-1297":
+    native: "mist; haze"
+    notes:
+      "n1": "A thin haze over the land, often in the cold season."
+    examples:
+      "सुबह धुंध है।": { native: "There is mist in the morning.", bases: {} }
+      "धुंध में गाड़ी धीरे चलती है।": { native: "In the mist the car moves slowly.", bases: { "गाड़ी": "car; vehicle" } }

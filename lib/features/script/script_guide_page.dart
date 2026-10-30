@@ -160,7 +160,7 @@ class _FeatureRow extends StatelessWidget {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: scheme.primaryContainer,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,
@@ -215,7 +215,7 @@ class _FeatureRow extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     color: scheme.surfaceContainerHigh,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppRadii.chip),
                   ),
                   child: TargetText(letter, language: language, fontSize: 22),
                 ),
