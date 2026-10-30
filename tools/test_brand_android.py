@@ -269,6 +269,19 @@ class ApplyTest(unittest.TestCase):
         self.assertEqual(len(root.findall("application/provider")), 2)
 
 
+    def _a_kept_update_reopens_the_installer_through_the_ota_provider(self) -> None:
+        # #487: Install after a cancelled install opens the same file again.
+        brand_android.apply(self.root)
+        self.assertIn(
+            '"installApk" -> result.success(installApk(call))', self.kotlin()
+        )
+        self.assertIn('"$packageName.ota_update_provider"', self.kotlin())
+        # An activity written before installApk gets it, once.
+        self.activity.write_text(self.earlier_activity(), encoding="utf-8")
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin().count("private fun installApk"), 1)
+
     def earlier_activity(self) -> str:
         """MainActivity as the version before shareFiles wrote it."""
         old_imports = [
@@ -312,6 +325,7 @@ class ApplyTest(unittest.TestCase):
             self._the_text_to_speech_engine_is_declared,
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,
+            self._a_kept_update_reopens_the_installer_through_the_ota_provider,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

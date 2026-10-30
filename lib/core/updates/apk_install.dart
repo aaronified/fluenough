@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
+import '../decks/sha256.dart';
+
 /// Why an update did not reach Android's installer (ADR-0017).
 enum InstallFailure {
   /// The learner has not allowed Fluenough to install apps.
@@ -63,6 +65,12 @@ abstract interface class ApkInstaller {
     String? sha256,
   });
 
+  /// Opens the installer on [fileName], already in the app's own storage
+  /// from an earlier [install], with no download (#487): what Install does
+  /// after the learner closed Android's installer. The stream ends after
+  /// [InstallEvent.installing] or a failure. Never throws.
+  Stream<InstallEvent> installFile(String fileName);
+
   /// Stops the download under way, if there is one: its stream ends with
   /// [InstallFailure.cancelled].
   Future<void> cancel();
@@ -81,6 +89,12 @@ class NullApkInstaller implements ApkInstaller {
   }) => Stream<InstallEvent>.value(
     const InstallEvent.failed(InstallFailure.internal),
   );
+
+  @override
+  Stream<InstallEvent> installFile(String fileName) =>
+      Stream<InstallEvent>.value(
+        const InstallEvent.failed(InstallFailure.internal),
+      );
 
   @override
   Future<void> cancel() async {}
@@ -110,7 +124,23 @@ class FixedApkInstaller implements ApkInstaller {
   /// How many times [cancel] was called.
   int cancels = 0;
 
+  /// Every file the installer was opened on again, with no download.
+  final List<String> reopened = <String>[];
+
+  /// What [installFile] reports.
+  List<InstallEvent> reopenEvents = const <InstallEvent>[
+    InstallEvent.installing(),
+  ];
+
   Completer<void>? _cancelled;
+
+  @override
+  Stream<InstallEvent> installFile(String fileName) async* {
+    reopened.add(fileName);
+    for (final event in reopenEvents) {
+      yield event;
+    }
+  }
 
   @override
   Stream<InstallEvent> install(
@@ -147,6 +177,13 @@ class FixedApkInstaller implements ApkInstaller {
 abstract interface class DownloadStore {
   Future<bool> exists(String fileName);
 
+  /// [fileName]'s size in bytes, or null if it is not there.
+  Future<int?> size(String fileName);
+
+  /// [fileName]'s SHA-256 as 64 lower-case hex digits, or null if it is not
+  /// there or cannot be read.
+  Future<String?> sha256(String fileName);
+
   /// Deletes [fileName], if it is there.
   Future<void> delete(String fileName);
 }
@@ -159,6 +196,12 @@ class NullDownloadStore implements DownloadStore {
   Future<bool> exists(String fileName) async => false;
 
   @override
+  Future<int?> size(String fileName) async => null;
+
+  @override
+  Future<String?> sha256(String fileName) async => null;
+
+  @override
   Future<void> delete(String fileName) async {}
 }
 
@@ -169,6 +212,12 @@ class MemoryDownloadStore implements DownloadStore {
 
   final Set<String> names;
 
+  /// The size of a file, by name; one in [names] with none here is 1 byte.
+  final Map<String, int> sizes = <String, int>{};
+
+  /// The SHA-256 of a file, by name; one with none here has none.
+  final Map<String, String> hashes = <String, String>{};
+
   /// Every name deleted, in order.
   final List<String> deleted = <String>[];
 
@@ -176,9 +225,19 @@ class MemoryDownloadStore implements DownloadStore {
   Future<bool> exists(String fileName) async => names.contains(fileName);
 
   @override
+  Future<int?> size(String fileName) async =>
+      names.contains(fileName) ? sizes[fileName] ?? 1 : null;
+
+  @override
+  Future<String?> sha256(String fileName) async =>
+      names.contains(fileName) ? hashes[fileName] : null;
+
+  @override
   Future<void> delete(String fileName) async {
     deleted.add(fileName);
     names.remove(fileName);
+    sizes.remove(fileName);
+    hashes.remove(fileName);
   }
 }
 
@@ -192,6 +251,27 @@ class FileDownloadStore implements DownloadStore {
 
   @override
   Future<bool> exists(String fileName) => _file(fileName).exists();
+
+  @override
+  Future<int?> size(String fileName) async {
+    try {
+      final file = _file(fileName);
+      return await file.exists() ? await file.length() : null;
+    } on FileSystemException {
+      return null;
+    }
+  }
+
+  @override
+  Future<String?> sha256(String fileName) async {
+    try {
+      final file = _file(fileName);
+      if (!await file.exists()) return null;
+      return sha256Hex(await file.readAsBytes());
+    } on FileSystemException {
+      return null;
+    }
+  }
 
   @override
   Future<void> delete(String fileName) async {

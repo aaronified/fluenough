@@ -27,8 +27,14 @@ enum UpdateStatus {
   downloading,
 
   /// Android's installer is open on the download. Whether the learner
-  /// installs it, the next launch finds out.
+  /// installs it, the next launch finds out; if they come back to the app
+  /// first, it is [downloaded].
   installing,
+
+  /// The download is kept and not installed: the learner closed Android's
+  /// installer (#487). Install opens it again on the same file, with no
+  /// download.
+  downloaded,
 
   /// The download or the install stopped; [UpdateChecker.installFailure]
   /// says why.
@@ -52,7 +58,9 @@ enum UpdateStatus {
 /// An install downloads the APK into the app's own storage as
 /// [apkFileName] and records its version in [settings]. The first launch
 /// at that version or later deletes the file. Until then it is kept: a
-/// cancelled install leaves it there, and the next download replaces it.
+/// cancelled install leaves it there, [installDownloaded] opens the installer
+/// on it again once it checks out (#487), and a download of another version,
+/// or of one that does not check out, replaces it.
 class UpdateChecker extends ChangeNotifier {
   UpdateChecker({
     required this._engine,
@@ -89,6 +97,10 @@ class UpdateChecker extends ChangeNotifier {
   InstallFailure? _installFailure;
   int _percent = 0;
   ({String version, String? sha256})? _checked;
+
+  /// The download that finished and reached Android's installer in this
+  /// launch: its version and size, which a reuse checks the file against.
+  ({String version, int? size})? _downloaded;
   Future<void>? _checking;
   Future<void>? _installing;
   bool _cancelling = false;
@@ -202,13 +214,21 @@ class UpdateChecker extends ChangeNotifier {
       // At the same moment as the download, in parallel with it (#470).
       unawaited(_backup(backUp, version));
     }
-    final events = _installer.install(
-      AppLinks.latestApk,
-      fileName: apkFileName,
-      sha256: checked != null && checked.version == version
-          ? checked.sha256
-          : null,
+    _downloaded = null;
+    await _run(
+      _installer.install(
+        AppLinks.latestApk,
+        fileName: apkFileName,
+        sha256: checked != null && checked.version == version
+            ? checked.sha256
+            : null,
+      ),
+      version,
     );
+  }
+
+  /// Follows [events] of an install of [version] into the status.
+  Future<void> _run(Stream<InstallEvent> events, String version) async {
     await for (final event in events) {
       if (_disposed) return;
       if (event.failure case final failure?) {
@@ -220,6 +240,10 @@ class UpdateChecker extends ChangeNotifier {
         }
       } else if (event.installing) {
         _status = UpdateStatus.installing;
+        _downloaded = (
+          version: version,
+          size: await _downloads.size(apkFileName),
+        );
       } else {
         _percent = event.percent ?? _percent;
       }
@@ -263,9 +287,87 @@ class UpdateChecker extends ChangeNotifier {
   /// installs it if it is still newer. So a download is always checked
   /// against GitHub's checksum when it gives one, even when the version
   /// offered was found before this launch.
+  ///
+  /// A download kept from before that still checks out is not fetched again
+  /// (#487): see [installDownloaded].
   Future<void> checkAndInstall() async {
     await check();
-    if (!_disposed && status == UpdateStatus.available) await install();
+    if (_disposed || status != UpdateStatus.available) return;
+    if (await _keptDownloadChecksOut()) {
+      await installDownloaded();
+    } else {
+      await install();
+    }
+  }
+
+  /// Whether the file kept as [apkFileName] is the newest version's whole
+  /// download: it is there, is the size the finished download was in this
+  /// launch (or, with none in this launch, its SHA-256 is the one GitHub
+  /// gave for that version), and is this version's, not an older one's.
+  Future<bool> _keptDownloadChecksOut() async {
+    final version = latest;
+    if (version == null || !isNewerVersion(version, current)) return false;
+    final size = await _downloads.size(apkFileName);
+    if (size == null || size <= 0) return false;
+    final downloaded = _downloaded;
+    if (downloaded != null) {
+      if (downloaded.version != version) return false;
+      if (downloaded.size != null && downloaded.size != size) return false;
+    }
+    final checked = _checked;
+    final sha = checked != null && checked.version == version
+        ? checked.sha256
+        : null;
+    if (sha != null) return await _downloads.sha256(apkFileName) == sha;
+    // No checksum to compare with, and no finished download seen in this
+    // launch: a half-written file cannot be told from a whole one.
+    return downloaded != null;
+  }
+
+  /// Install on the downloaded row, and on Installing's: opens Android's
+  /// installer on the file already kept, with no download and no second
+  /// backup (#487). If the file no longer checks out (gone, another
+  /// version, or not the size or checksum of the download) it is deleted
+  /// and the update is downloaded again.
+  Future<void> installDownloaded() => _installing ??= _installDownloaded()
+      .whenComplete(() => _installing = null);
+
+  Future<void> _installDownloaded() async {
+    final version = latest;
+    if (version == null || !isNewerVersion(version, current)) return;
+    if (!await _keptDownloadChecksOut()) {
+      await _downloads.delete(apkFileName);
+      _downloaded = null;
+      if (!_disposed) await _install();
+      return;
+    }
+    settings.pendingUpdate = version;
+    _installFailure = null;
+    await _run(_installer.installFile(apkFileName), version);
+  }
+
+  /// The learner is back in the app. If Android's installer was open on the
+  /// download and the app is still here, it was closed without installing,
+  /// so the row is [UpdateStatus.downloaded], not Try again (#487).
+  void appResumed() {
+    if (_disposed || _status != UpdateStatus.installing) return;
+    _status = UpdateStatus.downloaded;
+    notifyListeners();
+  }
+
+  /// The downloaded row's Delete download: deletes the kept file and
+  /// forgets it, and the row offers the update again.
+  Future<void> deleteDownload() async {
+    if (_status != UpdateStatus.downloaded &&
+        _status != UpdateStatus.installFailed) {
+      return;
+    }
+    await _downloads.delete(apkFileName);
+    _downloaded = null;
+    if (_disposed) return;
+    settings.pendingUpdate = null;
+    _status = UpdateStatus.idle;
+    notifyListeners();
   }
 
   /// Deletes the APK of `SettingsNotifier.pendingUpdate`, and forgets it,
@@ -275,6 +377,7 @@ class UpdateChecker extends ChangeNotifier {
     final pending = settings.pendingUpdate;
     if (pending == null || isNewerVersion(pending, current)) return;
     await _downloads.delete(apkFileName);
+    _downloaded = null;
     if (!_disposed) settings.pendingUpdate = null;
   }
 

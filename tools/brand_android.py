@@ -51,7 +51,11 @@ in CI, in the release workflow and on a first checkout. It
   naming the folder it shares: shared/ in the app's cache. The manifest
   gets a query for mail apps (mailto), without which Android 11 and later
   hide them. A MainActivity written by an earlier version of this, with
-  the channel but not shareFiles, is brought up to date.
+  the channel but not shareFiles, is brought up to date;
+- gives the same channel installApk, which reopens Android's installer on
+  an update already downloaded into files/ota_update, through ota_update's
+  FileProvider, so that Install after a cancelled install needs no second
+  download (#487). A MainActivity without it is brought up to date.
 
 - sets up flutter_local_notifications, which shows the daily reminder (#90).
   The reminder is scheduled inexactly, so there is no exact-alarm
@@ -334,6 +338,29 @@ SHARE_MEMBERS = """    // Written by tools/brand_android.py: a mail with files a
 
 """
 
+# What [install] adds to the channel: installApk, which reopens Android's
+# installer on a download kept in files/ota_update, with no download (#487).
+INSTALL_METHOD = '"installApk" ->'
+INSTALL_DISPATCH = '                    "installApk" -> result.success(installApk(call))\n'
+INSTALL_MEMBERS = """    // Written by tools/brand_android.py: opens Android's installer on an
+    // update already downloaded into files/ota_update, which ota_update's
+    // FileProvider lends to it (#487). Takes "path". True if the installer
+    // opened.
+    private fun installApk(call: MethodCall): Boolean {
+        val path = call.argument<String>("path") ?: return false
+        val uri = try {
+            FileProvider.getUriForFile(this, "$packageName.ota_update_provider", File(path))
+        } catch (e: IllegalArgumentException) {
+            return false
+        }
+        val view = Intent(Intent.ACTION_VIEW)
+            .setDataAndType(uri, "application/vnd.android.package-archive")
+            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        return startIfHandled(view)
+    }
+
+"""
+
 
 class BrandError(Exception):
     """Why the brand could not be applied."""
@@ -357,9 +384,27 @@ def share(text: str) -> str:
     return text.replace(SHARE_MEMBERS_BEFORE, SHARE_MEMBERS + SHARE_MEMBERS_BEFORE)
 
 
-# What goes in MainActivity: the channel, with openVoiceSettings and
-# shareFiles.
-CHANNEL_MEMBERS = share(VOICE_MEMBERS)
+def install(text: str) -> str:
+    """[text], MainActivity.kt or the members written into it, with
+    installApk added to the app.fluenough/system channel, unless it has it.
+    Fails if the channel is not in the shape this wrote."""
+    if INSTALL_METHOD in text:
+        return text
+    if (
+        text.count(SHARE_DISPATCH) != 1
+        or text.count(SHARE_MEMBERS_BEFORE) != 1
+    ):
+        raise BrandError(
+            f"{ACTIVITY} has the {CHANNEL} channel, but not as this writes "
+            "it; add installApk to it by hand, or run flutter create again"
+        )
+    text = text.replace(SHARE_DISPATCH, SHARE_DISPATCH + INSTALL_DISPATCH)
+    return text.replace(SHARE_MEMBERS_BEFORE, INSTALL_MEMBERS + SHARE_MEMBERS_BEFORE)
+
+
+# What goes in MainActivity: the channel, with openVoiceSettings, shareFiles
+# and installApk.
+CHANNEL_MEMBERS = install(share(VOICE_MEMBERS))
 
 # The version ota_update 7.1.0's own build uses.
 DESUGAR_LIBS = "com.android.tools:desugar_jdk_libs:2.1.4"
@@ -455,7 +500,7 @@ def channel(text: str) -> str:
     else in the file is kept. One with the channel from before shareFiles
     gets shareFiles."""
     if CHANNEL in text:
-        shared = share(text)
+        shared = install(share(text))
         return text if shared == text else imported(shared)
     if len(ACTIVITY_CLASS.findall(text)) != 1:
         raise BrandError(
