@@ -50,5 +50,6 @@ Every architecture decision record in the repo's docs/adr folder. Each one has i
 - [ADR-0045](ADR-0045-Path-Level-Sizes): A path sets its own level sizes, and a level counts roots only
 - [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items): A lesson takes the next eligible items, and a sentence waits until its words and rules are known
 - [ADR-0047](ADR-0047-Performance-Model): The performance model: per-language versions, incremental aggregates and batching
+- [ADR-0048](ADR-0048-Catalog-Snapshot): The catalog snapshot: the decks' YAML kept as JSON, keyed by SHA-256
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

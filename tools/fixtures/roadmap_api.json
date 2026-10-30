@@ -1,0 +1,23 @@
+{
+  "releases": [
+    {"tag_name": "v0.4.3", "name": "0.4.3: Suggest a change by part", "published_at": "2026-10-05T10:00:00Z"},
+    {"tag_name": "v0.5.0", "name": "0.5.0", "published_at": "2026-10-20T10:00:00Z"},
+    {"tag_name": "v0.5.1", "name": "draft", "draft": true, "published_at": "2026-10-21T10:00:00Z"}
+  ],
+  "milestones": [
+    {"title": "0.10.0", "state": "open", "description": ""},
+    {"title": "0.6.0", "state": "open", "description": "Order: #12, #10, #11"},
+    {"title": "Any order", "state": "open", "description": ""}
+  ],
+  "issues": [
+    {"number": 10, "title": "Owner enhancement", "state": "open", "user": {"login": "aaronified"}, "labels": [{"name": "enhancement"}], "milestone": {"title": "0.6.0"}},
+    {"number": 11, "title": "Owner task", "state": "open", "user": {"login": "aaronified"}, "labels": [], "milestone": {"title": "0.6.0"}},
+    {"number": 12, "title": "Owner bug", "state": "open", "user": {"login": "aaronified"}, "labels": [{"name": "bug"}], "milestone": {"title": "0.6.0"}},
+    {"number": 13, "title": "Stranger report", "state": "open", "user": {"login": "someone"}, "labels": [{"name": "bug"}], "milestone": {"title": "0.6.0"}},
+    {"number": 14, "title": "Stranger report, approved", "state": "open", "user": {"login": "someone"}, "labels": [{"name": "bug"}, {"name": "approved"}], "milestone": {"title": "0.6.0"}},
+    {"number": 15, "title": "From the app", "state": "open", "user": {"login": "aaronified"}, "labels": [{"name": "from-app"}], "milestone": {"title": "0.6.0"}},
+    {"number": 16, "title": "Unscheduled owner idea", "state": "open", "user": {"login": "aaronified"}, "labels": [], "milestone": null},
+    {"number": 17, "title": "A pull request", "state": "open", "user": {"login": "aaronified"}, "labels": [], "pull_request": {}, "milestone": null},
+    {"number": 18, "title": "In the next ten", "state": "open", "user": {"login": "aaronified"}, "labels": [], "milestone": {"title": "0.10.0"}}
+  ]
+}

@@ -13,6 +13,7 @@ import 'app/backup_store.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
+import 'app/file_snapshot_store.dart';
 import 'app/junk_cleanup.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
@@ -62,6 +63,19 @@ Future<void> main() async {
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
           added: FileDeckStore(Directory('${files.path}/decks')),
           parser: parseInIsolate,
+          // The decks' YAML, kept as JSON between launches and read again
+          // only for a file whose SHA-256 changed (#875, ADR-0048).
+          snapshots: CatalogSnapshots(
+            store: FileSnapshotStore(
+              File('${files.path}/catalog-snapshot.json'),
+            ),
+            app: AppInfo.version,
+            knownShas: () async => <String, String>{
+              for (final e in (await downloaded.manifest()).entries)
+                e.key: e.value.sha256,
+            },
+            runner: runJobInIsolate,
+          ),
         ),
         deckDownloads: DeckDownloads(
           fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
