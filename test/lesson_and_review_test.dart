@@ -2401,10 +2401,22 @@ cards:
       expect(find.text(first.native), findsOneWidget);
       // No Continue: the chevron goes on, as a swipe does.
       expect(find.text(l10n.commonContinue), findsNothing);
-      await tester.tap(find.byTooltip(l10n.drillNextCard));
-      await tester.pumpAndSettle();
-      expect(find.byType(ChoiceDrill), findsOneWidget);
-      expect(sessionOf(tester).item.card.id, first.id);
+      // The round teaches every new word first, and asks them after, with
+      // older reviews between (#886): so the chevron goes on to the next
+      // word taught, until the words are all taught.
+      final taughtIds = <String>{};
+      while (sessionOf(tester).ask.onlyShows) {
+        if (sessionOf(tester).ask == Ask.teach) {
+          taughtIds.add(sessionOf(tester).item.card.id);
+        }
+        await tester.tap(find.byTooltip(l10n.drillNextCard));
+        await tester.pumpAndSettle();
+      }
+      expect(taughtIds, contains(first.id));
+      // Then the first question is about a word just taught, and nothing is
+      // recorded until it is answered.
+      expect(find.byType(TeachDrill), findsNothing);
+      expect(taughtIds, contains(sessionOf(tester).item.card.id));
       expect(state.progress.log, isEmpty);
 
       await finishLesson(tester);
@@ -4670,10 +4682,24 @@ cards:
         final run = state.startDaily('hi')!;
         final items = state.nextDailyRound(run);
         expect(items, isNotEmpty);
-        expect(items.first.ask, isNot(Ask.teach));
-        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
-        expect(firstTeach, greaterThan(0));
-        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
+        // Every word taught is asked later in the round, never before it is
+        // taught.
+        final taughtAt = <String, int>{
+          for (var i = items.length - 1; i >= 0; i--)
+            if (items[i].ask == Ask.teach) items[i].card.id: i,
+        };
+        expect(taughtAt, isNotEmpty);
+        for (final entry in taughtAt.entries) {
+          final asks = <int>[
+            for (var i = 0; i < items.length; i++)
+              if (!items[i].ask.onlyShows &&
+                  (items[i].card.id == entry.key ||
+                      items[i].group.any((g) => g.card.id == entry.key)))
+                i,
+          ];
+          expect(asks, isNotEmpty, reason: entry.key);
+          expect(asks.first, greaterThan(entry.value), reason: entry.key);
+        }
         final askedIds = <String>{
           for (final item in items)
             for (final entry
