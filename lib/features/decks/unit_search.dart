@@ -804,7 +804,7 @@ class _KindChip extends StatelessWidget {
       label: l10n.searchChip(SearchToken.kind.key, label),
       excludeSemantics: true,
       child: InkWell(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppRadii.control),
         onTap: () => onKind(kind),
         child: Container(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -813,7 +813,7 @@ class _KindChip extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             color: scheme.secondaryContainer,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppRadii.control),
           ),
           child: Text(
             label,

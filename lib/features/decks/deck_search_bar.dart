@@ -96,15 +96,18 @@ class DeckSearchBar extends StatelessWidget {
   final String endTooltip;
   final VoidCallback onEnd;
 
+  static const double _barHeight = 56;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return Material(
       color: scheme.surfaceContainerHigh,
-      borderRadius: BorderRadius.circular(28),
+      // A pill: half the bar's height, a formula and not a token.
+      borderRadius: BorderRadius.circular(_barHeight / 2),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: 56),
+        constraints: const BoxConstraints(minHeight: _barHeight),
         child: Padding(
           padding: const EdgeInsetsDirectional.only(start: 16, end: 4),
           child: Row(
@@ -288,7 +291,7 @@ class SuggestionRows extends StatelessWidget {
         children: <Widget>[
           for (final s in suggestions)
             InkWell(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppRadii.chip),
               onTap: () => onUse(s),
               child: ConstrainedBox(
                 constraints: const BoxConstraints(minHeight: 48),

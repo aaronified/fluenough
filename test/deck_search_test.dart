@@ -222,6 +222,12 @@ void main() {
     ) async {
       usePhone(tester, textScale: 1.4);
       await pumpTelugu(tester);
+      // The path opens at the unit up next, the bar scrolled away: back up.
+      tester
+          .widget<CustomScrollView>(find.byType(CustomScrollView))
+          .controller!
+          .jumpTo(0);
+      await tester.pumpAndSettle();
       await tester.tap(find.byType(TextField));
       await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
