@@ -114,11 +114,8 @@ units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
   # words beside it: fr-phrasebook (15-25 survival phrases, which count no
   # words) and fr-first-words when written.
-  - planned: { id: "fr-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning and the evening: bonjour, bonsoir, au revoir" } }
-    reading_passages:
-      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases" } }
+  - decks: ["fr-phrasebook", "fr-first-words", "*"]
+    words: 10
   # 2. The first word units, the sound differences first.
   - planned: { id: "fr-sound-differences", theme: "sound-differences", words: 16 }
     listening_passages:

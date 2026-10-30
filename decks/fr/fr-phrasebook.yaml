@@ -1,0 +1,262 @@
+schema: 1
+id: "fr-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0001"
+    target: "bonjour"
+    ipa: "bɔ̃ʒuʁ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "bonjour", base: "bonjour" }
+  - id: "fr-0002"
+    target: "merci"
+    ipa: "mɛʁsi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "merci", base: "merci" }
+  - id: "fr-0003"
+    target: "s'il vous plaît"
+    ipa: "sil vu plɛ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "s'il", base: "s'il" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "plaît", base: "plaire" }
+  - id: "fr-0004"
+    target: "bonsoir"
+    ipa: "bɔ̃swaʁ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "bonsoir", base: "bonsoir" }
+  - id: "fr-0005"
+    target: "bonne nuit"
+    ipa: "bɔn nɥi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "bonne", ref: "fr-0040" }
+      - { word: "nuit", base: "nuit" }
+  - id: "fr-0006"
+    target: "au revoir"
+    ipa: "o ʁəvwaʁ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "au", base: "à" }
+      - { word: "revoir", base: "revoir" }
+  - id: "fr-0007"
+    target: "excusez-moi"
+    ipa: "ɛkskyze mwa"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "excusez", base: "excuser" }
+      - { word: "moi", base: "moi" }
+  - id: "fr-0008"
+    target: "pardon"
+    ipa: "paʁdɔ̃"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "pardon", base: "pardon" }
+  - id: "fr-0009"
+    target: "je ne comprends pas"
+    ipa: "ʒə nə kɔ̃pʁɑ̃ pa"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "comprends", base: "comprendre" }
+      - { word: "pas", base: "pas" }
+  - id: "fr-0010"
+    target: "je ne parle pas français"
+    ipa: "ʒə nə paʁl pa fʁɑ̃sɛ"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "pas", base: "pas" }
+      - { word: "français", base: "français" }
+  - id: "fr-0011"
+    target: "Parlez plus lentement, s'il vous plaît."
+    ipa: "paʁle ply lɑ̃tmɑ̃ sil vu plɛ"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Parlez", ref: "fr-0023" }
+      - { word: "plus", base: "plus" }
+      - { word: "lentement", base: "lentement" }
+      - { word: "s'il", base: "s'il" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "plaît", base: "plaire" }
+  - id: "fr-0012"
+    target: "Comment dit-on ça ?"
+    ipa: "kɔmɑ̃ di tɔ̃ sa"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Comment", ref: "fr-0069" }
+      - { word: "dit", base: "dire" }
+      - { word: "on", base: "on" }
+      - { word: "ça", base: "ça" }
+  - id: "fr-0013"
+    target: "Où sont les toilettes ?"
+    ipa: "u sɔ̃ le twalɛt"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Où", ref: "fr-0067" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "toilettes", base: "toilette" }
+  - id: "fr-0014"
+    target: "Combien ça coûte ?"
+    ipa: "kɔ̃bjɛ̃ sa kut"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Combien", ref: "fr-0071" }
+      - { word: "ça", base: "ça" }
+      - { word: "coûte", base: "coûter" }
+  - id: "fr-0015"
+    target: "Je voudrais un café, s'il vous plaît."
+    ipa: "ʒə vudʁɛ œ̃ kafe sil vu plɛ"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "voudrais", base: "vouloir" }
+      - { word: "un", base: "un" }
+      - { word: "café", base: "café" }
+      - { word: "s'il", base: "s'il" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "plaît", base: "plaire" }
+  - id: "fr-0016"
+    target: "Je suis désolé."
+    ipa: "ʒə sɥi dezɔle"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "désolé", base: "désolé" }
+  - id: "fr-0017"
+    target: "Je m'appelle Paul."
+    ipa: "ʒə mapɛl pɔl"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "m'appelle", base: "s'appeler" }
+      - { word: "Paul", base: "Paul" }
+  - id: "fr-0018"
+    target: "Parlez-vous anglais ?"
+    ipa: "paʁle vu ɑ̃ɡlɛ"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Parlez", ref: "fr-0023" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "anglais", base: "anglais" }
+  - id: "fr-0019"
+    target: "Je ne sais pas."
+    ipa: "ʒə nə sɛ pa"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "sais", base: "savoir" }
+      - { word: "pas", base: "pas" }
+  - id: "fr-0020"
+    target: "Bonne journée."
+    ipa: "bɔn ʒuʁne"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Bonne", ref: "fr-0040" }
+      - { word: "journée", base: "journée" }
+  - id: "fr-0021"
+    target: "être"
+    ipa: "ɛtʁ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Je suis très bien.", ipa: "ʒə sɥi tʁɛ bjɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Il est ici.", ipa: "il ɛ isi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "ici", ref: "fr-0029" }] }
+    bases: "self"
+  - id: "fr-0022"
+    target: "avoir"
+    ipa: "avwaʁ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "J'ai faim.", ipa: "ʒe fɛ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "faim", base: "faim" }] }
+      - { target: "Nous avons beaucoup de temps.", ipa: "nu avɔ̃ boku də tɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", base: "avoir" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "temps", base: "temps" }] }
+    bases: "self"
+  - id: "fr-0023"
+    target: "parler"
+    ipa: "paʁle"
+    pos: "verb"
+    tags: ["verb", "regular-er"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Je parle un peu français.", ipa: "ʒə paʁl œ̃ pø fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", base: "parler" }, { word: "un", base: "un" }, { word: "peu", base: "peu" }, { word: "français", base: "français" }] }
+      - { target: "Vous parlez bien.", ipa: "vu paʁle bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "parlez", base: "parler" }, { word: "bien", ref: "fr-0032" }] }
+    bases: "self"
+  - id: "fr-0024"
+    target: "l'eau"
+    ipa: "lo"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Je voudrais de l'eau.", ipa: "ʒə vudʁɛ də lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "de", base: "de" }, { word: "l'eau", base: "eau" }] }
+      - { target: "L'eau est bonne.", ipa: "lo ɛ bɔn", bases: [{ word: "L'eau", base: "eau" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+    bases:
+      - { word: "l'eau", base: "eau" }

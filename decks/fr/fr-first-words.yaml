@@ -1,0 +1,120 @@
+schema: 1
+id: "fr-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0025"
+    target: "oui"
+    ipa: "wi"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Oui, merci.", ipa: "wi mɛʁsi", bases: [{ word: "Oui", base: "oui" }, { word: "merci", base: "merci" }] }
+      - { target: "Oui, je suis là.", ipa: "wi ʒə sɥi la", bases: [{ word: "Oui", base: "oui" }, { word: "je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0026"
+    target: "non"
+    ipa: "nɔ̃"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Non, merci.", ipa: "nɔ̃ mɛʁsi", bases: [{ word: "Non", base: "non" }, { word: "merci", base: "merci" }] }
+      - { target: "Non, je ne sais pas.", ipa: "nɔ̃ ʒə nə sɛ pa", bases: [{ word: "Non", base: "non" }, { word: "je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "sais", base: "savoir" }, { word: "pas", base: "pas" }] }
+  - id: "fr-0027"
+    target: "et"
+    ipa: "e"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pain et vin, s'il vous plaît.", ipa: "pɛ̃ e vɛ̃ sil vu plɛ", bases: [{ word: "Pain", base: "pain" }, { word: "et", base: "et" }, { word: "vin", ref: "fr-0035" }, { word: "s'il", base: "s'il" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Café et thé.", ipa: "kafe e te", bases: [{ word: "Café", base: "café" }, { word: "et", base: "et" }, { word: "thé", base: "thé" }] }
+  - id: "fr-0028"
+    target: "mais"
+    ipa: "mɛ"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Oui, mais je suis fatigué.", ipa: "wi mɛ ʒə sɥi fatiɡe", bases: [{ word: "Oui", base: "oui" }, { word: "mais", base: "mais" }, { word: "je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "fatigué", base: "fatigué" }] }
+      - { target: "Merci, mais non.", ipa: "mɛʁsi mɛ nɔ̃", bases: [{ word: "Merci", base: "merci" }, { word: "mais", base: "mais" }, { word: "non", ref: "fr-0026" }] }
+  - id: "fr-0029"
+    target: "ici"
+    ipa: "isi"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis ici.", ipa: "ʒə sɥi isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "ici", base: "ici" }] }
+      - { target: "Le pain est ici.", ipa: "lə pɛ̃ ɛ isi", bases: [{ word: "Le", base: "le" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "ici", base: "ici" }] }
+  - id: "fr-0030"
+    target: "là"
+    ipa: "la"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est là.", ipa: "il ɛ la", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "là", base: "là" }] }
+      - { target: "Le pain est là-bas.", ipa: "lə pɛ̃ ɛ la ba", bases: [{ word: "Le", base: "le" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "là", base: "là" }, { word: "bas", base: "bas" }] }
+  - id: "fr-0031"
+    target: "très"
+    ipa: "tʁɛ"
+    pos: "adv"
+    tags: ["degree"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis très content.", ipa: "ʒə sɥi tʁɛ kɔ̃tɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "très", base: "très" }, { word: "content", base: "content" }] }
+      - { target: "Le café est très chaud.", ipa: "lə kafe ɛ tʁɛ ʃo", bases: [{ word: "Le", base: "le" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "très", base: "très" }, { word: "chaud", base: "chaud" }] }
+  - id: "fr-0032"
+    target: "bien"
+    ipa: "bjɛ̃"
+    pos: "adv"
+    tags: ["degree"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ça va bien.", ipa: "sa va bjɛ̃", bases: [{ word: "Ça", base: "ça" }, { word: "va", base: "aller" }, { word: "bien", base: "bien" }] }
+      - { target: "Il parle bien.", ipa: "il paʁl bjɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "bien", base: "bien" }] }
+  - id: "fr-0033"
+    target: "aussi"
+    ipa: "osi"
+    pos: "adv"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Moi aussi.", ipa: "mwa osi", bases: [{ word: "Moi", ref: "fr-0133" }, { word: "aussi", base: "aussi" }] }
+      - { target: "Je parle aussi français.", ipa: "ʒə paʁl osi fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", ref: "fr-0023" }, { word: "aussi", base: "aussi" }, { word: "français", base: "français" }] }
+  - id: "fr-0034"
+    target: "beaucoup"
+    ipa: "boku"
+    pos: "adv"
+    tags: ["degree"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Merci beaucoup.", ipa: "mɛʁsi boku", bases: [{ word: "Merci", base: "merci" }, { word: "beaucoup", base: "beaucoup" }] }
+      - { target: "Je ne comprends pas beaucoup.", ipa: "ʒə nə kɔ̃pʁɑ̃ pa boku", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "comprends", base: "comprendre" }, { word: "pas", base: "pas" }, { word: "beaucoup", base: "beaucoup" }] }
