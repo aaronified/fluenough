@@ -39,7 +39,7 @@ passages:
     sentences:
       - { text: "সোমবার: বাংলা, অঙ্ক, ইংরেজি।", reading: "sombār: bāṅlā, ônko, iṅreji.", ipa: "sombar baŋla ɔŋko iŋredʒi" }
       - { text: "মঙ্গলবার: বিজ্ঞান, ইতিহাস, ভূগোল।", reading: "mônglābār: bigyān, itihās, bhūgol.", ipa: "mɔŋɡlobar biɡɡan it̪iɦas bʱuɡol" }
-      - { text: "বুধবার: খেলা আর ছবি আঁকা।", reading: "budhbār: khelā ār chabi ām̐kā.", ipa: "bud̪ʱbar kʰela ar tʃʰobi ãka" }
+      - { text: "বুধবার: খেলা আর ব্যায়াম।", reading: "budhbār: khelā ār bêyām.", ipa: "bud̪ʱbar kʰela ar bæjam" }
       - { text: "শুক্রবার: ছুটি।", reading: "śukrabār: chuṭi.", ipa: "sukrobar tʃʰuʈi" }
     questions:
       - id: "bn-2204"
@@ -54,6 +54,6 @@ passages:
       - id: "bn-2206"
         prompt: { en: "What is on Wednesday?" }
         options:
-          - { en: "Sports and drawing" }
+          - { en: "Sports and exercise" }
           - { en: "Science" }
         answer: 1
