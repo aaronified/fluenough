@@ -704,7 +704,7 @@ class SearchResultsSliver extends StatelessWidget {
         ),
       );
     }
-    final outer = Radius.circular(AppRadii.card);
+    const outer = Radius.circular(AppRadii.card);
     const inner = Radius.circular(AppRadii.innerRow);
     BorderRadius radius(int i) => BorderRadius.vertical(
       top: i == 0 ? outer : inner,
