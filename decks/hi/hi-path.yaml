@@ -263,7 +263,8 @@ units:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "hi-festivals", theme: "festivals", words: 40 }
+  - decks: ["hi-festivals", "hi-reading-festivals", "*"]
+    words: 40
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:

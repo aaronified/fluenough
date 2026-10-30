@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-reading-festivals"
+name: "Reading: festival plans"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about a festival: the plans of neighbours, and an invitation to a meal. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-festival-days"
+    title: "The days of the festival"
+    theme: "festivals"
+    sentences:
+      - { text: "इस हफ़्ते दीवाली है।", reading: "is haftē dīvālī hai.", ipa: "ɪs ɦəft̪eː d̪iːʋaːliː ɦɛː" }
+      - { text: "सोमवार को हम घर सजाएँगे।", reading: "sōmvār kō ham ghar sajāēm̐gē.", ipa: "soːmʋaːr koː ɦəm ɡʱər sədʒaːẽːɡeː" }
+      - { text: "मंगलवार को सब मिठाई बाँटेंगे।", reading: "maṅgalvār kō sab miṭhāī bām̐ṭēṅgē.", ipa: "məŋɡəlʋaːr koː səb mɪʈʰaːiː bãːʈeːŋɡeː" }
+      - { text: "शाम को आरती होगी।", reading: "śām kō ārtī hōgī.", ipa: "ʃaːm koː aːrt̪iː ɦoːɡiː" }
+    questions:
+      - id: "hi-1412"
+        prompt: { en: "Diwali is this week." }
+        answer: true
+      - id: "hi-1413"
+        prompt: { en: "What do they do on Monday?" }
+        options:
+          - { en: "Decorate the house" }
+          - { en: "Share sweets" }
+        answer: 1
+      - id: "hi-1414"
+        prompt: { en: "The sweets are shared on Monday." }
+        answer: false
+  - id: "hi-festival-invitation"
+    title: "An invitation to a feast"
+    theme: "festivals"
+    sentences:
+      - { text: "प्रिय पड़ोसी, हमारे घर होली की दावत है।", reading: "priy paṛōsī, hamārē ghar hōlī kī dāvat hai.", ipa: "prɪj pəɽoːsiː ɦəmaːreː ɡʱər ɦoːliː kiː d̪aːʋət̪ ɦɛː" }
+      - { text: "आप सब सादर आमंत्रित हैं।", reading: "āp sab sādar āmantrit haim̐.", ipa: "aːp səb saːd̪ər aːmənt̪rɪt̪ ɦɛ̃ː" }
+      - { text: "दोपहर बारह बजे आइए।", reading: "dōphar bārah bajē āiē.", ipa: "d̪oːpɦər baːrəɦ bədʒeː aːɪeː" }
+      - { text: "लड्डू और सेवई बनेगी।", reading: "laḍḍū aur sēvaī banēgī.", ipa: "ləɖɖuː ɔːr seːʋəiː bəneːɡiː" }
+    questions:
+      - id: "hi-1415"
+        prompt: { en: "The feast is at a neighbour’s house." }
+        answer: false
+      - id: "hi-1416"
+        prompt: { en: "What will be served?" }
+        options:
+          - { en: "Laddoo and sevai" }
+          - { en: "Rice and dal" }
+        answer: 1
+      - id: "hi-1417"
+        prompt: { en: "The invitation is for everyone." }
+        answer: true
