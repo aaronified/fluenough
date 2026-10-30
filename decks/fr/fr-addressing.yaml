@@ -1,0 +1,189 @@
+schema: 1
+id: "fr-addressing"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "addressing"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0095"
+    target: "tu"
+    ipa: "ty"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Tu es mon ami.", ipa: "ty ɛ mɔ̃ ami", bases: [{ word: "Tu", base: "tu" }, { word: "es", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }] }
+      - { target: "Tu parles bien.", ipa: "ty paʁl bjɛ̃", bases: [{ word: "Tu", base: "tu" }, { word: "parles", ref: "fr-0023" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0096"
+    target: "vous"
+    ipa: "vu"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Vous êtes monsieur Dupont ?", ipa: "vu ɛt məsjø dypɔ̃", bases: [{ word: "Vous", base: "vous" }, { word: "êtes", ref: "fr-0021" }, { word: "monsieur", ref: "fr-0097" }, { word: "Dupont", base: "Dupont" }] }
+      - { target: "Vous parlez bien, madame.", ipa: "vu paʁle bjɛ̃ madam", bases: [{ word: "Vous", base: "vous" }, { word: "parlez", ref: "fr-0023" }, { word: "bien", ref: "fr-0032" }, { word: "madame", ref: "fr-0098" }] }
+  - id: "fr-0097"
+    target: "monsieur"
+    ipa: "məsjø"
+    pos: "noun"
+    gender: "m"
+    tags: ["title"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bonjour, monsieur.", ipa: "bɔ̃ʒuʁ məsjø", bases: [{ word: "Bonjour", base: "bonjour" }, { word: "monsieur", base: "monsieur" }] }
+      - { target: "Merci, monsieur.", ipa: "mɛʁsi məsjø", bases: [{ word: "Merci", base: "merci" }, { word: "monsieur", base: "monsieur" }] }
+  - id: "fr-0098"
+    target: "madame"
+    ipa: "madam"
+    pos: "noun"
+    gender: "f"
+    tags: ["title"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bonsoir, madame.", ipa: "bɔ̃swaʁ madam", bases: [{ word: "Bonsoir", base: "bonsoir" }, { word: "madame", base: "madame" }] }
+      - { target: "Madame, vous êtes là.", ipa: "madam vu ɛt la", bases: [{ word: "Madame", base: "madame" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0099"
+    target: "mademoiselle"
+    ipa: "madmwazɛl"
+    pos: "noun"
+    gender: "f"
+    tags: ["title"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bonjour, mademoiselle.", ipa: "bɔ̃ʒuʁ madmwazɛl", bases: [{ word: "Bonjour", base: "bonjour" }, { word: "mademoiselle", base: "mademoiselle" }] }
+      - { target: "Mademoiselle, le train est là.", ipa: "madmwazɛl lə tʁɛ̃ ɛ la", bases: [{ word: "Mademoiselle", base: "mademoiselle" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0100"
+    target: "ami"
+    ipa: "ami"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Mon ami est ici.", ipa: "mɔ̃ ami ɛ isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", base: "ami" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Un ami de Paris.", ipa: "œ̃ ami də paʁi", bases: [{ word: "Un", base: "un" }, { word: "ami", base: "ami" }, { word: "de", base: "de" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-0101"
+    target: "voisin"
+    ipa: "vwazɛ̃"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Mon voisin est professeur.", ipa: "mɔ̃ vwazɛ̃ ɛ pʁɔfesœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "professeur", ref: "fr-0105" }] }
+      - { target: "Le voisin est dans la rue.", ipa: "lə vwazɛ̃ ɛ dɑ̃ la ʁy", bases: [{ word: "Le", base: "le" }, { word: "voisin", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", base: "la" }, { word: "rue", ref: "fr-0041" }] }
+  - id: "fr-0102"
+    target: "enchanté"
+    ipa: "ɑ̃ʃɑ̃te"
+    pos: "adj"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Enchanté, monsieur.", ipa: "ɑ̃ʃɑ̃te məsjø", bases: [{ word: "Enchanté", base: "enchanté" }, { word: "monsieur", ref: "fr-0097" }] }
+      - { target: "Enchantée, madame.", ipa: "ɑ̃ʃɑ̃te madam", bases: [{ word: "Enchantée", base: "enchanté" }, { word: "madame", ref: "fr-0098" }] }
+  - id: "fr-0103"
+    target: "prénom"
+    ipa: "pʁenɔ̃"
+    pos: "noun"
+    gender: "m"
+    tags: ["names"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est votre prénom ?", ipa: "kɛl ɛ vɔtʁ pʁenɔ̃", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "prénom", base: "prénom" }] }
+      - { target: "Mon prénom est Paul.", ipa: "mɔ̃ pʁenɔ̃ ɛ pɔl", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "prénom", base: "prénom" }, { word: "est", ref: "fr-0021" }, { word: "Paul", base: "Paul" }] }
+  - id: "fr-0104"
+    target: "cher"
+    ipa: "ʃɛʁ"
+    pos: "adj"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Cher monsieur, bonjour.", ipa: "ʃɛʁ məsjø bɔ̃ʒuʁ", bases: [{ word: "Cher", base: "cher" }, { word: "monsieur", ref: "fr-0097" }, { word: "bonjour", base: "bonjour" }] }
+      - { target: "Ma chère amie.", ipa: "ma ʃɛʁ ami", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "chère", base: "cher" }, { word: "amie", ref: "fr-0100" }] }
+  - id: "fr-0105"
+    target: "professeur"
+    ipa: "pʁɔfesœʁ"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le professeur est là.", ipa: "lə pʁɔfesœʁ ɛ la", bases: [{ word: "Le", base: "le" }, { word: "professeur", base: "professeur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Monsieur, vous êtes professeur ?", ipa: "məsjø vu ɛt pʁɔfesœʁ", bases: [{ word: "Monsieur", ref: "fr-0097" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "professeur", base: "professeur" }] }
+  - id: "fr-0106"
+    target: "docteur"
+    ipa: "dɔktœʁ"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bonjour, docteur.", ipa: "bɔ̃ʒuʁ dɔktœʁ", bases: [{ word: "Bonjour", base: "bonjour" }, { word: "docteur", base: "docteur" }] }
+      - { target: "Madame, le docteur est là.", ipa: "madam lə dɔktœʁ ɛ la", bases: [{ word: "Madame", ref: "fr-0098" }, { word: "le", base: "le" }, { word: "docteur", base: "docteur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0107"
+    target: "salut"
+    ipa: "saly"
+    pos: "other"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Salut, ça va ?", ipa: "saly sa va", bases: [{ word: "Salut", base: "salut" }, { word: "ça", base: "ça" }, { word: "va", base: "aller" }] }
+      - { target: "Salut, Paul !", ipa: "saly pɔl", bases: [{ word: "Salut", base: "salut" }, { word: "Paul", base: "Paul" }] }
+  - id: "fr-0108"
+    target: "jeune"
+    ipa: "ʒœn"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Le jeune professeur est là.", ipa: "lə ʒœn pʁɔfesœʁ ɛ la", bases: [{ word: "Le", base: "le" }, { word: "jeune", base: "jeune" }, { word: "professeur", ref: "fr-0105" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Une jeune amie.", ipa: "yn ʒœn ami", bases: [{ word: "Une", base: "un" }, { word: "jeune", base: "jeune" }, { word: "amie", ref: "fr-0100" }] }
+  - id: "fr-0109"
+    target: "vieux"
+    ipa: "vjø"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - { target: "Un vieux monsieur.", ipa: "œ̃ vjø məsjø", bases: [{ word: "Un", base: "un" }, { word: "vieux", base: "vieux" }, { word: "monsieur", ref: "fr-0097" }] }
+      - { target: "Ma vieille amie.", ipa: "ma vjɛj ami", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "vieille", base: "vieux" }, { word: "amie", ref: "fr-0100" }] }
+  - kind: "set"
+    id: "fr-0110"
+    members: [{ ref: "fr-0097" }, { ref: "fr-0098" }, { ref: "fr-0099" }]
+  - kind: "set"
+    id: "fr-0111"
+    members: [{ ref: "fr-0095" }, { ref: "fr-0096" }]

@@ -121,11 +121,8 @@ units:
     words: 16
   - decks: ["fr-questions", "fr-questions-sentences", "fr-reading-questions", "*"]
     words: 15
-  - planned: { id: "fr-addressing", theme: "addressing", words: 15 }
-    listening_passages:
-      - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tu and vous" } }
-    reading_passages:
-      - { id: "name-badges", text: { "en": "Name badges at a meeting with titles and surnames: Monsieur, Madame" } }
+  - decks: ["fr-addressing", "fr-addressing-sentences", "fr-reading-addressing", "*"]
+    words: 15
   - planned: { id: "fr-pronouns", theme: "pronouns", words: 20 }
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }

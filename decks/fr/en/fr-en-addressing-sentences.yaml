@@ -1,0 +1,61 @@
+schema: 1
+id: "fr-en-addressing-sentences"
+kind: "layer"
+core: "fr-addressing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: addressing people"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences that greet and address people with the words of Addressing people, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0112":
+    native: "Hello, madam, I am Paul."
+    bases:
+      "Bonjour": "hello"
+      "Paul": "Paul (a first name)"
+    confusables:
+      "sir": { why: "Monsieur is for a man; this sentence speaks to a woman." }
+      "miss": { why: "Mademoiselle is Miss, for a young woman; madame is the word used here." }
+  "fr-0113":
+    native: "Are you my neighbour?"
+    confusables:
+      "formal-you": { why: "Vous is the formal you, for a stranger or someone older; a neighbour you know is tu." }
+      "friend": { why: "Ami is friend, not neighbour." }
+  "fr-0114":
+    native: "Are you a teacher, sir?"
+    confusables:
+      "informal-you": { why: "Tu is for a child, a friend or family; a teacher you meet is vous." }
+      "doctor": { why: "Docteur is doctor, not teacher." }
+  "fr-0115":
+    native: "Pleased to meet you, Miss."
+    confusables:
+      "hi": { why: "Salut is an informal greeting; it is not said on meeting someone." }
+      "dear": { why: "Cher is dear, used at the start of a letter." }
+  "fr-0116":
+    native: "Hi, Paul, how are you?"
+    bases:
+      "Paul": "Paul (a first name)"
+      "ça": "it"
+      "va": "to go"
+    confusables:
+      "sir": { why: "Monsieur is for a man you do not know well; salut is for a friend." }
+      "young": { why: "Jeune is young, an adjective; it does not greet anyone." }
+  "fr-0117":
+    native: "The young doctor is there."
+    bases:
+      "Le": "the"
+    confusables:
+      "old": { why: "Vieux is old, the opposite of jeune." }
+      "teacher": { why: "Professeur is teacher, not doctor." }
+  "fr-0118":
+    native: "Madam, what is your first name?"
+    confusables:
+      "name": { why: "Nom is the name in general or the surname; the sentence asks for the first name." }
+      "what": { why: "Quoi asks what, not which one; the sentence asks for a name." }
+  "fr-0119":
+    native: "My dear friend, good evening."
+    bases:
+      "bonsoir": "good evening"
+    confusables:
+      "my-masc": { why: "Mon is my before a masculine noun; ma is my before a feminine one, such as amie." }
+      "old": { why: "Vieux is old; the sentence uses chère, dear." }

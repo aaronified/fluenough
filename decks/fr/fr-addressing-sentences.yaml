@@ -1,0 +1,114 @@
+schema: 1
+id: "fr-addressing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0112"
+    target: "Bonjour, madame, je suis Paul."
+    ipa: "bɔ̃ʒuʁ madam ʒə sɥi pɔl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Bonjour", base: "bonjour" }
+      - { word: "madame", ref: "fr-0098" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "Paul", base: "Paul" }
+    confusables:
+      - { id: "sir", ref: "fr-0097", kind: "word" }
+      - { id: "miss", ref: "fr-0099", kind: "word" }
+  - id: "fr-0113"
+    target: "Tu es mon voisin ?"
+    ipa: "ty ɛ mɔ̃ vwazɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "es", ref: "fr-0021" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "voisin", ref: "fr-0101" }
+    confusables:
+      - { id: "formal-you", ref: "fr-0096", kind: "form" }
+      - { id: "friend", ref: "fr-0100", kind: "word" }
+  - id: "fr-0114"
+    target: "Vous êtes professeur, monsieur ?"
+    ipa: "vu ɛt pʁɔfesœʁ məsjø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Vous", ref: "fr-0096" }
+      - { word: "êtes", ref: "fr-0021" }
+      - { word: "professeur", ref: "fr-0105" }
+      - { word: "monsieur", ref: "fr-0097" }
+    confusables:
+      - { id: "informal-you", ref: "fr-0095", kind: "form" }
+      - { id: "doctor", ref: "fr-0106", kind: "word" }
+  - id: "fr-0115"
+    target: "Enchanté, mademoiselle."
+    ipa: "ɑ̃ʃɑ̃te madmwazɛl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Enchanté", ref: "fr-0102" }
+      - { word: "mademoiselle", ref: "fr-0099" }
+    confusables:
+      - { id: "hi", ref: "fr-0107", kind: "word" }
+      - { id: "dear", ref: "fr-0104", kind: "word" }
+  - id: "fr-0116"
+    target: "Salut, Paul, ça va ?"
+    ipa: "saly pɔl sa va"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Salut", ref: "fr-0107" }
+      - { word: "Paul", base: "Paul" }
+      - { word: "ça", base: "ça" }
+      - { word: "va", base: "aller" }
+    confusables:
+      - { id: "sir", ref: "fr-0097", kind: "word" }
+      - { id: "young", ref: "fr-0108", kind: "word" }
+  - id: "fr-0117"
+    target: "Le jeune docteur est là."
+    ipa: "lə ʒœn dɔktœʁ ɛ la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "jeune", ref: "fr-0108" }
+      - { word: "docteur", ref: "fr-0106" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "old", ref: "fr-0109", kind: "word" }
+      - { id: "teacher", ref: "fr-0105", kind: "word" }
+  - id: "fr-0118"
+    target: "Madame, quel est votre prénom ?"
+    ipa: "madam kɛl ɛ vɔtʁ pʁenɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Madame", ref: "fr-0098" }
+      - { word: "quel", ref: "fr-0072" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "votre", ref: "fr-0140" }
+      - { word: "prénom", ref: "fr-0103" }
+    confusables:
+      - { id: "name", ref: "fr-0073", kind: "word" }
+      - { id: "what", ref: "fr-0066", kind: "word" }
+  - id: "fr-0119"
+    target: "Ma chère amie, bonsoir."
+    ipa: "ma ʃɛʁ ami bɔ̃swaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "chère", ref: "fr-0104" }
+      - { word: "amie", ref: "fr-0100" }
+      - { word: "bonsoir", base: "bonsoir" }
+    confusables:
+      - { id: "my-masc", ref: "fr-0037", kind: "form" }
+      - { id: "old", ref: "fr-0109", kind: "word" }
