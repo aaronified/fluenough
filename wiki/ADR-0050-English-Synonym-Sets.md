@@ -2,8 +2,10 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Proposed (the file format of a new card field and of reviewer
-  proposals needs the owner's nod: see the plan's questions)
+- **Status:** Accepted (owner, 2026-10-30, on #924) for: bundled delivery,
+  typo tolerance, the match scope, the `not_synonyms` field and the reviewer
+  proposal fields. Details still open (plan questions 6, 7, 8, 10, 11) stay
+  Proposed and have recommendations.
 - **Date:** 2026-10-30
 - **Builds on:** ADR-0034 (Hear types the meaning), ADR-0038 (review
   proposals), ADR-0040 (decks are CC BY-SA). Plan:
@@ -36,6 +38,16 @@ The owner's decisions of 2026-10-30, on #924:
   first and safest kind of set, seeded first (owner, 2026-10-30).
 - **Every list is poked for holes** by an independent Sonnet pass before it
   ships.
+
+The owner's answers on this ADR (2026-10-30, on #924):
+
+- **Delivery:** bundled in the app first.
+- **Typos:** yes, the same tolerance as the card's own answer.
+- **Match scope:** "Whole answer, or when preceded by an article or verb and
+  without anything succeeding (add the phrasal verbs as exceptions). Think
+  of what else. Think only in context of English."
+- **Schema:** both `not_synonyms` (0.6.x) and the reviewer proposal fields
+  `alt_native_add` and `not_synonyms_add` (0.7.0) are approved.
 
 ## Decision
 
@@ -93,34 +105,56 @@ sets:
 
 ### How matching works
 
-The synonym pass sits **after** the existing exact and diacritic passes and
-**before** the typo pass, so a card's own answers always win and a typo is
-only ever forgiven against the card's own answers.
+The synonym pass sits **after** the existing exact and diacritic passes (a
+card's own answers always win), and its typo pass after the card's own typo
+pass. The owner's scope (2026-10-30, on #924): "Whole answer, or when
+preceded by an article or verb and without anything succeeding (add the
+phrasal verbs as exceptions). Think of what else. Think only in context of
+English." The precise rules are in
+[Plan-Synonym-Dictionary](Plan-Synonym-Dictionary#the-match-scope-in-detail),
+with the behaviour table; in short:
 
-1. Both sides are put in `meaningKey` form (case, punctuation, brackets,
-   contractions, "to", "ok", "please": rules 1 to 7 stay as they are).
-2. **Inflection.** A typed word and an expected word are each split into a
-   lemma and an ending by regular rules only: `-s`, `-es`, `-ies`, `-ed`,
-   `-ing`, doubled consonants, a dropped `e`. They match when their endings
-   are the same and their lemmas are in one set. So with a set of "florp" and
-   "glim", "florped" matches "glim" only as "glimmed": the past form of
-   a member accepts the past form of another, and "florps" does not accept
-   "glim". The split is tried on the last word of a
-   phrase ("takes care" is "take care" plus `-s`). A form that is itself a
-   member is read as that member first. Irregular forms are not guessed.
-3. The **whole answer** is compared: a synonym replaces the whole answer
-   or an entire `;` alternative, never a word inside a longer sentence
-   (open question 2).
-4. **Every accepted form of the card** counts: the `native` text's `;`
-   parts, `alt_native`, with brackets dropped, as `meaningKeys` gives them.
-5. **No typo distance on synonyms.** A typed word one letter from a member
-   is not accepted: two forgivenesses stacked accept real other words
-   (bat, cat). A typo of the card's own answer is forgiven as before
-   (open question 3).
-6. The result is `AnswerOutcome.exact` (grade 5) with a new flag on
-   `GradedAnswer`, `viaSynonym`, the way `droppedArticle` is a flag and
-   not an outcome, so no switch over the outcomes changes. `matched` is the
-   card's own answer, not the typed word.
+1. **Keys.** Both sides are put in `meaningKey` form (rules 1 to 7 stay as
+   they are: case, punctuation, contractions, brackets, a leading "to",
+   "ok", "please"). Every accepted form of the card counts (the `native`
+   text's `;` parts and `alt_native`, brackets dropped), each tried alone.
+2. **Frame.** A typed answer is `[lead] core`, with at most one lead word
+   and nothing after the core. The lead is an article (a, an, the) or the
+   infinitive "to", free on either side; or a possessive, demonstrative or
+   copula (my, your, this, that, is, are, be and the like), which must be
+   the same on both sides. The core must be a whole member of a set (or an
+   inflection of one, below). A synonym is never a word inside a longer
+   sentence, so nothing after the core is ever tolerated: "give up" is not
+   "give", "put off" is not "delay", "very big" is not "big", "not big" is
+   not "small". A phrasal verb matches only when a set lists the phrasal
+   verb itself.
+3. **Inflection.** The core is split into a lemma and a regular ending
+   (`-s`, `-es`, `-ies`, `-ed`, `-ing`, `-er`, `-est`, doubled consonant,
+   dropped `e`) and matches when the endings are equal and the lemmas are
+   in one set; a form that is itself a member is read as that member
+   first. A phrasal verb is split on its verb, not on its particle. Irregular
+   forms are sets of their own.
+4. **Typos: yes, the same tolerance as the card's own answer** (owner,
+   2026-10-30; this replaces the earlier "no typo distance on synonyms").
+   After the card's own typo pass fails, the typed core is compared with
+   each member of the matching sets using the grader's own thresholds
+   (`typoDistance`, `longTypoDistance`, `longThreshold`, `shortThreshold`),
+   counted in the letters of the member's lemma: none under three, one for
+   three to seven, two from eight. Two safeguards keep the short-word risk
+   (car / cat) at the card's own level: a typed word that is itself a member
+   of any set is a real word and is never typo-matched to another set, and a
+   typo match is only ever `closeTypo`, never exact (below). Nothing else
+   stacks: a typo is tried on the core after the lead is removed, the
+   ending must be equal, and the lead rules are not relaxed.
+5. **Result.** An exact match is `AnswerOutcome.exact` (grade 5) with a new
+   flag on `GradedAnswer`, `viaSynonym`, the way `droppedArticle` is a flag
+   and not an outcome, so no switch over the outcomes changes. A typo match
+   is `closeTypo` (grade 3, as for the card's own typos) with the same
+   flag. `matched` is the card's own answer, not the typed word.
+6. **Which side leads.** The "to" lead counts only when the card's own
+   answer also starts with "to" (a verb card); an article lead on one side
+   and "to" on the other is a part-of-speech clash and refuses ("a run" is
+   not "to sprint").
 
 ### The wrong-sense escape: `not_synonyms`
 
@@ -137,8 +171,8 @@ whose set partner is wrongly accepted: `not_synonyms: ["shore"]`.
 - A card older apps cannot read: a released parser rejects an unknown
   field, so decks use `not_synonyms` only a release after the app that
   reads it (as for `warning`, #691). The schema change needs the owner's
-  nod (AGENTS.md, "What an agent must not decide alone"); it is open
-  question 4.
+  nod (AGENTS.md, "What an agent must not decide alone"), given on
+  2026-10-30; the field ships in 0.6.x.
 - A set that many cards escape is the real fix: the validator reports it
   (below) and the set is removed or split.
 
@@ -157,8 +191,8 @@ automation carries it: `field` gains two values for the layer card,
 `alt_native_add` (`text` is one extra accepted answer, appended to
 `alt_native` when agreed) and `not_synonyms_add` (appended to
 `not_synonyms`). This changes the proposal format and `tools/proposals.py`,
-`tools/review_bot.py` and reviewer mode, so it needs the owner's nod
-(open question 5) and ships with the reviewer-mode overhaul (0.7.0). A
+`tools/review_bot.py` and reviewer mode, and the owner approved
+both (2026-10-30); it ships with the reviewer-mode overhaul (0.7.0). A
 reviewer never edits the shared file: a word proposed for the same card
 answer on several cards becomes a candidate set, reported to the owner by a
 tool, and goes through the seeding workflow below.
@@ -202,7 +236,9 @@ answer, and one hint: `Also: {typed}`, the learner's own word in the hint,
 for a typed answer of one or two words; "Also right" for a longer one. No
 full stop, like every hint (wiki Design-Guidelines, #913). The text is an
 ICU token in `lib/l10n/app_en.arb`; no literal in the widget (rule 10). The
-screen reader reads the hint. The grade is the same as an exact answer.
+screen reader reads the hint. The grade is the same as an exact answer. For a typo match
+(`closeTypo`) the hint shows the member spelled right, not the typed misspelling,
+and the grade is the card's own typo grade.
 
 ### Attribution and licence
 
@@ -221,10 +257,12 @@ behaviour"): the Dart tests build a `SynonymSets` from a string with words
 such as "florp" and "glim", and check what a learner sees: a member accepts
 another and the reveal says so; the card's own answer still wins and is
 not marked as a synonym; an inflection matches only with its own ending; a
-`not_synonyms` entry blocks; a typo of a member is not accepted while a typo
-of the card's own answer is; a malformed file grades as before. The Python
+`not_synonyms` entry blocks; a typo of a member is `closeTypo` and flagged, and not
+accepted under three letters or when the typed word is a member of another
+set; a leading article is free and a possessive must match; a phrasal verb
+or a trailing word refuses; a malformed file grades as before. The Python
 tests give the validator fixtures with made-up words and check each refusal
-(a word in two sets, an unsorted file, a dead `not_synonyms`). Roughly six
+(a word in two sets, an unsorted file, a dead `not_synonyms`). Roughly ten
 Dart and five Python tests in all; no per-line tests of the parser.
 
 ## Consequences
@@ -244,7 +282,7 @@ Dart and five Python tests in all; no per-line tests of the parser.
   agree; a shared list of cases (a JSON fixture both test suites read)
   keeps them so.
 - Bundling means a new set reaches learners with the next app release;
-  open question 1 asks whether it should follow the decks instead.
+  the owner chose this first (2026-10-30); following the decks can come once the file grows.
 - Nothing about target-language synonyms is decided here.
 
 ## Alternatives considered
@@ -255,8 +293,9 @@ Dart and five Python tests in all; no per-line tests of the parser.
 - **WordNet synsets taken whole:** large, and synsets hold near-synonyms
   and hypernyms; far too loose for "absolutely synonymous".
 - **Accepting synonyms as "close":** the owner chose right, with a hint.
-- **Typo tolerance on synonyms:** rejected above.
-- **Word-by-word substitution inside sentences:** left to open question 2.
+- **No typo tolerance on synonyms** (the first recommendation): the owner
+  chose the card's own tolerance instead, with the safeguards above.
+- **Word-by-word substitution inside sentences:** rejected by the owner's scope (a lead and nothing after).
 - **Letting the model grade meanings (the AI-conversation plan):** not
   offline, and not deterministic.
 - **JSON or one word per line:** a list of lists in YAML matches the decks'
