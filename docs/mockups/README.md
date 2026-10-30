@@ -4,6 +4,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `languages-merged.html`: one Languages page replacing Languages I know and
+  Languages I'm learning (owner, 2026-10-30: "can we merge languages I know
+  with languages i am learning?"; chose "One list, two roles"). Built on the
+  approved Languages I'm learning mockup (2026-10-27) with a Know role, role
+  filters, Add a language, removing a role, the Settings and onboarding
+  entries and empty states. Hindustani and Bengali, light and dark, 1.4x.
+  Open choices and the self-check are in `languages-merged.md`.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
