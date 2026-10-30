@@ -20,6 +20,7 @@ import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
+import '../core/scheduling/daily_timer.dart';
 import '../core/scheduling/script_split.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
@@ -2528,9 +2529,8 @@ class AppState extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // The day's session (#521, #485)
 
-  /// The most new words one daily session teaches: what a lesson teaches
-  /// (ADR-0024).
-  static const int dailyNewCap = 9;
+  /// The most new words one daily session teaches (owner, 2026-10-30).
+  static const int dailyNewCap = DailyPlanner.newCap;
 
   /// What the log says of the time answers took, for [language] (every
   /// language when null). The log is read once, each answer added to its
@@ -2579,7 +2579,8 @@ class AppState extends ChangeNotifier {
     final extra = settings.dailyExtraFor(code, at);
     final minutes = max(DailyBudget.minMinutes, goal + extra);
     final times = _timesIn(code, at);
-    final spent = times.spent;
+    // Teach cards are timed like answers (#886), in the settings.
+    final spent = times.spent + settings.teachTimeOn(at, language: code);
     final perCard = times.secondsPerCard;
     final due = buildSession(DrillRequest.today(language: code)).length;
     final newAvailable = min(dailyNewCap, untaughtCards(code).length);
@@ -2623,28 +2624,128 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  /// The items of the day's session for [request]: the reviews the rest of
-  /// the budget buys, the most forgotten first (lowest predicted recall,
-  /// then most overdue), then a lesson of the new words it buys.
-  List<SessionItem> dailyItems(DrillRequest request) {
-    final language = <LanguageInfo>[
+  /// The day's session in [language], run on a clock (#886): the time left
+  /// today, which is the day's minutes less what is spent, or a step of
+  /// minutes once it is all spent ("Keep going"). Null for a language the
+  /// learner has no decks of.
+  DailyRun? startDaily(String language) {
+    final info = <LanguageInfo>[
       for (final entry in decks)
-        if (entry.language.code == request.language) entry.language,
+        if (entry.language.code == language) entry.language,
     ].firstOrNull;
-    if (language == null) return const <SessionItem>[];
-    final plan = dailyPlanFor(language);
-    final due = DailyBudget.mostForgottenFirst(
-      buildSession(DrillRequest.today(language: language.code)).items,
-      now(),
+    if (info == null) return null;
+    final plan = dailyPlanFor(info);
+    final left = Duration(minutes: plan.minutes) - plan.spent;
+    return DailyRun(
+      language: language,
+      clock: DailyCountdown(
+        budget: left > Duration.zero
+            ? left
+            : const Duration(minutes: DailyBudget.stepMinutes),
+        now: now(),
+      ),
     );
-    return <SessionItem>[
-      ..._asked(due.take(plan.split.reviews).toList()),
-      if (plan.split.newWords > 0)
-        ...lessonFor(
-          DrillRequest.lesson(language: language.code),
-          words: plan.split.newWords,
-        ),
+  }
+
+  /// The next round of [run]'s session, built only when the last is done
+  /// (#886, owner, 2026-10-29 and 2026-10-30): empty when the time is used
+  /// up or nothing is left to ask.
+  ///
+  /// The round's size follows the time left ([DailyPlanner.next]). While
+  /// reviews are due they come most forgotten first, with new words
+  /// between. With none due, new words are taught, up to 15 in all, and
+  /// asked twice with older reviews mixed in; the rest of the time is
+  /// filled with reviews of the cards closest to due.
+  List<SessionItem> nextDailyRound(DailyRun run) {
+    final at = now();
+    final language = run.language;
+    final times = _timesIn(language, at);
+    final teach = settings.teachTimeTotal(language: language);
+    final goal = settings.dailyMinutesFor(language);
+    final dayCards = DailyBudget.cardsFor(
+      goal,
+      secondsPerCard: times.secondsPerCard,
+    );
+    final due = <SessionItem>[
+      for (final item in DailyBudget.mostForgottenFirst(
+        buildSession(DrillRequest.today(language: language)).items,
+        at,
+      ))
+        if (!run.asked.contains(item.card.id)) item,
     ];
+    final closest = <SessionItem>[
+      for (final item in buildSession(
+        DrillRequest(revise: true, language: language),
+      ).items)
+        if (item.state != null &&
+            !item.state!.isDue(at) &&
+            !run.asked.contains(item.card.id))
+          item,
+    ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
+    var fresh = untaughtCards(language).length;
+    for (var attempt = 0; attempt < 2; attempt++) {
+      final round = DailyPlanner.next(
+        left: run.clock.remainingAt(at),
+        due: due.length,
+        newAvailable: fresh,
+        closest: closest.length,
+        secondsPerReview: times.secondsPerCard,
+        secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
+        taughtSoFar: run.taught,
+        catchingUp: due.length > DailyBudget.backlogDays * dayCards,
+      );
+      if (round.isEmpty) return const <SessionItem>[];
+      final pick = round.reviews > 0
+          ? due.take(round.reviews)
+          : closest.take(round.fillers);
+      final older = _asked(pick.toList());
+      final teaches = <SessionItem>[];
+      final firstPass = <SessionItem>[];
+      final secondPass = <SessionItem>[];
+      if (round.newWords > 0) {
+        final seen = <String>{};
+        for (final item in lessonFor(
+          DrillRequest.lesson(language: language),
+          words: round.newWords,
+          beyondRoom: true,
+        )) {
+          if (item.ask.onlyShows) {
+            teaches.add(item);
+          } else if (seen.add(item.card.id)) {
+            firstPass.add(item);
+          } else {
+            secondPass.add(item);
+          }
+        }
+        if (teaches.isEmpty && firstPass.isEmpty) {
+          // Nothing to teach after all: plan again without new words.
+          fresh = 0;
+          continue;
+        }
+      }
+      final items = DailyPlanner.arrange<SessionItem>(
+        older: older,
+        taught: teaches,
+        firstPass: firstPass,
+        secondPass: secondPass,
+      );
+      if (items.isEmpty) return items;
+      run.taught += <String>{
+        for (final item in teaches.isEmpty ? firstPass : teaches)
+          for (final member in item.group.isEmpty
+              ? <SessionItem>[item]
+              : item.group)
+            member.card.id,
+      }.length;
+      for (final item in items) {
+        run.asked.add(item.card.id);
+        for (final member in item.group) {
+          run.asked.add(member.card.id);
+        }
+      }
+      return items;
+    }
+    return const <SessionItem>[];
   }
 
   final Expando<FormSiblings> _siblingIndex = Expando<FormSiblings>();
@@ -2825,7 +2926,15 @@ class AppState extends ChangeNotifier {
   ///
   /// With [words], the lesson teaches that many words at most, the easiest
   /// first: the new words of a day's session (#485).
-  List<SessionItem> lessonFor(DrillRequest request, {int? words}) {
+  ///
+  /// With [beyondRoom], [words] is not held to what the mastery bar leaves
+  /// room for: the daily session's own cap says how many (#886, owner,
+  /// 2026-10-30: "Placement allows. But capped at 15").
+  List<SessionItem> lessonFor(
+    DrillRequest request, {
+    int? words,
+    bool beyondRoom = false,
+  }) {
     final cards = untaughtCards(
       request.language!,
       deckId: request.deckIds?.single,
@@ -2854,7 +2963,9 @@ class AppState extends ChangeNotifier {
     final room = lessonRoom(inProgressIn(request.language!));
     final picked = lessonItems(
       taught,
-      room: words == null ? room : min(room, words),
+      room: words == null
+          ? room
+          : (beyondRoom ? words : min(room, words)),
     );
     final modesOf = drillableModesNow();
     final lesson = lessonSets(

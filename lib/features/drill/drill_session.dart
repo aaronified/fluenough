@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 
 import '../../app/app_state.dart';
+import '../../app/daily_plan.dart' show DailyRun;
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
@@ -18,6 +19,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
+import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
@@ -103,6 +105,7 @@ class DrillSession extends ChangeNotifier {
     this.recorded = true,
     this.revising = false,
     this.recordsRevision = false,
+    this.daily,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(
@@ -112,7 +115,7 @@ class DrillSession extends ChangeNotifier {
        _state = state,
        _chosenMode = inputMode,
        _random = random ?? state.random,
-       items = List<SessionItem>.unmodifiable(items),
+       _items = List<SessionItem>.of(items),
        startedAt = state.now(),
        _showingPassage = items.first.card is QuestionCard {
     _watch.start();
@@ -123,8 +126,30 @@ class DrillSession extends ChangeNotifier {
   /// Shuffles the options of a multiple-choice question (#148).
   final math.Random _random;
 
-  /// The whole session in the order it is drilled, built once at the start.
-  final List<SessionItem> items;
+  /// The session in the order it is drilled: all of it from the start, or,
+  /// in a [daily] session, the rounds so far, a round more added when the
+  /// last is done.
+  List<SessionItem> get items => _items;
+  final List<SessionItem> _items;
+
+  /// The day's session, run on a clock (#886), or null for one of a fixed
+  /// set of cards. It ends when the clock runs out, and the next round is
+  /// built only when the last is done.
+  final DailyRun? daily;
+
+  /// The clock of a [daily] session.
+  DailyCountdown? get clock => daily?.clock;
+
+  /// What the clock shows: the time left now.
+  Duration get timeLeft =>
+      daily?.clock.remainingAt(_state.now()) ?? Duration.zero;
+
+  @override
+  void notifyListeners() {
+    // Anything the learner does shows a new screen: the clock runs again.
+    daily?.clock.screenShown(_state.now());
+    super.notifyListeners();
+  }
 
   final DateTime startedAt;
 
@@ -961,6 +986,15 @@ class DrillSession extends ChangeNotifier {
   /// questions are.
   void learnt() {
     if (!ask.onlyShows) return;
+    // A teach card is timed like an answer (#886): its time counts toward
+    // the day's minutes and the hours, kept beside the log.
+    if (recorded || recordsRevision) {
+      _state.settings.addTeachTime(
+        deck.language.code,
+        _state.now(),
+        _watch.elapsed,
+      );
+    }
     _advance();
   }
 
@@ -1329,6 +1363,21 @@ class DrillSession extends ChangeNotifier {
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
       next++;
+    }
+    final run = daily;
+    if (run != null) {
+      if (run.clock.expiredAt(_state.now())) {
+        next = items.length;
+      } else if (next >= items.length) {
+        // The round is done: the next is built on the time left.
+        final more = _state.nextDailyRound(run);
+        final from = items.length;
+        _items.addAll(more);
+        next = from;
+        while (next < items.length && !_drillable(items[next])) {
+          next++;
+        }
+      }
     }
     if (next >= items.length) {
       _endedAt = _state.now();

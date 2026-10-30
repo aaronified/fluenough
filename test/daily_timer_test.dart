@@ -1,3 +1,4 @@
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/scheduling/daily_budget.dart';
 import 'package:fluenough/core/scheduling/daily_timer.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -7,8 +8,11 @@ void main() {
   DateTime at(int seconds) => start.add(Duration(seconds: seconds));
 
   group('the countdown', () {
-    test('ticks while the screen is new, and pauses after 30 seconds on it', () {
-      final clock = DailyCountdown(budget: const Duration(minutes: 5), now: start);
+    test('ticks, and pauses after 30 seconds on one screen', () {
+      final clock = DailyCountdown(
+        budget: const Duration(minutes: 5),
+        now: start,
+      );
       expect(clock.remainingAt(at(10)), const Duration(seconds: 290));
       expect(clock.pausedAt(at(10)), isFalse);
       // Away: a minute on one screen counts for 30 seconds only.
@@ -20,7 +24,10 @@ void main() {
     });
 
     test('is used up when the budget is spent, and never goes below zero', () {
-      final clock = DailyCountdown(budget: const Duration(seconds: 40), now: start);
+      final clock = DailyCountdown(
+        budget: const Duration(seconds: 40),
+        now: start,
+      );
       expect(clock.expiredAt(at(20)), isFalse);
       clock.screenShown(at(25));
       clock.screenShown(at(50));
@@ -52,8 +59,10 @@ void main() {
       final heavy = next(due: 200);
       final light = next(due: 10);
       // Many due: many reviews to each new word; few due: few.
-      expect(heavy.reviews / heavy.newWords,
-          greaterThan(light.reviews / light.newWords));
+      expect(
+        heavy.reviews / heavy.newWords,
+        greaterThan(light.reviews / light.newWords),
+      );
       expect(heavy.newWords, greaterThan(0));
       expect(heavy.fillers, 0);
     });
@@ -100,7 +109,7 @@ void main() {
   });
 
   group('the order of a round', () {
-    test('words are asked twice, never at once, with older reviews between', () {
+    test('words are asked twice, not at once, with older reviews between', () {
       final order = DailyPlanner.arrange<String>(
         older: <String>['o1', 'o2', 'o3', 'o4', 'o5', 'o6'],
         taught: <String>['teach-a', 'teach-b'],
@@ -138,5 +147,24 @@ void main() {
       DailyBudget.defaultSecondsPerTeach,
     );
     expect(DailyBudget.secondsPerTeach(const Duration(seconds: 200), 10), 20);
+  });
+
+  test('teach card time is kept by day, capped, and survives a restore', () {
+    final settings = SettingsNotifier()
+      ..addTeachTime('hi', start, const Duration(seconds: 8))
+      ..addTeachTime('hi', start, const Duration(minutes: 5))
+      ..addTeachTime('es', start, const Duration(seconds: 10));
+    final restored = SettingsNotifier()..restore(settings.toStored());
+    // The five minutes count as the most one card counts for, a minute.
+    expect(
+      restored.teachTimeOn(start, language: 'hi'),
+      const Duration(seconds: 68),
+    );
+    expect(restored.teachTimeOn(start), const Duration(seconds: 78));
+    expect(
+      restored.teachTimeOn(start.add(const Duration(days: 1))),
+      Duration.zero,
+    );
+    expect(restored.teachTimeTotal(language: 'hi').cards, 2);
   });
 }

@@ -4657,20 +4657,29 @@ cards:
                   .items)
             item.card.id,
         };
-        final items = state.dailyItems(
-          const DrillRequest.daily(language: 'hi'),
-        );
+        // The session runs on a clock and builds a round at a time: the
+        // first holds reviews before the first word taught, and no card is
+        // asked again in the next.
+        final run = state.startDaily('hi')!;
+        final items = state.nextDailyRound(run);
+        expect(items, isNotEmpty);
+        expect(items.first.ask, isNot(Ask.teach));
+        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
+        expect(firstTeach, greaterThan(0));
+        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
         final askedIds = <String>{
           for (final item in items)
             for (final entry
                 in item.group.isEmpty ? <SessionItem>[item] : item.group)
               entry.card.id,
         };
-        expect(askedIds.containsAll(dueIds), isTrue);
-        // The reviews come first, the lesson's teaching after them.
-        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
-        expect(firstTeach, greaterThan(0));
-        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
+        expect(askedIds.intersection(dueIds), isNotEmpty);
+        final next = state.nextDailyRound(run);
+        for (final item in next) {
+          if (item.ask == Ask.own) {
+            expect(askedIds.contains(item.card.id), isFalse);
+          }
+        }
 
         // A 5 minute day buys 17 cards: the 8 reviews and the new words fill
         // them, and a day over by a few reviews keeps its 3 new words.
