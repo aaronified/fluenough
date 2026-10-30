@@ -248,6 +248,49 @@ python3 tools/validate_decks.py decks/
 `test_import_wiktionary.py` tests it on `fixtures/wiktionary`, with the
 network and ffmpeg replaced.
 
+## `import_phonetic.py` and `derive_phonetic.py`
+
+Write each card's narrow `[ ]` IPA into its `phonetic` field, with
+`phonetic_source` saying where it came from (owner, 2026-10-26 and
+2026-10-30; [Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology)).
+Both patch the deck's text: two lines go in after the card's `ipa:` line and
+no other line changes. A card that already has a `phonetic` is skipped, and
+so is one without an `ipa:` line. Without `--write` they only report. Run
+the import first, then the derivation for what is left.
+
+```sh
+python3 tools/import_phonetic.py bn                 # report; downloads the dump once
+python3 tools/import_phonetic.py bn --write         # patch the decks
+python3 tools/import_phonetic.py bn --dump Bengali.jsonl --report bn.md
+python3 tools/derive_phonetic.py bn --write         # rules, for the rest
+python3 tools/derive_phonetic.py bn --bracket-unchanged --write
+```
+
+`import_phonetic.py` reads the language's Wiktextract dump from
+kaikki.org (`https://kaikki.org/dictionary/<Language>/kaikki.org-dictionary-<Language>.jsonl`,
+English Wiktionary, CC BY-SA 4.0), downloaded once with `urllib` into
+`.cache/phonetic/` (git-ignored; `--refresh` fetches it again, `--dump FILE`
+uses one you have). It finds a card's entries as `import_wiktionary.py` does
+(the title is the card's `target`, the part of speech and meaning fit), takes
+the first narrow `[ ]` pronunciation of the language's variety, drops the
+syllable dots, writes Latin g as ɡ, and keeps it only if it is IPA letters
+and marks, NFC, and every entry that fits agrees. The variety per language
+is in `VARIETIES` in the tool: Bengali the Kolkata standard (Wiktionary's
+Rarh), Hindustani the Standard Hindi forms, Spanish the untagged form.
+Another language needs its variety named there first. Words and set phrases
+are covered; sentences are not on Wiktionary.
+
+`derive_phonetic.py` applies the ordered rules of
+`decks/<lang>/<lang>-phonetics.yaml` ([format](https://github.com/aaronified/fluenough/blob/main/docs/DECK-FORMAT.md#phonetic-rules-files))
+to the broad `ipa`. A card the rules do not change gets nothing unless
+`--bracket-unchanged`.
+
+Both report, per deck and in all, how many cards were filled, already had a
+`phonetic`, had no `ipa` line, and why the rest were not (no entry, no narrow
+form, another variety only, ambiguous, invalid; or, for the rules, unchanged
+or invalid). `test_phonetic.py` tests them on a fake dump and a tiny
+language, with no network.
+
 ## `wikipedia_frequency.py`
 
 Counts how often each word is used in a language's Wikipedia, and gives

@@ -1,0 +1,18 @@
+schema: 1
+kind: "phonetics"
+id: "bn-phonetics"
+language: "bn"
+variety: "Standard Colloquial Bengali of Kolkata, as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here, so few cards change: the course's broad ipa for Bengali already writes the dental stops, the aspirates, the flap and the nasal vowels, and a rule left out is not a claim that it does not exist."
+rules:
+  # A nasal takes the place of the stop after it, inside a word.
+  # source: Khan, "Bengali (Bangladeshi Standard)", Journal of the International Phonetic Association 40(2) (2010): 221-225; Wikipedia, Bengali phonology, "Consonants" (CC BY-SA 4.0).
+  - id: "bn-n-velar"
+    pattern: 'n(?=ˈ?[kɡ])'
+    replace: 'ŋ'
+    source: 'Khan, "Bengali (Bangladeshi Standard)", Journal of the International Phonetic Association 40(2) (2010): 221-225; Wikipedia, Bengali phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "bn-n-palatal"
+    pattern: 'n(?=ˈ?(?:tʃ|dʒ))'
+    replace: 'ɲ'
+    source: 'Khan, "Bengali (Bangladeshi Standard)", Journal of the International Phonetic Association 40(2) (2010): 221-225; Wikipedia, Bengali phonology, "Consonants" (CC BY-SA 4.0).'
+
