@@ -240,7 +240,7 @@ class _SkillTile extends StatelessWidget {
       height: 28,
       decoration: BoxDecoration(
         color: scheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       child: Icon(Icons.abc, size: 22, color: scheme.onSecondaryContainer),
     ),
@@ -356,7 +356,7 @@ class _SkillTile extends StatelessWidget {
       ),
     );
 
-    final radius = BorderRadius.circular(AppRadii.small);
+    final radius = BorderRadius.circular(AppRadii.field);
     void setUp() => AppNavigator.openVoices(context);
     final VoidCallback? start = due > 0
         ? () => AppNavigator.startDrill(context, _review)

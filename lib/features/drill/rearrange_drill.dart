@@ -222,7 +222,7 @@ class _WordTile extends StatelessWidget {
       child: Material(
         color: scheme.surfaceContainerLow,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           side: BorderSide(color: scheme.outline),
         ),
         clipBehavior: Clip.antiAlias,

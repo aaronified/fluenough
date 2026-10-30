@@ -73,7 +73,7 @@ class AlikeWarning extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
         decoration: BoxDecoration(
           color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

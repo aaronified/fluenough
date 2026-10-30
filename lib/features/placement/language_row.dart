@@ -44,7 +44,7 @@ class StageTag extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             color: scheme.tertiaryContainer,
-            borderRadius: BorderRadius.circular(AppRadii.innerRow),
+            borderRadius: BorderRadius.circular(AppRadii.control),
           ),
           child: Text(
             tag.text,

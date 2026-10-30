@@ -175,7 +175,7 @@ class NativeChoiceCards extends StatelessWidget {
             padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 16, 14),
             decoration: BoxDecoration(
               color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(AppRadii.tile),
+              borderRadius: BorderRadius.circular(AppRadii.field),
             ),
             child: Row(
               children: <Widget>[

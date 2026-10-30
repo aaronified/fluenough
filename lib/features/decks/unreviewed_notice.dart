@@ -30,7 +30,7 @@ class UnreviewedNotice extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 10, 4),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

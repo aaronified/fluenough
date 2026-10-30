@@ -232,7 +232,7 @@ class _AllTagsPageState extends State<AllTagsPage> {
                       ],
                     ),
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius: BorderRadius.circular(AppRadii.mark),
                       child: LinearProgressIndicator(
                         value: tally?.ratio ?? 0,
                         minHeight: 6,

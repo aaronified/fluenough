@@ -137,7 +137,7 @@ class _BrailleKeyboardState extends State<BrailleKeyboard> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: scheme.surfaceContainerLowest,
-                      borderRadius: BorderRadius.circular(AppRadii.tile),
+                      borderRadius: BorderRadius.circular(AppRadii.field),
                       border: Border.all(color: scheme.outlineVariant),
                     ),
                     child: Text(

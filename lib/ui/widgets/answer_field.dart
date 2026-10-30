@@ -71,7 +71,7 @@ class AnswerField extends StatelessWidget {
     final rtl = language.rightToLeft && script;
     final keyboard = script ? language.keyboard : null;
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppRadii.tile),
+      borderRadius: BorderRadius.circular(AppRadii.field),
       borderSide: BorderSide(color: scheme.primary, width: 2),
     );
     final field = MergeSemantics(

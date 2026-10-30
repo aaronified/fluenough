@@ -172,7 +172,7 @@ class LeechCard extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           color: scheme.errorContainer,
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
         ),
         child: Text(
           l10n.leechesLapses(leech.lapses),

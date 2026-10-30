@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../../core/models/deck.dart';
+import '../theme.dart';
 import 'target_text.dart';
 
 /// What a drill's feedback says about the answer, which sets its colour and
@@ -90,7 +91,7 @@ class FeedbackBanner extends StatelessWidget {
         padding: const EdgeInsetsDirectional.all(16),
         decoration: BoxDecoration(
           color: bg,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(AppRadii.card),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

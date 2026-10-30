@@ -78,7 +78,7 @@ class DeckFacts extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(16),
       decoration: BoxDecoration(
         border: Border.all(color: scheme.outlineVariant),
-        borderRadius: BorderRadius.circular(AppRadii.tile),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Table(
         columnWidths: const <int, TableColumnWidth>{

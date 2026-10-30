@@ -359,7 +359,7 @@ class _Preview extends StatelessWidget {
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: bg,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppRadii.field),
           ),
           child: Text(
             label,
@@ -482,13 +482,13 @@ class _SeedPicker extends StatelessWidget {
         excludeSemantics: true,
         onTap: pick == null ? null : () => pick(seed),
         child: InkWell(
-          borderRadius: BorderRadius.circular(AppRadii.tile),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           onTap: pick == null ? null : () => pick(seed),
           child: Ink(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: isSelected ? theme.colorScheme.surfaceContainerHigh : null,
-              borderRadius: BorderRadius.circular(AppRadii.tile),
+              borderRadius: BorderRadius.circular(AppRadii.field),
             ),
             child: Column(
               children: <Widget>[
@@ -581,7 +581,7 @@ class _Swatch extends StatelessWidget {
                 height: 28,
                 decoration: BoxDecoration(
                   color: scheme.primary,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(AppRadii.chip),
                 ),
                 child: Icon(Icons.check, size: 18, color: scheme.onPrimary),
               ),

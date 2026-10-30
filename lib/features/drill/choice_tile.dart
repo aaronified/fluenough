@@ -57,7 +57,7 @@ class ChoiceTile extends StatelessWidget {
         child: Material(
           color: bg,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadii.small),
+            borderRadius: BorderRadius.circular(AppRadii.field),
             side: BorderSide(
               color: answered && !right && !wrong
                   ? scheme.outlineVariant

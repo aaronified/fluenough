@@ -249,7 +249,7 @@ class _InstalledBadge extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: scheme.primaryContainer,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       child: Text(
         label,

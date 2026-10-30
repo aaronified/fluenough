@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme.dart';
+
 /// One choice in a [Segmented] group.
 class SegmentOption<T> {
   const SegmentOption({
@@ -110,8 +112,9 @@ class _Segment<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    // A stadium on purpose: the pill follows the segment's height.
     final pill = Radius.circular(height / 2);
-    const square = Radius.circular(8);
+    const square = Radius.circular(AppRadii.control);
     final radius = selected
         ? BorderRadiusDirectional.all(pill)
         : BorderRadiusDirectional.horizontal(

@@ -207,7 +207,7 @@ class SetMemberRow extends StatelessWidget {
       SetMark.notLearnt => DecoratedBox(
         decoration: BoxDecoration(
           border: Border.all(color: scheme.outline),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppRadii.control),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -223,7 +223,7 @@ class SetMemberRow extends StatelessWidget {
       SetMark.fresh => DecoratedBox(
         decoration: BoxDecoration(
           color: scheme.primaryContainer,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppRadii.control),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -308,7 +308,7 @@ class SetMemberRow extends StatelessWidget {
       },
       child: Material(
         color: scheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppRadii.field),
         clipBehavior: Clip.antiAlias,
         child: play == null
             ? row

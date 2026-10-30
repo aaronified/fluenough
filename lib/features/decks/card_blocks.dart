@@ -137,7 +137,7 @@ class _Block extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: background,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -464,7 +464,7 @@ class CardTags extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppRadii.control),
             ),
             child: Text(
               tag,

@@ -346,7 +346,7 @@ class _BackupRow extends StatelessWidget {
               onTap: onTap,
               child: InkWell(
                 onTap: onTap,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(AppRadii.field),
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(minHeight: 56),
                   child: Padding(

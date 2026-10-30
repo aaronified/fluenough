@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
+import '../theme.dart';
 
 /// The language's icon, the first letter of its own name (ADR-0027), or for
 /// a language that names none, the glyph of its first deck in [decks].
@@ -43,7 +44,7 @@ class LanguageGlyphTile extends StatelessWidget {
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
       decoration: BoxDecoration(
         color: background,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(AppRadii.control),
       ),
       child: Center(
         widthFactor: 1,

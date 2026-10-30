@@ -980,7 +980,7 @@ class _RuleTable extends StatelessWidget {
           border: level == MasteryLevel.fresh
               ? Border.all(color: scheme.outline)
               : null,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppRadii.control),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(

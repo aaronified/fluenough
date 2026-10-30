@@ -333,7 +333,7 @@ class _Tile extends StatelessWidget {
         child: Material(
           color: bg,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadii.small),
+            borderRadius: BorderRadius.circular(AppRadii.field),
             side: BorderSide(color: border),
           ),
           clipBehavior: Clip.antiAlias,

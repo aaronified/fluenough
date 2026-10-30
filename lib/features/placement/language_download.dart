@@ -296,7 +296,7 @@ class _MarkedBar extends StatelessWidget {
           alignment: AlignmentDirectional.centerStart,
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(3),
+              borderRadius: BorderRadius.circular(AppRadii.mark),
               child: LinearProgressIndicator(
                 value: value,
                 minHeight: 6,
@@ -313,7 +313,7 @@ class _MarkedBar extends StatelessWidget {
                 width: 2,
                 decoration: BoxDecoration(
                   color: scheme.onSurface,
-                  borderRadius: BorderRadius.circular(AppRadii.innerRow),
+                  borderRadius: BorderRadius.circular(AppRadii.control),
                 ),
               ),
             ),

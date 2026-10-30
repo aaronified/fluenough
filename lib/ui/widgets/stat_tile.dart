@@ -101,7 +101,7 @@ class StatTile extends StatelessWidget {
         decoration: BoxDecoration(
           color: bg,
           borderRadius: BorderRadius.circular(
-            variant == StatTileVariant.compact ? AppRadii.tile : AppRadii.card,
+            variant == StatTileVariant.compact ? AppRadii.field : AppRadii.card,
           ),
         ),
         child: Column(

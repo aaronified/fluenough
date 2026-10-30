@@ -200,7 +200,9 @@ class _PlacementMatchState extends State<PlacementMatch> {
             ? scheme.secondaryContainer
             : null,
         minimumSize: const Size.fromHeight(56),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.field),
+        ),
         // Symmetric, with room at both ends for the number badge, so the
         // label sits in the middle.
         padding: const EdgeInsetsDirectional.symmetric(
@@ -352,7 +354,7 @@ class _PlacementTypeState extends State<PlacementType> {
           textDirection: widget.direction,
           decoration: InputDecoration(
             hintText: widget.hint,
-            border: const OutlineInputBorder(),
+            border: AppRadii.fieldBorder,
           ),
           onSubmitted: (_) => _check(),
           onChanged: (_) => setState(() {}),

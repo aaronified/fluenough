@@ -67,7 +67,7 @@ class PlacedReviewOptions extends StatelessWidget {
                       ? scheme.secondaryContainer
                       : scheme.surfaceContainerLow,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(AppRadii.field),
                     side: BorderSide(
                       color: picked ? scheme.primary : scheme.outlineVariant,
                       width: picked ? 2 : 1,
@@ -76,7 +76,7 @@ class PlacedReviewOptions extends StatelessWidget {
                   child: InkWell(
                     key: ValueKey<String>('placed-review-${choice.name}'),
                     customBorder: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(AppRadii.field),
                     ),
                     onTap: () => onChanged(choice),
                     child: Padding(

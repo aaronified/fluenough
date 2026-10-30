@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../theme.dart';
 
 /// The teach card's way of going on (owner, 2026-10-22, #691): no Back and
 /// Continue, but a swipe and two chevrons.
@@ -290,7 +291,7 @@ class _Chevron extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    const radius = Radius.circular(24);
+    const radius = Radius.circular(AppRadii.card);
     return PositionedDirectional(
       start: 0,
       end: 0,

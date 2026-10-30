@@ -252,7 +252,7 @@ class TaughtExample extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLowest,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

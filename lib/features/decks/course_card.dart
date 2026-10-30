@@ -196,7 +196,7 @@ class _DownloadBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           ClipRRect(
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(AppRadii.mark),
             child: LinearProgressIndicator(
               value: value,
               minHeight: 8,
@@ -249,7 +249,7 @@ class _ProgressBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           ClipRRect(
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(AppRadii.mark),
             child: LinearProgressIndicator(
               value: value,
               minHeight: 8,
@@ -370,7 +370,7 @@ class BeyondTheCourse extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 16, 10),
                   decoration: BoxDecoration(
                     color: scheme.surfaceContainerHigh,
-                    borderRadius: BorderRadius.circular(AppRadii.small),
+                    borderRadius: BorderRadius.circular(AppRadii.field),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,

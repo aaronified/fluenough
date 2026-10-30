@@ -103,7 +103,7 @@ class RecognitionDrill extends StatelessWidget {
             margin: const EdgeInsetsDirectional.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: scheme.outlineVariant,
-              borderRadius: BorderRadius.circular(2),
+              borderRadius: BorderRadius.circular(AppRadii.mark),
             ),
           ),
           // The word is on the card already: the rest of what its lesson

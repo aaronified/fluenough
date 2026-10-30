@@ -5,6 +5,7 @@ import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/path_parts.dart' show Pill;
 
@@ -98,7 +99,7 @@ class _FormRow extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: scheme.surfaceContainerHigh,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),

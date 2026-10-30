@@ -169,7 +169,7 @@ class _NeedRow extends StatelessWidget {
             if (need.level == MasteryLevel.learning) ...<Widget>[
               const SizedBox(height: 6),
               ClipRRect(
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(AppRadii.mark),
                 child: LinearProgressIndicator(
                   value: need.total == 0 ? 0 : need.known / need.total,
                   minHeight: 8,

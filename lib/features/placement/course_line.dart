@@ -52,6 +52,7 @@ class CourseLine extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   ClipRRect(
+                    // A stadium on purpose: the ends follow the line's thickness.
                     borderRadius: BorderRadius.circular(thickness / 2),
                     child: LinearProgressIndicator(
                       value: fills[i].clamp(0.0, 1.0),

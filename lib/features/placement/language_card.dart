@@ -308,7 +308,7 @@ class _Icon extends StatelessWidget {
         padding: const EdgeInsetsDirectional.all(6),
         decoration: BoxDecoration(
           color: scheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Text(
           language.icon ?? language.code,
@@ -334,7 +334,7 @@ class _Bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ExcludeSemantics(
     child: ClipRRect(
-      borderRadius: BorderRadius.circular(3),
+      borderRadius: BorderRadius.circular(AppRadii.mark),
       child: LinearProgressIndicator(
         value: value,
         minHeight: 6,
@@ -421,7 +421,7 @@ class _TaughtFrom extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: scheme.tertiaryContainer,
-                borderRadius: BorderRadius.circular(AppRadii.innerRow),
+                borderRadius: BorderRadius.circular(AppRadii.control),
               ),
               child: Text(
                 tag.$1,
@@ -455,7 +455,7 @@ class _Chip extends StatelessWidget {
       decoration: BoxDecoration(
         color: mine ? scheme.secondaryContainer : null,
         border: mine ? null : Border.all(color: scheme.outline),
-        borderRadius: BorderRadius.circular(AppRadii.innerRow),
+        borderRadius: BorderRadius.circular(AppRadii.control),
       ),
       child: Text(
         text,
@@ -722,7 +722,7 @@ class CardNotice extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(16),
       decoration: BoxDecoration(
         color: scheme.tertiaryContainer,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

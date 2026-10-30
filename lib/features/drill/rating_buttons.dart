@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 
 /// Recognition's four self-rating buttons: Again, Hard, Good, Easy, each
 /// with when the card would next be due.
@@ -23,8 +24,8 @@ class RatingButtons extends StatelessWidget {
 
   final ValueChanged<SelfGrade> onRate;
 
-  static const double _outer = 28;
-  static const double _inner = 10;
+  static const double _outer = AppRadii.group;
+  static const double _inner = AppRadii.chip;
   static const double _gap = 4;
 
   @override
