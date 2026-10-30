@@ -11,16 +11,12 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/expressive_shape.dart';
-import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 
-/// Above this text scale the three numbers stack, so each keeps its width.
-const double _rowMaxScale = 1.5;
-
-/// The end of a session: cards and correct, minutes, streak, a score per skill, what is due tomorrow.
+/// The end of a session: a pill per skill with its right answers, the streak, what is due tomorrow.
 ///
 /// Design screen `summary`. The numbers come from [result] and from the
 /// progress store, never from the design's sample (whose streak, 13, did not
@@ -44,7 +40,7 @@ class SummaryPage extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final now = state.now();
-    final empty = result.cards == 0;
+    final empty = result.total == 0;
     final finished = <LanguageInfo>[
       for (final language in state.languages)
         if (language.code == result.language) language,
@@ -86,37 +82,26 @@ class SummaryPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 12),
-                    Text(
-                      empty
-                          ? l10n.summaryEmpty
-                          : result.taught == 0
-                          ? l10n.summaryLine(result.total, result.correct)
-                          : result.total == 0
-                          ? l10n.summaryLineNewOnly(result.taught)
-                          : l10n.summaryLineNew(
-                              result.cards,
-                              result.taught,
-                              result.total,
-                              result.correct,
-                            ),
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: scheme.onSurfaceVariant,
+                    if (empty) ...<Widget>[
+                      const SizedBox(height: 12),
+                      Text(
+                        l10n.summaryEmpty,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
-                    ),
+                    ],
                     if (!empty) ...<Widget>[
                       const SizedBox(height: 24),
-                      _Numbers(
-                        result: result,
-                        streak: state.progress.streakAt(now),
-                      ),
+                      _BySkill(result: result),
+                      const SizedBox(height: 24),
+                      _Streak(streak: state.progress.streakAt(now)),
                       const SizedBox(height: 24),
                       if (unlocked != null) ...<Widget>[
                         _Unlocked(unlocked: unlocked),
                         const SizedBox(height: 24),
                       ],
-                      _BySkill(result: result),
                     ],
                     const SizedBox(height: 24),
                     Text(
@@ -272,12 +257,10 @@ class _Tick extends StatelessWidget {
   }
 }
 
-/// Percentage correct, minutes and streak, side by side, or stacked at large
-/// text sizes.
-class _Numbers extends StatelessWidget {
-  const _Numbers({required this.result, required this.streak});
+/// The streak, in one tile.
+class _Streak extends StatelessWidget {
+  const _Streak({required this.streak});
 
-  final SessionResult result;
   final int streak;
 
   @override
@@ -286,42 +269,18 @@ class _Numbers extends StatelessWidget {
     final count = NumberFormat.decimalPattern(
       Localizations.localeOf(context).toLanguageTag(),
     );
-    final tiles = <Widget>[
-      StatTile(
-        value: result.total == 0 ? '–' : l10n.commonPercent(result.accuracy),
-        label: l10n.summaryCorrect,
-        variant: StatTileVariant.summaryEmphasis,
-      ),
-      StatTile(
-        value: count.format(result.minutes),
-        label: l10n.summaryMinutes(result.minutes),
-        variant: StatTileVariant.summary,
-      ),
-      StatTile(
-        value: count.format(streak),
-        label: l10n.summaryStreak(streak),
-        variant: StatTileVariant.summary,
-      ),
-    ];
-    final scale = MediaQuery.textScalerOf(context).scale(100) / 100;
-    if (scale > _rowMaxScale) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 8,
-        children: tiles,
-      );
-    }
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 8,
-        children: <Widget>[for (final tile in tiles) Expanded(child: tile)],
-      ),
+    return StatTile(
+      value: count.format(streak),
+      label: l10n.summaryStreak(streak),
+      variant: StatTileVariant.summary,
     );
   }
 }
 
-/// One bar per skill drilled: "Production 2/2".
+/// How each skill did (#486): one pill per skill that had answers, in the
+/// skill's own icon and colour, with "3 right of 4" beside it, centred. Only
+/// graded answers are counted; a taught card is not one. The pill and its
+/// text wrap onto two lines at large text rather than overflow.
 class _BySkill extends StatelessWidget {
   const _BySkill({required this.result});
 
@@ -330,27 +289,32 @@ class _BySkill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return GroupedList(
-      outerRadius: AppRadii.card,
+    final theme = Theme.of(context);
+    return Column(
+      spacing: 12,
       children: <Widget>[
         for (final score in result.bySkill)
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: 16,
-              vertical: 12,
+          Semantics(
+            container: true,
+            label: l10n.summaryScoreSemantics(
+              score.skill.label(l10n),
+              score.correct,
+              score.total,
             ),
-            child: BarRow(
-              label: score.skill.label(l10n),
-              value: score.correct / score.total,
-              valueText: l10n.summaryScore(score.correct, score.total),
-              semanticsLabel: l10n.summaryScoreSemantics(
-                score.skill.label(l10n),
-                score.correct,
-                score.total,
+            child: ExcludeSemantics(
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 12,
+                runSpacing: 4,
+                children: <Widget>[
+                  ModePill(skill: score.skill),
+                  Text(
+                    l10n.summaryScore(score.correct, score.total),
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                ],
               ),
-              thickness: 8,
-              labelWidth: 110,
-              labelStyle: const TextStyle(fontWeight: FontWeight.w600),
             ),
           ),
       ],

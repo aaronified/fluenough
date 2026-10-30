@@ -3836,66 +3836,6 @@
       }
     }
   },
-  "summaryLine": "{cards, plural, =1{1 card} other{{cards} cards}} · {correct} right",
-  "@summaryLine": {
-    "description": "Under the summary's heading, when no new card was taught: every card was answered.",
-    "placeholders": {
-      "cards": {
-        "type": "int",
-        "example": "18"
-      },
-      "correct": {
-        "type": "int",
-        "example": "15"
-      }
-    }
-  },
-  "summaryLineNew": "{cards, plural, =1{1 card} other{{cards} cards}} · {taught} new · {answered} answered, {correct} right",
-  "@summaryLineNew": {
-    "description": "Under the summary's heading, when new cards were taught and others answered: every card, the new ones, the graded answers and the right ones.",
-    "placeholders": {
-      "cards": {
-        "type": "int",
-        "example": "27"
-      },
-      "taught": {
-        "type": "int",
-        "example": "9"
-      },
-      "answered": {
-        "type": "int",
-        "example": "18"
-      },
-      "correct": {
-        "type": "int",
-        "example": "15"
-      }
-    }
-  },
-  "summaryLineNewOnly": "{taught, plural, =1{1 card} other{{taught} cards}} · {taught} new",
-  "@summaryLineNewOnly": {
-    "description": "Under the summary's heading, when new cards were taught and none answered.",
-    "placeholders": {
-      "taught": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "summaryCorrect": "correct",
-  "@summaryCorrect": {
-    "description": "Label under the percentage correct."
-  },
-  "summaryMinutes": "{count, plural, =1{minute} other{minutes}}",
-  "@summaryMinutes": {
-    "description": "Label under the minutes spent, which are shown separately. The count only picks the form.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "4"
-      }
-    }
-  },
   "summaryStreak": "{count, plural, =1{day streak} other{day streak}}",
   "@summaryStreak": {
     "description": "Label under the streak, which is shown separately. The count only picks the form.",
@@ -3906,9 +3846,9 @@
       }
     }
   },
-  "summaryScore": "{correct}/{total}",
+  "summaryScore": "{correct} right of {total}",
   "@summaryScore": {
-    "description": "A skill's score in the summary.",
+    "description": "A skill's score beside its pill in the summary: the right answers of those answered.",
     "placeholders": {
       "correct": {
         "type": "int",
