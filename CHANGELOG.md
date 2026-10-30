@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The Decks search forgives typos and takes tokens (#527): "travl" finds Travel and "numbrs" the numbers units, looked for only when nothing matches exactly and then marked "Close matches for ..."; `kind:` (words, grammar, script, reading), `status:` (not learnt, learning, learnt, forgetting, struggling, set aside) and `theme:` (this course's themes) become chips inside the bar, with a menu of their values; each result shows its kind as a chip that narrows the search when tapped; the tokens are offered when the search is opened, with the path dimmed behind it, and the first tap on ✕ clears while the next closes; a theme may carry search tags (`travel` on transport); a query in a script the course does not read offers to switch course, add a course or add the language to the ones you know; the card list has no cap and is built as it scrolls.
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
 
 ### Fixed

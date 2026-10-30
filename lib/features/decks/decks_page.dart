@@ -5,7 +5,9 @@ import '../../app/app_state.dart';
 import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
+import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/models/deck.dart';
+import '../../core/search/query.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -17,9 +19,11 @@ import '../../ui/widgets/visible_listenable_builder.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_hours.dart';
+import 'deck_search_bar.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_view.dart';
+import 'script_offers.dart';
 import 'unit_search.dart';
 
 /// The Decks tab: under the language bar (#528), the course of the
@@ -31,7 +35,7 @@ import 'unit_search.dart';
 /// path leaves out opens its own, from the path or from "Other decks"
 /// under it.
 class DecksPage extends StatefulWidget {
-  const DecksPage({super.key, this.planOf, this.initialQuery});
+  const DecksPage({super.key, this.planOf, this.initialQuery, this.spokenList});
 
   /// Each course's plan, in place of [coursePlanOf]: the levels and units
   /// coming, which no path marks yet. For tests and the debug gallery.
@@ -39,6 +43,10 @@ class DecksPage extends StatefulWidget {
 
   /// A search to open with, for the debug gallery and tests.
   final String? initialQuery;
+
+  /// The catalog of languages the script offers read, in place of the
+  /// asset: for tests.
+  final List<SpokenLanguage>? spokenList;
 
   @override
   State<DecksPage> createState() => _DecksPageState();
@@ -55,6 +63,24 @@ class _DecksPageState extends State<DecksPage> {
   );
   final ScrollController _scroll = ScrollController();
   final GlobalKey _upNext = GlobalKey();
+  final FocusNode _focus = FocusNode();
+
+  /// The token chips the bar holds (#527): typed as `kind:grammar ` or
+  /// picked from the menu, each with its value.
+  final Map<SearchToken, String> _chips = <SearchToken, String>{};
+
+  /// The chip whose value is being changed, its menu open.
+  SearchToken? _editing;
+
+  @override
+  void initState() {
+    super.initState();
+    _focus.addListener(_onFocus);
+  }
+
+  void _onFocus() {
+    if (mounted) setState(() {});
+  }
 
   /// The course the path last opened at its unit up next, so that it opens
   /// there once, not on every rebuild.
@@ -62,6 +88,8 @@ class _DecksPageState extends State<DecksPage> {
 
   @override
   void dispose() {
+    _focus.removeListener(_onFocus);
+    _focus.dispose();
     _search.dispose();
     _scroll.dispose();
     super.dispose();
@@ -134,40 +162,203 @@ class _DecksPageState extends State<DecksPage> {
     );
   }
 
-  /// The search field above the path (#528, as the approved mockup drew
-  /// it): always there, it finds units in the bar's course while it holds
-  /// a search.
-  Widget _searchField(AppLocalizations l10n) => Padding(
-    padding: const EdgeInsetsDirectional.only(bottom: 12),
-    // One screen-reader node, the bar's full 56 in height (#26), named by
-    // its hint even once the hint gives way to a search.
-    child: MergeSemantics(
-      child: Semantics(
-        label: _search.text.isEmpty ? null : l10n.decksUnitSearchHint,
-        child: SearchBar(
-          controller: _search,
-          hintText: l10n.decksUnitSearchHint,
-          leading: const Icon(Icons.search),
-          trailing: <Widget>[
-            if (_search.text.isNotEmpty)
-              IconButton(
-                tooltip: l10n.decksSearchClose,
-                icon: const Icon(Icons.close),
-                onPressed: () => setState(_search.clear),
-              ),
-          ],
-          elevation: const WidgetStatePropertyAll<double>(0),
-          constraints: const BoxConstraints(minHeight: 56),
-          padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-            EdgeInsetsDirectional.symmetric(horizontal: 16),
-          ),
-          onChanged: (_) => setState(() {}),
-        ),
-      ),
-    ),
+  /// The bar's text and chips read, with the theme ids the course offers.
+  ParsedSearch _parse(AppState state) => parseSearch(
+    _search.text,
+    themes: <String>[for (final theme in state.themes) theme.id],
   );
 
-  bool get _searching => _search.text.trim().isNotEmpty;
+  /// Whether there is anything to search for: text, or a chip.
+  bool _isSearching(AppState state) =>
+      _parse(state).text.isNotEmpty || _chips.isNotEmpty;
+
+  /// Whether the search is open: focused, or holding a search.
+  bool _isOpen(AppState state) => _focus.hasFocus || _isSearching(state);
+
+  /// The bar's text changed: a token typed whole, with a space after it,
+  /// becomes a chip.
+  void _onChanged(String value) {
+    final state = AppScope.read(context);
+    final parsed = parseSearch(
+      value,
+      themes: <String>[for (final theme in state.themes) theme.id],
+    );
+    if (parsed.chips.isNotEmpty) {
+      _chips.addAll(parsed.chips);
+      final pending = parsed.pending == null
+          ? ''
+          : '${parsed.pending!.key}:${parsed.pendingPrefix}';
+      var rest = <String>[
+        if (parsed.text.isNotEmpty) parsed.text,
+        if (pending.isNotEmpty) pending,
+      ].join(' ');
+      if (pending.isEmpty && rest.isNotEmpty && value.endsWith(' ')) {
+        rest = '$rest ';
+      }
+      _search.value = TextEditingValue(
+        text: rest,
+        selection: TextSelection.collapsed(offset: rest.length),
+      );
+    }
+    setState(() {});
+  }
+
+  void _setText(String text) {
+    _search.value = TextEditingValue(
+      text: text,
+      selection: TextSelection.collapsed(offset: text.length),
+    );
+    _focus.requestFocus();
+    setState(() {});
+  }
+
+  /// A value picked for [token]: its chip, in place of what was typed.
+  void _pick(SearchToken token, String value, ParsedSearch parsed) {
+    _chips[token] = value;
+    _editing = null;
+    _setText(parsed.text);
+  }
+
+  /// The end button: the first tap clears the text and the chips, and a tap
+  /// on the empty bar closes the search (owner, 2026-10-16: "Clear, then
+  /// close").
+  void _clearOrClose(AppState state) {
+    if (_search.text.isNotEmpty || _chips.isNotEmpty) {
+      _chips.clear();
+      _editing = null;
+      _search.clear();
+      setState(() {});
+    } else {
+      _close();
+    }
+  }
+
+  void _close() {
+    _chips.clear();
+    _editing = null;
+    _search.clear();
+    _focus.unfocus();
+    setState(() {});
+  }
+
+  /// A kind chip on a result was tapped: the search narrows to that kind.
+  void _narrowTo(SearchKind kind) => setState(() {
+    _chips[SearchToken.kind] = kind.slug;
+    _editing = null;
+  });
+
+  /// The search bar above the path (#528, #527): always there; it finds
+  /// units, decks and words in the bar's course while it holds a search.
+  Widget _searchBar(AppLocalizations l10n, AppState state, String? language) {
+    final names = <String, String>{
+      for (final theme in state.themes) theme.id: theme.name,
+    };
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: 12),
+      child: DeckSearchBar(
+        controller: _search,
+        focusNode: _focus,
+        hint: language == null
+            ? l10n.decksUnitSearchHint
+            : l10n.decksSearchHintIn(language),
+        chips: Map<SearchToken, String>.of(_chips),
+        chipLabel: (token, value) => l10n.searchChip(
+          token.key,
+          tokenValueLabel(l10n, token, value, themeNames: names),
+        ),
+        editing: _editing,
+        onChanged: _onChanged,
+        onChipTap: (token) =>
+            setState(() => _editing = _editing == token ? null : token),
+        onChipRemove: (token) => setState(() {
+          _chips.remove(token);
+          if (_editing == token) _editing = null;
+        }),
+        onBackspaceEmpty: () => setState(() {
+          final last = _chips.keys.toList()
+            ..sort((a, b) => b.index.compareTo(a.index));
+          if (last.isNotEmpty) _chips.remove(last.first);
+        }),
+        showEnd: _isOpen(state),
+        endTooltip: _search.text.isNotEmpty || _chips.isNotEmpty
+            ? l10n.decksSearchClear
+            : l10n.decksSearchClose,
+        onEnd: () => _clearOrClose(state),
+      ),
+    );
+  }
+
+  /// The menu under the bar: the tokens on an empty, focused bar, or a
+  /// token's values while it is typed or its chip is tapped (#527).
+  Widget? _menu(
+    AppLocalizations l10n,
+    AppState state,
+    ParsedSearch parsed,
+    String? code,
+  ) {
+    final token = parsed.pending ?? _editing;
+    if (token != null) {
+      final prefix = parsed.pending == null
+          ? ''
+          : parsed.pendingPrefix.toLowerCase();
+      final items = <(String, String, String?)>[
+        // (value, label, line)
+        ...switch (token) {
+          SearchToken.kind => <(String, String, String?)>[
+            for (final k in SearchKind.values)
+              (k.slug, searchKindLabel(l10n, k), kindLine(l10n, k)),
+          ],
+          SearchToken.status => <(String, String, String?)>[
+            for (final s in const <CardStatus>[
+              CardStatus.notLearnt,
+              CardStatus.learning,
+              CardStatus.learnt,
+              CardStatus.forgetting,
+              CardStatus.struggling,
+              CardStatus.setAside,
+            ])
+              (s.slug, statusLabel(l10n, s), statusLine(l10n, s)),
+          ],
+          SearchToken.theme => <(String, String, String?)>[
+            if (code != null)
+              for (final theme in courseThemes(state, code))
+                (theme.id, theme.name, null),
+          ],
+        },
+      ];
+      return SearchMenu(
+        items: <SearchMenuItem>[
+          for (final (value, label, line) in items)
+            if (prefix.isEmpty ||
+                value.startsWith(prefix) ||
+                label.toLowerCase().startsWith(prefix))
+              SearchMenuItem(
+                title: label,
+                line: line,
+                onTap: () => _pick(token, value, parsed),
+              ),
+        ],
+      );
+    }
+    if (_focus.hasFocus && _chips.isEmpty && _search.text.trim().isEmpty) {
+      return SearchMenu(
+        header: l10n.searchTokensHeader,
+        items: <SearchMenuItem>[
+          for (final (token, line) in <(SearchToken, String)>[
+            (SearchToken.kind, l10n.searchTokenKindLine),
+            (SearchToken.status, l10n.searchTokenStatusLine),
+            (SearchToken.theme, l10n.searchTokenThemeLine),
+          ])
+            SearchMenuItem(
+              title: '${token.key}:',
+              line: line,
+              onTap: () => _setText('${token.key}:'),
+            ),
+        ],
+      );
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -176,51 +367,66 @@ class _DecksPageState extends State<DecksPage> {
     final languages = _languages(state);
     final code = state.shownLanguage;
     final ready = state.status == CatalogStatus.ready && code != null;
+    // The buttons give way while the search is open (#527).
+    final open = _isOpen(state);
 
-    return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Padding(
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final where = ready && !_searching;
-            // Both with their labels if they fit across, else icons alone.
-            final compact =
-                _Fab.extendedWidth(context, l10n.decksAdd) +
-                    (where
-                        ? _Fab.extendedWidth(context, l10n.decksWhereIAm) + 16
-                        : 0) >
-                constraints.maxWidth;
-            return Row(
-              children: <Widget>[
-                if (where)
-                  _Fab(
-                    heroTag: 'where-i-am',
-                    icon: Icons.my_location,
-                    label: l10n.decksWhereIAm,
-                    compact: compact,
-                    distinct: true,
-                    onPressed: _toUpNext,
-                  ),
-                const Spacer(),
-                _Fab(
-                  heroTag: 'add-deck',
-                  icon: Icons.add,
-                  label: l10n.decksAdd,
-                  compact: compact,
-                  onPressed: () => AppNavigator.openImport(context),
+    return PopScope(
+      // Back closes an open search at once, typed or not.
+      canPop: !open,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _close();
+      },
+      child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: open
+            ? null
+            : Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final where = ready;
+                    // Both with their labels if they fit across, else icons alone.
+                    final compact =
+                        _Fab.extendedWidth(context, l10n.decksAdd) +
+                            (where
+                                ? _Fab.extendedWidth(
+                                        context,
+                                        l10n.decksWhereIAm,
+                                      ) +
+                                      16
+                                : 0) >
+                        constraints.maxWidth;
+                    return Row(
+                      children: <Widget>[
+                        if (where)
+                          _Fab(
+                            heroTag: 'where-i-am',
+                            icon: Icons.my_location,
+                            label: l10n.decksWhereIAm,
+                            compact: compact,
+                            distinct: true,
+                            onPressed: _toUpNext,
+                          ),
+                        const Spacer(),
+                        _Fab(
+                          heroTag: 'add-deck',
+                          icon: Icons.add,
+                          label: l10n.decksAdd,
+                          compact: compact,
+                          onPressed: () => AppNavigator.openImport(context),
+                        ),
+                      ],
+                    );
+                  },
                 ),
-              ],
-            );
-          },
-        ),
-      ),
-      body: SafeArea(
-        bottom: false,
-        child: LanguageBarFrame(
-          screen: LanguageBarScreen.decks,
-          reportDetail: 'Decks',
-          child: _body(context, state, languages, code),
+              ),
+        body: SafeArea(
+          bottom: false,
+          child: LanguageBarFrame(
+            screen: LanguageBarScreen.decks,
+            reportDetail: 'Decks',
+            child: _body(context, state, languages, code),
+          ),
         ),
       ),
     );
@@ -253,12 +459,13 @@ class _DecksPageState extends State<DecksPage> {
       case CatalogStatus.ready:
         break;
     }
-    if (code == null && !_searching) {
+    final searchingNow = _isSearching(state);
+    if (code == null && !searchingNow) {
       // No deck parsed: only broken files, if any.
       return ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 96),
         children: <Widget>[
-          _searchField(l10n),
+          _searchBar(l10n, state, null),
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 32),
             child: Text(
@@ -279,7 +486,24 @@ class _DecksPageState extends State<DecksPage> {
         state.settings,
       ]),
       builder: (context, _) {
-        final view = _searching || code == null
+        final parsed = _parse(state);
+        final searching = parsed.text.isNotEmpty || _chips.isNotEmpty;
+        final open = _focus.hasFocus || searching;
+        final language = languages.firstOrNull;
+        final outcome = searching
+            ? runSearch(
+                state,
+                l10n,
+                text: _search.text,
+                chips: _chips,
+                languages: languages,
+                planOf: widget.planOf,
+              )
+            : null;
+        final menu = _menu(l10n, state, parsed, code);
+        // The path stays under the search while nothing is typed, darkened.
+        final dim = open && !searching ? 0.5 : 1.0;
+        final view = searching || code == null
             ? null
             : courseView(
                 state,
@@ -319,33 +543,76 @@ class _DecksPageState extends State<DecksPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        _searchField(l10n),
-                        if (_searching)
-                          SearchResults(
-                            query: _search.text,
-                            languages: languages,
-                            planOf: widget.planOf,
-                          )
-                        else if (view != null) ...<Widget>[
-                          CourseCard(
-                            view: view,
-                            glyph: languageGlyph(view.language, state.decks),
-                            hours: courseHours(state, code!),
+                        _searchBar(l10n, state, language?.name),
+                        ?menu,
+                        if (outcome != null) ...<Widget>[
+                          if (outcome.foreign case final script?)
+                            ScriptOffers(
+                              script: script,
+                              shown: language!,
+                              spokenList: widget.spokenList,
+                            ),
+                          if (parsed.pending == null &&
+                              _editing == null &&
+                              parsed.text.isNotEmpty &&
+                              outcome.foreign == null)
+                            SuggestionRows(
+                              typed: parsed.text,
+                              suggestions: language == null
+                                  ? const <SearchSuggestion>[]
+                                  : searchSuggestions(
+                                      state,
+                                      l10n,
+                                      parsed.text,
+                                      language,
+                                    ),
+                              onUse: (s) => _setText(
+                                s.token == null ? s.text : '${s.token!.key}:',
+                              ),
+                              onEdit: (s) => _setText(
+                                s.token == null ? '${s.text} ' : s.text,
+                              ),
+                            ),
+                        ] else if (view != null) ...<Widget>[
+                          Opacity(
+                            opacity: dim,
+                            child: CourseCard(
+                              view: view,
+                              glyph: languageGlyph(view.language, state.decks),
+                              hours: courseHours(state, code!),
+                            ),
                           ),
                           const SizedBox(height: 20),
                         ],
                       ],
                     ),
                   ),
-                  if (!_searching && view != null) ...<Widget>[
-                    CoursePathSliver(
-                      view: view,
-                      state: state,
-                      upNextKey: _upNext,
-                      onUpNextRow: (row) => _upNextRow = row,
-                      onOpen: (unit) => unit.onPath
-                          ? AppNavigator.openUnit(context, unit.decks.first.id)
-                          : AppNavigator.openDeck(context, unit.decks.first.id),
+                  if (outcome != null)
+                    SearchResultsSliver(
+                      outcome: outcome,
+                      query: _search.text,
+                      onKind: _narrowTo,
+                      onRemoveKind: () =>
+                          setState(() => _chips.remove(SearchToken.kind)),
+                    ),
+                  if (!searching && view != null) ...<Widget>[
+                    SliverOpacity(
+                      opacity: dim,
+                      sliver: CoursePathSliver(
+                        view: view,
+                        state: state,
+                        upNextKey: _upNext,
+                        onUpNextRow: (row) => _upNextRow = row,
+                        onOpen: (unit) => unit.onPath
+                            ? AppNavigator.openUnit(
+                                context,
+                                unit.decks.first.id,
+                              )
+                            : AppNavigator.openDeck(
+                                context,
+                                unit.decks.first.id,
+                              ),
+                      ),
                     ),
                     SliverToBoxAdapter(
                       child: Column(
