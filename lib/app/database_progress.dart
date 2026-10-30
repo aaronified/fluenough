@@ -27,17 +27,21 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   static Future<DatabaseProgress> open(AppDatabase db) async {
     final log = ReviewLog(db);
     final fitted = await log.fitted();
+    final reviews = await log.reviews();
     final parameters = SkillParameters(
       fitted: fitted,
       lastStudied: SkillParameters.lastStudiedIn(
         <({String cardId, DateTime at})>[
-          for (final r in await log.reviews()) (cardId: r.key.cardId, at: r.at),
+          for (final r in reviews) (cardId: r.key.cardId, at: r.at),
         ],
       ),
     );
-    await log.rebuildStates(parameters: parameters);
+    // One replay of the log serves both: the state cache is its states, and
+    // memory is replayed from its events.
+    final replayed = await log.replay(reviews, parameters: parameters);
+    await log.putStates(replayed.states);
     final memory = MemoryProgress.replaying(
-      await log.events(parameters: parameters),
+      replayed.events,
       leechActions: await log.leechActions(),
       fitted: fitted,
     );

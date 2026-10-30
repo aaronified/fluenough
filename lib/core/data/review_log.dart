@@ -139,8 +139,15 @@ class ReviewLog {
   Future<void> rebuildStates({SkillParameters? parameters}) =>
       _db.transaction(() => _rebuild(parameters));
 
-  Future<void> _rebuild(SkillParameters? parameters) async {
-    final states = (await _replay(parameters)).states;
+  Future<void> _rebuild(SkillParameters? parameters) async =>
+      _putStates((await _replay(parameters)).states);
+
+  /// `card_states` replaced by [states], in one transaction: opening the app
+  /// replays the log once and keeps both its events and these (#857).
+  Future<void> putStates(Map<ProgressKey, FsrsState> states) =>
+      _db.transaction(() => _putStates(states));
+
+  Future<void> _putStates(Map<ProgressKey, FsrsState> states) async {
     await _db.cardStatesDao.clear();
     await _db.batch((b) {
       b.insertAll(_db.cardStates, <CardStatesCompanion>[
@@ -286,11 +293,26 @@ class ReviewLog {
         }
       });
 
-  Future<Replayed> _replay(SkillParameters? parameters) async => replayReviews(
-    await reviews(),
-    effects: LeechEffects(await _actions()),
-    parameters: parameters,
-  );
+  Future<Replayed> _replay(SkillParameters? parameters) async =>
+      replay(await reviews(), parameters: parameters);
+
+  /// How many times the whole log has been replayed, for tests to assert
+  /// that opening the app does it once.
+  static int replays = 0;
+
+  /// [reviews], oldest first and read from this log, replayed with its leech
+  /// actions: each pair's own reviews alone, without what other skills imply.
+  Future<Replayed> replay(
+    List<LoggedReview> reviews, {
+    SkillParameters? parameters,
+  }) async {
+    replays++;
+    return replayReviews(
+      reviews,
+      effects: LeechEffects(await _actions()),
+      parameters: parameters,
+    );
+  }
 
   /// Every leech action, oldest first.
   Future<List<LeechAction>> _actions() async =>

@@ -1100,6 +1100,36 @@ void main() {
       }, before);
     });
 
+    test('opening replays the log once, and the state cache and memory '
+        'both come from that replay', () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final log = ReviewLog(db);
+      for (final (card, grade, day) in <(String, int, int)>[
+        ('hi-0231', 4, 0),
+        ('hi-0232', 1, 0),
+        ('hi-0231', 5, 1),
+      ]) {
+        await log.record(
+          deckId: 'hi-en-market',
+          cardId: card,
+          mode: DrillMode.recognition,
+          grade: grade,
+          now: at.add(Duration(days: day)),
+        );
+      }
+      final stored = (await db.cardStatesDao.all()).length;
+      await db.cardStatesDao.clear();
+
+      final replaysBefore = ReviewLog.replays;
+      final progress = await DatabaseProgress.open(db);
+      addTearDown(progress.dispose);
+      addTearDown(progress.close);
+      expect(ReviewLog.replays - replaysBefore, 1);
+      expect(await db.cardStatesDao.all(), hasLength(stored));
+      expect(progress.log, hasLength(3));
+      expect(progress.states, hasLength(stored));
+    });
+
     test('opening repairs a state cache that disagrees with the log; each '
         'profile has its own file', () async {
       final db = AppDatabase(NativeDatabase.memory());
