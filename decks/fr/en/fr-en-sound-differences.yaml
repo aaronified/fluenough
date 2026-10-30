@@ -1,0 +1,284 @@
+schema: 1
+id: "fr-en-sound-differences"
+kind: "layer"
+core: "fr-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sounds to tell apart"
+description: "Pairs of everyday words that differ in one sound: the nasal vowels (vin and vent, mon and main, banc and bon), u and the French u sound y (rue and roue), the open and closed e (lait and les, fait and fée) and the sh and zh of chou and joue, with d and t in dans and tant. Each pair is read the same way throughout. Not yet checked by a French speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "fr-0035":
+    native: "wine"
+    notes:
+      "pair": "Vin (wine) and vent (wind) differ by one vowel: vin has the nasal ɛ̃, vent the nasal ɑ̃."
+    examples:
+      "Le vin est bon.":
+        native: "The wine is good."
+        bases:
+          "Le": "the"
+          "vin": "wine"
+      "Un verre de vin.":
+        native: "A glass of wine."
+        bases:
+          "Un": "a"
+          "verre": "glass"
+          "de": "of"
+          "vin": "wine"
+  "fr-0036":
+    native: "wind"
+    notes:
+      "pair": "Vent (wind) and vin (wine) differ by one vowel: vent has the nasal ɑ̃, vin the nasal ɛ̃."
+    examples:
+      "Il y a du vent.":
+        native: "It is windy."
+        bases:
+          "y": "there"
+          "du": "some; of the"
+          "vent": "wind"
+      "Le vent est fort.":
+        native: "The wind is strong."
+        bases:
+          "Le": "the"
+          "vent": "wind"
+          "fort": "strong"
+  "fr-0037":
+    native: "my"
+    notes:
+      "pair": "Mon (my) and main (hand) differ by one vowel: mon has the nasal ɔ̃, main the nasal ɛ̃."
+    examples:
+      "Mon ami est là.":
+        native: "My friend is there."
+        bases:
+          "Mon": "my"
+      "C'est mon livre.":
+        native: "It is my book."
+        bases:
+          "C'est": "it is"
+          "mon": "my"
+          "livre": "book"
+  "fr-0038":
+    native: "hand"
+    notes:
+      "pair": "Main (hand) and mon (my) differ by one vowel: main has the nasal ɛ̃, mon the nasal ɔ̃. Main is feminine: la main."
+    examples:
+      "Je lève la main.":
+        native: "I raise my hand."
+        bases:
+          "lève": "to raise"
+          "la": "the"
+          "main": "hand"
+      "Ma main est froide.":
+        native: "My hand is cold."
+        bases:
+          "main": "hand"
+          "froide": "cold"
+  "fr-0039":
+    native: "bench"
+    notes:
+      "pair": "Banc (bench) and bon (good) differ by one vowel: banc has the nasal ɑ̃, bon the nasal ɔ̃."
+    examples:
+      "Le banc est vide.":
+        native: "The bench is empty."
+        bases:
+          "Le": "the"
+          "banc": "bench"
+          "vide": "empty"
+      "Un banc au soleil.":
+        native: "A bench in the sun."
+        bases:
+          "Un": "a"
+          "banc": "bench"
+          "au": "in the; at the"
+          "soleil": "sun"
+  "fr-0040":
+    native: "good"
+    notes:
+      "pair": "Bon (good) and banc (bench) differ by one vowel: bon has the nasal ɔ̃, banc the nasal ɑ̃."
+      "fem": "The feminine is bonne, and the n is said: bonne is pronounced bɔn, with no nasal vowel."
+    examples:
+      "Le café est bon.":
+        native: "The coffee is good."
+        bases:
+          "Le": "the"
+          "café": "coffee"
+          "bon": "good"
+      "C'est très bon.":
+        native: "It is very good."
+        bases:
+          "C'est": "it is"
+          "bon": "good"
+  "fr-0041":
+    native: "street"
+    notes:
+      "pair": "Rue (street) and roue (wheel) differ by one vowel: rue has the rounded vowel y, which English does not have, and roue has u. Round the lips and say ee."
+    examples:
+      "La rue est calme.":
+        native: "The street is quiet."
+        bases:
+          "La": "the"
+          "rue": "street"
+          "calme": "quiet"
+      "Je traverse la rue.":
+        native: "I cross the street."
+        bases:
+          "traverse": "to cross"
+          "la": "the"
+          "rue": "street"
+  "fr-0042":
+    native: "wheel"
+    notes:
+      "pair": "Roue (wheel) and rue (street) differ by one vowel: roue has the sound u, rue the rounded y, which English does not have."
+    examples:
+      "La roue tourne.":
+        native: "The wheel turns."
+        bases:
+          "La": "the"
+          "roue": "wheel"
+          "tourne": "to turn"
+      "Une roue de vélo.":
+        native: "A bicycle wheel."
+        bases:
+          "Une": "a"
+          "roue": "wheel"
+          "de": "of"
+          "vélo": "bicycle"
+  "fr-0043":
+    native: "the (plural)"
+    notes:
+      "pair": "Les (the) and lait (milk) differ by one vowel: les has the closed e, lait the open ɛ. The t of lait is silent."
+    examples:
+      "Les enfants jouent.":
+        native: "The children play."
+        bases:
+          "Les": "the"
+          "enfants": "children"
+          "jouent": "to play"
+      "Voici les clés.":
+        native: "Here are the keys."
+        bases:
+          "Voici": "here is"
+          "les": "the"
+          "clés": "keys"
+  "fr-0044":
+    native: "milk"
+    notes:
+      "pair": "Lait (milk) and les (the) differ by one vowel: lait has the open ɛ, les the closed e. The t of lait is silent."
+    examples:
+      "Le lait est froid.":
+        native: "The milk is cold."
+        bases:
+          "Le": "the"
+          "lait": "milk"
+          "froid": "cold"
+      "Un café au lait.":
+        native: "A coffee with milk."
+        bases:
+          "Un": "a"
+          "café": "coffee"
+          "au": "with"
+          "lait": "milk"
+  "fr-0045":
+    native: "fairy"
+    notes:
+      "pair": "Fée (fairy) and fait (fact) differ by one vowel: fée has the closed e, fait the open ɛ. The t of fait is silent."
+    examples:
+      "La fée est belle.":
+        native: "The fairy is beautiful."
+        bases:
+          "La": "the"
+          "fée": "fairy"
+          "belle": "beautiful"
+      "Une fée dans le jardin.":
+        native: "A fairy in the garden."
+        bases:
+          "Une": "a"
+          "fée": "fairy"
+          "le": "the"
+          "jardin": "garden"
+  "fr-0046":
+    native: "fact"
+    notes:
+      "pair": "Fait (fact) and fée (fairy) differ by one vowel: fait has the open ɛ, fée the closed e. Fait is also the past participle of faire (to make), spelled the same, and the sound is the same."
+    examples:
+      "C'est un fait.":
+        native: "It is a fact."
+        bases:
+          "C'est": "it is"
+          "un": "a"
+          "fait": "fact"
+      "Le fait est clair.":
+        native: "The fact is clear."
+        bases:
+          "Le": "the"
+          "fait": "fact"
+          "clair": "clear"
+  "fr-0047":
+    native: "cabbage"
+    notes:
+      "pair": "Chou (cabbage) and joue (cheek) differ by one sound: chou starts with sh, and joue starts with its voiced partner, zh, as in the middle of English 'measure'."
+    examples:
+      "Le chou est vert.":
+        native: "The cabbage is green."
+        bases:
+          "Le": "the"
+          "chou": "cabbage"
+          "vert": "green"
+      "Un chou et une carotte.":
+        native: "A cabbage and a carrot."
+        bases:
+          "Un": "a"
+          "chou": "cabbage"
+          "une": "a"
+          "carotte": "carrot"
+  "fr-0048":
+    native: "cheek"
+    notes:
+      "pair": "Joue (cheek) and chou (cabbage) differ by one sound: joue starts with zh, as in English 'measure', and chou with sh, its unvoiced partner."
+    examples:
+      "Il a la joue rouge.":
+        native: "He has a red cheek."
+        bases:
+          "la": "the"
+          "joue": "cheek"
+          "rouge": "red"
+      "Une joue rouge.":
+        native: "A red cheek."
+        bases:
+          "Une": "a"
+          "joue": "cheek"
+          "rouge": "red"
+  "fr-0049":
+    native: "in"
+    notes:
+      "pair": "Dans (in) and tant (so much) differ by one sound: dans starts with d, and tant with t."
+    examples:
+      "Le pain est dans la boîte.":
+        native: "The bread is in the box."
+        bases:
+          "Le": "the"
+          "pain": "bread"
+          "dans": "in"
+          "la": "the"
+          "boîte": "box"
+      "Je suis dans la gare.":
+        native: "I am in the station."
+        bases:
+          "dans": "in"
+          "la": "the"
+  "fr-0050":
+    native: "so much"
+    notes:
+      "pair": "Tant (so much) and dans (in) differ by one sound: tant starts with t, and dans with d."
+    examples:
+      "Il y a tant de vent.":
+        native: "There is so much wind."
+        bases:
+          "y": "there"
+          "tant": "so much"
+          "de": "of"
+      "Tant pis.":
+        native: "Too bad."
+        bases:
+          "Tant": "so"
+          "pis": "worse"

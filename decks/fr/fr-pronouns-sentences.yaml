@@ -1,0 +1,114 @@
+schema: 1
+id: "fr-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0150"
+    target: "Elle parle très bien."
+    ipa: "ɛl paʁl tʁɛ bjɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "bien", ref: "fr-0032" }
+    confusables:
+      - { id: "they-men", ref: "fr-0130", kind: "form" }
+      - { id: "me", ref: "fr-0133", kind: "word" }
+  - id: "fr-0151"
+    target: "Nous sommes amis."
+    ipa: "nu sɔm zami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "sommes", ref: "fr-0021" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "you-formal", ref: "fr-0096", kind: "form" }
+      - { id: "one", ref: "fr-0132", kind: "word" }
+  - id: "fr-0152"
+    target: "Ils sont dans la gare."
+    ipa: "il sɔ̃ dɑ̃ la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "they-women", ref: "fr-0131", kind: "form" }
+      - { id: "here", ref: "fr-0029", kind: "word" }
+  - id: "fr-0153"
+    target: "Mon ami aime le lait."
+    ipa: "mɔ̃n ami ɛm lə lɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "ami", ref: "fr-0100" }
+      - { word: "aime", base: "aimer" }
+      - { word: "le", base: "le" }
+      - { word: "lait", ref: "fr-0044" }
+    confusables:
+      - { id: "my-feminine", ref: "fr-0137", kind: "form" }
+      - { id: "his", ref: "fr-0138", kind: "form" }
+  - id: "fr-0154"
+    target: "Notre train part demain."
+    ipa: "nɔtʁ tʁɛ̃ paʁ dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Notre", ref: "fr-0139" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "part", base: "partir" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "your", ref: "fr-0140", kind: "form" }
+      - { id: "their", ref: "fr-0142", kind: "form" }
+  - id: "fr-0155"
+    target: "Cette rue est calme."
+    ipa: "sɛt ʁy ɛ kalm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cette", ref: "fr-0143" }
+      - { word: "rue", ref: "fr-0041" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "calme", base: "calme" }
+    confusables:
+      - { id: "that", ref: "fr-0145", kind: "word" }
+      - { id: "his", ref: "fr-0138", kind: "form" }
+  - id: "fr-0156"
+    target: "Cela coûte beaucoup."
+    ipa: "səla kut boku"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cela", ref: "fr-0145" }
+      - { word: "coûte", base: "coûter" }
+      - { word: "beaucoup", ref: "fr-0034" }
+    confusables:
+      - { id: "how-much", ref: "fr-0071", kind: "word" }
+      - { id: "this-feminine", ref: "fr-0144", kind: "form" }
+  - id: "fr-0157"
+    target: "Toi et moi, on parle."
+    ipa: "twa e mwa ɔ̃ paʁl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Toi", ref: "fr-0134" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "moi", ref: "fr-0133" }
+      - { word: "on", ref: "fr-0132" }
+      - { word: "parle", ref: "fr-0023" }
+    confusables:
+      - { id: "him", ref: "fr-0135", kind: "word" }
+      - { id: "them", ref: "fr-0136", kind: "form" }

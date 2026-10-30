@@ -1,0 +1,233 @@
+schema: 1
+id: "fr-en-addressing"
+kind: "layer"
+core: "fr-addressing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Addressing people"
+license: "CC-BY-SA-4.0"
+description: "How to speak to people: tu and vous, the titles monsieur, madame and mademoiselle, the words for friend, neighbour, teacher and doctor, and the greetings salut and enchanté. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0095":
+    native: "you (informal)"
+    notes:
+      "n1": "Tu is 'you' for a child, a friend or a member of the family. For a stranger, an older person or someone you must treat with respect, use vous."
+    examples:
+      "Tu es mon ami.":
+        native: "You are my friend."
+        bases:
+          "Tu": "you"
+      "Tu parles bien.":
+        native: "You speak well."
+        bases:
+          "Tu": "you"
+  "fr-0096":
+    native: "you (formal, or more than one)"
+    notes:
+      "n1": "Vous is the formal 'you', for a stranger, an older person or someone you do not know well. It is also the plural of tu, for more than one person."
+    examples:
+      "Vous êtes monsieur Dupont ?":
+        native: "Are you Mr Dupont?"
+        bases:
+          "Vous": "you"
+          "Dupont": "Dupont (a surname)"
+      "Vous parlez bien, madame.":
+        native: "You speak well, madam."
+        bases:
+          "Vous": "you"
+  "fr-0097":
+    native: "sir; Mr"
+    notes:
+      "n1": "Monsieur, abbreviated M., is 'sir' or 'Mr'. It is said alone to a man, as in bonjour, monsieur. The plural is messieurs."
+    examples:
+      "Bonjour, monsieur.":
+        native: "Good morning, sir."
+        bases:
+          "Bonjour": "hello"
+          "monsieur": "sir; Mr"
+      "Merci, monsieur.":
+        native: "Thank you, sir."
+        bases:
+          "Merci": "thank you"
+          "monsieur": "sir; Mr"
+  "fr-0098":
+    native: "madam; Mrs"
+    notes:
+      "n1": "Madame, abbreviated Mme, is 'madam' or 'Mrs'. It is said alone to a woman. The plural is mesdames."
+    examples:
+      "Bonsoir, madame.":
+        native: "Good evening, madam."
+        bases:
+          "Bonsoir": "good evening"
+          "madame": "madam; Mrs"
+      "Madame, vous êtes là.":
+        native: "Madam, you are here."
+        bases:
+          "Madame": "madam; Mrs"
+  "fr-0099":
+    native: "Miss"
+    notes:
+      "n1": "Mademoiselle, abbreviated Mlle, is 'Miss', for a young woman. Many people now say madame to every woman, so ask what the person prefers."
+    examples:
+      "Bonjour, mademoiselle.":
+        native: "Good morning, Miss."
+        bases:
+          "Bonjour": "hello"
+          "mademoiselle": "Miss"
+      "Mademoiselle, le train est là.":
+        native: "Miss, the train is here."
+        bases:
+          "Mademoiselle": "Miss"
+          "le": "the"
+  "fr-0100":
+    native: "friend"
+    notes:
+      "n1": "Ami is 'friend' for a man. The feminine is amie, said the same way: the e is written, but not said."
+    examples:
+      "Mon ami est ici.":
+        native: "My friend is here."
+        bases:
+          "ami": "friend"
+      "Un ami de Paris.":
+        native: "A friend from Paris."
+        bases:
+          "Un": "a"
+          "ami": "friend"
+          "de": "from; of"
+          "Paris": "Paris"
+  "fr-0101":
+    native: "neighbour (man)"
+    notes:
+      "n1": "Voisin is 'neighbour' for a man. For a woman it is voisine, and there the n is said."
+    examples:
+      "Mon voisin est professeur.":
+        native: "My neighbour is a teacher."
+        bases:
+          "voisin": "neighbour"
+      "Le voisin est dans la rue.":
+        native: "The neighbour is in the street."
+        bases:
+          "Le": "the"
+          "voisin": "neighbour"
+          "la": "the"
+  "fr-0102":
+    native: "pleased to meet you"
+    notes:
+      "n1": "Enchanté is said when you meet someone: 'pleased to meet you'. A woman says enchantée, with an extra e that is written, not said."
+    examples:
+      "Enchanté, monsieur.":
+        native: "Pleased to meet you, sir."
+        bases:
+          "Enchanté": "pleased to meet you"
+      "Enchantée, madame.":
+        native: "Pleased to meet you, madam."
+        bases:
+          "Enchantée": "pleased to meet you"
+  "fr-0103":
+    native: "first name"
+    notes:
+      "n1": "Prénom is 'first name'. The family name is the nom de famille, and in forms the prénom comes before the nom."
+    examples:
+      "Quel est votre prénom ?":
+        native: "What is your first name?"
+        bases:
+          "prénom": "first name"
+      "Mon prénom est Paul.":
+        native: "My first name is Paul."
+        bases:
+          "prénom": "first name"
+          "Paul": "Paul (a first name)"
+  "fr-0104":
+    native: "dear"
+    notes:
+      "n1": "Cher is 'dear'. The feminine chère is said the same way, and both open a letter: Cher Paul (Dear Paul)."
+    examples:
+      "Cher monsieur, bonjour.":
+        native: "Dear sir, hello."
+        bases:
+          "Cher": "dear"
+          "bonjour": "hello"
+      "Ma chère amie.":
+        native: "My dear friend."
+        bases:
+          "chère": "dear"
+  "fr-0105":
+    native: "teacher"
+    notes:
+      "n1": "Professeur is 'teacher' or 'professor', for a man or a woman. In speech it is shortened to prof."
+    examples:
+      "Le professeur est là.":
+        native: "The teacher is there."
+        bases:
+          "Le": "the"
+          "professeur": "teacher"
+      "Monsieur, vous êtes professeur ?":
+        native: "Sir, are you a teacher?"
+        bases:
+          "professeur": "teacher"
+  "fr-0106":
+    native: "doctor"
+    notes:
+      "n1": "Docteur, abbreviated Dr, is 'doctor' for a man or a woman, and it is also a title used when you speak to them."
+    examples:
+      "Bonjour, docteur.":
+        native: "Hello, doctor."
+        bases:
+          "Bonjour": "hello"
+          "docteur": "doctor"
+      "Madame, le docteur est là.":
+        native: "Madam, the doctor is there."
+        bases:
+          "le": "the"
+          "docteur": "doctor"
+  "fr-0107":
+    native: "hi; bye"
+    notes:
+      "n1": "Salut is an informal hello and goodbye, for friends and family. Use bonjour with strangers."
+    examples:
+      "Salut, ça va ?":
+        native: "Hi, how are you?"
+        bases:
+          "Salut": "hi; bye"
+          "ça": "it"
+          "va": "to go"
+      "Salut, Paul !":
+        native: "Hi, Paul!"
+        bases:
+          "Salut": "hi; bye"
+          "Paul": "Paul (a first name)"
+  "fr-0108":
+    native: "young"
+    notes:
+      "n1": "Jeune is 'young', and it is the same in both genders: un jeune homme (a young man), une jeune femme (a young woman)."
+    examples:
+      "Le jeune professeur est là.":
+        native: "The young teacher is there."
+        bases:
+          "Le": "the"
+          "jeune": "young"
+      "Une jeune amie.":
+        native: "A young friend (woman)."
+        bases:
+          "Une": "a"
+          "jeune": "young"
+  "fr-0109":
+    native: "old"
+    notes:
+      "n1": "Vieux is 'old' for a man, and vieille for a woman. In everyday speech it comes before the noun: un vieux monsieur (an old gentleman)."
+    examples:
+      "Un vieux monsieur.":
+        native: "An old gentleman."
+        bases:
+          "Un": "a"
+          "vieux": "old"
+      "Ma vieille amie.":
+        native: "My old friend."
+        bases:
+          "vieille": "old"
+  "fr-0110":
+    native: "titles: Mr, Mrs and Miss"
+    explanation: "Monsieur, madame and mademoiselle are the titles used before a name, or alone, when you speak to someone. Monsieur is for a man, madame for a woman, and mademoiselle for a young woman."
+  "fr-0111":
+    native: "you: tu and vous"
+    explanation: "Both words mean you. Tu is for a child, a friend or family. Vous is for a stranger, an older person or someone you must treat with respect, and for more than one person."

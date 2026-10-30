@@ -1,0 +1,311 @@
+schema: 1
+id: "fr-en-pronouns"
+kind: "layer"
+core: "fr-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+license: "CC-BY-SA-4.0"
+description: "The words for I, he, she, we, they and one, the stressed words me, you, him and them, the possessives my, your, his, her, our and their, and this and that. Each closed group is taught as a set, and the words are drilled one by one. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0126":
+    native: "I"
+    notes:
+      "n1": "Je is 'I'. Before a vowel it is shortened to j': j'ai (I have)."
+    examples:
+      "Je suis là.":
+        native: "I am there."
+        bases:
+          "Je": "I"
+      "Je parle français.":
+        native: "I speak French."
+        bases:
+          "Je": "I"
+          "français": "French"
+  "fr-0127":
+    native: "he; it"
+    notes:
+      "n1": "Il is 'he', and for a thing with a masculine noun it is 'it'. Il y a means 'there is' or 'there are'."
+    examples:
+      "Il est professeur.":
+        native: "He is a teacher."
+        bases:
+          "Il": "he"
+      "Il pleut.":
+        native: "It is raining."
+        bases:
+          "Il": "it"
+          "pleut": "to rain"
+  "fr-0128":
+    native: "she; it"
+    notes:
+      "n1": "Elle is 'she', and for a thing with a feminine noun it is 'it'. It is the feminine of il."
+    examples:
+      "Elle est ici.":
+        native: "She is here."
+        bases:
+          "Elle": "she"
+      "Elle parle très bien.":
+        native: "She speaks very well."
+        bases:
+          "Elle": "she"
+  "fr-0129":
+    native: "we"
+    notes:
+      "n1": "Nous is 'we'. In everyday speech, on is more common for 'we'."
+    examples:
+      "Nous sommes amis.":
+        native: "We are friends."
+        bases:
+          "Nous": "we"
+      "Nous parlons français.":
+        native: "We speak French."
+        bases:
+          "Nous": "we"
+          "français": "French"
+  "fr-0130":
+    native: "they (men or mixed)"
+    notes:
+      "n1": "Ils is 'they' for men, or for a group with men in it. Elles is for women only."
+    examples:
+      "Ils sont là.":
+        native: "They are there."
+        bases:
+          "Ils": "they"
+      "Ils parlent bien.":
+        native: "They speak well."
+        bases:
+          "Ils": "they"
+  "fr-0131":
+    native: "they (women)"
+    notes:
+      "n1": "Elles is 'they' for women, or for things that are all feminine."
+    examples:
+      "Elles sont ici.":
+        native: "They are here."
+        bases:
+          "Elles": "they (women)"
+      "Elles aiment le lait.":
+        native: "They like milk."
+        bases:
+          "Elles": "they (women)"
+          "aiment": "to like"
+          "le": "the"
+  "fr-0132":
+    native: "one; we; people"
+    notes:
+      "n1": "On is 'one', 'we' or 'people' in everyday speech. It takes the verb form of il: on parle (we speak)."
+    examples:
+      "On parle français ici.":
+        native: "We speak French here."
+        bases:
+          "On": "one; we"
+          "français": "French"
+      "On est là.":
+        native: "We are there."
+        bases:
+          "On": "one; we"
+  "fr-0133":
+    native: "me"
+    notes:
+      "n1": "Moi is 'me' or 'I', used alone, after a preposition, or to stress the subject: moi aussi (me too)."
+    examples:
+      "Moi, je suis là.":
+        native: "I am there, me."
+        bases:
+          "Moi": "me; I"
+      "C'est pour moi.":
+        native: "It is for me."
+        bases:
+          "C'est": "it is"
+          "pour": "for"
+          "moi": "me"
+  "fr-0134":
+    native: "you (informal)"
+    notes:
+      "n1": "Toi is 'you' for a friend or child, used alone or after a preposition: toi aussi (you too)."
+    examples:
+      "Et toi ?":
+        native: "And you?"
+        bases:
+          "toi": "you"
+      "C'est pour toi.":
+        native: "It is for you."
+        bases:
+          "C'est": "it is"
+          "pour": "for"
+          "toi": "you"
+  "fr-0135":
+    native: "him"
+    notes:
+      "n1": "Lui is 'him' or 'he', used alone or after a preposition: avec lui (with him)."
+    examples:
+      "Avec lui, merci.":
+        native: "Thank you, with him."
+        bases:
+          "Avec": "with"
+          "lui": "him"
+          "merci": "thank you"
+      "Lui et moi.":
+        native: "Him and me."
+        bases:
+          "Lui": "him"
+  "fr-0136":
+    native: "them (men or mixed)"
+    notes:
+      "n1": "Eux is 'them' for men, or for a group with men in it. Elles is for women only."
+    examples:
+      "Pour eux.":
+        native: "For them."
+        bases:
+          "Pour": "for"
+          "eux": "them"
+      "Avec eux, ça va.":
+        native: "It is fine with them."
+        bases:
+          "Avec": "with"
+          "eux": "them"
+          "ça": "it"
+          "va": "to go"
+  "fr-0137":
+    native: "my (feminine)"
+    notes:
+      "n1": "Ma is 'my' before a feminine noun: ma rue (my street). Before a vowel the feminine uses mon: mon amie (my friend)."
+    examples:
+      "Ma voisine est là.":
+        native: "My neighbour is there."
+        bases:
+          "Ma": "my"
+          "voisine": "neighbour (woman)"
+      "Ma rue est calme.":
+        native: "My street is quiet."
+        bases:
+          "Ma": "my"
+          "calme": "quiet"
+  "fr-0138":
+    native: "his; her"
+    notes:
+      "n1": "Son is 'his' or 'her' before a masculine noun: son train. Before a feminine noun it is sa, and the plural is ses."
+    examples:
+      "Son train est en retard.":
+        native: "His train is late."
+        bases:
+          "Son": "his; her"
+          "en": "in; on"
+          "retard": "delay"
+      "Son amie est là.":
+        native: "Her friend is there."
+        bases:
+          "Son": "his; her"
+  "fr-0139":
+    native: "our"
+    notes:
+      "n1": "Notre is 'our', for one thing, masculine or feminine: notre gare (our station)."
+    examples:
+      "Notre gare est fermée.":
+        native: "Our station is closed."
+        bases:
+          "Notre": "our"
+          "fermée": "to close"
+      "Notre professeur est là.":
+        native: "Our teacher is there."
+        bases:
+          "Notre": "our"
+  "fr-0140":
+    native: "your (formal)"
+    notes:
+      "n1": "Votre is 'your' for a person you address formally, and for more than one person."
+    examples:
+      "Votre nom, s'il vous plaît.":
+        native: "Your name, please."
+        bases:
+          "Votre": "your"
+          "s'il": "if"
+          "plaît": "to please"
+      "Quelle est votre adresse ?":
+        native: "What is your address?"
+        bases:
+          "votre": "your"
+          "adresse": "address"
+  "fr-0141":
+    native: "your (informal)"
+    notes:
+      "n1": "Ton is 'your' for a friend or child, before a masculine noun: ton ami. Before a feminine noun it is ta, and the plural is tes."
+    examples:
+      "Ton ami est là.":
+        native: "Your friend is there."
+        bases:
+          "Ton": "your"
+      "Ton prénom ?":
+        native: "Your first name?"
+        bases:
+          "Ton": "your"
+  "fr-0142":
+    native: "their"
+    notes:
+      "n1": "Leur is 'their' before a noun, for more than one owner: leur train (their train). Its plural is leurs."
+    examples:
+      "Leur train part demain.":
+        native: "Their train leaves tomorrow."
+        bases:
+          "Leur": "their"
+          "part": "to leave"
+      "Ils aiment leur voisin.":
+        native: "They like their neighbour."
+        bases:
+          "aiment": "to like"
+          "leur": "their"
+  "fr-0143":
+    native: "this; that"
+    notes:
+      "n1": "Ce is 'this' or 'that' before a masculine noun. It becomes cet before a vowel: cet ami (this friend). Its feminine is cette."
+    examples:
+      "Ce train est en retard.":
+        native: "This train is late."
+        bases:
+          "Ce": "this; that"
+          "en": "in; on"
+          "retard": "delay"
+      "Ce musée est ouvert.":
+        native: "This museum is open."
+        bases:
+          "Ce": "this; that"
+          "ouvert": "to open"
+  "fr-0144":
+    native: "this; that (before a feminine noun)"
+    notes:
+      "n1": "Cette is the feminine of ce, before a feminine noun: cette gare (this station). It is the same word for this and that."
+    examples:
+      "Cette gare est belle.":
+        native: "This station is beautiful."
+        bases:
+          "belle": "beautiful"
+      "Cette fée est ici.":
+        native: "This fairy is here."
+  "fr-0145":
+    native: "that"
+    notes:
+      "n1": "Cela is 'that'. In everyday speech ça is more common."
+    examples:
+      "Cela coûte beaucoup.":
+        native: "That costs a lot."
+        bases:
+          "Cela": "that"
+          "coûte": "to cost"
+      "Cela est clair.":
+        native: "That is clear."
+        bases:
+          "Cela": "that"
+          "clair": "clear"
+  "fr-0146":
+    native: "subject pronouns: I, you, he, she, we, they and one"
+    explanation: "Je, tu, il, elle, nous, vous, ils, elles and on are the words for the one who does the action. French says the subject word even where the verb ending shows the person, so learn each with its verb."
+  "fr-0147":
+    native: "stressed pronouns: me, you, him and them"
+    explanation: "Moi, toi, lui and eux are used alone, after a preposition such as avec or pour, or to stress the subject: moi aussi (me too)."
+  "fr-0148":
+    native: "possessives: my, your, his, her, our and their"
+    explanation: "Possessives agree with the thing owned, not with the owner. Mon and ma and ton and ta, son and sa, notre, votre and leur: mon is for a masculine noun, and for a feminine one that begins with a vowel (mon amie); ma is for the other feminine nouns."
+  "fr-0149":
+    native: "this and that"
+    explanation: "Ce is this or that before a masculine noun, cette before a feminine one, and cela is that. Ça is the everyday word for it or that."

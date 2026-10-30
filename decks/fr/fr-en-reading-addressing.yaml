@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-addressing"
+name: "Reading: addressing people"
+kind: reading
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about names, titles and tu or vous: a name badge at a meeting, and a greeting between friends and a teacher. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-name-badges"
+    title: "Name badges"
+    theme: "addressing"
+    sentences:
+      - text: "Bonjour, madame."
+      - text: "Enchanté, monsieur."
+      - text: "Quel est votre prénom ?"
+      - text: "Mon voisin est professeur."
+    questions:
+      - id: "fr-0120"
+        prompt: { en: "What is the speaker asking for?" }
+        options:
+          - { en: "The first name" }
+          - { en: "The job" }
+          - { en: "The address" }
+        answer: 1
+      - id: "fr-0121"
+        prompt: { en: "What is the neighbour's job?" }
+        options:
+          - { en: "Teacher" }
+          - { en: "Doctor" }
+          - { en: "Friend" }
+        answer: 1
+      - id: "fr-0122"
+        prompt: { en: "What does 'Enchanté' mean when you meet someone?" }
+        options:
+          - { en: "Pleased to meet you" }
+          - { en: "Goodbye" }
+          - { en: "Sorry" }
+        answer: 1
+  - id: "fr-tu-or-vous"
+    title: "Tu or vous?"
+    theme: "addressing"
+    sentences:
+      - text: "Tu es mon ami."
+      - text: "Vous êtes professeur, monsieur ?"
+      - text: "Salut, Paul, ça va ?"
+      - text: "Le jeune docteur est là."
+    questions:
+      - id: "fr-0123"
+        prompt: { en: "Which word for 'you' does the first line use?" }
+        options:
+          - { en: "tu (informal you)" }
+          - { en: "vous (formal you)" }
+          - { en: "monsieur (sir)" }
+        answer: 1
+      - id: "fr-0124"
+        prompt: { en: "Who is asked whether he is a teacher?" }
+        options:
+          - { en: "A friend" }
+          - { en: "The man addressed as monsieur" }
+          - { en: "A doctor" }
+        answer: 2
+      - id: "fr-0125"
+        prompt: { en: "Which greeting is used with Paul?" }
+        options:
+          - { en: "Salut" }
+          - { en: "Monsieur" }
+          - { en: "Mademoiselle" }
+        answer: 1

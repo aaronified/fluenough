@@ -1,0 +1,168 @@
+schema: 1
+id: "fr-en-first-words"
+kind: "layer"
+core: "fr-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the small words that link a sentence, and words for here and there, and for how much and how well. Greetings and thank you are in the phrasebook. Not yet checked by a French speaker: please report any mistake."
+cards:
+  "fr-0025":
+    native: "yes"
+    notes:
+      "n1": "Oui is the plain yes. To a negative question, such as 'You don't want any?', the answer 'yes' is si, not oui."
+    examples:
+      "Oui, merci.":
+        native: "Yes, thank you."
+        bases:
+          "Oui": "yes"
+          "merci": "thank you"
+      "Oui, je suis là.":
+        native: "Yes, I am here."
+        bases:
+          "Oui": "yes"
+  "fr-0026":
+    native: "no"
+    notes:
+      "n1": "Non is 'no', and it also means 'not' when it stands alone. Before a verb, ne ... pas makes 'not': je ne sais pas (I don't know)."
+    examples:
+      "Non, merci.":
+        native: "No, thank you."
+        bases:
+          "Non": "no"
+          "merci": "thank you"
+      "Non, je ne sais pas.":
+        native: "No, I don't know."
+        bases:
+          "Non": "no"
+          "ne": "not"
+          "sais": "to know"
+          "pas": "not"
+  "fr-0027":
+    native: "and"
+    notes:
+      "n1": "Et joins words and clauses: pain et vin (bread and wine). It is not written with a sound like the English 'and': it is said e."
+    examples:
+      "Pain et vin, s'il vous plaît.":
+        native: "Bread and wine, please."
+        bases:
+          "Pain": "bread"
+          "et": "and"
+          "s'il": "if"
+          "plaît": "to please"
+      "Café et thé.":
+        native: "Coffee and tea."
+        bases:
+          "Café": "coffee"
+          "et": "and"
+          "thé": "tea"
+  "fr-0028":
+    native: "but"
+    notes:
+      "n1": "Mais is 'but'. It has the open ɛ of lait, where mes (the plural of 'my') has the closed e of les."
+    examples:
+      "Oui, mais je suis fatigué.":
+        native: "Yes, but I am tired."
+        bases:
+          "Oui": "yes"
+          "mais": "but"
+          "fatigué": "tired"
+      "Merci, mais non.":
+        native: "Thank you, but no."
+        bases:
+          "Merci": "thank you"
+          "mais": "but"
+  "fr-0029":
+    native: "here"
+    notes:
+      "n1": "Ici is 'here'. For 'there' the word is là, and for 'over there, further away' là-bas."
+    examples:
+      "Je suis ici.":
+        native: "I am here."
+        bases:
+          "ici": "here"
+      "Le pain est ici.":
+        native: "The bread is here."
+        bases:
+          "Le": "the"
+          "pain": "bread"
+          "ici": "here"
+  "fr-0030":
+    native: "there"
+    notes:
+      "n1": "Là is 'there'. Là-bas is 'over there', further away, and it is written with a hyphen."
+    examples:
+      "Il est là.":
+        native: "He is there."
+        bases:
+          "là": "there"
+      "Le pain est là-bas.":
+        native: "The bread is over there."
+        bases:
+          "Le": "the"
+          "pain": "bread"
+          "là": "there"
+          "bas": "down"
+  "fr-0031":
+    native: "very"
+    notes:
+      "n1": "Très is 'very', before an adjective or an adverb: très bien (very well), très chaud (very hot). Use beaucoup, not très, with a verb: je comprends beaucoup."
+    examples:
+      "Je suis très content.":
+        native: "I am very pleased."
+        bases:
+          "très": "very"
+          "content": "pleased; happy"
+      "Le café est très chaud.":
+        native: "The coffee is very hot."
+        bases:
+          "Le": "the"
+          "café": "coffee"
+          "très": "very"
+          "chaud": "hot"
+  "fr-0032":
+    native: "well"
+    notes:
+      "n1": "Bien is 'well', as an adverb. The adjective 'good' is bon, which has a different form. Ça va bien is an everyday answer to 'how are you?'."
+    examples:
+      "Ça va bien.":
+        native: "It is going well."
+        bases:
+          "Ça": "it; that"
+          "va": "to go"
+          "bien": "well"
+      "Il parle bien.":
+        native: "He speaks well."
+        bases:
+          "bien": "well"
+  "fr-0033":
+    native: "also; too"
+    notes:
+      "n1": "Aussi is 'also' and 'too', placed after the verb or at the end: moi aussi (me too)."
+    examples:
+      "Moi aussi.":
+        native: "Me too."
+        bases:
+          "aussi": "also; too"
+      "Je parle aussi français.":
+        native: "I also speak French."
+        bases:
+          "aussi": "also"
+          "français": "French"
+  "fr-0034":
+    native: "a lot; much"
+    notes:
+      "n1": "Beaucoup is 'a lot' and 'much'. It comes after the verb: je comprends beaucoup. With a noun it takes de: beaucoup de temps (a lot of time)."
+    examples:
+      "Merci beaucoup.":
+        native: "Thank you very much."
+        bases:
+          "Merci": "thank you"
+          "beaucoup": "much; a lot"
+      "Je ne comprends pas beaucoup.":
+        native: "I don't understand much."
+        bases:
+          "ne": "not"
+          "comprends": "to understand"
+          "pas": "not"
+          "beaucoup": "much; a lot"

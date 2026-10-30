@@ -1,0 +1,256 @@
+schema: 1
+id: "fr-en-questions"
+kind: "layer"
+core: "fr-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: who, what, where, when and how much"
+license: "CC-BY-SA-4.0"
+description: "The question words, who, what, where, when, how, why, how much and which, with the words that answer them: the station, the train, the museum and the time. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0065":
+    native: "who"
+    notes:
+      "n1": "Qui is 'who', for people. After a preposition it stays the same: avec qui (with whom)."
+    examples:
+      "Qui est là ?":
+        native: "Who is there?"
+        bases:
+          "Qui": "who"
+      "Qui est le professeur ?":
+        native: "Who is the teacher?"
+        bases:
+          "Qui": "who"
+          "le": "the"
+  "fr-0066":
+    native: "what"
+    notes:
+      "n1": "Quoi is 'what', used alone or after a preposition: de quoi (about what). It is the question word for things, as qui is for people."
+    examples:
+      "Quoi ? Je ne comprends pas.":
+        native: "What? I don't understand."
+        bases:
+          "Quoi": "what"
+          "ne": "not"
+          "comprends": "to understand"
+          "pas": "not"
+      "De quoi parlez-vous ?":
+        native: "What are you talking about?"
+        bases:
+          "De": "about; of"
+          "quoi": "what"
+  "fr-0067":
+    native: "where"
+    notes:
+      "n1": "Où, with its accent, is 'where'. Without the accent, ou means 'or'."
+    examples:
+      "Où est la gare ?":
+        native: "Where is the station?"
+        bases:
+          "Où": "where"
+          "la": "the"
+      "Où habitez-vous ?":
+        native: "Where do you live?"
+        bases:
+          "Où": "where"
+          "habitez": "to live"
+  "fr-0068":
+    native: "when"
+    notes:
+      "n1": "Quand is 'when'. The answer is often a time word, such as demain (tomorrow) or aujourd'hui (today)."
+    examples:
+      "Quand part le train ?":
+        native: "When does the train leave?"
+        bases:
+          "Quand": "when"
+          "part": "to leave"
+          "le": "the"
+      "Quand est la fête ?":
+        native: "When is the party?"
+        bases:
+          "Quand": "when"
+          "la": "the"
+          "fête": "party; festival"
+  "fr-0069":
+    native: "how"
+    notes:
+      "n1": "Comment is 'how'. Comment ça va ? is the everyday 'how are you?', and a common answer is ça va bien (it is going well)."
+    examples:
+      "Comment ça va ?":
+        native: "How are you?"
+        bases:
+          "Comment": "how"
+          "ça": "it"
+          "va": "to go"
+      "Comment allez-vous ?":
+        native: "How are you? (formal)"
+        bases:
+          "Comment": "how"
+          "allez": "to go"
+  "fr-0070":
+    native: "why"
+    notes:
+      "n1": "Pourquoi is one word and means 'why'. Pour quoi, in two words, means 'for what'. An answer often begins with parce que (because)."
+    examples:
+      "Pourquoi êtes-vous là ?":
+        native: "Why are you here?"
+        bases:
+          "Pourquoi": "why"
+      "Je ne sais pas pourquoi.":
+        native: "I don't know why."
+        bases:
+          "ne": "not"
+          "sais": "to know"
+          "pas": "not"
+          "pourquoi": "why"
+  "fr-0071":
+    native: "how much; how many"
+    notes:
+      "n1": "Combien is 'how much' or 'how many'. Before a noun it takes de: combien de temps (how much time)."
+    examples:
+      "Combien coûte le train ?":
+        native: "How much does the train cost?"
+        bases:
+          "Combien": "how much"
+          "coûte": "to cost"
+          "le": "the"
+      "Combien de temps ?":
+        native: "How much time?"
+        bases:
+          "Combien": "how much; how many"
+          "de": "of"
+          "temps": "time"
+  "fr-0072":
+    native: "which; what"
+    notes:
+      "n1": "Quel agrees with the noun it asks about: quel (masculine), quelle (feminine), quels and quelles in the plural. Quelle heure (what time) and quel est (which is) show it."
+    examples:
+      "Quelle heure est-il ?":
+        native: "What time is it?"
+        bases:
+          "Quelle": "which; what"
+      "Quel est votre nom ?":
+        native: "What is your name?"
+        bases:
+          "Quel": "which; what"
+  "fr-0073":
+    native: "name"
+    notes:
+      "n1": "Nom is 'name', and it is masculine: le nom, un nom, mon nom. Its plural noms is said the same, with the s silent."
+    examples:
+      "Mon nom est Paul.":
+        native: "My name is Paul."
+        bases:
+          "nom": "name"
+          "Paul": "Paul (a first name)"
+      "Quel est le nom de la ville ?":
+        native: "What is the name of the town?"
+        bases:
+          "le": "the"
+          "nom": "name"
+          "de": "of"
+          "la": "the"
+          "ville": "town"
+  "fr-0074":
+    native: "hour; time"
+    notes:
+      "n1": "Heure is 'hour', and it is also the time of day in quelle heure est-il (what time is it). It is feminine: l'heure (the hour), une heure (an hour)."
+    examples:
+      "C'est l'heure du train.":
+        native: "It is time for the train."
+        bases:
+          "C'est": "it is"
+          "l'heure": "time"
+          "du": "of the"
+      "Ce n'est pas l'heure.":
+        native: "It is not time."
+        bases:
+          "pas": "not"
+          "l'heure": "time"
+  "fr-0075":
+    native: "station"
+    notes:
+      "n1": "Gare is a railway station, and it is feminine: la gare. A bus stop is arrêt, and a coach station is a gare routière."
+    examples:
+      "La gare est fermée.":
+        native: "The station is closed."
+        bases:
+          "La": "the"
+          "gare": "station"
+          "fermée": "to close"
+      "Je vais à la gare.":
+        native: "I am going to the station."
+        bases:
+          "vais": "to go"
+          "à": "to; at"
+          "la": "the"
+          "gare": "station"
+  "fr-0076":
+    native: "train"
+    notes:
+      "n1": "Train is masculine: le train. The plural trains is said the same, with the s silent."
+    examples:
+      "Le train part demain.":
+        native: "The train leaves tomorrow."
+        bases:
+          "Le": "the"
+          "train": "train"
+          "part": "to leave"
+      "Le train est en retard.":
+        native: "The train is late."
+        bases:
+          "Le": "the"
+          "train": "train"
+          "en": "in; on"
+          "retard": "delay"
+  "fr-0077":
+    native: "museum"
+    notes:
+      "n1": "Musée is museum, and it is masculine: le musée. The plural musées has a silent s."
+    examples:
+      "Le musée est ouvert.":
+        native: "The museum is open."
+        bases:
+          "Le": "the"
+          "musée": "museum"
+          "ouvert": "to open"
+      "Où est le musée ?":
+        native: "Where is the museum?"
+        bases:
+          "le": "the"
+          "musée": "museum"
+  "fr-0078":
+    native: "tomorrow"
+    notes:
+      "n1": "Demain is tomorrow. À demain (see you tomorrow) is a common goodbye."
+    examples:
+      "À demain !":
+        native: "See you tomorrow!"
+        bases:
+          "À": "at; to"
+          "demain": "tomorrow"
+      "Demain, je vais à Paris.":
+        native: "Tomorrow I am going to Paris."
+        bases:
+          "Demain": "tomorrow"
+          "vais": "to go"
+          "à": "to; in"
+          "Paris": "Paris"
+  "fr-0079":
+    native: "today"
+    notes:
+      "n1": "Aujourd'hui is today. It is written as one word, with an apostrophe in the middle."
+    examples:
+      "Aujourd'hui, je suis ici.":
+        native: "Today I am here."
+        bases:
+          "Aujourd'hui": "today"
+      "Aujourd'hui, la gare est ouverte.":
+        native: "Today the station is open."
+        bases:
+          "Aujourd'hui": "today"
+          "la": "the"
+          "ouverte": "to open"
+  "fr-0080":
+    native: "question words"
+    explanation: "These eight words ask a question. Qui and quoi ask who and what, où, quand and comment ask where, when and how, pourquoi asks why, combien asks how much, and quel asks which, agreeing with the noun it goes with."
