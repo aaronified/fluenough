@@ -150,11 +150,9 @@ units:
   # then its sentences.
   - decks: ["es-daily-life", "es-daily-life-sentences", "es-reading-daily-life", "*"]
     words: 35
-  - planned: { id: "es-grammar-reflexives", grammar: "reflexives" }
-    listening_passages:
-      - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
-    reading_passages:
-      - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
+  - decks: ["es-grammar-reflexives", "es-reading-reflexives"]
+    words: 0
+    grammar: ["reflexives"]
   - planned: { id: "es-calendar", theme: "calendar", words: 35 }
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
