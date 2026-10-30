@@ -1,0 +1,15 @@
+schema: 1
+id: "bn-en-grammar-imperatives"
+kind: "layer"
+core: "bn-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Commands"
+description: "Commands with the imperative: তুই (tui), তুমি (tumi) and আপনি (apni), to a child or close friend, a familiar person and a respected one. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Imperatives"
+  slot_name: "form of address"
+  slots: { "তুই": "to a child or close friend (tui, তুই)", "তুমি": "to a friend or someone you know (tumi, তুমি)", "আপনি": "to an elder or a stranger, respectfully (apni, আপনি)" }
+  entries: { khaoa: "to eat", jaoa: "to go", bola: "to say; to speak", kora: "to do", dekha: "to see; to look", shona: "to hear; to listen", lekha: "to write", pora: "to read", deoa: "to give", neoa: "to take", asa: "to come", thaka: "to stay; to be", dhoya: "to wash" }
+  notes: "Do it! The imperative changes for the person addressed. তুই takes the bare stem: খা (khā), eat. তুমি adds -ও (-o): খাও (khāo), eat. আপনি adds -ন (-n): খান (khān), please eat. Some verbs change their stem for আপনি: শুনুন (śunun), listen, from শোনা (śonā); দিন (din), give, from দেওয়া (deoyā). The তুমি form of আসা is এসো (eśo), come."
