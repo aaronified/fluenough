@@ -3223,6 +3223,8 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
         elif unknown in ("name", "description"):
             r.error(unknown, f"a core file's {unknown} is in each layer, in the "
                              f"learner's language")
+        elif unknown == "situations":
+            r.error("situations", "only valid on a situations file; add kind: situations")
         else:
             r.error("root", f"unknown field {unknown!r}")
     schema = raw.get("schema")

@@ -376,11 +376,15 @@ class FactsNameCards(Case):
             "situations": [taxi]})
         self.assertTrue(any("a situations file is zz-situations.yaml" in e
                             for e in self.errors("zz-sheets.yaml")))
+        # A second file for the language, under the wrong name, is also one
+        # file too many; the same name in another folder is a duplicate deck id.
+        self.assertTrue(any("more than one situations file for zz" in line
+                            for line in self.run_main(self.SITUATIONS, "zz-sheets.yaml")))
         self.put("other/zz-situations.yaml", {
             "schema": 1, "id": "zz-situations", "name": "Testlang situations",
             "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
             "situations": [taxi]})
-        self.assertTrue(any("more than one situations file for zz" in line
+        self.assertTrue(any("duplicate deck id 'zz-situations'" in line
                             for line in self.run_main(self.SITUATIONS,
                                                       "other/zz-situations.yaml")))
 
