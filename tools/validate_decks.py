@@ -2683,11 +2683,13 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # "meaning"}` or `{"word", "ref"}`, "" for none. It goes on the entry that
 # holds the base's meaning, a layer's for a core's card, and the review bot
 # writes the core's line with it. `alt_target` is the accepted
-# alternatives, its `now` and `text` JSON lists.
+# alternatives, its `now` and `text` JSON lists. `place` is where a card
+# belongs (#477): its `now` and `text` are core deck ids, and only a core's
+# card has it.
 PROPOSAL_FIELDS = {
     "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
     "ref": ("native", "reading", "ipa", "notes"),
-    "core": ("target", "reading", "ipa", "notes", "alt_target"),
+    "core": ("target", "reading", "ipa", "notes", "alt_target", "place"),
     "core-ref": ("reading", "ipa", "notes"),
     "layer": ("native", "bases"),
     "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
