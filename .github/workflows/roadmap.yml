@@ -1,0 +1,71 @@
+name: Roadmap
+
+# Regenerates wiki/Roadmap.md (published by wiki-sync) from the GitHub
+# releases, milestones and approved issues, and from the plans (#484, owner,
+# 2026-10-11: "Roadmap will completely be auto generated"). It commits to main
+# only when the page changed, and only that file, so it does not trigger
+# itself: the push filter below leaves wiki/Roadmap.md out.
+#
+# Pushing to protected main uses the same token as deck-index.yml: WIKI_TOKEN
+# (allowed to bypass main's pull-request rule), else GITHUB_TOKEN.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/plans/**"
+      - "wiki/Plan-*.md"
+      - "tools/generate_roadmap.py"
+  issues:
+    types: [opened, edited, labeled, unlabeled, milestoned, demilestoned, closed, reopened]
+  milestone:
+  release:
+    types: [published]
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: roadmap
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  roadmap:
+    name: Regenerate wiki/Roadmap.md
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python3 tools/generate_roadmap.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push
+        run: |
+          if git diff --quiet -- wiki/Roadmap.md; then
+            echo "Roadmap is current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki/Roadmap.md
+          git commit -m "Roadmap: regenerated"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the regenerated roadmap to main. Most likely the token may not bypass main's pull-request rule (see deck-index.yml)."
+          exit 1
