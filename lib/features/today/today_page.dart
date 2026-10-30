@@ -257,7 +257,7 @@ class _NotSavedBanner extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 16, 14),
         decoration: BoxDecoration(
           color: scheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(AppRadii.tile),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -355,7 +355,7 @@ class _TodayFactCard extends StatelessWidget {
             height: 44,
             decoration: BoxDecoration(
               color: scheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(AppRadii.small),
+              borderRadius: BorderRadius.circular(AppRadii.field),
             ),
             child: Icon(
               Icons.lightbulb_outline,
@@ -416,7 +416,7 @@ class _FactCard extends StatelessWidget {
               height: 44,
               decoration: BoxDecoration(
                 color: scheme.secondaryContainer,
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: Icon(
                 Icons.lightbulb_outline,

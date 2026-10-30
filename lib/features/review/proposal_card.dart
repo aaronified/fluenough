@@ -106,7 +106,7 @@ class ProposalCard extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(14),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

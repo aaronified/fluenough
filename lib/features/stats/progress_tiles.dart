@@ -192,7 +192,7 @@ class UnlockTile extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             ClipRRect(
-              borderRadius: BorderRadius.circular(3),
+              borderRadius: BorderRadius.circular(AppRadii.mark),
               child: LinearProgressIndicator(
                 value: share,
                 minHeight: 6,

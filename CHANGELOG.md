@@ -7,10 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The day's session runs on a clock, not on a fixed set of cards (#886): the time is the minutes a day, the header shows a ticking countdown of the time left in place of the card count, and the clock pauses while one screen has been showing for more than 30 seconds. It builds a round at a time, reviews and new words in the ratio the time left asks for; with nothing due it teaches up to 15 new words, asks each twice with older reviews mixed in, and fills the rest of the time with the cards closest to due. Teach cards now record their time, which counts toward the day's minutes and the hours.
+
 ### Added
 
 - The Decks search forgives typos and takes tokens (#527): "travl" finds Travel and "numbrs" the numbers units, looked for only when nothing matches exactly and then marked "Close matches for ..."; `kind:` (words, grammar, script, reading), `status:` (not learnt, learning, learnt, forgetting, struggling, set aside) and `theme:` (this course's themes) become chips inside the bar, with a menu of their values; each result shows its kind as a chip that narrows the search when tapped; the tokens are offered when the search is opened, with the path dimmed behind it, and the first tap on ✕ clears while the next closes; a theme may carry search tags (`travel` on transport); a query in a script the course does not read offers to switch course, add a course or add the language to the ones you know; the card list has no cap and is built as it scrolls.
 - `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
+
+### Changed
+
+- Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
 
 ### Fixed
 

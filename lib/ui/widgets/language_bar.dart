@@ -11,6 +11,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../theme.dart';
 import 'language_glyph.dart';
 import 'report_button.dart';
 import '../card_text_scale.dart';
@@ -654,10 +655,10 @@ class _LanguageBarState extends State<LanguageBar>
         decoration: BoxDecoration(
           color: allOn ? null : scheme.secondaryContainer,
           border: allOn ? Border.all(color: scheme.outline) : null,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
           child: _grow.value == 0
               ? null
               : OverflowBox(
@@ -830,7 +831,7 @@ class _LanguageBarState extends State<LanguageBar>
                   border: _focused
                       ? Border.all(color: scheme.primary, width: 2)
                       : null,
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(AppRadii.card),
                 ),
                 child: wheel,
               ),
@@ -920,7 +921,7 @@ class _LanguageBarState extends State<LanguageBar>
                 key: const ValueKey<String>('language-bar-label'),
                 color: scheme.inverseSurface,
                 elevation: 3,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppRadii.chip),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(8, 6, 14, 6),
                   child: Row(
@@ -988,7 +989,7 @@ class LanguageBarChip extends StatelessWidget {
               ? (filled ? scheme.secondaryContainer : Colors.transparent)
               : scheme.outline,
         ),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -1046,7 +1047,7 @@ class _AllButton extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: on ? scheme.secondaryContainer : null,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(AppRadii.chip),
             ),
             child: Text(
               l10n.languageBarAll,

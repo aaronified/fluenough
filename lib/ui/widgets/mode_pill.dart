@@ -55,7 +55,7 @@ class ModePill extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
         decoration: BoxDecoration(
           color: bg,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -86,6 +86,7 @@ class ModePill extends StatelessWidget {
         height: h,
         decoration: BoxDecoration(
           color: bg,
+          // A stadium on purpose: the pill follows its height.
           borderRadius: BorderRadius.circular(h / 2),
         ),
         child: Icon(skill.icon, size: icon, color: fg),
