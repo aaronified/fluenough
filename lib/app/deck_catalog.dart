@@ -424,20 +424,23 @@ CatalogOutcome runCatalogJob(CatalogJob job) {
       job.files[path]!: reusable[path],
     },
   };
-  Catalog? catalog;
   var scope = YamlTreeScope(kept);
   var used = reusable;
+  Catalog? fromKept;
   if (kept.isNotEmpty) {
     try {
-      catalog = scope.run(() => DeckCatalog.parseAll(job.files));
-      if (catalog.broken.any((b) => reusable.containsKey(b.path))) {
-        catalog = null;
+      final parsed = scope.run(() => DeckCatalog.parseAll(job.files));
+      if (!parsed.broken.any((b) => reusable.containsKey(b.path))) {
+        fromKept = parsed;
       }
     } on Object {
-      catalog = null;
+      fromKept = null;
     }
   }
-  if (catalog == null) {
+  final Catalog catalog;
+  if (fromKept != null) {
+    catalog = fromKept;
+  } else {
     scope = YamlTreeScope(const <String, Object?>{});
     used = const <String, Object?>{};
     catalog = scope.run(() => DeckCatalog.parseAll(job.files));
