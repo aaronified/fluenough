@@ -72,6 +72,10 @@ ProposalField? proposalFieldOf(CardPart part) => switch (part) {
   CardPart.ipa => ProposalField.ipa,
   CardPart.meaning => ProposalField.native,
   CardPart.notes => ProposalField.notes,
+  CardPart.gender => ProposalField.gender,
+  CardPart.register => ProposalField.register,
+  CardPart.hears => ProposalField.hears,
+  CardPart.warning => ProposalField.warning,
   _ => null,
 };
 
@@ -88,7 +92,8 @@ SentState sentStateOf({
   required int agreementsNeeded,
 }) {
   final field = proposalFieldOf(suggestion.part);
-  if (field == null) {
+  // A flag (#508) offers no text, so there is nothing for the bot to propose.
+  if (field == null || suggestion.flag) {
     return const SentState(
       SentOutcome.unknown,
       unknown: SentUnknown.notTracked,

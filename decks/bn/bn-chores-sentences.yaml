@@ -1,0 +1,105 @@
+schema: 1
+id: "bn-chores-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2289"
+    target: "আমি রোজ সকালে ঝাড়ু দিই।"
+    reading: "āmi roj śôkāle jhāṛu dii."
+    ipa: "ami rodʒ ʃɔkale dʒʱaɽu d̪ii"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "সকালে", ref: "bn-0318" }, { word: "দিই", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "খাই", reading: "khāi", kind: "word" }, { id: "c2", word: "যাই", reading: "jāi", kind: "word" }]
+  - id: "bn-2290"
+    target: "সে বাসন মাজে।"
+    reading: "śe bāśôn māje."
+    ipa: "ʃe bason madʒe"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "মাজে", base: "মাজা", reading: "māje" }]
+    confusables: [{ id: "c1", word: "খায়", reading: "khāy", kind: "word" }, { id: "c2", word: "যায়", reading: "jāy", kind: "word" }]
+  - id: "bn-2291"
+    target: "বাবা কাপড় কাচেন।"
+    reading: "bābā kāpoṛ kācen."
+    ipa: "baba kapoɽ katʃen"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "কাচেন", base: "কাচা", reading: "kācen" }]
+    confusables: [{ id: "c1", word: "খান", reading: "khān", kind: "word" }, { id: "c2", word: "যান", reading: "jān", kind: "word" }]
+  - id: "bn-2292"
+    target: "আপনি বিছানাটা করুন।"
+    reading: "āpni bichānāṭā korun."
+    ipa: "apni bitʃʰanaʈa korun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases: [{ word: "বিছানাটা", ref: "bn-0606" }, { word: "করুন", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "বই", reading: "boi", kind: "word" }, { id: "c2", word: "খাতা", reading: "khātā", kind: "word" }]
+  - id: "bn-2293"
+    target: "আমার ঘরটা পরিষ্কার।"
+    reading: "āmār ghôrṭā poriśkār."
+    ipa: "amar ɡʱɔrʈa poriskar"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "ঘরটা", ref: "bn-0051" }]
+    confusables: [{ id: "c1", word: "বড়", reading: "baṛo", kind: "word" }, { id: "c2", word: "ভালো", reading: "bhālo", kind: "word" }]
+  - id: "bn-2294"
+    target: "ময়লার ঝুড়িটা রান্নাঘরে আছে।"
+    reading: "moylār jhuṛiṭā rānnāghôre āche."
+    ipa: "mɔjlar dʒʱuɽiʈa rannaɡʱore atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases: [{ word: "ময়লার", ref: "bn-2267" }, { word: "ঝুড়িটা", ref: "bn-1325" }, { word: "রান্নাঘরে", ref: "bn-0595" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "বিছানায়", reading: "bichānāy", kind: "word" }, { id: "c2", word: "বাগানে", reading: "bāgāne", kind: "word" }]
+  - id: "bn-2295"
+    target: "আমরা সবাই ঘর পরিষ্কার করি।"
+    reading: "āmrā śôbāi ghôr poriśkār kôri."
+    ipa: "amra ʃɔbai ɡʱɔr poriskar kori"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "করি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "একসঙ্গে", reading: "ekśôṅge", kind: "word" }, { id: "c2", word: "রাতে", reading: "rāte", kind: "word" }]
+  - id: "bn-2296"
+    target: "ধুলো ঝাড়ার পরে জানালা মোছো।"
+    reading: "dhulo jhāṛār pôre jānālā mocho."
+    ipa: "d̪ʱulo dʒʱaɽar pɔre dʒanala motʃʰo"
+    pos: "phrase"
+    bases: [{ word: "ঝাড়ার", base: "ঝাড়া", reading: "jhāṛār" }, { word: "মোছো", ref: "bn-1121" }]
+    confusables: [{ id: "c1", word: "দরজা", reading: "dôrjā", kind: "word" }, { id: "c2", word: "ছাদ", reading: "chād", kind: "word" }]
+  - id: "bn-2297"
+    target: "থালাগুলো টেবিলে সাজিয়ে রাখো।"
+    reading: "thālāgulo ṭebile sājiye rākho."
+    ipa: "t̪ʰalaɡulo ʈebile sadʒije rakʰo"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-loc"]
+    bases: [{ word: "থালাগুলো", ref: "bn-2270" }, { word: "টেবিলে", base: "টেবিল", reading: "ṭebile" }, { word: "সাজিয়ে", base: "সাজানো", reading: "sājiye" }, { word: "রাখো", base: "রাখা", reading: "rākho" }]
+    confusables: [{ id: "c1", word: "চামচ", reading: "cāmco", kind: "word" }, { id: "c2", word: "গ্লাস", reading: "glās", kind: "word" }]
+  - id: "bn-2298"
+    target: "তোমার বালিশটা কোথায়?"
+    reading: "tomār bāliśṭā kothāy?"
+    ipa: "t̪omar baliʃʈa kot̪ʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "বালিশটা", ref: "bn-2281" }]
+    confusables: [{ id: "c1", word: "কেন", reading: "keno", kind: "word" }, { id: "c2", word: "কখন", reading: "kôkhon", kind: "word" }]
+  - id: "bn-2299"
+    target: "আমি ছাদে কাপড় শুকাই।"
+    reading: "āmi chāde kāpoṛ śukāi."
+    ipa: "ami tʃʰad̪e kapoɽ ʃukai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "ছাদে", base: "ছাদ", reading: "chāde" }, { word: "শুকাই", base: "শুকানো", reading: "śukāi" }]
+    confusables: [{ id: "c1", word: "ধুই", reading: "dhui", kind: "word" }, { id: "c2", word: "রাঁধি", reading: "rām̐dhi", kind: "word" }]
+  - id: "bn-2300"
+    target: "বাবা আর আমি বাসন ধুই।"
+    reading: "bābā ār āmi bāśôn dhui."
+    ipa: "baba ar ami bason d̪ʱui"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "ধুই", ref: "bn-1100" }]
+    confusables: [{ id: "c1", word: "খাই", reading: "khāi", kind: "word" }, { id: "c2", word: "মাজি", reading: "māji", kind: "form" }]

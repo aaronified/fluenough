@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/theme.dart';
@@ -188,41 +189,44 @@ class _AllTagsPageState extends State<AllTagsPage> {
                           enabled: canPractise,
                           label: l10n.statsTagPractiseLabel(tag),
                           excludeSemantics: true,
-                          child: InkResponse(
-                            onTap: canPractise
-                                ? () => AppNavigator.startDrill(
-                                    context,
-                                    DrillRequest.tag(
-                                      tag,
-                                      count: kTagPracticeCount,
-                                      language: language,
+                          child: Hint(
+                            message: l10n.hintPractise,
+                            child: InkResponse(
+                              onTap: canPractise
+                                  ? () => AppNavigator.startDrill(
+                                      context,
+                                      DrillRequest.tag(
+                                        tag,
+                                        count: kTagPracticeCount,
+                                        language: language,
+                                      ),
+                                    )
+                                  : null,
+                              radius: 24,
+                              child: SizedBox(
+                                width: 48,
+                                height: 48,
+                                child: Center(
+                                  child: Container(
+                                    width: 36,
+                                    height: 36,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: canPractise
+                                          ? scheme.secondaryContainer
+                                          : null,
+                                      border: canPractise
+                                          ? null
+                                          : Border.all(
+                                              color: scheme.outlineVariant,
+                                            ),
                                     ),
-                                  )
-                                : null,
-                            radius: 24,
-                            child: SizedBox(
-                              width: 48,
-                              height: 48,
-                              child: Center(
-                                child: Container(
-                                  width: 36,
-                                  height: 36,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: canPractise
-                                        ? scheme.secondaryContainer
-                                        : null,
-                                    border: canPractise
-                                        ? null
-                                        : Border.all(
-                                            color: scheme.outlineVariant,
-                                          ),
-                                  ),
-                                  child: Icon(
-                                    Icons.play_arrow,
-                                    color: canPractise
-                                        ? scheme.onSecondaryContainer
-                                        : scheme.outlineVariant,
+                                    child: Icon(
+                                      Icons.play_arrow,
+                                      color: canPractise
+                                          ? scheme.onSecondaryContainer
+                                          : scheme.outlineVariant,
+                                    ),
                                   ),
                                 ),
                               ),

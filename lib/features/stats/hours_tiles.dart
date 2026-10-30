@@ -102,6 +102,7 @@ class HoursTiles extends StatelessWidget {
       excludeSemantics: true,
       label: '${l10n.progressHoursSpentSemantics(hours.spent)}. $label',
       onTap: () => showHoursPopup(context, hours),
+      // hint-ok: shows text
       child: InkWell(
         key: const ValueKey<String>('hours-tiles'),
         borderRadius: BorderRadius.circular(AppRadii.group),

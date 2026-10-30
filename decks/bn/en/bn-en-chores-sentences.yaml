@@ -1,0 +1,52 @@
+schema: 1
+id: "bn-en-chores-sentences"
+kind: "layer"
+core: "bn-chores-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Household chores: sentences"
+description: "Short sentences about the house work. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2289":
+    native: "I sweep every morning."
+    confusables: { "c1": { why: "খাই (khāi), I eat: a meal, not the sweeping." }, "c2": { why: "যাই (jāi), I go: a move, not a chore." } }
+  "bn-2290":
+    native: "She washes the dishes."
+    bases: { "মাজে": "washes; scrubs" }
+    confusables: { "c1": { why: "খায় (khāy), she eats: a meal, not a chore." }, "c2": { why: "যায় (jāy), she goes: a move, not a chore." } }
+  "bn-2291":
+    native: "Father washes the clothes. (respectful)"
+    bases: { "কাচেন": "washes" }
+    confusables: { "c1": { why: "খান (khān), he eats, with respect: a meal, not a chore." }, "c2": { why: "যান (jān), he goes, with respect: a move, not a chore." } }
+  "bn-2292":
+    native: "Please make the bed. (respectful)"
+    confusables: { "c1": { why: "বই (boi), a book: not a thing to make the bed with." }, "c2": { why: "খাতা (khātā), a notebook: a thing for school, not for the bed." } }
+  "bn-2293":
+    native: "My room is clean."
+    confusables: { "c1": { why: "বড় (baṛo), big: a size, not clean." }, "c2": { why: "ভালো (bhālo), good: a judgement, not a state of the room." } }
+  "bn-2294":
+    native: "The rubbish bin is in the kitchen."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "বিছানায় (bichānāy), on the bed: a place in the bedroom, not the kitchen." }, "c2": { why: "বাগানে (bāgāne), in the garden: outdoors, not the kitchen." } }
+  "bn-2295":
+    native: "We all clean the house."
+    confusables: { "c1": { why: "একসঙ্গে (ekśôṅge), together: an adverb of company, not a verb." }, "c2": { why: "রাতে (rāte), at night: a time, not a cleaning task." } }
+  "bn-2296":
+    native: "Wipe the windows after dusting. (familiar)"
+    bases: { "ঝাড়ার": "of dusting" }
+    confusables: { "c1": { why: "দরজা (dôrjā), the door: a thing to shut, not a window to wipe." }, "c2": { why: "ছাদ (chād), the roof: a place to dry clothes, not a window." } }
+  "bn-2297":
+    native: "Lay the plates out on the table. (familiar)"
+    bases: { "টেবিলে": "on the table", "সাজিয়ে": "setting out", "রাখো": "put; keep" }
+    confusables: { "c1": { why: "চামচ (cāmco), a spoon: for eating, not a plate." }, "c2": { why: "গ্লাস (glās), a glass: for drinking, not a plate." } }
+  "bn-2298":
+    native: "Where is your pillow? (familiar)"
+    confusables: { "c1": { why: "কেন (keno), why: a question about reason, not a place." }, "c2": { why: "কখন (kôkhon), when: a question about time, not a place." } }
+  "bn-2299":
+    native: "I dry the clothes on the roof."
+    bases: { "ছাদে": "on the roof", "শুকাই": "dry" }
+    confusables: { "c1": { why: "ধুই (dhui), I wash: the wrong verb for drying clothes." }, "c2": { why: "রাঁধি (rām̐dhi), I cook: a kitchen task, not drying." } }
+  "bn-2300":
+    native: "Father and I wash the dishes."
+    confusables: { "c1": { why: "খাই (khāi), I eat: a meal, not washing." }, "c2": { why: "মাজি (māji), I scrub: the same kind of task, but not the verb in this sentence." } }

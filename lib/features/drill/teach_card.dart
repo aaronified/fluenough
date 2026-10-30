@@ -161,6 +161,7 @@ class TeachCard extends StatelessWidget {
         excludeSemantics: true,
         child: Material(
           type: MaterialType.transparency,
+          // hint-ok: shows text
           child: InkWell(
             borderRadius: BorderRadius.circular(AppRadii.field),
             onTap: () => showDictionary(context, card, language),
