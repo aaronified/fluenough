@@ -201,6 +201,21 @@ class DeckIndex(unittest.TestCase):
                          [f["path"] for f in es["files"]])
         self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
 
+    def _the_phonetic_rules_are_not_listed(self) -> None:
+        # The rules are for tools/derive_phonetic.py alone: the app never
+        # fetches them, so they are in no list and not in the size.
+        text = ('schema: 1\nkind: "phonetics"\nid: "es-phonetics"\n'
+                'language: "es"\nvariety: "Standard"\nrules:\n'
+                '  - id: "es-n-velar"\n    pattern: "n"\n    replace: "n"\n'
+                '    source: "A source, 2000"\n')
+        (self.tmp / "decks" / "es" / "es-phonetics.yaml").write_text(
+            text, encoding="utf-8")
+        es = self.language(self.index(), "es")
+        listed = [f["path"] for f in es["files"]]
+        self.assertNotIn("decks/es/es-phonetics.yaml", listed)
+        self.assertNotIn("resources", es)
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
+
     def _the_fonts_folder_is_not_a_language(self) -> None:
         self.add_font("devanagari", "NotoSansDevanagari.ttf", b"deva-font")
         codes = [lang["code"] for lang in self.index()["languages"]]
@@ -368,6 +383,7 @@ class DeckIndex(unittest.TestCase):
             self._a_guide_of_another_script_is_listed_apart,
             self._fonts_are_listed_per_language_apart_from_files,
             self._the_resources_file_is_listed_apart_from_files,
+            self._the_phonetic_rules_are_not_listed,
             self._the_fonts_folder_is_not_a_language,
         )
         for case in cases:
