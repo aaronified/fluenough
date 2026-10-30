@@ -1,0 +1,404 @@
+schema: 1
+id: "es-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1006"
+    kind: "set"
+    members: [{ ref: "es-1007" }, { ref: "es-1008" }, { ref: "es-1009" }, { ref: "es-1010" }, { ref: "es-1011" }, { ref: "es-1012" }, { ref: "es-1013" }, { ref: "es-1014" }, { ref: "es-1015" }, { ref: "es-1016" }]
+  - id: "es-1007"
+    target: "rojo"
+    ipa: "ˈroxo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ana lleva una camisa roja.", ipa: "ˈana ˈʝeba ˈuna kaˈmisa ˈroxa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "una", base: "una" }, { word: "camisa", ref: "es-1017" }, { word: "roja", base: "rojo" }] }
+      - { target: "El semáforo es rojo.", ipa: "el seˈmafoɾo es ˈroxo", bases: [{ word: "El", base: "el" }, { word: "semáforo", ref: "es-0707" }, { word: "es", ref: "es-0022" }, { word: "rojo", base: "rojo" }] }
+  - id: "es-1008"
+    target: "azul"
+    ipa: "aˈθul"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Mi bolsa es azul.", ipa: "mi ˈbolsa es aˈθul", bases: [{ word: "Mi", ref: "es-0129" }, { word: "bolsa", base: "bolsa" }, { word: "es", ref: "es-0022" }, { word: "azul", base: "azul" }] }
+      - { target: "El cielo es azul hoy.", ipa: "el ˈθjelo es aˈθul oj", bases: [{ word: "El", base: "el" }, { word: "cielo", base: "cielo" }, { word: "es", ref: "es-0022" }, { word: "azul", base: "azul" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-1009"
+    target: "verde"
+    ipa: "ˈbeɾde"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ana tiene un vestido verde.", ipa: "ˈana ˈtjene un besˈtido ˈbeɾde", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "vestido", ref: "es-1018" }, { word: "verde", base: "verde" }] }
+      - { target: "Los árboles son verdes.", ipa: "los ˈaɾboles son ˈbeɾdes", bases: [{ word: "Los", base: "los" }, { word: "árboles", base: "árbol" }, { word: "son", ref: "es-0022" }, { word: "verdes", base: "verde" }] }
+  - id: "es-1010"
+    target: "amarillo"
+    ipa: "amaˈɾiʝo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El sol es amarillo.", ipa: "el sol es amaˈɾiʝo", bases: [{ word: "El", base: "el" }, { word: "sol", base: "sol" }, { word: "es", ref: "es-0022" }, { word: "amarillo", base: "amarillo" }] }
+      - { target: "La camisa amarilla es de Luis.", ipa: "la kaˈmisa amaˈɾiʝa es de lwis", bases: [{ word: "La", base: "la" }, { word: "camisa", ref: "es-1017" }, { word: "amarilla", base: "amarillo" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-1011"
+    target: "negro"
+    ipa: "ˈneɡɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El pantalón negro es nuevo.", ipa: "el pantaˈlon ˈneɡɾo es ˈnwebo", bases: [{ word: "El", base: "el" }, { word: "pantalón", ref: "es-1019" }, { word: "negro", base: "negro" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }] }
+      - { target: "Mi chaqueta es negra.", ipa: "mi tʃaˈketa es ˈneɡɾa", bases: [{ word: "Mi", ref: "es-0129" }, { word: "chaqueta", ref: "es-1020" }, { word: "es", ref: "es-0022" }, { word: "negra", base: "negro" }] }
+  - id: "es-1012"
+    target: "blanco"
+    ipa: "ˈblanko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "La camiseta blanca es bonita.", ipa: "la kamiˈseta ˈblanka es boˈnita", bases: [{ word: "La", base: "la" }, { word: "camiseta", ref: "es-1021" }, { word: "blanca", base: "blanco" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }] }
+      - { target: "El papel es blanco.", ipa: "el paˈpel es ˈblanko", bases: [{ word: "El", base: "el" }, { word: "papel", base: "papel" }, { word: "es", ref: "es-0022" }, { word: "blanco", base: "blanco" }] }
+  - id: "es-1013"
+    target: "gris"
+    ipa: "ɡɾis"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Los zapatos grises son caros.", ipa: "los θaˈpatos ˈɡɾises son ˈkaɾos", bases: [{ word: "Los", base: "los" }, { word: "zapatos", ref: "es-1022" }, { word: "grises", base: "gris" }, { word: "son", ref: "es-0022" }, { word: "caros", base: "caro" }] }
+      - { target: "Hoy el cielo está gris.", ipa: "oj el ˈθjelo esˈta ɡɾis", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "el", base: "el" }, { word: "cielo", base: "cielo" }, { word: "está", ref: "es-0023" }, { word: "gris", base: "gris" }] }
+  - id: "es-1014"
+    target: "marrón"
+    ipa: "maˈron"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Llevo un abrigo marrón.", ipa: "ˈʝebo un aˈbɾiɡo maˈron", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "abrigo", ref: "es-1023" }, { word: "marrón", base: "marrón" }] }
+      - { target: "La mesa es marrón.", ipa: "la ˈmesa es maˈron", bases: [{ word: "La", base: "la" }, { word: "mesa", ref: "es-0009" }, { word: "es", ref: "es-0022" }, { word: "marrón", base: "marrón" }] }
+  - id: "es-1015"
+    target: "naranja"
+    ipa: "naˈɾanxa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Me gusta la falda naranja.", ipa: "me ˈɡusta la ˈfalda naˈɾanxa", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "la", base: "la" }, { word: "falda", ref: "es-1024" }, { word: "naranja", base: "naranja" }] }
+      - { target: "La blusa naranja es muy bonita.", ipa: "la ˈblusa naˈɾanxa es mwi boˈnita", bases: [{ word: "La", base: "la" }, { word: "blusa", ref: "es-1025" }, { word: "naranja", base: "naranja" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonita", ref: "es-0405" }] }
+  - id: "es-1016"
+    target: "morado"
+    ipa: "moˈɾado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El vestido es morado.", ipa: "el besˈtido es moˈɾado", bases: [{ word: "El", base: "el" }, { word: "vestido", ref: "es-1018" }, { word: "es", ref: "es-0022" }, { word: "morado", base: "morado" }] }
+      - { target: "Mi color favorito es el morado.", ipa: "mi koˈloɾ faboˈɾito es el moˈɾado", bases: [{ word: "Mi", ref: "es-0129" }, { word: "color", ref: "es-1026" }, { word: "favorito", base: "favorito" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "morado", base: "morado" }] }
+  - id: "es-1027"
+    target: "la ropa"
+    ipa: "la ˈropa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "ropa", base: "ropa" }]
+    examples:
+      - { target: "Compro ropa en la tienda.", ipa: "ˈkompɾo ˈropa en la ˈtjenda", bases: [{ word: "Compro", ref: "es-0280" }, { word: "ropa", base: "ropa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }] }
+      - { target: "La ropa es cara.", ipa: "la ˈropa es ˈkaɾa", bases: [{ word: "La", base: "la" }, { word: "ropa", base: "ropa" }, { word: "es", ref: "es-0022" }, { word: "cara", base: "caro" }] }
+  - id: "es-1017"
+    target: "la camisa"
+    ipa: "la kaˈmisa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "camisa", base: "camisa" }]
+    examples:
+      - { target: "Esta camisa es muy grande.", ipa: "ˈesta kaˈmisa es mwi ˈɡɾande", bases: [{ word: "Esta", base: "este" }, { word: "camisa", base: "camisa" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Necesito una camisa nueva.", ipa: "neθeˈsito ˈuna kaˈmisa ˈnweba", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "camisa", base: "camisa" }, { word: "nueva", base: "nuevo" }] }
+  - id: "es-1021"
+    target: "la camiseta"
+    ipa: "la kamiˈseta"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "camiseta", base: "camiseta" }]
+    examples:
+      - { target: "La camiseta de Ana es azul.", ipa: "la kamiˈseta de ˈana es aˈθul", bases: [{ word: "La", base: "la" }, { word: "camiseta", base: "camiseta" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }] }
+      - { target: "Llevo una camiseta de algodón.", ipa: "ˈʝebo ˈuna kamiˈseta de alɡoˈdon", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "camiseta", base: "camiseta" }, { word: "de", base: "de" }, { word: "algodón", base: "algodón" }] }
+  - id: "es-1019"
+    target: "el pantalón"
+    ipa: "el pantaˈlon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "plural", kind: "behaviour" }
+    bases: [{ word: "el", base: "el" }, { word: "pantalón", base: "pantalón" }]
+    examples:
+      - { target: "Necesito un pantalón nuevo.", ipa: "neθeˈsito un pantaˈlon ˈnwebo", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "pantalón", base: "pantalón" }, { word: "nuevo", ref: "es-0035" }] }
+      - { target: "Los pantalones están en el armario.", ipa: "los pantaˈlones esˈtan en el aɾˈmaɾjo", bases: [{ word: "Los", base: "los" }, { word: "pantalones", base: "pantalón" }, { word: "están", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", base: "armario" }] }
+  - id: "es-1024"
+    target: "la falda"
+    ipa: "la ˈfalda"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "falda", base: "falda" }]
+    examples:
+      - { target: "Ana lleva una falda larga.", ipa: "ˈana ˈʝeba ˈuna ˈfalda ˈlaɾɡa", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "una", base: "una" }, { word: "falda", base: "falda" }, { word: "larga", base: "largo" }] }
+      - { target: "La falda roja es de mi hermana.", ipa: "la ˈfalda ˈroxa es de mi eɾˈmana", bases: [{ word: "La", base: "la" }, { word: "falda", base: "falda" }, { word: "roja", ref: "es-1007" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }] }
+  - id: "es-1018"
+    target: "el vestido"
+    ipa: "el besˈtido"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "vestido", base: "vestido" }]
+    examples:
+      - { target: "El vestido azul es muy bonito.", ipa: "el besˈtido aˈθul es mwi boˈnito", bases: [{ word: "El", base: "el" }, { word: "vestido", base: "vestido" }, { word: "azul", ref: "es-1008" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonito", ref: "es-0405" }] }
+      - { target: "Quiero un vestido para la fiesta.", ipa: "ˈkjeɾo un besˈtido ˈpaɾa la ˈfjesta", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "vestido", base: "vestido" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }] }
+  - id: "es-1020"
+    target: "la chaqueta"
+    ipa: "la tʃaˈketa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "chaqueta", base: "chaqueta" }]
+    examples:
+      - { target: "Llevo una chaqueta porque hace frío.", ipa: "ˈʝebo ˈuna tʃaˈketa ˈpoɾke ˈaθe ˈfɾio", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "chaqueta", base: "chaqueta" }, { word: "porque", base: "porque" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "Esta chaqueta es cómoda.", ipa: "ˈesta tʃaˈketa es ˈkomoda", bases: [{ word: "Esta", base: "este" }, { word: "chaqueta", base: "chaqueta" }, { word: "es", ref: "es-0022" }, { word: "cómoda", base: "cómodo" }] }
+  - id: "es-1023"
+    target: "el abrigo"
+    ipa: "el aˈbɾiɡo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "abrigo", base: "abrigo" }]
+    examples:
+      - { target: "En invierno llevo el abrigo.", ipa: "en inˈbjeɾno ˈʝebo el aˈbɾiɡo", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "abrigo", base: "abrigo" }] }
+      - { target: "El abrigo es caro.", ipa: "el aˈbɾiɡo es ˈkaɾo", bases: [{ word: "El", base: "el" }, { word: "abrigo", base: "abrigo" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }] }
+  - id: "es-1028"
+    target: "el jersey"
+    ipa: "el xeɾˈsej"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "suter", kind: "usage" }
+    bases: [{ word: "el", base: "el" }, { word: "jersey", base: "jersey" }]
+    examples:
+      - { target: "Llevo un jersey verde.", ipa: "ˈʝebo un xeɾˈsej ˈbeɾde", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "jersey", base: "jersey" }, { word: "verde", ref: "es-1009" }] }
+      - { target: "El jersey está en la silla.", ipa: "el xeɾˈsej esˈta en la ˈsiʝa", bases: [{ word: "El", base: "el" }, { word: "jersey", base: "jersey" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "silla", ref: "es-0010" }] }
+  - id: "es-1025"
+    target: "la blusa"
+    ipa: "la ˈblusa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "blusa", base: "blusa" }]
+    examples:
+      - { target: "La blusa cuesta veinte euros.", ipa: "la ˈblusa ˈkwesta ˈbejnte ˈewɾos", bases: [{ word: "La", base: "la" }, { word: "blusa", base: "blusa" }, { word: "cuesta", ref: "es-0587" }, { word: "veinte", ref: "es-0224" }, { word: "euros", base: "euro" }] }
+      - { target: "Compro una blusa en la tienda.", ipa: "ˈkompɾo ˈuna ˈblusa en la ˈtjenda", bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "blusa", base: "blusa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }] }
+  - id: "es-1022"
+    target: "el zapato"
+    ipa: "el θaˈpato"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "seseo", kind: "usage" }
+    bases: [{ word: "el", base: "el" }, { word: "zapato", base: "zapato" }]
+    examples:
+      - { target: "Mis zapatos son negros.", ipa: "mis θaˈpatos son ˈneɡɾos", bases: [{ word: "Mis", base: "mi" }, { word: "zapatos", base: "zapato" }, { word: "son", ref: "es-0022" }, { word: "negros", base: "negro" }] }
+      - { target: "Necesito unos zapatos nuevos.", ipa: "neθeˈsito ˈunos θaˈpatos ˈnwebos", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "unos", base: "un" }, { word: "zapatos", base: "zapato" }, { word: "nuevos", base: "nuevo" }] }
+  - id: "es-1029"
+    target: "la bota"
+    ipa: "la ˈbota"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "bota", base: "bota" }]
+    examples:
+      - { target: "Las botas son para el invierno.", ipa: "las ˈbotas son ˈpaɾa el inˈbjeɾno", bases: [{ word: "Las", base: "las" }, { word: "botas", base: "bota" }, { word: "son", ref: "es-0022" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "invierno", ref: "es-0990" }] }
+      - { target: "Ana lleva botas marrones.", ipa: "ˈana ˈʝeba ˈbotas maˈrones", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "botas", base: "bota" }, { word: "marrones", base: "marrón" }] }
+  - id: "es-1030"
+    target: "el calcetín"
+    ipa: "el kalθeˈtin"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "calcetín", base: "calcetín" }]
+    examples:
+      - { target: "Llevo calcetines blancos.", ipa: "ˈʝebo kalθeˈtines ˈblankos", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "calcetines", base: "calcetín" }, { word: "blancos", base: "blanco" }] }
+      - { target: "Necesito un calcetín.", ipa: "neθeˈsito un kalθeˈtin", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "calcetín", base: "calcetín" }] }
+  - id: "es-1031"
+    target: "el sombrero"
+    ipa: "el somˈbɾeɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sombrero", base: "sombrero" }]
+    examples:
+      - { target: "Ana lleva un sombrero.", ipa: "ˈana ˈʝeba un somˈbɾeɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
+      - { target: "En verano uso un sombrero.", ipa: "en beˈɾano ˈuso un somˈbɾeɾo", bases: [{ word: "En", base: "en" }, { word: "verano", ref: "es-0982" }, { word: "uso", ref: "es-0287" }, { word: "un", base: "un" }, { word: "sombrero", base: "sombrero" }] }
+  - id: "es-1032"
+    target: "la bufanda"
+    ipa: "la buˈfanda"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "bufanda", base: "bufanda" }]
+    examples:
+      - { target: "La bufanda es de lana.", ipa: "la buˈfanda es de ˈlana", bases: [{ word: "La", base: "la" }, { word: "bufanda", base: "bufanda" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "lana", base: "lana" }] }
+      - { target: "Mi bufanda es gris.", ipa: "mi buˈfanda es ɡɾis", bases: [{ word: "Mi", ref: "es-0129" }, { word: "bufanda", base: "bufanda" }, { word: "es", ref: "es-0022" }, { word: "gris", ref: "es-1013" }] }
+  - id: "es-1033"
+    target: "el cinturón"
+    ipa: "el θintuˈɾon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cinturón", base: "cinturón" }]
+    examples:
+      - { target: "Llevo un cinturón negro.", ipa: "ˈʝebo un θintuˈɾon ˈneɡɾo", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "cinturón", base: "cinturón" }, { word: "negro", ref: "es-1011" }] }
+      - { target: "El cinturón es muy largo.", ipa: "el θintuˈɾon es mwi ˈlaɾɡo", bases: [{ word: "El", base: "el" }, { word: "cinturón", base: "cinturón" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", ref: "es-0429" }] }
+  - id: "es-1034"
+    target: "la corbata"
+    ipa: "la koɾˈbata"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "corbata", base: "corbata" }]
+    examples:
+      - { target: "Mi padre lleva corbata en el trabajo.", ipa: "mi ˈpadɾe ˈʝeba koɾˈbata en el tɾaˈbaxo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "lleva", ref: "es-0623" }, { word: "corbata", base: "corbata" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "Esta corbata es azul.", ipa: "ˈesta koɾˈbata es aˈθul", bases: [{ word: "Esta", base: "este" }, { word: "corbata", base: "corbata" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }] }
+  - id: "es-1035"
+    target: "el traje"
+    ipa: "el ˈtɾaxe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "traje", base: "traje" }]
+    examples:
+      - { target: "Mi hermano lleva un traje para la boda.", ipa: "mi eɾˈmano ˈʝeba un ˈtɾaxe ˈpaɾa la ˈboda", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "traje", base: "traje" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "boda", base: "boda" }] }
+      - { target: "El traje es caro.", ipa: "el ˈtɾaxe es ˈkaɾo", bases: [{ word: "El", base: "el" }, { word: "traje", base: "traje" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }] }
+  - id: "es-1036"
+    target: "la talla"
+    ipa: "la ˈtaʝa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "talla", base: "talla" }]
+    examples:
+      - { target: "¿Qué talla tienes?", ipa: "ke ˈtaʝa ˈtjenes", bases: [{ word: "Qué", ref: "es-0054" }, { word: "talla", base: "talla" }, { word: "tienes", ref: "es-0024" }] }
+      - { target: "Tengo la talla pequeña.", ipa: "ˈtenɡo la ˈtaʝa peˈkeɲa", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "la", base: "la" }, { word: "talla", base: "talla" }, { word: "pequeña", base: "pequeño" }] }
+  - id: "es-1037"
+    target: "el probador"
+    ipa: "el pɾobaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "probador", base: "probador" }]
+    examples:
+      - { target: "El probador está al fondo.", ipa: "el pɾobaˈdoɾ esˈta al ˈfondo", bases: [{ word: "El", base: "el" }, { word: "probador", base: "probador" }, { word: "está", ref: "es-0023" }, { word: "al", base: "a" }, { word: "fondo", base: "fondo" }] }
+      - { target: "El probador de la tienda es grande.", ipa: "el pɾobaˈdoɾ de la ˈtjenda es ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "probador", base: "probador" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-1038"
+    target: "la moda"
+    ipa: "la ˈmoda"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "moda", base: "moda" }]
+    examples:
+      - { target: "Estas botas están de moda.", ipa: "ˈestas ˈbotas esˈtan de ˈmoda", bases: [{ word: "Estas", base: "este" }, { word: "botas", ref: "es-1029" }, { word: "están", ref: "es-0023" }, { word: "de", base: "de" }, { word: "moda", base: "moda" }] }
+      - { target: "La moda cambia cada año.", ipa: "la ˈmoda ˈkambja ˈkada ˈaɲo", bases: [{ word: "La", base: "la" }, { word: "moda", base: "moda" }, { word: "cambia", base: "cambiar" }, { word: "cada", ref: "es-0366" }, { word: "año", ref: "es-0021" }] }
+  - id: "es-1026"
+    target: "el color"
+    ipa: "el koˈloɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "color", base: "color" }]
+    examples:
+      - { target: "¿Cuál es tu color favorito?", ipa: "kwal es tu koˈloɾ faboˈɾito", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "color", base: "color" }, { word: "favorito", base: "favorito" }] }
+      - { target: "Me gusta el color verde.", ipa: "me ˈɡusta el koˈloɾ ˈbeɾde", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "el", base: "el" }, { word: "color", base: "color" }, { word: "verde", ref: "es-1009" }] }
+  - id: "es-1039"
+    target: "ponerse"
+    ipa: "poˈneɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "irreg", kind: "behaviour" }
+    examples:
+      - { target: "Me pongo el abrigo porque hace frío.", ipa: "me ˈponɡo el aˈbɾiɡo ˈpoɾke ˈaθe ˈfɾio", bases: [{ word: "Me", base: "me" }, { word: "pongo", base: "ponerse" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "porque", base: "porque" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "¿Te pones la bufanda?", ipa: "te ˈpones la buˈfanda", bases: [{ word: "Te", base: "te" }, { word: "pones", base: "ponerse" }, { word: "la", base: "la" }, { word: "bufanda", ref: "es-1032" }] }
+  - id: "es-1040"
+    target: "probarse"
+    ipa: "pɾoˈbaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Me pruebo la falda antes de comprarla.", ipa: "me ˈpɾwebo la ˈfalda ˈantes de komˈpɾaɾla", bases: [{ word: "Me", base: "me" }, { word: "pruebo", base: "probarse" }, { word: "la", base: "la" }, { word: "falda", ref: "es-1024" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "comprarla", base: "comprar" }] }
+      - { target: "¿Puedo probarme esta blusa?", ipa: "ˈpwedo pɾoˈbaɾme ˈesta ˈblusa", bases: [{ word: "Puedo", base: "poder" }, { word: "probarme", base: "probarse" }, { word: "esta", base: "este" }, { word: "blusa", ref: "es-1025" }] }
+  - id: "es-1041"
+    target: "quedar"
+    ipa: "keˈdaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Esta chaqueta me queda bien.", ipa: "ˈesta tʃaˈketa me ˈkeda bjen", bases: [{ word: "Esta", base: "este" }, { word: "chaqueta", ref: "es-1020" }, { word: "me", base: "me" }, { word: "queda", base: "quedar" }, { word: "bien", ref: "es-0326" }] }
+      - { target: "El vestido te queda grande.", ipa: "el besˈtido te ˈkeda ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "vestido", ref: "es-1018" }, { word: "te", base: "te" }, { word: "queda", base: "quedar" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-1042"
+    target: "elegante"
+    ipa: "eleˈɡante"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ana lleva un vestido elegante.", ipa: "ˈana ˈʝeba un besˈtido eleˈɡante", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "vestido", ref: "es-1018" }, { word: "elegante", base: "elegante" }] }
+      - { target: "Este abrigo es muy elegante.", ipa: "ˈeste aˈbɾiɡo es mwi eleˈɡante", bases: [{ word: "Este", base: "este" }, { word: "abrigo", ref: "es-1023" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "elegante", base: "elegante" }] }
+  - id: "es-1043"
+    target: "ancho"
+    ipa: "ˈantʃo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Esta falda es ancha.", ipa: "ˈesta ˈfalda es ˈantʃa", bases: [{ word: "Esta", base: "este" }, { word: "falda", ref: "es-1024" }, { word: "es", ref: "es-0022" }, { word: "ancha", base: "ancho" }] }
+      - { target: "El pantalón es muy ancho.", ipa: "el pantaˈlon es mwi ˈantʃo", bases: [{ word: "El", base: "el" }, { word: "pantalón", ref: "es-1019" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "ancho", base: "ancho" }] }
+  - id: "es-1044"
+    target: "apretado"
+    ipa: "apɾeˈtado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Estos zapatos están apretados.", ipa: "ˈestos θaˈpatos esˈtan apɾeˈtados", bases: [{ word: "Estos", base: "este" }, { word: "zapatos", ref: "es-1022" }, { word: "están", ref: "es-0023" }, { word: "apretados", base: "apretado" }] }
+      - { target: "Este jersey es muy apretado.", ipa: "ˈeste xeɾˈsej es mwi apɾeˈtado", bases: [{ word: "Este", base: "este" }, { word: "jersey", ref: "es-1028" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "apretado", base: "apretado" }] }
