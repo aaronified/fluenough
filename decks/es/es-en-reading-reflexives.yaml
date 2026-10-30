@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-reflexives"
+name: "Reading: getting ready"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about getting ready in the morning, with reflexive verbs. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-lista-de-la-manana"
+    title: "A morning checklist"
+    sentences:
+      - text: "Me despierto a las siete."
+      - text: "Me levanto y me ducho."
+      - text: "Nos vestimos rápido."
+      - text: "Os acostáis tarde."
+    questions:
+      - id: "es-0951"
+        prompt: { en: "What does the speaker do first?" }
+        options:
+          - { en: "Wakes up" }
+          - { en: "Gets dressed" }
+          - { en: "Goes to bed" }
+        answer: 1
+      - id: "es-0952"
+        prompt: { en: "Who gets dressed quickly?" }
+        options:
+          - { en: "We" }
+          - { en: "You all" }
+          - { en: "They" }
+        answer: 1
+      - id: "es-0953"
+        prompt: { en: "Who goes to bed late in this text?" }
+        options:
+          - { en: "You all (friends in Spain)" }
+          - { en: "I" }
+          - { en: "We" }
+        answer: 1
+  - id: "es-ana-y-luis"
+    title: "Ana and Luis"
+    sentences:
+      - text: "Ana se levanta a las seis."
+      - text: "Luis se ducha antes de desayunar."
+      - text: "Ana y Luis se lavan los dientes."
+      - text: "¿Te despiertas temprano?"
+    questions:
+      - id: "es-0954"
+        prompt: { en: "Who gets up at six?" }
+        options:
+          - { en: "Ana" }
+          - { en: "Luis" }
+          - { en: "Both of them" }
+        answer: 1
+      - id: "es-0955"
+        prompt: { en: "What does Luis do before breakfast?" }
+        options:
+          - { en: "He showers" }
+          - { en: "He goes to bed" }
+          - { en: "He wakes up" }
+        answer: 1
+      - id: "es-0956"
+        prompt: { en: "What does the text ask the reader?" }
+        options:
+          - { en: "Whether you wake up early" }
+          - { en: "Whether you go to bed late" }
+          - { en: "Whether you get dressed" }
+        answer: 1

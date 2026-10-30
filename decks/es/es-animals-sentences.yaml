@@ -1,0 +1,72 @@
+schema: 1
+id: "es-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1103"
+    target: "El perro duerme en el jardín."
+    ipa: "el ˈpero ˈdweɾme en el xaɾˈdin"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "perro", ref: "es-1061" }, { word: "duerme", ref: "es-0904" }, { word: "en", base: "en" }, { word: "jardín", ref: "es-0810" }]
+    confusables: [{ id: "cat", ref: "es-1062", kind: "word" }, { id: "rabbit", ref: "es-1074", kind: "word" }]
+  - id: "es-1104"
+    target: "Las ovejas viven en la granja."
+    ipa: "las oˈbexas ˈbiben en la ˈɡɾanxa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Las", base: "las" }, { word: "ovejas", ref: "es-1072" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "granja", ref: "es-1070" }]
+    confusables: [{ id: "cow", ref: "es-1069", kind: "word" }, { id: "pig", ref: "es-1071", kind: "word" }]
+  - id: "es-1105"
+    target: "Los pájaros cantan en los árboles."
+    ipa: "los ˈpaxaɾos ˈkantan en los ˈaɾboles"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "pájaros", ref: "es-1063" }, { word: "cantan", base: "cantar" }, { word: "en", base: "en" }, { word: "árboles", base: "árbol" }]
+    confusables: [{ id: "butterfly", ref: "es-1084", kind: "word" }, { id: "bee", ref: "es-1085", kind: "word" }]
+  - id: "es-1106"
+    target: "La serpiente es peligrosa."
+    ipa: "la seɾˈpjente es peliˈɡɾosa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "serpiente", ref: "es-1082" }, { word: "es", ref: "es-0022" }, { word: "peligrosa", ref: "es-1096" }]
+    confusables: [{ id: "frog", ref: "es-1083", kind: "word" }, { id: "spider", ref: "es-1092", kind: "word" }]
+  - id: "es-1107"
+    target: "Mi mascota es un gato blanco."
+    ipa: "mi masˈkota es un ˈɡato ˈblanko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "mascota", ref: "es-1093" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "gato", ref: "es-1062" }, { word: "blanco", ref: "es-1012" }]
+    confusables: [{ id: "dog", ref: "es-1061", kind: "word" }, { id: "rabbit", ref: "es-1074", kind: "word" }]
+  - id: "es-1108"
+    target: "El tigre y el león son animales salvajes."
+    ipa: "el ˈtiɡɾe i el leˈon son aniˈmales salˈbaxes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "tigre", ref: "es-1079" }, { word: "y", ref: "es-0048" }, { word: "león", ref: "es-1077" }, { word: "son", ref: "es-0022" }, { word: "animales", ref: "es-1060" }, { word: "salvajes", ref: "es-1078" }]
+    confusables: [{ id: "bear", ref: "es-1081", kind: "word" }, { id: "elephant", ref: "es-1080", kind: "word" }]
+  - id: "es-1109"
+    target: "Los peces nadan en el mar."
+    ipa: "los ˈpeθes ˈnadan en el maɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "peces", ref: "es-1065" }, { word: "nadan", ref: "es-1066" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }]
+    confusables: [{ id: "dolphin", ref: "es-1091", kind: "word" }, { id: "frog", ref: "es-1083", kind: "word" }]
+  - id: "es-1110"
+    target: "Un ratón come queso en la cocina."
+    ipa: "un raˈton ˈkome ˈkeso en la koˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Un", base: "un" }, { word: "ratón", ref: "es-1076" }, { word: "come", ref: "es-0028" }, { word: "queso", ref: "es-0603" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+    confusables: [{ id: "rabbit", ref: "es-1074", kind: "word" }, { id: "ant", ref: "es-1086", kind: "word" }]
+  - id: "es-1111"
+    target: "Las hormigas caminan por la mesa."
+    ipa: "las oɾˈmiɡas kaˈminan poɾ la ˈmesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Las", base: "las" }, { word: "hormigas", ref: "es-1086" }, { word: "caminan", ref: "es-0281" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+    confusables: [{ id: "bee", ref: "es-1085", kind: "word" }, { id: "butterfly", ref: "es-1084", kind: "word" }]

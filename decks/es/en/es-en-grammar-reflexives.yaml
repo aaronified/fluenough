@@ -1,0 +1,27 @@
+schema: 1
+id: "es-en-grammar-reflexives"
+kind: "layer"
+core: "es-grammar-reflexives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish reflexive verbs"
+license: "CC-BY-SA-4.0"
+description: "A reflexive verb sends its action back to the one who does it: me lavo, I wash myself. The pronoun goes before the verb. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Reflexive verbs in the present"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots:
+    "yo": "I"
+    "tú": "you (one friend)"
+    "él/ella": "he or she (and usted, you formally)"
+    "nosotros": "we"
+    "vosotros": "you all (friends, in Spain)"
+    "ellos": "they (and ustedes, you all)"
+  entries:
+    "lavarse": "to wash oneself"
+    "levantarse": "to get up"
+    "ducharse": "to shower"
+    "despertarse": "to wake up"
+    "vestirse": "to get dressed"
+    "acostarse": "to go to bed"
+  notes: "The reflexive pronoun is me, te, se, nos, os, se, and it goes before the verb. Se is the pronoun for he, she, usted and they, so se levanta can mean he, she or you (formal). Three verbs change their stem in the yo, tú, él/ella and ellos forms: me despierto, me visto, me acuesto; nos despertamos, nos vestimos and nos acostamos keep it. In Spain, vosotros takes os: os laváis. In Latin America vosotros is replaced by ustedes, which takes se: ustedes se levantan."

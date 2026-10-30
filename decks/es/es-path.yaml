@@ -148,31 +148,17 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - planned: { id: "es-daily-life", theme: "daily-life", words: 40 }
-    listening_passages:
-      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
-    reading_passages:
-      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
-  - planned: { id: "es-grammar-reflexives", grammar: "reflexives" }
-    listening_passages:
-      - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
-    reading_passages:
-      - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
-  - planned: { id: "es-calendar", theme: "calendar", words: 35 }
-    listening_passages:
-      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
-    reading_passages:
-      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
-  - planned: { id: "es-clothes", theme: "clothes", words: 35 }
-    listening_passages:
-      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
-    reading_passages:
-      - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "es-animals", theme: "animals", words: 35 }
-    listening_passages:
-      - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
-    reading_passages:
-      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - decks: ["es-daily-life", "es-daily-life-sentences", "es-reading-daily-life", "*"]
+    words: 35
+  - decks: ["es-grammar-reflexives", "es-reading-reflexives"]
+    words: 0
+    grammar: ["reflexives"]
+  - decks: ["es-calendar", "es-calendar-sentences", "es-reading-calendar", "*"]
+    words: 32
+  - decks: ["es-clothes", "es-clothes-sentences", "es-reading-clothes", "*"]
+    words: 38
+  - decks: ["es-animals", "es-animals-sentences", "es-reading-animals", "*"]
+    words: 37
   - planned: { id: "es-weather", theme: "weather", words: 40 }
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }

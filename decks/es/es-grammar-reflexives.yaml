@@ -1,0 +1,34 @@
+schema: 1
+id: "es-grammar-reflexives"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "verbs", "unreviewed"]
+pattern:
+  slots: ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos"]
+  entries:
+    - lemma: "lavarse"
+      ipa: "laˈbaɾse"
+      forms: { "yo": "me lavo", "tú": "te lavas", "él/ella": "se lava", "nosotros": "nos lavamos", "vosotros": "os laváis", "ellos": "se lavan" }
+      ipas: { "yo": "me ˈlabo", "tú": "te ˈlabas", "él/ella": "se ˈlaba", "nosotros": "nos laˈbamos", "vosotros": "os laˈbajs", "ellos": "se ˈlaban" }
+    - lemma: "levantarse"
+      ipa: "lebanˈtaɾse"
+      forms: { "yo": "me levanto", "tú": "te levantas", "él/ella": "se levanta", "nosotros": "nos levantamos", "vosotros": "os levantáis", "ellos": "se levantan" }
+      ipas: { "yo": "me leˈbanto", "tú": "te leˈbantas", "él/ella": "se leˈbanta", "nosotros": "nos lebanˈtamos", "vosotros": "os lebanˈtajs", "ellos": "se leˈbantan" }
+    - lemma: "ducharse"
+      ipa: "duˈtʃaɾse"
+      forms: { "yo": "me ducho", "tú": "te duchas", "él/ella": "se ducha", "nosotros": "nos duchamos", "vosotros": "os ducháis", "ellos": "se duchan" }
+      ipas: { "yo": "me ˈdutʃo", "tú": "te ˈdutʃas", "él/ella": "se ˈdutʃa", "nosotros": "nos duˈtʃamos", "vosotros": "os duˈtʃajs", "ellos": "se ˈdutʃan" }
+    - lemma: "despertarse"
+      ipa: "despeɾˈtaɾse"
+      forms: { "yo": "me despierto", "tú": "te despiertas", "él/ella": "se despierta", "nosotros": "nos despertamos", "vosotros": "os despertáis", "ellos": "se despiertan" }
+      ipas: { "yo": "me desˈpjeɾto", "tú": "te desˈpjeɾtas", "él/ella": "se desˈpjeɾta", "nosotros": "nos despeɾˈtamos", "vosotros": "os despeɾˈtajs", "ellos": "se desˈpjeɾtan" }
+    - lemma: "vestirse"
+      ipa: "besˈtiɾse"
+      forms: { "yo": "me visto", "tú": "te vistes", "él/ella": "se viste", "nosotros": "nos vestimos", "vosotros": "os vestís", "ellos": "se visten" }
+      ipas: { "yo": "me ˈbisto", "tú": "te ˈbistes", "él/ella": "se ˈbiste", "nosotros": "nos besˈtimos", "vosotros": "os besˈtis", "ellos": "se ˈbisten" }
+    - lemma: "acostarse"
+      ipa: "akosˈtaɾse"
+      forms: { "yo": "me acuesto", "tú": "te acuestas", "él/ella": "se acuesta", "nosotros": "nos acostamos", "vosotros": "os acostáis", "ellos": "se acuestan" }
+      ipas: { "yo": "me aˈkwesto", "tú": "te aˈkwestas", "él/ella": "se aˈkwesta", "nosotros": "nos akosˈtamos", "vosotros": "os akosˈtajs", "ellos": "se aˈkwestan" }

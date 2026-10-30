@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-daily-life"
+name: "Reading: a day"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a day: one person's ordinary day, and an evening at home. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-un-dia-normal"
+    title: "A normal day"
+    theme: "daily-life"
+    sentences:
+      - text: "Me despierto a las siete."
+      - text: "Tomo un café en la cocina."
+      - text: "Por la tarde voy al gimnasio."
+      - text: "Me acuesto a las once."
+    questions:
+      - id: "es-0936"
+        prompt: { en: "What does the speaker do at seven?" }
+        options:
+          - { en: "Wakes up" }
+          - { en: "Goes to bed" }
+          - { en: "Goes to the gym" }
+        answer: 1
+      - id: "es-0937"
+        prompt: { en: "Where does the speaker have a coffee?" }
+        options:
+          - { en: "In the kitchen" }
+          - { en: "At the gym" }
+          - { en: "In bed" }
+        answer: 1
+      - id: "es-0938"
+        prompt: { en: "When does the speaker go to the gym?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "In the afternoon" }
+          - { en: "At night" }
+        answer: 2
+  - id: "es-la-noche-de-ana"
+    title: "Ana's evening"
+    theme: "daily-life"
+    sentences:
+      - text: "Ana vuelve a casa después del trabajo."
+      - text: "Cena con su hermana."
+      - text: "Luego descansa en el sofá."
+      - text: "Tiene sueño y se acuesta temprano."
+    questions:
+      - id: "es-0939"
+        prompt: { en: "Where does Ana rest?" }
+        options:
+          - { en: "On the sofa" }
+          - { en: "In the kitchen" }
+          - { en: "At the gym" }
+        answer: 1
+      - id: "es-0940"
+        prompt: { en: "Who does Ana have dinner with?" }
+        options:
+          - { en: "Her sister" }
+          - { en: "Her mother" }
+          - { en: "Her friend" }
+        answer: 1
+      - id: "es-0941"
+        prompt: { en: "How does Ana feel at the end of the day?" }
+        options:
+          - { en: "Sleepy" }
+          - { en: "Hungry" }
+          - { en: "Cold" }
+        answer: 1

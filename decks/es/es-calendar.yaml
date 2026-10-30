@@ -1,0 +1,349 @@
+schema: 1
+id: "es-calendar"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "calendar"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0957"
+    kind: "set"
+    members: [{ ref: "es-0958" }, { ref: "es-0959" }, { ref: "es-0960" }, { ref: "es-0961" }, { ref: "es-0962" }, { ref: "es-0963" }, { ref: "es-0964" }]
+  - id: "es-0965"
+    kind: "set"
+    members: [{ ref: "es-0966" }, { ref: "es-0967" }, { ref: "es-0968" }, { ref: "es-0969" }, { ref: "es-0970" }, { ref: "es-0971" }, { ref: "es-0972" }, { ref: "es-0973" }, { ref: "es-0974" }, { ref: "es-0975" }, { ref: "es-0976" }, { ref: "es-0977" }]
+  - id: "es-0958"
+    target: "el lunes"
+    ipa: "el ˈlunes"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "lunes", base: "lunes" }]
+    examples:
+      - { target: "El lunes tengo clase de inglés.", ipa: "el ˈlunes ˈtenɡo ˈklase de inˈɡles", bases: [{ word: "El", base: "el" }, { word: "lunes", base: "lunes" }, { word: "tengo", ref: "es-0024" }, { word: "clase", base: "clase" }, { word: "de", base: "de" }, { word: "inglés", base: "inglés" }] }
+      - { target: "Llego a casa el lunes por la noche.", ipa: "ˈʝeɡo a ˈkasa el ˈlunes poɾ la ˈnotʃe", bases: [{ word: "Llego", ref: "es-0290" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }, { word: "el", base: "el" }, { word: "lunes", base: "lunes" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }] }
+  - id: "es-0959"
+    target: "el martes"
+    ipa: "el ˈmaɾtes"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "martes", base: "martes" }]
+    examples:
+      - { target: "El martes voy al mercado.", ipa: "el ˈmaɾtes boj al meɾˈkado", bases: [{ word: "El", base: "el" }, { word: "martes", base: "martes" }, { word: "voy", ref: "es-0026" }, { word: "al", base: "a" }, { word: "mercado", base: "mercado" }] }
+      - { target: "Hoy es martes.", ipa: "oj es ˈmaɾtes", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "martes", base: "martes" }] }
+  - id: "es-0960"
+    target: "el miércoles"
+    ipa: "el ˈmjeɾkoles"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "miércoles", base: "miércoles" }]
+    examples:
+      - { target: "El miércoles hay reunión.", ipa: "el ˈmjeɾkoles aj rewˈnjon", bases: [{ word: "El", base: "el" }, { word: "miércoles", base: "miércoles" }, { word: "hay", base: "haber" }, { word: "reunión", ref: "es-0511" }] }
+      - { target: "Mañana es miércoles.", ipa: "maˈɲana es ˈmjeɾkoles", bases: [{ word: "Mañana", ref: "es-0978" }, { word: "es", ref: "es-0022" }, { word: "miércoles", base: "miércoles" }] }
+  - id: "es-0961"
+    target: "el jueves"
+    ipa: "el ˈxwebes"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "jueves", base: "jueves" }]
+    examples:
+      - { target: "El jueves hay una fiesta en casa de Ana.", ipa: "el ˈxwebes aj ˈuna ˈfjesta en ˈkasa de ˈana", bases: [{ word: "El", base: "el" }, { word: "jueves", base: "jueves" }, { word: "hay", base: "haber" }, { word: "una", base: "una" }, { word: "fiesta", ref: "es-0979" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+      - { target: "El jueves termino el trabajo a las cinco.", ipa: "el ˈxwebes teɾˈmino el tɾaˈbaxo a las ˈθinko", bases: [{ word: "El", base: "el" }, { word: "jueves", base: "jueves" }, { word: "termino", ref: "es-0521" }, { word: "trabajo", ref: "es-0502" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "cinco", ref: "es-0209" }] }
+  - id: "es-0962"
+    target: "el viernes"
+    ipa: "el ˈbjeɾnes"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "viernes", base: "viernes" }]
+    examples:
+      - { target: "El viernes descanso.", ipa: "el ˈbjeɾnes desˈkanso", bases: [{ word: "El", base: "el" }, { word: "viernes", base: "viernes" }, { word: "descanso", ref: "es-0928" }] }
+      - { target: "Nos vemos el viernes.", ipa: "nos ˈbemos el ˈbjeɾnes", bases: [{ word: "Nos", base: "nos" }, { word: "vemos", base: "ver" }, { word: "el", base: "el" }, { word: "viernes", base: "viernes" }] }
+  - id: "es-0963"
+    target: "el sábado"
+    ipa: "el ˈsabado"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sábado", base: "sábado" }]
+    examples:
+      - { target: "El sábado voy al cine.", ipa: "el ˈsabado boj al ˈθine", bases: [{ word: "El", base: "el" }, { word: "sábado", base: "sábado" }, { word: "voy", ref: "es-0026" }, { word: "al", base: "a" }, { word: "cine", base: "cine" }] }
+      - { target: "Los sábados hago la compra.", ipa: "los ˈsabados ˈaɡo la ˈkompɾa", bases: [{ word: "Los", base: "los" }, { word: "sábados", base: "sábado" }, { word: "hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "compra", ref: "es-0914" }] }
+  - id: "es-0964"
+    target: "el domingo"
+    ipa: "el doˈminɡo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "domingo", base: "domingo" }]
+    examples:
+      - { target: "El domingo no trabajo.", ipa: "el doˈminɡo no tɾaˈbaxo", bases: [{ word: "El", base: "el" }, { word: "domingo", base: "domingo" }, { word: "no", ref: "es-0043" }, { word: "trabajo", ref: "es-0259" }] }
+      - { target: "La tienda está cerrada los domingos.", ipa: "la ˈtjenda esˈta θeˈrada los doˈminɡos", bases: [{ word: "La", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "está", ref: "es-0023" }, { word: "cerrada", base: "cerrado" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }] }
+  - id: "es-0966"
+    target: "enero"
+    ipa: "eˈneɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En enero hace frío.", ipa: "en eˈneɾo ˈaθe ˈfɾio", bases: [{ word: "En", base: "en" }, { word: "enero", base: "enero" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "Enero es el primer mes del año.", ipa: "eˈneɾo es el pɾiˈmeɾ mes del ˈaɲo", bases: [{ word: "Enero", base: "enero" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "primer", base: "primero" }, { word: "mes", ref: "es-0980" }, { word: "del", base: "de" }, { word: "año", ref: "es-0021" }] }
+  - id: "es-0967"
+    target: "febrero"
+    ipa: "feˈbɾeɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En febrero hace menos frío.", ipa: "en feˈbɾeɾo ˈaθe ˈmenos ˈfɾio", bases: [{ word: "En", base: "en" }, { word: "febrero", base: "febrero" }, { word: "hace", ref: "es-0025" }, { word: "menos", base: "menos" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "Febrero tiene veintiocho días.", ipa: "feˈbɾeɾo ˈtjene bejnˈtjotʃo ˈdias", bases: [{ word: "Febrero", base: "febrero" }, { word: "tiene", ref: "es-0024" }, { word: "veintiocho", base: "veintiocho" }, { word: "días", base: "día" }] }
+  - id: "es-0968"
+    target: "marzo"
+    ipa: "ˈmaɾθo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En marzo empieza la primavera.", ipa: "en ˈmaɾθo emˈpjeθa la pɾimaˈbeɾa", bases: [{ word: "En", base: "en" }, { word: "marzo", base: "marzo" }, { word: "empieza", ref: "es-0852" }, { word: "la", base: "la" }, { word: "primavera", ref: "es-0981" }] }
+      - { target: "El examen es en marzo.", ipa: "el ekˈsamen es en ˈmaɾθo", bases: [{ word: "El", base: "el" }, { word: "examen", base: "examen" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "marzo", base: "marzo" }] }
+  - id: "es-0969"
+    target: "abril"
+    ipa: "aˈbɾil"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En abril llueve mucho.", ipa: "en aˈbɾil ˈʝwebe ˈmutʃo", bases: [{ word: "En", base: "en" }, { word: "abril", base: "abril" }, { word: "llueve", base: "llover" }, { word: "mucho", ref: "es-0053" }] }
+      - { target: "Mi reunión es en abril.", ipa: "mi rewˈnjon es en aˈbɾil", bases: [{ word: "Mi", ref: "es-0129" }, { word: "reunión", ref: "es-0511" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "abril", base: "abril" }] }
+  - id: "es-0970"
+    target: "mayo"
+    ipa: "ˈmaʝo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Mayo es un mes bonito.", ipa: "ˈmaʝo es un mes boˈnito", bases: [{ word: "Mayo", base: "mayo" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "mes", ref: "es-0980" }, { word: "bonito", ref: "es-0405" }] }
+      - { target: "En mayo hace buen tiempo.", ipa: "en ˈmaʝo ˈaθe bwen ˈtjempo", bases: [{ word: "En", base: "en" }, { word: "mayo", base: "mayo" }, { word: "hace", ref: "es-0025" }, { word: "buen", base: "bueno" }, { word: "tiempo", base: "tiempo" }] }
+  - id: "es-0971"
+    target: "junio"
+    ipa: "ˈxunjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En junio empieza el verano.", ipa: "en ˈxunjo emˈpjeθa el beˈɾano", bases: [{ word: "En", base: "en" }, { word: "junio", base: "junio" }, { word: "empieza", ref: "es-0852" }, { word: "el", base: "el" }, { word: "verano", ref: "es-0982" }] }
+      - { target: "Junio es el sexto mes del año.", ipa: "ˈxunjo es el ˈseksto mes del ˈaɲo", bases: [{ word: "Junio", base: "junio" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "sexto", base: "sexto" }, { word: "mes", ref: "es-0980" }, { word: "del", base: "de" }, { word: "año", ref: "es-0021" }] }
+  - id: "es-0972"
+    target: "julio"
+    ipa: "ˈxuljo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En julio hace mucho calor.", ipa: "en ˈxuljo ˈaθe ˈmutʃo kaˈloɾ", bases: [{ word: "En", base: "en" }, { word: "julio", base: "julio" }, { word: "hace", ref: "es-0025" }, { word: "mucho", ref: "es-0053" }, { word: "calor", base: "calor" }] }
+      - { target: "Julio es un mes de vacaciones.", ipa: "ˈxuljo es un mes de bakaˈθjones", bases: [{ word: "Julio", base: "julio" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "mes", ref: "es-0980" }, { word: "de", base: "de" }, { word: "vacaciones", base: "vacaciones" }] }
+  - id: "es-0973"
+    target: "agosto"
+    ipa: "aˈɡosto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En agosto mucha gente viaja.", ipa: "en aˈɡosto ˈmutʃa ˈxente ˈbjaxa", bases: [{ word: "En", base: "en" }, { word: "agosto", base: "agosto" }, { word: "mucha", base: "mucho" }, { word: "gente", base: "gente" }, { word: "viaja", base: "viajar" }] }
+      - { target: "Mi cumpleaños no es en agosto.", ipa: "mi kumpleˈaɲos no es en aˈɡosto", bases: [{ word: "Mi", ref: "es-0129" }, { word: "cumpleaños", ref: "es-0246" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "agosto", base: "agosto" }] }
+  - id: "es-0974"
+    target: "septiembre"
+    ipa: "sepˈtjembɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En septiembre empieza el curso.", ipa: "en sepˈtjembɾe emˈpjeθa el ˈkuɾso", bases: [{ word: "En", base: "en" }, { word: "septiembre", base: "septiembre" }, { word: "empieza", ref: "es-0852" }, { word: "el", base: "el" }, { word: "curso", base: "curso" }] }
+      - { target: "Septiembre tiene treinta días.", ipa: "sepˈtjembɾe ˈtjene ˈtɾejnta ˈdias", bases: [{ word: "Septiembre", base: "septiembre" }, { word: "tiene", ref: "es-0024" }, { word: "treinta", base: "treinta" }, { word: "días", base: "día" }] }
+  - id: "es-0975"
+    target: "octubre"
+    ipa: "okˈtubɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En octubre cambia el tiempo.", ipa: "en okˈtubɾe ˈkambja el ˈtjempo", bases: [{ word: "En", base: "en" }, { word: "octubre", base: "octubre" }, { word: "cambia", base: "cambiar" }, { word: "el", base: "el" }, { word: "tiempo", base: "tiempo" }] }
+      - { target: "Octubre es un mes de otoño.", ipa: "okˈtubɾe es un mes de oˈtoɲo", bases: [{ word: "Octubre", base: "octubre" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "mes", ref: "es-0980" }, { word: "de", base: "de" }, { word: "otoño", ref: "es-0983" }] }
+  - id: "es-0976"
+    target: "noviembre"
+    ipa: "noˈbjembɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En noviembre hace frío y llueve.", ipa: "en noˈbjembɾe ˈaθe ˈfɾio i ˈʝwebe", bases: [{ word: "En", base: "en" }, { word: "noviembre", base: "noviembre" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }, { word: "y", ref: "es-0048" }, { word: "llueve", base: "llover" }] }
+      - { target: "La fiesta es en noviembre.", ipa: "la ˈfjesta es en noˈbjembɾe", bases: [{ word: "La", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "noviembre", base: "noviembre" }] }
+  - id: "es-0977"
+    target: "diciembre"
+    ipa: "diˈθjembɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "En diciembre hay muchas fiestas.", ipa: "en diˈθjembɾe aj ˈmutʃas ˈfjestas", bases: [{ word: "En", base: "en" }, { word: "diciembre", base: "diciembre" }, { word: "hay", base: "haber" }, { word: "muchas", base: "mucho" }, { word: "fiestas", base: "fiesta" }] }
+      - { target: "Mi hermano cumple años en diciembre.", ipa: "mi eɾˈmano ˈkumple ˈaɲos en diˈθjembɾe", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "cumple", base: "cumplir" }, { word: "años", base: "año" }, { word: "en", base: "en" }, { word: "diciembre", base: "diciembre" }] }
+  - id: "es-0980"
+    target: "el mes"
+    ipa: "el mes"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "mes", base: "mes" }]
+    examples:
+      - { target: "El mes que viene voy a Lima.", ipa: "el mes ke ˈbjene boj a ˈlima", bases: [{ word: "El", base: "el" }, { word: "mes", base: "mes" }, { word: "que", base: "que" }, { word: "viene", base: "venir" }, { word: "voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "Lima", base: "Lima" }] }
+      - { target: "Este mes trabajo mucho.", ipa: "ˈeste mes tɾaˈbaxo ˈmutʃo", bases: [{ word: "Este", base: "este" }, { word: "mes", base: "mes" }, { word: "trabajo", ref: "es-0259" }, { word: "mucho", ref: "es-0053" }] }
+  - id: "es-0984"
+    target: "el calendario"
+    ipa: "el kalenˈdaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "calendario", base: "calendario" }]
+    examples:
+      - { target: "El calendario está en la cocina.", ipa: "el kalenˈdaɾjo esˈta en la koˈθina", bases: [{ word: "El", base: "el" }, { word: "calendario", base: "calendario" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }] }
+      - { target: "Miro el calendario cada mañana.", ipa: "ˈmiɾo el kalenˈdaɾjo ˈkada maˈɲana", bases: [{ word: "Miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "calendario", base: "calendario" }, { word: "cada", ref: "es-0366" }, { word: "mañana", ref: "es-0841" }] }
+  - id: "es-0985"
+    target: "la agenda"
+    ipa: "la aˈxenda"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "agenda", base: "agenda" }]
+    examples:
+      - { target: "Escribo la cita en la agenda.", ipa: "esˈkɾibo la ˈθita en la aˈxenda", bases: [{ word: "Escribo", ref: "es-0297" }, { word: "la", base: "la" }, { word: "cita", ref: "es-0844" }, { word: "en", base: "en" }, { word: "agenda", base: "agenda" }] }
+      - { target: "La agenda de Ana está llena.", ipa: "la aˈxenda de ˈana esˈta ˈʝena", bases: [{ word: "La", base: "la" }, { word: "agenda", base: "agenda" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "llena", base: "lleno" }] }
+  - id: "es-0986"
+    target: "anteayer"
+    ipa: "anteaˈʝeɾ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Hoy es jueves. Ayer, miércoles, y anteayer, martes.", ipa: "oj es ˈxwebes aˈʝeɾ ˈmjeɾkoles i anteaˈʝeɾ ˈmaɾtes", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "jueves", ref: "es-0961" }, { word: "Ayer", ref: "es-0332" }, { word: "miércoles", ref: "es-0960" }, { word: "y", ref: "es-0048" }, { word: "anteayer", base: "anteayer" }, { word: "martes", ref: "es-0959" }] }
+      - { target: "¿Qué día es anteayer?", ipa: "ke ˈdia es anteaˈʝeɾ", bases: [{ word: "Qué", ref: "es-0054" }, { word: "día", ref: "es-0019" }, { word: "es", ref: "es-0022" }, { word: "anteayer", base: "anteayer" }] }
+  - id: "es-0978"
+    target: "mañana"
+    ipa: "maˈɲana"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "h1", kind: "homograph", ref: "es-0841" }
+    examples:
+      - { target: "Mañana tengo una cita.", ipa: "maˈɲana ˈtenɡo ˈuna ˈθita", bases: [{ word: "Mañana", base: "mañana" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cita", ref: "es-0844" }] }
+      - { target: "Hasta mañana, Ana.", ipa: "ˈasta maˈɲana ˈana", bases: [{ word: "Hasta", base: "hasta" }, { word: "mañana", base: "mañana" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0987"
+    target: "pasado"
+    ipa: "paˈsado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Pasado mañana tengo una reunión.", ipa: "paˈsado maˈɲana ˈtenɡo ˈuna rewˈnjon", bases: [{ word: "Pasado", base: "pasado" }, { word: "mañana", ref: "es-0978" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "reunión", ref: "es-0511" }] }
+      - { target: "Pasado mañana es sábado.", ipa: "paˈsado maˈɲana es ˈsabado", bases: [{ word: "Pasado", base: "pasado" }, { word: "mañana", ref: "es-0978" }, { word: "es", ref: "es-0022" }, { word: "sábado", ref: "es-0963" }] }
+  - id: "es-0988"
+    target: "próximo"
+    ipa: "ˈpɾoksimo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "El próximo lunes voy al médico.", ipa: "el ˈpɾoksimo ˈlunes boj al ˈmediko", bases: [{ word: "El", base: "el" }, { word: "próximo", base: "próximo" }, { word: "lunes", ref: "es-0958" }, { word: "voy", ref: "es-0026" }, { word: "al", base: "a" }, { word: "médico", base: "médico" }] }
+      - { target: "La próxima cita es el jueves.", ipa: "la ˈpɾoksima ˈθita es el ˈxwebes", bases: [{ word: "La", base: "la" }, { word: "próxima", base: "próximo" }, { word: "cita", ref: "es-0844" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "jueves", ref: "es-0961" }] }
+  - id: "es-0979"
+    target: "la fiesta"
+    ipa: "la ˈfjesta"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "fiesta", base: "fiesta" }]
+    examples:
+      - { target: "Hay una fiesta en casa de Ana el sábado.", ipa: "aj ˈuna ˈfjesta en ˈkasa de ˈana el ˈsabado", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "fiesta", base: "fiesta" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }] }
+      - { target: "Hoy no es fiesta.", ipa: "oj no es ˈfjesta", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "fiesta", base: "fiesta" }] }
+  - id: "es-0989"
+    target: "el aniversario"
+    ipa: "el anibeɾˈsaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "aniversario", base: "aniversario" }]
+    examples:
+      - { target: "Mañana es el aniversario de mis padres.", ipa: "maˈɲana es el anibeɾˈsaɾjo de mis ˈpadɾes", bases: [{ word: "Mañana", ref: "es-0978" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "aniversario", base: "aniversario" }, { word: "de", base: "de" }, { word: "mis", base: "mi" }, { word: "padres", base: "padre" }] }
+      - { target: "El aniversario de boda es en mayo.", ipa: "el anibeɾˈsaɾjo de ˈboda es en ˈmaʝo", bases: [{ word: "El", base: "el" }, { word: "aniversario", base: "aniversario" }, { word: "de", base: "de" }, { word: "boda", base: "boda" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }] }
+  - id: "es-0982"
+    target: "el verano"
+    ipa: "el beˈɾano"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "verano", base: "verano" }]
+    examples:
+      - { target: "En verano hace calor.", ipa: "en beˈɾano ˈaθe kaˈloɾ", bases: [{ word: "En", base: "en" }, { word: "verano", base: "verano" }, { word: "hace", ref: "es-0025" }, { word: "calor", base: "calor" }] }
+      - { target: "El verano es mi estación favorita.", ipa: "el beˈɾano es mi estaˈθjon faboˈɾita", bases: [{ word: "El", base: "el" }, { word: "verano", base: "verano" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "estación", base: "estación" }, { word: "favorita", base: "favorito" }] }
+  - id: "es-0983"
+    target: "el otoño"
+    ipa: "el oˈtoɲo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "otoño", base: "otoño" }]
+    examples:
+      - { target: "En otoño llueve mucho.", ipa: "en oˈtoɲo ˈʝwebe ˈmutʃo", bases: [{ word: "En", base: "en" }, { word: "otoño", base: "otoño" }, { word: "llueve", base: "llover" }, { word: "mucho", ref: "es-0053" }] }
+      - { target: "El otoño empieza en septiembre.", ipa: "el oˈtoɲo emˈpjeθa en sepˈtjembɾe", bases: [{ word: "El", base: "el" }, { word: "otoño", base: "otoño" }, { word: "empieza", ref: "es-0852" }, { word: "en", base: "en" }, { word: "septiembre", ref: "es-0974" }] }
+  - id: "es-0990"
+    target: "el invierno"
+    ipa: "el inˈbjeɾno"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "invierno", base: "invierno" }]
+    examples:
+      - { target: "En invierno hace frío.", ipa: "en inˈbjeɾno ˈaθe ˈfɾio", bases: [{ word: "En", base: "en" }, { word: "invierno", base: "invierno" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }] }
+      - { target: "Mi cumpleaños es en invierno.", ipa: "mi kumpleˈaɲos es en inˈbjeɾno", bases: [{ word: "Mi", ref: "es-0129" }, { word: "cumpleaños", ref: "es-0246" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "invierno", base: "invierno" }] }
+  - id: "es-0981"
+    target: "la primavera"
+    ipa: "la pɾimaˈbeɾa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "primavera", base: "primavera" }]
+    examples:
+      - { target: "En primavera hace buen tiempo.", ipa: "en pɾimaˈbeɾa ˈaθe bwen ˈtjempo", bases: [{ word: "En", base: "en" }, { word: "primavera", base: "primavera" }, { word: "hace", ref: "es-0025" }, { word: "buen", base: "bueno" }, { word: "tiempo", base: "tiempo" }] }
+      - { target: "Me gusta la primavera.", ipa: "me ˈɡusta la pɾimaˈbeɾa", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "la", base: "la" }, { word: "primavera", base: "primavera" }] }

@@ -3395,15 +3395,12 @@ cards:
           final speech = FixedSpeechEngine(onDevice: <String>{'es'});
           final state = await pumpSpeaking(tester, speech);
           final l10n = l10nOf(tester);
-          speech.next = const <SpeechAlternative>[
-            SpeechAlternative('el perro'),
-          ];
+          // Not a word of any course: a real word would be found as a card,
+          // and its IPA added to the line.
+          speech.next = const <SpeechAlternative>[SpeechAlternative('zxq wvk')];
           await speak(tester);
           expect(find.text(l10n.feedbackWrong), findsOneWidget);
-          expect(
-            find.text(l10n.feedbackSaidAnswer('el perro')),
-            findsOneWidget,
-          );
+          expect(find.text(l10n.feedbackSaidAnswer('zxq wvk')), findsOneWidget);
           expect(state.progress.log.single.grade, 1);
           handle.dispose();
         }

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-animals"
+name: "Reading: animals"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about animals: a visit to a farm, and a zoo board with each animal. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-visita-a-la-granja"
+    title: "A visit to the farm"
+    theme: "animals"
+    sentences:
+      - text: "En la granja hay vacas y ovejas."
+      - text: "Las gallinas están en el corral."
+      - text: "Mira, un caballo corre rápido."
+      - text: "Los cerdos comen mucho."
+    questions:
+      - id: "es-1097"
+        prompt: { en: "Which animals are on the farm, according to the text?" }
+        options:
+          - { en: "Cows and sheep" }
+          - { en: "Lions and tigers" }
+          - { en: "Fish and frogs" }
+        answer: 1
+      - id: "es-1098"
+        prompt: { en: "Where are the hens?" }
+        options:
+          - { en: "In the yard" }
+          - { en: "In the sea" }
+          - { en: "In the kitchen" }
+        answer: 1
+      - id: "es-1099"
+        prompt: { en: "Which animal runs fast?" }
+        options:
+          - { en: "The horse" }
+          - { en: "The pig" }
+          - { en: "The hen" }
+        answer: 1
+  - id: "es-cartel-del-zoo"
+    title: "A zoo board"
+    theme: "animals"
+    sentences:
+      - text: "El elefante es muy grande."
+      - text: "El oso come miel."
+      - text: "El perro come carne."
+      - text: "El tigre es un animal salvaje."
+    questions:
+      - id: "es-1100"
+        prompt: { en: "Which animal is very big?" }
+        options:
+          - { en: "The elephant" }
+          - { en: "The monkey" }
+          - { en: "The bear" }
+        answer: 1
+      - id: "es-1101"
+        prompt: { en: "What does the bear eat?" }
+        options:
+          - { en: "Honey" }
+          - { en: "Bananas" }
+          - { en: "Cheese" }
+        answer: 1
+      - id: "es-1102"
+        prompt: { en: "Which animal is wild?" }
+        options:
+          - { en: "The tiger" }
+          - { en: "The dog" }
+          - { en: "The cat" }
+        answer: 1

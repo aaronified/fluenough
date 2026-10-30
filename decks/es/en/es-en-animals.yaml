@@ -1,0 +1,765 @@
+schema: 1
+id: es-en-animals
+kind: layer
+core: es-animals
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Animals
+license: CC-BY-SA-4.0
+description: 'Farm, pet, wild and sea animals, the verbs animals do and the words that describe them. Each noun has its gender. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1060:
+    native: animal
+    notes:
+      n1: Animal is any animal. A pet is una mascota.
+    bases:
+      el: the
+      animal: animal
+    examples:
+      Los animales necesitan agua.:
+        native: Animals need water.
+        bases:
+          Los: The
+          animales: animals
+          agua: water
+      El animal duerme en el jardín.:
+        native: The animal sleeps in the garden.
+        bases:
+          El: The
+          animal: animal
+          en: in
+  es-1061:
+    native: dog
+    notes:
+      n1: Perro is a dog. The female is la perra.
+    bases:
+      el: the
+      perro: dog
+    examples:
+      El perro de Ana come carne.:
+        native: Ana's dog eats meat.
+        bases:
+          El: The
+          perro: dog
+          de: of
+          Ana: Ana
+      Mi perro duerme mucho.:
+        native: My dog sleeps a lot.
+        bases:
+          perro: dog
+  es-1062:
+    native: cat
+    notes:
+      n1: Gato is a cat. The female is la gata.
+    bases:
+      el: the
+      gato: cat
+    examples:
+      El gato duerme en el sofá.:
+        native: The cat sleeps on the sofa.
+        bases:
+          El: The
+          gato: cat
+          en: 'on'
+      Los gatos beben leche.:
+        native: Cats drink milk.
+        bases:
+          Los: The
+          gatos: cats
+  es-1063:
+    native: bird
+    notes:
+      n1: Pájaro is a bird. A small one is un pajarito.
+    bases:
+      pájaro: bird
+      el: the
+    examples:
+      El pájaro canta en el árbol.:
+        native: The bird sings in the tree.
+        bases:
+          El: The
+          pájaro: bird
+          canta: sings
+          en: in
+          árbol: tree
+      Un pájaro vuela sobre la casa.:
+        native: A bird flies over the house.
+        bases:
+          Un: A
+          pájaro: bird
+          sobre: over
+          la: the
+  es-1065:
+    native: fish
+    notes:
+      n1: Pez is a fish, the animal in the water. The food is el pescado.
+      plural: 'The plural is peces, with a c, not a z: los peces.'
+    bases:
+      el: the
+      pez: fish
+    examples:
+      El pez nada en el agua.:
+        native: The fish swims in the water.
+        bases:
+          El: The
+          pez: fish
+          en: in
+          agua: water
+      Los peces viven en el mar.:
+        native: Fish live in the sea.
+        bases:
+          Los: The
+          peces: fish
+          en: in
+          el: the
+          mar: sea
+  es-1067:
+    native: horse
+    notes:
+      n1: Caballo is a horse. The female is la yegua.
+    bases:
+      el: the
+      caballo: horse
+    examples:
+      El caballo corre rápido.:
+        native: The horse runs fast.
+        bases:
+          El: The
+          caballo: horse
+      Ana monta a caballo los domingos.:
+        native: Ana rides a horse on Sundays.
+        bases:
+          Ana: Ana
+          monta: rides
+          a: 'on'
+          caballo: horse
+          los: 'on'
+          domingos: Sundays
+  es-1069:
+    native: cow
+    notes:
+      n1: Vaca is a cow. It gives milk, la leche.
+    bases:
+      la: the
+      vaca: cow
+    examples:
+      La vaca da leche.:
+        native: The cow gives milk.
+        bases:
+          La: The
+          vaca: cow
+          da: gives
+      En la granja hay muchas vacas.:
+        native: There are many cows on the farm.
+        bases:
+          En: 'On'
+          la: the
+          hay: there are
+          muchas: many
+          vacas: cows
+  es-1071:
+    native: pig
+    notes:
+      n1: 'Cerdo is a pig. It is also pork: la carne de cerdo.'
+    bases:
+      el: the
+      cerdo: pig
+    examples:
+      El cerdo come mucho.:
+        native: The pig eats a lot.
+        bases:
+          El: The
+          cerdo: pig
+      La carne de cerdo es barata.:
+        native: Pork is cheap.
+        bases:
+          La: The
+          de: of
+          cerdo: pig
+  es-1072:
+    native: sheep
+    notes:
+      n1: Oveja is a sheep. Its wool is la lana.
+    bases:
+      la: the
+      oveja: sheep
+    examples:
+      La oveja tiene lana.:
+        native: The sheep has wool.
+        bases:
+          La: The
+          oveja: sheep
+          lana: wool
+      Las ovejas comen en el campo.:
+        native: The sheep eat in the field.
+        bases:
+          Las: The
+          ovejas: sheep
+          en: in
+          el: the
+          campo: field
+  es-1073:
+    native: hen
+    notes:
+      n1: Gallina is a hen, a female chicken that lays eggs.
+    bases:
+      la: the
+      gallina: hen
+    examples:
+      La gallina pone huevos.:
+        native: The hen lays eggs.
+        bases:
+          La: The
+          gallina: hen
+          pone: lays
+          huevos: eggs
+      Hay tres gallinas en el corral.:
+        native: There are three hens in the yard.
+        bases:
+          Hay: There are
+          gallinas: hens
+          en: in
+          el: the
+          corral: yard
+  es-1074:
+    native: rabbit
+    notes:
+      n1: Conejo is a rabbit.
+    bases:
+      el: the
+      conejo: rabbit
+    examples:
+      El conejo come zanahorias.:
+        native: The rabbit eats carrots.
+        bases:
+          El: The
+          conejo: rabbit
+          zanahorias: carrots
+      Los conejos saltan mucho.:
+        native: Rabbits jump a lot.
+        bases:
+          Los: The
+          conejos: rabbits
+  es-1076:
+    native: mouse
+    notes:
+      n1: Ratón is a mouse, the animal. The computer mouse is also el ratón.
+    bases:
+      el: the
+      ratón: mouse
+    examples:
+      El ratón come queso.:
+        native: The mouse eats cheese.
+        bases:
+          El: The
+          ratón: mouse
+      Un ratón corre por la cocina.:
+        native: A mouse runs through the kitchen.
+        bases:
+          Un: A
+          ratón: mouse
+          por: through
+          la: the
+  es-1077:
+    native: lion
+    notes:
+      n1: León is a lion. The female is la leona.
+    bases:
+      el: the
+      león: lion
+    examples:
+      El león es un animal salvaje.:
+        native: The lion is a wild animal.
+        bases:
+          El: The
+          león: lion
+          un: a
+      Los leones viven en África.:
+        native: Lions live in Africa.
+        bases:
+          Los: The
+          leones: lions
+          en: in
+          África: Africa
+  es-1079:
+    native: tiger
+    notes:
+      n1: Tigre is a tiger.
+    bases:
+      el: the
+      tigre: tiger
+    examples:
+      El tigre es muy fuerte.:
+        native: The tiger is very strong.
+        bases:
+          El: The
+          tigre: tiger
+      Un tigre duerme casi todo el día.:
+        native: A tiger sleeps almost all day.
+        bases:
+          Un: A
+          tigre: tiger
+          todo: all
+          el: the
+  es-1080:
+    native: elephant
+    notes:
+      n1: Elefante is an elephant, one of the largest land animals.
+    bases:
+      el: the
+      elefante: elephant
+    examples:
+      El elefante es muy grande.:
+        native: The elephant is very big.
+        bases:
+          El: The
+          elefante: elephant
+      Los elefantes beben mucha agua.:
+        native: Elephants drink a lot of water.
+        bases:
+          Los: The
+          elefantes: elephants
+          mucha: a lot of
+          agua: water
+  es-1081:
+    native: bear
+    notes:
+      n1: Oso is a bear. El oso pardo is the brown bear.
+    bases:
+      el: the
+      oso: bear
+    examples:
+      El oso come miel.:
+        native: The bear eats honey.
+        bases:
+          El: The
+          oso: bear
+          miel: honey
+      Un oso vive en el bosque.:
+        native: A bear lives in the forest.
+        bases:
+          Un: A
+          oso: bear
+          en: in
+          el: the
+          bosque: forest
+  es-1082:
+    native: snake
+    notes:
+      n1: Serpiente is a snake.
+      culebra: In Spain the snake is often called la culebra, which is more common in everyday speech.
+    bases:
+      la: the
+      serpiente: snake
+    examples:
+      La serpiente se mueve despacio.:
+        native: The snake moves slowly.
+        bases:
+          La: The
+          serpiente: snake
+          se: itself
+          mueve: moves
+      Hay serpientes en el bosque.:
+        native: There are snakes in the forest.
+        bases:
+          Hay: There are
+          serpientes: snakes
+          en: in
+          el: the
+          bosque: forest
+  es-1083:
+    native: frog
+    notes:
+      n1: Rana is a frog. It lives near water.
+    bases:
+      la: the
+      rana: frog
+    examples:
+      La rana salta al agua.:
+        native: The frog jumps into the water.
+        bases:
+          La: The
+          rana: frog
+          al: into
+          agua: water
+      Las ranas viven cerca del agua.:
+        native: Frogs live near the water.
+        bases:
+          Las: The
+          ranas: frogs
+          del: of the
+          agua: water
+  es-1084:
+    native: butterfly
+    notes:
+      n1: Mariposa is a butterfly.
+    bases:
+      la: the
+      mariposa: butterfly
+    examples:
+      La mariposa vuela en el jardín.:
+        native: The butterfly flies in the garden.
+        bases:
+          La: The
+          mariposa: butterfly
+          en: in
+          el: the
+      Una mariposa es bonita.:
+        native: A butterfly is pretty.
+        bases:
+          Una: A
+          mariposa: butterfly
+  es-1085:
+    native: bee
+    notes:
+      n1: Abeja is a bee. Bees make honey, la miel.
+    bases:
+      la: the
+      abeja: bee
+    examples:
+      La abeja hace miel.:
+        native: The bee makes honey.
+        bases:
+          La: The
+          abeja: bee
+          miel: honey
+      Las abejas viven en grupo.:
+        native: Bees live in a group.
+        bases:
+          Las: The
+          abejas: bees
+          en: in
+          grupo: group
+  es-1086:
+    native: ant
+    notes:
+      n1: Hormiga is an ant. Ants often work together in a line.
+    bases:
+      la: the
+      hormiga: ant
+    examples:
+      Una hormiga camina por la mesa.:
+        native: An ant walks across the table.
+        bases:
+          Una: An
+          hormiga: ant
+          por: across
+          la: the
+      Las hormigas son muy pequeñas.:
+        native: Ants are very small.
+        bases:
+          Las: The
+          hormigas: ants
+          pequeñas: small
+  es-1087:
+    native: giraffe
+    notes:
+      n1: Jirafa is a giraffe. It has a long neck.
+    bases:
+      la: the
+      jirafa: giraffe
+    examples:
+      La jirafa tiene el cuello largo.:
+        native: The giraffe has a long neck.
+        bases:
+          La: The
+          jirafa: giraffe
+          el: the
+          cuello: neck
+      La jirafa come hojas.:
+        native: The giraffe eats leaves.
+        bases:
+          La: The
+          jirafa: giraffe
+          hojas: leaves
+  es-1088:
+    native: zebra
+    notes:
+      n1: Cebra is a zebra, with black and white stripes.
+    bases:
+      la: the
+      cebra: zebra
+    examples:
+      La cebra tiene rayas.:
+        native: The zebra has stripes.
+        bases:
+          La: The
+          cebra: zebra
+          rayas: stripes
+      Una cebra vive en África.:
+        native: A zebra lives in Africa.
+        bases:
+          Una: A
+          cebra: zebra
+          en: in
+          África: Africa
+  es-1089:
+    native: wolf
+    notes:
+      n1: Lobo is a wolf, a wild animal of forests.
+    bases:
+      el: the
+      lobo: wolf
+    examples:
+      El lobo vive en el bosque.:
+        native: The wolf lives in the forest.
+        bases:
+          El: The
+          lobo: wolf
+          en: in
+          bosque: forest
+      Los lobos aúllan de noche.:
+        native: Wolves howl at night.
+        bases:
+          Los: The
+          lobos: wolves
+          aúllan: howl
+          de: at
+  es-1090:
+    native: tortoise; turtle
+    notes:
+      n1: Tortuga is a tortoise or a turtle. It moves slowly.
+    bases:
+      la: the
+      tortuga: tortoise
+    examples:
+      La tortuga camina muy despacio.:
+        native: The tortoise walks very slowly.
+        bases:
+          La: The
+          tortuga: tortoise
+      Una tortuga vive muchos años.:
+        native: A tortoise lives many years.
+        bases:
+          Una: A
+          tortuga: tortoise
+          muchos: many
+          años: years
+  es-1091:
+    native: dolphin
+    notes:
+      n1: Delfín is a dolphin. It lives in the sea.
+    bases:
+      el: the
+      delfín: dolphin
+    examples:
+      El delfín nada en el mar.:
+        native: The dolphin swims in the sea.
+        bases:
+          El: The
+          delfín: dolphin
+          en: in
+          mar: sea
+      Los delfines son muy inteligentes.:
+        native: Dolphins are very clever.
+        bases:
+          Los: The
+          delfines: dolphins
+          inteligentes: clever
+  es-1092:
+    native: spider
+    notes:
+      n1: Araña is a spider. It is not an insect.
+    bases:
+      la: the
+      araña: spider
+    examples:
+      La araña hace una tela.:
+        native: The spider makes a web.
+        bases:
+          La: The
+          araña: spider
+          una: a
+          tela: web
+      Tengo miedo de las arañas.:
+        native: I am afraid of spiders.
+        bases:
+          miedo: fear
+          de: of
+          las: the
+          arañas: spiders
+  es-1093:
+    native: pet
+    notes:
+      n1: Mascota is a pet, a tame animal kept at home.
+    bases:
+      la: the
+      mascota: pet
+    examples:
+      Mi mascota es un gato.:
+        native: My pet is a cat.
+        bases:
+          mascota: pet
+          un: a
+      ¿Tienes una mascota?:
+        native: Do you have a pet?
+        bases:
+          una: a
+          mascota: pet
+  es-1070:
+    native: farm
+    notes:
+      n1: Granja is a farm, where animals live and food is grown.
+    bases:
+      la: the
+      granja: farm
+    examples:
+      La granja tiene vacas y cerdos.:
+        native: The farm has cows and pigs.
+        bases:
+          La: The
+          granja: farm
+      Pasamos el día en la granja.:
+        native: We spend the day on the farm.
+        bases:
+          Pasamos: We spend
+          el: the
+          en: 'on'
+          la: the
+          granja: farm
+  es-1064:
+    native: to fly
+    notes:
+      n1: Volar is to fly.
+      stem: 'Stem change: o becomes ue in yo, tú, él/ella and ellos: vuelo, vuelas, vuela, vuelan. Nosotros and vosotros keep the o: volamos, voláis.'
+    examples:
+      Los pájaros vuelan muy alto.:
+        native: Birds fly very high.
+        bases:
+          Los: The
+          vuelan: fly
+          alto: high
+      Vuelo a Lima el sábado.:
+        native: I fly to Lima on Saturday.
+        bases:
+          Vuelo: I fly
+          a: to
+          Lima: Lima
+          el: 'on'
+  es-1066:
+    native: to swim
+    notes:
+      n1: 'Nadar is to swim, regular: nado, nadas, nada.'
+    examples:
+      Nado todas las mañanas.:
+        native: I swim every morning.
+        bases:
+          Nado: I swim
+          todas: every
+          las: the
+          mañanas: mornings
+      Mi hermana nada bien.:
+        native: My sister swims well.
+        bases:
+          hermana: sister
+          nada: swims
+  es-1068:
+    native: to run
+    notes:
+      n1: 'Correr is to run. Regular: corro, corres, corre.'
+    examples:
+      Corro en el parque los domingos.:
+        native: I run in the park on Sundays.
+        bases:
+          Corro: I run
+          en: in
+          el: the
+          los: 'on'
+          domingos: Sundays
+      Los niños corren en la calle.:
+        native: The children run in the street.
+        bases:
+          Los: The
+          niños: children
+          corren: run
+          en: in
+          la: the
+  es-1075:
+    native: to jump
+    notes:
+      n1: 'Saltar is to jump. Regular: salto, saltas, salta.'
+    examples:
+      El conejo salta en el jardín.:
+        native: The rabbit jumps in the garden.
+        bases:
+          El: The
+          salta: jumps
+          en: in
+      Saltamos al agua desde la roca.:
+        native: We jump into the water from the rock.
+        bases:
+          Saltamos: We jump
+          al: into
+          agua: water
+          desde: from
+          la: the
+          roca: rock
+  es-1094:
+    native: to bark
+    notes:
+      n1: 'Ladrar is to bark, the sound a dog makes. Regular: ladro, ladras, ladra.'
+    examples:
+      El perro ladra cuando llega alguien.:
+        native: The dog barks when someone arrives.
+        bases:
+          El: The
+          ladra: barks
+          cuando: when
+      Los perros ladran por la noche.:
+        native: Dogs bark at night.
+        bases:
+          Los: The
+          ladran: bark
+          por: at
+          la: the
+  es-1078:
+    native: wild
+    notes:
+      n1: Salvaje is wild, not tame. It has one form for both genders.
+    examples:
+      En la selva viven animales salvajes.:
+        native: Wild animals live in the jungle.
+        bases:
+          En: In
+          la: the
+          selva: jungle
+          salvajes: wild
+      Los lobos son animales salvajes.:
+        native: Wolves are wild animals.
+        bases:
+          Los: The
+          salvajes: wild
+  es-1095:
+    native: domestic; tame
+    notes:
+      n1: 'Doméstico is tame or kept at home: un animal doméstico is a pet, such as a dog or a cat.'
+    examples:
+      El perro es un animal doméstico.:
+        native: The dog is a domestic animal.
+        bases:
+          El: The
+          un: a
+          doméstico: domestic
+      Los gatos y los perros son domésticos.:
+        native: Cats and dogs are domestic animals.
+        bases:
+          Los: The
+          domésticos: domestic
+  es-1096:
+    native: dangerous
+    notes:
+      n1: Peligroso is dangerous. The noun is el peligro.
+    examples:
+      El oso es peligroso.:
+        native: The bear is dangerous.
+        bases:
+          El: The
+          peligroso: dangerous
+      Una serpiente puede ser peligrosa.:
+        native: A snake can be dangerous.
+        bases:
+          Una: A
+          puede: can
+          peligrosa: dangerous

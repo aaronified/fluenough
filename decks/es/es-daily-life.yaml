@@ -1,0 +1,392 @@
+schema: 1
+id: "es-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0899"
+    target: "la rutina"
+    ipa: "la ruˈtina"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "rutina", base: "rutina" }]
+    examples:
+      - { target: "Mi rutina empieza a las siete.", ipa: "mi ruˈtina emˈpjeθa a las ˈsjete", bases: [{ word: "Mi", ref: "es-0129" }, { word: "rutina", base: "rutina" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", base: "siete" }] }
+      - { target: "Mi rutina cambia cada día.", ipa: "mi ruˈtina ˈkambja ˈkada ˈdia", bases: [{ word: "Mi", ref: "es-0129" }, { word: "rutina", base: "rutina" }, { word: "cambia", base: "cambiar" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }] }
+  - id: "es-0900"
+    target: "la cama"
+    ipa: "la ˈkama"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cama", base: "cama" }]
+    examples:
+      - { target: "Me acuesto en la cama a las once.", ipa: "me aˈkwesto en la ˈkama a las ˈonθe", bases: [{ word: "Me", base: "me" }, { word: "acuesto", ref: "es-0901" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cama", base: "cama" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "once", ref: "es-0215" }] }
+      - { target: "La cama de Ana es muy cómoda.", ipa: "la ˈkama de ˈana es mwi ˈkomoda", bases: [{ word: "La", base: "la" }, { word: "cama", base: "cama" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "cómoda", base: "cómodo" }] }
+  - id: "es-0902"
+    target: "el sueño"
+    ipa: "el ˈsweɲo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sueño", base: "sueño" }]
+    examples:
+      - { target: "Tengo mucho sueño hoy.", ipa: "ˈtenɡo ˈmutʃo ˈsweɲo oj", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucho", ref: "es-0053" }, { word: "sueño", base: "sueño" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "Ana tiene el sueño ligero.", ipa: "ˈana ˈtjene el ˈsweɲo liˈxeɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "sueño", base: "sueño" }, { word: "ligero", base: "ligero" }] }
+  - id: "es-0903"
+    target: "el despertador"
+    ipa: "el despeɾtaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "despertador", base: "despertador" }]
+    examples:
+      - { target: "El despertador suena a las siete.", ipa: "el despeɾtaˈdoɾ ˈswena a las ˈsjete", bases: [{ word: "El", base: "el" }, { word: "despertador", base: "despertador" }, { word: "suena", base: "sonar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", base: "siete" }] }
+      - { target: "Pongo el despertador antes de dormir.", ipa: "ˈponɡo el despeɾtaˈdoɾ ˈantes de doɾˈmiɾ", bases: [{ word: "Pongo", base: "poner" }, { word: "el", base: "el" }, { word: "despertador", base: "despertador" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "dormir", ref: "es-0904" }] }
+  - id: "es-0905"
+    target: "la siesta"
+    ipa: "la ˈsjesta"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "siesta", base: "siesta" }]
+    examples:
+      - { target: "Después de comer, duermo la siesta.", ipa: "desˈpwes de koˈmeɾ ˈdweɾmo la ˈsjesta", bases: [{ word: "Después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "comer", ref: "es-0028" }, { word: "duermo", ref: "es-0904" }, { word: "la", base: "la" }, { word: "siesta", base: "siesta" }] }
+      - { target: "En verano, Ana toma una siesta corta.", ipa: "en beˈɾano ˈana ˈtoma ˈuna ˈsjesta ˈkoɾta", bases: [{ word: "En", base: "en" }, { word: "verano", base: "verano" }, { word: "Ana", base: "Ana" }, { word: "toma", ref: "es-0906" }, { word: "una", base: "una" }, { word: "siesta", base: "siesta" }, { word: "corta", base: "corto" }] }
+  - id: "es-0907"
+    target: "la tarea"
+    ipa: "la taˈɾea"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "tarea", base: "tarea" }]
+    examples:
+      - { target: "Hago la tarea después de cenar.", ipa: "ˈaɡo la taˈɾea desˈpwes de θeˈnaɾ", bases: [{ word: "Hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "tarea", base: "tarea" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "cenar", ref: "es-0283" }] }
+      - { target: "La tarea de hoy es fácil.", ipa: "la taˈɾea de oj es ˈfaθil", bases: [{ word: "La", base: "la" }, { word: "tarea", base: "tarea" }, { word: "de", base: "de" }, { word: "hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "fácil", ref: "es-0413" }] }
+  - id: "es-0908"
+    target: "el descanso"
+    ipa: "el desˈkanso"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "descanso", base: "descanso" }]
+    examples:
+      - { target: "Necesito un descanso.", ipa: "neθeˈsito un desˈkanso", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "descanso", base: "descanso" }] }
+      - { target: "Tomo un descanso a mitad del día.", ipa: "ˈtomo un desˈkanso a miˈtad del ˈdia", bases: [{ word: "Tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "descanso", base: "descanso" }, { word: "a", base: "a" }, { word: "mitad", base: "mitad" }, { word: "del", base: "de" }, { word: "día", ref: "es-0019" }] }
+  - id: "es-0909"
+    target: "la vez"
+    ipa: "la beθ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "seseo", kind: "usage" }
+    bases: [{ word: "la", base: "la" }, { word: "vez", base: "vez" }]
+    examples:
+      - { target: "Es la primera vez que visito Madrid.", ipa: "es la pɾiˈmeɾa beθ ke biˈsito maˈdɾid", bases: [{ word: "Es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "primera", base: "primero" }, { word: "vez", base: "vez" }, { word: "que", base: "que" }, { word: "visito", base: "visitar" }, { word: "Madrid", base: "Madrid" }] }
+      - { target: "Una vez al día, bebo agua.", ipa: "ˈuna beθ al ˈdia ˈbebo ˈaɡwa", bases: [{ word: "Una", base: "una" }, { word: "vez", base: "vez" }, { word: "al", base: "a" }, { word: "día", ref: "es-0019" }, { word: "bebo", ref: "es-0029" }, { word: "agua", base: "agua" }] }
+  - id: "es-0910"
+    target: "la tarde"
+    ipa: "la ˈtaɾde"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "h1", kind: "homograph", ref: "es-0911" }
+    bases: [{ word: "la", base: "la" }, { word: "tarde", base: "tarde" }]
+    examples:
+      - { target: "Por la tarde estudio inglés.", ipa: "poɾ la ˈtaɾde esˈtudjo inˈɡles", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", base: "tarde" }, { word: "estudio", ref: "es-0258" }, { word: "inglés", base: "inglés" }] }
+      - { target: "Hace sol toda la tarde.", ipa: "ˈaθe sol ˈtoda la ˈtaɾde", bases: [{ word: "Hace", ref: "es-0025" }, { word: "sol", base: "sol" }, { word: "toda", base: "toda" }, { word: "la", base: "la" }, { word: "tarde", base: "tarde" }] }
+  - id: "es-0911"
+    target: "tarde"
+    ipa: "ˈtaɾde"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "h1", kind: "homograph", ref: "es-0910" }
+    examples:
+      - { target: "Llego tarde al trabajo.", ipa: "ˈʝeɡo ˈtaɾde al tɾaˈbaxo", bases: [{ word: "Llego", ref: "es-0290" }, { word: "tarde", base: "tarde" }, { word: "al", base: "a" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "Hoy me acuesto tarde.", ipa: "oj me aˈkwesto ˈtaɾde", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "me", base: "me" }, { word: "acuesto", ref: "es-0901" }, { word: "tarde", base: "tarde" }] }
+  - id: "es-0912"
+    target: "el gimnasio"
+    ipa: "el ximˈnasjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "gimnasio", base: "gimnasio" }]
+    examples:
+      - { target: "Voy al gimnasio tres veces a la semana.", ipa: "boj al ximˈnasjo tɾes ˈbeθes a la seˈmana", bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "a" }, { word: "gimnasio", base: "gimnasio" }, { word: "tres", ref: "es-0207" }, { word: "veces", base: "vez" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "semana", ref: "es-0840" }] }
+      - { target: "El gimnasio está cerca de mi casa.", ipa: "el ximˈnasjo esˈta ˈθeɾka de mi ˈkasa", bases: [{ word: "El", base: "el" }, { word: "gimnasio", base: "gimnasio" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "casa", ref: "es-0006" }] }
+  - id: "es-0913"
+    target: "el ejercicio"
+    ipa: "el exeɾˈθiθjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "ejercicio", base: "ejercicio" }]
+    examples:
+      - { target: "Hago ejercicio por la mañana.", ipa: "ˈaɡo exeɾˈθiθjo poɾ la maˈɲana", bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicio", base: "ejercicio" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
+      - { target: "Necesito más ejercicio.", ipa: "neθeˈsito mas exeɾˈθiθjo", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "más", base: "más" }, { word: "ejercicio", base: "ejercicio" }] }
+  - id: "es-0914"
+    target: "la compra"
+    ipa: "la ˈkompɾa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "compra", base: "compra" }]
+    examples:
+      - { target: "Hago la compra los sábados.", ipa: "ˈaɡo la ˈkompɾa los ˈsabados", bases: [{ word: "Hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "compra", base: "compra" }, { word: "los", base: "los" }, { word: "sábados", base: "sábado" }] }
+      - { target: "La compra está en la bolsa.", ipa: "la ˈkompɾa esˈta en la ˈbolsa", bases: [{ word: "La", base: "la" }, { word: "compra", base: "compra" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "bolsa", base: "bolsa" }] }
+  - id: "es-0915"
+    target: "el paseo"
+    ipa: "el paˈseo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "paseo", base: "paseo" }]
+    examples:
+      - { target: "Doy un paseo por el parque después de cenar.", ipa: "doj un paˈseo poɾ el ˈpaɾke desˈpwes de θeˈnaɾ", bases: [{ word: "Doy", base: "dar" }, { word: "un", base: "un" }, { word: "paseo", base: "paseo" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "cenar", ref: "es-0283" }] }
+      - { target: "Hacemos un paseo los domingos.", ipa: "aˈθemos un paˈseo los doˈminɡos", bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "un", base: "un" }, { word: "paseo", base: "paseo" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }] }
+  - id: "es-0916"
+    target: "la mochila"
+    ipa: "la moˈtʃila"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "mochila", base: "mochila" }]
+    examples:
+      - { target: "Llevo la mochila al colegio.", ipa: "ˈʝebo la moˈtʃila al koˈlexjo", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "la", base: "la" }, { word: "mochila", base: "mochila" }, { word: "al", base: "a" }, { word: "colegio", base: "colegio" }] }
+      - { target: "Mi mochila es azul.", ipa: "mi moˈtʃila es aˈθul", bases: [{ word: "Mi", ref: "es-0129" }, { word: "mochila", base: "mochila" }, { word: "es", ref: "es-0022" }, { word: "azul", base: "azul" }] }
+  - id: "es-0917"
+    target: "el sofá"
+    ipa: "el soˈfa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sofá", base: "sofá" }]
+    examples:
+      - { target: "Ana lee en el sofá.", ipa: "ˈana ˈlee en el soˈfa", bases: [{ word: "Ana", base: "Ana" }, { word: "lee", ref: "es-0296" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", base: "sofá" }] }
+      - { target: "Mi padre duerme en el sofá.", ipa: "mi ˈpadɾe ˈdweɾme en el soˈfa", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "duerme", ref: "es-0904" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", base: "sofá" }] }
+  - id: "es-0918"
+    target: "la cocina"
+    ipa: "la koˈθina"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cocina", base: "cocina" }]
+    examples:
+      - { target: "Desayuno en la cocina.", ipa: "desaˈʝuno en la koˈθina", bases: [{ word: "Desayuno", ref: "es-0282" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", base: "cocina" }] }
+      - { target: "La cocina está al lado del salón.", ipa: "la koˈθina esˈta al ˈlado del saˈlon", bases: [{ word: "La", base: "la" }, { word: "cocina", base: "cocina" }, { word: "está", ref: "es-0023" }, { word: "al", base: "a" }, { word: "lado", base: "lado" }, { word: "del", base: "de" }, { word: "salón", ref: "es-0919" }] }
+  - id: "es-0919"
+    target: "el salón"
+    ipa: "el saˈlon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "sala", kind: "usage" }
+    bases: [{ word: "el", base: "el" }, { word: "salón", base: "salón" }]
+    examples:
+      - { target: "Miramos la tele en el salón.", ipa: "miˈɾamos la ˈtele en el saˈlon", bases: [{ word: "Miramos", ref: "es-0292" }, { word: "la", base: "la" }, { word: "tele", base: "tele" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "salón", base: "salón" }] }
+      - { target: "El salón es grande y luminoso.", ipa: "el saˈlon es ˈɡɾande i lumiˈnoso", bases: [{ word: "El", base: "el" }, { word: "salón", base: "salón" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }, { word: "y", ref: "es-0048" }, { word: "luminoso", base: "luminoso" }] }
+  - id: "es-0920"
+    target: "el móvil"
+    ipa: "el ˈmobil"
+    pos: "noun"
+    gender: "m"
+    picture: "📱"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "celular", kind: "usage" }
+    bases: [{ word: "el", base: "el" }, { word: "móvil", base: "móvil" }]
+    examples:
+      - { target: "Mi móvil está en la mesa.", ipa: "mi ˈmobil esˈta en la ˈmesa", bases: [{ word: "Mi", ref: "es-0129" }, { word: "móvil", base: "móvil" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", base: "mesa" }] }
+      - { target: "Llamo a Ana por el móvil.", ipa: "ˈʝamo a ˈana poɾ el ˈmobil", bases: [{ word: "Llamo", ref: "es-0302" }, { word: "a", base: "a" }, { word: "Ana", base: "Ana" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "móvil", base: "móvil" }] }
+  - id: "es-0921"
+    target: "la madrugada"
+    ipa: "la madɾuˈɡada"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "madrugada", base: "madrugada" }]
+    examples:
+      - { target: "Ana trabaja hasta la madrugada.", ipa: "ˈana tɾaˈbaxa ˈasta la madɾuˈɡada", bases: [{ word: "Ana", base: "Ana" }, { word: "trabaja", ref: "es-0259" }, { word: "hasta", base: "hasta" }, { word: "la", base: "la" }, { word: "madrugada", base: "madrugada" }] }
+      - { target: "Me despierto de madrugada.", ipa: "me desˈpjeɾto de madɾuˈɡada", bases: [{ word: "Me", base: "me" }, { word: "despierto", ref: "es-0922" }, { word: "de", base: "de" }, { word: "madrugada", base: "madrugada" }] }
+  - id: "es-0923"
+    target: "el cepillo"
+    ipa: "el θeˈpiʝo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cepillo", base: "cepillo" }]
+    examples:
+      - { target: "Uso el cepillo de dientes por la noche.", ipa: "ˈuso el θeˈpiʝo de ˈdjentes poɾ la ˈnotʃe", bases: [{ word: "Uso", ref: "es-0287" }, { word: "el", base: "el" }, { word: "cepillo", base: "cepillo" }, { word: "de", base: "de" }, { word: "dientes", base: "diente" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }] }
+      - { target: "El cepillo es nuevo.", ipa: "el θeˈpiʝo es ˈnwebo", bases: [{ word: "El", base: "el" }, { word: "cepillo", base: "cepillo" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }] }
+  - id: "es-0922"
+    target: "despertarse"
+    ipa: "despeɾˈtaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Me despierto a las siete.", ipa: "me desˈpjeɾto a las ˈsjete", bases: [{ word: "Me", base: "me" }, { word: "despierto", base: "despertarse" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", base: "siete" }] }
+      - { target: "Nos despertamos tarde los domingos.", ipa: "nos despeɾˈtamos ˈtaɾde los doˈminɡos", bases: [{ word: "Nos", base: "nos" }, { word: "despertamos", base: "despertarse" }, { word: "tarde", ref: "es-0911" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }] }
+  - id: "es-0924"
+    target: "levantarse"
+    ipa: "lebanˈtaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Me levanto temprano los días de trabajo.", ipa: "me leˈbanto temˈpɾano los ˈdias de tɾaˈbaxo", bases: [{ word: "Me", base: "me" }, { word: "levanto", base: "levantarse" }, { word: "temprano", ref: "es-0338" }, { word: "los", base: "los" }, { word: "días", base: "día" }, { word: "de", base: "de" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "Ana se levanta a las seis.", ipa: "ˈana se leˈbanta a las sejs", bases: [{ word: "Ana", base: "Ana" }, { word: "se", base: "se" }, { word: "levanta", base: "levantarse" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "seis", ref: "es-0210" }] }
+  - id: "es-0925"
+    target: "ducharse"
+    ipa: "duˈtʃaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Me ducho después del gimnasio.", ipa: "me ˈdutʃo desˈpwes del ximˈnasjo", bases: [{ word: "Me", base: "me" }, { word: "ducho", base: "ducharse" }, { word: "después", ref: "es-0336" }, { word: "del", base: "de" }, { word: "gimnasio", ref: "es-0912" }] }
+      - { target: "Mi hermano se ducha por la noche.", ipa: "mi eɾˈmano se ˈdutʃa poɾ la ˈnotʃe", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "se", base: "se" }, { word: "ducha", base: "ducharse" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }] }
+  - id: "es-0926"
+    target: "lavarse"
+    ipa: "laˈbaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Me lavo las manos antes de comer.", ipa: "me ˈlabo las ˈmanos ˈantes de koˈmeɾ", bases: [{ word: "Me", base: "me" }, { word: "lavo", base: "lavarse" }, { word: "las", base: "las" }, { word: "manos", base: "mano" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "comer", ref: "es-0028" }] }
+      - { target: "Los niños se lavan la cara por la mañana.", ipa: "los ˈniɲos se ˈlaban la ˈkaɾa poɾ la maˈɲana", bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "se", base: "se" }, { word: "lavan", base: "lavarse" }, { word: "la", base: "la" }, { word: "cara", base: "cara" }, { word: "por", base: "por" }, { word: "mañana", ref: "es-0841" }] }
+  - id: "es-0927"
+    target: "vestirse"
+    ipa: "besˈtiɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Me visto rápido por la mañana.", ipa: "me ˈbisto ˈrapido poɾ la maˈɲana", bases: [{ word: "Me", base: "me" }, { word: "visto", base: "vestirse" }, { word: "rápido", ref: "es-0329" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
+      - { target: "Ana se viste con ropa cómoda.", ipa: "ˈana se ˈbiste kon ˈropa ˈkomoda", bases: [{ word: "Ana", base: "Ana" }, { word: "se", base: "se" }, { word: "viste", base: "vestirse" }, { word: "con", base: "con" }, { word: "ropa", base: "ropa" }, { word: "cómoda", base: "cómodo" }] }
+  - id: "es-0901"
+    target: "acostarse"
+    ipa: "akosˈtaɾse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Me acuesto a las once.", ipa: "me aˈkwesto a las ˈonθe", bases: [{ word: "Me", base: "me" }, { word: "acuesto", base: "acostarse" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "once", ref: "es-0215" }] }
+      - { target: "Nos acostamos tarde en verano.", ipa: "nos akosˈtamos ˈtaɾde en beˈɾano", bases: [{ word: "Nos", base: "nos" }, { word: "acostamos", base: "acostarse" }, { word: "tarde", ref: "es-0911" }, { word: "en", base: "en" }, { word: "verano", base: "verano" }] }
+  - id: "es-0904"
+    target: "dormir"
+    ipa: "doɾˈmiɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Duermo ocho horas cada noche.", ipa: "ˈdweɾmo ˈotʃo ˈoɾas ˈkada ˈnotʃe", bases: [{ word: "Duermo", base: "dormir" }, { word: "ocho", ref: "es-0212" }, { word: "horas", base: "hora" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }] }
+      - { target: "Los niños duermen en la misma cama.", ipa: "los ˈniɲos ˈdweɾmen en la ˈmisma ˈkama", bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "duermen", base: "dormir" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "misma", base: "mismo" }, { word: "cama", ref: "es-0900" }] }
+  - id: "es-0928"
+    target: "descansar"
+    ipa: "deskanˈsaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Descanso los fines de semana.", ipa: "desˈkanso los ˈfines de seˈmana", bases: [{ word: "Descanso", base: "descansar" }, { word: "los", base: "los" }, { word: "fines", base: "fin" }, { word: "de", base: "de" }, { word: "semana", ref: "es-0840" }] }
+      - { target: "Ana descansa en el parque.", ipa: "ˈana desˈkansa en el ˈpaɾke", bases: [{ word: "Ana", base: "Ana" }, { word: "descansa", base: "descansar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }] }
+  - id: "es-0929"
+    target: "volver"
+    ipa: "bolˈbeɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "stem", kind: "behaviour" }
+    examples:
+      - { target: "Vuelvo a casa después del trabajo.", ipa: "ˈbwelbo a ˈkasa desˈpwes del tɾaˈbaxo", bases: [{ word: "Vuelvo", base: "volver" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }, { word: "después", ref: "es-0336" }, { word: "del", base: "de" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "Mi madre vuelve de la tienda.", ipa: "mi ˈmadɾe ˈbwelbe de la ˈtjenda", bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", base: "madre" }, { word: "vuelve", base: "volver" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }] }
+  - id: "es-0906"
+    target: "tomar"
+    ipa: "toˈmaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Tomo un café con leche.", ipa: "ˈtomo un kaˈfe kon ˈletʃe", bases: [{ word: "Tomo", base: "tomar" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "leche", ref: "es-0014" }] }
+      - { target: "Ana toma el autobús al trabajo.", ipa: "ˈana ˈtoma el awtoˈbus al tɾaˈbaxo", bases: [{ word: "Ana", base: "Ana" }, { word: "toma", base: "tomar" }, { word: "el", base: "el" }, { word: "autobús", base: "autobús" }, { word: "al", base: "a" }, { word: "trabajo", ref: "es-0502" }] }
+  - id: "es-0930"
+    target: "esperar"
+    ipa: "espeˈɾaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Espero el autobús en la calle.", ipa: "esˈpeɾo el awtoˈbus en la ˈkaʝe", bases: [{ word: "Espero", base: "esperar" }, { word: "el", base: "el" }, { word: "autobús", base: "autobús" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }] }
+      - { target: "Ana espera a su hermana en la estación.", ipa: "ˈana esˈpeɾa a su eɾˈmana en la estaˈθjon", bases: [{ word: "Ana", base: "Ana" }, { word: "espera", base: "esperar" }, { word: "a", base: "a" }, { word: "su", ref: "es-0131" }, { word: "hermana", base: "hermana" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }] }
+  - id: "es-0931"
+    target: "pasear"
+    ipa: "paseˈaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Paseamos por el centro los sábados.", ipa: "paseˈamos poɾ el ˈθentɾo los ˈsabados", bases: [{ word: "Paseamos", base: "pasear" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }, { word: "los", base: "los" }, { word: "sábados", base: "sábado" }] }
+      - { target: "Mi abuelo pasea al perro cada tarde.", ipa: "mi aˈbwelo paˈsea al ˈpero ˈkada ˈtaɾde", bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuelo", base: "abuelo" }, { word: "pasea", base: "pasear" }, { word: "al", base: "a" }, { word: "perro", base: "perro" }, { word: "cada", ref: "es-0366" }, { word: "tarde", ref: "es-0910" }] }
+  - id: "es-0932"
+    target: "listo"
+    ipa: "ˈlisto"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "¿Estás listo para el trabajo?", ipa: "esˈtas ˈlisto ˈpaɾa el tɾaˈbaxo", bases: [{ word: "Estás", ref: "es-0023" }, { word: "listo", base: "listo" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0502" }] }
+      - { target: "La cena está lista a las nueve.", ipa: "la ˈθena esˈta ˈlista a las ˈnwebe", bases: [{ word: "La", base: "la" }, { word: "cena", ref: "es-0639" }, { word: "está", ref: "es-0023" }, { word: "lista", base: "listo" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }] }
+  - id: "es-0933"
+    target: "entonces"
+    ipa: "enˈtonθes"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Me despierto temprano y entonces desayuno.", ipa: "me desˈpjeɾto temˈpɾano i enˈtonθes desaˈʝuno", bases: [{ word: "Me", base: "me" }, { word: "despierto", ref: "es-0922" }, { word: "temprano", ref: "es-0338" }, { word: "y", ref: "es-0048" }, { word: "entonces", base: "entonces" }, { word: "desayuno", ref: "es-0282" }] }
+      - { target: "Estoy cansado, entonces descanso.", ipa: "esˈtoj kanˈsado enˈtonθes desˈkanso", bases: [{ word: "Estoy", ref: "es-0023" }, { word: "cansado", ref: "es-0420" }, { word: "entonces", base: "entonces" }, { word: "descanso", ref: "es-0928" }] }
+  - id: "es-0934"
+    target: "por la mañana"
+    ipa: "poɾ la maˈɲana"
+    pos: "phrase"
+    bases: [{ word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+    examples:
+      - { target: "Estudio por la mañana.", ipa: "esˈtudjo poɾ la maˈɲana", bases: [{ word: "Estudio", ref: "es-0258" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
+      - { target: "Por la mañana tomo un café.", ipa: "poɾ la maˈɲana ˈtomo un kaˈfe", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }] }
+  - id: "es-0935"
+    target: "por la tarde"
+    ipa: "poɾ la ˈtaɾde"
+    pos: "phrase"
+    bases: [{ word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }]
+    examples:
+      - { target: "Trabajo por la tarde.", ipa: "tɾaˈbaxo poɾ la ˈtaɾde", bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }] }
+      - { target: "Por la tarde descanso en el sofá.", ipa: "poɾ la ˈtaɾde desˈkanso en el soˈfa", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }, { word: "descanso", ref: "es-0928" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", ref: "es-0917" }] }
