@@ -366,7 +366,7 @@ class ReviewGuideDots extends StatelessWidget {
                 decoration: BoxDecoration(
                   // `outline` is 3:1 on the surface, as a mark must be.
                   color: i == step ? scheme.primary : scheme.outline,
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(AppRadii.mark),
                 ),
               ),
           ],

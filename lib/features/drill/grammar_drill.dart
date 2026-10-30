@@ -356,7 +356,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
             DecoratedBox(
               decoration: BoxDecoration(
                 color: scheme.tertiaryContainer,
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.symmetric(
