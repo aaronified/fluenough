@@ -57,6 +57,19 @@ final List<ReviewGuideStep> reviewGuideSteps = <ReviewGuideStep>[
     ],
   ),
   ReviewGuideStep(
+    id: 'rules',
+    guideHeading: 'The rules',
+    icon: Icons.rule_outlined,
+    title: (l10n) => l10n.reviewGuideRulesTitle,
+    paragraphs: (l10n) => <String>[
+      l10n.reviewGuideRulesBilingual,
+      l10n.reviewGuideRulesMeaning,
+      l10n.reviewGuideRulesLogic,
+      l10n.reviewGuideRulesPlace,
+      l10n.reviewGuideRulesTheme,
+    ],
+  ),
+  ReviewGuideStep(
     id: 'code',
     guideHeading: 'Your code and languages',
     icon: Icons.key_outlined,

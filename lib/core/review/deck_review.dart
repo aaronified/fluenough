@@ -21,6 +21,13 @@ import 'dart:convert';
 /// [alt] is the card's accepted alternative answers, "Also heard"
 /// (`alt_target`), one a line: suggested with a change to the [word], to
 /// keep the old word as one (#476).
+///
+/// [place] is where the card belongs (#477): a suggestion to move it to
+/// another deck of the course's path. Its [Suggestion.now] and
+/// [Suggestion.text] are the ids of the deck it is in and of the deck it
+/// is moved to, never free text, and its [Suggestion.label] names the
+/// target for people. The review bot refuses a target the path does not
+/// list: a new theme goes by pull request.
 enum CardPart {
   word,
   reading,
@@ -31,6 +38,7 @@ enum CardPart {
   picture,
   base,
   alt,
+  place,
 }
 
 /// What a suggestion on a base does (#476). The names are written to the
@@ -121,6 +129,7 @@ class Suggestion {
     this.action,
     this.was,
     this.base,
+    this.label,
   });
 
   final CardPart part;
@@ -141,6 +150,11 @@ class Suggestion {
   /// The base as suggested, for a base added or changed.
   final BaseForm? base;
 
+  /// For a [CardPart.place] suggestion, the target's name as the reviewer
+  /// saw it ("Unit 24 · Home and neighbourhood"), for the pages that list
+  /// the suggestion; the review bot reads [text], the deck's id.
+  final String? label;
+
   /// What the part said when the suggestion was made, so that the file
   /// stands on its own if the deck changes.
   final String now;
@@ -157,6 +171,7 @@ class Suggestion {
     'action': ?action?.name,
     'was': ?was?.toJson(),
     'base': ?base?.toJson(),
+    'label': ?label,
     'now': now,
     'text': text,
     if (why.isNotEmpty) 'why': why,
@@ -174,6 +189,7 @@ class Suggestion {
       return null;
     }
     final isBase = part == CardPart.base;
+    final label = json['label'];
     final action = isBase
         ? BaseAction.values.asNameMap()[json['action']]
         : null;
@@ -196,6 +212,9 @@ class Suggestion {
       action: action,
       was: action == BaseAction.add ? null : was,
       base: action == BaseAction.remove ? null : base,
+      label: part == CardPart.place && label is String && label.isNotEmpty
+          ? label
+          : null,
     );
   }
 }
