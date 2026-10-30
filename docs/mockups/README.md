@@ -4,6 +4,15 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `reviewer-fields.html`: what the approved reviewer-mode sheet lacks for every
+  card field (#508; the owner's 2026-10-16 "every imported field, the image
+  included, is reviewed" and 2026-10-23 teach-card warning): Looks right on
+  each item, the teach-card warning (#691), and how an image proposal (#523)
+  reaches a reviewer, as a question in the shape of #519's. Hindi and Bengali,
+  light and dark, 1.4x. Tweak controls and 20 doubts are in
+  `reviewer-fields.md`, with the self-check. `reviewer-mode.html` stays the
+  approved spec for the rest.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
