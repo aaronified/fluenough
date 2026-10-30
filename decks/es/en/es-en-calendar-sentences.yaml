@@ -1,0 +1,97 @@
+schema: 1
+id: es-en-calendar-sentences
+kind: layer
+core: es-calendar-sentences
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Sentences: calendar'
+license: CC-BY-SA-4.0
+description: 'Eight sentences about days, months and seasons, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-0997:
+    native: Today is Thursday and tomorrow is Friday.
+    confusables:
+      monday:
+        why: Lunes is Monday, not Thursday or Friday.
+      tuesday:
+        why: Martes is Tuesday, a day before Thursday.
+  es-0998:
+    native: The meeting is on Tuesday at ten.
+    bases:
+      La: The
+      el: 'on'
+      a: at
+      las: (at)
+    confusables:
+      thursday:
+        why: Jueves is Thursday; this sentence says Tuesday.
+      monday:
+        why: Lunes is Monday, another day of the week.
+  es-0999:
+    native: In January it is cold.
+    bases:
+      En: In
+    confusables:
+      february:
+        why: Febrero is February, the month after January.
+      december:
+        why: Diciembre is December, another winter month.
+  es-1000:
+    native: My birthday is in May.
+    bases:
+      en: in
+    confusables:
+      june:
+        why: Junio is June, the month after May.
+      april:
+        why: Abril is April, the month before May.
+  es-1001:
+    native: The wedding anniversary is on Saturday.
+    bases:
+      El: The
+      de: of
+      boda: wedding
+    confusables:
+      party:
+        why: Fiesta is a party or holiday, not an anniversary.
+      sunday:
+        why: Domingo is Sunday, another day of the weekend.
+  es-1002:
+    native: The diary says that today is Monday.
+    bases:
+      La: The
+      dice: says
+      que: that
+    confusables:
+      calendar:
+        why: El calendario is the calendar itself, on a wall or a phone.
+      date:
+        why: La fecha is the date, a single day of the calendar.
+  es-1003:
+    native: Next month is August.
+    bases:
+      El: The
+    confusables:
+      october:
+        why: Octubre is October, two months after August.
+      september:
+        why: Septiembre is September, the month after August.
+  es-1004:
+    native: In summer it is hot.
+    bases:
+      En: In
+      calor: heat
+    confusables:
+      winter:
+        why: Invierno is winter, the cold season.
+      spring:
+        why: Primavera is spring, a season between winter and summer.
+  es-1005:
+    native: Today is not a holiday.
+    confusables:
+      anniversary:
+        why: Aniversario is an anniversary, a date of a past event.
+      appointment:
+        why: Una cita is an appointment, not a holiday.

@@ -1,0 +1,740 @@
+schema: 1
+id: es-en-clothes
+kind: layer
+core: es-clothes
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Clothes and colours
+license: CC-BY-SA-4.0
+description: 'Clothes, colours, buying clothes in a shop, and the verbs for putting clothes on and trying them on. Each noun has its gender. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1006:
+    native: Colours
+    explanation: 'The ten basic colours. Colours are adjectives: they agree with the noun, so rojo becomes roja with la camisa, and azul or verde do not change.'
+  es-1007:
+    native: red
+    notes:
+      n1: 'Rojo changes to roja before a feminine noun: la camisa roja.'
+    examples:
+      Ana lleva una camisa roja.:
+        native: Ana wears a red shirt.
+        bases:
+          Ana: Ana
+          una: a
+          roja: red
+          lleva: wear
+      El semáforo es rojo.:
+        native: The traffic light is red.
+        bases:
+          El: The
+          rojo: red
+  es-1008:
+    native: blue
+    notes:
+      n1: 'Azul does not change for gender: un vestido azul, una falda azul.'
+    examples:
+      Mi bolsa es azul.:
+        native: My bag is blue.
+        bases:
+          bolsa: bag
+          azul: blue
+      El cielo es azul hoy.:
+        native: The sky is blue today.
+        bases:
+          El: The
+          cielo: sky
+          azul: blue
+  es-1009:
+    native: green
+    notes:
+      n1: Verde does not change for gender. Its plural is verdes.
+    examples:
+      Ana tiene un vestido verde.:
+        native: Ana has a green dress.
+        bases:
+          Ana: Ana
+          un: a
+          verde: green
+      Los árboles son verdes.:
+        native: The trees are green.
+        bases:
+          Los: The
+          árboles: trees
+          verdes: green
+  es-1010:
+    native: yellow
+    notes:
+      n1: Amarillo changes to amarilla before a feminine noun.
+    examples:
+      El sol es amarillo.:
+        native: The sun is yellow.
+        bases:
+          El: The
+          sol: sun
+          amarillo: yellow
+      La camisa amarilla es de Luis.:
+        native: The yellow shirt is Luis's.
+        bases:
+          La: The
+          amarilla: yellow
+          de: of
+          Luis: Luis
+  es-1011:
+    native: black
+    notes:
+      n1: 'Negro changes to negra before a feminine noun: la chaqueta negra.'
+    examples:
+      El pantalón negro es nuevo.:
+        native: The black trousers are new.
+        bases:
+          El: The
+          negro: black
+      Mi chaqueta es negra.:
+        native: My jacket is black.
+        bases:
+          negra: black
+  es-1012:
+    native: white
+    notes:
+      n1: Blanco changes to blanca before a feminine noun.
+    examples:
+      La camiseta blanca es bonita.:
+        native: The white T-shirt is nice.
+        bases:
+          La: The
+          blanca: white
+      El papel es blanco.:
+        native: The paper is white.
+        bases:
+          El: The
+          papel: paper
+          blanco: white
+  es-1013:
+    native: grey
+    notes:
+      n1: Gris does not change for gender. Its plural is grises.
+    examples:
+      Los zapatos grises son caros.:
+        native: The grey shoes are expensive.
+        bases:
+          Los: The
+          grises: grey
+          caros: expensive
+      Hoy el cielo está gris.:
+        native: Today the sky is grey.
+        bases:
+          el: the
+          cielo: sky
+          gris: grey
+  es-1014:
+    native: brown
+    notes:
+      n1: Marrón does not change for gender in the singular. Its plural is marrones.
+    examples:
+      Llevo un abrigo marrón.:
+        native: I wear a brown coat.
+        bases:
+          un: a
+          marrón: brown
+          Llevo: wear
+      La mesa es marrón.:
+        native: The table is brown.
+        bases:
+          La: The
+          marrón: brown
+  es-1015:
+    native: orange
+    notes:
+      n1: Naranja does not change for gender. It is also the fruit, la naranja.
+    examples:
+      Me gusta la falda naranja.:
+        native: I like the orange skirt.
+        bases:
+          Me: I
+          gusta: like
+          la: the
+          naranja: orange
+      La blusa naranja es muy bonita.:
+        native: The orange blouse is very nice.
+        bases:
+          La: The
+          naranja: orange
+  es-1016:
+    native: purple
+    notes:
+      n1: Morado changes to morada before a feminine noun.
+    examples:
+      El vestido es morado.:
+        native: The dress is purple.
+        bases:
+          El: The
+          morado: purple
+      Mi color favorito es el morado.:
+        native: My favourite colour is purple.
+        bases:
+          favorito: favourite
+          el: the
+          morado: purple
+  es-1027:
+    native: clothes
+    notes:
+      n1: La ropa means clothes in general. One garment is una prenda.
+    bases:
+      la: the
+      ropa: clothes
+    examples:
+      Compro ropa en la tienda.:
+        native: I buy clothes in the shop.
+        bases:
+          ropa: clothes
+          en: in
+          la: the
+      La ropa es cara.:
+        native: Clothes are expensive.
+        bases:
+          La: The
+          ropa: clothes
+          cara: expensive
+  es-1017:
+    native: shirt
+    notes:
+      n1: Camisa is a shirt with buttons. A T-shirt is la camiseta.
+      llevar: 'Llevar is to carry or take, as in llevo la mochila (the bag). For clothes it means to wear: llevo una camisa, I wear a shirt.'
+    bases:
+      la: the
+      camisa: shirt
+    examples:
+      Esta camisa es muy grande.:
+        native: This shirt is very big.
+        bases:
+          Esta: This
+          camisa: shirt
+      Necesito una camisa nueva.:
+        native: I need a new shirt.
+        bases:
+          una: a
+          camisa: shirt
+          nueva: new
+  es-1021:
+    native: T-shirt
+    notes:
+      n1: La camiseta is a T-shirt, or a sports shirt.
+    bases:
+      la: the
+      camiseta: T-shirt
+    examples:
+      La camiseta de Ana es azul.:
+        native: Ana's T-shirt is blue.
+        bases:
+          La: The
+          camiseta: T-shirt
+          de: of
+          Ana: Ana
+      Llevo una camiseta de algodón.:
+        native: I wear a cotton T-shirt.
+        bases:
+          una: a
+          camiseta: T-shirt
+          de: made of
+          algodón: cotton
+          Llevo: wear
+  es-1019:
+    native: trousers
+    notes:
+      n1: El pantalón is one pair of trousers. The usual plural is los pantalones.
+      plural: 'The plural of pantalón is pantalones: los pantalones are the trousers.'
+    bases:
+      el: the
+      pantalón: trousers
+    examples:
+      Necesito un pantalón nuevo.:
+        native: I need new trousers.
+        bases:
+          un: a
+          pantalón: trousers
+      Los pantalones están en el armario.:
+        native: The trousers are in the wardrobe.
+        bases:
+          Los: The
+          pantalones: trousers
+          en: in
+          el: the
+          armario: wardrobe
+  es-1024:
+    native: skirt
+    notes:
+      n1: Falda is a skirt.
+    bases:
+      la: the
+      falda: skirt
+    examples:
+      Ana lleva una falda larga.:
+        native: Ana wears a long skirt.
+        bases:
+          Ana: Ana
+          una: a
+          falda: skirt
+          larga: long
+          lleva: wear
+      La falda roja es de mi hermana.:
+        native: The red skirt is my sister's.
+        bases:
+          La: The
+          falda: skirt
+          de: of
+          hermana: sister
+  es-1018:
+    native: dress
+    notes:
+      n1: Vestido is a dress. Vestirse, to get dressed, comes from the same root.
+    bases:
+      el: the
+      vestido: dress
+    examples:
+      El vestido azul es muy bonito.:
+        native: The blue dress is very nice.
+        bases:
+          El: The
+          vestido: dress
+      Quiero un vestido para la fiesta.:
+        native: I want a dress for the party.
+        bases:
+          un: a
+          vestido: dress
+          para: for
+          la: the
+  es-1020:
+    native: jacket
+    notes:
+      n1: Chaqueta is a jacket, lighter than an abrigo, a coat.
+    bases:
+      la: the
+      chaqueta: jacket
+    examples:
+      Llevo una chaqueta porque hace frío.:
+        native: I wear a jacket because it is cold.
+        bases:
+          una: a
+          chaqueta: jacket
+          porque: because
+          Llevo: wear
+      Esta chaqueta es cómoda.:
+        native: This jacket is comfortable.
+        bases:
+          Esta: This
+          chaqueta: jacket
+          cómoda: comfortable
+  es-1023:
+    native: coat
+    notes:
+      n1: Abrigo is a warm coat for winter.
+    bases:
+      el: the
+      abrigo: coat
+    examples:
+      En invierno llevo el abrigo.:
+        native: In winter I wear the coat.
+        bases:
+          En: In
+          el: the
+          abrigo: coat
+          llevo: wear
+      El abrigo es caro.:
+        native: The coat is expensive.
+        bases:
+          El: The
+          abrigo: coat
+  es-1028:
+    native: jumper
+    notes:
+      n1: Jersey is a jumper or sweater.
+      suter: In Latin America the same garment is usually called el suéter.
+    bases:
+      el: the
+      jersey: jumper
+    examples:
+      Llevo un jersey verde.:
+        native: I wear a green jumper.
+        bases:
+          un: a
+          jersey: jumper
+          Llevo: wear
+      El jersey está en la silla.:
+        native: The jumper is on the chair.
+        bases:
+          El: The
+          jersey: jumper
+          en: 'on'
+          la: the
+  es-1025:
+    native: blouse
+    notes:
+      n1: Blusa is a blouse, a top worn by women.
+    bases:
+      la: the
+      blusa: blouse
+    examples:
+      La blusa cuesta veinte euros.:
+        native: The blouse costs twenty euros.
+        bases:
+          La: The
+          blusa: blouse
+          euros: euros
+      Compro una blusa en la tienda.:
+        native: I buy a blouse in the shop.
+        bases:
+          una: a
+          blusa: blouse
+          en: in
+          la: the
+  es-1022:
+    native: shoe
+    notes:
+      n1: Zapato is one shoe. A pair is los zapatos.
+      seseo: In much of Latin America the z is said as s, so zapato is said sapato. Castilian says the th sound.
+    bases:
+      el: the
+      zapato: shoe
+    examples:
+      Mis zapatos son negros.:
+        native: My shoes are black.
+        bases:
+          Mis: My
+          zapatos: shoes
+          negros: black
+      Necesito unos zapatos nuevos.:
+        native: I need some new shoes.
+        bases:
+          unos: some
+          zapatos: shoes
+          nuevos: new
+  es-1029:
+    native: boot
+    notes:
+      n1: Bota is a boot, often worn in winter.
+    bases:
+      la: the
+      bota: boot
+    examples:
+      Las botas son para el invierno.:
+        native: The boots are for winter.
+        bases:
+          Las: The
+          botas: boots
+          para: for
+          el: the
+      Ana lleva botas marrones.:
+        native: Ana wears brown boots.
+        bases:
+          Ana: Ana
+          botas: boots
+          marrones: brown
+          lleva: wear
+  es-1030:
+    native: sock
+    notes:
+      n1: Calcetín is one sock. A pair of socks is un par de calcetines.
+    bases:
+      el: the
+      calcetín: sock
+    examples:
+      Llevo calcetines blancos.:
+        native: I wear white socks.
+        bases:
+          calcetines: socks
+          blancos: white
+          Llevo: wear
+      Necesito un calcetín.:
+        native: I need a sock.
+        bases:
+          un: a
+          calcetín: sock
+  es-1031:
+    native: hat
+    notes:
+      n1: Sombrero is a hat with a brim. A cap is una gorra.
+    bases:
+      el: the
+      sombrero: hat
+    examples:
+      Ana lleva un sombrero.:
+        native: Ana wears a hat.
+        bases:
+          Ana: Ana
+          un: a
+          sombrero: hat
+          lleva: wear
+      En verano llevo un sombrero.:
+        native: In summer I wear a hat.
+        bases:
+          En: In
+          llevo: wear
+          un: a
+          sombrero: hat
+  es-1032:
+    native: scarf
+    notes:
+      n1: Bufanda is a scarf, for the cold.
+    bases:
+      la: the
+      bufanda: scarf
+    examples:
+      La bufanda es de lana.:
+        native: The scarf is made of wool.
+        bases:
+          La: The
+          bufanda: scarf
+          de: of
+          lana: wool
+      Mi bufanda es gris.:
+        native: My scarf is grey.
+        bases:
+          bufanda: scarf
+  es-1033:
+    native: belt
+    notes:
+      n1: Cinturón is a belt.
+    bases:
+      el: the
+      cinturón: belt
+    examples:
+      Llevo un cinturón negro.:
+        native: I wear a black belt.
+        bases:
+          un: a
+          cinturón: belt
+          Llevo: wear
+      El cinturón es muy largo.:
+        native: The belt is very long.
+        bases:
+          El: The
+          cinturón: belt
+  es-1034:
+    native: tie
+    notes:
+      n1: Corbata is a tie, worn with a suit.
+    bases:
+      la: the
+      corbata: tie
+    examples:
+      Mi padre lleva corbata en el trabajo.:
+        native: My father wears a tie at work.
+        bases:
+          padre: father
+          corbata: tie
+          en: at
+          el: the
+          lleva: wear
+      Esta corbata es azul.:
+        native: This tie is blue.
+        bases:
+          Esta: This
+          corbata: tie
+  es-1035:
+    native: suit
+    notes:
+      n1: 'Traje is a suit: a jacket with trousers or a skirt.'
+    bases:
+      el: the
+      traje: suit
+    examples:
+      Mi hermano lleva un traje para la boda.:
+        native: My brother wears a suit for the wedding.
+        bases:
+          hermano: brother
+          un: a
+          traje: suit
+          para: for
+          la: the
+          boda: wedding
+          lleva: wear
+      El traje es caro.:
+        native: The suit is expensive.
+        bases:
+          El: The
+          traje: suit
+  es-1036:
+    native: size
+    notes:
+      n1: Talla is the size of clothes. The size of a shoe is el número.
+    bases:
+      la: the
+      talla: size
+    examples:
+      ¿Qué talla tienes?:
+        native: What size are you?
+        bases:
+          talla: size
+      Tengo la talla pequeña.:
+        native: I take a small size.
+        bases:
+          la: the
+          talla: size
+          pequeña: small
+  es-1037:
+    native: fitting room
+    notes:
+      n1: El probador is the fitting room in a shop, where you try clothes on.
+    bases:
+      el: the
+      probador: fitting room
+    examples:
+      El probador está al fondo.:
+        native: The fitting room is at the back.
+        bases:
+          El: The
+          probador: fitting room
+          al: at the
+          fondo: back
+      El probador de la tienda es grande.:
+        native: The shop's fitting room is big.
+        bases:
+          El: The
+          probador: fitting room
+          de: of
+          la: the
+  es-1038:
+    native: fashion
+    notes:
+      n1: La moda is fashion. Estar de moda is to be in fashion.
+    bases:
+      la: the
+      moda: fashion
+    examples:
+      Estas botas están de moda.:
+        native: These boots are in fashion.
+        bases:
+          Estas: These
+          de: in
+          moda: fashion
+      La moda cambia cada año.:
+        native: Fashion changes every year.
+        bases:
+          La: The
+          moda: fashion
+          cambia: changes
+  es-1026:
+    native: colour
+    notes:
+      n1: 'El color is the noun, the colour itself. The colour words are adjectives: el color azul.'
+    bases:
+      el: the
+      color: colour
+    examples:
+      ¿Cuál es tu color favorito?:
+        native: What is your favourite colour?
+        bases:
+          color: colour
+          favorito: favourite
+      Me gusta el color verde.:
+        native: I like the colour green.
+        bases:
+          Me: I
+          gusta: like
+          el: the
+          color: colour
+  es-1039:
+    native: to put on (clothes)
+    notes:
+      n1: Ponerse is to put on a garment. It takes the reflexive pronoun, as in me pongo.
+      irreg: 'Irregular in the yo form: me pongo. The other forms follow the pattern: te pones, se pone, nos ponemos, os ponéis, se ponen.'
+    examples:
+      Me pongo el abrigo porque hace frío.:
+        native: I put on the coat because it is cold.
+        bases:
+          Me: I
+          pongo: put on
+          el: the
+          porque: because
+      ¿Te pones la bufanda?:
+        native: Are you putting on the scarf?
+        bases:
+          Te: you
+          pones: put on
+          la: the
+  es-1040:
+    native: to try on
+    notes:
+      n1: Probarse is to try on a garment. Probar alone is to taste or to test.
+      stem: 'Stem change: o becomes ue in yo, tú, él/ella and ellos: me pruebo, te pruebas, se prueba, se prueban. Nosotros and vosotros keep the o: nos probamos, os probáis.'
+    examples:
+      Me pruebo la falda antes de comprarla.:
+        native: I try on the skirt before buying it.
+        bases:
+          Me: I
+          pruebo: try on
+          la: the
+          de: (linking word)
+          comprarla: to buy it
+      ¿Puedo probarme esta blusa?:
+        native: Can I try on this blouse?
+        bases:
+          Puedo: Can I
+          probarme: try on
+          esta: this
+  es-1041:
+    native: to fit; to suit
+    notes:
+      n1: 'About clothes, quedar is to fit: me queda bien means it fits me well.'
+    examples:
+      Esta chaqueta me queda bien.:
+        native: This jacket fits me well.
+        bases:
+          Esta: This
+          me: to me
+          queda: fits
+      El vestido te queda grande.:
+        native: The dress is too big for you.
+        bases:
+          El: The
+          te: to you
+          queda: fits
+  es-1042:
+    native: elegant; smart
+    notes:
+      n1: 'Elegante has one form for both genders: un traje elegante, una blusa elegante.'
+    examples:
+      Ana lleva un vestido elegante.:
+        native: Ana wears an elegant dress.
+        bases:
+          Ana: Ana
+          un: an
+          elegante: elegant
+          lleva: wear
+      Este abrigo es muy elegante.:
+        native: This coat is very smart.
+        bases:
+          Este: This
+          elegante: smart
+  es-1043:
+    native: wide; loose
+    notes:
+      n1: 'Ancho is wide or loose: una falda ancha is a loose skirt.'
+    examples:
+      Esta falda es ancha.:
+        native: This skirt is loose.
+        bases:
+          Esta: This
+          ancha: loose
+      El pantalón es muy ancho.:
+        native: The trousers are very loose.
+        bases:
+          El: The
+          ancho: loose
+  es-1044:
+    native: tight
+    notes:
+      n1: 'Apretado is tight: these shoes are tight.'
+    examples:
+      Estos zapatos están apretados.:
+        native: These shoes are tight.
+        bases:
+          Estos: These
+          apretados: tight
+      Este jersey es muy apretado.:
+        native: This jumper is very tight.
+        bases:
+          Este: This
+          apretado: tight

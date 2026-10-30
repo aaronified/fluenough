@@ -1,0 +1,72 @@
+schema: 1
+id: "es-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1051"
+    target: "Ana lleva una camisa blanca y una falda azul."
+    ipa: "ˈana ˈʝeba ˈuna kaˈmisa ˈblanka i ˈuna ˈfalda aˈθul"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "una", base: "una" }, { word: "camisa", ref: "es-1017" }, { word: "blanca", ref: "es-1012" }, { word: "y", ref: "es-0048" }, { word: "falda", ref: "es-1024" }, { word: "azul", ref: "es-1008" }]
+    confusables: [{ id: "dress", ref: "es-1018", kind: "word" }, { id: "blouse", ref: "es-1025", kind: "word" }]
+  - id: "es-1052"
+    target: "Necesito un abrigo para el invierno."
+    ipa: "neθeˈsito un aˈbɾiɡo ˈpaɾa el inˈbjeɾno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "abrigo", ref: "es-1023" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "invierno", ref: "es-0990" }]
+    confusables: [{ id: "jacket", ref: "es-1020", kind: "word" }, { id: "jumper", ref: "es-1028", kind: "word" }]
+  - id: "es-1053"
+    target: "Estos zapatos están muy apretados."
+    ipa: "ˈestos θaˈpatos esˈtan mwi apɾeˈtados"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estos", base: "este" }, { word: "zapatos", ref: "es-1022" }, { word: "están", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "apretados", ref: "es-1044" }]
+    confusables: [{ id: "boot", ref: "es-1029", kind: "word" }, { id: "sock", ref: "es-1030", kind: "word" }]
+  - id: "es-1054"
+    target: "Me pongo la bufanda y el sombrero."
+    ipa: "me ˈponɡo la buˈfanda i el somˈbɾeɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "pongo", ref: "es-1039" }, { word: "la", base: "la" }, { word: "bufanda", ref: "es-1032" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "sombrero", ref: "es-1031" }]
+    confusables: [{ id: "tie", ref: "es-1034", kind: "word" }, { id: "belt", ref: "es-1033", kind: "word" }]
+  - id: "es-1055"
+    target: "¿Qué talla tiene este vestido?"
+    ipa: "ke ˈtaʝa ˈtjene ˈeste besˈtido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Qué", ref: "es-0054" }, { word: "talla", ref: "es-1036" }, { word: "tiene", ref: "es-0024" }, { word: "este", base: "este" }, { word: "vestido", ref: "es-1018" }]
+    confusables: [{ id: "suit", ref: "es-1035", kind: "word" }, { id: "fitting", ref: "es-1037", kind: "word" }]
+  - id: "es-1056"
+    target: "El probador está al fondo."
+    ipa: "el pɾobaˈdoɾ esˈta al ˈfondo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "probador", ref: "es-1037" }, { word: "está", ref: "es-0023" }, { word: "al", base: "a" }, { word: "fondo", base: "fondo" }]
+    confusables: [{ id: "size", ref: "es-1036", kind: "word" }, { id: "fashion", ref: "es-1038", kind: "word" }]
+  - id: "es-1057"
+    target: "Esta chaqueta me queda bien."
+    ipa: "ˈesta tʃaˈketa me ˈkeda bjen"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Esta", base: "este" }, { word: "chaqueta", ref: "es-1020" }, { word: "me", base: "me" }, { word: "queda", ref: "es-1041" }, { word: "bien", ref: "es-0326" }]
+    confusables: [{ id: "coat", ref: "es-1023", kind: "word" }, { id: "jumper", ref: "es-1028", kind: "word" }]
+  - id: "es-1058"
+    target: "Mi color favorito es el verde."
+    ipa: "mi koˈloɾ faboˈɾito es el ˈbeɾde"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "color", ref: "es-1026" }, { word: "favorito", base: "favorito" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "verde", ref: "es-1009" }]
+    confusables: [{ id: "red", ref: "es-1007", kind: "word" }, { id: "black", ref: "es-1011", kind: "word" }]
+  - id: "es-1059"
+    target: "La ropa de moda es elegante."
+    ipa: "la ˈropa de ˈmoda es eleˈɡante"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "de", base: "de" }, { word: "moda", ref: "es-1038" }, { word: "es", ref: "es-0022" }, { word: "elegante", ref: "es-1042" }]
+    confusables: [{ id: "wide", ref: "es-1043", kind: "word" }, { id: "suit", ref: "es-1035", kind: "word" }]

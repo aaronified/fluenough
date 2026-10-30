@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-clothes"
+name: "Reading: in the shop"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts from a clothes shop: a shopper at the counter, and a shop's notice about its prices and opening days. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-en-la-tienda"
+    title: "In the shop"
+    theme: "clothes"
+    sentences:
+      - text: "Busco una chaqueta azul."
+      - text: "¿Qué talla tiene?"
+      - text: "Tengo la talla pequeña."
+      - text: "El probador está al fondo."
+    questions:
+      - id: "es-1045"
+        prompt: { en: "What colour jacket is the shopper looking for?" }
+        options:
+          - { en: "Blue" }
+          - { en: "Red" }
+          - { en: "Black" }
+        answer: 1
+      - id: "es-1046"
+        prompt: { en: "What size does the shopper take?" }
+        options:
+          - { en: "Small" }
+          - { en: "Large" }
+          - { en: "Medium" }
+        answer: 1
+      - id: "es-1047"
+        prompt: { en: "Where is the fitting room?" }
+        options:
+          - { en: "At the back" }
+          - { en: "At the front" }
+          - { en: "By the door" }
+        answer: 1
+  - id: "es-aviso-de-la-tienda"
+    title: "A shop notice"
+    theme: "clothes"
+    sentences:
+      - text: "Las botas negras son baratas."
+      - text: "El abrigo azul es caro."
+      - text: "Esta blusa me queda muy bien."
+      - text: "La tienda está cerrada los domingos."
+    questions:
+      - id: "es-1048"
+        prompt: { en: "Which item is cheap?" }
+        options:
+          - { en: "The black boots" }
+          - { en: "The blue coat" }
+          - { en: "The blouse" }
+        answer: 1
+      - id: "es-1049"
+        prompt: { en: "Which item is expensive?" }
+        options:
+          - { en: "The blue coat" }
+          - { en: "The black boots" }
+          - { en: "The blouse" }
+        answer: 1
+      - id: "es-1050"
+        prompt: { en: "When is the shop closed?" }
+        options:
+          - { en: "On Sundays" }
+          - { en: "On Mondays" }
+          - { en: "On Saturdays" }
+        answer: 1
