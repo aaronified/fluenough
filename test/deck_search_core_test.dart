@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/core/data/deck_parser.dart' show DeckParseException;
+import 'package:fluenough/core/data/themes.dart';
 import 'package:fluenough/core/search/fuzzy.dart';
 import 'package:fluenough/core/search/query.dart';
 import 'package:fluenough/core/search/script_of.dart';
@@ -146,6 +150,23 @@ void main() {
     test('a Chinese variant reads Han', () {
       expect(scriptBelongsTo('han', <String>['han_simplified']), isTrue);
       expect(scriptBelongsTo('latin', <String>['devanagari']), isFalse);
+    });
+  });
+
+  group('theme tags', () {
+    test('the transport theme carries the travel tag, others none', () {
+      final themes = parseThemes(File('decks/themes.yaml').readAsStringSync());
+      expect(themes.firstWhere((t) => t.id == 'transport').tags, <String>[
+        'travel',
+      ]);
+      expect(themes.firstWhere((t) => t.id == 'first-words').tags, isEmpty);
+    });
+
+    test('tags must be a list of words', () {
+      const bad =
+          'schema: 1\nkind: themes\nthemes:\n'
+          '  - { id: a, name: "A", tags: "x" }\n';
+      expect(() => parseThemes(bad), throwsA(isA<DeckParseException>()));
     });
   });
 }
