@@ -1,0 +1,1109 @@
+schema: 1
+id: "bn-hobbies"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "hobbies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2207"
+    target: "শখ"
+    reading: "śokh"
+    ipa: "sɔkʰ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তোমার শখ কী?"
+        reading: "tomār śokh kī?"
+        ipa: "t̪omar sɔkʰ ki"
+        bases:
+          - { word: "তোমার", ref: "bn-0835" }
+      - target: "আমার শখ ছবি আঁকা।"
+        reading: "āmār śokh chabi ām̐kā."
+        ipa: "amar sɔkʰ tʃʰobi ãka"
+        bases:
+          - { word: "আমার", ref: "bn-0833" }
+          - { word: "ছবি", ref: "bn-1145" }
+          - { word: "আঁকা", ref: "bn-2217" }
+  - id: "bn-2208"
+    target: "ফুটবল"
+    reading: "phuṭbôl"
+    ipa: "pʰuʈbol"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমি রোজ ফুটবল খেলি।"
+        reading: "āmi roj phuṭbôl kheli."
+        ipa: "ami rodʒ pʰuʈbol kʰeli"
+        bases:
+          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "খেলি", ref: "bn-0895" }
+      - target: "ফুটবল মাঠে খেলা হচ্ছে।"
+        reading: "phuṭbôl māṭhe khelā hôcche."
+        ipa: "pʰuʈbol maʈʰe kʰela ɦɔtʃtʃʰe"
+        bases:
+          - { word: "মাঠে", ref: "bn-1045" }
+          - { word: "খেলা", ref: "bn-0895" }
+          - { word: "হচ্ছে", ref: "bn-0874" }
+  - id: "bn-2209"
+    target: "ক্রিকেট"
+    reading: "krikeṭ"
+    ipa: "krikeʈ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ক্রিকেট দেখতে ভালো লাগে।"
+        reading: "krikeṭ dekhte bhālo lāge."
+        ipa: "krikeʈ d̪ekʰt̪e bʱalo laɡe"
+        bases:
+          - { word: "দেখতে", ref: "bn-0877" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+      - target: "ভাই ক্রিকেট খেলে।"
+        reading: "bhāi krikeṭ khele."
+        ipa: "bʱai krikeʈ kʰele"
+        bases:
+          - { word: "খেলে", ref: "bn-0895" }
+  - id: "bn-2210"
+    target: "ব্যাডমিন্টন"
+    reading: "byāḍmintôn"
+    ipa: "bæɖminʈon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বোন ব্যাডমিন্টন খেলে।"
+        reading: "bon byāḍmintôn khele."
+        ipa: "bon bæɖminʈon kʰele"
+        bases:
+          - { word: "খেলে", ref: "bn-0895" }
+      - target: "ব্যাডমিন্টন খেলতে যাবে?"
+        reading: "byāḍmintôn khelte jābe?"
+        ipa: "bæɖminʈon kʰelt̪e dʒabe"
+        bases:
+          - { word: "খেলতে", ref: "bn-0895" }
+          - { word: "যাবে", ref: "bn-0873" }
+  - id: "bn-2211"
+    target: "দাবা"
+    reading: "dābā"
+    ipa: "d̪aba"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বাবা দাবা খেলেন।"
+        reading: "bābā dābā khelen."
+        ipa: "baba d̪aba kʰelen"
+        bases:
+          - { word: "বাবা", ref: "bn-0423" }
+          - { word: "খেলেন", ref: "bn-0895" }
+      - target: "দাবায় জেতা কঠিন।"
+        reading: "dābāy jetā kôṭhin."
+        ipa: "d̪abaj dʒet̪a koʈʰin"
+        bases:
+          - { word: "দাবায়", base: "দাবা", reading: "dābā", ipa: "d̪aba" }
+          - { word: "জেতা", ref: "bn-2229" }
+          - { word: "কঠিন", ref: "bn-0624" }
+  - id: "bn-2212"
+    target: "ক্যারাম"
+    reading: "kyārām"
+    ipa: "kæram"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমরা ক্যারাম খেলি।"
+        reading: "āmrā kyārām kheli."
+        ipa: "amra kæram kʰeli"
+        bases:
+          - { word: "আমরা", ref: "bn-0834" }
+          - { word: "খেলি", ref: "bn-0895" }
+      - target: "ক্যারামের বোর্ড বড়।"
+        reading: "kyārāmer bord bôṛo."
+        ipa: "kæramer borɖ bɔɽo"
+        bases:
+          - { word: "ক্যারামের", base: "ক্যারাম", reading: "kyārām", ipa: "kæram" }
+          - { word: "বোর্ড", ref: "bn-2152" }
+          - { word: "বড়", ref: "bn-0062" }
+  - id: "bn-2213"
+    target: "ঘুড়ি"
+    reading: "ghuṛi"
+    ipa: "ɡʱuɽi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ছেলেরা ঘুড়ি ওড়াচ্ছে।"
+        reading: "chelerā ghuṛi oṛācche."
+        ipa: "tʃʰelera ɡʱuɽi oɽatʃtʃʰe"
+        bases:
+          - { word: "ছেলেরা", ref: "bn-0426" }
+          - { word: "ওড়াচ্ছে", base: "ওড়ানো", reading: "oṛāno", ipa: "oɽano" }
+      - target: "আকাশে ঘুড়ি উড়ছে।"
+        reading: "ākāśe ghuṛi uṛche."
+        ipa: "akase ɡʱuɽi uɽtʃʰe"
+        bases:
+          - { word: "আকাশে", ref: "bn-1571" }
+          - { word: "উড়ছে", ref: "bn-1116" }
+  - id: "bn-2214"
+    target: "গল্প"
+    reading: "golpô"
+    ipa: "ɡɔlpo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "দাদু রোজ গল্প বলেন।"
+        reading: "dādu roj golpô balen."
+        ipa: "d̪ad̪u rodʒ ɡɔlpo bɔlen"
+        bases:
+          - { word: "দাদু", ref: "bn-0431" }
+          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "বলেন", ref: "bn-0879" }
+      - target: "বন্ধুদের সঙ্গে গল্প করি।"
+        reading: "bôndhuder sôṅge golpô kori."
+        ipa: "bond̪ʱud̪er sɔŋɡe ɡɔlpo kori"
+        bases:
+          - { word: "বন্ধুদের", ref: "bn-0189" }
+          - { word: "সঙ্গে", ref: "bn-0296" }
+          - { word: "করি", ref: "bn-0102" }
+  - id: "bn-2215"
+    target: "আড্ডা"
+    reading: "āḍḍā"
+    ipa: "aɖɖa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বিকেলে বন্ধুদের সঙ্গে আড্ডা দিই।"
+        reading: "bikele bôndhuder sôṅge āḍḍā dii."
+        ipa: "bikele bond̪ʱud̪er sɔŋɡe aɖɖa d̪ii"
+        bases:
+          - { word: "বন্ধুদের", ref: "bn-0189" }
+          - { word: "সঙ্গে", ref: "bn-0296" }
+          - { word: "দিই", ref: "bn-0888" }
+      - target: "আড্ডা মানে গল্প আর হাসি।"
+        reading: "āḍḍā māne golpô ār hāsi."
+        ipa: "aɖɖa mane ɡɔlpo ar ɦasi"
+        bases:
+          - { word: "মানে", base: "মানে", reading: "māne", ipa: "mane" }
+          - { word: "গল্প", ref: "bn-2214" }
+          - { word: "আর", ref: "bn-0355" }
+          - { word: "হাসি", base: "হাসি", reading: "hāsi", ipa: "ɦasi" }
+  - id: "bn-2216"
+    target: "কবিতা"
+    reading: "kôbitā"
+    ipa: "kobit̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "কবিতাটা খুব সুন্দর।"
+        reading: "kôbitāṭā khub sundôr."
+        ipa: "kobit̪aʈa kʰub sund̪or"
+        bases:
+          - { word: "কবিতাটা", base: "কবিতা", reading: "kôbitā", ipa: "kobit̪a" }
+          - { word: "খুব", ref: "bn-0641" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+      - target: "আমি কবিতা লিখি।"
+        reading: "āmi kôbitā likhi."
+        ipa: "ami kobit̪a likʰi"
+        bases:
+          - { word: "লিখি", ref: "bn-0880" }
+  - id: "bn-2217"
+    target: "আঁকা"
+    reading: "ām̐kā"
+    ipa: "ãka"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বোন ছবি আঁকে।"
+        reading: "bon chabi ām̐ke."
+        ipa: "bon tʃʰobi ãke"
+        bases:
+          - { word: "আঁকে", base: "আঁকা", reading: "ām̐kā", ipa: "ãka" }
+      - target: "আমি সুন্দর ছবি আঁকি।"
+        reading: "āmi sundôr chabi ām̐ki."
+        ipa: "ami sund̪or tʃʰobi ãki"
+        bases:
+          - { word: "আঁকি", base: "আঁকা", reading: "ām̐kā", ipa: "ãka" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+          - { word: "ছবি", ref: "bn-1145" }
+  - id: "bn-2218"
+    target: "তবলা"
+    reading: "tôblā"
+    ipa: "t̪ɔbla"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তবলার বোল শোনো।"
+        reading: "tôblār bol śono."
+        ipa: "t̪ɔblar bol sono"
+        bases:
+          - { word: "তবলার", base: "তবলা", reading: "tôblā", ipa: "t̪ɔbla" }
+          - { word: "বোল", base: "বোল", reading: "bol", ipa: "bol" }
+          - { word: "শোনো", ref: "bn-0878" }
+      - target: "তবলা বাজানো শিখছি।"
+        reading: "tôblā bājāno śikhchi."
+        ipa: "t̪ɔbla badʒano sikʰtʃʰi"
+        bases:
+          - { word: "বাজানো", ref: "bn-2221" }
+          - { word: "শিখছি", ref: "bn-0883" }
+  - id: "bn-2219"
+    target: "হারমোনিয়াম"
+    reading: "hārmoniyām"
+    ipa: "ɦarmonijam"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "দাদা হারমোনিয়াম বাজায়।"
+        reading: "dādā hārmoniyām bājāy."
+        ipa: "d̪ad̪a ɦarmonijam badʒaj"
+        bases:
+          - { word: "দাদা", ref: "bn-0431" }
+          - { word: "বাজায়", ref: "bn-2221" }
+      - target: "হারমোনিয়ামের সুর মিষ্টি।"
+        reading: "hārmoniyāmer sur miṣṭi."
+        ipa: "ɦarmonijamer sur misʈi"
+        bases:
+          - { word: "হারমোনিয়ামের", base: "হারমোনিয়াম", reading: "hārmoniyām", ipa: "ɦarmonijam" }
+          - { word: "সুর", ref: "bn-2243" }
+          - { word: "মিষ্টি", ref: "bn-0357" }
+  - id: "bn-2220"
+    target: "গিটার"
+    reading: "giṭār"
+    ipa: "ɡiʈar"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ভাই গিটার শেখে।"
+        reading: "bhāi giṭār śekhe."
+        ipa: "bʱai ɡiʈar sekʰe"
+        bases:
+          - { word: "শেখে", ref: "bn-0883" }
+      - target: "গিটারটা নতুন।"
+        reading: "giṭārṭā notun."
+        ipa: "ɡiʈarʈa not̪un"
+        bases:
+          - { word: "গিটারটা", base: "গিটার", reading: "giṭār", ipa: "ɡiʈar" }
+          - { word: "নতুন", ref: "bn-0620" }
+  - id: "bn-2221"
+    target: "বাজানো"
+    reading: "bājāno"
+    ipa: "badʒano"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "তুমি কী বাজাও?"
+        reading: "tumi kī bājāo?"
+        ipa: "t̪umi ki badʒao"
+        bases:
+          - { word: "বাজাও", base: "বাজানো", reading: "bājāno", ipa: "badʒano" }
+          - { word: "কী", ref: "bn-0161" }
+          - { word: "তুমি", ref: "bn-0835" }
+      - target: "আমি রোজ বাজাই।"
+        reading: "āmi roj bājāi."
+        ipa: "ami rodʒ badʒai"
+        bases:
+          - { word: "বাজাই", base: "বাজানো", reading: "bājāno", ipa: "badʒano" }
+          - { word: "রোজ", ref: "bn-0668" }
+  - id: "bn-2222"
+    target: "গাওয়া"
+    reading: "gāoyā"
+    ipa: "ɡaoja"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "মা সুন্দর গান গায়।"
+        reading: "mā sundôr gān gāy."
+        ipa: "ma sund̪or ɡan ɡaj"
+        bases:
+          - { word: "গায়", base: "গাওয়া", reading: "gāoyā", ipa: "ɡaoja" }
+          - { word: "গান", ref: "bn-1668" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+      - target: "আমি গাইতে পারি না।"
+        reading: "āmi gāite pāri nā."
+        ipa: "ami ɡait̪e pari na"
+        bases:
+          - { word: "গাইতে", base: "গাওয়া", reading: "gāoyā", ipa: "ɡaoja" }
+          - { word: "পারি", ref: "bn-0736" }
+          - { word: "না", ref: "bn-0160" }
+  - id: "bn-2223"
+    target: "সাঁতার"
+    reading: "sām̐tār"
+    ipa: "sãt̪ar"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সাঁতার শেখা সহজ নয়।"
+        reading: "sām̐tār śekhā sôhôj nôy."
+        ipa: "sãt̪ar sekʰa sɔɦodʒ nɔj"
+        bases:
+          - { word: "শেখা", ref: "bn-0883" }
+          - { word: "সহজ", ref: "bn-0623" }
+          - { word: "নয়", ref: "bn-0210" }
+      - target: "নদীতে সাঁতার কাটি।"
+        reading: "nodite sām̐tār kāṭi."
+        ipa: "nod̪it̪e sãt̪ar kaʈi"
+        bases:
+          - { word: "নদীতে", ref: "bn-1050" }
+          - { word: "কাটি", ref: "bn-1101" }
+  - id: "bn-2224"
+    target: "ভ্রমণ"
+    reading: "bhrômôn"
+    ipa: "bʱrɔmon"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ছুটিতে ভ্রমণে যাব।"
+        reading: "chuṭite bhrômône jāb."
+        ipa: "tʃʰuʈit̪e bʱrɔmone dʒab"
+        bases:
+          - { word: "ছুটিতে", ref: "bn-0463" }
+          - { word: "ভ্রমণে", base: "ভ্রমণ", reading: "bhrômôn", ipa: "bʱrɔmon" }
+          - { word: "যাব", ref: "bn-0873" }
+      - target: "ভ্রমণ খুব মজার।"
+        reading: "bhrômôn khub mojār."
+        ipa: "bʱrɔmon kʰub mɔdʒar"
+        bases:
+          - { word: "মজার", ref: "bn-1252" }
+  - id: "bn-2225"
+    target: "ফুল"
+    reading: "phul"
+    ipa: "pʰul"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বাগানে সুন্দর ফুল ফুটেছে।"
+        reading: "bāgāne sundôr phul phuṭeche."
+        ipa: "baɡane sund̪or pʰul pʰuʈetʃʰe"
+        bases:
+          - { word: "বাগানে", ref: "bn-1049" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+          - { word: "ফুটেছে", ref: "bn-2097" }
+      - target: "ফুল তুলো না।"
+        reading: "phul tulo nā."
+        ipa: "pʰul t̪ulo na"
+        bases:
+          - { word: "তুলো", ref: "bn-1104" }
+  - id: "bn-2226"
+    target: "ক্লাব"
+    reading: "klāb"
+    ipa: "klab"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমি একটা ক্লাবের সদস্য।"
+        reading: "āmi ekṭā klāber sôdôśyô."
+        ipa: "ami ekʈa klaber sɔd̪osso"
+        bases:
+          - { word: "একটা", ref: "bn-0202" }
+          - { word: "ক্লাবের", base: "ক্লাব", reading: "klāb", ipa: "klab" }
+          - { word: "সদস্য", base: "সদস্য", reading: "sôdôśyô", ipa: "sɔd̪osso" }
+      - target: "ক্লাবে রোজ খেলা হয়।"
+        reading: "klābe roj khelā hoy."
+        ipa: "klabe rodʒ kʰela ɦɔj"
+        bases:
+          - { word: "ক্লাবে", base: "ক্লাব", reading: "klāb", ipa: "klab" }
+          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "খেলা", ref: "bn-0895" }
+          - { word: "হয়", ref: "bn-0874" }
+  - id: "bn-2227"
+    target: "খেলোয়াড়"
+    reading: "khelōyār"
+    ipa: "kʰelojaɽ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ও ভালো খেলোয়াড়।"
+        reading: "o bhālo khelōyār."
+        ipa: "o bʱalo kʰelojaɽ"
+        bases:
+          - { word: "ও", ref: "bn-0010" }
+          - { word: "ভালো", ref: "bn-0617" }
+      - target: "খেলোয়াড়রা মাঠে নামছে।"
+        reading: "khelōyāṛrā māṭhe nāmche."
+        ipa: "kʰelojaɽra maʈʰe namtʃʰe"
+        bases:
+          - { word: "খেলোয়াড়রা", base: "খেলোয়াড়", reading: "khelōyār", ipa: "kʰelojaɽ" }
+          - { word: "মাঠে", ref: "bn-1045" }
+          - { word: "নামছে", base: "নামা", reading: "nāmā", ipa: "nama" }
+  - id: "bn-2228"
+    target: "দর্শক"
+    reading: "dôrśôk"
+    ipa: "d̪ɔrsok"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "স্টেডিয়ামে অনেক দর্শক।"
+        reading: "steḍiyāme onek dôrśôk."
+        ipa: "sʈeɖijame ɔnek d̪ɔrsok"
+        bases:
+          - { word: "স্টেডিয়ামে", base: "স্টেডিয়াম", reading: "steḍiyām", ipa: "sʈeɖijam" }
+          - { word: "অনেক", ref: "bn-0550" }
+      - target: "দর্শকরা উৎসাহ দেয়।"
+        reading: "dôrśôkrā utsāh dey."
+        ipa: "d̪ɔrsokra ut̪saɦ d̪ej"
+        bases:
+          - { word: "দর্শকরা", base: "দর্শক", reading: "dôrśôk", ipa: "d̪ɔrsok" }
+          - { word: "উৎসাহ", ref: "bn-2241" }
+          - { word: "দেয়", ref: "bn-0888" }
+  - id: "bn-2229"
+    target: "জেতা"
+    reading: "jetā"
+    ipa: "dʒet̪a"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "আমাদের দল জিতেছে।"
+        reading: "āmāder dôl jiteche."
+        ipa: "amad̪er d̪ɔl dʒit̪etʃʰe"
+        bases:
+          - { word: "জিতেছে", base: "জেতা", reading: "jetā", ipa: "dʒet̪a" }
+          - { word: "দল", ref: "bn-2231" }
+          - { word: "আমাদের", ref: "bn-0834" }
+      - target: "কে জিতবে?"
+        reading: "ke jitbe?"
+        ipa: "ke dʒit̪be"
+        bases:
+          - { word: "জিতবে", base: "জেতা", reading: "jetā", ipa: "dʒet̪a" }
+  - id: "bn-2230"
+    target: "হারা"
+    reading: "hārā"
+    ipa: "ɦara"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "আমরা ম্যাচে হেরেছি।"
+        reading: "āmrā myāce herechi."
+        ipa: "amra mætʃe ɦeretʃʰi"
+        bases:
+          - { word: "ম্যাচে", ref: "bn-2232" }
+          - { word: "হেরেছি", base: "হারা", reading: "hārā", ipa: "ɦara" }
+      - target: "হেরে গেলে মন খারাপ।"
+        reading: "here gele môn kharāp."
+        ipa: "ɦere ɡele mɔn kʰarap"
+        bases:
+          - { word: "হেরে", base: "হারা", reading: "hārā", ipa: "ɦara" }
+          - { word: "গেলে", ref: "bn-0873" }
+          - { word: "মন", base: "মন", reading: "môn", ipa: "mɔn" }
+          - { word: "খারাপ", ref: "bn-0618" }
+  - id: "bn-2231"
+    target: "দল"
+    reading: "dôl"
+    ipa: "d̪ɔl"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমার দলে সাত জন।"
+        reading: "āmār dôle śāt jôn."
+        ipa: "amar d̪ɔle sat̪ dʒɔn"
+        bases:
+          - { word: "আমার", ref: "bn-0833" }
+          - { word: "দলে", base: "দল", reading: "dôl", ipa: "d̪ɔl" }
+          - { word: "সাত", ref: "bn-0208" }
+          - { word: "জন", base: "জন", reading: "jôn", ipa: "dʒɔn" }
+      - target: "দলটা ভালো খেলছে।"
+        reading: "dôlṭā bhālo khelche."
+        ipa: "d̪ɔlʈa bʱalo kʰeltʃʰe"
+        bases:
+          - { word: "দলটা", base: "দল", reading: "dôl", ipa: "d̪ɔl" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "খেলছে", ref: "bn-0895" }
+  - id: "bn-2232"
+    target: "ম্যাচ"
+    reading: "myāc"
+    ipa: "mætʃ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আজ বিকেলে ম্যাচ।"
+        reading: "āj bikele myāc."
+        ipa: "adʒ bikele mætʃ"
+        bases:
+          - { word: "আজ", ref: "bn-0315" }
+          - { word: "বিকেলে", ref: "bn-0319" }
+      - target: "ম্যাচটা দেখব।"
+        reading: "myācṭā dekhbo."
+        ipa: "mætʃʈa d̪ekʰbo"
+        bases:
+          - { word: "ম্যাচটা", base: "ম্যাচ", reading: "myāc", ipa: "mætʃ" }
+          - { word: "দেখব", ref: "bn-0877" }
+  - id: "bn-2233"
+    target: "প্রতিযোগিতা"
+    reading: "prôtijogitā"
+    ipa: "prot̪idʒoɡit̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সাঁতারের প্রতিযোগিতা হবে।"
+        reading: "sām̐tārer prôtijogitā habe."
+        ipa: "sãt̪arer prot̪idʒoɡit̪a ɦɔbe"
+        bases:
+          - { word: "সাঁতারের", ref: "bn-2223" }
+          - { word: "হবে", ref: "bn-0874" }
+      - target: "প্রতিযোগিতায় জিতলে পুরস্কার।"
+        reading: "prôtijogitāy jitôle purôskār."
+        ipa: "prot̪idʒoɡit̪aj dʒit̪ole puroskar"
+        bases:
+          - { word: "প্রতিযোগিতায়", base: "প্রতিযোগিতা", reading: "prôtijogitā", ipa: "prot̪idʒoɡit̪a" }
+          - { word: "জিতলে", ref: "bn-2229" }
+          - { word: "পুরস্কার", ref: "bn-2235" }
+  - id: "bn-2234"
+    target: "অভ্যাস"
+    reading: "ābhyās"
+    ipa: "ɔbbʱas"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "রোজ অভ্যাস করো।"
+        reading: "roj ābhyās koro."
+        ipa: "rodʒ ɔbbʱas kɔro"
+        bases:
+          - { word: "রোজ", ref: "bn-0668" }
+          - { word: "করো", ref: "bn-0102" }
+      - target: "পড়ার অভ্যাস ভালো।"
+        reading: "poṛār ābhyās bhālo."
+        ipa: "pɔɽar ɔbbʱas bʱalo"
+        bases:
+          - { word: "পড়ার", ref: "bn-0119" }
+          - { word: "ভালো", ref: "bn-0617" }
+  - id: "bn-2235"
+    target: "পুরস্কার"
+    reading: "purôskār"
+    ipa: "puroskar"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সে প্রথম পুরস্কার পেয়েছে।"
+        reading: "se prôthôm purôskār peyeche."
+        ipa: "se prɔt̪ʰom puroskar pejetʃʰe"
+        bases:
+          - { word: "সে", ref: "bn-0839" }
+          - { word: "প্রথম", ref: "bn-0698" }
+          - { word: "পেয়েছে", ref: "bn-0891" }
+      - target: "পুরস্কারটা সুন্দর।"
+        reading: "purôskārṭā sundôr."
+        ipa: "puroskarʈa sund̪or"
+        bases:
+          - { word: "পুরস্কারটা", base: "পুরস্কার", reading: "purôskār", ipa: "puroskar" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+  - id: "bn-2236"
+    target: "সংগ্রহ"
+    reading: "sôṅgrôho"
+    ipa: "sɔŋɡroɦo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমার ডাকটিকিটের সংগ্রহ বড়।"
+        reading: "āmār ḍākṭikiṭer sôṅgrôho bôṛo."
+        ipa: "amar ɖakʈikiʈer sɔŋɡroɦo bɔɽo"
+        bases:
+          - { word: "আমার", ref: "bn-0833" }
+          - { word: "ডাকটিকিটের", ref: "bn-2237" }
+          - { word: "বড়", ref: "bn-0062" }
+      - target: "বই সংগ্রহ করা শখ।"
+        reading: "boi sôṅgrôho korā śokh."
+        ipa: "boi sɔŋɡroɦo kɔra sɔkʰ"
+        bases:
+          - { word: "বই", ref: "bn-1139" }
+          - { word: "করা", ref: "bn-0102" }
+          - { word: "শখ", ref: "bn-2207" }
+  - id: "bn-2237"
+    target: "ডাকটিকিট"
+    reading: "ḍākṭikiṭ"
+    ipa: "ɖakʈikiʈ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ডাকটিকিট কোথায়?"
+        reading: "ḍākṭikiṭ kothāy?"
+        ipa: "ɖakʈikiʈ kot̪ʰaj"
+        bases:
+          - { word: "কোথায়", ref: "bn-0163" }
+      - target: "বাবার কাছে অনেক ডাকটিকিট আছে।"
+        reading: "bābār kāche onek ḍākṭikiṭ āche."
+        ipa: "babar katʃʰe ɔnek ɖakʈikiʈ atʃʰe"
+        bases:
+          - { word: "বাবার", ref: "bn-0423" }
+          - { word: "কাছে", ref: "bn-0309" }
+          - { word: "অনেক", ref: "bn-0550" }
+          - { word: "আছে", base: "আছে", reading: "āche", ipa: "atʃʰe" }
+  - id: "bn-2238"
+    target: "নাটক"
+    reading: "nāṭôk"
+    ipa: "naʈok"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "আমরা একটা নাটক দেখলাম।"
+        reading: "āmrā ekṭā nāṭôk dekhlām."
+        ipa: "amra ekʈa naʈok d̪ekʰlam"
+        bases:
+          - { word: "একটা", ref: "bn-0202" }
+          - { word: "দেখলাম", ref: "bn-0877" }
+      - target: "নাটকটা খুব ভালো লেগেছে।"
+        reading: "nāṭôkṭā khub bhālo legeche."
+        ipa: "naʈokʈa kʰub bʱalo leɡetʃʰe"
+        bases:
+          - { word: "নাটকটা", base: "নাটক", reading: "nāṭôk", ipa: "naʈok" }
+          - { word: "খুব", ref: "bn-0641" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "লেগেছে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+  - id: "bn-2239"
+    target: "ক্যামেরা"
+    reading: "kyāmerā"
+    ipa: "kæmera"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ক্যামেরাটা নতুন।"
+        reading: "kyāmerāṭā notun."
+        ipa: "kæmeraʈa not̪un"
+        bases:
+          - { word: "ক্যামেরাটা", base: "ক্যামেরা", reading: "kyāmerā", ipa: "kæmera" }
+          - { word: "নতুন", ref: "bn-0620" }
+      - target: "ছবি তুলতে ক্যামেরা লাগে।"
+        reading: "chabi tulte kyāmerā lāge."
+        ipa: "tʃʰobi t̪ult̪e kæmera laɡe"
+        bases:
+          - { word: "ছবি", ref: "bn-1145" }
+          - { word: "তুলতে", ref: "bn-1104" }
+          - { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+  - id: "bn-2240"
+    target: "সেলাই"
+    reading: "selāi"
+    ipa: "selai"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "মা সেলাই করেন।"
+        reading: "mā selāi karen."
+        ipa: "ma selai kɔren"
+        bases:
+          - { word: "মা", ref: "bn-0424" }
+          - { word: "করেন", ref: "bn-0102" }
+      - target: "সেলাইয়ের কাজটা সুন্দর।"
+        reading: "selāiyer kājṭā sundôr."
+        ipa: "selaijer kadʒʈa sund̪or"
+        bases:
+          - { word: "সেলাইয়ের", base: "সেলাই", reading: "selāi", ipa: "selai" }
+          - { word: "কাজটা", ref: "bn-0198" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+  - id: "bn-2241"
+    target: "উৎসাহ"
+    reading: "utsāh"
+    ipa: "ut̪saɦ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ছাত্রদের খুব উৎসাহ।"
+        reading: "chātrôder khub utsāh."
+        ipa: "tʃʰat̪rod̪er kʰub ut̪saɦ"
+        bases:
+          - { word: "ছাত্রদের", ref: "bn-0470" }
+          - { word: "খুব", ref: "bn-0641" }
+      - target: "উৎসাহ দাও।"
+        reading: "utsāh dāo."
+        ipa: "ut̪saɦ d̪ao"
+        bases:
+          - { word: "দাও", ref: "bn-0888" }
+  - id: "bn-2242"
+    target: "ইচ্ছে"
+    reading: "icche"
+    ipa: "itʃtʃʰe"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তোমার কী ইচ্ছে?"
+        reading: "tomār kī icche?"
+        ipa: "t̪omar ki itʃtʃʰe"
+        bases:
+          - { word: "তোমার", ref: "bn-0835" }
+          - { word: "কী", ref: "bn-0161" }
+      - target: "গান শেখার ইচ্ছে আছে।"
+        reading: "gān śekhār icche āche."
+        ipa: "ɡan sekʰar itʃtʃʰe atʃʰe"
+        bases:
+          - { word: "গান", ref: "bn-1668" }
+          - { word: "শেখার", ref: "bn-0883" }
+          - { word: "আছে", base: "আছে", reading: "āche", ipa: "atʃʰe" }
+  - id: "bn-2243"
+    target: "সুর"
+    reading: "sur"
+    ipa: "sur"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "গানের সুর মিষ্টি।"
+        reading: "gāner sur miṣṭi."
+        ipa: "ɡaner sur misʈi"
+        bases:
+          - { word: "গানের", ref: "bn-1668" }
+          - { word: "মিষ্টি", ref: "bn-0357" }
+      - target: "সুরটা আমার মনে আছে।"
+        reading: "surṭā āmār mône āche."
+        ipa: "surʈa amar mɔne atʃʰe"
+        bases:
+          - { word: "সুরটা", base: "সুর", reading: "sur", ipa: "sur" }
+          - { word: "আমার", ref: "bn-0833" }
+          - { word: "মনে", base: "মন", reading: "môn", ipa: "mɔn" }
+          - { word: "আছে", base: "আছে", reading: "āche", ipa: "atʃʰe" }
+  - id: "bn-2244"
+    target: "বাদ্যযন্ত্র"
+    reading: "bādyôntrô"
+    ipa: "bad̪d̪dʒont̪ro"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তুমি কোন বাদ্যযন্ত্র বাজাও?"
+        reading: "tumi kon bādyôntrô bājāo?"
+        ipa: "t̪umi kon bad̪d̪dʒont̪ro badʒao"
+        bases:
+          - { word: "তুমি", ref: "bn-0835" }
+          - { word: "কোন", ref: "bn-0412" }
+          - { word: "বাজাও", ref: "bn-2221" }
+      - target: "বাদ্যযন্ত্রটা পুরোনো।"
+        reading: "bādyôntrôṭā purono."
+        ipa: "bad̪d̪dʒont̪roʈa purono"
+        bases:
+          - { word: "বাদ্যযন্ত্রটা", base: "বাদ্যযন্ত্র", reading: "bādyôntrô", ipa: "bad̪d̪dʒont̪ro" }
+          - { word: "পুরোনো", ref: "bn-0621" }
+  - id: "bn-2245"
+    target: "নাচা"
+    reading: "nācā"
+    ipa: "natʃa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "বোন খুব সুন্দর নাচে।"
+        reading: "bon khub sundôr nāce."
+        ipa: "bon kʰub sund̪or natʃe"
+        bases:
+          - { word: "বোন", ref: "bn-0425" }
+          - { word: "খুব", ref: "bn-0641" }
+          - { word: "সুন্দর", ref: "bn-0625" }
+          - { word: "নাচে", base: "নাচা", reading: "nācā", ipa: "natʃa" }
+      - target: "নাচতে ভালো লাগে।"
+        reading: "nāchte bhālo lāge."
+        ipa: "natʃt̪e bʱalo laɡe"
+        bases:
+          - { word: "নাচতে", base: "নাচা", reading: "nācā", ipa: "natʃa" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+  - id: "bn-2246"
+    target: "শিল্পী"
+    reading: "śilpī"
+    ipa: "silpi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "তিনি একজন শিল্পী।"
+        reading: "tini ekjôn śilpī."
+        ipa: "t̪ini ekdʒon silpi"
+        bases:
+          - { word: "তিনি", ref: "bn-0841" }
+          - { word: "একজন", ref: "bn-0202" }
+      - target: "শিল্পীরা নতুন ছবি আঁকছে।"
+        reading: "śilpīrā notun chabi ām̐kche."
+        ipa: "silpira not̪un tʃʰobi ãktʃʰe"
+        bases:
+          - { word: "শিল্পীরা", base: "শিল্পী", reading: "śilpī", ipa: "silpi" }
+          - { word: "নতুন", ref: "bn-0620" }
+          - { word: "ছবি", ref: "bn-1145" }
+          - { word: "আঁকছে", ref: "bn-2217" }
+  - id: "bn-2247"
+    target: "সংগীত"
+    reading: "śôṅgit"
+    ipa: "soŋɡit̪"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সংগীত শোনা ভালো লাগে।"
+        reading: "śôṅgit śonā bhālo lāge."
+        ipa: "soŋɡit̪ sona bʱalo laɡe"
+        bases:
+          - { word: "শোনা", ref: "bn-0878" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+      - target: "সংগীত শিক্ষক ভালো।"
+        reading: "śôṅgit śikkhôk bhālo."
+        ipa: "soŋɡit̪ sikkʰok bʱalo"
+        bases:
+          - { word: "শিক্ষক", ref: "bn-0451" }
+          - { word: "ভালো", ref: "bn-0617" }
+  - id: "bn-2248"
+    target: "ভালোবাসা"
+    reading: "bhālobāsā"
+    ipa: "bʱalobasa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "আমি গান ভালোবাসি।"
+        reading: "āmi gān bhālobāsi."
+        ipa: "ami ɡan bʱalobasi"
+        bases:
+          - { word: "গান", ref: "bn-1668" }
+          - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāsā", ipa: "bʱalobasa" }
+      - target: "মা আমাকে ভালোবাসেন।"
+        reading: "mā āmāke bhālobāsen."
+        ipa: "ma amake bʱalobasen"
+        bases:
+          - { word: "মা", ref: "bn-0424" }
+          - { word: "আমাকে", ref: "bn-0833" }
+          - { word: "ভালোবাসেন", base: "ভালোবাসা", reading: "bhālobāsā", ipa: "bʱalobasa" }
+  - id: "bn-2249"
+    target: "বিনোদন"
+    reading: "binodôn"
+    ipa: "binod̪on"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বিনোদনের জন্য গান শুনি।"
+        reading: "binodôner jonno gān śuni."
+        ipa: "binod̪oner dʒonno ɡan suni"
+        bases:
+          - { word: "বিনোদনের", base: "বিনোদন", reading: "binodôn", ipa: "binod̪on" }
+          - { word: "জন্য", ref: "bn-0297" }
+          - { word: "গান", ref: "bn-1668" }
+          - { word: "শুনি", ref: "bn-0878" }
+      - target: "এটা আমার বিনোদন।"
+        reading: "eṭā āmār binodôn."
+        ipa: "eʈa amar binod̪on"
+        bases:
+          - { word: "এটা", ref: "bn-0849" }
+          - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-2250"
+    target: "অবসর"
+    reading: "ôbôśôr"
+    ipa: "ɔbosor"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "অবসরে কী করো?"
+        reading: "ôbôśôre kī koro?"
+        ipa: "ɔbosore ki kɔro"
+        bases:
+          - { word: "অবসরে", base: "অবসর", reading: "ôbôśôr", ipa: "ɔbosor" }
+          - { word: "কী", ref: "bn-0161" }
+          - { word: "করো", ref: "bn-0102" }
+      - target: "অবসর সময় খেলি।"
+        reading: "ôbôśôr śomoy kheli."
+        ipa: "ɔbosor sɔmoj kʰeli"
+        bases:
+          - { word: "সময়", ref: "bn-0061" }
+          - { word: "খেলি", ref: "bn-0895" }
+  - id: "bn-2251"
+    target: "বাঁশি"
+    reading: "bām̐śi"
+    ipa: "bãsi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বাঁশি বাজাতে ভালো লাগে।"
+        reading: "bām̐śi bājāte bhālo lāge."
+        ipa: "bãsi badʒat̪e bʱalo laɡe"
+        bases:
+          - { word: "বাজাতে", ref: "bn-2221" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }
+      - target: "ভাই বাঁশি বাজায়।"
+        reading: "bhāi bām̐śi bājāy."
+        ipa: "bʱai bãsi badʒaj"
+        bases:
+          - { word: "ভাই", ref: "bn-0181" }
+          - { word: "বাজায়", ref: "bn-2221" }
+  - id: "bn-2252"
+    target: "পিয়ানো"
+    reading: "piyāno"
+    ipa: "pijano"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "পিয়ানো শিখছি।"
+        reading: "piyāno śikhchi."
+        ipa: "pijano sikʰtʃʰi"
+        bases:
+          - { word: "শিখছি", ref: "bn-0883" }
+      - target: "পিয়ানোর সুর মিষ্টি।"
+        reading: "piyāner sur miṣṭi."
+        ipa: "pijanor sur misʈi"
+        bases:
+          - { word: "পিয়ানোর", base: "পিয়ানো", reading: "piyāno", ipa: "pijano" }
+          - { word: "সুর", ref: "bn-2243" }
+          - { word: "মিষ্টি", ref: "bn-0357" }
+  - id: "bn-2253"
+    target: "অভিনয়"
+    reading: "ābhinôy"
+    ipa: "ɔbʱinoj"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "সে ভালো অভিনয় করে।"
+        reading: "se bhālo ābhinôy kore."
+        ipa: "se bʱalo ɔbʱinoj kɔre"
+        bases:
+          - { word: "সে", ref: "bn-0839" }
+          - { word: "ভালো", ref: "bn-0617" }
+          - { word: "করে", ref: "bn-0102" }
+      - target: "অভিনয়ের প্রশংসা হলো।"
+        reading: "ābhinôyer prôśôṅsā holo."
+        ipa: "ɔbʱinojer prɔsoŋsa ɦɔlo"
+        bases:
+          - { word: "অভিনয়ের", base: "অভিনয়", reading: "ābhinôy", ipa: "ɔbʱinoj" }
+          - { word: "প্রশংসা", base: "প্রশংসা", reading: "prôśôṅsā", ipa: "prɔsoŋsa" }
+          - { word: "হলো", ref: "bn-0874" }
+  - id: "bn-2254"
+    target: "ছড়া"
+    reading: "chaṛā"
+    ipa: "tʃʰɔɽa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ছড়াটা খুব মজার।"
+        reading: "chaṛāṭā khub mojār."
+        ipa: "tʃʰɔɽaʈa kʰub mɔdʒar"
+        bases:
+          - { word: "ছড়াটা", base: "ছড়া", reading: "chaṛā", ipa: "tʃʰɔɽa" }
+          - { word: "খুব", ref: "bn-0641" }
+          - { word: "মজার", ref: "bn-1252" }
+      - target: "ছোটরা ছড়া বলে।"
+        reading: "choṭrā chaṛā bole."
+        ipa: "tʃʰoʈra tʃʰɔɽa bɔle"
+        bases:
+          - { word: "ছোটরা", ref: "bn-0619" }
+          - { word: "বলে", ref: "bn-0879" }
+  - id: "bn-2255"
+    target: "ধাঁধা"
+    reading: "dhām̐dhā"
+    ipa: "d̪ʱãd̪ʱa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ধাঁধা বলো।"
+        reading: "dhām̐dhā balo."
+        ipa: "d̪ʱãd̪ʱa bɔlo"
+        bases:
+          - { word: "বলো", ref: "bn-0879" }
+      - target: "ধাঁধাটা কঠিন।"
+        reading: "dhām̐dhāṭā kôṭhin."
+        ipa: "d̪ʱãd̪ʱaʈa koʈʰin"
+        bases:
+          - { word: "ধাঁধাটা", base: "ধাঁধা", reading: "dhām̐dhā", ipa: "d̪ʱãd̪ʱa" }
+          - { word: "কঠিন", ref: "bn-0624" }
+  - id: "bn-2256"
+    target: "লুডো"
+    reading: "ludo"
+    ipa: "luɖo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "বাড়িতে লুডো খেলি।"
+        reading: "bāṛite ludo kheli."
+        ipa: "baɽit̪e luɖo kʰeli"
+        bases:
+          - { word: "বাড়িতে", ref: "bn-0196" }
+          - { word: "খেলি", ref: "bn-0895" }
+      - target: "লুডোতে জেতা সহজ।"
+        reading: "ludote jetā sôhôj."
+        ipa: "luɖot̪e dʒet̪a sɔɦodʒ"
+        bases:
+          - { word: "লুডোতে", base: "লুডো", reading: "ludo", ipa: "luɖo" }
+          - { word: "জেতা", ref: "bn-2229" }
+          - { word: "সহজ", ref: "bn-0623" }

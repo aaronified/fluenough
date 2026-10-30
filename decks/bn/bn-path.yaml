@@ -354,11 +354,14 @@ units:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
   - decks: ["bn-reading-school"]
     words: 0
-  - planned: { id: "bn-hobbies", theme: "hobbies", words: 50 }
+  - decks: ["bn-hobbies", "*"]
+    words: 50
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends: football, music, adda" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  - decks: ["bn-reading-hobbies"]
+    words: 0
   - planned: { id: "bn-grammar-imperatives", grammar: "imperatives" }
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
