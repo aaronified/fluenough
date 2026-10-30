@@ -1,0 +1,72 @@
+schema: 1
+id: "es-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0942"
+    target: "Me levanto, me ducho y desayuno."
+    ipa: "me leˈbanto me ˈdutʃo i desaˈʝuno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "levanto", ref: "es-0924" }, { word: "me", base: "me" }, { word: "ducho", ref: "es-0925" }, { word: "y", ref: "es-0048" }, { word: "desayuno", ref: "es-0282" }]
+    confusables: [{ id: "wake-up", ref: "es-0922", kind: "word" }, { id: "go-to-bed", ref: "es-0901", kind: "word" }]
+  - id: "es-0943"
+    target: "Ana descansa después de la cena."
+    ipa: "ˈana desˈkansa desˈpwes de la ˈθena"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "descansa", ref: "es-0928" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "cena", ref: "es-0639" }]
+    confusables: [{ id: "sleep", ref: "es-0904", kind: "word" }, { id: "walk", ref: "es-0931", kind: "word" }]
+  - id: "es-0944"
+    target: "Por la mañana tomo un café en la cocina."
+    ipa: "poɾ la maˈɲana ˈtomo un kaˈfe en la koˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+    confusables: [{ id: "afternoon", ref: "es-0910", kind: "word" }, { id: "breakfast", ref: "es-0637", kind: "word" }]
+  - id: "es-0945"
+    target: "Llego tarde al gimnasio hoy."
+    ipa: "ˈʝeɡo ˈtaɾde al ximˈnasjo oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llego", ref: "es-0290" }, { word: "tarde", ref: "es-0911" }, { word: "al", base: "a" }, { word: "gimnasio", ref: "es-0912" }, { word: "hoy", ref: "es-0331" }]
+    confusables: [{ id: "return", ref: "es-0929", kind: "word" }, { id: "wait", ref: "es-0930", kind: "word" }]
+  - id: "es-0946"
+    target: "Mi hermana vuelve a casa a las seis."
+    ipa: "mi eɾˈmana ˈbwelbe a ˈkasa a las sejs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "vuelve", ref: "es-0929" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "seis", ref: "es-0210" }]
+    confusables: [{ id: "take", ref: "es-0906", kind: "word" }, { id: "rest", ref: "es-0928", kind: "word" }]
+  - id: "es-0947"
+    target: "Tengo sueño, así que me acuesto pronto."
+    ipa: "ˈtenɡo ˈsweɲo aˈsi ke me aˈkwesto ˈpɾonto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "sueño", ref: "es-0902" }, { word: "así", base: "así" }, { word: "que", base: "que" }, { word: "me", base: "me" }, { word: "acuesto", ref: "es-0901" }, { word: "pronto", ref: "es-0337" }]
+    confusables: [{ id: "bed", ref: "es-0900", kind: "word" }, { id: "sleep-verb", ref: "es-0904", kind: "word" }]
+  - id: "es-0948"
+    target: "Paseamos en el parque los domingos."
+    ipa: "paseˈamos en el ˈpaɾke los doˈminɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Paseamos", ref: "es-0931" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }]
+    confusables: [{ id: "walk-noun", ref: "es-0915", kind: "word" }, { id: "rest", ref: "es-0928", kind: "word" }]
+  - id: "es-0949"
+    target: "Compro la comida en el supermercado."
+    ipa: "ˈkompɾo la koˈmida en el supeɾmeɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "supermercado", ref: "es-0601" }]
+    confusables: [{ id: "shopping", ref: "es-0914", kind: "word" }, { id: "kitchen", ref: "es-0918", kind: "word" }]
+  - id: "es-0950"
+    target: "El salón tiene un sofá grande."
+    ipa: "el saˈlon ˈtjene un soˈfa ˈɡɾande"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "salón", ref: "es-0919" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "sofá", ref: "es-0917" }, { word: "grande", ref: "es-0031" }]
+    confusables: [{ id: "bed", ref: "es-0900", kind: "word" }, { id: "kitchen", ref: "es-0918", kind: "word" }]

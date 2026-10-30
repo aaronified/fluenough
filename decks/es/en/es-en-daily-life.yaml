@@ -1,0 +1,775 @@
+schema: 1
+id: "es-en-daily-life"
+kind: "layer"
+core: "es-daily-life"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A day"
+license: "CC-BY-SA-4.0"
+description: "Words for a day: getting up, washing, eating, working, resting and going to bed, with the reflexive verbs of daily routine and their stem changes. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0899":
+    native: "routine"
+    notes:
+      "n1": "Rutina is a routine: what you do each day, in about the same order."
+    bases:
+      "la": "the"
+      "rutina": "routine"
+    examples:
+      "Mi rutina empieza a las siete.":
+        native: "My routine starts at seven."
+        bases:
+          "rutina": "routine"
+          "a": "at"
+          "las": "the"
+          "siete": "seven"
+      "Mi rutina cambia cada día.":
+        native: "My routine changes every day."
+        bases:
+          "rutina": "routine"
+          "cambia": "changes"
+  "es-0900":
+    native: "bed"
+    notes:
+      "n1": "Cama is a bed, the place where you sleep. Ir a la cama means to go to bed."
+    bases:
+      "la": "the"
+      "cama": "bed"
+    examples:
+      "Me acuesto en la cama a las once.":
+        native: "I go to bed at eleven."
+        bases:
+          "Me": "myself"
+          "en": "in"
+          "la": "the"
+          "cama": "bed"
+          "a": "at"
+          "las": "the"
+      "La cama de Ana es muy cómoda.":
+        native: "Ana's bed is very comfortable."
+        bases:
+          "La": "The"
+          "cama": "bed"
+          "de": "of"
+          "Ana": "Ana"
+          "cómoda": "comfortable"
+  "es-0902":
+    native: "sleep"
+    notes:
+      "n1": "El sueño is sleep, or a dream. Tener sueño means to be sleepy, and tener el sueño ligero means to sleep lightly."
+    bases:
+      "el": "the"
+      "sueño": "sleep"
+    examples:
+      "Tengo mucho sueño hoy.":
+        native: "I am very sleepy today."
+        bases:
+          "sueño": "sleep"
+      "Ana tiene el sueño ligero.":
+        native: "Ana sleeps lightly."
+        bases:
+          "Ana": "Ana"
+          "el": "the"
+          "sueño": "sleep"
+          "ligero": "light"
+  "es-0903":
+    native: "alarm clock"
+    notes:
+      "n1": "Despertador is an alarm clock. It comes from despertar, to wake someone up."
+    bases:
+      "el": "the"
+      "despertador": "alarm clock"
+    examples:
+      "El despertador suena a las siete.":
+        native: "The alarm clock rings at seven."
+        bases:
+          "El": "The"
+          "despertador": "alarm clock"
+          "suena": "rings"
+          "a": "at"
+          "las": "the"
+          "siete": "seven"
+      "Pongo el despertador antes de dormir.":
+        native: "I set the alarm before I sleep."
+        bases:
+          "Pongo": "I set"
+          "el": "the"
+          "despertador": "alarm clock"
+          "de": "(linking word)"
+  "es-0905":
+    native: "afternoon nap"
+    notes:
+      "n1": "La siesta is a nap after lunch, in the early afternoon."
+    bases:
+      "la": "the"
+      "siesta": "nap"
+    examples:
+      "Después de comer, duermo la siesta.":
+        native: "After eating, I take a nap."
+        bases:
+          "de": "(linking word)"
+          "la": "the"
+          "siesta": "nap"
+      "En verano, Ana toma una siesta corta.":
+        native: "In summer, Ana takes a short nap."
+        bases:
+          "En": "In"
+          "verano": "summer"
+          "Ana": "Ana"
+          "una": "a"
+          "siesta": "nap"
+          "corta": "short"
+  "es-0907":
+    native: "homework; task"
+    notes:
+      "n1": "Tarea is a task or a piece of homework. Hacer la tarea means to do the homework."
+    bases:
+      "la": "the"
+      "tarea": "homework"
+    examples:
+      "Hago la tarea después de cenar.":
+        native: "I do the homework after dinner."
+        bases:
+          "la": "the"
+          "tarea": "homework"
+          "de": "(linking word)"
+      "La tarea de hoy es fácil.":
+        native: "Today's homework is easy."
+        bases:
+          "La": "The"
+          "tarea": "homework"
+          "de": "(linking word)"
+  "es-0908":
+    native: "rest; break"
+    notes:
+      "n1": "Descanso is rest or a break. The verb is descansar."
+    bases:
+      "el": "the"
+      "descanso": "rest"
+    examples:
+      "Necesito un descanso.":
+        native: "I need a break."
+        bases:
+          "un": "a"
+          "descanso": "break"
+      "Tomo un descanso a mitad del día.":
+        native: "I take a break in the middle of the day."
+        bases:
+          "un": "a"
+          "descanso": "break"
+          "a": "at"
+          "mitad": "middle"
+          "del": "of the"
+  "es-0909":
+    native: "time; occasion"
+    notes:
+      "n1": "La vez is one occasion: una vez means once, la primera vez means the first time, and a veces means sometimes."
+      "seseo": "In much of Latin America the z is said as s, so vez sounds like ves. Castilian says it with the th sound."
+    bases:
+      "la": "the"
+      "vez": "time"
+    examples:
+      "Es la primera vez que visito Madrid.":
+        native: "It is the first time I visit Madrid."
+        bases:
+          "la": "the"
+          "primera": "first"
+          "vez": "time"
+          "que": "that"
+          "visito": "I visit"
+          "Madrid": "Madrid"
+      "Una vez al día, bebo agua.":
+        native: "I drink water once a day."
+        bases:
+          "Una": "One"
+          "vez": "time"
+          "al": "per"
+          "agua": "water"
+  "es-0910":
+    native: "afternoon"
+    notes:
+      "n1": "La tarde is the afternoon, from lunch to the evening. Buenas tardes is said until it gets dark."
+      "h1": "Spelled like tarde, late, the adverb. Only the meaning differs: la tarde is the afternoon."
+    bases:
+      "la": "the"
+      "tarde": "afternoon"
+    examples:
+      "Por la tarde estudio inglés.":
+        native: "In the afternoon I study English."
+        bases:
+          "Por": "In"
+          "la": "the"
+          "tarde": "afternoon"
+          "inglés": "English"
+      "Hace sol toda la tarde.":
+        native: "It is sunny all afternoon."
+        bases:
+          "sol": "sun"
+          "toda": "all"
+          "la": "the"
+          "tarde": "afternoon"
+  "es-0911":
+    native: "late"
+    notes:
+      "n1": "Tarde is late, the opposite of temprano. Llegar tarde is to arrive late."
+      "h1": "Spelled like la tarde, the afternoon. This one is the adverb: late."
+    examples:
+      "Llego tarde al trabajo.":
+        native: "I arrive late for work."
+        bases:
+          "tarde": "late"
+          "al": "to the"
+      "Hoy me acuesto tarde.":
+        native: "Today I go to bed late."
+        bases:
+          "me": "myself"
+          "tarde": "late"
+  "es-0912":
+    native: "gym"
+    notes:
+      "n1": "Gimnasio is a gym. Ir al gimnasio means to go to the gym."
+    bases:
+      "el": "the"
+      "gimnasio": "gym"
+    examples:
+      "Voy al gimnasio tres veces a la semana.":
+        native: "I go to the gym three times a week."
+        bases:
+          "al": "to the"
+          "gimnasio": "gym"
+          "veces": "times"
+          "a": "per"
+          "la": "the"
+      "El gimnasio está cerca de mi casa.":
+        native: "The gym is near my house."
+        bases:
+          "El": "The"
+          "gimnasio": "gym"
+          "de": "(linking word)"
+  "es-0913":
+    native: "exercise"
+    notes:
+      "n1": "Ejercicio is exercise, the activity. It is also an exercise in a book. Hacer ejercicio is to exercise."
+    bases:
+      "el": "the"
+      "ejercicio": "exercise"
+    examples:
+      "Hago ejercicio por la mañana.":
+        native: "I exercise in the morning."
+        bases:
+          "ejercicio": "exercise"
+          "por": "in"
+          "la": "the"
+      "Necesito más ejercicio.":
+        native: "I need more exercise."
+        bases:
+          "más": "more"
+          "ejercicio": "exercise"
+  "es-0914":
+    native: "shopping"
+    notes:
+      "n1": "La compra is the shopping, or what you buy. Hacer la compra is to do the shopping."
+    bases:
+      "la": "the"
+      "compra": "shopping"
+    examples:
+      "Hago la compra los sábados.":
+        native: "I do the shopping on Saturdays."
+        bases:
+          "la": "the"
+          "compra": "shopping"
+          "los": "on"
+          "sábados": "Saturdays"
+      "La compra está en la bolsa.":
+        native: "The shopping is in the bag."
+        bases:
+          "La": "The"
+          "compra": "shopping"
+          "en": "in"
+          "la": "the"
+          "bolsa": "bag"
+  "es-0915":
+    native: "walk"
+    notes:
+      "n1": "Un paseo is a walk taken for pleasure or fresh air. Dar un paseo is to go for a walk."
+    bases:
+      "el": "the"
+      "paseo": "walk"
+    examples:
+      "Doy un paseo por el parque después de cenar.":
+        native: "I go for a walk in the park after dinner."
+        bases:
+          "Doy": "I take"
+          "un": "a"
+          "paseo": "walk"
+          "por": "through"
+          "el": "the"
+          "de": "(linking word)"
+      "Hacemos un paseo los domingos.":
+        native: "We go for a walk on Sundays."
+        bases:
+          "un": "a"
+          "paseo": "walk"
+          "los": "on"
+          "domingos": "Sundays"
+  "es-0916":
+    native: "backpack"
+    notes:
+      "n1": "Mochila is a backpack, for school or for a day out."
+    bases:
+      "la": "the"
+      "mochila": "backpack"
+    examples:
+      "Llevo la mochila al colegio.":
+        native: "I take the backpack to school."
+        bases:
+          "la": "the"
+          "mochila": "backpack"
+          "al": "to the"
+          "colegio": "school"
+      "Mi mochila es azul.":
+        native: "My backpack is blue."
+        bases:
+          "mochila": "backpack"
+          "azul": "blue"
+  "es-0917":
+    native: "sofa"
+    notes:
+      "n1": "El sofá is a sofa, where people sit or rest at home."
+    bases:
+      "el": "the"
+      "sofá": "sofa"
+    examples:
+      "Ana lee en el sofá.":
+        native: "Ana reads on the sofa."
+        bases:
+          "Ana": "Ana"
+          "en": "on"
+          "el": "the"
+          "sofá": "sofa"
+      "Mi padre duerme en el sofá.":
+        native: "My father sleeps on the sofa."
+        bases:
+          "padre": "father"
+          "en": "on"
+          "el": "the"
+          "sofá": "sofa"
+  "es-0918":
+    native: "kitchen"
+    notes:
+      "n1": "La cocina is the kitchen, and also cooking: la cocina española is Spanish cooking."
+    bases:
+      "la": "the"
+      "cocina": "kitchen"
+    examples:
+      "Desayuno en la cocina.":
+        native: "I have breakfast in the kitchen."
+        bases:
+          "en": "in"
+          "la": "the"
+          "cocina": "kitchen"
+      "La cocina está al lado del salón.":
+        native: "The kitchen is next to the living room."
+        bases:
+          "La": "The"
+          "cocina": "kitchen"
+          "al": "to the"
+          "lado": "side"
+          "del": "of the"
+  "es-0919":
+    native: "living room"
+    notes:
+      "n1": "El salón is the living room, where the family sits and watches television."
+      "sala": "In much of Latin America this room is called la sala."
+    bases:
+      "el": "the"
+      "salón": "living room"
+    examples:
+      "Miramos la tele en el salón.":
+        native: "We watch TV in the living room."
+        bases:
+          "la": "the"
+          "tele": "TV"
+          "en": "in"
+          "el": "the"
+          "salón": "living room"
+      "El salón es grande y luminoso.":
+        native: "The living room is big and bright."
+        bases:
+          "El": "The"
+          "salón": "living room"
+          "luminoso": "bright"
+  "es-0920":
+    native: "mobile phone"
+    notes:
+      "n1": "Móvil is the mobile phone you carry with you."
+      "celular": "In Latin America the same phone is usually called el celular."
+    bases:
+      "el": "the"
+      "móvil": "mobile phone"
+    examples:
+      "Mi móvil está en la mesa.":
+        native: "My mobile phone is on the table."
+        bases:
+          "móvil": "mobile phone"
+          "en": "on"
+          "la": "the"
+          "mesa": "table"
+      "Llamo a Ana por el móvil.":
+        native: "I call Ana on the mobile."
+        bases:
+          "a": "(to)"
+          "Ana": "Ana"
+          "por": "by"
+          "el": "the"
+          "móvil": "mobile phone"
+  "es-0921":
+    native: "early hours"
+    notes:
+      "n1": "La madrugada is the early hours, after midnight and before dawn. De madrugada means in those hours."
+    bases:
+      "la": "the"
+      "madrugada": "early hours"
+    examples:
+      "Ana trabaja hasta la madrugada.":
+        native: "Ana works until the early hours."
+        bases:
+          "Ana": "Ana"
+          "hasta": "until"
+          "la": "the"
+          "madrugada": "early hours"
+      "Me despierto de madrugada.":
+        native: "I wake up in the early hours."
+        bases:
+          "Me": "myself"
+          "de": "in"
+          "madrugada": "early hours"
+  "es-0923":
+    native: "brush"
+    notes:
+      "n1": "El cepillo is a brush. El cepillo de dientes is the toothbrush."
+    bases:
+      "el": "the"
+      "cepillo": "brush"
+    examples:
+      "Uso el cepillo de dientes por la noche.":
+        native: "I use the toothbrush at night."
+        bases:
+          "el": "the"
+          "cepillo": "brush"
+          "de": "for"
+          "dientes": "teeth"
+          "por": "at"
+          "la": "the"
+      "El cepillo es nuevo.":
+        native: "The brush is new."
+        bases:
+          "El": "The"
+          "cepillo": "brush"
+  "es-0922":
+    native: "to wake up"
+    notes:
+      "n1": "Reflexive: the pronoun (me, te, se, nos, os) goes before the verb, as in me llamo."
+      "stem": "Stem change: e becomes ie in yo, tú, él/ella and ellos: me despierto, te despiertas, se despierta, se despiertan. Nosotros and vosotros keep the e: nos despertamos, os despertáis."
+    examples:
+      "Me despierto a las siete.":
+        native: "I wake up at seven."
+        bases:
+          "Me": "myself"
+          "despierto": "I wake up"
+          "a": "at"
+          "las": "(the)"
+          "siete": "seven"
+      "Nos despertamos tarde los domingos.":
+        native: "We wake up late on Sundays."
+        bases:
+          "Nos": "ourselves"
+          "despertamos": "we wake up"
+          "los": "on"
+          "domingos": "Sundays"
+  "es-0924":
+    native: "to get up"
+    notes:
+      "n1": "Levantarse is to get up, out of bed or out of a chair. Levantar alone is to lift something."
+    examples:
+      "Me levanto temprano los días de trabajo.":
+        native: "I get up early on workdays."
+        bases:
+          "Me": "myself"
+          "levanto": "I get up"
+          "los": "on"
+          "días": "days"
+          "de": "(linking word)"
+      "Ana se levanta a las seis.":
+        native: "Ana gets up at six."
+        bases:
+          "Ana": "Ana"
+          "se": "herself"
+          "levanta": "gets up"
+          "a": "at"
+          "las": "(at)"
+  "es-0925":
+    native: "to shower"
+    notes:
+      "n1": "Regular: me ducho, te duchas, se ducha. The noun is la ducha, the shower."
+    examples:
+      "Me ducho después del gimnasio.":
+        native: "I shower after the gym."
+        bases:
+          "Me": "myself"
+          "ducho": "I shower"
+          "del": "of the"
+      "Mi hermano se ducha por la noche.":
+        native: "My brother showers at night."
+        bases:
+          "hermano": "brother"
+          "se": "himself"
+          "ducha": "showers"
+          "por": "at"
+          "la": "the"
+  "es-0926":
+    native: "to wash oneself"
+    notes:
+      "n1": "Lavarse is to wash yourself, your hands or your face. Lavar alone is to wash things, such as clothes."
+    examples:
+      "Me lavo las manos antes de comer.":
+        native: "I wash my hands before eating."
+        bases:
+          "Me": "myself"
+          "lavo": "I wash"
+          "las": "the"
+          "manos": "hands"
+          "de": "(linking word)"
+      "Los niños se lavan la cara por la mañana.":
+        native: "The children wash their faces in the morning."
+        bases:
+          "Los": "The"
+          "niños": "children"
+          "se": "themselves"
+          "lavan": "wash"
+          "la": "the"
+          "cara": "face"
+          "por": "in"
+  "es-0927":
+    native: "to get dressed"
+    notes:
+      "n1": "Vestirse is to get dressed. Vestir alone is to dress someone, or to wear clothes."
+      "stem": "Stem change: e becomes i in yo, tú, él/ella and ellos: me visto, te vistes, se viste, se visten. Nosotros and vosotros keep the e: nos vestimos, os vestís."
+    examples:
+      "Me visto rápido por la mañana.":
+        native: "I get dressed quickly in the morning."
+        bases:
+          "Me": "myself"
+          "visto": "I get dressed"
+          "por": "in"
+          "la": "the"
+      "Ana se viste con ropa cómoda.":
+        native: "Ana gets dressed in comfortable clothes."
+        bases:
+          "Ana": "Ana"
+          "se": "herself"
+          "viste": "gets dressed"
+          "con": "in"
+          "ropa": "clothes"
+          "cómoda": "comfortable"
+  "es-0901":
+    native: "to go to bed"
+    notes:
+      "n1": "Acostarse is to go to bed or to lie down. Acostar alone is to put someone to bed."
+      "stem": "Stem change: o becomes ue in yo, tú, él/ella and ellos: me acuesto, te acuestas, se acuesta, se acuestan. Nosotros and vosotros keep the o: nos acostamos, os acostáis."
+    examples:
+      "Me acuesto a las once.":
+        native: "I go to bed at eleven."
+        bases:
+          "Me": "myself"
+          "acuesto": "I go to bed"
+          "a": "at"
+          "las": "the"
+      "Nos acostamos tarde en verano.":
+        native: "We go to bed late in summer."
+        bases:
+          "Nos": "ourselves"
+          "acostamos": "we go to bed"
+          "en": "in"
+          "verano": "summer"
+  "es-0904":
+    native: "to sleep"
+    notes:
+      "n1": "Dormir is to sleep. Dormirse is to fall asleep."
+      "stem": "Stem change: o becomes ue in yo, tú, él/ella and ellos: duermo, duermes, duerme, duermen. Nosotros and vosotros keep the o: dormimos, dormís."
+    examples:
+      "Duermo ocho horas cada noche.":
+        native: "I sleep eight hours every night."
+        bases:
+          "Duermo": "I sleep"
+          "horas": "hours"
+      "Los niños duermen en la misma cama.":
+        native: "The children sleep in the same bed."
+        bases:
+          "Los": "The"
+          "niños": "children"
+          "duermen": "sleep"
+          "en": "in"
+          "la": "the"
+          "misma": "same"
+  "es-0928":
+    native: "to rest"
+    notes:
+      "n1": "Descansar is to rest. Regular: descanso, descansas, descansa. The noun is el descanso."
+    examples:
+      "Descanso los fines de semana.":
+        native: "I rest at weekends."
+        bases:
+          "Descanso": "I rest"
+          "los": "at"
+          "fines": "ends"
+          "de": "(linking word)"
+      "Ana descansa en el parque.":
+        native: "Ana rests in the park."
+        bases:
+          "Ana": "Ana"
+          "descansa": "rests"
+          "en": "in"
+          "el": "the"
+  "es-0929":
+    native: "to return"
+    notes:
+      "n1": "Volver is to return, to go back. Volver a with an infinitive means to do again: volver a leer is to read again."
+      "stem": "Stem change: o becomes ue in yo, tú, él/ella and ellos: vuelvo, vuelves, vuelve, vuelven. Nosotros and vosotros keep the o: volvemos, volvéis."
+    examples:
+      "Vuelvo a casa después del trabajo.":
+        native: "I go back home after work."
+        bases:
+          "Vuelvo": "I go back"
+          "a": "to"
+          "del": "of the"
+      "Mi madre vuelve de la tienda.":
+        native: "My mother comes back from the shop."
+        bases:
+          "madre": "mother"
+          "vuelve": "comes back"
+          "de": "from"
+          "la": "the"
+  "es-0906":
+    native: "to take; to have"
+    notes:
+      "n1": "Tomar is to have food or drink, as in tomar café. For transport it means to take: tomar el autobús."
+    examples:
+      "Tomo un café con leche.":
+        native: "I have a coffee with milk."
+        bases:
+          "Tomo": "I have"
+          "un": "a"
+          "con": "with"
+      "Ana toma el autobús al trabajo.":
+        native: "Ana takes the bus to work."
+        bases:
+          "Ana": "Ana"
+          "toma": "takes"
+          "el": "the"
+          "autobús": "bus"
+          "al": "to the"
+  "es-0930":
+    native: "to wait"
+    notes:
+      "n1": "Esperar is to wait for something. For a person, a comes first: esperar a Ana."
+    examples:
+      "Espero el autobús en la calle.":
+        native: "I wait for the bus on the street."
+        bases:
+          "Espero": "I wait for"
+          "el": "the"
+          "autobús": "bus"
+          "en": "on"
+          "la": "the"
+      "Ana espera a su hermana en la estación.":
+        native: "Ana waits for her sister at the station."
+        bases:
+          "Ana": "Ana"
+          "espera": "waits"
+          "a": "for"
+          "hermana": "sister"
+          "en": "at"
+          "la": "the"
+  "es-0931":
+    native: "to stroll"
+    notes:
+      "n1": "Pasear is to go for a walk, for pleasure. Caminar is to walk in general."
+    examples:
+      "Paseamos por el centro los sábados.":
+        native: "We stroll around the centre on Saturdays."
+        bases:
+          "Paseamos": "We stroll"
+          "por": "around"
+          "el": "the"
+          "centro": "centre"
+          "los": "on"
+          "sábados": "Saturdays"
+      "Mi abuelo pasea al perro cada tarde.":
+        native: "My grandfather walks the dog every afternoon."
+        bases:
+          "abuelo": "grandfather"
+          "pasea": "walks"
+          "al": "to the"
+          "perro": "dog"
+  "es-0932":
+    native: "ready"
+    notes:
+      "n1": "Listo means ready, and also clever: es muy listo. Estar listo is to be ready. It changes: listo, lista, listos, listas."
+    examples:
+      "¿Estás listo para el trabajo?":
+        native: "Are you ready for work?"
+        bases:
+          "listo": "ready"
+          "para": "for"
+          "el": "the"
+      "La cena está lista a las nueve.":
+        native: "Dinner is ready at nine."
+        bases:
+          "La": "The"
+          "lista": "ready"
+          "a": "at"
+          "las": "the"
+  "es-0933":
+    native: "then; so"
+    notes:
+      "n1": "Entonces means then, next in time, or so, as a result. Compare luego, later."
+    examples:
+      "Me despierto temprano y entonces desayuno.":
+        native: "I wake up early and then I have breakfast."
+        bases:
+          "Me": "myself"
+          "entonces": "then"
+      "Estoy cansado, entonces descanso.":
+        native: "I am tired, so I rest."
+        bases:
+          "entonces": "so"
+  "es-0934":
+    native: "in the morning"
+    examples:
+      "Estudio por la mañana.":
+        native: "I study in the morning."
+        bases:
+          "por": "in"
+          "la": "the"
+      "Por la mañana tomo un café.":
+        native: "In the morning I have a coffee."
+        bases:
+          "Por": "In"
+          "la": "the"
+          "un": "a"
+  "es-0935":
+    native: "in the afternoon"
+    examples:
+      "Trabajo por la tarde.":
+        native: "I work in the afternoon."
+        bases:
+          "por": "in"
+          "la": "the"
+      "Por la tarde descanso en el sofá.":
+        native: "In the afternoon I rest on the sofa."
+        bases:
+          "Por": "In"
+          "la": "the"
+          "en": "on"
+          "el": "the"

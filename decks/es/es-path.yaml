@@ -148,11 +148,8 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - planned: { id: "es-daily-life", theme: "daily-life", words: 40 }
-    listening_passages:
-      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
-    reading_passages:
-      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
+  - decks: ["es-daily-life", "es-daily-life-sentences", "es-reading-daily-life", "*"]
+    words: 35
   - planned: { id: "es-grammar-reflexives", grammar: "reflexives" }
     listening_passages:
       - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
