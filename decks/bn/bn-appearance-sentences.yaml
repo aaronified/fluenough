@@ -28,7 +28,7 @@ cards:
     ipa: "t̪ar mukʰe ɦaʃi atʃʰe"
     pos: "phrase"
     rules: ["bn-rule-loc"]
-    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }]
+    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }, { word: "আছে", base: "থাকা", reading: "āche" }]
     confusables: [{ id: "c1", word: "কান্না", reading: "kānnā", kind: "word" }, { id: "c2", word: "রাগ", reading: "rāg", kind: "word" }]
   - id: "bn-2334"
     target: "আমার বাবা মাঝারি লম্বা।"
@@ -52,7 +52,7 @@ cards:
     ipa: "t̪ar mat̪ʰaj ʈak atʃʰe"
     pos: "phrase"
     rules: ["bn-rule-loc"]
-    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }]
+    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }, { word: "আছে", base: "থাকা", reading: "āche" }]
     confusables: [{ id: "c1", ref: "bn-1005", kind: "word" }, { id: "c2", ref: "bn-0732", kind: "word" }]
   - id: "bn-2337"
     target: "দাদুর চুল পাকা।"
@@ -82,7 +82,7 @@ cards:
     reading: "oi jubokṭi lômbā."
     ipa: "oi dʒubokʈi lɔmba"
     pos: "phrase"
-    bases: [{ word: "যুবকটি", ref: "bn-2306" }]
+    bases: [{ word: "ওই", base: "ওই", reading: "oi" }, { word: "যুবকটি", ref: "bn-2306" }]
     confusables: [{ id: "c1", ref: "bn-2302", kind: "word" }, { id: "c2", ref: "bn-2307", kind: "word" }]
   - id: "bn-2341"
     target: "তার চুল কোঁকড়া আর ঘন।"

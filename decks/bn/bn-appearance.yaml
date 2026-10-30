@@ -22,7 +22,7 @@ cards:
     antonyms:
       - { id: "a1", ref: "bn-0628" }
     examples:
-      - { target: "এই টেবিলটা খাটো।", reading: "ei ṭebilṭā khāṭo.", ipa: "ei ʈebilʈa kʰaʈo", bases: [{ word: "টেবিলটা", base: "টেবিল", reading: "ṭebilṭā" }] }
+      - { target: "এই টেবিলটা খাটো।", reading: "ei ṭebilṭā khāṭo.", ipa: "ei ʈebilʈa kʰaʈo", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "টেবিলটা", base: "টেবিল", reading: "ṭebilṭā" }] }
       - { target: "আমি খাটো।", reading: "āmi khāṭo.", ipa: "ami kʰaʈo" }
   - id: "bn-2302"
     target: "বুড়ো"
@@ -65,7 +65,7 @@ cards:
     antonyms:
       - { id: "a1", ref: "bn-2303" }
     examples:
-      - { target: "বয়স্ক মানুষদের সম্মান করো।", reading: "bôyośko mānuśder śômmān kôro.", ipa: "bɔjoʃko manuʃd̪er ʃɔmman kɔro", bases: [{ word: "মানুষদের", base: "মানুষ", reading: "mānuśder" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "বয়স্ক মানুষদের সম্মান করো।", reading: "bôyośko mānuśder śômmān kôro.", ipa: "bɔjoʃko manuʃd̪er ʃɔmman kɔro", bases: [{ word: "সম্মান", base: "সম্মান", reading: "śômmān" }, { word: "মানুষদের", base: "মানুষ", reading: "mānuśder" }, { word: "করো", ref: "bn-0102" }] }
       - { target: "উনি খুব বয়স্ক।", reading: "uni khub bôyośko.", ipa: "uni kʰub bɔjoʃko" }
   - id: "bn-2305"
     target: "মাঝবয়সী"
@@ -88,7 +88,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "যুবক ছেলেটি খুব লম্বা।", reading: "jubok cheleṭi khub lômbā.", ipa: "dʒubok tʃʰeleʈi kʰub lɔmba", bases: [{ word: "ছেলেটি", ref: "bn-0426" }] }
-      - { target: "একজন যুবক এসেছে।", reading: "ekjon jubok eseche.", ipa: "ekdʒon dʒubok esetʃʰe", bases: [{ word: "এসেছে", base: "আসা", reading: "eseche" }] }
+      - { target: "একজন যুবক এসেছে।", reading: "ekjon jubok eseche.", ipa: "ekdʒon dʒubok esetʃʰe", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "এসেছে", base: "আসা", reading: "eseche" }] }
   - id: "bn-2307"
     target: "যুবতী"
     reading: "juboti"
@@ -99,7 +99,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "যুবতী মেয়েটি হাসছে।", reading: "juboti meyeṭi hāśche.", ipa: "dʒubot̪i mejeʈi ɦaʃtʃʰe", bases: [{ word: "মেয়েটি", ref: "bn-0427" }, { word: "হাসছে", base: "হাসা", reading: "hāśche" }] }
-      - { target: "একজন যুবতী এসেছেন।", reading: "ekjon juboti esechen.", ipa: "ekdʒon dʒubot̪i esetʃʰen", bases: [{ word: "এসেছেন", base: "আসা", reading: "esechen" }] }
+      - { target: "একজন যুবতী এসেছেন।", reading: "ekjon juboti esechen.", ipa: "ekdʒon dʒubot̪i esetʃʰen", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "এসেছেন", base: "আসা", reading: "esechen" }] }
   - id: "bn-2308"
     target: "ফর্সা"
     reading: "phôrśā"
@@ -123,7 +123,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মায়ের চুল পাকা।", reading: "māyer cul pākā.", ipa: "majer tʃul paka", bases: [{ word: "মায়ের", ref: "bn-0424" }] }
-      - { target: "এই পাকা ফলটা মিষ্টি।", reading: "ei pākā phôlṭā miśṭi.", ipa: "ei paka pʰɔlʈa miʃʈi", bases: [{ word: "ফলটা", base: "ফল", reading: "phôlṭā" }] }
+      - { target: "এই পাকা ফলটা মিষ্টি।", reading: "ei pākā phôlṭā miśṭi.", ipa: "ei paka pʰɔlʈa miʃʈi", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "ফলটা", base: "ফল", reading: "phôlṭā" }] }
   - id: "bn-2310"
     target: "চেহারা"
     reading: "cehārā"
@@ -155,7 +155,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "তার মুখে হাসি আছে।", reading: "tār mukhe hāśi āche.", ipa: "t̪ar mukʰe ɦaʃi atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }] }
+      - { target: "তার মুখে হাসি আছে।", reading: "tār mukhe hāśi āche.", ipa: "t̪ar mukʰe ɦaʃi atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
       - { target: "ওর হাসি খুব সুন্দর।", reading: "or hāśi khub śundor.", ipa: "or ɦaʃi kʰub ʃund̪or", bases: [{ word: "ওর", base: "ও", reading: "or" }] }
   - id: "bn-2313"
     target: "উচ্চতা"
@@ -167,7 +167,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "তার উচ্চতা কত?", reading: "tār uccotā kôto?", ipa: "t̪ar utʃtʃot̪a kɔt̪o", bases: [{ word: "তার", ref: "bn-0839" }] }
-      - { target: "আমার উচ্চতা পাঁচ ফুট।", reading: "āmār uccotā pām̐c phuṭ.", ipa: "amar utʃtʃot̪a pãtʃ pʰuʈ", bases: [{ word: "আমার", ref: "bn-0833" }] }
+      - { target: "আমার উচ্চতা পাঁচ ফুট।", reading: "āmār uccotā pām̐c phuṭ.", ipa: "amar utʃtʃot̪a pãtʃ pʰuʈ", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "ফুট", base: "ফুট", reading: "phuṭ" }] }
   - id: "bn-2314"
     target: "মাঝারি"
     reading: "mājhāri"
@@ -189,7 +189,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "তার গোঁফ ঘন।", reading: "tār gom̐ph ghôn.", ipa: "t̪ar ɡõpʰ ɡʱɔn", bases: [{ word: "তার", ref: "bn-0839" }] }
-      - { target: "বাবার গোঁফ আছে।", reading: "bābār gom̐ph āche.", ipa: "babar ɡõpʰ atʃʰe", bases: [{ word: "বাবার", ref: "bn-0423" }] }
+      - { target: "বাবার গোঁফ আছে।", reading: "bābār gom̐ph āche.", ipa: "babar ɡõpʰ atʃʰe", bases: [{ word: "বাবার", ref: "bn-0423" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
   - id: "bn-2316"
     target: "টাক"
     reading: "ṭāk"
@@ -199,7 +199,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "তার মাথায় টাক আছে।", reading: "tār māthāy ṭāk āche.", ipa: "t̪ar mat̪ʰaj ʈak atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }] }
+      - { target: "তার মাথায় টাক আছে।", reading: "tār māthāy ṭāk āche.", ipa: "t̪ar mat̪ʰaj ʈak atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
       - { target: "দাদুর মাথায় টাক পড়েছে।", reading: "dādur māthāy ṭāk pôṛeche.", ipa: "d̪ad̪ur mat̪ʰaj ʈak pɔɽetʃʰe", bases: [{ word: "দাদুর", ref: "bn-0433" }, { word: "মাথায়", ref: "bn-0728" }, { word: "পড়েছে", base: "পড়া", reading: "pôṛeche" }] }
   - id: "bn-2317"
     target: "ঘন"
@@ -331,7 +331,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মেয়েটি সুন্দরী।", reading: "meyeṭi śundori.", ipa: "mejeʈi ʃund̪ori", bases: [{ word: "মেয়েটি", ref: "bn-0427" }] }
-      - { target: "একজন সুন্দরী মহিলা।", reading: "ekjon śundori mohilā.", ipa: "ekdʒon ʃund̪ori moɦila" }
+      - { target: "একজন সুন্দরী মহিলা।", reading: "ekjon śundori mohilā.", ipa: "ekdʒon ʃund̪ori moɦila", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "মহিলা", base: "মহিলা", reading: "mohilā" }] }
   - id: "bn-2328"
     target: "দাগ"
     reading: "dāg"
@@ -341,7 +341,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "তার গালে একটা দাগ আছে।", reading: "tār gāle ekṭā dāg āche.", ipa: "t̪ar ɡale ekʈa d̪aɡ atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "গালে", ref: "bn-1008" }] }
+      - { target: "তার গালে একটা দাগ আছে।", reading: "tār gāle ekṭā dāg āche.", ipa: "t̪ar ɡale ekʈa d̪aɡ atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "গালে", ref: "bn-1008" }, { word: "একটা", ref: "bn-0202" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
       - { target: "বাবার হাতে কালো দাগ।", reading: "bābār hāte kālo dāg.", ipa: "babar ɦat̪e kalo d̪aɡ", bases: [{ word: "বাবার", ref: "bn-0423" }, { word: "হাতে", ref: "bn-0730" }] }
   - id: "bn-2329"
     target: "গায়ের রং"
@@ -363,5 +363,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "ওকে দেখতে বাবার মতো।", reading: "oke dekhte bābār môto.", ipa: "oke d̪ekʰt̪e babar mɔt̪o", bases: [{ word: "ওকে", base: "ও", reading: "oke" }, { word: "বাবার", ref: "bn-0423" }] }
+      - { target: "ওকে দেখতে বাবার মতো।", reading: "oke dekhte bābār môto.", ipa: "oke d̪ekʰt̪e babar mɔt̪o", bases: [{ word: "ওকে", base: "ও", reading: "oke" }, { word: "বাবার", ref: "bn-0423" }, { word: "মতো", base: "মতো", reading: "môto" }] }
       - { target: "তুমি দেখতে ভালো।", reading: "tumi dekhte bhālo.", ipa: "t̪umi d̪ekʰt̪e bʱalo" }
