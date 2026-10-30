@@ -119,7 +119,7 @@ class DeviceInfoConsent extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: theme.colorScheme.surfaceContainerHighest,
-            borderRadius: BorderRadius.circular(AppRadii.small),
+            borderRadius: BorderRadius.circular(AppRadii.field),
           ),
           child: Text(
             contextLines(device),

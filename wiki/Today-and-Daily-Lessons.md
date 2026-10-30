@@ -17,6 +17,17 @@ A lesson teaches the next new items in your path's order: up to nine, fewer whil
 
 Your answers during a lesson are recorded. See [Drills and skills](Drills-and-Skills) for the kinds of question.
 
+## The day's session
+
+The day's button runs on a clock, not on a count of cards. The time is your minutes a day for the language (plus any "+ 5 min"), less what you have already spent today. The top of each screen shows a ticking countdown of the time left in place of "3/8". The clock stops while one screen has been showing for more than 30 seconds, so a phone left on a table does not use your time. The session ends when the time is up (after the card you are on) or when you end it.
+
+It builds one round at a time, only when the last is done:
+
+- **While reviews are due**, a round mixes reviews and new words, in a ratio set by the time left and what is due: many due reviews mean many reviews to each new word, and a few mean more new words. A backlog of more than three days of minutes means reviews only.
+- **When nothing is due**, it teaches new words, as many as your path allows and the time holds, at most 15 in a session. Each is asked twice after it is taught, not straight away: older reviews are mixed in between. What time is left is filled with the cards closest to being due.
+
+A teach card is timed like an answer (at most a minute), counts toward the day's minutes and is included in the hours spent.
+
 ## Reviews
 
 A review is a word that has come back because it is due. Do your due words each day and they come back less often as you learn them. Words you miss return sooner.

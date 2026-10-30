@@ -95,7 +95,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
       hintText: hint,
       floatingLabelBehavior: FloatingLabelBehavior.always,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
     );
 
@@ -185,7 +185,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
                           label: Text(language.name),
                           selected: learning.contains(language.code),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(AppRadii.chip),
                           ),
                           onSelected: (on) => setState(() {
                             final next = <String>{...learning};
@@ -216,7 +216,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
                     subtitle: Text(l10n.newProfilePinHelp),
                     tileColor: scheme.surfaceContainerLow,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppRadii.tile),
+                      borderRadius: BorderRadius.circular(AppRadii.field),
                     ),
                     contentPadding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 16,

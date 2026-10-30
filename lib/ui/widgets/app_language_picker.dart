@@ -86,7 +86,7 @@ class AppLanguagePicker extends StatelessWidget {
         initialValue: chosen,
         isExpanded: true,
         decoration: field,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
         onChanged: picked,
         items: items,
       );
@@ -101,13 +101,13 @@ class AppLanguagePicker extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           border: Border.all(color: Theme.of(context).colorScheme.outline),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<Locale>(
             value: chosen,
             isExpanded: true,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(AppRadii.chip),
             onChanged: picked,
             items: items,
           ),

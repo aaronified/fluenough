@@ -142,7 +142,7 @@ class ReviewPage extends StatelessWidget {
             child: ExcludeSemantics(
               child: LinearProgressIndicator(
                 value: total == 0 ? 0 : done / total,
-                borderRadius: BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(AppRadii.mark),
               ),
             ),
           ),
@@ -291,7 +291,7 @@ class ReviewInfo extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
       decoration: BoxDecoration(
         color: scheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -432,7 +432,7 @@ class _ReviewRow extends StatelessWidget {
               child: MergeSemantics(
                 child: InkWell(
                   onTap: onOpen,
-                  borderRadius: BorderRadius.circular(AppRadii.small),
+                  borderRadius: BorderRadius.circular(AppRadii.field),
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 56),
                     child: Padding(

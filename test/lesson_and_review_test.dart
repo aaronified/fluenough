@@ -2363,19 +2363,26 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.byType(DailyCard), findsOneWidget);
       expect(find.text(l10n.todayDailyStart), findsOneWidget);
-      // The split: nothing to review yet, a lesson's nine words new.
+      // The split: nothing to review yet, and the new words are what the
+      // session's own plan teaches in the time (#886), not a lesson's nine.
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final words = state.dailyPlanFor(spanish).split.newWords;
+      expect(words, greaterThan(0));
       expect(find.text(l10n.todayDailyReviews(0)), findsOneWidget);
-      expect(find.text(l10n.todayDailyNew(9)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNew(words)), findsOneWidget);
       expect(find.text(l10n.todayDailyProgress(0, 15)), findsOneWidget);
-      // Nine words, plus the members of a set one of them belongs to, which
-      // come whole.
-      final taught = lessonCardCount(
-        state.lessonFor(DrillRequest.lesson(language: 'es')),
+      // Those words, plus the members of a set one of them belongs to,
+      // which come whole.
+      final lesson = state.lessonFor(
+        DrillRequest.lesson(language: 'es'),
+        words: words,
+        beyondRoom: true,
       );
-      expect(taught, greaterThanOrEqualTo(9));
+      final taught = lessonCardCount(lesson);
+      expect(taught, greaterThanOrEqualTo(words));
 
       final planned = <SessionItem>[
-        for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
+        for (final item in lesson)
           if (item.ask != Ask.teach && item.ask != Ask.showSet)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
@@ -2394,10 +2401,22 @@ cards:
       expect(find.text(first.native), findsOneWidget);
       // No Continue: the chevron goes on, as a swipe does.
       expect(find.text(l10n.commonContinue), findsNothing);
-      await tester.tap(find.byTooltip(l10n.drillNextCard));
-      await tester.pumpAndSettle();
-      expect(find.byType(ChoiceDrill), findsOneWidget);
-      expect(sessionOf(tester).item.card.id, first.id);
+      // The round teaches every new word first, and asks them after, with
+      // older reviews between (#886): so the chevron goes on to the next
+      // word taught, until the words are all taught.
+      final taughtIds = <String>{};
+      while (sessionOf(tester).ask.onlyShows) {
+        if (sessionOf(tester).ask == Ask.teach) {
+          taughtIds.add(sessionOf(tester).item.card.id);
+        }
+        await tester.tap(find.byTooltip(l10n.drillNextCard));
+        await tester.pumpAndSettle();
+      }
+      expect(taughtIds, contains(first.id));
+      // Then the first question is about a word just taught, and nothing is
+      // recorded until it is answered.
+      expect(find.byType(TeachDrill), findsNothing);
+      expect(taughtIds, contains(sessionOf(tester).item.card.id));
       expect(state.progress.log, isEmpty);
 
       await finishLesson(tester);
@@ -4657,29 +4676,72 @@ cards:
                   .items)
             item.card.id,
         };
-        final items = state.dailyItems(
-          const DrillRequest.daily(language: 'hi'),
-        );
+        // The session runs on a clock and builds a round at a time: the
+        // first holds reviews before the first word taught, and no card is
+        // asked again in the next.
+        final run = state.startDaily('hi')!;
+        final items = state.nextDailyRound(run);
+        expect(items, isNotEmpty);
+        // Every word taught is asked later in the round, never before it is
+        // taught.
+        final taughtAt = <String, int>{
+          for (var i = items.length - 1; i >= 0; i--)
+            if (items[i].ask == Ask.teach) items[i].card.id: i,
+        };
+        expect(taughtAt, isNotEmpty);
+        for (final entry in taughtAt.entries) {
+          final asks = <int>[
+            for (var i = 0; i < items.length; i++)
+              if (!items[i].ask.onlyShows &&
+                  (items[i].card.id == entry.key ||
+                      items[i].group.any((g) => g.card.id == entry.key)))
+                i,
+          ];
+          expect(asks, isNotEmpty, reason: entry.key);
+          expect(asks.first, greaterThan(entry.value), reason: entry.key);
+        }
         final askedIds = <String>{
           for (final item in items)
             for (final entry
                 in item.group.isEmpty ? <SessionItem>[item] : item.group)
               entry.card.id,
         };
-        expect(askedIds.containsAll(dueIds), isTrue);
-        // The reviews come first, the lesson's teaching after them.
-        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
-        expect(firstTeach, greaterThan(0));
-        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
+        expect(askedIds.intersection(dueIds), isNotEmpty);
+        final next = state.nextDailyRound(run);
+        for (final item in next) {
+          if (item.ask == Ask.own) {
+            expect(askedIds.contains(item.card.id), isFalse);
+          }
+        }
 
-        // A 5 minute day buys 17 cards: the 8 reviews and the new words fill
-        // them, and a day over by a few reviews keeps its 3 new words.
+        // A 5 minute day holds the planner's own split of 5 minutes: fewer
+        // new words than a 15 minute day, and a day over by a few reviews
+        // keeps some.
         state.settings.setDailyMinutes('hi', 5);
         final five = state.dailyPlanFor(hindi);
-        expect(five.split.reviews + five.split.newWords, 17);
-        expect(five.split.newWords, greaterThanOrEqualTo(3));
+        expect(five.split.reviews, lessThanOrEqualTo(8));
+        expect(five.split.newWords, greaterThanOrEqualTo(1));
+        expect(five.split.newWords, lessThanOrEqualTo(plan.split.newWords));
       },
     );
+
+    test('with nothing due, Today\'s numbers are the session\'s first round '
+        '(#886, #885)', () async {
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = state.dailyPlanFor(spanish);
+      expect(plan.due, 0);
+      expect(plan.nothingLeft, isFalse);
+      final run = state.startDaily('es')!;
+      final items = state.nextDailyRound(run);
+      // The words Today says are taught, and no review is promised that
+      // the session does not hold.
+      expect(run.taught, greaterThan(0));
+      expect(run.taught, lessThanOrEqualTo(plan.split.newWords));
+      expect(plan.split.reviews, 0);
+      expect(items.where((i) => i.ask == Ask.teach), isNotEmpty);
+    });
 
     testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '
         'while a long press takes five away', (tester) async {
@@ -5012,12 +5074,17 @@ cards:
       // with no reviews badge unless new words are still to come.
       final plans = numbers.daily;
       expect(plans, isNotEmpty);
-      expect(plans.every((p) => p.due == 0 && p.split.reviews == 0), isTrue);
-      final splitting = plans.where((p) => p.showsSplit).length;
-      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(splitting));
+      expect(plans.every((p) => p.due == 0), isTrue);
+      // The time left may be filled with reviews of cards not yet due
+      // (#886), which the split counts: a "0 reviews" badge shows only where
+      // none are planned.
+      final noReviews = plans
+          .where((p) => p.showsSplit && p.split.reviews == 0)
+          .length;
+      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(noReviews));
       expect(
         find.text(l10n.todayDailyDone),
-        findsNWidgets(plans.length - splitting),
+        findsNWidgets(plans.where((p) => !p.showsSplit).length),
       );
       // Today now counts towards the streak.
       expect(find.text(l10n.todayStreak(13)), findsOneWidget);

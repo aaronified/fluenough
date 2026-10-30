@@ -312,7 +312,7 @@ class _Legend extends StatelessWidget {
               height: 8,
               decoration: BoxDecoration(
                 color: scheme.primary,
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(AppRadii.mark),
               ),
             ),
             l10n.howYouLearnLegendYou,
@@ -323,7 +323,7 @@ class _Legend extends StatelessWidget {
               height: 14,
               decoration: BoxDecoration(
                 color: scheme.onSurface,
-                borderRadius: BorderRadius.circular(1),
+                borderRadius: BorderRadius.circular(AppRadii.mark),
               ),
             ),
             l10n.howYouLearnLegendStart,
@@ -503,7 +503,7 @@ class _Track extends StatelessWidget {
                     border: filled == null
                         ? Border.all(color: scheme.outline, width: 1.5)
                         : null,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(AppRadii.mark),
                   ),
                 ),
               ),
@@ -516,7 +516,7 @@ class _Track extends StatelessWidget {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: scheme.primary,
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(AppRadii.mark),
                     ),
                   ),
                 ),
@@ -531,7 +531,7 @@ class _Track extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: scheme.onSurface,
-                    borderRadius: BorderRadius.circular(1),
+                    borderRadius: BorderRadius.circular(AppRadii.mark),
                   ),
                 ),
               ),

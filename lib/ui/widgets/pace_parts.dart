@@ -132,7 +132,7 @@ class PaceStrip extends StatelessWidget {
         onTapHint: l10n.howYouLearnOpenHint,
         child: Material(
           color: scheme.surfaceContainerLowest,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
             onTap: onTap,
