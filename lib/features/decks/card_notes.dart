@@ -63,12 +63,18 @@ CardNote? regionNoteOf(Card card) {
 /// (a sound-alike), a homograph or a lookalike, whose text goes with its
 /// partner ([lookalikesOf], [pairsOf]).
 List<String> proseNotes(Card card) => <String>[
+  for (final note in proseNoteList(card)) note.text,
+];
+
+/// [proseNotes] as notes: the pool the teach card and the answer reveal
+/// show one from at a time ([NoteRotation]).
+List<CardNote> proseNoteList(Card card) => <CardNote>[
   for (final note in card.notes)
     if (note.kind != NoteKind.pair &&
         note.kind != NoteKind.homograph &&
         note.kind != NoteKind.lookalike &&
         note.text.trim().isNotEmpty)
-      note.text,
+      note,
 ];
 
 /// The words [card] looks like but does not sound like, by card id where
