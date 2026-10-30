@@ -139,11 +139,6 @@ String _describeAll(Catalog c) => jsonEncode(<String, Object?>{
             [
               r.id,
               r.names,
-              r.decks,
-              r.open,
-              r.planned != null,
-              r.words,
-              r.grammar,
             ],
         ],
       ],

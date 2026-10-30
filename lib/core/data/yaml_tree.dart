@@ -88,7 +88,7 @@ class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
     nodes = _TreeMapNodes(_map);
   }
 
-  final Map _map;
+  final Map<dynamic, dynamic> _map;
 
   @override
   late final Map<dynamic, YamlNode> nodes;
@@ -100,7 +100,7 @@ class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
   final span = _noSpan;
 
   @override
-  Map get value => this;
+  Map<dynamic, dynamic> get value => this;
 
   // YamlMap mixes in UnmodifiableMapMixin, whose setters must be answered.
   @override
@@ -110,7 +110,7 @@ class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
   set last(_) => _readOnly();
 
   @override
-  Iterable get keys => _map.keys;
+  Iterable<dynamic> get keys => _map.keys;
 
   @override
   int get length => _map.length;
@@ -136,13 +136,13 @@ class _TreeMap extends MapBase<dynamic, dynamic> implements YamlMap {
 class _TreeMapNodes extends MapBase<dynamic, YamlNode> {
   _TreeMapNodes(this._map);
 
-  final Map _map;
+  final Map<dynamic, dynamic> _map;
   final Map<Object?, YamlNode> _made = <Object?, YamlNode>{};
 
   static Object? _plain(Object? key) => key is YamlScalar ? key.value : key;
 
   @override
-  Iterable get keys => _map.keys.map(YamlScalar.wrap);
+  Iterable<dynamic> get keys => _map.keys.map(YamlScalar.wrap);
 
   @override
   int get length => _map.length;
@@ -173,7 +173,7 @@ class _TreeList extends ListBase<dynamic> implements YamlList {
     nodes = _TreeListNodes(_list);
   }
 
-  final List _list;
+  final List<dynamic> _list;
 
   @override
   late final List<YamlNode> nodes;
@@ -185,7 +185,7 @@ class _TreeList extends ListBase<dynamic> implements YamlList {
   final span = _noSpan;
 
   @override
-  List get value => this;
+  List<dynamic> get value => this;
 
   @override
   int get length => _list.length;
@@ -204,7 +204,7 @@ class _TreeListNodes extends ListBase<YamlNode> {
   _TreeListNodes(this._list)
     : _made = List<YamlNode?>.filled(_list.length, null);
 
-  final List _list;
+  final List<dynamic> _list;
   final List<YamlNode?> _made;
 
   @override
