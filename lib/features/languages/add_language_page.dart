@@ -160,6 +160,7 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
     final scheme = theme.colorScheme;
     final added = !state.skillsOf(view.language).isAllLeave;
     final own = view.language.ownName;
+    // hint-ok: shows text
     return InkWell(
       key: ValueKey<String>('add-${view.code}'),
       onTap: () => _pick(view),

@@ -184,8 +184,24 @@ class UpdateCheckRow extends StatelessWidget {
         ),
         actions: <Widget>[
           TextButton(
-            onPressed: updates.checkAndInstall,
-            child: Text(l10n.commonRetry),
+            onPressed: updates.installDownloaded,
+            child: Text(l10n.settingsUpdateInstall),
+          ),
+        ],
+      ),
+      UpdateStatus.downloaded => _ActionRow(
+        icon: Icons.download_done,
+        iconColor: Theme.of(context).colorScheme.primary,
+        title: l10n.settingsUpdateDownloaded(latest),
+        subtitle: l10n.settingsUpdateDownloadedDesc,
+        actions: <Widget>[
+          FilledButton.tonal(
+            onPressed: updates.installDownloaded,
+            child: Text(l10n.settingsUpdateInstall),
+          ),
+          TextButton(
+            onPressed: updates.deleteDownload,
+            child: Text(l10n.settingsUpdateDeleteDownload),
           ),
         ],
       ),
@@ -200,7 +216,11 @@ class UpdateCheckRow extends StatelessWidget {
         actions: <Widget>[
           TextButton(
             onPressed: updates.checkAndInstall,
-            child: Text(l10n.commonRetry),
+            child: Text(
+              updates.hasKeptDownload
+                  ? l10n.settingsUpdateInstall
+                  : l10n.commonRetry,
+            ),
           ),
           TextButton(
             onPressed: () => openLink(

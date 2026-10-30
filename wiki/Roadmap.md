@@ -58,13 +58,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-23 approved open issues.
+22 approved open issues.
 
 **Enhancements**
 
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
-- [#508](https://github.com/aaronified/fluenough/issues/508) Review pipeline: reviewers see and correct every card field
 - [#519](https://github.com/aaronified/fluenough/issues/519) Reviewer daily questions: app-generated questions on the weakest data, answered by mail
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
 - [#612](https://github.com/aaronified/fluenough/issues/612) Transcriber and Wiktionary importer: readings and IPA for the new languages and scripts
@@ -137,7 +136,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#483](https://github.com/aaronified/fluenough/issues/483) Sound: notice when the phone's media volume is 0 and say so
-- [#487](https://github.com/aaronified/fluenough/issues/487) App update: a downloaded APK whose install was cancelled is downloaded again
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
@@ -322,6 +320,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
 - [#875](https://github.com/aaronified/fluenough/issues/875) Cold start takes 1–3 s: cache the parsed catalog, show last numbers, parse off the UI isolate
 - [#907](https://github.com/aaronified/fluenough/issues/907) Languages page: Know and Learning merged, per skill (Speak, Hear, Read, Write)
+- [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
+- [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
+- [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
 
 ## Plans
 
@@ -356,6 +357,7 @@ A plan with no tracking issue is flagged.
 - [building sentences by reasoning](https://github.com/aaronified/fluenough/wiki/Plan-Sentence-Building) (Written 2026-10-05), tracks #222
 - [settings that say what they do, on and off](https://github.com/aaronified/fluenough/wiki/Plan-Settings-Wording) (Written 2026-10-06), **no tracking issue**
 - [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), tracks #233
+- [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
 - [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), tracks #218
 - [word-order tiles without giveaways, and with extra tiles](https://github.com/aaronified/fluenough/wiki/Plan-Word-Order-Tiles) (Written 2026-10-05), tracks #234
