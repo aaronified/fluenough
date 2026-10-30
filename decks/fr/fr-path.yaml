@@ -7,11 +7,18 @@
 # words, its grammar topics, the three milestones, and for each planned unit
 # its listening and reading passages. A unit with no deck yet is planned:
 # the course teaches it as "Coming" until a deck is written. No deck of
-# French is written yet, so every unit is planned. Sizes follow the plan's
-# levels (about 700, 900 and 1,200 words; low confidence): French is tier I
-# (docs/plans/language-paths-scheme.md, x1.0), so they are not scaled. They
-# are one number for every native language. A theme named here that
-# decks/themes.yaml does not list yet is added to it with its first deck.
+# French is written yet, so every unit is planned; the owner (2026-10-30)
+# has set French's A1 to be built after Bengali's, Hindustani's and
+# Spanish's B1. When a unit is written, it turns into `decks` in the same
+# change (the build-deck skill). Sizes follow the plan's levels (about 700,
+# 900 and 1,200 words; low confidence): French is tier I
+# (docs/plans/language-paths-scheme.md, x1.0), so they are not scaled, and
+# the path sets no `levels:` of its own (ADR-0045: it is for languages whose
+# vocabulary the fixed sizes do not fit). The units hold about 735 words for
+# A1, 830 for A2 and 1,180 for B1, each within half to one and a half times
+# the plan's size. They are one number for every native language. A theme
+# named here that decks/themes.yaml does not list yet (money, literature
+# and verbs-5 today) is added to it with its first deck.
 #
 # The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
 # and 2026-10-17: "build the path files for all present languages via an
@@ -19,25 +26,31 @@
 # 1. the phrasebook, taught whole from the first lesson;
 # 2. the first word units, the sound differences first: the scheme asks
 #    French for a "heavy pronunciation step (silent letters, liaison)";
-# 3. no script units: French is written in Latin letters. Its accents and
-#    silent letters go in the script guide (fr-script.yaml), and its
-#    sounds in the sounds file (fr-sounds.yaml), when they are written;
+# 3. no script units: French is written in Latin letters, so the path has
+#    no `alphabet`. Its accents (é è ê à â î ô û ç and ë ï ü) and silent
+#    letters go in the script guide (fr-script.yaml), and its sounds
+#    (nasal vowels, u and ou, the French r, liaison) in the sounds file
+#    (fr-sounds.yaml), when they are written; neither is a path unit, and
+#    the numbers file (fr-numbers.yaml) is not one either;
 # 4. a core of about 200 common words in themed units, before the large
 #    tables ("Yes, smaller (~200)");
-# 5. rules as forms: articles and gender (with elision), the plural, the
-#    one verb "to be" and "to have", the regular present, negation and questions,
-#    prepositions and their contractions, then the other verb forms,
-#    practised on the words already known;
+# 5. rules as forms: articles and gender (with elision), the plural,
+#    adjective agreement, the one verb "to be" and "to have" (with il y a),
+#    the regular present, negation and questions, prepositions and their
+#    contractions, then the other verb forms, practised on the words
+#    already known;
 # 6. sentences, each after its words and rules; then the other themes,
 #    each its words, then its rules, then its sentences.
 # French's grammar keeps the Romance order of
 # docs/plans/language-paths-scheme.md within each level, with the
 # scheme's French adjustments: a single "to be" (etre, taught with avoir,
-# which the compound past needs), and no ser/estar step. So: articles and
-# gender, the plural (the tense, number and gender audit of 2026-10-23),
-# to be and to have, the regular present, the irregular present, the
-# imperatives (right after the present, before any past), prepositions,
-# object pronouns (with y and en), reflexives, the past
+# which the compound past needs), and no ser/estar step. So, by the tense,
+# number and gender audit of 2026-10-23 (wiki: Audit-Tense-Number-Gender):
+# articles and gender, the plural right after them, adjective agreement
+# (needed from the first lessons, as Spanish's is), to be and to have, the
+# regular present, the irregular present, the imperatives (right after the
+# present, before any past), prepositions, object pronouns (with y and
+# en), reflexives, the past
 # (passe compose and imparfait), the future and the conditional, the
 # subjunctive, and the compound tenses. French adds the partitive, the
 # near future (aller + infinitive), the two auxiliaries of the passe
@@ -92,7 +105,7 @@ units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
   # words beside it: fr-phrasebook (15-25 survival phrases, which count no
   # words) and fr-first-words when written.
-  - planned: { id: "fr-phrasebook", theme: "first-words", words: 15 }
+  - planned: { id: "fr-phrasebook", theme: "first-words", words: 10 }
     listening_passages:
       - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning and the evening: bonjour, bonsoir, au revoir" } }
     reading_passages:
@@ -166,9 +179,10 @@ units:
       - { id: "a-saturday", text: { "en": "Friends say what they do on a Saturday" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list for the day" } }
-  # 5. Rules as forms, practised on the words known: articles and gender
-  # first, then the verbs to be and to have, the present, negation and
-  # questions, and the prepositions.
+  # 5. Rules as forms, practised on the words known: articles and gender,
+  # the plural and adjective agreement first, then the verbs to be and to
+  # have, the present, negation and questions, the prepositions, and the
+  # imperatives.
   - planned: { id: "fr-grammar-articles-gender", grammar: ["articles-gender", "elision"] }
     listening_passages:
       - { id: "le-or-la", text: { "en": "Naming things in a kitchen with le, la, l' and les, un and une" } }
@@ -179,7 +193,12 @@ units:
       - { id: "several-things", text: { "en": "Naming several things in a kitchen: les, des and the plural endings" } }
     reading_passages:
       - { id: "plural-labels", text: { "en": "Shop labels for one item and for several" } }
-  - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir"] }
+  - planned: { id: "fr-grammar-adjective-agreement", grammar: ["adjective-agreement", "adjective-position"] }
+    listening_passages:
+      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
+    reading_passages:
+      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
+  - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir", "il-y-a"] }
     listening_passages:
       - { id: "who-and-what-they-have", text: { "en": "Saying who someone is and what they have" } }
     reading_passages:
@@ -324,11 +343,6 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "fr-grammar-adjective-agreement", grammar: ["adjective-agreement", "adjective-position"] }
-    listening_passages:
-      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
-    reading_passages:
-      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
   - planned: { id: "fr-animals", theme: "animals", words: 35 }
     listening_passages:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
