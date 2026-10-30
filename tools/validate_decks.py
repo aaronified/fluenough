@@ -2320,7 +2320,8 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "han": 0x4E00, "han_simplified": 0x4E00,
                  "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00}
 # Keys whose values are the word itself, not prose about it.
-_WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
+# `phonetic` is IPA, which uses Greek letters (β, θ, χ) and needs no reading.
+_WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas", "phonetic",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
               "source", "scheme", "audio", "image", "icon",
