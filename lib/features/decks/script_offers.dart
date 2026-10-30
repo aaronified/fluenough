@@ -6,6 +6,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/models/deck.dart';
 import '../../core/search/script_of.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../profiles/spoken_languages_picker.dart';
 
