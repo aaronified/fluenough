@@ -132,6 +132,7 @@ contributor.
   by widening the current change or pushing a fix straight to main.
 - **Budget.** Tokens are limited: one review per change (see "Which model
   does what"), no extra verification passes, and no new work unless the owner asks for it.
+- **Larger deck pull requests** (owner, 2026-10-30: "Open larger PRs for decks, to minimize ci burden, when you restart work on decks"). CI runners are the bottleneck, so deck work goes in larger pull requests: several units (a course's next 3 to 6 units, theme and sentences decks together) per branch and per pull request, one Sonnet review per pull request, instead of one pull request per unit. Fix review findings on the same branch before opening it where possible.
 - **Never stop anything** unless the owner explicitly asks (owner, 2026-10-23:
   "Never stop anything unless i explicitly ask to.").
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
