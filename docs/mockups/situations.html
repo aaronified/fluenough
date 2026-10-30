@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Situations</title>
+<meta name="description" content="Mockup for #724: situation buttons on Today, a situation sheet and its inspect view. Telugu first, other courses blank with the upcoming pill. Light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+
+/* #724 situations */
+.sit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.sit{background:var(--sLow);border:0;border-radius:16px;padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:48px;text-align:center}
+.sit .ic{width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.sit .lb{font-size:calc(14px*var(--t));line-height:1.2;font-weight:500}
+.sit .ct{font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);min-height:calc(13px*var(--t))}
+.sit-row{display:flex;gap:8px;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.sit-row .sit{flex:none;width:96px}
+.sit.off{opacity:.38}
+.badge{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:12px;background:var(--sHigh);color:var(--onSv);font-size:calc(11px*var(--t));font-weight:600;letter-spacing:.3px}
+.sec-h{display:flex;align-items:center;gap:8px;margin:16px 0 8px}
+.sec-h .t-h{flex:1}
+.dot{flex:none;width:8px;height:8px;border-radius:4px;background:var(--p);display:inline-block}
+.wrow2{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0}
+.wrow2 .w{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500;overflow-wrap:anywhere}
+.wrow2 .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.wrow2 .mn{font-size:calc(14px*var(--t));line-height:1.3}
+.wrow2 .mk{grid-column:1;grid-row:1}
+.wrow2 .tx{grid-column:2;display:flex;flex-direction:column;gap:1px;min-width:0}
+.wrow2 .act{grid-column:3;display:flex;align-items:center}
+.audio.on{background:var(--p);color:var(--onP)}
+.strip{display:flex;gap:6px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none}
+.strip button{flex:none;min-width:40px;height:40px;border-radius:12px;border:1px solid var(--ol);background:none;font-size:calc(13px*var(--t));font-weight:500;position:relative}
+.strip button[aria-current="true"]{background:var(--sc);color:var(--onSc);border-color:transparent;font-weight:700}
+.strip button .dot{position:absolute;top:4px;right:4px;width:6px;height:6px}
+.toast{position:absolute;left:16px;right:16px;bottom:84px;background:var(--onS);color:var(--s);border-radius:8px;padding:10px 14px;font-size:calc(13px*var(--t));z-index:5}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Situations</h1>
+<p class="cap1">Mockup for #724 (owner answers, 2026-10-30). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new. Telugu has sheets first; other courses show the Upcoming pill.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Preview sheets in other courses <span class="seg" data-k="preview"><button data-v="0">No</button><button data-v="1">Yes</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ play:'M8 5v14l11-7z',
+ check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ more:'M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ car:'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z',
+ cart:'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z',
+ med:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z',
+ way:'M21.71 11.29l-9-9a.996.996 0 0 0-1.41 0l-9 9a.996.996 0 0 0 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 0 0 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z',
+ food:'M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ today:'M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ tag:'M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ drop:'M7 10l5 5 5-5z',
+ plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ minus:'M19 13H5v-2h14z',
+ spk:'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+ book:'M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',
+ abc:'M11 4h2v2h5v2h-2.1c-.5 2.3-1.6 4.1-3.1 5.4.9.6 1.9 1 3 1.3l-.7 1.9c-1.4-.4-2.6-1-3.7-1.8-1.1.8-2.4 1.4-3.8 1.8l-.7-1.9c1.2-.3 2.3-.8 3.2-1.4-1.1-1.1-1.9-2.4-2.3-3.9h2.1c.3 1 .8 1.8 1.5 2.5 1-1 1.7-2.3 2-3.9H5V6h6V4z'
+,
+ train:'M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z',
+ shield:'M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.99z',
+ offline:'M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM10 17l-3.5-3.5 1.41-1.41L10 14.17 15.18 9l1.41 1.41L10 17z',
+ prev:'M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z',
+ bolt:'M7 2v11h3v9l7-12h-4l4-8z'
+};
+const ic=(k,cls='')=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+/* ===== content. Sheets exist for Telugu only (owner, 2026-10-30). Hindustani and Bengali sheets are a layout preview. ===== */
+const SIT=[['taxi','Taxi','car',9,5],['shop','Shops','cart',11,8],['eat','Eat','food',10,7],['doc','Doctor','med',12,9],['traffic','Traffic','shield',8,8],['rail','Rail','train',10,6]];
+const C={
+te:{lang:'te',name:'Telugu',native:'తెలుగు',has:true,
+ items:[
+ {k:'p',id:'te.sit.taxi.1',card:'te.phr.naaku-taxi.0210',w:'నాకు టాక్సీ కావాలి.',r:'nāku ṭāksī kāvāli.',m:'I need a taxi.',s:'known',ipa:'/naːku ʈaːksiː kaːʋaːli/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'Telugu says "to me a taxi is wanted": నాకు is "to me" and కావాలి agrees with what is wanted.',ex:['నాకు నీళ్లు కావాలి.','nāku nīḷḷu kāvāli.','I need water.'],audio:'te/naaku-taxi-0210.opus, 1.9 s',on:'Taxi, Rail'},
+ {k:'p',id:'te.sit.taxi.2',card:'te.phr.ikkada-aapandi.0211',w:'ఇక్కడ ఆపండి.',r:'ikkaḍa āpaṇḍi.',m:'Stop here.',s:'known',ipa:'/ikkaɖa aːpaɳɖi/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'ఆపండి is the polite command: the stem ఆపు "stop" loses its u and takes -ండి.',ex:['కొంచెం ఆగండి.','koñcheṁ āgaṇḍi.','Wait a little.'],audio:'te/ikkada-aapandi-0211.opus, 1.5 s',on:'Taxi, Traffic'},
+ {k:'p',id:'te.sit.taxi.3',card:'te.phr.kiraayi-enta.0212',w:'కిరాయి ఎంత?',r:'kirāyi enta?',m:'How much is the fare?',s:'learning',ipa:'/kiraːji enta/',pos:'phrase',deck:'Money and prices',unit:'Unit 14',notes:'కిరాయి is "fare" or "rent". No verb is needed: the question is just the noun and ఎంత "how much".',ex:['కిరాయి ఎక్కువగా ఉంది.','kirāyi ekkuvagā undi.','The fare is too high.'],audio:'te/kiraayi-enta-0212.opus, 1.4 s',on:'Taxi'},
+ {k:'p',id:'te.sit.taxi.4',card:'te.phr.meter-veyandi.0213',w:'మీటర్ వేయండి.',r:'mīṭar vēyaṇḍi.',m:'Put the meter on.',s:'new',ipa:'/miːʈar ʋeːjaɳɖi/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'వేయండి "put" is polite. The stem వేయు changes its u to -ండి like ఆపండి.',ex:['లైట్ వేయండి.','laiṭ vēyaṇḍi.','Put the light on.'],audio:'te/meter-veyandi-0213.opus, 1.6 s',on:'Taxi'},
+ {k:'p',id:'te.sit.taxi.5',card:'te.phr.edama-tiragandi.0214',w:'ఎడమవైపు తిరగండి.',r:'eḍamavaipu tiragaṇḍi.',m:'Turn left.',s:'new',ipa:'/eɖamaʋaipu tiɾagaɳɖi/',pos:'phrase',deck:'Directions',unit:'Unit 11',notes:'ఎడమ "left" and వైపు "side" join into one word. For right, say కుడివైపు.',ex:['కుడివైపు తిరగండి.','kuḍivaipu tiragaṇḍi.','Turn right.'],audio:'te/edama-tiragandi-0214.opus, 2.1 s',on:'Taxi, Traffic'},
+ {k:'w',id:'te.sit.taxi.6',card:'te.vocab.taxi.0044',w:'టాక్సీ',r:'ṭāksī',m:'taxi',s:'known',ipa:'/ʈaːksiː/',pos:'noun',deck:'Getting around',unit:'Unit 9',notes:'A loanword. It takes the plural టాక్సీలు.',ex:['టాక్సీ వచ్చింది.','ṭāksī vacchindi.','The taxi has come.'],audio:'te/taxi-0044.opus, 0.8 s',on:'Taxi'},
+ {k:'w',id:'te.sit.taxi.7',card:'te.vocab.kiraayi.0090',w:'కిరాయి',r:'kirāyi',m:'fare, rent',s:'learning',ipa:'/kiraːji/',pos:'noun',deck:'Money and prices',unit:'Unit 14',notes:'Also means rent. The card is the same one the fare phrase uses.',ex:['ఇంటి కిరాయి.','iṇṭi kirāyi.','The house rent.'],audio:'te/kiraayi-0090.opus, 0.9 s',on:'Taxi'},
+ {k:'w',id:'te.sit.taxi.8',card:'te.vocab.nerugaa.0305',w:'నేరుగా',r:'nērugā',m:'straight',s:'new',ipa:'/neːruɡaː/',pos:'adverb',deck:'Directions',unit:'Unit 11',notes:'An adverb: it does not change.',ex:['నేరుగా వెళ్లండి.','nērugā veḷḷaṇḍi.','Go straight.'],audio:'te/nerugaa-0305.opus, 0.9 s',on:'Taxi, Traffic'},
+ {k:'w',id:'te.sit.taxi.9',card:'te.vocab.kudi.0306',w:'కుడి',r:'kuḍi',m:'right',s:'new',ipa:'/kuɖi/',pos:'adjective',deck:'Directions',unit:'Unit 11',notes:'Opposite of ఎడమ "left". Joins with వైపు "side".',ex:['కుడి చేయి.','kuḍi cheyi.','The right hand.'],audio:'te/kudi-0306.opus, 0.7 s',on:'Taxi, Traffic'}]},
+hi:{lang:'hi',name:'Hindustani',native:'हिन्दुस्तानी',has:false,
+ items:[
+ {k:'p',id:'hi.sit.taxi.1',card:'hi.phr.taxi-chahiye.0101',w:'मुझे टैक्सी चाहिए।',r:'mujhe ṭaiksī chāhie.',m:'I need a taxi.',s:'known',ipa:'/mʊdʒʰeː ʈɛksiː tʃaːɦɪeː/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'"To me a taxi is wanted": मुझे is "to me".',ex:['मुझे पानी चाहिए।','mujhe pānī chāhie.','I need water.'],audio:'hi/taxi-chahiye-0101.opus, 1.8 s',on:'Taxi'},
+ {k:'p',id:'hi.sit.taxi.2',card:'hi.phr.yahan-rukie.0102',w:'यहाँ रुकिए।',r:'yahāṁ rukie.',m:'Stop here.',s:'learning',ipa:'/jəɦãː rʊkɪeː/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'रुकिए is the polite command of रुकना.',ex:['ज़रा रुकिए।','zarā rukie.','Wait a moment.'],audio:'hi/yahan-rukie-0102.opus, 1.4 s',on:'Taxi'},
+ {k:'p',id:'hi.sit.taxi.3',card:'hi.phr.mitar-chalu.0103',w:'मीटर चालू कीजिए।',r:'mīṭar chālū kījie.',m:'Turn the meter on.',s:'new',ipa:'/miːʈər tʃaːluː kiːdʒɪeː/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'कीजिए is the polite command of करना.',ex:['दरवाज़ा बंद कीजिए।','darvāzā band kījie.','Close the door.'],audio:'hi/mitar-chalu-0103.opus, 1.6 s',on:'Taxi'},
+ {k:'w',id:'hi.sit.taxi.4',card:'hi.vocab.kirayaa.0412',w:'किराया',r:'kirāyā',m:'fare, rent',s:'learning',ipa:'/kɪɾaːjaː/',pos:'noun',deck:'Money and prices',unit:'Unit 14',notes:'Masculine; the stem does not change.',ex:['किराया कितना है?','kirāyā kitnā hai?','How much is the fare?'],audio:'hi/kirayaa-0412.opus, 0.9 s',on:'Taxi'},
+ {k:'w',id:'hi.sit.taxi.5',card:'hi.vocab.daayen.0420',w:'दाएँ',r:'dāeṁ',m:'right',s:'new',ipa:'/d̪aːeː̃/',pos:'adverb',deck:'Directions',unit:'Unit 11',notes:'Left is बाएँ bāeṁ.',ex:['दाएँ मुड़िए।','dāeṁ muṛie.','Turn right.'],audio:'hi/daayen-0420.opus, 0.8 s',on:'Taxi'}]},
+bn:{lang:'bn',name:'Bengali',native:'বাংলা',has:false,
+ items:[
+ {k:'p',id:'bn.sit.taxi.1',card:'bn.phr.taxi-darkar.0101',w:'আমার একটা ট্যাক্সি দরকার।',r:'āmār ekṭā ṭyāksi darkār.',m:'I need a taxi.',s:'known',ipa:'/amar ekʈa ʈækʃi dɔrkar/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'"My a taxi need": আমার is "my".',ex:['আমার জল দরকার।','āmār jal darkār.','I need water.'],audio:'bn/taxi-darkar-0101.opus, 1.9 s',on:'Taxi'},
+ {k:'p',id:'bn.sit.taxi.2',card:'bn.phr.ekhane-thamun.0102',w:'এখানে থামুন।',r:'ekhāne thāmun.',m:'Stop here.',s:'learning',ipa:'/ekʰane tʰamun/',pos:'phrase',deck:'Getting around',unit:'Unit 9',notes:'থামুন is the polite command of থামা.',ex:['একটু থামুন।','ekṭu thāmun.','Wait a little.'],audio:'bn/ekhane-thamun-0102.opus, 1.4 s',on:'Taxi'},
+ {k:'p',id:'bn.sit.taxi.3',card:'bn.phr.bhara-kato.0103',w:'ভাড়া কত হবে?',r:'bhāṛā kata habe?',m:'How much will the fare be?',s:'new',ipa:'/bʱaɽa kɔto hɔbe/',pos:'phrase',deck:'Money and prices',unit:'Unit 14',notes:'হবে is the future of হওয়া and does not change for the subject.',ex:['ভাড়া অনেক বেশি।','bhāṛā anek beśi.','The fare is very high.'],audio:'bn/bhara-kato-0103.opus, 1.6 s',on:'Taxi'},
+ {k:'w',id:'bn.sit.taxi.4',card:'bn.vocab.bhara.0388',w:'ভাড়া',r:'bhāṛā',m:'fare, rent',s:'learning',ipa:'/bʱaɽa/',pos:'noun',deck:'Money and prices',unit:'Unit 14',notes:'Also means rent.',ex:['বাড়ি ভাড়া।','bāṛi bhāṛā.','House rent.'],audio:'bn/bhara-0388.opus, 0.9 s',on:'Taxi'},
+ {k:'w',id:'bn.sit.taxi.5',card:'bn.vocab.dan.0401',w:'ডান',r:'ḍān',m:'right',s:'new',ipa:'/ɖan/',pos:'adjective',deck:'Directions',unit:'Unit 11',notes:'Left is বাঁ bām̐.',ex:['ডান দিকে যান।','ḍān dike yān.','Go to the right.'],audio:'bn/dan-0401.opus, 0.7 s',on:'Taxi'}]}
+};
+
+/* ===== state: every tweak control ===== */
+const S={theme:null,course:'te',hl:'1',preview:'0',
+ layout:'grid',count:'show',mark:'dot',shown:'all',inspMode:'one',inspEntry:'row',idx:2,playing:-1,toast:false};
+try{S.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){S.theme='light'}
+const root=document.getElementById('root');
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,t])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${t}</button>`).join('')}</span></div>`;
+const chg=(c,x)=>`<div class="chg ${c||''}">${x}</div>`;
+const mast=s=>`<span class="mastery m-${s}">${{known:'Known',learning:'Learning',new:'New'}[s]}</span>`;
+const sc=(c,t)=>`<span class="script" lang="${c.lang}">${t}</span>`;
+function phone(inner,cap,extra=''){return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" ${extra}>${inner}</div></div>`}
+function nav(on){const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];
+ return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`}
+function lbar(c){return `<div class="lbar"><span class="pill on">${sc(c,c.native)} ${c.name} ${ic('drop','')}</span></div>`}
+const mark=(it)=>it.s==='new'?(S.mark==='dot'?`<span class="dot mk" role="img" aria-label="Not learnt yet" title="Not learnt yet"></span>`:''):(S.mark==='dot'?`<span class="mk"></span>`:'');
+const chipMark=it=>S.mark==='chip'&&it.s==='new'?` <span class="mastery m-new">New</span>`:'';
+
+/* ===== 1. Today ===== */
+function todayScreen(c,has,cap){
+ const tiles=SIT.map(([id,t,i,n,k])=>{
+  const nw=has?(c.items.filter(x=>x.s==='new').length&&id==='taxi'?c.items.filter(x=>x.s==='new').length:(n-k)):0;
+  const ct=has&&S.count==='show'?`<span class="ct">${nw} new</span>`:`<span class="ct"></span>`;
+  return `<button class="sit ${has?'':'off'}" ${has?'':'aria-disabled="true"'} title="${t}"><span class="ic">${ic(i)}</span><span class="lb">${t}</span>${ct}</button>`}).join('');
+ let body;
+ if(S.layout==='card'){
+  body=`<button class="card ${has?'':'off'}" style="${has?'':'opacity:.38'}"><span class="ic">${ic('way')}</span><span class="tx"><span class="t-h" style="display:block">Situations</span><span class="t-sm">Taxi, shops, the doctor and more</span></span>${has?ic('chev'):''}</button>`;
+ } else if(S.layout==='row'){
+  body=`<div class="sit-row">${tiles}</div>`;
+ } else body=`<div class="sit-grid">${tiles}</div>`;
+ const head=`<div class="sec-h"><span class="t-h">Situations</span>${has?`<span class="t-sm" style="display:flex;align-items:center;gap:4px" title="Works offline">${ic('offline')}Offline</span>`:`<span class="badge">Upcoming</span>`}</div>`;
+ const daily=`<div class="card" style="flex-direction:column;align-items:stretch;gap:8px"><span class="t-sm">Today</span><span class="t-h">12 of 15 min</span><button class="btn fill full">Continue</button></div>`;
+ return phone(`<div class="appbar"><span class="ttl">Today</span></div>${lbar(c)}<div class="scroll">${daily}${chg('',head+body)}${has?'':`<p class="t-sm" style="margin-top:8px">Sheets for ${c.name} are upcoming.</p>`}</div>${nav('today')}`,cap);
+}
+function listScreen(c){
+ const rows=SIT.map(([id,t,i,n,k])=>`<button class="card" style="margin-bottom:8px"><span class="ic">${ic(i)}</span><span class="tx"><span class="t-h" style="display:block">${t}</span><span class="t-sm">${n} items${S.count==='show'?', '+(n-k)+' new':''}</span></span>${ic('chev')}</button>`).join('');
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back" title="Back">${ic('back')}</button><span class="ttl">Situations</span></div><div class="scroll">${rows}</div>${nav('today')}`,'The card opens a list (card layout only)');
+}
+
+/* ===== 2. Sheet ===== */
+function sheetItems(c){return c.items.filter(x=>S.shown==='all'||x.s!=='new')}
+function sheetRow(c,x,i){
+ const ix=c.items.indexOf(x);
+ return `<div class="wrow2" style="${S.mark==='dot'?'':'grid-template-columns:minmax(0,1fr) auto;'}">${S.mark==='dot'?mark(x):''}<span class="tx" style="${S.mark==='dot'?'':'grid-column:1'}"><span class="w">${sc(c,x.w)}</span><span class="rd">${x.r}</span><span class="mn">${x.m}${chipMark(x)}</span></span><span class="act" style="${S.mark==='dot'?'':'grid-column:2'}"><button class="audio sm ${S.playing===ix?'on':''}" data-act="play" data-i="${ix}" aria-label="Play" title="Play">${ic('vol')}</button>${S.inspEntry==='row'?`<button class="ib" data-act="insp" data-i="${ix}" aria-label="Inspect" title="Inspect">${ic('info')}</button>`:''}</span></div>`;
+}
+function sheet(c,cap){
+ const its=sheetItems(c),nw=c.items.filter(x=>x.s==='new').length;
+ const ph=its.filter(x=>x.k==='p'),wd=its.filter(x=>x.k==='w');
+ const grp=(t,a)=>a.length?`<div class="t-lab">${t}</div>${a.map(x=>sheetRow(c,x)).join('')}`:'';
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back" title="Back">${ic('back')}</button><span class="ttl">Taxi</span>${S.inspEntry==='bar'?`<button class="ib" data-act="insp" data-i="${S.idx}" aria-label="Inspect" title="Inspect">${ic('info')}</button>`:''}</div>
+ <div class="scroll"><p class="t-sm" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 2px">${ic('offline')}Offline · ${c.items.length} items${S.mark==='dot'?` · <span class="dot"></span> ${nw} not learnt`:`, ${nw} new`}</p>
+ ${grp('Phrases',ph)}${grp('Words',wd)}</div>
+ <div class="bottom">${chg('',`<button class="btn fill full" data-act="practise">${ic('bolt')}Practise this sheet</button>`)}</div>
+ ${S.toast?`<div class="toast" role="status">Teaches the ${nw} new items first</div>`:''}`,cap);
+}
+
+/* ===== 3. Inspect ===== */
+function block(c,x){
+ return `<div style="display:flex;align-items:center;gap:8px"><div style="flex:1;min-width:0"><div style="font-size:calc(26px*1.4);line-height:1.25;font-weight:500">${sc(c,x.w)}</div><div class="t-sm">${x.r}</div></div><button class="audio" aria-label="Play" title="Play">${ic('vol')}</button></div>
+  <div class="blk"><div><p class="tt">Notes</p><p>${x.notes}</p></div></div>
+  <div class="blk"><div><p class="tt">Example</p><p>${sc(c,x.ex[0])}</p><p class="t-sm">${x.ex[1]}</p><p class="t-sm">${x.ex[2]}</p></div></div>
+  <div class="t-lab">Card data</div>
+  <dl class="kv"><dt>Meaning</dt><dd>${x.m}</dd><dt>IPA</dt><dd>${x.ipa}</dd><dt>Type</dt><dd>${x.pos}</dd><dt>Card id</dt><dd class="mono">${x.card}</dd><dt>Deck</dt><dd>${x.deck}, ${x.unit}</dd><dt>Audio</dt><dd class="mono">${x.audio}</dd><dt>On sheets</dt><dd>${x.on}</dd><dt>You</dt><dd>${mast(x.s)}${x.s==='new'?' not learnt yet':x.s==='learning'?' next review in 2 days':' next review in 3 weeks'}</dd></dl>`;
+}
+function inspect(c,cap){
+ const n=c.items.length;if(S.idx>=n)S.idx=n-1;
+ const x=c.items[S.idx];
+ let main;
+ if(S.inspMode==='one'){
+  main=`<div class="strip" role="tablist">${c.items.map((y,i)=>`<button data-act="insp" data-i="${i}" aria-current="${i===S.idx}" aria-label="Card ${i+1}" title="Card ${i+1}">${i+1}${y.s==='new'?'<span class="dot"></span>':''}</button>`).join('')}</div>
+   <div class="t-lab" style="margin-top:2px">${x.k==='p'?'Phrase':'Word'} ${S.idx+1} of ${n}</div>${chg('',block(c,x))}`;
+ } else {
+  main=c.items.map((y,i)=>`<div class="t-lab">${i+1} of ${n} · ${y.k==='p'?'Phrase':'Word'}${y.s==='new'?' · not learnt':''}</div><div class="blk" style="flex-direction:column;gap:2px"><div style="display:flex;gap:8px;align-items:center;width:100%"><div style="flex:1;min-width:0;font-size:calc(20px*var(--t));font-weight:500">${sc(c,y.w)}</div><button class="audio sm" aria-label="Play" title="Play">${ic('vol')}</button></div><p class="t-sm">${y.r}</p><p>${y.m}</p><p class="t-sm mono">${y.card}</p><p class="t-sm">${y.notes}</p></div>`).join('');
+  main=chg('',main);
+ }
+ const bar=S.inspMode==='one'?`<div class="bottom" style="display:flex;gap:8px"><button class="btn out" style="flex:1" data-act="step" data-d="-1" aria-label="Previous card" title="Previous">${ic('prev')}</button><button class="btn out" style="flex:2">Open in deck</button><button class="btn tonal" style="flex:1" data-act="step" data-d="1" aria-label="Next card" title="Next">${ic('chev')}</button></div>`:'';
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back" title="Back">${ic('back')}</button><span class="ttl">Inspect: Taxi</span></div><div class="scroll">${main}</div>${bar}`,cap);
+}
+
+/* ===== page ===== */
+function render(){
+ const c=C[S.course],has=c.has||S.preview==='1';
+ const sc2=has?c:C.te;
+ document.documentElement.setAttribute('data-theme',S.theme);
+ const P=PAL[S.theme];
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(P).map(([k,v])=>`--${k}:${v}`).join(';');
+ const blank=c.has?C.hi:c;
+ const sheetCap=has||c.has?'Sheet: Taxi':'Sheet: Taxi (Telugu, the only course with sheets)';
+ root.innerHTML=`
+ <section class="opt" id="s1"><h2>1. Today: situations buttons</h2>
+  <p class="note">Six buttons below the daily button, each an icon and one word, the count of items not learnt yet under it in small type. A course without sheets shows the same buttons dimmed (like a feature incoming) with the Upcoming pill and no counts. Long-press names an icon-only control (#913).</p>
+  <div class="tw">${seg('layout',[['grid','3 by 2 grid'],['row','Scrolling row'],['card','One card, list inside']],'Entry')}${seg('count',[['show','Count shown'],['hide','No count']],'Unlearned count')}</div>
+  <div class="frames">${todayScreen(c,has,has?'Today, '+c.name+(c.has?'':' (sheets previewed)'):'Today, '+c.name+': no sheets yet')}${c.has?todayScreen(blank,false,'Today, a course without sheets ('+blank.name+')'):''}${S.layout==='card'?listScreen(c):''}</div></section>
+ <section class="opt" id="s2"><h2>2. A situation sheet</h2>
+  <p class="note">Everything on the sheet is shown, in the course's order, phrases then words. A small mark shows what is not learnt yet. Practise this sheet teaches those first. Tap the play button, the info icon or Practise.</p>
+  <div class="tw">${seg('shown',[['all','Everything, unlearned marked (owner)'],['learned','Learned only (rejected)']],'Shows')}${seg('mark',[['dot','Dot'],['chip','New chip']],'Mark')}${seg('inspEntry',[['row','Info icon per row'],['bar','Inspect in the app bar']],'Inspect opens from')}</div>
+  <div class="frames">${sheet(sc2,sheetCap)}</div></section>
+ <section class="opt" id="s3"><h2>3. Inspect the sheet's cards</h2>
+  <p class="note">Every card of the sheet in full: script, reading, meaning, audio, notes, example, IPA, card id, deck, audio file, the other sheets it is on and your progress. The numbers jump to a card; a dot marks the unlearned.</p>
+  <div class="tw">${seg('inspMode',[['one','One card, step through'],['all','All cards in one scroll']],'Inspect shows')}</div>
+  <div class="frames">${inspect(sc2,'Inspect: '+(S.inspMode==='one'?'card '+(S.idx+1):'all cards'))}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;S.idx=Math.min(S.idx,C[S.course].items.length-1);render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){S[b.parentNode.dataset.sk]=b.dataset.v;render();return}
+ const a=e.target.closest('[data-act]');if(!a)return;
+ const k=a.dataset.act;
+ if(k==='play'){const i=+a.dataset.i;S.playing=S.playing===i?-1:i;render()}
+ else if(k==='insp'){S.idx=+a.dataset.i;render();const t=document.getElementById('s3');if(e.target.closest('#s2'))t.scrollIntoView({block:'start'})}
+ else if(k==='step'){const n=(C[S.course].has||S.preview==='1'?C[S.course]:C.te).items.length;S.idx=(S.idx+ +a.dataset.d+n)%n;render()}
+ else if(k==='practise'){S.toast=true;render();setTimeout(()=>{S.toast=false;render()},1800)}
+});
+render();
+
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['readings, captions on page','onSv','s',4.5],['situation tile label','onS','sLow',4.5],['tile count, sheet captions','onSv','sLow',4.5],['tile icon','onSc','sc',4.5],['Upcoming pill text','onSv','sHigh',4.5],['filled button','onP','p',4.5],['playing audio button','onP','p',4.5],['audio button','onSc','sc',4.5],['not-learnt dot on page','p','s',3],['not-learnt dot on card','p','sLow',3],['New chip text','onSv','sLow',4.5],['New chip outline','ol','sLow',3],['Learning chip','onSc','sc',4.5],['Known chip','onP','p',4.5],['text on raised block','onS','sHigh',4.5],['caption on raised block','onSv','sHigh',4.5],['card strip outline','ol','sLow',3],['strip number, current','onSc','sc',4.5],['toast','s','onS',4.5],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['icons (info, offline)','onSv','sLow',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+
+</script>
+</body>
+</html>
