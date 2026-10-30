@@ -44,6 +44,7 @@ cards:
     reading: "dhulo jhāṛā"
     ipa: "d̪ʱulo dʒʱaɽa"
     pos: "verb"
+    bases: [{ word: "ঝাড়া", base: "ঝাড়া", reading: "jhāṛā" }]
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ঝাড়া", reading: "jhāṛā" }] }
     examples:
@@ -59,7 +60,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ময়লা কাপড়", reading: "moylā kāpoṛ" }] }
     examples:
-      - { target: "এই কাপড়গুলো ময়লা।", reading: "ei kāpoṛgulo moylā.", ipa: "ei kapoɽɡulo mɔjla", bases: [{ word: "কাপড়গুলো", ref: "bn-1188" }] }
+      - { target: "এই কাপড়গুলো ময়লা।", reading: "ei kāpoṛgulo moylā.", ipa: "ei kapoɽɡulo mɔjla", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "কাপড়গুলো", ref: "bn-1188" }] }
       - { target: "ময়লাটা ফেলে দাও।", reading: "moylāṭā phele dāo.", ipa: "mɔjlaʈa pʰele d̪ao", bases: [{ word: "ময়লাটা", base: "ময়লা", reading: "moylāṭā" }, { word: "ফেলে", ref: "bn-1103" }, { word: "দাও", ref: "bn-0888" }] }
   - id: "bn-2268"
     target: "ময়লার ঝুড়ি"
@@ -81,7 +82,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ময়লা", reading: "moylā" }] }
     examples:
       - { target: "আবর্জনাগুলো বাইরে ফেলো।", reading: "ābarjanāgulo bāire phelo.", ipa: "abordʒonaɡulo baire pʰelo", bases: [{ word: "আবর্জনাগুলো", base: "আবর্জনা", reading: "ābarjanāgulo" }, { word: "ফেলো", ref: "bn-1103" }] }
-      - { target: "এই আবর্জনা ভারী।", reading: "ei ābarjanā bhārī.", ipa: "ei abordʒona bʱari" }
+      - { target: "এই আবর্জনা ভারী।", reading: "ei ābarjanā bhārī.", bases: [{ word: "এই", base: "এই", reading: "ei" }], ipa: "ei abordʒona bʱari" }
   - id: "bn-2270"
     target: "থালা"
     reading: "thālā"
@@ -97,6 +98,7 @@ cards:
     reading: "bāśôn mājā"
     ipa: "bason madʒa"
     pos: "verb"
+    bases: [{ word: "মাজা", base: "মাজা", reading: "mājā" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মাজা", reading: "mājā" }, { word: "দাঁত মাজা", reading: "dāṁt mājā" }] }
     examples:
@@ -107,6 +109,7 @@ cards:
     reading: "kāpoṛ kācā"
     ipa: "kapoɽ katʃa"
     pos: "verb"
+    bases: [{ word: "কাচা", base: "কাচা", reading: "kācā" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "কাচা", reading: "kācā" }] }
     examples:
@@ -117,21 +120,23 @@ cards:
     reading: "istri kôrā"
     ipa: "ist̪ri kɔra"
     pos: "verb"
+    bases: [{ word: "ইস্ত্রি", base: "ইস্ত্রি", reading: "istri" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ইস্ত্রি", reading: "istri" }] }
     examples:
-      - { target: "মা জামা ইস্ত্রি করেন।", reading: "mā jāmā istri kôren.", ipa: "ma dʒama ist̪ri kɔren", bases: [{ word: "করেন", ref: "bn-0102" }] }
-      - { target: "আমি শার্টটা ইস্ত্রি করি।", reading: "āmi śārṭṭā istri kôri.", ipa: "ami ʃarʈʈa ist̪ri kori", bases: [{ word: "শার্টটা", ref: "bn-1190" }, { word: "করি", ref: "bn-0102" }] }
+      - { target: "মা জামা ইস্ত্রি করেন।", reading: "mā jāmā istri kôren.", ipa: "ma dʒama ist̪ri kɔren", bases: [{ word: "ইস্ত্রি", base: "ইস্ত্রি", reading: "istri" }, { word: "করেন", ref: "bn-0102" }] }
+      - { target: "আমি শার্টটা ইস্ত্রি করি।", reading: "āmi śārṭṭā istri kôri.", ipa: "ami ʃarʈʈa ist̪ri kori", bases: [{ word: "ইস্ত্রি", base: "ইস্ত্রি", reading: "istri" }, { word: "শার্টটা", ref: "bn-1190" }, { word: "করি", ref: "bn-0102" }] }
   - id: "bn-2274"
     target: "ভাঁজ করা"
     reading: "bhāñj kôrā"
     ipa: "bʱãdʒ kɔra"
     pos: "verb"
+    bases: [{ word: "ভাঁজ", base: "ভাঁজ", reading: "bhāñj" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ভাঁজ", reading: "bhāñj" }] }
     examples:
-      - { target: "কাপড়গুলো ভাঁজ করো।", reading: "kāpoṛgulo bhāñj koro.", ipa: "kapoɽɡulo bʱãdʒ kɔro", bases: [{ word: "কাপড়গুলো", ref: "bn-1188" }, { word: "করো", ref: "bn-0102" }] }
-      - { target: "চাদরটা ভাঁজ করে রাখো।", reading: "cādaraṭā bhāñj kôre rākho.", ipa: "tʃad̪orʈa bʱãdʒ kɔre rakʰo", bases: [{ word: "চাদরটা", ref: "bn-2280" }, { word: "করে", ref: "bn-0102" }, { word: "রাখো", base: "রাখা", reading: "rākho" }] }
+      - { target: "কাপড়গুলো ভাঁজ করো।", reading: "kāpoṛgulo bhāñj koro.", ipa: "kapoɽɡulo bʱãdʒ kɔro", bases: [{ word: "ভাঁজ", base: "ভাঁজ", reading: "bhāñj" }, { word: "কাপড়গুলো", ref: "bn-1188" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "চাদরটা ভাঁজ করে রাখো।", reading: "cādaraṭā bhāñj kôre rākho.", ipa: "tʃad̪orʈa bʱãdʒ kɔre rakʰo", bases: [{ word: "ভাঁজ", base: "ভাঁজ", reading: "bhāñj" }, { word: "চাদরটা", ref: "bn-2280" }, { word: "করে", ref: "bn-0102" }, { word: "রাখো", base: "রাখা", reading: "rākho" }] }
   - id: "bn-2275"
     target: "শুকানো"
     reading: "śukānō"
@@ -221,7 +226,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "এটা আমার দায়িত্ব।", reading: "eṭā āmār dāyitto.", ipa: "eʈa amar d̪ajit̪t̪o", bases: [{ word: "আমার", ref: "bn-0833" }] }
-      - { target: "বাসন মাজা তোমার দায়িত্ব।", reading: "bāśôn mājā tomār dāyitto.", ipa: "bason madʒa t̪omar d̪ajit̪t̪o", bases: [{ word: "তোমার", ref: "bn-0835" }] }
+      - { target: "বাসন মাজা তোমার দায়িত্ব।", reading: "bāśôn mājā tomār dāyitto.", ipa: "bason madʒa t̪omar d̪ajit̪t̪o", bases: [{ word: "মাজা", base: "মাজা", reading: "mājā" }, { word: "তোমার", ref: "bn-0835" }] }
   - id: "bn-2284"
     target: "নিয়ম"
     reading: "niyom"
@@ -231,7 +236,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "বাড়ির নিয়ম মানো।", reading: "bāṛir niyom māno.", ipa: "baɽir nijom mano", bases: [{ word: "বাড়ির", ref: "bn-0196" }, { word: "মানো", base: "মানা", reading: "māno" }] }
-      - { target: "এই বাড়িতে এটাই নিয়ম।", reading: "ei bāṛite eṭāi niyom.", ipa: "ei baɽit̪e eʈai nijom", bases: [{ word: "বাড়িতে", ref: "bn-0196" }, { word: "এটাই", base: "এটা", reading: "eṭāi" }] }
+      - { target: "এই বাড়িতে এটাই নিয়ম।", reading: "ei bāṛite eṭāi niyom.", ipa: "ei baɽit̪e eʈai nijom", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বাড়িতে", ref: "bn-0196" }, { word: "এটাই", base: "এটা", reading: "eṭāi" }] }
   - id: "bn-2285"
     target: "গাছ"
     reading: "gāch"
