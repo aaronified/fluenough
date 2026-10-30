@@ -5620,6 +5620,40 @@
   "@settingsReminderTime": {
     "description": "Screen-reader label of the reminder time."
   },
+  "reminderNotificationTitle": "Time to practise",
+  "@reminderNotificationTitle": {
+    "description": "Title of the daily reminder notification. It never names a word or a language: a notification shows on the lock screen."
+  },
+  "reminderNotificationBody": "{count, plural, =1{1 card is due for review} other{{count} cards are due for review}}",
+  "@reminderNotificationBody": {
+    "description": "Text of the daily reminder notification: how many cards are due by the end of that day. Only the number, no card content, as it shows on the lock screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reminderChannelName": "Daily reminder",
+  "@reminderChannelName": {
+    "description": "Name of the daily reminder's notification channel, as the phone's own notification settings list it."
+  },
+  "reminderChannelDescription": "One reminder a day, on days with cards due.",
+  "@reminderChannelDescription": {
+    "description": "What the daily reminder's notification channel is for, under its name in the phone's own notification settings."
+  },
+  "reminderRefusedTitle": "Notifications are off",
+  "@reminderRefusedTitle": {
+    "description": "Title of the dialog shown when the learner switches the daily reminder on but the phone does not allow the app to show notifications."
+  },
+  "reminderRefusedBody": "The daily reminder needs notifications. Allow them for this app in your phone's settings, then switch the reminder on again. It stays off until then.",
+  "@reminderRefusedBody": {
+    "description": "Body of the dialog under reminderRefusedTitle: says how to allow notifications and that the switch stays off."
+  },
+  "reminderOpenSettings": "Open settings",
+  "@reminderOpenSettings": {
+    "description": "Button in the notifications-are-off dialog: opens the phone's notification settings for this app."
+  },
   "settingsPinLock": "PIN lock",
   "@settingsPinLock": {
     "description": "Switch: ask for a PIN."

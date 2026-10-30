@@ -299,7 +299,7 @@ Future<void> pumpWrapped(
       body: Center(
         child: Builder(
           builder: (context) => IncomingFeature(
-            feature: Feature.reminder,
+            feature: Feature.pinLock,
             label: AppLocalizations.of(context)!.settingsReminder,
             child: _Live(onPressed: onPressed),
           ),
@@ -1101,6 +1101,15 @@ void main() {
   });
 
   group('incoming features', () {
+    test('the daily reminder is shipped, so its row is live', () {
+      expect(Feature.available, contains(Feature.reminder));
+      expect(
+        const FeatureRegistry.shipped().isIncoming(Feature.reminder),
+        isFalse,
+      );
+      expect(Feature.available, isNot(contains(Feature.pinLock)));
+    });
+
     Future<List<bool>> pumpToggle(
       WidgetTester tester,
       FeatureRegistry features,
@@ -1121,7 +1130,7 @@ void main() {
                     subtitleOff: l10n.settingsReminderOff,
                     value: false,
                     onChanged: changes.add,
-                    feature: Feature.reminder,
+                    feature: Feature.pinLock,
                   ),
                 ],
               );

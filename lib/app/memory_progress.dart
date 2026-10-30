@@ -527,6 +527,39 @@ extension ProgressQueries on ProgressStore {
           entry.key.cardId,
     }.length;
   }
+
+  /// Distinct cards due by the end of each of the next [days] calendar days,
+  /// the forecast the daily reminder is planned from (#90). Index 0 is today
+  /// and counts every card due by the end of today, those already due
+  /// included; index 1 is tomorrow, and so on, so the list never falls: a card
+  /// stays due until it is answered. Only the pairs [counts] accepts, when
+  /// given. New cards are not counted: only reviews are "due".
+  List<int> dueByDay(
+    DateTime now, {
+    int days = 7,
+    bool Function(ProgressKey key)? counts,
+  }) {
+    final today = dateOnly(now);
+    final ends = <DateTime>[for (var i = 1; i <= days; i++) addDays(today, i)];
+    // The first day each card is due by, over its pairs.
+    final firstDay = <String, int>{};
+    for (final entry in states.entries) {
+      if (!(counts?.call(entry.key) ?? true)) continue;
+      final dueAt = entry.value.dueAt;
+      final day = ends.indexWhere(dueAt.isBefore);
+      if (day < 0) continue;
+      final known = firstDay[entry.key.cardId];
+      if (known == null || day < known) firstDay[entry.key.cardId] = day;
+    }
+    final byDay = List<int>.filled(days, 0);
+    for (final day in firstDay.values) {
+      byDay[day]++;
+    }
+    for (var i = 1; i < days; i++) {
+      byDay[i] += byDay[i - 1];
+    }
+    return byDay;
+  }
 }
 
 /// [ProgressQueries.streakAt] over [log], which may be part of a store's:

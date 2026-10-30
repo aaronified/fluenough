@@ -134,10 +134,47 @@ class ApplyTest(unittest.TestCase):
         root = ET.fromstring(text)
         self.assertEqual(
             granted(root),
-            ["android.permission.RECORD_AUDIO", "android.permission.INTERNET"],
+            [
+                "android.permission.RECORD_AUDIO",
+                "android.permission.INTERNET",
+                "android.permission.POST_NOTIFICATIONS",
+                "android.permission.RECEIVE_BOOT_COMPLETED",
+            ],
         )
         actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
         self.assertIn("android.speech.RecognitionService", actions)
+
+    def _the_reminder_can_be_shown_and_survives_a_reboot(self) -> None:
+        # The plugin's own manifest has POST_NOTIFICATIONS but not the boot
+        # permission or the receivers: without them a scheduled reminder
+        # never shows, or is lost at a reboot (#90). And inexact scheduling
+        # means no exact-alarm permission.
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        permissions = granted(root)
+        self.assertIn("android.permission.POST_NOTIFICATIONS", permissions)
+        self.assertIn("android.permission.RECEIVE_BOOT_COMPLETED", permissions)
+        for exact in ("SCHEDULE_EXACT_ALARM", "USE_EXACT_ALARM"):
+            self.assertNotIn(f"android.permission.{exact}", permissions)
+        receivers = {
+            e.get(NAME): e for e in root.findall("application/receiver")
+        }
+        plugin = "com.dexterous.flutterlocalnotifications."
+        self.assertEqual(
+            sorted(receivers),
+            [
+                plugin + "ScheduledNotificationBootReceiver",
+                plugin + "ScheduledNotificationReceiver",
+            ],
+        )
+        for receiver in receivers.values():
+            self.assertEqual(
+                receiver.get(f"{ANDROID}exported"), "false", "never exported"
+            )
+        boot = receivers[plugin + "ScheduledNotificationBootReceiver"]
+        actions = [a.get(NAME) for a in boot.findall("intent-filter/action")]
+        self.assertIn("android.intent.action.BOOT_COMPLETED", actions)
+        self.assertIn("android.intent.action.MY_PACKAGE_REPLACED", actions)
 
     def _the_text_to_speech_engine_is_declared(self) -> None:
         # Android 11+ shows the app no TTS engine without the query, so
@@ -271,6 +308,7 @@ class ApplyTest(unittest.TestCase):
     def test_the_microphone_speech_internet_and_share_provider_are_declared(self) -> None:
         cases = (
             self._the_microphone_and_the_recogniser_are_declared,
+            self._the_reminder_can_be_shown_and_survives_a_reboot,
             self._the_text_to_speech_engine_is_declared,
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,
