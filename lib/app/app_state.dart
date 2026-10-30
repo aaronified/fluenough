@@ -35,6 +35,7 @@ import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
+import '../core/grading/synonym_sets.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
 import '../core/models/situation.dart';
@@ -75,6 +76,7 @@ import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
+import 'synonym_loader.dart';
 import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
@@ -195,6 +197,7 @@ class AppState extends ChangeNotifier {
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
     this.deckDownloads,
+    this._synonymLoader,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -532,6 +535,29 @@ class AppState extends ChangeNotifier {
   /// ADR-0037). Has its own notifier. Null where decks do not download, as
   /// in tests and the gallery: the catalog's decks are then all there is.
   final DeckDownloads? deckDownloads;
+
+  /// Reads the bundled synonym sets (ADR-0050); null for none, as in tests.
+  final SynonymLoader? _synonymLoader;
+  SynonymSets _synonyms = SynonymSets.empty;
+  Future<void>? _synonymsLoading;
+
+  /// The English synonym sets, [SynonymSets.empty] until [warmSynonyms] has
+  /// read them: an answer given before then is graded without them.
+  SynonymSets get synonyms => _synonyms;
+
+  /// Starts reading the synonym sets, once. Never throws: a file that cannot
+  /// be read is no sets.
+  void warmSynonyms() {
+    final load = _synonymLoader;
+    if (load == null) return;
+    _synonymsLoading ??= () async {
+      try {
+        _synonyms = await load();
+      } catch (_) {
+        _synonyms = SynonymSets.empty;
+      }
+    }();
+  }
 
   final TtsEngine _tts;
 
