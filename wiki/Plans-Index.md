@@ -33,6 +33,7 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
 - [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline
+- [Synonym Dictionary](Plan-Synonym-Dictionary): synonym sets for typed English meanings
 - [Test Cut](Plan-Test-Cut): cut the tests down to behaviour
 - [Web Pwa](Plan-Web-Pwa): Fluenough on the web, as a PWA on GitHub Pages
 - [Word Order Tiles](Plan-Word-Order-Tiles): word-order tiles without giveaways, and with extra tiles
