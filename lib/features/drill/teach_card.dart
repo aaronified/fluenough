@@ -6,6 +6,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/card_picture.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
@@ -161,7 +162,7 @@ class TeachCard extends StatelessWidget {
         child: Material(
           type: MaterialType.transparency,
           child: InkWell(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppRadii.field),
             onTap: () => showDictionary(context, card, language),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -174,7 +175,7 @@ class TeachCard extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: scheme.secondaryContainer,
-                      borderRadius: BorderRadius.circular(18),
+                      borderRadius: BorderRadius.circular(AppRadii.field),
                     ),
                     child: CardPicture(card, size: 32),
                   ),
@@ -404,7 +405,7 @@ class _NewPill extends StatelessWidget {
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: scheme.tertiaryContainer,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -446,7 +447,7 @@ class _IpaButton extends StatelessWidget {
       child: Material(
         type: MaterialType.transparency,
         child: InkWell(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(AppRadii.card),
           onTap: onPressed,
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
@@ -508,7 +509,7 @@ class _FormsTable extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLowest,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Padding(
         padding: const EdgeInsetsDirectional.symmetric(

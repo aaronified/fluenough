@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The day's session runs on a clock, not on a fixed set of cards (#886): the time is the minutes a day, the header shows a ticking countdown of the time left in place of the card count, and the clock pauses while one screen has been showing for more than 30 seconds. It builds a round at a time, reviews and new words in the ratio the time left asks for; with nothing due it teaches up to 15 new words, asks each twice with older reviews mixed in, and fills the rest of the time with the cards closest to due. Teach cards now record their time, which counts toward the day's minutes and the hours.
+
+### Added
+
+- The app removes its own junk, at most once a day a few seconds after it starts and again after an update (#493): update APKs other than the one waiting to install, half-written `.part` download files and copies of a backup made for a restore older than a day, and report attachments older than three days. Your backups, decks, progress and settings are never touched, and each run that removes something says so in the app log.
+- The Decks search forgives typos and takes tokens (#527): "travl" finds Travel and "numbrs" the numbers units, looked for only when nothing matches exactly and then marked "Close matches for ..."; `kind:` (words, grammar, script, reading), `status:` (not learnt, learning, learnt, forgetting, struggling, set aside) and `theme:` (this course's themes) become chips inside the bar, with a menu of their values; each result shows its kind as a chip that narrows the search when tapped; the tokens are offered when the search is opened, with the path dimmed behind it, and the first tap on ✕ clears while the next closes; a theme may carry search tags (`travel` on transport); a query in a script the course does not read offers to switch course, add a course or add the language to the ones you know; the card list has no cap and is built as it scrolls.
+- The daily reminder (#90): Settings > Reminders has a switch and a time. It shows one notification a day, at the time you pick, on days with cards due, saying only how many are due; tapping it opens Today. Android 13 and later ask to allow notifications when you switch it on, never at launch, and a refusal leaves it off and says how to allow them. It never fires while the app is open, and is scheduled inexactly, so it needs no exact-alarm permission. It adds the `flutter_local_notifications` plugin (agreed with the owner, 2026-10-30).
+- `tools/import_phonetic.py` writes each card's narrow `[ ]` IPA from Wiktionary (the language's kaikki.org dump, downloaded once into the git-ignored `.cache/phonetic/`) into `phonetic`, with `phonetic_source: "wiktionary"`, and `tools/derive_phonetic.py` derives it by the rules in `decks/<lang>/<lang>-phonetics.yaml` (Bengali, Hindustani, Spanish; kind `phonetics`, checked by the validator, not in the index) for the cards Wiktionary lacks, with `phonetic_source: "rules"`; both patch the deck text and report coverage per deck. No deck has been changed yet.
+
+- Suggest a change has a Place box, last among the boxes: its pencil opens Move this card, which offers only the units of the course's B1 plan that have a deck (a planned one is shown greyed), never free text, and says that a new theme or unit goes by pull request. The review bot applies an agreed move by moving the card, with its layers' entries, to the end of the other deck's files with its id kept, and refuses a unit the path does not list. Editing the Meaning shows the rule that it never changes, and How reviewing works gains a step with the five reviewer rules, in `docs/REVIEWING.md` too (#477).
+
+### Changed
+
+- Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
+- Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
+
+### Fixed
+
+- Opening the app replays the review log once, not twice, and reads it from the database once, not three times, so it opens sooner for a learner with a long history (#857). The numbers shown do not change.
+- Opening the app no longer freezes the first screens while every downloaded deck's YAML is read: the decks are parsed on a background isolate (#875). Nothing a learner sees changes but the wait.
+
 ## [0.6.8] - 2026-10-30
 
 ### Changed
@@ -15,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `wiki/Roadmap.md` is now generated by `tools/generate_roadmap.py` and the Roadmap workflow, from the GitHub releases, milestones, approved issues and the plans (#484).
 - When the speaking drill fails for want of a network, the app now says why: it asks `raw.githubusercontent.com` and `connectivitycheck.gstatic.com` once, with no body, cookies or headers of ours, and tells offline, GitHub blocked, Google unreachable and a failed recognition service apart.
 
 ### Fixed

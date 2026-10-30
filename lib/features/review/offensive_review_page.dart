@@ -157,7 +157,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
             child: ExcludeSemantics(
               child: LinearProgressIndicator(
                 value: total == 0 ? 0 : rated / total,
-                borderRadius: BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(AppRadii.mark),
               ),
             ),
           ),
@@ -543,7 +543,7 @@ class _WordRow extends StatelessWidget {
               child: MergeSemantics(
                 child: InkWell(
                   onTap: onOpen,
-                  borderRadius: BorderRadius.circular(AppRadii.small),
+                  borderRadius: BorderRadius.circular(AppRadii.field),
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 56),
                     child: Padding(
@@ -643,7 +643,7 @@ class _PairRow extends StatelessWidget {
               child: MergeSemantics(
                 child: InkWell(
                   onTap: onOpen,
-                  borderRadius: BorderRadius.circular(AppRadii.small),
+                  borderRadius: BorderRadius.circular(AppRadii.field),
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 56),
                     child: Padding(

@@ -1,0 +1,177 @@
+schema: 1
+id: "fr-en-phrasebook"
+kind: "layer"
+core: "fr-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Twenty-four things to say from the first day, before their words are taught: courtesy phrases (hello, thank you, please, good evening, good night, sorry), survival phrases (I don't understand, I don't speak French, where are the toilets, how much is this) and the verbs to be, to have and to speak, with water. Not yet checked by a French speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+cards:
+  "fr-0001":
+    native: "hello; good morning"
+    bases:
+      "bonjour": "hello"
+  "fr-0002":
+    native: "thank you"
+    bases:
+      "merci": "thank you"
+  "fr-0003":
+    native: "please"
+    bases:
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-0004":
+    native: "good evening"
+    bases:
+      "bonsoir": "good evening"
+  "fr-0005":
+    native: "good night"
+    notes:
+      "n1": "Bonne is the feminine of bon (good). The feminine says the n that bon hides: bonne is said bɔn, while bon is said bɔ̃, with a nasal vowel. Bonne nuit is said at bedtime, to someone who is going to sleep."
+    bases:
+      "nuit": "night"
+  "fr-0006":
+    native: "goodbye"
+    bases:
+      "au": "to; at"
+      "revoir": "to see again"
+  "fr-0007":
+    native: "excuse me"
+    bases:
+      "excusez": "to excuse"
+      "moi": "me"
+  "fr-0008":
+    native: "sorry; pardon me"
+    bases:
+      "pardon": "pardon"
+  "fr-0009":
+    native: "I don't understand"
+    bases:
+      "ne": "not"
+      "comprends": "to understand"
+      "pas": "not"
+  "fr-0010":
+    native: "I don't speak French"
+    bases:
+      "ne": "not"
+      "pas": "not"
+      "français": "French"
+  "fr-0011":
+    native: "Please speak more slowly."
+    bases:
+      "plus": "more"
+      "lentement": "slowly"
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-0012":
+    native: "How do you say this?"
+    bases:
+      "dit": "to say"
+      "on": "one; people"
+      "ça": "this; that"
+  "fr-0013":
+    native: "Where are the toilets?"
+    bases:
+      "toilettes": "toilet"
+  "fr-0014":
+    native: "How much does this cost?"
+    bases:
+      "ça": "this; that"
+      "coûte": "to cost"
+  "fr-0015":
+    native: "I would like a coffee, please."
+    bases:
+      "voudrais": "to want"
+      "un": "a; one"
+      "café": "coffee"
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-0016":
+    native: "I'm sorry."
+    bases:
+      "désolé": "sorry"
+  "fr-0017":
+    native: "My name is Paul."
+    bases:
+      "m'appelle": "to be called"
+      "Paul": "Paul (a first name)"
+  "fr-0018":
+    native: "Do you speak English?"
+    bases:
+      "anglais": "English"
+  "fr-0019":
+    native: "I don't know."
+    bases:
+      "ne": "not"
+      "sais": "to know"
+      "pas": "not"
+  "fr-0020":
+    native: "Have a good day."
+    bases:
+      "journée": "day"
+  "fr-0021":
+    native: "to be"
+    notes:
+      "n1": "Être is the verb to be. It is used for what someone is: je suis (I am), il est (he is), nous sommes (we are). Its forms change more than most verbs."
+    bases:
+      "être": "to be"
+    examples:
+      "Je suis très bien.":
+        native: "I am very well."
+        bases:
+          "suis": "to be"
+      "Il est ici.":
+        native: "He is here."
+        bases:
+          "est": "to be"
+  "fr-0022":
+    native: "to have"
+    notes:
+      "n1": "Avoir is to have. Its forms are the auxiliary of the past too: j'ai parlé (I have spoken)."
+    bases:
+      "avoir": "to have"
+    examples:
+      "J'ai faim.":
+        native: "I am hungry."
+        bases:
+          "J'ai": "to have"
+          "faim": "hunger"
+      "Nous avons beaucoup de temps.":
+        native: "We have a lot of time."
+        bases:
+          "avons": "to have"
+          "de": "of"
+          "temps": "time"
+  "fr-0023":
+    native: "to speak"
+    notes:
+      "n1": "Parler is to speak. Its present forms follow the regular -er pattern: je parle, vous parlez."
+    bases:
+      "parler": "to speak"
+    examples:
+      "Je parle un peu français.":
+        native: "I speak a little French."
+        bases:
+          "parle": "to speak"
+          "un": "a; one"
+          "peu": "a little"
+          "français": "French"
+      "Vous parlez bien.":
+        native: "You speak well."
+        bases:
+          "parlez": "to speak"
+  "fr-0024":
+    native: "water"
+    notes:
+      "n1": "Eau is feminine, and before it the article is l' (l'eau). The plural is les eaux."
+    examples:
+      "Je voudrais de l'eau.":
+        native: "I would like some water."
+        bases:
+          "voudrais": "to want"
+          "de": "some; of"
+          "l'eau": "water"
+      "L'eau est bonne.":
+        native: "The water is good."
+        bases:
+          "L'eau": "water"

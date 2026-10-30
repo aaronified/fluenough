@@ -86,7 +86,7 @@ SCRIPT_BLOCKS = {
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
-         "reading", "rules", "layer", "resources"}
+         "reading", "rules", "layer", "resources", "phonetics"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
@@ -126,7 +126,12 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
 NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
-                  "resources"}
+                  "resources", "phonetics"}
+# A language's phonetic rules (tools/derive_phonetic.py): the ordered rules
+# that turn a card's broad `ipa` into its narrow `phonetic`. Only the tool
+# reads it; the index does not list it and the app never fetches it.
+PHONETICS_KEYS = {"schema", "kind", "id", "language", "variety", "description", "rules"}
+PHONETIC_RULE_KEYS = {"id", "pattern", "replace", "source"}
 # A language's resources file (#832): where else to learn it. At most this
 # many suggestions, a line of at most this many characters each.
 RESOURCES_KEYS = {"schema", "kind", "id", "language", "resources"}
@@ -290,7 +295,7 @@ NUMBERED_RE = re.compile(r"\{([0-9]+)\}")
 RESERVED_CORES = {"facts": "facts file", "numbers": "number rules",
                   "romanisation": "romanisation file", "script": "script guide",
                   "sounds": "sounds file", "path": "path",
-                  "resources": "resources file"}
+                  "resources": "resources file", "phonetics": "phonetic rules file"}
 UNIT_KEYS = {"decks", "planned", "words", "grammar", "milestone",
              "listening_passages", "reading_passages"}
 PLANNED_KEYS = {"id", "theme", "grammar", "words"}
@@ -2122,6 +2127,64 @@ def check_resources_file(r: Report, raw: dict, path: Path) -> None:
             r.error(where, f"url must be an https address, got {url!r}")
 
 
+def check_phonetics_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/<lang>/<lang>-phonetics.yaml: the ordered rules that turn a card's
+    broad `ipa` into its narrow `phonetic` (tools/derive_phonetic.py). Each
+    rule is a regular expression, its replacement and the source that
+    attests it."""
+    for unknown in sorted(set(raw) - PHONETICS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r}")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not _is_str(lang) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code, {_code_error(lang)}")
+        lang = None
+    elif path.stem != f"{lang}-phonetics" or raw.get("id") != path.stem:
+        r.error("id", f"a phonetic rules file is {lang}-phonetics.yaml with id "
+                      f"{lang}-phonetics")
+    if not _is_str(raw.get("variety")) or not raw["variety"].strip():
+        r.error("variety", "is required: the variety the rules describe, in a line")
+    rules = raw.get("rules")
+    if not isinstance(rules, list) or not rules:
+        r.error("rules", "must be a non-empty list")
+        return
+    seen: set[str] = set()
+    for i, rule in enumerate(rules):
+        where = f"rules[{i}]"
+        if not isinstance(rule, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(rule) - PHONETIC_RULE_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        rid = rule.get("id")
+        if not _is_str(rid) or not re.fullmatch(
+                r"[a-z]{2,3}-[a-z0-9]+(?:-[a-z0-9]+)*", rid):
+            r.error(where, f"id must be the language and a name, as "
+                           f"{lang or 'xx'}-n-velar, got {rid!r}")
+        elif lang is not None and not rid.startswith(f"{lang}-"):
+            r.error(where, f"id {rid!r} must start with {lang}-")
+        elif rid in seen:
+            r.error(where, f"id {rid!r} is used twice")
+        else:
+            seen.add(rid)
+        pattern = rule.get("pattern")
+        if not _is_str(pattern) or not pattern:
+            r.error(where, "pattern is required: a regular expression")
+        else:
+            try:
+                re.compile(pattern)
+            except re.error as e:
+                r.error(where, f"pattern {pattern!r} is not a regular expression: {e}")
+        if not isinstance(rule.get("replace"), str):
+            r.error(where, "replace is required text (it may be empty)")
+        source = rule.get("source")
+        if not _is_str(source) or len(source.strip()) < 10:
+            r.error(where, "source is required: the work that attests the rule, "
+                           "such as an author, a title and a year")
+
+
 def _code_error(value: object) -> str:
     if isinstance(value, bool):
         return (f"got the boolean {value!r} -- YAML read a bare true or false "
@@ -2431,7 +2494,7 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         r.error("part", f'must be "core", or left out on a single-file deck; got '
                         f'{raw["part"]!r}')
 
-    if raw.get("kind") != "romanisation":
+    if raw.get("kind") not in ("romanisation", "phonetics"):
         check_transliterated(r, raw)
 
     if raw.get("kind") == "themes":
@@ -2448,6 +2511,9 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         return r
     if raw.get("kind") == "resources":
         check_resources_file(r, raw, path)
+        return r
+    if raw.get("kind") == "phonetics":
+        check_phonetics_file(r, raw, path)
         return r
     check_romanised(r, raw, path)
     check_ipa(r, raw)
@@ -2617,11 +2683,13 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # "meaning"}` or `{"word", "ref"}`, "" for none. It goes on the entry that
 # holds the base's meaning, a layer's for a core's card, and the review bot
 # writes the core's line with it. `alt_target` is the accepted
-# alternatives, its `now` and `text` JSON lists.
+# alternatives, its `now` and `text` JSON lists. `place` is where a card
+# belongs (#477): its `now` and `text` are core deck ids, and only a core's
+# card has it.
 PROPOSAL_FIELDS = {
     "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
     "ref": ("native", "reading", "ipa", "notes"),
-    "core": ("target", "reading", "ipa", "notes", "alt_target"),
+    "core": ("target", "reading", "ipa", "notes", "alt_target", "place"),
     "core-ref": ("reading", "ipa", "notes"),
     "layer": ("native", "bases"),
     "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
@@ -4439,9 +4507,16 @@ def check_themes_file(r: Report, raw: dict) -> None:
     ids: list[str] = []
     for i, theme in enumerate(themes):
         where = f"themes[{i}]"
-        if not isinstance(theme, dict) or set(theme) - {"id", "name"}:
-            r.error(where, "must be a mapping with only an id and a name")
+        if not isinstance(theme, dict) or set(theme) - {"id", "name", "tags"}:
+            r.error(where, "must be a mapping with an id, a name and optional tags")
             continue
+        tags = theme.get("tags")
+        if tags is not None and (
+            not isinstance(tags, list) or not tags
+            or not all(_is_str(t) and t.strip() for t in tags)
+        ):
+            r.error(where, "tags must be a non-empty list of words (the search "
+                    "finds the theme's decks by them)")
         tid = theme.get("id")
         if not _is_str(tid) or not ID_RE.fullmatch(tid):
             r.error(where, f"id must match [a-z0-9-]+, got {tid!r}")

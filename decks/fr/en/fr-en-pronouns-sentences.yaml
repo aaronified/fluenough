@@ -1,0 +1,61 @@
+schema: 1
+id: "fr-en-pronouns-sentences"
+kind: "layer"
+core: "fr-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: pronouns and people words"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences with the pronouns, possessives and demonstratives of Pronouns and people words, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0150":
+    native: "She speaks very well."
+    confusables:
+      "they-men": { why: "Ils means they, for men; the sentence is about one woman." }
+      "me": { why: "Moi means me, not she." }
+  "fr-0151":
+    native: "We are friends."
+    confusables:
+      "you-formal": { why: "Vous means you, not we." }
+      "one": { why: "On can mean we in speech, but nous is the plain word for we." }
+  "fr-0152":
+    native: "They are in the station."
+    bases:
+      "la": "the"
+    confusables:
+      "they-women": { why: "Elles means they, for women only; this group includes men." }
+      "here": { why: "Ici means here, not in the station." }
+  "fr-0153":
+    native: "My friend likes milk."
+    bases:
+      "aime": "to like"
+      "le": "the"
+    confusables:
+      "my-feminine": { why: "Ma is my before a feminine noun; the friend here is masculine." }
+      "his": { why: "Son means his or her before a masculine noun, so it does not mean my." }
+  "fr-0154":
+    native: "Our train leaves tomorrow."
+    bases:
+      "part": "to leave"
+    confusables:
+      "your": { why: "Votre means your, for a person you address; notre means our." }
+      "their": { why: "Leur means their; the train here is ours." }
+  "fr-0155":
+    native: "This street is quiet."
+    bases:
+      "calme": "quiet"
+    confusables:
+      "that": { why: "Cela means that; the sentence names a street, so cette is used." }
+      "his": { why: "Son means his or her, not this." }
+  "fr-0156":
+    native: "That costs a lot."
+    bases:
+      "coûte": "to cost"
+    confusables:
+      "how-much": { why: "Combien asks how much; this sentence says that it costs a lot." }
+      "this-feminine": { why: "Cette means this before a feminine noun; cela stands alone." }
+  "fr-0157":
+    native: "You and me, we speak."
+    confusables:
+      "him": { why: "Lui means him, not me." }
+      "them": { why: "Eux means them, the plural; the sentence has one other person." }

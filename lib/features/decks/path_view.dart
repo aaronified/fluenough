@@ -365,7 +365,7 @@ class _UnitNode extends StatelessWidget {
       color: bg,
       elevation: status == UnitStatus.upNext ? 2 : 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppRadii.tile),
+        borderRadius: BorderRadius.circular(AppRadii.field),
         side: status == UnitStatus.ahead
             ? BorderSide(color: scheme.outlineVariant)
             : BorderSide.none,
@@ -390,7 +390,7 @@ class _UnitNode extends StatelessWidget {
                         : BoxShape.rectangle,
                     borderRadius: status == UnitStatus.upNext
                         ? null
-                        : BorderRadius.circular(12),
+                        : BorderRadius.circular(AppRadii.chip),
                   ),
                   child: leading,
                 ),
@@ -451,7 +451,7 @@ class _UnitNode extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: scheme.inverseSurface,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(AppRadii.control),
                 ),
                 child: Text(
                   l10n.pathUpNext,
@@ -497,7 +497,7 @@ class _DueDot extends StatelessWidget {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: scheme.error,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
         border: Border.all(color: scheme.surface, width: 2),
       ),
       child: Text(
@@ -529,7 +529,7 @@ class _ComingNode extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 64),
         padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 14, 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppRadii.tile),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           border: Border.all(color: scheme.outline, width: 1.5),
         ),
         child: Row(
@@ -539,7 +539,7 @@ class _ComingNode extends StatelessWidget {
               height: 40,
               decoration: BoxDecoration(
                 color: scheme.surfaceContainerHigh,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppRadii.chip),
               ),
               child: Icon(
                 Icons.more_horiz,

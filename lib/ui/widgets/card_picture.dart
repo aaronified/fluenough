@@ -38,6 +38,7 @@ class CardPicture extends StatelessWidget {
     final drawn = file == null
         ? emoji
         : ClipRRect(
+            // Follows the picture's size on purpose.
             borderRadius: BorderRadius.circular(size / 8),
             child: Image.file(
               File(file),

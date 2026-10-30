@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-reading-shopping"
+name: "Reading: prices and bargaining"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about a market: a bargain at a stall, and a shop’s price list. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-bargaining"
+    title: "Bargaining at a stall"
+    theme: "shopping"
+    sentences:
+      - { text: "यह कितने का है?", reading: "yah kitnē kā hai?", ipa: "jəɦ kɪt̪neː kaː ɦɛː" }
+      - { text: "पचास का है।", reading: "pacās kā hai.", ipa: "pətʃaːs kaː ɦɛː" }
+      - { text: "थोड़ा कम कीजिए।", reading: "thōṛā kam kījiē.", ipa: "t̪ʰoːɽaː kəm kiːdʒɪeː" }
+      - { text: "ठीक है, चालीस दे दो।", reading: "ṭhīk hai, cālīs dē dō.", ipa: "ʈʰiːk ɦɛː tʃaːliːs d̪eː d̪oː" }
+    questions:
+      - id: "hi-1424"
+        prompt: { en: "The first price is fifty rupees." }
+        answer: true
+      - id: "hi-1425"
+        prompt: { en: "What is the buyer’s final offer?" }
+        options:
+          - { en: "Forty rupees" }
+          - { en: "Fifty rupees" }
+        answer: 1
+      - id: "hi-1426"
+        prompt: { en: "The buyer wants the price to go up." }
+        answer: false
+  - id: "hi-price-list"
+    title: "A shop’s price list"
+    theme: "shopping"
+    sentences:
+      - { text: "चावल: चालीस रुपया।", reading: "cāval: cālīs rupyā.", ipa: "tʃaːʋəl tʃaːliːs rʊpjaː" }
+      - { text: "दूध: पचास रुपया।", reading: "dūdh: pacās rupyā.", ipa: "d̪uːd̪ʱ pətʃaːs rʊpjaː" }
+      - { text: "आज सब सामान पर बीस छूट है।", reading: "āj sab sāmān par bīs chūṭ hai.", ipa: "aːdʒ səb saːmaːn pər biːs tʃʰuːʈ ɦɛː" }
+      - { text: "पुराना नोट नहीं चलता।", reading: "purānā nōṭ nahīm̐ caltā.", ipa: "pʊraːnaː noːʈ nəɦĩː tʃəlt̪aː" }
+    questions:
+      - id: "hi-1427"
+        prompt: { en: "Rice costs forty rupees." }
+        answer: true
+      - id: "hi-1428"
+        prompt: { en: "What is the discount?" }
+        options:
+          - { en: "Ten per cent" }
+          - { en: "Twenty per cent" }
+        answer: 2
+      - id: "hi-1429"
+        prompt: { en: "Old notes are accepted." }
+        answer: false

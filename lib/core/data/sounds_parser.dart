@@ -2,6 +2,7 @@ import 'package:yaml/yaml.dart';
 
 import '../models/sound_contrasts.dart';
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 const _fields = {
   'schema',
@@ -41,7 +42,7 @@ SoundContrasts _parse(
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text.startsWith('﻿') ? text.substring(1) : text);
+    root = loadYamlTree(text.startsWith('﻿') ? text.substring(1) : text);
   } on YamlException catch (e) {
     throw bad('not valid YAML: ${e.message}');
   }

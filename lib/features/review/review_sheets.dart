@@ -9,6 +9,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/proposal.dart';
 import '../../core/review/deck_review.dart';
+import '../../core/review/move_targets.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
@@ -19,6 +20,7 @@ import '../decks/card_top_line.dart';
 import '../decks/checked_by_line.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
+import 'move_sheet.dart';
 import 'proposal_card.dart';
 import 'review_words.dart';
 import 'suggest_bases.dart';
@@ -65,6 +67,7 @@ String? partText(Card card, CardPart part, {String? word}) => switch (part) {
   CardPart.picture => card.picture,
   CardPart.base => inlineBaseOf(card, word)?.meaning,
   CardPart.alt => card.altTarget.isEmpty ? null : card.altTarget.join('\n'),
+  CardPart.place => card.deckId,
 };
 
 /// [card]'s base written in full for [word], the word as it stands in its
@@ -115,6 +118,7 @@ String partName(AppLocalizations l10n, CardPart part) => switch (part) {
   CardPart.picture => l10n.reviewPartPicture,
   CardPart.base => l10n.reviewPartBase,
   CardPart.alt => l10n.reviewPartAlt,
+  CardPart.place => l10n.reviewPartPlace,
 };
 
 /// What a suggestion on [part] is about, by name: [partName], or for a base
@@ -342,7 +346,7 @@ class CardFace extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: Column(
                 children: <Widget>[
@@ -417,7 +421,7 @@ class _RudeFacts extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(14),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -477,7 +481,7 @@ class _AlikeFound extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
         decoration: BoxDecoration(
           color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -691,6 +695,15 @@ class SuggestSheet extends StatefulWidget {
   static Key chipKey(int index, String word) =>
       ValueKey<String>('suggest-newbase-chip-$index-$word');
 
+  /// The rule shown above the Meaning field while it is edited (#477).
+  static const Key meaningRuleKey = ValueKey<String>('suggest-meaning-rule');
+
+  /// The Place box's pencil, which opens Move this card.
+  static const Key placeKey = ValueKey<String>('suggest-place');
+
+  /// The Place box's why field, once a unit is chosen.
+  static const Key placeWhyKey = ValueKey<String>('suggest-place-why');
+
   /// "Add a base".
   static const Key addBaseKey = ValueKey<String>('suggest-add-base');
 
@@ -782,6 +795,12 @@ class _SuggestSheetState extends State<SuggestSheet> {
   /// The bases being added, in the order they were opened.
   final List<_BaseEdit> _added = <_BaseEdit>[];
 
+  /// The unit the card is moved to, once chosen (#477): its deck's id and
+  /// its name as shown, with the why.
+  String? _moveTo;
+  String? _moveLabel;
+  final TextEditingController _moveWhy = TextEditingController();
+
   /// Whether the old word stays an accepted answer, once a new word is
   /// suggested: ticked at first, and the reviewer may untick it.
   bool _keepAlt = true;
@@ -792,7 +811,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
 
   late final List<_Part> _parts = <_Part>[
     for (final part in CardPart.values)
-      if (part != CardPart.base && part != CardPart.alt)
+      if (part != CardPart.base &&
+          part != CardPart.alt &&
+          part != CardPart.place)
         (part: part, word: null),
   ];
 
@@ -822,6 +843,12 @@ class _SuggestSheetState extends State<SuggestSheet> {
         _added.add(_fieldsFor(word, s.base!, s.why, link: true));
       }
     }
+    if (_saved.where((s) => s.part == CardPart.place).firstOrNull
+        case final move?) {
+      _moveTo = move.text;
+      _moveLabel = move.label ?? move.text;
+      _moveWhy.text = move.why;
+    }
     _keepAlt =
         !_saved.any((s) => s.part == CardPart.word) ||
         _saved.any((s) => s.part == CardPart.alt);
@@ -841,6 +868,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       for (final e in _added) ...e.all,
       ..._baseRemoved.values,
       ..._retired,
+      _moveWhy,
     ]) {
       c.dispose();
     }
@@ -982,6 +1010,19 @@ class _SuggestSheetState extends State<SuggestSheet> {
     );
   }
 
+  /// The move suggested for the card, once saved, or null (#477).
+  Suggestion? _placeResult() {
+    final to = _moveTo;
+    if (to == null || to == widget.card.deckId) return null;
+    return Suggestion(
+      part: CardPart.place,
+      now: widget.card.deckId,
+      text: to,
+      label: _moveLabel,
+      why: _moveWhy.text.trim(),
+    );
+  }
+
   /// The new word suggested for the card, once saved, or null.
   String? get _newWord => _resultOn(_wordPart)?.text;
 
@@ -1071,6 +1112,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
     ?_altResult(),
     for (final b in _bases) ?_baseResult(l10n, b),
     for (final edit in _added) ?_addResult(l10n, edit),
+    ?_placeResult(),
     for (final s in _saved)
       if (!_shows(s)) s,
   ];
@@ -1243,6 +1285,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   ),
                 ),
               const SizedBox(height: 8),
+              _placeBox(context),
+              const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
                 child: Text(l10n.reviewSuggestKept, style: muted),
@@ -1282,7 +1326,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       decoration: BoxDecoration(
         color: outlined ? null : scheme.surfaceContainerHigh,
         border: outlined ? Border.all(color: scheme.outline) : null,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1390,6 +1434,10 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   ],
                 ),
               ),
+              if (p.part == CardPart.meaning) ...<Widget>[
+                const SizedBox(height: 12),
+                const _MeaningRule(key: SuggestSheet.meaningRuleKey),
+              ],
               const SizedBox(height: 12),
               TextField(
                 key: SuggestSheet.textKey(p.part, word: p.word),
@@ -1399,7 +1447,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
                 onChanged: (_) => setState(() {}),
                 decoration: InputDecoration(
                   labelText: l10n.reviewSuggestYours,
-                  border: const OutlineInputBorder(),
+                  border: AppRadii.fieldBorder,
                 ),
               ),
               const SizedBox(height: 12),
@@ -1411,10 +1459,131 @@ class _SuggestSheetState extends State<SuggestSheet> {
                 onChanged: (_) => setState(() {}),
                 decoration: InputDecoration(
                   labelText: l10n.reviewSuggestWhy,
-                  border: const OutlineInputBorder(),
+                  border: AppRadii.fieldBorder,
                 ),
               ),
             ],
+    );
+  }
+
+  /// The units the card may be moved to: the course path's, with the
+  /// planned ones shown but not offered (#477). Empty when the course has
+  /// no path on the phone.
+  List<MoveTarget> _moveTargets() {
+    final path = _state.pathOf(widget.deck);
+    if (path == null) return const <MoveTarget>[];
+    DeckEntry? deck(String id) =>
+        _state.reviewDeckById(id) ?? _state.deckById(id);
+    return moveTargets(
+      path,
+      from: widget.card.deckId,
+      nameOf: (id) => deck(id)?.deck.name,
+      // A card is never moved into the offensive words: they are rated apart.
+      isVocab: (id) =>
+          deck(id)?.deck.kind == DeckKind.vocab &&
+          !deck(id)!.deck.tags.contains('offensive'),
+    );
+  }
+
+  /// "Unit 7 · About me": where the card is now.
+  String _placeNow(AppLocalizations l10n) {
+    final path = _state.pathOf(widget.deck);
+    final unit = path == null ? null : unitNumberOf(path, widget.card.deckId);
+    final name = widget.deck.deck.name;
+    return unit == null ? name : l10n.reviewPlaceUnit(unit, name);
+  }
+
+  Future<void> _chooseMove() async {
+    final l10n = AppLocalizations.of(context)!;
+    final targets = _moveTargets();
+    final pick = await showMoveSheet(
+      context,
+      targets: targets,
+      languageName: widget.deck.language.name,
+      chosen: _moveTo,
+    );
+    if (pick == null || !mounted) return;
+    setState(() {
+      _moveTo = pick.deckId;
+      _moveLabel = l10n.reviewPlaceUnit(pick.unit, pick.name);
+    });
+  }
+
+  /// PLACE (#477): the card's unit, last among the boxes. Its pencil opens
+  /// Move this card, which offers only the units of the course's B1 plan,
+  /// never free text; the unit chosen shows under it with its own why, and
+  /// a button to take the move back.
+  Widget _placeBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final name = partName(l10n, CardPart.place);
+    final to = _moveTo;
+    final moving = to != null && to != widget.card.deckId;
+    return _box(
+      outlined: moving,
+      label: _label(name, const <String>[]),
+      actions: <Widget>[
+        if (!moving)
+          IconButton(
+            key: SuggestSheet.placeKey,
+            onPressed: _chooseMove,
+            tooltip: l10n.reviewSuggestEditPart(name),
+            icon: const Icon(Icons.edit_outlined),
+          ),
+      ],
+      body: <Widget>[
+        Text(_placeNow(l10n), style: theme.textTheme.bodyLarge),
+        if (moving) ...<Widget>[
+          const SizedBox(height: 12),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: MergeSemantics(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        l10n.reviewPlaceMoveTo,
+                        style: theme.textTheme.bodySmall!.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                      Text(_moveLabel ?? to, style: theme.textTheme.bodyLarge),
+                    ],
+                  ),
+                ),
+              ),
+              IconButton(
+                onPressed: _chooseMove,
+                tooltip: l10n.reviewSuggestEditPart(name),
+                icon: const Icon(Icons.edit_outlined),
+              ),
+              IconButton(
+                onPressed: () => setState(() {
+                  _moveTo = null;
+                  _moveLabel = null;
+                  _moveWhy.clear();
+                }),
+                tooltip: l10n.reviewSuggestRemove(name),
+                icon: const Icon(Icons.delete_outline),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          TextField(
+            key: SuggestSheet.placeWhyKey,
+            controller: _moveWhy,
+            minLines: 1,
+            maxLines: 3,
+            onChanged: (_) => setState(() {}),
+            decoration: InputDecoration(
+              labelText: l10n.reviewSuggestWhy,
+              border: const OutlineInputBorder(),
+            ),
+          ),
+        ],
+      ],
     );
   }
 
@@ -1509,7 +1678,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
             onChanged: (_) => setState(() {}),
             decoration: InputDecoration(
               labelText: l10n.reviewSuggestWhy,
-              border: const OutlineInputBorder(),
+              border: AppRadii.fieldBorder,
             ),
           ),
         ],
@@ -1694,7 +1863,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       padding: const EdgeInsetsDirectional.fromSTEB(12, 8, 0, 8),
       decoration: BoxDecoration(
         color: scheme.primaryContainer,
-        borderRadius: BorderRadius.circular(AppRadii.innerRow),
+        borderRadius: BorderRadius.circular(AppRadii.control),
       ),
       child: Row(
         children: <Widget>[
@@ -1920,11 +2089,11 @@ class _Scale extends StatelessWidget {
                   ? scheme.primary
                   : scheme.surfaceContainerHighest,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
               ),
               child: InkWell(
                 onTap: () => onChosen(n),
-                borderRadius: BorderRadius.circular(AppRadii.small),
+                borderRadius: BorderRadius.circular(AppRadii.field),
                 child: SizedBox.square(
                   dimension: 48,
                   // The label above says "4 of 9"; the bare number is not
@@ -1973,7 +2142,7 @@ class _Choice extends StatelessWidget {
       button: true,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 48),
           child: Row(
@@ -2114,7 +2283,7 @@ class _AlikeSheetState extends State<AlikeSheet> {
               labelText: l10n.reviewAlikeCare,
               hintText: l10n.reviewAlikeCareHint,
               helperText: l10n.reviewAlikeCareHelp,
-              border: const OutlineInputBorder(),
+              border: AppRadii.fieldBorder,
             ),
             buildCounter:
                 (
@@ -2132,6 +2301,48 @@ class _AlikeSheetState extends State<AlikeSheet> {
           ),
         ],
       ],
+    );
+  }
+}
+
+/// Rule 2 above the Meaning field while it is edited (#477, docs/plans/
+/// reviewing-scope.md): the meaning never changes, and a card in the wrong
+/// place is moved under Place instead.
+class _MeaningRule extends StatelessWidget {
+  const _MeaningRule({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: scheme.tertiaryContainer,
+        borderRadius: BorderRadius.circular(AppRadii.chip),
+      ),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.all(12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: <Widget>[
+            Icon(
+              Icons.info_outline,
+              size: 18,
+              color: scheme.onTertiaryContainer,
+            ),
+            Expanded(
+              child: Text(
+                l10n.reviewMeaningRule,
+                style: theme.textTheme.bodyMedium!.copyWith(
+                  color: scheme.onTertiaryContainer,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

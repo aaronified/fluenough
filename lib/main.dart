@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -12,11 +13,15 @@ import 'app/backup_store.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
+import 'app/file_snapshot_store.dart';
+import 'app/junk_cleanup.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
+import 'app/plugin_reminder_scheduler.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/system_settings.dart';
 import 'core/decks/deck_fetch.dart';
@@ -53,12 +58,34 @@ Future<void> main() async {
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
   final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  // The daily reminder's notifications (#90). Without them the reminder's
+  // switch stays off.
+  ReminderScheduler reminderScheduler = const NullReminderScheduler();
+  try {
+    reminderScheduler = await PluginReminderScheduler.start();
+  } catch (e) {
+    log.warning('Reminder error: start failed: $e');
+  }
   runApp(
     FluenoughApp(
       state: AppState(
         catalog: DeckCatalog(
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
           added: FileDeckStore(Directory('${files.path}/decks')),
+          parser: parseInIsolate,
+          // The decks' YAML, kept as JSON between launches and read again
+          // only for a file whose SHA-256 changed (#875, ADR-0048).
+          snapshots: CatalogSnapshots(
+            store: FileSnapshotStore(
+              File('${files.path}/catalog-snapshot.json'),
+            ),
+            app: AppInfo.version,
+            knownShas: () async => <String, String>{
+              for (final e in (await downloaded.manifest()).entries)
+                e.key: e.value.sha256,
+            },
+            runner: runJobInIsolate,
+          ),
         ),
         deckDownloads: DeckDownloads(
           fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
@@ -75,6 +102,7 @@ Future<void> main() async {
         soundCheck: SystemSoundCheck(),
         networkProbe: SystemNetworkProbe(),
         systemSettings: const ChannelSystemSettings(),
+        reminderScheduler: reminderScheduler,
         reports: MailReportSender(
           address: AppLinks.feedbackEmail,
           links: const LauncherLinks(),
@@ -94,5 +122,19 @@ Future<void> main() async {
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),
     ),
+  ); // Junk (old update files, half-written downloads, stale report
+  // attachments) is cleaned once a day, a little after the first frame so
+  // that it never delays the start (#493).
+  final junk = JunkCleanup(
+    files: DiskJunkFiles(
+      updates: Directory('${files.path}/ota_update'),
+      downloads: downloaded.directory,
+      cache: cache,
+    ),
+    stamp: FileJunkStamp(File('${files.path}/junk-cleanup.stamp')),
+    log: log,
+    version: AppInfo.version,
+    hasPending: () => storage.settings.pendingUpdate != null,
   );
+  unawaited(Future<void>.delayed(const Duration(seconds: 15), junk.runIfDue));
 }

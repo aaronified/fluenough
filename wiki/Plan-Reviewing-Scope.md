@@ -5,6 +5,8 @@ Source of truth: this wiki page.
 
 Written 2026-10-11, for 0.5.0 (owner, 2026-10-16: "we must get the deck and review pipeline ready in this week's 0.5.0 build"). Tracks #476 and #477.
 
+Built: Place, the meaning rule and the rules step (#477, 2026-10-30). A move names core deck ids in the proposal's `now` and `text` (`place` field, a core's card only); the bot reads the review file's course deck ids as their cores, and moves the entry in the core and in each layer. A unit the plan lists but has no deck for is shown greyed, not offered.
+
 ## What the owner asked
 
 > The overall meaning must not change. This is the direction that reviewers

@@ -50,7 +50,7 @@ class KeyboardHint extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(14, 10, 10, 10),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadii.small),
+        borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       child: Row(
         crossAxisAlignment: large

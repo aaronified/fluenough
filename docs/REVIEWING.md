@@ -23,6 +23,23 @@ right, which are wrong and what they should say, and how rude a word really
 sounds to native speakers. A review by a native speaker is the most useful
 thing anyone can give these decks.
 
+## The rules
+
+1. **Be bilingual.** Review a course only if you know both its languages, the
+   one taught and the one it is taught from, and read both scripts.
+2. **The meaning never changes.** You may say a card better: a more common
+   word, another register, a correct spelling. You may not make it say
+   something else: "Good morning" never becomes "goodbye". If the card is in
+   the wrong place, move it (rule 4) or say so in Why; do not rewrite it.
+3. **Review the content and the logic.** That is each card's word, reading,
+   IPA, meaning, notes, example and base words, and also whether a card
+   belongs in its unit, whether the units come in a sensible order, and
+   whether a grammar note is right.
+4. **Suggest where a card belongs.** Under **Place** in Suggest a change, move
+   it to another unit or theme the course's B1 plan already has.
+5. **New themes go by pull request.** A theme, or a unit the plan does not
+   have, is added to the deck on GitHub, not in the app.
+
 ## Your code and languages
 
 1. Open **Settings**, find the **Reviewing** group and turn on **Review decks**.
@@ -89,6 +106,15 @@ checked the whole unit.
   word stays an accepted answer unless you untick it, and the notes and
   example are marked **Check**. All of it is sent as one review, and goes
   into the deck together once the new word is agreed.
+- **Where a card belongs.** **Place** is the last box of the sheet: the
+  card's unit, as the course's B1 plan lists it. Its pencil opens **Move this
+  card**, which offers the units of that plan with a deck, and nothing else:
+  it is never free text, and a unit the plan has but no deck is written for
+  is greyed, "Planned: no deck yet". Pick the unit and say why. A theme or
+  unit the plan does not have is a pull request on GitHub, not a move. If
+  agreed, the card goes to the other unit with its id kept, so learners keep
+  their progress.
+- **The meaning.** Editing the Meaning shows rule 2 above the field.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
