@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../core/sound/sound_check.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/hint.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'onboarding_step.dart';
 import 'spoken_step.dart';
@@ -257,12 +258,15 @@ class _RecordButton extends StatelessWidget {
               color: recording ? scheme.tertiary : scheme.primary,
               shape: const CircleBorder(),
               clipBehavior: Clip.antiAlias,
-              child: InkWell(
-                onTap: onPressed,
-                child: Icon(
-                  Icons.mic,
-                  size: 48,
-                  color: recording ? scheme.onTertiary : scheme.onPrimary,
+              child: Hint(
+                message: l10n.hintRecord,
+                child: InkWell(
+                  onTap: onPressed,
+                  child: Icon(
+                    Icons.mic,
+                    size: 48,
+                    color: recording ? scheme.onTertiary : scheme.onPrimary,
+                  ),
                 ),
               ),
             ),

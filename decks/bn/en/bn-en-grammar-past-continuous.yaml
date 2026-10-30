@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-past-continuous"
+kind: "layer"
+core: "bn-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past continuous"
+description: "I was doing, she was going: what was happening at a time in the past. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Past continuous"
+  slot_name: "person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "bola": "to say"
+  notes: "Take the present continuous (করছি (kôrchi), যাচ্ছি (jācchi)) and change its ending -ছি (-chi) to -ছিলাম (-chilām): আমি করছিলাম (kôrchilām) is I was doing. The endings are -ছিলাম (-chilām), -ছিলি (-chili), -ছিলে (-chile), -ছিলেন (-chilen) and -ছিল (-chil); the verb changes for person and for respect, never for gender or number, so আমি (āmi) and আমরা (āmorā) take the same form. The stem changes from the base word: করা (kôrā) gives করছ- (kôrch-), and যাওয়া (jāoā) gives যাচ্ছ- (jācch-), as in the present continuous. The past continuous describes an action going on at a time in the past, not one that is finished."

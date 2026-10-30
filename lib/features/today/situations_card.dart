@@ -209,6 +209,7 @@ class _SituationButton extends StatelessWidget {
     final button = Material(
       color: colors.container,
       borderRadius: BorderRadius.circular(AppRadii.field),
+      // hint-ok: shows text
       child: InkWell(
         borderRadius: BorderRadius.circular(AppRadii.field),
         onTap: spec.onTap,
