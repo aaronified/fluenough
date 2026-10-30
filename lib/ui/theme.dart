@@ -16,7 +16,7 @@ const String interfaceFontFamily = 'Roboto';
 /// contrast level, with [ModeColors.lightHigh] or [ModeColors.darkHigh].
 /// Pure black makes the dark theme's background black, for OLED screens;
 /// cards, bars and sheets keep their tones, so they still stand out.
-/// Component shapes and sizes follow the design: 56 px stadium buttons, 10 px
+/// Component shapes and sizes follow the design: 56 px stadium buttons, 12 px
 /// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
   // A theme is worked out once for what it reads (#854): a settings change
@@ -158,6 +158,9 @@ abstract final class AppTheme {
           ),
         ),
       ),
+      elevatedButtonTheme: const ElevatedButtonThemeData(
+        style: ButtonStyle(shape: WidgetStatePropertyAll(stadium)),
+      ),
       iconButtonTheme: const IconButtonThemeData(
         style: ButtonStyle(
           minimumSize: WidgetStatePropertyAll(Size.square(AppSizes.iconButton)),
@@ -204,7 +207,22 @@ abstract final class AppTheme {
           borderRadius: BorderRadius.circular(AppRadii.card),
         ),
       ),
+      bottomSheetTheme: const BottomSheetThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(AppRadii.sheet),
+          ),
+        ),
+      ),
+      dialogTheme: DialogThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.dialog),
+        ),
+      ),
       listTileTheme: ListTileThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.control),
+        ),
         titleTextStyle: text.titleMedium!.copyWith(color: scheme.onSurface),
         subtitleTextStyle: text.bodyMedium!.copyWith(
           color: scheme.onSurfaceVariant,
@@ -316,25 +334,41 @@ abstract final class AppSizes {
   static const double textInset = 8;
 }
 
-/// Corner radii from the design.
+/// The app's corner radii: one scale (4, 8, 12, 16, 24, 32, 40, plus a
+/// stadium for anything whose radius follows its size), and one token for
+/// each role. A widget takes the token of its role; it never writes a number
+/// (`test/corner_radii_test.dart` fails if one does).
+///
+/// Nested shapes are concentric: an inner corner is the outer radius minus the
+/// gap between the two, so a 24 card with 16 of padding holds an 8 control.
+///
+/// A radius that follows a size (a progress bar's half thickness, a round
+/// button, a glyph tile's `size * 0.32`) is not a token: it is written as that
+/// formula on purpose, or as a [StadiumBorder], with a comment that says so.
 abstract final class AppRadii {
-  /// Inner corners of a row inside a group.
-  static const double innerRow = 6;
+  /// Thin marks: bars, swatches and legend dots a few pixels across.
+  static const double mark = 4;
 
-  /// Chips.
-  static const double chip = 10;
+  /// Small controls, and the inner rows of a group.
+  static const double control = 8;
 
-  /// Text fields, SnackBars, glyph tiles.
-  static const double small = 16;
+  /// Chips and small inline panels.
+  static const double chip = 12;
 
-  /// Stat tiles, the answer field.
-  static const double tile = 20;
+  /// Text fields, SnackBars, stat tiles, glyph tiles, rows.
+  static const double field = 16;
 
-  /// Cards and settings groups.
+  /// Cards.
   static const double card = 24;
 
-  /// Outer corners of a group of rows.
-  static const double group = 28;
+  /// Settings groups (the outer corners of a group of rows).
+  static const double group = 24;
+
+  /// Dialogs.
+  static const double dialog = 24;
+
+  /// Bottom sheets.
+  static const double sheet = 32;
 
   /// Today's due card.
   static const double hero = 32;
