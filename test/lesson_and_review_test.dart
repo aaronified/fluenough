@@ -87,7 +87,6 @@ import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
-import 'package:fluenough/ui/widgets/bar_row.dart';
 import 'package:fluenough/ui/widgets/braille_keyboard.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
@@ -95,6 +94,7 @@ import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/ipa_line.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
+import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -5251,52 +5251,87 @@ cards:
   });
 
   group('the summary', () {
+    testWidgets('the summary\'s skill scores come from the session, and Done '
+        'returns to Today', (tester) async {
+      usePhone(tester);
+      await pumpScreen(tester, SummaryPage(result: fiveAnswers));
+      final l10n = l10nOf(tester);
+
+      expect(find.text(l10n.summaryTitle), findsOneWidget);
+      // No history before this session in AppState.test.
+      expect(statFor(tester, l10n.summaryStreak(0)), '0');
+
+      for (final (label, correct, total) in <(String, int, int)>[
+        (l10n.skillRecognition, 2, 2),
+        (l10n.skillProduction, 1, 2),
+        (l10n.skillListening, 1, 1),
+      ]) {
+        expect(
+          find.bySemanticsLabel(
+            l10n.summaryScoreSemantics(label, correct, total),
+          ),
+          findsOneWidget,
+          reason: label,
+        );
+      }
+      expect(find.byType(ModePill), findsNWidgets(3));
+      expect(find.text(l10n.summaryNextDue(0)), findsOneWidget);
+
+      usePhone(tester);
+      final state = await pumpApp(tester);
+      state.shellTab.value = ShellTab.decks;
+      await tester.pumpAndSettle();
+      Navigator.of(tester.element(find.byType(AppShell)))
+          .pushNamed(AppRoutes.summary, arguments: fiveAnswers);
+      await tester.pumpAndSettle();
+      expect(find.byType(SummaryPage), findsOneWidget);
+
+      await tapVisibleSummaryPage(tester, find.text(l10nOf(tester).commonDone));
+      expect(find.byType(SummaryPage), findsNothing);
+      expect(state.shellTab.value, ShellTab.today);
+    });
     testWidgets(
-      'the summary\'s totals and scores come from the session, and Done '
-      'returns to Today',
+      'the result shows a pill per skill answered with its right of answered, '
+      'at 1.4x text',
       (tester) async {
-        usePhone(tester);
+        usePhone(tester, textScale: 1.4);
         await pumpScreen(tester, SummaryPage(result: fiveAnswers));
         final l10n = l10nOf(tester);
 
-        expect(find.text(l10n.summaryTitle), findsOneWidget);
-        expect(find.text(l10n.summaryLine(5, 4)), findsOneWidget);
-        expect(statFor(tester, l10n.summaryCorrect), l10n.commonPercent(0.8));
-        expect(statFor(tester, l10n.summaryMinutes(3)), '3');
-        // No history before this session in AppState.test.
-        expect(statFor(tester, l10n.summaryStreak(0)), '0');
-
-        for (final (label, correct, total) in <(String, int, int)>[
-          (l10n.skillRecognition, 2, 2),
-          (l10n.skillProduction, 1, 2),
-          (l10n.skillListening, 1, 1),
-        ]) {
-          expect(
-            find.bySemanticsLabel(
-              l10n.summaryScoreSemantics(label, correct, total),
-            ),
-            findsOneWidget,
-            reason: label,
-          );
-        }
-        expect(find.byType(BarRow), findsNWidgets(3));
-        expect(find.text(l10n.summaryNextDue(0)), findsOneWidget);
-
-        usePhone(tester);
-        final state = await pumpApp(tester);
-        state.shellTab.value = ShellTab.decks;
-        await tester.pumpAndSettle();
-        Navigator.of(tester.element(find.byType(AppShell)))
-            .pushNamed(AppRoutes.summary, arguments: fiveAnswers);
-        await tester.pumpAndSettle();
-        expect(find.byType(SummaryPage), findsOneWidget);
-
-        await tapVisibleSummaryPage(
-          tester,
-          find.text(l10nOf(tester).commonDone),
+        expect(
+          tester
+              .widgetList<ModePill>(find.byType(ModePill))
+              .map((p) => p.skill),
+          <Skill>[Skill.recognition, Skill.production, Skill.listening],
         );
-        expect(find.byType(SummaryPage), findsNothing);
-        expect(state.shellTab.value, ShellTab.today);
+        expect(find.text(l10n.summaryScore(2, 2)), findsOneWidget);
+        expect(find.text(l10n.summaryScore(1, 2)), findsOneWidget);
+        expect(find.text(l10n.summaryScore(1, 1)), findsOneWidget);
+        expect(find.text(l10n.summaryEmpty), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'a session with no graded answer shows no pills and says so, at 1.4x '
+      'text',
+      (tester) async {
+        usePhone(tester, textScale: 1.4);
+        await pumpScreen(
+          tester,
+          SummaryPage(
+            result: SessionResult(
+              answers: const <SessionAnswer>[],
+              startedAt: nowSummaryPage.subtract(const Duration(minutes: 3)),
+              endedAt: nowSummaryPage,
+            ),
+          ),
+        );
+        final l10n = l10nOf(tester);
+
+        expect(find.byType(ModePill), findsNothing);
+        expect(find.text(l10n.summaryEmpty), findsOneWidget);
+        expect(tester.takeException(), isNull);
       },
     );
   });

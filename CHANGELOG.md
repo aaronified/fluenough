@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The session result shows how each skill did, one pill per skill answered in its icon and colour with "3 right of 4" beside it (#486); a session with no graded answer shows no pills and says so. The minutes, card count and percentage are gone, since the countdown already tells the time.
 - Opening the app replays the review log once, not twice, and reads it from the database once, not three times, so it opens sooner for a learner with a long history (#857). The numbers shown do not change.
 - Opening the app no longer freezes the first screens while every downloaded deck's YAML is read: the decks are parsed on a background isolate (#875). Nothing a learner sees changes but the wait.
 

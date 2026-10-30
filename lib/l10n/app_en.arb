@@ -3836,34 +3836,6 @@
       }
     }
   },
-  "summaryLine": "{cards, plural, =1{1 card} other{{cards} cards}} · {correct} correct",
-  "@summaryLine": {
-    "description": "Under the summary's heading.",
-    "placeholders": {
-      "cards": {
-        "type": "int",
-        "example": "8"
-      },
-      "correct": {
-        "type": "int",
-        "example": "7"
-      }
-    }
-  },
-  "summaryCorrect": "correct",
-  "@summaryCorrect": {
-    "description": "Label under the percentage correct."
-  },
-  "summaryMinutes": "{count, plural, =1{minute} other{minutes}}",
-  "@summaryMinutes": {
-    "description": "Label under the minutes spent, which are shown separately. The count only picks the form.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "4"
-      }
-    }
-  },
   "summaryStreak": "{count, plural, =1{day streak} other{day streak}}",
   "@summaryStreak": {
     "description": "Label under the streak, which is shown separately. The count only picks the form.",
@@ -3874,9 +3846,9 @@
       }
     }
   },
-  "summaryScore": "{correct}/{total}",
+  "summaryScore": "{correct} right of {total}",
   "@summaryScore": {
-    "description": "A skill's score in the summary.",
+    "description": "A skill's score beside its pill in the summary: the right answers of those answered.",
     "placeholders": {
       "correct": {
         "type": "int",
