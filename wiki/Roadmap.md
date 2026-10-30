@@ -58,7 +58,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-22 approved open issues.
+23 approved open issues.
 
 **Enhancements**
 
@@ -87,6 +87,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
 - [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
+- [#918](https://github.com/aaronified/fluenough/issues/918) Deck search: "open the picker at that course" does nothing on the new Languages page
 
 ### 0.8.0
 
@@ -136,7 +137,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#483](https://github.com/aaronified/fluenough/issues/483) Sound: notice when the phone's media volume is 0 and say so
-- [#487](https://github.com/aaronified/fluenough/issues/487) App update: a downloaded APK whose install was cancelled is downloaded again
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re

@@ -209,11 +209,17 @@ Future<_Fakes> _pump(
   usePhone(tester, textScale: textScale);
   final engine = FixedReleaseCheck(answer, gate: gate);
   final links = FixedLinks();
-  final installer = FixedApkInstaller(events, gate: installGate);
+  final files = MemoryDownloadStore();
+  final installer = FixedApkInstaller(events, gate: installGate, files: files);
   final state = await pumpScreen(
     tester,
     const UpdatesPage(),
-    state: AppState.test(releases: engine, links: links, installer: installer),
+    state: AppState.test(
+      releases: engine,
+      links: links,
+      installer: installer,
+      downloads: files,
+    ),
     themeMode: themeMode,
   );
   await _show(tester);
@@ -447,6 +453,228 @@ void main() {
         await Future.wait(<Future<void>>[updates.install(), updates.install()]);
         expect(installer.asked, hasLength(1));
       });
+
+      group('a cancelled install (#487)', () {
+        const apk = UpdateChecker.apkFileName;
+
+        /// A checker whose first download finished and opened Android's
+        /// installer, which the learner then closed.
+        Future<(UpdateChecker, FixedApkInstaller, MemoryDownloadStore)>
+        cancelled(LatestRelease answer) async {
+          final files = MemoryDownloadStore()..sizes[apk] = 5000;
+          final (updates, _, installer) = checker(answer, const <InstallEvent>[
+            InstallEvent.downloading(100),
+            InstallEvent.installing(),
+          ], files: files);
+          await updates.checkAndInstall();
+          expect(updates.status, UpdateStatus.installing);
+          updates.appResumed();
+          expect(updates.status, UpdateStatus.downloaded);
+          return (updates, installer, files);
+        }
+
+        test('is Downloaded, not installed, and Install opens the installer '
+            'on the same file with no download', () async {
+          final (updates, installer, files) = await cancelled(
+            LatestRelease(_newer),
+          );
+          await updates.installDownloaded();
+          expect(installer.asked, hasLength(1), reason: 'no second download');
+          expect(installer.reopened, <String>[apk]);
+          expect(updates.status, UpdateStatus.installing);
+          expect(files.deleted, isEmpty);
+          expect(updates.settings.pendingUpdate, _newer);
+        });
+
+        test('Try again and Download use the kept file too', () async {
+          final (updates, installer, _) = await cancelled(
+            LatestRelease(_newer),
+          );
+          await updates.checkAndInstall();
+          expect(installer.asked, hasLength(1));
+          expect(installer.reopened, <String>[apk]);
+        });
+
+        test(
+          'the backup runs once, with the download, not on Install',
+          () async {
+            final backedUp = <String>[];
+            final files = MemoryDownloadStore();
+            final installer = FixedApkInstaller(const <InstallEvent>[
+              InstallEvent.installing(),
+            ], files: files);
+            final updates = UpdateChecker(
+              engine: FixedReleaseCheck(LatestRelease(_newer)),
+              settings: SettingsNotifier(),
+              clock: () => _now,
+              installer: installer,
+              downloads: files,
+              backUp: (version) async => backedUp.add(version),
+            );
+            addTearDown(updates.dispose);
+            addTearDown(updates.settings.dispose);
+            await updates.checkAndInstall();
+            updates.appResumed();
+            await updates.installDownloaded();
+            await updates.installDownloaded();
+            expect(backedUp, <String>[_newer]);
+            expect(installer.reopened, hasLength(2));
+          },
+        );
+
+        test(
+          'a kept file of another size is deleted and downloaded again',
+          () async {
+            final (updates, installer, files) = await cancelled(
+              LatestRelease(_newer),
+            );
+            files.sizes[apk] = 12;
+            await updates.installDownloaded();
+            expect(files.deleted, <String>[apk]);
+            expect(installer.asked, hasLength(2));
+            expect(installer.reopened, isEmpty);
+            expect(updates.status, UpdateStatus.installing);
+          },
+        );
+
+        test('a kept file that is gone is downloaded again', () async {
+          final (updates, installer, files) = await cancelled(
+            LatestRelease(_newer),
+          );
+          files.names.clear();
+          await updates.installDownloaded();
+          expect(installer.asked, hasLength(2));
+          expect(installer.reopened, isEmpty);
+        });
+
+        test('a kept file whose SHA-256 is not the release\'s is downloaded '
+            'again; one that matches is reused', () async {
+          final sha = 'ab' * 32;
+          final (updates, installer, files) = await cancelled(
+            LatestRelease(_newer, apkSha256: sha),
+          );
+          files.hashes[apk] = 'cd' * 32;
+          await updates.installDownloaded();
+          expect(installer.asked, hasLength(2));
+          expect(installer.asked.last.sha256, sha);
+          expect(installer.reopened, isEmpty);
+
+          files.hashes[apk] = sha;
+          await updates.checkAndInstall();
+          expect(installer.asked, hasLength(2));
+          expect(installer.reopened, <String>[apk]);
+        });
+
+        test('after a restart a kept file is reused only if its SHA-256 '
+            'matches, and downloaded again otherwise', () async {
+          final sha = 'ab' * 32;
+          for (final (kept, reused) in <(String?, bool)>[
+            (sha, true),
+            ('cd' * 32, false),
+            (null, false),
+          ]) {
+            final files = MemoryDownloadStore(<String>[apk]);
+            if (kept != null) files.hashes[apk] = kept;
+            final (updates, _, installer) = checker(
+              LatestRelease(_newer, apkSha256: sha),
+              const <InstallEvent>[InstallEvent.installing()],
+              files: files,
+            );
+            await updates.checkAndInstall();
+            expect(installer.reopened, reused ? <String>[apk] : isEmpty);
+            expect(installer.asked, hasLength(reused ? 0 : 1));
+          }
+        });
+
+        test('after a restart with no checksum from GitHub a kept file is '
+            'reused if it is the asset\'s size, this version\'s, and the file '
+            'whose SHA-256 was recorded', () async {
+          final recorded = 'ab' * 32;
+          for (final (size, hash, pending, reused)
+              in <(int, String?, String?, bool)>[
+                (5000, recorded, _newer, true),
+                (4999, recorded, _newer, false),
+                (5000, 'cd' * 32, _newer, false),
+                (5000, null, _newer, false),
+                (5000, recorded, null, false),
+              ]) {
+            final files = MemoryDownloadStore(<String>[apk])
+              ..sizes[apk] = size
+              ..hashes[apk] = recorded;
+            if (hash != null) files.texts[apk] = hash;
+            final (updates, _, installer) = checker(
+              LatestRelease(_newer, apkSize: 5000),
+              const <InstallEvent>[InstallEvent.installing()],
+              files: files,
+            );
+            updates.settings.pendingUpdate = pending;
+            await updates.checkAndInstall();
+            expect(
+              installer.reopened,
+              reused ? <String>[apk] : isEmpty,
+              reason: '$size $hash $pending',
+            );
+            expect(installer.asked, hasLength(reused ? 0 : 1));
+          }
+        });
+
+        test('a download that finishes records its SHA-256 for a later '
+            'launch', () async {
+          final files = MemoryDownloadStore()
+            ..sizes[apk] = 5000
+            ..hashes[apk] = 'ab' * 32;
+          final (updates, _, _) = checker(
+            LatestRelease(_newer),
+            const <InstallEvent>[InstallEvent.installing()],
+            files: files,
+          );
+          await updates.checkAndInstall();
+          expect(files.texts[apk], 'ab' * 32);
+        });
+
+        test('a kept file of an older release is replaced by the newer '
+            'one\'s download', () async {
+          final files = MemoryDownloadStore()..sizes[apk] = 5000;
+          final (updates, engine, installer) = checker(
+            LatestRelease(_newer),
+            const <InstallEvent>[InstallEvent.installing()],
+            files: files,
+          );
+          await updates.checkAndInstall();
+          updates.appResumed();
+          engine.answer = const LatestRelease('99.0.0');
+          await updates.checkAndInstall();
+          expect(installer.asked, hasLength(2));
+          expect(installer.reopened, isEmpty);
+          expect(updates.settings.pendingUpdate, '99.0.0');
+        });
+
+        test(
+          'Delete download removes the file and offers the update again',
+          () async {
+            final (updates, _, files) = await cancelled(LatestRelease(_newer));
+            await updates.deleteDownload();
+            expect(files.names, isEmpty);
+            expect(updates.settings.pendingUpdate, isNull);
+            expect(updates.status, UpdateStatus.available);
+          },
+        );
+
+        test('the file is deleted once the update has installed', () async {
+          final (updates, _, files) = await cancelled(LatestRelease(_newer));
+          final after = UpdateChecker(
+            engine: const NullReleaseCheck(),
+            settings: updates.settings,
+            clock: () => _now,
+            downloads: files,
+            current: _newer,
+          );
+          addTearDown(after.dispose);
+          await after.forgetInstalledDownload();
+          expect(files.deleted, <String>[apk]);
+          expect(updates.settings.pendingUpdate, isNull);
+        });
+      });
     });
 
     group('the download, after the update', () {
@@ -643,6 +871,28 @@ void main() {
 
       await pumpAndCheck(1.0);
       await pumpAndCheck(1.4);
+    });
+
+    testWidgets('a cancelled install shows Downloaded, not installed, with '
+        'Install and Delete download, never Try again (#487)', (tester) async {
+      final fakes = await _pump(tester, LatestRelease(_newer));
+      final l10n = l10nOf(tester);
+      await _tap(tester, find.text(l10n.settingsUpdateCheck));
+      await _tap(tester, find.text(l10n.settingsUpdateDownload));
+      expect(find.text(l10n.settingsUpdateInstalling(_newer)), findsOneWidget);
+
+      // Android's installer closes and the learner is back in the app.
+      fakes.state.updates.appResumed();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.settingsUpdateDownloaded(_newer)), findsOneWidget);
+      expect(find.text(l10n.commonRetry), findsNothing);
+      expect(find.text(l10n.settingsUpdateDownload), findsNothing);
+      expect(find.text(l10n.settingsUpdateDeleteDownload), findsOneWidget);
+
+      await _tap(tester, find.text(l10n.settingsUpdateInstall));
+      expect(fakes.installer.asked, hasLength(1), reason: 'no new download');
+      expect(fakes.installer.reopened, <String>[UpdateChecker.apkFileName]);
+      expect(find.text(l10n.settingsUpdateInstalling(_newer)), findsOneWidget);
     });
 
     testWidgets('each install failure says why, with Try again and the '
