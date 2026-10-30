@@ -8,9 +8,10 @@ Source of truth: this wiki page.
 Each is the spec for its screen. Don't rewrite one without the owner's
 approval.
 
-- `session-result-and-hours.html`: the session result's count line,
-  correct share and minutes (#486), and hours spent and hours left on
-  Progress (#227). Approved by the owner, 2026-10-12.
+- `session-result-and-hours.html`: hours spent and hours left on
+  Progress (#227). Approved by the owner, 2026-10-12. Its session result
+  (count line, correct share, minutes) is superseded: the result shows only
+  a pill per skill with its right of answered (#486, owner, 2026-10-30).
 - `settings.html`: Settings as a short list of section pages, with every
   planned change folded in: Sources in Your languages (#469); Look and
   language as the Look screen with an App language row, English only until

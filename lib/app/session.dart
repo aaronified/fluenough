@@ -1,6 +1,5 @@
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/script_split.dart';
-import '../core/scheduling/study_hours.dart';
 import 'skill.dart';
 
 /// What a drill session should cover. Passed to the drill route, which asks
@@ -250,27 +249,6 @@ class SessionResult {
   int get total => answers.length;
 
   int get correct => answers.where((a) => a.correct).length;
-
-  /// Correct answers as a fraction, 0–1, or 0 for an empty session.
-  double get accuracy => total == 0 ? 0 : correct / total;
-
-  Duration get elapsed => endedAt.difference(startedAt);
-
-  /// The time spent: each timed answer's time, capped as hours spent caps it
-  /// (#227), so a pause or the app in the background adds nothing. A result
-  /// whose answers are not timed gives the time between start and end.
-  Duration get spent {
-    if (answers.every((a) => a.time == null)) return elapsed;
-    var sum = Duration.zero;
-    for (final a in answers) {
-      sum += StudyHours.capped(a.time ?? Duration.zero);
-    }
-    return sum;
-  }
-
-  /// Whole minutes spent, rounded, and at least 1 for any session.
-  int get minutes =>
-      total == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
 
   /// One score per skill drilled, in [Skill] order; skills not drilled are
   /// left out.
