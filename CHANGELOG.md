@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Situations on Today (#724): six buttons, each in a colour of its own, open sheets of key phrases and words for everyday moments, with unlearned cards marked, Practise this sheet, and an inspect view of each card. A situations file per language lists real card ids (`kind: situations`, checked by the validator); Telugu has a first taxi sheet, and courses without sheets show the buttons dimmed with an Upcoming pill.
+- Situations on Today (#724): six buttons, each in a colour of its own, open sheets of key phrases and words for everyday moments, with unlearned cards marked, Practise this sheet, and an inspect view of each card. A situations file per language lists real card ids (`kind: situations`, checked by the validator); Telugu has a first taxi sheet, and courses without sheets show the buttons dimmed with an Upcoming pill. A sheet's session teaches at most nine new cards at once, and Practise is off, with the reason beneath it, when nothing on the sheet can be taught or revised. The index lists the file under its own `situations` key, so the released app never sees it.
 
 ### Changed
 

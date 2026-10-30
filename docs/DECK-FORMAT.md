@@ -3459,6 +3459,15 @@ language's files), listed once per situation. A card may be on several
 situations. A course whose language has no situations file shows the
 Situations buttons dimmed with an "Upcoming" pill.
 
+**In the index.** The file is listed in `decks/index.json` under its own key,
+`situations`, apart from `files` (as `script_guides` are), because the
+released app has no case for `kind: situations` and would show it as a broken
+deck. The app that knows the key reads it as one of the language's files and
+downloads it with the decks; an older app never sees it. A situations
+file is counted in the language's `size`. The `situations:` key belongs to a
+situations file only, and a language has one file, named
+`<code>-situations.yaml`; the validator refuses anything else.
+
 ---
 
 ## Resources files

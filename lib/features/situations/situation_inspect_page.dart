@@ -68,11 +68,14 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
               children: <Widget>[
                 for (final (i, c) in cards.indexed)
                   Semantics(
+                    button: true,
+                    selected: i == index,
                     label: c.isNew
                         ? '${l10n.situationCardJump(i + 1)}, '
                               '${l10n.situationNotLearnt}'
                         : l10n.situationCardJump(i + 1),
                     excludeSemantics: true,
+                    onTap: () => setState(() => _index = i),
                     child: ChoiceChip(
                       selected: i == index,
                       onSelected: (_) => setState(() => _index = i),

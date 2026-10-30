@@ -53,6 +53,15 @@ class SituationPage extends StatelessWidget {
     final all = <SheetCard>[...phrases, ...words];
     final fresh = all.any((c) => c.isNew);
     final ids = <String>{for (final c in all) c.card.id};
+    // Nothing to teach or revise right now leaves the button off, with the
+    // reason beneath it.
+    final canPractise =
+        all.isNotEmpty &&
+        state
+            .sheetSession(
+              DrillRequest.sheet(ids, language: language, revise: !fresh),
+            )
+            .isNotEmpty;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -107,15 +116,37 @@ class SituationPage extends StatelessWidget {
       bottomNavigationBar: all.isEmpty
           ? null
           : BottomActions(
-              child: FilledButton(
-                style: AppButtonStyles.tall(context),
-                onPressed: () => AppNavigator.startDrill(
-                  context,
-                  DrillRequest.sheet(ids, language: language, revise: !fresh),
-                ),
-                child: Text(
-                  fresh ? l10n.situationPractise : l10n.situationRevise,
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  FilledButton(
+                    style: AppButtonStyles.tall(context),
+                    onPressed: canPractise
+                        ? () => AppNavigator.startDrill(
+                            context,
+                            DrillRequest.sheet(
+                              ids,
+                              language: language,
+                              revise: !fresh,
+                            ),
+                          )
+                        : null,
+                    child: Text(
+                      fresh ? l10n.situationPractise : l10n.situationRevise,
+                    ),
+                  ),
+                  if (!canPractise) ...<Widget>[
+                    const SizedBox(height: 8),
+                    Text(
+                      l10n.situationNothingToPractise,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
     );
@@ -193,6 +224,7 @@ class _SheetRow extends StatelessWidget {
     final dot = item.isNew
         ? Tooltip(
             message: l10n.situationNotLearnt,
+            excludeFromSemantics: true,
             child: Semantics(
               label: l10n.situationNotLearnt,
               child: Container(

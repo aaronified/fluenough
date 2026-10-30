@@ -14,6 +14,10 @@ import 'unlocks.dart';
 /// has not met it yet.
 typedef SheetCard = ({Card card, DeckEntry deck, bool isNew});
 
+/// How many cards a sheet's session teaches at most, as one lesson teaches up
+/// to nine words: the rest of a long sheet is for the next session.
+const int sheetNewCardsCap = 9;
+
 /// Situation sheets (#724): lists of card ids, resolved against the decks.
 extension SituationState on AppState {
   /// The language Today's situation buttons are for: the one the language
@@ -80,7 +84,8 @@ extension SituationState on AppState {
   /// The items of a sheet's session ([DrillRequest.sheet]): the cards not
   /// taught yet, each taught, checked and practised as a lesson does, then
   /// the cards already taught, revised. With [DrillRequest.revise], the
-  /// revising only.
+  /// revising only. At most [sheetNewCardsCap] new cards are taught in one
+  /// session, in the sheet's order.
   List<SessionItem> sheetSession(DrillRequest request) {
     final language = request.language;
     final ids = request.cardIds;
@@ -101,7 +106,7 @@ extension SituationState on AppState {
                     gate.isOpen(card) &&
                     modesOf(card).isNotEmpty)
                   card,
-            ],
+            ].take(sheetNewCardsCap).toList(),
             modesOf: modesOf,
             canChoose: (card, ask) => canChoose(
               card,

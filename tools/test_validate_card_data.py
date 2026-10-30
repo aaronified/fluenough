@@ -352,14 +352,43 @@ class FactsNameCards(Case):
 
     def _a_situation_has_its_shape(self) -> None:
         taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
-        self.situations(dict(taxi, icon="boat"), dict(taxi, id="cab"),
+        self.situations(taxi, dict(taxi, id="cab"),
                         {"id": "eat", "icon": "eat", "title": {"bn": "x"}})
         errors = self.errors(self.SITUATIONS)
-        self.assertTrue(any("icon must be one of" in e for e in errors))
         self.assertIn("situation cab: icon 'taxi' is on another situation: each button "
                       "has its own", errors)
         self.assertIn("situation eat: title needs an English entry", errors)
         self.assertIn("situation eat: lists no cards: give phrases, words or both", errors)
+
+    def _an_icon_is_one_of_the_six(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(dict(taxi, icon="boat"))
+        self.assertTrue(any("icon must be one of" in e
+                            for e in self.errors(self.SITUATIONS)))
+
+    def _a_situations_file_is_one_per_language_and_named_so(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(taxi)
+        self.assertNoError(self.SITUATIONS, "situations file is")
+        self.put("zz-sheets.yaml", {
+            "schema": 1, "id": "zz-sheets", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": [taxi]})
+        self.assertTrue(any("a situations file is zz-situations.yaml" in e
+                            for e in self.errors("zz-sheets.yaml")))
+        self.put("other/zz-situations.yaml", {
+            "schema": 1, "id": "zz-situations", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": [taxi]})
+        self.assertTrue(any("more than one situations file for zz" in line
+                            for line in self.run_main(self.SITUATIONS,
+                                                      "other/zz-situations.yaml")))
+
+    def _a_situations_key_belongs_to_a_situations_file(self) -> None:
+        self.core(HOUSE)
+        self.edit(CORE, lambda d: d.__setitem__("situations", []))
+        self.assertError(CORE, "situations",
+                         "only valid on a situations file; add kind: situations")
 
     def _a_rank_and_its_source(self) -> None:
         self.core(HOUSE, frequency={"rank": 120, "source": "te.wikipedia.org, 2026-10"})
@@ -401,6 +430,9 @@ class FactsNameCards(Case):
             self._a_card_no_deck_writes,
             self._a_situation_lists_real_cards,
             self._a_situation_has_its_shape,
+            self._an_icon_is_one_of_the_six,
+            self._a_situations_file_is_one_per_language_and_named_so,
+            self._a_situations_key_belongs_to_a_situations_file,
             self._a_rank_and_its_source,
             self._frequency_shape,
             self._a_layer_gives_none,

@@ -588,6 +588,9 @@ class Report:
     # A facts or situations file's language, for the cards it names (#516,
     # #724).
     facts_lang: str | None = None
+    # Set on a situations file: its language's code, for the one file per
+    # language rule (#724).
+    situations_lang: str | None = None
     # The rule ids a card's `rules` names: (rule id, where).
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
@@ -2278,6 +2281,7 @@ def check_situations(r: Report, situations: object, lang: str | None = None) -> 
     """A language's situation sheets (#724). See "Situations files" in
     docs/DECK-FORMAT.md."""
     r.facts_lang = lang
+    r.situations_lang = lang
     if not isinstance(situations, list) or not situations:
         r.error("situations", "must be a non-empty list")
         return
@@ -2694,6 +2698,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
 
     _check_common_header(r, raw)
 
+    if kind != "situations" and "situations" in raw:
+        r.error("situations", "only valid on a situations file; add kind: situations")
     if kind != "reading" and "passages" in raw:
         r.error("passages", "only valid on a reading deck; add kind: reading")
     if kind == "vocab":
@@ -2724,6 +2730,9 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
             if key in raw:
                 r.error(key, "a situations file uses situations, not " + key)
         code = lang.get("code") if isinstance(lang, dict) else None
+        if _is_str(code) and path.stem != f"{code}-situations":
+            r.error("id", f"a situations file is {code}-situations.yaml, with that "
+                          f"id, got {path.stem!r}")
         check_situations(r, raw.get("situations"), code if _is_str(code) else None)
     elif kind == "reading":
         for key in ("cards", "pattern", "facts"):
@@ -5598,6 +5607,15 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{first.path}; list it here with ref: {cid}")
             else:
                 defs[cid] = d
+
+    sheets: dict[str, list[Report]] = {}
+    for rep in reports:
+        if rep.situations_lang is not None:
+            sheets.setdefault(rep.situations_lang, []).append(rep)
+    for code, files in sorted(sheets.items()):
+        if len(files) > 1:
+            problems.append(f"more than one situations file for {code}: "
+                            + ", ".join(str(rep.path) for rep in files))
 
     def find(rep: Report, cid: str) -> CardDef | None:
         found = defs.get(cid)

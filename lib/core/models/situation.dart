@@ -17,8 +17,9 @@ class Situation {
   final String id;
 
   /// Which of the app's icons and colours draws the situation's button: one
-  /// of [situationIcons], such as `taxi`. A key the app does not know is
-  /// drawn with a plain icon, so a later file never breaks an older app.
+  /// of [situationIcons], such as `taxi`. The validator refuses any other
+  /// key, and Today draws the six buttons only: a sheet with another key
+  /// has no button.
   final String icon;
 
   /// The sheet's title, keyed by the language code of the language it is

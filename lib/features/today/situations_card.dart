@@ -37,11 +37,6 @@ class SituationsCard extends StatelessWidget {
     final buttons = <_ButtonSpec>[
       for (final key in situationIcons)
         _spec(context, state, language, file?.withIcon(key), key),
-      // A sheet the app has no button for is added after the six.
-      if (file != null)
-        for (final sheet in file.situations)
-          if (!situationIcons.contains(sheet.icon))
-            _spec(context, state, language, sheet, sheet.icon),
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
