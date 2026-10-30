@@ -1,6 +1,7 @@
 import 'package:yaml/yaml.dart';
 
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 /// One theme on the shared path that vocabulary is taught along (ADR-0010).
 class DeckTheme {
@@ -39,7 +40,7 @@ List<DeckTheme> parseThemes(String text, {String source = 'themes.yaml'}) {
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text);
+    root = loadYamlTree(text);
   } on YamlException catch (e) {
     throw bad(e.message);
   }
