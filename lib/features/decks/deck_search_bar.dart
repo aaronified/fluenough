@@ -6,9 +6,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import 'unit_search.dart' show SearchSuggestion, searchKindLabel;
 
-/// A token's name as it is typed and shown: `kind`.
-String tokenLabel(SearchToken token) => token.key;
-
 /// A token's value as its chip and its menu show it.
 String tokenValueLabel(
   AppLocalizations l10n,

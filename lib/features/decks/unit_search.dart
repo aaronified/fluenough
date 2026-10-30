@@ -343,8 +343,9 @@ SearchOutcome runSearch(
   if (hits.isEmpty && all.containsKey(SearchToken.kind)) {
     final without = <SearchToken, String>{...all}..remove(SearchToken.kind);
     var other = collect(without);
-    if (other.isEmpty && words.isNotEmpty)
+    if (other.isEmpty && words.isNotEmpty) {
       other = collect(without, typos: true);
+    }
     otherKinds = other.length;
   }
   return SearchOutcome(

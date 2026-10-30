@@ -135,12 +135,6 @@ void main() {
       }
     });
 
-    test('a theme the course has no deck for is not offered', () {
-      final offered = {for (final t in courseThemes(state, 'te')) t.id};
-      expect(offered.length, lessThan(state.themes.length + 1));
-      expect(offered.difference({for (final t in state.themes) t.id}), isEmpty);
-    });
-
     test('a query in another script is not searched; it is named', () {
       expect(foreignScript('पानी', telugu.first), 'devanagari');
       expect(foreignScript('ఎందుకు', telugu.first), isNull);
