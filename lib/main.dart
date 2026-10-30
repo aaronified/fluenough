@@ -59,6 +59,7 @@ Future<void> main() async {
         catalog: DeckCatalog(
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
           added: FileDeckStore(Directory('${files.path}/decks')),
+          parser: parseInIsolate,
         ),
         deckDownloads: DeckDownloads(
           fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),

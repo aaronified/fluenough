@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Opening the app no longer freezes the first screens while every downloaded deck's YAML is read: the decks are parsed on a background isolate (#875). Nothing a learner sees changes but the wait.
+
 ## [0.6.8] - 2026-10-30
 
 ### Changed

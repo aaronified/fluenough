@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' show StringCharacters;
@@ -324,6 +325,27 @@ class Catalog {
   }
 }
 
+/// Parses deck files, keyed by path, into a [Catalog].
+typedef CatalogParser = Future<Catalog> Function(Map<String, String> files);
+
+/// [DeckCatalog.parseAll] in place, on the calling isolate.
+Future<Catalog> parseInPlace(Map<String, String> files) async =>
+    DeckCatalog.parseAll(files);
+
+/// [DeckCatalog.parseAll] on an isolate of its own (#875): parsing every
+/// downloaded deck's YAML takes seconds on a phone, which on the UI isolate
+/// is the first screens frozen. The files are text and the catalog is plain
+/// data, so both cross without copying the catalog back. Where an isolate
+/// cannot run (the web) or the catalog cannot cross, it parses in place, so
+/// the result is the same either way.
+Future<Catalog> parseInIsolate(Map<String, String> files) async {
+  try {
+    return await Isolate.run(() => DeckCatalog.parseAll(files));
+  } catch (_) {
+    return DeckCatalog.parseAll(files);
+  }
+}
+
 /// Lists and parses every deck file in a [DeckSource].
 ///
 /// A stand-in for the deck repository (#4). It reads the files that live
@@ -332,12 +354,17 @@ class Catalog {
 /// into cards (#2), and turns a file that fails to parse into a [BrokenDeck]
 /// rather than an exception.
 class DeckCatalog {
-  DeckCatalog(this.source, {this.added});
+  DeckCatalog(this.source, {this.added, this.parser = parseInPlace});
 
   final DeckSource source;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
   final DeckStore? added;
+
+  /// How the files are parsed: in place by default, which is what tests and
+  /// the web build want; the app passes [parseInIsolate], so that reading
+  /// every deck's YAML never holds up the first frames (#875).
+  final CatalogParser parser;
 
   Future<Catalog>? _loading;
 
@@ -359,7 +386,7 @@ class DeckCatalog {
         files[path] = await added.read(path);
       }
     }
-    return parseAll(files);
+    return parser(files);
   }
 
   /// Parses [files], keyed by path, into a catalog. Pure: no source, no IO.
