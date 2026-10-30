@@ -17,7 +17,7 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Tu es mon ami.", ipa: "ty ɛ mɔ̃ ami", bases: [{ word: "Tu", base: "tu" }, { word: "es", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }] }
+      - { target: "Tu es mon ami.", ipa: "ty ɛ mɔ̃n ami", bases: [{ word: "Tu", base: "tu" }, { word: "es", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }] }
       - { target: "Tu parles bien.", ipa: "ty paʁl bjɛ̃", bases: [{ word: "Tu", base: "tu" }, { word: "parles", ref: "fr-0023" }, { word: "bien", ref: "fr-0032" }] }
   - id: "fr-0096"
     target: "vous"
@@ -28,7 +28,7 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Vous êtes monsieur Dupont ?", ipa: "vu ɛt məsjø dypɔ̃", bases: [{ word: "Vous", base: "vous" }, { word: "êtes", ref: "fr-0021" }, { word: "monsieur", ref: "fr-0097" }, { word: "Dupont", base: "Dupont" }] }
+      - { target: "Vous êtes monsieur Dupont ?", ipa: "vu zɛt məsjø dypɔ̃", bases: [{ word: "Vous", base: "vous" }, { word: "êtes", ref: "fr-0021" }, { word: "monsieur", ref: "fr-0097" }, { word: "Dupont", base: "Dupont" }] }
       - { target: "Vous parlez bien, madame.", ipa: "vu paʁle bjɛ̃ madam", bases: [{ word: "Vous", base: "vous" }, { word: "parlez", ref: "fr-0023" }, { word: "bien", ref: "fr-0032" }, { word: "madame", ref: "fr-0098" }] }
   - id: "fr-0097"
     target: "monsieur"
@@ -53,7 +53,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Bonsoir, madame.", ipa: "bɔ̃swaʁ madam", bases: [{ word: "Bonsoir", base: "bonsoir" }, { word: "madame", base: "madame" }] }
-      - { target: "Madame, vous êtes là.", ipa: "madam vu ɛt la", bases: [{ word: "Madame", base: "madame" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Madame, vous êtes là.", ipa: "madam vu zɛt la", bases: [{ word: "Madame", base: "madame" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
   - id: "fr-0099"
     target: "mademoiselle"
     ipa: "madmwazɛl"
@@ -76,8 +76,8 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Mon ami est ici.", ipa: "mɔ̃ ami ɛ isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", base: "ami" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "Un ami de Paris.", ipa: "œ̃ ami də paʁi", bases: [{ word: "Un", base: "un" }, { word: "ami", base: "ami" }, { word: "de", base: "de" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Mon ami est ici.", ipa: "mɔ̃n ami ɛt isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", base: "ami" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Un ami de Paris.", ipa: "œ̃n ami də paʁi", bases: [{ word: "Un", base: "un" }, { word: "ami", base: "ami" }, { word: "de", base: "de" }, { word: "Paris", base: "Paris" }] }
   - id: "fr-0101"
     target: "voisin"
     ipa: "vwazɛ̃"
@@ -135,7 +135,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Le professeur est là.", ipa: "lə pʁɔfesœʁ ɛ la", bases: [{ word: "Le", base: "le" }, { word: "professeur", base: "professeur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
-      - { target: "Monsieur, vous êtes professeur ?", ipa: "məsjø vu ɛt pʁɔfesœʁ", bases: [{ word: "Monsieur", ref: "fr-0097" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "professeur", base: "professeur" }] }
+      - { target: "Monsieur, vous êtes professeur ?", ipa: "məsjø vu zɛt pʁɔfesœʁ", bases: [{ word: "Monsieur", ref: "fr-0097" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "professeur", base: "professeur" }] }
   - id: "fr-0106"
     target: "docteur"
     ipa: "dɔktœʁ"

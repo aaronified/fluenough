@@ -39,7 +39,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Elle est ici.", ipa: "ɛl ɛ isi", bases: [{ word: "Elle", base: "elle" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elle est ici.", ipa: "ɛl ɛt isi", bases: [{ word: "Elle", base: "elle" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
       - { target: "Elle parle très bien.", ipa: "ɛl paʁl tʁɛ bjɛ̃", bases: [{ word: "Elle", base: "elle" }, { word: "parle", ref: "fr-0023" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
   - id: "fr-0129"
     target: "nous"
@@ -50,7 +50,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Nous sommes amis.", ipa: "nu sɔm ami", bases: [{ word: "Nous", base: "nous" }, { word: "sommes", ref: "fr-0021" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Nous sommes amis.", ipa: "nu sɔm zami", bases: [{ word: "Nous", base: "nous" }, { word: "sommes", ref: "fr-0021" }, { word: "amis", ref: "fr-0100" }] }
       - { target: "Nous parlons français.", ipa: "nu paʁlɔ̃ fʁɑ̃sɛ", bases: [{ word: "Nous", base: "nous" }, { word: "parlons", ref: "fr-0023" }, { word: "français", base: "français" }] }
   - id: "fr-0130"
     target: "ils"
@@ -72,8 +72,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Elles sont ici.", ipa: "ɛl sɔ̃ isi", bases: [{ word: "Elles", base: "elles" }, { word: "sont", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "Elles aiment le lait.", ipa: "ɛl ɛm lə lɛ", bases: [{ word: "Elles", base: "elles" }, { word: "aiment", base: "aimer" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }] }
+      - { target: "Elles sont ici.", ipa: "ɛl sɔ̃t isi", bases: [{ word: "Elles", base: "elles" }, { word: "sont", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elles aiment le lait.", ipa: "ɛl zɛm lə lɛ", bases: [{ word: "Elles", base: "elles" }, { word: "aiment", base: "aimer" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }] }
   - id: "fr-0132"
     target: "on"
     ipa: "ɔ̃"
@@ -84,7 +84,7 @@ cards:
     bases: "self"
     examples:
       - { target: "On parle français ici.", ipa: "ɔ̃ paʁl fʁɑ̃sɛ isi", bases: [{ word: "On", base: "on" }, { word: "parle", ref: "fr-0023" }, { word: "français", base: "français" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "On est là.", ipa: "ɔ̃ ɛ la", bases: [{ word: "On", base: "on" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "On est là.", ipa: "ɔ̃n ɛ la", bases: [{ word: "On", base: "on" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
   - id: "fr-0133"
     target: "moi"
     ipa: "mwa"
@@ -149,8 +149,8 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Son train est en retard.", ipa: "sɔ̃ tʁɛ̃ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Son", base: "son" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
-      - { target: "Son amie est là.", ipa: "sɔ̃ ami ɛ la", bases: [{ word: "Son", base: "son" }, { word: "amie", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Son train est en retard.", ipa: "sɔ̃ tʁɛ̃ ɛt ɑ̃ ʁətaʁ", bases: [{ word: "Son", base: "son" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
+      - { target: "Son amie est là.", ipa: "sɔ̃n ami ɛ la", bases: [{ word: "Son", base: "son" }, { word: "amie", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
   - id: "fr-0139"
     target: "notre"
     ipa: "nɔtʁ"
@@ -182,7 +182,7 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Ton ami est là.", ipa: "tɔ̃ ami ɛ la", bases: [{ word: "Ton", base: "ton" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ton ami est là.", ipa: "tɔ̃n ami ɛ la", bases: [{ word: "Ton", base: "ton" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
       - { target: "Ton prénom ?", ipa: "tɔ̃ pʁenɔ̃", bases: [{ word: "Ton", base: "ton" }, { word: "prénom", ref: "fr-0103" }] }
   - id: "fr-0142"
     target: "leur"
@@ -194,7 +194,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Leur train part demain.", ipa: "lœʁ tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Leur", base: "leur" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
-      - { target: "Ils aiment leur voisin.", ipa: "il ɛm lœʁ vwazɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "aiment", base: "aimer" }, { word: "leur", base: "leur" }, { word: "voisin", ref: "fr-0101" }] }
+      - { target: "Ils aiment leur voisin.", ipa: "il zɛm lœʁ vwazɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "aiment", base: "aimer" }, { word: "leur", base: "leur" }, { word: "voisin", ref: "fr-0101" }] }
   - id: "fr-0143"
     target: "ce"
     ipa: "sə"
@@ -204,8 +204,8 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Ce train est en retard.", ipa: "sə tʁɛ̃ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Ce", base: "ce" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
-      - { target: "Ce musée est ouvert.", ipa: "sə myze ɛ uvɛʁ", bases: [{ word: "Ce", base: "ce" }, { word: "musée", ref: "fr-0077" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", base: "ouvrir" }] }
+      - { target: "Ce train est en retard.", ipa: "sə tʁɛ̃ ɛt ɑ̃ ʁətaʁ", bases: [{ word: "Ce", base: "ce" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", base: "retard" }] }
+      - { target: "Ce musée est ouvert.", ipa: "sə myze ɛt uvɛʁ", bases: [{ word: "Ce", base: "ce" }, { word: "musée", ref: "fr-0077" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", base: "ouvrir" }] }
   - id: "fr-0144"
     target: "cette"
     ipa: "sɛt"
@@ -217,7 +217,7 @@ cards:
       - { word: "cette", ref: "fr-0143" }
     examples:
       - { target: "Cette gare est belle.", ipa: "sɛt ɡaʁ ɛ bɛl", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "gare", ref: "fr-0075" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
-      - { target: "Cette fée est ici.", ipa: "sɛt fe ɛ isi", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "fée", ref: "fr-0045" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Cette fée est ici.", ipa: "sɛt fe ɛt isi", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "fée", ref: "fr-0045" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
   - id: "fr-0145"
     target: "cela"
     ipa: "səla"
