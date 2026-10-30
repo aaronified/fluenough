@@ -12809,5 +12809,289 @@
   "languagesNoCourse": "No course yet",
   "@languagesNoCourse": {
     "description": "Badge on a language with no course: Know only."
+  },
+  "reviewGuideQuestionsTitle": "Daily questions",
+  "@reviewGuideQuestionsTitle": {
+    "description": "Title of the step of How reviewing works about the daily questions (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideQuestionsBody": "Besides whole decks, you can answer a few short questions a day. The app writes them from the cards, about the data nobody has checked yet: is this the right meaning of a word, is this example natural, is this a real confusable, is this recording correct and by a native speaker.",
+  "@reviewGuideQuestionsBody": {
+    "description": "First paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideQuestionsSend": "Answers wait on your phone until you tap Send answers. Your mail app opens with Fluenough’s address and one file per language, like a review. A data point is settled when two reviewers agree; if they disagree, a third decides. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
+  "@reviewGuideQuestionsSend": {
+    "description": "Second paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Send answers” must match reviewQuestionsSend."
+  },
+  "reviewGuideQuestionsCount": "How many a day is up to you. Pick it here and change it any time in Settings under Reviewing. What you do not answer waits for the next day.",
+  "@reviewGuideQuestionsCount": {
+    "description": "Third paragraph of the daily questions step of How reviewing works, above the choice of how many a day (docs/REVIEWING.md says the same)."
+  },
+  "reviewQuestionsPerDayTitle": "Questions a day",
+  "@reviewQuestionsPerDayTitle": {
+    "description": "Title of the choice of how many daily questions a reviewer wants, in How reviewing works and in Settings under Reviewing."
+  },
+  "reviewQuestionsPerDayOff": "Off",
+  "@reviewQuestionsPerDayOff": {
+    "description": "The choice of no daily questions."
+  },
+  "reviewQuestionsPerDayChoice": "{count}",
+  "@reviewQuestionsPerDayChoice": {
+    "description": "One choice of how many daily questions a day: the number.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsPerDayValue": "{count, plural, =0{Off} =1{1 question a day} other{{count} questions a day}}",
+  "@reviewQuestionsPerDayValue": {
+    "description": "Under Questions a day in Settings: the reviewer's choice.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSettings": "Daily questions",
+  "@reviewQuestionsSettings": {
+    "description": "Title of the row in Settings under Reviewing that opens the daily questions."
+  },
+  "reviewQuestionsSettingsLeft": "{count, plural, =0{None left today} =1{1 left today} other{{count} left today}}",
+  "@reviewQuestionsSettingsLeft": {
+    "description": "Under Daily questions in Settings: how many of today's questions are left to answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "reviewQuestionsSettingsOff": "Off. Choose how many a day under Questions a day.",
+  "@reviewQuestionsSettingsOff": {
+    "description": "Under Daily questions in Settings when the reviewer chose none a day."
+  },
+  "reviewQuestionsTitle": "Daily questions",
+  "@reviewQuestionsTitle": {
+    "description": "Title of the daily questions screen."
+  },
+  "reviewQuestionsProgress": "Question {n} of {total}",
+  "@reviewQuestionsProgress": {
+    "description": "Over a daily question: where the reviewer is in today's questions.",
+    "placeholders": {
+      "n": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionMeaning": "Is this the right meaning of {word}?",
+  "@reviewQuestionMeaning": {
+    "description": "A daily question about a card's meaning. {word} is the card's word with its reading, such as तुम (tum).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "reviewQuestionExample": "Is this example natural?",
+  "@reviewQuestionExample": {
+    "description": "A daily question about one of a card's examples."
+  },
+  "reviewQuestionExampleFor": "An example for {word}",
+  "@reviewQuestionExampleFor": {
+    "description": "Under the question about an example: the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "reviewQuestionConfusable": "Is this a real confusable for {word}?",
+  "@reviewQuestionConfusable": {
+    "description": "A daily question about a confusable of a card: a word learners may wrongly pick for it. {word} is the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "खाना (khānā)"
+      }
+    }
+  },
+  "reviewQuestionSound": "Is this recording correct and by a native speaker?",
+  "@reviewQuestionSound": {
+    "description": "A daily question about a card's recording."
+  },
+  "reviewQuestionSoundFor": "The recording of {word}",
+  "@reviewQuestionSoundFor": {
+    "description": "Under the question about a recording: the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "खाना (khānā)"
+      }
+    }
+  },
+  "reviewQuestionImage": "Is this the right picture for {word}?",
+  "@reviewQuestionImage": {
+    "description": "A daily question about a picture proposed for a card. {word} is the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "कुत्ता (kuttā)"
+      }
+    }
+  },
+  "reviewQuestionYes": "Yes",
+  "@reviewQuestionYes": {
+    "description": "The answer that says the data is right, to a daily question."
+  },
+  "reviewQuestionNo": "No",
+  "@reviewQuestionNo": {
+    "description": "The answer that says the data is wrong, to a daily question."
+  },
+  "reviewQuestionFlag": "Flag this recording",
+  "@reviewQuestionFlag": {
+    "description": "The answer that says a recording is bad: the card then uses text-to-speech. There is no recording option."
+  },
+  "reviewQuestionSkip": "Skip for today",
+  "@reviewQuestionSkip": {
+    "description": "Puts a daily question off until tomorrow."
+  },
+  "reviewQuestionWhyNo": "What is wrong with it?",
+  "@reviewQuestionWhyNo": {
+    "description": "Title of the sheet that opens on No to a daily question."
+  },
+  "reviewQuestionWhyFlag": "What is wrong with the recording?",
+  "@reviewQuestionWhyFlag": {
+    "description": "Title of the sheet that opens on Flag to a daily question about a recording."
+  },
+  "reviewQuestionWhyHint": "Say more (optional; it goes in the mail only)",
+  "@reviewQuestionWhyHint": {
+    "description": "Hint of the optional text under the reasons of a No."
+  },
+  "reviewQuestionSave": "Save answer",
+  "@reviewQuestionSave": {
+    "description": "Button of the sheet that saves a No or a flag."
+  },
+  "reviewReasonWrong": "It is wrong",
+  "@reviewReasonWrong": {
+    "description": "A reason for No to a daily question."
+  },
+  "reviewReasonAwkward": "Right, but put oddly",
+  "@reviewReasonAwkward": {
+    "description": "A reason for No to a question about a meaning."
+  },
+  "reviewReasonUnnatural": "Nobody would say it",
+  "@reviewReasonUnnatural": {
+    "description": "A reason for No to a question about an example."
+  },
+  "reviewReasonNotReal": "Nobody mixes these up",
+  "@reviewReasonNotReal": {
+    "description": "A reason for No to a question about a confusable."
+  },
+  "reviewReasonWrongWord": "It is a different word",
+  "@reviewReasonWrongWord": {
+    "description": "A reason for No or Flag to a question about a confusable or a recording."
+  },
+  "reviewReasonNoisy": "Too noisy or unclear",
+  "@reviewReasonNoisy": {
+    "description": "A reason to flag a recording."
+  },
+  "reviewReasonNotNative": "Not a native speaker",
+  "@reviewReasonNotNative": {
+    "description": "A reason to flag a recording."
+  },
+  "reviewReasonNotTheWord": "It is not the word",
+  "@reviewReasonNotTheWord": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewReasonUnclear": "The picture is unclear",
+  "@reviewReasonUnclear": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewReasonNotFit": "It does not suit a learner",
+  "@reviewReasonNotFit": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewQuestionsDoneTitle": "That is all for today",
+  "@reviewQuestionsDoneTitle": {
+    "description": "Title when the reviewer has answered today's daily questions."
+  },
+  "reviewQuestionsDoneBody": "{count, plural, =0{You answered none today.} =1{You answered 1 question today.} other{You answered {count} questions today.}} What is left waits for tomorrow.",
+  "@reviewQuestionsDoneBody": {
+    "description": "Under That is all for today.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsNoneTitle": "Nothing to ask right now",
+  "@reviewQuestionsNoneTitle": {
+    "description": "Title when there is no daily question to ask."
+  },
+  "reviewQuestionsNoneBody": "Questions come from the courses you review. Tick courses under Languages you review and download their decks. Skipped questions come back tomorrow.",
+  "@reviewQuestionsNoneBody": {
+    "description": "Under Nothing to ask right now."
+  },
+  "reviewQuestionsOffTitle": "Daily questions are off",
+  "@reviewQuestionsOffTitle": {
+    "description": "Title when the reviewer chose no daily questions."
+  },
+  "reviewQuestionsOffBody": "Choose how many a day under Questions a day in Settings.",
+  "@reviewQuestionsOffBody": {
+    "description": "Under Daily questions are off."
+  },
+  "reviewQuestionsOnlyReviewers": "Turn on Review decks in Settings to get daily questions.",
+  "@reviewQuestionsOnlyReviewers": {
+    "description": "Shown on the daily questions screen when reviewing is off."
+  },
+  "reviewQuestionsSend": "{count, plural, =1{Send 1 answer} other{Send {count} answers}}",
+  "@reviewQuestionsSend": {
+    "description": "Button that sends the daily questions' answers by mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSendOpened": "Your mail app is open. Send the mail from there.",
+  "@reviewQuestionsSendOpened": {
+    "description": "Shown once the mail app opened with the daily questions' answers."
+  },
+  "reviewQuestionsSendFailed": "The answers could not be shared. They stay on this phone.",
+  "@reviewQuestionsSendFailed": {
+    "description": "Shown when the daily questions' answers could not be shared."
+  },
+  "reviewQuestionsMailBody": "Answers to Fluenough’s daily questions from app {version}: {count} in all. A file for each language. Please send without changing the files.",
+  "@reviewQuestionsMailBody": {
+    "description": "Body of the mail that carries the daily questions' answers, for people only.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.6.7"
+      },
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsUndo": "Undo",
+  "@reviewQuestionsUndo": {
+    "description": "Takes back the last daily question's answer."
+  },
+  "reviewQuestionsAnswerSaved": "Answer saved",
+  "@reviewQuestionsAnswerSaved": {
+    "description": "Announced after a daily question is answered."
   }
 }

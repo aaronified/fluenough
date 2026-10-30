@@ -4,6 +4,9 @@ import '../core/feedback/report.dart';
 import '../core/models/card.dart';
 import '../core/models/proposal.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/question_log.dart';
+import '../core/review/questions_file.dart';
+import '../core/review/review_question.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import 'app_info.dart';
@@ -291,6 +294,92 @@ class Reviewing {
       for (final deck in last) deck.deckId,
     ]);
     _log.event('Last send of ${last.length} deck(s) taken back');
+  }
+
+  // The daily questions (#519).
+
+  /// How many questions a day the reviewer asked for.
+  int get questionsPerDay => settings.reviewQuestionsPerDay;
+
+  set questionsPerDay(int value) => settings.reviewQuestionsPerDay = value;
+
+  /// What the reviewer answered to the daily questions.
+  QuestionLog get questions => settings.reviewQuestions;
+
+  /// Today, as the day answers count for: `YYYY-MM-DD`, in the phone's time.
+  String get today {
+    final now = _clock().toLocal();
+    String two(int n) => n.toString().padLeft(2, '0');
+    return '${now.year}-${two(now.month)}-${two(now.day)}';
+  }
+
+  /// How many of today's questions are left to answer.
+  int get questionsLeftToday => questions.leftOn(today, questionsPerDay);
+
+  /// [question] answered. A Yes needs no reason; any other may give one of
+  /// the question's reasons, and what the reviewer wrote, which goes in the
+  /// mail for people and nowhere else.
+  void answerQuestion(
+    ReviewQuestion question,
+    QuestionAnswer answer, {
+    String? reason,
+    String why = '',
+  }) => settings.reviewQuestions = questions
+      .since(today)
+      .answer(question, answer, today, reason: reason, why: why);
+
+  /// [question] put off to tomorrow.
+  void skipQuestion(ReviewQuestion question) =>
+      settings.reviewQuestions = questions.since(today).skip(question, today);
+
+  /// The answer to [question] taken back, while it is not sent.
+  void undoQuestion(ReviewQuestion question) =>
+      settings.reviewQuestions = questions.undo(question);
+
+  /// The answers waiting to send.
+  List<LoggedAnswer> get unsentAnswers => questions.unsent;
+
+  /// Sends the answers waiting in one mail, one file per language, the same
+  /// way as the reviews: through the reviewer's mail app, to the same
+  /// address, and marked sent once the mail app has opened with them.
+  Future<ReviewSendOutcome> sendQuestions({required String body}) async {
+    final code = this.code;
+    final waiting = unsentAnswers;
+    if (code == null || waiting.isEmpty) return ReviewSendOutcome.nothingToSend;
+    final made = _clock();
+    final languages = QuestionsFile.languagesOf(waiting);
+    final files = <AttachedFile>[
+      for (final language in languages)
+        AttachedFile(
+          name: QuestionsFile.name(language),
+          mimeType: QuestionsFile.mimeType,
+          text: QuestionsFile.encode(
+            waiting,
+            language: language,
+            code: code,
+            appVersion: AppInfo.version,
+            made: made,
+          ),
+        ),
+    ];
+    bool shared;
+    try {
+      shared = await _share.share(
+        to: <String>[address],
+        subject: QuestionsMail.subject(code, languages),
+        body: body,
+        files: files,
+      );
+    } catch (error) {
+      _log.warning('Answers not shared: ${error.runtimeType}');
+      return ReviewSendOutcome.failed;
+    }
+    if (!shared) return ReviewSendOutcome.noMailApp;
+    settings.reviewQuestions = questions.sentAt(<String>[
+      for (final a in waiting) a.id,
+    ], made);
+    _log.event('${waiting.length} question answer(s) shared to the mail app');
+    return ReviewSendOutcome.inMailApp;
   }
 
   /// Whether [deck] lists this reviewer's code among the codes that

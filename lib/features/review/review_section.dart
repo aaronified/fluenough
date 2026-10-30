@@ -9,7 +9,9 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
 import '../decks/path_parts.dart' show joinParts;
+import 'daily_questions_page.dart';
 import 'how_reviewing_works.dart';
+import 'questions_per_day.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
 import 'send_reviews_sheet.dart';
@@ -115,6 +117,26 @@ class ReviewSection extends StatelessWidget {
             subtitle: l10n.reviewSettingsWaitingDesc(toReview),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => AppNavigator.openWaitingForReview(context),
+          ),
+          GroupedTile(
+            leading: const Icon(Icons.quiz_outlined),
+            title: l10n.reviewQuestionsSettings,
+            subtitle: reviewing.questionsPerDay == 0
+                ? l10n.reviewQuestionsSettingsOff
+                : l10n.reviewQuestionsSettingsLeft(
+                    reviewing.questionsLeftToday,
+                  ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showDailyQuestions(context),
+          ),
+          GroupedTile(
+            leading: const Icon(Icons.tune_outlined),
+            title: l10n.reviewQuestionsPerDayTitle,
+            subtitle: l10n.reviewQuestionsPerDayValue(
+              reviewing.questionsPerDay,
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showQuestionsPerDay(context),
           ),
         ],
         if (waiting > 0)
