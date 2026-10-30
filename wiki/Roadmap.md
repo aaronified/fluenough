@@ -321,6 +321,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
 - [#875](https://github.com/aaronified/fluenough/issues/875) Cold start takes 1–3 s: cache the parsed catalog, show last numbers, parse off the UI isolate
 - [#907](https://github.com/aaronified/fluenough/issues/907) Languages page: Know and Learning merged, per skill (Speak, Hear, Read, Write)
+- [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 
 ## Plans
 
