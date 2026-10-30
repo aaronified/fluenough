@@ -116,6 +116,25 @@ checked the whole unit.
   agreed, the card goes to the other unit with its id kept, so learners keep
   their progress.
 - **The meaning.** Editing the Meaning shows rule 2 above the field.
+- **Every field.** The sheet shows every field the card carries, in groups:
+  the word (reading, IPA, narrow IPA, gender, register, frequency), meaning
+  and other senses, examples, base words, related words (synonyms, antonyms,
+  confusables with why, minimal pairs, forms, collocations), notes and the
+  teach-card warning, picture, image and recording, facts, the dictionary
+  entry and the set card, and place. A list field has a pencil on each item
+  and **Add** at the end; a field with no data says "not set" and offers
+  **Flag as missing**. Each item has **Looks right**, a count of what is
+  left to check beside the field's name, and a checked item moves below the
+  rest. Items from Wiktionary are marked semi-verified and come after the
+  others, so you see what Claude wrote first. The narrow IPA and the
+  frequency are written by tools, so you can only flag them; a recording,
+  an image and the set card can only be flagged too, and a flagged
+  recording is dropped for text-to-speech.
+- **The teach-card warning.** The teach card has room for one warning. Its
+  pencil opens a list of the warnings the card has (a sound-alike,
+  spelling-alike or look-alike note, other meanings, or no warning) and
+  nothing else: there is no "automatic" choice, and a pick is never taken
+  back by the bot. Say why.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a

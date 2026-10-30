@@ -158,7 +158,9 @@ def _date(made: object) -> str:
 
 def card_suggestions(c: dict) -> list[dict]:
     """A card's suggestions in a review file: one under "suggestion", or
-    since #468, several, one a part, under "suggestions"."""
+    since #468, several, one a part, under "suggestions". A card's
+    `items_right` (#508), the items of a list field checked "Looks right",
+    is read by nothing yet."""
     many = c.get("suggestions") if isinstance(c.get("suggestions"), list) else []
     return [s for s in [c.get("suggestion"), *many] if isinstance(s, dict)]
 
@@ -197,6 +199,11 @@ def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
     as they were and as suggested, one a line."""
     part, now, text = s.get("part"), s.get("now"), s.get("text")
     if not isinstance(now, str) or not isinstance(text, str):
+        return None
+    # A flag (#508) says a part is missing or wrong and offers no text: there
+    # is nothing to propose, so it is left for the owner, as the items of the
+    # list fields and the other parts the bot does not write are.
+    if s.get("flag") is True:
         return None
     if part == "base":
         word = s.get("word")

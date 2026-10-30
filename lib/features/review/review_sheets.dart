@@ -4,10 +4,13 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/card_sets.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
+import '../../core/models/card_set.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/proposal.dart';
+import '../../core/review/card_fields.dart';
 import '../../core/review/deck_review.dart';
 import '../../core/review/move_targets.dart';
 import '../../l10n/app_localizations.dart';
@@ -22,6 +25,7 @@ import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
 import 'move_sheet.dart';
 import 'proposal_card.dart';
+import 'review_warning_sheet.dart';
 import 'review_words.dart';
 import 'suggest_bases.dart';
 
@@ -68,6 +72,13 @@ String? partText(Card card, CardPart part, {String? word}) => switch (part) {
   CardPart.base => inlineBaseOf(card, word)?.meaning,
   CardPart.alt => card.altTarget.isEmpty ? null : card.altTarget.join('\n'),
   CardPart.place => card.deckId,
+  CardPart.gender => card.gender,
+  CardPart.register => card.register,
+  CardPart.hears => card.hears,
+  CardPart.warning => card.warning,
+  // A list's items are named by key ([itemsOf]), a flag-only part has no
+  // text to change.
+  _ => null,
 };
 
 /// [card]'s base written in full for [word], the word as it stands in its
@@ -119,6 +130,25 @@ String partName(AppLocalizations l10n, CardPart part) => switch (part) {
   CardPart.base => l10n.reviewPartBase,
   CardPart.alt => l10n.reviewPartAlt,
   CardPart.place => l10n.reviewPartPlace,
+  CardPart.phonetic => l10n.reviewPartPhonetic,
+  CardPart.gender => l10n.reviewPartGender,
+  CardPart.register => l10n.reviewPartRegister,
+  CardPart.hears => l10n.reviewPartHears,
+  CardPart.frequency => l10n.reviewPartFrequency,
+  CardPart.warning => l10n.reviewPartWarning,
+  CardPart.senses => l10n.reviewPartSenses,
+  CardPart.examples => l10n.reviewPartExamples,
+  CardPart.synonyms => l10n.reviewPartSynonyms,
+  CardPart.antonyms => l10n.reviewPartAntonyms,
+  CardPart.confusables => l10n.reviewPartConfusables,
+  CardPart.forms => l10n.reviewPartForms,
+  CardPart.collocations => l10n.reviewPartCollocations,
+  CardPart.pairs => l10n.reviewPartPairs,
+  CardPart.facts => l10n.reviewPartFacts,
+  CardPart.dictionary => l10n.reviewPartDictionary,
+  CardPart.image => l10n.reviewPartImage,
+  CardPart.recording => l10n.reviewPartRecording,
+  CardPart.setCard => l10n.reviewPartSetCard,
 };
 
 /// What a suggestion on [part] is about, by name: [partName], or for a base
@@ -710,6 +740,26 @@ class SuggestSheet extends StatefulWidget {
   /// The checkbox of the Also heard box, once a new word is suggested.
   static const Key keepAltKey = ValueKey<String>('suggest-keep-alt');
 
+  /// The key of [field] (`text` or `why`) of the [index]th new item of the
+  /// list [part], from 0 (#508).
+  static Key newItemKey(CardPart part, int index, String field) =>
+      ValueKey<String>('suggest-newitem-${part.name}-$field-$index');
+
+  /// The Looks right button of the item [key] of the list [part].
+  static Key itemRightKey(CardPart part, String key) =>
+      ValueKey<String>('suggest-right-${part.name}-$key');
+
+  /// "Add" at the end of the list [part].
+  static Key addItemKey(CardPart part) =>
+      ValueKey<String>('suggest-add-${part.name}');
+
+  /// "Flag as missing" (or the part's own flag) of [part].
+  static Key flagKey(CardPart part) =>
+      ValueKey<String>('suggest-flag-${part.name}');
+
+  /// The Teach-card warning box's pencil, which opens the picker.
+  static const Key warningKey = ValueKey<String>('suggest-warning');
+
   @override
   State<SuggestSheet> createState() => _SuggestSheetState();
 }
@@ -805,16 +855,90 @@ class _SuggestSheetState extends State<SuggestSheet> {
   /// suggested: ticked at first, and the reviewer may untick it.
   bool _keepAlt = true;
 
+  /// The items of each list field the card has (#508), in the deck's order.
+  Map<CardPart, List<FieldItem>> _items = const <CardPart, List<FieldItem>>{};
+
+  /// The items checked "Looks right", each as [CardReview.itemKey] writes
+  /// it, and the set kept on the card, to tell whether anything changed.
+  final Set<String> _checked = <String>{};
+  Set<String> _checkedSaved = const <String>{};
+
+  /// The parts flagged as missing or wrong.
+  final Set<CardPart> _flagged = <CardPart>{};
+
+  /// The items being added to each list field, in the order they were
+  /// opened.
+  final Map<CardPart, List<_Edit>> _newItems = <CardPart, List<_Edit>>{};
+
+  /// The teach-card warning the reviewer picked, as `warning` holds it, and
+  /// why; null while none is picked.
+  String? _warning;
+  String _warningWhy = '';
+
   /// Fields no longer shown, disposed with the sheet: a field may still be
   /// in the tree in the frame that drops it.
   final List<TextEditingController> _retired = <TextEditingController>[];
 
+  /// The list fields, in the order their suggestions are kept.
+  static const List<CardPart> _listParts = <CardPart>[
+    CardPart.senses,
+    CardPart.examples,
+    CardPart.synonyms,
+    CardPart.antonyms,
+    CardPart.confusables,
+    CardPart.pairs,
+    CardPart.forms,
+    CardPart.collocations,
+    CardPart.facts,
+    CardPart.dictionary,
+  ];
+
+  /// The parts changed as one text each, the ones the card's type carries
+  /// (DECK-FORMAT.md, "What applies to which card type"): gender only for a
+  /// noun of a language that has it.
   late final List<_Part> _parts = <_Part>[
-    for (final part in CardPart.values)
-      if (part != CardPart.base &&
-          part != CardPart.alt &&
-          part != CardPart.place)
-        (part: part, word: null),
+    for (final part in <CardPart>[
+      CardPart.word,
+      CardPart.reading,
+      CardPart.ipa,
+      if (_genderShown) CardPart.gender,
+      CardPart.register,
+      if (_hearsShown) CardPart.hears,
+      CardPart.meaning,
+      CardPart.notes,
+      CardPart.picture,
+    ])
+      (part: part, word: null),
+  ];
+
+  bool get _isPhrase => widget.card.pos == 'phrase';
+
+  bool get _genderShown =>
+      widget.card.gender != null ||
+      (widget.card.pos == 'noun' &&
+          widget.deck.cards.any((c) => c.gender != null));
+
+  bool get _hearsShown =>
+      widget.card.hears != null || widget.card.isLetterOrDigit;
+
+  /// Whether the list [part] is shown: always for a word, and for a phrase
+  /// only the lists its type carries, or one it has items in.
+  bool _listShown(CardPart part) {
+    if (part == CardPart.dictionary) return widget.card.dictionary != null;
+    if ((_items[part] ?? const <FieldItem>[]).isNotEmpty) return true;
+    if (_newItems[part]?.isNotEmpty ?? false) return true;
+    return !_isPhrase ||
+        part == CardPart.examples ||
+        part == CardPart.synonyms ||
+        part == CardPart.confusables ||
+        part == CardPart.facts;
+  }
+
+  /// Every item of every list field, as a part to suggest on.
+  List<_Part> get _itemParts => <_Part>[
+    for (final part in _listParts)
+      for (final item in _items[part] ?? const <FieldItem>[])
+        (part: part, word: item.key),
   ];
 
   @override
@@ -852,6 +976,36 @@ class _SuggestSheetState extends State<SuggestSheet> {
     _keepAlt =
         !_saved.any((s) => s.part == CardPart.word) ||
         _saved.any((s) => s.part == CardPart.alt);
+    _items = <CardPart, List<FieldItem>>{
+      for (final part in _listParts)
+        part: itemsOf(
+          widget.card,
+          part,
+          _find,
+          facts: <({String id, String text})>[
+            for (final f in _state.factsNaming(
+              widget.card,
+              widget.deck.language,
+            ))
+              (id: f.fact.id, text: f.texts.isEmpty ? '' : f.texts.first.text),
+          ],
+        ),
+    };
+    _checked.addAll(
+      _state.reviewing.reviewOf(widget.deck, widget.card)?.itemsRight ??
+          const <String>{},
+    );
+    _checkedSaved = Set<String>.of(_checked);
+    for (final s in _saved) {
+      if (s.flag) {
+        _flagged.add(s.part);
+      } else if (s.part == CardPart.warning) {
+        _warning = s.text;
+        _warningWhy = s.why;
+      } else if (s.part.isList && s.action == BaseAction.add) {
+        (_newItems[s.part] ??= <_Edit>[]).add(_Edit(s.text, s.why));
+      }
+    }
     if (widget.from case final from?) {
       final _Part part = (part: partOf(from.field), word: null);
       _edits[part] = _Edit(from.text, _savedOn(part)?.why ?? '');
@@ -867,6 +1021,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
       for (final e in _baseEdits.values) ...e.all,
       for (final e in _added) ...e.all,
       ..._baseRemoved.values,
+      for (final edits in _newItems.values)
+        for (final e in edits) ...<TextEditingController>[e.text, e.why],
       ..._retired,
       _moveWhy,
     ]) {
@@ -980,10 +1136,18 @@ class _SuggestSheetState extends State<SuggestSheet> {
               a.reading == b.reading &&
               a.meaning == b.meaning));
 
-  String? _now(_Part p) => partText(widget.card, p.part, word: p.word);
+  String? _now(_Part p) {
+    if (!p.part.isList) return partText(widget.card, p.part, word: p.word);
+    return (_items[p.part] ?? const <FieldItem>[])
+        .where((i) => i.key == p.word)
+        .firstOrNull
+        ?.text;
+  }
 
-  Suggestion? _savedOn(_Part p) =>
-      _saved.where((s) => s.part == p.part && s.word == p.word).firstOrNull;
+  /// The suggestion kept on [p]: not a flag, which is kept apart.
+  Suggestion? _savedOn(_Part p) => _saved
+      .where((s) => s.part == p.part && s.word == p.word && !s.flag)
+      .firstOrNull;
 
   void _retire(Iterable<TextEditingController> fields) =>
       _retired.addAll(fields);
@@ -1007,7 +1171,58 @@ class _SuggestSheetState extends State<SuggestSheet> {
       text: text,
       why: edit.why.text.trim(),
       word: p.word,
+      action: p.part.isList ? BaseAction.edit : null,
     );
+  }
+
+  /// The items added to the list [part], once saved: each with text, named
+  /// `new-N` by its place among them.
+  List<Suggestion> _addedResults(CardPart part) => <Suggestion>[
+    for (final (i, edit) in (_newItems[part] ?? const <_Edit>[]).indexed)
+      if (edit.text.text.trim().isNotEmpty)
+        Suggestion(
+          part: part,
+          word: 'new-${i + 1}',
+          action: BaseAction.add,
+          now: '',
+          text: edit.text.text.trim(),
+          why: edit.why.text.trim(),
+        ),
+  ];
+
+  /// The teach-card warning picked, once saved, or null when none is picked
+  /// or it is the one the card has.
+  Suggestion? _warningResult() {
+    final id = _warning;
+    if (id == null || id == widget.card.warning) return null;
+    return Suggestion(
+      part: CardPart.warning,
+      now: widget.card.warning ?? '',
+      text: id,
+      why: _warningWhy.trim(),
+    );
+  }
+
+  /// A flag on each part flagged and not changed instead.
+  List<Suggestion> _flagResults() => <Suggestion>[
+    for (final part in CardPart.values)
+      if (_flagged.contains(part) &&
+          _resultOn((part: part, word: null)) == null)
+        Suggestion(part: part, now: '', text: '', flag: true),
+  ];
+
+  /// The items checked "Looks right" once saved: not an item the reviewer
+  /// suggests a change to, as a card is not right with a suggestion.
+  Set<String> _rightKeys(List<Suggestion> result) {
+    final suggested = <String>{
+      for (final s in result)
+        if (s.part.isList && !s.flag && s.word != null)
+          CardReview.itemKey(s.part, s.word!),
+    };
+    return <String>{
+      for (final key in _checked)
+        if (!suggested.contains(key)) key,
+    };
   }
 
   /// The move suggested for the card, once saved, or null (#477).
@@ -1095,20 +1310,33 @@ class _SuggestSheetState extends State<SuggestSheet> {
   }
 
   /// Whether the sheet shows [s], and so writes it again on saving.
-  bool _shows(Suggestion s) => switch (s.part) {
-    CardPart.alt => true,
-    CardPart.base => switch (s.action) {
-      null => false,
-      BaseAction.add => true,
-      _ => _baseOf(s.word!) != null,
-    },
-    _ => true,
-  };
+  bool _shows(Suggestion s) => s.flag
+      ? true
+      : switch (s.part) {
+          CardPart.alt => true,
+          CardPart.base => switch (s.action) {
+            null => false,
+            BaseAction.add => true,
+            _ => _baseOf(s.word!) != null,
+          },
+          // One on the card's first example before #508 stays as it was.
+          CardPart.example => false,
+          _ when s.part.isList =>
+            s.action == BaseAction.add ||
+                (_items[s.part] ?? const <FieldItem>[]).any(
+                  (i) => i.key == s.word,
+                ),
+          _ => true,
+        };
 
   /// Every suggestion the card keeps once saved, those on parts this sheet
   /// does not show (a base no longer on the card) left as they are.
   List<Suggestion> _result(AppLocalizations l10n) => <Suggestion>[
     for (final p in _parts) ?_resultOn(p),
+    for (final p in _itemParts) ?_resultOn(p),
+    for (final part in _listParts) ..._addedResults(part),
+    ?_warningResult(),
+    ..._flagResults(),
     ?_altResult(),
     for (final b in _bases) ?_baseResult(l10n, b),
     for (final edit in _added) ?_addResult(l10n, edit),
@@ -1120,13 +1348,22 @@ class _SuggestSheetState extends State<SuggestSheet> {
   bool _changed(AppLocalizations l10n) {
     String key(List<Suggestion> list) =>
         jsonEncode(<Object?>[for (final s in list) s.toJson()]);
-    return key(_result(l10n)) != key(_saved);
+    final result = _result(l10n);
+    final right = _rightKeys(result);
+    return key(result) != key(_saved) ||
+        right.length != _checkedSaved.length ||
+        !right.containsAll(_checkedSaved);
   }
 
   void _save(AppLocalizations l10n) {
     final reviewing = AppScope.read(context).reviewing;
     final result = _result(l10n);
-    reviewing.suggest(widget.deck, widget.card, result);
+    reviewing.suggest(
+      widget.deck,
+      widget.card,
+      result,
+      itemsRight: _rightKeys(result),
+    );
     if (widget.from case final from?) {
       final part = partOf(from.field);
       if (result.any((s) => s.part == part && s.word == null)) {
@@ -1182,6 +1419,17 @@ class _SuggestSheetState extends State<SuggestSheet> {
     final newWord = _newWord;
     final editingWord = _edits.containsKey(_wordPart);
     final free = _freeWords();
+    final check = newWord != null;
+    // A box and the space under it.
+    List<Widget> spaced(Widget box) => <Widget>[box, const SizedBox(height: 8)];
+    List<Widget> scalar(CardPart part) => <Widget>[
+      if (_parts.any((p) => p.part == part))
+        ...spaced(_partCard(context, (part: part, word: null), check: check)),
+    ];
+    List<Widget> lists(List<CardPart> parts) => <Widget>[
+      for (final part in parts)
+        if (_listShown(part)) ...spaced(_listBox(context, part, check: check)),
+    ];
     return Padding(
       padding: EdgeInsetsDirectional.only(
         bottom: MediaQuery.viewInsetsOf(context).bottom,
@@ -1236,36 +1484,44 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
-              for (final p in _parts) ...<Widget>[
-                _partCard(context, p, check: newWord != null),
+              _group(context, l10n.reviewGroupWord),
+              ...scalar(CardPart.word),
+              if (editingWord && newWord != null) ...<Widget>[
+                IdentityPanel(
+                  card: widget.card,
+                  language: widget.deck.language,
+                  bases: <ShownBase>[
+                    for (final b in _bases)
+                      if (!_baseRemoved.containsKey(b.word)) b.shown,
+                  ],
+                  onReplace:
+                      _bases.every((b) => _baseRemoved.containsKey(b.word))
+                      ? null
+                      : _replaceBases,
+                  keepAlt: _keepAlt,
+                  onKeepAlt: (v) => setState(() => _keepAlt = v),
+                ),
                 const SizedBox(height: 8),
-                if (p.part == CardPart.word &&
-                    editingWord &&
-                    newWord != null) ...<Widget>[
-                  IdentityPanel(
-                    card: widget.card,
-                    language: widget.deck.language,
-                    bases: <ShownBase>[
-                      for (final b in _bases)
-                        if (!_baseRemoved.containsKey(b.word)) b.shown,
-                    ],
-                    onReplace:
-                        _bases.every((b) => _baseRemoved.containsKey(b.word))
-                        ? null
-                        : _replaceBases,
-                    keepAlt: _keepAlt,
-                    onKeepAlt: (v) => setState(() => _keepAlt = v),
-                  ),
-                  const SizedBox(height: 8),
-                ],
-                if (p.part == CardPart.ipa &&
-                    !editingWord &&
-                    newWord != null) ...<Widget>[
-                  _altBox(context),
-                  const SizedBox(height: 8),
-                ],
               ],
+              ...scalar(CardPart.reading),
+              ...scalar(CardPart.ipa),
+              if (widget.card.ipa != null || widget.card.phonetic != null)
+                ...spaced(_phoneticBox(context)),
+              if (!editingWord && newWord != null)
+                ...spaced(_altBox(context))
+              else if (widget.card.altTarget.isNotEmpty)
+                ...spaced(_altSeen(context)),
+              ...scalar(CardPart.gender),
+              ...scalar(CardPart.register),
+              ...scalar(CardPart.hears),
+              if (!_isPhrase || widget.card.frequency != null)
+                ...spaced(_frequencyBox(context)),
+              _group(context, l10n.reviewGroupMeaning),
+              ...scalar(CardPart.meaning),
+              ...lists(<CardPart>[CardPart.senses]),
+              _group(context, l10n.reviewGroupExamples),
+              ...lists(<CardPart>[CardPart.examples]),
+              _group(context, l10n.reviewSuggestBases),
               for (final b in _bases) ...<Widget>[
                 _baseBox(context, b, check: newWord != null),
                 const SizedBox(height: 8),
@@ -1284,7 +1540,26 @@ class _SuggestSheetState extends State<SuggestSheet> {
                     label: Text(l10n.reviewBaseAdd),
                   ),
                 ),
-              const SizedBox(height: 8),
+              _group(context, l10n.reviewGroupRelated),
+              ...lists(<CardPart>[
+                CardPart.synonyms,
+                CardPart.antonyms,
+                CardPart.confusables,
+                CardPart.pairs,
+                CardPart.forms,
+                CardPart.collocations,
+              ]),
+              _group(context, l10n.reviewGroupNotes),
+              ...scalar(CardPart.notes),
+              ...spaced(_warningBox(context)),
+              _group(context, l10n.reviewGroupMedia),
+              ...scalar(CardPart.picture),
+              if (widget.card.hasPicture) ...spaced(_imageBox(context)),
+              ...spaced(_recordingBox(context)),
+              _group(context, l10n.reviewGroupFacts),
+              ...lists(<CardPart>[CardPart.facts, CardPart.dictionary]),
+              ...spaced(_setBox(context)),
+              _group(context, l10n.reviewPartPlace),
               _placeBox(context),
               const SizedBox(height: 8),
               Padding(
@@ -1401,6 +1676,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
       body: edit == null
           ? <Widget>[
               value,
+              if (now == null &&
+                  (p.part == CardPart.picture || p.part == CardPart.gender))
+                _flagRow(context, p.part, l10n.reviewFlagMissing),
               if (saved != null) ...<Widget>[
                 const SizedBox(height: 8),
                 _yours(
@@ -1464,6 +1742,605 @@ class _SuggestSheetState extends State<SuggestSheet> {
               ),
             ],
     );
+  }
+
+  /// A group's heading: "The word", "Meaning" and the rest (#508).
+  Widget _group(BuildContext context, String text) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 8),
+      child: Semantics(
+        header: true,
+        child: Text(
+          text,
+          style: theme.textTheme.titleSmall!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// The label of "Add" at the end of the list [part], or null for a list
+  /// the reviewer adds nothing to (the imported dictionary entry).
+  String? _addLabel(AppLocalizations l10n, CardPart part) => switch (part) {
+    CardPart.senses => l10n.reviewAddSense,
+    CardPart.examples => l10n.reviewAddExample,
+    CardPart.synonyms => l10n.reviewAddSynonym,
+    CardPart.antonyms => l10n.reviewAddAntonym,
+    CardPart.confusables => l10n.reviewAddConfusable,
+    CardPart.pairs => l10n.reviewAddPair,
+    CardPart.forms => l10n.reviewAddForm,
+    CardPart.collocations => l10n.reviewAddCollocation,
+    CardPart.facts => l10n.reviewAddFact,
+    _ => null,
+  };
+
+  /// "Flagged. It goes with your review." with Undo, or the button that
+  /// flags [part] as [label] says.
+  Widget _flagRow(BuildContext context, CardPart part, String label) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    if (_flagged.contains(part)) {
+      return Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              l10n.reviewFlagged,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () => setState(() => _flagged.remove(part)),
+            child: Text(l10n.commonUndo),
+          ),
+        ],
+      );
+    }
+    return Align(
+      alignment: AlignmentDirectional.centerStart,
+      child: TextButton.icon(
+        key: SuggestSheet.flagKey(part),
+        onPressed: () => setState(() => _flagged.add(part)),
+        icon: const Icon(Icons.flag_outlined),
+        label: Text(label),
+      ),
+    );
+  }
+
+  /// A box of a part a reviewer only flags: [body], then [flagLabel].
+  Widget _flagBox(
+    BuildContext context,
+    CardPart part,
+    List<Widget> body,
+    String flagLabel,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    return _box(
+      label: _label(partName(l10n, part), const <String>[]),
+      body: <Widget>[...body, _flagRow(context, part, flagLabel)],
+    );
+  }
+
+  Text _mutedLine(BuildContext context, String text) {
+    final theme = Theme.of(context);
+    return Text(
+      text,
+      style: theme.textTheme.bodySmall!.copyWith(
+        color: theme.colorScheme.onSurfaceVariant,
+      ),
+    );
+  }
+
+  /// The mark on an item taken from Wiktionary.
+  Widget _wiktionaryTag(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 4),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        spacing: 4,
+        children: <Widget>[
+          Icon(
+            Icons.menu_book_outlined,
+            size: 18,
+            color: scheme.onSurfaceVariant,
+          ),
+          Flexible(child: _mutedLine(context, l10n.reviewWiktionary)),
+        ],
+      ),
+    );
+  }
+
+  /// The narrow IPA, written by a tool: flagged, never changed.
+  Widget _phoneticBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final phonetic = widget.card.phonetic;
+    return _flagBox(context, CardPart.phonetic, <Widget>[
+      Text(
+        phonetic ?? l10n.reviewSuggestNotSet,
+        style: phonetic == null
+            ? theme.textTheme.bodyLarge!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+                fontStyle: FontStyle.italic,
+              )
+            : theme.textTheme.bodyLarge,
+      ),
+      _mutedLine(context, l10n.reviewToolWritten),
+    ], l10n.reviewFlagPhonetic);
+  }
+
+  /// The frequency, counted by a tool: flagged, never changed.
+  Widget _frequencyBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final frequency = widget.card.frequency;
+    return _flagBox(context, CardPart.frequency, <Widget>[
+      Text(
+        frequency == null
+            ? l10n.reviewFrequencyNone
+            : l10n.reviewFrequencyRank(frequency.rank, frequency.source),
+        style: theme.textTheme.bodyLarge,
+      ),
+      _mutedLine(context, l10n.reviewToolWritten),
+    ], l10n.reviewFlagRank);
+  }
+
+  /// Also heard, as the card has it, for a card whose word is not being
+  /// changed: seen, not changed here.
+  Widget _altSeen(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return _box(
+      label: _label(l10n.reviewPartAlt, const <String>[]),
+      body: <Widget>[
+        for (final alt in widget.card.altTarget)
+          Text.rich(
+            quotingTarget(alt, <String>[alt], widget.deck.language),
+            style: theme.textTheme.bodyLarge,
+          ),
+      ],
+    );
+  }
+
+  /// One list field (#508): each item with its pencil and Looks right, how
+  /// many are left to check, and Add at the end; with no item, "not set"
+  /// with Add and Flag as missing. [check] tags the examples, which may
+  /// name the old word.
+  Widget _listBox(BuildContext context, CardPart part, {bool check = false}) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final name = partName(l10n, part);
+    final items = inReviewOrder(
+      _items[part] ?? const <FieldItem>[],
+      part,
+      _checked,
+    );
+    final added = _newItems[part] ?? const <_Edit>[];
+    final todo = items
+        .where((i) => !_checked.contains(CardReview.itemKey(part, i.key)))
+        .length;
+    final empty = items.isEmpty && added.isEmpty;
+    final add = _addLabel(l10n, part);
+    return _box(
+      label: _label(name, const <String>[]),
+      actions: <Widget>[
+        if (check && part == CardPart.examples && items.isNotEmpty)
+          const CheckTag(),
+        if (items.isNotEmpty)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 12),
+            child: _mutedLine(context, l10n.reviewItemsToCheck(todo)),
+          ),
+      ],
+      body: <Widget>[
+        if (empty)
+          Text(
+            l10n.reviewSuggestNotSet,
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: scheme.onSurfaceVariant,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        for (final item in items) _itemRow(context, part, item),
+        for (final (i, edit) in added.indexed)
+          _newItemBox(context, part, i, edit),
+        if (add != null)
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: TextButton.icon(
+              key: SuggestSheet.addItemKey(part),
+              onPressed: () => setState(
+                () => (_newItems[part] ??= <_Edit>[]).add(_Edit('', '')),
+              ),
+              icon: const Icon(Icons.add),
+              label: Text(add),
+            ),
+          ),
+        if (empty && part != CardPart.dictionary)
+          _flagRow(context, part, l10n.reviewFlagMissing),
+      ],
+    );
+  }
+
+  /// One item of a list: its text, with its pencil; below it, Looks right,
+  /// or "You checked this", or the reviewer's own suggestion on it.
+  Widget _itemRow(BuildContext context, CardPart part, FieldItem item) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final language = widget.deck.language;
+    final name = partName(l10n, part);
+    final p = (part: part, word: item.key);
+    final edit = _edits[p];
+    final saved = _removed.contains(p) ? null : _savedOn(p);
+    final key = CardReview.itemKey(part, item.key);
+    final done = _checked.contains(key);
+    final detail = item.detail;
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.only(top: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text.rich(
+                        quotingTarget(item.title, <String>[
+                          ?item.quote,
+                        ], language),
+                        style: theme.textTheme.bodyLarge,
+                      ),
+                      if (detail != null)
+                        Text(
+                          detail,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      if (item.wiktionary) _wiktionaryTag(context),
+                    ],
+                  ),
+                ),
+              ),
+              if (edit == null)
+                IconButton(
+                  onPressed: () => _edit(p),
+                  tooltip: l10n.reviewSuggestEditPart(name),
+                  icon: const Icon(Icons.edit_outlined),
+                ),
+            ],
+          ),
+          if (edit != null)
+            ..._itemEditor(context, p, item.text, edit)
+          else ...<Widget>[
+            if (saved != null) ...<Widget>[
+              const SizedBox(height: 8),
+              _yours(context, p, saved, name),
+            ],
+            if (_removed.contains(p))
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: _mutedLine(context, l10n.reviewSuggestRemoved),
+                  ),
+                  TextButton(
+                    onPressed: () => setState(() => _removed.remove(p)),
+                    child: Text(l10n.commonUndo),
+                  ),
+                ],
+              )
+            else if (saved == null && done)
+              Row(
+                children: <Widget>[
+                  Icon(Icons.check_circle, color: scheme.primary, size: 20),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      l10n.reviewItemChecked,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.primary,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () => setState(() => _checked.remove(key)),
+                    child: Text(l10n.commonUndo),
+                  ),
+                ],
+              )
+            else if (saved == null)
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: Tooltip(
+                  message: l10n.reviewItemLooksRight(item.title),
+                  child: TextButton.icon(
+                    key: SuggestSheet.itemRightKey(part, item.key),
+                    onPressed: () => setState(() => _checked.add(key)),
+                    icon: const Icon(Icons.check_circle_outline),
+                    label: Text(l10n.reviewLooksRight),
+                  ),
+                ),
+              ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  /// The fields of an item being changed: what it says now, the
+  /// suggestion, and why.
+  List<Widget> _itemEditor(
+    BuildContext context,
+    _Part p,
+    String now,
+    _Edit edit,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    return <Widget>[
+      const SizedBox(height: 8),
+      MergeSemantics(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            _mutedLine(context, l10n.reviewSuggestNow),
+            Text.rich(
+              quotingTarget(now, const <String>[], widget.deck.language),
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(height: 12),
+      TextField(
+        key: SuggestSheet.textKey(p.part, word: p.word),
+        controller: edit.text,
+        minLines: 1,
+        maxLines: 5,
+        onChanged: (_) => setState(() {}),
+        decoration: InputDecoration(
+          labelText: l10n.reviewSuggestYours,
+          border: AppRadii.fieldBorder,
+        ),
+      ),
+      const SizedBox(height: 12),
+      TextField(
+        key: SuggestSheet.whyKey(p.part, word: p.word),
+        controller: edit.why,
+        minLines: 1,
+        maxLines: 3,
+        onChanged: (_) => setState(() {}),
+        decoration: InputDecoration(
+          labelText: l10n.reviewSuggestWhy,
+          border: AppRadii.fieldBorder,
+        ),
+      ),
+    ];
+  }
+
+  /// An item being added to the list [part]: its text and why, outlined,
+  /// with a button that drops it.
+  Widget _newItemBox(
+    BuildContext context,
+    CardPart part,
+    int index,
+    _Edit edit,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final add = _addLabel(l10n, part) ?? partName(l10n, part);
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 8, bottom: 8),
+      child: _box(
+        outlined: true,
+        label: _label(add, const <String>[]),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () => setState(() {
+              final list = _newItems[part]!;
+              _retire(<TextEditingController>[edit.text, edit.why]);
+              list.removeAt(index);
+            }),
+            tooltip: l10n.reviewAddRemove,
+            icon: const Icon(Icons.delete_outline),
+          ),
+        ],
+        body: <Widget>[
+          TextField(
+            key: SuggestSheet.newItemKey(part, index, 'text'),
+            controller: edit.text,
+            minLines: 1,
+            maxLines: 5,
+            onChanged: (_) => setState(() {}),
+            decoration: InputDecoration(
+              labelText: l10n.reviewSuggestYours,
+              border: AppRadii.fieldBorder,
+            ),
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            key: SuggestSheet.newItemKey(part, index, 'why'),
+            controller: edit.why,
+            minLines: 1,
+            maxLines: 3,
+            onChanged: (_) => setState(() {}),
+            decoration: InputDecoration(
+              labelText: l10n.reviewSuggestWhy,
+              border: AppRadii.fieldBorder,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// The warning the teach card shows (#691), and the one the reviewer
+  /// picked in its place: its pencil opens the picker, which offers only
+  /// the warnings the card has.
+  Widget _warningBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final name = l10n.reviewPartWarning;
+    final id = _warning ?? widget.card.warning;
+    final option = warningOptionsOf(widget.card)
+        .where((o) => o.id == id)
+        .firstOrNull;
+    final picked = _warning != null && _warning != widget.card.warning;
+    return _box(
+      outlined: picked,
+      label: _label(name, const <String>[]),
+      actions: <Widget>[
+        IconButton(
+          key: SuggestSheet.warningKey,
+          onPressed: _pickWarning,
+          tooltip: l10n.reviewSuggestEditPart(name),
+          icon: const Icon(Icons.edit_outlined),
+        ),
+        if (picked)
+          IconButton(
+            onPressed: () => setState(() {
+              _warning = null;
+              _warningWhy = '';
+            }),
+            tooltip: l10n.reviewSuggestRemove(name),
+            icon: const Icon(Icons.delete_outline),
+          ),
+      ],
+      body: <Widget>[
+        if (option == null)
+          Text(l10n.reviewWarningAuto, style: theme.textTheme.bodyMedium)
+        else
+          Container(
+            padding: const EdgeInsetsDirectional.all(12),
+            decoration: BoxDecoration(
+              color: scheme.surfaceContainerHighest,
+              borderRadius: BorderRadius.circular(AppRadii.control),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 12,
+              children: <Widget>[
+                Icon(warningIcon(option), color: scheme.onSurfaceVariant),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        warningName(l10n, option),
+                        style: theme.textTheme.labelLarge,
+                      ),
+                      if (option.text.isNotEmpty)
+                        Text(option.text, style: theme.textTheme.bodyMedium),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        const SizedBox(height: 8),
+        _mutedLine(context, l10n.reviewWarningBox),
+      ],
+    );
+  }
+
+  Future<void> _pickWarning() async {
+    final choice = await showWarningSheet(
+      context,
+      card: widget.card,
+      language: widget.deck.language,
+      current: _warning ?? widget.card.warning,
+      why: _warningWhy,
+    );
+    if (choice == null || !mounted) return;
+    setState(() {
+      _warning = choice.id == widget.card.warning ? null : choice.id;
+      _warningWhy = _warning == null ? '' : choice.why;
+    });
+  }
+
+  /// The card's image, with its credit: flagged, never drawn or replaced.
+  Widget _imageBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final card = widget.card;
+    final credit = card.imageCredit;
+    return _flagBox(context, CardPart.image, <Widget>[
+      if (card.image == null)
+        Text(
+          l10n.reviewImageNone,
+          style: Theme.of(context).textTheme.bodyMedium,
+        )
+      else ...<Widget>[
+        CardPicture(card, size: 72),
+        if (credit != null)
+          _mutedLine(
+            context,
+            l10n.reviewMediaCredit(credit.credit, credit.license),
+          ),
+      ],
+    ], l10n.reviewFlagImage);
+  }
+
+  /// The card's recording and its credit: reviewers can only flag it, and
+  /// a flagged recording is dropped for text-to-speech (owner, 2026-10-13).
+  Widget _recordingBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final card = widget.card;
+    final credit = card.audioCredit;
+    return _flagBox(context, CardPart.recording, <Widget>[
+      if (card.audio == null)
+        Text(
+          l10n.reviewRecordingNone,
+          style: Theme.of(context).textTheme.bodyMedium,
+        )
+      else ...<Widget>[
+        if (credit != null)
+          _mutedLine(
+            context,
+            l10n.reviewMediaCredit(credit.credit, credit.license),
+          ),
+        // Every recording is imported from Wiktionary (#518): semi-verified.
+        if (credit != null) _wiktionaryTag(context),
+      ],
+    ], l10n.reviewFlagRecording);
+  }
+
+  /// The set cards the card is a member of, with their members.
+  Widget _setBox(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final sets = <ResolvedSet>[
+      for (final set in _state.courseSets(
+        widget.deck.language.code,
+        widget.deck.deck.native.code,
+      ))
+        if (set.has(widget.card)) set,
+    ];
+    return _flagBox(context, CardPart.setCard, <Widget>[
+      if (sets.isEmpty)
+        Text(l10n.reviewSetNone, style: Theme.of(context).textTheme.bodyMedium),
+      for (final set in sets) ...<Widget>[
+        Text(
+          l10n.reviewSetIn(set.set.name, set.members.length),
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        Text.rich(
+          quotingTarget(set.members.map((m) => m.target).join(', '), <String>[
+            for (final m in set.members) m.target,
+          ], widget.deck.language),
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ],
+    ], sets.isEmpty ? l10n.reviewFlagMissing : l10n.reviewFlagSet);
   }
 
   /// The units the card may be moved to: the course path's, with the

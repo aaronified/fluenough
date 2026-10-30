@@ -209,6 +209,25 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.rejects, [("zz", "bbbbbbbbbb", "zz-9202")])
         self.assertEqual(review.edits, 1)
 
+    def _fields_the_bot_does_not_write_are_left_for_the_owner(self) -> None:
+        # #508: an item of a list field, a flag and a teach-card warning have
+        # no field the bot writes yet, so none becomes a proposal, and the
+        # items checked "Looks right" change nothing.
+        files = [review_file([{
+            "card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
+            "items_right": ["synonyms:b"],
+            "suggestions": [
+                {"part": "synonyms", "word": "a", "action": "edit",
+                 "now": "x", "text": "y"},
+                {"part": "antonyms", "now": "", "text": "", "flag": True},
+                {"part": "warning", "now": "", "text": "none"},
+                {"part": "meaning", "now": "milk", "text": "", "flag": True},
+            ]}])]
+        review = rb.read_review(files, ALICE)
+        self.assertEqual(review.suggestions, [])
+        self.assertEqual(review.left, 4)
+        self.assertEqual(review.checks, [])
+
     def _a_card_with_suggestions_on_two_parts_makes_two(self) -> None:
         # Since #468 a card keeps one suggestion a part, in a list.
         files = [review_file([
@@ -246,6 +265,7 @@ class ReadingReviews(unittest.TestCase):
     def test_a_review_file_is_read_and_git_never_shows_the_token(self) -> None:
         cases = (
             self._suggestions_answers_and_what_is_left,
+            self._fields_the_bot_does_not_write_are_left_for_the_owner,
             self._a_card_with_suggestions_on_two_parts_makes_two,
             self._a_file_whose_language_is_not_a_code_is_dropped,
             self._a_failed_git_command_never_shows_the_token,

@@ -117,28 +117,36 @@ class Reviewing {
       rating: old?.rating,
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
+      itemsRight: old?.itemsRight ?? const <String>{},
     ),
   );
 
   /// The changes suggested to [card], one a part at most, in place of
   /// "Looks right": every one the card keeps, so a part left out has its
-  /// suggestion taken back, and an empty list takes back them all.
-  void suggest(DeckEntry deck, Card card, List<Suggestion> suggestions) =>
-      _change(
-        deck,
-        card,
-        (old, at) => CardReview(
-          at: at,
-          right: suggestions.isEmpty && (old?.right ?? false),
-          suggestions: List<Suggestion>.unmodifiable(<Suggestion>[
-            for (final (i, s) in suggestions.indexed)
-              if (!suggestions.take(i).any(s.samePart)) s,
-          ]),
-          rating: old?.rating,
-          alike: old?.alike,
-          answers: old?.answers ?? const <String, ProposalAnswer>{},
-        ),
-      );
+  /// suggestion taken back, and an empty list takes back them all. With
+  /// [itemsRight], the items checked "Looks right" are replaced too (#508);
+  /// without, they stay as they were.
+  void suggest(
+    DeckEntry deck,
+    Card card,
+    List<Suggestion> suggestions, {
+    Set<String>? itemsRight,
+  }) => _change(
+    deck,
+    card,
+    (old, at) => CardReview(
+      at: at,
+      right: suggestions.isEmpty && (old?.right ?? false),
+      suggestions: List<Suggestion>.unmodifiable(<Suggestion>[
+        for (final (i, s) in suggestions.indexed)
+          if (!suggestions.take(i).any(s.samePart)) s,
+      ]),
+      rating: old?.rating,
+      alike: old?.alike,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
+      itemsRight: itemsRight ?? old?.itemsRight ?? const <String>{},
+    ),
+  );
 
   /// How offensive the rude word [card] is, by this rater.
   void rate(DeckEntry deck, Card card, WordRating rating) => _change(
@@ -151,6 +159,7 @@ class Reviewing {
       rating: rating,
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
+      itemsRight: old?.itemsRight ?? const <String>{},
     ),
   );
 
@@ -165,6 +174,7 @@ class Reviewing {
       rating: old?.rating,
       alike: check,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
+      itemsRight: old?.itemsRight ?? const <String>{},
     ),
   );
 
@@ -196,6 +206,7 @@ class Reviewing {
       rating: old?.rating,
       alike: old?.alike,
       answers: Map<String, ProposalAnswer>.unmodifiable(answers),
+      itemsRight: old?.itemsRight ?? const <String>{},
     );
   });
 
