@@ -19,6 +19,8 @@ import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/situations/situation_inspect_page.dart';
+import '../features/situations/situation_page.dart';
 import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
@@ -118,6 +120,12 @@ abstract final class AppRoutes {
   /// The app's own log (#162), opened from Settings and from a report.
   static const String appLog = '/app-log';
 
+  /// A situation's sheet (#724). Argument: a [SituationRequest].
+  static const String situation = '/situation';
+
+  /// A sheet's cards in full, one at a time. Argument: a [SituationRequest].
+  static const String situationInspect = '/situation-inspect';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -186,6 +194,10 @@ abstract final class AppRoutes {
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
+      situation when args is SituationRequest => SituationPage(request: args),
+      situationInspect when args is SituationRequest => SituationInspectPage(
+        request: args,
+      ),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),

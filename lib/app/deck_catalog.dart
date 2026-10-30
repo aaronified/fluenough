@@ -10,6 +10,7 @@ import '../core/data/catalog_snapshot.dart';
 import '../core/data/course_path.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
+import '../core/data/situations_parser.dart';
 import '../core/data/guide_layers.dart';
 import '../core/data/script_guide_parser.dart';
 import '../core/data/romanisation_parser.dart';
@@ -25,6 +26,7 @@ import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
+import '../core/models/situation.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
@@ -198,6 +200,7 @@ class Catalog {
     required List<BrokenDeck> broken,
     List<DeckTheme> themes = const <DeckTheme>[],
     Map<String, FactsFile> facts = const <String, FactsFile>{},
+    Map<String, SituationsFile> situations = const <String, SituationsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
     Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
@@ -208,6 +211,7 @@ class Catalog {
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
        facts = Map<String, FactsFile>.unmodifiable(facts),
+       situations = Map<String, SituationsFile>.unmodifiable(situations),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
        languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
@@ -217,6 +221,10 @@ class Catalog {
 
   /// Each language's daily facts (#48), by language code.
   final Map<String, FactsFile> facts;
+
+  /// Each language's situation sheets (#724), by language code. A language
+  /// without a situations file has none.
+  final Map<String, SituationsFile> situations;
 
   /// Each language's rules for spelling a generated number (#54), by
   /// language code. A language without a numbers file has none.
@@ -279,6 +287,7 @@ class Catalog {
       broken: broken,
       themes: themes,
       facts: facts,
+      situations: situations,
       numberRules: numberRules,
       paths: paths,
       languagePaths: languagePaths,
@@ -619,6 +628,7 @@ class DeckCatalog {
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
     final facts = <String, FactsFile>{};
+    final situations = <String, SituationsFile>{};
     final numberRules = <String, NumberRules>{};
     final languagePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
@@ -746,6 +756,15 @@ class DeckCatalog {
         }
         continue;
       }
+      if (kind == 'situations') {
+        try {
+          final file = parseSituations(text, source: path.split('/').last);
+          situations.putIfAbsent(file.languageCode, () => file);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       if (kind == 'numbers') {
         try {
           final rules = parseNumberRules(text, source: path.split('/').last);
@@ -852,6 +871,7 @@ class DeckCatalog {
       broken: broken,
       themes: themes,
       facts: facts,
+      situations: situations,
       numberRules: numberRules,
       paths: placed,
       languagePaths: languagePaths,
@@ -1118,6 +1138,8 @@ class DeckCatalog {
           DeckParser.parseLayer(text, source: source);
         case 'facts':
           parseFacts(text, source: source);
+        case 'situations':
+          parseSituations(text, source: source);
         case 'numbers':
           parseNumberRules(text, source: source);
         case 'path':

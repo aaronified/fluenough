@@ -119,6 +119,7 @@ class DrillSession extends ChangeNotifier {
        startedAt = state.now(),
        _showingPassage = items.first.card is QuestionCard {
     _watch.start();
+    state.warmSynonyms();
   }
 
   final AppState _state;
@@ -462,6 +463,7 @@ class DrillSession extends ChangeNotifier {
                 ? deck.deck.native.articles
                 : deck.language.articles,
             meaning: hearsMeaning && _meaningIsEnglish,
+            synonyms: _state.synonyms,
           );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,

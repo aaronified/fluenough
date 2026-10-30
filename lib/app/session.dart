@@ -19,6 +19,7 @@ class DrillRequest {
     this.language,
     this.limit,
     this.cardIds,
+    this.sheet = false,
     this.script = ScriptScope.any,
   });
 
@@ -127,6 +128,16 @@ class DrillRequest {
   /// answer is recorded in the IPA course and scheduled with the rest of it.
   const DrillRequest.sounds(Set<String> cardIds) : this(cardIds: cardIds);
 
+  /// A situation sheet's session (#724): the cards [cardIds] of one sheet of
+  /// [language]'s, the ones not learnt yet taught first, then those learnt
+  /// revised. With [revise], only the revising: the sheet has nothing new.
+  /// Every answer is recorded, as any lesson's or revision's is.
+  const DrillRequest.sheet(
+    Set<String> cardIds, {
+    required String language,
+    bool revise = false,
+  }) : this(cardIds: cardIds, sheet: true, language: language, revise: revise);
+
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
   final Set<String>? deckIds;
@@ -134,6 +145,10 @@ class DrillRequest {
   /// The IPA cards of a "sounds of this word" session, by id and in order;
   /// null for any other session.
   final Set<String>? cardIds;
+
+  /// Whether [cardIds] are a situation sheet's rather than the IPA cards of
+  /// a word's sounds.
+  final bool sheet;
 
   /// One skill only, or null for every skill the learner has switched on.
   final Skill? skill;
@@ -192,7 +207,7 @@ class DrillRequest {
       'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, daily: $daily, '
-      'language: $language, limit: $limit, cards: $cardIds, '
+      'language: $language, limit: $limit, cards: $cardIds, sheet: $sheet, '
       'script: ${script.name})';
 }
 
