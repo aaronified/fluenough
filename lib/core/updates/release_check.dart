@@ -18,12 +18,17 @@ enum ReleaseCheckFailure {
 
 /// The newest release, or why it could not be found.
 class LatestRelease {
-  const LatestRelease(String this.version, {this.apkSha256, this.hasApk = true})
-    : failure = null;
+  const LatestRelease(
+    String this.version, {
+    this.apkSha256,
+    this.apkSize,
+    this.hasApk = true,
+  }) : failure = null;
 
   const LatestRelease.failed(ReleaseCheckFailure this.failure)
     : version = null,
       apkSha256 = null,
+      apkSize = null,
       hasApk = false;
 
   /// The release's version, its tag without the "v": `0.2.0`.
@@ -33,6 +38,10 @@ class LatestRelease {
   /// The SHA-256 of the release's [apkName], in lower-case hex, when GitHub
   /// gives one: the download is checked against it before it installs.
   final String? apkSha256;
+
+  /// The size in bytes of the release's [apkName], when GitHub gives it: a
+  /// kept download of the same size is the whole file (#487).
+  final int? apkSize;
 
   /// Whether the release has [apkName] attached. Without it the
   /// latest-download path has nothing to install: in the minute before the
@@ -146,9 +155,11 @@ LatestRelease releaseFromReply(int status, String body) {
   final hex = digest is String
       ? RegExp(r'^sha256:([0-9a-fA-F]{64})$').firstMatch(digest)?.group(1)
       : null;
+  final size = apk?['size'];
   return LatestRelease(
     numbers.join('.'),
     apkSha256: hex?.toLowerCase(),
+    apkSize: size is int && size > 0 ? size : null,
     hasApk: apk != null,
   );
 }

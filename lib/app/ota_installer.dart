@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart';
 import 'package:ota_update/ota_update.dart';
 
 import '../core/updates/apk_install.dart';
+import 'system_settings.dart';
 
 /// [ApkInstaller] through ota_update (ADR-0017). It downloads into
 /// `files/ota_update/<fileName>` in the app's own storage, which needs no
@@ -18,7 +20,17 @@ class OtaApkInstaller implements ApkInstaller {
   OtaApkInstaller({
     this.stall = const Duration(seconds: 60),
     this._plugin = OtaUpdate.new,
+    this.directory,
+    this.channel = ChannelSystemSettings.defaultChannel,
   });
+
+  /// The folder ota_update downloads into, `files/ota_update`: where
+  /// [installFile] finds the download. Without it [installFile] fails.
+  final String? directory;
+
+  /// The app's own channel, whose `installApk` opens Android's installer on
+  /// a file in [directory], written by `tools/brand_android.py` (#487).
+  final MethodChannel channel;
 
   /// How long a download may go without an event before it counts as
   /// failed.
@@ -85,6 +97,27 @@ class OtaApkInstaller implements ApkInstaller {
       end(const InstallEvent.failed(InstallFailure.internal));
     }
     return out.stream;
+  }
+
+  @override
+  Stream<InstallEvent> installFile(String fileName) async* {
+    final folder = directory;
+    if (folder == null) {
+      yield const InstallEvent.failed(InstallFailure.internal);
+      return;
+    }
+    try {
+      final opened = await channel.invokeMethod<bool>('installApk', {
+        'path': '$folder/$fileName',
+      });
+      yield opened ?? false
+          ? const InstallEvent.installing()
+          : const InstallEvent.failed(InstallFailure.install);
+    } on PlatformException {
+      yield const InstallEvent.failed(InstallFailure.install);
+    } on MissingPluginException {
+      yield const InstallEvent.failed(InstallFailure.internal);
+    }
   }
 
   @override

@@ -118,7 +118,7 @@ Future<void> main() async {
         // Backups, kept in the app's own storage, which an update leaves
         // alone (#470).
         backupStore: FileBackupStore(Directory('${files.path}/backups')),
-        installer: OtaApkInstaller(),
+        installer: OtaApkInstaller(directory: '${files.path}/ota_update'),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),
     ),
