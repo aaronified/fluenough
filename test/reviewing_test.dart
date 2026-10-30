@@ -26,6 +26,8 @@ import 'package:fluenough/core/review/sent_state.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/review/alike_warning.dart';
+import 'package:fluenough/features/review/how_reviewing_works.dart';
+import 'package:fluenough/features/review/move_sheet.dart';
 import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/proposal_card.dart';
 import 'package:fluenough/features/review/review_page.dart';
@@ -75,9 +77,10 @@ void useTallPhoneSuggestSheet(WidgetTester tester) {
 Future<AppState> openSheet(
   WidgetTester tester, {
   List<Suggestion> saved = const <Suggestion>[],
+  bool more = false,
 }) async {
   useTallPhoneSuggestSheet(tester);
-  final state = await reviewState(reviewing: true);
+  final state = await reviewState(reviewing: true, more: more);
   final words = state.deckById(wordsDeck)!;
   if (saved.isNotEmpty) {
     state.reviewing.suggest(words, words.cards.last, saved);
@@ -909,6 +912,121 @@ void main() {
         final saved = savedOn(state);
         expect(saved.single.part, CardPart.meaning);
         expect(saved.single.text, 'mum');
+      }
+    });
+  });
+
+  group('where a card belongs', () {
+    testWidgets(
+      'Place offers the plan\'s units and nothing else, and a move is '
+      'saved with the deck ids',
+      (tester) async {
+        final state = await openSheet(tester, more: true);
+        final l10n = l10nOf(tester);
+        // Nothing to type before a unit is chosen: it is never free text.
+        expect(find.byType(TextField), findsNothing);
+        expect(
+          find.text(l10n.reviewPlaceUnit(1, 'Family words')),
+          findsOneWidget,
+        );
+
+        await tap(tester, find.byKey(SuggestSheet.placeKey));
+        expect(find.text(l10n.reviewMoveRule('Telugu')), findsOneWidget);
+        expect(find.byKey(MoveSheet.contributeKey), findsOneWidget);
+        expect(find.byType(TextField), findsNothing);
+        // The other vocabulary deck of the plan, not the deck the card is in,
+        // and not the offensive words.
+        expect(find.byKey(MoveSheet.rowKey(moreDeck)), findsOneWidget);
+        expect(find.byKey(MoveSheet.rowKey(wordsDeck)), findsNothing);
+        expect(find.byKey(MoveSheet.rowKey(rudeDeck)), findsNothing);
+
+        await tester.tap(find.byKey(MoveSheet.rowKey(moreDeck)));
+        await tester.pumpAndSettle();
+        expect(find.byType(MoveSheet), findsNothing);
+        expect(
+          find.text(l10n.reviewPlaceUnit(1, 'More family words')),
+          findsOneWidget,
+        );
+        await type(tester, SuggestSheet.placeWhyKey, 'It is a family word.');
+        await save(tester);
+
+        final move = savedOn(state).single;
+        expect(move.part, CardPart.place);
+        expect(move.now, wordsDeck);
+        expect(move.text, moreDeck);
+        expect(move.label, 'Unit 1 · More family words');
+        expect(move.why, 'It is a family word.');
+      },
+    );
+
+    testWidgets('a kept move shows, and can be taken back', (tester) async {
+      final state = await openSheet(
+        tester,
+        more: true,
+        saved: const <Suggestion>[
+          Suggestion(
+            part: CardPart.place,
+            now: wordsDeck,
+            text: moreDeck,
+            label: 'Unit 1 · More family words',
+            why: 'Same theme.',
+          ),
+        ],
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text('Unit 1 · More family words'), findsOneWidget);
+      await tap(
+        tester,
+        find.byTooltip(l10n.reviewSuggestRemove(l10n.reviewPartPlace)),
+      );
+      await save(tester);
+      expect(savedOn(state), isEmpty);
+    });
+
+    testWidgets('the meaning rule shows above the Meaning field, and above '
+        'no other', (tester) async {
+      await openSheet(tester);
+      final l10n = l10nOf(tester);
+      expect(find.byKey(SuggestSheet.meaningRuleKey), findsNothing);
+      await pencil(tester, l10n.reviewPartIpa);
+      expect(find.byKey(SuggestSheet.meaningRuleKey), findsNothing);
+      await pencil(tester, l10n.reviewPartMeaning);
+      expect(find.byKey(SuggestSheet.meaningRuleKey), findsOneWidget);
+      expect(find.text(l10n.reviewMeaningRule), findsOneWidget);
+    });
+
+    testWidgets('How reviewing works gives the five rules in one step', (
+      tester,
+    ) async {
+      final state = await reviewState();
+      final step = reviewGuideSteps.indexWhere((s) => s.id == 'rules');
+      expect(step, 1);
+      await pumpScreen(
+        tester,
+        HowReviewingWorks(initialStep: step),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      for (final rule in <String>[
+        l10n.reviewGuideRulesBilingual,
+        l10n.reviewGuideRulesMeaning,
+        l10n.reviewGuideRulesLogic,
+        l10n.reviewGuideRulesPlace,
+        l10n.reviewGuideRulesTheme,
+      ]) {
+        expect(find.text(rule, skipOffstage: false), findsOneWidget);
+      }
+    });
+
+    test('docs/REVIEWING.md and the wiki have a heading for every step', () {
+      for (final doc in <String>[
+        'docs/REVIEWING.md',
+        'wiki/Reviewing-Guide.md',
+      ]) {
+        final guide = File(doc).readAsStringSync();
+        for (final step in reviewGuideSteps) {
+          expect(guide, contains('\n## ${step.guideHeading}\n'), reason: doc);
+        }
       }
     });
   });

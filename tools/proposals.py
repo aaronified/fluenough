@@ -46,6 +46,7 @@ FIELD_OF_PART = {
     "ipa": "ipa",
     "meaning": "native",
     "notes": "notes",
+    "place": "place",
 }
 # The order fields are written in, for a field the card did not have.
 FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "alt_target", "native")
@@ -59,6 +60,13 @@ BASES = "bases"
 # A proposal on the accepted alternatives, `alt_target`: its `now` and
 # `text` are the lists as one line of JSON (see alt_text).
 ALT = "alt_target"
+# A proposal on where a card belongs (#477): its `now` is the core id of the
+# deck that holds the card, its `text` the core id of the deck it is moved
+# to, a deck the language's path lists (the review file may name the course's
+# decks, `hi-en-home`, which the bot reads as their cores). Written on the
+# card's entry in its core, and applied by moving the entry, with its layers'
+# entries, to the end of the target's files, its id kept.
+PLACE = "place"
 # The keys of a base in a proposal, in the order they are written.
 BASE_ORDER = ("word", "ref", "base", "reading", "meaning")
 
@@ -308,6 +316,8 @@ def now_of(root: Path, lang: str, entry: Entry, p: Proposal) -> str:
         return base_text(base_of(root, lang, entry, word)) if word else ""
     if p.field == ALT:
         return alt_text(entry.data.get(ALT))
+    if p.field == PLACE:
+        return entry.deck if entry.form == "core" else ""
     value = entry.value(p.field)
     return value if isinstance(value, str) else ""
 
@@ -724,6 +734,12 @@ def propose(root: Path, suggestion: Suggestion, result: Proposed) -> None:
             result.unsupported.append(p)
             return
         p = written
+    elif p.field == PLACE:
+        written = resolve_place(root, suggestion.lang, p)
+        if written is None or p.by in p.accepted:
+            result.unsupported.append(p)
+            return
+        p = written
     elif p.by in p.accepted or p.text == p.now or not p.text.strip():
         result.unsupported.append(p)
         return
@@ -792,6 +808,8 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
     try:
         if p.field == BASES:
             _apply_base(root, lang, entry, p, gone)
+        elif p.field == PLACE:
+            _apply_place(root, lang, entry, p, gone)
         else:
             edit = _Text(entry)
             if p.field == ALT:
@@ -805,6 +823,157 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
     except (Unsupported, ValueError):
         return Applied("unsupported", p)
     return Applied("applied", p, rivals, entry)
+
+
+# --- Where a card belongs (#477) -------------------------------------------------
+
+def _deck_file(root: Path, lang: str, deck: str) -> tuple[Path, dict] | None:
+    """The file of [lang] whose `id` is [deck], and what it loads as."""
+    for path in language_files(root, lang):
+        raw = _load(path)
+        if isinstance(raw, dict) and raw.get("id") == deck:
+            return path, raw
+    return None
+
+
+def core_deck(root: Path, lang: str, deck: str) -> str | None:
+    """The core id of [deck], which is a core's own id or a layer's course
+    deck, `hi-en-home` for `hi-home`; None when the language has no such
+    deck."""
+    found = _deck_file(root, lang, deck)
+    if found is None:
+        return None
+    raw = found[1]
+    if raw.get("kind") == "layer":
+        return raw["core"] if isinstance(raw.get("core"), str) else None
+    return deck
+
+
+def plan_decks(root: Path, lang: str) -> set[str]:
+    """The core ids of the decks the language's path lists in its units,
+    without the wildcard and without the script decks: where a card may be
+    moved to. Empty when the language has no path."""
+    raw = _load(root / "decks" / lang / f"{lang}-path.yaml")
+    if not isinstance(raw, dict) or not isinstance(raw.get("units"), list):
+        return set()
+    alphabet = raw.get("alphabet")
+    skip = set(alphabet) if isinstance(alphabet, list) else set()
+    return {d for u in raw["units"] if isinstance(u, dict)
+            and isinstance(u.get("decks"), list)
+            for d in u["decks"] if isinstance(d, str) and d != "*" and d not in skip}
+
+
+def resolve_place(root: Path, lang: str, p: Proposal) -> Proposal | None:
+    """[p], a proposal on where a card belongs, with its `now` and `text`
+    as the core ids of the decks. None when it is not a good one: a deck
+    the language does not have, a target its path does not list (a new
+    theme or unit goes by pull request), a core that is not a deck of the
+    same kind as the card's, or the deck the card is in."""
+    now, text = core_deck(root, lang, p.now), core_deck(root, lang, p.text)
+    if now is None or text is None or now == text or text not in plan_decks(root, lang):
+        return None
+    src, tgt = _deck_file(root, lang, now), _deck_file(root, lang, text)
+    if src is None or tgt is None:
+        return None
+    if tgt[1].get("part") != "core" or src[1].get("part") != "core" \
+            or tgt[1].get("kind") != src[1].get("kind"):
+        return None
+    return replace(p, now=now, text=text)
+
+
+def _cards_end(lines: list[str]) -> int:
+    """The line after the last card of a file whose `cards:` block ends
+    where the file does or is followed by another key."""
+    top = next((i for i, l in enumerate(lines) if re.match(r"^cards\s*:\s*$", l)), None)
+    if top is None:
+        raise Unsupported("no block `cards:`")
+    end = top + 1
+    while end < len(lines) and (_blank(lines[end]) or _indent(lines[end]) > 0):
+        end += 1
+    while end > top + 1 and _blank(lines[end - 1]):
+        end -= 1
+    return end
+
+
+def _first_indent(lines: list[str]) -> int:
+    top = next((i for i, l in enumerate(lines) if re.match(r"^cards\s*:\s*$", l)), None)
+    first = next((i for i in range(top + 1, len(lines)) if not _blank(lines[i])), None) \
+        if top is not None else None
+    if first is None:
+        raise Unsupported("no cards")
+    return _indent(lines[first])
+
+
+def _apply_place(root: Path, lang: str, entry: Entry, p: Proposal, gone: set[str]) -> None:
+    """Moves the card of [entry], a core's, to the end of the core [p] names,
+    and its layer's entry in each native language to the end of that
+    core's layer in the same one, the card's id and every other line of it
+    kept; [gone] proposals are dropped. All or nothing."""
+    if entry.form != "core" or p.text not in plan_decks(root, lang):
+        raise Unsupported("not a card of a core, or a deck the path does not list")
+    tgt = _deck_file(root, lang, p.text)
+    if tgt is None or tgt[1].get("part") != "core" \
+            or tgt[1].get("kind") != _load(entry.path).get("kind"):
+        raise Unsupported("the target is not a core of the same kind")
+    if sum(1 for e in _entries_in(entry.path, _load(entry.path))) < 2:
+        raise Unsupported("it is the last card of its deck")
+    # (file, entry in it) of each file the card is in, and where it goes.
+    moves: list[tuple[Entry, Path]] = [(entry, tgt[0])]
+    for path in language_files(root, lang):
+        raw = _load(path)
+        if not (isinstance(raw, dict) and raw.get("kind") == "layer"
+                and raw.get("core") == entry.deck):
+            continue
+        mine = next((e for e in _entries_in(path, raw) if e.card == entry.card), None)
+        if mine is None:
+            continue
+        native = (raw.get("native") or {}).get("code") if isinstance(raw.get("native"), dict) else None
+        dest = next((f for f, r in ((f, _load(f)) for f in language_files(root, lang))
+                     if isinstance(r, dict) and r.get("kind") == "layer"
+                     and r.get("core") == p.text and isinstance(r.get("native"), dict)
+                     and r["native"].get("code") == native), None)
+        if dest is None:
+            raise Unsupported(f"no {native} layer for the target")
+        moves.append((mine, dest))
+    texts: dict[Path, list[str]] = {}
+    for e, dest in moves:
+        src = _Text(e)
+        for o in gone if e is entry else ():
+            src.remove(o)
+        block = src.lines[src.start:src.end]
+        lines = texts.setdefault(e.path, src.lines)
+        if lines is not src.lines:
+            raise Unsupported("a file holds the card twice")
+        del lines[src.start:src.end]
+        out = texts.get(dest)
+        if out is None:
+            out = texts[dest] = dest.read_text(encoding="utf-8").splitlines(keepends=True)
+        if _first_indent(out) != _indent(block[0]):
+            raise Unsupported("the files indent their cards differently")
+        at = _cards_end(out)
+        if at and not out[at - 1].endswith("\n"):
+            out[at - 1] += "\n"
+        out[at:at] = block
+    before = {path: _entries_in(path, _load(path)) for path in texts}
+    parsed = {}
+    for path, lines in texts.items():
+        try:
+            parsed[path] = _entries_in(path, yaml.load("".join(lines), Loader=vd.DeckLoader))
+        except yaml.YAMLError as error:
+            raise Unsupported("the move does not parse") from error
+    for path, after in parsed.items():
+        was = {(e.card, e.form): e.data for e in before[path]}
+        now = {(e.card, e.form): e.data for e in after}
+        if any(was[k] != now[k] for k in was.keys() & now.keys() if k[0] != entry.card) \
+                or len([k for k in now if k[0] == entry.card]) > 1 \
+                or {k for k in was if k[0] != entry.card} != {k for k in now if k[0] != entry.card}:
+            raise Unsupported("the move changed another card")
+    moved = [(a, [e for e in parsed[a] if e.card == entry.card]) for a in parsed]
+    sources = {e.path for e, _ in moves}
+    if any(bool(found) == (path in sources) for path, found in moved):
+        raise Unsupported("the move did not read back as meant")
+    for path, lines in texts.items():
+        path.write_text("".join(lines), encoding="utf-8")
 
 
 def _base_item(old: dict | None, new: dict, written_meaning: bool) -> dict:

@@ -62,6 +62,7 @@ class SuggestionLines extends StatelessWidget {
 /// What [s] suggests, as text: its text, or for a base added, changed or
 /// removed (#476), the base it names.
 String yoursOf(Suggestion s) {
+  if (s.part == CardPart.place) return s.label ?? s.text;
   if (s.text.trim().isNotEmpty) return s.text;
   final b = s.base ?? s.was;
   return b?.base ?? b?.meaning ?? b?.ref ?? s.word ?? '';
