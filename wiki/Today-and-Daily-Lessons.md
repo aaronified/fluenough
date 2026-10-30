@@ -11,6 +11,7 @@ Today is the first tab. It shows what to do now.
 - **Quick revision.**
 - **Situations**: six buttons, each in a colour of its own (taxi, shops, eat, doctor, traffic, rail), under quick revision. A button opens a sheet of key phrases and words for that moment, all shown, with a dot on those you have not learnt yet; **Practise this sheet** teaches the new ones and revises the rest, and the info mark opens a card in full, one at a time. Sheets are lists of the decks' own cards, so progress is shared with the decks. Telugu has the taxi sheet first; a course without sheets shows the buttons dimmed with an Upcoming pill.
 - **A fact of the day**: one short, true thing about a language you are learning. Facts follow the languages you said you know.
+- **A fact of the day**: one short, true thing about a language you are learning. Facts follow the languages you said you know. A small button at the top left of the card (long press: Languages) opens a list of the languages you know, with a box each (owner, 2026-10-30, #926); the fact is shown in the checked ones, in your order. At least one stays checked, and a language the fact has no text in is left out; if nothing is left, the English text is shown. The choice is kept for each profile, and until you make one every language you know is shown. With only one language known there is nothing to choose, and the button is not shown.
 
 ## A lesson
 
