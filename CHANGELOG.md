@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
+
 ### Fixed
 
 - Opening the app no longer freezes the first screens while every downloaded deck's YAML is read: the decks are parsed on a background isolate (#875). Nothing a learner sees changes but the wait.
