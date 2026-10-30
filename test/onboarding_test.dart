@@ -467,7 +467,8 @@ void main() {
 
       await tester.tap(go);
       await tester.pumpAndSettle();
-      expect(settings.spokenLanguages, ['hi']);
+      // English is known by default (#926), so Continue adds it, last.
+      expect(settings.spokenLanguages, ['hi', 'en']);
       // Then what to learn (#117), before the app.
       expect(find.byType(LanguagePickerPage), findsOneWidget);
       expect(find.byType(OnboardingFlow), findsNothing);
