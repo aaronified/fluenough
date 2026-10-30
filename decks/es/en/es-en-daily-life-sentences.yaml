@@ -1,89 +1,108 @@
 schema: 1
-id: "es-en-daily-life-sentences"
-kind: "layer"
-core: "es-daily-life-sentences"
-native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Sentences: a day"
-license: "CC-BY-SA-4.0"
-description: "Nine sentences about a day, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
-
+id: es-en-daily-life-sentences
+kind: layer
+core: es-daily-life-sentences
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Sentences: a day'
+license: CC-BY-SA-4.0
+description: 'Nine sentences about a day, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake.'
 cards:
-  "es-0942":
-    native: "I get up, shower and have breakfast."
+  es-0942:
+    native: I get up, shower and have breakfast.
     bases:
-      "Me": "myself"
-      "me": "myself"
+      Me: myself
     confusables:
-      "wake-up": { why: "Despertarse is to wake up; levantarse is to get up out of bed." }
-      "go-to-bed": { why: "Acostarse is to go to bed, the opposite end of the day." }
-  "es-0943":
-    native: "Ana rests after dinner."
+      wake-up:
+        why: Despertarse is to wake up; levantarse is to get up out of bed.
+      go-to-bed:
+        why: Acostarse is to go to bed, the opposite end of the day.
+  es-0943:
+    native: Ana rests after dinner.
     bases:
-      "Ana": "Ana"
-      "de": "(linking word)"
-      "la": "the"
+      Ana: Ana
+      de: (linking word)
+      la: the
     confusables:
-      "sleep": { why: "Dormir is to sleep; descansar is to rest, which is not the same." }
-      "walk": { why: "Pasear is to go for a walk; descansar is to rest." }
-  "es-0944":
-    native: "In the morning I have a coffee in the kitchen."
+      sleep:
+        why: Dormir is to sleep; descansar is to rest, which is not the same.
+      walk:
+        why: Pasear is to go for a walk; descansar is to rest.
+  es-0944:
+    native: In the morning I have a coffee in the kitchen.
     bases:
-      "Por": "In"
-      "la": "the"
-      "un": "a"
-      "en": "in"
+      Por: In
+      la: the
+      un: a
+      en: in
     confusables:
-      "afternoon": { why: "La tarde is the afternoon, a different part of the day." }
-      "breakfast": { why: "El desayuno is breakfast, the meal itself." }
-  "es-0945":
-    native: "I arrive late at the gym today."
+      afternoon:
+        why: La tarde is the afternoon, a different part of the day.
+      breakfast:
+        why: El desayuno is breakfast, the meal itself.
+  es-0945:
+    native: I arrive late at the gym today.
     bases:
-      "al": "to the"
+      al: to the
     confusables:
-      "return": { why: "Volver is to return, to go back somewhere." }
-      "wait": { why: "Esperar is to wait; the sentence says you arrive late." }
-  "es-0946":
-    native: "My sister returns home at six."
+      return:
+        why: Volver is to return, to go back somewhere.
+      wait:
+        why: Esperar is to wait; the sentence says you arrive late.
+  es-0946:
+    native: My sister returns home at six.
     bases:
-      "hermana": "sister"
-      "a": "to"
-      "las": "(at)"
+      hermana: sister
+      a: to
+      las: (at)
     confusables:
-      "take": { why: "Tomar is to take or have something, not to come back." }
-      "rest": { why: "Descansar is to rest; here she comes back home." }
-  "es-0947":
-    native: "I am sleepy, so I go to bed early."
+      take:
+        why: Tomar is to take or have something, not to come back.
+      rest:
+        why: Descansar is to rest; here she comes back home.
+  es-0947:
+    native: I am sleepy, so I go to bed early.
     bases:
-      "así": "so"
-      "que": "that"
-      "me": "myself"
+      así: so
+      que: that
+      me: myself
     confusables:
-      "bed": { why: "La cama is the bed itself; the sentence is about going to bed." }
-      "sleep-verb": { why: "Dormir is to sleep, not to go to bed." }
-  "es-0948":
-    native: "We walk in the park on Sundays."
+      bed:
+        why: La cama is the bed itself; the sentence is about going to bed.
+      sleep-verb:
+        why: Dormir is to sleep, not to go to bed.
+  es-0948:
+    native: We walk in the park on Sundays.
     bases:
-      "en": "in"
-      "el": "the"
-      "los": "on"
-      "domingos": "Sundays"
+      en: in
+      el: the
+      los: 'on'
+      domingos: Sundays
     confusables:
-      "walk-noun": { why: "Un paseo is a walk, the noun; this sentence uses the verb." }
-      "rest": { why: "Descansar is to rest, not to walk." }
-  "es-0949":
-    native: "I buy food at the supermarket."
+      walk-noun:
+        why: Un paseo is a walk, the noun; this sentence uses the verb.
+      rest:
+        why: Descansar is to rest, not to walk.
+  es-0949:
+    native: I buy food at the supermarket.
     bases:
-      "la": "the"
-      "en": "at"
-      "el": "the"
+      la: the
+      en: at
+      el: the
     confusables:
-      "shopping": { why: "La compra is the shopping: what you buy, not food." }
-      "kitchen": { why: "La cocina is the kitchen, a room in the house." }
-  "es-0950":
-    native: "The living room has a big sofa."
+      shopping:
+        why: 'La compra is the shopping: what you buy, not food.'
+      kitchen:
+        why: La cocina is the kitchen, a room in the house.
+  es-0950:
+    native: The living room has a big sofa.
     bases:
-      "El": "The"
-      "un": "a"
+      El: The
+      un: a
     confusables:
-      "bed": { why: "La cama is a bed, not a sofa." }
-      "kitchen": { why: "La cocina is the kitchen, another room of the house." }
+      bed:
+        why: La cama is a bed, not a sofa.
+      kitchen:
+        why: La cocina is the kitchen, another room of the house.

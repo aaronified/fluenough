@@ -151,7 +151,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "compra", base: "compra" }]
     examples:
       - { target: "Hago la compra los sábados.", ipa: "ˈaɡo la ˈkompɾa los ˈsabados", bases: [{ word: "Hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "compra", base: "compra" }, { word: "los", base: "los" }, { word: "sábados", base: "sábado" }] }
-      - { target: "La compra está en la bolsa.", ipa: "la ˈkompɾa esˈta en la ˈbolsa", bases: [{ word: "La", base: "la" }, { word: "compra", base: "compra" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }] }
+      - { target: "La compra está en la bolsa.", ipa: "la ˈkompɾa esˈta en la ˈbolsa", bases: [{ word: "La", base: "la" }, { word: "compra", base: "compra" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "bolsa", base: "bolsa" }] }
   - id: "es-0915"
     target: "el paseo"
     ipa: "el paˈseo"
@@ -279,7 +279,7 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "Me lavo las manos antes de comer.", ipa: "me ˈlabo las ˈmanos ˈantes de koˈmeɾ", bases: [{ word: "Me", base: "me" }, { word: "lavo", base: "lavarse" }, { word: "las", base: "las" }, { word: "manos", base: "mano" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "comer", ref: "es-0028" }] }
-      - { target: "Los niños se lavan la cara por la mañana.", ipa: "los ˈniɲos se ˈlaban la ˈkaɾa poɾ la maˈɲana", bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "se", base: "se" }, { word: "lavan", base: "lavarse" }, { word: "la", base: "la" }, { word: "cara", base: "cara" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
+      - { target: "Los niños se lavan la cara por la mañana.", ipa: "los ˈniɲos se ˈlaban la ˈkaɾa poɾ la maˈɲana", bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "se", base: "se" }, { word: "lavan", base: "lavarse" }, { word: "la", base: "la" }, { word: "cara", base: "cara" }, { word: "por", base: "por" }, { word: "mañana", ref: "es-0841" }] }
   - id: "es-0927"
     target: "vestirse"
     ipa: "besˈtiɾse"
@@ -378,6 +378,7 @@ cards:
     target: "por la mañana"
     ipa: "poɾ la maˈɲana"
     pos: "phrase"
+    bases: [{ word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
     examples:
       - { target: "Estudio por la mañana.", ipa: "esˈtudjo poɾ la maˈɲana", bases: [{ word: "Estudio", ref: "es-0258" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
       - { target: "Por la mañana tomo un café.", ipa: "poɾ la maˈɲana ˈtomo un kaˈfe", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }] }
@@ -385,6 +386,7 @@ cards:
     target: "por la tarde"
     ipa: "poɾ la ˈtaɾde"
     pos: "phrase"
+    bases: [{ word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }]
     examples:
       - { target: "Trabajo por la tarde.", ipa: "tɾaˈbaxo poɾ la ˈtaɾde", bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }] }
       - { target: "Por la tarde descanso en el sofá.", ipa: "poɾ la ˈtaɾde desˈkanso en el soˈfa", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }, { word: "descanso", ref: "es-0928" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", ref: "es-0917" }] }
