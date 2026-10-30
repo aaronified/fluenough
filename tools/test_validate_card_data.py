@@ -2200,6 +2200,63 @@ class RejectedAlikes(Case):
                 self.assertTrue(self.key_errors("not_sounds_like"))
 
 
+class MeaningAlternatives(Case):
+    """An English meaning with a sentence break and no `;` is an error (#924):
+    the grader accepts alternatives only across `;`."""
+
+    NEEDLE = "meaning has separate sentences"
+
+    def single_errors(self, native: str, **fields: object) -> list[str]:
+        self.put(EXTRA, single(cards=[dict(CAT, native=native, **fields)]))
+        return self.errors(EXTRA)
+
+    def flagged(self, errors: list[str]) -> bool:
+        return any(self.NEEDLE in e for e in errors)
+
+    def test_separate_sentences_without_a_semicolon_are_an_error(self) -> None:
+        for text in ("Hello! Hi!", "He is ill. She is ill.", "Really? Yes."):
+            with self.subTest(text):
+                self.assertTrue(self.flagged(self.single_errors(text)))
+
+    def test_a_semicolon_separates_them(self) -> None:
+        self.assertFalse(self.flagged(self.single_errors("Hello!; Hi!")))
+
+    def test_alt_native_is_checked_too(self) -> None:
+        self.assertTrue(self.flagged(self.single_errors("Hello!", alt_native=["Hi! Hey!"])))
+
+    def test_brackets_and_abbreviations_are_not_breaks(self) -> None:
+        for text in ("Thanks (Say it. Twice) a lot", "Sorry [Stop. Go] now",
+                     "Mr. Rao is here", "Ms. Rao and Dr. Rao", "Sit on St. James road",
+                     "Fruit, etc. and more"):
+            with self.subTest(text):
+                self.assertFalse(self.flagged(self.single_errors(text)))
+
+    def test_a_single_sentence_is_fine(self) -> None:
+        for text in ("Hello!", "How are you?", "I am ill."):
+            with self.subTest(text):
+                self.assertFalse(self.flagged(self.single_errors(text)))
+
+    def test_a_layer_entry_is_checked(self) -> None:
+        self.layer(HOUSE, native="Hello! Hi!")
+        self.assertTrue(self.flagged(self.layer_errors()))
+
+    def test_another_native_language_is_not_checked(self) -> None:
+        self.put(EXTRA, single(native="bn", deck_id="zz-bn-extra",
+                               cards=[dict(CAT, native="Hello! Hi!")]))
+        self.assertFalse(self.flagged(self.errors(EXTRA)))
+
+    def test_a_listed_card_whose_sentences_must_all_be_said_passes(self) -> None:
+        with mock.patch.object(validate_decks, "MEANING_ALL_REQUIRED",
+                               frozenset({HOUSE, CAT["id"]})):
+            self.layer(HOUSE, native="Good morning. How are you?")
+            self.assertFalse(self.flagged(self.layer_errors()))
+            self.assertFalse(self.flagged(self.single_errors("Good morning. How are you?")))
+
+    def test_the_allow_list_holds_card_ids(self) -> None:
+        ids = list(validate_decks.MEANING_ALL_REQUIRED)
+        self.assertTrue(all(validate_decks.ID_RE.fullmatch(i) for i in ids))
+
+
 if __name__ == "__main__":
     unittest.main()
 

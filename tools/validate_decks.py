@@ -797,6 +797,56 @@ def card_id_re(lang: str) -> re.Pattern[str]:
     return re.compile(rf"{re.escape(lang)}-[0-9]{{4,}}")
 
 
+# A typed English meaning is accepted for each `;`-separated part of the
+# expected text and for no other split (lib/core/grading/meaning_rules.dart),
+# so separately sayable alternatives must be written "Take care!; Careful!"
+# (#924). A sentence break inside a bracket-free meaning with no `;` is
+# therefore an error, unless the card is one of those whose sentences must
+# all be said (the target says both), listed here by card id. Keep sorted;
+# each needs a reason. Only card `native` and `alt_native` are checked, not
+# examples.
+MEANING_ALL_REQUIRED = frozenset({
+    "es-0111",   # "Good morning, madam. How are you?": greeting, then question
+    "zh-0282",   # "I am a student. Are you a teacher?": the target says both
+    "zh-0331",   # "We are eating a meal. Are you going home?": both
+    "zh-0333",   # "The child finishes school. Shall we wait?": both
+})
+_MEANING_BRACKETS = re.compile(r"\([^)]*\)|\[[^\]]*\]")
+# Abbreviations whose full stop is not a sentence end.
+_MEANING_ABBREV = re.compile(
+    r"\b(?:mr|mrs|ms|dr|st|prof|sr|jr|vs|etc|e\.g|i\.e|no|approx)\.", re.IGNORECASE)
+_MEANING_BREAK = re.compile(r"[.!?]\s+\w")
+
+
+def meaning_has_separate_sentences(text: str) -> bool:
+    """Whether an English meaning has a sentence break and no `;`, outside
+    brackets and abbreviations (#924)."""
+    if ";" in text:
+        return False
+    text = _MEANING_ABBREV.sub(" ", _MEANING_BRACKETS.sub(" ", text))
+    return _MEANING_BREAK.search(text) is not None
+
+
+def check_meaning_alternatives(r: Report, where: str, cid: str | None,
+                               entry: dict) -> None:
+    """An English `native` or `alt_native` value must not run separate
+    sentences together without `;` (#924)."""
+    if r.native_code != "en":
+        return
+    values = [entry.get("native")]
+    alts = entry.get("alt_native")
+    if isinstance(alts, list):
+        values += alts
+    for value in values:
+        if not _is_str(value) or not meaning_has_separate_sentences(value):
+            continue
+        if cid in MEANING_ALL_REQUIRED:
+            continue
+        r.error(where, f"meaning has separate sentences; separate alternatives with "
+                       f'";" (or mark both required with a dash/or reword): {value!r}')
+
+
+
 def check_card(r: Report, idx: int, card: object, seen: set[str],
                script: str, lang: str, *, form: str = "single",
                key: str | None = None,
@@ -894,6 +944,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     for key in ("alt_target", "alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if not core:
+        check_meaning_alternatives(r, where, cid, card)
     if "target_scripts" in card:
         _check_target_scripts(r, where, card["target_scripts"], target, scripts)
 
@@ -3789,6 +3841,7 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
     gives = _is_str(native)
     if "alt_native" in entry:
         _check_str_list(r, where, "alt_native", entry["alt_native"])
+    check_meaning_alternatives(r, where, cid, entry)
     if "wiktionary" in entry:
         _check_wiktionary(r, where, "", entry["wiktionary"])
     if "dictionary" in entry:
