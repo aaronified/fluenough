@@ -4,7 +4,28 @@ Mockup: `languages-merged.html`. One interactive page, one phone: tap through it
 
 Owner's direction (2026-10-30): "know and learning should be based on skills. speak, hear, read, write. the latter two will also be script specific. speak, hear will be dialect specific (the app only teaches one dialect for each language now anyway). use proper dialect names, not random ones. user can tick multiple." Answers to the first mockup's questions (2026-10-30, issue #907) are built in: a cycling tick with three states, read-only icon chips, no separate Stop learning, decks removed at the next app open, minutes a day per language, one onboarding step, and a check before a known skill can be reviewed.
 
-## What changed (owner's orders, 2026-10-30)
+## What changed (round 3, owner's orders, 2026-10-30)
+
+1. **Skill icons and colours from the app.** Speak (mic), Hear (ear), Read (eye) and Write (keyboard) use `Skill.speaking`, `listening`, `recognition` and `production` from `lib/ui/skill_visuals.dart`, with their fixed `ModeColors` (green, purple, blue, orange; container and on-container). They colour the row tile, the pill and the list chips. A Learn skill has a 2 px accent (primary) border drawn inset, so the pill's size does not change; Know is a tick (double when checked) in the skill's ink; Leave is dashed.
+2. **No language is all Leave.** Setting the last non-Leave skill to Leave (or Delete data now leaving none) returns the language to the pool: it leaves the list, with a snackbar and Undo, and Add a language finds it again. The Leaving section and the Gujarati sample are gone.
+3. **Know, not yet checked, Review on.** The bar says "Done and Check" (done, then the check runs, one unchecked skill after another). The delete button is a bare red bin, no outline, no label, 48 px wide in place of 67 px. The skill row says "Reviewing decks needs this skill verified"; a script's other row says "Reviewing decks in this script needs this skill verified".
+4. **Details behind a plain "i"** left of the cross: badge, % of B1, You, the A1/A2/B1/Culture path, dialect, Find my level and Placed words (learning), scripts with decks, progress and "Also in", Taught from, Size, Units, Words. Course and Taught from left the sheet's body, nothing is lost.
+5. "Dialect" is now "Dialect taught in the app".
+6. **Beta badge with the A1 path** directly under it; "4/6 skills known" in place of "4 known".
+7. **Auto Know for known scripts.** Read and Write start as Know when the same script's Read or Write is Know in another language (try Add Maithili); still unchecked there, with the line "Known from Hindustani. Checked separately for Maithili." Onboarding does the same, live.
+8. **Minutes a day** is a stepper (minus, "15 min a day", plus), 5 to 60 in steps of 5, default 15, the button disabled at each end; in the sheet and in onboarding (for a language with a Learn skill).
+
+### Assumptions
+
+- **A1 path place:** full width on its own line under the Beta badge row (the 4-segment A1, A2, B1, Culture line of the earlier mockup; labels in the muted text colour). Also in the i panel.
+- **"6 skills":** Speak, Hear, plus Read and Write per script (Hindustani 6, Bengali 4, Marathi 4, script-only Braille 2). Only Know counts as known; "2 learning" stays before it.
+- **Colours:** Read is `recognition` (eye), Write `production` (keyboard), not `Skill.reading` (book, yellow), as Progress does. Pill fill is the skill container for Know and Learn.
+- The bare bin applies in every state of the bar, not only with "Done and Check".
+- A language returned to the pool has its decks removed at the next app open.
+- Auto-Know is per skill (Read from Read, Write from Write) and matches by script id; Assamese and Bengali script count as different scripts.
+- The script-variant subtext shows on a script row that is not Know when another script's same skill is Know and Review is on.
+
+## Earlier round (owner's orders, 2026-10-30)
 
 - **One pill per skill row** (Speak, Hear, Read and Write per script), in the sheet and in onboarding. Tap it: Leave, Know, Learn. No other control on a skill row. The sheet's key of the three states is gone (the pill says the word).
 - **One Know look everywhere.** Know is the tertiary-container colour with a tick, and a double tick once checked, on every pill and list chip, checked or not. Learn is the filled primary colour with the cap; Leave is dashed with a minus.
@@ -72,7 +93,7 @@ Decks written (Learning offered): Hindustani, Bengali, Marathi, Assamese, Gujara
 
 ## Self-check results
 
-**Contrast.** Computed in the page (`window.__contrast`, logged to the console) for both seeds and both themes: 52 pairs x 4 = 208, **0 failing**. Text 4.5:1; the Leave dashed outlines, the Review switch outline and thumb, the stepper icons, the progress fill, the check answer outlines and the chevron 3:1. New pairs this round: Know pill (on its tint) and Learn pill (on its fill), Leave pill and chip, the Check to review button, review-deck subtext, the Review switch. Disabled pills (Learn where there is no course, review-deck rows not yet offered) are drawn at 38% and are exempt, as in the app's theme.
+**Contrast.** Computed in the page (`window.__contrast`, logged to the console) for both seeds and both themes: Round 3: 72 pairs x 4 = 288, **0 failing** (new: each skill's pill text, Learn inset border and tile icon on its colour, the i glyph, the A1 path). Earlier round: 52 pairs x 4 = 208, 0 failing. Text 4.5:1; the Leave dashed outlines, the Review switch outline and thumb, the stepper icons, the progress fill, the check answer outlines and the chevron 3:1. New pairs this round: Know pill (on its tint) and Learn pill (on its fill), Leave pill and chip, the Check to review button, review-deck subtext, the Review switch. Disabled pills (Learn where there is no course, review-deck rows not yet offered) are drawn at 38% and are exempt, as in the app's theme.
 
 **Chromium (Playwright).** Opened at 900 px and 420 px wide (no sideways scroll, no page errors). Looked at the screenshots at 1.4x text, light and dark, of: Settings (switch off and on), the list, the sheets (Hindustani, Marathi, Assamese), the check dialog, and onboarding; clicked the Review switch and the tweak control, the pills, and the review-deck pill. Hindi, Hindustani in Urdu and Bengali show in rows, dialect names and glyph tiles; the Noto fonts load from Google Fonts, which the test sandbox could not fetch (fallback fonts were used). Not checked: other text sizes (the app caps at 1.4x), high-contrast themes, a real phone, TalkBack.
 
@@ -102,3 +123,5 @@ Decks written (Learning offered): Hindustani, Bengali, Marathi, Assamese, Gujara
 14. **Onboarding chips use words** (the owner's icons-only rule is for the list). Option: icons in onboarding too (the downside: a new learner meets the icons first, with no key).
 15. **Page name:** "Languages". Option: "My languages" (friendlier; the downside: the Settings section is also called Your languages).
 16. **Which names are right**: every **to confirm** row in the table above.
+
+Round 3 Chromium check: 900 px and 420 px wide (no sideways scroll, no page errors), light and dark at 1.4x: list, Hindustani, Marathi (Done and Check), the i panel, Add Maithili, onboarding with the stepper; the walk Assamese to Leave returns it to the pool. Fonts could not load in the sandbox.
