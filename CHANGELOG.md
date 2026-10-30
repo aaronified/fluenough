@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- English is known by default, in Speak, Hear, Read and Write, for every learner, and the Latin script is known for everyone (#926): an existing install gets it at the next app open, a new one after setup; a choice made on the Languages page is kept. Learn stays Learn, so the diacritics of Spanish or French are still taught.
 - Languages is one page for the languages you know and the ones you learn (#907): each language has four skills, Speak, Hear, Read and Write (Read and Write per script), and one pill per skill cycles Leave, Know, Learn. One Learn skill downloads the language's full decks; a skill changed to Learn is checked (a sound test, or the script showing on the phone) from the sheet's Check button; a language with every skill Leave goes back to the pool and its decks go at the next app open. The list shows icon chips, filter pills and the minutes a day for each language (a stepper, 5 to 60); Find my level, Placed words, a deck update check and a details panel are on the sheet, and a Review switch in Settings (off by default) turns on the fit-your-level prompts. Settings has one Languages row in place of Languages I know and Languages I'm learning; current learners' lists read as skills until they edit.
 - Languages: a language's decks are kept while any profile still learns it, a profile whose own list disagrees reads its own, an unreadable stored entry is no longer taken for Leave, and the search field uses the field corner radius (#907).
 

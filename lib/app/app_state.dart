@@ -6,6 +6,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/languages/language_skills.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/card_set.dart';
@@ -895,6 +896,7 @@ class AppState extends ChangeNotifier {
   /// then looks for deck updates, at most once a day, unless the learner
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
+    ensureEnglishKnown();
     final downloads = deckDownloads;
     if (downloads == null || _disposed) return;
     // What the Languages page left out is removed now, at this open (#907).
@@ -2375,6 +2377,8 @@ class AppState extends ChangeNotifier {
       if (script == null) continue;
       readers.putIfAbsent(script, () => <String>[]).add(parts.first);
     }
+    // Everyone reads the Latin script (#926), through English.
+    readers.putIfAbsent(latinScript, () => <String>['en']);
     return readers;
   }
 

@@ -90,4 +90,6 @@ The list shows each language's skills as read-only icon chips (a tick for Know, 
 
 With the Review switch on in Settings, a Know skill whose level has not been found says "Fit your level to be able to review". Review decks for known scripts are not built yet.
 
+**English and the Latin script are known by default** (owner, 2026-10-30, #926). English starts with Speak, Hear, Read and Write all Know, for every learner: a new install after setup, and an existing one at the next app open (it is added after your own languages). The Latin script is known for everyone, so Read and Write of the Latin script start as Know in any language written in it; Learn is never turned into Know, and the diacritics of Spanish or French are taught by their own courses. You can still change any skill on the English row; a choice you make (even all Leave) is kept. English is only ever known: it is never downloaded or offered to learn.
+
 What it keeps: the skills are stored per language in Settings (`language_skills`), and kept in step with the older lists (languages learned, scripts learned, languages spoken, scripts read) that the rest of the app reads. Until you edit a language, its skills are read from those lists, so a current learner sees no change.
