@@ -112,8 +112,17 @@ FONTS_DIR = DECKS / "fonts"
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
 # out of the index.
-NOT_DECKS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
-             "resources", "phonetics"}
+NOT_DECKS = {
+    "path",
+    "facts",
+    "situations",
+    "numbers",
+    "romanisation",
+    "sounds",
+    "script",
+    "resources",
+    "phonetics",
+}
 
 
 # The core a layer names when it is the layer of a script guide for one of a

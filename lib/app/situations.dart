@@ -1,7 +1,6 @@
 import '../core/models/card.dart';
 import '../core/models/situation.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
-import '../core/scheduling/ask.dart';
 import '../core/scheduling/lesson.dart';
 import '../core/scheduling/session_queue.dart';
 import 'app_state.dart';
