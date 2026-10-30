@@ -143,7 +143,12 @@ String _describeAll(Catalog c) => jsonEncode(<String, Object?>{
     for (final e in c.sounds.entries)
       e.key: [
         for (final s in e.value.contrasts)
-          [s.id, s.name, s.withinWord, s.pairs.map((p) => '${p.$1}|${p.$2}')],
+          [
+            s.id,
+            s.name,
+            s.withinWord,
+            s.pairs.map((p) => '${p.$1}|${p.$2}').toList(),
+          ],
       ],
   },
   'romanisations': {
