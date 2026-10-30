@@ -2164,6 +2164,10 @@
       }
     }
   },
+  "reportOpen": "Get support or report a problem",
+  "@reportOpen": {
+    "description": "Screen reader label of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback. The long-press hint is hintReport."
+  },
   "reportTitle": "Support and feedback",
   "@reportTitle": {
     "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
@@ -12417,6 +12421,24 @@
       "total": {
         "type": "int",
         "example": "118"
+      }
+    }
+  },
+  "languagesDeleteData": "Delete data now",
+  "@languagesDeleteData": {
+    "description": "Screen reader label of the bin on the sheet, which removes a language's decks and progress at once."
+  },
+  "languagesUpdateIcon": "Check for deck updates",
+  "@languagesUpdateIcon": {
+    "description": "Screen reader label of the sheet's update-check icon."
+  },
+  "languagesInfoIcon": "Details about {language}",
+  "@languagesInfoIcon": {
+    "description": "Screen reader label of the i on the sheet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
       }
     }
   },

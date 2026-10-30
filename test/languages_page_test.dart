@@ -79,7 +79,9 @@ void main() {
     await tapKey(tester, 'language-es');
     final text = l10n(tester);
     final speak = find.byKey(const ValueKey<String>('skill-speak'));
-    final before = Map.of(state.settings.languageSkillsOf('es')!);
+    // Null until the learner edits Spanish on this page; the pill reads the
+    // older lists (Learn, from the learner fixture) until then.
+    final before = state.settings.languageSkillsOf('es');
     await tester.longPress(speak);
     await tester.pumpAndSettle();
     expect(
@@ -169,7 +171,7 @@ void main() {
       });
     await pumpLanguages(tester, state: state);
     final text = l10n(tester);
-    await tester.tap(find.byTooltip(text.languagesAdd));
+    await tester.tap(find.byTooltip(text.hintAdd));
     await tester.pumpAndSettle();
     await tester.enterText(
       find.byKey(const ValueKey<String>('languages-add-search')),

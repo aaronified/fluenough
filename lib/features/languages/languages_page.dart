@@ -9,6 +9,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../downloads/deck_update_controls.dart';
@@ -88,8 +89,9 @@ class _LanguagesPageState extends State<LanguagesPage> {
               listenable: state.settings,
               builder: (context, _) => _held(state, all).isEmpty
                   ? const SizedBox.shrink()
-                  : IconButton(
-                      tooltip: l10n.hintAdd,
+                  : LabelledIconButton(
+                      label: l10n.languagesAdd,
+                      hint: l10n.hintAdd,
                       onPressed: () => _add(state, all),
                       icon: const Icon(Icons.add),
                     ),
