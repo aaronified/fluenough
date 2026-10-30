@@ -1,0 +1,15 @@
+schema: 1
+id: "bn-en-grammar-comparison"
+kind: "layer"
+core: "bn-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparison"
+description: "Comparing with চেয়ে (ceye, than), with আরও (āro, more) and with সবচেয়ে (śôbceye, most). Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Comparison"
+  slot_name: "form"
+  slots: { "ওটার চেয়ে": "than that (oṭār ceye)", "আরও": "more (āro)", "সবচেয়ে": "most (śôbceye)" }
+  entries: { bor: "big", choto: "small", bhalo: "good", kharap: "bad", lomba: "tall; long", sundor: "beautiful", notun: "new", purono: "old", bhari: "heavy", thanda: "cold", gorom: "hot" }
+  notes: "The adjective never changes: ওটার চেয়ে বড় (oṭār ceye bôṛo) is bigger than that, আরও বড় (āro bôṛo) is bigger, and সবচেয়ে বড় (śôbceye bôṛo) is the biggest. The thing compared with comes first, and চেয়ে (ceye) follows it: ওটার চেয়ে (oṭār ceye) means than that."
