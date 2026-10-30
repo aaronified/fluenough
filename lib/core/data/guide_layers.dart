@@ -3,6 +3,7 @@ import 'package:yaml/yaml.dart';
 import '../models/script_guide.dart';
 import '../models/sound_contrasts.dart';
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 /// The layer of a script guide or sounds core (#498): its text in one
 /// native language, keyed by the core's feature or contrast ids.
@@ -66,7 +67,7 @@ GuideLayer parseGuideLayer(String text, {required String source}) {
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text.startsWith('﻿') ? text.substring(1) : text);
+    root = loadYamlTree(text.startsWith('﻿') ? text.substring(1) : text);
   } on YamlException catch (e) {
     throw bad('not valid YAML: ${e.message}');
   }

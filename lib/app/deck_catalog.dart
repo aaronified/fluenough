@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
@@ -5,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' show StringCharacters;
 import 'package:yaml/yaml.dart';
 
+import '../core/data/catalog_snapshot.dart';
 import '../core/data/course_path.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
@@ -19,6 +21,8 @@ import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
+import '../core/data/yaml_tree.dart';
+import '../core/decks/sha256.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
@@ -346,6 +350,169 @@ Future<Catalog> parseInIsolate(Map<String, String> files) async {
   }
 }
 
+/// Where the catalog's snapshot (#875, ADR-0048) is kept between launches.
+/// Native only: the web build has no store and parses as before.
+abstract interface class SnapshotStore {
+  /// The snapshot's text, or null if there is none.
+  Future<String?> read();
+
+  /// Replaces the snapshot, whole or not at all.
+  Future<void> write(String text);
+}
+
+/// A [SnapshotStore] in memory. For tests.
+class MemorySnapshotStore implements SnapshotStore {
+  MemorySnapshotStore([this.text]);
+
+  String? text;
+
+  @override
+  Future<String?> read() async => text;
+
+  @override
+  Future<void> write(String text) async => this.text = text;
+}
+
+/// What a catalog load hands [runCatalogJob]: the files, their SHA-256s, and
+/// the snapshot the last launch left, if any. Text only, so that it crosses
+/// to an isolate as it is.
+class CatalogJob {
+  const CatalogJob({
+    required this.files,
+    required this.shas,
+    required this.snapshot,
+    required this.app,
+  });
+
+  /// Every deck file's text, by path.
+  final Map<String, String> files;
+
+  /// The SHA-256 of each file in [files].
+  final Map<String, String> shas;
+
+  /// The stored snapshot's text, or null.
+  final String? snapshot;
+
+  /// The running app's version: a snapshot of another one is not used.
+  final String app;
+}
+
+/// What [runCatalogJob] finds: the catalog, and the snapshot to store when
+/// it differs from the one the job was given.
+class CatalogOutcome {
+  const CatalogOutcome(this.catalog, this.snapshot);
+
+  final Catalog catalog;
+
+  /// The text of a snapshot to write, or null when the stored one is still
+  /// right (or none can be made).
+  final String? snapshot;
+}
+
+/// Parses [job]'s files into a catalog, reading the YAML of only those the
+/// snapshot cannot vouch for, and says what the next snapshot is.
+///
+/// A file's kept tree is used only if its SHA-256 matches. If a file that
+/// used one then fails to parse, the whole job is parsed again from YAML, so
+/// that the error names the line it is on. Pure: no storage, no Flutter.
+CatalogOutcome runCatalogJob(CatalogJob job) {
+  final stored = CatalogSnapshot.tryDecode(job.snapshot, app: job.app);
+  final reusable = stored?.reusable(job.shas) ?? const <String, Object?>{};
+  final kept = <String, Object?>{
+    for (final path in reusable.keys) ...<String, Object?>{
+      withoutBom(job.files[path]!): reusable[path],
+      job.files[path]!: reusable[path],
+    },
+  };
+  var scope = YamlTreeScope(kept);
+  var used = reusable;
+  Catalog? fromKept;
+  if (kept.isNotEmpty) {
+    try {
+      final parsed = scope.run(() => DeckCatalog.parseAll(job.files));
+      if (!parsed.broken.any((b) => reusable.containsKey(b.path))) {
+        fromKept = parsed;
+      }
+    } on Object {
+      fromKept = null;
+    }
+  }
+  final Catalog catalog;
+  if (fromKept != null) {
+    catalog = fromKept;
+  } else {
+    scope = YamlTreeScope(const <String, Object?>{});
+    used = const <String, Object?>{};
+    catalog = scope.run(() => DeckCatalog.parseAll(job.files));
+  }
+  try {
+    final brokenPaths = <String>{for (final b in catalog.broken) b.path};
+    final files = <String, SnapshotFile>{};
+    for (final path in job.files.keys) {
+      if (brokenPaths.contains(path)) continue;
+      final sha = job.shas[path];
+      if (sha == null) continue;
+      final text = job.files[path]!;
+      final node = scope.parsed[withoutBom(text)] ?? scope.parsed[text];
+      final Object? tree;
+      if (used.containsKey(path)) {
+        tree = used[path];
+      } else if (node != null) {
+        tree = plainTree(node);
+      } else {
+        continue;
+      }
+      files[path] = SnapshotFile(sha: sha, tree: tree);
+    }
+    final next = CatalogSnapshot(app: job.app, files: files);
+    if (stored != null && stored.sameFilesAs(next)) {
+      return CatalogOutcome(catalog, null);
+    }
+    return CatalogOutcome(catalog, next.encode());
+  } on Object {
+    return CatalogOutcome(catalog, null);
+  }
+}
+
+/// Runs a [CatalogJob] somewhere.
+typedef CatalogJobRunner = Future<CatalogOutcome> Function(CatalogJob job);
+
+/// [runCatalogJob] in place, on the calling isolate.
+Future<CatalogOutcome> runJobInPlace(CatalogJob job) async =>
+    runCatalogJob(job);
+
+/// [runCatalogJob] on an isolate of its own, as [parseInIsolate] parses:
+/// reading the snapshot's JSON is off the UI isolate too. In place where an
+/// isolate cannot run.
+Future<CatalogOutcome> runJobInIsolate(CatalogJob job) async {
+  try {
+    return await Isolate.run(() => runCatalogJob(job));
+  } catch (_) {
+    return runCatalogJob(job);
+  }
+}
+
+/// The snapshot a [DeckCatalog] keeps and reads (#875, ADR-0048).
+class CatalogSnapshots {
+  CatalogSnapshots({
+    required this.store,
+    required this.app,
+    this.knownShas,
+    this.runner = runJobInPlace,
+  });
+
+  final SnapshotStore store;
+
+  /// The app's version (`AppInfo.version`).
+  final String app;
+
+  /// The SHA-256 of each file the phone already knows by path, such as the
+  /// downloads' manifest. Files it lacks are hashed here.
+  final Future<Map<String, String>> Function()? knownShas;
+
+  final CatalogJobRunner runner;
+}
+
 /// Lists and parses every deck file in a [DeckSource].
 ///
 /// A stand-in for the deck repository (#4). It reads the files that live
@@ -354,7 +521,12 @@ Future<Catalog> parseInIsolate(Map<String, String> files) async {
 /// into cards (#2), and turns a file that fails to parse into a [BrokenDeck]
 /// rather than an exception.
 class DeckCatalog {
-  DeckCatalog(this.source, {this.added, this.parser = parseInPlace});
+  DeckCatalog(
+    this.source, {
+    this.added,
+    this.parser = parseInPlace,
+    this.snapshots,
+  });
 
   final DeckSource source;
 
@@ -365,6 +537,11 @@ class DeckCatalog {
   /// the web build want; the app passes [parseInIsolate], so that reading
   /// every deck's YAML never holds up the first frames (#875).
   final CatalogParser parser;
+
+  /// Where the YAML trees of the files are kept between launches, so that
+  /// only a changed file's YAML is read again (#875), or null to read it all
+  /// every time, as the web build does. Then [parser] is not used.
+  final CatalogSnapshots? snapshots;
 
   Future<Catalog>? _loading;
 
@@ -386,7 +563,52 @@ class DeckCatalog {
         files[path] = await added.read(path);
       }
     }
-    return parser(files);
+    final snapshots = this.snapshots;
+    if (snapshots == null) return parser(files);
+    try {
+      return await _fromSnapshot(snapshots, files);
+    } on Object {
+      // Whatever went wrong with the snapshot, the YAML is the truth.
+      return parser(files);
+    }
+  }
+
+  Future<Catalog> _fromSnapshot(
+    CatalogSnapshots snapshots,
+    Map<String, String> files,
+  ) async {
+    String? stored;
+    try {
+      stored = await snapshots.store.read();
+    } on Object {
+      stored = null;
+    }
+    var known = const <String, String>{};
+    try {
+      known = await snapshots.knownShas?.call() ?? known;
+    } on Object {
+      known = const <String, String>{};
+    }
+    final shas = <String, String>{
+      for (final e in files.entries)
+        e.key: known[e.key] ?? sha256Hex(utf8.encode(e.value)),
+    };
+    final outcome = await snapshots.runner(
+      CatalogJob(
+        files: files,
+        shas: shas,
+        snapshot: stored,
+        app: snapshots.app,
+      ),
+    );
+    final text = outcome.snapshot;
+    if (text != null) {
+      // Not waited for: the first screens do not need it written.
+      unawaited(
+        snapshots.store.write(text).then<void>((_) {}, onError: (Object _) {}),
+      );
+    }
+    return outcome.catalog;
   }
 
   /// Parses [files], keyed by path, into a catalog. Pure: no source, no IO.
@@ -863,7 +1085,7 @@ class DeckCatalog {
   /// files).
   static ({String? kind, String? part, String? core}) _headerOf(String text) {
     try {
-      final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
+      final root = loadYamlTree(withoutBom(text)).value;
       final kind = root is YamlMap ? root['kind'] : null;
       final part = root is YamlMap ? root['part'] : null;
       final core = root is YamlMap ? root['core'] : null;

@@ -1,6 +1,7 @@
 import 'package:yaml/yaml.dart';
 
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 /// A language's path (#117, ADR-0013, ADR-0036): its decks in the order
 /// they are taught, in units, one file per language learnt,
@@ -443,7 +444,7 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text);
+    root = loadYamlTree(text);
   } on YamlException catch (e) {
     throw bad(e.message);
   }

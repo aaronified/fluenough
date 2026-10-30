@@ -2,6 +2,7 @@ import 'package:yaml/yaml.dart';
 
 import '../models/fact.dart';
 import 'deck_parser.dart';
+import 'yaml_tree.dart';
 
 final _id = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 final _code = RegExp(r'^[a-z]{2,3}$');
@@ -23,7 +24,7 @@ FactsFile parseFacts(String text, {required String source}) {
 
   final YamlNode root;
   try {
-    root = loadYamlNode(text.startsWith('﻿') ? text.substring(1) : text);
+    root = loadYamlTree(text.startsWith('﻿') ? text.substring(1) : text);
   } on YamlException catch (e) {
     fail(e.message);
   }

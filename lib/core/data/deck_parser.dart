@@ -9,6 +9,7 @@ import '../models/grammar_pattern.dart';
 import '../models/proposal.dart';
 import '../models/reading.dart';
 import '../models/rule.dart';
+import 'yaml_tree.dart';
 
 part 'deck_layers.dart';
 
@@ -92,7 +93,7 @@ abstract final class DeckParser {
     final YamlNode root;
     try {
       // PyYAML, and so CI, skips a byte order mark. package:yaml does not.
-      root = loadYamlNode(yaml.startsWith('\uFEFF') ? yaml.substring(1) : yaml);
+      root = loadYamlTree(yaml.startsWith('\uFEFF') ? yaml.substring(1) : yaml);
     } on YamlException catch (e) {
       final start = e.span?.start;
       throw DeckParseException(
