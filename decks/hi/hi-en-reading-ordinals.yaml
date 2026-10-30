@@ -15,7 +15,7 @@ passages:
       - { text: "मेरा फ़्लैट पहली मंज़िल पर है।", reading: "mērā flaiṭ pahlī maṁzil par hai.", ipa: "meːraː flɛːʈ pəɦliː mə̃zɪl pər ɦɛː" }
       - { text: "दूसरी मंज़िल पर ऑफ़िस है।", reading: "dūsrī maṁzil par ôfis hai.", ipa: "d̪uːsriː mə̃zɪl pər ɔfɪs ɦɛː" }
       - { text: "तीसरी मंज़िल पर किताबें हैं।", reading: "tīsrī maṁzil par kitābēm̐ haim̐.", ipa: "t̪iːsriː mə̃zɪl pər kɪt̪aːbẽː ɦɛ̃ː" }
-      - { text: "कौन-सी मंज़िल खाली है?", reading: "kaun-sī maṁzil khālī hai?", ipa: "kɔːnsiː mə̃zɪl kʰaːliː ɦɛː" }
+      - { text: "चौथी मंज़िल पर कोई नहीं है।", reading: "cauthī maṁzil par kōī nahīm̐ hai.", ipa: "tʃɔːt̪ʰiː mə̃zɪl pər koːiː nəɦĩː ɦɛː" }
     questions:
       - id: "hi-1406"
         prompt: { en: "The flat is on the first floor." }
@@ -33,15 +33,15 @@ passages:
     title: "The weeks of the month"
     sentences:
       - { text: "पहले हफ़्ते में मेला है।", reading: "pahlē haftē mēm̐ mēlā hai.", ipa: "pəɦleː ɦəft̪eː mẽː meːlaː ɦɛː" }
-      - { text: "दूसरे हफ़्ते में परीक्षा है।", reading: "dūsrē haftē mēm̐ parīkśā hai.", ipa: "d̪uːsreː ɦəft̪eː mẽː pəriːkʃaː ɦɛː" }
-      - { text: "तीसरे हफ़्ते में शादी है।", reading: "tīsrē haftē mēm̐ śādī hai.", ipa: "t̪iːsreː ɦəft̪eː mẽː ʃaːd̪iː ɦɛː" }
-      - { text: "चौथा हफ़्ता खाली है।", reading: "cauthā haftā khālī hai.", ipa: "tʃɔːt̪ʰaː ɦəft̪aː kʰaːliː ɦɛː" }
+      - { text: "दूसरे हफ़्ते में शादी है।", reading: "dūsrē haftē mēm̐ śādī hai.", ipa: "d̪uːsreː ɦəft̪eː mẽː ʃaːd̪iː ɦɛː" }
+      - { text: "तीसरे हफ़्ते में मेला है।", reading: "tīsrē haftē mēm̐ mēlā hai.", ipa: "t̪iːsreː ɦəft̪eː mẽː meːlaː ɦɛː" }
+      - { text: "चौथे हफ़्ते में कुछ नहीं है।", reading: "cauthē haftē mēm̐ kuch nahīm̐ hai.", ipa: "tʃɔːt̪ʰeː ɦəft̪eː mẽː kʊtʃʰ nəɦĩː ɦɛː" }
     questions:
       - id: "hi-1409"
         prompt: { en: "The fair is in the first week." }
         answer: true
       - id: "hi-1410"
-        prompt: { en: "When is the exam?" }
+        prompt: { en: "When is the wedding?" }
         options:
           - { en: "The second week" }
           - { en: "The third week" }

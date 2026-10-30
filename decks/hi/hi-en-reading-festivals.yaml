@@ -13,19 +13,19 @@ passages:
     title: "The days of the festival"
     theme: "festivals"
     sentences:
-      - { text: "इस हफ़्ते दीवाली है।", reading: "is haftē dīvālī hai.", ipa: "ɪs ɦəft̪eː d̪iːʋaːliː ɦɛː" }
-      - { text: "सोमवार को हम घर सजाएँगे।", reading: "sōmvār kō ham ghar sajāēm̐gē.", ipa: "soːmʋaːr koː ɦəm ɡʱər sədʒaːẽːɡeː" }
-      - { text: "मंगलवार को सब मिठाई बाँटेंगे।", reading: "maṅgalvār kō sab miṭhāī bām̐ṭēṅgē.", ipa: "məŋɡəlʋaːr koː səb mɪʈʰaːiː bãːʈeːŋɡeː" }
-      - { text: "शाम को आरती होगी।", reading: "śām kō ārtī hōgī.", ipa: "ʃaːm koː aːrt̪iː ɦoːɡiː" }
+      - { text: "इस हफ़्ते दिवाली है।", reading: "is haftē divālī hai.", ipa: "ɪs ɦəft̪eː d̪ɪʋaːliː ɦɛː" }
+      - { text: "सोमवार को हम घर पर हैं।", reading: "sōmvār kō ham ghar par haim̐.", ipa: "soːmʋaːr koː ɦəm ɡʱər pər ɦɛ̃ː" }
+      - { text: "मंगलवार को सब मिठाई है।", reading: "maṅgalvār kō sab miṭhāī hai.", ipa: "məŋɡəlʋaːr koː səb mɪʈʰaːiː ɦɛː" }
+      - { text: "शाम को आरती होती है।", reading: "śām kō ārtī hōtī hai.", ipa: "ʃaːm koː aːrt̪iː ɦoːt̪iː ɦɛː" }
     questions:
       - id: "hi-1412"
         prompt: { en: "Diwali is this week." }
         answer: true
       - id: "hi-1413"
-        prompt: { en: "What do they do on Monday?" }
+        prompt: { en: "Where are they on Monday?" }
         options:
-          - { en: "Decorate the house" }
-          - { en: "Share sweets" }
+          - { en: "At home" }
+          - { en: "At the market" }
         answer: 1
       - id: "hi-1414"
         prompt: { en: "The sweets are shared on Monday." }
@@ -34,10 +34,10 @@ passages:
     title: "An invitation to a feast"
     theme: "festivals"
     sentences:
-      - { text: "प्रिय पड़ोसी, हमारे घर होली की दावत है।", reading: "priy paṛōsī, hamārē ghar hōlī kī dāvat hai.", ipa: "prɪj pəɽoːsiː ɦəmaːreː ɡʱər ɦoːliː kiː d̪aːʋət̪ ɦɛː" }
-      - { text: "आप सब सादर आमंत्रित हैं।", reading: "āp sab sādar āmantrit haim̐.", ipa: "aːp səb saːd̪ər aːmənt̪rɪt̪ ɦɛ̃ː" }
-      - { text: "दोपहर बारह बजे आइए।", reading: "dōphar bārah bajē āiē.", ipa: "d̪oːpɦər baːrəɦ bədʒeː aːɪeː" }
-      - { text: "लड्डू और सेवई बनेगी।", reading: "laḍḍū aur sēvaī banēgī.", ipa: "ləɖɖuː ɔːr seːʋəiː bəneːɡiː" }
+      - { text: "पड़ोसी, हमारे घर होली की दावत है।", reading: "paṛōsī, hamārē ghar hōlī kī dāvat hai.", ipa: "pəɽoːsiː ɦəmaːreː ɡʱər ɦoːliː kiː d̪aːʋət̪ ɦɛː" }
+      - { text: "आप सब मेहमान हैं।", reading: "āp sab mēhmān haim̐.", ipa: "aːp səb meːɦmaːn ɦɛ̃ː" }
+      - { text: "दोपहर बारह बजे आना।", reading: "dōphar bārah bajē ānā.", ipa: "d̪oːpɦər baːrəɦ bədʒeː aːnaː" }
+      - { text: "लड्डू और सेवई है।", reading: "laḍḍū aur sēvaī hai.", ipa: "ləɖɖuː ɔːr seːʋəiː ɦɛː" }
     questions:
       - id: "hi-1415"
         prompt: { en: "The feast is at a neighbour’s house." }
