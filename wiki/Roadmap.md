@@ -58,13 +58,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-23 approved open issues.
+22 approved open issues.
 
 **Enhancements**
 
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
-- [#508](https://github.com/aaronified/fluenough/issues/508) Review pipeline: reviewers see and correct every card field
 - [#519](https://github.com/aaronified/fluenough/issues/519) Reviewer daily questions: app-generated questions on the weakest data, answered by mail
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
 - [#612](https://github.com/aaronified/fluenough/issues/612) Transcriber and Wiktionary importer: readings and IPA for the new languages and scripts
