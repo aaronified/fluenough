@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Languages</title>
-<meta name="description" content="One Languages page for the languages you know and the ones you are learning: a list with a role per language, its sheets, adding and removing a role, Settings and onboarding entries, empty states. Hindustani and Bengali, light and dark, 1.4x text.">
+<meta name="description" content="One interactive Languages page: a list of languages, each with four skills (speak, hear, read, write) ticked as known or learning, the sheet, add a language, the empty state, onboarding and the Settings entry. Hindustani and Bengali, light and dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+JP:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap">
 <style>
 /* ===== The page around the phones (not the app) ===== */
 :root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
@@ -167,473 +167,570 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .sw[aria-checked="true"]{background:var(--p);border-color:var(--p)}
 .sw[aria-checked="true"]::after{left:24px;width:24px;height:24px;margin-top:-12px;left:22px;background:var(--onP)}
 .swhit{flex:none;width:56px;height:48px;display:flex;align-items:center;justify-content:center;border:0;background:none;padding:0}
-/* highlight of what changed */
-.chg{position:relative}
-.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;border-radius:14px}
-.hl-on .chg::after{content:"changed";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
-.hl-on .chg.new::after{content:"new"}
 .hide{display:none!important}
 
-/* ===== added for the merge ===== */
-.rp{display:inline-flex;align-items:center;gap:4px;height:calc(22px*var(--t));padding:0 8px;border-radius:calc(7px*var(--t));font-size:calc(12px*var(--t));font-weight:700;line-height:1;flex:none}
-.rp svg{width:16px;height:16px}
-.rp.L{background:var(--sc);color:var(--onSc)}
-.rp.K{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onS)}
-.rp.ico{padding:0 6px}
-.tile.ring{background:none;box-shadow:inset 0 0 0 2px var(--p);color:var(--p)}
-.tile.ring.sm{width:28px;height:28px}
-.rbtn span.chv{background:none;color:var(--onSv)}
-.chip.sm{min-height:40px;padding:0 12px}
-.row.addrow .nm{color:var(--p)}
-.cnt{font-size:calc(14px*var(--t));color:var(--onSv)}
-.chg.mini::after{display:none!important}
-.hl-on .chg.mini{outline-offset:2px}
-.snack{position:absolute;left:16px;right:16px;bottom:84px;background:var(--onS);color:var(--s);border-radius:8px;padding:6px 8px 6px 16px;display:flex;gap:12px;align-items:center;font-size:calc(14px*var(--t));line-height:1.3;z-index:5}
-.snack span{flex:1;min-width:0}
-.snack b{font-weight:700;text-decoration:underline;flex:none;padding:12px 8px}
-.setr{display:flex;gap:16px;align-items:center;padding:8px 0;min-height:64px}
-.setr .tx{flex:1;min-width:0}
-.setr b{display:block;font-size:calc(16px*var(--t));line-height:1.25;font-weight:500}
-.setr small{display:block;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
-h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:0 0 8px}
-.empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:40px 8px 0}
-.empty h4{margin:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
-.empty p{margin:0;font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv)}
-.eic{width:72px;height:72px;border-radius:36px;background:var(--pc);color:var(--onPc);display:flex;align-items:center;justify-content:center}
-.eic svg{width:40px;height:40px}
-.ph .btn svg{width:24px;height:24px}
-.hl-on .chg.gone{outline-color:var(--E);opacity:.7}
+/* ===== new in this page ===== */
+.layout{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-start}
+.ctl{flex:1;min-width:260px;max-width:520px;display:flex;flex-direction:column;gap:14px}
+.ctl h2{margin:0}
+.jumps{display:flex;flex-wrap:wrap;gap:8px}
+.jumps button,.rst{font:inherit;font-size:14px;min-height:44px;padding:0 14px;border:1px solid var(--page-line);border-radius:10px;background:var(--page-card);color:var(--page-fg);cursor:pointer;text-align:left}
+.jumps button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);border-color:transparent;font-weight:600}
+.try{margin:0;padding-left:20px;font-size:14px;color:var(--page-muted)}
+.try li{margin:4px 0}
+.stage{display:contents}
+.ph .row{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--olv);padding:10px 0}
+.ph .row.ob{display:block}
+.ph .row:first-child{border-top:0}
+.row .nm small{display:block;font-size:calc(12px*var(--t));line-height:1.3;font-weight:400;color:var(--onSv);margin-top:2px}
+.row .meta{padding-left:52px}
+.sks{display:flex;flex-wrap:wrap;gap:6px;padding-left:52px;margin:2px 0 2px}
+.sk{display:inline-flex;align-items:center;gap:4px;min-height:calc(26px*var(--t));padding:2px 10px 2px 6px;border-radius:calc(8px*var(--t));font-size:calc(12px*var(--t));line-height:1.2;font-weight:700;border:1px solid transparent;background:none}
+.sk.know{border-color:var(--ol);color:var(--onS)}
+.sk.learn{background:var(--sc);color:var(--onSc)}
+.sk svg{width:16px;height:16px}
+.sk.big{min-height:48px;padding:4px 14px 4px 10px;font-size:calc(14px*var(--t));border-radius:12px;border:1px solid var(--ol);color:var(--onS);font-weight:600}
+.sk.big:not(.know):not(.learn){padding-left:14px}
+.sk.big.know{border-color:var(--ol)}
+.sk.big.learn{border-color:transparent}
+.sk.big.dis{opacity:.38}
+.legend{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 0}
+.legend .lg{font-size:calc(12px*var(--t));color:var(--onSv)}
+.addrow{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;background:none;border:0;border-top:1px solid var(--olv);padding:8px 0;text-align:left}
+.addrow .nm{flex:1;font-size:calc(16px*var(--t));font-weight:600}
+.srv{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;background:none;border:0;border-top:1px solid var(--olv);padding:8px 0;text-align:left}
+.srv .tx{flex:1;min-width:0}.srv b{display:block;font-size:calc(16px*var(--t));font-weight:600}.srv small{display:block;font-size:calc(14px*var(--t));color:var(--onSv)}
+.srv.inert{opacity:.7}
+.note2{font-size:calc(12px*var(--t));color:var(--onSv);margin:14px 0 0}
+.empty{display:flex;flex-direction:column;align-items:center;padding:56px 8px 0;gap:8px}
+.disc{width:96px;height:96px;border-radius:48px;background:var(--pc);color:var(--onPc);display:flex;align-items:center;justify-content:center}
+.disc svg{width:40px;height:40px}
+.eh{margin:8px 0 0;font-size:calc(22px*var(--t));line-height:1.2;font-weight:500}
+.snack{position:absolute;z-index:8;left:12px;right:12px;bottom:12px;background:var(--onS);color:var(--s);border-radius:4px;padding:10px 8px 10px 16px;display:flex;align-items:center;gap:8px;font-size:calc(14px*var(--t));line-height:1.3}
+.snack span{flex:1}
+.snack button{border:0;background:none;color:var(--pc);font-size:calc(14px*var(--t));font-weight:700;min-height:48px;padding:0 12px}
+.sheethd{display:flex;align-items:center;padding:0 8px 0 20px}
+.sheethd h3{flex:1;margin:0}
+.key{font-size:calc(13px*var(--t));line-height:1.5;color:var(--onSv);margin:10px 0 0}
+.kk{display:inline-flex;align-items:center;gap:2px;vertical-align:middle;border-radius:6px;padding:0 6px;font-weight:700;margin:2px 0}
+.kk.know{border:1px solid var(--ol);color:var(--onS)}.kk.learn{background:var(--sc);color:var(--onSc)}
+.dial{font-size:calc(16px*var(--t));line-height:1.3;margin:0 0 4px}
+.dial .lab2{display:block;font-size:calc(12px*var(--t));font-weight:700;color:var(--onSv);text-transform:uppercase;letter-spacing:.4px}
+.skr{padding:10px 0;border-top:1px solid var(--olv)}
+.skr:first-of-type{border-top:0}
+.opts{display:flex;gap:8px;margin:8px 0 0}
+.opt{flex:1;min-height:48px;border-radius:12px;border:1px solid var(--ol);background:none;color:var(--onS);font-size:calc(14px*var(--t));line-height:1.15;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:4px 8px}
+.opt.on.know{background:var(--p);color:var(--onP);border-color:transparent}
+.opt.on.learn{background:var(--sc);color:var(--onSc);border-color:transparent}
+.opt:disabled{opacity:.38;cursor:default}
+.badge.plain{background:var(--sHst);color:var(--onSv)}
+.btn.sm{min-height:48px;padding:0 20px;align-self:flex-start;margin-top:6px}
+.btn:disabled{background:var(--sHst);color:var(--onSv);opacity:.7;cursor:default}
+.dlg .acts button.go{background:var(--p);color:var(--onP)}
+.search input{flex:1;min-width:0;background:none;border:0;color:var(--onS);font:inherit;font-size:calc(16px*var(--t));padding:0;outline:0}
+.search input::placeholder{color:var(--onSv)}
+.search:focus-within{outline:2px solid var(--p)}
+h1.ob{font-size:calc(24px*var(--t));line-height:1.2;font-weight:500;margin:8px 0 8px}
+.row.addl{padding:4px 0}
+.row .hd .badge{flex:none}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali","Noto Naskh Arabic","Noto Sans Telugu","Noto Sans Kannada","Noto Sans Gujarati","Noto Sans Gurmukhi","Noto Sans JP","Noto Sans SC","Noto Sans KR",Roboto,sans-serif}
+.ph button:focus-visible,.jumps button:focus-visible{outline:2px solid var(--p);outline-offset:2px}
+.badges .meta{padding-left:0;margin:0}
+.sheet .scroll{padding-top:2px}
+
 </style></head>
 <body>
-<div class="wrap" id="wrap">
+<div class="wrap">
 <h1>Languages</h1>
-<p class="cap1">Phone 360 dp, 1.4x text. One page for Languages I know and Languages I’m learning (owner, 2026-10-30), built on the approved Languages I’m learning page. Notes, self-check and open choices: <code>languages-merged.md</code>.</p>
+<p class="cap1">One page for the languages you know and the ones you are learning, by skill. Everything on the phone is live: tap through it. Notes, the dialect and script table, the contrast self-check and the open choices: <code>languages-merged.md</code>.</p>
 <div class="sticky tw" id="g-tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Colour seed <span class="seg" data-k="pal"><button data-v="clay">Clay</button><button data-v="forest">Forest</button></span></div>
- <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
- <div class="tg">Scripts in the sheet <span class="seg" data-k="scr"><button data-v="sw">Switches (proposed)</button><button data-v="built">Step after Learn (as built)</button></span></div>
- <div class="tg">Role markers <span class="seg" data-k="rm"><button data-v="words">Words</button><button data-v="icons">Icons only</button></span></div>
- <div class="tg">I know row in the sheet <span class="seg" data-k="kp"><button data-v="top">Top</button><button data-v="bottom">Bottom</button></span></div>
- <div class="tg">Third list phone <span class="seg" data-k="f"><button data-v="know">Know filter</button><button data-v="learning">Learning filter</button></span></div>
- <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Text size <span class="seg" data-k="t"><button data-v="1">1x</button><button data-v="1.4">1.4x (app cap)</button></span></div>
 </div>
-<div id="root"></div>
+<div class="layout" id="stage">
+ <div class="fcol"><div class="fcap">The app, live</div><div class="ph" id="phone"></div></div>
+ <div class="ctl">
+  <h2>Jump to a screen</h2>
+  <div class="jumps">
+   <button data-jump="settings">Settings entry</button>
+   <button data-jump="list">The list</button>
+   <button data-jump="sheet">Sheet: Hindustani (learning Urdu script)</button>
+   <button data-jump="sheet-know">Sheet: Marathi (know only)</button>
+   <button data-jump="add">Add a language</button>
+   <button data-jump="sheet-add">Add Spanish (a fresh language)</button>
+   <button data-jump="sheet-add2">Add Punjabi (two scripts, course coming)</button>
+   <button data-jump="empty">Empty state</button>
+   <button data-jump="ob1">Onboarding 1: Languages you know</button>
+   <button data-jump="ob2">Onboarding 2: What to learn</button>
+   <button class="rst" id="reset">Reset the sample data</button>
+  </div>
+  <h2>Things to try</h2>
+  <ul class="try">
+   <li>Open Hindustani: Speak and Hear are known, Read and Write are known in Devanagari and being learned in Perso-Arabic (Urdu).</li>
+   <li>Tap I’m learning it on Speak in a language you do not learn yet: a download is offered first. Know never downloads.</li>
+   <li>Tap a chosen option again to untick it. Untick everything and close the sheet: the language leaves the list (Undo in the snackbar).</li>
+   <li>Stop learning keeps what you know; Delete data asks for the name.</li>
+   <li>Add a language, search “urdu”, “বাংলা” or “east”, tick skills, then Add.</li>
+  </ul>
+ </div>
+</div>
 </div>
 <script>
-/* ===== palettes: ColorScheme.fromSeed (tonal spot) of the clay seed #8F4C36 and the forest seed #3F6C51, ThemeSeed in lib/app/settings.dart ===== */
 const PALS={"forest_light":{"p":"#296a48","onP":"#ffffff","pc":"#aef2c6","onPc":"#085231","sc":"#d1e8d6","onSc":"#374b3e","tt":"#3b6471","tc":"#bfe9f8","onTc":"#224c58","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sMid":"#eaefe8","sHigh":"#e4eae3","sHst":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"},"forest_dark":{"p":"#92d5ab","onP":"#003920","pc":"#085231","onPc":"#aef2c6","sc":"#374b3e","onSc":"#d1e8d6","tt":"#a3cddc","tc":"#224c58","onTc":"#bfe9f8","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sMid":"#1b211d","sHigh":"#262b27","sHst":"#313632","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},"clay_light":{"p":"#8f4c36","onP":"#ffffff","pc":"#ffdbd0","onPc":"#723521","sc":"#ffdbd0","onSc":"#5d4037","tt":"#6a5e2f","tc":"#f4e2a7","onTc":"#52461a","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLow":"#fff1ed","sMid":"#fceae5","sHigh":"#f7e4df","sHst":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","E":"#ba1a1a","onE":"#ffffff"},"clay_dark":{"p":"#ffb59e","onP":"#55200d","pc":"#723521","onPc":"#ffdbd0","sc":"#5d4037","onSc":"#ffdbd0","tt":"#d7c68d","tc":"#52461a","onTc":"#f4e2a7","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLow":"#231917","sMid":"#271d1b","sHigh":"#322825","sHst":"#3d322f","ol":"#a08d87","olv":"#53433f","E":"#ffb4ab","onE":"#690005"}};
 const IC={
  back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
- bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
  sync:'M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z',
  search:'M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
  check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
  close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
  chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
  translate:'M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z',
- flag:'M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z',
  school:'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z',
  book:'M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z',
  phone:'M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z',
  list:'M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h13v-4H8v4zm0 5h13v-4H8v4zM8 5v4h13V5H8z',
  edit:'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z',
- braille:'M7 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
  timer:'M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z',
  plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
  bin:'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
  minus:'M19 13H5v-2h14v2z',
- voice:'M9 13c2.67 0 8 1.34 8 4v2H1v-2c0-2.66 5.33-4 8-4zm0-1c-1.93 0-3.5-1.57-3.5-3.5S7.07 5 9 5s3.5 1.57 3.5 3.5S10.93 12 9 12zm7.76-6.64-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z',
- abc:'M21 11h-3V9h3V7h-5v6h5v-2zM4 7v2h5v2H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h6V7H4zm5 8H6v-2h3v2zm8-1H15v3h2c1.1 0 2-.9 2-2v-1z',
- layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z'};
+ layers:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ ear:'M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ dl:'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z'};
 const svg=(p,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[p]}"/></svg>`;
-
 const tile=(ic,cls)=>`<span class="tile ${cls||''}" aria-hidden="true">${svg(ic)}</span>`;
-const hd=(ic,t,extra)=>`<div class="h">${svg(ic)}<span>${t}${extra||''}</span></div>`;
-const GL={'Devanagari':'अ','Perso-Arabic':'ب','Bengali':'অ'};
-const gl=(n,on)=>`<span class="tile ${on?'p':'off'} script" aria-hidden="true">${GL[n]}</span>`;
-/* ===== data. Hindustani is one course with two scripts (CLAUDE.md, 2026-10-18); Bengali has one. ===== */
-const C={
- hi:{name:'Hindustani',title:'Hindustani · <span class="script">हिन्दुस्तानी</span> · <span class="script" dir="rtl">ہندوستانی</span>',pct:26,stage:'A2',
-  units:'31 of 118',words:'1,240 words',size:'4.2 MB',native:['English','Bengali'],levels:[1,.02,.01,0],
-  scripts:[
-   {n:'Devanagari',rtl:false,decks:6,done:2,shared:'Marathi',state:false},
-   {n:'Perso-Arabic',rtl:true,decks:8,done:3,shared:null,state:true}]},
- bn:{name:'Bengali',title:'Bengali · <span class="script">বাংলা</span>',pct:41,stage:'A2',
-  units:'52 of 118',words:'1,410 words',size:'4.6 MB',native:['English','Hindustani'],levels:[1,.2,.03,0],
-  scripts:[
-   {n:'Bengali',rtl:false,decks:7,done:4,shared:'Assamese',state:true}]}};
-const BRAILLE={name:'English Braille',words:193,size:'89 KB',unitsDone:15,unitsAll:16};
-/* new in the merge: Marathi (a Know-only language with a course) and English (a Know-only language with no course) */
-C.mr={name:'Marathi',title:'Marathi · <span class="script">मराठी</span>',pct:12,badge:'Alpha',stage:'A1',units:'14 of 118',words:'610 words',size:'3.1 MB',native:['English','Hindustani'],levels:[.6,0,0,0],
-  scripts:[{n:'Devanagari',rtl:false,decks:6,done:0,shared:'Hindustani',state:true}]};
-const EN={name:'English',title:'English',scripts:[{n:'Latin'}]};
-GL.Latin='A';
-const S={theme:'light',pal:'clay',course:'hi',scr:'sw',f:'know',rm:'words',kp:'top',hl:'1',mins:{hi:5,bn:10,brl:5,es:5}};
-const TY={};
+const gtile=(g,cls)=>`<span class="tile ${cls||''} script" aria-hidden="true">${g}</span>`;
+
+/* ===== The catalogue. Dialects and scripts come from the courses (decks/<lang>/): see languages-merged.md, "Dialect and script table". course: 'beta' = decks written (Learning available), 'coming' = a path only, 'none' = no course. ===== */
+const L={
+ hi:{name:'Hindustani',title:'Hindustani · <span class="script">हिन्दुस्तानी</span> · <span class="script" dir="rtl">ہندوستانی</span>',nat:'हिन्दुस्तानी',fam:'Indo-Aryan',course:'beta',pct:26,core:3.1,units:'31 of 118',
+  dial:'Khari Boli (<span class="script">खड़ी बोली</span>), standard Hindustani',dialShort:'Khari Boli',
+  scripts:[{id:'deva',n:'Devanagari',g:'अ',mb:1.0,decks:6},{id:'perso',n:'Perso-Arabic (Urdu)',g:'ب',mb:1.1,decks:8}]},
+ bn:{name:'Bengali',title:'Bengali · <span class="script">বাংলা</span>',nat:'বাংলা',fam:'Indo-Aryan',course:'beta',pct:41,core:3.6,units:'52 of 118',
+  dial:'Standard Colloquial Bengali (<span class="script">চলিত</span>), Kolkata (Rarhi)',dialShort:'Standard Colloquial, Kolkata',
+  scripts:[{id:'bn',n:'Bengali script',g:'অ',mb:1.0,decks:7}]},
+ mr:{name:'Marathi',title:'Marathi · <span class="script">मराठी</span>',nat:'मराठी',fam:'Indo-Aryan',course:'beta',pct:4,core:2.4,units:'6 of 118',
+  dial:'Standard Marathi',dialShort:'Standard Marathi',scripts:[{id:'deva',n:'Devanagari',g:'अ',mb:0.9,decks:5}]},
+ as:{name:'Assamese',title:'Assamese · <span class="script">অসমীয়া</span>',nat:'অসমীয়া',fam:'Indo-Aryan',course:'beta',pct:2,core:2.2,units:'3 of 118',
+  dial:'Standard Assamese',dialShort:'Standard Assamese',scripts:[{id:'as',n:'Assamese script',g:'ৰ',mb:0.8,decks:4}]},
+ gu:{name:'Gujarati',title:'Gujarati · <span class="script">ગુજરાતી</span>',nat:'ગુજરાતી',fam:'Indo-Aryan',course:'beta',pct:2,core:2.1,units:'3 of 118',
+  dial:'Standard Gujarati',dialShort:'Standard Gujarati',scripts:[{id:'gu',n:'Gujarati script',g:'અ',mb:0.8,decks:4}]},
+ pa:{name:'Punjabi',title:'Punjabi · <span class="script">ਪੰਜਾਬੀ</span> · <span class="script" dir="rtl">پنجابی</span>',nat:'ਪੰਜਾਬੀ',fam:'Indo-Aryan',course:'coming',core:0,
+  dial:'Majhi (<span class="script">ਮਾਝੀ</span>), the Eastern Punjabi standard',dialShort:'Majhi',
+  scripts:[{id:'gur',n:'Gurmukhi',g:'ੳ',mb:0},{id:'shah',n:'Shahmukhi',g:'ب',mb:0}]},
+ mai:{name:'Maithili',title:'Maithili · <span class="script">मैथिली</span>',nat:'मैथिली',fam:'Indo-Aryan',course:'coming',core:0,
+  dial:'Standard Maithili',dialShort:'Standard Maithili',scripts:[{id:'deva',n:'Devanagari',g:'अ',mb:0}]},
+ or:{name:'Odia',title:'Odia · <span class="script">ଓଡ଼ିଆ</span>',nat:'ଓଡ଼ିଆ',fam:'Indo-Aryan',course:'coming',core:0,
+  dial:'Standard Odia',dialShort:'Standard Odia',scripts:[{id:'or',n:'Odia script',g:'ଅ',mb:0}]},
+ te:{name:'Telugu',title:'Telugu · <span class="script">తెలుగు</span>',nat:'తెలుగు',fam:'Dravidian',course:'beta',pct:30,core:3.3,units:'40 of 118',
+  dial:'Standard Telugu',dialShort:'Standard Telugu',scripts:[{id:'te',n:'Telugu script',g:'అ',mb:1.0,decks:5}]},
+ kn:{name:'Kannada',title:'Kannada · <span class="script">ಕನ್ನಡ</span>',nat:'ಕನ್ನಡ',fam:'Dravidian',course:'beta',pct:3,core:2.2,units:'4 of 118',
+  dial:'Standard Kannada',dialShort:'Standard Kannada',scripts:[{id:'kn',n:'Kannada script',g:'ಅ',mb:0.9,decks:4}]},
+ ta:{name:'Tamil',title:'Tamil · <span class="script">தமிழ்</span>',nat:'தமிழ்',fam:'Dravidian',course:'coming',core:0,
+  dial:'Standard Tamil',dialShort:'Standard Tamil',scripts:[{id:'ta',n:'Tamil script',g:'அ',mb:0}]},
+ ml:{name:'Malayalam',title:'Malayalam · <span class="script">മലയാളം</span>',nat:'മലയാളം',fam:'Dravidian',course:'coming',core:0,
+  dial:'Standard Malayalam',dialShort:'Standard Malayalam',scripts:[{id:'ml',n:'Malayalam script',g:'അ',mb:0}]},
+ es:{name:'Spanish',title:'Spanish · Español',nat:'Español',fam:'Romance',course:'beta',pct:12,core:3.4,units:'14 of 118',
+  dial:'Castilian Spanish (Spain)',dialShort:'Castilian',scripts:[{id:'la',n:'Latin',g:'A',mb:0,decks:0}]},
+ fr:{name:'French',title:'French · Français',nat:'Français',fam:'Romance',course:'coming',core:0,
+  dial:'Standard French (France)',dialShort:'Standard French',scripts:[{id:'la',n:'Latin',g:'A',mb:0}]},
+ de:{name:'German',title:'German · Deutsch',nat:'Deutsch',fam:'Germanic',course:'coming',core:0,
+  dial:'Standard German (Germany)',dialShort:'Standard German',scripts:[{id:'la',n:'Latin',g:'A',mb:0}]},
+ en:{name:'English',title:'English',nat:'English',fam:'Germanic',course:'none',core:0,
+  dial:null,dialShort:'',scripts:[{id:'la',n:'Latin',g:'A',mb:0}]},
+ ja:{name:'Japanese',title:'Japanese · <span class="script">日本語</span>',nat:'日本語',fam:'East Asian',course:'beta',pct:9,core:3.0,units:'10 of 118',
+  dial:'Standard Japanese (<span class="script">標準語</span>), Tokyo',dialShort:'Standard, Tokyo',
+  scripts:[{id:'kana',n:'Kana',g:'あ',mb:0.8,decks:3},{id:'kanji',n:'Kanji',g:'字',mb:1.2,decks:2}]},
+ zh:{name:'Mandarin Chinese',title:'Mandarin Chinese · <span class="script">中文</span>',nat:'中文',fam:'East Asian',course:'beta',pct:6,core:3.2,units:'7 of 118',
+  dial:'Putonghua (<span class="script">普通话</span>), as taught in mainland China',dialShort:'Putonghua',
+  scripts:[{id:'hans',n:'Simplified',g:'简',mb:1.0,decks:6},{id:'hant',n:'Traditional',g:'繁',mb:1.0,decks:6}]},
+ ko:{name:'Korean',title:'Korean · <span class="script">한국어</span>',nat:'한국어',fam:'East Asian',course:'beta',pct:8,core:2.9,units:'9 of 118',
+  dial:'Standard Korean (<span class="script">표준어</span>), Seoul',dialShort:'Standard, Seoul',scripts:[{id:'han',n:'Hangul',g:'한',mb:0.7,decks:3}]},
+ tok:{name:'Toki Pona',title:'Toki Pona',nat:'toki pona',fam:'Constructed',course:'beta',pct:20,core:1.2,units:'17 of 40',
+  dial:'No dialects: one standard',dialShort:'One standard',scripts:[{id:'la',n:'Latin',g:'A',mb:0,decks:0}]},
+ eo:{name:'Esperanto',title:'Esperanto',nat:'Esperanto',fam:'Constructed',course:'coming',core:0,
+  dial:'No dialects: one standard (Fundamento)',dialShort:'One standard',scripts:[{id:'la',n:'Latin',g:'A',mb:0}]},
+ qbe:{name:'English Braille',title:'English Braille',nat:'⠃⠗⠇',fam:'Script only',course:'beta',pct:100,core:0.09,units:'15 of 16',only:true,
+  dial:null,dialShort:'',scripts:[{id:'br',n:'Braille',g:'⠃',mb:0,decks:16}]}};
+const FAMS=['Indo-Aryan','Dravidian','Romance','Germanic','East Asian','Constructed','Script only'];
+const COURSE={beta:'Beta',coming:'Coming',none:'No course yet'};
+const SK=['speak','hear','read','write'];
+const SKN={speak:'Speak',hear:'Hear',read:'Read',write:'Write'};
+const SKI={speak:'mic',hear:'ear',read:'book',write:'edit'};
+const ST_LABEL={know:'I know it',learn:'I’m learning it'};
+
+/* ===== state ===== */
+const S={theme:'light',pal:'clay',t:'1.4'};
+const V={screen:'settings',sheet:null,dialog:null,snack:null,q:'',oq:'',ob:{}};
+let U={};
+const rec0=id=>({speak:'',hear:'',read:{},write:{},mins:5,packs:{},dl:null,upd:'Up to date, checked Tue, Oct 27',was:{}});
+const R=(id,k,v)=>{const r=rec0(id);for(const x of k)r[x]=v[x];return r};
+function seed(){
+ U={};
+ U.hi=Object.assign(rec0('hi'),{speak:'know',hear:'know',read:{deva:'know',perso:'learn'},write:{deva:'know',perso:'learn'},mins:10,packs:{core:1,perso:1}});
+ U.bn=Object.assign(rec0('bn'),{speak:'learn',hear:'learn',read:{bn:'learn'},write:{bn:'learn'},mins:15,packs:{core:1,bn:1}});
+ U.mr=Object.assign(rec0('mr'),{speak:'know',hear:'know',read:{deva:'know'},write:{}});
+}
+const clone=o=>JSON.parse(JSON.stringify(o));
+const get=(r,sk,scr)=>(sk==='read'||sk==='write')?(r[sk][scr]||''):r[sk];
+const put=(r,sk,scr,v)=>{if(sk==='read'||sk==='write')r[sk][scr]=v;else r[sk]=v};
+function skills(id,r){const l=L[id],o=[];if(!l.only){o.push(['speak',null],['hear',null])}['read','write'].forEach(sk=>l.scripts.forEach(s=>o.push([sk,s.id])));return o.map(([sk,scr])=>({sk,scr,st:get(r,sk,scr)}))}
+const cnt=(id,r,st)=>skills(id,r).filter(x=>x.st===st).length;
+const inList=id=>U[id]&&skills(id,U[id]).some(x=>x.st);
+const learnable=id=>L[id].course==='beta';
+const packsFor=(id,sk,scr)=>['core'].concat((sk==='read'||sk==='write')?[scr]:[]);
+const packMb=(id,p)=>p==='core'?L[id].core:(L[id].scripts.find(s=>s.id===p)||{mb:0}).mb;
+const packName=(id,p)=>p==='core'?'Course words and audio':L[id].scripts.find(s=>s.id===p).n;
+const mbTxt=m=>m<0.1?'89 KB':m.toFixed(1)+' MB';
+function missing(id,r,list){const need=new Set();list.forEach(x=>packsFor(id,x.sk,x.scr).forEach(p=>{if(!r.packs[p])need.add(p)}));return [...need]}
+const installedMb=(id,r)=>Object.keys(r.packs).reduce((a,p)=>a+packMb(id,p),0);
 const cards=m=>Math.round(m*60/17.5);
-const GLF={'English':'A','Bengali':'অ','Hindustani':'अ'};
-const ST={};
-const KS={};
-const root=document.getElementById('root');
-const H=(cls)=>S.scr==='sw'?` chg ${cls||''}`:'';
-const N=cls=>` chg new ${cls||''}`;
-const M=cls=>` chg new mini ${cls||''}`;
-const other=()=>S.course==='hi'?'bn':'hi';
 
-/* ----- role markers ----- */
-function pill(kind){
- const t=kind==='L'?'Learning':'Know',ic=kind==='L'?'school':'voice';
- return S.rm==='icons'?`<span class="rp ${kind} ico" role="img" aria-label="${t}">${svg(ic,16)}</span>`:`<span class="rp ${kind}">${svg(ic,16)}${t}</span>`;
-}
-const ringTile=(k,c)=>k.speak?`<span class="tile ring sm" role="img" aria-label="Speaks it, does not read it">${svg('voice',16)}</span>`:k.reads.map(n=>`<span class="tile ring sm script" role="img" aria-label="Reads ${n}">${GL[n]}</span>`).join('');
-
-/* ----- minutes a day (approved) ----- */
-function minutes(k){
- return `<div class="kvr">${tile('timer','')}<div class="blk"><p class="lab">Minutes a day</p>
-  <div class="stp"><button data-mn="-" data-k="${k}" aria-label="5 minutes less">${svg('minus')}</button><b class="mv" data-k="${k}" aria-live="polite">${S.mins[k]} min</b><button data-mn="+" data-k="${k}" aria-label="5 minutes more">${svg('plus')}</button></div>
-  <p class="val sm estv" data-k="${k}">About ${cards(S.mins[k])} cards</p></div></div>`;
-}
-const appbar=(t,end)=>`<div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">${t}</span>${end===false?'':`<span class="ib">${svg('bug')}</span>`}</div>`;
-
-/* ----- the list: the approved page (as it was) ----- */
-function listOld(c){
- const row=(o)=>`<div class="row"><div class="hd">${o.ic==='braille'?tile('braille','tc'):tile('translate','')}<span class="nm">${o.name}</span><button class="rbtn" tabindex="-1" aria-label="${o.dl?'Cancel download':'Stop learning'}"><span class="${o.dl?'x':''}">${svg(o.dl?'close':'check')}</span></button></div>
-  ${o.dl?`<div class="dl"><div class="bar"><u style="width:${o.dl}%"></u></div><b>${o.dl}%</b></div>`:`<div class="meta"><span class="mn">${svg('timer')}<span>${S.mins[o.k]} min</span></span>${(o.scripts||[]).filter(x=>x.state).map(x=>gl(x.n,true).replace('class="tile','class="tile sm')).join('')}<span class="tile off sm script" role="img" aria-label="Taught from ${o.from}">${GLF[o.from]}</span></div>`}</div>`;
- const hi=S.course==='hi',A=hi?C.hi:C.bn,B=hi?C.bn:C.hi;
- return `${appbar('Languages I’m learning')}
- <div class="scroll"><span class="btn tonal upd">${svg('sync')}Check for deck updates</span>
- <p class="last">Last checked Tue, Oct 27, 8:27 AM</p>
- <div class="auto"><div class="tx"><b>Check automatically</b></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>
- <div class="search">${svg('search')}Search languages</div>
- <div class="sec">Learning · 4</div>
- ${row({name:A.title,k:S.course,scripts:A.scripts,from:'English'})}
- ${row({name:BRAILLE.name,k:'brl',ic:'braille',from:'English'})}
- ${row({name:B.title,k:hi?'bn':'hi',scripts:B.scripts,from:'English'})}
- ${row({name:'Spanish',k:'es',dl:62,from:'English'})}
- </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
+/* ===== chips (read-only state markers) ===== */
+const chip=(label,st)=>`<span class="sk ${st}" aria-label="${label.replace(/<[^>]+>/g,'')}: ${st==='know'?'know':'learning'}">${svg(st==='know'?'check':'school',16)}<span>${label}</span></span>`;
+function rowChips(id,r){
+ const l=L[id],o=[];
+ ['speak','hear'].forEach(sk=>{if(!l.only&&r[sk])o.push(chip(SKN[sk],r[sk]))});
+ ['read','write'].forEach(sk=>['learn','know'].forEach(st=>{const g=l.scripts.filter(s=>r[sk][s.id]===st);if(g.length)o.push(chip(SKN[sk]+(l.scripts.length>1?' '+g.map(s=>`<span class="script">${s.g}</span>`).join(' '):''),st))}));
+ return `<div class="sks">${o.join('')}</div>`;
 }
 
-/* ----- the merged list: one row per language, a line per role ----- */
-function rowsFor(){
- const A=C[S.course],B=C[other()];
- return [
-  {id:'A',name:A.title,learn:{k:S.course,scripts:A.scripts,from:'English'}},
-  {id:'brl',name:BRAILLE.name,ic:'braille',learn:{k:'brl',from:'English'}},
-  {id:'B',name:B.title,learn:{k:other(),scripts:B.scripts,from:'English'},know:{speak:true}},
-  {id:'es',name:'Spanish',learn:{k:'es',dl:62,from:'English'}},
-  {id:'en',name:'English',know:{reads:['Latin']}},
-  {id:'mr',name:C.mr.title,know:{reads:['Devanagari']}}];
+/* ===== pages ===== */
+const bar=(title,back,act)=>`<div class="appbar">${back?`<button class="ib" data-go="${back}" aria-label="Back">${svg('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${title}</span>${act||''}</div>`;
+function settings(){
+ const ids=Object.keys(U).filter(inList);
+ const nl=ids.filter(i=>cnt(i,U[i],'learn')).length,nk=ids.length-nl;
+ const inert=(a,b)=>`<div class="srv inert" aria-disabled="true"><div class="tx"><b>${a}</b><small>${b}</small></div></div>`;
+ return bar('Settings')+`<div class="scroll"><div class="sec">Your languages</div>
+ <button class="srv" data-go="list"><div class="tx"><b>Languages</b><small>${ids.length?`Learning ${nl} · Know ${nk}`:'None yet'}</small></div><span class="chev">${svg('chev')}</span></button>
+ <div class="sec">Practice</div>${inert('Reminders','Off')}${inert('Daily goal','Set per language')}
+ <div class="sec">Appearance</div>${inert('Theme','System')}${inert('Colour','Clay')}
+ <p class="note2">Rows other than Languages are drawn for context and do nothing here.</p></div>`;
 }
-function mrow(o,f){
- const showL=o.learn&&f!=='know',showK=o.know&&f!=='learning';
- const L=o.learn,tr=showL?`<button class="rbtn" tabindex="-1" aria-label="${L.dl?'Cancel download':'Stop learning'}"><span class="${L.dl?'x':''}">${svg(L.dl?'close':'check')}</span></button>`:`<span class="rbtn" aria-hidden="true"><span class="chv">${svg('chev')}</span></span>`;
- const lline=!showL?'':L.dl?`<div class="dl"><div class="bar"><u style="width:${L.dl}%"></u></div><b>${L.dl}%</b></div>`
-  :`<div class="meta">${pill('L')}<span class="mn">${svg('timer')}<span class="mn-v" data-k="${L.k}">${S.mins[L.k]} min</span></span>${(L.scripts||[]).filter(x=>x.state).map(x=>gl(x.n,true).replace('class="tile','class="tile sm')).join('')}<span class="tile off sm script" role="img" aria-label="Taught from ${L.from}">${GLF[L.from]}</span></div>`;
- const kline=!showK?'':`<div class="meta${M()}">${pill('K')}${ringTile(o.know)}</div>`;
- return `<div class="row"><div class="hd">${o.ic==='braille'?tile('braille','tc'):tile('translate','')}<span class="nm">${o.name}</span>${tr}</div>${lline}${kline}</div>`;
+function rowHtml(id){
+ const l=L[id],r=U[id],nl=cnt(id,r,'learn');
+ const g=(l.scripts.find(s=>Object.values(r.read).concat(Object.values(r.write)).length&&(r.read[s.id]||r.write[s.id]))||l.scripts[0]).g;
+ const sd=!l.only&&(r.speak||r.hear)&&l.dialShort;
+ return `<button class="row" data-open="${id}"><div class="hd">${gtile(g,nl?'pc':'')}<span class="nm">${l.title}${sd?`<small>${l.dialShort}</small>`:''}</span><span class="chev">${svg('chev')}</span></div>
+ ${rowChips(id,r)}
+ ${r.dl?`<div class="dl"><div class="bar"><u style="width:${Math.round(r.dl.pct)}%"></u></div><b>${Math.round(r.dl.pct)}%</b></div>`:nl?`<div class="meta"><span class="mn">${svg('timer')}${r.mins} min a day</span><span class="mn">${svg('phone')}${mbTxt(installedMb(id,r))}</span></div>`:''}</button>`;
 }
-function filterChips(rows,f){
- const n={all:rows.length,learning:rows.filter(r=>r.learn).length,know:rows.filter(r=>r.know).length};
- return `<div class="chips${N('mini')}" style="margin:8px 0 4px;padding:2px" role="tablist" aria-label="Show">${[['all','All'],['learning','Learning'],['know','Know']].map(([v,l])=>`<span class="chip sm${f===v?' on':''}" role="tab" aria-selected="${f===v}">${f===v?svg('check'):''}${l} · ${n[v]}</span>`).join('')}</div>`;
+function listPage(){
+ const ids=Object.keys(U).filter(inList);
+ const lr=ids.filter(i=>cnt(i,U[i],'learn')),kr=ids.filter(i=>!cnt(i,U[i],'learn'));
+ const add=`<button class="addrow" data-go="add">${tile('plus','p')}<span class="nm">Add a language</span></button>`;
+ let body;
+ if(!ids.length) body=`<div class="empty"><div class="disc">${svg('translate',40)}</div><h2 class="eh">No languages yet</h2><p class="est" style="text-align:center">For each language, tick what you can already do and what you want to learn: speak, hear, read and write.</p><button class="btn fill" data-go="add" style="margin-top:8px">${svg('plus')}Add a language</button></div>`;
+ else body=`${lr.length?`<button class="btn tonal upd" data-updall>${svg('sync')}Check for deck updates</button><p class="last">${V.checked||'Last checked Tue, Oct 27, 8:27 AM'}</p>`:''}
+  <div class="legend" role="note">${chip('Know','know')}${chip('Learning','learn')}<span class="lg">per skill</span></div>
+  ${lr.length?`<div class="sec">Learning · ${lr.length}</div>${lr.map(rowHtml).join('')}`:''}
+  ${kr.length?`<div class="sec">Know · ${kr.length}</div>${kr.map(rowHtml).join('')}`:''}
+  <div style="height:8px"></div>${add}`;
+ return bar('Languages','settings',ids.length?`<button class="ib" data-go="add" aria-label="Add a language">${svg('plus')}</button>`:'')+`<div class="scroll" data-sc="main">${body}</div>`;
 }
-function listNew(o={}){
- const f=o.f||'all',rows=(o.rows||rowsFor()).filter(r=>f==='all'||(f==='learning'?r.learn:r.know));
- const showUpd=f!=='know'&&!o.noUpd;
- const body=rows.map(r=>mrow(r,f)).join('')+`<div class="row addrow${N('mini')}"><div class="hd">${tile('plus','pc')}<span class="nm">Add a language</span><span class="rbtn" aria-hidden="true"><span class="chv">${svg('chev')}</span></span></div></div>`;
- return `${appbar('Languages')}
- <div class="scroll">${showUpd?`<span class="btn tonal upd">${svg('sync')}Check for deck updates</span>
- <p class="last">Last checked Tue, Oct 27, 8:27 AM</p>
- <div class="auto"><div class="tx"><b>Check automatically</b></div><button class="sw" role="switch" aria-checked="true" aria-label="Check automatically" tabindex="-1"></button></div>`:''}
- <div class="search">${svg('search')}Search languages</div>
- ${filterChips(o.rows||rowsFor(),f)}
- ${body}
- </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>
- ${o.snack?`<div class="snack" role="status"><span>${o.snack}</span><b>Undo</b></div>`:''}`;
+function addPage(){
+ const q=V.q.trim().toLowerCase();
+ const match=id=>!q||L[id].name.toLowerCase().includes(q)||L[id].nat.toLowerCase().includes(q)||L[id].fam.toLowerCase().includes(q);
+ const grp=FAMS.map(f=>({f,ids:Object.keys(L).filter(i=>L[i].fam===f&&match(i))})).filter(g=>g.ids.length);
+ return bar('Add a language','list')+`<div class="scroll" data-sc="add"><label class="search"><span aria-hidden="true">${svg('search')}</span><input id="q" type="search" placeholder="Search languages" value="${V.q.replace(/"/g,'&quot;')}" autocomplete="off" aria-label="Search languages"></label>
+ <div id="results">${addResults(grp)}</div></div>`;
 }
-
-/* ----- sheet pieces (approved, unchanged) ----- */
-const kv=(l,v,ic,cls)=>`<div class="kvr">${tile(ic,cls)}<div class="blk"><p class="lab">${l}</p><p class="val">${v}</p></div></div>`;
-function courseLine(c){
- return `<div class="cline" role="img" aria-label="Course written: A1 ${Math.round(c.levels[0]*100)}%">${['A1','A2','B1','Culture'].map((l,i)=>`<div><i><u style="width:${Math.round(c.levels[i]*100)}%"></u></i><span>${l}</span></div>`).join('')}</div>`;
+function addResults(grp){
+ if(!grp.length)return `<p class="est" style="text-align:center;margin:24px 0">No language matches “${V.q.replace(/</g,'')}”.</p>`;
+ return grp.map(g=>`<div class="sec">${g.f}</div>`+g.ids.map(i=>{const l=L[i],added=inList(i);
+  return `<button class="row addl" data-addpick="${i}"><div class="hd">${gtile(l.scripts[0].g,added?'p':'')}<span class="nm">${l.name}<small class="script">${l.nat}</small></span>
+  ${added?`<span class="badge pc">${svg('check',16)}Added</span>`:`<span class="badge ${l.course==='beta'?'':'plain'}">${COURSE[l.course]}</span>`}<span class="chev">${svg('chev')}</span></div></button>`}).join('')).join('');
 }
-function swtch(id,i,on,label){return `<button class="swhit" data-sw="${id}:${i}" aria-label="${label}"><span class="sw" role="switch" aria-checked="${on}"></span></button>`}
-function shared(s){return s.shared?`<p class="shared">Also in ${s.shared}</p>`:''}
-function scriptsLearned(c,id,lab){
- const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
-   <p class="val" style="font-weight:500">${s.n}</p>
-   ${st[i]?`<p class="val sm">${s.done} of ${s.decks} decks</p><div class="bar" aria-hidden="true"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:''}
-   ${shared(s)}</div>${swtch(id,i,st[i],s.n)}</div></div>`).join('');
- const none=st.every(x=>!x);
- return `${hd('translate',lab)}<div class="${H()}" style="border-radius:12px">${rows}${none?'<p class="off-note" style="margin:8px 0 0 52px">Latin letters only</p>':''}</div>`;
-}
-function scriptsBefore(c,id,lab){
- const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx">
-   <p class="val" style="font-weight:500">${s.n}</p>
-   <p class="val sm">${s.decks} decks</p>
-   ${shared(s)}</div>${swtch(id,i,st[i],s.n)}</div></div>`).join('');
- const none=st.every(x=>!x);
- return `${hd('translate',lab)}<div class="${H()}" style="border-radius:12px">${rows}${none?'<p class="off-note" style="margin:8px 0 0 52px">Latin letters only</p>':''}</div>`;
-}
-function scriptsBuiltLearned(c,id){
- const st=ST[id];
- const blocks=c.scripts.map((s,i)=>`<div class="kvr">${gl(s.n,st[i])}<div class="blk">${st[i]?`<p class="lab">${s.n}</p><p class="val">${s.done} of ${s.decks} decks</p><div class="bar"><u style="width:${Math.round(s.done/s.decks*100)}%"></u></div>`:`<p class="lab">${s.n}</p>`}${shared(s)}</div></div>`).join('');
- const n=st.filter(Boolean).length;
- return `${hd('translate','Scripts')}${blocks}${n?`<p class="val sm" style="margin:0 0 12px">${c.scripts.filter((s,i)=>st[i]).map(s=>s.n).join(', ')} (${n}/${c.scripts.length})</p>`:''}<button class="btn out" style="margin:0 0 4px" tabindex="-1">Change scripts</button>`;
-}
-function levelBlock(c){
- return `<div class="link">${tile('flag','')}<div class="tx"><b>Find my level</b></div><span class="chev">${svg('chev')}</span></div>
- <div class="link">${tile('layers','tc')}<div class="tx"><b>Placed words</b><small>Set in stone</small></div><span class="chev">${svg('chev')}</span></div>`;
+function addResultsHtml(){
+ const q=V.q.trim().toLowerCase();
+ const match=id=>!q||L[id].name.toLowerCase().includes(q)||L[id].nat.toLowerCase().includes(q)||L[id].fam.toLowerCase().includes(q);
+ return addResults(FAMS.map(f=>({f,ids:Object.keys(L).filter(i=>L[i].fam===f&&match(i))})).filter(g=>g.ids.length));
 }
 
-/* ----- the Know role: one switch, and the scripts read (what Languages you know held) ----- */
-function ksGet(id,def){if(!KS[id])KS[id]={on:def.on,reads:def.reads.slice()};return KS[id]}
-function knownSummary(c,k){
- const r=c.scripts.filter((s,i)=>k.reads[i]).map(s=>s.n);
- return r.length===0?`Can only speak ${c.name}`:r.length===1?`Can read the ${r[0]} script`:`Can read ${r.join(', ')}`;
+/* ----- the sheet ----- */
+function sRec(){return V.sheet.mode==='add'?V.sheet.draft:U[V.sheet.id]}
+function skRow(id,r,sk,scr,ico){
+ const l=L[id],st=get(r,sk,scr),sc=scr&&l.scripts.find(s=>s.id===scr);
+ const can=learnable(id);
+ const sub=sc?sc.n:'';
+ const lab=`${SKN[sk]}${sc?' '+sc.n:''}`;
+ const b=(v,t,ic)=>`<button class="opt ${v}${st===v?' on':''}" data-skill="${sk}|${scr||''}|${v}" aria-pressed="${st===v}" aria-label="${lab}: ${t}" ${v==='learn'&&!can?'disabled':''}>${st===v?svg('check',18):''}<span>${t}</span></button>`;
+ return `<div class="skr${st?' '+st:''}"><div class="two">${ico}<div class="tx"><p class="val" style="font-weight:600">${SKN[sk]}</p>${sub?`<p class="val sm${sc?' script':''}">${sub}</p>`:''}</div></div>
+  <div class="opts" role="group" aria-label="${lab}">${b('know','I know it','check')}${b('learn','I’m learning it','school')}</div></div>`;
 }
-function knowBlock(c,id,def){
- const k=ksGet(id,def);
- const head=`<div class="two">${tile('voice',k.on?'p':'off')}<div class="tx"><p class="val" style="font-weight:600">I know ${c.name}</p><p class="val sm">${k.on?knownSummary(c,k):'Not in the languages you know'}</p></div><button class="swhit" data-kn="${id}:on" aria-label="I know ${c.name}"><span class="sw" role="switch" aria-checked="${k.on}"></span></button></div>`;
- const rows=k.on?`${hd('translate','Scripts I read')}${c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,k.reads[i])}<div class="tx"><p class="val" style="font-weight:500">${s.n}</p></div><button class="swhit" role="checkbox" aria-checked="${k.reads[i]}" aria-label="I read ${s.n}" data-kn="${id}:${i}"><span class="cb" aria-checked="${k.reads[i]}"><svg viewBox="0 0 24 24"><path d="${IC.check}"/></svg></span></button></div></div>`).join('')}<p class="off-note" style="margin:6px 0 0 52px">Leave every box empty if you only speak it.</p>`:'';
- return `<div class="${N()}" style="border-radius:12px;margin:10px 0 14px;padding:2px 0">${head}${rows}</div>`;
+function sheetHtml(){
+ const id=V.sheet.id,l=L[id],r=sRec(),add=V.sheet.mode==='add';
+ const nl=cnt(id,r,'learn'),nk=cnt(id,r,'know'),any=nl+nk>0;
+ const h=(ic,t)=>`<div class="h">${svg(ic)}<span>${t}</span></div>`;
+ let sh='';
+ if(!l.only){
+  sh+=h('mic','Speak and hear')+`<p class="dial"><span class="lab2">Dialect</span>${l.dial?l.dial:'Any variety: there is no course to teach one.'}</p>
+`+
+  skRow(id,r,'speak',null,tile('mic',''))+skRow(id,r,'hear',null,tile('ear',''));
+ }
+ sh+=h('book','Read'+(l.scripts.length>1?', by script':''))+l.scripts.map(s=>skRow(id,r,'read',s.id,gtile(s.g,''))).join('');
+ sh+=h('edit','Write'+(l.scripts.length>1?', by script':''))+l.scripts.map(s=>skRow(id,r,'write',s.id,gtile(s.g,''))).join('');
+ const note=l.course==='coming'?`<p class="off-note">The course for ${l.name} is coming. You can tick what you know now; Learning is not available yet.</p>`:l.course==='none'?`<p class="off-note">There is no ${l.name} course. You can tick what you know.</p>`:'';
+ let learn='';
+ if(!add&&nl){
+  const dl=r.dl;
+  learn=h('timer','Learning')+`<div class="kvr">${tile('timer','')}<div class="blk"><p class="lab">Minutes a day</p>
+  <div class="stp"><button data-mn="-" data-k="${id}" aria-label="5 minutes less" ${r.mins<=5?'aria-disabled="true"':''}>${svg('minus')}</button><b class="mv" aria-live="polite">${r.mins} min</b><button data-mn="+" data-k="${id}" aria-label="5 minutes more" ${r.mins>=60?'aria-disabled="true"':''}>${svg('plus')}</button></div>
+  <p class="val sm">About ${cards(r.mins)} cards</p></div></div>
+  <div class="kvr">${tile('sync','')}<div class="blk"><p class="lab">Deck updates</p><p class="val">${r.upd}</p><button class="btn tonal sm" data-upd="${id}">Check now</button></div></div>
+  <div class="kvr">${tile('phone','tc')}<div class="blk"><p class="lab">Decks on this phone</p><p class="val">${mbTxt(installedMb(id,r))}</p>
+   <p class="val sm">${Object.keys(r.packs).map(p=>packName(id,p)+' '+mbTxt(packMb(id,p))).join(' · ')||'Nothing yet'}</p>
+   ${dl?`<div class="dl" style="padding:0"><div class="bar"><u style="width:${Math.round(dl.pct)}%"></u></div><b>${Math.round(dl.pct)}%</b></div>`:''}</div></div>
+  <div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Taught from</p><p class="val">English</p></div></div>
+  <div class="kvr">${tile('list','pc')}<div class="blk"><p class="lab">Course</p><p class="val">${l.units} units · ${l.pct}% of B1</p></div></div>`;
+ }
+ const empt=!any&&!add?`<p class="off-note" role="status">Nothing is ticked. ${l.name} leaves your list when you close this sheet${r.packs.core?', and its decks stay on this phone':''}.</p>`:'';
+ let btn;
+ if(add) btn=`<button class="btn fill full" data-commit ${any?'':'disabled'}>${any?`Add ${l.name}`:'Tick at least one skill'}</button>`;
+ else if(nl) btn=`<div class="brow"><button class="dbtn" data-dlg="delete" aria-label="Delete data">${svg('bin')}</button><button class="btn out" style="flex:1;min-height:calc(48px*var(--t))" data-dlg="stop">Stop learning</button></div>`;
+ else btn=`<div class="brow">${r.packs.core?`<button class="dbtn" data-dlg="delete" aria-label="Delete data">${svg('bin')}</button>`:''}<button class="btn out" style="flex:1;min-height:calc(48px*var(--t))" data-remove>Remove ${l.name}</button></div>`;
+ const badge=`<span class="badge${l.course==='beta'?'':' plain'}">${COURSE[l.course]}</span>`;
+ return `<div class="scrim" data-closesheet></div><div class="sheet" role="dialog" aria-label="${l.name}"><div class="grab"></div>
+ <div class="sheethd"><h3>${l.title}</h3><button class="ib" data-closesheet aria-label="Close">${svg('close')}</button></div>
+ <div class="scroll" data-sc="sheet"><div class="badges">${badge}<span class="meta">${add?'Choose what you know and what you want to learn':[nl?nl+' learning':'',nk?nk+' known':''].filter(Boolean).join(' · ')||'Nothing ticked'}</span></div>
+
+ ${note}${sh}${learn}${empt}<div style="height:6px"></div></div><div class="bottom">${btn}</div></div>`;
 }
 
-/* ----- the sheets ----- */
-function langSheet(c,learned,id,o={}){
- const know=o.know,k=know?ksGet(know.id,know.def):null;
- const header=`<h3>${c.title}</h3><div class="badges"><span class="badge">${c.badge||'Beta'}</span><span class="meta">${c.pct}% of B1</span>${learned?`<span class="you">You: ${c.pct}%</span>`:''}${learned&&know?`<span class="${M()}">${pill('L')}</span>`:''}${k&&k.on?`<span class="${M()}">${pill('K')}</span>`:''}</div>`;
- const sw=S.scr==='sw';
- const lab=know?'Scripts to learn':'Scripts';
- let scripts='';
- if(learned) scripts=sw?scriptsLearned(c,id,lab):scriptsBuiltLearned(c,id);
- else if(sw) scripts=scriptsBefore(c,id,lab);
- const built=!learned&&!sw?kv(c.scripts.length>1?'Scripts':'Script',c.scripts.map(s=>s.n).join(', '),'translate',''):'';
- const native=learned?kv('Taught from','English','school',''):`<div class="kvr">${tile('school','')}<div class="blk"><p class="lab">Taught from</p><div class="nat">${c.native.map((x,i)=>`<span class="chip${i?'':' on'}" style="min-height:40px">${i?'':svg('check')}${x}</span>`).join('')}</div></div></div>`;
- const kb=know?knowBlock(c,know.id,know.def):'';
- const body=`${header}${S.kp==='top'?kb:''}${learned?levelBlock(c):''}${learned?`<div class="${N()}" style="border-radius:12px;margin-bottom:14px">${minutes(o.mk||S.course)}</div>`:''}${scripts}
-  <div style="height:14px"></div>${courseLine(c)}${built}${native}${kv('Size',c.size,'phone','tc')}${kv('Units',c.units,'list','pc')}${S.kp==='bottom'?kb:''}`;
- const btn=learned?`<div class="brow"><button class="dbtn${N()}" tabindex="-1" aria-label="Delete data">${svg('bin')}</button><span class="btn out" style="flex:1;min-height:calc(48px*var(--t))">Stop learning</span></div>`:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Learn this language</span>`;
- return {body,btn};
+/* ----- dialogs and snackbar ----- */
+function dialogHtml(){
+ const d=V.dialog,id=d.id,l=L[id];
+ const ok=d.typed===l.name;
+ if(d.kind==='download'){
+  const tot=d.packs.reduce((a,p)=>a+packMb(id,p),0);
+  return `<div class="scrim2"></div><div class="dlg" role="alertdialog" aria-labelledby="dh"><h4 id="dh">Download ${l.name}?</h4><p>${d.packs.map(p=>`${packName(id,p)} ${mbTxt(packMb(id,p))}`).join(' · ')}. ${mbTxt(tot)} in all. A Wi-Fi connection is best.</p><div class="acts"><button data-dlg-x>Cancel</button><button class="go" data-dlg-ok>Download</button></div></div>`;
+ }
+ if(d.kind==='stop')return `<div class="scrim2"></div><div class="dlg" role="alertdialog" aria-labelledby="dh"><h4 id="dh">Stop learning ${l.name}?</h4><p>Everything you are learning is unticked${cnt(id,U[id],'know')?', and what you know stays':''}. Decks and progress stay on this phone, so you can start again at once. To free the space, use Delete data.</p><div class="acts"><button data-dlg-x>Cancel</button><button class="go" data-dlg-ok>Stop learning</button></div></div>`;
+ return `<div class="scrim2"></div><div class="dlg" role="alertdialog" aria-labelledby="dh"><h4 id="dh">Delete ${l.name} data?</h4><p>All reviews and deck data for ${l.name}. This cannot be undone. What you know stays ticked.</p>
+  <label for="ty">Type ${l.name} to confirm</label><input id="ty" data-name="${l.name}" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="${d.typed||''}">
+  <div class="acts"><button data-dlg-x>Cancel</button><button class="del" data-dlg-ok ${ok?'':'disabled'}>Delete</button></div></div>`;
 }
-function knowOnlySheet(c,id,def,withDone){
- const body=`<h3>${c.title}</h3><div class="badges"><span class="${M()}">${pill('K')}</span></div>${knowBlock(c,id,def)}`;
- return {body,btn:`<span class="btn tonal full" style="min-height:calc(48px*var(--t))">Done</span>`};
-}
-function scriptSheet(learned){
- const body=`<h3>${BRAILLE.name}</h3><div class="badges"><span class="badge pc">Complete</span>${learned?'<span class="you">You: 0 words</span>':''}</div>
-  ${learned?`<div class="${N()}" style="border-radius:12px;margin:14px 0">${minutes('brl')}</div>`:'<div style="height:14px"></div>'}${kv('Course size',BRAILLE.words+' words','book','pc')}${kv('Taught from','English','school','')}${kv('Size',BRAILLE.size,'phone','tc')}${kv('Units',BRAILLE.unitsDone+' of '+BRAILLE.unitsAll,'list','pc')}`;
- const btn=learned?`<div class="brow"><button class="dbtn${N()}" tabindex="-1" aria-label="Delete data">${svg('bin')}</button><span class="btn out" style="flex:1;min-height:calc(48px*var(--t))">Stop learning</span></div>`:`<span class="btn fill full${H('upd')}" style="min-height:calc(48px*var(--t))">Learn this script</span>`;
- return {body,btn};
-}
-function stepBuilt(c,id){
- const st=ST[id];
- const rows=c.scripts.map((s,i)=>`<div class="srow"><div class="two">${gl(s.n,st[i])}<div class="tx"><p class="val" style="font-weight:500">${s.n}</p><p class="val sm">${s.decks} decks</p>${shared(s)}</div>
-  <button class="cb" role="checkbox" aria-checked="${st[i]}" aria-label="${s.n}" data-sw="${id}:${i}"><svg viewBox="0 0 24 24"><path d="${IC.check}"/></svg></button></div></div>`).join('');
- return {body:`${hd('translate','Scripts')}${rows}`,btn:`<span class="btn fill full" style="min-height:calc(48px*var(--t))">Next</span>`};
-}
+const snackHtml=()=>`<div class="snack" role="status"><span>${V.snack.msg}</span>${V.snack.snap?'<button data-undo>Undo</button>':''}</div>`;
+let snackT=null;
+function snack(msg,snap){V.snack={msg,snap};clearTimeout(snackT);snackT=setTimeout(()=>{V.snack=null;paint()},6500)}
 
-function phone(cap,inner,key,style){
- return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" data-key="${key}"${style?` style="${style}"`:''}>${inner}</div></div>`;
-}
-const strip=h=>h.replace(/<div class="bottom pg">[\s\S]*$/,'');
-function sheetOn(base,cap,s){
- return strip(base)+`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${cap}"><div class="grab"></div><div class="scroll" data-focus="">${s.body}</div><div class="bottom">${s.btn}</div></div>`;
-}
-function sheetPhone(cap,key,s,focus,base){
- const inner=strip(base||listNew({f:'all'}))+`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${cap}"><div class="grab"></div><div class="scroll" data-focus="${focus||''}">${s.body}</div><div class="bottom">${s.btn}</div></div>`;
- return phone(cap,inner,key);
-}
-function dialogPhone(cap,key,name,typed,sheet,extra){
- const id='ty-'+key;
- if(TY[id]==null)TY[id]=typed;
- const ok=TY[id]===name;
- const inner=sheetOn(listNew({f:'all'}),cap,sheet)+`<div class="scrim2"></div>
- <div class="dlg chg new" role="alertdialog" aria-labelledby="${id}-h"><h4 id="${id}-h">Delete ${name} data?</h4><p>All reviews and deck data. This cannot be undone.</p>${extra?`<p class="${M()}" style="padding:2px 0">${extra}</p>`:''}
- <label for="${id}">Type ${name} to confirm</label><input id="${id}" data-name="${name}" data-ty="${id}" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="${TY[id]}">
- <div class="acts"><button tabindex="-1">Cancel</button><button class="del" data-del="${id}" ${ok?'':'disabled'}>Delete</button></div></div>`;
- return phone(cap,inner,key);
-}
-function stopPhone(cap,key,name,pct,sheet,extra){
- const inner=sheetOn(listNew({f:'all'}),cap,sheet)+`<div class="scrim2"></div>
- <div class="dlg" role="alertdialog" aria-labelledby="${key}-h"><h4 id="${key}-h">Stop learning ${name}?</h4><p>Your progress is kept (${pct}% of B1), but its decks leave Today. You can add it again any time.</p>${extra?`<p class="${M()}" style="padding:2px 0;color:var(--onS)">${extra}</p>`:''}
- <div class="acts"><button tabindex="-1">Cancel</button><button tabindex="-1">Stop learning</button></div></div>`;
- return phone(cap,inner,key);
-}
-
-/* ----- the Add a language page (the picker Languages you know had, with its families) ----- */
-const fam=(n,c)=>`<div class="row"><div class="hd"><span class="nm">${n}</span><span class="cnt">${c} languages</span><span class="rbtn" aria-hidden="true"><span class="chv">${svg('chev')}</span></span></div></div>`;
-const arow=(name,sub,pills)=>`<div class="row"><div class="hd"><span class="nm">${name}</span><span class="rbtn" aria-hidden="true"><span class="chv">${svg('chev')}</span></span></div><div class="meta" style="padding-left:0">${sub}${pills||''}</div></div>`;
-function addPage(c,mode){
- const note=`<p class="est${M()}" style="margin:6px 0 4px;padding:2px">Tap a language to say you know it, want to learn it, or both.</p>`;
- const search=mode==='search'?`<div class="search" style="color:var(--onS)">${svg('search')}<span style="flex:1">${c.name.slice(0,4).toLowerCase()}</span>${svg('close')}</div>`:`<div class="search">${svg('search')}Search languages</div>`;
- const list=mode==='search'
-  ?`<p class="lab" style="margin:8px 0 0">1 of 224</p>${arow(c.title,`<span class="badge">Beta</span>`,'')}`
-  :`<div class="sec">Top picks</div>${arow(C.mr.title,'<span class="badge">Alpha</span>','')}${arow('Kannada · <span class="script">ಕನ್ನಡ</span>','<span class="badge">Alpha</span>','')}${arow('Punjabi · <span class="script">ਪੰਜਾਬੀ</span>','<span class="badge">Alpha</span>','')}${arow('Tamil · தமிழ்','<span class="mn">No course yet</span>','')}
-   <div class="sec">All languages <span style="font-weight:500;color:var(--onSv)">· by family</span></div>${fam('Indo-Aryan',38)}${fam('Dravidian',9)}${fam('Germanic',12)}${fam('Romance',10)}`;
- return `${appbar('Add a language',false)}<div class="scroll">${note}${search}${list}</div>`;
-}
-
-/* ----- Settings and onboarding ----- */
-const setr=(ic,t,sub,cls)=>`<div class="setr${cls||''}">${tile(ic,'')}<div class="tx"><b>${t}</b><small>${sub}</small></div><span class="chev">${svg('chev')}</span></div>`;
-const setsw=(t,sub,on)=>`<div class="setr"><span style="width:40px;flex:none"></span><div class="tx"><b>${t}</b><small>${sub}</small></div><span class="sw" role="switch" aria-checked="${on}"></span></div>`;
-function settingsPage(after){
- const lang=after
-  ?`<div class="${N()}" style="border-radius:12px">${setr('translate','Languages','Learning Hindustani, Bengali, Spanish, English Braille. Know English, Bengali, Marathi')}</div>`
-  :`<div class="${M('gone')}" style="border-radius:12px">${setr('voice','Languages I know','English, Bengali, Marathi')}${setr('school','Languages I’m learning','Hindustani, Bengali, Spanish, English Braille')}</div>`;
- return `${appbar('Your languages',false)}<div class="scroll" style="padding-top:8px">${lang}${setsw('Latin-letter readings','A Latin-letter reading under words in other scripts',true)}${setsw('Adult content (18+)','Rude words stay hidden behind their warnings',false)}${setr('abc','Alphabets','Learning every alphabet')}${setr('book','Sources','4 sources')}</div>`;
-}
-const orow=(name,{chosen,pills,sub,know})=>`<div class="row"><div class="hd">${tile('translate','')}<span class="nm">${name}</span>${chosen===undefined?`<span class="rbtn" aria-hidden="true"><span class="chv">${svg('chev')}</span></span>`:`<span class="rbtn" aria-hidden="true"><span class="${chosen?'':'chv'}">${svg(chosen?'check':'chev')}</span></span>`}</div>${(pills||sub||know)?`<div class="meta">${sub||''}${know||''}</div>`:''}</div>`;
-function onboardKnow(){
- const A=C[S.course],B=C[other()];
- return `<div class="scroll" style="padding-top:20px"><h1 class="ob">Languages you know</h1><p class="est" style="margin:0 0 6px">Pick every language you speak. Tap one to say which scripts you read.</p>
- <div class="search">${svg('search')}Search languages</div>
- <div class="sec">Your languages <span style="font-weight:500;color:var(--onSv)">· best known first</span></div>
- ${mrow({name:'English',know:{reads:['Latin']}},'know')}${mrow({name:B.title,know:{speak:true}},'know')}
- <div class="sec">Top picks</div>${arow(A.title,'<span class="badge">Beta</span>','')}${arow(C.mr.title,'<span class="badge">Alpha</span>','')}
- <div class="sec">All languages <span style="font-weight:500;color:var(--onSv)">· by family</span></div>${fam('Indo-Aryan',38)}${fam('Dravidian',9)}
- </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
-}
-function onboardLearn(){
- const A=C[S.course],B=C[other()];
- return `<div class="scroll" style="padding-top:20px"><h1 class="ob">What do you want to learn?</h1><p class="est" style="margin:0 0 6px">Pick one or more. Each starts at the beginning of its course, or further on if a short check finds you know some already. You can change this in Settings.</p>
- <div class="search">${svg('search')}Search languages</div>
- ${orow(A.title,{chosen:true})}
- ${orow(B.title,{chosen:true,know:`<span class="${M()}">${pill('K')}</span>`})}
- ${orow('Spanish',{chosen:false})}${orow(C.mr.title,{chosen:false,know:`<span class="${M()}">${pill('K')}</span>`})}
- </div><div class="bottom pg"><span class="btn fill full" style="min-height:calc(48px*var(--t))">Continue</span></div>`;
-}
-function emptyPage(kind){
- const t={all:['No languages yet','Add the languages you know and the ones you want to learn.','Add a language'],
-  learning:['You are not learning a language yet','Pick a course to start. Your deck updates and minutes a day show up here.','Find a course'],
-  know:['No languages you know yet','Courses are taught from a language you know, and Fluenough asks which scripts you read.','Add a language I know']}[kind];
- const ic={all:'translate',learning:'school',know:'voice'}[kind];
- const chips=kind==='all'?'':filterChips([],kind);
- return `${appbar('Languages')}<div class="scroll"><div class="search">${svg('search')}Search languages</div>${chips}
- <div class="empty${N('mini')}"><span class="eic">${svg(ic,40)}</span><h4>${t[0]}</h4><p>${t[1]}</p><span class="btn fill" style="min-height:calc(48px*var(--t))">${svg('plus')}${t[2]}</span></div></div>`;
-}
-
-function init(){
- const c=C[S.course],b=C[other()];
- const set=(code,k,v)=>{const id=code+k;if(!ST[id])ST[id]=v.slice();return id};
- const cur=c.scripts.map(s=>s.state);
- const combos=c.scripts.length>1?[[true,false],[true,true],[false,false]]:[[true],[false]];
- return {c,b,cur,combos,set};
-}
-const know0=c=>({on:false,reads:c.scripts.map(()=>false)});
-function render(){
- const keep={};document.querySelectorAll('.ph').forEach(p=>{const s=p.querySelector('.scroll[data-focus]');if(s)keep[p.dataset.key]=s.scrollTop});
- const d=document.documentElement;d.setAttribute('data-theme',S.theme);
- const {c,b,cur,combos,set}=init();
- root.className=S.hl==='1'?'hl-on':'';
- root.style.cssText=Object.entries(PALS[S.pal+'_'+S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
- const idU=set(c.name,'u',c.scripts.map((x,i)=>i===0)),idL=set(c.name,'l',cur);
- const idB=set(b.name,'b',b.scripts.map(s=>s.state));
- const idM=set('Marathi','m',[true]);
- const ids=combos.map((cb,i)=>set(c.name,'c'+i,cb));
- const kc=[]; /* the know blocks: ids per sheet */
- const fr=[];
- const sec=(h,note,frames)=>fr.push(`<section class="opt"><h2>${h}</h2>${note?`<p class="note">${note}</p>`:''}<div class="frames">${frames.join('')}</div></section>`);
-
- sec('List','Left: the approved Languages I’m learning page. Middle: one list for both roles. A language is one row with a line per role: Learning keeps its minutes, scripts being learned and the language it is taught from; Know shows the scripts read (a ringed glyph) or a voice icon when it is only spoken. A language with both roles has both lines (Bengali). The three chips filter by role. Add a language is the last row. Right: the Know filter, with no deck-update controls because they belong to Learning. Tapping a row opens its sheet (below), which is the expanded state.',
-  [phone('Approved: Languages I’m learning',listOld(c),'list0','height:900px'),
-   phone('Proposed: Languages, All',listNew({f:'all'}),'list1','height:900px'),
-   phone(`Proposed: the ${S.f==='learning'?'Learning':'Know'} filter`,listNew({f:S.f}),'list2','height:900px')]);
-
- const lo=langSheet(c,true,idL,{know:{id:'k-'+c.name+'-lo',def:know0(c)}});
- const bo=langSheet(b,true,idB,{know:{id:'k-'+b.name+'-bo',def:{on:true,reads:b.scripts.map(()=>false)}},mk:other()});
- const ko=langSheet(C.mr,false,idM,{know:{id:'k-mr',def:{on:true,reads:[true]}}});
- const en=knowOnlySheet(EN,'k-en',{on:true,reads:[true]});
- sec('The sheet, by role','The approved sheet stays as it was. One row is added under the title, “I know &lt;language&gt;”, with a switch; when it is on, “Scripts I read” lists the language’s scripts as ticks (the question Languages you know asked), and a role marker joins the Beta badge. Where Know is on, the approved “Scripts” heading reads “Scripts to learn”, so the two lists of the same scripts cannot be mixed up. The bottom bar is the approved one: Learn this language, or Delete data and Stop learning. Learning only; Learning and Know (Bengali is spoken, not read, and its script is being learned); Know only with a course (Learn this language is offered); Know only with no course (English; Done).',
-  [sheetPhone(`Learning only: ${c.name}`,'r0',lo),sheetPhone(`Learning and Know: ${b.name}`,'r1',bo),sheetPhone('Know only, with a course: Marathi','r2',ko),sheetPhone('Know only, no course: English','r3',en)]);
-
- sec(`Script only: ${BRAILLE.name} (approved, unchanged)`,'English Braille is not a language anyone speaks, so it has no Know row.',
-  [sheetPhone('Before learning','b0',scriptSheet(false)),sheetPhone('Learning','b1',scriptSheet(true))]);
-
- const lu=langSheet(c,false,idU,{know:{id:'k-'+c.name+'-lu',def:know0(c)}}),ll=langSheet(c,true,idL);
- sec(`Language with scripts: ${c.name} (approved, with the Know row added)`,'Before learning is also the sheet a language gets when it is picked on Add a language. The approved Learning sheet below it is unchanged but for the new Know row and the Scripts heading.',
-  [sheetPhone('Before learning','l0',lu,''),sheetPhone('Learning','l1',langSheet(c,true,idL,{know:{id:'k-'+c.name+'-l1',def:know0(c)}}),''),...(S.scr==='built'?[sheetPhone('As built: step after Learn','l2',stepBuilt(c,idU),'')]:[])]);
-
- sec(`Script switches: ${c.name} (approved, unchanged)`,'',
-  combos.map((cb,i)=>sheetPhone(['One on','Both on','None on'][c.scripts.length>1?i:i===0?0:2]||'',`s${i}`,langSheet(c,true,ids[i]),'Scripts')));
-
- sec('Add a language and choose its roles','The picker of Languages you know (a search, top picks, every language by family) becomes the Add a language page, opened from the last row of the list. A language with a course shows its Alpha or Beta badge; one with none says so. Tapping a language opens its sheet, where the roles are chosen: the “I know” switch adds it as Know at once; Learn this language starts the approved flow (scripts to learn, where to start) and adds it as Learning; doing both makes it both. Nothing is chosen before the sheet.',
-  [phone('Add a language',addPage(c,'idle'),'add0'),phone('Searching “'+c.name.slice(0,4).toLowerCase()+'”',addPage(c,'search'),'add1'),sheetPhone('Then its sheet: both roles on offer','add2',lu,'',addPage(c,'search'))]);
-
- const rmA=rowsFor().filter(r=>r.id!=='mr');
- const rmB=rowsFor().map(r=>r.id==='B'?{...r,know:undefined}:r);
- sec('Removing a role','Each role goes on its own. Stop knowing is the switch in the sheet: it takes effect at once, with Undo in the snackbar. A language with another role stays (Bengali drops its Know line); one with no role left leaves the list (Marathi). Stop learning and Delete data are the approved buttons and affect only the Learning role: for a language that is also known they say it stays in the list. Delete data never touches the Know role.',
-  [phone('Stop knowing Marathi: its last role',listNew({f:'all',rows:rmA,snack:'Marathi removed from your languages'}),'rm0','height:900px'),
-   phone('Stop knowing '+b.name+': it stays, as Learning',listNew({f:'all',rows:rmB,snack:'Stopped knowing '+b.name}),'rm1','height:900px'),
-   stopPhone('Stop learning a language you also know','rm2',b.name,b.pct,bo,`${b.name} stays in your list because you know it.`),
-   dialogPhone('Delete data of a language you also know','rm3',b.name,b.name,bo,`You still know ${b.name}. That stays.`)]);
-
- sec(`Delete data: ${c.name} (approved, unchanged)`,'',
-  [dialogPhone('Name not typed','d0',c.name,'',ll),dialogPhone('Name typed','d1',c.name,c.name,ll)]);
-
- sec('Entries: Settings and onboarding','Settings: the two rows of Your languages become one, “Languages”, whose line says what is learned and what is known; everything else on the page is as built. Onboarding: the Languages you know step opens the same list (its rows, its sheet and its Add a language content inline, in Know only, since learning comes next) and the “What do you want to learn?” step is the same list in Learning; a language already marked Know shows its Know marker there, so a heritage speaker can still learn its script.',
-  [phone('Settings, Your languages: as built',settingsPage(false),'st0'),phone('Settings, Your languages: proposed',settingsPage(true),'st1'),
-   phone('Onboarding, step Languages you know',onboardKnow(),'ob0'),
-   sheetPhone('Its sheet: Know only, no learning controls','ob1',knowOnlySheet(b,'k-ob-'+b.name,{on:true,reads:b.scripts.map(()=>false)}),'',onboardKnow()),
-   phone('Onboarding, step What do you want to learn?',onboardLearn(),'ob2')]);
-
- sec('Empty states','An empty list says what the page is for and offers Add a language. A role filter with nothing in it offers the matching action. The deck-update controls show only while something is learned.',
-  [phone('No languages at all',emptyPage('all'),'e0'),phone('Learning filter, none learned',emptyPage('learning'),'e1'),phone('Know filter, none known',emptyPage('know'),'e2')]);
-
- root.innerHTML=fr.join('');
- document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
- document.querySelectorAll('.ph').forEach(p=>{
-  const sc=p.querySelector('.scroll[data-focus]');if(!sc)return;
-  if(keep[p.dataset.key]!=null)sc.scrollTop=keep[p.dataset.key];
-  else if(sc.dataset.focus==='Scripts'){const h=[...sc.querySelectorAll('.h')].find(x=>x.textContent.startsWith('Scripts'));if(h)sc.scrollTop=h.offsetTop-12}
+/* ----- onboarding ----- */
+const OBTOP=['en','hi','bn','mr','te','es'];
+function obChips(id,mode){
+ const l=L[id],r=V.ob[id]||rec0(id),o=[];
+ skills(id,r).forEach(x=>{
+  const sc=x.scr&&l.scripts.find(s=>s.id===x.scr);
+  const lab=SKN[x.sk]+(sc&&l.scripts.length>1?` <span class="script">${sc.g}</span>`:'');
+  const dis=mode==='learn'&&!learnable(id);
+  const st=x.st;
+  o.push(`<button class="sk big ${st}${dis?' dis':''}" data-obchip="${id}|${x.sk}|${x.scr||''}" aria-pressed="${!!st}" ${dis?'disabled':''} aria-label="${SKN[x.sk]}${sc?' '+sc.n:''}: ${st?(st==='know'?'know':'learning'):'not ticked'}">${st?svg(st==='know'?'check':'school',16):''}<span>${lab}</span></button>`);
  });
- document.title='Languages';
+ return `<div class="sks">${o.join('')}</div>`;
 }
+function obPage(mode){
+ const q=V.oq.trim().toLowerCase();
+ const ids=q?Object.keys(L).filter(i=>L[i].name.toLowerCase().includes(q)||L[i].nat.toLowerCase().includes(q)):OBTOP;
+ const rows=ids.map(i=>{const l=L[i];const dis=mode==='learn'&&!learnable(i);
+  return `<div class="row ob"><div class="hd">${gtile(l.scripts[0].g,'')}<span class="nm">${l.name}${l.dialShort&&!l.only?`<small>${l.dialShort}</small>`:''}</span></div>${obChips(i,mode)}${dis?`<p class="val sm" style="padding-left:52px;margin:2px 0 0">${l.course==='coming'?'Course coming':'No course yet'}</p>`:''}</div>`}).join('');
+ const title=mode==='know'?'Languages you know':'What do you want to learn?';
+ const hint=mode==='know'?'Tick what you can already do in each language: speak, hear, read and write. Read and write are per script.':'Tick what you want to learn. A skill you know can be ticked again to learn it, for example a script you can speak but not yet read.';
+ return `<div class="appbar"><span style="width:8px"></span><span class="ttl" style="font-size:calc(14px*var(--t));color:var(--onSv)">Step ${mode==='know'?1:2} of 2</span></div>
+ <div class="scroll" data-sc="ob"><h1 class="ob">${title}</h1><p class="est" style="margin:0 0 6px">${hint}</p>
+ <label class="search"><span aria-hidden="true">${svg('search')}</span><input id="oq" type="search" placeholder="Search languages" value="${V.oq.replace(/"/g,'&quot;')}" autocomplete="off" aria-label="Search languages"></label>
+ ${q?'':'<div class="sec">Top picks</div>'}<div id="obrows">${rows||'<p class="est">No match.</p>'}</div></div>
+ <div class="bottom pg"><button class="btn fill full" data-obnext="${mode}" style="min-height:calc(48px*var(--t))">${mode==='know'?'Next':'Start'}</button></div>`;
+}
+
+/* ===== rendering ===== */
+const root=document.getElementById('phone');
+function appHtml(){
+ let m='';
+ switch(V.screen){case 'settings':m=settings();break;case 'list':m=listPage();break;case 'add':m=addPage();break;case 'ob1':m=obPage('know');break;case 'ob2':m=obPage('learn');break}
+ return m+(V.sheet?sheetHtml():'')+(V.dialog?dialogHtml():'')+(V.snack?snackHtml():'');
+}
+let lastSheet=null,lastScreen=null;
+function paint(){
+ const keep={};root.querySelectorAll('[data-sc]').forEach(e=>keep[e.dataset.sc]=e.scrollTop);
+ const sk=V.sheet?V.sheet.id+V.sheet.mode:null;if(sk!==lastSheet){delete keep.sheet;lastSheet=sk}
+ if(V.screen!==lastScreen){delete keep.main;delete keep.add;delete keep.ob;lastScreen=V.screen}
+ const d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ const pal=PALS[S.pal+'_'+S.theme];
+ const wrap=document.getElementById('stage');
+ wrap.style.cssText=Object.entries(pal).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.style.setProperty('--t',S.t);
+ root.innerHTML=appHtml();
+ root.querySelectorAll('[data-sc]').forEach(e=>{if(keep[e.dataset.sc]!=null)e.scrollTop=keep[e.dataset.sc]});
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.querySelectorAll('[data-jump]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.jump===cur())));
+}
+function cur(){return V.sheet?(V.sheet.mode==='add'?'sheet-add':'sheet'):V.screen==='list'&&!Object.keys(U).filter(inList).length?'empty':V.screen}
+
+/* ===== actions ===== */
+function openSheet(id,mode){V.sheet={id,mode,draft:mode==='add'?rec0(id):null};V.dialog=null;paint()}
+function closeSheet(){
+ if(!V.sheet)return;
+ const {id,mode}=V.sheet;
+ if(mode==='edit'&&U[id]&&!skills(id,U[id]).some(x=>x.st)){V.sheet=null;snack(`${L[id].name} removed from your list`,null)}
+ else V.sheet=null;
+ paint();
+}
+function applyLearnStart(id,list){
+ const r=U[id],need=missing(id,r,list);
+ if(need.length)startDl(id,need);
+}
+function startDl(id,packs){
+ const r=U[id];r.dl={pct:0,packs};
+ const iv=setInterval(()=>{
+  if(!U[id]||!U[id].dl){clearInterval(iv);return}
+  U[id].dl.pct+=7;
+  if(U[id].dl.pct>=100){U[id].dl.packs.forEach(p=>U[id].packs[p]=1);U[id].dl=null;clearInterval(iv);paint()}
+  else paint();
+ },180);
+}
+function toggleSkill(sk,scr,v){
+ const id=V.sheet.id,r=sRec(),add=V.sheet.mode==='add';
+ const was=get(r,sk,scr),next=was===v?'':v;
+ if(next==='learn'&&!add){
+  const need=missing(id,r,[{sk,scr}]);
+  if(need.length&&!r.dl){V.dialog={kind:'download',id,packs:need,then:{sk,scr,v:next}};paint();return}
+ }
+ const snap=clone(U);
+ put(r,sk,scr,next);
+ if(!add&&was==='learn'&&next===''&&!cnt(id,r,'learn')){snack(`Learning ${SKN[sk]} unticked. Decks stay on this phone.`,snap)}
+ else if(!add&&was&&!next)snack(`${SKN[sk]} unticked`,snap);
+ paint();
+}
+function dlgOk(){
+ const d=V.dialog,id=d.id;
+ if(d.kind==='download'){
+  if(V.sheet&&V.sheet.mode==='add'){commitAdd(true);return}
+  put(U[id],d.then.sk,d.then.scr,d.then.v);V.dialog=null;startDl(id,d.packs);paint();return}
+ if(d.kind==='stop'){
+  const snap=clone(U);const r=U[id];
+  skills(id,r).forEach(x=>{if(x.st==='learn')put(r,x.sk,x.scr,'')});
+  V.dialog=null;
+  if(!skills(id,r).some(x=>x.st)){V.sheet=null;snack(`Stopped learning ${L[id].name}. Decks stay on this phone.`,snap)}
+  else snack(`Stopped learning ${L[id].name}. What you know stays.`,snap);
+  paint();return}
+ if(d.kind==='delete'){
+  const r=U[id];if(d.typed!==L[id].name)return;
+  skills(id,r).forEach(x=>{if(x.st==='learn')put(r,x.sk,x.scr,'')});
+  r.packs={};r.dl=null;V.dialog=null;
+  if(!skills(id,r).some(x=>x.st)){V.sheet=null}
+  snack(`${L[id].name} data deleted`,null);paint()}
+}
+function commitAdd(confirmed){
+ const {id,draft}=V.sheet,l=L[id];
+ const learnList=skills(id,draft).filter(x=>x.st==='learn');
+ const need=missing(id,draft,learnList);
+ if(need.length&&!confirmed){V.dialog={kind:'download',id,packs:need};paint();return}
+ const snap=clone(U);
+ U[id]=draft;
+ V.dialog=null;V.sheet=null;V.screen='list';V.q='';
+ if(need.length)startDl(id,need);
+ snack(`${l.name} added`,snap);paint();
+}
+function obToggle(id,sk,scr,mode){
+ const r=V.ob[id]||(V.ob[id]=rec0(id));const st=get(r,sk,scr),k=sk+'|'+scr;
+ let n;
+ if(mode==='know')n=st==='know'?'':'know';
+ else{if(st==='learn'){n=r.was[k]?'know':''}else{if(st==='know')r.was[k]=1;n='learn'}}
+ put(r,sk,scr,n);
+}
+function obFinish(){
+ Object.keys(V.ob).forEach(id=>{
+  const r=V.ob[id];if(!skills(id,r).some(x=>x.st))return;
+  U[id]=r;
+  const need=missing(id,r,skills(id,r).filter(x=>x.st==='learn'));
+  if(need.length)startDl(id,need);
+ });
+ V.ob={};V.oq='';V.screen='list';snack('Languages saved. Decks are downloading.',null);paint();
+}
+
 /* minutes a day: 5 to 60 in steps of 5; a long press repeats every 0.3 s */
 const MN={min:5,max:60,step:5,tick:300};
-function showMins(k){
- const v=S.mins[k];
- document.querySelectorAll(`.mv[data-k="${k}"]`).forEach(e=>e.textContent=v+' min');
- document.querySelectorAll(`.mn-v[data-k="${k}"]`).forEach(e=>e.textContent=v+' min');
- document.querySelectorAll(`.estv[data-k="${k}"]`).forEach(e=>e.textContent='About '+cards(v)+' cards');
- document.querySelectorAll(`[data-mn][data-k="${k}"]`).forEach(b=>b.setAttribute('aria-disabled',String(b.dataset.mn==='-'?v<=MN.min:v>=MN.max)));
-}
-function stepMins(k,d){const v=Math.min(MN.max,Math.max(MN.min,S.mins[k]+d*MN.step));if(v!==S.mins[k]){S.mins[k]=v;showMins(k)}}
+function stepMins(k,d){const r=U[k];const v=Math.min(MN.max,Math.max(MN.min,r.mins+d*MN.step));if(v!==r.mins){r.mins=v;paint()}}
 let hold=null,held=false;
-function stopHold(){clearInterval(hold);clearTimeout(hold);hold=null}
+const stopHold=()=>{clearInterval(hold);clearTimeout(hold);hold=null};
 document.addEventListener('pointerdown',e=>{
  const b=e.target.closest('[data-mn]');if(!b)return;
  const k=b.dataset.k,d=b.dataset.mn==='+'?1:-1;held=true;stepMins(k,d);stopHold();
  hold=setTimeout(()=>{hold=setInterval(()=>stepMins(k,d),MN.tick)},MN.tick);
+ e.preventDefault();
 });
-['pointerup','pointercancel','pointerleave'].forEach(t=>document.addEventListener(t,e=>{if(hold!=null&&(t!=='pointerleave'||e.target.closest&&e.target.closest('[data-mn]')))stopHold()},true));
+['pointerup','pointercancel'].forEach(t=>document.addEventListener(t,()=>{if(hold!=null)stopHold()},true));
 document.addEventListener('contextmenu',e=>{if(e.target.closest('[data-mn]'))e.preventDefault()});
+
 document.addEventListener('input',e=>{
- const i=e.target.closest('[data-ty]');if(!i)return;
- TY[i.dataset.ty]=i.value;
- const d=document.querySelector(`[data-del="${i.dataset.ty}"]`);if(d)d.disabled=i.value!==i.dataset.name;
+ if(e.target.id==='q'){V.q=e.target.value;document.getElementById('results').innerHTML=addResultsHtml();return}
+ if(e.target.id==='oq'){V.oq=e.target.value;const m=V.screen==='ob1'?'know':'learn';const t=document.createElement('div');t.innerHTML=obPage(m);document.getElementById('obrows').innerHTML=t.querySelector('#obrows').innerHTML;return}
+ if(e.target.id==='ty'&&V.dialog){V.dialog.typed=e.target.value;const b=root.querySelector('.dlg .del');if(b)b.disabled=e.target.value!==e.target.dataset.name}
 });
 document.addEventListener('click',e=>{
- const m=e.target.closest('[data-mn]');
- if(m){if(held){held=false}else stepMins(m.dataset.k,m.dataset.mn==='+'?1:-1);return}
- const gb=e.target.closest('#g-tw .seg button');
- if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
- const kn=e.target.closest('[data-kn]');
- if(kn){const [id,i]=kn.dataset.kn.split(':');const k=KS[id];if(i==='on')k.on=!k.on;else k.reads[+i]=!k.reads[+i];render();return}
- const s=e.target.closest('[data-sw]');
- if(s){const [id,i]=s.dataset.sw.split(':');ST[id][+i]=!ST[id][+i];render()}
+ const T=e.target,c=s=>T.closest(s);
+ let x;
+ if(x=c('#g-tw .seg button')){S[x.parentNode.dataset.k]=x.dataset.v;paint();return}
+ if(x=c('[data-jump]')){jump(x.dataset.jump);return}
+ if(c('#reset')){seed();V.checked=null;V.screen='settings';V.sheet=null;V.dialog=null;V.snack=null;V.q='';V.oq='';V.ob={};paint();return}
+ if(!c('#phone'))return;
+ if(c('[data-mn]')){if(held){held=false}else stepMins(c('[data-mn]').dataset.k,c('[data-mn]').dataset.mn==='+'?1:-1);return}
+ if(x=c('[data-undo]')){if(V.snack&&V.snack.snap){U=V.snack.snap;V.snack=null;V.sheet=null;paint()}return}
+ if(x=c('[data-dlg-ok]')){dlgOk();return}
+ if(x=c('[data-dlg-x]')){V.dialog=null;paint();return}
+ if(c('.scrim2'))return;
+ if(x=c('[data-dlg]')){V.dialog={kind:x.dataset.dlg,id:V.sheet.id,typed:''};paint();return}
+ if(x=c('[data-skill]')){const [sk,scr,v]=x.dataset.skill.split('|');toggleSkill(sk,scr||null,v);return}
+ if(x=c('[data-closesheet]')){closeSheet();return}
+ if(c('[data-commit]')){commitAdd(false);return}
+ if(c('[data-remove]')){const id=V.sheet.id,snap=clone(U);const r=U[id];skills(id,r).forEach(s=>put(r,s.sk,s.scr,''));V.sheet=null;snack(`${L[id].name} removed from your list`,snap);paint();return}
+ if(x=c('[data-upd]')){const r=U[x.dataset.upd];r.upd='Checking…';paint();setTimeout(()=>{r.upd='Up to date, checked just now';paint()},900);return}
+ if(c('[data-updall]')){V.checked='Checking…';paint();setTimeout(()=>{V.checked='Last checked just now';paint()},900);return}
+ if(x=c('[data-open]')){openSheet(x.dataset.open,'edit');return}
+ if(x=c('[data-addpick]')){const id=x.dataset.addpick;openSheet(id,inList(id)?'edit':'add');return}
+ if(x=c('[data-obchip]')){const [id,sk,scr]=x.dataset.obchip.split('|');obToggle(id,sk,scr||null,V.screen==='ob1'?'know':'learn');paint();return}
+ if(x=c('[data-obnext]')){if(x.dataset.obnext==='know'){V.screen='ob2';V.oq=''}else obFinish();paint();return}
+ if(x=c('[data-go]')){V.screen=x.dataset.go;V.sheet=null;V.q='';paint();return}
 });
-render();
+function jump(k){
+ V.sheet=null;V.dialog=null;V.snack=null;V.q='';V.oq='';
+ if(k==='empty'){U={};V.screen='list'}
+ else{ if(!Object.keys(U).length)seed();
+  if(k==='settings')V.screen='settings';
+  else if(k==='list')V.screen='list';
+  else if(k==='sheet'){V.screen='list';V.sheet={id:'hi',mode:'edit'}}
+  else if(k==='sheet-know'){V.screen='list';V.sheet={id:'mr',mode:'edit'}}
+  else if(k==='add')V.screen='add';
+  else if(k==='sheet-add'){V.screen='add';V.sheet={id:'es',mode:'add',draft:rec0('es')}}
+  else if(k==='sheet-add2'){V.screen='add';V.sheet={id:'pa',mode:'add',draft:rec0('pa')}}
+  else if(k==='ob1'){V.screen='ob1';V.ob={}}
+  else if(k==='ob2'){V.screen='ob2'}
+ }
+ paint();
+}
+seed();
+/* the scrolled position of a sheet opened by a jump starts at the top */
+paint();
+
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text on the sheet','onS','sLow',4.5],['label and value text on the sheet','onSv','sLow',4.5],['section heading and You: line','p','sLow',4.5],['section heading on the page','p','s',4.5],['badge','onTc','tc',4.5],['tonal button','onSc','sc',4.5],['filled button','onP','p',4.5],['outlined button text','p','sLow',4.5],['hint text on the page','onSv','s',4.5],['search hint','onSv','sHigh',4.5],['switch thumb on, on its track','onP','p',3],['switch thumb off, on its track','ol','sHst',3],['switch track outline off','ol','sLow',3],['progress fill on its track','p','sHst',3],['chip outline','ol','s',3],['Delete data bin on the sheet','E','sLow',3],['Delete button text','onE','E',4.5],['input outline','ol','sHigh',3],['dialog body text','onSv','sHigh',4.5],['stepper icon on its button','onSc','sc',4.5],['check on its round button','onP','p',3],['Complete badge, icon on its tile','onPc','pc',4.5],['script glyph, learning','onP','p',4.5],['script glyph, off','onSv','sHst',4.5],['A2 segment on its track','tt','sHst',3],['B1 segment on its track','onSc','sHst',3],['A2 label','tt','sLow',3],['B1 label','onSc','sLow',3],
- ['Learning marker text on its fill','onSc','sc',4.5],['Know marker text on the page','onS','s',4.5],['Know marker outline on the page','ol','s',3],['Know marker text on the sheet','onS','sLow',4.5],['Know marker outline on the sheet','ol','sLow',3],['ringed script glyph on the page','p','s',4.5],['ringed script glyph ring on the page','p','s',3],['selected filter chip text','onSc','sc',4.5],['unselected filter chip text','onSv','s',4.5],['chevron on the page','onSv','s',3],['Add a language tile icon','onPc','pc',4.5],['snackbar text','s','onS',4.5],['empty state icon on its disc','onPc','pc',3],['empty state text','onSv','s',4.5],['Know switch tile, on','onP','p',3],['Know row text on the page (Settings)','onSv','s',4.5],['change outline on the page','E','s',3],['change tag text','onE','E',4.5]];
+const PAIRS=[
+ ['body text on the page','onS','s',4.5],['label text on the page','onSv','s',4.5],['body text on the sheet','onS','sLow',4.5],['label and hint text on the sheet','onSv','sLow',4.5],
+ ['section heading on the page','p','s',4.5],['section heading on the sheet','p','sLow',4.5],['filled button text','onP','p',4.5],['outlined button text on the sheet','p','sLow',4.5],['outlined button outline on the sheet','ol','sLow',3],
+ ['tonal button text','onSc','sc',4.5],['Learning chip text and icon','onSc','sc',4.5],['Know chip text on the page','onS','s',4.5],['Know chip outline on the page','ol','s',3],['Know chip text on the sheet','onS','sLow',4.5],['Know chip outline on the sheet','ol','sLow',3],
+ ['Know option, chosen: text on its fill','onP','p',4.5],['Learning option, chosen: text on its fill','onSc','sc',4.5],['option, not chosen: text on the sheet','onS','sLow',4.5],['option, not chosen: outline on the sheet','ol','sLow',3],
+ ['script glyph tile','onPc','pc',4.5],['filled glyph tile','onP','p',4.5],['off glyph tile','onSv','sHst',4.5],['badge','onTc','tc',4.5],['Added badge','onPc','pc',4.5],
+ ['search hint','onSv','sHigh',4.5],['search text','onS','sHigh',4.5],['stepper button icon','onSc','sc',3],['progress fill on its track','p','sHst',3],['chevron on the page','onSv','s',3],
+ ['delete icon on the sheet','E','sLow',3],['delete button text on its fill','onE','E',4.5],['snackbar text','s','onS',4.5],['snackbar action','pc','onS',4.5],
+ ['empty-state icon on its disc','onPc','pc',3],['empty-state text','onSv','s',4.5],['Settings summary text','onSv','s',4.5],['dialog text','onSv','sHigh',4.5],['dialog action text','p','sHigh',4.5],['dialog Delete text on its fill','onE','E',4.5],
+ ['onboarding chip text on the page','onS','s',4.5],['onboarding chip outline on the page','ol','s',3],['Learning key text on the sheet','onSc','sc',4.5]];
 window.__contrast=[];
 ['clay','forest'].forEach(pl=>['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const P=PALS[pl+'_'+t];const r=cr(P[f],P[b]);window.__contrast.push({seed:pl,theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})})));
-console.log('contrast',JSON.stringify(window.__contrast));
+console.log('contrast',window.__contrast.filter(x=>!x.pass).length+' failing of '+window.__contrast.length);
+
 </script>
 </body>
 </html>
