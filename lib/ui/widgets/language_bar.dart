@@ -869,7 +869,11 @@ class _LanguageBarState extends State<LanguageBar>
                 : null,
           ),
           Expanded(
-            child: Hint(message: l10n.hintLanguage, child: zone),
+            child: Hint(
+              message: l10n.hintLanguage,
+              excludeFromSemantics: true,
+              child: zone,
+            ),
           ),
           ReportButton(detail: widget.reportDetail),
         ],

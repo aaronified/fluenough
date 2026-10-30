@@ -8,11 +8,10 @@ import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/drill/walkthrough_page.dart';
 import '../features/gallery/gallery_page.dart';
-import '../features/placement/language_picker_page.dart';
+import '../features/languages/languages_page.dart';
 import '../features/profiles/new_profile_page.dart';
 import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
-import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
 import '../features/review/offensive_review_page.dart';
 import '../features/review/review_page.dart';
@@ -181,8 +180,8 @@ abstract final class AppRoutes {
       settingsSupport => const SupportPage(),
       settingsFonts => const ScriptFontsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
-      spokenLanguages => const SpokenLanguagesPage(),
-      learnLanguages => const LanguagePickerPage(),
+      spokenLanguages => const LanguagesPage(),
+      learnLanguages => const LanguagesPage(),
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
@@ -310,8 +309,15 @@ abstract final class AppNavigator {
   static Future<void> openSpokenLanguages(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.spokenLanguages);
 
-  static Future<void> openLearnLanguages(BuildContext context) =>
-      Navigator.of(context).pushNamed(AppRoutes.learnLanguages);
+  /// The page that picks the languages to learn, with its search holding
+  /// [query] (a language's name) when given, so that it opens at that
+  /// course (#527).
+  static Future<void> openLearnLanguages(
+    BuildContext context, {
+    String? query,
+  }) =>
+      Navigator.of(context)
+          .pushNamed(AppRoutes.learnLanguages, arguments: query);
 
   static Future<void> openVoices(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.voices);

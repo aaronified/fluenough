@@ -99,8 +99,7 @@ abstract final class AppTheme {
       // compact line of small text, never a wrapped sentence.
       tooltipTheme: TooltipThemeData(
         triggerMode: TooltipTriggerMode.longPress,
-        height: 24,
-        constraints: const BoxConstraints(maxWidth: 220),
+        constraints: const BoxConstraints(minHeight: 24, maxWidth: 220),
         padding: const EdgeInsetsDirectional.symmetric(
           horizontal: 8,
           vertical: 4,

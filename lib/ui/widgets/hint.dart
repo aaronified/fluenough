@@ -14,15 +14,25 @@ import 'package:flutter/material.dart';
 ///
 /// An `IconButton` takes `tooltip:` instead, which is the same hint.
 class Hint extends StatelessWidget {
-  const Hint({super.key, required this.message, required this.child});
+  const Hint({
+    super.key,
+    required this.message,
+    required this.child,
+    this.excludeFromSemantics = false,
+  });
 
   final String message;
   final Widget child;
+
+  /// True where [child] already has its own screen-reader label, so the hint
+  /// is not read a second time.
+  final bool excludeFromSemantics;
 
   @override
   Widget build(BuildContext context) => Tooltip(
     message: message,
     triggerMode: TooltipTriggerMode.longPress,
+    excludeFromSemantics: excludeFromSemantics,
     child: child,
   );
 }

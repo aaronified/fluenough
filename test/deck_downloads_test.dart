@@ -94,11 +94,16 @@ Future<AppState> pump(WidgetTester tester, AppState state) async {
 /// Opens Languages I'm learning from Settings, where deck updates and
 /// each language's download now are (#467).
 Future<void> openLearning(WidgetTester tester) async {
-  final l10n = l10nOf(tester);
-  await tester.tap(find.text(l10n.navSettings));
+  // Settings opens the merged Languages page (#907); this is the older page,
+  // which first launch still uses.
+  tester
+      .state<NavigatorState>(find.byType(Navigator).first)
+      .push(
+        MaterialPageRoute<void>(
+          builder: (_) => LanguagePickerPage(spokenList: pickerSpokenList),
+        ),
+      );
   await tester.pumpAndSettle();
-  await tapText(tester, l10n.settingsRowLanguages);
-  await tapText(tester, l10n.settingsLearn);
   expect(find.byType(LanguagePickerPage), findsOneWidget);
 }
 

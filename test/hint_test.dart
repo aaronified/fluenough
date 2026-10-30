@@ -54,8 +54,9 @@ void main() {
   test('an icon-only tap target carries a hint', () {
     // The rule: an `InkWell(`, `InkResponse(` or `GestureDetector(` whose
     // call holds an `Icon(` must live in a file that uses `Hint(`,
-    // `Tooltip(` or `tooltip:`, unless it is listed below because it also
-    // shows text. (A file-level check: coarse on purpose, so a new
+    // `Tooltip(` or `tooltip:`, unless it is listed below or marked
+    // `// hint-ok: shows text` on the line above, because it also shows text. A call that shows text opts out with a `// hint-ok:`
+    // comment on the line above it. (A file-level check: coarse on purpose, so a new
     // icon-only control in a file with no hint at all cannot slip by.)
     // Icon-only pills are covered by ModePill, which wraps its icon-only
     // sizes in a Hint itself (checked below).
@@ -75,6 +76,11 @@ void main() {
       if (hinted) continue;
       for (final m in target.allMatches(source)) {
         final body = call(source, m.end - 1);
+        final above = source.substring(0, m.start).split('\n');
+        if (above.length > 1 &&
+            above[above.length - 2].contains('// hint-ok:')) {
+          continue;
+        }
         if (body.contains('Icon(') || body.contains('Icons.')) {
           final line = '\n'.allMatches(source.substring(0, m.start)).length + 1;
           missing.add('$path:$line');
@@ -118,9 +124,9 @@ void main() {
           ),
           home: Scaffold(
             body: Center(
-              child: Hint(
+              child: const Hint(
                 message: 'Speak',
-                child: const InkWell(
+                child: InkWell(
                   child: Padding(
                     padding: EdgeInsets.all(12),
                     child: Icon(Icons.mic),

@@ -58,7 +58,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-17 approved open issues.
+22 approved open issues.
 
 **Enhancements**
 
@@ -74,30 +74,42 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
+- [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
+- [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
+- [#404](https://github.com/aaronified/fluenough/issues/404) Deck browser: the site generator, tools/deck_site.py
+- [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
+- [#421](https://github.com/aaronified/fluenough/issues/421) B1 plans: typed notes on every word card, one shown at a time
+- [#422](https://github.com/aaronified/fluenough/issues/422) B1 plans: a Wiktionary link on every word card that has an entry
+- [#423](https://github.com/aaronified/fluenough/issues/423) B1 plans: a minimal-pair button and practice panel on cards
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
-- [#527](https://github.com/aaronified/fluenough/issues/527) Decks: typo-tolerant search (FTS5) with kind chips, instead of filters
-- [#638](https://github.com/aaronified/fluenough/issues/638) Build handwriting: stroke files, stroke animation, tracing and drawing
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
 - [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
 
+### 0.8.0
+
+1 approved open issue.
+
+**Other**
+
+- [#638](https://github.com/aaronified/fluenough/issues/638) Build handwriting: stroke files, stroke animation, tracing and drawing
+
 ### 1 · Skill model + FSRS
 
-5 approved open issues.
+4 approved open issues.
 
 **Other**
 
 - [#31](https://github.com/aaronified/fluenough/issues/31) Phonemic contrasts: the sounds of the language learnt that the learner's languages lack
 - [#32](https://github.com/aaronified/fluenough/issues/32) Grapheme-level TTS fallback for script decks
-- [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#93](https://github.com/aaronified/fluenough/issues/93) Grammar exercises: match rows and sort into groups
 - [#243](https://github.com/aaronified/fluenough/issues/243) Skill model: one Settings switch per activity
 
 ### 2 · B1 plans
 
-10 approved open issues.
+7 approved open issues.
 
 **Other**
 
@@ -108,9 +120,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#414](https://github.com/aaronified/fluenough/issues/414) Words, rules, sentences: owner decisions before building
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
-- [#421](https://github.com/aaronified/fluenough/issues/421) B1 plans: typed notes on every word card, one shown at a time
-- [#422](https://github.com/aaronified/fluenough/issues/422) B1 plans: a Wiktionary link on every word card that has an entry
-- [#423](https://github.com/aaronified/fluenough/issues/423) B1 plans: a minimal-pair button and practice panel on cards
 
 ### 3 · Deck downloads
 
@@ -301,9 +310,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
-- [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
-- [#404](https://github.com/aaronified/fluenough/issues/404) Deck browser: the site generator, tools/deck_site.py
-- [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
 - [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
 - [#475](https://github.com/aaronified/fluenough/issues/475) Decks: "Where I am" becomes an icon on the right; "Add deck" moves to Settings

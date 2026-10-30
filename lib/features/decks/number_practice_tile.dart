@@ -37,6 +37,7 @@ class NumberPracticeTile extends StatelessWidget {
     final scheme = theme.colorScheme;
     final l10n = AppLocalizations.of(context)!;
     return MergeSemantics(
+      // hint-ok: shows text
       child: InkWell(
         onTap: () =>
             AppNavigator.startDrill(context, DrillRequest.numbers(deck.id)),
