@@ -103,7 +103,7 @@ class DeckSearchBar extends StatelessWidget {
   static const double _gap = 6;
 
   /// The least room the text is given before it starts a line of its own.
-  static const double _minField = 96;
+  static const double _minField = 72;
 
   /// What a chip takes beyond its label: its padding, its ✕ and a margin
   /// for the sizes the framework picks (an estimate; a wrong one only moves
