@@ -1,0 +1,260 @@
+schema: 1
+id: fr-facts
+name: "French facts"
+kind: facts
+language: { code: fr, iso639_3: fra, name: French, script: latin, tts: fr-FR, icon: "Fr" }
+license: "CC-BY-SA-4.0"
+description: "One true, surprising thing about French a day, in English, Bengali and Hindi."
+facts:
+  - id: fr-fact-001
+    tags: [sound, liaison]
+    source: "https://en.wikipedia.org/wiki/Liaison_(French)"
+    text:
+      en: "A final consonant that is silent on its own is often said when the next word starts with a vowel: les amis sounds like 'lez-ami', but les garçons keeps its s silent. This link is called liaison."
+      bn: "ফরাসিতে শব্দের শেষের নীরব ব্যঞ্জন পরের শব্দ স্বরবর্ণ দিয়ে শুরু হলে অনেক সময় উচ্চারিত হয়: les amis-এ s শোনা যায়, কিন্তু les garçons-এ নীরব থাকে। একে liaison বলে। বাংলার সন্ধিতেও শব্দের জোড়ে ধ্বনি বদলায়, তবে সেটি মূলত যৌগ শব্দের ভেতরে।"
+      hi: "फ़्रांसीसी में शब्द का नीरव अंतिम व्यंजन अगला शब्द स्वर से शुरू हो तो अक्सर बोला जाता है: les amis में s सुनाई देता है, पर les garçons में नहीं। इसे liaison कहते हैं।"
+  - id: fr-fact-002
+    tags: [spelling]
+    source: "https://en.wikipedia.org/wiki/French_orthography"
+    text:
+      en: "Many French word endings are silent. parle, parles and parlent all sound the same, and only the spelling tells them apart."
+      bn: "ফরাসিতে শব্দের শেষের অনেক অক্ষর নীরব। parle, parles আর parlent তিনটিই একইভাবে বলা হয়; তফাত শুধু বানানে।"
+      hi: "फ़्रांसीसी में शब्दों के अंत के कई अक्षर मूक होते हैं। parle, parles और parlent तीनों एक जैसे बोले जाते हैं; फ़र्क़ सिर्फ़ लिखावट में है।"
+  - id: fr-fact-003
+    tags: [sound]
+    source: "https://en.wikipedia.org/wiki/French_phonology"
+    text:
+      en: "Most French speakers today make the r at the back of the throat, with the body of the tongue, not the tip. The sound is uvular and written [ʁ]."
+      bn: "আজকের বেশিরভাগ ফরাসিভাষী r উচ্চারণ করেন গলার পেছন দিয়ে, জিভের ডগা দিয়ে নয়; ধ্বনিবিজ্ঞানে একে uvular [ʁ] বলে। বাংলার র জিভের ডগা দিয়ে বলা হয়, তাই এখানে তফাত আছে।"
+      hi: "आज ज़्यादातर फ़्रांसीसी बोलने वाले r गले के पिछले हिस्से से बोलते हैं, जीभ की नोक से नहीं; इसे uvular [ʁ] कहते हैं।"
+  - id: fr-fact-004
+    tags: [sound, nasal]
+    source: "https://en.wikipedia.org/wiki/French_phonology"
+    text:
+      en: "In bon, vin and blanc the n is not said as a consonant. It makes the vowel before it nasal, with air passing through the nose, so the n is written but not heard as a sound of its own."
+      bn: "bon, vin আর blanc-এর n আলাদা ব্যঞ্জনের মতো উচ্চারিত হয় না; তার আগের স্বর নাকি হয়ে যায়, বাতাস নাক দিয়ে বেরোয়। লেখায় n থাকলেও আলাদা ধ্বনি হিসেবে শোনা যায় না।"
+      hi: "bon, vin और blanc में n अलग व्यंजन की तरह नहीं बोला जाता; उससे पहले का स्वर नासिक्य हो जाता है, यानी हवा नाक से निकलती है। हिंदी के अनुनासिक (ँ) जैसा, पर फ़्रांसीसी में n लिखा जाता है।"
+  - id: fr-fact-005
+    tags: [spelling, meaning]
+    source: "https://en.wikipedia.org/wiki/French_orthography"
+    text:
+      en: "Accents can change a word's meaning: ou means 'or', but où means 'where'; la means 'the' or 'it', while là means 'there'."
+      bn: "অক্ষরের মাথার চিহ্ন অর্থ বদলে দেয়: ou মানে 'বা', কিন্তু où মানে 'কোথায়'; la মানে 'the' (স্ত্রীলিঙ্গ), কিন্তু là মানে 'সেখানে'।"
+      hi: "मात्रा-चिह्न (accent) अर्थ बदल देते हैं: ou का अर्थ है 'या', पर où का अर्थ है 'कहाँ'; la (the) और là (वहाँ)।"
+  - id: fr-fact-006
+    tags: [spelling]
+    source: "https://en.wikipedia.org/wiki/Cedilla"
+    text:
+      en: "The cedilla ç is written only before a, o and u, where it makes the c sound like s: garçon (boy), français (French)."
+      bn: "সেদিয়া-চিহ্ন ç শুধু a, o আর u-এর আগে বসে, আর c-কে s-এর মতো করে: garçon (ছেলে), français (ফরাসি)।"
+      hi: "सेदिय (ç) केवल a, o और u से पहले लिखा जाता है, और c को s जैसा बना देता है: garçon (लड़का), français (फ़्रांसीसी)।"
+  - id: fr-fact-007
+    tags: [spelling]
+    source: "https://en.wikipedia.org/wiki/French_orthography"
+    text:
+      en: "Words that begin with h come in two kinds. l'homme (the man) takes l' like a word starting with a vowel, but le héros (the hero) does not. Neither h is pronounced."
+      bn: "h দিয়ে শুরু শব্দ দুই রকম: l'homme (পুরুষ) স্বরবর্ণের শব্দের মতো l' হয়, কিন্তু le héros (নায়ক) হয় না। দুটোতেই h উচ্চারিত হয় না।"
+      hi: "h से शुरू होने वाले शब्द दो तरह के हैं: l'homme (आदमी) स्वर-शब्द की तरह l' बनता है, पर le héros (नायक) नहीं। दोनों में h बोला नहीं जाता।"
+  - id: fr-fact-008
+    tags: [words, loanwords, history]
+    source: "https://en.wikipedia.org/wiki/Anglo-Norman_language"
+    text:
+      en: "After the Norman Conquest of 1066, French was the language of England's court and nobility for centuries. English took in words such as beef (from boeuf) and pork (from porc)."
+      bn: "১০৬৬ সালে নরম্যান বিজয়ের পর কয়েক শতাব্দী ইংল্যান্ডের রাজদরবার আর অভিজাতদের ভাষা ছিল ফরাসি। সেই সময়ের শব্দ ইংরেজিতে রয়ে গেছে: beef (boeuf থেকে), pork (porc থেকে)।"
+      hi: "1066 में नॉर्मन विजय के बाद कई सदियों तक इंग्लैंड के दरबार और कुलीन वर्ग की भाषा फ़्रांसीसी रही। अंग्रेज़ी ने उस समय के शब्द लिए, जैसे beef (boeuf से) और pork (porc से)।"
+  - id: fr-fact-009
+    tags: [history, language]
+    source: "https://en.wikipedia.org/wiki/French_language"
+    text:
+      en: "French is one of the six official languages of the United Nations, alongside Arabic, Chinese, English, Russian and Spanish."
+      bn: "ফরাসি রাষ্ট্রসংঘের ছয়টি সরকারি ভাষার একটি; বাকিগুলো আরবি, চিনা, ইংরেজি, রুশ ও স্পেনীয়।"
+      hi: "फ़्रांसीसी संयुक्त राष्ट्र की छह आधिकारिक भाषाओं में से एक है; बाकी हैं अरबी, चीनी, अंग्रेज़ी, रूसी और स्पेनिश।"
+  - id: fr-fact-010
+    tags: [history]
+    source: "https://en.wikipedia.org/wiki/French_language"
+    text:
+      en: "French comes from the Latin spoken in Gaul, the region that is now mostly France. It is a Romance language, the name given to the languages that grew out of Latin."
+      bn: "ফরাসি এসেছে গল অঞ্চলে বলা ল্যাটিন থেকে, যে অঞ্চলের বেশিরভাগ এখন ফ্রান্স। তাই এটি রোমান্স ভাষাগোষ্ঠীর, অর্থাৎ ল্যাটিন থেকে গড়ে ওঠা ভাষাগুলোর একটি।"
+      hi: "फ़्रांसीसी गॉल (आज का फ़्रांस, जहाँ ज़्यादातर इलाका है) में बोली जाने वाली लैटिन से निकली है। इसलिए यह रोमांस भाषा है, यानी लैटिन से निकली भाषाओं में से एक।"
+  - id: fr-fact-011
+    tags: [history, institutions]
+    source: "https://en.wikipedia.org/wiki/French_Academy"
+    text:
+      en: "The Académie française was founded in 1635 by Cardinal Richelieu to set the standards of the French language. Its forty members are called 'the immortals'."
+      bn: "১৬৩৫ সালে কার্ডিনাল রিশলিউ ফরাসি ভাষার মান ঠিক করতে আকাদেমি ফ্রাঁসেজ প্রতিষ্ঠা করেন। এর চল্লিশ সদস্যকে বলা হয় 'অমর' (immortels)।"
+      hi: "1635 में कार्डिनल रिशेल्यू ने फ़्रांसीसी भाषा के मानक तय करने के लिए Académie française की स्थापना की। इसके चालीस सदस्यों को 'अमर' (immortels) कहा जाता है।"
+  - id: fr-fact-012
+    tags: [politeness, grammar]
+    source: "https://en.wikipedia.org/wiki/T%E2%80%93V_distinction"
+    text:
+      en: "French has two words for 'you'. Tu is for a child, a close friend or a relative; vous is for a stranger, an elder or a boss, and for more than one person."
+      bn: "ফরাসিতে 'you'-র দুটি রূপ: tu (তুমি-র মতো) শিশু, ঘনিষ্ঠ বন্ধু বা আত্মীয়ের জন্য; vous (আপনি-র মতো) অপরিচিত, বড় বা উপরওয়ালার জন্য, আর একাধিক মানুষের জন্যও।"
+      hi: "फ़्रांसीसी में 'you' के दो रूप हैं: tu बच्चे, क़रीबी दोस्त या रिश्तेदार के लिए; vous अजनबी, बड़ों या बॉस के लिए, और एक से ज़्यादा लोगों के लिए। हिंदी में तू, तुम और आप जैसा फ़र्क़ होता है।"
+  - id: fr-fact-013
+    tags: [politeness, culture]
+    source: "https://en.wikipedia.org/wiki/Cheek_kissing"
+    text:
+      en: "In France, friends and acquaintances often greet each other with la bise, a kiss on each cheek. How many kisses are given changes from one region to another."
+      bn: "ফ্রান্সে বন্ধু ও পরিচিতরা প্রায়ই la bise দিয়ে সম্ভাষণ করেন, অর্থাৎ দুই গালে চুমু। কতবার চুমু দেওয়া হবে, তা অঞ্চল অনুযায়ী বদলায়।"
+      hi: "फ़्रांस में दोस्त और परिचित अक्सर la bise से अभिवादन करते हैं, यानी दोनों गालों पर चुंबन। कितनी बार चूमना है, यह इलाके के हिसाब से बदलता है।"
+  - id: fr-fact-014
+    tags: [regions, belgium]
+    source: "https://en.wikipedia.org/wiki/Belgium"
+    text:
+      en: "Belgium has three official languages: Dutch, French and German. French is the main language of Wallonia, and most people in Brussels speak it."
+      bn: "বেলজিয়ামের তিনটি সরকারি ভাষা: ডাচ, ফরাসি আর জার্মান। ওয়ালোনিয়ার প্রধান ভাষা ফরাসি, আর ব্রাসেলসের বেশিরভাগ মানুষ ফরাসিতে কথা বলেন।"
+      hi: "बेल्जियम की तीन आधिकारिक भाषाएँ हैं: डच, फ़्रांसीसी और जर्मन। वालोनिया (Wallonia) की मुख्य भाषा फ़्रांसीसी है, और ब्रसेल्स में ज़्यादातर लोग इसे बोलते हैं।"
+  - id: fr-fact-015
+    tags: [regions, switzerland]
+    source: "https://en.wikipedia.org/wiki/Languages_of_Switzerland"
+    text:
+      en: "Switzerland has four national languages: German, French, Italian and Romansh. French is the first language of the western cantons, such as Geneva and Vaud."
+      bn: "সুইজারল্যান্ডের চারটি জাতীয় ভাষা: জার্মান, ফরাসি, ইতালীয় আর রোমানশ। পশ্চিমের ক্যান্টনগুলোয়, যেমন জেনেভা আর ভো-তে, ফরাসিই প্রথম ভাষা।"
+      hi: "स्विट्ज़रलैंड की चार राष्ट्रीय भाषाएँ हैं: जर्मन, फ़्रांसीसी, इतालवी और रोमांश। पश्चिमी कैंटन, जैसे जिनेवा और वो (Vaud), में फ़्रांसीसी ही पहली भाषा है।"
+  - id: fr-fact-016
+    tags: [regions, words, quebec]
+    source: "https://en.wikipedia.org/wiki/Quebec_French"
+    text:
+      en: "Quebec French has its own words: a car is a char, and to go shopping is magasiner, where France says faire les courses."
+      bn: "কুইবেকের ফরাসিতে নিজস্ব শব্দ আছে: গাড়িকে বলা হয় char, আর কেনাকাটা করতে magasiner; ফ্রান্সে বলা হয় voiture আর faire les courses।"
+      hi: "क्यूबेक की फ़्रांसीसी में अपने शब्द हैं: गाड़ी को char कहते हैं, और ख़रीदारी करने को magasiner; फ़्रांस में voiture और faire les courses कहा जाता है।"
+  - id: fr-fact-017
+    tags: [regions, history, quebec]
+    source: "https://en.wikipedia.org/wiki/Charter_of_the_French_Language"
+    text:
+      en: "Since 1977, Quebec's Charter of the French Language, known as Bill 101, has made French the official language of the province's government, courts and laws."
+      bn: "১৯৭৭ সাল থেকে কুইবেকের ফরাসি ভাষা সনদ, যা Bill 101 নামে পরিচিত, ফরাসিকে প্রদেশের সরকার, আদালত ও আইনের সরকারি ভাষা করেছে।"
+      hi: "1977 से क्यूबेक का फ़्रांसीसी भाषा चार्टर, जो Bill 101 नाम से जाना जाता है, फ़्रांसीसी को प्रांत की सरकार, अदालतों और कानूनों की आधिकारिक भाषा बनाता है।"
+  - id: fr-fact-018
+    tags: [regions, africa]
+    source: "https://en.wikipedia.org/wiki/French_language"
+    text:
+      en: "French is an official language in Senegal, Côte d'Ivoire and Cameroon, though many people speak a local language at home, such as Wolof in Senegal."
+      bn: "সেনেগাল, কোত দিভোয়ার ও ক্যামেরুনে ফরাসি সরকারি ভাষা; তবু অনেকে ঘরে স্থানীয় ভাষায় কথা বলেন, যেমন সেনেগালে ওলফ।"
+      hi: "सेनेगल, कोत द'इवुआर और कैमरून में फ़्रांसीसी आधिकारिक भाषा है, पर कई लोग घर पर स्थानीय भाषा बोलते हैं, जैसे सेनेगल में वोलोफ़ (Wolof)।"
+  - id: fr-fact-019
+    tags: [history, africa]
+    source: "https://en.wikipedia.org/wiki/International_Organisation_of_La_Francophonie"
+    text:
+      en: "The International Organisation of la Francophonie was founded in 1970 to link the countries where French is spoken, from Africa to Asia and the Americas."
+      bn: "১৯৭০ সালে প্রতিষ্ঠিত লা ফ্রাঁকোফোনির আন্তর্জাতিক সংস্থা সেইসব দেশকে যুক্ত করে যেখানে ফরাসি ব্যবহৃত হয়, আফ্রিকা থেকে এশিয়া ও আমেরিকা পর্যন্ত।"
+      hi: "1970 में स्थापित ला फ़्रांकोफ़ोनी का अंतरराष्ट्रीय संगठन उन देशों को जोड़ता है जहाँ फ़्रांसीसी बोली जाती है, अफ़्रीका से एशिया और अमेरिका तक।"
+  - id: fr-fact-020
+    tags: [regions, africa]
+    source: "https://en.wikipedia.org/wiki/French_language"
+    text:
+      en: "Algeria's official languages are Arabic and Tamazight, but French is still widely used there, in business and in education."
+      bn: "আলজেরিয়ার সরকারি ভাষা আরবি ও তামাজ়িট, তবু ফরাসি সেখানে ব্যাপকভাবে ব্যবহৃত হয়, ব্যবসায় ও শিক্ষায়।"
+      hi: "अल्जीरिया की आधिकारिक भाषाएँ अरबी और तमाज़िघत (Tamazight) हैं, फिर भी वहाँ व्यापार और शिक्षा में फ़्रांसीसी ख़ूब इस्तेमाल होती है।"
+  - id: fr-fact-021
+    tags: [food, words]
+    source: "https://en.wikipedia.org/wiki/Croissant"
+    text:
+      en: "The croissant is named for its shape. The word means 'crescent', and the pastry is curved like one."
+      bn: "croissant নামটি এসেছে তার আকার থেকে: শব্দের অর্থ অর্ধচন্দ্র বা crescent, আর পেস্ট্রিটিও তেমন বাঁকা।"
+      hi: "croissant नाम उसके आकार से आया है: शब्द का अर्थ है 'अर्धचंद्र' (crescent), और यह पेस्ट्री भी वैसी ही मुड़ी होती है।"
+  - id: fr-fact-022
+    tags: [food, words]
+    source: "https://en.wikipedia.org/wiki/Baguette"
+    text:
+      en: "A baguette is named for its shape. The word means 'wand' or 'stick', and the long loaf is shaped like one."
+      bn: "baguette নামটি তার আকার থেকে: শব্দের অর্থ লাঠি বা দণ্ড (wand), আর লম্বা রুটিটিও তেমন।"
+      hi: "baguette नाम उसके आकार से है: शब्द का अर्थ है 'छड़ी' (wand या stick), और लंबी ब्रेड भी वैसी ही होती है।"
+  - id: fr-fact-023
+    tags: [food, words]
+    source: "https://en.wikipedia.org/wiki/Restaurant"
+    text:
+      en: "The word restaurant comes from the French verb restaurer, 'to restore'. The first restaurants in Paris served restorative broths."
+      bn: "restaurant শব্দটি এসেছে restaurer ক্রিয়া থেকে, যার মানে 'পুনরুদ্ধার করা'। প্যারিসের প্রথম রেস্তোরাঁগুলো শক্তি ফেরানো ঝোল বিক্রি করত।"
+      hi: "restaurant शब्द restaurer क्रिया से आया है, जिसका अर्थ है 'फिर से ताक़त देना'। पेरिस के शुरुआती रेस्तराँ ताक़त देने वाला शोरबा परोसते थे।"
+  - id: fr-fact-024
+    tags: [food, protected-names]
+    source: "https://en.wikipedia.org/wiki/Roquefort"
+    text:
+      en: "Roquefort is a protected name: only blue cheese aged in the caves of Roquefort-sur-Soulzon, in southern France, may be sold under it."
+      bn: "Roquefort একটি সংরক্ষিত নাম: দক্ষিণ ফ্রান্সের Roquefort-sur-Soulzon-এর গুহায় পাকানো নীল পনিরই শুধু এই নামে বিক্রি হতে পারে।"
+      hi: "Roquefort एक संरक्षित नाम है: दक्षिणी फ़्रांस में Roquefort-sur-Soulzon की गुफ़ाओं में पका नीला पनीर ही इस नाम से बिक सकता है।"
+  - id: fr-fact-025
+    tags: [literature]
+    source: "https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables"
+    text:
+      en: "Victor Hugo's novel Les Misérables was published in 1862, and it has been adapted for the stage and the screen many times."
+      bn: "ভিক্টর উগোর উপন্যাস Les Misérables ১৮৬২ সালে প্রকাশিত হয়, আর মঞ্চে ও পর্দায় বহুবার রূপান্তরিত হয়েছে।"
+      hi: "विक्टर ह्यूगो का उपन्यास Les Misérables 1862 में प्रकाशित हुआ, और इस पर मंच और पर्दे के लिए कई बार काम हुआ।"
+  - id: fr-fact-026
+    tags: [literature, history]
+    source: "https://en.wikipedia.org/wiki/The_Little_Prince"
+    text:
+      en: "The Little Prince, by Antoine de Saint-Exupéry, was first published in 1943 in New York, not in France."
+      bn: "আঁতোয়ান দ্য সাঁৎ-এক্সুপেরির ছোট্ট রাজকুমার প্রথম প্রকাশিত হয় ১৯৪৩ সালে নিউ ইয়র্কে, ফ্রান্সে নয়।"
+      hi: "आंतुआँ द सें-एग्ज़ुपेरी की Le Petit Prince 1943 में पहली बार न्यूयॉर्क में छपी, फ़्रांस में नहीं।"
+  - id: fr-fact-027
+    tags: [literature, history]
+    source: "https://en.wikipedia.org/wiki/Albert_Camus"
+    text:
+      en: "Albert Camus was born in French Algeria and won the Nobel Prize in Literature in 1957."
+      bn: "আলবেয়ার কামু ফরাসি-শাসিত আলজেরিয়ায় জন্মান, এবং ১৯৫৭ সালে সাহিত্যে নোবেল পুরস্কার পান।"
+      hi: "अल्बर्ट कामू का जन्म फ़्रांसीसी-शासित अल्जीरिया में हुआ था, और उन्हें 1957 में साहित्य का नोबेल पुरस्कार मिला।"
+  - id: fr-fact-028
+    tags: [numbers]
+    source: "https://en.wikipedia.org/wiki/French_numerals"
+    text:
+      en: "In French, 70 is soixante-dix, 'sixty-ten', 80 is quatre-vingts, 'four twenties', and 90 is quatre-vingt-dix, 'four twenties ten'."
+      bn: "ফরাসিতে ৭০ হলো soixante-dix, অর্থাৎ 'ষাট-দশ'; ৮০ হলো quatre-vingts, 'চার বিশ'; ৯০ হলো quatre-vingt-dix, 'চার বিশ-দশ'। বাংলায় ৭০ আর ৯০-এর আলাদা শব্দ আছে: সত্তর আর নব্বই।"
+      hi: "फ़्रांसीसी में 70 है soixante-dix, यानी 'साठ-दस'; 80 है quatre-vingts, 'चार बीस'; 90 है quatre-vingt-dix, 'चार बीस-दस'। हिंदी में 70 और 90 के अलग शब्द हैं: सत्तर और नब्बे।"
+  - id: fr-fact-029
+    tags: [numbers, regions]
+    source: "https://en.wikipedia.org/wiki/French_numerals"
+    text:
+      en: "In Belgium and Switzerland, 70 is septante and 90 is nonante, not soixante-dix and quatre-vingt-dix."
+      bn: "বেলজিয়াম ও সুইজারল্যান্ডে ৭০ হলো septante, ৯০ হলো nonante; ফ্রান্সের soixante-dix আর quatre-vingt-dix নয়।"
+      hi: "बेल्जियम और स्विट्ज़रलैंड में 70 को septante और 90 को nonante कहते हैं, फ़्रांस के soixante-dix और quatre-vingt-dix नहीं।"
+  - id: fr-fact-030
+    tags: [numbers]
+    source: "https://en.wikipedia.org/wiki/French_numerals"
+    text:
+      en: "French joins 21, 31, 41, 51, 61 and 71 with et: vingt et un, 'twenty and one', soixante et onze, 'sixty and eleven'. 81 and 91 have no et."
+      bn: "ফরাসিতে ২১, ৩১, ৪১, ৫১, ৬১ আর ৭১-এ et ('এবং') বসে: vingt et un, 'বিশ এবং এক'; ৮১ আর ৯১-এ et নেই।"
+      hi: "फ़्रांसीसी में 21, 31, 41, 51, 61 और 71 में et ('और') आता है: vingt et un, 'बीस और एक'; 81 और 91 में नहीं।"
+  - id: fr-fact-031
+    tags: [grammar, agreement]
+    source: "https://en.wikipedia.org/wiki/French_grammar"
+    text:
+      en: "Many French adjectives add a silent e for the feminine, which can make the last consonant audible: grand (tall, masculine) ends in a silent d, but grande (feminine) says it."
+      bn: "অনেক ফরাসি বিশেষণের স্ত্রীলিঙ্গে শেষে নীরব e যোগ হয়, তাতে আগের ব্যঞ্জন শোনা যায়: grand (লম্বা, পুংলিঙ্গ) শেষে d নীরব, কিন্তু grande (স্ত্রীলিঙ্গ)-তে d উচ্চারিত হয়। বাংলা বিশেষণ লিঙ্গ অনুযায়ী বদলায় না।"
+      hi: "फ़्रांसीसी में कई विशेषणों के स्त्रीलिंग में अंत में मूक e आता है, जिससे पिछला व्यंजन सुनाई देता है: grand (लंबा, पुल्लिंग) का d नहीं बोला जाता, पर grande (स्त्रीलिंग) का d बोला जाता है। हिंदी में विशेषण लिंग के हिसाब से बदलते हैं: लंबा, लंबी।"
+  - id: fr-fact-032
+    tags: [grammar, gender]
+    source: "https://en.wikipedia.org/wiki/French_grammar"
+    text:
+      en: "Every French noun has a gender, masculine or feminine, that cannot always be guessed from the word: la table is feminine and le livre is masculine, so learners learn each noun with its article."
+      bn: "প্রতিটি ফরাসি বিশেষ্যের লিঙ্গ আছে, পুংলিঙ্গ বা স্ত্রীলিঙ্গ, যা শব্দ দেখে সবসময় বোঝা যায় না: la table (টেবিল) স্ত্রীলিঙ্গ, le livre (বই) পুংলিঙ্গ; তাই শেখার সময় আর্টিকেলসহ শেখা হয়।"
+      hi: "हर फ़्रांसीसी संज्ञा का लिंग होता है, पुल्लिंग या स्त्रीलिंग, जो शब्द देखकर हमेशा नहीं पता चलता: la table (मेज़) स्त्रीलिंग है, le livre (किताब) पुल्लिंग; इसलिए लोग article के साथ शब्द सीखते हैं।"
+  - id: fr-fact-033
+    tags: [history, india]
+    source: "https://en.wikipedia.org/wiki/Chandernagore"
+    text:
+      en: "Chandernagore, a town on the Hooghly river near Kolkata, was a French colony until India took it over in the 1950s."
+      bn: "কলকাতার কাছে হুগলি নদীর ধারের চন্দননগর একসময় ফরাসিদের উপনিবেশ ছিল; ১৯৫০-এর দশকে ভারত তা নিজের অধীনে আনে।"
+      hi: "कोलकाता के पास हुगली नदी पर बसा चन्दननगर, बांग्ला में चन्दननगर (candanagar), कभी फ़्रांसीसी उपनिवेश था; 1950 के दशक में भारत ने इसे अपने में मिला लिया।"
+  - id: fr-fact-034
+    tags: [history, language]
+    source: "https://en.wikipedia.org/wiki/French_language"
+    text:
+      en: "For centuries French was the language of European diplomacy, and the English word diplomacy itself comes from French diplomatie."
+      bn: "কয়েক শতাব্দী ধরে ইউরোপের কূটনীতির ভাষা ছিল ফরাসি, আর ইংরেজি 'diplomacy' শব্দটিও এসেছে ফরাসি diplomatie থেকে।"
+      hi: "कई सदियों तक यूरोप की कूटनीति की भाषा फ़्रांसीसी रही, और अंग्रेज़ी का शब्द 'diplomacy' भी फ़्रांसीसी diplomatie से आया है।"
+  - id: fr-fact-035
+    tags: [sound]
+    source: "https://en.wikipedia.org/wiki/French_phonology"
+    text:
+      en: "The u in tu (you) is said with the tongue in the position for ee, but with the lips rounded. The ou in vous is said like the oo in food."
+      bn: "tu-র u-তে জিভ 'ই'-র অবস্থানে থাকে, অথচ ঠোঁট গোল করে বলতে হয়; আর vous-এর ou 'উ'-র মতো।"
+      hi: "tu का u जीभ 'इ' की स्थिति में रखकर होंठ गोल करके बोला जाता है। vous का ou 'ऊ' जैसा बोला जाता है।"
+  - id: fr-fact-036
+    tags: [sound, schwa]
+    source: "https://en.wikipedia.org/wiki/Schwa"
+    text:
+      en: "In quick speech, the e in words such as le, de and je is often dropped. Its sound is called the schwa, or e muet, 'mute e'."
+      bn: "দ্রুত কথায় le, de, je-র মতো শব্দের e প্রায়ই লোপ পায়। এই ধ্বনিকে schwa বা e muet ('নীরব e') বলে। বাংলায় শব্দের শেষের অন্তর্নিহিত অ-ও অনেক সময় লোপ পায়।"
+      hi: "तेज़ बोलचाल में le, de और je जैसे शब्दों का e अक्सर लुप्त हो जाता है। इस ध्वनि को schwa या e muet ('मूक e') कहते हैं। हिंदी में भी शब्द के अंत का छिपा 'अ' अक्सर नहीं बोला जाता: कमल को kamal कहते हैं।"
