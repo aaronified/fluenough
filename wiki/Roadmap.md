@@ -155,6 +155,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#698](https://github.com/aaronified/fluenough/issues/698) Languages I'm learning: group every language by family, with Indo-European split into branches
 - [#707](https://github.com/aaronified/fluenough/issues/707) Question words get a picture with a '?' badge
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
+- [#913](https://github.com/aaronified/fluenough/issues/913) App-wide long press on a button shows a tiny hint: one word where one word is enough
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#29](https://github.com/aaronified/fluenough/issues/29) Show each word's IPA after answering
