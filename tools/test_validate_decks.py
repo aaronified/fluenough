@@ -425,6 +425,14 @@ class PhoneticField(Validated):
                     self._with(f"phonetic: {bad}", 'phonetic_source: "rules"'),
                     "square brackets")
 
+    def test_greek_letters_in_the_ipa_need_no_reading(self) -> None:
+        self.assertValid(self._with('phonetic: "[ˈbe\u03b2e \u03b8a]"',
+                                    'phonetic_source: "rules"'))
+
+    def test_a_greek_word_in_prose_still_needs_a_reading(self) -> None:
+        self.assertRejected(VOCAB + '    notes: "Greek \u03b2\u03af\u03bf\u03c2 is life."\n',
+                            "has no transliteration")
+
     def test_ipa_stays_broad(self) -> None:
         self.assertRejected(VOCAB + '    ipa: "[ɡʱɐɾ]"\n', "broad IPA")
 
