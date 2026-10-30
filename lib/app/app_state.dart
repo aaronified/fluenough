@@ -18,6 +18,7 @@ import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
+import '../core/scheduling/picture_choice.dart';
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/daily_timer.dart';
@@ -2564,7 +2565,17 @@ class AppState extends ChangeNotifier {
   /// to offer, or, choosing among a rules table's forms or their meanings,
   /// one (DECK-FORMAT.md, Rules decks: a row of two forms is still a choice).
   /// Without, it is asked its own way.
-  bool canChoose(Card card, Ask ask) =>
+  bool canChoose(Card card, Ask ask) {
+    // A picture choice looks among the cards of the card's own deck alone,
+    // and needs three pictures to offer that cannot be taken for it (#91).
+    if (ask.choosesPicture) {
+      final entry = deckOf(card);
+      return entry != null && canChoosePicture(card, entry.cards);
+    }
+    return _canChooseAmong(card, ask);
+  }
+
+  bool _canChooseAmong(Card card, Ask ask) =>
       choicePool(card, ask).map(ask.optionOf).toSet().length >=
       (ask.choosesAmongForms ? 1 : 2);
 
@@ -2584,6 +2595,10 @@ class AppState extends ChangeNotifier {
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
     typed: (item) => isTyped(item.card),
     siblingsOf: siblingsOf,
+    canHear: (item) {
+      final language = deckOf(item.card)?.language;
+      return language != null && canSpeak(language);
+    },
   );
 
   // ---------------------------------------------------------------------------

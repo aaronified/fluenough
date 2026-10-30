@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Picture choice (#91): a word that has a picture is asked, on every other review after its lesson, as the word shown (or played, where the phone has a voice) and its picture to pick from four of the same deck's, two by two, in place of the meaning choice. It is a form of Recognition: recorded as Recognition, no schedule of its own. The pictures are never twins, near-twins or words that mean the same, a deck with fewer than four pictures never asks it, and a screen reader hears "Picture 1 of 4" until the answer is in.
 - Situations on Today (#724): six buttons, each in a colour of its own, open sheets of key phrases and words for everyday moments, with unlearned cards marked, Practise this sheet, and an inspect view of each card. A situations file per language lists real card ids (`kind: situations`, checked by the validator); Telugu has a first taxi sheet, and courses without sheets show the buttons dimmed with an Upcoming pill. A sheet's session teaches at most nine new cards at once, and Practise is off, with the reason beneath it, when nothing on the sheet can be taught or revised. The index lists the file under its own `situations` key, so the released app never sees it.
 
 ### Changed
