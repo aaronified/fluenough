@@ -1897,7 +1897,10 @@ void main() {
         final rect = tester.getRect(where);
         expect(rect.center.dx, greaterThan(390 / 2));
         expect(rect.width, greaterThanOrEqualTo(40));
-        expect(tester.getSemantics(where).label, contains(l10n.decksWhereIAm));
+        // A screen reader says the tooltip (it is the button's name); Flutter
+        // keeps it apart from the label, so either may carry it.
+        final named = tester.getSemantics(where);
+        expect('${named.label} ${named.tooltip}', contains(l10n.decksWhereIAm));
         expect(find.byType(FloatingActionButton), findsOneWidget);
       },
     );
