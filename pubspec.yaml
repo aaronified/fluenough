@@ -84,6 +84,10 @@ flutter:
   # main branch, by decks/index.json (#210, ADR-0037). Only the theme list
   # and the spoken languages ship inside the app.
   assets:
+    # The release notes' source, read at the first launch after an update for
+    # the "What's new" sheet (#944); the release workflow dates its section
+    # before it builds.
+    - CHANGELOG.md
     - assets/deck-template.yaml
     - assets/languages.yaml
     - assets/voice_apps.yaml
