@@ -1026,7 +1026,8 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Today's last skill-tile numbers as text, kept for the next launch
   /// (#875); see `TodaySummaries`. A cache, not a setting: it notifies
-  /// [todaySummaryChanges] only, and a backup leaves it out.
+  /// [todaySummaryChanges] only, and [toStored] and a backup leave it out:
+  /// the store keeps it in its own row.
   String? get todaySummary => _todaySummary.value;
   set todaySummary(String? value) => _todaySummary.value = value;
 
@@ -1068,7 +1069,6 @@ class SettingsNotifier extends ChangeNotifier {
     'latest_release': _latestRelease ?? '',
     'pending_update': _pendingUpdate ?? '',
     'last_seen_version': _lastSeenVersion ?? '',
-    todaySummaryKey: _todaySummary.value ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
     // Not chosen yet is empty, which an older version never wrote and

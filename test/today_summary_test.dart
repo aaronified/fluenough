@@ -88,7 +88,7 @@ const TodaySummary _sample = TodaySummary(
 );
 
 void main() {
-  const stamp = '1|0.7.0|hi|recognition';
+  const stamp = '1|0.7.0|hi|recognition|2026-07-01';
 
   group('the saved summary', () {
     test('round-trips as plain text, one entry per language', () {
@@ -148,10 +148,11 @@ void main() {
         summary: _sample,
       );
       for (final other in <String>[
-        '2|0.7.0|hi|recognition',
-        '1|0.7.1|hi|recognition',
-        '1|0.7.0|hi,te|recognition',
-        '1|0.7.0|hi|recognition,listening',
+        '2|0.7.0|hi|recognition|2026-07-01',
+        '1|0.7.1|hi|recognition|2026-07-01',
+        '1|0.7.0|hi,te|recognition|2026-07-01',
+        '1|0.7.0|hi|recognition,listening|2026-07-01',
+        '1|0.7.0|hi|recognition|2026-07-02',
       ]) {
         expect(
           TodaySummaries.read(saved: saved, stamp: other, language: 'hi'),
@@ -161,14 +162,14 @@ void main() {
       }
       final rewritten = TodaySummaries.write(
         saved: saved,
-        stamp: '1|0.7.1|hi|recognition',
+        stamp: '1|0.7.1|hi|recognition|2026-07-01',
         language: 'te',
         summary: _sample,
       );
       expect(
         TodaySummaries.read(
           saved: rewritten,
-          stamp: '1|0.7.1|hi|recognition',
+          stamp: '1|0.7.1|hi|recognition|2026-07-01',
           language: 'hi',
         ),
         isNull,
@@ -256,6 +257,36 @@ void main() {
         isNull,
         reason: 'other skills',
       );
+    });
+
+    test('a summary from another day is not read, the next day or a missed '
+        'one', () async {
+      final live = AppState.test(
+        decks: MemoryDeckSource(twoScriptCourse()),
+        progress: _dueProgress(),
+        settings: _settings(),
+        now: DateTime(2026, 9, 28, 23, 50),
+      );
+      addTearDown(live.dispose);
+      await live.load();
+      live.rememberToday(TodayNumbers.of(live).summary);
+      live.flushToday();
+      final text = live.settings.todaySummary!;
+
+      TodaySummary? launchedOn(DateTime now) {
+        final state = AppState.test(
+          decks: _GatedSource(twoScriptCourse()),
+          settings: _settings()
+            ..restore(<String, String>{'today_summary': text}),
+          now: now,
+        );
+        addTearDown(state.dispose);
+        return state.savedToday;
+      }
+
+      expect(launchedOn(DateTime(2026, 9, 28, 8)), isNotNull);
+      expect(launchedOn(DateTime(2026, 9, 29, 0, 5)), isNull);
+      expect(launchedOn(DateTime(2026, 10, 3, 9)), isNull);
     });
 
     test('nothing is written when it is what is saved already', () async {
@@ -363,6 +394,7 @@ void main() {
             for (final s in Skill.values)
               if (SettingsNotifier().isEnabled(s)) s,
           ],
+          day: DateTime(2026, 9, 28, 19),
         ),
         language: 'hi',
         summary: const TodaySummary(

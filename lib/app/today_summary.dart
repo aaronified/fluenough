@@ -138,14 +138,20 @@ abstract final class TodaySummaries {
   static const int format = 1;
 
   /// The stamp of a summary: this format, this app version, the languages
-  /// learned in the learner's order, and the skills switched on. Any change
-  /// makes the saved summaries stale, which are then ignored.
+  /// learned in the learner's order, the skills switched on, and the
+  /// calendar [day] (as `yyyy-mm-dd`, in the phone's time zone) it was
+  /// worked out for. Any change makes the saved summaries stale, which are
+  /// then ignored: yesterday's streak and counts are never shown.
   static String stamp({
     required Iterable<String> languages,
     required Iterable<Skill> enabled,
-  }) =>
-      '$format|${AppInfo.version}|${languages.join(',')}|'
-      '${[for (final s in enabled) s.name].join(',')}';
+    required DateTime day,
+  }) {
+    String two(int n) => n.toString().padLeft(2, '0');
+    return '$format|${AppInfo.version}|${languages.join(',')}|'
+        '${[for (final s in enabled) s.name].join(',')}|'
+        '${day.year}-${two(day.month)}-${two(day.day)}';
+  }
 
   /// [summary] for [language], added to what [saved] holds for the same
   /// [stamp], as text to keep.

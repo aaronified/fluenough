@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Deck search opens the course.** Tapping Add the course in a deck search now opens Add a language with the course's name already in its search, instead of the plain Languages list (#918).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.
 - **Faster start (#857).** The app shows its first screen without waiting for your review history to be read: it is read while the decks load, and Today waits for both. Listening and Say stay in Today's counts while the phone's voices are still being asked, so the tiles no longer appear late or jump, and the voices are asked all at once. Opening also rewrites only the saved card states that changed. Timing marks for the start go to the app log.
-- **Today's tiles show at once.** On launch Today draws its skill tiles from the numbers it showed last time, kept in a small saved summary, instead of a spinner while the decks load; a tap on them waits until the live numbers replace them a moment later. The summary is ignored after an update, or when your languages or skills change (#857, #875).
+- **Today's tiles show at once.** On launch Today draws its skill tiles from the numbers it showed last time, kept in a small saved summary, instead of a spinner while the decks load; a tap on them waits until the live numbers replace them a moment later. The summary is ignored after an update, when your languages or skills change, or on a new day (#857, #875).
 
 ## [0.7.0] - 2026-10-31
 

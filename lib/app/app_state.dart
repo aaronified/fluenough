@@ -1948,6 +1948,7 @@ class AppState extends ChangeNotifier {
       for (final skill in Skill.values)
         if (settings.isEnabled(skill)) skill,
     ],
+    day: now(),
   );
 
   /// The language a summary is kept under: the one shown, or `*`.
@@ -1957,7 +1958,7 @@ class AppState extends ChangeNotifier {
   /// from the small summary saved with the settings, so that Today can draw
   /// its tiles while the catalog loads. Null when none was saved, or when it
   /// is stale: written by another app version, for other languages or with
-  /// other skills switched on.
+  /// other skills switched on, or on another day.
   TodaySummary? get savedToday => TodaySummaries.read(
     saved: settings.todaySummary,
     stamp: _todayStamp,

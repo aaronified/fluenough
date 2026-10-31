@@ -75,8 +75,7 @@ class Backups extends ChangeNotifier {
     schemaVersion: AppDatabase.currentSchemaVersion,
     createdAt: _clock(),
     log: progress.exportJsonl(),
-    // Today's saved numbers are a cache of this build (#875).
-    settings: settings.toStored()..remove(SettingsNotifier.todaySummaryKey),
+    settings: settings.toStored(),
     downloads: (_languagesOnPhone().toList()..sort()),
     kind: kind,
     forVersion: forVersion,

@@ -6,7 +6,7 @@ import 'settings.dart';
 /// Keeps a profile's [settings] in its database (#15): restored when the app
 /// opens, and each change saved as it happens, in order.
 class StoredSettings {
-  StoredSettings._(this.settings, this._db) : _saved = settings.toStored() {
+  StoredSettings._(this.settings, this._db) : _saved = _snapshot(settings) {
     settings
       ..addListener(_save)
       ..todaySummaryChanges.addListener(_save);
@@ -26,8 +26,16 @@ class StoredSettings {
   /// Completes once every change so far is in the database.
   Future<void> flush() => _writes;
 
+  /// Every setting, and the Today summary beside them: a cache of this
+  /// build, so it is stored here and never in a backup (#875).
+  static Map<String, String> _snapshot(SettingsNotifier settings) =>
+      <String, String>{
+        ...settings.toStored(),
+        SettingsNotifier.todaySummaryKey: settings.todaySummary ?? '',
+      };
+
   void _save() {
-    final now = settings.toStored();
+    final now = _snapshot(settings);
     final changed = <String, String>{
       for (final MapEntry(:key, :value) in now.entries)
         if (_saved[key] != value) key: value,
