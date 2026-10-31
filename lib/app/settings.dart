@@ -154,14 +154,13 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, bool> _scriptsRead = const <String, bool>{};
   Map<String, Map<String, String>> _languageSkills =
       const <String, Map<String, String>>{};
-  bool _reviewKnown = false;
+  bool _latinKnownDone = false;
 
-  /// Settings' Review switch (#907), off by default: whether the Languages
-  /// page asks a learner who knows a skill to fit their level before they
-  /// can review it ("Fit your level to be able to review").
-  bool get reviewKnown => _reviewKnown;
-  set reviewKnown(bool value) =>
-      _set(_reviewKnown, value, (v) => _reviewKnown = v);
+  /// Whether the one-time change of a saved Learn of the Latin script to
+  /// Know has run (owner, 2026-10-31).
+  bool get latinKnownDone => _latinKnownDone;
+  set latinKnownDone(bool value) =>
+      _set(_latinKnownDone, value, (v) => _latinKnownDone = v);
 
   /// What the learner said about each skill of [language] on the Languages
   /// page (#907): skill id to `know` or `learn`, Leave not held. Null until
@@ -1136,7 +1135,7 @@ class SettingsNotifier extends ChangeNotifier {
     },
     'scripts_read': jsonEncode(_scriptsRead),
     'language_skills': jsonEncode(_languageSkills),
-    'review_known': '$_reviewKnown',
+    'latin_known_done': '$_latinKnownDone',
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -1497,7 +1496,7 @@ class SettingsNotifier extends ChangeNotifier {
         setLanguageSkills(key, skills);
       }
     }
-    if (pick('review_known', flag) case final v?) reviewKnown = v;
+    if (pick('latin_known_done', flag) case final v?) latinKnownDone = v;
     _foldUrduIntoHindustani();
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');

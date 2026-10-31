@@ -113,21 +113,44 @@ void main() {
     expect(find.text(text.hintInfo), findsOneWidget);
   });
 
-  testWidgets('a tap cycles Know, Learn, Leave; the last Leave sends the '
-      'language back to the pool', (tester) async {
+  testWidgets('English is fixed: all four skills show the double tick and a '
+      'tap changes nothing', (tester) async {
     final state = await pumpLanguages(tester);
     await tapKey(tester, 'language-en');
-    // English has no course, so Learn is skipped: Know goes to Leave.
-    await tapKey(tester, 'skill-speak');
-    expect(state.settings.languageSkillsOf('en')!.containsKey('speak'), false);
-    await tapKey(tester, 'skill-hear');
-    await tapKey(tester, 'skill-read:latin');
-    // English is known in Write too, by default (#926).
-    await tapKey(tester, 'skill-write:latin');
-    expect(state.settings.languageSkillsOf('en'), isEmpty);
-    expect(find.byKey(const ValueKey<String>('language-en')), findsNothing);
-    // It stays among the languages spoken, which is never left empty.
-    expect(state.settings.spokenLanguages, <String>['en']);
+    final text = l10n(tester);
+    expect(find.text(text.languagesEnglishLocked), findsOneWidget);
+    for (final id in <String>['speak', 'hear', 'read:latin', 'write:latin']) {
+      await tapKey(tester, 'skill-$id');
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey<String>('skill-$id')),
+          matching: find.byIcon(Icons.done_all),
+        ),
+        findsOneWidget,
+        reason: id,
+      );
+    }
+    final skills = state.skillsOf(
+      pickerSpokenList.firstWhere((l) => l.code == 'en'),
+    );
+    expect(skills, englishKnownByDefault());
+    expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
+  });
+
+  testWidgets('the skill chips are as wide as their icons and share lines, at '
+      '1.4x text', (tester) async {
+    await pumpLanguages(tester);
+    final row = find.byKey(const ValueKey<String>('language-es'));
+    final chips = find.descendant(of: row, matching: find.byType(SkillBadge));
+    expect(chips, findsNWidgets(4));
+    final rowWidth = tester.getSize(row).width;
+    final tops = <double>{};
+    for (var i = 0; i < 4; i++) {
+      final size = tester.getSize(chips.at(i));
+      expect(size.width, lessThan(rowWidth / 3), reason: 'chip $i');
+      tops.add(tester.getTopLeft(chips.at(i)).dy);
+    }
+    expect(tops.length, lessThan(4), reason: 'chips wrap, not stack');
   });
 
   testWidgets('Learn on a skill downloads nothing here but leaves the button '

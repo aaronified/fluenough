@@ -644,7 +644,11 @@ class _LanguageRow extends StatelessWidget {
     final st = skills.stateOf(key);
     final covered =
         st == SkillState.know &&
-        levelCovers(levelFound: found, taught: view.canLearn);
+        levelCovers(
+          levelFound: found,
+          taught: view.canLearn,
+          english: view.code == englishCode,
+        );
     final name = skillName(
       l10n,
       key,
