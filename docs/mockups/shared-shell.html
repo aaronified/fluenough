@@ -103,6 +103,9 @@ svg.i.s18{width:18px;height:18px}svg.i.s22{width:22px;height:22px}svg.i.s28{widt
 .tray{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .tile{border-radius:12px;background:var(--sLow);border:1px solid var(--ol);min-height:48px;padding:0 14px;font-size:calc(16px*var(--t));display:inline-flex;align-items:center}
 .tile.ph0{visibility:hidden}
+.ol{display:flex;align-items:center;gap:4px;font-size:calc(12px*var(--t));line-height:1.2;color:var(--onSv);padding:0 4px}
+.ol svg{color:var(--E)}
+.yours{display:flex;flex-direction:column;gap:4px;border-radius:12px}
 .tile.in{background:var(--sc);color:var(--onSc);border-color:transparent}
 .tile.in.ok{background:var(--pc);color:var(--onPc)}
 .tile.in.no{background:var(--ec);color:var(--onEc)}
@@ -317,7 +320,12 @@ function tiles(st,exam,ro){
  const D0=d();const ans=st!=='un';const bad=st==='no';
  const placed=['I','want','water']; /* answered: only the right order is shown (owner, 2026-10-31); the banner says whether the learner was right */
  const inA=ans||exam;
- const aLine=`<div class="aline" data-slot="4">${(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed)).map(t=>`<span class="tile in ${!exam&&ans?'ok':''}">${t}</span>`).join('')}</div>`;
+ /* owner 2026-10-31 (doubt 13, word tiles): a wrong answer also shows the learner's own arrangement, marked wrong in the error colour, under the right order */
+ const yours=['I','water','want'];
+ const tl=(arr,cls)=>arr.map(t=>`<span class="tile in ${cls}">${t}</span>`).join('');
+ const aLine=bad&&!exam
+  ?`<div data-slot="4" style="display:flex;flex-direction:column;gap:8px"><div class="ol">Right order</div><div class="aline">${tl(placed,'ok')}</div><div class="yours chg"><div class="ol">${svg('hoff','s18')}<span>Your order, marked wrong</span></div><div class="aline" style="border-bottom:0">${tl(yours,'no')}</div></div></div>`
+  :`<div class="aline" data-slot="4">${(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed)).map(t=>`<span class="tile in ${!exam&&ans?'ok':''}">${t}</span>`).join('')}</div>`;
  const all=[...D0.tiles,...D0.decoys].sort((a,b)=>({I:0,want:1,water:2,drink:3,milk:4,the:5}[a]-({I:0,want:1,water:2,drink:3,milk:4,the:5}[b]))).sort((a,b)=>a.length-b.length);
  const usedSet=new Set(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed));
  const tray=ans&&!exam?'':`<div class="tray">${all.map(t=>`<span class="tile ${usedSet.has(t)?'ph0':''}">${t}</span>`).join('')}</div>`;
@@ -401,7 +409,7 @@ function practiceScreens(t){
  switch(t){
   case 'teach':return [fr('Teach: a new word, no foot, swipe and chevrons',phone(teach())),fr('Teach: Relearn, a back chevron too',phone(teach({relearn:true,pos:3,total:12}))),fr('Teach: a rule card is the same shell',phone(teachRule()))];
   case 'choice':return [fr('Unanswered',phone(choice('un',false,'rec'))),fr('Right',phone(choice('ok',false,'rec'))),fr('Wrong: the right answer and the choice made, marked wrong',phone(choice('no',false,'rec'))),fr('Going back: read-only, answered, locked',phone(choice('ok',false,'rec',true)))];
-  case 'tiles':return [fr('Unanswered, two placed',phone(tiles('un',false))),fr('Right',phone(tiles('ok',false))),fr('Wrong',phone(tiles('no',false))),fr('Going back: read-only, answered, locked',phone(tiles('ok',false,true)))];
+  case 'tiles':return [fr('Unanswered, two placed',phone(tiles('un',false))),fr('Right',phone(tiles('ok',false))),fr('Wrong: the right order, and the order the learner chose, marked wrong',phone(tiles('no',false))),fr('Going back: read-only, answered, locked',phone(tiles('ok',false,true)))];
   case 'typed':return [fr('Unanswered, keyboard open: the shell is compact',phone(typed('un'),{kb:true})),fr('Right',phone(typed('ok'))),fr('Wrong',phone(typed('no')))];
   case 'hear':return [fr('Unanswered',phone(choice('un',false,'hear'))),fr('Right',phone(choice('ok',false,'hear'))),fr('Wrong: the right answer and the choice made, marked wrong',phone(choice('no',false,'hear'))),fr('Going back: read-only, answered, locked',phone(choice('ok',false,'hear',true)))];
   case 'say':return [fr('Unanswered',phone(say('un',false))),fr('Right: the word, your recording, record again',phone(say('ok',false))),fr('Right, playing your recording',phone(say('ok',false,'play'))),fr('Wrong, Try again only: going on is the swipe',phone(say('no',false)))];
@@ -444,7 +452,7 @@ function anatomy(){
  <tr><td>Teach</td><td>the word, reading, sound, meaning, notes, examples</td><td>none</td><td>none</td><td>none (swipe and chevrons; the card takes the space)</td></tr>
  <tr><td>Set</td><td>the set’s rows</td><td>none</td><td>none</td><td>none (swipe and chevrons, as teach; the card takes the space)</td></tr>
  <tr><td>Choice, Hear</td><td>word or sound</td><td>four choices; once answered, the right one and, if wrong, the one chosen</td><td>Correct or Not quite</td><td>none after the answer (swipe and chevrons); Can’t listen now for Hear, before</td></tr>
- <tr><td>Word tiles</td><td>the sentence</td><td>answer line and tray</td><td>Correct or Not quite</td><td>Check; then none (swipe and chevrons)</td></tr>
+ <tr><td>Word tiles</td><td>the sentence</td><td>answer line and tray; once answered, the right order and, if wrong, the order the learner chose, marked wrong</td><td>Correct or Not quite</td><td>Check; then none (swipe and chevrons)</td></tr>
  <tr><td>Typed</td><td>the meaning</td><td>field</td><td>five outcomes</td><td>Don’t know and Check; Count right or wrong for a near miss; then none (swipe and chevrons)</td></tr>
  <tr><td>Say</td><td>the meaning</td><td>microphone</td><td>what was heard</td><td>Don’t know; then Try again (swipe and chevrons to go on)</td></tr>
  <tr><td>Question, gone back to (practice)</td><td>as the question, answered</td><td>as answered, locked</td><td>Already answered (neutral)</td><td>none; back and forward chevrons and swipes; nothing can be changed or graded again</td></tr>
