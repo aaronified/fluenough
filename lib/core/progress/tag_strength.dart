@@ -49,7 +49,7 @@ List<TagStrength> tagStrengths(
   List<double> Function(ReviewEvent review)? parametersOf,
 }) {
   final last = <String, ReviewEvent>{};
-  for (final e in reviews) {
+  for (final e in reviews.answered) {
     if (e.mode.isScript || masterySkillOf(e.mode) == null) continue;
     last['${e.mode.name}|${e.cardId}'] = e;
   }

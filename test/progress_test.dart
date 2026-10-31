@@ -1284,7 +1284,7 @@ void main() {
     );
 
     testWidgets(
-      '+ Learn counts the words in view not taught, and teaches those',
+      '+ Learn counts the words in view not taught, and walks through those',
       (tester) async {
         usePhone(tester);
         final state = await pumpDeck(tester, spanish);
@@ -1304,12 +1304,67 @@ void main() {
 
         await tester.tap(find.text(l10n.deckLearn));
         await tester.pumpAndSettle();
-        final request = tester
-            .widget<DrillPage>(find.byType(DrillPage))
-            .request;
-        expect(request.lesson, isTrue);
-        expect(request.deckIds, <String>{spanish});
-        expect(request.tags, <String>{'food'});
+        expect(find.byType(DrillPage), findsNothing);
+        expect(find.byType(TeachCard), findsOneWidget);
+        expect(find.text(l10n.drillPositionShort(1, food)), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '+ Learn walks the new words: each first view is one log row graded 0, '
+      'a repeat view writes nothing, and the deck is then Relearn',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: 'es-en-tagged'),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        const gato = 'es-en-tagged-0001';
+        const recognition = DrillMode.recognition;
+
+        await tester.tap(find.text(l10n.deckLearn));
+        await tester.pumpAndSettle();
+        expect(find.text('gato'), findsOneWidget);
+        // The first card is taught on sight, in recognition only.
+        expect(state.progress.log, hasLength(1));
+        final row = state.progress.log.single;
+        expect(row.cardId, gato);
+        expect(row.mode, recognition);
+        expect(row.asked, Ask.teach);
+        expect(row.grade, 0);
+        expect(row.answerGiven, isNull);
+        expect(state.progress.stateOf(gato, recognition), isNotNull);
+        expect(state.progress.stateOf(gato, DrillMode.production), isNull);
+        expect(state.progress.stateOf(gato, recognition)!.repetitions, 0);
+        expect(state.progress.stateOf(gato, recognition)!.lapses, 0);
+
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('perro'), findsOneWidget);
+        expect(state.progress.log, hasLength(2));
+
+        // Back to a card seen: nothing more is written.
+        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('gato'), findsOneWidget);
+        expect(state.progress.log, hasLength(2));
+
+        for (var i = 0; i < 3; i++) {
+          await tester.fling(
+            find.byType(TeachCard),
+            const Offset(-300, 0),
+            1000,
+          );
+          await tester.pumpAndSettle();
+        }
+        expect(state.progress.log, hasLength(3));
+        expect(find.byType(DeckDetailPage), findsOneWidget);
+        expect(find.text(l10n.deckRelearn), findsOneWidget);
+        expect(find.text(l10n.deckLearn), findsNothing);
       },
     );
 
@@ -1362,6 +1417,72 @@ void main() {
       expect(request.skills, <Skill>{Skill.production});
       expect(request.revise, isTrue);
     });
+  });
+
+  group('a walkthrough view', () {
+    const gato = 'es-en-tagged-0001';
+    const key = (cardId: gato, mode: DrillMode.recognition);
+
+    test(
+      'is no answer: accuracy, learned, streak, lapses, study time and '
+      'the FSRS fit skip it, but a later answer still starts from it',
+      () async {
+        final state = taggedState();
+        addTearDown(state.dispose);
+        await state.load();
+        final card = state.deckById('es-en-tagged')!.cards.first;
+        final view = state.viewCard(card)!;
+        expect(view.isView, isTrue);
+        // A card seen already, or taught, is not recorded again.
+        expect(state.viewCard(card), isNull);
+
+        StatsNumbers numbers() => StatsNumbers.of(
+          state.progress,
+          now: state.now(),
+          range: StatsRange.all,
+          cardOf: cardLookupOf(state),
+        );
+        expect(numbers().reviews, 0);
+        expect(numbers().remembered, isNull);
+        expect(numbers().learned, 0);
+        expect(numbers().streak, 0);
+        expect(numbers().heatmapReviews, 0);
+        expect(state.progress.index.reviewsIn('es'), 0);
+
+        // Right, then missed: the miss is the pair's first lapse, whether or
+        // not the view is counted, and the view hurts no accuracy.
+        final item = SessionItem(
+          card: card,
+          mode: DrillMode.recognition,
+          state: null,
+        );
+        state.record(item, 4);
+        state.record(item, 1);
+        expect(state.progress.stateOf(gato, DrillMode.recognition)!.lapses, 1);
+        expect(state.progress.index.lapsesOf(key), 1);
+        expect(numbers().reviews, 2);
+        expect(numbers().remembered, 0.5);
+
+        // The time and the fit leave it out too.
+        final progress = MemoryProgress()
+          ..record(
+            deckId: 'es-en-tagged',
+            cardId: gato,
+            mode: DrillMode.recognition,
+            grade: 0,
+            now: DateTime(2026, 9, 1),
+            elapsed: const Duration(seconds: 30),
+            asked: Ask.teach,
+          );
+        expect(StudyHours.spent(progress.log), Duration.zero);
+        expect(StudyHours.missShare(progress.log), 0);
+        expect(
+          SkillFit.histories(progress.log.map(logged)),
+          isEmpty,
+          reason: 'a view is not a first answer to fit from',
+        );
+      },
+    );
   });
 
   group('searching decks', () {

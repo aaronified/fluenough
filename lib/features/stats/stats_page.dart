@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/unlocks.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
+import '../../core/models/review_event.dart';
 import '../../core/progress/practice_week.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -59,8 +60,10 @@ class StatsPage extends StatelessWidget {
         final languageOf = languageLookupOf(state);
         final language = state.progressLanguage;
         final none = language == null
-            ? state.progress.log.isEmpty
-            : !state.progress.log.any((e) => languageOf(e.deckId) == language);
+            ? state.progress.log.answered.isEmpty
+            : !state.progress.log.answered.any(
+                (e) => languageOf(e.deckId) == language,
+              );
         if (none) {
           return _Frame(
             child: EmptyState(

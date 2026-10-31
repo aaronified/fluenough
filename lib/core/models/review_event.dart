@@ -73,9 +73,22 @@ class ReviewEvent {
   /// Whether this review introduced a new pair.
   bool get wasNew => before == null;
 
+  /// Whether this row is a card's first view in a walkthrough (#694,
+  /// ADR-0024), not an answer: graded 0 so that FSRS schedules the card at
+  /// its lowest window, and skipped by every reader that counts answers
+  /// (accuracy, lapses, the FSRS fit, study time, streaks, mastery).
+  bool get isView => asked == Ask.teach;
+
   /// Whether this review counts as remembered: not Again.
   bool get passed => grade >= Fsrs.passingGrade;
 
   @override
   String toString() => 'ReviewEvent($deckId/$cardId ${mode.name}, $grade)';
+}
+
+/// Reading the log as what the learner answered.
+extension ReviewEventAnswers on Iterable<ReviewEvent> {
+  /// The reviews that are answers: those that are not a walkthrough's view of
+  /// a card ([ReviewEvent.isView]).
+  Iterable<ReviewEvent> get answered => where((event) => !event.isView);
 }

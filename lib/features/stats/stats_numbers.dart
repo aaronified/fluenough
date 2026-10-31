@@ -62,7 +62,7 @@ List<LanguageInfo> practisedLanguages(
   required LanguageLookup languageOf,
 }) {
   final latest = <String, DateTime>{};
-  for (final e in progress.log) {
+  for (final e in progress.log.answered) {
     final code = languageOf(e.deckId);
     if (code == null) continue;
     final at = latest[code];
@@ -144,12 +144,11 @@ class StatsNumbers {
     int tagCount = 3,
     List<double> Function(ReviewEvent review)? parametersOf,
   }) {
-    final log = deckFilter == null
-        ? progress.log
-        : <ReviewEvent>[
-            for (final e in progress.log)
-              if (deckFilter(e.deckId)) e,
-          ];
+    // Answers only: a walkthrough's view of a card is no review (#694).
+    final log = <ReviewEvent>[
+      for (final e in progress.log.answered)
+        if (deckFilter == null || deckFilter(e.deckId)) e,
+    ];
     // The script skills' reviews, derived from the script decks' answers
     // (#556): counted in their own rows, never in the totals above.
     final scriptLog = deckFilter == null

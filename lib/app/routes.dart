@@ -264,15 +264,22 @@ abstract final class AppNavigator {
   static Future<void> startDrill(BuildContext context, DrillRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.drill, arguments: request);
 
-  /// Relearn: walks through [deckId]'s cards, or with [tags] only those
-  /// carrying one of them, on the teach card. Records nothing.
+  /// The walkthrough (#694): [deckId]'s cards, or with [tags] only those
+  /// carrying one of them, one by one on the teach card. With [untaughtOnly]
+  /// (+ Learn) the cards not taught yet, each first view recorded as taught;
+  /// otherwise (Relearn) every card, recording none already taught.
   static Future<void> openWalkthrough(
     BuildContext context,
     String deckId, {
     Set<String> tags = const <String>{},
+    bool untaughtOnly = false,
   }) => Navigator.of(context).pushNamed(
     AppRoutes.walkthrough,
-    arguments: WalkthroughRequest(deckId: deckId, tags: tags),
+    arguments: WalkthroughRequest(
+      deckId: deckId,
+      tags: tags,
+      untaughtOnly: untaughtOnly,
+    ),
   );
 
   /// Replaces the summary with another session: the next language's, which

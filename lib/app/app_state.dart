@@ -2661,6 +2661,7 @@ class AppState extends ChangeNotifier {
     if (_timesRead == 0 && log.isNotEmpty) _timesFirst = log.first;
     for (var i = _timesRead; i < log.length; i++) {
       final e = log[i];
+      if (e.isView) continue;
       final time = StudyHours.capped(e.elapsed);
       final day = dateOnly(e.at);
       for (final key in <String?>{Abilities.languageOf(e.cardId), null}) {
@@ -2938,7 +2939,7 @@ class AppState extends ChangeNotifier {
         _abilitiesSkills != skills) {
       _abilities = Abilities.replay(
         <({String cardId, String deckId, DrillMode mode, int grade})>[
-          for (final e in log)
+          for (final e in log.answered)
             (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
         ],
         skills: skills,
@@ -3009,6 +3010,26 @@ class AppState extends ChangeNotifier {
   /// Whether [card] has been taught: some skill of it has been drilled.
   bool isTaught(Card card) =>
       DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
+
+  /// A walkthrough's first view of [card] (#694, ADR-0024): teaches it. Appends
+  /// one review-log row like any answer, `asked: Ask.teach`, graded 0 (the
+  /// lowest window: FSRS reads it as Again), nothing given, in the card's
+  /// first drillable mode, recognition where it has it. Returns the row, or
+  /// null and writes nothing when the card is taught already, so a repeat
+  /// view or a Relearn costs nothing, or cannot be taught yet: a sentence
+  /// that waits for its words and rules, or a card with no mode to drill.
+  /// Readers that count answers skip the row ([ReviewEvent.isView]).
+  ReviewEvent? viewCard(Card card) {
+    if (isTaught(card) || !unlocks.isOpen(card)) return null;
+    final modes = drillableModes(card);
+    final mode = DrillMode.drills.where(modes.contains).firstOrNull;
+    if (mode == null) return null;
+    return record(
+      SessionItem(card: card, mode: mode, state: null, ask: Ask.teach),
+      0,
+      asked: Ask.teach,
+    );
+  }
 
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth

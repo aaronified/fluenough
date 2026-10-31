@@ -33,7 +33,7 @@ CourseHours courseHours(AppState state, String language) => state.derived((
 ), () => _courseHours(state, language));
 
 List<ReviewEvent> _reviewsOf(AppState state, String language) => <ReviewEvent>[
-  for (final review in state.progress.log)
+  for (final review in state.progress.log.answered)
     if ((state.deckById(review.deckId)?.language.code ??
             review.cardId.split('-').first) ==
         language)

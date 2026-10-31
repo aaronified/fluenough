@@ -108,8 +108,10 @@ Mastery masteryAt(
     last['${e.mode.name}|${e.cardId}|${e.script ?? ''}'] = e;
   }
 
-  reviews.where((e) => !e.mode.isScript).forEach(take);
-  scriptReviews.where((e) => scriptCards.contains(e.cardId)).forEach(take);
+  reviews.answered.where((e) => !e.mode.isScript).forEach(take);
+  scriptReviews.answered
+      .where((e) => scriptCards.contains(e.cardId))
+      .forEach(take);
 
   final known = <MasterySkill, int>{};
   final taught = <MasterySkill, int>{};
@@ -153,7 +155,7 @@ WordCounts wordCounts(
   ParametersOf parametersOf = _defaults,
 }) {
   final last = <String, ReviewEvent>{};
-  for (final e in reviews) {
+  for (final e in reviews.answered) {
     final skill = masterySkillOf(e.mode);
     if (skill == null ||
         skill == MasterySkill.grammar ||
@@ -198,7 +200,7 @@ Milestone? levelReached(
 /// The day of the first answer in [reviews], or null with none.
 DateTime? startedOn(Iterable<ReviewEvent> reviews) {
   DateTime? first;
-  for (final e in reviews) {
+  for (final e in reviews.answered) {
     if (first == null || e.at.isBefore(first)) first = e.at;
   }
   return first == null ? null : calendarDay(first);

@@ -1,4 +1,5 @@
 import '../models/leech_action.dart';
+import 'ask.dart';
 import 'fsrs.dart';
 import 'fsrs_fit.dart';
 import 'replay.dart';
@@ -99,6 +100,8 @@ abstract final class SkillFit {
     final bySkill = <SkillKey, Map<Object, List<FitReview>>>{};
     final counts = <SkillKey, int>{};
     for (final review in reviews) {
+      // A walkthrough's view of a card is no answer to fit (#694).
+      if (review.asked == Ask.teach) continue;
       final skill = skillOf(review.key);
       counts[skill] = (counts[skill] ?? 0) + 1;
       final resetAt = effects.resetAt(review.key);

@@ -318,15 +318,17 @@ class _Answer extends StatelessWidget {
       alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(context),
     );
     final activity = Skill.of(event.mode).label(l10n);
-    final rating = switch (Fsrs.ratingOf(
-      event.grade,
-      rated: event.answerGiven == null,
-    )) {
-      Rating.again => l10n.rateAgain,
-      Rating.hard => l10n.rateHard,
-      Rating.good => l10n.rateGood,
-      Rating.easy => l10n.rateEasy,
-    };
+    final rating = event.isView
+        ? l10n.rateSeen
+        : switch (Fsrs.ratingOf(
+            event.grade,
+            rated: event.answerGiven == null,
+          )) {
+            Rating.again => l10n.rateAgain,
+            Rating.hard => l10n.rateHard,
+            Rating.good => l10n.rateGood,
+            Rating.easy => l10n.rateEasy,
+          };
     const outer = Radius.circular(AppRadii.card);
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 2),

@@ -9,7 +9,9 @@ Source of truth: this wiki page.
   asked, and what a right choice records. Amended by
   [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items): a lesson has no
   fixed quota of each difficulty, and a sentence waits for its words and
-  rules.
+  rules. Amended 2026-10-31 (#694): a deck page learns by a card-by-card
+  walkthrough that logs a view row; Today's lesson is unchanged (see
+  "Amendment, 2026-10-31" at the end).
 - **Date:** 2026-10-04
 
 ## Context
@@ -107,5 +109,54 @@ speaking. Phrases were never produced (ADR-0010).
 - **Passages as a hard item in the word lesson:** the owner chose a reading
   lesson of its own.
 - **One lesson a day in all:** the owner chose one for each language.
+
+## Amendment, 2026-10-31: a deck page learns by walkthrough (#694)
+
+### Context
+
+The deck page's + Learn started a drilled lesson of the deck's words (this
+ADR's Decision). The owner asked for a guided, repeatable card-by-card
+walkthrough instead (#694), and decided on 2026-10-31:
+
+> A: Walkthrough replaces + Learn
+
+> Oh, then start fsrs anyway, with the lowest window.
+
+> Consistency is key. If all fsrs is via logs, this must also be via logs.
+
+> We anyway only teach recognition when we first test.
+
+> Yes, skip them.
+
+### Decision
+
+- **The deck page learns by walkthrough.** + Learn, and Relearn once every
+  card is taught, open the same card-by-card walkthrough on the teach card:
+  + Learn over the cards in view not taught yet, Relearn over every card in
+  view. It replaces the drilled lesson on the deck page. The unit page is
+  not changed by this amendment.
+- **The first view teaches.** The first view of a card not taught yet appends
+  one review-log row through the usual write path: `asked: teach`, grade 0 (the
+  lowest window: `Fsrs.ratingOf` maps it to Again), no answer given, in the
+  card's first drillable mode, which is recognition where it has it, and no
+  other skill. FSRS schedules the pair from that row. A repeat view, a view
+  of a card taught already and every Relearn view write nothing, and a card
+  that cannot be taught yet (a sentence waiting for its words and rules) is
+  shown and not recorded.
+- **A view is not an answer.** Every reader that counts answers skips rows
+  with `asked == teach`: accuracy and remembered shares, lapses and leeches
+  (a first Again starts no lapse; the next miss after a right answer is the
+  pair's first), the FSRS fit, abilities, study hours and answer times,
+  streaks, the heatmap, mastery and what counts as known. Your data lists the
+  row as "Seen". No schema change: `asked` is already a column of the log.
+- **Today's lesson is unchanged.** It still teaches each word on the teach
+  card and then asks it at once, and records only the asks.
+
+### Consequences
+
+- A learner who walks through a deck has every viewed card out of New, due
+  again after the lowest window, and no answer on record.
+- The log holds rows that are not answers, so a reader of the log must skip
+  them (`ReviewEvent.isView`).
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
