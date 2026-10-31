@@ -8,67 +8,46 @@ Phone 360 by 860 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` o
 
 ## What the shell is
 
-Today's `DrillFrame` (scrolling body over a fixed foot) with the teach card and sets moved into it, in six slots: 1 header (unchanged), 2 context row (skill pill and deck name; "New word" on a teach card), 3 card (one `DrillCard`), 4 answer area (choices, tiles, field, microphone; empty for teach and set), 5 feedback area (the banner; empty on teach, set and in an exam), 6 action area (one place, 56 dp buttons: grades while something is left to grade, goes on when nothing is, except on a teach card and a set, where it is empty; Back and Next in an exam).
+Today's `DrillFrame` (scrolling body over a fixed foot) with the teach card and sets moved into it, in six slots: 1 header (unchanged), 2 context row (skill pill and deck name; on a teach card the pill is "New word" in the skill's colour), 3 card (one `DrillCard`), 4 answer area (choices, tiles, field, microphone; empty for teach and set), 5 feedback area (the banner; empty on teach, set and in an exam), 6 action area (one place, 56 dp buttons: grades while something is left to grade, goes on when nothing is, except on a teach card and a set, where it is empty; Back and Next in an exam; the review step follows the last item).
 
-Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until the result; free navigation with a review-answers step; mock the shell first.
+Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until the result; free navigation, with the review-answers step as the last item before Submit, reached by going on (swipe); the teach pill takes the skill's colour; an answered choice shows only the right answer; Say recordings can be replayed; mock the shell first.
 
-## Doubts (not decided; the plan's proposal is drawn)
+## Doubts
 
-1. **How does the learner go on?** Teach and sets are decided; questions are open.
-   - Teach (answered, owner, 2026-10-31: "Continue is not needed when swipe and the chevron click is there. Right? It also frees up the screenspace"): no Continue button on a teach card (new word, Relearn, rule card). Going on is the swipe and the chevrons only, as the owner decided on #691 on 2026-10-22; the action area is empty and the foot's space goes to the card.
-   - Sets (answered, owner, 2026-10-31: "The shell is fine. But why do we still have continue on sets? Swipe is going to be universal, across all deck viewing."): no Continue button on a set (set drill, set card), the same as teach. Going on is the swipe and the chevrons only (both ways, as on a teach card); the foot's space goes to the set's card. Today's set (Continue only) is kept in the comparison section.
-   - Questions (answered, owner, 2026-10-31: "Swipe-only everywhere"): after an answer is checked, going on is the swipe or the end-edge chevron only; there is no Continue button anywhere (teach, sets, questions). Check and Don't know (typed, tiles, say), Show answer and the four ratings (recall) and Count right or wrong remain where an answer must be submitted or graded; only the going-on button goes. After the answer the action area is empty (Say keeps Try again) and the feedback banner stays above the chevron. The tweak control "Going on" is removed. Earlier options, for the record: button and swipe (downside: two going-on gestures), button only (downside: questions differ from the rest of deck viewing), swipe only (chosen; its downsides are the new doubt 15).
+Open (not decided; the plan's proposal is drawn where a control can show it):
 
-2. **Are "grading area" and "going on" one area or two?** Answered (owner, 2026-10-31): one action area that changes content, as drawn. Drawn: one action area that changes content (Check, Show answer, ratings, Count right or wrong, then Continue), so the thumb target never moves.
-   - One area (drawn). Downside: the grading buttons and a going-on control cannot show together (moot now: going on is the swipe).
-   - Two stacked areas (grade above, going on below, always present; no going-on button remains, so this is moot). Downside: a taller foot, which at 1.4x leaves a short body.
-3. **Where do "Don't know" and "Can't listen or speak now" live?** Drawn as today: Don't know beside Check, Can't now as a link above. 
-   - Keep in the action area (drawn). Downside: more buttons in the one place.
-   - Move to an overflow menu in the header. Downside: hides a way out that the learner may need under time pressure.
-4. **Does a teach card keep its neutral "New word" pill?** Drawn: yes, as today.
-   - Neutral (drawn). Downside: the teach card does not show which skill it leads into.
-   - The skill's colour. Downside: the pill then means two things (new, and skill).
-5. **Exam header progress.** Drawn: the wave and the count show the position (4/35), as practice does. #509 lists the progress indicator as still to ask.
-   - Position (drawn). Downside: with free navigation it says nothing about how much is answered.
-   - Answered count. Downside: the number moves without the learner moving.
-   - Both (wave answered, count position). Downside: two numbers in a 64 dp header.
-6. **Exam: when is a tile or typed answer committed?** Drawn: there is no Check; the answer is whatever is on the answer line when the learner leaves the item, and the item shows as answered once it is full.
-   - Kept as placed (drawn). Downside: a half-built answer is unclear (drawn: counts as unanswered, then wrong).
-   - A Check button that commits. Downside: it is feedback-shaped, and learners may expect a verdict.
-7. **Exam: how is a chosen answer drawn?** Drawn: a filled radio and a primary outline, not the green of Correct, so it cannot read as a verdict.
-   - Outline and radio (drawn). Downside: less visible than a filled tile.
-   - Filled tonal tile. Downside: close to the right-answer colour in some seeds.
-8. **Exam: Say.** Drawn: a recorded tick and "Tap to record again", no heard text, no verdict.
-   - Re-record allowed (drawn). Downside: unlimited tries before submitting.
-   - One take. Downside: a mic glitch costs the item.
-9. **Exam: how the review step is reached.** Drawn: the last Next becomes Review answers; the step lists items by skill with Answered or Not answered, and Submit exam. Items can be tapped.
-   - Last Next only (drawn). Downside: a learner who wants an overview mid-exam must walk to the end.
-   - Also a tap on the header count. Downside: a hidden control.
-   - Flags to come back to an item. Downside: more to build; no flag has been decided.
-10. **Exam: what an unanswered item counts as.** Answered (owner, 2026-10-31): Submit is blocked until every item is answered. The review step lists the unanswered items, disables Submit until all are answered, and a tap on an item jumps to it. This replaces the earlier drawn default (unanswered counts as wrong).
-    - Block Submit until all are answered (answered, drawn). Downside: forces a guess; where a device lacks a microphone, speaking and listening items must never gate (the plan), so they need a way to be skipped or replaced.
-    - Wrong (the earlier default, not chosen). Downside: harsh.
-11. **Exam: leaving.** Answered (owner, 2026-10-31): Close mid-exam saves the position and the answers, and the learner can resume the same day. Drawn: the leave confirmation ("Save and leave", "Keep going") and the resume entry ("Paused at item 4 of 35", Resume exam). Not decided: what happens after the day ends, and whether a learner can start over.
-12. **Typed answers (romanised) in the shell.** Drawn with the keyboard open: the card and foot go compact as today. The plan retires script typing, so only the romanised field is shown.
-13. **Height at 1.4x.** An answered choice with its feedback leaves the body short, so the options scroll behind the foot (as today). Options: leave; hide the taught details under the prompt until the learner opens them (downside: the lesson-after-the-answer is the review's teaching moment).
-14. **Does "cannot change any answer" also apply to the exam?** Answered (owner, 2026-10-31): exam answers are editable until submit; practice stays read-only on going back. Earlier owner remark, 2026-10-31: in practice, going back (swipe or the back chevron, on teach and on questions) is allowed, but an answer already given can never be changed. Drawn: practice is read-only on return (answered state, no input, no re-grading, a neutral "Already answered" banner with a lock, not the error colour), and the exam stays as the owner decided earlier (free navigation and a review step, so answers can be changed until Submit).
-    - Exam editable until submit (answered, drawn): matches the earlier decision and the review step's tap to go back to an item. Downside: the two modes differ on return, so the learner must be told which one they are in.
-    - Exam read-only too: one rule everywhere. Downside: the review step can only look, not fix, so a forgotten item cannot be answered later.
+A. **What happens to a saved exam after the day ends?** Owner (doubt 11, 2026-10-31): a paused exam is saved and can be resumed the same day. Drawn: "carry on any time before midnight". Not decided: whether it is then lost, expires with its recording, or can be resumed later.
+B. **Can a learner start over?** Not decided: restart an exam from item 1 (clearing the answers and the recordings), or never, or only after submitting.
+C. **The no-microphone rule.** Drawn: on a device without a microphone or permission, the Say item shows "Recording is not available here" with a disabled microphone, never gates Submit, and counts as skipped. Not decided: whether it is skipped, replaced by a typed item, or dropped from the exam's count (the plan: speaking and listening items must never gate a device that lacks the hardware).
 
-15. **Discoverability and accidental skips with swipe-only going on.** Open (follows from doubt 1, answered). Drawn: the end-edge chevron is visible on every answered question and set, and the feedback banner stays in the foot until the learner swipes. Nothing else is drawn.
-    - Chevron only (drawn). Downside: a learner who does not know the swipe must notice a 40 dp chevron; nothing says it is time to go on.
-    - Plus a first-time hint ("Swipe or tap the arrow to go on", shown once, then never). Downside: more to build and to translate, and a hint the learner may dismiss unread.
-    - Plus a pulse on the chevron for a few seconds after checking. Downside: motion, which the reduced-motion setting must switch off.
-    - Feedback must stay readable until swiped (drawn: the banner never times out). Downside: none for the learner, but a swipe can still skip it unread; the alternative, a short lock of the swipe after a wrong answer, makes the app feel stuck.
-    - Undo a swipe (a swipe back returns to the read-only answered screen, drawn, doubt 14). Downside: a skipped banner can be read again only by going back.
+Answered (owner, 2026-10-31, #509; "drawn" means the owner confirmed the drawn default). The wording below is as relayed to this session; check it against the issue comment before the mockup is approved.
+
+1. **How the learner goes on.** Answered: no Continue button on teach, sets or questions. Teach: "Continue is not needed when swipe and the chevron click is there. Right? It also frees up the screenspace". Sets: "Swipe is going to be universal, across all deck viewing." Questions: "Swipe-only everywhere". Check, Don't know, Show answer, the four ratings and Count right or wrong remain where an answer must be submitted or graded.
+2. **Grading area and going on.** Answered: one action area that changes content, as drawn.
+3. **Where "Don't know" and "Can't listen or speak now" live.** ANSWERED, confirmed as drawn (owner, 2026-10-31): Don't know beside Check, Can't now as a link above, in the action area.
+4. **The teach pill.** ANSWERED (owner, 2026-10-31): the teach pill takes the skill's colour; the neutral "New word" pill is replaced. Drawn: a new word is the Recognition colour ("New word · Recognition"), a rule card is Grammar ("Rule · Grammar"), a set is Recognition ("New words · Recognition"). The same per-skill colours as the question pills (the Today pills' colours), contrast-checked in light and dark below. Accepted downside: the colour carries the skill, the words carry "new".
+5. **Exam header progress.** ANSWERED, confirmed as drawn (owner, 2026-10-31): the wave and the count show the position (4/35).
+6. **When a tile or typed answer is committed in an exam.** ANSWERED, confirmed as drawn: there is no Check; the answer is what is on the answer line when the learner leaves the item.
+7. **How a chosen answer is drawn in an exam.** ANSWERED, confirmed as drawn: a filled radio and a primary outline, not the green of Correct.
+8. **Exam Say.** ANSWERED, confirmed as drawn: re-recording allowed, no heard text, no verdict. Extended below (Say recordings).
+9. **How the review step is reached.** ANSWERED (owner, 2026-10-31): in the exam the review-answers step is the last item before Submit, reached by going on (swipe) from item 35, and swiping back reaches the earlier answers. No other entry is drawn: the last Next is a plain Next (no "Review answers" button), the header count is not tappable, there are no flags, and the review rows are not tappable (an unanswered item is reached by swiping back). This replaces the drawn tap to jump to an item.
+10. **Unanswered at submit.** Answered: "Block submit until all answered". The review step lists the unanswered items and Submit stays disabled until all are answered.
+11. **Leaving an exam.** Answered: close mid-exam saves the position and the answers, and the learner can resume the same day. The part after the day ends is open (A), and starting over (B).
+12. **Typed answers (romanised).** ANSWERED, confirmed as drawn (owner, 2026-10-31): with the keyboard open the card and foot go compact; only the romanised field is shown (script typing is retired).
+13. **Height at 1.4x and the answered choice.** ANSWERED (owner, 2026-10-31): the answered choice screen shows only the right answer and whether the learner was right; the other options are not shown. Drawn on Choice, Word tiles (only the right order, the banner says right or wrong) and Hear; a wrong answer shows the right option in green with the Not quite banner, not the wrong pick. This also shortens the 1.4x screen: the options no longer scroll behind the foot.
+14. **Does "cannot change any answer" apply to the exam?** Answered: exam answers are editable until submit; practice is read-only on going back ("users should be able to backswipe as well, just cannot change any answer").
+15. **Discoverability with swipe-only going on.** ANSWERED, confirmed as drawn (owner, 2026-10-31): the end-edge chevron is visible on every answered question and set, and the feedback banner stays until the learner swipes. No hint and no pulse.
+16. **Say recordings: replay.** Answered (owner, 2026-10-31): on an answered Say item (in the exam, on swipe-back, and on the review step) the learner can check their own recording. Drawn: "The word" (the model Play) next to "Your recording" (a filled Play, with the take's length; it becomes a Pause with a progress bar while playing) and "Record again". States drawn: recording exists, playing, no recording yet, and recording unavailable (no microphone or permission: no gate). On the review step each recorded Say row has "Your recording"; an unrecorded one says "Not recorded". It is a replay, not a verdict. The recording stays on the device and is dropped when the exam is submitted or abandoned.
+17. **How long a take is kept.** ANSWERED (owner, 2026-10-31): "Keep until submit; practice also keeps it". The take is kept until the exam is submitted, which includes a paused exam that is resumed the same day; it is dropped at submit, and when the exam is abandoned.
+18. **Does practice Say keep the last take for replay?** ANSWERED (owner, 2026-10-31): "Keep until submit; practice also keeps it". Practice Say is drawn with the same "Your recording" control beside the model Play, after the answer is checked.
 
 ## Going back: practice and exam
 
-Practice: swipe back or the back chevron is available on teach (new word, Relearn, rule card), on a set and on a question once it is answered. A set gone back to is read-only in practice too: it only shows its rows again (nothing on it is graded or changed), so there is no locked banner. A teach card shows as it was. A question gone back to is read-only: answered state kept, controls locked, no re-grading, and a neutral "Already answered" banner (lock icon, surface colour, not the green or red of a verdict). Exam: free navigation with the review step; answers can be changed until Submit (doubt 14, answered: it stays editable).
+Practice: swipe back or the back chevron is available on teach (new word, Relearn, rule card), on a set and on a question once it is answered. A set gone back to is read-only in practice too: it only shows its rows again (nothing on it is graded or changed), so there is no locked banner. A teach card shows as it was. A question gone back to is read-only: answered state kept, controls locked, no re-grading, and a neutral "Already answered" banner (lock icon, surface colour, not the green or red of a verdict). Exam: free navigation; going on from the last item reaches the review step, the last item before Submit, and swiping back reaches the earlier answers; answers can be changed until Submit (doubt 14).
 
 ## Self-check results
 
-WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All 68 pairs pass (the Already answered banner uses onS on sHigh, already in the list as "text on the card", and so does its lock icon).
+WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All 68 pairs pass (re-run 2026-10-31 on the revised file; the new teach, rule and set pills use the five skill-pill pairs below, so no new pair is needed) (the Already answered banner uses onS on sHigh, already in the list as "text on the card", and so does its lock icon).
 
 | Theme | Pair | Colours | Ratio | Needs | Result |
 |---|---|---|---|---|---|
@@ -80,7 +59,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | captions on an inner box | onSv on sLow | 8.45 :1 | 4.5 :1 | pass |
 | light | filled button | onP on p | 6.46 :1 | 4.5 :1 | pass |
 | light | outlined button and link text | p on s | 6.16 :1 | 4.5 :1 | pass |
-| light | New word pill, speaker, tonal | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
+| light | speaker, tonal | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
 | light | Correct banner and right choice | onPc on pc | 13.31 :1 | 4.5 :1 | pass |
 | light | Not quite banner and wrong choice | onEc on ec | 13.26 :1 | 4.5 :1 | pass |
 | light | Almost banner | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
@@ -114,7 +93,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | captions on an inner box | onSv on sLow | 10.08 :1 | 4.5 :1 | pass |
 | dark | filled button | onP on p | 7.68 :1 | 4.5 :1 | pass |
 | dark | outlined button and link text | p on s | 10.86 :1 | 4.5 :1 | pass |
-| dark | New word pill, speaker, tonal | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
+| dark | speaker, tonal | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
 | dark | Correct banner and right choice | onPc on pc | 7.21 :1 | 4.5 :1 | pass |
 | dark | Not quite banner and wrong choice | onEc on ec | 7.24 :1 | 4.5 :1 | pass |
 | dark | Almost banner | onSc on sc | 7.25 :1 | 4.5 :1 | pass |
@@ -146,7 +125,7 @@ Other checks: tap targets are 48 dp (header icons, Back, Next) and 56 dp (action
 ## Behaviour checks (Chromium, Playwright 1.56)
 
 - Loaded at 1280 px and 390 px wide: no page errors, no console errors, no horizontal page scroll.
-- Every tweak control pressed in both courses and both themes, Content short and long, every practice screen type and every exam item type: no element wider than its phone, no clipped text, no errors.
+- Re-run 2026-10-31 on the final file: 448 combinations (both themes, both courses, Content short and long, every practice screen type crossed with every exam item type, at 390 and 1280 px), 0 console or page errors, 0 overflow or clipping, 68 of 68 contrast pairs pass. Every tweak control pressed in both courses and both themes, Content short and long, every practice screen type and every exam item type: no element wider than its phone, no clipped text, no errors.
 - Screenshots of the page in light and dark were looked at.
 - Fonts: Roboto, Noto Sans Devanagari and Noto Sans Bengali from Google Fonts; where offline the system fallback is used.
 

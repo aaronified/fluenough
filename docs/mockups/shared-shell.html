@@ -112,6 +112,14 @@ svg.i.s18{width:18px;height:18px}svg.i.s22{width:22px;height:22px}svg.i.s28{widt
 .field .v{font-size:calc(16px*var(--t));line-height:1.3}
 .mic{width:96px;height:96px;border-radius:48px;background:var(--p);color:var(--onP);border:0;display:flex;align-items:center;justify-content:center;margin:0 auto}
 .mic.done{background:var(--sc);color:var(--onSc)}
+.cmp{display:flex;gap:10px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.cb{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1 1 88px;max-width:112px;text-align:center}
+.cb .cl{font-size:calc(13px*var(--t));line-height:1.2;color:var(--onS);font-weight:600}
+.cb small{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.2}
+.spk.m.mine{background:var(--p);color:var(--onP)}
+.mic.sm{width:48px;height:48px;border-radius:24px}
+.mic.off{background:color-mix(in srgb,var(--onS) 12%,transparent);color:color-mix(in srgb,var(--onS) 38%,transparent)}
+.pbar{width:64px;height:4px;border-radius:2px;background:var(--olv);overflow:hidden}.pbar i{display:block;height:100%;background:var(--p)}
 .hint{font-size:calc(14px*var(--t));color:var(--onSv);text-align:center;line-height:1.3;margin:0}
 .srow{display:flex;align-items:center;gap:10px;background:var(--sLow);border-radius:16px;padding:10px 12px;text-align:start;width:100%}
 .srow .tx{flex:1;min-width:0}
@@ -211,6 +219,7 @@ const P={
  play:'M8 5v14l11-7z',
  rec:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z',
  read:'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z',write:'M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z',hear:'M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.78l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z',say:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',grammar:'M2.5 4v3h5v12h3V7h5V4h-13zm19 5h-9v3h3v7h3v-7h3V9z'};
+P.pause='M6 19h4V5H6v14zm8-14v14h4V5h-4z';
 const svg=(k,c='')=>`<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[k]}"/></svg>`;
 
 /* ===== Hindustani and Bengali examples (readings follow the course: no final a in Bengali) ===== */
@@ -241,8 +250,8 @@ const long=()=>S.len==='long';
 function wave(f){const w=[];for(let x=0;x<=200;x+=2)w.push((x?'L':'M')+x+' '+(8+3.2*Math.sin(x/6.4)).toFixed(2));const path=w.join(' ');const cid='c'+Math.random().toString(36).slice(2,7);
  return `<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="${path}" fill="none" stroke="var(--olv)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/><clipPath id="${cid}"><rect x="0" y="0" width="${(200*f).toFixed(1)}" height="16"/></clipPath><path d="${path}" fill="none" stroke="var(--p)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke" clip-path="url(#${cid})"/></svg>`}
 const hdr=(pos,tot,prog,txt)=>`<div class="hdr" data-slot="1"><button class="ib" aria-label="End session">${svg('close')}</button><div class="wave">${wave(prog)}</div><span class="cnt">${txt||pos+'/'+tot}</span><button class="ib" aria-label="Report a problem">${svg('bug')}</button></div>`;
-function pill(sk){const ink=INK[S.theme==='light'?'dark':'light'][sk],fg=INK[S.theme==='light'?'light':'dark'][sk];return `<span class="pill" style="background:${ink};color:${fg}">${svg(sk,'s18')}<span>${SKN[sk]}</span></span>`}
-const ctx=(sk,deck)=>`<div class="ctx" data-slot="2">${sk==='new'?`<span class="pill nw">New word</span>`:sk==='set'?`<span class="pill nw">New words</span>`:pill(sk)}<span class="deck">${deck||d().deck}</span></div>`;
+function pill(sk,lab){const ink=INK[S.theme==='light'?'dark':'light'][sk],fg=INK[S.theme==='light'?'light':'dark'][sk];return `<span class="pill" style="background:${ink};color:${fg}">${svg(sk,'s18')}<span>${lab?lab+' · ':''}${SKN[sk]}</span></span>`}
+const ctx=(sk,deck)=>`<div class="ctx" data-slot="2">${sk==='new'?pill('read','New word'):sk==='newrule'?pill('grammar','Rule'):sk==='set'?pill('read','New words'):pill(sk)}<span class="deck">${deck||d().deck}</span></div>`;
 const card=(kids,cls='')=>`<div class="dc ${cls}" data-slot="3">${kids}</div>`;
 const spk=(c='')=>`<button class="spk ${c}" aria-label="Play">${svg('vol','s28')}</button>`;
 const script=t=>`<span class="script">${t}</span>`;
@@ -263,7 +272,7 @@ const checkRow=(dis)=>`<div class="r2"><button class="b out">Don’t know</butto
 const checkOnly=(dis)=>`<button class="b ${dis?'dis':'fill'}">Check</button>`;
 const rating=()=>`<p class="ratep">How well did you know it?</p><div class="rate"><button class="again">Again<small>1 d</small></button><button>Hard<small>2 d</small></button><button>Good<small>5 d</small></button><button class="easy">Easy<small>9 d</small></button></div>`;
 const judge=()=>`<div class="r2"><button class="b out">Count as wrong</button><button class="b fill">Count as right</button></div>`;
-const navRow=(first,last)=>`<div class="r2"><button class="b out ${first?'dis':''}" style="${first?'border:0':''}">${svg('back','s22')} Back</button><button class="b fill">${last?'Review answers':'Next'} ${svg('fwd','s22')}</button></div>`;
+const navRow=(first,last)=>`<div class="r2"><button class="b out ${first?'dis':''}" style="${first?'border:0':''}">${svg('back','s22')} Back</button><button class="b fill">Next ${svg('fwd','s22')}</button></div>`;
 const FB={
  ok:(t,dd)=>`<div class="fb correct" role="status">${svg('okc')}<div><div class="tt">${t||'Correct'}</div>${dd?`<div class="dd">${dd}</div>`:''}</div></div>`,
  no:(dd)=>`<div class="fb wrong" role="status">${svg('hoff')}<div><div class="tt">Not quite</div><div class="dd">${dd}</div></div></div>`,
@@ -292,7 +301,7 @@ function choice(st,exam,kind,ro){ /* kind: 'rec' or 'hear' */
  const opts=`<div class="opts" data-slot="4">${D0.opts.map(([m,r])=>{
    let cls='',ic='';
    if(exam){ if(ans&&m==='water')cls='sel'; ic=`<span class="rad"></span>`; }
-   else if(ans){ if(r){cls='ok';ic=svg('okc')} else if(m===picked){cls='no';ic=svg('hoff')} else cls='dim'; }
+   else if(ans){ if(r){cls='ok';ic=svg('okc')} else return ''; } /* owner 2026-10-31: the answered screen shows only the right answer; the banner says whether the learner was right */
    const sub=D0.optw[m]?`<small class="script">${D0.optw[m]}</small>`:'';
    return `<div class="ct ${cls}">${exam?ic:''}<span class="tx">${m}${hear?'':''}</span>${exam?'':ic}</div>`}).join('')}</div>`;
  let fb='',act='';
@@ -305,13 +314,13 @@ function choice(st,exam,kind,ro){ /* kind: 'rec' or 'hear' */
 }
 function tiles(st,exam,ro){
  const D0=d();const ans=st!=='un';const bad=st==='no';
- const placed=bad?['I','water','want']:['I','want','water'];
+ const placed=['I','want','water']; /* answered: only the right order is shown (owner, 2026-10-31); the banner says whether the learner was right */
  const inA=ans||exam;
- const aLine=`<div class="aline" data-slot="4">${(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed)).map(t=>`<span class="tile in ${!exam&&ans?(bad?'no':'ok'):''}">${t}</span>`).join('')}</div>`;
+ const aLine=`<div class="aline" data-slot="4">${(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed)).map(t=>`<span class="tile in ${!exam&&ans?'ok':''}">${t}</span>`).join('')}</div>`;
  const all=[...D0.tiles,...D0.decoys].sort((a,b)=>({I:0,want:1,water:2,drink:3,milk:4,the:5}[a]-({I:0,want:1,water:2,drink:3,milk:4,the:5}[b]))).sort((a,b)=>a.length-b.length);
  const usedSet=new Set(st==='un'&&!exam?['I','want']:(exam&&st==='un'?[]:placed));
  const tray=ans&&!exam?'':`<div class="tray">${all.map(t=>`<span class="tile ${usedSet.has(t)?'ph0':''}">${t}</span>`).join('')}</div>`;
- const c=card(`<div class="lab">Put the words in order</div><div class="prompt sm script">${D0.sent}</div><div class="rd">${D0.sentr}</div>${ans&&!exam?`<div class="rule"></div><div class="mean" style="font-size:calc(20px*var(--t))">${D0.tiles.join(' ')}</div><div class="row">${spk('m')}</div>`:''}`);
+ const c=card(`<div class="lab">Put the words in order</div><div class="prompt sm script">${D0.sent}</div><div class="rd">${D0.sentr}</div>${ans&&!exam?`<div class="rule"></div><div class="row">${spk('m')}</div>`:''}`);
  let fb='',act='';
  if(exam)act=navRow(false,false);
  else if(!ans)act=checkOnly(false);
@@ -331,11 +340,14 @@ function typed(st){
  const cvr=(ans&&S.go!=='button')?chevR(true):'';
  return hdr(3,8,2/8)+bodyBox(ctx('write')+c+field,{compact,chev:cvr})+foot(fb,act,compact);
 }
-function say(st,exam){
- const D0=d();const ans=st!=='un';
+function say(st,exam,sub){ /* sub (exam only): 'rec' a recording exists, 'play' it is playing, 'nomic' no microphone */
+ const D0=d();const ans=st!=='un'&&sub!=='nomic';
  const c=card(`<div class="lab">Say it in ${D0.lang}</div><div class="prompt">${D0.mean}</div>${ans&&!exam?taught():''}`);
- const mic=exam?`<div data-slot="4"><button class="mic ${ans?'done':''}" aria-label="Record">${svg(ans?'okc':'mic','s28')}</button><p class="hint" style="margin-top:12px">${ans?'Recorded. Tap to record again.':'Tap and say it.'}</p></div>`
-  :ans?`<div data-slot="4"><p class="hint">Said it again to practise, as often as you like.</p></div>`:`<div data-slot="4"><button class="mic" aria-label="Record">${svg('mic','s28')}</button><p class="hint" style="margin-top:12px">Tap and say it.</p></div>`;
+ const cmp=()=>{const pl=sub==='play';return `<div class="cmp"><div class="cb"><button class="spk m" aria-label="Play the word">${svg('vol')}</button><span class="cl">The word</span></div><div class="cb"><button class="spk m mine chg" aria-label="${pl?'Pause':'Play'} your recording">${svg(pl?'pause':'play')}</button><span class="cl">Your recording</span>${pl?'<div class="pbar"><i style="width:55%"></i></div>':''}<small>${pl?'0:01 of 0:02':'0:02'}</small></div><div class="cb"><button class="mic sm" aria-label="Record again">${svg('mic','s22')}</button><span class="cl">Record again</span></div></div><p class="hint" style="margin-top:12px">${pl?'Playing your recording. Compare it with the word.':'Play your recording and compare it with the word. '+(exam?'Nothing is marked right or wrong.':'Record again as often as you like.')}</p>`};
+ const mic=exam?(sub==='nomic'?`<div data-slot="4"><button class="mic off" aria-label="Record" aria-disabled="true">${svg('mic','s28')}</button><p class="hint" style="margin-top:12px">Recording is not available here (no microphone, or no permission). You can still go on and submit.</p></div>`
+  :ans?`<div data-slot="4">${cmp()}</div>`
+  :`<div data-slot="4"><button class="mic" aria-label="Record">${svg('mic','s28')}</button><p class="hint" style="margin-top:12px">Tap and say it. No recording yet.</p></div>`)
+  :ans?`<div data-slot="4">${cmp()}</div>`:`<div data-slot="4"><button class="mic" aria-label="Record">${svg('mic','s28')}</button><p class="hint" style="margin-top:12px">Tap and say it.</p></div>`;
  let fb='',act='';
  if(exam)act=navRow(false,false);
  else if(!ans)act=`<button class="lnk">Can’t speak now</button><button class="b out">Don’t know</button>`;
@@ -373,9 +385,9 @@ function resumeExam(){
 }
 function review(){
  const items=[[1,'Recognition',1],[2,'Recognition',1],[3,'Recognition',1],[4,'Recognition',1],[5,'Recognition',0],[6,'Recognition',1],[7,'Recognition',1]];
- const sec=(name,rows)=>`<h4>${name}</h4>`+rows.map(([n,sk,a])=>`<button class="rvr ${a?'':'open'}"><span class="no">${n}</span>${svg(a?'ok':'warn','s18')}<span>${sk} item</span><span class="st">${a?'Answered':'Not answered'}</span>${a?'':svg('chr','s18')}</button>`).join('');
- const k=`${ctx('read','A1 milestone exam')}<h2 class="ttl" style="margin-top:4px">Review your answers</h2><p class="hint" style="text-align:start;margin:0">34 of 35 answered. Tap an item to go back to it; you can change any answer until you submit.</p><div class="rv" data-slot="3">${sec('Recognition, 7 items',items)}${sec('Hear, 7 items',[[8,'Hear',1],[9,'Hear',1],[10,'Hear',1]])}<div class="sub" style="color:var(--onSv);font-size:calc(14px*var(--t))">…</div></div>`;
- return hdr(35,35,1,'Review')+bodyBox(k,{fade:true})+foot('',`<p class="hint">Answer item 5 to submit. Submit unlocks when every item is answered.</p><div class="r2"><button class="b out">${svg('back','s22')} Back</button><button class="b dis" aria-disabled="true">Submit exam</button></div>`);
+ const sec=(name,rows)=>`<h4>${name}</h4>`+rows.map(([n,sk,a])=>`<div class="rvr ${a?'':'open'}"><span class="no">${n}</span>${svg(a?'ok':'warn','s18')}<span>${sk} item</span><span class="st">${a?'Answered':'Not answered'}</span></div>`).join('');
+ const k=`${ctx('read','A1 milestone exam')}<h2 class="ttl" style="margin-top:4px">Review your answers</h2><p class="hint" style="text-align:start;margin:0">34 of 35 answered. Swipe back to reach an item and change its answer until you submit. Your Say recordings can be played here.</p><div class="rv" data-slot="3">${sec('Recognition, 7 items',items)}${sec('Hear, 7 items',[[8,'Hear',1],[9,'Hear',1],[10,'Hear',1]])}<h4>Say, 3 items</h4>${[33,34].map(n=>`<div class="rvr"><span class="no">${n}</span>${svg('ok','s18')}<span>Say item</span><button class="lnk chg" style="min-height:48px;padding:0 4px;display:flex;align-items:center;gap:4px" aria-label="Play your recording of item ${n}">${svg('play','s18')} Your recording</button></div>`).join('')}<div class="rvr open"><span class="no">35</span>${svg('warn','s18')}<span>Say item</span><span class="st">Not recorded</span></div><div class="sub" style="color:var(--onSv);font-size:calc(14px*var(--t))">…</div></div>`;
+ return hdr(35,35,1,'Review')+bodyBox(k,{fade:true})+foot('',`<p class="hint">Swipe back to item 5 and answer it. Submit unlocks when every item is answered.</p><div class="r2"><button class="b out">${svg('back','s22')} Back</button><button class="b dis" aria-disabled="true">Submit exam</button></div>`);
 }
 
 /* ===== sections ===== */
@@ -391,12 +403,12 @@ function practiceScreens(t){
   case 'tiles':return [fr('Unanswered, two placed',phone(tiles('un',false))),fr('Right',phone(tiles('ok',false))),fr('Wrong',phone(tiles('no',false))),fr('Going back: read-only, answered, locked',phone(tiles('ok',false,true)))];
   case 'typed':return [fr('Unanswered, keyboard open: the shell is compact',phone(typed('un'),{kb:true})),fr('Right',phone(typed('ok'))),fr('Wrong',phone(typed('no')))];
   case 'hear':return [fr('Unanswered',phone(choice('un',false,'hear'))),fr('Right',phone(choice('ok',false,'hear'))),fr('Wrong',phone(choice('no',false,'hear'))),fr('Going back: read-only, answered, locked',phone(choice('ok',false,'hear',true)))];
-  case 'say':return [fr('Unanswered',phone(say('un',false))),fr('Right',phone(say('ok',false))),fr('Wrong, Try again only: going on is the swipe',phone(say('no',false)))];
+  case 'say':return [fr('Unanswered',phone(say('un',false))),fr('Right: the word, your recording, record again',phone(say('ok',false))),fr('Right, playing your recording',phone(say('ok',false,'play'))),fr('Wrong, Try again only: going on is the swipe',phone(say('no',false)))];
   case 'set':return [fr('A set: no foot, swipe and chevrons as teach; the card takes the space',phone(setc()))];
  }
 }
 function teachRule(){
- const k=`${ctx('new','Verb forms')}${card(`<div class="lab">Rule</div><div class="mean" style="font-size:calc(24px*var(--t))">${S.course==='hi'?'Adjectives that end in -ā':'Adding -e to a noun'}</div><div class="sub" style="font-size:calc(16px*var(--t));color:var(--onS)">${S.course==='hi'?'They change with the noun: a good boy, good boys, a good girl.':'The ending -e shows “in” or “at”: জল (jal), জলে (jale), in the water.'}</div><table class="ftab">${S.course==='hi'?`<tr><td class="l">m. sg.</td><td class="script">अच्छा</td><td class="l">acchā</td></tr><tr><td class="l">m. pl.</td><td class="script">अच्छे</td><td class="l">acche</td></tr><tr><td class="l">f.</td><td class="script">अच्छी</td><td class="l">acchī</td></tr>`:`<tr><td class="l">base</td><td class="script">জল</td><td class="l">jal</td></tr><tr><td class="l">in</td><td class="script">জলে</td><td class="l">jale</td></tr><tr><td class="l">home</td><td class="script">ঘরে</td><td class="l">ghare</td></tr>`}</table>`)}`;
+ const k=`${ctx('newrule','Verb forms')}${card(`<div class="lab">Rule</div><div class="mean" style="font-size:calc(24px*var(--t))">${S.course==='hi'?'Adjectives that end in -ā':'Adding -e to a noun'}</div><div class="sub" style="font-size:calc(16px*var(--t));color:var(--onS)">${S.course==='hi'?'They change with the noun: a good boy, good boys, a good girl.':'The ending -e shows “in” or “at”: জল (jal), জলে (jale), in the water.'}</div><table class="ftab">${S.course==='hi'?`<tr><td class="l">m. sg.</td><td class="script">अच्छा</td><td class="l">acchā</td></tr><tr><td class="l">m. pl.</td><td class="script">अच्छे</td><td class="l">acche</td></tr><tr><td class="l">f.</td><td class="script">अच्छी</td><td class="l">acchī</td></tr>`:`<tr><td class="l">base</td><td class="script">জল</td><td class="l">jal</td></tr><tr><td class="l">in</td><td class="script">জলে</td><td class="l">jale</td></tr><tr><td class="l">home</td><td class="script">ঘরে</td><td class="l">ghare</td></tr>`}</table>`)}`;
  return hdr(5,12,4/12)+bodyBox(k,{chev:chevR(false)+chevL()});
 }
 function todayScreens(){
@@ -412,15 +424,15 @@ const setToday=()=>withGo('button',()=>setc({today:true}));
 
 function leaveFrames(){return [fr('Close mid-exam: Save and leave',phone(leaveExam())),fr('Coming back the same day: Resume',phone(resumeExam()))]}
 function examScreens(t){
- if(t==='tiles')return [fr('Item, nothing placed',phone(tiles('un',true))),fr('Item, answered: nothing is marked right or wrong',phone(tiles('ok',true))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
- if(t==='hear')return [fr('Item, unanswered',phone(choice('un',true,'hear'))),fr('Item, answered, can be changed',phone(choice('ok',true,'hear'))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
- if(t==='say')return [fr('Item, unanswered',phone(say('un',true))),fr('Item, recorded: no heard text, no verdict',phone(say('ok',true))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
- return [fr('Item, unanswered',phone(choice('un',true,'rec'))),fr('Item, answered, can be changed',phone(choice('ok',true,'rec'))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
+ if(t==='tiles')return [fr('Item, nothing placed',phone(tiles('un',true))),fr('Item, answered: nothing is marked right or wrong',phone(tiles('ok',true))),fr('Review answers: the last item before Submit, reached by going on from item 35',phone(review()))].concat(leaveFrames());
+ if(t==='hear')return [fr('Item, unanswered',phone(choice('un',true,'hear'))),fr('Item, answered, can be changed',phone(choice('ok',true,'hear'))),fr('Review answers: the last item before Submit, reached by going on from item 35',phone(review()))].concat(leaveFrames());
+ if(t==='say')return [fr('Item, no recording yet',phone(say('un',true))),fr('Item, recorded (also on swipe-back): the word, your recording, record again',phone(say('ok',true,'rec'))),fr('Item, playing your recording',phone(say('ok',true,'play'))),fr('Item, recording unavailable: no microphone or permission, never a gate',phone(say('un',true,'nomic'))),fr('Review answers: the last item before Submit, reached by going on from item 35',phone(review()))].concat(leaveFrames());
+ return [fr('Item, unanswered',phone(choice('un',true,'rec'))),fr('Item, answered, can be changed',phone(choice('ok',true,'rec'))),fr('Review answers: the last item before Submit, reached by going on from item 35',phone(review()))].concat(leaveFrames());
 }
 
 const SLOTS=[
  ['1','Header','Close, the wave, the count. Today’s DrillHeader, unchanged. The one thing every screen already shares.'],
- ['2','Context row','Skill pill and deck name (the teach card’s “New word” pill and a set’s pill take the same place). In an exam: the skill and the milestone.'],
+ ['2','Context row','Skill pill and deck name (the teach card’s and a set’s pill take the same place, in the colour of the skill they lead into). In an exam: the skill and the milestone.'],
  ['3','Card','One DrillCard, 40 dp corners. The teach card’s content, a question’s prompt or a set’s rows. Once answered, a question shows the teach card’s own content under its prompt.'],
  ['4','Answer area','Choices, word tiles, the field, the microphone. Empty for teach and set.'],
  ['5','Feedback area','The banner: Correct, Not quite, Almost. Empty on teach and set (nothing is recorded) and in an exam until the result.'],
@@ -436,7 +448,7 @@ function anatomy(){
  <tr><td>Say</td><td>the meaning</td><td>microphone</td><td>what was heard</td><td>Don’t know; then Try again (swipe and chevrons to go on)</td></tr>
  <tr><td>Question, gone back to (practice)</td><td>as the question, answered</td><td>as answered, locked</td><td>Already answered (neutral)</td><td>none; back and forward chevrons and swipes; nothing can be changed or graded again</td></tr>
  <tr><td>Recall (review)</td><td>the word</td><td>none</td><td>none</td><td>Show answer; then the four ratings</td></tr>
- <tr><td>Exam item</td><td>as the question</td><td>as the question, an answer kept not graded</td><td>none</td><td>Back and Next; Review answers on the last</td></tr></table></div>`;
+ <tr><td>Exam item</td><td>as the question</td><td>as the question, an answer kept not graded</td><td>none</td><td>Back and Next; the review step follows the last item</td></tr></table></div>`;
  return `<div class="frames"><div class="fcol">${'<div class="fcap">A wrong choice, with the slots numbered</div>'}${phone(choice('no',false,'rec'),{id:'anat'})}</div>
  <div class="legend"><ol>${SLOTS.map(s=>`<li><span class="n">${s[0]}</span><span><b>${s[1]}.</b> ${s[2]}</span></li>`).join('')}</ol>${tbl}</div></div>`;
 }
@@ -457,7 +469,7 @@ function render(){
 
 <section class="opt"><h2>4. Proposed: the action area while grading</h2><p class="note">The same slot, 56 dp, holds the self-grade. These are screens that exist today; they only move into the shell. Recall: Show answer, then the four ratings (the learner grades). A typed near miss: the learner judges. Say: wrong, with Try again (going on is the swipe and the chevrons).</p><div class="frames">${fr('Recall: Show answer',phone(recall('front')))}${fr('Recall: the four ratings',phone(recall('rev')))}${fr('Typed near miss: the learner judges',phone(nearmiss()))}</div></section>
 
-<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31; unlike practice, where a screen gone back to is read-only, doubt 14), so the answer is kept as given and can be changed, with no Check and no Don’t know; the last Next is Review answers; the review step lists every item, with a tap to jump to each unanswered one, and Submit exam stays locked until every item is answered (owner, doubt 10); Close saves the place and the answers, and the learner can resume the same day (owner, doubt 11). The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
+<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31; unlike practice, where a screen gone back to is read-only, doubt 14), so the answer is kept as given and can be changed, with no Check and no Don’t know; going on from the last item (swipe or Next) reaches the review step, the last item before Submit, and swiping back reaches the earlier answers (owner, 2026-10-31); the review step lists every item and Submit exam stays locked until every item is answered (owner, doubt 10); Close saves the place and the answers, and the learner can resume the same day (owner, doubt 11). The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
  place();
  for(const b of document.querySelectorAll('.seg button'))b.setAttribute('aria-pressed',String(isOn(b)));
 }
@@ -479,7 +491,7 @@ const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,
 const PAIRS=[
  ['body text on page','onS','s',4.5],['captions on page','onSv','s',4.5],['text on the card','onS','sHigh',4.5],['captions on the card','onSv','sHigh',4.5],
  ['text on an inner box or choice','onS','sLow',4.5],['captions on an inner box','onSv','sLow',4.5],
- ['filled button','onP','p',4.5],['outlined button and link text','p','s',4.5],['New word pill, speaker, tonal','onSc','sc',4.5],
+ ['filled button','onP','p',4.5],['outlined button and link text','p','s',4.5],['speaker, tonal','onSc','sc',4.5],
  ['Correct banner and right choice','onPc','pc',4.5],['Not quite banner and wrong choice','onEc','ec',4.5],['Almost banner','onSc','sc',4.5],['Right but mind banner','onTc','tc',4.5],
  ['wave fill on page','p','s',3],['choice and tile outline on page','ol','s',3],['field outline on page','ol','s',3],['selected exam choice outline on its tile','p','sLow',3],
  ['meaning icon and link on the card','p','sHigh',3],['answer word on the card','p','sHigh',4.5],['review row warning icon on its row','E','sLow',3],['review row text on its row','onS','sLow',4.5],['review row status on its row','onSv','sLow',4.5],
