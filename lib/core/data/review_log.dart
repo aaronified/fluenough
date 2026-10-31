@@ -10,6 +10,7 @@ import '../scheduling/skill_parameters.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
 import 'database.dart';
+import 'replay_isolate.dart';
 import 'restore_record.dart';
 
 /// The review log, and the scheduling state it drives, in the database
@@ -91,9 +92,32 @@ class ReviewLog {
       (await _replay(parameters)).events;
 
   /// Every review as the log keeps it, oldest first.
-  Future<List<LoggedReview>> reviews() async => inTimeOrder(<LoggedReview>[
+  Future<List<LoggedReview>> reviews() async => inTimeOrder(await loggedRows());
+
+  /// Every review as the log keeps it, in the order the database gave them:
+  /// not sorted, for a caller that sorts them elsewhere ([openReplay]).
+  Future<List<LoggedReview>> loggedRows() async => <LoggedReview>[
     for (final row in await _db.reviewsDao.all()) _logged(row),
-  ]);
+  ];
+
+  /// Opening the app (#857): reads the log and its leech actions and has
+  /// [run] sort and replay them, with [fitted], on an isolate by default.
+  /// The database is read here, on its own isolate or the main one as it
+  /// always was; only the pure sorting and replaying move. Nothing is
+  /// written: the caller keeps `card_states` equal to what it gives
+  /// ([putStates]).
+  Future<OpenedLog> openReplay({
+    required Map<SkillKey, FittedParameters> fitted,
+    ReplayRunner run = replayInIsolate,
+  }) async {
+    final job = OpenJob(
+      reviews: await loggedRows(),
+      leechActions: await leechActions(),
+      fitted: fitted,
+    );
+    replays++;
+    return run(job);
+  }
 
   /// FSRS's parameters as fitted to the learner, by language and skill.
   Future<Map<SkillKey, FittedParameters>> fitted() async =>
