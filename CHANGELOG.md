@@ -15,11 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Compact skill pills, fixed English, Latin known.** On Languages, each language's skill chips are as wide as their icons and share a line, instead of one full-width bar each; Know is a little darker so it differs from Learn; English is always Know with the double tick and cannot be changed; and the Latin script's Read and Write are Know in every language written in it (a saved Learn of it becomes Know once). The second Review switch under Your languages is gone: the fit-your-level lines show for a learner signed up as a reviewer, under Review decks.
 - **Where I am is an icon.** On Decks, Where I am is now a small icon button on the right of the path, named by its tooltip and read aloud as "Where I am", and the Add deck button is gone from Decks: adding a deck from a file stays in Settings, under Your decks (#475).
 - **App log range.** The App log has three choices above its lines: Last 10 minutes, Since the app started (everything after the latest start) and All, as before. Copy and Export take only the chosen lines, so a bug report carries just those (#713). A Since the profile was opened choice follows with profiles (#204).
 - **Deck search opens the course.** Tapping Add the course in a deck search now opens Add a language with the course's name already in its search, instead of the plain Languages list (#918).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.
 - **Faster start (#857).** The app shows its first screen without waiting for your review history to be read: it is read while the decks load, and Today waits for both. Listening and Say stay in Today's counts while the phone's voices are still being asked, so the tiles no longer appear late or jump, and the voices are asked all at once. Opening also rewrites only the saved card states that changed. Timing marks for the start go to the app log.
+- **Start without freezing on a long history (#857).** Opening the app now sorts and replays your whole review history on a background isolate instead of the screen's own, then writes the saved schedule and builds the progress aggregates from that one result; the numbers are the same, and if the background isolate cannot run it replays in place as before. Progress still waits for it, and nothing is written until it is read. Mastery and the Progress numbers still walk the log on the screen's isolate (#857 item 1 remains).
 
 ## [0.7.0] - 2026-10-31
 

@@ -953,6 +953,7 @@ class AppState extends ChangeNotifier {
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
     ensureEnglishKnown();
+    ensureLatinKnown();
     final downloads = deckDownloads;
     if (downloads == null || _disposed) return;
     // What the Languages page left out is removed now, at this open (#907).

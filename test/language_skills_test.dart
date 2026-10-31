@@ -84,6 +84,11 @@ void main() {
       SkillMark.know,
     );
     expect(markOf(SkillState.learn, covered: true), SkillMark.learn);
+    // English has no course and is never tested, yet is always covered.
+    expect(
+      levelCovers(levelFound: false, taught: false, english: true),
+      isTrue,
+    );
   });
 
   test('the fit-your-level line shows only with review on', () {
