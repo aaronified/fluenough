@@ -25,6 +25,7 @@ import 'checked_by_line.dart';
 import 'ipa_symbols.dart';
 import 'path_model.dart' show isSentence;
 import 'path_parts.dart' show joinParts, masteryName;
+import 'wiktionary_links.dart';
 
 /// Opens [card]'s card in a sheet over a unit's screen.
 Future<void> showWordSheet(
@@ -113,6 +114,7 @@ class WordSheet extends StatelessWidget {
     final checked = checkedByOf(state.decks, card).length;
     final facts = state.factsNaming(card, language);
     final dictionary = card.dictionary;
+    final wiktionary = wiktionaryLinksFor(state, card, language);
     final difficulties = SkillDifficulty.of(card.id, state.progress.stateOf);
     return SafeArea(
       child: SingleChildScrollView(
@@ -231,6 +233,8 @@ class WordSheet extends StatelessWidget {
                   ),
                 ],
               ),
+            if (wiktionary.isNotEmpty)
+              WiktionaryLinks(links: wiktionary, language: language),
             if (card.examples.isNotEmpty)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
