@@ -3638,6 +3638,28 @@
   "@drillChooseHeardMeaning": {
     "description": "Multiple choice in Hear (ADR-0034): under the play button, above the meanings to choose from."
   },
+  "drillChoosePicture": "Which picture is it?",
+  "@drillChoosePicture": {
+    "description": "Picture choice, a form of Recognition (#91): above a word in the language learned, whose picture is chosen from the four under it."
+  },
+  "drillChooseHeardPicture": "Which picture did you hear?",
+  "@drillChooseHeardPicture": {
+    "description": "Picture choice, a form of Recognition (#91): under the play button, above the four pictures to choose from."
+  },
+  "drillPictureOption": "Picture {number} of {total}",
+  "@drillPictureOption": {
+    "description": "Screen-reader label and hint of one of the pictures of a picture choice, before it is answered. It says nothing of what the picture shows, which would give the answer away.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
   "drillOptionsGroup": "Options",
   "@drillOptionsGroup": {
     "description": "Screen-reader label of the group of options of a multiple-choice question."
