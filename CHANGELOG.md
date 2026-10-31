@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Typed notes show one at a time (#421): the teach card and the answer reveal show one of a card's notes, chosen at random, and every note of the card shows once before any repeats (a new round never opens with the last note shown); the word sheet still lists them all. A card with one note, or the old text, shows as before. `tools/propose_pairs.py` lists proposed `pair` notes, words whose IPA differs by one segment between very close sounds (length, aspiration, dental and retroflex); it changes no file.
 - A Wiktionary link on a word's sheet (#422), for the word and its base words where the deck marks that Wiktionary has an entry; it opens in the browser and nothing is fetched until it is tapped
 - Situations on Today (#724): six buttons, each in a colour of its own, open sheets of key phrases and words for everyday moments, with unlearned cards marked, Practise this sheet, and an inspect view of each card. A situations file per language lists real card ids (`kind: situations`, checked by the validator); Telugu has a first taxi sheet, and courses without sheets show the buttons dimmed with an Upcoming pill. A sheet's session teaches at most nine new cards at once, and Practise is off, with the reason beneath it, when nothing on the sheet can be taught or revised. The index lists the file under its own `situations` key, so the released app never sees it.
 

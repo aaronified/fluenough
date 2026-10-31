@@ -17,6 +17,7 @@ import '../core/models/reading.dart';
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
+import '../core/notes/note_rotation.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/placed_review.dart';
@@ -295,6 +296,10 @@ class AppState extends ChangeNotifier {
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
   final Random random;
+
+  /// Which note of a card to show next (#421): one at a time, every note
+  /// once before any repeats.
+  late final NoteRotation noteRotation = NoteRotation(random);
 
   /// Whether the phone's media volume is at zero (ADR-0026).
   final VolumeMonitor volume;
