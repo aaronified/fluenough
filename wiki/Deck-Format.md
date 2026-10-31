@@ -919,6 +919,23 @@ Notes are a list of facts about the word, each of a kind. The app shows one
 at a time, when the word is taught and after an answer: shuffled, never
 repeated until every note of the card has been shown once.
 
+Which one is the app's choice, not the deck's (#421): the teach card and the
+answer reveal each show one prose note, chosen at random from the card's
+notes that are not a `pair`, `homograph` or `lookalike` warning, and the next
+showing takes one not yet shown, so every note shows once before any repeats;
+a new round never opens with the note that closed the last. The app
+remembers by card id and note id for the run of the app, so a note added later
+is due at once. The word sheet lists every note. A text note, and the
+decks written before typed notes, read as one note: nothing changes for them.
+`tools/propose_pairs.py` proposes `pair` notes (read-only): the words of a
+language whose IPA differs by one segment between very close sounds.
+
+**Typed notes need a release that reads them.** The released parser rejects
+an unknown note shape, so the typed list, like every new field, goes into a
+deck only a release after the app that reads it. The app has read it since
+the B1 format (ADR-0036); a deck written before is unchanged, so no deck
+moves to the typed list until its language's B1 plan.
+
 | Kind | What it says |
 |---|---|
 | `pair` | A minimal pair, shown with the ear icon ("Sounds like another word"): a word of the language whose IPA differs by exactly one segment, and only between very close sounds, such as a short and long vowel (e/eː), an unaspirated and aspirated consonant (k/kʰ) or a dental and retroflex one (t̪/ʈ). Its text names that sound difference. It names the partner by `ref` (owner, 2026-10-22). |
