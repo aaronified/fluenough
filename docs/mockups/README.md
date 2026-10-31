@@ -4,6 +4,15 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `shared-shell.html`: one shell for the teach card, every question type
+  and sets (phase 0 of the question-engine and exams plan; owner, 2026-10-31:
+  "One shared shell for teach and question screens. Ok, do this then"): the
+  same header, context row, card, answer area, feedback area and action
+  area, and the exam variant (no feedback, Back and Next, a review-answers
+  step). Today's screens beside the proposal, Hindustani and Bengali, light
+  and dark, 1.4x. Open choices are numbered doubts in `shared-shell.md`,
+  with the self-check.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
