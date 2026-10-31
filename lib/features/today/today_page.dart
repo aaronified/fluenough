@@ -69,6 +69,7 @@ class TodayPage extends StatelessWidget {
         ],
       ),
       CatalogStatus.ready => VisibleListenableBuilder(
+        warmUp: true,
         listenable: Listenable.merge(<Listenable>[
           state.progress,
           state.settings,

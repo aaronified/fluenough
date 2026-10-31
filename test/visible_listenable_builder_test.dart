@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/app/shell_tab.dart';
+import 'package:fluenough/ui/widgets/tab_pager.dart';
 import 'package:fluenough/ui/widgets/visible_listenable_builder.dart';
 
 void main() {
@@ -83,5 +85,55 @@ void main() {
     await tester.pumpWidget(app(visible: true, parent: 2));
     expect(builds, 2);
     expect(find.text('5/2'), findsOneWidget);
+  });
+
+  testWidgets('hidden tabs are built in the background, one per frame, so a '
+      'swipe finds them built', (tester) async {
+    final tab = ValueNotifier<ShellTab>(ShellTab.today);
+    final notifier = ValueNotifier<int>(0);
+    final builds = <int>[0, 0, 0];
+    Widget page(int i) => VisibleListenableBuilder(
+      warmUp: true,
+      listenable: notifier,
+      builder: (context, _) {
+        builds[i]++;
+        return Text('page$i/${notifier.value}');
+      },
+    );
+    await tester.pumpWidget(
+      Directionality(
+        textDirection: TextDirection.ltr,
+        child: TabPager(
+          tab: tab,
+          children: <Widget>[page(0), page(1), page(2), const SizedBox()],
+        ),
+      ),
+    );
+    expect(builds[0], 1, reason: 'the shown tab is built at once');
+    expect(builds[1] + builds[2], 0, reason: 'startup does not build them');
+
+    await tester.pump();
+    expect(builds[1] + builds[2], 1, reason: 'one tab per frame');
+    await tester.pump();
+    await tester.pump();
+    expect(builds, <int>[1, 1, 1], reason: 'no swipe was needed');
+
+    // Showing a built tab builds nothing new, and it keeps its state.
+    tab.value = ShellTab.decks;
+    await tester.pumpAndSettle();
+    tab.value = ShellTab.progress;
+    await tester.pumpAndSettle();
+    expect(builds, <int>[1, 1, 1]);
+
+    // A change while it was hidden is caught up once when it is shown.
+    tab.value = ShellTab.today;
+    await tester.pumpAndSettle();
+    notifier.value = 7;
+    await tester.pumpAndSettle();
+    final before = List<int>.of(builds);
+    tab.value = ShellTab.decks;
+    await tester.pumpAndSettle();
+    expect(builds[1], before[1] + 1);
+    expect(find.text('page1/7'), findsOneWidget);
   });
 }

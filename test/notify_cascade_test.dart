@@ -12,6 +12,10 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 
+// The queue stamps its values with the clock in 30 s steps: a fixed clock
+// keeps the stamp from changing in the middle of a test.
+final DateTime _now = DateTime(2026, 10, 31, 9);
+
 const List<String> _codes = <String>['xa', 'xb', 'xc'];
 
 Map<String, String> _course() => <String, String>{
@@ -46,6 +50,7 @@ void main() {
   setUp(() async {
     voices = _Voices();
     state = AppState.test(
+      now: _now,
       decks: MemoryDeckSource(_course()),
       progress: MemoryProgress(),
       tts: voices,
@@ -113,9 +118,10 @@ void main() {
       for (final code in _codes) {
         expect(after[code], before[code]! + 1);
       }
-      // Without a voice nothing is listened to: the queue is not the same
-      // as before, and equals one built from scratch.
+      // Without a voice nothing is listened to; the queues after the change
+      // equal ones built from scratch with the voice already missing.
       final fresh = AppState.test(
+        now: _now,
         decks: MemoryDeckSource(_course()),
         progress: MemoryProgress(),
         tts: voices,
