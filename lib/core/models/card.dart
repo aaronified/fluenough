@@ -272,6 +272,7 @@ class CardRef {
     this.reading,
     this.ipa,
     this.altNative,
+    this.notSynonyms,
     this.tags,
     this.notes,
     this.examples,
@@ -290,6 +291,7 @@ class CardRef {
   final String? reading;
   final String? ipa;
   final List<String>? altNative;
+  final List<String>? notSynonyms;
   final List<String>? tags;
   final List<CardNote>? notes;
   final List<CardExample>? examples;
@@ -333,6 +335,9 @@ class CardRef {
       words: written.words,
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
+      notSynonyms:
+          notSynonyms ??
+          (sameNative ? written.notSynonyms : const <String>[]),
       pos: written.pos,
       hears: written.hears,
       warning: written.warning,
@@ -393,6 +398,7 @@ class Card {
     this.targetScripts = const <String, String>{},
     this.words,
     this.altNative = const <String>[],
+    this.notSynonyms = const <String>[],
     this.pos,
     this.hears,
     this.warning,
@@ -515,6 +521,11 @@ class Card {
 
   /// Extra answers accepted when the learner is typing the meaning.
   final List<String> altNative;
+
+  /// Typed meanings the synonym sets must not accept for this card
+  /// (`not_synonyms`, ADR-0050): its wrong-sense escape. They never block the
+  /// card's own answers or [altNative].
+  final List<String> notSynonyms;
 
   final String? pos;
 
