@@ -9,15 +9,14 @@ import '../../app/session.dart';
 import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
-import '../../core/models/reading.dart' show QuestionCard;
 import '../../core/progress/mastery.dart' show kKnownRecall;
 import '../../core/progress/unlocks.dart';
-import '../../core/scheduling/lesson.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
@@ -38,8 +37,9 @@ import '../../ui/card_text_scale.dart';
 /// A unit of a course's path (the owner's design): its level and number,
 /// its name and description, how many of its words and rules are known and
 /// its sentences open, then its words, rules and sentences in the order the
-/// unit teaches them, and its decks. "Continue" reviews what is due in it,
-/// or else teaches its next words.
+/// unit teaches them, and its decks. "Learn", or "Relearn" once every card is
+/// taught, walks all its cards, deck by deck (#694), with how many are new and
+/// how many reviews are due under it.
 ///
 /// The phrasebook is listed first, never held back. A rule is a grammar or
 /// rules deck's table; a sentence is open once it was taught or every word
@@ -184,26 +184,10 @@ class _UnitPageState extends State<UnitPage> {
         final large = isLargeText(context);
         final ids = <String>{for (final e in decks) e.id};
         final due = state.buildSession(DrillRequest(deckIds: ids)).due.length;
-        // The next lesson: from the first deck with words left to teach.
-        DrillRequest? lesson;
-        var fresh = 0;
-        for (final entry in decks) {
-          final request = DrillRequest.lesson(
-            language: language.code,
-            deckId: entry.id,
-          );
-          final items = state.lessonFor(request);
-          if (items.isEmpty) continue;
-          lesson = request;
-          // A reading lesson is a passage's questions, none taught first.
-          fresh = items.first.card is QuestionCard
-              ? items.length
-              : lessonCardCount(items);
-          break;
-        }
-        final DrillRequest? next = due > 0
-            ? DrillRequest(deckIds: ids)
-            : lesson;
+        // Learn walks every card of the unit, taught or not; the label is
+        // Relearn once all are taught, and the counts are information only.
+        final walk = state.walkCards(decks);
+        final fresh = state.newToWalk(<Card>[for (final w in walk) w.card]);
         var section = 0;
         // Reviewing is for a course whose two languages the learner knows
         // (and reads), not for one they are learning (#525).
@@ -426,13 +410,16 @@ class _UnitPageState extends State<UnitPage> {
               ),
             ],
           ),
-          bottomNavigationBar: _ContinueBar(
-            label: next == null
-                ? l10n.unitNothingLeft
-                : l10n.unitContinue(fresh, due),
-            onPressed: next == null
-                ? null
-                : () => AppNavigator.startDrill(context, next),
+          bottomNavigationBar: BottomActions(
+            child: LearnButton(
+              relearn: walk.isNotEmpty && fresh == 0,
+              subtext: l10n.unitLearnSubtext(fresh, due),
+              onPressed: walk.isEmpty
+                  ? null
+                  : () => AppNavigator.openWalkthrough(context, <String>[
+                      for (final entry in decks) entry.id,
+                    ]),
+            ),
           ),
         );
       },
@@ -1107,25 +1094,3 @@ class _RuleTable extends StatelessWidget {
 
 /// A form, its reading if it has one, and the card of a rules table's cell.
 typedef _Form = (String, String?, String?);
-
-/// "Continue · 5 new, 4 due", pinned under the scrolling content.
-class _ContinueBar extends StatelessWidget {
-  const _ContinueBar({required this.label, required this.onPressed});
-
-  final String label;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomActions(
-      child: FilledButton.icon(
-        style: FilledButton.styleFrom(
-          minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-        ),
-        onPressed: onPressed,
-        icon: const Icon(Icons.play_arrow_rounded, size: 22),
-        label: Text(label, textAlign: TextAlign.center),
-      ),
-    );
-  }
-}
