@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimal Pair</title>
+<meta name="description" content="The minimal-pair button and its practice panel (#423): where the button sits, the panel's states, fallbacks, RTL and long scripts. Telugu, Bengali, Hindustani, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:900px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:820px}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Bengali","Noto Nastaliq Urdu",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph.live,.ph.live-h{height:740px}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px;gap:4px;color:var(--onSv)}
+.prog{flex:1;height:6px;border-radius:3px;background:var(--sc);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--p);border-radius:3px}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:4px 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.script{line-height:1.25}
+.s-ur{font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif;line-height:1.9}  /* TargetSizes.rtlHeight */
+.s-te{font-family:"Noto Sans Telugu",sans-serif}.s-bn{font-family:"Noto Sans Bengali",sans-serif}.s-hi{font-family:"Noto Sans Devanagari",sans-serif}
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px;text-align:center}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn:disabled,.dis{opacity:.38;cursor:default}
+.pillrow{display:flex;align-items:center;gap:8px;margin:0 0 12px}
+.npill{flex:none;border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(13px*var(--t));font-weight:600;display:inline-flex;align-items:center;background:var(--sc);color:var(--onSc)}
+.deck{font-size:calc(13px*var(--t));color:var(--onSv);min-width:0}
+.dcard{background:var(--sLow);border-radius:32px;padding:20px 16px;display:flex;flex-direction:column;align-items:stretch;gap:12px;text-align:center}
+.dcard .big{font-size:calc(40px*var(--t));font-weight:500;line-height:1.25}
+.dcard .big.s-ur{line-height:1.9}
+.rdg{font-size:calc(18px*var(--t)*.8);line-height:1.3;color:var(--onSv)}
+.cen{display:flex;align-items:center;justify-content:center;gap:12px}
+.spk{width:56px;height:56px;border-radius:28px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.ipab{min-height:48px;border-radius:12px;border:0;padding:0 14px;background:none;box-shadow:inset 0 0 0 1px var(--olv);font-size:calc(14px*var(--t));color:var(--onS)}
+.mean{font-size:calc(28px*var(--t)*.82);line-height:1.2;display:flex;align-items:center;justify-content:center;gap:8px}
+.mean svg{color:var(--p);width:22px;height:22px}
+.pos{font-size:calc(14px*var(--t));color:var(--onSv);margin-top:-6px}
+.swipe{text-align:center;font-size:calc(12px*var(--t));color:var(--onSv);margin:14px 0 0}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);display:flex;flex-direction:column;gap:8px}
+.banner{display:flex;align-items:center;gap:10px;border-radius:16px;padding:10px 14px;background:var(--sc);color:var(--onSc);font-size:calc(16px*var(--t));font-weight:600;text-align:start}
+.prompt{font-size:calc(14px*var(--t));color:var(--onSv);font-weight:500}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opts .btn{justify-content:center;min-height:calc(48px*var(--t)*.8)}
+/* the note block that names the partner, and the button */
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);text-align:start}
+.blk .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--onSv)}
+.blk>svg{color:var(--onSv);margin-top:2px}
+.pb svg.i{width:22px;height:22px}
+.pb .chev{margin-inline-start:auto;transition:none}
+.pb{justify-content:flex-start;text-align:start;box-shadow:inset 0 0 0 1px var(--ol);background:none;color:var(--p)}
+.pb[aria-expanded="true"]{background:var(--sc);color:var(--onSc);box-shadow:none}
+.pb .lb{flex:1;min-width:0}
+/* ===== the panel ===== */
+.pnl{background:var(--sHigh);border-radius:24px;padding:14px 12px 16px;display:flex;flex-direction:column;gap:10px;text-align:start}
+.pnl .hd{display:flex;align-items:flex-start;gap:4px}
+.pnl .hd .tx{flex:1;min-width:0;padding-top:4px;padding-inline-start:4px}
+.pnl .hd b{display:block;font-size:calc(16px*var(--t));font-weight:500;line-height:1.25}
+.pnl .hd small{display:block;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.pair.stack{grid-template-columns:minmax(0,1fr)}
+.tile{background:var(--s);border-radius:16px;padding:20px 6px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;box-shadow:inset 0 0 0 1px var(--olv);position:relative;min-width:0}
+.tile.on{box-shadow:inset 0 0 0 3px var(--p)}
+.tile.match{box-shadow:inset 0 0 0 3px var(--p)}
+.tile .w{font-size:calc(24px*var(--t));font-weight:500;line-height:1.25;max-width:100%;overflow-wrap:anywhere}
+.tile .w.s-ur{line-height:1.9}
+.tile .r{font-size:calc(13px*var(--t));line-height:1.3;color:var(--onSv);max-width:100%;overflow-wrap:anywhere}
+.tile .m{font-size:calc(14px*var(--t));line-height:1.3;max-width:100%;overflow-wrap:anywhere}
+.tile .bt{display:flex;gap:0;margin-top:2px}
+.rbtn{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;padding:0}
+.rbtn span{width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.rbtn.pl span{background:var(--p);color:var(--onP)}
+.rbtn:disabled{opacity:.38;cursor:default}
+.tag{position:absolute;top:-9px;inset-inline-start:50%;transform:translateX(-50%);background:var(--p);color:var(--onP);border-radius:10px;font-size:calc(11px*var(--t));font-weight:700;padding:2px 8px;display:flex;align-items:center;gap:4px;white-space:nowrap}
+[dir=rtl] .tag{transform:translateX(50%)}
+.tag svg{width:14px;height:14px}
+.sec{border-top:1px solid var(--olv);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase}
+.help{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.mic{width:72px;height:72px;border-radius:36px;border:0;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;align-self:center;padding:0}
+.mic svg.i{width:36px;height:36px}
+.mic.stop{background:var(--tt);color:var(--onTt);box-shadow:0 0 0 6px var(--sc)}
+.mic:disabled{opacity:.38}
+.heard{display:flex;flex-direction:column;gap:6px;background:var(--s);border-radius:16px;padding:10px 12px;box-shadow:inset 0 0 0 1px var(--olv)}
+.heard p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.heard .hw{font-weight:600}
+.chip{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:8px;min-height:28px;padding:2px 10px;font-size:calc(13px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);line-height:1.25}
+.chip svg{width:18px;height:18px}
+.chip.no{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onS)}
+.caveat{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.err{margin:0;font-size:calc(14px*var(--t));line-height:1.35;color:var(--E)}
+.info{display:flex;gap:8px;align-items:flex-start;font-size:calc(13px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.info svg{width:20px;height:20px;margin-top:1px}
+.ask{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.ask.stack{grid-template-columns:minmax(0,1fr)}
+.ans{min-height:64px;border-radius:16px;border:0;background:var(--s);box-shadow:inset 0 0 0 1px var(--ol);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:6px;min-width:0;text-align:center}
+.ans .w{font-size:calc(22px*var(--t));font-weight:500;line-height:1.25;overflow-wrap:anywhere}
+.ans .w.s-ur{line-height:1.9}
+.ans .r{font-size:calc(12px*var(--t));color:var(--onSv)}
+.ans.good{box-shadow:inset 0 0 0 3px var(--p)}
+.ans.bad{box-shadow:inset 0 0 0 3px var(--E)}
+.ans:disabled{opacity:1;cursor:default}
+.verdict{display:flex;gap:8px;align-items:flex-start;font-size:calc(14px*var(--t));line-height:1.35;margin:0}
+.verdict svg{width:22px;height:22px;flex:none;margin-top:1px}
+.verdict.good{color:var(--p)}
+.verdict.bad{color:var(--E)}
+.eq{display:flex;gap:3px;align-items:flex-end;height:20px}
+.eq i{display:block;width:4px;background:currentColor;border-radius:2px;animation:eq .8s infinite ease-in-out}
+.eq i:nth-child(1){height:10px}.eq i:nth-child(2){height:18px;animation-delay:.2s}.eq i:nth-child(3){height:12px;animation-delay:.4s}
+@keyframes eq{50%{transform:scaleY(.5)}}
+@media (prefers-reduced-motion:reduce){.eq i{animation:none}}
+/* hints: one word, on a long press or hover, as the app's Hint */
+[data-hint]{position:relative}
+[data-hint]::after{content:attr(data-hint);display:none;position:absolute;bottom:100%;inset-inline-start:50%;transform:translateX(-50%);background:var(--onS);color:var(--s);font-size:calc(12px*var(--t));line-height:1.2;padding:4px 8px;border-radius:6px;white-space:nowrap;z-index:9;pointer-events:none;font-weight:400}
+[data-hint]:hover::after,[data-hint]:focus-visible::after,.hints-on [data-hint]::after{display:block}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:16px}
+.hl-on .chg::before{content:"new";position:absolute;top:-11px;inset-inline-end:8px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.fr .dcard{border-radius:28px}
+.fr .scroll{overflow:visible}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Minimal pair</h1>
+<p class="cap1">The minimal-pair button and its practice panel on a card (#423, part of #209; owner, 2026-10-31, "Mockup first": "the minimal pairs can be a button where found and clicking it will show the words side by side and let the user play their sounds and practice them together (like whether the speech is detecting kalam or kaalam) in that same card. No logging here, pure practice."). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new; the cards around them are the app's today. Everything the panel does is a practice: no review, schedule or strength is written. The panel says what the phone heard, not whether it was right. Choices are tweak controls; none is decided. Notes, checks and open questions are in <code>minimal-pair.md</code>. Words are drawn by hand for the mockup (not deck data).</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="te">Telugu</button><button data-v="bn">Bengali</button><button data-v="hi">Hindustani</button><button data-v="ur">Hindustani (Urdu script)</button></span></div>
+ <div class="tg">Pair <span class="seg" data-k="kind"><button data-v="length">Length / vowel pair</button><button data-v="long">Long-script pair</button></span></div>
+ <div class="tg">App direction <span class="seg" data-k="dir"><button data-v="ltr">LTR</button><button data-v="rtl">Mirrored (RTL)</button></span></div>
+ <div class="tg">Highlight new <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Hints <span class="seg" data-k="hints"><button data-v="0">On press</button><button data-v="1">All shown</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palette: ColorScheme.fromSeed(forest). tt = tertiary (the listening mic, as the speaking drill's hearing state). onTt is approximated from the seed. ===== */
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tt":"#a4cddd","onTt":"#063543"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tt":"#3b6470","onTt":"#ffffff"}};
+const IC={
+ close:'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ play:'M8 5v14l11-7z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ stop:'M6 6h12v12H6z',
+ check:'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ ear:'M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2z',
+ cmp:'M9.01 14H2v2h7.01v3L13 15l-3.99-4v3zm5.98-1v-3H22V8h-7.01V5L11 9l3.99 4z',
+ down:'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z',
+ up:'M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z',
+ book:'M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',
+ replay:'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z',
+ turtle:'M3 16.5c0-4 3.2-7 7.5-7s7.5 3 7.5 7zM19.2 11.2a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM5.5 17h2.6v2.5H5.5zM13 17h2.6v2.5H13z'};
+const svg=(p,c)=>`<svg class="i ${c||''}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[p]}"/></svg>`;
+const EQ='<span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>';
+
+/* ===== data: every pair is a `pair` note's two cards; w word, r reading (course style), m meaning, i IPA; o a third word the phone may hear instead ===== */
+const D={
+ te:{lang:'Telugu',font:'te',deck:'Telugu Basics',
+  length:{a:{w:'కలం',r:'kalaṁ',m:'pen',i:'/kalam/'},b:{w:'కాలం',r:'kālaṁ',m:'time, season',i:'/kaːlam/'},o:{w:'కల',r:'kala',m:'dream'},note:'Short a. కాలం (kālaṁ), time, has a long ā.'},
+  long:{a:{w:'ప్రాంతం',r:'prāṁtaṁ',m:'region',i:'/praːntam/'},b:{w:'ప్రాణం',r:'prāṇaṁ',m:'life',i:'/praːɳam/'},o:{w:'ప్రాయం',r:'prāyaṁ',m:'age'},note:'The n is dental in prāṁtaṁ, retroflex ṇ in prāṇaṁ.'}},
+ bn:{lang:'Bengali',font:'bn',deck:'Bengali Basics',
+  length:{a:{w:'কাল',r:'kāl',m:'tomorrow, yesterday',i:'/kal/'},b:{w:'কল',r:'kol',m:'tap, machine',i:'/kɔl/'},o:{w:'কোল',r:'kol',m:'lap'},note:'Open ā. কল (kol), tap, has the rounder o.'},
+  long:{a:{w:'অধিকার',r:'odhikār',m:'right, authority',i:'/ɔdʱikar/'},b:{w:'অন্ধকার',r:'ondhokār',m:'darkness',i:'/ɔnd̪ʱokar/'},o:{w:'অহংকার',r:'ohoṅkār',m:'pride'},note:'Close in sound; অন্ধকার (ondhokār), darkness, has an n.'}},
+ hi:{lang:'Hindustani',font:'hi',deck:'Hindustani Basics',
+  length:{a:{w:'कल',r:'kal',m:'yesterday, tomorrow',i:'/kəl/'},b:{w:'काल',r:'kāl',m:'time, era',i:'/kaːl/'},o:{w:'कला',r:'kalā',m:'art'},note:'Short a. काल (kāl), time, has a long ā.'},
+  long:{a:{w:'विज्ञान',r:'vigyān',m:'science',i:'/ʋɪɡjaːn/'},b:{w:'विज्ञापन',r:'vigyāpan',m:'advertisement',i:'/ʋɪɡjaːpən/'},o:{w:'विधान',r:'vidhān',m:'law, rule'},note:'Ends in -ān; विज्ञापन (vigyāpan), advertisement, goes on to -āpan.'}},
+ ur:{lang:'Hindustani',font:'ur',deck:'Hindustani Basics (Urdu script)',rtl:true,
+  length:{a:{w:'کل',r:'kal',m:'yesterday, tomorrow',i:'/kəl/'},b:{w:'کال',r:'kāl',m:'famine, time',i:'/kaːl/'},o:{w:'کالا',r:'kālā',m:'black'},note:'Short a. کال (kāl) has a long ā.'},
+  long:{a:{w:'عالم',r:'ālam',m:'world',i:'/ʕaːlam/'},b:{w:'علم',r:'ilm',m:'knowledge',i:'/ʕɪlm/'},o:{w:'عالی',r:'ālī',m:'lofty'},note:'Long ā against short i: عالم (ālam), world; علم (ilm), knowledge.'}}};
+const S={theme:'light',course:'te',kind:'length',dir:'ltr',hl:'1',hints:'0'};
+/* the live phone's own controls and state */
+const L={screen:'teach',open:true,place:'note',label:'named',layout:'side',heard:'b',env:'ok',play:null,listen:false,res:null,quiz:null};
+const root=document.getElementById('root');
+const pairOf=(c,k)=>D[c||S.course][k||S.kind];
+const sc=c=>'s-'+(c||S.course);
+const W=(x,c)=>`<span class="script ${sc(c)}" lang="${c||S.course}">${x}</span>`;
+
+/* ===== the button and the panel ===== */
+function button(c,o){
+ const p=pairOf(c),b=p.b;
+ const lab=o.label==='named'?`Compare with ${W(b.w,c)} (${b.r})`:'Compare sounds';
+ return `<div class="${o.chg?'chg':''}" style="border-radius:calc(20px*1.4)"><button class="btn pb full" data-act="toggle" aria-expanded="${!!o.open}">${svg('cmp')}<span class="lb">${lab}</span>${svg(o.open?'up':'down','chev')}</button></div>`;
+}
+function tile(c,x,key,o){
+ const st=o.st,pl=st.play&&st.play.w===key,m=st.res===key;
+ const off=o.env==='soundoff'||o.env==='novoice';
+ const bt=(slow)=>{const on=pl&&!!st.play.slow===slow;
+  return `<button class="rbtn ${on?'pl':''}" data-act="play" data-w="${key}" data-slow="${slow?1:0}" data-hint="${slow?'Slow':'Play'}" aria-label="${slow?'Play slowly':'Play'} ${x.r}" ${off?'disabled':''}><span>${on?EQ:svg(slow?'turtle':'play')}</span></button>`};
+ return `<div class="tile ${pl?'on':''} ${m?'match':''}">${m?`<span class="tag">${svg('ear')}Matched</span>`:''}<div class="w ${sc(c)}" lang="${c}">${x.w}</div><div class="r">${x.r}</div><div class="m">${x.m}</div><div class="bt">${bt(false)}${bt(true)}</div></div>`;
+}
+function sayBlock(c,p,o){
+ const st=o.st,env=o.env,w=pairOf(c);
+ if(env==='speakoff')return '';
+ if(env==='online')return `<div class="sec"><div class="lab">Say one</div><p class="help">Your phone can’t recognise ${D[c].lang} by itself. Recognise it online? What you say would go to your phone’s speech service.</p><button class="btn fill full" data-act="allow">Allow online for ${D[c].lang}</button><button class="btn out full" data-act="notnow">Not now</button></div>`;
+ const dead=env==='norecog';
+ const mic=st.listen?`<button class="mic stop" data-act="say" data-hint="Stop" aria-label="Stop listening">${svg('stop')}</button>`:`<button class="mic" data-act="say" data-hint="Speak" aria-label="Say one of the words" ${dead?'disabled':''}>${svg('mic')}</button>`;
+ let out='';
+ if(st.listen)out=`<p class="help" role="status" style="text-align:center">Listening…</p>`;
+ else if(env==='norecog')out=`<p class="err" role="status">This phone has no speech recogniser for this.</p>`;
+ else if(env==='denied')out=`<p class="err" role="status">Fluenough can’t use the microphone. Allow it in your phone’s settings, under Apps, Fluenough, Permissions.</p>`;
+ else if(st.res==='none')out=`<div class="heard" role="status"><p>Didn’t catch that. Say it again.</p></div>`;
+ else if(st.res){
+  const h=st.res==='neither'?w.o:w[st.res];
+  out=`<div class="heard" role="status"><p>Heard: <span class="hw">${W(h.w,c)}</span> (${h.r}), ${h.m}</p>`+
+   (st.res==='neither'?`<span class="chip no">Matched neither of the two</span>`:`<span class="chip">${svg('ear')}Matched ${W(w[st.res].w,c)}</span>`)+
+   `<p class="caveat">This is what the phone heard, not a mark. Phones favour common words and can miss a long vowel.</p></div>`;}
+ return `<div class="sec"><div class="lab">Say one</div>${st.res||st.listen?'':`<p class="help">Say either word and see what the phone heard.</p>`}${mic}${out}</div>`;
+}
+function quizBlock(c,p,o){
+ const st=o.st,q=st.quiz,off=o.env==='soundoff'||o.env==='novoice';
+ let body;
+ if(!q)body=`<p class="help">Plays one of the two at random. Tap the one you heard.</p><button class="btn tonal full" data-act="qplay" ${off?'disabled':''}>${svg('play')}Play one</button>`;
+ else{
+  const ans=(k)=>{const x=p[k],done=q.phase==='done';
+   const cls=done?(k===q.t?'good':(k===q.pick?'bad':'')):'';
+   return `<button class="ans ${cls}" data-act="pick" data-w="${k}" ${q.phase!=='ask'?'disabled':''}><span class="w ${sc(c)}" lang="${c}">${x.w}</span><span class="r">${x.r}</span></button>`};
+  const asks=`<div class="ask ${o.layout==='stack'?'stack':''}">${ans('a')}${ans('b')}</div>`;
+  if(q.phase==='playing')body=`<p class="help" role="status" style="display:flex;align-items:center;gap:8px">${EQ}Playing one of them…</p>${asks}`;
+  else if(q.phase==='ask')body=`<p class="help">Which did you hear?</p>${asks}<button class="btn text" data-act="qplay" data-hint="Replay" style="align-self:flex-start">${svg('replay')}Play it again</button>`;
+  else{
+   const t=p[q.t],pk=p[q.pick],right=q.t===q.pick;
+   body=asks+(right?`<p class="verdict good" role="status">${svg('check')}<span>Yes. You heard ${W(t.w,c)} (${t.r}), ${t.m}.</span></p>`:
+     `<p class="verdict bad" role="status">${svg('close')}<span>Not quite. It was ${W(t.w,c)} (${t.r}), ${t.m}. You tapped ${W(pk.w,c)} (${pk.r}).</span></p>`)+
+     `<button class="btn out full" data-act="qplay" ${off?'disabled':''}>${svg('play')}Play another</button>`;}
+ }
+ return `<div class="sec"><div class="lab">Which did you hear?</div>${body}</div>`;
+}
+function panel(c,o){
+ const p=pairOf(c,o.kind),env=o.env;
+ const banner=env==='soundoff'?`<p class="info">${svg('info')}<span>Sound is off for the whole app. Turn it on in Settings > Sound</span></p>`:
+  env==='novoice'?`<p class="info">${svg('info')}<span>This phone has no voice for ${D[c].lang}, so the words can’t be played.</span></p>`:'';
+ return `<div class="${o.chg?'chg':''}" style="border-radius:24px"><div class="pnl" role="region" aria-label="Compare sounds">
+  <div class="hd"><div class="tx"><b>Compare sounds</b><small>Practice only. Nothing here is recorded.</small></div><button class="ib" data-act="toggle" data-hint="Close" aria-label="Close">${svg('close')}</button></div>
+  ${banner}
+  <div class="pair ${o.layout==='stack'?'stack':''}">${tile(c,p.a,'a',o)}${tile(c,p.b,'b',o)}</div>
+  ${sayBlock(c,p,o)}${quizBlock(c,p,o)}
+ </div></div>`;
+}
+const noteBlk=(c,k,btn)=>{const p=pairOf(c,k);return `<div class="blk">${svg('info')}<div class="tx"><div><div class="tt">Sounds alike</div><p>${p.note}</p></div>${btn||''}</div></div>`};
+
+/* ===== the cards around it ===== */
+function teach(c,o){
+ const p=pairOf(c,o.kind),a=p.a,d=D[c];
+ const inNote=o.place==='note';
+ const btn=button(c,{...o,chg:o.chgBtn});
+ const pn=o.open?panel(c,{...o,chg:o.chgBtn}):'';
+ return `<div class="appbar"><span class="ib">${svg('close')}</span><div class="prog"><i style="width:30%"></i></div><span class="ib"></span></div>
+ <div class="scroll" id="${o.id||''}"><div class="pillrow"><span class="npill">New word</span><span class="deck">${d.deck}</span></div>
+ <div class="dcard"><div class="big ${sc(c)}" lang="${c}">${a.w}</div><div class="rdg">${a.r}</div>
+ <div class="cen"><span class="spk">${svg('vol')}</span><span class="ipab">${a.i}</span></div>
+ <div class="mean">${a.m}${svg('book')}</div><div class="pos">noun</div>
+ ${noteBlk(c,o.kind,inNote?btn+(o.open?`<div id="pnl-anchor">${pn}</div>`:''):'')}
+ </div>
+ ${inNote?'':`<div style="margin-top:12px">${btn}</div>${o.open?`<div id="pnl-anchor" style="margin-top:10px">${pn}</div>`:''}`}
+ <p class="swipe">Swipe to continue</p></div>`;
+}
+function answered(c,o){
+ const p=pairOf(c,o.kind),a=p.a,d=D[c];
+ const inNote=o.place==='note';
+ const btn=button(c,{...o,chg:o.chgBtn});
+ const pn=o.open?panel(c,{...o,chg:o.chgBtn}):'';
+ return `<div class="appbar"><span class="ib">${svg('close')}</span><div class="prog"><i style="width:55%"></i></div><span class="ib"></span></div>
+ <div class="scroll" id="${o.id||''}"><div class="pillrow"><span class="npill">Meaning</span><span class="deck">${d.deck}</span></div>
+ <div class="dcard"><div class="prompt">What does this mean?</div><div class="big ${sc(c)}" lang="${c}">${a.w}</div><div class="rdg">${a.r}</div>
+ <div class="banner">${svg('check')}Correct</div>
+ <div class="mean">${a.m}</div><div class="pos">noun</div>
+ ${noteBlk(c,o.kind,inNote?btn+(o.open?`<div id="pnl-anchor">${pn}</div>`:''):'')}
+ </div>
+ ${inNote?'':`<div style="margin-top:12px">${btn}</div>${o.open?`<div id="pnl-anchor" style="margin-top:10px">${pn}</div>`:''}`}
+ </div><div class="bottom"><button class="btn fill full sm">Continue</button></div>`;
+}
+function before(c,o){
+ const p=pairOf(c,o.kind),d=D[c];
+ return `<div class="appbar"><span class="ib">${svg('close')}</span><div class="prog"><i style="width:50%"></i></div><span class="ib"></span></div>
+ <div class="scroll"><div class="pillrow"><span class="npill">Hear</span><span class="deck">${d.deck}</span></div>
+ <div class="dcard"><div class="prompt">What did you hear?</div><span class="spk" style="width:96px;height:96px;border-radius:48px;background:var(--p);color:var(--onP);align-self:center"><svg class="i" style="width:44px;height:44px" viewBox="0 0 24 24"><path d="${IC.vol}"/></svg></span></div>
+ <div class="opts" style="margin-top:14px"><button class="btn out full">${p.a.m}</button><button class="btn out full">${p.b.m}</button><button class="btn out full">${p.o.m}</button></div>
+ </div><div class="bottom"><button class="btn out full sm">Don’t know</button></div>`;
+}
+function phone(inner,cls,dir){return `<div class="ph ${cls||''}" dir="${dir||S.dir}">${inner}</div>`}
+const fc=(cap,body)=>`<div class="fcol"><div class="fcap">${cap}</div>${body}</div>`;
+
+/* the panel alone, on a slice of the card, for the state gallery */
+function frame(cap,c,st,extra){
+ const o={st,env:'ok',layout:'side',kind:S.kind,...extra};
+ return fc(cap,`<div class="ph fr" dir="${(extra&&extra.dir)||S.dir}"><div class="scroll" style="padding:12px"><div class="dcard" style="padding:12px 8px">${panel(c,o)}</div></div></div>`);
+}
+const N={play:null,listen:false,res:null,quiz:null};
+const STATES=[
+ ['Idle',{...N}],
+ ['Playing: first word, normal',{...N,play:{w:'a',slow:false}}],
+ ['Playing: second word, slow',{...N,play:{w:'b',slow:true}}],
+ ['Say one: listening',{...N,listen:true}],
+ ['Heard: matched the first',{...N,res:'a'}],
+ ['Heard: matched the second',{...N,res:'b'}],
+ ['Heard: neither of the two',{...N,res:'neither'}],
+ ['Heard: nothing',{...N,res:'none'}],
+ ['Which did you hear: playing',{...N,quiz:{t:'b',phase:'playing'}}],
+ ['Which did you hear: before tapping',{...N,quiz:{t:'b',phase:'ask'}}],
+ ['Which did you hear: after, right',{...N,quiz:{t:'b',phase:'done',pick:'b'}}],
+ ['Which did you hear: after, wrong',{...N,quiz:{t:'b',phase:'done',pick:'a'}}]];
+const FALL=[
+ ['Sound off in Settings: speakers and quiz greyed',{...N},{env:'soundoff'}],
+ ['No voice for the language: speakers and quiz greyed',{...N},{env:'novoice'}],
+ ['Speaking switched off: Say one is not there',{...N},{env:'speakoff'}],
+ ['No speech recogniser on the phone',{...N},{env:'norecog'}],
+ ['Microphone denied',{...N},{env:'denied'}],
+ ['Language needs the online recogniser',{...N},{env:'online'}]];
+
+function render(){
+ const c=S.course,d=document.documentElement,p=pairOf(c),dr=S.dir;
+ d.setAttribute('data-theme',S.theme);
+ root.className=(S.hl==='1'?'hl-on ':'')+(S.hints==='1'?'hints-on':'');
+ root.style.cssText=Object.entries(PAL[S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const base={st:N,env:'ok',layout:L.layout,kind:S.kind,place:L.place,label:L.label,open:false,chgBtn:true};
+ const sc0=document.querySelector('#live .scroll'),top=sc0?sc0.scrollTop:0;
+ const liveO={...base,st:L,env:L.env,open:L.open,id:'lv'};
+ const liveInner=L.screen==='teach'?teach(c,liveO):answered(c,liveO);
+ const seg=(ctl,k,opts,label)=>`<div class="tg">${label}<span class="seg" data-lk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${L[k]===v}">${l}</button>`).join('')}</span></div>`;
+ const lead=`The pair: <b>${W(p.a.w)}</b> (${p.a.r}, ${p.a.m}) and <b>${W(p.b.w)}</b> (${p.b.r}, ${p.b.m}).`;
+ root.innerHTML=`
+ <section class="opt"><h2>1. Where the button sits</h2>
+ <p class="note">${lead} The button shows only on a card whose <code>pair</code> note names a partner (typed notes, PR #934, ADR-0036): on the teach card, and on a card once answered, with the taught details. Before an answer it is not there, since the partner can be among the options (right). It sits inside the pair note's block, the "Sounds alike" line the card already shows, so the note says what the pair is and the button opens it. Tapping it opens the panel on the same card, below the note.</p>
+ <div class="tw">${seg(0,'place',[['note','In the note block'],['foot','Under the card']],'Button position')}${seg(0,'label',[['named','Names the partner'],['generic','Compare sounds']],'Label')}</div>
+ <div class="frames">
+  ${fc('Teach card, button closed',phone(teach(c,{...base}),'live-h',dr))}
+  ${fc('After an answer, button closed',phone(answered(c,{...base}),'live-h',dr))}
+  ${fc('Before an answer: no button (Hear; the partner is an option)',phone(before(c,base),'live-h',dr))}
+ </div></section>
+ <section class="opt"><h2>2. The panel, live</h2>
+ <p class="note">Tap the buttons: Play and Slow on each word, the microphone, Play one and the answers. What the phone "hears" is set below. Nothing is written anywhere: no review, schedule or strength; there is no counter because there is nothing to count. One word, "Play", "Slow", "Speak", "Stop", "Close", "Replay", is the hint on each icon-only control (press and hold, or hover; "Hints: All shown" above shows them all).</p>
+ <div class="tw">${seg(0,'screen',[['teach','Teach card'],['answered','After an answer']],'Card')}${seg(0,'heard',[['a','The first'],['b','The second'],['neither','Neither'],['none','Nothing heard']],'The phone hears')}${seg(0,'env',[['ok','Everything works'],['soundoff','Sound off'],['novoice','No voice'],['speakoff','Speaking off'],['norecog','No recogniser'],['denied','Mic denied'],['online','Needs online']],'Phone')}${seg(0,'layout',[['side','Side by side'],['stack','Stacked']],'Words')}${seg(0,'open',[[true,'Open'],[false,'Closed']],'Panel')}</div>
+ <div class="frames">${fc('Live: '+(L.screen==='teach'?'teach card':'answered card')+', panel '+(L.open?'open':'closed'),`<div id="live">${phone(liveInner,'live',dr)}</div>`)}</div></section>
+ <section class="opt"><h2>3. States of the panel</h2>
+ <p class="note">Every state of the panel, on the chosen pair and course. "Heard" says what the recogniser returned and which of the two it matched, never "right" or "wrong": it prefers common words and may miss vowel length. Only the quiz says right or wrong, since the app chose the word. A match rings the tile; a miss is plain words, not an error colour.</p>
+ <div class="frames">${STATES.map(([cap,st])=>frame(cap,c,st,{layout:L.layout})).join('')}</div></section>
+ <section class="opt"><h2>4. No voice, no microphone</h2>
+ <p class="note">A phone without a voice for the language, with sound off, without a recogniser, with the microphone denied, or needing the online recogniser, as the speaking drill says it (same words). Play, Slow and Which did you hear are greyed where the voice is missing; Say one still works. With Speaking switched off in Settings, Say one is left out.</p>
+ <div class="frames">${FALL.map(([cap,st,ex])=>frame(cap,c,st,{layout:L.layout,...ex})).join('')}</div></section>
+ <section class="opt"><h2>5. Every script, the longest pair, at 1.4x</h2>
+ <p class="note">The long-script pair of each course, heard matched to the second word, at 1.4x text with the words side by side (150 dp columns): Telugu and Bengali conjuncts, Devanagari, and Perso-Arabic script, which is right to left and drawn at the app's RTL line height (1.9, <code>TargetSizes.rtlHeight</code>). The last frame mirrors the whole app, for an RTL app language (#46): the tiles, the answers and the icons swap sides.</p>
+ <div class="frames">${[['te','Telugu'],['bn','Bengali'],['hi','Hindustani, Devanagari'],['ur','Hindustani, Urdu script']].map(([k,n])=>frame(n,k,{...N,res:'b'},{kind:'long',dir:'ltr'})).join('')}${frame('Urdu script, app mirrored (RTL)','ur',{...N,res:'b'},{kind:'long',dir:'rtl'})}${frame('Urdu script, mirrored, stacked words','ur',{...N,quiz:{t:'b',phase:'done',pick:'a'}},{kind:'long',dir:'rtl',layout:'stack'})}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ const n=document.querySelector('#live .scroll');if(n)n.scrollTop=top;
+ document.title='Minimal Pair';
+}
+let tp,tl,tq;
+function stopTimers(){clearTimeout(tp);clearTimeout(tl);clearTimeout(tq)}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;if(S.course==='ur'&&false)0;render();return}
+ const lb=e.target.closest('[data-lk] button');
+ if(lb){let v=lb.dataset.v;if(v==='true')v=true;if(v==='false')v=false;const k=lb.parentNode.dataset.lk;L[k]=v;if(k==='env'||k==='screen'){L.play=null;L.listen=false;L.res=null;L.quiz=null;stopTimers()}if(k==='open'&&v)setTimeout(()=>{const a=document.getElementById('pnl-anchor');if(a)a.scrollIntoView({block:'start'})},0);render();return}
+ const a=e.target.closest('#live [data-act]');
+ if(!a)return;
+ const act=a.dataset.act,P=pairOf(S.course);
+ if(act==='toggle'){L.open=!L.open;if(L.open)setTimeout(()=>{const x=document.getElementById('pnl-anchor');if(x)x.scrollIntoView({block:'start'})},0);render()}
+ else if(act==='play'){clearTimeout(tp);L.play={w:a.dataset.w,slow:a.dataset.slow==='1'};render();tp=setTimeout(()=>{L.play=null;render()},1400)}
+ else if(act==='say'){clearTimeout(tl);if(L.listen){L.listen=false;L.res='none';render();return}L.res=null;L.listen=true;render();tl=setTimeout(()=>{L.listen=false;L.res=L.heard;render()},1600)}
+ else if(act==='qplay'){clearTimeout(tq);const t=Math.random()<.5?'a':'b';L.quiz={t:L.quiz&&L.quiz.phase==='ask'?L.quiz.t:t,phase:'playing'};render();tq=setTimeout(()=>{if(L.quiz)L.quiz.phase='ask';render()},1400)}
+ else if(act==='pick'){if(L.quiz&&L.quiz.phase==='ask'){L.quiz.phase='done';L.quiz.pick=a.dataset.w;render()}}
+ else if(act==='allow'){L.env='ok';render()}
+ else if(act==='notnow'){L.env='speakoff';render()}
+});
+render();
+{const x=document.getElementById('pnl-anchor');if(x)document.querySelector('#live .scroll').scrollTop=x.offsetTop-70}
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[
+ ['body text, word, meaning on card','onS','sLow',4.5],['reading, pos, help line on card','onSv','sLow',4.5],
+ ['panel title, tile word and meaning on tile','onS','s',4.5],['panel subtitle, help line on panel','onSv','sHigh',4.5],['tile reading on tile','onSv','s',4.5],
+ ['button label, outlined (p on panel)','p','sHigh',4.5],['button label, text (p on bottom bar)','p','sLow',4.5],
+ ['Compare button label, closed (p on note block)','p','sHigh',4.5],['Compare button, open (onSc on sc)','onSc','sc',4.5],
+ ['Play and Slow icon on its circle','onSc','sc',4.5],['playing circle (onP on p)','onP','p',4.5],
+ ['microphone icon (onP on p)','onP','p',4.5],['listening microphone (onTt on tt)','onTt','tt',4.5],
+ ['Matched chip text (onSc on sc)','onSc','sc',4.5],['Matched tag text (onP on p)','onP','p',4.5],['"neither" chip text on heard box','onS','s',4.5],
+ ['tile ring, matched or playing, on tile (3:1)','p','s',3],
+ ['quiz right text (p on panel)','p','sHigh',4.5],['quiz wrong text (E on panel)','E','sHigh',4.5],['quiz right ring on answer','p','s',3],['quiz wrong ring on answer','E','s',3],
+ ['error line on panel (E on panel)','E','sHigh',4.5],['answer outline (3:1)','ol','s',3],['mic ring on listening (tt on sc, 3:1)','tt','sc',3],
+ ['hint text','s','onS',4.5],['change outline on page','E','s',3],['change tag text','onE','E',4.5]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>

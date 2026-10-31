@@ -4,6 +4,19 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `minimal-pair.html`: the minimal-pair button and practice panel (#423;
+  owner, 2026-10-31: "Mockup first"; "the minimal pairs can be a button where
+  found and clicking it will show the words side by side and let the user
+  play their sounds and practice them together ... No logging here, pure
+  practice."). The button on the teach card and after an answer, never
+  before, only where a `pair` note names the partner; the panel with the
+  two words side by side, Play and Slow, Say one (what the phone heard and
+  which it matched, never right or wrong), Which did you hear, records
+  nothing; every state, the no-voice and no-microphone fallbacks, RTL and
+  long scripts. Telugu, Bengali and Hindustani (Devanagari and Urdu
+  script), light and dark, 1.4x. Open choices are tweak controls and are
+  listed in `minimal-pair.md`, with the self-check.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
