@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit Learn</title>
+<meta name="description" content="The unit page with Learn and Relearn in place of Continue (#694): today beside the proposal, its states, what a tap opens, and the path entry. Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.fnote{font-size:12px;line-height:17px;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:820px}
+.hide{display:none!important}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:760px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+svg.i.s18{width:18px;height:18px}svg.i.s22{width:22px;height:22px}svg.i.s28{width:28px;height:28px}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 24px;scrollbar-width:none;position:relative}
+.scroll::-webkit-scrollbar{display:none}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+/* unit header */
+.uh{padding:0 8px}
+.uh .r1{display:flex;align-items:center;gap:10px}
+.mchip{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px;white-space:nowrap}
+.lvl{height:calc(20px*var(--t));border-radius:calc(10px*var(--t));background:var(--pc);color:var(--onPc)}
+.un{font-size:calc(14px*var(--t));color:var(--onSv);font-weight:500}
+.ut{font-size:calc(28px*var(--t));line-height:1.2;margin:8px 0 0;font-weight:400}
+.ud{font-size:calc(16px*var(--t));line-height:1.4;color:var(--onSv);margin:10px 0 0}
+.tiles{display:flex;gap:8px;margin-top:20px}
+.tile{flex:1;background:var(--sLow);border-radius:20px;padding:12px 14px}
+.tile b{display:block;font-size:calc(26px*var(--t));line-height:1.2;font-weight:500}
+.tile span{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.sh{display:flex;align-items:center;gap:8px;margin:24px 8px 10px}
+.sh b{font-size:calc(16px*var(--t));font-weight:500;line-height:1.2}
+.sh i{flex:1;height:1px;background:var(--olv)}
+.sh span{font-size:calc(12px*var(--t));color:var(--onSv)}
+.gl{display:flex;flex-direction:column;gap:4px;border-radius:20px;overflow:hidden}
+.gl>*{background:var(--sLow)}
+.cr{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;min-height:60px;width:100%;text-align:start;border:0}
+.cr.w{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(96px,auto)}
+.cr .tg2{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
+.cr.s .tg2{font-size:calc(17px*var(--t))}
+.cr .mn{font-size:calc(14px*var(--t));font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.cr .rdg{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.cr .sl{justify-self:end}
+.cr.s>div:first-child{flex:1;min-width:0}
+.cr.lockd .tg2,.cr.lockd .mn{color:var(--onSv)}
+.cr.lockd svg{color:var(--onSv)}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--pc);color:var(--onPc)}
+.m-not{background:var(--sHst);color:var(--onSv)}
+.lnk{background:none;border:0;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;min-height:48px;padding:0 8px}
+.dh{margin:24px 8px 8px;font-size:calc(14px*var(--t));font-weight:600;color:var(--onSv)}
+.dt{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:64px;width:100%;text-align:start;border:0}
+.dt .gl2{flex:none;width:48px;height:48px;border-radius:15px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600}
+.dt .tx{flex:1;min-width:0}
+.dt .tx b{display:block;font-size:calc(16px*var(--t));font-weight:500;line-height:1.25}
+.dt .tx small{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.b-due{background:var(--p);color:var(--onP)}.b-nd{background:var(--sc);color:var(--onSc)}.b-done{background:var(--sHst);color:var(--onSv)}
+/* filter chips (the deck page's FilterChip) */
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 4px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:calc(32px*var(--t));padding:0 12px;border-radius:8px;border:1px solid var(--ol);background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv)}
+.chip[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.cnt-l{font-size:calc(12px*var(--t));color:var(--onSv);padding:0 8px;margin:10px 0 4px}
+/* bottom bar and buttons */
+.bar{flex:none;padding:12px 16px 16px;background:var(--s);border-top:1px solid var(--olv);position:relative}
+.row2{display:flex;gap:12px}
+.row2>*{flex:1;min-width:0}
+.btn{width:100%;min-height:56px;border-radius:28px;border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px;text-align:center}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn:disabled{background:var(--sHst);color:var(--onSv);opacity:.7;cursor:default}
+.bw{position:relative;min-width:0}
+.badge{position:absolute;top:-8px;right:-4px;z-index:2;min-width:calc(16px*var(--t));height:calc(16px*var(--t));padding:0 5px;border-radius:calc(8px*var(--t));background:var(--E);color:var(--onE);font-size:calc(11px*var(--t));font-weight:600;line-height:1;display:flex;align-items:center;justify-content:center}
+.inl{padding:16px 0 0}
+.tap{position:absolute;z-index:6;width:64px;height:64px;border-radius:50%;border:3px solid var(--onS);background:color-mix(in srgb,var(--onS) 18%,transparent);left:50%;margin-left:-32px;bottom:-4px;pointer-events:none}
+.tap::after{content:"tap";position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:var(--onS);color:var(--s);font-size:11px;font-weight:700;padding:2px 6px;border-radius:6px;line-height:1.2}
+/* walkthrough (the teach shell of the shared-shell mockup) */
+.hdr{flex:none;height:64px;display:flex;align-items:center;padding:0 4px;gap:8px}
+.hdr .wave{flex:1;min-width:0;height:16px}
+.hdr .wave svg{width:100%;height:16px;display:block}
+.hdr .cnt{font-size:calc(14px*var(--t));font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.wbody{flex:1;min-height:0;overflow-y:auto;padding:4px 16px 16px;scrollbar-width:none;display:flex;flex-direction:column;gap:16px}
+.wbody::-webkit-scrollbar{display:none}
+.ctx{display:flex;align-items:center;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;border-radius:16px;font-size:calc(13px*var(--t));font-weight:600;line-height:1.2;flex:none;max-width:100%;background:var(--sc);color:var(--onSc)}
+.ctx .deck{font-size:calc(13px*var(--t));color:var(--onSv);min-width:0;line-height:1.25}
+.dc{background:var(--sHigh);border-radius:40px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.dc .hero{font-size:calc(48px*var(--t));line-height:1.2;font-weight:500}
+.dc .hero.sm{font-size:calc(30px*var(--t));line-height:1.3}
+.dc .rd{font-size:calc(18px*var(--t));line-height:1.3;color:var(--onSv)}
+.dc .mean{font-size:calc(28px*var(--t));line-height:1.2}
+.dc .mean.sm{font-size:calc(20px*var(--t))}
+.dc .sub{font-size:calc(14px*var(--t));color:var(--onSv);line-height:1.3}
+.dc .note-t{font-size:calc(15px*var(--t));line-height:1.4;color:var(--onSv);padding:0 19px}
+.spk{width:56px;height:56px;border-radius:28px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.ipab{border:1px solid var(--ol);border-radius:16px;min-height:40px;padding:0 14px;font-size:calc(16px*var(--t));display:inline-flex;align-items:center}
+.row{display:flex;gap:12px;align-items:center}
+.wwrap{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
+.chev{position:absolute;top:50%;inset-inline-end:6px;z-index:2;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.chev.back{inset-inline-end:auto;inset-inline-start:6px}
+.chev.off{opacity:.45;box-shadow:none}
+/* path */
+.pu{display:block;border-radius:16px;padding:10px 14px 10px 10px;min-height:64px;width:100%;border:0;text-align:start;margin:0 0 10px}
+.pu .r{display:flex;align-items:center;gap:12px}
+.pu .lead{flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:800;font-size:calc(16px*var(--t))}
+.pu .tt{flex:1;min-width:0}
+.pu .tt b{display:block;font-size:calc(14px*var(--t));line-height:1.25;font-weight:700}
+.pu .tt small{display:block;font-size:calc(12px*var(--t));line-height:1.3}
+.pu.done{background:var(--sc);color:var(--onSc)}.pu.done .lead{background:color-mix(in srgb,var(--onSc) 14%,transparent)}
+.pu.up{background:var(--p);color:var(--onP);box-shadow:0 1px 3px rgba(0,0,0,.3)}.pu.up .lead{background:color-mix(in srgb,var(--onP) 14%,transparent);border-radius:50%}
+.pu.ahead{background:var(--sHigh);color:var(--onS);box-shadow:inset 0 0 0 1px var(--olv)}.pu.ahead small{color:var(--onSv)}.pu.ahead .lead{background:color-mix(in srgb,var(--onS) 14%,transparent)}
+.pu.soon{background:none;box-shadow:inset 0 0 0 1.5px var(--ol);color:var(--onS)}.pu.soon small{color:var(--onSv)}.pu.soon .lead{background:var(--sHigh);color:var(--onSv)}
+.pu .pl{display:inline-flex;align-items:center;gap:4px;margin-top:4px;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));font-weight:600;background:var(--tc);color:var(--onTc)}
+.pu .pl.lrn{background:var(--pc);color:var(--onPc)}
+.pu.up .pl.lrn{background:var(--pc);color:var(--onPc)}
+.lh{font-size:calc(14px*var(--t));font-weight:700;color:var(--onSv);margin:10px 8px 10px}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:7;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Unit page: Learn and Relearn</h1>
+<p class="cap1">The unit page of a course's path (#694; owner, 2026-10-31: "Why would units need 'continue'? Learn / relearn is the only thing they need."). Today's page beside the proposal, with red dashed outlines on what changed. Learn is the card-by-card walkthrough built for the deck page (PR #943); swipe and chevrons go on, there is no Continue button. Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Where nothing is decided, the most conservative option is drawn and the alternative is a tweak control; the numbered doubts are in <code>unit-learn.md</code>, with the self-check and the notes.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palette: ColorScheme.fromSeed(#3F6C51), as in the other mockups; container tokens approximated (see unit-learn.md) ===== */
+const PAL={
+dark:{p:"#92d5ab",onP:"#003920",pc:"#085231",onPc:"#aef2c6",sc:"#374b3e",onSc:"#d1e8d6",s:"#0f1511",onS:"#dfe4dd",onSv:"#c0c9c0",sLow:"#171d19",sHigh:"#262b27",sHst:"#313632",ol:"#8a938b",olv:"#404942",E:"#ffb4ab",onE:"#690005",tc:"#224c58",onTc:"#bfe9f8"},
+light:{p:"#296a48",onP:"#ffffff",pc:"#aef2c6",onPc:"#002111",sc:"#d1e8d6",onSc:"#374b3e",s:"#f6fbf4",onS:"#171d19",onSv:"#404942",sLow:"#f0f5ee",sHigh:"#e4eae3",sHst:"#dfe4dd",ol:"#717972",olv:"#c0c9c0",E:"#ba1a1a",onE:"#ffffff",tc:"#bfe9f8",onTc:"#224c58"}};
+const P={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ bug:'M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5s-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ add:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ replay:'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z',
+ play:'M8 5v14l11-7z',
+ lock:'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z',
+ check:'M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z',
+ more:'M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ chr:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ chl:'M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'};
+const svg=(k,c='')=>`<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[k]}"/></svg>`;
+
+/* ===== The unit: "Family", level A1, three decks. Words, readings and glosses follow the course (Bengali readings: no final a). =====
+   t: tag. wait: a sentence that waits for a word it needs (Unlocks.waitingFor). */
+const C={
+ hi:{lang:'Hindustani',head:'Hindustani from English',glyph:['प','द','व'],
+  decks:[
+   {name:'Family words',cards:[
+    {w:'माँ',rd:'mām̐',m:'mother',pos:'noun, feminine',ipa:'/mãː/',t:'parent',note:'Also written माता in formal writing.'},
+    {w:'पिता',rd:'pitā',m:'father',pos:'noun, masculine',ipa:'/pɪt̪aː/',t:'parent',note:'Spoken forms: पापा (pāpā), बाबूजी (bābūjī).'},
+    {w:'भाई',rd:'bhāī',m:'brother',pos:'noun, masculine',ipa:'/bʱaːiː/',t:'sibling',note:''},
+    {w:'बहन',rd:'bahan',m:'sister',pos:'noun, feminine',ipa:'/bəɦən/',t:'sibling',note:'Written बहिन in some books.'},
+    {w:'दादा',rd:'dādā',m:'grandfather (father’s side)',pos:'noun, masculine',ipa:'/d̪aːd̪aː/',t:'grandparent',note:'Hindustani names each side.'}]},
+   {name:'More relatives',cards:[
+    {w:'नानी',rd:'nānī',m:'grandmother (mother’s side)',pos:'noun, feminine',ipa:'/naːniː/',t:'grandparent',note:'The father’s side is दादी (dādī).'},
+    {w:'चाचा',rd:'cācā',m:'uncle (father’s younger brother)',pos:'noun, masculine',ipa:'/tʃaːtʃaː/',t:'extended',note:''},
+    {w:'मौसी',rd:'mausī',m:'aunt (mother’s sister)',pos:'noun, feminine',ipa:'/mɔːsiː/',t:'extended',note:''}]},
+   {name:'Family sentences',cards:[
+    {w:'यह मेरी माँ हैं।',rd:'yah merī mām̐ haiṁ.',m:'This is my mother.',t:'sentence',sent:1},
+    {w:'मेरे पिता डॉक्टर हैं।',rd:'mere pitā ḍākṭar haiṁ.',m:'My father is a doctor.',t:'sentence',sent:1},
+    {w:'मेरा एक भाई है।',rd:'merā ek bhāī hai.',m:'I have one brother.',t:'sentence',sent:1},
+    {w:'मेरी नानी गाँव में रहती हैं।',rd:'merī nānī gām̐v meṁ rahtī haiṁ.',m:'My grandmother lives in a village.',t:'sentence',sent:1,wait:'गाँव (gām̐v)'}]}]},
+ bn:{lang:'Bengali',head:'Bengali from English',glyph:['প','অ','ব'],
+  decks:[
+   {name:'Family words',cards:[
+    {w:'মা',rd:'mā',m:'mother',pos:'noun',ipa:'/ma/',t:'parent',note:'Also মাতা in formal writing.'},
+    {w:'বাবা',rd:'bābā',m:'father',pos:'noun',ipa:'/baba/',t:'parent',note:'The formal word is পিতা (pitā).'},
+    {w:'ভাই',rd:'bhāi',m:'brother',pos:'noun',ipa:'/bʱai/',t:'sibling',note:''},
+    {w:'বোন',rd:'bon',m:'sister',pos:'noun',ipa:'/bon/',t:'sibling',note:'Also বোনু in some regions.'},
+    {w:'দাদু',rd:'dādu',m:'grandfather (father’s side)',pos:'noun',ipa:'/dadu/',t:'grandparent',note:'Bengali names each side.'}]},
+   {name:'More relatives',cards:[
+    {w:'দিদা',rd:'didā',m:'grandmother (mother’s side)',pos:'noun',ipa:'/dida/',t:'grandparent',note:'The father’s side is ঠাকুমা (ṭhākumā).'},
+    {w:'কাকা',rd:'kākā',m:'uncle (father’s younger brother)',pos:'noun',ipa:'/kaka/',t:'extended',note:''},
+    {w:'মাসি',rd:'māsi',m:'aunt (mother’s sister)',pos:'noun',ipa:'/maʃi/',t:'extended',note:''}]},
+   {name:'Family sentences',cards:[
+    {w:'ইনি আমার মা।',rd:'ini āmār mā.',m:'This is my mother.',t:'sentence',sent:1},
+    {w:'আমার বাবা ডাক্তার।',rd:'āmār bābā ḍāktār.',m:'My father is a doctor.',t:'sentence',sent:1},
+    {w:'আমার এক ভাই আছে।',rd:'āmār ek bhāi āche.',m:'I have one brother.',t:'sentence',sent:1},
+    {w:'আমার দিদা গ্রামে থাকেন।',rd:'āmār didā grāme thāken.',m:'My grandmother lives in a village.',t:'sentence',sent:1,wait:'গ্রাম (grām)'}]}]}};
+const TAGS=['parent','sibling','grandparent','extended','sentence'];
+const STATES=[['none','Nothing taught'],['some','Some taught'],['all','All taught'],['allw','All taught, a sentence waiting'],['reading','Reading-only unit']];
+const S={theme:'light',course:'hi',hl:'1',state:'some',place:'bar',chips:'off',scroll:'top',flow:'learn',dstate:'some',rowlink:'off',utags:[],dtags:[]};
+const c=()=>C[S.course];
+
+/* the unit as the app would read it: each card's state, from the state of the page */
+function model(st){
+ return c().decks.map((dk,di)=>({name:dk.name,di,cards:dk.cards.map((cd,ci)=>{
+  const waiting=!!cd.wait&&(st==='none'||st==='some'||st==='allw');
+  let taught=false,known=false;
+  if(st==='some')taught=di===0||(di===1&&ci===0);
+  if(st==='all'||st==='allw')taught=!waiting;
+  known=taught&&((st==='some'&&di===0&&ci<3)||((st==='all'||st==='allw')&&di===0&&ci<2));
+  return {...cd,di,ci,waiting,taught,known,open:!waiting}})}));
+}
+const flat=m=>m.flatMap(d=>d.cards);
+const inView=(cd,tags)=>!tags.length||tags.includes(cd.t);
+function lvl(cd){return cd.known?['m-known','Known']:cd.taught?['m-learning','Learning '+(cd.di===0?38:22)+'%']:['m-new','New']}
+function counts(st,tags){
+ const all=flat(model(st)),view=all.filter(x=>inView(x,tags));
+ return {all,view,untaughtView:view.filter(x=>x.open&&!x.taught).length,untaughtAll:all.filter(x=>x.open&&!x.taught).length};
+}
+/* the foot's state: Learn with its badge, Relearn, or Learn off (the deck page's rule: Relearn only when every open card of the unit is taught) */
+function learnState(st,tags){
+ if(st==='reading')return {kind:'off',n:0};
+ const k=counts(st,tags);
+ if(k.untaughtAll===0&&k.view.length>0)return {kind:'relearn',n:0};
+ return {kind:k.untaughtView>0?'learn':'off',n:k.untaughtView};
+}
+/* Today's Continue label (illustrative: the first deck's lesson, up to nine words, and the reviews due) */
+const TODAY={none:[9,0],some:[2,4],all:[0,3],allw:[0,3]};
+const todayLabel=st=>st==='reading'?'Nothing new or due':`Continue · ${TODAY[st][0]} new, ${TODAY[st][1]} due`;
+
+/* ===== pieces ===== */
+function wordRow(cd,sentenceOnly){
+ const [mc,ml]=cd.waiting?['m-not','Not open yet']:lvl(cd);
+ if(cd.sent){
+  if(cd.waiting)return `<button class="cr s lockd"><div><div class="tg2 script">${cd.w}</div><div class="mn">${cd.m}</div><div class="rdg">${cd.rd}</div><div class="rdg">Waiting for ${cd.wait}</div></div>${svg('lock')}</button>`;
+  return `<button class="cr s"><div><div class="tg2 script">${cd.w}</div><div class="mn">${cd.m}</div><div class="rdg">${cd.rd}</div></div><span class="mchip ${mc}">${ml}</span></button>`;
+ }
+ return `<button class="cr w"><div class="tg2 script">${cd.w}</div><div><div class="mn">${cd.m}</div><div class="rdg">${cd.rd}</div></div><span class="sl"><span class="mchip ${mc}">${ml}</span></span></button>`;
+}
+function deckTile(dk,i,st){
+ const cs=dk.cards;
+ let b=['b-nd','Not done'];
+ if(st==='reading')b=['b-done','Done'];
+ else if(cs.every(x=>x.taught||x.waiting)&&cs.some(x=>x.taught)&&!cs.some(x=>x.open&&!x.taught)){b=(st==='all'||st==='allw')&&i===0?['b-due','3 due']:['b-done','Done']}
+ const words=cs.filter(x=>!x.sent).length,sents=cs.length-words;
+ const meta=words&&sents?`${words} words, ${sents} sentences`:words?`${words} words`:`${sents} sentences`;
+ return `<button class="dt"><span class="gl2 script">${c().glyph[i]}</span><span class="tx"><b>${dk.name}</b><small>${meta}</small></span><span class="mchip ${b[0]}">${b[1]}</span></button>`;
+}
+function chipsRow(tags,key){
+ return `<div class="chips" role="group" aria-label="Filter by tag">${TAGS.map(t=>`<button class="chip" data-chip="${key}" data-v="${t}" aria-pressed="${tags.includes(t)}">${t}</button>`).join('')}</div>`;
+}
+function learnBtn(ls,opt={}){
+ const lab=ls.kind==='relearn'?'Relearn':'Learn';
+ const ic=ls.kind==='relearn'?svg('replay','s22'):svg('add','s22');
+ const badge=ls.kind==='learn'?`<span class="badge" aria-label="${ls.n} new cards">${ls.n}</span>`:'';
+ return `<div class="bw">${badge}<button class="btn fill" ${ls.kind==='off'?'disabled':''}>${ic}${lab}</button></div>`;
+}
+/* the unit page, today (Continue) or proposed (Learn / Relearn). o: proposed, st, tags (chips), place, scroll, tap, id */
+function unitPhone(o){
+ const st=o.st,m=model(st),all=flat(m);
+ const words=all.filter(x=>!x.sent),sents=all.filter(x=>x.sent);
+ const tags=o.chipsOn?(o.tags||[]):[];
+ const showW=words.filter(x=>inView(x,tags)),showS=sents.filter(x=>inView(x,tags));
+ const known=words.filter(x=>x.known).length,openS=sents.filter(x=>x.open).length;
+ const ls=learnState(st,tags);
+ const reading=st==='reading';
+ const decks=reading?[{name:'The family dinner (reading)',cards:[]}]:m.map((d,i)=>deckTile(d,i,st));
+ const first=6;
+ const tiles=reading?'':`<div class="tiles"><div class="tile"><b>${known}/${words.length}</b><span>words known</span></div><div class="tile"><b>${openS}/${sents.length}</b><span>sentences open</span></div></div>`;
+ const unitBtn=o.proposed&&o.place==='inline'?`<div class="inl ${o.chg?'chg upd':''}">${learnBtn(ls)}</div>`:'';
+ const body=`<div class="uh"><div class="r1"><span class="mchip lvl">A1</span><span class="un">Unit 4</span></div><h3 class="ut" style="font-weight:400">Family</h3><p class="ud">The words for your closest relatives, and the sentences that name them.</p></div>
+  ${tiles}
+  ${unitBtn}
+  ${o.chipsOn&&!reading?`<div class="${o.chg?'chg':''}" style="border-radius:12px;margin-top:4px">${chipsRow(o.tags||[],o.ckey||'u')}</div><div class="cnt-l">${showW.length+showS.length} of ${all.length} cards</div>`:''}
+  ${reading?'':`<div class="sh" data-a="words"><b>1 · Words</b><i></i></div><div class="gl">${showW.slice(0,tags.length?99:first).map(x=>wordRow(x)).join('')}</div>
+  ${!tags.length&&words.length>first?`<div><button class="lnk">Show all ${words.length}</button></div>`:''}
+  <div class="sh"><b>2 · Sentences</b><i></i><span>${openS} of ${sents.length} open</span></div><div class="gl">${showS.map(x=>wordRow(x)).join('')}</div>
+  <p class="t-sm" style="padding:8px 8px 0">A sentence opens once its words are known, or once taught.</p>`}
+  <div class="dh" data-a="decks">Decks in this unit</div><div class="gl">${decks.join('')}</div>`;
+ let foot;
+ if(!o.proposed){
+  foot=`<div class="bar"><button class="btn fill" ${reading?'disabled':''}>${svg('play','s22')}${todayLabel(st)}</button></div>`;
+ }else if(o.place==='inline'){
+  foot='';
+ }else{
+  foot=`<div class="bar"><div class="${o.chg?'chg upd':''}" style="border-radius:28px">${learnBtn(ls)}</div>${o.tap?'<span class="tap"></span>':''}</div>`;
+ }
+ const tapIn=o.tap&&o.place==='inline'?'':'';
+ return `<div class="ph" data-ph="${o.id}"><div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">${c().head}</span><span class="ib">${svg('bug')}</span></div><div class="scroll" data-sc="${o.id}">${body}</div>${foot}</div>`;
+}
+function fr(cap,inner,note){return `<div class="fcol"><div class="fcap">${cap}</div>${inner}${note?`<div class="fnote">${note}</div>`:''}</div>`}
+function seg(k,opts,label){return `<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${S[k]===v}">${l}</button>`).join('')}</span></div>`}
+
+/* ===== walkthrough frames (the teach shell of the shared-shell mockup: no foot, swipe and chevrons) ===== */
+function wave(f){const w=[];for(let x=0;x<=200;x+=2)w.push((x?'L':'M')+x+' '+(8+3.2*Math.sin(x/6.4)).toFixed(2));const path=w.join(' ');const cid='c'+Math.random().toString(36).slice(2,7);
+ return `<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="${path}" fill="none" stroke="var(--olv)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/><clipPath id="${cid}"><rect x="0" y="0" width="${(200*f).toFixed(1)}" height="16"/></clipPath><path d="${path}" fill="none" stroke="var(--p)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke" clip-path="url(#${cid})"/></svg>`}
+function walkPhone(cd,pos,total,deckChg,last){
+ const sent=!!cd.sent;
+ const card=sent
+  ?`<div class="hero sm script">${cd.w}</div><div class="rd">${cd.rd}</div><div class="row"><button class="spk" aria-label="Play">${svg('vol','s28')}</button></div><div class="mean sm">${cd.m}</div>`
+  :`<div class="hero script">${cd.w}</div><div class="rd">${cd.rd}</div><div class="row"><button class="spk" aria-label="Play">${svg('vol','s28')}</button><span class="ipab">${cd.ipa}</span></div><div class="mean">${cd.m}</div><div class="sub">${cd.pos}</div>${cd.note?`<div class="note-t">${cd.note}</div>`:''}`;
+ const deckName=c().decks[cd.di].name;
+ return `<div class="ph"><div class="hdr"><button class="ib" aria-label="Close">${svg('close')}</button><div class="wave">${wave(pos/total)}</div><span class="cnt">${pos}/${total}</span><button class="ib" aria-label="Report a problem">${svg('bug')}</button></div>
+ <div class="wwrap"><div class="wbody"><div class="ctx"><span class="pill">${sent?'New phrase':'New word'}</span><span class="deck ${deckChg?'chg upd':''}">${deckName}</span></div><div class="dc">${card}</div></div>${pos>1?`<button class="chev back" aria-label="Back">${svg('chl')}</button>`:''}<button class="chev ${last?'off':''}" aria-label="${last?'Finish':'Next'}">${svg('chr')}</button></div></div>`;
+}
+/* the walk: Learn takes the open cards not taught yet, Relearn every card; each in the unit's deck order */
+function walk(st,kind){
+ const all=flat(model(st));
+ return kind==='learn'?all.filter(x=>x.open&&!x.taught):all;
+}
+function walkFrames(kind){
+ const st=kind==='learn'?'some':'all';
+ const w=walk(st,kind),total=w.length;
+ const idx=[0];
+ for(let i=1;i<total;i++)if(w[i].di!==w[i-1].di)idx.push(i);
+ if(idx[idx.length-1]!==total-1)idx.push(total-1);
+ const wn=i=>kind==='learn'
+  ?(i===0?'Starts at the first card not taught yet, here in the second deck: the first deck is taught, so it is skipped. First view writes one log row.'
+   :i===total-1?'The last card. Swiping or tapping on from it closes the walk and returns to the unit page; the cards seen stay taught.'
+   :'The deck changes: the name beside the pill changes, the count goes on. The walk runs deck by deck, in the unit’s order.')
+  :(i===0?'Starts at the first card of the first deck. Every card is taught, so nothing is written.'
+   :i===total-1?'The last card of the last deck. On from it closes the walk.'
+   :'The deck changes: the name changes, the count goes on.');
+ return idx.map((i,k)=>fr(`${k+1}. Card ${i+1} of ${total}${i===0?'':(i===total-1?', the last':', a new deck')}`,walkPhone(w[i],i+1,total,i>0&&w[i].di!==w[i-1].di,i===total-1),wn(i)));
+}
+
+/* ===== the path ===== */
+function pathPhone(){
+ const L=S.rowlink==='on';
+ const mk=(cls,lead,title,meta,link)=>`<button class="pu ${cls}"><div class="r"><span class="lead">${lead}</span><div class="tt"><b>${title}</b><small>${meta}</small>${link?`<span class="pl lrn ${L?'chg':''}">${svg('add','s18')} Learn · ${link}</span>`:''}</div></div></button>`;
+ return `<div class="ph"><div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">${c().head}</span><span class="ib">${svg('bug')}</span></div><div class="scroll">
+  <div class="lh">A1</div>
+  ${mk('done',svg('check'),'Greetings','8 words, 2 decks','')}
+  ${mk('up',svg('play'),'Family','8 words, 4 sentences · 3 decks',L?'5 new':'')}
+  ${mk('ahead','5','Food and drink','11 words, 3 sentences · 3 decks',L?'14 new':'')}
+  ${mk('ahead','6','Numbers to 20','20 words · 2 decks',L?'20 new':'')}
+  <button class="pu soon" style="cursor:default" aria-disabled="true"><div class="r"><span class="lead">${svg('more')}</span><div class="tt"><b>Days and months</b><small>about 19 words · being written</small></div></div></button>
+ </div></div>`;
+}
+
+/* ===== deck page, as built (#693, #766, #943) ===== */
+function deckPhone(){
+ const m=model(S.dstate==='reading'?'none':S.dstate),dk=m[1],tags=S.dtags;
+ const view=dk.cards.filter(x=>inView(x,tags));
+ const untaughtView=view.filter(x=>x.open&&!x.taught).length,untaughtDeck=dk.cards.filter(x=>x.open&&!x.taught).length;
+ const relearn=untaughtDeck===0&&view.length>0;
+ const ls=relearn?{kind:'relearn'}:{kind:untaughtView>0?'learn':'off',n:untaughtView};
+ const anyTaught=dk.cards.some(x=>x.taught);
+ const rows=view.map(x=>`<div class="cr w" style="border-top:1px solid var(--olv);background:none;border-radius:0;padding:12px 8px"><div class="tg2 script">${x.w}</div><div><div class="mn" style="font-weight:400">${x.m}</div><span class="mchip ${lvl(x)[0]}">${lvl(x)[1]}</span></div><span></span></div>`).join('');
+ return `<div class="ph"><div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl"></span><span class="ib">${svg('bug')}</span></div><div class="scroll">
+ <div class="uh"><h3 class="ut" style="margin-top:0">More relatives</h3><p class="ud" style="margin-top:6px">Aunts, uncles and the mother’s side.</p></div>
+ ${chipsRow(tags,'d').replace('margin-top:16px','')}
+ <div class="cnt-l" style="margin-top:12px">${view.length} of ${dk.cards.length} words</div>${rows}</div>
+ <div class="bar"><div class="row2"><button class="btn tonal" ${anyTaught?'':'disabled'}>Practice</button>${learnBtn(ls)}</div></div></div>`;
+}
+
+/* ===== page ===== */
+const root=document.getElementById('root');
+function render(){
+ const sc={};document.querySelectorAll('[data-sc]').forEach(e=>sc[e.dataset.sc]=e.scrollTop);
+ const d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(PAL[S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const chipsOn=S.chips==='on';
+ const base={st:S.state,chipsOn,tags:S.utags,place:S.place};
+ const s1=`<section class="opt"><h2>1. Today's unit page and the proposal</h2>
+ <p class="note">Today the foot of the page is the Continue bar ("Continue · 2 new, 4 due": it reviews what is due, else teaches the next words). The proposal replaces it with one button, Learn or Relearn, in the same place, as the deck page has it: Learn carries a badge counting the cards not taught yet; once every open card of the unit is taught it is Relearn, with no badge. Only open cards count: a sentence still waiting for its words is not counted and not walked by Learn. The unit page has no Practice and no Continue (owner, 2026-10-31). Words, sentences and the decks list are as built; the example unit has three decks. Scroll inside a phone, or use Scroll.</p>
+ <div class="tw">${seg('state',STATES,'State')}${seg('place',[['bar','Bottom bar (drawn)'],['inline','Under the tiles']],'Where (doubt 2)')}${seg('chips',[['off','Off (drawn)'],['on','On']],'Tag chips on the unit page (doubt 3)')}${seg('scroll',[['top','Top'],['words','Words'],['decks','Decks list']],'Scroll')}</div>
+ <div class="frames">
+  ${fr('Today: Continue bar',unitPhone({...base,chipsOn:false,proposed:false,id:'a1'}),'Continue reviews what is due, else teaches the next words.')}
+  ${fr('Proposed: '+({none:'nothing taught',some:'some taught',all:'all taught',allw:'all open cards taught, one sentence waiting',reading:'a unit of readings only'})[S.state]+(chipsOn?', with tag chips':''),unitPhone({...base,proposed:true,chg:true,id:'a2'}),({none:'Learn, badge = the open cards not taught: 11 of 12 (one sentence waits).',some:'Learn, badge 5: the second and third decks have cards left; the first deck is taught.',all:'Relearn: every card of the unit is taught, no badge. It writes nothing.',allw:'Relearn: the waiting sentence is not open, so it does not hold Relearn back (the deck page’s rule). Doubt 5.',reading:'No card to walk: Learn is drawn off, as the deck page draws a reading deck. Doubt 6.'})[S.state])}
+ </div></section>`;
+ const s2=`<section class="opt"><h2>2. What a tap on Learn or Relearn does</h2>
+ <p class="note">It opens the walkthrough over the unit's decks, in the order the decks list them and each deck's own order (the card-by-card teach card of the deck page, PR #943). The learner goes on and back by swiping or with the chevrons; there is no Continue button. Learn walks only the open cards not taught yet, so it starts at the first untaught card, and writes one lowest-window log row at each first view. Relearn walks every card of the unit and writes nothing for a card already taught. The walk ends when the learner goes on from the last card, or closes it; cards seen stay taught.</p>
+ <div class="tw">${seg('flow',[['learn','Learn (from: some taught)'],['relearn','Relearn (from: all taught)']],'Flow')}</div>
+ <div class="frames">
+  ${fr(S.flow==='learn'?'Before: the unit page, Learn':'Before: the unit page, Relearn',unitPhone({st:S.flow==='learn'?'some':'all',proposed:true,chg:false,place:'bar',tap:true,id:'f0'}),S.flow==='learn'?'Tap Learn (badge 5).':'Tap Relearn.')}
+  ${walkFrames(S.flow).join('')}
+  ${fr('After: back on the unit page',unitPhone({st:S.flow==='learn'?'allw':'all',proposed:true,chg:false,place:'bar',id:'f9'}),S.flow==='learn'?'The five cards are taught, so the button is now Relearn; the waiting sentence is still not open.':'Unchanged: Relearn wrote nothing.')}
+ </div></section>`;
+ const s3=`<section class="opt"><h2>3. The path: unit rows and a unit not opened</h2>
+ <p class="note">Drawn unchanged, the conservative option: a unit row opens the unit page and has no Learn of its own. A unit still being written (dashed outline, "being written") is not opened, so it has no page and no Learn. The "Learn · 5 new" chip on the rows is the alternative, a tweak for doubt 4.</p>
+ <div class="tw">${seg('rowlink',[['off','No chip on rows (drawn)'],['on','Learn chip on rows']],'Row shortcut (doubt 4)')}</div>
+ <div class="frames">${fr(S.rowlink==='on'?'Proposed alternative: a Learn chip on the rows with cards to teach':'Path, today and proposed (no change)',pathPhone(),'Done, up next and ahead rows open the unit page. The dashed row is not opened.')}</div></section>`;
+ const s4=`<section class="opt"><h2>4. The tag chips: the deck page as built, and a unit page with chips</h2>
+ <p class="note">On the deck page the tag chips filter the words live, and Learn and its badge follow the chips (#693, built): with a chip on, Learn walks only the cards in view that are not taught; Relearn shows only once every card of the deck is taught. The unit page has no tag chips today and the proposal does not add them (section 1). The right phone is the alternative of doubt 3: the same chips on the unit page, with the same rules. Tap the chips.</p>
+ <div class="tw">${seg('dstate',[['none','Nothing taught'],['some','Some taught'],['all','All taught']],'Deck state')}</div>
+ <div class="frames">
+  ${fr('Deck page "More relatives", as built',deckPhone(),'Practice | Learn side by side. With "grandparent" on in Some taught, the one word in view is taught, so Learn is off (the deck still has cards to teach).')}
+  ${fr('Unit page with tag chips (alternative, doubt 3)',unitPhone({st:S.dstate,chipsOn:true,tags:S.utags,place:'bar',proposed:true,chg:true,ckey:'u',id:'d2'}),'The chips filter the unit’s words and sentences; the badge counts the open cards not taught among them.')}
+ </div></section>`;
+ root.innerHTML=s1+s2+s3+s4;
+ document.querySelectorAll('#g-tw .seg').forEach(sg=>{const k=sg.dataset.k;sg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.querySelectorAll('[data-sc]').forEach(e=>{if(sc[e.dataset.sc]!=null)e.scrollTop=sc[e.dataset.sc]});
+ applyScroll();
+ document.title='Unit Learn';
+}
+function applyScroll(){
+ const e=document.querySelector('[data-sc="a1"]'),f=document.querySelector('[data-sc="a2"]');
+ [e,f].forEach(el=>{if(!el)return;
+  if(S.scroll==='top'){if(S._sd)el.scrollTop=0;return}
+  const t=el.querySelector(`[data-a="${S.scroll}"]`);if(t)el.scrollTop=t.getBoundingClientRect().top-el.getBoundingClientRect().top+el.scrollTop-8;});
+ S._sd=false;
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){const k=b.parentNode.dataset.sk;S[k]=b.dataset.v;if(k==='scroll')S._sd=true;render();return}
+ const ch=e.target.closest('[data-chip]');
+ if(ch){const key=ch.dataset.chip==='d'?'dtags':'utags';const v=ch.dataset.v,a=S[key];S[key]=a.includes(v)?a.filter(x=>x!==v):a.concat(v);render();return}
+});
+render();
+/* ===== contrast self-check: console only (window.__contrast) ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[
+ ['body text, word, count','onS','s',4.5],['reading, meaning gloss, small notes','onSv','s',4.5],['small text on a row (surfaceContainerLow)','onSv','sLow',4.5],['target text on a row','onS','sLow',4.5],
+ ['Learn / Relearn / Continue label','onP','p',4.5],['Practice label (tonal)','onSc','sc',4.5],['badge count','onE','E',4.5],
+ ['Learning chip, New word pill, chosen tag chip','onSc','sc',4.5],['Known chip, level pill','onPc','pc',4.5],['Not open yet chip, Done badge','onSv','sHst',4.5],['Not done badge','onSc','sc',4.5],['due badge','onP','p',4.5],
+ ['New chip text','onSv','s',4.5],['Show all text button','p','s',4.5],['to-review pill','onTc','tc',4.5],
+ ['up-next row label','onP','p',4.5],['done row label','onSc','sc',4.5],['ahead row label','onS','sHigh',4.5],['ahead row meta','onSv','sHigh',4.5],
+ ['teach card meaning on the card','onS','sHigh',4.5],['teach card reading on the card','onSv','sHigh',4.5],['chevron on its disc','onSc','sc',3],
+ ['wave fill on page','p','s',3],['New chip outline on row','ol','sLow',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5],['tap ring on page','onS','s',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,fgHex:PAL[t][f],bgHex:PAL[t][b],ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast.filter(x=>!x.pass)));
+</script>
+</body>
+</html>

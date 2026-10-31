@@ -4,6 +4,16 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `unit-learn.html`: the unit page with Learn / Relearn in place of the
+  Continue bar (#694; owner, 2026-10-31: "Why would units need 'continue'?
+  Learn / relearn is the only thing they need."). Today's page beside the
+  proposal in every state (nothing, some, all taught, a sentence waiting,
+  readings only, several decks), what a tap opens (the walkthrough over the
+  unit's decks, Learn from the first untaught card), the path's unit rows,
+  and the deck page's tag chips beside a unit-page alternative. Hindustani
+  and Bengali, light and dark, 1.4x. Tweak controls and numbered doubts are
+  in `unit-learn.md`, with the self-check.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
