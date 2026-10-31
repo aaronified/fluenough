@@ -1168,8 +1168,16 @@ the entry exists:
   an entry's title, such as a sentence or an inflected form, is not marked:
   its bases carry the mark for their words.
 - **Mark only an entry you have seen:** the word's own page, with a section
-  for the language. A tool will mark them from Wiktionary's extracts; until
-  then, check each one.
+  for the language. `tools/mark_wiktionary.py` marks the cards of a core
+  from Wiktionary's extracts ([Deck tools](Deck-Tools#mark_wiktionarypy));
+  mark a base written in full by hand, checking its page.
+- **In the app,** a word's sheet shows "Wiktionary: <word>" for the card
+  itself and for each marked base word, which opens the page in the browser
+  (the address for English Wiktionary ends in the language's section, such
+  as `#Telugu`; Hindustani's is `#Hindi`; another edition's has none, since
+  its headings are in its own language). Nothing is fetched until it is
+  tapped, and a word without the mark has no link. The key is not new, so
+  decks that use it need no release guard.
 
 ### A card's own recording: `audio`
 
