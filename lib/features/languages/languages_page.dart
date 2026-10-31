@@ -31,7 +31,11 @@ enum LanguageFilter { learning, know, speak, hear, read, write }
 /// Leave is not listed: it is back in the pool, found again with Add a
 /// language.
 class LanguagesPage extends StatefulWidget {
-  const LanguagesPage({super.key, this.spokenList});
+  const LanguagesPage({super.key, this.spokenList, this.initialQuery});
+
+  /// A language's name to open Add a language at, its search holding it, as
+  /// the deck search's shortcut to a course does (#918); null opens the list.
+  final String? initialQuery;
 
   /// The languages of `assets/languages.yaml`, for a test; null reads them
   /// from the asset bundle.
@@ -44,12 +48,14 @@ class LanguagesPage extends StatefulWidget {
 class _LanguagesPageState extends State<LanguagesPage> {
   List<SpokenLanguage>? _all;
   bool _asked = false;
+  bool _queryOpened = false;
   LanguageFilter? _filter;
 
   @override
   void initState() {
     super.initState();
     _all = widget.spokenList;
+    if (_all != null) _openQuery();
     final downloads = AppScope.read(context).deckDownloads;
     if (downloads != null && downloads.index == null) {
       WidgetsBinding.instance.addPostFrameCallback(
@@ -67,8 +73,22 @@ class _LanguagesPageState extends State<LanguagesPage> {
         .loadString(SpokenLanguagesPicker.asset)
         .then(parseSpokenLanguages)
         .then((list) {
-          if (mounted) setState(() => _all = list);
+          if (!mounted) return;
+          setState(() => _all = list);
+          _openQuery();
         }, onError: (Object _) {});
+  }
+
+  /// Opens Add a language at [LanguagesPage.initialQuery], once, when the
+  /// languages are known (#918).
+  void _openQuery() {
+    final query = widget.initialQuery;
+    if (_queryOpened || query == null || query.trim().isEmpty) return;
+    _queryOpened = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final all = _all;
+      if (mounted && all != null) _add(AppScope.read(context), all, query);
+    });
   }
 
   Map<String, String> _names(List<SpokenLanguage> all) => <String, String>{
@@ -297,13 +317,16 @@ class _LanguagesPageState extends State<LanguagesPage> {
     );
   }
 
-  Future<void> _add(AppState state, List<SpokenLanguage> all) =>
-      Navigator.of(context).push(
-        MaterialPageRoute<void>(
-          settings: const RouteSettings(name: '/languages/add'),
-          builder: (_) => AddLanguagePage(spokenList: all),
-        ),
-      );
+  Future<void> _add(
+    AppState state,
+    List<SpokenLanguage> all, [
+    String? query,
+  ]) => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: const RouteSettings(name: '/languages/add'),
+      builder: (_) => AddLanguagePage(spokenList: all, initialQuery: query),
+    ),
+  );
 }
 
 /// The key above the list: what each mark means.
