@@ -72,7 +72,7 @@ List<PracticeDay> practiceWeek(
   final today = calendarDay(now);
   final first = _addDays(today, -(days - 1));
   final byDay = <DateTime, List<ReviewEvent>>{};
-  for (final e in reviews) {
+  for (final e in reviews.answered) {
     // The event's own calendar date, as a day in [now]'s zone, so that the
     // days compare and key together.
     final date = calendarDay(e.at);

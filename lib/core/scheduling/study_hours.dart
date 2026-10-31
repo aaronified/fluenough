@@ -37,7 +37,7 @@ abstract final class StudyHours {
       : elapsed;
 
   /// The time spent on [reviews]: the sum of each answer's time, capped.
-  static Duration spent(Iterable<ReviewEvent> reviews) => reviews.fold(
+  static Duration spent(Iterable<ReviewEvent> reviews) => reviews.answered.fold(
     Duration.zero,
     (sum, review) => sum + capped(review.elapsed),
   );
@@ -48,7 +48,7 @@ abstract final class StudyHours {
   /// [timeIn] for it.
   static Map<DrillMode, Duration> answerTimes(Iterable<ReviewEvent> reviews) {
     final byMode = <DrillMode, List<int>>{};
-    for (final review in reviews) {
+    for (final review in reviews.answered) {
       (byMode[review.mode] ??= <int>[]).add(
         capped(review.elapsed).inMilliseconds,
       );
@@ -77,7 +77,7 @@ abstract final class StudyHours {
   static double missShare(Iterable<ReviewEvent> reviews) {
     var all = 0;
     var missed = 0;
-    for (final review in reviews) {
+    for (final review in reviews.answered) {
       all++;
       if (!review.passed) missed++;
     }

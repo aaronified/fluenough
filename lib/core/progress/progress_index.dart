@@ -33,6 +33,10 @@ class ProgressIndex {
 
   /// Indexes [event], the newest review.
   void add(ReviewEvent event) {
+    // A walkthrough's view of a card is no answer: no review, day, lapse or
+    // leech (#694). It leaves FSRS's state at zero repetitions, as a pair
+    // never answered has none, so the lapses below still agree with it.
+    if (event.isView) return;
     final key = event.key;
     final language = _languages[Abilities.languageOf(event.cardId)] ??=
         _Language();

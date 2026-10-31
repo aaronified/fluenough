@@ -152,6 +152,8 @@ class FsrsTuner extends ChangeNotifier {
   /// when last looked at, too, so that a fit that gives nothing, and so
   /// stores nothing, is not tried again after every answer.
   void afterReview(ReviewEvent event) {
+    // A walkthrough's view of a card is no answer to fit from (#694).
+    if (event.isView) return;
     // The skills this answer counts in full for: its own, and in a script
     // deck the script skill too (#556), each with its own count and fit.
     // A part of a review elsewhere (#653) is not fitted.

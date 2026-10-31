@@ -48,7 +48,7 @@ One per answered card, oldest first: a row of the `reviews` table
 | `elapsed_ms` | yes | How long the answer took, in milliseconds. |
 | `answer` | no | What was typed, or for `speaking` what the recogniser heard. Absent for a self-graded review, and only then: its absence makes a grade of 5 Easy. |
 | `script` | no | The script the card was shown in, or the answer typed in, when the learner learns it, such as `devanagari` (#653). Absent for transliteration, a script not learned, and reviews from before it was kept. What the script skills are worked out from. |
-| `asked` | no | How the card was asked: `own` (typed, rated or said), `chooseMeaning`, `chooseWord`, `hearAndChoose`, `hearMeaning`, `matchPairs`, `rearrange`, `chooseFormMeaning`, `chooseForm` (#653), `choosePicture` or `hearPicture` (#91, Seen words: the picture of a word shown or played, chosen from four; `answer` holds the emoji chosen). Absent for reviews from before it was kept. |
+| `asked` | no | How the card was asked: `own` (typed, rated or said), `chooseMeaning`, `chooseWord`, `hearAndChoose`, `hearMeaning`, `matchPairs`, `rearrange`, `chooseFormMeaning`, `chooseForm` (#653), `choosePicture` or `hearPicture` (#91, Seen words: the picture of a word shown or played, chosen from four; `answer` holds the emoji chosen), or `teach` (#694: a card's first view in a walkthrough, grade 0 and no answer, which readers that count answers skip). Absent for reviews from before it was kept. |
 
 ## `leech` lines
 

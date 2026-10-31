@@ -44,7 +44,10 @@ enum Ask {
   chooseForm,
 
   /// Shown the word, its reading and meaning, and played aloud: a lesson
-  /// teaching it, before its first question. Records nothing.
+  /// teaching it, before its first question. Records nothing in a lesson. In
+  /// a walkthrough (#694) the card's first view is recorded with this ask,
+  /// graded 0, and the readers that count answers skip the row
+  /// ([ReviewEvent.isView]).
   teach,
 
   /// Shown a set card, or one part of it: a closed group's members
