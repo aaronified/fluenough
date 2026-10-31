@@ -22,7 +22,8 @@ import 'package:fluenough/core/data/course_path.dart'
     show CoursePath, Milestone, PlanUnit;
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
-import 'package:fluenough/core/models/deck.dart' show LanguageInfo;
+import 'package:fluenough/core/models/card.dart';
+import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -46,6 +47,8 @@ import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/teach_card.dart';
+import 'package:fluenough/features/drill/walkthrough_page.dart';
+import 'package:fluenough/ui/widgets/learn_button.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches.dart';
@@ -969,8 +972,8 @@ void main() {
     );
 
     testWidgets(
-      'Continue reviews what is due, else teaches the next words, else is '
-      'off',
+      'Learn walks every card of the unit, with its new and due counts as '
+      'subtext, and is Relearn once all are taught',
       (tester) async {
         usePhone(tester);
         final state = await pumpScreen(
@@ -979,74 +982,119 @@ void main() {
           state: await teluguLearner(),
         );
         final l10n = l10nOf(tester);
-        final ids = <String>{'te-en-family'};
-        final due = state.buildSession(DrillRequest(deckIds: ids)).due.length;
-        expect(due, greaterThan(0));
-        final fresh = state
-            .lessonFor(
-              DrillRequest.lesson(language: 'te', deckId: 'te-en-family'),
+        final decks = unitOfDeck(state, 'te-en-family')!.decks;
+        final walk = state.walkCards(decks);
+        final due = state
+            .buildSession(
+              DrillRequest(deckIds: <String>{for (final e in decks) e.id}),
             )
-            .where((item) => item.ask == Ask.teach)
+            .due
             .length;
+        final fresh = state.newToWalk(<Card>[for (final w in walk) w.card]);
+        expect(due, greaterThan(0));
         expect(fresh, greaterThan(0));
-        final continueButton = find.text(l10n.unitContinue(fresh, due));
-        expect(continueButton, findsOneWidget);
-        await tester.tap(continueButton);
+        // One control: Learn, its counts under it, no Continue, no badge.
+        expect(find.text(l10n.deckLearn), findsOneWidget);
+        expect(find.text(l10n.deckRelearn), findsNothing);
+        expect(find.text(l10n.unitLearnSubtext(fresh, due)), findsOneWidget);
+        expect(find.textContaining('Continue'), findsNothing);
+        expect(find.byType(Badge), findsNothing);
+        expect(find.byType(FilterChip), findsNothing);
+
+        await tester.tap(find.text(l10n.deckLearn));
         await tester.pumpAndSettle();
-        final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-        expect(drill.request.deckIds, <String>{'te-en-family'});
-        expect(drill.request.lesson, isFalse);
+        final request = tester
+            .widget<WalkthroughPage>(find.byType(WalkthroughPage))
+            .request;
+        expect(request.deckIds, <String>[for (final e in decks) e.id]);
+        expect(request.tags, isEmpty);
+        // The whole unit, taught or not: one count across every deck.
+        expect(
+          find.text(l10n.drillPositionShort(1, walk.length)),
+          findsOneWidget,
+        );
+      },
+    );
 
-        {
-          usePhone(tester);
-          await pumpScreen(
-            tester,
-            const UnitPage(deckId: 'te-en-family'),
-            state: AppState.test(),
-          );
-          final l10n = l10nOf(tester);
-          final label = tester
-              .widget<Text>(find.textContaining(RegExp(r'^Continue')))
-              .data!;
-          expect(label, endsWith(l10n.unitContinue(0, 0).split(', ').last));
-          await tester.tap(find.textContaining(RegExp(r'^Continue')));
-          await tester.pumpAndSettle();
-          final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-          expect(drill.request.lesson, isTrue);
-          expect(drill.request.deckIds, <String>{'te-en-family'});
-        }
-
-        {
-          usePhone(tester);
-          final progress = MemoryProgress();
-          final state = AppState.test(decks: tinyCourse(), progress: progress);
-          await state.load();
-          for (final card in state.deckById('es-en-tiny')!.cards) {
-            for (final mode in card.modesIn(ttsAvailable: false)) {
-              progress.record(
-                deckId: 'es-en-tiny',
-                cardId: card.id,
-                mode: mode,
-                grade: 4,
-                now: state.now(),
-              );
-            }
+    testWidgets(
+      'the unit page says Relearn when every card is taught, and walks the '
+      'same cards writing nothing',
+      (tester) async {
+        usePhone(tester);
+        final progress = MemoryProgress();
+        final state = AppState.test(decks: tinyCourse(), progress: progress);
+        await state.load();
+        for (final card in state.deckById('es-en-tiny')!.cards) {
+          for (final mode in card.modesIn(ttsAvailable: false)) {
+            progress.record(
+              deckId: 'es-en-tiny',
+              cardId: card.id,
+              mode: mode,
+              grade: 4,
+              now: state.now(),
+            );
           }
-          await pumpScreen(
-            tester,
-            const UnitPage(deckId: 'es-en-tiny'),
-            state: state,
-          );
-          final l10n = l10nOf(tester);
-          expect(find.text(l10n.unitNothingLeft), findsOneWidget);
-          final button = tester.widget<FilledButton>(
-            find.ancestor(
-              of: find.text(l10n.unitNothingLeft),
-              matching: find.byWidgetPredicate((w) => w is FilledButton),
-            ),
-          );
-          expect(button.onPressed, isNull);
         }
+        await pumpScreen(
+          tester,
+          const UnitPage(deckId: 'es-en-tiny'),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.deckRelearn), findsOneWidget);
+        expect(find.text(l10n.deckLearn), findsNothing);
+        expect(find.text(l10n.unitLearnSubtext(0, 0)), findsOneWidget);
+        final logged = progress.log.length;
+        await tester.tap(find.text(l10n.deckRelearn));
+        await tester.pumpAndSettle();
+        expect(find.byType(WalkthroughPage), findsOneWidget);
+        expect(
+          find.text(
+            l10n.drillPositionShort(
+              1,
+              state.walkCards(<DeckEntry>[
+                state.deckById('es-en-tiny')!,
+              ]).length,
+            ),
+          ),
+          findsOneWidget,
+        );
+        expect(progress.log, hasLength(logged));
+      },
+    );
+
+    testWidgets(
+      'the Learn icon is as tall as the label and subtext together, the '
+      'same for Relearn, at 1.4x text with no overflow',
+      (tester) async {
+        usePhone(tester, textScale: 1.4);
+        await pumpScreen(
+          tester,
+          const UnitPage(deckId: 'te-en-family'),
+          state: await teluguLearner(),
+        );
+        Size size(Key key) => tester.getSize(find.byKey(key));
+        final learnIcon = size(LearnButton.iconKey);
+        final text = size(LearnButton.textKey);
+        expect(learnIcon.height, greaterThanOrEqualTo(text.height - 1));
+        expect(learnIcon.height, learnIcon.width);
+        expect(
+          tester.getCenter(find.byKey(LearnButton.iconKey)).dy,
+          closeTo(tester.getCenter(find.byKey(LearnButton.textKey)).dy, 1),
+        );
+        expect(tester.takeException(), isNull);
+
+        final done = tinyState();
+        await done.load();
+        learnAll(done, tiny);
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: tiny),
+          state: done,
+        );
+        final relearnIcon = size(LearnButton.iconKey);
+        expect(relearnIcon, learnIcon);
+        expect(tester.takeException(), isNull);
       },
     );
   });
@@ -1096,10 +1144,10 @@ void main() {
         );
         final l10n = l10nOf(tester);
 
-        // Every word is taught: + Learn has become Relearn, with no badge.
+        // Every word is taught: Learn has become Relearn, with no badge.
         expect(find.text(l10n.deckLearn), findsNothing);
         expect(find.text(l10n.deckRelearn), findsOneWidget);
-        expect(find.byType(Badge), findsNothing);
+        expect(tester.widget<Badge>(find.byType(Badge)).isLabelVisible, false);
         await tester.tap(find.text(l10n.deckPractice));
         await tester.pumpAndSettle();
         await tester.tap(find.text(l10n.deckPracticeStart));
@@ -1173,7 +1221,8 @@ void main() {
     });
 
     testWidgets(
-      'Relearn waits for every card of the deck, not just those in view',
+      'the label is Relearn only once every card of the deck is taught, not '
+      'just those in view',
       (tester) async {
         usePhone(tester);
         final state = taggedState();
@@ -1189,10 +1238,11 @@ void main() {
         );
         final l10n = l10nOf(tester);
 
-        // The words in view are taught, but "casa" is not: + Learn stays,
-        // with nothing in view left to teach.
+        // The words in view are taught, but "casa" is not: the label stays
+        // Learn, with no badge, and it still walks the words in view.
         expect(find.text(l10n.deckRelearn), findsNothing);
         expect(find.text(l10n.deckLearn), findsOneWidget);
+        expect(tester.widget<Badge>(find.byType(Badge)).isLabelVisible, false);
         expect(
           tester
               .widget<FilledButton>(
@@ -1202,14 +1252,14 @@ void main() {
                 ),
               )
               .onPressed,
-          isNull,
+          isNotNull,
         );
 
         learnTagged(state, 'es-en-tagged', const <String>{'home'});
         await tester.pumpAndSettle();
         expect(find.text(l10n.deckRelearn), findsOneWidget);
         expect(find.text(l10n.deckLearn), findsNothing);
-        expect(find.byType(Badge), findsNothing);
+        expect(tester.widget<Badge>(find.byType(Badge)).isLabelVisible, false);
       },
     );
 
@@ -1284,21 +1334,25 @@ void main() {
     );
 
     testWidgets(
-      '+ Learn counts the words in view not taught, and walks through those',
+      'the badge counts the words in view not taught, and Learn walks every '
+      'word in view, taught or not',
       (tester) async {
         usePhone(tester);
         final state = await pumpDeck(tester, spanish);
         final l10n = l10nOf(tester);
-        final all = state.untaughtCards('es', deckId: spanish).length;
+        final cards = state.deckById(spanish)!.cards;
+        final all = state.newToWalk(cards);
         Finder badge(int n) =>
             find.descendant(of: find.byType(Badge), matching: find.text('$n'));
         expect(all, greaterThan(2));
         expect(badge(all), findsOneWidget);
 
         await tapVisible(tester, find.widgetWithText(FilterChip, 'food'));
-        final food = state
-            .untaughtCards('es', deckId: spanish, tags: const {'food'})
-            .length;
+        final inView = <Card>[
+          for (final c in cards)
+            if (c.tags.contains('food')) c,
+        ];
+        final food = state.newToWalk(inView);
         expect(food, inExclusiveRange(0, all));
         expect(badge(food), findsOneWidget);
 
@@ -1306,7 +1360,44 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.byType(DrillPage), findsNothing);
         expect(find.byType(TeachCard), findsOneWidget);
-        expect(find.text(l10n.drillPositionShort(1, food)), findsOneWidget);
+        expect(
+          find.text(l10n.drillPositionShort(1, inView.length)),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      'Learn on a part-taught deck walks all of it and writes only for the '
+      'cards not taught',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnTagged(state, 'es-en-tagged', const <String>{'pets'});
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: 'es-en-tagged'),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final logged = state.progress.log.length;
+        await tester.tap(find.text(l10n.deckLearn));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.drillPositionShort(1, 3)), findsOneWidget);
+        expect(find.text('gato'), findsOneWidget);
+        expect(state.progress.log, hasLength(logged));
+        for (var i = 0; i < 2; i++) {
+          await tester.fling(
+            find.byType(TeachCard),
+            const Offset(-300, 0),
+            1000,
+          );
+          await tester.pumpAndSettle();
+        }
+        expect(find.text('casa'), findsOneWidget);
+        expect(state.progress.log, hasLength(logged + 1));
+        expect(state.progress.log.last.cardId, 'es-en-tagged-0003');
       },
     );
 
@@ -1420,6 +1511,105 @@ void main() {
   });
 
   group('a walkthrough view', () {
+    test('of a sentence still waiting logs the usual row, and it counts as '
+        'taught; seen again it writes nothing', () async {
+      final state = await teluguLearner();
+      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      final walk = state.walkCards(decks);
+      final waiting = <Card>[
+        for (final w in walk)
+          if (state.unlocks.isClosed(w.card) &&
+              !state.isTaught(w.card) &&
+              state.drillableModes(w.card).isNotEmpty)
+            w.card,
+      ];
+      expect(waiting, isNotEmpty, reason: 'the fixture has a waiting sentence');
+      final sentence = waiting.first;
+      final fresh = state.newToWalk(<Card>[for (final w in walk) w.card]);
+      final logged = state.progress.log.length;
+
+      final view = state.viewCard(sentence)!;
+      expect(view.isView, isTrue);
+      expect(view.cardId, sentence.id);
+      expect(view.grade, 0);
+      expect(view.asked, Ask.teach);
+      expect(state.progress.log, hasLength(logged + 1));
+      expect(state.isTaught(sentence), isTrue);
+      expect(state.newToWalk(<Card>[for (final w in walk) w.card]), fresh - 1);
+      // Taught, it is open by the unlock rule.
+      expect(state.unlocks.isOpen(sentence), isTrue);
+      expect(state.viewCard(sentence), isNull);
+      expect(state.progress.log, hasLength(logged + 1));
+    });
+
+    test('a card with no mode to drill writes nothing', () async {
+      final state = taggedState();
+      addTearDown(state.dispose);
+      await state.load();
+      final card = state.deckById('es-en-tagged')!.cards.first;
+      for (final skill in Skill.values) {
+        state.settings.setSkillEnabled(skill, false);
+      }
+      expect(state.drillableModes(card), isEmpty);
+      expect(state.viewCard(card), isNull);
+      expect(state.progress.log, isEmpty);
+    });
+
+    test('a walk covers every deck of the unit in deck order, each card once '
+        'with its deck, taught or not', () async {
+      final state = await teluguLearner();
+      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      expect(decks.length, greaterThan(1));
+      final walk = state.walkCards(decks);
+      final ids = <String>[for (final w in walk) w.card.id];
+      expect(ids.toSet(), hasLength(ids.length));
+      // Deck by deck, in the order the decks list, each deck's own order.
+      var at = 0;
+      for (final deck in decks.where((d) => d.deck.kind != DeckKind.reading)) {
+        for (final card in deck.cards) {
+          if (at < walk.length && walk[at].card.id == card.id) {
+            expect(walk[at].entry.id, deck.id);
+            at++;
+          }
+        }
+      }
+      expect(at, walk.length);
+      expect(<String>{
+        for (final w in walk) w.entry.id,
+      }, hasLength(greaterThan(1)));
+      // Taught cards stay in it.
+      final taught = walk.where((w) => state.isTaught(w.card));
+      expect(taught, isNotEmpty);
+    });
+
+    testWidgets('the walk shows each card\'s deck name, changing where it '
+        'crosses into the next deck', (tester) async {
+      usePhone(tester);
+      final state = await teluguLearner();
+      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      final walk = state.walkCards(decks);
+      await pumpScreen(
+        tester,
+        WalkthroughPage(
+          request: WalkthroughRequest(
+            deckIds: <String>[for (final e in decks) e.id],
+          ),
+        ),
+        state: state,
+      );
+      final boundary = walk.indexWhere(
+        (w) => w.entry.id != walk.first.entry.id,
+      );
+      expect(boundary, greaterThan(0));
+      expect(find.text(walk.first.entry.deck.name), findsOneWidget);
+      for (var i = 0; i < boundary; i++) {
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+      }
+      expect(find.text(walk[boundary].entry.deck.name), findsOneWidget);
+      expect(find.text(walk.first.entry.deck.name), findsNothing);
+    });
+
     const gato = 'es-en-tagged-0001';
     const key = (cardId: gato, mode: DrillMode.recognition);
 
