@@ -11,6 +11,7 @@ import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
+import '../../core/grading/meaning_rules.dart' show meaningKey;
 import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
@@ -416,6 +417,11 @@ class DrillSession extends ChangeNotifier {
   /// Whether meanings are English, where the meaning rules apply.
   bool get _meaningIsEnglish => deck.deck.native.code == 'en';
 
+  /// The card's `not_synonyms` in comparison form, for the grader.
+  Set<String> get _notSynonymKeys => <String>{
+    for (final text in item.card.notSynonyms) meaningKey(text),
+  };
+
   /// What a typed answer to [card] is graded against: its meanings when
   /// [hearsMeaning], else what its mode accepts.
   List<String> _answersOf(Card card) =>
@@ -470,6 +476,7 @@ class DrillSession extends ChangeNotifier {
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
       accepted.first,
       alternates: accepted.sublist(1),
+      notSynonyms: _notSynonymKeys,
     );
     // In Latin letters, the reading in the language's scheme (#47). The
     // script is still accepted, and counts in full.

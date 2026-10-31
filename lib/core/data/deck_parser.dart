@@ -145,6 +145,7 @@ const _cardFields = {
   'target_scripts',
   'words',
   'alt_native',
+  'not_synonyms',
   'pos',
   'gender',
   'tags',
@@ -183,6 +184,7 @@ const _refFields = {
   'reading',
   'ipa',
   'alt_native',
+  'not_synonyms',
   'tags',
   'notes',
   'examples',
@@ -317,6 +319,7 @@ const _layerEntryFields = {
   // A set card's explanation (DECK-FORMAT.md, Set cards).
   'explanation',
   'alt_native',
+  'not_synonyms',
   'notes',
   'examples',
   'bases',
@@ -819,6 +822,9 @@ class _Reader {
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      notSynonyms: fields.has('not_synonyms')
+          ? fields.strings('not_synonyms')
+          : null,
       tags: fields.has('tags') ? fields.strings('tags') : null,
       notes: fields.has('notes')
           ? notes(fields.node('notes'), '$path.notes')
@@ -885,6 +891,7 @@ class _Reader {
       ),
       words: words(fields, path),
       altNative: fields.strings('alt_native'),
+      notSynonyms: fields.strings('not_synonyms'),
       pos: fields.optionalString('pos', allowEmpty: false),
       hears: hears(fields, path),
       gender: fields.optionalString('gender'),
@@ -1628,7 +1635,12 @@ class _Reader {
   CoreWritten coreCard(YamlNode node, String path, Map<String, YamlNode> seen) {
     final fields = this.fields(node, path);
     final id = cardId(fields.require('id'), '$path.id', seen);
-    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+    for (final key in const <String>[
+      'native',
+      'alt_native',
+      'not_synonyms',
+      'wiktionary',
+    ]) {
       if (fields.has(key)) {
         fail(
           fields.keyNode(key),
@@ -1870,7 +1882,12 @@ class _Reader {
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
     final fields = this.fields(node, path);
     final id = cardId(fields.require('ref'), '$path.ref', seen);
-    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+    for (final key in const <String>[
+      'native',
+      'alt_native',
+      'not_synonyms',
+      'wiktionary',
+    ]) {
       if (fields.has(key)) {
         fail(
           fields.keyNode(key),
@@ -2260,6 +2277,9 @@ class _Reader {
           ? fields.string('explanation')
           : null,
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      notSynonyms: fields.has('not_synonyms')
+          ? fields.strings('not_synonyms')
+          : null,
       notes: fields.has('notes')
           ? layerTexts(
               fields.require('notes'),

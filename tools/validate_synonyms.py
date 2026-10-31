@@ -156,7 +156,7 @@ def check_sets(text: str) -> list[str]:
     return errors
 
 
-def _answers(entry: dict) -> list[str]:
+def answers(entry: dict) -> list[str]:
     out: list[str] = []
     values = [entry.get("native")]
     alt = entry.get("alt_native")
@@ -189,15 +189,21 @@ def check_decks(text: str, decks: Path) -> list[str]:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
         except Exception:
             continue  # the deck validator reports it
-        if not isinstance(data, dict) or data.get("kind") != "layer":
+        if not isinstance(data, dict):
             continue
         native = data.get("native")
         if not isinstance(native, dict) or native.get("code") != "en":
             continue
         cards = data.get("cards")
-        if not isinstance(cards, dict):
+        # A layer maps card ids to entries; a single-file deck lists cards.
+        if isinstance(cards, dict):
+            pairs = list(cards.items())
+        elif isinstance(cards, list):
+            pairs = [(c.get("ref") or c.get("id"), c) for c in cards
+                     if isinstance(c, dict)]
+        else:
             continue
-        for card_id, entry in cards.items():
+        for card_id, entry in pairs:
             if not isinstance(entry, dict) or "not_synonyms" not in entry:
                 continue
             where = f"{path.name}: {card_id}"
@@ -205,7 +211,7 @@ def check_decks(text: str, decks: Path) -> list[str]:
             if not isinstance(values, list):
                 errors.append(f"{where}: not_synonyms must be a list")
                 continue
-            answer_sets = {set_of[a] for a in _answers(entry) if a in set_of}
+            answer_sets = {set_of[a] for a in answers(entry) if a in set_of}
             for value in values:
                 if not isinstance(value, str) or meaning_key(value) != value:
                     errors.append(f"{where}: not_synonyms entry {value!r} is "
