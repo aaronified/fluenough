@@ -8371,6 +8371,62 @@
   "@reviewAddFact": {
     "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a fact that names the card."
   },
+  "reviewPartAltNative": "Another accepted answer",
+  "@reviewPartAltNative": {
+    "description": "Name of a part of a card, a typed answer the grader should also accept. Shown in small capitals, and as the title of the box in Suggest a change."
+  },
+  "reviewPartNotSynonyms": "Not a synonym",
+  "@reviewPartNotSynonyms": {
+    "description": "Name of a part of a card, a word that must not be accepted as the card's meaning even though it is close. Shown in small capitals, and as the title of the box in Suggest a change."
+  },
+  "reviewAddAltNative": "Add another accepted answer",
+  "@reviewAddAltNative": {
+    "description": "Button at the end of the Another accepted answer box in Suggest a change, and the title of the box it opens."
+  },
+  "reviewAddNotSynonym": "Add a word that is not a synonym",
+  "@reviewAddNotSynonym": {
+    "description": "Button at the end of the Not a synonym box in Suggest a change, and the title of the box it opens."
+  },
+  "reviewAltNativeField": "Answer to accept",
+  "@reviewAltNativeField": {
+    "description": "Label of the field for one more accepted answer in Suggest a change."
+  },
+  "reviewNotSynonymsField": "Word to refuse",
+  "@reviewNotSynonymsField": {
+    "description": "Label of the field for one word the card must not accept in Suggest a change."
+  },
+  "reviewAltNativeAbout": "A right answer that a typed answer is marked wrong for. Give one answer, in the language of the card's meaning. It is added to the answers the card accepts.",
+  "@reviewAltNativeAbout": {
+    "description": "Under the title of the Another accepted answer box in Suggest a change: what it is for."
+  },
+  "reviewNotSynonymsAbout": "A word that must not be accepted for this card, though it is close in meaning. It never changes the card's own answers.",
+  "@reviewNotSynonymsAbout": {
+    "description": "Under the title of the Not a synonym box in Suggest a change: what it is for."
+  },
+  "reviewAddedEmpty": "Type one word or phrase.",
+  "@reviewAddedEmpty": {
+    "description": "Error under a field in Suggest a change where an item to add is empty."
+  },
+  "reviewAddedSeveral": "Give one answer. Propose each other answer on its own.",
+  "@reviewAddedSeveral": {
+    "description": "Error under the accepted-answer field in Suggest a change when the text has several answers split by a semicolon."
+  },
+  "reviewAddedAlreadyThere": "The card already has this, or you typed it twice.",
+  "@reviewAddedAlreadyThere": {
+    "description": "Error under a field in Suggest a change when the item to add is already on the card or already typed above."
+  },
+  "reviewAddedOwnAnswer": "This is already one of the card's own answers.",
+  "@reviewAddedOwnAnswer": {
+    "description": "Error under a field in Suggest a change when the item is the card's own answer: it is accepted already, and a card's own answer is never refused."
+  },
+  "reviewAddedRefused": "The card refuses this word as not a synonym, so it cannot also be an accepted answer. The owner decides which stays.",
+  "@reviewAddedRefused": {
+    "description": "Error under the accepted-answer field in Suggest a change when the card lists the typed word as not a synonym."
+  },
+  "reviewAddedNotEnglish": "Words to refuse are for English meanings only.",
+  "@reviewAddedNotEnglish": {
+    "description": "Error in Suggest a change when a word to refuse is typed on a card whose meanings are not English."
+  },
   "reviewAddRemove": "Remove the new item",
   "@reviewAddRemove": {
     "description": "Tooltip of the delete button of an item being added in Suggest a change."
