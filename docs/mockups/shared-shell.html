@@ -365,11 +365,17 @@ function sayRetry(){
  const c=card(`<div class="lab">Say it in ${D0.lang}</div><div class="prompt">${D0.mean}</div>${taught()}`);
  return hdr(3,8,2/8)+bodyBox(ctx('say')+c+`<div data-slot="4"><p class="hint">Say it again to practise.</p></div>`)+foot(FB.no(`I heard “${D0.heardBad}”. Answer: ${D0.ans}`),`<button class="b out">${svg('mic','s22')} Try again</button>`+cont());
 }
+function leaveExam(){ /* Close mid-exam: saves position and answers, resume the same day (owner, 2026-10-31) */
+ const base=choice('ok',true,'rec');
+ return base+`<div style="position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:20;display:flex;align-items:flex-end;padding:16px"><div class="chg" style="background:var(--sHigh);color:var(--onS);border-radius:28px;padding:24px 20px 16px;width:100%;display:flex;flex-direction:column;gap:12px" role="dialog"><div style="font-size:calc(22px*var(--t));line-height:1.2;font-weight:500">Leave the exam?</div><div class="hint" style="text-align:start;color:var(--onSv)">Your answers and your place are saved. You can carry on today from where you stopped.</div><button class="b fill">Save and leave</button><button class="b out">Keep going</button></div></div>`}
+function resumeExam(){
+ return `<div class="hdr"><button class="ib" aria-label="Close">${svg('close')}</button></div>`+bodyBox(`<h2 class="ttl" style="margin-top:4px">Exam</h2>${card(`<div class="lab">A1 milestone exam</div><div class="mean" style="font-size:calc(22px*var(--t))">Paused at item 4 of 35</div><div class="sub">12 answered. Saved today; carry on any time before midnight.</div>`)}`)+foot('',`<button class="b fill chg">Resume exam ${svg('fwd','s22')}</button>`);
+}
 function review(){
  const items=[[1,'Recognition',1],[2,'Recognition',1],[3,'Recognition',1],[4,'Recognition',1],[5,'Recognition',0],[6,'Recognition',1],[7,'Recognition',1]];
- const sec=(name,rows)=>`<h4>${name}</h4>`+rows.map(([n,sk,a])=>`<button class="rvr ${a?'':'open'}"><span class="no">${n}</span>${svg(a?'ok':'warn','s18')}<span>${sk} item</span><span class="st">${a?'Answered':'Not answered'}</span></button>`).join('');
- const k=`${ctx('read','A1 milestone exam')}<h2 class="ttl" style="margin-top:4px">Review your answers</h2><p class="hint" style="text-align:start;margin:0">34 of 35 answered. Tap an item to go back to it.</p><div class="rv" data-slot="3">${sec('Recognition, 7 items',items)}${sec('Hear, 7 items',[[8,'Hear',1],[9,'Hear',1],[10,'Hear',1]])}<div class="sub" style="color:var(--onSv);font-size:calc(14px*var(--t))">…</div></div>`;
- return hdr(35,35,1,'Review')+bodyBox(k,{fade:true})+foot('',`<p class="hint">1 item is not answered. An unanswered item counts as wrong.</p><div class="r2"><button class="b out">${svg('back','s22')} Back</button><button class="b fill">Submit exam</button></div>`);
+ const sec=(name,rows)=>`<h4>${name}</h4>`+rows.map(([n,sk,a])=>`<button class="rvr ${a?'':'open'}"><span class="no">${n}</span>${svg(a?'ok':'warn','s18')}<span>${sk} item</span><span class="st">${a?'Answered':'Not answered'}</span>${a?'':svg('chr','s18')}</button>`).join('');
+ const k=`${ctx('read','A1 milestone exam')}<h2 class="ttl" style="margin-top:4px">Review your answers</h2><p class="hint" style="text-align:start;margin:0">34 of 35 answered. Tap an item to go back to it; you can change any answer until you submit.</p><div class="rv" data-slot="3">${sec('Recognition, 7 items',items)}${sec('Hear, 7 items',[[8,'Hear',1],[9,'Hear',1],[10,'Hear',1]])}<div class="sub" style="color:var(--onSv);font-size:calc(14px*var(--t))">…</div></div>`;
+ return hdr(35,35,1,'Review')+bodyBox(k,{fade:true})+foot('',`<p class="hint">Answer item 5 to submit. Submit unlocks when every item is answered.</p><div class="r2"><button class="b out">${svg('back','s22')} Back</button><button class="b dis" aria-disabled="true">Submit exam</button></div>`);
 }
 
 /* ===== sections ===== */
@@ -404,11 +410,12 @@ const teachToday=()=>withGo('swipe',()=>teach({today:true}));
 const choiceToday=()=>withGo('button',()=>choice('no',false,'rec'));
 const setToday=()=>withGo('button',()=>setc());
 
+function leaveFrames(){return [fr('Close mid-exam: Save and leave',phone(leaveExam())),fr('Coming back the same day: Resume',phone(resumeExam()))]}
 function examScreens(t){
- if(t==='tiles')return [fr('Item, nothing placed',phone(tiles('un',true))),fr('Item, answered: nothing is marked right or wrong',phone(tiles('ok',true))),fr('After the last item: Review answers',phone(review()))];
- if(t==='hear')return [fr('Item, unanswered',phone(choice('un',true,'hear'))),fr('Item, answered, can be changed',phone(choice('ok',true,'hear'))),fr('After the last item: Review answers',phone(review()))];
- if(t==='say')return [fr('Item, unanswered',phone(say('un',true))),fr('Item, recorded: no heard text, no verdict',phone(say('ok',true))),fr('After the last item: Review answers',phone(review()))];
- return [fr('Item, unanswered',phone(choice('un',true,'rec'))),fr('Item, answered, can be changed',phone(choice('ok',true,'rec'))),fr('After the last item: Review answers',phone(review()))];
+ if(t==='tiles')return [fr('Item, nothing placed',phone(tiles('un',true))),fr('Item, answered: nothing is marked right or wrong',phone(tiles('ok',true))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
+ if(t==='hear')return [fr('Item, unanswered',phone(choice('un',true,'hear'))),fr('Item, answered, can be changed',phone(choice('ok',true,'hear'))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
+ if(t==='say')return [fr('Item, unanswered',phone(say('un',true))),fr('Item, recorded: no heard text, no verdict',phone(say('ok',true))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
+ return [fr('Item, unanswered',phone(choice('un',true,'rec'))),fr('Item, answered, can be changed',phone(choice('ok',true,'rec'))),fr('After the last item: Review answers, Submit locked until all are answered',phone(review()))].concat(leaveFrames());
 }
 
 const SLOTS=[
@@ -450,7 +457,7 @@ function render(){
 
 <section class="opt"><h2>4. Proposed: the action area while grading</h2><p class="note">The same slot, 56 dp, holds the self-grade. These are screens that exist today; they only move into the shell. Recall: Show answer, then the four ratings (the learner grades). A typed near miss: the learner judges. Say: wrong, with Try again beside Continue.</p><div class="frames">${fr('Recall: Show answer',phone(recall('front')))}${fr('Recall: the four ratings',phone(recall('rev')))}${fr('Typed near miss: the learner judges',phone(nearmiss()))}</div></section>
 
-<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31; unlike practice, where a screen gone back to is read-only, doubt 14), so the answer is kept as given and can be changed, with no Check and no Don’t know; the last Next is Review answers; the review step lists every item and Submit exam. The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
+<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31; unlike practice, where a screen gone back to is read-only, doubt 14), so the answer is kept as given and can be changed, with no Check and no Don’t know; the last Next is Review answers; the review step lists every item, with a tap to jump to each unanswered one, and Submit exam stays locked until every item is answered (owner, doubt 10); Close saves the place and the answers, and the learner can resume the same day (owner, doubt 11). The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
  place();
  for(const b of document.querySelectorAll('.seg button'))b.setAttribute('aria-pressed',String(isOn(b)));
 }

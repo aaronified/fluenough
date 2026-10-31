@@ -18,7 +18,7 @@ Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until 
    - Button and swipe (drawn): matches both habits. Downside: two ways to learn, and a question's chevron is new against today.
    - Button only: one thing to learn. Downside: loses the swipe that teach has, so questions and teach differ.
    - Swipe only (as teach): one way on everywhere. Downside: a question's Continue disappears, harder for screen-reader and switch users, and nothing says it is time to go on.
-2. **Are "grading area" and "going on" one area or two?** Drawn: one action area that changes content (Check, Show answer, ratings, Count right or wrong, then Continue), so the thumb target never moves.
+2. **Are "grading area" and "going on" one area or two?** Answered (owner, 2026-10-31): one action area that changes content, as drawn. Drawn: one action area that changes content (Check, Show answer, ratings, Count right or wrong, then Continue), so the thumb target never moves.
    - One area (drawn). Downside: the grading buttons and Continue cannot show together.
    - Two stacked areas (grade above, Continue below, always present). Downside: a taller foot, which at 1.4x leaves a short body.
 3. **Where do "Don't know" and "Can't listen or speak now" live?** Drawn as today: Don't know beside Check, Can't now as a link above. 
@@ -44,19 +44,19 @@ Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until 
    - Last Next only (drawn). Downside: a learner who wants an overview mid-exam must walk to the end.
    - Also a tap on the header count. Downside: a hidden control.
    - Flags to come back to an item. Downside: more to build; no flag has been decided.
-10. **Exam: what an unanswered item counts as.** Drawn: wrong, said on the review step.
-    - Wrong (drawn). Downside: harsh if a device lacks a microphone (the plan says speaking and listening never gate, so this needs care there).
-    - Block Submit until all are answered. Downside: forces a guess.
-11. **Exam: leaving.** Close is the same X. What it does (save and resume, or abandon) is not drawn; #509 sets only the retake rule.
+10. **Exam: what an unanswered item counts as.** Answered (owner, 2026-10-31): Submit is blocked until every item is answered. The review step lists the unanswered items, disables Submit until all are answered, and a tap on an item jumps to it. This replaces the earlier drawn default (unanswered counts as wrong).
+    - Block Submit until all are answered (answered, drawn). Downside: forces a guess; where a device lacks a microphone, speaking and listening items must never gate (the plan), so they need a way to be skipped or replaced.
+    - Wrong (the earlier default, not chosen). Downside: harsh.
+11. **Exam: leaving.** Answered (owner, 2026-10-31): Close mid-exam saves the position and the answers, and the learner can resume the same day. Drawn: the leave confirmation ("Save and leave", "Keep going") and the resume entry ("Paused at item 4 of 35", Resume exam). Not decided: what happens after the day ends, and whether a learner can start over.
 12. **Typed answers (romanised) in the shell.** Drawn with the keyboard open: the card and foot go compact as today. The plan retires script typing, so only the romanised field is shown.
 13. **Height at 1.4x.** An answered choice with its feedback and Continue leaves the body short, so the options scroll behind the foot (as today). Options: leave; hide the taught details under the prompt until the learner opens them (downside: the lesson-after-the-answer is the review's teaching moment).
-14. **Does "cannot change any answer" also apply to the exam?** Owner, 2026-10-31: in practice, going back (swipe or the back chevron, on teach and on questions) is allowed, but an answer already given can never be changed. Drawn: practice is read-only on return (answered state, no input, no re-grading, a neutral "Already answered" banner with a lock, not the error colour), and the exam stays as the owner decided earlier (free navigation and a review step, so answers can be changed until Submit).
-    - Exam editable until submit (drawn): matches the earlier decision and the review step's tap to go back to an item. Downside: the two modes differ on return, so the learner must be told which one they are in.
+14. **Does "cannot change any answer" also apply to the exam?** Answered (owner, 2026-10-31): exam answers are editable until submit; practice stays read-only on going back. Earlier owner remark, 2026-10-31: in practice, going back (swipe or the back chevron, on teach and on questions) is allowed, but an answer already given can never be changed. Drawn: practice is read-only on return (answered state, no input, no re-grading, a neutral "Already answered" banner with a lock, not the error colour), and the exam stays as the owner decided earlier (free navigation and a review step, so answers can be changed until Submit).
+    - Exam editable until submit (answered, drawn): matches the earlier decision and the review step's tap to go back to an item. Downside: the two modes differ on return, so the learner must be told which one they are in.
     - Exam read-only too: one rule everywhere. Downside: the review step can only look, not fix, so a forgotten item cannot be answered later.
 
 ## Going back: practice and exam
 
-Practice: swipe back or the back chevron is available on teach (new word, Relearn, rule card) and on a question once it is answered. A teach card shows as it was. A question gone back to is read-only: answered state kept, controls locked, no re-grading, and a neutral "Already answered" banner (lock icon, surface colour, not the green or red of a verdict). Exam: free navigation with the review step; answers can be changed until Submit (doubt 14 asks whether that should change).
+Practice: swipe back or the back chevron is available on teach (new word, Relearn, rule card) and on a question once it is answered. A teach card shows as it was. A question gone back to is read-only: answered state kept, controls locked, no re-grading, and a neutral "Already answered" banner (lock icon, surface colour, not the green or red of a verdict). Exam: free navigation with the review step; answers can be changed until Submit (doubt 14, answered: it stays editable).
 
 ## Self-check results
 
