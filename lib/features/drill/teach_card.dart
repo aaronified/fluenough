@@ -20,6 +20,7 @@ import '../decks/word_sheet.dart' show adultContentOn;
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'ipa_examples.dart';
+import 'pair_compare.dart';
 import 'taught_details.dart' show TaughtExample, TaughtReading;
 
 /// The teach card (#691; redrawn owner, 2026-10-29, docs/mockups/teach-screen):
@@ -99,6 +100,14 @@ class TeachCard extends StatelessWidget {
     final notes = proseNotes(card);
     final (:rude, :similar) = teachWarningOf(state, card);
     final named = adultContentOn(state);
+    // The Compare button (#423) goes in the sound-alike block, or under the
+    // card's other warning; a card told to show none shows none.
+    final compare = card.warning == 'none' ? null : pairPartnerOf(state, card);
+    final soundBlock =
+        compare != null &&
+        rude.isEmpty &&
+        similar?.kind == SimilarKind.sound &&
+        similar?.partner?.id == compare.partner.id;
     final find = baseFinder(
       state,
       language: language.code,
@@ -294,6 +303,19 @@ class TeachCard extends StatelessWidget {
                   language: language,
                   titled: false,
                   maxLines: 2,
+                  action: soundBlock && compare != null
+                      ? PairCompareButton(
+                          card: card,
+                          partner: compare.partner,
+                          language: language,
+                        )
+                      : null,
+                ),
+              if (compare != null && !soundBlock)
+                PairCompareButton(
+                  card: card,
+                  partner: compare.partner,
+                  language: language,
                 ),
               if (card.examples.isNotEmpty && language.isIpa)
                 IpaExamples(card: card, language: language)

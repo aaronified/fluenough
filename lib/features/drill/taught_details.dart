@@ -10,10 +10,12 @@ import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart';
+import '../decks/card_blocks.dart';
 import '../decks/card_notes.dart';
 import '../review/alike_warning.dart';
 import 'drill_session.dart';
 import 'ipa_examples.dart';
+import 'pair_compare.dart';
 
 /// How [TaughtDetails] shows a word's reading.
 enum TaughtReading {
@@ -112,6 +114,9 @@ class TaughtDetails extends StatelessWidget {
         final scheme = theme.colorScheme;
         final notes = shownNotes(card);
         final bases = basesOf(state, card, language);
+        // The word it sounds almost like, with Compare (#423): only once the
+        // question is answered, which is when this shows.
+        final compare = pairPartnerOf(state, card);
         final children = <Widget>[
           if (word) ...<Widget>[
             ..._word(theme, showReading: _showsReading(settings)),
@@ -162,6 +167,22 @@ class TaughtDetails extends StatelessWidget {
           else if (card.examples.isNotEmpty)
             TaughtExample(example: card.examples.first, language: language),
           ...warnings,
+          if (compare != null)
+            SimilarBlock(
+              similar: (
+                kind: SimilarKind.sound,
+                partner: compare.partner,
+                text: compare.care,
+                meanings: const <String>[],
+              ),
+              language: language,
+              titled: false,
+              action: PairCompareButton(
+                card: card,
+                partner: compare.partner,
+                language: language,
+              ),
+            ),
         ];
         if (children.isEmpty) return const SizedBox.shrink();
         return Column(

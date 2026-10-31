@@ -13270,5 +13270,181 @@
   "reviewQuestionsAnswerSaved": "Answer saved",
   "@reviewQuestionsAnswerSaved": {
     "description": "Announced after a daily question is answered."
+  },
+  "pairCompareSounds": "Compare sounds",
+  "@pairCompareSounds": {
+    "description": "Title of the minimal-pair popup (#423) and the screen-reader label of its region: the two words that sound almost alike, side by side, to play and say. Opened from the Compare button on a card."
+  },
+  "pairCompareWith": "Compare with {word}",
+  "@pairCompareWith": {
+    "description": "Label of the button on a card that opens the minimal-pair popup (#423); names the word the card sounds almost like, with its reading, as \"కాలం (kālaṁ)\".",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం (kālaṁ)"
+      }
+    }
+  },
+  "pairWordReading": "{word} ({reading})",
+  "@pairWordReading": {
+    "description": "A word with its reading in brackets, in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairPracticeOnly": "Practice only. Nothing here is recorded.",
+  "@pairPracticeOnly": {
+    "description": "Under the title of the minimal-pair popup (#423): no review, schedule or strength is kept for anything done in it."
+  },
+  "pairNoVoice": "This phone has no voice for {language}, so the words can’t be played.",
+  "@pairNoVoice": {
+    "description": "Minimal-pair popup (#423): shown at its top when the phone has no voice for the language; the play buttons are greyed out.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "pairPlayWord": "Play {word}",
+  "@pairPlayWord": {
+    "description": "Screen-reader label of the Play button under a word in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairSlowWord": "Play {word} slowly",
+  "@pairSlowWord": {
+    "description": "Screen-reader label of the slow Play button under a word in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairMatchedTag": "Matched",
+  "@pairMatchedTag": {
+    "description": "Small tag on the word of a minimal pair that the phone matched to what the learner said (#423)."
+  },
+  "pairSayOne": "Say one",
+  "@pairSayOne": {
+    "description": "Heading of the section of the minimal-pair popup where the learner says one of the two words and sees what the phone heard (#423)."
+  },
+  "pairSayHelp": "Say either word and see what the phone heard.",
+  "@pairSayHelp": {
+    "description": "Under the Say one heading of the minimal-pair popup before anything was said (#423)."
+  },
+  "pairHeardWord": "Heard: {named}",
+  "@pairHeardWord": {
+    "description": "What the phone heard in the minimal-pair popup (#423), when it is a word the app knows: \"కాలం (kālaṁ), time\".",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      }
+    }
+  },
+  "pairHeardPlain": "Heard: {word}",
+  "@pairHeardPlain": {
+    "description": "What the phone heard in the minimal-pair popup (#423), when it is not a word the app knows.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కలా"
+      }
+    }
+  },
+  "pairMatchedWord": "Matched {word}",
+  "@pairMatchedWord": {
+    "description": "Chip under what the phone heard in the minimal-pair popup (#423): which of the two words it matched.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం"
+      }
+    }
+  },
+  "pairMatchedNeither": "Matched neither of the two",
+  "@pairMatchedNeither": {
+    "description": "Chip under what the phone heard in the minimal-pair popup (#423) when it is neither word. Not a mark: never right or wrong."
+  },
+  "pairCaveat": "This is what the phone heard, not a mark. Phones favour common words and can miss a long vowel.",
+  "@pairCaveat": {
+    "description": "Under every result of Say one in the minimal-pair popup (#423): the recogniser prefers common words and may miss vowel length, so the app says what it heard and does not mark it."
+  },
+  "pairWhichTitle": "Which did you hear?",
+  "@pairWhichTitle": {
+    "description": "Heading of the section of the minimal-pair popup where the app plays one of the two words and the learner taps which (#423)."
+  },
+  "pairWhichHelp": "Plays one of the two at random. Tap the one you heard.",
+  "@pairWhichHelp": {
+    "description": "Under the Which did you hear? heading of the minimal-pair popup before a word is played (#423)."
+  },
+  "pairPlayOne": "Play one",
+  "@pairPlayOne": {
+    "description": "Button of the minimal-pair popup that plays one of the two words at random (#423)."
+  },
+  "pairPlayingOne": "Playing one of them…",
+  "@pairPlayingOne": {
+    "description": "Shown in the minimal-pair popup while the word to guess plays (#423)."
+  },
+  "pairPlayAgain": "Play it again",
+  "@pairPlayAgain": {
+    "description": "Button of the minimal-pair popup that plays the same word to guess again (#423)."
+  },
+  "pairPlayAnother": "Play another",
+  "@pairPlayAnother": {
+    "description": "Button of the minimal-pair popup that plays a new word to guess, which may be the same one (#423)."
+  },
+  "pairRight": "Yes. You heard {named}.",
+  "@pairRight": {
+    "description": "Minimal-pair popup (#423): the learner tapped the word that played; {named} is it, as \"కాలం (kālaṁ), time\".",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      }
+    }
+  },
+  "pairWrong": "Not quite. It was {named}. You tapped {tapped}.",
+  "@pairWrong": {
+    "description": "Minimal-pair popup (#423): the learner tapped the other word; {named} is the one that played, as \"కాలం (kālaṁ), time\", and {tapped} the word tapped, with its reading.",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      },
+      "tapped": {
+        "type": "String",
+        "example": "కలం (kalaṁ)"
+      }
+    }
+  },
+  "hintPlay": "Play",
+  "@hintPlay": {
+    "description": "Hint shown on a long press on a small play button, such as those of the minimal-pair popup (#423). One word, no full stop."
+  },
+  "hintSlow": "Slow",
+  "@hintSlow": {
+    "description": "Hint shown on a long press on a small button that plays a word slowly (#423). One word, no full stop."
+  },
+  "hintClose": "Close",
+  "@hintClose": {
+    "description": "Hint shown on a long press on the cross that closes a popup (#423). One word, no full stop."
+  },
+  "hintReplay": "Replay",
+  "@hintReplay": {
+    "description": "Hint shown on a long press on the button that plays the same word again in the minimal-pair popup (#423). One word, no full stop."
   }
 }
