@@ -226,7 +226,7 @@ void main() {
       other.buildSession(today(code));
     }
     for (final code in _codes) {
-      expect(other.sessionBuilds[code], before[code]! + 1, reason: '$code');
+      expect(other.sessionBuilds[code], before[code]! + 1, reason: code);
     }
   });
 

@@ -103,6 +103,26 @@ void main() {
   );
 
   test('checking the recogniser again keeps the queues', () async {
+    // A phone with a recogniser, as nearly all have: one without has Say off,
+    // and a check that is under way counts it as on (#857), so the counts
+    // move there and back.
+    state = AppState.test(
+      now: _now,
+      decks: MemoryDeckSource(_course()),
+      progress: MemoryProgress(),
+      tts: voices,
+      speech: FixedSpeechEngine(granted: true, onDevice: _codes.toSet()),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: _codes,
+        learningChosen: true,
+      ),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    state.lazyOff = true;
+    await state.refreshVoices();
+    await state.startSpeech();
     final before = buildAll();
     await state.startSpeech();
     expect(buildAll(), before);
