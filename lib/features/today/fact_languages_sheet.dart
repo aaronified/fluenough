@@ -35,13 +35,7 @@ class FactLanguagesButton extends StatelessWidget {
           child: InkWell(
             key: const ValueKey<String>('fact-languages-button'),
             borderRadius: BorderRadius.circular(AppRadii.field),
-            onTap: () => showModalBottomSheet<void>(
-              context: context,
-              isScrollControlled: true,
-              useSafeArea: true,
-              showDragHandle: true,
-              builder: (_) => FactLanguagesSheet(spokenList: spokenList),
-            ),
+            onTap: () => FactLanguagesSheet.show(context, spokenList),
             child: SizedBox(
               width: 48,
               height: 48,
@@ -58,12 +52,41 @@ class FactLanguagesButton extends StatelessWidget {
   }
 }
 
+/// The name of the language [code]: from [all] (the languages of
+/// `assets/languages.yaml`), else from the courses, else the code itself.
+String factLanguageName(
+  AppState state,
+  List<SpokenLanguage>? all,
+  String code,
+) {
+  for (final language in all ?? const <SpokenLanguage>[]) {
+    if (language.code == code) return language.name;
+  }
+  for (final language in state.languages) {
+    if (language.code == code) return language.name;
+  }
+  return code;
+}
+
 /// The languages the learner knows, each with a box; the fact is shown in
 /// the checked ones. The last checked box cannot be unchecked.
 class FactLanguagesSheet extends StatefulWidget {
   const FactLanguagesSheet({super.key, this.spokenList});
 
   final List<SpokenLanguage>? spokenList;
+
+  /// Opens the sheet over [context]: from Today's fact card and from the
+  /// Settings row, which write the same setting.
+  static Future<void> show(
+    BuildContext context, [
+    List<SpokenLanguage>? spokenList,
+  ]) => showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (_) => FactLanguagesSheet(spokenList: spokenList),
+  );
 
   @override
   State<FactLanguagesSheet> createState() => _FactLanguagesSheetState();
@@ -92,15 +115,8 @@ class _FactLanguagesSheetState extends State<FactLanguagesSheet> {
         }, onError: (Object _) {});
   }
 
-  String _name(AppState state, String code) {
-    for (final language in _all ?? const <SpokenLanguage>[]) {
-      if (language.code == code) return language.name;
-    }
-    for (final language in state.languages) {
-      if (language.code == code) return language.name;
-    }
-    return code;
-  }
+  String _name(AppState state, String code) =>
+      factLanguageName(state, _all, code);
 
   @override
   Widget build(BuildContext context) {

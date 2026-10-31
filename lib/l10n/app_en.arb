@@ -12307,6 +12307,28 @@
       }
     }
   },
+  "settingsFactLanguages": "Fact languages",
+  "@settingsFactLanguages": {
+    "description": "Title of the Settings row under Your languages that opens the choice of the languages Today's fact is shown in (#926)."
+  },
+  "settingsFactLanguagesAll": "All known languages",
+  "@settingsFactLanguagesAll": {
+    "description": "Second line of the Fact languages row in Settings while no choice was made: the fact is shown in every language the learner knows."
+  },
+  "settingsFactLanguagesJoin": "{first}, {rest}",
+  "@settingsFactLanguagesJoin": {
+    "description": "Joins language names into the list that is the Fact languages row's second line, in the order of the learner's known languages.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "rest": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
   "languagesReviewTitle": "Review",
   "@languagesReviewTitle": {
     "description": "Title of the Settings switch that turns on review of what is known (#907)."
