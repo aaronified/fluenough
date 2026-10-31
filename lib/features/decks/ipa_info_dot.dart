@@ -24,7 +24,10 @@ class IpaInfoDot extends StatelessWidget {
       onPressed: () => showPronunciation(context, card),
       icon: const Icon(Icons.info_outline),
       iconSize: 20,
-      visualDensity: VisualDensity.compact,
+      // The icon stays small; the tap target is the 48 dp minimum.
+      constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+      padding: EdgeInsets.zero,
+      visualDensity: VisualDensity.standard,
     );
   }
 }
