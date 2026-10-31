@@ -1570,8 +1570,9 @@ void main() {
       expect(state.progress.log, hasLength(logged + 1));
       expect(state.isTaught(sentence), isTrue);
       expect(state.newToWalk(<Card>[for (final w in walk) w.card]), fresh - 1);
-      // Taught, it is offered by Unlocks.isOffered.
-      expect(state.unlocks.isOffered(sentence), isTrue);
+      // A view is no answer (the stats skip it), so it does not open the
+      // sentence: Unlocks.isOffered still waits for the words and rules.
+      expect(state.unlocks.isOffered(sentence), isFalse);
       expect(state.viewCard(sentence), isNull);
       expect(state.progress.log, hasLength(logged + 1));
     });
