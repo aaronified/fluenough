@@ -117,6 +117,7 @@ class SettingsNotifier extends ChangeNotifier {
   DateTime? _lastUpdateCheck;
   String? _latestRelease;
   String? _pendingUpdate;
+  String? _lastSeenVersion;
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   String? _languageChoice;
@@ -1012,6 +1013,14 @@ class SettingsNotifier extends ChangeNotifier {
   set pendingUpdate(String? value) =>
       _set(_pendingUpdate, value, (v) => _pendingUpdate = v);
 
+  /// The app version whose "What's new" the learner last had a chance to see
+  /// (#944), such as `0.7.0`: written silently on a fresh install, and when
+  /// the sheet is shown or skipped after an update. Null until then. Not
+  /// something the learner sets. Kept per profile, like every setting.
+  String? get lastSeenVersion => _lastSeenVersion;
+  set lastSeenVersion(String? value) =>
+      _set(_lastSeenVersion, value, (v) => _lastSeenVersion = v);
+
   /// Every setting as text, by its stored name. The names are permanent:
   /// renaming one resets it for everyone.
   Map<String, String> toStored() => <String, String>{
@@ -1043,6 +1052,7 @@ class SettingsNotifier extends ChangeNotifier {
     'last_update_check': '${_lastUpdateCheck?.millisecondsSinceEpoch ?? ''}',
     'latest_release': _latestRelease ?? '',
     'pending_update': _pendingUpdate ?? '',
+    'last_seen_version': _lastSeenVersion ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
     // Not chosen yet is empty, which an older version never wrote and
@@ -1206,6 +1216,10 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('pending_update', (t) => parseVersion(t) == null ? null : t)
         case final v?) {
       pendingUpdate = v;
+    }
+    if (pick('last_seen_version', (t) => parseVersion(t) == null ? null : t)
+        case final v?) {
+      lastSeenVersion = v;
     }
     if (pick('facts_shown', _parseShown) case final v?) {
       _factsShown = Map<String, DateTime>.unmodifiable(v);
