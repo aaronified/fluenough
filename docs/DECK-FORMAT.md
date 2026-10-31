@@ -3198,6 +3198,16 @@ the table of letters and the
   reading and IPA, taking the word as people type it as the hint to what is
   said.
 
+Transliteration letters outside the Indic standard are folded to a typed
+spelling that keeps them apart (#616): Egyptian ꜣ is `3`, ꜥ `a`, ḫ `kh`,
+ẖ `ch`, ṯ `th`, ḏ `dh` and ḳ `q`; sign indices and laryngeal subscripts are
+digits (`du₃` as `du3`, `h₂` as `h2`); the raised letters of Sumerian
+determinatives are the plain letter (`ᵈnanna` as `dnanna`, `ᵏⁱ` as `ki`).
+The fold turns ḥ into `h`, as the Indic readings need, so a language where ḥ
+is a letter of its own, such as Egyptian, gives it a `typed` pair in its
+romanisation file (`["ḥ", "hh"]`). Mycenaean hyphens and `₂` `₃` indices
+(`pu₂-ra` as `pu2ra`) are typed or left out alike.
+
 A typed answer never needs the marks: they are folded away, and the file's
 `typed` list spells each reading as people type it before an answer is
 compared with it, so *palu*, *paalu* and *pālu* are all right for పాలు.
@@ -3762,12 +3772,22 @@ Automatically graded answers are normalised before comparison:
    0–9, and zero-width joiners are ignored. This is a table for the scripts
    the app ships, not full Unicode NFC, which needs a package (#28); a new
    script adds its rows to `lib/core/grading/canonical.dart`
+   Arabic letters that keyboards give for the Urdu ones (ي for ی, ك for ک,
+   ه for ہ) are read as the Urdu letter, and Arabic-Indic and Persian
+   digits as 0–9 (#616)
 2. trim, collapse internal whitespace
 3. case folding
 4. strip terminal punctuation
 
+For **Lojban** (language code `jbo`) the normalisation also ignores the
+pause `.` and the syllable break `,` wherever they stand, ignores spaces
+(`lonu` for `lo nu`: cmavo may be joined), and reads `h` as the apostrophe
+(`caho` for `ca'o`), so `ui` is right for `.ui` (#616).
+
 If that does not match, a second pass **also** strips diacritics (the Latin
-accents, and the Devanagari and Bengali nukta) and leading articles declared
+accents, the Devanagari and Bengali nukta, and the Arabic-script vowel marks
+zabar, zer, pesh, shadda and sukun, so a word typed with or without them is
+right, flagged) and leading articles declared
 for the language. A match at
 this stage counts as correct but the UI flags what was missed — the answer was
 right, the accent was not.
