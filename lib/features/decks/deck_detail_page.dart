@@ -14,6 +14,7 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
+import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
@@ -30,7 +31,7 @@ import 'word_sheet.dart';
 
 /// One deck (#693, owner, 2026-10-20): every one of its words, each with its
 /// meaning and where the learner stands with it; the tag chips, which filter
-/// the words live; and at the foot Practice and + Learn, both acting on the
+/// the words live; and at the foot Practice and Learn, both acting on the
 /// words as the chips leave them. A reading deck lists its passages instead
 /// (#98), and every deck ends with its licence, source, voice and id.
 ///
@@ -39,7 +40,7 @@ import 'word_sheet.dart';
 ///   fields.
 /// - **Practice** asks which skills, with All, then drills every word taught
 ///   in them, due or not; every answer is recorded (#499, ADR-0033).
-/// - **+ Learn** teaches the words in view that are not taught yet by a
+/// - **Learn** teaches the words in view that are not taught yet by a
 ///   walkthrough, card by card on the teach card (ADR-0024, #694), with a
 ///   badge on its corner counting them. The first view of each appends a
 ///   review-log row, graded 0, so FSRS starts it at the lowest window.
@@ -152,14 +153,16 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
               if (_tags.isEmpty || card.tags.any(_tags.contains)) card,
         ];
         final answers = state.recentAnswers;
-        final untaught = state
-            .untaughtCards(entry.language.code, deckId: entry.id, tags: _tags)
-            .length;
-        // Relearn waits for the whole deck, not just the words in view
-        // (owner, 2026-10-23).
+        // Taught status is information only: the badge counts the words in
+        // view not taught, Learn walks every one of them, and the label is
+        // Relearn once the whole deck, not just the words in view, is taught
+        // (owner, 2026-10-31).
+        final untaught = state.newToWalk(words);
         final deckUntaught = _tags.isEmpty
             ? untaught
-            : state.untaughtCards(entry.language.code, deckId: entry.id).length;
+            : state.newToWalk(<Card>[
+                for (final w in state.walkCards(<DeckEntry>[entry])) w.card,
+              ]);
         final skills = deckSkills(entry, state.settings);
         final practiceCount = state
             .buildSession(DrillRequest.practice(entry.id, tags: _tags))
@@ -242,18 +245,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             practiceEnabled: practiceCount > 0 && skills.isNotEmpty,
             onPractice: () => _practise(entry, skills),
             untaught: untaught,
-            // Every card of the deck taught, and some in view to walk through;
-            // otherwise + Learn stays, and is off when nothing in view is new.
-            relearn: deckUntaught == 0 && !reading && words.isNotEmpty,
-            learnEnabled: untaught > 0,
-            onRelearn: () =>
-                AppNavigator.openWalkthrough(context, entry.id, tags: _tags),
-            onLearn: () => AppNavigator.openWalkthrough(
-              context,
+            relearn: deckUntaught == 0 && words.isNotEmpty,
+            learnEnabled: words.isNotEmpty,
+            onLearn: () => AppNavigator.openWalkthrough(context, <String>[
               entry.id,
-              tags: _tags,
-              untaughtOnly: true,
-            ),
+            ], tags: _tags),
           ),
         );
       },
@@ -496,7 +492,7 @@ class _WordRow extends StatelessWidget {
   }
 }
 
-/// The two buttons at the foot, side by side: Practice and + Learn, which
+/// The two buttons at the foot, side by side: Practice and Learn, which
 /// becomes Relearn once every word in view is taught.
 class _ActionBar extends StatelessWidget {
   const _ActionBar({
@@ -506,20 +502,18 @@ class _ActionBar extends StatelessWidget {
     required this.relearn,
     required this.learnEnabled,
     required this.onLearn,
-    required this.onRelearn,
   });
 
   final bool practiceEnabled;
   final VoidCallback onPractice;
 
-  /// How many words in view are not taught yet: the badge on + Learn.
+  /// How many words in view are not taught yet: the badge on Learn.
   final int untaught;
   final bool relearn;
   final bool learnEnabled;
-  final VoidCallback onLearn;
 
-  /// Relearn: walks through the words in view, card by card.
-  final VoidCallback onRelearn;
+  /// Learn and Relearn walk the words in view, card by card.
+  final VoidCallback onLearn;
 
   @override
   Widget build(BuildContext context) {
@@ -528,49 +522,33 @@ class _ActionBar extends StatelessWidget {
     final style = FilledButton.styleFrom(
       minimumSize: const Size.fromHeight(AppSizes.primaryButton),
     );
-    final Widget learn;
-    if (relearn) {
-      learn = SizedBox(
-        width: double.infinity,
-        child: FilledButton.icon(
-          style: style,
-          onPressed: onRelearn,
-          icon: const Icon(Icons.replay_rounded, size: 22),
-          label: Text(l10n.deckRelearn),
-        ),
-      );
-    } else {
-      learn = Badge(
-        isLabelVisible: untaught > 0,
-        backgroundColor: scheme.error,
-        textColor: scheme.onError,
-        label: Text(
-          formatCount(context, untaught),
-          semanticsLabel: l10n.deckLearnBadge(untaught),
-        ),
-        child: SizedBox(
-          width: double.infinity,
-          child: FilledButton.icon(
-            style: style,
-            onPressed: learnEnabled ? onLearn : null,
-            icon: const Icon(Icons.add_rounded, size: 22),
-            label: Text(l10n.deckLearn),
-          ),
-        ),
-      );
-    }
+    final learn = Badge(
+      isLabelVisible: untaught > 0,
+      backgroundColor: scheme.error,
+      textColor: scheme.onError,
+      label: Text(
+        formatCount(context, untaught),
+        semanticsLabel: l10n.deckLearnBadge(untaught),
+      ),
+      child: LearnButton(
+        relearn: relearn,
+        onPressed: learnEnabled ? onLearn : null,
+      ),
+    );
     return BottomActions(
       child: Row(
         spacing: 12,
         children: <Widget>[
           Expanded(
+            flex: 2,
             child: FilledButton.tonal(
               style: style,
               onPressed: practiceEnabled ? onPractice : null,
               child: Text(l10n.deckPractice),
             ),
           ),
-          Expanded(child: learn),
+          // Learn gets the larger share, so "Relearn" is never cut off at 1.4x.
+          Expanded(flex: 3, child: learn),
         ],
       ),
     );

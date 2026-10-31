@@ -130,19 +130,26 @@ walkthrough instead (#694), and decided on 2026-10-31:
 
 ### Decision
 
-- **The deck page learns by walkthrough.** + Learn, and Relearn once every
-  card is taught, open the same card-by-card walkthrough on the teach card:
-  + Learn over the cards in view not taught yet, Relearn over every card in
-  view. It replaces the drilled lesson on the deck page. The unit page is
-  not changed by this amendment.
+- **The deck and unit pages learn by walkthrough.** Learn, and Relearn once
+  every card is taught, open the same card-by-card walkthrough on the teach
+  card, one walk with only the label differing. It covers every card, taught
+  or not (taught status is information only, owner, 2026-10-31): the deck
+  page's cards in view (as the tag chips filter them), the unit page's every
+  deck in the deck order, the deck's name shown on each card. It replaces
+  the drilled lesson on the deck page and the Continue bar on the unit page,
+  whose one control is Learn or Relearn with "N new · M due" under it (no
+  tag chips on a unit); it is off for a unit with no card to walk (readings
+  only).
 - **The first view teaches.** The first view of a card not taught yet appends
   one review-log row through the usual write path: `asked: teach`, grade 0 (the
   lowest window: `Fsrs.ratingOf` maps it to Again), no answer given, in the
   card's first drillable mode, which is recognition where it has it, and no
-  other skill. FSRS schedules the pair from that row. A repeat view, a view
-  of a card taught already and every Relearn view write nothing, and a card
-  that cannot be taught yet (a sentence waiting for its words and rules) is
-  shown and not recorded.
+  other skill. FSRS schedules the pair from that row. A repeat view and a
+  view of a card taught already write nothing, as does a card with no mode to
+  drill. A sentence still waiting for its words and rules is walked and
+  recorded like any other first view (owner, 2026-10-31: "Walk it, and mark as
+  usual on fsrs"); taught, it counts as offered by `Unlocks.isOffered`. A rules-table cell whose
+  word is not yet known is walked and logged the same way.
 - **A view is not an answer.** Every reader that counts answers skips rows
   with `asked == teach`: accuracy and remembered shares, lapses and leeches
   (a first Again starts no lapse; the next miss after a right answer is the

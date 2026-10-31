@@ -1986,23 +1986,19 @@
   "@unitDecks": {
     "description": "Heading of the list of a unit's decks, each opening its own screen."
   },
-  "unitContinue": "Continue · {fresh} new, {due} due",
-  "@unitContinue": {
-    "description": "Button at the foot of a unit's screen: reviews its cards due, or teaches its next words. Says how many new words the next lesson teaches and how many reviews are due.",
+  "unitLearnSubtext": "{fresh} new · {due} due",
+  "@unitLearnSubtext": {
+    "description": "The line under Learn or Relearn at the foot of a unit's screen: how many of the unit's cards are not taught yet, and how many reviews are due in it. Information only: Learn walks every card.",
     "placeholders": {
       "fresh": {
         "type": "int",
-        "example": "5"
+        "example": "6"
       },
       "due": {
         "type": "int",
         "example": "4"
       }
     }
-  },
-  "unitNothingLeft": "Nothing new or due",
-  "@unitNothingLeft": {
-    "description": "The button at the foot of a unit's screen, off, when the unit has nothing new to teach and nothing due."
   },
   "unitOpenWord": "Opens its card",
   "@unitOpenWord": {
@@ -11162,7 +11158,7 @@
   },
   "deckLearn": "Learn",
   "@deckLearn": {
-    "description": "The button at the foot of a deck's page, beside Practice, with a plus icon and a badge counting the words in view not taught yet: it teaches them."
+    "description": "The button at the foot of a deck's page, beside Practice, with a plus icon (a badge on the deck page counts the words in view not taught yet; the unit page uses the same strings with no badge): it walks through every word in view, card by card."
   },
   "deckLearnBadge": "{count, plural, =1{1 new word} other{{count} new words}}",
   "@deckLearnBadge": {
@@ -11176,7 +11172,7 @@
   },
   "deckRelearn": "Relearn",
   "@deckRelearn": {
-    "description": "The button at the foot of a deck's page once every word of the deck is taught: it walks through the words in view, card by card, and writes nothing."
+    "description": "The button at the foot of a deck's page once every word of the deck is taught: it walks through the words in view, card by card, the same walk as Learn."
   },
   "deckPracticeTitle": "Practice",
   "@deckPracticeTitle": {
