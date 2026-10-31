@@ -206,6 +206,7 @@ class GroupedTile extends StatelessWidget {
     this.leadingGap = 16,
   }) : subtitle = null,
        subtitleLines = null,
+       subtitleMaxLines = null,
        expanded = null,
        trailing = null,
        onTap = null,
