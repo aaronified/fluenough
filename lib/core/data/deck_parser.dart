@@ -516,6 +516,11 @@ class _Reader {
               'this is a facts file, not a deck; it is read by the facts '
               'loader, not DeckParser',
             ),
+            'situations' => fail(
+              kindNode,
+              'this is a situations file, not a deck; the catalog reads it '
+              'with parseSituations',
+            ),
             'themes' => fail(
               kindNode,
               'this is the themes file, not a deck; the catalog reads it '
