@@ -14,6 +14,7 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
+import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
@@ -152,14 +153,16 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
               if (_tags.isEmpty || card.tags.any(_tags.contains)) card,
         ];
         final answers = state.recentAnswers;
-        final untaught = state
-            .untaughtCards(entry.language.code, deckId: entry.id, tags: _tags)
-            .length;
-        // Relearn waits for the whole deck, not just the words in view
-        // (owner, 2026-10-23).
+        // Taught status is information only: the badge counts the words in
+        // view not taught, Learn walks every one of them, and the label is
+        // Relearn once the whole deck, not just the words in view, is taught
+        // (owner, 2026-10-31).
+        final untaught = state.newToWalk(words);
         final deckUntaught = _tags.isEmpty
             ? untaught
-            : state.untaughtCards(entry.language.code, deckId: entry.id).length;
+            : state.newToWalk(<Card>[
+                for (final w in state.walkCards(<DeckEntry>[entry])) w.card,
+              ]);
         final skills = deckSkills(entry, state.settings);
         final practiceCount = state
             .buildSession(DrillRequest.practice(entry.id, tags: _tags))
@@ -242,18 +245,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             practiceEnabled: practiceCount > 0 && skills.isNotEmpty,
             onPractice: () => _practise(entry, skills),
             untaught: untaught,
-            // Every card of the deck taught, and some in view to walk through;
-            // otherwise + Learn stays, and is off when nothing in view is new.
-            relearn: deckUntaught == 0 && !reading && words.isNotEmpty,
-            learnEnabled: untaught > 0,
-            onRelearn: () =>
-                AppNavigator.openWalkthrough(context, entry.id, tags: _tags),
-            onLearn: () => AppNavigator.openWalkthrough(
-              context,
+            relearn: deckUntaught == 0 && words.isNotEmpty,
+            learnEnabled: words.isNotEmpty,
+            onLearn: () => AppNavigator.openWalkthrough(context, <String>[
               entry.id,
-              tags: _tags,
-              untaughtOnly: true,
-            ),
+            ], tags: _tags),
           ),
         );
       },
@@ -506,7 +502,6 @@ class _ActionBar extends StatelessWidget {
     required this.relearn,
     required this.learnEnabled,
     required this.onLearn,
-    required this.onRelearn,
   });
 
   final bool practiceEnabled;
@@ -516,10 +511,9 @@ class _ActionBar extends StatelessWidget {
   final int untaught;
   final bool relearn;
   final bool learnEnabled;
-  final VoidCallback onLearn;
 
-  /// Relearn: walks through the words in view, card by card.
-  final VoidCallback onRelearn;
+  /// Learn and Relearn walk the words in view, card by card.
+  final VoidCallback onLearn;
 
   @override
   Widget build(BuildContext context) {
@@ -528,37 +522,19 @@ class _ActionBar extends StatelessWidget {
     final style = FilledButton.styleFrom(
       minimumSize: const Size.fromHeight(AppSizes.primaryButton),
     );
-    final Widget learn;
-    if (relearn) {
-      learn = SizedBox(
-        width: double.infinity,
-        child: FilledButton.icon(
-          style: style,
-          onPressed: onRelearn,
-          icon: const Icon(Icons.replay_rounded, size: 22),
-          label: Text(l10n.deckRelearn),
-        ),
-      );
-    } else {
-      learn = Badge(
-        isLabelVisible: untaught > 0,
-        backgroundColor: scheme.error,
-        textColor: scheme.onError,
-        label: Text(
-          formatCount(context, untaught),
-          semanticsLabel: l10n.deckLearnBadge(untaught),
-        ),
-        child: SizedBox(
-          width: double.infinity,
-          child: FilledButton.icon(
-            style: style,
-            onPressed: learnEnabled ? onLearn : null,
-            icon: const Icon(Icons.add_rounded, size: 22),
-            label: Text(l10n.deckLearn),
-          ),
-        ),
-      );
-    }
+    final learn = Badge(
+      isLabelVisible: untaught > 0,
+      backgroundColor: scheme.error,
+      textColor: scheme.onError,
+      label: Text(
+        formatCount(context, untaught),
+        semanticsLabel: l10n.deckLearnBadge(untaught),
+      ),
+      child: LearnButton(
+        relearn: relearn,
+        onPressed: learnEnabled ? onLearn : null,
+      ),
+    );
     return BottomActions(
       child: Row(
         spacing: 12,
