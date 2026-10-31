@@ -148,8 +148,11 @@ walkthrough instead (#694), and decided on 2026-10-31:
   view of a card taught already write nothing, as does a card with no mode to
   drill. A sentence still waiting for its words and rules is walked and
   recorded like any other first view (owner, 2026-10-31: "Walk it, and mark as
-  usual on fsrs"); taught, it counts as offered by `Unlocks.isOffered`. A rules-table cell whose
-  word is not yet known is walked and logged the same way.
+  usual on fsrs"). The row makes the card count as taught for the Learn and
+  Relearn labels, but it does not open the sentence: a view is no answer, so
+  the sentence stays closed (`Unlocks.isOffered` is false) until a real answer
+  opens it. A rules-table cell whose word is not yet known is walked and logged
+  the same way.
 - **A view is not an answer.** Every reader that counts answers skips rows
   with `asked == teach`: accuracy and remembered shares, lapses and leeches
   (a first Again starts no lapse; the next miss after a right answer is the
