@@ -39,10 +39,12 @@ import 'word_sheet.dart';
 ///   fields.
 /// - **Practice** asks which skills, with All, then drills every word taught
 ///   in them, due or not; every answer is recorded (#499, ADR-0033).
-/// - **+ Learn** teaches the words in view that are not taught yet (ADR-0024),
-///   with a badge on its corner counting them. Once every word of the deck is
-///   taught it is **Relearn**, with no badge: a walk through them, card by
-///   card, as the teach card shows them, writing nothing (#694).
+/// - **+ Learn** teaches the words in view that are not taught yet by a
+///   walkthrough, card by card on the teach card (ADR-0024, #694), with a
+///   badge on its corner counting them. The first view of each appends a
+///   review-log row, graded 0, so FSRS starts it at the lowest window.
+///   Once every word of the deck is taught it is **Relearn**, with no badge:
+///   the same walk through them all, writing nothing.
 ///
 /// Built from the `deck-page-and-teach-card` mockup, removed once built (in
 /// git history). The tag chips choose the words
@@ -246,13 +248,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             learnEnabled: untaught > 0,
             onRelearn: () =>
                 AppNavigator.openWalkthrough(context, entry.id, tags: _tags),
-            onLearn: () => AppNavigator.startDrill(
+            onLearn: () => AppNavigator.openWalkthrough(
               context,
-              DrillRequest.lesson(
-                language: entry.language.code,
-                deckId: entry.id,
-                tags: _tags,
-              ),
+              entry.id,
+              tags: _tags,
+              untaughtOnly: true,
             ),
           ),
         );

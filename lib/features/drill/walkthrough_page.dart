@@ -11,28 +11,36 @@ import '../../ui/widgets/teach_swipe.dart';
 import 'taught_details.dart' show TaughtReading;
 import 'teach_card.dart';
 
-/// What a deck page's Relearn asks for (#693, #694): the cards of [deckId],
-/// or with [tags] only those carrying one of them, as the page's tag chips
-/// had filtered them when it was tapped.
+/// What a deck page's + Learn and Relearn ask for (#693, #694): the cards of
+/// [deckId], or with [tags] only those carrying one of them, as the page's
+/// tag chips had filtered them when it was tapped. With [untaughtOnly]
+/// (+ Learn) only the cards not taught yet, in the order a lesson would take
+/// them; without (Relearn) every one.
 class WalkthroughRequest {
   const WalkthroughRequest({
     required this.deckId,
     this.tags = const <String>{},
+    this.untaughtOnly = false,
   });
 
   final String deckId;
   final Set<String> tags;
+  final bool untaughtOnly;
 }
 
-/// Relearn (#694, owner, 2026-10-23: "Relearn only appears when all cards in
-/// the deck are taught. It runs through all the cards (if deck is filtered,
-/// then the filtered cards only)"): the deck's cards one after another on the
+/// The card-by-card walkthrough (#694, ADR-0024, owner, 2026-10-31: "A:
+/// Walkthrough replaces + Learn"): the deck's cards one after another on the
 /// teach card, the learner going on by swiping or with the chevrons, and
-/// back the same way.
+/// back the same way. It is how a deck page teaches the cards not taught yet
+/// (+ Learn), and, once all are taught, Relearn (owner, 2026-10-23: "It runs
+/// through all the cards (if deck is filtered, then the filtered cards
+/// only)").
 ///
-/// Every card is taught already, so nothing is asked and nothing is written:
-/// no answer, no schedule, no log. It ends when the learner goes on from the
-/// last card, or closes it.
+/// Nothing is asked. The first view of a card not taught yet appends one
+/// review-log row, graded 0 so that FSRS schedules it at the lowest window
+/// ([AppState.viewCard]); a card seen again, or already taught, writes
+/// nothing. It ends when the learner goes on from the last card, or closes
+/// it, the cards seen so far kept as taught.
 class WalkthroughPage extends StatefulWidget {
   const WalkthroughPage({super.key, required this.request});
 
@@ -45,6 +53,14 @@ class WalkthroughPage extends StatefulWidget {
 class _WalkthroughPageState extends State<WalkthroughPage> {
   int _index = 0;
   bool _playing = false;
+
+  /// The cards walked, fixed when the walk starts: viewing teaches them, so
+  /// the list of the cards not taught yet would shrink under the learner.
+  List<Card>? _cards;
+
+  /// Records the first view of [card] (once the frame is built, since it
+  /// notifies the screens that read progress).
+  void _view(Card card) => AppScope.read(context).viewCard(card);
 
   Future<void> _play(Card card, LanguageInfo language) async {
     final state = AppScope.read(context);
@@ -62,10 +78,18 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
     final state = AppScope.of(context);
     final entry = state.deckById(widget.request.deckId);
     final tags = widget.request.tags;
-    final cards = <Card>[
+    final first = _cards == null;
+    final cards = _cards ??= <Card>[
       if (entry != null && entry.deck.kind != DeckKind.reading)
-        for (final card in entry.cards)
-          if (tags.isEmpty || card.tags.any(tags.contains)) card,
+        if (widget.request.untaughtOnly)
+          ...state.untaughtCards(
+            entry.language.code,
+            deckId: entry.id,
+            tags: tags,
+          )
+        else
+          for (final card in entry.cards)
+            if (tags.isEmpty || card.tags.any(tags.contains)) card,
     ];
     if (entry == null || cards.isEmpty) {
       return Scaffold(
@@ -75,6 +99,11 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
     }
     final index = _index.clamp(0, cards.length - 1);
     final card = cards[index];
+    if (first) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _view(card);
+      });
+    }
     final language = entry.language;
     final expectsScript =
         state.settings.learnsAlphabet(language.code) &&
@@ -99,6 +128,7 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
                   if (index + 1 >= cards.length) {
                     Navigator.of(context).maybePop();
                   } else {
+                    _view(cards[index + 1]);
                     setState(() => _index = index + 1);
                   }
                 },
