@@ -48,8 +48,12 @@ class FakeGit:
 
     @staticmethod
     def snapshot(root: Path) -> dict[str, str]:
-        return {p.relative_to(root).as_posix(): p.read_text(encoding="utf-8")
-                for p in sorted((root / "decks").rglob("*.yaml"))}
+        files = {p.relative_to(root).as_posix(): p.read_text(encoding="utf-8")
+                 for p in sorted((root / "decks").rglob("*.yaml"))}
+        # The daily questions' answers (#519) are kept beside the decks.
+        files.update({p.relative_to(root).as_posix(): p.read_text(encoding="utf-8")
+                      for p in sorted((root / "review-answers").glob("*.json"))})
+        return files
 
     def fresh(self, branch: str) -> Path:
         self.made += 1
@@ -77,6 +81,7 @@ class FakeGit:
 
     def merge(self, branch: str) -> None:
         for rel, text in self.branches[branch].items():
+            (self.main / rel).parent.mkdir(parents=True, exist_ok=True)
             (self.main / rel).write_text(text, encoding="utf-8")
 
 
@@ -773,6 +778,7 @@ class ProposingImap(FakeImap):
     def __init__(self, *args, **kw) -> None:
         super().__init__(*args, **kw)
         self.proposed: list[bytes] = []
+        self.answered: list[bytes] = []
         self.searches: list[tuple] = []
 
     def search(self, charset, *criteria):
@@ -783,6 +789,9 @@ class ProposingImap(FakeImap):
     def store(self, number: bytes, command: str, label: str) -> None:
         if label == mail_to_issues.PROPOSED:
             self.proposed.append(number)
+            return
+        if label == mail_to_issues.ANSWERED:
+            self.answered.append(number)
             return
         super().store(number, command, label)
 
@@ -803,7 +812,8 @@ class Mails(Base):
         filed, log = self.run_tool(imap)
         self.assertEqual(len(filed), 1)
         self.assertEqual(imap.proposed, [b"1"])
-        self.assertIn("fluenough-filed -label:fluenough-proposed", imap.searches[-1][1])
+        self.assertIn("fluenough-filed -label:fluenough-proposed", imap.searches[-2][1])
+        self.assertIn("fluenough-filed -label:fluenough-answered", imap.searches[-1][1])
         self.assertIn(SECRET, self.main_text())
         self.assertIn("Review mails proposed: 1 merged.", log)
         self.assertIn("Agreed proposals: 0 merged, 0 waiting; 0 outdated.", log)

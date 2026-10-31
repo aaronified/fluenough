@@ -806,6 +806,58 @@ def card_id_re(lang: str) -> re.Pattern[str]:
     return re.compile(rf"{re.escape(lang)}-[0-9]{{4,}}")
 
 
+# A typed English meaning is accepted for each `;`-separated part of the
+# expected text and for no other split (lib/core/grading/meaning_rules.dart),
+# so separately sayable alternatives must be written "Take care!; Careful!"
+# (#924). A sentence break inside a bracket-free meaning with no `;` is
+# therefore an error, unless the card is one of those whose sentences must
+# all be said (the target says both), listed here by card id. Keep sorted;
+# each needs a reason. Only card `native` and `alt_native` are checked, not
+# examples.
+MEANING_ALL_REQUIRED = frozenset({
+    "es-0111",   # "Good morning, madam. How are you?": greeting, then question
+    "zh-0282",   # "I am a student. Are you a teacher?": the target says both
+    "zh-0331",   # "We are eating a meal. Are you going home?": both
+    "zh-0333",   # "The child finishes school. Shall we wait?": both
+})
+_MEANING_BRACKETS = re.compile(r"\([^)]*\)|\[[^\]]*\]")
+# Abbreviations whose full stop is not a sentence end.
+_MEANING_ABBREV = re.compile(
+    r"\b(?:mr|mrs|ms|dr|st|prof|sr|jr|vs|e\.g|i\.e|a\.m|p\.m|ph\.d|u\.s\.a|"
+    r"mt|fig|approx)\.", re.IGNORECASE)
+# An ellipsis, or a run of ?! or !?, is one pause, not a sentence break.
+_MEANING_PAUSE = re.compile(r"\.{3,}|\u2026|[?!]{2,}")
+_MEANING_BREAK = re.compile(r"[.!?]\s+\w")
+
+
+def meaning_has_separate_sentences(text: str) -> bool:
+    """Whether an English meaning has a sentence break and no `;`, outside
+    brackets, abbreviations and pauses (#924)."""
+    if ";" in text:
+        return False
+    text = _MEANING_PAUSE.sub(" ", _MEANING_ABBREV.sub(" ", _MEANING_BRACKETS.sub(" ", text)))
+    return _MEANING_BREAK.search(text) is not None
+
+
+def check_meaning_alternatives(r: Report, where: str, cid: str | None,
+                               entry: dict) -> None:
+    """An English `native` or `alt_native` value must not run separate
+    sentences together without `;` (#924)."""
+    if r.native_code != "en":
+        return
+    values = [entry.get("native")]
+    alts = entry.get("alt_native")
+    if isinstance(alts, list):
+        values += alts
+    for value in values:
+        if not _is_str(value) or not meaning_has_separate_sentences(value):
+            continue
+        if cid in MEANING_ALL_REQUIRED:
+            continue
+        r.error(where, f"meaning has separate sentences; separate alternatives with "
+                       f'";" (or reword it, or add the card id to MEANING_ALL_REQUIRED): {value!r}')
+
+
 def check_card(r: Report, idx: int, card: object, seen: set[str],
                script: str, lang: str, *, form: str = "single",
                key: str | None = None,
@@ -903,6 +955,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     for key in ("alt_target", "alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if not core:
+        check_meaning_alternatives(r, where, cid, card)
     if "target_scripts" in card:
         _check_target_scripts(r, where, card["target_scripts"], target, scripts)
 
@@ -2961,11 +3015,13 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
 
 @dataclass
 class Checked:
-    """A card entry's `checked_by`, taken out of the file: where it was,
-    the card's id, and the codes as written."""
+    """A card entry's `checked_by` or `verified`, taken out of the file:
+    where it was, the card's id, the value as written (the codes, or the
+    settled points) and which key it was."""
     where: str
     card: object
     codes: object
+    key: str = "checked_by"
 
 
 def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
@@ -2988,18 +3044,41 @@ def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
 
 
 def strip_checks(raw: object) -> list[Checked]:
-    """Takes every card entry's `checked_by` out of [raw], a deck file as
-    loaded, and returns them, as strip_proposals does proposals: it is a
-    record of review, allowed on any card entry, and checked on its own."""
-    return [Checked(where, card, entry.pop("checked_by"))
-            for where, card, entry in _card_entries(raw) if "checked_by" in entry]
+    """Takes every card entry's `checked_by` and `verified` out of [raw], a
+    deck file as loaded, and returns them, as strip_proposals does
+    proposals: they are records of review, allowed on any card entry (a
+    single file's, a core's, a layer's), and checked on their own."""
+    return [Checked(where, card, entry.pop(key), key)
+            for where, card, entry in _card_entries(raw)
+            for key in ("checked_by", "verified") if key in entry]
+
+
+# A settled data point of `verified` (#519), as the daily questions name it:
+# the meaning, one example by the 8 hex digits of its text's hash, one
+# confusable by its id, or the recording.
+VERIFIED_POINT = re.compile(
+    r"^(?:meaning|sound|example:[0-9a-f]{8}|confusable:[A-Za-z0-9_.-]{1,64})$")
 
 
 def check_checks(r: Report, found: list[Checked]) -> None:
     """Each `checked_by`: a non-empty list of rater codes, each written as
-    the app writes it, none twice."""
+    the app writes it, none twice; each `verified` (#519): a non-empty list
+    of settled data points, none twice."""
     for c in found:
-        where = f"{c.where}.checked_by"
+        where = f"{c.where}.{c.key}"
+        if c.key == "verified":
+            if not isinstance(c.codes, list) or not c.codes:
+                r.error(where, "must be a non-empty list of settled data "
+                               'points, ["meaning", "example:1a2b3c4d", '
+                               '"confusable:<id>", "sound"]')
+            elif any(not isinstance(p, str) or not VERIFIED_POINT.fullmatch(p)
+                     for p in c.codes):
+                r.error(where, "must list data points as the daily questions "
+                               "name them: meaning, sound, example:<8 hex "
+                               "digits> or confusable:<id>")
+            elif len(set(c.codes)) != len(c.codes):
+                r.error(where, "names a data point twice")
+            continue
         if not isinstance(c.codes, list) or not c.codes:
             r.error(where, "must be a non-empty list of rater codes, "
                            '["FL-XXXX-XXXX-C"]')
@@ -3031,9 +3110,9 @@ def check_checks_hashable(r: Report, path: Path) -> None:
                               "out of content_sha256")
         return
     for c in strip_checks(rest):
-        r.error(f"{c.where}.checked_by",
+        r.error(f"{c.where}.{c.key}",
                 "must be a line of its own, or last in a card written on one "
-                "line, ending `checked_by: [...] }`; anywhere else it cannot "
+                f"line, ending `{c.key}: [...] }}`; anywhere else it cannot "
                 "be left out of content_sha256, and a sign-off would offer "
                 "learners an update")
 
@@ -3116,7 +3195,7 @@ def _check_review_tags(r: Report, raw: dict) -> None:
 # --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
-    """[path] as the checks read it: its proposals and `checked_by` taken
+    """[path] as the checks read it: its proposals, `checked_by` and `verified` taken
     out (ADR-0038)."""
     try:
         raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
@@ -3886,6 +3965,7 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
     gives = _is_str(native)
     if "alt_native" in entry:
         _check_str_list(r, where, "alt_native", entry["alt_native"])
+    check_meaning_alternatives(r, where, cid, entry)
     if "wiktionary" in entry:
         _check_wiktionary(r, where, "", entry["wiktionary"])
     if "dictionary" in entry:

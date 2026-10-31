@@ -248,6 +248,27 @@ python3 tools/validate_decks.py decks/
 `test_import_wiktionary.py` tests it on `fixtures/wiktionary`, with the
 network and ffmpeg replaced.
 
+## `mark_wiktionary.py`
+
+Marks the cards whose word has a Wiktionary entry (#422), so that the app
+links them to it ([The Wiktionary link](Deck-Format#the-wiktionary-link)).
+It reads kaikki.org's extract, as `import_wiktionary.py` does, and fetches
+nothing:
+
+```sh
+python3 tools/mark_wiktionary.py hi Hindi.jsonl                  # report only
+python3 tools/mark_wiktionary.py hi Hindi.jsonl --write          # mark the decks
+python3 tools/mark_wiktionary.py hi Hindi.jsonl --section Hindi  # one language of the dump
+```
+
+It adds `wiktionary: true` to the English layer's entry of each vocab card
+whose target is exactly the title of an entry, and nothing else. It never
+removes a mark: a marked card the extract has no entry for is listed for a
+person to check. A card already marked, and one written in flow style, are
+left alone. Another native language's layer needs that edition's own
+extract, which the tool does not read yet. `test_mark_wiktionary.py` tests it
+on `fixtures/wiktionary`.
+
 ## `import_phonetic.py` and `derive_phonetic.py`
 
 Write each card's narrow `[ ]` IPA into its `phonetic` field, with

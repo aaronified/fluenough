@@ -584,7 +584,7 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
-| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
+| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). **An English `native` or `alt_native` separates alternatives with `;`** (`Take care!; Careful!`): the typed-meaning grader accepts each `;`-separated part and no other split, so a meaning with a sentence break (`.`, `!` or `?` then more text, outside brackets and abbreviations such as `Mr.`) and no `;` is a validator error (#924). A card whose sentences must all be said is listed in `MEANING_ALL_REQUIRED` in `tools/validate_decks.py`; the check covers a card's `native` and `alt_native`, not its examples. |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
 | `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
@@ -610,6 +610,7 @@ cards:
 | `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 | `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
+| `verified` | no | Written by the review bot, from the daily questions: the data points of the card two reviewers agreed are right, `["meaning", "example:1a2b3c4d", "confusable:stem", "sound"]`. See [Settled points](#settled-points-verified). Allowed on any card entry, as `checked_by` is. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#519). |
 
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
@@ -1184,8 +1185,16 @@ the entry exists:
   an entry's title, such as a sentence or an inflected form, is not marked:
   its bases carry the mark for their words.
 - **Mark only an entry you have seen:** the word's own page, with a section
-  for the language. A tool will mark them from Wiktionary's extracts; until
-  then, check each one.
+  for the language. `tools/mark_wiktionary.py` marks the cards of a core
+  from Wiktionary's extracts ([Deck tools](Deck-Tools#mark_wiktionarypy));
+  mark a base written in full by hand, checking its page.
+- **In the app,** a word's sheet shows "Wiktionary: <word>" for the card
+  itself and for each marked base word, which opens the page in the browser
+  (the address for English Wiktionary ends in the language's section, such
+  as `#Telugu`; Hindustani's is `#Hindi`; another edition's has none, since
+  its headings are in its own language). Nothing is fetched until it is
+  tapped, and a word without the mark has no link. The key is not new, so
+  decks that use it need no release guard.
 
 ### A card's own recording: `audio`
 
@@ -3048,6 +3057,53 @@ whose code a deck lists.
   update.
 
 To take a sign-off back, delete the code, or the line.
+
+## Settled points: `verified`
+
+The data points of a card that reviewers have settled as right, so that the
+app's daily questions stop asking about them and the question generator
+skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
+**The review bot writes it; nobody writes one by hand.**
+
+```yaml
+  - id: "te-0986"
+    target: "కుక్క"
+    reading: "kukka"
+    verified: ["meaning", "example:0f3a9c21", "sound"]
+  - { id: "te-0987", target: "పిల్లి", reading: "pilli", verified: ["meaning"] }
+```
+
+- **The shape.** A non-empty list of text, each a data point named as the
+  daily questions name it: `meaning`; `example:` and the 8 hex digits of
+  the example's hash (`pointHash` of its target text, as
+  `lib/core/review/review_question.dart` has it); `confusable:` and the
+  confusable's `id`; `sound`. Nothing else is recorded: not who agreed
+  (that stays in `review-answers/`) and not a count. A point is listed once
+  two reviewers, by default (`REVIEW_AGREEMENTS_NEEDED` plus the first),
+  have answered Yes. A point settled "no" or closed after a disagreement is
+  never listed.
+- **Where.** On every entry that holds the card itself (a single file's
+  card, a core's card, a layer's own card), as one line like `checked_by`'s:
+  its own line on a block card, last before the closing brace on a flow
+  card. A layer's translation of a core card does not carry it: the merged
+  deck lists the points of the core's card and of the layer's entry
+  together, each once.
+- **The app** reads it and does not ask about a listed point again; a card
+  with a point not listed is asked about that point as before.
+- **The validator** allows it where `checked_by` is allowed (a single file,
+  a core, a layer), checks that it is a non-empty list of points of the
+  shapes above, none twice, and that it is written where the bot writes
+  it, as for `checked_by`.
+- **No update for it.** `content_sha256` in `index.json` leaves it out, with
+  `checked_by`, so a learner is not offered a deck update when only a
+  settled point changed.
+- **A release after the app.** A released app rejects a card key it does not
+  know (v0.6.8 does), and a phone keeps the decks it has rather than take a
+  batch with a file that fails ([ADR-0038](ADR-0038-Review-Proposals), ADR-0037). So the bot writes
+  `verified` only once an app that reads it is released: the constant
+  `WRITE_VERIFIED` in `tools/question_answers.py` is `False` until then, and
+  the answers are only tallied in `review-answers/<language>.json`. The
+  owner sets it to `True` in the release after the one that reads the field.
 
 ## Adding your own deck
 
