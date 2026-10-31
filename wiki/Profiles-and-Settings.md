@@ -56,6 +56,7 @@ These three switches are on the Your languages page.
 
 - **Latin-letter readings:** a reading under words in other scripts. See [Scripts and readings](Scripts-and-Readings).
 - **IPA:** how each word is pronounced, under the word.
+- **IPA replaces transliteration:** a second switch, under IPA, off by default. With it on, a word that has an IPA shows it in the place of its transliteration (readings are based on ISO 15919), and the small IPA line goes; a word with no IPA keeps its transliteration. It only applies while IPA is on: with IPA off the row is greyed out and says so. Typed answers still take the transliteration (#697).
 - **Adult content (18+):** off by default. Off, a deck of offensive words, and any rude card in another deck, is hidden everywhere: not listed, not taught, and not in Today, reviews or practice. On, they come back, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
 
 The app's menus are in English only. Translation is explained in the [Translation guide](Translation-Guide).

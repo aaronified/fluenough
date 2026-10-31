@@ -49,7 +49,14 @@ class RecognitionDrill extends StatelessWidget {
     final card = session.item.card;
     final language = session.deck.language;
     final revealed = session.phase == DrillPhase.revealed;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+      showReading: session.readsFirst || settings.showRomanisation,
+    );
+    final reading = lines.reading;
 
     return DrillFrame(
       skill: session.skill,
@@ -75,7 +82,7 @@ class RecognitionDrill extends StatelessWidget {
           )
         else
           TargetText.hero(card.target, language: language, card: card),
-        if (reading != null && settings.showRomanisation && !session.readsFirst)
+        if (reading != null && !session.readsFirst)
           Text(
             reading,
             textAlign: TextAlign.center,
@@ -86,8 +93,7 @@ class RecognitionDrill extends StatelessWidget {
             ),
           ),
         // How it is said: the word is shown, so this gives nothing away.
-        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
-          IpaLine(ipa, fontSize: 16),
+        if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
         // From the start: hearing the word gives nothing away. Keyed, so
         // that showing the answer does not play it again.
         if (session.canPlay)

@@ -119,13 +119,18 @@ class TaughtDetails extends StatelessWidget {
         final compare = card.warning == 'none'
             ? null
             : pairPartnerOf(state, card);
+        final lines = readingLines(
+          context,
+          reading: card.reading,
+          ipa: card.ipa,
+          target: card.target,
+          showReading: _showsReading(settings),
+        );
         final children = <Widget>[
           if (word) ...<Widget>[
-            ..._word(theme, showReading: _showsReading(settings)),
+            ..._word(theme, lines.reading),
             // How it is said, under the word and its reading (ADR-0025).
-            if (ipaToShow(context, card.ipa, target: card.target)
-                case final ipa?)
-              IpaLine(ipa, fontSize: 16),
+            if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
           ],
           if (meaning)
             Text(
@@ -191,8 +196,8 @@ class TaughtDetails extends StatelessWidget {
   };
 
   /// The word, or its reading first, and its reading under it when it shows.
-  List<Widget> _word(ThemeData theme, {required bool showReading}) {
-    final reading = card.reading;
+  List<Widget> _word(ThemeData theme, String? shownReading) {
+    final reading = shownReading;
     final size = wordSize;
     if (reading != null && this.reading == TaughtReading.first) {
       return <Widget>[
@@ -221,7 +226,7 @@ class TaughtDetails extends StatelessWidget {
           color: wordColor,
           card: card,
         ),
-      if (reading != null && showReading)
+      if (reading != null)
         Text(
           reading,
           textAlign: TextAlign.center,

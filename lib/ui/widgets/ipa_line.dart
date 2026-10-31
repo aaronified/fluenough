@@ -51,6 +51,30 @@ class IpaLine extends StatelessWidget {
   }
 }
 
+/// The two lines a word shows, [reading] (the transliteration) and [ipa]
+/// (#697). Normally the reading as it is, if [showReading], and the IPA line
+/// [ipaToShow] decides. With IPA on and "IPA replaces transliteration" on, a
+/// word with an IPA shows it in the reading's place, as `/paːlu/`, and the
+/// small IPA line goes: the transliteration is not shown. A word with no IPA
+/// keeps its reading as before. Latin-script words (no reading) get their
+/// IPA in the reading's place too.
+({String? reading, String? ipa}) readingLines(
+  BuildContext context, {
+  String? reading,
+  String? ipa,
+  String? target,
+  bool showReading = true,
+}) {
+  final shown = ipaToShow(context, ipa, target: target);
+  if (shown != null && AppScope.read(context).settings.ipaReplacesReading) {
+    return (
+      reading: AppLocalizations.of(context)!.wordSheetIpa(shown),
+      ipa: null,
+    );
+  }
+  return (reading: showReading ? reading : null, ipa: shown);
+}
+
 /// [ipa], if it is to be shown: the deck gives one, it is not just [target]
 /// again (a card written in the IPA itself), and IPA pronunciations is on. Null
 /// otherwise, so that no line is left for it.

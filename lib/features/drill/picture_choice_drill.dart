@@ -135,7 +135,13 @@ class PictureChoiceDrill extends StatelessWidget {
     final scheme = theme.colorScheme;
     final card = session.item.card;
     final language = session.deck.language;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
+    final reading = lines.reading;
     return <Widget>[
       Text(
         l10n.drillChoosePicture,
@@ -164,8 +170,7 @@ class PictureChoiceDrill extends StatelessWidget {
           ),
       ],
       // How it is said: the word is shown, so this gives nothing away.
-      if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
-        IpaLine(ipa, fontSize: 16),
+      if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
       if (session.canPlay)
         Speaker(
           key: const ValueKey<String>('speaker'),

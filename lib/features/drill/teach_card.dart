@@ -91,8 +91,14 @@ class TeachCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final readingText = card.reading;
     final ipa = ipaToShow(context, card.ipa, target: card.target);
+    // With "IPA replaces transliteration" on, the IPA is the reading (#697).
+    final readingText = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    ).reading;
     final isPhrase = card.pos == 'phrase';
     final line = joinParts(l10n, <String>[
       if (!isPhrase) ?card.pos,
