@@ -7,6 +7,7 @@ import '../../app/settings.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../placement/native_choice.dart';
+import 'fact_languages_tile.dart';
 import 'settings_section_page.dart';
 import 'sources_page.dart';
 import 'your_decks_page.dart';
@@ -46,6 +47,8 @@ class LanguagesSettingsPage extends StatelessWidget {
           trailing: const Icon(Icons.chevron_right),
           onTap: () => AppNavigator.openLearnLanguages(context),
         ),
+        // The languages Today's fact is shown in (#926), as on Today's card.
+        const FactLanguagesTile(),
         GroupedTile.toggle(
           leading: GroupedTile.noIcon,
           title: l10n.languagesReviewTitle,
