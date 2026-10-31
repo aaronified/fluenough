@@ -65,35 +65,74 @@ def titles(dump: Path, section: str | None = None) -> set[str]:
     return found
 
 
+def mark_text(text: str, cid: str) -> str | None:
+    """[text] with `wiktionary: true` added to card [cid]'s layer entry, or
+    None when the entry is not found in a form this tool edits: a block-style
+    head `  "id":` alone on its line, or a flow map `  "id": { ... }` with no
+    comment after it."""
+    head = re.compile(rf'^  "{re.escape(cid)}":\s*$')
+    new = iw.apply(text, head, 2, [("native", ["    wiktionary: true"])])
+    if new != text:
+        return new
+    flow = re.compile(rf'^(  "{re.escape(cid)}":\s*\{{)(.*?)(\s*\}})\s*$')
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        m = flow.match(line)
+        if m and "#" not in m.group(2) and "wiktionary" not in m.group(2):
+            body = m.group(2).rstrip()
+            sep = "" if not body.strip() else (" " if body.endswith(",") else ", ")
+            lines[i] = f"{m.group(1)}{body}{sep}wiktionary: true{m.group(3)}"
+            return "\n".join(lines)
+    return None
+
+
 def run(code: str, dump: Path, decks: Path, write: bool,
         section: str | None = None) -> str:
     """Mark the decks, when [write], and say what was found."""
+    return mark(code, dump, decks, write, section)[0]
+
+
+def mark(code: str, dump: Path, decks: Path, write: bool,
+         section: str | None = None) -> tuple[str, int]:
+    """Like [run], and also the number of cards that could not be marked."""
     lang = iw.read_language(decks, code)
     entries = titles(dump, section)
     add: list[iw.Target] = []
     already: list[iw.Target] = []
     stale: list[iw.Target] = []
     none: list[iw.Target] = []
+    off: list[iw.Target] = []
+    unmatched: list[iw.Target] = []
     unlayered: list[iw.Target] = []
     for t in lang.targets:
         if t.layer is None or t.entry is None:
             unlayered.append(t)
         elif t.entry.get("wiktionary") is True:
             (already if t.target in entries else stale).append(t)
+        elif "wiktionary" in t.entry:
+            # `wiktionary: false` (or anything else) is a person's choice:
+            # never a second key, never rewritten.
+            off.append(t)
         elif t.target in entries:
             add.append(t)
         else:
             none.append(t)
     if write:
         by_file: dict[Path, list[iw.Target]] = {}
+        marked: list[iw.Target] = []
         for t in add:
             by_file.setdefault(t.layer, []).append(t)
         for path, targets in by_file.items():
             text = path.read_text(encoding="utf-8")
             for t in targets:
-                head = re.compile(rf'^  "{re.escape(t.cid)}":\s*$')
-                text = iw.apply(text, head, 2, [("native", ["    wiktionary: true"])])
+                new = mark_text(text, t.cid)
+                if new is None:
+                    unmatched.append(t)
+                else:
+                    text = new
+                    marked.append(t)
             path.write_text(text, encoding="utf-8")
+        add = marked
     verb = "marked" if write else "to mark"
     out = [f"# Wiktionary marks for {code}",
            f"- {verb}: {len(add)}",
@@ -101,10 +140,17 @@ def run(code: str, dump: Path, decks: Path, write: bool,
            f"- no entry in the dump: {len(none)}",
            f"- no English layer entry (not marked): {len(unlayered)}",
            f"- left out, written in flow style: {len(lang.flow)}"]
+    if off:
+        out.append("- `wiktionary` already set to something else, left alone: "
+                   + ", ".join(f"{t.cid} {t.target}" for t in off))
+    if unmatched:
+        out.append("- unmatched, entry not in a form the tool edits "
+                   "(edit by hand): "
+                   + ", ".join(f"{t.cid} {t.target}" for t in unmatched))
     if stale:
         out.append(f"- marked but not in the dump, check by hand: "
                    + ", ".join(f"{t.cid} {t.target}" for t in stale))
-    return "\n".join(out) + "\n"
+    return "\n".join(out) + "\n", len(unmatched)
 
 
 def main(argv: list[str]) -> int:
@@ -126,8 +172,10 @@ def main(argv: list[str]) -> int:
     if not args.dump.is_file():
         print(f"error: {args.dump} does not exist", file=sys.stderr)
         return 2
-    print(run(args.lang, args.dump, args.decks, args.write, args.section), end="")
-    return 0
+    report, unmatched = mark(args.lang, args.dump, args.decks, args.write,
+                             args.section)
+    print(report, end="")
+    return 1 if unmatched else 0
 
 
 if __name__ == "__main__":

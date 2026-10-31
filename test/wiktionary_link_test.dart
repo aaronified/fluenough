@@ -148,13 +148,8 @@ void main() {
         ),
         state: AppState.test(links: links),
       );
-      final l10n = l10nOf(tester);
       expect(links.asked, isEmpty, reason: 'nothing is fetched to show it');
-      final button = find.widgetWithText(
-        TextButton,
-        l10n.cardWiktionaryLink('ఇల్లు'),
-        skipOffstage: false,
-      );
+      final button = find.byIcon(Icons.open_in_new, skipOffstage: false);
       await tester.ensureVisible(button);
       await tester.tap(button);
       await tester.pumpAndSettle();

@@ -54,7 +54,7 @@ class WiktionaryLinks extends StatelessWidget {
               link.url.toString(),
               copied: l10n.sourcesLinkCopied,
             ),
-            icon: const Icon(Icons.open_in_new, size: 20),
+            icon: const Icon(Icons.open_in_new),
             label: Text.rich(
               quotingTarget(l10n.cardWiktionaryLink(link.word), <String>[
                 link.word,

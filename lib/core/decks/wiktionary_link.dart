@@ -13,6 +13,9 @@ typedef WiktionaryLink = ({String word, Uri url});
 /// Wiktionary's Hindi.
 const Map<String, String> _sectionNames = <String, String>{'hi': 'Hindi'};
 
+// A lowercase language code, as Wiktionary's subdomains are (`en`, `bn`). A
+// code with a script or region (`zh-Hans`) is not one: a caller gives the
+// base language (`zh`).
 final RegExp _edition = RegExp(r'^[a-z]{2,3}(?:-[a-z]+)*$');
 
 /// The address of [word]'s entry in the Wiktionary of [edition] (`en`, `bn`),
