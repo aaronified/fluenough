@@ -128,6 +128,7 @@ svg.i.s18{width:18px;height:18px}svg.i.s22{width:22px;height:22px}svg.i.s28{widt
 .fb.correct{background:var(--pc);color:var(--onPc)}
 .fb.close{background:var(--tc);color:var(--onTc)}
 .fb.near{background:var(--sc);color:var(--onSc)}
+.fb.lock{background:var(--sHigh);color:var(--onS)}
 .fb.wrong{background:var(--ec);color:var(--onEc)}
 .act{display:flex;flex-direction:column;gap:10px}
 .act .r2{display:flex;gap:8px}
@@ -179,7 +180,7 @@ svg.i.s18{width:18px;height:18px}svg.i.s22{width:22px;height:22px}svg.i.s28{widt
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
- <div class="tg">Going on (doubt 1) <span class="seg" data-k="go"><button data-v="both">Button and swipe</button><button data-v="button">Button only</button><button data-v="swipe">Swipe only</button></span></div>
+ <div class="tg">Going on, questions and sets (doubt 1) <span class="seg" data-k="go"><button data-v="both">Button and swipe</button><button data-v="button">Button only</button><button data-v="swipe">Swipe only</button></span></div>
  <div class="tg">Content <span class="seg" data-k="len"><button data-v="short">Short</button><button data-v="long">Long</button></span></div>
 </div>
 <div id="root"></div>
@@ -205,6 +206,7 @@ const P={
  hoff:'M14.59 8 12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
  err:'M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z',
  book:'M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z',
+ lock:'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
  warn:'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
  ok:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
  play:'M8 5v14l11-7z',
@@ -247,7 +249,7 @@ const spk=(c='')=>`<button class="spk ${c}" aria-label="Play">${svg('vol','s28')
 const script=t=>`<span class="script">${t}</span>`;
 const wordBlock=(sz='hero')=>`<div class="${sz} script">${d().w}</div><div class="rd">${d().rd}</div>`;
 const chevR=(chg=true)=>`<button class="chev ${chg?'chg':''}" aria-label="Next">${svg('chr')}</button>`;
-const chevL=()=>`<button class="chev back" aria-label="Back">${svg('chl')}</button>`;
+const chevL=(chg=false)=>`<button class="chev back ${chg?'chg':''}" aria-label="Back">${svg('chl')}</button>`;
 function foot(fb,act,compact){return `<div class="foot ${compact?'compact':''}">${fb?`<div data-slot="5">${fb}</div>`:''}${act?`<div class="act" data-slot="6">${act}</div>`:''}</div>`}
 function phone(inner,o={}){return `<div class="ph" data-ph="${o.id||''}">${inner}${o.kb?`<div class="kb">${['qwertyuiop','asdfghjkl','zxcvbnm'].map(r=>`<div>${[...r].map(c=>`<span>${c}</span>`).join('')}</div>`).join('')}</div>`:''}</div>`}
 function body(kids,o={}){return `<div class="body ${o.compact?'compact':''}">${kids}${o.fade?'':''}</div>${o.fade?'<div class="fade" style="bottom:var(--fadeb,0)"></div>':''}`}
@@ -265,22 +267,21 @@ const navRow=(first,last)=>`<div class="r2"><button class="b out ${first?'dis':'
 const FB={
  ok:(t,dd)=>`<div class="fb correct" role="status">${svg('okc')}<div><div class="tt">${t||'Correct'}</div>${dd?`<div class="dd">${dd}</div>`:''}</div></div>`,
  no:(dd)=>`<div class="fb wrong" role="status">${svg('hoff')}<div><div class="tt">Not quite</div><div class="dd">${dd}</div></div></div>`,
+ lock:()=>`<div class="fb lock" role="status">${svg('lock')}<div><div class="tt">Already answered</div><div class="dd">You can look, but not change it. Swipe or tap the arrow to go on.</div></div></div>`,
  near:(t,dd)=>`<div class="fb near" role="status">${svg('err')}<div><div class="tt">${t}</div><div class="dd">${dd}</div></div></div>`};
 
 /* ===== the screens: each returns the inside of a phone ===== */
 function taught(){ /* what the answered card adds: the teach card's own content */
  const D0=d();return `<div class="rule"></div><div class="answerw script">${D0.w}</div><div class="rd">${D0.rd}</div><div class="row">${spk('m')}<span class="ipab">${D0.ipa}</span></div><div class="mean">${D0.mean}</div><div class="sub">${D0.pos}</div><div class="note-t">${D0.note}</div>`}
-function teach(o={}){
+function teach(o={}){ /* no foot: going on is the swipe and the chevrons only (owner, #691, 2026-10-22; confirmed 2026-10-31) */
  const D0=d(),L=long();
  const notes=`<div class="note-t">${D0.note}</div>${L?`<div class="note-t">${D0.note2}</div>`:''}`;
  const exs=D0.ex.slice(0,L?3:1).map(e=>`<div class="inner"><div class="t script">${e[0]}</div><div class="r">${e[1]}</div><div class="m">${e[2]}</div></div>`).join('');
  const forms=L?`<table class="ftab">${D0.forms.map(f=>`<tr><td class="l">${f[0]}</td><td class="script">${f[1]}</td><td class="l">${f[2]}</td></tr>`).join('')}</table>`:'';
  const k=`${ctx('new')}${card(`${wordBlock()}<div class="row">${spk()}<span class="ipab">${D0.ipa}</span></div><div class="mean">${D0.mean}${svg('book','s22')}</div><div class="sub">${D0.pos}</div>${notes}${exs}${forms}`)}`;
- const button=S.go!=='swipe',sw=S.go!=='button';
- return hdr(o.pos||2,o.total||8,((o.pos||2)-1)/(o.total||8))+bodyBox(k,{fade:L,chev:(sw?chevR(false):'')+(o.relearn?chevL():'')})
-  +(o.today||!button?'':foot('',cont('Continue','chg')));
+ return hdr(o.pos||2,o.total||8,((o.pos||2)-1)/(o.total||8))+bodyBox(k,{fade:L,chev:chevR(false)+chevL()});
 }
-function choice(st,exam,kind){ /* kind: 'rec' or 'hear' */
+function choice(st,exam,kind,ro){ /* kind: 'rec' or 'hear' */
  const D0=d();const hear=kind==='hear';
  const lab=hear?'Listen, then choose the meaning':'Choose the meaning';
  const top=hear?`${spk()}<button class="lnk" style="min-height:40px">Slower</button>`:`${wordBlock('hero s2')}<div class="row">${spk('m')}<span class="ipab">${D0.ipa}</span></div>`;
@@ -297,11 +298,12 @@ function choice(st,exam,kind){ /* kind: 'rec' or 'hear' */
  let fb='',act='';
  if(exam){act=navRow(false,false)}
  else if(!ans){act=hear?`<button class="lnk">Can’t listen now</button>`:''}
+ else if(ro){fb=FB.lock();act=cont()}
  else{fb=st==='ok'?FB.ok():FB.no(`Answer: water`);act=cont('Continue',S.go==='both'?'':'')}
- const cvr=(!exam&&ans&&S.go!=='button')?chevR(true):'';
+ const cvr=ro?chevL(true)+chevR(true):(!exam&&ans&&S.go!=='button')?chevR(true):'';
  return hdr(exam?4:3,exam?35:8,exam?3/35:2/8,exam?'4/35':'')+bodyBox(ctx(kind==='hear'?'hear':'read',exam?'A1 milestone exam':undefined)+c+opts,{chev:cvr})+foot(fb,act);
 }
-function tiles(st,exam){
+function tiles(st,exam,ro){
  const D0=d();const ans=st!=='un';const bad=st==='no';
  const placed=bad?['I','water','want']:['I','want','water'];
  const inA=ans||exam;
@@ -313,8 +315,9 @@ function tiles(st,exam){
  let fb='',act='';
  if(exam)act=navRow(false,false);
  else if(!ans)act=checkOnly(false);
+ else if(ro){fb=FB.lock();act=cont()}
  else{fb=st==='ok'?FB.ok():FB.no('Answer: I want water');act=cont()}
- const cvr=(!exam&&ans&&S.go!=='button')?chevR(true):'';
+ const cvr=ro?chevL(true)+chevR(true):(!exam&&ans&&S.go!=='button')?chevR(true):'';
  return hdr(exam?5:4,exam?35:8,exam?4/35:3/8,exam?'5/35':'')+bodyBox(ctx('read',exam?'A1 milestone exam':undefined)+c+aLine+tray,{chev:cvr})+foot(fb,act);
 }
 function typed(st){
@@ -377,19 +380,18 @@ const seg=(k,opts,cur)=>`<span class="seg" data-k="${k}">${opts.map(([v,l])=>`<b
 
 function practiceScreens(t){
  switch(t){
-  case 'teach':return [fr('Teach: a new word',phone(teach())),fr('Teach: Relearn, going back',phone(teach({relearn:true,pos:3,total:12}))),fr('Teach: a rule card is the same shell',phone(teachRule()))];
-  case 'choice':return [fr('Unanswered',phone(choice('un',false,'rec'))),fr('Right',phone(choice('ok',false,'rec'))),fr('Wrong',phone(choice('no',false,'rec')))];
-  case 'tiles':return [fr('Unanswered, two placed',phone(tiles('un',false))),fr('Right',phone(tiles('ok',false))),fr('Wrong',phone(tiles('no',false)))];
+  case 'teach':return [fr('Teach: a new word, no foot, swipe and chevrons',phone(teach())),fr('Teach: Relearn, a back chevron too',phone(teach({relearn:true,pos:3,total:12}))),fr('Teach: a rule card is the same shell',phone(teachRule()))];
+  case 'choice':return [fr('Unanswered',phone(choice('un',false,'rec'))),fr('Right',phone(choice('ok',false,'rec'))),fr('Wrong',phone(choice('no',false,'rec'))),fr('Going back: read-only, answered, locked',phone(choice('ok',false,'rec',true)))];
+  case 'tiles':return [fr('Unanswered, two placed',phone(tiles('un',false))),fr('Right',phone(tiles('ok',false))),fr('Wrong',phone(tiles('no',false))),fr('Going back: read-only, answered, locked',phone(tiles('ok',false,true)))];
   case 'typed':return [fr('Unanswered, keyboard open: the shell is compact',phone(typed('un'),{kb:true})),fr('Right',phone(typed('ok'))),fr('Wrong',phone(typed('no')))];
-  case 'hear':return [fr('Unanswered',phone(choice('un',false,'hear'))),fr('Right',phone(choice('ok',false,'hear'))),fr('Wrong',phone(choice('no',false,'hear')))];
+  case 'hear':return [fr('Unanswered',phone(choice('un',false,'hear'))),fr('Right',phone(choice('ok',false,'hear'))),fr('Wrong',phone(choice('no',false,'hear'))),fr('Going back: read-only, answered, locked',phone(choice('ok',false,'hear',true)))];
   case 'say':return [fr('Unanswered',phone(say('un',false))),fr('Right',phone(say('ok',false))),fr('Wrong, Try again beside Continue',phone(say('no',false)))];
-  case 'set':return [fr('A set: Continue in the same place',phone(setc()))];
+  case 'set':return [fr('A set: Continue in the same place as a question',phone(setc()))];
  }
 }
 function teachRule(){
  const k=`${ctx('new','Verb forms')}${card(`<div class="lab">Rule</div><div class="mean" style="font-size:calc(24px*var(--t))">${S.course==='hi'?'Adjectives that end in -ā':'Adding -e to a noun'}</div><div class="sub" style="font-size:calc(16px*var(--t));color:var(--onS)">${S.course==='hi'?'They change with the noun: a good boy, good boys, a good girl.':'The ending -e shows “in” or “at”: জল (jal), জলে (jale), in the water.'}</div><table class="ftab">${S.course==='hi'?`<tr><td class="l">m. sg.</td><td class="script">अच्छा</td><td class="l">acchā</td></tr><tr><td class="l">m. pl.</td><td class="script">अच्छे</td><td class="l">acche</td></tr><tr><td class="l">f.</td><td class="script">अच्छी</td><td class="l">acchī</td></tr>`:`<tr><td class="l">base</td><td class="script">জল</td><td class="l">jal</td></tr><tr><td class="l">in</td><td class="script">জলে</td><td class="l">jale</td></tr><tr><td class="l">home</td><td class="script">ঘরে</td><td class="l">ghare</td></tr>`}</table>`)}`;
- const button=S.go!=='swipe',sw=S.go!=='button';
- return hdr(5,12,4/12)+bodyBox(k,{chev:sw?chevR(false):''})+foot('',button?cont('Continue','chg'):'');
+ return hdr(5,12,4/12)+bodyBox(k,{chev:chevR(false)+chevL()});
 }
 function todayScreens(){
  const t=phone(teachToday());
@@ -415,16 +417,17 @@ const SLOTS=[
  ['3','Card','One DrillCard, 40 dp corners. The teach card’s content, a question’s prompt or a set’s rows. Once answered, a question shows the teach card’s own content under its prompt.'],
  ['4','Answer area','Choices, word tiles, the field, the microphone. Empty for teach and set.'],
  ['5','Feedback area','The banner: Correct, Not quite, Almost. Empty on teach and set (nothing is recorded) and in an exam until the result.'],
- ['6','Action area','One place, 56 dp buttons. While there is something to grade it grades (Check, Don’t know, Show answer, the four ratings, Count right or wrong); when nothing is left it goes on (Continue). In an exam: Back and Next.']];
+ ['6','Action area','One place, 56 dp buttons. While there is something to grade it grades (Check, Don’t know, Show answer, the four ratings, Count right or wrong); when nothing is left it goes on (Continue). Empty on a teach card, which goes on by swipe and the chevrons only (the card and the content take the space). In an exam: Back and Next.']];
 
 function anatomy(){
  const tbl=`<div class="tblwrap"><table><tr><th>Screen</th><th>3 Card</th><th>4 Answer area</th><th>5 Feedback</th><th>6 Action area</th></tr>
- <tr><td>Teach</td><td>the word, reading, sound, meaning, notes, examples</td><td>none</td><td>none</td><td>Continue</td></tr>
+ <tr><td>Teach</td><td>the word, reading, sound, meaning, notes, examples</td><td>none</td><td>none</td><td>none (swipe and chevrons; the card takes the space)</td></tr>
  <tr><td>Set</td><td>the set’s rows</td><td>none</td><td>none</td><td>Continue</td></tr>
  <tr><td>Choice, Hear</td><td>word or sound</td><td>four choices</td><td>Correct or Not quite</td><td>Continue (Can’t listen now for Hear, before)</td></tr>
  <tr><td>Word tiles</td><td>the sentence</td><td>answer line and tray</td><td>Correct or Not quite</td><td>Check, then Continue</td></tr>
  <tr><td>Typed</td><td>the meaning</td><td>field</td><td>five outcomes</td><td>Don’t know and Check; Count right or wrong for a near miss; then Continue</td></tr>
  <tr><td>Say</td><td>the meaning</td><td>microphone</td><td>what was heard</td><td>Don’t know; then Try again and Continue</td></tr>
+ <tr><td>Question, gone back to (practice)</td><td>as the question, answered</td><td>as answered, locked</td><td>Already answered (neutral)</td><td>Continue; back and forward chevrons and swipes; nothing can be changed or graded again</td></tr>
  <tr><td>Recall (review)</td><td>the word</td><td>none</td><td>none</td><td>Show answer; then the four ratings</td></tr>
  <tr><td>Exam item</td><td>as the question</td><td>as the question, an answer kept not graded</td><td>none</td><td>Back and Next; Review answers on the last</td></tr></table></div>`;
  return `<div class="frames"><div class="fcol">${'<div class="fcap">A wrong choice, with the slots numbered</div>'}${phone(choice('no',false,'rec'),{id:'anat'})}</div>
@@ -443,11 +446,11 @@ function render(){
 
 <section class="opt"><h2>2. Today, for comparison</h2><p class="note">What differs now: the teach card has no body and foot (it fills the screen, swipe only, no button); a set and a question go on with a Continue button; a question answers with a banner; the teach card says nothing. Nothing here is new.</p><div class="frames">${todayScreens().join('')}</div></section>
 
-<section class="opt"><h2>3. Proposed: practice, each screen type</h2><div class="tw"><div class="tg">Screen ${seg('ptype',Object.entries(TYPES),S.ptype)}</div></div><p class="note">Same header, context row, card, answer area, feedback and action area on every screen. New or changed against today is outlined: a Continue on the teach card (the foot, doubt 1), and the swipe and the end-edge chevron on every screen that is waiting only to go on. Text is 1.4x; the body scrolls and the foot stays.</p><div class="frames">${practiceScreens(S.ptype).join('')}</div></section>
+<section class="opt"><h2>3. Proposed: practice, each screen type</h2><div class="tw"><div class="tg">Screen ${seg('ptype',Object.entries(TYPES),S.ptype)}</div></div><p class="note">Same header, context row, card, answer area, feedback and action area on every screen. The teach card has no foot and no Continue: it goes on by swipe and the chevrons only, as today (owner, #691), and its content takes the foot's space. New or changed against today is outlined: the swipe and the end-edge chevron on every question and set that is waiting only to go on (the Going on control, doubt 1, applies to these). Going back (swipe back or the back chevron, on teach and in practice) is allowed, but an answer already given can never be changed: the earlier screen shows read-only, as answered, with the choices locked and a neutral Already answered cue (a lock, not the error colour), and no re-grading (owner, 2026-10-31). Text is 1.4x; the body scrolls and the foot stays.</p><div class="frames">${practiceScreens(S.ptype).join('')}</div></section>
 
 <section class="opt"><h2>4. Proposed: the action area while grading</h2><p class="note">The same slot, 56 dp, holds the self-grade. These are screens that exist today; they only move into the shell. Recall: Show answer, then the four ratings (the learner grades). A typed near miss: the learner judges. Say: wrong, with Try again beside Continue.</p><div class="frames">${fr('Recall: Show answer',phone(recall('front')))}${fr('Recall: the four ratings',phone(recall('rev')))}${fr('Typed near miss: the learner judges',phone(nearmiss()))}</div></section>
 
-<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31), so the answer is kept as given and can be changed, with no Check and no Don’t know; the last Next is Review answers; the review step lists every item and Submit exam. The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
+<section class="opt"><h2>5. Proposed: the exam variant</h2><div class="tw"><div class="tg">Item ${seg('etype',Object.entries(XT),S.etype)}</div></div><p class="note">Same shell. What differs, outlined: no feedback area (nothing is marked right or wrong until the result, owner 2026-10-31); the action area is Back and Next, free navigation (owner 2026-10-31; unlike practice, where a screen gone back to is read-only, doubt 14), so the answer is kept as given and can be changed, with no Check and no Don’t know; the last Next is Review answers; the review step lists every item and Submit exam. The review step is drawn only as far as the shell needs it: the exam screens themselves are the next mockup, and every answer shown here is a draft of it.</p><div class="frames">${examScreens(S.etype).join('')}</div></section>`;
  place();
  for(const b of document.querySelectorAll('.seg button'))b.setAttribute('aria-pressed',String(isOn(b)));
 }

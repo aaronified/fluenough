@@ -6,16 +6,18 @@ Phone 360 by 860 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` o
 
 ## What the shell is
 
-Today's `DrillFrame` (scrolling body over a fixed foot) with the teach card and sets moved into it, in six slots: 1 header (unchanged), 2 context row (skill pill and deck name; "New word" on a teach card), 3 card (one `DrillCard`), 4 answer area (choices, tiles, field, microphone; empty for teach and set), 5 feedback area (the banner; empty on teach, set and in an exam), 6 action area (one place, 56 dp buttons: grades while something is left to grade, goes on when nothing is, Back and Next in an exam).
+Today's `DrillFrame` (scrolling body over a fixed foot) with the teach card and sets moved into it, in six slots: 1 header (unchanged), 2 context row (skill pill and deck name; "New word" on a teach card), 3 card (one `DrillCard`), 4 answer area (choices, tiles, field, microphone; empty for teach and set), 5 feedback area (the banner; empty on teach, set and in an exam), 6 action area (one place, 56 dp buttons: grades while something is left to grade, goes on when nothing is, except on a teach card, where it is empty; Back and Next in an exam).
 
 Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until the result; free navigation with a review-answers step; mock the shell first.
 
 ## Doubts (not decided; the plan's proposal is drawn)
 
-1. **How does the learner go on?** The plan says "one gesture or one button". Drawn: one Continue button in the action area on every screen that is only waiting to go on (teach, set, answered question), and the swipe with the end-edge chevron on those too. Tweak control "Going on".
-   - Button and swipe (drawn): matches both habits. Downside: the teach card gains a button, which reverses the owner's 2026-10-22 decision on #691 ("no Back and Continue, a swipe and two chevrons").
-   - Button only: one thing to learn. Downside: loses the swipe the owner chose for teach.
-   - Swipe only (today's teach everywhere): no button anywhere. Downside: a question's Continue disappears, harder for screen-reader and switch users, and nothing says it is time to go on.
+1. **How does the learner go on?** Teach is decided; questions and sets are open.
+   - Teach (answered, owner, 2026-10-31: "Continue is not needed when swipe and the chevron click is there. Right? It also frees up the screenspace"): no Continue button on a teach card (new word, Relearn, rule card). Going on is the swipe and the chevrons only, as the owner decided on #691 on 2026-10-22; the action area is empty and the foot's space goes to the card. The Going on control does not change teach.
+   - Questions and sets (open; the plan says "one gesture or one button"). Drawn: one Continue button in the action area on a set and on an answered question, and the swipe with the end-edge chevron on those too. Tweak control "Going on, questions and sets".
+   - Button and swipe (drawn): matches both habits. Downside: two ways to learn, and a question's chevron is new against today.
+   - Button only: one thing to learn. Downside: loses the swipe that teach has, so questions and teach differ.
+   - Swipe only (as teach): one way on everywhere. Downside: a question's Continue disappears, harder for screen-reader and switch users, and nothing says it is time to go on.
 2. **Are "grading area" and "going on" one area or two?** Drawn: one action area that changes content (Check, Show answer, ratings, Count right or wrong, then Continue), so the thumb target never moves.
    - One area (drawn). Downside: the grading buttons and Continue cannot show together.
    - Two stacked areas (grade above, Continue below, always present). Downside: a taller foot, which at 1.4x leaves a short body.
@@ -48,10 +50,17 @@ Owner decisions drawn (2026-10-31, #509): no per-item feedback in an exam until 
 11. **Exam: leaving.** Close is the same X. What it does (save and resume, or abandon) is not drawn; #509 sets only the retake rule.
 12. **Typed answers (romanised) in the shell.** Drawn with the keyboard open: the card and foot go compact as today. The plan retires script typing, so only the romanised field is shown.
 13. **Height at 1.4x.** An answered choice with its feedback and Continue leaves the body short, so the options scroll behind the foot (as today). Options: leave; hide the taught details under the prompt until the learner opens them (downside: the lesson-after-the-answer is the review's teaching moment).
+14. **Does "cannot change any answer" also apply to the exam?** Owner, 2026-10-31: in practice, going back (swipe or the back chevron, on teach and on questions) is allowed, but an answer already given can never be changed. Drawn: practice is read-only on return (answered state, no input, no re-grading, a neutral "Already answered" banner with a lock, not the error colour), and the exam stays as the owner decided earlier (free navigation and a review step, so answers can be changed until Submit).
+    - Exam editable until submit (drawn): matches the earlier decision and the review step's tap to go back to an item. Downside: the two modes differ on return, so the learner must be told which one they are in.
+    - Exam read-only too: one rule everywhere. Downside: the review step can only look, not fix, so a forgotten item cannot be answered later.
+
+## Going back: practice and exam
+
+Practice: swipe back or the back chevron is available on teach (new word, Relearn, rule card) and on a question once it is answered. A teach card shows as it was. A question gone back to is read-only: answered state kept, controls locked, no re-grading, and a neutral "Already answered" banner (lock icon, surface colour, not the green or red of a verdict). Exam: free navigation with the review step; answers can be changed until Submit (doubt 14 asks whether that should change).
 
 ## Self-check results
 
-WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All 68 pairs pass.
+WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All 68 pairs pass (the Already answered banner uses onS on sHigh, already in the list as "text on the card", and so does its lock icon).
 
 | Theme | Pair | Colours | Ratio | Needs | Result |
 |---|---|---|---|---|---|
@@ -124,12 +133,12 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | skill pill Say | #bdf0b3 on #255023 | 7.23 :1 | 4.5 :1 | pass |
 | dark | skill pill Grammar | #b8f0e4 on #00504a | 7.4 :1 | 4.5 :1 | pass |
 
-Other checks: tap targets are 48 dp (header icons, Back, Next) and 56 dp (action buttons, choices); the swipe chevron is 40 dp, a convenience, not the only way on while a button is drawn (and the only way on in "Swipe only", which is doubt 1). Text sizes are all 1.4x. The disabled Check button is below 4.5:1 by design (a disabled control is exempt).
+Other checks: tap targets are 48 dp (header icons, Back, Next) and 56 dp (action buttons, choices); the swipe chevron is 40 dp: on a teach card it is, with the swipe, the only way on (owner, doubt 1), on questions and sets a convenience beside the button (and the only way on in "Swipe only"). Text sizes are all 1.4x. The disabled Check button is below 4.5:1 by design (a disabled control is exempt).
 
 ## Behaviour checks (Chromium, Playwright 1.56)
 
 - Loaded at 1280 px and 390 px wide: no page errors, no console errors, no horizontal page scroll.
-- Every tweak control pressed in both courses and both themes, with Going on in all three settings, Content short and long, every practice screen type and every exam item type: no element wider than its phone, no clipped text, no errors.
+- Every tweak control pressed in both courses and both themes, with Going on in all three settings (teach unchanged by it: no foot in any), Content short and long, every practice screen type and every exam item type: no element wider than its phone, no clipped text, no errors.
 - Screenshots of the page in light and dark were looked at.
 - Fonts: Roboto, Noto Sans Devanagari and Noto Sans Bengali from Google Fonts; where offline the system fallback is used.
 
