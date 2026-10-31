@@ -16,6 +16,7 @@ offline on your phone once a language's decks are downloaded.
 <p>
   <a href="https://github.com/aaronified/fluenough/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aaronified/fluenough/ci.yml?branch=main&amp;label=CI&amp;logo=github" alt="CI status"></a>
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/github/v/release/aaronified/fluenough?label=release" alt="Latest release"></a>
+  <a href="https://github.com/aaronified/fluenough/releases"><img src="https://img.shields.io/github/downloads/aaronified/fluenough/total?label=APK%20downloads" alt="APK downloads"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/aaronified/fluenough" alt="Licence: GPL-3.0"></a>
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
   <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>

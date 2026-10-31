@@ -145,6 +145,15 @@ checked the whole unit.
   meanings, or no warning). Any other text is left for the owner. The items
   of a list, the facts and a flag are always the owner's to read: the bot
   does not write them.
+- **Extra answers and refused synonyms** (owner, 2026-10-30, ADR-0050). On
+  an English card, a typed answer that is right but marked wrong can be
+  proposed as an extra accepted answer (`alt_native`), and a word the
+  synonym sets wrongly accept as another can be proposed as one to refuse
+  (`not_synonyms`). Each is one word a proposal, added to the card's list
+  once the usual agreement threshold is met. The bot leaves a refused word for the
+  owner when it is one of the card's own answers or no set would accept it
+  anyway. You never edit the shared synonym list: words proposed on several
+  cards are collected by a tool for the owner to review.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
@@ -165,6 +174,49 @@ checked the whole unit.
   pairs are checked in the same Offensive words review: confirm or reject
   each, and for a confirmed pair write a short care note (at most 40
   letters) that learners will see.
+
+## Daily questions
+
+Besides whole decks, you can answer a few short questions a day. The app
+writes them from the cards, about the data nobody has checked yet: is this
+the right meaning of a word, is this example natural, is this a real
+confusable, is this recording correct and by a native speaker. Data written
+without a source comes before data taken from Wiktionary or Tatoeba.
+
+- **Yes or No.** A No asks why, with a few fixed reasons and an optional
+  line. The line goes in the mail for people to read and nowhere else.
+- **Recordings.** There is no recording option yet. A recording can only be
+  flagged when it is bad, and the card then uses text-to-speech.
+- **How many a day** is yours to choose, in this guide's step and later in
+  Settings under **Reviewing**, **Questions a day**. The default is 10. What
+  you do not answer waits for the next day.
+- **Sending.** Answers wait on your phone until you send them, and they go in
+  **the same mail as your reviews that wait** (owner, 2026-10-30: "Send all
+  pending review in that same mail"). Tap **Send answers** here, or **Send
+  review** in Settings under **Reviewing**: either way one mail opens in your
+  mail app with Fluenough's address, a file for each deck and a file for each
+  language of answers. The subject is the review mail's,
+  `[Fluenough review] CODE (languages)`. Do not change the files.
+- **Settled by two.** A data point is settled right when two reviewers
+  answer Yes: the other reviewers needed plus the first
+  (`REVIEW_AGREEMENTS_NEEDED`, 1 by default, so two). The point is then
+  recorded on the card as `verified` and the app stops asking about it (the
+  bot writes that only once a released app reads the field; until then it
+  only tallies the answers in `review-answers/` in the repository, as rater
+  codes and answers only).
+- **A No opens a pull request; the next answer decides it** (owner,
+  2026-10-30: "1st review opens PR. Second review either merges or closes
+  it."). The first reviewer to answer No, or to flag a recording, makes the
+  review bot open a pull request for that data point, and it stays open. The
+  next reviewer's answer decides: the same No (or flag) merges it, and a Yes
+  closes it for good; a disagreement is not sent to a third reviewer. A
+  flagged recording that is merged is taken off the card, which then uses
+  text-to-speech. For any other point the answer carries no replacement text,
+  and the proposals of a review change a field only to a new text, so the
+  pull request is a flag note: merging it only records that two reviewers
+  agree the point is wrong, and the owner changes the card.
+- **Open questions** that ask you for something new, such as a regional
+  variation, come in a later version.
 
 ## Send several decks in one mail
 

@@ -959,9 +959,148 @@
   "@todaySituationsTitle": {
     "description": "The Situations card on Today, under the buttons (#724)."
   },
-  "todaySituationsBody": "Hailing a cab, groceries, the doctor and more: key phrases, offline",
-  "@todaySituationsBody": {
-    "description": "Under Situations on Today: what the cheatsheets hold."
+  "situationsOffline": "Offline",
+  "@situationsOffline": {
+    "description": "The small mark beside Situations on Today: every sheet works without a connection."
+  },
+  "situationTaxi": "Taxi",
+  "@situationTaxi": {
+    "description": "Today's button for the taxi and getting around sheet; also shown, dimmed, for a course without sheets."
+  },
+  "situationShops": "Shops",
+  "@situationShops": {
+    "description": "Today's button for the groceries and shopping sheet."
+  },
+  "situationEat": "Eat",
+  "@situationEat": {
+    "description": "Today's button for the restaurant sheet."
+  },
+  "situationDoctor": "Doctor",
+  "@situationDoctor": {
+    "description": "Today's button for the doctor and pharmacy sheet."
+  },
+  "situationTraffic": "Traffic",
+  "@situationTraffic": {
+    "description": "Today's button for the traffic stop sheet."
+  },
+  "situationRail": "Rail",
+  "@situationRail": {
+    "description": "Today's button for the rail station sheet."
+  },
+  "situationUpcoming": "Upcoming",
+  "@situationUpcoming": {
+    "description": "The pill on a situation button for a course that has no sheet yet."
+  },
+  "situationUpcomingLabel": "{title}, upcoming",
+  "@situationUpcomingLabel": {
+    "description": "Screen-reader label of a situation button with no sheet yet.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "situationNewCount": "{count} new",
+  "@situationNewCount": {
+    "description": "Under a situation button: how many of its cards the learner has not met yet.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationButtonLabel": "{title}, {count, plural, =0{all learnt} =1{1 card not learnt yet} other{{count} cards not learnt yet}}",
+  "@situationButtonLabel": {
+    "description": "Screen-reader label of a situation button.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationPhrases": "Phrases",
+  "@situationPhrases": {
+    "description": "Heading of a sheet's phrases."
+  },
+  "situationWords": "Words",
+  "@situationWords": {
+    "description": "Heading of a sheet's words."
+  },
+  "situationNotLearnt": "Not learnt yet",
+  "@situationNotLearnt": {
+    "description": "The hint of the dot that marks a card on a sheet the learner has not met yet."
+  },
+  "situationPractise": "Practise this sheet",
+  "@situationPractise": {
+    "description": "The button that drills a situation sheet, teaching its new cards first."
+  },
+  "situationRevise": "Revise this sheet",
+  "@situationRevise": {
+    "description": "The button that revises a situation sheet when nothing on it is new."
+  },
+  "situationNothingToPractise": "Nothing on this sheet is ready to practise right now.",
+  "@situationNothingToPractise": {
+    "description": "Shown under the disabled Practise button of a situation sheet when none of its cards can be taught or revised now."
+  },
+  "situationInspect": "Inspect cards",
+  "@situationInspect": {
+    "description": "App bar button of a sheet: opens its cards one by one, in full."
+  },
+  "situationCardDetails": "Card details",
+  "@situationCardDetails": {
+    "description": "Tooltip of the info button on a sheet's row, which inspects that card."
+  },
+  "situationInspectTitle": "{title}: card {position} of {count}",
+  "@situationInspectTitle": {
+    "description": "Title of the inspect view of a sheet.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "position": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "situationCardJump": "Card {position}",
+  "@situationCardJump": {
+    "description": "Screen-reader label of a numbered chip that jumps to a card in the inspect view.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "situationPrevious": "Previous card",
+  "@situationPrevious": {
+    "description": "Inspect view: back one card."
+  },
+  "situationNext": "Next card",
+  "@situationNext": {
+    "description": "Inspect view: on one card."
+  },
+  "situationOpenInDeck": "Open in deck",
+  "@situationOpenInDeck": {
+    "description": "Inspect view: opens the deck the card is in."
+  },
+  "situationAlsoOn": "Also on: {sheets}",
+  "@situationAlsoOn": {
+    "description": "Inspect view: the other sheets the card is on.",
+    "placeholders": {
+      "sheets": {
+        "type": "String"
+      }
+    }
+  },
+  "situationEmpty": "None of this sheet's cards is in your decks yet.",
+  "@situationEmpty": {
+    "description": "Shown on a sheet none of whose cards the learner's decks have."
   },
   "minutesTitle": "Minutes a day",
   "@minutesTitle": {
@@ -2166,7 +2305,7 @@
   },
   "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback."
+    "description": "Screen reader label of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback. The long-press hint is hintReport."
   },
   "reportTitle": "Support and feedback",
   "@reportTitle": {
@@ -3014,6 +3153,14 @@
   "@sourcesPhoneticLine": {
     "description": "The line under the pronunciations credit on the Sources screen: the narrow IPA in [ ] is adapted from Wiktionary, under CC BY-SA 4.0. Wiktionary and the licence name stay as they are."
   },
+  "sourcesSynonymsLine": "Synonym sets for typed meanings: adapted from Wiktionary and Open English WordNet, licensed CC BY-SA 4.0.",
+  "@sourcesSynonymsLine": {
+    "description": "The line on the Sources screen beside the pronunciations credit: the sets of English words that mean the same, which typed meanings are also accepted by, are adapted from Wiktionary and Open English WordNet, under CC BY-SA 4.0. The project names and the licence name stay as they are."
+  },
+  "sourcesSynonyms": "Synonyms: Wiktionary and WordNet",
+  "@sourcesSynonyms": {
+    "description": "Credit on the Sources screen for the synonym sets that typed English meanings are checked against. The project names stay as they are."
+  },
   "sourcesLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@sourcesLinkCopied": {
     "description": "SnackBar after a tap on a credit on the Sources screen when nothing on the phone could open its link, so the link was copied instead."
@@ -3491,6 +3638,28 @@
   "@drillChooseHeardMeaning": {
     "description": "Multiple choice in Hear (ADR-0034): under the play button, above the meanings to choose from."
   },
+  "drillChoosePicture": "Which picture is it?",
+  "@drillChoosePicture": {
+    "description": "Picture choice, a form of Recognition (#91): above a word in the language learned, whose picture is chosen from the four under it."
+  },
+  "drillChooseHeardPicture": "Which picture did you hear?",
+  "@drillChooseHeardPicture": {
+    "description": "Picture choice, a form of Recognition (#91): under the play button, above the four pictures to choose from."
+  },
+  "drillPictureOption": "Picture {number} of {total}",
+  "@drillPictureOption": {
+    "description": "Screen-reader label and hint of one of the pictures of a picture choice, before it is answered. It says nothing of what the picture shows, which would give the answer away.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
   "drillOptionsGroup": "Options",
   "@drillOptionsGroup": {
     "description": "Screen-reader label of the group of options of a multiple-choice question."
@@ -3606,6 +3775,20 @@
   "feedbackCorrect": "Correct",
   "@feedbackCorrect": {
     "description": "Feedback: the typed answer was right."
+  },
+  "feedbackAlsoTyped": "Also: {typed}",
+  "@feedbackAlsoTyped": {
+    "description": "Hint under a right typed meaning that was not the card's own answer but a word that means the same (a synonym): the learner's own word, one or two words. No full stop, like every hint.",
+    "placeholders": {
+      "typed": {
+        "type": "String",
+        "example": "take care"
+      }
+    }
+  },
+  "feedbackAlsoRight": "Also right",
+  "@feedbackAlsoRight": {
+    "description": "Hint under a right typed meaning that was a synonym of the card's answer, when what was typed is longer than two words, so that it is not repeated. No full stop."
   },
   "feedbackAccent": "Right, but mind the accent",
   "@feedbackAccent": {
@@ -3771,6 +3954,10 @@
   "rateEasy": "Easy",
   "@rateEasy": {
     "description": "Self-rating: remembered it at once."
+  },
+  "rateSeen": "Seen",
+  "@rateSeen": {
+    "description": "What Your data's review list shows, in place of a rating, for a card the walkthrough taught: it was shown, not answered."
   },
   "rateInterval": "{days, plural, =0{today} =1{1 day} other{{days} days}}",
   "@rateInterval": {
@@ -8934,7 +9121,7 @@
   "@reviewSendFailed": {
     "description": "When the phone's share failed."
   },
-  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
   "@reviewMailBody": {
     "description": "Body of the review mail, for people only: the files are the record.",
     "placeholders": {
@@ -10835,6 +11022,16 @@
   "@cardIpaHeading": {
     "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
   },
+  "cardWiktionaryLink": "Wiktionary: {word}",
+  "@cardWiktionaryLink": {
+    "description": "A button on a word's sheet that opens the word's page on Wiktionary in the browser. Wiktionary stays as it is. {word} is a word of the language being learned, or a base word of the card's, in its own script.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "ఇల్లు"
+      }
+    }
+  },
   "cardDictionaryHeading": "Dictionary · Wiktionary",
   "@cardDictionaryHeading": {
     "description": "Heading over a word's dictionary entry on its sheet, which comes from Wiktionary."
@@ -12056,9 +12253,45 @@
   "@hintStop": {
     "description": "Hint shown on a long press on the round microphone button while the phone listens, which stops it. One word, no full stop."
   },
+  "hintFactLanguages": "Languages",
+  "@hintFactLanguages": {
+    "description": "Hint shown on a long press on the small button at the top left of Today's fact card, which opens the choice of the languages the fact is shown in (#926). One word, no full stop."
+  },
+  "factLanguagesLabel": "Choose the languages of the fact",
+  "@factLanguagesLabel": {
+    "description": "Screen-reader label of the small button at the top left of Today's fact card (#926)."
+  },
+  "factLanguagesTitle": "Show the fact in",
+  "@factLanguagesTitle": {
+    "description": "Title of the sheet where the learner ticks the languages Today's fact is shown in; each is a language they know (#926)."
+  },
+  "factLanguagesLast": "At least one stays checked",
+  "@factLanguagesLast": {
+    "description": "Shown under the one language still checked in the fact languages sheet, which cannot be unchecked (#926)."
+  },
   "hintRecord": "Record",
   "@hintRecord": {
     "description": "Hint shown on a long press on the round microphone button of the sound check, which records two seconds. One word, no full stop."
+  },
+  "hintReport": "Report",
+  "@hintReport": {
+    "description": "Hint shown on a long press on the bug icon in an app bar, which opens the report screen. One word, no full stop."
+  },
+  "hintUpdate": "Update",
+  "@hintUpdate": {
+    "description": "Hint shown on a long press on the sync icon on a language sheet, which checks for deck updates. One word, no full stop."
+  },
+  "hintInfo": "Info",
+  "@hintInfo": {
+    "description": "Hint shown on a long press on the i icon on a language sheet, which opens the language details. One word, no full stop."
+  },
+  "hintDelete": "Delete",
+  "@hintDelete": {
+    "description": "Hint shown on a long press on the bin icon on a language sheet, which deletes its data. One word, no full stop."
+  },
+  "hintAdd": "Add",
+  "@hintAdd": {
+    "description": "Hint shown on a long press on the plus icon on the Languages page, which adds a language. One word, no full stop."
   },
   "languagesTitle": "Languages",
   "@languagesTitle": {
@@ -12793,5 +13026,481 @@
   "languagesNoCourse": "No course yet",
   "@languagesNoCourse": {
     "description": "Badge on a language with no course: Know only."
+  },
+  "reviewGuideQuestionsTitle": "Daily questions",
+  "@reviewGuideQuestionsTitle": {
+    "description": "Title of the step of How reviewing works about the daily questions (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideQuestionsBody": "Besides whole decks, you can answer a few short questions a day. The app writes them from the cards, about the data nobody has checked yet: is this the right meaning of a word, is this example natural, is this a real confusable, is this recording correct and by a native speaker.",
+  "@reviewGuideQuestionsBody": {
+    "description": "First paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideQuestionsSend": "Answers wait on your phone until you send them. They go in the same mail as your reviews that wait: tap Send answers here, or send from Settings under Reviewing, and one mail carries everything, a file for each deck and for each language. A data point is settled when two reviewers agree. When one says a point is wrong, that opens a proposal, and the next reviewer decides it: the same answer merges it, a Yes closes it for good. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
+  "@reviewGuideQuestionsSend": {
+    "description": "Second paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Send answers” must match reviewQuestionsSend."
+  },
+  "reviewGuideQuestionsCount": "How many a day is up to you. Pick it here and change it any time in Settings under Reviewing. What you do not answer waits for the next day.",
+  "@reviewGuideQuestionsCount": {
+    "description": "Third paragraph of the daily questions step of How reviewing works, above the choice of how many a day (docs/REVIEWING.md says the same)."
+  },
+  "reviewQuestionsPerDayTitle": "Questions a day",
+  "@reviewQuestionsPerDayTitle": {
+    "description": "Title of the choice of how many daily questions a reviewer wants, in How reviewing works and in Settings under Reviewing."
+  },
+  "reviewQuestionsPerDayOff": "Off",
+  "@reviewQuestionsPerDayOff": {
+    "description": "The choice of no daily questions."
+  },
+  "reviewQuestionsPerDayChoice": "{count}",
+  "@reviewQuestionsPerDayChoice": {
+    "description": "One choice of how many daily questions a day: the number.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsPerDayValue": "{count, plural, =0{Off} =1{1 question a day} other{{count} questions a day}}",
+  "@reviewQuestionsPerDayValue": {
+    "description": "Under Questions a day in Settings: the reviewer's choice.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSettings": "Daily questions",
+  "@reviewQuestionsSettings": {
+    "description": "Title of the row in Settings under Reviewing that opens the daily questions."
+  },
+  "reviewQuestionsSettingsLeft": "{count, plural, =0{None left today} =1{1 left today} other{{count} left today}}",
+  "@reviewQuestionsSettingsLeft": {
+    "description": "Under Daily questions in Settings: how many of today's questions are left to answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "reviewQuestionsSettingsOff": "Off. Choose how many a day under Questions a day.",
+  "@reviewQuestionsSettingsOff": {
+    "description": "Under Daily questions in Settings when the reviewer chose none a day."
+  },
+  "reviewQuestionsTitle": "Daily questions",
+  "@reviewQuestionsTitle": {
+    "description": "Title of the daily questions screen."
+  },
+  "reviewQuestionsProgress": "Question {n} of {total}",
+  "@reviewQuestionsProgress": {
+    "description": "Over a daily question: where the reviewer is in today's questions.",
+    "placeholders": {
+      "n": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionMeaning": "Is this the right meaning of {word}?",
+  "@reviewQuestionMeaning": {
+    "description": "A daily question about a card's meaning. {word} is the card's word with its reading, such as तुम (tum).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "reviewQuestionExample": "Is this example natural?",
+  "@reviewQuestionExample": {
+    "description": "A daily question about one of a card's examples."
+  },
+  "reviewQuestionExampleFor": "An example for {word}",
+  "@reviewQuestionExampleFor": {
+    "description": "Under the question about an example: the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "reviewQuestionConfusable": "Is this a real confusable for {word}?",
+  "@reviewQuestionConfusable": {
+    "description": "A daily question about a confusable of a card: a word learners may wrongly pick for it. {word} is the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "खाना (khānā)"
+      }
+    }
+  },
+  "reviewQuestionSound": "Is this recording correct and by a native speaker?",
+  "@reviewQuestionSound": {
+    "description": "A daily question about a card's recording."
+  },
+  "reviewQuestionSoundFor": "The recording of {word}",
+  "@reviewQuestionSoundFor": {
+    "description": "Under the question about a recording: the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "खाना (khānā)"
+      }
+    }
+  },
+  "reviewQuestionImage": "Is this the right picture for {word}?",
+  "@reviewQuestionImage": {
+    "description": "A daily question about a picture proposed for a card. {word} is the card's word with its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "कुत्ता (kuttā)"
+      }
+    }
+  },
+  "reviewQuestionYes": "Yes",
+  "@reviewQuestionYes": {
+    "description": "The answer that says the data is right, to a daily question."
+  },
+  "reviewQuestionNo": "No",
+  "@reviewQuestionNo": {
+    "description": "The answer that says the data is wrong, to a daily question."
+  },
+  "reviewQuestionFlag": "Flag this recording",
+  "@reviewQuestionFlag": {
+    "description": "The answer that says a recording is bad: the card then uses text-to-speech. There is no recording option."
+  },
+  "reviewQuestionSkip": "Skip for today",
+  "@reviewQuestionSkip": {
+    "description": "Puts a daily question off until tomorrow."
+  },
+  "reviewQuestionWhyNo": "What is wrong with it?",
+  "@reviewQuestionWhyNo": {
+    "description": "Title of the sheet that opens on No to a daily question."
+  },
+  "reviewQuestionWhyFlag": "What is wrong with the recording?",
+  "@reviewQuestionWhyFlag": {
+    "description": "Title of the sheet that opens on Flag to a daily question about a recording."
+  },
+  "reviewQuestionWhyHint": "Say more (optional; it goes in the mail only)",
+  "@reviewQuestionWhyHint": {
+    "description": "Hint of the optional text under the reasons of a No."
+  },
+  "reviewQuestionSave": "Save answer",
+  "@reviewQuestionSave": {
+    "description": "Button of the sheet that saves a No or a flag."
+  },
+  "reviewReasonWrong": "It is wrong",
+  "@reviewReasonWrong": {
+    "description": "A reason for No to a daily question."
+  },
+  "reviewReasonAwkward": "Right, but put oddly",
+  "@reviewReasonAwkward": {
+    "description": "A reason for No to a question about a meaning."
+  },
+  "reviewReasonUnnatural": "Nobody would say it",
+  "@reviewReasonUnnatural": {
+    "description": "A reason for No to a question about an example."
+  },
+  "reviewReasonNotReal": "Nobody mixes these up",
+  "@reviewReasonNotReal": {
+    "description": "A reason for No to a question about a confusable."
+  },
+  "reviewReasonWrongWord": "It is a different word",
+  "@reviewReasonWrongWord": {
+    "description": "A reason for No or Flag to a question about a confusable or a recording."
+  },
+  "reviewReasonNoisy": "Too noisy or unclear",
+  "@reviewReasonNoisy": {
+    "description": "A reason to flag a recording."
+  },
+  "reviewReasonNotNative": "Not a native speaker",
+  "@reviewReasonNotNative": {
+    "description": "A reason to flag a recording."
+  },
+  "reviewReasonNotTheWord": "It is not the word",
+  "@reviewReasonNotTheWord": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewReasonUnclear": "The picture is unclear",
+  "@reviewReasonUnclear": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewReasonNotFit": "It does not suit a learner",
+  "@reviewReasonNotFit": {
+    "description": "A reason for No to a question about a picture."
+  },
+  "reviewQuestionsDoneTitle": "That is all for today",
+  "@reviewQuestionsDoneTitle": {
+    "description": "Title when the reviewer has answered today's daily questions."
+  },
+  "reviewQuestionsDoneBody": "{count, plural, =0{You answered none today.} =1{You answered 1 question today.} other{You answered {count} questions today.}} What is left waits for tomorrow.",
+  "@reviewQuestionsDoneBody": {
+    "description": "Under That is all for today.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsNoneTitle": "Nothing to ask right now",
+  "@reviewQuestionsNoneTitle": {
+    "description": "Title when there is no daily question to ask."
+  },
+  "reviewQuestionsNoneBody": "Questions come from the courses you review. Tick courses under Languages you review and download their decks. Skipped questions come back tomorrow.",
+  "@reviewQuestionsNoneBody": {
+    "description": "Under Nothing to ask right now."
+  },
+  "reviewQuestionsOffTitle": "Daily questions are off",
+  "@reviewQuestionsOffTitle": {
+    "description": "Title when the reviewer chose no daily questions."
+  },
+  "reviewQuestionsOffBody": "Choose how many a day under Questions a day in Settings.",
+  "@reviewQuestionsOffBody": {
+    "description": "Under Daily questions are off."
+  },
+  "reviewQuestionsOnlyReviewers": "Turn on Review decks in Settings to get daily questions.",
+  "@reviewQuestionsOnlyReviewers": {
+    "description": "Shown on the daily questions screen when reviewing is off."
+  },
+  "reviewMailAnswers": "Daily questions: {count, plural, =1{1 answer} other{{count} answers}}",
+  "@reviewMailAnswers": {
+    "description": "A line of the review mail's body, for people only: the daily questions' answers that go in the same mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewSendAnswers": "{count, plural, =1{1 daily question answer goes in the same mail} other{{count} daily question answers go in the same mail}}",
+  "@reviewSendAnswers": {
+    "description": "In the send sheet and under Reviews to send in Settings: the answers to the daily questions that wait and are sent with the reviews.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSendWith": "{count, plural, =1{1 deck review goes in the same mail.} other{{count} deck reviews go in the same mail.}}",
+  "@reviewQuestionsSendWith": {
+    "description": "Under the daily questions' Send answers button: reviews waiting to send go in the same mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewQuestionsSend": "{count, plural, =1{Send 1 answer} other{Send {count} answers}}",
+  "@reviewQuestionsSend": {
+    "description": "Button that sends the daily questions' answers by mail.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "reviewQuestionsSendOpened": "Your mail app is open. Send the mail from there.",
+  "@reviewQuestionsSendOpened": {
+    "description": "Shown once the mail app opened with the daily questions' answers."
+  },
+  "reviewQuestionsSendFailed": "The answers could not be shared. They stay on this phone.",
+  "@reviewQuestionsSendFailed": {
+    "description": "Shown when the daily questions' answers could not be shared."
+  },
+  "reviewQuestionsUndo": "Undo",
+  "@reviewQuestionsUndo": {
+    "description": "Takes back the last daily question's answer."
+  },
+  "reviewQuestionsAnswerSaved": "Answer saved",
+  "@reviewQuestionsAnswerSaved": {
+    "description": "Announced after a daily question is answered."
+  },
+  "pairCompareSounds": "Compare sounds",
+  "@pairCompareSounds": {
+    "description": "Title of the minimal-pair popup (#423) and the screen-reader label of its region: the two words that sound almost alike, side by side, to play and say. Opened from the Compare button on a card."
+  },
+  "pairCompareWith": "Compare with {word}",
+  "@pairCompareWith": {
+    "description": "Label of the button on a card that opens the minimal-pair popup (#423); names the word the card sounds almost like, with its reading, as \"కాలం (kālaṁ)\".",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం (kālaṁ)"
+      }
+    }
+  },
+  "pairWordReading": "{word} ({reading})",
+  "@pairWordReading": {
+    "description": "A word with its reading in brackets, in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairPracticeOnly": "Practice only. Nothing here is recorded.",
+  "@pairPracticeOnly": {
+    "description": "Under the title of the minimal-pair popup (#423): no review, schedule or strength is kept for anything done in it."
+  },
+  "pairNoVoice": "This phone has no voice for {language}, so the words can’t be played.",
+  "@pairNoVoice": {
+    "description": "Minimal-pair popup (#423): shown at its top when the phone has no voice for the language; the play buttons are greyed out.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "pairPlayWord": "Play {word}",
+  "@pairPlayWord": {
+    "description": "Screen-reader label of the Play button under a word in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairSlowWord": "Play {word} slowly",
+  "@pairSlowWord": {
+    "description": "Screen-reader label of the slow Play button under a word in the minimal-pair popup (#423).",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "kālaṁ"
+      }
+    }
+  },
+  "pairMatchedTag": "Matched",
+  "@pairMatchedTag": {
+    "description": "Small tag on the word of a minimal pair that the phone matched to what the learner said (#423)."
+  },
+  "pairSayOne": "Say one",
+  "@pairSayOne": {
+    "description": "Heading of the section of the minimal-pair popup where the learner says one of the two words and sees what the phone heard (#423)."
+  },
+  "pairSayHelp": "Say either word and see what the phone heard.",
+  "@pairSayHelp": {
+    "description": "Under the Say one heading of the minimal-pair popup before anything was said (#423)."
+  },
+  "pairHeardWord": "Heard: {named}",
+  "@pairHeardWord": {
+    "description": "What the phone heard in the minimal-pair popup (#423), when it is a word the app knows: \"కాలం (kālaṁ), time\".",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      }
+    }
+  },
+  "pairHeardPlain": "Heard: {word}",
+  "@pairHeardPlain": {
+    "description": "What the phone heard in the minimal-pair popup (#423), when it is not a word the app knows.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కలా"
+      }
+    }
+  },
+  "pairMatchedWord": "Matched {word}",
+  "@pairMatchedWord": {
+    "description": "Chip under what the phone heard in the minimal-pair popup (#423): which of the two words it matched.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కాలం"
+      }
+    }
+  },
+  "pairMatchedNeither": "Matched neither of the two",
+  "@pairMatchedNeither": {
+    "description": "Chip under what the phone heard in the minimal-pair popup (#423) when it is neither word. Not a mark: never right or wrong."
+  },
+  "pairCaveat": "This is what the phone heard, not a mark. Phones favour common words and can miss a long vowel.",
+  "@pairCaveat": {
+    "description": "Under every result of Say one in the minimal-pair popup (#423): the recogniser prefers common words and may miss vowel length, so the app says what it heard and does not mark it."
+  },
+  "pairWhichTitle": "Which did you hear?",
+  "@pairWhichTitle": {
+    "description": "Heading of the section of the minimal-pair popup where the app plays one of the two words and the learner taps which (#423)."
+  },
+  "pairWhichHelp": "Plays one of the two at random. Tap the one you heard.",
+  "@pairWhichHelp": {
+    "description": "Under the Which did you hear? heading of the minimal-pair popup before a word is played (#423)."
+  },
+  "pairPlayOne": "Play one",
+  "@pairPlayOne": {
+    "description": "Button of the minimal-pair popup that plays one of the two words at random (#423)."
+  },
+  "pairPlayingOne": "Playing one of them…",
+  "@pairPlayingOne": {
+    "description": "Shown in the minimal-pair popup while the word to guess plays (#423)."
+  },
+  "pairPlayAgain": "Play it again",
+  "@pairPlayAgain": {
+    "description": "Button of the minimal-pair popup that plays the same word to guess again (#423)."
+  },
+  "pairPlayAnother": "Play another",
+  "@pairPlayAnother": {
+    "description": "Button of the minimal-pair popup that plays a new word to guess, which may be the same one (#423)."
+  },
+  "pairRight": "Yes. You heard {named}.",
+  "@pairRight": {
+    "description": "Minimal-pair popup (#423): the learner tapped the word that played; {named} is it, as \"కాలం (kālaṁ), time\".",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      }
+    }
+  },
+  "pairWrong": "Not quite. It was {named}. You tapped {tapped}.",
+  "@pairWrong": {
+    "description": "Minimal-pair popup (#423): the learner tapped the other word; {named} is the one that played, as \"కాలం (kālaṁ), time\", and {tapped} the word tapped, with its reading.",
+    "placeholders": {
+      "named": {
+        "type": "String",
+        "example": "కాలం (kālaṁ), time"
+      },
+      "tapped": {
+        "type": "String",
+        "example": "కలం (kalaṁ)"
+      }
+    }
+  },
+  "hintPlay": "Play",
+  "@hintPlay": {
+    "description": "Hint shown on a long press on a small play button, such as those of the minimal-pair popup (#423). One word, no full stop."
+  },
+  "hintSlow": "Slow",
+  "@hintSlow": {
+    "description": "Hint shown on a long press on a small button that plays a word slowly (#423). One word, no full stop."
+  },
+  "hintClose": "Close",
+  "@hintClose": {
+    "description": "Hint shown on a long press on the cross that closes a popup (#423). One word, no full stop."
+  },
+  "hintReplay": "Replay",
+  "@hintReplay": {
+    "description": "Hint shown on a long press on the button that plays the same word again in the minimal-pair popup (#423). One word, no full stop."
   }
 }

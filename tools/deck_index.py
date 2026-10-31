@@ -17,7 +17,9 @@ and kind, `audio` or `image`, which the language's size counts. They are
 listed apart from `files` so that an app too old to read them passes them
 by. So are the script guides of a language's other scripts, such as
 `hi-perso-arabic-script`, under `script_guides` (ADR-0016): the app before
-them reads only `<code>-script` and fails a file named otherwise. Under
+them reads only `<code>-script` and fails a file named otherwise. So is
+the situations file (#724), under `situations`: the released app has no case
+for its kind and would show it as a broken deck. Under
 `fonts` it lists the font of each script its decks are shown in,
 for scripts that phones often draw wrongly or lack (ADR-0042): path, size,
 SHA-256, `script` and `family`, kept apart from `files` and left out of the
@@ -110,8 +112,17 @@ FONTS_DIR = DECKS / "fonts"
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
 # out of the index.
-NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
-             "resources", "phonetics"}
+NOT_DECKS = {
+    "path",
+    "facts",
+    "situations",
+    "numbers",
+    "romanisation",
+    "sounds",
+    "script",
+    "resources",
+    "phonetics",
+}
 
 
 # The core a layer names when it is the layer of a script guide for one of a
@@ -157,18 +168,20 @@ def _top(text: str, key: str) -> str | None:
 
 
 _PROPOSED_KEY = re.compile(r"^( *)proposed:[ \t]*$")
-# A card's `checked_by`, the rater codes that signed it off (#449): one
+# A card's `checked_by`, the rater codes that signed it off (#449), and its
+# `verified`, the data points reviewers settled (#519): one
 # line as the bot writes it, `checked_by: ["FL-…"]`, or a bare key with
 # its items under it.
-_CHECKED_KEY = re.compile(r"^( *)checked_by:[ \t]*(\S.*)?$")
+_CHECKED_KEY = re.compile(r"^( *)(?:checked_by|verified):[ \t]*(\S.*)?$")
 # The same, at the end of a card written on one line in flow style, as the
 # bot writes it there: `- { id: "te-0001", …, checked_by: ["FL-…"] }`.
-_CHECKED_IN_FLOW = re.compile(rb", checked_by: \[[^\]\n]*\](?= ?\}[ \t]*\r?\n?$)")
+_CHECKED_IN_FLOW = re.compile(
+    rb"(?:, (?:checked_by|verified): \[[^\]\n]*\])+(?= ?\}[ \t]*\r?\n?$)")
 
 
 def content_bytes(data: bytes) -> bytes:
     """[data], a deck file, with its proposals and its cards' `checked_by`
-    taken out: what a learner is offered an update for (ADR-0038, #444,
+    and `verified` taken out: what a learner is offered an update for (ADR-0038, #444,
     #449).
 
     The review bot writes a card's proposals as a `proposed:` line and its
@@ -207,7 +220,8 @@ def content_bytes(data: bytes) -> bytes:
         m = m or checked
         if m is None:
             out.append(_CHECKED_IN_FLOW.sub(b"", raw[i])
-                       if b"checked_by" in raw[i] else raw[i])
+                       if b"checked_by" in raw[i] or b"verified" in raw[i]
+                       else raw[i])
             i += 1
             continue
         indent = len(m.group(1))
@@ -239,8 +253,8 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
         "path": _rel(path),
         "size": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
-        # The hash a learner's phone compares: proposals and checked_by
-        # left out (#444, #449).
+        # The hash a learner's phone compares: proposals, checked_by and
+        # verified left out (#444, #449, #519).
         "content_sha256": hashlib.sha256(content_bytes(data)).hexdigest(),
         "schema": int(schema) if schema is not None and schema.isdigit() else 0,
         "kind": _top(text, "kind") or "vocab",
@@ -353,6 +367,13 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         resources = [e for e in entries if e["kind"] == "resources"]
         files = [p for p, e in zip(files, entries) if e["kind"] != "resources"]
         entries = [e for e in entries if e["kind"] != "resources"]
+        # The situations file (#724) is listed apart too, under its own key:
+        # the released app has no case for `kind: situations` and would show
+        # the entry as a broken deck. The app that knows it reads the key
+        # and fetches the file with the decks.
+        situations = [e for e in entries if e["kind"] == "situations"]
+        files = [p for p, e in zip(files, entries) if e["kind"] != "situations"]
+        entries = [e for e in entries if e["kind"] != "situations"]
         # The phonetic rules are for tools/derive_phonetic.py alone: not
         # listed, not fetched, not in the size.
         files = [p for p, e in zip(files, entries) if e["kind"] != "phonetics"]
@@ -361,7 +382,7 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
         # app would list it empty. It appears once its first deck lands.
-        if all(e["kind"] in NOT_DECKS for e in entries + guides):
+        if all(e["kind"] in NOT_DECKS for e in entries + guides + situations):
             continue
         natives = lang.natives()
         path_rep = lang.path()
@@ -379,7 +400,7 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         language["script_decks"] = bool(plan and plan.alphabet)
         language["natives"] = [{"code": n, "name": lang.native_name(n)} for n in natives]
         media = _media_entries(d)
-        language["size"] = sum(e["size"] for e in entries + guides + media)
+        language["size"] = sum(e["size"] for e in entries + guides + situations + media)
         if plan is not None:
             language["path"] = [core for u in plan.units for core in u.decks]
             units = []
@@ -405,6 +426,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         language["files"] = entries
         if guides:
             language["script_guides"] = guides
+        if situations:
+            language["situations"] = situations
         if media:
             language["media"] = media
         # Apart from `files` and from the size: the released app reads only
@@ -440,7 +463,7 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        lists = ("files", "script_guides", "media", "fonts", "resources")
+        lists = ("files", "script_guides", "situations", "media", "fonts", "resources")
         keys = [k for k in language if k not in ("units", *lists)]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')

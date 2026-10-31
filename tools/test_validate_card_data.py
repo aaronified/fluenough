@@ -73,6 +73,50 @@ class ScriptPos(Case):
                          "got 'meaning'")
 
 
+class NotSynonyms(Case):
+    """`not_synonyms` (ADR-0050, #924): a card's refusal of listed words."""
+
+    def test_a_layer_entry_may_list_comparison_forms_once_each(self) -> None:
+        self.layer(HOUSE, not_synonyms=["florp", "quandle"])
+        self.assertNoError(LAYER)
+
+    def test_an_entry_must_be_a_list_of_words_in_comparison_form(self) -> None:
+        self.layer(HOUSE, not_synonyms="florp")
+        self.assertError(LAYER, f"cards.{HOUSE}", "not_synonyms must be a list")
+        self.layer(HOUSE, not_synonyms=["Florp"])
+        self.assertIn("write 'florp'", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, not_synonyms=["to florp"])
+        self.assertIn("comparison form", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, not_synonyms=[""])
+        self.assertIn("non-empty string", "\n".join(self.errors(LAYER)))
+
+    def test_a_repeat_or_one_of_the_cards_own_answers_is_refused(self) -> None:
+        self.layer(HOUSE, not_synonyms=["florp", "florp"])
+        self.assertIn("listed twice", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, native="home; house", not_synonyms=["house"])
+        self.assertIn("one of the card's own answers", "\n".join(self.errors(LAYER)))
+
+    def test_a_core_card_cannot_carry_it(self) -> None:
+        self.core(HOUSE, not_synonyms=["florp"])
+        self.assertIn("a layer", "\n".join(self.errors(CORE)).replace(
+            "is in each layer", "a layer"))
+        self.assertTrue(any("not_synonyms" in e for e in self.errors(CORE)))
+
+    def test_only_an_english_layer_may_use_it(self) -> None:
+        self.put("bn/zz-bn-home.yaml", {
+            "schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
+            "native": {"code": "bn", "iso639_3": "ben", "name": "Bengali"},
+            "name": "x", "license": "CC-BY-SA-4.0",
+            "cards": {"zz-9004": {"native": "মা (mā)", "not_synonyms": ["florp"]}}})
+        self.assertIn("English", "\n".join(self.errors("bn/zz-bn-home.yaml")))
+
+    def test_a_single_file_card_and_its_ref_may_use_it(self) -> None:
+        self.put(EXTRA, single(cards=[dict(CAT, not_synonyms=["florp"])]))
+        self.assertNoError(EXTRA)
+        self.put(EXTRA, single(cards=[dict(CAT, not_synonyms=["Florp"])]))
+        self.assertIn("comparison form", "\n".join(self.errors(EXTRA)))
+
+
 class OwnRoot(Case):
 
     def _a_word_that_is_its_own_root(self) -> None:
@@ -332,6 +376,68 @@ class FactsNameCards(Case):
         self.assertAcross(f"{self.p(self.FACTS)}: fact zz-fact-001: cards[0] names card "
                           f"zz-9999, which no deck writes", self.FACTS)
 
+    SITUATIONS = "zz-situations.yaml"
+
+    def situations(self, *sheets: dict) -> None:
+        self.put(self.SITUATIONS, {
+            "schema": 1, "id": "zz-situations", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": list(sheets)})
+
+    def _a_situation_lists_real_cards(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"},
+                "phrases": [HOUSE], "words": ["zz-9004"]}
+        self.situations(taxi)
+        self.assertNoError(self.SITUATIONS, "situation taxi")
+        self.assertNotAcross("names card", self.SITUATIONS)
+        self.situations(dict(taxi, words=["zz-9999"]))
+        self.assertAcross(f"{self.p(self.SITUATIONS)}: situation taxi: words[0] names "
+                          f"card zz-9999, which no deck writes", self.SITUATIONS)
+
+    def _a_situation_has_its_shape(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(taxi, dict(taxi, id="cab"),
+                        {"id": "eat", "icon": "eat", "title": {"bn": "x"}})
+        errors = self.errors(self.SITUATIONS)
+        self.assertIn("situation cab: icon 'taxi' is on another situation: each button "
+                      "has its own", errors)
+        self.assertIn("situation eat: title needs an English entry", errors)
+        self.assertIn("situation eat: lists no cards: give phrases, words or both", errors)
+
+    def _an_icon_is_one_of_the_six(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(dict(taxi, icon="boat"))
+        self.assertTrue(any("icon must be one of" in e
+                            for e in self.errors(self.SITUATIONS)))
+
+    def _a_situations_file_is_one_per_language_and_named_so(self) -> None:
+        taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(taxi)
+        self.assertNoError(self.SITUATIONS, "situations file is")
+        self.put("zz-sheets.yaml", {
+            "schema": 1, "id": "zz-sheets", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": [taxi]})
+        self.assertTrue(any("a situations file is zz-situations.yaml" in e
+                            for e in self.errors("zz-sheets.yaml")))
+        # A second file for the language, under the wrong name, is also one
+        # file too many; the same name in another folder is a duplicate deck id.
+        self.assertTrue(any("more than one situations file for zz" in line
+                            for line in self.run_main(self.SITUATIONS, "zz-sheets.yaml")))
+        self.put("other/zz-situations.yaml", {
+            "schema": 1, "id": "zz-situations", "name": "Testlang situations",
+            "kind": "situations", "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+            "situations": [taxi]})
+        self.assertTrue(any("duplicate deck id 'zz-situations'" in line
+                            for line in self.run_main(self.SITUATIONS,
+                                                      "other/zz-situations.yaml")))
+
+    def _a_situations_key_belongs_to_a_situations_file(self) -> None:
+        self.core(HOUSE)
+        self.edit(CORE, lambda d: d.__setitem__("situations", []))
+        self.assertError(CORE, "situations",
+                         "only valid on a situations file; add kind: situations")
+
     def _a_rank_and_its_source(self) -> None:
         self.core(HOUSE, frequency={"rank": 120, "source": "te.wikipedia.org, 2026-10"})
         self.assertNoError(CORE)
@@ -370,6 +476,11 @@ class FactsNameCards(Case):
             self._cards_are_ids_of_the_language,
             self._shape,
             self._a_card_no_deck_writes,
+            self._a_situation_lists_real_cards,
+            self._a_situation_has_its_shape,
+            self._an_icon_is_one_of_the_six,
+            self._a_situations_file_is_one_per_language_and_named_so,
+            self._a_situations_key_belongs_to_a_situations_file,
             self._a_rank_and_its_source,
             self._frequency_shape,
             self._a_layer_gives_none,
@@ -2198,6 +2309,66 @@ class RejectedAlikes(Case):
             with self.subTest(repr(value)):
                 self.core(HOUSE, not_sounds_like=value)
                 self.assertTrue(self.key_errors("not_sounds_like"))
+
+
+class MeaningAlternatives(Case):
+    """An English meaning with a sentence break and no `;` is an error (#924):
+    the grader accepts alternatives only across `;`."""
+
+    NEEDLE = "meaning has separate sentences"
+
+    def single_errors(self, native: str, **fields: object) -> list[str]:
+        self.put(EXTRA, single(cards=[dict(CAT, native=native, **fields)]))
+        return self.errors(EXTRA)
+
+    def flagged(self, errors: list[str]) -> bool:
+        return any(self.NEEDLE in e for e in errors)
+
+    def test_separate_sentences_without_a_semicolon_are_an_error(self) -> None:
+        for text in ("Hello! Hi!", "He is ill. She is ill.", "Really? Yes.",
+                     "No. Thanks.", "I said no. Go"):
+            with self.subTest(text):
+                self.assertTrue(self.flagged(self.single_errors(text)))
+
+    def test_a_semicolon_separates_them(self) -> None:
+        self.assertFalse(self.flagged(self.single_errors("Hello!; Hi!")))
+
+    def test_alt_native_is_checked_too(self) -> None:
+        self.assertTrue(self.flagged(self.single_errors("Hello!", alt_native=["Hi! Hey!"])))
+
+    def test_brackets_and_abbreviations_are_not_breaks(self) -> None:
+        for text in ("Thanks (Say it. Twice) a lot", "Sorry [Stop. Go] now",
+                     "Mr. Rao is here", "Ms. Rao and Dr. Rao", "Sit on St. James road",
+                     "Meet at 9 a.m. sharp", "Ask Dr. Lee, Ph.D. now", "See fig. 2 here",
+                     "Mt. Fuji is tall", "The U.S.A. team", "Well... fine", "What?! Really?!",
+                     "Well... I think so"):
+            with self.subTest(text):
+                self.assertFalse(self.flagged(self.single_errors(text)))
+
+    def test_a_single_sentence_is_fine(self) -> None:
+        for text in ("Hello!", "How are you?", "I am ill."):
+            with self.subTest(text):
+                self.assertFalse(self.flagged(self.single_errors(text)))
+
+    def test_a_layer_entry_is_checked(self) -> None:
+        self.layer(HOUSE, native="Hello! Hi!")
+        self.assertTrue(self.flagged(self.layer_errors()))
+
+    def test_another_native_language_is_not_checked(self) -> None:
+        self.put(EXTRA, single(native="bn", deck_id="zz-bn-extra",
+                               cards=[dict(CAT, native="Hello! Hi!")]))
+        self.assertFalse(self.flagged(self.errors(EXTRA)))
+
+    def test_a_listed_card_whose_sentences_must_all_be_said_passes(self) -> None:
+        with mock.patch.object(validate_decks, "MEANING_ALL_REQUIRED",
+                               frozenset({HOUSE, CAT["id"]})):
+            self.layer(HOUSE, native="Good morning. How are you?")
+            self.assertFalse(self.flagged(self.layer_errors()))
+            self.assertFalse(self.flagged(self.single_errors("Good morning. How are you?")))
+
+    def test_the_allow_list_holds_card_ids(self) -> None:
+        ids = list(validate_decks.MEANING_ALL_REQUIRED)
+        self.assertTrue(all(validate_decks.ID_RE.fullmatch(i) for i in ids))
 
 
 if __name__ == "__main__":

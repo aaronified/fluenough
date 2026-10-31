@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.7.0**
 - **v0.6.8**
 - **v0.6.7**
 - **v0.6.6**
@@ -58,7 +59,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-22 approved open issues.
+19 approved open issues.
 
 **Enhancements**
 
@@ -78,9 +79,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#404](https://github.com/aaronified/fluenough/issues/404) Deck browser: the site generator, tools/deck_site.py
 - [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
-- [#421](https://github.com/aaronified/fluenough/issues/421) B1 plans: typed notes on every word card, one shown at a time
-- [#422](https://github.com/aaronified/fluenough/issues/422) B1 plans: a Wiktionary link on every word card that has an entry
-- [#423](https://github.com/aaronified/fluenough/issues/423) B1 plans: a minimal-pair button and practice panel on cards
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
@@ -162,7 +160,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#698](https://github.com/aaronified/fluenough/issues/698) Languages I'm learning: group every language by family, with Indo-European split into branches
 - [#707](https://github.com/aaronified/fluenough/issues/707) Question words get a picture with a '?' badge
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
-- [#913](https://github.com/aaronified/fluenough/issues/913) App-wide long press on a button shows a tiny hint: one word where one word is enough
+- [#944](https://github.com/aaronified/fluenough/issues/944) What's new: show the latest version's changes to the user after install or update
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#29](https://github.com/aaronified/fluenough/issues/29) Show each word's IPA after answering

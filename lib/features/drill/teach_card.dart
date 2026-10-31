@@ -13,13 +13,15 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart' show baseFinder;
 import '../decks/card_blocks.dart';
-import '../decks/card_notes.dart';
+import '../decks/card_notes.dart' show proseNoteList;
 import '../decks/ipa_symbols.dart';
 import '../decks/path_parts.dart' show joinParts;
 import '../decks/word_sheet.dart' show adultContentOn;
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'ipa_examples.dart';
+import 'one_note.dart';
+import 'pair_compare.dart';
 import 'taught_details.dart' show TaughtExample, TaughtReading;
 
 /// The teach card (#691; redrawn owner, 2026-10-29, docs/mockups/teach-screen):
@@ -96,9 +98,16 @@ class TeachCard extends StatelessWidget {
       if (!isPhrase) ?card.pos,
       ?card.gender,
     ]);
-    final notes = proseNotes(card);
     final (:rude, :similar) = teachWarningOf(state, card);
     final named = adultContentOn(state);
+    // The Compare button (#423) goes in the sound-alike block, or under the
+    // card's other warning; a card told to show none shows none.
+    final compare = card.warning == 'none' ? null : pairPartnerOf(state, card);
+    final soundBlock =
+        compare != null &&
+        rude.isEmpty &&
+        similar?.kind == SimilarKind.sound &&
+        similar?.partner?.id == compare.partner.id;
     final find = baseFinder(
       state,
       language: language.code,
@@ -266,21 +275,8 @@ class TeachCard extends StatelessWidget {
                 ),
               meaning,
               // Padding, not a max-width box, as the review's notes are.
-              for (final note in notes)
-                Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 19,
-                  ),
-                  child: Text(
-                    note,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyLarge!.copyWith(
-                      fontSize: 15,
-                      height: 22 / 15,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
+              if (proseNoteList(card).isNotEmpty)
+                OneNote(card: card, notes: proseNoteList(card)),
               for (final alike in rude)
                 AlikeWarning(
                   kind: alike.kind,
@@ -294,6 +290,19 @@ class TeachCard extends StatelessWidget {
                   language: language,
                   titled: false,
                   maxLines: 2,
+                  action: soundBlock
+                      ? PairCompareButton(
+                          card: card,
+                          partner: compare.partner,
+                          language: language,
+                        )
+                      : null,
+                ),
+              if (compare != null && !soundBlock)
+                PairCompareButton(
+                  card: card,
+                  partner: compare.partner,
+                  language: language,
                 ),
               if (card.examples.isNotEmpty && language.isIpa)
                 IpaExamples(card: card, language: language)

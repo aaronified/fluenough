@@ -47,7 +47,7 @@ class RecentAnswers {
     Iterable<ReviewEvent> log, {
     ParametersOfReview parametersOf = _defaultParameters,
   }) {
-    for (final event in log) {
+    for (final event in log.answered) {
       (_answers[event.cardId] ??= <({DateTime at, bool passed})>[]).add((
         at: event.at,
         passed: event.passed,

@@ -6,6 +6,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/languages/language_skills.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/card_set.dart';
@@ -16,8 +17,10 @@ import '../core/models/reading.dart';
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
+import '../core/notes/note_rotation.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
+import '../core/scheduling/picture_choice.dart';
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/daily_timer.dart';
@@ -35,8 +38,10 @@ import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
+import '../core/grading/synonym_sets.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
+import '../core/models/situation.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
@@ -74,6 +79,7 @@ import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
+import 'synonym_loader.dart';
 import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
@@ -194,6 +200,7 @@ class AppState extends ChangeNotifier {
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
     this.deckDownloads,
+    this._synonymLoader,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -290,6 +297,10 @@ class AppState extends ChangeNotifier {
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
   final Random random;
+
+  /// Which note of a card to show next (#421): one at a time, every note
+  /// once before any repeats.
+  late final NoteRotation noteRotation = NoteRotation(random);
 
   /// Whether the phone's media volume is at zero (ADR-0026).
   final VolumeMonitor volume;
@@ -532,6 +543,29 @@ class AppState extends ChangeNotifier {
   /// in tests and the gallery: the catalog's decks are then all there is.
   final DeckDownloads? deckDownloads;
 
+  /// Reads the bundled synonym sets (ADR-0050); null for none, as in tests.
+  final SynonymLoader? _synonymLoader;
+  SynonymSets _synonyms = SynonymSets.empty;
+  Future<void>? _synonymsLoading;
+
+  /// The English synonym sets, [SynonymSets.empty] until [warmSynonyms] has
+  /// read them: an answer given before then is graded without them.
+  SynonymSets get synonyms => _synonyms;
+
+  /// Starts reading the synonym sets, once. Never throws: a file that cannot
+  /// be read is no sets.
+  void warmSynonyms() {
+    final load = _synonymLoader;
+    if (load == null) return;
+    _synonymsLoading ??= () async {
+      try {
+        _synonyms = await load();
+      } catch (_) {
+        _synonyms = SynonymSets.empty;
+      }
+    }();
+  }
+
   final TtsEngine _tts;
 
   /// Plays a card's own recording (#518).
@@ -673,6 +707,28 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// [language]'s situation sheets (#724), or null where it has none.
+  SituationsFile? situationsOf(String language) =>
+      _catalog.situations[language];
+
+  /// The languages Today's fact can be shown in (#926): those the learner
+  /// knows, in their order.
+  List<String> get factLanguageChoices => settings.spokenLanguages;
+
+  /// Those of [factLanguageChoices] whose box is checked.
+  Set<String> get factLanguagesChecked =>
+      checkedFactLanguages(factLanguageChoices, settings.factLanguages);
+
+  /// A tap on [code]'s box of the fact card's menu; the last checked one
+  /// stays checked.
+  void toggleFactLanguage(String code) {
+    settings.factLanguages = toggledFactLanguages(
+      factLanguageChoices,
+      settings.factLanguages,
+      code,
+    );
+  }
+
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known
   /// first. Choosing one records it as shown today, after this call, so
@@ -703,7 +759,7 @@ class AppState extends ChangeNotifier {
       today.add((
         language: language,
         fact: fact,
-        texts: factTexts(fact, spoken),
+        texts: shownFactTexts(fact, spoken, settings.factLanguages),
       ));
       final at = shown[fact.id];
       if (at == null || !isSameDay(at, now())) {
@@ -895,6 +951,7 @@ class AppState extends ChangeNotifier {
   /// then looks for deck updates, at most once a day, unless the learner
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
+    ensureEnglishKnown();
     final downloads = deckDownloads;
     if (downloads == null || _disposed) return;
     // What the Languages page left out is removed now, at this open (#907).
@@ -2375,6 +2432,8 @@ class AppState extends ChangeNotifier {
       if (script == null) continue;
       readers.putIfAbsent(script, () => <String>[]).add(parts.first);
     }
+    // Everyone reads the Latin script (#926), through English.
+    readers.putIfAbsent(latinScript, () => <String>['en']);
     return readers;
   }
 
@@ -2541,7 +2600,17 @@ class AppState extends ChangeNotifier {
   /// to offer, or, choosing among a rules table's forms or their meanings,
   /// one (DECK-FORMAT.md, Rules decks: a row of two forms is still a choice).
   /// Without, it is asked its own way.
-  bool canChoose(Card card, Ask ask) =>
+  bool canChoose(Card card, Ask ask) {
+    // A picture choice looks among the cards of the card's own deck alone,
+    // and needs three pictures to offer that cannot be taken for it (#91).
+    if (ask.choosesPicture) {
+      final entry = deckOf(card);
+      return entry != null && canChoosePicture(card, entry.cards);
+    }
+    return _canChooseAmong(card, ask);
+  }
+
+  bool _canChooseAmong(Card card, Ask ask) =>
       choicePool(card, ask).map(ask.optionOf).toSet().length >=
       (ask.choosesAmongForms ? 1 : 2);
 
@@ -2561,6 +2630,10 @@ class AppState extends ChangeNotifier {
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
     typed: (item) => isTyped(item.card),
     siblingsOf: siblingsOf,
+    canHear: (item) {
+      final language = deckOf(item.card)?.language;
+      return language != null && canSpeak(language);
+    },
   );
 
   // ---------------------------------------------------------------------------
@@ -2588,6 +2661,7 @@ class AppState extends ChangeNotifier {
     if (_timesRead == 0 && log.isNotEmpty) _timesFirst = log.first;
     for (var i = _timesRead; i < log.length; i++) {
       final e = log[i];
+      if (e.isView) continue;
       final time = StudyHours.capped(e.elapsed);
       final day = dateOnly(e.at);
       for (final key in <String?>{Abilities.languageOf(e.cardId), null}) {
@@ -2865,7 +2939,7 @@ class AppState extends ChangeNotifier {
         _abilitiesSkills != skills) {
       _abilities = Abilities.replay(
         <({String cardId, String deckId, DrillMode mode, int grade})>[
-          for (final e in log)
+          for (final e in log.answered)
             (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
         ],
         skills: skills,
@@ -2936,6 +3010,26 @@ class AppState extends ChangeNotifier {
   /// Whether [card] has been taught: some skill of it has been drilled.
   bool isTaught(Card card) =>
       DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
+
+  /// A walkthrough's first view of [card] (#694, ADR-0024): teaches it. Appends
+  /// one review-log row like any answer, `asked: Ask.teach`, graded 0 (the
+  /// lowest window: FSRS reads it as Again), nothing given, in the card's
+  /// first drillable mode, recognition where it has it. Returns the row, or
+  /// null and writes nothing when the card is taught already, so a repeat
+  /// view or a Relearn costs nothing, or cannot be taught yet: a sentence
+  /// that waits for its words and rules, or a card with no mode to drill.
+  /// Readers that count answers skip the row ([ReviewEvent.isView]).
+  ReviewEvent? viewCard(Card card) {
+    if (isTaught(card) || !unlocks.isOpen(card)) return null;
+    final modes = drillableModes(card);
+    final mode = DrillMode.drills.where(modes.contains).firstOrNull;
+    if (mode == null) return null;
+    return record(
+      SessionItem(card: card, mode: mode, state: null, ask: Ask.teach),
+      0,
+      asked: Ask.teach,
+    );
+  }
 
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth

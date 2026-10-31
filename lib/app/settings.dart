@@ -7,6 +7,7 @@ import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
 import '../core/languages/language_skills.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/question_log.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
 import '../core/scheduling/placed_review.dart';
@@ -66,9 +67,13 @@ class SettingsNotifier extends ChangeNotifier {
     Map<String, Set<String>> scriptsLearned = const <String, Set<String>>{},
     this._languageChoice,
     this._progressAll = false,
+    Set<String>? factLanguages,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
+       _factLanguages = factLanguages == null
+           ? null
+           : Set<String>.unmodifiable(factLanguages),
        _spokenLanguages = List<String>.unmodifiable(spokenLanguages),
        _learningLanguages = List<String>.unmodifiable(learningLanguages),
        _placedDecks = Set<String>.unmodifiable(placedDecks),
@@ -140,8 +145,11 @@ class SettingsNotifier extends ChangeNotifier {
   String? _raterCode;
   bool _reviewIntroShown = false;
   Reviews _reviews = const Reviews();
+  int _questionsPerDay = defaultQuestionsPerDay;
+  QuestionLog _questions = const QuestionLog();
   Set<String>? _reviewLanguages;
   Set<String>? _reviewPairs;
+  Set<String>? _factLanguages;
   Map<String, bool> _scriptsRead = const <String, bool>{};
   Map<String, Map<String, String>> _languageSkills =
       const <String, Map<String, String>>{};
@@ -217,6 +225,24 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// How many daily questions the reviewer wants a day (#519): chosen
+  /// in reviewer onboarding and changed in Settings > Reviewing, 10 until
+  /// then, and 0 for none. What is not answered waits for the next day.
+  int get reviewQuestionsPerDay => _questionsPerDay;
+  set reviewQuestionsPerDay(int value) {
+    final next = value < 0 ? 0 : value;
+    _set(_questionsPerDay, next, (v) => _questionsPerDay = v);
+  }
+
+  /// The daily questions answered on this phone, and those put off today.
+  /// Not something the reviewer sets here: the questions screen changes it.
+  QuestionLog get reviewQuestions => _questions;
+  set reviewQuestions(QuestionLog value) {
+    if (identical(value, _questions)) return;
+    _questions = value;
+    notifyListeners();
+  }
+
   /// The languages this reviewer reviews, by code, as they chose them in
   /// Settings (docs/plans/deck-browser.md, "What is waiting for review"),
   /// or null before they chose: then the languages they speak that the
@@ -245,6 +271,20 @@ class SettingsNotifier extends ChangeNotifier {
       return;
     }
     _reviewPairs = next;
+    notifyListeners();
+  }
+
+  /// The languages Today's fact is shown in (#926), a choice among the
+  /// languages the learner knows, or null while they have not chosen: every
+  /// language they know. Per profile, like every setting.
+  Set<String>? get factLanguages => _factLanguages;
+  set factLanguages(Set<String>? codes) {
+    final next = codes == null ? null : Set<String>.unmodifiable(codes);
+    final now = _factLanguages;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _factLanguages = next;
     notifyListeners();
   }
 
@@ -1067,6 +1107,8 @@ class SettingsNotifier extends ChangeNotifier {
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'reviews': _reviews.toJson(),
+    'review_questions_per_day': '$_questionsPerDay',
+    'review_questions': _questions.toJson(),
     // Not chosen yet is "default"; chosen, the codes, which may be none.
     'review_languages': switch (_reviewLanguages) {
       null => 'default',
@@ -1076,6 +1118,11 @@ class SettingsNotifier extends ChangeNotifier {
     'review_pairs': switch (_reviewPairs) {
       null => 'default',
       final keys => (keys.toList()..sort()).join(','),
+    },
+    // Not chosen yet is "default", like review_pairs.
+    'fact_languages': switch (_factLanguages) {
+      null => 'default',
+      final codes => (codes.toList()..sort()).join(','),
     },
     'scripts_read': jsonEncode(_scriptsRead),
     'language_skills': jsonEncode(_languageSkills),
@@ -1386,6 +1433,12 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
     if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
+    if (pick('review_questions_per_day', int.tryParse) case final v?) {
+      reviewQuestionsPerDay = v;
+    }
+    if (pick('review_questions', QuestionLog.fromJson) case final v?) {
+      reviewQuestions = v;
+    }
     if (pick('review_languages', (t) => t) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       reviewLanguages = v == 'default'
@@ -1402,6 +1455,14 @@ class SettingsNotifier extends ChangeNotifier {
               for (final k in v.split(','))
                 if (ReviewPair.parse(k) != null) k,
             };
+    }
+    if (pick('fact_languages', (t) => t) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      final codes = <String>{
+        for (final c in v.split(','))
+          if (code.hasMatch(c)) c,
+      };
+      factLanguages = v == 'default' || codes.isEmpty ? null : codes;
     }
     if (pick('scripts_read', _parseJsonMap) case final v?) {
       scriptsRead = <String, bool>{

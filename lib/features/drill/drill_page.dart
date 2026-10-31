@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/daily_plan.dart' show DailyRun;
 import '../../app/routes.dart';
 import '../../app/session.dart';
+import '../../app/situations.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
@@ -24,6 +25,7 @@ import 'grammar_drill.dart';
 import 'match_drill.dart';
 import 'rearrange_drill.dart';
 import 'reading_drill.dart';
+import 'picture_choice_drill.dart';
 import 'recognition_drill.dart';
 import 'set_drill.dart';
 import 'sounds_of_word.dart';
@@ -121,6 +123,14 @@ class _DrillPageState extends State<DrillPage> {
       if (items.isEmpty) return;
       _session = DrillSession(state: state, items: items, recorded: false)
         ..addListener(_onSession);
+      return;
+    }
+    // A situation sheet: its new cards taught, the others revised (#724).
+    if (request.sheet) {
+      final items = state.sheetSession(request);
+      if (items.isEmpty) return;
+      _items = items;
+      _begin(state);
       return;
     }
     // The sounds of a word: its IPA cards, each taught, checked and
@@ -357,6 +367,11 @@ class _DrillPageState extends State<DrillPage> {
           session: session,
           onClose: _close,
         ),
+      _ when session.ask.choosesPicture => PictureChoiceDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
       _ when session.ask.chooses => ChoiceDrill(
         key: ValueKey<int>(session.position),
         session: session,

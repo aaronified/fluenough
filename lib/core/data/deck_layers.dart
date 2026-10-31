@@ -26,6 +26,7 @@ class DeckCore {
     this.rules = const <CoreRule>[],
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
+    this.verified = const <String, List<String>>{},
   });
 
   /// `<lang>-<name>`, such as `te-home`.
@@ -57,6 +58,9 @@ class DeckCore {
 
   /// Who checked each card's language side, by card id (#449).
   final Map<String, List<String>> checkedBy;
+
+  /// Which data points of each card are settled, by card id (#519).
+  final Map<String, List<String>> verified;
 
   @override
   String toString() => 'DeckCore($id)';
@@ -311,6 +315,7 @@ class DeckLayer {
     this.rules = const <String, LayerRule>{},
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
+    this.verified = const <String, List<String>>{},
   });
 
   /// `<lang>-<native>-<name>`: the merged deck's id.
@@ -340,6 +345,9 @@ class DeckLayer {
   /// Who checked each card as this layer's deck has it, by card id (#449).
   final Map<String, List<String>> checkedBy;
 
+  /// Which data points of each card are settled, by card id (#519).
+  final Map<String, List<String>> verified;
+
   /// Where the layer and its id and core are, for messages.
   final YamlMap node;
   final YamlNode idNode;
@@ -364,6 +372,7 @@ class LayerEntry extends LayerCard {
     this.native,
     this.explanation,
     this.altNative,
+    this.notSynonyms,
     this.notes,
     this.examples,
     this.bases,
@@ -378,6 +387,9 @@ class LayerEntry extends LayerCard {
   /// A set card's explanation; null on any other card's entry.
   final String? explanation;
   final List<String>? altNative;
+
+  /// Typed meanings the synonym sets must not accept (`not_synonyms`).
+  final List<String>? notSynonyms;
 
   /// Note texts, by the core note's id.
   final Map<String, LayerText>? notes;
@@ -657,6 +669,7 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
       },
     ),
     checkedBy: mergedCheckedBy(core, layer),
+    verified: mergedVerified(core, layer),
     sets: sets,
   );
 }
@@ -677,6 +690,20 @@ Map<String, List<String>> mergedCheckedBy(DeckCore core, DeckLayer layer) =>
                 : core.checkedBy[card])
             case final codes? when codes.isNotEmpty)
           card: codes,
+    });
+
+/// The settled data points of each card of the merged deck (#519): those the
+/// core's card lists and those the layer's entry lists, together, each once.
+Map<String, List<String>> mergedVerified(DeckCore core, DeckLayer layer) =>
+    Map<String, List<String>>.unmodifiable(<String, List<String>>{
+      for (final card in <String>{
+        ...core.verified.keys,
+        ...layer.verified.keys,
+      })
+        card: List<String>.unmodifiable(<String>{
+          ...?core.verified[card],
+          ...?layer.verified[card],
+        }),
     });
 
 /// One merge of a core and a layer, failing through [reader].
@@ -773,6 +800,7 @@ class _Merge {
           'from ${layer.native.name}',
         );
     if (entry.altNative != null ||
+        entry.notSynonyms != null ||
         entry.notes != null ||
         entry.examples != null ||
         entry.bases != null ||
@@ -811,6 +839,7 @@ class _Merge {
       targetScripts: card.targetScripts,
       words: card.words,
       altNative: entry.altNative ?? const <String>[],
+      notSynonyms: entry.notSynonyms ?? const <String>[],
       pos: card.pos,
       hears: card.hears,
       warning: card.warning,
@@ -949,6 +978,7 @@ class _Merge {
       reading: card.reading,
       ipa: card.ipa,
       altNative: entry?.altNative,
+      notSynonyms: entry?.notSynonyms,
       tags: card.tags,
       notes: card.notes == null
           ? null

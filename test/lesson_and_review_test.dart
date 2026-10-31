@@ -66,6 +66,7 @@ import 'package:fluenough/features/drill/grammar_drill.dart';
 import 'package:fluenough/features/drill/match_drill.dart';
 import 'package:fluenough/features/drill/pair_drill.dart';
 import 'package:fluenough/features/drill/pair_fixture.dart';
+import 'package:fluenough/features/drill/picture_choice_drill.dart';
 import 'package:fluenough/features/drill/reading_drill.dart';
 import 'package:fluenough/features/drill/reading_fixture.dart';
 import 'package:fluenough/features/drill/rearrange_drill.dart';
@@ -303,6 +304,7 @@ DrillSession sessionOf(WidgetTester tester) {
     ...tester.widgetList(find.byType(ChoiceDrill)),
     ...tester.widgetList(find.byType(MatchDrill)),
     ...tester.widgetList(find.byType(RearrangeDrill)),
+    ...tester.widgetList(find.byType(PictureChoiceDrill)),
   ]) {
     return switch (widget) {
       SetDrill(:final session) => session,
@@ -311,6 +313,7 @@ DrillSession sessionOf(WidgetTester tester) {
       ChoiceDrill(:final session) => session,
       MatchDrill(:final session) => session,
       RearrangeDrill(:final session) => session,
+      PictureChoiceDrill(:final session) => session,
       _ => throw StateError('$widget'),
     };
   }
@@ -330,7 +333,9 @@ Future<void> finishLesson(WidgetTester tester) async {
           Ask.hearAndChoose ||
           Ask.hearMeaning ||
           Ask.chooseFormMeaning ||
-          Ask.chooseForm:
+          Ask.chooseForm ||
+          Ask.choosePicture ||
+          Ask.hearPicture:
         session.pick(session.options.firstWhere((o) => o.id == card.id));
         session.next();
       case Ask.matchPairs:
@@ -1027,12 +1032,14 @@ DrillSession sessionOfSetDrill(WidgetTester tester) {
     ...tester.widgetList(find.byType(TeachDrill)),
     ...tester.widgetList(find.byType(ChoiceDrill)),
     ...tester.widgetList(find.byType(MatchDrill)),
+    ...tester.widgetList(find.byType(PictureChoiceDrill)),
   ]) {
     return switch (widget) {
       SetDrill(:final session) => session,
       TeachDrill(:final session) => session,
       ChoiceDrill(:final session) => session,
       MatchDrill(:final session) => session,
+      PictureChoiceDrill(:final session) => session,
       _ => throw StateError('$widget'),
     };
   }

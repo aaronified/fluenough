@@ -115,6 +115,21 @@ class DeckIndex(unittest.TestCase):
         self.assertEqual(es["size"], sum(f["size"] for f in es["files"]) + 4)
 
 
+    def _the_situations_file_is_listed_apart_from_files(self) -> None:
+        # #724: the released app has no case for `kind: situations`, so the
+        # file is listed under `situations`, which it passes by.
+        es = self.tmp / "decks" / "es"
+        (es / "es-situations.yaml").write_text(
+            'schema: 1\nid: "es-situations"\nkind: "situations"\n',
+            encoding="utf-8")
+        lang = self.language(self.index(), "es")
+        self.assertEqual([f["path"] for f in lang["situations"]],
+                         ["decks/es/es-situations.yaml"])
+        self.assertEqual(lang["situations"][0]["kind"], "situations")
+        self.assertFalse(any(f["kind"] == "situations" for f in lang["files"]))
+        every = lang["files"] + lang["situations"]
+        self.assertEqual(lang["size"], sum(f["size"] for f in every))
+
     def _a_guide_of_another_script_is_listed_apart(self) -> None:
         # ADR-0016: a released app reads only `<code>-script` as a script
         # guide and rejects any other id, so the guides of a language's other
@@ -383,6 +398,7 @@ class DeckIndex(unittest.TestCase):
             self._a_guide_of_another_script_is_listed_apart,
             self._fonts_are_listed_per_language_apart_from_files,
             self._the_resources_file_is_listed_apart_from_files,
+            self._the_situations_file_is_listed_apart_from_files,
             self._the_phonetic_rules_are_not_listed,
             self._the_fonts_folder_is_not_a_language,
         )

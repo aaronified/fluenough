@@ -19,6 +19,8 @@ import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/situations/situation_inspect_page.dart';
+import '../features/situations/situation_page.dart';
 import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
@@ -118,6 +120,12 @@ abstract final class AppRoutes {
   /// The app's own log (#162), opened from Settings and from a report.
   static const String appLog = '/app-log';
 
+  /// A situation's sheet (#724). Argument: a [SituationRequest].
+  static const String situation = '/situation';
+
+  /// A sheet's cards in full, one at a time. Argument: a [SituationRequest].
+  static const String situationInspect = '/situation-inspect';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -186,6 +194,10 @@ abstract final class AppRoutes {
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
+      situation when args is SituationRequest => SituationPage(request: args),
+      situationInspect when args is SituationRequest => SituationInspectPage(
+        request: args,
+      ),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -252,15 +264,22 @@ abstract final class AppNavigator {
   static Future<void> startDrill(BuildContext context, DrillRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.drill, arguments: request);
 
-  /// Relearn: walks through [deckId]'s cards, or with [tags] only those
-  /// carrying one of them, on the teach card. Records nothing.
+  /// The walkthrough (#694): [deckId]'s cards, or with [tags] only those
+  /// carrying one of them, one by one on the teach card. With [untaughtOnly]
+  /// (+ Learn) the cards not taught yet, each first view recorded as taught;
+  /// otherwise (Relearn) every card, recording none already taught.
   static Future<void> openWalkthrough(
     BuildContext context,
     String deckId, {
     Set<String> tags = const <String>{},
+    bool untaughtOnly = false,
   }) => Navigator.of(context).pushNamed(
     AppRoutes.walkthrough,
-    arguments: WalkthroughRequest(deckId: deckId, tags: tags),
+    arguments: WalkthroughRequest(
+      deckId: deckId,
+      tags: tags,
+      untaughtOnly: untaughtOnly,
+    ),
   );
 
   /// Replaces the summary with another session: the next language's, which

@@ -210,6 +210,7 @@ class NoteBlock extends StatelessWidget {
 /// word that sounds almost the same, ear-off for one that looks the same,
 /// translate for the card's other meanings. [titled] puts its title over it,
 /// as the sheet does; [maxLines] cuts it short, as the teach card does.
+/// [action], under the text, is the Compare button of a sound-alike (#423).
 class SimilarBlock extends StatelessWidget {
   const SimilarBlock({
     super.key,
@@ -217,7 +218,11 @@ class SimilarBlock extends StatelessWidget {
     required this.language,
     this.titled = true,
     this.maxLines,
+    this.action,
   });
+
+  /// A button under the warning's text, such as Compare.
+  final Widget? action;
 
   final Similar similar;
 
@@ -286,7 +291,13 @@ class SimilarBlock extends StatelessWidget {
         background: scheme.tertiaryContainer,
         titleColor: scheme.onTertiaryContainer,
         title: titled ? title : null,
-        child: body,
+        child: action == null
+            ? body
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8,
+                children: <Widget>[body, ?action],
+              ),
       ),
     );
   }

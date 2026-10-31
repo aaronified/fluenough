@@ -19,6 +19,13 @@ branch of its own under `review-bot/`, each started afresh from `main`:
 - **Outdated proposals** (`review-bot/outdated/<language>-<ids>`):
   proposals whose field has changed since are removed.
 
+The answers to the daily questions (#519) come in the review mail too, and
+make two more kinds: the answers' tally (`review-bot/questions/<mail>`, merged
+as soon as the checks pass) and, for each data point a reviewer answered "no"
+to, a flag PR (`review-bot/flag/...`) that stays open until the second answer:
+the same answer merges it, a "yes" closes it for good
+(`tools/question_answers.py`).
+
 The branch name comes from the mail, or from the proposals and their
 dates, so a rerun finds its own PR instead of opening another; a PR the
 owner closed is never opened again. A proposal made again later, after its
@@ -93,8 +100,10 @@ from typing import Callable, Protocol
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
+import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
+from validate_synonyms import meaning_key  # noqa: E402
 
 PREFIX = "review-bot/"
 LABEL = "review-bot"
@@ -102,6 +111,8 @@ KIND_LABELS = {
     "review": "proposals",
     "apply": "agreement",
     "outdated": "proposal outdated",
+    "questions": "daily questions",
+    "flag": "flagged answer",
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
@@ -172,6 +183,10 @@ def card_suggestions(c: dict) -> list[dict]:
 # word (docs/plans/reviewing-scope.md, rule 2).
 TIED_PARTS = ("reading", "ipa", "notes", "base", "alt")
 
+# The parts of a card that add one item to a list on its native side
+# (ADR-0050), and the proposal field each becomes.
+ADD_PARTS = {"alt_native": "alt_native_add", "not_synonyms": "not_synonyms_add"}
+
 
 def _base_json(base: object, word: str) -> str | None:
     """A base of a review file's suggestion, `was` or `base`, as the JSON a
@@ -197,7 +212,10 @@ def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
     (`base`). One from before #476 has no `action`: its `now` and `text`
     are the meaning of the base for `word`, and tools/proposals.py fills in
     the rest from the deck. Also heard (`alt`) has the card's alternatives
-    as they were and as suggested, one a line."""
+    as they were and as suggested, one a line. A part `alt_native` or
+    `not_synonyms` with `action` "add" and the item in `text` is one more
+    accepted answer or one more refused synonym (ADR-0050): `now` is
+    ignored, and a `not_synonyms` item is put in comparison form."""
     part, now, text = s.get("part"), s.get("now"), s.get("text")
     if not isinstance(now, str) or not isinstance(text, str):
         return None
@@ -224,6 +242,20 @@ def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
                 or (action != "remove" and not to):
             return None
         return pr.BASES, was, to
+    if part in ADD_PARTS:
+        # One more accepted English answer, or one more synonym to refuse
+        # (ADR-0050, #924): the item named by `action: "add"`, never a
+        # change or a removal, and no `now`: nothing is replaced.
+        if s.get("action") != "add" or not text.strip():
+            return None
+        item = text.strip()
+        if part == "not_synonyms":
+            # The list holds comparison forms, so the reviewer's word is
+            # put in that form here and the proposal is of the form.
+            item = meaning_key(item)
+            if not item:
+                return None
+        return ADD_PARTS[part], "", item
     if part == "alt":
         def lines(t: str) -> list[str]:
             return [l.strip() for l in t.split("\n") if l.strip()]
@@ -340,7 +372,9 @@ class LocalGit:
         return path
 
     def push(self, root: Path, branch: str, message: str) -> bool:
-        self._git("add", "--all", "decks", cwd=root)
+        # The daily questions' answers are kept beside the decks (#519).
+        kept = ["decks", *(["review-answers"] if (root / "review-answers").is_dir() else [])]
+        self._git("add", "--all", *kept, cwd=root)
         if self._git("diff", "--cached", "--quiet", cwd=root, check=False).returncode == 0:
             return False
         self._git("-c", f"user.name={self.NAME}", "-c", f"user.email={self.EMAIL}",
@@ -871,6 +905,145 @@ class Bot:
                      f"{len(checked[-1].missing)} card(s) not in their deck, "
                      f"{len(checked[-1].unsupported)} left for the owner.")
         return outcome
+
+    def questions(self, key: str, code: str, batch: qa.Batch) -> str:
+        """The PR of one mail's daily-question answers, by [code] (#519):
+        its answers are counted in `review-answers/`; two agreeing "yes"
+        settle a point, and (once WRITE_VERIFIED) it is listed in the card's
+        `verified`. A first "no" is only marked here: its own PR is opened
+        by [sweep_flags]. Counts only in the log: no text, no mail address."""
+        made: list[qa.Counted] = []
+
+        def build(root: Path) -> Built | None:
+            result = qa.record(root, batch, code, self.threshold)
+            made.append(result)
+            if not result.changed:
+                return None
+            lines = [f"Answers to the daily questions by **{code}**, from the "
+                     f"mail (#519).", "",
+                     f"- Answers counted: {len(result.recorded)}"]
+            if result.settled:
+                lines.append(
+                    f"- Settled right by {self.threshold + 1} agreeing answers: "
+                    + ", ".join(f"`{c}` {p}" for _, c, p in result.settled))
+            if result.verified:
+                lines.append("- Listed in `verified`: "
+                             + ", ".join(f"`{c}`" for c in result.verified))
+            if result.unsupported:
+                lines.append("- Settled points that could not be listed in "
+                             "`verified` (the card is not written a line at a "
+                             "time): " + ", ".join(f"`{c}`" for c in result.unsupported))
+            if result.flagged:
+                lines.append("- Flagged, each in a pull request of its own that "
+                             "waits for a second answer: "
+                             + ", ".join(f"`{c}` {p}" for _, c, p in result.flagged))
+            if result.closed:
+                lines.append("- A second reviewer disagreed, so the flag is "
+                             "closed for good: "
+                             + ", ".join(f"`{c}` {p}" for _, c, p in result.closed))
+            lines += ["", FOOTER]
+            return Built(
+                title=f"Daily question answers by {code}",
+                body="\n".join(lines),
+                labels=[LABEL, KIND_LABELS["questions"]],
+                # Decks change only when `verified` is written.
+                langs=(sorted({lang for lang, _, _ in result.settled})
+                       if result.verified else []))
+        outcome = self.job(f"{PREFIX}questions/{key}", build)
+        if made and (made[-1].missing or made[-1].ignored or batch.dropped):
+            self.log(f"Answers by {code}: {made[-1].missing} about a card "
+                     f"the language does not have, {made[-1].ignored} already "
+                     f"counted or settled, {batch.dropped} that do not read as "
+                     f"answers; the PR: {outcome}.")
+        return outcome
+
+    def sweep_flags(self) -> dict[str, int]:
+        """On `main`: opens the pull request of each flagged data point and
+        keeps it open until the second answer decides it (#519, owner,
+        2026-10-30: "1st review opens PR. Second review either merges or
+        closes it."). Merged once the same "no" has come from
+        REVIEW_AGREEMENTS_NEEDED other codes; closed when another code
+        said "yes" (the point is then settled, for good) or the flag was
+        taken back."""
+        counts = {"open": 0, "merged": 0, "closed": 0}
+        root = self.git.fresh(f"{PREFIX}read-main")
+        wanted: set[str] = set()
+        for lang, key, point in qa.flagged_points(root):
+            branch = qa.flag_branch(lang, key)
+            state = qa.flag_state(point, self.threshold)
+            if state == "close":
+                continue
+            wanted.add(branch)
+            build = self._flag_build(lang, key, point)
+            if state == "merge":
+                outcome = self.job(branch, build)
+                counts["merged" if outcome == "merged" else "open"] += 1
+            else:
+                self._hold(branch, build)
+                counts["open"] += 1
+        for left in self.github.open_prs(f"{PREFIX}flag/"):
+            if left["head"]["ref"] not in wanted:
+                self.github.close(
+                    left["number"],
+                    "Closed: the second reviewer disagreed, or the flag was "
+                    "taken back. Nothing is changed.")
+                self.log(f"Closed PR #{left['number']}: its flag is gone.")
+                counts["closed"] += 1
+        return counts
+
+    def _flag_build(self, lang: str, key: str, point: dict) -> Build:
+        card, _, name = key.partition("|")
+        first = qa.flagger(point)
+        reason = (point.get("answers", {}).get(first) or {}).get("reason", "")
+
+        def build(root: Path) -> Built | None:
+            outcome = qa.settle_no(root, lang, key)
+            if not outcome:
+                return None
+            lines = [f"A reviewer (**{first}**) answered \"no\" or flagged "
+                     f"the data point `{name}` of `{card}` in the daily "
+                     f"questions (#519).", ""]
+            if reason:
+                lines.append(f"- Reason: {reason}")
+            if outcome == "removed":
+                lines.append("- Merging takes the recording off the card "
+                             "(`audio`, `audio_credit` and the file), so it "
+                             "uses text-to-speech until a new one exists.")
+            else:
+                lines.append("- **A flag note for the owner:** the answer "
+                             "carries no replacement text, so there is "
+                             "nothing to write into the card. Merging only "
+                             "records that two reviewers agreed the point is "
+                             "wrong (`review-answers/`); the owner changes "
+                             "the card.")
+                if outcome == "unsupported":
+                    lines.append("- The recording could not be taken off: the "
+                                 "card is not written a line at a time.")
+            lines += ["", "The second reviewer's answer decides: the same "
+                      "answer merges this pull request, a \"yes\" closes it "
+                      "for good.", "", FOOTER]
+            return Built(
+                title=f"Flagged by a reviewer: {card} {name}",
+                body="\n".join(lines),
+                labels=[LABEL, KIND_LABELS["flag"]],
+                langs=[lang] if outcome == "removed" else [])
+        return build
+
+    def _hold(self, branch: str, build: Build) -> str:
+        """Opens [branch]'s PR when it has none and leaves it open: the
+        flag's second answer is not in yet, so nothing merges."""
+        found = self.github.find_pr(branch)
+        if found is not None:
+            if found.get("merged_at"):
+                return "merged"
+            return "closed" if found.get("state") == "closed" else "pending"
+        built = self._build(branch, build)
+        if isinstance(built, str):
+            return built
+        made = self.github.open_pr(branch, built.title, built.body, built.labels)
+        self.log(f"Opened PR #{made['number']} ({branch}), waiting for a "
+                 f"second answer.")
+        return "pending"
 
     def apply(self, lang: str, proposal: pr.Proposal) -> str:
         """The agreement PR of [proposal], as it is on `main` now."""

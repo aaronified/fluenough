@@ -145,6 +145,7 @@ const _cardFields = {
   'target_scripts',
   'words',
   'alt_native',
+  'not_synonyms',
   'pos',
   'gender',
   'tags',
@@ -168,6 +169,8 @@ const _cardFields = {
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
+  // Which data points of the card are settled (#519), read by [verifiedIn].
+  'verified',
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
@@ -181,6 +184,7 @@ const _refFields = {
   'reading',
   'ipa',
   'alt_native',
+  'not_synonyms',
   'tags',
   'notes',
   'examples',
@@ -190,6 +194,8 @@ const _refFields = {
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
+  // Which data points of the card are settled (#519), read by [verifiedIn].
+  'verified',
 };
 
 // The B1 format (docs/DECK-FORMAT.md).
@@ -268,6 +274,8 @@ const _coreCardFields = {
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
+  // Which data points of the card are settled (#519), read by [verifiedIn].
+  'verified',
 };
 
 /// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
@@ -293,6 +301,8 @@ const _coreRefFields = {
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
+  // Which data points of the card are settled (#519), read by [verifiedIn].
+  'verified',
 };
 const _coreExampleFields = {
   'target',
@@ -309,6 +319,7 @@ const _layerEntryFields = {
   // A set card's explanation (DECK-FORMAT.md, Set cards).
   'explanation',
   'alt_native',
+  'not_synonyms',
   'notes',
   'examples',
   'bases',
@@ -326,6 +337,8 @@ const _layerEntryFields = {
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
+  // Which data points of the card are settled (#519), read by [verifiedIn].
+  'verified',
 };
 const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
 const _noteWordFields = {'word', 'reading', 'ipa'};
@@ -506,6 +519,11 @@ class _Reader {
               'this is a facts file, not a deck; it is read by the facts '
               'loader, not DeckParser',
             ),
+            'situations' => fail(
+              kindNode,
+              'this is a situations file, not a deck; the catalog reads it '
+              'with parseSituations',
+            ),
             'themes' => fail(
               kindNode,
               'this is the themes file, not a deck; the catalog reads it '
@@ -618,6 +636,9 @@ class _Reader {
           : const <String, List<Proposal>>{},
       checkedBy: fields.has('cards')
           ? checkedByIn(fields.require('cards'))
+          : const <String, List<String>>{},
+      verified: fields.has('cards')
+          ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
     );
   }
@@ -801,6 +822,9 @@ class _Reader {
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      notSynonyms: fields.has('not_synonyms')
+          ? fields.strings('not_synonyms')
+          : null,
       tags: fields.has('tags') ? fields.strings('tags') : null,
       notes: fields.has('notes')
           ? notes(fields.node('notes'), '$path.notes')
@@ -867,6 +891,7 @@ class _Reader {
       ),
       words: words(fields, path),
       altNative: fields.strings('alt_native'),
+      notSynonyms: fields.strings('not_synonyms'),
       pos: fields.optionalString('pos', allowEmpty: false),
       hears: hears(fields, path),
       gender: fields.optionalString('gender'),
@@ -1572,6 +1597,9 @@ class _Reader {
       checkedBy: fields.has('cards')
           ? checkedByIn(fields.require('cards'))
           : const <String, List<String>>{},
+      verified: fields.has('cards')
+          ? verifiedIn(fields.require('cards'))
+          : const <String, List<String>>{},
     );
   }
 
@@ -1607,7 +1635,12 @@ class _Reader {
   CoreWritten coreCard(YamlNode node, String path, Map<String, YamlNode> seen) {
     final fields = this.fields(node, path);
     final id = cardId(fields.require('id'), '$path.id', seen);
-    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+    for (final key in const <String>[
+      'native',
+      'alt_native',
+      'not_synonyms',
+      'wiktionary',
+    ]) {
       if (fields.has(key)) {
         fail(
           fields.keyNode(key),
@@ -1849,7 +1882,12 @@ class _Reader {
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
     final fields = this.fields(node, path);
     final id = cardId(fields.require('ref'), '$path.ref', seen);
-    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+    for (final key in const <String>[
+      'native',
+      'alt_native',
+      'not_synonyms',
+      'wiktionary',
+    ]) {
       if (fields.has(key)) {
         fail(
           fields.keyNode(key),
@@ -2194,6 +2232,9 @@ class _Reader {
       checkedBy: fields.has('cards')
           ? checkedByIn(fields.require('cards'))
           : const <String, List<String>>{},
+      verified: fields.has('cards')
+          ? verifiedIn(fields.require('cards'))
+          : const <String, List<String>>{},
     );
   }
 
@@ -2236,6 +2277,9 @@ class _Reader {
           ? fields.string('explanation')
           : null,
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      notSynonyms: fields.has('not_synonyms')
+          ? fields.strings('not_synonyms')
+          : null,
       notes: fields.has('notes')
           ? layerTexts(
               fields.require('notes'),
@@ -3226,11 +3270,19 @@ Map<String, List<Proposal>> proposalsIn(YamlNode cards) {
 /// `cards` mapping, by card id: each entry's `checked_by` (#449). Read
 /// leniently, as proposals are: what is not text is left out, and the
 /// validator checks the codes.
-Map<String, List<String>> checkedByIn(YamlNode cards) {
+Map<String, List<String>> checkedByIn(YamlNode cards) =>
+    _stringListsIn(cards, 'checked_by');
+
+/// Which data points of each card of [cards] are settled (#519): each
+/// entry's `verified`, read as `checked_by` is.
+Map<String, List<String>> verifiedIn(YamlNode cards) =>
+    _stringListsIn(cards, 'verified');
+
+Map<String, List<String>> _stringListsIn(YamlNode cards, String key) {
   final out = <String, List<String>>{};
   void read(String? card, Object? entry) {
     if (card == null || entry is! YamlMap) return;
-    final codes = entry.nodes['checked_by'];
+    final codes = entry.nodes[key];
     if (codes is! YamlList) return;
     final found = <String>[
       for (final code in codes.nodes)

@@ -1,0 +1,102 @@
+schema: 1
+id: "bn-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2331"
+    target: "তার চুল লম্বা।"
+    reading: "tār cul lômbā."
+    ipa: "t̪ar tʃul lɔmba"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তার", ref: "bn-0839" }]
+    confusables: [{ id: "c1", ref: "bn-2301", kind: "word" }, { id: "c2", ref: "bn-0630", kind: "word" }]
+  - id: "bn-2332"
+    target: "সে খুব সুন্দর।"
+    reading: "se khub śundor."
+    ipa: "se kʰub ʃund̪or"
+    pos: "phrase"
+    confusables: [{ id: "c1", ref: "bn-0617", kind: "word" }, { id: "c2", word: "কুৎসিত", reading: "kutśit", kind: "word" }]
+  - id: "bn-2333"
+    target: "তার মুখে হাসি আছে।"
+    reading: "tār mukhe hāśi āche."
+    ipa: "t̪ar mukʰe ɦaʃi atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }, { word: "আছে", base: "থাকা", reading: "āche" }]
+    confusables: [{ id: "c1", word: "কান্না", reading: "kānnā", kind: "word" }, { id: "c2", word: "রাগ", reading: "rāg", kind: "word" }]
+  - id: "bn-2334"
+    target: "আমার বাবা মাঝারি লম্বা।"
+    reading: "āmār bābā mājhāri lômbā."
+    ipa: "amar baba madʒʱari lɔmba"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "আমার", ref: "bn-0833" }]
+    confusables: [{ id: "c1", ref: "bn-0619", kind: "word" }, { id: "c2", ref: "bn-0181", kind: "word" }]
+  - id: "bn-2335"
+    target: "তার গায়ের রং ফর্সা।"
+    reading: "tār gāyer rôṅ phôrśā."
+    ipa: "t̪ar ɡajer rɔŋ pʰɔrʃa"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তার", ref: "bn-0839" }, { word: "গায়ের", base: "গা", reading: "gāyer" }]
+    confusables: [{ id: "c1", ref: "bn-1207", kind: "word" }, { id: "c2", ref: "bn-1208", kind: "word" }]
+  - id: "bn-2336"
+    target: "তার মাথায় টাক আছে।"
+    reading: "tār māthāy ṭāk āche."
+    ipa: "t̪ar mat̪ʰaj ʈak atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }, { word: "আছে", base: "থাকা", reading: "āche" }]
+    confusables: [{ id: "c1", ref: "bn-1005", kind: "word" }, { id: "c2", ref: "bn-0732", kind: "word" }]
+  - id: "bn-2337"
+    target: "দাদুর চুল পাকা।"
+    reading: "dādur cul pākā."
+    ipa: "d̪ad̪ur tʃul paka"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases: [{ word: "দাদুর", ref: "bn-0433" }]
+    confusables: [{ id: "c1", ref: "bn-2317", kind: "word" }, { id: "c2", ref: "bn-0628", kind: "word" }]
+  - id: "bn-2338"
+    target: "সে বুড়ো হয়েছে।"
+    reading: "se buṛo hôyeche."
+    ipa: "se buɽo ɦɔjetʃʰe"
+    pos: "phrase"
+    bases: [{ word: "হয়েছে", base: "হওয়া", reading: "hôyeche" }]
+    confusables: [{ id: "c1", ref: "bn-0617", kind: "word" }, { id: "c2", ref: "bn-0620", kind: "word" }]
+  - id: "bn-2339"
+    target: "তোমার মুখশ্রী সুন্দর।"
+    reading: "tomār mukhośri śundor."
+    ipa: "t̪omar mukʰoʃri ʃund̪or"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তোমার", ref: "bn-0835" }]
+    confusables: [{ id: "c1", ref: "bn-0617", kind: "word" }, { id: "c2", ref: "bn-1003", kind: "word" }]
+  - id: "bn-2340"
+    target: "ওই যুবকটি লম্বা।"
+    reading: "oi jubokṭi lômbā."
+    ipa: "oi dʒubokʈi lɔmba"
+    pos: "phrase"
+    bases: [{ word: "ওই", base: "ওই", reading: "oi" }, { word: "যুবকটি", ref: "bn-2306" }]
+    confusables: [{ id: "c1", ref: "bn-2302", kind: "word" }, { id: "c2", ref: "bn-2307", kind: "word" }]
+  - id: "bn-2341"
+    target: "তার চুল কোঁকড়া আর ঘন।"
+    reading: "tār cul kom̐koṛā ār ghôn."
+    ipa: "t̪ar tʃul kõkoɽa ar ɡʱɔn"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তার", ref: "bn-0839" }]
+    confusables: [{ id: "c1", ref: "bn-2319", kind: "word" }, { id: "c2", ref: "bn-1025", kind: "word" }]
+  - id: "bn-2342"
+    target: "তোমার গালটা গোলগাল।"
+    reading: "tomār gālṭā golgāl."
+    ipa: "t̪omar ɡalʈa ɡolɡal"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "গালটা", ref: "bn-1008" }]
+    confusables: [{ id: "c1", ref: "bn-1010", kind: "word" }, { id: "c2", ref: "bn-1006", kind: "word" }]

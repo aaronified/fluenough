@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 import 'canonical.dart';
 import 'diacritics.dart';
 import 'meaning_rules.dart';
+import 'synonym_sets.dart';
 
 export 'diacritics.dart' show foldDiacritics;
 
@@ -48,6 +49,8 @@ class GradedAnswer {
     required this.matched,
     this.droppedArticle = false,
     this.foldedDiacritics = false,
+    this.viaSynonym = false,
+    this.synonym,
   });
 
   final AnswerOutcome outcome;
@@ -70,6 +73,16 @@ class GradedAnswer {
   ///
   /// Both flags are set when both differed, as in `nino` for `el niño`.
   final bool foldedDiacritics;
+
+  /// The answer was not one the card lists but a synonym of one, from the
+  /// synonym sets (ADR-0050). The outcome is [AnswerOutcome.exact], or
+  /// [AnswerOutcome.closeTypo] for a slip in the synonym; [matched] is the
+  /// card's own answer, never the typed word.
+  final bool viaSynonym;
+
+  /// For [viaSynonym]: the set member the answer was read as, spelled right
+  /// (what a slip meant). Null otherwise.
+  final String? synonym;
 }
 
 /// Compares a typed answer against the accepted ones.
@@ -83,6 +96,7 @@ class AnswerGrader {
     this.longThreshold = 8,
     this.shortThreshold = 3,
     this.meaning = false,
+    this.synonyms = SynonymSets.empty,
   });
 
   /// Leading articles ignored when comparing, e.g. `['el', 'la', 'los', 'las']`
@@ -107,10 +121,19 @@ class AnswerGrader {
   /// goes through the diacritic and typo passes as before.
   final bool meaning;
 
+  /// With [meaning]: sets of words that mean the same, each accepting the
+  /// others (ADR-0050). Tried after the card's own answers match no better,
+  /// so an answer the card lists always wins. Empty means none.
+  final SynonymSets synonyms;
+
+  /// [notSynonyms] are typed meanings the synonym sets must not accept for
+  /// this card, compared by their meaning keys; the card's own answers are
+  /// never blocked by it.
   GradedAnswer grade(
     String given,
     String expected, {
     List<String> alternates = const <String>[],
+    Set<String> notSynonyms = const <String>{},
   }) {
     final candidates = <String>[expected, ...alternates];
 
@@ -155,6 +178,34 @@ class AnswerGrader {
       }
     }
 
+    // Synonym sets: a word that means the same as one of the answers.
+    final useSynonyms = meaning && !synonyms.isEmpty;
+    final synonymForms = <SynonymForm>[];
+    final synonymCandidates = <String>[];
+    if (useSynonyms) {
+      for (final candidate in candidates) {
+        for (final part in meaningParts(candidate)) {
+          synonymForms.add(SynonymForm(part.key, verb: part.verb));
+          synonymCandidates.add(candidate);
+        }
+      }
+      final typedTo = meaningStartsWithTo(given);
+      final hit = synonyms.exact(
+        givenKey,
+        synonymForms,
+        typedTo: typedTo,
+        exclude: notSynonyms,
+      );
+      if (hit != null) {
+        return GradedAnswer(
+          AnswerOutcome.exact,
+          matched: synonymCandidates[hit.form],
+          viaSynonym: true,
+          synonym: hit.member,
+        );
+      }
+    }
+
     // Pass 3: edit distance, against the folded forms so that a missing accent
     // does not also consume the typo budget.
     for (final (candidate, form) in forms) {
@@ -168,6 +219,28 @@ class AnswerGrader {
       if (levenshtein(foldedGiven, foldedCandidate, cutoff: allowed) <=
           allowed) {
         return GradedAnswer(AnswerOutcome.closeTypo, matched: candidate);
+      }
+    }
+
+    // The same slip, made in a synonym of an answer.
+    if (useSynonyms) {
+      final hit = synonyms.typo(
+        givenKey,
+        synonymForms,
+        typoDistance: typoDistance,
+        longTypoDistance: longTypoDistance,
+        longThreshold: longThreshold,
+        shortThreshold: shortThreshold,
+        typedTo: meaningStartsWithTo(given),
+        exclude: notSynonyms,
+      );
+      if (hit != null) {
+        return GradedAnswer(
+          AnswerOutcome.closeTypo,
+          matched: synonymCandidates[hit.form],
+          viaSynonym: true,
+          synonym: hit.member,
+        );
       }
     }
 

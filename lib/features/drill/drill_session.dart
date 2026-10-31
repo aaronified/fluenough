@@ -11,6 +11,7 @@ import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
+import '../../core/grading/meaning_rules.dart' show meaningKey;
 import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
@@ -21,6 +22,7 @@ import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
 import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/distractors.dart';
+import '../../core/scheduling/picture_choice.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
@@ -119,6 +121,7 @@ class DrillSession extends ChangeNotifier {
        startedAt = state.now(),
        _showingPassage = items.first.card is QuestionCard {
     _watch.start();
+    state.warmSynonyms();
   }
 
   final AppState _state;
@@ -414,6 +417,11 @@ class DrillSession extends ChangeNotifier {
   /// Whether meanings are English, where the meaning rules apply.
   bool get _meaningIsEnglish => deck.deck.native.code == 'en';
 
+  /// The card's `not_synonyms` in comparison form, for the grader.
+  Set<String> get _notSynonymKeys => <String>{
+    for (final text in item.card.notSynonyms) meaningKey(text),
+  };
+
   /// What a typed answer to [card] is graded against: its meanings when
   /// [hearsMeaning], else what its mode accepts.
   List<String> _answersOf(Card card) =>
@@ -462,11 +470,13 @@ class DrillSession extends ChangeNotifier {
                 ? deck.deck.native.articles
                 : deck.language.articles,
             meaning: hearsMeaning && _meaningIsEnglish,
+            synonyms: _state.synonyms,
           );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
       accepted.first,
       alternates: accepted.sublist(1),
+      notSynonyms: _notSynonymKeys,
     );
     // In Latin letters, the reading in the language's scheme (#47). The
     // script is still accepted, and counts in full.
@@ -1064,6 +1074,14 @@ class DrillSession extends ChangeNotifier {
 
   List<Card> _pickOptions() {
     final card = item.card;
+    // A picture choice: four pictures of the deck's own, never two alike
+    // (#91). Where the deck cannot offer them the question was not asked as
+    // one, so the card itself is all there is.
+    if (ask.choosesPicture) {
+      final deckCards = _state.deckOf(card)?.cards ?? const <Card>[];
+      return pictureOptions(card, deckCards, seed: _random.nextInt(1 << 30)) ??
+          <Card>[card];
+    }
     // The pool by what its cards share with this one (rankDistractors),
     // shuffled within each rank, so that the likelier mistakes come first.
     final pool = <Card>[
@@ -1298,6 +1316,7 @@ class DrillSession extends ChangeNotifier {
         mode == DrillMode.reading ||
         entry.card is QuestionCard ||
         ask == Ask.hearMeaning ||
+        ask == Ask.hearPicture ||
         (identical(entry, item) && (hearsMeaning || typesDigits))) {
       return null;
     }

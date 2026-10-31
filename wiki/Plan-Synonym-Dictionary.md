@@ -202,15 +202,16 @@ only" and the poke-holes gate (above).
 |---|---|---|---|---|
 | 1 | ADR-0050 and this plan, wiki pages and pointers | Sonnet | done | 0.6.0 |
 | 2 | `synonym_sets.dart` (parse, equivalents) and the grader's synonym pass (frame, inflection, typo, `viaSynonym`); behaviour tests with test-only sets | Sonnet | M (about 300 lines with tests) | 0.6.0 |
+| 2-4 | Built together in one pull request (#924): `synonym_sets.dart`, the grader's synonym pass (with an optional `notSynonyms` exclusion the card field will feed), `assets/synonyms/en.yaml` (empty), the loader in `lib/app/`, `tools/validate_synonyms.py` and its CI step, the `Also: ...` hint and the Sources line. Not yet: `tools/english_meanings.py`. | Sonnet | done | 0.6.0 |
 | 3 | `tools/english_meanings.py`, `tools/validate_synonyms.py`, tests; an empty-but-valid `assets/synonyms/en.yaml`; the CI job; `pubspec.yaml` assets line and the loader in `lib/app/` (its own small PR for `pubspec.yaml`) | Sonnet | M | 0.6.0 |
 | 4 | Reveal hint `Also: ...`, l10n tokens, Sources line (CC BY-SA); mockup of the reveal if the owner wants one | Sonnet | S | 0.6.0 |
 | 5 | Seed batch 0 (regional spelling variants), then batch 1 (the 200 commonest meanings), through draft and poke | Haiku, Sonnet | S per batch | 0.6.0 |
 | 6 | Seed batches 2 to N, one PR each; content, so it stays out of the CHANGELOG (owner, 2026-10-19) | Haiku, Sonnet | S per batch, as many as the owner wants | rolling |
-| 7 | `not_synonyms`: field in the card model and docs/DECK-FORMAT.md, the validator's rules, the cross-check; decks use it a release later | Sonnet | M | 0.6.x (approved 2026-10-30) |
+| 7 | `not_synonyms`: field in the card model and docs/DECK-FORMAT.md, the validator's rules, the cross-check; decks use it a release later | Sonnet | M | 0.6.x (approved 2026-10-30); built: the app reads it, no deck uses it until a release after |
 | 8 | Sibling-clash warnings tool (cards of a deck in one set) | Sonnet | S | 0.6.x |
-| 9 | Reviewer proposals `alt_native_add`, `not_synonyms_add` in `tools/proposals.py`, `tools/review_bot.py`, reviewer mode UI; candidate-set report | Sonnet | L | 0.7.0 with the reviewer-mode overhaul (approved 2026-10-30) |
+| 9 | Reviewer proposals `alt_native_add`, `not_synonyms_add` in `tools/proposals.py`, `tools/review_bot.py`, reviewer mode UI; candidate-set report | Sonnet | L | 0.7.0 with the reviewer-mode overhaul (approved 2026-10-30); built 2026-10-31: the fields, validator, `tools/proposals.py`, the review file parts and `tools/synonym_candidates.py`; the reviewer-mode UI is the overhaul's |
 
-Steps 2 to 4 are about a week of one Sonnet, in three PRs; each batch of step
+Steps 2 to 4 (step 3's tools listing aside) are about a week of one Sonnet, in three PRs; each batch of step
 5 and 6 is an hour or two of a Haiku plus a Sonnet. Step 9 depends on #508,
 #922 and the reviewer-mode overhaul: mark "blocked by" on GitHub when the
 issues are made (CLAUDE.md, dependencies are marked).

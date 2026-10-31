@@ -329,7 +329,7 @@ sentence is the core's. How many examples a word card needs is in
 
 **A core ref**, `- ref: "te-9010"`, lists a card written in another deck. It
 may give `reading`, `ipa`, `tags`, `modes`, and `examples` and `notes` in the
-core form; not `native`, `alt_native` or `wiktionary`.
+core form; not `native`, `alt_native`, `not_synonyms` or `wiktionary`.
 
 ### A grammar core
 
@@ -418,6 +418,7 @@ readings against the core's language and its
 |---|---|
 | `native` | **Required.** The meaning. A card with no entry, or an entry with no `native`, is not taught from this language. |
 | `alt_native` | As on any card. |
+| `not_synonyms` | As on any card: the card's refusal of listed synonyms (ADR-0050). |
 | `notes` | A mapping from the core note's `id` to its text in this language ([Notes](#notes)). |
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
@@ -584,7 +585,8 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
-| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
+| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). **An English `native` or `alt_native` separates alternatives with `;`** (`Take care!; Careful!`): the typed-meaning grader accepts each `;`-separated part and no other split, so a meaning with a sentence break (`.`, `!` or `?` then more text, outside brackets and abbreviations such as `Mr.`) and no `;` is a validator error (#924). A card whose sentences must all be said is listed in `MEANING_ALL_REQUIRED` in `tools/validate_decks.py`; the check covers a card's `native` and `alt_native`, not its examples. |
+| `not_synonyms` | no | Typed English answers the [synonym sets](ADR-0050-English-Synonym-Sets) must not accept for this card (ADR-0050, #924): a quoted list of words in comparison form (lower case, no leading `to`, no punctuation), each once, none of them one of the card's own answers. It is the escape for a set partner that is the wrong sense here, e.g. `not_synonyms: ["shore"]` on a river's bank. It never blocks `native` or `alt_native`. On the native side only (a single-file card, a ref, a layer's entry), English native only; a core card has none. `tools/validate_synonyms.py` reads it and refuses an entry that is in no set with another of the card's answers, and a set escaped on two cards. **Released apps reject the key, so decks do not use it until a release after the app that reads it (as for `warning`, #691).** |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
 | `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
@@ -606,10 +608,11 @@ cards:
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | The skills this card is excluded from (an opt-out, #522 step 6: `recognition`, `production`, `listening`, `speaking`, or `grammar` for both grammar skills). Defaults to every skill the card's data allows, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](ADR-0034-Hear-Say-Write)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
-| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](ADR-0034-Hear-Say-Write)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](ADR-0034-Hear-Say-Write)); it is also one of the four pictures of a picture choice, a form of Recognition, which needs four words of the deck with a picture (not a `picture_ask` one) that are not twins or the same meaning. Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 | `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 | `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
+| `verified` | no | Written by the review bot, from the daily questions: the data points of the card two reviewers agreed are right, `["meaning", "example:1a2b3c4d", "confusable:stem", "sound"]`. See [Settled points](#settled-points-verified). Allowed on any card entry, as `checked_by` is. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#519). |
 
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
@@ -721,7 +724,7 @@ cards:
 ```
 
 A ref may give the card's native side for this deck: `native`, `alt_native`,
-`reading`, `ipa`, `notes`, `tags`, `examples`, `modes` and `wiktionary`. What the
+`not_synonyms`, `reading`, `ipa`, `notes`, `tags`, `examples`, `modes` and `wiktionary`. What the
 card is in the language learned, its `target`, `alt_target`, `pos`,
 `gender` and `audio`, stays where it is written, and so do `phrasebook`,
 `bases`, `rules`, `pair` and `picture`: a ref cannot give them.
@@ -917,6 +920,23 @@ dǒng) names its base, as an inflected word in a spaced language does.
 Notes are a list of facts about the word, each of a kind. The app shows one
 at a time, when the word is taught and after an answer: shuffled, never
 repeated until every note of the card has been shown once.
+
+Which one is the app's choice, not the deck's (#421): the teach card and the
+answer reveal each show one prose note, chosen at random from the card's
+notes that are not a `pair`, `homograph` or `lookalike` warning, and the next
+showing takes one not yet shown, so every note shows once before any repeats;
+a new round never opens with the note that closed the last. The app
+remembers by card id and note id for the run of the app, so a note added later
+is due at once. The word sheet lists every note. A text note, and the
+decks written before typed notes, read as one note: nothing changes for them.
+`tools/propose_pairs.py` proposes `pair` notes (read-only): the words of a
+language whose IPA differs by one segment between very close sounds.
+
+**Typed notes need a release that reads them.** The released parser rejects
+an unknown note shape, so the typed list, like every new field, goes into a
+deck only a release after the app that reads it. The app has read it since
+the B1 format (ADR-0036); a deck written before is unchanged, so no deck
+moves to the typed list until its language's B1 plan.
 
 | Kind | What it says |
 |---|---|
@@ -1167,8 +1187,16 @@ the entry exists:
   an entry's title, such as a sentence or an inflected form, is not marked:
   its bases carry the mark for their words.
 - **Mark only an entry you have seen:** the word's own page, with a section
-  for the language. A tool will mark them from Wiktionary's extracts; until
-  then, check each one.
+  for the language. `tools/mark_wiktionary.py` marks the cards of a core
+  from Wiktionary's extracts ([Deck tools](Deck-Tools#mark_wiktionarypy));
+  mark a base written in full by hand, checking its page.
+- **In the app,** a word's sheet shows "Wiktionary: <word>" for the card
+  itself and for each marked base word, which opens the page in the browser
+  (the address for English Wiktionary ends in the language's section, such
+  as `#Telugu`; Hindustani's is `#Hindi`; another edition's has none, since
+  its headings are in its own language). Nothing is fetched until it is
+  tapped, and a word without the mark has no link. The key is not new, so
+  decks that use it need no release guard.
 
 ### A card's own recording: `audio`
 
@@ -2934,7 +2962,7 @@ Each is one line:
 | Field | Notes |
 |---|---|
 | `id` | Ten hex digits: the start of the SHA-256 of the card id, `field`, `now`, `text` and `by`, joined by U+001F. The validator checks it, so a proposal is never edited, only removed. |
-| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases`, `alt_target`, `gender`, `register`, `hears` or `warning`, as the entry may give it. A note is proposed only where `notes` is plain text. |
+| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases`, `alt_target`, `gender`, `register`, `hears`, `warning`, `alt_native_add` or `not_synonyms_add`, as the entry may give it. A note is proposed only where `notes` is plain text. |
 | `now` | The field's text when the reviewer proposed the change, `""` if the card had none. |
 | `text` | The new text. Not checked as deck content until it is applied. |
 | `by` | The proposer's rater code, `FL-XXXX-XXXX-C`. |
@@ -2970,6 +2998,28 @@ when it proposes and again when it applies, and a value that fails is left
 for the owner, never written. The bot never removes a field, so a
 proposal's `text` is never empty. A suggestion on a list item, a fact, or a
 flag is not proposed at all.
+
+**An answer or a refused synonym (ADR-0050, #924; owner, 2026-10-30).** A
+proposal on `alt_native_add` or `not_synonyms_add` adds one item to the
+card's `alt_native` or `not_synonyms`, on its native side only: a
+single-file card, a ref or a layer's entry, never a core's card. Its `now`
+is always `""` (nothing is replaced) and its `text` is the one item, so two
+proposals to the same list do not outdate each other. The validator checks
+the shape: `alt_native_add` is one answer with no `;`; `not_synonyms_add` is
+in comparison form (lower case, no leading `to`, no punctuation, as the
+review bot makes it from what the reviewer typed) and on English meanings.
+When an agreement is applied the bot appends `text` to the list, writing the
+list on one line, and closes the other proposals of the same item; a
+proposal of another item waits for the next run, since two agreements on one
+line cannot both merge. It is outdated once the list has the item. The bot
+refuses, and leaves for the owner, a `not_synonyms_add` that CI would
+reject: a word that is one of the card's own answers, one in no set of
+`assets/synonyms/en.yaml` with another of the card's answers (it would block
+nothing), or one whose set another card escapes already. A list written over
+several lines is left for the owner too. `tools/synonym_candidates.py`
+prints the pairs of a card's answer and an extra one that several cards
+share, counting `alt_native` and waiting proposals, for the owner to take
+through the seeding workflow; a reviewer never edits the sets file.
 
 **A new word for a card (#476).** A change to `target` sent with changes to
 the same card's bases, alternatives, notes, reading or IPA makes those
@@ -3031,6 +3081,53 @@ whose code a deck lists.
   update.
 
 To take a sign-off back, delete the code, or the line.
+
+## Settled points: `verified`
+
+The data points of a card that reviewers have settled as right, so that the
+app's daily questions stop asking about them and the question generator
+skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
+**The review bot writes it; nobody writes one by hand.**
+
+```yaml
+  - id: "te-0986"
+    target: "కుక్క"
+    reading: "kukka"
+    verified: ["meaning", "example:0f3a9c21", "sound"]
+  - { id: "te-0987", target: "పిల్లి", reading: "pilli", verified: ["meaning"] }
+```
+
+- **The shape.** A non-empty list of text, each a data point named as the
+  daily questions name it: `meaning`; `example:` and the 8 hex digits of
+  the example's hash (`pointHash` of its target text, as
+  `lib/core/review/review_question.dart` has it); `confusable:` and the
+  confusable's `id`; `sound`. Nothing else is recorded: not who agreed
+  (that stays in `review-answers/`) and not a count. A point is listed once
+  two reviewers, by default (`REVIEW_AGREEMENTS_NEEDED` plus the first),
+  have answered Yes. A point settled "no" or closed after a disagreement is
+  never listed.
+- **Where.** On every entry that holds the card itself (a single file's
+  card, a core's card, a layer's own card), as one line like `checked_by`'s:
+  its own line on a block card, last before the closing brace on a flow
+  card. A layer's translation of a core card does not carry it: the merged
+  deck lists the points of the core's card and of the layer's entry
+  together, each once.
+- **The app** reads it and does not ask about a listed point again; a card
+  with a point not listed is asked about that point as before.
+- **The validator** allows it where `checked_by` is allowed (a single file,
+  a core, a layer), checks that it is a non-empty list of points of the
+  shapes above, none twice, and that it is written where the bot writes
+  it, as for `checked_by`.
+- **No update for it.** `content_sha256` in `index.json` leaves it out, with
+  `checked_by`, so a learner is not offered a deck update when only a
+  settled point changed.
+- **A release after the app.** A released app rejects a card key it does not
+  know (v0.6.8 does), and a phone keeps the decks it has rather than take a
+  batch with a file that fails ([ADR-0038](ADR-0038-Review-Proposals), ADR-0037). So the bot writes
+  `verified` only once an app that reads it is released: the constant
+  `WRITE_VERIFIED` in `tools/question_answers.py` is `False` until then, and
+  the answers are only tallied in `review-answers/<language>.json`. The
+  owner sets it to `True` in the release after the one that reads the field.
 
 ## Adding your own deck
 
@@ -3444,6 +3541,58 @@ fact carries its own text in every language it is written in. It has
   `source` for anything a reader could doubt.
 - **The YAML quoting rule applies**, to keys too: Norwegian's code is `no`, so
   write it `"no":`.
+
+---
+
+## Situations files
+
+Cheatsheets for everyday moments (#724): hailing a cab, shopping, the doctor.
+A language has one situations file, `decks/<code>/<code>-situations.yaml`,
+beside its decks. It holds **no card text**: each situation lists the ids of
+real cards in the language's decks, so a card fixed once is fixed on every
+sheet, and progress, the "not learnt yet" dot, audio and Practise this sheet
+all use the deck's own card. A word a situation needs that no deck has is
+added to the right deck as a new card (a new id from
+`validate_decks.py --next-id`), never written on the sheet.
+
+```yaml
+schema: 1
+id: te-situations
+name: "Telugu situations"
+kind: situations
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+license: "CC-BY-SA-4.0"
+situations:
+  - id: taxi
+    icon: taxi
+    title: { en: "Taxi" }
+    phrases: ["te-0276", "te-0275"]
+    words: ["te-0273", "te-0274"]
+```
+
+The header is a facts file's: no `native`. The file name stem is its `id`.
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | Unique in the file, `[a-z0-9-]+`, permanent. |
+| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`: it picks the button's icon and its own colour on Today. Each icon is used once per file. |
+| `title` | yes | The sheet's title keyed by language code as a fact's text is; `en` is required. The learner sees the first of the languages they speak that it is written in. |
+| `phrases` | one of these | Card ids shown first, in this order. |
+| `words` | one of these | Card ids shown after the phrases, in this order. |
+
+Every id must be a card of the language (the validator checks across the
+language's files), listed once per situation. A card may be on several
+situations. A course whose language has no situations file shows the
+Situations buttons dimmed with an "Upcoming" pill.
+
+**In the index.** The file is listed in `decks/index.json` under its own key,
+`situations`, apart from `files` (as `script_guides` are), because the
+released app has no case for `kind: situations` and would show it as a broken
+deck. The app that knows the key reads it as one of the language's files and
+downloads it with the decks; an older app never sees it. A situations
+file is counted in the language's `size`. The `situations:` key belongs to a
+situations file only, and a language has one file, named
+`<code>-situations.yaml`; the validator refuses anything else.
 
 ---
 

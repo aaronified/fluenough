@@ -85,7 +85,7 @@ SCRIPT_BLOCKS = {
     "bengali": ((0x0980, 0x09FF),),
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
+KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer", "resources", "phonetics"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
@@ -125,7 +125,7 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 # the text a learner reads.
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
-NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+NOT_DECK_KINDS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
                   "resources", "phonetics"}
 # A language's phonetic rules (tools/derive_phonetic.py): the ordered rules
 # that turn a card's broad `ipa` into its narrow `phonetic`. Only the tool
@@ -157,11 +157,11 @@ SCRIPT_POS = {"letter", "digit"}
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
-    "theme", "passages",
+    "theme", "passages", "situations",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
-    "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
+    "not_synonyms", "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
@@ -170,11 +170,15 @@ CARD_KEYS = {
 # native-side fields; what the card is in the language learned stays the
 # card's own.
 REF_KEYS = {
-    "ref", "native", "reading", "ipa", "alt_native", "tags", "notes",
-    "examples", "modes", "wiktionary",
+    "ref", "native", "reading", "ipa", "alt_native", "not_synonyms", "tags",
+    "notes", "examples", "modes", "wiktionary",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
+# A language's situation sheets (#724): the icons the app draws, in the order
+# of Today's buttons (lib/core/models/situation.dart), and a situation's keys.
+SITUATION_ICONS = ("taxi", "shops", "eat", "doctor", "traffic", "rail")
+SITUATION_KEYS = {"id", "icon", "title", "phrases", "words"}
 PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
@@ -263,8 +267,8 @@ MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
 MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.5|3\.0|4\.0)"
                               r"(?:-[A-Z]{2,3})?")
 # What a native language gives a card: never written in a core.
-NATIVE_SIDE = ("native", "alt_native", "wiktionary")
-LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
+NATIVE_SIDE = ("native", "alt_native", "not_synonyms", "wiktionary")
+LAYER_ENTRY_KEYS = {"native", "alt_native", "not_synonyms", "notes", "examples", "bases",
                     "wiktionary", "dictionary", *CARD_DATA}
 DICTIONARY_KEYS = {"senses", "etymology", "source"}
 CORE_ENTRY_KEYS = {"lemma", "key", "forms", "reading", "readings", "ipa", "ipas"}
@@ -292,7 +296,8 @@ YAML11_BOOLS = {"yes", "no", "on", "off", "true", "false", "y", "n"}
 PLACEHOLDER_RE = re.compile(r"\{([1-9][0-9]*)\}")
 NUMBERED_RE = re.compile(r"\{([0-9]+)\}")
 # The files beside the decks, whose names a core cannot take.
-RESERVED_CORES = {"facts": "facts file", "numbers": "number rules",
+RESERVED_CORES = {"facts": "facts file", "situations": "situations file",
+                  "numbers": "number rules",
                   "romanisation": "romanisation file", "script": "script guide",
                   "sounds": "sounds file", "path": "path",
                   "resources": "resources file", "phonetics": "phonetic rules file"}
@@ -580,8 +585,12 @@ class Report:
     # Each form a core card gives, (card id, where, its place, its word), for
     # the warning on a form a rules table has already (#517).
     card_forms: list[tuple[str, str, str, str]] = field(default_factory=list)
-    # A facts file's language, for the cards its facts name (#516).
+    # A facts or situations file's language, for the cards it names (#516,
+    # #724).
     facts_lang: str | None = None
+    # Set on a situations file: its language's code, for the one file per
+    # language rule (#724).
+    situations_lang: str | None = None
     # The rule ids a card's `rules` names: (rule id, where).
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
@@ -797,6 +806,94 @@ def card_id_re(lang: str) -> re.Pattern[str]:
     return re.compile(rf"{re.escape(lang)}-[0-9]{{4,}}")
 
 
+# A typed English meaning is accepted for each `;`-separated part of the
+# expected text and for no other split (lib/core/grading/meaning_rules.dart),
+# so separately sayable alternatives must be written "Take care!; Careful!"
+# (#924). A sentence break inside a bracket-free meaning with no `;` is
+# therefore an error, unless the card is one of those whose sentences must
+# all be said (the target says both), listed here by card id. Keep sorted;
+# each needs a reason. Only card `native` and `alt_native` are checked, not
+# examples.
+MEANING_ALL_REQUIRED = frozenset({
+    "es-0111",   # "Good morning, madam. How are you?": greeting, then question
+    "zh-0282",   # "I am a student. Are you a teacher?": the target says both
+    "zh-0331",   # "We are eating a meal. Are you going home?": both
+    "zh-0333",   # "The child finishes school. Shall we wait?": both
+})
+_MEANING_BRACKETS = re.compile(r"\([^)]*\)|\[[^\]]*\]")
+# Abbreviations whose full stop is not a sentence end.
+_MEANING_ABBREV = re.compile(
+    r"\b(?:mr|mrs|ms|dr|st|prof|sr|jr|vs|e\.g|i\.e|a\.m|p\.m|ph\.d|u\.s\.a|"
+    r"mt|fig|approx)\.", re.IGNORECASE)
+# An ellipsis, or a run of ?! or !?, is one pause, not a sentence break.
+_MEANING_PAUSE = re.compile(r"\.{3,}|\u2026|[?!]{2,}")
+_MEANING_BREAK = re.compile(r"[.!?]\s+\w")
+
+
+def meaning_has_separate_sentences(text: str) -> bool:
+    """Whether an English meaning has a sentence break and no `;`, outside
+    brackets, abbreviations and pauses (#924)."""
+    if ";" in text:
+        return False
+    text = _MEANING_PAUSE.sub(" ", _MEANING_ABBREV.sub(" ", _MEANING_BRACKETS.sub(" ", text)))
+    return _MEANING_BREAK.search(text) is not None
+
+
+def check_meaning_alternatives(r: Report, where: str, cid: str | None,
+                               entry: dict) -> None:
+    """An English `native` or `alt_native` value must not run separate
+    sentences together without `;` (#924)."""
+    if r.native_code != "en":
+        return
+    values = [entry.get("native")]
+    alts = entry.get("alt_native")
+    if isinstance(alts, list):
+        values += alts
+    for value in values:
+        if not _is_str(value) or not meaning_has_separate_sentences(value):
+            continue
+        if cid in MEANING_ALL_REQUIRED:
+            continue
+        r.error(where, f"meaning has separate sentences; separate alternatives with "
+                       f'";" (or reword it, or add the card id to MEANING_ALL_REQUIRED): {value!r}')
+
+
+def check_not_synonyms(r: Report, where: str, entry: dict) -> None:
+    """A card's `not_synonyms` (ADR-0050, #924): typed English answers the
+    synonym sets must not accept for it. A list of quoted words in comparison
+    form, once each, none of them one of the card's own answers (those are
+    never blocked, so the entry would say two opposite things). Whether an
+    entry blocks anything is checked against the sets by validate_synonyms.py.
+    Released apps reject the key: decks use it only a release after the app
+    that reads it, as for `warning` (#691); "Released app reads the decks"
+    in CI is the guard."""
+    if "not_synonyms" not in entry:
+        return
+    value = entry["not_synonyms"]
+    if r.native_code != "en":
+        r.error(where, "not_synonyms is for English meanings: the synonym sets "
+                       "are English")
+    _check_str_list(r, where, "not_synonyms", value)
+    if not isinstance(value, list):
+        return
+    from validate_synonyms import answers, meaning_key
+    own = set(answers(entry))
+    seen: set[str] = set()
+    for i, item in enumerate(value):
+        if not _is_str(item):
+            continue
+        key = meaning_key(item)
+        if key != item:
+            r.error(where, f"not_synonyms[{i}] must be in comparison form (lower "
+                           f"case, no leading to, no punctuation): write {key!r}")
+        if key in own:
+            r.error(where, f"not_synonyms[{i}] {item!r} is one of the card's own "
+                           f"answers, which are never blocked")
+        if key in seen:
+            r.error(where, f"not_synonyms[{i}] {item!r} is listed twice")
+        seen.add(key)
+
+
 def check_card(r: Report, idx: int, card: object, seen: set[str],
                script: str, lang: str, *, form: str = "single",
                key: str | None = None,
@@ -894,6 +991,9 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     for key in ("alt_target", "alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if not core:
+        check_meaning_alternatives(r, where, cid, card)
+        check_not_synonyms(r, where, card)
     if "target_scripts" in card:
         _check_target_scripts(r, where, card["target_scripts"], target, scripts)
 
@@ -1705,6 +1805,8 @@ def check_ref(r: Report, idx: int, card: dict, seen: set[str],
     for key in ("tags",) if core else ("alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if not core:
+        check_not_synonyms(r, where, card)
     check_notes(r, where, card.get("notes"), rid, lang, script, core=core)
     _check_modes(r, where, card.get("modes"))
     if "wiktionary" in card and not core:
@@ -2268,6 +2370,80 @@ def check_facts(r: Report, facts: object, lang: str | None = None) -> None:
                             f"{count} daily facts, not {MIN_FACTS}")
 
 
+def check_situations(r: Report, situations: object, lang: str | None = None) -> None:
+    """A language's situation sheets (#724). See "Situations files" in
+    docs/DECK-FORMAT.md."""
+    r.facts_lang = lang
+    r.situations_lang = lang
+    if not isinstance(situations, list) or not situations:
+        r.error("situations", "must be a non-empty list")
+        return
+    id_re = card_id_re(lang or "xx")
+    seen: set[str] = set()
+    icons: set[str] = set()
+    for i, sit in enumerate(situations):
+        where = f"situations[{i}]"
+        if not isinstance(sit, dict):
+            r.error(where, "must be a mapping")
+            continue
+        sid = sit.get("id")
+        if not _is_str(sid) or not ID_RE.fullmatch(sid):
+            r.error(where, f"id must match [a-z0-9-]+, got {sid!r}")
+        else:
+            where = f"situation {sid}"
+            if sid in seen:
+                r.error(where, "duplicate situation id")
+            seen.add(sid)
+        for unknown in sorted(set(sit) - SITUATION_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+
+        icon = sit.get("icon")
+        if icon not in SITUATION_ICONS:
+            r.error(where, f"icon must be one of {', '.join(SITUATION_ICONS)}, got {icon!r}")
+        elif icon in icons:
+            r.error(where, f"icon {icon!r} is on another situation: each button has "
+                           f"its own")
+        else:
+            icons.add(icon)
+
+        title = sit.get("title")
+        if not isinstance(title, dict) or not title:
+            r.error(where, "title must map language codes to the sheet's title, "
+                           "e.g. { en: Taxi }")
+        else:
+            if "en" not in title:
+                r.error(where, "title needs an English entry")
+            for code, value in title.items():
+                if not isinstance(code, str) or not LANG_RE.fullmatch(code):
+                    r.error(where, f"title key must be a 2-3 letter language code, "
+                                   f"{_code_error(code)}")
+                elif isinstance(value, bool):
+                    r.error(where, f"title.{code} parsed as the boolean {value!r}. "
+                                   f"Quote the value.")
+                elif not _is_str(value):
+                    r.error(where, f"title.{code} must be non-empty text")
+
+        listed: set[str] = set()
+        for key in ("phrases", "words"):
+            if key not in sit:
+                continue
+            cards = sit[key]
+            if not isinstance(cards, list) or not cards:
+                r.error(where, f"{key} must be a non-empty list of {lang or 'xx'} card ids")
+                continue
+            for k, cid in enumerate(cards):
+                if not _is_str(cid) or not id_re.fullmatch(cid):
+                    r.error(where, f"{key}[{k}] must be the id of a {lang or 'xx'} "
+                                   f"card, got {cid!r}")
+                elif cid in listed:
+                    r.error(where, f"{cid} is listed twice")
+                else:
+                    listed.add(cid)
+                    r.base_refs.append((cid, where, f"{key}[{k}]"))
+        if not listed:
+            r.error(where, "lists no cards: give phrases, words or both")
+
+
 def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
     """The cards a fact is about (#516), by id, each checked across files to
     be a card of the language."""
@@ -2582,19 +2758,20 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
                 r.number_taught = (str(lang.get("code")), set())
 
     check_langblock(r, "language", raw.get("language"), full=True)
-    if kind != "facts":
+    if kind not in ("facts", "situations"):
         check_langblock(r, "native", raw.get("native"), full=False)
         lang = raw.get("language")
         if isinstance(lang, dict) and _is_str(lang.get("code")):
             icon = lang.get("icon")
             r.icon = (lang["code"], icon if _is_str(icon) else None)
     elif "native" in raw:
-        r.error("native", "a facts file has no native: each fact carries its text "
-                          "in every language it is written in")
+        r.error("native", f"a {kind} file has no native: its text is keyed by "
+                          f"the language it is written in")
 
     lang = raw.get("language")
     native = raw.get("native")
-    if kind != "facts" and _is_str(deck_id) and isinstance(lang, dict) \
+    if kind not in ("facts", "situations") and _is_str(deck_id) \
+            and isinstance(lang, dict) \
             and isinstance(native, dict) \
             and _is_str(lang.get("code")) and _is_str(native.get("code")):
         # A deck is a course, "Hindi from English", and its id says so.
@@ -2614,6 +2791,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
 
     _check_common_header(r, raw)
 
+    if kind != "situations" and "situations" in raw:
+        r.error("situations", "only valid on a situations file; add kind: situations")
     if kind != "reading" and "passages" in raw:
         r.error("passages", "only valid on a reading deck; add kind: reading")
     if kind == "vocab":
@@ -2639,6 +2818,15 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
                 r.error(key, "a facts file uses facts, not cards or a pattern")
         code = lang.get("code") if isinstance(lang, dict) else None
         check_facts(r, raw.get("facts"), code if _is_str(code) else None)
+    elif kind == "situations":
+        for key in ("cards", "pattern", "facts"):
+            if key in raw:
+                r.error(key, "a situations file uses situations, not " + key)
+        code = lang.get("code") if isinstance(lang, dict) else None
+        if _is_str(code) and path.stem != f"{code}-situations":
+            r.error("id", f"a situations file is {code}-situations.yaml, with that "
+                          f"id, got {path.stem!r}")
+        check_situations(r, raw.get("situations"), code if _is_str(code) else None)
     elif kind == "reading":
         for key in ("cards", "pattern", "facts"):
             if key in raw:
@@ -2689,15 +2877,22 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # card has it. `gender`, `register`, `hears` and `warning` (#508) are the
 # card's own scalars, so a card written in full has them and a ref or a
 # layer's entry does not; `warning` is a core card's only.
+#
+# `alt_native_add` and `not_synonyms_add` (ADR-0050, #924) add one item to a
+# list on the card's native side, so only the entries that give `alt_native`
+# have them. Their `now` is always "" (nothing is replaced) and their `text`
+# is the one item.
+PROPOSAL_ADD_FIELDS = ("alt_native_add", "not_synonyms_add")
 PROPOSAL_FIELDS = {
     "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target",
-               "gender", "register", "hears"),
-    "ref": ("native", "reading", "ipa", "notes"),
+               "gender", "register", "hears", *PROPOSAL_ADD_FIELDS),
+    "ref": ("native", "reading", "ipa", "notes", *PROPOSAL_ADD_FIELDS),
     "core": ("target", "reading", "ipa", "notes", "alt_target", "place",
              "gender", "register", "hears", "warning"),
     "core-ref": ("reading", "ipa", "notes"),
-    "layer": ("native", "bases"),
-    "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
+    "layer": ("native", "bases", *PROPOSAL_ADD_FIELDS),
+    "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target",
+                  *PROPOSAL_ADD_FIELDS),
 }
 # The fields whose `now` and `text` are JSON, not the field's own text.
 PROPOSAL_JSON_FIELDS = ("bases", "alt_target")
@@ -2722,6 +2917,29 @@ def _proposal_json_ok(name: str, value: str) -> bool:
     return isinstance(parsed, dict) and _is_str(parsed.get("word")) \
         and (_is_str(parsed.get("ref")) or _is_str(parsed.get("base"))) \
         and all(isinstance(v, str) for v in parsed.values())
+
+
+def _check_add_proposal(r: Report, where: str, name: str, now: object,
+                        text: str) -> None:
+    """A proposal to add one item to a card's `alt_native` or `not_synonyms`
+    (ADR-0050): no `now`, and a `text` that is one item as the list would
+    hold it. The card's own answers are checked when it is applied."""
+    if now != "":
+        r.error(where, f"now of a proposal on {name} must be \"\": it adds an "
+                       f"item and replaces nothing, got {now!r}")
+    if name == "alt_native_add":
+        if ";" in text:
+            r.error(where, f"text of a proposal on {name} is one answer: no \";\" "
+                           f"(one proposal for each), got {text!r}")
+        return
+    if r.native_code not in (None, "en"):
+        r.error(where, "not_synonyms_add is for English meanings: the synonym "
+                       "sets are English")
+    from validate_synonyms import meaning_key
+    key = meaning_key(text)
+    if not key or key != text:
+        r.error(where, f"text of a proposal on {name} must be in comparison form "
+                       f"(lower case, no leading to, no punctuation), got {text!r}")
 
 
 def proposal_id(card: str, field_name: str, now: str, text: str, by: str) -> str:
@@ -2815,6 +3033,8 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                     r.error(where, "text is what the field said already")
             elif not _is_str(text):
                 r.error(where, f"text must be non-empty text, got {text!r}")
+            elif name in PROPOSAL_ADD_FIELDS:
+                _check_add_proposal(r, where, name, now, text)
             elif isinstance(now, str) and text == now:
                 r.error(where, "text is what the field said already")
             elif name in PROPOSAL_VALUES and text not in PROPOSAL_VALUES[name]:
@@ -2853,8 +3073,14 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                 r.error(where, "id is not its facts' (card, field, now, text "
                                "and by); a proposal is never edited, only "
                                "removed")
+            elif name in PROPOSAL_ADD_FIELDS and name in allowed and _is_str(text) \
+                    and isinstance(p.entry.get(name.removesuffix("_add")), list) \
+                    and text in p.entry[name.removesuffix("_add")]:
+                r.info(where, f"proposal {pid} is outdated: the card's "
+                              f"{name.removesuffix('_add')} has the item already")
             elif isinstance(now, str) and isinstance(name, str) \
                     and name in allowed and name not in PROPOSAL_JSON_FIELDS \
+                    and name not in PROPOSAL_ADD_FIELDS \
                     and p.entry.get(name, "") != now:
                 r.info(where, f"proposal {pid} is outdated: the {name} no longer "
                               f"says what it was proposed against")
@@ -2866,11 +3092,13 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
 
 @dataclass
 class Checked:
-    """A card entry's `checked_by`, taken out of the file: where it was,
-    the card's id, and the codes as written."""
+    """A card entry's `checked_by` or `verified`, taken out of the file:
+    where it was, the card's id, the value as written (the codes, or the
+    settled points) and which key it was."""
     where: str
     card: object
     codes: object
+    key: str = "checked_by"
 
 
 def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
@@ -2893,18 +3121,41 @@ def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
 
 
 def strip_checks(raw: object) -> list[Checked]:
-    """Takes every card entry's `checked_by` out of [raw], a deck file as
-    loaded, and returns them, as strip_proposals does proposals: it is a
-    record of review, allowed on any card entry, and checked on its own."""
-    return [Checked(where, card, entry.pop("checked_by"))
-            for where, card, entry in _card_entries(raw) if "checked_by" in entry]
+    """Takes every card entry's `checked_by` and `verified` out of [raw], a
+    deck file as loaded, and returns them, as strip_proposals does
+    proposals: they are records of review, allowed on any card entry (a
+    single file's, a core's, a layer's), and checked on their own."""
+    return [Checked(where, card, entry.pop(key), key)
+            for where, card, entry in _card_entries(raw)
+            for key in ("checked_by", "verified") if key in entry]
+
+
+# A settled data point of `verified` (#519), as the daily questions name it:
+# the meaning, one example by the 8 hex digits of its text's hash, one
+# confusable by its id, or the recording.
+VERIFIED_POINT = re.compile(
+    r"^(?:meaning|sound|example:[0-9a-f]{8}|confusable:[A-Za-z0-9_.-]{1,64})$")
 
 
 def check_checks(r: Report, found: list[Checked]) -> None:
     """Each `checked_by`: a non-empty list of rater codes, each written as
-    the app writes it, none twice."""
+    the app writes it, none twice; each `verified` (#519): a non-empty list
+    of settled data points, none twice."""
     for c in found:
-        where = f"{c.where}.checked_by"
+        where = f"{c.where}.{c.key}"
+        if c.key == "verified":
+            if not isinstance(c.codes, list) or not c.codes:
+                r.error(where, "must be a non-empty list of settled data "
+                               'points, ["meaning", "example:1a2b3c4d", '
+                               '"confusable:<id>", "sound"]')
+            elif any(not isinstance(p, str) or not VERIFIED_POINT.fullmatch(p)
+                     for p in c.codes):
+                r.error(where, "must list data points as the daily questions "
+                               "name them: meaning, sound, example:<8 hex "
+                               "digits> or confusable:<id>")
+            elif len(set(c.codes)) != len(c.codes):
+                r.error(where, "names a data point twice")
+            continue
         if not isinstance(c.codes, list) or not c.codes:
             r.error(where, "must be a non-empty list of rater codes, "
                            '["FL-XXXX-XXXX-C"]')
@@ -2936,9 +3187,9 @@ def check_checks_hashable(r: Report, path: Path) -> None:
                               "out of content_sha256")
         return
     for c in strip_checks(rest):
-        r.error(f"{c.where}.checked_by",
+        r.error(f"{c.where}.{c.key}",
                 "must be a line of its own, or last in a card written on one "
-                "line, ending `checked_by: [...] }`; anywhere else it cannot "
+                f"line, ending `{c.key}: [...] }}`; anywhere else it cannot "
                 "be left out of content_sha256, and a sign-off would offer "
                 "learners an update")
 
@@ -3021,7 +3272,7 @@ def _check_review_tags(r: Report, raw: dict) -> None:
 # --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
-    """[path] as the checks read it: its proposals and `checked_by` taken
+    """[path] as the checks read it: its proposals, `checked_by` and `verified` taken
     out (ADR-0038)."""
     try:
         raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
@@ -3128,6 +3379,8 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
         elif unknown in ("name", "description"):
             r.error(unknown, f"a core file's {unknown} is in each layer, in the "
                              f"learner's language")
+        elif unknown == "situations":
+            r.error("situations", "only valid on a situations file; add kind: situations")
         else:
             r.error("root", f"unknown field {unknown!r}")
     schema = raw.get("schema")
@@ -3789,6 +4042,8 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
     gives = _is_str(native)
     if "alt_native" in entry:
         _check_str_list(r, where, "alt_native", entry["alt_native"])
+    check_meaning_alternatives(r, where, cid, entry)
+    check_not_synonyms(r, where, entry)
     if "wiktionary" in entry:
         _check_wiktionary(r, where, "", entry["wiktionary"])
     if "dictionary" in entry:
@@ -5524,6 +5779,15 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{first.path}; list it here with ref: {cid}")
             else:
                 defs[cid] = d
+
+    sheets: dict[str, list[Report]] = {}
+    for rep in reports:
+        if rep.situations_lang is not None:
+            sheets.setdefault(rep.situations_lang, []).append(rep)
+    for code, files in sorted(sheets.items()):
+        if len(files) > 1:
+            problems.append(f"more than one situations file for {code}: "
+                            + ", ".join(str(rep.path) for rep in files))
 
     def find(rep: Report, cid: str) -> CardDef | None:
         found = defs.get(cid)
