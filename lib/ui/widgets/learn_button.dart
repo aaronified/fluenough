@@ -64,8 +64,11 @@ class LearnButton extends StatelessWidget {
             final scaler = MediaQuery.textScalerOf(context);
             double lineHeight(TextStyle style) =>
                 scaler.scale(style.fontSize ?? 14) * (style.height ?? 1.2);
-            // The label and the subtext line, at the text size drawn.
-            final iconSize = lineHeight(labelStyle) + lineHeight(subStyle);
+            // The label and the subtext line, at the text size drawn; the
+            // label alone where there is no subtext.
+            final iconSize =
+                lineHeight(labelStyle) +
+                (line == null ? 0 : lineHeight(subStyle));
             return Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

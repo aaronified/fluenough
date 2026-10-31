@@ -1111,8 +1111,14 @@ void main() {
           const DeckDetailPage(deckId: tiny),
           state: done,
         );
+        // The deck page has no subtext: its icon is as tall as the label.
         final relearnIcon = size(LearnButton.iconKey);
-        expect(relearnIcon, learnIcon);
+        expect(relearnIcon.height, relearnIcon.width);
+        expect(relearnIcon.height, lessThan(learnIcon.height));
+        expect(
+          relearnIcon.height,
+          greaterThanOrEqualTo(size(LearnButton.textKey).height - 1),
+        );
         expect(tester.takeException(), isNull);
         expectLabelFits(tester);
       },
@@ -1533,9 +1539,16 @@ void main() {
   group('a walkthrough view', () {
     test('of a sentence still waiting logs the usual row, and it counts as '
         'taught; seen again it writes nothing', () async {
-      final state = await teluguLearner();
+      // A fresh Bengali learner: the clothes sentences wait for their words.
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['bn'],
+        ),
+      );
+      addTearDown(state.dispose);
       await state.load();
-      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      final decks = unitOfDeck(state, 'bn-en-clothes-sentences')!.decks;
       final walk = state.walkCards(decks);
       final waiting = <Card>[
         for (final w in walk)
@@ -1580,7 +1593,8 @@ void main() {
         'with its deck, taught or not', () async {
       final state = await teluguLearner();
       await state.load();
-      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      // Addressing and Pronouns: a unit of two word decks.
+      final decks = unitOfDeck(state, 'te-en-addressing')!.decks;
       expect(decks.length, greaterThan(1));
       final walk = state.walkCards(decks);
       final ids = <String>[for (final w in walk) w.card.id];
@@ -1609,7 +1623,7 @@ void main() {
       usePhone(tester);
       final state = await teluguLearner();
       await state.load();
-      final decks = unitOfDeck(state, 'te-en-family')!.decks;
+      final decks = unitOfDeck(state, 'te-en-addressing')!.decks;
       final walk = state.walkCards(decks);
       await pumpScreen(
         tester,
