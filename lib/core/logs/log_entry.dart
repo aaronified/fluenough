@@ -130,6 +130,42 @@ List<LogEntry> capLog(
 String logText(Iterable<LogEntry> entries) =>
     <String>[for (final entry in entries) entry.line].join('\n');
 
+/// How much of the log the App log page shows, copies and exports (#713).
+enum LogRange {
+  /// Everything kept.
+  all,
+
+  /// The entries since the latest `App started`, the start of this run.
+  sinceStart,
+
+  /// The entries of the last ten minutes.
+  lastTenMinutes,
+}
+
+/// The entries of [entries] (oldest first) that [range] keeps, as of [now].
+/// With no `App started` entry, [LogRange.sinceStart] keeps everything.
+List<LogEntry> logInRange(
+  List<LogEntry> entries,
+  LogRange range,
+  DateTime now,
+) {
+  switch (range) {
+    case LogRange.all:
+      return entries;
+    case LogRange.sinceStart:
+      final start = entries.lastIndexWhere(
+        (e) => e.message.startsWith('App started'),
+      );
+      return start < 0 ? entries : entries.sublist(start);
+    case LogRange.lastTenMinutes:
+      final from = now.subtract(const Duration(minutes: 10));
+      return <LogEntry>[
+        for (final e in entries)
+          if (!e.time.isBefore(from)) e,
+      ];
+  }
+}
+
 /// [entries] read back from [text], as [logText] writes them, skipping any
 /// line that is not one.
 List<LogEntry> parseLog(String text) => <LogEntry>[

@@ -835,6 +835,47 @@ void main() {
     });
   });
 
+  group('the App log range (#713)', () {
+    testWidgets('Last 10 minutes and Since the app started keep what they '
+        'say, and Copy and Export follow the choice', (tester) async {
+      usePhone(tester);
+      var now = DateTime.now();
+      final log = AppLog(clock: () => now);
+      final files = _FakeLogFilesLogsSection();
+      await pumpScreen(
+        tester,
+        const AppLogPage(),
+        state: AppState.test(log: log, logFiles: files),
+      );
+      await log.clear();
+      now = now.subtract(const Duration(minutes: 30));
+      log.event('App started: 1.0.0');
+      log.event('Before the restart');
+      now = now.add(const Duration(minutes: 25));
+      log.event('App started: 1.0.0');
+      log.event('Speech error: hi-IN noMatch none');
+      await tester.pump(const Duration(seconds: 1));
+      await tester.pumpAndSettle();
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('Before the restart'), findsOneWidget);
+
+      await _tap(tester, l10n.appLogRangeSinceStart);
+      expect(find.textContaining('Before the restart'), findsNothing);
+      expect(find.textContaining('Speech error'), findsOneWidget);
+
+      await _tap(tester, l10n.appLogRangeLastTen);
+      expect(find.textContaining('Speech error'), findsOneWidget);
+      expect(find.textContaining('App started'), findsOneWidget);
+      await _tap(tester, l10n.appLogExport);
+      final saved = files.saved[appLogFileName]!.text;
+      expect(saved, contains('Speech error'));
+      expect(saved, isNot(contains('Before the restart')));
+
+      await _tap(tester, l10n.appLogRangeAll);
+      expect(find.textContaining('Before the restart'), findsOneWidget);
+    });
+  });
+
   group('sending a report', () {
     const withLog = Report(
       kind: ReportKind.support,
