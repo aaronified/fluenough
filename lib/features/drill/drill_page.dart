@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/daily_plan.dart' show DailyRun;
 import '../../app/routes.dart';
 import '../../app/session.dart';
+import '../../app/situations.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
@@ -121,6 +122,14 @@ class _DrillPageState extends State<DrillPage> {
       if (items.isEmpty) return;
       _session = DrillSession(state: state, items: items, recorded: false)
         ..addListener(_onSession);
+      return;
+    }
+    // A situation sheet: its new cards taught, the others revised (#724).
+    if (request.sheet) {
+      final items = state.sheetSession(request);
+      if (items.isEmpty) return;
+      _items = items;
+      _begin(state);
       return;
     }
     // The sounds of a word: its IPA cards, each taught, checked and
