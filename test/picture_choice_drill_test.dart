@@ -86,7 +86,6 @@ void main() {
   testWidgets('four pictures of the deck, and a screen reader is told only '
       '"Picture n of 4" until the answer is in', (tester) async {
     final semantics = tester.ensureSemantics();
-    addTearDown(semantics.dispose);
     usePhone(tester);
     await open(tester);
     final l10n = l10nOf(tester);
@@ -120,6 +119,8 @@ void main() {
     }
     expect(find.bySemanticsLabel(l10n.drillPictureOption(1, 4)), findsNothing);
     expect(find.text(l10n.feedbackCorrect), findsOneWidget);
+    // Disposed in the test body: the framework checks before teardowns run.
+    semantics.dispose();
   });
 
   testWidgets('a right pick is recorded as Recognition, and only that', (
@@ -162,13 +163,18 @@ void main() {
 
     expect(find.text(l10n.feedbackWrong), findsOneWidget);
     expect(find.byType(FeedbackBanner), findsOneWidget);
-    expect(progress.stateOf(card.id, DrillMode.recognition)!.lapses, 1);
+    // A miss on a card never answered right is recorded (repetitions stay
+    // 0) but is no lapse: a lapse is a miss after a right answer.
+    final missed = progress.stateOf(card.id, DrillMode.recognition)!;
+    expect(missed.repetitions, 0);
+    expect(missed.lapses, 0);
     // A second tap changes nothing.
     final right = session.options.indexWhere((c) => c.id == card.id);
     await tester.tap(find.byType(PictureTile).at(right));
     await tester.pumpAndSettle();
     expect(session.isRight(session.picked!), isFalse);
-    expect(progress.stateOf(card.id, DrillMode.recognition)!.lapses, 1);
+    // Had the second tap counted as a right answer, repetitions would be 1.
+    expect(progress.stateOf(card.id, DrillMode.recognition)!.repetitions, 0);
   });
 
   testWidgets('the heard form plays the word and does not write it until '
