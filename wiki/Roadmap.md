@@ -58,7 +58,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-22 approved open issues.
+19 approved open issues.
 
 **Enhancements**
 
@@ -78,9 +78,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#404](https://github.com/aaronified/fluenough/issues/404) Deck browser: the site generator, tools/deck_site.py
 - [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
-- [#421](https://github.com/aaronified/fluenough/issues/421) B1 plans: typed notes on every word card, one shown at a time
-- [#422](https://github.com/aaronified/fluenough/issues/422) B1 plans: a Wiktionary link on every word card that has an entry
-- [#423](https://github.com/aaronified/fluenough/issues/423) B1 plans: a minimal-pair button and practice panel on cards
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
