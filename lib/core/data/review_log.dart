@@ -147,14 +147,43 @@ class ReviewLog {
   Future<void> putStates(Map<ProgressKey, FsrsState> states) =>
       _db.transaction(() => _putStates(states));
 
+  /// Makes `card_states` equal [states] by writing only the rows that
+  /// differ: most launches change none, and rewriting every row each time
+  /// was a cost of opening the app (#857).
   Future<void> _putStates(Map<ProgressKey, FsrsState> states) async {
-    await _db.cardStatesDao.clear();
+    final stale = <ProgressKey>{};
+    final same = <ProgressKey>{};
+    for (final row in await _db.cardStatesDao.all()) {
+      final key = (cardId: row.cardId, mode: row.mode);
+      final want = states[key];
+      if (want != null && _sameRow(row, want)) {
+        same.add(key);
+      } else if (want == null) {
+        stale.add(key);
+      }
+    }
+    for (final key in stale) {
+      await (_db.delete(_db.cardStates)..where(
+            (s) => s.cardId.equals(key.cardId) & s.mode.equalsValue(key.mode),
+          ))
+          .go();
+    }
     await _db.batch((b) {
-      b.insertAll(_db.cardStates, <CardStatesCompanion>[
-        for (final MapEntry(:key, :value) in states.entries) value.toRow(key),
+      b.insertAllOnConflictUpdate(_db.cardStates, <CardStatesCompanion>[
+        for (final MapEntry(:key, :value) in states.entries)
+          if (!same.contains(key)) value.toRow(key),
       ]);
     });
   }
+
+  static bool _sameRow(CardStateRow row, FsrsState s) =>
+      row.stability == s.stability &&
+      row.difficulty == s.difficulty &&
+      row.intervalDays == s.intervalDays &&
+      row.repetitions == s.repetitions &&
+      row.dueAt == s.dueAt &&
+      row.lastReviewAt == s.lastReviewAt &&
+      row.lapses == s.lapses;
 
   /// Merges a backup (#20): appends the reviews and leech actions the log
   /// does not already hold, then rebuilds `card_states` from the whole log,

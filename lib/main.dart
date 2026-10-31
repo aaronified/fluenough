@@ -22,6 +22,7 @@ import 'app/ota_installer.dart';
 import 'app/plugin_reminder_scheduler.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/startup_marks.dart';
 import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/system_settings.dart';
@@ -51,6 +52,9 @@ Future<void> main() async {
   logErrors(log);
   await log.open();
   log.event('App started: ${AppInfo.version}');
+  final marks = StartupMarks(log);
+  // The profile database opens here; its review log is read after the first
+  // frame, which the catalog's loading waits for (#857).
   final storage = await openProfileStorage(Profile.defaultProfile);
   // A report's app log is written to shared/ in the cache, the folder
   // MainActivity's FileProvider lends to the mail app (ADR-0021).
@@ -67,64 +71,78 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
-  runApp(
-    FluenoughApp(
-      state: AppState(
-        catalog: DeckCatalog(
-          DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
-          added: FileDeckStore(Directory('${files.path}/decks')),
-          parser: parseInIsolate,
-          // The decks' YAML, kept as JSON between launches and read again
-          // only for a file whose SHA-256 changed (#875, ADR-0048).
-          snapshots: CatalogSnapshots(
-            store: FileSnapshotStore(
-              File('${files.path}/catalog-snapshot.json'),
-            ),
-            app: AppInfo.version,
-            knownShas: () async => <String, String>{
-              for (final e in (await downloaded.manifest()).entries)
-                e.key: e.value.sha256,
-            },
-            runner: runJobInIsolate,
-          ),
-        ),
-        deckDownloads: DeckDownloads(
-          fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
-          files: downloaded,
-          clock: DateTime.now,
-          log: log,
-        ),
-        progress: storage.progress,
-        synonymLoader: loadSynonymSets,
-        settings: storage.settings,
-        tts: SystemTtsEngine(),
-        clips: SystemClipPlayer(),
-        speech: SystemSpeechEngine(),
-        volume: SystemVolumeMonitor(),
-        soundCheck: SystemSoundCheck(),
-        networkProbe: SystemNetworkProbe(),
-        systemSettings: const ChannelSystemSettings(),
-        reminderScheduler: reminderScheduler,
-        reports: MailReportSender(
-          address: AppLinks.feedbackEmail,
-          links: const LauncherLinks(),
-          share: share,
-        ),
-        // Review files go the same way (docs/plans/deck-browser.md).
-        mailShare: share,
-        log: log,
-        releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
-        releaseNotes: GitHubReleaseNotes(
-          userAgent: 'fluenough/${AppInfo.version}',
-        ),
-        // Backups, kept in the app's own storage, which an update leaves
-        // alone (#470).
-        backupStore: FileBackupStore(Directory('${files.path}/backups')),
-        installer: OtaApkInstaller(directory: '${files.path}/ota_update'),
-        downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
+  final state = AppState(
+    catalog: DeckCatalog(
+      DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
+      added: FileDeckStore(Directory('${files.path}/decks')),
+      parser: parseInIsolate,
+      // The decks' YAML, kept as JSON between launches and read again
+      // only for a file whose SHA-256 changed (#875, ADR-0048).
+      snapshots: CatalogSnapshots(
+        store: FileSnapshotStore(File('${files.path}/catalog-snapshot.json')),
+        app: AppInfo.version,
+        knownShas: () async => <String, String>{
+          for (final e in (await downloaded.manifest()).entries)
+            e.key: e.value.sha256,
+        },
+        runner: runJobInIsolate,
       ),
     ),
-  ); // Junk (old update files, half-written downloads, stale report
+    deckDownloads: DeckDownloads(
+      fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
+      files: downloaded,
+      clock: DateTime.now,
+      log: log,
+    ),
+    progress: storage.progress,
+    synonymLoader: loadSynonymSets,
+    settings: storage.settings,
+    tts: SystemTtsEngine(),
+    clips: SystemClipPlayer(),
+    speech: SystemSpeechEngine(),
+    volume: SystemVolumeMonitor(),
+    soundCheck: SystemSoundCheck(),
+    networkProbe: SystemNetworkProbe(),
+    systemSettings: const ChannelSystemSettings(),
+    reminderScheduler: reminderScheduler,
+    reports: MailReportSender(
+      address: AppLinks.feedbackEmail,
+      links: const LauncherLinks(),
+      share: share,
+    ),
+    // Review files go the same way (docs/plans/deck-browser.md).
+    mailShare: share,
+    log: log,
+    releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
+    releaseNotes: GitHubReleaseNotes(userAgent: 'fluenough/${AppInfo.version}'),
+    // Backups, kept in the app's own storage, which an update leaves
+    // alone (#470).
+    backupStore: FileBackupStore(Directory('${files.path}/backups')),
+    installer: OtaApkInstaller(directory: '${files.path}/ota_update'),
+    downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
+  );
+  // Marks for measuring the start (#857): storage and the catalog are ready
+  // off the first frame, and the first frame that shows the decks is the
+  // one after the catalog's notification.
+  unawaited(
+    storage.progress.ready.then(
+      (_) => marks.mark('storage ready'),
+      onError: (_) {},
+    ),
+  );
+  void catalogReady() {
+    if (state.status == CatalogStatus.loading) return;
+    state.removeListener(catalogReady);
+    marks.mark('catalog ready');
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => marks.mark('first ready frame'),
+    );
+  }
+
+  state.addListener(catalogReady);
+  runApp(FluenoughApp(state: state));
+  marks.mark('runApp');
+  // Junk (old update files, half-written downloads, stale report
   // attachments) is cleaned once a day, a little after the first frame so
   // that it never delays the start (#493).
   final junk = JunkCleanup(

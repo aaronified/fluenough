@@ -30,6 +30,12 @@ abstract interface class ProgressStore implements Listenable {
   /// Whether this store outlives the app: false for [MemoryProgress].
   bool get persists;
 
+  /// Completes once the progress is read and can be relied on. A store that
+  /// reads its log in the background holds nothing until then, so whatever
+  /// shows or changes progress waits for this first (#857). Throws if it
+  /// could not be read.
+  Future<void> get ready;
+
   /// The state of one pair, or null if it has never been reviewed. A pair is
   /// a card and a mode, in whichever deck lists the card (ADR-0018).
   FsrsState? stateOf(String cardId, DrillMode mode);
@@ -237,6 +243,9 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   @override
   bool get persists => false;
+
+  @override
+  Future<void> get ready => Future<void>.value();
 
   @override
   SkillMap get skills => _skills;

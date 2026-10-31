@@ -10,7 +10,8 @@ import '../core/scheduling/skill_map.dart';
 import 'memory_progress.dart';
 
 /// A profile's progress, kept in its own database file (#3, #5) and read
-/// into memory when the app opens.
+/// into memory when the app opens ([open], or [opening] to read in the
+/// background).
 ///
 /// Screens read synchronously, so reads come from memory. The database is
 /// the record: opening rebuilds its state cache from the review log and
@@ -23,9 +24,37 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     _memory.addListener(notifyListeners);
   }
 
-  /// Progress over [db]. [close] closes the database.
+  /// Progress over [db], read from the review log: completes once it has
+  /// been. [close] closes the database.
   static Future<DatabaseProgress> open(AppDatabase db) async {
-    final log = ReviewLog(db);
+    final progress = DatabaseProgress.opening(db);
+    await progress.ready;
+    return progress;
+  }
+
+  /// Progress over [db] at once, read from the review log in the background
+  /// so that the first frame need not wait for it (#857). Until [ready]
+  /// completes it holds nothing: whatever reads it waits for [ready] first
+  /// (`AppState` does before it shows anything), and no write reaches the
+  /// database before the log has been read. [ready] throws if the log
+  /// could not be read.
+  factory DatabaseProgress.opening(AppDatabase db) {
+    final progress = DatabaseProgress._(db, ReviewLog(db), MemoryProgress());
+    final ready = progress._read();
+    progress._ready = ready;
+    // Every write is queued behind the read, whether it succeeds or not.
+    progress._writes = ready.then<void>((_) {}, onError: (_) {});
+    return progress;
+  }
+
+  /// Completes once the review log has been read into memory, and the state
+  /// cache rebuilt from it.
+  @override
+  Future<void> get ready => _ready;
+  late final Future<void> _ready;
+
+  Future<void> _read() async {
+    final log = _log;
     final fitted = await log.fitted();
     final reviews = await log.reviews();
     final parameters = SkillParameters(
@@ -45,13 +74,15 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       leechActions: await log.leechActions(),
       fitted: fitted,
     );
-    return DatabaseProgress._(db, log, memory);
+    _memory.removeListener(notifyListeners);
+    _memory = memory..addListener(notifyListeners);
+    notifyListeners();
   }
 
   final AppDatabase _db;
   final ReviewLog _log;
-  final MemoryProgress _memory;
-  Future<void> _writes = Future<void>.value();
+  MemoryProgress _memory;
+  late Future<void> _writes;
   Object? _writeError;
 
   @override
