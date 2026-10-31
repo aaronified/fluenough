@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Situations, simple</title>
+<meta name="description" content="Situations made simple: find a situation fast, then Play, Learn or Practise it. Minimal card with phrase, reading, meaning, play, IPA and a swipe position. Hindustani, Bengali and Telugu, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+
+/* ===== situations-simple additions ===== */
+.big{min-height:calc(56px*var(--t));border-radius:calc(28px*var(--t));font-size:calc(16px*var(--t))}
+.stack{display:flex;flex-direction:column;gap:12px;padding:8px 0}
+.srow{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:6px 4px 6px 12px;background:var(--sLow);border:0;border-radius:16px;text-align:left;margin:0 0 8px}
+.srow .tx{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.25;font-weight:500}
+.srow .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);font-weight:400}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sgrid .gt{position:relative;background:var(--sLow);border:0;border-radius:16px;padding:14px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:calc(14px*var(--t));font-weight:600;line-height:1.2}
+.gt .starb{position:absolute;top:0;right:0}
+.sbtn{width:48px;height:48px;border:0;background:none;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
+.sbtn.on{color:var(--p)}
+.field{display:flex;align-items:center;gap:8px;min-height:48px;border-radius:24px;background:var(--sHigh);padding:0 16px;margin:0 0 12px;color:var(--onSv);font-size:calc(14px*var(--t))}
+.cardbox{flex:1;min-height:0;overflow-y:auto;padding:8px 20px 16px;scrollbar-width:none;touch-action:pan-y}
+.cardbox::-webkit-scrollbar{display:none}
+.phrase{font-size:calc(30px*var(--t));line-height:1.3;font-weight:500;margin:12px 0 4px}
+.rdg2{font-size:calc(16px*var(--t));line-height:1.35;color:var(--onSv);margin:0 0 8px}
+.mean{font-size:calc(18px*var(--t));line-height:1.35;font-weight:600;margin:10px 0 12px}
+.ipaln{display:flex;align-items:center;gap:2px;color:var(--onSv);font-size:calc(14px*var(--t));margin:0}
+.dot{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;color:var(--onSv);border-radius:24px;flex:none}
+.pos{display:flex;align-items:center;justify-content:center;gap:5px;padding:4px 0 2px;flex:none}
+.pos i{width:7px;height:7px;border-radius:4px;background:var(--olv);display:block}
+.pos i.on{background:var(--p);width:18px}
+.postx{text-align:center;font-size:calc(12px*var(--t));color:var(--onSv);padding:0 0 8px;flex:none}
+.pop{background:var(--sHigh);border-radius:16px;padding:12px 14px;box-shadow:0 0 0 1px var(--olv);margin:0 0 8px;font-size:calc(14px*var(--t));line-height:1.35}
+.pop b{display:block;font-size:calc(12px*var(--t));letter-spacing:.3px;text-transform:uppercase;color:var(--onSv);margin-bottom:2px}
+.root{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 10px;border-top:1px solid var(--olv);padding:10px 0}
+.root .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
+.root .m{font-size:calc(14px*var(--t));grid-row:1/3;grid-column:2;align-self:center;text-align:right}
+.mini{flex:none;margin:0 8px 8px;background:var(--sHigh);border-radius:16px;display:flex;align-items:center;gap:4px;padding:4px 4px 4px 14px;box-shadow:0 0 0 1px var(--olv)}
+.mini .tx{flex:1;min-width:0;overflow:hidden}
+.mini .a{font-size:calc(16px*var(--t));font-weight:500;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini .b{font-size:calc(12px*var(--t));color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl48{width:56px;height:56px;border-radius:28px;border:0;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;flex:none}
+.ctl{display:flex;align-items:center;justify-content:center;gap:16px;padding:8px 16px 4px}
+.ctl .sbtn{width:56px;height:56px;border-radius:28px;color:var(--onS)}
+.lock{background:linear-gradient(160deg,var(--sHigh),var(--s));justify-content:flex-start;padding:48px 16px 16px;gap:12px}
+.lock .clk{font-size:56px;font-weight:300;text-align:center;line-height:1.1;margin-top:8px}
+.lock .dt{font-size:14px;text-align:center;color:var(--onSv);margin-bottom:12px}
+.notif{background:var(--sLow);border-radius:24px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:0 0 0 1px var(--olv)}
+.notif .ap{font-size:calc(11px*var(--t));color:var(--onSv);font-weight:600}
+.choice{display:flex;align-items:center;min-height:56px;width:100%;padding:8px 16px;border-radius:16px;border:1px solid var(--ol);background:none;font-size:calc(16px*var(--t));text-align:left;margin:0 0 8px}
+.prog{height:6px;border-radius:3px;background:var(--sHigh);overflow:hidden;margin:4px 0 12px}
+.prog i{display:block;height:100%;background:var(--p)}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Situations, simple</h1>
+<p class="cap1">Quick help in a moment, not a course (owner, 2026-10-31: "The situations decks are about quick help in those situations. Don't overload people with useless information that they do not absolutely need there. Just give them a way to learn / practice them and also easily access and select and play them."). Phone 360 dp at 1.4x text, forest theme, light and dark. Telugu is the real content (the rail station sheet, #938); Hindustani and Bengali show the same screens with illustrative phrases. Red dashed outlines mark what changes on a screen that exists today; the other screens are new.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ play:'M8 5v14l11-7z',
+ check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ more:'M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ car:'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z',
+ cart:'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z',
+ med:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z',
+ way:'M21.71 11.29l-9-9a.996.996 0 0 0-1.41 0l-9 9a.996.996 0 0 0 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 0 0 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z',
+ food:'M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ today:'M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ tag:'M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ drop:'M7 10l5 5 5-5z',
+ plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ minus:'M19 13H5v-2h14z',
+ spk:'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+ book:'M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',
+ abc:'M11 4h2v2h5v2h-2.1c-.5 2.3-1.6 4.1-3.1 5.4.9.6 1.9 1 3 1.3l-.7 1.9c-1.4-.4-2.6-1-3.7-1.8-1.1.8-2.4 1.4-3.8 1.8l-.7-1.9c1.2-.3 2.3-.8 3.2-1.4-1.1-1.1-1.9-2.4-2.3-3.9h2.1c.3 1 .8 1.8 1.5 2.5 1-1 1.7-2.3 2-3.9H5V6h6V4z'
+};
+Object.assign(IC,{
+ pause:'M6 19h4V5H6v14zm8-14v14h4V5h-4z',
+ prev:'M6 6h2v12H6zm3.5 6 8.5 6V6z',
+ next:'M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z',
+ star:'M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
+ starO:'M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z',
+ search:'M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+ repeat:'M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z',
+ train:'M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z',
+ traffic:'M20 10h-3V8.86c1.72-.45 3-2 3-3.86h-3V4c0-.55-.45-1-1-1H8c-.55 0-1 .45-1 1v1H4c0 1.86 1.28 3.41 3 3.86V10H4c0 1.86 1.28 3.41 3 3.86V15H4c0 1.86 1.28 3.41 3 3.86V20c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1.14c1.72-.45 3-2 3-3.86h-3v-1.14c1.72-.45 3-2 3-3.86zm-8 9c-1.11 0-2-.9-2-2s.89-2 2-2c1.1 0 2 .9 2 2s-.89 2-2 2zm0-5c-1.11 0-2-.9-2-2 0-1.11.89-2 2-2 1.1 0 2 .89 2 2 0 1.1-.89 2-2 2zm0-5c-1.11 0-2-.9-2-2 0-1.11.89-2 2-2 1.1 0 2 .89 2 2 0 1.1-.89 2-2 2z',
+ swipe:'M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z',
+ drill:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z',
+ sit:'M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'
+});
+const ic=(k,cls='')=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+
+/* ===== content ===== */
+const SITS=[['taxi','Taxi','car',20,45],['shops','Shopping','cart',12,26],['eat','Eating out','food',11,25],['doc','Doctor and pharmacy','med',9,22],['traffic','Traffic stop','traffic',7,16],['rail','Rail station','train',9,21]];
+const M=['I want a window seat.','Which train should I take?','Is there a reservation?','Is anyone in this seat?','Show the app ticket.'];
+const C={
+te:{lang:'te',name:'Telugu',native:'తెలుగు',cards:[
+ ['కిటికీ సీటు కావాలి.','kiṭikī sīṭu kāvāli.','kiʈikiː siːʈu kaːʋaːli',[['కిటికీ','kiṭikī','window'],['సీటు','sīṭu','seat']]],
+ ['ఏ రైలు ఎక్కాలి?','ē railu ekkāli?','eː railu ekkaːli',[['రైలు','railu','train'],['ఎక్కు','ekku','to board, to climb']]],
+ ['రిజర్వేషన్ ఉందా?','rijarvēṣan undā?','ridʒarʋeːʂan und̪aː',[['ఉండు','uṇḍu','to be, to exist']]],
+ ['ఈ సీటులో ఎవరైనా ఉన్నారా?','ī sīṭulō evarainā unnārā?','iː siːʈuloː eʋarainaː unnaːraː',[['సీటు','sīṭu','seat'],['ఎవరు','evaru','who']]],
+ ['యాప్ టికెట్ చూపించండి.','yāp ṭikeṭ cūpiñcaṇḍi.','jaːp ʈikeʈ tʃuːpiɲtʃaɳɖi',[['టికెట్','ṭikeṭ','ticket'],['చూపించు','cūpiñcu','to show']]]]},
+hi:{lang:'hi',name:'Hindustani',native:'हिन्दुस्तानी',cards:[
+ ['मुझे खिड़की वाली सीट चाहिए।','mujhe khiṛkī vālī sīṭ chāhie.','mʊdʒʰeː kʰɪɽkiː ʋaːliː siːʈ tʃaːhɪe',[['खिड़की','khiṛkī','window'],['चाहिए','chāhie','needed, wanted']]],
+ ['कौन सी ट्रेन लेनी है?','kaun sī ṭren lenī hai?','kɔːn siː ʈɾeːn leːniː hɛː',[['ट्रेन','ṭren','train'],['लेना','lenā','to take']]],
+ ['रिज़र्वेशन है क्या?','rizarveshan hai kyā?','rɪzəɾʋeːʃən hɛː kjaː',[['है','hai','is, there is'],['क्या','kyā','what (question word)']]],
+ ['क्या इस सीट पर कोई है?','kyā is sīṭ par koī hai?','kjaː ɪs siːʈ pər koiː hɛː',[['सीट','sīṭ','seat'],['कोई','koī','anyone']]],
+ ['ऐप वाला टिकट दिखाइए।','aip vālā ṭikaṭ dikhāie.','ɛːp ʋaːlaː ʈɪkəʈ dɪkʰaːɪe',[['टिकट','ṭikaṭ','ticket'],['दिखाना','dikhānā','to show']]]]},
+bn:{lang:'bn',name:'Bengali',native:'বাংলা',cards:[
+ ['আমি জানালার ধারের সিট চাই।','āmi jānālār dhārer siṭ cāi.','ami dʒanalar dʱarer ʃiʈ tʃai',[['জানালা','jānālā','window'],['চাওয়া','cāoyā','to want']]],
+ ['কোন ট্রেনে উঠব?','kon ṭrene uṭhab?','kon ʈrene uʈʰobo',[['ট্রেন','ṭren','train'],['ওঠা','oṭhā','to get on, to rise']]],
+ ['রিজার্ভেশন আছে?','rijārbheshan āche?','ridʒarbʰeʃon atʃʰe',[['আছে','āche','there is']]],
+ ['এই সিটে কেউ আছে?','ei siṭe keu āche?','ei ʃiʈe keu atʃʰe',[['সিট','siṭ','seat'],['কেউ','keu','anyone']]],
+ ['অ্যাপের টিকিট দেখান।','yāper ṭikiṭ dekhān.','æper ʈikiʈ dekʰan',[['টিকিট','ṭikiṭ','ticket'],['দেখানো','dekhāno','to show']]]]}
+};
+const NAMES=['Taxi','Shopping','Eating out','Doctor and pharmacy','Traffic stop','Rail station'];
+
+/* ===== state ===== */
+const S={theme:null,course:'te',hl:'1',
+ entry:'decks',style:'rows',order:'recent',search:'off',fav:'on',
+ scope:'phr',sub:'button',
+ gap:'2',loop:'off',spk:'off',
+ plen:'8',
+ ipa:false,idx:1,playing:true,
+ starSit:{rail:true},starCard:{1:true,4:true}};
+try{S.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){S.theme='light'}
+const root=document.getElementById('root');
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,t])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${t}</button>`).join('')}</span></div>`;
+const chg=(c,x,s='')=>`<div class="chg ${c||''}" ${s?`style="${s}"`:''}>${x}</div>`;
+const sc=(c,t)=>`<span class="script" lang="${c.lang}">${t}</span>`;
+const phone=(inner,cap,extra='')=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph" ${extra}>${inner}</div></div>`;
+const nav=on=>{const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`};
+const lbar=c=>`<div class="lbar"><span class="pill on">${sc(c,c.native)} ${c.name} ${ic('drop')}</span></div>`;
+const back=(t,extra='')=>`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">${t}</span>${extra}</div>`;
+const nPhr=()=>S.scope==='phr'?9:21;
+const star=(on,act,label)=>`<button class="sbtn ${on?'on':''}" data-act="${act}" aria-pressed="${on}" aria-label="${label}">${ic(on?'star':'starO')}</button>`;
+const sitOrder=()=>{const rec=['taxi','rail','eat','shops','doc','traffic'];let l=SITS.slice();if(S.order==='recent'){l.sort((a,b)=>{const sa=S.starSit[a[0]]?0:1,sb=S.starSit[b[0]]?0:1;return sa-sb||rec.indexOf(a[0])-rec.indexOf(b[0])})}return l};
+const favCount=()=>Object.values(S.starCard).filter(Boolean).length;
+
+/* ===== 1. Access ===== */
+function today(c){
+ const tiles=SITS.map(s=>`<div style="background:var(--sLow);border-radius:12px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;font-size:calc(12px*var(--t));font-weight:600;line-height:1.15"><span class="ic" style="width:36px;height:36px;border-radius:18px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center">${ic(s[2])}</span>${s[1].replace('Doctor and pharmacy','Doctor').replace('Eating out','Eat out').replace('Traffic stop','Traffic')}</div>`).join('');
+ return phone(`<div class="appbar"><span class="ttl">Today</span></div>${lbar(c)}<div class="scroll">
+ <div class="card" style="min-height:96px"><span class="t-h">Today's session</span></div>
+ <div style="display:flex;align-items:center;margin:2px 0 8px"><span class="t-h" style="flex:1;padding-left:4px">Situations</span>${chg('upd',`<button class="btn text" style="min-height:48px;padding:0 12px">All ${ic('chev')}</button>`)}</div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${tiles}</div></div>${nav('today')}`,'Today: the six buttons stay; one "All" opens the list');
+}
+function decksPage(c){
+ const row=S.entry==='decks'?chg('new',`<button class="srow" style="margin-bottom:12px"><span class="ic" style="flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center">${ic('sit')}</span><span class="tx">Situations<small>Quick help, 6 situations</small></span>${ic('chev')}</button>`):'';
+ return phone(`<div class="appbar"><span class="ttl">Decks</span><button class="ib" aria-label="Search">${ic('search')}</button></div>${lbar(c)}<div class="scroll">${row}
+ <div class="t-lab" style="margin-top:4px">Path</div>
+ <div class="wrow"><span class="w">Unit 1: First words</span><span class="mn">12 decks</span><span class="act">${ic('chev')}</span></div>
+ <div class="wrow"><span class="w">Unit 2: People</span><span class="mn">9 decks</span><span class="act">${ic('chev')}</span></div>
+ <div class="wrow"><span class="w">Unit 3: Getting around</span><span class="mn">8 decks</span><span class="act">${ic('chev')}</span></div></div>${nav('decks')}`,'Decks: an optional row (tweak "Entry")');
+}
+function list(c){
+ const l=sitOrder();
+ const cnt=s=>S.scope==='phr'?s[3]:s[4];
+ const favRow=S.fav==='on'&&favCount()?chg('new',`<button class="srow"><span class="ic" style="flex:none;width:40px;height:40px;border-radius:20px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center">${ic('star')}</span><span class="tx">My phrases<small>${favCount()+3} starred, from all situations</small></span><span class="sbtn" aria-hidden="true">${ic('play')}</span></button>`):'';
+ const body=S.style==='rows'?l.map(s=>`<div class="srow"><span class="ic" style="flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center">${ic(s[2])}</span><span class="tx">${s[1]}<small>${cnt(s)} phrases</small></span>${chg('new',star(!!S.starSit[s[0]],'ssit:'+s[0],'Pin '+s[1]))}</div>`).join('')
+  :`<div class="sgrid">${l.map(s=>`<div class="gt"><span class="ic" style="width:44px;height:44px;border-radius:22px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center">${ic(s[2])}</span>${s[1]}<span class="starb">${star(!!S.starSit[s[0]],'ssit:'+s[0],'Pin '+s[1])}</span></div>`).join('')}</div>`;
+ return phone(`${back('Situations')}${lbar(c)}<div class="scroll">${S.search==='on'?`<div class="field">${ic('search')}Search situations</div>`:''}${favRow}${body}</div>`,'Situations: name, one icon, a star; pinned and recent first');
+}
+
+/* ===== 2. A situation ===== */
+function situation(c,mini){
+ const n=nPhr(),fc=favCount();
+ const sub=S.sub==='button'&&fc?`<button class="btn out full big" style="margin-top:0">${ic('star')}Play starred (${fc})</button>`:'';
+ const miniBar=mini?playerMini(c):'';
+ return phone(`${back('Rail station',star(true,'ssit:rail','Pin Rail station'))}
+ <div class="scroll" style="display:flex;flex-direction:column;justify-content:center"><div class="stack">
+  <button class="btn fill full big" data-act="playtoggle">${ic('play')}Play all<span style="font-weight:400;font-size:calc(12px*var(--t))">&nbsp;${n} phrases</span></button>${sub}
+  <button class="btn tonal full big">${ic('swipe')}Learn</button>
+  <button class="btn tonal full big">${ic('drill')}Practise</button></div></div>${miniBar}`,mini?'The same page with the mini player':'A situation: three buttons');
+}
+
+/* ===== 3. Card ===== */
+function cardBody(c,i,opts){
+ const k=c.cards[i],on=!!S.starCard[i];
+ const roots=k[3].map(r=>`<div class="root"><span class="w">${sc(c,r[0])}</span><span class="rdg2" style="margin:0;font-size:calc(12px*var(--t))">${r[1]}</span><span class="m">${r[2]}</span></div>`).join('');
+ const pop=opts.pop?`<div class="pop"><b>IPA</b>How it sounds, in the International Phonetic Alphabet: <span style="font-weight:600">[ ${k[2]} ]</span></div>`:'';
+ const dots=Array.from({length:9},(_,j)=>`<i class="${j===i?'on':''}"></i>`).join('');
+ return `${back('Rail station',star(on,'scard:'+i,'Star this phrase'))}
+ <div class="cardbox" ${opts.id?`id="${opts.id}"`:''}>
+  <div class="phrase">${sc(c,k[0])}</div>
+  <p class="rdg2">${k[1]}</p>
+  <p class="mean">${M[i]}</p>
+  <div style="display:flex;align-items:center;gap:4px;margin:4px 0 8px"><button class="audio" aria-label="Play" data-act="ipaspeak">${ic('vol')}</button>
+   <p class="ipaln">/${k[2]}/<button class="dot" data-act="${opts.live?'ipa':'none'}" aria-label="About the IPA" aria-expanded="${!!opts.pop}">${ic('info')}</button></p></div>
+  ${pop}<div class="t-lab" style="margin-top:22px">Root words</div>${roots}
+  <div style="height:${opts.pad||0}px"></div>
+ </div>
+ <div class="pos" role="img" aria-label="Phrase ${i+1} of 9">${dots}</div><div class="postx">${i+1} of 9 &middot; swipe for the next</div>`;
+}
+const cardPhone=(c,cap,o)=>phone(cardBody(c,S.idx,o),cap);
+
+/* ===== 4. Play ===== */
+function playerMini(c){
+ const k=c.cards[S.idx];
+ return `<div class="mini" role="group" aria-label="Playing"><div class="tx"><div class="a">${sc(c,k[0])}</div><div class="b">Rail station &middot; ${S.idx+1} of 9</div></div>
+ <button class="sbtn" aria-label="Previous">${ic('prev')}</button><button class="sbtn" style="color:var(--onS)" data-act="playtoggle" aria-label="${S.playing?'Pause':'Play'}">${ic(S.playing?'pause':'play')}</button><button class="sbtn" aria-label="Next">${ic('next')}</button></div>`;
+}
+function player(c){
+ const k=c.cards[S.idx],on=!!S.starCard[S.idx];
+ const dots=Array.from({length:9},(_,j)=>`<i class="${j===S.idx?'on':''}"></i>`).join('');
+ return phone(`${back('Playing: Rail station',star(on,'scard:'+S.idx,'Star this phrase'))}
+ <div class="cardbox" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+  <div class="phrase" style="margin-top:0">${sc(c,k[0])}</div><p class="rdg2">${k[1]}</p><p class="mean">${M[S.idx]}</p>
+  <p class="t-sm">${S.playing?'Playing':'Paused'}${S.gap!=='0'?' &middot; '+S.gap+' s to say it':''}${S.loop==='on'?' &middot; repeating':''}</p></div>
+ <div class="pos">${dots}</div><div class="postx">${S.idx+1} of 9 &middot; swipe the phrase for next or previous</div>
+ <div class="ctl"><button class="sbtn" aria-label="Previous">${ic('prev')}</button><button class="pl48" data-act="playtoggle" aria-label="${S.playing?'Pause':'Play'}">${ic(S.playing?'pause':'play')}</button><button class="sbtn" aria-label="Next">${ic('next')}</button></div>
+ <div style="height:16px"></div>`,'Playing: full screen, hands-free');
+}
+function lockScreen(c){
+ const k=c.cards[S.idx];
+ return phone(`<div class="lock" style="flex:1;display:flex;flex-direction:column"><div class="clk">9:41</div><div class="dt">Saturday, 31 October</div>
+ <div class="notif"><div class="ap">Fluenough &middot; Rail station</div><div style="font-size:calc(18px*var(--t));font-weight:500;line-height:1.25">${sc(c,k[0])}</div><div class="t-sm">${k[1]}</div><div class="t-sm" style="color:var(--onS)">${M[S.idx]}</div>
+ <div style="display:flex;justify-content:center;gap:12px"><button class="sbtn" style="color:var(--onS)" aria-label="Previous">${ic('prev')}</button><button class="sbtn" style="color:var(--onS)" data-act="playtoggle" aria-label="${S.playing?'Pause':'Play'}">${ic(S.playing?'pause':'play')}</button><button class="sbtn" style="color:var(--onS)" aria-label="Next">${ic('next')}</button></div></div></div>`,'Screen off or in a pocket: lock screen controls');
+}
+
+/* ===== 5. Practise ===== */
+function practise(c){
+ const k=c.cards[1];
+ const opts=['Which train should I take?','Is there a reservation?','Where is the platform?','Show the app ticket.'];
+ return phone(`${back('Practise: Rail station')}<div class="scroll"><div class="t-sm" style="margin:4px 0 4px">1 of ${S.plen}</div><div class="prog"><i style="width:${100/Number(S.plen)}%"></i></div>
+ <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 0 16px"><div class="t-sm">Hear it, then pick what it means</div><button class="pl48" style="width:72px;height:72px;border-radius:36px" aria-label="Play">${ic('vol')}</button></div>
+ ${opts.map((o,i)=>`<button class="choice" ${i===0?'style="border-color:var(--p);background:var(--sc);color:var(--onSc)"':''}>${o}</button>`).join('')}</div>
+ <div class="bottom"><button class="btn fill full big">Check</button></div>`,'Practise: a short drill of the situation\'s own phrases');
+}
+
+/* ===== page ===== */
+function render(){
+ const c=C[S.course];
+ document.documentElement.setAttribute('data-theme',S.theme);
+ const P=PAL[S.theme];
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(P).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.innerHTML=`
+ <section class="opt" id="s1"><h2>1. Finding a situation</h2>
+  <p class="note">Six situations today, so the list is short. Today keeps its six buttons and gains one "All" button; Decks may carry one row. The list is a name and one icon, with a star to pin; pinned first, then the last used.</p>
+  <div class="tw">${seg('entry',[['decks','Today and a Decks row'],['today','Today only']],'Entry')}${seg('style',[['rows','Rows'],['grid','Grid']],'List')}${seg('order',[['recent','Pinned, then recent'],['fixed','Fixed order']],'Order')}${seg('search',[['off','No search'],['on','Search field']],'Search')}</div>
+  <div class="frames">${today(c)}${decksPage(c)}${list(c)}</div></section>
+ <section class="opt" id="s2"><h2>2. A situation: Play, Learn, Practise</h2>
+  <p class="note">Three buttons and nothing else. Play is hands-free; Learn is the swipe cards; Practise is a short drill. The star pins the situation. Press Play all to see the mini player.</p>
+  <div class="tw">${seg('scope',[['phr','Phrases only'],['both','Phrases and words']],'Includes')}${seg('sub',[['button','Play starred button when something is starred'],['none','No subset button']],'Subset')}${seg('fav',[['on','"My phrases" row in the list'],['off','No such row']],'Starred phrases')}</div>
+  <div class="frames">${situation(c,false)}${situation(c,true)}</div></section>
+ <section class="opt" id="s3"><h2>3. The card</h2>
+  <p class="note">Phrase, reading, meaning, play, IPA with its info dot and the swipe position. Scrolling down shows the root words. The star keeps the phrase for quick access. The IPA dot opens a short note.</p>
+  <div class="frames">${cardPhone(c,'The card',{live:true,pop:S.ipa,pad:0})}${cardPhone(c,'Scrolled down: root words',{id:'sc2',pad:420})}${cardPhone(c,'The IPA dot open',{pop:true,pad:0})}</div></section>
+ <section class="opt" id="s4"><h2>4. Playing hands-free</h2>
+  <p class="note">Play reads each phrase in order, with a pause to say it back. Swipe the phrase or use the buttons to move. A mini player stays over other pages; the lock screen and the notification carry the same three buttons, which needs a media service on Android (see the doubts).</p>
+  <div class="tw">${seg('gap',[['0','No pause'],['2','2 s pause'],['4','4 s pause']],'Pause between phrases')}${seg('loop',[['off','Plays once'],['on','Repeats']],'End of the list')}${seg('playing',[['true','Playing'],['false','Paused']],'State')}</div>
+  <div class="frames">${player(c)}${lockScreen(c)}</div></section>
+ <section class="opt" id="s5"><h2>5. Practise</h2>
+  <p class="note">The existing "hear and choose" drill, on the situation's phrases only.</p>
+  <div class="tw">${seg('plen',[['5','5 questions'],['8','8 questions'],['10','10 questions']],'Length')}</div>
+  <div class="frames">${practise(c)}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ const s2=document.getElementById('sc2');if(s2)s2.scrollTop=s2.scrollHeight;
+ document.title='Situations, simple';
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){let v=b.dataset.v;if(v==='true')v=true;if(v==='false')v=false;S[b.parentNode.dataset.sk]=v;render();return}
+ const a=e.target.closest('[data-act]');if(!a)return;
+ const [act,arg]=a.dataset.act.split(':');
+ if(act==='ssit'){S.starSit[arg]=!S.starSit[arg]}
+ else if(act==='scard'){S.starCard[arg]=!S.starCard[arg]}
+ else if(act==='playtoggle'){S.playing=!S.playing}
+ else if(act==='ipa'){S.ipa=!S.ipa}
+ else return;
+ render();
+});
+render();
+
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['captions on cards','onSv','sLow',4.5],['text on cards','onS','sLow',4.5],['text on raised blocks (popover, mini player)','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['tonal button, audio, icon discs','onSc','sc',4.5],['filled button, play, pinned star disc','onP','p',4.5],['star pinned and text button on cards','p','sLow',4.5],['star pinned on page','p','s',3],['icon on raised block','p','sHigh',3],['outline against page','ol','s',3],['outline against card','ol','sLow',3],['unpinned star on cards','onSv','sLow',3],['unpinned star on page','onSv','s',3],['selected answer text','onSc','sc',4.5],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['active position dot against page','p','s',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>
