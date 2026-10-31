@@ -933,7 +933,7 @@ bool pairWraps(
       fontWeight: family == null ? FontWeight.w600 : FontWeight.normal,
       fontVariations: family == null
           ? null
-          : <FontVariation>[FontVariation.weight(600)],
+          : <FontVariation>[const FontVariation.weight(600)],
       height: shown.language.rightToLeft
           ? TargetSizes.rtlHeight
           : TargetSizes.ltrHeight,

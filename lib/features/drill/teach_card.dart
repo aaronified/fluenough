@@ -290,7 +290,7 @@ class TeachCard extends StatelessWidget {
                   language: language,
                   titled: false,
                   maxLines: 2,
-                  action: soundBlock && compare != null
+                  action: soundBlock
                       ? PairCompareButton(
                           card: card,
                           partner: compare.partner,
