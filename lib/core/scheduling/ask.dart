@@ -55,7 +55,15 @@ enum Ask {
   /// Shown a rule card: the rule's name, its explanation and its forms on
   /// words the learner knows, before the first question about a cell of the
   /// rule (#417). Its item's card is the first cell asked. Records nothing.
-  teachRule;
+  teachRule,
+
+  /// Shown the word, choose its picture from four, the other three from the
+  /// same deck (#91). Recognition, a form of it: no schedule of its own.
+  choosePicture,
+
+  /// Hear the word, choose its picture from four (#91). Recognition, as
+  /// [choosePicture] is: what is heard is a way of showing the word.
+  hearPicture;
 
   /// Whether it only shows something and records nothing: a word taught, a
   /// set shown or a rule card.
@@ -68,7 +76,12 @@ enum Ask {
       this == hearAndChoose ||
       this == hearMeaning ||
       this == chooseFormMeaning ||
-      this == chooseForm;
+      this == chooseForm ||
+      choosesPicture;
+
+  /// Whether the options are pictures of the word ([picture_choice.dart]):
+  /// the word is shown or heard, and its picture is chosen.
+  bool get choosesPicture => this == choosePicture || this == hearPicture;
 
   /// Whether the options are meanings rather than words.
   bool get choosesMeaning =>
@@ -79,9 +92,13 @@ enum Ask {
   bool get choosesAmongForms => this == chooseFormMeaning || this == chooseForm;
 
   /// What [card] shows as an option of this kind of question: its meaning
-  /// for [chooseMeaning], [hearMeaning] and [chooseFormMeaning], else its
-  /// target.
-  String optionOf(Card card) => choosesMeaning ? card.native : card.target;
+  /// for [chooseMeaning], [hearMeaning] and [chooseFormMeaning], its picture
+  /// for [choosePicture] and [hearPicture], else its target.
+  String optionOf(Card card) => choosesPicture
+      ? card.picture ?? ''
+      : choosesMeaning
+      ? card.native
+      : card.target;
 
   /// The grade a right answer to this kind of question records in [mode]
   /// (ADR-0034, DECK-FORMAT.md, Rules decks): Good (4) for a meaning seen and
@@ -170,6 +187,12 @@ const int matchSize = 4;
 ///   choice. Four whose meanings or targets are not all different cannot be
 ///   matched, and are chosen. Where [canChoose] finds too little to choose
 ///   from, it stays rated.
+/// - A card of Recognition that has a picture is, on every other review
+///   after its lesson, asked as a picture choice instead of a meaning choice:
+///   the word shown ([Ask.choosePicture]) or heard, where [canHear] says it
+///   can be ([Ask.hearPicture]), and its picture chosen among four of the
+///   deck's ([pictureTurn]). Never where the deck has fewer than four
+///   pictures to offer.
 /// - **Production** of a card that [Card.rearranges] is rearranged.
 /// - **Listening** is Hear (ADR-0034): its meaning is chosen while the pair
 ///   is new or was last missed, and typed once it was last remembered. A
@@ -198,6 +221,7 @@ List<SessionItem> reviewAsks(
   bool Function(SessionItem item)? recallsFirst,
   bool Function(SessionItem item)? typed,
   List<Card> Function(Card card)? siblingsOf,
+  bool Function(SessionItem item)? canHear,
 }) {
   final context = QuestionContext(
     canChoose: canChoose,
@@ -205,6 +229,7 @@ List<SessionItem> reviewAsks(
     recallsFirst: recallsFirst,
     typed: typed,
     siblingsOf: siblingsOf,
+    canHear: canHear,
   );
   final recognised = <int>[
     for (final (i, item) in items.indexed)
@@ -226,7 +251,10 @@ List<SessionItem> reviewAsks(
       }
     } else {
       for (final i in chunk) {
-        asked[i] = items[i].askedAs(Ask.chooseMeaning);
+        // A picture choice is a form of Recognition (#91): a card with a
+        // picture, reviewed before, takes its turn at one.
+        final picture = questionTypeFor(items[i], context);
+        asked[i] = items[i].askedAs(picture?.ask ?? Ask.chooseMeaning);
       }
     }
   }

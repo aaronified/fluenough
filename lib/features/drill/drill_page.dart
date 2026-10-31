@@ -25,6 +25,7 @@ import 'grammar_drill.dart';
 import 'match_drill.dart';
 import 'rearrange_drill.dart';
 import 'reading_drill.dart';
+import 'picture_choice_drill.dart';
 import 'recognition_drill.dart';
 import 'set_drill.dart';
 import 'sounds_of_word.dart';
@@ -366,6 +367,11 @@ class _DrillPageState extends State<DrillPage> {
           session: session,
           onClose: _close,
         ),
+      _ when session.ask.choosesPicture => PictureChoiceDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
       _ when session.ask.chooses => ChoiceDrill(
         key: ValueKey<int>(session.position),
         session: session,

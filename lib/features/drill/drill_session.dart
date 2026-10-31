@@ -21,6 +21,7 @@ import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
 import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/distractors.dart';
+import '../../core/scheduling/picture_choice.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
@@ -1066,6 +1067,14 @@ class DrillSession extends ChangeNotifier {
 
   List<Card> _pickOptions() {
     final card = item.card;
+    // A picture choice: four pictures of the deck's own, never two alike
+    // (#91). Where the deck cannot offer them the question was not asked as
+    // one, so the card itself is all there is.
+    if (ask.choosesPicture) {
+      final deckCards = _state.deckOf(card)?.cards ?? const <Card>[];
+      return pictureOptions(card, deckCards, seed: _random.nextInt(1 << 30)) ??
+          <Card>[card];
+    }
     // The pool by what its cards share with this one (rankDistractors),
     // shuffled within each rank, so that the likelier mistakes come first.
     final pool = <Card>[
@@ -1300,6 +1309,7 @@ class DrillSession extends ChangeNotifier {
         mode == DrillMode.reading ||
         entry.card is QuestionCard ||
         ask == Ask.hearMeaning ||
+        ask == Ask.hearPicture ||
         (identical(entry, item) && (hearsMeaning || typesDigits))) {
       return null;
     }

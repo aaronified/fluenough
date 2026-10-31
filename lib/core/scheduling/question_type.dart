@@ -1,6 +1,7 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
+import 'picture_choice.dart';
 import 'session_queue.dart';
 
 /// What the app knows about an item that the registry cannot read from its
@@ -13,6 +14,7 @@ class QuestionContext {
     this.recallsFirst,
     this.typed,
     this.siblingsOf,
+    this.canHear,
   });
 
   /// Whether the item, asked as it now is, has enough to choose from.
@@ -30,6 +32,11 @@ class QuestionContext {
   /// The other forms of a card's word named by its `bases`: the cards that
   /// are its siblings ([formSiblings]). Null where none are known.
   final List<Card> Function(Card card)? siblingsOf;
+
+  /// Whether the word can be played now: the phone has a voice for its
+  /// language and sound is on. Null where it cannot, so a picture choice is
+  /// then only ever shown the word.
+  final bool Function(SessionItem item)? canHear;
 }
 
 /// One way of asking (ADR-0039): the [ask] it produces, the skill it asks
@@ -68,6 +75,42 @@ final QuestionType chooseMeaningType = QuestionType(
   skill: DrillMode.recognition,
   eligible: (item, context) =>
       item.card is! QuestionCard && context.canChoose(item),
+);
+
+/// How an item of Recognition is asked as a picture choice, or null (#91,
+/// [pictureTurn]). Only a pair already reviewed, whose card has a picture
+/// that means exactly the word and whose deck has three more to offer
+/// ([QuestionContext.canChoose], which looks among the deck's own cards).
+({bool hear})? _pictureTurn(SessionItem item, QuestionContext context) {
+  if (item.mode != DrillMode.recognition ||
+      choosablePicture(item.card) == null) {
+    return null;
+  }
+  final hears = context.canHear?.call(item) ?? false;
+  final turn = pictureTurn(
+    item.card,
+    item.state?.repetitions ?? 0,
+    // What is heard as the form itself is not a word to match to a picture.
+    canHear: hears && !(context.hearsForm?.call(item) ?? false),
+  );
+  if (turn == null) return null;
+  final ask = turn.hear ? Ask.hearPicture : Ask.choosePicture;
+  return context.canChoose(item.askedAs(ask)) ? turn : null;
+}
+
+/// Shown the word, choose its picture among four of the deck's. Recognition.
+final QuestionType choosePictureType = QuestionType(
+  ask: Ask.choosePicture,
+  skill: DrillMode.recognition,
+  eligible: (item, context) => _pictureTurn(item, context)?.hear == false,
+);
+
+/// Hear the word, choose its picture. Recognition, where the phone can say
+/// the word.
+final QuestionType hearPictureType = QuestionType(
+  ask: Ask.hearPicture,
+  skill: DrillMode.recognition,
+  eligible: (item, context) => _pictureTurn(item, context)?.hear == true,
 );
 
 /// Match the targets of [matchSize] items with their meanings. Recognition.
@@ -144,6 +187,10 @@ final QuestionType chooseFormType = QuestionType(
 /// chooses how an item is asked. Reading questions are never returned: they
 /// are exam items, not review (ADR-0039).
 final List<QuestionType> questionTypes = <QuestionType>[
+  // The picture choices first: of the Recognition types that ask one item,
+  // they take it only on their turn, and chooseMeaningType is the rest.
+  choosePictureType,
+  hearPictureType,
   chooseMeaningType,
   matchPairsType,
   rearrangeType,
