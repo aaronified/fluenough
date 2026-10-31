@@ -1534,6 +1534,7 @@ void main() {
     test('of a sentence still waiting logs the usual row, and it counts as '
         'taught; seen again it writes nothing', () async {
       final state = await teluguLearner();
+      await state.load();
       final decks = unitOfDeck(state, 'te-en-family')!.decks;
       final walk = state.walkCards(decks);
       final waiting = <Card>[
@@ -1578,6 +1579,7 @@ void main() {
     test('a walk covers every deck of the unit in deck order, each card once '
         'with its deck, taught or not', () async {
       final state = await teluguLearner();
+      await state.load();
       final decks = unitOfDeck(state, 'te-en-family')!.decks;
       expect(decks.length, greaterThan(1));
       final walk = state.walkCards(decks);
@@ -1606,6 +1608,7 @@ void main() {
         'crosses into the next deck', (tester) async {
       usePhone(tester);
       final state = await teluguLearner();
+      await state.load();
       final decks = unitOfDeck(state, 'te-en-family')!.decks;
       final walk = state.walkCards(decks);
       await pumpScreen(

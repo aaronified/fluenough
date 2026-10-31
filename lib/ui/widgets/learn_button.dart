@@ -44,6 +44,9 @@ class LearnButton extends StatelessWidget {
       child: FilledButton(
         style: FilledButton.styleFrom(
           minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+          // Tighter than the default 24, so the label keeps its room beside
+          // the tall icon in the narrower slot of a deck page at 1.4x.
+          padding: const EdgeInsets.symmetric(horizontal: 14),
         ),
         onPressed: onPressed,
         child: Builder(
@@ -72,7 +75,7 @@ class LearnButton extends StatelessWidget {
                   key: iconKey,
                   size: iconSize,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 6),
                 Flexible(
                   child: Column(
                     key: textKey,
