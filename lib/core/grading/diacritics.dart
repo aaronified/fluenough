@@ -22,9 +22,9 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 /// Diacritic folding for Latin and Cyrillic-adjacent scripts, for the
 /// letters ISO 15919 adds, which the Indic readings use (ADR-0025), for
 /// pinyin's caron vowels, and for the transliteration letters of Egyptian
-/// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts,
-/// and the raised letters of Sumerian determinatives, ᵈ ᵏⁱ ᵍⁱˢ, which are
-/// typed as the plain letter, `{d}nanna` as `dnanna`).
+/// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts).
+/// The raised letters of Sumerian determinatives (ᵈ ᵏⁱ) are not here:
+/// [RomanisedSpelling] reads them as optional.
 /// The apostrophe-like letters ʾ ʿ ʼ ʻ are not here: [RomanisedSpelling.key]
 /// drops everything but letters and digits, so they cost nothing to leave off.
 ///
@@ -36,21 +36,21 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 final Map<String, String> _diacriticFolding = _buildFolding({
   'a': 'áàâäãåāăąǎǻꜥ',
   'c': 'çćĉċč',
-  'd': 'ďđḍᵈ',
-  'e': 'éèêëēĕėęěḗẽᵉ',
-  'g': 'ĝğġģǵᵍ',
+  'd': 'ďđḍ',
+  'e': 'éèêëēĕėęěḗẽ',
+  'g': 'ĝğġģǵ',
   'h': 'ĥħḥʰ',
-  'i': 'íìîïĩīĭįıǐⁱ',
+  'i': 'íìîïĩīĭįıǐ',
   'j': 'ĵ',
-  'k': 'ķḵḱᵏ',
+  'k': 'ķḵḱ',
   'l': 'ĺļľłŀḷḻḹ',
-  'm': 'ṁṃḿᵐ',
-  'n': 'ñńņňŉṇṅṉⁿ',
+  'm': 'ṁṃḿ',
+  'n': 'ñńņňŉṇṅṉ',
   'o': 'óòôöõōŏőøǒṓ',
-  'r': 'ŕŗřṛṟṝʳ',
-  's': 'śŝşšṣˢ',
-  't': 'ţťŧṭᵗ',
-  'u': 'úùûüũūŭůűųǔǖǘǚǜᵘ',
+  'r': 'ŕŗřṛṟṝ',
+  's': 'śŝşšṣ',
+  't': 'ţťŧṭ',
+  'u': 'úùûüũūŭůűųǔǖǘǚǜ',
   'w': 'ŵʷ',
   'y': 'ýÿŷẏ',
   'z': 'źżž',

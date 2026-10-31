@@ -526,20 +526,26 @@ void main() {
       });
     }
 
-    test('Sumerian determinatives are kept, typed as the plain letter', () {
+    test('Sumerian determinatives are optional, and right when typed', () {
+      for (final typed in ['nanna', 'ᵈnanna', 'dnanna', '{d}nanna']) {
+        expect(
+          plain.grade(typed, <String>['ᵈnanna']).outcome,
+          AnswerOutcome.exact,
+          reason: typed,
+        );
+      }
       expect(
-        plain.grade('dnanna', <String>['ᵈnanna']).outcome,
+        plain.grade('uri', <String>['uriᵏⁱ']).outcome,
         AnswerOutcome.exact,
-      );
-      expect(
-        plain.grade('nanna', <String>['ᵈnanna']).outcome,
-        AnswerOutcome.closeTypo,
       );
       expect(
         plain.grade('uriki', <String>['uriᵏⁱ']).outcome,
         AnswerOutcome.exact,
       );
-      expect(plain.key('ᵍⁱˢ'), 'gis');
+      expect(
+        plain.grade('dnana', <String>['ᵈnanna']).outcome,
+        AnswerOutcome.closeTypo,
+      );
     });
 
     test('Mycenaean transliteration is typed with or without its hyphens '

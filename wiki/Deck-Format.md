@@ -3224,7 +3224,8 @@ Transliteration letters outside the Indic standard are folded to a typed
 spelling that keeps them apart (#616): Egyptian ꜣ is `3`, ꜥ `a`, ḫ `kh`,
 ẖ `ch`, ṯ `th`, ḏ `dh` and ḳ `q`; sign indices and laryngeal subscripts are
 digits (`du₃` as `du3`, `h₂` as `h2`); the raised letters of Sumerian
-determinatives are the plain letter (`ᵈnanna` as `dnanna`, `ᵏⁱ` as `ki`).
+determinatives are optional, so `nanna`, `ᵈnanna`, `dnanna` and
+`{d}nanna` are all right for `ᵈnanna`.
 The fold turns ḥ into `h`, as the Indic readings need, so a language where ḥ
 is a letter of its own, such as Egyptian, gives it a `typed` pair in its
 romanisation file (`["ḥ", "hh"]`). Mycenaean hyphens and `₂` `₃` indices
