@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Where I am is an icon.** On Decks, Where I am is now a small icon button on the right of the path, named by its tooltip and read aloud as "Where I am", and the Add deck button is gone from Decks: adding a deck from a file stays in Settings, under Your decks (#475).
 - **App log range.** The App log has three choices above its lines: Last 10 minutes, Since the app started (everything after the latest start) and All, as before. Copy and Export take only the chosen lines, so a bug report carries just those (#713). A Since the profile was opened choice follows with profiles (#204).
 - **Deck search opens the course.** Tapping Add the course in a deck search now opens Add a language with the course's name already in its search, instead of the plain Languages list (#918).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.

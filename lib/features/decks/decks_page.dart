@@ -30,7 +30,7 @@ import 'unit_search.dart';
 
 /// The Decks tab: under the language bar (#528), the course of the
 /// language it shows, its path (the owner's design) opening where the
-/// learner is; the search above the path; "Where I am" and Add deck.
+/// learner is; the search above the path; and "Where I am".
 ///
 /// Only the languages the learner learns show (owner, 2026-10-16: "No,
 /// only my languages"). A unit on the path opens its screen; a deck the
@@ -54,10 +54,10 @@ class DecksPage extends StatefulWidget {
   State<DecksPage> createState() => _DecksPageState();
 }
 
-/// The room the path leaves at its end, so that the floating buttons hide
-/// no card when it is scrolled to the bottom: their margin, their height
-/// and a gap (#466).
-const double fabClearance = kFloatingActionButtonMargin + 56 + 40;
+/// The room the path leaves at its end, so that the floating button hides
+/// no card when it is scrolled to the bottom: its margin, its height
+/// and a gap (#466, #475).
+const double fabClearance = kFloatingActionButtonMargin + 40 + 40;
 
 class _DecksPageState extends State<DecksPage> {
   late final TextEditingController _search = TextEditingController(
@@ -440,49 +440,10 @@ class _DecksPageState extends State<DecksPage> {
         if (!didPop) _close();
       },
       child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: open
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: open || !ready
             ? null
-            : Padding(
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final where = ready;
-                    // Both with their labels if they fit across, else icons alone.
-                    final compact =
-                        _Fab.extendedWidth(context, l10n.decksAdd) +
-                            (where
-                                ? _Fab.extendedWidth(
-                                        context,
-                                        l10n.decksWhereIAm,
-                                      ) +
-                                      16
-                                : 0) >
-                        constraints.maxWidth;
-                    return Row(
-                      children: <Widget>[
-                        if (where)
-                          _Fab(
-                            heroTag: 'where-i-am',
-                            icon: Icons.my_location,
-                            label: l10n.decksWhereIAm,
-                            compact: compact,
-                            distinct: true,
-                            onPressed: _toUpNext,
-                          ),
-                        const Spacer(),
-                        _Fab(
-                          heroTag: 'add-deck',
-                          icon: Icons.add,
-                          label: l10n.decksAdd,
-                          compact: compact,
-                          onPressed: () => AppNavigator.openImport(context),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ),
+            : _WhereIAmButton(label: l10n.decksWhereIAm, onPressed: _toUpNext),
         body: SafeArea(
           bottom: false,
           child: LanguageBarFrame(
@@ -766,69 +727,28 @@ class _BrokenFiles extends StatelessWidget {
   }
 }
 
-/// A floating button: with its label, or where two with their labels do
-/// not fit across the screen, such as at a large text size, its icon alone,
-/// named by its tooltip.
-class _Fab extends StatelessWidget {
-  const _Fab({
-    required this.heroTag,
-    required this.icon,
-    required this.label,
-    required this.onPressed,
-    this.compact = false,
-    this.distinct = false,
-  });
+/// "Where I am" (#475): an icon-only small floating button on the right of
+/// the path, named by its tooltip and screen-reader label, its tap target
+/// 48 dp. In `tertiary`, a role no card on the path uses (#466), so that it
+/// reads as a control and not as one of the units under it, in light, dark
+/// and pure black alike.
+class _WhereIAmButton extends StatelessWidget {
+  const _WhereIAmButton({required this.label, required this.onPressed});
 
-  final Object heroTag;
-  final IconData icon;
   final String label;
   final VoidCallback onPressed;
-  final bool compact;
-
-  /// In `tertiary`, a role no card on the path uses (#466), so that "Where
-  /// I am" reads as a control and not as one of the units under it, in
-  /// light, dark and pure black alike.
-  final bool distinct;
-
-  /// About how wide the button is with its [label]: M3's 16 before the
-  /// icon, the icon, 8 between, the label and 20 after it.
-  static double extendedWidth(BuildContext context, String label) {
-    final painter = TextPainter(
-      text: TextSpan(
-        text: label,
-        style: Theme.of(context).textTheme.labelLarge,
-      ),
-      textDirection: Directionality.of(context),
-      textScaler: MediaQuery.textScalerOf(context),
-      maxLines: 1,
-    )..layout();
-    final width = painter.width;
-    painter.dispose();
-    return 16 + 24 + 8 + width + 20;
-  }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final bg = distinct ? scheme.tertiary : null;
-    final fg = distinct ? scheme.onTertiary : null;
-    if (compact) {
-      return FloatingActionButton(
-        heroTag: heroTag,
-        tooltip: label,
-        backgroundColor: bg,
-        foregroundColor: fg,
-        onPressed: onPressed,
-        child: Icon(icon),
-      );
-    }
-    return FloatingActionButton.extended(
-      heroTag: heroTag,
-      backgroundColor: bg,
-      foregroundColor: fg,
+    return FloatingActionButton.small(
+      heroTag: 'where-i-am',
+      tooltip: label,
+      backgroundColor: scheme.tertiary,
+      foregroundColor: scheme.onTertiary,
+      materialTapTargetSize: MaterialTapTargetSize.padded,
       onPressed: onPressed,
-      icon: Icon(icon),
-      label: Text(label),
+      child: const Icon(Icons.my_location),
     );
   }
 }
