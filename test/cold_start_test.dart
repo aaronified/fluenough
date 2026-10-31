@@ -197,9 +197,15 @@ void main() {
       expect(_held(isolate), _held(direct));
       expect(isolate.scriptLog.length, direct.scriptLog.length);
 
-      // The state cache is what the replay gave.
-      expect(cached.length, isolate.states.length);
-      for (final MapEntry(:key, :value) in isolate.states.entries) {
+      // The state cache is each pair's own reviews alone, what a replay in
+      // place gives for it; memory's states also count what answers imply
+      // for other skills, so they are not the cache.
+      final wanted = (await ReviewLog(db).openReplay(
+        fitted: await ReviewLog(db).fitted(),
+        run: replayInPlace,
+      )).cacheStates;
+      expect(cached.length, wanted.length);
+      for (final MapEntry(:key, :value) in wanted.entries) {
         final row = cached[(key.cardId, key.mode)]!;
         expect((row.stability, row.dueAt), (value.stability, value.dueAt));
       }
