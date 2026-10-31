@@ -77,8 +77,7 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
     final state = AppScope.of(context);
     final first = _cards == null;
     final cards = _cards ??= state.walkCards(<DeckEntry>[
-      for (final id in widget.request.deckIds)
-        if (state.deckById(id) case final entry?) entry,
+      for (final id in widget.request.deckIds) ?state.deckById(id),
     ], tags: widget.request.tags);
     if (cards.isEmpty) {
       return Scaffold(

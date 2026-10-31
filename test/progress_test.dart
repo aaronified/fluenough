@@ -18,6 +18,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/data/course_path.dart'
     show CoursePath, Milestone, PlanUnit;
 import 'package:fluenough/core/data/log_jsonl.dart';
@@ -64,7 +65,7 @@ import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:fluenough/ui/widgets/pace_parts.dart';
 import 'package:flutter/material.dart' hide Card;
-import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
