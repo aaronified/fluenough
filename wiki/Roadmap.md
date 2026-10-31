@@ -59,7 +59,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-18 approved open issues.
+17 approved open issues.
 
 **Enhancements**
 
@@ -83,7 +83,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
 - [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
-- [#918](https://github.com/aaronified/fluenough/issues/918) Deck search: "open the picker at that course" does nothing on the new Languages page
 
 ### 0.8.0
 
@@ -319,6 +318,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
 - [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
+- [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 
 ## Plans
 
