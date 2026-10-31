@@ -1077,27 +1077,6 @@
       }
     }
   },
-  "situationPrevious": "Previous card",
-  "@situationPrevious": {
-    "description": "Inspect view: back one card."
-  },
-  "situationNext": "Next card",
-  "@situationNext": {
-    "description": "Inspect view: on one card."
-  },
-  "situationOpenInDeck": "Open in deck",
-  "@situationOpenInDeck": {
-    "description": "Inspect view: opens the deck the card is in."
-  },
-  "situationAlsoOn": "Also on: {sheets}",
-  "@situationAlsoOn": {
-    "description": "Inspect view: the other sheets the card is on.",
-    "placeholders": {
-      "sheets": {
-        "type": "String"
-      }
-    }
-  },
   "situationEmpty": "None of this sheet's cards is in your decks yet.",
   "@situationEmpty": {
     "description": "Shown on a sheet none of whose cards the learner's decks have."
@@ -11048,9 +11027,9 @@
       }
     }
   },
-  "cardIpaHeading": "Pronunciation · IPA course",
-  "@cardIpaHeading": {
-    "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
+  "ipaInfoDot": "About these sounds",
+  "@ipaInfoDot": {
+    "description": "Hint and screen-reader label of the small info dot beside a card's IPA; it opens the popup that explains each sound."
   },
   "cardWiktionaryLink": "Wiktionary: {word}",
   "@cardWiktionaryLink": {
