@@ -1,8 +1,6 @@
 # Telugu's situation sheets (#724): lists of card ids, never card text. Every id
 # is a card of a Telugu deck, so progress, audio and notes are the card's own.
-# Draft: the choice of cards needs a Telugu reviewer; the modern ride-hailing
-# cards (OTP, UPI, app booking) are not in the decks yet and are listed in the
-# pull request as deck work.
+# Draft: the choice of cards and the Telugu titles need a Telugu reviewer.
 schema: 1
 id: te-situations
 name: "Telugu situations"
@@ -12,8 +10,33 @@ license: "CC-BY-SA-4.0"
 description: "Key phrases and words for everyday moments. Not yet checked by a Telugu speaker: please report any mistake."
 tags: ["unreviewed"]
 situations:
-  - id: taxi
-    icon: taxi
-    title: { en: "Taxi" }
-    phrases: ["te-0276", "te-0275", "te-0277", "te-0278", "te-0293"]
-    words: ["te-0273", "te-0272", "te-0274", "te-0279", "te-0302", "te-0303", "te-0294", "te-0295", "te-0296", "te-0297", "te-0300", "te-0301", "te-0304", "te-1401", "te-1409", "te-1421", "te-3901"]
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi", te: "టాక్సీ", hi: "टैक्सी", bn: "ট্যাক্সি" }
+    phrases: ["te-0276", "te-0275", "te-0277", "te-0278", "te-0293", "te-6656", "te-6657", "te-6658", "te-6659", "te-6660", "te-6661", "te-6662", "te-6663", "te-6664", "te-6665", "te-6666", "te-6680", "te-6681", "te-6682", "te-2931"]
+    words: ["te-0273", "te-0272", "te-0274", "te-0279", "te-0302", "te-0303", "te-0294", "te-0295", "te-0296", "te-0297", "te-0300", "te-0301", "te-0304", "te-1401", "te-1409", "te-1421", "te-3901", "te-4228", "te-6646", "te-6650", "te-6649", "te-2410", "te-3904", "te-2402", "te-0648"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping", te: "కొనుగోలు", hi: "खरीदारी", bn: "কেনাকাটা" }
+    phrases: ["te-1435", "te-1434", "te-6674", "te-6675", "te-6676", "te-6677", "te-6678", "te-6679", "te-6680", "te-6681", "te-6682", "te-6683"]
+    words: ["te-0248", "te-1418", "te-2808", "te-0868", "te-1407", "te-1408", "te-0243", "te-1421", "te-1409", "te-1401", "te-0246", "te-6651", "te-6649", "te-6650"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out", te: "హోటల్", hi: "बाहर खाना", bn: "বাইরে খাওয়া" }
+    phrases: ["te-6440", "te-0350", "te-6438", "te-6433", "te-6684", "te-6685", "te-6686", "te-6687", "te-6688", "te-6689", "te-6690"]
+    words: ["te-6425", "te-3927", "te-3808", "te-6428", "te-0347", "te-2826", "te-2827", "te-3213", "te-0341", "te-0432", "te-6431", "te-0340", "te-6652", "te-6649"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy", te: "డాక్టర్", hi: "डॉक्टर और दवाखाना", bn: "ডাক্তার ও ওষুধের দোকান" }
+    phrases: ["te-6691", "te-6692", "te-6693", "te-6694", "te-6695", "te-6696", "te-6697", "te-6698", "te-6699"]
+    words: ["te-0365", "te-0366", "te-1517", "te-1525", "te-1500", "te-0368", "te-0367", "te-1511", "te-1528", "te-3205", "te-1515", "te-3213", "te-6653"]
+  - id: "traffic"
+    icon: "traffic"
+    title: { en: "Traffic stop", te: "ట్రాఫిక్", hi: "ट्रैफ़िक जाँच", bn: "ট্রাফিক থামানো" }
+    phrases: ["te-6667", "te-6668", "te-6669", "te-6670", "te-6671", "te-6672", "te-6673"]
+    words: ["te-3922", "te-2909", "te-3205", "te-6017", "te-0364", "te-2522", "te-1831", "te-6647", "te-6648"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station", te: "రైల్వే స్టేషన్", hi: "रेलवे स्टेशन", bn: "রেল স্টেশন" }
+    phrases: ["te-6700", "te-6701", "te-6702", "te-6703", "te-6704", "te-6705", "te-6706", "te-2548", "te-2549"]
+    words: ["te-2501", "te-2500", "te-0280", "te-0281", "te-2530", "te-6654", "te-6655", "te-2510", "te-0426", "te-3800", "te-2513", "te-2926"]

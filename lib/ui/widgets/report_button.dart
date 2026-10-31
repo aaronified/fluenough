@@ -9,6 +9,7 @@ import '../../core/feedback/report.dart';
 import '../../l10n/app_localizations.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
+import 'hint.dart';
 import 'snack.dart';
 
 /// The device's details as [context] sees them, given its [system]: the
@@ -81,11 +82,15 @@ class ReportButton extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => IconButton(
-    tooltip: AppLocalizations.of(context)!.reportOpen,
-    icon: const Icon(Icons.bug_report_outlined),
-    onPressed: () => open(context, detail: detail),
-  );
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return LabelledIconButton(
+      label: l10n.reportOpen,
+      hint: l10n.hintReport,
+      icon: const Icon(Icons.bug_report_outlined),
+      onPressed: () => open(context, detail: detail),
+    );
+  }
 }
 
 /// The box that adds the device's details to a report, and under it exactly

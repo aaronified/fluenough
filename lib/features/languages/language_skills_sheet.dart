@@ -17,6 +17,7 @@ import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
 import '../fonts/font_check_sheet.dart';
@@ -505,16 +506,18 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
               if (!widget.draft &&
                   _view.canLearn &&
                   (hasDecks || _skills.anyLearn))
-                IconButton(
-                  tooltip: l10n.languagesUpdateIcon,
+                LabelledIconButton(
+                  label: l10n.languagesUpdateIcon,
+                  hint: l10n.hintUpdate,
                   onPressed: _checkUpdates,
                   icon: const Icon(Icons.sync),
                 ),
-              IconButton(
-                tooltip: l10n.languagesInfoIcon(_view.name),
+              LabelledIconButton(
+                label: l10n.languagesInfoIcon(_view.name),
+                hint: l10n.hintInfo,
                 onPressed: _showInfo,
                 icon: Text(
-                  'i', // ui-literal-ok: the info glyph, not prose; the tooltip is the label
+                  'i', // ui-literal-ok: the info glyph, not prose; its label is the Semantics label
                   style: theme.textTheme.titleLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: scheme.onSurfaceVariant,
@@ -639,8 +642,9 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             child: Row(
               children: <Widget>[
                 if (!widget.draft && hasDecks)
-                  IconButton(
-                    tooltip: l10n.languagesDeleteData,
+                  LabelledIconButton(
+                    label: l10n.languagesDeleteData,
+                    hint: l10n.hintDelete,
                     onPressed: _delete,
                     icon: Icon(Icons.delete_outline, color: scheme.error),
                   ),
@@ -788,6 +792,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       big: true,
       mark: markOf(state, covered: covered),
       label: skillSemantics(l10n, name, state, covered: covered),
+      tip: l10n.languagesSkillState(name, state.label(l10n)),
       hint: l10n.languagesTapToChange(next.label(l10n)),
       onTap: () => _cycle(key),
     );
