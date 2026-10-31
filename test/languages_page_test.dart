@@ -80,6 +80,8 @@ void main() {
     expect(state.settings.languageSkillsOf('en')!.containsKey('speak'), false);
     await tapKey(tester, 'skill-hear');
     await tapKey(tester, 'skill-read:latin');
+    // English is known in Write too, by default (#926).
+    await tapKey(tester, 'skill-write:latin');
     expect(state.settings.languageSkillsOf('en'), isEmpty);
     expect(find.byKey(const ValueKey<String>('language-en')), findsNothing);
     // It stays among the languages spoken, which is never left empty.

@@ -34,7 +34,7 @@ extension LanguageSkillsOnState on AppState {
       if (skills.anyLearn == learningCodes.contains(code)) return skills;
     }
     final read = language.scriptsReadIn(settings.scriptsRead);
-    return skillsFromLegacy(
+    final legacy = skillsFromLegacy(
       scripts: skillScripts(language),
       learned: learningCodes.contains(code) && settings.learningChosen,
       known: settings.spokenLanguages.contains(code),
@@ -46,6 +46,34 @@ extension LanguageSkillsOnState on AppState {
           read?.contains(language.scripts.isEmpty ? '' : s) ?? false,
       scriptOnly: language.scriptOnly,
     );
+    // English is known in every skill until the learner says otherwise
+    // (#926); and the Latin script is known for everyone.
+    if (code == 'en' && legacy.isAllLeave) return englishKnownByDefault();
+    return withLatinKnown(legacy, skillScripts(language));
+  }
+
+  /// Makes English known in all four skills for a learner who has no entry
+  /// for it (#926): an install from before, or one just set up. The older
+  /// lists follow, so that everything reading "languages known" sees it.
+  /// English goes last: the languages are in the learner's order. A choice
+  /// made on the Languages page is an entry, and is kept, even all Leave. A
+  /// first launch (no spoken language yet) is left to the setup, which calls
+  /// this after it has saved the answers.
+  void ensureEnglishKnown() {
+    if (settings.spokenLanguages.isEmpty) return;
+    if (settings.languageSkillsOf('en') != null) return;
+    if (learningCodes.contains('en')) return;
+    settings.setLanguageSkills('en', englishKnownByDefault().toStored());
+    final spoken = settings.spokenLanguages;
+    if (!spoken.contains('en')) {
+      settings.spokenLanguages = <String>[...spoken, 'en'];
+    }
+    if (settings.scriptsRead['en'] != true) {
+      settings.scriptsRead = <String, bool>{
+        ...settings.scriptsRead,
+        'en': true,
+      };
+    }
   }
 
   /// Whether a level was found for [code] (placement credited its words).
@@ -135,7 +163,11 @@ extension LanguageSkillsOnState on AppState {
       // the language keeps its decks.
       if (_anyProfileLearns(code)) continue;
       if (downloads.hasDecks(code)) await downloads.remove(code);
-      if (skills.isAllLeave) settings.setLanguageSkills(code, null);
+      // English's Leave is the learner's choice, kept: forgetting it would
+      // make English known again (#926).
+      if (skills.isAllLeave && code != 'en') {
+        settings.setLanguageSkills(code, null);
+      }
     }
   }
 }

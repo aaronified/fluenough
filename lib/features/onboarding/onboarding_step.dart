@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../../app/app_state.dart';
 import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
+import '../../core/languages/language_skills.dart';
 import '../../core/sound/sound_check.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -124,9 +125,18 @@ class OnboardingAnswers extends ChangeNotifier {
         state.settings.setSkillEnabled(Skill.listening, on);
       }
     }
+    // English is known too, in every skill (#926), last: the learner's
+    // languages are in their order.
     state.settings
-      ..scriptsRead = readAnswersOf(_spoken, _scripts)
-      ..spokenLanguages = _spoken;
+      ..setLanguageSkills('en', englishKnownByDefault().toStored())
+      ..scriptsRead = <String, bool>{
+        ...readAnswersOf(_spoken, _scripts),
+        'en': true,
+      }
+      ..spokenLanguages = <String>[
+        ..._spoken,
+        if (!_spoken.contains('en')) 'en',
+      ];
   }
 }
 

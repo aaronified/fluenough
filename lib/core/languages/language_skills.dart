@@ -213,6 +213,39 @@ LanguageSkills skillsFromLegacy({
   return LanguageSkills(states);
 }
 
+/// English as every learner starts with it (owner, 2026-10-30, #926): Speak,
+/// Hear, Read and Write of the Latin script, all Know. The app is unusable
+/// without it, and it makes the Latin script known for everyone.
+LanguageSkills englishKnownByDefault() => LanguageSkills(<SkillKey, SkillState>{
+  const SkillKey(SkillKind.speak): SkillState.know,
+  const SkillKey(SkillKind.hear): SkillState.know,
+  const SkillKey(SkillKind.read, latinScript): SkillState.know,
+  const SkillKey(SkillKind.write, latinScript): SkillState.know,
+});
+
+/// The script every learner knows (#926), as decks name it.
+const String latinScript = 'latin';
+
+/// [skills] of a language written in [scripts], with the Latin script's Read
+/// and Write Know where they are Leave (#926): everyone knows the Latin
+/// script. Learn stays Learn: the diacritics of Spanish or French are taught
+/// by their courses. A language with every skill Leave stays so (it is in the
+/// pool, not on the page), and one that does not use the Latin script is
+/// unchanged.
+LanguageSkills withLatinKnown(LanguageSkills skills, Iterable<String> scripts) {
+  if (skills.isAllLeave) return skills;
+  var next = skills;
+  final all = scripts.isEmpty ? const <String>[latinScript] : scripts;
+  if (!all.contains(latinScript)) return skills;
+  for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
+    final key = SkillKey(kind, latinScript);
+    if (next.stateOf(key) == SkillState.leave) {
+      next = next.withState(key, SkillState.know);
+    }
+  }
+  return next;
+}
+
 /// Where a script the learner already knows from another language starts:
 /// Read and Write start as Know in a new language when the same script's
 /// Read or Write is Know in another, and the name of that language.
