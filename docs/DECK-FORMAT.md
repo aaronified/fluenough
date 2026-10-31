@@ -322,7 +322,7 @@ sentence is the core's. How many examples a word card needs is in
 
 **A core ref**, `- ref: "te-9010"`, lists a card written in another deck. It
 may give `reading`, `ipa`, `tags`, `modes`, and `examples` and `notes` in the
-core form; not `native`, `alt_native` or `wiktionary`.
+core form; not `native`, `alt_native`, `not_synonyms` or `wiktionary`.
 
 ### A grammar core
 
@@ -411,6 +411,7 @@ readings against the core's language and its
 |---|---|
 | `native` | **Required.** The meaning. A card with no entry, or an entry with no `native`, is not taught from this language. |
 | `alt_native` | As on any card. |
+| `not_synonyms` | As on any card: the card's refusal of listed synonyms (ADR-0050). |
 | `notes` | A mapping from the core note's `id` to its text in this language ([Notes](#notes)). |
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
@@ -579,6 +580,7 @@ cards:
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). **An English `native` or `alt_native` separates alternatives with `;`** (`Take care!; Careful!`): the typed-meaning grader accepts each `;`-separated part and no other split, so a meaning with a sentence break (`.`, `!` or `?` then more text, outside brackets and abbreviations such as `Mr.`) and no `;` is a validator error (#924). A card whose sentences must all be said is listed in `MEANING_ALL_REQUIRED` in `tools/validate_decks.py`; the check covers a card's `native` and `alt_native`, not its examples. |
+| `not_synonyms` | no | Typed English answers the [synonym sets](adr/0050-english-synonym-sets.md) must not accept for this card (ADR-0050, #924): a quoted list of words in comparison form (lower case, no leading `to`, no punctuation), each once, none of them one of the card's own answers. It is the escape for a set partner that is the wrong sense here, e.g. `not_synonyms: ["shore"]` on a river's bank. It never blocks `native` or `alt_native`. On the native side only (a single-file card, a ref, a layer's entry), English native only; a core card has none. `tools/validate_synonyms.py` reads it and refuses an entry that is in no set with another of the card's answers, and a set escaped on two cards. **Released apps reject the key, so decks do not use it until a release after the app that reads it (as for `warning`, #691).** |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
 | `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
@@ -716,7 +718,7 @@ cards:
 ```
 
 A ref may give the card's native side for this deck: `native`, `alt_native`,
-`reading`, `ipa`, `notes`, `tags`, `examples`, `modes` and `wiktionary`. What the
+`not_synonyms`, `reading`, `ipa`, `notes`, `tags`, `examples`, `modes` and `wiktionary`. What the
 card is in the language learned, its `target`, `alt_target`, `pos`,
 `gender` and `audio`, stays where it is written, and so do `phrasebook`,
 `bases`, `rules`, `pair` and `picture`: a ref cannot give them.

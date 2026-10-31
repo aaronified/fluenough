@@ -207,7 +207,7 @@ only" and the poke-holes gate (above).
 | 4 | Reveal hint `Also: ...`, l10n tokens, Sources line (CC BY-SA); mockup of the reveal if the owner wants one | Sonnet | S | 0.6.0 |
 | 5 | Seed batch 0 (regional spelling variants), then batch 1 (the 200 commonest meanings), through draft and poke | Haiku, Sonnet | S per batch | 0.6.0 |
 | 6 | Seed batches 2 to N, one PR each; content, so it stays out of the CHANGELOG (owner, 2026-10-19) | Haiku, Sonnet | S per batch, as many as the owner wants | rolling |
-| 7 | `not_synonyms`: field in the card model and docs/DECK-FORMAT.md, the validator's rules, the cross-check; decks use it a release later | Sonnet | M | 0.6.x (approved 2026-10-30) |
+| 7 | `not_synonyms`: field in the card model and docs/DECK-FORMAT.md, the validator's rules, the cross-check; decks use it a release later | Sonnet | M | 0.6.x (approved 2026-10-30); built: the app reads it, no deck uses it until a release after |
 | 8 | Sibling-clash warnings tool (cards of a deck in one set) | Sonnet | S | 0.6.x |
 | 9 | Reviewer proposals `alt_native_add`, `not_synonyms_add` in `tools/proposals.py`, `tools/review_bot.py`, reviewer mode UI; candidate-set report | Sonnet | L | 0.7.0 with the reviewer-mode overhaul (approved 2026-10-30) |
 

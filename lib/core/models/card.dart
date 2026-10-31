@@ -336,8 +336,7 @@ class CardRef {
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       notSynonyms:
-          notSynonyms ??
-          (sameNative ? written.notSynonyms : const <String>[]),
+          notSynonyms ?? (sameNative ? written.notSynonyms : const <String>[]),
       pos: written.pos,
       hears: written.hears,
       warning: written.warning,
