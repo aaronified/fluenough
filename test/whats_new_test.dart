@@ -8,7 +8,6 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/updates/whats_new.dart';
 import 'package:fluenough/features/whats_new/whats_new_prompt.dart';
-import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
