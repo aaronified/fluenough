@@ -632,6 +632,23 @@ Finder firstCard() => find.byType(LeechCard).first;
 
 Finder inFirst(Finder f) => find.descendant(of: firstCard(), matching: f);
 
+/// Asserts the Learn / Relearn label is drawn whole: not ellipsized or cut.
+void expectLabelFits(WidgetTester tester) {
+  final label = find.descendant(
+    of: find.byKey(LearnButton.textKey),
+    matching: find.byType(RichText),
+  );
+  expect(label, findsWidgets);
+  final paragraph = tester.renderObject<RenderParagraph>(label.first);
+  expect(paragraph.didExceedMaxLines, isFalse);
+  expect(
+    paragraph.size.width,
+    lessThanOrEqualTo(
+      tester.getSize(find.byKey(LearnButton.textKey)).width + 0.5,
+    ),
+  );
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -1083,6 +1100,7 @@ void main() {
           closeTo(tester.getCenter(find.byKey(LearnButton.textKey)).dy, 1),
         );
         expect(tester.takeException(), isNull);
+        expectLabelFits(tester);
 
         final done = tinyState();
         await done.load();
@@ -1095,6 +1113,7 @@ void main() {
         final relearnIcon = size(LearnButton.iconKey);
         expect(relearnIcon, learnIcon);
         expect(tester.takeException(), isNull);
+        expectLabelFits(tester);
       },
     );
   });
@@ -1536,8 +1555,8 @@ void main() {
       expect(state.progress.log, hasLength(logged + 1));
       expect(state.isTaught(sentence), isTrue);
       expect(state.newToWalk(<Card>[for (final w in walk) w.card]), fresh - 1);
-      // Taught, it is open by the unlock rule.
-      expect(state.unlocks.isOpen(sentence), isTrue);
+      // Taught, it is offered by Unlocks.isOffered.
+      expect(state.unlocks.isOffered(sentence), isTrue);
       expect(state.viewCard(sentence), isNull);
       expect(state.progress.log, hasLength(logged + 1));
     });

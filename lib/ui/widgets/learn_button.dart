@@ -6,7 +6,8 @@ import '../theme.dart';
 /// The Learn / Relearn control of a deck page and a unit page (#694): a
 /// filled button, full width of its slot, with an icon as tall as the label
 /// and the subtext under it together (owner, 2026-10-31), centred beside the
-/// two lines. Learn has the plus icon, Relearn the replay icon, both the
+/// two lines when there is a subtext (the unit page has one; the deck page has
+/// none, so the icon matches the label alone). Learn has the plus icon, Relearn the replay icon, both the
 /// same size, which follows the text scale so that at 1.4x it neither
 /// overflows nor squeezes the label. Off when [onPressed] is null.
 ///

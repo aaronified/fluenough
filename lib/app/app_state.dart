@@ -3018,8 +3018,8 @@ class AppState extends ChangeNotifier {
   /// null and writes nothing when the card is taught already, so a repeat
   /// view costs nothing, or has no mode to drill. A sentence still waiting
   /// for its words and rules is walked and logged like any other (owner,
-  /// 2026-10-31: "Walk it, and mark as usual on fsrs"); taught, it is open
-  /// by [Unlocks]. Readers that count answers skip the row
+  /// 2026-10-31: "Walk it, and mark as usual on fsrs"); taught, it is
+  /// offered by [Unlocks.isOffered]. Readers that count answers skip the row
   /// ([ReviewEvent.isView]).
   ReviewEvent? viewCard(Card card) {
     if (isTaught(card)) return null;
