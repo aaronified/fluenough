@@ -71,7 +71,11 @@ class PairCompareButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final label = l10n.pairCompareWith(_wordReading(l10n, partner));
+    // The reading only while the setting shows readings, as other target text.
+    final reading = AppScope.of(context).settings.showRomanisation;
+    final label = l10n.pairCompareWith(
+      reading ? _wordReading(l10n, partner) : partner.target,
+    );
     return OutlinedButton.icon(
       onPressed: () => showPairCompare(
         context,

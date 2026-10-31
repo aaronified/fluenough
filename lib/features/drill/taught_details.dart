@@ -116,7 +116,10 @@ class TaughtDetails extends StatelessWidget {
         final bases = basesOf(state, card, language);
         // The word it sounds almost like, with Compare (#423): only once the
         // question is answered, which is when this shows.
-        final compare = pairPartnerOf(state, card);
+        // A card told to show no warning shows none (as the teach card does).
+        final compare = card.warning == 'none'
+            ? null
+            : pairPartnerOf(state, card);
         final children = <Widget>[
           if (word) ...<Widget>[
             ..._word(theme, showReading: _showsReading(settings)),

@@ -14,7 +14,7 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/card_blocks.dart';
 import 'package:fluenough/features/drill/pair_compare.dart';
 import 'package:fluenough/features/drill/taught_details.dart'
-    show TaughtReading;
+    show TaughtDetails, TaughtReading;
 import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
@@ -32,6 +32,8 @@ license: CC0-1.0
 cards:
   - { id: es-9001, target: "gato", native: "cat", pair: es-9002 }
   - { id: es-9002, target: "gata", native: "$longMeaning" }
+  - { id: es-9003, target: "pero", native: "but", pair: es-9004, warning: none }
+  - { id: es-9004, target: "perro", native: "dog" }
 ''';
 
 class _Rig {
@@ -125,6 +127,33 @@ void main() {
     await tester.tap(find.byTooltip(l10n.hintClose));
     await tester.pumpAndSettle();
     expect(find.text(l10n.pairCompareSounds), findsNothing);
+  });
+
+  testWidgets('the details of a card with a pair offer Compare, but not when '
+      'the card says warning none', (tester) async {
+    final rig = await _rig();
+    usePhone(tester);
+    Future<void> show(String id) async {
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(
+            child: TaughtDetails(
+              key: ValueKey<String>(id),
+              card: findCard(rig.state, id)!,
+              language: rig.language,
+              reading: TaughtReading.always,
+            ),
+          ),
+        ),
+        state: rig.state,
+      );
+    }
+
+    await show('es-9001');
+    expect(find.byType(PairCompareButton), findsOneWidget);
+    await show('es-9003');
+    expect(find.byType(PairCompareButton), findsNothing);
   });
 
   testWidgets('a word with no pair note has no button', (tester) async {
