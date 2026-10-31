@@ -17,7 +17,7 @@ import '../../ui/widgets/visible_listenable_builder.dart';
 import 'hours_tiles.dart';
 import 'leeches.dart';
 import 'practice_week_card.dart';
-import 'progress_mastery.dart';
+import 'progress_numbers.dart';
 import 'progress_tiles.dart';
 import 'skill_star.dart';
 import 'stats_numbers.dart';
@@ -55,16 +55,21 @@ class StatsPage extends StatelessWidget {
 
     final actions = LeechActions.of(state.progress);
     return VisibleListenableBuilder(
-      listenable: Listenable.merge(<Listenable>[state.progress, actions]),
+      listenable: Listenable.merge(<Listenable>[
+        state.progress,
+        actions,
+        // The numbers come back from an isolate (#857).
+        state.progressNumbers,
+      ]),
       builder: (context, _) {
         final languageOf = languageLookupOf(state);
         final language = state.progressLanguage;
-        final none = language == null
-            ? state.progress.log.answered.isEmpty
-            : !state.progress.log.answered.any(
-                (e) => languageOf(e.deckId) == language,
-              );
-        if (none) {
+        final numbers = state.progressNumbers.of(language);
+        if (numbers == null) {
+          // The first visit: the numbers are being worked out.
+          return const _Frame(child: _Working());
+        }
+        if (numbers.none) {
           return _Frame(
             child: EmptyState(
               icon: Icons.insights_outlined,
@@ -78,11 +83,22 @@ class StatsPage extends StatelessWidget {
             actions: actions,
             language: language,
             languageOf: languageOf,
+            numbers: numbers,
           ),
         );
       },
     );
   }
+}
+
+/// What a tab shows on its first visit while its numbers are worked out off
+/// the UI isolate (#857).
+class _Working extends StatelessWidget {
+  const _Working();
+
+  @override
+  Widget build(BuildContext context) =>
+      const Center(child: CircularProgressIndicator());
 }
 
 /// The language bar (#528), fixed over the tab's scrolling content.
@@ -104,44 +120,8 @@ class _Frame extends StatelessWidget {
   );
 }
 
-final Expando<Map<String?, ({Object key, StatsNumbers value})>> _numbersMemo =
-    Expando<Map<String?, ({Object key, StatsNumbers value})>>('StatsNumbers');
-
-/// The numbers for [language] (all when null) over [range], worked out again
-/// only when that language's progress, the day, the catalog or the range
-/// changed: they walk the log, and the page builds more often than that.
-StatsNumbers _numbersFor(
-  AppState state,
-  String? language,
-  CardLookup cardOf,
-  bool Function(String deckId) counts,
-  StatsRange range,
-) {
-  final progress = state.progress;
-  final now = state.now();
-  final key = (
-    version: language == null ? progress.version : progress.versionOf(language),
-    day: calendarDay(now),
-    cardOf: cardOf,
-    range: range,
-  );
-  final byLanguage = _numbersMemo[progress] ??=
-      <String?, ({Object key, StatsNumbers value})>{};
-  final cached = byLanguage[language];
-  if (cached != null && cached.key == key) return cached.value;
-  final languageOf = languageLookupOf(state);
-  final value = StatsNumbers.of(
-    progress,
-    now: now,
-    range: range,
-    cardOf: cardOf,
-    deckFilter: language == null ? null : counts,
-    parametersOf: (e) =>
-        progress.parameters.of(languageOf(e.deckId) ?? '', e.mode),
-  );
-  byLanguage[language] = (key: key, value: value);
-  return value;
-}
+/// How many of the weakest tags the tab shows; All tags shows the rest.
+const int _weakestShown = 3;
 
 class _StatsBody extends StatelessWidget {
   const _StatsBody({
@@ -149,10 +129,12 @@ class _StatsBody extends StatelessWidget {
     required this.actions,
     required this.language,
     required this.languageOf,
+    required this.numbers,
   });
 
   final AppState state;
   final LeechActions actions;
+  final ProgressNumbers numbers;
 
   /// The language counted, by code, or null for every review.
   final String? language;
@@ -166,14 +148,14 @@ class _StatsBody extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final cardOf = cardLookupOf(state);
-    final mastery = ProgressMastery.of(state, language);
+    final mastery = numbers.mastery;
     final chosen = language;
     final counts = chosen == null
         ? state.unlockCountsAll
         : state.unlockCountsFor(chosen);
     // The weakest tags are over all time: the star is not ranged.
     const range = StatsRange.all;
-    final numbers = _numbersFor(state, language, cardOf, _counts, range);
+    final weakest = numbers.weakestTags.entries.take(_weakestShown);
     final leeches = findLeeches(state.progress, cardOf: cardOf)
         .where(
           (l) =>
@@ -210,7 +192,7 @@ class _StatsBody extends StatelessWidget {
         // week leave the star on the screen at 1.4x text.
         const SizedBox(height: 8),
         HoursTiles(hours: ProgressHours.of(state, language)),
-        if (numbers.weakestTags.isNotEmpty) ...<Widget>[
+        if (weakest.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           StatsSection(
             title: l10n.statsWeakestTags,
@@ -220,8 +202,7 @@ class _StatsBody extends StatelessWidget {
               child: Text(l10n.statsAllTags),
             ),
             children: <Widget>[
-              for (final MapEntry(key: tag, value: tally)
-                  in numbers.weakestTags.entries)
+              for (final MapEntry(key: tag, value: tally) in weakest)
                 bar(tag, tally, color: scheme.tertiary),
             ],
           ),

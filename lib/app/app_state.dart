@@ -67,6 +67,7 @@ import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
+import '../features/stats/progress_numbers.dart';
 import 'profile.dart';
 import 'reminder_scheduler.dart';
 import 'reminder_service.dart';
@@ -200,6 +201,7 @@ class AppState extends ChangeNotifier {
     this._downloads = const NullDownloadStore(),
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
+    this._progressRunner = progressInIsolate,
     this.deckDownloads,
     this._synonymLoader,
     SettingsNotifier? settings,
@@ -348,6 +350,7 @@ class AppState extends ChangeNotifier {
     DownloadStore downloads = const NullDownloadStore(),
     FitRunner fitRunner = fitInPlace,
     PaceRunner paceRunner = paceInPlace,
+    ProgressRunner progressRunner = progressInPlace,
     DeckDownloads? deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
@@ -385,6 +388,7 @@ class AppState extends ChangeNotifier {
       downloads: downloads,
       fitRunner: fitRunner,
       paceRunner: paceRunner,
+      progressRunner: progressRunner,
       deckDownloads: deckDownloads,
       settings: settings,
       volume: volume,
@@ -534,6 +538,15 @@ class AppState extends ChangeNotifier {
     runner: _paceRunner,
   );
   final PaceRunner _paceRunner;
+
+  /// What Progress shows from the review log (the mastery and the weakest
+  /// tags), worked out off the main thread and read without waiting (#857).
+  /// Has its own notifier.
+  late final ProgressNumbersHolder progressNumbers = ProgressNumbersHolder(
+    state: this,
+    runner: _progressRunner,
+  );
+  final ProgressRunner _progressRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -3564,6 +3577,7 @@ class AppState extends ChangeNotifier {
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
+    progressNumbers.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     if (_ownsLog) log.dispose();
