@@ -93,8 +93,13 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     }
   }
 
-  bool _covers(SkillKey key) =>
-      levelCovers(levelFound: _state.levelFound(_code), taught: _view.canLearn);
+  bool get _locked => _code == englishCode;
+
+  bool _covers(SkillKey key) => levelCovers(
+    levelFound: _state.levelFound(_code),
+    taught: _view.canLearn,
+    english: _locked,
+  );
 
   String _nameOf(AppLocalizations l10n, SkillKey key) => skillName(
     l10n,
@@ -567,7 +572,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                         : download.done / download.total,
                   ),
                 ],
-                if (!_view.canLearn) ...<Widget>[
+                if (_locked) ...<Widget>[
+                  const SizedBox(height: 8),
+                  _Note(text: l10n.languagesEnglishLocked),
+                ] else if (!_view.canLearn) ...<Widget>[
                   const SizedBox(height: 8),
                   _Note(text: l10n.languagesNoCourseNote(_view.name)),
                 ],
@@ -575,7 +583,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   const SizedBox(height: 4),
                   _Note(text: l10n.languagesDecksRemoved),
                 ],
-                if (!widget.draft && _view.canLearn) ...<Widget>[
+                if (!widget.draft && _view.canLearn && !_locked) ...<Widget>[
                   _levelRow(context),
                   _placedRow(context),
                 ],
@@ -734,7 +742,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       }
     }
     if (needsLevelFit(
-      reviewOn: _state.settings.reviewKnown,
+      reviewOn: _state.settings.reviewDecks,
       skills: _skills,
       rows: keys,
       covered: _covers,
@@ -793,8 +801,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       mark: markOf(state, covered: covered),
       label: skillSemantics(l10n, name, state, covered: covered),
       tip: l10n.languagesSkillState(name, state.label(l10n)),
-      hint: l10n.languagesTapToChange(next.label(l10n)),
-      onTap: () => _cycle(key),
+      hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
+      onTap: _locked ? null : () => _cycle(key),
     );
   }
 
