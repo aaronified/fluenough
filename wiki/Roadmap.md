@@ -59,7 +59,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-19 approved open issues.
+18 approved open issues.
 
 **Enhancements**
 
@@ -69,7 +69,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
 - [#612](https://github.com/aaronified/fluenough/issues/612) Transcriber and Wiktionary importer: readings and IPA for the new languages and scripts
 - [#616](https://github.com/aaronified/fluenough/issues/616) Answer grading for transliteration letters and punctuation-letters
-- [#694](https://github.com/aaronified/fluenough/issues/694) Guided walkthrough: every card of a deck or unit, one by one, repeatable
 
 **Other**
 
