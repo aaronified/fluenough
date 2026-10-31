@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The deck page learns by a card-by-card walkthrough (#694, ADR-0024): + Learn walks the words in view that are not taught yet on the teach card in place of the drilled lesson, and Relearn walks them all as before. The first view of an untaught card appends one review-log row (graded 0, in recognition, `asked: teach`) so FSRS starts it at the lowest window; a repeat view writes nothing, and accuracy, lapses, the FSRS fit, study hours and streaks skip the row. Today's lesson is unchanged.
 - Validator: an English card meaning with a sentence break and no `;` is an error, since the typed-meaning grader accepts alternatives only across `;` (#924). Four cards whose sentences must all be said are listed in `MEANING_ALL_REQUIRED`.
 - English is known by default, in Speak, Hear, Read and Write, for every learner, and the Latin script is known for everyone (#926): an existing install gets it at the next app open, a new one after setup; a choice made on the Languages page is kept. Learn stays Learn, so the diacritics of Spanish or French are still taught.
 - Today's fact card has a small button at its top left that opens the languages the fact is shown in (#926): a box for each language you know, at least one always checked, kept for each profile; a fact missing a text in a checked language leaves it out, and English stands in when nothing else is left.
