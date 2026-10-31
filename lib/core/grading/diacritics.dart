@@ -22,7 +22,9 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 /// Diacritic folding for Latin and Cyrillic-adjacent scripts, for the
 /// letters ISO 15919 adds, which the Indic readings use (ADR-0025), for
 /// pinyin's caron vowels, and for the transliteration letters of Egyptian
-/// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts).
+/// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts,
+/// and the raised letters of Sumerian determinatives, ᵈ ᵏⁱ ᵍⁱˢ, which are
+/// typed as the plain letter, `{d}nanna` as `dnanna`).
 /// The apostrophe-like letters ʾ ʿ ʼ ʻ are not here: [RomanisedSpelling.key]
 /// drops everything but letters and digits, so they cost nothing to leave off.
 ///
@@ -34,21 +36,21 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 final Map<String, String> _diacriticFolding = _buildFolding({
   'a': 'áàâäãåāăąǎǻꜥ',
   'c': 'çćĉċč',
-  'd': 'ďđḍ',
-  'e': 'éèêëēĕėęěḗẽ',
-  'g': 'ĝğġģǵ',
+  'd': 'ďđḍᵈ',
+  'e': 'éèêëēĕėęěḗẽᵉ',
+  'g': 'ĝğġģǵᵍ',
   'h': 'ĥħḥʰ',
-  'i': 'íìîïĩīĭįıǐ',
+  'i': 'íìîïĩīĭįıǐⁱ',
   'j': 'ĵ',
-  'k': 'ķḵḱ',
+  'k': 'ķḵḱᵏ',
   'l': 'ĺļľłŀḷḻḹ',
-  'm': 'ṁṃḿ',
-  'n': 'ñńņňŉṇṅṉ',
+  'm': 'ṁṃḿᵐ',
+  'n': 'ñńņňŉṇṅṉⁿ',
   'o': 'óòôöõōŏőøǒṓ',
-  'r': 'ŕŗřṛṟṝ',
-  's': 'śŝşšṣ',
-  't': 'ţťŧṭ',
-  'u': 'úùûüũūŭůűųǔǖǘǚǜ',
+  'r': 'ŕŗřṛṟṝʳ',
+  's': 'śŝşšṣˢ',
+  't': 'ţťŧṭᵗ',
+  'u': 'úùûüũūŭůűųǔǖǘǚǜᵘ',
   'w': 'ŵʷ',
   'y': 'ýÿŷẏ',
   'z': 'źżž',
@@ -89,7 +91,11 @@ final Map<String, String> _diacriticFolding = _buildFolding({
       '\u0304\u0323\u0310\u0325\u0303\u035F'
       // Acute, grave, circumflex, dot above, diaeresis, caron and macron
       // below, as a tone mark or a letter's mark may be typed apart from it.
-      '\u0300\u0301\u0302\u0307\u0308\u030C\u0311\u0331',
+      '\u0300\u0301\u0302\u0307\u0308\u030C\u0311\u0331'
+      // The Arabic-script vowel marks (harakat: fatha, damma, kasra, their
+      // tanwin, shadda, sukun) and the dagger alif, and the tatweel, which a
+      // learner leaves off as native writers do.
+      '\u064B\u064C\u064D\u064E\u064F\u0650\u0651\u0652\u0670\u0640',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {
