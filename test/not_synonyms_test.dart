@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluenough/core/data/deck_layers.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/grading/answer_grader.dart';
 import 'package:fluenough/core/grading/meaning_rules.dart';
