@@ -19,6 +19,9 @@ String databaseFileName(Profile profile) => 'fluenough-${profile.id}';
 /// documents directory, for its progress and settings. If it cannot be
 /// opened, both are kept in memory instead, which Today says is not saved,
 /// rather than there being no app.
+///
+/// The progress is read from the review log in the background (#857): wait
+/// for its `ready` before showing or changing it. `AppState` does.
 Future<ProfileStorage> openProfileStorage(Profile profile) async {
   try {
     final db = AppDatabase(
@@ -33,7 +36,7 @@ Future<ProfileStorage> openProfileStorage(Profile profile) async {
       ),
     );
     return (
-      progress: await DatabaseProgress.open(db),
+      progress: DatabaseProgress.opening(db),
       settings: (await StoredSettings.open(db)).settings,
     );
   } catch (error, stack) {
