@@ -13,13 +13,14 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart' show baseFinder;
 import '../decks/card_blocks.dart';
-import '../decks/card_notes.dart';
+import '../decks/card_notes.dart' show proseNoteList;
 import '../decks/ipa_symbols.dart';
 import '../decks/path_parts.dart' show joinParts;
 import '../decks/word_sheet.dart' show adultContentOn;
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'ipa_examples.dart';
+import 'one_note.dart';
 import 'taught_details.dart' show TaughtExample, TaughtReading;
 
 /// The teach card (#691; redrawn owner, 2026-10-29, docs/mockups/teach-screen):
@@ -96,7 +97,6 @@ class TeachCard extends StatelessWidget {
       if (!isPhrase) ?card.pos,
       ?card.gender,
     ]);
-    final notes = proseNotes(card);
     final (:rude, :similar) = teachWarningOf(state, card);
     final named = adultContentOn(state);
     final find = baseFinder(
@@ -266,21 +266,8 @@ class TeachCard extends StatelessWidget {
                 ),
               meaning,
               // Padding, not a max-width box, as the review's notes are.
-              for (final note in notes)
-                Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 19,
-                  ),
-                  child: Text(
-                    note,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyLarge!.copyWith(
-                      fontSize: 15,
-                      height: 22 / 15,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
+              if (proseNoteList(card).isNotEmpty)
+                OneNote(card: card, notes: proseNoteList(card)),
               for (final alike in rude)
                 AlikeWarning(
                   kind: alike.kind,

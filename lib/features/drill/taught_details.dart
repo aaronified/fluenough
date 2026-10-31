@@ -14,6 +14,7 @@ import '../decks/card_notes.dart';
 import '../review/alike_warning.dart';
 import 'drill_session.dart';
 import 'ipa_examples.dart';
+import 'one_note.dart';
 
 /// How [TaughtDetails] shows a word's reading.
 enum TaughtReading {
@@ -42,8 +43,8 @@ enum TaughtReading {
 /// the question is answered, as the lesson's teach card showed it before the
 /// one-screen `TeachCard` (#691) replaced that: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
 /// on one line ([BaseLine], #410) and its first example, 12 apart and
-/// centred. Its notes are every one but a pair note
-/// ([shownNotes]), whose text is the care note of the warning below.
+/// centred. Its note is one of its notes but a pair note ([shownNoteList]), shown one at a time
+/// ([OneNote]); a pair note's text is the care note of the warning below.
 ///
 /// A review shows it once the question is answered, never before, so that it
 /// gives nothing away:
@@ -109,8 +110,6 @@ class TaughtDetails extends StatelessWidget {
       builder: (context, _) {
         final warnings = AlikeWarning.forCard(state, card, language);
         final theme = Theme.of(context);
-        final scheme = theme.colorScheme;
-        final notes = shownNotes(card);
         final bases = basesOf(state, card, language);
         final children = <Widget>[
           if (word) ...<Widget>[
@@ -131,19 +130,8 @@ class TaughtDetails extends StatelessWidget {
           // intrinsic height, and a ConstrainedBox reports its child's
           // height at the full width, so wrapped notes would overflow.
           // 19 each side is the design's 280 on a phone's 318 card.
-          for (final note in notes)
-            Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
-              child: Text(
-                note,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  fontSize: 15,
-                  height: 22 / 15,
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ),
+          if (shownNoteList(card).isNotEmpty)
+            OneNote(card: card, notes: shownNoteList(card)),
           // One line, padded as a note is, so as not to crowd the card.
           if (bases.isNotEmpty)
             Padding(
