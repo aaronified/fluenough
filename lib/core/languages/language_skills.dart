@@ -213,9 +213,14 @@ LanguageSkills skillsFromLegacy({
   return LanguageSkills(states);
 }
 
-/// English as every learner starts with it (owner, 2026-10-30, #926): Speak,
-/// Hear, Read and Write of the Latin script, all Know. The app is unusable
-/// without it, and it makes the Latin script known for everyone.
+/// The language code of English, which is fixed (owner, 2026-10-31): Know in
+/// every skill, the level found, never changed and never tested.
+const String englishCode = 'en';
+
+/// English as every learner has it (owner, 2026-10-30, #926; locked
+/// 2026-10-31): Speak, Hear, Read and Write of the Latin script, all Know.
+/// The app is unusable without it, and it makes the Latin script known for
+/// everyone.
 LanguageSkills englishKnownByDefault() => LanguageSkills(<SkillKey, SkillState>{
   const SkillKey(SkillKind.speak): SkillState.know,
   const SkillKey(SkillKind.hear): SkillState.know,
@@ -227,11 +232,12 @@ LanguageSkills englishKnownByDefault() => LanguageSkills(<SkillKey, SkillState>{
 const String latinScript = 'latin';
 
 /// [skills] of a language written in [scripts], with the Latin script's Read
-/// and Write Know where they are Leave (#926): everyone knows the Latin
-/// script. Learn stays Learn: the diacritics of Spanish or French are taught
-/// by their courses. A language with every skill Leave stays so (it is in the
-/// pool, not on the page), and one that does not use the Latin script is
-/// unchanged.
+/// and Write Know (#926; owner, 2026-10-31): everyone who knows English
+/// knows the Latin script, so a Leave or a legacy Learn of it becomes Know.
+/// The diacritics of Spanish or French are still taught by their courses
+/// (Speak and Hear stay Learn). A language with every skill Leave stays so
+/// (it is in the pool, not on the page), and one that does not use the Latin
+/// script is unchanged.
 LanguageSkills withLatinKnown(LanguageSkills skills, Iterable<String> scripts) {
   if (skills.isAllLeave) return skills;
   var next = skills;
@@ -239,7 +245,7 @@ LanguageSkills withLatinKnown(LanguageSkills skills, Iterable<String> scripts) {
   if (!all.contains(latinScript)) return skills;
   for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
     final key = SkillKey(kind, latinScript);
-    if (next.stateOf(key) == SkillState.leave) {
+    if (next.stateOf(key) != SkillState.know) {
       next = next.withState(key, SkillState.know);
     }
   }
@@ -275,8 +281,12 @@ enum SkillMark { leave, know, knowCovered, learn }
 /// Whether the found level covers a skill: a level is found for the whole
 /// language at once, and covers everything the app can teach in it, so
 /// [taught] is whether the course teaches that skill (it has a course).
-bool levelCovers({required bool levelFound, required bool taught}) =>
-    levelFound && taught;
+/// [english] is always covered: it has no course and is never tested.
+bool levelCovers({
+  required bool levelFound,
+  required bool taught,
+  bool english = false,
+}) => english || (levelFound && taught);
 
 /// The mark of a skill in [state]: Know with the level covering it is the
 /// double tick.
