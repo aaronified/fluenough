@@ -88,8 +88,13 @@ Card _withWarning(Card card, String? warning) => warning == null
 
 /// The teach card of "gato", with its Compare button, on a phone at 1.4x
 /// text, and the popup the button opens, given a seed for the guessing.
-Future<void> _open(WidgetTester tester, _Rig rig, {int seed = 1}) async {
-  usePhone(tester, textScale: 1.4);
+Future<void> _open(
+  WidgetTester tester,
+  _Rig rig, {
+  int seed = 1,
+  double textScale = 1.4,
+}) async {
+  usePhone(tester, textScale: textScale);
   await pumpScreen(
     tester,
     Builder(
@@ -189,8 +194,11 @@ void main() {
 
   testWidgets('the words stand side by side, and stack only when one would '
       'wrap', (tester) async {
+    // Tests draw every letter as wide as its size (the Ahem font), so four
+    // letters at 1.4x text would wrap on a phone; the short pair is checked
+    // at normal text, the long one at 1.4x.
     var rig = await _rig();
-    await _open(tester, rig);
+    await _open(tester, rig, textScale: 1.0);
     expect(
       tester.getCenter(findTarget('gato')).dy,
       tester.getCenter(findTarget('gata')).dy,
@@ -258,6 +266,7 @@ void main() {
 
     Finder said(String text) => find.textContaining(text, findRichText: true);
 
+    await tester.ensureVisible(find.text(l10n.pairPlayOne));
     await tester.tap(find.text(l10n.pairPlayOne));
     await tester.pumpAndSettle();
     var played = rig.tts.spoken.last.text;

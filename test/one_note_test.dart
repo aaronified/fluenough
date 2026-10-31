@@ -114,10 +114,11 @@ void main() {
     final card = _card(<CardNote>[
       _note('p', NoteKind.pair, 'Do not say zorb.', ref: 'es-9004'),
     ]);
+    // The reveal's "sounds like" block carries a pair note's text as its
+    // care note (#423); its note block shows nothing.
     await pumpScreen(tester, _reveal(state, card), state: state);
-    expect(find.text('Do not say zorb.'), findsNothing);
-    // The teach card's warning carries a pair note's text as its care note;
-    // its note block shows nothing.
+    expect(find.byType(OneNote), findsNothing);
+    // The teach card's warning carries it too; its note block shows nothing.
     await pumpScreen(tester, _teach(state, card), state: state);
     expect(find.byType(OneNote), findsNothing);
   });
