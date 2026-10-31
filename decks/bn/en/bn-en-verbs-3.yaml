@@ -1,0 +1,203 @@
+schema: 1
+id: "bn-en-verbs-3"
+kind: "layer"
+core: "bn-verbs-3"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More daily actions"
+description: "Verbs of the daily round: washing, dressing, switching things on and off, and moving things. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2343":
+    native: "to comb one's hair"
+    bases: { "আঁচড়ানো": "to comb" }
+    notes:
+      "n1": "The first person is {1}. The verb is made of চুল (cul), hair, and the verb for combing."
+    examples:
+      "আমি রোজ সকালে চুল আঁচড়াই।": { native: "I comb my hair every morning.", bases: { "আঁচড়াই": "comb (I comb)" } }
+      "সে চুল আঁচড়ায়।": { native: "She combs her hair.", bases: { "আঁচড়ায়": "combs (she combs)" } }
+  "bn-2344":
+    native: "to wash (clothes)"
+    notes:
+      "n1": "The first person is {1}. The verb takes clothes as its object: কাপড় কাচা (kāpoṛ kācā), to wash clothes."
+    examples:
+      "আমি রোজ কাপড় কাচি।": { native: "I wash clothes every day.", bases: { "কাচি": "wash (I wash)" } }
+      "মা জামা কাচেন।": { native: "Mum washes the shirt. (respectful)", bases: { "কাচেন": "washes (respectful)" } }
+  "bn-2345":
+    native: "to wake up"
+    notes:
+      "n1": "The first person is {1}; the third person is জাগে (jāge)."
+    examples:
+      "আমি সকালে জাগি।": { native: "I wake up in the morning.", bases: { "জাগি": "wake up (I wake up)" } }
+      "মেয়ে সকালে জাগে।": { native: "The girl wakes up in the morning.", bases: { "জাগে": "wakes up" } }
+  "bn-2346":
+    native: "to switch on; to light"
+    notes:
+      "n1": "Used for a light, a lamp or a fire. The first person is {1}; the familiar command is জ্বালাও (jālāo)."
+    examples:
+      "ঘরটা অন্ধকার, বাতিটা জ্বালাও।": { native: "The room is dark, switch on the light. (familiar)", bases: { "অন্ধকার": "dark", "জ্বালাও": "switch on (familiar)" } }
+      "আমি উনুন জ্বালাই।": { native: "I light the stove.", bases: { "উনুন": "stove", "জ্বালাই": "switch on (I switch on)" } }
+  "bn-2347":
+    native: "to switch off; to put out"
+    notes:
+      "n1": "The opposite of জ্বালানো (jālāno). The first person is {1}; the respectful command is নেভান (nebhān)."
+    examples:
+      "আমি পাখাটা নেভাই।": { native: "I switch off the fan.", bases: { "নেভাই": "switch off (I switch off)" } }
+      "আলো নেভান।": { native: "Please switch off the light. (respectful)", bases: { "নেভান": "switch off (respectful)" } }
+  "bn-2348":
+    native: "to close; to shut"
+    notes:
+      "n1": "The verb is বন্ধ (bôndho), shut, with করা (kôrā), to do. The first person is {1}."
+    examples:
+      "আমি দরজাটা বন্ধ করি।": "I close the door."
+      "দরজাটা বন্ধ করো।": "Close the door. (familiar)"
+  "bn-2349":
+    native: "to heat up"
+    notes:
+      "n1": "The verb is গরম (gôrom), hot, with করা (kôrā), to do: to heat something up."
+    examples:
+      "আমি দুধ গরম করি।": "I heat up the milk."
+      "খাবারটা গরম করো।": "Heat up the food. (familiar)"
+  "bn-2352":
+    native: "to forget"
+    notes:
+      "n1": "The stem changes: the first person is {1}, not ভোলি (bholi). The third person is ভোলে (bhole)."
+    examples:
+      "আমি চাবিটা ভুলি।": { native: "I forget the key.", bases: { "ভুলি": "forget (I forget)" } }
+      "সে নামটা ভোলে না।": { native: "She does not forget the name.", bases: { "ভোলে": "forgets" } }
+  "bn-2353":
+    native: "to go out"
+    notes:
+      "n1": "The first person is {1}; the third person is বেরোয় (beroy)."
+    examples:
+      "আমি সকালে বেরোই।": { native: "I go out in the morning.", bases: { "বেরোই": "go out (I go out)" } }
+      "সে এখন বেরোয়।": { native: "She is going out now.", bases: { "বেরোয়": "goes out" } }
+  "bn-2354":
+    native: "to go in; to enter"
+    notes:
+      "n1": "The stem changes: the first person is {1}, not ঢোকি (ḍhoki). The familiar command is ঢোকো (ḍhoko)."
+    examples:
+      "আমি ঘরে ঢুকি।": { native: "I go into the room.", bases: { "ঢুকি": "go in (I go in)" } }
+      "ভেতরে ঢোকো।": { native: "Come in. (familiar)", bases: { "ঢোকো": "go in (familiar)" } }
+  "bn-2355":
+    native: "to show"
+    notes:
+      "n1": "The first person is {1}; the third person is দেখায় (dekhāy)."
+    examples:
+      "আমি তোমাকে ছবিটা দেখাই।": { native: "I show you the picture.", bases: { "দেখাই": "show (I show)" } }
+      "সে আমাকে বাড়ি দেখায়।": { native: "She shows me the house.", bases: { "দেখায়": "shows" } }
+  "bn-2356":
+    native: "to explain; to make someone understand"
+    notes:
+      "n1": "The first person is {1}; the third person is বোঝায় (bojhāy). The person being explained to takes -কে (ke)."
+    examples:
+      "আমি তোমাকে ব্যাপারটা বোঝাই।": { native: "I explain the matter to you.", bases: { "ব্যাপারটা": "the matter", "বোঝাই": "explain (I explain)" } }
+      "সে আমাকে ব্যাপারটা বোঝায়।": { native: "She explains the matter to me.", bases: { "ব্যাপারটা": "the matter", "বোঝায়": "explains" } }
+  "bn-2357":
+    native: "to know (a person); to recognise"
+    notes:
+      "n1": "The stem changes: the first person is {1}, not চেনি (ceni). The third person is চেনে (cene)."
+    examples:
+      "আমি তাকে চিনি।": { native: "I know him.", bases: { "চিনি": "know (I know)" } }
+      "তুমি আমাকে চেনো।": { native: "You know me. (familiar)", bases: { "চেনো": "know (familiar)" } }
+  "bn-2358":
+    native: "to touch"
+    notes:
+      "n1": "The stem changes: the first person is {1}, not ছোঁই (chom̐i). The third person is ছোঁয় (chom̐y)."
+    examples:
+      "গরম জিনিস ছুঁয়ো না।": { native: "Do not touch hot things. (familiar)", bases: { "ছুঁয়ো": "touch (familiar)" } }
+      "সে আমার হাত ছোঁয়।": { native: "She touches my hand.", bases: { "ছোঁয়": "touches" } }
+  "bn-2359":
+    native: "to push"
+    notes:
+      "n1": "The familiar command is {1}; the respectful one is ঠেলুন (ṭhelun)."
+    examples:
+      "দরজাটা ঠেলো।": { native: "Push the door. (familiar)", bases: { "ঠেলো": "push (familiar)" } }
+      "গাড়িটা ঠেলুন।": { native: "Push the car. (respectful)", bases: { "ঠেলুন": "push (respectful)" } }
+  "bn-2360":
+    native: "to pull"
+    notes:
+      "n1": "The familiar command is {1}; the respectful one is টানুন (ṭānun)."
+    examples:
+      "দড়িটা টানো।": { native: "Pull the rope. (familiar)", bases: { "দড়িটা": "the rope", "টানো": "pull (familiar)" } }
+      "দরজাটা টানুন।": { native: "Pull the door. (respectful)", bases: { "টানুন": "pull (respectful)" } }
+  "bn-2361":
+    native: "to drive; to run"
+    notes:
+      "n1": "Used for cars and machines. The first person is {1}; the third person is চালায় (cālāy)."
+    examples:
+      "আমি রোজ গাড়ি চালাই।": { native: "I drive a car every day.", bases: { "চালাই": "drive (I drive)" } }
+      "বাবা অফিসে গাড়ি চালান।": { native: "Father drives to the office. (respectful)", bases: { "অফিসে": "at the office", "চালান": "drive (respectful)" } }
+  "bn-2363":
+    native: "to take (time)"
+    notes:
+      "n1": "Used for time that something takes: {1} is the third person form."
+    examples:
+      "কত সময় লাগে?": { native: "How long does it take?", bases: { "লাগে": "takes (of time)" } }
+      "বাসে এক ঘণ্টা লাগে।": { native: "It takes one hour by bus.", bases: { "লাগে": "takes (of time)" } }
+  "bn-2364":
+    native: "to shiver; to tremble"
+    notes:
+      "n1": "The third person is {1}; the first person is কাঁপি (kām̐pi)."
+    examples:
+      "ঠান্ডায় সে কাঁপে।": { native: "She shivers in the cold.", bases: { "কাঁপে": "shivers; trembles" } }
+      "আমার হাত কাঁপে।": { native: "My hand trembles.", bases: { "কাঁপে": "shivers; trembles" } }
+  "bn-2365":
+    native: "to get down; to come down"
+    notes:
+      "n1": "The first person is {1}; the third person is নামে (nāme)."
+    examples:
+      "আমি স্টেশনে নামি।": { native: "I get off at the station.", bases: { "নামি": "get down (I get down)" } }
+      "সে সিঁড়ি দিয়ে নামে।": { native: "She goes down the stairs.", bases: { "দিয়ে": "by; through", "নামে": "gets down" } }
+  "bn-2366":
+    native: "to turn (a key, a tap)"
+    notes:
+      "n1": "The familiar command is {1}; the respectful one is ঘোরান (ghorān)."
+    examples:
+      "চাবিটা ঘোরাও।": { native: "Turn the key. (familiar)", bases: { "ঘোরাও": "turn (familiar)" } }
+      "কলটা ঘোরান।": { native: "Turn the tap. (respectful)", bases: { "কলটা": "the tap", "ঘোরান": "turn (respectful)" } }
+  "bn-2367":
+    native: "to start up; to switch on (a machine)"
+    bases: { "চালু": "running; on" }
+    notes:
+      "n1": "The verb is চালু (cālu), running, with করা (kôrā), to do: to start a machine."
+    examples:
+      "আমি ফোনটা চালু করি।": { native: "I start up the phone.", bases: { "চালু": "running; on" } }
+      "কম্পিউটারটা চালু করুন।": { native: "Start the computer. (respectful)", bases: { "চালু": "running; on" } }
+  "bn-2372":
+    native: "to shave"
+    notes:
+      "n1": "The first person is {1}; the third person is কামায় (kāmāy)."
+    examples:
+      "বাবা রোজ দাড়ি কামান।": { native: "Father shaves every day. (respectful)", bases: { "কামান": "shave (respectful)" } }
+      "আমি সকালে দাড়ি কামাই।": { native: "I shave in the morning.", bases: { "কামাই": "shave (I shave)" } }
+  "bn-2373":
+    native: "to trim"
+    notes:
+      "n1": "Used for hair. The first person is {1}; the third person is ছাঁটে (chām̐ṭe)."
+    examples:
+      "আমি চুল ছাঁটি।": { native: "I trim my hair.", bases: { "ছাঁটি": "trim (I trim)" } }
+      "সে মাসে একবার চুল ছাঁটে।": { native: "She trims her hair once a month.", bases: { "মাসে": "in a month", "একবার": "once", "ছাঁটে": "trims" } }
+  "bn-2374":
+    native: "to make; to prepare"
+    bases: { "তৈরি": "ready; made" }
+    notes:
+      "n1": "The verb is তৈরি (toiri), ready, with করা (kôrā), to do: to make or prepare food and things."
+    examples:
+      "আমি চা তৈরি করি।": { native: "I make tea.", bases: { "তৈরি": "ready; made" } }
+      "মা রাতের খাবার তৈরি করেন।": { native: "Mum prepares the dinner. (respectful)", bases: { "তৈরি": "ready; made" } }
+  "bn-2375":
+    native: "to use"
+    bases: { "ব্যবহার": "use" }
+    notes:
+      "n1": "The verb is ব্যবহার (bêbôhār), use, with করা (kôrā), to do."
+    examples:
+      "আমি রোজ ফোন ব্যবহার করি।": { native: "I use the phone every day.", bases: { "ব্যবহার": "use" } }
+      "এই ব্যাগটা ব্যবহার করো।": { native: "Use this bag. (familiar)", bases: { "এই": "this", "ব্যবহার": "use" } }
+  "bn-2376":
+    native: "to swim"
+    notes:
+      "n1": "The verb is সাঁতার (śām̐tār), swimming, with কাটা (kāṭā): to swim. The first person is {1}."
+    examples:
+      "আমি রোজ সাঁতার কাটি।": { native: "I swim every day.", bases: { "সাঁতার": "swimming", "কাটি": "swim (I swim)" } }
+      "ছেলেরা পুকুরে সাঁতার কাটে।": { native: "The boys swim in the pond.", bases: { "সাঁতার": "swimming", "কাটে": "swim (they swim)" } }

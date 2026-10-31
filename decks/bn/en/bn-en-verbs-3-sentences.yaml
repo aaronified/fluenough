@@ -1,0 +1,56 @@
+schema: 1
+id: "bn-en-verbs-3-sentences"
+kind: "layer"
+core: "bn-verbs-3-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More daily actions: sentences"
+description: "Short sentences using the verbs of the day. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2377":
+    native: "I get up and brush my teeth."
+    bases: { "মাজি": "scrub (I scrub)" }
+    confusables: { "c1": { why: "I eat: a meal, not a morning wash." }, "c2": { why: "I go: a move, not a wash." } }
+  "bn-2378":
+    native: "My elder brother shaves every day."
+    bases: { "দাদা": "elder brother", "কামায়": "shaves" }
+    confusables: { "c1": { why: "he eats: a meal, not a shave." }, "c2": { why: "he goes: a move, not a shave." } }
+  "bn-2379":
+    native: "She washes the dishes in the evening."
+    bases: { "মাজে": "scrubs" }
+    confusables: { "c1": { why: "it strikes or sounds (of a clock), not a chore." }, "c2": { why: "it suits (of clothes), not a chore." } }
+  "bn-2380":
+    native: "Please close the window. (respectful)"
+    confusables: { "c1": { why: "a door, not a window." }, "c2": { why: "a light, not a thing to close." } }
+  "bn-2381":
+    native: "Please push the door. (respectful)"
+    bases: { "ঠেলুন": "push (respectful)" }
+    confusables: { "c1": { why: "to pull, not to push." }, "c2": { why: "to open, not to push." } }
+  "bn-2382":
+    native: "It takes two hours by train."
+    bases: { "লাগে": "takes (of time)" }
+    confusables: { "c1": { why: "a day: a longer time, not hours." }, "c2": { why: "minutes: a shorter time." } }
+  "bn-2383":
+    native: "I tremble with fear."
+    bases: { "কাঁপি": "tremble (I tremble)" }
+    confusables: { "c1": { why: "I laugh: the opposite of trembling from fear." }, "c2": { why: "I cry: a sound, not a shake." } }
+  "bn-2384":
+    native: "The boy goes down the stairs."
+    bases: { "দিয়ে": "by; through", "নামে": "gets down" }
+    confusables: { "c1": { why: "goes up: the opposite direction." }, "c2": { why: "the roof: a place, not a movement." } }
+  "bn-2385":
+    native: "Switch off the light. (familiar)"
+    bases: { "নেভাও": "switch off (familiar)" }
+    confusables: { "c1": { why: "switch on: the opposite." }, "c2": { why: "open (familiar): not for a light." } }
+  "bn-2386":
+    native: "Don't forget the key. (familiar)"
+    bases: { "ভুলো": "forget (familiar)" }
+    confusables: { "c1": { why: "in the mind: a place for remembering." }, "c2": { why: "open (familiar): a door or a lock." } }
+  "bn-2387":
+    native: "I wash my shirt every day."
+    confusables: { "c1": { why: "I eat: a meal, not a wash." }, "c2": { why: "I go: a move, not a wash." } }
+  "bn-2388":
+    native: "You show me the house. (familiar)"
+    bases: { "দেখাও": "show (familiar)" }
+    confusables: { "c1": { why: "tell or let hear: sound, not sight." }, "c2": { why: "tell (familiar): words, not a house." } }
