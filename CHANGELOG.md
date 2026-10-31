@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Deck search opens the course.** Tapping Add the course in a deck search now opens Add a language with the course's name already in its search, instead of the plain Languages list (#918).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.
 
 ## [0.7.0] - 2026-10-31

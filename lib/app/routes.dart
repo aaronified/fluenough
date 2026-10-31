@@ -190,7 +190,9 @@ abstract final class AppRoutes {
       settingsFonts => const ScriptFontsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const LanguagesPage(),
-      learnLanguages => const LanguagesPage(),
+      learnLanguages => LanguagesPage(
+        initialQuery: args is String ? args : null,
+      ),
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),

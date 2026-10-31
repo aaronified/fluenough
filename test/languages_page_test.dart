@@ -197,6 +197,23 @@ void main() {
     expect(state.settings.spokenLanguages, contains('mr'));
   });
 
+  testWidgets('opened with a course name (the deck search shortcut), Add a '
+      'language shows that course (#918)', (tester) async {
+    usePhone(tester, textScale: 1.4);
+    await pumpScreen(
+      tester,
+      LanguagesPage(spokenList: pickerSpokenList, initialQuery: 'Marathi'),
+      state: learner(),
+    );
+    await tester.pumpAndSettle();
+    final search = tester.widget<TextField>(
+      find.byKey(const ValueKey<String>('languages-add-search')),
+    );
+    expect(search.controller!.text, 'Marathi');
+    expect(find.byKey(const ValueKey<String>('add-mr')), findsOneWidget);
+    expect(find.byKey(const ValueKey<String>('add-hi')), findsNothing);
+  });
+
   testWidgets('a filter pill keeps only the languages with that state', (
     tester,
   ) async {

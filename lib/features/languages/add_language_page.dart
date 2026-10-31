@@ -14,16 +14,25 @@ import 'language_views.dart';
 /// Picking one opens its sheet as a draft: nothing is saved until "Add".
 /// Adding pops this page, back to the list.
 class AddLanguagePage extends StatefulWidget {
-  const AddLanguagePage({super.key, required this.spokenList});
+  const AddLanguagePage({
+    super.key,
+    required this.spokenList,
+    this.initialQuery,
+  });
 
   final List<SpokenLanguage> spokenList;
+
+  /// What the search holds on opening, such as a course's name (#918).
+  final String? initialQuery;
 
   @override
   State<AddLanguagePage> createState() => _AddLanguagePageState();
 }
 
 class _AddLanguagePageState extends State<AddLanguagePage> {
-  final TextEditingController _search = TextEditingController();
+  late final TextEditingController _search = TextEditingController(
+    text: widget.initialQuery,
+  );
 
   /// The order families are listed in; a language with none, or an unknown
   /// one, goes last.
