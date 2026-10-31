@@ -462,7 +462,7 @@ extension ProgressQueries on ProgressStore {
   /// one (#653) is not a review to fit. [log] alone is what the learner
   /// did, answer by answer.
   List<ReviewEvent> get skillLog {
-    final words = log;
+    final words = log.answered;
     final scripts = scriptLog;
     return <ReviewEvent>[
       ...words,
@@ -495,14 +495,16 @@ extension ProgressQueries on ProgressStore {
       log.where((e) => e.wasNew && isSameDay(e.at, day)).length;
 
   /// Reviews given on [day]'s calendar date.
-  int reviewsOn(DateTime day) => log.where((e) => isSameDay(e.at, day)).length;
+  int reviewsOn(DateTime day) =>
+      log.answered.where((e) => isSameDay(e.at, day)).length;
 
   /// Whether any review was given on [day]'s calendar date.
-  bool practisedOn(DateTime day) => log.any((e) => isSameDay(e.at, day));
+  bool practisedOn(DateTime day) =>
+      log.answered.any((e) => isSameDay(e.at, day));
 
   /// Consecutive days with a review, ending today — or yesterday, if today
   /// has none yet, so that a streak is not broken before the day is over.
-  int streakAt(DateTime now) => streakIn(log, now);
+  int streakAt(DateTime now) => streakIn(log.answered, now);
 
   /// Distinct cards of [cardIds], a deck's, reviewed successfully at least
   /// once, in any mode and in any deck: the deck's "Learned" count.

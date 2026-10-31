@@ -59,7 +59,7 @@ class ProgressMastery {
         ? languageOf(deckId) != null
         : languageOf(deckId) == language;
     final log = <ReviewEvent>[
-      for (final e in state.progress.log)
+      for (final e in state.progress.log.answered)
         if (counts(e.deckId)) e,
     ];
     final scriptLog = <ReviewEvent>[
