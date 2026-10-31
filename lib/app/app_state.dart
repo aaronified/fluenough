@@ -1951,8 +1951,18 @@ class AppState extends ChangeNotifier {
     day: now(),
   );
 
-  /// The language a summary is kept under: the one shown, or `*`.
-  String get _todayScope => shownLanguage ?? '*';
+  /// The language a summary is kept under: the one shown, or `*`. Worked
+  /// out from the languages learned alone, never the catalog: a summary is
+  /// read while the catalog loads, when [shownLanguage] has no language
+  /// yet, so it must be filed under the same name before and after.
+  String get _todayScope =>
+      LanguageChoice.shown(settings.languageChoice, <String>[
+        ...<String>{
+          ...settings.learningLanguages,
+          ...?currentProfile.languages,
+        },
+      ]) ??
+      '*';
 
   /// The skill-tile numbers Today last showed for the language shown, read
   /// from the small summary saved with the settings, so that Today can draw
@@ -1969,9 +1979,10 @@ class AppState extends ChangeNotifier {
   bool _todayScheduled = false;
 
   /// Keeps [summary], Today's live numbers for the language shown, for the
-  /// next launch. Debounced: the latest of those given by the time the
-  /// device is idle is written, and nothing is written if it is what is
-  /// saved already.
+  /// next launch. Debounced: the latest of those given by the end of the
+  /// frame is written, and nothing is written if it is what is saved
+  /// already. It waits for the frame's end, not for an idle slot, because
+  /// an idle task leaves a timer pending when the screen is closed.
   void rememberToday(TodaySummary summary) {
     if (_disposed) return;
     _todayPending = summary;
@@ -1981,7 +1992,7 @@ class AppState extends ChangeNotifier {
     if (_todayScheduled) return;
     _todayScheduled = true;
     try {
-      SchedulerBinding.instance.scheduleTask<void>(flushToday, Priority.idle);
+      SchedulerBinding.instance.addPostFrameCallback((_) => flushToday());
     } catch (_) {
       // Without a scheduler there is nothing to wait for.
       flushToday();
@@ -1990,8 +2001,8 @@ class AppState extends ChangeNotifier {
 
   String? _todayLanguage;
 
-  /// Writes the pending summary now. The tests call it, having no idle
-  /// slots to wait for.
+  /// Writes the pending summary now. The tests call it, having no frame to
+  /// wait for.
   @visibleForTesting
   void flushToday() {
     _todayScheduled = false;
