@@ -49,6 +49,15 @@ IconData markIcon(SkillMark mark) => switch (mark) {
   SkillMark.learn => Icons.school_outlined,
 };
 
+/// Know's fill: the skill's container, darkened a little so that Know stands
+/// apart from Learn, which keeps the container and adds the border. The text
+/// stays 4.5:1 or better on it in every theme.
+Color knowFill(Color container, Brightness brightness) => Color.lerp(
+  container,
+  Colors.black,
+  brightness == Brightness.dark ? 0.35 : 0.18,
+)!;
+
 /// A skill's name: "Read", or "Read Devanagari" where the language has
 /// [severalScripts].
 String skillName(
@@ -77,7 +86,7 @@ String skillSemantics(
     : l10n.languagesSkillState(name, state.label(l10n));
 
 /// One skill as a chip or a pill: its icon in its colour and the mark of its
-/// state; Know is the skill's container, Learn the container with a 2 px
+/// state; Know is the skill's container darkened ([knowFill]), Learn the container with a 2 px
 /// primary border drawn inside (so its size does not change), Leave dashed.
 /// With [onTap] it is the sheet's pill; without, the list's read-only chip.
 class SkillBadge extends StatelessWidget {
@@ -153,7 +162,11 @@ class SkillBadge extends StatelessWidget {
           vertical: 2,
         ),
         decoration: BoxDecoration(
-          color: leave ? null : colors.container,
+          color: leave
+              ? null
+              : mark == SkillMark.know || mark == SkillMark.knowCovered
+              ? knowFill(colors.container, theme.brightness)
+              : colors.container,
           borderRadius: BorderRadius.circular(radius),
         ),
         foregroundDecoration: mark == SkillMark.learn
@@ -162,7 +175,9 @@ class SkillBadge extends StatelessWidget {
                 border: Border.all(color: scheme.primary, width: 2),
               )
             : null,
-        alignment: Alignment.center,
+        // No `alignment` here: it wraps the child in an Align, which fills
+        // all the width a Wrap offers and drew every chip full width. The
+        // Row centres its own icons within a minimum width.
         child: content,
       ),
     );
