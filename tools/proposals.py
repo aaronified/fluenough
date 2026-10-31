@@ -368,6 +368,31 @@ def warning_choices(entry: Entry) -> list[str]:
     return [*choices, "none"]
 
 
+SYNONYM_SETS = Path("assets") / "synonyms" / "en.yaml"
+
+
+def _refusal_error(root: Path, entry: Entry, text: str) -> str | None:
+    """Why refusing the synonym [text] on [entry] would fail
+    tools/validate_synonyms.py, which CI runs on every deck: it must be in a
+    set that has another member among the card's own answers, and the set
+    must not be escaped by another card already (then it is not absolutely
+    synonymous: the owner removes or splits it)."""
+    import validate_synonyms as vs
+    try:
+        sets_text = (root / SYNONYM_SETS).read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return "there are no synonym sets to refuse a word from"
+    _, escaped, sets, set_of = vs.scan_decks(sets_text, root / "decks")
+    if not vs.refusal_blocks(set_of, entry.data, text):
+        return (f"{text!r} is in no synonym set with another of the card's "
+                f"answers, so refusing it does nothing")
+    others = set(escaped.get(set_of[text], [])) - {entry.card}
+    if others:
+        return (f"the set of {text!r} is escaped on {', '.join(sorted(others))} "
+                f"already: it is not absolutely synonymous, for the owner")
+    return None
+
+
 def list_of(name: str) -> str:
     """The list a proposal on [name], one of ADD_FIELDS, adds to."""
     return name.removesuffix("_add")
@@ -421,7 +446,7 @@ def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> st
             return f"{text!r} is not in comparison form"
         if text in answers(entry.data):
             return f"{text!r} is one of the card's own answers, which are never blocked"
-        return None
+        return _refusal_error(root, entry, text)
     if name == "gender":
         classes = genders_of(root, lang)
         if text not in classes:

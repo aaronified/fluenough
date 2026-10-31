@@ -212,6 +212,17 @@ reviewer never edits the shared file: a word proposed for the same card
 answer on several cards becomes a candidate set, reported to the owner by a
 tool, and goes through the seeding workflow below.
 
+Built (2026-10-31, plan step 9, tools only; the app's reviewer mode is the
+overhaul's): the format is as above, with `now` always `""` (the proposal
+adds, it replaces nothing). The review file names the parts `alt_native` and
+`not_synonyms` with `action: "add"`; the bot puts a `not_synonyms` word in
+comparison form. Applying appends to the list, closes only proposals of the
+same item, and serialises the rest (two agreements cannot both edit one
+line). The bot refuses what CI's `validate_synonyms.py` would reject: a
+refused word that is one of the card's own answers, is in no set with
+another of its answers, or whose set another card already escapes.
+`tools/synonym_candidates.py` is the candidate-set report.
+
 ### Seeding and the review gate
 
 1. `tools/english_meanings.py` lists the English meanings of every course

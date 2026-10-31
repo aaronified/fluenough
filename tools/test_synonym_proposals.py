@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
 import review_bot as rb  # noqa: E402
+import synonym_candidates as sc  # noqa: E402
 import validate_decks as vd  # noqa: E402
 from test_proposals import ALICE, BOB, SINGLE, TOOLS  # noqa: E402
 
@@ -39,6 +40,13 @@ class Synonyms(unittest.TestCase):
         self.single.write_text(SINGLE.replace(
             '    native: "milk"  # a comment stays\n',
             '    native: "milk"  # a comment stays\n    alt_native: ["cow juice"]\n'),
+            encoding="utf-8")
+        sets = self.root / "assets" / "synonyms"
+        sets.mkdir(parents=True)
+        # Made-up words; the cards' answers are in them.
+        (sets / "en.yaml").write_text(
+            "# Test sets. CC BY-SA 4.0.\nversion: 1\nsets:\n"
+            '  - ["milk", "shore", "strand"]\n  - ["mother", "parent"]\n',
             encoding="utf-8")
         self.layer = zz / "en" / "zz-en-home.yaml"
         self.core = zz / "zz-home.yaml"
@@ -106,12 +114,12 @@ class Synonyms(unittest.TestCase):
     def test_a_layers_entry_takes_both_lists(self) -> None:
         one = self.propose("alt_native", "mum", card="zz-9004", deck="zz-en-home")
         self.assertEqual(self.apply_one(one).outcome, "applied")
-        two = self.propose("not_synonyms", "mother figure", card="zz-9004",
+        two = self.propose("not_synonyms", "parent", card="zz-9004",
                            deck="zz-en-home")
         self.assertEqual(self.apply_one(two).outcome, "applied")
         data = self.entry(self.layer, "zz-9004")
         self.assertEqual(data["alt_native"], ["mum"])
-        self.assertEqual(data["not_synonyms"], ["mother figure"])
+        self.assertEqual(data["not_synonyms"], ["parent"])
         self.assertEqual(vd.validate(self.layer).errors, [])
 
     def test_a_card_of_a_core_goes_on_its_layers_entry(self) -> None:
@@ -160,8 +168,27 @@ class Synonyms(unittest.TestCase):
         other = self.root / "decks" / "zz" / "zz-hi-extra.yaml"
         other.write_text(text, encoding="utf-8")
         self.single.unlink()
-        refused = self.propose("not_synonyms", "shore", deck="zz-hi-extra")
+        refused = self.propose("not_synonyms", "strand", deck="zz-hi-extra")
         self.assertEqual((len(refused.added), len(refused.unsupported)), (0, 1))
+
+    def test_a_refused_word_must_do_something_the_ci_check_accepts(self) -> None:
+        # In no set with one of the card's answers: it would block nothing.
+        nothing = self.propose("not_synonyms", "parent")
+        self.assertEqual((len(nothing.added), len(nothing.unsupported)), (0, 1))
+        # In a set with the card's "milk": it blocks.
+        good = self.propose("not_synonyms", "shore")
+        self.assertEqual(self.apply_one(good).outcome, "applied")
+        # A second card escaping the same set means the set is not absolute.
+        second = self.propose("not_synonyms", "strand")
+        self.assertEqual((len(second.added), len(second.unsupported)), (1, 0))
+        text = self.single.read_text(encoding="utf-8").replace(
+            'native: "water"', 'native: "milk"')
+        self.single.write_text(text, encoding="utf-8")
+        third = self.propose("not_synonyms", "strand", card="zz-9202")
+        self.assertEqual((len(third.added), len(third.unsupported)), (0, 1))
+        from validate_synonyms import validate
+        sets = (self.root / pr.SYNONYM_SETS).read_text(encoding="utf-8")
+        self.assertEqual(validate(sets, self.root / "decks" / "zz"), [])
 
     def test_a_list_written_over_several_lines_is_left_for_the_owner(self) -> None:
         text = self.single.read_text(encoding="utf-8").replace(
@@ -218,6 +245,56 @@ class Synonyms(unittest.TestCase):
                              + text[end + 1:], encoding="utf-8")
         errors = vd.validate(self.core).errors
         self.assertTrue(any("field must be one of" in e for e in errors), errors)
+
+
+class Candidates(unittest.TestCase):
+    """tools/synonym_candidates.py: the same pair on several cards."""
+
+    MORE = """\
+schema: 1
+id: "zz-en-more"
+name: "More"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+cards:
+  - id: "zz-9301"
+    target: "ఒకటి"
+    native: "water"
+    alt_native: ["moisture", "milk"]
+  - id: "zz-9302"
+    target: "రెండు"
+    native: "water"
+    proposed:
+      %s
+  - id: "zz-9303"
+    target: "మూడు"
+    native: "water"
+"""
+
+    def setUp(self) -> None:
+        self.root = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.root, True)
+        zz = self.root / "decks" / "zz"
+        zz.mkdir(parents=True)
+        add = pr.Proposal("zz-9302", "alt_native_add", "", "moisture", ALICE, "2026-10-31")
+        (zz / "zz-en-more.yaml").write_text(self.MORE % add.line(), encoding="utf-8")
+
+    def test_the_same_pair_on_two_cards_is_a_candidate_set(self) -> None:
+        # One card's alt_native and another's waiting proposal make a pair
+        # of two cards; "milk" on one card alone is not enough.
+        self.assertEqual(sc.candidates(self.root),
+                         [(("moisture", "water"), ["zz:zz-9301", "zz:zz-9302"])])
+        self.assertEqual(len(sc.candidates(self.root, 1)), 2)
+
+    def test_a_pair_already_in_one_set_is_not_a_candidate(self) -> None:
+        sets = self.root / "assets" / "synonyms"
+        sets.mkdir(parents=True)
+        (sets / "en.yaml").write_text(
+            '# Test sets. CC BY-SA 4.0.\nversion: 1\nsets:\n  - ["moisture", "water"]\n',
+            encoding="utf-8")
+        self.assertEqual(sc.candidates(self.root), [])
+        self.assertEqual([p for p, _ in sc.candidates(self.root, 1)], [("milk", "water")])
 
 
 if __name__ == "__main__":

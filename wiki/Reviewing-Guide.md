@@ -146,6 +146,15 @@ checked the whole unit.
   meanings, or no warning). Any other text is left for the owner. The items
   of a list, the facts and a flag are always the owner's to read: the bot
   does not write them.
+- **Extra answers and refused synonyms** (owner, 2026-10-30, ADR-0050). On
+  an English card, a typed answer that is right but marked wrong can be
+  proposed as an extra accepted answer (`alt_native`), and a word the
+  synonym sets wrongly accept as another can be proposed as one to refuse
+  (`not_synonyms`). Each is one word a proposal, added to the card's list
+  once enough reviewers accept it. The bot leaves a refused word for the
+  owner when it is one of the card's own answers or no set would accept it
+  anyway. You never edit the shared synonym list: words proposed on several
+  cards are collected by a tool for the owner to review.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
