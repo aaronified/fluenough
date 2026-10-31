@@ -35,3 +35,9 @@ word where one word is enough ("Info", "Close", "Speak"), never a sentence,
 no full stop. The message is also the control's label for a screen reader.
 `test/hint_test.dart` fails for an `IconButton` without `tooltip:` and for an
 icon-only tap target in a file with no hint.
+A pill that cycles on a tap (the Languages skill pills) is wrapped in `Hint` too: a
+long press only shows the hint (the skill and its state), a tap still acts. A
+button that repeats while held (the minutes stepper) takes none, since the hint
+would pop up mid-repeat, and the language bar takes none, since its long press
+cancelled the bar's fold on touch. A control that shows its own text needs no
+hint.
