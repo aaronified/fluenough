@@ -174,14 +174,44 @@ def answers(entry: dict) -> list[str]:
     return out
 
 
-def check_decks(text: str, decks: Path) -> list[str]:
-    import yaml  # PyYAML, as the deck validator
-
+def set_index(text: str) -> tuple[list[tuple[int, list[str]]], dict[str, int]]:
+    """The sets of [text], and the index of the set each member is in."""
     sets, _ = parse(text)
     set_of: dict[str, int] = {}
     for index, (_, members) in enumerate(sets):
         for member in members:
             set_of.setdefault(member, index)
+    return sets, set_of
+
+
+def refusal_blocks(set_of: dict[str, int], entry: dict, word: str) -> bool:
+    """Whether refusing [word] on [entry] does something: it is in a set
+    that has another member among the card's own answers."""
+    index = set_of.get(word)
+    return index is not None and index in {set_of[a] for a in answers(entry)
+                                           if a in set_of}
+
+
+def check_decks(text: str, decks: Path) -> list[str]:
+    errors, escaped, sets, _ = scan_decks(text, decks)
+    for index, cards in sorted(escaped.items()):
+        if len(set(cards)) >= 2:
+            members = ", ".join(sets[index][1])
+            errors.append(
+                f"the set [{members}] is escaped by not_synonyms on "
+                f"{len(set(cards))} cards ({', '.join(sorted(set(cards)))}): "
+                f"remove or split it")
+    return errors
+
+
+def scan_decks(text: str, decks: Path) -> tuple[list[str], dict[int, list[str]],
+                                                list[tuple[int, list[str]]],
+                                                dict[str, int]]:
+    """The errors of each card's `not_synonyms`, the cards that escape each
+    set (by its index), and the sets and their members' index."""
+    import yaml  # PyYAML, as the deck validator
+
+    sets, set_of = set_index(text)
     errors: list[str] = []
     escaped: dict[int, list[str]] = {}
     for path in sorted(decks.rglob("*.yaml")):
@@ -225,14 +255,7 @@ def check_decks(text: str, decks: Path) -> list[str]:
                         f"member among the card's answers")
                 else:
                     escaped.setdefault(index, []).append(card_id)
-    for index, cards in sorted(escaped.items()):
-        if len(set(cards)) >= 2:
-            members = ", ".join(sets[index][1])
-            errors.append(
-                f"the set [{members}] is escaped by not_synonyms on "
-                f"{len(set(cards))} cards ({', '.join(sorted(set(cards)))}): "
-                f"remove or split it")
-    return errors
+    return errors, escaped, sets, set_of
 
 
 def validate(text: str, decks: Path | None = None) -> list[str]:

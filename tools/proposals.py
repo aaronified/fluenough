@@ -56,7 +56,8 @@ FIELD_OF_PART = {
     "warning": "warning",
 }
 # The order fields are written in, for a field the card did not have.
-FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "alt_target", "native")
+FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "alt_target", "native",
+               "alt_native", "not_synonyms")
 
 # A proposal on one of a card's base words (#476): its `now` is the base as
 # it is, and its `text` the base as proposed, each one line of JSON (see
@@ -76,6 +77,16 @@ ALT = "alt_target"
 PLACE = "place"
 # The fields whose value is one of a fixed set (#508).
 FIXED_FIELDS = ("gender", "register", "hears", "warning")
+# A proposal that adds one item to a list on the card's native side
+# (ADR-0050, #924): `alt_native_add` to its `alt_native`, `not_synonyms_add`
+# to its `not_synonyms`. Its `now` is "" and its `text` the one item, so two
+# proposals on the same list do not outdate each other: one is applied at a
+# time and the next waits, and only a proposal of the same item is a rival.
+# The review file names the part `alt_native` or `not_synonyms` with the
+# action `add` (tools/review_bot.py).
+ADD_FIELDS = vd.PROPOSAL_ADD_FIELDS
+# Every field whose text the bot checks against more than the proposal.
+CHECKED_FIELDS = (*FIXED_FIELDS, *ADD_FIELDS)
 # The keys of a base in a proposal, in the order they are written.
 BASE_ORDER = ("word", "ref", "base", "reading", "meaning")
 
@@ -325,6 +336,8 @@ def now_of(root: Path, lang: str, entry: Entry, p: Proposal) -> str:
         return base_text(base_of(root, lang, entry, word)) if word else ""
     if p.field == ALT:
         return alt_text(entry.data.get(ALT))
+    if p.field in ADD_FIELDS:
+        return ""
     if p.field == PLACE:
         return entry.deck if entry.form == "core" else ""
     value = entry.value(p.field)
@@ -355,11 +368,102 @@ def warning_choices(entry: Entry) -> list[str]:
     return [*choices, "none"]
 
 
+SYNONYM_SETS = Path("assets") / "synonyms" / "en.yaml"
+
+
+def _refusal_error(root: Path, entry: Entry, text: str) -> str | None:
+    """Why refusing the synonym [text] on [entry] would fail
+    tools/validate_synonyms.py, which CI runs on every deck: it must be in a
+    set that has another member among the card's own answers, and the set
+    must not be escaped by another card already (then it is not absolutely
+    synonymous: the owner removes or splits it)."""
+    import validate_synonyms as vs
+    try:
+        sets_text = (root / SYNONYM_SETS).read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return "there are no synonym sets to refuse a word from"
+    _, escaped, sets, set_of = vs.scan_decks(sets_text, root / "decks")
+    if not vs.refusal_blocks(set_of, entry.data, text):
+        return (f"{text!r} is in no synonym set with another of the card's "
+                f"answers, so refusing it does nothing")
+    others = set(escaped.get(set_of[text], [])) - {entry.card}
+    if others:
+        return (f"the set of {text!r} is escaped on {', '.join(sorted(others))} "
+                f"already: it is not absolutely synonymous, for the owner")
+    return None
+
+
+def list_of(name: str) -> str:
+    """The list a proposal on [name], one of ADD_FIELDS, adds to."""
+    return name.removesuffix("_add")
+
+
+def native_code_of(lang: str, entry: Entry) -> str | None:
+    """The language the card's native side is in: a deck's id is
+    `<language>-<native>-<name>` (the validator checks it)."""
+    m = re.match(rf"{re.escape(lang)}-([a-z]{{2,3}})-", entry.deck)
+    return m.group(1) if m else None
+
+
+def _item_keys(items: object) -> set[str]:
+    """The comparison form of each item of a list of text."""
+    from validate_synonyms import meaning_key
+    return {meaning_key(i) for i in items if isinstance(i, str)} \
+        if isinstance(items, list) else set()
+
+
+def has_item(entry: Entry, name: str, text: str) -> bool:
+    """Whether [entry]'s list that [name] adds to has [text] already, or
+    something that is the same answer once compared."""
+    from validate_synonyms import answers, meaning_key
+    key = meaning_key(text)
+    if name == "alt_native_add" and key in answers(entry.data):
+        # The card's own native text is an answer too.
+        return True
+    return key in _item_keys(entry.data.get(list_of(name)))
+
+
 def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> str | None:
     """Why [text] may not be written as [entry]'s [name], or None. Only the
     fixed-value fields have a rule: a gender is one of the language's
     classes, a register one of the five, `hears` is `form`, and a warning
-    names a warning the card has. The text of any other field is free."""
+    names a warning the card has. An item added to `alt_native` is one
+    answer, and one added to `not_synonyms` is in comparison form, English,
+    and none of the card's own answers (which are never blocked); the
+    list must be one the file's text can be edited line by line in. An
+    `alt_native` item is refused when the card's `not_synonyms` has it, and,
+    on an English card, when it runs separate sentences together. The
+    text of any other field is free."""
+    if name in ADD_FIELDS:
+        from validate_synonyms import answers, meaning_key
+        have = entry.data.get(list_of(name))
+        if have is not None and (not isinstance(have, list)
+                                 or not all(isinstance(i, str) for i in have)):
+            return f"{list_of(name)} is not a list of text"
+        if not text.strip():
+            return f"{name} has no text"
+        if name == "alt_native_add":
+            if ";" in text:
+                return f"{name} is one answer, not several split by ';'"
+            blocked = _item_keys(entry.data.get("not_synonyms"))
+            key = meaning_key(text)
+            stripped = {key} | {key[len(a):] for a in ("a ", "an ", "the ")
+                                if key.startswith(a)}
+            if blocked & stripped:
+                return (f"{text!r} is one the card refuses (not_synonyms): the "
+                        f"owner decides which of the two stays")
+            if native_code_of(lang, entry) == "en" \
+                    and vd.meaning_has_separate_sentences(text):
+                return (f"{text!r} runs separate sentences together: one answer "
+                        f"is one phrase")
+            return None
+        if native_code_of(lang, entry) != "en":
+            return "not_synonyms is for English meanings"
+        if not meaning_key(text) or meaning_key(text) != text:
+            return f"{text!r} is not in comparison form"
+        if text in answers(entry.data):
+            return f"{text!r} is one of the card's own answers, which are never blocked"
+        return _refusal_error(root, entry, text)
     if name == "gender":
         classes = genders_of(root, lang)
         if text not in classes:
@@ -374,7 +478,10 @@ def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> st
 
 def holds(root: Path, lang: str, entry: Entry, p: Proposal) -> bool:
     """Whether [p] can go on [entry]: the entry may change its field, and
-    the field says what the proposer saw."""
+    the field says what the proposer saw. For an added item (ADR-0050) that
+    is: the list does not have it yet."""
+    if p.field in ADD_FIELDS and has_item(entry, p.field, p.text):
+        return False
     return entry.may_change(p.field) and now_of(root, lang, entry, p) == p.now
 
 
@@ -382,6 +489,11 @@ def rivals_of(entry: Entry, p: Proposal) -> list[Proposal]:
     """The other proposals on [entry] that change what [p] changes: its
     field, and for a base, the same word."""
     word = base_word(p) if p.field == BASES else None
+    if p.field in ADD_FIELDS:
+        # Only the same item: others add other items, and wait their turn.
+        from validate_synonyms import meaning_key
+        return [o for o in entry.proposals() if o.field == p.field and o.id != p.id
+                and meaning_key(o.text) == meaning_key(p.text)]
     return [o for o in entry.proposals() if o.field == p.field and o.id != p.id
             and (p.field != BASES or base_word(o) == word)]
 
@@ -801,7 +913,7 @@ def propose(root: Path, suggestion: Suggestion, result: Proposed) -> None:
     if entry is None:
         result.outdated.append(p)
         return
-    if p.field in FIXED_FIELDS and value_error(
+    if p.field in CHECKED_FIELDS and value_error(
             root, suggestion.lang, entry, p.field, p.text):
         # A value the field may not have is never written, and not outdated:
         # it was never good.
@@ -860,7 +972,7 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
     entry, p = found
     if not holds(root, lang, entry, p):
         return Applied("outdated", p)
-    if p.field in FIXED_FIELDS and value_error(root, lang, entry, p.field, p.text):
+    if p.field in CHECKED_FIELDS and value_error(root, lang, entry, p.field, p.text):
         return Applied("unsupported", p)
     rivals = rivals_of(entry, p)
     gone = {o.id for o in (p, *rivals)}
@@ -873,11 +985,15 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
             edit = _Text(entry)
             if p.field == ALT:
                 edit.set_list(ALT, json.loads(p.text))
+            elif p.field in ADD_FIELDS:
+                name = list_of(p.field)
+                edit.set_list(name, [*(entry.data.get(name) or []), p.text])
             else:
                 edit.set_field(p.field, p.text)
             for o in gone:
                 edit.remove(o)
-            edit.save(lambda e: now_of(root, lang, e, p) == p.text
+            edit.save(lambda e: (has_item(e, p.field, p.text) if p.field in ADD_FIELDS
+                                 else now_of(root, lang, e, p) == p.text)
                       and not any(o.id in gone for o in e.proposals()))
     except (Unsupported, ValueError):
         return Applied("unsupported", p)
