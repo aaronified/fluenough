@@ -7,7 +7,9 @@ import 'settings.dart';
 /// opens, and each change saved as it happens, in order.
 class StoredSettings {
   StoredSettings._(this.settings, this._db) : _saved = settings.toStored() {
-    settings.addListener(_save);
+    settings
+      ..addListener(_save)
+      ..todaySummaryChanges.addListener(_save);
   }
 
   /// The settings stored in [db], with the defaults for any not stored yet.

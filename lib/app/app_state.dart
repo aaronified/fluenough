@@ -81,6 +81,7 @@ import 'settings.dart';
 import 'shell_tab.dart';
 import 'synonym_loader.dart';
 import 'skill.dart';
+import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
@@ -1935,6 +1936,77 @@ class AppState extends ChangeNotifier {
     if (_lazyPending.isNotEmpty) _scheduleLazy();
   }
 
+  // ---------------------------------------------------------------------------
+  // Today's saved summary (#875)
+
+  /// What a saved summary was worked out for: see [TodaySummaries.stamp].
+  String get _todayStamp => TodaySummaries.stamp(
+    languages: <String>[
+      ...<String>{...settings.learningLanguages, ...?currentProfile.languages},
+    ],
+    enabled: <Skill>[
+      for (final skill in Skill.values)
+        if (settings.isEnabled(skill)) skill,
+    ],
+  );
+
+  /// The language a summary is kept under: the one shown, or `*`.
+  String get _todayScope => shownLanguage ?? '*';
+
+  /// The skill-tile numbers Today last showed for the language shown, read
+  /// from the small summary saved with the settings, so that Today can draw
+  /// its tiles while the catalog loads. Null when none was saved, or when it
+  /// is stale: written by another app version, for other languages or with
+  /// other skills switched on.
+  TodaySummary? get savedToday => TodaySummaries.read(
+    saved: settings.todaySummary,
+    stamp: _todayStamp,
+    language: _todayScope,
+  );
+
+  TodaySummary? _todayPending;
+  bool _todayScheduled = false;
+
+  /// Keeps [summary], Today's live numbers for the language shown, for the
+  /// next launch. Debounced: the latest of those given by the time the
+  /// device is idle is written, and nothing is written if it is what is
+  /// saved already.
+  void rememberToday(TodaySummary summary) {
+    if (_disposed) return;
+    _todayPending = summary;
+    // The stamp and the scope are read when it is written, so that a
+    // change of language in between is not filed under the old one.
+    _todayLanguage = _todayScope;
+    if (_todayScheduled) return;
+    _todayScheduled = true;
+    try {
+      SchedulerBinding.instance.scheduleTask<void>(flushToday, Priority.idle);
+    } catch (_) {
+      // Without a scheduler there is nothing to wait for.
+      flushToday();
+    }
+  }
+
+  String? _todayLanguage;
+
+  /// Writes the pending summary now. The tests call it, having no idle
+  /// slots to wait for.
+  @visibleForTesting
+  void flushToday() {
+    _todayScheduled = false;
+    final summary = _todayPending;
+    final language = _todayLanguage;
+    _todayPending = null;
+    if (_disposed || summary == null || language == null) return;
+    final text = TodaySummaries.write(
+      saved: settings.todaySummary,
+      stamp: _todayStamp,
+      language: language,
+      summary: summary,
+    );
+    if (text != settings.todaySummary) settings.todaySummary = text;
+  }
+
   /// Words first drilled today, counted from the log once and then from
   /// the answers added since, so an answer costs one event and not the
   /// whole log. [now] is the clock.
@@ -3544,6 +3616,7 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    _todayPending = null;
     reminders.dispose();
     settings
       ..removeListener(_forgetPending)

@@ -38,19 +38,7 @@ class TodayPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final Widget body = switch (state.status) {
-      CatalogStatus.loading => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          _Header(state: state),
-          Expanded(
-            child: Center(
-              child: CircularProgressIndicator(
-                semanticsLabel: l10n.commonLoadingDecks,
-              ),
-            ),
-          ),
-        ],
-      ),
+      CatalogStatus.loading => _loading(context, state, l10n),
       CatalogStatus.failed => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -76,14 +64,15 @@ class TodayPage extends StatelessWidget {
         ]),
         // Today stays built behind the other tabs and under a drill; there
         // it works nothing out for the answers recorded.
-        builder: (context, _) => _TodayContent(
-          state: state,
-          numbers: TodayNumbers.of(
-            state,
-            onScreen:
-                Visibility.of(context) && TickerMode.valuesOf(context).enabled,
-          ),
-        ),
+        builder: (context, _) {
+          final onScreen =
+              Visibility.of(context) && TickerMode.valuesOf(context).enabled;
+          final numbers = TodayNumbers.of(state, onScreen: onScreen);
+          // Kept for the next launch, which draws the tiles from it while
+          // the catalog loads (#875).
+          if (onScreen) state.rememberToday(numbers.summary);
+          return _TodayContent(state: state, numbers: numbers);
+        },
       ),
     };
     return Scaffold(
@@ -97,6 +86,37 @@ class TodayPage extends StatelessWidget {
       ),
     );
   }
+}
+
+/// While the catalog loads: the tiles as Today last drew them, if a summary
+/// of them was saved for these languages and has something to show (#875),
+/// else the spinner. The tiles are not live: a tap does nothing until the
+/// numbers are, a moment later, worked out for real.
+Widget _loading(BuildContext context, AppState state, AppLocalizations l10n) {
+  final saved = state.savedToday;
+  final Widget body = saved == null || !saved.hasDecks || saved.due == 0
+      ? Center(
+          child: CircularProgressIndicator(
+            semanticsLabel: l10n.commonLoadingDecks,
+          ),
+        )
+      : SingleChildScrollView(
+          padding: const EdgeInsetsDirectional.only(
+            start: AppSizes.gutter,
+            end: AppSizes.gutter,
+            bottom: 24,
+          ),
+          child: IgnorePointer(
+            child: DueCard(numbers: TodayNumbers.fromSummary(saved)),
+          ),
+        );
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: <Widget>[
+      _Header(state: state),
+      Expanded(child: body),
+    ],
+  );
 }
 
 class _TodayContent extends StatelessWidget {

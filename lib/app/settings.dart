@@ -118,6 +118,9 @@ class SettingsNotifier extends ChangeNotifier {
   String? _latestRelease;
   String? _pendingUpdate;
   String? _lastSeenVersion;
+  // Today's last numbers (#875). Its own notifier: saved quietly, so that no
+  // screen rebuilds and nothing is recomputed because a cache was written.
+  final ValueNotifier<String?> _todaySummary = ValueNotifier<String?>(null);
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   String? _languageChoice;
@@ -1021,6 +1024,18 @@ class SettingsNotifier extends ChangeNotifier {
   set lastSeenVersion(String? value) =>
       _set(_lastSeenVersion, value, (v) => _lastSeenVersion = v);
 
+  /// Today's last skill-tile numbers as text, kept for the next launch
+  /// (#875); see `TodaySummaries`. A cache, not a setting: it notifies
+  /// [todaySummaryChanges] only, and a backup leaves it out.
+  String? get todaySummary => _todaySummary.value;
+  set todaySummary(String? value) => _todaySummary.value = value;
+
+  /// Told when [todaySummary] changes, for the store to save it.
+  Listenable get todaySummaryChanges => _todaySummary;
+
+  /// The stored name of [todaySummary].
+  static const String todaySummaryKey = 'today_summary';
+
   /// Every setting as text, by its stored name. The names are permanent:
   /// renaming one resets it for everyone.
   Map<String, String> toStored() => <String, String>{
@@ -1053,6 +1068,7 @@ class SettingsNotifier extends ChangeNotifier {
     'latest_release': _latestRelease ?? '',
     'pending_update': _pendingUpdate ?? '',
     'last_seen_version': _lastSeenVersion ?? '',
+    todaySummaryKey: _todaySummary.value ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
     // Not chosen yet is empty, which an older version never wrote and
@@ -1220,6 +1236,9 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('last_seen_version', (t) => parseVersion(t) == null ? null : t)
         case final v?) {
       lastSeenVersion = v;
+    }
+    if (pick(todaySummaryKey, (t) => t.isEmpty ? null : t) case final v?) {
+      _todaySummary.value = v;
     }
     if (pick('facts_shown', _parseShown) case final v?) {
       _factsShown = Map<String, DateTime>.unmodifiable(v);
