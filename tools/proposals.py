@@ -415,8 +415,12 @@ def _item_keys(items: object) -> set[str]:
 def has_item(entry: Entry, name: str, text: str) -> bool:
     """Whether [entry]'s list that [name] adds to has [text] already, or
     something that is the same answer once compared."""
-    from validate_synonyms import meaning_key
-    return meaning_key(text) in _item_keys(entry.data.get(list_of(name)))
+    from validate_synonyms import answers, meaning_key
+    key = meaning_key(text)
+    if name == "alt_native_add" and key in answers(entry.data):
+        # The card's own native text is an answer too.
+        return True
+    return key in _item_keys(entry.data.get(list_of(name)))
 
 
 def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> str | None:
@@ -426,7 +430,9 @@ def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> st
     names a warning the card has. An item added to `alt_native` is one
     answer, and one added to `not_synonyms` is in comparison form, English,
     and none of the card's own answers (which are never blocked); the
-    list must be one the file's text can be edited line by line in. The
+    list must be one the file's text can be edited line by line in. An
+    `alt_native` item is refused when the card's `not_synonyms` has it, and,
+    on an English card, when it runs separate sentences together. The
     text of any other field is free."""
     if name in ADD_FIELDS:
         from validate_synonyms import answers, meaning_key
@@ -439,6 +445,17 @@ def value_error(root: Path, lang: str, entry: Entry, name: str, text: str) -> st
         if name == "alt_native_add":
             if ";" in text:
                 return f"{name} is one answer, not several split by ';'"
+            blocked = _item_keys(entry.data.get("not_synonyms"))
+            key = meaning_key(text)
+            stripped = {key} | {key[len(a):] for a in ("a ", "an ", "the ")
+                                if key.startswith(a)}
+            if blocked & stripped:
+                return (f"{text!r} is one the card refuses (not_synonyms): the "
+                        f"owner decides which of the two stays")
+            if native_code_of(lang, entry) == "en" \
+                    and vd.meaning_has_separate_sentences(text):
+                return (f"{text!r} runs separate sentences together: one answer "
+                        f"is one phrase")
             return None
         if native_code_of(lang, entry) != "en":
             return "not_synonyms is for English meanings"

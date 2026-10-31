@@ -150,6 +150,26 @@ class Synonyms(unittest.TestCase):
         self.assertEqual(self.entry(self.single, "zz-9201")["alt_native"],
                          ["cow juice", "cow's milk", "dairy"])
 
+    def test_an_extra_answer_the_card_refuses_is_left_for_the_owner(self) -> None:
+        text = self.single.read_text(encoding="utf-8").replace(
+            '    alt_native: ["cow juice"]\n',
+            '    alt_native: ["cow juice"]\n    not_synonyms: ["shore", "strand"]\n')
+        self.single.write_text(text, encoding="utf-8")
+        self.assertEqual(vd.validate(self.single).errors, [])
+        for word in ("Shore", "the strand", "a shore"):
+            result = self.propose("alt_native", word)
+            self.assertEqual((len(result.added), len(result.unsupported)), (0, 1), word)
+
+    def test_an_english_extra_answer_may_not_run_sentences_together(self) -> None:
+        result = self.propose("alt_native", "Cow milk. Not goat milk")
+        self.assertEqual((len(result.added), len(result.unsupported)), (0, 1))
+        self.assertNotIn("proposed:", self.single.read_text(encoding="utf-8"))
+
+    def test_the_cards_own_native_text_is_already_an_answer(self) -> None:
+        result = self.propose("alt_native", "Milk!")
+        self.assertEqual((len(result.added), len(result.outdated)), (0, 1))
+        self.assertNotIn("proposed:", self.single.read_text(encoding="utf-8"))
+
     # -- refusing what was never good ----------------------------------------
 
     def test_a_card_own_answer_is_never_listed_as_refused(self) -> None:

@@ -150,7 +150,7 @@ checked the whole unit.
   proposed as an extra accepted answer (`alt_native`), and a word the
   synonym sets wrongly accept as another can be proposed as one to refuse
   (`not_synonyms`). Each is one word a proposal, added to the card's list
-  once enough reviewers accept it. The bot leaves a refused word for the
+  once the usual agreement threshold is met. The bot leaves a refused word for the
   owner when it is one of the card's own answers or no set would accept it
   anyway. You never edit the shared synonym list: words proposed on several
   cards are collected by a tool for the owner to review.
