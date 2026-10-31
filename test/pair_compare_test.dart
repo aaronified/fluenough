@@ -32,7 +32,7 @@ license: CC0-1.0
 cards:
   - { id: es-9001, target: "gato", native: "cat", pair: es-9002 }
   - { id: es-9002, target: "gata", native: "$longMeaning" }
-  - { id: es-9003, target: "pero", native: "but", pair: es-9004, warning: none }
+  - { id: es-9003, target: "pero", native: "but", pair: es-9004 }
   - { id: es-9004, target: "perro", native: "dog" }
 ''';
 
@@ -71,6 +71,20 @@ Future<_Rig> _rig({String partnerMeaning = 'she-cat'}) async {
   await state.startSpeech();
   return _Rig(state, tts, speech);
 }
+
+/// [card] with the deck's `warning` key, which a single-file deck cannot
+/// give (only a core card can).
+Card _withWarning(Card card, String? warning) => warning == null
+    ? card
+    : Card(
+        id: card.id,
+        deckId: card.deckId,
+        target: card.target,
+        native: card.native,
+        pair: card.pair,
+        notes: card.notes,
+        warning: warning,
+      );
 
 /// The teach card of "gato", with its Compare button, on a phone at 1.4x
 /// text, and the popup the button opens, given a seed for the guessing.
@@ -133,14 +147,14 @@ void main() {
       'the card says warning none', (tester) async {
     final rig = await _rig();
     usePhone(tester);
-    Future<void> show(String id) async {
+    Future<void> show(String id, {String? warning}) async {
       await pumpScreen(
         tester,
         Scaffold(
           body: SingleChildScrollView(
             child: TaughtDetails(
               key: ValueKey<String>(id),
-              card: findCard(rig.state, id)!,
+              card: _withWarning(findCard(rig.state, id)!, warning),
               language: rig.language,
               reading: TaughtReading.always,
             ),
@@ -152,7 +166,7 @@ void main() {
 
     await show('es-9001');
     expect(find.byType(PairCompareButton), findsOneWidget);
-    await show('es-9003');
+    await show('es-9003', warning: 'none');
     expect(find.byType(PairCompareButton), findsNothing);
   });
 
