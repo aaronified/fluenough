@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
@@ -9,6 +11,7 @@ import 'tables/cards.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
@@ -89,6 +92,15 @@ class ReviewsDao extends DatabaseAccessor<AppDatabase> with _$ReviewsDaoMixin {
   /// Every review, in the order it was appended.
   Future<List<ReviewRow>> all() =>
       (select(reviews)..orderBy([(r) => OrderingTerm.asc(r.id)])).get();
+
+  /// Up to [limit] reviews after the one with id [after], in the order they
+  /// were appended: the log read a page at a time.
+  Future<List<ReviewRow>> page({required int after, required int limit}) =>
+      (select(reviews)
+            ..where((r) => r.id.isBiggerThanValue(after))
+            ..orderBy([(r) => OrderingTerm.asc(r.id)])
+            ..limit(limit))
+          .get();
 }
 
 /// The learner's settings, by name.
@@ -184,4 +196,48 @@ class RestoresDao extends DatabaseAccessor<AppDatabase>
         reviewsAfter: row.reviewsAfter,
       ),
   ];
+}
+
+/// The kept result of replaying the review log (#857, ADR-0051): a cache,
+/// replaced whole each time it is written.
+@DriftAccessor(tables: [ReplaySnapshots])
+class ReplaySnapshotsDao extends DatabaseAccessor<AppDatabase>
+    with _$ReplaySnapshotsDaoMixin {
+  ReplaySnapshotsDao(super.attachedDatabase);
+
+  /// The stamp of the snapshot kept, read without its payload, or null if
+  /// there is none.
+  Future<String?> stamp() async {
+    final rows = await customSelect(
+      'SELECT stamp FROM replay_snapshots WHERE name = ?',
+      variables: [Variable<String>(ReplaySnapshots.logName)],
+      readsFrom: {replaySnapshots},
+    ).get();
+    return rows.isEmpty ? null : rows.single.read<String>('stamp');
+  }
+
+  /// The payload of the snapshot kept, or null if there is none.
+  Future<Uint8List?> payload() async {
+    final row = await (select(
+      replaySnapshots,
+    )..where((s) => s.name.equals(ReplaySnapshots.logName))).getSingleOrNull();
+    return row?.payload;
+  }
+
+  /// Keeps [payload], made under [stamp], in place of the one before.
+  Future<void> put({
+    required String stamp,
+    required Uint8List payload,
+    required DateTime at,
+  }) => into(replaySnapshots).insertOnConflictUpdate(
+    ReplaySnapshotsCompanion.insert(
+      name: ReplaySnapshots.logName,
+      stamp: stamp,
+      payload: payload,
+      writtenAt: at,
+    ),
+  );
+
+  /// Forgets the snapshot.
+  Future<void> clear() => delete(replaySnapshots).go();
 }

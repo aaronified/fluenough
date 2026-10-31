@@ -1,8 +1,10 @@
 import 'dart:isolate';
+import 'dart:typed_data';
 
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import '../progress/progress_index.dart';
+import 'replay_snapshot.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_map.dart';
@@ -17,11 +19,16 @@ class OpenJob {
     required this.reviews,
     required this.leechActions,
     required this.fitted,
+    this.encode = false,
   });
 
   final List<LoggedReview> reviews;
   final List<LeechAction> leechActions;
   final Map<SkillKey, FittedParameters> fitted;
+
+  /// Whether the result also carries [OpenedLog.snapshot], made in the same
+  /// isolate, to be kept for the next launch (ADR-0051).
+  final bool encode;
 }
 
 /// What [openLog] works out from an [OpenJob]: everything opening the app
@@ -33,6 +40,7 @@ class OpenedLog {
     required this.index,
     required this.lastStudied,
     required this.leechActions,
+    this.snapshot,
   });
 
   /// Each pair's state from its own reviews alone: what `card_states`
@@ -52,6 +60,11 @@ class OpenedLog {
 
   /// The job's leech actions, as given.
   final List<LeechAction> leechActions;
+
+  /// This result as [encodeSnapshot] writes it, when the job asked
+  /// ([OpenJob.encode]) and it could be written: the bytes to keep for the
+  /// next launch. Null never means a wrong replay, only no snapshot.
+  final Uint8List? snapshot;
 }
 
 /// Replays [job]'s log: sorts it by time, then replays it twice as opening
@@ -86,13 +99,80 @@ OpenedLog openLog(OpenJob job) {
     skills: const SkillMap(),
     parameters: SkillParameters(fitted: job.fitted, lastStudied: lastStudied),
   );
+  Uint8List? snapshot;
+  if (job.encode) {
+    try {
+      snapshot = encodeSnapshot(memory: memory, cacheStates: cache.states);
+    } on Object {
+      snapshot = null; // no snapshot is better than failing the open
+    }
+  }
   return OpenedLog(
     cacheStates: cache.states,
     memory: memory,
     index: ProgressIndex()..rebuild(memory.events),
     lastStudied: lastStudied,
     leechActions: job.leechActions,
+    snapshot: snapshot,
   );
+}
+
+/// A kept snapshot to open from instead of replaying (ADR-0051): its bytes,
+/// the leech actions the database gave, and how many reviews the log it is
+/// for holds, which its events must equal in number.
+class SnapshotJob {
+  const SnapshotJob({
+    required this.bytes,
+    required this.leechActions,
+    required this.reviewCount,
+  });
+
+  final Uint8List bytes;
+  final List<LeechAction> leechActions;
+  final int reviewCount;
+}
+
+/// The [OpenedLog] a snapshot holds, with the index and each language's last
+/// study built from its events as [openLog] builds them, or null if the
+/// snapshot cannot be read or does not hold [SnapshotJob.reviewCount]
+/// events, whatever the reason. Pure, like [openLog].
+OpenedLog? openFromSnapshot(SnapshotJob job) {
+  try {
+    final kept = decodeSnapshot(job.bytes);
+    final events = kept.memory.events;
+    if (events.length != job.reviewCount) return null;
+    return OpenedLog(
+      cacheStates: kept.cacheStates,
+      memory: kept.memory,
+      index: ProgressIndex()..rebuild(events),
+      lastStudied: SkillParameters.lastStudiedIn(
+        <({String cardId, DateTime at})>[
+          for (final e in events) (cardId: e.cardId, at: e.at),
+        ],
+      ),
+      leechActions: job.leechActions,
+    );
+  } on Object {
+    return null;
+  }
+}
+
+/// Opens from a snapshot, somewhere. Null: use the log.
+typedef SnapshotRunner = Future<OpenedLog?> Function(SnapshotJob job);
+
+/// [openFromSnapshot] on the calling isolate: for tests.
+Future<OpenedLog?> snapshotInPlace(SnapshotJob job) async =>
+    openFromSnapshot(job);
+
+/// [openFromSnapshot] on an isolate of its own, so that reading the bytes
+/// does not hold the UI isolate. If the isolate cannot start it reads in
+/// place; either way a snapshot that cannot be read gives null.
+Future<OpenedLog?> snapshotInIsolate(SnapshotJob job) async {
+  try {
+    return await Isolate.run(() => openFromSnapshot(job));
+  } catch (_) {
+    return openFromSnapshot(job);
+  }
 }
 
 /// Runs an [OpenJob], somewhere.
