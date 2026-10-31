@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **App log range.** The App log has three choices above its lines: Last 10 minutes, Since the app started (everything after the latest start) and All, as before. Copy and Export take only the chosen lines, so a bug report carries just those (#713). A Since the profile was opened choice follows with profiles (#204).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.
 
 ## [0.7.0] - 2026-10-31

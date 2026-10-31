@@ -19,8 +19,19 @@ import '../../ui/card_text_scale.dart';
 /// which deletes and so is in the error colour (docs/mockups/settings.html,
 /// 3b). From a text scale of 1.4 the words go, and the icons stay, named by
 /// their tooltips.
-class AppLogPage extends StatelessWidget {
+class AppLogPage extends StatefulWidget {
   const AppLogPage({super.key});
+
+  @override
+  State<AppLogPage> createState() => _AppLogPageState();
+}
+
+class _AppLogPageState extends State<AppLogPage> {
+  /// How much of the log shows, and is copied and exported (#713).
+  LogRange _range = LogRange.all;
+
+  List<LogEntry> _shown(AppState state) =>
+      logInRange(state.log.entries, _range, DateTime.now());
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +49,17 @@ class AppLogPage extends StatelessWidget {
       ),
       bottomNavigationBar: ListenableBuilder(
         listenable: log,
-        builder: (context, _) => _ActionBar(empty: log.isEmpty),
+        builder: (context, _) => _ActionBar(
+          empty: log.isEmpty,
+          text: logText(_shown(AppScope.read(context))),
+        ),
       ),
       body: ListenableBuilder(
         listenable: log,
         builder: (context, _) {
-          final entries = log.entries;
-          if (entries.isEmpty) {
+          final all = log.entries;
+          final entries = _shown(AppScope.read(context));
+          if (all.isEmpty) {
             return Center(
               child: Padding(
                 padding: const EdgeInsetsDirectional.all(24),
@@ -57,41 +72,115 @@ class AppLogPage extends StatelessWidget {
               ),
             );
           }
-          return Semantics(
-            container: true,
-            label: l10n.appLogLabel,
-            child: SelectionArea(
-              // Reversed, so that it opens at the newest; built newest
-              // first, so that the oldest is still at the top.
-              child: ListView.builder(
-                reverse: true,
-                padding: const EdgeInsetsDirectional.fromSTEB(
-                  16,
-                  8,
-                  16,
-                  24,
-                ).clearingSystemBar(context),
-                itemCount: entries.length,
-                itemBuilder: (context, i) {
-                  final entry = entries[entries.length - 1 - i];
-                  return Padding(
-                    padding: const EdgeInsetsDirectional.only(bottom: 6),
-                    child: Text(
-                      entry.line,
-                      style: entry.level == LogLevel.event
-                          ? style
-                          : style.copyWith(
-                              color: entry.level == LogLevel.error
-                                  ? theme.colorScheme.error
-                                  : theme.colorScheme.tertiary,
-                            ),
-                    ),
-                  );
-                },
+          return Column(
+            children: <Widget>[
+              _RangeRow(
+                range: _range,
+                onChanged: (r) => setState(() => _range = r),
               ),
-            ),
+              Expanded(
+                child: entries.isEmpty
+                    ? Center(
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.all(24),
+                          child: Text(
+                            l10n.appLogRangeEmpty,
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      )
+                    : _lines(context, entries, style),
+              ),
+            ],
           );
         },
+      ),
+    );
+  }
+
+  Widget _lines(BuildContext context, List<LogEntry> entries, TextStyle style) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return Semantics(
+      container: true,
+      label: l10n.appLogLabel,
+      child: SelectionArea(
+        // Reversed, so that it opens at the newest; built newest
+        // first, so that the oldest is still at the top.
+        child: ListView.builder(
+          reverse: true,
+          padding: const EdgeInsetsDirectional.fromSTEB(
+            16,
+            8,
+            16,
+            24,
+          ).clearingSystemBar(context),
+          itemCount: entries.length,
+          itemBuilder: (context, i) {
+            final entry = entries[entries.length - 1 - i];
+            return Padding(
+              padding: const EdgeInsetsDirectional.only(bottom: 6),
+              child: Text(
+                entry.line,
+                style: entry.level == LogLevel.event
+                    ? style
+                    : style.copyWith(
+                        color: entry.level == LogLevel.error
+                            ? theme.colorScheme.error
+                            : theme.colorScheme.tertiary,
+                      ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+/// The range choices above the log: Last 10 minutes, Since the app started
+/// and All (#713).
+class _RangeRow extends StatelessWidget {
+  const _RangeRow({required this.range, required this.onChanged});
+
+  final LogRange range;
+  final ValueChanged<LogRange> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    String text(LogRange r) => switch (r) {
+      LogRange.lastTenMinutes => l10n.appLogRangeLastTen,
+      LogRange.sinceStart => l10n.appLogRangeSinceStart,
+      LogRange.all => l10n.appLogRangeAll,
+    };
+    return Semantics(
+      container: true,
+      label: l10n.appLogRangeLabel,
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+        child: Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Wrap(
+            spacing: 8,
+            children: <Widget>[
+              for (final r in <LogRange>[
+                LogRange.lastTenMinutes,
+                LogRange.sinceStart,
+                LogRange.all,
+              ])
+                ChoiceChip(
+                  key: ValueKey<String>('log-range-${r.name}'),
+                  label: Text(text(r)),
+                  selected: r == range,
+                  onSelected: (_) => onChanged(r),
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -99,10 +188,13 @@ class AppLogPage extends StatelessWidget {
 
 /// Copy, Export and Clear, in a bar above Android's buttons.
 class _ActionBar extends StatelessWidget {
-  const _ActionBar({required this.empty});
+  const _ActionBar({required this.empty, required this.text});
 
   /// Whether the log has nothing to act on.
   final bool empty;
+
+  /// The lines of the chosen range, which Copy and Export take.
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -167,13 +259,15 @@ class _ActionBar extends StatelessWidget {
               icon: Icons.copy_outlined,
               word: l10n.appLogCopy,
               tooltip: l10n.settingsLogCopy,
-              onPressed: empty ? null : () => _copyLog(context, state),
+              onPressed: text.isEmpty ? null : () => _copyLog(context, text),
             ),
             action(
               icon: Icons.file_download_outlined,
               word: l10n.appLogExport,
               tooltip: l10n.settingsLogExport,
-              onPressed: empty ? null : () => _exportLog(context, state),
+              onPressed: text.isEmpty
+                  ? null
+                  : () => _exportLog(context, state, text),
             ),
             action(
               icon: Icons.delete_outline,
@@ -188,20 +282,24 @@ class _ActionBar extends StatelessWidget {
     );
   }
 
-  static Future<void> _copyLog(BuildContext context, AppState state) async {
+  static Future<void> _copyLog(BuildContext context, String text) async {
     final l10n = AppLocalizations.of(context)!;
-    await Clipboard.setData(ClipboardData(text: state.log.text));
+    await Clipboard.setData(ClipboardData(text: text));
     if (context.mounted) showAppSnackBar(context, l10n.settingsLogCopied);
   }
 
   /// Saves the app log as [appLogFileName], where the learner picks.
-  static Future<void> _exportLog(BuildContext context, AppState state) async {
+  static Future<void> _exportLog(
+    BuildContext context,
+    AppState state,
+    String text,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
     final bool saved;
     try {
       saved = await state.logFiles.save(
         appLogFileName,
-        state.log.text,
+        text,
         mimeType: 'text/plain',
       );
     } on Exception catch (e) {
