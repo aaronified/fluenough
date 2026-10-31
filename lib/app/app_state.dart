@@ -111,7 +111,8 @@ enum CatalogStatus { loading, ready, failed }
 
 /// Whether the phone can speak a language.
 enum VoiceStatus {
-  /// Not asked yet, or the answer is not back. Treated as no voice.
+  /// Not asked yet, or the answer is not back. Treated as no voice, except
+  /// in the counts of what is left to do, which expect one (#857).
   checking,
   available,
   missing,
@@ -1113,9 +1114,15 @@ class AppState extends ChangeNotifier {
 
   Future<void> _load() async {
     try {
+      // Progress may still be reading its log (#857): the catalog reads
+      // meanwhile, and nothing shows or records until both are done.
+      // `ignore` is safe: `ready` never throws (a failed read falls back to
+      // unsaved in-memory progress), and it is awaited below in any case.
+      final progressReady = progress.ready..ignore();
       // What is downloaded, before the catalog reads it. Never the network.
       await deckDownloads?.open();
       _catalog = await deckCatalog.load();
+      await progressReady;
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
@@ -1126,11 +1133,12 @@ class AppState extends ChangeNotifier {
       log.error(describeError('Decks failed to load', error, stack));
     }
     notifyListeners();
-    await refreshVoices();
     // Never asks: only a permission granted before lets the phone be
     // checked at launch (ADR-0014). Not awaited: the check can take
-    // seconds, and until it answers speaking waits, not the app.
+    // seconds, and until it answers speaking waits, not the app. Started
+    // before the voices are asked, so that neither waits for the other.
     unawaited(_checkSpeechQuietly());
+    await refreshVoices();
   }
 
   Future<void> _checkSpeechQuietly() async {
@@ -1394,6 +1402,20 @@ class AppState extends ChangeNotifier {
   bool canSpeak(LanguageInfo language) =>
       settings.soundOn && hasVoice(language);
 
+  /// [canSpeak], but a phone still being asked counts as having the voice:
+  /// what the counts use, so that Listening is not dropped and then added
+  /// back when the check answers (#857). Almost every phone has the voice,
+  /// so the counts rarely move. A drill that needs the sound to play can
+  /// still find it missing and says so then.
+  bool _countsAsSpoken(LanguageInfo language) =>
+      canSpeak(language) ||
+      (settings.soundOn && voiceStatus(language) == VoiceStatus.checking);
+
+  /// [canHear] for the counts, with the recogniser still being readied
+  /// counted as able to (#857).
+  bool _countsAsHeard(LanguageInfo language) =>
+      canHear(language) || speechStatus(language) == SpeechStatus.checking;
+
   /// Every voice the app can say a word in: for each language the decks
   /// teach, one block per distinct voice tag its decks name (`hi-IN` and
   /// `ur-PK` for Hindustani, #641), then the languages they teach from,
@@ -1439,16 +1461,25 @@ class AppState extends ChangeNotifier {
   /// Asks the engine about every catalog language again, for when the
   /// learner has been off to install a voice.
   Future<void> refreshVoices() async {
-    for (final language in voiceLanguages) {
-      final tag = language.ttsTag;
-      try {
-        _voices[tag] = await _tts.isLanguageAvailable(tag);
-      } catch (e) {
-        log.warning('Voice error: $tag availability ${_errorCode(e)}');
-        _voices[tag] = false;
-      }
+    // Every language is asked at once, and this notifies once, when the
+    // last has answered (#857).
+    final tags = <String>{for (final l in voiceLanguages) l.ttsTag};
+    final answers = await Future.wait(<Future<bool>>[
+      for (final tag in tags) _voiceAvailable(tag),
+    ]);
+    for (final (index, tag) in tags.indexed) {
+      _voices[tag] = answers[index];
     }
     notifyListeners();
+  }
+
+  Future<bool> _voiceAvailable(String tag) async {
+    try {
+      return await _tts.isLanguageAvailable(tag);
+    } catch (e) {
+      log.warning('Voice error: $tag availability ${_errorCode(e)}');
+      return false;
+    }
   }
 
   /// The voices the engine offers for [language]: none when it cannot say,
@@ -1990,7 +2021,7 @@ class AppState extends ChangeNotifier {
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              canSpeak(entry.language) &&
+              _countsAsSpoken(entry.language) &&
               !settings.isOffFor(Skill.listening, entry.language.code),
       },
     );
@@ -1999,7 +2030,7 @@ class AppState extends ChangeNotifier {
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              canHear(entry.language) &&
+              _countsAsHeard(entry.language) &&
               !settings.isOffFor(Skill.speaking, entry.language.code),
       },
     );
@@ -3085,10 +3116,10 @@ class AppState extends ChangeNotifier {
     return <DrillMode>{
       for (final mode in card.modesIn(
         ttsAvailable:
-            canSpeak(language) &&
+            _countsAsSpoken(language) &&
             !settings.isOffFor(Skill.listening, language.code),
         speechAvailable:
-            canHear(language) &&
+            _countsAsHeard(language) &&
             !settings.isOffFor(Skill.speaking, language.code),
         siblings: siblingsOf(card),
       ))
