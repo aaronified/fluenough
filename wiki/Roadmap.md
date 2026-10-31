@@ -132,7 +132,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Approved, not scheduled
 
-- [#483](https://github.com/aaronified/fluenough/issues/483) Sound: notice when the phone's media volume is 0 and say so
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
@@ -319,6 +318,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
 - [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
+- [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 
 ## Plans
 
