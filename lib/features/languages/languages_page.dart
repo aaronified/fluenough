@@ -235,6 +235,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
             ),
         ],
         const SizedBox(height: 8),
+        // hint-ok: shows text
         InkWell(
           key: const ValueKey<String>('languages-add-row'),
           onTap: () => _add(state, all),
@@ -468,6 +469,7 @@ class _LanguageRow extends StatelessWidget {
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);
+    // hint-ok: shows text
     return InkWell(
       onTap: onTap,
       child: Padding(

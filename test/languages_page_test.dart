@@ -82,6 +82,8 @@ void main() {
     // Null until the learner edits Spanish on this page; the pill reads the
     // older lists (Learn, from the learner fixture) until then.
     final before = state.settings.languageSkillsOf('es');
+    await tester.ensureVisible(speak);
+    await tester.pumpAndSettle();
     await tester.longPress(speak);
     await tester.pumpAndSettle();
     expect(
