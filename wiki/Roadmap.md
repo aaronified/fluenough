@@ -58,7 +58,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-18 approved open issues.
+19 approved open issues.
 
 **Enhancements**
 
@@ -80,6 +80,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
+- [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
 - [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
 - [#918](https://github.com/aaronified/fluenough/issues/918) Deck search: "open the picker at that course" does nothing on the new Languages page
