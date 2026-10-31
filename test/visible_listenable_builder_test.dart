@@ -45,4 +45,43 @@ void main() {
     await tester.pumpWidget(app(visible: true));
     expect(builds, before);
   });
+
+  testWidgets('a tab that starts hidden is built when first shown, then kept', (
+    tester,
+  ) async {
+    final notifier = ValueNotifier<int>(0);
+    var builds = 0;
+    Widget app({required bool visible, required int parent}) => Directionality(
+      textDirection: TextDirection.ltr,
+      child: TickerMode(
+        enabled: visible,
+        // A new builder each time, as a parent that rebuilds gives.
+        child: VisibleListenableBuilder(
+          listenable: notifier,
+          builder: (context, _) {
+            builds++;
+            return Text('${notifier.value}/$parent');
+          },
+        ),
+      ),
+    );
+
+    await tester.pumpWidget(app(visible: false, parent: 0));
+    expect(builds, 0, reason: 'nothing is built while it was never shown');
+
+    await tester.pumpWidget(app(visible: true, parent: 0));
+    expect(builds, 1);
+    expect(find.text('0/0'), findsOneWidget);
+
+    // Hidden again, the parent rebuilds and the listenable changes: still
+    // nothing is built, and what was shown stays.
+    await tester.pumpWidget(app(visible: false, parent: 1));
+    notifier.value = 5;
+    await tester.pumpWidget(app(visible: false, parent: 2));
+    expect(builds, 1);
+
+    await tester.pumpWidget(app(visible: true, parent: 2));
+    expect(builds, 2);
+    expect(find.text('5/2'), findsOneWidget);
+  });
 }
