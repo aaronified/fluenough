@@ -1,0 +1,367 @@
+schema: 1
+id: "bn-appearance"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "appearance"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2301"
+    target: "খাটো"
+    reading: "khāṭo"
+    ipa: "kʰaʈo"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    synonyms:
+      - { id: "s1", ref: "bn-0629" }
+    antonyms:
+      - { id: "a1", ref: "bn-0628" }
+    examples:
+      - { target: "এই টেবিলটা খাটো।", reading: "ei ṭebilṭā khāṭo.", ipa: "ei ʈebilʈa kʰaʈo", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "টেবিলটা", base: "টেবিল", reading: "ṭebilṭā" }] }
+      - { target: "আমি খাটো।", reading: "āmi khāṭo.", ipa: "ami kʰaʈo" }
+  - id: "bn-2302"
+    target: "বুড়ো"
+    reading: "buṛo"
+    ipa: "buɽo"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    synonyms:
+      - { id: "s1", ref: "bn-2304" }
+    antonyms:
+      - { id: "a1", ref: "bn-2303" }
+    examples:
+      - { target: "আমার দাদু বুড়ো হয়েছেন।", reading: "āmār dādu buṛo hôyechen.", ipa: "amar d̪ad̪u buɽo ɦɔjetʃʰen", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "হয়েছেন", base: "হওয়া", reading: "hôyechen" }] }
+      - { target: "বুড়ো মানুষটি হাসছেন।", reading: "buṛo mānuśṭi hāśchen.", ipa: "buɽo manuʃʈi ɦaʃtʃʰen", bases: [{ word: "মানুষটি", base: "মানুষ", reading: "mānuśṭi" }, { word: "হাসছেন", base: "হাসা", reading: "hāśchen" }] }
+  - id: "bn-2303"
+    target: "তরুণ"
+    reading: "torun"
+    ipa: "t̪orun"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-2302" }
+    examples:
+      - { target: "সে এখনো তরুণ।", reading: "se ekhono torun.", ipa: "se ekʰono t̪orun", bases: [{ word: "এখনো", ref: "bn-0317" }] }
+      - { target: "তরুণ ছেলেটি কাজ করছে।", reading: "torun cheleṭi kāj kôrche.", ipa: "t̪orun tʃʰeleʈi kadʒ kɔrtʃʰe", bases: [{ word: "ছেলেটি", ref: "bn-0426" }, { word: "করছে", ref: "bn-0102" }] }
+  - id: "bn-2304"
+    target: "বয়স্ক"
+    reading: "bôyośko"
+    ipa: "bɔjoʃko"
+    pos: "adj"
+    bases: [{ word: "বয়স্ক", ref: "bn-0416" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    synonyms:
+      - { id: "s1", ref: "bn-2302" }
+    antonyms:
+      - { id: "a1", ref: "bn-2303" }
+    examples:
+      - { target: "বয়স্ক মানুষদের সম্মান করো।", reading: "bôyośko mānuśder śômmān kôro.", ipa: "bɔjoʃko manuʃd̪er ʃɔmman kɔro", bases: [{ word: "সম্মান", base: "সম্মান", reading: "śômmān" }, { word: "মানুষদের", base: "মানুষ", reading: "mānuśder" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "উনি খুব বয়স্ক।", reading: "uni khub bôyośko.", ipa: "uni kʰub bɔjoʃko" }
+  - id: "bn-2305"
+    target: "মাঝবয়সী"
+    reading: "mājhbôyośi"
+    ipa: "madʒʱbɔjoʃi"
+    pos: "adj"
+    bases: [{ word: "মাঝবয়সী", ref: "bn-0416" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "আমার কাকা মাঝবয়সী।", reading: "āmār kākā mājhbôyośi.", ipa: "amar kaka madʒʱbɔjoʃi", bases: [{ word: "আমার", ref: "bn-0833" }] }
+      - { target: "মাঝবয়সী মহিলাটি হাসছেন।", reading: "mājhbôyośi mohilāṭi hāśchen.", ipa: "madʒʱbɔjoʃi moɦilaʈi ɦaʃtʃʰen", bases: [{ word: "মহিলাটি", base: "মহিলা", reading: "mohilāṭi" }, { word: "হাসছেন", base: "হাসা", reading: "hāśchen" }] }
+  - id: "bn-2306"
+    target: "যুবক"
+    reading: "jubok"
+    ipa: "dʒubok"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "যুবক ছেলেটি খুব লম্বা।", reading: "jubok cheleṭi khub lômbā.", ipa: "dʒubok tʃʰeleʈi kʰub lɔmba", bases: [{ word: "ছেলেটি", ref: "bn-0426" }] }
+      - { target: "একজন যুবক এসেছে।", reading: "ekjon jubok eseche.", ipa: "ekdʒon dʒubok esetʃʰe", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "এসেছে", base: "আসা", reading: "eseche" }] }
+  - id: "bn-2307"
+    target: "যুবতী"
+    reading: "juboti"
+    ipa: "dʒubot̪i"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "যুবতী মেয়েটি হাসছে।", reading: "juboti meyeṭi hāśche.", ipa: "dʒubot̪i mejeʈi ɦaʃtʃʰe", bases: [{ word: "মেয়েটি", ref: "bn-0427" }, { word: "হাসছে", base: "হাসা", reading: "hāśche" }] }
+      - { target: "একজন যুবতী এসেছেন।", reading: "ekjon juboti esechen.", ipa: "ekdʒon dʒubot̪i esetʃʰen", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "এসেছেন", base: "আসা", reading: "esechen" }] }
+  - id: "bn-2308"
+    target: "ফর্সা"
+    reading: "phôrśā"
+    ipa: "pʰɔrʃa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-1208" }
+    examples:
+      - { target: "তার রং ফর্সা।", reading: "tār rôṅ phôrśā.", ipa: "t̪ar rɔŋ pʰɔrʃa", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "সে ফর্সা।", reading: "se phôrśā.", ipa: "se pʰɔrʃa" }
+  - id: "bn-2309"
+    target: "পাকা"
+    reading: "pākā"
+    ipa: "paka"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মায়ের চুল পাকা।", reading: "māyer cul pākā.", ipa: "majer tʃul paka", bases: [{ word: "মায়ের", ref: "bn-0424" }] }
+      - { target: "এই পাকা ফলটা মিষ্টি।", reading: "ei pākā phôlṭā miśṭi.", ipa: "ei paka pʰɔlʈa miʃʈi", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "ফলটা", base: "ফল", reading: "phôlṭā" }] }
+  - id: "bn-2310"
+    target: "চেহারা"
+    reading: "cehārā"
+    ipa: "tʃeɦara"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার চেহারা ভালো।", reading: "tār cehārā bhālo.", ipa: "t̪ar tʃeɦara bʱalo", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "ওর চেহারা বাবার মতো।", reading: "or cehārā bābār môto.", ipa: "or tʃeɦara babar mɔt̪o", bases: [{ word: "ওর", base: "ও", reading: "or" }, { word: "বাবার", ref: "bn-0423" }, { word: "মতো", base: "মতো", reading: "môto" }] }
+  - id: "bn-2311"
+    target: "মুখশ্রী"
+    reading: "mukhośri"
+    ipa: "mukʰoʃri"
+    pos: "noun"
+    bases: [{ word: "মুখশ্রী", ref: "bn-1002" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তোমার মুখশ্রী সুন্দর।", reading: "tomār mukhośri śundor.", ipa: "t̪omar mukʰoʃri ʃund̪or", bases: [{ word: "তোমার", ref: "bn-0835" }] }
+      - { target: "মেয়েটির মুখশ্রী খুব মিষ্টি।", reading: "meyeṭir mukhośri khub miśṭi.", ipa: "mejeʈir mukʰoʃri kʰub miʃʈi", bases: [{ word: "মেয়েটির", ref: "bn-0427" }] }
+  - id: "bn-2312"
+    target: "হাসি"
+    reading: "hāśi"
+    ipa: "ɦaʃi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার মুখে হাসি আছে।", reading: "tār mukhe hāśi āche.", ipa: "t̪ar mukʰe ɦaʃi atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মুখে", ref: "bn-1002" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
+      - { target: "ওর হাসি খুব সুন্দর।", reading: "or hāśi khub śundor.", ipa: "or ɦaʃi kʰub ʃund̪or", bases: [{ word: "ওর", base: "ও", reading: "or" }] }
+  - id: "bn-2313"
+    target: "উচ্চতা"
+    reading: "uccotā"
+    ipa: "utʃtʃot̪a"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার উচ্চতা কত?", reading: "tār uccotā kôto?", ipa: "t̪ar utʃtʃot̪a kɔt̪o", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "আমার উচ্চতা পাঁচ ফুট।", reading: "āmār uccotā pām̐c phuṭ.", ipa: "amar utʃtʃot̪a pãtʃ pʰuʈ", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "ফুট", base: "ফুট", reading: "phuṭ" }] }
+  - id: "bn-2314"
+    target: "মাঝারি"
+    reading: "mājhāri"
+    ipa: "madʒʱari"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "আমি মাঝারি লম্বা।", reading: "āmi mājhāri lômbā.", ipa: "ami madʒʱari lɔmba" }
+      - { target: "মাঝারি সাইজের জামা দাও।", reading: "mājhāri sāijer jāmā dāo.", ipa: "madʒʱari saidʒer dʒama d̪ao", bases: [{ word: "সাইজের", base: "সাইজ", reading: "sāijer" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2315"
+    target: "গোঁফ"
+    reading: "gom̐ph"
+    ipa: "ɡõpʰ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার গোঁফ ঘন।", reading: "tār gom̐ph ghôn.", ipa: "t̪ar ɡõpʰ ɡʱɔn", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "বাবার গোঁফ আছে।", reading: "bābār gom̐ph āche.", ipa: "babar ɡõpʰ atʃʰe", bases: [{ word: "বাবার", ref: "bn-0423" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
+  - id: "bn-2316"
+    target: "টাক"
+    reading: "ṭāk"
+    ipa: "ʈak"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার মাথায় টাক আছে।", reading: "tār māthāy ṭāk āche.", ipa: "t̪ar mat̪ʰaj ʈak atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "মাথায়", ref: "bn-0728" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
+      - { target: "দাদুর মাথায় টাক পড়েছে।", reading: "dādur māthāy ṭāk pôṛeche.", ipa: "d̪ad̪ur mat̪ʰaj ʈak pɔɽetʃʰe", bases: [{ word: "দাদুর", ref: "bn-0433" }, { word: "মাথায়", ref: "bn-0728" }, { word: "পড়েছে", base: "পড়া", reading: "pôṛeche" }] }
+  - id: "bn-2317"
+    target: "ঘন"
+    reading: "ghôn"
+    ipa: "ɡʱɔn"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-1233" }
+    examples:
+      - { target: "তার চুল খুব ঘন।", reading: "tār cul khub ghôn.", ipa: "t̪ar tʃul kʰub ɡʱɔn", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "দাড়িটা ঘন।", reading: "dāṛiṭā ghôn.", ipa: "d̪aɽiʈa ɡʱɔn", bases: [{ word: "দাড়িটা", ref: "bn-1025" }] }
+  - id: "bn-2318"
+    target: "কোঁকড়া"
+    reading: "kom̐koṛā"
+    ipa: "kõkoɽa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-2319" }
+    examples:
+      - { target: "ওর চুল কোঁকড়া।", reading: "or cul kom̐koṛā.", ipa: "or tʃul kõkoɽa", bases: [{ word: "ওর", base: "ও", reading: "or" }] }
+      - { target: "ছেলেটির কোঁকড়া চুল।", reading: "cheleṭir kom̐koṛā cul.", ipa: "tʃʰeleʈir kõkoɽa tʃul", bases: [{ word: "ছেলেটির", ref: "bn-0426" }] }
+  - id: "bn-2319"
+    target: "সোজা"
+    reading: "śojā"
+    ipa: "ʃodʒa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-2318" }
+    examples:
+      - { target: "তার চুল সোজা।", reading: "tār cul śojā.", ipa: "t̪ar tʃul ʃodʒa", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "সোজা হয়ে দাঁড়াও।", reading: "śojā hôye dām̐ṛāo.", ipa: "ʃodʒa ɦɔje d̪ãɽao", bases: [{ word: "হয়ে", base: "হওয়া", reading: "hôye" }, { word: "দাঁড়াও", base: "দাঁড়ানো", reading: "dām̐ṛāo" }] }
+  - id: "bn-2320"
+    target: "বেণি"
+    reading: "beni"
+    ipa: "beni"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মেয়েটির বেণি লম্বা।", reading: "meyeṭir beni lômbā.", ipa: "mejeʈir beni lɔmba", bases: [{ word: "মেয়েটির", ref: "bn-0427" }] }
+      - { target: "মা আমার বেণি করেন।", reading: "mā āmār beni kôren.", ipa: "ma amar beni kɔren", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "করেন", ref: "bn-0102" }] }
+  - id: "bn-2321"
+    target: "খোঁপা"
+    reading: "khom̐pā"
+    ipa: "kʰõpa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মায়ের খোঁপা ছোট।", reading: "māyer khom̐pā choṭo.", ipa: "majer kʰõpa tʃʰoʈo", bases: [{ word: "মায়ের", ref: "bn-0424" }, { word: "ছোট", ref: "bn-0619" }] }
+      - { target: "খোঁপা বাঁধো।", reading: "khom̐pā bām̐dho.", ipa: "kʰõpa bãd̪ʱo", bases: [{ word: "বাঁধো", base: "বাঁধা", reading: "bām̐dho" }] }
+  - id: "bn-2322"
+    target: "গোলগাল"
+    reading: "golgāl"
+    ipa: "ɡolɡal"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-0631" }
+    examples:
+      - { target: "শিশুটির মুখ গোলগাল।", reading: "śiśuṭir mukh golgāl.", ipa: "ʃiʃuʈir mukʰ ɡolɡal", bases: [{ word: "শিশুটির", base: "শিশু", reading: "śiśuṭir" }] }
+      - { target: "তোমার গালটা গোলগাল।", reading: "tomār gālṭā golgāl.", ipa: "t̪omar ɡalʈa ɡolɡal", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "গালটা", ref: "bn-1008" }] }
+  - id: "bn-2323"
+    target: "মোটাসোটা"
+    reading: "moṭāsoṭā"
+    ipa: "moʈasoʈa"
+    pos: "adj"
+    bases: [{ word: "মোটাসোটা", ref: "bn-0630" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "bn-0631" }
+    examples:
+      - { target: "দাদা মোটাসোটা।", reading: "dādā moṭāsoṭā.", ipa: "d̪ad̪a moʈasoʈa" }
+      - { target: "বাচ্চাটা খুব মোটাসোটা।", reading: "bāccāṭā khub moṭāsoṭā.", ipa: "batʃtʃaʈa kʰub moʈasoʈa", bases: [{ word: "বাচ্চাটা", base: "বাচ্চা", reading: "bāccāṭā" }] }
+  - id: "bn-2324"
+    target: "ভারী"
+    reading: "bhāri"
+    ipa: "bʱari"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তিনি একটু ভারী।", reading: "tini ekṭu bhāri.", ipa: "t̪ini ekʈu bʱari" }
+      - { target: "ওর শরীর ভারী।", reading: "or śorir bhāri.", ipa: "or ʃorir bʱari", bases: [{ word: "ওর", base: "ও", reading: "or" }] }
+  - id: "bn-2325"
+    target: "চওড়া"
+    reading: "coṛā"
+    ipa: "tʃoɽa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার কাঁধ চওড়া।", reading: "tār kām̐dh coṛā.", ipa: "t̪ar kãd̪ʱ tʃoɽa", bases: [{ word: "তার", ref: "bn-0839" }] }
+      - { target: "রাস্তাটা চওড়া।", reading: "rāstāṭā coṛā.", ipa: "rast̪aʈa tʃoɽa", bases: [{ word: "রাস্তাটা", base: "রাস্তা", reading: "rāstāṭā" }] }
+  - id: "bn-2326"
+    target: "মিষ্টি"
+    reading: "miśṭi"
+    ipa: "miʃʈi"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ওর মুখটা মিষ্টি।", reading: "or mukhṭā miśṭi.", ipa: "or mukʰʈa miʃʈi", bases: [{ word: "ওর", base: "ও", reading: "or" }, { word: "মুখটা", ref: "bn-1002" }] }
+      - { target: "খাবারটা মিষ্টি।", reading: "khābārṭā miśṭi.", ipa: "kʰabarʈa miʃʈi", bases: [{ word: "খাবারটা", base: "খাবার", reading: "khābārṭā" }] }
+  - id: "bn-2327"
+    target: "সুন্দরী"
+    reading: "śundori"
+    ipa: "ʃund̪ori"
+    pos: "adj"
+    bases: [{ word: "সুন্দরী", ref: "bn-0625" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মেয়েটি সুন্দরী।", reading: "meyeṭi śundori.", ipa: "mejeʈi ʃund̪ori", bases: [{ word: "মেয়েটি", ref: "bn-0427" }] }
+      - { target: "একজন সুন্দরী মহিলা।", reading: "ekjon śundori mohilā.", ipa: "ekdʒon ʃund̪ori moɦila", bases: [{ word: "একজন", ref: "bn-0202" }, { word: "মহিলা", base: "মহিলা", reading: "mohilā" }] }
+  - id: "bn-2328"
+    target: "দাগ"
+    reading: "dāg"
+    ipa: "d̪aɡ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার গালে একটা দাগ আছে।", reading: "tār gāle ekṭā dāg āche.", ipa: "t̪ar ɡale ekʈa d̪aɡ atʃʰe", bases: [{ word: "তার", ref: "bn-0839" }, { word: "গালে", ref: "bn-1008" }, { word: "একটা", ref: "bn-0202" }, { word: "আছে", base: "থাকা", reading: "āche" }] }
+      - { target: "বাবার হাতে কালো দাগ।", reading: "bābār hāte kālo dāg.", ipa: "babar ɦat̪e kalo d̪aɡ", bases: [{ word: "বাবার", ref: "bn-0423" }, { word: "হাতে", ref: "bn-0730" }] }
+  - id: "bn-2329"
+    target: "গায়ের রং"
+    reading: "gāyer rôṅ"
+    ipa: "ɡajer rɔŋ"
+    pos: "noun"
+    bases: [{ word: "গায়ের", base: "গা", reading: "gāyer" }, { word: "রং", ref: "bn-1203" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তার গায়ের রং ফর্সা।", reading: "tār gāyer rôṅ phôrśā.", ipa: "t̪ar ɡajer rɔŋ pʰɔrʃa", bases: [{ word: "তার", ref: "bn-0839" }, { word: "গায়ের", base: "গা", reading: "gāyer" }] }
+      - { target: "আমার গায়ের রং কালো।", reading: "āmār gāyer rôṅ kālo.", ipa: "amar ɡajer rɔŋ kalo", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "গায়ের", base: "গা", reading: "gāyer" }] }
+  - id: "bn-2330"
+    target: "দেখতে"
+    reading: "dekhte"
+    ipa: "d̪ekʰt̪e"
+    pos: "verb"
+    bases: [{ word: "দেখতে", ref: "bn-0877" }]
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ওকে দেখতে বাবার মতো।", reading: "oke dekhte bābār môto.", ipa: "oke d̪ekʰt̪e babar mɔt̪o", bases: [{ word: "ওকে", base: "ও", reading: "oke" }, { word: "বাবার", ref: "bn-0423" }, { word: "মতো", base: "মতো", reading: "môto" }] }
+      - { target: "তুমি দেখতে ভালো।", reading: "tumi dekhte bhālo.", ipa: "t̪umi d̪ekʰt̪e bʱalo" }
