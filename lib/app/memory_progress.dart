@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
+import '../core/data/replay_isolate.dart';
 import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
@@ -152,7 +153,9 @@ abstract interface class ProgressStore implements Listenable {
 /// For tests and fixtures, and the fallback when the database cannot be
 /// opened, in which case Today says that progress is not saved.
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
-  MemoryProgress();
+  MemoryProgress() : _index = ProgressIndex();
+
+  MemoryProgress._opened(this._index);
 
   /// How many times progress has been replayed from the whole log, for tests
   /// to assert that recording an answer does not.
@@ -195,6 +198,30 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       .._tick = 1;
   }
 
+  /// Progress from a log replayed elsewhere, on an isolate ([openLog]): the
+  /// same as [MemoryProgress.replaying] over the same log, without walking
+  /// it here. [fitted] are the parameters the replay used.
+  factory MemoryProgress.opened(
+    OpenedLog opened, {
+    required Map<SkillKey, FittedParameters> fitted,
+  }) {
+    replays++;
+    final replayed = opened.memory;
+    return MemoryProgress._opened(opened.index)
+      .._skills = const SkillMap()
+      .._parameters = SkillParameters(
+        fitted: fitted,
+        lastStudied: opened.lastStudied,
+      )
+      .._log.addAll(replayed.events)
+      .._states.addAll(replayed.states)
+      .._scriptLog.addAll(replayed.scriptEvents)
+      .._scriptStates.addAll(replayed.scriptStates)
+      .._leechActions.addAll(opened.leechActions)
+      .._floor = 1
+      .._tick = 1;
+  }
+
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
   final Map<ScriptKey, FsrsState> _scriptStates = <ScriptKey, FsrsState>{};
@@ -202,7 +229,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
   SkillParameters _parameters = SkillParameters.none;
-  final ProgressIndex _index = ProgressIndex();
+  final ProgressIndex _index;
 
   // Versions: every change takes the next tick; a change to one language
   // gives it the tick, a change to all raises the floor under them.
