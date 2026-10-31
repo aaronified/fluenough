@@ -1115,6 +1115,8 @@ class AppState extends ChangeNotifier {
     try {
       // Progress may still be reading its log (#857): the catalog reads
       // meanwhile, and nothing shows or records until both are done.
+      // `ignore` is safe: `ready` never throws (a failed read falls back to
+      // unsaved in-memory progress), and it is awaited below in any case.
       final progressReady = progress.ready..ignore();
       // What is downloaded, before the catalog reads it. Never the network.
       await deckDownloads?.open();

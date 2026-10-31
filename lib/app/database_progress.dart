@@ -36,8 +36,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   /// so that the first frame need not wait for it (#857). Until [ready]
   /// completes it holds nothing: whatever reads it waits for [ready] first
   /// (`AppState` does before it shows anything), and no write reaches the
-  /// database before the log has been read. [ready] throws if the log
-  /// could not be read.
+  /// database before the log has been read. If the log cannot be read,
+  /// [ready] still completes and this falls back to what a profile whose
+  /// database cannot be opened has: progress kept in memory only, [persists]
+  /// false so that Today says it is not saved, and nothing written to the
+  /// database, whose log is left as it is.
   factory DatabaseProgress.opening(AppDatabase db) {
     final progress = DatabaseProgress._(db, ReviewLog(db), MemoryProgress());
     final ready = progress._read();
@@ -48,12 +51,33 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   }
 
   /// Completes once the review log has been read into memory, and the state
-  /// cache rebuilt from it.
+  /// cache rebuilt from it, or once reading it has failed ([persists]). Never
+  /// throws: a failed read must not leave the catalog failed for good.
   @override
   Future<void> get ready => _ready;
   late final Future<void> _ready;
 
   Future<void> _read() async {
+    try {
+      await _readLog();
+    } catch (error, stack) {
+      // Fall back to in-memory progress, unsaved, rather than no app: the
+      // empty memory is never written over the database's log.
+      _readFailed = true;
+      FlutterError.reportError(
+        FlutterErrorDetails(
+          exception: error,
+          stack: stack,
+          library: 'fluenough progress',
+          context: ErrorDescription('while reading the review log'),
+        ),
+      );
+    } finally {
+      _isReady = true;
+    }
+  }
+
+  Future<void> _readLog() async {
     final log = _log;
     final fitted = await log.fitted();
     final reviews = await log.reviews();
@@ -74,8 +98,10 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       leechActions: await log.leechActions(),
       fitted: fitted,
     );
-    _memory.removeListener(notifyListeners);
+    final discarded = _memory;
+    discarded.removeListener(notifyListeners);
     _memory = memory..addListener(notifyListeners);
+    discarded.dispose();
     notifyListeners();
   }
 
@@ -84,9 +110,13 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress _memory;
   late Future<void> _writes;
   Object? _writeError;
+  bool _isReady = false;
+
+  /// Whether reading the log failed: progress is then in memory only.
+  bool _readFailed = false;
 
   @override
-  bool get persists => true;
+  bool get persists => !_readFailed;
 
   @override
   int get version => _memory.version;
@@ -132,7 +162,9 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   /// of every write before it.
   @override
   Future<void> putFitted(SkillKey key, FittedParameters value) async {
+    assert(_isReady, 'putFitted before ready');
     await _memory.putFitted(key, value);
+    if (_readFailed) return;
     final parameters = _memory.parameters;
     _write(
       () => _log.putFitted(key, value, parameters: parameters),
@@ -147,6 +179,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     LeechActionKind kind, {
     required DateTime now,
   }) {
+    assert(_isReady, 'actOnLeech before ready');
     final action = _memory.actOnLeech(key, kind, now: now);
     final parameters = _memory.parameters;
     _write(
@@ -168,6 +201,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     String? script,
     Ask? asked,
   }) {
+    assert(_isReady, 'record before ready');
     final chosen = _memory.parameters;
     final event = _memory.record(
       deckId: deckId,
@@ -210,6 +244,9 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   /// Queues [write] after every write before it. A failure is reported
   /// through [FlutterError] and kept for [flush].
   void _write(Future<Object?> Function() write, String context) {
+    // After a failed read memory holds only what was recorded since: it is
+    // never written to a database whose log it does not match.
+    if (_readFailed) return;
     _writes = _writes
         .then((_) => write())
         .then<void>(
@@ -235,6 +272,9 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
   }) async {
+    if (_readFailed) {
+      return _memory.importLog(reviews, leechActions, fitted: fitted);
+    }
     await _writes;
     final imported = await _log.importAll(
       reviews,
@@ -262,6 +302,14 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         const <SkillKey, FittedParameters>{},
     required RestoreRecord restore,
   }) async {
+    if (_readFailed) {
+      return _memory.replaceAll(
+        reviews,
+        leechActions,
+        fitted: fitted,
+        restore: restore,
+      );
+    }
     await _writes;
     await _log.replaceAll(
       reviews,

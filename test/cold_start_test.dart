@@ -13,6 +13,7 @@ import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// What a store holds, as plain values to compare.
@@ -102,6 +103,43 @@ void main() {
       final db = fileDb();
       addTearDown(db.close);
       expect((await db.cardStatesDao.all()).length, eager.states.length);
+    });
+  });
+
+  group('a review log that cannot be read', () {
+    test('the app falls back to unsaved progress: the catalog loads, nothing '
+        'is written, and Try again works', () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      await db.customStatement('DROP TABLE reviews');
+      final progress = DatabaseProgress.opening(db);
+      addTearDown(progress.close);
+      final reported = <FlutterErrorDetails>[];
+      final previous = FlutterError.onError;
+      FlutterError.onError = reported.add;
+      addTearDown(() => FlutterError.onError = previous);
+
+      await progress.ready; // does not throw
+      expect(progress.persists, isFalse, reason: 'Today says: not saved');
+      expect(reported, isNotEmpty);
+
+      final state = AppState.test(progress: progress);
+      addTearDown(state.dispose);
+      await state.load();
+      expect(state.status, CatalogStatus.ready);
+
+      // Answers still count in memory, and none reaches the database.
+      progress.record(
+        deckId: 'es-en-core-100',
+        cardId: 'es-0001',
+        mode: DrillMode.recognition,
+        grade: 3,
+        now: DateTime(2026, 9, 28, 19),
+      );
+      expect(progress.log, hasLength(1));
+      await progress.flush();
+
+      await state.reload();
+      expect(state.status, CatalogStatus.ready);
     });
   });
 
