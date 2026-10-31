@@ -6409,6 +6409,24 @@
   "@settingsBackupHelp": {
     "description": "Line under the cloud backup options: nothing leaves the phone unless the learner exports it."
   },
+  "whatsNewTitle": "What's new",
+  "@whatsNewTitle": {
+    "description": "Heading of the sheet shown once, on the first launch after an update, listing what changed."
+  },
+  "whatsNewVersion": "Version {version}",
+  "@whatsNewVersion": {
+    "description": "Line under the What's new heading: the version just installed.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.7.0"
+      }
+    }
+  },
+  "whatsNewDone": "Got it",
+  "@whatsNewDone": {
+    "description": "The button that closes the What's new sheet."
+  },
   "settingsSectionUpdates": "Updates",
   "@settingsSectionUpdates": {
     "description": "Settings section heading, above the app's version line."
