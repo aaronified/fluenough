@@ -2877,15 +2877,22 @@ DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # card has it. `gender`, `register`, `hears` and `warning` (#508) are the
 # card's own scalars, so a card written in full has them and a ref or a
 # layer's entry does not; `warning` is a core card's only.
+#
+# `alt_native_add` and `not_synonyms_add` (ADR-0050, #924) add one item to a
+# list on the card's native side, so only the entries that give `alt_native`
+# have them. Their `now` is always "" (nothing is replaced) and their `text`
+# is the one item.
+PROPOSAL_ADD_FIELDS = ("alt_native_add", "not_synonyms_add")
 PROPOSAL_FIELDS = {
     "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target",
-               "gender", "register", "hears"),
-    "ref": ("native", "reading", "ipa", "notes"),
+               "gender", "register", "hears", *PROPOSAL_ADD_FIELDS),
+    "ref": ("native", "reading", "ipa", "notes", *PROPOSAL_ADD_FIELDS),
     "core": ("target", "reading", "ipa", "notes", "alt_target", "place",
              "gender", "register", "hears", "warning"),
     "core-ref": ("reading", "ipa", "notes"),
-    "layer": ("native", "bases"),
-    "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
+    "layer": ("native", "bases", *PROPOSAL_ADD_FIELDS),
+    "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target",
+                  *PROPOSAL_ADD_FIELDS),
 }
 # The fields whose `now` and `text` are JSON, not the field's own text.
 PROPOSAL_JSON_FIELDS = ("bases", "alt_target")
@@ -2910,6 +2917,29 @@ def _proposal_json_ok(name: str, value: str) -> bool:
     return isinstance(parsed, dict) and _is_str(parsed.get("word")) \
         and (_is_str(parsed.get("ref")) or _is_str(parsed.get("base"))) \
         and all(isinstance(v, str) for v in parsed.values())
+
+
+def _check_add_proposal(r: Report, where: str, name: str, now: object,
+                        text: str) -> None:
+    """A proposal to add one item to a card's `alt_native` or `not_synonyms`
+    (ADR-0050): no `now`, and a `text` that is one item as the list would
+    hold it. The card's own answers are checked when it is applied."""
+    if now != "":
+        r.error(where, f"now of a proposal on {name} must be \"\": it adds an "
+                       f"item and replaces nothing, got {now!r}")
+    if name == "alt_native_add":
+        if ";" in text:
+            r.error(where, f"text of a proposal on {name} is one answer: no \";\" "
+                           f"(one proposal for each), got {text!r}")
+        return
+    if r.native_code not in (None, "en"):
+        r.error(where, "not_synonyms_add is for English meanings: the synonym "
+                       "sets are English")
+    from validate_synonyms import meaning_key
+    key = meaning_key(text)
+    if not key or key != text:
+        r.error(where, f"text of a proposal on {name} must be in comparison form "
+                       f"(lower case, no leading to, no punctuation), got {text!r}")
 
 
 def proposal_id(card: str, field_name: str, now: str, text: str, by: str) -> str:
@@ -3003,6 +3033,8 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                     r.error(where, "text is what the field said already")
             elif not _is_str(text):
                 r.error(where, f"text must be non-empty text, got {text!r}")
+            elif name in PROPOSAL_ADD_FIELDS:
+                _check_add_proposal(r, where, name, now, text)
             elif isinstance(now, str) and text == now:
                 r.error(where, "text is what the field said already")
             elif name in PROPOSAL_VALUES and text not in PROPOSAL_VALUES[name]:
@@ -3041,8 +3073,14 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                 r.error(where, "id is not its facts' (card, field, now, text "
                                "and by); a proposal is never edited, only "
                                "removed")
+            elif name in PROPOSAL_ADD_FIELDS and name in allowed and _is_str(text) \
+                    and isinstance(p.entry.get(name.removesuffix("_add")), list) \
+                    and text in p.entry[name.removesuffix("_add")]:
+                r.info(where, f"proposal {pid} is outdated: the card's "
+                              f"{name.removesuffix('_add')} has the item already")
             elif isinstance(now, str) and isinstance(name, str) \
                     and name in allowed and name not in PROPOSAL_JSON_FIELDS \
+                    and name not in PROPOSAL_ADD_FIELDS \
                     and p.entry.get(name, "") != now:
                 r.info(where, f"proposal {pid} is outdated: the {name} no longer "
                               f"says what it was proposed against")

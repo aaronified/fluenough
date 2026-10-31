@@ -103,6 +103,7 @@ import proposals as pr  # noqa: E402
 import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
+from validate_synonyms import meaning_key  # noqa: E402
 
 PREFIX = "review-bot/"
 LABEL = "review-bot"
@@ -182,6 +183,10 @@ def card_suggestions(c: dict) -> list[dict]:
 # word (docs/plans/reviewing-scope.md, rule 2).
 TIED_PARTS = ("reading", "ipa", "notes", "base", "alt")
 
+# The parts of a card that add one item to a list on its native side
+# (ADR-0050), and the proposal field each becomes.
+ADD_PARTS = {"alt_native": "alt_native_add", "not_synonyms": "not_synonyms_add"}
+
 
 def _base_json(base: object, word: str) -> str | None:
     """A base of a review file's suggestion, `was` or `base`, as the JSON a
@@ -207,7 +212,10 @@ def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
     (`base`). One from before #476 has no `action`: its `now` and `text`
     are the meaning of the base for `word`, and tools/proposals.py fills in
     the rest from the deck. Also heard (`alt`) has the card's alternatives
-    as they were and as suggested, one a line."""
+    as they were and as suggested, one a line. A part `alt_native` or
+    `not_synonyms` with `action` "add" and the item in `text` is one more
+    accepted answer or one more refused synonym (ADR-0050): `now` is
+    ignored, and a `not_synonyms` item is put in comparison form."""
     part, now, text = s.get("part"), s.get("now"), s.get("text")
     if not isinstance(now, str) or not isinstance(text, str):
         return None
@@ -234,6 +242,20 @@ def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
                 or (action != "remove" and not to):
             return None
         return pr.BASES, was, to
+    if part in ADD_PARTS:
+        # One more accepted English answer, or one more synonym to refuse
+        # (ADR-0050, #924): the item named by `action: "add"`, never a
+        # change or a removal, and no `now`: nothing is replaced.
+        if s.get("action") != "add" or not text.strip():
+            return None
+        item = text.strip()
+        if part == "not_synonyms":
+            # The list holds comparison forms, so the reviewer's word is
+            # put in that form here and the proposal is of the form.
+            item = meaning_key(item)
+            if not item:
+                return None
+        return ADD_PARTS[part], "", item
     if part == "alt":
         def lines(t: str) -> list[str]:
             return [l.strip() for l in t.split("\n") if l.strip()]

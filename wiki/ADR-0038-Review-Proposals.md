@@ -25,6 +25,12 @@ Source of truth: this wiki page.
   tags the file `reviewed` in place of `unreviewed`. `content_sha256`
   leaves `checked_by` out as it does proposals; the tag is not left out,
   since learners see it. See "Who checked a card" below.
+- **Amended:** 2026-10-31 (ADR-0050, #924, owner's approval of 2026-10-30):
+  two more fields, `alt_native_add` and `not_synonyms_add`, each adding one
+  item to a list on a card's native side. Their `now` is `""` and their
+  `text` the item; applying one appends it rather than replacing a field,
+  and only a proposal of the same item is a rival. See DECK-FORMAT,
+  "An answer or a refused synonym".
 
 ## Context
 

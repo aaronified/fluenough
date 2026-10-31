@@ -2940,7 +2940,7 @@ Each is one line:
 | Field | Notes |
 |---|---|
 | `id` | Ten hex digits: the start of the SHA-256 of the card id, `field`, `now`, `text` and `by`, joined by U+001F. The validator checks it, so a proposal is never edited, only removed. |
-| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases`, `alt_target`, `gender`, `register`, `hears` or `warning`, as the entry may give it. A note is proposed only where `notes` is plain text. |
+| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases`, `alt_target`, `gender`, `register`, `hears`, `warning`, `alt_native_add` or `not_synonyms_add`, as the entry may give it. A note is proposed only where `notes` is plain text. |
 | `now` | The field's text when the reviewer proposed the change, `""` if the card had none. |
 | `text` | The new text. Not checked as deck content until it is applied. |
 | `by` | The proposer's rater code, `FL-XXXX-XXXX-C`. |
@@ -2976,6 +2976,28 @@ when it proposes and again when it applies, and a value that fails is left
 for the owner, never written. The bot never removes a field, so a
 proposal's `text` is never empty. A suggestion on a list item, a fact, or a
 flag is not proposed at all.
+
+**An answer or a refused synonym (ADR-0050, #924; owner, 2026-10-30).** A
+proposal on `alt_native_add` or `not_synonyms_add` adds one item to the
+card's `alt_native` or `not_synonyms`, on its native side only: a
+single-file card, a ref or a layer's entry, never a core's card. Its `now`
+is always `""` (nothing is replaced) and its `text` is the one item, so two
+proposals to the same list do not outdate each other. The validator checks
+the shape: `alt_native_add` is one answer with no `;`; `not_synonyms_add` is
+in comparison form (lower case, no leading `to`, no punctuation, as the
+review bot makes it from what the reviewer typed) and on English meanings.
+When an agreement is applied the bot appends `text` to the list, writing the
+list on one line, and closes the other proposals of the same item; a
+proposal of another item waits for the next run, since two agreements on one
+line cannot both merge. It is outdated once the list has the item. The bot
+refuses, and leaves for the owner, a `not_synonyms_add` that CI would
+reject: a word that is one of the card's own answers, one in no set of
+`assets/synonyms/en.yaml` with another of the card's answers (it would block
+nothing), or one whose set another card escapes already. A list written over
+several lines is left for the owner too. `tools/synonym_candidates.py`
+prints the pairs of a card's answer and an extra one that several cards
+share, counting `alt_native` and waiting proposals, for the owner to take
+through the seeding workflow; a reviewer never edits the sets file.
 
 **A new word for a card (#476).** A change to `target` sent with changes to
 the same card's bases, alternatives, notes, reading or IPA makes those
