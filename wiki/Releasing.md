@@ -17,6 +17,38 @@ The owner's rules, as written in [CLAUDE.md](https://github.com/aaronified/fluen
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
 
+## Changelog entries and "What's new"
+
+Each pull request adds its own line under `## [Unreleased]` in
+`CHANGELOG.md`, and from 2026-10-31 (owner, #944) the line starts with a
+short, plain, user-facing headline in bold, ending in a full stop, then the
+detail and the issue number:
+
+```
+- **Situations on Today.** Six buttons open sheets of key phrases (#724).
+```
+
+The first launch after an update shows a sheet, once per version, listing
+the headline of each entry of the installed version as a bullet, with the
+version and one "Got it" button. It is not shown on a fresh install, and not
+when the version's dated section has no entry to list. The release workflow
+dates the section and commits before it builds, and `CHANGELOG.md` is bundled
+in the app as an asset, so the sheet reads it offline and asks GitHub for
+nothing (ADR-0017). The last version seen is the `last_seen_version` setting,
+kept per profile. Settings > Updates > What's new still shows the full notes.
+
+How a headline is found, in `headlineOf` (`lib/core/updates/whats_new.dart`):
+
+1. A bold lead, `**Headline.** detail`, is the headline.
+2. Otherwise, for entries written before the rule, the text up to the first
+   ` (#123)`, colon-and-space, full-stop-and-space, or spaced dash.
+3. Otherwise the whole entry. Marks (backticks, bold, link addresses) are
+   removed, and a headline over 90 characters is cut at a word.
+
+An entry that starts with a backtick (a tool, file or command) is for
+developers and is left out. Entries are read from every `###` heading of the
+version's section; `## [Unreleased]` is never shown.
+
 ## Version check
 
 The release workflow runs the version check in [tools/README.md](https://github.com/aaronified/fluenough/blob/main/tools/README.md) before it builds.

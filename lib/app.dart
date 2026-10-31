@@ -9,6 +9,7 @@ import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
 import 'features/downloads/deck_update_prompt.dart';
 import 'features/fonts/font_check_prompt.dart';
+import 'features/whats_new/whats_new_prompt.dart';
 import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
 import 'features/placement/language_picker_page.dart';
@@ -186,42 +187,46 @@ class AppShell extends StatelessWidget {
         // Asks whether to download a deck update the daily check found.
         child: DeckUpdatePrompt(
           child: FontCheckPrompt(
-            child: Scaffold(
-              body: TabPager(
-                tab: tab,
-                moving: AppScope.read(context).shellTabMoving,
-                children: const <Widget>[
-                  TodayPage(),
-                  DecksPage(),
-                  StatsPage(),
-                  SettingsPage(),
-                ],
-              ),
-              bottomNavigationBar: NavigationBar(
-                selectedIndex: current.index,
-                onDestinationSelected: (i) => tab.value = ShellTab.values[i],
-                destinations: <Widget>[
-                  NavigationDestination(
-                    icon: const Icon(Icons.home_outlined),
-                    selectedIcon: const Icon(Icons.home),
-                    label: l10n.navToday,
-                  ),
-                  NavigationDestination(
-                    icon: const Icon(Icons.style_outlined),
-                    selectedIcon: const Icon(Icons.style),
-                    label: l10n.navDecks,
-                  ),
-                  NavigationDestination(
-                    icon: const Icon(Icons.insert_chart_outlined),
-                    selectedIcon: const Icon(Icons.insert_chart),
-                    label: l10n.navProgress,
-                  ),
-                  NavigationDestination(
-                    icon: const _SettingsIcon(Icons.settings_outlined),
-                    selectedIcon: const _SettingsIcon(Icons.settings),
-                    label: l10n.navSettings,
-                  ),
-                ],
+            // Shows what changed, once, on the first launch after an update
+            // (#944).
+            child: WhatsNewPrompt(
+              child: Scaffold(
+                body: TabPager(
+                  tab: tab,
+                  moving: AppScope.read(context).shellTabMoving,
+                  children: const <Widget>[
+                    TodayPage(),
+                    DecksPage(),
+                    StatsPage(),
+                    SettingsPage(),
+                  ],
+                ),
+                bottomNavigationBar: NavigationBar(
+                  selectedIndex: current.index,
+                  onDestinationSelected: (i) => tab.value = ShellTab.values[i],
+                  destinations: <Widget>[
+                    NavigationDestination(
+                      icon: const Icon(Icons.home_outlined),
+                      selectedIcon: const Icon(Icons.home),
+                      label: l10n.navToday,
+                    ),
+                    NavigationDestination(
+                      icon: const Icon(Icons.style_outlined),
+                      selectedIcon: const Icon(Icons.style),
+                      label: l10n.navDecks,
+                    ),
+                    NavigationDestination(
+                      icon: const Icon(Icons.insert_chart_outlined),
+                      selectedIcon: const Icon(Icons.insert_chart),
+                      label: l10n.navProgress,
+                    ),
+                    NavigationDestination(
+                      icon: const _SettingsIcon(Icons.settings_outlined),
+                      selectedIcon: const _SettingsIcon(Icons.settings),
+                      label: l10n.navSettings,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

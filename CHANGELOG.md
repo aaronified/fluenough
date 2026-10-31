@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **A "What's new" sheet after an update.** The first launch after an update shows the headline of each change in the new version as a bullet, once per version and never on a fresh install; Settings > Updates > What's new keeps the full notes (#944). From now on each CHANGELOG line starts with a bold headline, as this one does (AGENTS.md, "Changelog entries"); `CHANGELOG.md` is bundled in the app so the sheet reads it offline.
+
 ## [0.7.0] - 2026-10-31
 
 ### Added
