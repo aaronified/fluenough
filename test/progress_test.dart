@@ -369,7 +369,7 @@ bool onScreen(WidgetTester tester, Finder finder) {
   return rect.bottom > 0 && rect.top < 844;
 }
 
-/// A floating button, with its label or, where two do not fit, without.
+/// A floating button, by its hero tag.
 Finder fab(String heroTag) => find.byWidgetPredicate(
   (w) => w is FloatingActionButton && w.heroTag == heroTag,
 );
@@ -1877,6 +1877,28 @@ void main() {
           await tester.pumpAndSettle();
           expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
         }
+      },
+    );
+
+    testWidgets(
+      'Where I am is one icon-only button on the right, named by its tooltip, '
+      'and Add deck is not on the screen (#475)',
+      (tester) async {
+        usePhone(tester, textScale: 1.4);
+        await pumpDecks(tester, state: await teluguLearnerDecksPage());
+        final l10n = l10nOf(tester);
+        final where = fab('where-i-am');
+        expect(where, findsOneWidget);
+        expect(
+          find.descendant(of: where, matching: find.byType(Text)),
+          findsNothing,
+        );
+        expect(find.byTooltip(l10n.decksWhereIAm), findsOneWidget);
+        final rect = tester.getRect(where);
+        expect(rect.center.dx, greaterThan(390 / 2));
+        expect(rect.width, greaterThanOrEqualTo(40));
+        expect(tester.getSemantics(where).label, contains(l10n.decksWhereIAm));
+        expect(find.byType(FloatingActionButton), findsOneWidget);
       },
     );
 

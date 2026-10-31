@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Where I am is an icon.** On Decks, Where I am is now a small icon button on the right of the path, named by its tooltip and read aloud as "Where I am", and the Add deck button is gone from Decks: adding a deck from a file stays in Settings, under Your decks (#475).
 - Natural Bengali and Hindi daily facts: the daily fact now reads naturally in the fact language you choose, with the Bengali and Hindi fact texts re-translated.
 
 ## [0.7.0] - 2026-10-31
