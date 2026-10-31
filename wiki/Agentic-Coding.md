@@ -344,6 +344,22 @@ decks" green.)
 
 Never create or push git tags; the owner tags releases.
 
+**Changelog entries (owner, 2026-10-31).** Each pull request adds its own
+`CHANGELOG.md` line under `## [Unreleased]`, and the line starts with a short,
+plain, user-facing headline: what the learner notices, in a few words, bold,
+ending in a full stop, then the detail and the issue number.
+
+```
+- **Situations on Today.** Six buttons open sheets of key phrases for everyday moments (#724).
+```
+
+The app lists the headlines, as bullets, in a sheet shown once on the first
+launch after an update (#944), so the headline has to make sense on its own.
+Entries written before this rule are read up to the first of ` (#123)`, a
+colon, a full stop and space, or a spaced dash. An entry that starts with a
+backtick (a tool, a file, a command) is for developers and is not listed. The
+rule is `headlineOf` in `lib/core/updates/whats_new.dart`.
+
 Branch names: `<area>/<short-description>` — `deck/fr-core-100`,
 `feat/production-drill`, `fix/grader-article-stripping`, `docs/adr-tts-update`.
 
