@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 
 /// How each of the four skills looks on the Languages page: Speak is the
 /// speaking skill's microphone and green, Hear listening's ear and purple,
@@ -88,6 +89,7 @@ class SkillBadge extends StatelessWidget {
     this.glyph,
     this.onTap,
     this.hint,
+    this.tip,
     this.big = false,
   });
 
@@ -103,6 +105,10 @@ class SkillBadge extends StatelessWidget {
 
   /// What the next tap does, for a screen reader.
   final String? hint;
+
+  /// What a long press shows: short, the skill and its state. Defaults to
+  /// [label].
+  final String? tip;
 
   /// The sheet's pill, 48 px high; else the list's chip.
   final bool big;
@@ -176,8 +182,8 @@ class SkillBadge extends StatelessWidget {
       button: onTap != null,
       excludeSemantics: true,
       onTap: onTap,
-      child: Tooltip(
-        message: label,
+      child: Hint(
+        message: tip ?? label,
         excludeFromSemantics: true,
         child: tappable,
       ),

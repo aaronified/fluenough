@@ -9,6 +9,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../downloads/deck_update_controls.dart';
@@ -88,8 +89,9 @@ class _LanguagesPageState extends State<LanguagesPage> {
               listenable: state.settings,
               builder: (context, _) => _held(state, all).isEmpty
                   ? const SizedBox.shrink()
-                  : IconButton(
-                      tooltip: l10n.languagesAdd,
+                  : LabelledIconButton(
+                      label: l10n.languagesAdd,
+                      hint: l10n.hintAdd,
                       onPressed: () => _add(state, all),
                       icon: const Icon(Icons.add),
                     ),
@@ -233,6 +235,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
             ),
         ],
         const SizedBox(height: 8),
+        // hint-ok: shows text
         InkWell(
           key: const ValueKey<String>('languages-add-row'),
           onTap: () => _add(state, all),
@@ -466,6 +469,7 @@ class _LanguageRow extends StatelessWidget {
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);
+    // hint-ok: shows text
     return InkWell(
       onTap: onTap,
       child: Padding(
@@ -629,6 +633,7 @@ class _LanguageRow extends StatelessWidget {
       kind: key.kind,
       mark: markOf(st, covered: covered),
       label: skillSemantics(l10n, name, st, covered: covered),
+      tip: l10n.languagesSkillState(name, st.label(l10n)),
       glyph: script != null && several
           ? scriptGlyph(script, l10n.scriptNameOr(script, view.name))
           : null,
