@@ -1077,6 +1077,19 @@
       }
     }
   },
+  "situationOpenInDeck": "Open in deck",
+  "@situationOpenInDeck": {
+    "description": "Inspect view: opens the deck the card is in."
+  },
+  "situationAlsoOn": "Also on: {sheets}",
+  "@situationAlsoOn": {
+    "description": "Inspect view: the other sheets the card is on.",
+    "placeholders": {
+      "sheets": {
+        "type": "String"
+      }
+    }
+  },
   "situationEmpty": "None of this sheet's cards is in your decks yet.",
   "@situationEmpty": {
     "description": "Shown on a sheet none of whose cards the learner's decks have."

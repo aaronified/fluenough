@@ -74,12 +74,6 @@ situations:
       final state = AppState.test(
         decks: MemoryDeckSource(<String, String>{
           ...ipaFiles,
-          'decks/hi/hi-en-words.yaml': ipaFiles['decks/hi/hi-en-words.yaml']!
-              .replaceFirst(
-                'ipa: "pʰəɳ",',
-                'ipa: "pʰəɳ", bases: [{ word: "पत्ता", base: "पत्र", '
-                    'reading: "patra" }],',
-              ),
           'decks/hi/hi-situations.yaml': hindi,
         }),
         settings: SettingsNotifier(
@@ -98,39 +92,36 @@ situations:
       );
     }
 
-    testWidgets('are swiped between, with no chevrons and no Open in deck, '
-        'and the IPA\'s sounds are behind its info dot', (tester) async {
-      await pumpInspect(tester);
-      final l10n = l10nOf(tester);
-      expect(
-        find.text(l10n.situationInspectTitle('Rail station', 1, 3)),
-        findsOneWidget,
-      );
-      // The meaning shows, and the root word, which the page scrolls to;
-      // nothing else of the word sheet.
-      expect(find.text('leaf'), findsOneWidget);
-      expect(find.textContaining('पत्र', findRichText: true), findsOneWidget);
-      expect(find.text(l10n.cardReport), findsNothing);
-      expect(find.textContaining('hi-0001'), findsNothing);
-      expect(find.byIcon(Icons.chevron_left), findsNothing);
-      expect(find.byIcon(Icons.chevron_right), findsNothing);
-      expect(find.text('Open in deck'), findsNothing);
-      // The sounds are not drawn until the dot is tapped.
-      expect(find.text(l10n.ipaSymbolPractise), findsNothing);
-      await tester.tap(find.byTooltip(l10n.ipaInfoDot));
-      await tester.pumpAndSettle();
-      expect(find.text('the sound ɳ'), findsOneWidget);
-      expect(find.text(l10n.ipaSymbolPractise), findsWidgets);
-      await tester.tap(find.text(l10n.commonClose));
-      await tester.pumpAndSettle();
+    testWidgets(
+      'are swiped between, with no chevrons, and the IPA\'s sounds are '
+      'behind its info dot',
+      (tester) async {
+        await pumpInspect(tester);
+        final l10n = l10nOf(tester);
+        expect(
+          find.text(l10n.situationInspectTitle('Rail station', 1, 3)),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.chevron_left), findsNothing);
+        expect(find.byIcon(Icons.chevron_right), findsNothing);
+        expect(find.text(l10n.situationOpenInDeck), findsOneWidget);
+        // The sounds are not drawn until the dot is tapped.
+        expect(find.text(l10n.ipaSymbolPractise), findsNothing);
+        await tester.tap(find.byTooltip(l10n.ipaInfoDot));
+        await tester.pumpAndSettle();
+        expect(find.text('the sound ɳ'), findsOneWidget);
+        expect(find.text(l10n.ipaSymbolPractise), findsWidgets);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
 
-      await tester.fling(find.text('leaf'), const Offset(-400, 0), 1500);
-      await tester.pumpAndSettle();
-      expect(
-        find.text(l10n.situationInspectTitle('Rail station', 2, 3)),
-        findsOneWidget,
-      );
-      expect(find.text('tomorrow'), findsOneWidget);
-    });
+        await tester.fling(find.text('leaf'), const Offset(-400, 0), 1500);
+        await tester.pumpAndSettle();
+        expect(
+          find.text(l10n.situationInspectTitle('Rail station', 2, 3)),
+          findsOneWidget,
+        );
+        expect(find.text('tomorrow'), findsOneWidget);
+      },
+    );
   });
 }

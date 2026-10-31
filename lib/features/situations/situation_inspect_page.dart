@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../app/routes.dart';
 import '../../app/situations.dart';
 import '../../l10n/app_localizations.dart';
-import '../../core/models/card.dart';
-import '../../core/models/deck.dart';
-import '../../ui/widgets/ipa_line.dart';
-import '../../ui/widgets/speaker.dart';
-import '../../ui/widgets/target_text.dart';
-import '../decks/card_bases.dart';
-import '../decks/ipa_info_dot.dart';
+import '../../ui/widgets/bottom_actions.dart';
+import '../decks/word_sheet.dart';
 import 'situation_page.dart';
 
-/// A sheet's cards, one at a time, swiped between (#724; owner, 2026-10-31:
-/// swipe is universal across deck viewing and swipe-only, and a situation is
-/// quick help, so a card shows only what is needed in the moment). Each page
-/// holds the phrase in script, its reading, a speaker, its IPA with an info
-/// dot (whose popup explains the sounds, [IpaInfoDot]) and its meaning, and
-/// below it, by scrolling, its root words (owner, 2026-10-31).
-/// Numbered chips, with a dot on those not learnt yet, show where the learner
-/// is and jump to a card. No Previous, Next or "Open in deck": a swipe moves
-/// between cards, and the whole word sheet is on the deck's page.
+/// A sheet's cards in full, one at a time (#724; mockup
+/// `docs/mockups/situations.html`, screen 3): the card's whole word sheet
+/// (script, reading, audio, notes, examples, IPA, id and where the learner
+/// stands), numbered chips to jump to a card with a dot on those not learnt
+/// yet, and "Open in deck". The cards are swiped between (owner, 2026-10-31:
+/// swipe is universal across deck viewing); there are no Previous and Next
+/// buttons.
 class SituationInspectPage extends StatefulWidget {
   const SituationInspectPage({super.key, required this.request});
 
@@ -70,7 +64,13 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
       return Scaffold(appBar: AppBar(), body: const SizedBox.shrink());
     }
     final index = _index.clamp(0, cards.length - 1);
+    final item = cards[index];
     final spoken = state.settings.spokenLanguages;
+    final others = <String>[
+      for (final other in file!.situations)
+        if (other.id != sheet.id && other.cardIds.contains(item.card.id))
+          other.titleFor(spoken),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -125,12 +125,21 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
               ],
             ),
           ),
+          if (others.isNotEmpty)
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
+              child: Text(
+                l10n.situationAlsoOn(others.join(l10n.commonListSeparator)),
+                style: Theme.of(context).textTheme.bodySmall!
+                    .copyWith(color: scheme.onSurfaceVariant),
+              ),
+            ),
           Expanded(
             child: PageView.builder(
               controller: _pages,
               itemCount: cards.length,
               onPageChanged: (i) => setState(() => _index = i),
-              itemBuilder: (context, i) => _CardPage(
+              itemBuilder: (context, i) => WordSheet(
                 key: ValueKey<String>(cards[i].card.id),
                 card: cards[i].card,
                 language: cards[i].deck.language,
@@ -139,91 +148,12 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-/// One card of a sheet: only what is needed in the moment.
-class _CardPage extends StatelessWidget {
-  const _CardPage({super.key, required this.card, required this.language});
-
-  final Card card;
-  final LanguageInfo language;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final state = AppScope.of(context);
-    return ListenableBuilder(
-      // IPA pronunciations is a setting: off, the IPA and its dot go.
-      listenable: state.settings,
-      builder: (context, _) {
-        final reading = card.reading;
-        final ipa = ipaToShow(context, card.ipa, target: card.target);
-        // The root words help memory: below the meaning, by scrolling.
-        final bases = basesOf(state, card, language);
-        return LayoutBuilder(
-          builder: (context, constraints) => SingleChildScrollView(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: constraints.maxHeight - 48,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                spacing: 12,
-                children: <Widget>[
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: AlignmentDirectional.centerStart,
-                    child: TargetText(
-                      card.target,
-                      language: language,
-                      fontSize: 52,
-                      fontWeight: FontWeight.w500,
-                      textAlign: TextAlign.start,
-                      card: card,
-                    ),
-                  ),
-                  if (reading != null)
-                    Text(
-                      reading,
-                      style: theme.textTheme.titleMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  Row(
-                    children: <Widget>[
-                      if (state.hasVoice(language))
-                        SpeakerIcon(
-                          onPlay: () => state.speakCard(card, language),
-                          label: l10n.drillPlay,
-                        ),
-                      if (ipa != null) ...<Widget>[
-                        Flexible(
-                          child: IpaLine(ipa, textAlign: TextAlign.start),
-                        ),
-                        IpaInfoDot(card: card),
-                      ],
-                    ],
-                  ),
-                  Text(
-                    card.native,
-                    style: theme.textTheme.headlineSmall!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  if (bases.isNotEmpty)
-                    BaseLine(bases: bases, language: language),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
+      bottomNavigationBar: BottomActions(
+        child: FilledButton.tonal(
+          onPressed: () => AppNavigator.openDeck(context, item.deck.id),
+          child: Text(l10n.situationOpenInDeck),
+        ),
+      ),
     );
   }
 }
