@@ -372,6 +372,7 @@ class LayerEntry extends LayerCard {
     this.native,
     this.explanation,
     this.altNative,
+    this.notSynonyms,
     this.notes,
     this.examples,
     this.bases,
@@ -386,6 +387,9 @@ class LayerEntry extends LayerCard {
   /// A set card's explanation; null on any other card's entry.
   final String? explanation;
   final List<String>? altNative;
+
+  /// Typed meanings the synonym sets must not accept (`not_synonyms`).
+  final List<String>? notSynonyms;
 
   /// Note texts, by the core note's id.
   final Map<String, LayerText>? notes;
@@ -796,6 +800,7 @@ class _Merge {
           'from ${layer.native.name}',
         );
     if (entry.altNative != null ||
+        entry.notSynonyms != null ||
         entry.notes != null ||
         entry.examples != null ||
         entry.bases != null ||
@@ -834,6 +839,7 @@ class _Merge {
       targetScripts: card.targetScripts,
       words: card.words,
       altNative: entry.altNative ?? const <String>[],
+      notSynonyms: entry.notSynonyms ?? const <String>[],
       pos: card.pos,
       hears: card.hears,
       warning: card.warning,
@@ -972,6 +978,7 @@ class _Merge {
       reading: card.reading,
       ipa: card.ipa,
       altNative: entry?.altNative,
+      notSynonyms: entry?.notSynonyms,
       tags: card.tags,
       notes: card.notes == null
           ? null

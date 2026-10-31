@@ -96,6 +96,15 @@ class NotSynonyms(unittest.TestCase):
         self.assertTrue(any("escaped by not_synonyms" in e for e in errors),
                         errors)
 
+    def test_a_single_file_deck_card_is_checked_too(self) -> None:
+        (self.tmp / "xx-en-solo.yaml").write_text(
+            'schema: 1\nid: "xx-en-solo"\n'
+            'native: { code: "en", iso639_3: "eng", name: "English" }\n'
+            'cards:\n  - id: "xx-1"\n    native: "florp"\n'
+            '    not_synonyms: ["snarkle"]\n', encoding="utf-8")
+        errors = v.validate(GOOD, self.tmp)
+        self.assertTrue(any("blocks nothing" in e for e in errors), errors)
+
 
 if __name__ == "__main__":
     unittest.main()

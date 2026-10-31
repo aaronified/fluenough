@@ -161,7 +161,7 @@ HEADER_KEYS = {
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
-    "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
+    "not_synonyms", "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
@@ -170,8 +170,8 @@ CARD_KEYS = {
 # native-side fields; what the card is in the language learned stays the
 # card's own.
 REF_KEYS = {
-    "ref", "native", "reading", "ipa", "alt_native", "tags", "notes",
-    "examples", "modes", "wiktionary",
+    "ref", "native", "reading", "ipa", "alt_native", "not_synonyms", "tags",
+    "notes", "examples", "modes", "wiktionary",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
@@ -267,8 +267,8 @@ MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
 MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.5|3\.0|4\.0)"
                               r"(?:-[A-Z]{2,3})?")
 # What a native language gives a card: never written in a core.
-NATIVE_SIDE = ("native", "alt_native", "wiktionary")
-LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
+NATIVE_SIDE = ("native", "alt_native", "not_synonyms", "wiktionary")
+LAYER_ENTRY_KEYS = {"native", "alt_native", "not_synonyms", "notes", "examples", "bases",
                     "wiktionary", "dictionary", *CARD_DATA}
 DICTIONARY_KEYS = {"senses", "etymology", "source"}
 CORE_ENTRY_KEYS = {"lemma", "key", "forms", "reading", "readings", "ipa", "ipas"}
@@ -858,6 +858,42 @@ def check_meaning_alternatives(r: Report, where: str, cid: str | None,
                        f'";" (or reword it, or add the card id to MEANING_ALL_REQUIRED): {value!r}')
 
 
+def check_not_synonyms(r: Report, where: str, entry: dict) -> None:
+    """A card's `not_synonyms` (ADR-0050, #924): typed English answers the
+    synonym sets must not accept for it. A list of quoted words in comparison
+    form, once each, none of them one of the card's own answers (those are
+    never blocked, so the entry would say two opposite things). Whether an
+    entry blocks anything is checked against the sets by validate_synonyms.py.
+    Released apps reject the key: decks use it only a release after the app
+    that reads it, as for `warning` (#691); "Released app reads the decks"
+    in CI is the guard."""
+    if "not_synonyms" not in entry:
+        return
+    value = entry["not_synonyms"]
+    if r.native_code != "en":
+        r.error(where, "not_synonyms is for English meanings: the synonym sets "
+                       "are English")
+    _check_str_list(r, where, "not_synonyms", value)
+    if not isinstance(value, list):
+        return
+    from validate_synonyms import answers, meaning_key
+    own = set(answers(entry))
+    seen: set[str] = set()
+    for i, item in enumerate(value):
+        if not _is_str(item):
+            continue
+        key = meaning_key(item)
+        if key != item:
+            r.error(where, f"not_synonyms[{i}] must be in comparison form (lower "
+                           f"case, no leading to, no punctuation): write {key!r}")
+        if key in own:
+            r.error(where, f"not_synonyms[{i}] {item!r} is one of the card's own "
+                           f"answers, which are never blocked")
+        if key in seen:
+            r.error(where, f"not_synonyms[{i}] {item!r} is listed twice")
+        seen.add(key)
+
+
 def check_card(r: Report, idx: int, card: object, seen: set[str],
                script: str, lang: str, *, form: str = "single",
                key: str | None = None,
@@ -957,6 +993,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             _check_str_list(r, where, key, card[key])
     if not core:
         check_meaning_alternatives(r, where, cid, card)
+        check_not_synonyms(r, where, card)
     if "target_scripts" in card:
         _check_target_scripts(r, where, card["target_scripts"], target, scripts)
 
@@ -1768,6 +1805,8 @@ def check_ref(r: Report, idx: int, card: dict, seen: set[str],
     for key in ("tags",) if core else ("alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if not core:
+        check_not_synonyms(r, where, card)
     check_notes(r, where, card.get("notes"), rid, lang, script, core=core)
     _check_modes(r, where, card.get("modes"))
     if "wiktionary" in card and not core:
@@ -3966,6 +4005,7 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
     if "alt_native" in entry:
         _check_str_list(r, where, "alt_native", entry["alt_native"])
     check_meaning_alternatives(r, where, cid, entry)
+    check_not_synonyms(r, where, entry)
     if "wiktionary" in entry:
         _check_wiktionary(r, where, "", entry["wiktionary"])
     if "dictionary" in entry:

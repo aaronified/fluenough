@@ -73,6 +73,50 @@ class ScriptPos(Case):
                          "got 'meaning'")
 
 
+class NotSynonyms(Case):
+    """`not_synonyms` (ADR-0050, #924): a card's refusal of listed words."""
+
+    def test_a_layer_entry_may_list_comparison_forms_once_each(self) -> None:
+        self.layer(HOUSE, not_synonyms=["florp", "quandle"])
+        self.assertNoError(LAYER)
+
+    def test_an_entry_must_be_a_list_of_words_in_comparison_form(self) -> None:
+        self.layer(HOUSE, not_synonyms="florp")
+        self.assertError(LAYER, f"cards.{HOUSE}", "not_synonyms must be a list")
+        self.layer(HOUSE, not_synonyms=["Florp"])
+        self.assertIn("write 'florp'", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, not_synonyms=["to florp"])
+        self.assertIn("comparison form", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, not_synonyms=[""])
+        self.assertIn("non-empty string", "\n".join(self.errors(LAYER)))
+
+    def test_a_repeat_or_one_of_the_cards_own_answers_is_refused(self) -> None:
+        self.layer(HOUSE, not_synonyms=["florp", "florp"])
+        self.assertIn("listed twice", "\n".join(self.errors(LAYER)))
+        self.layer(HOUSE, native="home; house", not_synonyms=["house"])
+        self.assertIn("one of the card's own answers", "\n".join(self.errors(LAYER)))
+
+    def test_a_core_card_cannot_carry_it(self) -> None:
+        self.core(HOUSE, not_synonyms=["florp"])
+        self.assertIn("a layer", "\n".join(self.errors(CORE)).replace(
+            "is in each layer", "a layer"))
+        self.assertTrue(any("not_synonyms" in e for e in self.errors(CORE)))
+
+    def test_only_an_english_layer_may_use_it(self) -> None:
+        self.put("bn/zz-bn-home.yaml", {
+            "schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
+            "native": {"code": "bn", "iso639_3": "ben", "name": "Bengali"},
+            "name": "x", "license": "CC-BY-SA-4.0",
+            "cards": {"zz-9004": {"native": "মা (mā)", "not_synonyms": ["florp"]}}})
+        self.assertIn("English", "\n".join(self.errors("bn/zz-bn-home.yaml")))
+
+    def test_a_single_file_card_and_its_ref_may_use_it(self) -> None:
+        self.put(EXTRA, single(cards=[dict(CAT, not_synonyms=["florp"])]))
+        self.assertNoError(EXTRA)
+        self.put(EXTRA, single(cards=[dict(CAT, not_synonyms=["Florp"])]))
+        self.assertIn("comparison form", "\n".join(self.errors(EXTRA)))
+
+
 class OwnRoot(Case):
 
     def _a_word_that_is_its_own_root(self) -> None:
