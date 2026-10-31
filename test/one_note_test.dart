@@ -3,6 +3,7 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/models/card.dart';
+import 'package:fluenough/features/drill/one_note.dart';
 import 'package:fluenough/features/drill/taught_details.dart';
 import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -102,8 +103,9 @@ void main() {
     await pumpScreen(tester, _reveal(state, card), state: state);
     expect(find.text(_look), findsOneWidget);
 
+    // The teach card's warning may carry the text; its note block does not.
     await pumpScreen(tester, _teach(state, card), state: state);
-    expect(find.text(_look), findsNothing);
+    expect(find.byType(OneNote), findsNothing);
   });
 
   testWidgets('a card with only a pair note shows no note', (tester) async {
@@ -114,8 +116,10 @@ void main() {
     ]);
     await pumpScreen(tester, _reveal(state, card), state: state);
     expect(find.text('Do not say zorb.'), findsNothing);
+    // The teach card's warning carries a pair note's text as its care note;
+    // its note block shows nothing.
     await pumpScreen(tester, _teach(state, card), state: state);
-    expect(find.text('Do not say zorb.'), findsNothing);
+    expect(find.byType(OneNote), findsNothing);
   });
 
   testWidgets('a rebuild does not pick another note', (tester) async {
