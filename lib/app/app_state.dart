@@ -3016,11 +3016,13 @@ class AppState extends ChangeNotifier {
   /// lowest window: FSRS reads it as Again), nothing given, in the card's
   /// first drillable mode, recognition where it has it. Returns the row, or
   /// null and writes nothing when the card is taught already, so a repeat
-  /// view or a Relearn costs nothing, or cannot be taught yet: a sentence
-  /// that waits for its words and rules, or a card with no mode to drill.
-  /// Readers that count answers skip the row ([ReviewEvent.isView]).
+  /// view costs nothing, or has no mode to drill. A sentence still waiting
+  /// for its words and rules is walked and logged like any other (owner,
+  /// 2026-10-31: "Walk it, and mark as usual on fsrs"); taught, it is open
+  /// by [Unlocks]. Readers that count answers skip the row
+  /// ([ReviewEvent.isView]).
   ReviewEvent? viewCard(Card card) {
-    if (isTaught(card) || !unlocks.isOpen(card)) return null;
+    if (isTaught(card)) return null;
     final modes = drillableModes(card);
     final mode = DrillMode.drills.where(modes.contains).firstOrNull;
     if (mode == null) return null;
@@ -3030,6 +3032,33 @@ class AppState extends ChangeNotifier {
       asked: Ask.teach,
     );
   }
+
+  /// The cards a walkthrough of [decks] covers (#694): every card of every
+  /// deck, in the order the decks come and each deck's own, a card once,
+  /// whatever is taught (owner, 2026-10-31: taught status is information
+  /// only). With [tags], only the cards carrying one of them. A reading
+  /// deck has none: its passages' questions are not walked.
+  List<({Card card, DeckEntry entry})> walkCards(
+    Iterable<DeckEntry> decks, {
+    Set<String> tags = const <String>{},
+  }) {
+    final seen = <String>{};
+    return <({Card card, DeckEntry entry})>[
+      for (final entry in decks)
+        if (entry.deck.kind != DeckKind.reading)
+          for (final card in entry.cards)
+            if (card is! QuestionCard &&
+                (tags.isEmpty || card.tags.any(tags.contains)) &&
+                seen.add(card.id))
+              (card: card, entry: entry),
+    ];
+  }
+
+  /// How many of [cards] a walkthrough would teach: not taught yet and with
+  /// a mode to drill. Zero is when the control reads Relearn.
+  int newToWalk(Iterable<Card> cards) => cards
+      .where((card) => !isTaught(card) && drillableModes(card).isNotEmpty)
+      .length;
 
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth
