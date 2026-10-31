@@ -170,6 +170,7 @@ class GroupedTile extends StatelessWidget {
     required this.title,
     this.subtitle,
     this.subtitleLines,
+    this.subtitleMaxLines,
     this.leading,
     this.trailing,
     this.onTap,
@@ -205,6 +206,7 @@ class GroupedTile extends StatelessWidget {
     this.leadingGap = 16,
   }) : subtitle = null,
        subtitleLines = null,
+       subtitleMaxLines = null,
        expanded = null,
        trailing = null,
        onTap = null,
@@ -229,6 +231,10 @@ class GroupedTile extends StatelessWidget {
   /// Lines under the title, each its own text with a 6 px gap between them,
   /// in place of [subtitle]: one source to a line (#844, owner, 2026-10-25).
   final List<String>? subtitleLines;
+
+  /// With a number, [subtitle] shows at most that many lines and ends in an
+  /// ellipsis; null lets it wrap in full.
+  final int? subtitleMaxLines;
 
   /// A [GroupedTile.toggle]'s line while it is on, and while it is off.
   /// Null for any other row.
@@ -340,6 +346,8 @@ class GroupedTile extends StatelessWidget {
         if (line case final line? when line.isNotEmpty)
           Text(
             line,
+            maxLines: subtitleMaxLines,
+            overflow: subtitleMaxLines == null ? null : TextOverflow.ellipsis,
             style: theme.textTheme.bodyMedium!.copyWith(
               color: foreground ?? scheme.onSurfaceVariant,
             ),
