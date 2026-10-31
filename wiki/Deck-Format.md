@@ -584,7 +584,7 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
-| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
+| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). **An English `native` or `alt_native` separates alternatives with `;`** (`Take care!; Careful!`): the typed-meaning grader accepts each `;`-separated part and no other split, so a meaning with a sentence break (`.`, `!` or `?` then more text, outside brackets and abbreviations such as `Mr.`) and no `;` is a validator error (#924). A card whose sentences must all be said is listed in `MEANING_ALL_REQUIRED` in `tools/validate_decks.py`; the check covers a card's `native` and `alt_native`, not its examples. |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
 | `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
@@ -1168,8 +1168,16 @@ the entry exists:
   an entry's title, such as a sentence or an inflected form, is not marked:
   its bases carry the mark for their words.
 - **Mark only an entry you have seen:** the word's own page, with a section
-  for the language. A tool will mark them from Wiktionary's extracts; until
-  then, check each one.
+  for the language. `tools/mark_wiktionary.py` marks the cards of a core
+  from Wiktionary's extracts ([Deck tools](Deck-Tools#mark_wiktionarypy));
+  mark a base written in full by hand, checking its page.
+- **In the app,** a word's sheet shows "Wiktionary: <word>" for the card
+  itself and for each marked base word, which opens the page in the browser
+  (the address for English Wiktionary ends in the language's section, such
+  as `#Telugu`; Hindustani's is `#Hindi`; another edition's has none, since
+  its headings are in its own language). Nothing is fetched until it is
+  tapped, and a word without the mark has no link. The key is not new, so
+  decks that use it need no release guard.
 
 ### A card's own recording: `audio`
 
