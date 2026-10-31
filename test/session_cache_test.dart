@@ -10,6 +10,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 
 /// Forty synthetic languages, thirty words each, taught from English.
 final List<String> _codes = <String>[
@@ -90,6 +91,16 @@ class _TouchingProgress extends MemoryProgress {
     }
     return event;
   }
+}
+
+/// A phone whose voices can be installed while the app runs.
+class _SwitchTts extends NullTtsEngine {
+  _SwitchTts();
+
+  bool available = false;
+
+  @override
+  Future<bool> isLanguageAvailable(String bcp47) async => available;
 }
 
 void main() {
@@ -177,17 +188,45 @@ void main() {
     },
   );
 
-  test('a change to the decks or voices rebuilds every language', () async {
+  test('a voice that appears rebuilds every language; the same answers keep '
+      'them', () async {
+    final tts = _SwitchTts();
+    final other = AppState.test(
+      decks: MemoryDeckSource(_course()),
+      progress: _twoYears(),
+      tts: tts,
+      speech: FixedSpeechEngine(onDevice: const <String>{}),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: _codes,
+        learningChosen: true,
+      ),
+    );
+    addTearDown(other.dispose);
+    await other.load();
+    other.lazyOff = true;
     for (final code in _codes) {
-      state.buildSession(today(code));
+      other.buildSession(today(code));
     }
-    final before = Map<String, int>.of(state.sessionBuilds);
-    await state.refreshVoices();
+    final before = Map<String, int>.of(other.sessionBuilds);
+
+    // The phone answers as before: the queues are kept (#857).
+    await other.refreshVoices();
     for (final code in _codes) {
-      state.buildSession(today(code));
+      other.buildSession(today(code));
     }
     for (final code in _codes) {
-      expect(state.sessionBuilds[code], before[code]! + 1);
+      expect(other.sessionBuilds[code], before[code], reason: '$code kept');
+    }
+
+    // A voice is installed: what Listening needs has changed.
+    tts.available = true;
+    await other.refreshVoices();
+    for (final code in _codes) {
+      other.buildSession(today(code));
+    }
+    for (final code in _codes) {
+      expect(other.sessionBuilds[code], before[code]! + 1, reason: '$code');
     }
   });
 
