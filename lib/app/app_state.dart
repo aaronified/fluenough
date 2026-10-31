@@ -6,6 +6,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/languages/language_skills.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/card_set.dart';
@@ -35,8 +36,10 @@ import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
+import '../core/grading/synonym_sets.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
+import '../core/models/situation.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
@@ -74,6 +77,7 @@ import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
+import 'synonym_loader.dart';
 import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
@@ -194,6 +198,7 @@ class AppState extends ChangeNotifier {
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
     this.deckDownloads,
+    this._synonymLoader,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -532,6 +537,29 @@ class AppState extends ChangeNotifier {
   /// in tests and the gallery: the catalog's decks are then all there is.
   final DeckDownloads? deckDownloads;
 
+  /// Reads the bundled synonym sets (ADR-0050); null for none, as in tests.
+  final SynonymLoader? _synonymLoader;
+  SynonymSets _synonyms = SynonymSets.empty;
+  Future<void>? _synonymsLoading;
+
+  /// The English synonym sets, [SynonymSets.empty] until [warmSynonyms] has
+  /// read them: an answer given before then is graded without them.
+  SynonymSets get synonyms => _synonyms;
+
+  /// Starts reading the synonym sets, once. Never throws: a file that cannot
+  /// be read is no sets.
+  void warmSynonyms() {
+    final load = _synonymLoader;
+    if (load == null) return;
+    _synonymsLoading ??= () async {
+      try {
+        _synonyms = await load();
+      } catch (_) {
+        _synonyms = SynonymSets.empty;
+      }
+    }();
+  }
+
   final TtsEngine _tts;
 
   /// Plays a card's own recording (#518).
@@ -672,6 +700,10 @@ class AppState extends ChangeNotifier {
         (fact: fact, texts: factTexts(fact, spoken)),
     ];
   }
+
+  /// [language]'s situation sheets (#724), or null where it has none.
+  SituationsFile? situationsOf(String language) =>
+      _catalog.situations[language];
 
   /// The languages Today's fact can be shown in (#926): those the learner
   /// knows, in their order.
@@ -913,6 +945,7 @@ class AppState extends ChangeNotifier {
   /// then looks for deck updates, at most once a day, unless the learner
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
+    ensureEnglishKnown();
     final downloads = deckDownloads;
     if (downloads == null || _disposed) return;
     // What the Languages page left out is removed now, at this open (#907).
@@ -2393,6 +2426,8 @@ class AppState extends ChangeNotifier {
       if (script == null) continue;
       readers.putIfAbsent(script, () => <String>[]).add(parts.first);
     }
+    // Everyone reads the Latin script (#926), through English.
+    readers.putIfAbsent(latinScript, () => <String>['en']);
     return readers;
   }
 

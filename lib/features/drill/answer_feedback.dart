@@ -87,7 +87,15 @@ class AnswerFeedback extends StatelessWidget {
         l10n.feedbackAnswer(shown(null)),
       );
     }
+    // A synonym of the answer: the card's own answer, then what else counted.
+    String withHint(String detail, String word) =>
+        '$detail\n${_alsoHint(l10n, word)}';
     return switch (graded.outcome) {
+      AnswerOutcome.exact when graded.viaSynonym => banner(
+        FeedbackKind.correct,
+        l10n.feedbackCorrect,
+        withHint(shown(graded.matched), answer.typed),
+      ),
       AnswerOutcome.exact => banner(
         FeedbackKind.correct,
         l10n.feedbackCorrect,
@@ -107,7 +115,12 @@ class AnswerFeedback extends StatelessWidget {
       AnswerOutcome.closeTypo => banner(
         FeedbackKind.nearMiss,
         l10n.feedbackTypo(shown(graded.matched)),
-        l10n.feedbackTypoDetail(answer.typed),
+        graded.viaSynonym
+            ? withHint(
+                l10n.feedbackTypoDetail(answer.typed),
+                graded.synonym ?? answer.typed,
+              )
+            : l10n.feedbackTypoDetail(answer.typed),
       ),
       AnswerOutcome.wrong => banner(
         FeedbackKind.wrong,
@@ -117,6 +130,18 @@ class AnswerFeedback extends StatelessWidget {
             : _heard(context, l10n, answer),
       ),
     };
+  }
+
+  /// "Also: take care" for one or two words, "Also right" for more
+  /// (ADR-0050): a hint is a word or two, so a long answer is not repeated.
+  static String _alsoHint(AppLocalizations l10n, String word) {
+    final shown = word.trim().replaceAll(RegExp(r'[\s.!?,;:]+$'), '');
+    final words = shown.split(RegExp(r'\s+')).where((w) => w.isNotEmpty);
+    return words.length > 2
+        ? l10n.feedbackAlsoRight
+        : l10n.feedbackAlsoTyped(
+            words.length == 1 ? shown.toLowerCase() : shown,
+          );
   }
 
   /// What was heard, in the script as recognised, then its IPA when the word
