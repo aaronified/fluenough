@@ -66,9 +66,18 @@ abstract final class ReviewMail {
   static const String subjectPrefix = '[Fluenough review]';
 
   /// `[Fluenough review] FL-7K3M-Q9TD-6 (te, bn)`: the code and every
-  /// language in [decks], in their order.
-  static String subject(RaterCode code, Iterable<DeckReview> decks) {
-    final languages = <String>{for (final deck in decks) deck.language};
+  /// language in [decks], in their order, then those of the daily-question
+  /// answers that travel in the same mail ([alsoLanguages], #519) not
+  /// already named.
+  static String subject(
+    RaterCode code,
+    Iterable<DeckReview> decks, {
+    Iterable<String> alsoLanguages = const <String>[],
+  }) {
+    final languages = <String>{
+      for (final deck in decks) deck.language,
+      ...alsoLanguages,
+    };
     return '$subjectPrefix $code (${languages.join(', ')})';
   }
 }

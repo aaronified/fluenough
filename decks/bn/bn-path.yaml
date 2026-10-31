@@ -382,12 +382,14 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
-  - planned: { id: "bn-appearance", theme: "appearance", words: 50 }
+  - decks: ["bn-appearance", "bn-appearance-sentences", "*"]
+    words: 30
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - planned: { id: "bn-verbs-3", theme: "verbs-3", words: 60 }
+  - decks: ["bn-verbs-3", "bn-verbs-3-sentences", "*"]
+    words: 57
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
