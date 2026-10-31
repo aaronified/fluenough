@@ -4,6 +4,9 @@ import '../core/feedback/report.dart';
 import '../core/models/card.dart';
 import '../core/models/proposal.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/question_log.dart';
+import '../core/review/questions_file.dart';
+import '../core/review/review_question.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import 'app_info.dart';
@@ -221,11 +224,13 @@ class Reviewing {
   /// The decks with reviews not sent yet.
   List<DeckReview> get unsent => reviews.unsent;
 
-  /// Sends [decks]' unsent reviews in one mail, one file each, through the
-  /// reviewer's mail app, with [body], which is for people only. Once the
-  /// mail app has opened with them they are marked sent; they stay on the
-  /// phone. The phone cannot tell whether the mail then went, so the send
-  /// can be taken back with [sendAgain].
+  /// Sends [decks]' unsent reviews, and every daily-question answer waiting
+  /// (#519), in one mail, one file each (a file for each deck, and one for
+  /// each language of answers), through the reviewer's mail app, with
+  /// [body], which is for people only. Once the mail app has opened with
+  /// them they are marked sent; they stay on the phone. The phone cannot
+  /// tell whether the mail then went, so the reviews' send can be taken
+  /// back with [sendAgain].
   Future<ReviewSendOutcome> send(
     Iterable<DeckReview> decks, {
     required String body,
@@ -235,10 +240,12 @@ class Reviewing {
       for (final deck in decks)
         if (deck.hasUnsent) deck,
     ];
-    if (code == null || chosen.isEmpty) {
+    final answers = unsentAnswers;
+    if (code == null || (chosen.isEmpty && answers.isEmpty)) {
       return ReviewSendOutcome.nothingToSend;
     }
     final made = _clock();
+    final answered = QuestionsFile.languagesOf(answers);
     final files = <AttachedFile>[
       for (final deck in chosen)
         AttachedFile(
@@ -256,12 +263,24 @@ class Reviewing {
             ],
           ),
         ),
+      for (final language in answered)
+        AttachedFile(
+          name: QuestionsFile.name(language),
+          mimeType: QuestionsFile.mimeType,
+          text: QuestionsFile.encode(
+            answers,
+            language: language,
+            code: code,
+            appVersion: AppInfo.version,
+            made: made,
+          ),
+        ),
     ];
     bool shared;
     try {
       shared = await _share.share(
         to: <String>[address],
-        subject: ReviewMail.subject(code, chosen),
+        subject: ReviewMail.subject(code, chosen, alsoLanguages: answered),
         body: body,
         files: files,
       );
@@ -270,10 +289,20 @@ class Reviewing {
       return ReviewSendOutcome.failed;
     }
     if (!shared) return ReviewSendOutcome.noMailApp;
-    settings.reviews = reviews.sentAt(<String>[
-      for (final deck in chosen) deck.deckId,
-    ], made);
-    _log.event('Reviews of ${chosen.length} deck(s) shared to the mail app');
+    if (chosen.isNotEmpty) {
+      settings.reviews = reviews.sentAt(<String>[
+        for (final deck in chosen) deck.deckId,
+      ], made);
+    }
+    if (answers.isNotEmpty) {
+      settings.reviewQuestions = questions.sentAt(<String>[
+        for (final a in answers) a.id,
+      ], made);
+    }
+    _log.event(
+      'Reviews of ${chosen.length} deck(s) and ${answers.length} question '
+      'answer(s) shared to the mail app',
+    );
     return ReviewSendOutcome.inMailApp;
   }
 
@@ -292,6 +321,55 @@ class Reviewing {
     ]);
     _log.event('Last send of ${last.length} deck(s) taken back');
   }
+
+  // The daily questions (#519).
+
+  /// How many questions a day the reviewer asked for.
+  int get questionsPerDay => settings.reviewQuestionsPerDay;
+
+  set questionsPerDay(int value) => settings.reviewQuestionsPerDay = value;
+
+  /// What the reviewer answered to the daily questions.
+  QuestionLog get questions => settings.reviewQuestions;
+
+  /// Today, as the day answers count for: `YYYY-MM-DD`, in the phone's time.
+  String get today {
+    final now = _clock().toLocal();
+    String two(int n) => n.toString().padLeft(2, '0');
+    return '${now.year}-${two(now.month)}-${two(now.day)}';
+  }
+
+  /// How many of today's questions are left to answer.
+  int get questionsLeftToday => questions.leftOn(today, questionsPerDay);
+
+  /// [question] answered. A Yes needs no reason; any other may give one of
+  /// the question's reasons, and what the reviewer wrote, which goes in the
+  /// mail for people and nowhere else.
+  void answerQuestion(
+    ReviewQuestion question,
+    QuestionAnswer answer, {
+    String? reason,
+    String why = '',
+  }) => settings.reviewQuestions = questions
+      .since(today)
+      .answer(question, answer, today, reason: reason, why: why);
+
+  /// [question] put off to tomorrow.
+  void skipQuestion(ReviewQuestion question) =>
+      settings.reviewQuestions = questions.since(today).skip(question, today);
+
+  /// The answer to [question] taken back, while it is not sent.
+  void undoQuestion(ReviewQuestion question) =>
+      settings.reviewQuestions = questions.undo(question);
+
+  /// The answers waiting to send.
+  List<LoggedAnswer> get unsentAnswers => questions.unsent;
+
+  /// Sends everything waiting, the answers with the reviews, in the one
+  /// mail [send] makes (owner, 2026-10-30: "Send all pending review in that
+  /// same mail").
+  Future<ReviewSendOutcome> sendQuestions({required String body}) =>
+      send(unsent, body: body);
 
   /// Whether [deck] lists this reviewer's code among the codes that
   /// checked it: in a card's `checked_by`, which the review bot writes once

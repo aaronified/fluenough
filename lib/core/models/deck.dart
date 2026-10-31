@@ -166,6 +166,7 @@ class Deck {
     this.rules = const <Rule>[],
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
+    this.verified = const <String, List<String>>{},
     this.sets = const <CardSet>[],
   });
 
@@ -220,6 +221,12 @@ class Deck {
   /// has checked is not in it.
   final Map<String, List<String>> checkedBy;
 
+  /// The data points of each card the reviewers have settled with agreeing
+  /// "yes" answers, by card id (#519): its `verified`, which the review bot
+  /// writes. Each is `meaning`, `example:<8 hex>`, `confusable:<id>` or
+  /// `sound`. The daily questions do not ask about them again.
+  final Map<String, List<String>> verified;
+
   /// Its set cards (DECK-FORMAT.md, Set cards), in order: taught only,
   /// never in [cards], so never scheduled, asked or logged.
   final List<CardSet> sets;
@@ -247,6 +254,7 @@ class Deck {
     rules: rules,
     proposals: proposals,
     checkedBy: checkedBy,
+    verified: verified,
     sets: sets,
   );
 

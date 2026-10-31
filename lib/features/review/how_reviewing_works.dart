@@ -6,6 +6,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
+import 'questions_per_day.dart';
 
 /// Opens "How reviewing works" (docs/plans/deck-browser.md, "The reviewer
 /// guide is the onboarding, in the app"): by itself once, the first time
@@ -29,6 +30,7 @@ class ReviewGuideStep {
     required this.icon,
     required this.title,
     required this.paragraphs,
+    this.extra,
   });
 
   /// For tests.
@@ -42,6 +44,9 @@ class ReviewGuideStep {
   final IconData icon;
   final String Function(AppLocalizations l10n) title;
   final List<String> Function(AppLocalizations l10n) paragraphs;
+
+  /// A control under the paragraphs, for the step that asks something.
+  final Widget Function(BuildContext context)? extra;
 }
 
 /// The reviewer guide's steps, in the guide's order.
@@ -118,6 +123,18 @@ final List<ReviewGuideStep> reviewGuideSteps = <ReviewGuideStep>[
       l10n.reviewGuideAdultBody,
       l10n.reviewGuideAdultAlike,
     ],
+  ),
+  ReviewGuideStep(
+    id: 'questions',
+    guideHeading: 'Daily questions',
+    icon: Icons.quiz_outlined,
+    title: (l10n) => l10n.reviewGuideQuestionsTitle,
+    paragraphs: (l10n) => <String>[
+      l10n.reviewGuideQuestionsBody,
+      l10n.reviewGuideQuestionsSend,
+      l10n.reviewGuideQuestionsCount,
+    ],
+    extra: (context) => const QuestionsPerDayChoice(),
   ),
   ReviewGuideStep(
     id: 'send',
@@ -336,6 +353,10 @@ class _StepView extends StatelessWidget {
                     color: scheme.onSurfaceVariant,
                   ),
                 ),
+              ],
+              if (step.extra case final extra?) ...<Widget>[
+                const SizedBox(height: 16),
+                extra(context),
               ],
             ],
           ),

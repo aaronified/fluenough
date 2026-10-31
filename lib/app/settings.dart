@@ -7,6 +7,7 @@ import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
 import '../core/languages/language_skills.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/question_log.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
 import '../core/scheduling/placed_review.dart';
@@ -144,6 +145,8 @@ class SettingsNotifier extends ChangeNotifier {
   String? _raterCode;
   bool _reviewIntroShown = false;
   Reviews _reviews = const Reviews();
+  int _questionsPerDay = defaultQuestionsPerDay;
+  QuestionLog _questions = const QuestionLog();
   Set<String>? _reviewLanguages;
   Set<String>? _reviewPairs;
   Set<String>? _factLanguages;
@@ -219,6 +222,24 @@ class SettingsNotifier extends ChangeNotifier {
   set reviews(Reviews value) {
     if (identical(value, _reviews)) return;
     _reviews = value;
+    notifyListeners();
+  }
+
+  /// How many daily questions the reviewer wants a day (#519): chosen
+  /// in reviewer onboarding and changed in Settings > Reviewing, 10 until
+  /// then, and 0 for none. What is not answered waits for the next day.
+  int get reviewQuestionsPerDay => _questionsPerDay;
+  set reviewQuestionsPerDay(int value) {
+    final next = value < 0 ? 0 : value;
+    _set(_questionsPerDay, next, (v) => _questionsPerDay = v);
+  }
+
+  /// The daily questions answered on this phone, and those put off today.
+  /// Not something the reviewer sets here: the questions screen changes it.
+  QuestionLog get reviewQuestions => _questions;
+  set reviewQuestions(QuestionLog value) {
+    if (identical(value, _questions)) return;
+    _questions = value;
     notifyListeners();
   }
 
@@ -1086,6 +1107,8 @@ class SettingsNotifier extends ChangeNotifier {
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'reviews': _reviews.toJson(),
+    'review_questions_per_day': '$_questionsPerDay',
+    'review_questions': _questions.toJson(),
     // Not chosen yet is "default"; chosen, the codes, which may be none.
     'review_languages': switch (_reviewLanguages) {
       null => 'default',
@@ -1410,6 +1433,12 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
     if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
+    if (pick('review_questions_per_day', int.tryParse) case final v?) {
+      reviewQuestionsPerDay = v;
+    }
+    if (pick('review_questions', QuestionLog.fromJson) case final v?) {
+      reviewQuestions = v;
+    }
     if (pick('review_languages', (t) => t) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       reviewLanguages = v == 'default'

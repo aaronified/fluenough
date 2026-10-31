@@ -10,11 +10,12 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
 
 /// Opens the send sheet: every deck with reviews not sent yet, all ticked,
-/// sent together in one mail (docs/plans/deck-browser.md). Says so, and
-/// says nothing is waiting when nothing is.
+/// sent together in one mail (docs/plans/deck-browser.md), with the daily
+/// questions' answers waiting, which always go in the same mail (#519). Says
+/// so, and says nothing is waiting when nothing is.
 Future<void> showSendReviews(BuildContext context) {
   final state = AppScope.read(context);
-  if (state.reviewing.unsent.isEmpty) {
+  if (state.reviewing.unsent.isEmpty && state.reviewing.unsentAnswers.isEmpty) {
     showAppSnackBar(context, AppLocalizations.of(context)!.reviewSendNothing);
     return Future<void>.value();
   }
@@ -55,6 +56,9 @@ String reviewMailBody(
               deck.deckId,
               deck.unsentCards.length,
             ),
+    // The daily questions' answers go in the same mail (#519).
+    if (state.reviewing.unsentAnswers.isNotEmpty)
+      l10n.reviewMailAnswers(state.reviewing.unsentAnswers.length),
   ];
   return l10n.reviewMailBody(
     AppInfo.version,
@@ -108,6 +112,7 @@ class _SendReviewsSheetState extends State<SendReviewsSheet> {
       listenable: state.settings,
       builder: (context, _) {
         final unsent = state.reviewing.unsent;
+        final answers = state.reviewing.unsentAnswers.length;
         final chosen = <DeckReview>[
           for (final deck in unsent)
             if (!_unticked.contains(deck.deckId)) deck,
@@ -157,6 +162,11 @@ class _SendReviewsSheetState extends State<SendReviewsSheet> {
                       ),
                     ),
                     const SizedBox(height: 8),
+                    if (answers > 0)
+                      ListTile(
+                        leading: const Icon(Icons.quiz_outlined),
+                        title: Text(l10n.reviewSendAnswers(answers)),
+                      ),
                     for (final deck in unsent)
                       CheckboxListTile(
                         value: !_unticked.contains(deck.deckId),
@@ -196,11 +206,15 @@ class _SendReviewsSheetState extends State<SendReviewsSheet> {
                         AppSizes.primaryButton,
                       ),
                     ),
-                    onPressed: chosen.isEmpty || _sending
+                    onPressed: (chosen.isEmpty && answers == 0) || _sending
                         ? null
                         : () => _send(chosen),
                     icon: const Icon(Icons.send_outlined, size: 20),
-                    label: Text(l10n.reviewSendButton(chosen.length)),
+                    label: Text(
+                      chosen.isEmpty && answers > 0
+                          ? l10n.reviewQuestionsSend(answers)
+                          : l10n.reviewSendButton(chosen.length),
+                    ),
                   ),
                 ),
               ),
