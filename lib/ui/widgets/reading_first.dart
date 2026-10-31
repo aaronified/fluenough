@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ipa_line.dart';
+
 import '../../core/models/deck.dart';
 import 'target_text.dart';
 
@@ -15,6 +17,7 @@ class ReadingFirst extends StatelessWidget {
     required this.fontSize,
     this.color,
     this.alignment = CrossAxisAlignment.center,
+    this.ipaFont = false,
   });
 
   final String reading;
@@ -31,6 +34,9 @@ class ReadingFirst extends StatelessWidget {
   /// at the start where the word is left-aligned (the teach card).
   final CrossAxisAlignment alignment;
 
+  /// The reading is the IPA (#697): its fonts are tried behind the theme's.
+  final bool ipaFont;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -43,11 +49,13 @@ class ReadingFirst extends StatelessWidget {
           textAlign: alignment == CrossAxisAlignment.start
               ? TextAlign.start
               : TextAlign.center,
-          style: theme.textTheme.headlineMedium!.copyWith(
-            fontSize: fontSize,
-            fontWeight: FontWeight.w600,
-            color: color,
-          ),
+          style: theme.textTheme.headlineMedium!
+              .copyWith(
+                fontSize: fontSize,
+                fontWeight: FontWeight.w600,
+                color: color,
+              )
+              .forIpa(ipaFont),
         ),
         TargetText.card(
           target,

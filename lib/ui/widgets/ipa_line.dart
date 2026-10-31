@@ -56,9 +56,9 @@ class IpaLine extends StatelessWidget {
 /// [ipaToShow] decides. With IPA on and "IPA replaces transliteration" on, a
 /// word with an IPA shows it in the reading's place, as `/paːlu/`, and the
 /// small IPA line goes: the transliteration is not shown. A word with no IPA
-/// keeps its reading as before. Latin-script words (no reading) get their
+/// keeps its reading as before. `swapped` says the reading is the IPA, to be drawn with [IpaSwapStyle.forIpa]. Latin-script words (no reading) get their
 /// IPA in the reading's place too.
-({String? reading, String? ipa}) readingLines(
+({String? reading, String? ipa, bool swapped}) readingLines(
   BuildContext context, {
   String? reading,
   String? ipa,
@@ -70,9 +70,18 @@ class IpaLine extends StatelessWidget {
     return (
       reading: AppLocalizations.of(context)!.wordSheetIpa(shown),
       ipa: null,
+      swapped: true,
     );
   }
-  return (reading: showReading ? reading : null, ipa: shown);
+  return (reading: showReading ? reading : null, ipa: shown, swapped: false);
+}
+
+/// Text styles for a line [readingLines] may have swapped the IPA into: the
+/// IPA's fonts are tried behind the theme's where the glyph is missing, as
+/// [IpaLine] does.
+extension IpaSwapStyle on TextStyle {
+  TextStyle forIpa(bool swapped) =>
+      swapped ? copyWith(fontFamilyFallback: IpaLine.fontFallback) : this;
 }
 
 /// [ipa], if it is to be shown: the deck gives one, it is not just [target]
@@ -84,4 +93,45 @@ class IpaLine extends StatelessWidget {
 String? ipaToShow(BuildContext context, String? ipa, {String? target}) {
   if (ipa == null || ipa.trim().isEmpty || ipa == target) return null;
   return AppScope.read(context).settings.showIpa ? ipa : null;
+}
+
+/// A reading and its IPA, one under the other, as [readingLines] decides
+/// (#697): for the places that list the two beside a word, start aligned.
+class ReadingIpaLines extends StatelessWidget {
+  const ReadingIpaLines({
+    super.key,
+    required this.style,
+    this.reading,
+    this.ipa,
+    this.target,
+    this.showReading = true,
+  });
+
+  final String? reading;
+  final String? ipa;
+  final String? target;
+  final bool showReading;
+
+  /// The reading's style; the IPA's fonts are added when it shows the IPA.
+  final TextStyle style;
+
+  @override
+  Widget build(BuildContext context) {
+    final lines = readingLines(
+      context,
+      reading: reading,
+      ipa: ipa,
+      target: target,
+      showReading: showReading,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        if (lines.reading case final text?)
+          Text(text, style: style.forIpa(lines.swapped)),
+        if (lines.ipa case final shown?)
+          IpaLine(shown, textAlign: TextAlign.start),
+      ],
+    );
+  }
 }

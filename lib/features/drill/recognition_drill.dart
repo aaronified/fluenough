@@ -79,6 +79,7 @@ class RecognitionDrill extends StatelessWidget {
             target: card.target,
             language: language,
             fontSize: 48,
+            ipaFont: lines.swapped,
           )
         else
           TargetText.hero(card.target, language: language, card: card),
@@ -86,11 +87,13 @@ class RecognitionDrill extends StatelessWidget {
           Text(
             reading,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              fontSize: 18,
-              height: 24 / 18,
-              color: scheme.onSurfaceVariant,
-            ),
+            style: theme.textTheme.bodyLarge!
+                .copyWith(
+                  fontSize: 18,
+                  height: 24 / 18,
+                  color: scheme.onSurfaceVariant,
+                )
+                .forIpa(lines.swapped),
           ),
         // How it is said: the word is shown, so this gives nothing away.
         if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),

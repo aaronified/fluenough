@@ -429,13 +429,14 @@ class _WordRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final reading = readingLines(
+    final lines = readingLines(
       context,
       reading: card.reading,
       ipa: card.ipa,
       target: card.target,
       showReading: showReading,
-    ).reading;
+    );
+    final reading = lines.reading;
     return Semantics(
       hint: l10n.unitOpenWord,
       child: MergeSemantics(
@@ -468,9 +469,9 @@ class _WordRow extends StatelessWidget {
                       if (reading != null)
                         Text(
                           reading,
-                          style: theme.textTheme.bodySmall!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                          style: theme.textTheme.bodySmall!
+                              .copyWith(color: scheme.onSurfaceVariant)
+                              .forIpa(lines.swapped),
                         ),
                     ],
                   ),

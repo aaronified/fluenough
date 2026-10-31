@@ -128,7 +128,7 @@ class TaughtDetails extends StatelessWidget {
         );
         final children = <Widget>[
           if (word) ...<Widget>[
-            ..._word(theme, lines.reading),
+            ..._word(theme, lines.reading, lines.swapped),
             // How it is said, under the word and its reading (ADR-0025).
             if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
           ],
@@ -196,7 +196,7 @@ class TaughtDetails extends StatelessWidget {
   };
 
   /// The word, or its reading first, and its reading under it when it shows.
-  List<Widget> _word(ThemeData theme, String? shownReading) {
+  List<Widget> _word(ThemeData theme, String? shownReading, bool swapped) {
     final reading = shownReading;
     final size = wordSize;
     if (reading != null && this.reading == TaughtReading.first) {
@@ -207,6 +207,7 @@ class TaughtDetails extends StatelessWidget {
           language: language,
           fontSize: size ?? 48,
           color: wordColor,
+          ipaFont: swapped,
         ),
       ];
     }
@@ -230,10 +231,9 @@ class TaughtDetails extends StatelessWidget {
         Text(
           reading,
           textAlign: TextAlign.center,
-          style: theme.textTheme.bodyLarge!.copyWith(
-            fontSize: 18,
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
+          style: theme.textTheme.bodyLarge!
+              .copyWith(fontSize: 18, color: theme.colorScheme.onSurfaceVariant)
+              .forIpa(swapped),
         ),
     ];
   }
@@ -259,6 +259,14 @@ class TaughtExample extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final lines = readingLines(
+      context,
+      reading: example.reading,
+      ipa: example.ipa,
+      target: example.target,
+      showReading: showReading,
+    );
+    final reading = lines.reading;
     return Semantics(
       container: true,
       label: AppLocalizations.of(context)!.drillExample,
@@ -280,17 +288,15 @@ class TaughtExample extends StatelessWidget {
               fontSize: 16,
               color: scheme.onSurface,
             ),
-            if (showReading && example.reading != null)
+            if (reading != null)
               Text(
-                example.reading!,
+                reading,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+                style: theme.textTheme.bodySmall!
+                    .copyWith(color: scheme.onSurfaceVariant)
+                    .forIpa(lines.swapped),
               ),
-            if (ipaToShow(context, example.ipa, target: example.target)
-                case final ipa?)
-              IpaLine(ipa),
+            if (lines.ipa case final ipa?) IpaLine(ipa),
             const SizedBox(height: 2),
             Text(
               example.native,

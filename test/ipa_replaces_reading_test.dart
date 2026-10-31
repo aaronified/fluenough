@@ -5,6 +5,7 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/settings/ipa_replaces_tile.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/ipa_line.dart';
@@ -111,5 +112,34 @@ void main() {
     await tester.tap(find.byType(Switch));
     await tester.pump();
     expect(settings.ipaReplacesReading, isFalse);
+  });
+
+  testWidgets('Settings, Your languages: the row sits under IPA '
+      'pronunciations, disabled while IPA is off and switchable once on', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const LanguagesSettingsPage(),
+      state: AppState.test(settings: SettingsNotifier()..showIpa = false),
+    );
+    final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+    final row = find.text(l10n.settingsIpaReplaces);
+    await tester.ensureVisible(row);
+    await tester.pumpAndSettle();
+    expect(row, findsOneWidget);
+    expect(
+      tester.getTopLeft(row).dy,
+      greaterThan(tester.getTopLeft(find.text(l10n.settingsIpa)).dy),
+    );
+    expect(find.text(l10n.settingsIpaReplacesNeedsIpa), findsOneWidget);
+
+    state.settings.showIpa = true;
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.settingsIpaReplacesOff), findsOneWidget);
+    await tester.tap(row);
+    await tester.pumpAndSettle();
+    expect(state.settings.ipaReplacesReading, isTrue);
   });
 }

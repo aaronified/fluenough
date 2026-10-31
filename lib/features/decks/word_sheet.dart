@@ -150,9 +150,9 @@ class WordSheet extends StatelessWidget {
                 if (reading != null)
                   Text(
                     reading,
-                    style: theme.textTheme.titleMedium!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
+                    style: theme.textTheme.titleMedium!
+                        .copyWith(color: scheme.onSurfaceVariant)
+                        .forIpa(lines.swapped),
                   ),
                 Row(
                   children: <Widget>[

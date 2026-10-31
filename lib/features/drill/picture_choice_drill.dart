@@ -156,6 +156,7 @@ class PictureChoiceDrill extends StatelessWidget {
           target: card.target,
           language: language,
           fontSize: 48,
+          ipaFont: lines.swapped,
         )
       else ...<Widget>[
         TargetText.hero(card.target, language: language, card: card),
@@ -163,10 +164,9 @@ class PictureChoiceDrill extends StatelessWidget {
           Text(
             reading,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              fontSize: 18,
-              color: scheme.onSurfaceVariant,
-            ),
+            style: theme.textTheme.bodyLarge!
+                .copyWith(fontSize: 18, color: scheme.onSurfaceVariant)
+                .forIpa(lines.swapped),
           ),
       ],
       // How it is said: the word is shown, so this gives nothing away.

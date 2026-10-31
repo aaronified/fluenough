@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **IPA in place of the transliteration.** A new switch under IPA pronunciations, IPA replaces transliteration (off by default, saved in backups), shows a word's IPA where its transliteration was, on the teach card, the word sheet, the deck's word list and the recognition, choice and picture drills; it only applies while IPA is on and is greyed out otherwise (#697).
+- **IPA in place of the transliteration.** A new switch under IPA pronunciations, IPA replaces transliteration (off by default, saved in backups), shows a word's IPA where its transliteration was, on the word sheet, the deck's word list, the recognition, choice, picture and pair drills, reading passages, and example sentences (the teach card keeps its underlined IPA button and shows the IPA once); it only applies while IPA is on and is greyed out otherwise (#697).
 - **Fact languages in Settings.** Settings, under Your languages, has a Fact languages row that opens the same choice as the button on Today's fact card, so the two stay in sync. Its second line names the languages the fact is shown in, or says All known languages while nothing was chosen. It is there even when only one language is known.
 - **A "What's new" sheet after an update.** The first launch after an update shows the headline of each change in the new version as a bullet, once per version and never on a fresh install; Settings > Updates > What's new keeps the full notes (#944). From now on each CHANGELOG line starts with a bold headline, as this one does (AGENTS.md, "Changelog entries"); `CHANGELOG.md` is bundled in the app so the sheet reads it offline.
 
