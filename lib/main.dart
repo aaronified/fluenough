@@ -55,7 +55,10 @@ Future<void> main() async {
   final marks = StartupMarks(log);
   // The profile database opens here; its review log is read after the first
   // frame, which the catalog's loading waits for (#857).
-  final storage = await openProfileStorage(Profile.defaultProfile);
+  final storage = await openProfileStorage(
+    Profile.defaultProfile,
+    onStage: marks.mark,
+  );
   // A report's app log is written to shared/ in the cache, the folder
   // MainActivity's FileProvider lends to the mail app (ADR-0021).
   final cache = await getTemporaryDirectory();
@@ -140,7 +143,7 @@ Future<void> main() async {
   }
 
   state.addListener(catalogReady);
-  runApp(FluenoughApp(state: state));
+  runApp(FluenoughApp(state: state, splash: true));
   marks.mark('runApp');
   // Junk (old update files, half-written downloads, stale report
   // attachments) is cleaned once a day, a little after the first frame so

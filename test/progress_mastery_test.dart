@@ -60,6 +60,11 @@ Mastery _mastery(MemoryProgress progress, {DateTime? asOf, int total = 10}) =>
       asOf: asOf,
     );
 
+/// What Progress shows of mastery for [language] (every language when null),
+/// worked out in place as the tests' state does.
+ProgressMastery masteryOf(AppState state, String? language) =>
+    state.progressNumbers.of(language)!.mastery;
+
 void main() {
   group('known', () {
     test('a right answer at 85% recall or better makes a card known; the '
@@ -561,14 +566,14 @@ void main() {
     testWidgets('is worked out once per change of the progress, and again '
         'after one', (tester) async {
       final state = await fixture();
-      final first = ProgressMastery.of(state, 'es');
+      final first = masteryOf(state, 'es');
       expect(
-        identical(ProgressMastery.of(state, 'es'), first),
+        identical(masteryOf(state, 'es'), first),
         isTrue,
         reason: 'nothing changed: the weekly snapshots are not rebuilt',
       );
-      final all = ProgressMastery.of(state, null);
-      expect(identical(ProgressMastery.of(state, null), all), isTrue);
+      final all = masteryOf(state, null);
+      expect(identical(masteryOf(state, null), all), isTrue);
 
       final fresh = spanish(state).cards.last;
       state.progress.record(
@@ -578,7 +583,7 @@ void main() {
         grade: 4,
         now: state.now(),
       );
-      final next = ProgressMastery.of(state, 'es');
+      final next = masteryOf(state, 'es');
       expect(identical(next, first), isFalse);
       expect(
         next.now[MasterySkill.read].taught,
@@ -590,7 +595,7 @@ void main() {
       tester,
     ) async {
       final state = await fixture();
-      final mastery = ProgressMastery.of(state, 'es');
+      final mastery = masteryOf(state, 'es');
       final series = mastery.overTime();
       expect(series, hasLength(12));
       for (final skill in MasterySkill.values) {
@@ -632,7 +637,7 @@ void main() {
           }
         }
       }
-      final now = ProgressMastery.of(state, 'es').now;
+      final now = masteryOf(state, 'es').now;
       final expected = path.plannedWords < words ? words : path.plannedWords;
       for (final skill in <MasterySkill>[
         MasterySkill.read,
@@ -651,7 +656,7 @@ void main() {
       tester,
     ) async {
       final state = await fixture();
-      final before = ProgressMastery.of(state, null);
+      final before = masteryOf(state, null);
       for (final days in <int>[2, 1]) {
         state.progress.record(
           deckId: 'zz-unknown',
@@ -661,7 +666,7 @@ void main() {
           now: state.now().subtract(Duration(days: days)),
         );
       }
-      final after = ProgressMastery.of(state, null);
+      final after = masteryOf(state, null);
       expect(after.words, before.words);
       expect(
         after.now[MasterySkill.read].taught,

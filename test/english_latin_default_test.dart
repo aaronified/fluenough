@@ -1,5 +1,5 @@
-// English is known in every skill and the Latin script by everyone (#926):
-// the defaults, an install from before, a choice that is kept, and what
+// English is known in every skill, fixed, and the Latin script by everyone
+// (#926): the defaults, an install from before, and what
 // other profiles and the downloads see.
 
 import 'package:fluenough/app/app_state.dart';
@@ -63,39 +63,20 @@ void main() {
     expect(state.settings.languageSkillsOf('en'), isNull);
   });
 
-  test('an explicit change to English survives, even all Leave', () async {
+  test('English cannot be changed: a saved change or Leave is ignored', () {
     final state = stateWith(
       SettingsNotifier(
         spokenLanguages: const <String>['hi'],
         learningChosen: true,
       ),
     );
-    state.ensureEnglishKnown();
-    state.applySkills(
-      en,
-      state
-          .skillsOf(en)
-          .withState(
-            const SkillKey(SkillKind.write, 'latin'),
-            SkillState.leave,
-          ),
-    );
-    state.ensureEnglishKnown();
-    expect(
-      state.skillsOf(en).stateOf(const SkillKey(SkillKind.write, 'latin')),
-      SkillState.leave,
-    );
-    expect(
-      state.skillsOf(en).stateOf(const SkillKey(SkillKind.speak)),
-      SkillState.know,
-    );
-
-    // All Leave is kept across the clean-up at an app open, not forgotten.
     state.applySkills(en, LanguageSkills());
-    await state.removeUnneededDecks();
+    state.settings.setLanguageSkills('en', const <String, String>{});
+    expect(state.skillsOf(en), englishKnownByDefault());
     state.ensureEnglishKnown();
-    expect(state.skillsOf(en).isAllLeave, isTrue);
-    expect(state.settings.spokenLanguages, <String>['hi']);
+    expect(state.settings.languageSkillsOf('en'), <String, String>{
+      for (final key in allKnow) key.id: 'know',
+    });
   });
 
   test('the Latin script is known for a language written in it', () {
@@ -127,7 +108,7 @@ void main() {
     expect(state.skillsOf(es).isAllLeave, isTrue);
   });
 
-  test('a language in another script gets no Latin skills; Learn stays', () {
+  test('Spanish learned: Speak and Hear Learn, the Latin script Know', () {
     final state = stateWith(
       SettingsNotifier(
         spokenLanguages: const <String>['hi'],
@@ -137,23 +118,47 @@ void main() {
     );
     expect(state.skillShape(hi).any((k) => k.script == 'latin'), isFalse);
     expect(state.skillsOf(hi).held.where((k) => k.script == 'latin'), isEmpty);
-    // Spanish learned keeps its Learn skills; the Latin script is not
-    // turned into Know over a Learn.
-    final es = pickerSpokenList.firstWhere((l) => l.code == 'es');
-    final learned = withLatinKnown(
-      LanguageSkills(<SkillKey, SkillState>{
-        const SkillKey(SkillKind.speak): SkillState.learn,
-        const SkillKey(SkillKind.read, 'latin'): SkillState.learn,
-      }),
-      state.skillScripts(es),
+    final skills = state.skillsOf(es);
+    expect(skills.stateOf(const SkillKey(SkillKind.speak)), SkillState.learn);
+    for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
+      expect(skills.stateOf(SkillKey(kind, 'latin')), SkillState.know);
+    }
+  });
+
+  test('a saved Learn of the Latin script becomes Know once, and a later '
+      'hand-set Learn is kept', () {
+    final state = stateWith(
+      SettingsNotifier(
+        spokenLanguages: const <String>['hi'],
+        learningLanguages: const <String>['es'],
+        learningChosen: true,
+      ),
     );
+    state.settings.setLanguageSkills('es', const <String, String>{
+      'speak': 'learn',
+      'hear': 'learn',
+      'read:latin': 'learn',
+      'write:latin': 'learn',
+    });
+    state.ensureLatinKnown();
+    var skills = state.skillsOf(es);
+    expect(skills.stateOf(const SkillKey(SkillKind.speak)), SkillState.learn);
     expect(
-      learned.stateOf(const SkillKey(SkillKind.read, 'latin')),
-      SkillState.learn,
-    );
-    expect(
-      learned.stateOf(const SkillKey(SkillKind.write, 'latin')),
+      skills.stateOf(const SkillKey(SkillKind.read, 'latin')),
       SkillState.know,
+    );
+    state.applySkills(
+      es,
+      skills.withState(
+        const SkillKey(SkillKind.write, 'latin'),
+        SkillState.learn,
+      ),
+    );
+    state.ensureLatinKnown();
+    skills = state.skillsOf(es);
+    expect(
+      skills.stateOf(const SkillKey(SkillKind.write, 'latin')),
+      SkillState.learn,
     );
   });
 
@@ -173,9 +178,23 @@ void main() {
     }
     state.selectProfile(state.profiles.last.id);
     expect(state.learningCodes, isNot(contains('en')));
-    expect(
-      state.skillsOf(en).stateOf(const SkillKey(SkillKind.hear)),
-      SkillState.know,
-    );
+    expect(state.skillsOf(en), englishKnownByDefault());
+  });
+
+  test('a saved Kashmiri or Sindhi Arabic answer is read as its '
+      'Perso-Arabic one, and a backup keeps it', () {
+    final settings = SettingsNotifier()
+      ..restore(const <String, String>{
+        'scripts_read': '{"ks:arabic":true,"sd:arabic":false,"hi":true}',
+      });
+    expect(settings.scriptsRead, <String, bool>{
+      'ks': true,
+      'sd': false,
+      'hi': true,
+    });
+    final ks = pickerSpokenList.firstWhere((l) => l.code == 'ks');
+    expect(ks.scriptsReadIn(settings.scriptsRead), <String>['perso_arabic']);
+    final again = SettingsNotifier()..restore(settings.toStored());
+    expect(again.scriptsRead, settings.scriptsRead);
   });
 }

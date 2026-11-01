@@ -21,8 +21,13 @@ String databaseFileName(Profile profile) => 'fluenough-${profile.id}';
 /// rather than there being no app.
 ///
 /// The progress is read from the review log in the background (#857): wait
-/// for its `ready` before showing or changing it. `AppState` does.
-Future<ProfileStorage> openProfileStorage(Profile profile) async {
+/// for its `ready` before showing or changing it. `AppState` does. The
+/// replay runs on an isolate; [onStage] hears its stages for the startup
+/// timing.
+Future<ProfileStorage> openProfileStorage(
+  Profile profile, {
+  void Function(String stage)? onStage,
+}) async {
   try {
     final db = AppDatabase(
       driftDatabase(
@@ -36,7 +41,13 @@ Future<ProfileStorage> openProfileStorage(Profile profile) async {
       ),
     );
     return (
-      progress: DatabaseProgress.opening(db),
+      progress: DatabaseProgress.opening(
+        db,
+        // After the learner pauses for this long, the replay of their log is
+        // kept for the next launch (#857, ADR-0051).
+        snapshotAfter: const Duration(seconds: 45),
+        onStage: onStage,
+      ),
       settings: (await StoredSettings.open(db)).settings,
     );
   } catch (error, stack) {

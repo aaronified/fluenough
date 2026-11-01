@@ -51,14 +51,6 @@ class LanguagesSettingsPage extends StatelessWidget {
         const FactLanguagesTile(),
         GroupedTile.toggle(
           leading: GroupedTile.noIcon,
-          title: l10n.languagesReviewTitle,
-          subtitleOn: l10n.languagesReviewBody,
-          subtitleOff: l10n.languagesReviewBody,
-          value: settings.reviewKnown,
-          onChanged: (on) => settings.reviewKnown = on,
-        ),
-        GroupedTile.toggle(
-          leading: GroupedTile.noIcon,
           title: l10n.settingsRomanisation,
           subtitleOn: l10n.settingsRomanisationOn,
           subtitleOff: l10n.settingsRomanisationOff,

@@ -97,13 +97,23 @@ void main() {
   test('the sole spoken language sent back to the pool stays listed but '
       'reads nothing', () {
     final state = AppState.test(
-      settings: SettingsNotifier(spokenLanguages: const <String>['en'])
-        ..scriptsRead = <String, bool>{'en': true},
+      settings: SettingsNotifier(spokenLanguages: const <String>['es'])
+        ..scriptsRead = <String, bool>{es.code: true},
+    );
+    addTearDown(state.dispose);
+    state.applySkills(es, LanguageSkills());
+    expect(state.settings.languageSkillsOf('es'), isEmpty);
+    expect(state.settings.spokenLanguages, <String>['es']);
+    expect(state.settings.scriptsRead[es.code], isFalse);
+  });
+
+  test('English is fixed: sending it back to the pool changes nothing', () {
+    final state = AppState.test(
+      settings: SettingsNotifier(spokenLanguages: const <String>['en']),
     );
     addTearDown(state.dispose);
     state.applySkills(en, LanguageSkills());
-    expect(state.settings.languageSkillsOf('en'), isEmpty);
+    expect(state.settings.languageSkillsOf('en'), isNull);
     expect(state.settings.spokenLanguages, <String>['en']);
-    expect(state.settings.scriptsRead['en'], isFalse);
   });
 }
