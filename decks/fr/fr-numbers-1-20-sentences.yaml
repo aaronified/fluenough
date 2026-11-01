@@ -1,0 +1,116 @@
+schema: 1
+id: "fr-numbers-1-20-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0229"
+    target: "Il y a deux chats."
+    ipa: "il i a dø ʃa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", base: "y" }
+      - { word: "a", base: "avoir" }
+      - { word: "deux", ref: "fr-0209" }
+      - { word: "chats", base: "chat" }
+    confusables:
+      - { id: "trois", ref: "fr-0210", kind: "word" }
+      - { id: "un", ref: "fr-0208", kind: "word" }
+  - id: "fr-0230"
+    target: "Mon père a quatre frères."
+    ipa: "mɔ̃ pɛʁ a katʁ fʁɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "a", base: "avoir" }
+      - { word: "quatre", ref: "fr-0211" }
+      - { word: "frères", ref: "fr-0169" }
+    confusables:
+      - { id: "six", ref: "fr-0213", kind: "word" }
+      - { id: "cinq", ref: "fr-0212", kind: "word" }
+  - id: "fr-0231"
+    target: "Nous sommes cinq."
+    ipa: "nu sɔm sɛ̃k"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "sommes", ref: "fr-0021" }
+      - { word: "cinq", ref: "fr-0212" }
+    confusables:
+      - { id: "quinze", ref: "fr-0222", kind: "word" }
+      - { id: "sept", ref: "fr-0214", kind: "word" }
+  - id: "fr-0232"
+    target: "Il est dix heures."
+    ipa: "il ɛ diz œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "heures", ref: "fr-0074" }
+    confusables:
+      - { id: "onze", ref: "fr-0218", kind: "word" }
+      - { id: "huit", ref: "fr-0215", kind: "word" }
+  - id: "fr-0233"
+    target: "Ma fille a quinze ans."
+    ipa: "ma fij a kɛ̃z ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "fille", ref: "fr-0168" }
+      - { word: "a", base: "avoir" }
+      - { word: "quinze", ref: "fr-0222" }
+      - { word: "ans", base: "an" }
+    confusables:
+      - { id: "seize", ref: "fr-0223", kind: "word" }
+      - { id: "treize", ref: "fr-0220", kind: "word" }
+  - id: "fr-0234"
+    target: "Vingt amis sont là."
+    ipa: "vɛ̃t ami sɔ̃ la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Vingt", ref: "fr-0227" }
+      - { word: "amis", ref: "fr-0100" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "dix", ref: "fr-0217", kind: "word" }
+      - { id: "trois", ref: "fr-0210", kind: "word" }
+  - id: "fr-0235"
+    target: "Mon cousin a dix-huit ans."
+    ipa: "mɔ̃ kuzɛ̃ a dizɥit ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "cousin", ref: "fr-0178" }
+      - { word: "a", base: "avoir" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "huit", ref: "fr-0215" }
+      - { word: "ans", base: "an" }
+    confusables:
+      - { id: "dix-neuf", ref: "fr-0226", kind: "word" }
+      - { id: "dix-sept", ref: "fr-0224", kind: "word" }
+  - id: "fr-0236"
+    target: "Onze garçons jouent."
+    ipa: "ɔ̃z ɡaʁsɔ̃ ʒu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Onze", ref: "fr-0218" }
+      - { word: "garçons", ref: "fr-0181" }
+      - { word: "jouent", base: "jouer" }
+    confusables:
+      - { id: "douze", ref: "fr-0219", kind: "word" }
+      - { id: "dix", ref: "fr-0217", kind: "word" }

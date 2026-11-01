@@ -23,6 +23,8 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 /// letters ISO 15919 adds, which the Indic readings use (ADR-0025), for
 /// pinyin's caron vowels, and for the transliteration letters of Egyptian
 /// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts).
+/// The raised letters of Sumerian determinatives (ᵈ ᵏⁱ) are not here:
+/// [RomanisedSpelling] reads them as optional.
 /// The apostrophe-like letters ʾ ʿ ʼ ʻ are not here: [RomanisedSpelling.key]
 /// drops everything but letters and digits, so they cost nothing to leave off.
 ///
@@ -89,7 +91,11 @@ final Map<String, String> _diacriticFolding = _buildFolding({
       '\u0304\u0323\u0310\u0325\u0303\u035F'
       // Acute, grave, circumflex, dot above, diaeresis, caron and macron
       // below, as a tone mark or a letter's mark may be typed apart from it.
-      '\u0300\u0301\u0302\u0307\u0308\u030C\u0311\u0331',
+      '\u0300\u0301\u0302\u0307\u0308\u030C\u0311\u0331'
+      // The Arabic-script vowel marks (harakat: fatha, damma, kasra, their
+      // tanwin, shadda, sukun) and the dagger alif, and the tatweel, which a
+      // learner leaves off as native writers do.
+      '\u064B\u064C\u064D\u064E\u064F\u0650\u0651\u0652\u0670\u0640',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {
