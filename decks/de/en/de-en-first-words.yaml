@@ -1,0 +1,184 @@
+schema: 1
+id: "de-en-first-words"
+kind: "layer"
+core: "de-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Standard German, as spoken in Germany. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-0001":
+    native: "yes"
+    notes:
+      "n1": "Ja is yes. The no is nein, on the next card."
+    examples:
+      "Ja, ich verstehe.":
+        native: "Yes, I understand."
+        bases:
+          "Ja": "yes"
+          "ich": "I"
+          "verstehe": "to understand (I understand)"
+      "Ja, danke.":
+        native: "Yes, thanks."
+        bases:
+          "Ja": "yes"
+          "danke": "thanks"
+  "de-0002":
+    native: "no; not"
+    notes:
+      "n1": "Nein is no. Kein, 'no, not any', goes before a noun: kein Wasser is no water."
+    examples:
+      "Nein, danke.":
+        native: "No, thanks."
+        bases:
+          "Nein": "no"
+          "danke": "thanks"
+      "Ich habe kein Wasser.":
+        native: "I have no water."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "kein": "no; not any"
+          "Wasser": "water"
+  "de-0003":
+    native: "I; me"
+    notes:
+      "n1": "Ich is I. It has a capital letter only at the start of a sentence."
+    examples:
+      "Ich bin hier.":
+        native: "I am here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "hier": "here"
+      "Ich trinke Wasser.":
+        native: "I drink water."
+        bases:
+          "Ich": "I"
+          "trinke": "to drink (I drink)"
+          "Wasser": "water"
+  "de-0004":
+    native: "you (to one friend or a child)"
+    notes:
+      "n1": "Du is you to a friend, a child or an animal. To a stranger, or in polite speech, say Sie with a capital S."
+    examples:
+      "Du bist nett.":
+        native: "You are nice."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "nett": "nice"
+      "Kommst du mit?":
+        native: "Are you coming along?"
+        bases:
+          "Kommst": "to come (you come)"
+          "du": "you"
+          "mit": "along; with"
+  "de-0005":
+    native: "water"
+    notes:
+      "n1": "Wasser is water, and it is neuter: das Wasser, the water."
+    examples:
+      "Ein Glas Wasser, bitte.":
+        native: "A glass of water, please."
+        bases:
+          "Ein": "a; one"
+          "Glas": "glass"
+          "Wasser": "water"
+          "bitte": "please"
+      "Das Wasser ist kalt.":
+        native: "The water is cold."
+        bases:
+          "Das": "the"
+          "Wasser": "water"
+          "ist": "is"
+          "kalt": "cold"
+  "de-0006":
+    native: "good; well; fine"
+    notes:
+      "n1": "Gut is good, well and fine. Gut, danke is the everyday answer to how are you."
+    examples:
+      "Das ist gut.":
+        native: "That is good."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "gut": "good"
+      "Mir geht es gut.":
+        native: "I am well."
+        bases:
+          "Mir": "to me"
+          "geht": "to go (is going)"
+          "es": "it"
+          "gut": "well"
+  "de-0007":
+    native: "one"
+    notes:
+      "n1": "Eins is one when counting. Before a noun, it is ein: ein Glas, one glass."
+    examples:
+      "Eins, zwei, drei.":
+        native: "One, two, three."
+        bases:
+          "Eins": "one"
+          "zwei": "two"
+          "drei": "three"
+      "Ich habe einen Bruder.":
+        native: "I have one brother."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "einen": "a; one"
+          "Bruder": "brother"
+  "de-0008":
+    native: "two"
+    notes:
+      "n1": "Zwei is two. Drei, three, follows it."
+    examples:
+      "Zwei Kaffee, bitte.":
+        native: "Two coffees, please."
+        bases:
+          "Zwei": "two"
+          "Kaffee": "coffee"
+          "bitte": "please"
+      "Ich habe zwei Kinder.":
+        native: "I have two children."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "zwei": "two"
+          "Kinder": "child"
+  "de-0009":
+    native: "here"
+    notes:
+      "n1": "Hier is here. Dort is there, away from the speaker."
+    examples:
+      "Hier ist das Wasser.":
+        native: "Here is the water."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Wasser": "water"
+      "Hier bitte.":
+        native: "Here you are."
+        bases:
+          "Hier": "here"
+          "bitte": "please"
+  "de-0010":
+    native: "and"
+    notes:
+      "n1": "Und joins words and clauses, as 'and' does in English."
+    examples:
+      "Brot und Butter.":
+        native: "Bread and butter."
+        bases:
+          "Brot": "bread"
+          "und": "and"
+          "Butter": "butter"
+      "Ich und du.":
+        native: "Me and you."
+        bases:
+          "Ich": "I"
+          "und": "and"
+          "du": "you"
