@@ -826,10 +826,7 @@ void main() {
       expect(find.byType(SkillBadge), findsNWidgets(8));
       expect(find.byTooltip(l10n.languagesPillLeave), findsNWidgets(2));
       expect(find.byTooltip(l10n.languagesPillLearning), findsNWidgets(2));
-      expect(
-        find.byTooltip(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
-        findsOneWidget,
-      );
+      expect(find.byTooltip(l10n.languagesPillCheckedHint), findsOneWidget);
       for (final skill in <String>[
         l10n.languagesSkillRead,
         l10n.languagesSkillWrite,
