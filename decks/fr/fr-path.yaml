@@ -250,11 +250,9 @@ units:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "fr-grammar-futur-proche", grammar: "futur-proche" }
-    listening_passages:
-      - { id: "plans-for-the-weekend", text: { "en": "Saying what you are going to do this weekend" } }
-    reading_passages:
-      - { id: "invitation-note", text: { "en": "A note inviting a friend, with plans for the day" } }
+  - decks: ["fr-grammar-futur-proche", "fr-reading-futur-proche"]
+    words: 0
+    grammar: ["futur-proche"]
   - planned: { id: "fr-help", theme: "help", words: 20 }
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
