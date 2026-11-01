@@ -24,6 +24,11 @@ String canonical(String input) {
       buffer.writeCharCode(0x30 + digit);
       continue;
     }
+    final variant = _letterVariants[rune];
+    if (variant != null) {
+      buffer.writeCharCode(variant);
+      continue;
+    }
     final decomposed = _decompositions[rune];
     if (decomposed != null) {
       buffer.write(decomposed);
@@ -44,6 +49,8 @@ const List<int> _zeros = <int>[
   0x0AE6, // Gujarati ૦
   0x0C66, // Telugu ౦
   0x0CE6, // Kannada ೦
+  0x0660, // Arabic-Indic ٠
+  0x06F0, // Persian and Urdu ۰
 ];
 
 int? _digit(int rune) {
@@ -57,10 +64,19 @@ int? _digit(int rune) {
 /// common case, is returned as it is.
 bool _mayChange(String input) {
   for (final unit in input.codeUnits) {
-    if (unit >= 0x0900 || unit == _zwnj || unit == _zwj) return true;
+    if (unit >= 0x0600 || unit == _zwnj || unit == _zwj) return true;
   }
   return false;
 }
+
+/// Arabic letters that keyboards give in place of the Urdu and Persian ones
+/// that look the same: ي for ی, ك for ک, ه for ہ. One spelling, on both
+/// sides; not part of [composed], which only puts decomposed letters back.
+const Map<int, int> _letterVariants = <int, int>{
+  0x064A: 0x06CC, // ي to ی
+  0x0643: 0x06A9, // ك to ک
+  0x0647: 0x06C1, // ه to ہ
+};
 
 /// Precomposed letters and their canonical decompositions, from the Unicode
 /// Character Database.

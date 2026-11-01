@@ -470,6 +470,7 @@ class DrillSession extends ChangeNotifier {
                 ? deck.deck.native.articles
                 : deck.language.articles,
             meaning: hearsMeaning && _meaningIsEnglish,
+            lojban: !hearsMeaning && deck.language.isLojban,
             synonyms: _state.synonyms,
           );
     var graded = grader.grade(
@@ -517,6 +518,7 @@ class DrillSession extends ChangeNotifier {
       typoDistance: 0,
       longTypoDistance: 0,
       meaning: hearsMeaning && _meaningIsEnglish,
+      lojban: !hearsMeaning && deck.language.isLojban,
     );
     final spelling = romanised ? _spelling : null;
     final key = spelling?.key(typed);

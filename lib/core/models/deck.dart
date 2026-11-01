@@ -117,6 +117,10 @@ class LanguageInfo {
   bool get needsReading =>
       !const {'latin', 'cyrillic', 'greek', 'ipa', 'braille'}.contains(script);
 
+  /// Whether typed answers are compared as Lojban is written (#616):
+  /// pauses, syllable breaks and spaces ignored, `h` for the apostrophe.
+  bool get isLojban => code == 'jbo';
+
   /// Leading articles ignored when grading typed answers.
   ///
   /// Deliberately data rather than code: a language without articles returns an
