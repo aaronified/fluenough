@@ -1,0 +1,537 @@
+schema: 1
+id: "es-nature"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "nature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1748"
+    target: "el árbol"
+    ipa: "el ˈaɾbol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "árbol", base: "árbol" }]
+    examples:
+      - target: "Hay un árbol grande en el parque."
+        ipa: "aj un ˈaɾbol ˈɡɾande en el ˈpaɾke"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "árbol", base: "árbol" }, { word: "grande", ref: "es-0031" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
+      - target: "Las hojas del árbol son verdes."
+        ipa: "las ˈoxas del ˈaɾbol son ˈbeɾdes"
+        bases: [{ word: "Las", base: "las" }, { word: "hojas", ref: "es-1386" }, { word: "del", base: "del" }, { word: "árbol", base: "árbol" }, { word: "son", ref: "es-0022" }, { word: "verdes", ref: "es-1009" }]
+  - id: "es-1749"
+    target: "el bosque"
+    ipa: "el ˈboske"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bosque", base: "bosque" }]
+    examples:
+      - target: "Paseamos por el bosque."
+        ipa: "paseˈamos poɾ el ˈboske"
+        bases: [{ word: "Paseamos", ref: "es-0931" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "bosque", base: "bosque" }]
+      - target: "En el bosque hay muchos pájaros."
+        ipa: "en el ˈboske aj ˈmutʃos ˈpaxaɾos"
+        bases: [{ word: "En", base: "en" }, { word: "el", base: "el" }, { word: "bosque", base: "bosque" }, { word: "hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "pájaros", ref: "es-1063" }]
+  - id: "es-1750"
+    target: "la montaña"
+    ipa: "la monˈtaɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "montaña", base: "montaña" }]
+    examples:
+      - target: "La montaña es muy alta."
+        ipa: "la monˈtaɲa es mwi ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "montaña", base: "montaña" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", ref: "es-0254" }]
+      - target: "Subimos a la montaña."
+        ipa: "suˈbimos a la monˈtaɲa"
+        bases: [{ word: "Subimos", ref: "es-0691" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "montaña", base: "montaña" }]
+  - id: "es-1751"
+    target: "el río"
+    ipa: "el ˈrio"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "río", base: "río" }]
+    examples:
+      - target: "El río pasa por la ciudad."
+        ipa: "el ˈrio ˈpasa poɾ la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "río", base: "río" }, { word: "pasa", ref: "es-1533" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Nadamos en el río."
+        ipa: "naˈdamos en el ˈrio"
+        bases: [{ word: "Nadamos", ref: "es-1066" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "río", base: "río" }]
+  - id: "es-1752"
+    target: "el lago"
+    ipa: "el ˈlaɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "lago", base: "lago" }]
+    examples:
+      - target: "El lago está muy tranquilo."
+        ipa: "el ˈlaɡo esˈta mwi tɾanˈkilo"
+        bases: [{ word: "El", base: "el" }, { word: "lago", base: "lago" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "tranquilo", ref: "es-0257" }]
+      - target: "Hay peces en el lago."
+        ipa: "aj ˈpeθes en el ˈlaɡo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "peces", ref: "es-1065" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "lago", base: "lago" }]
+  - id: "es-1753"
+    target: "el mar"
+    ipa: "el maɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mar", base: "mar" }]
+    examples:
+      - target: "El mar es azul."
+        ipa: "el maɾ es aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "mar", base: "mar" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+      - target: "Vemos el mar desde la ventana."
+        ipa: "ˈbemos el maɾ ˈdesde la benˈtana"
+        bases: [{ word: "Vemos", ref: "es-1625" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }]
+  - id: "es-1754"
+    target: "el océano"
+    ipa: "el oˈθeano"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "océano", base: "océano" }]
+    examples:
+      - target: "El océano es muy grande."
+        ipa: "el oˈθeano es mwi ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "océano", base: "océano" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "Cruzamos el océano en barco."
+        ipa: "kɾuˈθamos el oˈθeano en ˈbaɾko"
+        bases: [{ word: "Cruzamos", ref: "es-0721" }, { word: "el", base: "el" }, { word: "océano", base: "océano" }, { word: "en", base: "en" }, { word: "barco", ref: "es-0682" }]
+  - id: "es-1755"
+    target: "la isla"
+    ipa: "la ˈisla"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "isla", base: "isla" }]
+    examples:
+      - target: "Vivo en una isla."
+        ipa: "ˈbibo en ˈuna ˈisla"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "isla", base: "isla" }]
+      - target: "La isla tiene playas bonitas."
+        ipa: "la ˈisla ˈtjene ˈplaʝas boˈnitas"
+        bases: [{ word: "La", base: "la" }, { word: "isla", base: "isla" }, { word: "tiene", ref: "es-0024" }, { word: "playas", ref: "es-0784" }, { word: "bonitas", ref: "es-0405" }]
+  - id: "es-1756"
+    target: "el desierto"
+    ipa: "el deˈsjeɾto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "desierto", base: "desierto" }]
+    examples:
+      - target: "El desierto es seco y caliente."
+        ipa: "el deˈsjeɾto es ˈseko i kaˈljente"
+        bases: [{ word: "El", base: "el" }, { word: "desierto", base: "desierto" }, { word: "es", ref: "es-0022" }, { word: "seco", ref: "es-0441" }, { word: "y", ref: "es-0048" }, { word: "caliente", ref: "es-0407" }]
+      - target: "Viajamos por el desierto."
+        ipa: "bjaˈxamos poɾ el deˈsjeɾto"
+        bases: [{ word: "Viajamos", ref: "es-1691" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "desierto", base: "desierto" }]
+  - id: "es-1757"
+    target: "la selva"
+    ipa: "la ˈselba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "selva", base: "selva" }]
+    examples:
+      - target: "La selva es húmeda."
+        ipa: "la ˈselba es ˈumeda"
+        bases: [{ word: "La", base: "la" }, { word: "selva", base: "selva" }, { word: "es", ref: "es-0022" }, { word: "húmeda", ref: "es-1141" }]
+      - target: "Hay animales en la selva."
+        ipa: "aj aniˈmales en la ˈselba"
+        bases: [{ word: "Hay", base: "haber" }, { word: "animales", ref: "es-1060" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "selva", base: "selva" }]
+  - id: "es-1758"
+    target: "la flor"
+    ipa: "la floɾ"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "flor", base: "flor" }]
+    examples:
+      - target: "Esta flor es roja."
+        ipa: "ˈesta floɾ es ˈroxa"
+        bases: [{ word: "Esta", base: "esta" }, { word: "flor", base: "flor" }, { word: "es", ref: "es-0022" }, { word: "roja", ref: "es-1007" }]
+      - target: "Las flores huelen bien."
+        ipa: "las ˈfloɾes ˈwelen bjen"
+        bases: [{ word: "Las", base: "las" }, { word: "flores", base: "flor" }, { word: "huelen", base: "oler" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-1759"
+    target: "la rama"
+    ipa: "la ˈrama"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "rama", base: "rama" }]
+    examples:
+      - target: "La rama del árbol es fuerte."
+        ipa: "la ˈrama del ˈaɾbol es ˈfweɾte"
+        bases: [{ word: "La", base: "la" }, { word: "rama", base: "rama" }, { word: "del", base: "del" }, { word: "árbol", ref: "es-1748" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+      - target: "Una rama cae en el suelo."
+        ipa: "ˈuna ˈrama ˈkae en el ˈswelo"
+        bases: [{ word: "Una", base: "una" }, { word: "rama", base: "rama" }, { word: "cae", base: "caer" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }]
+  - id: "es-1760"
+    target: "la tierra"
+    ipa: "la ˈtjera"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tierra", base: "tierra" }]
+    examples:
+      - target: "La tierra gira alrededor del sol."
+        ipa: "la ˈtjera ˈxiɾa alredeˈdoɾ del sol"
+        bases: [{ word: "La", base: "la" }, { word: "tierra", base: "tierra" }, { word: "gira", ref: "es-0720" }, { word: "alrededor", base: "alrededor" }, { word: "del", base: "del" }, { word: "sol", ref: "es-1113" }]
+      - target: "Plantamos en la tierra."
+        ipa: "planˈtamos en la ˈtjera"
+        bases: [{ word: "Plantamos", base: "plantar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tierra", base: "tierra" }]
+  - id: "es-1761"
+    target: "la roca"
+    ipa: "la ˈroka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "roca", base: "roca" }]
+    examples:
+      - target: "La roca es muy dura."
+        ipa: "la ˈroka es mwi ˈduɾa"
+        bases: [{ word: "La", base: "la" }, { word: "roca", base: "roca" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "dura", ref: "es-1332" }]
+      - target: "Subimos a la roca."
+        ipa: "suˈbimos a la ˈroka"
+        bases: [{ word: "Subimos", ref: "es-0691" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "roca", base: "roca" }]
+  - id: "es-1762"
+    target: "la piedra"
+    ipa: "la ˈpjedɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "piedra", base: "piedra" }]
+    examples:
+      - target: "Hay una piedra en el camino."
+        ipa: "aj ˈuna ˈpjedɾa en el kaˈmino"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "piedra", base: "piedra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "camino", ref: "es-0281" }]
+      - target: "La piedra es gris."
+        ipa: "la ˈpjedɾa es ɡɾis"
+        bases: [{ word: "La", base: "la" }, { word: "piedra", base: "piedra" }, { word: "es", ref: "es-0022" }, { word: "gris", ref: "es-1013" }]
+  - id: "es-1763"
+    target: "la arena"
+    ipa: "la aˈɾena"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "arena", base: "arena" }]
+    examples:
+      - target: "La arena de la playa es suave."
+        ipa: "la aˈɾena de la ˈplaʝa es ˈswabe"
+        bases: [{ word: "La", base: "la" }, { word: "arena", base: "arena" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }, { word: "es", ref: "es-0022" }, { word: "suave", base: "suave" }]
+      - target: "Caminamos sobre la arena."
+        ipa: "kamiˈnamos ˈsobɾe la aˈɾena"
+        bases: [{ word: "Caminamos", ref: "es-0281" }, { word: "sobre", base: "sobre" }, { word: "la", base: "la" }, { word: "arena", base: "arena" }]
+  - id: "es-1764"
+    target: "la luna"
+    ipa: "la ˈluna"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "luna", base: "luna" }]
+    examples:
+      - target: "La luna brilla de noche."
+        ipa: "la ˈluna ˈbɾiʝa de ˈnotʃe"
+        bases: [{ word: "La", base: "la" }, { word: "luna", base: "luna" }, { word: "brilla", ref: "es-1134" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }]
+      - target: "Hay luna llena."
+        ipa: "aj ˈluna ˈʝena"
+        bases: [{ word: "Hay", base: "haber" }, { word: "luna", base: "luna" }, { word: "llena", ref: "es-0427" }]
+  - id: "es-1765"
+    target: "la estrella"
+    ipa: "la esˈtɾeʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "estrella", base: "estrella" }]
+    examples:
+      - target: "Veo una estrella en el cielo."
+        ipa: "ˈbeo ˈuna esˈtɾeʝa en el ˈθjelo"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "una", base: "una" }, { word: "estrella", base: "estrella" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cielo", ref: "es-1122" }]
+      - target: "Las estrellas son muy lejanas."
+        ipa: "las esˈtɾeʝas son mwi leˈxanas"
+        bases: [{ word: "Las", base: "las" }, { word: "estrellas", base: "estrella" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "lejanas", base: "lejano" }]
+  - id: "es-1766"
+    target: "el relámpago"
+    ipa: "el reˈlampaɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "relámpago", base: "relámpago" }]
+    examples:
+      - target: "Veo un relámpago."
+        ipa: "ˈbeo un reˈlampaɡo"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "relámpago", base: "relámpago" }]
+      - target: "Hay relámpagos y truenos."
+        ipa: "aj reˈlampaɡos i ˈtɾwenos"
+        bases: [{ word: "Hay", base: "haber" }, { word: "relámpagos", base: "relámpago" }, { word: "y", ref: "es-0048" }, { word: "truenos", ref: "es-1125" }]
+  - id: "es-1767"
+    target: "el fuego"
+    ipa: "el ˈfweɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fuego", base: "fuego" }]
+    examples:
+      - target: "Hacemos fuego en el campo."
+        ipa: "aˈθemos ˈfweɡo en el ˈkampo"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "fuego", base: "fuego" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", ref: "es-1772" }]
+      - target: "El fuego es muy caliente."
+        ipa: "el ˈfweɡo es mwi kaˈljente"
+        bases: [{ word: "El", base: "el" }, { word: "fuego", base: "fuego" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }]
+  - id: "es-1768"
+    target: "el insecto"
+    ipa: "el inˈsekto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "insecto", base: "insecto" }]
+    examples:
+      - target: "Un insecto vuela cerca."
+        ipa: "un inˈsekto ˈbwela ˈθeɾka"
+        bases: [{ word: "Un", base: "un" }, { word: "insecto", base: "insecto" }, { word: "vuela", ref: "es-1064" }, { word: "cerca", ref: "es-0717" }]
+      - target: "Los insectos son pequeños."
+        ipa: "los inˈsektos son peˈkeɲos"
+        bases: [{ word: "Los", base: "los" }, { word: "insectos", base: "insecto" }, { word: "son", ref: "es-0022" }, { word: "pequeños", ref: "es-0032" }]
+  - id: "es-1769"
+    target: "la hierba"
+    ipa: "la ˈjeɾba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "hierba", base: "hierba" }]
+    examples:
+      - target: "La hierba está mojada."
+        ipa: "la ˈjeɾba esˈta moˈxada"
+        bases: [{ word: "La", base: "la" }, { word: "hierba", base: "hierba" }, { word: "está", ref: "es-0023" }, { word: "mojada", ref: "es-0440" }]
+      - target: "Hay mucha hierba en el campo."
+        ipa: "aj ˈmutʃa ˈjeɾba en el ˈkampo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "hierba", base: "hierba" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", ref: "es-1772" }]
+  - id: "es-1770"
+    target: "el césped"
+    ipa: "el ˈθesped"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "césped", base: "césped" }]
+    examples:
+      - target: "El césped es verde."
+        ipa: "el ˈθesped es ˈbeɾde"
+        bases: [{ word: "El", base: "el" }, { word: "césped", base: "césped" }, { word: "es", ref: "es-0022" }, { word: "verde", ref: "es-1009" }]
+      - target: "Cortamos el césped."
+        ipa: "koɾˈtamos el ˈθesped"
+        bases: [{ word: "Cortamos", ref: "es-1320" }, { word: "el", base: "el" }, { word: "césped", base: "césped" }]
+  - id: "es-1771"
+    target: "la pradera"
+    ipa: "la pɾaˈdeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pradera", base: "pradera" }]
+    examples:
+      - target: "La pradera está llena de flores."
+        ipa: "la pɾaˈdeɾa esˈta ˈʝena de ˈfloɾes"
+        bases: [{ word: "La", base: "la" }, { word: "pradera", base: "pradera" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }, { word: "de", base: "de" }, { word: "flores", ref: "es-1758" }]
+      - target: "Las vacas comen en la pradera."
+        ipa: "las ˈbakas ˈkomen en la pɾaˈdeɾa"
+        bases: [{ word: "Las", base: "las" }, { word: "vacas", ref: "es-1069" }, { word: "comen", ref: "es-0028" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pradera", base: "pradera" }]
+  - id: "es-1772"
+    target: "el campo"
+    ipa: "el ˈkampo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "campo", base: "campo" }]
+    examples:
+      - target: "Vivimos en el campo."
+        ipa: "biˈbimos en el ˈkampo"
+        bases: [{ word: "Vivimos", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", base: "campo" }]
+      - target: "El campo es tranquilo."
+        ipa: "el ˈkampo es tɾanˈkilo"
+        bases: [{ word: "El", base: "el" }, { word: "campo", base: "campo" }, { word: "es", ref: "es-0022" }, { word: "tranquilo", ref: "es-0257" }]
+  - id: "es-1773"
+    target: "el valle"
+    ipa: "el ˈbaʝe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "valle", base: "valle" }]
+    examples:
+      - target: "El valle es muy verde."
+        ipa: "el ˈbaʝe es mwi ˈbeɾde"
+        bases: [{ word: "El", base: "el" }, { word: "valle", base: "valle" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "verde", ref: "es-1009" }]
+      - target: "El río cruza el valle."
+        ipa: "el ˈrio ˈkɾuθa el ˈbaʝe"
+        bases: [{ word: "El", base: "el" }, { word: "río", ref: "es-1751" }, { word: "cruza", ref: "es-0721" }, { word: "el", base: "el" }, { word: "valle", base: "valle" }]
+  - id: "es-1774"
+    target: "la colina"
+    ipa: "la koˈlina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "colina", base: "colina" }]
+    examples:
+      - target: "Subimos la colina."
+        ipa: "suˈbimos la koˈlina"
+        bases: [{ word: "Subimos", ref: "es-0691" }, { word: "la", base: "la" }, { word: "colina", base: "colina" }]
+      - target: "La colina es alta."
+        ipa: "la koˈlina es ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "colina", base: "colina" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }]
+  - id: "es-1775"
+    target: "la cueva"
+    ipa: "la ˈkweba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cueva", base: "cueva" }]
+    examples:
+      - target: "Entramos en una cueva."
+        ipa: "enˈtɾamos en ˈuna ˈkweba"
+        bases: [{ word: "Entramos", ref: "es-0788" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "cueva", base: "cueva" }]
+      - target: "La cueva es oscura."
+        ipa: "la ˈkweba es osˈkuɾa"
+        bases: [{ word: "La", base: "la" }, { word: "cueva", base: "cueva" }, { word: "es", ref: "es-0022" }, { word: "oscura", ref: "es-0439" }]
+  - id: "es-1776"
+    target: "la costa"
+    ipa: "la ˈkosta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "costa", base: "costa" }]
+    examples:
+      - target: "Vivimos en la costa."
+        ipa: "biˈbimos en la ˈkosta"
+        bases: [{ word: "Vivimos", ref: "es-0030" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "costa", base: "costa" }]
+      - target: "La costa es bonita."
+        ipa: "la ˈkosta es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "costa", base: "costa" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+  - id: "es-1777"
+    target: "la orilla"
+    ipa: "la oˈɾiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "orilla", base: "orilla" }]
+    examples:
+      - target: "Nos sentamos en la orilla."
+        ipa: "nos senˈtamos en la oˈɾiʝa"
+        bases: [{ word: "Nos", base: "nos" }, { word: "sentamos", ref: "es-1615" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "orilla", base: "orilla" }]
+      - target: "La orilla del río es verde."
+        ipa: "la oˈɾiʝa del ˈrio es ˈbeɾde"
+        bases: [{ word: "La", base: "la" }, { word: "orilla", base: "orilla" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }, { word: "es", ref: "es-0022" }, { word: "verde", ref: "es-1009" }]
+  - id: "es-1778"
+    target: "la naturaleza"
+    ipa: "la natuɾaˈleθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "naturaleza", base: "naturaleza" }]
+    examples:
+      - target: "Me gusta la naturaleza."
+        ipa: "me ˈɡusta la natuɾaˈleθa"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "la", base: "la" }, { word: "naturaleza", base: "naturaleza" }]
+      - target: "La naturaleza es bella."
+        ipa: "la natuɾaˈleθa es ˈbeʝa"
+        bases: [{ word: "La", base: "la" }, { word: "naturaleza", base: "naturaleza" }, { word: "es", ref: "es-0022" }, { word: "bella", base: "bello" }]
+  - id: "es-1779"
+    target: "el paisaje"
+    ipa: "el pajˈsaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "paisaje", base: "paisaje" }]
+    examples:
+      - target: "El paisaje es precioso."
+        ipa: "el pajˈsaxe es pɾeˈθjoso"
+        bases: [{ word: "El", base: "el" }, { word: "paisaje", base: "paisaje" }, { word: "es", ref: "es-0022" }, { word: "precioso", base: "precioso" }]
+      - target: "Miro el paisaje desde el tren."
+        ipa: "ˈmiɾo el pajˈsaxe ˈdesde el tɾen"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "paisaje", base: "paisaje" }, { word: "desde", base: "desde" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }]
+  - id: "es-1780"
+    target: "la cascada"
+    ipa: "la kasˈkada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cascada", base: "cascada" }]
+    examples:
+      - target: "La cascada es muy alta."
+        ipa: "la kasˈkada es mwi ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "cascada", base: "cascada" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", ref: "es-0254" }]
+      - target: "Vemos una cascada."
+        ipa: "ˈbemos ˈuna kasˈkada"
+        bases: [{ word: "Vemos", ref: "es-1625" }, { word: "una", base: "una" }, { word: "cascada", base: "cascada" }]
+  - id: "es-1781"
+    target: "el volcán"
+    ipa: "el bolˈkan"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "volcán", base: "volcán" }]
+    examples:
+      - target: "El volcán está activo."
+        ipa: "el bolˈkan esˈta akˈtibo"
+        bases: [{ word: "El", base: "el" }, { word: "volcán", base: "volcán" }, { word: "está", ref: "es-0023" }, { word: "activo", base: "activo" }]
+      - target: "Visitamos un volcán."
+        ipa: "bisiˈtamos un bolˈkan"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "un", base: "un" }, { word: "volcán", base: "volcán" }]
+  - id: "es-1782"
+    target: "montañoso"
+    ipa: "montaˈɲoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "montañoso", base: "montañoso" }]
+    examples:
+      - target: "Es un país montañoso."
+        ipa: "es un paˈis montaˈɲoso"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "país", ref: "es-0018" }, { word: "montañoso", base: "montañoso" }]
+      - target: "El norte es montañoso."
+        ipa: "el ˈnoɾte es montaˈɲoso"
+        bases: [{ word: "El", base: "el" }, { word: "norte", ref: "es-0711" }, { word: "es", ref: "es-0022" }, { word: "montañoso", base: "montañoso" }]
+  - id: "es-1783"
+    target: "tropical"
+    ipa: "tɾopiˈkal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tropical", base: "tropical" }]
+    examples:
+      - target: "El clima es tropical."
+        ipa: "el ˈklima es tɾopiˈkal"
+        bases: [{ word: "El", base: "el" }, { word: "clima", ref: "es-1128" }, { word: "es", ref: "es-0022" }, { word: "tropical", base: "tropical" }]
+      - target: "Hace calor tropical."
+        ipa: "ˈaθe kaˈloɾ tɾopiˈkal"
+        bases: [{ word: "Hace", ref: "es-0025" }, { word: "calor", ref: "es-1120" }, { word: "tropical", base: "tropical" }]
+  - id: "es-1784"
+    target: "sembrar"
+    ipa: "semˈbɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sembrar", base: "sembrar" }]
+    examples:
+      - target: "Siembro tomates."
+        ipa: "ˈsjembɾo toˈmates"
+        bases: [{ word: "Siembro", base: "sembrar" }, { word: "tomates", ref: "es-0574" }]
+      - target: "Siembran maíz en la pradera."
+        ipa: "ˈsjembɾan maˈiθ en la pɾaˈdeɾa"
+        bases: [{ word: "Siembran", base: "sembrar" }, { word: "maíz", base: "maíz" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pradera", ref: "es-1771" }]
+  - id: "es-1785"
+    target: "cosechar"
+    ipa: "koseˈtʃaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cosechar", base: "cosechar" }]
+    examples:
+      - target: "Cosechamos las manzanas."
+        ipa: "koseˈtʃamos las manˈθanas"
+        bases: [{ word: "Cosechamos", base: "cosechar" }, { word: "las", base: "las" }, { word: "manzanas", ref: "es-0569" }]
+      - target: "Cosechan el trigo en verano."
+        ipa: "koˈsetʃan el ˈtɾiɡo en beˈɾano"
+        bases: [{ word: "Cosechan", base: "cosechar" }, { word: "el", base: "el" }, { word: "trigo", base: "trigo" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]

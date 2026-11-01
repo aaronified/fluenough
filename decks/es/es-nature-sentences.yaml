@@ -1,0 +1,50 @@
+schema: 1
+id: "es-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1786"
+    target: "Paseamos por el bosque junto al río."
+    ipa: "paseˈamos poɾ el ˈboske ˈxunto al ˈrio"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Paseamos", ref: "es-0931" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }, { word: "junto", base: "junto" }, { word: "al", base: "al" }, { word: "río", ref: "es-1751" }]
+    confusables: [{ id: "selva", ref: "es-1757", kind: "word" }, { id: "orilla", ref: "es-1777", kind: "word" }]
+  - id: "es-1787"
+    target: "Las montañas están cubiertas de nieve."
+    ipa: "las monˈtaɲas esˈtan kuˈbjeɾtas de ˈnjebe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Las", base: "las" }, { word: "montañas", ref: "es-1750" }, { word: "están", ref: "es-0023" }, { word: "cubiertas", base: "cubierto" }, { word: "de", base: "de" }, { word: "nieve", ref: "es-1116" }]
+    confusables: [{ id: "colina", ref: "es-1774", kind: "word" }, { id: "volcan", ref: "es-1781", kind: "word" }]
+  - id: "es-1788"
+    target: "El sol brilla sobre el mar."
+    ipa: "el sol ˈbɾiʝa ˈsobɾe el maɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "sol", ref: "es-1113" }, { word: "brilla", ref: "es-1134" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }]
+    confusables: [{ id: "luna", ref: "es-1764", kind: "word" }, { id: "estrella", ref: "es-1765", kind: "word" }]
+  - id: "es-1789"
+    target: "Hay relámpagos y truenos en la tormenta."
+    ipa: "aj reˈlampaɡos i ˈtɾwenos en la toɾˈmenta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "relámpagos", ref: "es-1766" }, { word: "y", ref: "es-0048" }, { word: "truenos", ref: "es-1125" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tormenta", ref: "es-1119" }]
+    confusables: [{ id: "viento", ref: "es-1115", kind: "word" }, { id: "nube", ref: "es-1117", kind: "word" }]
+  - id: "es-1790"
+    target: "Vivimos en una isla con playas de arena."
+    ipa: "biˈbimos en ˈuna ˈisla kon ˈplaʝas de aˈɾena"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vivimos", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "isla", ref: "es-1755" }, { word: "con", base: "con" }, { word: "playas", ref: "es-0784" }, { word: "de", base: "de" }, { word: "arena", ref: "es-1763" }]
+    confusables: [{ id: "costa", ref: "es-1776", kind: "word" }, { id: "desierto", ref: "es-1756", kind: "word" }]
+  - id: "es-1791"
+    target: "La hierba del campo está seca."
+    ipa: "la ˈjeɾba del ˈkampo esˈta ˈseka"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "hierba", ref: "es-1769" }, { word: "del", base: "del" }, { word: "campo", ref: "es-1772" }, { word: "está", ref: "es-0023" }, { word: "seca", ref: "es-0441" }]
+    confusables: [{ id: "cesped", ref: "es-1770", kind: "word" }, { id: "pradera", ref: "es-1771", kind: "word" }]

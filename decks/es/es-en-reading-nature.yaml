@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-nature"
+name: "Reading: park signs and a river walk"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: signs in a park, and a walk by a river at dusk. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-park-signs"
+    title: "Signs in a park"
+    theme: "nature"
+    sentences:
+      - text: "Respete el bosque, por favor."
+      - text: "Cuidado con el río."
+      - text: "Las flores son para todos."
+      - text: "Recoja la basura, gracias."
+    questions:
+      - id: "es-1792"
+        prompt: { en: "What is asked for the forest?" }
+        options:
+          - { en: "To respect it" }
+          - { en: "To cut it down" }
+          - { en: "To drive a car in it" }
+        answer: 1
+      - id: "es-1793"
+        prompt: { en: "What is the danger?" }
+        options:
+          - { en: "The river" }
+          - { en: "The fire" }
+          - { en: "The cave" }
+        answer: 1
+      - id: "es-1794"
+        prompt: { en: "What should people do with rubbish?" }
+        options:
+          - { en: "Leave it" }
+          - { en: "Pick it up" }
+          - { en: "Burn it" }
+        answer: 2
+  - id: "es-river-walk"
+    title: "A walk by the river"
+    theme: "nature"
+    sentences:
+      - text: "Caminamos junto al río al atardecer."
+      - text: "El agua está tranquila y el cielo es rosa."
+      - text: "Vemos pájaros y peces en el lago."
+      - text: "La luna sale por la montaña."
+    questions:
+      - id: "es-1795"
+        prompt: { en: "When is the walk?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "At midday" }
+          - { en: "At dusk" }
+        answer: 3
+      - id: "es-1796"
+        prompt: { en: "What do they see in the lake?" }
+        options:
+          - { en: "Birds and fish" }
+          - { en: "Boats" }
+          - { en: "Animals on land" }
+        answer: 1
+      - id: "es-1797"
+        prompt: { en: "Where does the moon rise?" }
+        options:
+          - { en: "Over the sea" }
+          - { en: "Behind the mountain" }
+          - { en: "Over the city" }
+        answer: 2
