@@ -1,0 +1,397 @@
+schema: 1
+id: "hi-history"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "history"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2473"
+    target: "राजा"
+    target_scripts: {"perso_arabic": "راجا"}
+    reading: "rājā"
+    ipa: "raːdʒaː"
+    phonetic: "[raːdʒaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "एक राजा इस किले में रहता था।", "reading": "ēk rājā is kilē mēm̐ rahtā thā.", "ipa": "eːk raːdʒaː ɪs kɪleː mẽː rəɦt̪aː t̪ʰaː", "bases": [{"word": "एक", "ref": "hi-0198"}, {"word": "इस", "ref": "hi-0748"}, {"word": "किले", "ref": "hi-2217"}, {"word": "में", "ref": "hi-0274"}, {"word": "रहता", "ref": "hi-0791"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "राजा ने प्रजा की भलाई की।", "reading": "rājā nē prajā kī bhalāī kī.", "ipa": "raːdʒaː neː prədʒaː kiː bʱəlaːiː kiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "प्रजा", "base": "प्रजा", "reading": "prajā"}, {"word": "की", "ref": "hi-0779"}, {"word": "भलाई", "base": "भलाई", "reading": "bhalāī"}]}
+  - id: "hi-2474"
+    target: "रानी"
+    target_scripts: {"perso_arabic": "رانی"}
+    reading: "rānī"
+    ipa: "raːniː"
+    phonetic: "[raːniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रानी महल में बैठी थी।", "reading": "rānī mahal mēm̐ baiṭhī thī.", "ipa": "raːniː məɦəl mẽː bɛːʈʰiː t̪ʰiː", "bases": [{"word": "महल", "ref": "hi-2218"}, {"word": "में", "ref": "hi-0274"}, {"word": "बैठी", "ref": "hi-0788"}, {"word": "थी", "ref": "hi-0780"}]}
+      - {"target": "झाँसी की रानी बहादुर थी।", "reading": "jhām̐sī kī rānī bahādur thī.", "ipa": "dʒʱãːsiː kiː raːniː bəɦaːd̪ʊr t̪ʰiː", "bases": [{"word": "झाँसी", "base": "झाँसी", "reading": "jhām̐sī"}, {"word": "की", "ref": "hi-0279"}, {"word": "रानी", "base": "रानी", "reading": "rānī"}, {"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "थी", "ref": "hi-0780"}]}
+  - id: "hi-2475"
+    target: "राजवंश"
+    target_scripts: {"perso_arabic": "راج گھرانہ"}
+    reading: "rājvaṁś"
+    ipa: "raːdʒʋə̃ʃ"
+    phonetic: "[raːdʒʋə̃ʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मौर्य राजवंश बहुत पुराना है।", "reading": "maury rājvaṁś bahut purānā hai.", "ipa": "mɔːrj raːdʒʋə̃ʃ bəɦʊt̪ pʊraːnaː ɦɛː", "bases": [{"word": "मौर्य", "base": "मौर्य", "reading": "maury"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "इस राजवंश के कई राजा हुए।", "reading": "is rājvaṁś kē kaī rājā huē.", "ipa": "ɪs raːdʒʋə̃ʃ keː kəiː raːdʒaː ɦʊeː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "के", "ref": "hi-0065"}, {"word": "कई", "base": "कई", "reading": "kaī"}, {"word": "राजा", "ref": "hi-2473"}, {"word": "हुए", "ref": "hi-0780"}]}
+  - id: "hi-2476"
+    target: "युद्ध"
+    target_scripts: {"perso_arabic": "جنگ"}
+    reading: "yuddh"
+    ipa: "jʊd̪d̪ʱ"
+    phonetic: "[jʊd̪d̪ʱ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "युद्ध में बहुत लोग मारे गए।", "reading": "yuddh mēm̐ bahut lōg mārē gaē.", "ipa": "jʊd̪d̪ʱ mẽː bəɦʊt̪ loːɡ maːreː ɡəeː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "मारे", "ref": "hi-1802"}, {"word": "गए", "ref": "hi-0777"}]}
+      - {"target": "युद्ध के बाद शांति आई।", "reading": "yuddh kē bād śānti āī.", "ipa": "jʊd̪d̪ʱ keː baːd̪ ʃaːnt̪ɪ aːiː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "बाद", "base": "बाद", "reading": "bād"}, {"word": "शांति", "ref": "hi-2115"}, {"word": "आई", "ref": "hi-0778"}]}
+  - id: "hi-2477"
+    target: "लड़ाई"
+    target_scripts: {"perso_arabic": "لڑائی"}
+    reading: "laṛāī"
+    ipa: "ləɽaːiː"
+    phonetic: "[ləɽaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों सेनाओं में लड़ाई हुई।", "reading": "dōnōm̐ sēnāōm̐ mēm̐ laṛāī huī.", "ipa": "d̪oːnõː seːnaːõː mẽː ləɽaːiː ɦʊiː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "सेनाओं", "ref": "hi-2297"}, {"word": "में", "ref": "hi-0274"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "लड़ाई मत करो।", "reading": "laṛāī mat karō.", "ipa": "ləɽaːiː mət̪ kəroː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2478"
+    target: "सेनापति"
+    target_scripts: {"perso_arabic": "سپہ سالار"}
+    reading: "sēnāpti"
+    ipa: "seːnaːpt̪ɪ"
+    phonetic: "[seːnaːpt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सेनापति ने सेना को आगे बढ़ाया।", "reading": "sēnāpti nē sēnā kō āgē baṛhāyā.", "ipa": "seːnaːpt̪ɪ neː seːnaː koː aːɡeː bəɽʱaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सेना", "ref": "hi-2297"}, {"word": "को", "ref": "hi-0277"}, {"word": "आगे", "ref": "hi-0291"}, {"word": "बढ़ाया", "base": "बढ़ाना", "reading": "baṛhānā"}]}
+      - {"target": "सेनापति बहादुर था।", "reading": "sēnāpti bahādur thā.", "ipa": "seːnaːpt̪ɪ bəɦaːd̪ʊr t̪ʰaː", "bases": [{"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2479"
+    target: "साम्राज्य"
+    target_scripts: {"perso_arabic": "سلطنت"}
+    reading: "sāmrājy"
+    ipa: "saːmraːdʒj"
+    phonetic: "[saːmraːdʒj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुगल साम्राज्य बहुत बड़ा था।", "reading": "mugal sāmrājy bahut baṛā thā.", "ipa": "mʊɡəl saːmraːdʒj bəɦʊt̪ bəɽaː t̪ʰaː", "bases": [{"word": "मुगल", "base": "मुगल", "reading": "mugal"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "साम्राज्य की राजधानी दिल्ली थी।", "reading": "sāmrājy kī rājdhānī dillī thī.", "ipa": "saːmraːdʒj kiː raːdʒd̪ʱaːniː d̪ɪlliː t̪ʰiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "राजधानी", "ref": "hi-1077"}, {"word": "दिल्ली", "base": "दिल्ली", "reading": "dillī"}, {"word": "थी", "ref": "hi-0780"}]}
+  - id: "hi-2480"
+    target: "सम्राट"
+    target_scripts: {"perso_arabic": "شہنشاہ"}
+    reading: "samrāṭ"
+    ipa: "səmraːʈ"
+    phonetic: "[səmraːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सम्राट ने नया किला बनवाया।", "reading": "samrāṭ nē nayā kilā banvāyā.", "ipa": "səmraːʈ neː nəjaː kɪlaː bənʋaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नया", "ref": "hi-0896"}, {"word": "किला", "ref": "hi-2217"}, {"word": "बनवाया", "base": "बनवाना", "reading": "banvānā"}]}
+      - {"target": "सम्राट का दरबार बड़ा था।", "reading": "samrāṭ kā darbār baṛā thā.", "ipa": "səmraːʈ kaː d̪ərbaːr bəɽaː t̪ʰaː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "दरबार", "ref": "hi-2492"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2481"
+    target: "शासक"
+    target_scripts: {"perso_arabic": "حاکم"}
+    reading: "śāsak"
+    ipa: "ʃaːsək"
+    phonetic: "[ʃaːsək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शासक प्रजा का भला चाहता था।", "reading": "śāsak prajā kā bhalā cāhtā thā.", "ipa": "ʃaːsək prədʒaː kaː bʱəlaː tʃaːɦt̪aː t̪ʰaː", "bases": [{"word": "प्रजा", "base": "प्रजा", "reading": "prajā"}, {"word": "का", "ref": "hi-0279"}, {"word": "भला", "ref": "hi-1994"}, {"word": "चाहता", "ref": "hi-0792"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "वह अच्छा शासक था।", "reading": "vah acchā śāsak thā.", "ipa": "ʋəɦ ətʃtʃʰaː ʃaːsək t̪ʰaː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2482"
+    target: "शासन"
+    target_scripts: {"perso_arabic": "حکمرانی"}
+    reading: "śāsan"
+    ipa: "ʃaːsən"
+    phonetic: "[ʃaːsən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका शासन लंबा चला।", "reading": "uskā śāsan lambā calā.", "ipa": "ʊskaː ʃaːsən ləmbaː tʃəlaː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "लंबा", "ref": "hi-0906"}, {"word": "चला", "ref": "hi-0801"}]}
+      - {"target": "अंग्रेज़ों का शासन कितने साल रहा?", "reading": "aṅgrēzōm̐ kā śāsan kitnē sāl rahā?", "ipa": "əŋɡreːzõː kaː ʃaːsən kɪt̪neː saːl rəɦaː", "bases": [{"word": "अंग्रेज़ों", "base": "अंग्रेज़", "reading": "aṅgrēz"}, {"word": "का", "ref": "hi-0279"}, {"word": "शासन", "base": "शासन", "reading": "śāsan"}, {"word": "कितने", "ref": "hi-0163"}, {"word": "साल", "ref": "hi-0318"}, {"word": "रहा", "ref": "hi-0791"}]}
+  - id: "hi-2483"
+    target: "आज़ादी"
+    target_scripts: {"perso_arabic": "آزادی"}
+    reading: "āzādī"
+    ipa: "aːzaːd̪iː"
+    phonetic: "[aːzaːd̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमें आज़ादी मिली।", "reading": "hamēm̐ āzādī milī.", "ipa": "ɦəmẽː aːzaːd̪iː mɪliː", "bases": [{"word": "हमें", "ref": "hi-0053"}, {"word": "मिली", "ref": "hi-0793"}]}
+      - {"target": "आज़ादी की लड़ाई बहादुरी से लड़ी गई।", "reading": "āzādī kī laṛāī bahādurī sē laṛī gaī.", "ipa": "aːzaːd̪iː kiː ləɽaːiː bəɦaːd̪ʊriː seː ləɽiː ɡəiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "लड़ाई", "ref": "hi-2477"}, {"word": "बहादुरी", "base": "बहादुरी", "reading": "bahādurī"}, {"word": "से", "ref": "hi-0276"}, {"word": "लड़ी", "base": "लड़ना", "reading": "laṛnā"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2484"
+    target: "स्वतंत्रता"
+    target_scripts: {"perso_arabic": "خود مختاری"}
+    reading: "svatantratā"
+    ipa: "sʋət̪ənt̪rət̪aː"
+    phonetic: "[sʋət̪ən̪t̪rət̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "स्वतंत्रता सबका अधिकार है।", "reading": "svatantratā sabkā adhikār hai.", "ipa": "sʋət̪ənt̪rət̪aː səbkaː əd̪ʱɪkaːr ɦɛː", "bases": [{"word": "सबका", "ref": "hi-0054"}, {"word": "अधिकार", "ref": "hi-2296"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "स्वतंत्रता दिवस पर झंडा फहराया गया।", "reading": "svatantratā divas par jhaṇḍā phahrāyā gayā.", "ipa": "sʋət̪ənt̪rət̪aː d̪ɪʋəs pər dʒʱəɳɖaː pʰəɦraːjaː ɡəjaː", "bases": [{"word": "दिवस", "base": "दिवस", "reading": "divas"}, {"word": "पर", "ref": "hi-0275"}, {"word": "झंडा", "base": "झंडा", "reading": "jhaṇḍā"}, {"word": "फहराया", "base": "फहराना", "reading": "phahrānā"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2485"
+    target: "क्रांति"
+    target_scripts: {"perso_arabic": "انقلاب"}
+    reading: "krānti"
+    ipa: "kraːnt̪ɪ"
+    phonetic: "[kraːn̪t̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "क्रांति ने देश बदल दिया।", "reading": "krānti nē dēś badal diyā.", "ipa": "kraːnt̪ɪ neː d̪eːʃ bəd̪əl d̪ɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "देश", "ref": "hi-0196"}, {"word": "बदल", "ref": "hi-1364"}, {"word": "दिया", "ref": "hi-0785"}]}
+      - {"target": "क्रांति की कहानी पढ़ो।", "reading": "krānti kī kahānī paṛhō.", "ipa": "kraːnt̪ɪ kiː kəɦaːniː pəɽʱoː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "कहानी", "base": "कहानी", "reading": "kahānī"}, {"word": "पढ़ो", "ref": "hi-0114"}]}
+  - id: "hi-2486"
+    target: "संधि"
+    target_scripts: {"perso_arabic": "معاہدہ"}
+    reading: "sandhi"
+    ipa: "sənd̪ʱɪ"
+    phonetic: "[sən̪d̪ʱɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों देशों के बीच संधि हुई।", "reading": "dōnōm̐ dēśōm̐ kē bīc sandhi huī.", "ipa": "d̪oːnõː d̪eːʃõː keː biːtʃ sənd̪ʱɪ ɦʊiː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "देशों", "ref": "hi-0196"}, {"word": "के", "ref": "hi-0065"}, {"word": "बीच", "base": "बीच", "reading": "bīc"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "संधि टूट गई।", "reading": "sandhi ṭūṭ gaī.", "ipa": "sənd̪ʱɪ ʈuːʈ ɡəiː", "bases": [{"word": "टूट", "ref": "hi-1740"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2487"
+    target: "सभ्यता"
+    target_scripts: {"perso_arabic": "تہذیب"}
+    reading: "sabhyatā"
+    ipa: "səbʱjət̪aː"
+    phonetic: "[səbʱjət̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सिंधु घाटी की सभ्यता बहुत पुरानी है।", "reading": "sindhu ghāṭī kī sabhyatā bahut purānī hai.", "ipa": "sɪnd̪ʱʊ ɡʱaːʈiː kiː səbʱjət̪aː bəɦʊt̪ pʊraːniː ɦɛː", "bases": [{"word": "सिंधु", "base": "सिंधु", "reading": "sindhu"}, {"word": "घाटी", "ref": "hi-1902"}, {"word": "की", "ref": "hi-0279"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "पुरानी", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हमारी सभ्यता बहुत प्राचीन है।", "reading": "hamārī sabhyatā bahut prācīn hai.", "ipa": "ɦəmaːriː səbʱjət̪aː bəɦʊt̪ praːtʃiːn ɦɛː", "bases": [{"word": "हमारी", "ref": "hi-0756"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "प्राचीन", "ref": "hi-2493"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2488"
+    target: "संस्कृति"
+    target_scripts: {"perso_arabic": "ثقافت"}
+    reading: "saṁskriti"
+    ipa: "sə̃skrɪt̪ɪ"
+    phonetic: "[sə̃skrɪt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "भारत की संस्कृति विविध है।", "reading": "bhārat kī saṁskriti vividh hai.", "ipa": "bʱaːrət̪ kiː sə̃skrɪt̪ɪ ʋɪʋɪd̪ʱ ɦɛː", "bases": [{"word": "भारत", "base": "भारत", "reading": "bhārat"}, {"word": "की", "ref": "hi-0279"}, {"word": "विविध", "base": "विविध", "reading": "vividh"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अपनी संस्कृति पर गर्व करो।", "reading": "apnī saṁskriti par garv karō.", "ipa": "əpniː sə̃skrɪt̪ɪ pər ɡərʋ kəroː", "bases": [{"word": "अपनी", "ref": "hi-0760"}, {"word": "पर", "ref": "hi-0275"}, {"word": "गर्व", "ref": "hi-2117"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2489"
+    target: "पुरातत्व"
+    target_scripts: {"perso_arabic": "آثار قدیمہ"}
+    reading: "purātatv"
+    ipa: "pʊraːt̪ət̪ʋ"
+    phonetic: "[pʊraːt̪ət̪ʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पुरातत्व विभाग ने खुदाई की।", "reading": "purātatv vibhāg nē khudāī kī.", "ipa": "pʊraːt̪ət̪ʋ ʋɪbʱaːɡ neː kʰʊd̪aːiː kiː", "bases": [{"word": "विभाग", "ref": "hi-2279"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "खुदाई", "base": "खुदाई", "reading": "khudāī"}, {"word": "की", "ref": "hi-0779"}]}
+      - {"target": "मुझे पुरातत्व पसंद है।", "reading": "mujhē purātatv pasand hai.", "ipa": "mʊdʒʱeː pʊraːt̪ət̪ʋ pəsənd̪ ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "पसंद", "ref": "hi-0469"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2490"
+    target: "शिलालेख"
+    target_scripts: {"perso_arabic": "کتبہ"}
+    reading: "śilālēkh"
+    ipa: "ʃɪlaːleːkʰ"
+    phonetic: "[ʃɪlaːleːkʰ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह शिलालेख बहुत पुराना है।", "reading": "yah śilālēkh bahut purānā hai.", "ipa": "jəɦ ʃɪlaːleːkʰ bəɦʊt̪ pʊraːnaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "शिलालेख पर क्या लिखा है?", "reading": "śilālēkh par kyā likhā hai?", "ipa": "ʃɪlaːleːkʰ pər kjaː lɪkʰaː ɦɛː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "क्या", "ref": "hi-0157"}, {"word": "लिखा", "ref": "hi-0781"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2491"
+    target: "ग्रंथ"
+    target_scripts: {"perso_arabic": "گرنتھ"}
+    reading: "granth"
+    ipa: "ɡrənt̪ʰ"
+    phonetic: "[ɡrən̪t̪ʰ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह प्राचीन ग्रंथ है।", "reading": "yah prācīn granth hai.", "ipa": "jəɦ praːtʃiːn ɡrənt̪ʰ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "प्राचीन", "ref": "hi-2493"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ग्रंथ पढ़ो।", "reading": "granth paṛhō.", "ipa": "ɡrənt̪ʰ pəɽʱoː", "bases": [{"word": "पढ़ो", "ref": "hi-0114"}]}
+  - id: "hi-2492"
+    target: "दरबार"
+    target_scripts: {"perso_arabic": "دربار"}
+    reading: "darbār"
+    ipa: "d̪ərbaːr"
+    phonetic: "[d̪ərbaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दरबार में मंत्री बैठे थे।", "reading": "darbār mēm̐ mantrī baiṭhē thē.", "ipa": "d̪ərbaːr mẽː mənt̪riː bɛːʈʰeː t̪ʰeː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "मंत्री", "ref": "hi-2154"}, {"word": "बैठे", "ref": "hi-0788"}, {"word": "थे", "ref": "hi-0780"}]}
+      - {"target": "राजा का दरबार सजा था।", "reading": "rājā kā darbār sajā thā.", "ipa": "raːdʒaː kaː d̪ərbaːr sədʒaː t̪ʰaː", "bases": [{"word": "राजा", "ref": "hi-2473"}, {"word": "का", "ref": "hi-0279"}, {"word": "सजा", "ref": "hi-1337"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2493"
+    target: "प्राचीन"
+    target_scripts: {"perso_arabic": "قدیم"}
+    reading: "prācīn"
+    ipa: "praːtʃiːn"
+    phonetic: "[praːtʃiːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह मंदिर प्राचीन है।", "reading": "yah mandir prācīn hai.", "ipa": "jəɦ mənd̪ɪr praːtʃiːn ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "मंदिर", "ref": "hi-1058"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्राचीन भारत में बहुत ज्ञान था।", "reading": "prācīn bhārat mēm̐ bahut gyān thā.", "ipa": "praːtʃiːn bʱaːrət̪ mẽː bəɦʊt̪ ɡjaːn t̪ʰaː", "bases": [{"word": "भारत", "base": "भारत", "reading": "bhārat"}, {"word": "में", "ref": "hi-0274"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "ज्ञान", "base": "ज्ञान", "reading": "gyān"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2494"
+    target: "मध्यकालीन"
+    target_scripts: {"perso_arabic": "قرون وسطیٰ"}
+    reading: "madhyakālīn"
+    ipa: "məd̪ʱjəkaːliːn"
+    phonetic: "[məd̪ʱjəkaːliːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मध्यकालीन किला बहुत मज़बूत था।", "reading": "madhyakālīn kilā bahut mazbūt thā.", "ipa": "məd̪ʱjəkaːliːn kɪlaː bəɦʊt̪ məzbuːt̪ t̪ʰaː", "bases": [{"word": "मध्यकालीन", "base": "मध्यकालीन", "reading": "madhyakālīn"}, {"word": "किला", "ref": "hi-2217"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "मज़बूत", "ref": "hi-1978"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "यह मध्यकालीन इतिहास है।", "reading": "yah madhyakālīn itihās hai.", "ipa": "jəɦ məd̪ʱjəkaːliːn ɪt̪ɪɦaːs ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "इतिहास", "ref": "hi-1580"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2495"
+    target: "आधुनिक"
+    target_scripts: {"perso_arabic": "جدید"}
+    reading: "ādhunik"
+    ipa: "aːd̪ʱʊnɪk"
+    phonetic: "[aːd̪ʱʊnɪk]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह आधुनिक इमारत है।", "reading": "yah ādhunik imārat hai.", "ipa": "jəɦ aːd̪ʱʊnɪk ɪmaːrət̪ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "इमारत", "base": "इमारत", "reading": "imārat"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आधुनिक तकनीक सीखो।", "reading": "ādhunik taknīk sīkhō.", "ipa": "aːd̪ʱʊnɪk t̪əkniːk siːkʰoː", "bases": [{"word": "तकनीक", "ref": "hi-2305"}, {"word": "सीखो", "ref": "hi-0952"}]}
+  - id: "hi-2496"
+    target: "युग"
+    target_scripts: {"perso_arabic": "دور"}
+    reading: "yug"
+    ipa: "jʊɡ"
+    phonetic: "[jʊɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह स्वर्ण युग था।", "reading": "yah svarṇ yug thā.", "ipa": "jəɦ sʋərɳ jʊɡ t̪ʰaː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "स्वर्ण", "base": "स्वर्ण", "reading": "svarṇ"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "नए युग की शुरुआत हुई।", "reading": "naē yug kī śuruāt huī.", "ipa": "nəeː jʊɡ kiː ʃʊrʊaːt̪ ɦʊiː", "bases": [{"word": "नए", "ref": "hi-0896"}, {"word": "की", "ref": "hi-0279"}, {"word": "शुरुआत", "base": "शुरुआत", "reading": "śuruāt"}, {"word": "हुई", "ref": "hi-0780"}]}
+  - id: "hi-2497"
+    target: "काल"
+    target_scripts: {"perso_arabic": "زمانہ"}
+    reading: "kāl"
+    ipa: "kaːl"
+    phonetic: "[kaːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह मूर्ति प्राचीन काल की है।", "reading": "yah mūrti prācīn kāl kī hai.", "ipa": "jəɦ muːrt̪ɪ praːtʃiːn kaːl kiː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "मूर्ति", "ref": "hi-2234"}, {"word": "प्राचीन", "ref": "hi-2493"}, {"word": "काल", "base": "काल", "reading": "kāl"}, {"word": "की", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "काल बदलता है।", "reading": "kāl badltā hai.", "ipa": "kaːl bəd̪lt̪aː ɦɛː", "bases": [{"word": "बदलता", "ref": "hi-1364"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2498"
+    target: "सदी"
+    target_scripts: {"perso_arabic": "صدی"}
+    reading: "sadī"
+    ipa: "səd̪iː"
+    phonetic: "[səd̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पंद्रहवीं सदी में यह किला बना।", "reading": "pandrahvīm̐ sadī mēm̐ yah kilā banā.", "ipa": "pənd̪rəɦʋĩː səd̪iː mẽː jəɦ kɪlaː bənaː", "bases": [{"word": "पंद्रहवीं", "base": "पंद्रहवाँ", "reading": "pandrahvām̐"}, {"word": "सदी", "base": "सदी", "reading": "sadī"}, {"word": "में", "ref": "hi-0274"}, {"word": "यह", "ref": "hi-0748"}, {"word": "किला", "ref": "hi-2217"}, {"word": "बना", "ref": "hi-1833"}]}
+      - {"target": "यह सदियों पुरानी परंपरा है।", "reading": "yah sadiyōm̐ purānī paramparā hai.", "ipa": "jəɦ səd̪ɪjõː pʊraːniː pərəmpəraː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सदियों", "base": "सदी", "reading": "sadī"}, {"word": "पुरानी", "ref": "hi-0897"}, {"word": "परंपरा", "base": "परंपरा", "reading": "paramparā"}, {"word": "है", "ref": "hi-0780"}]}
