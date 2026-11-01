@@ -10,9 +10,9 @@ void main() {
   final all = parseSpokenLanguages(
     File('assets/languages.yaml').readAsStringSync(),
   );
-  final arb =
-      jsonDecode(File('lib/l10n/app_en.arb').readAsStringSync())
-          as Map<String, dynamic>;
+  final arb = jsonDecode(
+    File('lib/l10n/app_en.arb').readAsStringSync(),
+  ) as Map<String, dynamic>;
   Set<String> selectIds(String key) {
     final text = arb[key] as String;
     return RegExp(r'(\w+)\{').allMatches(text).map((m) => m.group(1)!).toSet();
@@ -61,5 +61,25 @@ void main() {
         expect(scripts, contains(s), reason: '${l.code} script $s');
       }
     }
+  });
+
+  test('Arabic has its own script, apart from the Perso-Arabic of others', () {
+    List<String> scriptsOf(String code) =>
+        all.singleWhere((l) => l.code == code).scripts;
+    expect(scriptsOf('ar'), <String>['arabic']);
+    expect(scriptsOf('ks'), contains('perso_arabic'));
+    expect(scriptsOf('sd'), contains('perso_arabic'));
+    expect(scriptsOf('yue'), <String>['han_traditional']);
+    expect(arb['scriptName'], contains('arabic{Arabic}'));
+    expect(arb['scriptName'], contains('perso_arabic{Perso-Arabic}'));
+  });
+
+  test('iso639_3 is a three-letter code, and Proto-Indo-European holds the '
+      'ISO 639-5 collective one, as the list says', () {
+    for (final l in all) {
+      expect(l.iso639_3, matches(RegExp(r'^[a-z]{3}$')), reason: l.code);
+    }
+    expect(all.singleWhere((l) => l.code == 'ine').iso639_3, 'ine');
+    expect(File('assets/languages.yaml').readAsStringSync(), contains('639-5'));
   });
 }

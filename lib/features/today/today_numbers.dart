@@ -3,6 +3,7 @@ import '../../app/daily_plan.dart';
 import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../app/today_summary.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/scheduling/script_split.dart';
@@ -266,6 +267,35 @@ class TodayNumbers {
       pace: todayPaceOf(state, onScreen: onScreen),
     );
   }
+
+  /// The numbers last saved ([TodaySummary]), for Today to draw its tiles
+  /// while the catalog loads (#875). What the summary does not hold is
+  /// empty: no day plans, week, languages or pace.
+  factory TodayNumbers.fromSummary(TodaySummary saved) => TodayNumbers(
+    hasDecks: saved.hasDecks,
+    due: saved.due,
+    bySkill: saved.bySkill,
+    dueIn: saved.dueIn,
+    revisable: saved.revisable,
+    script: saved.script,
+    noVoice: saved.noVoice,
+    streak: saved.streak,
+    newWords: saved.newWords,
+    week: const <WeekDay>[],
+  );
+
+  /// What is kept of these numbers for the next launch.
+  TodaySummary get summary => TodaySummary(
+    hasDecks: hasDecks,
+    due: due,
+    bySkill: bySkill,
+    dueIn: dueIn,
+    revisable: revisable,
+    script: script,
+    noVoice: noVoice,
+    streak: streak,
+    newWords: newWords,
+  );
 
   /// Whether the profile learns any language that has a deck.
   final bool hasDecks;

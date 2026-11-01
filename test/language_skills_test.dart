@@ -8,20 +8,134 @@ void main() {
   const readUrdu = SkillKey(SkillKind.read, 'perso_arabic');
   final shape = skillsOfLanguage(<String>['devanagari', 'perso_arabic']);
 
-  test(
-    'a tap cycles Leave, Know, Learn, Leave, and skips Learn without decks',
-    () {
-      var s = LanguageSkills();
-      s = s.cycled(speak, canLearn: true);
-      expect(s.stateOf(speak), SkillState.know);
-      s = s.cycled(speak, canLearn: true);
-      expect(s.stateOf(speak), SkillState.learn);
-      s = s.cycled(speak, canLearn: true);
-      expect(s.stateOf(speak), SkillState.leave);
-      s = s.cycled(speak, canLearn: false).cycled(speak, canLearn: false);
-      expect(s.stateOf(speak), SkillState.leave);
-    },
-  );
+  test('a script pill cycles Leave, Learn, Read, Read and Write, Leave, and '
+      'skips Learn without decks', () {
+    var s = LanguageSkills();
+    final seen = <ScriptLevel>[];
+    for (var i = 0; i < 5; i++) {
+      s = s.cycledScript('devanagari', canLearn: true);
+      seen.add(s.scriptLevelOf('devanagari'));
+    }
+    expect(seen, <ScriptLevel>[
+      ScriptLevel.learn,
+      ScriptLevel.read,
+      ScriptLevel.readWrite,
+      ScriptLevel.leave,
+      ScriptLevel.learn,
+    ]);
+    s = LanguageSkills();
+    s = s.cycledScript('devanagari', canLearn: false);
+    expect(s.scriptLevelOf('devanagari'), ScriptLevel.read);
+    s = s.cycledScript('devanagari', canLearn: false);
+    s = s.cycledScript('devanagari', canLearn: false);
+    expect(s.scriptLevelOf('devanagari'), ScriptLevel.leave);
+  });
+
+  test('a script level is written as the stored Read and Write, and read '
+      'back from any stored combination', () {
+    LanguageSkills at(ScriptLevel level) =>
+        LanguageSkills().withScriptLevel('devanagari', level);
+    expect(at(ScriptLevel.read).toStored(), <String, String>{
+      'read:devanagari': 'know',
+    });
+    expect(at(ScriptLevel.readWrite).toStored(), <String, String>{
+      'read:devanagari': 'know',
+      'write:devanagari': 'know',
+    });
+    expect(at(ScriptLevel.learn).toStored(), <String, String>{
+      'read:devanagari': 'learn',
+      'write:devanagari': 'learn',
+    });
+    expect(at(ScriptLevel.leave).isAllLeave, isTrue);
+    // Every stored combination of the two skills has a level, and the level
+    // survives a round trip through the stored form.
+    ScriptLevel level(SkillState read, SkillState write) =>
+        LanguageSkills(<SkillKey, SkillState>{readDeva: read, writeDeva: write})
+            .scriptLevelOf('devanagari');
+    const l = SkillState.leave, k = SkillState.know, n = SkillState.learn;
+    expect(level(l, l), ScriptLevel.leave);
+    expect(level(k, l), ScriptLevel.read);
+    expect(level(k, k), ScriptLevel.readWrite);
+    // Write alone implies Read: shown as Read and Write.
+    expect(level(l, k), ScriptLevel.readWrite);
+    for (final (r, w) in [(n, l), (l, n), (n, n), (n, k), (k, n)]) {
+      expect(level(r, w), ScriptLevel.learn, reason: '$r $w');
+    }
+    for (final lv in ScriptLevel.values) {
+      expect(
+        LanguageSkills.fromStored(at(lv).toStored())
+            .scriptLevelOf('devanagari'),
+        lv,
+      );
+    }
+  });
+
+  test('the Spoken pill cycles Leave, Learn, Hear, Hear and Speak, Leave and '
+      'is stored as Speak and Hear', () {
+    var s = LanguageSkills();
+    final seen = <SpokenLevel>[];
+    for (var i = 0; i < 4; i++) {
+      s = s.cycledSpoken(canLearn: true);
+      seen.add(s.spokenLevel);
+      if (s.spokenLevel == SpokenLevel.hear) {
+        expect(s.toStored(), <String, String>{'hear': 'know'});
+      }
+      if (s.spokenLevel == SpokenLevel.hearSpeak) {
+        expect(s.toStored(), <String, String>{'speak': 'know', 'hear': 'know'});
+      }
+    }
+    expect(seen, <SpokenLevel>[
+      SpokenLevel.learn,
+      SpokenLevel.hear,
+      SpokenLevel.hearSpeak,
+      SpokenLevel.leave,
+    ]);
+    expect(s.isAllLeave, isTrue);
+    expect(
+      LanguageSkills().cycledSpoken(canLearn: false).spokenLevel,
+      SpokenLevel.hear,
+    );
+  });
+
+  test('every stored combination of Speak and Hear has a Spoken level', () {
+    SpokenLevel level(SkillState speakState, SkillState hearState) =>
+        LanguageSkills(<SkillKey, SkillState>{
+          speak: speakState,
+          const SkillKey(SkillKind.hear): hearState,
+        }).spokenLevel;
+    const l = SkillState.leave, k = SkillState.know, n = SkillState.learn;
+    expect(level(l, l), SpokenLevel.leave);
+    expect(level(l, k), SpokenLevel.hear);
+    expect(level(k, k), SpokenLevel.hearSpeak);
+    // Speak alone implies Hear: shown as Hear and Speak.
+    expect(level(k, l), SpokenLevel.hearSpeak);
+    for (final (a, b) in [(n, l), (l, n), (n, n), (n, k), (k, n)]) {
+      expect(level(a, b), SpokenLevel.learn, reason: '$a $b');
+    }
+  });
+
+  test('the two Know levels of a pill are marked with a tick and the extra '
+      'skill, and the found level doubles the tick', () {
+    expect(scriptMarkOf(ScriptLevel.read, covered: false), SkillMark.know);
+    expect(
+      scriptMarkOf(ScriptLevel.readWrite, covered: false),
+      SkillMark.knowBoth,
+    );
+    expect(
+      scriptMarkOf(ScriptLevel.readWrite, covered: true),
+      SkillMark.knowBothCovered,
+    );
+    expect(
+      spokenMarkOf(SpokenLevel.hear, covered: true),
+      SkillMark.knowCovered,
+    );
+    expect(
+      spokenMarkOf(SpokenLevel.hearSpeak, covered: false),
+      SkillMark.knowBoth,
+    );
+    expect(spokenMarkOf(SpokenLevel.learn, covered: true), SkillMark.learn);
+    expect(scriptMarkOf(ScriptLevel.leave, covered: true), SkillMark.leave);
+  });
 
   test('a language with every skill Leave goes back to the pool', () {
     final s = LanguageSkills(<SkillKey, SkillState>{readDeva: SkillState.know});
@@ -160,5 +274,23 @@ void main() {
     expect(minutesAtEnd(5, -1), isTrue);
     expect(minutesAtEnd(60, 1), isTrue);
     expect(minutesAtEnd(15, 1), isFalse);
+  });
+
+  test('a language with no scripts has no Read or Write, and a sign '
+      'language has the one Gestures skill only', () {
+    expect(skillsOfLanguage(const <String>[]).map((k) => k.kind), <SkillKind>[
+      SkillKind.speak,
+      SkillKind.hear,
+    ]);
+    final sign = skillsOfLanguage(const <String>[], sign: true);
+    expect(sign.map((k) => k.id), <String>['gesture']);
+    final s = LanguageSkills().cycled(sign.single, canLearn: true);
+    final back = LanguageSkills.fromStored(s.toStored());
+    expect(back, s);
+    expect(back.stateOf(sign.single), SkillState.know);
+    // No Latin script is known for a language with none.
+    expect(withLatinKnown(s, const <String>[]), s);
+    // Learning Gestures owes no check.
+    expect(checksOwed(sign), isEmpty);
   });
 }

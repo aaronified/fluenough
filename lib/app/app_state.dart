@@ -67,6 +67,7 @@ import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
+import '../features/stats/progress_numbers.dart';
 import 'profile.dart';
 import 'reminder_scheduler.dart';
 import 'reminder_service.dart';
@@ -81,6 +82,7 @@ import 'settings.dart';
 import 'shell_tab.dart';
 import 'synonym_loader.dart';
 import 'skill.dart';
+import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
@@ -200,6 +202,7 @@ class AppState extends ChangeNotifier {
     this._downloads = const NullDownloadStore(),
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
+    this._progressRunner = progressInIsolate,
     this.deckDownloads,
     this._synonymLoader,
     SettingsNotifier? settings,
@@ -350,6 +353,7 @@ class AppState extends ChangeNotifier {
     DownloadStore downloads = const NullDownloadStore(),
     FitRunner fitRunner = fitInPlace,
     PaceRunner paceRunner = paceInPlace,
+    ProgressRunner progressRunner = progressInPlace,
     DeckDownloads? deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
@@ -387,6 +391,7 @@ class AppState extends ChangeNotifier {
       downloads: downloads,
       fitRunner: fitRunner,
       paceRunner: paceRunner,
+      progressRunner: progressRunner,
       deckDownloads: deckDownloads,
       settings: settings,
       volume: volume,
@@ -536,6 +541,15 @@ class AppState extends ChangeNotifier {
     runner: _paceRunner,
   );
   final PaceRunner _paceRunner;
+
+  /// What Progress shows from the review log (the mastery and the weakest
+  /// tags), worked out off the main thread and read without waiting (#857).
+  /// Has its own notifier.
+  late final ProgressNumbersHolder progressNumbers = ProgressNumbersHolder(
+    state: this,
+    runner: _progressRunner,
+  );
+  final ProgressRunner _progressRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -1992,6 +2006,89 @@ class AppState extends ChangeNotifier {
       _lazyNotifying = false;
     }
     if (_lazyPending.isNotEmpty) _scheduleLazy();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Today's saved summary (#875)
+
+  /// What a saved summary was worked out for: see [TodaySummaries.stamp].
+  String get _todayStamp => TodaySummaries.stamp(
+    languages: <String>[
+      ...<String>{...settings.learningLanguages, ...?currentProfile.languages},
+    ],
+    enabled: <Skill>[
+      for (final skill in Skill.values)
+        if (settings.isEnabled(skill)) skill,
+    ],
+    day: now(),
+  );
+
+  /// The language a summary is kept under: the one shown, or `*`. Worked
+  /// out from the languages learned alone, never the catalog: a summary is
+  /// read while the catalog loads, when [shownLanguage] has no language
+  /// yet, so it must be filed under the same name before and after.
+  String get _todayScope =>
+      LanguageChoice.shown(settings.languageChoice, <String>[
+        ...<String>{
+          ...settings.learningLanguages,
+          ...?currentProfile.languages,
+        },
+      ]) ??
+      '*';
+
+  /// The skill-tile numbers Today last showed for the language shown, read
+  /// from the small summary saved with the settings, so that Today can draw
+  /// its tiles while the catalog loads. Null when none was saved, or when it
+  /// is stale: written by another app version, for other languages or with
+  /// other skills switched on, or on another day.
+  TodaySummary? get savedToday => TodaySummaries.read(
+    saved: settings.todaySummary,
+    stamp: _todayStamp,
+    language: _todayScope,
+  );
+
+  TodaySummary? _todayPending;
+  bool _todayScheduled = false;
+
+  /// Keeps [summary], Today's live numbers for the language shown, for the
+  /// next launch. Debounced: the latest of those given by the end of the
+  /// frame is written, and nothing is written if it is what is saved
+  /// already. It waits for the frame's end, not for an idle slot, because
+  /// an idle task leaves a timer pending when the screen is closed.
+  void rememberToday(TodaySummary summary) {
+    if (_disposed) return;
+    _todayPending = summary;
+    // The stamp and the scope are read when it is written, so that a
+    // change of language in between is not filed under the old one.
+    _todayLanguage = _todayScope;
+    if (_todayScheduled) return;
+    _todayScheduled = true;
+    try {
+      SchedulerBinding.instance.addPostFrameCallback((_) => flushToday());
+    } catch (_) {
+      // Without a scheduler there is nothing to wait for.
+      flushToday();
+    }
+  }
+
+  String? _todayLanguage;
+
+  /// Writes the pending summary now. The tests call it, having no frame to
+  /// wait for.
+  @visibleForTesting
+  void flushToday() {
+    _todayScheduled = false;
+    final summary = _todayPending;
+    final language = _todayLanguage;
+    _todayPending = null;
+    if (_disposed || summary == null || language == null) return;
+    final text = TodaySummaries.write(
+      saved: settings.todaySummary,
+      stamp: _todayStamp,
+      language: language,
+      summary: summary,
+    );
+    if (text != settings.todaySummary) settings.todaySummary = text;
   }
 
   /// Words first drilled today, counted from the log once and then from
@@ -3603,6 +3700,7 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    _todayPending = null;
     reminders.dispose();
     settings
       ..removeListener(_forgetPending)
@@ -3623,6 +3721,7 @@ class AppState extends ChangeNotifier {
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
+    progressNumbers.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     if (_ownsLog) log.dispose();

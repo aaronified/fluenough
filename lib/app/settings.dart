@@ -118,6 +118,9 @@ class SettingsNotifier extends ChangeNotifier {
   String? _latestRelease;
   String? _pendingUpdate;
   String? _lastSeenVersion;
+  // Today's last numbers (#875). Its own notifier: saved quietly, so that no
+  // screen rebuilds and nothing is recomputed because a cache was written.
+  final ValueNotifier<String?> _todaySummary = ValueNotifier<String?>(null);
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   String? _languageChoice;
@@ -863,6 +866,22 @@ class SettingsNotifier extends ChangeNotifier {
     scriptsRead = answers;
   }
 
+  /// Kashmiri and Sindhi name their script `perso_arabic`, not `arabic`
+  /// (#959), which is their own, first script, so its answer is kept under
+  /// the bare code (`SpokenLanguage.readKey`). An answer saved as `ks:arabic`
+  /// or `sd:arabic` is read as that answer, unless one is kept already.
+  /// Reading the stored answers again after this is a no-op.
+  void _renameArabicOfKashmiriAndSindhi() {
+    const codes = <String>['ks', 'sd'];
+    if (!codes.any((code) => _scriptsRead.containsKey('$code:arabic'))) return;
+    final answers = Map<String, bool>.of(_scriptsRead);
+    for (final code in codes) {
+      final old = answers.remove('$code:arabic');
+      if (old != null) answers.putIfAbsent(code, () => old);
+    }
+    scriptsRead = answers;
+  }
+
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
     final i = _spokenLanguages.indexOf(code);
@@ -1019,6 +1038,19 @@ class SettingsNotifier extends ChangeNotifier {
   String? get lastSeenVersion => _lastSeenVersion;
   set lastSeenVersion(String? value) =>
       _set(_lastSeenVersion, value, (v) => _lastSeenVersion = v);
+
+  /// Today's last skill-tile numbers as text, kept for the next launch
+  /// (#875); see `TodaySummaries`. A cache, not a setting: it notifies
+  /// [todaySummaryChanges] only, and [toStored] and a backup leave it out:
+  /// the store keeps it in its own row.
+  String? get todaySummary => _todaySummary.value;
+  set todaySummary(String? value) => _todaySummary.value = value;
+
+  /// Told when [todaySummary] changes, for the store to save it.
+  Listenable get todaySummaryChanges => _todaySummary;
+
+  /// The stored name of [todaySummary].
+  static const String todaySummaryKey = 'today_summary';
 
   /// Every setting as text, by its stored name. The names are permanent:
   /// renaming one resets it for everyone.
@@ -1219,6 +1251,9 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('last_seen_version', (t) => parseVersion(t) == null ? null : t)
         case final v?) {
       lastSeenVersion = v;
+    }
+    if (pick(todaySummaryKey, (t) => t.isEmpty ? null : t) case final v?) {
+      _todaySummary.value = v;
     }
     if (pick('facts_shown', _parseShown) case final v?) {
       _factsShown = Map<String, DateTime>.unmodifiable(v);
@@ -1498,6 +1533,7 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('latin_known_done', flag) case final v?) latinKnownDone = v;
     _foldUrduIntoHindustani();
+    _renameArabicOfKashmiriAndSindhi();
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       for (final MapEntry(:key, :value) in v.entries) {

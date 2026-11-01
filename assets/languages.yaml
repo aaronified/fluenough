@@ -4,7 +4,7 @@
 # widely spoken ones beside them, and every language a course path teaches
 # or plans (#613, #959). Planned languages are listed with no decks yet
 # (owner, 2026-10-31, #959: "the 40+ list", with Latin, Old English and
-# Middle English added; 2026-11-01: all 65 entries): the living ones, the
+# Middle English added; 2026-11-01: all of them): the living ones, the
 # ancient and reconstructed ones (Mycenaean Greek, Sumerian, Egyptian,
 # Proto-Indo-European, Vedic Sanskrit, Latin, Old and Middle English, the
 # Archaic, Classical Attic and Koine stages of Ancient Greek, Pali, Imperial
@@ -13,7 +13,15 @@
 # "spoken ones only" rule of 2026-10-23. A language with no course is shown
 # on Add a language as having none yet.
 #
-#   code, iso639_3  the code decks use, and its ISO 639-3 code
+#   code, iso639_3  the code decks use, and its ISO 639-3 code. Two entries
+#                   hold another ISO 639 code, or a private-use one, here:
+#                   Proto-Indo-European's `ine` is the ISO 639-5 code of the
+#                   whole Indo-European family (a collective, not a
+#                   language), the only one there is, and the private-use
+#                   codes below (`qap`, `qgh`, `qgk`, `qaa` to `qtz`) are no
+#                   ISO 639-3 code either. The field is the code a deck's
+#                   `iso639_3` carries, three letters, not a promise that it
+#                   is in ISO 639-3.
 #   name, own_name  its English name, and its name for itself (in its script)
 #   scripts         the scripts it is written in, as deck files name them
 #                   (`latin`, `bengali`), its own first: the one its courses
@@ -44,7 +52,9 @@
 #                   inscriptions, is named in the app; it has no font yet,
 #                   so Ashokan Prakrit is written in Devanagari for now.
 #   scripts omitted a sign language has no written script of its own here:
-#                   leave `scripts` out.
+#                   leave `scripts` out. It has no Read or Write either, and
+#                   one skill, Gestures, in place of all four (owner,
+#                   2026-11-01).
 #   dialect         optional: the one dialect the app teaches, by its proper
 #                   name, shown on the Languages page above Speak and Hear
 #                   (#907). Without it the page says "Standard" and the
@@ -99,9 +109,9 @@ languages:
       script_question: "શું તમે ગુજરાતી લિપિ વાંચી શકો છો?", script_can_read: "હું ગુજરાતી લિપિ વાંચી શકું છું", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "kn", iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", scripts: ["kannada"], family: "dravidian",
       script_question: "ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?", script_can_read: "ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", scripts: ["arabic", "devanagari"], family: "indo_aryan",
+  - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", scripts: ["perso_arabic", "devanagari"], family: "indo_aryan",
       scripts_question: "توٚہہِ کوٚن لِپِیَن منٛز ہیکِو کٲشُر پَرُن؟",
-      script_can_read: { arabic: "بہٕ ہیکہٕ فارسی-عربی لِپی پَرُن", devanagari: "بہٕ ہیکہٕ دیوناگری لِپی پَرُن" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { perso_arabic: "بہٕ ہیکہٕ فارسی-عربی لِپی پَرُن", devanagari: "بہٕ ہیکہٕ دیوناگری لِپی پَرُن" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "kok", iso639_3: "kok", name: "Konkani", own_name: "कोंकणी", scripts: ["devanagari", "kannada", "malayalam"], family: "indo_aryan",
       scripts_question: "तुमी कोंकणी खंयच्या लिपींनी वाचूं शकता?",
       script_can_read: { devanagari: "म्हाका देवनागरी लिपी वाचपाक येता", kannada: "म्हाका कन्नड लिपी वाचपाक येता", malayalam: "म्हाका मलयाळम लिपी वाचपाक येता" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
@@ -126,9 +136,9 @@ languages:
   - { code: "sat", iso639_3: "sat", name: "Santali", own_name: "ᱥᱟᱱᱛᱟᱲᱤ", scripts: ["ol_chiki", "latin", "devanagari", "bengali"], family: "austroasiatic",
       scripts_question: "ᱟᱢ ᱪᱚᱠ ᱪᱚᱠ ᱞᱤᱯᱤ ᱛᱮ ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ?",
       script_can_read: { ol_chiki: "ᱤᱧ ᱚᱞ ᱪᱤᱠᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", latin: "ᱤᱧ ᱞᱟᱛᱤᱱ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", devanagari: "ᱤᱧ ᱫᱮᱵᱚᱱᱟᱜᱚᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", bengali: "ᱤᱧ ᱯᱩᱨᱵᱤ ᱱᱟᱜᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "sd", iso639_3: "snd", name: "Sindhi", own_name: "سنڌي", scripts: ["arabic", "devanagari"], family: "indo_aryan",
+  - { code: "sd", iso639_3: "snd", name: "Sindhi", own_name: "سنڌي", scripts: ["perso_arabic", "devanagari"], family: "indo_aryan",
       scripts_question: "ڇا توهان سنڌي ڪهڙين لپين ۾ پڙهي سگهو ٿا؟",
-      script_can_read: { arabic: "مون کي فارسي-عربي لپي پڙهڻ اچي ٿي", devanagari: "مون کي ديوناگري لپي پڙهڻ اچي ٿي" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { perso_arabic: "مون کي فارسي-عربي لپي پڙهڻ اچي ٿي", devanagari: "مون کي ديوناگري لپي پڙهڻ اچي ٿي" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ta", iso639_3: "tam", name: "Tamil", own_name: "தமிழ்", scripts: ["tamil"], family: "dravidian",
       script_question: "உங்களால் தமிழ் எழுத்துமுறையைப் படிக்க முடியுமா?", script_can_read: "என்னால் தமிழ் எழுத்துமுறையைப் படிக்க முடியும்", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian",
