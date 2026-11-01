@@ -1,0 +1,241 @@
+schema: 1
+id: "mr-services"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "services"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1402"
+    target: "सेवा"
+    reading: "sevā"
+    ipa: "seʋa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सेवा", reading: "sevā" }] }
+    examples:
+      - { target: "ही सेवा चांगली आहे.", reading: "hi sevā cāṅgali āhe.", ipa: "ɦi seʋa tsaŋɡəli aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सेवेसाठी शुल्क द्यावं लागतं.", reading: "sevesāṭhi śulk dyāvam̐ lāgtam̐.", ipa: "seʋesaʈʰi ʃulk d̪jaʋə̃ laɡt̪ə̃", bases: [{ word: "सेवेसाठी", ref: "mr-1402" }, { word: "शुल्क", ref: "mr-1411" }, { word: "द्यावं", ref: "mr-0721" }, { word: "लागतं", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1403"
+    target: "पोस्ट"
+    reading: "posṭ"
+    ipa: "posʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पोस्ट", reading: "posṭ" }] }
+    examples:
+      - { target: "पत्र पोस्टात टाका.", reading: "patr posṭāt ṭākā.", ipa: "pət̪r posʈat̪ ʈaka", bases: [{ word: "पोस्टात", ref: "mr-1403" }, { word: "टाका", base: "टाकणे", reading: "ṭākṇe" }] }
+      - { target: "पोस्ट उद्या मिळेल.", reading: "posṭ udyā miḷel.", ipa: "posʈ ud̪ja miɭel", bases: [{ word: "मिळेल", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1404"
+    target: "पार्सल"
+    reading: "pārsal"
+    ipa: "parsəl"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पार्सल", reading: "pārsal" }] }
+    examples:
+      - { target: "पार्सल पाठवायचं आहे.", reading: "pārsal pāṭhvāycam̐ āhe.", ipa: "parsəl paʈʰʋajtsə̃ aɦe", bases: [{ word: "पाठवायचं", ref: "mr-0799" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पार्सल सुरक्षित पोहोचलं.", reading: "pārsal surakṣit pohoclam̐.", ipa: "parsəl surəkʂit̪ poɦotslə̃", bases: [{ word: "पोहोचलं", ref: "mr-1228" }] }
+  - id: "mr-1405"
+    target: "पत्र"
+    reading: "patr"
+    ipa: "pət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पत्र", reading: "patr" }] }
+    examples:
+      - { target: "त्याला पत्र लिहिलं.", reading: "tyālā patr lihilam̐.", ipa: "t̪jala pət̪r liɦilə̃", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "लिहिलं", ref: "mr-0716" }] }
+      - { target: "पत्र आलं का?", reading: "patr ālam̐ kā?", ipa: "pət̪r alə̃ ka", bases: [{ word: "आलं", ref: "mr-0711" }] }
+  - id: "mr-1406"
+    target: "पत्ता"
+    reading: "pattā"
+    ipa: "pət̪t̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पत्ता", reading: "pattā" }] }
+    examples:
+      - { target: "तुझा पत्ता काय आहे?", reading: "tujhā pattā kāy āhe?", ipa: "t̪udzʱa pət̪t̪a kaj aɦe", bases: [{ word: "तुझा", ref: "mr-0675" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पत्ता नीट लिहा.", reading: "pattā niṭ lihā.", ipa: "pət̪t̪a niʈ liɦa", bases: [{ word: "नीट", ref: "mr-0733" }, { word: "लिहा", ref: "mr-0716" }] }
+  - id: "mr-1407"
+    target: "पिन कोड"
+    reading: "pin koḍ"
+    ipa: "pin koɖ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पिन कोड", reading: "pin koḍ" }] }
+    examples:
+      - { target: "पिन कोड लिहा.", reading: "pin koḍ lihā.", ipa: "pin koɖ liɦa", bases: [{ word: "लिहा", ref: "mr-0716" }] }
+      - { target: "पिन कोड चुकीचा आहे.", reading: "pin koḍ cukicā āhe.", ipa: "pin koɖ tsukitsa aɦe", bases: [{ word: "चुकीचा", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1408"
+    target: "कागदपत्र"
+    reading: "kāgdpatr"
+    ipa: "kaɡd̪pət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कागदपत्र", reading: "kāgdpatr" }] }
+    examples:
+      - { target: "सगळी कागदपत्र आणली का?", reading: "sagḷi kāgdpatr āṇli kā?", ipa: "səɡɭi kaɡd̪pət̪r aɳli ka", bases: [{ word: "आणली", ref: "mr-0800" }] }
+      - { target: "कागदपत्रांवर सही करा.", reading: "kāgdpatrāṁvar sahi karā.", ipa: "kaɡd̪pət̪rãʋər səɦi kəra", bases: [{ word: "कागदपत्रांवर", ref: "mr-1408" }, { word: "सही", ref: "mr-1410" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1409"
+    target: "फॉर्म"
+    reading: "phôrm"
+    ipa: "pʰɔrm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फॉर्म", reading: "phôrm" }] }
+    examples:
+      - { target: "फॉर्म भरून द्या.", reading: "phôrm bharun dyā.", ipa: "pʰɔrm bʱərun d̪ja", bases: [{ word: "भरून", ref: "mr-0795" }, { word: "द्या", ref: "mr-0721" }] }
+      - { target: "हा फॉर्म कुठे जमा करायचा?", reading: "hā phôrm kuṭhe jamā karāycā?", ipa: "ɦa pʰɔrm kuʈʰe dzəma kərajtsa", bases: [{ word: "हा", ref: "mr-0679" }, { word: "जमा", base: "जमा", reading: "jamā" }, { word: "करायचा", ref: "mr-0712" }] }
+  - id: "mr-1410"
+    target: "सही"
+    reading: "sahi"
+    ipa: "səɦi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सही", reading: "sahi" }] }
+    examples:
+      - { target: "इथे सही करा.", reading: "ithe sahi karā.", ipa: "it̪ʰe səɦi kəra", bases: [{ word: "इथे", ref: "mr-0738" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "त्याची सही स्पष्ट आहे.", reading: "tyāci sahi spaṣṭ āhe.", ipa: "t̪jatʃi səɦi spəʂʈ aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "स्पष्ट", base: "स्पष्ट", reading: "spaṣṭ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1411"
+    target: "शुल्क"
+    reading: "śulk"
+    ipa: "ʃulk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शुल्क", reading: "śulk" }] }
+    examples:
+      - { target: "शुल्क किती आहे?", reading: "śulk kiti āhe?", ipa: "ʃulk kit̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "शुल्क भरल्यावर पावती मिळते.", reading: "śulk bharalyāvar pāvti miḷte.", ipa: "ʃulk bʱərəljaʋər paʋt̪i miɭt̪e", bases: [{ word: "भरल्यावर", ref: "mr-0795" }, { word: "पावती", ref: "mr-1069" }, { word: "मिळते", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1412"
+    target: "रांग"
+    reading: "rāṅg"
+    ipa: "raŋɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रांग", reading: "rāṅg" }] }
+    examples:
+      - { target: "रांग खूप मोठी आहे.", reading: "rāṅg khup moṭhi āhe.", ipa: "raŋɡ kʰup moʈʰi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "रांगेत थांबा.", reading: "rāṅget thāmbā.", ipa: "raŋɡet̪ t̪ʰamba", bases: [{ word: "थांबा", ref: "mr-0803" }] }
+  - id: "mr-1413"
+    target: "काउंटर"
+    reading: "kāuṇṭar"
+    ipa: "kauɳʈər"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "काउंटर", reading: "kāuṇṭar" }] }
+    examples:
+      - { target: "तिकीट काउंटर कुठे आहे?", reading: "tikiṭ kāuṇṭar kuṭhe āhe?", ipa: "t̪ikiʈ kauɳʈər kuʈʰe aɦe", bases: [{ word: "तिकीट", ref: "mr-0423" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "दुसऱ्या काउंटरवर जा.", reading: "dusaryā kāuṇṭarvar jā.", ipa: "d̪usərja kauɳʈərʋər dza", bases: [{ word: "दुसऱ्या", ref: "mr-0685" }, { word: "जा", ref: "mr-0710" }] }
+  - id: "mr-1414"
+    target: "टोकन"
+    reading: "ṭokan"
+    ipa: "ʈokən"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "टोकन", reading: "ṭokan" }] }
+    examples:
+      - { target: "टोकन घ्या.", reading: "ṭokan ghyā.", ipa: "ʈokən ɡʱja", bases: [{ word: "घ्या", ref: "mr-0722" }] }
+      - { target: "माझा टोकन नंबर बारा आहे.", reading: "mājhā ṭokan nambar bārā āhe.", ipa: "madzʱa ʈokən nəmbər bara aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1415"
+    target: "नूतनीकरण"
+    reading: "nutnikraṇ"
+    ipa: "nut̪nikrəɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नूतनीकरण", reading: "nutnikraṇ" }] }
+    examples:
+      - { target: "पासपोर्टचं नूतनीकरण करायचं आहे.", reading: "pāsporṭacam̐ nutnikraṇ karāycam̐ āhe.", ipa: "pasporʈətsə̃ nut̪nikrəɳ kərajtsə̃ aɦe", bases: [{ word: "पासपोर्टचं", ref: "mr-1216" }, { word: "करायचं", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "नूतनीकरणाची तारीख कधी आहे?", reading: "nutnikrṇāci tārikh kadhi āhe?", ipa: "nut̪nikrɳatʃi t̪arikʰ kəd̪ʱi aɦe", bases: [{ word: "नूतनीकरणाची", ref: "mr-1415" }, { word: "तारीख", ref: "mr-0528" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1416"
+    target: "प्रमाणपत्र"
+    reading: "pramāṇpatr"
+    ipa: "prəmaɳpət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रमाणपत्र", reading: "pramāṇpatr" }] }
+    examples:
+      - { target: "जन्म प्रमाणपत्र आणा.", reading: "janm pramāṇpatr āṇā.", ipa: "dzənm prəmaɳpət̪r aɳa", bases: [{ word: "आणा", ref: "mr-0800" }] }
+      - { target: "प्रमाणपत्र मिळालं.", reading: "pramāṇpatr miḷālam̐.", ipa: "prəmaɳpət̪r miɭalə̃", bases: [{ word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1417"
+    target: "ओळखपत्र"
+    reading: "oḷkhpatr"
+    ipa: "oɭkʰpət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ओळखपत्र", reading: "oḷkhpatr" }] }
+    examples:
+      - { target: "ओळखपत्र दाखवा.", reading: "oḷkhpatr dākhvā.", ipa: "oɭkʰpət̪r d̪akʰʋa", bases: [{ word: "दाखवा", ref: "mr-1178" }] }
+      - { target: "ओळखपत्र हरवलं.", reading: "oḷkhpatr harvlam̐.", ipa: "oɭkʰpət̪r ɦərʋlə̃", bases: [{ word: "हरवलं", ref: "mr-1174" }] }
+  - id: "mr-1418"
+    target: "खाते"
+    reading: "khāte"
+    ipa: "kʰat̪e"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खाते", reading: "khāte" }] }
+    examples:
+      - { target: "माझं बँकेत खातं आहे.", reading: "mājham̐ bam̐ket khātam̐ āhe.", ipa: "madzʱə̃ bə̃ket̪ kʰat̪ə̃ aɦe", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "बँकेत", ref: "mr-0959" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खात्यात पैसे भरा.", reading: "khātyāt paise bharā.", ipa: "kʰat̪jat̪ pəise bʱəra", bases: [{ word: "खात्यात", ref: "mr-1418" }, { word: "भरा", ref: "mr-0795" }] }
+  - id: "mr-1419"
+    target: "रक्कम"
+    reading: "rakkam"
+    ipa: "rəkkəm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रक्कम", reading: "rakkam" }] }
+    examples:
+      - { target: "रक्कम किती आहे?", reading: "rakkam kiti āhe?", ipa: "rəkkəm kit̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "एवढी रक्कम जमा केली.", reading: "evḍhi rakkam jamā keli.", ipa: "eʋɖʱi rəkkəm dzəma keli", bases: [{ word: "एवढी", base: "एवढा", reading: "evḍhā" }, { word: "जमा", base: "जमा", reading: "jamā" }, { word: "केली", ref: "mr-0712" }] }
+  - id: "mr-1420"
+    target: "कुरियर"
+    reading: "kuriyar"
+    ipa: "kurijər"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कुरियर", reading: "kuriyar" }] }
+    examples:
+      - { target: "कुरियर उद्या येईल.", reading: "kuriyar udyā yeil.", ipa: "kurijər ud̪ja jeil", bases: [{ word: "येईल", ref: "mr-0711" }] }
+      - { target: "कुरियरने कागदपत्र पाठवले.", reading: "kuriyrne kāgdpatr pāṭhvle.", ipa: "kurijrne kaɡd̪pət̪r paʈʰʋle", bases: [{ word: "कुरियरने", ref: "mr-1420" }, { word: "कागदपत्र", ref: "mr-1408" }, { word: "पाठवले", ref: "mr-0799" }] }
+  - id: "mr-1421"
+    target: "नोंदणी"
+    reading: "nondaṇi"
+    ipa: "nond̪əɳi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नोंदणी", reading: "nondaṇi" }] }
+    examples:
+      - { target: "नोंदणी करायची आहे.", reading: "nondaṇi karāyci āhe.", ipa: "nond̪əɳi kərajtʃi aɦe", bases: [{ word: "करायची", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "नोंदणीची फी किती?", reading: "nondaṇici phi kiti?", ipa: "nond̪əɳitʃi pʰi kit̪i", bases: [{ word: "नोंदणीची", ref: "mr-1421" }, { word: "फी", base: "फी", reading: "phi" }, { word: "किती", base: "किती", reading: "kiti" }] }
+  - id: "mr-1422"
+    target: "मिळवणे"
+    reading: "miḷvṇe"
+    ipa: "miɭʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मिळवणे", reading: "miḷvṇe" }] }
+    examples:
+      - { target: "मला परवाना मिळवायचा आहे.", reading: "malā parvānā miḷvāycā āhe.", ipa: "məla pərʋana miɭʋajtsa aɦe", bases: [{ word: "मला", ref: "mr-0080" }, { word: "परवाना", base: "परवाना", reading: "parvānā" }, { word: "मिळवायचा", ref: "mr-1422" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याने दाखला मिळवला.", reading: "tyāne dākhlā miḷvlā.", ipa: "t̪jane d̪akʰla miɭʋla", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "दाखला", base: "दाखला", reading: "dākhlā" }, { word: "मिळवला", ref: "mr-1422" }] }

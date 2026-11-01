@@ -443,7 +443,8 @@ units:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - planned: { id: "mr-services", theme: "services", words: 45 }
+  - decks: ["mr-services", "*"]
+    words: 21
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:

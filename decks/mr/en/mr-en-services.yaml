@@ -1,0 +1,157 @@
+schema: 1
+id: "mr-en-services"
+kind: "layer"
+core: "mr-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services"
+description: "Dealing with services: sending a parcel, opening an account, filling in a form, paying a fee and getting a certificate. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1402":
+    native: "service"
+    notes:
+      "n1": "{1} is a service, what an office or shop provides to people."
+    examples:
+      "ही सेवा चांगली आहे.": { native: "This service is good.", bases: { "आहे": "to be" } }
+      "सेवेसाठी शुल्क द्यावं लागतं.": { native: "A fee has to be paid for the service.", bases: { "लागतं": "to need" } }
+  "mr-1403":
+    native: "post, post office"
+    notes:
+      "n1": "{1} is the post, or the post office, a loanword from English."
+    examples:
+      "पत्र पोस्टात टाका.": { native: "Post the letter at the post office.", bases: { "टाका": "to post" } }
+      "पोस्ट उद्या मिळेल.": { native: "The post will arrive tomorrow.", bases: { "मिळेल": "to arrive" } }
+  "mr-1404":
+    native: "parcel"
+    notes:
+      "n1": "{1} is a parcel, a loanword from English."
+    examples:
+      "पार्सल पाठवायचं आहे.": { native: "I want to send a parcel.", bases: { "आहे": "to be" } }
+      "पार्सल सुरक्षित पोहोचलं.": "The parcel arrived safely."
+  "mr-1405":
+    native: "letter"
+    notes:
+      "n1": "{1} is a letter, written to send to someone."
+    examples:
+      "त्याला पत्र लिहिलं.": "I wrote him a letter."
+      "पत्र आलं का?": "Did a letter come?"
+  "mr-1406":
+    native: "address"
+    notes:
+      "n1": "{1} is an address, where someone lives or where a place is."
+    examples:
+      "तुझा पत्ता काय आहे?": { native: "What is your address?", bases: { "आहे": "to be" } }
+      "पत्ता नीट लिहा.": "Write the address clearly."
+  "mr-1407":
+    native: "postal code, PIN"
+    notes:
+      "n1": "{1} is the postal code of an address, a loanword from English."
+    examples:
+      "पिन कोड लिहा.": "Write the PIN code."
+      "पिन कोड चुकीचा आहे.": { native: "The PIN code is wrong.", bases: { "चुकीचा": "wrong", "आहे": "to be" } }
+  "mr-1408":
+    native: "document, papers"
+    notes:
+      "n1": "{1} is a document or a paper needed for an official matter."
+    examples:
+      "सगळी कागदपत्र आणली का?": "Did you bring all the documents?"
+      "कागदपत्रांवर सही करा.": "Sign the documents."
+  "mr-1409":
+    native: "form"
+    notes:
+      "n1": "{1} is a form to fill in, a loanword from English."
+    examples:
+      "फॉर्म भरून द्या.": "Fill in the form and give it."
+      "हा फॉर्म कुठे जमा करायचा?": { native: "Where should this form be submitted?", bases: { "जमा": "submitted" } }
+  "mr-1410":
+    native: "signature"
+    notes:
+      "n1": "{1} is a signature."
+    examples:
+      "इथे सही करा.": "Sign here."
+      "त्याची सही स्पष्ट आहे.": { native: "His signature is clear.", bases: { "स्पष्ट": "clear", "आहे": "to be" } }
+  "mr-1411":
+    native: "fee, charge"
+    notes:
+      "n1": "{1} is a fee charged for a service."
+    examples:
+      "शुल्क किती आहे?": { native: "What is the fee?", bases: { "आहे": "to be" } }
+      "शुल्क भरल्यावर पावती मिळते.": { native: "After paying the fee a receipt is given.", bases: { "मिळते": "to get" } }
+  "mr-1412":
+    native: "queue, line"
+    notes:
+      "n1": "{1} is a queue of people waiting. The phrase रांगेत उभे राहणे (rāṅgetā ubhe rāhṇe) means to stand in a queue."
+    examples:
+      "रांग खूप मोठी आहे.": { native: "The queue is very long.", bases: { "आहे": "to be" } }
+      "रांगेत थांबा.": "Wait in the queue."
+  "mr-1413":
+    native: "counter"
+    notes:
+      "n1": "{1} is a counter at which you are served, a loanword from English."
+    examples:
+      "तिकीट काउंटर कुठे आहे?": { native: "Where is the ticket counter?", bases: { "आहे": "to be" } }
+      "दुसऱ्या काउंटरवर जा.": "Go to the second counter."
+  "mr-1414":
+    native: "token, number slip"
+    notes:
+      "n1": "{1} is a token, a slip with a number to wait for your turn."
+    examples:
+      "टोकन घ्या.": "Take a token."
+      "माझा टोकन नंबर बारा आहे.": { native: "My token number is twelve.", bases: { "आहे": "to be" } }
+  "mr-1415":
+    native: "renewal"
+    notes:
+      "n1": "{1} is renewal, making a licence or a card valid again."
+    examples:
+      "पासपोर्टचं नूतनीकरण करायचं आहे.": { native: "I have to renew my passport.", bases: { "आहे": "to be" } }
+      "नूतनीकरणाची तारीख कधी आहे?": { native: "When is the renewal date?", bases: { "आहे": "to be" } }
+  "mr-1416":
+    native: "certificate"
+    notes:
+      "n1": "{1} is an official certificate."
+    examples:
+      "जन्म प्रमाणपत्र आणा.": "Bring the birth certificate."
+      "प्रमाणपत्र मिळालं.": { native: "I got the certificate.", bases: { "मिळालं": "to get" } }
+  "mr-1417":
+    native: "identity card"
+    notes:
+      "n1": "{1} is an identity card that shows who you are."
+    examples:
+      "ओळखपत्र दाखवा.": "Show your identity card."
+      "ओळखपत्र हरवलं.": "I lost the identity card."
+  "mr-1418":
+    native: "account"
+    notes:
+      "n1": "{1} is a bank or other account."
+    examples:
+      "माझं बँकेत खातं आहे.": { native: "I have an account at the bank.", bases: { "आहे": "to be" } }
+      "खात्यात पैसे भरा.": "Put money into the account."
+  "mr-1419":
+    native: "amount, sum of money"
+    notes:
+      "n1": "{1} is an amount of money."
+    examples:
+      "रक्कम किती आहे?": { native: "What is the amount?", bases: { "आहे": "to be" } }
+      "एवढी रक्कम जमा केली.": { native: "I deposited this amount.", bases: { "एवढी": "this much", "जमा": "deposited" } }
+  "mr-1420":
+    native: "courier"
+    notes:
+      "n1": "{1} is a courier service, a loanword from English."
+    examples:
+      "कुरियर उद्या येईल.": "The courier will come tomorrow."
+      "कुरियरने कागदपत्र पाठवले.": "I sent the papers by courier."
+  "mr-1421":
+    native: "registration"
+    notes:
+      "n1": "{1} is registration, entering your name in an official list."
+    examples:
+      "नोंदणी करायची आहे.": { native: "I have to register.", bases: { "आहे": "to be" } }
+      "नोंदणीची फी किती?": { native: "What is the registration fee?", bases: { "फी": "fee", "किती": "how much" } }
+  "mr-1422":
+    native: "to obtain, to get"
+    notes:
+      "n1": "{1} is getting something that you need or ask for."
+    examples:
+      "मला परवाना मिळवायचा आहे.": { native: "I want to obtain a licence.", bases: { "परवाना": "licence", "आहे": "to be" } }
+      "त्याने दाखला मिळवला.": { native: "He obtained the certificate.", bases: { "दाखला": "certificate" } }
