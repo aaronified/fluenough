@@ -157,7 +157,13 @@ class ChoiceDrill extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
+    final reading = lines.reading;
     return <Widget>[
       Text(
         l10n.drillChooseMeaning,
@@ -172,22 +178,27 @@ class ChoiceDrill extends StatelessWidget {
           target: card.target,
           language: language,
           fontSize: 48,
+          ipaFont: lines.swapped,
+          readingWrapper: (r) =>
+              ReadingWithInfo(reading: r, card: card, swapped: lines.swapped),
         )
       else ...<Widget>[
         TargetText.hero(card.target, language: language, card: card),
         if (reading != null)
-          Text(
-            reading,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              fontSize: 18,
-              color: scheme.onSurfaceVariant,
+          ReadingWithInfo(
+            swapped: lines.swapped,
+            card: card,
+            reading: Text(
+              reading,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge!
+                  .copyWith(fontSize: 18, color: scheme.onSurfaceVariant)
+                  .forIpa(lines.swapped),
             ),
           ),
       ],
       // How it is said: the word is shown, so this gives nothing away.
-      if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
-        IpaWithInfo(ipa, card: card, fontSize: 16),
+      if (lines.ipa case final ipa?) IpaWithInfo(ipa, card: card, fontSize: 16),
       // From the start: the word is shown anyway.
       ?_speaker(),
       // The word is on the card already: what its lesson showed under it.
