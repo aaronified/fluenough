@@ -1,0 +1,129 @@
+schema: 1
+id: "mr-en-illness"
+kind: "layer"
+core: "mr-illness"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness"
+description: "Feeling ill: fever, a cold, a cough and a headache, the doctor and the chemist, and what to take. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1090":
+    native: "cold (the illness)"
+    notes:
+      "n1": "{1} is a common cold, the illness with a runny nose. For the weather, थंडी (thaṇḍī) is used."
+    examples:
+      "मला सर्दी झाली आहे.": { native: "I have a cold.", bases: { "झाली": "to become", "आहे": "to be" } }
+      "सर्दीमुळे नाक वाहतं.": "The nose runs because of the cold."
+  "mr-1091":
+    native: "cough"
+    notes:
+      "n1": "{1} is a cough."
+    examples:
+      "रात्री खोकला येतो.": "I cough at night."
+      "खोकल्याचं औषध घ्या.": "Take the cough medicine."
+  "mr-1092":
+    native: "headache"
+    notes:
+      "n1": "{1} is a headache. The verb is दुखणे (dukhaṇe), to hurt."
+    examples:
+      "मला डोकेदुखी आहे.": { native: "I have a headache.", bases: { "आहे": "to be" } }
+      "डोकेदुखी थांबत नाही.": { native: "The headache does not stop.", bases: { "नाही": "not" } }
+  "mr-1093":
+    native: "stomachache"
+    notes:
+      "n1": "{1} is a stomachache."
+    examples:
+      "बाळाला पोटदुखी होते.": { native: "The baby gets a stomachache.", bases: { "बाळाला": "the baby", "होते": "to become" } }
+      "पोटदुखीसाठी गोळी घ्या.": "Take a tablet for the stomachache."
+  "mr-1094":
+    native: "tablet, pill"
+    notes:
+      "n1": "{1} is a tablet or a pill."
+    examples:
+      "गोळी गिळा.": { native: "Swallow the tablet.", bases: { "गिळा": "to swallow" } }
+      "दोन गोळ्या घ्या.": "Take two tablets."
+  "mr-1095":
+    native: "nurse"
+    notes:
+      "n1": "{1} is a nurse, a loanword from English."
+    examples:
+      "नर्स इंजेक्शन देते.": "The nurse gives an injection."
+      "नर्सला बोलवा.": { native: "Call the nurse.", bases: { "बोलवा": "to call" } }
+  "mr-1096":
+    native: "patient"
+    notes:
+      "n1": "{1} is a patient, a person who is ill and being treated."
+    examples:
+      "रुग्ण बरा होतोय.": { native: "The patient is getting better.", bases: { "होतोय": "to become" } }
+      "रुग्णाला पाणी द्या.": "Give water to the patient."
+  "mr-1097":
+    native: "tiredness, exhaustion"
+    notes:
+      "n1": "{1} is tiredness that comes from illness or work."
+    examples:
+      "मला खूप थकवा वाटतो.": { native: "I feel very tired.", bases: { "वाटतो": "to feel" } }
+      "विश्रांतीने थकवा जातो.": "Rest removes the tiredness."
+  "mr-1098":
+    native: "dizziness"
+    notes:
+      "n1": "{1} is dizziness. The phrase चक्कर येणे (cakkar yeṇe) means to feel dizzy."
+    examples:
+      "मला चक्कर येत आहे.": { native: "I feel dizzy.", bases: { "आहे": "to be" } }
+      "उन्हात चक्कर आली.": "I felt dizzy in the sun."
+  "mr-1099":
+    native: "wound, cut"
+    notes:
+      "n1": "{1} is a wound or a cut on the skin."
+    examples:
+      "हाताला जखम झाली.": { native: "I got a cut on my hand.", bases: { "झाली": "to become" } }
+      "जखम स्वच्छ करा.": "Clean the wound."
+  "mr-1100":
+    native: "vomiting"
+    notes:
+      "n1": "{1} is vomiting. It is also used for a sick feeling in the stomach."
+    examples:
+      "त्याला उलटी झाली.": { native: "He vomited.", bases: { "झाली": "to become" } }
+      "उलटी होत असेल तर डॉक्टरांना सांगा.": { native: "If you are vomiting, tell the doctor.", bases: { "होत": "to happen", "असेल": "to be" } }
+  "mr-1101":
+    native: "rest"
+    notes:
+      "n1": "{1} is rest, time to relax and recover."
+    examples:
+      "तुला विश्रांती हवी.": "You need rest."
+      "दोन दिवस विश्रांती घ्या.": "Rest for two days."
+  "mr-1102":
+    native: "blood"
+    notes:
+      "n1": "{1} is blood."
+    examples:
+      "जखमेतून रक्त येतंय.": "Blood is coming from the wound."
+      "रक्त तपासायचं आहे.": { native: "The blood has to be tested.", bases: { "आहे": "to be" } }
+  "mr-1103":
+    native: "injection"
+    notes:
+      "n1": "{1} is an injection, a loanword from English."
+    examples:
+      "नर्स इंजेक्शन देते.": "The nurse gives an injection."
+      "इंजेक्शन दुखतं का?": "Does the injection hurt?"
+  "mr-1104":
+    native: "check-up, examination"
+    notes:
+      "n1": "{1} is a medical check-up or examination."
+    examples:
+      "उद्या तपासणी आहे.": { native: "There is a check-up tomorrow.", bases: { "आहे": "to be" } }
+      "डॉक्टरांनी तपासणी केली.": "The doctor did an examination."
+  "mr-1105":
+    native: "to hurt, to ache"
+    notes:
+      "n1": "{1} is the verb for pain: पाय दुखतो (pāy dukhto), my leg hurts."
+    examples:
+      "पाय दुखतो.": "My leg hurts."
+      "डोळे दुखतात.": "The eyes hurt."
+  "mr-1106":
+    native: "to check, to examine"
+    notes:
+      "n1": "{1} is used when a doctor examines someone."
+    examples:
+      "डॉक्टर मला तपासतात.": "The doctor examines me."
+      "नर्सने तापमान तपासलं.": "The nurse checked the temperature."
