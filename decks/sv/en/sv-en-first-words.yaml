@@ -1,0 +1,183 @@
+schema: 1
+id: "sv-en-first-words"
+kind: "layer"
+core: "sv-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Not yet checked by a Swedish speaker: please report any mistake."
+cards:
+  "sv-0001":
+    native: "yes"
+    notes:
+      "n1": "Ja is the plain yes. Swedish answers a negative question with ja as well: Kommer du inte? Ja, jag kommer (Aren't you coming? Yes, I am)."
+    examples:
+      "Ja, tack.":
+        native: "Yes, please."
+        bases:
+          "Ja": "yes"
+          "tack": "thanks"
+      "Ja, jag talar svenska.":
+        native: "Yes, I speak Swedish."
+        bases:
+          "Ja": "yes"
+          "jag": "I"
+          "talar": "I speak"
+          "svenska": "Swedish"
+  "sv-0002":
+    native: "no"
+    notes:
+      "n1": "Nej is 'no'. Inte is 'not', and it comes after the verb: jag förstår inte (I don't understand)."
+    examples:
+      "Nej, tack.":
+        native: "No, thanks."
+        bases:
+          "Nej": "no"
+          "tack": "thanks"
+      "Nej, jag förstår inte.":
+        native: "No, I don't understand."
+        bases:
+          "Nej": "no"
+          "jag": "I"
+          "förstår": "understand"
+          "inte": "not"
+  "sv-0003":
+    native: "I"
+    notes:
+      "n1": "Jag is I. Its verb keeps the same form for every person in the present: jag talar, du talar (I speak, you speak)."
+    examples:
+      "Jag är student.":
+        native: "I am a student."
+        bases:
+          "Jag": "I"
+          "är": "am"
+          "student": "student"
+      "Jag bor i Stockholm.":
+        native: "I live in Stockholm."
+        bases:
+          "Jag": "I"
+          "bor": "live"
+          "i": "in"
+          "Stockholm": "Stockholm"
+  "sv-0004":
+    native: "you"
+    notes:
+      "n1": "Du is the everyday 'you'. The polite form of address, ni, is less used now but still heard in older or formal settings."
+    examples:
+      "Talar du engelska?":
+        native: "Do you speak English?"
+        bases:
+          "Talar": "speak"
+          "du": "you"
+          "engelska": "English"
+      "Du är snäll.":
+        native: "You are kind."
+        bases:
+          "Du": "you"
+          "är": "are"
+          "snäll": "kind"
+  "sv-0005":
+    native: "and"
+    notes:
+      "n1": "Och is 'and' between two words, as in bröd och smör (bread and butter)."
+    examples:
+      "Bröd och smör.":
+        native: "Bread and butter."
+        bases:
+          "Bröd": "bread"
+          "och": "and"
+          "smör": "butter"
+      "Jag och du.":
+        native: "You and I."
+        bases:
+          "Jag": "I"
+          "och": "and"
+          "du": "you"
+  "sv-0006":
+    native: "or"
+    notes:
+      "n1": "Eller is 'or', as in a question that offers a choice: kaffe eller te (coffee or tea)."
+    examples:
+      "Kaffe eller te?":
+        native: "Coffee or tea?"
+        bases:
+          "Kaffe": "coffee"
+          "eller": "or"
+          "te": "tea"
+      "Idag eller imorgon?":
+        native: "Today or tomorrow?"
+        bases:
+          "Idag": "today"
+          "eller": "or"
+          "imorgon": "tomorrow"
+  "sv-0007":
+    native: "but"
+    notes:
+      "n1": "Men is 'but'. Do not confuse it with man (one, people), which is spelled the same way in its other sense and said with a short vowel."
+    examples:
+      "Ja, men jag är trött.":
+        native: "Yes, but I am tired."
+        bases:
+          "Ja": "yes"
+          "men": "but"
+          "jag": "I"
+          "är": "am"
+          "trött": "tired"
+      "Bra, men dyrt.":
+        native: "Good, but expensive."
+        bases:
+          "Bra": "good"
+          "men": "but"
+          "dyrt": "expensive"
+  "sv-0008":
+    native: "good"
+    notes:
+      "n1": "Bra is 'good', and 'fine' or 'well'. Its form does not change with the noun: bra kaffe, bra vatten."
+    examples:
+      "Kaffet är bra.":
+        native: "The coffee is good."
+        bases:
+          "Kaffet": "the coffee"
+          "är": "is"
+          "bra": "good"
+      "Det var bra.":
+        native: "That was good."
+        bases:
+          "Det": "that"
+          "var": "was"
+          "bra": "good"
+  "sv-0009":
+    native: "one"
+    alt_native: ["a"]
+    notes:
+      "n1": "En is 'one', and 'a' before a common-gender noun. For a neuter noun it is ett: ett bord (a table)."
+    examples:
+      "En kaffe, tack.":
+        native: "A coffee, please."
+        bases:
+          "En": "a"
+          "kaffe": "coffee"
+          "tack": "thanks"
+      "Jag har en bror.":
+        native: "I have a brother."
+        bases:
+          "Jag": "I"
+          "har": "have"
+          "en": "a"
+          "bror": "brother"
+  "sv-0010":
+    native: "water"
+    notes:
+      "n1": "Vatten is neuter: ett vatten, vattnet (the water). It is also the word for tap water, so ask for kolsyrat vatten for sparkling water."
+    examples:
+      "Vatten, tack.":
+        native: "Water, please."
+        bases:
+          "Vatten": "water"
+          "tack": "thanks"
+      "Jag dricker vatten.":
+        native: "I drink water."
+        bases:
+          "Jag": "I"
+          "dricker": "drink"
+          "vatten": "water"

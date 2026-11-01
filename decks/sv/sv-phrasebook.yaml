@@ -1,0 +1,150 @@
+schema: 1
+id: "sv-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "sv", iso639_3: "swe", name: "Swedish", script: "latin", tts: "sv-SE", icon: "Sv" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sv-0011"
+    target: "hej"
+    ipa: "hɛj"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "hej", base: "hej" }]
+  - id: "sv-0012"
+    target: "god morgon"
+    ipa: "ɡuː ˈmɔrːɔn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "god", base: "god" }, { word: "morgon", base: "morgon" }]
+  - id: "sv-0013"
+    target: "god natt"
+    ipa: "ɡuː nat"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "god", base: "god" }, { word: "natt", base: "natt" }]
+  - id: "sv-0014"
+    target: "hej då"
+    ipa: "hɛj doː"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "hej", base: "hej" }, { word: "då", base: "då" }]
+  - id: "sv-0015"
+    target: "tack"
+    ipa: "tak"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tack", base: "tack" }]
+  - id: "sv-0016"
+    target: "tack så mycket"
+    ipa: "tak soː ˈmykɛt"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tack", base: "tack" }, { word: "så", base: "så" }, { word: "mycket", base: "mycket" }]
+  - id: "sv-0017"
+    target: "snälla"
+    ipa: "ˈsnɛla"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "snälla", base: "snäll" }]
+  - id: "sv-0018"
+    target: "förlåt"
+    ipa: "fœrˈloːt"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "förlåt", base: "förlåt" }]
+  - id: "sv-0019"
+    target: "ursäkta"
+    ipa: "ʉˈʂɛkta"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "ursäkta", base: "ursäkta" }]
+  - id: "sv-0020"
+    target: "jag förstår inte"
+    ipa: "jɑɡ fœʂˈtoːr ˈɪntɛ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "jag", base: "jag" }, { word: "förstår", base: "förstå" }, { word: "inte", base: "inte" }]
+  - id: "sv-0021"
+    target: "jag talar inte svenska"
+    ipa: "jɑɡ ˈtalar ˈɪntɛ ˈsvɛnska"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "jag", base: "jag" }, { word: "talar", base: "tala" }, { word: "inte", base: "inte" }, { word: "svenska", base: "svenska" }]
+  - id: "sv-0022"
+    target: "kan du tala långsammare?"
+    ipa: "kan dʉ ˈtɑːla ˈlɔŋˌsamarɛ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "kan", base: "kunna" }, { word: "du", base: "du" }, { word: "tala", base: "tala" }, { word: "långsammare", base: "långsam" }]
+  - id: "sv-0023"
+    target: "hur mycket kostar det?"
+    ipa: "hʉr ˈmykɛt ˈkɔstar de"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "hur", base: "hur" }, { word: "mycket", base: "mycket" }, { word: "kostar", base: "kosta" }, { word: "det", base: "det" }]
+  - id: "sv-0024"
+    target: "var är toaletten?"
+    ipa: "var ɛːr tʉaˈlɛtɛn"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "var", base: "var" }, { word: "är", base: "vara" }, { word: "toaletten", base: "toalett" }]
+  - id: "sv-0025"
+    target: "hjälp!"
+    ipa: "jɛlp"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "hjälp", base: "hjälp" }]
+  - id: "sv-0026"
+    target: "vad heter du?"
+    ipa: "vɑd ˈhetɛr dʉ"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "vad", base: "vad" }, { word: "heter", base: "heta" }, { word: "du", base: "du" }]
+  - id: "sv-0027"
+    target: "jag heter Anna"
+    ipa: "jɑɡ ˈhetɛr ˈanːa"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "jag", base: "jag" }, { word: "heter", base: "heta" }, { word: "Anna", base: "Anna" }]
+  - id: "sv-0028"
+    target: "trevligt att träffas"
+    ipa: "ˈtrɛvlɪkt at ˈtrɛfas"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "trevligt", base: "trevlig" }, { word: "att", base: "att" }, { word: "träffas", base: "träffas" }]
+  - id: "sv-0029"
+    target: "jag vet inte"
+    ipa: "jɑɡ vet ˈɪntɛ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "jag", base: "jag" }, { word: "vet", base: "veta" }, { word: "inte", base: "inte" }]
+  - id: "sv-0030"
+    target: "kan du säga det igen?"
+    ipa: "kan dʉ ˈsɛːja de iˈɡɛn"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "kan", base: "kunna" }, { word: "du", base: "du" }, { word: "säga", base: "säga" }, { word: "det", base: "det" }, { word: "igen", base: "igen" }]
