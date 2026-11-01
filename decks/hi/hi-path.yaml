@@ -399,7 +399,8 @@ units:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "hi-geography", theme: "geography", words: 45 }
+  - decks: ["hi-geography", "hi-reading-geography", "*"]
+    words: 29
     listening_passages:
       - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
     reading_passages:
