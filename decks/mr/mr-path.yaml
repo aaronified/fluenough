@@ -307,7 +307,8 @@ units:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - planned: { id: "mr-hobbies", theme: "hobbies", words: 50 }
+  - decks: ["mr-hobbies", "*"]
+    words: 17
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
