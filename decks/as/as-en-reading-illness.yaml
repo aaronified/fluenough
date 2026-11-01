@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-illness"
+name: "Assamese reading: illness and the doctor"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-cold-and-a-fever"
+    title: "A cold and a fever"
+    theme: "illness"
+    sentences:
+      - text: "বন্ধু, মোৰ সৰ্দি আৰু জ্বৰ।"
+        reading: "bondhu, mur sôrdi āru zwôr."
+      - text: "মই আজি অসুস্থ।"
+        reading: "moi āzi ônxusthô."
+      - text: "মই বিশ্ৰাম লওঁ।"
+        reading: "moi bixrām lôu."
+      - text: "কাইলৈ ভাল হ'ব।"
+        reading: "kāilôi bhāl hôb."
+    questions:
+      - id: "as-2701"
+        prompt: { en: "The speaker has a cold and a fever." }
+        answer: true
+      - id: "as-2702"
+        prompt: { en: "What does the speaker do today?" }
+        options:
+          - { en: "Works" }
+          - { en: "Rests" }
+          - { en: "Dances" }
+        answer: 2
+      - id: "as-2703"
+        prompt: { en: "When will the speaker feel better?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 2
+  - id: "as-medicine-label"
+    title: "The label on a packet of medicine"
+    theme: "illness"
+    sentences:
+      - text: "বটী দুটা খাবা।"
+        reading: "bôṭi dutā khābā."
+      - text: "দিনে দুবাৰ খাবা।"
+        reading: "dine dubār khābā."
+      - text: "পানীৰে খাবা।"
+        reading: "pānire khābā."
+      - text: "ঠাণ্ডাত ৰাখিবা।"
+        reading: "thāndāt rākhibā."
+    questions:
+      - id: "as-2704"
+        prompt: { en: "Take two tablets each time." }
+        answer: true
+      - id: "as-2705"
+        prompt: { en: "How many times a day?" }
+        options:
+          - { en: "Once" }
+          - { en: "Twice" }
+          - { en: "Three times" }
+        answer: 2
+      - id: "as-2706"
+        prompt: { en: "Where should the medicine be kept?" }
+        options:
+          - { en: "In the sun" }
+          - { en: "In a cool place" }
+          - { en: "In water" }
+        answer: 2

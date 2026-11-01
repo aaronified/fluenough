@@ -1,0 +1,52 @@
+schema: 1
+id: "as-en-illness-sentences"
+kind: "layer"
+core: "as-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness and the doctor: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2693":
+    native: "I have a headache."
+    confusables:
+      "c1": { why: "A belly ache, not a head ache." }
+      "c2": { why: "The head, not the ache." }
+  "as-2694":
+    native: "You will take the medicine."
+    confusables:
+      "c1": { why: "To lie down, not to take medicine." }
+      "c2": { why: "To come, not to take medicine." }
+  "as-2695":
+    native: "The doctor has come."
+    confusables:
+      "c1": { why: "The patient, not the doctor." }
+      "c2": { why: "A nurse, not the doctor." }
+  "as-2696":
+    native: "I am in hospital."
+    bases:
+      "আছোঁ": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A clinic, a smaller place than a hospital." }
+      "c2": { why: "Home, not a hospital." }
+  "as-2697":
+    native: "I have a fever."
+    confusables:
+      "c1": { why: "A cold, not a fever." }
+      "c2": { why: "A cough, not a fever." }
+  "as-2698":
+    native: "Take a rest."
+    confusables:
+      "c1": { why: "Work, the opposite of rest." }
+      "c2": { why: "To go, not to rest." }
+  "as-2699":
+    native: "He is well now."
+    confusables:
+      "c1": { why: "Ill, the opposite of well." }
+      "c2": { why: "Weak, not yet recovered." }
+  "as-2700":
+    native: "Take two tablets."
+    confusables:
+      "c1": { why: "A fox, nothing to do with a pill." }
+      "c2": { why: "A chilli, not a tablet." }

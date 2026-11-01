@@ -1,0 +1,205 @@
+schema: 1
+id: "as-illness"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "illness"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2673"
+    target: "জ্বৰ"
+    reading: "zwôr"
+    ipa: "zɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ জ্বৰ আছে।", reading: "mur zwôr āse.", ipa: "mʊɹ zɔɹ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "জ্বৰত শুই থকা।", reading: "zwôrôt xui thôkā.", ipa: "zɔɹɔt xui tʰɔka", bases: [{ word: "জ্বৰত", base: "জ্বৰ", reading: "zwôr" }, { word: "শুই", ref: "as-0379" }] }
+  - id: "as-2674"
+    target: "কাহ"
+    reading: "kāh"
+    ipa: "kah"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাহ বহুত।", reading: "kāh bohut.", ipa: "kah bohut" }
+      - { target: "মোৰ কাহ আছে।", reading: "mur kāh āse.", ipa: "mʊɹ kah ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2675"
+    target: "সৰ্দি"
+    reading: "sôrdi"
+    ipa: "soɹdi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ সৰ্দি লাগিছে।", reading: "mur sôrdi lāgise.", ipa: "mʊɹ soɹdi laɡise", bases: [{ word: "লাগিছে", base: "লাগা", reading: "lāgā" }] }
+      - { target: "সৰ্দি ভাল নহয়।", reading: "sôrdi bhāl nôhôy.", ipa: "soɹdi bʱal nɔhɔj" }
+  - id: "as-2676"
+    target: "অসুস্থ"
+    reading: "ônxusthô"
+    ipa: "ɔsustʰ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই অসুস্থ।", reading: "moi ônxusthô.", ipa: "moi ɔsustʰ" }
+      - { target: "তেওঁ অসুস্থ।", reading: "teum̐ ônxusthô.", ipa: "teʊ̃ ɔsustʰ" }
+  - id: "as-2677"
+    target: "সুস্থ"
+    reading: "xusthô"
+    ipa: "sustʰ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই সুস্থ।", reading: "moi xusthô.", ipa: "moi sustʰ" }
+      - { target: "এতিয়া সুস্থ।", reading: "etiyā xusthô.", ipa: "etija sustʰ" }
+  - id: "as-2678"
+    target: "ৰোগ"
+    reading: "rôg"
+    ipa: "ɹʊɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো ৰোগ নহয়।", reading: "eitu rôg nôhôy.", ipa: "eitʊ ɹʊɡ nɔhɔj" }
+      - { target: "ৰোগ বহুত।", reading: "rôg bohut.", ipa: "ɹʊɡ bohut" }
+  - id: "as-2679"
+    target: "ৰোগী"
+    reading: "rôgi"
+    ipa: "ɹʊɡi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰোগী শুই আছে।", reading: "rôgi xui āse.", ipa: "ɹʊɡi xui ase", bases: [{ word: "শুই", ref: "as-0379" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ৰোগী ভাল আছে।", reading: "rôgi bhāl āse.", ipa: "ɹʊɡi bʱal ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2680"
+    target: "ঔষধ"
+    reading: "ôxôdh"
+    ipa: "ɔuxɔdʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঔষধ আছে।", reading: "ôxôdh āse.", ipa: "ɔuxɔdʱ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ঔষধ খাবা।", reading: "ôxôdh khābā.", ipa: "ɔuxɔdʱ kʰaba", bases: [{ word: "খাবা", ref: "as-0109" }] }
+  - id: "as-2681"
+    target: "বটী"
+    reading: "bôṭi"
+    ipa: "boti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বটী দুটা খাবা।", reading: "bôṭi dutā khābā.", ipa: "boti duta kʰaba", bases: [{ word: "খাবা", ref: "as-0109" }] }
+      - { target: "বটী সৰু।", reading: "bôṭi xôru.", ipa: "boti soɹu" }
+  - id: "as-2682"
+    target: "ঘা"
+    reading: "ghā"
+    ipa: "ɡʱa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "হাতত ঘা।", reading: "hātôt ghā.", ipa: "hatɔt ɡʱa", bases: [{ word: "হাতত", ref: "as-0115" }] }
+      - { target: "ঘা বহুত।", reading: "ghā bohut.", ipa: "ɡʱa bohut" }
+  - id: "as-2683"
+    target: "বমি"
+    reading: "bômi"
+    ipa: "bomi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বমি হৈছে।", reading: "bômi hôise.", ipa: "bomi hɔise", bases: [{ word: "হৈছে", base: "হোৱা", reading: "huwā" }] }
+      - { target: "বমি বহুত।", reading: "bômi bohut.", ipa: "bomi bohut" }
+  - id: "as-2684"
+    target: "দুৰ্বল"
+    reading: "durbôl"
+    ipa: "duɹɹɔl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই দুৰ্বল।", reading: "moi durbôl.", ipa: "moi duɹɹɔl" }
+      - { target: "ৰোগীজন দুৰ্বল।", reading: "rôgizôn durbôl.", ipa: "ɹʊɡizɔn duɹɹɔl", bases: [{ word: "ৰোগীজন", ref: "as-2679" }] }
+  - id: "as-2685"
+    target: "শ্বাস"
+    reading: "xwās"
+    ipa: "xas"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শ্বাস ভাল।", reading: "xwās bhāl.", ipa: "xas bʱal" }
+      - { target: "মোৰ শ্বাস ভাৰী।", reading: "mur xwās bhāri.", ipa: "mʊɹ xas bʱaɹi" }
+  - id: "as-2686"
+    target: "কষ্ট"
+    reading: "kôxtô"
+    ipa: "kɔxt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ কষ্ট বহুত।", reading: "mur kôxtô bohut.", ipa: "mʊɹ kɔxt bohut" }
+      - { target: "কষ্ট নাই।", reading: "kôxtô nāi.", ipa: "kɔxt nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2687"
+    target: "বিশ্ৰাম"
+    reading: "bixrām"
+    ipa: "bixɹam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিশ্ৰাম লোৱা।", reading: "bixrām luwā.", ipa: "bixɹam lʊwa" }
+      - { target: "বিশ্ৰাম ভাল।", reading: "bixrām bhāl.", ipa: "bixɹam bʱal" }
+  - id: "as-2688"
+    target: "পৰীক্ষা"
+    reading: "porikkhā"
+    ipa: "poɹikkʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পৰীক্ষা কৰিব।", reading: "porikkhā kôrib.", ipa: "poɹikkʰa koɹib", bases: [{ word: "কৰিব", ref: "as-2202" }] }
+      - { target: "পৰীক্ষাৰ ফল।", reading: "porikkhār phôl.", ipa: "poɹikkʰaɹ pʰɔl", bases: [{ word: "পৰীক্ষাৰ", base: "পৰীক্ষা", reading: "porikkhā" }] }
+  - id: "as-2689"
+    target: "ৰিপোৰ্ট"
+    reading: "riport"
+    ipa: "ɹipʊɹt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰিপোৰ্ট আছে।", reading: "riport āse.", ipa: "ɹipʊɹt ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ৰিপোৰ্ট ভাল।", reading: "riport bhāl.", ipa: "ɹipʊɹt bʱal" }
+  - id: "as-2690"
+    target: "ইনজেকচন"
+    reading: "iṅzekxôn"
+    ipa: "inɔzekɔsɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইনজেকচন দিব।", reading: "iṅzekxôn dib.", ipa: "inɔzekɔsɔn dib", bases: [{ word: "দিব", ref: "as-2218" }] }
+      - { target: "ইনজেকচন বেয়া লাগে।", reading: "iṅzekxôn beyā lāge.", ipa: "inɔzekɔsɔn beja laɡe" }
+  - id: "as-2691"
+    target: "গা জ্বৰ"
+    reading: "gā zwôr"
+    ipa: "ɡa zɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-2692"
+    target: "মূৰ ঘূৰা"
+    reading: "mur ghurā"
+    ipa: "muɹ ɡʱuɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

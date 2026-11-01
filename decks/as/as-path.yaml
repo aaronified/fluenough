@@ -288,11 +288,14 @@ units:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
   - decks: ["as-reading-shopping"]
     words: 0
-  - planned: { id: "as-illness", theme: "illness", words: 50 }
+  - decks: ["as-illness", "as-illness-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - decks: ["as-reading-illness"]
+    words: 0
   - decks: ["as-eating-out", "*"]
     words: 11
   - planned: { id: "as-cooking", theme: "cooking", words: 50 }
