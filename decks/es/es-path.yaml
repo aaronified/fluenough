@@ -181,7 +181,8 @@ units:
       - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
     reading_passages:
       - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
-  - planned: { id: "es-cooking", theme: "cooking", words: 40 }
+  - decks: ["es-cooking", "es-cooking-sentences", "es-reading-cooking", "*"]
+    words: 35
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
