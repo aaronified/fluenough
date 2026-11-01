@@ -8,7 +8,6 @@ import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -369,30 +368,35 @@ class _Key extends StatelessWidget {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          DecoratedBox(
-            decoration: BoxDecoration(
-              color: colors.container,
-              borderRadius: BorderRadius.circular(AppRadii.control),
-              border: mark == SkillMark.learn
-                  ? Border.all(color: colors.onContainer, width: 2)
-                  : null,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  for (final kind in extra)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 2),
-                      child: Icon(
-                        kind.icon,
-                        size: 16,
-                        color: colors.onContainer,
+          CustomPaint(
+            foregroundPainter: mark == SkillMark.leave
+                ? DashedOutline(colors.onContainer, AppRadii.control)
+                : null,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: colors.container,
+                borderRadius: BorderRadius.circular(AppRadii.control),
+                border: mark == SkillMark.learn
+                    ? Border.all(color: colors.onContainer, width: 1.5)
+                    : null,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    for (final kind in extra)
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(end: 2),
+                        child: Icon(
+                          kind.icon,
+                          size: 16,
+                          color: colors.onContainer,
+                        ),
                       ),
-                    ),
-                  SkillMarkGlyph(mark: mark, colors: colors),
-                ],
+                    SkillMarkGlyph(mark: mark, colors: colors),
+                  ],
+                ),
               ),
             ),
           ),

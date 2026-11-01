@@ -300,11 +300,12 @@ void main() {
 
       testWidgets('a long press says the level in a word or two and a screen '
           'reader reads the name and the full phrase', (tester) async {
+        final handle = tester.ensureSemantics();
+        addTearDown(handle.dispose);
         await _pumpPills(tester, mode);
         final l10n = AppLocalizations.of(
           tester.element(find.byType(Scaffold)),
         )!;
-        final handle = tester.ensureSemantics();
         final spoken = <String, String>{
           'spoken/leave': l10n.languagesPillLeave,
           'spoken/learn': l10n.languagesPillLearning,
@@ -334,15 +335,12 @@ void main() {
             l10n.languagesSkillState(name, value),
             reason: key,
           );
+          // The long press shows the level's own words, nothing else.
+          final tip = tester.widget<Tooltip>(
+            find.descendant(of: _badge(key), matching: find.byType(Tooltip)),
+          );
+          expect(tip.message, value, reason: key);
         }
-        expect(
-          <String>[
-            l10n.languagesPillLeave,
-            l10n.languagesPillLearning,
-            l10n.languagesPillHearSpeak,
-          ].map((t) => t.split(' ').length),
-          everyElement(lessThanOrEqualTo(3)),
-        );
         final target = _badge('spoken/knowBothCovered');
         await tester.ensureVisible(target);
         await tester.pumpAndSettle();
@@ -352,7 +350,29 @@ void main() {
           find.text(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
           findsOneWidget,
         );
-        handle.dispose();
+      });
+
+      testWidgets('the Learn pill has a visible edge against the surface', (
+        tester,
+      ) async {
+        await _pumpPills(tester, mode);
+        final modes = ModeColors.of(tester.element(find.byType(Scaffold)));
+        final surface = Theme.of(tester.element(find.byType(Scaffold)))
+            .colorScheme
+            .surface;
+        final ring = tester
+            .widgetList<Container>(
+              find.descendant(
+                of: _badge('spoken/learn'),
+                matching: find.byType(Container),
+              ),
+            )
+            .map((c) => c.foregroundDecoration)
+            .whereType<BoxDecoration>()
+            .single;
+        final edge = (ring.border! as Border).top.color;
+        expect(edge, modes.pillLearn.onContainer);
+        expect(contrast(edge, surface), greaterThanOrEqualTo(3));
       });
     });
   }

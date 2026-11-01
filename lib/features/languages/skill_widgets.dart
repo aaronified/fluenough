@@ -10,12 +10,10 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 
-/// How each of the four skills looks on the Languages page (its icon; a
-/// pill's colour is the level's, see [pillColors]): Speak is the
-/// speaking skill's microphone and green, Hear listening's ear and purple,
-/// Read recognition's eye and blue, Write production's keyboard and orange
-/// (`lib/ui/skill_visuals.dart`, `ModeColors`), fixed whatever the seed. A
-/// sign language's one skill, Gestures, has its own: a raised hand, in red.
+/// How each skill looks on the Languages page: its icon, taken from the drill
+/// skill it matches (Speak the microphone, Hear the ear, Read the eye, Write
+/// the keyboard; a sign language's Gestures a raised hand). A pill's colour is
+/// not the skill's but the level's, see [pillColors] (owner, 2026-11-01).
 extension SkillKindVisuals on SkillKind {
   /// The drill skill whose look it borrows, or null for a gesture skill,
   /// which has its own.
@@ -30,11 +28,6 @@ extension SkillKindVisuals on SkillKind {
   IconData get icon => switch (this) {
     SkillKind.gesture => Icons.front_hand_outlined,
     _ => skill!.icon,
-  };
-
-  ModeColor colors(ModeColors modes) => switch (this) {
-    SkillKind.gesture => modes.gesture,
-    _ => modes.forSkill(skill!),
   };
 
   String label(AppLocalizations l10n) => switch (this) {
@@ -172,7 +165,7 @@ class SkillMarkGlyph extends StatelessWidget {
         return Icon(
           Icons.block,
           key: const ValueKey<String>('pill-mark-leave'),
-          size: big ? 24 : 16,
+          size: big ? 20 : 16,
           color: fg,
         );
       case SkillMark.learn:
@@ -223,7 +216,7 @@ class SkillMarkGlyph extends StatelessWidget {
 /// icon and the mark; a combined pill (a script's Read and Write, Spoken's
 /// Hear and Speak: [combined] true, [kind] the first skill) shows only the
 /// icons of the levels reached, and the cap alone for Learn; Leave is the
-/// block icon alone. Learn has a 2 px ring drawn inside (so its size does not
+/// block icon alone. Learn has a ring drawn inside (2 px, 1.5 px on a chip) (so its size does not
 /// change), Leave a dashed outline. With [onTap] it is the sheet's pill;
 /// without, the list's read-only chip. The long press says the level in a word
 /// or two ([pillTip]); a screen reader reads [name] and that.
@@ -262,8 +255,9 @@ class SkillBadge extends StatelessWidget {
     final colors = pillColors(ModeColors.of(context), mark);
     final leave = mark == SkillMark.leave;
     final fg = colors.onContainer;
-    final radius = big ? AppRadii.card : AppRadii.control;
-    final iconSize = big ? 24.0 : 16.0;
+    // The mockup's 12 (big) and 8 (chip): AppRadii.chip and AppRadii.control.
+    final radius = big ? AppRadii.chip : AppRadii.control;
+    final iconSize = big ? 20.0 : 16.0;
     final icons = <SkillKind>[
       if (!leave && (!combined || (mark != SkillMark.learn))) kind,
       if (combined && markIsBoth(mark)) secondKind(kind),
@@ -280,20 +274,20 @@ class SkillBadge extends StatelessWidget {
             size: iconSize,
             color: fg,
           ),
-          SizedBox(width: big ? 4 : 2),
+          SizedBox(width: big ? 2 : 1),
         ],
         SkillMarkGlyph(mark: mark, colors: colors, big: big),
       ],
     );
     final box = CustomPaint(
-      foregroundPainter: leave ? _DashedOutline(fg, radius) : null,
+      foregroundPainter: leave ? DashedOutline(fg, radius) : null,
       child: Container(
         constraints: BoxConstraints(
           minHeight: big ? 48 : 28,
-          minWidth: big ? 64 : 0,
+          minWidth: big ? 48 : 28,
         ),
         padding: EdgeInsetsDirectional.symmetric(
-          horizontal: big ? 12 : 6,
+          horizontal: big ? (leave ? 12 : 10) : 7,
           vertical: 2,
         ),
         decoration: BoxDecoration(
@@ -303,7 +297,7 @@ class SkillBadge extends StatelessWidget {
         foregroundDecoration: mark == SkillMark.learn
             ? BoxDecoration(
                 borderRadius: BorderRadius.circular(radius),
-                border: Border.all(color: fg, width: 2),
+                border: Border.all(color: fg, width: big ? 2 : 1.5),
               )
             : null,
         // No `alignment` here: it wraps the child in an Align, which fills
@@ -333,9 +327,10 @@ class SkillBadge extends StatelessWidget {
   }
 }
 
-/// A 1 px dashed rounded outline, for a skill that is Leave.
-class _DashedOutline extends CustomPainter {
-  _DashedOutline(this.color, this.radius);
+/// A 1 px dashed rounded outline, for a skill that is Leave (the pill and
+/// the key's swatch).
+class DashedOutline extends CustomPainter {
+  DashedOutline(this.color, this.radius);
 
   final Color color;
   final double radius;
@@ -363,6 +358,6 @@ class _DashedOutline extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_DashedOutline old) =>
+  bool shouldRepaint(DashedOutline old) =>
       old.color != color || old.radius != radius;
 }
