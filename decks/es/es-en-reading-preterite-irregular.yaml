@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-preterite-irregular"
+name: "Reading: a weekend trip"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a weekend that used irregular preterite forms. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-trip-postcard"
+    title: "A postcard about a weekend trip"
+    theme: "travel"
+    sentences:
+      - text: "El fin de semana fuimos a la playa."
+      - text: "Tuvimos mucho calor, pero hicimos una excursión."
+      - text: "Ayer estuve en el mercado con mi madre."
+      - text: "Vinieron mis primos también."
+    questions:
+      - id: "es-1601"
+        prompt: { en: "Where did they go?" }
+        options:
+          - { en: "To the mountains" }
+          - { en: "To the beach" }
+          - { en: "To the city" }
+        answer: 2
+      - id: "es-1602"
+        prompt: { en: "What did they do?" }
+        options:
+          - { en: "Made an excursion" }
+          - { en: "Stayed at home" }
+          - { en: "Went shopping" }
+        answer: 1
+      - id: "es-1603"
+        prompt: { en: "Who else came?" }
+        options:
+          - { en: "The cousins" }
+          - { en: "The neighbours" }
+          - { en: "The teachers" }
+        answer: 1
+  - id: "es-weekend-note"
+    title: "A note about the weekend"
+    theme: "travel"
+    sentences:
+      - text: "Mi hermano quiso ir al cine."
+      - text: "No pudo ver la película, llegó tarde."
+      - text: "Mi amiga trajo pan y queso."
+      - text: "Nadie tuvo dinero para el taxi."
+    questions:
+      - id: "es-1604"
+        prompt: { en: "What did the brother want?" }
+        options:
+          - { en: "To go to the cinema" }
+          - { en: "To stay at home" }
+          - { en: "To go shopping" }
+        answer: 1
+      - id: "es-1605"
+        prompt: { en: "Why did he not see the film?" }
+        options:
+          - { en: "The cinema was closed" }
+          - { en: "He arrived late" }
+          - { en: "He had no money" }
+        answer: 2
+      - id: "es-1606"
+        prompt: { en: "What did the friend bring?" }
+        options:
+          - { en: "Bread and cheese" }
+          - { en: "Cake and tea" }
+          - { en: "Water and juice" }
+        answer: 1

@@ -231,7 +231,9 @@ units:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - planned: { id: "es-grammar-preterite-irregular", grammar: "preterite-irregular" }
+  - decks: ["es-grammar-preterite-irregular", "es-reading-preterite-irregular"]
+    words: 0
+    grammar: ["preterite-irregular"]
     listening_passages:
       - { id: "a-busy-weekend", text: { "en": "Telling what you did and where you went last weekend" } }
     reading_passages:
