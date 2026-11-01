@@ -5,13 +5,13 @@ core: "mr-grammar-causative"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Causative: make someone go, get it done"
 license: "CC-BY-SA-4.0"
-description: "I made him go, I got the house cleaned: getting someone else to do an action, with लावणे and the causative verbs. Not yet checked by a Marathi speaker: please report any mistake."
+description: "I made him go, I got the house cleaned: getting someone else to do an action, with लावणे (lāvṇe) and the causative verbs. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
   name: "Causative: the dative form with लावणे (lāvṇe), to make someone do it"
   slot_name: "form"
   prompt: "{lemma} ({gloss}), {slot}"
-  slots: { "-ायला लावणे": "to make someone do it (causative with लावणे)" }
+  slots: { "-ायला लावणे": "to make someone do it (causative with लावणे (lāvṇe))" }
   entries:
     "jaane": "to go"
     "yene": "to come"
@@ -23,4 +23,4 @@ pattern:
     "paahne": "to see"
     "dene": "to give"
     "ghene": "to take"
-  notes: "To make someone do something, put the verb in its dative (-ायला, -āyalā) and add लावणे (lāvṇe), to put: त्याला जायला लावलं (tyālā jāyalā lāvlaṁ), I made him go. Some verbs have a causative of their own: करवणे (karvaṇe), to get it made; आणणे (āṇaṇe), to bring, from येणे (yeṇe), to come; and दाखवणे (dākhvaṇe), to show, from पाहणे (pāhṇe), to see. The causative is used for asking someone to do a job: घर साफ करायला लावलं (ghar sāf karāyalā lāvlaṁ), I got the house cleaned."
+  notes: "To make someone do something, put the verb in its dative (-ायला (-āyalā)) and add लावणे (lāvṇe), to put: त्याला जायला लावलं (tyālā jāyalā lāvlaṁ), I made him go. Some verbs have a causative of their own: करवणे (karvaṇe), to get it made; आणणे (āṇaṇe), to bring, from येणे (yeṇe), to come; and दाखवणे (dākhvaṇe), to show, from पाहणे (pāhṇe), to see. The causative is used for asking someone to do a job: घर साफ करायला लावलं (ghar sāf karāyalā lāvlaṁ), I got the house cleaned."

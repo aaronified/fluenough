@@ -5,10 +5,10 @@ core: "mr-grammar-comparison"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Comparing: taller than, the tallest"
 license: "CC-BY-SA-4.0"
-description: "He is taller than me, the tallest boy: how to compare two things, with पेक्षा and सर्वात. Not yet checked by a Marathi speaker: please report any mistake."
+description: "He is taller than me, the tallest boy: how to compare two things, with पेक्षा (pekṣā) and सर्वात (sarvāt). Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Comparative with पेक्षा and superlative with सर्वात"
+  name: "Comparative with पेक्षा (pekṣā) and superlative with सर्वात (sarvāt)"
   slot_name: "degree"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "पेक्षा": "more ... than (comparative)", "सर्वात": "the most ... (superlative)" }

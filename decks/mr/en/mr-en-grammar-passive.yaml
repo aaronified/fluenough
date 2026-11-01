@@ -8,7 +8,7 @@ license: "CC-BY-SA-4.0"
 description: "The food is made, the book was written, the work will be done: saying what happens without saying who does it. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Passive with जाणे (jāṇe): the past participle and जातो, गेला, जाईल"
+  name: "Passive with जाणे (jāṇe): the past participle and जातो (jāto), गेला (gelā), जाईल (jāīl)"
   slot_name: "tense"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "जातो": "is done (present)", "गेला": "was done (past)", "जाईल": "will be done (future)" }

@@ -8,7 +8,7 @@ license: "CC-BY-SA-4.0"
 description: "Before going and after eating: putting one action before or after another, with the verb in its before and after forms. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Before and after an action: -ण्यापूर्वी and -ल्यानंतर"
+  name: "Before and after an action: -ण्यापूर्वी (-ṇyāpūrvī) and -ल्यानंतर (-lyānantar)"
   slot_name: "time"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "-ण्यापूर्वी": "before doing it", "-ल्यानंतर": "after doing it" }

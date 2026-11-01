@@ -5,13 +5,13 @@ core: "mr-grammar-indefinites"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Someone, anyone, nobody"
 license: "CC-BY-SA-4.0"
-description: "Someone phoned, anything will do, nobody came: the words for some, any and no one, with ही and तरी. Not yet checked by a Marathi speaker: please report any mistake."
+description: "Someone phoned, anything will do, nobody came: the words for some, any and no one, with ही (hī) and तरी (tarī). Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
   name: "Indefinite words with ही (hī) and तरी (tarī)"
   slot_name: "form"
   prompt: "{lemma} ({gloss}), {slot}"
-  slots: { "+ही": "any at all (with ही)", "+तरी": "some or other (with तरी)" }
+  slots: { "+ही": "any at all (with ही (hī))", "+तरी": "some or other (with तरी (tarī))" }
   entries:
     "koni": "someone; anyone"
     "kahi": "some; a few"

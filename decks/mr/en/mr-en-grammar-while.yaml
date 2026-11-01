@@ -5,10 +5,10 @@ core: "mr-grammar-while"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "While doing: while going, on the way"
 license: "CC-BY-SA-4.0"
-description: "While I was eating the phone rang, on the way I met her: two actions at once, with the -त and -ता stems. Not yet checked by a Marathi speaker: please report any mistake."
+description: "While I was eating the phone rang, on the way I met her: two actions at once, with the -त (-t) and -ता (-tā) stems. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Simultaneous action: -त असताना and -ता"
+  name: "Simultaneous action: -त असताना (-t asatānā) and -ता (-tā)"
   slot_name: "form"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "-त असताना": "while doing (a longer action)", "-ता": "on the way, while doing (a quick action)" }

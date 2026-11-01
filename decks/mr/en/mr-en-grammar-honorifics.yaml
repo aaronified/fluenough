@@ -3,12 +3,12 @@ id: "mr-en-grammar-honorifics"
 kind: "layer"
 core: "mr-grammar-honorifics"
 native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Who you are speaking to: तू, तुम्ही, आपण"
+name: "Who you are speaking to: तू (tū), तुम्ही (tumhī), आपण (āpaṇ)"
 license: "CC-BY-SA-4.0"
 description: "You come, you all come, you (most respectful) come: choosing the right word for you and the matching verb, from a friend to an elder. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Forms of address: the present with तू, तुम्ही and आपण"
+  name: "Forms of address: the present with तू (tū), तुम्ही (tumhī) and आपण (āpaṇ)"
   slot_name: "person addressed"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "तू": "a friend or a child (familiar)", "तुम्ही": "an elder or a stranger (respectful)", "आपण": "a very senior or formal person (most respectful)" }

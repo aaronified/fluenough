@@ -5,10 +5,10 @@ core: "mr-grammar-conditional"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Conditional: if it rained, I would go"
 license: "CC-BY-SA-4.0"
-description: "If it had rained, I would have gone home: what would have happened, with जर and तर and the असता forms. Not yet checked by a Marathi speaker: please report any mistake."
+description: "If it had rained, I would have gone home: what would have happened, with जर (jar) and तर (tar) and the असता (asatā) forms. Not yet checked by a Marathi speaker: please report any mistake."
 tags: ["unreviewed"]
 pattern:
-  name: "Conditional past with असणे (asṇe) and जर ... तर"
+  name: "Conditional past with असणे (asṇe) and जर (jar) ... तर (tar)"
   slot_name: "person and gender"
   prompt: "{lemma} ({gloss}), {slot}"
   slots: { "मी (m)": "I, a man", "मी (f)": "I, a woman", "तो": "he", "ती": "she", "आम्ही": "we" }
@@ -18,4 +18,4 @@ pattern:
     "uthne": "to get up"
     "jhopne": "to sleep"
     "bolne": "to speak"
-  notes: "The conditional is the past of the verb with असतो (asto) for a man's I and we, असते (asate) for a woman's I, असता (asatā) for he and असती (asatī) for she: मी गेलो असतो (mī gelo asto), I would have gone; तो गेला असता (to gelā asatā), he would have gone. It goes with जर (jar), if, and तर (tar), then: जर पाऊस पडला असता, तर मी घरी गेलो असतो (jar pāūs paḍlā asatā, tar mī gharī gelo asto), if it had rained, I would have gone home. The negative is नसतो (nasto) in the same place: मी गेलो नसतो (mī gelo nasto), I would not have gone."
+  notes: "The conditional is the past of the verb with असतो (asto) for a man's I and we, असते (asate) for a woman's I, असता (asatā) for he and असती (asatī) for she: मी गेलो असतो (mī gelo asto), I would have gone; तो गेला असता (to gelā asatā), he would have gone. It goes with जर (jar), if, and तर (tar), then: जर पाऊस पडला असता (jar pāūs paḍlā asatā), तर मी घरी गेलो असतो (jar pāūs paḍlā asatā, tar mī gharī gelo asto), if it had rained, I would have gone home. The negative is नसतो (nasto) in the same place: मी गेलो नसतो (mī gelo nasto), I would not have gone."
