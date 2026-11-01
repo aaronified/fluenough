@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-history-sentences"
+kind: "layer"
+core: "es-history-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: history"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the past, kings and wars, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2593":
+    native: "The king lives in the city's palace."
+    bases: { "El": "the", "en": "in", "el": "the", "de": "of", "la": "the" }
+    confusables: { "reina": { why: "Reina is a queen, the feminine ruler." }, "principe": { why: "Príncipe is a prince, the heir, not the king." } }
+  "es-2594":
+    native: "The battle was in the valley of the castle."
+    bases: { "La": "the", "fue": "was; went", "en": "in", "el": "the", "del": "of" }
+    confusables: { "guerra": { why: "Guerra is the whole war, of which battles are a part." }, "fortaleza": { why: "Fortaleza is a fortress, a strong building." } }
+  "es-2595":
+    native: "The army conquers the colony."
+    bases: { "El": "the", "la": "the" }
+    confusables: { "imperio": { why: "Imperio is the whole empire, the larger power." }, "independencia": { why: "Independencia is freedom from rule, the opposite." } }
+  "es-2596":
+    native: "We visit the ruins of the ancient civilisation."
+    bases: { "las": "the", "de": "of", "la": "the" }
+    confusables: { "patrimonio": { why: "Patrimonio is heritage, what is kept from the past." }, "tumba": { why: "Tumba is a tomb, a grave." } }
+  "es-2597":
+    native: "The hero dies in the battle."
+    bases: { "El": "the", "en": "in", "la": "the" }
+    confusables: { "explorador": { why: "Explorador is an explorer, a traveller who discovers." }, "soldado": { why: "Soldado is a soldier, one fighter in an army." } }
+  "es-2598":
+    native: "The revolution changes the dynasty."
+    bases: { "La": "the", "la": "the" }
+    confusables: { "epoca": { why: "Época is an era, a period of time." }, "tradicion": { why: "Tradición is a tradition, a custom kept over years." } }

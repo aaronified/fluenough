@@ -424,7 +424,8 @@ units:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
-  - planned: { id: "es-history", theme: "history", words: 45 }
+  - decks: ["es-history", "es-history-sentences", "es-reading-history", "*"]
+    words: 39
     listening_passages:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
