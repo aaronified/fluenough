@@ -1,0 +1,168 @@
+schema: 1
+id: "fi-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "fi", iso639_3: "fin", name: "Finnish", script: "latin", tts: "fi-FI", icon: "S" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "fi-0011"
+    target: "Hyvää huomenta."
+    ipa: "ˈhyʋæː ˈhuomentɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hyvää", ref: "fi-0008" }, { word: "huomenta", base: "huomenta" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0012"
+    target: "Hyvää yötä."
+    ipa: "ˈhyʋæː ˈyøtæ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hyvää", ref: "fi-0008" }, { word: "yötä", base: "yö" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0013"
+    target: "Näkemiin."
+    ipa: "ˈnækemiːn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Näkemiin", base: "näkemiin" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0014"
+    target: "Anteeksi."
+    ipa: "ˈɑnteːksi"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Anteeksi", base: "anteeksi" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0015"
+    target: "Anteeksi, missä on vessa?"
+    ipa: "ˈɑnteːksi ˈmissæ on ˈʋessɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Anteeksi", base: "anteeksi" }, { word: "missä", base: "missä" }, { word: "on", base: "olla" }, { word: "vessa", base: "vessa" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0016"
+    target: "En ymmärrä."
+    ipa: "en ˈymːærːæ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "En", ref: "fi-0002" }, { word: "ymmärrä", base: "ymmärtää" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0017"
+    target: "En puhu suomea."
+    ipa: "en ˈpuhu ˈsuomeɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "En", ref: "fi-0002" }, { word: "puhu", base: "puhua" }, { word: "suomea", base: "suomi" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0018"
+    target: "Puhutko englantia?"
+    ipa: "ˈpuhutko ˈeŋɡlɑntiɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Puhutko", base: "puhua" }, { word: "englantia", base: "englanti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0019"
+    target: "Puhu hitaammin, ole hyvä."
+    ipa: "ˈpuhu ˈhitɑːmmin ˈole ˈhyʋæ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Puhu", base: "puhua" }, { word: "hitaammin", base: "hitaasti" }, { word: "ole", base: "olla" }, { word: "hyvä", ref: "fi-0008" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0020"
+    target: "Ole hyvä ja istu."
+    ipa: "ole ˈhyʋæ ja ˈistu"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Ole", base: "olla" }, { word: "hyvä", ref: "fi-0008" }, { word: "ja", ref: "fi-0010" }, { word: "istu", base: "istua" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0021"
+    target: "Paljonko tämä maksaa?"
+    ipa: "ˈpɑljonko ˈtæmæ ˈmɑksɑː"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Paljonko", base: "paljonko" }, { word: "tämä", base: "tämä" }, { word: "maksaa", base: "maksaa" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0022"
+    target: "Lasku, kiitos."
+    ipa: "ˈlɑsku ˈkiːtos"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Lasku", base: "lasku" }, { word: "kiitos", ref: "fi-0004" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0023"
+    target: "Apua!"
+    ipa: "ˈɑpuɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Apua", base: "apu" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0024"
+    target: "Missä on rautatieasema?"
+    ipa: "ˈmissæ on ˈrɑutɑtiˌɑsemɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Missä", base: "missä" }, { word: "on", base: "olla" }, { word: "rautatieasema", base: "rautatieasema" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0025"
+    target: "Mitä tuo tarkoittaa?"
+    ipa: "ˈmitæ ˈtuo ˈtɑrkoittɑː"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Mitä", base: "mikä" }, { word: "tuo", base: "tuo" }, { word: "tarkoittaa", base: "tarkoittaa" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0026"
+    target: "Nimeni on Anna."
+    ipa: "ˈnimeni on ˈɑnnɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Nimeni", base: "nimi" }, { word: "on", base: "olla" }, { word: "Anna", base: "Anna" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0027"
+    target: "Hauska tutustua."
+    ipa: "ˈhɑuskɑ ˈtutustuɑ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hauska", base: "hauska" }, { word: "tutustua", base: "tutustua" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0028"
+    target: "Mistä sinä olet kotoisin?"
+    ipa: "ˈmistæ ˈsinæ ˈolet koˈtoisin"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Mistä", base: "mistä" }, { word: "sinä", ref: "fi-0006" }, { word: "olet", base: "olla" }, { word: "kotoisin", base: "kotoisin" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0029"
+    target: "Kaikki on hyvin."
+    ipa: "ˈkɑikki on ˈhyʋin"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Kaikki", base: "kaikki" }, { word: "on", base: "olla" }, { word: "hyvin", ref: "fi-0009" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "fi-0030"
+    target: "Hyvää ruokahalua!"
+    ipa: "ˈhyʋæː ˈruokɑhɑlua"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hyvää", ref: "fi-0008" }, { word: "ruokahalua", base: "ruokahalu" }]
+    notes:
+      - { id: "n1", kind: "note" }
