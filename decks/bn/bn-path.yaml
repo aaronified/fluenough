@@ -758,13 +758,17 @@ units:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
   - decks: ["bn-reading-verbs-5"]
     words: 0
-  - planned: { id: "bn-grammar-honorifics", grammar: "honorifics" }
+  - decks: ["bn-grammar-honorifics", "bn-grammar-honorifics-sentences"]
+    words: 0
+    grammar: ["honorifics"]
     listening_passages:
       - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
   # After B1: spelling.
+  - decks: ["bn-reading-honorifics"]
+    words: 0
   - ["bn-spelling"]
   # The phonology decks (owner, 2026-10-26: "add the language level IPA decks"):
   # optional, for learners who know the IPA or want to learn it. The path has no

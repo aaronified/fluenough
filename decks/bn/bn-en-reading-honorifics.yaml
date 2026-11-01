@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-honorifics"
+name: "Reading: addressing an elder"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Speaking to an elder, a stranger and a friend, and a formal letter with its closing, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-addressing-an-elder"
+    title: "Speaking to an elder, a stranger and a friend"
+    theme: "addressing"
+    sentences:
+      - { text: "দাদু, আপনি কেমন আছেন?", reading: "dādu, āponi kemon āchen?", ipa: "d̪ad̪u aponi kemon atʃʰen" }
+      - { text: "ভাই, তুমি কোথায় যাবে?", reading: "bhāi, tumi kothāy jābe?", ipa: "bʱai t̪umi kot̪ʰaj dʒabe" }
+      - { text: "সুমন, তুই এসেছিস?", reading: "sumon, tui esechis?", ipa: "sumon t̪ui esetʃʰis" }
+      - { text: "অচেনা লোককে বলুন, কোথায় যাবেন।", reading: "ôcenā lokoke bolun, kothāy jāben.", ipa: "ɔtʃena lokoke bolun kot̪ʰaj dʒaben" }
+      - { text: "বন্ধুকে বলো, চলো একসঙ্গে যাই।", reading: "bondhuke bôlo, côlo ekosoṅge jāi.", ipa: "bond̪ʱuke bɔlo tʃɔlo ekosoŋɡe dʒai" }
+    questions:
+      - id: "bn-4555"
+        prompt: { "en": "The speaker uses আপনি with the grandfather." }
+        answer: true
+      - id: "bn-4556"
+        prompt: { "en": "Which word is used with a close friend called Sumon?" }
+        options: [{ "en": "তুই" }, { "en": "আপনি" }]
+        answer: 1
+      - id: "bn-4557"
+        prompt: { "en": "What form is used with a stranger?" }
+        options: [{ "en": "বলুন, the respectful form" }, { "en": "বল, the intimate form" }]
+        answer: 1
+  - id: "bn-formal-letter"
+    title: "A formal letter and its closing"
+    theme: "addressing"
+    sentences:
+      - { text: "শ্রদ্ধাভাজনেষু,", reading: "śrôddhābhājoneśu,", ipa: "ʃrɔd̪d̪ʱabʱadʒoneʃu" }
+      - { text: "আপনার আবেদনপত্রটি পেয়েছি।", reading: "āponār ābedonopotroṭi peyechi.", ipa: "aponar abed̪onopot̪roʈi pejetʃʰi" }
+      - { text: "অনুগ্রহ করে আগামী সপ্তাহে দেখা করুন।", reading: "ônugroh kôre āgāmi sôptāhe dekhā korun.", ipa: "ɔnuɡroɦ kɔre aɡami sɔpt̪aɦe d̪ekʰa korun" }
+      - { text: "আপনার বিশ্বস্ত,", reading: "āponār biśśost,", ipa: "aponar biʃʃost̪" }
+      - { text: "রমেশ", reading: "rômeś", ipa: "rɔmeʃ" }
+    questions:
+      - id: "bn-4558"
+        prompt: { "en": "The letter is written to someone the writer respects." }
+        answer: true
+      - id: "bn-4559"
+        prompt: { "en": "Which form does the letter use to ask for a meeting?" }
+        options: [{ "en": "Respectful: দেখা করুন" }, { "en": "Intimate: দেখা কর" }]
+        answer: 1
+      - id: "bn-4560"
+        prompt: { "en": "How does the letter end?" }
+        options: [{ "en": "With a respectful closing" }, { "en": "With a slang word" }]
+        answer: 1

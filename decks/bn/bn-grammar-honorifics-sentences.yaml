@@ -1,0 +1,87 @@
+schema: 1
+id: "bn-grammar-honorifics-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4544"
+    target: "আপনি একটু বসুন।"
+    reading: "āponi ekoṭu bosun."
+    ipa: "aponi ekoʈu bosun"
+    pos: "phrase"
+    bases: [{ word: "আপনি", ref: "bn-0138" }, { word: "একটু", ref: "bn-0551" }, { word: "বসুন", ref: "bn-0884" }]
+    confusables: [{ id: "c1", word: "বস", reading: "bos", kind: "word" }, { id: "c2", word: "বসো", reading: "boso", kind: "word" }]
+  - id: "bn-4545"
+    target: "তুমি কাল এসো।"
+    reading: "tumi kāl eso."
+    ipa: "t̪umi kal eso"
+    pos: "phrase"
+    bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কাল", ref: "bn-0316" }, { word: "এসো", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "আয়", reading: "āẏ", kind: "word" }, { id: "c2", word: "আসুন", reading: "āśun", kind: "word" }]
+  - id: "bn-4546"
+    target: "তুই আমার সঙ্গে খেলবি?"
+    reading: "tui āmār sôṅge khelobi?"
+    ipa: "t̪ui amar sɔŋɡe kʰelobi"
+    pos: "phrase"
+    bases: [{ word: "তুই", ref: "bn-0837" }, { word: "আমার", ref: "bn-0833" }, { word: "সঙ্গে", ref: "bn-0296" }, { word: "খেলবি", ref: "bn-0895" }]
+    confusables: [{ id: "c1", word: "খেলবেন", reading: "khelben", kind: "word" }, { id: "c2", word: "খেলবে", reading: "khelbe", kind: "word" }]
+  - id: "bn-4547"
+    target: "দাদা, আপনি কোথায় যাবেন?"
+    reading: "dādā, āponi kothāy jāben?"
+    ipa: "d̪ad̪a aponi kot̪ʰaj dʒaben"
+    pos: "phrase"
+    bases: [{ word: "দাদা", ref: "bn-0181" }, { word: "আপনি", ref: "bn-0138" }, { word: "কোথায়", ref: "bn-0163" }, { word: "যাবেন", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "যাবি", reading: "jābi", kind: "word" }, { id: "c2", word: "যাবে", reading: "jābe", kind: "word" }]
+  - id: "bn-4548"
+    target: "আপনারা বলুন, আমি শুনছি।"
+    reading: "āponārā bolun, āmi śunochi."
+    ipa: "aponara bolun ami ʃunotʃʰi"
+    pos: "phrase"
+    bases: [{ word: "আপনারা", ref: "bn-0838" }, { word: "বলুন", ref: "bn-0879" }, { word: "আমি", ref: "bn-0833" }, { word: "শুনছি", ref: "bn-0878" }]
+    confusables: [{ id: "c1", word: "বল", reading: "bol", kind: "word" }, { id: "c2", word: "বলো", reading: "bolo", kind: "word" }]
+  - id: "bn-4549"
+    target: "তুমি কি বই পড়ো?"
+    reading: "tumi ki boi pôṛo?"
+    ipa: "t̪umi ki boi pɔɽo"
+    pos: "phrase"
+    bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কি", ref: "bn-0064" }, { word: "বই", ref: "bn-1139" }, { word: "পড়ো", ref: "bn-0119" }]
+    confusables: [{ id: "c1", word: "পড়িস", reading: "poṛis", kind: "word" }, { id: "c2", word: "পড়েন", reading: "poṛen", kind: "word" }]
+  - id: "bn-4550"
+    target: "ডাক্তারবাবু, আপনি ওষুধটা খান।"
+    reading: "ḍāktārobābu, āponi ośudhoṭā khān."
+    ipa: "ɖakt̪arobabu aponi oʃud̪ʱoʈa kʰan"
+    pos: "phrase"
+    bases: [{ word: "ডাক্তারবাবু", ref: "bn-0376" }, { word: "আপনি", ref: "bn-0138" }, { word: "ওষুধটা", ref: "bn-0378" }, { word: "খান", ref: "bn-0876" }]
+    confusables: [{ id: "c1", word: "খা", reading: "khā", kind: "word" }, { id: "c2", word: "খাও", reading: "khāo", kind: "word" }]
+  - id: "bn-4551"
+    target: "তুই দরজাটা খুলে দে।"
+    reading: "tui dôrojāṭā khule de."
+    ipa: "t̪ui d̪ɔrodʒaʈa kʰule d̪e"
+    pos: "phrase"
+    bases: [{ word: "তুই", ref: "bn-0837" }, { word: "দরজাটা", ref: "bn-0599" }, { word: "খুলে", ref: "bn-0897" }]
+    confusables: [{ id: "c1", word: "খুলুন", reading: "khulun", kind: "word" }, { id: "c2", word: "খোলো", reading: "kholo", kind: "word" }]
+  - id: "bn-4552"
+    target: "স্যার, আপনি একটু শুনুন।"
+    reading: "sêr, āponi ekoṭu śunun."
+    ipa: "sær aponi ekoʈu ʃunun"
+    pos: "phrase"
+    bases: [{ word: "স্যার", ref: "bn-0187" }, { word: "আপনি", ref: "bn-0138" }, { word: "একটু", ref: "bn-0551" }, { word: "শুনুন", ref: "bn-0878" }]
+    confusables: [{ id: "c1", word: "শোন", reading: "śon", kind: "word" }, { id: "c2", word: "শোনো", reading: "śono", kind: "word" }]
+  - id: "bn-4553"
+    target: "তুমি রোজ সকালে উঠো।"
+    reading: "tumi roj sôkāle uṭho."
+    ipa: "t̪umi rodʒ sɔkale uʈʰo"
+    pos: "phrase"
+    bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "রোজ", ref: "bn-1528" }, { word: "সকালে", ref: "bn-1545" }, { word: "উঠো", ref: "bn-0885" }]
+    confusables: [{ id: "c1", word: "উঠিস", reading: "uṭhis", kind: "word" }, { id: "c2", word: "উঠেন", reading: "uṭhen", kind: "word" }]
+  - id: "bn-4554"
+    target: "মা, তুমি একটু দেখো।"
+    reading: "mā, tumi ekoṭu dekho."
+    ipa: "ma t̪umi ekoʈu d̪ekʰo"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "তুমি", ref: "bn-0835" }, { word: "একটু", ref: "bn-0551" }, { word: "দেখো", ref: "bn-0877" }]
+    confusables: [{ id: "c1", word: "দেখ", reading: "dekh", kind: "word" }, { id: "c2", word: "দেখুন", reading: "dekhun", kind: "word" }]
