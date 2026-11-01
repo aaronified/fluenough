@@ -115,7 +115,16 @@ void main() {
     await tester.tap(find.text('i'));
     await tester.pumpAndSettle();
     expect(find.byKey(const ValueKey<String>('language-family')), findsNothing);
-    expect(find.text(l10n(tester).languagesInfoDialect), findsOneWidget);
+    // The skills sheet stays open under the info dialog and shows the same
+    // dialect label, so the finder is scoped to the info dialog.
+    final info = find.byType(AlertDialog);
+    expect(
+      find.descendant(
+        of: info,
+        matching: find.text(l10n(tester).languagesInfoDialect),
+      ),
+      findsOneWidget,
+    );
     expect(tester.takeException(), isNull);
   });
 
