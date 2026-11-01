@@ -488,6 +488,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
         scripts: _scripts,
         title: _view.title,
         close: l10n.languagesInfoClose,
+        closeLabel: l10n.languagesInfoCloseLabel,
       ),
     );
   }
@@ -1335,6 +1336,7 @@ class _InfoDialog extends StatelessWidget {
     required this.scripts,
     required this.title,
     required this.close,
+    required this.closeLabel,
   });
 
   final LanguageView view;
@@ -1343,7 +1345,10 @@ class _InfoDialog extends StatelessWidget {
   final AppState state;
   final List<String> scripts;
   final String title;
+
+  /// The cross's tooltip (one word) and its screen-reader label.
   final String close;
+  final String closeLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -1388,8 +1393,9 @@ class _InfoDialog extends StatelessWidget {
       title: Row(
         children: <Widget>[
           Expanded(child: Text(title)),
-          IconButton(
-            tooltip: close,
+          LabelledIconButton(
+            label: closeLabel,
+            hint: close,
             onPressed: () => Navigator.of(context).pop(),
             icon: const Icon(Icons.close),
           ),

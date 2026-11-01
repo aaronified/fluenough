@@ -71,6 +71,7 @@ class DeckSearchBar extends StatelessWidget {
     required this.onBackspaceEmpty,
     required this.showEnd,
     required this.endTooltip,
+    required this.endLabel,
     required this.onEnd,
   });
 
@@ -95,7 +96,10 @@ class DeckSearchBar extends StatelessWidget {
   final VoidCallback onBackspaceEmpty;
 
   final bool showEnd;
+
+  /// The end button's tooltip (one word) and its screen-reader label.
   final String endTooltip;
+  final String endLabel;
   final VoidCallback onEnd;
 
   static const double _barHeight = 56;
@@ -238,8 +242,9 @@ class DeckSearchBar extends StatelessWidget {
                 ),
               ),
               if (showEnd)
-                IconButton(
-                  tooltip: endTooltip,
+                LabelledIconButton(
+                  label: endLabel,
+                  hint: endTooltip,
                   icon: const Icon(Icons.close),
                   onPressed: onEnd,
                 ),

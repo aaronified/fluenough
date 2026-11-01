@@ -345,6 +345,9 @@ class _DecksPageState extends State<DecksPage> {
           endTooltip: _search.text.isNotEmpty || _chips.isNotEmpty
               ? l10n.decksSearchClear
               : l10n.decksSearchClose,
+          endLabel: _search.text.isNotEmpty || _chips.isNotEmpty
+              ? l10n.decksSearchClearLabel
+              : l10n.decksSearchCloseLabel,
           onEnd: () => _clearOrClose(state),
         ),
       ),

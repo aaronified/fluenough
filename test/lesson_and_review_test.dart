@@ -94,8 +94,9 @@ import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/ipa_line.dart';
-import 'package:fluenough/ui/widgets/play_button.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
+import 'package:fluenough/ui/widgets/play_button.dart';
+import 'package:fluenough/ui/widgets/speaker.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -3834,11 +3835,18 @@ cards:
             tester,
             find.text(l10n.readingSource(readingFixtureSource)),
           );
-          expect(find.byTooltip(l10n.readingPlaySentence), findsNWidgets(4));
+          expect(find.byType(SpeakerIcon), findsNWidgets(4));
           // No question yet.
           expect(find.text('What does the buyer ask first?'), findsNothing);
 
-          await tester.tap(find.byTooltip(l10n.readingPlaySentence).at(1));
+          await tester.tap(
+            find
+                .byWidgetPredicate(
+                  (w) =>
+                      w is SpeakerIcon && w.label == l10n.readingPlaySentence,
+                )
+                .at(1),
+          );
           await tester.pumpAndSettle();
           expect(tts.spoken.single.text, shop[1]);
           expect(tts.spoken.single.bcp47, 'bn-IN');

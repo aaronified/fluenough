@@ -277,7 +277,7 @@ class PinKeypad extends StatelessWidget {
         return Center(
           child: IconButton(
             onPressed: onDelete,
-            tooltip: l10n.hintDelete,
+            tooltip: l10n.brailleBackspace,
             iconSize: 28,
             color: scheme.onSurface,
             style: IconButton.styleFrom(

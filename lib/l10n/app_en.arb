@@ -1290,9 +1290,13 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
-  "decksSearchClose": "Close search",
+  "decksSearchClose": "Close",
   "@decksSearchClose": {
-    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
+    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again. One word."
+  },
+  "decksSearchCloseLabel": "Close search",
+  "@decksSearchCloseLabel": {
+    "description": "Screen reader label of the button that closes the search on the Decks tab (its tooltip is decksSearchClose)."
   },
   "decksUnitSearchHint": "Search units in this course",
   "@decksUnitSearchHint": {
@@ -2727,7 +2731,7 @@
   },
   "brailleBackspace": "Backspace",
   "@brailleBackspace": {
-    "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer."
+    "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer. The PIN pad's delete button uses the same word."
   },
   "drillCountWrong": "Count it wrong",
   "@drillCountWrong": {
@@ -9218,9 +9222,13 @@
       }
     }
   },
-  "soundsOfWordButton": "Sounds",
+  "soundsOfWordButton": "Symbols",
   "@soundsOfWordButton": {
-    "description": "Tooltip and screen-reader label of the button on a card that opens a session of the IPA course's symbols used in the card's word."
+    "description": "Tooltip of the button on a card that opens a session of the IPA course's symbols used in the card's word. One word, so it does not read as audio beside the speaker."
+  },
+  "soundsOfWordLabel": "The sounds of this word",
+  "@soundsOfWordLabel": {
+    "description": "Screen reader label of the button on a card that opens the IPA symbols of the card's word (its tooltip is soundsOfWordButton)."
   },
   "soundsOfWordOfferTitle": "Add the IPA course?",
   "@soundsOfWordOfferTitle": {
@@ -10200,15 +10208,15 @@
   },
   "appLogCopy": "Copy",
   "@appLogCopy": {
-    "description": "Word under the icon of the app log's Copy action, in its bottom bar. Its tooltip is settingsLogCopy."
+    "description": "Word under the icon of the app log's Copy action, in its bottom bar. Its tooltip is the same word."
   },
   "appLogExport": "Export",
   "@appLogExport": {
-    "description": "Word under the icon of the app log's Export action, in its bottom bar. Its tooltip is settingsLogExport."
+    "description": "Word under the icon of the app log's Export action, in its bottom bar. Its tooltip is the same word."
   },
   "appLogClear": "Clear",
   "@appLogClear": {
-    "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is settingsLogClear."
+    "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is the same word."
   },
   "settingsBackupMadeByYou": "Made by you, {date}",
   "@settingsBackupMadeByYou": {
@@ -11879,9 +11887,13 @@
       }
     }
   },
-  "decksSearchClear": "Clear search",
+  "decksSearchClear": "Clear",
   "@decksSearchClear": {
-    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527)."
+    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527). One word."
+  },
+  "decksSearchClearLabel": "Clear search",
+  "@decksSearchClearLabel": {
+    "description": "Screen reader label of the search bar's end button while it holds text or a chip (its tooltip is decksSearchClear)."
   },
   "searchTokensHeader": "Narrow the search",
   "@searchTokensHeader": {
@@ -12671,9 +12683,13 @@
       }
     }
   },
-  "languagesInfoClose": "Close details",
+  "languagesInfoClose": "Close",
   "@languagesInfoClose": {
-    "description": "Screen reader label of the details panel's cross."
+    "description": "Tooltip of the details panel's cross. One word."
+  },
+  "languagesInfoCloseLabel": "Close details",
+  "@languagesInfoCloseLabel": {
+    "description": "Screen reader label of the details panel's cross (its tooltip is languagesInfoClose)."
   },
   "languagesPercentB1": "{percent}% of B1",
   "@languagesPercentB1": {

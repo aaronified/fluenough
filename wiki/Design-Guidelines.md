@@ -37,16 +37,17 @@ no full stop. The message is also the control's label for a screen reader.
 icon-only tap target in a file with no hint.
 A pill that cycles on a tap (the Languages skill pills) is wrapped in `Hint` too: a
 long press only shows the hint (the skill and its state), a tap still acts. A
-button that repeats while held (the minutes stepper) takes none, since the hint
-would pop up mid-repeat, and the language bar takes none, since its long press
-cancelled the bar's fold on touch. A control that shows its own text needs no
-hint.
+button that repeats while held takes none, since the hint would pop up
+mid-repeat, and the language bar takes none, since its long press cancelled the
+bar's fold on touch. The minutes steppers (Settings and Today) do not repeat:
+their `IconButton`s take `tooltip:`, "Less" and "More". A control that shows its
+own text needs no hint.
 
 - **One word, two at most (owner, 2026-11-01: "All buttons in the UI must
   have toast. That explains in natural english, but extremely concise. If one
   word can do it, never ever use 2. If it cannot be one word, try your best
   for 2").** Every icon-only button's tooltip is a plain word, "Back",
-  "Close", "Edit", "Delete", "Copy", "Search", "Sort", "More", never a phrase
+  "Close", "Edit", "Delete", "Copy", "Clear", "Sort", "More", never a phrase
   and never the app's own skill vocabulary. Where a screen reader needs the
   longer words (the pencil of one part in Suggest a change), the button is a
   `LabelledIconButton`: the label is the long text, the hint the short word.
