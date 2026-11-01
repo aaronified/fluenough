@@ -209,11 +209,9 @@ units:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "fr-grammar-partitive", grammar: "partitive" }
-    listening_passages:
-      - { id: "some-bread-some-milk", text: { "en": "Asking for some bread, some water and no more sugar" } }
-    reading_passages:
-      - { id: "breakfast-order", text: { "en": "A hotel breakfast order form" } }
+  - decks: ["fr-grammar-partitive", "fr-reading-partitive"]
+    words: 0
+    grammar: ["partitive"]
   - planned: { id: "fr-food", theme: "food", words: 50 }
     listening_passages:
       - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }

@@ -1,0 +1,21 @@
+schema: 1
+id: "fr-en-grammar-partitive"
+kind: "layer"
+core: "fr-grammar-partitive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Some and any with things you cannot count"
+license: "CC-BY-SA-4.0"
+description: "A partitive word says how much of a thing there is, when it is not counted. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Partitive"
+  slot_name: "amount"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "some": "some", "not-any": "not any", "a-lot": "a lot of" }
+  entries:
+    "lait": "milk"
+    "vin": "wine"
+    "eau": "water"
+    "musique": "music"
+    "sport": "sport"
+    "vent": "wind"
+  notes: "Du, de la, de l' and des mean 'some' with a thing that is not counted, such as milk or music: du lait, de la musique, de l'eau. After a negative, and after beaucoup, de is used alone: pas de lait, beaucoup de vin. Des is the plural of the partitive with a noun that is counted in the plural, as in des amis."

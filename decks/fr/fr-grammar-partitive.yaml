@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-grammar-partitive"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["some", "not-any", "a-lot"]
+  entries:
+    - lemma: "lait"
+      ipa: "lɛ"
+      forms:
+        "some": "du lait"
+        "not-any": "pas de lait"
+        "a-lot": "beaucoup de lait"
+    - lemma: "vin"
+      ipa: "vɛ̃"
+      forms:
+        "some": "du vin"
+        "not-any": "pas de vin"
+        "a-lot": "beaucoup de vin"
+    - lemma: "eau"
+      key: "eau"
+      ipa: "o"
+      forms:
+        "some": "de l'eau"
+        "not-any": "pas d'eau"
+        "a-lot": "beaucoup d'eau"
+    - lemma: "musique"
+      ipa: "myzik"
+      forms:
+        "some": "de la musique"
+        "not-any": "pas de musique"
+        "a-lot": "beaucoup de musique"
+    - lemma: "sport"
+      ipa: "spɔʁ"
+      forms:
+        "some": "du sport"
+        "not-any": "pas de sport"
+        "a-lot": "beaucoup de sport"
+    - lemma: "vent"
+      ipa: "vɑ̃"
+      forms:
+        "some": "du vent"
+        "not-any": "pas de vent"
+        "a-lot": "beaucoup de vent"
