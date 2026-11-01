@@ -1,0 +1,50 @@
+schema: 1
+id: "es-festivals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2639"
+    target: "Celebramos la fiesta con un desfile."
+    ipa: "θeleˈbɾamos la ˈfjesta kon un desˈfile"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Celebramos", ref: "es-2636" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "desfile", ref: "es-2614" }]
+    confusables: [{ id: "procesion", ref: "es-2613", kind: "word" }, { id: "carnaval", ref: "es-2612", kind: "word" }]
+  - id: "es-2640"
+    target: "Me pongo un disfraz y una máscara."
+    ipa: "me ˈponɡo un disˈfɾaθ i ˈuna ˈmaskaɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "pongo", ref: "es-1628" }, { word: "un", base: "un" }, { word: "disfraz", ref: "es-2615" }, { word: "y", ref: "es-0048" }, { word: "una", base: "una" }, { word: "máscara", ref: "es-2626" }]
+    confusables: [{ id: "traje", ref: "es-1035", kind: "word" }, { id: "adorno", ref: "es-2623", kind: "word" }]
+  - id: "es-2641"
+    target: "Los cohetes y los globos llenan el cielo."
+    ipa: "los koˈetes i los ˈɡlobos ˈʝenan el ˈθjelo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "cohetes", ref: "es-2616" }, { word: "y", ref: "es-0048" }, { word: "los", base: "los" }, { word: "globos", ref: "es-2617" }, { word: "llenan", base: "llenar" }, { word: "el", base: "el" }, { word: "cielo", ref: "es-1122" }]
+    confusables: [{ id: "farol", ref: "es-2635", kind: "word" }, { id: "vela", ref: "es-2624", kind: "word" }]
+  - id: "es-2642"
+    target: "Hay una multitud en la feria del pueblo."
+    ipa: "aj ˈuna multiˈtud en la ˈfeɾja del ˈpweblo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "multitud", ref: "es-2627" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "feria", ref: "es-2628" }, { word: "del", base: "del" }, { word: "pueblo", ref: "es-0783" }]
+    confusables: [{ id: "invitado", ref: "es-2621", kind: "word" }, { id: "banda", ref: "es-2620", kind: "word" }]
+  - id: "es-2643"
+    target: "Hacemos un brindis por el santo."
+    ipa: "aˈθemos un ˈbɾindis poɾ el ˈsanto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "un", base: "un" }, { word: "brindis", ref: "es-2625" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "santo", ref: "es-2632" }]
+    confusables: [{ id: "religioso", ref: "es-2630", kind: "word" }, { id: "celebracion", ref: "es-2611", kind: "word" }]
+  - id: "es-2644"
+    target: "Comemos dulces en la Navidad."
+    ipa: "koˈmemos ˈdulθes en la nabiˈdad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Comemos", ref: "es-0028" }, { word: "dulces", ref: "es-0657" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "Navidad", ref: "es-2618" }]
+    confusables: [{ id: "nochevieja", ref: "es-2619", kind: "word" }, { id: "tradicional", ref: "es-2629", kind: "word" }]

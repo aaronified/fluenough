@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-festivals-sentences"
+kind: "layer"
+core: "es-festivals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: festivals"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about festivals and celebrations, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2639":
+    native: "We celebrate the festival with a parade."
+    bases: { "la": "the", "con": "with", "un": "a" }
+    confusables: { "procesion": { why: "Procesión is a religious procession, a walk with a ceremony." }, "carnaval": { why: "Carnaval is a carnival with costumes, a different festival." } }
+  "es-2640":
+    native: "I put on a costume and a mask."
+    bases: { "Me": "to me", "un": "a", "una": "a" }
+    confusables: { "traje": { why: "Traje is a suit or outfit, not a costume for a party." }, "adorno": { why: "Adorno is an ornament, a decoration." } }
+  "es-2641":
+    native: "The fireworks and balloons fill the sky."
+    bases: { "Los": "the", "los": "the", "llenan": "to fill", "el": "the" }
+    confusables: { "farol": { why: "Farol is a lantern, a light on the street." }, "vela": { why: "Vela is a candle, a small light." } }
+  "es-2642":
+    native: "There is a crowd at the village fair."
+    bases: { "Hay": "there is; there are", "una": "a", "en": "in", "la": "the", "del": "of" }
+    confusables: { "invitado": { why: "Invitado is a guest, one person invited." }, "banda": { why: "Banda is a band of musicians, a group." } }
+  "es-2643":
+    native: "We make a toast to the saint."
+    bases: { "un": "a", "por": "for", "el": "the" }
+    confusables: { "religioso": { why: "Religioso is religious, about faith." }, "celebracion": { why: "Celebración is the celebration itself." } }
+  "es-2644":
+    native: "We eat sweets at Christmas."
+    bases: { "en": "in", "la": "the" }
+    confusables: { "nochevieja": { why: "Nochevieja is New Year's Eve, a different festival." }, "tradicional": { why: "Tradicional is traditional, the custom kept." } }
