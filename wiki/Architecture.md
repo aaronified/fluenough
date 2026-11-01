@@ -84,6 +84,13 @@ before and after. A confirmed restore is the one exception to `reviews` and
 `leech_actions` being append-only (AGENTS.md rule 9), and this is its
 log: append-only and guarded like them, and never cleared.
 
+**`replay_snapshots`** — what opening the app works out from the whole review
+log, kept for the next launch (migration 10, #857, ADR-0051): one row, the
+result in compact binary and the stamp of the log, leech actions, fitted
+parameters and app version it was made from. A cache: used only while its
+stamp equals the database's now, otherwise the log is replayed and a new one
+kept. `reviews` is not touched.
+
 **Backup.** Settings → Export review log writes both logs, and the fitted
 parameters, as one JSONL file, and Import merges such a file back, adding
 only the reviews not already there and rebuilding `card_states` from the
