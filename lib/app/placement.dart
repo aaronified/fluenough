@@ -6,6 +6,7 @@ import '../core/grading/romanised.dart';
 import '../core/models/aksharas.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
+import '../core/models/drill_mode.dart';
 import 'deck_catalog.dart';
 
 /// The word a form question shows a form of: its [lemma], romanised as
@@ -862,12 +863,18 @@ class DeckWalk {
   }
 
   /// The cards of deck [index] a meaning can be typed for: words, not a
-  /// table's forms nor a rule's.
+  /// table's forms nor a rule's, nor a card that opts out of production
+  /// (`modes`). Such a card's meaning describes a sound, a spelling or a
+  /// register, as "clusters at the start of a word, in Sanskrit words and
+  /// loans" does, and there is no word to write for it; the drills never
+  /// ask it either ([Card.modesIn]).
   List<Card> _typable(int index) {
     final entry = decks[index];
     return <Card>[
       for (final card in _pool(entry))
-        if (!_isFormCell(card, entry)) card,
+        if (!_isFormCell(card, entry) &&
+            !card.modes.contains(DrillMode.production))
+          card,
     ];
   }
 
