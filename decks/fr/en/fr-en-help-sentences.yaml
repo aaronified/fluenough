@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-help-sentences"
+kind: "layer"
+core: "fr-help-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: help"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about asking for help, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1085":
+    native: "I need help."
+    confusables:
+      "secours": { why: "Secours is 'rescue', for a serious need." }
+      "urgence": { why: "Urgence is 'emergency'." }
+  "fr-1086":
+    native: "Call the police."
+    confusables:
+      "pompier": { why: "Pompier is 'firefighter'." }
+      "medecin": { why: "Médecin is 'doctor'." }
+  "fr-1087":
+    native: "Careful of the danger."
+    bases:
+      "au": "to the (masculine)"
+    confusables:
+      "securite": { why: "Sécurité is 'safety'." }
+      "urgence": { why: "Urgence is 'emergency'." }
+  "fr-1088":
+    native: "I repeat the name."
+    confusables:
+      "message": { why: "Message is 'message'." }
+      "numero": { why: "Numéro is 'number'." }
+  "fr-1089":
+    native: "I am sure."
+    confusables:
+      "perdre": { why: "Perdre is 'to lose'." }
+      "information": { why: "Information is 'information'." }
+  "fr-1090":
+    native: "The doctor is kind."
+    confusables:
+      "pompier": { why: "Pompier is 'firefighter'." }
+      "police": { why: "Police is 'police'." }
+  "fr-1091":
+    native: "It is an accident."
+    confusables:
+      "urgence": { why: "Urgence is 'emergency'." }
+      "danger": { why: "Danger is 'danger', a risk." }

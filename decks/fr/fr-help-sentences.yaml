@@ -1,0 +1,96 @@
+schema: 1
+id: "fr-help-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1085"
+    target: "J'ai besoin d'aide."
+    ipa: "ʒe bəzwɛ̃ dɛd"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "besoin", ref: "fr-1080" }
+      - { word: "d'aide", ref: "fr-1065" }
+    confusables:
+      - { id: "secours", ref: "fr-1069", kind: "word" }
+      - { id: "urgence", ref: "fr-1068", kind: "word" }
+  - id: "fr-1086"
+    target: "Appelez la police."
+    ipa: "aple la pɔlis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Appelez", ref: "fr-1071" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "police", ref: "fr-1067" }
+    confusables:
+      - { id: "pompier", ref: "fr-1072", kind: "word" }
+      - { id: "medecin", ref: "fr-1073", kind: "word" }
+  - id: "fr-1087"
+    target: "Attention au danger."
+    ipa: "atɑ̃sjɔ̃ o dɑ̃ʒe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Attention", ref: "fr-1075" }
+      - { word: "au", base: "au" }
+      - { word: "danger", ref: "fr-1074" }
+    confusables:
+      - { id: "securite", ref: "fr-1078", kind: "word" }
+      - { id: "urgence", ref: "fr-1068", kind: "word" }
+  - id: "fr-1088"
+    target: "Je répète le nom."
+    ipa: "ʒə ʁepɛt lə nɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "répète", ref: "fr-1077" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "nom", ref: "fr-0073" }
+    confusables:
+      - { id: "message", ref: "fr-1082", kind: "word" }
+      - { id: "numero", ref: "fr-1070", kind: "word" }
+  - id: "fr-1089"
+    target: "Je suis sûr."
+    ipa: "ʒə sɥi syʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "sûr", ref: "fr-1079" }
+    confusables:
+      - { id: "perdre", ref: "fr-1084", kind: "word" }
+      - { id: "information", ref: "fr-1081", kind: "word" }
+  - id: "fr-1090"
+    target: "Le médecin est gentil."
+    ipa: "lə medsɛ̃ ɛ ʒɑ̃ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "médecin", ref: "fr-1073" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "gentil", ref: "fr-0434" }
+    confusables:
+      - { id: "pompier", ref: "fr-1072", kind: "word" }
+      - { id: "police", ref: "fr-1067", kind: "word" }
+  - id: "fr-1091"
+    target: "C'est est un accident."
+    ipa: "sɛt œ̃n aksidɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "C'est", ref: "fr-0143" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "accident", ref: "fr-1083" }
+    confusables:
+      - { id: "urgence", ref: "fr-1068", kind: "word" }
+      - { id: "danger", ref: "fr-1074", kind: "word" }

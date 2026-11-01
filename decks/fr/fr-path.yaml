@@ -220,11 +220,8 @@ units:
   - decks: ["fr-grammar-futur-proche", "fr-reading-futur-proche"]
     words: 0
     grammar: ["futur-proche"]
-  - planned: { id: "fr-help", theme: "help", words: 20 }
-    listening_passages:
-      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
-    reading_passages:
-      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+  - decks: ["fr-help", "fr-help-sentences", "fr-reading-help", "*"]
+    words: 20
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.

@@ -1,0 +1,225 @@
+schema: 1
+id: "fr-help"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1065"
+    target: "aide"
+    ipa: "ɛd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai besoin d'aide.", ipa: "ʒe bəzwɛ̃ dɛd", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "d'aide", base: "aide" }] }
+      - { target: "L'aide est là.", ipa: "lɛd ɛ la", bases: [{ word: "L'aide", base: "aide" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-1066"
+    target: "aider"
+    ipa: "ede"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu aides ma sœur.", ipa: "ty ɛd ma sœʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "aides", base: "aider" }, { word: "ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }] }
+      - { target: "Nous aidons le voisin.", ipa: "nu zedɔ̃ lə vwazɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "aidons", base: "aider" }, { word: "le", ref: "fr-0543" }, { word: "voisin", ref: "fr-0101" }] }
+  - id: "fr-1067"
+    target: "police"
+    ipa: "pɔlis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Appelez la police.", ipa: "aple la pɔlis", bases: [{ word: "Appelez", ref: "fr-1071" }, { word: "la", ref: "fr-0544" }, { word: "police", base: "police" }] }
+      - { target: "La police est là.", ipa: "la pɔlis ɛ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "police", base: "police" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-1068"
+    target: "urgence"
+    ipa: "yʁʒɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est une urgence.", ipa: "sɛt yn yʁʒɑ̃s", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "urgence", base: "urgence" }] }
+      - { target: "Nous avons une urgence.", ipa: "nu zavɔ̃ yn yʁʒɑ̃s", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "urgence", base: "urgence" }] }
+  - id: "fr-1069"
+    target: "secours"
+    ipa: "səkuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Au secours !", ipa: "o səkuʁ", bases: [{ word: "Au", base: "au" }, { word: "secours", base: "secours" }] }
+      - { target: "Le secours est rapide.", ipa: "lə səkuʁ ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "secours", base: "secours" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-1070"
+    target: "numéro"
+    ipa: "nymeʁo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est votre numéro ?", ipa: "kɛl ɛ vɔtʁ nymeʁo", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "numéro", base: "numéro" }] }
+      - { target: "Le numéro est important.", ipa: "lə nymeʁo ɛ ɛ̃poʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "numéro", base: "numéro" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-1071"
+    target: "appeler"
+    ipa: "aple"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'appelle le médecin.", ipa: "ʒapɛl lə medsɛ̃", bases: [{ word: "J'appelle", base: "appeler" }, { word: "le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }] }
+      - { target: "Vous appelez souvent ?", ipa: "vu zaple suvɑ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "appelez", base: "appeler" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-1072"
+    target: "pompier"
+    ipa: "pɔ̃pje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pompier est là.", ipa: "lə pɔ̃pje ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pompier", base: "pompier" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Mon ami est pompier.", ipa: "mɔ̃n ami ɛ pɔ̃pje", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "pompier", base: "pompier" }] }
+  - id: "fr-1073"
+    target: "médecin"
+    ipa: "medsɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin est gentil.", ipa: "lə medsɛ̃ ɛ ʒɑ̃ti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", base: "médecin" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Je vais chez le médecin.", ipa: "ʒə ve ʃe lə medsɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "chez", ref: "fr-0472" }, { word: "le", ref: "fr-0543" }, { word: "médecin", base: "médecin" }] }
+  - id: "fr-1074"
+    target: "danger"
+    ipa: "dɑ̃ʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est un danger.", ipa: "sɛt œ̃ dɑ̃ʒe", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "danger", base: "danger" }] }
+      - { target: "Le danger est près.", ipa: "lə dɑ̃ʒe ɛ pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "danger", base: "danger" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }] }
+  - id: "fr-1075"
+    target: "attention"
+    ipa: "atɑ̃sjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Attention !", ipa: "atɑ̃sjɔ̃", bases: [{ word: "Attention", base: "Attention" }] }
+      - { target: "Faites attention !", ipa: "fɛt atɑ̃sjɔ̃", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "attention", base: "attention" }] }
+  - id: "fr-1076"
+    target: "pardon"
+    ipa: "paʁdɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pardon !", ipa: "paʁdɔ̃", bases: [{ word: "Pardon", base: "Pardon" }] }
+      - { target: "Je demande pardon.", ipa: "ʒə dəmɑ̃d paʁdɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", ref: "fr-0521" }, { word: "pardon", base: "pardon" }] }
+  - id: "fr-1077"
+    target: "répéter"
+    ipa: "ʁepete"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous répétez ?", ipa: "vu ʁepete", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "répétez", base: "répéter" }] }
+      - { target: "Je répète le nom.", ipa: "ʒə ʁepɛt lə nɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "répète", base: "répéter" }, { word: "le", ref: "fr-0543" }, { word: "nom", ref: "fr-0073" }] }
+  - id: "fr-1078"
+    target: "sécurité"
+    ipa: "sekyʁite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sécurité est importante.", ipa: "la sekyʁite ɛ ɛ̃poʁtɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "sécurité", base: "sécurité" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+      - { target: "C'est est pour la sécurité.", ipa: "sɛt puʁ la sekyʁite", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "sécurité", base: "sécurité" }] }
+  - id: "fr-1079"
+    target: "sûr"
+    ipa: "syʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis sûr.", ipa: "ʒə sɥi syʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "sûr", base: "sûr" }] }
+      - { target: "Elle est sûre.", ipa: "ɛl ɛ syʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "sûre", base: "sûr" }] }
+  - id: "fr-1080"
+    target: "besoin"
+    ipa: "bəzwɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai besoin de l'eau.", ipa: "ʒe bəzwɛ̃ də lo", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "besoin", base: "besoin" }, { word: "de", base: "de" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "Vous avez besoin d'argent ?", ipa: "vu zave bəzwɛ̃ daʁʒɑ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "besoin", base: "besoin" }, { word: "d'argent", ref: "fr-0751" }] }
+  - id: "fr-1081"
+    target: "information"
+    ipa: "ɛ̃fɔʁmasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une information.", ipa: "ʒe yn ɛ̃fɔʁmasjɔ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "information", base: "information" }] }
+      - { target: "L'information est importante.", ipa: "lɛ̃fɔʁmasjɔ̃ ɛ ɛ̃poʁtɑ̃t", bases: [{ word: "L'information", base: "information" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+  - id: "fr-1082"
+    target: "message"
+    ipa: "mesaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'envoie un message.", ipa: "ʒɑ̃vwa œ̃ mesaʒ", bases: [{ word: "J'envoie", ref: "fr-0672" }, { word: "un", ref: "fr-0208" }, { word: "message", base: "message" }] }
+      - { target: "Le message est court.", ipa: "lə mesaʒ ɛ kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "message", base: "message" }, { word: "est", ref: "fr-0021" }, { word: "court", ref: "fr-0422" }] }
+  - id: "fr-1083"
+    target: "accident"
+    ipa: "aksidɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est un accident.", ipa: "sɛt œ̃n aksidɑ̃", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "accident", base: "accident" }] }
+      - { target: "Nous avons un accident.", ipa: "nu zavɔ̃ zœ̃n aksidɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "accident", base: "accident" }] }
+  - id: "fr-1084"
+    target: "perdre"
+    ipa: "pɛʁdʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je perds mon sac.", ipa: "ʒə pɛʁ mɔ̃ sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "perds", base: "perdre" }, { word: "mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Tu perds souvent.", ipa: "ty pɛʁ suvɑ̃", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "perds", base: "perdre" }, { word: "souvent", ref: "fr-0326" }] }
