@@ -10,6 +10,12 @@ library;
 /// written to review files, so they are permanent. [gender], [register],
 /// [hears] and [warning] (#508) are the card's own scalars: each has a fixed
 /// set of values, which the review bot checks before it writes one.
+///
+/// [altNativeAdd] and [notSynonymsAdd] (ADR-0050) add one item to a list on
+/// the card's native side, an extra accepted answer and a refused synonym.
+/// Their `now` is always "" and their `text` is the one item. Their names in
+/// a deck are `alt_native_add` and `not_synonyms_add`: read and write a
+/// field by [wire], never by `name`.
 enum ProposalField {
   target,
   reading,
@@ -20,6 +26,26 @@ enum ProposalField {
   register,
   hears,
   warning,
+  altNativeAdd,
+  notSynonymsAdd;
+
+  /// The field's name in a deck and in a review file.
+  String get wire => switch (this) {
+    altNativeAdd => 'alt_native_add',
+    notSynonymsAdd => 'not_synonyms_add',
+    _ => name,
+  };
+
+  /// The field a deck names [wire], or null when the app does not know it.
+  static ProposalField? fromWire(Object? wire) {
+    for (final field in values) {
+      if (field.wire == wire) return field;
+    }
+    return null;
+  }
+
+  /// Whether the field adds one item to a list and replaces nothing.
+  bool get isAdd => this == altNativeAdd || this == notSynonymsAdd;
 }
 
 class Proposal {

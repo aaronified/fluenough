@@ -6,6 +6,7 @@
 /// Never carries a rater code: a state is a count, never a person.
 library;
 
+import '../grading/meaning_rules.dart' show meaningKey;
 import '../models/proposal.dart';
 import 'deck_review.dart';
 
@@ -76,6 +77,8 @@ ProposalField? proposalFieldOf(CardPart part) => switch (part) {
   CardPart.register => ProposalField.register,
   CardPart.hears => ProposalField.hears,
   CardPart.warning => ProposalField.warning,
+  CardPart.altNative => ProposalField.altNativeAdd,
+  CardPart.notSynonyms => ProposalField.notSynonymsAdd,
   _ => null,
 };
 
@@ -99,9 +102,13 @@ SentState sentStateOf({
       unknown: SentUnknown.notTracked,
     );
   }
+  // The bot writes a refused word in comparison form (ADR-0050), so an item
+  // added to a list is the same item once both are compared.
+  bool same(String a, String b) =>
+      field.isAdd ? meaningKey(a) == meaningKey(b) : a.trim() == b.trim();
   for (final p in proposals) {
     if (p.field == field &&
-        p.text.trim() == suggestion.text.trim() &&
+        same(p.text, suggestion.text) &&
         (code == null || p.by == code)) {
       final more = agreementsNeeded - p.accepted.length;
       return SentState(SentOutcome.waiting, moreNeeded: more < 0 ? 0 : more);
@@ -113,7 +120,7 @@ SentState sentStateOf({
       unknown: SentUnknown.notInDeckYet,
     );
   }
-  if (current.trim() == suggestion.text.trim()) {
+  if (same(current, suggestion.text)) {
     return const SentState(SentOutcome.accepted);
   }
   if (current.trim() == suggestion.now.trim()) {

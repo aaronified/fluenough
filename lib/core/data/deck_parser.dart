@@ -3318,7 +3318,7 @@ Proposal? _proposal(String card, YamlNode item) {
   }
 
   final id = text('id');
-  final field = ProposalField.values.asNameMap()[text('field')];
+  final field = ProposalField.fromWire(text('field'));
   final now = text('now');
   final proposed = text('text');
   final by = text('by');

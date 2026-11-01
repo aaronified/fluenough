@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
 import '../../core/models/proposal.dart';
+import '../../core/review/added_item.dart';
 import '../../core/review/card_fields.dart';
 import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
@@ -23,6 +24,8 @@ CardPart partOf(ProposalField field) => switch (field) {
   ProposalField.register => CardPart.register,
   ProposalField.hears => CardPart.hears,
   ProposalField.warning => CardPart.warning,
+  ProposalField.altNativeAdd => CardPart.altNative,
+  ProposalField.notSynonymsAdd => CardPart.notSynonyms,
 };
 
 /// [text], a proposal's `now` or `text`, as the card's reviewers read it: a
@@ -46,7 +49,8 @@ String proposalShown(
 /// that holds the field, which may be another deck's when [deck] lists the
 /// card by ref. Only those whose field still says, in [deck], what the
 /// proposer saw: one whose field has changed since is outdated, and the
-/// review bot removes it.
+/// review bot removes it. A proposal to add an item (ADR-0050) has no field
+/// text to compare: it is outdated once the card has the item.
 List<Proposal> waitingProposals(
   Iterable<DeckEntry> decks,
   DeckEntry deck,
@@ -57,7 +61,9 @@ List<Proposal> waitingProposals(
     for (final d in <DeckEntry>[deck, ...decks])
       if (d.language.code == deck.language.code)
         for (final p in d.deck.proposals[card.id] ?? const <Proposal>[])
-          if ((partText(card, partOf(p.field)) ?? '') == p.now &&
+          if ((p.field.isAdd
+                  ? !cardHasItem(card, partOf(p.field), p.text)
+                  : (partText(card, partOf(p.field)) ?? '') == p.now) &&
               seen.add(p.id))
             p,
   ];

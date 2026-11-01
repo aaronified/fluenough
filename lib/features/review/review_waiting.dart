@@ -5,6 +5,7 @@ import '../../core/decks/deck_index.dart' show IndexLanguage;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/proposal.dart';
+import '../../core/review/added_item.dart' show cardHasItem;
 import '../../core/review/deck_review.dart';
 import '../../core/review/sent_state.dart';
 import '../../core/review/review_pairs.dart';
@@ -293,8 +294,12 @@ List<SentSuggestion> sentSuggestionsOf(AppState state) {
       final card = deck?.cards.where((c) => c.id == cardId).firstOrNull;
       for (final s in cardReview.suggestions) {
         final field = proposalFieldOf(s.part);
+        // An item added to a list (ADR-0050) has no field text: it is in the
+        // deck once the card's list has it.
         final current = card == null || field == null
             ? null
+            : field.isAdd
+            ? (cardHasItem(card, partOf(field), s.text) ? s.text : '')
             : partText(card, partOf(field)) ?? '';
         out.add((
           review: review,
