@@ -1,0 +1,185 @@
+schema: 1
+id: "mr-en-literature"
+kind: "layer"
+core: "mr-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature"
+description: "Books and writing: the novel and the short story, the poem, the chapter and the cover, and the words for publishing and translating a book. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1769":
+    native: "literature"
+    notes:
+      "n1": "{1} is literature, written works of art and thought."
+    examples:
+      "मला मराठी साहित्य आवडतं.": { native: "I like Marathi literature.", bases: { "मराठी": "Marathi" } }
+      "साहित्याचा अभ्यास करतो.": "I study literature."
+  "mr-1770":
+    native: "novel"
+    notes:
+      "n1": "{1} is a novel, a long work of fiction."
+    examples:
+      "ही कादंबरी खूप गाजली.": { native: "This novel became very famous.", bases: { "गाजली": "to become famous" } }
+      "कादंबरी वाचायला तीन दिवस लागले.": { native: "It took three days to read the novel.", bases: { "लागले": "to take" } }
+  "mr-1771":
+    native: "story (tale)"
+    notes:
+      "n1": "{1} is a story or a tale. Compare कथा (kathā), a written short story."
+    examples:
+      "आजी एक गोष्ट सांगते.": "Grandmother tells a story."
+      "ही गोष्ट खरी आहे.": { native: "This story is true.", bases: { "खरी": "true", "आहे": "to be" } }
+  "mr-1772":
+    native: "collection of short stories"
+    notes:
+      "n1": "{1} is a collection of short stories."
+    examples:
+      "त्याचा नवा कथासंग्रह आला.": { native: "His new collection of stories came out.", bases: { "नवा": "new" } }
+      "कथासंग्रहातली पहिली कथा छान आहे.": { native: "The first story in the collection is nice.", bases: { "पहिली": "first", "आहे": "to be" } }
+  "mr-1773":
+    native: "collection of poems"
+    notes:
+      "n1": "{1} is a collection of poems."
+    examples:
+      "तिचा कवितासंग्रह प्रसिद्ध झाला.": { native: "Her collection of poems was published.", bases: { "प्रसिद्ध": "published", "झाला": "to become" } }
+      "कवितासंग्रह सुंदर सजवला आहे.": { native: "The collection of poems is beautifully decorated.", bases: { "आहे": "to be" } }
+  "mr-1774":
+    native: "book (formal), scripture"
+    notes:
+      "n1": "{1} is a book, a formal word, often a serious or sacred book."
+    examples:
+      "हा जुना ग्रंथ आहे.": { native: "This is an old book.", bases: { "आहे": "to be" } }
+      "ग्रंथालयात अनेक ग्रंथ आहेत.": { native: "There are many books in the library.", bases: { "आहेत": "to be" } }
+  "mr-1775":
+    native: "page"
+    notes:
+      "n1": "{1} is a page of a book."
+    examples:
+      "पृष्ठ क्रमांक पन्नास उघडा.": { native: "Open to page number fifty.", bases: { "क्रमांक": "number" } }
+      "शेवटचं पृष्ठ फाटलं आहे.": { native: "The last page is torn.", bases: { "शेवटचं": "last", "फाटलं": "to tear", "आहे": "to be" } }
+  "mr-1776":
+    native: "chapter"
+    notes:
+      "n1": "{1} is a chapter of a book."
+    examples:
+      "पहिला अध्याय वाचला.": { native: "I read the first chapter.", bases: { "पहिला": "first" } }
+      "या अध्यायात इतिहास आहे.": { native: "This chapter has history.", bases: { "आहे": "to be" } }
+  "mr-1777":
+    native: "title"
+    notes:
+      "n1": "{1} is the title of a book, a poem or a story."
+    examples:
+      "पुस्तकाचं शीर्षक सुंदर आहे.": { native: "The book's title is beautiful.", bases: { "आहे": "to be" } }
+      "कवितेला शीर्षक द्या.": "Give the poem a title."
+  "mr-1778":
+    native: "cover (of a book)"
+    notes:
+      "n1": "{1} is the front cover of a book."
+    examples:
+      "मुखपृष्ठ रंगीत आहे.": { native: "The cover is colourful.", bases: { "रंगीत": "colourful", "आहे": "to be" } }
+      "मुखपृष्ठावर चित्र काढलं.": "A picture was drawn on the cover."
+  "mr-1779":
+    native: "preface, introduction"
+    notes:
+      "n1": "{1} is a preface, the introduction at the start of a book."
+    examples:
+      "प्रस्तावना लेखकाने लिहिली.": "The author wrote the preface."
+      "प्रस्तावना वाचा.": "Read the preface."
+  "mr-1780":
+    native: "passage, extract"
+    notes:
+      "n1": "{1} is a passage or an extract from a text."
+    examples:
+      "परीक्षेत एक उतारा होता.": { native: "There was a passage in the exam.", bases: { "होता": "to be" } }
+      "हा उतारा मोठ्याने वाचा.": { native: "Read this passage aloud.", bases: { "मोठ्याने": "aloud" } }
+  "mr-1781":
+    native: "character (in a story)"
+    notes:
+      "n1": "{1} is a character in a story or a play."
+    examples:
+      "कथेतलं मुख्य पात्र शेतकरी आहे.": { native: "The main character of the story is a farmer.", bases: { "मुख्य": "main", "आहे": "to be" } }
+      "या पात्राचा स्वभाव विनोदी आहे.": { native: "The nature of this character is comic.", bases: { "स्वभाव": "nature", "आहे": "to be" } }
+  "mr-1782":
+    native: "style"
+    notes:
+      "n1": "{1} is a style of writing or art."
+    examples:
+      "त्याची लेखन शैली वेगळी आहे.": { native: "His writing style is different.", bases: { "लेखन": "writing", "वेगळी": "different", "आहे": "to be" } }
+      "सोपी शैली आवडते.": "I like a simple style."
+  "mr-1783":
+    native: "imaginary, fictional"
+    notes:
+      "n1": "{1} describes a story that is made up, not true."
+    examples:
+      "ही कथा कल्पित आहे.": { native: "This story is fictional.", bases: { "आहे": "to be" } }
+      "कल्पित पात्रं खरी वाटतात.": { native: "The fictional characters seem real.", bases: { "खरी": "real", "वाटतात": "to seem" } }
+  "mr-1784":
+    native: "true story"
+    notes:
+      "n1": "{1} is a true story, based on real events."
+    examples:
+      "ही सत्यकथा आहे.": { native: "This is a true story.", bases: { "आहे": "to be" } }
+      "सत्यकथेवर चित्रपट बनला.": { native: "A film was made on a true story.", bases: { "बनला": "to be made" } }
+  "mr-1785":
+    native: "line (of a poem or text)"
+    notes:
+      "n1": "{1} is a line of a poem or a text."
+    examples:
+      "कवितेतली पहिली ओळ आवडली.": { native: "I liked the first line of the poem.", bases: { "पहिली": "first" } }
+      "पुढची ओळ वाचा.": { native: "Read the next line.", bases: { "पुढची": "next" } }
+  "mr-1786":
+    native: "translation (of a text)"
+    notes:
+      "n1": "{1} is a translation of a text into another language."
+    examples:
+      "या पुस्तकाचा अनुवाद झाला.": { native: "This book was translated.", bases: { "झाला": "to become" } }
+      "अनुवाद चांगला आहे.": { native: "The translation is good.", bases: { "आहे": "to be" } }
+  "mr-1787":
+    native: "translator"
+    notes:
+      "n1": "{1} is a translator."
+    examples:
+      "अनुवादकाने पुस्तक छान अनुवादलं.": "The translator translated the book nicely."
+      "हा अनुवादक इंग्रजी जाणतो.": { native: "This translator knows English.", bases: { "इंग्रजी": "English", "जाणतो": "to know" } }
+  "mr-1788":
+    native: "publisher"
+    notes:
+      "n1": "{1} is a publisher, the company that prints and sells books."
+    examples:
+      "प्रकाशकाने पुस्तक छापलं.": { native: "The publisher printed the book.", bases: { "छापलं": "to print" } }
+      "प्रकाशक नवीन लेखकांना संधी देतात.": { native: "Publishers give new writers a chance.", bases: { "नवीन": "new" } }
+  "mr-1789":
+    native: "to publish"
+    notes:
+      "n1": "{1} is printing and making a book available."
+    examples:
+      "त्याने पहिली कादंबरी प्रकाशित केली.": { native: "He published his first novel.", bases: { "पहिली": "first" } }
+      "पुस्तक पुढच्या वर्षी प्रकाशित होईल.": { native: "The book will be published next year.", bases: { "पुढच्या": "next", "होईल": "to be" } }
+  "mr-1790":
+    native: "to translate"
+    notes:
+      "n1": "{1} is translating a text into another language."
+    examples:
+      "तिने कथा मराठीत अनुवादित केली.": { native: "She translated the story into Marathi.", bases: { "मराठीत": "into Marathi", "अनुवादित": "translated" } }
+      "ही कविता इंग्रजीत अनुवादित करा.": { native: "Translate this poem into English.", bases: { "इंग्रजीत": "into English", "अनुवादित": "translated" } }
+  "mr-1791":
+    native: "to describe"
+    notes:
+      "n1": "{1} is describing something in words."
+    examples:
+      "त्याने गाव छान वर्णन केलं.": "He described the village nicely."
+      "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.": { native: "The novel has a beautiful description of nature.", bases: { "आहे": "to be" } }
+  "mr-1792":
+    native: "to imagine"
+    notes:
+      "n1": "{1} is forming a picture in the mind."
+    examples:
+      "मी त्या जगाची कल्पना केली.": "I imagined that world."
+      "कल्पना करा की तू राजा आहेस.": { native: "Imagine that you are a king.", bases: { "आहेस": "to be" } }
+  "mr-1793":
+    native: "to unfold, to reveal"
+    notes:
+      "n1": "{1} is unfolding a story or a mystery bit by bit."
+    examples:
+      "कथा हळूहळू उलगडत गेली.": { native: "The story unfolded slowly.", bases: { "हळूहळू": "slowly" } }
+      "रहस्य शेवटी उलगडलं.": { native: "The mystery was finally revealed.", bases: { "शेवटी": "at the end" } }

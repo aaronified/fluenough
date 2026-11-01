@@ -1,0 +1,280 @@
+schema: 1
+id: "mr-literature"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "literature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1769"
+    target: "साहित्य"
+    reading: "sāhity"
+    ipa: "saɦit̪j"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "साहित्य", reading: "sāhity" }] }
+    examples:
+      - { target: "मला मराठी साहित्य आवडतं.", reading: "malā marāṭhi sāhity āvḍtam̐.", ipa: "məla məraʈʰi saɦit̪j aʋɖt̪ə̃", bases: [{ word: "मला", ref: "mr-0080" }, { word: "मराठी", base: "मराठी", reading: "marāṭhi" }, { word: "आवडतं", ref: "mr-0585" }] }
+      - { target: "साहित्याचा अभ्यास करतो.", reading: "sāhityācā abhyās karto.", ipa: "saɦit̪jatsa əbʱjas kərt̪o", bases: [{ word: "साहित्याचा", ref: "mr-1769" }, { word: "अभ्यास", ref: "mr-1115" }, { word: "करतो", ref: "mr-0712" }] }
+  - id: "mr-1770"
+    target: "कादंबरी"
+    reading: "kādambari"
+    ipa: "kad̪əmbəri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कादंबरी", reading: "kādambari" }] }
+    examples:
+      - { target: "ही कादंबरी खूप गाजली.", reading: "hi kādambari khup gājli.", ipa: "ɦi kad̪əmbəri kʰup ɡadzli", bases: [{ word: "ही", ref: "mr-0679" }, { word: "गाजली", base: "गाजणे", reading: "gājṇe" }] }
+      - { target: "कादंबरी वाचायला तीन दिवस लागले.", reading: "kādambari vācāylā tin divas lāgle.", ipa: "kad̪əmbəri ʋatsajla t̪in d̪iʋəs laɡle", bases: [{ word: "वाचायला", ref: "mr-0513" }, { word: "तीन", ref: "mr-0254" }, { word: "दिवस", ref: "mr-0485" }, { word: "लागले", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1771"
+    target: "गोष्ट"
+    reading: "goṣṭ"
+    ipa: "ɡoʂʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गोष्ट", reading: "goṣṭ" }] }
+    examples:
+      - { target: "आजी एक गोष्ट सांगते.", reading: "āji ek goṣṭ sāṅgate.", ipa: "adʒi ek ɡoʂʈ saŋɡət̪e", bases: [{ word: "सांगते", ref: "mr-0720" }] }
+      - { target: "ही गोष्ट खरी आहे.", reading: "hi goṣṭ khari āhe.", ipa: "ɦi ɡoʂʈ kʰəri aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "खरी", base: "खरा", reading: "kharā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1772"
+    target: "कथासंग्रह"
+    reading: "kathāsaṅgrah"
+    ipa: "kət̪ʰasəŋɡrəɦ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कथासंग्रह", reading: "kathāsaṅgrah" }] }
+    examples:
+      - { target: "त्याचा नवा कथासंग्रह आला.", reading: "tyācā navā kathāsaṅgrah ālā.", ipa: "t̪jatsa nəʋa kət̪ʰasəŋɡrəɦ ala", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "नवा", base: "नवा", reading: "navā" }, { word: "आला", ref: "mr-0711" }] }
+      - { target: "कथासंग्रहातली पहिली कथा छान आहे.", reading: "kathāsaṅgrahātli pahili kathā chān āhe.", ipa: "kət̪ʰasəŋɡrəɦat̪li pəɦili kət̪ʰa tʃʰan aɦe", bases: [{ word: "कथासंग्रहातली", ref: "mr-1772" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कथा", ref: "mr-1528" }, { word: "छान", ref: "mr-0758" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1773"
+    target: "कवितासंग्रह"
+    reading: "kavitāsaṅgrah"
+    ipa: "kəʋit̪asəŋɡrəɦ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कवितासंग्रह", reading: "kavitāsaṅgrah" }] }
+    examples:
+      - { target: "तिचा कवितासंग्रह प्रसिद्ध झाला.", reading: "ticā kavitāsaṅgrah prasiddh jhālā.", ipa: "t̪itsa kəʋit̪asəŋɡrəɦ prəsid̪d̪ʱ dzʱala", bases: [{ word: "तिचा", ref: "mr-0677" }, { word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "कवितासंग्रह सुंदर सजवला आहे.", reading: "kavitāsaṅgrah sundar sajvlā āhe.", ipa: "kəʋit̪asəŋɡrəɦ sund̪ər sədzʋla aɦe", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "सजवला", ref: "mr-1064" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1774"
+    target: "ग्रंथ"
+    reading: "granth"
+    ipa: "ɡrənt̪ʰ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ग्रंथ", reading: "granth" }] }
+    examples:
+      - { target: "हा जुना ग्रंथ आहे.", reading: "hā junā granth āhe.", ipa: "ɦa dzuna ɡrənt̪ʰ aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "जुना", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ग्रंथालयात अनेक ग्रंथ आहेत.", reading: "granthālyāt anek granth āhet.", ipa: "ɡrənt̪ʰaljat̪ ənek ɡrənt̪ʰ aɦet̪", bases: [{ word: "ग्रंथालयात", ref: "mr-0976" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1775"
+    target: "पृष्ठ"
+    reading: "pruṣṭh"
+    ipa: "pruʂʈʰ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पृष्ठ", reading: "pruṣṭh" }] }
+    examples:
+      - { target: "पृष्ठ क्रमांक पन्नास उघडा.", reading: "pruṣṭh kramāṅk pannās ughḍā.", ipa: "pruʂʈʰ krəmaŋk pənnas uɡʱɖa", bases: [{ word: "क्रमांक", base: "क्रमांक", reading: "kramāṅk" }, { word: "उघडा", ref: "mr-0724" }] }
+      - { target: "शेवटचं पृष्ठ फाटलं आहे.", reading: "śevṭcam̐ pruṣṭh phāṭlam̐ āhe.", ipa: "ʃeʋʈtsə̃ pruʂʈʰ pʰaʈlə̃ aɦe", bases: [{ word: "शेवटचं", base: "शेवटचा", reading: "śevṭcā" }, { word: "फाटलं", base: "फाटणे", reading: "phāṭṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1776"
+    target: "अध्याय"
+    reading: "adhyāy"
+    ipa: "əd̪ʱjaj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अध्याय", reading: "adhyāy" }] }
+    examples:
+      - { target: "पहिला अध्याय वाचला.", reading: "pahilā adhyāy vāclā.", ipa: "pəɦila əd̪ʱjaj ʋatsla", bases: [{ word: "पहिला", base: "पहिला", reading: "pahilā" }, { word: "वाचला", ref: "mr-0513" }] }
+      - { target: "या अध्यायात इतिहास आहे.", reading: "yā adhyāyāt itihās āhe.", ipa: "ja əd̪ʱjajat̪ it̪iɦas aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "अध्यायात", ref: "mr-1776" }, { word: "इतिहास", ref: "mr-1566" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1777"
+    target: "शीर्षक"
+    reading: "śirṣak"
+    ipa: "ʃirʂək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शीर्षक", reading: "śirṣak" }] }
+    examples:
+      - { target: "पुस्तकाचं शीर्षक सुंदर आहे.", reading: "pustakācam̐ śirṣak sundar āhe.", ipa: "pust̪əkatsə̃ ʃirʂək sund̪ər aɦe", bases: [{ word: "पुस्तकाचं", ref: "mr-0384" }, { word: "सुंदर", ref: "mr-0770" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कवितेला शीर्षक द्या.", reading: "kavitelā śirṣak dyā.", ipa: "kəʋit̪ela ʃirʂək d̪ja", bases: [{ word: "कवितेला", ref: "mr-1554" }, { word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1778"
+    target: "मुखपृष्ठ"
+    reading: "mukhpruṣṭh"
+    ipa: "mukʰpruʂʈʰ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मुखपृष्ठ", reading: "mukhpruṣṭh" }] }
+    examples:
+      - { target: "मुखपृष्ठ रंगीत आहे.", reading: "mukhpruṣṭh raṅgit āhe.", ipa: "mukʰpruʂʈʰ rəŋɡit̪ aɦe", bases: [{ word: "रंगीत", base: "रंगीत", reading: "raṅgit" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मुखपृष्ठावर चित्र काढलं.", reading: "mukhpruṣṭhāvar citr kāḍhlam̐.", ipa: "mukʰpruʂʈʰaʋər tʃit̪r kaɖʱlə̃", bases: [{ word: "मुखपृष्ठावर", ref: "mr-1778" }, { word: "चित्र", ref: "mr-1546" }, { word: "काढलं", ref: "mr-0796" }] }
+  - id: "mr-1779"
+    target: "प्रस्तावना"
+    reading: "prastāvnā"
+    ipa: "prəst̪aʋna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रस्तावना", reading: "prastāvnā" }] }
+    examples:
+      - { target: "प्रस्तावना लेखकाने लिहिली.", reading: "prastāvnā lekhkāne lihili.", ipa: "prəst̪aʋna lekʰkane liɦili", bases: [{ word: "लेखकाने", ref: "mr-1472" }, { word: "लिहिली", ref: "mr-0716" }] }
+      - { target: "प्रस्तावना वाचा.", reading: "prastāvnā vācā.", ipa: "prəst̪aʋna ʋatsa", bases: [{ word: "वाचा", ref: "mr-0513" }] }
+  - id: "mr-1780"
+    target: "उतारा"
+    reading: "utārā"
+    ipa: "ut̪ara"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उतारा", reading: "utārā" }] }
+    examples:
+      - { target: "परीक्षेत एक उतारा होता.", reading: "parikṣet ek utārā hotā.", ipa: "pərikʂet̪ ek ut̪ara ɦot̪a", bases: [{ word: "परीक्षेत", ref: "mr-1117" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "हा उतारा मोठ्याने वाचा.", reading: "hā utārā moṭhyāne vācā.", ipa: "ɦa ut̪ara moʈʰjane ʋatsa", bases: [{ word: "हा", ref: "mr-0679" }, { word: "मोठ्याने", base: "मोठ्याने", reading: "moṭhyāne" }, { word: "वाचा", ref: "mr-0513" }] }
+  - id: "mr-1781"
+    target: "पात्र"
+    reading: "pātr"
+    ipa: "pat̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पात्र", reading: "pātr" }] }
+    examples:
+      - { target: "कथेतलं मुख्य पात्र शेतकरी आहे.", reading: "kathetlam̐ mukhy pātr śetkri āhe.", ipa: "kət̪ʰet̪lə̃ mukʰj pat̪r ʃet̪kri aɦe", bases: [{ word: "कथेतलं", ref: "mr-1528" }, { word: "मुख्य", base: "मुख्य", reading: "mukhy" }, { word: "शेतकरी", ref: "mr-0239" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या पात्राचा स्वभाव विनोदी आहे.", reading: "yā pātrācā svabhāv vinodi āhe.", ipa: "ja pat̪ratsa sʋəbʱaʋ ʋinod̪i aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "पात्राचा", ref: "mr-1781" }, { word: "स्वभाव", base: "स्वभाव", reading: "svabhāv" }, { word: "विनोदी", ref: "mr-1532" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1782"
+    target: "शैली"
+    reading: "śaili"
+    ipa: "ʃəili"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शैली", reading: "śaili" }] }
+    examples:
+      - { target: "त्याची लेखन शैली वेगळी आहे.", reading: "tyāci lekhan śaili vegḷi āhe.", ipa: "t̪jatʃi lekʰən ʃəili ʋeɡɭi aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "लेखन", base: "लेखन", reading: "lekhan" }, { word: "वेगळी", base: "वेगळा", reading: "vegḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सोपी शैली आवडते.", reading: "sopi śaili āvḍte.", ipa: "sopi ʃəili aʋɖt̪e", bases: [{ word: "सोपी", ref: "mr-0768" }, { word: "आवडते", ref: "mr-0585" }] }
+  - id: "mr-1783"
+    target: "कल्पित"
+    reading: "kalpit"
+    ipa: "kəlpit̪"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कल्पित", reading: "kalpit" }] }
+    examples:
+      - { target: "ही कथा कल्पित आहे.", reading: "hi kathā kalpit āhe.", ipa: "ɦi kət̪ʰa kəlpit̪ aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "कथा", ref: "mr-1528" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कल्पित पात्रं खरी वाटतात.", reading: "kalpit pātram̐ khari vāṭtāt.", ipa: "kəlpit̪ pat̪rə̃ kʰəri ʋaʈt̪at̪", bases: [{ word: "पात्रं", ref: "mr-1781" }, { word: "खरी", base: "खरा", reading: "kharā" }, { word: "वाटतात", base: "वाटणे", reading: "vāṭṇe" }] }
+  - id: "mr-1784"
+    target: "सत्यकथा"
+    reading: "satyakthā"
+    ipa: "sət̪jəkt̪ʰa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सत्यकथा", reading: "satyakthā" }] }
+    examples:
+      - { target: "ही सत्यकथा आहे.", reading: "hi satyakthā āhe.", ipa: "ɦi sət̪jəkt̪ʰa aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सत्यकथेवर चित्रपट बनला.", reading: "satyakthevar citrapaṭ banlā.", ipa: "sət̪jəkt̪ʰeʋər tʃit̪rəpəʈ bənla", bases: [{ word: "सत्यकथेवर", ref: "mr-1784" }, { word: "चित्रपट", ref: "mr-1522" }, { word: "बनला", base: "बनणे", reading: "banṇe" }] }
+  - id: "mr-1785"
+    target: "ओळ"
+    reading: "oḷ"
+    ipa: "oɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ओळ", reading: "oḷ" }] }
+    examples:
+      - { target: "कवितेतली पहिली ओळ आवडली.", reading: "kavitetli pahili oḷ āvḍli.", ipa: "kəʋit̪et̪li pəɦili oɭ aʋɖli", bases: [{ word: "कवितेतली", ref: "mr-1554" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "आवडली", ref: "mr-0585" }] }
+      - { target: "पुढची ओळ वाचा.", reading: "puḍhci oḷ vācā.", ipa: "puɖʱtʃi oɭ ʋatsa", bases: [{ word: "पुढची", base: "पुढचा", reading: "puḍhcā" }, { word: "वाचा", ref: "mr-0513" }] }
+  - id: "mr-1786"
+    target: "अनुवाद"
+    reading: "anuvād"
+    ipa: "ənuʋad̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अनुवाद", reading: "anuvād" }] }
+    examples:
+      - { target: "या पुस्तकाचा अनुवाद झाला.", reading: "yā pustakācā anuvād jhālā.", ipa: "ja pust̪əkatsa ənuʋad̪ dzʱala", bases: [{ word: "या", ref: "mr-0679" }, { word: "पुस्तकाचा", ref: "mr-0384" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "अनुवाद चांगला आहे.", reading: "anuvād cāṅgalā āhe.", ipa: "ənuʋad̪ tsaŋɡəla aɦe", bases: [{ word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1787"
+    target: "अनुवादक"
+    reading: "anuvādak"
+    ipa: "ənuʋad̪ək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अनुवादक", reading: "anuvādak" }] }
+    examples:
+      - { target: "अनुवादकाने पुस्तक छान अनुवादलं.", reading: "anuvādkāne pustak chān anuvādlam̐.", ipa: "ənuʋad̪kane pust̪ək tʃʰan ənuʋad̪lə̃", bases: [{ word: "अनुवादकाने", ref: "mr-1787" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छान", ref: "mr-0758" }] }
+      - { target: "हा अनुवादक इंग्रजी जाणतो.", reading: "hā anuvādak iṅgraji jāṇto.", ipa: "ɦa ənuʋad̪ək iŋɡrədʒi dzaɳt̪o", bases: [{ word: "हा", ref: "mr-0679" }, { word: "इंग्रजी", base: "इंग्रजी", reading: "iṅgraji" }, { word: "जाणतो", base: "जाणणे", reading: "jāṇṇe" }] }
+  - id: "mr-1788"
+    target: "प्रकाशक"
+    reading: "prakāśak"
+    ipa: "prəkaʃək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रकाशक", reading: "prakāśak" }] }
+    examples:
+      - { target: "प्रकाशकाने पुस्तक छापलं.", reading: "prakāśkāne pustak chāplam̐.", ipa: "prəkaʃkane pust̪ək tʃʰaplə̃", bases: [{ word: "प्रकाशकाने", ref: "mr-1788" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छापलं", base: "छापणे", reading: "chāpṇe" }] }
+      - { target: "प्रकाशक नवीन लेखकांना संधी देतात.", reading: "prakāśak navin lekhkānnā sandhi detāt.", ipa: "prəkaʃək nəʋin lekʰkanna sənd̪ʱi d̪et̪at̪", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "लेखकांना", ref: "mr-1472" }, { word: "संधी", ref: "mr-1477" }, { word: "देतात", ref: "mr-0721" }] }
+  - id: "mr-1789"
+    target: "प्रकाशित करणे"
+    reading: "prakāśit karṇe"
+    ipa: "prəkaʃit̪ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रकाशित करणे", reading: "prakāśit karṇe" }] }
+    examples:
+      - { target: "त्याने पहिली कादंबरी प्रकाशित केली.", reading: "tyāne pahili kādambari prakāśit keli.", ipa: "t̪jane pəɦili kad̪əmbəri prəkaʃit̪ keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कादंबरी", ref: "mr-1770" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "पुस्तक पुढच्या वर्षी प्रकाशित होईल.", reading: "pustak puḍhacyā varṣi prakāśit hoil.", ipa: "pust̪ək puɖʱətʃja ʋərʂi prəkaʃit̪ ɦoil", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "वर्षी", ref: "mr-0515" }, { word: "होईल", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1790"
+    target: "अनुवादित करणे"
+    reading: "anuvādit karṇe"
+    ipa: "ənuʋad̪it̪ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अनुवादित करणे", reading: "anuvādit karṇe" }] }
+    examples:
+      - { target: "तिने कथा मराठीत अनुवादित केली.", reading: "tine kathā marāṭhit anuvādit keli.", ipa: "t̪ine kət̪ʰa məraʈʰit̪ ənuʋad̪it̪ keli", bases: [{ word: "कथा", ref: "mr-1528" }, { word: "मराठीत", base: "मराठी", reading: "marāṭhi" }, { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "ही कविता इंग्रजीत अनुवादित करा.", reading: "hi kavitā iṅgrajit anuvādit karā.", ipa: "ɦi kəʋit̪a iŋɡrədʒit̪ ənuʋad̪it̪ kəra", bases: [{ word: "ही", ref: "mr-0679" }, { word: "कविता", ref: "mr-1554" }, { word: "इंग्रजीत", base: "इंग्रजी", reading: "iṅgraji" }, { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1791"
+    target: "वर्णन करणे"
+    reading: "varṇan karṇe"
+    ipa: "ʋərɳən kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वर्णन करणे", reading: "varṇan karṇe" }] }
+    examples:
+      - { target: "त्याने गाव छान वर्णन केलं.", reading: "tyāne gāv chān varṇan kelam̐.", ipa: "t̪jane ɡaʋ tʃʰan ʋərɳən kelə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "गाव", ref: "mr-0209" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.", reading: "kādambarit sundar nisargācam̐ varṇan āhe.", ipa: "kad̪əmbərit̪ sund̪ər nisərɡatsə̃ ʋərɳən aɦe", bases: [{ word: "कादंबरीत", ref: "mr-1770" }, { word: "सुंदर", ref: "mr-0770" }, { word: "निसर्गाचं", ref: "mr-1229" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1792"
+    target: "कल्पना करणे"
+    reading: "kalpanā karṇe"
+    ipa: "kəlpəna kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कल्पना करणे", reading: "kalpanā karṇe" }] }
+    examples:
+      - { target: "मी त्या जगाची कल्पना केली.", reading: "mi tyā jagāci kalpanā keli.", ipa: "mi t̪ja dzəɡatʃi kəlpəna keli", bases: [{ word: "त्या", ref: "mr-0676" }, { word: "जगाची", ref: "mr-0049" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "कल्पना करा की तू राजा आहेस.", reading: "kalpanā karā ki tu rājā āhes.", ipa: "kəlpəna kəra ki t̪u radza aɦes", bases: [{ word: "करा", ref: "mr-0712" }, { word: "आहेस", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1793"
+    target: "उलगडणे"
+    reading: "ulgḍṇe"
+    ipa: "ulɡɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उलगडणे", reading: "ulgḍṇe" }] }
+    examples:
+      - { target: "कथा हळूहळू उलगडत गेली.", reading: "kathā haḷuhḷu ulgḍat geli.", ipa: "kət̪ʰa ɦəɭuɦɭu ulɡɖət̪ ɡeli", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "उलगडत", ref: "mr-1793" }, { word: "गेली", ref: "mr-0710" }] }
+      - { target: "रहस्य शेवटी उलगडलं.", reading: "rahasy śevṭi ulgḍlam̐.", ipa: "rəɦəsj ʃeʋʈi ulɡɖlə̃", bases: [{ word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "उलगडलं", ref: "mr-1793" }] }
