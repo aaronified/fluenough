@@ -1,0 +1,702 @@
+schema: 1
+id: "hi-illness"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "illness"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1430"
+    target: "बीमार"
+    reading: "bīmār"
+    ipa: "biːmaːr"
+    phonetic: "[biːmaːr]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैं बीमार हूँ।", reading: "maim̐ bīmār hūm̐.", ipa: "mɛ̃ː biːmaːr ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "बीमार", "base": "बीमार", "reading": "bīmār" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "वह आज बीमार है।", reading: "vah āj bīmār hai.", ipa: "ʋəɦ aːdʒ biːmaːr ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "आज", "ref": "hi-0299" }, { "word": "बीमार", "base": "बीमार", "reading": "bīmār" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1431"
+    target: "बुखार"
+    reading: "bukhār"
+    ipa: "bʊkʰaːr"
+    phonetic: "[bʊkʰaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उसे बुखार है।", reading: "usē bukhār hai.", ipa: "ʊseː bʊkʰaːr ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "बुखार", "base": "बुखार", "reading": "bukhār" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बच्चे को तेज़ बुखार है।", reading: "baccē kō tēz bukhār hai.", ipa: "bətʃtʃeː koː t̪eːz bʊkʰaːr ɦɛː", bases: [{ "word": "बच्चे", "base": "बच्चा", "reading": "baccā" }, { "word": "को", "ref": "hi-0277" }, { "word": "तेज़", "ref": "hi-1289" }, { "word": "बुखार", "base": "बुखार", "reading": "bukhār" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1432"
+    target: "खाँसी"
+    reading: "khām̐sī"
+    ipa: "kʰãːsiː"
+    phonetic: "[kʰãːsiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे खाँसी है।", reading: "mujhē khām̐sī hai.", ipa: "mʊdʒʱeː kʰãːsiː ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "खाँसी", "base": "खाँसी", "reading": "khām̐sī" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खाँसी में गरम पानी पियो।", reading: "khām̐sī mēm̐ garam pānī piyō.", ipa: "kʰãːsiː mẽː ɡərəm paːniː pɪjoː", bases: [{ "word": "खाँसी", "base": "खाँसी", "reading": "khām̐sī" }, { "word": "में", "ref": "hi-0274" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "पियो", "base": "पीना", "reading": "pīnā" }] }
+  - id: "hi-1433"
+    target: "ज़ुकाम"
+    reading: "zukām"
+    ipa: "zʊkaːm"
+    phonetic: "[zʊkaːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे ज़ुकाम है।", reading: "mujhē zukām hai.", ipa: "mʊdʒʱeː zʊkaːm ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "ज़ुकाम", "base": "ज़ुकाम", "reading": "zukām" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "ज़ुकाम में नाक बहती है।", reading: "zukām mēm̐ nāk bahtī hai.", ipa: "zʊkaːm mẽː naːk bəɦt̪iː ɦɛː", bases: [{ "word": "ज़ुकाम", "base": "ज़ुकाम", "reading": "zukām" }, { "word": "में", "ref": "hi-0274" }, { "word": "नाक", "ref": "hi-1027" }, { "word": "बहती", "base": "बहना", "reading": "bahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1434"
+    target: "सिरदर्द"
+    reading: "sirdard"
+    ipa: "sɪrd̪ərd̪"
+    phonetic: "[sɪrd̪ərd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे सिरदर्द है।", reading: "mujhē sirdard hai.", ipa: "mʊdʒʱeː sɪrd̪ərd̪ ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "सिरदर्द", "base": "सिरदर्द", "reading": "sirdard" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सिरदर्द में आराम करो।", reading: "sirdard mēm̐ ārām karō.", ipa: "sɪrd̪ərd̪ mẽː aːraːm kəroː", bases: [{ "word": "सिरदर्द", "base": "सिरदर्द", "reading": "sirdard" }, { "word": "में", "ref": "hi-0274" }, { "word": "आराम", "ref": "hi-1453" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+  - id: "hi-1435"
+    target: "उल्टी"
+    reading: "ulṭī"
+    ipa: "ʊlʈiː"
+    phonetic: "[ʊlʈiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उसे उल्टी हो रही है।", reading: "usē ulṭī hō rahī hai.", ipa: "ʊseː ʊlʈiː ɦoː rəɦiː ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "उल्टी", "base": "उल्टी", "reading": "ulṭī" }, { "word": "हो", "base": "होना", "reading": "hōnā" }, { "word": "रही", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उल्टी के बाद पानी पियो।", reading: "ulṭī kē bād pānī piyō.", ipa: "ʊlʈiː keː baːd̪ paːniː pɪjoː", bases: [{ "word": "उल्टी", "base": "उल्टी", "reading": "ulṭī" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "पियो", "base": "पीना", "reading": "pīnā" }] }
+  - id: "hi-1436"
+    target: "चक्कर"
+    reading: "cakkar"
+    ipa: "tʃəkkər"
+    phonetic: "[tʃəkkər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे चक्कर आ रहा है।", reading: "mujhē cakkar ā rahā hai.", ipa: "mʊdʒʱeː tʃəkkər aː rəɦaː ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "चक्कर", "base": "चक्कर", "reading": "cakkar" }, { "word": "आ", "base": "आना", "reading": "ānā" }, { "word": "रहा", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "धूप में चक्कर आते हैं।", reading: "dhūp mēm̐ cakkar ātē haim̐.", ipa: "d̪ʱuːp mẽː tʃəkkər aːt̪eː ɦɛ̃ː", bases: [{ "word": "धूप", "ref": "hi-1255" }, { "word": "में", "ref": "hi-0274" }, { "word": "चक्कर", "base": "चक्कर", "reading": "cakkar" }, { "word": "आते", "base": "आना", "reading": "ānā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1437"
+    target: "सूजन"
+    reading: "sūjan"
+    ipa: "suːdʒən"
+    phonetic: "[suːdʒən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पैर में सूजन है।", reading: "pair mēm̐ sūjan hai.", ipa: "pɛːr mẽː suːdʒən ɦɛː", bases: [{ "word": "पैर", "ref": "hi-1039" }, { "word": "में", "ref": "hi-0274" }, { "word": "सूजन", "base": "सूजन", "reading": "sūjan" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सूजन पर बर्फ़ लगाओ।", reading: "sūjan par barf lagāō.", ipa: "suːdʒən pər bərf ləɡaːoː", bases: [{ "word": "सूजन", "base": "सूजन", "reading": "sūjan" }, { "word": "पर", "ref": "hi-0275" }, { "word": "बर्फ़", "ref": "hi-1266" }, { "word": "लगाओ", "base": "लगाना", "reading": "lagānā" }] }
+  - id: "hi-1438"
+    target: "घाव"
+    reading: "ghāv"
+    ipa: "ɡʱaːʋ"
+    phonetic: "[ɡʱaːʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हाथ पर घाव है।", reading: "hāth par ghāv hai.", ipa: "ɦaːt̪ʰ pər ɡʱaːʋ ɦɛː", bases: [{ "word": "हाथ", "ref": "hi-1042" }, { "word": "पर", "ref": "hi-0275" }, { "word": "घाव", "base": "घाव", "reading": "ghāv" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "घाव को साफ़ पानी से धोओ।", reading: "ghāv kō sāf pānī sē dhōō.", ipa: "ɡʱaːʋ koː saːf paːniː seː d̪ʱoːoː", bases: [{ "word": "घाव", "base": "घाव", "reading": "ghāv" }, { "word": "को", "ref": "hi-0277" }, { "word": "साफ़", "ref": "hi-0901" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "से", "ref": "hi-0276" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+  - id: "hi-1439"
+    target: "चोट"
+    reading: "cōṭ"
+    ipa: "tʃoːʈ"
+    phonetic: "[tʃoːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे पैर में चोट लगी है।", reading: "mujhē pair mēm̐ cōṭ lagī hai.", ipa: "mʊdʒʱeː pɛːr mẽː tʃoːʈ ləɡiː ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "पैर", "ref": "hi-1039" }, { "word": "में", "ref": "hi-0274" }, { "word": "चोट", "base": "चोट", "reading": "cōṭ" }, { "word": "लगी", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "चोट पर मरहम लगाओ।", reading: "cōṭ par marham lagāō.", ipa: "tʃoːʈ pər mərɦəm ləɡaːoː", bases: [{ "word": "चोट", "base": "चोट", "reading": "cōṭ" }, { "word": "पर", "ref": "hi-0275" }, { "word": "मरहम", "ref": "hi-1442" }, { "word": "लगाओ", "base": "लगाना", "reading": "lagānā" }] }
+  - id: "hi-1440"
+    target: "खरोंच"
+    reading: "kharōñc"
+    ipa: "kʰəroːɲtʃ"
+    phonetic: "[kʰəroːɲtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बच्चे के हाथ पर खरोंच है।", reading: "baccē kē hāth par kharōñc hai.", ipa: "bətʃtʃeː keː ɦaːt̪ʰ pər kʰəroːɲtʃ ɦɛː", bases: [{ "word": "बच्चे", "base": "बच्चा", "reading": "baccā" }, { "word": "के", "ref": "hi-0065" }, { "word": "हाथ", "ref": "hi-1042" }, { "word": "पर", "ref": "hi-0275" }, { "word": "खरोंच", "base": "खरोंच", "reading": "kharōñc" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खरोंच पर पट्टी बाँधो।", reading: "kharōñc par paṭṭī bām̐dhō.", ipa: "kʰəroːɲtʃ pər pəʈʈiː bãːd̪ʱoː", bases: [{ "word": "खरोंच", "base": "खरोंच", "reading": "kharōñc" }, { "word": "पर", "ref": "hi-0275" }, { "word": "पट्टी", "ref": "hi-1441" }, { "word": "बाँधो", "base": "बाँधना", "reading": "bām̐dhanā" }] }
+  - id: "hi-1441"
+    target: "पट्टी"
+    reading: "paṭṭī"
+    ipa: "pəʈʈiː"
+    phonetic: "[pəʈʈiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर ने पट्टी बाँधी।", reading: "ḍôkṭar nē paṭṭī bām̐dhī.", ipa: "ɖɔkʈər neː pəʈʈiː bãːd̪ʱiː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "पट्टी", "base": "पट्टी", "reading": "paṭṭī" }, { "word": "बाँधी", "base": "बाँधना", "reading": "bām̐dhanā" }] }
+      - { target: "पट्टी साफ़ रखो।", reading: "paṭṭī sāf rakhō.", ipa: "pəʈʈiː saːf rəkʰoː", bases: [{ "word": "पट्टी", "base": "पट्टी", "reading": "paṭṭī" }, { "word": "साफ़", "ref": "hi-0901" }, { "word": "रखो", "base": "रखना", "reading": "rakhnā" }] }
+  - id: "hi-1442"
+    target: "मरहम"
+    reading: "marham"
+    ipa: "mərɦəm"
+    phonetic: "[mərɦəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह मरहम दिन में दो बार लगाओ।", reading: "yah marham din mēm̐ dō bār lagāō.", ipa: "jəɦ mərɦəm d̪ɪn mẽː d̪oː baːr ləɡaːoː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "मरहम", "base": "मरहम", "reading": "marham" }, { "word": "दिन", "ref": "hi-0308" }, { "word": "में", "ref": "hi-0274" }, { "word": "दो", "base": "दो", "reading": "dō" }, { "word": "बार", "base": "बार", "reading": "bār" }, { "word": "लगाओ", "base": "लगाना", "reading": "lagānā" }] }
+      - { target: "मरहम से दर्द कम होता है।", reading: "marham sē dard kam hōtā hai.", ipa: "mərɦəm seː d̪ərd̪ kəm ɦoːt̪aː ɦɛː", bases: [{ "word": "मरहम", "base": "मरहम", "reading": "marham" }, { "word": "से", "ref": "hi-0276" }, { "word": "दर्द", "ref": "hi-0360" }, { "word": "कम", "ref": "hi-0105" }, { "word": "होता", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1443"
+    target: "गोली"
+    reading: "gōlī"
+    ipa: "ɡoːliː"
+    phonetic: "[ɡoːliː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर ने गोली दी।", reading: "ḍôkṭar nē gōlī dī.", ipa: "ɖɔkʈər neː ɡoːliː d̪iː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "गोली", "base": "गोली", "reading": "gōlī" }, { "word": "दी", "base": "देना", "reading": "dēnā" }] }
+      - { target: "खाने के बाद एक गोली लो।", reading: "khānē kē bād ēk gōlī lō.", ipa: "kʰaːneː keː baːd̪ eːk ɡoːliː loː", bases: [{ "word": "खाने", "base": "खाना", "reading": "khānā" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "एक", "ref": "hi-0198" }, { "word": "गोली", "base": "गोली", "reading": "gōlī" }, { "word": "लो", "base": "लेना", "reading": "lēnā" }] }
+  - id: "hi-1444"
+    target: "पर्चा"
+    reading: "parcā"
+    ipa: "pərtʃaː"
+    phonetic: "[pərtʃaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर ने पर्चा लिखा।", reading: "ḍôkṭar nē parcā likhā.", ipa: "ɖɔkʈər neː pərtʃaː lɪkʰaː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "पर्चा", "base": "पर्चा", "reading": "parcā" }, { "word": "लिखा", "base": "लिखना", "reading": "likhnā" }] }
+      - { target: "पर्चा दवाई की दुकान पर दिखाओ।", reading: "parcā davāī kī dukān par dikhāō.", ipa: "pərtʃaː d̪əʋaːiː kiː d̪ʊkaːn pər d̪ɪkʰaːoː", bases: [{ "word": "पर्चा", "base": "पर्चा", "reading": "parcā" }, { "word": "दवाई", "ref": "hi-0359" }, { "word": "की", "ref": "hi-0061" }, { "word": "दुकान", "ref": "hi-0239" }, { "word": "पर", "ref": "hi-0275" }, { "word": "दिखाओ", "base": "दिखाना", "reading": "dikhānā" }] }
+  - id: "hi-1445"
+    target: "इलाज"
+    reading: "ilāj"
+    ipa: "ɪlaːdʒ"
+    phonetic: "[ɪlaːdʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उसका इलाज अस्पताल में चल रहा है।", reading: "uskā ilāj aspatāl mēm̐ cal rahā hai.", ipa: "ʊskaː ɪlaːdʒ əspət̪aːl mẽː tʃəl rəɦaː ɦɛː", bases: [{ "word": "उसका", "ref": "hi-0757" }, { "word": "इलाज", "base": "इलाज", "reading": "ilāj" }, { "word": "अस्पताल", "ref": "hi-0358" }, { "word": "में", "ref": "hi-0274" }, { "word": "चल", "base": "चलना", "reading": "calnā" }, { "word": "रहा", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सही इलाज से वह ठीक होगा।", reading: "sahī ilāj sē vah ṭhīk hōgā.", ipa: "səɦiː ɪlaːdʒ seː ʋəɦ ʈʰiːk ɦoːɡaː", bases: [{ "word": "सही", "ref": "hi-0822" }, { "word": "इलाज", "base": "इलाज", "reading": "ilāj" }, { "word": "से", "ref": "hi-0276" }, { "word": "वह", "ref": "hi-0749" }, { "word": "ठीक", "ref": "hi-1457" }, { "word": "होगा", "base": "होना", "reading": "hōnā" }] }
+  - id: "hi-1446"
+    target: "जाँच"
+    reading: "jām̐c"
+    ipa: "dʒãːtʃ"
+    phonetic: "[dʒãːtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर खून की जाँच करेंगे।", reading: "ḍôkṭar khūn kī jām̐c karēṅgē.", ipa: "ɖɔkʈər kʰuːn kiː dʒãːtʃ kəreːŋɡeː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "खून", "ref": "hi-1046" }, { "word": "की", "ref": "hi-0061" }, { "word": "जाँच", "base": "जाँच", "reading": "jām̐c" }, { "word": "करेंगे", "base": "करना", "reading": "karnā" }] }
+      - { target: "जाँच की रिपोर्ट कल आएगी।", reading: "jām̐c kī ripōrṭ kal āēgī.", ipa: "dʒãːtʃ kiː rɪpoːrʈ kəl aːeːɡiː", bases: [{ "word": "जाँच", "base": "जाँच", "reading": "jām̐c" }, { "word": "की", "ref": "hi-0061" }, { "word": "रिपोर्ट", "base": "रिपोर्ट", "reading": "ripōrṭ" }, { "word": "कल", "ref": "hi-0300" }, { "word": "आएगी", "base": "आना", "reading": "ānā" }] }
+  - id: "hi-1447"
+    target: "एक्स-रे"
+    reading: "ēks-rē"
+    ipa: "eːksreː"
+    phonetic: "[eːksreː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: [{ "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पैर का एक्स-रे हुआ।", reading: "pair kā ēks-rē huā.", ipa: "pɛːr kaː eːksreː ɦʊaː", bases: [{ "word": "पैर", "ref": "hi-1039" }, { "word": "का", "ref": "hi-0279" }, { "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }, { "word": "हुआ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "एक्स-रे में हड्डी टूटी नहीं है।", reading: "ēks-rē mēm̐ haḍḍī ṭūṭī nahīm̐ hai.", ipa: "eːksreː mẽː ɦəɖɖiː ʈuːʈiː nəɦĩː ɦɛː", bases: [{ "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }, { "word": "में", "ref": "hi-0274" }, { "word": "हड्डी", "ref": "hi-1047" }, { "word": "टूटी", "base": "टूटना", "reading": "ṭūṭnā" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1448"
+    target: "टीका"
+    reading: "ṭīkā"
+    ipa: "ʈiːkaː"
+    phonetic: "[ʈiːkaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बच्चों को टीका लगता है।", reading: "baccōm̐ kō ṭīkā lagtā hai.", ipa: "bətʃtʃõː koː ʈiːkaː ləɡt̪aː ɦɛː", bases: [{ "word": "बच्चों", "base": "बच्चा", "reading": "baccā" }, { "word": "को", "ref": "hi-0277" }, { "word": "टीका", "base": "टीका", "reading": "ṭīkā" }, { "word": "लगता", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "टीका लगवाने के लिए अस्पताल जाओ।", reading: "ṭīkā lagvānē kē liē aspatāl jāō.", ipa: "ʈiːkaː ləɡʋaːneː keː lɪeː əspət̪aːl dʒaːoː", bases: [{ "word": "टीका", "base": "टीका", "reading": "ṭīkā" }, { "word": "लगवाने", "base": "लगवाना", "reading": "lagvānā" }, { "word": "के", "ref": "hi-0065" }, { "word": "लिए", "base": "लिए", "reading": "liē" }, { "word": "अस्पताल", "ref": "hi-0358" }, { "word": "जाओ", "base": "जाना", "reading": "jānā" }] }
+  - id: "hi-1449"
+    target: "तबीयत"
+    reading: "tabīyat"
+    ipa: "t̪əbiːjət̪"
+    phonetic: "[t̪əbiːjət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आपकी तबीयत कैसी है?", reading: "āpkī tabīyat kaisī hai?", ipa: "aːpkiː t̪əbiːjət̪ kɛːsiː ɦɛː", bases: [{ "word": "आपकी", "base": "आप", "reading": "āp" }, { "word": "तबीयत", "base": "तबीयत", "reading": "tabīyat" }, { "word": "कैसी", "base": "कैसा", "reading": "kaisā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मेरी तबीयत आज ठीक है।", reading: "mērī tabīyat āj ṭhīk hai.", ipa: "meːriː t̪əbiːjət̪ aːdʒ ʈʰiːk ɦɛː", bases: [{ "word": "मेरी", "base": "मेरा", "reading": "mērā" }, { "word": "तबीयत", "base": "तबीयत", "reading": "tabīyat" }, { "word": "आज", "ref": "hi-0299" }, { "word": "ठीक", "ref": "hi-1457" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1450"
+    target: "सेहत"
+    reading: "sēhat"
+    ipa: "seːɦət̪"
+    phonetic: "[seːɦət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सेहत के लिए पानी पियो।", reading: "sēhat kē liē pānī piyō.", ipa: "seːɦət̪ keː lɪeː paːniː pɪjoː", bases: [{ "word": "सेहत", "base": "सेहत", "reading": "sēhat" }, { "word": "के", "ref": "hi-0065" }, { "word": "लिए", "base": "लिए", "reading": "liē" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "पियो", "base": "पीना", "reading": "pīnā" }] }
+      - { target: "अच्छी सेहत ज़रूरी है।", reading: "acchī sēhat zarūrī hai.", ipa: "ətʃtʃʰiː seːɦət̪ zəruːriː ɦɛː", bases: [{ "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "सेहत", "base": "सेहत", "reading": "sēhat" }, { "word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1451"
+    target: "कमज़ोरी"
+    reading: "kamzōrī"
+    ipa: "kəmzoːriː"
+    phonetic: "[kəmzoːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बुखार के बाद कमज़ोरी होती है।", reading: "bukhār kē bād kamzōrī hōtī hai.", ipa: "bʊkʰaːr keː baːd̪ kəmzoːriː ɦoːt̪iː ɦɛː", bases: [{ "word": "बुखार", "ref": "hi-1431" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "कमज़ोरी", "base": "कमज़ोरी", "reading": "kamzōrī" }, { "word": "होती", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उसे बहुत कमज़ोरी लग रही है।", reading: "usē bahut kamzōrī lag rahī hai.", ipa: "ʊseː bəɦʊt̪ kəmzoːriː ləɡ rəɦiː ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "कमज़ोरी", "base": "कमज़ोरी", "reading": "kamzōrī" }, { "word": "लग", "base": "लगना", "reading": "lagnā" }, { "word": "रही", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1452"
+    target: "थकान"
+    reading: "thakān"
+    ipa: "t̪ʰəkaːn"
+    phonetic: "[t̪ʰəkaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे बहुत थकान है।", reading: "mujhē bahut thakān hai.", ipa: "mʊdʒʱeː bəɦʊt̪ t̪ʰəkaːn ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "थकान", "base": "थकान", "reading": "thakān" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सफ़र के बाद थकान होती है।", reading: "safar kē bād thakān hōtī hai.", ipa: "səfər keː baːd̪ t̪ʰəkaːn ɦoːt̪iː ɦɛː", bases: [{ "word": "सफ़र", "base": "सफ़र", "reading": "safar" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "थकान", "base": "थकान", "reading": "thakān" }, { "word": "होती", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1453"
+    target: "आराम"
+    reading: "ārām"
+    ipa: "aːraːm"
+    phonetic: "[aːraːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर ने दो दिन आराम करने को कहा।", reading: "ḍôkṭar nē dō din ārām karnē kō kahā.", ipa: "ɖɔkʈər neː d̪oː d̪ɪn aːraːm kərneː koː kəɦaː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "दो", "base": "दो", "reading": "dō" }, { "word": "दिन", "ref": "hi-0308" }, { "word": "आराम", "base": "आराम", "reading": "ārām" }, { "word": "करने", "base": "करना", "reading": "karnā" }, { "word": "को", "base": "को", "reading": "kō" }, { "word": "कहा", "base": "कहना", "reading": "kahnā" }] }
+      - { target: "आराम से लेटो।", reading: "ārām sē lēṭō.", ipa: "aːraːm seː leːʈoː", bases: [{ "word": "आराम", "base": "आराम", "reading": "ārām" }, { "word": "से", "ref": "hi-0276" }, { "word": "लेटो", "base": "लेटना", "reading": "lēṭnā" }] }
+  - id: "hi-1454"
+    target: "प्यास"
+    reading: "pyās"
+    ipa: "pjaːs"
+    phonetic: "[pjaːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मुझे बहुत प्यास लगी है।", reading: "mujhē bahut pyās lagī hai.", ipa: "mʊdʒʱeː bəɦʊt̪ pjaːs ləɡiː ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "प्यास", "base": "प्यास", "reading": "pyās" }, { "word": "लगी", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बुखार में प्यास ज़्यादा लगती है।", reading: "bukhār mēm̐ pyās zyādā lagtī hai.", ipa: "bʊkʰaːr mẽː pjaːs zjaːd̪aː ləɡt̪iː ɦɛː", bases: [{ "word": "बुखार", "ref": "hi-1431" }, { "word": "में", "ref": "hi-0274" }, { "word": "प्यास", "base": "प्यास", "reading": "pyās" }, { "word": "ज़्यादा", "ref": "hi-0816" }, { "word": "लगती", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1455"
+    target: "भूख"
+    reading: "bhūkh"
+    ipa: "bʱuːkʰ"
+    phonetic: "[bʱuːkʰ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बीमारी में भूख कम लगती है।", reading: "bīmārī mēm̐ bhūkh kam lagtī hai.", ipa: "biːmaːriː mẽː bʱuːkʰ kəm ləɡt̪iː ɦɛː", bases: [{ "word": "बीमारी", "base": "बीमारी", "reading": "bīmārī" }, { "word": "में", "ref": "hi-0274" }, { "word": "भूख", "base": "भूख", "reading": "bhūkh" }, { "word": "कम", "ref": "hi-0105" }, { "word": "लगती", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उसे आज भूख नहीं है।", reading: "usē āj bhūkh nahīm̐ hai.", ipa: "ʊseː aːdʒ bʱuːkʰ nəɦĩː ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "आज", "ref": "hi-0299" }, { "word": "भूख", "base": "भूख", "reading": "bhūkh" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1456"
+    target: "छींक"
+    reading: "chīṅk"
+    ipa: "tʃʰiːŋk"
+    phonetic: "[tʃʰiːŋk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उसे छींक आ रही है।", reading: "usē chīṅk ā rahī hai.", ipa: "ʊseː tʃʰiːŋk aː rəɦiː ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "छींक", "base": "छींक", "reading": "chīṅk" }, { "word": "आ", "base": "आना", "reading": "ānā" }, { "word": "रही", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "छींक आए तो मुँह ढकिए।", reading: "chīṅk āē tō mum̐h ḍhakiē.", ipa: "tʃʰiːŋk aːeː t̪oː mʊ̃ɦ ɖʱəkɪeː", bases: [{ "word": "छींक", "base": "छींक", "reading": "chīṅk" }, { "word": "आए", "base": "आना", "reading": "ānā" }, { "word": "तो", "base": "तो", "reading": "tō" }, { "word": "मुँह", "ref": "hi-1028" }, { "word": "ढकिए", "base": "ढकना", "reading": "ḍhaknā" }] }
+  - id: "hi-1457"
+    target: "ठीक"
+    reading: "ṭhīk"
+    ipa: "ʈʰiːk"
+    phonetic: "[ʈʰiːk]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "अब मैं ठीक हूँ।", reading: "ab maim̐ ṭhīk hūm̐.", ipa: "əb mɛ̃ː ʈʰiːk ɦũː", bases: [{ "word": "अब", "base": "अब", "reading": "ab" }, { "word": "मैं", "ref": "hi-0745" }, { "word": "ठीक", "base": "ठीक", "reading": "ṭhīk" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "क्या आप ठीक हैं?", reading: "kyā āp ṭhīk haim̐?", ipa: "kjaː aːp ʈʰiːk ɦɛ̃ː", bases: [{ "word": "क्या", "ref": "hi-0157" }, { "word": "आप", "ref": "hi-0134" }, { "word": "ठीक", "base": "ठीक", "reading": "ṭhīk" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1458"
+    target: "पसीना"
+    reading: "pasīnā"
+    ipa: "pəsiːnaː"
+    phonetic: "[pəsiːnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गर्मी में पसीना आता है।", reading: "garmī mēm̐ pasīnā ātā hai.", ipa: "ɡərmiː mẽː pəsiːnaː aːt̪aː ɦɛː", bases: [{ "word": "गर्मी", "ref": "hi-1270" }, { "word": "में", "ref": "hi-0274" }, { "word": "पसीना", "base": "पसीना", "reading": "pasīnā" }, { "word": "आता", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बुखार में बहुत पसीना आया।", reading: "bukhār mēm̐ bahut pasīnā āyā.", ipa: "bʊkʰaːr mẽː bəɦʊt̪ pəsiːnaː aːjaː", bases: [{ "word": "बुखार", "ref": "hi-1431" }, { "word": "में", "ref": "hi-0274" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "पसीना", "base": "पसीना", "reading": "pasīnā" }, { "word": "आया", "base": "आना", "reading": "ānā" }] }
+  - id: "hi-1459"
+    target: "सुई"
+    reading: "suī"
+    ipa: "sʊiː"
+    phonetic: "[sʊiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुई लगेगी, डरो मत।", reading: "suī lagēgī, ḍarō mat.", ipa: "sʊiː ləɡeːɡiː ɖəroː mət̪", bases: [{ "word": "सुई", "base": "सुई", "reading": "suī" }, { "word": "लगेगी", "base": "लगना", "reading": "lagnā" }, { "word": "डरो", "base": "डरना", "reading": "ḍarnā" }, { "word": "मत", "base": "मत", "reading": "mat" }] }
+      - { target: "नर्स ने सुई लगाई।", reading: "nars nē suī lagāī.", ipa: "nərs neː sʊiː ləɡaːiː", bases: [{ "word": "नर्स", "ref": "hi-0406" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "सुई", "base": "सुई", "reading": "suī" }, { "word": "लगाई", "base": "लगाना", "reading": "lagānā" }] }
+  - id: "hi-1460"
+    target: "खाँसना"
+    reading: "khām̐sanā"
+    ipa: "kʰãːsənaː"
+    phonetic: "[kʰãːsənaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह रात भर खाँसता रहा।", reading: "vah rāt bhar khām̐satā rahā.", ipa: "ʋəɦ raːt̪ bʱər kʰãːsət̪aː rəɦaː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "रात", "base": "रात", "reading": "rāt" }, { "word": "भर", "base": "भर", "reading": "bhar" }, { "word": "खाँसता", "base": "खाँसना", "reading": "khām̐sanā" }, { "word": "रहा", "base": "रहना", "reading": "rahnā" }] }
+      - { target: "ज़ोर से मत खाँसो।", reading: "zōr sē mat khām̐sō.", ipa: "zoːr seː mət̪ kʰãːsoː", bases: [{ "word": "ज़ोर", "base": "ज़ोर", "reading": "zōr" }, { "word": "से", "ref": "hi-0276" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "खाँसो", "base": "खाँसना", "reading": "khām̐sanā" }] }
+  - id: "hi-1461"
+    target: "छींकना"
+    reading: "chīṅkanā"
+    ipa: "tʃʰiːŋkənaː"
+    phonetic: "[tʃʰiːŋkənaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह ज़ोर से छींकता है।", reading: "vah zōr sē chīṅkatā hai.", ipa: "ʋəɦ zoːr seː tʃʰiːŋkət̪aː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "ज़ोर", "base": "ज़ोर", "reading": "zōr" }, { "word": "से", "ref": "hi-0276" }, { "word": "छींकता", "base": "छींकना", "reading": "chīṅkanā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "छींकते समय मुँह ढको।", reading: "chīṅkatē samay mum̐h ḍhakō.", ipa: "tʃʰiːŋkət̪eː səməj mʊ̃ɦ ɖʱəkoː", bases: [{ "word": "छींकते", "base": "छींकना", "reading": "chīṅkanā" }, { "word": "समय", "base": "समय", "reading": "samay" }, { "word": "मुँह", "ref": "hi-1028" }, { "word": "ढको", "base": "ढकना", "reading": "ḍhaknā" }] }
+  - id: "hi-1462"
+    target: "लेटना"
+    reading: "lēṭnā"
+    ipa: "leːʈnaː"
+    phonetic: "[leːʈnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बीमार हो तो लेटे रहो।", reading: "bīmār hō tō lēṭē rahō.", ipa: "biːmaːr ɦoː t̪oː leːʈeː rəɦoː", bases: [{ "word": "बीमार", "ref": "hi-1430" }, { "word": "हो", "base": "होना", "reading": "hōnā" }, { "word": "तो", "base": "तो", "reading": "tō" }, { "word": "लेटे", "base": "लेटना", "reading": "lēṭnā" }, { "word": "रहो", "base": "रहना", "reading": "rahnā" }] }
+      - { target: "वह बिस्तर पर लेटा है।", reading: "vah bistar par lēṭā hai.", ipa: "ʋəɦ bɪst̪ər pər leːʈaː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "बिस्तर", "ref": "hi-0432" }, { "word": "पर", "ref": "hi-0275" }, { "word": "लेटा", "base": "लेटना", "reading": "lēṭnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1463"
+    target: "दुखना"
+    reading: "dukhnā"
+    ipa: "d̪ʊkʰnaː"
+    phonetic: "[d̪ʊkʰnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मेरा सिर दुखता है।", reading: "mērā sir dukhtā hai.", ipa: "meːraː sɪr d̪ʊkʰt̪aː ɦɛː", bases: [{ "word": "मेरा", "ref": "hi-0752" }, { "word": "सिर", "ref": "hi-1024" }, { "word": "दुखता", "base": "दुखना", "reading": "dukhnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "आँख दुख रही है।", reading: "ām̐kh dukh rahī hai.", ipa: "ãːkʰ d̪ʊkʰ rəɦiː ɦɛː", bases: [{ "word": "आँख", "ref": "hi-1025" }, { "word": "दुख", "base": "दुखना", "reading": "dukhnā" }, { "word": "रही", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1464"
+    target: "बेहोश"
+    reading: "bēhōś"
+    ipa: "beːɦoːʃ"
+    phonetic: "[beːɦoːʃ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गर्मी से वह बेहोश हो गया।", reading: "garmī sē vah bēhōś hō gayā.", ipa: "ɡərmiː seː ʋəɦ beːɦoːʃ ɦoː ɡəjaː", bases: [{ "word": "गर्मी", "ref": "hi-1270" }, { "word": "से", "ref": "hi-0276" }, { "word": "वह", "ref": "hi-0749" }, { "word": "बेहोश", "base": "बेहोश", "reading": "bēhōś" }, { "word": "हो", "base": "होना", "reading": "hōnā" }, { "word": "गया", "base": "जाना", "reading": "jānā" }] }
+      - { target: "बेहोश आदमी के मुँह में पानी मत डालो।", reading: "bēhōś ādmī kē mum̐h mēm̐ pānī mat ḍālō.", ipa: "beːɦoːʃ aːd̪miː keː mʊ̃ɦ mẽː paːniː mət̪ ɖaːloː", bases: [{ "word": "बेहोश", "base": "बेहोश", "reading": "bēhōś" }, { "word": "आदमी", "ref": "hi-0762" }, { "word": "के", "ref": "hi-0065" }, { "word": "मुँह", "ref": "hi-1028" }, { "word": "में", "ref": "hi-0274" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+  - id: "hi-1465"
+    target: "ताक़त"
+    reading: "tāqat"
+    ipa: "t̪aːqət̪"
+    phonetic: "[t̪aːqət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दूध से ताक़त आती है।", reading: "dūdh sē tāqat ātī hai.", ipa: "d̪uːd̪ʱ seː t̪aːqət̪ aːt̪iː ɦɛː", bases: [{ "word": "दूध", "ref": "hi-0259" }, { "word": "से", "ref": "hi-0276" }, { "word": "ताक़त", "base": "ताक़त", "reading": "tāqat" }, { "word": "आती", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बुखार के बाद ताक़त वापस आती है।", reading: "bukhār kē bād tāqat vāpas ātī hai.", ipa: "bʊkʰaːr keː baːd̪ t̪aːqət̪ ʋaːpəs aːt̪iː ɦɛː", bases: [{ "word": "बुखार", "ref": "hi-1431" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "ताक़त", "base": "ताक़त", "reading": "tāqat" }, { "word": "वापस", "base": "वापस", "reading": "vāpas" }, { "word": "आती", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1466"
+    target: "कमज़ोर"
+    reading: "kamzōr"
+    ipa: "kəmzoːr"
+    phonetic: "[kəmzoːr]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह बहुत कमज़ोर है।", reading: "vah bahut kamzōr hai.", ipa: "ʋəɦ bəɦʊt̪ kəmzoːr ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "कमज़ोर", "base": "कमज़ोर", "reading": "kamzōr" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बूढ़े लोग कमज़ोर होते हैं।", reading: "būṛhē lōg kamzōr hōtē haim̐.", ipa: "buːɽʱeː loːɡ kəmzoːr ɦoːt̪eː ɦɛ̃ː", bases: [{ "word": "बूढ़े", "base": "बूढ़ा", "reading": "būṛhā" }, { "word": "लोग", "ref": "hi-0761" }, { "word": "कमज़ोर", "base": "कमज़ोर", "reading": "kamzōr" }, { "word": "होते", "base": "होना", "reading": "hōnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1467"
+    target: "दिमाग़"
+    reading: "dimāġ"
+    ipa: "d̪ɪmaːɣ"
+    phonetic: "[d̪ɪmaːɣ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दिमाग़ में दर्द है।", reading: "dimāġ mēm̐ dard hai.", ipa: "d̪ɪmaːɣ mẽː d̪ərd̪ ɦɛː", bases: [{ "word": "दिमाग़", "base": "दिमाग़", "reading": "dimāġ" }, { "word": "में", "ref": "hi-0274" }, { "word": "दर्द", "ref": "hi-0360" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उसका दिमाग़ ठीक है।", reading: "uskā dimāġ ṭhīk hai.", ipa: "ʊskaː d̪ɪmaːɣ ʈʰiːk ɦɛː", bases: [{ "word": "उसका", "ref": "hi-0757" }, { "word": "दिमाग़", "base": "दिमाग़", "reading": "dimāġ" }, { "word": "ठीक", "ref": "hi-1457" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1468"
+    target: "उंगली"
+    reading: "uṅgalī"
+    ipa: "ʊŋɡəliː"
+    phonetic: "[ʊŋɡəliː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उंगली में चोट है।", reading: "uṅgalī mēm̐ cōṭ hai.", ipa: "ʊŋɡəliː mẽː tʃoːʈ ɦɛː", bases: [{ "word": "उंगली", "base": "उंगली", "reading": "uṅgalī" }, { "word": "में", "ref": "hi-0274" }, { "word": "चोट", "ref": "hi-1439" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उंगली पर पट्टी है।", reading: "uṅgalī par paṭṭī hai.", ipa: "ʊŋɡəliː pər pəʈʈiː ɦɛː", bases: [{ "word": "उंगली", "base": "उंगली", "reading": "uṅgalī" }, { "word": "पर", "ref": "hi-0275" }, { "word": "पट्टी", "ref": "hi-1441" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1469"
+    target: "सीना"
+    reading: "sīnā"
+    ipa: "siːnaː"
+    phonetic: "[siːnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सीने में दर्द है।", reading: "sīnē mēm̐ dard hai.", ipa: "siːneː mẽː d̪ərd̪ ɦɛː", bases: [{ "word": "सीने", "base": "सीना", "reading": "sīnā" }, { "word": "में", "ref": "hi-0274" }, { "word": "दर्द", "ref": "hi-0360" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सीना सीधा रखो।", reading: "sīnā sīdhā rakhō.", ipa: "siːnaː siːd̪ʱaː rəkʰoː", bases: [{ "word": "सीना", "base": "सीना", "reading": "sīnā" }, { "word": "सीधा", "base": "सीधा", "reading": "sīdhā" }, { "word": "रखो", "base": "रखना", "reading": "rakhnā" }] }
+  - id: "hi-1470"
+    target: "कोहनी"
+    reading: "kōhnī"
+    ipa: "koːɦniː"
+    phonetic: "[koːɦniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कोहनी पर चोट लगी है।", reading: "kōhnī par cōṭ lagī hai.", ipa: "koːɦniː pər tʃoːʈ ləɡiː ɦɛː", bases: [{ "word": "कोहनी", "base": "कोहनी", "reading": "kōhnī" }, { "word": "पर", "ref": "hi-0275" }, { "word": "चोट", "ref": "hi-1439" }, { "word": "लगी", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "कोहनी को पानी से धोओ।", reading: "kōhnī kō pānī sē dhōō.", ipa: "koːɦniː koː paːniː seː d̪ʱoːoː", bases: [{ "word": "कोहनी", "base": "कोहनी", "reading": "kōhnī" }, { "word": "को", "ref": "hi-0277" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "से", "ref": "hi-0276" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+  - id: "hi-1471"
+    target: "नब्ज़"
+    reading: "nabz"
+    ipa: "nəbz"
+    phonetic: "[nəbz]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "डॉक्टर नब्ज़ देखते हैं।", reading: "ḍôkṭar nabz dēkhtē haim̐.", ipa: "ɖɔkʈər nəbz d̪eːkʰt̪eː ɦɛ̃ː", bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "नब्ज़", "base": "नब्ज़", "reading": "nabz" }, { "word": "देखते", "base": "देखना", "reading": "dēkhnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "नब्ज़ तेज़ चल रही है।", reading: "nabz tēz cal rahī hai.", ipa: "nəbz t̪eːz tʃəl rəɦiː ɦɛː", bases: [{ "word": "नब्ज़", "base": "नब्ज़", "reading": "nabz" }, { "word": "तेज़", "ref": "hi-1289" }, { "word": "चल", "base": "चलना", "reading": "calnā" }, { "word": "रही", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1472"
+    target: "धड़कन"
+    reading: "dhaṛkan"
+    ipa: "d̪ʱəɽkən"
+    phonetic: "[d̪ʱəɽkən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दिल की धड़कन तेज़ है।", reading: "dil kī dhaṛkan tēz hai.", ipa: "d̪ɪl kiː d̪ʱəɽkən t̪eːz ɦɛː", bases: [{ "word": "दिल", "ref": "hi-1044" }, { "word": "की", "ref": "hi-0061" }, { "word": "धड़कन", "base": "धड़कन", "reading": "dhaṛkan" }, { "word": "तेज़", "ref": "hi-1289" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "डर से धड़कन बढ़ती है।", reading: "ḍar sē dhaṛkan baṛhtī hai.", ipa: "ɖər seː d̪ʱəɽkən bəɽʱt̪iː ɦɛː", bases: [{ "word": "डर", "base": "डर", "reading": "ḍar" }, { "word": "से", "ref": "hi-0276" }, { "word": "धड़कन", "base": "धड़कन", "reading": "dhaṛkan" }, { "word": "बढ़ती", "base": "बढ़ना", "reading": "baṛhnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1473"
+    target: "साँस"
+    reading: "sām̐s"
+    ipa: "sãːs"
+    phonetic: "[sãːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "साँस लेने में तकलीफ़ है।", reading: "sām̐s lēnē mēm̐ taklīf hai.", ipa: "sãːs leːneː mẽː t̪əkliːf ɦɛː", bases: [{ "word": "साँस", "base": "साँस", "reading": "sām̐s" }, { "word": "लेने", "base": "लेना", "reading": "lēnā" }, { "word": "में", "ref": "hi-0274" }, { "word": "तकलीफ़", "base": "तकलीफ़", "reading": "taklīf" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "गहरी साँस लो।", reading: "gahrī sām̐s lō.", ipa: "ɡəɦriː sãːs loː", bases: [{ "word": "गहरी", "base": "गहरा", "reading": "gahrā" }, { "word": "साँस", "base": "साँस", "reading": "sām̐s" }, { "word": "लो", "base": "लेना", "reading": "lēnā" }] }
+  - id: "hi-1474"
+    target: "खुजली"
+    reading: "khujlī"
+    ipa: "kʰʊdʒliː"
+    phonetic: "[kʰʊdʒliː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हाथ में खुजली है।", reading: "hāth mēm̐ khujlī hai.", ipa: "ɦaːt̪ʰ mẽː kʰʊdʒliː ɦɛː", bases: [{ "word": "हाथ", "ref": "hi-1042" }, { "word": "में", "ref": "hi-0274" }, { "word": "खुजली", "base": "खुजली", "reading": "khujlī" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खुजली होने पर भी मत खुजाओ।", reading: "khujlī hōnē par bhī mat khujāō.", ipa: "kʰʊdʒliː ɦoːneː pər bʱiː mət̪ kʰʊdʒaːoː", bases: [{ "word": "खुजली", "base": "खुजली", "reading": "khujlī" }, { "word": "होने", "base": "होना", "reading": "hōnā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "भी", "ref": "hi-0350" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "खुजाओ", "base": "खुजाना", "reading": "khujānā" }] }
+  - id: "hi-1475"
+    target: "टाँग"
+    reading: "ṭām̐g"
+    ipa: "ʈãːɡ"
+    phonetic: "[ʈãːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मेरी टाँग में मोच है।", reading: "mērī ṭām̐g mēm̐ mōc hai.", ipa: "meːriː ʈãːɡ mẽː moːtʃ ɦɛː", bases: [{ "word": "मेरी", "base": "मेरा", "reading": "mērā" }, { "word": "टाँग", "base": "टाँग", "reading": "ṭām̐g" }, { "word": "में", "ref": "hi-0274" }, { "word": "मोच", "base": "मोच", "reading": "mōc" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "टाँग पर बर्फ़ रखो।", reading: "ṭām̐g par barf rakhō.", ipa: "ʈãːɡ pər bərf rəkʰoː", bases: [{ "word": "टाँग", "base": "टाँग", "reading": "ṭām̐g" }, { "word": "पर", "ref": "hi-0275" }, { "word": "बर्फ़", "ref": "hi-1266" }, { "word": "रखो", "base": "रखना", "reading": "rakhnā" }] }
+  - id: "hi-1476"
+    target: "नींद"
+    reading: "nīnd"
+    ipa: "niːnd̪"
+    phonetic: "[niːn̪d̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बुखार में नींद नहीं आती है।", reading: "bukhār mēm̐ nīnd nahīm̐ ātī hai.", ipa: "bʊkʰaːr mẽː niːnd̪ nəɦĩː aːt̪iː ɦɛː", bases: [{ "word": "बुखार", "ref": "hi-1431" }, { "word": "में", "ref": "hi-0274" }, { "word": "नींद", "base": "नींद", "reading": "nīnd" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "आती", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "रात को अच्छी नींद लो।", reading: "rāt kō acchī nīnd lō.", ipa: "raːt̪ koː ətʃtʃʰiː niːnd̪ loː", bases: [{ "word": "रात", "ref": "hi-0304" }, { "word": "को", "ref": "hi-0277" }, { "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "नींद", "base": "नींद", "reading": "nīnd" }, { "word": "लो", "base": "लेना", "reading": "lēnā" }] }
+  - id: "hi-1477"
+    target: "ज़ख़्म"
+    reading: "zak͟hm"
+    ipa: "zəxm"
+    phonetic: "[zəxm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ज़ख़्म पर पट्टी बाँधो।", reading: "zak͟hm par paṭṭī bām̐dhō.", ipa: "zəxm pər pəʈʈiː bãːd̪ʱoː", bases: [{ "word": "ज़ख़्म", "base": "ज़ख़्म", "reading": "zak͟hm" }, { "word": "पर", "ref": "hi-0275" }, { "word": "पट्टी", "ref": "hi-1441" }, { "word": "बाँधो", "base": "बाँधना", "reading": "bām̐dhanā" }] }
+      - { target: "ज़ख़्म से खून बह रहा है।", reading: "zak͟hm sē khūn bah rahā hai.", ipa: "zəxm seː kʰuːn bəɦ rəɦaː ɦɛː", bases: [{ "word": "ज़ख़्म", "base": "ज़ख़्म", "reading": "zak͟hm" }, { "word": "से", "ref": "hi-0276" }, { "word": "खून", "ref": "hi-1046" }, { "word": "बह", "base": "बहना", "reading": "bahnā" }, { "word": "रहा", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1478"
+    target: "बदन"
+    reading: "badan"
+    ipa: "bəd̪ən"
+    phonetic: "[bəd̪ən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बदन को पानी चाहिए।", reading: "badan kō pānī cāhiē.", ipa: "bəd̪ən koː paːniː tʃaːɦɪeː", bases: [{ "word": "बदन", "base": "बदन", "reading": "badan" }, { "word": "को", "ref": "hi-0277" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "चाहिए", "ref": "hi-0460" }] }
+      - { target: "बदन में ताक़त कम है।", reading: "badan mēm̐ tāqat kam hai.", ipa: "bəd̪ən mẽː t̪aːqət̪ kəm ɦɛː", bases: [{ "word": "बदन", "base": "बदन", "reading": "badan" }, { "word": "में", "ref": "hi-0274" }, { "word": "ताक़त", "ref": "hi-1465" }, { "word": "कम", "ref": "hi-0105" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1479"
+    target: "पीड़ा"
+    reading: "pīṛā"
+    ipa: "piːɽaː"
+    phonetic: "[piːɽaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उसे पेट में पीड़ा है।", reading: "usē pēṭ mēm̐ pīṛā hai.", ipa: "ʊseː peːʈ mẽː piːɽaː ɦɛː", bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "पेट", "ref": "hi-1036" }, { "word": "में", "ref": "hi-0274" }, { "word": "पीड़ा", "base": "पीड़ा", "reading": "pīṛā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पीड़ा कम करने की दवाई लो।", reading: "pīṛā kam karnē kī davāī lō.", ipa: "piːɽaː kəm kərneː kiː d̪əʋaːiː loː", bases: [{ "word": "पीड़ा", "base": "पीड़ा", "reading": "pīṛā" }, { "word": "कम", "ref": "hi-0105" }, { "word": "करने", "base": "करना", "reading": "karnā" }, { "word": "की", "ref": "hi-0061" }, { "word": "दवाई", "ref": "hi-0359" }, { "word": "लो", "base": "लेना", "reading": "lēnā" }] }

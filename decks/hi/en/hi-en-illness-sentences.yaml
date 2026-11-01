@@ -1,0 +1,50 @@
+schema: 1
+id: "hi-en-illness-sentences"
+kind: "layer"
+core: "hi-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about illness"
+license: "CC-BY-SA-4.0"
+description: "Short sentences using the words of the illness unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1480":
+    native: "I have a headache and a fever too."
+    bases: { "मुझे": "to me" }
+    confusables: { "w1": { why: "Stomach, not head: पेट (pēṭ) is the stomach." }, "f2": { why: "Plural: हैं (haiṃ) is for plural things; here there is one pain and one fever." } }
+  "hi-1481":
+    native: "The doctor gave medicine and a prescription."
+    bases: { "ने": "marks the doer of a past verb", "दिया": "to give" }
+    confusables: { "w1": { why: "A hospital, not the doctor: अस्पताल (aspatāl) is the place." }, "f2": { why: "Feminine: दी (dī) would agree with दवाई (davāī), but the nearer object पर्चा (parcā) is masculine." } }
+  "hi-1482":
+    native: "The nurse gave an injection and the child cried."
+    bases: { "ने": "marks the doer of a past verb", "लगाई": "to give", "बच्चा": "child", "रोया": "to cry" }
+    confusables: { "w1": { why: "Medicine is taken, not given with a needle: दवाई (davāī) is what you swallow." }, "f2": { why: "The nurse gave one injection, to a feminine सुई (suī), so लगाई (lagāī) is right." } }
+  "hi-1483":
+    native: "He has a cough and he is at home."
+    bases: { "उसे": "to him or her" }
+    confusables: { "w1": { why: "A sneeze, not a cough: छींक (chhīṅk) is a sneeze." }, "f2": { why: "Plural: हैं (haiṃ) would be for more than one person." } }
+  "hi-1484":
+    native: "For a headache, drink water and rest."
+    bases: { "पियो": "to drink", "करो": "to do" }
+    confusables: { "w1": { why: "Medicine is not water: the sentence says to drink water." }, "f2": { why: "पीना (pīnā) is the verb to drink; the command is पियो (piyo)." } }
+  "hi-1485":
+    native: "I feel dizzy, so I lie down."
+    bases: { "मुझे": "to me", "आ": "to come", "रहा": "to be", "लेटता": "to lie down", "हूँ": "to be" }
+    confusables: { "w1": { why: "Swelling, not dizziness: सूजन (sūjan) is swelling." }, "f2": { why: "The verb with मैं (maim̐) for a man is लेटता (leṭtā); लेटती (leṭtī) is for a woman speaking." } }
+  "hi-1486":
+    native: "Give the sick child a tablet."
+    bases: { "बच्चे": "child", "दो": "to give" }
+    confusables: { "w1": { why: "Medicine, not a tablet: गोली (golī) is one tablet." }, "f2": { why: "बीमारी (bīmārī) is the noun illness; the adjective is बीमार (bīmār)." } }
+  "hi-1487":
+    native: "The bone is broken, so the doctor will do an X-ray."
+    bases: { "एक्स": "X", "रे": "ray", "टूटी": "to break", "करेंगे": "to do" }
+    confusables: { "w1": { why: "Injury, not a break: चोट (chōṭ) is a hurt such as a bruise." }, "f2": { why: "टूटा (ṭūṭā) is masculine; हड्डी (haḍḍī) is feminine, so टूटी (ṭūṭī) is right." } }
+  "hi-1488":
+    native: "After vomiting one feels thirsty."
+    bases: { "उल्टी": "vomiting", "बाद": "after", "लगती": "to feel" }
+    confusables: { "w1": { why: "Hunger, not thirst: भूख (bhūkh) is hunger." }, "f2": { why: "लगता (lagtā) is masculine; प्यास (pyās) is feminine, so लगती (lagtī) is right." } }
+  "hi-1489":
+    native: "I am not well, I need rest."
+    bases: { "मुझे": "to me" }
+    confusables: { "w1": { why: "सही (sahī) means right or correct, not well." }, "f2": { why: "Plural: हैं (haiṃ) would need a plural subject; तबीयत (tabīyat) is one thing." } }

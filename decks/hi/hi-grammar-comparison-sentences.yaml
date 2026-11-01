@@ -1,0 +1,108 @@
+schema: 1
+id: "hi-grammar-comparison-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1562"
+    target: "यह मकान उस मकान से बड़ा है।"
+    reading: "yah makān us makān sē baṛā hai."
+    ipa: "jəɦ məkaːn ʊs məkaːn seː bəɽaː ɦɛː"
+    phonetic: "[jəɦ məkaːn ʊs məkaːn seː bəɽaː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "यह", "base": "यह", "reading": "yah" }, { "word": "मकान", "base": "मकान", "reading": "makān" }, { "word": "उस", "base": "उस", "reading": "us" }, { "word": "से", "ref": "hi-0276" }, { "word": "बड़ा", "ref": "hi-0894" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0895", kind: "word" }
+      - { id: "f2", word: "सबसे", reading: "sabsē", ipa: "səbseː", kind: "form" }
+  - id: "hi-1563"
+    target: "राम श्याम से लंबा है।"
+    reading: "rām śyām sē lambā hai."
+    ipa: "raːm ʃjaːm seː ləmbaː ɦɛː"
+    phonetic: "[raːm ʃjaːm seː ləmbaː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "राम", "base": "राम", "reading": "rām" }, { "word": "श्याम", "base": "श्याम", "reading": "śyām" }, { "word": "से", "ref": "hi-0276" }, { "word": "लंबा", "base": "लंबा", "reading": "lambā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0339", kind: "word" }
+      - { id: "f2", word: "लंबी", reading: "lambī", ipa: "ləmbiː", kind: "form" }
+  - id: "hi-1564"
+    target: "सबसे अच्छा खाना कहाँ मिलता है?"
+    reading: "sabsē acchā khānā kahām̐ miltā hai?"
+    ipa: "səbseː ətʃtʃʰaː kʰaːnaː kəɦãː mɪlt̪aː ɦɛː"
+    phonetic: "[səbseː ətʃtʃʰaː kʰaːnaː kəɦãː mɪlt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "सबसे", "base": "सबसे", "reading": "sabsē" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "खाना", "base": "खाना", "reading": "khānā" }, { "word": "कहाँ", "base": "कहाँ", "reading": "kahām̐" }, { "word": "मिलता", "base": "मिलना", "reading": "milnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0054", kind: "word" }
+      - { id: "f2", word: "अच्छी", reading: "acchī", ipa: "ətʃtʃʰiː", kind: "form" }
+  - id: "hi-1565"
+    target: "यह सबसे ठंडा पानी है।"
+    reading: "yah sabsē ṭhaṇḍā pānī hai."
+    ipa: "jəɦ səbseː ʈʰəɳɖaː paːniː ɦɛː"
+    phonetic: "[jəɦ səbseː ʈʰəɳɖaː paːniː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "यह", "base": "यह", "reading": "yah" }, { "word": "सबसे", "base": "सबसे", "reading": "sabsē" }, { "word": "ठंडा", "base": "ठंडा", "reading": "ṭhaṇḍā" }, { "word": "पानी", "base": "पानी", "reading": "pānī" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0910", kind: "word" }
+      - { id: "f2", word: "ठंडी", reading: "ṭhaṇḍī", ipa: "ʈʰəɳɖiː", kind: "form" }
+  - id: "hi-1566"
+    target: "मुझसे तेज़ कौन दौड़ता है?"
+    reading: "mujhsē tēz kaun dauṛtā hai?"
+    ipa: "mʊdʒʱseː t̪eːz kɔːn d̪ɔːɽt̪aː ɦɛː"
+    phonetic: "[mʊdʒʱseː t̪eːz kɔːn d̪ɔːɽt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मुझसे", "base": "मैं", "reading": "maim̐" }, { "word": "तेज़", "base": "तेज़", "reading": "tēz" }, { "word": "कौन", "base": "कौन", "reading": "kaun" }, { "word": "दौड़ता", "base": "दौड़ना", "reading": "dauṛnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0894", kind: "word" }
+      - { id: "f2", word: "तेज़ी", reading: "tēzī", ipa: "t̪eːziː", kind: "form" }
+  - id: "hi-1567"
+    target: "आज गर्मी कल से ज़्यादा है।"
+    reading: "āj garmī kal sē zyādā hai."
+    ipa: "aːdʒ ɡərmiː kəl seː zjaːd̪aː ɦɛː"
+    phonetic: "[aːdʒ ɡərmiː kəl seː zjaːd̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "आज", "base": "आज", "reading": "āj" }, { "word": "गर्मी", "base": "गर्मी", "reading": "garmī" }, { "word": "कल", "base": "कल", "reading": "kal" }, { "word": "से", "ref": "hi-0276" }, { "word": "ज़्यादा", "base": "ज़्यादा", "reading": "zyādā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0911", kind: "word" }
+      - { id: "f2", word: "कम", reading: "kam", ipa: "kəm", kind: "form" }
+  - id: "hi-1568"
+    target: "यह किताब उससे छोटी है।"
+    reading: "yah kitāb ussē chōṭī hai."
+    ipa: "jəɦ kɪt̪aːb ʊsseː tʃʰoːʈiː ɦɛː"
+    phonetic: "[jəɦ kɪt̪aːb ʊsseː tʃʰoːʈiː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "यह", "base": "यह", "reading": "yah" }, { "word": "किताब", "base": "किताब", "reading": "kitāb" }, { "word": "उससे", "base": "वह", "reading": "vah" }, { "word": "छोटी", "base": "छोटा", "reading": "chōṭā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0894", kind: "word" }
+      - { id: "f2", word: "छोटा", reading: "chōṭā", ipa: "tʃʰoːʈaː", kind: "form" }
+  - id: "hi-1569"
+    target: "सबसे बड़ा कमरा मेरा है।"
+    reading: "sabsē baṛā kamrā mērā hai."
+    ipa: "səbseː bəɽaː kəmraː meːraː ɦɛː"
+    phonetic: "[səbseː bəɽaː kəmraː meːraː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "सबसे", "base": "सबसे", "reading": "sabsē" }, { "word": "बड़ा", "base": "बड़ा", "reading": "baṛā" }, { "word": "कमरा", "base": "कमरा", "reading": "kamrā" }, { "word": "मेरा", "base": "मेरा", "reading": "mērā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0895", kind: "word" }
+      - { id: "f2", word: "बड़ी", reading: "baṛī", ipa: "bəɽiː", kind: "form" }
+  - id: "hi-1570"
+    target: "चाय कॉफ़ी से गरम है।"
+    reading: "cāy kôfī sē garam hai."
+    ipa: "tʃaːj kɔfiː seː ɡərəm ɦɛː"
+    phonetic: "[tʃaːj kɔfiː seː ɡərəm ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "चाय", "base": "चाय", "reading": "cāy" }, { "word": "कॉफ़ी", "base": "कॉफ़ी", "reading": "kôfī" }, { "word": "से", "ref": "hi-0276" }, { "word": "गरम", "base": "गरम", "reading": "garam" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0911", kind: "word" }
+      - { id: "f2", word: "गरमी", reading: "garmī", ipa: "ɡərmiː", kind: "form" }

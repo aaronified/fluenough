@@ -294,19 +294,23 @@ units:
   - decks: ["hi-grammar-past-more", "hi-grammar-compound-verbs"]
     words: 0
     grammar: ["past-more", "compound-verbs"]
-  - planned: { id: "hi-illness", theme: "illness", words: 50 }
+  - decks: ["hi-illness", "hi-illness-sentences", "hi-reading-illness", "*"]
+    words: 50
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
   - decks: ["hi-eating-out", "*"]
     words: 8
-  - planned: { id: "hi-cooking", theme: "cooking", words: 50 }
+  - decks: ["hi-cooking", "hi-cooking-sentences", "hi-reading-cooking", "*"]
+    words: 50
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "hi-grammar-comparison", grammar: "comparison" }
+  - decks: ["hi-grammar-comparison", "hi-grammar-comparison-sentences"]
+    words: 0
+    grammar: ["comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
@@ -314,12 +318,14 @@ units:
   - decks: ["hi-help", "hi-grammar-irregular", "hi-grammar-pitfalls", "*"]
     words: 6
     grammar: ["irregular", "pitfalls"]
-  - planned: { id: "hi-school", theme: "school", words: 50 }
+  - decks: ["hi-school", "hi-school-sentences", "hi-reading-school", "*"]
+    words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - planned: { id: "hi-hobbies", theme: "hobbies", words: 50 }
+  - decks: ["hi-hobbies", "hi-hobbies-sentences", "hi-reading-hobbies", "*"]
+    words: 50
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:

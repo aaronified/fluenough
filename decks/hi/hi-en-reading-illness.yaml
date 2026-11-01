@@ -1,0 +1,56 @@
+schema: 1
+id: "hi-en-reading-illness"
+name: "Reading: illness and medicine"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages: a call to a friend who is ill, and the label on a packet of medicine. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-a-cold-and-a-fever"
+    title: "A call to a friend"
+    theme: "illness"
+    sentences:
+      - { text: "मुझे ज़ुकाम है और बुखार भी है।", reading: "mujhē zukām hai aur bukhār bhī hai.", ipa: "mʊdʒʱeː zʊkaːm ɦɛː ɔːr bʊkʰaːr bʱiː ɦɛː" }
+      - { text: "सिर में दर्द है और बहुत कमज़ोरी है।", reading: "sir mēm̐ dard hai aur bahut kamzōrī hai.", ipa: "sɪr mẽː d̪ərd̪ ɦɛː ɔːr bəɦʊt̪ kəmzoːriː ɦɛː" }
+      - { text: "मैं आज घर पर आराम कर रहा हूँ।", reading: "maim̐ āj ghar par ārām kar rahā hūm̐.", ipa: "mɛ̃ː aːdʒ ɡʱər pər aːraːm kər rəɦaː ɦũː" }
+      - { text: "कल डॉक्टर के पास जाऊँगा।", reading: "kal ḍôkṭar kē pās jāūm̐gā.", ipa: "kəl ɖɔkʈər keː paːs dʒaːũːɡaː" }
+    questions:
+      - id: "hi-1490"
+        prompt: { en: "The friend has a cold and a fever." }
+        answer: true
+      - id: "hi-1491"
+        prompt: { en: "What is the friend doing today?" }
+        options:
+          - { en: "Going to the doctor" }
+          - { en: "Resting at home" }
+        answer: 2
+      - id: "hi-1492"
+        prompt: { en: "The friend is going to the doctor today." }
+        answer: false
+  - id: "hi-medicine-label"
+    title: "The label on a packet of medicine"
+    theme: "illness"
+    sentences:
+      - { text: "यह दवाई दिन में तीन बार लें।", reading: "yah davāī din mēm̐ tīn bār lēm̐.", ipa: "jəɦ d̪əʋaːiː d̪ɪn mẽː t̪iːn baːr lẽː" }
+      - { text: "खाने के बाद लें।", reading: "khānē kē bād lēm̐.", ipa: "kʰaːneː keː baːd̪ lẽː" }
+      - { text: "बच्चों से दूर रखें।", reading: "baccōm̐ sē dūr rakhēm̐.", ipa: "bətʃtʃõː seː d̪uːr rəkʰẽː" }
+      - { text: "नींद आए तो गाड़ी मत चलाएँ।", reading: "nīnd āē tō gāṛī mat calāēm̐.", ipa: "niːnd̪ aːeː t̪oː ɡaːɽiː mət̪ tʃəlaːẽː" }
+    questions:
+      - id: "hi-1493"
+        prompt: { en: "The medicine is taken once a day." }
+        answer: false
+      - id: "hi-1494"
+        prompt: { en: "When should you take the medicine?" }
+        options:
+          - { en: "Before a meal" }
+          - { en: "After eating" }
+        answer: 2
+      - id: "hi-1495"
+        prompt: { en: "If you feel sleepy, what should you not do?" }
+        options:
+          - { en: "Drive a vehicle" }
+          - { en: "Eat a meal" }
+        answer: 1

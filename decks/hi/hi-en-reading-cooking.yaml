@@ -1,0 +1,59 @@
+schema: 1
+id: "hi-en-reading-cooking"
+name: "Reading: cooking a dish, and a recipe"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages: a grandmother says how she cooks dal, and a recipe card for bread. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-a-recipe-aloud"
+    title: "A grandmother says how she makes a dish"
+    theme: "cooking"
+    sentences:
+      - { text: "पहले दाल धो लो।", reading: "pahlē dāl dhō lō.", ipa: "pəɦleː d̪aːl d̪ʱoː loː" }
+      - { text: "फिर उसमें हल्दी और नमक डालो।", reading: "phir usmēm̐ haldī aur namak ḍālō.", ipa: "pʰɪr ʊsmẽː ɦəld̪iː ɔːr nəmək ɖaːloː" }
+      - { text: "सीटी बजे तो गैस धीमी कर दो।", reading: "sīṭī bajē tō gais dhīmī kar dō.", ipa: "siːʈiː bədʒeː t̪oː ɡɛːs d̪ʱiːmiː kər d̪oː" }
+      - { text: "अब धनिया डालो और गरम परोसो।", reading: "ab dhaniyā ḍālō aur garam parōsō.", ipa: "əb d̪ʱənɪjaː ɖaːloː ɔːr ɡərəm pəroːsoː" }
+    questions:
+      - id: "hi-1556"
+        prompt: { en: "The grandmother starts by washing the lentils." }
+        answer: true
+      - id: "hi-1557"
+        prompt: { en: "When does she lower the gas?" }
+        options:
+          - { en: "Before adding salt" }
+          - { en: "When the whistle blows" }
+        answer: 2
+      - id: "hi-1558"
+        prompt: { en: "What does she add at the end?" }
+        options:
+          - { en: "Turmeric" }
+          - { en: "Coriander" }
+        answer: 2
+  - id: "hi-recipe-card"
+    title: "A recipe card for bread"
+    theme: "cooking"
+    sentences:
+      - { text: "आटे में पानी और नमक मिलाओ।", reading: "āṭē mēm̐ pānī aur namak milāō.", ipa: "aːʈeː mẽː paːniː ɔːr nəmək mɪlaːoː" }
+      - { text: "आटा नरम गूँधो और दस मिनट रखो।", reading: "āṭā naram gūm̐dhō aur das minaṭ rakhō.", ipa: "aːʈaː nərəm ɡũːd̪ʱoː ɔːr d̪əs mɪnəʈ rəkʰoː" }
+      - { text: "फिर रोटी बेलो।", reading: "phir rōṭī bēlō.", ipa: "pʰɪr roːʈiː beːloː" }
+      - { text: "तवे पर रोटी सेंको।", reading: "tavē par rōṭī sēṅkō.", ipa: "t̪əʋeː pər roːʈiː seːŋkoː" }
+    questions:
+      - id: "hi-1559"
+        prompt: { en: "The dough is kneaded soft." }
+        answer: true
+      - id: "hi-1560"
+        prompt: { en: "How long do you rest the dough?" }
+        options:
+          - { en: "Five minutes" }
+          - { en: "Ten minutes" }
+        answer: 2
+      - id: "hi-1561"
+        prompt: { en: "What is the last step?" }
+        options:
+          - { en: "Fry the bread in oil" }
+          - { en: "Toast the bread on the griddle" }
+        answer: 2

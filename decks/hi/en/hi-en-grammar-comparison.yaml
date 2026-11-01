@@ -1,0 +1,16 @@
+schema: 1
+id: "hi-en-grammar-comparison"
+kind: "layer"
+core: "hi-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing: bigger, than and the most"
+license: "CC-BY-SA-4.0"
+description: "How to say one thing is more than another, and the most: से (se) after the thing compared, and सबसे (sabse) before the adjective. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Comparing: bigger, than and the most"
+  slot_name: "comparison"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "more, with ज़्यादा (zyādā)": "more, with ज़्यादा (zyādā)", "than, with से (se)": "than, with से (se)", "most, with सबसे (sabse)": "most, with सबसे (sabse)" }
+  entries: { "badaa": "big", "chhotaa": "small", "lambaa": "tall; long", "achchhaa": "good", "garam": "hot", "thandaa": "cold", "tez": "fast; sharp", "meetha": "sweet" }
+  notes: "Put से (se) after the thing you compare to: राम श्याम से लंबा है (rām śyām se lambā hai), Ram is taller than Shyam. The adjective stays masculine singular. सबसे (sabse) before it gives the most: सबसे बड़ा (sabse baṛā), the biggest. ज़्यादा (zyādā) before it is the everyday way to say more."

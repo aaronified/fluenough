@@ -1,0 +1,119 @@
+schema: 1
+id: "hi-illness-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1480"
+    target: "मुझे सिर में दर्द है और बुखार भी है।"
+    reading: "mujhē sir mēm̐ dard hai aur bukhār bhī hai."
+    ipa: "mʊdʒʱeː sɪr mẽː d̪ərd̪ ɦɛː ɔːr bʊkʰaːr bʱiː ɦɛː"
+    phonetic: "[mʊdʒʱeː sɪr mẽː d̪ərd̪ ɦɛː ɔːr bʊkʰaːr bʱiː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "सिर", "ref": "hi-1024" }, { "word": "में", "ref": "hi-0274" }, { "word": "दर्द", "ref": "hi-0360" }, { "word": "है", "ref": "hi-0112" }, { "word": "और", "ref": "hi-0337" }, { "word": "बुखार", "ref": "hi-1431" }, { "word": "भी", "ref": "hi-0350" }]
+    confusables:
+      - { id: "w1", ref: "hi-1036", kind: "word" }
+      - { id: "f2", word: "हैं", reading: "haim̐", ipa: "ɦɛ̃ː", kind: "form" }
+  - id: "hi-1481"
+    target: "डॉक्टर ने दवाई और पर्चा दिया।"
+    reading: "ḍôkṭar nē davāī aur parcā diyā."
+    ipa: "ɖɔkʈər neː d̪əʋaːiː ɔːr pərtʃaː d̪ɪjaː"
+    phonetic: "[ɖɔkʈər neː d̪əʋaːiː ɔːr pərtʃaː d̪ɪjaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "दवाई", "ref": "hi-0359" }, { "word": "और", "ref": "hi-0337" }, { "word": "पर्चा", "ref": "hi-1444" }, { "word": "दिया", "base": "देना", "reading": "dēnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0358", kind: "word" }
+      - { id: "f2", word: "दी", reading: "dī", ipa: "d̪iː", kind: "form" }
+  - id: "hi-1482"
+    target: "नर्स ने सुई लगाई और बच्चा रोया।"
+    reading: "nars nē suī lagāī aur baccā rōyā."
+    ipa: "nərs neː sʊiː ləɡaːiː ɔːr bətʃtʃaː roːjaː"
+    phonetic: "[nərs neː sʊiː ləɡaːiː ɔːr bətʃtʃaː roːjaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "नर्स", "ref": "hi-0406" }, { "word": "ने", "base": "ने", "reading": "nē" }, { "word": "सुई", "ref": "hi-1459" }, { "word": "लगाई", "base": "लगाना", "reading": "lagānā" }, { "word": "और", "ref": "hi-0337" }, { "word": "बच्चा", "base": "बच्चा", "reading": "baccā" }, { "word": "रोया", "base": "रोना", "reading": "rōnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0359", kind: "word" }
+      - { id: "f2", word: "लगाए", reading: "lagāē", ipa: "ləɡaːeː", kind: "form" }
+  - id: "hi-1483"
+    target: "उसे खाँसी है और वह घर पर है।"
+    reading: "usē khām̐sī hai aur vah ghar par hai."
+    ipa: "ʊseː kʰãːsiː ɦɛː ɔːr ʋəɦ ɡʱər pər ɦɛː"
+    phonetic: "[ʊseː kʰãːsiː ɦɛː ɔːr ʋəɦ ɡʱər pər ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "उसे", "base": "वह", "reading": "vah" }, { "word": "खाँसी", "ref": "hi-1432" }, { "word": "है", "ref": "hi-0112" }, { "word": "और", "ref": "hi-0337" }, { "word": "वह", "ref": "hi-0749" }, { "word": "घर", "ref": "hi-0192" }, { "word": "पर", "ref": "hi-0275" }]
+    confusables:
+      - { id: "w1", ref: "hi-1456", kind: "word" }
+      - { id: "f2", word: "हैं", reading: "haim̐", ipa: "ɦɛ̃ː", kind: "form" }
+  - id: "hi-1484"
+    target: "सिरदर्द में पानी पियो और आराम करो।"
+    reading: "sirdard mēm̐ pānī piyō aur ārām karō."
+    ipa: "sɪrd̪ərd̪ mẽː paːniː pɪjoː ɔːr aːraːm kəroː"
+    phonetic: "[sɪrd̪ərd̪ mẽː paːniː pɪjoː ɔːr aːraːm kəroː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "सिरदर्द", "ref": "hi-1434" }, { "word": "में", "ref": "hi-0274" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "पियो", "base": "पीना", "reading": "pīnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "आराम", "ref": "hi-1453" }, { "word": "करो", "base": "करना", "reading": "karnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0359", kind: "word" }
+      - { id: "f2", word: "पीना", reading: "pīnā", ipa: "piːnaː", kind: "form" }
+  - id: "hi-1485"
+    target: "मुझे चक्कर आ रहा है, मैं लेटता हूँ।"
+    reading: "mujhē cakkar ā rahā hai, maim̐ lēṭtā hūm̐."
+    ipa: "mʊdʒʱeː tʃəkkər aː rəɦaː ɦɛː mɛ̃ː leːʈt̪aː ɦũː"
+    phonetic: "[mʊdʒʱeː tʃəkkər aː rəɦaː ɦɛː mɛ̃ː leːʈt̪aː ɦũː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "चक्कर", "ref": "hi-1436" }, { "word": "आ", "base": "आना", "reading": "ānā" }, { "word": "रहा", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }, { "word": "मैं", "ref": "hi-0745" }, { "word": "लेटता", "base": "लेटना", "reading": "lēṭnā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1437", kind: "word" }
+      - { id: "f2", word: "लेटती", reading: "lēṭtī", ipa: "leːʈt̪iː", kind: "form" }
+  - id: "hi-1486"
+    target: "बीमार बच्चे को गोली दो।"
+    reading: "bīmār baccē kō gōlī dō."
+    ipa: "biːmaːr bətʃtʃeː koː ɡoːliː d̪oː"
+    phonetic: "[biːmaːr bətʃtʃeː koː ɡoːliː d̪oː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "बीमार", "ref": "hi-1430" }, { "word": "बच्चे", "base": "बच्चा", "reading": "baccā" }, { "word": "को", "ref": "hi-0277" }, { "word": "गोली", "ref": "hi-1443" }, { "word": "दो", "base": "देना", "reading": "dēnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0359", kind: "word" }
+      - { id: "f2", word: "बीमारी", reading: "bīmārī", ipa: "biːmaːriː", kind: "form" }
+  - id: "hi-1487"
+    target: "हड्डी टूटी है, डॉक्टर एक्स-रे करेंगे।"
+    reading: "haḍḍī ṭūṭī hai, ḍôkṭar ēks-rē karēṅgē."
+    ipa: "ɦəɖɖiː ʈuːʈiː ɦɛː ɖɔkʈər eːksreː kəreːŋɡeː"
+    phonetic: "[ɦəɖɖiː ʈuːʈiː ɦɛː ɖɔkʈər eːksreː kəreːŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "हड्डी", "ref": "hi-1047" }, { "word": "टूटी", "base": "टूटना", "reading": "ṭūṭnā" }, { "word": "है", "ref": "hi-0112" }, { "word": "डॉक्टर", "ref": "hi-0357" }, { "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }, { "word": "करेंगे", "base": "करना", "reading": "karnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1439", kind: "word" }
+      - { id: "f2", word: "टूटा", reading: "ṭūṭā", ipa: "ʈuːʈaː", kind: "form" }
+  - id: "hi-1488"
+    target: "उल्टी के बाद प्यास लगती है।"
+    reading: "ulṭī kē bād pyās lagtī hai."
+    ipa: "ʊlʈiː keː baːd̪ pjaːs ləɡt̪iː ɦɛː"
+    phonetic: "[ʊlʈiː keː baːd̪ pjaːs ləɡt̪iː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "उल्टी", "base": "उल्टी", "reading": "ulṭī" }, { "word": "के", "ref": "hi-0065" }, { "word": "बाद", "base": "बाद", "reading": "bād" }, { "word": "प्यास", "ref": "hi-1454" }, { "word": "लगती", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1455", kind: "word" }
+      - { id: "f2", word: "लगता", reading: "lagtā", ipa: "ləɡt̪aː", kind: "form" }
+  - id: "hi-1489"
+    target: "तबीयत ठीक नहीं है, मुझे आराम चाहिए।"
+    reading: "tabīyat ṭhīk nahīm̐ hai, mujhē ārām cāhiē."
+    ipa: "t̪əbiːjət̪ ʈʰiːk nəɦĩː ɦɛː mʊdʒʱeː aːraːm tʃaːɦɪeː"
+    phonetic: "[t̪əbiːjət̪ ʈʰiːk nəɦĩː ɦɛː mʊdʒʱeː aːraːm tʃaːɦɪeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "तबीयत", "ref": "hi-1449" }, { "word": "ठीक", "ref": "hi-1457" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }, { "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "आराम", "ref": "hi-1453" }, { "word": "चाहिए", "ref": "hi-0460" }]
+    confusables:
+      - { id: "w1", ref: "hi-0822", kind: "word" }
+      - { id: "f2", word: "हैं", reading: "haim̐", ipa: "ɦɛ̃ː", kind: "form" }

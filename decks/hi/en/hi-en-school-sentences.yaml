@@ -1,0 +1,50 @@
+schema: 1
+id: "hi-en-school-sentences"
+kind: "layer"
+core: "hi-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about school"
+license: "CC-BY-SA-4.0"
+description: "Short sentences using the words of the school unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1621":
+    native: "A new teacher has come to our classroom."
+    bases: { "हमारी": "our", "नया": "new", "आया": "to come" }
+    confusables: { "w1": { why: "A pupil, not the teacher: विद्यार्थी (vidyārthī) is a student." }, "f2": { why: "आई (āī) is feminine; शिक्षक (śikśak) is masculine, so आया (āyā) is right." } }
+  "hi-1622":
+    native: "The bag has an exercise book, a book and a pen."
+    bases: { "बस्ते": "school bag" }
+    confusables: { "w1": { why: "An eraser, not a pen: रबड़ (rabaṛ) rubs out pencil." }, "f2": { why: "है (hai) is for one thing; with several things here हैं (haiṃ) is right." } }
+  "hi-1623":
+    native: "Write the answer to the question in the exam."
+    bases: { "लिखो": "to write" }
+    confusables: { "w1": { why: "A lesson, not an answer: पाठ (pāṭh) is a chapter of a book." }, "f2": { why: "The command is लिखो (likho); लिखा (likhā) is the past form." } }
+  "hi-1624":
+    native: "Maths and science are my favourite subjects."
+    bases: { "मेरे": "my", "पसंदीदा": "favourite", "विषय": "subject" }
+    confusables: { "w1": { why: "History, not maths: इतिहास (itihās) is history." }, "f2": { why: "है (hai) is singular; गणित (gaṇit) and विज्ञान (vigyān) are two subjects, so हैं (haim̐) is right." } }
+  "hi-1625":
+    native: "The bell rang and the children went out of the classroom."
+    bases: { "बजी": "to ring", "बाहर": "outside", "गए": "to go" }
+    confusables: { "w1": { why: "A prayer, not the bell: प्रार्थना (prārthanā) is a prayer." }, "f2": { why: "बजा (bajā) is masculine; घंटी (ghaṇṭī) is feminine, so बजी (bajī) is right." } }
+  "hi-1626":
+    native: "Write your name in the register and sit in the classroom."
+    bases: { "नाम": "name", "लिखकर": "having written", "बैठो": "to sit" }
+    confusables: { "w1": { why: "A notebook for notes, not the school register: रजिस्टर (rajisṭar) is the register." }, "f2": { why: "The command is बैठो (baiṭho); बैठना (baiṭhnā) is the verb itself." } }
+  "hi-1627":
+    native: "Do not be afraid of a wrong answer."
+    bases: { "जवाब": "answer", "डरो": "to fear", "मत": "do not" }
+    confusables: { "w1": { why: "Right, not wrong: सही (sahī) is right." }, "f2": { why: "गलती (galtī) is a noun, a mistake; गलत (galat) is the adjective wrong." } }
+  "hi-1628":
+    native: "Every morning there is a prayer."
+    bases: { "हर": "each", "सुबह": "morning", "होती": "to be" }
+    confusables: { "w1": { why: "A bell, not the prayer: घंटी (ghaṇṭī) is a bell." }, "f2": { why: "होते (hote) is for plural subjects; the subject here is one prayer." } }
+  "hi-1629":
+    native: "Climb the stairs slowly and sit on the bench."
+    bases: { "सीढ़ियाँ": "stairs", "चढ़ो": "to climb", "बैठो": "to sit" }
+    confusables: { "w1": { why: "A classroom, not stairs: कक्षा (kakṣā) is a classroom." }, "f2": { why: "The command is चढ़ो (chaṛho); चढ़ना (chaṛhnā) is the verb itself." } }
+  "hi-1630":
+    native: "Do the experiment in the laboratory, then write it in the register."
+    bases: { "प्रयोग": "experiment", "करो": "to do", "फिर": "then", "लिखो": "to write" }
+    confusables: { "w1": { why: "A library, not a laboratory: पुस्तकालय (pustakālay) is a library." }, "f2": { why: "For a class the command is करो (karo); करें (karēṁ) is the polite form." } }

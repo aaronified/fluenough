@@ -1,0 +1,705 @@
+schema: 1
+id: "hi-hobbies"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "hobbies"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1637"
+    target: "शौक"
+    reading: "śauk"
+    ipa: "ʃɔːk"
+    phonetic: "[ʃɔːk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मेरा शौक पेंटिंग है।", reading: "mērā śauk pēṇṭiṅg hai.", ipa: "meːraː ʃɔːk peːɳʈɪŋɡ ɦɛː", bases: [{ "word": "मेरा", "base": "मेरा", "reading": "mērā" }, { "word": "शौक", "base": "शौक", "reading": "śauk" }, { "word": "पेंटिंग", "base": "पेंटिंग", "reading": "pēṇṭiṅg" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "आपका शौक क्या है?", reading: "āpkā śauk kyā hai?", ipa: "aːpkaː ʃɔːk kjaː ɦɛː", bases: [{ "word": "आपका", "ref": "hi-0755" }, { "word": "शौक", "base": "शौक", "reading": "śauk" }, { "word": "क्या", "base": "क्या", "reading": "kyā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1638"
+    target: "खेल"
+    reading: "khēl"
+    ipa: "kʰeːl"
+    phonetic: "[kʰeːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "खेल का मैदान बड़ा है।", reading: "khēl kā maidān baṛā hai.", ipa: "kʰeːl kaː mɛːd̪aːn bəɽaː ɦɛː", bases: [{ "word": "खेल", "base": "खेल", "reading": "khēl" }, { "word": "का", "ref": "hi-0279" }, { "word": "मैदान", "base": "मैदान", "reading": "maidān" }, { "word": "बड़ा", "base": "बड़ा", "reading": "baṛā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खेल में जीतना अच्छा है।", reading: "khēl mēm̐ jītnā acchā hai.", ipa: "kʰeːl mẽː dʒiːt̪naː ətʃtʃʰaː ɦɛː", bases: [{ "word": "खेल", "base": "खेल", "reading": "khēl" }, { "word": "में", "ref": "hi-0274" }, { "word": "जीतना", "base": "जीतना", "reading": "jītnā" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1639"
+    target: "गाना"
+    reading: "gānā"
+    ipa: "ɡaːnaː"
+    phonetic: "[ɡaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह अच्छा गाती है।", reading: "vah acchā gātī hai.", ipa: "ʋəɦ ətʃtʃʰaː ɡaːt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "गाती", "base": "गाना", "reading": "gānā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मुझे गाना पसंद है।", reading: "mujhē gānā pasand hai.", ipa: "mʊdʒʱeː ɡaːnaː pəsənd̪ ɦɛː", bases: [{ "word": "मुझे", "base": "मैं", "reading": "maim̐" }, { "word": "गाना", "base": "गाना", "reading": "gānā" }, { "word": "पसंद", "base": "पसंद", "reading": "pasand" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1640"
+    target: "गीत"
+    reading: "gīt"
+    ipa: "ɡiːt̪"
+    phonetic: "[ɡiːt̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह गीत सुंदर है।", reading: "yah gīt sundar hai.", ipa: "jəɦ ɡiːt̪ sʊnd̪ər ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "गीत", "base": "गीत", "reading": "gīt" }, { "word": "सुंदर", "base": "सुंदर", "reading": "sundar" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "हम गीत गाते हैं।", reading: "ham gīt gātē haim̐.", ipa: "ɦəm ɡiːt̪ ɡaːt̪eː ɦɛ̃ː", bases: [{ "word": "हम", "ref": "hi-0053" }, { "word": "गीत", "base": "गीत", "reading": "gīt" }, { "word": "गाते", "base": "गाना", "reading": "gānā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1641"
+    target: "गायक"
+    reading: "gāyak"
+    ipa: "ɡaːjək"
+    phonetic: "[ɡaːjək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह एक अच्छा गायक है।", reading: "vah ēk acchā gāyak hai.", ipa: "ʋəɦ eːk ətʃtʃʰaː ɡaːjək ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "एक", "base": "एक", "reading": "ēk" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "गायक", "base": "गायक", "reading": "gāyak" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "गायक मंच पर आए।", reading: "gāyak mañc par āē.", ipa: "ɡaːjək məɲtʃ pər aːeː", bases: [{ "word": "गायक", "base": "गायक", "reading": "gāyak" }, { "word": "मंच", "base": "मंच", "reading": "mañc" }, { "word": "पर", "ref": "hi-0275" }, { "word": "आए", "base": "आना", "reading": "ānā" }] }
+  - id: "hi-1642"
+    target: "नाचना"
+    reading: "nācnā"
+    ipa: "naːtʃnaː"
+    phonetic: "[naːtʃnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बच्चे नाचते हैं।", reading: "baccē nāctē haim̐.", ipa: "bətʃtʃeː naːtʃt̪eː ɦɛ̃ː", bases: [{ "word": "बच्चे", "ref": "hi-0383" }, { "word": "नाचते", "base": "नाचना", "reading": "nācnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "वह शादी में नाचती है।", reading: "vah śādī mēm̐ nāctī hai.", ipa: "ʋəɦ ʃaːd̪iː mẽː naːtʃt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "शादी", "ref": "hi-1315" }, { "word": "में", "ref": "hi-0274" }, { "word": "नाचती", "base": "नाचना", "reading": "nācnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1643"
+    target: "नाच"
+    reading: "nāc"
+    ipa: "naːtʃ"
+    phonetic: "[naːtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह नाच बहुत सुंदर है।", reading: "yah nāc bahut sundar hai.", ipa: "jəɦ naːtʃ bəɦʊt̪ sʊnd̪ər ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "नाच", "base": "नाच", "reading": "nāc" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "सुंदर", "base": "सुंदर", "reading": "sundar" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "नाच देखो।", reading: "nāc dēkhō.", ipa: "naːtʃ d̪eːkʰoː", bases: [{ "word": "नाच", "base": "नाच", "reading": "nāc" }, { "word": "देखो", "base": "देखना", "reading": "dēkhnā" }] }
+  - id: "hi-1644"
+    target: "तैरना"
+    reading: "tairnā"
+    ipa: "t̪ɛːrnaː"
+    phonetic: "[t̪ɛːrnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैं तैरना सीखता हूँ।", reading: "maim̐ tairnā sīkhtā hūm̐.", ipa: "mɛ̃ː t̪ɛːrnaː siːkʰt̪aː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "तैरना", "base": "तैरना", "reading": "tairnā" }, { "word": "सीखता", "base": "सीखना", "reading": "sīkhnā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "वह नदी में तैरता है।", reading: "vah nadī mēm̐ tairtā hai.", ipa: "ʋəɦ nəd̪iː mẽː t̪ɛːrt̪aː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "नदी", "ref": "hi-1064" }, { "word": "में", "ref": "hi-0274" }, { "word": "तैरता", "base": "तैरना", "reading": "tairnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1645"
+    target: "तैराकी"
+    reading: "tairākī"
+    ipa: "t̪ɛːraːkiː"
+    phonetic: "[t̪ɛːraːkiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "तैराकी अच्छी कसरत है।", reading: "tairākī acchī kasrat hai.", ipa: "t̪ɛːraːkiː ətʃtʃʰiː kəsrət̪ ɦɛː", bases: [{ "word": "तैराकी", "base": "तैराकी", "reading": "tairākī" }, { "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "कसरत", "base": "कसरत", "reading": "kasrat" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मेरी बहन तैराकी करती है।", reading: "mērī bahan tairākī kartī hai.", ipa: "meːriː bəɦən t̪ɛːraːkiː kərt̪iː ɦɛː", bases: [{ "word": "मेरी", "base": "मेरा", "reading": "mērā" }, { "word": "बहन", "ref": "hi-0379" }, { "word": "तैराकी", "base": "तैराकी", "reading": "tairākī" }, { "word": "करती", "base": "करना", "reading": "karnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1646"
+    target: "पतंग"
+    reading: "pataṅg"
+    ipa: "pət̪əŋɡ"
+    phonetic: "[pət̪əŋɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पतंग आसमान में उड़ती है।", reading: "pataṅg āsmān mēm̐ uṛtī hai.", ipa: "pət̪əŋɡ aːsmaːn mẽː ʊɽt̪iː ɦɛː", bases: [{ "word": "पतंग", "base": "पतंग", "reading": "pataṅg" }, { "word": "आसमान", "base": "आसमान", "reading": "āsmān" }, { "word": "में", "ref": "hi-0274" }, { "word": "उड़ती", "base": "उड़ना", "reading": "uṛnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बच्चे पतंग उड़ाते हैं।", reading: "baccē pataṅg uṛātē haim̐.", ipa: "bətʃtʃeː pət̪əŋɡ ʊɽaːt̪eː ɦɛ̃ː", bases: [{ "word": "बच्चे", "ref": "hi-0383" }, { "word": "पतंग", "base": "पतंग", "reading": "pataṅg" }, { "word": "उड़ाते", "base": "उड़ाना", "reading": "uṛānā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1647"
+    target: "तस्वीर"
+    reading: "tasvīr"
+    ipa: "t̪əsʋiːr"
+    phonetic: "[t̪əsʋiːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह तस्वीर बहुत सुंदर है।", reading: "yah tasvīr bahut sundar hai.", ipa: "jəɦ t̪əsʋiːr bəɦʊt̪ sʊnd̪ər ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "तस्वीर", "base": "तस्वीर", "reading": "tasvīr" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "सुंदर", "base": "सुंदर", "reading": "sundar" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मैं तस्वीर बनाती हूँ।", reading: "maim̐ tasvīr banātī hūm̐.", ipa: "mɛ̃ː t̪əsʋiːr bənaːt̪iː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "तस्वीर", "base": "तस्वीर", "reading": "tasvīr" }, { "word": "बनाती", "base": "बनाना", "reading": "banānā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+  - id: "hi-1648"
+    target: "फ़ोटो"
+    reading: "fōṭō"
+    ipa: "foːʈoː"
+    phonetic: "[foːʈoː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "फ़ोटो खींचो।", reading: "fōṭō khīñcō.", ipa: "foːʈoː kʰiːɲtʃoː", bases: [{ "word": "फ़ोटो", "base": "फ़ोटो", "reading": "fōṭō" }, { "word": "खींचो", "base": "खींचना", "reading": "khīñcanā" }] }
+      - { target: "यह फ़ोटो मेरे पास है।", reading: "yah fōṭō mērē pās hai.", ipa: "jəɦ foːʈoː meːreː paːs ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "फ़ोटो", "base": "फ़ोटो", "reading": "fōṭō" }, { "word": "मेरे", "base": "मेरा", "reading": "mērā" }, { "word": "पास", "ref": "hi-0293" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1649"
+    target: "पेंटिंग"
+    reading: "pēṇṭiṅg"
+    ipa: "peːɳʈɪŋɡ"
+    phonetic: "[peːɳʈɪŋɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पेंटिंग दीवार पर है।", reading: "pēṇṭiṅg dīvār par hai.", ipa: "peːɳʈɪŋɡ d̪iːʋaːr pər ɦɛː", bases: [{ "word": "पेंटिंग", "base": "पेंटिंग", "reading": "pēṇṭiṅg" }, { "word": "दीवार", "base": "दीवार", "reading": "dīvār" }, { "word": "पर", "ref": "hi-0275" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पेंटिंग करना मेरा शौक है।", reading: "pēṇṭiṅg karnā mērā śauk hai.", ipa: "peːɳʈɪŋɡ kərnaː meːraː ʃɔːk ɦɛː", bases: [{ "word": "पेंटिंग", "base": "पेंटिंग", "reading": "pēṇṭiṅg" }, { "word": "करना", "base": "करना", "reading": "karnā" }, { "word": "मेरा", "ref": "hi-0752" }, { "word": "शौक", "ref": "hi-1637" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1650"
+    target: "चित्रकारी"
+    reading: "citrakārī"
+    ipa: "tʃɪt̪rəkaːriː"
+    phonetic: "[tʃɪt̪rəkaːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चित्रकारी में रंग बहुत ज़रूरी हैं।", reading: "citrakārī mēm̐ raṅg bahut zarūrī haim̐.", ipa: "tʃɪt̪rəkaːriː mẽː rəŋɡ bəɦʊt̪ zəruːriː ɦɛ̃ː", bases: [{ "word": "चित्रकारी", "base": "चित्रकारी", "reading": "citrakārī" }, { "word": "में", "ref": "hi-0274" }, { "word": "रंग", "base": "रंग", "reading": "raṅg" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "वह चित्रकारी सीखती है।", reading: "vah citrakārī sīkhtī hai.", ipa: "ʋəɦ tʃɪt̪rəkaːriː siːkʰt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "चित्रकारी", "base": "चित्रकारी", "reading": "citrakārī" }, { "word": "सीखती", "base": "सीखना", "reading": "sīkhnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1651"
+    target: "गिटार"
+    reading: "giṭār"
+    ipa: "ɡɪʈaːr"
+    phonetic: "[ɡɪʈaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैं गिटार बजाता हूँ।", reading: "maim̐ giṭār bajātā hūm̐.", ipa: "mɛ̃ː ɡɪʈaːr bədʒaːt̪aː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "गिटार", "base": "गिटार", "reading": "giṭār" }, { "word": "बजाता", "base": "बजाना", "reading": "bajānā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "गिटार का तार टूटा है।", reading: "giṭār kā tār ṭūṭā hai.", ipa: "ɡɪʈaːr kaː t̪aːr ʈuːʈaː ɦɛː", bases: [{ "word": "गिटार", "base": "गिटार", "reading": "giṭār" }, { "word": "का", "ref": "hi-0279" }, { "word": "तार", "base": "तार", "reading": "tār" }, { "word": "टूटा", "base": "टूटना", "reading": "ṭūṭnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1652"
+    target: "हारमोनियम"
+    reading: "hārmōniyam"
+    ipa: "ɦaːrmoːnɪjəm"
+    phonetic: "[ɦaːrmoːnɪjəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हारमोनियम पर गाना गाओ।", reading: "hārmōniyam par gānā gāō.", ipa: "ɦaːrmoːnɪjəm pər ɡaːnaː ɡaːoː", bases: [{ "word": "हारमोनियम", "base": "हारमोनियम", "reading": "hārmōniyam" }, { "word": "पर", "ref": "hi-0275" }, { "word": "गाना", "ref": "hi-1639" }, { "word": "गाओ", "base": "गाना", "reading": "gānā" }] }
+      - { target: "हारमोनियम पुराना है।", reading: "hārmōniyam purānā hai.", ipa: "ɦaːrmoːnɪjəm pʊraːnaː ɦɛː", bases: [{ "word": "हारमोनियम", "base": "हारमोनियम", "reading": "hārmōniyam" }, { "word": "पुराना", "base": "पुराना", "reading": "purānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1653"
+    target: "तबला"
+    reading: "tablā"
+    ipa: "t̪əblaː"
+    phonetic: "[t̪əblaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "तबला बजाओ।", reading: "tablā bajāō.", ipa: "t̪əblaː bədʒaːoː", bases: [{ "word": "तबला", "base": "तबला", "reading": "tablā" }, { "word": "बजाओ", "base": "बजाना", "reading": "bajānā" }] }
+      - { target: "तबला सीखना कठिन है।", reading: "tablā sīkhnā kaṭhin hai.", ipa: "t̪əblaː siːkʰnaː kəʈʰɪn ɦɛː", bases: [{ "word": "तबला", "base": "तबला", "reading": "tablā" }, { "word": "सीखना", "ref": "hi-0952" }, { "word": "कठिन", "base": "कठिन", "reading": "kaṭhin" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1654"
+    target: "सितार"
+    reading: "sitār"
+    ipa: "sɪt̪aːr"
+    phonetic: "[sɪt̪aːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सितार सुनो।", reading: "sitār sunō.", ipa: "sɪt̪aːr sʊnoː", bases: [{ "word": "सितार", "base": "सितार", "reading": "sitār" }, { "word": "सुनो", "base": "सुनना", "reading": "sunnā" }] }
+      - { target: "सितार की धुन सुंदर है।", reading: "sitār kī dhun sundar hai.", ipa: "sɪt̪aːr kiː d̪ʱʊn sʊnd̪ər ɦɛː", bases: [{ "word": "सितार", "base": "सितार", "reading": "sitār" }, { "word": "की", "ref": "hi-0061" }, { "word": "धुन", "base": "धुन", "reading": "dhun" }, { "word": "सुंदर", "base": "सुंदर", "reading": "sundar" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1655"
+    target: "ढोलक"
+    reading: "ḍhōlak"
+    ipa: "ɖʱoːlək"
+    phonetic: "[ɖʱoːlək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ढोलक पर गीत गाओ।", reading: "ḍhōlak par gīt gāō.", ipa: "ɖʱoːlək pər ɡiːt̪ ɡaːoː", bases: [{ "word": "ढोलक", "base": "ढोलक", "reading": "ḍhōlak" }, { "word": "पर", "ref": "hi-0275" }, { "word": "गीत", "ref": "hi-1640" }, { "word": "गाओ", "base": "गाना", "reading": "gānā" }] }
+      - { target: "शादी में ढोलक बजती है।", reading: "śādī mēm̐ ḍhōlak bajtī hai.", ipa: "ʃaːd̪iː mẽː ɖʱoːlək bədʒt̪iː ɦɛː", bases: [{ "word": "शादी", "ref": "hi-1315" }, { "word": "में", "ref": "hi-0274" }, { "word": "ढोलक", "base": "ढोलक", "reading": "ḍhōlak" }, { "word": "बजती", "base": "बजना", "reading": "bajnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1656"
+    target: "बाँसुरी"
+    reading: "bām̐surī"
+    ipa: "bãːsʊriː"
+    phonetic: "[bãːsʊriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बाँसुरी बजाओ।", reading: "bām̐surī bajāō.", ipa: "bãːsʊriː bədʒaːoː", bases: [{ "word": "बाँसुरी", "base": "बाँसुरी", "reading": "bām̐surī" }, { "word": "बजाओ", "base": "बजाना", "reading": "bajānā" }] }
+      - { target: "बाँसुरी मीठी है।", reading: "bām̐surī mīṭhī hai.", ipa: "bãːsʊriː miːʈʰiː ɦɛː", bases: [{ "word": "बाँसुरी", "base": "बाँसुरी", "reading": "bām̐surī" }, { "word": "मीठी", "base": "मीठा", "reading": "mīṭhā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1657"
+    target: "वीणा"
+    reading: "vīṇā"
+    ipa: "ʋiːɳaː"
+    phonetic: "[ʋiːɳaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वीणा बजती है।", reading: "vīṇā bajtī hai.", ipa: "ʋiːɳaː bədʒt̪iː ɦɛː", bases: [{ "word": "वीणा", "base": "वीणा", "reading": "vīṇā" }, { "word": "बजती", "base": "बजना", "reading": "bajnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "वीणा के तार ढीले हैं।", reading: "vīṇā kē tār ḍhīlē haim̐.", ipa: "ʋiːɳaː keː t̪aːr ɖʱiːleː ɦɛ̃ː", bases: [{ "word": "वीणा", "base": "वीणा", "reading": "vīṇā" }, { "word": "के", "ref": "hi-0065" }, { "word": "तार", "base": "तार", "reading": "tār" }, { "word": "ढीले", "base": "ढीला", "reading": "ḍhīlā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1658"
+    target: "बाग़वानी"
+    reading: "bāġvānī"
+    ipa: "baːɣʋaːniː"
+    phonetic: "[baːɣʋaːniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मेरे पिता बाग़वानी करते हैं।", reading: "mērē pitā bāġvānī kartē haim̐.", ipa: "meːreː pɪt̪aː baːɣʋaːniː kərt̪eː ɦɛ̃ː", bases: [{ "word": "मेरे", "base": "मेरा", "reading": "mērā" }, { "word": "पिता", "ref": "hi-0376" }, { "word": "बाग़वानी", "base": "बाग़वानी", "reading": "bāġvānī" }, { "word": "करते", "base": "करना", "reading": "karnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "बाग़वानी से मन खुश रहता है।", reading: "bāġvānī sē man khuś rahtā hai.", ipa: "baːɣʋaːniː seː mən kʰʊʃ rəɦt̪aː ɦɛː", bases: [{ "word": "बाग़वानी", "base": "बाग़वानी", "reading": "bāġvānī" }, { "word": "से", "ref": "hi-0276" }, { "word": "मन", "base": "मन", "reading": "man" }, { "word": "खुश", "base": "खुश", "reading": "khuś" }, { "word": "रहता", "base": "रहना", "reading": "rahnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1659"
+    target: "डायरी"
+    reading: "ḍāyrī"
+    ipa: "ɖaːjriː"
+    phonetic: "[ɖaːjriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैं रोज़ डायरी लिखती हूँ।", reading: "maim̐ rōz ḍāyrī likhtī hūm̐.", ipa: "mɛ̃ː roːz ɖaːjriː lɪkʰt̪iː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "रोज़", "ref": "hi-0451" }, { "word": "डायरी", "base": "डायरी", "reading": "ḍāyrī" }, { "word": "लिखती", "base": "लिखना", "reading": "likhnā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "डायरी मेज़ पर है।", reading: "ḍāyrī mēz par hai.", ipa: "ɖaːjriː meːz pər ɦɛː", bases: [{ "word": "डायरी", "base": "डायरी", "reading": "ḍāyrī" }, { "word": "मेज़", "base": "मेज़", "reading": "mēz" }, { "word": "पर", "ref": "hi-0275" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1660"
+    target: "सैर"
+    reading: "sair"
+    ipa: "sɛːr"
+    phonetic: "[sɛːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह सैर करो।", reading: "subah sair karō.", ipa: "sʊbəɦ sɛːr kəroː", bases: [{ "word": "सुबह", "ref": "hi-0302" }, { "word": "सैर", "base": "सैर", "reading": "sair" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+      - { target: "हम पार्क की सैर करते हैं।", reading: "ham pārk kī sair kartē haim̐.", ipa: "ɦəm paːrk kiː sɛːr kərt̪eː ɦɛ̃ː", bases: [{ "word": "हम", "ref": "hi-0053" }, { "word": "पार्क", "base": "पार्क", "reading": "pārk" }, { "word": "की", "ref": "hi-0061" }, { "word": "सैर", "base": "सैर", "reading": "sair" }, { "word": "करते", "base": "करना", "reading": "karnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1661"
+    target: "घूमना"
+    reading: "ghūmnā"
+    ipa: "ɡʱuːmnaː"
+    phonetic: "[ɡʱuːmnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हम शाम को घूमने जाते हैं।", reading: "ham śām kō ghūmnē jātē haim̐.", ipa: "ɦəm ʃaːm koː ɡʱuːmneː dʒaːt̪eː ɦɛ̃ː", bases: [{ "word": "हम", "ref": "hi-0053" }, { "word": "शाम", "ref": "hi-0303" }, { "word": "को", "ref": "hi-0277" }, { "word": "घूमने", "base": "घूमना", "reading": "ghūmnā" }, { "word": "जाते", "base": "जाना", "reading": "jānā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "वह शहर में घूमती है।", reading: "vah śahar mēm̐ ghūmtī hai.", ipa: "ʋəɦ ʃəɦər mẽː ɡʱuːmt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "शहर", "ref": "hi-0195" }, { "word": "में", "ref": "hi-0274" }, { "word": "घूमती", "base": "घूमना", "reading": "ghūmnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1662"
+    target: "टहलना"
+    reading: "ṭahlnā"
+    ipa: "ʈəɦlnaː"
+    phonetic: "[ʈəɦlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दादा जी रोज़ टहलते हैं।", reading: "dādā jī rōz ṭahltē haim̐.", ipa: "d̪aːd̪aː dʒiː roːz ʈəɦlt̪eː ɦɛ̃ː", bases: [{ "word": "दादा", "ref": "hi-0384" }, { "word": "जी", "ref": "hi-0135" }, { "word": "रोज़", "ref": "hi-0451" }, { "word": "टहलते", "base": "टहलना", "reading": "ṭahlnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "सुबह टहलना अच्छा है।", reading: "subah ṭahlnā acchā hai.", ipa: "sʊbəɦ ʈəɦlnaː ətʃtʃʰaː ɦɛː", bases: [{ "word": "सुबह", "ref": "hi-0302" }, { "word": "टहलना", "base": "टहलना", "reading": "ṭahlnā" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1663"
+    target: "शतरंज"
+    reading: "śatrañj"
+    ipa: "ʃət̪rəɲdʒ"
+    phonetic: "[ʃət̪rəɲdʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "शतरंज में दिमाग़ लगता है।", reading: "śatrañj mēm̐ dimāġ lagtā hai.", ipa: "ʃət̪rəɲdʒ mẽː d̪ɪmaːɣ ləɡt̪aː ɦɛː", bases: [{ "word": "शतरंज", "base": "शतरंज", "reading": "śatrañj" }, { "word": "में", "ref": "hi-0274" }, { "word": "दिमाग़", "base": "दिमाग़", "reading": "dimāġ" }, { "word": "लगता", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "वह शतरंज अच्छा खेलती है।", reading: "vah śatrañj acchā khēltī hai.", ipa: "ʋəɦ ʃət̪rəɲdʒ ətʃtʃʰaː kʰeːlt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "शतरंज", "base": "शतरंज", "reading": "śatrañj" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "खेलती", "base": "खेलना", "reading": "khēlnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1664"
+    target: "कैरम"
+    reading: "kairam"
+    ipa: "kɛːrəm"
+    phonetic: "[kɛːrəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कैरम का बोर्ड बड़ा है।", reading: "kairam kā bōrḍ baṛā hai.", ipa: "kɛːrəm kaː boːrɖ bəɽaː ɦɛː", bases: [{ "word": "कैरम", "base": "कैरम", "reading": "kairam" }, { "word": "का", "ref": "hi-0279" }, { "word": "बोर्ड", "base": "बोर्ड", "reading": "bōrḍ" }, { "word": "बड़ा", "base": "बड़ा", "reading": "baṛā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "कैरम खेलो।", reading: "kairam khēlō.", ipa: "kɛːrəm kʰeːloː", bases: [{ "word": "कैरम", "base": "कैरम", "reading": "kairam" }, { "word": "खेलो", "base": "खेलना", "reading": "khēlnā" }] }
+  - id: "hi-1665"
+    target: "ताश"
+    reading: "tāś"
+    ipa: "t̪aːʃ"
+    phonetic: "[t̪aːʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ताश की गड्डी मेज़ पर है।", reading: "tāś kī gaḍḍī mēz par hai.", ipa: "t̪aːʃ kiː ɡəɖɖiː meːz pər ɦɛː", bases: [{ "word": "ताश", "base": "ताश", "reading": "tāś" }, { "word": "की", "ref": "hi-0061" }, { "word": "गड्डी", "base": "गड्डी", "reading": "gaḍḍī" }, { "word": "मेज़", "base": "मेज़", "reading": "mēz" }, { "word": "पर", "ref": "hi-0275" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "ताश खेलो।", reading: "tāś khēlō.", ipa: "t̪aːʃ kʰeːloː", bases: [{ "word": "ताश", "base": "ताश", "reading": "tāś" }, { "word": "खेलो", "base": "खेलना", "reading": "khēlnā" }] }
+  - id: "hi-1666"
+    target: "पहेली"
+    reading: "pahēlī"
+    ipa: "pəɦeːliː"
+    phonetic: "[pəɦeːliː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह पहेली कठिन है।", reading: "yah pahēlī kaṭhin hai.", ipa: "jəɦ pəɦeːliː kəʈʰɪn ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "पहेली", "base": "पहेली", "reading": "pahēlī" }, { "word": "कठिन", "base": "कठिन", "reading": "kaṭhin" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पहेली का जवाब दो।", reading: "pahēlī kā javāb dō.", ipa: "pəɦeːliː kaː dʒəʋaːb d̪oː", bases: [{ "word": "पहेली", "base": "पहेली", "reading": "pahēlī" }, { "word": "का", "ref": "hi-0279" }, { "word": "जवाब", "ref": "hi-1596" }, { "word": "दो", "base": "देना", "reading": "dēnā" }] }
+  - id: "hi-1667"
+    target: "साइकिल"
+    reading: "sāikil"
+    ipa: "saːɪkɪl"
+    phonetic: "[saːɪkɪl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "साइकिल चलाना मेरा शौक है।", reading: "sāikil calānā mērā śauk hai.", ipa: "saːɪkɪl tʃəlaːnaː meːraː ʃɔːk ɦɛː", bases: [{ "word": "साइकिल", "base": "साइकिल", "reading": "sāikil" }, { "word": "चलाना", "base": "चलाना", "reading": "calānā" }, { "word": "मेरा", "ref": "hi-0752" }, { "word": "शौक", "ref": "hi-1637" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "साइकिल तेज़ चलती है।", reading: "sāikil tēz caltī hai.", ipa: "saːɪkɪl t̪eːz tʃəlt̪iː ɦɛː", bases: [{ "word": "साइकिल", "base": "साइकिल", "reading": "sāikil" }, { "word": "तेज़", "base": "तेज़", "reading": "tēz" }, { "word": "चलती", "base": "चलना", "reading": "calnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1668"
+    target: "क्रिकेट"
+    reading: "krikēṭ"
+    ipa: "krɪkeːʈ"
+    phonetic: "[krɪkeːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हम क्रिकेट खेलते हैं।", reading: "ham krikēṭ khēltē haim̐.", ipa: "ɦəm krɪkeːʈ kʰeːlt̪eː ɦɛ̃ː", bases: [{ "word": "हम", "ref": "hi-0053" }, { "word": "क्रिकेट", "base": "क्रिकेट", "reading": "krikēṭ" }, { "word": "खेलते", "base": "खेलना", "reading": "khēlnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+      - { target: "क्रिकेट का मैच आज है।", reading: "krikēṭ kā maic āj hai.", ipa: "krɪkeːʈ kaː mɛːtʃ aːdʒ ɦɛː", bases: [{ "word": "क्रिकेट", "base": "क्रिकेट", "reading": "krikēṭ" }, { "word": "का", "ref": "hi-0279" }, { "word": "मैच", "base": "मैच", "reading": "maic" }, { "word": "आज", "ref": "hi-0299" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1669"
+    target: "फ़ुटबॉल"
+    reading: "fuṭbôl"
+    ipa: "fʊʈbɔl"
+    phonetic: "[fʊʈbɔl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "फ़ुटबॉल खेलना मज़ेदार है।", reading: "fuṭbôl khēlnā mazēdār hai.", ipa: "fʊʈbɔl kʰeːlnaː məzeːd̪aːr ɦɛː", bases: [{ "word": "फ़ुटबॉल", "base": "फ़ुटबॉल", "reading": "fuṭbôl" }, { "word": "खेलना", "ref": "hi-0787" }, { "word": "मज़ेदार", "base": "मज़ेदार", "reading": "mazēdār" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बच्चे फ़ुटबॉल खेलते हैं।", reading: "baccē fuṭbôl khēltē haim̐.", ipa: "bətʃtʃeː fʊʈbɔl kʰeːlt̪eː ɦɛ̃ː", bases: [{ "word": "बच्चे", "ref": "hi-0383" }, { "word": "फ़ुटबॉल", "base": "फ़ुटबॉल", "reading": "fuṭbôl" }, { "word": "खेलते", "base": "खेलना", "reading": "khēlnā" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1670"
+    target: "योग"
+    reading: "yōg"
+    ipa: "joːɡ"
+    phonetic: "[joːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सुबह योग करो।", reading: "subah yōg karō.", ipa: "sʊbəɦ joːɡ kəroː", bases: [{ "word": "सुबह", "ref": "hi-0302" }, { "word": "योग", "base": "योग", "reading": "yōg" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+      - { target: "योग से शरीर मज़बूत होता है।", reading: "yōg sē śarīr mazbūt hōtā hai.", ipa: "joːɡ seː ʃəriːr məzbuːt̪ ɦoːt̪aː ɦɛː", bases: [{ "word": "योग", "base": "योग", "reading": "yōg" }, { "word": "से", "ref": "hi-0276" }, { "word": "शरीर", "base": "शरीर", "reading": "śarīr" }, { "word": "मज़बूत", "base": "मज़बूत", "reading": "mazbūt" }, { "word": "होता", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1671"
+    target: "कुश्ती"
+    reading: "kuśtī"
+    ipa: "kʊʃt̪iː"
+    phonetic: "[kʊʃt̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कुश्ती एक पुरानी खेल है।", reading: "kuśtī ēk purānī khēl hai.", ipa: "kʊʃt̪iː eːk pʊraːniː kʰeːl ɦɛː", bases: [{ "word": "कुश्ती", "base": "कुश्ती", "reading": "kuśtī" }, { "word": "एक", "base": "एक", "reading": "ēk" }, { "word": "पुरानी", "base": "पुराना", "reading": "purānā" }, { "word": "खेल", "base": "खेल", "reading": "khēl" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "वह कुश्ती सीखता है।", reading: "vah kuśtī sīkhtā hai.", ipa: "ʋəɦ kʊʃt̪iː siːkʰt̪aː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "कुश्ती", "base": "कुश्ती", "reading": "kuśtī" }, { "word": "सीखता", "base": "सीखना", "reading": "sīkhnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1672"
+    target: "पिकनिक"
+    reading: "piknik"
+    ipa: "pɪknɪk"
+    phonetic: "[pɪknɪk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "रविवार को पिकनिक पर जाएँगे।", reading: "ravivār kō piknik par jāēm̐gē.", ipa: "rəʋɪʋaːr koː pɪknɪk pər dʒaːẽːɡeː", bases: [{ "word": "रविवार", "ref": "hi-0316" }, { "word": "को", "ref": "hi-0277" }, { "word": "पिकनिक", "base": "पिकनिक", "reading": "piknik" }, { "word": "पर", "ref": "hi-0275" }, { "word": "जाएँगे", "base": "जाना", "reading": "jānā" }] }
+      - { target: "पिकनिक में खाना अच्छा लगता है।", reading: "piknik mēm̐ khānā acchā lagtā hai.", ipa: "pɪknɪk mẽː kʰaːnaː ətʃtʃʰaː ləɡt̪aː ɦɛː", bases: [{ "word": "पिकनिक", "base": "पिकनिक", "reading": "piknik" }, { "word": "में", "ref": "hi-0274" }, { "word": "खाना", "ref": "hi-0332" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "लगता", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1673"
+    target: "खेलकूद"
+    reading: "khēlkūd"
+    ipa: "kʰeːlkuːd̪"
+    phonetic: "[kʰeːlkuːd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "स्कूल में खेलकूद होता है।", reading: "skūl mēm̐ khēlkūd hōtā hai.", ipa: "skuːl mẽː kʰeːlkuːd̪ ɦoːt̪aː ɦɛː", bases: [{ "word": "स्कूल", "ref": "hi-1056" }, { "word": "में", "ref": "hi-0274" }, { "word": "खेलकूद", "base": "खेलकूद", "reading": "khēlkūd" }, { "word": "होता", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खेलकूद से तंदुरुस्ती आती है।", reading: "khēlkūd sē tandurustī ātī hai.", ipa: "kʰeːlkuːd̪ seː t̪ənd̪ʊrʊst̪iː aːt̪iː ɦɛː", bases: [{ "word": "खेलकूद", "base": "खेलकूद", "reading": "khēlkūd" }, { "word": "से", "ref": "hi-0276" }, { "word": "तंदुरुस्ती", "base": "तंदुरुस्ती", "reading": "tandurustī" }, { "word": "आती", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1674"
+    target: "बैडमिंटन"
+    reading: "baiḍmiṇṭan"
+    ipa: "bɛːɖmɪɳʈən"
+    phonetic: "[bɛːɖmɪɳʈən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बैडमिंटन में शटल उड़ता है।", reading: "baiḍmiṇṭan mēm̐ śaṭal uṛtā hai.", ipa: "bɛːɖmɪɳʈən mẽː ʃəʈəl ʊɽt̪aː ɦɛː", bases: [{ "word": "बैडमिंटन", "base": "बैडमिंटन", "reading": "baiḍmiṇṭan" }, { "word": "में", "ref": "hi-0274" }, { "word": "शटल", "base": "शटल", "reading": "śaṭal" }, { "word": "उड़ता", "base": "उड़ना", "reading": "uṛnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मैं बैडमिंटन खेलता हूँ।", reading: "maim̐ baiḍmiṇṭan khēltā hūm̐.", ipa: "mɛ̃ː bɛːɖmɪɳʈən kʰeːlt̪aː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "बैडमिंटन", "base": "बैडमिंटन", "reading": "baiḍmiṇṭan" }, { "word": "खेलता", "base": "खेलना", "reading": "khēlnā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+  - id: "hi-1675"
+    target: "मैच"
+    reading: "maic"
+    ipa: "mɛːtʃ"
+    phonetic: "[mɛːtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज का मैच रोमांचक है।", reading: "āj kā maic rōmāñcak hai.", ipa: "aːdʒ kaː mɛːtʃ roːmaːɲtʃək ɦɛː", bases: [{ "word": "आज", "ref": "hi-0299" }, { "word": "का", "ref": "hi-0279" }, { "word": "मैच", "base": "मैच", "reading": "maic" }, { "word": "रोमांचक", "base": "रोमांचक", "reading": "rōmāñcak" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मैच देखने चलो।", reading: "maic dēkhnē calō.", ipa: "mɛːtʃ d̪eːkʰneː tʃəloː", bases: [{ "word": "मैच", "base": "मैच", "reading": "maic" }, { "word": "देखने", "base": "देखना", "reading": "dēkhnā" }, { "word": "चलो", "base": "चलना", "reading": "calnā" }] }
+  - id: "hi-1676"
+    target: "गेंद"
+    reading: "gēnd"
+    ipa: "ɡeːnd̪"
+    phonetic: "[ɡeːn̪d̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गेंद मेरे पास है।", reading: "gēnd mērē pās hai.", ipa: "ɡeːnd̪ meːreː paːs ɦɛː", bases: [{ "word": "गेंद", "base": "गेंद", "reading": "gēnd" }, { "word": "मेरे", "base": "मेरा", "reading": "mērā" }, { "word": "पास", "ref": "hi-0293" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "गेंद फेंको।", reading: "gēnd phēṅkō.", ipa: "ɡeːnd̪ pʰeːŋkoː", bases: [{ "word": "गेंद", "base": "गेंद", "reading": "gēnd" }, { "word": "फेंको", "base": "फेंकना", "reading": "phēṅkanā" }] }
+  - id: "hi-1677"
+    target: "बल्ला"
+    reading: "ballā"
+    ipa: "bəllaː"
+    phonetic: "[bəllaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बल्ला भारी है।", reading: "ballā bhārī hai.", ipa: "bəllaː bʱaːriː ɦɛː", bases: [{ "word": "बल्ला", "base": "बल्ला", "reading": "ballā" }, { "word": "भारी", "base": "भारी", "reading": "bhārī" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बल्ले से गेंद मारो।", reading: "ballē sē gēnd mārō.", ipa: "bəlleː seː ɡeːnd̪ maːroː", bases: [{ "word": "बल्ले", "base": "बल्ला", "reading": "ballā" }, { "word": "से", "ref": "hi-0276" }, { "word": "गेंद", "ref": "hi-1676" }, { "word": "मारो", "base": "मारना", "reading": "mārnā" }] }
+  - id: "hi-1678"
+    target: "टीम"
+    reading: "ṭīm"
+    ipa: "ʈiːm"
+    phonetic: "[ʈiːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "हमारी टीम जीती है।", reading: "hamārī ṭīm jītī hai.", ipa: "ɦəmaːriː ʈiːm dʒiːt̪iː ɦɛː", bases: [{ "word": "हमारी", "base": "हमारा", "reading": "hamārā" }, { "word": "टीम", "base": "टीम", "reading": "ṭīm" }, { "word": "जीती", "base": "जीतना", "reading": "jītnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "टीम में बारह खिलाड़ी हैं।", reading: "ṭīm mēm̐ bārah khilāṛī haim̐.", ipa: "ʈiːm mẽː baːrəɦ kʰɪlaːɽiː ɦɛ̃ː", bases: [{ "word": "टीम", "base": "टीम", "reading": "ṭīm" }, { "word": "में", "ref": "hi-0274" }, { "word": "बारह", "base": "बारह", "reading": "bārah" }, { "word": "खिलाड़ी", "ref": "hi-1679" }, { "word": "हैं", "ref": "hi-0113" }] }
+  - id: "hi-1679"
+    target: "खिलाड़ी"
+    reading: "khilāṛī"
+    ipa: "kʰɪlaːɽiː"
+    phonetic: "[kʰɪlaːɽiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह अच्छा खिलाड़ी है।", reading: "vah acchā khilāṛī hai.", ipa: "ʋəɦ ətʃtʃʰaː kʰɪlaːɽiː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "खिलाड़ी", "base": "खिलाड़ी", "reading": "khilāṛī" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "खिलाड़ी मैदान में आए।", reading: "khilāṛī maidān mēm̐ āē.", ipa: "kʰɪlaːɽiː mɛːd̪aːn mẽː aːeː", bases: [{ "word": "खिलाड़ी", "base": "खिलाड़ी", "reading": "khilāṛī" }, { "word": "मैदान", "base": "मैदान", "reading": "maidān" }, { "word": "में", "ref": "hi-0274" }, { "word": "आए", "base": "आना", "reading": "ānā" }] }
+  - id: "hi-1680"
+    target: "फ़िल्म"
+    reading: "film"
+    ipa: "fɪlm"
+    phonetic: "[fɪlm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "फ़िल्म देखना मेरा शौक है।", reading: "film dēkhnā mērā śauk hai.", ipa: "fɪlm d̪eːkʰnaː meːraː ʃɔːk ɦɛː", bases: [{ "word": "फ़िल्म", "base": "फ़िल्म", "reading": "film" }, { "word": "देखना", "ref": "hi-0784" }, { "word": "मेरा", "ref": "hi-0752" }, { "word": "शौक", "ref": "hi-1637" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "यह फ़िल्म अच्छी है।", reading: "yah film acchī hai.", ipa: "jəɦ fɪlm ətʃtʃʰiː ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "फ़िल्म", "base": "फ़िल्म", "reading": "film" }, { "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1681"
+    target: "नृत्य"
+    reading: "nrity"
+    ipa: "nrɪt̪j"
+    phonetic: "[nrɪt̪j]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "भरतनाट्यम एक नृत्य है।", reading: "bhartnāṭyam ēk nrity hai.", ipa: "bʱərt̪naːʈjəm eːk nrɪt̪j ɦɛː", bases: [{ "word": "भरतनाट्यम", "base": "भरतनाट्यम", "reading": "bhartnāṭyam" }, { "word": "एक", "base": "एक", "reading": "ēk" }, { "word": "नृत्य", "base": "नृत्य", "reading": "nrity" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "वह नृत्य सीखती है।", reading: "vah nrity sīkhtī hai.", ipa: "ʋəɦ nrɪt̪j siːkʰt̪iː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "नृत्य", "base": "नृत्य", "reading": "nrity" }, { "word": "सीखती", "base": "सीखना", "reading": "sīkhnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1682"
+    target: "कविता"
+    reading: "kavitā"
+    ipa: "kəʋɪt̪aː"
+    phonetic: "[kəʋɪt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह कविता सुंदर है।", reading: "yah kavitā sundar hai.", ipa: "jəɦ kəʋɪt̪aː sʊnd̪ər ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "कविता", "base": "कविता", "reading": "kavitā" }, { "word": "सुंदर", "base": "सुंदर", "reading": "sundar" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मैं कविता लिखती हूँ।", reading: "maim̐ kavitā likhtī hūm̐.", ipa: "mɛ̃ː kəʋɪt̪aː lɪkʰt̪iː ɦũː", bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "कविता", "base": "कविता", "reading": "kavitā" }, { "word": "लिखती", "base": "लिखना", "reading": "likhnā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }] }
+  - id: "hi-1683"
+    target: "कला"
+    reading: "kalā"
+    ipa: "kəlaː"
+    phonetic: "[kəlaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कला मन को खुश करती है।", reading: "kalā man kō khuś kartī hai.", ipa: "kəlaː mən koː kʰʊʃ kərt̪iː ɦɛː", bases: [{ "word": "कला", "base": "कला", "reading": "kalā" }, { "word": "मन", "base": "मन", "reading": "man" }, { "word": "को", "ref": "hi-0277" }, { "word": "खुश", "base": "खुश", "reading": "khuś" }, { "word": "करती", "base": "करना", "reading": "karnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "यह कला बहुत पुरानी है।", reading: "yah kalā bahut purānī hai.", ipa: "jəɦ kəlaː bəɦʊt̪ pʊraːniː ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "कला", "base": "कला", "reading": "kalā" }, { "word": "बहुत", "ref": "hi-0866" }, { "word": "पुरानी", "base": "पुराना", "reading": "purānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1684"
+    target: "फ़ोटोग्राफ़ी"
+    reading: "fōṭōgrāfī"
+    ipa: "foːʈoːɡraːfiː"
+    phonetic: "[foːʈoːɡraːfiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "फ़ोटोग्राफ़ी मेरा शौक है।", reading: "fōṭōgrāfī mērā śauk hai.", ipa: "foːʈoːɡraːfiː meːraː ʃɔːk ɦɛː", bases: [{ "word": "फ़ोटोग्राफ़ी", "base": "फ़ोटोग्राफ़ी", "reading": "fōṭōgrāfī" }, { "word": "मेरा", "ref": "hi-0752" }, { "word": "शौक", "ref": "hi-1637" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "फ़ोटोग्राफ़ी के लिए कैमरा चाहिए।", reading: "fōṭōgrāfī kē liē kaimrā cāhiē.", ipa: "foːʈoːɡraːfiː keː lɪeː kɛːmraː tʃaːɦɪeː", bases: [{ "word": "फ़ोटोग्राफ़ी", "base": "फ़ोटोग्राफ़ी", "reading": "fōṭōgrāfī" }, { "word": "के", "ref": "hi-0065" }, { "word": "लिए", "base": "लिए", "reading": "liē" }, { "word": "कैमरा", "base": "कैमरा", "reading": "kaimrā" }, { "word": "चाहिए", "ref": "hi-0460" }] }
+  - id: "hi-1685"
+    target: "घुड़सवारी"
+    reading: "ghuṛsvārī"
+    ipa: "ɡʱʊɽsʋaːriː"
+    phonetic: "[ɡʱʊɽsʋaːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "घुड़सवारी सीखना मज़ेदार है।", reading: "ghuṛsvārī sīkhnā mazēdār hai.", ipa: "ɡʱʊɽsʋaːriː siːkʰnaː məzeːd̪aːr ɦɛː", bases: [{ "word": "घुड़सवारी", "base": "घुड़सवारी", "reading": "ghuṛsvārī" }, { "word": "सीखना", "base": "सीखना", "reading": "sīkhnā" }, { "word": "मज़ेदार", "base": "मज़ेदार", "reading": "mazēdār" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "वह रोज़ घुड़सवारी करता है।", reading: "vah rōz ghuṛsvārī kartā hai.", ipa: "ʋəɦ roːz ɡʱʊɽsʋaːriː kərt̪aː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "रोज़", "ref": "hi-0451" }, { "word": "घुड़सवारी", "base": "घुड़सवारी", "reading": "ghuṛsvārī" }, { "word": "करता", "base": "करना", "reading": "karnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1686"
+    target: "नाटक"
+    reading: "nāṭak"
+    ipa: "naːʈək"
+    phonetic: "[naːʈək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "स्कूल में नाटक होता है।", reading: "skūl mēm̐ nāṭak hōtā hai.", ipa: "skuːl mẽː naːʈək ɦoːt̪aː ɦɛː", bases: [{ "word": "स्कूल", "ref": "hi-1056" }, { "word": "में", "ref": "hi-0274" }, { "word": "नाटक", "base": "नाटक", "reading": "nāṭak" }, { "word": "होता", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "नाटक मंच पर चलता है।", reading: "nāṭak mañc par caltā hai.", ipa: "naːʈək məɲtʃ pər tʃəlt̪aː ɦɛː", bases: [{ "word": "नाटक", "base": "नाटक", "reading": "nāṭak" }, { "word": "मंच", "base": "मंच", "reading": "mañc" }, { "word": "पर", "ref": "hi-0275" }, { "word": "चलता", "base": "चलना", "reading": "calnā" }, { "word": "है", "ref": "hi-0112" }] }
