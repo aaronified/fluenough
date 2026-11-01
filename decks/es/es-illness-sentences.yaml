@@ -1,0 +1,50 @@
+schema: 1
+id: "es-illness-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1493"
+    target: "Tengo fiebre y me duele la cabeza."
+    ipa: "ˈtenɡo ˈfjebɾe i me ˈdwele la kaˈbeθa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "fiebre", ref: "es-1460" }, { word: "y", ref: "es-0048" }, { word: "me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "la", base: "la" }, { word: "cabeza", ref: "es-0736" }]
+    confusables: [{ id: "resfriado", ref: "es-1458", kind: "word" }, { id: "gripe", ref: "es-1459", kind: "word" }]
+  - id: "es-1494"
+    target: "El médico me da una receta."
+    ipa: "el ˈmediko me da ˈuna reˈθeta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "médico", ref: "es-0506" }, { word: "me", base: "me" }, { word: "da", base: "dar" }, { word: "una", base: "una" }, { word: "receta", ref: "es-1302" }]
+    confusables: [{ id: "farmacia", ref: "es-0771", kind: "word" }, { id: "medicamento", ref: "es-1464", kind: "word" }]
+  - id: "es-1495"
+    target: "Tomo una pastilla con agua."
+    ipa: "ˈtomo ˈuna pasˈtiʝa kon ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tomo", ref: "es-0906" }, { word: "una", base: "una" }, { word: "pastilla", ref: "es-1465" }, { word: "con", base: "con" }, { word: "agua", ref: "es-0012" }]
+    confusables: [{ id: "jarabe", ref: "es-1466", kind: "word" }, { id: "vacuna", ref: "es-1473", kind: "word" }]
+  - id: "es-1496"
+    target: "Tengo tos y estornudo mucho."
+    ipa: "ˈtenɡo tos i estoɾˈnudo ˈmutʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "tos", ref: "es-1461" }, { word: "y", ref: "es-0048" }, { word: "estornudo", ref: "es-1480" }, { word: "mucho", ref: "es-0053" }]
+    confusables: [{ id: "alergia", ref: "es-1477", kind: "word" }, { id: "toser", ref: "es-1479", kind: "word" }]
+  - id: "es-1497"
+    target: "La herida está limpia y tiene una venda."
+    ipa: "la eˈɾida esˈta ˈlimpja i ˈtjene ˈuna ˈbenda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "herida", ref: "es-1471" }, { word: "está", ref: "es-0023" }, { word: "limpia", ref: "es-0416" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "venda", ref: "es-1472" }]
+    confusables: [{ id: "sangre", ref: "es-1490", kind: "word" }, { id: "mareo", ref: "es-1474", kind: "word" }]
+  - id: "es-1498"
+    target: "Voy a urgencias porque no mejoro."
+    ipa: "boj a uɾˈxenθjas ˈpoɾke no meˈxoɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "urgencias", ref: "es-1469" }, { word: "porque", base: "porque" }, { word: "no", ref: "es-0043" }, { word: "mejoro", ref: "es-1485" }]
+    confusables: [{ id: "consulta", ref: "es-1489", kind: "word" }, { id: "cita", ref: "es-0844", kind: "word" }]

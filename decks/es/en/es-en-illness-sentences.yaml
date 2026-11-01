@@ -1,0 +1,32 @@
+schema: 1
+id: "es-en-illness-sentences"
+kind: "layer"
+core: "es-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: illness and the doctor"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about feeling ill and going to the doctor, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1493":
+    native: "I have a fever and my head hurts."
+    bases: { "me": "to me", "la": "the" }
+    confusables: { "resfriado": { why: "Resfriado is a cold, a common illness." }, "gripe": { why: "Gripe is the flu, a stronger illness." } }
+  "es-1494":
+    native: "The doctor gives me a prescription."
+    bases: { "El": "the", "me": "to me", "da": "to give", "una": "a" }
+    confusables: { "farmacia": { why: "Farmacia is the pharmacy, where you buy the medicine." }, "medicamento": { why: "Medicamento is the medicine itself." } }
+  "es-1495":
+    native: "I take a tablet with water."
+    bases: { "una": "a", "con": "with" }
+    confusables: { "jarabe": { why: "Jarabe is a liquid medicine, not a tablet." }, "vacuna": { why: "Vacuna is an injection that prevents an illness." } }
+  "es-1496":
+    native: "I have a cough and I sneeze a lot."
+    confusables: { "alergia": { why: "Alergia is an allergic reaction, the cause of the sneezing." }, "toser": { why: "Toser is to cough, the action." } }
+  "es-1497":
+    native: "The wound is clean and has a bandage."
+    bases: { "La": "the", "una": "a" }
+    confusables: { "sangre": { why: "Sangre is blood, not the wound itself." }, "mareo": { why: "Mareo is dizziness, a different feeling." } }
+  "es-1498":
+    native: "I go to the emergency room because I am not getting better."
+    bases: { "a": "to", "porque": "because" }
+    confusables: { "consulta": { why: "Consulta is a planned visit to the doctor." }, "cita": { why: "Cita is an appointment made in advance." } }
