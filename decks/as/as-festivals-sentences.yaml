@@ -1,0 +1,114 @@
+schema: 1
+id: "as-festivals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2621"
+    target: "ব'হাগ বিহুত বহুত নাচ আছে।"
+    reading: "bohāg bihutôt bohut nāc āse."
+    ipa: "bohaɡ bihut bohut nas ase"
+    pos: "phrase"
+    bases:
+      - { word: "বিহুত", ref: "as-2596" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ভোগালী বিহু", reading: "bhogāli bihu", kind: "word" }
+      - { id: "c2", word: "কঙালী বিহু", reading: "kôṅāli bihu", kind: "word" }
+  - id: "as-2622"
+    target: "মেজিত জুই জ্বলে আৰু ঢোল বাজে।"
+    reading: "mezit zui zwôle āru dhol bāze."
+    ipa: "mezit zui zɔle aɹu dʱʊl baze"
+    pos: "phrase"
+    bases:
+      - { word: "মেজিত", ref: "as-2607" }
+      - { word: "জ্বলে", base: "জ্বলা", reading: "zwôlā" }
+      - { word: "বাজে", base: "বাজা", reading: "bājā" }
+    confusables:
+      - { id: "c1", word: "পূজা", reading: "pujā", kind: "word" }
+      - { id: "c2", word: "ভোজ", reading: "bhoz", kind: "word" }
+  - id: "as-2623"
+    target: "অতিথি উপহাৰ আনে।"
+    reading: "ôtithi uphār āne."
+    ipa: "ɔtitʰi upɔhaɹ ane"
+    pos: "phrase"
+    bases:
+      - { word: "আনে", ref: "as-2295" }
+    confusables:
+      - { id: "c1", word: "নিমন্ত্ৰণ", reading: "nimôntrôn", kind: "word" }
+      - { id: "c2", word: "অনুষ্ঠান", reading: "ônuṣṭhān", kind: "word" }
+  - id: "as-2624"
+    target: "নাচনী নতুন সাজ পিন্ধে।"
+    reading: "nāsôni nôtun sāz pindhe."
+    ipa: "nasoni notun saz pindʱe"
+    pos: "phrase"
+    bases:
+      - { word: "পিন্ধে", ref: "as-2309" }
+    confusables:
+      - { id: "c1", word: "বিহুৱান", reading: "bihuwān", kind: "word" }
+      - { id: "c2", word: "আনন্দ", reading: "ānôndô", kind: "word" }
+  - id: "as-2625"
+    target: "আজি আনন্দৰ দিন।"
+    reading: "āzi ānôndôr din."
+    ipa: "azi anɔndɔɹ din"
+    pos: "phrase"
+    bases:
+      - { word: "আনন্দৰ", ref: "as-2611" }
+    confusables:
+      - { id: "c1", word: "উৎসৱ", reading: "utsôb", kind: "word" }
+      - { id: "c2", word: "উৎসৱী", reading: "utsôbi", kind: "word" }
+  - id: "as-2626"
+    target: "মন্দিৰত পূজা আছে।"
+    reading: "mondirôt pujā āse."
+    ipa: "mondiɹɔt puza ase"
+    pos: "phrase"
+    bases:
+      - { word: "মন্দিৰত", ref: "as-2401" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "নামঘৰ", reading: "nāmôghôr", kind: "word" }
+      - { id: "c2", word: "গীৰ্জা", reading: "girzā", kind: "word" }
+  - id: "as-2627"
+    target: "তোমাৰ নিমন্ত্ৰণ ভাল।"
+    reading: "tomār nimôntrôn bhāl."
+    ipa: "tʊmaɹ nimɔntɹɔn bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "উপহাৰ", reading: "uphār", kind: "word" }
+      - { id: "c2", word: "দান", reading: "dān", kind: "word" }
+  - id: "as-2628"
+    target: "বিহুত গীত গাওঁ।"
+    reading: "bihutôt git gāum̐."
+    ipa: "bihut ɡit ɡaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "বিহুত", ref: "as-2596" }
+      - { word: "গাওঁ", ref: "as-2214" }
+    confusables:
+      - { id: "c1", word: "খোৱা", reading: "khuwā", kind: "word" }
+      - { id: "c2", word: "নাচা", reading: "nāsā", kind: "word" }
+  - id: "as-2629"
+    target: "কঙালী বিহুত জুই জ্বলে।"
+    reading: "kôṅāli bihutôt zui zwôle."
+    ipa: "kɔŋali bihut zui zɔle"
+    pos: "phrase"
+    bases:
+      - { word: "কঙালী", base: "কঙালী", reading: "kôṅāli" }
+      - { word: "বিহুত", ref: "as-2596" }
+      - { word: "জ্বলে", base: "জ্বলা", reading: "zwôlā" }
+    confusables:
+      - { id: "c1", word: "মেজি", reading: "mezi", kind: "word" }
+      - { id: "c2", word: "পূৰ্ণিমা", reading: "purnimā", kind: "word" }
+  - id: "as-2630"
+    target: "অতিথিক নমস্কাৰ।"
+    reading: "ôtithik nômôskār."
+    ipa: "ɔtitʰik nɔmɔskaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "অতিথিক", ref: "as-2613" }
+      - { word: "নমস্কাৰ", ref: "as-0126" }
+    confusables:
+      - { id: "c1", word: "ধন্যবাদ", reading: "dhônyôbād", kind: "word" }
+      - { id: "c2", word: "স্বাগতম", reading: "xāgôtôm", kind: "word" }

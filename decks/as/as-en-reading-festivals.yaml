@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-festivals"
+name: "Assamese reading: festivals and celebrations"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-festival-days"
+    title: "The days of the festival"
+    theme: "festivals"
+    sentences:
+      - text: "ব'হাগ বিহু বসন্তত।"
+        reading: "bohāg bihu bôsôntôt."
+      - text: "মেজিত জুই জ্বলে।"
+        reading: "mezit zui zwôle."
+      - text: "নাচনী আৰু বিহুৱান নাচে।"
+        reading: "nāsôni āru bihuwān nāce."
+      - text: "ভোজত বহুত মানুহ।"
+        reading: "bhozôt bohut mānuh."
+    questions:
+      - id: "as-2631"
+        prompt: { en: "Rongali Bihu is in spring." }
+        answer: true
+      - id: "as-2632"
+        prompt: { en: "What is burning at the bonfire?" }
+        options:
+          - { en: "A fire" }
+          - { en: "A drum" }
+          - { en: "Water" }
+        answer: 1
+      - id: "as-2633"
+        prompt: { en: "Who dances at the festival?" }
+        options:
+          - { en: "Only the guests" }
+          - { en: "The dancers" }
+          - { en: "The cooks" }
+        answer: 2
+  - id: "as-festival-invitation"
+    title: "An invitation to a festival meal"
+    theme: "festivals"
+    sentences:
+      - text: "আজি ভোজ আছে, তুমি আহিবা।"
+        reading: "āzi bhoz āse, tumi āhibā."
+      - text: "মই তোমাক নিমন্ত্ৰণ কৰিছোঁ।"
+        reading: "moi tomāk nimôntrôn kôrisum̐."
+      - text: "উপহাৰ নালাগে।"
+        reading: "uphār nālāge."
+      - text: "ঘৰত ঢোল বাজে।"
+        reading: "ghôrôt dhol bāze."
+    questions:
+      - id: "as-2634"
+        prompt: { en: "The feast is today." }
+        answer: true
+      - id: "as-2635"
+        prompt: { en: "What does the writer say about a gift?" }
+        options:
+          - { en: "It is needed" }
+          - { en: "It is not needed" }
+          - { en: "It is very large" }
+        answer: 2
+      - id: "as-2636"
+        prompt: { en: "What plays at the house?" }
+        options:
+          - { en: "A drum" }
+          - { en: "A horn" }
+          - { en: "A radio" }
+        answer: 1
