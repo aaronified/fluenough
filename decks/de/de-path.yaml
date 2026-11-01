@@ -92,11 +92,10 @@ regions:
 units:
   # 1. The phrasebook, taught whole from the first lesson.
   # de-first-words joins it when written.
-  - planned: { id: "de-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-hello", text: { "en": "Hallo, danke and tschüss: greeting a shopkeeper and leaving" } }
-    reading_passages:
-      - { id: "door-signs", text: { "en": "Signs on doors: open, closed, push, pull" } }
+  # The first words are written: de-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["de-phrasebook", "de-first-words", "*"]
+    words: 10
   # 2. The first word units. The sounds English lacks first: ü and ö, the
   # two sounds of ch, the long and short vowels, and the final -b, -d and -g
   # said as p, t and k.

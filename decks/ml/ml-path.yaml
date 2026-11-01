@@ -128,11 +128,10 @@ alphabet: []
 units:
   # 1. The phrasebook, taught whole from the first lesson. ml-first-words
   # joins this unit.
-  - planned: { id: "ml-phrasebook", theme: "first-words", words: 8 }
-    listening_passages:
-      - { id: "first-meeting", text: { "en": "Two people greet each other and say their names" } }
-    reading_passages:
-      - { id: "welcome-card", text: { "en": "A welcome card: hello, thank you and please" } }
+  # The first words are written: ml-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["ml-phrasebook", "ml-first-words", "*"]
+    words: 10
   # 2. The first word units.
   - planned: { id: "ml-sound-differences", grammar: "sound-differences", words: 12 }
     listening_passages:

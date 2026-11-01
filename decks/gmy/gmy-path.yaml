@@ -134,11 +134,10 @@ units:
   # words beside them: wa-na-ka (wanax, king), da-mo (dāmos, the people),
   # po-ti-ni-ja (potnia, mistress), pa-te (patēr, father). gmy-first-words
   # joins this unit when written.
-  - planned: { id: "gmy-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "formulae-aloud", text: { "en": "The commonest tablet formulae read aloud in the reconstructed pronunciation: to-so (toson, so much), o-u-di-do-si (ou didonsi, they do not give), a-pu-do-si (apudosis, delivery)" } }
-    reading_passages:
-      - { id: "first-heading", text: { "en": "A tablet's heading and its total, in transliteration: a place name, to-so (so much) and a number" } }
+  # The first words are written: gmy-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["gmy-phrasebook", "gmy-first-words", "*"]
+    words: 10
   # 2. The first word units, read in transliteration: the spelling rules
   # first. Linear B writes open syllables only, so readers restore the
   # Greek: final consonants are dropped (pa-te for patēr), and so are l, r,

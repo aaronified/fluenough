@@ -165,6 +165,18 @@ ids before committing** — they are permanent once published, because they key
 every user's review history. A word another deck already teaches should be
 listed there by `ref` instead.
 
+## `gen_planned_paths.py`
+
+Writes `decks/<code>/<code>-path.yaml` for the planned languages (#959): the
+whole plan to B1, unit 1 written and every other unit planned. It also turns
+unit 1 of the older all-planned paths into the written unit. Deterministic;
+`--check` exits 1 if a file differs. See the Plan-Language-Paths page.
+
+```
+python3 tools/gen_planned_paths.py
+python3 tools/gen_planned_paths.py --check
+```
+
 ## `split_deck.py`
 
 Splits a single-file deck into a core and an English layer, as

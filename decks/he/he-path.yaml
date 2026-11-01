@@ -1,0 +1,478 @@
+# The order Hebrew is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught he-en-<name> for he-<name> (ADR-0013, ADR-0036).
+#
+# This is also Hebrew's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: Script with niqqud (RTL); transition to unvoweled text; binyanim.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "he-path"
+language: "he"
+description: "Hebrew: the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f"]
+alphabet: []
+units:
+  - decks: ["he-phrasebook", "he-first-words", "*"]
+    words: 10
+  - planned: { id: "he-sound-differences", grammar: ["sound-differences"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short spoken passage in Hebrew showing sound differences" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Hebrew showing sound differences" } }
+  - planned: { id: "he-questions", theme: "questions", words: 12 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short spoken passage in Hebrew on the theme yes, no and questions" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Hebrew on the theme yes, no and questions" } }
+  - planned: { id: "he-pronouns", theme: "pronouns", words: 36 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short spoken passage in Hebrew on the theme pronouns and people words" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Hebrew on the theme pronouns and people words" } }
+  - planned: { id: "he-family", theme: "family", words: 27 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short spoken passage in Hebrew on the theme family" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Hebrew on the theme family" } }
+  - planned: { id: "he-numbers-1-20", theme: "numbers-1-20", words: 22 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short spoken passage in Hebrew on the theme numbers 1 to 20" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Hebrew on the theme numbers 1 to 20" } }
+  - planned: { id: "he-script-letters", grammar: ["hebrew-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short spoken passage in Hebrew showing hebrew letters" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Hebrew showing hebrew letters" } }
+  - planned: { id: "he-script-vowel-points", grammar: ["niqqud"] }
+    listening_passages:
+      - { id: "script-vowel-points-heard", text: { "en": "A short spoken passage in Hebrew showing niqqud" } }
+    reading_passages:
+      - { id: "script-vowel-points-text", text: { "en": "A short written text in Hebrew showing niqqud" } }
+  - planned: { id: "he-script-unpointed", grammar: ["unvoweled-text"] }
+    listening_passages:
+      - { id: "script-unpointed-heard", text: { "en": "A short spoken passage in Hebrew showing unvoweled text" } }
+    reading_passages:
+      - { id: "script-unpointed-text", text: { "en": "A short written text in Hebrew showing unvoweled text" } }
+  - planned: { id: "he-about-me", theme: "about-me", words: 8 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short spoken passage in Hebrew on the theme talking about yourself" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Hebrew on the theme talking about yourself" } }
+  - planned: { id: "he-everyday-verbs", theme: "everyday-verbs", words: 36 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short spoken passage in Hebrew on the theme everyday verbs" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Hebrew on the theme everyday verbs" } }
+  - planned: { id: "he-adverbs", theme: "adverbs", words: 54 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short spoken passage in Hebrew on the theme adverbs" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Hebrew on the theme adverbs" } }
+  - planned: { id: "he-quantities", theme: "quantities", words: 33 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short spoken passage in Hebrew on the theme quantities" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Hebrew on the theme quantities" } }
+  - planned: { id: "he-describing", theme: "describing", words: 43 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short spoken passage in Hebrew on the theme describing things and feelings" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Hebrew on the theme describing things and feelings" } }
+  - planned: { id: "he-grammar-roots", grammar: ["root-and-pattern"] }
+    listening_passages:
+      - { id: "grammar-roots-heard", text: { "en": "A short spoken passage in Hebrew showing root and pattern" } }
+    reading_passages:
+      - { id: "grammar-roots-text", text: { "en": "A short written text in Hebrew showing root and pattern" } }
+  - planned: { id: "he-time", theme: "time", words: 19 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short spoken passage in Hebrew on the theme time" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Hebrew on the theme time" } }
+  - planned: { id: "he-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short spoken passage in Hebrew on the theme location" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Hebrew on the theme location" } }
+  - planned: { id: "he-more-verbs", theme: "more-verbs", words: 35 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short spoken passage in Hebrew on the theme more verbs" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Hebrew on the theme more verbs" } }
+  - planned: { id: "he-work", theme: "work", words: 21 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short spoken passage in Hebrew on the theme work" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Hebrew on the theme work" } }
+  - planned: { id: "he-grammar-gender-agreement", grammar: ["gender-agreement"] }
+    listening_passages:
+      - { id: "grammar-gender-agreement-heard", text: { "en": "A short spoken passage in Hebrew showing gender agreement" } }
+    reading_passages:
+      - { id: "grammar-gender-agreement-text", text: { "en": "A short written text in Hebrew showing gender agreement" } }
+  - planned: { id: "he-numbers-big", theme: "numbers-big", words: 14 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short spoken passage in Hebrew on the theme tens and big numbers" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Hebrew on the theme tens and big numbers" } }
+  - planned: { id: "he-food", theme: "food", words: 69 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short spoken passage in Hebrew on the theme food" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Hebrew on the theme food" } }
+  - planned: { id: "he-groceries", theme: "groceries", words: 17 }
+    listening_passages:
+      - { id: "groceries-heard", text: { "en": "A short spoken passage in Hebrew on the theme groceries" } }
+    reading_passages:
+      - { id: "groceries-text", text: { "en": "A short written text in Hebrew on the theme groceries" } }
+  - planned: { id: "he-market", theme: "market", words: 8 }
+    listening_passages:
+      - { id: "market-heard", text: { "en": "A short spoken passage in Hebrew on the theme market" } }
+    reading_passages:
+      - { id: "market-text", text: { "en": "A short written text in Hebrew on the theme market" } }
+  - planned: { id: "he-grammar-nominal-sentences", grammar: ["nominal-sentences"] }
+    listening_passages:
+      - { id: "grammar-nominal-sentences-heard", text: { "en": "A short spoken passage in Hebrew showing nominal sentences" } }
+    reading_passages:
+      - { id: "grammar-nominal-sentences-text", text: { "en": "A short written text in Hebrew showing nominal sentences" } }
+  - planned: { id: "he-directions", theme: "directions", words: 13 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short spoken passage in Hebrew on the theme directions" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Hebrew on the theme directions" } }
+  - planned: { id: "he-transport", theme: "transport", words: 9 }
+    listening_passages:
+      - { id: "transport-heard", text: { "en": "A short spoken passage in Hebrew on the theme transport" } }
+    reading_passages:
+      - { id: "transport-text", text: { "en": "A short written text in Hebrew on the theme transport" } }
+  - planned: { id: "he-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short spoken passage in Hebrew on the theme body" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Hebrew on the theme body" } }
+  - planned: { id: "he-places", theme: "places", words: 46 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short spoken passage in Hebrew on the theme places" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Hebrew on the theme places" } }
+  - planned: { id: "he-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short spoken passage in Hebrew showing present tense" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Hebrew showing present tense" } }
+  - planned: { id: "he-things", theme: "things", words: 42 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short spoken passage in Hebrew on the theme things" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Hebrew on the theme things" } }
+  - planned: { id: "he-home", theme: "home", words: 21 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short spoken passage in Hebrew on the theme home" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Hebrew on the theme home" } }
+  - planned: { id: "he-clothes", theme: "clothes", words: 28 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short spoken passage in Hebrew on the theme clothes" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Hebrew on the theme clothes" } }
+  - planned: { id: "he-animals", theme: "animals", words: 32 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short spoken passage in Hebrew on the theme animals" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Hebrew on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "he-daily-life", theme: "daily-life", words: 8 }
+    listening_passages:
+      - { id: "daily-life-heard", text: { "en": "A short spoken passage in Hebrew on the theme a day" } }
+    reading_passages:
+      - { id: "daily-life-text", text: { "en": "A short written text in Hebrew on the theme a day" } }
+  - planned: { id: "he-weather", theme: "weather", words: 46 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short spoken passage in Hebrew on the theme weather" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Hebrew on the theme weather" } }
+  - planned: { id: "he-calendar", theme: "calendar", words: 15 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short spoken passage in Hebrew on the theme calendar" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Hebrew on the theme calendar" } }
+  - planned: { id: "he-grammar-past", grammar: ["past-tense"] }
+    listening_passages:
+      - { id: "grammar-past-heard", text: { "en": "A short spoken passage in Hebrew showing past tense" } }
+    reading_passages:
+      - { id: "grammar-past-text", text: { "en": "A short written text in Hebrew showing past tense" } }
+  - planned: { id: "he-festivals", theme: "festivals", words: 41 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short spoken passage in Hebrew on the theme festivals" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Hebrew on the theme festivals" } }
+  - planned: { id: "he-shopping", theme: "shopping", words: 57 }
+    listening_passages:
+      - { id: "shopping-heard", text: { "en": "A short spoken passage in Hebrew on the theme shopping" } }
+    reading_passages:
+      - { id: "shopping-text", text: { "en": "A short written text in Hebrew on the theme shopping" } }
+  - planned: { id: "he-grammar-future", grammar: ["future-tense"] }
+    listening_passages:
+      - { id: "grammar-future-heard", text: { "en": "A short spoken passage in Hebrew showing future tense" } }
+    reading_passages:
+      - { id: "grammar-future-text", text: { "en": "A short written text in Hebrew showing future tense" } }
+  - planned: { id: "he-illness", theme: "illness", words: 51 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short spoken passage in Hebrew on the theme illness" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Hebrew on the theme illness" } }
+  - planned: { id: "he-eating-out", theme: "eating-out", words: 9 }
+    listening_passages:
+      - { id: "eating-out-heard", text: { "en": "A short spoken passage in Hebrew on the theme eating out" } }
+    reading_passages:
+      - { id: "eating-out-text", text: { "en": "A short written text in Hebrew on the theme eating out" } }
+  - planned: { id: "he-cooking", theme: "cooking", words: 51 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short spoken passage in Hebrew on the theme cooking" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Hebrew on the theme cooking" } }
+  - planned: { id: "he-grammar-construct-state", grammar: ["construct-state"] }
+    listening_passages:
+      - { id: "grammar-construct-state-heard", text: { "en": "A short spoken passage in Hebrew showing construct state" } }
+    reading_passages:
+      - { id: "grammar-construct-state-text", text: { "en": "A short written text in Hebrew showing construct state" } }
+  - planned: { id: "he-help", theme: "help", words: 6 }
+    listening_passages:
+      - { id: "help-heard", text: { "en": "A short spoken passage in Hebrew on the theme help" } }
+    reading_passages:
+      - { id: "help-text", text: { "en": "A short written text in Hebrew on the theme help" } }
+  - planned: { id: "he-school", theme: "school", words: 57 }
+    listening_passages:
+      - { id: "school-heard", text: { "en": "A short spoken passage in Hebrew on the theme school" } }
+    reading_passages:
+      - { id: "school-text", text: { "en": "A short written text in Hebrew on the theme school" } }
+  - planned: { id: "he-grammar-pronoun-suffixes", grammar: ["pronoun-suffixes"] }
+    listening_passages:
+      - { id: "grammar-pronoun-suffixes-heard", text: { "en": "A short spoken passage in Hebrew showing pronoun suffixes" } }
+    reading_passages:
+      - { id: "grammar-pronoun-suffixes-text", text: { "en": "A short written text in Hebrew showing pronoun suffixes" } }
+  - planned: { id: "he-hobbies", theme: "hobbies", words: 57 }
+    listening_passages:
+      - { id: "hobbies-heard", text: { "en": "A short spoken passage in Hebrew on the theme hobbies" } }
+    reading_passages:
+      - { id: "hobbies-text", text: { "en": "A short written text in Hebrew on the theme hobbies" } }
+  - planned: { id: "he-chores", theme: "chores", words: 46 }
+    listening_passages:
+      - { id: "chores-heard", text: { "en": "A short spoken passage in Hebrew on the theme chores" } }
+    reading_passages:
+      - { id: "chores-text", text: { "en": "A short written text in Hebrew on the theme chores" } }
+  - planned: { id: "he-appearance", theme: "appearance", words: 56 }
+    listening_passages:
+      - { id: "appearance-heard", text: { "en": "A short spoken passage in Hebrew on the theme appearance" } }
+    reading_passages:
+      - { id: "appearance-text", text: { "en": "A short written text in Hebrew on the theme appearance" } }
+  - planned: { id: "he-grammar-comparison", grammar: ["comparison"] }
+    listening_passages:
+      - { id: "grammar-comparison-heard", text: { "en": "A short spoken passage in Hebrew showing comparison" } }
+    reading_passages:
+      - { id: "grammar-comparison-text", text: { "en": "A short written text in Hebrew showing comparison" } }
+  - planned: { id: "he-verbs-3", theme: "verbs-3", words: 72 }
+    listening_passages:
+      - { id: "verbs-3-heard", text: { "en": "A short spoken passage in Hebrew on the theme more daily actions" } }
+    reading_passages:
+      - { id: "verbs-3-text", text: { "en": "A short written text in Hebrew on the theme more daily actions" } }
+  - planned: { id: "he-phone", theme: "phone", words: 46 }
+    listening_passages:
+      - { id: "phone-heard", text: { "en": "A short spoken passage in Hebrew on the theme phone" } }
+    reading_passages:
+      - { id: "phone-text", text: { "en": "A short written text in Hebrew on the theme phone" } }
+  - planned: { id: "he-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short spoken passage in Hebrew showing imperative" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Hebrew showing imperative" } }
+  - planned: { id: "he-journey", theme: "journey", words: 62 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short spoken passage in Hebrew on the theme journey" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Hebrew on the theme journey" } }
+  - planned: { id: "he-nature", theme: "nature", words: 56 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short spoken passage in Hebrew on the theme nature" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Hebrew on the theme nature" } }
+  - planned: { id: "he-adjectives-2", theme: "adjectives-2", words: 62 }
+    listening_passages:
+      - { id: "adjectives-2-heard", text: { "en": "A short spoken passage in Hebrew on the theme describing a room" } }
+    reading_passages:
+      - { id: "adjectives-2-text", text: { "en": "A short written text in Hebrew on the theme describing a room" } }
+  - planned: { id: "he-grammar-binyanim", grammar: ["binyanim"] }
+    listening_passages:
+      - { id: "grammar-binyanim-heard", text: { "en": "A short spoken passage in Hebrew showing binyanim" } }
+    reading_passages:
+      - { id: "grammar-binyanim-text", text: { "en": "A short written text in Hebrew showing binyanim" } }
+  - planned: { id: "he-workplace", theme: "workplace", words: 51 }
+    listening_passages:
+      - { id: "workplace-heard", text: { "en": "A short spoken passage in Hebrew on the theme workplace" } }
+    reading_passages:
+      - { id: "workplace-text", text: { "en": "A short written text in Hebrew on the theme workplace" } }
+  - planned: { id: "he-geography", theme: "geography", words: 51 }
+    listening_passages:
+      - { id: "geography-heard", text: { "en": "A short spoken passage in Hebrew on the theme geography" } }
+    reading_passages:
+      - { id: "geography-text", text: { "en": "A short written text in Hebrew on the theme geography" } }
+    milestone: "A2"
+  - planned: { id: "he-health", theme: "health", words: 62 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short spoken passage in Hebrew on the theme health" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Hebrew on the theme health" } }
+  - planned: { id: "he-feelings", theme: "feelings", words: 62 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short spoken passage in Hebrew on the theme feelings" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Hebrew on the theme feelings" } }
+  - planned: { id: "he-news", theme: "news", words: 62 }
+    listening_passages:
+      - { id: "news-heard", text: { "en": "A short spoken passage in Hebrew on the theme news" } }
+    reading_passages:
+      - { id: "news-text", text: { "en": "A short written text in Hebrew on the theme news" } }
+  - planned: { id: "he-opinions", theme: "opinions", words: 57 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short spoken passage in Hebrew on the theme opinions" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Hebrew on the theme opinions" } }
+  - planned: { id: "he-grammar-verb-patterns", grammar: ["verb-patterns"] }
+    listening_passages:
+      - { id: "grammar-verb-patterns-heard", text: { "en": "A short spoken passage in Hebrew showing verb patterns" } }
+    reading_passages:
+      - { id: "grammar-verb-patterns-text", text: { "en": "A short written text in Hebrew showing verb patterns" } }
+  - planned: { id: "he-travel", theme: "travel", words: 62 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short spoken passage in Hebrew on the theme travel" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Hebrew on the theme travel" } }
+  - planned: { id: "he-services", theme: "services", words: 51 }
+    listening_passages:
+      - { id: "services-heard", text: { "en": "A short spoken passage in Hebrew on the theme services" } }
+    reading_passages:
+      - { id: "services-text", text: { "en": "A short written text in Hebrew on the theme services" } }
+  - planned: { id: "he-government", theme: "government", words: 46 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short spoken passage in Hebrew on the theme government" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Hebrew on the theme government" } }
+  - planned: { id: "he-grammar-plurals", grammar: ["plural-forms"] }
+    listening_passages:
+      - { id: "grammar-plurals-heard", text: { "en": "A short spoken passage in Hebrew showing plural forms" } }
+    reading_passages:
+      - { id: "grammar-plurals-text", text: { "en": "A short written text in Hebrew showing plural forms" } }
+  - planned: { id: "he-technology", theme: "technology", words: 56 }
+    listening_passages:
+      - { id: "technology-heard", text: { "en": "A short spoken passage in Hebrew on the theme technology" } }
+    reading_passages:
+      - { id: "technology-text", text: { "en": "A short written text in Hebrew on the theme technology" } }
+  - planned: { id: "he-careers", theme: "careers", words: 56 }
+    listening_passages:
+      - { id: "careers-heard", text: { "en": "A short spoken passage in Hebrew on the theme careers" } }
+    reading_passages:
+      - { id: "careers-text", text: { "en": "A short written text in Hebrew on the theme careers" } }
+  - planned: { id: "he-environment", theme: "environment", words: 56 }
+    listening_passages:
+      - { id: "environment-heard", text: { "en": "A short spoken passage in Hebrew on the theme environment" } }
+    reading_passages:
+      - { id: "environment-text", text: { "en": "A short written text in Hebrew on the theme environment" } }
+  - planned: { id: "he-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short spoken passage in Hebrew showing relative clauses" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Hebrew showing relative clauses" } }
+  - planned: { id: "he-agriculture", theme: "agriculture", words: 56 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short spoken passage in Hebrew on the theme agriculture" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Hebrew on the theme agriculture" } }
+  - planned: { id: "he-cinema", theme: "cinema", words: 62 }
+    listening_passages:
+      - { id: "cinema-heard", text: { "en": "A short spoken passage in Hebrew on the theme cinema" } }
+    reading_passages:
+      - { id: "cinema-text", text: { "en": "A short written text in Hebrew on the theme cinema" } }
+  - planned: { id: "he-arts", theme: "arts", words: 51 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short spoken passage in Hebrew on the theme arts" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Hebrew on the theme arts" } }
+  - planned: { id: "he-grammar-conditional-clauses", grammar: ["conditional-clauses"] }
+    listening_passages:
+      - { id: "grammar-conditional-clauses-heard", text: { "en": "A short spoken passage in Hebrew showing conditional clauses" } }
+    reading_passages:
+      - { id: "grammar-conditional-clauses-text", text: { "en": "A short written text in Hebrew showing conditional clauses" } }
+  - planned: { id: "he-history", theme: "history", words: 51 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short spoken passage in Hebrew on the theme history" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Hebrew on the theme history" } }
+  - planned: { id: "he-weddings", theme: "weddings", words: 51 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short spoken passage in Hebrew on the theme weddings" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Hebrew on the theme weddings" } }
+  - planned: { id: "he-sports", theme: "sports", words: 46 }
+    listening_passages:
+      - { id: "sports-heard", text: { "en": "A short spoken passage in Hebrew on the theme sports" } }
+    reading_passages:
+      - { id: "sports-text", text: { "en": "A short written text in Hebrew on the theme sports" } }
+  - planned: { id: "he-grammar-passive", grammar: ["passive"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short spoken passage in Hebrew showing passive" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Hebrew showing passive" } }
+  - planned: { id: "he-relationships", theme: "relationships", words: 51 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short spoken passage in Hebrew on the theme relationships" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Hebrew on the theme relationships" } }
+  - planned: { id: "he-housing", theme: "housing", words: 46 }
+    listening_passages:
+      - { id: "housing-heard", text: { "en": "A short spoken passage in Hebrew on the theme housing" } }
+    reading_passages:
+      - { id: "housing-text", text: { "en": "A short written text in Hebrew on the theme housing" } }
+  - planned: { id: "he-emergencies", theme: "emergencies", words: 41 }
+    listening_passages:
+      - { id: "emergencies-heard", text: { "en": "A short spoken passage in Hebrew on the theme emergencies" } }
+    reading_passages:
+      - { id: "emergencies-text", text: { "en": "A short written text in Hebrew on the theme emergencies" } }
+  - planned: { id: "he-grammar-reported-speech", grammar: ["reported-speech"] }
+    listening_passages:
+      - { id: "grammar-reported-speech-heard", text: { "en": "A short spoken passage in Hebrew showing reported speech" } }
+    reading_passages:
+      - { id: "grammar-reported-speech-text", text: { "en": "A short written text in Hebrew showing reported speech" } }
+  - planned: { id: "he-law", theme: "law", words: 41 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short spoken passage in Hebrew on the theme law" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Hebrew on the theme law" } }
+  - planned: { id: "he-verbs-4", theme: "verbs-4", words: 72 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short spoken passage in Hebrew on the theme story actions" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Hebrew on the theme story actions" } }
+  - planned: { id: "he-abstract-words", theme: "abstract-words", words: 62 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short spoken passage in Hebrew on the theme ideas and values" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Hebrew on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]
