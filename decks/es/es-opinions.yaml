@@ -1,0 +1,657 @@
+schema: 1
+id: "es-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2104"
+    target: "el acuerdo"
+    ipa: "el aˈkweɾdo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "acuerdo", base: "acuerdo" }]
+    examples:
+      - target: "Llegamos a un acuerdo."
+        ipa: "ʝeˈɡamos a un aˈkweɾdo"
+        bases: [{ word: "Llegamos", ref: "es-0290" }, { word: "a", base: "a" }, { word: "un", base: "un" }, { word: "acuerdo", base: "acuerdo" }]
+      - target: "Estoy de acuerdo contigo."
+        ipa: "esˈtoj de aˈkweɾdo konˈtiɡo"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "de", base: "de" }, { word: "acuerdo", base: "acuerdo" }, { word: "contigo", base: "contigo" }]
+  - id: "es-2105"
+    target: "el desacuerdo"
+    ipa: "el desaˈkweɾdo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "desacuerdo", base: "desacuerdo" }]
+    examples:
+      - target: "Hay un desacuerdo entre los amigos."
+        ipa: "aj un desaˈkweɾdo ˈentɾe los aˈmiɡos"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "desacuerdo", base: "desacuerdo" }, { word: "entre", ref: "es-0719" }, { word: "los", base: "los" }, { word: "amigos", ref: "es-0005" }]
+      - target: "No estoy de acuerdo, es un desacuerdo."
+        ipa: "no esˈtoj de aˈkweɾdo es un desaˈkweɾdo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "estoy", ref: "es-0023" }, { word: "de", base: "de" }, { word: "acuerdo", ref: "es-2104" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "desacuerdo", base: "desacuerdo" }]
+  - id: "es-2106"
+    target: "el argumento"
+    ipa: "el aɾɡuˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "argumento", base: "argumento" }]
+    examples:
+      - target: "Tu argumento es muy bueno."
+        ipa: "tu aɾɡuˈmento es mwi ˈbweno"
+        bases: [{ word: "Tu", ref: "es-0130" }, { word: "argumento", base: "argumento" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+      - target: "El argumento de la película es triste."
+        ipa: "el aɾɡuˈmento de la peˈlikula es ˈtɾiste"
+        bases: [{ word: "El", base: "el" }, { word: "argumento", base: "argumento" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "película", base: "película" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+  - id: "es-2107"
+    target: "la razón"
+    ipa: "la raˈθon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "razón", base: "razón" }]
+    examples:
+      - target: "Tienes razón."
+        ipa: "ˈtjenes raˈθon"
+        bases: [{ word: "Tienes", ref: "es-0024" }, { word: "razón", base: "razón" }]
+      - target: "No veo la razón de esto."
+        ipa: "no ˈbeo la raˈθon de ˈesto"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "veo", ref: "es-1625" }, { word: "la", base: "la" }, { word: "razón", base: "razón" }, { word: "de", base: "de" }, { word: "esto", ref: "es-0127" }]
+  - id: "es-2108"
+    target: "la crítica"
+    ipa: "la ˈkɾitika"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "crítica", base: "crítica" }]
+    examples:
+      - target: "La crítica es muy dura."
+        ipa: "la ˈkɾitika es mwi ˈduɾa"
+        bases: [{ word: "La", base: "la" }, { word: "crítica", base: "crítica" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "dura", ref: "es-1332" }]
+      - target: "Leo una crítica de la película."
+        ipa: "ˈleo ˈuna ˈkɾitika de la peˈlikula"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "una", base: "una" }, { word: "crítica", base: "crítica" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "película", base: "película" }]
+  - id: "es-2109"
+    target: "el prejuicio"
+    ipa: "el pɾeˈxwiθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "prejuicio", base: "prejuicio" }]
+    examples:
+      - target: "Los prejuicios son malos."
+        ipa: "los pɾeˈxwiθjos son ˈmalos"
+        bases: [{ word: "Los", base: "los" }, { word: "prejuicios", base: "prejuicio" }, { word: "son", ref: "es-0022" }, { word: "malos", ref: "es-0034" }]
+      - target: "Tiene un prejuicio contra los extranjeros."
+        ipa: "ˈtjene un pɾeˈxwiθjo ˈkontɾa los ekstɾanˈxeɾos"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "prejuicio", base: "prejuicio" }, { word: "contra", base: "contra" }, { word: "los", base: "los" }, { word: "extranjeros", base: "extranjero" }]
+  - id: "es-2110"
+    target: "la mentira"
+    ipa: "la menˈtiɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mentira", base: "mentira" }]
+    examples:
+      - target: "Eso es una mentira."
+        ipa: "ˈeso es ˈuna menˈtiɾa"
+        bases: [{ word: "Eso", ref: "es-0128" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "mentira", base: "mentira" }]
+      - target: "No digo mentiras."
+        ipa: "no ˈdiɡo menˈtiɾas"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "digo", ref: "es-1627" }, { word: "mentiras", base: "mentira" }]
+  - id: "es-2111"
+    target: "la verdad"
+    ipa: "la beɾˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "verdad", base: "verdad" }]
+    examples:
+      - target: "Te digo la verdad."
+        ipa: "te ˈdiɡo la beɾˈdad"
+        bases: [{ word: "Te", base: "te" }, { word: "digo", ref: "es-1627" }, { word: "la", base: "la" }, { word: "verdad", base: "verdad" }]
+      - target: "La verdad es que no sé."
+        ipa: "la beɾˈdad es ke no se"
+        bases: [{ word: "La", base: "la" }, { word: "verdad", base: "verdad" }, { word: "es", ref: "es-0022" }, { word: "que", base: "que" }, { word: "no", ref: "es-0043" }, { word: "sé", ref: "es-1630" }]
+  - id: "es-2112"
+    target: "la idea"
+    ipa: "la iˈdea"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "idea", base: "idea" }]
+    examples:
+      - target: "Tengo una idea."
+        ipa: "ˈtenɡo ˈuna iˈdea"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "idea", base: "idea" }]
+      - target: "Es una buena idea."
+        ipa: "es ˈuna ˈbwena iˈdea"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "idea", base: "idea" }]
+  - id: "es-2113"
+    target: "el sentido"
+    ipa: "el senˈtido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sentido", base: "sentido" }]
+    examples:
+      - target: "Eso no tiene sentido."
+        ipa: "ˈeso no ˈtjene senˈtido"
+        bases: [{ word: "Eso", ref: "es-0128" }, { word: "no", ref: "es-0043" }, { word: "tiene", ref: "es-0024" }, { word: "sentido", base: "sentido" }]
+      - target: "El sentido de la palabra es claro."
+        ipa: "el senˈtido de la paˈlabɾa es ˈklaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "sentido", base: "sentido" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "palabra", base: "palabra" }, { word: "es", ref: "es-0022" }, { word: "claro", ref: "es-0438" }]
+  - id: "es-2114"
+    target: "el gusto"
+    ipa: "el ˈɡusto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gusto", base: "gusto" }]
+    examples:
+      - target: "Tengo gustos diferentes."
+        ipa: "ˈtenɡo ˈɡustos difeˈɾentes"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "gustos", base: "gusto" }, { word: "diferentes", base: "diferente" }]
+      - target: "Con gusto te ayudo."
+        ipa: "kon ˈɡusto te aˈʝudo"
+        bases: [{ word: "Con", base: "con" }, { word: "gusto", base: "gusto" }, { word: "te", base: "te" }, { word: "ayudo", ref: "es-0303" }]
+  - id: "es-2115"
+    target: "elogiar"
+    ipa: "eloˈxjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "elogiar", base: "elogiar" }]
+    examples:
+      - target: "Elogio tu trabajo."
+        ipa: "eˈloxjo tu tɾaˈbaxo"
+        bases: [{ word: "Elogio", base: "elogiar" }, { word: "tu", ref: "es-0130" }, { word: "trabajo", ref: "es-0259" }]
+      - target: "El jefe elogia al equipo."
+        ipa: "el ˈxefe eˈloxja al eˈkipo"
+        bases: [{ word: "El", base: "el" }, { word: "jefe", ref: "es-0504" }, { word: "elogia", base: "elogiar" }, { word: "al", base: "al" }, { word: "equipo", ref: "es-1412" }]
+  - id: "es-2116"
+    target: "criticar"
+    ipa: "kɾitiˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "criticar", base: "criticar" }]
+    examples:
+      - target: "No critico a nadie."
+        ipa: "no kɾiˈtiko a ˈnadje"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "critico", base: "criticar" }, { word: "a", base: "a" }, { word: "nadie", ref: "es-0133" }]
+      - target: "Critican la nueva ley."
+        ipa: "kɾiˈtikan la ˈnweba lej"
+        bases: [{ word: "Critican", base: "criticar" }, { word: "la", base: "la" }, { word: "nueva", ref: "es-0035" }, { word: "ley", ref: "es-2061" }]
+  - id: "es-2117"
+    target: "defender"
+    ipa: "defenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "defender", base: "defender" }]
+    examples:
+      - target: "Defiendo mis ideas."
+        ipa: "deˈfjendo mis iˈdeas"
+        bases: [{ word: "Defiendo", base: "defender" }, { word: "mis", ref: "es-0129" }, { word: "ideas", ref: "es-2112" }]
+      - target: "Defienden la justicia."
+        ipa: "deˈfjenden la xusˈtiθja"
+        bases: [{ word: "Defienden", base: "defender" }, { word: "la", base: "la" }, { word: "justicia", base: "justicia" }]
+  - id: "es-2118"
+    target: "opinar"
+    ipa: "opiˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "opinar", base: "opinar" }]
+    examples:
+      - target: "Opino que es mejor."
+        ipa: "oˈpino ke es meˈxoɾ"
+        bases: [{ word: "Opino", base: "opinar" }, { word: "que", base: "que" }, { word: "es", ref: "es-0022" }, { word: "mejor", base: "mejor" }]
+      - target: "¿Qué opinas"
+        ipa: "ke oˈpinas"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "opinas", base: "opinar" }]
+  - id: "es-2119"
+    target: "apoyar"
+    ipa: "apoˈʝaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "apoyar", base: "apoyar" }]
+    examples:
+      - target: "Apoyo la idea."
+        ipa: "aˈpoʝo la iˈdea"
+        bases: [{ word: "Apoyo", base: "apoyar" }, { word: "la", base: "la" }, { word: "idea", ref: "es-2112" }]
+      - target: "Apoyamos a nuestro equipo."
+        ipa: "apoˈʝamos a ˈnwestɾo eˈkipo"
+        bases: [{ word: "Apoyamos", base: "apoyar" }, { word: "a", base: "a" }, { word: "nuestro", base: "nuestro" }, { word: "equipo", ref: "es-1412" }]
+  - id: "es-2120"
+    target: "rechazar"
+    ipa: "retʃaˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rechazar", base: "rechazar" }]
+    examples:
+      - target: "Rechazo la propuesta."
+        ipa: "reˈtʃaθo la pɾoˈpwesta"
+        bases: [{ word: "Rechazo", base: "rechazar" }, { word: "la", base: "la" }, { word: "propuesta", base: "propuesta" }]
+      - target: "Rechazan el argumento."
+        ipa: "reˈtʃaθan el aɾɡuˈmento"
+        bases: [{ word: "Rechazan", base: "rechazar" }, { word: "el", base: "el" }, { word: "argumento", ref: "es-2106" }]
+  - id: "es-2121"
+    target: "reconocer"
+    ipa: "rekonoˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reconocer", base: "reconocer" }]
+    examples:
+      - target: "Reconozco mi error."
+        ipa: "rekoˈnoθko mi eˈroɾ"
+        bases: [{ word: "Reconozco", base: "reconocer" }, { word: "mi", ref: "es-0129" }, { word: "error", base: "error" }]
+      - target: "Reconoce a su amigo."
+        ipa: "rekoˈnoθe a su aˈmiɡo"
+        bases: [{ word: "Reconoce", base: "reconocer" }, { word: "a", base: "a" }, { word: "su", ref: "es-0131" }, { word: "amigo", ref: "es-0005" }]
+  - id: "es-2122"
+    target: "valorar"
+    ipa: "baloˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "valorar", base: "valorar" }]
+    examples:
+      - target: "Valoro tu opinión."
+        ipa: "baˈloɾo tu opiˈnjon"
+        bases: [{ word: "Valoro", base: "valorar" }, { word: "tu", ref: "es-0130" }, { word: "opinión", ref: "es-2076" }]
+      - target: "Valoran el trabajo del equipo."
+        ipa: "baˈloɾan el tɾaˈbaxo del eˈkipo"
+        bases: [{ word: "Valoran", base: "valorar" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }, { word: "del", base: "del" }, { word: "equipo", ref: "es-1412" }]
+  - id: "es-2123"
+    target: "juzgar"
+    ipa: "xuθˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "juzgar", base: "juzgar" }]
+    examples:
+      - target: "No juzgo a nadie."
+        ipa: "no ˈxuθɡo a ˈnadje"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "juzgo", base: "juzgar" }, { word: "a", base: "a" }, { word: "nadie", ref: "es-0133" }]
+      - target: "Juzgan la película por el título."
+        ipa: "ˈxuθɡan la peˈlikula poɾ el ˈtitulo"
+        bases: [{ word: "Juzgan", base: "juzgar" }, { word: "la", base: "la" }, { word: "película", base: "película" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "título", base: "título" }]
+  - id: "es-2124"
+    target: "argumentar"
+    ipa: "aɾɡumenˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "argumentar", base: "argumentar" }]
+    examples:
+      - target: "Argumento mi punto de vista."
+        ipa: "aɾɡuˈmento mi ˈpunto de ˈbista"
+        bases: [{ word: "Argumento", base: "argumentar" }, { word: "mi", ref: "es-0129" }, { word: "punto", base: "punto" }, { word: "de", base: "de" }, { word: "vista", base: "vista" }]
+      - target: "Argumentan con datos."
+        ipa: "aɾɡuˈmentan kon ˈdatos"
+        bases: [{ word: "Argumentan", base: "argumentar" }, { word: "con", base: "con" }, { word: "datos", base: "dato" }]
+  - id: "es-2125"
+    target: "convencer"
+    ipa: "konbenˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "convencer", base: "convencer" }]
+    examples:
+      - target: "Convenzo a mi amigo."
+        ipa: "konˈbenθo a mi aˈmiɡo"
+        bases: [{ word: "Convenzo", base: "convencer" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }]
+      - target: "Me convence el argumento."
+        ipa: "me konˈbenθe el aɾɡuˈmento"
+        bases: [{ word: "Me", base: "me" }, { word: "convence", base: "convencer" }, { word: "el", base: "el" }, { word: "argumento", ref: "es-2106" }]
+  - id: "es-2126"
+    target: "considerar"
+    ipa: "konsideˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "considerar", base: "considerar" }]
+    examples:
+      - target: "Considero tu idea."
+        ipa: "konsiˈdeɾo tu iˈdea"
+        bases: [{ word: "Considero", base: "considerar" }, { word: "tu", ref: "es-0130" }, { word: "idea", ref: "es-2112" }]
+      - target: "Lo considero un buen amigo."
+        ipa: "lo konsiˈdeɾo un bwen aˈmiɡo"
+        bases: [{ word: "Lo", base: "lo" }, { word: "considero", base: "considerar" }, { word: "un", base: "un" }, { word: "buen", ref: "es-0033" }, { word: "amigo", ref: "es-0005" }]
+  - id: "es-2127"
+    target: "sugerir"
+    ipa: "suxeˈɾiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sugerir", base: "sugerir" }]
+    examples:
+      - target: "Sugiero una pausa."
+        ipa: "suˈxjeɾo ˈuna ˈpawsa"
+        bases: [{ word: "Sugiero", base: "sugerir" }, { word: "una", base: "una" }, { word: "pausa", ref: "es-0518" }]
+      - target: "Sugieren ir al cine."
+        ipa: "suˈxjeɾen iɾ al ˈθine"
+        bases: [{ word: "Sugieren", base: "sugerir" }, { word: "ir", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", ref: "es-0779" }]
+  - id: "es-2128"
+    target: "proponer"
+    ipa: "pɾopoˈneɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "proponer", base: "proponer" }]
+    examples:
+      - target: "Propongo un plan nuevo."
+        ipa: "pɾoˈponɡo un plan ˈnwebo"
+        bases: [{ word: "Propongo", base: "proponer" }, { word: "un", base: "un" }, { word: "plan", base: "plan" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Proponen un cambio."
+        ipa: "pɾoˈponen un ˈkambjo"
+        bases: [{ word: "Proponen", base: "proponer" }, { word: "un", base: "un" }, { word: "cambio", ref: "es-0588" }]
+  - id: "es-2129"
+    target: "preferir"
+    ipa: "pɾefeˈɾiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "preferir", base: "preferir" }]
+    examples:
+      - target: "Prefiero el té."
+        ipa: "pɾeˈfjeɾo el te"
+        bases: [{ word: "Prefiero", base: "preferir" }, { word: "el", base: "el" }, { word: "té", ref: "es-0612" }]
+      - target: "Preferimos quedarnos en casa."
+        ipa: "pɾefeˈɾimos keˈdaɾnos en ˈkasa"
+        bases: [{ word: "Preferimos", base: "preferir" }, { word: "quedarnos", ref: "es-1616" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-2130"
+    target: "dudar"
+    ipa: "duˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dudar", base: "dudar" }]
+    examples:
+      - target: "Dudo de su historia."
+        ipa: "ˈdudo de su isˈtoɾja"
+        bases: [{ word: "Dudo", base: "dudar" }, { word: "de", base: "de" }, { word: "su", ref: "es-0131" }, { word: "historia", base: "historia" }]
+      - target: "No dudo de tu palabra."
+        ipa: "no ˈdudo de tu paˈlabɾa"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "dudo", base: "dudar" }, { word: "de", base: "de" }, { word: "tu", ref: "es-0130" }, { word: "palabra", base: "palabra" }]
+  - id: "es-2131"
+    target: "justo"
+    ipa: "ˈxusto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "justo", base: "justo" }]
+    examples:
+      - target: "Es una decisión justa."
+        ipa: "es ˈuna deθiˈsjon ˈxusta"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "decisión", base: "decisión" }, { word: "justa", base: "justo" }]
+      - target: "El precio es justo."
+        ipa: "el ˈpɾeθjo es ˈxusto"
+        bases: [{ word: "El", base: "el" }, { word: "precio", ref: "es-0580" }, { word: "es", ref: "es-0022" }, { word: "justo", base: "justo" }]
+  - id: "es-2132"
+    target: "injusto"
+    ipa: "inˈxusto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "injusto", base: "injusto" }]
+    examples:
+      - target: "Es una ley injusta."
+        ipa: "es ˈuna lej inˈxusta"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "ley", ref: "es-2061" }, { word: "injusta", base: "injusto" }]
+      - target: "El castigo es injusto."
+        ipa: "el kasˈtiɡo es inˈxusto"
+        bases: [{ word: "El", base: "el" }, { word: "castigo", base: "castigo" }, { word: "es", ref: "es-0022" }, { word: "injusto", base: "injusto" }]
+  - id: "es-2133"
+    target: "inútil"
+    ipa: "iˈnutil"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "inútil", base: "inútil" }]
+    examples:
+      - target: "Es un esfuerzo inútil."
+        ipa: "es un esˈfweɾθo iˈnutil"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "esfuerzo", base: "esfuerzo" }, { word: "inútil", base: "inútil" }]
+      - target: "Este libro es inútil."
+        ipa: "ˈeste ˈlibɾo es iˈnutil"
+        bases: [{ word: "Este", ref: "es-1897" }, { word: "libro", ref: "es-0011" }, { word: "es", ref: "es-0022" }, { word: "inútil", base: "inútil" }]
+  - id: "es-2134"
+    target: "correcto"
+    ipa: "koˈrekto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "correcto", base: "correcto" }]
+    examples:
+      - target: "Tu respuesta es correcta."
+        ipa: "tu resˈpwesta es koˈrekta"
+        bases: [{ word: "Tu", ref: "es-0130" }, { word: "respuesta", base: "respuesta" }, { word: "es", ref: "es-0022" }, { word: "correcta", base: "correcto" }]
+      - target: "Es el camino correcto."
+        ipa: "es el kaˈmino koˈrekto"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "camino", ref: "es-0281" }, { word: "correcto", base: "correcto" }]
+  - id: "es-2135"
+    target: "equivocado"
+    ipa: "ekiboˈkado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "equivocado", base: "equivocado" }]
+    examples:
+      - target: "Estás equivocado."
+        ipa: "esˈtas ekiboˈkado"
+        bases: [{ word: "Estás", ref: "es-0023" }, { word: "equivocado", base: "equivocado" }]
+      - target: "La respuesta es equivocada."
+        ipa: "la resˈpwesta es ekiboˈkada"
+        bases: [{ word: "La", base: "la" }, { word: "respuesta", base: "respuesta" }, { word: "es", ref: "es-0022" }, { word: "equivocada", base: "equivocado" }]
+  - id: "es-2136"
+    target: "verdadero"
+    ipa: "beɾdaˈdeɾo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "verdadero", base: "verdadero" }]
+    examples:
+      - target: "Es una historia verdadera."
+        ipa: "es ˈuna isˈtoɾja beɾdaˈdeɾa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "historia", base: "historia" }, { word: "verdadera", base: "verdadero" }]
+      - target: "Es un amigo verdadero."
+        ipa: "es un aˈmiɡo beɾdaˈdeɾo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "amigo", ref: "es-0005" }, { word: "verdadero", base: "verdadero" }]
+  - id: "es-2137"
+    target: "falso"
+    ipa: "ˈfalso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "falso", base: "falso" }]
+    examples:
+      - target: "Es una noticia falsa."
+        ipa: "es ˈuna noˈtiθja ˈfalsa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "noticia", ref: "es-2052" }, { word: "falsa", base: "falso" }]
+      - target: "Esa respuesta es falsa."
+        ipa: "ˈesa resˈpwesta es ˈfalsa"
+        bases: [{ word: "Esa", base: "ese" }, { word: "respuesta", base: "respuesta" }, { word: "es", ref: "es-0022" }, { word: "falsa", base: "falso" }]
+  - id: "es-2138"
+    target: "seguro"
+    ipa: "seˈɡuɾo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "seguro", base: "seguro" }]
+    examples:
+      - target: "Estoy seguro de eso."
+        ipa: "esˈtoj seˈɡuɾo de ˈeso"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "seguro", base: "seguro" }, { word: "de", base: "de" }, { word: "eso", ref: "es-0128" }]
+      - target: "Es una decisión segura."
+        ipa: "es ˈuna deθiˈsjon seˈɡuɾa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "decisión", base: "decisión" }, { word: "segura", base: "seguro" }]
+  - id: "es-2139"
+    target: "probable"
+    ipa: "pɾoˈbable"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "probable", base: "probable" }]
+    examples:
+      - target: "Es probable que llueva."
+        ipa: "es pɾoˈbable ke ˈʝweba"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "probable", base: "probable" }, { word: "que", base: "que" }, { word: "llueva", ref: "es-1132" }]
+      - target: "Es un resultado probable."
+        ipa: "es un resulˈtado pɾoˈbable"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "resultado", base: "resultado" }, { word: "probable", base: "probable" }]
+  - id: "es-2140"
+    target: "imposible"
+    ipa: "impoˈsible"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "imposible", base: "imposible" }]
+    examples:
+      - target: "Es imposible."
+        ipa: "es impoˈsible"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "imposible", base: "imposible" }]
+      - target: "Esa idea es imposible."
+        ipa: "ˈesa iˈdea es impoˈsible"
+        bases: [{ word: "Esa", base: "ese" }, { word: "idea", ref: "es-2112" }, { word: "es", ref: "es-0022" }, { word: "imposible", base: "imposible" }]
+  - id: "es-2141"
+    target: "posible"
+    ipa: "poˈsible"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "posible", base: "posible" }]
+    examples:
+      - target: "Es posible."
+        ipa: "es poˈsible"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "posible", base: "posible" }]
+      - target: "Es una solución posible."
+        ipa: "es ˈuna soluˈθjon poˈsible"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "solución", base: "solución" }, { word: "posible", base: "posible" }]
+  - id: "es-2142"
+    target: "necesario"
+    ipa: "neθeˈsaɾjo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "necesario", base: "necesario" }]
+    examples:
+      - target: "Es necesario estudiar."
+        ipa: "es neθeˈsaɾjo estuˈdjaɾ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "necesario", base: "necesario" }, { word: "estudiar", ref: "es-0258" }]
+      - target: "Un descanso es necesario."
+        ipa: "un desˈkanso es neθeˈsaɾjo"
+        bases: [{ word: "Un", base: "un" }, { word: "descanso", ref: "es-0908" }, { word: "es", ref: "es-0022" }, { word: "necesario", base: "necesario" }]
+  - id: "es-2143"
+    target: "increíble"
+    ipa: "inkɾeˈible"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "increíble", base: "increíble" }]
+    examples:
+      - target: "Es una historia increíble."
+        ipa: "es ˈuna isˈtoɾja inkɾeˈible"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "historia", base: "historia" }, { word: "increíble", base: "increíble" }]
+      - target: "Su idea es increíble."
+        ipa: "su iˈdea es inkɾeˈible"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "idea", ref: "es-2112" }, { word: "es", ref: "es-0022" }, { word: "increíble", base: "increíble" }]
+  - id: "es-2144"
+    target: "absurdo"
+    ipa: "abˈsuɾdo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "absurdo", base: "absurdo" }]
+    examples:
+      - target: "Es una idea absurda."
+        ipa: "es ˈuna iˈdea abˈsuɾda"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "idea", ref: "es-2112" }, { word: "absurda", base: "absurdo" }]
+      - target: "Eso es absurdo."
+        ipa: "ˈeso es abˈsuɾdo"
+        bases: [{ word: "Eso", ref: "es-0128" }, { word: "es", ref: "es-0022" }, { word: "absurdo", base: "absurdo" }]
+  - id: "es-2145"
+    target: "ridículo"
+    ipa: "riˈdikulo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ridículo", base: "ridículo" }]
+    examples:
+      - target: "Es un argumento ridículo."
+        ipa: "es un aɾɡuˈmento riˈdikulo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "argumento", ref: "es-2106" }, { word: "ridículo", base: "ridículo" }]
+      - target: "La situación es ridícula."
+        ipa: "la sitwaˈθjon es riˈdikula"
+        bases: [{ word: "La", base: "la" }, { word: "situación", base: "situación" }, { word: "es", ref: "es-0022" }, { word: "ridícula", base: "ridículo" }]
+  - id: "es-2146"
+    target: "horrible"
+    ipa: "oˈrible"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "horrible", base: "horrible" }]
+    examples:
+      - target: "La comida es horrible."
+        ipa: "la koˈmida es oˈrible"
+        bases: [{ word: "La", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "es", ref: "es-0022" }, { word: "horrible", base: "horrible" }]
+      - target: "El tiempo es horrible."
+        ipa: "el ˈtjempo es oˈrible"
+        bases: [{ word: "El", base: "el" }, { word: "tiempo", ref: "es-1112" }, { word: "es", ref: "es-0022" }, { word: "horrible", base: "horrible" }]
+  - id: "es-2147"
+    target: "excelente"
+    ipa: "eksθeˈlente"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "excelente", base: "excelente" }]
+    examples:
+      - target: "Es un trabajo excelente."
+        ipa: "es un tɾaˈbaxo eksθeˈlente"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "trabajo", ref: "es-0259" }, { word: "excelente", base: "excelente" }]
+      - target: "La película es excelente."
+        ipa: "la peˈlikula es eksθeˈlente"
+        bases: [{ word: "La", base: "la" }, { word: "película", base: "película" }, { word: "es", ref: "es-0022" }, { word: "excelente", base: "excelente" }]
+  - id: "es-2148"
+    target: "lógico"
+    ipa: "ˈloxiko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "lógico", base: "lógico" }]
+    examples:
+      - target: "Es un razonamiento lógico."
+        ipa: "es un raθonaˈmjento ˈloxiko"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "razonamiento", base: "razonamiento" }, { word: "lógico", base: "lógico" }]
+      - target: "Es lógico que estés cansado."
+        ipa: "es ˈloxiko ke esˈtes kanˈsado"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "lógico", base: "lógico" }, { word: "que", base: "que" }, { word: "estés", ref: "es-0023" }, { word: "cansado", ref: "es-0420" }]
+  - id: "es-2149"
+    target: "evidente"
+    ipa: "ebiˈdente"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "evidente", base: "evidente" }]
+    examples:
+      - target: "Es evidente que tienes razón."
+        ipa: "es ebiˈdente ke ˈtjenes raˈθon"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "evidente", base: "evidente" }, { word: "que", base: "que" }, { word: "tienes", ref: "es-0024" }, { word: "razón", ref: "es-2107" }]
+      - target: "El error es evidente."
+        ipa: "el eˈroɾ es ebiˈdente"
+        bases: [{ word: "El", base: "el" }, { word: "error", base: "error" }, { word: "es", ref: "es-0022" }, { word: "evidente", base: "evidente" }]
+  - id: "es-2150"
+    target: "dudoso"
+    ipa: "duˈdoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dudoso", base: "dudoso" }]
+    examples:
+      - target: "Es un resultado dudoso."
+        ipa: "es un resulˈtado duˈdoso"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "resultado", base: "resultado" }, { word: "dudoso", base: "dudoso" }]
+      - target: "Su historia es dudosa."
+        ipa: "su isˈtoɾja es duˈdosa"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "historia", base: "historia" }, { word: "es", ref: "es-0022" }, { word: "dudosa", base: "dudoso" }]
+  - id: "es-2151"
+    target: "cierto"
+    ipa: "ˈθjeɾto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cierto", base: "cierto" }]
+    examples:
+      - target: "Es cierto que hace frío."
+        ipa: "es ˈθjeɾto ke ˈaθe ˈfɾio"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "cierto", base: "cierto" }, { word: "que", base: "que" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }]
+      - target: "No es una historia cierta."
+        ipa: "no es ˈuna isˈtoɾja ˈθjeɾta"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "historia", base: "historia" }, { word: "cierta", base: "cierto" }]
+  - id: "es-2152"
+    target: "convencido"
+    ipa: "konbenˈθido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "convencido", base: "convencido" }]
+    examples:
+      - target: "Estoy convencido de la idea."
+        ipa: "esˈtoj konbenˈθido de la iˈdea"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "convencido", base: "convencido" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "idea", ref: "es-2112" }]
+      - target: "Estoy convencida de que es así."
+        ipa: "esˈtoj konbenˈθida de ke es aˈsi"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "convencida", base: "convencido" }, { word: "de", base: "de" }, { word: "que", base: "que" }, { word: "es", ref: "es-0022" }, { word: "así", base: "así" }]

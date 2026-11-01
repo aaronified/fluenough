@@ -1,0 +1,352 @@
+schema: 1
+id: "es-en-opinions"
+kind: "layer"
+core: "es-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions: agree, disagree, praise and criticize"
+license: "CC-BY-SA-4.0"
+description: "Words for giving your view: agreeing and disagreeing, the reason and the argument, praise and criticism, what is true and false, and the verbs to support, reject, suggest and prefer. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2104":
+    native: "agreement"
+    notes: { n1: "El acuerdo is an agreement, a shared view or a deal. Estar de acuerdo is to agree." }
+    bases: { "el": "the", "acuerdo": "agreement" }
+    examples:
+      "Llegamos a un acuerdo.": { native: "We reached an agreement.", bases: { "a": "to", "un": "a", "acuerdo": "agreement" } }
+      "Estoy de acuerdo contigo.": { native: "I agree with you.", bases: { "de": "of", "acuerdo": "agreement", "contigo": "with you" } }
+  "es-2105":
+    native: "disagreement"
+    notes: { n1: "El desacuerdo is a disagreement, when two people do not share a view. The opposite is acuerdo." }
+    bases: { "el": "the", "desacuerdo": "disagreement" }
+    examples:
+      "Hay un desacuerdo entre los amigos.": { native: "There is a disagreement between the friends.", bases: { "Hay": "there is; there are", "un": "a", "desacuerdo": "disagreement", "los": "the" } }
+      "No estoy de acuerdo, es un desacuerdo.": { native: "I do not agree, it is a disagreement.", bases: { "de": "of", "un": "a", "desacuerdo": "disagreement" } }
+  "es-2106":
+    native: "argument"
+    notes: { n1: "El argumento is a reason given to support a view, or the plot of a story." }
+    bases: { "el": "the", "argumento": "argument" }
+    examples:
+      "Tu argumento es muy bueno.": { native: "Your argument is very good.", bases: { "argumento": "argument" } }
+      "El argumento de la película es triste.": { native: "The plot of the film is sad.", bases: { "El": "the", "argumento": "argument", "de": "of", "la": "the", "película": "film" } }
+  "es-2107":
+    native: "reason"
+    notes: { n1: "La razón is a reason, the cause of something, or being right. Tener razón is to be right." }
+    bases: { "la": "the", "razón": "reason" }
+    examples:
+      "Tienes razón.": { native: "You are right.", bases: { "razón": "reason" } }
+      "No veo la razón de esto.": { native: "I do not see the reason for this.", bases: { "la": "the", "razón": "reason", "de": "of" } }
+  "es-2108":
+    native: "criticism; review"
+    notes: { n1: "La crítica is a criticism, a comment that finds fault, or a review of a film or book." }
+    bases: { "la": "the", "crítica": "criticism; review" }
+    examples:
+      "La crítica es muy dura.": { native: "The criticism is very harsh.", bases: { "La": "the", "crítica": "criticism; review" } }
+      "Leo una crítica de la película.": { native: "I read a review of the film.", bases: { "una": "a", "crítica": "criticism; review", "de": "of", "la": "the", "película": "film" } }
+  "es-2109":
+    native: "prejudice"
+    notes: { n1: "El prejuicio is a prejudice, an opinion formed before knowing the facts." }
+    bases: { "el": "the", "prejuicio": "prejudice" }
+    examples:
+      "Los prejuicios son malos.": { native: "Prejudices are bad.", bases: { "Los": "the", "prejuicios": "prejudice" } }
+      "Tiene un prejuicio contra los extranjeros.": { native: "They have a prejudice against foreigners.", bases: { "un": "a", "prejuicio": "prejudice", "contra": "against", "los": "the", "extranjeros": "foreigner" } }
+  "es-2110":
+    native: "lie"
+    notes: { n1: "La mentira is a lie, something said that is not true. The opposite is la verdad." }
+    bases: { "la": "the", "mentira": "lie" }
+    examples:
+      "Eso es una mentira.": { native: "That is a lie.", bases: { "una": "a", "mentira": "lie" } }
+      "No digo mentiras.": { native: "I do not tell lies.", bases: { "mentiras": "lie" } }
+  "es-2111":
+    native: "truth"
+    notes: { n1: "La verdad is the truth, what is real and true. The opposite is la mentira." }
+    bases: { "la": "the", "verdad": "truth" }
+    examples:
+      "Te digo la verdad.": { native: "I tell you the truth.", bases: { "Te": "you", "la": "the", "verdad": "truth" } }
+      "La verdad es que no sé.": { native: "The truth is that I do not know.", bases: { "La": "the", "verdad": "truth", "que": "that" } }
+  "es-2112":
+    native: "idea"
+    notes: { n1: "La idea is an idea, a thought or a plan in the mind." }
+    bases: { "la": "the", "idea": "idea" }
+    examples:
+      "Tengo una idea.": { native: "I have an idea.", bases: { "una": "a", "idea": "idea" } }
+      "Es una buena idea.": { native: "It is a good idea.", bases: { "una": "a", "idea": "idea" } }
+  "es-2113":
+    native: "sense; meaning"
+    notes: { n1: "El sentido is the meaning of a word, or one of the five senses. Tener sentido is to make sense." }
+    bases: { "el": "the", "sentido": "sense; meaning" }
+    examples:
+      "Eso no tiene sentido.": { native: "That does not make sense.", bases: { "sentido": "sense; meaning" } }
+      "El sentido de la palabra es claro.": { native: "The meaning of the word is clear.", bases: { "El": "the", "sentido": "sense; meaning", "de": "of", "la": "the", "palabra": "word" } }
+  "es-2114":
+    native: "taste; liking"
+    notes: { n1: "El gusto is taste, what you like, or the sense of taste. Con gusto is with pleasure." }
+    bases: { "el": "the", "gusto": "taste; liking" }
+    examples:
+      "Tengo gustos diferentes.": { native: "I have different tastes.", bases: { "gustos": "taste; liking", "diferentes": "different" } }
+      "Con gusto te ayudo.": { native: "I will gladly help you.", bases: { "Con": "with", "gusto": "taste; liking", "te": "you" } }
+  "es-2115":
+    native: "to praise"
+    notes: { n1: "Elogiar is to praise someone for what they did." }
+    bases: { "elogiar": "to praise" }
+    examples:
+      "Elogio tu trabajo.": { native: "I praise your work.", bases: { "Elogio": "to praise" } }
+      "El jefe elogia al equipo.": { native: "The boss praises the team.", bases: { "El": "the", "elogia": "to praise", "al": "to the" } }
+  "es-2116":
+    native: "to criticise"
+    notes: { n1: "Criticar is to find fault with something or someone." }
+    bases: { "criticar": "to criticise" }
+    examples:
+      "No critico a nadie.": { native: "I do not criticise anyone.", bases: { "critico": "to criticise", "a": "to" } }
+      "Critican la nueva ley.": { native: "They criticise the new law.", bases: { "Critican": "to criticise", "la": "the" } }
+  "es-2117":
+    native: "to defend; to argue for"
+    notes: { n1: "Defender is to defend a person or an idea, or to argue for something. Its stem changes: defiendo." }
+    bases: { "defender": "to defend; to argue for" }
+    examples:
+      "Defiendo mis ideas.": { native: "I defend my ideas./idea", bases: { "Defiendo": "to defend; to argue for" } }
+      "Defienden la justicia.": { native: "They defend justice.", bases: { "Defienden": "to defend; to argue for", "la": "the", "justicia": "justice" } }
+  "es-2118":
+    native: "to give an opinion"
+    notes: { n1: "Opinar is to give your opinion on something." }
+    bases: { "opinar": "to give an opinion" }
+    examples:
+      "Opino que es mejor.": { native: "I think it is better.", bases: { "Opino": "to give an opinion", "que": "that", "mejor": "better" } }
+      "¿Qué opinas": { native: "What do you think?", bases: { "opinas": "to give an opinion" } }
+  "es-2119":
+    native: "to support"
+    notes: { n1: "Apoyar is to support someone, or to lean something on something." }
+    bases: { "apoyar": "to support" }
+    examples:
+      "Apoyo la idea.": { native: "I support the idea.", bases: { "Apoyo": "to support", "la": "the" } }
+      "Apoyamos a nuestro equipo.": { native: "We support our team.", bases: { "Apoyamos": "to support", "a": "to", "nuestro": "our" } }
+  "es-2120":
+    native: "to reject"
+    notes: { n1: "Rechazar is to refuse or reject an idea, an offer or a person." }
+    bases: { "rechazar": "to reject" }
+    examples:
+      "Rechazo la propuesta.": { native: "I reject the proposal.", bases: { "Rechazo": "to reject", "la": "the", "propuesta": "proposal" } }
+      "Rechazan el argumento.": { native: "They reject the argument.", bases: { "Rechazan": "to reject", "el": "the" } }
+  "es-2121":
+    native: "to admit; to recognise"
+    notes: { n1: "Reconocer is to admit that something is true, or to recognise someone." }
+    bases: { "reconocer": "to admit; to recognise" }
+    examples:
+      "Reconozco mi error.": { native: "I admit my mistake.", bases: { "Reconozco": "to admit; to recognise", "error": "mistake" } }
+      "Reconoce a su amigo.": { native: "He recognises his friend.", bases: { "Reconoce": "to admit; to recognise", "a": "to" } }
+  "es-2122":
+    native: "to value; to assess"
+    notes: { n1: "Valorar is to value or to assess something, to say how good it is." }
+    bases: { "valorar": "to value; to assess" }
+    examples:
+      "Valoro tu opinión.": { native: "I value your opinion.", bases: { "Valoro": "to value; to assess" } }
+      "Valoran el trabajo del equipo.": { native: "They value the team's work.", bases: { "Valoran": "to value; to assess", "el": "the", "del": "of" } }
+  "es-2123":
+    native: "to judge"
+    notes: { n1: "Juzgar is to judge a person or a thing, to form an opinion of them." }
+    bases: { "juzgar": "to judge" }
+    examples:
+      "No juzgo a nadie.": { native: "I do not judge anyone.", bases: { "juzgo": "to judge", "a": "to" } }
+      "Juzgan la película por el título.": { native: "They judge the film by the title.", bases: { "Juzgan": "to judge", "la": "the", "película": "film", "por": "for", "el": "the", "título": "title" } }
+  "es-2124":
+    native: "to argue; to reason"
+    notes: { n1: "Argumentar is to argue, to give reasons for a view." }
+    bases: { "argumentar": "to argue; to reason" }
+    examples:
+      "Argumento mi punto de vista.": { native: "I argue my point of view.", bases: { "Argumento": "to argue; to reason", "punto": "point; viewpoint", "de": "of", "vista": "view" } }
+      "Argumentan con datos.": { native: "They argue with facts.", bases: { "Argumentan": "to argue; to reason", "con": "with", "datos": "fact; piece of data" } }
+  "es-2125":
+    native: "to convince"
+    notes: { n1: "Convencer is to convince someone to agree with you." }
+    bases: { "convencer": "to convince" }
+    examples:
+      "Convenzo a mi amigo.": { native: "I convince my friend.", bases: { "Convenzo": "to convince", "a": "to" } }
+      "Me convence el argumento.": { native: "The argument convinces me.", bases: { "Me": "to me", "convence": "to convince", "el": "the" } }
+  "es-2126":
+    native: "to consider"
+    notes: { n1: "Considerar is to think about something carefully, or to regard it as something." }
+    bases: { "considerar": "to consider" }
+    examples:
+      "Considero tu idea.": { native: "I consider your idea.", bases: { "Considero": "to consider" } }
+      "Lo considero un buen amigo.": { native: "I consider him a good friend.", bases: { "Lo": "it", "considero": "to consider", "un": "a" } }
+  "es-2127":
+    native: "to suggest"
+    notes: { n1: "Sugerir is to suggest an idea or a plan. Its stem changes: sugiero, sugieres." }
+    bases: { "sugerir": "to suggest" }
+    examples:
+      "Sugiero una pausa.": { native: "I suggest a break.", bases: { "Sugiero": "to suggest", "una": "a" } }
+      "Sugieren ir al cine.": { native: "They suggest going to the cinema.", bases: { "Sugieren": "to suggest", "al": "to the" } }
+  "es-2128":
+    native: "to propose"
+    notes: { n1: "Proponer is to propose a plan or an idea to others." }
+    bases: { "proponer": "to propose" }
+    examples:
+      "Propongo un plan nuevo.": { native: "I propose a new plan./plan", bases: { "Propongo": "to propose", "un": "a", "plan": "plan" } }
+      "Proponen un cambio.": { native: "They propose a change.", bases: { "Proponen": "to propose", "un": "a" } }
+  "es-2129":
+    native: "to prefer"
+    notes: { n1: "Preferir is to prefer one thing to another. Its stem changes: prefiero, prefieres." }
+    bases: { "preferir": "to prefer" }
+    examples:
+      "Prefiero el té.": { native: "I prefer tea.", bases: { "Prefiero": "to prefer", "el": "the" } }
+      "Preferimos quedarnos en casa.": { native: "We prefer to stay at home.", bases: { "Preferimos": "to prefer", "en": "in" } }
+  "es-2130":
+    native: "to doubt"
+    notes: { n1: "Dudar is to doubt something, to be unsure whether it is true." }
+    bases: { "dudar": "to doubt" }
+    examples:
+      "Dudo de su historia.": { native: "I doubt his story.", bases: { "Dudo": "to doubt", "de": "of", "historia": "history" } }
+      "No dudo de tu palabra.": { native: "I do not doubt your word.", bases: { "dudo": "to doubt", "de": "of", "palabra": "word" } }
+  "es-2131":
+    native: "fair; just"
+    notes: { n1: "Justo is fair, right and reasonable. It agrees with the noun: justa. The opposite is injusto." }
+    bases: { "justo": "fair; just" }
+    examples:
+      "Es una decisión justa.": { native: "It is a fair decision.", bases: { "una": "a", "decisión": "decision", "justa": "fair; just" } }
+      "El precio es justo.": { native: "The price is fair.", bases: { "El": "the", "justo": "fair; just" } }
+  "es-2132":
+    native: "unfair"
+    notes: { n1: "Injusto is unfair, not right. It agrees with the noun: injusta." }
+    bases: { "injusto": "unfair" }
+    examples:
+      "Es una ley injusta.": { native: "It is an unfair law.", bases: { "una": "a", "injusta": "unfair" } }
+      "El castigo es injusto.": { native: "The punishment is unfair.", bases: { "El": "the", "castigo": "punishment", "injusto": "unfair" } }
+  "es-2133":
+    native: "useless"
+    notes: { n1: "Inútil is useless, of no help. It does not change for gender." }
+    bases: { "inútil": "useless" }
+    examples:
+      "Es un esfuerzo inútil.": { native: "It is a useless effort.", bases: { "un": "a", "esfuerzo": "effort", "inútil": "useless" } }
+      "Este libro es inútil.": { native: "This book is useless.", bases: { "inútil": "useless" } }
+  "es-2134":
+    native: "correct; right"
+    notes: { n1: "Correcto is correct, right, without a mistake. It agrees with the noun: correcta." }
+    bases: { "correcto": "correct; right" }
+    examples:
+      "Tu respuesta es correcta.": { native: "Your answer is correct.", bases: { "respuesta": "answer", "correcta": "correct; right" } }
+      "Es el camino correcto.": { native: "It is the right way.", bases: { "el": "the", "correcto": "correct; right" } }
+  "es-2135":
+    native: "wrong; mistaken"
+    notes: { n1: "Equivocado is wrong, mistaken. It agrees with the noun: equivocada." }
+    bases: { "equivocado": "wrong; mistaken" }
+    examples:
+      "Estás equivocado.": { native: "You are wrong.", bases: { "equivocado": "wrong; mistaken" } }
+      "La respuesta es equivocada.": { native: "The answer is wrong.", bases: { "La": "the", "respuesta": "answer", "equivocada": "wrong; mistaken" } }
+  "es-2136":
+    native: "true; real"
+    notes: { n1: "Verdadero is true or real. It agrees with the noun: verdadera." }
+    bases: { "verdadero": "true; real" }
+    examples:
+      "Es una historia verdadera.": { native: "It is a true story.", bases: { "una": "a", "historia": "history", "verdadera": "true; real" } }
+      "Es un amigo verdadero.": { native: "He is a real friend.", bases: { "un": "a", "verdadero": "true; real" } }
+  "es-2137":
+    native: "false"
+    notes: { n1: "Falso is false, not true. It agrees with the noun: falsa." }
+    bases: { "falso": "false" }
+    examples:
+      "Es una noticia falsa.": { native: "It is false news.", bases: { "una": "a", "falsa": "false" } }
+      "Esa respuesta es falsa.": { native: "That answer is false.", bases: { "Esa": "that", "respuesta": "answer", "falsa": "false" } }
+  "es-2138":
+    native: "sure; certain"
+    notes: { n1: "Seguro is sure, certain. It agrees with the noun: segura." }
+    bases: { "seguro": "sure; certain" }
+    examples:
+      "Estoy seguro de eso.": { native: "I am sure of that.", bases: { "seguro": "sure; certain", "de": "of" } }
+      "Es una decisión segura.": { native: "It is a sure decision.", bases: { "una": "a", "decisión": "decision", "segura": "sure; certain" } }
+  "es-2139":
+    native: "probable; likely"
+    notes: { n1: "Probable is likely to happen. It does not change for gender." }
+    bases: { "probable": "probable; likely" }
+    examples:
+      "Es probable que llueva.": { native: "It is likely to rain.", bases: { "probable": "probable; likely", "que": "that" } }
+      "Es un resultado probable.": { native: "It is a likely result.", bases: { "un": "a", "resultado": "result", "probable": "probable; likely" } }
+  "es-2140":
+    native: "impossible"
+    notes: { n1: "Imposible is impossible, not able to happen. It does not change for gender." }
+    bases: { "imposible": "impossible" }
+    examples:
+      "Es imposible.": { native: "It is impossible.", bases: { "imposible": "impossible" } }
+      "Esa idea es imposible.": { native: "That idea is impossible.", bases: { "Esa": "that", "imposible": "impossible" } }
+  "es-2141":
+    native: "possible"
+    notes: { n1: "Posible is possible, able to happen. The opposite is imposible." }
+    bases: { "posible": "possible" }
+    examples:
+      "Es posible.": { native: "It is possible.", bases: { "posible": "possible" } }
+      "Es una solución posible.": { native: "It is a possible solution.", bases: { "una": "a", "solución": "solution", "posible": "possible" } }
+  "es-2142":
+    native: "necessary"
+    notes: { n1: "Necesario is needed, necessary. It agrees with the noun: necesaria." }
+    bases: { "necesario": "necessary" }
+    examples:
+      "Es necesario estudiar.": { native: "It is necessary to study.", bases: { "necesario": "necessary" } }
+      "Un descanso es necesario.": { native: "A rest is necessary.", bases: { "Un": "a", "necesario": "necessary" } }
+  "es-2143":
+    native: "incredible"
+    notes: { n1: "Increíble is incredible, hard to believe. It does not change for gender." }
+    bases: { "increíble": "incredible" }
+    examples:
+      "Es una historia increíble.": { native: "It is an incredible story.", bases: { "una": "a", "historia": "history", "increíble": "incredible" } }
+      "Su idea es increíble.": { native: "Their idea is incredible.", bases: { "increíble": "incredible" } }
+  "es-2144":
+    native: "absurd"
+    notes: { n1: "Absurdo is absurd, without sense. It agrees with the noun: absurda." }
+    bases: { "absurdo": "absurd" }
+    examples:
+      "Es una idea absurda.": { native: "It is an absurd idea.", bases: { "una": "a", "absurda": "absurd" } }
+      "Eso es absurdo.": { native: "That is absurd.", bases: { "absurdo": "absurd" } }
+  "es-2145":
+    native: "ridiculous"
+    notes: { n1: "Ridículo is ridiculous, silly or laughable. It agrees with the noun: ridícula." }
+    bases: { "ridículo": "ridiculous" }
+    examples:
+      "Es un argumento ridículo.": { native: "It is a ridiculous argument.", bases: { "un": "a", "ridículo": "ridiculous" } }
+      "La situación es ridícula.": { native: "The situation is ridiculous.", bases: { "La": "the", "situación": "situation", "ridícula": "ridiculous" } }
+  "es-2146":
+    native: "horrible"
+    notes: { n1: "Horrible is horrible, very bad. It does not change for gender." }
+    bases: { "horrible": "horrible" }
+    examples:
+      "La comida es horrible.": { native: "The food is horrible.", bases: { "La": "the", "horrible": "horrible" } }
+      "El tiempo es horrible.": { native: "The weather is horrible.", bases: { "El": "the", "horrible": "horrible" } }
+  "es-2147":
+    native: "excellent"
+    notes: { n1: "Excelente is excellent, very good. It does not change for gender." }
+    bases: { "excelente": "excellent" }
+    examples:
+      "Es un trabajo excelente.": { native: "It is an excellent job.", bases: { "un": "a", "excelente": "excellent" } }
+      "La película es excelente.": { native: "The film is excellent.", bases: { "La": "the", "película": "film", "excelente": "excellent" } }
+  "es-2148":
+    native: "logical"
+    notes: { n1: "Lógico is logical, reasonable. It agrees with the noun: lógica." }
+    bases: { "lógico": "logical" }
+    examples:
+      "Es un razonamiento lógico.": { native: "It is a logical reasoning.", bases: { "un": "a", "razonamiento": "reasoning", "lógico": "logical" } }
+      "Es lógico que estés cansado.": { native: "It is logical that you are tired.", bases: { "lógico": "logical", "que": "that" } }
+  "es-2149":
+    native: "obvious"
+    notes: { n1: "Evidente is obvious, plain to see. It does not change for gender." }
+    bases: { "evidente": "obvious" }
+    examples:
+      "Es evidente que tienes razón.": { native: "It is obvious that you are right.", bases: { "evidente": "obvious", "que": "that" } }
+      "El error es evidente.": { native: "The mistake is obvious.", bases: { "El": "the", "error": "mistake", "evidente": "obvious" } }
+  "es-2150":
+    native: "doubtful"
+    notes: { n1: "Dudoso is doubtful, not certain. It agrees with the noun: dudosa." }
+    bases: { "dudoso": "doubtful" }
+    examples:
+      "Es un resultado dudoso.": { native: "It is a doubtful result.", bases: { "un": "a", "resultado": "result", "dudoso": "doubtful" } }
+      "Su historia es dudosa.": { native: "His story is doubtful.", bases: { "historia": "history", "dudosa": "doubtful" } }
+  "es-2151":
+    native: "certain; true"
+    notes: { n1: "Cierto is certain, true. It agrees with the noun: cierta." }
+    bases: { "cierto": "certain; true" }
+    examples:
+      "Es cierto que hace frío.": { native: "It is true that it is cold.", bases: { "cierto": "certain; true", "que": "that" } }
+      "No es una historia cierta.": { native: "It is not a true story.", bases: { "una": "a", "historia": "history", "cierta": "certain; true" } }
+  "es-2152":
+    native: "convinced"
+    notes: { n1: "Convencido is convinced, sure of one's view. It agrees with the noun: convencida." }
+    bases: { "convencido": "convinced" }
+    examples:
+      "Estoy convencido de la idea.": { native: "I am convinced of the idea.", bases: { "convencido": "convinced", "de": "of", "la": "the" } }
+      "Estoy convencida de que es así.": { native: "I am convinced that it is so.", bases: { "convencida": "convinced", "de": "of", "que": "that", "así": "so" } }

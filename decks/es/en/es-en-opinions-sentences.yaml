@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-opinions-sentences"
+kind: "layer"
+core: "es-opinions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: opinions"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about giving opinions, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2153":
+    native: "I agree, but not with the argument."
+    bases: { "de": "of", "con": "with", "el": "the" }
+    confusables: { "desacuerdo": { why: "Desacuerdo is the opposite, when people disagree." }, "razon": { why: "Razón is a reason, the thing you give to support a view." } }
+  "es-2154":
+    native: "I think you are right, it is a logical idea."
+    bases: { "que": "that", "una": "a" }
+    confusables: { "verdad": { why: "Verdad is the truth itself, a fact." }, "posible": { why: "Posible is possible, not certain." } }
+  "es-2155":
+    native: "The boss praises the team's work."
+    bases: { "El": "the", "el": "the", "del": "of" }
+    confusables: { "criticar": { why: "Criticar is to find fault, the opposite of praise." }, "valorar": { why: "Valorar is to value, a quieter word." } }
+  "es-2156":
+    native: "I prefer a fair solution."
+    bases: { "una": "a", "solución": "solution" }
+    confusables: { "injusto": { why: "Injusto is unfair, the opposite of justo." }, "correcto": { why: "Correcto is correct, a matter of fact." } }
+  "es-2157":
+    native: "That idea is absurd and ridiculous."
+    bases: { "Esa": "that" }
+    confusables: { "increible": { why: "Increíble is hard to believe, a surprise." }, "horrible": { why: "Horrible is very bad, a stronger judgement." } }
+  "es-2158":
+    native: "I reject the proposal because it is false."
+    bases: { "la": "the", "propuesta": "proposal", "porque": "because" }
+    confusables: { "mentira": { why: "Mentira is a lie, something said that is false." }, "dudar": { why: "Dudar is to doubt, not to refuse." } }
