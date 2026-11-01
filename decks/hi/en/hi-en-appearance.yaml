@@ -1,0 +1,263 @@
+schema: 1
+id: "hi-en-appearance"
+kind: "layer"
+core: "hi-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Appearance: looks, height and age"
+license: "CC-BY-SA-4.0"
+description: "How people look: height, build, age, face and dress, and the words for describing them. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1750":
+    native: "fat; thick"
+    notes:
+      "n1": "Said of a person or a thing that is thick or heavy in body. The opposite is पतला (patlā), thin."
+    examples:
+      "वह आदमी मोटा है।": { "native": "That man is fat.", "bases": {} }
+      "मेरा भाई थोड़ा मोटा है।": { "native": "My brother is a bit fat.", "bases": {} }
+  "hi-1751":
+    native: "fair-skinned; white"
+    notes:
+      "n1": "Said of skin that is light in colour. The feminine is गोरी (gōrī), and the word is a common compliment."
+    examples:
+      "वह गोरा लड़का है।": { "native": "He is a fair-skinned boy.", "bases": {"लड़का": "boy"} }
+      "उसका रंग गोरा है।": { "native": "His complexion is fair.", "bases": {} }
+  "hi-1752":
+    native: "dark-complexioned; wheatish"
+    notes:
+      "n1": "Said of skin that is brown or dark, but not black. It is a neutral word in Hindi, and the feminine is सांवली (sāṁvalī)."
+    examples:
+      "वह सांवली लड़की है।": { "native": "She is a dark-complexioned girl.", "bases": {"सांवली": "dark-complexioned", "लड़की": "girl"} }
+      "माँ का रंग सांवला है।": { "native": "Mother's complexion is wheatish.", "bases": {} }
+  "hi-1753":
+    native: "beautiful; pretty"
+    notes:
+      "n1": "Beautiful, of a person, a place or a thing. The noun is ख़ूबसूरती (k͟hūbsūrtī), beauty."
+    examples:
+      "यह फूल बहुत खूबसूरत है।": { "native": "This flower is very beautiful.", "bases": {"फूल": "flower"} }
+      "उसका घर खूबसूरत है।": { "native": "His house is beautiful.", "bases": {} }
+  "hi-1754":
+    native: "old (of a person)"
+    notes:
+      "n1": "Old, said of a person. The feminine is बूढ़ी (būṛhī). The noun is बुढ़ापा (buṛhāpā), old age."
+    examples:
+      "मेरे दादा बूढ़े हैं।": { "native": "My grandfather is old.", "bases": {"बूढ़े": "old"} }
+      "वह बूढ़ा आदमी धीरे चलता है।": { "native": "That old man walks slowly.", "bases": {} }
+  "hi-1755":
+    native: "young"
+    notes:
+      "n1": "Young, of a person. The noun is जवानी (javānī), youth. The opposite is बूढ़ा (būṛhā)."
+    examples:
+      "वह जवान लड़का है।": { "native": "He is a young boy.", "bases": {"लड़का": "boy"} }
+      "जवान लोग पढ़ते हैं।": { "native": "Young people study.", "bases": {} }
+  "hi-1756":
+    native: "wide; broad"
+    notes:
+      "n1": "Wide, from one side to the other. The opposite is संकरा (saṅkarā), narrow."
+    examples:
+      "सड़क चौड़ी है।": { "native": "The road is wide.", "bases": {"चौड़ी": "wide; broad"} }
+      "मेज़ चौड़ी है।": { "native": "The table is wide.", "bases": {"चौड़ी": "wide; broad"} }
+  "hi-1757":
+    native: "low; short (of height)"
+    notes:
+      "n1": "Low, close to the ground. The opposite is ऊँचा (ūm̐cā), high."
+    examples:
+      "यह मेज़ नीची है।": { "native": "This table is low.", "bases": {"नीची": "low"} }
+      "छत नीची है।": { "native": "The ceiling is low.", "bases": {"नीची": "low"} }
+  "hi-1758":
+    native: "dense; thick (of hair or forest)"
+    notes:
+      "n1": "Thick and close together, as a forest or hair. It is not used for a thick object."
+    examples:
+      "यहाँ घना जंगल है।": { "native": "There is a dense forest here.", "bases": {} }
+      "उसके बाल घने हैं।": { "native": "His hair is thick.", "bases": {"घने": "dense; thick"} }
+  "hi-1759":
+    native: "bald"
+    notes:
+      "n1": "Having no hair on the head. Said of a man, usually."
+    examples:
+      "मेरे चाचा गंजे हैं।": { "native": "My uncle is bald.", "bases": {"गंजे": "bald"} }
+      "गंजा आदमी टोपी पहनता है।": { "native": "The bald man wears a cap.", "bases": {} }
+  "hi-1760":
+    native: "shiny; bright"
+    notes:
+      "n1": "Shining and bright, as a metal or a colour. The feminine is चमकीली (camkīlī)."
+    examples:
+      "उसकी चमकीली साड़ी है।": { "native": "She has a shiny sari.", "bases": {"चमकीली": "shiny; bright"} }
+      "सोने का हार चमकीला है।": { "native": "The gold necklace is shiny.", "bases": {"हार": "necklace"} }
+  "hi-1761":
+    native: "deep; dark (of a colour)"
+    notes:
+      "n1": "Deep, as a well is, or dark, as a colour is. The opposite is हल्का (halkā), light."
+    examples:
+      "पानी गहरा है।": { "native": "The water is deep.", "bases": {} }
+      "उसका रंग गहरा नीला है।": { "native": "His colour is a dark blue.", "bases": {} }
+  "hi-1762":
+    native: "short (of a person)"
+    notes:
+      "n1": "Short in height, said of a person. The word for a tall person is लंबा (lambā)."
+    examples:
+      "वह नाटा लड़का है।": { "native": "He is a short boy.", "bases": {"लड़का": "boy"} }
+      "मेरा भाई मुझसे नाटा है।": { "native": "My brother is shorter than me.", "bases": {"नाटा": "short"} }
+  "hi-1763":
+    native: "age"
+    notes:
+      "n1": "How old a person is. The phrase कितनी उम्र (kitnī umr) asks the age."
+    examples:
+      "तुम्हारी उम्र कितनी है?": { "native": "How old are you?", "bases": {} }
+      "उसकी उम्र बीस साल है।": { "native": "He is twenty years old.", "bases": {} }
+  "hi-1764":
+    native: "height; stature"
+    notes:
+      "n1": "How tall a person is. The word for the length of a thing is लंबाई (lambāī)."
+    examples:
+      "उसका कद लंबा है।": { "native": "He is tall.", "bases": {} }
+      "कद कितना है?": { "native": "What is the height?", "bases": {} }
+  "hi-1765":
+    native: "length; height"
+    notes:
+      "n1": "How long a thing is, or how tall a person is. The adjective is लंबा (lambā)."
+    examples:
+      "इस कमरे की लंबाई दस फ़ुट है।": { "native": "The length of this room is ten feet.", "bases": {"फ़ुट": "foot"} }
+      "रस्सी की लंबाई नापो।": { "native": "Measure the length of the rope.", "bases": {"नापो": "to measure"} }
+  "hi-1766":
+    native: "face"
+    notes:
+      "n1": "The face of a person. The word for the look of the face is शक्ल (śakl)."
+    examples:
+      "उसका चेहरा खुश है।": { "native": "His face is happy.", "bases": {} }
+      "चेहरा धो लो।": { "native": "Wash your face.", "bases": {} }
+  "hi-1767":
+    native: "beard"
+    notes:
+      "n1": "The hair on a man's chin and cheeks. The moustache is मूँछ (mūm̐ch)."
+    examples:
+      "पापा की दाढ़ी बढ़ गई है।": { "native": "Dad's beard has grown.", "bases": {"पापा": "dad", "बढ़": "to grow"} }
+      "दाढ़ी सफ़ेद है।": { "native": "The beard is white.", "bases": {} }
+  "hi-1768":
+    native: "moustache"
+    notes:
+      "n1": "The hair on the upper lip. It is used in the plural, मूँछें (mūm̐chēm̐)."
+    examples:
+      "उसकी मूँछें घनी हैं।": { "native": "His moustache is thick.", "bases": {"मूँछें": "moustache"} }
+      "मूँछ मोटी है।": { "native": "The moustache is thick.", "bases": {} }
+  "hi-1769":
+    native: "youth"
+    notes:
+      "n1": "The time of being young. The opposite is बुढ़ापा (buṛhāpā), old age."
+    examples:
+      "जवानी में वह बहुत काम करता था।": { "native": "In his youth he worked a lot.", "bases": {} }
+      "जवानी जल्दी जाती है।": { "native": "Youth goes quickly.", "bases": {} }
+  "hi-1770":
+    native: "childhood"
+    notes:
+      "n1": "The time of being a child. The word for a child is बच्चा (baccā)."
+    examples:
+      "बचपन में मैं यहाँ खेलता था।": { "native": "In childhood I used to play here.", "bases": {} }
+      "बचपन की यादें अच्छी हैं।": { "native": "The memories of childhood are good.", "bases": {} }
+  "hi-1771":
+    native: "old age"
+    notes:
+      "n1": "The time of being old. The adjective is बूढ़ा (būṛhā)."
+    examples:
+      "बुढ़ापे में आराम चाहिए।": { "native": "In old age one needs rest.", "bases": {"बुढ़ापे": "old age"} }
+      "बुढ़ापा सबको आता है।": { "native": "Old age comes to everyone.", "bases": {} }
+  "hi-1772":
+    native: "little girl; child (girl)"
+    notes:
+      "n1": "A girl child. The word for a boy child is बच्चा (baccā)."
+    examples:
+      "वह प्यारी बच्ची है।": { "native": "She is a lovely little girl.", "bases": {"प्यारी": "lovely; dear"} }
+      "बच्ची खेल रही है।": { "native": "The little girl is playing.", "bases": {} }
+  "hi-1773":
+    native: "shine; sparkle"
+    notes:
+      "n1": "The brightness of a thing that shines, or the light in the eyes."
+    examples:
+      "उसकी आँखों में चमक है।": { "native": "There is a sparkle in her eyes.", "bases": {} }
+      "चमक बढ़ गई।": { "native": "The shine has increased.", "bases": {"बढ़": "to grow"} }
+  "hi-1774":
+    native: "look; features; face"
+    notes:
+      "n1": "The look of a person, what the face is like. The word सूरत (sūrat) means much the same."
+    examples:
+      "उसकी शक्ल मेरे भाई जैसी है।": { "native": "He looks like my brother.", "bases": {"जैसी": "like; similar"} }
+      "शक्ल से वह भला लगता है।": { "native": "By his looks he seems good.", "bases": {"भला": "good; kind"} }
+  "hi-1775":
+    native: "face; looks"
+    notes:
+      "n1": "The look of a face or a thing. It is also a word for the form of a thing."
+    examples:
+      "उसकी सूरत अच्छी है।": { "native": "She has a nice face.", "bases": {} }
+      "सूरत से वह भोला लगता है।": { "native": "He looks innocent.", "bases": {"भोला": "innocent; simple"} }
+  "hi-1776":
+    native: "beauty"
+    notes:
+      "n1": "The quality of being beautiful. The adjective is खूबसूरत (khūbsūrat)."
+    examples:
+      "इस जगह की ख़ूबसूरती देखो।": { "native": "Look at the beauty of this place.", "bases": {"जगह": "place"} }
+      "उसकी ख़ूबसूरती मशहूर है।": { "native": "Her beauty is famous.", "bases": {"मशहूर": "famous"} }
+  "hi-1777":
+    native: "thin; slim (of a person)"
+    notes:
+      "n1": "Thin in the body, said of a person. The opposite is मोटा (mōṭā), fat."
+    examples:
+      "वह दुबला लड़का है।": { "native": "He is a thin boy.", "bases": {"लड़का": "boy"} }
+      "दादी दुबली हैं।": { "native": "Grandmother is thin.", "bases": {"दुबली": "thin"} }
+  "hi-1778":
+    native: "shape; size"
+    notes:
+      "n1": "The shape or the size of a thing. It is used of boxes, fruit and rooms alike."
+    examples:
+      "यह डिब्बा गोल आकार का है।": { "native": "This box is round in shape.", "bases": {"गोल": "round"} }
+      "इनका आकार अलग है।": { "native": "Their shape is different.", "bases": {"अलग": "different"} }
+  "hi-1779":
+    native: "to look; to seem; to be seen"
+    notes:
+      "n1": "To look or seem, or to be seen. The causal is दिखाना (dikhānā), to show."
+    examples:
+      "वह बीमार दिखता है।": { "native": "He looks ill.", "bases": {"दिखता": "to look; to seem"} }
+      "तुम थके हुए दिखते हो।": { "native": "You look tired.", "bases": {"दिखते": "to look; to seem"} }
+  "hi-1780":
+    native: "to seem; to feel; to appear"
+    notes:
+      "n1": "To seem, or to feel in a way. The phrase अच्छा लगना (acchā lagnā) means to like."
+    examples:
+      "वह बहुत अच्छा लगता है।": { "native": "He looks very good.", "bases": {"लगता": "to seem"} }
+      "तुम्हारी शर्ट तुम पर अच्छी लगती है।": { "native": "Your shirt looks good on you.", "bases": {"शर्ट": "shirt", "लगती": "to seem"} }
+  "hi-1781":
+    native: "to dress up; to be decorated"
+    notes:
+      "n1": "To dress up, or to be decorated. The verb सजाना (sajānā) is to decorate something."
+    examples:
+      "शादी में वह खूब सजती है।": { "native": "At a wedding she dresses up a lot.", "bases": {"सजती": "to dress up"} }
+      "दुल्हन सजी है।": { "native": "The bride is dressed up.", "bases": {"दुल्हन": "bride", "सजी": "to dress up"} }
+  "hi-1782":
+    native: "to wear"
+    notes:
+      "n1": "To put on clothes or a thing worn on the body. The opposite is उतारना (utārnā), to take off."
+    examples:
+      "वह नई कमीज़ पहनता है।": { "native": "He wears a new shirt.", "bases": {"पहनता": "to wear"} }
+      "धूप में टोपी पहनो।": { "native": "Wear a cap in the sun.", "bases": {"पहनो": "to wear"} }
+  "hi-1783":
+    native: "to smile"
+    notes:
+      "n1": "To smile. The noun is मुस्कान (muskān), a smile. To laugh out loud is हँसना (ham̐sanā)."
+    examples:
+      "वह मुस्कुराकर बोला।": { "native": "He spoke with a smile.", "bases": {"मुस्कुराकर": "to smile"} }
+      "बच्चा हँसकर मुस्कुराया।": { "native": "The child laughed and smiled.", "bases": {"मुस्कुराया": "to smile"} }
+  "hi-1784":
+    native: "cheerful; smiling"
+    notes:
+      "n1": "Cheerful and smiling, of a person who is always happy. The noun is हँसमुखता (ham̐samukhtā)."
+    examples:
+      "वह बहुत हँसमुख है।": { "native": "He is very cheerful.", "bases": {} }
+      "हँसमुख लोग अच्छे होते हैं।": { "native": "Cheerful people are good.", "bases": {} }
+  "hi-1785":
+    native: "to glow; to look better"
+    notes:
+      "n1": "To become brighter or more beautiful, as skin or a colour does after care."
+    examples:
+      "उसका चेहरा निखर गया।": { "native": "Her face has brightened.", "bases": {"निखर": "to glow"} }
+      "धूप से रंग निखरता है।": { "native": "The colour brightens in the sun.", "bases": {"निखरता": "to glow"} }

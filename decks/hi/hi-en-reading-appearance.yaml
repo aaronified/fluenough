@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-appearance"
+name: "Reading: appearance"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short descriptions of people: a grandmother and a lost child. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-appearance-grandmother"
+    title: "My grandmother"
+    theme: "appearance"
+    sentences:
+      - {"text": "मेरी नानी छोटी और गोरी हैं।", "reading": "mērī nānī chōṭī aur gōrī haim̐.", "ipa": "meːriː naːniː tʃʰoːʈiː ɔːr ɡoːriː ɦɛ̃ː"}
+      - {"text": "उनके बाल सफ़ेद हैं और चेहरा हँसमुख है।", "reading": "unkē bāl safēd haim̐ aur cēhrā ham̐samukh hai.", "ipa": "ʊnkeː baːl səfeːd̪ ɦɛ̃ː ɔːr tʃeːɦraː ɦə̃səmʊkʰ ɦɛː"}
+      - {"text": "वह लाल साड़ी पहनती हैं।", "reading": "vah lāl sāṛī pahntī haim̐.", "ipa": "ʋəɦ laːl saːɽiː pəɦnt̪iː ɦɛ̃ː"}
+      - {"text": "उनकी आवाज़ मीठी है।", "reading": "unkī āvāz mīṭhī hai.", "ipa": "ʊnkiː aːʋaːz miːʈʰiː ɦɛː"}
+    questions:
+      - {"id": "hi-1789", "prompt": {"en": "The grandmother is tall."}, "answer": false}
+      - {"id": "hi-1790", "prompt": {"en": "What colour are her hair?"}, "options": [{"en": "White"}, {"en": "Black"}], "answer": 1}
+      - {"id": "hi-1791", "prompt": {"en": "She wears a red sari."}, "answer": true}
+  - id: "hi-appearance-lost-child"
+    title: "A lost child"
+    theme: "appearance"
+    sentences:
+      - {"text": "लड़के की उम्र सात साल है।", "reading": "laṛkē kī umr sāt sāl hai.", "ipa": "ləɽkeː kiː ʊmr saːt̪ saːl ɦɛː"}
+      - {"text": "उसका कद थोड़ा नाटा है।", "reading": "uskā kad thōṛā nāṭā hai.", "ipa": "ʊskaː kəd̪ t̪ʰoːɽaː naːʈaː ɦɛː"}
+      - {"text": "उसने नीली कमीज़ और काली टोपी पहनी है।", "reading": "usnē nīlī kamīz aur kālī ṭōpī pahnī hai.", "ipa": "ʊsneː niːliː kəmiːz ɔːr kaːliː ʈoːpiː pəɦniː ɦɛː"}
+      - {"text": "अगर आप उसे देखें, तो बताइए।", "reading": "agar āp usē dēkhēm̐, tō batāiē.", "ipa": "əɡər aːp ʊseː d̪eːkʰẽː t̪oː bət̪aːɪeː"}
+    questions:
+      - {"id": "hi-1792", "prompt": {"en": "The boy is seven years old."}, "answer": true}
+      - {"id": "hi-1793", "prompt": {"en": "What is he wearing on his head?"}, "options": [{"en": "A black cap"}, {"en": "A yellow hat"}], "answer": 1}
+      - {"id": "hi-1794", "prompt": {"en": "The boy is very tall."}, "answer": false}
