@@ -101,10 +101,10 @@ cards:
     examples:
       - target: "Tiene una cara bonita."
         ipa: "ˈtjene ˈuna ˈkaɾa boˈnita"
-        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cara", ref: "es-0412" }, { word: "bonita", ref: "es-0405" }]
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cara", base: "cara" }, { word: "bonita", ref: "es-0405" }]
       - target: "Su cara es redonda."
         ipa: "su ˈkaɾa es reˈdonda"
-        bases: [{ word: "Su", ref: "es-0131" }, { word: "cara", ref: "es-0412" }, { word: "es", ref: "es-0022" }, { word: "redonda", base: "redondo" }]
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "cara", base: "cara" }, { word: "es", ref: "es-0022" }, { word: "redonda", base: "redondo" }]
   - id: "es-1555"
     target: "la frente"
     ipa: "la ˈfɾente"
@@ -211,7 +211,7 @@ cards:
         bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "es", ref: "es-0022" }, { word: "rubio", base: "rubio" }]
       - target: "Tiene el pelo rubio."
         ipa: "ˈtjene el ˈpelo ˈrubjo"
-        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-1319" }, { word: "rubio", base: "rubio" }]
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-0748" }, { word: "rubio", base: "rubio" }]
   - id: "es-1563"
     target: "moreno"
     ipa: "moˈɾeno"
@@ -237,7 +237,7 @@ cards:
         bases: [{ word: "Tiene", ref: "es-0024" }, { word: "los", base: "los" }, { word: "ojos", ref: "es-0741" }, { word: "castaños", base: "castaño" }]
       - target: "Su pelo es castaño."
         ipa: "su ˈpelo es kasˈtaɲo"
-        bases: [{ word: "Su", ref: "es-0131" }, { word: "pelo", ref: "es-1319" }, { word: "es", ref: "es-0022" }, { word: "castaño", base: "castaño" }]
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "pelo", ref: "es-0748" }, { word: "es", ref: "es-0022" }, { word: "castaño", base: "castaño" }]
   - id: "es-1565"
     target: "calvo"
     ipa: "ˈkalbo"
@@ -260,7 +260,7 @@ cards:
     examples:
       - target: "Tiene el pelo rizado."
         ipa: "ˈtjene el ˈpelo riˈθado"
-        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-1319" }, { word: "rizado", base: "rizado" }]
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-0748" }, { word: "rizado", base: "rizado" }]
       - target: "Sus rizos son bonitos."
         ipa: "sus ˈriθos son boˈnitos"
         bases: [{ word: "Sus", ref: "es-0131" }, { word: "rizos", base: "rizo" }, { word: "son", ref: "es-0022" }, { word: "bonitos", ref: "es-0405" }]
@@ -273,7 +273,7 @@ cards:
     examples:
       - target: "Mi pelo es liso."
         ipa: "mi ˈpelo es ˈliso"
-        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pelo", ref: "es-1319" }, { word: "es", ref: "es-0022" }, { word: "liso", base: "liso" }]
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pelo", ref: "es-0748" }, { word: "es", ref: "es-0022" }, { word: "liso", base: "liso" }]
       - target: "La piel es lisa."
         ipa: "la pjel es ˈlisa"
         bases: [{ word: "La", base: "la" }, { word: "piel", ref: "es-1576" }, { word: "es", ref: "es-0022" }, { word: "lisa", base: "liso" }]
@@ -413,7 +413,7 @@ cards:
     examples:
       - target: "Tiene arrugas en la cara."
         ipa: "ˈtjene aˈruɡas en la ˈkaɾa"
-        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "arrugas", base: "arruga" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cara", ref: "es-0412" }]
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "arrugas", base: "arruga" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cara", base: "cara" }]
       - target: "Las arrugas aparecen con la edad."
         ipa: "las aˈruɡas apaˈɾeθen kon la eˈdad"
         bases: [{ word: "Las", base: "las" }, { word: "arrugas", base: "arruga" }, { word: "aparecen", base: "aparecer" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "edad", ref: "es-0242" }]

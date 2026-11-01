@@ -76,7 +76,7 @@ cards:
         bases: [{ word: "El", base: "el" }, { word: "autor", base: "autor" }, { word: "escribe", ref: "es-0297" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
       - target: "Es el autor de este libro."
         ipa: "es el awˈtoɾ de ˈeste ˈlibɾo"
-        bases: [{ word: "Es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "autor", base: "autor" }, { word: "de", base: "de" }, { word: "este", ref: "es-1897" }, { word: "libro", ref: "es-0011" }]
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "autor", base: "autor" }, { word: "de", base: "de" }, { word: "este", base: "este" }, { word: "libro", ref: "es-0011" }]
   - id: "es-3036"
     target: "el capítulo"
     ipa: "el kaˈpitulo"
@@ -87,7 +87,7 @@ cards:
     examples:
       - target: "El capítulo es corto."
         ipa: "el kaˈpitulo es ˈkoɾto"
-        bases: [{ word: "El", base: "el" }, { word: "capítulo", base: "capítulo" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-1320" }]
+        bases: [{ word: "El", base: "el" }, { word: "capítulo", base: "capítulo" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-0430" }]
       - target: "Leo el primer capítulo."
         ipa: "ˈleo el pɾiˈmeɾ kaˈpitulo"
         bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "primer", ref: "es-0551" }, { word: "capítulo", base: "capítulo" }]
@@ -160,7 +160,7 @@ cards:
         bases: [{ word: "Su", ref: "es-0131" }, { word: "estilo", base: "estilo" }, { word: "es", ref: "es-0022" }, { word: "claro", ref: "es-0438" }]
       - target: "Me gusta el estilo de este autor."
         ipa: "me ˈɡusta el esˈtilo de ˈeste awˈtoɾ"
-        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "estilo", base: "estilo" }, { word: "de", base: "de" }, { word: "este", ref: "es-1897" }, { word: "autor", ref: "es-3035" }]
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "estilo", base: "estilo" }, { word: "de", base: "de" }, { word: "este", base: "este" }, { word: "autor", ref: "es-3035" }]
   - id: "es-3042"
     target: "el género"
     ipa: "el ˈxeneɾo"
@@ -185,7 +185,7 @@ cards:
     examples:
       - target: "El verso es corto."
         ipa: "el ˈbeɾso es ˈkoɾto"
-        bases: [{ word: "El", base: "el" }, { word: "verso", base: "verso" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-1320" }]
+        bases: [{ word: "El", base: "el" }, { word: "verso", base: "verso" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-0430" }]
       - target: "Cada verso tiene once sílabas."
         ipa: "ˈkada ˈbeɾso ˈtjene ˈonθe ˈsilabas"
         bases: [{ word: "Cada", ref: "es-0366" }, { word: "verso", base: "verso" }, { word: "tiene", ref: "es-0024" }, { word: "once", ref: "es-0215" }, { word: "sílabas", base: "sílaba" }]
@@ -202,7 +202,7 @@ cards:
         bases: [{ word: "La", base: "la" }, { word: "rima", base: "rima" }, { word: "es", ref: "es-0022" }, { word: "perfecta", base: "perfecto" }]
       - target: "Este poema tiene rima."
         ipa: "ˈeste poˈema ˈtjene ˈrima"
-        bases: [{ word: "Este", ref: "es-1897" }, { word: "poema", ref: "es-3032" }, { word: "tiene", ref: "es-0024" }, { word: "rima", base: "rima" }]
+        bases: [{ word: "Este", base: "este" }, { word: "poema", ref: "es-3032" }, { word: "tiene", ref: "es-0024" }, { word: "rima", base: "rima" }]
   - id: "es-3045"
     target: "la estrofa"
     ipa: "la esˈtɾofa"
@@ -227,7 +227,7 @@ cards:
     examples:
       - target: "El ensayo es sobre la libertad."
         ipa: "el enˈsaʝo es ˈsobɾe la libeɾˈtad"
-        bases: [{ word: "El", base: "el" }, { word: "ensayo", base: "ensayo" }, { word: "es", ref: "es-0022" }, { word: "sobre", ref: "es-2243" }, { word: "la", base: "la" }, { word: "libertad", ref: "es-2878" }]
+        bases: [{ word: "El", base: "el" }, { word: "ensayo", base: "ensayo" }, { word: "es", ref: "es-0022" }, { word: "sobre", base: "sobre" }, { word: "la", base: "la" }, { word: "libertad", ref: "es-2878" }]
       - target: "Escribo un ensayo para la clase."
         ipa: "esˈkɾibo un enˈsaʝo ˈpaɾa la ˈklase"
         bases: [{ word: "Escribo", ref: "es-0297" }, { word: "un", base: "un" }, { word: "ensayo", base: "ensayo" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "clase", ref: "es-1356" }]
