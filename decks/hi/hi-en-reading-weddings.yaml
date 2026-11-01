@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-weddings"
+name: "Reading: weddings"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A wedding invitation card, and a note from a family about the rites. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-weddings-invitation"
+    title: "A wedding invitation"
+    theme: "weddings"
+    sentences:
+      - {"text": "आपका स्वागत है, हमारे बेटे की शादी में।", "reading": "āpkā svāgat hai, hamārē bēṭē kī śādī mēm̐.", "ipa": "aːpkaː sʋaːɡət̪ ɦɛː ɦəmaːreː beːʈeː kiː ʃaːd̪iː mẽː"}
+      - {"text": "बारात सुबह दस बजे आएगी।", "reading": "bārāt subah das bajē āēgī.", "ipa": "baːraːt̪ sʊbəɦ d̪əs bədʒeː aːeːɡiː"}
+      - {"text": "मंडप में फेरे होंगे और फिर विदा होगी।", "reading": "maṇḍap mēm̐ phērē hōṅgē aur phir vidā hōgī.", "ipa": "məɳɖəp mẽː pʰeːreː ɦoːŋɡeː ɔːr pʰɪr ʋɪd̪aː ɦoːɡiː"}
+      - {"text": "मेहंदी और संगीत की रस्में शाम को होंगी।", "reading": "mēhandī aur saṅgīt kī rasmēm̐ śām kō hōṅgī.", "ipa": "meːɦənd̪iː ɔːr səŋɡiːt̪ kiː rəsmẽː ʃaːm koː ɦoːŋɡiː"}
+    questions:
+      - {"id": "hi-2528", "prompt": {"en": "The wedding is in the evening."}, "answer": false}
+      - {"id": "hi-2529", "prompt": {"en": "When will the procession arrive?"}, "options": [{"en": "At ten in the morning"}, {"en": "At night"}], "answer": 1}
+      - {"id": "hi-2530", "prompt": {"en": "The farewell is after the rounds."}, "answer": true}
+  - id: "hi-weddings-note"
+    title: "A note of thanks"
+    theme: "weddings"
+    sentences:
+      - {"text": "दूल्हा और दुल्हन को हमारी बधाई।", "reading": "dūlhā aur dulhan kō hamārī badhāī.", "ipa": "d̪uːlɦaː ɔːr d̪ʊlɦən koː ɦəmaːriː bəd̪ʱaːiː"}
+      - {"text": "पंडित जी ने शुभ मुहूर्त पर रस्म पूरी की।", "reading": "paṇḍit jī nē śubh muhūrt par rasm pūrī kī.", "ipa": "pəɳɖɪt̪ dʒiː neː ʃʊbʱ mʊɦuːrt̪ pər rəsm puːriː kiː"}
+      - {"text": "सबने उपहार दिए और आशीर्वाद दिया।", "reading": "sabnē uphār diē aur āśīrvād diyā.", "ipa": "səbneː ʊpɦaːr d̪ɪeː ɔːr aːʃiːrʋaːd̪ d̪ɪjaː"}
+      - {"text": "सगाई की तारीख़ भी अगले महीने है।", "reading": "sagāī kī tārīk͟h bhī aglē mahīnē hai.", "ipa": "səɡaːiː kiː t̪aːriːx bʱiː əɡleː məɦiːneː ɦɛː"}
+    questions:
+      - {"id": "hi-2531", "prompt": {"en": "Congratulations were sent to the couple."}, "answer": true}
+      - {"id": "hi-2532", "prompt": {"en": "Who completed the rite?"}, "options": [{"en": "The priest"}, {"en": "The guest"}], "answer": 1}
+      - {"id": "hi-2533", "prompt": {"en": "The engagement is this week."}, "answer": false}
