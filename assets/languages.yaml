@@ -1,10 +1,15 @@
 # The languages a learner can say they know, on first launch and in Settings
 # (#53, #490). A fork or a contributor adds one by adding an entry here: no
 # code change. The list is India's 22 scheduled languages, English, the
-# widely spoken ones beside them, and every living or constructed language a
-# course path teaches (#613). Spoken ones only (owner, 2026-10-23): an
-# ancient language nobody speaks (Sumerian, Egyptian, Mycenaean Greek,
-# Proto-Indo-European) is not here, however much a course teaches it.
+# widely spoken ones beside them, and every language a course path teaches
+# or plans (#613, #959). Planned languages are listed with no decks yet
+# (owner, 2026-10-31, #959: "the 40+ list", with Latin, Old English and
+# Middle English added; 2026-11-01: all 65 entries): the living ones, the
+# ancient and reconstructed ones (Mycenaean Greek, Sumerian, Egyptian,
+# Proto-Indo-European, Vedic Sanskrit, Latin, Old and Middle English), two
+# sign languages and the constructed ones of fiction. This replaces the
+# "spoken ones only" rule of 2026-10-23. A language with no course is shown
+# on Add a language as having none yet.
 #
 #   code, iso639_3  the code decks use, and its ISO 639-3 code
 #   name, own_name  its English name, and its name for itself (in its script)
@@ -19,9 +24,19 @@
 #                   "Urdu" for Hindustani, which has no entry of its own
 #                   (#623)
 #   family          indo_aryan, dravidian, tibeto_burman, austroasiatic,
-#                   germanic, romance, sinitic, koreanic, japonic or
-#                   constructed: the folded group it is listed in. A new
-#                   family is named in `knownFamily` in lib/l10n/app_en.arb.
+#                   germanic, romance, sinitic, koreanic, japonic,
+#                   constructed, slavic, hellenic, italic, celtic, uralic,
+#                   turkic, afroasiatic, austronesian, kra_dai, niger_congo,
+#                   quechuan, indo_european, isolate or sign: the folded
+#                   group it is listed in. A new family is named in
+#                   `knownFamily` in lib/l10n/app_en.arb and listed in
+#                   `_families` in lib/features/languages/add_language_page.dart.
+#   code            two or three letters. A language with no ISO 639-1 code
+#                   uses its 639-3 code; one with no ISO code at all (Dothraki,
+#                   High Valyrian) takes a private-use code, qaa to qtz, as
+#                   English Braille's `qbe` does.
+#   scripts omitted a sign language has no written script of its own here:
+#                   leave `scripts` out.
 #   dialect         optional: the one dialect the app teaches, by its proper
 #                   name, shown on the Languages page above Speak and Hear
 #                   (#907). Without it the page says "Standard" and the
@@ -153,3 +168,65 @@ languages:
   - { code: "jbo", iso639_3: "jbo", name: "Lojban", own_name: "la .lojban.", scripts: ["latin"], family: "constructed" }
   - { code: "isv", iso639_3: "isv", name: "Interslavic", own_name: "Medžuslovjansky · Меджусловјанскы", scripts: ["latin", "cyrillic"], family: "constructed",
       aliases: ["Slovianski", "Medžuslovjansky", "Меджусловјанскы"] }
+  # The planned languages (#959): listed so the scope is clear, with no decks yet.
+  # Living languages of the language-paths scheme (wiki/Plan-Language-Paths-Scheme.md).
+  - { code: "pt", iso639_3: "por", name: "Portuguese", own_name: "Português", scripts: ["latin"], family: "romance" }
+  - { code: "it", iso639_3: "ita", name: "Italian", own_name: "Italiano", scripts: ["latin"], family: "romance" }
+  - { code: "ca", iso639_3: "cat", name: "Catalan", own_name: "Català", scripts: ["latin"], family: "romance" }
+  - { code: "sv", iso639_3: "swe", name: "Swedish", own_name: "Svenska", scripts: ["latin"], family: "germanic" }
+  - { code: "nb", iso639_3: "nob", name: "Norwegian (Bokmål)", own_name: "Norsk bokmål", scripts: ["latin"], family: "germanic",
+      aliases: ["Norwegian", "Norsk", "Bokmål"] }
+  - { code: "yi", iso639_3: "yid", name: "Yiddish", own_name: "ייִדיש", scripts: ["hebrew"], family: "germanic" }
+  - { code: "ru", iso639_3: "rus", name: "Russian", own_name: "Русский", scripts: ["cyrillic"], family: "slavic" }
+  - { code: "pl", iso639_3: "pol", name: "Polish", own_name: "Polski", scripts: ["latin"], family: "slavic" }
+  - { code: "hbs", iso639_3: "hbs", name: "Serbo-Croatian", own_name: "Srpskohrvatski · Српскохрватски", scripts: ["latin", "cyrillic"], family: "slavic",
+      aliases: ["Serbian", "Croatian", "Bosnian", "Montenegrin", "Srpski", "Hrvatski", "Српски", "Bosanski"] }
+  - { code: "el", iso639_3: "ell", name: "Greek (Modern)", own_name: "Ελληνικά", scripts: ["greek"], family: "hellenic",
+      aliases: ["Greek", "Modern Greek"] }
+  - { code: "he", iso639_3: "heb", name: "Hebrew", own_name: "עברית", scripts: ["hebrew"], family: "afroasiatic" }
+  - { code: "fi", iso639_3: "fin", name: "Finnish", own_name: "Suomi", scripts: ["latin"], family: "uralic" }
+  - { code: "hu", iso639_3: "hun", name: "Hungarian", own_name: "Magyar", scripts: ["latin"], family: "uralic" }
+  - { code: "tr", iso639_3: "tur", name: "Turkish", own_name: "Türkçe", scripts: ["latin"], family: "turkic" }
+  - { code: "eu", iso639_3: "eus", name: "Basque", own_name: "Euskara", scripts: ["latin"], family: "isolate" }
+  - { code: "ga", iso639_3: "gle", name: "Irish", own_name: "Gaeilge", scripts: ["latin"], family: "celtic",
+      aliases: ["Gaelic", "Irish Gaelic"] }
+  - { code: "ar", iso639_3: "arb", name: "Arabic", own_name: "العربية", scripts: ["arabic"], family: "afroasiatic",
+      aliases: ["Modern Standard Arabic"] }
+  - { code: "yue", iso639_3: "yue", name: "Cantonese", own_name: "粵語", scripts: ["han_traditional"], family: "sinitic",
+      aliases: ["廣東話", "广东话"] }
+  - { code: "th", iso639_3: "tha", name: "Thai", own_name: "ภาษาไทย", scripts: ["thai"], family: "kra_dai" }
+  - { code: "vi", iso639_3: "vie", name: "Vietnamese", own_name: "Tiếng Việt", scripts: ["latin"], family: "austroasiatic" }
+  - { code: "fil", iso639_3: "fil", name: "Filipino", own_name: "Filipino", scripts: ["latin"], family: "austronesian",
+      aliases: ["Tagalog"] }
+  - { code: "ms", iso639_3: "zsm", name: "Malay", own_name: "Bahasa Melayu", scripts: ["latin"], family: "austronesian",
+      aliases: ["Standard Malay", "Indonesian", "Bahasa Indonesia"] }
+  - { code: "sw", iso639_3: "swh", name: "Swahili", own_name: "Kiswahili", scripts: ["latin"], family: "niger_congo" }
+  - { code: "ha", iso639_3: "hau", name: "Hausa", own_name: "Hausa", scripts: ["latin"], family: "afroasiatic" }
+  - { code: "so", iso639_3: "som", name: "Somali", own_name: "Soomaali", scripts: ["latin"], family: "afroasiatic" }
+  - { code: "qu", iso639_3: "que", name: "Quechua", own_name: "Runasimi", scripts: ["latin"], family: "quechuan" }
+  # Ancient and reconstructed languages (owner, 2026-10-31).
+  - { code: "gmy", iso639_3: "gmy", name: "Mycenaean Greek", own_name: "Mycenaean Greek", scripts: ["linear_b"], family: "hellenic",
+      aliases: ["Linear B"] }
+  - { code: "sux", iso639_3: "sux", name: "Sumerian", own_name: "𒅴𒂠 (eme-ĝir)", scripts: ["cuneiform"], family: "isolate" }
+  - { code: "egy", iso639_3: "egy", name: "Egyptian", own_name: "mdw nṯr", scripts: ["egyptian_hieroglyphs"], family: "afroasiatic",
+      aliases: ["Ancient Egyptian", "Hieroglyphs"] }
+  - { code: "ine", iso639_3: "ine", name: "Proto-Indo-European", own_name: "Proto-Indo-European", scripts: ["latin"], family: "indo_european",
+      aliases: ["PIE"] }
+  - { code: "vsn", iso639_3: "vsn", name: "Vedic Sanskrit", own_name: "वैदिकसंस्कृतम्", scripts: ["devanagari"], family: "indo_aryan",
+      aliases: ["Vedic"] }
+  - { code: "la", iso639_3: "lat", name: "Latin", own_name: "Lingua Latina", scripts: ["latin"], family: "italic" }
+  - { code: "ang", iso639_3: "ang", name: "Old English", own_name: "Ænglisc", scripts: ["latin"], family: "germanic",
+      aliases: ["Archaic English", "Anglo-Saxon"] }
+  - { code: "enm", iso639_3: "enm", name: "Middle English", own_name: "Englissh", scripts: ["latin"], family: "germanic" }
+  # Sign languages (#579): no written script, so no `scripts`.
+  - { code: "ins", iso639_3: "ins", name: "Indian Sign Language", own_name: "Indian Sign Language", family: "sign",
+      aliases: ["ISL"] }
+  - { code: "ase", iso639_3: "ase", name: "American Sign Language", own_name: "American Sign Language", family: "sign",
+      aliases: ["ASL"] }
+  # Constructed languages of fiction (licence check first, #959). Dothraki
+  # and High Valyrian have no ISO 639-3 code here, so each takes a private-use one.
+  - { code: "tlh", iso639_3: "tlh", name: "Klingon", own_name: "tlhIngan Hol", scripts: ["latin"], family: "constructed" }
+  - { code: "sjn", iso639_3: "sjn", name: "Sindarin", own_name: "Sindarin", scripts: ["latin"], family: "constructed" }
+  - { code: "qya", iso639_3: "qya", name: "Quenya", own_name: "Quenya", scripts: ["latin"], family: "constructed" }
+  - { code: "qdo", iso639_3: "qdo", name: "Dothraki", own_name: "Lekh Dothraki", scripts: ["latin"], family: "constructed" }
+  - { code: "qhv", iso639_3: "qhv", name: "High Valyrian", own_name: "Valyrio", scripts: ["latin"], family: "constructed" }
