@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-chores"
+name: "Reading: chores"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A chore chart for the week, and a note to a flatmate. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-chores-chart"
+    title: "A chore chart on the fridge"
+    theme: "chores"
+    sentences:
+      - {"text": "सोमवार को झाड़ू लगाना है।", "reading": "sōmvār kō jhāṛū lagānā hai.", "ipa": "soːmʋaːr koː dʒʱaːɽuː ləɡaːnaː ɦɛː"}
+      - {"text": "मंगलवार को बर्तन धोने हैं।", "reading": "maṅgalvār kō bartan dhōnē haim̐.", "ipa": "məŋɡəlʋaːr koː bərt̪ən d̪ʱoːneː ɦɛ̃ː"}
+      - {"text": "बुधवार को पोंछा लगाना है।", "reading": "budhvār kō pōñchā lagānā hai.", "ipa": "bʊd̪ʱʋaːr koː poːɲtʃʰaː ləɡaːnaː ɦɛː"}
+      - {"text": "शनिवार को चादरें धोकर सुखानी हैं।", "reading": "śanivār kō cādrēm̐ dhōkar sukhānī haim̐.", "ipa": "ʃənɪʋaːr koː tʃaːd̪rẽː d̪ʱoːkər sʊkʰaːniː ɦɛ̃ː"}
+    questions:
+      - {"id": "hi-1744", "prompt": {"en": "Mopping is on Wednesday."}, "answer": true}
+      - {"id": "hi-1745", "prompt": {"en": "What is done on Tuesday?"}, "options": [{"en": "Sweeping"}, {"en": "Washing the dishes"}], "answer": 2}
+      - {"id": "hi-1746", "prompt": {"en": "The sheets are dried on Friday."}, "answer": false}
+  - id: "hi-chores-note"
+    title: "A note to a flatmate"
+    theme: "chores"
+    sentences:
+      - {"text": "प्रिय दोस्त, कचरा बाहर रख देना।", "reading": "priy dōst, kacrā bāhar rakh dēnā.", "ipa": "prɪj d̪oːst̪ kətʃraː baːɦər rəkʰ d̪eːnaː"}
+      - {"text": "बाल्टी में पानी भरकर फर्श धो देना।", "reading": "bālṭī mēm̐ pānī bharkar pharś dhō dēnā.", "ipa": "baːlʈiː mẽː paːniː bʱərkər pʰərʃ d̪ʱoː d̪eːnaː"}
+      - {"text": "नल बंद करना मत भूलना।", "reading": "nal band karnā mat bhūlnā.", "ipa": "nəl bənd̪ kərnaː mət̪ bʱuːlnaː"}
+      - {"text": "कपड़े रस्सी पर सुखा देना।", "reading": "kapṛē rassī par sukhā dēnā.", "ipa": "kəpɽeː rəssiː pər sʊkʰaː d̪eːnaː"}
+    questions:
+      - {"id": "hi-1747", "prompt": {"en": "The rubbish should go outside."}, "answer": true}
+      - {"id": "hi-1748", "prompt": {"en": "What should not be forgotten?"}, "options": [{"en": "Closing the tap"}, {"en": "Ironing the shirt"}], "answer": 1}
+      - {"id": "hi-1749", "prompt": {"en": "The floor should be swept with a broom."}, "answer": false}

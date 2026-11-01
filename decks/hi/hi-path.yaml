@@ -340,7 +340,8 @@ units:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
       - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
-  - planned: { id: "hi-chores", theme: "chores", words: 40 }
+  - decks: ["hi-chores", "hi-chores-sentences", "hi-reading-chores", "*"]
+    words: 36
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
