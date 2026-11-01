@@ -1,0 +1,51 @@
+schema: 1
+id: "fr-en-describing-sentences"
+kind: "layer"
+core: "fr-describing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: describing"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences that describe people, things and places, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0451":
+    native: "My brother is tall."
+    confusables:
+      "petit": { why: "Petit is 'small' or 'short', the opposite of grand." }
+      "beau": { why: "Beau is 'beautiful', not about height." }
+  "fr-0452":
+    native: "It is not difficult."
+    bases:
+      "pas": "not"
+    confusables:
+      "facile": { why: "Facile is 'easy', which is close but not the same." }
+      "lourd": { why: "Lourd is 'heavy', which is a different sense." }
+  "fr-0453":
+    native: "She is happy."
+    confusables:
+      "triste": { why: "Triste is 'sad', the opposite." }
+      "fatigue": { why: "Fatigué is 'tired'." }
+  "fr-0454":
+    native: "The train is full."
+    bases:
+      "Le": "the"
+    confusables:
+      "vide": { why: "Vide is 'empty', the opposite." }
+      "rapide": { why: "Rapide is 'fast', about speed, not how full." }
+  "fr-0455":
+    native: "The station is closed."
+    bases:
+      "La": "the"
+    confusables:
+      "ouvert": { why: "Ouvert is 'open', the opposite." }
+      "libre": { why: "Libre is 'free', not 'closed'." }
+  "fr-0456":
+    native: "My street is noisy."
+    confusables:
+      "calme": { why: "Calme is 'calm', the opposite." }
+      "sale": { why: "Sale is 'dirty', not 'noisy'." }
+  "fr-0457":
+    native: "My life is hard."
+    confusables:
+      "facile": { why: "Facile is 'easy', the opposite." }
+      "long": { why: "Long is 'long', about time or length." }

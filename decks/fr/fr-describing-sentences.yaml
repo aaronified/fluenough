@@ -1,0 +1,99 @@
+schema: 1
+id: "fr-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0451"
+    target: "Mon frère est grand."
+    ipa: "mɔ̃ fʁɛʁ ɛ ɡʁɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "frère", ref: "fr-0169" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "grand", ref: "fr-0410" }
+    confusables:
+      - { id: "petit", ref: "fr-0411", kind: "word" }
+      - { id: "beau", ref: "fr-0412", kind: "word" }
+  - id: "fr-0452"
+    target: "Ce n'est pas difficile."
+    ipa: "sə nɛ pa difisil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "n'est", ref: "fr-0021" }
+      - { word: "pas", base: "pas" }
+      - { word: "difficile", ref: "fr-0418" }
+    confusables:
+      - { id: "facile", ref: "fr-0417", kind: "word" }
+      - { id: "lourd", ref: "fr-0442", kind: "word" }
+  - id: "fr-0453"
+    target: "Elle est heureuse."
+    ipa: "ɛl ɛ øʁøz"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "heureuse", ref: "fr-0429" }
+    confusables:
+      - { id: "triste", ref: "fr-0430", kind: "word" }
+      - { id: "fatigue", ref: "fr-0431", kind: "word" }
+  - id: "fr-0454"
+    target: "Le train est plein."
+    ipa: "lə tʁɛ̃ ɛ plɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "plein", ref: "fr-0439" }
+    confusables:
+      - { id: "vide", ref: "fr-0440", kind: "word" }
+      - { id: "rapide", ref: "fr-0447", kind: "word" }
+  - id: "fr-0455"
+    target: "La gare est fermée."
+    ipa: "la gaʁ ɛ fɛʁme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fermée", ref: "fr-0438" }
+    confusables:
+      - { id: "ouvert", ref: "fr-0437", kind: "word" }
+      - { id: "libre", ref: "fr-0444", kind: "word" }
+  - id: "fr-0456"
+    target: "Ma rue est bruyante."
+    ipa: "ma ʁy ɛ bʁɥijɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "rue", ref: "fr-0041" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "bruyante", ref: "fr-0450" }
+    confusables:
+      - { id: "calme", ref: "fr-0433", kind: "word" }
+      - { id: "sale", ref: "fr-0428", kind: "word" }
+  - id: "fr-0457"
+    target: "Ma vie est dure."
+    ipa: "ma vi ɛ dyʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "vie", ref: "fr-0267" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dure", ref: "fr-0449" }
+    confusables:
+      - { id: "facile", ref: "fr-0417", kind: "word" }
+      - { id: "long", ref: "fr-0421", kind: "word" }
