@@ -474,7 +474,9 @@ units:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
       - { id: "job-advert", text: { "en": "A job advert" } }
-  - planned: { id: "mr-grammar-before-after", grammar: "before-after" }
+  - decks: ["mr-grammar-before-after"]
+    words: 0
+    grammar: ["before-after"]
     listening_passages:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
