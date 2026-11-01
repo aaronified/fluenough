@@ -1,0 +1,81 @@
+schema: 1
+id: "es-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1237"
+    target: "Pago en efectivo, no con tarjeta."
+    ipa: "ˈpaɣo en efekˈtiβo no kon taɾˈxeta"
+    phonetic: "[ˈpaɣo en efekˈt̪iβo no kon t̪aɾˈxet̪a]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pago", ref: "es-0295" }, { word: "en", base: "en" }, { word: "efectivo", ref: "es-1220" }, { word: "no", ref: "es-0043" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }]
+    confusables: [{ id: "card", ref: "es-0879", kind: "word" }, { id: "bill", ref: "es-0685", kind: "word" }]
+  - id: "es-1238"
+    target: "¿Me da el recibo y la factura, por favor?"
+    ipa: "me da el reˈθiβo i la fakˈtuɾa poɾ faˈβoɾ"
+    phonetic: "[me ða el reˈθiβo i la fakˈt̪uɾa poɾ faˈβoɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "da", base: "dar" }, { word: "el", base: "el" }, { word: "recibo", ref: "es-1214" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "factura", ref: "es-1222" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "price", ref: "es-0580", kind: "word" }, { id: "discount", ref: "es-1212", kind: "word" }]
+  - id: "es-1239"
+    target: "Esta camisa cuesta cuarenta euros."
+    ipa: "ˈesta kaˈmisa ˈkwesta kwaˈɾenta eˈuɾos"
+    phonetic: "[ˈest̪a kaˈmisa ˈkwest̪a kwaˈɾen̪t̪a eˈuɾos]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Esta", base: "este" }, { word: "camisa", ref: "es-1017" }, { word: "cuesta", ref: "es-0587" }, { word: "cuarenta", ref: "es-0537" }, { word: "euros", base: "euro" }]
+    confusables: [{ id: "shoe", ref: "es-1022", kind: "word" }, { id: "dress", ref: "es-1018", kind: "word" }]
+  - id: "es-1240"
+    target: "Hay rebajas en la tienda de la esquina."
+    ipa: "aj reˈβaxas en la ˈtjenda de la esˈkina"
+    phonetic: "[aj reˈβaxas en la ˈt̪jen̪d̪a ðe la esˈkina]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "rebajas", base: "rebaja" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "de", base: "de" }, { word: "esquina", ref: "es-0706" }]
+    confusables: [{ id: "market", ref: "es-0567", kind: "word" }, { id: "sale", ref: "es-1226", kind: "word" }]
+  - id: "es-1241"
+    target: "¿Cuánto cuesta el vestido?"
+    ipa: "ˈkwanto ˈkwesta el besˈtiðo"
+    phonetic: "[ˈkwan̪t̪o ˈkwest̪a el βesˈt̪iðo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "cuesta", ref: "es-0587" }, { word: "el", base: "el" }, { word: "vestido", ref: "es-1018" }]
+    confusables: [{ id: "cheap", ref: "es-0411", kind: "word" }, { id: "dear", ref: "es-0412", kind: "word" }]
+  - id: "es-1242"
+    target: "Quiero probarme esta chaqueta en la talla pequeña."
+    ipa: "ˈkjeɾo pɾoˈβaɾme ˈesta tʃaˈketa en la ˈtaʝa peˈkeɲa"
+    phonetic: "[ˈkjeɾo pɾoˈβaɾme ˈest̪a tʃaˈket̪a en la ˈt̪aʝa peˈkeɲa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "probarme", base: "probarse" }, { word: "esta", base: "este" }, { word: "chaqueta", ref: "es-1020" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "talla", ref: "es-1036" }, { word: "pequeña", ref: "es-0032" }]
+    confusables: [{ id: "shirt", ref: "es-1017", kind: "word" }, { id: "large", ref: "es-0031", kind: "word" }]
+  - id: "es-1243"
+    target: "El probador está al fondo, a la izquierda."
+    ipa: "el pɾoβaˈðoɾ esˈta al ˈfondo a la iθˈkjeɾða"
+    phonetic: "[el pɾoβaˈðoɾ esˈt̪a al ˈfon̪d̪o a la iθˈkjeɾða]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "probador", ref: "es-1037" }, { word: "está", ref: "es-0023" }, { word: "al", base: "a" }, { word: "fondo", base: "fondo" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", ref: "es-0715" }]
+    confusables: [{ id: "counter", ref: "es-1224", kind: "word" }, { id: "window", ref: "es-1218", kind: "word" }]
+  - id: "es-1244"
+    target: "Lo siento, este modelo está agotado."
+    ipa: "lo ˈsjento ˈeste moˈdelo esˈta aɣoˈtaðo"
+    phonetic: "[lo ˈsjen̪t̪o ˈest̪e moˈðelo esˈt̪a aɣoˈt̪aðo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Lo", base: "lo" }, { word: "siento", base: "sentir" }, { word: "este", base: "este" }, { word: "modelo", base: "modelo" }, { word: "está", ref: "es-0023" }, { word: "agotado", ref: "es-1236" }]
+    confusables: [{ id: "sold", ref: "es-1234", kind: "word" }, { id: "free", ref: "es-1235", kind: "word" }]
