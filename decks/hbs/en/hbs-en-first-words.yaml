@@ -1,0 +1,135 @@
+schema: 1
+id: "hbs-en-first-words"
+kind: "layer"
+core: "hbs-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Written in Latin, with the Serbian Cyrillic beside it, and the forms of Serbian where Croatian differs. Their first sentences are in the examples. Not yet checked by a Serbo-Croatian speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "hbs-0001":
+    native: "yes"
+    notes:
+      "n1": "The everyday yes. For strong agreement say naravno, of course."
+    examples:
+      "Da, hvala.": "Yes, thanks."
+      "Da, znam.":
+        native: "Yes, I know."
+        bases:
+          "znam": "to know"
+  "hbs-0002":
+    native: "no; not"
+    notes:
+      "n1": "Ne also makes a verb negative and goes before it: ne znam, I do not know."
+    examples:
+      "Ne, hvala.": "No, thanks."
+      "Ne znam.":
+        native: "I don't know."
+        bases:
+          "znam": "to know"
+  "hbs-0003":
+    native: "hello"
+    notes:
+      "n1": "A neutral hello in Serbian and Croatian. Ćao is the very informal hi and bye."
+    examples:
+      "Zdravo, kako si?":
+        native: "Hello, how are you?"
+        bases:
+          "kako": "how"
+          "si": "to be (you are)"
+      "Zdravo, prijatelju.":
+        native: "Hello, friend."
+        bases:
+          "prijatelju": "friend"
+  "hbs-0004":
+    native: "thanks; thank you"
+    notes:
+      "n1": "Hvala lepa is thank you very much. Lepa means nice."
+    examples:
+      "Hvala lepa.":
+        native: "Thank you very much."
+        bases:
+          "lepa": "nice; beautiful"
+      "Hvala ti.": "Thank you."
+  "hbs-0005":
+    native: "please; you're welcome"
+    notes:
+      "n1": "Molim is please, and also you're welcome, and here you are."
+    examples:
+      "Molim te, sedi.":
+        native: "Please, sit down."
+        bases:
+          "sedi": "to sit"
+      "Molim, izvolite.":
+        native: "You're welcome; here you are."
+        bases:
+          "izvolite": "to be so kind; here you are (polite)"
+  "hbs-0006":
+    native: "I"
+    notes:
+      "n1": "Often left out: znam on its own is I know, because the ending shows who is speaking."
+    examples:
+      "Ja sam iz Srbije.":
+        native: "I am from Serbia."
+        bases:
+          "sam": "to be"
+          "iz": "from"
+          "Srbije": "Serbia"
+      "Ja znam.":
+        native: "I know."
+        bases:
+          "znam": "to know"
+  "hbs-0007":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal. For a polite you to one person, Serbo-Croatian uses Vi, the plural you."
+    examples:
+      "Ti govoriš srpski?":
+        native: "Do you speak Serbian?"
+        bases:
+          "govoriš": "to speak"
+          "srpski": "Serbian"
+      "Ti si dobar.":
+        native: "You are good."
+        bases:
+          "si": "to be"
+  "hbs-0008":
+    native: "water"
+    notes:
+      "n1": "Declines: vodu (accusative), vode (genitive)."
+    examples:
+      "Voda je hladna.":
+        native: "The water is cold."
+        bases:
+          "je": "is"
+          "hladna": "cold"
+      "Hoćeš vodu?":
+        native: "Do you want water?"
+        bases:
+          "Hoćeš": "to want"
+          "vodu": "water"
+  "hbs-0009":
+    native: "good"
+    notes:
+      "n1": "The masculine form. The feminine is dobra and the neuter dobro."
+    examples:
+      "Dobar dan.":
+        native: "Good day."
+        bases:
+          "dan": "day"
+      "Dobra voda.":
+        native: "Good water."
+        bases:
+          "Dobra": "good"
+  "hbs-0010":
+    native: "very; very much"
+    notes:
+      "n1": "Goes before an adjective or an adverb: vrlo dobro, very well. Serbians often say veoma."
+    examples:
+      "Vrlo dobro.": "Very well."
+      "Vrlo sam umoran.":
+        native: "I am very tired."
+        bases:
+          "sam": "to be"
+          "umoran": "tired"
