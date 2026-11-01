@@ -96,6 +96,7 @@ class AnswerGrader {
     this.longThreshold = 8,
     this.shortThreshold = 3,
     this.meaning = false,
+    this.lojban = false,
     this.synonyms = SynonymSets.empty,
   });
 
@@ -120,6 +121,12 @@ class AnswerGrader {
   /// ok/okay. Matches by them are [AnswerOutcome.exact]; what still differs
   /// goes through the diacritic and typo passes as before.
   final bool meaning;
+
+  /// Compare Lojban as it is written (#616): a leading or inner `.` (a
+  /// pause) and `,` (a syllable break) are not letters, spaces do not count
+  /// (cmavo may be joined, `lonu` for `lo nu`), and `h` is the apostrophe,
+  /// as typed on a keyboard that has no easy one.
+  final bool lojban;
 
   /// With [meaning]: sets of words that mean the same, each accepting the
   /// others (ADR-0050). Tried after the card's own answers match no better,
@@ -259,6 +266,9 @@ class AnswerGrader {
   String _normalise(String input) {
     var text = canonical(input).trim().toLowerCase();
     text = text.replaceAll(RegExp(r'\s+'), ' ');
+    if (lojban) {
+      text = text.replaceAll(RegExp(r'[\s.,]'), '').replaceAll('h', "'");
+    }
     // The danda । and ॥ end Bengali and Hindi sentences; the full-width
     // marks end Japanese ones. A recogniser writes none of them (#130).
     text = text.replaceAll(

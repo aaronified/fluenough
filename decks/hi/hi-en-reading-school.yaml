@@ -1,0 +1,56 @@
+schema: 1
+id: "hi-en-reading-school"
+name: "Reading: a school day and a timetable"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages: a child describes the school day, and a school timetable. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-school-day"
+    title: "A school day"
+    theme: "school"
+    sentences:
+      - { text: "सुबह प्रार्थना होती है, फिर घंटी बजती है।", reading: "subah prārthanā hōtī hai, phir ghaṇṭī bajtī hai.", ipa: "sʊbəɦ praːrt̪ʰənaː ɦoːt̪iː ɦɛː pʰɪr ɡʱəɳʈiː bədʒt̪iː ɦɛː" }
+      - { text: "पहली कक्षा में गणित पढ़ते हैं।", reading: "pahlī kakśā mēm̐ gaṇit paṛhtē haim̐.", ipa: "pəɦliː kəkʃaː mẽː ɡəɳɪt̪ pəɽʱt̪eː ɦɛ̃ː" }
+      - { text: "दोपहर में विज्ञान का प्रयोग होता है।", reading: "dōphar mēm̐ vigyān kā prayōg hōtā hai.", ipa: "d̪oːpɦər mẽː ʋɪɡjaːn kaː prəjoːɡ ɦoːt̪aː ɦɛː" }
+      - { text: "छुट्टी की घंटी बजे तो हम घर जाते हैं।", reading: "chuṭṭī kī ghaṇṭī bajē tō ham ghar jātē haim̐.", ipa: "tʃʰʊʈʈiː kiː ɡʱəɳʈiː bədʒeː t̪oː ɦəm ɡʱər dʒaːt̪eː ɦɛ̃ː" }
+    questions:
+      - id: "hi-1631"
+        prompt: { en: "There is a prayer every morning." }
+        answer: true
+      - id: "hi-1632"
+        prompt: { en: "What happens in the afternoon?" }
+        options:
+          - { en: "A science experiment" }
+          - { en: "A music class" }
+        answer: 1
+      - id: "hi-1633"
+        prompt: { en: "The child stays at school after the bell rings." }
+        answer: false
+  - id: "hi-class-timetable"
+    title: "A school timetable"
+    theme: "school"
+    sentences:
+      - { text: "सोमवार: गणित, हिंदी, विज्ञान।", reading: "sōmvār: gaṇit, hindī, vigyān.", ipa: "soːmʋaːr ɡəɳɪt̪ ɦɪnd̪iː ʋɪɡjaːn" }
+      - { text: "मंगलवार: इतिहास, भूगोल, संगीत।", reading: "maṅgalvār: itihās, bhūgōl, saṅgīt.", ipa: "məŋɡəlʋaːr ɪt̪ɪɦaːs bʱuːɡoːl səŋɡiːt̪" }
+      - { text: "बुधवार: अंग्रेज़ी, संस्कृत, गणित।", reading: "budhvār: aṅgrēzī, saṁskrit, gaṇit.", ipa: "bʊd̪ʱʋaːr əŋɡreːziː sə̃skrɪt̪ ɡəɳɪt̪" }
+      - { text: "शुक्रवार: परीक्षा।", reading: "śukravār: parīkśā.", ipa: "ʃʊkrəʋaːr pəriːkʃaː" }
+    questions:
+      - id: "hi-1634"
+        prompt: { en: "There is a history class on Tuesday." }
+        answer: true
+      - id: "hi-1635"
+        prompt: { en: "What is on Friday?" }
+        options:
+          - { en: "A test" }
+          - { en: "A holiday" }
+        answer: 1
+      - id: "hi-1636"
+        prompt: { en: "Which subject is on Wednesday?" }
+        options:
+          - { en: "English" }
+          - { en: "Music" }
+        answer: 1

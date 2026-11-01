@@ -1,0 +1,360 @@
+schema: 1
+id: "hi-en-cooking"
+kind: "layer"
+core: "hi-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+license: "CC-BY-SA-4.0"
+description: "Words for cooking: the verbs of the kitchen, the spices and flours, the pots and the taste of a dish. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1496":
+    native: "to fry"
+    notes:
+      "n1": "Fry in oil. The noun is तेल (tel), oil. The command for one person is तलो (talo)."
+    examples:
+      "पकौड़े तेल में तले गए।": { native: "The fritters were fried in oil.", bases: { "पकौड़े": "fritter", "तले": "to fry", "गए": "to go" } }
+      "आलू को तलो।": { native: "Fry the potatoes.", bases: { "तलो": "to fry" } }
+  "hi-1497":
+    native: "to roast; to sauté"
+    notes:
+      "n1": "Roast or sauté until brown. Used for spices in oil, such as जीरा (jīrā), cumin."
+    examples:
+      "प्याज़ भूनो।": { native: "Sauté the onions until brown.", bases: { "भूनो": "to roast" } }
+      "मसाला भूनो।": { native: "Roast the spices.", bases: { "भूनो": "to roast" } }
+  "hi-1498":
+    native: "to peel"
+    notes:
+      "n1": "The skin is छिलका (chhilkā), peel. The command is छीलो (chhīlo)."
+    examples:
+      "गाजर छीलो।": { native: "Peel the carrot.", bases: { "छीलो": "to peel" } }
+      "आलू छीलकर पकाओ।": { native: "Peel the potatoes, then cook them.", bases: { "छीलकर": "having peeled", "पकाओ": "to cook" } }
+  "hi-1499":
+    native: "to grind"
+    notes:
+      "n1": "Grind on a stone or in a mill. The noun is पिसा हुआ (pisā huā), ground."
+    examples:
+      "जीरा और धनिया पीसो।": { native: "Grind the cumin and the coriander.", bases: { "पीसो": "to grind" } }
+      "मसाला बारीक पीसो।": { native: "Grind the spice fine.", bases: { "बारीक": "fine", "पीसो": "to grind" } }
+  "hi-1500":
+    native: "to knead"
+    notes:
+      "n1": "Knead flour with water to make dough: गूँधा हुआ आटा (gūndhā huā āṭā), kneaded flour."
+    examples:
+      "आटा नरम गूँधो।": { native: "Knead the dough soft.", bases: { "गूँधो": "to knead" } }
+      "आटा गूँधो और ढक दो।": { native: "Knead the dough and cover it.", bases: { "गूँधो": "to knead", "ढक": "to cover", "दो": "to give" } }
+  "hi-1501":
+    native: "to roll out"
+    notes:
+      "n1": "Roll out dough flat, as for a रोटी (roṭī)."
+    examples:
+      "रोटी बेलो।": { native: "Roll out the bread.", bases: { "बेलो": "to roll out" } }
+      "पूरी बेलो और तलो।": { native: "Roll out the puri and fry it.", bases: { "बेलो": "to roll out", "तलो": "to fry" } }
+  "hi-1502":
+    native: "to make; to cook"
+    notes:
+      "n1": "Used for any dish: खाना बनाना (khānā banānā), to cook food."
+    examples:
+      "खाना बनाओ।": { native: "Cook the food.", bases: { "बनाओ": "to make" } }
+      "आज कढ़ी बनाओ।": { native: "Make the curry today.", bases: { "बनाओ": "to make" } }
+  "hi-1503":
+    native: "to toast; to bake"
+    notes:
+      "n1": "Heat a flat bread on a griddle until it is brown."
+    examples:
+      "रोटी को तवे पर सेंको।": { native: "Toast the bread on the griddle.", bases: { "तवे": "griddle", "सेंको": "to toast" } }
+      "रोटी सेंकते समय ध्यान रखो।": { native: "Keep an eye on the bread while toasting it.", bases: { "सेंकते": "to toast", "समय": "time", "ध्यान": "attention", "रखो": "to keep" } }
+  "hi-1504":
+    native: "to mix"
+    notes:
+      "n1": "Mix two things together: दो चीज़ें मिलाना (do cīzēṁ milānā), to mix two things."
+    examples:
+      "सब्ज़ी में मसाला मिलाओ।": { native: "Mix the spices into the vegetables.", bases: { "मिलाओ": "to mix" } }
+      "दही और चीनी मिलाओ।": { native: "Mix the yogurt and the sugar.", bases: { "मिलाओ": "to mix" } }
+  "hi-1505":
+    native: "turmeric"
+    notes:
+      "n1": "A yellow spice, used in most dal and sabzi."
+    examples:
+      "दाल में हल्दी डालो।": { native: "Add turmeric to the dal.", bases: { "हल्दी": "turmeric", "डालो": "to pour" } }
+      "हल्दी पीली है।": { native: "Turmeric is yellow.", bases: { "हल्दी": "turmeric", "पीली": "yellow" } }
+  "hi-1506":
+    native: "cumin"
+    notes:
+      "n1": "Cumin seed, fried in oil at the start of many dishes."
+    examples:
+      "जीरा तेल में भूनो।": { native: "Fry the cumin in oil.", bases: { "जीरा": "cumin", "भूनो": "to roast" } }
+      "जीरा खाने का स्वाद बढ़ाता है।": { native: "Cumin improves the taste of food.", bases: { "जीरा": "cumin", "खाने": "food", "स्वाद": "taste", "बढ़ाता": "to increase" } }
+  "hi-1507":
+    native: "coriander"
+    notes:
+      "n1": "The leaves are हरी धनिया (harī dhaniyā), fresh coriander; the seeds are ground."
+    examples:
+      "सब्ज़ी पर धनिया डालो।": { native: "Put coriander on the vegetables.", bases: { "धनिया": "coriander", "डालो": "to pour" } }
+      "धनिया हरा है।": { native: "The coriander is green.", bases: { "धनिया": "coriander", "हरा": "green" } }
+  "hi-1508":
+    native: "spice; spice mix"
+    notes:
+      "n1": "Any spice or spice mix. The adjective is मसालेदार (masāledār), spicy."
+    examples:
+      "मसाला तेज़ है।": { native: "The spice is strong.", bases: { "मसाला": "spice" } }
+      "मसाला सब्ज़ी में डालो।": { native: "Add the spices to the vegetables.", bases: { "मसाला": "spice", "डालो": "to pour" } }
+  "hi-1509":
+    native: "flour; wheat flour"
+    notes:
+      "n1": "Wheat flour, for रोटी (roṭī) and dough."
+    examples:
+      "आटे में पानी डालो।": { native: "Add water to the flour.", bases: { "आटे": "flour", "डालो": "to pour" } }
+      "आटा रोटी के लिए है।": { native: "The flour is for the bread.", bases: { "आटा": "flour", "लिए": "for" } }
+  "hi-1510":
+    native: "refined flour"
+    notes:
+      "n1": "A white, fine flour, not the same as आटा (āṭā)."
+    examples:
+      "मैदा नरम होता है।": { native: "Refined flour is soft.", bases: { "मैदा": "refined flour", "होता": "to be" } }
+      "मैदे की पूरी बनती है।": { native: "Puri is made from refined flour.", bases: { "मैदे": "refined flour", "बनती": "to be made" } }
+  "hi-1511":
+    native: "a dish of rice and lentils"
+    notes:
+      "n1": "A simple dish of rice and lentils, eaten when one is ill."
+    examples:
+      "आज खिचड़ी बनी है।": { native: "Khichdi has been made today.", bases: { "खिचड़ी": "a dish of rice and lentils", "बनी": "to be made" } }
+      "बीमार हो तो खिचड़ी खाओ।": { native: "If you are ill, eat khichdi.", bases: { "हो": "to be", "तो": "then", "खिचड़ी": "a dish of rice and lentils", "खाओ": "to eat" } }
+  "hi-1512":
+    native: "cauliflower"
+    notes:
+      "n1": "The vegetable is फूलगोभी (phūlgobhī), cauliflower."
+    examples:
+      "गोभी की सब्ज़ी अच्छी है।": { native: "The cauliflower vegetable is good.", bases: { "गोभी": "cauliflower", "अच्छी": "good" } }
+      "गोभी को धोओ।": { native: "Wash the cauliflower.", bases: { "गोभी": "cauliflower", "धोओ": "to wash" } }
+  "hi-1513":
+    native: "spinach"
+    notes:
+      "n1": "Green leafy vegetable, with पनीर (panīr) in a famous dish."
+    examples:
+      "पालक हरी है।": { native: "The spinach is green.", bases: { "पालक": "spinach", "हरी": "green" } }
+      "पालक पनीर बनाओ।": { native: "Make spinach with paneer.", bases: { "पालक": "spinach", "बनाओ": "to make" } }
+  "hi-1514":
+    native: "okra"
+    notes:
+      "n1": "Lady finger; a long green vegetable."
+    examples:
+      "भिंडी को धोकर काटो।": { native: "Wash the okra and cut it.", bases: { "भिंडी": "okra", "धोकर": "having washed", "काटो": "to cut" } }
+      "भिंडी तली जाती है।": { native: "Okra is fried.", bases: { "भिंडी": "okra", "तली": "to fry", "जाती": "to go" } }
+  "hi-1515":
+    native: "aubergine; eggplant"
+    notes:
+      "n1": "A purple or green vegetable, roasted for the dish भर्ता (bhartā)."
+    examples:
+      "बैंगन भूनो।": { native: "Roast the aubergine.", bases: { "बैंगन": "aubergine", "भूनो": "to roast" } }
+      "बैंगन लंबा है।": { native: "The aubergine is long.", bases: { "बैंगन": "aubergine", "लंबा": "long" } }
+  "hi-1516":
+    native: "wok; deep pan"
+    notes:
+      "n1": "A round, deep pan for frying."
+    examples:
+      "कड़ाही में तेल गरम करो।": { native: "Heat the oil in the wok.", bases: { "कड़ाही": "wok", "गरम": "hot", "करो": "to do" } }
+      "कड़ाही को धोओ।": { native: "Wash the wok.", bases: { "कड़ाही": "wok", "धोओ": "to wash" } }
+  "hi-1517":
+    native: "griddle"
+    notes:
+      "n1": "A flat iron pan, for रोटी (roṭī)."
+    examples:
+      "तवा गरम है।": { native: "The griddle is hot.", bases: { "तवा": "griddle" } }
+      "तवे पर रोटी सेंको।": { native: "Toast the bread on the griddle.", bases: { "तवे": "griddle", "सेंको": "to toast" } }
+  "hi-1518":
+    native: "utensil; pot"
+    notes:
+      "n1": "Any pot or pan for cooking or washing up."
+    examples:
+      "बर्तन धोओ।": { native: "Wash the pots.", bases: { "बर्तन": "utensil", "धोओ": "to wash" } }
+      "यह बर्तन भारी है।": { native: "This pot is heavy.", bases: { "बर्तन": "utensil", "भारी": "heavy" } }
+  "hi-1519":
+    native: "plate"
+    notes:
+      "n1": "A plate for food."
+    examples:
+      "प्लेट में खाना परोसो।": { native: "Serve the food on a plate.", bases: { "प्लेट": "plate", "परोसो": "to serve" } }
+      "प्लेट साफ़ है।": { native: "The plate is clean.", bases: { "प्लेट": "plate", "साफ़": "clean" } }
+  "hi-1520":
+    native: "knife"
+    notes:
+      "n1": "The kitchen knife. छुरी (chhurī) is another word for a knife."
+    examples:
+      "चाकू तेज़ है।": { native: "The knife is sharp.", bases: { "चाकू": "knife", "तेज़": "sharp" } }
+      "चाकू से सब्ज़ी काटो।": { native: "Cut the vegetables with a knife.", bases: { "चाकू": "knife", "काटो": "to cut" } }
+  "hi-1521":
+    native: "taste; flavour"
+    notes:
+      "n1": "Taste. खाने का स्वाद (khānē kā svād) is the taste of food."
+    examples:
+      "खाने का स्वाद अच्छा है।": { native: "The food tastes good.", bases: { "खाने": "food", "स्वाद": "taste" } }
+      "स्वाद में नमक कम है।": { native: "The taste has too little salt.", bases: { "स्वाद": "taste" } }
+  "hi-1522":
+    native: "oven"
+    notes:
+      "n1": "An English word for the oven."
+    examples:
+      "ओवन गरम करो।": { native: "Heat the oven.", bases: { "ओवन": "oven", "करो": "to do" } }
+      "केक ओवन में पकता है।": { native: "The cake is baked in the oven.", bases: { "केक": "cake", "ओवन": "oven", "पकता": "to be cooked" } }
+  "hi-1523":
+    native: "gas; the gas stove"
+    notes:
+      "n1": "In a kitchen, गैस (gais) is the gas stove."
+    examples:
+      "गैस धीमी करो।": { native: "Lower the gas.", bases: { "गैस": "gas", "धीमी": "low", "करो": "to do" } }
+      "गैस पर दूध उबालो।": { native: "Boil the milk on the gas.", bases: { "गैस": "gas", "उबालो": "to boil" } }
+  "hi-1524":
+    native: "hearth; stove"
+    notes:
+      "n1": "The traditional stove, of clay or iron."
+    examples:
+      "चूल्हे पर चाय बनाओ।": { native: "Make tea on the stove.", bases: { "चूल्हे": "stove", "बनाओ": "to make" } }
+      "चूल्हा जलाओ।": { native: "Light the stove.", bases: { "चूल्हा": "hearth", "जलाओ": "to light" } }
+  "hi-1525":
+    native: "sieve; strainer"
+    notes:
+      "n1": "Strains flour or tea. Not a knife: छुरी (chhurī) is a knife."
+    examples:
+      "छलनी से आटा छानो।": { native: "Sift the flour through a sieve.", bases: { "छलनी": "sieve", "छानो": "to sift" } }
+      "दाल को छलनी में धोओ।": { native: "Wash the lentils in a strainer.", bases: { "छलनी": "sieve", "धोओ": "to wash" } }
+  "hi-1526":
+    native: "bowl"
+    notes:
+      "n1": "A small bowl, bigger than a कटोरी (kaṭorī)."
+    examples:
+      "कटोरे में दही है।": { native: "There is yogurt in the bowl.", bases: { "कटोरे": "bowl" } }
+      "एक कटोरा सूप दो।": { native: "Give me a bowl of soup.", bases: { "कटोरा": "bowl", "दो": "to give" } }
+  "hi-1527":
+    native: "boiled rice"
+    notes:
+      "n1": "Plain boiled rice, eaten with दाल (dāl)."
+    examples:
+      "भात और दाल खाओ।": { native: "Eat the rice and the dal.", bases: { "भात": "boiled rice", "खाओ": "to eat" } }
+      "भात गरम है।": { native: "The rice is hot.", bases: { "भात": "boiled rice" } }
+  "hi-1528":
+    native: "cup (for tea)"
+    notes:
+      "n1": "A cup for tea, without a handle."
+    examples:
+      "चाय का प्याला दो।": { native: "Give me a cup of tea.", bases: { "प्याला": "cup (for tea)", "दो": "to give" } }
+      "प्याला गरम है।": { native: "The cup is hot.", bases: { "प्याला": "cup (for tea)" } }
+  "hi-1529":
+    native: "steam"
+    notes:
+      "n1": "The steam from boiling water."
+    examples:
+      "भाप से खाना पकाओ।": { native: "Cook the food with steam.", bases: { "भाप": "steam", "पकाओ": "to cook" } }
+      "ढक्कन खोलो तो भाप निकलती है।": { native: "When you open the lid, steam comes out.", bases: { "ढक्कन": "lid", "खोलो": "to open", "तो": "then", "भाप": "steam", "निकलती": "to come out" } }
+  "hi-1530":
+    native: "jalebi; a sweet of fried batter"
+    notes:
+      "n1": "A sweet of fried batter, soaked in syrup."
+    examples:
+      "जलेबी मीठी है।": { native: "The jalebi is sweet.", bases: { "जलेबी": "jalebi", "मीठी": "sweet" } }
+      "सुबह जलेबी खाओ।": { native: "Eat jalebi in the morning.", bases: { "जलेबी": "jalebi", "खाओ": "to eat" } }
+  "hi-1531":
+    native: "pressure cooker"
+    notes:
+      "n1": "An English word. The whistle of a कुकर (kukar) shows it is ready."
+    examples:
+      "कुकर में दाल पकाओ।": { native: "Cook the dal in the pressure cooker.", bases: { "कुकर": "pressure cooker", "पकाओ": "to cook" } }
+      "कुकर की सीटी बजी।": { native: "The whistle of the cooker sounded.", bases: { "कुकर": "pressure cooker", "सीटी": "whistle", "बजी": "to sound" } }
+  "hi-1532":
+    native: "curry of yogurt"
+    notes:
+      "n1": "A curry of yogurt and besan (gram flour), thickened and sour."
+    examples:
+      "कढ़ी गाढ़ी है।": { native: "The curry is thick.", bases: { "कढ़ी": "curry of yogurt", "गाढ़ी": "thick" } }
+      "आज कढ़ी बनाओ।": { native: "Make curry today.", bases: { "कढ़ी": "curry of yogurt", "बनाओ": "to make" } }
+  "hi-1533":
+    native: "raita; yogurt with vegetables"
+    notes:
+      "n1": "Yogurt with cucumber, onion or boondi, served with a meal."
+    examples:
+      "खाने के साथ रायता परोसो।": { native: "Serve raita with the meal.", bases: { "खाने": "food; eating", "रायता": "raita", "परोसो": "to serve" } }
+      "रायता ठंडा है।": { native: "The raita is cold.", bases: { "रायता": "raita", "ठंडा": "cold" } }
+  "hi-1534":
+    native: "pickle"
+    notes:
+      "n1": "Vegetables or fruit pickled in oil and spices."
+    examples:
+      "अचार तीखा है।": { native: "The pickle is spicy.", bases: { "अचार": "pickle", "तीखा": "spicy" } }
+      "रोटी के साथ अचार दो।": { native: "Give pickle with the bread.", bases: { "अचार": "pickle", "दो": "to give" } }
+  "hi-1535":
+    native: "papad; a thin crisp wafer"
+    notes:
+      "n1": "A thin wafer of lentil flour, fried or roasted."
+    examples:
+      "पापड़ कुरकुरा है।": { native: "The papad is crisp.", bases: { "पापड़": "papad", "कुरकुरा": "crisp" } }
+      "पापड़ तलो।": { native: "Fry the papad.", bases: { "पापड़": "papad", "तलो": "to fry" } }
+  "hi-1536":
+    native: "vinegar"
+    notes:
+      "n1": "A sour liquid for pickles and salads."
+    examples:
+      "सलाद में सिरका डालो।": { native: "Pour vinegar on the salad.", bases: { "सिरका": "vinegar", "डालो": "to pour" } }
+      "सिरका खट्टा है।": { native: "Vinegar is sour.", bases: { "सिरका": "vinegar", "खट्टा": "sour" } }
+  "hi-1537":
+    native: "gram flour"
+    notes:
+      "n1": "Flour of chickpeas, used for पकौड़े (pakauṛe) and कढ़ी (kaṛhī)."
+    examples:
+      "बेसन में पानी मिलाओ।": { native: "Mix water into the gram flour.", bases: { "बेसन": "gram flour", "मिलाओ": "to mix" } }
+      "बेसन नरम है।": { native: "The gram flour is soft.", bases: { "बेसन": "gram flour" } }
+  "hi-1538":
+    native: "soft"
+    notes:
+      "n1": "Soft to touch or to bite. The opposite is कड़ा (kaṛā), hard."
+    examples:
+      "रोटी नरम है।": { native: "The bread is soft.", bases: { "नरम": "soft" } }
+      "आटा नरम गूँधो।": { native: "Knead the dough soft.", bases: { "नरम": "soft", "गूँधो": "to knead" } }
+  "hi-1539":
+    native: "salty; savoury"
+    notes:
+      "n1": "Salty or savoury, not sweet. The opposite is मीठा (mīṭhā), sweet."
+    examples:
+      "यह नमकीन है।": { native: "This is savoury.", bases: { "नमकीन": "salty" } }
+      "सब्ज़ी नमकीन है, चीनी मत डालो।": { native: "The vegetables are salty, do not add sugar.", bases: { "नमकीन": "salty", "मत": "do not", "डालो": "to pour" } }
+  "hi-1540":
+    native: "raw; unripe"
+    notes:
+      "n1": "Not cooked, or not ripe. The opposite is पका (pakā), cooked or ripe."
+    examples:
+      "यह आम कच्चा है।": { native: "This mango is unripe.", bases: { "कच्चा": "raw" } }
+      "मांस कच्चा मत खाओ।": { native: "Do not eat raw meat.", bases: { "मांस": "meat", "कच्चा": "raw", "मत": "do not", "खाओ": "to eat" } }
+  "hi-1541":
+    native: "thin; runny"
+    notes:
+      "n1": "Thin, not thick. The opposite is गाढ़ा (gāṛhā), thick."
+    examples:
+      "दाल पतली है।": { native: "The dal is thin.", bases: { "पतली": "thin" } }
+      "दाल पतली है, थोड़ा पानी डालो।": { native: "The dal is thin, add a little water.", bases: { "पतली": "thin", "थोड़ा": "a little", "डालो": "to pour" } }
+  "hi-1542":
+    native: "thick"
+    notes:
+      "n1": "Thick, as yogurt or a sauce. The opposite is पतला (patlā), thin."
+    examples:
+      "सब्ज़ी गाढ़ी है।": { native: "The vegetable is thick.", bases: { "गाढ़ी": "thick" } }
+      "दही गाढ़ा है।": { native: "The yogurt is thick.", bases: { "गाढ़ा": "thick" } }
+  "hi-1543":
+    native: "bitter"
+    notes:
+      "n1": "The opposite is मीठा (mīṭhā), sweet."
+    examples:
+      "चाय कड़वी मत बनाओ।": { native: "Do not make the tea bitter.", bases: { "कड़वी": "bitter", "मत": "do not", "बनाओ": "to make" } }
+      "कड़वा स्वाद अच्छा नहीं है।": { native: "A bitter taste is not good.", bases: { "कड़वा": "bitter" } }
+  "hi-1544":
+    native: "spicy; with many spices"
+    notes:
+      "n1": "Made with many spices. Spicy hot is तीखा (tīkhā)."
+    examples:
+      "यह सब्ज़ी मसालेदार है।": { native: "This vegetable is spicy.", bases: { "मसालेदार": "spicy" } }
+      "मसालेदार खाना अच्छा है।": { native: "Spicy food is good.", bases: { "मसालेदार": "spicy", "खाना": "food" } }
+  "hi-1545":
+    native: "boiled"
+    notes:
+      "n1": "Cooked in boiling water: उबला आलू (ubalā āloo), boiled potato."
+    examples:
+      "उबला आलू नरम है।": { native: "The boiled potato is soft.", bases: { "उबला": "boiled" } }
+      "उबला दूध पियो।": { native: "Drink the boiled milk.", bases: { "उबला": "boiled", "पियो": "to drink" } }

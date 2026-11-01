@@ -499,6 +499,129 @@ void main() {
     });
   });
 
+  group('transliteration letters, by language (#616)', () {
+    final plain = RomanisedSpelling(null);
+    // Egyptian's ḥ is a letter of its own: its romanisation file types it
+    // hh, so that it is not h, as the Indic readings' ḥ still is.
+    final egyptian = RomanisedSpelling(
+      const Romanisation(
+        language: 'egy',
+        scheme: 'Egyptological transliteration',
+        standard: 'Egyptological',
+        equivalents: <List<String>>[],
+        typed: <(String, String)>[('ḥ', 'hh')],
+      ),
+    );
+    const lojban = AnswerGrader(lojban: true);
+
+    // typed, expected, outcome
+    final cases = <(String, String, AnswerOutcome, String)>[
+      ('hhtp', 'ḥtp', AnswerOutcome.exact, 'Egyptian ḥ typed hh'),
+      ('htp', 'ḥtp', AnswerOutcome.closeTypo, 'h is not ḥ'),
+      ('hhtp', 'htp', AnswerOutcome.closeTypo, 'ḥ is not h, either way'),
+    ];
+    for (final (typed, expected, outcome, because) in cases) {
+      test('Egyptian: $because', () {
+        expect(egyptian.grade(typed, <String>[expected]).outcome, outcome);
+      });
+    }
+
+    test('Sumerian determinatives are optional, and right when typed', () {
+      for (final typed in ['nanna', 'ᵈnanna', 'dnanna', '{d}nanna']) {
+        expect(
+          plain.grade(typed, <String>['ᵈnanna']).outcome,
+          AnswerOutcome.exact,
+          reason: typed,
+        );
+      }
+      expect(
+        plain.grade('uri', <String>['uriᵏⁱ']).outcome,
+        AnswerOutcome.exact,
+      );
+      expect(
+        plain.grade('uriki', <String>['uriᵏⁱ']).outcome,
+        AnswerOutcome.exact,
+      );
+      expect(
+        plain.grade('dnana', <String>['ᵈnanna']).outcome,
+        AnswerOutcome.closeTypo,
+      );
+    });
+
+    test('Mycenaean transliteration is typed with or without its hyphens '
+        'and indices', () {
+      expect(
+        plain.grade('kotona', <String>['ko-to-na']).outcome,
+        AnswerOutcome.exact,
+      );
+      expect(
+        plain.grade('ko-to-na', <String>['ko-to-na']).outcome,
+        AnswerOutcome.exact,
+      );
+      expect(
+        plain.grade('pu2-ra', <String>['pu₂-ra']).outcome,
+        AnswerOutcome.exact,
+      );
+    });
+
+    // typed, expected, outcome
+    final lojbanCases = <(String, String, AnswerOutcome)>[
+      ('ui', '.ui', AnswerOutcome.exact),
+      ('.ui', 'ui', AnswerOutcome.exact),
+      ('lonu', 'lo nu', AnswerOutcome.exact),
+      ('lo nu', 'lonu', AnswerOutcome.exact),
+      ('caho', "ca'o", AnswerOutcome.exact),
+      ("ca'o", 'caho', AnswerOutcome.exact),
+      ('.i mi klama.', 'i mi klama', AnswerOutcome.exact),
+      ('cao', "ca'o", AnswerOutcome.closeTypo),
+      ('lo ti', 'lo nu', AnswerOutcome.wrong),
+    ];
+    for (final (typed, expected, outcome) in lojbanCases) {
+      test('Lojban: "$typed" for "$expected" is $outcome', () {
+        expect(lojban.grade(typed, expected).outcome, outcome);
+      });
+    }
+
+    test('Lojban rules are off for other languages', () {
+      expect(
+        const AnswerGrader().grade('ui', '.ui').outcome,
+        isNot(AnswerOutcome.exact),
+      );
+    });
+
+    // typed, expected
+    final urdu = <(String, String, String)>[
+      ('كتاب', 'کتاب', 'Arabic kaf for the Urdu one'),
+      ('ياد', 'یاد', 'Arabic yeh for the Urdu one'),
+      ('هم', 'ہم', 'Arabic heh for the Urdu one'),
+      ('٢٠', '۲۰', 'Arabic-Indic digits for the Urdu ones'),
+    ];
+    for (final (typed, expected, because) in urdu) {
+      test('Urdu: $because', () {
+        expect(
+          const AnswerGrader().grade(typed, expected).outcome,
+          AnswerOutcome.exact,
+        );
+      });
+    }
+
+    test(
+      'Urdu: vowel marks are right but flagged, whichever side has them',
+      () {
+        const grader = AnswerGrader();
+        for (final (typed, expected) in <(String, String)>[
+          ('کتاب', 'کِتاب'),
+          ('کِتاب', 'کتاب'),
+          ('كَتَاب', 'کتاب'),
+        ]) {
+          final graded = grader.grade(typed, expected);
+          expect(graded.outcome, AnswerOutcome.closeDiacritics);
+          expect(graded.foldedDiacritics, isTrue);
+        }
+      },
+    );
+  });
+
   group('romanised answers', () {
     final spelling = RomanisedSpelling(hindi);
 

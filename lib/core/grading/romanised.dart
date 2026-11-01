@@ -86,9 +86,21 @@ class RomanisedSpelling {
     if (readings.isEmpty) {
       return const GradedAnswer(AnswerOutcome.wrong, matched: null);
     }
-    final keys = <String>[
-      for (final reading in readings) key(typedForm(reading)),
-    ];
+    // A determinative (ᵈ, ᵏⁱ) is unspoken, so a reading is right with or
+    // without it: its key leaves the raised letters out, and a second key
+    // keeps them as plain letters, for an answer typed `dnanna` or
+    // `{d}nanna`.
+    final keys = <String>[];
+    final owners = <int>[];
+    for (final (i, reading) in readings.indexed) {
+      final typed = typedForm(reading);
+      keys.add(key(typed));
+      owners.add(i);
+      if (_raised.hasMatch(typed)) {
+        keys.add(key(typed.replaceAllMapped(_raised, (m) => _plain[m[0]]!)));
+        owners.add(i);
+      }
+    }
     final graded = const AnswerGrader().grade(
       key(given),
       keys.first,
@@ -99,7 +111,25 @@ class RomanisedSpelling {
         ? graded
         : GradedAnswer(
             graded.outcome,
-            matched: readings[keys.indexOf(matched)],
+            matched: readings[owners[keys.indexOf(matched)]],
           );
   }
 }
+
+/// The raised letters of Sumerian determinatives, and the plain letters they
+/// are typed as.
+const Map<String, String> _plain = <String, String>{
+  'ᵈ': 'd',
+  'ᵏ': 'k',
+  'ˢ': 's',
+  'ⁱ': 'i',
+  'ᵍ': 'g',
+  'ᵐ': 'm',
+  'ᵘ': 'u',
+  'ʳ': 'r',
+  'ᵗ': 't',
+  'ᵉ': 'e',
+  'ⁿ': 'n',
+};
+
+final RegExp _raised = RegExp('[${_plain.keys.join()}]');

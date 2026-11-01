@@ -1,0 +1,94 @@
+schema: 1
+id: "bn-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2481"
+    target: "আমি রোজ বাসে অফিসে যাই।"
+    reading: "āmi roj bāse ôphise jāi."
+    ipa: "ami rodʒ base ɔpʰise dʒai"
+    pos: "phrase"
+    bases: [{ word: "বাসে", ref: "bn-0280" }, { word: "অফিসে", ref: "bn-0450" }, { word: "যাই", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "ট্রেনে", reading: "ṭrene", kind: "word" }, { id: "c2", word: "পায়ে", reading: "pāye", kind: "word" }]
+  - id: "bn-2482"
+    target: "ট্রেনটা কখন ছাড়বে?"
+    reading: "ṭrenoṭā kôkhon chāṛobe?"
+    ipa: "ʈrenoʈa kɔkʰon tʃʰaɽobe"
+    pos: "phrase"
+    bases: [{ word: "ট্রেনটা", ref: "bn-1164" }, { word: "ছাড়বে", base: "ছাড়া", reading: "chāṛā" }]
+    confusables: [{ id: "c1", word: "কোথায়", reading: "kothāy", kind: "word" }, { id: "c2", word: "কেন", reading: "ken", kind: "word" }]
+  - id: "bn-2483"
+    target: "বাসটা এখানে থামে।"
+    reading: "bāsoṭā ekhāne thāme."
+    ipa: "basoʈa ekʰane t̪ʰame"
+    pos: "phrase"
+    bases: [{ word: "বাসটা", ref: "bn-0280" }, { word: "থামে", ref: "bn-1111" }]
+    confusables: [{ id: "c1", word: "ওখানে", reading: "okhāne", kind: "word" }, { id: "c2", word: "দূরে", reading: "dure", kind: "word" }]
+  - id: "bn-2484"
+    target: "স্টেশনে যেতে কত ভাড়া?"
+    reading: "sṭeśone jete kôt bhāṛā?"
+    ipa: "sʈeʃone dʒet̪e kɔt̪ bʱaɽa"
+    pos: "phrase"
+    bases: [{ word: "স্টেশনে", ref: "bn-0288" }, { word: "যেতে", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "সময়", reading: "sômoy", kind: "word" }, { id: "c2", word: "দেরি", reading: "deri", kind: "word" }]
+  - id: "bn-2485"
+    target: "আমার পাসপোর্টটা কোথায়?"
+    reading: "āmār pāsoporṭoṭā kothāy?"
+    ipa: "amar pasoporʈoʈa kot̪ʰaj"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "পাসপোর্টটা", ref: "bn-2448" }]
+    confusables: [{ id: "c1", word: "ভিসা", reading: "bhisā", kind: "word" }, { id: "c2", word: "টিকিট", reading: "ṭikiṭ", kind: "word" }]
+  - id: "bn-2486"
+    target: "ট্রেনটা দেরিতে এসেছে।"
+    reading: "ṭrenoṭā derite eseche."
+    ipa: "ʈrenoʈa d̪erit̪e esetʃʰe"
+    pos: "phrase"
+    bases: [{ word: "ট্রেনটা", ref: "bn-1164" }, { word: "দেরিতে", ref: "bn-2451" }, { word: "এসেছে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "আগে", reading: "āge", kind: "word" }, { id: "c2", word: "তাড়াতাড়ি", reading: "tāṛātāṛi", kind: "word" }]
+  - id: "bn-2487"
+    target: "আপনি কোন গাড়িতে যাবেন?"
+    reading: "āponi kon gāṛite jāben?"
+    ipa: "aponi kon ɡaɽit̪e dʒaben"
+    pos: "phrase"
+    bases: [{ word: "গাড়িতে", ref: "bn-1163" }, { word: "যাবেন", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "কখন", reading: "kôkhon", kind: "word" }, { id: "c2", word: "কোথায়", reading: "kothāy", kind: "word" }]
+  - id: "bn-2488"
+    target: "আমরা নৌকায় নদী পার হলাম।"
+    reading: "āmorā noukāy nodi pār hôlām."
+    ipa: "amora noukaj nod̪i par ɦɔlam"
+    pos: "phrase"
+    bases: [{ word: "নৌকায়", ref: "bn-1166" }, { word: "হলাম", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "গাড়িতে", reading: "gāṛite", kind: "word" }, { id: "c2", word: "বিমানে", reading: "bimāne", kind: "word" }]
+  - id: "bn-2489"
+    target: "সময়সূচিটা দেখো।"
+    reading: "sômoyosuciṭā dekho."
+    ipa: "sɔmojosutʃiʈa d̪ekʰo"
+    pos: "phrase"
+    bases: [{ word: "সময়সূচিটা", ref: "bn-2446" }, { word: "দেখো", ref: "bn-0877" }]
+    confusables: [{ id: "c1", word: "ম্যাপটা", reading: "mêpoṭā", kind: "word" }, { id: "c2", word: "টাকাটা", reading: "ṭākāṭā", kind: "word" }]
+  - id: "bn-2490"
+    target: "গাড়িটা জ্যামে আছে।"
+    reading: "gāṛiṭā jême āche."
+    ipa: "ɡaɽiʈa dʒæme atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "গাড়িটা", ref: "bn-1163" }, { word: "জ্যামে", ref: "bn-2455" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "ফাঁকা", reading: "phām̐kā", kind: "word" }, { id: "c2", word: "দূরে", reading: "dure", kind: "word" }]
+  - id: "bn-2491"
+    target: "আমি হেঁটে স্টেশনে যাই।"
+    reading: "āmi hem̐ṭe sṭeśone jāi."
+    ipa: "ami ɦẽʈe sʈeʃone dʒai"
+    pos: "phrase"
+    bases: [{ word: "হেঁটে", ref: "bn-0896" }, { word: "স্টেশনে", ref: "bn-0288" }, { word: "যাই", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "গাড়িতে", reading: "gāṛite", kind: "word" }, { id: "c2", word: "বাসে", reading: "bāse", kind: "word" }]
+  - id: "bn-2492"
+    target: "ফেরির টিকিট কেটেছি।"
+    reading: "pherir ṭikiṭ keṭechi."
+    ipa: "pʰerir ʈikiʈ keʈetʃʰi"
+    pos: "phrase"
+    bases: [{ word: "ফেরির", ref: "bn-2465" }, { word: "কেটেছি", ref: "bn-1101" }]
+    confusables: [{ id: "c1", word: "ট্রেনের", reading: "ṭrener", kind: "word" }, { id: "c2", word: "বাসের", reading: "bāser", kind: "word" }]
