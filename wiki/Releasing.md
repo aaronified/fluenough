@@ -17,6 +17,20 @@ The owner's rules, as written in [CLAUDE.md](https://github.com/aaronified/fluen
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
 
+## Decks that need a newer app
+
+Not every phone updates as soon as a release is out, and decks are fetched
+from `main` whatever the phone runs. When new decks or a new language need
+what a release added, list them in `decks/min_app.json` (language code, or a
+deck file's path, to the version, such as `"0.7.1"`) in the same pull request
+that adds them, once that version is released or will be before the decks
+merge. The index then carries `min_app`, and apps from the first one that
+knows it show "Needs app X, Update" instead of downloading (ADR-0052). A phone
+on a release before that cannot be told anything: keep a new language hidden
+(`HIDDEN` in `tools/deck_index.py`) until most phones have the app that reads
+`min_app`, then unhide it together with its `min_app` entry. Never set
+`min_app` for a language a released app already ships.
+
 ## Changelog entries and "What's new"
 
 Each pull request adds its own line under `## [Unreleased]` in

@@ -8,6 +8,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import 'app_info.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'downloaded_decks.dart';
@@ -33,7 +34,8 @@ enum DeckDownloadFailure {
   /// The phone could not keep the files: it may be full.
   storage,
 
-  /// The index is of a format this app is too old to read.
+  /// The index is of a format this app is too old to read, or the language
+  /// needs a newer app than this one (`min_app`, ADR-0052).
   appTooOld,
 
   /// GitHub no longer offers the language.
@@ -127,6 +129,7 @@ class DeckDownloads extends ChangeNotifier {
     this._log,
     this.check = DeckCatalog.checkFile,
     ScriptFonts? scriptFonts,
+    this.appVersion = AppInfo.version,
   }) : fonts = scriptFonts ?? ScriptFonts();
 
   /// How long after the last check an automatic one is due.
@@ -150,6 +153,10 @@ class DeckDownloads extends ChangeNotifier {
   final DeckFetcher fetcher;
   final DownloadedDecks files;
   final DeckFileCheck check;
+
+  /// This app's version: a language or deck whose `min_app` is newer is not
+  /// downloaded, and the app says it needs updating (ADR-0052).
+  final String appVersion;
 
   /// The script fonts loaded from what is on the phone (ADR-0042).
   final ScriptFonts fonts;
@@ -278,7 +285,7 @@ class DeckDownloads extends ChangeNotifier {
       _fontsOnPhone = await files.fontManifest();
       final text = await files.readNote(_indexNote);
       if (text != null) {
-        _index = DeckIndex.parse(text);
+        _index = DeckIndex.parse(text, appVersion: appVersion);
         _indexStatus = IndexStatus.ready;
       }
     } on Object catch (e) {
@@ -346,7 +353,7 @@ class DeckDownloads extends ChangeNotifier {
     final DeckIndex index;
     try {
       text = utf8.decode(bytes);
-      index = DeckIndex.parse(text);
+      index = DeckIndex.parse(text, appVersion: appVersion);
     } on IndexTooNewException catch (e) {
       return _indexFailed(DeckDownloadFailure.appTooOld, '$e');
     } on FormatException catch (e) {
@@ -420,6 +427,7 @@ class DeckDownloads extends ChangeNotifier {
         (f) => f.language == language && !f.isLanguageFile && !f.isMedia,
       );
     }
+    if (entry.appTooOld) return false;
     return entry
         .firstFiles(entry.nativesFor(spoken), count: decksBeforeReady)
         .every((f) => _onPhone.containsKey(f.path));
@@ -443,11 +451,30 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   /// Whether some files of [language] cannot be downloaded until the app
-  /// is updated: they are of a newer schema than it reads.
+  /// is updated: they are of a newer schema than it reads, or need a newer
+  /// app than this one (`min_app`, ADR-0052).
   bool needsNewerApp(String language, List<String> spoken) {
     final entry = _index?.language(language);
     return entry != null &&
-        entry.unreadable(entry.nativesFor(spoken)).isNotEmpty;
+        (entry.appTooOld ||
+            entry.unreadable(entry.nativesFor(spoken)).isNotEmpty);
+  }
+
+  /// How many decks, over every language the index lists, wait for an app
+  /// update: new decks whose `min_app` is newer than this app, which are
+  /// not downloaded (ADR-0052). A deck is counted once, its core and
+  /// layers together; one already on the phone is not counted.
+  int decksNeedingApp(List<String> spoken) {
+    final waiting = <String>{};
+    for (final entry in _index?.languages ?? const <IndexLanguage>[]) {
+      for (final file in entry.needingNewerApp(entry.nativesFor(spoken))) {
+        final deck = file.deck;
+        if (deck != null && !_onPhone.containsKey(file.path)) {
+          waiting.add('${entry.code}/$deck');
+        }
+      }
+    }
+    return waiting.length;
   }
 
   /// How [language] stands on this phone.
@@ -640,6 +667,7 @@ class DeckDownloads extends ChangeNotifier {
           if (!await ensureIndex()) return _indexFailure;
           final entry = _index!.language(language);
           if (entry == null) return DeckDownloadFailure.notOffered;
+          if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
           final first = entry.firstFiles(
             entry.nativesFor(spoken),
             count: decksBeforeReady,
@@ -671,6 +699,7 @@ class DeckDownloads extends ChangeNotifier {
           if (!await ensureIndex()) return _indexFailure;
           final entry = _index!.language(language);
           if (entry == null) return DeckDownloadFailure.notOffered;
+          if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
           final failure = await _fetchAndKeep(
             language,
             entry.filesFor(entry.nativesFor(spoken)),

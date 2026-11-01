@@ -524,6 +524,70 @@ class DeckIndex(unittest.TestCase):
                     fresh.doCleanups()
 
 
+    # min_app (ADR-0052): the oldest app that can read a language or a file.
+
+    def min_app(self, data: object) -> None:
+        text = data if isinstance(data, str) else json.dumps(data)
+        (self.tmp / "decks" / "min_app.json").write_text(text, encoding="utf-8")
+
+    def test_min_app_is_written_to_the_language_and_to_a_file(self) -> None:
+        self.min_app({"languages": {"es": "0.7.1"},
+                      "files": {"decks/es/es-en-core-100.yaml": "0.7.2"}})
+        es = self.language(self.index(), "es")
+        self.assertEqual(es["min_app"], "0.7.1")
+        by_path = {f["path"]: f for f in es["files"]}
+        self.assertEqual(by_path["decks/es/es-en-core-100.yaml"]["min_app"], "0.7.2")
+        self.assertNotIn("min_app", by_path["decks/es/es-path.yaml"])
+        # One file to a line still: the key is on the file's own line.
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        line = next(l for l in text.splitlines() if "es-en-core-100.yaml" in l)
+        self.assertIn('"min_app": "0.7.2"', line)
+
+    def test_without_min_app_the_index_has_no_such_key(self) -> None:
+        for data in (None, {"languages": {}, "files": {}}):
+            with self.subTest(data=data):
+                path = self.tmp / "decks" / "min_app.json"
+                path.unlink(missing_ok=True)
+                if data is not None:
+                    self.min_app(data)
+                text = json.dumps(self.index())
+                self.assertNotIn("min_app", text)
+
+    def test_a_bad_min_app_file_fails_and_names_the_problem(self) -> None:
+        cases = {
+            "not json": "{nope",
+            "not an object": "[]",
+            "unknown key": {"langs": {}},
+            "a version with a letter": {"languages": {"es": "0.7.x"}},
+            "a two-part version": {"languages": {"es": "0.7"}},
+            "a number": {"languages": {"es": 0.7}},
+            "a language that is not listed": {"languages": {"pt": "0.7.1"}},
+            "a file that is not listed": {"files": {"decks/es/nope.yaml": "0.7.1"}},
+            "a media file, which the language covers": {
+                "files": {"decks/es/audio/es-0001.opus": "0.7.1"}},
+        }
+        for name, data in cases.items():
+            with self.subTest(name):
+                self.min_app(data)
+                result = self.run_tool()
+                self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                self.assertIn("min_app.json", result.stdout + result.stderr)
+                # --check says the same, so CI's validator fails too.
+                checked = self.run_tool("--check")
+                self.assertEqual(checked.returncode, 1)
+                self.assertIn("min_app.json", checked.stdout)
+
+    def test_a_hidden_language_cannot_be_given_a_min_app(self) -> None:
+        text = (self.tmp / "tools" / "deck_index.py").read_text(encoding="utf-8")
+        (self.tmp / "tools" / "deck_index.py").write_text(
+            text.replace("HIDDEN: set[str] = set()", 'HIDDEN: set[str] = {"es"}'),
+            encoding="utf-8")
+        self.min_app({"languages": {"es": "0.7.1"}})
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("not in the index", result.stderr)
+
+
 class ScriptFonts(unittest.TestCase):
     """The fonts the repository offers (ADR-0042, #611): every Chinese and
     Japanese script has one, each with its licence and a sample line the

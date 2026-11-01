@@ -21,8 +21,12 @@ class LanguageView {
   String get code => language.code;
   String get name => language.name;
 
-  /// Whether Learn is offered: a course has decks to download.
-  bool get canLearn => course != null;
+  /// Whether Learn is offered: a course has decks to download, and this
+  /// app is new enough to read them.
+  bool get canLearn => course != null && needsApp == null;
+
+  /// The app version the course needs, when this app is older (ADR-0052).
+  String? get needsApp => course?.needsApp;
 
   /// "Hindustani · हिन्दुस्तानी", or the name alone where both are the same.
   String get title => language.ownName.isEmpty || language.ownName == name

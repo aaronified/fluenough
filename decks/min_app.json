@@ -1,0 +1,5 @@
+{
+  "note": "The oldest app version that can read a language, or one file (ADR-0052, wiki). The index carries each as min_app; an app that knows it does not download what needs a newer app and says Needs app X, Update; older apps ignore it. Keys: languages {code: version}, files {decks/path.yaml: version}. Never set it for a language the released app already ships.",
+  "languages": {},
+  "files": {}
+}
