@@ -1,7 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
+import 'package:fluenough/features/situations/situation_inspect_page.dart';
+import 'package:fluenough/features/situations/situation_page.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/situations_parser.dart';
+
+import 'support/harness.dart';
+import 'support/ipa_course.dart';
 
 const String _file = '''
 schema: 1
@@ -42,5 +51,79 @@ void main() {
       isNotNull,
     );
     expect(DeckCatalog.checkFile('decks/te/te-situations.yaml', _file), isNull);
+  });
+
+  group('a sheet\'s cards', () {
+    const hindi = '''
+schema: 1
+id: hi-situations
+name: "Hindi situations"
+kind: situations
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+license: "CC-BY-SA-4.0"
+situations:
+  - id: rail
+    icon: rail
+    title: { en: "Rail station" }
+    phrases: ["hi-0001", "hi-0002"]
+    words: ["hi-0003"]
+''';
+
+    Future<void> pumpInspect(WidgetTester tester) async {
+      usePhone(tester);
+      final state = AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          ...ipaFiles,
+          'decks/hi/hi-situations.yaml': hindi,
+        }),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['hi'],
+          learningChosen: true,
+        ),
+        tts: const NullTtsEngine(),
+      );
+      await pumpScreen(
+        tester,
+        const SituationInspectPage(
+          request: SituationRequest(language: 'hi', situationId: 'rail'),
+        ),
+        state: state,
+      );
+    }
+
+    testWidgets(
+      'are swiped between, with no chevrons, and the IPA\'s sounds are '
+      'behind its info dot',
+      (tester) async {
+        await pumpInspect(tester);
+        final l10n = l10nOf(tester);
+        expect(
+          find.text(l10n.situationInspectTitle('Rail station', 1, 3)),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.chevron_left), findsNothing);
+        expect(find.byIcon(Icons.chevron_right), findsNothing);
+        expect(find.text(l10n.situationOpenInDeck), findsOneWidget);
+        // The sounds are not drawn until the dot is tapped.
+        expect(find.text(l10n.ipaSymbolPractise), findsNothing);
+        await tester.tap(find.byTooltip(l10n.ipaInfoDot));
+        await tester.pumpAndSettle();
+        expect(find.text('the sound ɳ'), findsOneWidget);
+        expect(find.text(l10n.ipaSymbolPractise), findsWidgets);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
+
+        // Half a page, not a whole one: a whole page of drag plus a fling's
+        // velocity carries the view on to the card after next.
+        await tester.fling(find.text('leaf'), const Offset(-200, 0), 1500);
+        await tester.pumpAndSettle();
+        expect(
+          find.text(l10n.situationInspectTitle('Rail station', 2, 3)),
+          findsOneWidget,
+        );
+        expect(find.text('tomorrow'), findsOneWidget);
+      },
+    );
   });
 }

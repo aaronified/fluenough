@@ -2186,8 +2186,8 @@ cards:
     );
 
     testWidgets(
-      'lists each sound of the word\'s IPA, in order, from the IPA course, '
-      'each with its practice',
+      'keeps each sound of the word\'s IPA behind an info dot, in order, from '
+      'the IPA course, each with its practice',
       (tester) async {
         usePhone(tester);
         final state = ipaApp(<String>['hi']);
@@ -2202,7 +2202,12 @@ cards:
           state: state,
         );
         final l10n = l10nOf(tester);
-        expect(find.text(l10n.cardIpaHeading), findsOneWidget);
+        // Nothing of the sounds is drawn until the dot beside the IPA is
+        // tapped.
+        expect(find.text('the sound pʰ'), findsNothing);
+        expect(find.text(l10n.ipaSymbolPractise), findsNothing);
+        await tester.tap(find.byTooltip(l10n.ipaInfoDot));
+        await tester.pumpAndSettle();
         final aspirated = find.text('the sound pʰ');
         final retroflex = find.text('the sound ɳ');
         expect(aspirated, findsOneWidget);
