@@ -591,11 +591,14 @@ units:
       - { id: "film-review", text: { "en": "A short film review" } }
   - decks: ["bn-reading-cinema"]
     words: 0
-  - planned: { id: "bn-arts", theme: "arts", words: 45 }
+  - decks: ["bn-arts", "bn-arts-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - decks: ["bn-reading-arts"]
+    words: 0
   - planned: { id: "bn-grammar-causative", grammar: "causative" }
     listening_passages:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
