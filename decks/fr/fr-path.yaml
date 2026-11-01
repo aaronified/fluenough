@@ -128,11 +128,8 @@ units:
     words: 20
   - decks: ["fr-family", "fr-family-sentences", "fr-reading-family", "*"]
     words: 30
-  - planned: { id: "fr-numbers-1-20", theme: "numbers-1-20", words: 20 }
-    listening_passages:
-      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
-    reading_passages:
-      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  - decks: ["fr-numbers-1-20", "fr-numbers-1-20-sentences", "fr-reading-numbers-1-20", "*"]
+    words: 20
   # 3. No script units: French is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
