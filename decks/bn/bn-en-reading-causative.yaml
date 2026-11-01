@@ -6,7 +6,7 @@ language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN,
 native:   { code: en, iso639_3: eng, name: English }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Bengali course"
-description: "A person has things done by others, a service request, and a message that passes on what someone said. Not yet checked by a Bengali speaker: please report any mistake."
+description: "A person has things done by others, and a service request. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [reading, unreviewed]
 passages:
   - id: "bn-having-things-done"
@@ -50,25 +50,4 @@ passages:
       - id: "bn-3686"
         prompt: { "en": "When will the writer be at home?" }
         options: [{ "en": "From ten in the morning" }, { "en": "All night" }]
-        answer: 1
-  - id: "bn-message-thread"
-    title: "A message that passes on what someone said"
-    theme: "services"
-    sentences:
-      - { text: "মা বললেন, তুমি কাল বাজার যাবে।", reading: "mā bôlolen, tumi kāl bājār jābe.", ipa: "ma bɔlolen t̪umi kal badʒar dʒabe" }
-      - { text: "বোন বলল, দোকান থেকে জিনিসগুলো বাড়িতে পাঠাবে।", reading: "bon bôlol, dokān theke jinisogulo bāṛite pāṭhābe.", ipa: "bon bɔlol d̪okan t̪ʰeke dʒinisoɡulo baɽit̪e paʈʰabe" }
-      - { text: "দোকানদার বললেন, কাল সকালে পৌঁছে দেবেন।", reading: "dokānodār bôlolen, kāl sôkāle poum̐che deben.", ipa: "d̪okanod̪ar bɔlolen kal sɔkale poũtʃʰe d̪eben" }
-      - { text: "তাই আমি তোমাকে কথাটা জানালাম।", reading: "tāi āmi tomāke kôthāṭā jānālām.", ipa: "t̪ai ami t̪omake kɔt̪ʰaʈa dʒanalam" }
-      - { text: "ধন্যবাদ, ভালো থেকো।", reading: "dhonnobād, bhālo theko.", ipa: "d̪ʱonnobad̪ bʱalo t̪ʰeko" }
-    questions:
-      - id: "bn-3687"
-        prompt: { "en": "The message passes on what the mother said." }
-        answer: true
-      - id: "bn-3688"
-        prompt: { "en": "What will the things be sent from?" }
-        options: [{ "en": "The shop, to the house" }, { "en": "The doctor, to the school" }]
-        answer: 1
-      - id: "bn-3689"
-        prompt: { "en": "When will the shopkeeper deliver?" }
-        options: [{ "en": "Tomorrow morning" }, { "en": "Tonight" }]
         answer: 1
