@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-while"
+kind: "layer"
+core: "mr-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While doing: while going, on the way"
+license: "CC-BY-SA-4.0"
+description: "While I was eating the phone rang, on the way I met her: two actions at once, with the -त and -ता stems. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simultaneous action: -त असताना and -ता"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "-त असताना": "while doing (a longer action)", "-ता": "on the way, while doing (a quick action)" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "vachne": "to read"
+    "bolne": "to speak"
+    "paahne": "to see"
+    "dene": "to give"
+    "ghene": "to take"
+  notes: "Two actions at once use the -त (-t) stem with असताना (asatānā), while: मी जेवत असताना फोन आला (mī jevat asatānā phon ālā), the phone rang while I was eating. For a quick action on the way, use the -ता (-tā) stem: रस्त्यात जाता जाता भेटले (rastyāt jātā jātā bhetle), I met her on the way, while going. The subject of both actions is the same, or the two are said together in one sentence."
