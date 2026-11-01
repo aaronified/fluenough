@@ -1,0 +1,461 @@
+schema: 1
+id: "bn-money"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "money"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4317"
+    target: "লাভ"
+    reading: "lābh"
+    ipa: "labʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লাভ", reading: "lābh" }] }
+    examples:
+      - { target: "এই ব্যবসায় ভালো লাভ হলো।", reading: "ei bêbosāy bhālo lābh hôlo.", ipa: "ei bæbosaj bʱalo labʱ ɦɔlo", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "ব্যবসায়", ref: "bn-0471" }, { word: "ভালো", ref: "bn-0617" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "লাভের টাকা কোথায়?", reading: "lābher ṭākā kothāy?", ipa: "labʱer ʈaka kot̪ʰaj", bases: [{ word: "লাভের", base: "লাভ", reading: "lābher" }, { word: "টাকা", ref: "bn-0245" }, { word: "কোথায়", ref: "bn-0163" }] }
+  - id: "bn-4318"
+    target: "সঞ্চয়"
+    reading: "sôncoy"
+    ipa: "sɔntʃoj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সঞ্চয়", reading: "sôncoy" }] }
+    examples:
+      - { target: "তার সঞ্চয় অনেক।", reading: "tār sôncoy ônek.", ipa: "t̪ar sɔntʃoj ɔnek", bases: [{ word: "তার", ref: "bn-3275" }, { word: "অনেক", ref: "bn-0550" }] }
+      - { target: "সঞ্চয় শুরু করো।", reading: "sôncoy śuru kôro.", ipa: "sɔntʃoj ʃuru kɔro", bases: [{ word: "শুরু", ref: "bn-2480" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4319"
+    target: "চেক"
+    reading: "cek"
+    ipa: "tʃek"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চেক", reading: "cek" }] }
+    examples:
+      - { target: "চেকটা ব্যাংকে জমা দাও।", reading: "cekoṭā bêṅke jômā dāo.", ipa: "tʃekoʈa bæŋke dʒɔma d̪ao", bases: [{ word: "চেকটা", base: "চেক", reading: "cekoṭā" }, { word: "ব্যাংকে", ref: "bn-1041" }, { word: "জমা", ref: "bn-3998" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "চেকে সই করো।", reading: "ceke soi kôro.", ipa: "tʃeke soi kɔro", bases: [{ word: "চেকে", base: "চেক", reading: "ceke" }, { word: "সই", ref: "bn-2633" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4320"
+    target: "বিনিয়োগ"
+    reading: "biniyog"
+    ipa: "binijoɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিনিয়োগ", reading: "biniyog" }] }
+    examples:
+      - { target: "জমিতে বিনিয়োগ করা হলো।", reading: "jomite biniyog kôrā hôlo.", ipa: "dʒomit̪e binijoɡ kɔra ɦɔlo", bases: [{ word: "জমিতে", ref: "bn-3463" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "বিনিয়োগের আগে ভাবো।", reading: "biniyoger āge bhābo.", ipa: "binijoɡer aɡe bʱabo", bases: [{ word: "বিনিয়োগের", base: "বিনিয়োগ", reading: "biniyoger" }, { word: "আগে", ref: "bn-0299" }, { word: "ভাবো", ref: "bn-1118" }] }
+  - id: "bn-4321"
+    target: "শেয়ার"
+    reading: "śeyār"
+    ipa: "ʃejar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শেয়ার", reading: "śeyār" }] }
+    examples:
+      - { target: "কোম্পানির শেয়ার কিনলাম।", reading: "kompānir śeyār kinolām.", ipa: "kompanir ʃejar kinolam", bases: [{ word: "কোম্পানির", ref: "bn-3323" }, { word: "কিনলাম", ref: "bn-0890" }] }
+      - { target: "শেয়ারের দাম বাড়ল।", reading: "śeyārer dām bāṛol.", ipa: "ʃejarer d̪am baɽol", bases: [{ word: "শেয়ারের", base: "শেয়ার", reading: "śeyārer" }, { word: "দাম", ref: "bn-0244" }, { word: "বাড়ল", base: "বাড়া", reading: "bāṛol" }] }
+  - id: "bn-4322"
+    target: "মজুরি"
+    reading: "mojuri"
+    ipa: "modʒuri"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মজুরি", reading: "mojuri" }] }
+    examples:
+      - { target: "কাজের মজুরি কত?", reading: "kājer mojuri kôt?", ipa: "kadʒer modʒuri kɔt̪", bases: [{ word: "কাজের", ref: "bn-0198" }, { word: "কত", ref: "bn-0167" }] }
+      - { target: "মজুরি সময়মতো দেওয়া হলো।", reading: "mojuri sômoyomoto deoyā hôlo.", ipa: "modʒuri sɔmojomot̪o d̪eoja ɦɔlo", bases: [{ word: "সময়মতো", ref: "bn-2177" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4323"
+    target: "কমিশন"
+    reading: "komiśon"
+    ipa: "komiʃon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কমিশন", reading: "komiśon" }] }
+    examples:
+      - { target: "বিক্রেতা কমিশন পেল।", reading: "bikretā komiśon pel.", ipa: "bikret̪a komiʃon pel", bases: [{ word: "বিক্রেতা", ref: "bn-1687" }, { word: "পেল", ref: "bn-0891" }] }
+      - { target: "কমিশনটা কত শতাংশ?", reading: "komiśonoṭā kôt śôtāṅś?", ipa: "komiʃonoʈa kɔt̪ ʃɔt̪aŋʃ", bases: [{ word: "কমিশনটা", base: "কমিশন", reading: "komiśonoṭā" }, { word: "কত", ref: "bn-0167" }, { word: "শতাংশ", base: "শতাংশ", reading: "śôtāṅś" }] }
+  - id: "bn-4324"
+    target: "সম্পদ"
+    reading: "sômpod"
+    ipa: "sɔmpod̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সম্পদ", reading: "sômpod" }] }
+    examples:
+      - { target: "দেশের সম্পদ অনেক।", reading: "deśer sômpod ônek.", ipa: "d̪eʃer sɔmpod̪ ɔnek", bases: [{ word: "দেশের", ref: "bn-0200" }, { word: "অনেক", ref: "bn-0550" }] }
+      - { target: "তার সম্পদ বাড়ছে।", reading: "tār sômpod bāṛoche.", ipa: "t̪ar sɔmpod̪ baɽotʃʰe", bases: [{ word: "তার", ref: "bn-3275" }, { word: "বাড়ছে", base: "বাড়া", reading: "bāṛoche" }] }
+  - id: "bn-4325"
+    target: "দেনা"
+    reading: "denā"
+    ipa: "d̪ena"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দেনা", reading: "denā" }] }
+    examples:
+      - { target: "তার অনেক দেনা আছে।", reading: "tār ônek denā āche.", ipa: "t̪ar ɔnek d̪ena atʃʰe", bases: [{ word: "তার", ref: "bn-3275" }, { word: "অনেক", ref: "bn-0550" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "দেনা শোধ করো।", reading: "denā śodh kôro.", ipa: "d̪ena ʃod̪ʱ kɔro", bases: [{ word: "শোধ", base: "শোধ", reading: "śodh" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4326"
+    target: "পাওনা"
+    reading: "pāonā"
+    ipa: "paona"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পাওনা", reading: "pāonā" }] }
+    examples:
+      - { target: "আমার পাওনা টাকা কোথায়?", reading: "āmār pāonā ṭākā kothāy?", ipa: "amar paona ʈaka kot̪ʰaj", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "টাকা", ref: "bn-0245" }, { word: "কোথায়", ref: "bn-0163" }] }
+      - { target: "পাওনা মিটিয়ে দাও।", reading: "pāonā miṭiye dāo.", ipa: "paona miʈije d̪ao", bases: [{ word: "মিটিয়ে", base: "মেটানো", reading: "miṭiye" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4327"
+    target: "হিসাবরক্ষক"
+    reading: "hisāborokkhok"
+    ipa: "ɦisaborokkʰok"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হিসাবরক্ষক", reading: "hisāborokkhok" }] }
+    examples:
+      - { target: "হিসাবরক্ষক খাতা মিলালেন।", reading: "hisāborokkhok khātā milālen.", ipa: "ɦisaborokkʰok kʰat̪a milalen", bases: [{ word: "খাতা", ref: "bn-1140" }, { word: "মিলালেন", base: "মেলানো", reading: "milālen" }] }
+      - { target: "হিসাবরক্ষককে ডাকো।", reading: "hisāborokkhokoke ḍāko.", ipa: "ɦisaborokkʰokoke ɖako", bases: [{ word: "হিসাবরক্ষককে", base: "হিসাবরক্ষক", reading: "hisāborokkhokoke" }, { word: "ডাকো", ref: "bn-0898" }] }
+  - id: "bn-4328"
+    target: "ডলার"
+    reading: "ḍôlār"
+    ipa: "ɖɔlar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ডলার", reading: "ḍôlār" }] }
+    examples:
+      - { target: "এর দাম কয়েক ডলার।", reading: "er dām kôyek ḍôlār.", ipa: "er d̪am kɔjek ɖɔlar", bases: [{ word: "এর", base: "এর", reading: "er" }, { word: "দাম", ref: "bn-0244" }, { word: "কয়েক", ref: "bn-1312" }] }
+      - { target: "ডলার বদল করা হলো।", reading: "ḍôlār bôdol kôrā hôlo.", ipa: "ɖɔlar bɔd̪ol kɔra ɦɔlo", bases: [{ word: "বদল", base: "বদল", reading: "bôdol" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4329"
+    target: "রুপি"
+    reading: "rupi"
+    ipa: "rupi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রুপি", reading: "rupi" }] }
+    examples:
+      - { target: "দাম একশো রুপি।", reading: "dām ekośo rupi.", ipa: "d̪am ekoʃo rupi", bases: [{ word: "দাম", ref: "bn-0244" }, { word: "একশো", ref: "bn-0229" }] }
+      - { target: "পঞ্চাশ রুপি দাও।", reading: "pôncāś rupi dāo.", ipa: "pɔntʃaʃ rupi d̪ao", bases: [{ word: "পঞ্চাশ", ref: "bn-0224" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4330"
+    target: "সাশ্রয়"
+    reading: "sāśroy"
+    ipa: "saʃroj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাশ্রয়", reading: "sāśroy" }] }
+    examples:
+      - { target: "বিদ্যুতে সাশ্রয় করো।", reading: "biddute sāśroy kôro.", ipa: "bid̪d̪ut̪e saʃroj kɔro", bases: [{ word: "বিদ্যুতে", ref: "bn-1583" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "এতে অনেক সাশ্রয় হয়।", reading: "ete ônek sāśroy hôy.", ipa: "et̪e ɔnek saʃroj ɦɔj", bases: [{ word: "এতে", ref: "bn-0849" }, { word: "অনেক", ref: "bn-0550" }, { word: "হয়", ref: "bn-0874" }] }
+  - id: "bn-4331"
+    target: "আমানত"
+    reading: "āmānot"
+    ipa: "amanot̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আমানত", reading: "āmānot" }] }
+    examples:
+      - { target: "ব্যাংকে আমানত রাখা হলো।", reading: "bêṅke āmānot rākhā hôlo.", ipa: "bæŋke amanot̪ rakʰa ɦɔlo", bases: [{ word: "ব্যাংকে", ref: "bn-1041" }, { word: "রাখা", ref: "bn-0894" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "আমানতের সুদ বাড়ছে।", reading: "āmānoter sud bāṛoche.", ipa: "amanot̪er sud̪ baɽotʃʰe", bases: [{ word: "আমানতের", base: "আমানত", reading: "āmānoter" }, { word: "সুদ", ref: "bn-3140" }, { word: "বাড়ছে", base: "বাড়া", reading: "bāṛoche" }] }
+  - id: "bn-4332"
+    target: "উত্তোলন"
+    reading: "uttolon"
+    ipa: "ut̪t̪olon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উত্তোলন", reading: "uttolon" }] }
+    examples:
+      - { target: "টাকা উত্তোলন করলাম।", reading: "ṭākā uttolon kôrolām.", ipa: "ʈaka ut̪t̪olon kɔrolam", bases: [{ word: "টাকা", ref: "bn-0245" }, { word: "করলাম", ref: "bn-0102" }] }
+      - { target: "উত্তোলনের সীমা কত?", reading: "uttoloner simā kôt?", ipa: "ut̪t̪oloner sima kɔt̪", bases: [{ word: "উত্তোলনের", base: "উত্তোলন", reading: "uttoloner" }, { word: "সীমা", ref: "bn-3057" }, { word: "কত", ref: "bn-0167" }] }
+  - id: "bn-4333"
+    target: "ব্যালেন্স"
+    reading: "bêlens"
+    ipa: "bælens"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যালেন্স", reading: "bêlens" }] }
+    examples:
+      - { target: "আমার ব্যালেন্স কম।", reading: "āmār bêlens kôm.", ipa: "amar bælens kɔm", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "কম", ref: "bn-0556" }] }
+      - { target: "ব্যালেন্স দেখো।", reading: "bêlens dekho.", ipa: "bælens d̪ekʰo", bases: [{ word: "দেখো", ref: "bn-0877" }] }
+  - id: "bn-4334"
+    target: "চাঁদা"
+    reading: "cām̐dā"
+    ipa: "tʃãd̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চাঁদা", reading: "cām̐dā" }] }
+    examples:
+      - { target: "ক্লাবের চাঁদা দিলাম।", reading: "klāber cām̐dā dilām.", ipa: "klaber tʃãd̪a d̪ilam", bases: [{ word: "ক্লাবের", ref: "bn-2226" }, { word: "দিলাম", ref: "bn-0888" }] }
+      - { target: "চাঁদা জমা দিতে হবে।", reading: "cām̐dā jômā dite hôbe.", ipa: "tʃãd̪a dʒɔma d̪it̪e ɦɔbe", bases: [{ word: "জমা", ref: "bn-3998" }, { word: "দিতে", ref: "bn-0888" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4335"
+    target: "ভর্তুকি"
+    reading: "bhortuki"
+    ipa: "bʱort̪uki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভর্তুকি", reading: "bhortuki" }] }
+    examples:
+      - { target: "সরকার ভর্তুকি দিল।", reading: "sôrokār bhortuki dil.", ipa: "sɔrokar bʱort̪uki d̪il", bases: [{ word: "সরকার", ref: "bn-2911" }, { word: "দিল", ref: "bn-0888" }] }
+      - { target: "ভর্তুকিতে সস্তা হলো।", reading: "bhortukite sôstā hôlo.", ipa: "bʱort̪ukit̪e sɔst̪a ɦɔlo", bases: [{ word: "ভর্তুকিতে", base: "ভর্তুকি", reading: "bhortukite" }, { word: "সস্তা", ref: "bn-0248" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4336"
+    target: "মুনাফা"
+    reading: "munāphā"
+    ipa: "munapʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মুনাফা", reading: "munāphā" }] }
+    examples:
+      - { target: "মুনাফা বেশি হয়েছে।", reading: "munāphā beśi hôyeche.", ipa: "munapʰa beʃi ɦɔjetʃʰe", bases: [{ word: "বেশি", ref: "bn-0555" }, { word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "মুনাফার হিসাব দাও।", reading: "munāphār hisāb dāo.", ipa: "munapʰar ɦisab d̪ao", bases: [{ word: "মুনাফার", base: "মুনাফা", reading: "munāphār" }, { word: "হিসাব", ref: "bn-1720" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4337"
+    target: "লোকসান"
+    reading: "lokosān"
+    ipa: "lokosan"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লোকসান", reading: "lokosān" }] }
+    examples:
+      - { target: "এতে আমার লোকসান হলো।", reading: "ete āmār lokosān hôlo.", ipa: "et̪e amar lokosan ɦɔlo", bases: [{ word: "এতে", ref: "bn-0849" }, { word: "আমার", ref: "bn-0833" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "লোকসানের ভয় আছে।", reading: "lokosāner bhôy āche.", ipa: "lokosaner bʱɔj atʃʰe", bases: [{ word: "লোকসানের", base: "লোকসান", reading: "lokosāner" }, { word: "ভয়", ref: "bn-1248" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4338"
+    target: "অর্থনীতি"
+    reading: "ôrthoniti"
+    ipa: "ɔrt̪ʰonit̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অর্থনীতি", reading: "ôrthoniti" }] }
+    examples:
+      - { target: "দেশের অর্থনীতি ভালো।", reading: "deśer ôrthoniti bhālo.", ipa: "d̪eʃer ɔrt̪ʰonit̪i bʱalo", bases: [{ word: "দেশের", ref: "bn-0200" }, { word: "ভালো", ref: "bn-0617" }] }
+      - { target: "অর্থনীতি নিয়ে পড়ছি।", reading: "ôrthoniti niye pôṛochi.", ipa: "ɔrt̪ʰonit̪i nije pɔɽotʃʰi", bases: [{ word: "নিয়ে", ref: "bn-0590" }, { word: "পড়ছি", ref: "bn-0119" }] }
+  - id: "bn-4339"
+    target: "বাকি"
+    reading: "bāki"
+    ipa: "baki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাকি", reading: "bāki" }] }
+    examples:
+      - { target: "আমার বাকি টাকা দাও।", reading: "āmār bāki ṭākā dāo.", ipa: "amar baki ʈaka d̪ao", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "টাকা", ref: "bn-0245" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "বাকি আছে কিছু।", reading: "bāki āche kichu.", ipa: "baki atʃʰe kitʃʰu", bases: [{ word: "আছে", base: "আছে", reading: "āche" }, { word: "কিছু", ref: "bn-0549" }] }
+  - id: "bn-4340"
+    target: "পেমেন্ট"
+    reading: "pemenṭ"
+    ipa: "pemenʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পেমেন্ট", reading: "pemenṭ" }] }
+    examples:
+      - { target: "পেমেন্ট হয়ে গেছে।", reading: "pemenṭ hôye geche.", ipa: "pemenʈ ɦɔje ɡetʃʰe", bases: [{ word: "হয়ে", ref: "bn-0874" }, { word: "গেছে", ref: "bn-0873" }] }
+      - { target: "অনলাইন পেমেন্ট করো।", reading: "ônolāin pemenṭ kôro.", ipa: "ɔnolain pemenʈ kɔro", bases: [{ word: "অনলাইন", ref: "bn-1709" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4341"
+    target: "ডিসকাউন্ট"
+    reading: "ḍisokāunṭ"
+    ipa: "ɖisokaunʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ডিসকাউন্ট", reading: "ḍisokāunṭ" }] }
+    examples:
+      - { target: "দোকানে ডিসকাউন্ট আছে।", reading: "dokāne ḍisokāunṭ āche.", ipa: "d̪okane ɖisokaunʈ atʃʰe", bases: [{ word: "দোকানে", ref: "bn-0250" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "ডিসকাউন্টের পর দাম কম।", reading: "ḍisokāunṭer pôr dām kôm.", ipa: "ɖisokaunʈer pɔr d̪am kɔm", bases: [{ word: "ডিসকাউন্টের", base: "ডিসকাউন্ট", reading: "ḍisokāunṭer" }, { word: "পর", ref: "bn-0114" }, { word: "দাম", ref: "bn-0244" }, { word: "কম", ref: "bn-0556" }] }
+  - id: "bn-4342"
+    target: "ট্যাক্স"
+    reading: "ṭêks"
+    ipa: "ʈæks"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ট্যাক্স", reading: "ṭêks" }] }
+    examples:
+      - { target: "ট্যাক্স দিতে হবে।", reading: "ṭêks dite hôbe.", ipa: "ʈæks d̪it̪e ɦɔbe", bases: [{ word: "দিতে", ref: "bn-0888" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "ট্যাক্সের হার বাড়ল।", reading: "ṭêkser hār bāṛol.", ipa: "ʈækser ɦar baɽol", bases: [{ word: "ট্যাক্সের", base: "ট্যাক্স", reading: "ṭêkser" }, { word: "হার", ref: "bn-1202" }, { word: "বাড়ল", base: "বাড়া", reading: "bāṛol" }] }
+  - id: "bn-4343"
+    target: "খাজনা"
+    reading: "khājonā"
+    ipa: "kʰadʒona"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খাজনা", reading: "khājonā" }] }
+    examples:
+      - { target: "জমির খাজনা দিলাম।", reading: "jomir khājonā dilām.", ipa: "dʒomir kʰadʒona d̪ilam", bases: [{ word: "জমির", ref: "bn-3463" }, { word: "দিলাম", ref: "bn-0888" }] }
+      - { target: "খাজনা বাকি আছে।", reading: "khājonā bāki āche.", ipa: "kʰadʒona baki atʃʰe", bases: [{ word: "বাকি", ref: "bn-4339" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4344"
+    target: "মূলধন"
+    reading: "mulodhon"
+    ipa: "mulod̪ʱon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মূলধন", reading: "mulodhon" }] }
+    examples:
+      - { target: "ব্যবসার মূলধন কম।", reading: "bêbosār mulodhon kôm.", ipa: "bæbosar mulod̪ʱon kɔm", bases: [{ word: "ব্যবসার", ref: "bn-0471" }, { word: "কম", ref: "bn-0556" }] }
+      - { target: "মূলধন জোগাড় করা কঠিন।", reading: "mulodhon jogāṛ kôrā koṭhin.", ipa: "mulod̪ʱon dʒoɡaɽ kɔra koʈʰin", bases: [{ word: "জোগাড়", base: "জোগাড়", reading: "jogāṛ" }, { word: "করা", ref: "bn-0102" }, { word: "কঠিন", ref: "bn-0624" }] }
+  - id: "bn-4345"
+    target: "পরিশোধ"
+    reading: "poriśodh"
+    ipa: "poriʃod̪ʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরিশোধ", reading: "poriśodh" }] }
+    examples:
+      - { target: "ঋণ পরিশোধের সময় এল।", reading: "rin poriśodher sômoy el.", ipa: "rin poriʃod̪ʱer sɔmoj el", bases: [{ word: "ঋণ", ref: "bn-3139" }, { word: "পরিশোধের", base: "পরিশোধ", reading: "poriśodher" }, { word: "সময়", ref: "bn-0061" }, { word: "এল", ref: "bn-0872" }] }
+      - { target: "পরিশোধ কবে হবে?", reading: "poriśodh kôbe hôbe?", ipa: "poriʃod̪ʱ kɔbe ɦɔbe", bases: [{ word: "কবে", ref: "bn-0406" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4346"
+    target: "হাতখরচ"
+    reading: "hātokhoroc"
+    ipa: "ɦat̪okʰorotʃ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাতখরচ", reading: "hātokhoroc" }] }
+    examples:
+      - { target: "ছেলেটা রোজ হাতখরচ পায়।", reading: "cheleṭā roj hātokhoroc pāy.", ipa: "tʃʰeleʈa rodʒ ɦat̪okʰorotʃ paj", bases: [{ word: "ছেলেটা", ref: "bn-0426" }, { word: "রোজ", ref: "bn-1528" }, { word: "পায়", ref: "bn-0891" }] }
+      - { target: "হাতখরচ কম পড়ে গেছে।", reading: "hātokhoroc kôm pôṛe geche.", ipa: "ɦat̪okʰorotʃ kɔm pɔɽe ɡetʃʰe", bases: [{ word: "কম", ref: "bn-0556" }, { word: "পড়ে", ref: "bn-0119" }] }
+  - id: "bn-4347"
+    target: "ঋণদাতা"
+    reading: "rinodātā"
+    ipa: "rinod̪at̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঋণদাতা", reading: "rinodātā" }] }
+    examples:
+      - { target: "ঋণদাতা টাকা দিলেন।", reading: "rinodātā ṭākā dilen.", ipa: "rinod̪at̪a ʈaka d̪ilen", bases: [{ word: "টাকা", ref: "bn-0245" }, { word: "দিলেন", ref: "bn-0888" }] }
+      - { target: "ঋণদাতার সঙ্গে কথা বললাম।", reading: "rinodātār sôṅge kôthā bôlolām.", ipa: "rinod̪at̪ar sɔŋɡe kɔt̪ʰa bɔlolam", bases: [{ word: "ঋণদাতার", base: "ঋণদাতা", reading: "rinodātār" }, { word: "সঙ্গে", ref: "bn-0296" }, { word: "কথা", ref: "bn-2409" }, { word: "বললাম", ref: "bn-0879" }] }
+  - id: "bn-4348"
+    target: "গ্রাহক"
+    reading: "grāhok"
+    ipa: "ɡraɦok"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গ্রাহক", reading: "grāhok" }] }
+    examples:
+      - { target: "গ্রাহক দোকানে এলেন।", reading: "grāhok dokāne elen.", ipa: "ɡraɦok d̪okane elen", bases: [{ word: "দোকানে", ref: "bn-0250" }, { word: "এলেন", ref: "bn-0872" }] }
+      - { target: "গ্রাহকের সেবা ভালো।", reading: "grāhoker sebā bhālo.", ipa: "ɡraɦoker seba bʱalo", bases: [{ word: "গ্রাহকের", base: "গ্রাহক", reading: "grāhoker" }, { word: "সেবা", ref: "bn-3116" }, { word: "ভালো", ref: "bn-0617" }] }
+  - id: "bn-4349"
+    target: "মহাজন"
+    reading: "môhājon"
+    ipa: "mɔɦadʒon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মহাজন", reading: "môhājon" }] }
+    examples:
+      - { target: "মহাজন চড়া সুদে টাকা দেয়।", reading: "môhājon côṛā sude ṭākā dey.", ipa: "mɔɦadʒon tʃɔɽa sud̪e ʈaka d̪ej", bases: [{ word: "চড়া", ref: "bn-4159" }, { word: "সুদে", ref: "bn-3140" }, { word: "টাকা", ref: "bn-0245" }, { word: "দেয়", ref: "bn-0888" }] }
+      - { target: "মহাজনের কাছে ঋণ নিয়েছে।", reading: "môhājoner kāche rin niyeche.", ipa: "mɔɦadʒoner katʃʰe rin nijetʃʰe", bases: [{ word: "মহাজনের", base: "মহাজন", reading: "môhājoner" }, { word: "কাছে", ref: "bn-0309" }, { word: "ঋণ", ref: "bn-3139" }, { word: "নিয়েছে", ref: "bn-0889" }] }
+  - id: "bn-4350"
+    target: "কিস্তি"
+    reading: "kisti"
+    ipa: "kist̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কিস্তি", reading: "kisti" }] }
+    examples:
+      - { target: "মাসিক কিস্তি দিতে হয়।", reading: "māsik kisti dite hôy.", ipa: "masik kist̪i d̪it̪e ɦɔj", bases: [{ word: "মাসিক", ref: "bn-4352" }, { word: "দিতে", ref: "bn-0888" }, { word: "হয়", ref: "bn-0874" }] }
+      - { target: "কিস্তিটা এখনো বাকি।", reading: "kistiṭā ekhono bāki.", ipa: "kist̪iʈa ekʰono baki", bases: [{ word: "কিস্তিটা", base: "কিস্তি", reading: "kistiṭā" }, { word: "এখনো", ref: "bn-1533" }, { word: "বাকি", ref: "bn-4339" }] }
+  - id: "bn-4351"
+    target: "টাকাপয়সা"
+    reading: "ṭākāpoyosā"
+    ipa: "ʈakapojosa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টাকাপয়সা", reading: "ṭākāpoyosā" }] }
+    examples:
+      - { target: "আমার কাছে টাকাপয়সা নেই।", reading: "āmār kāche ṭākāpoyosā nei.", ipa: "amar katʃʰe ʈakapojosa nei", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "কাছে", ref: "bn-0309" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+      - { target: "টাকাপয়সা সাবধানে রেখো।", reading: "ṭākāpoyosā sābodhāne rekho.", ipa: "ʈakapojosa sabod̪ʱane rekʰo", bases: [{ word: "সাবধানে", ref: "bn-3294" }, { word: "রেখো", ref: "bn-0894" }] }
+  - id: "bn-4352"
+    target: "মাসিক"
+    reading: "māsik"
+    ipa: "masik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মাসিক", reading: "māsik" }] }
+    examples:
+      - { target: "মাসিক বেতন কত?", reading: "māsik beton kôt?", ipa: "masik bet̪on kɔt̪", bases: [{ word: "বেতন", ref: "bn-0472" }, { word: "কত", ref: "bn-0167" }] }
+      - { target: "মাসিক হিসাব মেলাও।", reading: "māsik hisāb melāo.", ipa: "masik ɦisab melao", bases: [{ word: "হিসাব", ref: "bn-1720" }, { word: "মেলাও", base: "মেলানো", reading: "melāo" }] }
+  - id: "bn-4353"
+    target: "কৃপণ"
+    reading: "kripon"
+    ipa: "kripon"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কৃপণ", reading: "kripon" }] }
+    examples:
+      - { target: "সে খুব কৃপণ।", reading: "se khub kripon.", ipa: "se kʰub kripon", bases: [{ word: "সে", ref: "bn-0839" }, { word: "খুব", ref: "bn-0641" }] }
+      - { target: "কৃপণ মানুষ টাকা খরচ করে না।", reading: "kripon mānuś ṭākā khôroc kôre nā.", ipa: "kripon manuʃ ʈaka kʰɔrotʃ kɔre na", bases: [{ word: "মানুষ", base: "মানুষ", reading: "mānuś" }, { word: "টাকা", ref: "bn-0245" }, { word: "খরচ", ref: "bn-1703" }, { word: "করে", ref: "bn-0102" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4354"
+    target: "উদার"
+    reading: "udār"
+    ipa: "ud̪ar"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদার", reading: "udār" }] }
+    examples:
+      - { target: "তিনি খুব উদার মানুষ।", reading: "tini khub udār mānuś.", ipa: "t̪ini kʰub ud̪ar manuʃ", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "খুব", ref: "bn-0641" }, { word: "মানুষ", base: "মানুষ", reading: "mānuś" }] }
+      - { target: "উদার হাতে দান করো।", reading: "udār hāte dān kôro.", ipa: "ud̪ar ɦat̪e d̪an kɔro", bases: [{ word: "হাতে", ref: "bn-0730" }, { word: "দান", ref: "bn-0111" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4355"
+    target: "স্বচ্ছল"
+    reading: "sôcchol"
+    ipa: "sɔtʃtʃʰol"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্বচ্ছল", reading: "sôcchol" }] }
+    examples:
+      - { target: "তারা এখন স্বচ্ছল।", reading: "tārā ekhon sôcchol.", ipa: "t̪ara ekʰon sɔtʃtʃʰol", bases: [{ word: "তারা", ref: "bn-0840" }, { word: "এখন", ref: "bn-0317" }] }
+      - { target: "স্বচ্ছল পরিবার।", reading: "sôcchol poribār.", ipa: "sɔtʃtʃʰol poribar", bases: [{ word: "পরিবার", ref: "bn-0197" }] }
+  - id: "bn-4356"
+    target: "অভাবী"
+    reading: "ôbhābi"
+    ipa: "ɔbʱabi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অভাবী", reading: "ôbhābi" }] }
+    examples:
+      - { target: "অভাবী মানুষকে সাহায্য করো।", reading: "ôbhābi mānuśoke sāhājj kôro.", ipa: "ɔbʱabi manuʃoke saɦadʒdʒ kɔro", bases: [{ word: "মানুষকে", base: "মানুষ", reading: "mānuśoke" }, { word: "সাহায্য", ref: "bn-0371" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "এই পরিবার অভাবী।", reading: "ei poribār ôbhābi.", ipa: "ei poribar ɔbʱabi", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "পরিবার", ref: "bn-0197" }] }
+  - id: "bn-4357"
+    target: "দেউলিয়া"
+    reading: "deuliyā"
+    ipa: "d̪eulija"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দেউলিয়া", reading: "deuliyā" }] }
+    examples:
+      - { target: "কোম্পানিটা দেউলিয়া হয়ে গেছে।", reading: "kompāniṭā deuliyā hôye geche.", ipa: "kompaniʈa d̪eulija ɦɔje ɡetʃʰe", bases: [{ word: "কোম্পানিটা", ref: "bn-3323" }, { word: "হয়ে", ref: "bn-0874" }, { word: "গেছে", ref: "bn-0873" }] }
+      - { target: "দেউলিয়া ব্যবসায়ী।", reading: "deuliyā bêbosāyi.", ipa: "d̪eulija bæbosaji", bases: [{ word: "ব্যবসায়ী", ref: "bn-3339" }] }
+  - id: "bn-4358"
+    target: "আর্থিক"
+    reading: "ārthik"
+    ipa: "art̪ʰik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আর্থিক", reading: "ārthik" }] }
+    examples:
+      - { target: "আর্থিক সমস্যা আছে।", reading: "ārthik sômossā āche.", ipa: "art̪ʰik sɔmossa atʃʰe", bases: [{ word: "সমস্যা", ref: "bn-2974" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "আর্থিক সাহায্য দরকার।", reading: "ārthik sāhājj dôrokār.", ipa: "art̪ʰik saɦadʒdʒ d̪ɔrokar", bases: [{ word: "সাহায্য", ref: "bn-0371" }, { word: "দরকার", ref: "bn-0577" }] }
+  - id: "bn-4359"
+    target: "খরচ করা"
+    reading: "khôroc kôrā"
+    ipa: "kʰɔrotʃ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খরচ করা", reading: "khôroc kôrā" }] }
+    examples:
+      - { target: "আমি অনেক টাকা খরচ করলাম।", reading: "āmi ônek ṭākā khôroc kôrolām.", ipa: "ami ɔnek ʈaka kʰɔrotʃ kɔrolam", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "অনেক", ref: "bn-0550" }, { word: "টাকা", ref: "bn-0245" }, { word: "করলাম", ref: "bn-0102" }] }
+      - { target: "বেশি খরচ করো না।", reading: "beśi khôroc kôro nā.", ipa: "beʃi kʰɔrotʃ kɔro na", bases: [{ word: "বেশি", ref: "bn-0555" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4360"
+    target: "সঞ্চয় করা"
+    reading: "sôncoy kôrā"
+    ipa: "sɔntʃoj kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সঞ্চয় করা", reading: "sôncoy kôrā" }] }
+    examples:
+      - { target: "সে মাসে কিছু সঞ্চয় করে।", reading: "se māse kichu sôncoy kôre.", ipa: "se mase kitʃʰu sɔntʃoj kɔre", bases: [{ word: "সে", ref: "bn-0839" }, { word: "মাসে", ref: "bn-0334" }, { word: "কিছু", ref: "bn-0549" }, { word: "করে", ref: "bn-0102" }] }
+      - { target: "টাকা সঞ্চয় করো।", reading: "ṭākā sôncoy kôro.", ipa: "ʈaka sɔntʃoj kɔro", bases: [{ word: "টাকা", ref: "bn-0245" }] }
+  - id: "bn-4361"
+    target: "পরিশোধ করা"
+    reading: "poriśodh kôrā"
+    ipa: "poriʃod̪ʱ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরিশোধ করা", reading: "poriśodh kôrā" }] }
+    examples:
+      - { target: "ঋণটা পরিশোধ করা হলো।", reading: "rinoṭā poriśodh kôrā hôlo.", ipa: "rinoʈa poriʃod̪ʱ kɔra ɦɔlo", bases: [{ word: "ঋণটা", ref: "bn-3139" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "আমি সব বাকি পরিশোধ করব।", reading: "āmi sôb bāki poriśodh kôrob.", ipa: "ami sɔb baki poriʃod̪ʱ kɔrob", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "সব", ref: "bn-0552" }, { word: "বাকি", ref: "bn-4339" }, { word: "করব", ref: "bn-0102" }] }

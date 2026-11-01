@@ -1,0 +1,94 @@
+schema: 1
+id: "bn-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4362"
+    target: "ব্যাংকে আমার সঞ্চয় জমা আছে।"
+    reading: "bêṅke āmār sôncoy jômā āche."
+    ipa: "bæŋke amar sɔntʃoj dʒɔma atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "ব্যাংকে", ref: "bn-1041" }, { word: "আমার", ref: "bn-0833" }, { word: "সঞ্চয়", ref: "bn-4318" }, { word: "জমা", ref: "bn-3998" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "ঋণ", reading: "ṛṇ", kind: "word" }, { id: "c2", word: "মজুরি", reading: "mojuri", kind: "word" }]
+  - id: "bn-4363"
+    target: "দোকানে বড় ডিসকাউন্ট আছে।"
+    reading: "dokāne bôṛ ḍisokāunṭ āche."
+    ipa: "d̪okane bɔɽ ɖisokaunʈ atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "দোকানে", ref: "bn-0250" }, { word: "বড়", ref: "bn-0062" }, { word: "ডিসকাউন্ট", ref: "bn-4341" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "দাম বাড়ল", reading: "dām bāṛal", kind: "word" }, { id: "c2", word: "কমিশন", reading: "kamiśan", kind: "word" }]
+  - id: "bn-4364"
+    target: "এই মাসে লাভ কম হলো।"
+    reading: "ei māse lābh kôm hôlo."
+    ipa: "ei mase labʱ kɔm ɦɔlo"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "মাসে", ref: "bn-0334" }, { word: "লাভ", ref: "bn-4317" }, { word: "কম", ref: "bn-0556" }, { word: "হলো", ref: "bn-0812" }]
+    confusables: [{ id: "c1", word: "লোকসান", reading: "lokasān", kind: "word" }, { id: "c2", word: "মুনাফা", reading: "munāphā", kind: "word" }]
+  - id: "bn-4365"
+    target: "ঋণদাতা টাকা ফেরত চাইলেন।"
+    reading: "rinodātā ṭākā pherot cāilen."
+    ipa: "rinod̪at̪a ʈaka pʰerot̪ tʃailen"
+    pos: "phrase"
+    bases: [{ word: "ঋণদাতা", ref: "bn-4347" }, { word: "টাকা", ref: "bn-0245" }, { word: "ফেরত", ref: "bn-1700" }, { word: "চাইলেন", ref: "bn-0741" }]
+    confusables: [{ id: "c1", word: "ধার", reading: "dhār", kind: "word" }, { id: "c2", word: "উপহার", reading: "upahār", kind: "word" }]
+  - id: "bn-4366"
+    target: "বিদ্যুতের বিল বাকি আছে।"
+    reading: "bidduter bil bāki āche."
+    ipa: "bid̪d̪ut̪er bil baki atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "বিদ্যুতের", ref: "bn-1583" }, { word: "বিল", ref: "bn-1696" }, { word: "বাকি", ref: "bn-4339" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "রসিদ", reading: "rasid", kind: "word" }, { id: "c2", word: "পাওনা", reading: "pāonā", kind: "word" }]
+  - id: "bn-4367"
+    target: "মাসিক কিস্তি সময়মতো দিও।"
+    reading: "māsik kisti sômoyomoto dio."
+    ipa: "masik kist̪i sɔmojomot̪o d̪io"
+    pos: "phrase"
+    bases: [{ word: "মাসিক", ref: "bn-4352" }, { word: "কিস্তি", ref: "bn-4350" }, { word: "সময়মতো", ref: "bn-2177" }, { word: "দিও", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "দেরি", reading: "deri", kind: "word" }, { id: "c2", word: "উপহার", reading: "upahār", kind: "word" }]
+  - id: "bn-4368"
+    target: "সরকার নতুন ট্যাক্স বসাল।"
+    reading: "sôrokār notun ṭêks bôsāl."
+    ipa: "sɔrokar not̪un ʈæks bɔsal"
+    pos: "phrase"
+    bases: [{ word: "সরকার", ref: "bn-2911" }, { word: "নতুন", ref: "bn-0620" }, { word: "ট্যাক্স", ref: "bn-4342" }, { word: "বসাল", ref: "bn-4172" }]
+    confusables: [{ id: "c1", word: "ভর্তুকি", reading: "bhartuki", kind: "word" }, { id: "c2", word: "জরিমানা", reading: "jarimānā", kind: "word" }]
+  - id: "bn-4369"
+    target: "ব্যবসায় সে বেশি টাকা খরচ করল।"
+    reading: "bêbosāy se beśi ṭākā khôroc kôrol."
+    ipa: "bæbosaj se beʃi ʈaka kʰɔrotʃ kɔrol"
+    pos: "phrase"
+    bases: [{ word: "ব্যবসায়", ref: "bn-0471" }, { word: "সে", ref: "bn-0839" }, { word: "বেশি", ref: "bn-0555" }, { word: "টাকা", ref: "bn-0245" }, { word: "খরচ", ref: "bn-4359" }, { word: "করল", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "সঞ্চয়", reading: "sanchay", kind: "word" }, { id: "c2", word: "আয়", reading: "āẏ", kind: "word" }]
+  - id: "bn-4370"
+    target: "মহাজনের সুদ খুব চড়া।"
+    reading: "môhājoner sud khub côṛā."
+    ipa: "mɔɦadʒoner sud̪ kʰub tʃɔɽa"
+    pos: "phrase"
+    bases: [{ word: "মহাজনের", ref: "bn-4349" }, { word: "সুদ", ref: "bn-3140" }, { word: "খুব", ref: "bn-0641" }, { word: "চড়া", ref: "bn-4159" }]
+    confusables: [{ id: "c1", word: "সস্তা", reading: "sastā", kind: "word" }, { id: "c2", word: "ঋণ", reading: "ṛṇ", kind: "word" }]
+  - id: "bn-4371"
+    target: "সে দেনা পরিশোধ করল।"
+    reading: "se denā poriśodh kôrol."
+    ipa: "se d̪ena poriʃod̪ʱ kɔrol"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "দেনা", ref: "bn-4325" }, { word: "পরিশোধ", ref: "bn-4345" }, { word: "করল", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ধার", reading: "dhār", kind: "word" }, { id: "c2", word: "পাওনা", reading: "pāonā", kind: "word" }]
+  - id: "bn-4372"
+    target: "আমানতে সুদ বাড়ছে।"
+    reading: "āmānote sud bāṛoche."
+    ipa: "amanot̪e sud̪ baɽotʃʰe"
+    pos: "phrase"
+    bases: [{ word: "আমানতে", ref: "bn-4331" }, { word: "সুদ", ref: "bn-3140" }, { word: "বাড়ছে", base: "বাড়া", reading: "bāṛoche" }]
+    confusables: [{ id: "c1", word: "উত্তোলন", reading: "uttolan", kind: "word" }, { id: "c2", word: "পেমেন্ট", reading: "peṃent", kind: "word" }]
+  - id: "bn-4373"
+    target: "মূলধন কম, তাই সাবধানে খরচ করো।"
+    reading: "mulodhon kôm, tāi sābodhāne khôroc kôro."
+    ipa: "mulod̪ʱon kɔm t̪ai sabod̪ʱane kʰɔrotʃ kɔro"
+    pos: "phrase"
+    bases: [{ word: "মূলধন", ref: "bn-4344" }, { word: "কম", ref: "bn-0556" }, { word: "তাই", ref: "bn-0366" }, { word: "সাবধানে", ref: "bn-3294" }, { word: "খরচ", ref: "bn-4359" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "প্রচুর", reading: "pracur", kind: "word" }, { id: "c2", word: "বাজেট", reading: "bājeṭ", kind: "word" }]

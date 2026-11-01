@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-money"
+name: "Reading: money"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Someone opens an account at a bank counter, and a bill and a receipt, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-bank"
+    title: "Opening an account at a bank counter"
+    theme: "money"
+    sentences:
+      - { text: "আমি একটা নতুন অ্যাকাউন্ট খুলতে চাই।", reading: "āmi ekoṭā notun êākāunṭ khulote cāi.", ipa: "ami ekoʈa not̪un ɔdʒakaunʈ kʰulot̪e tʃai" }
+      - { text: "কর্মী বললেন, প্রথমে একটা ফর্ম পূরণ করুন।", reading: "kormi bôlolen, prôthome ekoṭā phôrm puron korun.", ipa: "kormi bɔlolen prɔt̪ʰome ekoʈa pʰɔrm puron korun" }
+      - { text: "আমি কিছু টাকা আমানত রাখব।", reading: "āmi kichu ṭākā āmānot rākhob.", ipa: "ami kitʃʰu ʈaka amanot̪ rakʰob" }
+      - { text: "মাসে কিছু সঞ্চয় করতে চাই।", reading: "māse kichu sôncoy kôrote cāi.", ipa: "mase kitʃʰu sɔntʃoj kɔrot̪e tʃai" }
+      - { text: "কার্ড আর চেকবই কবে পাব?", reading: "kārḍ ār cekoboi kôbe pāb?", ipa: "karɖ ar tʃekoboi kɔbe pab" }
+    questions:
+      - id: "bn-4374"
+        prompt: { "en": "The speaker wants to open a new account." }
+        answer: true
+      - id: "bn-4375"
+        prompt: { "en": "What must the speaker fill in first?" }
+        options: [{ "en": "A form" }, { "en": "A cheque" }]
+        answer: 1
+      - id: "bn-4376"
+        prompt: { "en": "What does the speaker plan to do each month?" }
+        options: [{ "en": "Save some money" }, { "en": "Spend all the money" }]
+        answer: 1
+  - id: "bn-bill-and-receipt"
+    title: "A bill and a receipt"
+    theme: "money"
+    sentences:
+      - { text: "বিদ্যুতের বিল এসেছে, মোট একশো পঞ্চাশ টাকা।", reading: "bidduter bil eseche, moṭ ekośo pôncāś ṭākā.", ipa: "bid̪d̪ut̪er bil esetʃʰe moʈ ekoʃo pɔntʃaʃ ʈaka" }
+      - { text: "বিলটা দশ তারিখের মধ্যে দিতে হবে।", reading: "biloṭā dôś tārikher moddhe dite hôbe.", ipa: "biloʈa d̪ɔʃ t̪arikʰer mod̪d̪ʱe d̪it̪e ɦɔbe" }
+      - { text: "আমি ব্যাংকে গিয়ে পেমেন্ট করলাম।", reading: "āmi bêṅke giye pemenṭ kôrolām.", ipa: "ami bæŋke ɡije pemenʈ kɔrolam" }
+      - { text: "একটা রসিদ পেলাম।", reading: "ekoṭā rosid pelām.", ipa: "ekoʈa rosid̪ pelam" }
+      - { text: "রসিদটা যত্ন করে রেখে দিলাম।", reading: "rosidoṭā jôtn kôre rekhe dilām.", ipa: "rosid̪oʈa dʒɔt̪n kɔre rekʰe d̪ilam" }
+    questions:
+      - id: "bn-4377"
+        prompt: { "en": "The bill is for electricity." }
+        answer: true
+      - id: "bn-4378"
+        prompt: { "en": "By what date must the bill be paid?" }
+        options: [{ "en": "The tenth" }, { "en": "The first" }]
+        answer: 1
+      - id: "bn-4379"
+        prompt: { "en": "What did the speaker receive after paying?" }
+        options: [{ "en": "A receipt" }, { "en": "A discount" }]
+        answer: 1
