@@ -157,11 +157,9 @@ units:
   - decks: ["fr-grammar-plural", "fr-grammar-liaison", "fr-reading-plural"]
     words: 0
     grammar: ["plural", "liaison"]
-  - planned: { id: "fr-grammar-adjective-agreement", grammar: ["adjective-agreement", "adjective-position"] }
-    listening_passages:
-      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
-    reading_passages:
-      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
+  - decks: ["fr-grammar-adjective-agreement", "fr-grammar-adjective-position", "fr-reading-adjectives"]
+    words: 0
+    grammar: ["adjective-agreement", "adjective-position"]
   - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir", "il-y-a"] }
     listening_passages:
       - { id: "who-and-what-they-have", text: { "en": "Saying who someone is and what they have" } }
