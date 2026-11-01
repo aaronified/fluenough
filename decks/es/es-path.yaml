@@ -537,7 +537,9 @@ units:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
-  - planned: { id: "es-grammar-formal-address", grammar: "formal-address" }
+  - decks: ["es-grammar-formal-address", "es-reading-formal-address"]
+    words: 0
+    grammar: ["formal-address"]
     listening_passages:
       - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
     reading_passages:
