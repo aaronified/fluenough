@@ -1,0 +1,411 @@
+schema: 1
+id: "bn-sports"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "sports"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3830"
+    target: "জয়"
+    reading: "jôy"
+    ipa: "dʒɔj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জয়", reading: "jôy" }] }
+    examples:
+      - { target: "আমাদের দল জয় পেল।", reading: "āmāder dôl jôy pel.", ipa: "amad̪er d̪ɔl dʒɔj pel", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "দল", ref: "bn-2231" }, { word: "পেল", ref: "bn-0891" }] }
+      - { target: "জয়ের পর সবাই খুশি।", reading: "jôyer pôr sôbāi khuśi.", ipa: "dʒɔjer pɔr sɔbai kʰuʃi", bases: [{ word: "জয়ের", base: "জয়", reading: "jôyer" }, { word: "পর", ref: "bn-0114" }, { word: "সবাই", ref: "bn-0854" }, { word: "খুশি", ref: "bn-0635" }] }
+  - id: "bn-3831"
+    target: "ড্র"
+    reading: "ḍr"
+    ipa: "ɖr"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ড্র", reading: "ḍr" }] }
+    examples:
+      - { target: "ম্যাচটা ড্র হলো।", reading: "mêcoṭā ḍr hôlo.", ipa: "mætʃoʈa ɖr ɦɔlo", bases: [{ word: "ম্যাচটা", ref: "bn-2232" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "ড্রের জন্য দুই দল খুশি।", reading: "ḍrer jonn dui dôl khuśi.", ipa: "ɖrer dʒonn d̪ui d̪ɔl kʰuʃi", bases: [{ word: "ড্রের", base: "ড্র", reading: "ḍrer" }, { word: "জন্য", ref: "bn-0297" }, { word: "দুই", ref: "bn-0203" }, { word: "দল", ref: "bn-2231" }, { word: "খুশি", ref: "bn-0635" }] }
+  - id: "bn-3832"
+    target: "স্টেডিয়াম"
+    reading: "sṭeḍiyām"
+    ipa: "sʈeɖijam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্টেডিয়াম", reading: "sṭeḍiyām" }] }
+    examples:
+      - { target: "স্টেডিয়ামে অনেক দর্শক।", reading: "sṭeḍiyāme ônek dôrśok.", ipa: "sʈeɖijame ɔnek d̪ɔrʃok", bases: [{ word: "স্টেডিয়ামে", base: "স্টেডিয়াম", reading: "sṭeḍiyāme" }, { word: "অনেক", ref: "bn-0550" }, { word: "দর্শক", ref: "bn-2228" }] }
+      - { target: "স্টেডিয়ামটা খুব বড়।", reading: "sṭeḍiyāmoṭā khub bôṛ.", ipa: "sʈeɖijamoʈa kʰub bɔɽ", bases: [{ word: "স্টেডিয়ামটা", base: "স্টেডিয়াম", reading: "sṭeḍiyāmoṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "বড়", ref: "bn-0062" }] }
+  - id: "bn-3833"
+    target: "কোচ"
+    reading: "koc"
+    ipa: "kotʃ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কোচ", reading: "koc" }] }
+    examples:
+      - { target: "কোচ নতুন নিয়ম বললেন।", reading: "koc notun niyom bôlolen.", ipa: "kotʃ not̪un nijom bɔlolen", bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "নিয়ম", ref: "bn-2284" }, { word: "বললেন", ref: "bn-0879" }] }
+      - { target: "কোচের কথা শোনো।", reading: "kocer kôthā śono.", ipa: "kotʃer kɔt̪ʰa ʃono", bases: [{ word: "কোচের", base: "কোচ", reading: "kocer" }, { word: "কথা", ref: "bn-2409" }, { word: "শোনো", ref: "bn-0878" }] }
+  - id: "bn-3834"
+    target: "হকি"
+    reading: "hoki"
+    ipa: "ɦoki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হকি", reading: "hoki" }] }
+    examples:
+      - { target: "হকি খেলতে ভালো লাগে।", reading: "hoki khelote bhālo lāge.", ipa: "ɦoki kʰelot̪e bʱalo laɡe", bases: [{ word: "খেলতে", ref: "bn-0895" }, { word: "ভালো", ref: "bn-0617" }, { word: "লাগে", ref: "bn-2363" }] }
+      - { target: "হকির মাঠ বড়।", reading: "hokir māṭh bôṛ.", ipa: "ɦokir maʈʰ bɔɽ", bases: [{ word: "হকির", base: "হকি", reading: "hokir" }, { word: "মাঠ", ref: "bn-1045" }, { word: "বড়", ref: "bn-0062" }] }
+  - id: "bn-3835"
+    target: "টেনিস"
+    reading: "ṭenis"
+    ipa: "ʈenis"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টেনিস", reading: "ṭenis" }] }
+    examples:
+      - { target: "টেনিস খেলো?", reading: "ṭenis khelo?", ipa: "ʈenis kʰelo", bases: [{ word: "খেলো", ref: "bn-0895" }] }
+      - { target: "টেনিস কোর্ট খালি আছে।", reading: "ṭenis korṭ khāli āche.", ipa: "ʈenis korʈ kʰali atʃʰe", bases: [{ word: "কোর্ট", ref: "bn-3840" }, { word: "খালি", ref: "bn-1228" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-3836"
+    target: "কাবাডি"
+    reading: "kābāḍi"
+    ipa: "kabaɖi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাবাডি", reading: "kābāḍi" }] }
+    examples:
+      - { target: "কাবাডি খেলা খুব মজার।", reading: "kābāḍi khelā khub môjār.", ipa: "kabaɖi kʰela kʰub mɔdʒar", bases: [{ word: "খেলা", ref: "bn-0895" }, { word: "খুব", ref: "bn-0641" }, { word: "মজার", ref: "bn-1242" }] }
+      - { target: "কাবাডির দল তৈরি হয়েছে।", reading: "kābāḍir dôl toiri hôyeche.", ipa: "kabaɖir d̪ɔl t̪oiri ɦɔjetʃʰe", bases: [{ word: "দল", ref: "bn-2231" }, { word: "তৈরি", base: "তৈরি", reading: "toiri" }, { word: "হয়েছে", ref: "bn-0874" }] }
+  - id: "bn-3837"
+    target: "অলিম্পিক"
+    reading: "ôlimpik"
+    ipa: "ɔlimpik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অলিম্পিক", reading: "ôlimpik" }] }
+    examples:
+      - { target: "অলিম্পিক শুরু হচ্ছে।", reading: "ôlimpik śuru hôcche.", ipa: "ɔlimpik ʃuru ɦɔtʃtʃʰe", bases: [{ word: "শুরু", ref: "bn-2480" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+      - { target: "অলিম্পিকের পদক জেতা কঠিন।", reading: "ôlimpiker pôdok jetā koṭhin.", ipa: "ɔlimpiker pɔd̪ok dʒet̪a koʈʰin", bases: [{ word: "অলিম্পিকের", base: "অলিম্পিক", reading: "ôlimpiker" }, { word: "পদক", ref: "bn-3838" }, { word: "জেতা", ref: "bn-2229" }, { word: "কঠিন", ref: "bn-0624" }] }
+  - id: "bn-3838"
+    target: "পদক"
+    reading: "pôdok"
+    ipa: "pɔd̪ok"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পদক", reading: "pôdok" }] }
+    examples:
+      - { target: "সে সোনার পদক পেল।", reading: "se sonār pôdok pel.", ipa: "se sonar pɔd̪ok pel", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সোনার", base: "সোনা", reading: "sonār" }, { word: "পেল", ref: "bn-0891" }] }
+      - { target: "পদকটা খুব ভারী।", reading: "pôdokoṭā khub bhāri.", ipa: "pɔd̪okoʈa kʰub bʱari", bases: [{ word: "পদকটা", base: "পদক", reading: "pôdokoṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "ভারী", ref: "bn-2324" }] }
+  - id: "bn-3839"
+    target: "ট্রফি"
+    reading: "ṭrophi"
+    ipa: "ʈropʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ট্রফি", reading: "ṭrophi" }] }
+    examples:
+      - { target: "ট্রফিটা আমাদের দলের।", reading: "ṭrophiṭā āmāder dôler.", ipa: "ʈropʰiʈa amad̪er d̪ɔler", bases: [{ word: "ট্রফিটা", base: "ট্রফি", reading: "ṭrophiṭā" }, { word: "আমাদের", ref: "bn-0834" }, { word: "দলের", ref: "bn-2231" }] }
+      - { target: "ট্রফি হাতে নিলেন।", reading: "ṭrophi hāte nilen.", ipa: "ʈropʰi ɦat̪e nilen", bases: [{ word: "ট্রফি", base: "ট্রফি", reading: "ṭrophi" }, { word: "হাতে", ref: "bn-0730" }, { word: "নিলেন", ref: "bn-0889" }] }
+  - id: "bn-3840"
+    target: "কোর্ট"
+    reading: "korṭ"
+    ipa: "korʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কোর্ট", reading: "korṭ" }] }
+    examples:
+      - { target: "কোর্টে নতুন রেখা আঁকা হলো।", reading: "korṭe notun rekhā ām̐kā hôlo.", ipa: "korʈe not̪un rekʰa ãka ɦɔlo", bases: [{ word: "কোর্টে", base: "কোর্ট", reading: "korṭe" }, { word: "নতুন", ref: "bn-0620" }, { word: "রেখা", ref: "bn-3623" }, { word: "আঁকা", ref: "bn-2217" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "কোর্টটা বড়।", reading: "korṭoṭā bôṛ.", ipa: "korʈoʈa bɔɽ", bases: [{ word: "কোর্টটা", base: "কোর্ট", reading: "korṭoṭā" }, { word: "বড়", ref: "bn-0062" }] }
+  - id: "bn-3841"
+    target: "রেফারি"
+    reading: "rephāri"
+    ipa: "repʰari"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রেফারি", reading: "rephāri" }] }
+    examples:
+      - { target: "রেফারি বাঁশি বাজালেন।", reading: "rephāri bām̐śi bājālen.", ipa: "repʰari bãʃi badʒalen", bases: [{ word: "বাঁশি", ref: "bn-2251" }, { word: "বাজালেন", ref: "bn-2221" }] }
+      - { target: "রেফারির সিদ্ধান্ত মানতে হবে।", reading: "rephārir siddhānt mānote hôbe.", ipa: "repʰarir sid̪d̪ʱant̪ manot̪e ɦɔbe", bases: [{ word: "রেফারির", base: "রেফারি", reading: "rephārir" }, { word: "সিদ্ধান্ত", ref: "bn-2971" }, { word: "মানতে", base: "মানা", reading: "mānote" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-3842"
+    target: "সমর্থক"
+    reading: "sômorthok"
+    ipa: "sɔmort̪ʰok"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমর্থক", reading: "sômorthok" }] }
+    examples:
+      - { target: "সমর্থকরা জোরে গান গাইছে।", reading: "sômorthokorā jore gān gāiche.", ipa: "sɔmort̪ʰokora dʒore ɡan ɡaitʃʰe", bases: [{ word: "জোরে", ref: "bn-1555" }, { word: "গান", ref: "bn-1668" }, { word: "গাইছে", ref: "bn-2222" }] }
+      - { target: "আমি এই দলের সমর্থক।", reading: "āmi ei dôler sômorthok.", ipa: "ami ei d̪ɔler sɔmort̪ʰok", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "এই", base: "এই", reading: "ei" }, { word: "দলের", ref: "bn-2231" }] }
+  - id: "bn-3843"
+    target: "সেমিফাইনাল"
+    reading: "semiphāināl"
+    ipa: "semipʰainal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সেমিফাইনাল", reading: "semiphāināl" }] }
+    examples:
+      - { target: "সেমিফাইনালে কে জিতল?", reading: "semiphāināle ke jitol?", ipa: "semipʰainale ke dʒit̪ol", bases: [{ word: "সেমিফাইনালে", base: "সেমিফাইনাল", reading: "semiphāināle" }, { word: "কে", ref: "bn-0162" }, { word: "জিতল", ref: "bn-2229" }] }
+      - { target: "সেমিফাইনাল কাল হবে।", reading: "semiphāināl kāl hôbe.", ipa: "semipʰainal kal ɦɔbe", bases: [{ word: "কাল", ref: "bn-0316" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-3844"
+    target: "ফাইনাল"
+    reading: "phāināl"
+    ipa: "pʰainal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ফাইনাল", reading: "phāināl" }] }
+    examples:
+      - { target: "ফাইনালে আমাদের দল খেলবে।", reading: "phāināle āmāder dôl khelobe.", ipa: "pʰainale amad̪er d̪ɔl kʰelobe", bases: [{ word: "ফাইনালে", base: "ফাইনাল", reading: "phāināle" }, { word: "আমাদের", ref: "bn-0834" }, { word: "দল", ref: "bn-2231" }, { word: "খেলবে", ref: "bn-0895" }] }
+      - { target: "ফাইনালের টিকিট কোথায়?", reading: "phāināler ṭikiṭ kothāy?", ipa: "pʰainaler ʈikiʈ kot̪ʰaj", bases: [{ word: "ফাইনালের", base: "ফাইনাল", reading: "phāināler" }, { word: "টিকিট", ref: "bn-0289" }, { word: "কোথায়", ref: "bn-0163" }] }
+  - id: "bn-3845"
+    target: "উদ্বোধন"
+    reading: "uddodhon"
+    ipa: "ud̪d̪od̪ʱon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদ্বোধন", reading: "uddodhon" }] }
+    examples:
+      - { target: "উদ্বোধন আজ বিকেলে।", reading: "uddodhon āj bikele.", ipa: "ud̪d̪od̪ʱon adʒ bikele", bases: [{ word: "আজ", ref: "bn-0315" }, { word: "বিকেলে", ref: "bn-1546" }] }
+      - { target: "উদ্বোধনের দিন ভিড় ছিল।", reading: "uddodhoner din bhiṛ chil.", ipa: "ud̪d̪od̪ʱoner d̪in bʱiɽ tʃʰil", bases: [{ word: "উদ্বোধনের", base: "উদ্বোধন", reading: "uddodhoner" }, { word: "দিন", ref: "bn-0251" }, { word: "ভিড়", base: "ভিড়", reading: "bhiṛ" }, { word: "ছিল", base: "ছিল", reading: "chil" }] }
+  - id: "bn-3846"
+    target: "বিশ্বকাপ"
+    reading: "biśśokāp"
+    ipa: "biʃʃokap"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিশ্বকাপ", reading: "biśśokāp" }] }
+    examples:
+      - { target: "বিশ্বকাপের খবর পড়েছ?", reading: "biśśokāper khôbor pôṛech?", ipa: "biʃʃokaper kʰɔbor pɔɽetʃʰ", bases: [{ word: "বিশ্বকাপের", base: "বিশ্বকাপ", reading: "biśśokāper" }, { word: "খবর", ref: "bn-2884" }, { word: "পড়েছ", ref: "bn-0119" }] }
+      - { target: "বিশ্বকাপে ভারত জিতেছে।", reading: "biśśokāpe bhārot jiteche.", ipa: "biʃʃokape bʱarot̪ dʒit̪etʃʰe", bases: [{ word: "বিশ্বকাপে", base: "বিশ্বকাপ", reading: "biśśokāpe" }, { word: "ভারত", ref: "bn-2693" }, { word: "জিতেছে", ref: "bn-2229" }] }
+  - id: "bn-3847"
+    target: "শরীরচর্চা"
+    reading: "śorirocorcā"
+    ipa: "ʃorirotʃortʃa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শরীরচর্চা", reading: "śorirocorcā" }] }
+    examples:
+      - { target: "রোজ শরীরচর্চা করি।", reading: "roj śorirocorcā kori.", ipa: "rodʒ ʃorirotʃortʃa kori", bases: [{ word: "রোজ", ref: "bn-1528" }, { word: "করি", ref: "bn-0102" }] }
+      - { target: "শরীরচর্চা ভালো লাগে।", reading: "śorirocorcā bhālo lāge.", ipa: "ʃorirotʃortʃa bʱalo laɡe", bases: [{ word: "ভালো", ref: "bn-0617" }, { word: "লাগে", ref: "bn-2363" }] }
+  - id: "bn-3848"
+    target: "স্প্রিন্ট"
+    reading: "sprinṭ"
+    ipa: "sprinʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্প্রিন্ট", reading: "sprinṭ" }] }
+    examples:
+      - { target: "স্প্রিন্টে সে প্রথম হলো।", reading: "sprinṭe se prôthom hôlo.", ipa: "sprinʈe se prɔt̪ʰom ɦɔlo", bases: [{ word: "সে", ref: "bn-0839" }, { word: "প্রথম", ref: "bn-0698" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "স্প্রিন্টের জন্য প্রস্তুত।", reading: "sprinṭer jonn prostut.", ipa: "sprinʈer dʒonn prost̪ut̪", bases: [{ word: "জন্য", ref: "bn-0297" }, { word: "প্রস্তুত", base: "প্রস্তুত", reading: "prostut" }] }
+  - id: "bn-3849"
+    target: "চোট"
+    reading: "coṭ"
+    ipa: "tʃoʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চোট", reading: "coṭ" }] }
+    examples:
+      - { target: "খেলতে গিয়ে তার চোট লাগল।", reading: "khelote giye tār coṭ lāgol.", ipa: "kʰelot̪e ɡije t̪ar tʃoʈ laɡol", bases: [{ word: "খেলতে", ref: "bn-0895" }, { word: "গিয়ে", ref: "bn-0873" }, { word: "তার", ref: "bn-3275" }, { word: "লাগল", ref: "bn-2363" }] }
+      - { target: "চোটটা বেশি নয়।", reading: "coṭoṭā beśi nôy.", ipa: "tʃoʈoʈa beʃi nɔj", bases: [{ word: "চোটটা", base: "চোট", reading: "coṭoṭā" }, { word: "বেশি", ref: "bn-0555" }, { word: "নয়", ref: "bn-0210" }] }
+  - id: "bn-3850"
+    target: "আঘাত"
+    reading: "āghāt"
+    ipa: "aɡʱat̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আঘাত", reading: "āghāt" }] }
+    examples:
+      - { target: "আঘাতের পর বিশ্রাম নাও।", reading: "āghāter pôr biśrām nāo.", ipa: "aɡʱat̪er pɔr biʃram nao", bases: [{ word: "আঘাতের", base: "আঘাত", reading: "āghāter" }, { word: "পর", ref: "bn-0114" }, { word: "বিশ্রাম", ref: "bn-1762" }, { word: "নাও", ref: "bn-0889" }] }
+      - { target: "বড় আঘাত লেগেছে।", reading: "bôṛ āghāt legeche.", ipa: "bɔɽ aɡʱat̪ leɡetʃʰe", bases: [{ word: "বড়", ref: "bn-0062" }, { word: "লেগেছে", ref: "bn-2363" }] }
+  - id: "bn-3851"
+    target: "জার্সি"
+    reading: "jārsi"
+    ipa: "dʒarsi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জার্সি", reading: "jārsi" }] }
+    examples:
+      - { target: "জার্সিটা নতুন।", reading: "jārsiṭā notun.", ipa: "dʒarsiʈa not̪un", bases: [{ word: "জার্সিটা", base: "জার্সি", reading: "jārsiṭā" }, { word: "নতুন", ref: "bn-0620" }] }
+      - { target: "সবাই একই জার্সি পরেছে।", reading: "sôbāi ekoi jārsi pôreche.", ipa: "sɔbai ekoi dʒarsi pɔretʃʰe", bases: [{ word: "সবাই", ref: "bn-0854" }, { word: "একই", base: "একই", reading: "ekoi" }, { word: "পরেছে", ref: "bn-0120" }] }
+  - id: "bn-3852"
+    target: "রেকর্ড"
+    reading: "rekorḍ"
+    ipa: "rekorɖ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রেকর্ড", reading: "rekorḍ" }] }
+    examples:
+      - { target: "নতুন রেকর্ড হলো।", reading: "notun rekorḍ hôlo.", ipa: "not̪un rekorɖ ɦɔlo", bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "তার রেকর্ড কেউ ভাঙেনি।", reading: "tār rekorḍ keu bhāṅeni.", ipa: "t̪ar rekorɖ keu bʱaŋeni", bases: [{ word: "তার", ref: "bn-3275" }, { word: "কেউ", base: "কেউ", reading: "keu" }, { word: "ভাঙেনি", ref: "bn-1102" }] }
+  - id: "bn-3853"
+    target: "চ্যাম্পিয়ন"
+    reading: "cêmpiyon"
+    ipa: "tʃæmpijon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চ্যাম্পিয়ন", reading: "cêmpiyon" }] }
+    examples:
+      - { target: "সে চ্যাম্পিয়ন হলো।", reading: "se cêmpiyon hôlo.", ipa: "se tʃæmpijon ɦɔlo", bases: [{ word: "সে", ref: "bn-0839" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "চ্যাম্পিয়নরা ট্রফি পেল।", reading: "cêmpiyonorā ṭrophi pel.", ipa: "tʃæmpijonora ʈropʰi pel", bases: [{ word: "ট্রফি", ref: "bn-3839" }, { word: "পেল", ref: "bn-0891" }] }
+  - id: "bn-3854"
+    target: "ম্যারাথন"
+    reading: "mêrāthon"
+    ipa: "mærat̪ʰon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ম্যারাথন", reading: "mêrāthon" }] }
+    examples:
+      - { target: "ম্যারাথনে অনেক মানুষ দৌড়াল।", reading: "mêrāthone ônek mānuś douṛāl.", ipa: "mærat̪ʰone ɔnek manuʃ d̪ouɽal", bases: [{ word: "ম্যারাথনে", base: "ম্যারাথন", reading: "mêrāthone" }, { word: "অনেক", ref: "bn-0550" }, { word: "মানুষ", base: "মানুষ", reading: "mānuś" }] }
+      - { target: "ম্যারাথন কঠিন হবে।", reading: "mêrāthon koṭhin hôbe.", ipa: "mærat̪ʰon koʈʰin ɦɔbe", bases: [{ word: "কঠিন", ref: "bn-0624" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-3855"
+    target: "ডাইভ"
+    reading: "ḍāibh"
+    ipa: "ɖaibʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ডাইভ", reading: "ḍāibh" }] }
+    examples:
+      - { target: "সে পুকুরে ডাইভ দিল।", reading: "se pukure ḍāibh dil.", ipa: "se pukure ɖaibʱ d̪il", bases: [{ word: "সে", ref: "bn-0839" }, { word: "পুকুরে", ref: "bn-1051" }, { word: "দিল", ref: "bn-0888" }] }
+      - { target: "ডাইভটা খুব সুন্দর ছিল।", reading: "ḍāibhoṭā khub sundor chil.", ipa: "ɖaibʱoʈa kʰub sund̪or tʃʰil", bases: [{ word: "ডাইভটা", base: "ডাইভ", reading: "ḍāibhoṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "সুন্দর", ref: "bn-0625" }, { word: "ছিল", base: "ছিল", reading: "chil" }] }
+  - id: "bn-3856"
+    target: "লাফ"
+    reading: "lāph"
+    ipa: "lapʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লাফ", reading: "lāph" }] }
+    examples:
+      - { target: "সে লম্বা লাফ দিল।", reading: "se lômbā lāph dil.", ipa: "se lɔmba lapʰ d̪il", bases: [{ word: "সে", ref: "bn-0839" }, { word: "লম্বা", ref: "bn-0628" }, { word: "দিল", ref: "bn-0888" }] }
+      - { target: "লাফটা খুব উঁচু।", reading: "lāphoṭā khub um̐cu.", ipa: "lapʰoʈa kʰub ũtʃu", bases: [{ word: "লাফটা", base: "লাফ", reading: "lāphoṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "উঁচু", ref: "bn-1236" }] }
+  - id: "bn-3857"
+    target: "অধিনায়ক"
+    reading: "ôdhināyok"
+    ipa: "ɔd̪ʱinajok"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অধিনায়ক", reading: "ôdhināyok" }] }
+    examples:
+      - { target: "অধিনায়ক দলকে ডাকলেন।", reading: "ôdhināyok dôloke ḍākolen.", ipa: "ɔd̪ʱinajok d̪ɔloke ɖakolen", bases: [{ word: "দলকে", ref: "bn-2231" }, { word: "ডাকলেন", ref: "bn-0898" }] }
+      - { target: "অধিনায়কের কথা সবাই মানে।", reading: "ôdhināyoker kôthā sôbāi māne.", ipa: "ɔd̪ʱinajoker kɔt̪ʰa sɔbai mane", bases: [{ word: "অধিনায়কের", base: "অধিনায়ক", reading: "ôdhināyoker" }, { word: "কথা", ref: "bn-2409" }, { word: "সবাই", ref: "bn-0854" }, { word: "মানে", base: "মানা", reading: "māne" }] }
+  - id: "bn-3858"
+    target: "সতীর্থ"
+    reading: "sotirth"
+    ipa: "sot̪irt̪ʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সতীর্থ", reading: "sotirth" }] }
+    examples:
+      - { target: "সতীর্থরা একসঙ্গে খেলল।", reading: "sotirthorā ekosoṅge khelol.", ipa: "sot̪irt̪ʰora ekosoŋɡe kʰelol", bases: [{ word: "একসঙ্গে", ref: "bn-1564" }, { word: "খেলল", ref: "bn-0895" }] }
+      - { target: "সতীর্থের সঙ্গে কথা বললাম।", reading: "sotirther sôṅge kôthā bôlolām.", ipa: "sot̪irt̪ʰer sɔŋɡe kɔt̪ʰa bɔlolam", bases: [{ word: "সতীর্থের", base: "সতীর্থ", reading: "sotirther" }, { word: "সঙ্গে", ref: "bn-0296" }, { word: "কথা", ref: "bn-2409" }, { word: "বললাম", ref: "bn-0879" }] }
+  - id: "bn-3859"
+    target: "প্রতিপক্ষ"
+    reading: "protipokkh"
+    ipa: "prot̪ipokkʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রতিপক্ষ", reading: "protipokkh" }] }
+    examples:
+      - { target: "প্রতিপক্ষ দল শক্তিশালী।", reading: "protipokkh dôl śoktiśāli.", ipa: "prot̪ipokkʰ d̪ɔl ʃokt̪iʃali", bases: [{ word: "দল", ref: "bn-2231" }, { word: "শক্তিশালী", ref: "bn-2784" }] }
+      - { target: "প্রতিপক্ষের গোল ঠেকানো হলো।", reading: "protipokkher gol ṭhekāno hôlo.", ipa: "prot̪ipokkʰer ɡol ʈʰekano ɦɔlo", bases: [{ word: "প্রতিপক্ষের", base: "প্রতিপক্ষ", reading: "protipokkher" }, { word: "গোল", ref: "bn-2554" }, { word: "ঠেকানো", base: "ঠেকানো", reading: "ṭhekāno" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-3860"
+    target: "ট্র্যাক"
+    reading: "ṭrjāk"
+    ipa: "ʈrdʒak"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ট্র্যাক", reading: "ṭrjāk" }] }
+    examples:
+      - { target: "ট্র্যাকে অনেক দৌড়াল।", reading: "ṭrjāke ônek douṛāl.", ipa: "ʈrdʒake ɔnek d̪ouɽal", bases: [{ word: "ট্র্যাকে", base: "ট্র্যাক", reading: "ṭrjāke" }, { word: "অনেক", ref: "bn-0550" }, { word: "দৌড়াল", ref: "bn-1115" }] }
+      - { target: "ট্র্যাকটা ভেজা।", reading: "ṭrjākoṭā bhejā.", ipa: "ʈrdʒakoʈa bʱedʒa", bases: [{ word: "ট্র্যাকটা", base: "ট্র্যাক", reading: "ṭrjākoṭā" }, { word: "ভেজা", ref: "bn-1599" }] }
+  - id: "bn-3861"
+    target: "ব্যাট"
+    reading: "bêṭ"
+    ipa: "bæʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাট", reading: "bêṭ" }] }
+    examples:
+      - { target: "ব্যাটটা নতুন।", reading: "bêṭoṭā notun.", ipa: "bæʈoʈa not̪un", bases: [{ word: "ব্যাটটা", base: "ব্যাট", reading: "bêṭoṭā" }, { word: "নতুন", ref: "bn-0620" }] }
+      - { target: "ব্যাট দিয়ে বল মারো।", reading: "bêṭ diye bôl māro.", ipa: "bæʈ d̪ije bɔl maro", bases: [{ word: "দিয়ে", ref: "bn-0295" }, { word: "বল", ref: "bn-0055" }, { word: "মারো", base: "মারা", reading: "māro" }] }
+  - id: "bn-3862"
+    target: "উইকেট"
+    reading: "uikeṭ"
+    ipa: "uikeʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উইকেট", reading: "uikeṭ" }] }
+    examples:
+      - { target: "উইকেট পড়ল।", reading: "uikeṭ pôṛol.", ipa: "uikeʈ pɔɽol", bases: [{ word: "পড়ল", ref: "bn-0119" }] }
+      - { target: "উইকেটটা খুব শক্ত।", reading: "uikeṭoṭā khub śôkt.", ipa: "uikeʈoʈa kʰub ʃɔkt̪", bases: [{ word: "উইকেটটা", base: "উইকেট", reading: "uikeṭoṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "শক্ত", ref: "bn-0638" }] }
+  - id: "bn-3863"
+    target: "রান"
+    reading: "rān"
+    ipa: "ran"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রান", reading: "rān" }] }
+    examples:
+      - { target: "সে দশ রান করল।", reading: "se dôś rān kôrol.", ipa: "se d̪ɔʃ ran kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "দশ", ref: "bn-0211" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "রান বেশি হলো।", reading: "rān beśi hôlo.", ipa: "ran beʃi ɦɔlo", bases: [{ word: "বেশি", ref: "bn-0555" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-3864"
+    target: "পেনাল্টি"
+    reading: "penālṭi"
+    ipa: "penalʈi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পেনাল্টি", reading: "penālṭi" }] }
+    examples:
+      - { target: "পেনাল্টিতে গোল হলো।", reading: "penālṭite gol hôlo.", ipa: "penalʈit̪e ɡol ɦɔlo", bases: [{ word: "পেনাল্টিতে", base: "পেনাল্টি", reading: "penālṭite" }, { word: "গোল", ref: "bn-2554" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "রেফারি পেনাল্টি দিলেন।", reading: "rephāri penālṭi dilen.", ipa: "repʰari penalʈi d̪ilen", bases: [{ word: "রেফারি", ref: "bn-3841" }, { word: "পেনাল্টি", base: "পেনাল্টি", reading: "penālṭi" }, { word: "দিলেন", ref: "bn-0888" }] }
+  - id: "bn-3865"
+    target: "স্কোর"
+    reading: "skor"
+    ipa: "skor"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্কোর", reading: "skor" }] }
+    examples:
+      - { target: "স্কোর কত?", reading: "skor kôt?", ipa: "skor kɔt̪", bases: [{ word: "কত", ref: "bn-0167" }] }
+      - { target: "স্কোর দেখে খুশি হলাম।", reading: "skor dekhe khuśi hôlām.", ipa: "skor d̪ekʰe kʰuʃi ɦɔlam", bases: [{ word: "স্কোর", base: "স্কোর", reading: "skor" }, { word: "দেখে", ref: "bn-0877" }, { word: "খুশি", ref: "bn-0635" }, { word: "হলাম", ref: "bn-0874" }] }
+  - id: "bn-3866"
+    target: "জয়ী"
+    reading: "joyi"
+    ipa: "dʒoji"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জয়ী", reading: "joyi" }] }
+    examples:
+      - { target: "জয়ী দল মাঠ ছেড়ে গেল।", reading: "joyi dôl māṭh cheṛe gel.", ipa: "dʒoji d̪ɔl maʈʰ tʃʰeɽe ɡel", bases: [{ word: "দল", ref: "bn-2231" }, { word: "মাঠ", ref: "bn-1045" }, { word: "ছেড়ে", ref: "bn-0589" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "জয়ী খেলোয়াড়ের নাম বলো।", reading: "joyi kheloyāṛer nām bôlo.", ipa: "dʒoji kʰelojaɽer nam bɔlo", bases: [{ word: "খেলোয়াড়ের", ref: "bn-2227" }, { word: "নাম", ref: "bn-0191" }, { word: "বলো", ref: "bn-0879" }] }
+  - id: "bn-3867"
+    target: "পরাজিত"
+    reading: "pôrājit"
+    ipa: "pɔradʒit̪"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরাজিত", reading: "pôrājit" }] }
+    examples:
+      - { target: "পরাজিত দল হতাশ।", reading: "pôrājit dôl hôtāś.", ipa: "pɔradʒit̪ d̪ɔl ɦɔt̪aʃ", bases: [{ word: "দল", ref: "bn-2231" }] }
+      - { target: "পরাজিত প্রতিপক্ষকে অভিনন্দন।", reading: "pôrājit protipokkhoke ôbhinondon.", ipa: "pɔradʒit̪ prot̪ipokkʰoke ɔbʱinond̪on", bases: [{ word: "প্রতিপক্ষকে", ref: "bn-3859" }, { word: "অভিনন্দন", ref: "bn-3773" }] }
+  - id: "bn-3868"
+    target: "ব্যাট করা"
+    reading: "bêṭ kôrā"
+    ipa: "bæʈ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাট করা", reading: "bêṭ kôrā" }] }
+    examples:
+      - { target: "সে ভালো ব্যাট করল।", reading: "se bhālo bêṭ kôrol.", ipa: "se bʱalo bæʈ kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "ভালো", ref: "bn-0617" }, { word: "ব্যাট", ref: "bn-3861" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "এখন কে ব্যাট করবে?", reading: "ekhon ke bêṭ kôrobe?", ipa: "ekʰon ke bæʈ kɔrobe", bases: [{ word: "এখন", ref: "bn-0317" }, { word: "কে", ref: "bn-0162" }, { word: "ব্যাট", ref: "bn-3861" }, { word: "করবে", ref: "bn-0102" }] }
+  - id: "bn-3869"
+    target: "গোল করা"
+    reading: "gol kôrā"
+    ipa: "ɡol kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গোল করা", reading: "gol kôrā" }] }
+    examples:
+      - { target: "সে একটা গোল করল।", reading: "se ekoṭā gol kôrol.", ipa: "se ekoʈa ɡol kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "গোল", ref: "bn-2554" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "দ্বিতীয় অর্ধে দল গোল করেছে।", reading: "ditiy ôrdhe dôl gol kôreche.", ipa: "d̪it̪ij ɔrd̪ʱe d̪ɔl ɡol kɔretʃʰe", bases: [{ word: "দ্বিতীয়", ref: "bn-0699" }, { word: "অর্ধে", base: "অর্ধ", reading: "ôrdhe" }, { word: "দল", ref: "bn-2231" }, { word: "গোল", ref: "bn-2554" }, { word: "করেছে", ref: "bn-0102" }] }

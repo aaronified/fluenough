@@ -633,11 +633,14 @@ units:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
   - decks: ["bn-reading-concessive"]
     words: 0
-  - planned: { id: "bn-sports", theme: "sports", words: 40 }
+  - decks: ["bn-sports", "bn-sports-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
+  - decks: ["bn-reading-sports"]
+    words: 0
   - planned: { id: "bn-relationships", theme: "relationships", words: 45 }
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }

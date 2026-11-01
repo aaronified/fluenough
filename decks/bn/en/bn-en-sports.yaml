@@ -1,0 +1,290 @@
+schema: 1
+id: "bn-en-sports"
+kind: "layer"
+core: "bn-sports"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports"
+description: "Matches, teams, medals and training: the stadium, the coach, the referee, the wicket and the finals. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3830":
+    native: "win; victory"
+    notes:
+      "n1": "{1}: A win or victory in a game."
+    examples:
+      "আমাদের দল জয় পেল।": "Our team got a win."
+      "জয়ের পর সবাই খুশি।": { native: "After the win everyone is happy.", bases: { "জয়ের": "win; victory" } }
+  "bn-3831":
+    native: "draw"
+    notes:
+      "n1": "{1}: A draw: a game that ends with equal scores."
+    examples:
+      "ম্যাচটা ড্র হলো।": "The match ended in a draw."
+      "ড্রের জন্য দুই দল খুশি।": { native: "Both teams are happy about the draw.", bases: { "ড্রের": "draw" } }
+  "bn-3832":
+    native: "stadium"
+    notes:
+      "n1": "{1}: A stadium: a large place with seats for watching sport."
+    examples:
+      "স্টেডিয়ামে অনেক দর্শক।": { native: "There are many spectators in the stadium.", bases: { "স্টেডিয়ামে": "stadium" } }
+      "স্টেডিয়ামটা খুব বড়।": { native: "The stadium is very big.", bases: { "স্টেডিয়ামটা": "stadium" } }
+  "bn-3833":
+    native: "coach"
+    notes:
+      "n1": "{1}: A coach: the person who trains a team or a player."
+    examples:
+      "কোচ নতুন নিয়ম বললেন।": "The coach told a new rule."
+      "কোচের কথা শোনো।": { native: "Listen to the coach. (familiar)", bases: { "কোচের": "coach" } }
+  "bn-3834":
+    native: "hockey"
+    notes:
+      "n1": "{1}: Hockey: a game played with a stick and a small ball."
+    examples:
+      "হকি খেলতে ভালো লাগে।": "I like playing hockey."
+      "হকির মাঠ বড়।": { native: "The hockey field is big.", bases: { "হকির": "hockey" } }
+  "bn-3835":
+    native: "tennis"
+    notes:
+      "n1": "{1}: Tennis: a game played with a racket and a ball over a net."
+    examples:
+      "টেনিস খেলো?": "Do you play tennis? (familiar)"
+      "টেনিস কোর্ট খালি আছে।": { native: "The tennis court is free.", bases: { "আছে": "is" } }
+  "bn-3836":
+    native: "kabaddi"
+    notes:
+      "n1": "{1}: Kabaddi: a team game of touch and tag, played on a court."
+    examples:
+      "কাবাডি খেলা খুব মজার।": "Kabaddi is a very fun game."
+      "কাবাডির দল তৈরি হয়েছে।": { native: "The kabaddi team has been formed.", bases: { "তৈরি": "formed" } }
+  "bn-3837":
+    native: "the Olympics"
+    notes:
+      "n1": "{1}: The Olympics: the great international sports games held every four years."
+    examples:
+      "অলিম্পিক শুরু হচ্ছে।": "The Olympics are starting."
+      "অলিম্পিকের পদক জেতা কঠিন।": { native: "Winning an Olympic medal is hard.", bases: { "অলিম্পিকের": "the Olympics" } }
+  "bn-3838":
+    native: "medal"
+    notes:
+      "n1": "{1}: A medal: a metal award given for winning a contest."
+    examples:
+      "সে সোনার পদক পেল।": { native: "She got a gold medal.", bases: { "সোনার": "gold" } }
+      "পদকটা খুব ভারী।": { native: "The medal is very heavy.", bases: { "পদকটা": "medal" } }
+  "bn-3839":
+    native: "trophy"
+    notes:
+      "n1": "{1}: A trophy: a cup or a prize given to the winner."
+    examples:
+      "ট্রফিটা আমাদের দলের।": { native: "The trophy belongs to our team.", bases: { "ট্রফিটা": "trophy" } }
+      "ট্রফি হাতে নিলেন।": { native: "He took the trophy in his hand.", bases: { "ট্রফি": "trophy" } }
+  "bn-3840":
+    native: "court"
+    notes:
+      "n1": "{1}: A court: a marked area for a game such as tennis or basketball."
+    examples:
+      "কোর্টে নতুন রেখা আঁকা হলো।": { native: "New lines were painted on the court.", bases: { "কোর্টে": "court" } }
+      "কোর্টটা বড়।": { native: "The court is big.", bases: { "কোর্টটা": "court" } }
+  "bn-3841":
+    native: "referee"
+    notes:
+      "n1": "{1}: A referee: the official who makes sure the rules are kept in a game."
+    examples:
+      "রেফারি বাঁশি বাজালেন।": "The referee blew the whistle."
+      "রেফারির সিদ্ধান্ত মানতে হবে।": { native: "The referee's decision must be accepted.", bases: { "রেফারির": "referee", "মানতে": "accepted" } }
+  "bn-3842":
+    native: "supporter; fan"
+    notes:
+      "n1": "{1}: A supporter or a fan: someone who cheers for a team."
+    examples:
+      "সমর্থকরা জোরে গান গাইছে।": "The supporters are singing loudly."
+      "আমি এই দলের সমর্থক।": { native: "I am a supporter of this team.", bases: { "এই": "this" } }
+  "bn-3843":
+    native: "semifinal"
+    notes:
+      "n1": "{1}: A semifinal: the match before the final."
+    examples:
+      "সেমিফাইনালে কে জিতল?": { native: "Who won the semifinal?", bases: { "সেমিফাইনালে": "semifinal" } }
+      "সেমিফাইনাল কাল হবে।": "The semifinal will be tomorrow."
+  "bn-3844":
+    native: "final"
+    notes:
+      "n1": "{1}: The final: the last match of a contest."
+    examples:
+      "ফাইনালে আমাদের দল খেলবে।": { native: "Our team will play in the final.", bases: { "ফাইনালে": "final" } }
+      "ফাইনালের টিকিট কোথায়?": { native: "Where are the tickets for the final?", bases: { "ফাইনালের": "final" } }
+  "bn-3845":
+    native: "opening"
+    notes:
+      "n1": "{1}: An opening: the start of a sports event or building."
+    examples:
+      "উদ্বোধন আজ বিকেলে।": "The opening is this afternoon."
+      "উদ্বোধনের দিন ভিড় ছিল।": { native: "There was a crowd on the day of the opening.", bases: { "উদ্বোধনের": "opening", "ভিড়": "crowd", "ছিল": "was" } }
+  "bn-3846":
+    native: "World Cup"
+    notes:
+      "n1": "{1}: The World Cup: the world championship of a sport."
+    examples:
+      "বিশ্বকাপের খবর পড়েছ?": { native: "Have you read the World Cup news? (familiar)", bases: { "বিশ্বকাপের": "World Cup" } }
+      "বিশ্বকাপে ভারত জিতেছে।": { native: "India won the World Cup.", bases: { "বিশ্বকাপে": "World Cup" } }
+  "bn-3847":
+    native: "physical exercise"
+    notes:
+      "n1": "{1}: Physical exercise: training and care of the body."
+    examples:
+      "রোজ শরীরচর্চা করি।": "I do physical exercise every day."
+      "শরীরচর্চা ভালো লাগে।": "I like physical exercise."
+  "bn-3848":
+    native: "sprint"
+    notes:
+      "n1": "{1}: A sprint: a short race run at full speed."
+    examples:
+      "স্প্রিন্টে সে প্রথম হলো।": "She came first in the sprint."
+      "স্প্রিন্টের জন্য প্রস্তুত।": { native: "Ready for the sprint.", bases: { "প্রস্তুত": "ready" } }
+  "bn-3849":
+    native: "injury"
+    notes:
+      "n1": "{1}: An injury: a hurt to the body from a fall or a blow."
+    examples:
+      "খেলতে গিয়ে তার চোট লাগল।": "He got hurt while playing."
+      "চোটটা বেশি নয়।": { native: "The injury is not serious.", bases: { "চোটটা": "injury" } }
+  "bn-3850":
+    native: "blow; hurt"
+    notes:
+      "n1": "{1}: A blow or a hurt to the body."
+    examples:
+      "আঘাতের পর বিশ্রাম নাও।": { native: "Rest after the injury. (familiar)", bases: { "আঘাতের": "blow; hurt" } }
+      "বড় আঘাত লেগেছে।": "A big blow has hit."
+  "bn-3851":
+    native: "jersey"
+    notes:
+      "n1": "{1}: A jersey: the shirt that a team wears in a match."
+    examples:
+      "জার্সিটা নতুন।": { native: "The jersey is new.", bases: { "জার্সিটা": "jersey" } }
+      "সবাই একই জার্সি পরেছে।": { native: "Everyone is wearing the same jersey.", bases: { "একই": "same" } }
+  "bn-3852":
+    native: "record"
+    notes:
+      "n1": "{1}: A record: the best result ever achieved."
+    examples:
+      "নতুন রেকর্ড হলো।": "A new record was set."
+      "তার রেকর্ড কেউ ভাঙেনি।": { native: "No one has broken his record.", bases: { "কেউ": "no one" } }
+  "bn-3853":
+    native: "champion"
+    notes:
+      "n1": "{1}: A champion: the winner of a whole contest."
+    examples:
+      "সে চ্যাম্পিয়ন হলো।": "She became the champion."
+      "চ্যাম্পিয়নরা ট্রফি পেল।": "The champions got the trophy."
+  "bn-3854":
+    native: "marathon"
+    notes:
+      "n1": "{1}: A marathon: a long race of about forty-two kilometres."
+    examples:
+      "ম্যারাথনে অনেক মানুষ দৌড়াল।": { native: "Many people ran in the marathon.", bases: { "ম্যারাথনে": "marathon", "মানুষ": "people" } }
+      "ম্যারাথন কঠিন হবে।": "The marathon will be hard."
+  "bn-3855":
+    native: "dive"
+    notes:
+      "n1": "{1}: A dive: a jump into water, head first."
+    examples:
+      "সে পুকুরে ডাইভ দিল।": "She dived into the pond."
+      "ডাইভটা খুব সুন্দর ছিল।": { native: "The dive was very beautiful.", bases: { "ডাইভটা": "dive", "ছিল": "was" } }
+  "bn-3856":
+    native: "jump"
+    notes:
+      "n1": "{1}: A jump: a leap off the ground."
+    examples:
+      "সে লম্বা লাফ দিল।": "She made a long jump."
+      "লাফটা খুব উঁচু।": { native: "The jump is very high.", bases: { "লাফটা": "jump" } }
+  "bn-3857":
+    native: "captain"
+    notes:
+      "n1": "{1}: A captain: the leader of a team."
+    examples:
+      "অধিনায়ক দলকে ডাকলেন।": "The captain called the team."
+      "অধিনায়কের কথা সবাই মানে।": { native: "Everyone follows the captain's word.", bases: { "অধিনায়কের": "captain", "মানে": "follows" } }
+  "bn-3858":
+    native: "teammate"
+    notes:
+      "n1": "{1}: A teammate: a player on the same team."
+    examples:
+      "সতীর্থরা একসঙ্গে খেলল।": "The teammates played together."
+      "সতীর্থের সঙ্গে কথা বললাম।": { native: "I talked with a teammate.", bases: { "সতীর্থের": "teammate" } }
+  "bn-3859":
+    native: "opponent"
+    notes:
+      "n1": "{1}: An opponent: the other side in a game or a contest."
+    examples:
+      "প্রতিপক্ষ দল শক্তিশালী।": "The opposing team is strong."
+      "প্রতিপক্ষের গোল ঠেকানো হলো।": { native: "The opponent's goal was stopped.", bases: { "প্রতিপক্ষের": "opponent", "ঠেকানো": "stopped" } }
+  "bn-3860":
+    native: "track"
+    notes:
+      "n1": "{1}: A track: a running path for a race."
+    examples:
+      "ট্র্যাকে অনেক দৌড়াল।": { native: "They ran a lot on the track.", bases: { "ট্র্যাকে": "track" } }
+      "ট্র্যাকটা ভেজা।": { native: "The track is wet.", bases: { "ট্র্যাকটা": "track" } }
+  "bn-3861":
+    native: "bat"
+    notes:
+      "n1": "{1}: A bat: the wooden tool used to hit the ball in cricket."
+    examples:
+      "ব্যাটটা নতুন।": { native: "The bat is new.", bases: { "ব্যাটটা": "bat" } }
+      "ব্যাট দিয়ে বল মারো।": { native: "Hit the ball with the bat. (familiar)", bases: { "মারো": "hit" } }
+  "bn-3862":
+    native: "wicket"
+    notes:
+      "n1": "{1}: A wicket: the three sticks in cricket, or the state of being out."
+    examples:
+      "উইকেট পড়ল।": "A wicket fell."
+      "উইকেটটা খুব শক্ত।": { native: "The wicket is very hard.", bases: { "উইকেটটা": "wicket" } }
+  "bn-3863":
+    native: "run (cricket)"
+    notes:
+      "n1": "{1}: A run: a point scored in cricket."
+    examples:
+      "সে দশ রান করল।": "She scored ten runs."
+      "রান বেশি হলো।": "The runs were many."
+  "bn-3864":
+    native: "penalty"
+    notes:
+      "n1": "{1}: A penalty: a free shot at the goal after a foul."
+    examples:
+      "পেনাল্টিতে গোল হলো।": { native: "A goal was scored from the penalty.", bases: { "পেনাল্টিতে": "penalty" } }
+      "রেফারি পেনাল্টি দিলেন।": { native: "The referee gave a penalty.", bases: { "পেনাল্টি": "penalty" } }
+  "bn-3865":
+    native: "score"
+    notes:
+      "n1": "{1}: A score: the points or goals counted in a game."
+    examples:
+      "স্কোর কত?": "What is the score? (familiar)"
+      "স্কোর দেখে খুশি হলাম।": { native: "I was happy to see the score.", bases: { "স্কোর": "score" } }
+  "bn-3866":
+    native: "winning"
+    notes:
+      "n1": "{1}: Winning: the side or person that has won."
+    examples:
+      "জয়ী দল মাঠ ছেড়ে গেল।": "The winning team left the field."
+      "জয়ী খেলোয়াড়ের নাম বলো।": "Say the name of the winning player. (familiar)"
+  "bn-3867":
+    native: "defeated"
+    notes:
+      "n1": "{1}: Defeated: the side or person that has lost."
+    examples:
+      "পরাজিত দল হতাশ।": "The defeated team is disappointed."
+      "পরাজিত প্রতিপক্ষকে অভিনন্দন।": "Congratulations to the defeated opponent."
+  "bn-3868":
+    native: "to bat"
+    notes:
+      "n1": "{1}: To bat: to play as the batter in cricket."
+    examples:
+      "সে ভালো ব্যাট করল।": "She batted well."
+      "এখন কে ব্যাট করবে?": "Who will bat now? (familiar)"
+  "bn-3869":
+    native: "to score a goal"
+    notes:
+      "n1": "{1}: To score a goal: to put the ball in the goal."
+    examples:
+      "সে একটা গোল করল।": { native: "She scored a goal.", bases: { "একটা": "a" } }
+      "দ্বিতীয় অর্ধে দল গোল করেছে।": { native: "The team has scored a goal in the second half.", bases: { "অর্ধে": "in the half" } }
