@@ -1,0 +1,349 @@
+schema: 1
+id: "hi-travel"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2214"
+    target: "दर्शनीय"
+    target_scripts: {"perso_arabic": "قابل دید"}
+    reading: "darśanīy"
+    ipa: "d̪ərʃəniːj"
+    phonetic: "[d̪ərʃəniːj]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह शहर बहुत दर्शनीय है।", "reading": "yah śahar bahut darśanīy hai.", "ipa": "jəɦ ʃəɦər bəɦʊt̪ d̪ərʃəniːj ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "शहर", "ref": "hi-0195"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पहाड़ी रास्ते दर्शनीय हैं।", "reading": "pahāṛī rāstē darśanīy haim̐.", "ipa": "pəɦaːɽiː raːst̪eː d̪ərʃəniːj ɦɛ̃ː", "bases": [{"word": "पहाड़ी", "base": "पहाड़ी", "reading": "pahāṛī"}, {"word": "रास्ते", "ref": "hi-0297"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2215"
+    target: "स्थल"
+    target_scripts: {"perso_arabic": "مقام"}
+    reading: "sthal"
+    ipa: "st̪ʰəl"
+    phonetic: "[st̪ʰəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह ऐतिहासिक स्थल है।", "reading": "yah aitihāsik sthal hai.", "ipa": "jəɦ ɛːt̪ɪɦaːsɪk st̪ʰəl ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "ऐतिहासिक", "base": "ऐतिहासिक", "reading": "aitihāsik"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "स्थल तक पैदल जाओ।", "reading": "sthal tak paidal jāō.", "ipa": "st̪ʰəl t̪ək pɛːd̪əl dʒaːoː", "bases": [{"word": "तक", "ref": "hi-0278"}, {"word": "पैदल", "base": "पैदल", "reading": "paidal"}, {"word": "जाओ", "ref": "hi-0777"}]}
+  - id: "hi-2216"
+    target: "गिरजा"
+    target_scripts: {"perso_arabic": "گرجا"}
+    reading: "girjā"
+    ipa: "ɡɪrdʒaː"
+    phonetic: "[ɡɪrdʒaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गिरजा बहुत पुराना है।", "reading": "girjā bahut purānā hai.", "ipa": "ɡɪrdʒaː bəɦʊt̪ pʊraːnaː ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "रविवार को गिरजा खुलता है।", "reading": "ravivār kō girjā khultā hai.", "ipa": "rəʋɪʋaːr koː ɡɪrdʒaː kʰʊlt̪aː ɦɛː", "bases": [{"word": "रविवार", "ref": "hi-0316"}, {"word": "को", "ref": "hi-0277"}, {"word": "खुलता", "base": "खुलना", "reading": "khulnā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2217"
+    target: "किला"
+    target_scripts: {"perso_arabic": "قلعہ"}
+    reading: "kilā"
+    ipa: "kɪlaː"
+    phonetic: "[kɪlaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह किला पहाड़ पर है।", "reading": "yah kilā pahāṛ par hai.", "ipa": "jəɦ kɪlaː pəɦaːɽ pər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "पहाड़", "ref": "hi-1065"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "किला बहुत ऊँचा है।", "reading": "kilā bahut ūm̐cā hai.", "ipa": "kɪlaː bəɦʊt̪ ũːtʃaː ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "ऊँचा", "ref": "hi-0907"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2218"
+    target: "महल"
+    target_scripts: {"perso_arabic": "محل"}
+    reading: "mahal"
+    ipa: "məɦəl"
+    phonetic: "[məɦəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "राजा का महल बड़ा है।", "reading": "rājā kā mahal baṛā hai.", "ipa": "raːdʒaː kaː məɦəl bəɽaː ɦɛː", "bases": [{"word": "राजा", "base": "राजा", "reading": "rājā"}, {"word": "का", "ref": "hi-0279"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "महल के बगीचे देखो।", "reading": "mahal kē bagīcē dēkhō.", "ipa": "məɦəl keː bəɡiːtʃeː d̪eːkʰoː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "बगीचे", "ref": "hi-1071"}, {"word": "देखो", "ref": "hi-0784"}]}
+  - id: "hi-2219"
+    target: "संग्रहालय"
+    target_scripts: {"perso_arabic": "عجائب گھر"}
+    reading: "saṅgrahālay"
+    ipa: "səŋɡrəɦaːləj"
+    phonetic: "[səŋɡrəɦaːləj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संग्रहालय सोमवार को बंद रहता है।", "reading": "saṅgrahālay sōmvār kō band rahtā hai.", "ipa": "səŋɡrəɦaːləj soːmʋaːr koː bənd̪ rəɦt̪aː ɦɛː", "bases": [{"word": "सोमवार", "ref": "hi-0310"}, {"word": "को", "ref": "hi-0277"}, {"word": "बंद", "ref": "hi-1358"}, {"word": "रहता", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हम संग्रहालय गए।", "reading": "ham saṅgrahālay gaē.", "ipa": "ɦəm səŋɡrəɦaːləj ɡəeː", "bases": [{"word": "हम", "ref": "hi-0053"}, {"word": "गए", "ref": "hi-0777"}]}
+  - id: "hi-2220"
+    target: "यादगार"
+    target_scripts: {"perso_arabic": "یادگار"}
+    reading: "yādgār"
+    ipa: "jaːd̪ɡaːr"
+    phonetic: "[jaːd̪ɡaːr]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह सफ़र यादगार था।", "reading": "yah safar yādgār thā.", "ipa": "jəɦ səfər jaːd̪ɡaːr t̪ʰaː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सफ़र", "ref": "hi-1891"}, {"word": "था", "ref": "hi-0780"}]}
+      - {"target": "यादगार तस्वीर खींचो।", "reading": "yādgār tasvīr khīñcō.", "ipa": "jaːd̪ɡaːr t̪əsʋiːr kʰiːɲtʃoː", "bases": [{"word": "तस्वीर", "ref": "hi-1647"}, {"word": "खींचो", "ref": "hi-1799"}]}
+  - id: "hi-2221"
+    target: "टूर"
+    target_scripts: {"perso_arabic": "ٹور"}
+    reading: "ṭūr"
+    ipa: "ʈuːr"
+    phonetic: "[ʈuːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कल हमारा टूर शुरू होगा।", "reading": "kal hamārā ṭūr śurū hōgā.", "ipa": "kəl ɦəmaːraː ʈuːr ʃʊruː ɦoːɡaː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "हमारा", "ref": "hi-0756"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "होगा", "ref": "hi-0780"}]}
+      - {"target": "टूर में कितने लोग हैं?", "reading": "ṭūr mēm̐ kitnē lōg haim̐?", "ipa": "ʈuːr mẽː kɪt̪neː loːɡ ɦɛ̃ː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "कितने", "ref": "hi-0163"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2222"
+    target: "मेज़बान"
+    target_scripts: {"perso_arabic": "میزبان"}
+    reading: "mēzbān"
+    ipa: "meːzbaːn"
+    phonetic: "[meːzbaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेज़बान ने चाय दी।", "reading": "mēzbān nē cāy dī.", "ipa": "meːzbaːn neː tʃaːj d̪iː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "चाय", "ref": "hi-0334"}, {"word": "दी", "ref": "hi-0785"}]}
+      - {"target": "हम मेज़बान के घर ठहरे।", "reading": "ham mēzbān kē ghar ṭhahrē.", "ipa": "ɦəm meːzbaːn keː ɡʱər ʈʰəɦreː", "bases": [{"word": "हम", "ref": "hi-0053"}, {"word": "के", "ref": "hi-0279"}, {"word": "घर", "ref": "hi-0192"}, {"word": "ठहरे", "ref": "hi-1915"}]}
+  - id: "hi-2223"
+    target: "अनजान"
+    target_scripts: {"perso_arabic": "انجان"}
+    reading: "anjān"
+    ipa: "əndʒaːn"
+    phonetic: "[əɲdʒaːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह शहर मेरे लिए अनजान है।", "reading": "yah śahar mērē liē anjān hai.", "ipa": "jəɦ ʃəɦər meːreː lɪeː əndʒaːn ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "शहर", "ref": "hi-0195"}, {"word": "मेरे", "ref": "hi-0752"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अनजान लोगों से मत बोलो।", "reading": "anjān lōgōm̐ sē mat bōlō.", "ipa": "əndʒaːn loːɡõː seː mət̪ boːloː", "bases": [{"word": "लोगों", "ref": "hi-0761"}, {"word": "से", "ref": "hi-0276"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "बोलो", "ref": "hi-0782"}]}
+  - id: "hi-2224"
+    target: "विदेश"
+    target_scripts: {"perso_arabic": "بیرون ملک"}
+    reading: "vidēś"
+    ipa: "ʋɪd̪eːʃ"
+    phonetic: "[ʋɪd̪eːʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह विदेश गया है।", "reading": "vah vidēś gayā hai.", "ipa": "ʋəɦ ʋɪd̪eːʃ ɡəjaː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "गया", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "विदेश में पढ़ाई करना सपना है।", "reading": "vidēś mēm̐ paṛhāī karnā sapnā hai.", "ipa": "ʋɪd̪eːʃ mẽː pəɽʱaːiː kərnaː səpnaː ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "पढ़ाई", "ref": "hi-1614"}, {"word": "करना", "ref": "hi-0779"}, {"word": "सपना", "base": "सपना", "reading": "sapnā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2225"
+    target: "विदेशी"
+    target_scripts: {"perso_arabic": "غیر ملکی"}
+    reading: "vidēśī"
+    ipa: "ʋɪd̪eːʃiː"
+    phonetic: "[ʋɪd̪eːʃiː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह विदेशी कार है।", "reading": "yah vidēśī kār hai.", "ipa": "jəɦ ʋɪd̪eːʃiː kaːr ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "कार", "base": "कार", "reading": "kār"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बहुत से विदेशी लोग आते हैं।", "reading": "bahut sē vidēśī lōg ātē haim̐.", "ipa": "bəɦʊt̪ seː ʋɪd̪eːʃiː loːɡ aːt̪eː ɦɛ̃ː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "से", "ref": "hi-0276"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "आते", "ref": "hi-0778"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2226"
+    target: "मुद्रा"
+    target_scripts: {"perso_arabic": "کرنسی"}
+    reading: "mudrā"
+    ipa: "mʊd̪raː"
+    phonetic: "[mʊd̪raː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस देश की मुद्रा रुपया है।", "reading": "is dēś kī mudrā rupyā hai.", "ipa": "ɪs d̪eːʃ kiː mʊd̪raː rʊpjaː ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "देश", "ref": "hi-0196"}, {"word": "की", "ref": "hi-0279"}, {"word": "रुपया", "ref": "hi-0233"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "विदेशी मुद्रा बदलवाओ।", "reading": "vidēśī mudrā badlvāō.", "ipa": "ʋɪd̪eːʃiː mʊd̪raː bəd̪lʋaːoː", "bases": [{"word": "विदेशी", "ref": "hi-2225"}, {"word": "बदलवाओ", "base": "बदलवाना", "reading": "badlvānā"}]}
+  - id: "hi-2227"
+    target: "पैसा"
+    target_scripts: {"perso_arabic": "پیسہ"}
+    reading: "paisā"
+    ipa: "pɛːsaː"
+    phonetic: "[pɛːsaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरे पास पैसा नहीं है।", "reading": "mērē pās paisā nahīm̐ hai.", "ipa": "meːreː paːs pɛːsaː nəɦĩː ɦɛː", "bases": [{"word": "मेरे", "ref": "hi-0752"}, {"word": "पास", "ref": "hi-0293"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पैसा बचाओ।", "reading": "paisā bacāō.", "ipa": "pɛːsaː bətʃaːoː", "bases": [{"word": "बचाओ", "ref": "hi-1825"}]}
+  - id: "hi-2228"
+    target: "पर्यटन"
+    target_scripts: {"perso_arabic": "سیاحت"}
+    reading: "paryaṭan"
+    ipa: "pərjəʈən"
+    phonetic: "[pərjəʈən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पर्यटन से आय होती है।", "reading": "paryaṭan sē āy hōtī hai.", "ipa": "pərjəʈən seː aːj ɦoːt̪iː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "आय", "base": "आय", "reading": "āy"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यह राज्य पर्यटन के लिए मशहूर है।", "reading": "yah rājy paryaṭan kē liē maśhūr hai.", "ipa": "jəɦ raːdʒj pərjəʈən keː lɪeː məʃɦuːr ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "राज्य", "ref": "hi-2041"}, {"word": "पर्यटन", "base": "पर्यटन", "reading": "paryaṭan"}, {"word": "के", "ref": "hi-0279"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "मशहूर", "ref": "hi-1983"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2229"
+    target: "घुमाना"
+    target_scripts: {"perso_arabic": "گھمانا"}
+    reading: "ghumānā"
+    ipa: "ɡʱʊmaːnaː"
+    phonetic: "[ɡʱʊmaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमें शहर घुमाओ।", "reading": "hamēm̐ śahar ghumāō.", "ipa": "ɦəmẽː ʃəɦər ɡʱʊmaːoː", "bases": [{"word": "हमें", "ref": "hi-0053"}, {"word": "शहर", "ref": "hi-0195"}, {"word": "घुमाओ", "base": "घुमाना", "reading": "ghumānā"}]}
+      - {"target": "गाइड ने हमें किला घुमाया।", "reading": "gāiḍ nē hamēm̐ kilā ghumāyā.", "ipa": "ɡaːɪɖ neː ɦəmẽː kɪlaː ɡʱʊmaːjaː", "bases": [{"word": "गाइड", "ref": "hi-1904"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "हमें", "ref": "hi-0053"}, {"word": "किला", "ref": "hi-2217"}, {"word": "घुमाया", "base": "घुमाना", "reading": "ghumānā"}]}
+  - id: "hi-2231"
+    target: "स्मारक"
+    target_scripts: {"perso_arabic": "یادگار"}
+    reading: "smārak"
+    ipa: "smaːrək"
+    phonetic: "[smaːrək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह स्मारक बहुत पुराना है।", "reading": "yah smārak bahut purānā hai.", "ipa": "jəɦ smaːrək bəɦʊt̪ pʊraːnaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "स्मारक के सामने तस्वीर लो।", "reading": "smārak kē sāmnē tasvīr lō.", "ipa": "smaːrək keː saːmneː t̪əsʋiːr loː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "सामने", "base": "सामने", "reading": "sāmnē"}, {"word": "तस्वीर", "ref": "hi-1647"}, {"word": "लो", "ref": "hi-0786"}]}
+  - id: "hi-2232"
+    target: "नज़ारा"
+    target_scripts: {"perso_arabic": "نظارہ"}
+    reading: "nazārā"
+    ipa: "nəzaːraː"
+    phonetic: "[nəzaːraː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पहाड़ से नज़ारा सुंदर है।", "reading": "pahāṛ sē nazārā sundar hai.", "ipa": "pəɦaːɽ seː nəzaːraː sʊnd̪ər ɦɛː", "bases": [{"word": "पहाड़", "ref": "hi-1065"}, {"word": "से", "ref": "hi-0276"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कितना अच्छा नज़ारा है!", "reading": "kitnā acchā nazārā hai!", "ipa": "kɪt̪naː ətʃtʃʰaː nəzaːraː ɦɛː", "bases": [{"word": "कितना", "ref": "hi-0163"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2233"
+    target: "चिड़ियाघर"
+    target_scripts: {"perso_arabic": "چڑیا گھر"}
+    reading: "ciṛiyāghar"
+    ipa: "tʃɪɽɪjaːɡʱər"
+    phonetic: "[tʃɪɽɪjaːɡʱər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चे चिड़ियाघर जाना चाहते हैं।", "reading": "baccē ciṛiyāghar jānā cāhtē haim̐.", "ipa": "bətʃtʃeː tʃɪɽɪjaːɡʱər dʒaːnaː tʃaːɦt̪eː ɦɛ̃ː", "bases": [{"word": "बच्चे", "ref": "hi-0111"}, {"word": "जाना", "ref": "hi-0777"}, {"word": "चाहते", "ref": "hi-0792"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "चिड़ियाघर में शेर देखा।", "reading": "ciṛiyāghar mēm̐ śēr dēkhā.", "ipa": "tʃɪɽɪjaːɡʱər mẽː ʃeːr d̪eːkʰaː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "शेर", "ref": "hi-1138"}, {"word": "देखा", "ref": "hi-0784"}]}
+  - id: "hi-2234"
+    target: "मूर्ति"
+    target_scripts: {"perso_arabic": "مورتی"}
+    reading: "mūrti"
+    ipa: "muːrt̪ɪ"
+    phonetic: "[muːrt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "चौक पर मूर्ति है।", "reading": "cauk par mūrti hai.", "ipa": "tʃɔːk pər muːrt̪ɪ ɦɛː", "bases": [{"word": "चौक", "base": "चौक", "reading": "cauk"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मूर्ति बहुत सुंदर है।", "reading": "mūrti bahut sundar hai.", "ipa": "muːrt̪ɪ bəɦʊt̪ sʊnd̪ər ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2235"
+    target: "गुंबद"
+    target_scripts: {"perso_arabic": "گنبد"}
+    reading: "gumbad"
+    ipa: "ɡʊmbəd̪"
+    phonetic: "[ɡʊmbəd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मकबरे का गुंबद सफ़ेद है।", "reading": "makbrē kā gumbad safēd hai.", "ipa": "məkbreː kaː ɡʊmbəd̪ səfeːd̪ ɦɛː", "bases": [{"word": "मकबरे", "base": "मकबरा", "reading": "makbrā"}, {"word": "का", "ref": "hi-0279"}, {"word": "सफ़ेद", "ref": "hi-0921"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "गुंबद पर धूप चमकती है।", "reading": "gumbad par dhūp camktī hai.", "ipa": "ɡʊmbəd̪ pər d̪ʱuːp tʃəmkt̪iː ɦɛː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "धूप", "ref": "hi-1255"}, {"word": "चमकती", "ref": "hi-1294"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2236"
+    target: "रंगीन"
+    target_scripts: {"perso_arabic": "رنگین"}
+    reading: "raṅgīn"
+    ipa: "rəŋɡiːn"
+    phonetic: "[rəŋɡiːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बाज़ार रंगीन है।", "reading": "bāzār raṅgīn hai.", "ipa": "baːzaːr rəŋɡiːn ɦɛː", "bases": [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसने रंगीन कपड़े पहने हैं।", "reading": "usnē raṅgīn kapṛē pahnē haim̐.", "ipa": "ʊsneː rəŋɡiːn kəpɽeː pəɦneː ɦɛ̃ː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "कपड़े", "ref": "hi-1106"}, {"word": "पहने", "ref": "hi-1782"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2237"
+    target: "मंच"
+    target_scripts: {"perso_arabic": "منچ"}
+    reading: "mañc"
+    ipa: "məɲtʃ"
+    phonetic: "[məɲtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मंच पर नाच हो रहा है।", "reading": "mañc par nāc hō rahā hai.", "ipa": "məɲtʃ pər naːtʃ ɦoː rəɦaː ɦɛː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "नाच", "ref": "hi-1643"}, {"word": "हो", "ref": "hi-0780"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मंच के सामने बैठो।", "reading": "mañc kē sāmnē baiṭhō.", "ipa": "məɲtʃ keː saːmneː bɛːʈʰoː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "सामने", "base": "सामने", "reading": "sāmnē"}, {"word": "बैठो", "ref": "hi-0788"}]}

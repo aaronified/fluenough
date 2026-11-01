@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-geography"
+name: "Reading: geography"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A description of a region, and a short note about a trip. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-geography-map"
+    title: "A map of the country"
+    theme: "geography"
+    sentences:
+      - {"text": "उत्तर में पहाड़ हैं और दक्षिण में समुद्र का तट है।", "reading": "uttar mēm̐ pahāṛ haim̐ aur dakśiṇ mēm̐ samudr kā taṭ hai.", "ipa": "ʊt̪t̪ər mẽː pəɦaːɽ ɦɛ̃ː ɔːr d̪əkʃɪɳ mẽː səmʊd̪r kaː t̪əʈ ɦɛː"}
+      - {"text": "पूर्व की ओर एक बड़ा राज्य है।", "reading": "pūrv kī ōr ēk baṛā rājy hai.", "ipa": "puːrʋ kiː oːr eːk bəɽaː raːdʒj ɦɛː"}
+      - {"text": "यहाँ की जलवायु गरम और नम है।", "reading": "yahām̐ kī jalvāyu garam aur nam hai.", "ipa": "jəɦãː kiː dʒəlʋaːjʊ ɡərəm ɔːr nəm ɦɛː"}
+      - {"text": "राजमार्ग से शहर लगभग सौ किलोमीटर दूर है।", "reading": "rājmārg sē śahar lagbhag sau kilōmīṭar dūr hai.", "ipa": "raːdʒmaːrɡ seː ʃəɦər ləɡbʱəɡ sɔː kɪloːmiːʈər d̪uːr ɦɛː"}
+    questions:
+      - {"id": "hi-2069", "prompt": {"en": "The mountains are in the north."}, "answer": true}
+      - {"id": "hi-2070", "prompt": {"en": "Where is the sea?"}, "options": [{"en": "In the south"}, {"en": "In the north"}], "answer": 1}
+      - {"id": "hi-2071", "prompt": {"en": "The climate here is cold."}, "answer": false}
+  - id: "hi-geography-trip"
+    title: "A note about a trip"
+    theme: "geography"
+    sentences:
+      - {"text": "हम सागर के किनारे एक द्वीप पर गए।", "reading": "ham sāgar kē kinārē ēk dvīp par gaē.", "ipa": "ɦəm saːɡər keː kɪnaːreː eːk d̪ʋiːp pər ɡəeː"}
+      - {"text": "वहाँ का बंदरगाह बहुत पुराना है।", "reading": "vahām̐ kā bandargāh bahut purānā hai.", "ipa": "ʋəɦãː kaː bənd̪ərɡaːɦ bəɦʊt̪ pʊraːnaː ɦɛː"}
+      - {"text": "ज्वालामुखी के पास ज़मीन काली है।", "reading": "jvālāmukhī kē pās zamīn kālī hai.", "ipa": "dʒʋaːlaːmʊkʰiː keː paːs zəmiːn kaːliː ɦɛː"}
+      - {"text": "भूकंप के बाद गाँव की सड़कें टूट गईं।", "reading": "bhūkamp kē bād gām̐v kī saṛkēm̐ ṭūṭ gaīm̐.", "ipa": "bʱuːkəmp keː baːd̪ ɡãːʋ kiː səɽkẽː ʈuːʈ ɡəĩː"}
+    questions:
+      - {"id": "hi-2072", "prompt": {"en": "They went to an island by the sea."}, "answer": true}
+      - {"id": "hi-2073", "prompt": {"en": "What is old there?"}, "options": [{"en": "The port"}, {"en": "The bridge"}], "answer": 1}
+      - {"id": "hi-2074", "prompt": {"en": "The roads of the village were not damaged."}, "answer": false}

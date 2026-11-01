@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-relationships"
+name: "Reading: relationships"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short letter from a bride to her new family, and a note about a quarrel. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-relationships-letter"
+    title: "A letter to a sister-in-law"
+    theme: "relationships"
+    sentences:
+      - {"text": "भाभी, आपके घर में बहुत अपनापन है।", "reading": "bhābhī, āpkē ghar mēm̐ bahut apnāpan hai.", "ipa": "bʱaːbʱiː aːpkeː ɡʱər mẽː bəɦʊt̪ əpnaːpən ɦɛː"}
+      - {"text": "ननद और देवर से मेरी अच्छी दोस्ती हो गई है।", "reading": "nanad aur dēvar sē mērī acchī dōstī hō gaī hai.", "ipa": "nənəd̪ ɔːr d̪eːʋər seː meːriː ətʃtʃʰiː d̪oːst̪iː ɦoː ɡəiː ɦɛː"}
+      - {"text": "कल हमारा थोड़ा झगड़ा हुआ, पर मैंने माफ़ी माँग ली।", "reading": "kal hamārā thōṛā jhagṛā huā, par mainnē māfī mām̐g lī.", "ipa": "kəl ɦəmaːraː t̪ʰoːɽaː dʒʱəɡɽaː ɦʊaː pər mɛːnneː maːfiː mãːɡ liː"}
+      - {"text": "सास और ससुर का सम्मान मैं हमेशा करूँगी।", "reading": "sās aur sasur kā sammān maim̐ hamēśā karūm̐gī.", "ipa": "saːs ɔːr səsʊr kaː səmmaːn mɛ̃ː ɦəmeːʃaː kərũːɡiː"}
+    questions:
+      - {"id": "hi-2584", "prompt": {"en": "The writer feels warmth in the house."}, "answer": true}
+      - {"id": "hi-2585", "prompt": {"en": "What did the writer ask for after the quarrel?"}, "options": [{"en": "Forgiveness"}, {"en": "Money"}], "answer": 1}
+      - {"id": "hi-2586", "prompt": {"en": "The writer does not respect the in-laws."}, "answer": false}
+  - id: "hi-relationships-note"
+    title: "A note from a friend"
+    theme: "relationships"
+    sentences:
+      - {"text": "मेरी सहेली और उसके साथी आज मिलने आएँगे।", "reading": "mērī sahēlī aur uskē sāthī āj milnē āēm̐gē.", "ipa": "meːriː səɦeːliː ɔːr ʊskeː saːt̪ʰiː aːdʒ mɪlneː aːẽːɡeː"}
+      - {"text": "प्रेम और इज़्ज़त से रिश्ते बनते हैं।", "reading": "prēm aur izzat sē riśtē bantē haim̐.", "ipa": "preːm ɔːr ɪzzət̪ seː rɪʃt̪eː bənt̪eː ɦɛ̃ː"}
+      - {"text": "बच्चा रूठ गया, तो उसे मनाना पड़ा।", "reading": "baccā rūṭh gayā, tō usē manānā paṛā.", "ipa": "bətʃtʃaː ruːʈʰ ɡəjaː t̪oː ʊseː mənaːnaː pəɽaː"}
+      - {"text": "पुराने दोस्त फिर से जुड़ गए।", "reading": "purānē dōst phir sē juṛ gaē.", "ipa": "pʊraːneː d̪oːst̪ pʰɪr seː dʒʊɽ ɡəeː"}
+    questions:
+      - {"id": "hi-2587", "prompt": {"en": "The friend's companion will meet the writer today."}, "answer": true}
+      - {"id": "hi-2588", "prompt": {"en": "Why did the child have to be coaxed?"}, "options": [{"en": "He had sulked"}, {"en": "He was hungry"}], "answer": 1}
+      - {"id": "hi-2589", "prompt": {"en": "Old friends have drifted apart."}, "answer": false}

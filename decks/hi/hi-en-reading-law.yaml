@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-law"
+name: "Reading: law"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short account of a case in court, and a notice about a traffic fine. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-law-court"
+    title: "A day in court"
+    theme: "law"
+    sentences:
+      - {"text": "आज अदालत में एक मुकदमे की सुनवाई थी।", "reading": "āj adālat mēm̐ ēk mukdmē kī sunvāī thī.", "ipa": "aːdʒ əd̪aːlət̪ mẽː eːk mʊkd̪meː kiː sʊnʋaːiː t̪ʰiː"}
+      - {"text": "गवाह ने बताया कि आरोपी वहाँ नहीं था।", "reading": "gavāh nē batāyā ki ārōpī vahām̐ nahīm̐ thā.", "ipa": "ɡəʋaːɦ neː bət̪aːjaː kɪ aːroːpiː ʋəɦãː nəɦĩː t̪ʰaː"}
+      - {"text": "जज ने आरोपी को बरी कर दिया।", "reading": "jaj nē ārōpī kō barī kar diyā.", "ipa": "dʒədʒ neː aːroːpiː koː bəriː kər d̪ɪjaː"}
+      - {"text": "यातायात नियम तोड़ने पर जुर्माना देना होता है।", "reading": "yātāyāt niyam tōṛnē par jurmānā dēnā hōtā hai.", "ipa": "jaːt̪aːjaːt̪ nɪjəm t̪oːɽneː pər dʒʊrmaːnaː d̪eːnaː ɦoːt̪aː ɦɛː"}
+    questions:
+      - {"id": "hi-2695", "prompt": {"en": "The court heard a case today."}, "answer": true}
+      - {"id": "hi-2696", "prompt": {"en": "What did the witness say?"}, "options": [{"en": "The accused was not there"}, {"en": "The judge was absent"}], "answer": 1}
+      - {"id": "hi-2697", "prompt": {"en": "The accused was sent to prison."}, "answer": false}
+  - id: "hi-law-notice"
+    title: "A notice about the law"
+    theme: "law"
+    sentences:
+      - {"text": "संविधान हर नागरिक को न्याय का अधिकार देता है।", "reading": "saṁvidhān har nāgrik kō nyāy kā adhikār dētā hai.", "ipa": "sə̃ʋɪd̪ʱaːn ɦər naːɡrɪk koː njaːj kaː əd̪ʱɪkaːr d̪eːt̪aː ɦɛː"}
+      - {"text": "गैरकानूनी काम करने पर सज़ा होगी।", "reading": "gairkānūnī kām karnē par sazā hōgī.", "ipa": "ɡɛːrkaːnuːniː kaːm kərneː pər səzaː ɦoːɡiː"}
+      - {"text": "ज़मानत के लिए वकील से बात करें।", "reading": "zamānat kē liē vakīl sē bāt karēm̐.", "ipa": "zəmaːnət̪ keː lɪeː ʋəkiːl seː baːt̪ kərẽː"}
+      - {"text": "निर्दोष को इंसाफ़ मिलना चाहिए।", "reading": "nirdōś kō iṁsāf milnā cāhiē.", "ipa": "nɪrd̪oːʃ koː ɪ̃saːf mɪlnaː tʃaːɦɪeː"}
+    questions:
+      - {"id": "hi-2698", "prompt": {"en": "The constitution gives every citizen a right to justice."}, "answer": true}
+      - {"id": "hi-2699", "prompt": {"en": "What happens to illegal work?"}, "options": [{"en": "Punishment"}, {"en": "A reward"}], "answer": 1}
+      - {"id": "hi-2700", "prompt": {"en": "Bail needs no lawyer."}, "answer": false}

@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-news"
+name: "Reading: news"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A morning paper's front page, and a short radio bulletin. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-news-paper"
+    title: "The morning paper"
+    theme: "news"
+    sentences:
+      - {"text": "आज के अख़बार की सुर्खी है: शहर में नया चुनाव होगा।", "reading": "āj kē ak͟hbār kī surkhī hai: śahar mēm̐ nayā cunāv hōgā.", "ipa": "aːdʒ keː əxbaːr kiː sʊrkʰiː ɦɛː ʃəɦər mẽː nəjaː tʃʊnaːʋ ɦoːɡaː"}
+      - {"text": "संवाददाता ने लिखा कि लोग विरोध कर रहे हैं।", "reading": "saṁvāddātā nē likhā ki lōg virōdh kar rahē haim̐.", "ipa": "sə̃ʋaːd̪d̪aːt̪aː neː lɪkʰaː kɪ loːɡ ʋɪroːd̪ʱ kər rəɦeː ɦɛ̃ː"}
+      - {"text": "मंत्री का बयान पहले पेज पर छपा है।", "reading": "mantrī kā bayān pahlē pēj par chapā hai.", "ipa": "mənt̪riː kaː bəjaːn pəɦleː peːdʒ pər tʃʰəpaː ɦɛː"}
+      - {"text": "अदालत का फ़ैसला अगले हफ़्ते आएगा।", "reading": "adālat kā faislā aglē haftē āēgā.", "ipa": "əd̪aːlət̪ kaː fɛːslaː əɡleː ɦəft̪eː aːeːɡaː"}
+    questions:
+      - {"id": "hi-2174", "prompt": {"en": "The headline is about an election."}, "answer": true}
+      - {"id": "hi-2175", "prompt": {"en": "Who wrote about the protest?"}, "options": [{"en": "A reporter"}, {"en": "The editor"}], "answer": 1}
+      - {"id": "hi-2176", "prompt": {"en": "The court's decision was given today."}, "answer": false}
+  - id: "hi-news-radio"
+    title: "A radio bulletin"
+    theme: "news"
+    sentences:
+      - {"text": "आपको रात नौ बजे के समाचार सुनाए जा रहे हैं।", "reading": "āpkō rāt nau bajē kē samācār sunāē jā rahē haim̐.", "ipa": "aːpkoː raːt̪ nɔː bədʒeː keː səmaːtʃaːr sʊnaːeː dʒaː rəɦeː ɦɛ̃ː"}
+      - {"text": "शहर में एक हादसा हुआ, पर कोई घायल नहीं हुआ।", "reading": "śahar mēm̐ ēk hādsā huā, par kōī ghāyal nahīm̐ huā.", "ipa": "ʃəɦər mẽː eːk ɦaːd̪saː ɦʊaː pər koːiː ɡʱaːjəl nəɦĩː ɦʊaː"}
+      - {"text": "सरकार ने नई योजना की घोषणा की है।", "reading": "sarkār nē naī yōjnā kī ghōśṇā kī hai.", "ipa": "sərkaːr neː nəiː joːdʒnaː kiː ɡʱoːʃɳaː kiː ɦɛː"}
+      - {"text": "कल सुबह प्रदर्शन होगा।", "reading": "kal subah pradarśan hōgā.", "ipa": "kəl sʊbəɦ prəd̪ərʃən ɦoːɡaː"}
+    questions:
+      - {"id": "hi-2177", "prompt": {"en": "The news is read at nine in the evening."}, "answer": true}
+      - {"id": "hi-2178", "prompt": {"en": "What happened in the city?"}, "options": [{"en": "An accident"}, {"en": "A festival"}], "answer": 1}
+      - {"id": "hi-2179", "prompt": {"en": "The government made an announcement."}, "answer": true}

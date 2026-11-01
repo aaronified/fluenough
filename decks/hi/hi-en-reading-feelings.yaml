@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-feelings"
+name: "Reading: feelings"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A letter about a friend's mood, and a short note about a family day. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-feelings-letter"
+    title: "A letter about a friend"
+    theme: "feelings"
+    sentences:
+      - {"text": "मेरा दोस्त इन दिनों उदास रहता है।", "reading": "mērā dōst in dinōm̐ udās rahtā hai.", "ipa": "meːraː d̪oːst̪ ɪn d̪ɪnõː ʊd̪aːs rəɦt̪aː ɦɛː"}
+      - {"text": "उसे काम का तनाव है और वह परेशान है।", "reading": "usē kām kā tanāv hai aur vah parēśān hai.", "ipa": "ʊseː kaːm kaː t̪ənaːʋ ɦɛː ɔːr ʋəɦ pəreːʃaːn ɦɛː"}
+      - {"text": "मैंने उसे भरोसा दिलाया, और अब वह राहत महसूस करता है।", "reading": "mainnē usē bharōsā dilāyā, aur ab vah rāhat mahsūs kartā hai.", "ipa": "mɛːnneː ʊseː bʱəroːsaː d̪ɪlaːjaː ɔːr əb ʋəɦ raːɦət̪ məɦsuːs kərt̪aː ɦɛː"}
+      - {"text": "कल हम सब मिलकर खूब हँसे।", "reading": "kal ham sab milkar khūb ham̐sē.", "ipa": "kəl ɦəm səb mɪlkər kʰuːb ɦə̃seː"}
+    questions:
+      - {"id": "hi-2141", "prompt": {"en": "The friend is happy these days."}, "answer": false}
+      - {"id": "hi-2142", "prompt": {"en": "What makes the friend worried?"}, "options": [{"en": "Work stress"}, {"en": "Money"}], "answer": 1}
+      - {"id": "hi-2143", "prompt": {"en": "The writer made the friend feel relief."}, "answer": true}
+  - id: "hi-feelings-day"
+    title: "A family day"
+    theme: "feelings"
+    sentences:
+      - {"text": "दादी की मुस्कान देखकर सबको गर्व हुआ।", "reading": "dādī kī muskān dēkhkar sabkō garv huā.", "ipa": "d̪aːd̪iː kiː mʊskaːn d̪eːkʰkər səbkoː ɡərʋ ɦʊaː"}
+      - {"text": "छोटा बच्चा अकेला बैठा था और घबराया हुआ था।", "reading": "chōṭā baccā akēlā baiṭhā thā aur ghabrāyā huā thā.", "ipa": "tʃʰoːʈaː bətʃtʃaː əkeːlaː bɛːʈʰaː t̪ʰaː ɔːr ɡʱəbraːjaː ɦʊaː t̪ʰaː"}
+      - {"text": "माँ ने प्यार से उसके सिर पर हाथ रखा।", "reading": "mām̐ nē pyār sē uskē sir par hāth rakhā.", "ipa": "mãː neː pjaːr seː ʊskeː sɪr pər ɦaːt̪ʰ rəkʰaː"}
+      - {"text": "सबकी शर्म चली गई और घर में शांति आ गई।", "reading": "sabkī śarm calī gaī aur ghar mēm̐ śānti ā gaī.", "ipa": "səbkiː ʃərm tʃəliː ɡəiː ɔːr ɡʱər mẽː ʃaːnt̪ɪ aː ɡəiː"}
+    questions:
+      - {"id": "hi-2144", "prompt": {"en": "Everyone was proud when the grandmother smiled."}, "answer": true}
+      - {"id": "hi-2145", "prompt": {"en": "How did the child feel?"}, "options": [{"en": "Calm"}, {"en": "Frightened"}], "answer": 2}
+      - {"id": "hi-2146", "prompt": {"en": "The mother was angry with the child."}, "answer": false}
