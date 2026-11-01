@@ -1,0 +1,251 @@
+schema: 1
+id: or-first-words
+part: core
+kind: vocab
+language:
+  code: or
+  iso639_3: ory
+  name: Odia
+  script: odia
+  tts: or-IN
+  icon: ଓ
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: or-0001
+  target: ହଁ
+  reading: hã
+  ipa: hɔ̃
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ହଁ, ମୁଁ ଆସୁଛି।
+    reading: hã, muṁ āsuchi.
+    ipa: hɔ̃, muŋ aːsut͡ʃʰi.
+    bases:
+    - word: ମୁଁ
+      ref: or-0003
+    - word: ଆସୁଛି
+      ref: or-0010
+  - target: ହଁ, ପାଣି ଭଲ।
+    reading: hã, pāṇi bhala.
+    ipa: hɔ̃, paːɳi bʱɔlɔ.
+- id: or-0002
+  target: ନା
+  reading: nā
+  ipa: naː
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ପାଣି ନାହିଁ।
+    reading: pāṇi nāhiṁ.
+    ipa: paːɳi naːhĩ.
+    bases:
+    - word: ନାହିଁ
+      base: ନା
+      reading: nā
+  - target: ନା, ମୁଁ ଖାଉନାହିଁ।
+    reading: nā, muṁ khāunāhiṁ.
+    ipa: naː, muŋ kʰaːunaːhĩ.
+    bases:
+    - word: ମୁଁ
+      ref: or-0003
+    - word: ଖାଉନାହିଁ
+      base: ଖା
+      reading: khā
+- id: or-0003
+  target: ମୁଁ
+  reading: muṁ
+  ipa: mũ
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ମୁଁ ପାଣି ପିଉଛି।
+    reading: muṁ pāṇi piuchi.
+    ipa: mũ paːɳi pi.ut͡ʃʰi.
+    bases:
+    - word: ପିଉଛି
+      base: ପିଇବା
+      reading: pibā
+  - target: ମୁଁ ଭଲ ଅଛି।
+    reading: muṁ bhala achi.
+    ipa: mũ bʱɔlɔ ɔt͡ʃʰi.
+    bases:
+    - word: ଅଛି
+      base: ଅଛ
+      reading: acha
+- id: or-0004
+  target: ଆପଣ
+  reading: āpaṇa
+  ipa: aːpɔɳɔ
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ଆପଣ ପାଣି ପିଇବେ?
+    reading: āpaṇa pāṇi pibe?
+    ipa: aːpɔɳɔ paːɳi pibe?
+    bases:
+    - word: ପିଇବେ
+      base: ପିଇବା
+      reading: pibā
+  - target: ଆପଣ ଭଲ ଅଛନ୍ତି।
+    reading: āpaṇa bhala achanti.
+    ipa: aːpɔɳɔ bʱɔlɔ ɔt͡ʃʰɔnti.
+    bases:
+    - word: ଅଛନ୍ତି
+      base: ଅଛ
+      reading: acha
+- id: or-0005
+  target: ପାଣି
+  reading: pāṇi
+  ipa: paːɳi
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ପାଣି ଭଲ।
+    reading: pāṇi bhala.
+    ipa: paːɳi bʱɔlɔ.
+  - target: ପାଣି ଦିଅନ୍ତୁ।
+    reading: pāṇi diantu.
+    ipa: paːɳi diɔntu.
+    bases:
+    - word: ଦିଅନ୍ତୁ
+      base: ଦିଅ
+      reading: dia
+- id: or-0006
+  target: ଭଲ
+  reading: bhala
+  ipa: bʱɔlɔ
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ଘର ଭଲ।
+    reading: ghara bhala.
+    ipa: gʱɔɾɔ bʱɔlɔ.
+    bases:
+    - word: ଘର
+      ref: or-0009
+  - target: ବହୁତ ଭଲ!
+    reading: bahuta bhala!
+    ipa: bɔhutɔ bʱɔlɔ!
+    bases:
+    - word: ବହୁତ
+      base: ବହୁତ
+      reading: bahuta
+- id: or-0007
+  target: ଏକ
+  reading: eka
+  ipa: ekɔ
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ଏକ, ଦୁଇ।
+    reading: eka, dui.
+    ipa: ekɔ, dui.
+    bases:
+    - word: ଦୁଇ
+      base: ଦୁଇ
+      reading: dui
+  - target: ଏକ ଘର।
+    reading: eka ghara.
+    ipa: ekɔ gʱɔɾɔ.
+    bases:
+    - word: ଘର
+      ref: or-0009
+- id: or-0008
+  target: ବଡ଼
+  reading: baṛa
+  ipa: bɔɽɔ
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ବଡ଼ ଘର।
+    reading: baṛa ghara.
+    ipa: bɔɽɔ gʱɔɾɔ.
+    bases:
+    - word: ଘର
+      ref: or-0009
+  - target: ଏହା ବଡ଼।
+    reading: ehā baṛa.
+    ipa: ehaː bɔɽɔ.
+    bases:
+    - word: ଏହା
+      base: ଏହା
+      reading: ehā
+- id: or-0009
+  target: ଘର
+  reading: ghara
+  ipa: gʱɔɾɔ
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ଏହା ମୋ ଘର।
+    reading: ehā mo ghara.
+    ipa: ehaː mo gʱɔɾɔ.
+    bases:
+    - word: ଏହା
+      base: ଏହା
+      reading: ehā
+    - word: ମୋ
+      ref: or-0003
+  - target: ଘରେ ପାଣି ନାହିଁ।
+    reading: ghare pāṇi nāhiṁ.
+    ipa: gʱɔɾe paːɳi naːhĩ.
+    bases:
+    - word: ଘରେ
+      base: ଘର
+      reading: ghara
+    - word: ନାହିଁ
+      base: ନା
+      reading: nā
+- id: or-0010
+  target: ଆସ
+  reading: āsa
+  ipa: aːsɔ
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ଆସ, ଚାଲ।
+    reading: āsa, cāla.
+    ipa: aːsɔ, t͡ʃaːlɔ.
+    bases:
+    - word: ଚାଲ
+      base: ଚାଲିବା
+      reading: cālibā
+  - target: ମୁଁ କାଲି ଆସିବି।
+    reading: muṁ kāli āsibi.
+    ipa: mũ kaːli aːsibi.
+    bases:
+    - word: ମୁଁ
+      ref: or-0003
+    - word: କାଲି
+      base: କାଲି
+      reading: kāli
+    - word: ଆସିବି
+      base: ଆସ
+      reading: āsa
