@@ -79,8 +79,13 @@ knows the key does not download what needs a newer app and shows "Needs app X,
 Update", and an older app ignores it. The tool, and so the validator, fails
 when the file is not JSON of that shape, a value is not `major.minor.patch`,
 a language is not in the index (no decks, or hidden), or a file is not listed.
-Set it only for a version that is released, and never for a language the
-released app already ships. Empty maps change nothing.
+Set it only for a version that is released. The tool refuses a language
+that `assets/languages.yaml` lists at the latest `v*` git tag, and a file that
+`decks/` holds at that tag: the released app already ships them and could not
+know the key. Gate new files only. Without git or the tag it warns and skips
+the check; `--strict-released` (or `FLUENOUGH_STRICT_RELEASED=1`, set by CI's
+"Released app reads the decks") makes that an error. Empty maps change
+nothing.
 
 ## `pictures.py`
 

@@ -5,10 +5,10 @@ import '../../app/links.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
 
-/// What the app says when a language or deck needs a newer app than the one
-/// installed (`min_app`, ADR-0052): calm, with one way out, the newest
-/// release's page on GitHub. Not every phone updates as soon as a release is
-/// out, and a deck an old app cannot read is never downloaded.
+// What the app says when a language or deck needs a newer app than the one
+// installed (`min_app`, ADR-0052): calm, with one way out, the newest
+// release's page on GitHub. Not every phone updates as soon as a release is
+// out, and a deck an old app cannot read is never downloaded.
 
 /// Opens the newest release's page, where the app is downloaded; copies the
 /// link when nothing on the phone can open it.

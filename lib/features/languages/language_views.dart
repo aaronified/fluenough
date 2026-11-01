@@ -22,7 +22,9 @@ class LanguageView {
   String get name => language.name;
 
   /// Whether Learn is offered: a course has decks to download, and this
-  /// app is new enough to read them.
+  /// app is new enough to read them. The gate is language-level only: a
+  /// language's own `min_app` greys the row, while a deck's or a file's
+  /// `min_app` does not (the language stays learnable; ADR-0052).
   bool get canLearn => course != null && needsApp == null;
 
   /// The app version the course needs, when this app is older (ADR-0052).

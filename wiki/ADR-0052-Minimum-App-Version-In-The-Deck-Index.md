@@ -62,7 +62,20 @@ decided is how every later app treats what is newer than itself.
   language returns `DeckDownloadFailure.appTooOld`, whose text already says
   to update the app.
 - **A `min_app` is never set for a language the released app already ships,**
-  and never above a version that is not yet released.
+  and never above a version that is not yet released. The first is enforced
+  (owner, 2026-11-01: "Do that"): `tools/deck_index.py`, and so
+  `validate_decks.py decks/`, refuses a `languages` entry whose code is in
+  `assets/languages.yaml` at the latest release tag (`git tag --list 'v*'
+  --sort=-v:refname`), and a `files` entry that exists under `decks/` at that
+  tag, which an older app already reads. Only new files may be gated, in a
+  language of the released app or not. Without git or a tag the check prints
+  a warning and is skipped; `--strict-released` (or
+  `FLUENOUGH_STRICT_RELEASED=1`) makes that an error. CI's "Released app
+  reads the decks" job, which fetches every tag, runs the index with it; the
+  other runs (shards, `deck-index.yml`, which fetch no tags) warn only.
+  Nothing listed in `min_app.json` means nothing is checked, so the empty
+  file still changes nothing. The second (unreleased versions) is not
+  checked.
 
 ## What this does not do
 

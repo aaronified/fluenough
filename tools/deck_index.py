@@ -31,7 +31,10 @@ proposal or a reviewer's sign-off changed (#444, #449).
 A language, or one file, may carry `min_app`, the oldest app version that can
 read it (ADR-0052), written from decks/min_app.json. The app that knows the
 key does not download what needs a newer app and says so; the released app
-before it ignores the key.
+before it ignores the key, so a language the latest release already ships, or
+a file it already reads, is refused (read from the latest v* git tag; without
+git or the tag a warning, or an error with --strict-released or
+FLUENOUGH_STRICT_RELEASED=1, which CI's release-reader job sets).
 
 Writing the index also keeps the languages badge in the root README.md
 current: its number (`languages-N` and `N languages`) is the count of the
@@ -49,9 +52,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
+
+import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -131,6 +138,72 @@ def check_min_app(languages: dict[str, str], files: dict[str, str],
             problems.append(f"{_rel(MIN_APP)}: file {path!r} is not listed in "
                             f"the index")
     return problems
+
+
+class ReleasedUnknown(Exception):
+    """The latest release cannot be read here (no git, no tag)."""
+
+
+def _git(root: Path, *args: str) -> str:
+    try:
+        done = subprocess.run(["git", "-C", str(root), *args],
+                              capture_output=True, text=True, check=False)
+    except OSError as e:
+        raise ReleasedUnknown(f"git is not available ({e})") from e
+    if done.returncode != 0:
+        raise ReleasedUnknown(done.stderr.strip() or f"git {args[0]} failed")
+    return done.stdout
+
+
+def released_app(root: Path) -> tuple[str, set[str], set[str]]:
+    """The latest release tag of the repository at [root], the language codes
+    in its assets/languages.yaml, and the paths under decks/ it holds: what
+    the released app ships (ADR-0052). Raises [ReleasedUnknown] without git,
+    a repository of its own at [root], a v* tag, or a readable languages file."""
+    if _git(root, "rev-parse", "--show-prefix").strip():
+        raise ReleasedUnknown("not the top of a git repository")
+    tags = _git(root, "tag", "--list", "v*", "--sort=-v:refname").split()
+    if not tags:
+        raise ReleasedUnknown("the repository has no v* tag (fetch tags)")
+    tag = tags[0]
+    try:
+        raw = yaml.safe_load(_git(root, "show", f"{tag}:assets/languages.yaml"))
+        codes = {str(lang["code"]) for lang in raw["languages"]}
+    except (yaml.YAMLError, KeyError, TypeError) as e:
+        raise ReleasedUnknown(f"assets/languages.yaml at {tag} is unreadable ({e})") from e
+    paths = set(_git(root, "ls-tree", "-r", "--name-only", tag, "--", "decks/").split("\n"))
+    return tag, codes, paths - {""}
+
+
+def check_released(languages: dict[str, str], files: dict[str, str],
+                   root: Path | None = None, strict: bool = False
+                   ) -> tuple[list[str], list[str]]:
+    """What decks/min_app.json gates that the latest released app already
+    ships: a language in its assets/languages.yaml, or a file in its decks/.
+    That app cannot know the key, so the entry is refused (errors). When the
+    release cannot be read, nothing is checked and a warning says so, or, if
+    [strict], it is an error. Returns (errors, warnings)."""
+    if not languages and not files:
+        return [], []
+    try:
+        tag, codes, paths = released_app(root or ROOT)
+    except ReleasedUnknown as e:
+        message = (f"{_rel(MIN_APP)}: cannot check against the latest release: "
+                   f"{e}")
+        return ([message], []) if strict else ([], [message + "; skipped"])
+    problems = []
+    for code in sorted(languages):
+        if code in codes:
+            problems.append(
+                f"{_rel(MIN_APP)}: language {code!r} is already shipped by the "
+                f"latest release {tag} (it is in assets/languages.yaml there); "
+                f"remove it (gate new files, not a shipped language)")
+    for path in sorted(files):
+        if path in paths:
+            problems.append(
+                f"{_rel(MIN_APP)}: file {path!r} already exists in the latest "
+                f"release {tag}, which reads it; gate only new files")
+    return problems, []
 
 
 # Languages kept in the repository, and validated like any other, but not
@@ -405,7 +478,8 @@ def _language_block(files: list[Path]) -> dict:
     return {}
 
 
-def build(reports: list[vd.Report] | None = None) -> dict:
+def build(reports: list[vd.Report] | None = None,
+          strict_released: bool | None = None) -> dict:
     """The index of the repository's decks/, from [reports] when the
     validator has them, else from validating every file here."""
     langs = sorted(p for p in DECKS.iterdir()
@@ -518,6 +592,13 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         out.append(language)
     problems = check_min_app(min_languages, min_files,
                              {lang["code"] for lang in out}, listed_files)
+    if strict_released is None:
+        strict_released = bool(os.environ.get("FLUENOUGH_STRICT_RELEASED"))
+    if not problems:
+        problems, warnings = check_released(min_languages, min_files,
+                                            strict=strict_released)
+        for warning in warnings:
+            print(f"warning: {warning}", file=sys.stderr)
     if problems:
         raise MinAppError("; ".join(problems))
     return {
@@ -614,8 +695,11 @@ def update_badge(index: dict) -> bool:
 
 def main(argv: list[str]) -> int:
     args = argv[1:]
+    if "--strict-released" in args:
+        args.remove("--strict-released")
+        os.environ["FLUENOUGH_STRICT_RELEASED"] = "1"
     if args not in ([], ["--check"]):
-        print("usage: deck_index.py [--check]", file=sys.stderr)
+        print("usage: deck_index.py [--check] [--strict-released]", file=sys.stderr)
         return 2
     if not DECKS.is_dir():
         print(f"error: {DECKS} does not exist", file=sys.stderr)
