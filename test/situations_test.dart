@@ -114,7 +114,9 @@ situations:
         await tester.tap(find.text(l10n.commonClose));
         await tester.pumpAndSettle();
 
-        await tester.fling(find.text('leaf'), const Offset(-400, 0), 1500);
+        // Half a page, not a whole one: a whole page of drag plus a fling's
+        // velocity carries the view on to the card after next.
+        await tester.fling(find.text('leaf'), const Offset(-200, 0), 1500);
         await tester.pumpAndSettle();
         expect(
           find.text(l10n.situationInspectTitle('Rail station', 2, 3)),
