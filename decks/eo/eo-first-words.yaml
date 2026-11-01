@@ -1,0 +1,120 @@
+schema: 1
+id: "eo-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "eo", iso639_3: "epo", name: "Esperanto", script: "latin", tts: "eo", icon: "Eo" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "eo-0001"
+    target: "Jes"
+    ipa: "jɛs"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jes, mi komprenas.", ipa: "jɛs mi komprɛnas", bases: [{ word: "Jes", base: "jes" }, { word: "mi", base: "mi" }, { word: "komprenas", base: "kompreni" }] }
+      - { target: "Jes, dankon.", ipa: "jɛs dankon", bases: [{ word: "Jes", base: "jes" }, { word: "dankon", base: "danko" }] }
+  - id: "eo-0002"
+    target: "Ne"
+    ipa: "ne"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ne, dankon.", ipa: "ne dankon", bases: [{ word: "Ne", base: "ne" }, { word: "dankon", base: "danko" }] }
+      - { target: "Mi ne havas akvon.", ipa: "mi ne havas akvon", bases: [{ word: "Mi", base: "mi" }, { word: "ne", base: "ne" }, { word: "havas", base: "havi" }, { word: "akvon", base: "akvo" }] }
+  - id: "eo-0003"
+    target: "Mi"
+    ipa: "mi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi estas instruisto.", ipa: "mi ɛstas instruisto", bases: [{ word: "Mi", base: "mi" }, { word: "estas", base: "esti" }, { word: "instruisto", base: "instruisto" }] }
+      - { target: "Mi trinkas akvon.", ipa: "mi triŋkas akvon", bases: [{ word: "Mi", base: "mi" }, { word: "trinkas", base: "trinki" }, { word: "akvon", base: "akvo" }] }
+  - id: "eo-0004"
+    target: "Vi"
+    ipa: "vi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vi estas bona.", ipa: "vi ɛstas bona", bases: [{ word: "Vi", base: "vi" }, { word: "estas", base: "esti" }, { word: "bona", base: "bona" }] }
+      - { target: "Ĉu vi havas akvon?", ipa: "tʃu vi havas akvon", bases: [{ word: "Ĉu", base: "ĉu" }, { word: "vi", base: "vi" }, { word: "havas", base: "havi" }, { word: "akvon", base: "akvo" }] }
+  - id: "eo-0005"
+    target: "Akvo"
+    ipa: "akvo"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Akvo estas freŝa.", ipa: "akvo ɛstas frɛʃa", bases: [{ word: "Akvo", base: "akvo" }, { word: "estas", base: "esti" }, { word: "freŝa", base: "freŝa" }] }
+      - { target: "Mi bezonas akvon.", ipa: "mi bɛzonas akvon", bases: [{ word: "Mi", base: "mi" }, { word: "bezonas", base: "bezoni" }, { word: "akvon", base: "akvo" }] }
+  - id: "eo-0006"
+    target: "Bona"
+    ipa: "bona"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bona tago.", ipa: "bona tago", bases: [{ word: "Bona", base: "bona" }, { word: "tago", base: "tago" }] }
+      - { target: "Bona libro.", ipa: "bona libro", bases: [{ word: "Bona", base: "bona" }, { word: "libro", base: "libro" }] }
+  - id: "eo-0007"
+    target: "Unu"
+    ipa: "unu"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Unu, du, tri.", ipa: "unu du tri", bases: [{ word: "Unu", base: "unu" }, { word: "du", base: "du" }, { word: "tri", base: "tri" }] }
+      - { target: "Mi havas unu fraton.", ipa: "mi havas unu fraton", bases: [{ word: "Mi", base: "mi" }, { word: "havas", base: "havi" }, { word: "unu", base: "unu" }, { word: "fraton", base: "frato" }] }
+  - id: "eo-0008"
+    target: "Du"
+    ipa: "du"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Du katoj.", ipa: "du katoj", bases: [{ word: "Du", base: "du" }, { word: "katoj", base: "kato" }] }
+      - { target: "Mi havas du infanojn.", ipa: "mi havas du infanojn", bases: [{ word: "Mi", base: "mi" }, { word: "havas", base: "havi" }, { word: "du", base: "du" }, { word: "infanojn", base: "infano" }] }
+  - id: "eo-0009"
+    target: "Ĉi tie"
+    ipa: "tʃi tie"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Venu ĉi tien.", ipa: "venu tʃi tien", bases: [{ word: "Venu", base: "veni" }, { word: "ĉi", base: "ĉi" }, { word: "tien", base: "tie" }] }
+      - { target: "Mi estas ĉi tie.", ipa: "mi ɛstas tʃi tie", bases: [{ word: "Mi", base: "mi" }, { word: "estas", base: "esti" }, { word: "ĉi", base: "ĉi" }, { word: "tie", base: "tie" }] }
+  - id: "eo-0010"
+    target: "Kaj"
+    ipa: "kaj"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pano kaj vino.", ipa: "pano kaj vino", bases: [{ word: "Pano", base: "pano" }, { word: "kaj", base: "kaj" }, { word: "vino", base: "vino" }] }
+      - { target: "Mi kaj vi.", ipa: "mi kaj vi", bases: [{ word: "Mi", base: "mi" }, { word: "kaj", base: "kaj" }, { word: "vi", base: "vi" }] }
