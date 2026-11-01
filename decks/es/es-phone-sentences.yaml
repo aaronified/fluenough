@@ -1,0 +1,50 @@
+schema: 1
+id: "es-phone-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1678"
+    target: "Recibo una llamada y contesto."
+    ipa: "reˈθibo ˈuna ʝaˈmada i konˈtesto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Recibo", ref: "es-0301" }, { word: "una", base: "una" }, { word: "llamada", ref: "es-1650" }, { word: "y", ref: "es-0048" }, { word: "contesto", ref: "es-0523" }]
+    confusables: [{ id: "llamar", ref: "es-0302", kind: "word" }, { id: "colgar", ref: "es-1522", kind: "word" }]
+  - id: "es-1679"
+    target: "Envío un mensaje con la foto."
+    ipa: "enˈbio un menˈsaxe kon la ˈfoto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Envío", ref: "es-1652" }, { word: "un", base: "un" }, { word: "mensaje", ref: "es-1651" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "foto", ref: "es-1184" }]
+    confusables: [{ id: "correo", ref: "es-0248", kind: "word" }, { id: "llamada", ref: "es-1650", kind: "word" }]
+  - id: "es-1680"
+    target: "La batería está casi vacía."
+    ipa: "la bateˈɾia esˈta ˈkasi baˈθia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "batería", ref: "es-1653" }, { word: "está", ref: "es-0023" }, { word: "casi", ref: "es-0325" }, { word: "vacía", ref: "es-0428" }]
+    confusables: [{ id: "cargador", ref: "es-1174", kind: "word" }, { id: "apagar", ref: "es-1662", kind: "word" }]
+  - id: "es-1681"
+    target: "No hay señal y la conexión es lenta."
+    ipa: "no aj seˈɲal i la konekˈsjon es ˈlenta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "hay", base: "haber" }, { word: "señal", ref: "es-1658" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "conexión", ref: "es-1659" }, { word: "es", ref: "es-0022" }, { word: "lenta", ref: "es-0415" }]
+    confusables: [{ id: "internet", ref: "es-1656", kind: "word" }, { id: "wifi", ref: "es-1657", kind: "word" }]
+  - id: "es-1682"
+    target: "Borro el vídeo y apago la pantalla."
+    ipa: "ˈboro el ˈbideo i aˈpaɡo la panˈtaʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Borro", ref: "es-1674" }, { word: "el", base: "el" }, { word: "vídeo", ref: "es-1664" }, { word: "y", ref: "es-0048" }, { word: "apago", ref: "es-1662" }, { word: "la", base: "la" }, { word: "pantalla", ref: "es-1185" }]
+    confusables: [{ id: "encender", ref: "es-1663", kind: "word" }, { id: "descargar", ref: "es-1655", kind: "word" }]
+  - id: "es-1683"
+    target: "Olvido la contraseña del correo."
+    ipa: "olˈbido la kontɾaˈseɲa del koˈreo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Olvido", ref: "es-1378" }, { word: "la", base: "la" }, { word: "contraseña", ref: "es-1660" }, { word: "del", base: "del" }, { word: "correo", ref: "es-0248" }]
+    confusables: [{ id: "perfil", ref: "es-1673", kind: "word" }, { id: "usuario", ref: "es-1672", kind: "word" }]

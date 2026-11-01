@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-present-perfect"
+name: "Reading: experiences and this week"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with the present perfect: experiences so far, and what has happened this week. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-experience-survey"
+    title: "A short survey about experiences"
+    theme: "journey"
+    sentences:
+      - text: "¿Has viajado alguna vez a otro país?"
+      - text: "Sí, he visitado Perú y Chile."
+      - text: "¿Has probado la comida peruana?"
+      - text: "No, nunca he comido ceviche."
+    questions:
+      - id: "es-1984"
+        prompt: { en: "Has the writer been to another country?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "It is not said" }
+        answer: 1
+      - id: "es-1985"
+        prompt: { en: "Which countries has the writer visited?" }
+        options:
+          - { en: "Peru and Chile" }
+          - { en: "Spain and Mexico" }
+          - { en: "Cuba and Ecuador" }
+        answer: 1
+      - id: "es-1986"
+        prompt: { en: "Has the writer eaten ceviche?" }
+        options:
+          - { en: "Yes, often" }
+          - { en: "Yes, once" }
+          - { en: "No, never" }
+        answer: 3
+  - id: "es-this-week-report"
+    title: "This week"
+    theme: "workplace"
+    sentences:
+      - text: "Esta semana hemos trabajado mucho."
+      - text: "Mi hermana ha escrito un libro."
+      - text: "Ellos han vuelto de la playa."
+      - text: "¿Ya has hecho la tarea?"
+    questions:
+      - id: "es-1987"
+        prompt: { en: "What has the sister done?" }
+        options:
+          - { en: "Written a book" }
+          - { en: "Read a letter" }
+          - { en: "Painted a picture" }
+        answer: 1
+      - id: "es-1988"
+        prompt: { en: "Where have they come back from?" }
+        options:
+          - { en: "The beach" }
+          - { en: "The mountains" }
+          - { en: "The city" }
+        answer: 1
+      - id: "es-1989"
+        prompt: { en: "What is asked?" }
+        options:
+          - { en: "Whether the homework is done" }
+          - { en: "Where the book is" }
+          - { en: "When the trip starts" }
+        answer: 1

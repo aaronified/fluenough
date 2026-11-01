@@ -1,0 +1,247 @@
+schema: 1
+id: "es-en-verbs-5"
+kind: "layer"
+core: "es-verbs-5"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Story in order: begin, end, succeed"
+license: "CC-BY-SA-4.0"
+description: "Verbs for the steps of a story in order: beginning and continuing, succeeding and failing, arriving and leaving, joining and separating, and the nouns of the stages: the start, the stage, the result and the end. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-3073":
+    native: "stage; phase"
+    notes: { n1: "La etapa is a stage, one part of a longer process or journey." }
+    bases: { "la": "the", "etapa": "stage; phase" }
+    examples:
+      "La primera etapa es la más difícil.": { native: "The first stage is the hardest.", bases: { "La": "the", "etapa": "stage; phase" } }
+      "Pasamos una etapa del viaje en tren.": { native: "We spend one stage of the trip by train.", bases: { "una": "a", "etapa": "stage; phase", "del": "of", "en": "in" } }
+  "es-3074":
+    native: "phase"
+    notes: { n1: "La fase is a phase, a step in a process. It is close to etapa." }
+    bases: { "la": "the", "fase": "phase" }
+    examples:
+      "Estamos en la última fase.": { native: "We are in the last phase.", bases: { "en": "in", "la": "the", "última": "last", "fase": "phase" } }
+      "La fase de prueba es corta.": { native: "The testing phase is short.", bases: { "La": "the", "fase": "phase", "de": "of", "prueba": "test" } }
+  "es-3075":
+    native: "start; beginning"
+    notes: { n1: "El inicio is the start of something, the first moment." }
+    bases: { "el": "the", "inicio": "start; beginning" }
+    examples:
+      "El inicio del curso es en septiembre.": { native: "The start of the course is in September.", bases: { "El": "the", "inicio": "start; beginning", "del": "of", "en": "in" } }
+      "Desde el inicio fue difícil.": { native: "From the start it was difficult.", bases: { "Desde": "from", "el": "the", "inicio": "start; beginning", "fue": "was; went" } }
+  "es-3076":
+    native: "end"
+    notes: { n1: "El fin is the end of something. Al fin is at last, in the end." }
+    bases: { "el": "the", "fin": "end" }
+    examples:
+      "El fin de semana es largo.": { native: "The weekend is long.", bases: { "El": "the", "fin": "end", "de": "of" } }
+      "Al fin llegamos a casa.": { native: "At last we arrive home.", bases: { "Al": "to the", "fin": "end", "a": "to" } }
+  "es-3077":
+    native: "result"
+    notes: { n1: "El resultado is the result of an action, a test or a game." }
+    bases: { "el": "the", "resultado": "result" }
+    examples:
+      "El resultado es bueno.": { native: "The result is good.", bases: { "El": "the", "resultado": "result" } }
+      "Esperamos el resultado del examen.": { native: "We wait for the result of the exam.", bases: { "el": "the", "resultado": "result", "del": "of" } }
+  "es-3078":
+    native: "failure"
+    notes: { n1: "El fracaso is a failure, when something does not succeed. The verb is fracasar." }
+    bases: { "el": "the", "fracaso": "failure" }
+    examples:
+      "El fracaso enseña mucho.": { native: "Failure teaches a lot.", bases: { "El": "the", "fracaso": "failure" } }
+      "Es un fracaso del plan.": { native: "It is a failure of the plan./plan", bases: { "un": "a", "fracaso": "failure", "del": "of", "plan": "plan" } }
+  "es-3079":
+    native: "attempt"
+    notes: { n1: "El intento is an attempt to do something. The verb is intentar." }
+    bases: { "el": "the", "intento": "attempt" }
+    examples:
+      "Hago un intento más.": { native: "I make one more attempt.", bases: { "un": "a", "intento": "attempt" } }
+      "El intento fue inútil.": { native: "The attempt was useless.", bases: { "El": "the", "fue": "was; went", "intento": "attempt" } }
+  "es-3080":
+    native: "transformation"
+    notes: { n1: "La transformación is a transformation, a big change in form or nature." }
+    bases: { "la": "the", "transformación": "transformation" }
+    examples:
+      "La transformación de la ciudad es grande.": { native: "The transformation of the city is big.", bases: { "La": "the", "transformación": "transformation", "de": "of" } }
+      "Vivo una transformación personal.": { native: "I live a personal/personal transformation.", bases: { "una": "a", "transformación": "transformation", "personal": "personal" } }
+  "es-3081":
+    native: "evolution; development"
+    notes: { n1: "La evolución is evolution, a slow change over time." }
+    bases: { "la": "the", "evolución": "evolution; development" }
+    examples:
+      "La evolución del barrio es lenta.": { native: "The evolution of the neighbourhood is slow.", bases: { "La": "the", "evolución": "evolution; development", "del": "of" } }
+      "Estudio la evolución de las especies.": { native: "I study the evolution of species.", bases: { "la": "the", "evolución": "evolution; development", "de": "of", "las": "the" } }
+  "es-3082":
+    native: "product"
+    notes: { n1: "El producto is a product, a thing made or sold." }
+    bases: { "el": "the", "producto": "product" }
+    examples:
+      "El producto es nuevo.": { native: "The product is new.", bases: { "El": "the", "producto": "product" } }
+      "Compro un producto local.": { native: "I buy a local/local product.", bases: { "un": "a", "producto": "product", "local": "local" } }
+  "es-3083":
+    native: "to continue"
+    notes: { n1: "Continuar is to carry on doing something, or to keep going." }
+    bases: { "continuar": "to continue" }
+    examples:
+      "Continúo el viaje.": { native: "I continue the journey.", bases: { "Continúo": "to continue", "el": "the" } }
+      "Continúan trabajando.": { native: "They continue working.", bases: { "Continúan": "to continue" } }
+  "es-3084":
+    native: "to finish; to end"
+    notes: { n1: "Acabar is to finish or come to an end. Acabar de is to have just done something." }
+    bases: { "acabar": "to finish; to end" }
+    examples:
+      "Acabo el libro hoy.": { native: "I finish the book today.", bases: { "Acabo": "to finish; to end", "el": "the" } }
+      "Acabamos de llegar.": { native: "We have just arrived.", bases: { "Acabamos": "to finish; to end", "de": "of" } }
+  "es-3085":
+    native: "to begin"
+    notes: { n1: "Comenzar is to begin something. Its stem changes: comienzo, comienzas." }
+    bases: { "comenzar": "to begin" }
+    examples:
+      "Comienzo el trabajo mañana.": { native: "I begin the work tomorrow.", bases: { "Comienzo": "to begin", "el": "the" } }
+      "El curso comienza en septiembre.": { native: "The course begins in September.", bases: { "El": "the", "comienza": "to begin", "en": "in" } }
+  "es-3086":
+    native: "to return; to go back"
+    notes: { n1: "Regresar is to come or go back to a place, a formal word for volver." }
+    bases: { "regresar": "to return; to go back" }
+    examples:
+      "Regreso a casa tarde.": { native: "I return home late.", bases: { "Regreso": "to return; to go back", "a": "to" } }
+      "Regresan de la playa.": { native: "They come/comer back from the beach.", bases: { "Regresan": "to return; to go back", "de": "of", "la": "the" } }
+  "es-3087":
+    native: "to leave; to depart"
+    notes: { n1: "Partir is to leave a place for a journey. Partir is also to divide or break." }
+    bases: { "partir": "to leave; to depart" }
+    examples:
+      "El tren parte a las ocho.": { native: "The train leaves at eight.", bases: { "El": "the", "parte": "to leave; to depart", "a": "to", "las": "the" } }
+      "Partimos mañana.": { native: "We leave tomorrow.", bases: { "Partimos": "to leave; to depart" } }
+  "es-3088":
+    native: "to happen"
+    notes: { n1: "Suceder is to happen, a formal word like ocurrir." }
+    bases: { "suceder": "to happen" }
+    examples:
+      "Sucede algo raro.": { native: "Something strange happens.", bases: { "Sucede": "to happen", "raro": "strange; odd" } }
+      "¿Qué sucedió ayer?": { native: "What happened yesterday?", bases: { "sucedió": "to happen" } }
+  "es-3089":
+    native: "to turn out; to be"
+    notes: { n1: "Resultar is to turn out to be something, or to be found to be." }
+    bases: { "resultar": "to turn out; to be" }
+    examples:
+      "Resulta fácil.": { native: "It turns out to be easy.", bases: { "Resulta": "to turn out; to be" } }
+      "El plan resultó bien.": { native: "The plan/plan turned out well.", bases: { "El": "the", "plan": "plan", "resultó": "to turn out; to be" } }
+  "es-3090":
+    native: "to try"
+    notes: { n1: "Intentar is to try to do something. Its stem changes in some forms: intento." }
+    bases: { "intentar": "to try" }
+    examples:
+      "Intento hablar español.": { native: "I try to speak Spanish.", bases: { "Intento": "to try" } }
+      "Intentan llegar a tiempo.": { native: "They try to arrive on time.", bases: { "Intentan": "to try", "a": "to", "tiempo": "time" } }
+  "es-3091":
+    native: "to achieve"
+    notes: { n1: "Lograr is to achieve a goal, to manage to do something." }
+    bases: { "lograr": "to achieve" }
+    examples:
+      "Logro mi objetivo.": { native: "I achieve my goal.", bases: { "Logro": "to achieve" } }
+      "Logran terminar el proyecto.": { native: "They manage to finish the project.", bases: { "Logran": "to achieve", "el": "the" } }
+  "es-3092":
+    native: "to get; to achieve"
+    notes: { n1: "Conseguir is to get something you wanted, or to manage to do it. Its stem changes: consigo." }
+    bases: { "conseguir": "to get; to achieve" }
+    examples:
+      "Consigo un trabajo.": { native: "I get a job.", bases: { "Consigo": "to get; to achieve", "un": "a" } }
+      "Consiguen el dinero.": { native: "They get the money.", bases: { "Consiguen": "to get; to achieve", "el": "the" } }
+  "es-3093":
+    native: "to fail"
+    notes: { n1: "Fracasar is to fail, not to succeed. The noun is fracaso." }
+    bases: { "fracasar": "to fail" }
+    examples:
+      "Fracasamos en el intento.": { native: "We fail in the attempt.", bases: { "Fracasamos": "to fail", "en": "in", "el": "the" } }
+      "El plan fracasa.": { native: "The plan/plan fails.", bases: { "El": "the", "plan": "plan", "fracasa": "to fail" } }
+  "es-3094":
+    native: "to send; to order"
+    notes: { n1: "Mandar is to send something to someone, or to order someone to do something." }
+    bases: { "mandar": "to send; to order" }
+    examples:
+      "Mando una carta.": { native: "I send a letter.", bases: { "Mando": "to send; to order", "una": "a", "carta": "letter" } }
+      "El jefe manda un informe.": { native: "The boss sends a report.", bases: { "El": "the", "manda": "to send; to order", "un": "a" } }
+  "es-3095":
+    native: "to transform"
+    notes: { n1: "Transformar is to change the form or nature of something." }
+    bases: { "transformar": "to transform" }
+    examples:
+      "Transformo la casa.": { native: "I transform the house.", bases: { "Transformo": "to transform", "la": "the" } }
+      "La ciudad se transforma.": { native: "The city is transformed.", bases: { "La": "the", "se": "(reflexive) oneself", "transforma": "to transform" } }
+  "es-3096":
+    native: "to evolve"
+    notes: { n1: "Evolucionar is to develop slowly over time, to change in stages." }
+    bases: { "evolucionar": "to evolve" }
+    examples:
+      "Evoluciona con el tiempo.": { native: "It evolves over time.", bases: { "Evoluciona": "to evolve", "con": "with", "el": "the", "tiempo": "time" } }
+      "Los animales evolucionan.": { native: "Animals evolve.", bases: { "Los": "the", "evolucionan": "to evolve" } }
+  "es-3097":
+    native: "to mature; to ripen"
+    notes: { n1: "Madurar is to grow up, to become mature, or to ripen as fruit does." }
+    bases: { "madurar": "to mature; to ripen" }
+    examples:
+      "Maduro con los años.": { native: "I mature with the years.", bases: { "Maduro": "to mature; to ripen", "con": "with", "los": "the" } }
+      "La fruta madura en verano.": { native: "The fruit ripens in summer.", bases: { "La": "the", "madura": "ripe; mature", "en": "in" } }
+  "es-3098":
+    native: "to produce"
+    notes: { n1: "Producir is to make or create something, or to cause a result. Its yo form is produzco." }
+    bases: { "producir": "to produce" }
+    examples:
+      "Produzco pan cada día.": { native: "I produce/producir bread every day.", bases: { "Produzco": "to produce" } }
+      "La fábrica produce coches.": { native: "The factory produces cars.", bases: { "La": "the", "produce": "to produce" } }
+  "es-3099":
+    native: "to gather; to bring together"
+    notes: { n1: "Reunir is to bring people or things together. Reunirse is to meet." }
+    bases: { "reunir": "to gather; to bring together" }
+    examples:
+      "Reúno a mis amigos.": { native: "I gather my friends.", bases: { "Reúno": "to gather; to bring together", "a": "to" } }
+      "Reúnen el dinero para el viaje.": { native: "They gather the money for the trip.", bases: { "Reúnen": "to gather; to bring together", "el": "the", "para": "for" } }
+  "es-3100":
+    native: "to separate"
+    notes: { n1: "Separar is to split things or people apart." }
+    bases: { "separar": "to separate" }
+    examples:
+      "Separo los platos.": { native: "I separate the dishes.", bases: { "Separo": "to separate", "los": "the" } }
+      "Se separan en el parque.": { native: "They separate in the park.", bases: { "Se": "(reflexive) oneself", "separan": "to separate", "en": "in", "el": "the" } }
+  "es-3101":
+    native: "to join; to unite"
+    notes: { n1: "Unir is to join things together, or to unite people." }
+    bases: { "unir": "to join; to unite" }
+    examples:
+      "Uno las piezas.": { native: "I join the pieces.", bases: { "Uno": "to join; to unite", "las": "the", "piezas": "piece" } }
+      "Nos une la amistad.": { native: "Friendship unites us.", bases: { "Nos": "us", "une": "to join; to unite", "la": "the" } }
+  "es-3102":
+    native: "to divide"
+    notes: { n1: "Dividir is to split a whole into parts, or to share out." }
+    bases: { "dividir": "to divide" }
+    examples:
+      "Divido la tarta en seis.": { native: "I divide the cake into six.", bases: { "Divido": "to divide", "la": "the", "en": "in" } }
+      "Dividimos el trabajo.": { native: "We divide the work.", bases: { "Dividimos": "to divide", "el": "the" } }
+  "es-3103":
+    native: "to notice"
+    notes: { n1: "Notar is to notice something, to see or feel that it is so." }
+    bases: { "notar": "to notice" }
+    examples:
+      "Noto un cambio.": { native: "I notice a change.", bases: { "Noto": "to notice", "un": "a" } }
+      "Notan que llueve.": { native: "They notice that it is raining.", bases: { "Notan": "to notice", "que": "that" } }
+  "es-3104":
+    native: "to appear"
+    notes: { n1: "Aparecer is to appear, to come into view. Its yo form is aparezco." }
+    bases: { "aparecer": "to appear" }
+    examples:
+      "Aparece un pájaro.": { native: "A bird appears.", bases: { "Aparece": "to appear", "un": "a" } }
+      "Aparezco en la foto.": { native: "I appear in the photo.", bases: { "Aparezco": "to appear", "en": "in", "la": "the" } }
+  "es-3105":
+    native: "to disappear"
+    notes: { n1: "Desaparecer is to disappear, to go out of view. Its yo form is desaparezco." }
+    bases: { "desaparecer": "to disappear" }
+    examples:
+      "El dinero desaparece.": { native: "The money disappears.", bases: { "El": "the", "desaparece": "to disappear" } }
+      "Desaparecen en la niebla.": { native: "They disappear in the fog.", bases: { "Desaparecen": "to disappear", "en": "in", "la": "the" } }
+  "es-3106":
+    native: "to plan"
+    notes: { n1: "Planear is to plan an event, a trip or a project." }
+    bases: { "planear": "to plan" }
+    examples:
+      "Planeo el viaje.": { native: "I plan/plan the trip.", bases: { "Planeo": "to plan", "el": "the" } }
+      "Planean la fiesta.": { native: "They plan/plan the party.", bases: { "Planean": "to plan", "la": "the" } }

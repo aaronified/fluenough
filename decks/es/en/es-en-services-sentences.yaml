@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-services-sentences"
+kind: "layer"
+core: "es-services-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: services"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about banks, the post and repairs, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2248":
+    native: "I take money out of the cash machine and pay the loan."
+    bases: { "del": "of", "el": "the" }
+    confusables: { "ingreso": { why: "Ingreso is money paid in, the opposite of taking out." }, "comision": { why: "Comisión is a fee, not the loan itself." } }
+  "es-2249":
+    native: "I take the car to the mechanic for the repair."
+    bases: { "el": "the", "al": "to the", "para": "for", "la": "the" }
+    confusables: { "fontanero": { why: "Fontanero is a plumber, for water pipes." }, "electricista": { why: "Electricista is an electrician, for power." } }
+  "es-2250":
+    native: "I write the address on the envelope."
+    bases: { "la": "the", "en": "in", "el": "the" }
+    confusables: { "remitente": { why: "Remitente is the sender, who writes their own name." }, "destinatario": { why: "Destinatario is the recipient, the one who receives." } }
+  "es-2251":
+    native: "Fill in the form and sign."
+    bases: { "Rellenar": "to fill in", "el": "the" }
+    confusables: { "solicitud": { why: "Solicitud is an application, a request for something." }, "firma": { why: "Firma is the signature, the name you write." } }
+  "es-2252":
+    native: "The hairdresser cuts the hair in the hairdresser's."
+    bases: { "El": "the", "en": "in", "la": "the" }
+    confusables: { "sastre": { why: "Sastre is a tailor, who sews clothes." }, "zapatero": { why: "Zapatero is a shoe repairer." } }
+  "es-2253":
+    native: "I take the coat to the dry cleaner's and the laundry."
+    bases: { "el": "the", "a": "to", "la": "the" }
+    confusables: { "servicio": { why: "Servicio is a service, the general word." }, "arreglo": { why: "Arreglo is a repair, a fix of something broken." } }

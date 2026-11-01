@@ -1,0 +1,163 @@
+schema: 1
+id: "es-en-emergencies"
+kind: "layer"
+core: "es-emergencies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies: accidents, fire, help and safety"
+license: "CC-BY-SA-4.0"
+description: "Words for urgent help: the call for help and the alarm, the fire extinguisher and the first-aid kit, the injured person and the burn, the rescue and the evacuation, and the verbs to rescue, warn, drown and burn. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2811":
+    native: "help; rescue"
+    notes: { n1: "El socorro is help given urgently, the cry for help." }
+    bases: { "el": "the", "socorro": "help; rescue" }
+    examples:
+      "¡Socorro! Necesito ayuda.": { native: "Help! I need help.", bases: { "Socorro": "help; rescue" } }
+      "El socorro llega en diez minutos.": { native: "The help arrives in ten minutes.", bases: { "El": "the", "socorro": "help; rescue", "en": "in" } }
+  "es-2812":
+    native: "alarm"
+    notes: { n1: "La alarma is an alarm, a sound or signal that warns of danger." }
+    bases: { "la": "the", "alarma": "alarm" }
+    examples:
+      "Suena la alarma de incendio.": { native: "The fire alarm sounds.", bases: { "Suena": "to sound; to ring", "la": "the", "alarma": "alarm", "de": "of" } }
+      "La alarma es muy fuerte.": { native: "The alarm is very loud.", bases: { "La": "the", "alarma": "alarm" } }
+  "es-2813":
+    native: "fire extinguisher"
+    notes: { n1: "El extintor is a fire extinguisher, the red tank that puts out a small fire." }
+    bases: { "el": "the", "extintor": "fire extinguisher" }
+    examples:
+      "El extintor está en el pasillo.": { native: "The fire extinguisher is in the corridor.", bases: { "El": "the", "extintor": "fire extinguisher", "en": "in" } }
+      "Uso el extintor en el fuego.": { native: "I use the extinguisher on the fire.", bases: { "el": "the", "extintor": "fire extinguisher", "en": "in" } }
+  "es-2814":
+    native: "explosion"
+    notes: { n1: "La explosión is an explosion, a sudden blast with noise and heat." }
+    bases: { "la": "the", "explosión": "explosion" }
+    examples:
+      "Hay una explosión en la fábrica.": { native: "There is an explosion at the factory.", bases: { "Hay": "there is; there are", "una": "a", "explosión": "explosion", "en": "in", "la": "the" } }
+      "La explosión se oye desde lejos.": { native: "The explosion can be heard from far away.", bases: { "La": "the", "explosión": "explosion", "se": "(reflexive) oneself", "oye": "hey", "desde": "from" } }
+  "es-2815":
+    native: "earthquake"
+    notes: { n1: "El terremoto is an earthquake, the shaking of the ground." }
+    bases: { "el": "the", "terremoto": "earthquake" }
+    examples:
+      "El terremoto dura un minuto.": { native: "The earthquake lasts a minute.", bases: { "El": "the", "terremoto": "earthquake", "un": "a" } }
+      "Hay un terremoto en la costa.": { native: "There is an earthquake on the coast.", bases: { "Hay": "there is; there are", "un": "a", "terremoto": "earthquake", "en": "in", "la": "the" } }
+  "es-2816":
+    native: "rescue"
+    notes: { n1: "El rescate is a rescue, the saving of a person in danger." }
+    bases: { "el": "the", "rescate": "rescue" }
+    examples:
+      "El rescate es rápido.": { native: "The rescue is quick.", bases: { "El": "the", "rescate": "rescue" } }
+      "Hacen el rescate en la montaña.": { native: "They do the rescue on the mountain.", bases: { "el": "the", "rescate": "rescue", "en": "in", "la": "the" } }
+  "es-2817":
+    native: "danger"
+    notes: { n1: "El peligro is danger, a risk of harm. Its adjective is peligroso." }
+    bases: { "el": "the", "peligro": "danger" }
+    examples:
+      "Hay peligro en el río.": { native: "There is danger in the river.", bases: { "Hay": "there is; there are", "peligro": "danger", "en": "in", "el": "the" } }
+      "El peligro es grande.": { native: "The danger is great.", bases: { "El": "the", "peligro": "danger" } }
+  "es-2818":
+    native: "safety; security"
+    notes: { n1: "La seguridad is safety, the state of being safe from harm." }
+    bases: { "la": "the", "seguridad": "safety; security" }
+    examples:
+      "La seguridad es lo primero.": { native: "Safety comes/comer first.", bases: { "La": "the", "seguridad": "safety; security", "lo": "it" } }
+      "Hay seguridad en el edificio.": { native: "There is security in the building.", bases: { "Hay": "there is; there are", "seguridad": "safety; security", "en": "in", "el": "the" } }
+  "es-2819":
+    native: "first-aid kit"
+    notes: { n1: "El botiquín is a first-aid kit, with bandages and medicines for small injuries." }
+    bases: { "el": "the", "botiquín": "first-aid kit" }
+    examples:
+      "El botiquín está en el armario.": { native: "The first-aid kit is in the cupboard.", bases: { "El": "the", "botiquín": "first-aid kit", "en": "in" } }
+      "Necesito un botiquín en casa.": { native: "I need a first-aid kit at home.", bases: { "un": "a", "botiquín": "first-aid kit", "en": "in" } }
+  "es-2820":
+    native: "burn"
+    notes: { n1: "La quemadura is a burn on the skin, from fire, heat or liquid." }
+    bases: { "la": "the", "quemadura": "burn" }
+    examples:
+      "Tiene una quemadura en el brazo.": { native: "He has a burn on his arm.", bases: { "una": "a", "quemadura": "burn", "en": "in", "el": "the" } }
+      "La quemadura es pequeña.": { native: "The burn is small.", bases: { "La": "the", "quemadura": "burn" } }
+  "es-2821":
+    native: "fracture"
+    notes: { n1: "La fractura is a fracture, a broken bone." }
+    bases: { "la": "the", "fractura": "fracture" }
+    examples:
+      "Tiene una fractura en la pierna.": { native: "She has a fracture in her leg.", bases: { "una": "a", "fractura": "fracture", "en": "in", "la": "the" } }
+      "La fractura necesita un médico.": { native: "The fracture needs a doctor.", bases: { "La": "the", "fractura": "fracture", "un": "a" } }
+  "es-2822":
+    native: "blow; knock"
+    notes: { n1: "El golpe is a blow or a knock, a hit on the body." }
+    bases: { "el": "the", "golpe": "blow; knock" }
+    examples:
+      "Me di un golpe en la cabeza.": { native: "I hit my head.", bases: { "Me": "to me", "un": "a", "golpe": "blow; knock", "en": "in", "la": "the" } }
+      "El golpe fue muy fuerte.": { native: "The blow was very strong.", bases: { "El": "the", "golpe": "blow; knock", "fue": "was; went" } }
+  "es-2823":
+    native: "cut"
+    notes: { n1: "El corte is a cut on the skin, or a cut of anything." }
+    bases: { "el": "the", "corte": "cut" }
+    examples:
+      "Tengo un corte en la mano.": { native: "I have a cut on my hand.", bases: { "un": "a", "corte": "cut", "en": "in", "la": "the" } }
+      "El corte es profundo.": { native: "The cut is deep.", bases: { "El": "the", "corte": "cut", "profundo": "deep" } }
+  "es-2824":
+    native: "alert; warning"
+    notes: { n1: "La alerta is an alert, a warning of danger that tells people to act." }
+    bases: { "la": "the", "alerta": "alert; warning" }
+    examples:
+      "Hay una alerta de tormenta.": { native: "There is a storm alert.", bases: { "Hay": "there is; there are", "una": "a", "alerta": "alert; warning", "de": "of" } }
+      "La alerta llega por el móvil.": { native: "The alert arrives on the phone.", bases: { "La": "the", "alerta": "alert; warning", "por": "for", "el": "the" } }
+  "es-2825":
+    native: "injured"
+    notes: { n1: "Herido is injured, hurt by an accident or an attack. It agrees with the noun: herida." }
+    bases: { "herido": "injured" }
+    examples:
+      "El hombre está herido.": { native: "The man is injured.", bases: { "El": "the", "herido": "injured" } }
+      "Hay tres heridos en el accidente.": { native: "There are three injured in the accident.", bases: { "Hay": "there is; there are", "heridos": "injured", "en": "in", "el": "the" } }
+  "es-2826":
+    native: "serious; grave"
+    notes: { n1: "Grave is serious, of great importance or danger. It does not change for gender." }
+    bases: { "grave": "serious; grave" }
+    examples:
+      "Es un accidente grave.": { native: "It is a serious accident.", bases: { "un": "a", "grave": "serious; grave" } }
+      "La herida es grave.": { native: "The wound is serious.", bases: { "La": "the", "grave": "serious; grave" } }
+  "es-2827":
+    native: "to rescue"
+    notes: { n1: "Rescatar is to save a person or thing from danger." }
+    bases: { "rescatar": "to rescue" }
+    examples:
+      "Rescatan al niño del río.": { native: "They rescue the child from the river.", bases: { "Rescatan": "to rescue", "al": "to the", "del": "of" } }
+      "Rescato al perro del fuego.": { native: "I rescue the dog from the fire.", bases: { "Rescato": "to rescue", "al": "to the", "del": "of" } }
+  "es-2828":
+    native: "to evacuate"
+    notes: { n1: "Evacuar is to leave a place for safety, or to make people leave." }
+    bases: { "evacuar": "to evacuate" }
+    examples:
+      "Evacuan el edificio.": { native: "They evacuate the building.", bases: { "Evacuan": "to evacuate", "el": "the" } }
+      "Evacuamos la casa por el humo.": { native: "We evacuate the house because of the smoke.", bases: { "Evacuamos": "to evacuate", "la": "the", "por": "for", "el": "the" } }
+  "es-2829":
+    native: "to warn; to tell"
+    notes: { n1: "Avisar is to warn someone of a danger, or to let them know." }
+    bases: { "avisar": "to warn; to tell" }
+    examples:
+      "Aviso a los bomberos.": { native: "I warn the fire service.", bases: { "Aviso": "to warn; to tell", "a": "to", "los": "the" } }
+      "Avisan a la policía del robo.": { native: "They tell the police about the theft.", bases: { "Avisan": "to warn; to tell", "a": "to", "la": "the", "del": "of" } }
+  "es-2830":
+    native: "to drown"
+    notes: { n1: "Ahogarse is to drown in water, or to choke. Its yo form is me ahogo." }
+    bases: { "ahogarse": "to drown" }
+    examples:
+      "Me ahogo en el mar.": { native: "I drown in the sea.", bases: { "Me": "to me", "ahogo": "to drown", "en": "in", "el": "the" } }
+      "El niño se ahoga en la piscina.": { native: "The child drowns in the pool.", bases: { "El": "the", "se": "(reflexive) oneself", "ahoga": "to drown", "en": "in", "la": "the" } }
+  "es-2831":
+    native: "to fall down"
+    notes: { n1: "Caerse is to fall down, to lose one's balance. Its yo form is me caigo." }
+    bases: { "caerse": "to fall down" }
+    examples:
+      "Me caigo en la escalera.": { native: "I fall down the stairs.", bases: { "Me": "to me", "caigo": "to fall down", "en": "in", "la": "the" } }
+      "El niño se cae en el parque.": { native: "The child falls down in the park.", bases: { "El": "the", "se": "(reflexive) oneself", "cae": "to fall down", "en": "in" } }
+  "es-2832":
+    native: "to burn oneself"
+    notes: { n1: "Quemarse is to burn oneself, or to be burnt by fire. Its yo form is me quemo." }
+    bases: { "quemarse": "to burn oneself" }
+    examples:
+      "Me quemo con el agua caliente.": { native: "I burn myself with the hot water.", bases: { "Me": "to me", "quemo": "to burn oneself", "con": "with", "el": "the" } }
+      "Se quema la mano.": { native: "He burns his hand.", bases: { "Se": "(reflexive) oneself", "quema": "to burn oneself", "la": "the" } }

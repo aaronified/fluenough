@@ -1,0 +1,42 @@
+schema: 1
+id: "es-grammar-por-para"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["por (reason)", "para (purpose)", "por (place or time)", "para (deadline or recipient)"]
+  entries:
+    - lemma: "trabajar"
+      ipa: "tɾabaˈxaɾ"
+      forms: { "por (reason)": "Trabajo por dinero.", "para (purpose)": "Trabajo para vivir.", "por (place or time)": "Trabajo por la mañana.", "para (deadline or recipient)": "Trabajo para mi jefe." }
+      ipas: { "por (reason)": "tɾaˈbaxo poɾ diˈneɾo", "para (purpose)": "tɾaˈbaxo ˈpaɾa biˈbiɾ", "por (place or time)": "tɾaˈbaxo poɾ la maˈɲana", "para (deadline or recipient)": "tɾaˈbaxo ˈpaɾa mi ˈxefe" }
+    - lemma: "comprar"
+      ipa: "komˈpɾaɾ"
+      forms: { "por (reason)": "Compro un regalo por tu cumpleaños.", "para (purpose)": "Compro harina para un pastel.", "por (place or time)": "Compro en la tienda por la esquina.", "para (deadline or recipient)": "Compro el regalo para el sábado." }
+      ipas: { "por (reason)": "ˈkompɾo un reˈɡalo poɾ tu kumpleˈaɲos", "para (purpose)": "ˈkompɾo aˈɾina ˈpaɾa un pasˈtel", "por (place or time)": "ˈkompɾo en la ˈtjenda poɾ la esˈkina", "para (deadline or recipient)": "ˈkompɾo el reˈɡalo ˈpaɾa el ˈsabado" }
+    - lemma: "viajar"
+      ipa: "bjaˈxaɾ"
+      forms: { "por (reason)": "Viajo por trabajo.", "para (purpose)": "Viajo para estudiar.", "por (place or time)": "Viajo por España en verano.", "para (deadline or recipient)": "Viajo para ver a mi familia." }
+      ipas: { "por (reason)": "ˈbjaxo poɾ tɾaˈbaxo", "para (purpose)": "ˈbjaxo ˈpaɾa estuˈdjaɾ", "por (place or time)": "ˈbjaxo poɾ esˈpaɲa en beˈɾano", "para (deadline or recipient)": "ˈbjaxo ˈpaɾa beɾ a mi faˈmilja" }
+    - lemma: "estudiar"
+      ipa: "estuˈdjaɾ"
+      forms: { "por (reason)": "Estudio por mi futuro.", "para (purpose)": "Estudio para aprender.", "por (place or time)": "Estudio por la noche.", "para (deadline or recipient)": "Estudio para el examen del lunes." }
+      ipas: { "por (reason)": "esˈtudjo poɾ mi fuˈtuɾo", "para (purpose)": "esˈtudjo ˈpaɾa apɾenˈdeɾ", "por (place or time)": "esˈtudjo poɾ la ˈnotʃe", "para (deadline or recipient)": "esˈtudjo ˈpaɾa el ekˈsamen del ˈlunes" }
+    - lemma: "pagar"
+      ipa: "paˈɡaɾ"
+      forms: { "por (reason)": "Pago por el café.", "para (purpose)": "Pago para entrar.", "por (place or time)": "Pago por la mañana.", "para (deadline or recipient)": "Pago para el martes." }
+      ipas: { "por (reason)": "ˈpaɡo poɾ el kaˈfe", "para (purpose)": "ˈpaɡo ˈpaɾa enˈtɾaɾ", "por (place or time)": "ˈpaɡo poɾ la maˈɲana", "para (deadline or recipient)": "ˈpaɡo ˈpaɾa el ˈmaɾtes" }
+    - lemma: "caminar"
+      ipa: "kamiˈnaɾ"
+      forms: { "por (reason)": "Camino por la salud.", "para (purpose)": "Camino para bajar de peso.", "por (place or time)": "Camino por el parque.", "para (deadline or recipient)": "Camino para la clase." }
+      ipas: { "por (reason)": "kaˈmino poɾ la saˈlud", "para (purpose)": "kaˈmino ˈpaɾa baˈxaɾ de ˈpeso", "por (place or time)": "kaˈmino poɾ el ˈpaɾke", "para (deadline or recipient)": "kaˈmino ˈpaɾa la ˈklase" }
+    - lemma: "llamar"
+      ipa: "ʝaˈmaɾ"
+      forms: { "por (reason)": "Llamo por la reserva.", "para (purpose)": "Llamo para saber la hora.", "por (place or time)": "Llamo por teléfono.", "para (deadline or recipient)": "Llamo para mi amiga." }
+      ipas: { "por (reason)": "ˈʝamo poɾ la reˈseɾba", "para (purpose)": "ˈʝamo ˈpaɾa saˈbeɾ la ˈoɾa", "por (place or time)": "ˈʝamo poɾ teˈlefono", "para (deadline or recipient)": "ˈʝamo ˈpaɾa mi aˈmiɡa" }
+    - lemma: "esperar"
+      ipa: "espeˈɾaɾ"
+      forms: { "por (reason)": "Espero por el retraso.", "para (purpose)": "Espero para entrar.", "por (place or time)": "Espero por media hora.", "para (deadline or recipient)": "Espero el paquete para el jueves." }
+      ipas: { "por (reason)": "esˈpeɾo poɾ el reˈtɾaso", "para (purpose)": "esˈpeɾo ˈpaɾa enˈtɾaɾ", "por (place or time)": "esˈpeɾo poɾ ˈmedja ˈoɾa", "para (deadline or recipient)": "esˈpeɾo el paˈkete ˈpaɾa el ˈxwebes" }

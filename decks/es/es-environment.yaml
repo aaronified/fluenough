@@ -1,0 +1,517 @@
+schema: 1
+id: "es-environment"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "environment"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2410"
+    target: "la contaminación"
+    ipa: "la kontaminaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "contaminación", base: "contaminación" }]
+    examples:
+      - target: "La contaminación del aire es grave."
+        ipa: "la kontaminaˈθjon del ˈajɾe es ˈɡɾabe"
+        bases: [{ word: "La", base: "la" }, { word: "contaminación", base: "contaminación" }, { word: "del", base: "del" }, { word: "aire", ref: "es-2428" }, { word: "es", ref: "es-0022" }, { word: "grave", base: "grave" }]
+      - target: "Hay mucha contaminación en la ciudad."
+        ipa: "aj ˈmutʃa kontaminaˈθjon en la θjuˈdad"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "contaminación", base: "contaminación" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2411"
+    target: "contaminar"
+    ipa: "kontamiˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "contaminar", base: "contaminar" }]
+    examples:
+      - target: "No contamino el río."
+        ipa: "no kontaˈmino el ˈrio"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "contamino", base: "contaminar" }, { word: "el", base: "el" }, { word: "río", ref: "es-1751" }]
+      - target: "Las fábricas contaminan el aire."
+        ipa: "las ˈfabɾikas kontaˈminan el ˈajɾe"
+        bases: [{ word: "Las", base: "las" }, { word: "fábricas", ref: "es-1860" }, { word: "contaminan", base: "contaminar" }, { word: "el", base: "el" }, { word: "aire", ref: "es-2428" }]
+  - id: "es-2412"
+    target: "el residuo"
+    ipa: "el reˈsidwo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "residuo", base: "residuo" }]
+    examples:
+      - target: "Separo los residuos en casa."
+        ipa: "seˈpaɾo los reˈsidwos en ˈkasa"
+        bases: [{ word: "Separo", base: "separar" }, { word: "los", base: "los" }, { word: "residuos", base: "residuo" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "Los residuos van al contenedor."
+        ipa: "los reˈsidwos ban al konteneˈdoɾ"
+        bases: [{ word: "Los", base: "los" }, { word: "residuos", base: "residuo" }, { word: "van", ref: "es-0026" }, { word: "al", base: "al" }, { word: "contenedor", ref: "es-2435" }]
+  - id: "es-2413"
+    target: "el calentamiento"
+    ipa: "el kalentaˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "calentamiento", base: "calentamiento" }]
+    examples:
+      - target: "El calentamiento global es real."
+        ipa: "el kalentaˈmjento ɡloˈbal es reˈal"
+        bases: [{ word: "El", base: "el" }, { word: "calentamiento", base: "calentamiento" }, { word: "global", base: "global" }, { word: "es", ref: "es-0022" }, { word: "real", base: "real" }]
+      - target: "Hay un calentamiento del planeta."
+        ipa: "aj un kalentaˈmjento del plaˈneta"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "calentamiento", base: "calentamiento" }, { word: "del", base: "del" }, { word: "planeta", ref: "es-2430" }]
+  - id: "es-2414"
+    target: "el gas"
+    ipa: "el ɡas"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gas", base: "gas" }]
+    examples:
+      - target: "El gas sale de la fábrica."
+        ipa: "el ɡas ˈsale de la ˈfabɾika"
+        bases: [{ word: "El", base: "el" }, { word: "gas", base: "gas" }, { word: "sale", ref: "es-0690" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "fábrica", ref: "es-1860" }]
+      - target: "Cocino con gas."
+        ipa: "koˈθino kon ɡas"
+        bases: [{ word: "Cocino", ref: "es-0284" }, { word: "con", base: "con" }, { word: "gas", base: "gas" }]
+  - id: "es-2415"
+    target: "la deforestación"
+    ipa: "la defoɾestaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "deforestación", base: "deforestación" }]
+    examples:
+      - target: "La deforestación destruye la selva."
+        ipa: "la defoɾestaˈθjon desˈtɾuʝe la ˈselba"
+        bases: [{ word: "La", base: "la" }, { word: "deforestación", base: "deforestación" }, { word: "destruye", base: "destruir" }, { word: "selva", ref: "es-1757" }]
+      - target: "La deforestación es un problema grave."
+        ipa: "la defoɾestaˈθjon es un pɾoˈblema ˈɡɾabe"
+        bases: [{ word: "La", base: "la" }, { word: "deforestación", base: "deforestación" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "problema", base: "problema" }, { word: "grave", base: "grave" }]
+  - id: "es-2416"
+    target: "la especie"
+    ipa: "la esˈpeθje"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "especie", base: "especie" }]
+    examples:
+      - target: "Esta especie de pájaro es rara."
+        ipa: "ˈesta esˈpeθje de ˈpaxaɾo es ˈraɾa"
+        bases: [{ word: "Esta", base: "esta" }, { word: "especie", base: "especie" }, { word: "de", base: "de" }, { word: "pájaro", ref: "es-1063" }, { word: "es", ref: "es-0022" }, { word: "rara", base: "raro" }]
+      - target: "Hay muchas especies en la selva."
+        ipa: "aj ˈmutʃas esˈpeθjes en la ˈselba"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchas", ref: "es-0053" }, { word: "especies", base: "especie" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "selva", ref: "es-1757" }]
+  - id: "es-2417"
+    target: "la extinción"
+    ipa: "la ekstinˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "extinción", base: "extinción" }]
+    examples:
+      - target: "La extinción de animales es triste."
+        ipa: "la ekstinˈθjon de aniˈmales es ˈtɾiste"
+        bases: [{ word: "La", base: "la" }, { word: "extinción", base: "extinción" }, { word: "de", base: "de" }, { word: "animales", ref: "es-1060" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+      - target: "Muchas especies están en peligro de extinción."
+        ipa: "ˈmutʃas esˈpeθjes esˈtan en peˈliɡɾo de ekstinˈθjon"
+        bases: [{ word: "Muchas", ref: "es-0053" }, { word: "especies", ref: "es-2416" }, { word: "están", ref: "es-0023" }, { word: "en", base: "en" }, { word: "peligro", base: "peligro" }, { word: "de", base: "de" }, { word: "extinción", base: "extinción" }]
+  - id: "es-2418"
+    target: "la protección"
+    ipa: "la pɾotekˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "protección", base: "protección" }]
+    examples:
+      - target: "La protección del parque es importante."
+        ipa: "la pɾotekˈθjon del ˈpaɾke es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "protección", base: "protección" }, { word: "del", base: "del" }, { word: "parque", ref: "es-0777" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Hay protección para los animales."
+        ipa: "aj pɾotekˈθjon ˈpaɾa los aniˈmales"
+        bases: [{ word: "Hay", base: "haber" }, { word: "protección", base: "protección" }, { word: "para", base: "para" }, { word: "los", base: "los" }, { word: "animales", ref: "es-1060" }]
+  - id: "es-2419"
+    target: "el ahorro"
+    ipa: "el aˈoro"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ahorro", base: "ahorro" }]
+    examples:
+      - target: "El ahorro de agua es necesario."
+        ipa: "el aˈoro de ˈaɡwa es neθeˈsaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "ahorro", base: "ahorro" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }, { word: "es", ref: "es-0022" }, { word: "necesario", ref: "es-2142" }]
+      - target: "Hago un ahorro cada mes."
+        ipa: "ˈaɡo un aˈoro ˈkada mes"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "ahorro", base: "ahorro" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+  - id: "es-2420"
+    target: "el humo"
+    ipa: "el ˈumo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "humo", base: "humo" }]
+    examples:
+      - target: "El humo sale del coche."
+        ipa: "el ˈumo ˈsale del ˈkotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "humo", base: "humo" }, { word: "sale", ref: "es-0690" }, { word: "del", base: "del" }, { word: "coche", ref: "es-0678" }]
+      - target: "Hay mucho humo en la ciudad."
+        ipa: "aj ˈmutʃo ˈumo en la θjuˈdad"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucho", ref: "es-0053" }, { word: "humo", base: "humo" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2421"
+    target: "la sequía"
+    ipa: "la seˈkia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sequía", base: "sequía" }]
+    examples:
+      - target: "La sequía dura un año."
+        ipa: "la seˈkia ˈduɾa un ˈaɲo"
+        bases: [{ word: "La", base: "la" }, { word: "sequía", base: "sequía" }, { word: "dura", ref: "es-0851" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+      - target: "La sequía afecta a los campos."
+        ipa: "la seˈkia aˈfekta a los ˈkampos"
+        bases: [{ word: "La", base: "la" }, { word: "sequía", base: "sequía" }, { word: "afecta", base: "afectar" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "campos", ref: "es-1772" }]
+  - id: "es-2422"
+    target: "la inundación"
+    ipa: "la inundaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "inundación", base: "inundación" }]
+    examples:
+      - target: "La inundación llega a la casa."
+        ipa: "la inundaˈθjon ˈʝeɡa a la ˈkasa"
+        bases: [{ word: "La", base: "la" }, { word: "inundación", base: "inundación" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }]
+      - target: "Hay una inundación en el pueblo."
+        ipa: "aj ˈuna inundaˈθjon en el ˈpweblo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "inundación", base: "inundación" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "pueblo", ref: "es-0783" }]
+  - id: "es-2423"
+    target: "el ruido"
+    ipa: "el ˈrwido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ruido", base: "ruido" }]
+    examples:
+      - target: "Hay mucho ruido en la calle."
+        ipa: "aj ˈmutʃo ˈrwido en la ˈkaʝe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucho", ref: "es-0053" }, { word: "ruido", base: "ruido" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "El ruido es insoportable."
+        ipa: "el ˈrwido es insopoɾˈtable"
+        bases: [{ word: "El", base: "el" }, { word: "ruido", base: "ruido" }, { word: "es", ref: "es-0022" }, { word: "insoportable", base: "insoportable" }]
+  - id: "es-2424"
+    target: "el tráfico"
+    ipa: "el ˈtɾafiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tráfico", base: "tráfico" }]
+    examples:
+      - target: "Hay mucho tráfico por la mañana."
+        ipa: "aj ˈmutʃo ˈtɾafiko poɾ la maˈɲana"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucho", ref: "es-0053" }, { word: "tráfico", base: "tráfico" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+      - target: "El tráfico contamina el aire."
+        ipa: "el ˈtɾafiko kontaˈmina el ˈajɾe"
+        bases: [{ word: "El", base: "el" }, { word: "tráfico", base: "tráfico" }, { word: "contamina", ref: "es-2411" }, { word: "aire", ref: "es-2428" }]
+  - id: "es-2425"
+    target: "el transporte"
+    ipa: "el tɾansˈpoɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "transporte", base: "transporte" }]
+    examples:
+      - target: "El transporte público es barato."
+        ipa: "el tɾansˈpoɾte ˈpubliko es baˈɾato"
+        bases: [{ word: "El", base: "el" }, { word: "transporte", base: "transporte" }, { word: "público", base: "público" }, { word: "es", ref: "es-0022" }, { word: "barato", ref: "es-0411" }]
+      - target: "Voy al trabajo en transporte."
+        ipa: "boj al tɾaˈbaxo en tɾansˈpoɾte"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "transporte", base: "transporte" }]
+  - id: "es-2426"
+    target: "el vertedero"
+    ipa: "el beɾteˈdeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vertedero", base: "vertedero" }]
+    examples:
+      - target: "El vertedero está lejos de la ciudad."
+        ipa: "el beɾteˈdeɾo esˈta ˈlexos de la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "vertedero", base: "vertedero" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "La basura va al vertedero."
+        ipa: "la baˈsuɾa ba al beɾteˈdeɾo"
+        bases: [{ word: "La", base: "la" }, { word: "basura", ref: "es-1516" }, { word: "va", ref: "es-0026" }, { word: "al", base: "al" }, { word: "vertedero", base: "vertedero" }]
+  - id: "es-2427"
+    target: "la suciedad"
+    ipa: "la suθjeˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "suciedad", base: "suciedad" }]
+    examples:
+      - target: "La suciedad está en el suelo."
+        ipa: "la suθjeˈdad esˈta en el ˈswelo"
+        bases: [{ word: "La", base: "la" }, { word: "suciedad", base: "suciedad" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }]
+      - target: "Quito la suciedad del coche."
+        ipa: "ˈkito la suθjeˈdad del ˈkotʃe"
+        bases: [{ word: "Quito", base: "quitar" }, { word: "la", base: "la" }, { word: "suciedad", base: "suciedad" }, { word: "del", base: "del" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-2428"
+    target: "el aire"
+    ipa: "el ˈajɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aire", base: "aire" }]
+    examples:
+      - target: "El aire es fresco."
+        ipa: "el ˈajɾe es ˈfɾesko"
+        bases: [{ word: "El", base: "el" }, { word: "aire", base: "aire" }, { word: "es", ref: "es-0022" }, { word: "fresco", base: "fresco" }]
+      - target: "Necesitamos aire limpio."
+        ipa: "neθesiˈtamos ˈajɾe ˈlimpjo"
+        bases: [{ word: "Necesitamos", ref: "es-0288" }, { word: "aire", base: "aire" }, { word: "limpio", ref: "es-0285" }]
+  - id: "es-2429"
+    target: "el ambiente"
+    ipa: "el amˈbjente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ambiente", base: "ambiente" }]
+    examples:
+      - target: "El ambiente de la fiesta es bueno."
+        ipa: "el amˈbjente de la ˈfjesta es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "ambiente", base: "ambiente" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+      - target: "Cuidamos el ambiente."
+        ipa: "kwiˈdamos el amˈbjente"
+        bases: [{ word: "Cuidamos", ref: "es-1487" }, { word: "el", base: "el" }, { word: "ambiente", base: "ambiente" }]
+  - id: "es-2430"
+    target: "el planeta"
+    ipa: "el plaˈneta"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "planeta", base: "planeta" }]
+    examples:
+      - target: "El planeta está en peligro."
+        ipa: "el plaˈneta esˈta en peˈliɡɾo"
+        bases: [{ word: "El", base: "el" }, { word: "planeta", base: "planeta" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "peligro", base: "peligro" }]
+      - target: "Vivimos en un planeta grande."
+        ipa: "biˈbimos en un plaˈneta ˈɡɾande"
+        bases: [{ word: "Vivimos", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "planeta", base: "planeta" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2431"
+    target: "el efecto"
+    ipa: "el eˈfekto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "efecto", base: "efecto" }]
+    examples:
+      - target: "El efecto es grave."
+        ipa: "el eˈfekto es ˈɡɾabe"
+        bases: [{ word: "El", base: "el" }, { word: "efecto", base: "efecto" }, { word: "es", ref: "es-0022" }, { word: "grave", base: "grave" }]
+      - target: "El efecto del calor es fuerte."
+        ipa: "el eˈfekto del kaˈloɾ es ˈfweɾte"
+        bases: [{ word: "El", base: "el" }, { word: "efecto", base: "efecto" }, { word: "del", base: "del" }, { word: "calor", ref: "es-1120" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-2432"
+    target: "el carbón"
+    ipa: "el kaɾˈbon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "carbón", base: "carbón" }]
+    examples:
+      - target: "El carbón contamina mucho."
+        ipa: "el kaɾˈbon kontaˈmina ˈmutʃo"
+        bases: [{ word: "El", base: "el" }, { word: "carbón", base: "carbón" }, { word: "contamina", ref: "es-2411" }, { word: "mucho", ref: "es-0053" }]
+      - target: "Usan carbón en la fábrica."
+        ipa: "ˈusan kaɾˈbon en la ˈfabɾika"
+        bases: [{ word: "Usan", ref: "es-0287" }, { word: "carbón", base: "carbón" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fábrica", ref: "es-1860" }]
+  - id: "es-2433"
+    target: "el petróleo"
+    ipa: "el peˈtɾoleo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "petróleo", base: "petróleo" }]
+    examples:
+      - target: "El petróleo es caro."
+        ipa: "el peˈtɾoleo es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "petróleo", base: "petróleo" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+      - target: "El petróleo contamina el mar."
+        ipa: "el peˈtɾoleo kontaˈmina el maɾ"
+        bases: [{ word: "El", base: "el" }, { word: "petróleo", base: "petróleo" }, { word: "contamina", ref: "es-2411" }, { word: "mar", ref: "es-1753" }]
+  - id: "es-2434"
+    target: "la luz"
+    ipa: "la luθ"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "luz", base: "luz" }]
+    examples:
+      - target: "La luz del sol es fuerte."
+        ipa: "la luθ del sol es ˈfweɾte"
+        bases: [{ word: "La", base: "la" }, { word: "luz", base: "luz" }, { word: "del", base: "del" }, { word: "sol", ref: "es-1113" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+      - target: "Apago la luz al salir."
+        ipa: "aˈpaɡo la luθ al saˈliɾ"
+        bases: [{ word: "Apago", ref: "es-1662" }, { word: "la", base: "la" }, { word: "luz", base: "luz" }, { word: "al", base: "al" }, { word: "salir", ref: "es-0690" }]
+  - id: "es-2435"
+    target: "el contenedor"
+    ipa: "el konteneˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "contenedor", base: "contenedor" }]
+    examples:
+      - target: "El contenedor está en la calle."
+        ipa: "el konteneˈdoɾ esˈta en la ˈkaʝe"
+        bases: [{ word: "El", base: "el" }, { word: "contenedor", base: "contenedor" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "Echo el vidrio en el contenedor."
+        ipa: "ˈetʃo el ˈbidɾjo en el konteneˈdoɾ"
+        bases: [{ word: "Echo", base: "echar" }, { word: "el", base: "el" }, { word: "vidrio", ref: "es-1824" }, { word: "en", base: "en" }, { word: "contenedor", base: "contenedor" }]
+  - id: "es-2436"
+    target: "el envase"
+    ipa: "el enˈbase"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "envase", base: "envase" }]
+    examples:
+      - target: "El envase es de plástico."
+        ipa: "el enˈbase es de ˈplastiko"
+        bases: [{ word: "El", base: "el" }, { word: "envase", base: "envase" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "plástico", ref: "es-1826" }]
+      - target: "Reciclo el envase."
+        ipa: "reˈθiklo el enˈbase"
+        bases: [{ word: "Reciclo", ref: "es-1517" }, { word: "el", base: "el" }, { word: "envase", base: "envase" }]
+  - id: "es-2437"
+    target: "el cartón"
+    ipa: "el kaɾˈton"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cartón", base: "cartón" }]
+    examples:
+      - target: "El cartón va al contenedor azul."
+        ipa: "el kaɾˈton ba al konteneˈdoɾ aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "cartón", base: "cartón" }, { word: "va", ref: "es-0026" }, { word: "al", base: "al" }, { word: "contenedor", ref: "es-2435" }, { word: "azul", ref: "es-1008" }]
+      - target: "La caja es de cartón."
+        ipa: "la ˈkaxa es de kaɾˈton"
+        bases: [{ word: "La", base: "la" }, { word: "caja", ref: "es-0382" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "cartón", base: "cartón" }]
+  - id: "es-2438"
+    target: "renovable"
+    ipa: "renoˈbable"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "renovable", base: "renovable" }]
+    examples:
+      - target: "La energía solar es renovable."
+        ipa: "la eneɾˈxia soˈlaɾ es renoˈbable"
+        bases: [{ word: "La", base: "la" }, { word: "energía", ref: "es-1941" }, { word: "solar", ref: "es-2439" }, { word: "es", ref: "es-0022" }, { word: "renovable", base: "renovable" }]
+      - target: "Usamos fuentes renovables."
+        ipa: "uˈsamos ˈfwentes renoˈbables"
+        bases: [{ word: "Usamos", ref: "es-0287" }, { word: "fuentes", ref: "es-2075" }, { word: "renovables", base: "renovable" }]
+  - id: "es-2439"
+    target: "solar"
+    ipa: "soˈlaɾ"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "solar", base: "solar" }]
+    examples:
+      - target: "El panel solar da luz."
+        ipa: "el paˈnel soˈlaɾ da luθ"
+        bases: [{ word: "El", base: "el" }, { word: "panel", base: "panel" }, { word: "solar", base: "solar" }, { word: "da", ref: "es-1629" }, { word: "luz", ref: "es-2434" }]
+      - target: "La energía solar es limpia."
+        ipa: "la eneɾˈxia soˈlaɾ es ˈlimpja"
+        bases: [{ word: "La", base: "la" }, { word: "energía", ref: "es-1941" }, { word: "solar", base: "solar" }, { word: "es", ref: "es-0022" }, { word: "limpia", ref: "es-0416" }]
+  - id: "es-2440"
+    target: "eólico"
+    ipa: "eˈoliko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "eólico", base: "eólico" }]
+    examples:
+      - target: "La energía eólica es buena."
+        ipa: "la eneɾˈxia eˈolika es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "energía", ref: "es-1941" }, { word: "eólica", base: "eólico" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+      - target: "Hay un parque eólico en el valle."
+        ipa: "aj un ˈpaɾke eˈoliko en el ˈbaʝe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "parque", base: "parque" }, { word: "eólico", base: "eólico" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "valle", ref: "es-1773" }]
+  - id: "es-2441"
+    target: "potable"
+    ipa: "poˈtable"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "potable", base: "potable" }]
+    examples:
+      - target: "El agua potable es necesaria."
+        ipa: "el ˈaɡwa poˈtable es neθeˈsaɾja"
+        bases: [{ word: "El", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "potable", base: "potable" }, { word: "es", ref: "es-0022" }, { word: "necesaria", ref: "es-2142" }]
+      - target: "Esta agua es potable."
+        ipa: "ˈesta ˈaɡwa es poˈtable"
+        bases: [{ word: "Esta", base: "esta" }, { word: "agua", ref: "es-0012" }, { word: "es", ref: "es-0022" }, { word: "potable", base: "potable" }]
+  - id: "es-2442"
+    target: "proteger"
+    ipa: "pɾoteˈxeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "proteger", base: "proteger" }]
+    examples:
+      - target: "Protejo los bosques."
+        ipa: "pɾoˈtexo los ˈboskes"
+        bases: [{ word: "Protejo", base: "proteger" }, { word: "los", base: "los" }, { word: "bosques", ref: "es-1749" }]
+      - target: "Protegen a los animales."
+        ipa: "pɾoˈtexen a los aniˈmales"
+        bases: [{ word: "Protegen", base: "proteger" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "animales", ref: "es-1060" }]
+  - id: "es-2443"
+    target: "conservar"
+    ipa: "konseɾˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "conservar", base: "conservar" }]
+    examples:
+      - target: "Conservo el agua."
+        ipa: "konˈseɾbo el ˈaɡwa"
+        bases: [{ word: "Conservo", base: "conservar" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }]
+      - target: "Conservan la naturaleza."
+        ipa: "konˈseɾban la natuɾaˈleθa"
+        bases: [{ word: "Conservan", base: "conservar" }, { word: "la", base: "la" }, { word: "naturaleza", ref: "es-1778" }]
+  - id: "es-2444"
+    target: "reducir"
+    ipa: "reduˈθiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reducir", base: "reducir" }]
+    examples:
+      - target: "Reduzco el uso del coche."
+        ipa: "reˈduθko el ˈuso del ˈkotʃe"
+        bases: [{ word: "Reduzco", base: "reducir" }, { word: "el", base: "el" }, { word: "uso", ref: "es-0287" }, { word: "del", base: "del" }, { word: "coche", ref: "es-0678" }]
+      - target: "Reducimos la basura."
+        ipa: "reduˈθimos la baˈsuɾa"
+        bases: [{ word: "Reducimos", base: "reducir" }, { word: "la", base: "la" }, { word: "basura", ref: "es-1516" }]
+  - id: "es-2445"
+    target: "reutilizar"
+    ipa: "rewtiliˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reutilizar", base: "reutilizar" }]
+    examples:
+      - target: "Reutilizo las bolsas."
+        ipa: "rewtiˈliθo las ˈbolsas"
+        bases: [{ word: "Reutilizo", base: "reutilizar" }, { word: "las", base: "las" }, { word: "bolsas", ref: "es-0380" }]
+      - target: "Reutilizan el agua de lluvia."
+        ipa: "rewtiˈliθan el ˈaɡwa de ˈʝubja"
+        bases: [{ word: "Reutilizan", base: "reutilizar" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "de", base: "de" }, { word: "lluvia", ref: "es-1114" }]
+  - id: "es-2446"
+    target: "reforestar"
+    ipa: "refoɾesˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reforestar", base: "reforestar" }]
+    examples:
+      - target: "Reforestamos la montaña."
+        ipa: "refoɾesˈtamos la monˈtaɲa"
+        bases: [{ word: "Reforestamos", base: "reforestar" }, { word: "la", base: "la" }, { word: "montaña", ref: "es-1750" }]
+      - target: "Reforestan el bosque quemado."
+        ipa: "refoˈɾestan el ˈboske keˈmado"
+        bases: [{ word: "Reforestan", base: "reforestar" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }, { word: "quemado", ref: "es-1327" }]

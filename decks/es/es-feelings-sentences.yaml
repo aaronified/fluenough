@@ -1,0 +1,50 @@
+schema: 1
+id: "es-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2034"
+    target: "Me asusta la oscuridad y lloro a veces."
+    ipa: "me aˈsusta la oskuɾiˈdad i ˈʝoɾo a ˈbeθes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "asusta", ref: "es-2028" }, { word: "la", base: "la" }, { word: "oscuridad", base: "oscuridad" }, { word: "y", ref: "es-0048" }, { word: "lloro", ref: "es-2029" }, { word: "a", base: "a" }, { word: "veces", ref: "es-0322" }]
+    confusables: [{ id: "miedo", ref: "es-1994", kind: "word" }, { id: "temer", ref: "es-2032", kind: "word" }]
+  - id: "es-2035"
+    target: "Estoy preocupado por mi hermana."
+    ipa: "esˈtoj pɾeokuˈpado poɾ mi eɾˈmana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "preocupado", ref: "es-2014" }, { word: "por", base: "por" }, { word: "mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }]
+    confusables: [{ id: "enfadado", ref: "es-2015", kind: "word" }, { id: "tristeza", ref: "es-1993", kind: "word" }]
+  - id: "es-2036"
+    target: "Me encanta la alegría de los niños."
+    ipa: "me enˈkanta la aleˈɡɾia de los ˈniɲos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "encanta", ref: "es-2030" }, { word: "la", base: "la" }, { word: "alegría", ref: "es-1992" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }]
+    confusables: [{ id: "ilusion", ref: "es-2002", kind: "word" }, { id: "felicidad", ref: "es-2005", kind: "word" }]
+  - id: "es-2037"
+    target: "Siento vergüenza por el error."
+    ipa: "ˈsjento beɾˈɡwenθa poɾ el eˈroɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Siento", ref: "es-1619" }, { word: "vergüenza", ref: "es-2000" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "error", base: "error" }]
+    confusables: [{ id: "culpa", ref: "es-2007", kind: "word" }, { id: "avergonzado", ref: "es-2017", kind: "word" }]
+  - id: "es-2038"
+    target: "Estoy sorprendido, pero aliviado."
+    ipa: "esˈtoj soɾpɾenˈdido ˈpeɾo aliˈbjado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "sorprendido", ref: "es-2016" }, { word: "pero", ref: "es-0050" }, { word: "aliviado", ref: "es-2022" }]
+    confusables: [{ id: "emocion", ref: "es-1991", kind: "word" }, { id: "calma", ref: "es-2004", kind: "word" }]
+  - id: "es-2039"
+    target: "Estoy solo, pero agradecido por la compañía."
+    ipa: "esˈtoj ˈsolo ˈpeɾo aɡɾadeˈθido poɾ la kompaˈɲia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "solo", ref: "es-2021" }, { word: "pero", ref: "es-0050" }, { word: "agradecido", ref: "es-2024" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "compañía", ref: "es-1866" }]
+    confusables: [{ id: "soledad", ref: "es-2006", kind: "word" }, { id: "orgullo", ref: "es-2001", kind: "word" }]

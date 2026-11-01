@@ -1,0 +1,275 @@
+schema: 1
+id: "es-en-nature"
+kind: "layer"
+core: "es-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature: trees, land and water"
+license: "CC-BY-SA-4.0"
+description: "Words for the outdoors: trees and flowers, the forest and the mountain, the river, lake and sea, the sky and its weather, the land and the stones, and the verbs to sow and harvest. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1748":
+    native: "tree"
+    notes: { n1: "Árbol is a tree. Its branches are ramas and its leaves are hojas." }
+    bases: { "el": "the", "árbol": "tree" }
+    examples:
+      "Hay un árbol grande en el parque.": { native: "There is a big tree in the park.", bases: { "Hay": "there is; there are", "un": "a", "árbol": "tree", "en": "in", "el": "the" } }
+      "Las hojas del árbol son verdes.": { native: "The leaves of the tree are green.", bases: { "Las": "the", "del": "of", "árbol": "tree", "hojas": "leaf" } }
+  "es-1749":
+    native: "forest; wood"
+    notes: { n1: "Bosque is a forest, larger and wilder than a park." }
+    bases: { "el": "the", "bosque": "forest; wood" }
+    examples:
+      "Paseamos por el bosque.": { native: "We walk in the forest.", bases: { "por": "for", "el": "the", "bosque": "forest; wood" } }
+      "En el bosque hay muchos pájaros.": { native: "There are many birds in the forest.", bases: { "En": "in", "el": "the", "bosque": "forest; wood", "hay": "there is; there are" } }
+  "es-1750":
+    native: "mountain"
+    notes: { n1: "Montaña is a mountain. Montañoso means mountainous." }
+    bases: { "la": "the", "montaña": "mountain" }
+    examples:
+      "La montaña es muy alta.": { native: "The mountain is very high.", bases: { "La": "the", "montaña": "mountain", "alta": "high" } }
+      "Subimos a la montaña.": { native: "We climb the mountain.", bases: { "a": "to", "la": "the", "montaña": "mountain" } }
+  "es-1751":
+    native: "river"
+    notes: { n1: "Río is a river. It flows into the sea or a lake." }
+    bases: { "el": "the", "río": "river" }
+    examples:
+      "El río pasa por la ciudad.": { native: "The river runs through the city.", bases: { "El": "the", "río": "river", "por": "for", "la": "the" } }
+      "Nadamos en el río.": { native: "We swim in the river.", bases: { "en": "in", "el": "the", "río": "river" } }
+  "es-1752":
+    native: "lake"
+    notes: { n1: "Lago is a lake, a large body of still water." }
+    bases: { "el": "the", "lago": "lake" }
+    examples:
+      "El lago está muy tranquilo.": { native: "The lake is very calm.", bases: { "El": "the", "lago": "lake" } }
+      "Hay peces en el lago.": { native: "There are fish in the lake.", bases: { "Hay": "there is; there are", "en": "in", "el": "the", "lago": "lake" } }
+  "es-1753":
+    native: "sea"
+    notes: { n1: "El mar is the sea, which is salty. It is also feminine in some regions, but use el." }
+    bases: { "el": "the", "mar": "sea" }
+    examples:
+      "El mar es azul.": { native: "The sea is blue.", bases: { "El": "the", "mar": "sea" } }
+      "Vemos el mar desde la ventana.": { native: "We see the sea from the window.", bases: { "el": "the", "mar": "sea", "desde": "from", "la": "the" } }
+  "es-1754":
+    native: "ocean"
+    notes: { n1: "El océano is the ocean, a very large sea." }
+    bases: { "el": "the", "océano": "ocean" }
+    examples:
+      "El océano es muy grande.": { native: "The ocean is very big.", bases: { "El": "the", "océano": "ocean" } }
+      "Cruzamos el océano en barco.": { native: "We cross the ocean by boat.", bases: { "el": "the", "océano": "ocean", "en": "in" } }
+  "es-1755":
+    native: "island"
+    notes: { n1: "La isla is an island, land with water all around." }
+    bases: { "la": "the", "isla": "island" }
+    examples:
+      "Vivo en una isla.": { native: "I live on an island.", bases: { "en": "in", "una": "a", "isla": "island" } }
+      "La isla tiene playas bonitas.": { native: "The island has pretty beaches.", bases: { "La": "the", "isla": "island" } }
+  "es-1756":
+    native: "desert"
+    notes: { n1: "El desierto is a desert, dry and with little rain." }
+    bases: { "el": "the", "desierto": "desert" }
+    examples:
+      "El desierto es seco y caliente.": { native: "The desert is dry and hot.", bases: { "El": "the", "desierto": "desert" } }
+      "Viajamos por el desierto.": { native: "We travel through the desert.", bases: { "por": "for", "el": "the", "desierto": "desert" } }
+  "es-1757":
+    native: "jungle; rainforest"
+    notes: { n1: "La selva is a jungle, a tropical forest, wet and full of life." }
+    bases: { "la": "the", "selva": "jungle; rainforest" }
+    examples:
+      "La selva es húmeda.": { native: "The jungle is wet.", bases: { "La": "the", "selva": "jungle; rainforest" } }
+      "Hay animales en la selva.": { native: "There are animals in the jungle.", bases: { "Hay": "there is; there are", "en": "in", "la": "the", "selva": "jungle; rainforest" } }
+  "es-1758":
+    native: "flower"
+    notes: { n1: "La flor is a flower, the part of a plant that opens." }
+    bases: { "la": "the", "flor": "flower" }
+    examples:
+      "Esta flor es roja.": { native: "This flower is red.", bases: { "Esta": "This", "flor": "flower" } }
+      "Las flores huelen bien.": { native: "The flowers smell good.", bases: { "Las": "the", "flores": "flower", "huelen": "to smell" } }
+  "es-1759":
+    native: "branch"
+    notes: { n1: "La rama is a branch of a tree." }
+    bases: { "la": "the", "rama": "branch" }
+    examples:
+      "La rama del árbol es fuerte.": { native: "The branch of the tree is strong.", bases: { "La": "the", "rama": "branch", "del": "of" } }
+      "Una rama cae en el suelo.": { native: "A branch falls to the ground.", bases: { "Una": "a", "rama": "branch", "cae": "to fall", "en": "in", "el": "the" } }
+  "es-1760":
+    native: "earth; land; soil"
+    notes: { n1: "La tierra is the earth, the planet, and also the soil or land." }
+    bases: { "la": "the", "tierra": "earth; land; soil" }
+    examples:
+      "La tierra gira alrededor del sol.": { native: "The earth goes round the sun.", bases: { "La": "the", "tierra": "earth; land; soil", "alrededor": "around", "del": "of" } }
+      "Plantamos en la tierra.": { native: "We plant in the soil.", bases: { "Plantamos": "to plant", "en": "in", "la": "the", "tierra": "earth; land; soil" } }
+  "es-1761":
+    native: "rock"
+    notes: { n1: "La roca is a rock, a large hard stone." }
+    bases: { "la": "the", "roca": "rock" }
+    examples:
+      "La roca es muy dura.": { native: "The rock is very hard.", bases: { "La": "the", "roca": "rock" } }
+      "Subimos a la roca.": { native: "We climb up the rock.", bases: { "a": "to", "la": "the", "roca": "rock" } }
+  "es-1762":
+    native: "stone"
+    notes: { n1: "La piedra is a stone, smaller than a rock." }
+    bases: { "la": "the", "piedra": "stone" }
+    examples:
+      "Hay una piedra en el camino.": { native: "There is a stone on the path.", bases: { "Hay": "there is; there are", "una": "a", "piedra": "stone", "en": "in", "el": "the", "camino": "path; way" } }
+      "La piedra es gris.": { native: "The stone is grey.", bases: { "La": "the", "piedra": "stone" } }
+  "es-1763":
+    native: "sand"
+    notes: { n1: "La arena is sand, on a beach or in the desert." }
+    bases: { "la": "the", "arena": "sand" }
+    examples:
+      "La arena de la playa es suave.": { native: "The sand on the beach is soft.", bases: { "La": "the", "arena": "sand", "de": "of", "suave": "soft" } }
+      "Caminamos sobre la arena.": { native: "We walk on the sand.", bases: { "sobre": "over", "la": "the", "arena": "sand" } }
+  "es-1764":
+    native: "moon"
+    notes: { n1: "La luna is the moon, seen at night." }
+    bases: { "la": "the", "luna": "moon" }
+    examples:
+      "La luna brilla de noche.": { native: "The moon shines at night.", bases: { "La": "the", "luna": "moon", "de": "of" } }
+      "Hay luna llena.": { native: "There is a full moon.", bases: { "Hay": "there is; there are", "luna": "moon" } }
+  "es-1765":
+    native: "star"
+    notes: { n1: "La estrella is a star in the sky." }
+    bases: { "la": "the", "estrella": "star" }
+    examples:
+      "Veo una estrella en el cielo.": { native: "I see a star in the sky.", bases: { "una": "a", "estrella": "star", "en": "in", "el": "the" } }
+      "Las estrellas son muy lejanas.": { native: "The stars are very far away.", bases: { "Las": "the", "estrellas": "star", "lejanas": "distant" } }
+  "es-1766":
+    native: "lightning"
+    notes: { n1: "El relámpago is lightning, the flash in a storm. Its plural is relámpagos." }
+    bases: { "el": "the", "relámpago": "lightning" }
+    examples:
+      "Veo un relámpago.": { native: "I see a flash of lightning.", bases: { "un": "a", "relámpago": "lightning" } }
+      "Hay relámpagos y truenos.": { native: "There is lightning and thunder.", bases: { "Hay": "there is; there are", "relámpagos": "lightning" } }
+  "es-1767":
+    native: "fire"
+    notes: { n1: "El fuego is fire, the flame and the heat." }
+    bases: { "el": "the", "fuego": "fire" }
+    examples:
+      "Hacemos fuego en el campo.": { native: "We make a fire in the countryside.", bases: { "fuego": "fire", "en": "in", "el": "the" } }
+      "El fuego es muy caliente.": { native: "Fire is very hot.", bases: { "El": "the", "fuego": "fire" } }
+  "es-1768":
+    native: "insect"
+    notes: { n1: "El insecto is an insect, a small animal with six legs." }
+    bases: { "el": "the", "insecto": "insect" }
+    examples:
+      "Un insecto vuela cerca.": { native: "An insect flies nearby.", bases: { "Un": "a", "insecto": "insect" } }
+      "Los insectos son pequeños.": { native: "Insects are small.", bases: { "Los": "the", "insectos": "insect" } }
+  "es-1769":
+    native: "grass"
+    notes: { n1: "La hierba is grass, or herbs for cooking." }
+    bases: { "la": "the", "hierba": "grass" }
+    examples:
+      "La hierba está mojada.": { native: "The grass is wet.", bases: { "La": "the", "hierba": "grass" } }
+      "Hay mucha hierba en el campo.": { native: "There is a lot of grass in the countryside.", bases: { "Hay": "there is; there are", "hierba": "grass", "en": "in", "el": "the" } }
+  "es-1770":
+    native: "lawn"
+    notes: { n1: "El césped is a lawn, the grass in a garden or park." }
+    bases: { "el": "the", "césped": "lawn" }
+    examples:
+      "El césped es verde.": { native: "The lawn is green.", bases: { "El": "the", "césped": "lawn" } }
+      "Cortamos el césped.": { native: "We cut the lawn.", bases: { "el": "the", "césped": "lawn" } }
+  "es-1771":
+    native: "meadow"
+    notes: { n1: "La pradera is a meadow, a wide flat field of grass." }
+    bases: { "la": "the", "pradera": "meadow" }
+    examples:
+      "La pradera está llena de flores.": { native: "The meadow is full of flowers.", bases: { "La": "the", "pradera": "meadow", "de": "of" } }
+      "Las vacas comen en la pradera.": { native: "The cows eat in the meadow.", bases: { "Las": "the", "en": "in", "la": "the", "pradera": "meadow" } }
+  "es-1772":
+    native: "countryside; field"
+    notes: { n1: "El campo is the countryside, away from the city, or a field for crops." }
+    bases: { "el": "the", "campo": "countryside; field" }
+    examples:
+      "Vivimos en el campo.": { native: "We live in the countryside.", bases: { "en": "in", "el": "the", "campo": "countryside; field" } }
+      "El campo es tranquilo.": { native: "The countryside is quiet.", bases: { "El": "the", "campo": "countryside; field" } }
+  "es-1773":
+    native: "valley"
+    notes: { n1: "El valle is a valley, the low land between mountains." }
+    bases: { "el": "the", "valle": "valley" }
+    examples:
+      "El valle es muy verde.": { native: "The valley is very green.", bases: { "El": "the", "valle": "valley" } }
+      "El río cruza el valle.": { native: "The river crosses the valley.", bases: { "El": "the", "valle": "valley" } }
+  "es-1774":
+    native: "hill"
+    notes: { n1: "La colina is a hill, lower than a mountain." }
+    bases: { "la": "the", "colina": "hill" }
+    examples:
+      "Subimos la colina.": { native: "We climb the hill.", bases: { "la": "the", "colina": "hill" } }
+      "La colina es alta.": { native: "The hill is high.", bases: { "La": "the", "colina": "hill", "alta": "high" } }
+  "es-1775":
+    native: "cave"
+    notes: { n1: "La cueva is a cave, a hole in a rock or a hill." }
+    bases: { "la": "the", "cueva": "cave" }
+    examples:
+      "Entramos en una cueva.": { native: "We go into a cave.", bases: { "en": "in", "una": "a", "cueva": "cave" } }
+      "La cueva es oscura.": { native: "The cave is dark.", bases: { "La": "the", "cueva": "cave" } }
+  "es-1776":
+    native: "coast"
+    notes: { n1: "La costa is the coast, the land along the sea." }
+    bases: { "la": "the", "costa": "coast" }
+    examples:
+      "Vivimos en la costa.": { native: "We live on the coast.", bases: { "en": "in", "la": "the", "costa": "coast" } }
+      "La costa es bonita.": { native: "The coast is pretty.", bases: { "La": "the", "costa": "coast" } }
+  "es-1777":
+    native: "bank; shore"
+    notes: { n1: "La orilla is the edge of a river, a lake or the sea." }
+    bases: { "la": "the", "orilla": "bank; shore" }
+    examples:
+      "Nos sentamos en la orilla.": { native: "We sit down on the bank.", bases: { "Nos": "us", "en": "in", "la": "the", "orilla": "bank; shore" } }
+      "La orilla del río es verde.": { native: "The riverbank is green.", bases: { "La": "the", "orilla": "bank; shore", "del": "of" } }
+  "es-1778":
+    native: "nature"
+    notes: { n1: "La naturaleza is nature, all living and non-human things." }
+    bases: { "la": "the", "naturaleza": "nature" }
+    examples:
+      "Me gusta la naturaleza.": { native: "I like nature.", bases: { "Me": "to me", "la": "the", "naturaleza": "nature" } }
+      "La naturaleza es bella.": { native: "Nature is beautiful.", bases: { "La": "the", "naturaleza": "nature", "bella": "beautiful" } }
+  "es-1779":
+    native: "landscape"
+    notes: { n1: "El paisaje is a landscape, the view of the land." }
+    bases: { "el": "the", "paisaje": "landscape" }
+    examples:
+      "El paisaje es precioso.": { native: "The landscape is beautiful.", bases: { "El": "the", "paisaje": "landscape", "precioso": "beautiful" } }
+      "Miro el paisaje desde el tren.": { native: "I look at the landscape from the train.", bases: { "el": "the", "paisaje": "landscape", "desde": "from" } }
+  "es-1780":
+    native: "waterfall"
+    notes: { n1: "La cascada is a waterfall." }
+    bases: { "la": "the", "cascada": "waterfall" }
+    examples:
+      "La cascada es muy alta.": { native: "The waterfall is very high.", bases: { "La": "the", "cascada": "waterfall", "alta": "high" } }
+      "Vemos una cascada.": { native: "We see a waterfall.", bases: { "una": "a", "cascada": "waterfall" } }
+  "es-1781":
+    native: "volcano"
+    notes: { n1: "El volcán is a volcano, a mountain that can throw out fire and rock." }
+    bases: { "el": "the", "volcán": "volcano" }
+    examples:
+      "El volcán está activo.": { native: "The volcano is active.", bases: { "El": "the", "volcán": "volcano", "activo": "active" } }
+      "Visitamos un volcán.": { native: "We visit a volcano.", bases: { "un": "a", "volcán": "volcano" } }
+  "es-1782":
+    native: "mountainous"
+    notes: { n1: "Montañoso is mountainous, with many mountains. It agrees with the noun: montañosa." }
+    bases: { "montañoso": "mountainous" }
+    examples:
+      "Es un país montañoso.": { native: "It is a mountainous country.", bases: { "un": "a", "montañoso": "mountainous" } }
+      "El norte es montañoso.": { native: "The north is mountainous.", bases: { "El": "the", "montañoso": "mountainous" } }
+  "es-1783":
+    native: "tropical"
+    notes: { n1: "Tropical is tropical, hot and wet, near the equator." }
+    bases: { "tropical": "tropical" }
+    examples:
+      "El clima es tropical.": { native: "The climate is tropical.", bases: { "El": "the", "tropical": "tropical" } }
+      "Hace calor tropical.": { native: "It is tropically hot.", bases: { "tropical": "tropical" } }
+  "es-1784":
+    native: "to sow; to plant seeds"
+    notes: { n1: "Sembrar is to sow seeds. Its stem changes: siembro, siembras." }
+    bases: { "sembrar": "to sow; to plant seeds" }
+    examples:
+      "Siembro tomates.": { native: "I sow tomatoes.", bases: { "Siembro": "to sow; to plant seeds" } }
+      "Siembran maíz en la pradera.": { native: "They sow maize in the meadow.", bases: { "Siembran": "to sow; to plant seeds", "maíz": "maize", "en": "in", "la": "the" } }
+  "es-1785":
+    native: "to harvest"
+    notes: { n1: "Cosechar is to harvest crops, to gather them when ripe." }
+    bases: { "cosechar": "to harvest" }
+    examples:
+      "Cosechamos las manzanas.": { native: "We harvest the apples.", bases: { "Cosechamos": "to harvest", "las": "the" } }
+      "Cosechan el trigo en verano.": { native: "They harvest the wheat in summer.", bases: { "Cosechan": "to harvest", "el": "the", "trigo": "wheat", "en": "in" } }

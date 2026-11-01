@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-school"
+name: "Reading: a school day and a timetable"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a class timetable and a note about a school day. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-class-timetable"
+    title: "A class timetable"
+    theme: "school"
+    sentences:
+      - text: "Lunes: matemáticas y ciencias."
+      - text: "Martes: inglés y gimnasia."
+      - text: "Miércoles: lengua, con examen."
+      - text: "Viernes: recreo a las once."
+    questions:
+      - id: "es-1394"
+        prompt: { en: "What is on Tuesday?" }
+        options:
+          - { en: "Science and maths" }
+          - { en: "English and PE" }
+          - { en: "Spanish and art" }
+        answer: 2
+      - id: "es-1395"
+        prompt: { en: "When is the exam?" }
+        options:
+          - { en: "On Monday" }
+          - { en: "On Wednesday" }
+          - { en: "On Friday" }
+        answer: 2
+      - id: "es-1396"
+        prompt: { en: "When is the break?" }
+        options:
+          - { en: "At nine" }
+          - { en: "At eleven" }
+          - { en: "At one" }
+        answer: 2
+  - id: "es-school-note"
+    title: "A note about a school day"
+    theme: "school"
+    sentences:
+      - text: "Asisto a la escuela a las ocho."
+      - text: "En la clase, pregunto al profesor."
+      - text: "Olvido el libro en casa."
+      - text: "Aprobé el examen de español."
+    questions:
+      - id: "es-1397"
+        prompt: { en: "When does the writer go to school?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 2
+      - id: "es-1398"
+        prompt: { en: "What did the writer forget?" }
+        options:
+          - { en: "The pencil" }
+          - { en: "The book" }
+          - { en: "The bag" }
+        answer: 2
+      - id: "es-1399"
+        prompt: { en: "What did the writer pass?" }
+        options:
+          - { en: "The Spanish exam" }
+          - { en: "The gym class" }
+          - { en: "The bus test" }
+        answer: 1

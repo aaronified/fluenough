@@ -1,0 +1,50 @@
+schema: 1
+id: "es-workplace-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1883"
+    target: "Firmo el contrato y empiezo el lunes."
+    ipa: "ˈfiɾmo el konˈtɾato i emˈpjeθo el ˈlunes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Firmo", ref: "es-1874" }, { word: "el", base: "el" }, { word: "contrato", ref: "es-1852" }, { word: "y", ref: "es-0048" }, { word: "empiezo", ref: "es-0852" }, { word: "lunes", ref: "es-0958" }]
+    confusables: [{ id: "nomina", ref: "es-1880", kind: "word" }, { id: "puesto", ref: "es-0581", kind: "word" }]
+  - id: "es-1884"
+    target: "El director presenta el informe en la reunión."
+    ipa: "el diɾekˈtoɾ pɾeˈsenta el inˈfoɾme en la rewˈnjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "director", ref: "es-1856" }, { word: "presenta", ref: "es-1873" }, { word: "informe", ref: "es-1854" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "reunión", ref: "es-0511" }]
+    confusables: [{ id: "organizar", ref: "es-1877", kind: "word" }, { id: "discutir", ref: "es-1878", kind: "word" }]
+  - id: "es-1885"
+    target: "Trabajo a tiempo parcial en la fábrica."
+    ipa: "tɾaˈbaxo a ˈtjempo paɾˈθjal en la ˈfabɾika"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "a", base: "a" }, { word: "tiempo", base: "tiempo" }, { word: "parcial", ref: "es-1863" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fábrica", ref: "es-1860" }]
+    confusables: [{ id: "completo", ref: "es-1862", kind: "word" }, { id: "taller", ref: "es-1859", kind: "word" }]
+  - id: "es-1886"
+    target: "Mi jefa contrata a dos trabajadores."
+    ipa: "mi ˈxefa konˈtɾata a dos tɾabaxaˈdoɾes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "jefa", base: "jefa" }, { word: "contrata", ref: "es-1869" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }, { word: "trabajadores", ref: "es-1868" }]
+    confusables: [{ id: "despedir", ref: "es-1870", kind: "word" }, { id: "empresario", ref: "es-1861", kind: "word" }]
+  - id: "es-1887"
+    target: "El negocio cierra a las seis."
+    ipa: "el neˈɡoθjo ˈθjera a las sejs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "negocio", ref: "es-1865" }, { word: "cierra", ref: "es-0789" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "seis", ref: "es-0210" }]
+    confusables: [{ id: "almacen", ref: "es-1867", kind: "word" }, { id: "compania", ref: "es-1866", kind: "word" }]
+  - id: "es-1888"
+    target: "Me jubilo a los sesenta años."
+    ipa: "me xuˈbilo a los seˈsenta ˈaɲos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "jubilo", ref: "es-1872" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "sesenta", ref: "es-0539" }, { word: "años", ref: "es-0021" }]
+    confusables: [{ id: "dimitir", ref: "es-1871", kind: "word" }, { id: "permiso", ref: "es-1858", kind: "word" }]

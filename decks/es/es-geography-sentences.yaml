@@ -1,0 +1,50 @@
+schema: 1
+id: "es-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1926"
+    target: "La capital de España es Madrid."
+    ipa: "la kapiˈtal de esˈpaɲa es maˈdɾid"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }, { word: "es", ref: "es-0022" }, { word: "Madrid", ref: "es-1919" }]
+    confusables: [{ id: "pais", ref: "es-0018", kind: "word" }, { id: "ciudad", ref: "es-0016", kind: "word" }]
+  - id: "es-1927"
+    target: "Hay una frontera entre Francia y España."
+    ipa: "aj ˈuna fɾonˈteɾa ˈentɾe ˈfɾanθja i esˈpaɲa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "frontera", ref: "es-1898" }, { word: "entre", ref: "es-0719" }, { word: "Francia", base: "francia" }, { word: "y", ref: "es-0048" }, { word: "España", ref: "es-1910" }]
+    confusables: [{ id: "region", ref: "es-1899", kind: "word" }, { id: "zona", ref: "es-1905", kind: "word" }]
+  - id: "es-1928"
+    target: "Argentina está en el hemisferio sur."
+    ipa: "aɾxenˈtina esˈta en el emisˈfeɾjo suɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Argentina", ref: "es-1912" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hemisferio", ref: "es-1904" }, { word: "sur", ref: "es-0712" }]
+    confusables: [{ id: "este", ref: "es-1897", kind: "word" }, { id: "mundo", ref: "es-1900", kind: "word" }]
+  - id: "es-1929"
+    target: "Vivo en una zona rural, cerca de un pueblo."
+    ipa: "ˈbibo en ˈuna ˈθona ruˈɾal ˈθeɾka de un ˈpweblo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "zona", ref: "es-1905" }, { word: "rural", ref: "es-1906" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "pueblo", ref: "es-0783" }]
+    confusables: [{ id: "urbano", ref: "es-1907", kind: "word" }, { id: "poblacion", ref: "es-1902", kind: "word" }]
+  - id: "es-1930"
+    target: "Lima es la capital de Perú."
+    ipa: "ˈlima es la kapiˈtal de peˈɾu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Lima", base: "lima" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Perú", ref: "es-1914" }]
+    confusables: [{ id: "chile", ref: "es-1915", kind: "word" }, { id: "colombia", ref: "es-1913", kind: "word" }]
+  - id: "es-1931"
+    target: "Viajo por el mundo con mis amigos."
+    ipa: "ˈbjaxo poɾ el ˈmundo kon mis aˈmiɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Viajo", ref: "es-1691" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "mundo", ref: "es-1900" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+    confusables: [{ id: "europa", ref: "es-1908", kind: "word" }, { id: "habitante", ref: "es-1901", kind: "word" }]

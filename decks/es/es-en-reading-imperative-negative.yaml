@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-imperative-negative"
+name: "Reading: warnings and what not to do"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: warning signs with polite prohibitions, and a note of advice to a friend. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-warning-signs"
+    title: "Warning signs and polite prohibitions"
+    theme: "emergencies"
+    sentences:
+      - text: "No fume en el edificio."
+      - text: "No toque las plantas, por favor."
+      - text: "No entre sin permiso."
+      - text: "No hable con el conductor."
+    questions:
+      - id: "es-2845"
+        prompt: { en: "What must not be done in the building?" }
+        options:
+          - { en: "Smoke" }
+          - { en: "Sleep" }
+          - { en: "Eat" }
+        answer: 1
+      - id: "es-2846"
+        prompt: { en: "What should not be touched?" }
+        options:
+          - { en: "The plants" }
+          - { en: "The door" }
+          - { en: "The bell" }
+        answer: 1
+      - id: "es-2847"
+        prompt: { en: "What is not allowed without permission?" }
+        options:
+          - { en: "Entering" }
+          - { en: "Speaking" }
+          - { en: "Waiting" }
+        answer: 1
+  - id: "es-dont-do-that"
+    title: "A note of advice to a friend"
+    theme: "relationships"
+    sentences:
+      - text: "No corras en la piscina, Juan."
+      - text: "No digas mentiras a tu madre."
+      - text: "No pongas los pies en la mesa."
+      - text: "No vayas solo por la noche."
+    questions:
+      - id: "es-2848"
+        prompt: { en: "Where must Juan not run?" }
+        options:
+          - { en: "In the pool" }
+          - { en: "In the street" }
+          - { en: "In the park" }
+        answer: 1
+      - id: "es-2849"
+        prompt: { en: "What must not be said?" }
+        options:
+          - { en: "Lies to the mother" }
+          - { en: "The truth" }
+          - { en: "A name" }
+        answer: 1
+      - id: "es-2850"
+        prompt: { en: "What should not be done alone?" }
+        options:
+          - { en: "Going out at night" }
+          - { en: "Eating" }
+          - { en: "Reading" }
+        answer: 1

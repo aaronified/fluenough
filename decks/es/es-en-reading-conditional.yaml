@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-conditional"
+name: "Reading: polite requests and what I would do"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that use the conditional for polite requests and for what would happen. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-polite-requests"
+    title: "Polite requests"
+    theme: "opinions"
+    sentences:
+      - text: "¿Podría ayudarme con la maleta, por favor?"
+      - text: "Me gustaría reservar una mesa para dos."
+      - text: "¿Querría usted un café o un té?"
+      - text: "Iría a la tienda, pero estoy cansado."
+    questions:
+      - id: "es-2165"
+        prompt: { en: "What does the writer want to book?" }
+        options:
+          - { en: "A table for two" }
+          - { en: "A room" }
+          - { en: "A ticket" }
+        answer: 1
+      - id: "es-2166"
+        prompt: { en: "What does the writer ask for?" }
+        options:
+          - { en: "Help with a suitcase" }
+          - { en: "A glass of water" }
+          - { en: "A map" }
+        answer: 1
+      - id: "es-2167"
+        prompt: { en: "Why would the writer not go to the shop?" }
+        options:
+          - { en: "They are tired" }
+          - { en: "It is closed" }
+          - { en: "They have no money" }
+        answer: 1
+  - id: "es-what-i-would-do"
+    title: "What I would do"
+    theme: "opinions"
+    sentences:
+      - text: "Con dinero, viajaría a Perú."
+      - text: "Diría la verdad a mi jefe."
+      - text: "Yo haría más deporte cada día."
+      - text: "Ellos vendrían a la fiesta."
+    questions:
+      - id: "es-2168"
+        prompt: { en: "Where would the writer travel with money?" }
+        options:
+          - { en: "To Peru" }
+          - { en: "To Spain" }
+          - { en: "To Cuba" }
+        answer: 1
+      - id: "es-2169"
+        prompt: { en: "What would the writer say to the boss?" }
+        options:
+          - { en: "The truth" }
+          - { en: "A lie" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "es-2170"
+        prompt: { en: "What would the writer do every day?" }
+        options:
+          - { en: "More sport" }
+          - { en: "More work" }
+          - { en: "Nothing" }
+        answer: 1

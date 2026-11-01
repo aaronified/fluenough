@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-nature-sentences"
+kind: "layer"
+core: "es-nature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: nature"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the land, water and sky, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1786":
+    native: "We walk through the forest by the river."
+    bases: { "por": "for", "el": "the", "junto": "next to", "al": "to the" }
+    confusables: { "selva": { why: "Selva is a jungle, a tropical forest, not a park." }, "orilla": { why: "Orilla is the bank of the river, where you walk." } }
+  "es-1787":
+    native: "The mountains are covered in snow."
+    bases: { "Las": "the", "cubiertas": "covered", "de": "of" }
+    confusables: { "colina": { why: "Colina is a small hill, not a mountain." }, "volcan": { why: "Volcán is a volcano, a mountain that erupts." } }
+  "es-1788":
+    native: "The sun shines over the sea."
+    bases: { "El": "the", "sobre": "over" }
+    confusables: { "luna": { why: "Luna is the moon, seen at night." }, "estrella": { why: "Estrella is a star, not the sun." } }
+  "es-1789":
+    native: "There is lightning and thunder in the storm."
+    bases: { "Hay": "there is; there are", "en": "in", "la": "the" }
+    confusables: { "viento": { why: "Viento is wind, a different weather sign." }, "nube": { why: "Nube is a cloud, the thing that brings rain." } }
+  "es-1790":
+    native: "We live on an island with sandy beaches."
+    bases: { "en": "in", "una": "a", "con": "with", "de": "of" }
+    confusables: { "costa": { why: "Costa is the coast of the mainland." }, "desierto": { why: "Desierto is a dry land with little rain." } }
+  "es-1791":
+    native: "The grass in the countryside is dry."
+    bases: { "La": "the", "del": "of" }
+    confusables: { "cesped": { why: "Césped is a lawn, cut short in a garden." }, "pradera": { why: "Pradera is a wide meadow, a big open field." } }

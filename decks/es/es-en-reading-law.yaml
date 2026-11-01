@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-law"
+name: "Reading: a tenant's rights and a police complaint"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a leaflet on a tenant's rights, and a note about a complaint at a police station. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-rights-leaflet"
+    title: "A leaflet on a tenant's rights"
+    theme: "law"
+    sentences:
+      - text: "El inquilino tiene derecho a una casa segura."
+      - text: "El propietario no puede subir el alquiler sin aviso."
+      - text: "Si hay un problema, puede presentar una denuncia."
+      - text: "La víctima de un abuso puede pedir ayuda."
+    questions:
+      - id: "es-2885"
+        prompt: { en: "What right does the tenant have?" }
+        options:
+          - { en: "A safe home" }
+          - { en: "A pool" }
+          - { en: "A garage" }
+        answer: 1
+      - id: "es-2886"
+        prompt: { en: "What can the owner not do?" }
+        options:
+          - { en: "Raise the rent without notice" }
+          - { en: "Visit the flat" }
+          - { en: "Sign the lease" }
+        answer: 1
+      - id: "es-2887"
+        prompt: { en: "What can be filed if there is a problem?" }
+        options:
+          - { en: "A complaint" }
+          - { en: "A cheque" }
+          - { en: "A receipt" }
+        answer: 1
+  - id: "es-police-complaint-note"
+    title: "A complaint at the police station"
+    theme: "law"
+    sentences:
+      - text: "Fui a la comisaría para denunciar un robo."
+      - text: "El juez escuchó a los testigos."
+      - text: "El acusado declaró que era inocente."
+      - text: "La sentencia será el martes."
+    questions:
+      - id: "es-2888"
+        prompt: { en: "Where did the writer go?" }
+        options:
+          - { en: "To the police station" }
+          - { en: "To the bank" }
+          - { en: "To the school" }
+        answer: 1
+      - id: "es-2889"
+        prompt: { en: "Who listened to the witnesses?" }
+        options:
+          - { en: "The judge" }
+          - { en: "The lawyer" }
+          - { en: "The police" }
+        answer: 1
+      - id: "es-2890"
+        prompt: { en: "When is the sentence?" }
+        options:
+          - { en: "Tuesday" }
+          - { en: "Monday" }
+          - { en: "Friday" }
+        answer: 1

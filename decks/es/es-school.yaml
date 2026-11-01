@@ -1,0 +1,463 @@
+schema: 1
+id: "es-school"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "school"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1355"
+    target: "la escuela"
+    ipa: "la esˈkwela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "escuela", base: "escuela" }]
+    examples:
+      - target: "Mi hijo va a la escuela en bicicleta."
+        ipa: "mi ˈixo ba a la esˈkwela en biθiˈkleta"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "va", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "escuela", base: "escuela" }, { word: "en", base: "en" }, { word: "bicicleta", ref: "es-0680" }]
+      - target: "La escuela empieza a las ocho."
+        ipa: "la esˈkwela emˈpjeθa a las ˈotʃo"
+        bases: [{ word: "La", base: "la" }, { word: "escuela", base: "escuela" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+  - id: "es-1356"
+    target: "la clase"
+    ipa: "la ˈklase"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "clase", base: "clase" }]
+    examples:
+      - target: "La clase de inglés es los martes."
+        ipa: "la ˈklase de inˈɡles es los ˈmaɾtes"
+        bases: [{ word: "La", base: "la" }, { word: "clase", base: "clase" }, { word: "de", base: "de" }, { word: "inglés", ref: "es-1369" }, { word: "es", ref: "es-0022" }, { word: "los", base: "los" }, { word: "martes", ref: "es-0959" }]
+      - target: "Hay veinte alumnos en la clase."
+        ipa: "aj ˈbejnte aˈlumnos en la ˈklase"
+        bases: [{ word: "Hay", base: "haber" }, { word: "veinte", ref: "es-0224" }, { word: "alumnos", ref: "es-1357" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clase", base: "clase" }]
+  - id: "es-1357"
+    target: "el alumno"
+    ipa: "el aˈlumno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "alumno", base: "alumno" }]
+    examples:
+      - target: "El alumno lee un libro."
+        ipa: "el aˈlumno ˈlee un ˈlibɾo"
+        bases: [{ word: "El", base: "el" }, { word: "alumno", base: "alumno" }, { word: "lee", ref: "es-0296" }, { word: "un", base: "un" }, { word: "libro", ref: "es-0011" }]
+      - target: "Los alumnos hablan en clase."
+        ipa: "los aˈlumnos ˈablan en ˈklase"
+        bases: [{ word: "Los", base: "los" }, { word: "alumnos", base: "alumno" }, { word: "hablan", ref: "es-0027" }, { word: "en", base: "en" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-1358"
+    target: "el estudiante"
+    ipa: "el estuˈdjante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estudiante", base: "estudiante" }]
+    examples:
+      - target: "El estudiante escribe una carta."
+        ipa: "el estuˈdjante esˈkɾibe ˈuna ˈkaɾta"
+        bases: [{ word: "El", base: "el" }, { word: "estudiante", base: "estudiante" }, { word: "escribe", ref: "es-0297" }, { word: "una", base: "una" }, { word: "carta", base: "carta" }]
+      - target: "Mi hermana es estudiante."
+        ipa: "mi eɾˈmana es estuˈdjante"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "estudiante", base: "estudiante" }]
+  - id: "es-1359"
+    target: "el examen"
+    ipa: "el ekˈsamen"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "examen", base: "examen" }]
+    examples:
+      - target: "El examen es el viernes."
+        ipa: "el ekˈsamen es el ˈbjeɾnes"
+        bases: [{ word: "El", base: "el" }, { word: "examen", base: "examen" }, { word: "es", ref: "es-0022" }, { word: "viernes", ref: "es-0962" }]
+      - target: "Estudio para el examen."
+        ipa: "esˈtudjo ˈpaɾa el ekˈsamen"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "examen", base: "examen" }]
+  - id: "es-1360"
+    target: "la nota"
+    ipa: "la ˈnota"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nota", base: "nota" }]
+    examples:
+      - target: "Saco una buena nota."
+        ipa: "ˈsako ˈuna ˈbwena ˈnota"
+        bases: [{ word: "Saco", base: "sacar" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "nota", base: "nota" }]
+      - target: "¿Qué nota tienes?"
+        ipa: "ke ˈnota ˈtjenes"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "nota", base: "nota" }, { word: "tienes", ref: "es-0024" }]
+  - id: "es-1361"
+    target: "la pizarra"
+    ipa: "la piˈθara"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pizarra", base: "pizarra" }]
+    examples:
+      - target: "La profesora escribe en la pizarra."
+        ipa: "la pɾofeˈsoɾa esˈkɾibe en la piˈθara"
+        bases: [{ word: "La", base: "la" }, { word: "profesora", ref: "es-0094" }, { word: "escribe", ref: "es-0297" }, { word: "en", base: "en" }, { word: "pizarra", base: "pizarra" }]
+      - target: "Borro la pizarra después de clase."
+        ipa: "ˈboro la piˈθara desˈpwes de ˈklase"
+        bases: [{ word: "Borro", base: "borrar" }, { word: "la", base: "la" }, { word: "pizarra", base: "pizarra" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-1362"
+    target: "el diccionario"
+    ipa: "el dikθjoˈnaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "diccionario", base: "diccionario" }]
+    examples:
+      - target: "Busco una palabra en el diccionario."
+        ipa: "ˈbusko ˈuna paˈlabɾa en el dikθjoˈnaɾjo"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "una", base: "una" }, { word: "palabra", base: "palabra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "diccionario", base: "diccionario" }]
+      - target: "El diccionario está en la mochila."
+        ipa: "el dikθjoˈnaɾjo esˈta en la moˈtʃila"
+        bases: [{ word: "El", base: "el" }, { word: "diccionario", base: "diccionario" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mochila", ref: "es-0916" }]
+  - id: "es-1363"
+    target: "el recreo"
+    ipa: "el reˈkɾeo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "recreo", base: "recreo" }]
+    examples:
+      - target: "En el recreo jugamos en el patio."
+        ipa: "en el reˈkɾeo xuˈɡamos en el ˈpatjo"
+        bases: [{ word: "En", base: "en" }, { word: "el", base: "el" }, { word: "recreo", base: "recreo" }, { word: "jugamos", base: "jugar" }, { word: "patio", ref: "es-1364" }]
+      - target: "El recreo es a las once."
+        ipa: "el reˈkɾeo es a las ˈonθe"
+        bases: [{ word: "El", base: "el" }, { word: "recreo", base: "recreo" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "once", ref: "es-0215" }]
+  - id: "es-1364"
+    target: "el patio"
+    ipa: "el ˈpatjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "patio", base: "patio" }]
+    examples:
+      - target: "Los niños juegan en el patio."
+        ipa: "los ˈniɲos ˈxweɡan en el ˈpatjo"
+        bases: [{ word: "Los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "juegan", base: "jugar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "patio", base: "patio" }]
+      - target: "El patio es grande."
+        ipa: "el ˈpatjo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "patio", base: "patio" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1365"
+    target: "el aula"
+    ipa: "el ˈawla"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aula", base: "aula" }]
+    examples:
+      - target: "El aula está en el primer piso."
+        ipa: "el ˈawla esˈta en el pɾiˈmeɾ ˈpiso"
+        bases: [{ word: "El", base: "el" }, { word: "aula", base: "aula" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "primer", ref: "es-0551" }, { word: "piso", ref: "es-0803" }]
+      - target: "El aula tiene veinte mesas."
+        ipa: "el ˈawla ˈtjene ˈbejnte ˈmesas"
+        bases: [{ word: "El", base: "el" }, { word: "aula", base: "aula" }, { word: "tiene", ref: "es-0024" }, { word: "veinte", ref: "es-0224" }, { word: "mesas", ref: "es-0009" }]
+  - id: "es-1366"
+    target: "la asignatura"
+    ipa: "la asiɡnaˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "asignatura", base: "asignatura" }]
+    examples:
+      - target: "¿Cuál es tu asignatura favorita?"
+        ipa: "kwal es tu asiɡnaˈtuɾa faboˈɾita"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "asignatura", base: "asignatura" }, { word: "favorita", base: "favorito" }]
+      - target: "La asignatura de historia es difícil."
+        ipa: "la asiɡnaˈtuɾa de isˈtoɾja es diˈfiθil"
+        bases: [{ word: "La", base: "la" }, { word: "asignatura", base: "asignatura" }, { word: "de", base: "de" }, { word: "historia", base: "historia" }, { word: "es", ref: "es-0022" }, { word: "difícil", ref: "es-0414" }]
+  - id: "es-1367"
+    target: "la ciencia"
+    ipa: "la ˈθjenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ciencia", base: "ciencia" }]
+    examples:
+      - target: "Me gusta la ciencia."
+        ipa: "me ˈɡusta la ˈθjenθja"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "la", base: "la" }, { word: "ciencia", base: "ciencia" }]
+      - target: "La ciencia es interesante."
+        ipa: "la ˈθjenθja es inteɾeˈsante"
+        bases: [{ word: "La", base: "la" }, { word: "ciencia", base: "ciencia" }, { word: "es", ref: "es-0022" }, { word: "interesante", ref: "es-0424" }]
+  - id: "es-1368"
+    target: "la lengua"
+    ipa: "la ˈlenɡwa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lengua", base: "lengua" }]
+    examples:
+      - target: "Estudio una lengua nueva."
+        ipa: "esˈtudjo ˈuna ˈlenɡwa ˈnweba"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "una", base: "una" }, { word: "lengua", base: "lengua" }, { word: "nueva", ref: "es-0035" }]
+      - target: "La lengua oficial es el español."
+        ipa: "la ˈlenɡwa ofiˈθjal es el espaˈɲol"
+        bases: [{ word: "La", base: "la" }, { word: "lengua", base: "lengua" }, { word: "oficial", base: "oficial" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "español", ref: "es-1370" }]
+  - id: "es-1369"
+    target: "el inglés"
+    ipa: "el inˈɡles"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "inglés", base: "inglés" }]
+    examples:
+      - target: "Estudio inglés en la escuela."
+        ipa: "esˈtudjo inˈɡles en la esˈkwela"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "inglés", base: "inglés" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "escuela", ref: "es-1355" }]
+      - target: "Mi profesora habla inglés."
+        ipa: "mi pɾofeˈsoɾa ˈabla inˈɡles"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "profesora", ref: "es-0094" }, { word: "habla", ref: "es-0027" }, { word: "inglés", base: "inglés" }]
+  - id: "es-1370"
+    target: "el español"
+    ipa: "el espaˈɲol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "español", base: "español" }]
+    examples:
+      - target: "El profesor habla español."
+        ipa: "el pɾofeˈsoɾ ˈabla espaˈɲol"
+        bases: [{ word: "El", base: "el" }, { word: "profesor", ref: "es-0093" }, { word: "habla", ref: "es-0027" }, { word: "español", base: "español" }]
+      - target: "Aprendo español con mi hermana."
+        ipa: "aˈpɾendo espaˈɲol kon mi eɾˈmana"
+        bases: [{ word: "Aprendo", ref: "es-0299" }, { word: "español", base: "español" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }]
+  - id: "es-1371"
+    target: "la educación"
+    ipa: "la edukaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "educación", base: "educación" }]
+    examples:
+      - target: "La educación es importante."
+        ipa: "la edukaˈθjon es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "educación", base: "educación" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Tiene una buena educación."
+        ipa: "ˈtjene ˈuna ˈbwena edukaˈθjon"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "educación", base: "educación" }]
+  - id: "es-1372"
+    target: "la gimnasia"
+    ipa: "la ximˈnasja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "gimnasia", base: "gimnasia" }]
+    examples:
+      - target: "Hoy tenemos gimnasia."
+        ipa: "oj teˈnemos ximˈnasja"
+        bases: [{ word: "Hoy", ref: "es-0331" }, { word: "tenemos", ref: "es-0024" }, { word: "gimnasia", base: "gimnasia" }]
+      - target: "La gimnasia es mi clase favorita."
+        ipa: "la ximˈnasja es mi ˈklase faboˈɾita"
+        bases: [{ word: "La", base: "la" }, { word: "gimnasia", base: "gimnasia" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "clase", ref: "es-1356" }, { word: "favorita", base: "favorito" }]
+  - id: "es-1373"
+    target: "el uniforme"
+    ipa: "el uniˈfoɾme"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "uniforme", base: "uniforme" }]
+    examples:
+      - target: "El uniforme es azul."
+        ipa: "el uniˈfoɾme es aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "uniforme", base: "uniforme" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+      - target: "Llevo el uniforme todos los días."
+        ipa: "ˈʝebo el uniˈfoɾme ˈtodos los ˈdias"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "uniforme", base: "uniforme" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", ref: "es-0019" }]
+  - id: "es-1374"
+    target: "asistir"
+    ipa: "asisˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "asistir", base: "asistir" }]
+    examples:
+      - target: "Asisto a clase todos los días."
+        ipa: "aˈsisto a ˈklase ˈtodos los ˈdias"
+        bases: [{ word: "Asisto", base: "asistir" }, { word: "a", base: "a" }, { word: "clase", ref: "es-1356" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", ref: "es-0019" }]
+      - target: "Asisten a la escuela desde los seis años."
+        ipa: "aˈsisten a la esˈkwela ˈdesde los sejs ˈaɲos"
+        bases: [{ word: "Asisten", base: "asistir" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "escuela", ref: "es-1355" }, { word: "desde", base: "desde" }, { word: "los", base: "los" }, { word: "seis", ref: "es-0210" }, { word: "años", ref: "es-0021" }]
+  - id: "es-1375"
+    target: "enseñar"
+    ipa: "enseˈɲaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enseñar", base: "enseñar" }]
+    examples:
+      - target: "Mi madre enseña inglés."
+        ipa: "mi ˈmadɾe enˈseɲa inˈɡles"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "enseña", base: "enseñar" }, { word: "inglés", ref: "es-1369" }]
+      - target: "Enseño la lección a mis hijos."
+        ipa: "enˈseɲo la lekˈθjon a mis ˈixos"
+        bases: [{ word: "Enseño", base: "enseñar" }, { word: "la", base: "la" }, { word: "lección", base: "lección" }, { word: "a", base: "a" }, { word: "mis", ref: "es-0129" }, { word: "hijos", ref: "es-0163" }]
+  - id: "es-1376"
+    target: "preguntar"
+    ipa: "pɾeɡunˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "preguntar", base: "preguntar" }]
+    examples:
+      - target: "Pregunto al profesor."
+        ipa: "pɾeˈɡunto al pɾofeˈsoɾ"
+        bases: [{ word: "Pregunto", base: "preguntar" }, { word: "al", base: "al" }, { word: "profesor", ref: "es-0093" }]
+      - target: "¿Puedo preguntar algo?"
+        ipa: "ˈpwedo pɾeɡunˈtaɾ ˈalɡo"
+        bases: [{ word: "Puedo", base: "poder" }, { word: "preguntar", base: "preguntar" }, { word: "algo", ref: "es-0359" }]
+  - id: "es-1377"
+    target: "responder"
+    ipa: "responˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "responder", base: "responder" }]
+    examples:
+      - target: "Respondo a la pregunta."
+        ipa: "resˈpondo a la pɾeˈɡunta"
+        bases: [{ word: "Respondo", base: "responder" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "pregunta", base: "pregunta" }]
+      - target: "Responde con una palabra."
+        ipa: "resˈponde kon ˈuna paˈlabɾa"
+        bases: [{ word: "Responde", base: "responder" }, { word: "con", base: "con" }, { word: "una", base: "una" }, { word: "palabra", base: "palabra" }]
+  - id: "es-1378"
+    target: "olvidar"
+    ipa: "olbiˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "olvidar", base: "olvidar" }]
+    examples:
+      - target: "Olvido el libro en casa."
+        ipa: "olˈbido el ˈlibɾo en ˈkasa"
+        bases: [{ word: "Olvido", base: "olvidar" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "No olvides la tarea."
+        ipa: "no olˈbides la taˈɾea"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "olvides", base: "olvidar" }, { word: "la", base: "la" }, { word: "tarea", ref: "es-0907" }]
+  - id: "es-1379"
+    target: "recordar"
+    ipa: "rekoɾˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "recordar", base: "recordar" }]
+    examples:
+      - target: "No recuerdo la respuesta."
+        ipa: "no reˈkweɾdo la resˈpwesta"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "recuerdo", base: "recordar" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }]
+      - target: "Recuerdo el primer día de clase."
+        ipa: "reˈkweɾdo el pɾiˈmeɾ ˈdia de ˈklase"
+        bases: [{ word: "Recuerdo", base: "recordar" }, { word: "el", base: "el" }, { word: "primer", ref: "es-0551" }, { word: "día", ref: "es-0019" }, { word: "de", base: "de" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-1380"
+    target: "aprobar"
+    ipa: "apɾoˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "aprobar", base: "aprobar" }]
+    examples:
+      - target: "Apruebo el examen."
+        ipa: "aˈpɾwebo el ekˈsamen"
+        bases: [{ word: "Apruebo", base: "aprobar" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }]
+      - target: "Aprueban a todos los alumnos."
+        ipa: "aˈpɾweban a ˈtodos los aˈlumnos"
+        bases: [{ word: "Aprueban", base: "aprobar" }, { word: "a", base: "a" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "alumnos", ref: "es-1357" }]
+  - id: "es-1381"
+    target: "suspender"
+    ipa: "suspenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "suspender", base: "suspender" }]
+    examples:
+      - target: "Suspendo el examen."
+        ipa: "susˈpendo el ekˈsamen"
+        bases: [{ word: "Suspendo", base: "suspender" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }]
+      - target: "Suspenden la asignatura."
+        ipa: "susˈpenden la asiɡnaˈtuɾa"
+        bases: [{ word: "Suspenden", base: "suspender" }, { word: "la", base: "la" }, { word: "asignatura", ref: "es-1366" }]
+  - id: "es-1382"
+    target: "la beca"
+    ipa: "la ˈbeka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "beca", base: "beca" }]
+    examples:
+      - target: "Tengo una beca para estudiar."
+        ipa: "ˈtenɡo ˈuna ˈbeka ˈpaɾa estuˈdjaɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "beca", base: "beca" }, { word: "para", base: "para" }, { word: "estudiar", ref: "es-0258" }]
+      - target: "La beca paga los libros."
+        ipa: "la ˈbeka ˈpaɡa los ˈlibɾos"
+        bases: [{ word: "La", base: "la" }, { word: "beca", base: "beca" }, { word: "paga", ref: "es-0295" }, { word: "los", base: "los" }, { word: "libros", ref: "es-0011" }]
+  - id: "es-1383"
+    target: "el curso"
+    ipa: "el ˈkuɾso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "curso", base: "curso" }]
+    examples:
+      - target: "El curso empieza en septiembre."
+        ipa: "el ˈkuɾso emˈpjeθa en sepˈtjembɾe"
+        bases: [{ word: "El", base: "el" }, { word: "curso", base: "curso" }, { word: "empieza", ref: "es-0852" }, { word: "en", base: "en" }, { word: "septiembre", ref: "es-0974" }]
+      - target: "Hago un curso de español."
+        ipa: "ˈaɡo un ˈkuɾso de espaˈɲol"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "curso", base: "curso" }, { word: "de", base: "de" }, { word: "español", ref: "es-1370" }]
+  - id: "es-1384"
+    target: "el pupitre"
+    ipa: "el puˈpitɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pupitre", base: "pupitre" }]
+    examples:
+      - target: "El pupitre está junto a la ventana."
+        ipa: "el puˈpitɾe esˈta ˈxunto a la benˈtana"
+        bases: [{ word: "El", base: "el" }, { word: "pupitre", base: "pupitre" }, { word: "está", ref: "es-0023" }, { word: "junto", base: "junto" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }]
+      - target: "Mi pupitre es azul."
+        ipa: "mi puˈpitɾe es aˈθul"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pupitre", base: "pupitre" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+  - id: "es-1385"
+    target: "la regla"
+    ipa: "la ˈreɡla"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "regla", base: "regla" }]
+    examples:
+      - target: "Dibujo una línea con la regla."
+        ipa: "diˈbuxo ˈuna ˈlinea kon la ˈreɡla"
+        bases: [{ word: "Dibujo", base: "dibujar" }, { word: "una", base: "una" }, { word: "línea", base: "línea" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "regla", base: "regla" }]
+      - target: "La regla es clara."
+        ipa: "la ˈreɡla es ˈklaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "regla", base: "regla" }, { word: "es", ref: "es-0022" }, { word: "clara", ref: "es-0438" }]
+  - id: "es-1386"
+    target: "la hoja"
+    ipa: "la ˈoxa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "hoja", base: "hoja" }]
+    examples:
+      - target: "Escribo en una hoja de papel."
+        ipa: "esˈkɾibo en ˈuna ˈoxa de paˈpel"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "hoja", base: "hoja" }, { word: "de", base: "de" }, { word: "papel", ref: "es-1387" }]
+      - target: "La hoja está en blanco."
+        ipa: "la ˈoxa esˈta en ˈblanko"
+        bases: [{ word: "La", base: "la" }, { word: "hoja", base: "hoja" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "blanco", base: "blanco" }]
+  - id: "es-1387"
+    target: "el papel"
+    ipa: "el paˈpel"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "papel", base: "papel" }]
+    examples:
+      - target: "Necesito papel y un lápiz."
+        ipa: "neθeˈsito paˈpel i un ˈlapiθ"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "papel", base: "papel" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "lápiz", ref: "es-1170" }]
+      - target: "El papel es muy caro."
+        ipa: "el paˈpel es mwi ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "papel", base: "papel" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "caro", ref: "es-0412" }]

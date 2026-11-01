@@ -1,0 +1,50 @@
+schema: 1
+id: "es-arts-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2542"
+    target: "El escultor pinta un cuadro en el lienzo."
+    ipa: "el eskulˈtoɾ ˈpinta un ˈkwadɾo en el ˈljenθo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "escultor", ref: "es-2507" }, { word: "pinta", ref: "es-1404" }, { word: "un", base: "un" }, { word: "cuadro", ref: "es-2510" }, { word: "en", base: "en" }, { word: "lienzo", ref: "es-2530" }]
+    confusables: [{ id: "pincel", ref: "es-2529", kind: "word" }, { id: "oleo", ref: "es-2532", kind: "word" }]
+  - id: "es-2543"
+    target: "La orquesta toca una melodía en el escenario."
+    ipa: "la oɾˈkesta ˈtoka ˈuna meloˈdia en el esθeˈnaɾjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "orquesta", ref: "es-2515" }, { word: "toca", ref: "es-1406" }, { word: "una", base: "una" }, { word: "melodía", ref: "es-2518" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "escenario", ref: "es-2511" }]
+    confusables: [{ id: "coro", ref: "es-2514", kind: "word" }, { id: "instrumento", ref: "es-2516", kind: "word" }]
+  - id: "es-2544"
+    target: "La exposición está en la galería del centro."
+    ipa: "la eksposiˈθjon esˈta en la ɡaleˈɾia del ˈθentɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "exposición", ref: "es-2508" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "galería", ref: "es-2509" }, { word: "del", base: "del" }, { word: "centro", base: "centro" }]
+    confusables: [{ id: "museo", ref: "es-0776", kind: "word" }, { id: "cuadro", ref: "es-2510", kind: "word" }]
+  - id: "es-2545"
+    target: "Compongo una canción con la letra de mi amigo."
+    ipa: "komˈponɡo ˈuna kanˈθjon kon la ˈletɾa de mi aˈmiɡo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compongo", ref: "es-2536" }, { word: "una", base: "una" }, { word: "canción", ref: "es-1425" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "letra", ref: "es-2517" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }]
+    confusables: [{ id: "melodia", ref: "es-2518", kind: "word" }, { id: "compositor", ref: "es-2519", kind: "word" }]
+  - id: "es-2546"
+    target: "El espectáculo de danza es muy bonito."
+    ipa: "el espekˈtakulo de ˈdanθa es mwi boˈnito"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "espectáculo", ref: "es-2521" }, { word: "de", base: "de" }, { word: "danza", ref: "es-2513" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonito", ref: "es-0405" }]
+    confusables: [{ id: "actuacion", ref: "es-2512", kind: "word" }, { id: "opera", ref: "es-2520", kind: "word" }]
+  - id: "es-2547"
+    target: "Hay un mural y una estatua en la plaza."
+    ipa: "aj un muˈɾal i ˈuna esˈtatwa en la ˈplaθa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "mural", ref: "es-2533" }, { word: "y", ref: "es-0048" }, { word: "una", base: "una" }, { word: "estatua", ref: "es-2523" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+    confusables: [{ id: "grabado", ref: "es-2534", kind: "word" }, { id: "artesania", ref: "es-2522", kind: "word" }]

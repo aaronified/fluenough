@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-government"
+name: "Reading: an application form and the town hall"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: instructions on an application form, and a notice from the town hall. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-form-instructions"
+    title: "Instructions on an application form"
+    theme: "government"
+    sentences:
+      - text: "Escriba su nombre con letras mayúsculas."
+      - text: "Adjunte una copia del DNI."
+      - text: "Firme en la última página."
+      - text: "Entregue el impreso en la ventanilla."
+    questions:
+      - id: "es-2303"
+        prompt: { en: "How should the name be written?" }
+        options:
+          - { en: "In capital letters" }
+          - { en: "In pencil" }
+          - { en: "In another language" }
+        answer: 1
+      - id: "es-2304"
+        prompt: { en: "What should be attached?" }
+        options:
+          - { en: "A copy of the identity card" }
+          - { en: "A photo of the house" }
+          - { en: "A receipt" }
+        answer: 1
+      - id: "es-2305"
+        prompt: { en: "Where is the form handed in?" }
+        options:
+          - { en: "At the last page" }
+          - { en: "At the counter" }
+          - { en: "By email" }
+        answer: 2
+  - id: "es-town-hall-notice"
+    title: "A notice from the town hall"
+    theme: "government"
+    sentences:
+      - text: "El ayuntamiento abre el lunes."
+      - text: "Para el padrón, pida cita por teléfono."
+      - text: "La multa por aparcar es de cuarenta euros."
+      - text: "Gracias por su paciencia."
+    questions:
+      - id: "es-2306"
+        prompt: { en: "When does the town hall open?" }
+        options:
+          - { en: "On Monday" }
+          - { en: "On Sunday" }
+          - { en: "On Friday" }
+        answer: 1
+      - id: "es-2307"
+        prompt: { en: "How should you ask for an appointment for the register?" }
+        options:
+          - { en: "By phone" }
+          - { en: "In person only" }
+          - { en: "By letter" }
+        answer: 1
+      - id: "es-2308"
+        prompt: { en: "How much is the parking fine?" }
+        options:
+          - { en: "Forty euros" }
+          - { en: "Four euros" }
+          - { en: "Four hundred euros" }
+        answer: 1

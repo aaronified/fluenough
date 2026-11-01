@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-chores"
+name: "Reading: a chore list and a cleaning day"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a weekly chore list and a short note about a day of cleaning. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-chore-list"
+    title: "A weekly chore list"
+    theme: "chores"
+    sentences:
+      - text: "Lunes: barrer el suelo."
+      - text: "Martes: planchar la ropa."
+      - text: "Miércoles: sacar la basura."
+      - text: "Viernes: limpiar el baño."
+    questions:
+      - id: "es-1542"
+        prompt: { en: "What is done on Tuesday?" }
+        options:
+          - { en: "Sweeping the floor" }
+          - { en: "Ironing the clothes" }
+          - { en: "Taking out the rubbish" }
+        answer: 2
+      - id: "es-1543"
+        prompt: { en: "Which day is the rubbish taken out?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Friday" }
+          - { en: "Wednesday" }
+        answer: 3
+      - id: "es-1544"
+        prompt: { en: "What is cleaned on Friday?" }
+        options:
+          - { en: "The bathroom" }
+          - { en: "The kitchen" }
+          - { en: "The windows" }
+        answer: 1
+  - id: "es-cleaning-note"
+    title: "A note about a day of cleaning"
+    theme: "chores"
+    sentences:
+      - text: "La cocina está muy sucia."
+      - text: "Friego los platos después de cenar."
+      - text: "Mi hermana pasa la aspiradora."
+      - text: "Tendemos la ropa en el balcón."
+    questions:
+      - id: "es-1545"
+        prompt: { en: "What is very dirty?" }
+        options:
+          - { en: "The kitchen" }
+          - { en: "The bathroom" }
+          - { en: "The car" }
+        answer: 1
+      - id: "es-1546"
+        prompt: { en: "Who vacuums?" }
+        options:
+          - { en: "The writer" }
+          - { en: "The sister" }
+          - { en: "The neighbour" }
+        answer: 2
+      - id: "es-1547"
+        prompt: { en: "Where is the laundry hung?" }
+        options:
+          - { en: "In the kitchen" }
+          - { en: "In the washing machine" }
+          - { en: "On the balcony" }
+        answer: 3

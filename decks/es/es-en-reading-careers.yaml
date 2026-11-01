@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-careers"
+name: "Reading: a job advert and a first interview"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a job advert, and a candidate's words at an interview. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-job-advert"
+    title: "A job advert"
+    theme: "careers"
+    sentences:
+      - text: "Se busca abogado con experiencia."
+      - text: "Contrato de un año, tiempo completo."
+      - text: "Enviar currículum antes del treinta de mayo."
+      - text: "Requisito: título universitario."
+    questions:
+      - id: "es-2398"
+        prompt: { en: "What is the job?" }
+        options:
+          - { en: "A cook" }
+          - { en: "A lawyer" }
+          - { en: "An architect" }
+        answer: 2
+      - id: "es-2399"
+        prompt: { en: "What kind of contract is it?" }
+        options:
+          - { en: "Part time" }
+          - { en: "Permanent part time" }
+          - { en: "One year, full time" }
+        answer: 3
+      - id: "es-2400"
+        prompt: { en: "What must be sent?" }
+        options:
+          - { en: "A CV before the deadline" }
+          - { en: "A photo" }
+          - { en: "A letter from the boss" }
+        answer: 1
+  - id: "es-first-interview-note"
+    title: "At the interview"
+    theme: "careers"
+    sentences:
+      - text: "Soy responsable y tengo mucha experiencia."
+      - text: "Me gradué en arquitectura el año pasado."
+      - text: "Quiero un puesto con oportunidades de ascenso."
+      - text: "Mi formación incluye un curso de inglés."
+    questions:
+      - id: "es-2401"
+        prompt: { en: "What does the candidate say about themselves?" }
+        options:
+          - { en: "Responsible and experienced" }
+          - { en: "Lazy" }
+          - { en: "New to work" }
+        answer: 1
+      - id: "es-2402"
+        prompt: { en: "When did the candidate graduate?" }
+        options:
+          - { en: "Last year" }
+          - { en: "Ten years ago" }
+          - { en: "Next year" }
+        answer: 1
+      - id: "es-2403"
+        prompt: { en: "What does the candidate want?" }
+        options:
+          - { en: "A job with promotion chances" }
+          - { en: "A short job" }
+          - { en: "A job abroad" }
+        answer: 1

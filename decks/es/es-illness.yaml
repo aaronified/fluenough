@@ -1,0 +1,517 @@
+schema: 1
+id: "es-illness"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "illness"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1456"
+    target: "la enfermedad"
+    ipa: "la enfeɾmeˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "enfermedad", base: "enfermedad" }]
+    examples:
+      - target: "Es una enfermedad grave."
+        ipa: "es ˈuna enfeɾmeˈdad ˈɡɾabe"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "enfermedad", base: "enfermedad" }, { word: "grave", base: "grave" }]
+      - target: "La enfermedad dura una semana."
+        ipa: "la enfeɾmeˈdad ˈduɾa ˈuna seˈmana"
+        bases: [{ word: "La", base: "la" }, { word: "enfermedad", base: "enfermedad" }, { word: "dura", ref: "es-0851" }, { word: "una", base: "una" }, { word: "semana", ref: "es-0840" }]
+  - id: "es-1457"
+    target: "enfermar"
+    ipa: "enfeɾˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enfermar", base: "enfermar" }]
+    examples:
+      - target: "Me enfermo en invierno."
+        ipa: "me enˈfeɾmo en inˈbjeɾno"
+        bases: [{ word: "Me", base: "me" }, { word: "enfermo", base: "enfermar" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+      - target: "Mi hijo enfermó ayer."
+        ipa: "mi ˈixo enfeɾˈmo aˈʝeɾ"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "enfermó", base: "enfermar" }, { word: "ayer", ref: "es-0332" }]
+  - id: "es-1458"
+    target: "el resfriado"
+    ipa: "el resˈfɾjado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "resfriado", base: "resfriado" }]
+    examples:
+      - target: "Tengo un resfriado."
+        ipa: "ˈtenɡo un resˈfɾjado"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "resfriado", base: "resfriado" }]
+      - target: "El resfriado dura tres días."
+        ipa: "el resˈfɾjado ˈduɾa tɾes ˈdias"
+        bases: [{ word: "El", base: "el" }, { word: "resfriado", base: "resfriado" }, { word: "dura", ref: "es-0851" }, { word: "tres", ref: "es-0207" }, { word: "días", ref: "es-0019" }]
+  - id: "es-1459"
+    target: "la gripe"
+    ipa: "la ˈɡɾipe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "gripe", base: "gripe" }]
+    examples:
+      - target: "Tiene gripe."
+        ipa: "ˈtjene ˈɡɾipe"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "gripe", base: "gripe" }]
+      - target: "La gripe es muy común en invierno."
+        ipa: "la ˈɡɾipe es mwi koˈmun en inˈbjeɾno"
+        bases: [{ word: "La", base: "la" }, { word: "gripe", base: "gripe" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "común", base: "común" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+  - id: "es-1460"
+    target: "la fiebre"
+    ipa: "la ˈfjebɾe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fiebre", base: "fiebre" }]
+    examples:
+      - target: "Tengo fiebre y frío."
+        ipa: "ˈtenɡo ˈfjebɾe i ˈfɾio"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "fiebre", base: "fiebre" }, { word: "y", ref: "es-0048" }, { word: "frío", ref: "es-0408" }]
+      - target: "La fiebre sube por la noche."
+        ipa: "la ˈfjebɾe ˈsube poɾ la ˈnotʃe"
+        bases: [{ word: "La", base: "la" }, { word: "fiebre", base: "fiebre" }, { word: "sube", ref: "es-0691" }, { word: "por", base: "por" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-1461"
+    target: "la tos"
+    ipa: "la tos"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tos", base: "tos" }]
+    examples:
+      - target: "Tengo mucha tos."
+        ipa: "ˈtenɡo ˈmutʃa tos"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "tos", base: "tos" }]
+      - target: "La tos no para"
+        ipa: "la tos no ˈpaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "tos", base: "tos" }, { word: "no", ref: "es-0043" }, { word: "para", base: "parar" }]
+  - id: "es-1462"
+    target: "la muela"
+    ipa: "la ˈmwela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "muela", base: "muela" }]
+    examples:
+      - target: "Me duele la muela."
+        ipa: "me ˈdwele la ˈmwela"
+        bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "la", base: "la" }, { word: "muela", base: "muela" }]
+      - target: "Voy al dentista por la muela."
+        ipa: "boj al denˈtista poɾ la ˈmwela"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "dentista", base: "dentista" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "muela", base: "muela" }]
+  - id: "es-1463"
+    target: "la medicina"
+    ipa: "la mediˈθina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "medicina", base: "medicina" }]
+    examples:
+      - target: "La medicina es para la tos."
+        ipa: "la mediˈθina es ˈpaɾa la tos"
+        bases: [{ word: "La", base: "la" }, { word: "medicina", base: "medicina" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "tos", ref: "es-1461" }]
+      - target: "¿Tomas alguna medicina?"
+        ipa: "ˈtomas alˈɡuna mediˈθina"
+        bases: [{ word: "Tomas", ref: "es-0906" }, { word: "alguna", base: "alguno" }, { word: "medicina", base: "medicina" }]
+  - id: "es-1464"
+    target: "el medicamento"
+    ipa: "el medikaˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "medicamento", base: "medicamento" }]
+    examples:
+      - target: "El medicamento está en la farmacia."
+        ipa: "el medikaˈmento esˈta en la faɾˈmaθja"
+        bases: [{ word: "El", base: "el" }, { word: "medicamento", base: "medicamento" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "farmacia", ref: "es-0771" }]
+      - target: "Tomo el medicamento dos veces."
+        ipa: "ˈtomo el medikaˈmento dos ˈbeθes"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "el", base: "el" }, { word: "medicamento", base: "medicamento" }, { word: "dos", ref: "es-0206" }, { word: "veces", ref: "es-0322" }]
+  - id: "es-1465"
+    target: "la pastilla"
+    ipa: "la pasˈtiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pastilla", base: "pastilla" }]
+    examples:
+      - target: "Tomo una pastilla con agua."
+        ipa: "ˈtomo ˈuna pasˈtiʝa kon ˈaɡwa"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "una", base: "una" }, { word: "pastilla", base: "pastilla" }, { word: "con", base: "con" }, { word: "agua", ref: "es-0012" }]
+      - target: "La pastilla es amarilla."
+        ipa: "la pasˈtiʝa es amaˈɾiʝa"
+        bases: [{ word: "La", base: "la" }, { word: "pastilla", base: "pastilla" }, { word: "es", ref: "es-0022" }, { word: "amarilla", ref: "es-1010" }]
+  - id: "es-1466"
+    target: "el jarabe"
+    ipa: "el xaˈɾabe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "jarabe", base: "jarabe" }]
+    examples:
+      - target: "Tomo jarabe para la tos."
+        ipa: "ˈtomo xaˈɾabe ˈpaɾa la tos"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "jarabe", base: "jarabe" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "tos", ref: "es-1461" }]
+      - target: "El jarabe es dulce."
+        ipa: "el xaˈɾabe es ˈdulθe"
+        bases: [{ word: "El", base: "el" }, { word: "jarabe", base: "jarabe" }, { word: "es", ref: "es-0022" }, { word: "dulce", ref: "es-0657" }]
+  - id: "es-1467"
+    target: "el farmacéutico"
+    ipa: "el faɾmaˈθewtiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "farmacéutico", base: "farmacéutico" }]
+    examples:
+      - target: "El farmacéutico me da el jarabe."
+        ipa: "el faɾmaˈθewtiko me da el xaˈɾabe"
+        bases: [{ word: "El", base: "el" }, { word: "farmacéutico", base: "farmacéutico" }, { word: "me", base: "me" }, { word: "da", base: "dar" }, { word: "jarabe", ref: "es-1466" }]
+      - target: "El farmacéutico habla inglés."
+        ipa: "el faɾmaˈθewtiko ˈabla inˈɡles"
+        bases: [{ word: "El", base: "el" }, { word: "farmacéutico", base: "farmacéutico" }, { word: "habla", ref: "es-0027" }, { word: "inglés", ref: "es-1369" }]
+  - id: "es-1468"
+    target: "el doctor"
+    ipa: "el dokˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "doctor", base: "doctor" }]
+    examples:
+      - target: "El doctor me examina"
+        ipa: "el dokˈtoɾ me eksaˈmina"
+        bases: [{ word: "El", base: "el" }, { word: "doctor", base: "doctor" }, { word: "me", base: "me" }, { word: "examina", base: "examinar" }]
+      - target: "Llamo al doctor."
+        ipa: "ˈʝamo al dokˈtoɾ"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "al", base: "al" }, { word: "doctor", base: "doctor" }]
+  - id: "es-1469"
+    target: "la urgencia"
+    ipa: "la uɾˈxenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "urgencia", base: "urgencia" }]
+    examples:
+      - target: "Voy a urgencias."
+        ipa: "boj a uɾˈxenθjas"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "urgencias", base: "urgencia" }]
+      - target: "Es una urgencia."
+        ipa: "es ˈuna uɾˈxenθja"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "urgencia", base: "urgencia" }]
+  - id: "es-1470"
+    target: "el síntoma"
+    ipa: "el ˈsintoma"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "síntoma", base: "síntoma" }]
+    examples:
+      - target: "El síntoma principal es la fiebre."
+        ipa: "el ˈsintoma pɾinθiˈpal es la ˈfjebɾe"
+        bases: [{ word: "El", base: "el" }, { word: "síntoma", base: "síntoma" }, { word: "principal", base: "principal" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "fiebre", ref: "es-1460" }]
+      - target: "Los síntomas son tos y dolor."
+        ipa: "los ˈsintomas son tos i doˈloɾ"
+        bases: [{ word: "Los", base: "los" }, { word: "síntomas", base: "síntoma" }, { word: "son", ref: "es-0022" }, { word: "tos", ref: "es-1461" }, { word: "y", ref: "es-0048" }, { word: "dolor", ref: "es-0873" }]
+  - id: "es-1471"
+    target: "la herida"
+    ipa: "la eˈɾida"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "herida", base: "herida" }]
+    examples:
+      - target: "Tengo una herida en la mano."
+        ipa: "ˈtenɡo ˈuna eˈɾida en la ˈmano"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "herida", base: "herida" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }]
+      - target: "La herida es pequeña."
+        ipa: "la eˈɾida es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "herida", base: "herida" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-1472"
+    target: "la venda"
+    ipa: "la ˈbenda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "venda", base: "venda" }]
+    examples:
+      - target: "Pongo una venda en la herida."
+        ipa: "ˈponɡo ˈuna ˈbenda en la eˈɾida"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "una", base: "una" }, { word: "venda", base: "venda" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "herida", ref: "es-1471" }]
+      - target: "La venda está floja."
+        ipa: "la ˈbenda esˈta ˈfloxa"
+        bases: [{ word: "La", base: "la" }, { word: "venda", base: "venda" }, { word: "está", ref: "es-0023" }, { word: "floja", base: "flojo" }]
+  - id: "es-1473"
+    target: "la vacuna"
+    ipa: "la baˈkuna"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vacuna", base: "vacuna" }]
+    examples:
+      - target: "Me pongo la vacuna."
+        ipa: "me ˈponɡo la baˈkuna"
+        bases: [{ word: "Me", base: "me" }, { word: "pongo", base: "poner" }, { word: "la", base: "la" }, { word: "vacuna", base: "vacuna" }]
+      - target: "La vacuna es gratis."
+        ipa: "la baˈkuna es ˈɡɾatis"
+        bases: [{ word: "La", base: "la" }, { word: "vacuna", base: "vacuna" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+  - id: "es-1474"
+    target: "el mareo"
+    ipa: "el maˈɾeo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mareo", base: "mareo" }]
+    examples:
+      - target: "Tengo un mareo."
+        ipa: "ˈtenɡo un maˈɾeo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "mareo", base: "mareo" }]
+      - target: "El mareo pasa pronto."
+        ipa: "el maˈɾeo ˈpasa ˈpɾonto"
+        bases: [{ word: "El", base: "el" }, { word: "mareo", base: "mareo" }, { word: "pasa", base: "pasar" }, { word: "pronto", ref: "es-0337" }]
+  - id: "es-1475"
+    target: "la náusea"
+    ipa: "la ˈnawsea"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "náusea", base: "náusea" }]
+    examples:
+      - target: "Siento náuseas."
+        ipa: "ˈsjento ˈnawseas"
+        bases: [{ word: "Siento", base: "sentir" }, { word: "náuseas", base: "náusea" }]
+      - target: "Tengo náuseas después de comer."
+        ipa: "ˈtenɡo ˈnawseas desˈpwes de koˈmeɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "náuseas", base: "náusea" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "comer", ref: "es-0028" }]
+  - id: "es-1476"
+    target: "el vómito"
+    ipa: "el ˈbomito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vómito", base: "vómito" }]
+    examples:
+      - target: "Tuve un vómito."
+        ipa: "ˈtube un ˈbomito"
+        bases: [{ word: "Tuve", ref: "es-0024" }, { word: "un", base: "un" }, { word: "vómito", base: "vómito" }]
+      - target: "El vómito es un síntoma."
+        ipa: "el ˈbomito es un ˈsintoma"
+        bases: [{ word: "El", base: "el" }, { word: "vómito", base: "vómito" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "síntoma", ref: "es-1470" }]
+  - id: "es-1477"
+    target: "la alergia"
+    ipa: "la aˈleɾxja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alergia", base: "alergia" }]
+    examples:
+      - target: "Tengo alergia al polen."
+        ipa: "ˈtenɡo aˈleɾxja al ˈpolen"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "alergia", base: "alergia" }, { word: "al", base: "al" }, { word: "polen", base: "polen" }]
+      - target: "La alergia es fuerte."
+        ipa: "la aˈleɾxja es ˈfweɾte"
+        bases: [{ word: "La", base: "la" }, { word: "alergia", base: "alergia" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-1478"
+    target: "alérgico"
+    ipa: "aˈleɾxiko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "alérgico", base: "alérgico" }]
+    examples:
+      - target: "Soy alérgica al huevo."
+        ipa: "soj aˈleɾxika al ˈwebo"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "alérgica", base: "alérgico" }, { word: "al", base: "al" }, { word: "huevo", ref: "es-0604" }]
+      - target: "Es alérgico a la leche."
+        ipa: "es aˈleɾxiko a la ˈletʃe"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "alérgico", base: "alérgico" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "leche", ref: "es-0014" }]
+  - id: "es-1479"
+    target: "toser"
+    ipa: "toˈseɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "toser", base: "toser" }]
+    examples:
+      - target: "Toso mucho por la noche."
+        ipa: "ˈtoso ˈmutʃo poɾ la ˈnotʃe"
+        bases: [{ word: "Toso", base: "toser" }, { word: "mucho", ref: "es-0053" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "Toses mucho."
+        ipa: "ˈtoses ˈmutʃo"
+        bases: [{ word: "Toses", base: "toser" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1480"
+    target: "estornudar"
+    ipa: "estoɾnuˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "estornudar", base: "estornudar" }]
+    examples:
+      - target: "Estornudo siempre con el polen."
+        ipa: "estoɾˈnudo ˈsjempɾe kon el ˈpolen"
+        bases: [{ word: "Estornudo", base: "estornudar" }, { word: "siempre", ref: "es-0320" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "polen", base: "polen" }]
+      - target: "Estornudo mucho."
+        ipa: "estoɾˈnudo ˈmutʃo"
+        bases: [{ word: "Estornudo", base: "estornudar" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1481"
+    target: "sudar"
+    ipa: "suˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sudar", base: "sudar" }]
+    examples:
+      - target: "Sudo mucho en verano."
+        ipa: "ˈsudo ˈmutʃo en beˈɾano"
+        bases: [{ word: "Sudo", base: "sudar" }, { word: "mucho", ref: "es-0053" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]
+      - target: "Sudo con la fiebre."
+        ipa: "ˈsudo kon la ˈfjebɾe"
+        bases: [{ word: "Sudo", base: "sudar" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "fiebre", ref: "es-1460" }]
+  - id: "es-1482"
+    target: "temblar"
+    ipa: "temˈblaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "temblar", base: "temblar" }]
+    examples:
+      - target: "Tiemblo de frío."
+        ipa: "ˈtjemblo de ˈfɾio"
+        bases: [{ word: "Tiemblo", base: "temblar" }, { word: "de", base: "de" }, { word: "frío", ref: "es-0408" }]
+      - target: "La mano tiembla"
+        ipa: "la ˈmano ˈtjembla"
+        bases: [{ word: "La", base: "la" }, { word: "mano", ref: "es-0738" }, { word: "tiembla", base: "temblar" }]
+  - id: "es-1483"
+    target: "el reposo"
+    ipa: "el reˈposo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "reposo", base: "reposo" }]
+    examples:
+      - target: "Necesito reposo."
+        ipa: "neθeˈsito reˈposo"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "reposo", base: "reposo" }]
+      - target: "El médico dice reposo."
+        ipa: "el ˈmediko ˈdiθe reˈposo"
+        bases: [{ word: "El", base: "el" }, { word: "médico", ref: "es-0506" }, { word: "dice", base: "decir" }, { word: "reposo", base: "reposo" }]
+  - id: "es-1484"
+    target: "curar"
+    ipa: "kuˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "curar", base: "curar" }]
+    examples:
+      - target: "El jarabe cura la tos."
+        ipa: "el xaˈɾabe ˈkuɾa la tos"
+        bases: [{ word: "El", base: "el" }, { word: "jarabe", ref: "es-1466" }, { word: "cura", base: "curar" }, { word: "la", base: "la" }, { word: "tos", ref: "es-1461" }]
+      - target: "El médico cura a mi hijo."
+        ipa: "el ˈmediko ˈkuɾa a mi ˈixo"
+        bases: [{ word: "El", base: "el" }, { word: "médico", ref: "es-0506" }, { word: "cura", base: "curar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }]
+  - id: "es-1485"
+    target: "mejorar"
+    ipa: "mexoˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "mejorar", base: "mejorar" }]
+    examples:
+      - target: "Mejoro con el reposo."
+        ipa: "meˈxoɾo kon el reˈposo"
+        bases: [{ word: "Mejoro", base: "mejorar" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "reposo", ref: "es-1483" }]
+      - target: "La salud mejora cada día."
+        ipa: "la saˈlud meˈxoɾa ˈkada ˈdia"
+        bases: [{ word: "La", base: "la" }, { word: "salud", ref: "es-1488" }, { word: "mejora", base: "mejorar" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+  - id: "es-1486"
+    target: "empeorar"
+    ipa: "empeoˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "empeorar", base: "empeorar" }]
+    examples:
+      - target: "Empeora por la noche."
+        ipa: "empeˈoɾa poɾ la ˈnotʃe"
+        bases: [{ word: "Empeora", base: "empeorar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "Mi tos empeora"
+        ipa: "mi tos empeˈoɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tos", ref: "es-1461" }, { word: "empeora", base: "empeorar" }]
+  - id: "es-1487"
+    target: "cuidar"
+    ipa: "kwiˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cuidar", base: "cuidar" }]
+    examples:
+      - target: "Cuido a mi madre."
+        ipa: "ˈkwido a mi ˈmadɾe"
+        bases: [{ word: "Cuido", base: "cuidar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "Cuidar la salud es importante."
+        ipa: "kwiˈdaɾ la saˈlud es impoɾˈtante"
+        bases: [{ word: "Cuidar", base: "cuidar" }, { word: "la", base: "la" }, { word: "salud", ref: "es-1488" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-1488"
+    target: "la salud"
+    ipa: "la saˈlud"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "salud", base: "salud" }]
+    examples:
+      - target: "La salud es lo primero."
+        ipa: "la saˈlud es lo pɾiˈmeɾo"
+        bases: [{ word: "La", base: "la" }, { word: "salud", base: "salud" }, { word: "es", ref: "es-0022" }, { word: "lo", base: "lo" }, { word: "primero", ref: "es-0551" }]
+      - target: "Cuido mi salud."
+        ipa: "ˈkwido mi saˈlud"
+        bases: [{ word: "Cuido", ref: "es-1487" }, { word: "mi", ref: "es-0129" }, { word: "salud", base: "salud" }]
+  - id: "es-1489"
+    target: "la consulta"
+    ipa: "la konˈsulta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "consulta", base: "consulta" }]
+    examples:
+      - target: "Tengo una consulta a las diez."
+        ipa: "ˈtenɡo ˈuna konˈsulta a las djeθ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "consulta", base: "consulta" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "diez", ref: "es-0214" }]
+      - target: "La consulta es con el doctor."
+        ipa: "la konˈsulta es kon el dokˈtoɾ"
+        bases: [{ word: "La", base: "la" }, { word: "consulta", base: "consulta" }, { word: "es", ref: "es-0022" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "doctor", ref: "es-1468" }]
+  - id: "es-1490"
+    target: "la sangre"
+    ipa: "la ˈsanɡɾe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sangre", base: "sangre" }]
+    examples:
+      - target: "Hay sangre en la herida."
+        ipa: "aj ˈsanɡɾe en la eˈɾida"
+        bases: [{ word: "Hay", base: "haber" }, { word: "sangre", base: "sangre" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "herida", ref: "es-1471" }]
+      - target: "La sangre es roja."
+        ipa: "la ˈsanɡɾe es ˈroxa"
+        bases: [{ word: "La", base: "la" }, { word: "sangre", base: "sangre" }, { word: "es", ref: "es-0022" }, { word: "roja", ref: "es-1007" }]
+  - id: "es-1491"
+    target: "la tensión"
+    ipa: "la tenˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tensión", base: "tensión" }]
+    examples:
+      - target: "Tengo la tensión alta."
+        ipa: "ˈtenɡo la tenˈsjon ˈalta"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "la", base: "la" }, { word: "tensión", base: "tensión" }, { word: "alta", base: "alto" }]
+      - target: "El doctor mide la tensión."
+        ipa: "el dokˈtoɾ ˈmide la tenˈsjon"
+        bases: [{ word: "El", base: "el" }, { word: "doctor", ref: "es-1468" }, { word: "mide", base: "medir" }, { word: "la", base: "la" }, { word: "tensión", base: "tensión" }]
+  - id: "es-1492"
+    target: "el oído"
+    ipa: "el oˈido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "oído", base: "oído" }]
+    examples:
+      - target: "Me duele el oído."
+        ipa: "me ˈdwele el oˈido"
+        bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "el", base: "el" }, { word: "oído", base: "oído" }]
+      - target: "Tengo buen oído."
+        ipa: "ˈtenɡo bwen oˈido"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "buen", ref: "es-0033" }, { word: "oído", base: "oído" }]
