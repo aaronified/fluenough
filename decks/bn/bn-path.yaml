@@ -599,11 +599,15 @@ units:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
   - decks: ["bn-reading-arts"]
     words: 0
-  - planned: { id: "bn-grammar-causative", grammar: "causative" }
+  - decks: ["bn-grammar-causative", "bn-grammar-causative-sentences"]
+    words: 0
+    grammar: ["causative"]
     listening_passages:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
     reading_passages:
       - { id: "service-request", text: { "en": "A written service request" } }
+  - decks: ["bn-reading-causative"]
+    words: 0
   - planned: { id: "bn-history", theme: "history", words: 45 }
     listening_passages:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of an old fort" } }

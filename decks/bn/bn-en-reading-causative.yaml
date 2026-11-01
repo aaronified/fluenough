@@ -1,0 +1,74 @@
+schema: 1
+id: "bn-en-reading-causative"
+name: "Reading: making someone do it"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A person has things done by others, a service request, and a message that passes on what someone said. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-having-things-done"
+    title: "Having things done by other people"
+    theme: "services"
+    sentences:
+      - { text: "আমি দর্জিকে দিয়ে জামাটা ছোট করালাম।", reading: "āmi dorjike diye jāmāṭā choṭ kôrālām.", ipa: "ami d̪ordʒike d̪ije dʒamaʈa tʃʰoʈ kɔralam" }
+      - { text: "বাবা মিস্ত্রিকে দিয়ে গাড়িটা ঠিক করালেন।", reading: "bābā mistrike diye gāṛiṭā ṭhik kôrālen.", ipa: "baba mist̪rike d̪ije ɡaɽiʈa ʈʰik kɔralen" }
+      - { text: "মা বাচ্চাকে দুধ খাওয়ান।", reading: "mā bāccāke dudh khāoyān.", ipa: "ma batʃtʃake d̪ud̪ʱ kʰaojan" }
+      - { text: "আমি বন্ধুকে ছবিটা দেখালাম।", reading: "āmi bondhuke chobiṭā dekhālām.", ipa: "ami bond̪ʱuke tʃʰobiʈa d̪ekʰalam" }
+      - { text: "অনেক কাজ লোক দিয়ে করানো যায়।", reading: "ônek kāj lok diye kôrāno jāy.", ipa: "ɔnek kadʒ lok d̪ije kɔrano dʒaj" }
+    questions:
+      - id: "bn-3681"
+        prompt: { "en": "The speaker had things done by other people." }
+        answer: true
+      - id: "bn-3682"
+        prompt: { "en": "Who fixed the car?" }
+        options: [{ "en": "The father, through a mechanic" }, { "en": "The speaker alone" }]
+        answer: 1
+      - id: "bn-3683"
+        prompt: { "en": "What does the mother make the baby do?" }
+        options: [{ "en": "Drink milk" }, { "en": "Sleep in the bed" }]
+        answer: 1
+  - id: "bn-service-request"
+    title: "A written service request"
+    theme: "services"
+    sentences:
+      - { text: "নমস্কার। আমার ঘরের ছাদ থেকে জল পড়ছে।", reading: "nômoskār. āmār ghôrer chād theke jôl pôṛoche.", ipa: "nɔmoskar amar ɡʱɔrer tʃʰad̪ t̪ʰeke dʒɔl pɔɽotʃʰe" }
+      - { text: "দয়া করে একজন মিস্ত্রি পাঠাবেন।", reading: "dôyā kôre ekojon mistri pāṭhāben.", ipa: "d̪ɔja kɔre ekodʒon mist̪ri paʈʰaben" }
+      - { text: "কাজটি আগামী সোমবার করানো দরকার।", reading: "kājoṭi āgāmi somobār kôrāno dôrokār.", ipa: "kadʒoʈi aɡami somobar kɔrano d̪ɔrokar" }
+      - { text: "আমি সকাল দশটা থেকে বাড়িতে থাকব।", reading: "āmi sôkāl dôśoṭā theke bāṛite thākob.", ipa: "ami sɔkal d̪ɔʃoʈa t̪ʰeke baɽit̪e t̪ʰakob" }
+      - { text: "ধন্যবাদ।", reading: "dhonnobād.", ipa: "d̪ʱonnobad̪" }
+    questions:
+      - id: "bn-3684"
+        prompt: { "en": "The writer asks for a repairman to be sent." }
+        answer: true
+      - id: "bn-3685"
+        prompt: { "en": "When does the writer want the work done?" }
+        options: [{ "en": "On Monday" }, { "en": "On Sunday" }]
+        answer: 1
+      - id: "bn-3686"
+        prompt: { "en": "When will the writer be at home?" }
+        options: [{ "en": "From ten in the morning" }, { "en": "All night" }]
+        answer: 1
+  - id: "bn-message-thread"
+    title: "A message that passes on what someone said"
+    theme: "services"
+    sentences:
+      - { text: "মা বললেন, তুমি কাল বাজার যাবে।", reading: "mā bôlolen, tumi kāl bājār jābe.", ipa: "ma bɔlolen t̪umi kal badʒar dʒabe" }
+      - { text: "বোন বলল, দোকান থেকে জিনিসগুলো বাড়িতে পাঠাবে।", reading: "bon bôlol, dokān theke jinisogulo bāṛite pāṭhābe.", ipa: "bon bɔlol d̪okan t̪ʰeke dʒinisoɡulo baɽit̪e paʈʰabe" }
+      - { text: "দোকানদার বললেন, কাল সকালে পৌঁছে দেবেন।", reading: "dokānodār bôlolen, kāl sôkāle poum̐che deben.", ipa: "d̪okanod̪ar bɔlolen kal sɔkale poũtʃʰe d̪eben" }
+      - { text: "তাই আমি তোমাকে কথাটা জানালাম।", reading: "tāi āmi tomāke kôthāṭā jānālām.", ipa: "t̪ai ami t̪omake kɔt̪ʰaʈa dʒanalam" }
+      - { text: "ধন্যবাদ, ভালো থেকো।", reading: "dhonnobād, bhālo theko.", ipa: "d̪ʱonnobad̪ bʱalo t̪ʰeko" }
+    questions:
+      - id: "bn-3687"
+        prompt: { "en": "The message passes on what the mother said." }
+        answer: true
+      - id: "bn-3688"
+        prompt: { "en": "What will the things be sent from?" }
+        options: [{ "en": "The shop, to the house" }, { "en": "The doctor, to the school" }]
+        answer: 1
+      - id: "bn-3689"
+        prompt: { "en": "When will the shopkeeper deliver?" }
+        options: [{ "en": "Tomorrow morning" }, { "en": "Tonight" }]
+        answer: 1
