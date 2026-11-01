@@ -1,0 +1,368 @@
+schema: 1
+id: "hi-health"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2075"
+    target: "बीमारी"
+    target_scripts: {"perso_arabic": "بیماری"}
+    reading: "bīmārī"
+    ipa: "biːmaːriː"
+    phonetic: "[biːmaːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसे कोई गंभीर बीमारी है।", "reading": "usē kōī gambhīr bīmārī hai.", "ipa": "ʊseː koːiː ɡəmbʱiːr biːmaːriː ɦɛː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "गंभीर", "base": "गंभीर", "reading": "gambhīr"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बीमारी से बचो।", "reading": "bīmārī sē bacō.", "ipa": "biːmaːriː seː bətʃoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बचो", "ref": "hi-1826"}]}
+  - id: "hi-2076"
+    target: "स्वास्थ्य"
+    target_scripts: {"perso_arabic": "صحت"}
+    reading: "svāsthy"
+    ipa: "sʋaːst̪ʰj"
+    phonetic: "[sʋaːst̪ʰj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "अपने स्वास्थ्य का ध्यान रखो।", "reading": "apnē svāsthy kā dhyān rakhō.", "ipa": "əpneː sʋaːst̪ʰj kaː d̪ʱjaːn rəkʰoː", "bases": [{"word": "अपने", "ref": "hi-0760"}, {"word": "का", "ref": "hi-0279"}, {"word": "ध्यान", "base": "ध्यान", "reading": "dhyān"}, {"word": "रखो", "ref": "hi-0950"}]}
+      - {"target": "स्वास्थ्य सबसे बड़ी दौलत है।", "reading": "svāsthy sabsē baṛī daulat hai.", "ipa": "sʋaːst̪ʰj səbseː bəɽiː d̪ɔːlət̪ ɦɛː", "bases": [{"word": "सबसे", "base": "सबसे", "reading": "sabsē"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "दौलत", "base": "दौलत", "reading": "daulat"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2077"
+    target: "एलर्जी"
+    target_scripts: {"perso_arabic": "الرجی"}
+    reading: "ēlarjī"
+    ipa: "eːlərdʒiː"
+    phonetic: "[eːlərdʒiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुझे धूल से एलर्जी है।", "reading": "mujhē dhūl sē ēlarjī hai.", "ipa": "mʊdʒʱeː d̪ʱuːl seː eːlərdʒiː ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "धूल", "ref": "hi-1717"}, {"word": "से", "ref": "hi-0276"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दवा से एलर्जी हो गई।", "reading": "davā sē ēlarjī hō gaī.", "ipa": "d̪əʋaː seː eːlərdʒiː ɦoː ɡəiː", "bases": [{"word": "दवा", "ref": "hi-2089"}, {"word": "से", "ref": "hi-0276"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2078"
+    target: "नाड़ी"
+    target_scripts: {"perso_arabic": "نبض"}
+    reading: "nāṛī"
+    ipa: "naːɽiː"
+    phonetic: "[naːɽiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "डॉक्टर ने नाड़ी देखी।", "reading": "ḍôkṭar nē nāṛī dēkhī.", "ipa": "ɖɔkʈər neː naːɽiː d̪eːkʰiː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "देखी", "ref": "hi-0784"}]}
+      - {"target": "नाड़ी तेज़ चल रही है।", "reading": "nāṛī tēz cal rahī hai.", "ipa": "naːɽiː t̪eːz tʃəl rəɦiː ɦɛː", "bases": [{"word": "तेज़", "ref": "hi-1289"}, {"word": "चल", "ref": "hi-0801"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2079"
+    target: "दस्त"
+    target_scripts: {"perso_arabic": "دست"}
+    reading: "dast"
+    ipa: "d̪əst̪"
+    phonetic: "[d̪əst̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चे को दस्त लगे हैं।", "reading": "baccē kō dast lagē haim̐.", "ipa": "bətʃtʃeː koː d̪əst̪ ləɡeː ɦɛ̃ː", "bases": [{"word": "बच्चे", "ref": "hi-0111"}, {"word": "को", "ref": "hi-0277"}, {"word": "लगे", "ref": "hi-1780"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "दस्त में पानी पियो।", "reading": "dast mēm̐ pānī piyō.", "ipa": "d̪əst̪ mẽː paːniː pɪjoː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "पियो", "base": "पीना", "reading": "pīnā"}]}
+  - id: "hi-2080"
+    target: "प्लास्टर"
+    target_scripts: {"perso_arabic": "پلاسٹر"}
+    reading: "plāsṭar"
+    ipa: "plaːsʈər"
+    phonetic: "[plaːsʈər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पैर पर प्लास्टर है।", "reading": "pair par plāsṭar hai.", "ipa": "pɛːr pər plaːsʈər ɦɛː", "bases": [{"word": "पैर", "ref": "hi-1039"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्लास्टर कब खुलेगा?", "reading": "plāsṭar kab khulēgā?", "ipa": "plaːsʈər kəb kʰʊleːɡaː", "bases": [{"word": "कब", "ref": "hi-0160"}, {"word": "खुलेगा", "base": "खुलना", "reading": "khulnā"}]}
+  - id: "hi-2081"
+    target: "एक्सरे"
+    target_scripts: {"perso_arabic": "ایکس رے"}
+    reading: "ēksarē"
+    ipa: "eːksəreː"
+    phonetic: "[eːksəreː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "डॉक्टर ने एक्सरे देखा।", "reading": "ḍôkṭar nē ēksarē dēkhā.", "ipa": "ɖɔkʈər neː eːksəreː d̪eːkʰaː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "देखा", "ref": "hi-0784"}]}
+      - {"target": "एक्सरे की रिपोर्ट कल मिलेगी।", "reading": "ēksarē kī ripōrṭ kal milēgī.", "ipa": "eːksəreː kiː rɪpoːrʈ kəl mɪleːɡiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "रिपोर्ट", "ref": "hi-2009"}, {"word": "कल", "ref": "hi-0300"}, {"word": "मिलेगी", "ref": "hi-0793"}]}
+  - id: "hi-2082"
+    target: "इंजेक्शन"
+    target_scripts: {"perso_arabic": "انجیکشن"}
+    reading: "iñjēkśan"
+    ipa: "ɪɲdʒeːkʃən"
+    phonetic: "[ɪɲdʒeːkʃən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नर्स ने इंजेक्शन लगाया।", "reading": "nars nē iñjēkśan lagāyā.", "ipa": "nərs neː ɪɲdʒeːkʃən ləɡaːjaː", "bases": [{"word": "नर्स", "ref": "hi-0406"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "इंजेक्शन", "base": "इंजेक्शन", "reading": "iñjēkśan"}, {"word": "लगाया", "base": "लगाना", "reading": "lagānā"}]}
+      - {"target": "इंजेक्शन से डर लगता है।", "reading": "iñjēkśan sē ḍar lagtā hai.", "ipa": "ɪɲdʒeːkʃən seː ɖər ləɡt̪aː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "डर", "base": "डर", "reading": "ḍar"}, {"word": "लगता", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2083"
+    target: "सर्जरी"
+    target_scripts: {"perso_arabic": "سرجری"}
+    reading: "sarjarī"
+    ipa: "sərdʒəriː"
+    phonetic: "[sərdʒəriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसकी सर्जरी कल होगी।", "reading": "uskī sarjarī kal hōgī.", "ipa": "ʊskiː sərdʒəriː kəl ɦoːɡiː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "कल", "ref": "hi-0300"}, {"word": "होगी", "ref": "hi-0780"}]}
+      - {"target": "सर्जरी के बाद आराम करो।", "reading": "sarjarī kē bād ārām karō.", "ipa": "sərdʒəriː keː baːd̪ aːraːm kəroː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "बाद", "base": "बाद", "reading": "bād"}, {"word": "आराम", "ref": "hi-1453"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2084"
+    target: "ऑपरेशन"
+    target_scripts: {"perso_arabic": "آپریشن"}
+    reading: "ôprēśan"
+    ipa: "ɔpreːʃən"
+    phonetic: "[ɔpreːʃən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "डॉक्टर ने ऑपरेशन किया।", "reading": "ḍôkṭar nē ôprēśan kiyā.", "ipa": "ɖɔkʈər neː ɔpreːʃən kɪjaː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "किया", "ref": "hi-0779"}]}
+      - {"target": "ऑपरेशन सफल रहा।", "reading": "ôprēśan saphal rahā.", "ipa": "ɔpreːʃən səpʰəl rəɦaː", "bases": [{"word": "सफल", "base": "सफल", "reading": "saphal"}, {"word": "रहा", "ref": "hi-0791"}]}
+  - id: "hi-2085"
+    target: "मरीज़"
+    target_scripts: {"perso_arabic": "مریض"}
+    reading: "marīz"
+    ipa: "məriːz"
+    phonetic: "[məriːz]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मरीज़ कमरे में है।", "reading": "marīz kamrē mēm̐ hai.", "ipa": "məriːz kəmreː mẽː ɦɛː", "bases": [{"word": "कमरे", "ref": "hi-0421"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मरीज़ों की भीड़ है।", "reading": "marīzōm̐ kī bhīṛ hai.", "ipa": "məriːzõː kiː bʱiːɽ ɦɛː", "bases": [{"word": "मरीज़ों", "base": "मरीज़", "reading": "marīz"}, {"word": "की", "ref": "hi-0279"}, {"word": "भीड़", "base": "भीड़", "reading": "bhīṛ"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2086"
+    target: "फ़ार्मेसी"
+    target_scripts: {"perso_arabic": "دوا خانہ"}
+    reading: "fārmēsī"
+    ipa: "faːrmeːsiː"
+    phonetic: "[faːrmeːsiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़ार्मेसी दस बजे खुलती है।", "reading": "fārmēsī das bajē khultī hai.", "ipa": "faːrmeːsiː d̪əs bədʒeː kʰʊlt̪iː ɦɛː", "bases": [{"word": "दस", "ref": "hi-0207"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "खुलती", "base": "खुलना", "reading": "khulnā"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दवा फ़ार्मेसी से लो।", "reading": "davā fārmēsī sē lō.", "ipa": "d̪əʋaː faːrmeːsiː seː loː", "bases": [{"word": "दवा", "ref": "hi-2089"}, {"word": "से", "ref": "hi-0276"}, {"word": "लो", "ref": "hi-0786"}]}
+  - id: "hi-2087"
+    target: "जलन"
+    target_scripts: {"perso_arabic": "جلن"}
+    reading: "jalan"
+    ipa: "dʒələn"
+    phonetic: "[dʒələn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हाथ पर जलन है।", "reading": "hāth par jalan hai.", "ipa": "ɦaːt̪ʰ pər dʒələn ɦɛː", "bases": [{"word": "हाथ", "ref": "hi-1042"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दवा लगाने से जलन कम होती है।", "reading": "davā lagānē sē jalan kam hōtī hai.", "ipa": "d̪əʋaː ləɡaːneː seː dʒələn kəm ɦoːt̪iː ɦɛː", "bases": [{"word": "दवा", "ref": "hi-2089"}, {"word": "लगाने", "base": "लगाना", "reading": "lagānā"}, {"word": "से", "ref": "hi-0276"}, {"word": "कम", "ref": "hi-0105"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2088"
+    target: "उपवास"
+    target_scripts: {"perso_arabic": "اپواس"}
+    reading: "upvās"
+    ipa: "ʊpʋaːs"
+    phonetic: "[ʊpʋaːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज मेरा उपवास है।", "reading": "āj mērā upvās hai.", "ipa": "aːdʒ meːraː ʊpʋaːs ɦɛː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "मेरा", "ref": "hi-0752"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "डॉक्टर ने उपवास से मना किया।", "reading": "ḍôkṭar nē upvās sē manā kiyā.", "ipa": "ɖɔkʈər neː ʊpʋaːs seː mənaː kɪjaː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "से", "ref": "hi-0276"}, {"word": "मना", "base": "मना", "reading": "manā"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2089"
+    target: "दवा"
+    target_scripts: {"perso_arabic": "دوا"}
+    reading: "davā"
+    ipa: "d̪əʋaː"
+    phonetic: "[d̪əʋaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह दवा दिन में दो बार लो।", "reading": "yah davā din mēm̐ dō bār lō.", "ipa": "jəɦ d̪əʋaː d̪ɪn mẽː d̪oː baːr loː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "दिन", "ref": "hi-0308"}, {"word": "में", "ref": "hi-0274"}, {"word": "दो", "ref": "hi-0199"}, {"word": "बार", "base": "बार", "reading": "bār"}, {"word": "लो", "ref": "hi-0786"}]}
+      - {"target": "दवा खाने के बाद सो जाओ।", "reading": "davā khānē kē bād sō jāō.", "ipa": "d̪əʋaː kʰaːneː keː baːd̪ soː dʒaːoː", "bases": [{"word": "खाने", "ref": "hi-0332"}, {"word": "के", "ref": "hi-0279"}, {"word": "बाद", "base": "बाद", "reading": "bād"}, {"word": "सो", "ref": "hi-0450"}, {"word": "जाओ", "ref": "hi-0777"}]}
+  - id: "hi-2090"
+    target: "मालिश"
+    target_scripts: {"perso_arabic": "مالش"}
+    reading: "māliś"
+    ipa: "maːlɪʃ"
+    phonetic: "[maːlɪʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दादी पैरों की मालिश करती हैं।", "reading": "dādī pairōm̐ kī māliś kartī haim̐.", "ipa": "d̪aːd̪iː pɛːrõː kiː maːlɪʃ kərt̪iː ɦɛ̃ː", "bases": [{"word": "दादी", "ref": "hi-0385"}, {"word": "पैरों", "ref": "hi-1039"}, {"word": "की", "ref": "hi-0279"}, {"word": "मालिश", "base": "मालिश", "reading": "māliś"}, {"word": "करती", "ref": "hi-0779"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "सरसों के तेल से मालिश करो।", "reading": "sarsōm̐ kē tēl sē māliś karō.", "ipa": "sərsõː keː t̪eːl seː maːlɪʃ kəroː", "bases": [{"word": "सरसों", "base": "सरसों", "reading": "sarsōm̐"}, {"word": "के", "ref": "hi-0279"}, {"word": "तेल", "ref": "hi-1021"}, {"word": "से", "ref": "hi-0276"}, {"word": "मालिश", "base": "मालिश", "reading": "māliś"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2091"
+    target: "सूजना"
+    target_scripts: {"perso_arabic": "سوجنا"}
+    reading: "sūjnā"
+    ipa: "suːdʒnaː"
+    phonetic: "[suːdʒnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पैर में सूजन है, पैर सूज गया है।", "reading": "pair mēm̐ sūjan hai, pair sūj gayā hai.", "ipa": "pɛːr mẽː suːdʒən ɦɛː pɛːr suːdʒ ɡəjaː ɦɛː", "bases": [{"word": "पैर", "ref": "hi-1039"}, {"word": "में", "ref": "hi-0274"}, {"word": "सूजन", "ref": "hi-1437"}, {"word": "है", "ref": "hi-0780"}, {"word": "सूज", "base": "सूजना", "reading": "sūjnā"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "हाथ सूजा हुआ है।", "reading": "hāth sūjā huā hai.", "ipa": "ɦaːt̪ʰ suːdʒaː ɦʊaː ɦɛː", "bases": [{"word": "हाथ", "ref": "hi-1042"}, {"word": "सूजा", "base": "सूजना", "reading": "sūjnā"}, {"word": "हुआ", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2092"
+    target: "नुस्खा"
+    target_scripts: {"perso_arabic": "نسخہ"}
+    reading: "nuskhā"
+    ipa: "nʊskʰaː"
+    phonetic: "[nʊskʰaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "डॉक्टर ने नुस्खा लिखा।", "reading": "ḍôkṭar nē nuskhā likhā.", "ipa": "ɖɔkʈər neː nʊskʰaː lɪkʰaː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "लिखा", "ref": "hi-0781"}]}
+      - {"target": "नुस्खा दिखाकर दवा लो।", "reading": "nuskhā dikhākar davā lō.", "ipa": "nʊskʰaː d̪ɪkʰaːkər d̪əʋaː loː", "bases": [{"word": "दिखाकर", "ref": "hi-1815"}, {"word": "दवा", "ref": "hi-2089"}, {"word": "लो", "ref": "hi-0786"}]}
+  - id: "hi-2093"
+    target: "आहार"
+    target_scripts: {"perso_arabic": "غذا"}
+    reading: "āhār"
+    ipa: "aːɦaːr"
+    phonetic: "[aːɦaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संतुलित आहार लो।", "reading": "santulit āhār lō.", "ipa": "sənt̪ʊlɪt̪ aːɦaːr loː", "bases": [{"word": "संतुलित", "base": "संतुलित", "reading": "santulit"}, {"word": "लो", "ref": "hi-0786"}]}
+      - {"target": "उसका आहार बहुत साधारण है।", "reading": "uskā āhār bahut sādhāraṇ hai.", "ipa": "ʊskaː aːɦaːr bəɦʊt̪ saːd̪ʱaːrəɳ ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "साधारण", "base": "साधारण", "reading": "sādhāraṇ"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2094"
+    target: "व्यायाम"
+    target_scripts: {"perso_arabic": "ورزش"}
+    reading: "vyāyām"
+    ipa: "ʋjaːjaːm"
+    phonetic: "[ʋjaːjaːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रोज़ व्यायाम करो।", "reading": "rōz vyāyām karō.", "ipa": "roːz ʋjaːjaːm kəroː", "bases": [{"word": "रोज़", "ref": "hi-0451"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "सुबह का व्यायाम अच्छा है।", "reading": "subah kā vyāyām acchā hai.", "ipa": "sʊbəɦ kaː ʋjaːjaːm ətʃtʃʰaː ɦɛː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "का", "ref": "hi-0279"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2095"
+    target: "सिगरेट"
+    target_scripts: {"perso_arabic": "سگریٹ"}
+    reading: "sigrēṭ"
+    ipa: "sɪɡreːʈ"
+    phonetic: "[sɪɡreːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सिगरेट पीना नुकसानदेह है।", "reading": "sigrēṭ pīnā nuksāndēh hai.", "ipa": "sɪɡreːʈ piːnaː nʊksaːnd̪eːɦ ɦɛː", "bases": [{"word": "पीना", "base": "पीना", "reading": "pīnā"}, {"word": "नुकसानदेह", "base": "नुकसानदेह", "reading": "nuksāndēh"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसने सिगरेट छोड़ दी।", "reading": "usnē sigrēṭ chōṛ dī.", "ipa": "ʊsneː sɪɡreːʈ tʃʰoːɽ d̪iː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "छोड़", "ref": "hi-0951"}, {"word": "दी", "ref": "hi-0785"}]}
+  - id: "hi-2096"
+    target: "शराब"
+    target_scripts: {"perso_arabic": "شراب"}
+    reading: "śarāb"
+    ipa: "ʃəraːb"
+    phonetic: "[ʃəraːb]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शराब सेहत के लिए बुरी है।", "reading": "śarāb sēhat kē liē burī hai.", "ipa": "ʃəraːb seːɦət̪ keː lɪeː bʊriː ɦɛː", "bases": [{"word": "सेहत", "ref": "hi-1450"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "बुरी", "ref": "hi-0899"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "शराब मत पियो।", "reading": "śarāb mat piyō.", "ipa": "ʃəraːb mət̪ pɪjoː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "पियो", "base": "पीना", "reading": "pīnā"}]}
+  - id: "hi-2097"
+    target: "टेस्ट"
+    target_scripts: {"perso_arabic": "ٹیسٹ"}
+    reading: "ṭēsṭ"
+    ipa: "ʈeːsʈ"
+    phonetic: "[ʈeːsʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "खून का टेस्ट कराओ।", "reading": "khūn kā ṭēsṭ karāō.", "ipa": "kʰuːn kaː ʈeːsʈ kəraːoː", "bases": [{"word": "खून", "ref": "hi-1046"}, {"word": "का", "ref": "hi-0279"}, {"word": "कराओ", "base": "कराना", "reading": "karānā"}]}
+      - {"target": "टेस्ट की रिपोर्ट आ गई।", "reading": "ṭēsṭ kī ripōrṭ ā gaī.", "ipa": "ʈeːsʈ kiː rɪpoːrʈ aː ɡəiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "रिपोर्ट", "ref": "hi-2009"}, {"word": "आ", "ref": "hi-0778"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2098"
+    target: "मेडिकल"
+    target_scripts: {"perso_arabic": "میڈیکل"}
+    reading: "mēḍikal"
+    ipa: "meːɖɪkəl"
+    phonetic: "[meːɖɪkəl]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेडिकल स्टोर खुला है।", "reading": "mēḍikal sṭōr khulā hai.", "ipa": "meːɖɪkəl sʈoːr kʰʊlaː ɦɛː", "bases": [{"word": "स्टोर", "base": "स्टोर", "reading": "sṭōr"}, {"word": "खुला", "ref": "hi-1357"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मेडिकल जाँच ज़रूरी है।", "reading": "mēḍikal jām̐c zarūrī hai.", "ipa": "meːɖɪkəl dʒãːtʃ zəruːriː ɦɛː", "bases": [{"word": "जाँच", "ref": "hi-1446"}, {"word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī"}, {"word": "है", "ref": "hi-0780"}]}

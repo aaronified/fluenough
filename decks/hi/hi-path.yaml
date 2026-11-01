@@ -420,7 +420,8 @@ units:
       - { id: "one-root-many-words", text: { "en": "A teacher shows how knowledge, scholar, known and education share a root" } }
     reading_passages:
       - { id: "newspaper-plurals", text: { "en": "Headlines with papers, events and newspapers in their Arabic plurals" } }
-  - planned: { id: "hi-health", theme: "health", words: 55 }
+  - decks: ["hi-health", "hi-reading-health", "*"]
+    words: 24
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
