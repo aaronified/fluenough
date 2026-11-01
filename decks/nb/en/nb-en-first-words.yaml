@@ -1,0 +1,186 @@
+schema: 1
+id: "nb-en-first-words"
+kind: "layer"
+core: "nb-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Bokmål. Not yet checked by a Norwegian speaker: please report any mistake."
+cards:
+  "nb-0001":
+    native: "yes"
+    notes:
+      "n1": "Ja is the plain yes. A negative question is answered the same way: Kommer du ikke? Ja, jeg kommer (Aren't you coming? Yes, I am)."
+    examples:
+      "Ja, takk.":
+        native: "Yes, please."
+        bases:
+          "Ja": "yes"
+          "takk": "thanks"
+      "Ja, jeg snakker norsk.":
+        native: "Yes, I speak Norwegian."
+        bases:
+          "Ja": "yes"
+          "jeg": "I"
+          "snakker": "speak"
+          "norsk": "Norwegian"
+  "nb-0002":
+    native: "no"
+    notes:
+      "n1": "Nei is 'no'. Ikke is 'not', and it comes after the verb: jeg forstår ikke (I don't understand)."
+    examples:
+      "Nei, takk.":
+        native: "No, thanks."
+        bases:
+          "Nei": "no"
+          "takk": "thanks"
+      "Nei, jeg forstår ikke.":
+        native: "No, I don't understand."
+        bases:
+          "Nei": "no"
+          "jeg": "I"
+          "forstår": "understand"
+          "ikke": "not"
+  "nb-0003":
+    native: "I"
+    notes:
+      "n1": "Jeg is I. Its verb keeps the same form for every person in the present: jeg snakker, du snakker (I speak, you speak)."
+    examples:
+      "Jeg er student.":
+        native: "I am a student."
+        bases:
+          "Jeg": "I"
+          "er": "am"
+          "student": "student"
+      "Jeg bor i Oslo.":
+        native: "I live in Oslo."
+        bases:
+          "Jeg": "I"
+          "bor": "live"
+          "i": "in"
+          "Oslo": "Oslo"
+  "nb-0004":
+    native: "you"
+    notes:
+      "n1": "Du is the everyday 'you', used with everyone, including strangers."
+    examples:
+      "Snakker du engelsk?":
+        native: "Do you speak English?"
+        bases:
+          "Snakker": "speak"
+          "du": "you"
+          "engelsk": "English"
+      "Du er snill.":
+        native: "You are kind."
+        bases:
+          "Du": "you"
+          "er": "are"
+          "snill": "kind"
+  "nb-0005":
+    native: "and"
+    notes:
+      "n1": "Og is 'and' between two words, as in brød og smør (bread and butter)."
+    examples:
+      "Brød og smør.":
+        native: "Bread and butter."
+        bases:
+          "Brød": "bread"
+          "og": "and"
+          "smør": "butter"
+      "Jeg og du.":
+        native: "You and I."
+        bases:
+          "Jeg": "I"
+          "og": "and"
+          "du": "you"
+  "nb-0006":
+    native: "or"
+    notes:
+      "n1": "Eller is 'or', as in a question that offers a choice: kaffe eller te (coffee or tea)."
+    examples:
+      "Kaffe eller te?":
+        native: "Coffee or tea?"
+        bases:
+          "Kaffe": "coffee"
+          "eller": "or"
+          "te": "tea"
+      "Bor du i Oslo eller Bergen?":
+        native: "Do you live in Oslo or Bergen?"
+        bases:
+          "Bor": "live"
+          "du": "you"
+          "i": "in"
+          "Oslo": "Oslo"
+          "eller": "or"
+          "Bergen": "Bergen"
+  "nb-0007":
+    native: "but"
+    notes:
+      "n1": "Men is 'but'. Say it with a short vowel, as in men (but) and not as in mene (the plural of mønt, coin)."
+    examples:
+      "Ja, men jeg er trøtt.":
+        native: "Yes, but I am tired."
+        bases:
+          "Ja": "yes"
+          "men": "but"
+          "jeg": "I"
+          "er": "am"
+          "trøtt": "tired"
+      "Bra, men dyrt.":
+        native: "Good, but expensive."
+        bases:
+          "Bra": "good"
+          "men": "but"
+          "dyrt": "expensive"
+  "nb-0008":
+    native: "good"
+    notes:
+      "n1": "Bra is 'good', and 'fine' or 'well'. It does not change its form with the noun: bra kaffe, bra vann."
+    examples:
+      "Kaffen er bra.":
+        native: "The coffee is good."
+        bases:
+          "Kaffen": "the coffee"
+          "er": "is"
+          "bra": "good"
+      "Det var bra.":
+        native: "That was good."
+        bases:
+          "Det": "that"
+          "var": "was"
+          "bra": "good"
+  "nb-0009":
+    native: "one"
+    alt_native: ["a"]
+    notes:
+      "n1": "Én is 'one', and 'a' before a common-gender noun (én kaffe). For a neuter noun it is et: et brød (a loaf of bread)."
+    examples:
+      "Én kaffe, takk.":
+        native: "A coffee, please."
+        bases:
+          "Én": "a"
+          "kaffe": "coffee"
+          "takk": "thanks"
+      "Jeg har én bror.":
+        native: "I have a brother."
+        bases:
+          "Jeg": "I"
+          "har": "have"
+          "én": "a"
+          "bror": "brother"
+  "nb-0010":
+    native: "water"
+    notes:
+      "n1": "Vann is neuter: et vann, vannet (the water). Ask for brus or mineralvann for fizzy water."
+    examples:
+      "Vann, takk.":
+        native: "Water, please."
+        bases:
+          "Vann": "water"
+          "takk": "thanks"
+      "Jeg drikker vann.":
+        native: "I drink water."
+        bases:
+          "Jeg": "I"
+          "drikker": "drink"
+          "vann": "water"
