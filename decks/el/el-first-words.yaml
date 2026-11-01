@@ -1,0 +1,120 @@
+schema: 1
+id: "el-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "el-0001"
+    target: "ναι"
+    reading: "naí"
+    ipa: "ne"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ναι, ευχαριστώ.", ipa: "ne efxaɾiˈsto", reading: "naí, efcharistó.", bases: [{ word: "ευχαριστώ", ref: "el-0004" }] }
+      - { target: "Ναι, καταλαβαίνω.", ipa: "ne kataˈlaveno", reading: "naí, katalavaíno.", bases: [{ word: "καταλαβαίνω", base: "καταλαβαίνω", reading: "katalavaíno" }] }
+  - id: "el-0002"
+    target: "όχι"
+    reading: "óchi"
+    ipa: "ˈoxi"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Όχι, ευχαριστώ.", ipa: "ˈoxi efxaɾiˈsto", reading: "óchi, efcharistó.", bases: [{ word: "ευχαριστώ", ref: "el-0004" }] }
+      - { target: "Δεν καταλαβαίνω.", ipa: "ðen kataˈlaveno", reading: "den katalavaíno.", bases: [{ word: "Δεν", base: "δεν", reading: "den" }, { word: "καταλαβαίνω", base: "καταλαβαίνω", reading: "katalavaíno" }] }
+  - id: "el-0003"
+    target: "γεια"
+    reading: "ya"
+    ipa: "ʝa"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Γεια σου, τι κάνεις;", ipa: "ʝa su ti ˈkanis", reading: "ya su, ti káneis?", bases: [{ word: "σου", base: "εσύ", reading: "esí" }, { word: "τι", base: "τι", reading: "ti" }, { word: "κάνεις", base: "κάνω", reading: "káno" }] }
+      - { target: "Γεια σας!", ipa: "ʝa sas", reading: "ya sas!", bases: [{ word: "σας", base: "εσείς", reading: "esís" }] }
+  - id: "el-0004"
+    target: "ευχαριστώ"
+    reading: "efcharistó"
+    ipa: "efxaɾiˈsto"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ευχαριστώ πολύ.", ipa: "efxaɾiˈsto poˈli", reading: "efcharistó polý.", bases: [{ word: "πολύ", ref: "el-0010" }] }
+      - { target: "Ευχαριστώ για το νερό.", ipa: "efxaɾiˈsto ɣja to neˈro", reading: "efcharistó ya to neró.", bases: [{ word: "για", base: "για", reading: "ya" }, { word: "το", base: "το", reading: "to" }, { word: "νερό", ref: "el-0008" }] }
+  - id: "el-0005"
+    target: "παρακαλώ"
+    reading: "parakaló"
+    ipa: "paɾakaˈlo"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ένα νερό, παρακαλώ.", ipa: "ˈena neˈro paɾakaˈlo", reading: "éna neró, parakaló.", bases: [{ word: "Ένα", base: "ένας", reading: "énas" }, { word: "νερό", ref: "el-0008" }] }
+      - { target: "Παρακαλώ, κάτσε.", ipa: "paɾakaˈlo ˈkatse", reading: "parakaló, kátse.", bases: [{ word: "κάτσε", base: "κάθομαι", reading: "káthomai" }] }
+  - id: "el-0006"
+    target: "εγώ"
+    reading: "egó"
+    ipa: "eˈɣo"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Εγώ είμαι από την Ελλάδα.", ipa: "eˈɣo ˈime aˈpo tin eˈlaða", reading: "egó eímai apó tin Elláda.", bases: [{ word: "είμαι", base: "είμαι", reading: "eímai" }, { word: "από", base: "από", reading: "apó" }, { word: "την", base: "η", reading: "i" }, { word: "Ελλάδα", base: "Ελλάδα", reading: "Elláda" }] }
+      - { target: "Εγώ δεν ξέρω.", ipa: "eˈɣo ðen ˈksero", reading: "egó den kséro.", bases: [{ word: "δεν", base: "δεν", reading: "den" }, { word: "ξέρω", base: "ξέρω", reading: "kséro" }] }
+  - id: "el-0007"
+    target: "εσύ"
+    reading: "esí"
+    ipa: "eˈsi"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Εσύ μιλάς ελληνικά;", ipa: "eˈsi miˈlas eliniˈka", reading: "esí milás elliniká?", bases: [{ word: "μιλάς", base: "μιλάω", reading: "miláo" }, { word: "ελληνικά", base: "ελληνικός", reading: "ellinikós" }] }
+      - { target: "Εσύ είσαι καλός.", ipa: "eˈsi ˈise kaˈlos", reading: "esí eísai kalós.", bases: [{ word: "είσαι", base: "είμαι", reading: "eímai" }, { word: "καλός", ref: "el-0009" }] }
+  - id: "el-0008"
+    target: "νερό"
+    reading: "neró"
+    ipa: "neˈro"
+    gender: "n"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Το νερό είναι κρύο.", ipa: "to neˈro ˈine ˈkrio", reading: "to neró eínai krýo.", bases: [{ word: "Το", base: "το", reading: "to" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "κρύο", base: "κρύος", reading: "krýos" }] }
+      - { target: "Θέλεις νερό;", ipa: "ˈθelis neˈro", reading: "thélis neró?", bases: [{ word: "Θέλεις", base: "θέλω", reading: "thélo" }] }
+  - id: "el-0009"
+    target: "καλός"
+    reading: "kalós"
+    ipa: "kaˈlos"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Καλό ταξίδι.", ipa: "kaˈlo taˈksiði", reading: "kaló taxídi.", bases: [{ word: "Καλό", base: "καλός", reading: "kalós" }, { word: "ταξίδι", base: "ταξίδι", reading: "taxídi" }] }
+      - { target: "Καλή μέρα.", ipa: "kaˈli ˈmera", reading: "kalí méra.", bases: [{ word: "Καλή", base: "καλός", reading: "kalós" }, { word: "μέρα", base: "μέρα", reading: "méra" }] }
+  - id: "el-0010"
+    target: "πολύ"
+    reading: "polý"
+    ipa: "poˈli"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Είμαι πολύ κουρασμένος.", ipa: "ˈime poˈli kurasˈmenos", reading: "eímai polý kourasménos.", bases: [{ word: "Είμαι", base: "είμαι", reading: "eímai" }, { word: "κουρασμένος", base: "κουρασμένος", reading: "kourasménos" }] }
+      - { target: "Πολύ καλά.", ipa: "poˈli kaˈla", reading: "polý kalá.", bases: [{ word: "καλά", ref: "el-0009" }] }
