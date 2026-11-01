@@ -1,0 +1,276 @@
+schema: 1
+id: "hi-verbs-5"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-5"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2790"
+    target: "बढ़ना"
+    target_scripts: {"perso_arabic": "بڑھنا"}
+    reading: "baṛhnā"
+    ipa: "bəɽʱnaː"
+    phonetic: "[bəɽʱnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चा रोज़ बढ़ रहा है।", "reading": "baccā rōz baṛh rahā hai.", "ipa": "bətʃtʃaː roːz bəɽʱ rəɦaː ɦɛː", "bases": [{"word": "बच्चा", "ref": "hi-0111"}, {"word": "रोज़", "ref": "hi-0451"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कीमतें बढ़ गईं।", "reading": "kīmtēm̐ baṛh gaīm̐.", "ipa": "kiːmt̪ẽː bəɽʱ ɡəĩː", "bases": [{"word": "कीमतें", "ref": "hi-1342"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "गईं", "ref": "hi-0777"}]}
+  - id: "hi-2791"
+    target: "बढ़ाना"
+    target_scripts: {"perso_arabic": "بڑھانا"}
+    reading: "baṛhānā"
+    ipa: "bəɽʱaːnaː"
+    phonetic: "[bəɽʱaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आगे बढ़ाओ।", "reading": "āgē baṛhāō.", "ipa": "aːɡeː bəɽʱaːoː", "bases": [{"word": "आगे", "ref": "hi-0291"}, {"word": "बढ़ाओ", "base": "बढ़ाना", "reading": "baṛhānā"}]}
+      - {"target": "उसने चाय की कीमत बढ़ाई।", "reading": "usnē cāy kī kīmat baṛhāī.", "ipa": "ʊsneː tʃaːj kiː kiːmət̪ bəɽʱaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "चाय", "ref": "hi-0334"}, {"word": "की", "ref": "hi-0279"}, {"word": "कीमत", "ref": "hi-1342"}, {"word": "बढ़ाई", "base": "बढ़ाना", "reading": "baṛhānā"}]}
+  - id: "hi-2792"
+    target: "गुज़रना"
+    target_scripts: {"perso_arabic": "گزرنا"}
+    reading: "guzrnā"
+    ipa: "ɡʊzrnaː"
+    phonetic: "[ɡʊzrnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दिन जल्दी गुज़र गए।", "reading": "din jaldī guzar gaē.", "ipa": "d̪ɪn dʒəld̪iː ɡʊzər ɡəeː", "bases": [{"word": "दिन", "ref": "hi-0308"}, {"word": "जल्दी", "ref": "hi-0819"}, {"word": "गुज़र", "base": "गुज़रना", "reading": "guzrnā"}, {"word": "गए", "ref": "hi-0777"}]}
+      - {"target": "ट्रेन यहाँ से गुज़री।", "reading": "ṭrēn yahām̐ sē guzrī.", "ipa": "ʈreːn jəɦãː seː ɡʊzriː", "bases": [{"word": "ट्रेन", "ref": "hi-1897"}, {"word": "यहाँ", "ref": "hi-0295"}, {"word": "से", "ref": "hi-0276"}, {"word": "गुज़री", "base": "गुज़रना", "reading": "guzrnā"}]}
+  - id: "hi-2793"
+    target: "झपटना"
+    target_scripts: {"perso_arabic": "جھپٹنا"}
+    reading: "jhapṭnā"
+    ipa: "dʒʱəpʈnaː"
+    phonetic: "[dʒʱəpʈnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बाज़ झपटा और चूहा पकड़ा।", "reading": "bāz jhapṭā aur cūhā pakṛā.", "ipa": "baːz dʒʱəpʈaː ɔːr tʃuːɦaː pəkɽaː", "bases": [{"word": "बाज़", "base": "बाज़", "reading": "bāz"}, {"word": "झपटा", "base": "झपटना", "reading": "jhapṭnā"}, {"word": "और", "ref": "hi-0337"}, {"word": "चूहा", "base": "चूहा", "reading": "cūhā"}, {"word": "पकड़ा", "ref": "hi-1798"}]}
+      - {"target": "उसने मेरा बैग झपट लिया।", "reading": "usnē mērā baig jhapaṭ liyā.", "ipa": "ʊsneː meːraː bɛːɡ dʒʱəpəʈ lɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "मेरा", "ref": "hi-0752"}, {"word": "बैग", "ref": "hi-1102"}, {"word": "झपट", "base": "झपटना", "reading": "jhapṭnā"}, {"word": "लिया", "ref": "hi-0786"}]}
+  - id: "hi-2794"
+    target: "पलटना"
+    target_scripts: {"perso_arabic": "پلٹنا"}
+    reading: "palṭnā"
+    ipa: "pəlʈnaː"
+    phonetic: "[pəlʈnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रोटी पलटो।", "reading": "rōṭī palṭō.", "ipa": "roːʈiː pəlʈoː", "bases": [{"word": "रोटी", "ref": "hi-0335"}, {"word": "पलटो", "base": "पलटना", "reading": "palṭnā"}]}
+      - {"target": "वह वापस पलटा।", "reading": "vah vāpas palṭā.", "ipa": "ʋəɦ ʋaːpəs pəlʈaː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "वापस", "base": "वापस", "reading": "vāpas"}, {"word": "पलटा", "base": "पलटना", "reading": "palṭnā"}]}
+  - id: "hi-2795"
+    target: "सोखना"
+    target_scripts: {"perso_arabic": "سوکھنا"}
+    reading: "sōkhnā"
+    ipa: "soːkʰnaː"
+    phonetic: "[soːkʰnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कपड़े से पानी सोखो।", "reading": "kapṛē sē pānī sōkhō.", "ipa": "kəpɽeː seː paːniː soːkʰoː", "bases": [{"word": "कपड़े", "ref": "hi-1106"}, {"word": "से", "ref": "hi-0276"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "सोखो", "base": "सोखना", "reading": "sōkhnā"}]}
+      - {"target": "स्पंज ने सारा पानी सोख लिया।", "reading": "spañj nē sārā pānī sōkh liyā.", "ipa": "spəɲdʒ neː saːraː paːniː soːkʰ lɪjaː", "bases": [{"word": "स्पंज", "base": "स्पंज", "reading": "spañj"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सारा", "ref": "hi-0867"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "सोख", "base": "सोखना", "reading": "sōkhnā"}, {"word": "लिया", "ref": "hi-0786"}]}
+  - id: "hi-2796"
+    target: "बहाना"
+    target_scripts: {"perso_arabic": "بہانا"}
+    reading: "bahānā"
+    ipa: "bəɦaːnaː"
+    phonetic: "[bəɦaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने आँसू बहाए।", "reading": "usnē ām̐sū bahāē.", "ipa": "ʊsneː ãːsuː bəɦaːeː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "आँसू", "base": "आँसू", "reading": "ām̐sū"}, {"word": "बहाए", "base": "बहाना", "reading": "bahānā"}]}
+      - {"target": "खून बहना बंद नहीं हुआ।", "reading": "khūn bahnā band nahīm̐ huā.", "ipa": "kʰuːn bəɦnaː bənd̪ nəɦĩː ɦʊaː", "bases": [{"word": "खून", "ref": "hi-1046"}, {"word": "बहना", "ref": "hi-1951"}, {"word": "बंद", "ref": "hi-1358"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "हुआ", "ref": "hi-0780"}]}
+  - id: "hi-2797"
+    target: "मलना"
+    target_scripts: {"perso_arabic": "ملنا"}
+    reading: "malnā"
+    ipa: "məlnaː"
+    phonetic: "[məlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तेल से पैर मलो।", "reading": "tēl sē pair malō.", "ipa": "t̪eːl seː pɛːr məloː", "bases": [{"word": "तेल", "ref": "hi-1021"}, {"word": "से", "ref": "hi-0276"}, {"word": "पैर", "ref": "hi-1039"}, {"word": "मलो", "base": "मलना", "reading": "malnā"}]}
+      - {"target": "उसने हाथ मला।", "reading": "usnē hāth malā.", "ipa": "ʊsneː ɦaːt̪ʰ məlaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "हाथ", "ref": "hi-1042"}, {"word": "मला", "base": "मलना", "reading": "malnā"}]}
+  - id: "hi-2798"
+    target: "भिगोना"
+    target_scripts: {"perso_arabic": "بھگونا"}
+    reading: "bhigōnā"
+    ipa: "bʱɪɡoːnaː"
+    phonetic: "[bʱɪɡoːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दाल रात भर भिगो दो।", "reading": "dāl rāt bhar bhigō dō.", "ipa": "d̪aːl raːt̪ bʱər bʱɪɡoː d̪oː", "bases": [{"word": "दाल", "ref": "hi-0261"}, {"word": "रात", "ref": "hi-0304"}, {"word": "भर", "base": "भर", "reading": "bhar"}, {"word": "भिगो", "base": "भिगोना", "reading": "bhigōnā"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "बारिश ने उसे भिगो दिया।", "reading": "bāriś nē usē bhigō diyā.", "ipa": "baːrɪʃ neː ʊseː bʱɪɡoː d̪ɪjaː", "bases": [{"word": "बारिश", "ref": "hi-1254"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "उसे", "ref": "hi-0749"}, {"word": "भिगो", "base": "भिगोना", "reading": "bhigōnā"}, {"word": "दिया", "ref": "hi-0785"}]}
+  - id: "hi-2799"
+    target: "पकड़ाना"
+    target_scripts: {"perso_arabic": "پکڑانا"}
+    reading: "pakṛānā"
+    ipa: "pəkɽaːnaː"
+    phonetic: "[pəkɽaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह थैला मुझे पकड़ाओ।", "reading": "yah thailā mujhē pakṛāō.", "ipa": "jəɦ t̪ʰɛːlaː mʊdʒʱeː pəkɽaːoː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "थैला", "ref": "hi-1089"}, {"word": "मुझे", "ref": "hi-0745"}, {"word": "पकड़ाओ", "base": "पकड़ाना", "reading": "pakṛānā"}]}
+      - {"target": "उसने बच्चे को गेंद पकड़ाई।", "reading": "usnē baccē kō gēnd pakṛāī.", "ipa": "ʊsneː bətʃtʃeː koː ɡeːnd̪ pəkɽaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "बच्चे", "ref": "hi-0111"}, {"word": "को", "ref": "hi-0277"}, {"word": "गेंद", "ref": "hi-1676"}, {"word": "पकड़ाई", "base": "पकड़ाना", "reading": "pakṛānā"}]}
+  - id: "hi-2800"
+    target: "खुजलाना"
+    target_scripts: {"perso_arabic": "کھجلانا"}
+    reading: "khujlānā"
+    ipa: "kʰʊdʒlaːnaː"
+    phonetic: "[kʰʊdʒlaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सिर मत खुजलाओ।", "reading": "sir mat khujlāō.", "ipa": "sɪr mət̪ kʰʊdʒlaːoː", "bases": [{"word": "सिर", "ref": "hi-1024"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "खुजलाओ", "base": "खुजलाना", "reading": "khujlānā"}]}
+      - {"target": "मेरा हाथ खुजला रहा है।", "reading": "mērā hāth khujlā rahā hai.", "ipa": "meːraː ɦaːt̪ʰ kʰʊdʒlaː rəɦaː ɦɛː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "हाथ", "ref": "hi-1042"}, {"word": "खुजला", "base": "खुजलाना", "reading": "khujlānā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2801"
+    target: "दबोचना"
+    target_scripts: {"perso_arabic": "دبوچنا"}
+    reading: "dabōcnā"
+    ipa: "d̪əboːtʃnaː"
+    phonetic: "[d̪əboːtʃnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शेर ने हिरन को दबोच लिया।", "reading": "śēr nē hiran kō dabōc liyā.", "ipa": "ʃeːr neː ɦɪrən koː d̪əboːtʃ lɪjaː", "bases": [{"word": "शेर", "ref": "hi-1138"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "हिरन", "ref": "hi-1140"}, {"word": "को", "ref": "hi-0277"}, {"word": "दबोच", "base": "दबोचना", "reading": "dabōcnā"}, {"word": "लिया", "ref": "hi-0786"}]}
+      - {"target": "चोर को दबोचो।", "reading": "cōr kō dabōcō.", "ipa": "tʃoːr koː d̪əboːtʃoː", "bases": [{"word": "चोर", "base": "चोर", "reading": "cōr"}, {"word": "को", "ref": "hi-0277"}, {"word": "दबोचो", "base": "दबोचना", "reading": "dabōcnā"}]}
+  - id: "hi-2802"
+    target: "गूँथना"
+    target_scripts: {"perso_arabic": "گوندھنا"}
+    reading: "gūm̐thanā"
+    ipa: "ɡũːt̪ʰənaː"
+    phonetic: "[ɡũːt̪ʰənaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आटा गूँथो।", "reading": "āṭā gūm̐thō.", "ipa": "aːʈaː ɡũːt̪ʰoː", "bases": [{"word": "आटा", "ref": "hi-1509"}, {"word": "गूँथो", "base": "गूँथना", "reading": "gūm̐thanā"}]}
+      - {"target": "उसने आटा गूँथकर रोटी बनाई।", "reading": "usnē āṭā gūm̐thakar rōṭī banāī.", "ipa": "ʊsneː aːʈaː ɡũːt̪ʰəkər roːʈiː bənaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "आटा", "ref": "hi-1509"}, {"word": "गूँथकर", "base": "गूँथना", "reading": "gūm̐thanā"}, {"word": "रोटी", "ref": "hi-0335"}, {"word": "बनाई", "ref": "hi-1502"}]}
+  - id: "hi-2803"
+    target: "भुनना"
+    target_scripts: {"perso_arabic": "بھننا"}
+    reading: "bhunnā"
+    ipa: "bʱʊnnaː"
+    phonetic: "[bʱʊnnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मक्का आग पर भुन रहा है।", "reading": "makkā āg par bhun rahā hai.", "ipa": "məkkaː aːɡ pər bʱʊn rəɦaː ɦɛː", "bases": [{"word": "मक्का", "ref": "hi-1003"}, {"word": "आग", "ref": "hi-1944"}, {"word": "पर", "ref": "hi-0275"}, {"word": "भुन", "base": "भुनना", "reading": "bhunnā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मूँगफली भुन गई।", "reading": "mūm̐gaphlī bhun gaī.", "ipa": "mũːɡəpʰliː bʱʊn ɡəiː", "bases": [{"word": "मूँगफली", "base": "मूँगफली", "reading": "mūm̐gaphlī"}, {"word": "भुन", "base": "भुनना", "reading": "bhunnā"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2804"
+    target: "चमकाना"
+    target_scripts: {"perso_arabic": "چمکانا"}
+    reading: "camkānā"
+    ipa: "tʃəmkaːnaː"
+    phonetic: "[tʃəmkaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "जूते चमकाओ।", "reading": "jūtē camkāō.", "ipa": "dʒuːt̪eː tʃəmkaːoː", "bases": [{"word": "जूते", "ref": "hi-1112"}, {"word": "चमकाओ", "base": "चमकाना", "reading": "camkānā"}]}
+      - {"target": "उसने बर्तन चमकाए।", "reading": "usnē bartan camkāē.", "ipa": "ʊsneː bərt̪ən tʃəmkaːeː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "बर्तन", "ref": "hi-1518"}, {"word": "चमकाए", "base": "चमकाना", "reading": "camkānā"}]}
+  - id: "hi-2805"
+    target: "हिलाना"
+    target_scripts: {"perso_arabic": "ہلانا"}
+    reading: "hilānā"
+    ipa: "ɦɪlaːnaː"
+    phonetic: "[ɦɪlaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पेड़ को हिलाओ।", "reading": "pēṛ kō hilāō.", "ipa": "peːɽ koː ɦɪlaːoː", "bases": [{"word": "पेड़", "ref": "hi-1926"}, {"word": "को", "ref": "hi-0277"}, {"word": "हिलाओ", "base": "हिलाना", "reading": "hilānā"}]}
+      - {"target": "सिर हिलाकर उसने मना किया।", "reading": "sir hilākar usnē manā kiyā.", "ipa": "sɪr ɦɪlaːkər ʊsneː mənaː kɪjaː", "bases": [{"word": "सिर", "ref": "hi-1024"}, {"word": "हिलाकर", "base": "हिलाना", "reading": "hilānā"}, {"word": "उसने", "ref": "hi-0749"}, {"word": "मना", "base": "मना", "reading": "manā"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2806"
+    target: "हिलना"
+    target_scripts: {"perso_arabic": "ہلنا"}
+    reading: "hilnā"
+    ipa: "ɦɪlnaː"
+    phonetic: "[ɦɪlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दाँत हिल रहा है।", "reading": "dām̐t hil rahā hai.", "ipa": "d̪ãːt̪ ɦɪl rəɦaː ɦɛː", "bases": [{"word": "दाँत", "ref": "hi-1029"}, {"word": "हिल", "base": "हिलना", "reading": "hilnā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पत्ते हवा में हिल रहे हैं।", "reading": "pattē havā mēm̐ hil rahē haim̐.", "ipa": "pət̪t̪eː ɦəʋaː mẽː ɦɪl rəɦeː ɦɛ̃ː", "bases": [{"word": "पत्ते", "ref": "hi-1927"}, {"word": "हवा", "ref": "hi-1257"}, {"word": "में", "ref": "hi-0274"}, {"word": "हिल", "base": "हिलना", "reading": "hilnā"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2807"
+    target: "झूलना"
+    target_scripts: {"perso_arabic": "جھولنا"}
+    reading: "jhūlnā"
+    ipa: "dʒʱuːlnaː"
+    phonetic: "[dʒʱuːlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चे झूले पर झूल रहे हैं।", "reading": "baccē jhūlē par jhūl rahē haim̐.", "ipa": "bətʃtʃeː dʒʱuːleː pər dʒʱuːl rəɦeː ɦɛ̃ː", "bases": [{"word": "बच्चे", "ref": "hi-0111"}, {"word": "झूले", "base": "झूला", "reading": "jhūlā"}, {"word": "पर", "ref": "hi-0275"}, {"word": "झूल", "base": "झूलना", "reading": "jhūlnā"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "डाल हवा में झूलती है।", "reading": "ḍāl havā mēm̐ jhūltī hai.", "ipa": "ɖaːl ɦəʋaː mẽː dʒʱuːlt̪iː ɦɛː", "bases": [{"word": "डाल", "ref": "hi-0103"}, {"word": "हवा", "ref": "hi-1257"}, {"word": "में", "ref": "hi-0274"}, {"word": "झूलती", "base": "झूलना", "reading": "jhūlnā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2808"
+    target: "झूलाना"
+    target_scripts: {"perso_arabic": "جھلانا"}
+    reading: "jhūlānā"
+    ipa: "dʒʱuːlaːnaː"
+    phonetic: "[dʒʱuːlaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चे को झूला झुलाओ।", "reading": "baccē kō jhūlā jhulāō.", "ipa": "bətʃtʃeː koː dʒʱuːlaː dʒʱʊlaːoː", "bases": [{"word": "बच्चे", "ref": "hi-0111"}, {"word": "को", "ref": "hi-0277"}, {"word": "झूला", "base": "झूला", "reading": "jhūlā"}, {"word": "झुलाओ", "base": "झुलाना", "reading": "jhulānā"}]}
+      - {"target": "माँ बच्चे को झुलाती है।", "reading": "mām̐ baccē kō jhulātī hai.", "ipa": "mãː bətʃtʃeː koː dʒʱʊlaːt̪iː ɦɛː", "bases": [{"word": "माँ", "ref": "hi-0377"}, {"word": "बच्चे", "ref": "hi-0111"}, {"word": "को", "ref": "hi-0277"}, {"word": "झुलाती", "base": "झुलाना", "reading": "jhulānā"}, {"word": "है", "ref": "hi-0780"}]}

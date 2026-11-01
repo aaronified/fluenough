@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-verbs-5"
+name: "Reading: verbs-5"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a garden and a kitchen. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-verbs5-garden"
+    title: "In the garden"
+    theme: "verbs-5"
+    sentences:
+      - {"text": "पौधा तेज़ी से बढ़ रहा है, और हवा में झूल रहा है।", "reading": "paudhā tēzī sē baṛh rahā hai, aur havā mēm̐ jhūl rahā hai.", "ipa": "pɔːd̪ʱaː t̪eːziː seː bəɽʱ rəɦaː ɦɛː ɔːr ɦəʋaː mẽː dʒʱuːl rəɦaː ɦɛː"}
+      - {"text": "सुबह की धूप में फूल धीरे-धीरे खिल रहे हैं।", "reading": "subah kī dhūp mēm̐ phūl dhīrē-dhīrē khil rahē haim̐.", "ipa": "sʊbəɦ kiː d̪ʱuːp mẽː pʰuːl d̪ʱiːreːd̪ʱiːreː kʰɪl rəɦeː ɦɛ̃ː"}
+      - {"text": "तेल से पैर मलो और गरम पानी में भिगोओ।", "reading": "tēl sē pair malō aur garam pānī mēm̐ bhigōō.", "ipa": "t̪eːl seː pɛːr məloː ɔːr ɡərəm paːniː mẽː bʱɪɡoːoː"}
+      - {"text": "रोटी पलटो, वह भुन गई है।", "reading": "rōṭī palṭō, vah bhun gaī hai.", "ipa": "roːʈiː pəlʈoː ʋəɦ bʱʊn ɡəiː ɦɛː"}
+    questions:
+      - {"id": "hi-2809", "prompt": {"en": "The plant is growing fast."}, "answer": true}
+      - {"id": "hi-2810", "prompt": {"en": "What is done with oil?"}, "options": [{"en": "Rubbing the feet"}, {"en": "Frying the bread"}], "answer": 1}
+      - {"id": "hi-2811", "prompt": {"en": "The bread is not roasted."}, "answer": false}
+  - id: "hi-verbs5-street"
+    title: "On the street"
+    theme: "verbs-5"
+    sentences:
+      - {"text": "बाज़ झपटा और चूहा दबोच लिया।", "reading": "bāz jhapṭā aur cūhā dabōc liyā.", "ipa": "baːz dʒʱəpʈaː ɔːr tʃuːɦaː d̪əboːtʃ lɪjaː"}
+      - {"text": "कीमतें गुज़र गईं पर बढ़ीं नहीं।", "reading": "kīmtēm̐ guzar gaīm̐ par baṛhīm̐ nahīm̐.", "ipa": "kiːmt̪ẽː ɡʊzər ɡəĩː pər bəɽʱĩː nəɦĩː"}
+      - {"text": "बच्चे को झूला झुलाओ।", "reading": "baccē kō jhūlā jhulāō.", "ipa": "bətʃtʃeː koː dʒʱuːlaː dʒʱʊlaːoː"}
+      - {"text": "पानी सोख लो और दरवाज़ा बंद करो।", "reading": "pānī sōkh lō aur darvāzā band karō.", "ipa": "paːniː soːkʰ loː ɔːr d̪ərʋaːzaː bənd̪ kəroː"}
+    questions:
+      - {"id": "hi-2812", "prompt": {"en": "The hawk seized the mouse."}, "answer": true}
+      - {"id": "hi-2813", "prompt": {"en": "What did the child get on?"}, "options": [{"en": "A swing"}, {"en": "A bicycle"}], "answer": 1}
+      - {"id": "hi-2814", "prompt": {"en": "The prices have fallen."}, "answer": false}
