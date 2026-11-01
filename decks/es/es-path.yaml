@@ -194,7 +194,8 @@ units:
       - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
     reading_passages:
       - { id: "yesterday-diary", text: { "en": "A short diary entry about yesterday" } }
-  - planned: { id: "es-school", theme: "school", words: 40 }
+  - decks: ["es-school", "es-school-sentences", "es-reading-school", "*"]
+    words: 33
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
