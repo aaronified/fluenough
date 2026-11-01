@@ -411,7 +411,8 @@ units:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - planned: { id: "kn-opinions", theme: "opinions", words: 50 }
+  - decks: ["kn-opinions", "*"]
+    words: 23
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
     reading_passages:
