@@ -5,7 +5,6 @@ import '../../core/data/course_path.dart';
 import '../../core/models/deck.dart' show countsAsWord;
 import '../../core/progress/mastery.dart';
 import '../../core/progress/practice_week.dart';
-import 'stats_numbers.dart';
 
 /// What Progress shows of mastery (#678) for one language, or for every
 /// language practised together when [language] is null: the words, the
@@ -19,89 +18,46 @@ class ProgressMastery {
     required this.week,
     required this.now,
     required this._parts,
+    required this._series,
     required this._at,
   });
 
-  /// What Progress shows for [language] (every language when null), worked
-  /// out again only when the progress, the decks or the day has changed:
-  /// the weekly snapshots walk the whole log.
-  factory ProgressMastery.of(AppState state, String? language) {
-    final memo = _memos[state] ??= _Memo();
-    final progress = state.progress;
-    final key = (
-      progress: progress,
-      // A language's own version: an answer in another language leaves this
-      // one's numbers as they were. All languages go by the whole progress.
-      version: language == null
-          ? progress.version
-          : progress.versionOf(language),
-      decks: state.decks,
-      day: calendarDay(state.now()),
-      native: language == null ? null : state.courseNative(language),
-    );
-    final cached = memo.byLanguage[language];
-    if (cached != null && cached.key == key) {
-      return cached.value;
-    }
-    final value = ProgressMastery._compute(state, language);
-    memo.byLanguage[language] = (key: key, value: value);
-    return value;
-  }
-
-  static final Expando<_Memo> _memos = Expando<_Memo>('ProgressMastery');
-
-  static ProgressMastery _compute(AppState state, String? language) {
-    final languageOf = languageLookupOf(state);
-    final at = state.now();
-    // On All, only reviews in a language that can be told count, so the
-    // words and the star are of the same languages.
-    bool counts(String deckId) => language == null
-        ? languageOf(deckId) != null
-        : languageOf(deckId) == language;
-    final log = <ReviewEvent>[
-      for (final e in state.progress.log.answered)
-        if (counts(e.deckId)) e,
-    ];
-    final scriptLog = <ReviewEvent>[
-      for (final e in state.progress.scriptLog)
-        if (counts(e.deckId)) e,
-    ];
-    final codes = language != null
-        ? <String>[language]
-        : <String>{for (final e in log) ?languageOf(e.deckId)}.toList();
-
-    final parts = <_Part>[];
-    Milestone? level;
-    for (final code in codes) {
-      final inputs = _inputsOf(state, code);
-      parts.add(
-        _Part(
-          log: <ReviewEvent>[
-            for (final e in log)
-              if (languageOf(e.deckId) == code) e,
-          ],
-          scriptLog: <ReviewEvent>[
-            for (final e in scriptLog)
-              if (languageOf(e.deckId) == code) e,
-          ],
-          totals: inputs.totals,
-          scriptCards: inputs.scriptCards,
-          parametersOf: (mode) => state.progress.parameters.of(code, mode),
-        ),
-      );
-      if (language != null) level = inputs.level;
-    }
-    final now = _combine(parts, null);
-    return ProgressMastery._(
+  /// The mastery of the languages [parts] hold, whose reviews together are
+  /// [log] (those of the languages counted), as of [at]. With [withSeries]
+  /// the weekly snapshots are worked out now and [parts] are let go, so
+  /// that the result holds plain data only and can cross from an isolate
+  /// (#857); without, they wait for [overTime].
+  factory ProgressMastery.fromParts(
+    List<MasteryPart> parts, {
+    required List<ReviewEvent> log,
+    required DateTime at,
+    Milestone? level,
+    bool withSeries = false,
+  }) {
+    final result = ProgressMastery._(
       words: _words(parts),
       level: level,
       started: startedOn(log),
       week: practiceWeek(log, now: at),
-      now: now,
+      now: _combine(parts, null),
       parts: parts,
+      series: null,
       at: at,
     );
+    if (withSeries) {
+      result
+        ..overTime()
+        .._parts = null;
+    }
+    return result;
   }
+
+  /// Nothing reviewed: no words, an empty week and a star with nothing in it.
+  factory ProgressMastery.empty(DateTime at) => ProgressMastery.fromParts(
+    const <MasteryPart>[],
+    log: const <ReviewEvent>[],
+    at: at,
+  );
 
   /// Words mastered, of the words taught.
   final WordCounts words;
@@ -119,16 +75,18 @@ class ProgressMastery {
   /// The star's numbers now.
   final Mastery now;
 
-  final List<_Part> _parts;
+  List<MasteryPart>? _parts;
+  List<Mastery>? _series;
   final DateTime _at;
 
-  /// The star's numbers each week for twelve weeks, oldest first.
-  List<Mastery> overTime({int weeks = 12}) => <Mastery>[
-    for (var i = weeks - 1; i >= 0; i--)
-      _combine(_parts, _at.subtract(Duration(days: 7 * i))),
+  /// The star's numbers each week for twelve weeks, oldest first. Worked out
+  /// on the first ask, unless the isolate that made this did so already.
+  List<Mastery> overTime() => _series ??= <Mastery>[
+    for (var i = 11; i >= 0; i--)
+      _combine(_parts!, _at.subtract(Duration(days: 7 * i))),
   ];
 
-  static WordCounts _words(List<_Part> parts) {
+  static WordCounts _words(List<MasteryPart> parts) {
     var mastered = 0;
     var taught = 0;
     for (final p in parts) {
@@ -139,7 +97,7 @@ class ProgressMastery {
     return (mastered: mastered, taught: taught);
   }
 
-  static Mastery _combine(List<_Part> parts, DateTime? asOf) =>
+  static Mastery _combine(List<MasteryPart> parts, DateTime? asOf) =>
       sumMastery(<Mastery>[
         for (final p in parts)
           masteryAt(
@@ -151,59 +109,12 @@ class ProgressMastery {
             parametersOf: p.parametersOf,
           ),
       ]);
-
-  static ({MasteryTotals totals, Set<String> scriptCards, Milestone? level})
-  _inputsOf(AppState state, String code) {
-    final native = state.courseNative(code);
-    final entries = <DeckEntry>[
-      for (final e in state.decks)
-        if (e.language.code == code && e.deck.native.code == native) e,
-    ];
-    final path = entries.isEmpty ? null : state.pathOf(entries.first);
-    final inCourse = path == null
-        ? entries
-        : <DeckEntry>[for (final id in path.deckIds) ?state.deckById(id)];
-    final alphabet = path?.alphabet ?? const <String>{};
-    final scriptCards = <String>{};
-    final words = <String>{};
-    final grammar = <String>{};
-    for (final entry in inCourse) {
-      for (final card in entry.cards) {
-        if (alphabet.contains(entry.id)) {
-          scriptCards.add(card.id);
-        } else if (card.isGrammarCell) {
-          grammar.add(card.id);
-        } else if (countsAsWord(card, entry.deck.kind)) {
-          // Roots only (#615): a phrase is no word of a level.
-          words.add(card.id);
-        }
-      }
-    }
-    final b1Words = path == null || path.plannedWords < words.length
-        ? words.length
-        : path.plannedWords;
-    return (
-      totals: <MasterySkill, int>{
-        MasterySkill.grammar: grammar.length,
-        MasterySkill.script: scriptCards.length * 2,
-        MasterySkill.read: b1Words,
-        MasterySkill.write: b1Words,
-        MasterySkill.hear: b1Words,
-        MasterySkill.say: b1Words,
-      },
-      scriptCards: scriptCards,
-      level: path == null
-          ? null
-          : levelReached(path, (id) {
-              final entry = state.deckById(id);
-              return entry != null && state.isFinished(entry);
-            }),
-    );
-  }
 }
 
-class _Part {
-  const _Part({
+/// One language's share of [ProgressMastery]: its reviews, what the course
+/// holds, and the parameters that schedule it.
+class MasteryPart {
+  const MasteryPart({
     required this.log,
     required this.scriptLog,
     required this.totals,
@@ -218,8 +129,53 @@ class _Part {
   final Set<String> scriptCards;
 }
 
-/// What [ProgressMastery.of] has worked out for one state, by language.
-class _Memo {
-  final Map<String?, ({Object key, ProgressMastery value})> byLanguage =
-      <String?, ({Object key, ProgressMastery value})>{};
+/// What the course of [code] holds, from [state]'s decks and path: the B1
+/// totals per skill, the cards that teach a script, and the level reached.
+({MasteryTotals totals, Set<String> scriptCards, Milestone? level})
+courseInputsOf(AppState state, String code) {
+  final native = state.courseNative(code);
+  final entries = <DeckEntry>[
+    for (final e in state.decks)
+      if (e.language.code == code && e.deck.native.code == native) e,
+  ];
+  final path = entries.isEmpty ? null : state.pathOf(entries.first);
+  final inCourse = path == null
+      ? entries
+      : <DeckEntry>[for (final id in path.deckIds) ?state.deckById(id)];
+  final alphabet = path?.alphabet ?? const <String>{};
+  final scriptCards = <String>{};
+  final words = <String>{};
+  final grammar = <String>{};
+  for (final entry in inCourse) {
+    for (final card in entry.cards) {
+      if (alphabet.contains(entry.id)) {
+        scriptCards.add(card.id);
+      } else if (card.isGrammarCell) {
+        grammar.add(card.id);
+      } else if (countsAsWord(card, entry.deck.kind)) {
+        // Roots only (#615): a phrase is no word of a level.
+        words.add(card.id);
+      }
+    }
+  }
+  final b1Words = path == null || path.plannedWords < words.length
+      ? words.length
+      : path.plannedWords;
+  return (
+    totals: <MasterySkill, int>{
+      MasterySkill.grammar: grammar.length,
+      MasterySkill.script: scriptCards.length * 2,
+      MasterySkill.read: b1Words,
+      MasterySkill.write: b1Words,
+      MasterySkill.hear: b1Words,
+      MasterySkill.say: b1Words,
+    },
+    scriptCards: scriptCards,
+    level: path == null
+        ? null
+        : levelReached(path, (id) {
+            final entry = state.deckById(id);
+            return entry != null && state.isFinished(entry);
+          }),
+  );
 }
