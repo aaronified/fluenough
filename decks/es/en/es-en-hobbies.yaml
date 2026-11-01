@@ -1,0 +1,275 @@
+schema: 1
+id: "es-en-hobbies"
+kind: "layer"
+core: "es-hobbies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hobbies"
+license: "CC-BY-SA-4.0"
+description: "Words for free time: sport, music and art, the club and the team, the games, and the verbs to play, paint, sing, ride and enjoy. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1400":
+    native: "hobby; interest"
+    notes: { n1: "Afición is a hobby or an interest. Tener afición a is to be keen on something. The plural is aficiones." }
+    bases: { "la": "the", "afición": "hobby; interest" }
+    examples:
+      "Mi afición es la lectura.": { native: "My hobby is reading.", bases: { "afición": "hobby; interest", "la": "the", "lectura": "reading" } }
+      "Tengo muchas aficiones.": { native: "I have many hobbies.", bases: { "aficiones": "hobby; interest" } }
+  "es-1401":
+    native: "pastime; hobby"
+    notes: { n1: "Pasatiempo is something you do for fun in your free time." }
+    bases: { "el": "the", "pasatiempo": "pastime; hobby" }
+    examples:
+      "Mi pasatiempo favorito es pintar.": { native: "My favourite pastime is painting.", bases: { "pasatiempo": "pastime; hobby", "favorito": "favourite" } }
+      "Los pasatiempos son divertidos.": { native: "Hobbies are fun.", bases: { "Los": "the", "pasatiempos": "pastime; hobby" } }
+  "es-1402":
+    native: "sport"
+    notes: { n1: "Deporte is sport in general. Hacer deporte is to do sport." }
+    bases: { "el": "the", "deporte": "sport" }
+    examples:
+      "Hago deporte los sábados.": { native: "I do sport on Saturdays.", bases: { "deporte": "sport", "los": "the" } }
+      "El deporte es bueno para la salud.": { native: "Sport is good for health.", bases: { "El": "the", "deporte": "sport", "para": "for", "la": "the", "salud": "health" } }
+  "es-1403":
+    native: "to play"
+    notes: { n1: "Jugar changes its stem: juego, juegas. Jugar a is to play a game or a sport." }
+    bases: { "jugar": "to play" }
+    examples:
+      "Juego al fútbol con mis amigos.": { native: "I play football with my friends.", bases: { "Juego": "to play", "al": "to the", "con": "with" } }
+      "Jugamos al tenis los domingos.": { native: "We play tennis on Sundays.", bases: { "Jugamos": "to play", "al": "to the", "los": "the" } }
+  "es-1404":
+    native: "to paint"
+    notes: { n1: "Pintar is to paint a picture, or a wall." }
+    bases: { "pintar": "to paint" }
+    examples:
+      "Pinto un cuadro.": { native: "I paint a picture.", bases: { "Pinto": "to paint", "un": "a", "cuadro": "picture" } }
+      "Me gusta pintar en casa.": { native: "I like painting at home.", bases: { "Me": "to me", "pintar": "to paint", "en": "in" } }
+  "es-1405":
+    native: "to sing"
+    notes: { n1: "Cantar is to sing a song." }
+    bases: { "cantar": "to sing" }
+    examples:
+      "Canto en el coro.": { native: "I sing in the choir.", bases: { "Canto": "to sing", "en": "in", "el": "the", "coro": "choir" } }
+      "Mi hermana canta muy bien.": { native: "My sister sings very well.", bases: { "canta": "to sing" } }
+  "es-1406":
+    native: "to play (an instrument)"
+    notes: { n1: "Tocar is to play a musical instrument, or to touch something." }
+    bases: { "tocar": "to play (an instrument)" }
+    examples:
+      "Toco la guitarra por la tarde.": { native: "I play the guitar in the afternoon.", bases: { "Toco": "to play (an instrument)", "la": "the", "por": "for" } }
+      "Ella toca el piano.": { native: "She plays the piano.", bases: { "toca": "to play (an instrument)", "el": "the" } }
+  "es-1407":
+    native: "guitar"
+    notes: { n1: "La guitarra is a guitar, a string instrument." }
+    bases: { "la": "the", "guitarra": "guitar" }
+    examples:
+      "La guitarra es mi instrumento.": { native: "The guitar is my instrument.", bases: { "La": "the", "guitarra": "guitar", "instrumento": "instrument" } }
+      "Toco la guitarra en el salón.": { native: "I play the guitar in the living room.", bases: { "la": "the", "guitarra": "guitar", "en": "in", "el": "the" } }
+  "es-1408":
+    native: "piano"
+    notes: { n1: "El piano is the piano, with black and white keys." }
+    bases: { "el": "the", "piano": "piano" }
+    examples:
+      "El piano está en la sala.": { native: "The piano is in the living room.", bases: { "El": "the", "piano": "piano", "en": "in", "la": "the", "sala": "living room" } }
+      "Estudio piano dos veces por semana.": { native: "I study piano twice a week.", bases: { "piano": "piano", "por": "for" } }
+  "es-1409":
+    native: "violin"
+    notes: { n1: "El violín is a violin, played under the chin." }
+    bases: { "el": "the", "violín": "violin" }
+    examples:
+      "El violín es difícil.": { native: "The violin is difficult.", bases: { "El": "the", "violín": "violin" } }
+      "Mi hijo toca el violín.": { native: "My son/ser plays the violin.", bases: { "el": "the", "violín": "violin" } }
+  "es-1410":
+    native: "photograph; photography"
+    notes: { n1: "La fotografía is a photograph, or the art of taking them. Foto is short for it." }
+    bases: { "la": "the", "fotografía": "photograph; photography" }
+    examples:
+      "La fotografía es mi afición.": { native: "Photography is my hobby.", bases: { "La": "the", "fotografía": "photograph; photography" } }
+      "Hago fotografías en la playa.": { native: "I take photographs at the beach.", bases: { "fotografías": "photograph; photography", "en": "in", "la": "the" } }
+  "es-1411":
+    native: "club"
+    notes: { n1: "El club is a club or society, where people meet for a hobby or sport." }
+    bases: { "el": "the", "club": "club" }
+    examples:
+      "Soy miembro de un club de lectura.": { native: "I am a member of a reading club.", bases: { "miembro": "member", "de": "of", "un": "a", "club": "club", "lectura": "reading" } }
+      "El club es muy divertido.": { native: "The club is great fun.", bases: { "El": "the", "club": "club" } }
+  "es-1412":
+    native: "team"
+    notes: { n1: "El equipo is a team, in a sport or at work." }
+    bases: { "el": "the", "equipo": "team" }
+    examples:
+      "Mi equipo gana el partido.": { native: "My team wins the match.", bases: { "equipo": "team", "el": "the", "partido": "match" } }
+      "El equipo entrena los lunes.": { native: "The team trains on Mondays.", bases: { "El": "the", "equipo": "team", "entrena": "to train", "los": "the" } }
+  "es-1413":
+    native: "to ride"
+    notes: { n1: "Montar is to ride a bicycle or a horse, or to get on something." }
+    bases: { "montar": "to ride" }
+    examples:
+      "Monto en bicicleta por el parque.": { native: "I ride a bicycle in the park.", bases: { "Monto": "to ride", "en": "in", "por": "for", "el": "the" } }
+      "Montamos a caballo en el campo.": { native: "We ride horses in the countryside.", bases: { "Montamos": "to ride", "a": "to", "en": "in", "el": "the", "campo": "field" } }
+  "es-1414":
+    native: "collection"
+    notes: { n1: "La colección is a set of things collected for interest, such as stamps." }
+    bases: { "la": "the", "colección": "collection" }
+    examples:
+      "Tengo una colección de sellos.": { native: "I have a stamp collection.", bases: { "una": "a", "colección": "collection", "de": "of", "sellos": "stamp" } }
+      "La colección es muy grande.": { native: "The collection is very big.", bases: { "La": "the", "colección": "collection" } }
+  "es-1415":
+    native: "to knit"
+    notes: { n1: "Tejer is to knit or weave wool into cloth." }
+    bases: { "tejer": "to knit" }
+    examples:
+      "Mi madre teje bufandas.": { native: "My mother knits scarves.", bases: { "teje": "to knit" } }
+      "Tejo un jersey para mi hijo.": { native: "I knit a jumper for my son./ser", bases: { "Tejo": "to knit", "un": "a", "para": "for" } }
+  "es-1416":
+    native: "video game"
+    notes: { n1: "El videojuego is a video game, played on a screen." }
+    bases: { "el": "the", "videojuego": "video game" }
+    examples:
+      "Me gustan los videojuegos.": { native: "I like video games.", bases: { "Me": "to me", "los": "the", "videojuegos": "video game" } }
+      "Este videojuego es muy difícil.": { native: "This video game is very hard.", bases: { "Este": "this", "videojuego": "video game" } }
+  "es-1417":
+    native: "TV series"
+    notes: { n1: "La serie is a TV series, watched in parts over many weeks." }
+    bases: { "la": "the", "serie": "TV series" }
+    examples:
+      "Veo una serie cada noche.": { native: "I watch a series every night.", bases: { "Veo": "see", "una": "a", "serie": "TV series" } }
+      "La serie es muy buena.": { native: "The series is very good.", bases: { "La": "the", "serie": "TV series" } }
+  "es-1418":
+    native: "chess"
+    notes: { n1: "El ajedrez is chess, the board game with kings and queens." }
+    bases: { "el": "the", "ajedrez": "chess" }
+    examples:
+      "Juego al ajedrez los domingos.": { native: "I play chess on Sundays.", bases: { "al": "to the", "ajedrez": "chess", "los": "the" } }
+      "El ajedrez es un juego difícil.": { native: "Chess is a hard game.", bases: { "El": "the", "ajedrez": "chess", "un": "a" } }
+  "es-1419":
+    native: "to fish"
+    notes: { n1: "Pescar is to catch fish. The noun is pesca." }
+    bases: { "pescar": "to fish" }
+    examples:
+      "Pesco en el río.": { native: "I fish in the river.", bases: { "Pesco": "to fish", "en": "in", "el": "the", "río": "river" } }
+      "Pescan con su padre.": { native: "They fish with their father.", bases: { "Pescan": "to fish", "con": "with" } }
+  "es-1420":
+    native: "to climb"
+    notes: { n1: "Escalar is to climb a mountain or a wall." }
+    bases: { "escalar": "to climb" }
+    examples:
+      "Escalo montañas en verano.": { native: "I climb mountains in summer.", bases: { "Escalo": "to climb", "montañas": "mountain", "en": "in" } }
+      "Escalan la pared.": { native: "They climb the wall.", bases: { "Escalan": "to climb", "la": "the" } }
+  "es-1421":
+    native: "to ski"
+    notes: { n1: "Esquiar is to ski. Its stem takes an accent: esquío, esquías." }
+    bases: { "esquiar": "to ski" }
+    examples:
+      "Esquío en invierno.": { native: "I ski in winter.", bases: { "Esquío": "to ski", "en": "in" } }
+      "Esquiamos en las montañas.": { native: "We ski in the mountains.", bases: { "Esquiamos": "to ski", "en": "in", "las": "the", "montañas": "mountain" } }
+  "es-1422":
+    native: "yoga"
+    notes: { n1: "El yoga is the exercise of stretching and breathing, from India." }
+    bases: { "el": "the", "yoga": "yoga" }
+    examples:
+      "Hago yoga por la mañana.": { native: "I do yoga in the morning.", bases: { "yoga": "yoga", "por": "for", "la": "the" } }
+      "El yoga es relajante.": { native: "Yoga is relaxing.", bases: { "El": "the", "yoga": "yoga", "relajante": "relaxing" } }
+  "es-1423":
+    native: "swimming pool"
+    notes: { n1: "La piscina is a swimming pool, indoors or outdoors." }
+    bases: { "la": "the", "piscina": "swimming pool" }
+    examples:
+      "Nado en la piscina.": { native: "I swim in the pool.", bases: { "en": "in", "la": "the", "piscina": "swimming pool" } }
+      "La piscina está cerrada hoy.": { native: "The pool is closed today.", bases: { "La": "the", "piscina": "swimming pool" } }
+  "es-1424":
+    native: "concert"
+    notes: { n1: "El concierto is a concert, where musicians play for an audience." }
+    bases: { "el": "the", "concierto": "concert" }
+    examples:
+      "Vamos a un concierto el sábado.": { native: "We go to a concert on Saturday.", bases: { "a": "to", "un": "a", "concierto": "concert", "el": "the" } }
+      "El concierto empieza a las diez.": { native: "The concert starts at ten.", bases: { "El": "the", "concierto": "concert", "a": "to", "las": "the" } }
+  "es-1425":
+    native: "song"
+    notes: { n1: "La canción is a song, with words and a tune." }
+    bases: { "la": "the", "canción": "song" }
+    examples:
+      "Esta canción es bonita.": { native: "This song is pretty.", bases: { "Esta": "This", "canción": "song" } }
+      "Me gusta cantar esta canción.": { native: "I like singing this song.", bases: { "Me": "to me", "esta": "This", "canción": "song" } }
+  "es-1426":
+    native: "dance"
+    notes: { n1: "El baile is dancing, or a dance party." }
+    bases: { "el": "the", "baile": "dance" }
+    examples:
+      "El baile es divertido.": { native: "Dancing is fun.", bases: { "El": "the", "baile": "dance" } }
+      "Me gusta el baile.": { native: "I like dancing.", bases: { "Me": "to me", "el": "the", "baile": "dance" } }
+  "es-1427":
+    native: "voluntary; volunteer"
+    notes: { n1: "Voluntario is a volunteer, or done for free. It agrees with the noun: voluntaria." }
+    bases: { "voluntario": "voluntary; volunteer" }
+    examples:
+      "Soy voluntaria en una escuela.": { native: "I volunteer at a school.", bases: { "voluntaria": "voluntary; volunteer", "en": "in", "una": "a" } }
+      "Trabajo como voluntario los fines de semana.": { native: "I volunteer at weekends.", bases: { "voluntario": "voluntary; volunteer", "los": "the", "fines": "end", "de": "of" } }
+  "es-1428":
+    native: "magazine"
+    notes: { n1: "La revista is a magazine, printed every week or month." }
+    bases: { "la": "the", "revista": "magazine" }
+    examples:
+      "Leo una revista de cine.": { native: "I read a film magazine.", bases: { "una": "a", "revista": "magazine", "de": "of" } }
+      "La revista es semanal.": { native: "The magazine is weekly.", bases: { "La": "the", "revista": "magazine", "semanal": "weekly" } }
+  "es-1429":
+    native: "to have fun"
+    notes: { n1: "Divertirse changes its stem: me divierto. It is used with me, te, se, nos." }
+    bases: { "divertirse": "to have fun" }
+    examples:
+      "Me divierto mucho con mis amigos.": { native: "I have a lot of fun with my friends.", bases: { "Me": "to me", "divierto": "to have fun", "con": "with" } }
+      "Nos divertimos en el club.": { native: "We have fun at the club.", bases: { "Nos": "us", "divertimos": "to have fun", "en": "in", "el": "the" } }
+  "es-1430":
+    native: "passionate; keen"
+    notes: { n1: "Apasionado is keen on something. It agrees with the noun: apasionada." }
+    bases: { "apasionado": "passionate; keen" }
+    examples:
+      "Soy apasionada por el baile.": { native: "I am passionate about dance.", bases: { "apasionada": "passionate; keen", "por": "for", "el": "the" } }
+      "Mi hermano está apasionado por el fútbol.": { native: "My brother is keen on football.", bases: { "apasionado": "passionate; keen", "por": "for", "el": "the" } }
+  "es-1431":
+    native: "to enjoy"
+    notes: { n1: "Disfrutar is to enjoy something. It takes de or con before the thing enjoyed." }
+    bases: { "disfrutar": "to enjoy" }
+    examples:
+      "Disfruto del tiempo libre.": { native: "I enjoy my free time.", bases: { "Disfruto": "to enjoy", "del": "of" } }
+      "Disfrutamos de la música.": { native: "We enjoy the music.", bases: { "Disfrutamos": "to enjoy", "de": "of", "la": "the", "música": "music" } }
+  "es-1432":
+    native: "to like"
+    notes: { n1: "Gustar works like encantar: me gusta, te gustan. The thing liked is the subject." }
+    bases: { "gustar": "to like" }
+    examples:
+      "Me gusta leer.": { native: "I like reading.", bases: { "Me": "to me", "gusta": "to like" } }
+      "¿Te gusta el fútbol?": { native: "Do you like football?", bases: { "Te": "you", "gusta": "to like", "el": "the" } }
+  "es-1433":
+    native: "football (soccer)"
+    notes: { n1: "El fútbol is football, the sport played with a ball and a team." }
+    bases: { "el": "the", "fútbol": "football (soccer)" }
+    examples:
+      "Juego al fútbol los domingos.": { native: "I play football on Sundays.", bases: { "al": "to the", "fútbol": "football (soccer)", "los": "the" } }
+      "El fútbol es el deporte más popular.": { native: "Football is the most popular sport.", bases: { "El": "the", "fútbol": "football (soccer)", "el": "the", "popular": "popular" } }
+  "es-1434":
+    native: "swimming"
+    notes: { n1: "La natación is the sport of swimming." }
+    bases: { "la": "the", "natación": "swimming" }
+    examples:
+      "La natación es buena para la espalda.": { native: "Swimming is good for the back.", bases: { "La": "the", "natación": "swimming", "para": "for", "la": "the" } }
+      "Practico natación dos días.": { native: "I practise swimming two days.", bases: { "Practico": "to practise", "natación": "swimming" } }
+  "es-1435":
+    native: "basketball"
+    notes: { n1: "El baloncesto is basketball, played with a ball and a hoop." }
+    bases: { "el": "the", "baloncesto": "basketball" }
+    examples:
+      "Veo el baloncesto por la noche.": { native: "I watch basketball at night.", bases: { "Veo": "see", "el": "the", "baloncesto": "basketball", "por": "for", "la": "the" } }
+      "Juego al baloncesto en el gimnasio.": { native: "I play basketball in the gym.", bases: { "al": "to the", "baloncesto": "basketball", "en": "in", "el": "the" } }
+  "es-1436":
+    native: "tennis"
+    notes: { n1: "El tenis is tennis, played with a racket." }
+    bases: { "el": "the", "tenis": "tennis" }
+    examples:
+      "Juego al tenis en el club.": { native: "I play tennis at the club.", bases: { "al": "to the", "tenis": "tennis", "en": "in", "el": "the" } }
+      "El tenis es un deporte difícil.": { native: "Tennis is a hard sport.", bases: { "El": "the", "tenis": "tennis", "un": "a" } }
+  "es-1437":
+    native: "drawing"
+    notes: { n1: "El dibujo is a drawing, made with a pencil or pen." }
+    bases: { "el": "the", "dibujo": "drawing" }
+    examples:
+      "El dibujo es mi afición.": { native: "Drawing is my hobby.", bases: { "El": "the", "dibujo": "to draw" } }
+      "Hago un dibujo de mi casa.": { native: "I make a drawing of my house.", bases: { "un": "a", "dibujo": "to draw", "de": "of" } }

@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-hobbies-sentences"
+kind: "layer"
+core: "es-hobbies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: hobbies"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about free time and clubs, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1438":
+    native: "I like playing football with my friends."
+    bases: { "Me": "to me", "al": "to the", "con": "with" }
+    confusables: { "equipo": { why: "Equipo is the team you play with, not the game." }, "club": { why: "Club is the group you join to play together." } }
+  "es-1439":
+    native: "I play the guitar at the concert."
+    bases: { "la": "the", "en": "in", "el": "the" }
+    confusables: { "cantar": { why: "Cantar is to sing, not to play an instrument." }, "baile": { why: "Baile is dancing, not music." } }
+  "es-1440":
+    native: "I paint a picture and put it on the wall."
+    bases: { "un": "a", "cuadro": "picture", "lo": "it", "pongo": "to put", "en": "in", "la": "the" }
+    confusables: { "dibujo": { why: "Dibujo is a drawing with a pencil, not paint." }, "fotografia": { why: "Fotografía is a photograph, made with a camera." } }
+  "es-1441":
+    native: "Swimming is good for health."
+    bases: { "La": "the", "para": "for", "la": "the", "salud": "health" }
+    confusables: { "piscina": { why: "Piscina is the pool, the place to swim." }, "escalar": { why: "Escalar is to climb, not to swim." } }
+  "es-1442":
+    native: "I read a film magazine every week."
+    bases: { "una": "a", "de": "of" }
+    confusables: { "serie": { why: "Serie is a TV series, not a magazine." }, "libro": { why: "Libro is a book, a longer text." } }
+  "es-1443":
+    native: "I have a lot of fun in the chess club."
+    bases: { "Me": "to me", "en": "in", "el": "the", "de": "of" }
+    confusables: { "aburrido": { why: "Aburrido is bored, the opposite of having fun." }, "tiempo": { why: "Tiempo is time or weather, not fun." } }
