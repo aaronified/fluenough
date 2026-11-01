@@ -373,7 +373,9 @@ units:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
-  - planned: { id: "es-grammar-relative-clauses", grammar: "relative-clauses" }
+  - decks: ["es-grammar-relative-clauses", "es-reading-relative-clauses"]
+    words: 0
+    grammar: ["relative-clauses"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
