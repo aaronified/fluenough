@@ -232,12 +232,14 @@ cards:
       - { target: "त्याला कॉल केला.", reading: "tyālā kôl kelā.", ipa: "t̪jala kɔl kela", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "केला", ref: "mr-0712" }] }
       - { target: "कॉल करू का?", reading: "kôl karu kā?", ipa: "kɔl kəru ka", bases: [{ word: "करू", ref: "mr-0712" }] }
   - id: "mr-1210"
-    target: "कनेक्ट"
-    reading: "kanekṭ"
-    ipa: "kənekʈ"
+    target: "कनेक्ट करणे"
+    reading: "kanekṭ karṇe"
+    ipa: "kənekʈ kərɳe"
     pos: "verb"
     notes:
-      - { id: "n1", kind: "usage", words: [{ word: "कनेक्ट", reading: "kanekṭ" }] }
+      - { id: "n1", kind: "usage", words: [{ word: "कनेक्ट करणे", reading: "kanekṭ karṇe" }] }
+    bases:
+      - { word: "कनेक्ट", base: "कनेक्ट", reading: "kanekṭ" }
     examples:
       - { target: "फोन वायफायला कनेक्ट केला.", reading: "phon vāyphāylā kanekṭ kelā.", ipa: "pʰon ʋajpʰajla kənekʈ kela", bases: [{ word: "कनेक्ट", base: "कनेक्ट", reading: "kanekṭ" }, { word: "केला", ref: "mr-0712" }, { word: "वायफायला", base: "वायफाय", reading: "vāyphāy" }] }
-      - { target: "कनेक्ट होत नाही.", reading: "kanekṭ hot nāhi.", ipa: "kənekʈ ɦot̪ naɦi", bases: [{ word: "होत", base: "होणे", reading: "hoṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "कनेक्ट होत नाही.", reading: "kanekṭ hot nāhi.", ipa: "kənekʈ ɦot̪ naɦi", bases: [{ word: "कनेक्ट", base: "कनेक्ट", reading: "kanekṭ" }, { word: "होत", base: "होणे", reading: "hoṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
