@@ -17,12 +17,10 @@ class ProgressMastery {
     required this.started,
     required this.week,
     required this.now,
-    required List<MasteryPart>? parts,
-    required List<Mastery>? series,
-    required DateTime at,
-  }) : _parts = parts,
-       _series = series,
-       _at = at;
+    required this._parts,
+    required this._series,
+    required this._at,
+  });
 
   /// The mastery of the languages [parts] hold, whose reviews together are
   /// [log] (those of the languages counted), as of [at]. With [withSeries]

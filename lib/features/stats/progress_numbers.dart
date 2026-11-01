@@ -197,10 +197,9 @@ Future<ProgressNumbers> progressInIsolate(ProgressJob job) async {
 /// at once.
 class ProgressNumbersHolder extends ChangeNotifier {
   ProgressNumbersHolder({
-    required AppState state,
-    ProgressRunner runner = progressInIsolate,
-  }) : _state = state,
-       _runner = runner;
+    required this._state,
+    this._runner = progressInIsolate,
+  });
 
   final AppState _state;
   final ProgressRunner _runner;

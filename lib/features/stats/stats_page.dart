@@ -5,7 +5,6 @@ import '../../app/app_state.dart';
 import '../../app/unlocks.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
-import '../../core/models/review_event.dart';
 import '../../core/progress/practice_week.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
