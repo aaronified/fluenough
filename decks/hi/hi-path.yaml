@@ -415,7 +415,9 @@ units:
   # and the broken plural, خبر (k͟habar, "news") and اخبار (ak͟hbār,
   # "newspaper"). The registers unit above sets these Perso-Arabic words of
   # formal speech beside the everyday words Hindustani shares.
-  - planned: { id: "hi-grammar-arabic-words", grammar: ["arabic-roots", "arabic-plurals"], words: 15 }
+  - decks: ["hi-arabic-words", "hi-grammar-arabic-roots", "hi-grammar-arabic-plurals", "hi-reading-arabic-words", "*"]
+    words: 15
+    grammar: ["arabic-roots", "arabic-plurals"]
     listening_passages:
       - { id: "one-root-many-words", text: { "en": "A teacher shows how knowledge, scholar, known and education share a root" } }
     reading_passages:
