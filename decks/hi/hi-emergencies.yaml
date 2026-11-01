@@ -1,0 +1,244 @@
+schema: 1
+id: "hi-emergencies"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "emergencies"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2650"
+    target: "आपातकाल"
+    target_scripts: {"perso_arabic": "ہنگامی حالت"}
+    reading: "āpātkāl"
+    ipa: "aːpaːt̪kaːl"
+    phonetic: "[aːpaːt̪kaːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आपातकाल में हेल्पलाइन पर फोन करो।", "reading": "āpātkāl mēm̐ hēlpalāin par phōn karō.", "ipa": "aːpaːt̪kaːl mẽː ɦeːlpəlaːɪn pər pʰoːn kəroː", "bases": [{"word": "आपातकाल", "base": "आपातकाल", "reading": "āpātkāl"}, {"word": "में", "ref": "hi-0274"}, {"word": "हेल्पलाइन", "ref": "hi-2663"}, {"word": "पर", "ref": "hi-0275"}, {"word": "फोन", "base": "फोन", "reading": "phōn"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "देश में आपातकाल लगा।", "reading": "dēś mēm̐ āpātkāl lagā.", "ipa": "d̪eːʃ mẽː aːpaːt̪kaːl ləɡaː", "bases": [{"word": "देश", "ref": "hi-0196"}, {"word": "में", "ref": "hi-0274"}, {"word": "लगा", "ref": "hi-1780"}]}
+  - id: "hi-2651"
+    target: "आपात"
+    target_scripts: {"perso_arabic": "ہنگامی"}
+    reading: "āpāt"
+    ipa: "aːpaːt̪"
+    phonetic: "[aːpaːt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह आपात स्थिति है।", "reading": "yah āpāt sthiti hai.", "ipa": "jəɦ aːpaːt̪ st̪ʰɪt̪ɪ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "स्थिति", "base": "स्थिति", "reading": "sthiti"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आपात काम के लिए बुलाओ।", "reading": "āpāt kām kē liē bulāō.", "ipa": "aːpaːt̪ kaːm keː lɪeː bʊlaːoː", "bases": [{"word": "काम", "ref": "hi-0194"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "बुलाओ", "ref": "hi-0961"}]}
+  - id: "hi-2652"
+    target: "आपातकालीन"
+    target_scripts: {"perso_arabic": "ہنگامی"}
+    reading: "āpātkālīn"
+    ipa: "aːpaːt̪kaːliːn"
+    phonetic: "[aːpaːt̪kaːliːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आपातकालीन कक्ष खुला है।", "reading": "āpātkālīn kakś khulā hai.", "ipa": "aːpaːt̪kaːliːn kəkʃ kʰʊlaː ɦɛː", "bases": [{"word": "कक्ष", "base": "कक्ष", "reading": "kakś"}, {"word": "खुला", "ref": "hi-1357"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आपातकालीन सेवा चौबीस घंटे है।", "reading": "āpātkālīn sēvā caubīs ghaṇṭē hai.", "ipa": "aːpaːt̪kaːliːn seːʋaː tʃɔːbiːs ɡʱəɳʈeː ɦɛː", "bases": [{"word": "सेवा", "ref": "hi-2249"}, {"word": "चौबीस", "ref": "hi-0526"}, {"word": "घंटे", "base": "घंटा", "reading": "ghaṇṭā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2653"
+    target: "दुर्घटना"
+    target_scripts: {"perso_arabic": "حادثہ"}
+    reading: "durghaṭnā"
+    ipa: "d̪ʊrɡʱəʈnaː"
+    phonetic: "[d̪ʊrɡʱəʈnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सड़क पर दुर्घटना हुई।", "reading": "saṛak par durghaṭnā huī.", "ipa": "səɽək pər d̪ʊrɡʱəʈnaː ɦʊiː", "bases": [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "दुर्घटना में कोई नहीं मरा।", "reading": "durghaṭnā mēm̐ kōī nahīm̐ marā.", "ipa": "d̪ʊrɡʱəʈnaː mẽː koːiː nəɦĩː məraː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "मरा", "base": "मरना", "reading": "marnā"}]}
+  - id: "hi-2654"
+    target: "एम्बुलेंस"
+    target_scripts: {"perso_arabic": "ایمبولنس"}
+    reading: "ēmbulēṁs"
+    ipa: "eːmbʊlẽːs"
+    phonetic: "[eːmbʊlẽːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "एम्बुलेंस को बुलाओ।", "reading": "ēmbulēṁs kō bulāō.", "ipa": "eːmbʊlẽːs koː bʊlaːoː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "बुलाओ", "ref": "hi-0961"}]}
+      - {"target": "एम्बुलेंस आ गई है।", "reading": "ēmbulēṁs ā gaī hai.", "ipa": "eːmbʊlẽːs aː ɡəiː ɦɛː", "bases": [{"word": "आ", "ref": "hi-0778"}, {"word": "गई", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2655"
+    target: "दमकल"
+    target_scripts: {"perso_arabic": "دمکل"}
+    reading: "damkal"
+    ipa: "d̪əmkəl"
+    phonetic: "[d̪əmkəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दमकल आग बुझा रही है।", "reading": "damkal āg bujhā rahī hai.", "ipa": "d̪əmkəl aːɡ bʊdʒʱaː rəɦiː ɦɛː", "bases": [{"word": "दमकल", "base": "दमकल", "reading": "damkal"}, {"word": "आग", "ref": "hi-1944"}, {"word": "बुझा", "base": "बुझाना", "reading": "bujhānā"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दमकल को फोन करो।", "reading": "damkal kō phōn karō.", "ipa": "d̪əmkəl koː pʰoːn kəroː", "bases": [{"word": "दमकल", "base": "दमकल", "reading": "damkal"}, {"word": "को", "ref": "hi-0277"}, {"word": "फोन", "base": "फोन", "reading": "phōn"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2656"
+    target: "बचाव"
+    target_scripts: {"perso_arabic": "بچاؤ"}
+    reading: "bacāv"
+    ipa: "bətʃaːʋ"
+    phonetic: "[bətʃaːʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बचाव दल पहुँच गया।", "reading": "bacāv dal pahum̐c gayā.", "ipa": "bətʃaːʋ d̪əl pəɦʊ̃tʃ ɡəjaː", "bases": [{"word": "दल", "base": "दल", "reading": "dal"}, {"word": "पहुँच", "ref": "hi-1913"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "बचाव का काम जारी है।", "reading": "bacāv kā kām jārī hai.", "ipa": "bətʃaːʋ kaː kaːm dʒaːriː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "काम", "ref": "hi-0194"}, {"word": "जारी", "base": "जारी", "reading": "jārī"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2657"
+    target: "सावधान"
+    target_scripts: {"perso_arabic": "خبردار"}
+    reading: "sāvdhān"
+    ipa: "saːʋd̪ʱaːn"
+    phonetic: "[saːʋd̪ʱaːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सड़क पर सावधान रहो।", "reading": "saṛak par sāvdhān rahō.", "ipa": "səɽək pər saːʋd̪ʱaːn rəɦoː", "bases": [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "रहो", "ref": "hi-0791"}]}
+      - {"target": "सावधान! आगे गड्ढा है।", "reading": "sāvdhān! āgē gaḍḍhā hai.", "ipa": "saːʋd̪ʱaːn aːɡeː ɡəɖɖʱaː ɦɛː", "bases": [{"word": "आगे", "ref": "hi-0291"}, {"word": "गड्ढा", "ref": "hi-1947"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2658"
+    target: "चेतावनी"
+    target_scripts: {"perso_arabic": "انتباہ"}
+    reading: "cētāvnī"
+    ipa: "tʃeːt̪aːʋniː"
+    phonetic: "[tʃeːt̪aːʋniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मौसम की चेतावनी जारी हुई।", "reading": "mausam kī cētāvnī jārī huī.", "ipa": "mɔːsəm kiː tʃeːt̪aːʋniː dʒaːriː ɦʊiː", "bases": [{"word": "मौसम", "ref": "hi-1253"}, {"word": "की", "ref": "hi-0279"}, {"word": "जारी", "base": "जारी", "reading": "jārī"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "चेतावनी पर ध्यान दो।", "reading": "cētāvnī par dhyān dō.", "ipa": "tʃeːt̪aːʋniː pər d̪ʱjaːn d̪oː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "ध्यान", "base": "ध्यान", "reading": "dhyān"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2659"
+    target: "खतरा"
+    target_scripts: {"perso_arabic": "خطرہ"}
+    reading: "khatrā"
+    ipa: "kʰət̪raː"
+    phonetic: "[kʰət̪raː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यहाँ खतरा है।", "reading": "yahām̐ khatrā hai.", "ipa": "jəɦãː kʰət̪raː ɦɛː", "bases": [{"word": "यहाँ", "ref": "hi-0295"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बिजली से खतरा है, मत छुओ।", "reading": "bijlī sē khatrā hai, mat chuō.", "ipa": "bɪdʒliː seː kʰət̪raː ɦɛː mət̪ tʃʰʊoː", "bases": [{"word": "बिजली", "ref": "hi-1265"}, {"word": "से", "ref": "hi-0276"}, {"word": "है", "ref": "hi-0112"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "छुओ", "ref": "hi-1797"}]}
+  - id: "hi-2660"
+    target: "खतरनाक"
+    target_scripts: {"perso_arabic": "خطرناک"}
+    reading: "khatrnāk"
+    ipa: "kʰət̪rnaːk"
+    phonetic: "[kʰət̪rnaːk]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह रास्ता खतरनाक है।", "reading": "yah rāstā khatrnāk hai.", "ipa": "jəɦ raːst̪aː kʰət̪rnaːk ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "रास्ता", "ref": "hi-0297"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "साँप खतरनाक होता है।", "reading": "sām̐p khatrnāk hōtā hai.", "ipa": "sãːp kʰət̪rnaːk ɦoːt̪aː ɦɛː", "bases": [{"word": "साँप", "ref": "hi-1127"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2661"
+    target: "निकास"
+    target_scripts: {"perso_arabic": "راستہ"}
+    reading: "nikās"
+    ipa: "nɪkaːs"
+    phonetic: "[nɪkaːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आपातकाल में निकास से निकलो।", "reading": "āpātkāl mēm̐ nikās sē niklō.", "ipa": "aːpaːt̪kaːl mẽː nɪkaːs seː nɪkloː", "bases": [{"word": "आपातकाल", "ref": "hi-2650"}, {"word": "में", "ref": "hi-0274"}, {"word": "निकास", "base": "निकास", "reading": "nikās"}, {"word": "से", "ref": "hi-0276"}, {"word": "निकलो", "base": "निकलना", "reading": "niklnā"}]}
+      - {"target": "निकास कहाँ है?", "reading": "nikās kahām̐ hai?", "ipa": "nɪkaːs kəɦãː ɦɛː", "bases": [{"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2662"
+    target: "आपदा"
+    target_scripts: {"perso_arabic": "آفت"}
+    reading: "āpdā"
+    ipa: "aːpd̪aː"
+    phonetic: "[aːpd̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बाढ़ एक बड़ी आपदा है।", "reading": "bāṛh ēk baṛī āpdā hai.", "ipa": "baːɽʱ eːk bəɽiː aːpd̪aː ɦɛː", "bases": [{"word": "बाढ़", "ref": "hi-1276"}, {"word": "एक", "ref": "hi-0198"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आपदा में सबकी मदद करो।", "reading": "āpdā mēm̐ sabkī madad karō.", "ipa": "aːpd̪aː mẽː səbkiː məd̪əd̪ kəroː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "सबकी", "ref": "hi-0054"}, {"word": "मदद", "ref": "hi-0352"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2663"
+    target: "हेल्पलाइन"
+    target_scripts: {"perso_arabic": "ہیلپ لائن"}
+    reading: "hēlpalāin"
+    ipa: "ɦeːlpəlaːɪn"
+    phonetic: "[ɦeːlpəlaːɪn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हेल्पलाइन नंबर याद रखो।", "reading": "hēlpalāin nambar yād rakhō.", "ipa": "ɦeːlpəlaːɪn nəmbər jaːd̪ rəkʰoː", "bases": [{"word": "नंबर", "ref": "hi-1585"}, {"word": "याद", "ref": "hi-1594"}, {"word": "रखो", "ref": "hi-0950"}]}
+      - {"target": "हेल्पलाइन पर बात करो।", "reading": "hēlpalāin par bāt karō.", "ipa": "ɦeːlpəlaːɪn pər baːt̪ kəroː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "बात", "ref": "hi-1864"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2664"
+    target: "घायल"
+    target_scripts: {"perso_arabic": "زخمی"}
+    reading: "ghāyal"
+    ipa: "ɡʱaːjəl"
+    phonetic: "[ɡʱaːjəl]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दो लोग घायल हैं।", "reading": "dō lōg ghāyal haim̐.", "ipa": "d̪oː loːɡ ɡʱaːjəl ɦɛ̃ː", "bases": [{"word": "दो", "ref": "hi-0199"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "घायल को अस्पताल ले जाओ।", "reading": "ghāyal kō aspatāl lē jāō.", "ipa": "ɡʱaːjəl koː əspət̪aːl leː dʒaːoː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "अस्पताल", "ref": "hi-0358"}, {"word": "ले", "ref": "hi-0786"}, {"word": "जाओ", "ref": "hi-0777"}]}
+  - id: "hi-2665"
+    target: "ज़ख़्मी"
+    target_scripts: {"perso_arabic": "زخمی"}
+    reading: "zak͟hmī"
+    ipa: "zəxmiː"
+    phonetic: "[zəxmiː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ज़ख़्मी आदमी को सहारा दो।", "reading": "zak͟hmī ādmī kō sahārā dō.", "ipa": "zəxmiː aːd̪miː koː səɦaːraː d̪oː", "bases": [{"word": "आदमी", "ref": "hi-0762"}, {"word": "को", "ref": "hi-0277"}, {"word": "सहारा", "base": "सहारा", "reading": "sahārā"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "उसका हाथ ज़ख़्मी है।", "reading": "uskā hāth zak͟hmī hai.", "ipa": "ʊskaː ɦaːt̪ʰ zəxmiː ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "हाथ", "ref": "hi-1042"}, {"word": "है", "ref": "hi-0780"}]}
