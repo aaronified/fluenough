@@ -1,0 +1,93 @@
+schema: 1
+id: "fr-possessives"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0623"
+    target: "mes"
+    ipa: "me"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes amis sont là.", ipa: "me zami sɔ̃ la", bases: [{ word: "Mes", base: "mes" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Je parle avec mes parents.", ipa: "ʒə paʁl avɛk me paʁɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", ref: "fr-0023" }, { word: "avec", ref: "fr-0590" }, { word: "mes", base: "mes" }, { word: "parents", ref: "fr-0173" }] }
+  - id: "fr-0624"
+    target: "tes"
+    ipa: "te"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tes sœurs sont là ?", ipa: "te sœʁ sɔ̃ la", bases: [{ word: "Tes", base: "tes" }, { word: "sœurs", ref: "fr-0170" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Où sont tes clés ?", ipa: "u sɔ̃ te kle", bases: [{ word: "Où", ref: "fr-0067" }, { word: "sont", ref: "fr-0021" }, { word: "tes", base: "tes" }, { word: "clés", ref: "fr-0484" }] }
+  - id: "fr-0625"
+    target: "ses"
+    ipa: "se"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses frères sont grands.", ipa: "se fʁɛʁ sɔ̃ ɡʁɑ̃", bases: [{ word: "Ses", base: "ses" }, { word: "frères", ref: "fr-0169" }, { word: "sont", ref: "fr-0021" }, { word: "grands", ref: "fr-0410" }] }
+      - { target: "Elle parle avec ses amis.", ipa: "ɛl paʁl avɛk se zami", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "parle", ref: "fr-0023" }, { word: "avec", ref: "fr-0590" }, { word: "ses", base: "ses" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-0626"
+    target: "ta"
+    ipa: "ta"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ta mère est là ?", ipa: "ta mɛʁ ɛ la", bases: [{ word: "Ta", base: "ta" }, { word: "mère", ref: "fr-0166" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ta sœur parle français.", ipa: "ta sœʁ paʁl fʁɑ̃sɛ", bases: [{ word: "Ta", base: "ta" }, { word: "sœur", ref: "fr-0170" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0627"
+    target: "sa"
+    ipa: "sa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sa sœur est jolie.", ipa: "sa sœʁ ɛ ʒoli", bases: [{ word: "Sa", base: "sa" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "jolie", ref: "fr-0414" }] }
+      - { target: "Il mange avec sa tante.", ipa: "il mɑ̃ʒ avɛk sa tɑ̃t", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", ref: "fr-0282" }, { word: "avec", ref: "fr-0590" }, { word: "sa", base: "sa" }, { word: "tante", ref: "fr-0177" }] }
+  - id: "fr-0628"
+    target: "nos"
+    ipa: "no"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nos amis sont là.", ipa: "no zami sɔ̃ la", bases: [{ word: "Nos", base: "nos" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Nos parents habitent loin.", ipa: "no paʁɑ̃ abit lwɛ̃", bases: [{ word: "Nos", base: "nos" }, { word: "parents", ref: "fr-0173" }, { word: "habitent", ref: "fr-0251" }, { word: "loin", ref: "fr-0465" }] }
+  - id: "fr-0629"
+    target: "vos"
+    ipa: "vo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vos amis sont gentils.", ipa: "vo zami sɔ̃ ʒɑ̃ti", bases: [{ word: "Vos", base: "vos" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "gentils", ref: "fr-0434" }] }
+      - { target: "Vos parents sont là ?", ipa: "vo paʁɑ̃ sɔ̃ la", bases: [{ word: "Vos", base: "vos" }, { word: "parents", ref: "fr-0173" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0630"
+    target: "leurs"
+    ipa: "lœʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leurs amis parlent français.", ipa: "lœʁ zami paʁl fʁɑ̃sɛ", bases: [{ word: "Leurs", base: "leurs" }, { word: "amis", ref: "fr-0100" }, { word: "parlent", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Ils mangent avec leurs frères.", ipa: "il mɑ̃ʒ avɛk lœʁ fʁɛʁ", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "mangent", ref: "fr-0282" }, { word: "avec", ref: "fr-0590" }, { word: "leurs", base: "leurs" }, { word: "frères", ref: "fr-0169" }] }
+  - kind: "set"
+    id: "fr-0631"
+    members: [{ ref: "fr-0037" }, { ref: "fr-0137" }, { ref: "fr-0623" }, { ref: "fr-0141" }, { ref: "fr-0626" }, { ref: "fr-0624" }, { ref: "fr-0138" }, { ref: "fr-0627" }, { ref: "fr-0625" }, { ref: "fr-0139" }, { ref: "fr-0628" }, { ref: "fr-0140" }, { ref: "fr-0629" }, { ref: "fr-0142" }, { ref: "fr-0630" }]

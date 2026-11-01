@@ -191,11 +191,9 @@ units:
       - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "business-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "fr-grammar-possessives", grammar: "possessives" }
-    listening_passages:
-      - { id: "whose-is-it", text: { "en": "Sorting out whose bag, coat and keys are whose" } }
-    reading_passages:
-      - { id: "family-email", text: { "en": "A short email about my brother, my sister and their children" } }
+  - decks: ["fr-possessives", "fr-grammar-possessives", "fr-reading-possessives"]
+    words: 8
+    grammar: ["possessives"]
   - planned: { id: "fr-numbers-big", theme: "numbers-big", words: 40 }
     listening_passages:
       - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with soixante-dix, quatre-vingts and quatre-vingt-dix-neuf" } }
