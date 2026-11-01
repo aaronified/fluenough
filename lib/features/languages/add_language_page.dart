@@ -35,35 +35,6 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
     text: widget.initialQuery,
   );
 
-  /// The order families are listed in; a language with none, or an unknown
-  /// one, goes last.
-  static const List<String> _families = <String>[
-    'indo_aryan',
-    'dravidian',
-    'tibeto_burman',
-    'austroasiatic',
-    'germanic',
-    'romance',
-    'sinitic',
-    'koreanic',
-    'japonic',
-    'constructed',
-    'slavic',
-    'hellenic',
-    'italic',
-    'celtic',
-    'uralic',
-    'turkic',
-    'afroasiatic',
-    'austronesian',
-    'kra_dai',
-    'niger_congo',
-    'quechuan',
-    'indo_european',
-    'isolate',
-    'sign',
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -116,12 +87,12 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
     ];
     final groups = <String?, List<LanguageView>>{};
     for (final v in matching) {
-      final family = _families.contains(v.language.family)
+      final family = languageFamilies.contains(v.language.family)
           ? v.language.family
           : null;
       groups.putIfAbsent(family, () => <LanguageView>[]).add(v);
     }
-    final order = <String?>[..._families, null];
+    final order = <String?>[...languageFamilies, null];
     return Scaffold(
       appBar: AppBar(title: Text(l10n.languagesAddTitle)),
       body: SafeArea(

@@ -3,6 +3,7 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
@@ -29,13 +30,14 @@ AppState learner() => AppState.test(
 Future<AppState> pumpLanguages(
   WidgetTester tester, {
   AppState? state,
+  List<SpokenLanguage>? list,
   ThemeMode mode = ThemeMode.light,
   double textScale = 1.4,
 }) {
   usePhone(tester, textScale: textScale);
   return pumpScreen(
     tester,
-    LanguagesPage(spokenList: pickerSpokenList),
+    LanguagesPage(spokenList: list ?? pickerSpokenList),
     state: state ?? learner(),
     themeMode: mode,
   );
@@ -72,6 +74,59 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   }
+
+  for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('the details show the language family as a tag, and none '
+        'for a language without one, at 1.4x text in ${mode.name} (#698)', (
+      tester,
+    ) async {
+      await pumpLanguages(tester, mode: mode);
+      await tapKey(tester, 'language-es');
+      await tester.tap(find.text('i'));
+      await tester.pumpAndSettle();
+      final tag = find.byKey(const ValueKey<String>('language-family'));
+      expect(tag, findsOneWidget);
+      expect(
+        find.descendant(of: tag, matching: find.text('Romance')),
+        findsOneWidget,
+      );
+      expect(tester.takeException(), isNull);
+    });
+  }
+
+  testWidgets('a language with no family shows no family tag in its details '
+      '(#698)', (tester) async {
+    final es = pickerSpokenList.firstWhere((l) => l.code == 'es');
+    final unfiled = <SpokenLanguage>[
+      for (final l in pickerSpokenList)
+        if (l.code == 'es')
+          SpokenLanguage(
+            code: es.code,
+            iso639_3: es.iso639_3,
+            name: es.name,
+            ownName: es.ownName,
+            scripts: es.scripts,
+          )
+        else
+          l,
+    ];
+    await pumpLanguages(tester, list: unfiled);
+    await tapKey(tester, 'language-es');
+    await tester.tap(find.text('i'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey<String>('language-family')), findsNothing);
+    // The skills sheet stays open under the info dialog and shows the same
+    // dialect label, so the finder is scoped to the info dialog.
+    final info = find.byType(AlertDialog);
+    expect(
+      find.descendant(
+        of: info,
+        matching: find.text(l10n(tester).languagesInfoDialect),
+      ),
+      findsOneWidget,
+    );
+    expect(tester.takeException(), isNull);
+  });
 
   testWidgets('a long press on a skill pill shows its skill and state, and a '
       'tap still cycles it (#913)', (tester) async {

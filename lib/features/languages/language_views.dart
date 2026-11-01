@@ -42,6 +42,36 @@ class LanguageView {
   }
 }
 
+/// The families the app names, in the order the Add a language page lists
+/// them; a language with none, or an unknown one, goes last there and shows
+/// no family tag in its details (#698).
+const List<String> languageFamilies = <String>[
+  'indo_aryan',
+  'dravidian',
+  'tibeto_burman',
+  'austroasiatic',
+  'germanic',
+  'romance',
+  'sinitic',
+  'koreanic',
+  'japonic',
+  'constructed',
+  'slavic',
+  'hellenic',
+  'italic',
+  'celtic',
+  'uralic',
+  'turkic',
+  'afroasiatic',
+  'austronesian',
+  'kra_dai',
+  'niger_congo',
+  'quechuan',
+  'indo_european',
+  'isolate',
+  'sign',
+];
+
 /// Every language of [all] with its course, in [all]'s order.
 List<LanguageView> languageViews(AppState state, List<SpokenLanguage> all) {
   final courses = <String, CatalogLanguage>{
