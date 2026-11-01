@@ -1,0 +1,48 @@
+schema: 1
+id: "bn-en-phone-sentences"
+kind: "layer"
+core: "bn-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone and messages: sentences"
+description: "Short sentences about phones. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2431":
+    native: "My phone's battery is low."
+    confusables: { "c1": { why: "more; the opposite of low, not a state of the battery" }, "c2": { why: "good: a judgement, not a charge level" } }
+  "bn-2432":
+    native: "I am busy now; I will call later."
+    confusables: { "c1": { why: "I eat: a meal, not a call" }, "c2": { why: "I go: a move, not a call" } }
+  "bn-2433":
+    native: "Send me a message. (familiar)"
+    confusables: { "c1": { why: "eat! (familiar): a meal, not a message" }, "c2": { why: "go! (familiar): a move, not a message" } }
+  "bn-2434":
+    native: "Please wait a little. (respectful)"
+    confusables: { "c1": { why: "eat, respectful: a meal, not a wait" }, "c2": { why: "go, respectful: a move, not a wait" } }
+  "bn-2435":
+    native: "Put the phone on charge. (familiar)"
+    confusables: { "c1": { why: "home: a place, not a charger" }, "c2": { why: "bag: a thing to carry, not a plug" } }
+  "bn-2436":
+    native: "Who is speaking? (respectful)"
+    confusables: { "c1": { why: "what: not who" }, "c2": { why: "where: not who" } }
+  "bn-2437":
+    native: "Wrong number; I am hanging up."
+    confusables: { "c1": { why: "right: not a wrong number" }, "c2": { why: "all: not a number" } }
+  "bn-2438":
+    native: "Keep the screen clean. (familiar)"
+    confusables: { "c1": { why: "dirty: the opposite of clean" }, "c2": { why: "heavy: not clean" } }
+  "bn-2439":
+    native: "The internet is not working."
+    confusables: { "c1": { why: "good: a judgement, not whether it works" }, "c2": { why: "closed: a state, not the way it works" } }
+  "bn-2440":
+    native: "Is there Wi-Fi?"
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "is not: the answer, not the question" }, "c2": { why: "where: not whether there is" } }
+  "bn-2441":
+    native: "Your phone has no charge. (familiar)"
+    bases: { "নেই": "there is not; does not have" }
+    confusables: { "c1": { why: "is: the opposite, not no" }, "c2": { why: "home: not a charge" } }
+  "bn-2442":
+    native: "The phone is ringing."
+    confusables: { "c1": { why: "market: not a ring" }, "c2": { why: "bad or waste: not ringing" } }

@@ -394,7 +394,8 @@ units:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "bn-phone", theme: "phone", words: 40 }
+  - decks: ["bn-phone", "bn-phone-sentences", "*"]
+    words: 42
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
