@@ -1,0 +1,383 @@
+schema: 1
+id: "fr-en-groceries"
+kind: "layer"
+core: "fr-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+license: "CC-BY-SA-4.0"
+description: "Food and drink for the shopping list: pain, beurre, fromage, œuf, sucre, sel, riz, viande, poisson, café and thé, with boîte, bouteille and paquet, and the verbs ajouter and manquer. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0773":
+    native: "bread"
+    notes:
+      "n1": "Pain is 'bread', a masculine noun. In a shop you ask for un pain (a loaf) or du pain (some bread)."
+    examples:
+      "Je mange du pain.":
+        native: "I eat some bread."
+        bases:
+          "du": "of the (masculine); some"
+          "pain": "bread"
+      "Le pain est frais.":
+        native: "The bread is fresh."
+        bases:
+          "pain": "bread"
+  "fr-0774":
+    native: "butter"
+    notes:
+      "n1": "Beurre is 'butter', a masculine noun. It is spread on bread, and it is used in cooking."
+    examples:
+      "Je mets du beurre sur le pain.":
+        native: "I put butter on the bread."
+        bases:
+          "du": "of the (masculine); some"
+          "beurre": "butter"
+      "Le beurre est bon.":
+        native: "The butter is good."
+        bases:
+          "beurre": "butter"
+  "fr-0775":
+    native: "cheese"
+    notes:
+      "n1": "Fromage is 'cheese', a masculine noun. Eaten after the main dish in France, before the dessert."
+    examples:
+      "J'aime le fromage.":
+        native: "I like cheese."
+        bases:
+          "fromage": "cheese"
+      "Le fromage est fort.":
+        native: "The cheese is strong."
+        bases:
+          "fromage": "cheese"
+  "fr-0776":
+    native: "egg"
+    notes:
+      "n1": "Œuf is 'egg', a masculine noun. Its plural is œufs, said with a silent s: les œufs (the eggs)."
+    examples:
+      "Je mange un œuf.":
+        native: "I eat an egg."
+        bases:
+          "œuf": "egg"
+      "Les œufs sont frais.":
+        native: "The eggs are fresh."
+        bases:
+          "œufs": "egg"
+  "fr-0777":
+    native: "sugar"
+    notes:
+      "n1": "Sucre is 'sugar', a masculine noun. Sucré is the adjective 'sweet'."
+    examples:
+      "Tu mets du sucre ?":
+        native: "Do you put sugar in it?"
+        bases:
+          "du": "of the (masculine); some"
+          "sucre": "sugar"
+      "Nous manquons de sucre.":
+        native: "We are out of sugar."
+        bases:
+          "de": "of; from; some"
+          "sucre": "sugar"
+  "fr-0778":
+    native: "salt"
+    notes:
+      "n1": "Sel is 'salt', a masculine noun. Salé is the adjective 'salty'."
+    examples:
+      "Tu mets du sel ?":
+        native: "Do you put salt in?"
+        bases:
+          "du": "of the (masculine); some"
+          "sel": "salt"
+      "Le fromage est salé.":
+        native: "The cheese is salty."
+  "fr-0779":
+    native: "pepper"
+    notes:
+      "n1": "Poivre is 'pepper', a masculine noun. It is ground from dried berries."
+    examples:
+      "Je mets du poivre.":
+        native: "I put in pepper."
+        bases:
+          "du": "of the (masculine); some"
+          "poivre": "pepper"
+      "Le poivre est fort.":
+        native: "The pepper is strong."
+        bases:
+          "poivre": "pepper"
+  "fr-0780":
+    native: "flour"
+    notes:
+      "n1": "Farine is 'flour', a feminine noun. It is used to make bread and cakes."
+    examples:
+      "La farine est dans le sac.":
+        native: "The flour is in the bag."
+        bases:
+          "farine": "flour"
+      "J'ai de la farine.":
+        native: "I have some flour."
+        bases:
+          "de": "of; from; some"
+          "farine": "flour"
+  "fr-0781":
+    native: "rice"
+    notes:
+      "n1": "Riz is 'rice', a masculine noun. It is said ri, and the z is silent."
+    examples:
+      "Je mange du riz.":
+        native: "I eat rice."
+        bases:
+          "du": "of the (masculine); some"
+          "riz": "rice"
+      "Le riz est bon.":
+        native: "The rice is good."
+        bases:
+          "riz": "rice"
+  "fr-0782":
+    native: "meat"
+    notes:
+      "n1": "Viande is 'meat', a feminine noun. It is the general word, and the names of each kind come later."
+    examples:
+      "Je ne mange jamais de la viande.":
+        native: "I never eat meat."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "de": "of; from; some"
+          "viande": "meat"
+      "La viande est chère.":
+        native: "The meat is dear."
+        bases:
+          "viande": "meat"
+  "fr-0783":
+    native: "fish"
+    notes:
+      "n1": "Poisson is 'fish', a masculine noun. It is the animal in the water and the food."
+    examples:
+      "Le poisson est bon.":
+        native: "The fish is good."
+        bases:
+          "poisson": "fish"
+      "Nous mangeons du poisson.":
+        native: "We eat fish."
+        bases:
+          "du": "of the (masculine); some"
+          "poisson": "fish"
+  "fr-0784":
+    native: "chicken"
+    notes:
+      "n1": "Poulet is 'chicken', a masculine noun. It is the bird and the meat from the bird."
+    examples:
+      "Le poulet est prêt.":
+        native: "The chicken is ready."
+        bases:
+          "poulet": "chicken"
+      "Je prends du poulet.":
+        native: "I take some chicken."
+        bases:
+          "du": "of the (masculine); some"
+          "poulet": "chicken"
+  "fr-0785":
+    native: "tin; box"
+    notes:
+      "n1": "Boîte is 'tin' or 'box', a feminine noun: une boîte de thé (a tin of tea). It has a circumflex on the i."
+    examples:
+      "Une boîte de thé.":
+        native: "A tin of tea."
+        bases:
+          "boîte": "tin; box"
+          "de": "of; from; some"
+      "La boîte est vide.":
+        native: "The tin is empty."
+        bases:
+          "boîte": "tin; box"
+  "fr-0786":
+    native: "bottle"
+    notes:
+      "n1": "Bouteille is 'bottle', a feminine noun: une bouteille de vin (a bottle of wine)."
+    examples:
+      "Une bouteille de vin.":
+        native: "A bottle of wine."
+        bases:
+          "bouteille": "bottle"
+          "de": "of; from; some"
+      "La bouteille est pleine.":
+        native: "The bottle is full."
+        bases:
+          "bouteille": "bottle"
+  "fr-0787":
+    native: "packet; pack"
+    notes:
+      "n1": "Paquet is 'packet' or 'pack', a masculine noun: un paquet de riz (a packet of rice)."
+    examples:
+      "Un paquet de riz.":
+        native: "A packet of rice."
+        bases:
+          "paquet": "packet; pack"
+          "de": "of; from; some"
+      "Le paquet est lourd.":
+        native: "The packet is heavy."
+        bases:
+          "paquet": "packet; pack"
+  "fr-0788":
+    native: "list"
+    notes:
+      "n1": "Liste is 'list', a feminine noun: une liste de courses is 'a shopping list'."
+    examples:
+      "La liste est longue.":
+        native: "The list is long."
+        bases:
+          "liste": "list"
+      "J'ai une liste.":
+        native: "I have a list."
+        bases:
+          "liste": "list"
+  "fr-0789":
+    native: "cake"
+    notes:
+      "n1": "Gâteau is 'cake', a masculine noun. The plural is gâteaux."
+    examples:
+      "Le gâteau est bon.":
+        native: "The cake is good."
+        bases:
+          "gâteau": "cake"
+      "Je mange un gâteau.":
+        native: "I eat a cake."
+        bases:
+          "gâteau": "cake"
+  "fr-0790":
+    native: "chocolate"
+    notes:
+      "n1": "Chocolat is 'chocolate', a masculine noun. It is also a drink, un chocolat chaud (a hot chocolate)."
+    examples:
+      "J'aime le chocolat.":
+        native: "I like chocolate."
+        bases:
+          "chocolat": "chocolate"
+      "Le chocolat est sucré.":
+        native: "The chocolate is sweet."
+        bases:
+          "chocolat": "chocolate"
+  "fr-0791":
+    native: "juice"
+    notes:
+      "n1": "Jus is 'juice', a masculine noun, said ʒy. The plural is also jus."
+    examples:
+      "Je bois du jus.":
+        native: "I drink some juice."
+        bases:
+          "du": "of the (masculine); some"
+          "jus": "juice"
+      "Le jus est frais.":
+        native: "The juice is cool."
+        bases:
+          "jus": "juice"
+  "fr-0792":
+    native: "tea"
+    notes:
+      "n1": "Thé is 'tea', a masculine noun. The accent is on the e: thé, said te."
+    examples:
+      "Je bois du thé.":
+        native: "I drink tea."
+        bases:
+          "du": "of the (masculine); some"
+          "thé": "tea"
+      "Le thé est chaud.":
+        native: "The tea is hot."
+        bases:
+          "thé": "tea"
+  "fr-0793":
+    native: "coffee"
+    notes:
+      "n1": "Café is 'coffee' or 'café', a masculine noun. Un café is a small black coffee in a café."
+    examples:
+      "Je prends un café.":
+        native: "I take a coffee."
+        bases:
+          "café": "coffee"
+      "Le café est très fort.":
+        native: "The coffee is very strong."
+        bases:
+          "café": "coffee"
+  "fr-0794":
+    native: "grocer's; grocery shop"
+    notes:
+      "n1": "Épicerie is 'grocer's' or 'grocery shop', a feminine noun. The shop sells food and everyday goods."
+    examples:
+      "L'épicerie est près de la gare.":
+        native: "The grocer's is near the station."
+        bases:
+          "L'épicerie": "grocer's; grocery shop"
+          "de": "of; from; some"
+      "Je vais à l'épicerie.":
+        native: "I go to the grocer's."
+        bases:
+          "à": "to; at; in"
+          "l'épicerie": "grocer's; grocery shop"
+  "fr-0795":
+    native: "shop; store"
+    notes:
+      "n1": "Magasin is 'shop' or 'store', a masculine noun. It is the general word for any shop."
+    examples:
+      "Le magasin est ouvert.":
+        native: "The shop is open."
+        bases:
+          "magasin": "shop; store"
+      "Nous allons au magasin.":
+        native: "We go to the shop."
+        bases:
+          "au": "to the (masculine)"
+          "magasin": "shop; store"
+  "fr-0796":
+    native: "to add"
+    notes:
+      "n1": "Ajouter is 'to add'. It is a regular verb, like donner."
+    examples:
+      "J'ajoute du sel.":
+        native: "I add some salt."
+        bases:
+          "J'ajoute": "to add"
+          "du": "of the (masculine); some"
+      "Tu ajoutes du sucre.":
+        native: "You add sugar."
+        bases:
+          "ajoutes": "to add"
+          "du": "of the (masculine); some"
+  "fr-0797":
+    native: "to lack; to be missing"
+    notes:
+      "n1": "Manquer is 'to lack' or 'to be missing': il manque du pain (there is no bread left). It takes de with the thing."
+    examples:
+      "Il manque du pain.":
+        native: "There is no bread left."
+        bases:
+          "manque": "to lack; to be missing"
+          "du": "of the (masculine); some"
+      "Nous manquons de sucre.":
+        native: "We are out of sugar."
+        bases:
+          "manquons": "to lack; to be missing"
+          "de": "of; from; some"
+  "fr-0798":
+    native: "sweet; sugary"
+    notes:
+      "n1": "Sucré is 'sweet' or 'sugary'. The feminine is sucrée."
+    examples:
+      "Le gâteau est sucré.":
+        native: "The cake is sweet."
+        bases:
+          "sucré": "sweet; sugary"
+      "Le chocolat est sucré.":
+        native: "The chocolate is sweet."
+        bases:
+          "sucré": "sweet; sugary"
+  "fr-0799":
+    native: "salty"
+    notes:
+      "n1": "Salé is 'salty' or 'savoury'. The feminine is salée."
+    examples:
+      "Le fromage est salé.":
+        native: "The cheese is salty."
+        bases:
+          "salé": "salty"
+      "La viande est salée.":
+        native: "The meat is salty."
+        bases:
+          "salée": "salty"

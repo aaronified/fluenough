@@ -27,7 +27,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je bois de l'eau.", ipa: "ʒə bwa də lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", base: "boire" }, { word: "de", base: "de" }, { word: "l'eau", base: "eau" }] }
-      - { target: "Vous buvez un café ?", ipa: "vu byve œ̃ kafe", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "buvez", base: "boire" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+      - { target: "Vous buvez un café ?", ipa: "vu byve œ̃ kafe", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "buvez", base: "boire" }, { word: "un", base: "un" }, { word: "café", ref: "fr-0793" }] }
   - id: "fr-0284"
     target: "dormir"
     ipa: "dɔʁmiʁ"
@@ -136,7 +136,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'achète du pain.", ipa: "ʒaʃɛt dy pɛ̃", bases: [{ word: "J'achète", base: "acheter" }, { word: "du", base: "du" }, { word: "pain", base: "pain" }] }
+      - { target: "J'achète du pain.", ipa: "ʒaʃɛt dy pɛ̃", bases: [{ word: "J'achète", base: "acheter" }, { word: "du", base: "du" }, { word: "pain", ref: "fr-0773" }] }
       - { target: "Elle achète un journal.", ipa: "ɛl aʃɛt œ̃ ʒuʁnal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "achète", base: "acheter" }, { word: "un", base: "un" }, { word: "journal", base: "journal" }] }
   - id: "fr-0295"
     target: "préparer"
@@ -147,7 +147,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je prépare le dîner.", ipa: "ʒə pʁepaʁ lə dine", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prépare", base: "préparer" }, { word: "le", ref: "fr-0543" }, { word: "dîner", base: "dîner" }] }
-      - { target: "Nous préparons un café.", ipa: "nu pʁepaʁɔ̃ œ̃ kafe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "préparons", base: "préparer" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+      - { target: "Nous préparons un café.", ipa: "nu pʁepaʁɔ̃ œ̃ kafe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "préparons", base: "préparer" }, { word: "un", base: "un" }, { word: "café", ref: "fr-0793" }] }
   - id: "fr-0296"
     target: "laver"
     ipa: "lave"
@@ -217,7 +217,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je donne un livre à Paul.", ipa: "ʒə dɔn œ̃ livʁ a pɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "donne", base: "donner" }, { word: "un", base: "un" }, { word: "livre", base: "livre" }, { word: "à", base: "à" }, { word: "Paul", base: "Paul" }] }
-      - { target: "Donnez-moi un café.", ipa: "dɔne mwa œ̃ kafe", bases: [{ word: "Donnez", base: "donner" }, { word: "moi", ref: "fr-0133" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+      - { target: "Donnez-moi un café.", ipa: "dɔne mwa œ̃ kafe", bases: [{ word: "Donnez", base: "donner" }, { word: "moi", ref: "fr-0133" }, { word: "un", base: "un" }, { word: "café", ref: "fr-0793" }] }
   - id: "fr-0303"
     target: "attendre"
     ipa: "atɑ̃dʁ"
@@ -296,7 +296,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je paie le café.", ipa: "ʒə pe lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "le", ref: "fr-0543" }, { word: "café", base: "café" }] }
+      - { target: "Je paie le café.", ipa: "ʒə pe lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }] }
       - { target: "Vous payez combien ?", ipa: "vu peje kɔ̃bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", base: "payer" }, { word: "combien", ref: "fr-0071" }] }
   - id: "fr-0311"
     target: "vouloir"
@@ -306,5 +306,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je veux un café.", ipa: "ʒə vø œ̃ kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
-      - { target: "Voulez-vous un thé ?", ipa: "vule vu œ̃ te", bases: [{ word: "Voulez", base: "vouloir" }, { word: "vous", ref: "fr-0096" }, { word: "un", base: "un" }, { word: "thé", base: "thé" }] }
+      - { target: "Je veux un café.", ipa: "ʒə vø œ̃ kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "un", base: "un" }, { word: "café", ref: "fr-0793" }] }
+      - { target: "Voulez-vous un thé ?", ipa: "vule vu œ̃ te", bases: [{ word: "Voulez", base: "vouloir" }, { word: "vous", ref: "fr-0096" }, { word: "un", base: "un" }, { word: "thé", ref: "fr-0792" }] }

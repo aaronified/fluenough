@@ -77,7 +77,7 @@ cards:
       - { id: "fem", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Le café est bon.", ipa: "lə kafe ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "bon", base: "bon" }] }
+      - { target: "Le café est bon.", ipa: "lə kafe ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "est", ref: "fr-0021" }, { word: "bon", base: "bon" }] }
       - { target: "C'est très bon.", ipa: "sɛ tʁɛ bɔ̃", bases: [{ word: "C'est", base: "c'est" }, { word: "très", ref: "fr-0031" }, { word: "bon", base: "bon" }] }
   - id: "fr-0041"
     target: "rue"
@@ -125,7 +125,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Le lait est froid.", ipa: "lə lɛ ɛ fʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lait", base: "lait" }, { word: "est", ref: "fr-0021" }, { word: "froid", base: "froid" }] }
-      - { target: "Un café au lait.", ipa: "œ̃ kafe o lɛ", bases: [{ word: "Un", base: "un" }, { word: "café", base: "café" }, { word: "au", base: "à" }, { word: "lait", base: "lait" }] }
+      - { target: "Un café au lait.", ipa: "œ̃ kafe o lɛ", bases: [{ word: "Un", base: "un" }, { word: "café", ref: "fr-0793" }, { word: "au", base: "à" }, { word: "lait", base: "lait" }] }
   - id: "fr-0045"
     target: "fée"
     ipa: "fe"
@@ -183,7 +183,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0050" }
     bases: "self"
     examples:
-      - { target: "Le pain est dans la boîte.", ipa: "lə pɛ̃ ɛ dɑ̃ la bwat", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", ref: "fr-0544" }, { word: "boîte", base: "boîte" }] }
+      - { target: "Le pain est dans la boîte.", ipa: "lə pɛ̃ ɛ dɑ̃ la bwat", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", ref: "fr-0544" }, { word: "boîte", ref: "fr-0785" }] }
       - { target: "Je suis dans la gare.", ipa: "ʒə sɥi dɑ̃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0050"
     target: "tant"

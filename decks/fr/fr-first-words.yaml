@@ -39,8 +39,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Pain et vin, s'il vous plaît.", ipa: "pɛ̃ e vɛ̃ sil vu plɛ", bases: [{ word: "Pain", base: "pain" }, { word: "et", base: "et" }, { word: "vin", ref: "fr-0035" }, { word: "s'il", base: "s'il" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
-      - { target: "Café et thé.", ipa: "kafe e te", bases: [{ word: "Café", base: "café" }, { word: "et", base: "et" }, { word: "thé", base: "thé" }] }
+      - { target: "Pain et vin, s'il vous plaît.", ipa: "pɛ̃ e vɛ̃ sil vu plɛ", bases: [{ word: "Pain", ref: "fr-0773" }, { word: "et", base: "et" }, { word: "vin", ref: "fr-0035" }, { word: "s'il", base: "s'il" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Café et thé.", ipa: "kafe e te", bases: [{ word: "Café", ref: "fr-0793" }, { word: "et", base: "et" }, { word: "thé", ref: "fr-0792" }] }
   - id: "fr-0028"
     target: "mais"
     ipa: "mɛ"
@@ -62,7 +62,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je suis ici.", ipa: "ʒə sɥi isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "ici", base: "ici" }] }
-      - { target: "Le pain est ici.", ipa: "lə pɛ̃ ɛt isi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "ici", base: "ici" }] }
+      - { target: "Le pain est ici.", ipa: "lə pɛ̃ ɛt isi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "ici", base: "ici" }] }
   - id: "fr-0030"
     target: "là"
     ipa: "la"
@@ -73,7 +73,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Il est là.", ipa: "il ɛ la", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "là", base: "là" }] }
-      - { target: "Le pain est là-bas.", ipa: "lə pɛ̃ ɛ la ba", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "là", base: "là" }, { word: "bas", base: "bas" }] }
+      - { target: "Le pain est là-bas.", ipa: "lə pɛ̃ ɛ la ba", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "là", base: "là" }, { word: "bas", base: "bas" }] }
   - id: "fr-0031"
     target: "très"
     ipa: "tʁɛ"
@@ -84,7 +84,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je suis très content.", ipa: "ʒə sɥi tʁɛ kɔ̃tɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "très", base: "très" }, { word: "content", base: "content" }] }
-      - { target: "Le café est très chaud.", ipa: "lə kafe ɛ tʁɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "très", base: "très" }, { word: "chaud", base: "chaud" }] }
+      - { target: "Le café est très chaud.", ipa: "lə kafe ɛ tʁɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "est", ref: "fr-0021" }, { word: "très", base: "très" }, { word: "chaud", base: "chaud" }] }
   - id: "fr-0032"
     target: "bien"
     ipa: "bjɛ̃"

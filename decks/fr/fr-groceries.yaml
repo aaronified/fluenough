@@ -1,0 +1,303 @@
+schema: 1
+id: "fr-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0773"
+    target: "pain"
+    ipa: "pɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange du pain.", ipa: "ʒə mɑ̃ʒ dy pɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "du", base: "du" }, { word: "pain", base: "pain" }] }
+      - { target: "Le pain est frais.", ipa: "lə pɛ̃ ɛ fʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+  - id: "fr-0774"
+    target: "beurre"
+    ipa: "bœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets du beurre sur le pain.", ipa: "ʒə mɛ dy bœʁ syʁ lə pɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "du", base: "du" }, { word: "beurre", base: "beurre" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }] }
+      - { target: "Le beurre est bon.", ipa: "lə bœʁ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "beurre", base: "beurre" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0775"
+    target: "fromage"
+    ipa: "fʁɔmaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime le fromage.", ipa: "ʒɛm lə fʁɔmaʒ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "fromage", base: "fromage" }] }
+      - { target: "Le fromage est fort.", ipa: "lə fʁɔmaʒ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "fromage", base: "fromage" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-0776"
+    target: "œuf"
+    ipa: "œf"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange un œuf.", ipa: "ʒə mɑ̃ʒ œ̃nœf", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "un", ref: "fr-0208" }, { word: "œuf", base: "œuf" }] }
+      - { target: "Les œufs sont frais.", ipa: "lezø sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "œufs", base: "œuf" }, { word: "sont", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+  - id: "fr-0777"
+    target: "sucre"
+    ipa: "sykʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu mets du sucre ?", ipa: "ty mɛ dy sykʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "mets", ref: "fr-0529" }, { word: "du", base: "du" }, { word: "sucre", base: "sucre" }] }
+      - { target: "Nous manquons de sucre.", ipa: "nu mɑ̃kɔ̃ də sykʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "manquons", ref: "fr-0797" }, { word: "de", base: "de" }, { word: "sucre", base: "sucre" }] }
+  - id: "fr-0778"
+    target: "sel"
+    ipa: "sɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu mets du sel ?", ipa: "ty mɛ dy sɛl", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "mets", ref: "fr-0529" }, { word: "du", base: "du" }, { word: "sel", base: "sel" }] }
+      - { target: "Le fromage est salé.", ipa: "lə fʁɔmaʒ ɛ sale", bases: [{ word: "Le", ref: "fr-0543" }, { word: "fromage", ref: "fr-0775" }, { word: "est", ref: "fr-0021" }, { word: "salé", ref: "fr-0799" }] }
+  - id: "fr-0779"
+    target: "poivre"
+    ipa: "pwavʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets du poivre.", ipa: "ʒə mɛ dy pwavʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "du", base: "du" }, { word: "poivre", base: "poivre" }] }
+      - { target: "Le poivre est fort.", ipa: "lə pwavʁ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poivre", base: "poivre" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-0780"
+    target: "farine"
+    ipa: "faʁin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La farine est dans le sac.", ipa: "la faʁin ɛ dɑ̃ lə sak", bases: [{ word: "La", ref: "fr-0544" }, { word: "farine", base: "farine" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "J'ai de la farine.", ipa: "ʒe də la faʁin", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "farine", base: "farine" }] }
+  - id: "fr-0781"
+    target: "riz"
+    ipa: "ʁi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange du riz.", ipa: "ʒə mɑ̃ʒ dy ʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "du", base: "du" }, { word: "riz", base: "riz" }] }
+      - { target: "Le riz est bon.", ipa: "lə ʁi ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "riz", base: "riz" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0782"
+    target: "viande"
+    ipa: "vjɑ̃d"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ne mange jamais de la viande.", ipa: "ʒə nə mɑ̃ʒ ʒamɛ də la vjɑ̃d", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "mange", ref: "fr-0282" }, { word: "jamais", ref: "fr-0328" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "viande", base: "viande" }] }
+      - { target: "La viande est chère.", ipa: "la vjɑ̃d ɛ ʃɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "viande", base: "viande" }, { word: "est", ref: "fr-0021" }, { word: "chère", ref: "fr-0104" }] }
+  - id: "fr-0783"
+    target: "poisson"
+    ipa: "pwasɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le poisson est bon.", ipa: "lə pwasɔ̃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poisson", base: "poisson" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Nous mangeons du poisson.", ipa: "nu mɑ̃ʒɔ̃ dy pwasɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "du", base: "du" }, { word: "poisson", base: "poisson" }] }
+  - id: "fr-0784"
+    target: "poulet"
+    ipa: "pulɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le poulet est prêt.", ipa: "lə pulɛ ɛ pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poulet", base: "poulet" }, { word: "est", ref: "fr-0021" }, { word: "prêt", ref: "fr-0687" }] }
+      - { target: "Je prends du poulet.", ipa: "ʒə pʁɑ̃ dy pulɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "du", base: "du" }, { word: "poulet", base: "poulet" }] }
+  - id: "fr-0785"
+    target: "boîte"
+    ipa: "bwat"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une boîte de thé.", ipa: "yn bwat də te", bases: [{ word: "Une", ref: "fr-0545" }, { word: "boîte", base: "boîte" }, { word: "de", base: "de" }, { word: "thé", ref: "fr-0792" }] }
+      - { target: "La boîte est vide.", ipa: "la bwat ɛ vid", bases: [{ word: "La", ref: "fr-0544" }, { word: "boîte", base: "boîte" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+  - id: "fr-0786"
+    target: "bouteille"
+    ipa: "butɛj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une bouteille de vin.", ipa: "yn butɛj də vɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "bouteille", base: "bouteille" }, { word: "de", base: "de" }, { word: "vin", ref: "fr-0035" }] }
+      - { target: "La bouteille est pleine.", ipa: "la butɛj ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "bouteille", base: "bouteille" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }] }
+  - id: "fr-0787"
+    target: "paquet"
+    ipa: "pakɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un paquet de riz.", ipa: "œ̃ pakɛ də ʁi", bases: [{ word: "Un", ref: "fr-0208" }, { word: "paquet", base: "paquet" }, { word: "de", base: "de" }, { word: "riz", ref: "fr-0781" }] }
+      - { target: "Le paquet est lourd.", ipa: "lə pakɛ ɛ luʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "paquet", base: "paquet" }, { word: "est", ref: "fr-0021" }, { word: "lourd", ref: "fr-0442" }] }
+  - id: "fr-0788"
+    target: "liste"
+    ipa: "list"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La liste est longue.", ipa: "la list ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "liste", base: "liste" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+      - { target: "J'ai une liste.", ipa: "ʒe yn list", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "liste", base: "liste" }] }
+  - id: "fr-0789"
+    target: "gâteau"
+    ipa: "ɡato"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gâteau est bon.", ipa: "lə ɡato ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gâteau", base: "gâteau" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Je mange un gâteau.", ipa: "ʒə mɑ̃ʒ œ̃ ɡato", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "un", ref: "fr-0208" }, { word: "gâteau", base: "gâteau" }] }
+  - id: "fr-0790"
+    target: "chocolat"
+    ipa: "ʃɔkɔla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime le chocolat.", ipa: "ʒɛm lə ʃɔkɔla", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "chocolat", base: "chocolat" }] }
+      - { target: "Le chocolat est sucré.", ipa: "lə ʃɔkɔla ɛ sykʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chocolat", base: "chocolat" }, { word: "est", ref: "fr-0021" }, { word: "sucré", ref: "fr-0798" }] }
+  - id: "fr-0791"
+    target: "jus"
+    ipa: "ʒy"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois du jus.", ipa: "ʒə bwa dy ʒy", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", ref: "fr-0283" }, { word: "du", base: "du" }, { word: "jus", base: "jus" }] }
+      - { target: "Le jus est frais.", ipa: "lə ʒy ɛ fʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jus", base: "jus" }, { word: "est", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+  - id: "fr-0792"
+    target: "thé"
+    ipa: "te"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois du thé.", ipa: "ʒə bwa dy te", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", ref: "fr-0283" }, { word: "du", base: "du" }, { word: "thé", base: "thé" }] }
+      - { target: "Le thé est chaud.", ipa: "lə te ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "thé", base: "thé" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+  - id: "fr-0793"
+    target: "café"
+    ipa: "kafe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un café.", ipa: "ʒə pʁɑ̃ œ̃ kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "café", base: "café" }] }
+      - { target: "Le café est très fort.", ipa: "lə kafe ɛ tʁɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-0794"
+    target: "épicerie"
+    ipa: "episʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'épicerie est près de la gare.", ipa: "lepisʁi ɛ pʁɛ də la gaʁ", bases: [{ word: "L'épicerie", base: "épicerie" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je vais à l'épicerie.", ipa: "ʒə ve a lepisʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "l'épicerie", base: "épicerie" }] }
+  - id: "fr-0795"
+    target: "magasin"
+    ipa: "magazɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le magasin est ouvert.", ipa: "lə magazɛ̃ ɛ uvɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "magasin", base: "magasin" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", ref: "fr-0437" }] }
+      - { target: "Nous allons au magasin.", ipa: "nu zalɔ̃ o magazɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "au", base: "au" }, { word: "magasin", base: "magasin" }] }
+  - id: "fr-0796"
+    target: "ajouter"
+    ipa: "aʒute"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ajoute du sel.", ipa: "ʒaʒut dy sɛl", bases: [{ word: "J'ajoute", base: "ajouter" }, { word: "du", base: "du" }, { word: "sel", ref: "fr-0778" }] }
+      - { target: "Tu ajoutes du sucre.", ipa: "ty aʒut dy sykʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "ajoutes", base: "ajouter" }, { word: "du", base: "du" }, { word: "sucre", ref: "fr-0777" }] }
+  - id: "fr-0797"
+    target: "manquer"
+    ipa: "mɑ̃ke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il manque du pain.", ipa: "il mɑ̃k dy pɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "manque", base: "manquer" }, { word: "du", base: "du" }, { word: "pain", ref: "fr-0773" }] }
+      - { target: "Nous manquons de sucre.", ipa: "nu mɑ̃kɔ̃ də sykʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "manquons", base: "manquer" }, { word: "de", base: "de" }, { word: "sucre", ref: "fr-0777" }] }
+  - id: "fr-0798"
+    target: "sucré"
+    ipa: "sykʁe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gâteau est sucré.", ipa: "lə ɡato ɛ sykʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gâteau", ref: "fr-0789" }, { word: "est", ref: "fr-0021" }, { word: "sucré", base: "sucré" }] }
+      - { target: "Le chocolat est sucré.", ipa: "lə ʃɔkɔla ɛ sykʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chocolat", ref: "fr-0790" }, { word: "est", ref: "fr-0021" }, { word: "sucré", base: "sucré" }] }
+  - id: "fr-0799"
+    target: "salé"
+    ipa: "sale"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le fromage est salé.", ipa: "lə fʁɔmaʒ ɛ sale", bases: [{ word: "Le", ref: "fr-0543" }, { word: "fromage", ref: "fr-0775" }, { word: "est", ref: "fr-0021" }, { word: "salé", base: "salé" }] }
+      - { target: "La viande est salée.", ipa: "la vjɑ̃d ɛ sale", bases: [{ word: "La", ref: "fr-0544" }, { word: "viande", ref: "fr-0782" }, { word: "est", ref: "fr-0021" }, { word: "salée", base: "salé" }] }
