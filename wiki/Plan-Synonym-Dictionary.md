@@ -209,7 +209,7 @@ only" and the poke-holes gate (above).
 | 6 | Seed batches 2 to N, one PR each; content, so it stays out of the CHANGELOG (owner, 2026-10-19) | Haiku, Sonnet | S per batch, as many as the owner wants | rolling |
 | 7 | `not_synonyms`: field in the card model and docs/DECK-FORMAT.md, the validator's rules, the cross-check; decks use it a release later | Sonnet | M | 0.6.x (approved 2026-10-30); built: the app reads it, no deck uses it until a release after |
 | 8 | Sibling-clash warnings tool (cards of a deck in one set) | Sonnet | S | 0.6.x |
-| 9 | Reviewer proposals `alt_native_add`, `not_synonyms_add` in `tools/proposals.py`, `tools/review_bot.py`, reviewer mode UI; candidate-set report | Sonnet | L | 0.7.0 with the reviewer-mode overhaul (approved 2026-10-30); built 2026-10-31: the fields, validator, `tools/proposals.py`, the review file parts and `tools/synonym_candidates.py`; the reviewer-mode UI is the overhaul's |
+| 9 | Reviewer proposals `alt_native_add`, `not_synonyms_add` in `tools/proposals.py`, `tools/review_bot.py`, reviewer mode UI; candidate-set report | Sonnet | L | 0.7.0 with the reviewer-mode overhaul (approved 2026-10-30); built 2026-10-31: the fields, validator, `tools/proposals.py`, the review file parts and `tools/synonym_candidates.py`; the reviewer-mode UI built 2026-10-31 as two add-only boxes in Suggest a change (Another accepted answer, Not a synonym; `ProposalField` and `CardPart` entries, validation as the bot's, sent states), open questions in the pull request |
 
 Steps 2 to 4 (step 3's tools listing aside) are about a week of one Sonnet, in three PRs; each batch of step
 5 and 6 is an hour or two of a Haiku plus a Sonnet. Step 9 depends on #508,

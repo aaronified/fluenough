@@ -10,6 +10,7 @@ import '../../core/models/card.dart';
 import '../../core/models/card_set.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/proposal.dart';
+import '../../core/review/added_item.dart';
 import '../../core/review/card_fields.dart';
 import '../../core/review/deck_review.dart';
 import '../../core/review/move_targets.dart';
@@ -119,6 +120,17 @@ String baseName(AppLocalizations l10n, Card card, String? word) {
       : l10n.reviewPartBaseOf(base);
 }
 
+/// Why an item typed into a list the reviewer adds to cannot be sent.
+String addedItemProblemText(AppLocalizations l10n, AddedItemProblem problem) =>
+    switch (problem) {
+      AddedItemProblem.empty => l10n.reviewAddedEmpty,
+      AddedItemProblem.severalAnswers => l10n.reviewAddedSeveral,
+      AddedItemProblem.alreadyThere => l10n.reviewAddedAlreadyThere,
+      AddedItemProblem.ownAnswer => l10n.reviewAddedOwnAnswer,
+      AddedItemProblem.refusedByCard => l10n.reviewAddedRefused,
+      AddedItemProblem.notEnglish => l10n.reviewAddedNotEnglish,
+    };
+
 /// [part]'s name on its chip.
 String partName(AppLocalizations l10n, CardPart part) => switch (part) {
   CardPart.word => l10n.reviewPartWord,
@@ -150,6 +162,8 @@ String partName(AppLocalizations l10n, CardPart part) => switch (part) {
   CardPart.image => l10n.reviewPartImage,
   CardPart.recording => l10n.reviewPartRecording,
   CardPart.setCard => l10n.reviewPartSetCard,
+  CardPart.altNative => l10n.reviewPartAltNative,
+  CardPart.notSynonyms => l10n.reviewPartNotSynonyms,
 };
 
 /// What a suggestion on [part] is about, by name: [partName], or for a base
@@ -894,6 +908,16 @@ class _SuggestSheetState extends State<SuggestSheet> {
     CardPart.dictionary,
   ];
 
+  /// The two lists the reviewer only adds to (ADR-0050), in the order they
+  /// are shown: those the sheet offers for this card.
+  List<CardPart> get _addOnlyParts => <CardPart>[
+    for (final part in const <CardPart>[
+      CardPart.altNative,
+      CardPart.notSynonyms,
+    ])
+      if (_addOnlyShown(part)) part,
+  ];
+
   /// The parts changed as one text each, the ones the card's type carries
   /// (DECK-FORMAT.md, "What applies to which card type"): gender only for a
   /// noun of a language that has it.
@@ -1003,13 +1027,20 @@ class _SuggestSheetState extends State<SuggestSheet> {
       } else if (s.part == CardPart.warning) {
         _warning = s.text;
         _warningWhy = s.why;
-      } else if (s.part.isList && s.action == BaseAction.add) {
+      } else if ((s.part.isList || s.part.isAddOnly) &&
+          s.action == BaseAction.add) {
         (_newItems[s.part] ??= <_Edit>[]).add(_Edit(s.text, s.why));
       }
     }
     if (widget.from case final from?) {
       final _Part part = (part: partOf(from.field), word: null);
-      if (part.part == CardPart.warning) {
+      if (part.part.isAddOnly) {
+        // An item to add: Edit opens it as a new item with the proposal's
+        // text, to be changed or kept.
+        (_newItems[part.part] ??= <_Edit>[]).add(
+          _Edit(from.text, _savedOn(part)?.why ?? ''),
+        );
+      } else if (part.part == CardPart.warning) {
         // The warning is picked, not typed: Edit opens with the proposal's.
         _warning = from.text == widget.card.warning ? null : from.text;
         _warningWhy = _savedOn(part)?.why ?? '';
@@ -1192,10 +1223,47 @@ class _SuggestSheetState extends State<SuggestSheet> {
           word: 'new-${i + 1}',
           action: BaseAction.add,
           now: '',
-          text: edit.text.text.trim(),
+          text: part.isAddOnly
+              ? addedItemText(edit.text.text)
+              : edit.text.text.trim(),
           why: edit.why.text.trim(),
         ),
   ];
+
+  /// The language the card's native side is in.
+  String get _nativeCode => widget.deck.deck.native.code;
+
+  /// Whether the sheet offers [part], a list the reviewer only adds to:
+  /// "Another accepted answer" always, "Not a synonym" for English meanings.
+  bool _addOnlyShown(CardPart part) =>
+      part != CardPart.notSynonyms || offersNotSynonyms(_nativeCode);
+
+  /// Why the [index]th item typed into the list [part] cannot be sent, or
+  /// null when it can, or when it is still empty.
+  AddedItemProblem? _problemOf(CardPart part, int index) {
+    final edits = _newItems[part] ?? const <_Edit>[];
+    final typed = edits[index].text.text;
+    if (addedItemText(typed).isEmpty) return null;
+    return checkAddedItem(
+      part: part,
+      typed: typed,
+      card: widget.card,
+      nativeCode: _nativeCode,
+      alsoAdded: <String>[
+        for (final (i, e) in edits.indexed)
+          if (i < index) e.text.text,
+      ],
+    );
+  }
+
+  /// Whether an item typed into a list the reviewer only adds to cannot be
+  /// sent: the sheet cannot be saved until it is fixed or dropped.
+  bool get _hasProblem => _addOnlyParts.any(
+    (part) => List<int>.generate(
+      (_newItems[part] ?? const <_Edit>[]).length,
+      (i) => i,
+    ).any((i) => _problemOf(part, i) != null),
+  );
 
   /// The teach-card warning picked, once saved, or null when none is picked
   /// or it is the one the card has.
@@ -1328,6 +1396,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
           },
           // One on the card's first example before #508 stays as it was.
           CardPart.example => false,
+          _ when s.part.isAddOnly => _addOnlyShown(s.part),
           _ when s.part.isList =>
             s.action == BaseAction.add ||
                 (_items[s.part] ?? const <FieldItem>[]).any(
@@ -1342,6 +1411,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
     for (final p in _parts) ?_resultOn(p),
     for (final p in _itemParts) ?_resultOn(p),
     for (final part in _listParts) ..._addedResults(part),
+    for (final part in _addOnlyParts) ..._addedResults(part),
     ?_warningResult(),
     ..._flagResults(),
     ?_altResult(),
@@ -1373,7 +1443,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
     );
     if (widget.from case final from?) {
       final part = partOf(from.field);
-      if (result.any((s) => s.part == part && s.word == null)) {
+      if (result.any(
+        (s) => s.part == part && (s.word == null || part.isAddOnly),
+      )) {
         reviewing.answer(widget.deck, widget.card, from, ProposalVerdict.edit);
       }
     }
@@ -1466,7 +1538,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   ),
                   const SizedBox(width: 4),
                   IconButton(
-                    onPressed: changed ? () => _save(l10n) : null,
+                    onPressed: changed && !_hasProblem
+                        ? () => _save(l10n)
+                        : null,
                     tooltip: l10n.reviewSuggestSaveAll,
                     icon: const Icon(Icons.check),
                   ),
@@ -1526,6 +1600,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
               _group(context, l10n.reviewGroupMeaning),
               ...scalar(CardPart.meaning),
               ...lists(<CardPart>[CardPart.senses]),
+              for (final part in _addOnlyParts)
+                ...spaced(_addOnlyBox(context, part)),
               _group(context, l10n.reviewGroupExamples),
               ...lists(<CardPart>[CardPart.examples]),
               _group(context, l10n.reviewSuggestBases),
@@ -1781,6 +1857,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
     CardPart.forms => l10n.reviewAddForm,
     CardPart.collocations => l10n.reviewAddCollocation,
     CardPart.facts => l10n.reviewAddFact,
+    CardPart.altNative => l10n.reviewAddAltNative,
+    CardPart.notSynonyms => l10n.reviewAddNotSynonym,
     _ => null,
   };
 
@@ -2148,6 +2226,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
   ) {
     final l10n = AppLocalizations.of(context)!;
     final add = _addLabel(l10n, part) ?? partName(l10n, part);
+    final addOnly = part.isAddOnly;
+    final problem = addOnly ? _problemOf(part, index) : null;
     return Padding(
       padding: const EdgeInsetsDirectional.only(top: 8, bottom: 8),
       child: _box(
@@ -2170,10 +2250,18 @@ class _SuggestSheetState extends State<SuggestSheet> {
             key: SuggestSheet.newItemKey(part, index, 'text'),
             controller: edit.text,
             minLines: 1,
-            maxLines: 5,
+            maxLines: addOnly ? 2 : 5,
             onChanged: (_) => setState(() {}),
             decoration: InputDecoration(
-              labelText: l10n.reviewSuggestYours,
+              labelText: addOnly
+                  ? (part == CardPart.altNative
+                        ? l10n.reviewAltNativeField
+                        : l10n.reviewNotSynonymsField)
+                  : l10n.reviewSuggestYours,
+              errorText: problem == null
+                  ? null
+                  : addedItemProblemText(l10n, problem),
+              errorMaxLines: 3,
               border: AppRadii.fieldBorder,
             ),
           ),
@@ -2191,6 +2279,51 @@ class _SuggestSheetState extends State<SuggestSheet> {
           ),
         ],
       ),
+    );
+  }
+
+  /// One of the two lists a reviewer only adds to (ADR-0050): what the card
+  /// has now, read only, what the list is for, each item being added, and
+  /// the button that adds one. Never an edit or a removal.
+  Widget _addOnlyBox(BuildContext context, CardPart part) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final have = itemsOfAddOnly(widget.card, part);
+    final added = _newItems[part] ?? const <_Edit>[];
+    final altNative = part == CardPart.altNative;
+    return _box(
+      outlined: added.isNotEmpty,
+      label: _label(partName(l10n, part), const <String>[]),
+      body: <Widget>[
+        _mutedLine(
+          context,
+          altNative ? l10n.reviewAltNativeAbout : l10n.reviewNotSynonymsAbout,
+        ),
+        if (have.isEmpty)
+          Text(
+            l10n.reviewSuggestNotSet,
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: scheme.onSurfaceVariant,
+              fontStyle: FontStyle.italic,
+            ),
+          )
+        else
+          for (final item in have) Text(item, style: theme.textTheme.bodyLarge),
+        for (final (i, edit) in added.indexed)
+          _newItemBox(context, part, i, edit),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            key: SuggestSheet.addItemKey(part),
+            onPressed: () => setState(
+              () => (_newItems[part] ??= <_Edit>[]).add(_Edit('', '')),
+            ),
+            icon: const Icon(Icons.add),
+            label: Text(_addLabel(l10n, part)!),
+          ),
+        ),
+      ],
     );
   }
 

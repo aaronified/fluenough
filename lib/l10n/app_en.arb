@@ -513,6 +513,10 @@
   "@profilesLearningNothing": {
     "description": "Stands in for the list of languages when a profile learns none yet."
   },
+  "pinBackToProfiles": "Back to profiles",
+  "@pinBackToProfiles": {
+    "description": "Back button on the PIN screen."
+  },
   "pinGreeting": "Hi, {name}",
   "@pinGreeting": {
     "description": "Heading of the PIN screen.",
@@ -550,6 +554,10 @@
         "example": "4"
       }
     }
+  },
+  "pinDeleteDigit": "Delete digit",
+  "@pinDeleteDigit": {
+    "description": "Screen-reader label of the backspace key on the PIN pad."
   },
   "pinForgot": "Forgot PIN?",
   "@pinForgot": {
@@ -816,6 +824,26 @@
     "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
     "placeholders": {
       "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionLess": "{minutes, plural, =1{1 minute less} other{{minutes} minutes less}}",
+  "@todayRevisionLess": {
+    "description": "Screen-reader label and tooltip of quick revision's minus button.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionMore": "{minutes, plural, =1{1 minute more} other{{minutes} minutes more}}",
+  "@todayRevisionMore": {
+    "description": "Screen-reader label and tooltip of quick revision's plus button.",
+    "placeholders": {
+      "minutes": {
         "type": "int",
         "example": "5"
       }
@@ -4789,6 +4817,10 @@
       }
     }
   },
+  "knownReportMistake": "Report a mistake",
+  "@knownReportMistake": {
+    "description": "Tooltip and screen-reader label of the bug icon at the top of the Languages you know sheet, shown only for a language whose own-script texts no speaker has checked (owner, 2026-10-18). It opens a report with the language and those texts, so a speaker can say one is wrong and give the right wording."
+  },
   "knownReadsWhichScripts": "Which scripts do you read {language} in?",
   "@knownReadsWhichScripts": {
     "description": "The sheet's question in Languages you know for a language written in several scripts, such as Punjabi in Gurmukhi and Shahmukhi (#551). Under it, an answer per script to tick, knownCanReadFallback, then knownSpeakOnly.",
@@ -6205,9 +6237,17 @@
       }
     }
   },
+  "settingsLogCopy": "Copy app log",
+  "@settingsLogCopy": {
+    "description": "Settings row that copies the app log as text."
+  },
   "settingsLogCopied": "App log copied",
   "@settingsLogCopied": {
     "description": "SnackBar after the app log is copied."
+  },
+  "settingsLogExport": "Export app log",
+  "@settingsLogExport": {
+    "description": "Settings row that saves the app log as a file."
   },
   "settingsLogExportDesc": "Text file",
   "@settingsLogExportDesc": {
@@ -6216,6 +6256,10 @@
   "settingsLogExportFailed": "Couldn’t save the app log",
   "@settingsLogExportFailed": {
     "description": "SnackBar when saving the app log fails."
+  },
+  "settingsLogClear": "Clear app log",
+  "@settingsLogClear": {
+    "description": "Settings row that deletes everything in the app log."
   },
   "settingsLogClearTitle": "Clear the app log?",
   "@settingsLogClearTitle": {
@@ -6907,7 +6951,7 @@
   },
   "reviewSettingsSection": "Reviewing",
   "@reviewSettingsSection": {
-    "description": "Settings heading over Review decks, the rater code and How reviewing works (docs/plans/deck-browser.md)."
+    "description": "Settings heading over Review decks, the reviewer code and How reviewing works (docs/plans/deck-browser.md)."
   },
   "reviewSettingsSwitch": "Review decks",
   "@reviewSettingsSwitch": {
@@ -6921,17 +6965,17 @@
   "@reviewSettingsSwitchOff": {
     "description": "Under Review decks, while it is off. Switching it on shows a dialog first. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "reviewSettingsCode": "Your rater code",
+  "reviewSettingsCode": "Your reviewer code",
   "@reviewSettingsCode": {
-    "description": "Settings row label over the reviewer's rater code, FL-XXXX-XXXX-C."
+    "description": "Settings row label over the reviewer's reviewer code, FL-XXXX-XXXX-C."
   },
   "reviewSettingsCopy": "Copy code",
   "@reviewSettingsCopy": {
-    "description": "Tooltip of the button that copies the rater code."
+    "description": "Tooltip of the button that copies the reviewer code."
   },
-  "reviewSettingsCopied": "Rater code copied",
+  "reviewSettingsCopied": "Reviewer code copied",
   "@reviewSettingsCopied": {
-    "description": "Shown once the rater code is copied."
+    "description": "Shown once the reviewer code is copied."
   },
   "reviewSettingsToSend": "Reviews to send",
   "@reviewSettingsToSend": {
@@ -6953,7 +6997,7 @@
   },
   "reviewSettingsHelped": "Decks you helped build",
   "@reviewSettingsHelped": {
-    "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
+    "description": "Settings row listing the decks that list this reviewer's reviewer code among their reviewers."
   },
   "reviewSettingsHelpedDeck": "{deck} ({language})",
   "@reviewSettingsHelpedDeck": {
@@ -7419,7 +7463,7 @@
   "@reviewTurnOnTitle": {
     "description": "Title of the dialog shown when turning Review decks on."
   },
-  "reviewTurnOnBody": "You get a rater code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
+  "reviewTurnOnBody": "You get a reviewer code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
   "@reviewTurnOnBody": {
     "description": "First paragraph of the dialog shown when turning Review decks on."
   },
@@ -7427,7 +7471,7 @@
   "@reviewTurnOnMany": {
     "description": "Second paragraph of the turn-on dialog: several decks go in one mail (owner, 2026-10-09)."
   },
-  "reviewTurnOnPublic": "Rater codes are public, to thank you. Your mail address is not.",
+  "reviewTurnOnPublic": "Reviewer codes are public, to thank you. Your mail address is not.",
   "@reviewTurnOnPublic": {
     "description": "Last paragraph of the turn-on dialog."
   },
@@ -7479,7 +7523,7 @@
   "@reviewGuideCodeTitle": {
     "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideCodeBody": "Turning on reviewing makes your rater code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
+  "reviewGuideCodeBody": "Turning on reviewing makes your reviewer code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
   "@reviewGuideCodeBody": {
     "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
   },
@@ -7499,7 +7543,7 @@
   "@reviewGuideToReviewWaiting": {
     "description": "Second paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Waiting for review” must match reviewSettingsWaiting."
   },
-  "reviewGuideCheckTitle": "Check cards, then sign off",
+  "reviewGuideCheckTitle": "Check cards, then mark done",
   "@reviewGuideCheckTitle": {
     "description": "Title of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
@@ -7507,9 +7551,9 @@
   "@reviewGuideCheckBody": {
     "description": "First paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Review” must match unitReview, “Looks right” reviewLooksRight."
   },
-  "reviewGuideCheckSignOff": "When every card is checked, Sign off becomes available. It says you checked the whole unit.",
+  "reviewGuideCheckSignOff": "When every card is checked, Mark done becomes available. It says you checked the whole unit.",
   "@reviewGuideCheckSignOff": {
-    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Sign off” must match reviewSignOffReady."
+    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Mark done” must match reviewSignOffReady."
   },
   "reviewGuideSuggestTitle": "Suggest, and answer proposals",
   "@reviewGuideSuggestTitle": {
@@ -7555,7 +7599,7 @@
   "@reviewGuidePublicTitle": {
     "description": "Title of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuidePublicBody": "Public: your rater code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
+  "reviewGuidePublicBody": "Public: your reviewer code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
   "@reviewGuidePublicBody": {
     "description": "First paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
@@ -7625,7 +7669,7 @@
   "@reviewFirstTitle": {
     "description": "Title of the dialog from a unit's Review button while reviewing is off."
   },
-  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your rater code. Then come back here.",
+  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your reviewer code. Then come back here.",
   "@reviewFirstBody": {
     "description": "Body of the Turn on reviewing first dialog. The quoted name must match reviewSettingsSwitch.",
     "placeholders": {
@@ -7645,7 +7689,7 @@
   },
   "reviewThanksTitle": "Thanks for checking this unit",
   "@reviewThanksTitle": {
-    "description": "On a unit whose decks list the reviewer's rater code, in place of the not-yet-checked notice."
+    "description": "On a unit whose decks list the reviewer's reviewer code, in place of the not-yet-checked notice."
   },
   "reviewThanksBy": "{count, plural, =0{Checked by {code}} =1{Checked by {code} and 1 other} other{Checked by {code} and {count} others}}",
   "@reviewThanksBy": {
@@ -7709,7 +7753,7 @@
       }
     }
   },
-  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your rater code.",
+  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your reviewer code.",
   "@reviewPageInfo": {
     "description": "At the top of the review screen."
   },
@@ -7953,7 +7997,7 @@
       }
     }
   },
-  "reviewSignOff": "Sign off · {count} left",
+  "reviewSignOff": "Mark done · {count} left",
   "@reviewSignOff": {
     "description": "Review screen button, disabled until every card is checked.",
     "placeholders": {
@@ -7963,15 +8007,15 @@
       }
     }
   },
-  "reviewSignOffReady": "Sign off",
+  "reviewSignOffReady": "Mark done",
   "@reviewSignOffReady": {
     "description": "Review screen button once every card is checked: the reviewer vouches for the unit."
   },
-  "reviewSignedOff": "Signed off",
+  "reviewSignedOff": "Marked as done",
   "@reviewSignedOff": {
     "description": "Review screen button once the unit is signed off."
   },
-  "reviewSignedOffDone": "Signed off. Send your review when you are ready.",
+  "reviewSignedOffDone": "Marked as done. Send your review when you are ready.",
   "@reviewSignedOffDone": {
     "description": "Shown once a unit is signed off."
   },
@@ -8322,6 +8366,62 @@
   "reviewAddFact": "Suggest a fact",
   "@reviewAddFact": {
     "description": "Button at the end of a list in Suggest a change, and the title of the box it opens: adds a fact that names the card."
+  },
+  "reviewPartAltNative": "Another accepted answer",
+  "@reviewPartAltNative": {
+    "description": "Name of a part of a card, a typed answer the grader should also accept. Shown in small capitals, and as the title of the box in Suggest a change."
+  },
+  "reviewPartNotSynonyms": "Not a synonym",
+  "@reviewPartNotSynonyms": {
+    "description": "Name of a part of a card, a word that must not be accepted as the card's meaning even though it is close. Shown in small capitals, and as the title of the box in Suggest a change."
+  },
+  "reviewAddAltNative": "Add another accepted answer",
+  "@reviewAddAltNative": {
+    "description": "Button at the end of the Another accepted answer box in Suggest a change, and the title of the box it opens."
+  },
+  "reviewAddNotSynonym": "Add a word that is not a synonym",
+  "@reviewAddNotSynonym": {
+    "description": "Button at the end of the Not a synonym box in Suggest a change, and the title of the box it opens."
+  },
+  "reviewAltNativeField": "Answer to accept",
+  "@reviewAltNativeField": {
+    "description": "Label of the field for one more accepted answer in Suggest a change."
+  },
+  "reviewNotSynonymsField": "Word to refuse",
+  "@reviewNotSynonymsField": {
+    "description": "Label of the field for one word the card must not accept in Suggest a change."
+  },
+  "reviewAltNativeAbout": "A right answer that a typed answer is marked wrong for. Give one answer, in the language of the card's meaning. It is added to the answers the card accepts.",
+  "@reviewAltNativeAbout": {
+    "description": "Under the title of the Another accepted answer box in Suggest a change: what it is for."
+  },
+  "reviewNotSynonymsAbout": "A word that must not be accepted for this card, though it is close in meaning. It never changes the card's own answers.",
+  "@reviewNotSynonymsAbout": {
+    "description": "Under the title of the Not a synonym box in Suggest a change: what it is for."
+  },
+  "reviewAddedEmpty": "Type one word or phrase.",
+  "@reviewAddedEmpty": {
+    "description": "Error under a field in Suggest a change where an item to add is empty."
+  },
+  "reviewAddedSeveral": "Give one answer. Propose each other answer on its own.",
+  "@reviewAddedSeveral": {
+    "description": "Error under the accepted-answer field in Suggest a change when the text has several answers split by a semicolon."
+  },
+  "reviewAddedAlreadyThere": "The card already has this, or you typed it twice.",
+  "@reviewAddedAlreadyThere": {
+    "description": "Error under a field in Suggest a change when the item to add is already on the card or already typed above."
+  },
+  "reviewAddedOwnAnswer": "This is already one of the card's own answers.",
+  "@reviewAddedOwnAnswer": {
+    "description": "Error under a field in Suggest a change when the item is the card's own answer: it is accepted already, and a card's own answer is never refused."
+  },
+  "reviewAddedRefused": "The card refuses this word as not a synonym, so it cannot also be an accepted answer. The owner decides which stays.",
+  "@reviewAddedRefused": {
+    "description": "Error under the accepted-answer field in Suggest a change when the card lists the typed word as not a synonym."
+  },
+  "reviewAddedNotEnglish": "Words to refuse are for English meanings only.",
+  "@reviewAddedNotEnglish": {
+    "description": "Error in Suggest a change when a word to refuse is typed on a card whose meanings are not English."
   },
   "reviewAddRemove": "Remove the new item",
   "@reviewAddRemove": {
@@ -9083,7 +9183,7 @@
   "@reviewSendFailed": {
     "description": "When the phone's share failed."
   },
-  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "reviewMailBody": "Reviews from Fluenough {version}, reviewer code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
   "@reviewMailBody": {
     "description": "Body of the review mail, for people only: the files are the record.",
     "placeholders": {
@@ -9246,7 +9346,7 @@
   "@soundsOfWordOfferNotNow": {
     "description": "Button that closes the question about adding the IPA course without adding it."
   },
-  "soundsOfWordNone": "The IPA course has no symbols for the sounds of this word yet.",
+  "soundsOfWordNone": "This word has no pronunciation symbols yet.",
   "@soundsOfWordNone": {
     "description": "Said when the sounds-of-this-word button finds no IPA card whose symbol occurs in the word."
   },
@@ -10036,7 +10136,7 @@
   "@settingsDataBackup": {
     "description": "A heading on Your data above backing up and restoring."
   },
-  "settingsDataBackupIntro": "One file holds your progress, your settings, your rater code and the languages you downloaded. Their decks download again after a restore.",
+  "settingsDataBackupIntro": "One file holds your progress, your settings, your reviewer code and the languages you downloaded. Their decks download again after a restore.",
   "@settingsDataBackupIntro": {
     "description": "A line under the Backup and restore heading on Your data."
   },
@@ -10080,7 +10180,7 @@
   "@settingsDataRecentNote": {
     "description": "A note on Your data under Recent backups."
   },
-  "settingsDataBackupPrivacy": "A backup holds your whole learning history and your rater code. It leaves this phone only if you share it or send it to the cloud you chose.",
+  "settingsDataBackupPrivacy": "A backup holds your whole learning history and your reviewer code. It leaves this phone only if you share it or send it to the cloud you chose.",
   "@settingsDataBackupPrivacy": {
     "description": "A note on Your data about what a backup holds."
   },
@@ -10373,7 +10473,7 @@
   "@settingsRestoreAlso": {
       "description": "Label in the restore sheet: the other things the backup holds."
   },
-  "settingsRestoreAlsoText": "Your settings, the languages you know, and your rater code",
+  "settingsRestoreAlsoText": "Your settings, the languages you know, and your reviewer code",
   "@settingsRestoreAlsoText": {
       "description": "In the restore sheet: what else is restored."
   },
@@ -11003,6 +11103,10 @@
         "example": "कल, काल"
       }
     }
+  },
+  "ipaInfoDot": "About these sounds",
+  "@ipaInfoDot": {
+    "description": "Hint and screen-reader label of the small info dot beside a card's IPA; it opens the popup that explains each sound."
   },
   "cardWiktionaryLink": "Wiktionary: {word}",
   "@cardWiktionaryLink": {
@@ -12343,7 +12447,7 @@
   "@languagesEmptyTitle": {
     "description": "Title of the Languages page before any language is added."
   },
-  "languagesEmptyBody": "For each language, set each skill to Know or Learn: speak, hear, read and write.",
+  "languagesEmptyBody": "For each language, say what you already know and what you want to learn: speaking, listening, reading and writing.",
   "@languagesEmptyBody": {
     "description": "Body of the empty Languages page."
   },
@@ -12567,7 +12671,7 @@
   "@languagesScriptRW": {
     "description": "Heading of the sheet's script row for a language with one script."
   },
-  "languagesNoCourseNote": "There is no {language} course. You can set Know.",
+  "languagesNoCourseNote": "There is no {language} course yet. You can mark what you already know.",
   "@languagesNoCourseNote": {
     "description": "Note on the sheet of a language with no course.",
     "placeholders": {
@@ -12637,7 +12741,7 @@
   "@languagesSetOne": {
     "description": "Disabled bottom button of the sheet of a language not added yet."
   },
-  "languagesDraftMeta": "Set each skill: Know, Learn or Leave",
+  "languagesDraftMeta": "Tap each skill: you know it, you want to learn it, or neither",
   "@languagesDraftMeta": {
     "description": "Line under the badges on the sheet of a language not added yet."
   },
@@ -12801,7 +12905,7 @@
       }
     }
   },
-  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. Skills you are learning become Leave; Know stays. Your progress stays in the review log and comes back with the decks.",
+  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. What you are learning stops; what you already know stays. Your progress stays in the review log and comes back with the decks.",
   "@languagesDeleteBody": {
     "description": "Body of the delete dialog.",
     "placeholders": {
@@ -12867,9 +12971,9 @@
   "@languagesTestAgain": {
     "description": "Sound test's retry button."
   },
-  "languagesToastSkill": "{name}: {skill} set to {state}",
+  "languagesToastSkill": "{name}: {state, select, learn{you’re learning {skill}} know{you already know {skill}} other{not learning {skill} now}}",
   "@languagesToastSkill": {
-    "description": "Toast after a skill's pill changes. {name} is the language, with its script in brackets for one of several scripts.",
+    "description": "Toast after a skill's pill changes, in plain words with no level names. {name} is the language, {skill} a phrase from the languagesToastPhrase keys, {state} learn, know or leave.",
     "placeholders": {
       "name": {
         "type": "String",
@@ -12877,29 +12981,47 @@
       },
       "skill": {
         "type": "String",
-        "example": "Read"
+        "example": "speaking and listening"
       },
       "state": {
         "type": "String",
-        "example": "Know"
+        "example": "learn"
       }
     }
   },
-  "languagesToastNameScript": "{language} ({script})",
-  "@languagesToastNameScript": {
-    "description": "The name in a skill toast for a language with several scripts. {script} is the script's own name.",
+  "languagesToastPhraseSpoken": "speaking and listening",
+  "@languagesToastPhraseSpoken": {
+    "description": "The Spoken skill in a skill toast, as the {skill} of languagesToastSkill."
+  },
+  "languagesToastPhraseHear": "listening",
+  "@languagesToastPhraseHear": {
+    "description": "The Spoken skill at its Hear level, in a skill toast."
+  },
+  "languagesToastPhraseScript": "reading and writing {script}",
+  "@languagesToastPhraseScript": {
+    "description": "A script's skills in a skill toast. {script} is the script's own name.",
     "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
-      },
       "script": {
         "type": "String",
         "example": "Devanagari"
       }
     }
   },
-  "languagesToastPool": "{language} is back in the language pool. Find it again with Add a language.",
+  "languagesToastPhraseRead": "reading {script}",
+  "@languagesToastPhraseRead": {
+    "description": "A script's skill at its Read level, in a skill toast. {script} is the script's own name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastPhraseGestures": "sign language",
+  "@languagesToastPhraseGestures": {
+    "description": "The Gestures skill of a sign language, in a skill toast."
+  },
+  "languagesToastPool": "{language} removed. Add it back from Add a language.",
   "@languagesToastPool": {
     "description": "Toast and snackbar after a language's last skill is set to Leave.",
     "placeholders": {
@@ -13035,7 +13157,7 @@
       }
     }
   },
-  "languagesToastLevel": "{language}: level found",
+  "languagesToastLevel": "{language}: we found your level",
   "@languagesToastLevel": {
     "description": "Toast after Find my level or Fit my level finishes.",
     "placeholders": {
@@ -13045,7 +13167,7 @@
       }
     }
   },
-  "languagesLevelNeedsDecks": "Set a skill to Learn to download the decks first, then find your level.",
+  "languagesLevelNeedsDecks": "Start learning this language first, so its decks download. Then find your level.",
   "@languagesLevelNeedsDecks": {
     "description": "Toast when Find my level is tapped for a language with no decks on the phone."
   },

@@ -198,7 +198,7 @@ class Reviewing {
       answers[proposal.id] = ProposalAnswer(
         id: proposal.id,
         verdict: verdict,
-        field: proposal.field.name,
+        field: proposal.field.wire,
         text: proposal.text,
       );
     }

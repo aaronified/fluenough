@@ -1,0 +1,126 @@
+schema: 1
+id: "de-en-phrasebook"
+kind: "layer"
+core: "de-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Twenty things to say from the first day: greetings, thanks and sorry, asking for help, and saying you do not understand. Standard German, as spoken in Germany. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-0011":
+    native: "hello"
+    notes:
+      "n1": "Hallo is hello at any time of day."
+    bases:
+      "Hallo": "hello"
+  "de-0012":
+    native: "good morning"
+    bases:
+      "Guten": "good (in greetings)"
+      "Morgen": "morning"
+  "de-0013":
+    native: "good evening"
+    bases:
+      "Guten": "good (in greetings)"
+      "Abend": "evening"
+  "de-0014":
+    native: "good night"
+    notes:
+      "n1": "Gute Nacht is said at bedtime, or when someone leaves late at night."
+    bases:
+      "Gute": "good (in greetings)"
+      "Nacht": "night"
+  "de-0015":
+    native: "goodbye"
+    bases:
+      "Auf": "until (in a farewell)"
+      "Wiedersehen": "seeing again"
+  "de-0016":
+    native: "bye"
+    notes:
+      "n1": "Tschüss is informal. To someone you do not know, say Auf Wiedersehen."
+    bases:
+      "Tschüss": "bye"
+  "de-0017":
+    native: "please"
+    notes:
+      "n1": "Bitte also means you're welcome, and here you are."
+    bases:
+      "Bitte": "please; you're welcome"
+  "de-0018":
+    native: "thank you"
+    bases:
+      "Danke": "thanks"
+  "de-0019":
+    native: "thank you very much"
+    bases:
+      "Danke": "thanks"
+      "schön": "very; nice"
+  "de-0020":
+    native: "sorry; excuse me"
+    notes:
+      "n1": "Entschuldigung is sorry, and excuse me when you want to get past someone."
+    bases:
+      "Entschuldigung": "apology; excuse"
+  "de-0021":
+    native: "I don't understand."
+    bases:
+      "Ich": "I"
+      "verstehe": "to understand (I understand)"
+      "nicht": "not"
+  "de-0022":
+    native: "I don't speak German."
+    bases:
+      "Ich": "I"
+      "spreche": "to speak (I speak)"
+      "kein": "no; not any"
+      "Deutsch": "German"
+  "de-0023":
+    native: "do you speak English?"
+    bases:
+      "Sprechen": "to speak"
+      "Sie": "you (polite)"
+      "Englisch": "English"
+  "de-0024":
+    native: "can you speak more slowly?"
+    bases:
+      "Können": "can"
+      "Sie": "you (polite)"
+      "langsamer": "slower; more slowly"
+      "sprechen": "to speak"
+  "de-0025":
+    native: "what is your name?"
+    bases:
+      "Wie": "how"
+      "heißen": "to be called"
+      "Sie": "you (polite)"
+  "de-0026":
+    native: "my name is Anna."
+    bases:
+      "Ich": "I"
+      "heiße": "to be called (I am called)"
+      "Anna": "Anna, a name"
+  "de-0027":
+    native: "how much is that?"
+    bases:
+      "Wie": "how"
+      "viel": "much"
+      "kostet": "to cost"
+      "das": "that"
+  "de-0028":
+    native: "where is the toilet?"
+    bases:
+      "Wo": "where"
+      "ist": "is"
+      "die": "the"
+      "Toilette": "toilet"
+  "de-0029":
+    native: "help!"
+    bases:
+      "Hilfe": "help"
+  "de-0030":
+    native: "here you are; you're welcome"
+    bases:
+      "Bitte": "please; you're welcome"
+      "sehr": "very"

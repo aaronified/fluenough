@@ -1,0 +1,121 @@
+schema: 1
+id: "de-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-0001"
+    target: "Ja"
+    ipa: "jaː"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, ich verstehe.", ipa: "jaː ɪç fɛɐ̯ʃteːə", bases: [{ word: "Ja", base: "ja" }, { word: "ich", base: "ich" }, { word: "verstehe", base: "verstehen" }] }
+      - { target: "Ja, danke.", ipa: "jaː daŋkə", bases: [{ word: "Ja", base: "ja" }, { word: "danke", base: "danke" }] }
+  - id: "de-0002"
+    target: "Nein"
+    ipa: "naɪn"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nein, danke.", ipa: "naɪn daŋkə", bases: [{ word: "Nein", base: "nein" }, { word: "danke", base: "danke" }] }
+      - { target: "Ich habe kein Wasser.", ipa: "ɪç haːbə kaɪn vasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "kein", base: "kein" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-0003"
+    target: "Ich"
+    ipa: "ɪç"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ich bin hier.", ipa: "ɪç bɪn hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Ich trinke Wasser.", ipa: "ɪç trɪŋkə vasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "trinke", base: "trinken" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-0004"
+    target: "Du"
+    ipa: "duː"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Du bist nett.", ipa: "duː bɪst nɛt", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "nett", base: "nett" }] }
+      - { target: "Kommst du mit?", ipa: "kɔmst duː mɪt", bases: [{ word: "Kommst", base: "kommen" }, { word: "du", base: "du" }, { word: "mit", base: "mit" }] }
+  - id: "de-0005"
+    target: "Wasser"
+    ipa: "vasɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ein Glas Wasser, bitte.", ipa: "aɪn glaːs vasɐ bɪtə", bases: [{ word: "Ein", base: "ein" }, { word: "Glas", base: "Glas" }, { word: "Wasser", base: "Wasser" }, { word: "bitte", base: "bitte" }] }
+      - { target: "Das Wasser ist kalt.", ipa: "das vasɐ ɪst kalt", bases: [{ word: "Das", base: "das" }, { word: "Wasser", base: "Wasser" }, { word: "ist", base: "sein" }, { word: "kalt", base: "kalt" }] }
+  - id: "de-0006"
+    target: "Gut"
+    ipa: "guːt"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Das ist gut.", ipa: "das ɪst guːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "gut", base: "gut" }] }
+      - { target: "Mir geht es gut.", ipa: "miːɐ̯ geːt ɛs guːt", bases: [{ word: "Mir", base: "ich" }, { word: "geht", base: "gehen" }, { word: "es", base: "es" }, { word: "gut", base: "gut" }] }
+  - id: "de-0007"
+    target: "Eins"
+    ipa: "aɪns"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Eins, zwei, drei.", ipa: "aɪns tsvaɪ draɪ", bases: [{ word: "Eins", base: "eins" }, { word: "zwei", base: "zwei" }, { word: "drei", base: "drei" }] }
+      - { target: "Ich habe einen Bruder.", ipa: "ɪç haːbə aɪnən bruːdɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Bruder", base: "Bruder" }] }
+  - id: "de-0008"
+    target: "Zwei"
+    ipa: "tsvaɪ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zwei Kaffee, bitte.", ipa: "tsvaɪ kafeː bɪtə", bases: [{ word: "Zwei", base: "zwei" }, { word: "Kaffee", base: "Kaffee" }, { word: "bitte", base: "bitte" }] }
+      - { target: "Ich habe zwei Kinder.", ipa: "ɪç haːbə tsvaɪ kɪndɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "zwei", base: "zwei" }, { word: "Kinder", base: "Kind" }] }
+  - id: "de-0009"
+    target: "Hier"
+    ipa: "hiːɐ̯"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Wasser.", ipa: "hiːɐ̯ ɪst das vasɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wasser", base: "Wasser" }] }
+      - { target: "Hier bitte.", ipa: "hiːɐ̯ bɪtə", bases: [{ word: "Hier", base: "hier" }, { word: "bitte", base: "bitte" }] }
+  - id: "de-0010"
+    target: "Und"
+    ipa: "ʊnt"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Brot und Butter.", ipa: "broːt ʊnt bʊtɐ", bases: [{ word: "Brot", base: "Brot" }, { word: "und", base: "und" }, { word: "Butter", base: "Butter" }] }
+      - { target: "Ich und du.", ipa: "ɪç ʊnt duː", bases: [{ word: "Ich", base: "ich" }, { word: "und", base: "und" }, { word: "du", base: "du" }] }

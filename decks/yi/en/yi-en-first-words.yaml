@@ -1,0 +1,180 @@
+schema: 1
+id: "yi-en-first-words"
+kind: "layer"
+core: "yi-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Written in the Hebrew alphabet; readings are based on the YIVO transliteration. Not yet checked by a Yiddish speaker: please report any mistake."
+cards:
+  "yi-0001":
+    native: "yes"
+    notes:
+      "n1": "יאָ (yo) is the plain yes. A negative question is answered with it too, as in English: Aren't you coming? Yes, I am."
+    examples:
+      "יאָ, דאַנק.":
+        native: "Yes, thanks."
+        bases:
+          "יאָ": "yes"
+          "דאַנק": "thanks"
+      "יאָ, איך רעד ייִדיש.":
+        native: "Yes, I speak Yiddish."
+        bases:
+          "יאָ": "yes"
+          "איך": "I"
+          "רעד": "speak"
+          "ייִדיש": "Yiddish"
+  "yi-0002":
+    native: "no"
+    notes:
+      "n1": "ניין (nayn) is 'no'. ניט (nit) is 'not', and it stands before the word it negates: איך רעד ניט (ikh red nit), I don't speak."
+    examples:
+      "ניין, דאַנק.":
+        native: "No, thanks."
+        bases:
+          "ניין": "no"
+          "דאַנק": "thanks"
+      "איך רעד ניט ייִדיש.":
+        native: "I don't speak Yiddish."
+        bases:
+          "איך": "I"
+          "רעד": "speak"
+          "ניט": "not"
+          "ייִדיש": "Yiddish"
+  "yi-0003":
+    native: "I"
+    notes:
+      "n1": "איך (ikh) is I. The verb takes its own ending for each person: איך רעד (ikh red), I speak."
+    examples:
+      "איך בין אַ סטודענט.":
+        native: "I am a student."
+        bases:
+          "איך": "I"
+          "בין": "am"
+          "אַ": "a"
+          "סטודענט": "student"
+      "איך פֿאַרשטײ ניט.":
+        native: "I don't understand."
+        bases:
+          "איך": "I"
+          "פֿאַרשטײ": "understand"
+          "ניט": "not"
+  "yi-0004":
+    native: "you"
+    notes:
+      "n1": "דו (du) is the everyday, informal 'you'. The polite form is איר (ir), which is also the plural."
+    examples:
+      "דו ביסט גוט.":
+        native: "You are good."
+        bases:
+          "דו": "you"
+          "ביסט": "are"
+          "גוט": "good"
+      "רעדסט דו ייִדיש?":
+        native: "Do you speak Yiddish?"
+        bases:
+          "רעדסט": "speak"
+          "דו": "you"
+          "ייִדיש": "Yiddish"
+  "yi-0005":
+    native: "and"
+    notes:
+      "n1": "און (un) is 'and' between two words, as in ברױט און בוטער (broyt un buter), bread and butter."
+    examples:
+      "ברױט און בוטער.":
+        native: "Bread and butter."
+        bases:
+          "ברױט": "bread"
+          "און": "and"
+          "בוטער": "butter"
+      "איך און דו.":
+        native: "You and I."
+        bases:
+          "איך": "I"
+          "און": "and"
+          "דו": "you"
+  "yi-0006":
+    native: "or"
+    notes:
+      "n1": "אָדער (oder) is 'or', as in a question that offers a choice: טיי אָדער קאַווע (tey oder kave), tea or coffee."
+    examples:
+      "טיי אָדער קאַווע?":
+        native: "Tea or coffee?"
+        bases:
+          "טיי": "tea"
+          "אָדער": "or"
+          "קאַווע": "coffee"
+      "הײַנט אָדער מאָרגן?":
+        native: "Today or tomorrow?"
+        bases:
+          "הײַנט": "today"
+          "אָדער": "or"
+          "מאָרגן": "tomorrow"
+  "yi-0007":
+    native: "but"
+    notes:
+      "n1": "אָבער (ober) is 'but'. Its vowel is the open o of the first syllable."
+    examples:
+      "יאָ, אָבער איך בין מיד.":
+        native: "Yes, but I am tired."
+        bases:
+          "יאָ": "yes"
+          "אָבער": "but"
+          "איך": "I"
+          "בין": "am"
+          "מיד": "tired"
+      "גוט, אָבער טײַער.":
+        native: "Good, but expensive."
+        bases:
+          "גוט": "good"
+          "אָבער": "but"
+          "טײַער": "expensive"
+  "yi-0008":
+    native: "good"
+    notes:
+      "n1": "גוט (gut) takes an ending before a noun: אַ גוטער טאָג (a guter tog), a good day."
+    examples:
+      "דאָס איז גוט.":
+        native: "That is good."
+        bases:
+          "דאָס": "that"
+          "איז": "is"
+          "גוט": "good"
+      "אַ גוטער טאָג.":
+        native: "A good day."
+        bases:
+          "אַ": "a"
+          "גוטער": "good"
+          "טאָג": "day"
+  "yi-0009":
+    native: "one"
+    notes:
+      "n1": "אײנס (eyns) is the number one, as in counting. Before a noun, use אַ (a): אַ ברודער (a broder), a brother."
+    examples:
+      "אײנס, ביטע.":
+        native: "One, please."
+        bases:
+          "אײנס": "one"
+          "ביטע": "please"
+      "אײנס, צװײ, דרײַ.":
+        native: "One, two, three."
+        bases:
+          "אײנס": "one"
+          "צװײ": "two"
+          "דרײַ": "three"
+  "yi-0010":
+    native: "water"
+    notes:
+      "n1": "װאַסער (vaser) is neuter: דאָס װאַסער (dos vaser), the water."
+    examples:
+      "װאַסער, ביטע.":
+        native: "Water, please."
+        bases:
+          "װאַסער": "water"
+          "ביטע": "please"
+      "איך טרינק װאַסער.":
+        native: "I drink water."
+        bases:
+          "איך": "I"
+          "טרינק": "drink"
+          "װאַסער": "water"

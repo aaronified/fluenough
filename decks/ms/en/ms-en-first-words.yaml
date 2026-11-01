@@ -1,0 +1,178 @@
+schema: 1
+id: "ms-en-first-words"
+kind: "layer"
+core: "ms-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Not yet checked by a Malay speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ms-0001":
+    native: "yes"
+    notes:
+      "n1": "Ya is the everyday yes, in speech and in writing. The plain no is tidak."
+    examples:
+      "Ya, saya faham.":
+        native: "Yes, I understand."
+        bases:
+          "Ya": "yes"
+          "saya": "I"
+          "faham": "to understand"
+      "Ya, betul.":
+        native: "Yes, that's right."
+        bases:
+          "Ya": "yes"
+          "betul": "right, correct"
+  "ms-0002":
+    native: "no; not"
+    notes:
+      "n1": "Tidak is no, and 'not' before a verb or an adjective. Before a noun, use bukan, 'not a'."
+    examples:
+      "Tidak, terima kasih.":
+        native: "No, thank you."
+        bases:
+          "Tidak": "no"
+          "terima": "to receive"
+          "kasih": "love; kindness"
+      "Saya tidak tahu.":
+        native: "I don't know."
+        bases:
+          "Saya": "I"
+          "tidak": "not"
+          "tahu": "to know"
+  "ms-0003":
+    native: "I; me"
+    notes:
+      "n1": "Saya is the everyday I. Among close friends people often say aku instead."
+    examples:
+      "Saya dari Malaysia.":
+        native: "I am from Malaysia."
+        bases:
+          "Saya": "I"
+          "dari": "from"
+          "Malaysia": "Malaysia, the country"
+      "Saya suka air.":
+        native: "I like water."
+        bases:
+          "Saya": "I"
+          "suka": "to like"
+  "ms-0004":
+    native: "you (polite)"
+    notes:
+      "n1": "Anda is the polite you, used in writing and with people you do not know well. Friends say awak; to a child or a close friend, kamu."
+    examples:
+      "Anda dari mana?":
+        native: "Where are you from?"
+        bases:
+          "Anda": "you"
+          "dari": "from"
+          "mana": "where"
+      "Anda orang baik.":
+        native: "You are a good person."
+        bases:
+          "Anda": "you"
+          "orang": "person"
+          "baik": "good"
+  "ms-0005":
+    native: "water"
+    notes:
+      "n1": "Air is said ajr: ai is one diphthong, as the English 'eye' followed by r."
+    examples:
+      "Saya mahu air.":
+        native: "I want water."
+        bases:
+          "Saya": "I"
+          "mahu": "to want"
+          "air": "water"
+      "Air panas, tolong.":
+        native: "Hot water, please."
+        bases:
+          "Air": "water"
+          "panas": "hot"
+          "tolong": "please"
+  "ms-0006":
+    native: "good; well; fine"
+    notes:
+      "n1": "Baik means good, and also fine or OK: 'Baik, saya faham' is 'OK, I understand'."
+    examples:
+      "Kopi ini baik.":
+        native: "This coffee is good."
+        bases:
+          "Kopi": "coffee"
+          "ini": "this"
+          "baik": "good"
+      "Saya baik.":
+        native: "I am fine."
+        bases:
+          "Saya": "I"
+          "baik": "fine"
+  "ms-0007":
+    native: "one"
+    notes:
+      "n1": "Malay counts satu, dua, tiga, empat, lima. Dua is two, on the next card."
+    examples:
+      "Satu, dua, tiga.":
+        native: "One, two, three."
+        bases:
+          "Satu": "one"
+          "dua": "two"
+          "tiga": "three"
+      "Saya ada satu adik.":
+        native: "I have one younger sibling."
+        bases:
+          "Saya": "I"
+          "ada": "to have"
+          "satu": "one"
+          "adik": "younger sibling"
+  "ms-0008":
+    native: "two"
+    notes:
+      "n1": "Dua is two. Malay puts the number before its noun: dua kopi, two coffees."
+    examples:
+      "Dua kopi, tolong.":
+        native: "Two coffees, please."
+        bases:
+          "Dua": "two"
+          "kopi": "coffee"
+          "tolong": "please"
+      "Saya ada dua anak.":
+        native: "I have two children."
+        bases:
+          "Saya": "I"
+          "ada": "to have"
+          "dua": "two"
+          "anak": "child"
+  "ms-0009":
+    native: "here"
+    notes:
+      "n1": "Sini is here. Situ is there, near the listener, and sana is over there, far from both."
+    examples:
+      "Saya di sini.":
+        native: "I am here."
+        bases:
+          "Saya": "I"
+          "di": "at"
+          "sini": "here"
+      "Datang sini.":
+        native: "Come here."
+        bases:
+          "Datang": "to come"
+          "sini": "here"
+  "ms-0010":
+    native: "and"
+    notes:
+      "n1": "Dan joins words and clauses, as 'and' does in English. In a list of three, it comes before the last item: A, B dan C."
+    examples:
+      "Nasi dan ikan.":
+        native: "Rice and fish."
+        bases:
+          "Nasi": "rice"
+          "dan": "and"
+          "ikan": "fish"
+      "Saya dan awak.":
+        native: "Me and you."
+        bases:
+          "Saya": "I"
+          "dan": "and"
+          "awak": "you (informal)"

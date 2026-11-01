@@ -125,8 +125,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       next,
       const <SkillKey>[SkillKey(SkillKind.speak), SkillKey(SkillKind.hear)],
       name: _view.name,
-      skill: l10n.languagesSkillSpoken,
-      level: next.spokenLevel.label(l10n),
+      skill: next.spokenLevel == SpokenLevel.hear
+          ? l10n.languagesToastPhraseHear
+          : l10n.languagesToastPhraseSpoken,
+      state: _stateOf(next.spokenLevel),
       toLearn: next.spokenLevel == SpokenLevel.learn,
     );
   }
@@ -140,11 +142,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     return _change(
       next,
       _skills.keysOfScript(script),
-      name: _several
-          ? l10n.languagesToastNameScript(_view.name, scriptName)
-          : _view.name,
-      skill: l10n.languagesSkillScriptName,
-      level: next.scriptLevelOf(script).label(l10n),
+      name: _view.name,
+      skill: next.scriptLevelOf(script) == ScriptLevel.read
+          ? l10n.languagesToastPhraseRead(scriptName)
+          : l10n.languagesToastPhraseScript(scriptName),
+      state: _stateOf(next.scriptLevelOf(script)),
       toLearn: next.scriptLevelOf(script) == ScriptLevel.learn,
     );
   }
@@ -160,18 +162,27 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       next,
       const <SkillKey>[key],
       name: _view.name,
-      skill: l10n.languagesSkillGestures,
-      level: level.label(l10n),
+      skill: l10n.languagesToastPhraseGestures,
+      state: level,
       toLearn: level == SkillState.learn,
     );
   }
+
+  /// What a pill's level means for its toast: learning, already known, or
+  /// neither (the levels Hear, Hear and Speak, Read and Read and Write are
+  /// all Know).
+  SkillState _stateOf(Enum level) => switch (level) {
+    SpokenLevel.learn || ScriptLevel.learn => SkillState.learn,
+    SpokenLevel.leave || ScriptLevel.leave => SkillState.leave,
+    _ => SkillState.know,
+  };
 
   Future<void> _change(
     LanguageSkills next,
     List<SkillKey> keys, {
     required String name,
     required String skill,
-    required String level,
+    required SkillState state,
     required bool toLearn,
   }) async {
     final before = _skills;
@@ -197,7 +208,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       };
     });
     _toast(
-      AppLocalizations.of(context)!.languagesToastSkill(name, skill, level),
+      AppLocalizations.of(context)!
+          .languagesToastSkill(name, skill, state.name),
     );
     if (widget.draft) return;
     _state.applySkills(_view.language, next);
@@ -1030,7 +1042,7 @@ class _Note extends StatelessWidget {
 }
 
 class _PlainBadge extends StatelessWidget {
-  const _PlainBadge({required this.text});
+  const _PlainBadge({super.key, required this.text});
 
   final String text;
 
@@ -1324,9 +1336,9 @@ class _SoundCheckDialogState extends State<_SoundCheckDialog> {
   }
 }
 
-/// The i: the language's badge, how much of B1 is written and the learner's
-/// share, its A1 line, dialect, scripts, taught-from, sizes, last update
-/// check, units built and words.
+/// The i: the language's badge and family tag (#698), how much of B1 is written
+/// and the learner's share, its A1 line, dialect, scripts, taught-from, sizes,
+/// last update check, units built and words.
 class _InfoDialog extends StatelessWidget {
   const _InfoDialog({
     required this.view,
@@ -1371,6 +1383,9 @@ class _InfoDialog extends StatelessWidget {
     final onPhone = downloads == null ? 0 : downloads.sizeOnPhone(view.code);
     final checked = downloads?.checkedAt;
     final taught = course?.nativeFor(spoken)?.name;
+    final family = languageFamilies.contains(view.language.family)
+        ? view.language.family
+        : null;
 
     Widget kv(String label, String value) => Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 8),
@@ -1412,6 +1427,11 @@ class _InfoDialog extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
                 if (tag != null) StageTag(tag: tag),
+                if (family != null)
+                  _PlainBadge(
+                    key: const ValueKey<String>('language-family'),
+                    text: l10n.knownFamily(family),
+                  ),
                 if (progress != null && progress.hasPlan)
                   Text(l10n.languagesPercentB1(progress.percent)),
                 if (share != null)

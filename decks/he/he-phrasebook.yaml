@@ -1,0 +1,188 @@
+schema: 1
+id: "he-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "he", iso639_3: "heb", name: "Hebrew", script: "hebrew", rtl: true, tts: "he-IL", icon: "ע" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "he-0011"
+    target: "לַיְלָה טוֹב."
+    reading: "layla tov."
+    ipa: "ˈlajla tov"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "לַיְלָה", base: "לַיְלָה", reading: "layla" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0012"
+    target: "לְהִתְרָאוֹת."
+    reading: "lehitraót."
+    ipa: "lehitʁaˈot"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "לְהִתְרָאוֹת", base: "לְהִתְרָאוֹת", reading: "lehitraót" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0013"
+    target: "סְלִיחָה."
+    reading: "slichá."
+    ipa: "sliˈχa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "סְלִיחָה", base: "סְלִיחָה", reading: "slichá" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0014"
+    target: "אֲנִי מִצְטַעֵר."
+    reading: "ani mitstaér."
+    ipa: "ˈani mitsˈtaʕer"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "מִצְטַעֵר", base: "לְהִצְטַעֵר", reading: "lehitstaér" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0015"
+    target: "אֲנִי לֹא מֵבִין."
+    reading: "ani lo mevín."
+    ipa: "ˈani lo meˈvin"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "לֹא", ref: "he-0002" }, { word: "מֵבִין", base: "לְהָבִין", reading: "lehavín" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0016"
+    target: "אֲנִי לֹא מְדַבֵּר עִבְרִית."
+    reading: "ani lo medabér ivrít."
+    ipa: "ˈani lo medaˈber ivˈrit"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "לֹא", ref: "he-0002" }, { word: "מְדַבֵּר", base: "לְדַבֵּר", reading: "ledabér" }, { word: "עִבְרִית", base: "עִבְרִית", reading: "ivrít" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0017"
+    target: "אַתָּה מְדַבֵּר אַנְגְּלִית?"
+    reading: "ata medabér anglít?"
+    ipa: "aˈta medaˈber aŋɡˈlit"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "מְדַבֵּר", base: "לְדַבֵּר", reading: "ledabér" }, { word: "אַנְגְּלִית", base: "אַנְגְּלִית", reading: "anglít" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0018"
+    target: "מָה שְׁלוֹמְךָ?"
+    reading: "ma shlomkha?"
+    ipa: "ma ʃlomˈxa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "מָה", base: "מָה", reading: "ma" }, { word: "שְׁלוֹמְךָ", base: "שָׁלוֹם", reading: "shalom" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0019"
+    target: "תְּדַבֵּר לְאַט, בְּבַקָּשָׁה."
+    reading: "tedabér leát, bevakasha."
+    ipa: "tedaˈber leˈat beʋaˈkaʃa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "תְּדַבֵּר", base: "לְדַבֵּר", reading: "ledabér" }, { word: "לְאַט", base: "לְאַט", reading: "leát" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0020"
+    target: "עוֹד פַּעַם, בְּבַקָּשָׁה."
+    reading: "od paám, bevakasha."
+    ipa: "od ˈpaʕam beʋaˈkaʃa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "עוֹד", base: "עוֹד", reading: "od" }, { word: "פַּעַם", base: "פַּעַם", reading: "paám" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0021"
+    target: "כַּמָּה זֶה עוֹלֶה?"
+    reading: "kamá ze olé?"
+    ipa: "ˈkama ze oˈle"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "כַּמָּה", base: "כַּמָּה", reading: "kamá" }, { word: "זֶה", base: "זֶה", reading: "ze" }, { word: "עוֹלֶה", base: "לַעֲלוֹת", reading: "la'alót" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0022"
+    target: "הַחֶשְׁבּוֹן, בְּבַקָּשָׁה."
+    reading: "ha-cheshbón, bevakasha."
+    ipa: "haχeʃˈbon beʋaˈkaʃa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "הַחֶשְׁבּוֹן", base: "חֶשְׁבּוֹן", reading: "cheshbón" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0023"
+    target: "עֶזְרָה!"
+    reading: "ezrá!"
+    ipa: "ezˈʁa"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "עֶזְרָה", base: "עֶזְרָה", reading: "ezrá" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0024"
+    target: "אֵיפֹה הַתַּחֲנָה?"
+    reading: "eifó ha-tachaná?"
+    ipa: "ˈejfo hataχaˈna"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "אֵיפֹה", base: "אֵיפֹה", reading: "eifó" }, { word: "הַתַּחֲנָה", base: "תַּחֲנָה", reading: "tachaná" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0025"
+    target: "מָה זֶה אוֹמֵר?"
+    reading: "ma ze omér?"
+    ipa: "ma ze oˈmeʁ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "מָה", base: "מָה", reading: "ma" }, { word: "זֶה", base: "זֶה", reading: "ze" }, { word: "אוֹמֵר", base: "לוֹמַר", reading: "lomár" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0026"
+    target: "שְׁמִי אַנָּה."
+    reading: "shmi anná."
+    ipa: "ʃmi ˈanna"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "שְׁמִי", base: "שֵׁם", reading: "shem" }, { word: "אַנָּה", base: "אַנָּה", reading: "anná" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0027"
+    target: "נָעִים לְהַכִּיר."
+    reading: "naím lehakír."
+    ipa: "naˈim leˈhakiʁ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "נָעִים", base: "נָעִים", reading: "naím" }, { word: "לְהַכִּיר", base: "לְהַכִּיר", reading: "lehakír" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0028"
+    target: "מֵאֵיפֹה אַתָּה?"
+    reading: "meeifo ata?"
+    ipa: "meˈejfo aˈta"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "מֵאֵיפֹה", base: "מֵאֵיפֹה", reading: "meeifó" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0029"
+    target: "בְּסֵדֶר."
+    reading: "beséder."
+    ipa: "beˈseder"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "בְּסֵדֶר", base: "סֵדֶר", reading: "séder" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "he-0030"
+    target: "בְּתֵאָבוֹן!"
+    reading: "be-teavón!"
+    ipa: "betʔaˈvon"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "בְּתֵאָבוֹן", base: "תֵּאָבוֹן", reading: "teavón" }]
+    notes:
+      - { id: "n1", kind: "note" }

@@ -1,0 +1,106 @@
+schema: 1
+id: jbo-en-first-words
+kind: layer
+core: jbo-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: the answers yes and no, I and you, water, good, one, big, house, go. Lojban words as gismu and cmavo, with their places. Not yet checked by a Lojban speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  jbo-0001:
+    native: yes; that is so
+    notes:
+      n1: Says that what was just said is so, as 'yes'. The phrasebook's je'e (je'e) says 'I agree'.
+    examples:
+      go'i, mi klama.: Yes, I am going.
+      go'i, do xamgu.: Yes, you are good.
+  jbo-0002:
+    native: not; no (negates the word before it)
+    notes:
+      n1: 'Put after the word it negates: mi klama nai, I am not going. Lojban has no separate word for ''no'' in a sentence.'
+    examples:
+      mi klama nai.: I am not going.
+      do xamgu nai.: You are not good.
+  jbo-0003:
+    native: I; me (the speaker)
+    notes:
+      n1: The speaker. Lojban has one word for 'I' and 'me'; the place in the sentence says which.
+    examples:
+      mi klama.: I am going.
+      mi djuno.:
+        native: I know.
+        bases:
+          djuno: to know
+  jbo-0004:
+    native: you (the listener)
+    notes:
+      n1: The person spoken to. It is the same word for one listener or several, unless the sentence says otherwise.
+    examples:
+      do xamgu.: You are good.
+      do klama.: You are going.
+  jbo-0005:
+    native: water (x1 is water)
+    notes:
+      n1: 'A gismu is a predicate with places, so djacu is ''x1 is water''. Its place comes first in a sentence: mi pinxe djacu, I drink water.'
+    examples:
+      djacu barda.: A lot of water.
+      mi pinxe djacu.:
+        native: I drink water.
+        bases:
+          pinxe: to drink
+  jbo-0006:
+    native: good (x1 is good)
+    notes:
+      n1: 'A predicate with places: xamgu is ''x1 is good''. do xamgu, you are good.'
+    examples:
+      zdani xamgu.: The house is good.
+      do xamgu.: You are good.
+  jbo-0007:
+    native: one (the number 1)
+    notes:
+      n1: 'A number. With a description, it is a count: pa lo zdani, one house.'
+    examples:
+      pa lo zdani.:
+        native: One house.
+        bases:
+          lo: a thing (or things) that is
+      re lo zdani.:
+        native: Two houses.
+        bases:
+          re: two
+          lo: a thing (or things) that is
+  jbo-0008:
+    native: big (x1 is big)
+    notes:
+      n1: 'A predicate: zdani barda is ''a big house''. Alone, barda says that its first place is big.'
+    examples:
+      zdani barda.: The house is big.
+      djacu barda.: A lot of water.
+  jbo-0009:
+    native: house; building (x1 is a house for x2)
+    notes:
+      n1: A house or a building. As a description, lo zdani is 'a house', and le zdani is 'the house the speaker means'.
+    examples:
+      ti zdani.:
+        native: This house.
+        bases:
+          ti: this (here)
+      mi klama le zdani.:
+        native: I am going to the house.
+        bases:
+          le: 'the thing the speaker means: the one'
+  jbo-0010:
+    native: goes to; comes to (x1 goes to x2)
+    notes:
+      n1: 'A predicate: mi klama, I go. Its second place is the destination, so mi klama do is ''I come to you''.'
+    examples:
+      mi klama.: I am going.
+      do klama le zdani.:
+        native: You are going to the house.
+        bases:
+          le: 'the thing the speaker means: the one'

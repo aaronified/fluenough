@@ -1,0 +1,436 @@
+# The order Malay is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught ms-en-<name> for ms-<name> (ADR-0013, ADR-0036).
+#
+# This is also Malay's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: Choose Malaysian or Indonesian; time markers (sudah/akan); affixes (ber-, me-, -kan, -i); reduplication; register.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+schema: 1
+kind: "path"
+id: "ms-path"
+language: "ms"
+description: "Malay: the planned path to B1. Only the phrasebook and the first words are written."
+genders: []
+alphabet: []
+units:
+  - decks: ["ms-phrasebook", "ms-first-words", "*"]
+    words: 10
+  - planned: { id: "ms-sound-differences", grammar: ["sound-differences"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short spoken passage in Malay showing sound differences" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Malay showing sound differences" } }
+  - planned: { id: "ms-questions", theme: "questions", words: 12 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short spoken passage in Malay on the theme yes, no and questions" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Malay on the theme yes, no and questions" } }
+  - planned: { id: "ms-pronouns", theme: "pronouns", words: 36 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short spoken passage in Malay on the theme pronouns and people words" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Malay on the theme pronouns and people words" } }
+  - planned: { id: "ms-family", theme: "family", words: 27 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short spoken passage in Malay on the theme family" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Malay on the theme family" } }
+  - planned: { id: "ms-numbers-1-20", theme: "numbers-1-20", words: 22 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short spoken passage in Malay on the theme numbers 1 to 20" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Malay on the theme numbers 1 to 20" } }
+  - planned: { id: "ms-about-me", theme: "about-me", words: 8 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short spoken passage in Malay on the theme talking about yourself" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Malay on the theme talking about yourself" } }
+  - planned: { id: "ms-everyday-verbs", theme: "everyday-verbs", words: 36 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short spoken passage in Malay on the theme everyday verbs" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Malay on the theme everyday verbs" } }
+  - planned: { id: "ms-adverbs", theme: "adverbs", words: 54 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short spoken passage in Malay on the theme adverbs" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Malay on the theme adverbs" } }
+  - planned: { id: "ms-quantities", theme: "quantities", words: 33 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short spoken passage in Malay on the theme quantities" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Malay on the theme quantities" } }
+  - planned: { id: "ms-describing", theme: "describing", words: 43 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short spoken passage in Malay on the theme describing things and feelings" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Malay on the theme describing things and feelings" } }
+  - planned: { id: "ms-time", theme: "time", words: 19 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short spoken passage in Malay on the theme time" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Malay on the theme time" } }
+  - planned: { id: "ms-grammar-word-order", grammar: ["word-order"] }
+    listening_passages:
+      - { id: "grammar-word-order-heard", text: { "en": "A short spoken passage in Malay showing word order" } }
+    reading_passages:
+      - { id: "grammar-word-order-text", text: { "en": "A short written text in Malay showing word order" } }
+  - planned: { id: "ms-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short spoken passage in Malay on the theme location" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Malay on the theme location" } }
+  - planned: { id: "ms-more-verbs", theme: "more-verbs", words: 35 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short spoken passage in Malay on the theme more verbs" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Malay on the theme more verbs" } }
+  - planned: { id: "ms-work", theme: "work", words: 21 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short spoken passage in Malay on the theme work" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Malay on the theme work" } }
+  - planned: { id: "ms-numbers-big", theme: "numbers-big", words: 14 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short spoken passage in Malay on the theme tens and big numbers" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Malay on the theme tens and big numbers" } }
+  - planned: { id: "ms-food", theme: "food", words: 69 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short spoken passage in Malay on the theme food" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Malay on the theme food" } }
+  - planned: { id: "ms-grammar-negation", grammar: ["negation"] }
+    listening_passages:
+      - { id: "grammar-negation-heard", text: { "en": "A short spoken passage in Malay showing negation" } }
+    reading_passages:
+      - { id: "grammar-negation-text", text: { "en": "A short written text in Malay showing negation" } }
+  - planned: { id: "ms-groceries", theme: "groceries", words: 17 }
+    listening_passages:
+      - { id: "groceries-heard", text: { "en": "A short spoken passage in Malay on the theme groceries" } }
+    reading_passages:
+      - { id: "groceries-text", text: { "en": "A short written text in Malay on the theme groceries" } }
+  - planned: { id: "ms-market", theme: "market", words: 8 }
+    listening_passages:
+      - { id: "market-heard", text: { "en": "A short spoken passage in Malay on the theme market" } }
+    reading_passages:
+      - { id: "market-text", text: { "en": "A short written text in Malay on the theme market" } }
+  - planned: { id: "ms-directions", theme: "directions", words: 13 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short spoken passage in Malay on the theme directions" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Malay on the theme directions" } }
+  - planned: { id: "ms-transport", theme: "transport", words: 9 }
+    listening_passages:
+      - { id: "transport-heard", text: { "en": "A short spoken passage in Malay on the theme transport" } }
+    reading_passages:
+      - { id: "transport-text", text: { "en": "A short written text in Malay on the theme transport" } }
+  - planned: { id: "ms-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short spoken passage in Malay on the theme body" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Malay on the theme body" } }
+  - planned: { id: "ms-grammar-questions", grammar: ["question-forms"] }
+    listening_passages:
+      - { id: "grammar-questions-heard", text: { "en": "A short spoken passage in Malay showing question forms" } }
+    reading_passages:
+      - { id: "grammar-questions-text", text: { "en": "A short written text in Malay showing question forms" } }
+  - planned: { id: "ms-places", theme: "places", words: 46 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short spoken passage in Malay on the theme places" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Malay on the theme places" } }
+  - planned: { id: "ms-things", theme: "things", words: 42 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short spoken passage in Malay on the theme things" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Malay on the theme things" } }
+  - planned: { id: "ms-home", theme: "home", words: 21 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short spoken passage in Malay on the theme home" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Malay on the theme home" } }
+  - planned: { id: "ms-clothes", theme: "clothes", words: 28 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short spoken passage in Malay on the theme clothes" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Malay on the theme clothes" } }
+  - planned: { id: "ms-animals", theme: "animals", words: 32 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short spoken passage in Malay on the theme animals" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Malay on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "ms-daily-life", theme: "daily-life", words: 8 }
+    listening_passages:
+      - { id: "daily-life-heard", text: { "en": "A short spoken passage in Malay on the theme a day" } }
+    reading_passages:
+      - { id: "daily-life-text", text: { "en": "A short written text in Malay on the theme a day" } }
+  - planned: { id: "ms-weather", theme: "weather", words: 46 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short spoken passage in Malay on the theme weather" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Malay on the theme weather" } }
+  - planned: { id: "ms-calendar", theme: "calendar", words: 15 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short spoken passage in Malay on the theme calendar" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Malay on the theme calendar" } }
+  - planned: { id: "ms-festivals", theme: "festivals", words: 41 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short spoken passage in Malay on the theme festivals" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Malay on the theme festivals" } }
+  - planned: { id: "ms-grammar-time-markers", grammar: ["time-markers"] }
+    listening_passages:
+      - { id: "grammar-time-markers-heard", text: { "en": "A short spoken passage in Malay showing time markers" } }
+    reading_passages:
+      - { id: "grammar-time-markers-text", text: { "en": "A short written text in Malay showing time markers" } }
+  - planned: { id: "ms-shopping", theme: "shopping", words: 57 }
+    listening_passages:
+      - { id: "shopping-heard", text: { "en": "A short spoken passage in Malay on the theme shopping" } }
+    reading_passages:
+      - { id: "shopping-text", text: { "en": "A short written text in Malay on the theme shopping" } }
+  - planned: { id: "ms-illness", theme: "illness", words: 51 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short spoken passage in Malay on the theme illness" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Malay on the theme illness" } }
+  - planned: { id: "ms-eating-out", theme: "eating-out", words: 9 }
+    listening_passages:
+      - { id: "eating-out-heard", text: { "en": "A short spoken passage in Malay on the theme eating out" } }
+    reading_passages:
+      - { id: "eating-out-text", text: { "en": "A short written text in Malay on the theme eating out" } }
+  - planned: { id: "ms-grammar-affixes", grammar: ["affixes"] }
+    listening_passages:
+      - { id: "grammar-affixes-heard", text: { "en": "A short spoken passage in Malay showing affixes" } }
+    reading_passages:
+      - { id: "grammar-affixes-text", text: { "en": "A short written text in Malay showing affixes" } }
+  - planned: { id: "ms-cooking", theme: "cooking", words: 51 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short spoken passage in Malay on the theme cooking" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Malay on the theme cooking" } }
+  - planned: { id: "ms-help", theme: "help", words: 6 }
+    listening_passages:
+      - { id: "help-heard", text: { "en": "A short spoken passage in Malay on the theme help" } }
+    reading_passages:
+      - { id: "help-text", text: { "en": "A short written text in Malay on the theme help" } }
+  - planned: { id: "ms-school", theme: "school", words: 57 }
+    listening_passages:
+      - { id: "school-heard", text: { "en": "A short spoken passage in Malay on the theme school" } }
+    reading_passages:
+      - { id: "school-text", text: { "en": "A short written text in Malay on the theme school" } }
+  - planned: { id: "ms-grammar-reduplication", grammar: ["reduplication"] }
+    listening_passages:
+      - { id: "grammar-reduplication-heard", text: { "en": "A short spoken passage in Malay showing reduplication" } }
+    reading_passages:
+      - { id: "grammar-reduplication-text", text: { "en": "A short written text in Malay showing reduplication" } }
+  - planned: { id: "ms-hobbies", theme: "hobbies", words: 57 }
+    listening_passages:
+      - { id: "hobbies-heard", text: { "en": "A short spoken passage in Malay on the theme hobbies" } }
+    reading_passages:
+      - { id: "hobbies-text", text: { "en": "A short written text in Malay on the theme hobbies" } }
+  - planned: { id: "ms-chores", theme: "chores", words: 46 }
+    listening_passages:
+      - { id: "chores-heard", text: { "en": "A short spoken passage in Malay on the theme chores" } }
+    reading_passages:
+      - { id: "chores-text", text: { "en": "A short written text in Malay on the theme chores" } }
+  - planned: { id: "ms-appearance", theme: "appearance", words: 56 }
+    listening_passages:
+      - { id: "appearance-heard", text: { "en": "A short spoken passage in Malay on the theme appearance" } }
+    reading_passages:
+      - { id: "appearance-text", text: { "en": "A short written text in Malay on the theme appearance" } }
+  - planned: { id: "ms-verbs-3", theme: "verbs-3", words: 72 }
+    listening_passages:
+      - { id: "verbs-3-heard", text: { "en": "A short spoken passage in Malay on the theme more daily actions" } }
+    reading_passages:
+      - { id: "verbs-3-text", text: { "en": "A short written text in Malay on the theme more daily actions" } }
+  - planned: { id: "ms-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short spoken passage in Malay showing imperative" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Malay showing imperative" } }
+  - planned: { id: "ms-phone", theme: "phone", words: 46 }
+    listening_passages:
+      - { id: "phone-heard", text: { "en": "A short spoken passage in Malay on the theme phone" } }
+    reading_passages:
+      - { id: "phone-text", text: { "en": "A short written text in Malay on the theme phone" } }
+  - planned: { id: "ms-journey", theme: "journey", words: 62 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short spoken passage in Malay on the theme journey" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Malay on the theme journey" } }
+  - planned: { id: "ms-nature", theme: "nature", words: 56 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short spoken passage in Malay on the theme nature" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Malay on the theme nature" } }
+  - planned: { id: "ms-grammar-comparison", grammar: ["comparison"] }
+    listening_passages:
+      - { id: "grammar-comparison-heard", text: { "en": "A short spoken passage in Malay showing comparison" } }
+    reading_passages:
+      - { id: "grammar-comparison-text", text: { "en": "A short written text in Malay showing comparison" } }
+  - planned: { id: "ms-adjectives-2", theme: "adjectives-2", words: 62 }
+    listening_passages:
+      - { id: "adjectives-2-heard", text: { "en": "A short spoken passage in Malay on the theme describing a room" } }
+    reading_passages:
+      - { id: "adjectives-2-text", text: { "en": "A short written text in Malay on the theme describing a room" } }
+  - planned: { id: "ms-workplace", theme: "workplace", words: 51 }
+    listening_passages:
+      - { id: "workplace-heard", text: { "en": "A short spoken passage in Malay on the theme workplace" } }
+    reading_passages:
+      - { id: "workplace-text", text: { "en": "A short written text in Malay on the theme workplace" } }
+  - planned: { id: "ms-geography", theme: "geography", words: 51 }
+    listening_passages:
+      - { id: "geography-heard", text: { "en": "A short spoken passage in Malay on the theme geography" } }
+    reading_passages:
+      - { id: "geography-text", text: { "en": "A short written text in Malay on the theme geography" } }
+    milestone: "A2"
+  - planned: { id: "ms-health", theme: "health", words: 62 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short spoken passage in Malay on the theme health" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Malay on the theme health" } }
+  - planned: { id: "ms-feelings", theme: "feelings", words: 62 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short spoken passage in Malay on the theme feelings" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Malay on the theme feelings" } }
+  - planned: { id: "ms-news", theme: "news", words: 62 }
+    listening_passages:
+      - { id: "news-heard", text: { "en": "A short spoken passage in Malay on the theme news" } }
+    reading_passages:
+      - { id: "news-text", text: { "en": "A short written text in Malay on the theme news" } }
+  - planned: { id: "ms-opinions", theme: "opinions", words: 57 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short spoken passage in Malay on the theme opinions" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Malay on the theme opinions" } }
+  - planned: { id: "ms-travel", theme: "travel", words: 62 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short spoken passage in Malay on the theme travel" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Malay on the theme travel" } }
+  - planned: { id: "ms-grammar-register", grammar: ["register"] }
+    listening_passages:
+      - { id: "grammar-register-heard", text: { "en": "A short spoken passage in Malay showing register" } }
+    reading_passages:
+      - { id: "grammar-register-text", text: { "en": "A short written text in Malay showing register" } }
+  - planned: { id: "ms-services", theme: "services", words: 51 }
+    listening_passages:
+      - { id: "services-heard", text: { "en": "A short spoken passage in Malay on the theme services" } }
+    reading_passages:
+      - { id: "services-text", text: { "en": "A short written text in Malay on the theme services" } }
+  - planned: { id: "ms-government", theme: "government", words: 46 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short spoken passage in Malay on the theme government" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Malay on the theme government" } }
+  - planned: { id: "ms-technology", theme: "technology", words: 56 }
+    listening_passages:
+      - { id: "technology-heard", text: { "en": "A short spoken passage in Malay on the theme technology" } }
+    reading_passages:
+      - { id: "technology-text", text: { "en": "A short written text in Malay on the theme technology" } }
+  - planned: { id: "ms-careers", theme: "careers", words: 56 }
+    listening_passages:
+      - { id: "careers-heard", text: { "en": "A short spoken passage in Malay on the theme careers" } }
+    reading_passages:
+      - { id: "careers-text", text: { "en": "A short written text in Malay on the theme careers" } }
+  - planned: { id: "ms-grammar-subordinate-clauses", grammar: ["subordinate-clauses"] }
+    listening_passages:
+      - { id: "grammar-subordinate-clauses-heard", text: { "en": "A short spoken passage in Malay showing subordinate clauses" } }
+    reading_passages:
+      - { id: "grammar-subordinate-clauses-text", text: { "en": "A short written text in Malay showing subordinate clauses" } }
+  - planned: { id: "ms-environment", theme: "environment", words: 56 }
+    listening_passages:
+      - { id: "environment-heard", text: { "en": "A short spoken passage in Malay on the theme environment" } }
+    reading_passages:
+      - { id: "environment-text", text: { "en": "A short written text in Malay on the theme environment" } }
+  - planned: { id: "ms-agriculture", theme: "agriculture", words: 56 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short spoken passage in Malay on the theme agriculture" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Malay on the theme agriculture" } }
+  - planned: { id: "ms-cinema", theme: "cinema", words: 62 }
+    listening_passages:
+      - { id: "cinema-heard", text: { "en": "A short spoken passage in Malay on the theme cinema" } }
+    reading_passages:
+      - { id: "cinema-text", text: { "en": "A short written text in Malay on the theme cinema" } }
+  - planned: { id: "ms-arts", theme: "arts", words: 51 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short spoken passage in Malay on the theme arts" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Malay on the theme arts" } }
+  - planned: { id: "ms-history", theme: "history", words: 51 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short spoken passage in Malay on the theme history" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Malay on the theme history" } }
+  - planned: { id: "ms-grammar-passive", grammar: ["passive"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short spoken passage in Malay showing passive" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Malay showing passive" } }
+  - planned: { id: "ms-weddings", theme: "weddings", words: 51 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short spoken passage in Malay on the theme weddings" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Malay on the theme weddings" } }
+  - planned: { id: "ms-sports", theme: "sports", words: 46 }
+    listening_passages:
+      - { id: "sports-heard", text: { "en": "A short spoken passage in Malay on the theme sports" } }
+    reading_passages:
+      - { id: "sports-text", text: { "en": "A short written text in Malay on the theme sports" } }
+  - planned: { id: "ms-relationships", theme: "relationships", words: 51 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short spoken passage in Malay on the theme relationships" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Malay on the theme relationships" } }
+  - planned: { id: "ms-housing", theme: "housing", words: 46 }
+    listening_passages:
+      - { id: "housing-heard", text: { "en": "A short spoken passage in Malay on the theme housing" } }
+    reading_passages:
+      - { id: "housing-text", text: { "en": "A short written text in Malay on the theme housing" } }
+  - planned: { id: "ms-grammar-reported-speech", grammar: ["reported-speech"] }
+    listening_passages:
+      - { id: "grammar-reported-speech-heard", text: { "en": "A short spoken passage in Malay showing reported speech" } }
+    reading_passages:
+      - { id: "grammar-reported-speech-text", text: { "en": "A short written text in Malay showing reported speech" } }
+  - planned: { id: "ms-emergencies", theme: "emergencies", words: 41 }
+    listening_passages:
+      - { id: "emergencies-heard", text: { "en": "A short spoken passage in Malay on the theme emergencies" } }
+    reading_passages:
+      - { id: "emergencies-text", text: { "en": "A short written text in Malay on the theme emergencies" } }
+  - planned: { id: "ms-law", theme: "law", words: 41 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short spoken passage in Malay on the theme law" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Malay on the theme law" } }
+  - planned: { id: "ms-verbs-4", theme: "verbs-4", words: 72 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short spoken passage in Malay on the theme story actions" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Malay on the theme story actions" } }
+  - planned: { id: "ms-abstract-words", theme: "abstract-words", words: 62 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short spoken passage in Malay on the theme ideas and values" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Malay on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]
