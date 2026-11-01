@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -432,9 +433,20 @@ class _OwnAndEnglish extends StatelessWidget {
     final own = this.own;
     if (own == null) return Text(english, style: ownStyle);
     final rtl = SpokenLanguage.isRtlText(own);
+    // The Perso-Arabic font the course downloaded, as the cards use it (the
+    // phone's own where none is loaded). Nastaliq climbs and descends far
+    // more than Latin, so it gets the room the cards give it.
+    final family = rtl
+        ? AppScope.of(context).deckDownloads?.fonts.familyFor('perso_arabic')
+        : null;
     Widget text = Text.rich(
       TextSpan(text: own, locale: Locale(language.localeCodeFor(own))),
-      style: ownStyle,
+      style: family == null
+          ? ownStyle
+          : ownStyle.copyWith(
+              fontFamily: family,
+              height: TargetSizes.rtlHeight,
+            ),
       textDirection: rtl ? TextDirection.rtl : null,
     );
     // Filling the line is what puts a right-to-left text at its right edge.
