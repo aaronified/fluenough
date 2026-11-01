@@ -4,6 +4,17 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `skill-pills-onboarding.html`: the skill pills redrawn and the first launch
+  asking Know and Learn (owner, 2026-11-01: "The pill transitions are not
+  very clear." and "During onboarding, show the language screen and explain
+  the options, and then let the users choose what they know and what they
+  want to learn."). NA for Leave, one tint per level, the double tick only
+  for a level found by placement, single skills with their own icon, combined
+  pills with none; the Languages page row and sheet; onboarding's explanation,
+  shared list, skills sheet and Know sheet. Hindustani and Bengali, light and
+  dark, 1.4x. Choices are tweak controls and are listed in
+  `skill-pills-onboarding.md`, with the self-check.
+
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
   colours, accents, etc. Each skill should have one colour associated with
