@@ -1,0 +1,50 @@
+schema: 1
+id: "es-grammar-reported-speech"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["present → imperfect", "future → conditional", "preterite → pluperfect", "order → subjunctive"]
+  entries:
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "present → imperfect": "Dijo que tenía hambre.", "future → conditional": "Dijo que tendría tiempo.", "preterite → pluperfect": "Dijo que había tenido un problema.", "order → subjunctive": "Me pidió que tuviera paciencia." }
+      ipas: { "present → imperfect": "ˈdixo ke teˈnia ˈambɾe", "future → conditional": "ˈdixo ke tenˈdɾia ˈtjempo", "preterite → pluperfect": "ˈdixo ke aˈbia teˈnido un pɾoˈblema", "order → subjunctive": "me piˈdjo ke tuˈbjeɾa paˈθjenθja" }
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "present → imperfect": "Dijo que era médico.", "future → conditional": "Dijo que sería tarde.", "preterite → pluperfect": "Dijo que había sido un error.", "order → subjunctive": "Me pidió que fuera puntual." }
+      ipas: { "present → imperfect": "ˈdixo ke ˈeɾa ˈmediko", "future → conditional": "ˈdixo ke seˈɾia ˈtaɾde", "preterite → pluperfect": "ˈdixo ke aˈbia ˈsido un eˈroɾ", "order → subjunctive": "me piˈdjo ke ˈfweɾa punˈtwal" }
+    - lemma: "estar"
+      ipa: "esˈtaɾ"
+      forms: { "present → imperfect": "Dijo que estaba cansado.", "future → conditional": "Dijo que estaría en casa.", "preterite → pluperfect": "Dijo que había estado enfermo.", "order → subjunctive": "Me pidió que estuviera tranquilo." }
+      ipas: { "present → imperfect": "ˈdixo ke esˈtaba kanˈsado", "future → conditional": "ˈdixo ke estaˈɾia en ˈkasa", "preterite → pluperfect": "ˈdixo ke aˈbia esˈtado enˈfeɾmo", "order → subjunctive": "me piˈdjo ke estuˈbjeɾa tɾanˈkilo" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "present → imperfect": "Dijo que iba al cine.", "future → conditional": "Dijo que iría mañana.", "preterite → pluperfect": "Dijo que había ido al cine.", "order → subjunctive": "Me pidió que fuera conmigo." }
+      ipas: { "present → imperfect": "ˈdixo ke ˈiba al ˈθine", "future → conditional": "ˈdixo ke iˈɾia maˈɲana", "preterite → pluperfect": "ˈdixo ke aˈbia ˈido al ˈθine", "order → subjunctive": "me piˈdjo ke ˈfweɾa konˈmiɡo" }
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "present → imperfect": "Dijo que hablaba inglés.", "future → conditional": "Dijo que hablaría con el jefe.", "preterite → pluperfect": "Dijo que había hablado con el jefe.", "order → subjunctive": "Me pidió que hablara despacio." }
+      ipas: { "present → imperfect": "ˈdixo ke aˈblaba inˈɡles", "future → conditional": "ˈdixo ke ablaˈɾia kon el ˈxefe", "preterite → pluperfect": "ˈdixo ke aˈbia aˈblado kon el ˈxefe", "order → subjunctive": "me piˈdjo ke aˈblaɾa desˈpaθjo" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "present → imperfect": "Dijo que comía pan.", "future → conditional": "Dijo que comería más tarde.", "preterite → pluperfect": "Dijo que había comido.", "order → subjunctive": "Me pidió que comiera algo." }
+      ipas: { "present → imperfect": "ˈdixo ke koˈmia pan", "future → conditional": "ˈdixo ke komeˈɾia mas ˈtaɾde", "preterite → pluperfect": "ˈdixo ke aˈbia koˈmido", "order → subjunctive": "me piˈdjo ke koˈmjeɾa ˈalɡo" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "present → imperfect": "Dijo que vivía en Madrid.", "future → conditional": "Dijo que viviría en el campo.", "preterite → pluperfect": "Dijo que había vivido en Perú.", "order → subjunctive": "Me pidió que viviera aquí." }
+      ipas: { "present → imperfect": "ˈdixo ke biˈbia en maˈdɾid", "future → conditional": "ˈdixo ke bibiˈɾia en el ˈkampo", "preterite → pluperfect": "ˈdixo ke aˈbia biˈbido en peˈɾu", "order → subjunctive": "me piˈdjo ke biˈbjeɾa aˈki" }
+    - lemma: "trabajar"
+      ipa: "tɾabaˈxaɾ"
+      forms: { "present → imperfect": "Dijo que trabajaba mucho.", "future → conditional": "Dijo que trabajaría el sábado.", "preterite → pluperfect": "Dijo que había trabajado ayer.", "order → subjunctive": "Me pidió que trabajara menos." }
+      ipas: { "present → imperfect": "ˈdixo ke tɾabaˈxaba ˈmutʃo", "future → conditional": "ˈdixo ke tɾabaxaˈɾia el ˈsabado", "preterite → pluperfect": "ˈdixo ke aˈbia tɾabaˈxado aˈʝeɾ", "order → subjunctive": "me piˈdjo ke tɾabaˈxaɾa ˈmenos" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "present → imperfect": "Dijo que hacía frío.", "future → conditional": "Dijo que haría la cena.", "preterite → pluperfect": "Dijo que había hecho la tarea.", "order → subjunctive": "Me pidió que hiciera la cama." }
+      ipas: { "present → imperfect": "ˈdixo ke aˈθia ˈfɾio", "future → conditional": "ˈdixo ke aˈɾia la ˈθena", "preterite → pluperfect": "ˈdixo ke aˈbia ˈetʃo la taˈɾea", "order → subjunctive": "me piˈdjo ke iˈθjeɾa la ˈkama" }
+    - lemma: "venir"
+      ipa: "beˈniɾ"
+      forms: { "present → imperfect": "Dijo que venía a las ocho.", "future → conditional": "Dijo que vendría más tarde.", "preterite → pluperfect": "Dijo que había venido.", "order → subjunctive": "Me pidió que viniera pronto." }
+      ipas: { "present → imperfect": "ˈdixo ke beˈnia a las ˈotʃo", "future → conditional": "ˈdixo ke benˈdɾia mas ˈtaɾde", "preterite → pluperfect": "ˈdixo ke aˈbia beˈnido", "order → subjunctive": "me piˈdjo ke biˈnjeɾa ˈpɾonto" }
