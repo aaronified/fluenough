@@ -1,0 +1,150 @@
+schema: 1
+id: "mr-en-environment"
+kind: "layer"
+core: "mr-environment"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Environment"
+description: "Caring for the environment: pollution, recycling, trees and wildlife, and the words for saving water and the air. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1482":
+    native: "environment"
+    notes:
+      "n1": "{1} is the environment, the air, water and land around us."
+    examples:
+      "पर्यावरण स्वच्छ ठेवा.": "Keep the environment clean."
+      "पर्यावरणाचं रक्षण करणं गरजेचं आहे.": { native: "It is necessary to protect the environment.", bases: { "रक्षण": "protection", "आहे": "to be" } }
+  "mr-1483":
+    native: "pollution"
+    notes:
+      "n1": "{1} is pollution, the dirtying of air, water or land."
+    examples:
+      "शहरात हवेचं प्रदूषण जास्त आहे.": { native: "There is more air pollution in the city.", bases: { "शहरात": "in the city", "जास्त": "more", "आहे": "to be" } }
+      "प्रदूषण कमी करा.": { native: "Reduce pollution.", bases: { "कमी": "less" } }
+  "mr-1484":
+    native: "polluted"
+    notes:
+      "n1": "{1} describes water, air or land that is polluted."
+    examples:
+      "ही नदी प्रदूषित झाली आहे.": { native: "This river has become polluted.", bases: { "झाली": "to become", "आहे": "to be" } }
+      "प्रदूषित पाणी पिऊ नका.": "Do not drink polluted water."
+  "mr-1485":
+    native: "recycling, reuse"
+    notes:
+      "n1": "{1} is recycling, using waste again."
+    examples:
+      "प्लास्टिकचा पुनर्वापर करा.": { native: "Recycle the plastic.", bases: { "प्लास्टिकचा": "of plastic" } }
+      "कागदाचा पुनर्वापर होतो.": { native: "Paper is recycled.", bases: { "होतो": "to be" } }
+  "mr-1486":
+    native: "tree (formal)"
+    notes:
+      "n1": "{1} is a tree, a formal word. Daily speech uses झाड (jhāḍ)."
+    examples:
+      "हा वृक्ष खूप जुना आहे.": { native: "This tree is very old.", bases: { "आहे": "to be" } }
+      "वृक्ष लावा.": { native: "Plant a tree.", bases: { "लावा": "to plant" } }
+  "mr-1487":
+    native: "deforestation"
+    notes:
+      "n1": "{1} is deforestation, cutting down forests."
+    examples:
+      "जंगलतोडीमुळे पाऊस कमी झाला.": { native: "Because of deforestation the rain reduced.", bases: { "कमी": "less", "झाला": "to become" } }
+      "जंगलतोड थांबवा.": { native: "Stop deforestation.", bases: { "थांबवा": "to stop" } }
+  "mr-1488":
+    native: "global warming"
+    notes:
+      "n1": "{1} is the warming of the earth's temperature."
+    examples:
+      "तापमानवाढ ही मोठी समस्या आहे.": { native: "Global warming is a big problem.", bases: { "समस्या": "problem", "आहे": "to be" } }
+      "तापमानवाढीमुळे बर्फ वितळतो.": { native: "Because of global warming ice melts.", bases: { "बर्फ": "ice", "वितळतो": "to melt" } }
+  "mr-1489":
+    native: "green"
+    notes:
+      "n1": "{1} means green, related to plants and nature."
+    examples:
+      "हरित ऊर्जा वापरा.": "Use green energy."
+      "शहरात हरित पट्टा आहे.": { native: "There is a green belt in the city.", bases: { "शहरात": "in the city", "पट्टा": "belt", "आहे": "to be" } }
+  "mr-1490":
+    native: "natural"
+    notes:
+      "n1": "{1} describes something that comes from nature."
+    examples:
+      "हे नैसर्गिक रंग आहेत.": { native: "These are natural colours.", bases: { "रंग": "colours", "आहेत": "to be" } }
+      "नैसर्गिक अन्न आरोग्यासाठी चांगलं असतं.": { native: "Natural food is good for health.", bases: { "अन्न": "food", "असतं": "to be" } }
+  "mr-1491":
+    native: "conservation"
+    notes:
+      "n1": "{1} is the conservation or care of something valuable."
+    examples:
+      "पाण्याचं संवर्धन करा.": "Conserve the water."
+      "वन्यजीव संवर्धनासाठी काम होतं.": { native: "Work for wildlife conservation is done.", bases: { "होतं": "to be" } }
+  "mr-1492":
+    native: "wildlife"
+    notes:
+      "n1": "{1} is wildlife, animals living wild in forests."
+    examples:
+      "जंगलात वन्यजीव राहतात.": "Wildlife lives in the forest."
+      "वन्यजीवांचं रक्षण करा.": { native: "Protect wildlife.", bases: { "रक्षण": "protection" } }
+  "mr-1493":
+    native: "protection"
+    notes:
+      "n1": "{1} is protection, keeping something safe from harm."
+    examples:
+      "झाडांचं संरक्षण करा.": "Protect the trees."
+      "पर्यावरण संरक्षण सगळ्यांची जबाबदारी आहे.": { native: "Protecting the environment is everyone's duty.", bases: { "जबाबदारी": "duty", "आहे": "to be" } }
+  "mr-1494":
+    native: "smoke"
+    notes:
+      "n1": "{1} is smoke from a fire or a vehicle."
+    examples:
+      "गाड्यांचा धूर वाढला.": "The smoke from vehicles increased."
+      "कारखान्यातून धूर निघतो.": { native: "Smoke comes out of the factory.", bases: { "निघतो": "to come out" } }
+  "mr-1495":
+    native: "dust"
+    notes:
+      "n1": "{1} is dust."
+    examples:
+      "खोलीत खूप धूळ आहे.": { native: "There is a lot of dust in the room.", bases: { "आहे": "to be" } }
+      "धूळ झटका.": { native: "Shake off the dust.", bases: { "झटका": "to shake" } }
+  "mr-1496":
+    native: "sewage, wastewater"
+    notes:
+      "n1": "{1} is wastewater from homes and factories."
+    examples:
+      "सांडपाणी नदीत सोडू नका.": "Do not let the sewage go into the river."
+      "सांडपाण्याचा निचरा झाला पाहिजे.": { native: "The sewage must be drained.", bases: { "निचरा": "drainage", "झाला": "to become" } }
+  "mr-1497":
+    native: "water shortage"
+    notes:
+      "n1": "{1} is a shortage of water."
+    examples:
+      "उन्हाळ्यात पाणीटंचाई असते.": { native: "There is water shortage in summer.", bases: { "असते": "to be" } }
+      "पाणीटंचाईमुळे लोक त्रस्त आहेत.": { native: "People are troubled by the water shortage.", bases: { "त्रस्त": "troubled", "आहेत": "to be" } }
+  "mr-1498":
+    native: "to save"
+    notes:
+      "n1": "{1} is saving something from loss or harm."
+    examples:
+      "पाणी वाचवा.": "Save water."
+      "त्याने मुलाचा जीव वाचवला.": "He saved the child's life."
+  "mr-1499":
+    native: "to take care of, to protect"
+    notes:
+      "n1": "{1} is looking after something carefully so it is kept safe."
+    examples:
+      "निसर्ग जपला पाहिजे.": "We must protect nature."
+      "आजी फोटो जपून ठेवते.": "Grandmother keeps the photo carefully."
+  "mr-1500":
+    native: "to avoid"
+    notes:
+      "n1": "{1} is avoiding something."
+    examples:
+      "प्लास्टिक पिशव्या टाळा.": "Avoid plastic bags."
+      "धूर टाळलेला बरा.": "It is better to avoid smoke."
+  "mr-1501":
+    native: "to reduce"
+    notes:
+      "n1": "{1} is making something less."
+    examples:
+      "प्रदूषण कमी करायला हवं.": "We should reduce pollution."
+      "गाड्यांचा वापर कमी केला.": "I reduced the use of vehicles."
