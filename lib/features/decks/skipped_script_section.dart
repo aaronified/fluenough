@@ -79,11 +79,14 @@ class _SkippedScriptSectionState extends State<SkippedScriptSection> {
         Material(
           color: scheme.surfaceContainerLow,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadii.card),
+            borderRadius: BorderRadius.circular(AppRadii.field),
             side: BorderSide(color: scheme.outlineVariant),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.all(14),
+            padding: const EdgeInsetsDirectional.symmetric(
+              vertical: 12,
+              horizontal: 14,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -103,8 +106,8 @@ class _SkippedScriptSectionState extends State<SkippedScriptSection> {
                             header: true,
                             child: Text(
                               l10n.pathSkippedScriptTitle(script),
-                              style: theme.textTheme.titleSmall!.copyWith(
-                                fontWeight: FontWeight.w700,
+                              style: theme.textTheme.groupLabel.copyWith(
+                                color: scheme.primary,
                               ),
                             ),
                           ),
