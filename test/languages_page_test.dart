@@ -245,6 +245,30 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('a skill toast says in plain words whether you are learning, '
+      'know or are not learning, without the level names', (tester) async {
+    await pumpLanguages(tester);
+    await tapKey(tester, 'language-es');
+    final text = l10n(tester);
+    final spanish = pickerSpokenList.firstWhere((l) => l.code == 'es').name;
+    final speaking = text.languagesToastPhraseSpoken;
+    final listening = text.languagesToastPhraseHear;
+    // Spanish is Learn; the pill goes Hear, Hear and Speak, Leave, Learn.
+    final expected = <String>[
+      text.languagesToastSkill(spanish, listening, 'know'),
+      text.languagesToastSkill(spanish, speaking, 'know'),
+      text.languagesToastSkill(spanish, speaking, 'leave'),
+      text.languagesToastSkill(spanish, speaking, 'learn'),
+    ];
+    expect(expected[0], '$spanish: you already know listening');
+    expect(expected[2], '$spanish: not learning speaking and listening now');
+    expect(expected[3], '$spanish: you’re learning speaking and listening');
+    for (final message in expected) {
+      await tapKey(tester, 'skill-spoken');
+      expect(find.text(message), findsOneWidget, reason: message);
+    }
+  });
+
   testWidgets('Learn on a skill downloads nothing here but leaves the button '
       'reading Check; a failed sound test keeps it', (tester) async {
     final state = await pumpLanguages(tester);

@@ -125,8 +125,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       next,
       const <SkillKey>[SkillKey(SkillKind.speak), SkillKey(SkillKind.hear)],
       name: _view.name,
-      skill: l10n.languagesSkillSpoken,
-      level: next.spokenLevel.label(l10n),
+      skill: next.spokenLevel == SpokenLevel.hear
+          ? l10n.languagesToastPhraseHear
+          : l10n.languagesToastPhraseSpoken,
+      state: _stateOf(next.spokenLevel),
       toLearn: next.spokenLevel == SpokenLevel.learn,
     );
   }
@@ -140,11 +142,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     return _change(
       next,
       _skills.keysOfScript(script),
-      name: _several
-          ? l10n.languagesToastNameScript(_view.name, scriptName)
-          : _view.name,
-      skill: l10n.languagesSkillScriptName,
-      level: next.scriptLevelOf(script).label(l10n),
+      name: _view.name,
+      skill: next.scriptLevelOf(script) == ScriptLevel.read
+          ? l10n.languagesToastPhraseRead(scriptName)
+          : l10n.languagesToastPhraseScript(scriptName),
+      state: _stateOf(next.scriptLevelOf(script)),
       toLearn: next.scriptLevelOf(script) == ScriptLevel.learn,
     );
   }
@@ -160,18 +162,27 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       next,
       const <SkillKey>[key],
       name: _view.name,
-      skill: l10n.languagesSkillGestures,
-      level: level.label(l10n),
+      skill: l10n.languagesToastPhraseGestures,
+      state: level,
       toLearn: level == SkillState.learn,
     );
   }
+
+  /// What a pill's level means for its toast: learning, already known, or
+  /// neither (the levels Hear, Hear and Speak, Read and Read and Write are
+  /// all Know).
+  SkillState _stateOf(Enum level) => switch (level) {
+    SpokenLevel.learn || ScriptLevel.learn => SkillState.learn,
+    SpokenLevel.leave || ScriptLevel.leave => SkillState.leave,
+    _ => SkillState.know,
+  };
 
   Future<void> _change(
     LanguageSkills next,
     List<SkillKey> keys, {
     required String name,
     required String skill,
-    required String level,
+    required SkillState state,
     required bool toLearn,
   }) async {
     final before = _skills;
@@ -197,7 +208,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       };
     });
     _toast(
-      AppLocalizations.of(context)!.languagesToastSkill(name, skill, level),
+      AppLocalizations.of(context)!
+          .languagesToastSkill(name, skill, state.name),
     );
     if (widget.draft) return;
     _state.applySkills(_view.language, next);

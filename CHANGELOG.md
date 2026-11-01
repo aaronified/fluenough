@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **A splash screen with a loading bar.** Every cold start now opens on the app's mark and name over a thin bar that fills as the review history, the courses and Today's first numbers are ready, for at least two seconds and until all three are, then fades out (not at all with animations off); a line under the bar says which is under way (owner, 2026-11-01: "The performance is still not instantaneous. Leave it. Better add a splash screen with a loading bar (min 2 s, max till all calc ends)"). It does not return when the app is reopened from the background.
 - **Reviewers can add an accepted answer or refuse a synonym.** Suggest a change has two new boxes under Meaning, Another accepted answer and Not a synonym (English meanings only), each adding one word a suggestion (ADR-0050, #924). The app stops an empty word, one the card has already, one of the card's own answers, several answers split by `;` and an accepted answer the card refuses, says why, and sends the rest in the review mail as `alt_native` and `not_synonyms`. Another reviewer's proposal of either shows with Accept, Edit and Reject, and a sent word reads accepted once the card has it.
 
+### Changed
+
+- **Plain toasts.** Changing a skill on Languages now says what it means ("Hindustani: you’re learning speaking and listening", "you already know reading and writing Devanagari", "not learning sign language now") instead of the level names Know, Learn and Leave; removing a language, finding your level, copying the reviewer code, marking a unit done and a word with no sound symbols are in plain words too, as are the lines beside them on Languages (owner, 2026-11-01: "make the toasts sound natural, do not depend on our invented skill names. People do not know what those are").
+
 ## [0.7.1] - 2026-11-01
 
 ### Added
