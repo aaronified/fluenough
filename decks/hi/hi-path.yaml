@@ -653,7 +653,9 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "hi-grammar-habitual-past", grammar: "habitual-past" }
+  - decks: ["hi-grammar-habitual-past"]
+    words: 0
+    grammar: ["habitual-past"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
