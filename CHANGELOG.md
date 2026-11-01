@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **The IPA and English Braille show on the Languages page.** Courses you learn or know in either now appear in Learning or Know, and in Add a language and the first launch's list, with only the pills that mean something: the IPA has Spoken and a read-only script pill, braille has the script pill alone; older lists read as skills with no change to your data.
+
 ## [0.8.0] - 2026-11-01
 
 ### Added
