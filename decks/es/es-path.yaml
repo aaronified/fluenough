@@ -405,7 +405,8 @@ units:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about recycling and the heat" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "es-cinema", theme: "cinema", words: 55 }
+  - decks: ["es-cinema", "es-cinema-sentences", "es-reading-cinema", "*"]
+    words: 26
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
