@@ -1,0 +1,50 @@
+schema: 1
+id: "es-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2297"
+    target: "El alcalde firma el impreso en el ayuntamiento."
+    ipa: "el alˈkalde ˈfiɾma el imˈpɾeso en el aʝuntaˈmjento"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "alcalde", ref: "es-2263" }, { word: "firma", ref: "es-2226" }, { word: "impreso", ref: "es-2285" }, { word: "en", base: "en" }, { word: "ayuntamiento", ref: "es-2287" }]
+    confusables: [{ id: "funcionario", ref: "es-2272", kind: "word" }, { id: "concejal", ref: "es-2264", kind: "word" }]
+  - id: "es-2298"
+    target: "Mi voto es para el candidato del partido."
+    ipa: "mi ˈboto es ˈpaɾa el kandiˈdato del paɾˈtido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "voto", ref: "es-2267" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "candidato", ref: "es-2274" }, { word: "del", base: "del" }, { word: "partido", ref: "es-2269" }]
+    confusables: [{ id: "votacion", ref: "es-2292", kind: "word" }, { id: "campana", ref: "es-2275", kind: "word" }]
+  - id: "es-2299"
+    target: "Necesito un certificado y el DNI."
+    ipa: "neθeˈsito un θeɾtifiˈkado i el dni"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "certificado", ref: "es-2277" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "DNI", ref: "es-2278" }]
+    confusables: [{ id: "documento", ref: "es-0519", kind: "word" }, { id: "padron", ref: "es-2279", kind: "word" }]
+  - id: "es-2300"
+    target: "El ministro habla del gobierno."
+    ipa: "el miˈnistɾo ˈabla del ɡoˈbjeɾno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "ministro", ref: "es-2261" }, { word: "habla", ref: "es-0027" }, { word: "del", base: "del" }, { word: "gobierno", ref: "es-2260" }]
+    confusables: [{ id: "parlamento", ref: "es-2265", kind: "word" }, { id: "ministerio", ref: "es-2262", kind: "word" }]
+  - id: "es-2301"
+    target: "Pagar la multa es un requisito."
+    ipa: "paˈɡaɾ la ˈmulta es un rekiˈsito"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pagar", ref: "es-0295" }, { word: "la", base: "la" }, { word: "multa", ref: "es-2283" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "requisito", ref: "es-2282" }]
+    confusables: [{ id: "tramite", ref: "es-2280", kind: "word" }, { id: "licencia", ref: "es-2284", kind: "word" }]
+  - id: "es-2302"
+    target: "La constitución protege el derecho a votar."
+    ipa: "la konstituˈθjon pɾoˈtexe el deˈɾetʃo a boˈtaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "constitución", ref: "es-2270" }, { word: "protege", base: "proteger" }, { word: "el", base: "el" }, { word: "derecho", ref: "es-2271" }, { word: "a", base: "a" }, { word: "votar", ref: "es-2293" }]
+    confusables: [{ id: "justicia", ref: "es-2273", kind: "word" }, { id: "nacion", ref: "es-2290", kind: "word" }]

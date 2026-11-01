@@ -1,0 +1,50 @@
+schema: 1
+id: "es-grammar-imperative-negative"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["tú", "usted", "nosotros", "vosotros"]
+  entries:
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "tú": "no hables", "usted": "no hable", "nosotros": "no hablemos", "vosotros": "no habléis" }
+      ipas: { "tú": "no ˈables", "usted": "no ˈable", "nosotros": "no aˈblemos", "vosotros": "no aˈblejs" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "tú": "no comas", "usted": "no coma", "nosotros": "no comamos", "vosotros": "no comáis" }
+      ipas: { "tú": "no ˈkomas", "usted": "no ˈkoma", "nosotros": "no koˈmamos", "vosotros": "no koˈmajs" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "tú": "no vivas", "usted": "no viva", "nosotros": "no vivamos", "vosotros": "no viváis" }
+      ipas: { "tú": "no ˈbibas", "usted": "no ˈbiba", "nosotros": "no biˈbamos", "vosotros": "no biˈbajs" }
+    - lemma: "decir"
+      ipa: "deˈθiɾ"
+      forms: { "tú": "no digas", "usted": "no diga", "nosotros": "no digamos", "vosotros": "no digáis" }
+      ipas: { "tú": "no ˈdiɡas", "usted": "no ˈdiɡa", "nosotros": "no diˈɡamos", "vosotros": "no diˈɡajs" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "tú": "no hagas", "usted": "no haga", "nosotros": "no hagamos", "vosotros": "no hagáis" }
+      ipas: { "tú": "no ˈaɡas", "usted": "no ˈaɡa", "nosotros": "no aˈɡamos", "vosotros": "no aˈɡajs" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "tú": "no vayas", "usted": "no vaya", "nosotros": "no vayamos", "vosotros": "no vayáis" }
+      ipas: { "tú": "no ˈbaʝas", "usted": "no ˈbaʝa", "nosotros": "no baˈʝamos", "vosotros": "no baˈʝajs" }
+    - lemma: "poner"
+      ipa: "poˈneɾ"
+      forms: { "tú": "no pongas", "usted": "no ponga", "nosotros": "no pongamos", "vosotros": "no pongáis" }
+      ipas: { "tú": "no ˈponɡas", "usted": "no ˈponɡa", "nosotros": "no ponˈɡamos", "vosotros": "no ponˈɡajs" }
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "tú": "no tengas", "usted": "no tenga", "nosotros": "no tengamos", "vosotros": "no tengáis" }
+      ipas: { "tú": "no ˈtenɡas", "usted": "no ˈtenɡa", "nosotros": "no tenˈɡamos", "vosotros": "no tenˈɡajs" }
+    - lemma: "venir"
+      ipa: "beˈniɾ"
+      forms: { "tú": "no vengas", "usted": "no venga", "nosotros": "no vengamos", "vosotros": "no vengáis" }
+      ipas: { "tú": "no ˈbenɡas", "usted": "no ˈbenɡa", "nosotros": "no benˈɡamos", "vosotros": "no benˈɡajs" }
+    - lemma: "salir"
+      ipa: "saˈliɾ"
+      forms: { "tú": "no salgas", "usted": "no salga", "nosotros": "no salgamos", "vosotros": "no salgáis" }
+      ipas: { "tú": "no ˈsalɡas", "usted": "no ˈsalɡa", "nosotros": "no salˈɡamos", "vosotros": "no salˈɡajs" }

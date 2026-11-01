@@ -1,0 +1,247 @@
+schema: 1
+id: "es-en-journey"
+kind: "layer"
+core: "es-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey"
+license: "CC-BY-SA-4.0"
+description: "Words for travelling by train, plane and car: the ticket and the fare, the platform and the seat, the delay and the luggage, and the verbs to travel, board, check in and land. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1690":
+    native: "trip; journey"
+    notes: { n1: "Viaje is a trip, from one place to another. Buen viaje is have a good trip." }
+    bases: { "el": "the", "viaje": "trip; journey" }
+    examples:
+      "Hago un viaje a Sevilla.": { native: "I make a trip to Seville.", bases: { "un": "a", "viaje": "trip; journey", "a": "to", "Sevilla": "Seville" } }
+      "El viaje dura cuatro horas.": { native: "The journey lasts four hours.", bases: { "El": "the", "viaje": "trip; journey" } }
+  "es-1691":
+    native: "to travel"
+    notes: { n1: "Viajar is to travel, to go to other places. Its yo form is viajo." }
+    bases: { "viajar": "to travel" }
+    examples:
+      "Viajo en tren.": { native: "I travel by train.", bases: { "Viajo": "to travel", "en": "in" } }
+      "Viajamos mucho.": { native: "We travel a lot.", bases: { "Viajamos": "to travel" } }
+  "es-1692":
+    native: "traveller"
+    notes: { n1: "Viajero is a traveller, someone on a journey. The plural is viajeros." }
+    bases: { "el": "the", "viajero": "traveller" }
+    examples:
+      "El viajero espera en el andén.": { native: "The traveller waits on the platform.", bases: { "El": "the", "viajero": "traveller", "en": "in" } }
+      "Los viajeros llegan tarde.": { native: "The travellers arrive late.", bases: { "Los": "the", "viajeros": "traveller" } }
+  "es-1693":
+    native: "platform"
+    notes: { n1: "El andén is the platform of a station, where the train stops." }
+    bases: { "el": "the", "andén": "platform" }
+    examples:
+      "El tren sale del andén dos.": { native: "The train leaves from platform two.", bases: { "El": "the", "del": "of", "andén": "platform" } }
+      "El andén está lleno.": { native: "The platform is full.", bases: { "El": "the", "andén": "platform" } }
+  "es-1694":
+    native: "luggage"
+    notes: { n1: "El equipaje is the luggage of a traveller, all the bags." }
+    bases: { "el": "the", "equipaje": "luggage" }
+    examples:
+      "Mi equipaje es muy pesado.": { native: "My luggage is very heavy.", bases: { "equipaje": "luggage" } }
+      "No llevo equipaje.": { native: "I have no luggage.", bases: { "equipaje": "luggage" } }
+  "es-1695":
+    native: "ticket office"
+    notes: { n1: "La taquilla is the ticket office at a station or a cinema." }
+    bases: { "la": "the", "taquilla": "ticket office" }
+    examples:
+      "Compro el billete en la taquilla.": { native: "I buy the ticket at the ticket office.", bases: { "el": "the", "en": "in", "la": "the", "taquilla": "ticket office" } }
+      "La taquilla está cerrada.": { native: "The ticket office is closed.", bases: { "La": "the", "taquilla": "ticket office" } }
+  "es-1696":
+    native: "carriage"
+    notes: { n1: "El vagón is a carriage of a train." }
+    bases: { "el": "the", "vagón": "carriage" }
+    examples:
+      "El vagón está lleno.": { native: "The carriage is full.", bases: { "El": "the", "vagón": "carriage" } }
+      "Mi asiento está en el vagón tres.": { native: "My seat is in carriage three.", bases: { "en": "in", "el": "the", "vagón": "carriage" } }
+  "es-1697":
+    native: "seat"
+    notes: { n1: "El asiento is a seat, on a train, a bus or a plane." }
+    bases: { "el": "the", "asiento": "seat" }
+    examples:
+      "¿Este asiento está libre?": { native: "Is this seat free?", bases: { "Este": "this", "asiento": "seat" } }
+      "Mi asiento es el número doce.": { native: "My seat is number twelve.", bases: { "asiento": "seat", "el": "the" } }
+  "es-1698":
+    native: "outward journey; single"
+    notes: { n1: "La ida is the outward journey. Billete de ida is a one-way ticket." }
+    bases: { "la": "the", "ida": "outward journey; single" }
+    examples:
+      "Un billete de ida, por favor.": { native: "A single ticket, please.", bases: { "Un": "a", "de": "of", "ida": "outward journey; single", "por": "for", "favor": "please" } }
+      "La ida es a las ocho.": { native: "The outward journey is at eight.", bases: { "La": "the", "ida": "outward journey; single", "a": "to", "las": "the" } }
+  "es-1699":
+    native: "return journey"
+    notes: { n1: "La vuelta is the return journey. Ida y vuelta is a return ticket." }
+    bases: { "la": "the", "vuelta": "return journey" }
+    examples:
+      "Quiero un billete de ida y vuelta.": { native: "I want a return ticket.", bases: { "un": "a", "de": "of", "vuelta": "return journey" } }
+      "La vuelta es el domingo.": { native: "The return is on Sunday.", bases: { "La": "the", "vuelta": "return journey", "el": "the" } }
+  "es-1700":
+    native: "delay"
+    notes: { n1: "El retraso is a delay, when something is late. Con retraso is late." }
+    bases: { "el": "the", "retraso": "delay" }
+    examples:
+      "El tren tiene un retraso de diez minutos.": { native: "The train is ten minutes late.", bases: { "El": "the", "un": "a", "retraso": "delay", "de": "of" } }
+      "Hay un retraso en el vuelo.": { native: "There is a delay on the flight.", bases: { "Hay": "there is; there are", "un": "a", "retraso": "delay", "en": "in", "el": "the" } }
+  "es-1701":
+    native: "flight"
+    notes: { n1: "El vuelo is a flight, by plane. The plural is vuelos." }
+    bases: { "el": "the", "vuelo": "flight" }
+    examples:
+      "Mi vuelo sale a las nueve.": { native: "My flight leaves at nine.", bases: { "a": "to", "las": "the" } }
+      "El vuelo es directo.": { native: "The flight is direct.", bases: { "El": "the", "directo": "direct" } }
+  "es-1702":
+    native: "passenger"
+    notes: { n1: "El pasajero is a passenger on a bus, plane or train." }
+    bases: { "el": "the", "pasajero": "passenger" }
+    examples:
+      "El pasajero muestra el billete.": { native: "The passenger shows the ticket.", bases: { "El": "the", "pasajero": "passenger" } }
+      "Los pasajeros esperan en la puerta.": { native: "The passengers wait at the gate.", bases: { "Los": "the", "pasajeros": "passenger", "en": "in", "la": "the" } }
+  "es-1703":
+    native: "to cancel"
+    notes: { n1: "Cancelar is to cancel a trip, a booking or an event." }
+    bases: { "cancelar": "to cancel" }
+    examples:
+      "Cancelan el vuelo.": { native: "They cancel the flight.", bases: { "Cancelan": "to cancel", "el": "the" } }
+      "Cancelo la reserva.": { native: "I cancel the booking.", bases: { "Cancelo": "to cancel", "la": "the" } }
+  "es-1704":
+    native: "to check in (luggage)"
+    notes: { n1: "Facturar is to check in your luggage at the airport." }
+    bases: { "facturar": "to check in (luggage)" }
+    examples:
+      "Facturo la maleta.": { native: "I check in the suitcase.", bases: { "Facturo": "to check in (luggage)", "la": "the" } }
+      "Facturamos antes de las seis.": { native: "We check in before six.", bases: { "Facturamos": "to check in (luggage)", "de": "of", "las": "the" } }
+  "es-1705":
+    native: "fare"
+    notes: { n1: "La tarifa is the price of a trip, or a fixed rate." }
+    bases: { "la": "the", "tarifa": "fare" }
+    examples:
+      "La tarifa es barata.": { native: "The fare is cheap.", bases: { "La": "the", "tarifa": "fare" } }
+      "¿Cuál es la tarifa?": { native: "What is the fare?", bases: { "la": "the", "tarifa": "fare" } }
+  "es-1706":
+    native: "ticket (informal)"
+    notes: { n1: "El ticket is a ticket, for a bus, a metro or a shop receipt. Billete is the more common word for a train." }
+    bases: { "el": "the", "ticket": "ticket (informal)" }
+    examples:
+      "Compro un ticket.": { native: "I buy a ticket.", bases: { "un": "a", "ticket": "ticket (informal)" } }
+      "El ticket es de papel.": { native: "The ticket is paper.", bases: { "El": "the", "ticket": "ticket (informal)", "de": "of" } }
+  "es-1707":
+    native: "to be late; to be delayed"
+    notes: { n1: "Retrasarse is to be late or delayed. Its yo form is me retraso." }
+    bases: { "retrasarse": "to be late; to be delayed" }
+    examples:
+      "El tren se retrasa hoy.": { native: "The train is late today.", bases: { "El": "the", "se": "yourself", "retrasa": "to be late; to be delayed" } }
+      "Nos retrasamos por el tráfico.": { native: "We are delayed by traffic.", bases: { "Nos": "us", "retrasamos": "to be late; to be delayed", "por": "for", "el": "the", "tráfico": "traffic" } }
+  "es-1708":
+    native: "to get lost"
+    notes: { n1: "Perderse is to get lost, or to miss something. Its stem changes: me pierdo." }
+    bases: { "perderse": "to get lost" }
+    examples:
+      "Me pierdo en la ciudad.": { native: "I get lost in the city.", bases: { "Me": "to me", "pierdo": "to get lost", "en": "in", "la": "the" } }
+      "No te pierdas el tren.": { native: "Do not miss the train.", bases: { "te": "you", "pierdas": "to get lost", "el": "the" } }
+  "es-1709":
+    native: "to board"
+    notes: { n1: "Embarcar is to board a plane, a boat or a train." }
+    bases: { "embarcar": "to board" }
+    examples:
+      "Embarcamos en el barco.": { native: "We board the boat.", bases: { "Embarcamos": "to board", "en": "in", "el": "the" } }
+      "Embarcan a las ocho.": { native: "They board at eight.", bases: { "Embarcan": "to board", "a": "to", "las": "the" } }
+  "es-1710":
+    native: "check; control"
+    notes: { n1: "El control is a check, at a border or an airport. Control de seguridad is security." }
+    bases: { "el": "the", "control": "check; control" }
+    examples:
+      "El control de seguridad es largo.": { native: "The security check is long.", bases: { "El": "the", "control": "check; control", "de": "of", "seguridad": "security" } }
+      "Hay un control en la puerta.": { native: "There is a check at the gate.", bases: { "Hay": "there is; there are", "un": "a", "control": "check; control", "en": "in", "la": "the" } }
+  "es-1711":
+    native: "destination"
+    notes: { n1: "El destino is the place you are travelling to." }
+    bases: { "el": "the", "destino": "destination" }
+    examples:
+      "¿Cuál es tu destino?": { native: "What is your destination?", bases: { "destino": "destination" } }
+      "Llegamos a nuestro destino.": { native: "We arrive at our destination.", bases: { "a": "to", "nuestro": "our", "destino": "destination" } }
+  "es-1712":
+    native: "track; line"
+    notes: { n1: "La vía is the railway track, or a road or a way." }
+    bases: { "la": "the", "vía": "track; line" }
+    examples:
+      "El tren sale de la vía tres.": { native: "The train leaves from track three.", bases: { "El": "the", "de": "of", "la": "the", "vía": "track; line" } }
+      "La vía está mojada.": { native: "The track is wet.", bases: { "La": "the", "vía": "track; line" } }
+  "es-1713":
+    native: "to land (a plane)"
+    notes: { n1: "Aterrizar is to land, of a plane. The opposite is despegar." }
+    bases: { "aterrizar": "to land (a plane)" }
+    examples:
+      "El avión aterriza a las cinco.": { native: "The plane lands at five.", bases: { "El": "the", "aterriza": "to land (a plane)", "a": "to", "las": "the" } }
+      "Aterrizamos en Madrid.": { native: "We land in Madrid.", bases: { "Aterrizamos": "to land (a plane)", "en": "in", "Madrid": "Madrid" } }
+  "es-1714":
+    native: "to take off (a plane)"
+    notes: { n1: "Despegar is to take off, of a plane. The opposite is aterrizar." }
+    bases: { "despegar": "to take off (a plane)" }
+    examples:
+      "El avión despega a tiempo.": { native: "The plane takes off on time.", bases: { "El": "the", "despega": "to take off (a plane)", "a": "to", "tiempo": "time" } }
+      "Despegamos a las nueve.": { native: "We take off at nine.", bases: { "Despegamos": "to take off (a plane)", "a": "to", "las": "the" } }
+  "es-1715":
+    native: "toll"
+    notes: { n1: "El peaje is a toll, the money paid to use a road." }
+    bases: { "el": "the", "peaje": "toll" }
+    examples:
+      "Pagamos el peaje.": { native: "We pay the toll.", bases: { "el": "the", "peaje": "toll" } }
+      "El peaje es caro.": { native: "The toll is expensive.", bases: { "El": "the", "peaje": "toll" } }
+  "es-1716":
+    native: "petrol; fuel"
+    notes: { n1: "La gasolina is petrol, the fuel for a car." }
+    bases: { "la": "the", "gasolina": "petrol; fuel" }
+    examples:
+      "Necesitamos gasolina.": { native: "We need petrol.", bases: { "gasolina": "petrol; fuel" } }
+      "La gasolina es cara.": { native: "Petrol is expensive.", bases: { "La": "the", "gasolina": "petrol; fuel" } }
+  "es-1717":
+    native: "petrol station"
+    notes: { n1: "La gasolinera is the petrol station, where you buy fuel." }
+    bases: { "la": "the", "gasolinera": "petrol station" }
+    examples:
+      "La gasolinera está cerca.": { native: "The petrol station is near.", bases: { "La": "the", "gasolinera": "petrol station" } }
+      "Paro en la gasolinera.": { native: "I stop at the petrol station.", bases: { "Paro": "to stop", "en": "in", "la": "the", "gasolinera": "petrol station" } }
+  "es-1718":
+    native: "itinerary"
+    notes: { n1: "El itinerario is a plan of a journey, with the places and times." }
+    bases: { "el": "the", "itinerario": "itinerary" }
+    examples:
+      "El itinerario es muy largo.": { native: "The itinerary is very long.", bases: { "El": "the", "itinerario": "itinerary" } }
+      "Tengo un itinerario claro.": { native: "I have a clear itinerary.", bases: { "un": "a", "itinerario": "itinerary" } }
+  "es-1719":
+    native: "guide; guidebook"
+    notes: { n1: "La guía is a guidebook, or a person who shows the way." }
+    bases: { "la": "the", "guía": "guide; guidebook" }
+    examples:
+      "La guía dice que el museo es bonito.": { native: "The guidebook says the museum is pretty.", bases: { "La": "the", "guía": "guide; guidebook", "que": "that", "el": "the" } }
+      "Tenemos una guía en el viaje.": { native: "We have a guide on the trip.", bases: { "una": "a", "guía": "guide; guidebook", "en": "in", "el": "the" } }
+  "es-1720":
+    native: "boarding"
+    notes: { n1: "El embarque is the boarding of a plane or a boat." }
+    bases: { "el": "the", "embarque": "boarding" }
+    examples:
+      "El embarque empieza a las ocho.": { native: "Boarding starts at eight.", bases: { "El": "the", "embarque": "boarding", "a": "to", "las": "the" } }
+      "La puerta de embarque es la cinco.": { native: "The boarding gate is five.", bases: { "La": "the", "de": "of", "embarque": "boarding" } }
+  "es-1721":
+    native: "customs"
+    notes: { n1: "La aduana is the customs, the check at a border." }
+    bases: { "la": "the", "aduana": "customs" }
+    examples:
+      "Pasamos por la aduana.": { native: "We go through customs.", bases: { "por": "for", "la": "the", "aduana": "customs" } }
+      "La aduana está cerrada.": { native: "Customs is closed.", bases: { "La": "the", "aduana": "customs" } }
+  "es-1722":
+    native: "helmet"
+    notes: { n1: "El casco is a helmet, for a bicycle or a motorbike." }
+    bases: { "el": "the", "casco": "helmet" }
+    examples:
+      "Llevo casco en la bicicleta.": { native: "I wear a helmet on the bicycle.", bases: { "casco": "helmet", "en": "in", "la": "the" } }
+      "El casco es azul.": { native: "The helmet is blue.", bases: { "El": "the", "casco": "helmet" } }
+  "es-1723":
+    native: "hostel"
+    notes: { n1: "El hostal is a cheap hotel, with simple rooms." }
+    bases: { "el": "the", "hostal": "hostel" }
+    examples:
+      "Nos quedamos en un hostal.": { native: "We stay in a hostel.", bases: { "Nos": "us", "en": "in", "un": "a", "hostal": "hostel" } }
+      "El hostal es barato.": { native: "The hostel is cheap.", bases: { "El": "the", "hostal": "hostel" } }

@@ -1,0 +1,27 @@
+schema: 1
+id: "es-en-grammar-subjunctive-present"
+kind: "layer"
+core: "es-grammar-subjunctive-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Subjunctive: I hope you come"
+license: "CC-BY-SA-4.0"
+description: "The present subjunctive is for wishes, hopes, doubts and advice that another person should act on: espero que vengas, I hope you come; quiero que descanses, I want you to rest. For -ar verbs the endings are -e, -es, -e, -emos, -éis, -en; for -er and -ir verbs they are -a, -as, -a, -amos, -áis, -an. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Present subjunctive, regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "ser": "to be"
+    "estar": "to be (place, state)"
+    "ir": "to go"
+    "tener": "to have"
+    "hacer": "to do; to make"
+    "poder": "to be able to"
+    "querer": "to want"
+    "venir": "to come"
+    "pensar": "to think"
+  notes: "The present subjunctive takes the opposite vowel to the indicative: -ar verbs take -e, and -er and -ir verbs take -a. Irregular verbs change the stem: tenga, haga, venga, diga, salga; ser and ir and estar are irregular too (sea, vaya, esté). Stem changes stay: pensar (piense), querer (quiera), poder (pueda). Use the subjunctive after quiero que, espero que, es importante que, ojalá, and to doubt."

@@ -1,0 +1,50 @@
+schema: 1
+id: "es-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1388"
+    target: "Estudio para el examen de inglés."
+    ipa: "esˈtudjo ˈpaɾa el ekˈsamen de inˈɡles"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estudio", ref: "es-0258" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }, { word: "de", base: "de" }, { word: "inglés", ref: "es-1369" }]
+    confusables: [{ id: "aprobar", ref: "es-1380", kind: "word" }, { id: "suspender", ref: "es-1381", kind: "word" }]
+  - id: "es-1389"
+    target: "La profesora escribe en la pizarra."
+    ipa: "la pɾofeˈsoɾa esˈkɾibe en la piˈθara"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "profesora", ref: "es-0094" }, { word: "escribe", ref: "es-0297" }, { word: "en", base: "en" }, { word: "pizarra", ref: "es-1361" }]
+    confusables: [{ id: "ensenar", ref: "es-1375", kind: "word" }, { id: "libro", ref: "es-0011", kind: "word" }]
+  - id: "es-1390"
+    target: "No recuerdo la respuesta de la pregunta."
+    ipa: "no reˈkweɾdo la resˈpwesta de la pɾeˈɡunta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "recuerdo", ref: "es-1379" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }, { word: "de", base: "de" }, { word: "pregunta", base: "pregunta" }]
+    confusables: [{ id: "olvidar", ref: "es-1378", kind: "word" }, { id: "responder", ref: "es-1377", kind: "word" }]
+  - id: "es-1391"
+    target: "En el recreo jugamos en el patio."
+    ipa: "en el reˈkɾeo xuˈɡamos en el ˈpatjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "En", base: "en" }, { word: "el", base: "el" }, { word: "recreo", ref: "es-1363" }, { word: "jugamos", base: "jugar" }, { word: "patio", ref: "es-1364" }]
+    confusables: [{ id: "aula", ref: "es-1365", kind: "word" }, { id: "escuela", ref: "es-1355", kind: "word" }]
+  - id: "es-1392"
+    target: "Tengo una beca para el curso."
+    ipa: "ˈtenɡo ˈuna ˈbeka ˈpaɾa el ˈkuɾso"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "beca", ref: "es-1382" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "curso", ref: "es-1383" }]
+    confusables: [{ id: "examen", ref: "es-1359", kind: "word" }, { id: "nota", ref: "es-1360", kind: "word" }]
+  - id: "es-1393"
+    target: "Saco una buena nota en la asignatura."
+    ipa: "ˈsako ˈuna ˈbwena ˈnota en la asiɡnaˈtuɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Saco", base: "sacar" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "nota", ref: "es-1360" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "asignatura", ref: "es-1366" }]
+    confusables: [{ id: "clase", ref: "es-1356", kind: "word" }, { id: "examen", ref: "es-1359", kind: "word" }]

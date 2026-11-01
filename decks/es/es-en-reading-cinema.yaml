@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-cinema"
+name: "Reading: a film review and the listings"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a short film review, and the cinema listings for the week. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-film-review"
+    title: "A short film review"
+    theme: "cinema"
+    sentences:
+      - text: "La película es una comedia muy divertida."
+      - text: "El protagonista actúa muy bien."
+      - text: "El guion es sencillo, pero la música es bonita."
+      - text: "Recomiendo la película a todos los espectadores."
+    questions:
+      - id: "es-2491"
+        prompt: { en: "What genre is the film?" }
+        options:
+          - { en: "Comedy" }
+          - { en: "Horror" }
+          - { en: "Documentary" }
+        answer: 1
+      - id: "es-2492"
+        prompt: { en: "How does the lead actor perform?" }
+        options:
+          - { en: "Very well" }
+          - { en: "Badly" }
+          - { en: "Not at all" }
+        answer: 1
+      - id: "es-2493"
+        prompt: { en: "Who does the writer recommend the film to?" }
+        options:
+          - { en: "All the viewers" }
+          - { en: "Children only" }
+          - { en: "Critics only" }
+        answer: 1
+  - id: "es-cinema-listings"
+    title: "The cinema listings"
+    theme: "cinema"
+    sentences:
+      - text: "Estreno esta semana: un documental sobre el mar."
+      - text: "La sala tres tiene subtítulos en español."
+      - text: "La entrada cuesta cinco euros."
+      - text: "El premio del festival es para la mejor película."
+    questions:
+      - id: "es-2494"
+        prompt: { en: "What opens this week?" }
+        options:
+          - { en: "A documentary about the sea" }
+          - { en: "A horror film" }
+          - { en: "A comedy" }
+        answer: 1
+      - id: "es-2495"
+        prompt: { en: "What does screen three have?" }
+        options:
+          - { en: "Spanish subtitles" }
+          - { en: "Dubbing" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "es-2496"
+        prompt: { en: "What is the festival prize for?" }
+        options:
+          - { en: "The best film" }
+          - { en: "The best actor" }
+          - { en: "The best screen" }
+        answer: 1

@@ -1,0 +1,32 @@
+schema: 1
+id: "es-en-feelings-sentences"
+kind: "layer"
+core: "es-feelings-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: feelings"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about feelings and moods, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2034":
+    native: "The dark scares me and I sometimes cry."
+    bases: { "Me": "to me", "la": "the", "oscuridad": "darkness", "a": "to" }
+    confusables: { "miedo": { why: "Miedo is fear, the feeling itself." }, "temer": { why: "Temer is to fear, another verb for the same feeling." } }
+  "es-2035":
+    native: "I am worried about my sister."
+    bases: { "por": "for" }
+    confusables: { "enfadado": { why: "Enfadado is cross, a different anger." }, "tristeza": { why: "Tristeza is sadness, not worry." } }
+  "es-2036":
+    native: "I love the children's joy."
+    bases: { "Me": "to me", "la": "the", "de": "of", "los": "the" }
+    confusables: { "ilusion": { why: "Ilusión is excitement about the future." }, "felicidad": { why: "Felicidad is deep happiness, a lasting state." } }
+  "es-2037":
+    native: "I feel embarrassed about the mistake."
+    bases: { "por": "for", "el": "the", "error": "mistake" }
+    confusables: { "culpa": { why: "Culpa is guilt, the blame for doing wrong." }, "avergonzado": { why: "Avergonzado is embarrassed, the adjective." } }
+  "es-2038":
+    native: "I am surprised, but relieved."
+    confusables: { "emocion": { why: "Emoción is a strong feeling, not a state of relief." }, "calma": { why: "Calma is calm, the opposite of surprise." } }
+  "es-2039":
+    native: "I am alone, but grateful for the company."
+    bases: { "por": "for", "la": "the" }
+    confusables: { "soledad": { why: "Soledad is loneliness, the feeling of being alone." }, "orgullo": { why: "Orgullo is pride, a different feeling." } }

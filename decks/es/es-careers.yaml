@@ -1,0 +1,466 @@
+schema: 1
+id: "es-careers"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "careers"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2359"
+    target: "el empleo"
+    ipa: "el emˈpleo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "empleo", base: "empleo" }]
+    examples:
+      - target: "Busco un empleo nuevo."
+        ipa: "ˈbusko un emˈpleo ˈnwebo"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "un", base: "un" }, { word: "empleo", base: "empleo" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "El empleo es estable."
+        ipa: "el emˈpleo es esˈtable"
+        bases: [{ word: "El", base: "el" }, { word: "empleo", base: "empleo" }, { word: "es", ref: "es-0022" }, { word: "estable", base: "estable" }]
+  - id: "es-2360"
+    target: "la carrera"
+    ipa: "la kaˈreɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "carrera", base: "carrera" }]
+    examples:
+      - target: "Mi carrera es la medicina."
+        ipa: "mi kaˈreɾa es la mediˈθina"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "carrera", base: "carrera" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "medicina", ref: "es-1463" }]
+      - target: "Tengo una buena carrera."
+        ipa: "ˈtenɡo ˈuna ˈbwena kaˈreɾa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "carrera", base: "carrera" }]
+  - id: "es-2361"
+    target: "el oficio"
+    ipa: "el oˈfiθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "oficio", base: "oficio" }]
+    examples:
+      - target: "Mi padre tiene un oficio."
+        ipa: "mi ˈpadɾe ˈtjene un oˈfiθjo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "oficio", base: "oficio" }]
+      - target: "El oficio de carpintero es antiguo."
+        ipa: "el oˈfiθjo de kaɾpinˈteɾo es anˈtiɡwo"
+        bases: [{ word: "El", base: "el" }, { word: "oficio", base: "oficio" }, { word: "de", base: "de" }, { word: "carpintero", ref: "es-2240" }, { word: "es", ref: "es-0022" }, { word: "antiguo", ref: "es-1804" }]
+  - id: "es-2362"
+    target: "el currículum"
+    ipa: "el kuˈrikulum"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "currículum", base: "currículum" }]
+    examples:
+      - target: "Envío mi currículum hoy."
+        ipa: "enˈbio mi kuˈrikulum oj"
+        bases: [{ word: "Envío", ref: "es-1652" }, { word: "mi", ref: "es-0129" }, { word: "currículum", base: "currículum" }, { word: "hoy", ref: "es-0331" }]
+      - target: "El currículum tiene dos páginas."
+        ipa: "el kuˈrikulum ˈtjene dos ˈpaxinas"
+        bases: [{ word: "El", base: "el" }, { word: "currículum", base: "currículum" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "páginas", base: "página" }]
+  - id: "es-2363"
+    target: "la experiencia"
+    ipa: "la ekspeˈɾjenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "experiencia", base: "experiencia" }]
+    examples:
+      - target: "Tengo mucha experiencia."
+        ipa: "ˈtenɡo ˈmutʃa ekspeˈɾjenθja"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "experiencia", base: "experiencia" }]
+      - target: "La experiencia es importante."
+        ipa: "la ekspeˈɾjenθja es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "experiencia", base: "experiencia" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-2364"
+    target: "la formación"
+    ipa: "la foɾmaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "formación", base: "formación" }]
+    examples:
+      - target: "Tengo una buena formación."
+        ipa: "ˈtenɡo ˈuna ˈbwena foɾmaˈθjon"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "formación", base: "formación" }]
+      - target: "La formación es gratis."
+        ipa: "la foɾmaˈθjon es ˈɡɾatis"
+        bases: [{ word: "La", base: "la" }, { word: "formación", base: "formación" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+  - id: "es-2365"
+    target: "el título"
+    ipa: "el ˈtitulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "título", base: "título" }]
+    examples:
+      - target: "Tengo un título en historia."
+        ipa: "ˈtenɡo un ˈtitulo en isˈtoɾja"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "título", base: "título" }, { word: "en", base: "en" }, { word: "historia", base: "historia" }]
+      - target: "El título del libro es largo."
+        ipa: "el ˈtitulo del ˈlibɾo es ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "título", base: "título" }, { word: "del", base: "del" }, { word: "libro", ref: "es-0011" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+  - id: "es-2366"
+    target: "el ascenso"
+    ipa: "el asˈθenso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ascenso", base: "ascenso" }]
+    examples:
+      - target: "Quiero un ascenso."
+        ipa: "ˈkjeɾo un asˈθenso"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "ascenso", base: "ascenso" }]
+      - target: "El ascenso llega en un año."
+        ipa: "el asˈθenso ˈʝeɡa en un ˈaɲo"
+        bases: [{ word: "El", base: "el" }, { word: "ascenso", base: "ascenso" }, { word: "llega", ref: "es-0290" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+  - id: "es-2367"
+    target: "el plazo"
+    ipa: "el ˈplaθo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "plazo", base: "plazo" }]
+    examples:
+      - target: "El plazo termina el viernes."
+        ipa: "el ˈplaθo teɾˈmina el ˈbjeɾnes"
+        bases: [{ word: "El", base: "el" }, { word: "plazo", base: "plazo" }, { word: "termina", ref: "es-0521" }, { word: "viernes", ref: "es-0962" }]
+      - target: "Tengo un plazo de dos semanas."
+        ipa: "ˈtenɡo un ˈplaθo de dos seˈmanas"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "plazo", base: "plazo" }, { word: "de", base: "de" }, { word: "dos", ref: "es-0206" }, { word: "semanas", ref: "es-0840" }]
+  - id: "es-2368"
+    target: "la referencia"
+    ipa: "la refeˈɾenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "referencia", base: "referencia" }]
+    examples:
+      - target: "Necesito dos referencias."
+        ipa: "neθeˈsito dos refeˈɾenθjas"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "dos", ref: "es-0206" }, { word: "referencias", base: "referencia" }]
+      - target: "Mi jefe es mi referencia."
+        ipa: "mi ˈxefe es mi refeˈɾenθja"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "jefe", ref: "es-0504" }, { word: "es", ref: "es-0022" }, { word: "referencia", base: "referencia" }]
+  - id: "es-2369"
+    target: "la vacante"
+    ipa: "la baˈkante"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vacante", base: "vacante" }]
+    examples:
+      - target: "Hay una vacante en la oficina."
+        ipa: "aj ˈuna baˈkante en la ofiˈθina"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "vacante", base: "vacante" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+      - target: "La vacante es para un contable."
+        ipa: "la baˈkante es ˈpaɾa un konˈtable"
+        bases: [{ word: "La", base: "la" }, { word: "vacante", base: "vacante" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "un", base: "un" }, { word: "contable", base: "contable" }]
+  - id: "es-2370"
+    target: "la habilidad"
+    ipa: "la abiliˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "habilidad", base: "habilidad" }]
+    examples:
+      - target: "Tengo habilidad con los números."
+        ipa: "ˈtenɡo abiliˈdad kon los ˈnumeɾos"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "habilidad", base: "habilidad" }, { word: "con", base: "con" }, { word: "los", base: "los" }, { word: "números", ref: "es-0250" }]
+      - target: "La habilidad se aprende."
+        ipa: "la abiliˈdad se aˈpɾende"
+        bases: [{ word: "La", base: "la" }, { word: "habilidad", base: "habilidad" }, { word: "se", base: "se" }, { word: "aprende", ref: "es-0299" }]
+  - id: "es-2371"
+    target: "la capacidad"
+    ipa: "la kapaθiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "capacidad", base: "capacidad" }]
+    examples:
+      - target: "Tengo capacidad para el trabajo."
+        ipa: "ˈtenɡo kapaθiˈdad ˈpaɾa el tɾaˈbaxo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "capacidad", base: "capacidad" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }]
+      - target: "La capacidad del teatro es grande."
+        ipa: "la kapaθiˈdad del teˈatɾo es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "capacidad", base: "capacidad" }, { word: "del", base: "del" }, { word: "teatro", ref: "es-0780" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2372"
+    target: "la oportunidad"
+    ipa: "la opoɾtuniˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "oportunidad", base: "oportunidad" }]
+    examples:
+      - target: "Es una buena oportunidad."
+        ipa: "es ˈuna ˈbwena opoɾtuniˈdad"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "oportunidad", base: "oportunidad" }]
+      - target: "Doy una oportunidad a la idea."
+        ipa: "doj ˈuna opoɾtuniˈdad a la iˈdea"
+        bases: [{ word: "Doy", ref: "es-1629" }, { word: "una", base: "una" }, { word: "oportunidad", base: "oportunidad" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "idea", ref: "es-2112" }]
+  - id: "es-2373"
+    target: "la jubilación"
+    ipa: "la xubilaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "jubilación", base: "jubilación" }]
+    examples:
+      - target: "La jubilación es a los sesenta."
+        ipa: "la xubilaˈθjon es a los seˈsenta"
+        bases: [{ word: "La", base: "la" }, { word: "jubilación", base: "jubilación" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "sesenta", ref: "es-0539" }]
+      - target: "Pienso en mi jubilación."
+        ipa: "ˈpjenso en mi xubilaˈθjon"
+        bases: [{ word: "Pienso", ref: "es-1617" }, { word: "en", base: "en" }, { word: "mi", ref: "es-0129" }, { word: "jubilación", base: "jubilación" }]
+  - id: "es-2374"
+    target: "el abogado"
+    ipa: "el aboˈɡado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "abogado", base: "abogado" }]
+    examples:
+      - target: "El abogado revisa el contrato."
+        ipa: "el aboˈɡado reˈbisa el konˈtɾato"
+        bases: [{ word: "El", base: "el" }, { word: "abogado", base: "abogado" }, { word: "revisa", base: "revisar" }, { word: "contrato", ref: "es-1852" }]
+      - target: "Mi hermana es abogada."
+        ipa: "mi eɾˈmana es aboˈɡada"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "abogada", base: "abogado" }]
+  - id: "es-2375"
+    target: "el arquitecto"
+    ipa: "el aɾkiˈtekto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "arquitecto", base: "arquitecto" }]
+    examples:
+      - target: "El arquitecto dibuja la casa."
+        ipa: "el aɾkiˈtekto diˈbuxa la ˈkasa"
+        bases: [{ word: "El", base: "el" }, { word: "arquitecto", base: "arquitecto" }, { word: "dibuja", base: "dibujar" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+      - target: "Quiero ser arquitecto."
+        ipa: "ˈkjeɾo seɾ aɾkiˈtekto"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "ser", ref: "es-0022" }, { word: "arquitecto", base: "arquitecto" }]
+  - id: "es-2376"
+    target: "el agricultor"
+    ipa: "el aɡɾikulˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "agricultor", base: "agricultor" }]
+    examples:
+      - target: "El agricultor cosecha el trigo."
+        ipa: "el aɡɾikulˈtoɾ koˈsetʃa el ˈtɾiɡo"
+        bases: [{ word: "El", base: "el" }, { word: "agricultor", base: "agricultor" }, { word: "cosecha", ref: "es-1785" }, { word: "trigo", base: "trigo" }]
+      - target: "Mi abuelo es agricultor."
+        ipa: "mi aˈbwelo es aɡɾikulˈtoɾ"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }, { word: "es", ref: "es-0022" }, { word: "agricultor", base: "agricultor" }]
+  - id: "es-2377"
+    target: "el granjero"
+    ipa: "el ɡɾanˈxeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "granjero", base: "granjero" }]
+    examples:
+      - target: "El granjero cuida las vacas."
+        ipa: "el ɡɾanˈxeɾo ˈkwida las ˈbakas"
+        bases: [{ word: "El", base: "el" }, { word: "granjero", base: "granjero" }, { word: "cuida", ref: "es-1487" }, { word: "las", base: "las" }, { word: "vacas", ref: "es-1069" }]
+      - target: "La granjera vende huevos."
+        ipa: "la ɡɾanˈxeɾa ˈbende ˈwebos"
+        bases: [{ word: "La", base: "la" }, { word: "granjera", base: "granjero" }, { word: "vende", ref: "es-0522" }, { word: "huevos", ref: "es-0604" }]
+  - id: "es-2378"
+    target: "el albañil"
+    ipa: "el albaˈɲil"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "albañil", base: "albañil" }]
+    examples:
+      - target: "El albañil construye la pared."
+        ipa: "el albaˈɲil konsˈtɾuʝe la paˈɾed"
+        bases: [{ word: "El", base: "el" }, { word: "albañil", base: "albañil" }, { word: "construye", base: "construir" }, { word: "la", base: "la" }, { word: "pared", ref: "es-0818" }]
+      - target: "Hay tres albañiles en la obra."
+        ipa: "aj tɾes albaˈɲiles en la ˈobɾa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "tres", ref: "es-0207" }, { word: "albañiles", base: "albañil" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "obra", base: "obra" }]
+  - id: "es-2379"
+    target: "el artista"
+    ipa: "el aɾˈtista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "artista", base: "artista" }]
+    examples:
+      - target: "El artista pinta un cuadro."
+        ipa: "el aɾˈtista ˈpinta un ˈkwadɾo"
+        bases: [{ word: "El", base: "el" }, { word: "artista", base: "artista" }, { word: "pinta", ref: "es-1404" }, { word: "un", base: "un" }, { word: "cuadro", base: "cuadro" }]
+      - target: "Mi amiga es artista."
+        ipa: "mi aˈmiɡa es aɾˈtista"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "amiga", base: "amiga" }, { word: "es", ref: "es-0022" }, { word: "artista", base: "artista" }]
+  - id: "es-2380"
+    target: "el músico"
+    ipa: "el ˈmusiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "músico", base: "músico" }]
+    examples:
+      - target: "El músico toca la guitarra."
+        ipa: "el ˈmusiko ˈtoka la ɡiˈtara"
+        bases: [{ word: "El", base: "el" }, { word: "músico", base: "músico" }, { word: "toca", ref: "es-1406" }, { word: "la", base: "la" }, { word: "guitarra", ref: "es-1407" }]
+      - target: "Mi hermano es músico."
+        ipa: "mi eɾˈmano es ˈmusiko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "músico", base: "músico" }]
+  - id: "es-2381"
+    target: "el actor"
+    ipa: "el akˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "actor", base: "actor" }]
+    examples:
+      - target: "El actor es muy famoso."
+        ipa: "el akˈtoɾ es mwi faˈmoso"
+        bases: [{ word: "El", base: "el" }, { word: "actor", base: "actor" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "famoso", base: "famoso" }]
+      - target: "El actor habla en la película."
+        ipa: "el akˈtoɾ ˈabla en la peˈlikula"
+        bases: [{ word: "El", base: "el" }, { word: "actor", base: "actor" }, { word: "habla", ref: "es-0027" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "película", base: "película" }]
+  - id: "es-2382"
+    target: "la actriz"
+    ipa: "la akˈtɾiθ"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "actriz", base: "actriz" }]
+    examples:
+      - target: "La actriz canta bien."
+        ipa: "la akˈtɾiθ ˈkanta bjen"
+        bases: [{ word: "La", base: "la" }, { word: "actriz", base: "actriz" }, { word: "canta", ref: "es-1405" }, { word: "bien", ref: "es-0326" }]
+      - target: "Es una actriz conocida."
+        ipa: "es ˈuna akˈtɾiθ konoˈθida"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "actriz", base: "actriz" }, { word: "conocida", base: "conocido" }]
+  - id: "es-2383"
+    target: "el escritor"
+    ipa: "el eskɾiˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "escritor", base: "escritor" }]
+    examples:
+      - target: "El escritor escribe novelas."
+        ipa: "el eskɾiˈtoɾ esˈkɾibe noˈbelas"
+        bases: [{ word: "El", base: "el" }, { word: "escritor", base: "escritor" }, { word: "escribe", ref: "es-0297" }, { word: "novelas", base: "novela" }]
+      - target: "Mi tía es escritora."
+        ipa: "mi ˈtia es eskɾiˈtoɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }, { word: "es", ref: "es-0022" }, { word: "escritora", base: "escritor" }]
+  - id: "es-2384"
+    target: "el cantante"
+    ipa: "el kanˈtante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cantante", base: "cantante" }]
+    examples:
+      - target: "El cantante canta en el concierto."
+        ipa: "el kanˈtante ˈkanta en el konˈθjeɾto"
+        bases: [{ word: "El", base: "el" }, { word: "cantante", base: "cantante" }, { word: "canta", ref: "es-1405" }, { word: "en", base: "en" }, { word: "concierto", ref: "es-1424" }]
+      - target: "La cantante es muy joven."
+        ipa: "la kanˈtante es mwi ˈxoben"
+        bases: [{ word: "La", base: "la" }, { word: "cantante", base: "cantante" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "joven", ref: "es-0256" }]
+  - id: "es-2385"
+    target: "el bailarín"
+    ipa: "el bajlaˈɾin"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bailarín", base: "bailarín" }]
+    examples:
+      - target: "El bailarín baila muy bien."
+        ipa: "el bajlaˈɾin ˈbajla mwi bjen"
+        bases: [{ word: "El", base: "el" }, { word: "bailarín", base: "bailarín" }, { word: "baila", ref: "es-0294" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
+      - target: "La bailarina viaja por el mundo."
+        ipa: "la bajlaˈɾina ˈbjaxa poɾ el ˈmundo"
+        bases: [{ word: "La", base: "la" }, { word: "bailarina", base: "bailarín" }, { word: "viaja", ref: "es-1691" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "mundo", ref: "es-1900" }]
+  - id: "es-2386"
+    target: "el futbolista"
+    ipa: "el futboˈlista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "futbolista", base: "futbolista" }]
+    examples:
+      - target: "El futbolista juega en el equipo."
+        ipa: "el futboˈlista ˈxweɡa en el eˈkipo"
+        bases: [{ word: "El", base: "el" }, { word: "futbolista", base: "futbolista" }, { word: "juega", ref: "es-1403" }, { word: "en", base: "en" }, { word: "equipo", ref: "es-1412" }]
+      - target: "Mi hermana es futbolista."
+        ipa: "mi eɾˈmana es futboˈlista"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "futbolista", base: "futbolista" }]
+  - id: "es-2387"
+    target: "responsable"
+    ipa: "responˈsable"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "responsable", base: "responsable" }]
+    examples:
+      - target: "Soy una persona responsable."
+        ipa: "soj ˈuna peɾˈsona responˈsable"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "una", base: "una" }, { word: "persona", ref: "es-0135" }, { word: "responsable", base: "responsable" }]
+      - target: "El jefe es responsable del equipo."
+        ipa: "el ˈxefe es responˈsable del eˈkipo"
+        bases: [{ word: "El", base: "el" }, { word: "jefe", ref: "es-0504" }, { word: "es", ref: "es-0022" }, { word: "responsable", base: "responsable" }, { word: "del", base: "del" }, { word: "equipo", ref: "es-1412" }]
+  - id: "es-2388"
+    target: "ambicioso"
+    ipa: "ambiˈθjoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ambicioso", base: "ambicioso" }]
+    examples:
+      - target: "Es un trabajador ambicioso."
+        ipa: "es un tɾabaxaˈdoɾ ambiˈθjoso"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "trabajador", ref: "es-1868" }, { word: "ambicioso", base: "ambicioso" }]
+      - target: "Tiene un plan ambicioso."
+        ipa: "ˈtjene un plan ambiˈθjoso"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "plan", base: "plan" }, { word: "ambicioso", base: "ambicioso" }]
+  - id: "es-2389"
+    target: "motivado"
+    ipa: "motiˈbado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "motivado", base: "motivado" }]
+    examples:
+      - target: "Estoy motivado para el trabajo."
+        ipa: "esˈtoj motiˈbado ˈpaɾa el tɾaˈbaxo"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "motivado", base: "motivado" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }]
+      - target: "La equipo está motivada."
+        ipa: "la eˈkipo esˈta motiˈbada"
+        bases: [{ word: "La", base: "la" }, { word: "equipo", ref: "es-1412" }, { word: "está", ref: "es-0023" }, { word: "motivada", base: "motivado" }]
+  - id: "es-2390"
+    target: "graduarse"
+    ipa: "ɡɾaˈdwaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "graduarse", base: "graduarse" }]
+    examples:
+      - target: "Me gradúo en junio."
+        ipa: "me ɡɾaˈduo en ˈxunjo"
+        bases: [{ word: "Me", base: "me" }, { word: "gradúo", base: "graduarse" }, { word: "en", base: "en" }, { word: "junio", ref: "es-0971" }]
+      - target: "Se gradúa en medicina."
+        ipa: "se ɡɾaˈdua en mediˈθina"
+        bases: [{ word: "Se", base: "se" }, { word: "gradúa", base: "graduarse" }, { word: "en", base: "en" }, { word: "medicina", ref: "es-1463" }]
+  - id: "es-2391"
+    target: "presentarse"
+    ipa: "pɾesenˈtaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "presentarse", base: "presentarse" }]
+    examples:
+      - target: "Me presento a la entrevista."
+        ipa: "me pɾeˈsento a la entɾeˈbista"
+        bases: [{ word: "Me", base: "me" }, { word: "presento", base: "presentarse" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "entrevista", ref: "es-2080" }]
+      - target: "Se presentan al examen."
+        ipa: "se pɾeˈsentan al ekˈsamen"
+        bases: [{ word: "Se", base: "se" }, { word: "presentan", base: "presentarse" }, { word: "al", base: "al" }, { word: "examen", ref: "es-1359" }]

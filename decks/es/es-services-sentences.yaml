@@ -1,0 +1,50 @@
+schema: 1
+id: "es-services-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2248"
+    target: "Saco dinero del cajero y pago el préstamo."
+    ipa: "ˈsako diˈneɾo del kaˈxeɾo i ˈpaɡo el ˈpɾestamo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Saco", ref: "es-1623" }, { word: "dinero", ref: "es-0513" }, { word: "del", base: "del" }, { word: "cajero", ref: "es-2214" }, { word: "y", ref: "es-0048" }, { word: "pago", ref: "es-0295" }, { word: "el", base: "el" }, { word: "préstamo", ref: "es-2232" }]
+    confusables: [{ id: "ingreso", ref: "es-2223", kind: "word" }, { id: "comision", ref: "es-2233", kind: "word" }]
+  - id: "es-2249"
+    target: "Llevo el coche al mecánico para la reparación."
+    ipa: "ˈʝebo el ˈkotʃe al meˈkaniko ˈpaɾa la repaɾaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "coche", ref: "es-0678" }, { word: "al", base: "al" }, { word: "mecánico", ref: "es-2237" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "reparación", ref: "es-2235" }]
+    confusables: [{ id: "fontanero", ref: "es-2238", kind: "word" }, { id: "electricista", ref: "es-2239", kind: "word" }]
+  - id: "es-2250"
+    target: "Escribo la dirección en el sobre."
+    ipa: "esˈkɾibo la diɾekˈθjon en el ˈsobɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Escribo", ref: "es-0297" }, { word: "la", base: "la" }, { word: "dirección", ref: "es-0249" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sobre", ref: "es-2243" }]
+    confusables: [{ id: "remitente", ref: "es-2245", kind: "word" }, { id: "destinatario", ref: "es-2246", kind: "word" }]
+  - id: "es-2251"
+    target: "Rellenar el formulario y firmar."
+    ipa: "reʝeˈnaɾ el foɾmuˈlaɾjo i fiɾˈmaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Rellenar", base: "rellenar" }, { word: "el", base: "el" }, { word: "formulario", ref: "es-2227" }, { word: "y", ref: "es-0048" }, { word: "firmar", ref: "es-1874" }]
+    confusables: [{ id: "solicitud", ref: "es-2228", kind: "word" }, { id: "firma", ref: "es-2226", kind: "word" }]
+  - id: "es-2252"
+    target: "El peluquero corta el pelo en la peluquería."
+    ipa: "el peluˈkeɾo ˈkoɾta el ˈpelo en la pelukeˈɾia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "peluquero", ref: "es-2218" }, { word: "corta", ref: "es-1320" }, { word: "pelo", ref: "es-0748" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "peluquería", ref: "es-2217" }]
+    confusables: [{ id: "sastre", ref: "es-2219", kind: "word" }, { id: "zapatero", ref: "es-2220", kind: "word" }]
+  - id: "es-2253"
+    target: "Llevo el abrigo a la tintorería y a la lavandería."
+    ipa: "ˈʝebo el aˈbɾiɡo a la tintoɾeˈɾia i a la labandeˈɾia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "tintorería", ref: "es-2221" }, { word: "y", ref: "es-0048" }, { word: "lavandería", ref: "es-2222" }]
+    confusables: [{ id: "servicio", ref: "es-2234", kind: "word" }, { id: "arreglo", ref: "es-2236", kind: "word" }]

@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-geography-sentences"
+kind: "layer"
+core: "es-geography-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: geography"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about countries, cities and maps, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1926":
+    native: "The capital of Spain is Madrid."
+    bases: { "La": "the", "de": "of" }
+    confusables: { "pais": { why: "País is the whole country, not the city that leads it." }, "ciudad": { why: "Ciudad is a city, a smaller place than a country." } }
+  "es-1927":
+    native: "There is a border between France and Spain."
+    bases: { "Hay": "there is; there are", "una": "a", "Francia": "France" }
+    confusables: { "region": { why: "Región is a part of a country, not a line between two." }, "zona": { why: "Zona is an area, a more general word." } }
+  "es-1928":
+    native: "Argentina is in the southern hemisphere."
+    bases: { "en": "in", "el": "the" }
+    confusables: { "este": { why: "Este is the east, a direction, not a hemisphere." }, "mundo": { why: "Mundo is the whole world, the largest word." } }
+  "es-1929":
+    native: "I live in a rural area, near a village."
+    bases: { "en": "in", "una": "a", "de": "of", "un": "a" }
+    confusables: { "urbano": { why: "Urbano is the city, the opposite of rural." }, "poblacion": { why: "Población is the number of people, a count." } }
+  "es-1930":
+    native: "Lima is the capital of Peru."
+    bases: { "Lima": "Lima", "la": "the", "de": "of" }
+    confusables: { "chile": { why: "Chile is another country, to the south." }, "colombia": { why: "Colombia is another country, to the north." } }
+  "es-1931":
+    native: "I travel around the world with my friends."
+    bases: { "por": "for", "el": "the", "con": "with" }
+    confusables: { "europa": { why: "Europa is a continent, not the whole world." }, "habitante": { why: "Habitante is a person who lives in a place." } }

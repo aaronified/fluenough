@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-appearance"
+name: "Reading: a lost bag and a friend"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a lost-and-found notice and a description of a friend. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-lost-and-found-notice"
+    title: "A lost bag"
+    theme: "appearance"
+    sentences:
+      - text: "Se ha perdido una bolsa negra."
+      - text: "Es grande y tiene una correa larga."
+      - text: "Dentro hay unas gafas y un libro."
+      - text: "Llame al número de la oficina."
+    questions:
+      - id: "es-1595"
+        prompt: { en: "What colour is the bag?" }
+        options:
+          - { en: "Blue" }
+          - { en: "Black" }
+          - { en: "Red" }
+        answer: 2
+      - id: "es-1596"
+        prompt: { en: "What is inside?" }
+        options:
+          - { en: "A phone and keys" }
+          - { en: "Money and a card" }
+          - { en: "Glasses and a book" }
+        answer: 3
+      - id: "es-1597"
+        prompt: { en: "What should you do if you find it?" }
+        options:
+          - { en: "Call the office" }
+          - { en: "Keep it" }
+          - { en: "Throw it away" }
+        answer: 1
+  - id: "es-describing-a-friend"
+    title: "My friend"
+    theme: "appearance"
+    sentences:
+      - text: "Mi amiga es alta y delgada."
+      - text: "Tiene el pelo rizado y castaño."
+      - text: "Sus ojos son verdes."
+      - text: "Lleva unas gafas rojas."
+    questions:
+      - id: "es-1598"
+        prompt: { en: "How tall is the friend?" }
+        options:
+          - { en: "Short" }
+          - { en: "Average" }
+          - { en: "Tall" }
+        answer: 3
+      - id: "es-1599"
+        prompt: { en: "What colour is the hair?" }
+        options:
+          - { en: "Brown" }
+          - { en: "Blonde" }
+          - { en: "Black" }
+        answer: 1
+      - id: "es-1600"
+        prompt: { en: "What does she wear?" }
+        options:
+          - { en: "Glasses" }
+          - { en: "A hat" }
+          - { en: "A scarf" }
+        answer: 1

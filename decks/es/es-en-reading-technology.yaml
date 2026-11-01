@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-technology"
+name: "Reading: app instructions and a computer problem"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: instructions inside a phone app, and a note about a computer that will not connect. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-app-instructions"
+    title: "Instructions inside an app"
+    theme: "technology"
+    sentences:
+      - text: "Pulse el botón para instalar la aplicación."
+      - text: "Después, reinicie el dispositivo."
+      - text: "Comparta el archivo con sus amigos."
+      - text: "Actualice el programa cada mes."
+    questions:
+      - id: "es-2353"
+        prompt: { en: "What is pressed first?" }
+        options:
+          - { en: "The button to install the app" }
+          - { en: "The button to delete" }
+          - { en: "The button to share" }
+        answer: 1
+      - id: "es-2354"
+        prompt: { en: "What should be restarted?" }
+        options:
+          - { en: "The device" }
+          - { en: "The file" }
+          - { en: "The website" }
+        answer: 1
+      - id: "es-2355"
+        prompt: { en: "How often should the program be updated?" }
+        options:
+          - { en: "Every month" }
+          - { en: "Every day" }
+          - { en: "Every year" }
+        answer: 1
+  - id: "es-tech-note"
+    title: "A note about a computer"
+    theme: "technology"
+    sentences:
+      - text: "Mi ordenador tiene un error y no conecta a internet."
+      - text: "El técnico dice que el fallo es el disco."
+      - text: "Navego por la web para buscar la solución."
+      - text: "Guardo una copia en la memoria."
+    questions:
+      - id: "es-2356"
+        prompt: { en: "What problem does the computer have?" }
+        options:
+          - { en: "An error and no internet" }
+          - { en: "No battery" }
+          - { en: "No screen" }
+        answer: 1
+      - id: "es-2357"
+        prompt: { en: "What does the technician say?" }
+        options:
+          - { en: "The disk is at fault" }
+          - { en: "The screen is broken" }
+          - { en: "The battery is flat" }
+        answer: 1
+      - id: "es-2358"
+        prompt: { en: "Where does the writer look for the solution?" }
+        options:
+          - { en: "On the web" }
+          - { en: "In a book" }
+          - { en: "In the shop" }
+        answer: 1

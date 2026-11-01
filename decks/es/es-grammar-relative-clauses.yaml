@@ -1,0 +1,38 @@
+schema: 1
+id: "es-grammar-relative-clauses"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["que", "quien", "donde", "cuyo"]
+  entries:
+    - lemma: "persona"
+      ipa: "peɾˈsona"
+      forms: { "que": "la persona que vive aquí", "quien": "la persona con quien hablo", "donde": null, "cuyo": "la persona cuya casa es grande" }
+      ipas: { "que": "la peɾˈsona ke ˈbibe aˈki", "quien": "la peɾˈsona kon kjen ˈablo", "donde": null, "cuyo": "la peɾˈsona ˈkuʝa ˈkasa es ˈɡɾande" }
+    - lemma: "tienda"
+      ipa: "ˈtjenda"
+      forms: { "que": "la tienda que visito", "quien": null, "donde": "la tienda donde compro", "cuyo": "la tienda cuyo nombre sé" }
+      ipas: { "que": "la ˈtjenda ke biˈsito", "quien": null, "donde": "la ˈtjenda ˈdonde ˈkompɾo", "cuyo": "la ˈtjenda ˈkuʝo ˈnombɾe se" }
+    - lemma: "ciudad"
+      ipa: "θjuˈdad"
+      forms: { "que": "la ciudad que me gusta", "quien": null, "donde": "la ciudad donde nací", "cuyo": "la ciudad cuyo río es grande" }
+      ipas: { "que": "la θjuˈdad ke me ˈɡusta", "quien": null, "donde": "la θjuˈdad ˈdonde naˈθi", "cuyo": "la θjuˈdad ˈkuʝo ˈrio es ˈɡɾande" }
+    - lemma: "amigo"
+      ipa: "aˈmiɡo"
+      forms: { "que": "el amigo que llama", "quien": "el amigo con quien viajo", "donde": null, "cuyo": "el amigo cuya casa es bonita" }
+      ipas: { "que": "el aˈmiɡo ke ˈʝama", "quien": "el aˈmiɡo kon kjen ˈbjaxo", "donde": null, "cuyo": "el aˈmiɡo ˈkuʝa ˈkasa es boˈnita" }
+    - lemma: "libro"
+      ipa: "ˈlibɾo"
+      forms: { "que": "el libro que leo", "quien": null, "donde": null, "cuyo": "el libro cuyo autor es famoso" }
+      ipas: { "que": "el ˈlibɾo ke ˈleo", "quien": null, "donde": null, "cuyo": "el ˈlibɾo ˈkuʝo awˈtoɾ es faˈmoso" }
+    - lemma: "casa"
+      ipa: "ˈkasa"
+      forms: { "que": "la casa que compro", "quien": null, "donde": "la casa donde vivo", "cuyo": "la casa cuyas ventanas son grandes" }
+      ipas: { "que": "la ˈkasa ke ˈkompɾo", "quien": null, "donde": "la ˈkasa ˈdonde ˈbibo", "cuyo": "la ˈkasa ˈkuʝas benˈtanas son ˈɡɾandes" }
+    - lemma: "profesor"
+      ipa: "pɾofeˈsoɾ"
+      forms: { "que": "el profesor que enseña", "quien": "el profesor con quien estudio", "donde": null, "cuyo": "el profesor cuya clase es buena" }
+      ipas: { "que": "el pɾofeˈsoɾ ke enˈseɲa", "quien": "el pɾofeˈsoɾ kon kjen esˈtudjo", "donde": null, "cuyo": "el pɾofeˈsoɾ ˈkuʝa ˈklase es ˈbwena" }

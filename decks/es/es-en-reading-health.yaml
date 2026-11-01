@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-health"
+name: "Reading: a clinic notice and a fitness plan"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a notice at a clinic, and a note on a plan for a healthier week. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-clinic-notice"
+    title: "A notice at the clinic"
+    theme: "health"
+    sentences:
+      - text: "La clínica abre a las ocho."
+      - text: "Para una cita, llame por teléfono."
+      - text: "Si tiene fiebre, avise a la enfermera."
+      - text: "Gracias por su paciencia."
+    questions:
+      - id: "es-1978"
+        prompt: { en: "When does the clinic open?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 2
+      - id: "es-1979"
+        prompt: { en: "What should you do for an appointment?" }
+        options:
+          - { en: "Call on the phone" }
+          - { en: "Come without calling" }
+          - { en: "Send a letter" }
+        answer: 1
+      - id: "es-1980"
+        prompt: { en: "Who should you tell about a fever?" }
+        options:
+          - { en: "The nurse" }
+          - { en: "The driver" }
+          - { en: "The teacher" }
+        answer: 1
+  - id: "es-fitness-plan"
+    title: "A healthier week"
+    theme: "health"
+    sentences:
+      - text: "Quiero entrenar tres días a la semana."
+      - text: "Camino mucho y como más fruta."
+      - text: "Duermo ocho horas y me relajo por la noche."
+      - text: "Así mejoro mi energía y mi salud."
+    questions:
+      - id: "es-1981"
+        prompt: { en: "How often does the writer train?" }
+        options:
+          - { en: "Once a week" }
+          - { en: "Three days a week" }
+          - { en: "Every day" }
+        answer: 2
+      - id: "es-1982"
+        prompt: { en: "What does the writer eat more of?" }
+        options:
+          - { en: "Fruit" }
+          - { en: "Sugar" }
+          - { en: "Meat" }
+        answer: 1
+      - id: "es-1983"
+        prompt: { en: "What does the writer hope to improve?" }
+        options:
+          - { en: "Their energy and health" }
+          - { en: "Their money" }
+          - { en: "Their house" }
+        answer: 1

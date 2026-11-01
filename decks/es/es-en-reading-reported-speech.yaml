@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-reported-speech"
+name: "Reading: messages and what was said"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that pass on what people said, with the tense moved back. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-message-thread"
+    title: "A message thread"
+    theme: "cinema"
+    sentences:
+      - text: "Ana dijo que estaba en el mercado."
+      - text: "Pedro dijo que llegaría a las ocho."
+      - text: "Mi madre dijo que había comprado pan."
+      - text: "Me pidió que llevara el paraguas."
+    questions:
+      - id: "es-2497"
+        prompt: { en: "Where was Ana?" }
+        options:
+          - { en: "At the market" }
+          - { en: "At school" }
+          - { en: "At home" }
+        answer: 1
+      - id: "es-2498"
+        prompt: { en: "When will Pedro arrive?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At seven" }
+        answer: 1
+      - id: "es-2499"
+        prompt: { en: "What did the mother buy?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Milk" }
+          - { en: "Fish" }
+        answer: 1
+  - id: "es-he-said-that"
+    title: "What the teacher said"
+    theme: "cinema"
+    sentences:
+      - text: "El profesor dijo que el examen era fácil."
+      - text: "Dijo que iría a la biblioteca mañana."
+      - text: "Los alumnos dijeron que habían estudiado mucho."
+      - text: "Nos pidió que trajéramos los libros."
+    questions:
+      - id: "es-2500"
+        prompt: { en: "What did the teacher say about the exam?" }
+        options:
+          - { en: "It was easy" }
+          - { en: "It was hard" }
+          - { en: "It was cancelled" }
+        answer: 1
+      - id: "es-2501"
+        prompt: { en: "Where will the teacher go?" }
+        options:
+          - { en: "To the library" }
+          - { en: "To the park" }
+          - { en: "To the office" }
+        answer: 1
+      - id: "es-2502"
+        prompt: { en: "What did the students say?" }
+        options:
+          - { en: "They had studied a lot" }
+          - { en: "They had not studied" }
+          - { en: "They were tired" }
+        answer: 1

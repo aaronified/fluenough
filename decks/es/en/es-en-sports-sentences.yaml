@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-sports-sentences"
+kind: "layer"
+core: "es-sports-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: sports"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about matches, races and medals, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2718":
+    native: "The goalkeeper stops the rival's goal."
+    bases: { "El": "the", "para": "for", "del": "of" }
+    confusables: { "arbitro": { why: "Árbitro is the referee, who watches the game, not the goal." }, "jugador": { why: "Jugador is a player, one of the team." } }
+  "es-2719":
+    native: "We win the victory in the league."
+    bases: { "la": "the", "en": "in" }
+    confusables: { "campeonato": { why: "Campeonato is a championship, a set of games." }, "derrota": { why: "Derrota is a defeat, the opposite result." } }
+  "es-2720":
+    native: "The scoreboard says a two-two draw."
+    bases: { "El": "the", "un": "a", "a": "to" }
+    confusables: { "arbitro": { why: "Árbitro is the referee, the person who rules, not the score." }, "victoria": { why: "Victoria is a win, the opposite of a draw." } }
+  "es-2721":
+    native: "The athlete breaks the record on the track."
+    bases: { "La": "the", "el": "the", "en": "in" }
+    confusables: { "cancha": { why: "Cancha is a court or pitch, not a running track." }, "estadio": { why: "Estadio is the whole stadium, not the track the athlete runs on." } }
+  "es-2722":
+    native: "The champion receives the gold medal."
+    bases: { "El": "the", "la": "the", "de": "of", "oro": "gold" }
+    confusables: { "ganador": { why: "Ganador is the winner, the general word." }, "competicion": { why: "Competición is the contest, the event itself." } }
+  "es-2723":
+    native: "I throw the ball and jump to catch it."
+    bases: { "la": "the", "para": "for", "cogerla": "to take; to catch" }
+    confusables: { "raqueta": { why: "Raqueta is a racket, for hitting, not throwing." }, "estadio": { why: "Estadio is a stadium, the place for the match." } }

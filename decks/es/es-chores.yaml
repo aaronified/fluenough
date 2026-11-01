@@ -1,0 +1,430 @@
+schema: 1
+id: "es-chores"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "chores"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1505"
+    target: "la limpieza"
+    ipa: "la limˈpjeθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "limpieza", base: "limpieza" }]
+    examples:
+      - target: "La limpieza de la casa es mi tarea."
+        ipa: "la limˈpjeθa de la ˈkasa es mi taˈɾea"
+        bases: [{ word: "La", base: "la" }, { word: "limpieza", base: "limpieza" }, { word: "de", base: "de" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "tarea", ref: "es-0907" }]
+      - target: "Hago la limpieza los sábados."
+        ipa: "ˈaɡo la limˈpjeθa los ˈsabados"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "limpieza", base: "limpieza" }, { word: "los", base: "los" }, { word: "sábados", ref: "es-0963" }]
+  - id: "es-1506"
+    target: "planchar"
+    ipa: "planˈtʃaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "planchar", base: "planchar" }]
+    examples:
+      - target: "Plancho la camisa."
+        ipa: "ˈplantʃo la kaˈmisa"
+        bases: [{ word: "Plancho", base: "planchar" }, { word: "la", base: "la" }, { word: "camisa", ref: "es-1017" }]
+      - target: "Plancho la ropa cada semana."
+        ipa: "ˈplantʃo la ˈropa ˈkada seˈmana"
+        bases: [{ word: "Plancho", base: "planchar" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "cada", ref: "es-0366" }, { word: "semana", ref: "es-0840" }]
+  - id: "es-1507"
+    target: "la plancha"
+    ipa: "la ˈplantʃa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "plancha", base: "plancha" }]
+    examples:
+      - target: "La plancha está caliente."
+        ipa: "la ˈplantʃa esˈta kaˈljente"
+        bases: [{ word: "La", base: "la" }, { word: "plancha", base: "plancha" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+      - target: "Uso la plancha con cuidado."
+        ipa: "ˈuso la ˈplantʃa kon kwiˈdado"
+        bases: [{ word: "Uso", ref: "es-0287" }, { word: "la", base: "la" }, { word: "plancha", base: "plancha" }, { word: "con", base: "con" }, { word: "cuidado", base: "cuidado" }]
+  - id: "es-1508"
+    target: "barrer"
+    ipa: "baˈreɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "barrer", base: "barrer" }]
+    examples:
+      - target: "Barro el suelo."
+        ipa: "ˈbaro el ˈswelo"
+        bases: [{ word: "Barro", base: "barrer" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }]
+      - target: "La escoba barre bien."
+        ipa: "la esˈkoba ˈbare bjen"
+        bases: [{ word: "La", base: "la" }, { word: "escoba", ref: "es-1187" }, { word: "barre", base: "barrer" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-1509"
+    target: "fregar"
+    ipa: "fɾeˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "fregar", base: "fregar" }]
+    examples:
+      - target: "Friego los platos."
+        ipa: "ˈfɾjeɡo los ˈplatos"
+        bases: [{ word: "Friego", base: "fregar" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }]
+      - target: "Friega el suelo, por favor."
+        ipa: "ˈfɾjeɡa el ˈswelo poɾ faˈboɾ"
+        bases: [{ word: "Friega", base: "fregar" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-1510"
+    target: "sacudir"
+    ipa: "sakuˈdiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sacudir", base: "sacudir" }]
+    examples:
+      - target: "Sacudo el polvo."
+        ipa: "saˈkudo el ˈpolbo"
+        bases: [{ word: "Sacudo", base: "sacudir" }, { word: "el", base: "el" }, { word: "polvo", ref: "es-1534" }]
+      - target: "Sacude la mesa con un paño."
+        ipa: "saˈkude la ˈmesa kon un ˈpaɲo"
+        bases: [{ word: "Sacude", base: "sacudir" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "paño", base: "paño" }]
+  - id: "es-1511"
+    target: "la aspiradora"
+    ipa: "la aspiɾaˈdoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "aspiradora", base: "aspiradora" }]
+    examples:
+      - target: "Paso la aspiradora por la alfombra."
+        ipa: "ˈpaso la aspiɾaˈdoɾa poɾ la alˈfombɾa"
+        bases: [{ word: "Paso", ref: "es-1533" }, { word: "la", base: "la" }, { word: "aspiradora", base: "aspiradora" }, { word: "por", base: "por" }, { word: "alfombra", ref: "es-0822" }]
+      - target: "La aspiradora hace mucho ruido."
+        ipa: "la aspiɾaˈdoɾa ˈaθe ˈmutʃo ˈrwido"
+        bases: [{ word: "La", base: "la" }, { word: "aspiradora", base: "aspiradora" }, { word: "hace", ref: "es-0025" }, { word: "mucho", ref: "es-0053" }, { word: "ruido", base: "ruido" }]
+  - id: "es-1512"
+    target: "la fregona"
+    ipa: "la fɾeˈɡona"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fregona", base: "fregona" }]
+    examples:
+      - target: "La fregona está en el cubo."
+        ipa: "la fɾeˈɡona esˈta en el ˈkubo"
+        bases: [{ word: "La", base: "la" }, { word: "fregona", base: "fregona" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cubo", ref: "es-1513" }]
+      - target: "Paso la fregona por la cocina."
+        ipa: "ˈpaso la fɾeˈɡona poɾ la koˈθina"
+        bases: [{ word: "Paso", ref: "es-1533" }, { word: "la", base: "la" }, { word: "fregona", base: "fregona" }, { word: "por", base: "por" }, { word: "cocina", ref: "es-0918" }]
+  - id: "es-1513"
+    target: "el cubo"
+    ipa: "el ˈkubo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cubo", base: "cubo" }]
+    examples:
+      - target: "El cubo está lleno de agua."
+        ipa: "el ˈkubo esˈta ˈʝeno de ˈaɡwa"
+        bases: [{ word: "El", base: "el" }, { word: "cubo", base: "cubo" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }]
+      - target: "El cubo de la basura está en la cocina."
+        ipa: "el ˈkubo de la baˈsuɾa esˈta en la koˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "cubo", base: "cubo" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "basura", ref: "es-1516" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "cocina", ref: "es-0918" }]
+  - id: "es-1514"
+    target: "el detergente"
+    ipa: "el deteɾˈxente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "detergente", base: "detergente" }]
+    examples:
+      - target: "Uso un detergente para los platos."
+        ipa: "ˈuso un deteɾˈxente ˈpaɾa los ˈplatos"
+        bases: [{ word: "Uso", ref: "es-0287" }, { word: "un", base: "un" }, { word: "detergente", base: "detergente" }, { word: "para", base: "para" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }]
+      - target: "El detergente está en el armario."
+        ipa: "el deteɾˈxente esˈta en el aɾˈmaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "detergente", base: "detergente" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "armario", ref: "es-0814" }]
+  - id: "es-1515"
+    target: "la esponja"
+    ipa: "la esˈponxa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "esponja", base: "esponja" }]
+    examples:
+      - target: "La esponja está sucia."
+        ipa: "la esˈponxa esˈta ˈsuθja"
+        bases: [{ word: "La", base: "la" }, { word: "esponja", base: "esponja" }, { word: "está", ref: "es-0023" }, { word: "sucia", ref: "es-0417" }]
+      - target: "Lavo los platos con una esponja."
+        ipa: "ˈlabo los ˈplatos kon ˈuna esˈponxa"
+        bases: [{ word: "Lavo", ref: "es-0286" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }, { word: "con", base: "con" }, { word: "una", base: "una" }, { word: "esponja", base: "esponja" }]
+  - id: "es-1516"
+    target: "la basura"
+    ipa: "la baˈsuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "basura", base: "basura" }]
+    examples:
+      - target: "Saco la basura cada noche."
+        ipa: "ˈsako la baˈsuɾa ˈkada ˈnotʃe"
+        bases: [{ word: "Saco", base: "sacar" }, { word: "la", base: "la" }, { word: "basura", base: "basura" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }]
+      - target: "El cubo de la basura está lleno."
+        ipa: "el ˈkubo de la baˈsuɾa esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "cubo", ref: "es-1513" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "basura", base: "basura" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+  - id: "es-1517"
+    target: "reciclar"
+    ipa: "reθiˈklaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reciclar", base: "reciclar" }]
+    examples:
+      - target: "Reciclo el papel y el vidrio."
+        ipa: "reˈθiklo el paˈpel i el ˈbidɾjo"
+        bases: [{ word: "Reciclo", base: "reciclar" }, { word: "el", base: "el" }, { word: "papel", ref: "es-1387" }, { word: "y", ref: "es-0048" }, { word: "vidrio", base: "vidrio" }]
+      - target: "Reciclamos las botellas."
+        ipa: "reθiˈklamos las boˈteʝas"
+        bases: [{ word: "Reciclamos", base: "reciclar" }, { word: "las", base: "las" }, { word: "botellas", ref: "es-0379" }]
+  - id: "es-1518"
+    target: "el reciclaje"
+    ipa: "el reθiˈklaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "reciclaje", base: "reciclaje" }]
+    examples:
+      - target: "El reciclaje es importante."
+        ipa: "el reθiˈklaxe es impoɾˈtante"
+        bases: [{ word: "El", base: "el" }, { word: "reciclaje", base: "reciclaje" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Hay un contenedor de reciclaje en la calle."
+        ipa: "aj un konteneˈdoɾ de reθiˈklaxe en la ˈkaʝe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "contenedor", base: "contenedor" }, { word: "de", base: "de" }, { word: "reciclaje", base: "reciclaje" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+  - id: "es-1519"
+    target: "tender"
+    ipa: "tenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tender", base: "tender" }]
+    examples:
+      - target: "Tiendo la ropa en el balcón."
+        ipa: "ˈtjendo la ˈropa en el balˈkon"
+        bases: [{ word: "Tiendo", base: "tender" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "balcón", base: "balcón" }]
+      - target: "Tendemos las sábanas."
+        ipa: "tenˈdemos las ˈsabanas"
+        bases: [{ word: "Tendemos", base: "tender" }, { word: "las", base: "las" }, { word: "sábanas", base: "sábana" }]
+  - id: "es-1520"
+    target: "la lavadora"
+    ipa: "la labaˈdoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lavadora", base: "lavadora" }]
+    examples:
+      - target: "La lavadora está en la cocina."
+        ipa: "la labaˈdoɾa esˈta en la koˈθina"
+        bases: [{ word: "La", base: "la" }, { word: "lavadora", base: "lavadora" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "cocina", ref: "es-0918" }]
+      - target: "Pongo la ropa en la lavadora."
+        ipa: "ˈponɡo la ˈropa en la labaˈdoɾa"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "en", base: "en" }, { word: "lavadora", base: "lavadora" }]
+  - id: "es-1521"
+    target: "la secadora"
+    ipa: "la sekaˈdoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "secadora", base: "secadora" }]
+    examples:
+      - target: "La secadora es muy vieja."
+        ipa: "la sekaˈdoɾa es mwi ˈbjexa"
+        bases: [{ word: "La", base: "la" }, { word: "secadora", base: "secadora" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "vieja", ref: "es-0431" }]
+      - target: "Secamos la ropa en la secadora."
+        ipa: "seˈkamos la ˈropa en la sekaˈdoɾa"
+        bases: [{ word: "Secamos", base: "secar" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "en", base: "en" }, { word: "secadora", base: "secadora" }]
+  - id: "es-1522"
+    target: "colgar"
+    ipa: "kolˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "colgar", base: "colgar" }]
+    examples:
+      - target: "Cuelgo la ropa en el armario."
+        ipa: "ˈkwelɡo la ˈropa en el aɾˈmaɾjo"
+        bases: [{ word: "Cuelgo", base: "colgar" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", ref: "es-0814" }]
+      - target: "Cuelgo el abrigo en la puerta."
+        ipa: "ˈkwelɡo el aˈbɾiɡo en la ˈpweɾta"
+        bases: [{ word: "Cuelgo", base: "colgar" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+  - id: "es-1523"
+    target: "ordenar"
+    ipa: "oɾdeˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ordenar", base: "ordenar" }]
+    examples:
+      - target: "Ordeno mi cuarto los domingos."
+        ipa: "oɾˈdeno mi ˈkwaɾto los doˈminɡos"
+        bases: [{ word: "Ordeno", base: "ordenar" }, { word: "mi", ref: "es-0129" }, { word: "cuarto", ref: "es-0804" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+      - target: "Ordena los libros, por favor."
+        ipa: "oɾˈdena los ˈlibɾos poɾ faˈboɾ"
+        bases: [{ word: "Ordena", base: "ordenar" }, { word: "los", base: "los" }, { word: "libros", ref: "es-0011" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-1524"
+    target: "el orden"
+    ipa: "el ˈoɾden"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "orden", base: "orden" }]
+    examples:
+      - target: "Tengo orden en mi casa."
+        ipa: "ˈtenɡo ˈoɾden en mi ˈkasa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "orden", base: "orden" }, { word: "en", base: "en" }, { word: "mi", ref: "es-0129" }, { word: "casa", ref: "es-0006" }]
+      - target: "Me gusta el orden."
+        ipa: "me ˈɡusta el ˈoɾden"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "orden", base: "orden" }]
+  - id: "es-1525"
+    target: "desordenado"
+    ipa: "desoɾdeˈnado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "desordenado", base: "desordenado" }]
+    examples:
+      - target: "La casa está desordenada."
+        ipa: "la ˈkasa esˈta desoɾdeˈnada"
+        bases: [{ word: "La", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "está", ref: "es-0023" }, { word: "desordenada", base: "desordenado" }]
+      - target: "Mi cuarto está muy desordenado."
+        ipa: "mi ˈkwaɾto esˈta mwi desoɾdeˈnado"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "cuarto", ref: "es-0804" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "desordenado", base: "desordenado" }]
+  - id: "es-1526"
+    target: "tirar"
+    ipa: "tiˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tirar", base: "tirar" }]
+    examples:
+      - target: "Tiro la basura."
+        ipa: "ˈtiɾo la baˈsuɾa"
+        bases: [{ word: "Tiro", base: "tirar" }, { word: "la", base: "la" }, { word: "basura", ref: "es-1516" }]
+      - target: "No tires papeles al suelo."
+        ipa: "no ˈtiɾes paˈpeles al ˈswelo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tires", base: "tirar" }, { word: "papeles", ref: "es-1387" }, { word: "al", base: "al" }, { word: "suelo", ref: "es-0819" }]
+  - id: "es-1527"
+    target: "regar"
+    ipa: "reˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "regar", base: "regar" }]
+    examples:
+      - target: "Riego las plantas los lunes."
+        ipa: "ˈrjeɡo las ˈplantas los ˈlunes"
+        bases: [{ word: "Riego", base: "regar" }, { word: "las", base: "las" }, { word: "plantas", ref: "es-1528" }, { word: "los", base: "los" }, { word: "lunes", ref: "es-0958" }]
+      - target: "Riegan el jardín."
+        ipa: "ˈrjeɡan el xaɾˈdin"
+        bases: [{ word: "Riegan", base: "regar" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }]
+  - id: "es-1528"
+    target: "la planta"
+    ipa: "la ˈplanta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "planta", base: "planta" }]
+    examples:
+      - target: "Tengo una planta en la ventana."
+        ipa: "ˈtenɡo ˈuna ˈplanta en la benˈtana"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "planta", base: "planta" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }]
+      - target: "Las plantas necesitan agua."
+        ipa: "las ˈplantas neθeˈsitan ˈaɡwa"
+        bases: [{ word: "Las", base: "las" }, { word: "plantas", base: "planta" }, { word: "necesitan", ref: "es-0288" }, { word: "agua", ref: "es-0012" }]
+  - id: "es-1529"
+    target: "arreglar"
+    ipa: "areˈɡlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "arreglar", base: "arreglar" }]
+    examples:
+      - target: "Arreglo la lámpara."
+        ipa: "aˈreɡlo la ˈlampaɾa"
+        bases: [{ word: "Arreglo", base: "arreglar" }, { word: "la", base: "la" }, { word: "lámpara", ref: "es-0821" }]
+      - target: "Arreglo la casa antes de la visita."
+        ipa: "aˈreɡlo la ˈkasa ˈantes de la biˈsita"
+        bases: [{ word: "Arreglo", base: "arreglar" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "visita", ref: "es-0787" }]
+  - id: "es-1530"
+    target: "la responsabilidad"
+    ipa: "la responsabiliˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "responsabilidad", base: "responsabilidad" }]
+    examples:
+      - target: "La responsabilidad es mía."
+        ipa: "la responsabiliˈdad es ˈmia"
+        bases: [{ word: "La", base: "la" }, { word: "responsabilidad", base: "responsabilidad" }, { word: "es", ref: "es-0022" }, { word: "mía", base: "mío" }]
+      - target: "Tiene mucha responsabilidad en casa."
+        ipa: "ˈtjene ˈmutʃa responsabiliˈdad en ˈkasa"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "responsabilidad", base: "responsabilidad" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-1531"
+    target: "la obligación"
+    ipa: "la obliɡaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "obligación", base: "obligación" }]
+    examples:
+      - target: "Es una obligación."
+        ipa: "es ˈuna obliɡaˈθjon"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "obligación", base: "obligación" }]
+      - target: "Tengo muchas obligaciones en casa."
+        ipa: "ˈtenɡo ˈmutʃas obliɡaˈθjones en ˈkasa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "obligaciones", base: "obligación" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-1532"
+    target: "el deber"
+    ipa: "el deˈbeɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "deber", base: "deber" }]
+    examples:
+      - target: "Es mi deber ayudar en casa."
+        ipa: "es mi deˈbeɾ aʝuˈdaɾ en ˈkasa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "deber", base: "deber" }, { word: "ayudar", ref: "es-0303" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "El deber es limpiar la cocina."
+        ipa: "el deˈbeɾ es limˈpjaɾ la koˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "deber", base: "deber" }, { word: "es", ref: "es-0022" }, { word: "limpiar", ref: "es-0285" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+  - id: "es-1533"
+    target: "pasar"
+    ipa: "paˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pasar", base: "pasar" }]
+    examples:
+      - target: "Pasa la aspiradora cada semana."
+        ipa: "ˈpasa la aspiɾaˈdoɾa ˈkada seˈmana"
+        bases: [{ word: "Pasa", base: "pasar" }, { word: "la", base: "la" }, { word: "aspiradora", ref: "es-1511" }, { word: "cada", ref: "es-0366" }, { word: "semana", ref: "es-0840" }]
+      - target: "Paso el día en casa."
+        ipa: "ˈpaso el ˈdia en ˈkasa"
+        bases: [{ word: "Paso", base: "pasar" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-1534"
+    target: "el polvo"
+    ipa: "el ˈpolbo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "polvo", base: "polvo" }]
+    examples:
+      - target: "Hay mucho polvo en la mesa."
+        ipa: "aj ˈmutʃo ˈpolbo en la ˈmesa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucho", ref: "es-0053" }, { word: "polvo", base: "polvo" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+      - target: "Quito el polvo los sábados."
+        ipa: "ˈkito el ˈpolbo los ˈsabados"
+        bases: [{ word: "Quito", base: "quitar" }, { word: "el", base: "el" }, { word: "polvo", base: "polvo" }, { word: "los", base: "los" }, { word: "sábados", ref: "es-0963" }]
+  - id: "es-1535"
+    target: "la cortina"
+    ipa: "la koɾˈtina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cortina", base: "cortina" }]
+    examples:
+      - target: "Lavo las cortinas en la lavadora."
+        ipa: "ˈlabo las koɾˈtinas en la labaˈdoɾa"
+        bases: [{ word: "Lavo", ref: "es-0286" }, { word: "las", base: "las" }, { word: "cortinas", base: "cortina" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "lavadora", ref: "es-1520" }]
+      - target: "Las cortinas son azules."
+        ipa: "las koɾˈtinas son aˈθules"
+        bases: [{ word: "Las", base: "las" }, { word: "cortinas", base: "cortina" }, { word: "son", ref: "es-0022" }, { word: "azules", ref: "es-1008" }]

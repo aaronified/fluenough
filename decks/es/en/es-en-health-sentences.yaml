@@ -1,0 +1,31 @@
+schema: 1
+id: "es-en-health-sentences"
+kind: "layer"
+core: "es-health-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: health and fitness"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about health, food and exercise, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1972":
+    native: "The nurse calls the doctor."
+    bases: { "El": "the", "al": "to the" }
+    confusables: { "doctor": { why: "Doctor is the person who treats, the one called." }, "clinica": { why: "Clínica is the place where the nurse works." } }
+  "es-1973":
+    native: "I exercise and eat fruit every day."
+    bases: { "los": "the" }
+    confusables: { "entrenar": { why: "Entrenar is to train for a sport, a longer practice." }, "alimento": { why: "Alimento is one food, not the habit." } }
+  "es-1974":
+    native: "I have a lot of stress and little energy."
+    confusables: { "cansancio": { why: "Cansancio is tiredness, a related feeling." }, "fatiga": { why: "Fatiga is a deep tiredness, stronger than tiredness." } }
+  "es-1975":
+    native: "I relax at the massage."
+    bases: { "Me": "to me", "en": "in", "el": "the" }
+    confusables: { "bienestar": { why: "Bienestar is well-being, the result." }, "sano": { why: "Sano is healthy, a different quality." } }
+  "es-1976":
+    native: "The lungs need clean air."
+    bases: { "Los": "the", "aire": "air" }
+    confusables: { "respiracion": { why: "Respiración is breathing, the action." }, "hueso": { why: "Hueso is bone, a different part of the body." } }
+  "es-1977":
+    native: "I want to lose weight and not gain weight."
+    confusables: { "peso": { why: "Peso is weight, the number on the scale." }, "grasa": { why: "Grasa is fat, in food or the body." } }

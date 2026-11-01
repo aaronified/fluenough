@@ -1,0 +1,354 @@
+schema: 1
+id: "es-travel"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2171"
+    target: "la recepción"
+    ipa: "la reθepˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "recepción", base: "recepción" }]
+    examples:
+      - target: "La recepción abre a las siete."
+        ipa: "la reθepˈθjon ˈabɾe a las ˈsjete"
+        bases: [{ word: "La", base: "la" }, { word: "recepción", base: "recepción" }, { word: "abre", ref: "es-0298" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+      - target: "Dejo la llave en la recepción."
+        ipa: "ˈdexo la ˈʝabe en la reθepˈθjon"
+        bases: [{ word: "Dejo", ref: "es-1190" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }, { word: "en", base: "en" }, { word: "recepción", base: "recepción" }]
+  - id: "es-2172"
+    target: "el turista"
+    ipa: "el tuˈɾista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "turista", base: "turista" }]
+    examples:
+      - target: "Hay muchos turistas en el centro."
+        ipa: "aj ˈmutʃos tuˈɾistas en el ˈθentɾo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "turistas", base: "turista" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "El turista pide un mapa."
+        ipa: "el tuˈɾista ˈpide un ˈmapa"
+        bases: [{ word: "El", base: "el" }, { word: "turista", base: "turista" }, { word: "pide", ref: "es-0659" }, { word: "un", base: "un" }, { word: "mapa", ref: "es-0710" }]
+  - id: "es-2173"
+    target: "el turismo"
+    ipa: "el tuˈɾismo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "turismo", base: "turismo" }]
+    examples:
+      - target: "El turismo es importante en esta isla."
+        ipa: "el tuˈɾismo es impoɾˈtante en ˈesta ˈisla"
+        bases: [{ word: "El", base: "el" }, { word: "turismo", base: "turismo" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "en", base: "en" }, { word: "esta", base: "esta" }, { word: "isla", ref: "es-1755" }]
+      - target: "Trabajo en el turismo."
+        ipa: "tɾaˈbaxo en el tuˈɾismo"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "turismo", base: "turismo" }]
+  - id: "es-2174"
+    target: "la visita"
+    ipa: "la biˈsita"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "visita", base: "visita" }]
+    examples:
+      - target: "Hacemos una visita al museo."
+        ipa: "aˈθemos ˈuna biˈsita al muˈseo"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "una", base: "una" }, { word: "visita", ref: "es-0787" }, { word: "al", base: "al" }, { word: "museo", ref: "es-0776" }]
+      - target: "La visita dura dos horas."
+        ipa: "la biˈsita ˈduɾa dos ˈoɾas"
+        bases: [{ word: "La", base: "la" }, { word: "visita", ref: "es-0787" }, { word: "dura", ref: "es-0851" }, { word: "dos", ref: "es-0206" }, { word: "horas", ref: "es-0838" }]
+  - id: "es-2175"
+    target: "el monumento"
+    ipa: "el monuˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "monumento", base: "monumento" }]
+    examples:
+      - target: "El monumento está en la plaza."
+        ipa: "el monuˈmento esˈta en la ˈplaθa"
+        bases: [{ word: "El", base: "el" }, { word: "monumento", base: "monumento" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+      - target: "Visitamos muchos monumentos."
+        ipa: "bisiˈtamos ˈmutʃos monuˈmentos"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "muchos", ref: "es-0053" }, { word: "monumentos", base: "monumento" }]
+  - id: "es-2176"
+    target: "el recuerdo"
+    ipa: "el reˈkweɾdo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "recuerdo", base: "recuerdo" }]
+    examples:
+      - target: "Compro un recuerdo para mi madre."
+        ipa: "ˈkompɾo un reˈkweɾdo ˈpaɾa mi ˈmadɾe"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "recuerdo", ref: "es-1379" }, { word: "para", base: "para" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "Tengo un buen recuerdo del viaje."
+        ipa: "ˈtenɡo un bwen reˈkweɾdo del ˈbjaxe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "buen", ref: "es-0033" }, { word: "recuerdo", ref: "es-1379" }, { word: "del", base: "del" }, { word: "viaje", ref: "es-1690" }]
+  - id: "es-2177"
+    target: "el visado"
+    ipa: "el biˈsado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "visado", base: "visado" }]
+    examples:
+      - target: "Necesito un visado para entrar."
+        ipa: "neθeˈsito un biˈsado ˈpaɾa enˈtɾaɾ"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "visado", base: "visado" }, { word: "para", base: "para" }, { word: "entrar", ref: "es-0788" }]
+      - target: "El visado es caro."
+        ipa: "el biˈsado es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "visado", base: "visado" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+  - id: "es-2178"
+    target: "la excursión"
+    ipa: "la ekskuɾˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "excursión", base: "excursión" }]
+    examples:
+      - target: "Hacemos una excursión a la montaña."
+        ipa: "aˈθemos ˈuna ekskuɾˈsjon a la monˈtaɲa"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "una", base: "una" }, { word: "excursión", base: "excursión" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "montaña", ref: "es-1750" }]
+      - target: "La excursión sale a las ocho."
+        ipa: "la ekskuɾˈsjon ˈsale a las ˈotʃo"
+        bases: [{ word: "La", base: "la" }, { word: "excursión", base: "excursión" }, { word: "sale", ref: "es-0690" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+  - id: "es-2179"
+    target: "el alojamiento"
+    ipa: "el aloxaˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "alojamiento", base: "alojamiento" }]
+    examples:
+      - target: "El alojamiento está cerca del centro."
+        ipa: "el aloxaˈmjento esˈta ˈθeɾka del ˈθentɾo"
+        bases: [{ word: "El", base: "el" }, { word: "alojamiento", base: "alojamiento" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "centro", base: "centro" }]
+      - target: "Busco un alojamiento barato."
+        ipa: "ˈbusko un aloxaˈmjento baˈɾato"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "un", base: "un" }, { word: "alojamiento", base: "alojamiento" }, { word: "barato", ref: "es-0411" }]
+  - id: "es-2180"
+    target: "la agencia"
+    ipa: "la aˈxenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "agencia", base: "agencia" }]
+    examples:
+      - target: "Compro el viaje en una agencia."
+        ipa: "ˈkompɾo el ˈbjaxe en ˈuna aˈxenθja"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "agencia", base: "agencia" }]
+      - target: "La agencia tiene buenas ofertas."
+        ipa: "la aˈxenθja ˈtjene ˈbwenas oˈfeɾtas"
+        bases: [{ word: "La", base: "la" }, { word: "agencia", base: "agencia" }, { word: "tiene", ref: "es-0024" }, { word: "buenas", ref: "es-0033" }, { word: "ofertas", ref: "es-0585" }]
+  - id: "es-2181"
+    target: "la entrada"
+    ipa: "la enˈtɾada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "entrada", base: "entrada" }]
+    examples:
+      - target: "La entrada al museo es gratis."
+        ipa: "la enˈtɾada al muˈseo es ˈɡɾatis"
+        bases: [{ word: "La", base: "la" }, { word: "entrada", base: "entrada" }, { word: "al", base: "al" }, { word: "museo", ref: "es-0776" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+      - target: "Compro dos entradas para el teatro."
+        ipa: "ˈkompɾo dos enˈtɾadas ˈpaɾa el teˈatɾo"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "dos", ref: "es-0206" }, { word: "entradas", base: "entrada" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "teatro", ref: "es-0780" }]
+  - id: "es-2182"
+    target: "el robo"
+    ipa: "el ˈrobo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "robo", base: "robo" }]
+    examples:
+      - target: "Hubo un robo en el hotel."
+        ipa: "ˈubo un ˈrobo en el oˈtel"
+        bases: [{ word: "Hubo", base: "haber" }, { word: "un", base: "un" }, { word: "robo", base: "robo" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hotel", ref: "es-0769" }]
+      - target: "Denuncio el robo a la policía."
+        ipa: "deˈnunθjo el ˈrobo a la poliˈθia"
+        bases: [{ word: "Denuncio", base: "denunciar" }, { word: "el", base: "el" }, { word: "robo", base: "robo" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "policía", ref: "es-0868" }]
+  - id: "es-2183"
+    target: "el ladrón"
+    ipa: "el laˈdɾon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ladrón", base: "ladrón" }]
+    examples:
+      - target: "El ladrón se llevó la mochila."
+        ipa: "el laˈdɾon se ʝeˈbo la moˈtʃila"
+        bases: [{ word: "El", base: "el" }, { word: "ladrón", base: "ladrón" }, { word: "se", base: "se" }, { word: "llevó", ref: "es-0623" }, { word: "la", base: "la" }, { word: "mochila", ref: "es-0916" }]
+      - target: "Hay ladrones en la estación."
+        ipa: "aj laˈdɾones en la estaˈθjon"
+        bases: [{ word: "Hay", base: "haber" }, { word: "ladrones", base: "ladrón" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }]
+  - id: "es-2184"
+    target: "la embajada"
+    ipa: "la embaˈxada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "embajada", base: "embajada" }]
+    examples:
+      - target: "La embajada está en el centro."
+        ipa: "la embaˈxada esˈta en el ˈθentɾo"
+        bases: [{ word: "La", base: "la" }, { word: "embajada", base: "embajada" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "Voy a la embajada con el pasaporte."
+        ipa: "boj a la embaˈxada kon el pasaˈpoɾte"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "embajada", base: "embajada" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "pasaporte", ref: "es-0878" }]
+  - id: "es-2185"
+    target: "el consulado"
+    ipa: "el konsuˈlado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "consulado", base: "consulado" }]
+    examples:
+      - target: "El consulado está cerca del hotel."
+        ipa: "el konsuˈlado esˈta ˈθeɾka del oˈtel"
+        bases: [{ word: "El", base: "el" }, { word: "consulado", base: "consulado" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "hotel", ref: "es-0769" }]
+      - target: "Pido ayuda en el consulado."
+        ipa: "ˈpido aˈʝuda en el konsuˈlado"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "ayuda", ref: "es-0303" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "consulado", base: "consulado" }]
+  - id: "es-2186"
+    target: "la crema"
+    ipa: "la ˈkɾema"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "crema", base: "crema" }]
+    examples:
+      - target: "Uso crema para el sol."
+        ipa: "ˈuso ˈkɾema ˈpaɾa el sol"
+        bases: [{ word: "Uso", ref: "es-0287" }, { word: "crema", base: "crema" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "sol", ref: "es-1113" }]
+      - target: "La crema es buena para la piel."
+        ipa: "la ˈkɾema es ˈbwena ˈpaɾa la pjel"
+        bases: [{ word: "La", base: "la" }, { word: "crema", base: "crema" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "para", base: "para" }, { word: "piel", ref: "es-1576" }]
+  - id: "es-2187"
+    target: "el cargo"
+    ipa: "el ˈkaɾɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cargo", base: "cargo" }]
+    examples:
+      - target: "No hay cargo por la reserva."
+        ipa: "no aj ˈkaɾɡo poɾ la reˈseɾba"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "hay", base: "haber" }, { word: "cargo", base: "cargo" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "reserva", ref: "es-1258" }]
+      - target: "El cargo es de diez euros."
+        ipa: "el ˈkaɾɡo es de djeθ ˈewɾos"
+        bases: [{ word: "El", base: "el" }, { word: "cargo", base: "cargo" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "diez", ref: "es-0214" }, { word: "euros", ref: "es-0550" }]
+  - id: "es-2188"
+    target: "el seguro"
+    ipa: "el seˈɡuɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "seguro", base: "seguro" }]
+    examples:
+      - target: "Tengo un seguro de viaje."
+        ipa: "ˈtenɡo un seˈɡuɾo de ˈbjaxe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "seguro", base: "seguro" }, { word: "de", base: "de" }, { word: "viaje", ref: "es-1690" }]
+      - target: "El seguro cubre el robo."
+        ipa: "el seˈɡuɾo ˈkubɾe el ˈrobo"
+        bases: [{ word: "El", base: "el" }, { word: "seguro", base: "seguro" }, { word: "cubre", base: "cubrir" }, { word: "robo", ref: "es-2182" }]
+  - id: "es-2189"
+    target: "la temporada"
+    ipa: "la tempoˈɾada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "temporada", base: "temporada" }]
+    examples:
+      - target: "Viajamos en temporada baja."
+        ipa: "bjaˈxamos en tempoˈɾada ˈbaxa"
+        bases: [{ word: "Viajamos", ref: "es-1691" }, { word: "en", base: "en" }, { word: "temporada", base: "temporada" }, { word: "baja", base: "bajo" }]
+      - target: "La temporada de verano es larga."
+        ipa: "la tempoˈɾada de beˈɾano es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "temporada", base: "temporada" }, { word: "de", base: "de" }, { word: "verano", ref: "es-0982" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-2190"
+    target: "el guía"
+    ipa: "el ˈɡia"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "guía", base: "guía" }]
+    examples:
+      - target: "El guía habla tres idiomas."
+        ipa: "el ˈɡia ˈabla tɾes iˈdjomas"
+        bases: [{ word: "El", base: "el" }, { word: "guía", base: "guía" }, { word: "habla", ref: "es-0027" }, { word: "tres", ref: "es-0207" }, { word: "idiomas", ref: "es-0244" }]
+      - target: "Vamos con un guía al museo."
+        ipa: "ˈbamos kon un ˈɡia al muˈseo"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "guía", base: "guía" }, { word: "al", base: "al" }, { word: "museo", ref: "es-0776" }]
+  - id: "es-2191"
+    target: "confirmar"
+    ipa: "konfiɾˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "confirmar", base: "confirmar" }]
+    examples:
+      - target: "Confirmo la reserva."
+        ipa: "konˈfiɾmo la reˈseɾba"
+        bases: [{ word: "Confirmo", base: "confirmar" }, { word: "la", base: "la" }, { word: "reserva", ref: "es-1258" }]
+      - target: "Confirman el vuelo por correo."
+        ipa: "konˈfiɾman el ˈbwelo poɾ koˈreo"
+        bases: [{ word: "Confirman", base: "confirmar" }, { word: "el", base: "el" }, { word: "vuelo", ref: "es-1064" }, { word: "por", base: "por" }, { word: "correo", ref: "es-0248" }]
+  - id: "es-2192"
+    target: "hospedarse"
+    ipa: "ospeˈdaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "hospedarse", base: "hospedarse" }]
+    examples:
+      - target: "Me hospedo en un hostal."
+        ipa: "me osˈpedo en un osˈtal"
+        bases: [{ word: "Me", base: "me" }, { word: "hospedo", base: "hospedarse" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hostal", ref: "es-1723" }]
+      - target: "Se hospeda en el centro."
+        ipa: "se osˈpeda en el ˈθentɾo"
+        bases: [{ word: "Se", base: "se" }, { word: "hospeda", base: "hospedarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+  - id: "es-2193"
+    target: "robar"
+    ipa: "roˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "robar", base: "robar" }]
+    examples:
+      - target: "Me roban la cartera."
+        ipa: "me ˈroban la kaɾˈteɾa"
+        bases: [{ word: "Me", base: "me" }, { word: "roban", base: "robar" }, { word: "la", base: "la" }, { word: "cartera", ref: "es-1168" }]
+      - target: "Roban en el metro."
+        ipa: "ˈroban en el ˈmetɾo"
+        bases: [{ word: "Roban", base: "robar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "metro", ref: "es-0675" }]
+  - id: "es-2194"
+    target: "turístico"
+    ipa: "tuˈɾistiko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "turístico", base: "turístico" }]
+    examples:
+      - target: "Es un lugar turístico."
+        ipa: "es un luˈɡaɾ tuˈɾistiko"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "lugar", base: "lugar" }, { word: "turístico", base: "turístico" }]
+      - target: "La zona turística está llena."
+        ipa: "la ˈθona tuˈɾistika esˈta ˈʝena"
+        bases: [{ word: "La", base: "la" }, { word: "zona", ref: "es-1905" }, { word: "turística", base: "turístico" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }]
+  - id: "es-2195"
+    target: "extranjero"
+    ipa: "ekstɾanˈxeɾo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "extranjero", base: "extranjero" }]
+    examples:
+      - target: "Es un turista extranjero."
+        ipa: "es un tuˈɾista ekstɾanˈxeɾo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "turista", ref: "es-2172" }, { word: "extranjero", base: "extranjero" }]
+      - target: "Hay muchos extranjeros en la playa."
+        ipa: "aj ˈmutʃos ekstɾanˈxeɾos en la ˈplaʝa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "extranjeros", base: "extranjero" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]

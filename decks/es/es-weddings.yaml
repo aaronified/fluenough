@@ -1,0 +1,313 @@
+schema: 1
+id: "es-weddings"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "weddings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2651"
+    target: "la boda"
+    ipa: "la ˈboda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "boda", base: "boda" }]
+    examples:
+      - target: "La boda es en junio."
+        ipa: "la ˈboda es en ˈxunjo"
+        bases: [{ word: "La", base: "la" }, { word: "boda", base: "boda" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "junio", ref: "es-0971" }]
+      - target: "Vamos a una boda en el pueblo."
+        ipa: "ˈbamos a ˈuna ˈboda en el ˈpweblo"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "una", base: "una" }, { word: "boda", base: "boda" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "pueblo", ref: "es-0783" }]
+  - id: "es-2652"
+    target: "el matrimonio"
+    ipa: "el matɾiˈmonjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "matrimonio", base: "matrimonio" }]
+    examples:
+      - target: "El matrimonio dura toda la vida."
+        ipa: "el matɾiˈmonjo ˈduɾa ˈtoda la ˈbida"
+        bases: [{ word: "El", base: "el" }, { word: "matrimonio", base: "matrimonio" }, { word: "dura", ref: "es-0851" }, { word: "toda", base: "toda" }, { word: "la", base: "la" }, { word: "vida", base: "vida" }]
+      - target: "Tienen un matrimonio feliz."
+        ipa: "ˈtjenen un matɾiˈmonjo feˈliθ"
+        bases: [{ word: "Tienen", ref: "es-0024" }, { word: "un", base: "un" }, { word: "matrimonio", base: "matrimonio" }, { word: "feliz", ref: "es-0442" }]
+  - id: "es-2653"
+    target: "casarse"
+    ipa: "kaˈsaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "casarse", base: "casarse" }]
+    examples:
+      - target: "Me caso en julio."
+        ipa: "me ˈkaso en ˈxuljo"
+        bases: [{ word: "Me", base: "me" }, { word: "caso", base: "casarse" }, { word: "en", base: "en" }, { word: "julio", ref: "es-0972" }]
+      - target: "Mi hermana se casa con Luis."
+        ipa: "mi eɾˈmana se ˈkasa kon lwis"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "se", base: "se" }, { word: "casa", base: "casarse" }, { word: "con", base: "con" }, { word: "Luis", base: "luis" }]
+  - id: "es-2654"
+    target: "el anillo"
+    ipa: "el aˈniʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "anillo", base: "anillo" }]
+    examples:
+      - target: "El anillo es de oro."
+        ipa: "el aˈniʝo es de ˈoɾo"
+        bases: [{ word: "El", base: "el" }, { word: "anillo", base: "anillo" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "oro", base: "oro" }]
+      - target: "Llevo un anillo en el dedo."
+        ipa: "ˈʝebo un aˈniʝo en el ˈdedo"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "un", base: "un" }, { word: "anillo", base: "anillo" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "dedo", ref: "es-0747" }]
+  - id: "es-2655"
+    target: "la invitación"
+    ipa: "la inbitaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "invitación", base: "invitación" }]
+    examples:
+      - target: "La invitación es bonita."
+        ipa: "la inbitaˈθjon es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "invitación", base: "invitación" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Recibo una invitación a la boda."
+        ipa: "reˈθibo ˈuna inbitaˈθjon a la ˈboda"
+        bases: [{ word: "Recibo", ref: "es-0301" }, { word: "una", base: "una" }, { word: "invitación", base: "invitación" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "boda", ref: "es-2651" }]
+  - id: "es-2656"
+    target: "la alianza"
+    ipa: "la aˈljanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alianza", base: "alianza" }]
+    examples:
+      - target: "La alianza brilla."
+        ipa: "la aˈljanθa ˈbɾiʝa"
+        bases: [{ word: "La", base: "la" }, { word: "alianza", base: "alianza" }, { word: "brilla", ref: "es-1134" }]
+      - target: "Llevo la alianza en el dedo."
+        ipa: "ˈʝebo la aˈljanθa en el ˈdedo"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "la", base: "la" }, { word: "alianza", base: "alianza" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "dedo", ref: "es-0747" }]
+  - id: "es-2657"
+    target: "la miel"
+    ipa: "la mjel"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "miel", base: "miel" }]
+    examples:
+      - target: "La miel es dulce."
+        ipa: "la mjel es ˈdulθe"
+        bases: [{ word: "La", base: "la" }, { word: "miel", base: "miel" }, { word: "es", ref: "es-0022" }, { word: "dulce", ref: "es-0657" }]
+      - target: "Pasamos la luna de miel en la playa."
+        ipa: "paˈsamos la ˈluna de mjel en la ˈplaʝa"
+        bases: [{ word: "Pasamos", ref: "es-1533" }, { word: "la", base: "la" }, { word: "luna", ref: "es-1764" }, { word: "de", base: "de" }, { word: "miel", base: "miel" }, { word: "en", base: "en" }, { word: "playa", ref: "es-0784" }]
+  - id: "es-2658"
+    target: "el padrino"
+    ipa: "el paˈdɾino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "padrino", base: "padrino" }]
+    examples:
+      - target: "El padrino da un brindis."
+        ipa: "el paˈdɾino da un ˈbɾindis"
+        bases: [{ word: "El", base: "el" }, { word: "padrino", base: "padrino" }, { word: "da", ref: "es-1629" }, { word: "un", base: "un" }, { word: "brindis", ref: "es-2625" }]
+      - target: "Mi tío es el padrino."
+        ipa: "mi ˈtio es el paˈdɾino"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", ref: "es-0167" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "padrino", base: "padrino" }]
+  - id: "es-2659"
+    target: "la madrina"
+    ipa: "la maˈdɾina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "madrina", base: "madrina" }]
+    examples:
+      - target: "La madrina lleva un vestido azul."
+        ipa: "la maˈdɾina ˈʝeba un besˈtido aˈθul"
+        bases: [{ word: "La", base: "la" }, { word: "madrina", base: "madrina" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "vestido", ref: "es-1018" }, { word: "azul", ref: "es-1008" }]
+      - target: "Mi prima es la madrina."
+        ipa: "mi ˈpɾima es la maˈdɾina"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "prima", ref: "es-0170" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "madrina", base: "madrina" }]
+  - id: "es-2660"
+    target: "el testigo"
+    ipa: "el tesˈtiɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "testigo", base: "testigo" }]
+    examples:
+      - target: "Los testigos firman el papel."
+        ipa: "los tesˈtiɡos ˈfiɾman el paˈpel"
+        bases: [{ word: "Los", base: "los" }, { word: "testigos", base: "testigo" }, { word: "firman", ref: "es-1874" }, { word: "el", base: "el" }, { word: "papel", ref: "es-1387" }]
+      - target: "El testigo dice la verdad."
+        ipa: "el tesˈtiɡo ˈdiθe la beɾˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "testigo", base: "testigo" }, { word: "dice", ref: "es-1627" }, { word: "la", base: "la" }, { word: "verdad", ref: "es-2111" }]
+  - id: "es-2661"
+    target: "la ceremonia"
+    ipa: "la θeɾeˈmonja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ceremonia", base: "ceremonia" }]
+    examples:
+      - target: "La ceremonia empieza a las cinco."
+        ipa: "la θeɾeˈmonja emˈpjeθa a las ˈθinko"
+        bases: [{ word: "La", base: "la" }, { word: "ceremonia", base: "ceremonia" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "cinco", ref: "es-0209" }]
+      - target: "La ceremonia es en la iglesia."
+        ipa: "la θeɾeˈmonja es en la iˈɡlesja"
+        bases: [{ word: "La", base: "la" }, { word: "ceremonia", base: "ceremonia" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "iglesia", ref: "es-0774" }]
+  - id: "es-2662"
+    target: "el banquete"
+    ipa: "el banˈkete"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "banquete", base: "banquete" }]
+    examples:
+      - target: "El banquete es muy largo."
+        ipa: "el banˈkete es mwi ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "banquete", base: "banquete" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", ref: "es-0429" }]
+      - target: "Hay un banquete en el jardín."
+        ipa: "aj un banˈkete en el xaɾˈdin"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "banquete", base: "banquete" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }]
+  - id: "es-2663"
+    target: "el velo"
+    ipa: "el ˈbelo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "velo", base: "velo" }]
+    examples:
+      - target: "La novia lleva un velo."
+        ipa: "la ˈnobja ˈʝeba un ˈbelo"
+        bases: [{ word: "La", base: "la" }, { word: "novia", ref: "es-0175" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "velo", base: "velo" }]
+      - target: "El velo es blanco."
+        ipa: "el ˈbelo es ˈblanko"
+        bases: [{ word: "El", base: "el" }, { word: "velo", base: "velo" }, { word: "es", ref: "es-0022" }, { word: "blanco", ref: "es-1012" }]
+  - id: "es-2664"
+    target: "el ramo"
+    ipa: "el ˈramo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ramo", base: "ramo" }]
+    examples:
+      - target: "La novia lleva un ramo."
+        ipa: "la ˈnobja ˈʝeba un ˈramo"
+        bases: [{ word: "La", base: "la" }, { word: "novia", ref: "es-0175" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "ramo", base: "ramo" }]
+      - target: "El ramo es de rosas."
+        ipa: "el ˈramo es de ˈrosas"
+        bases: [{ word: "El", base: "el" }, { word: "ramo", base: "ramo" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "rosas", base: "rosas" }]
+  - id: "es-2665"
+    target: "el fotógrafo"
+    ipa: "el foˈtoɡɾafo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fotógrafo", base: "fotógrafo" }]
+    examples:
+      - target: "El fotógrafo hace muchas fotos."
+        ipa: "el foˈtoɡɾafo ˈaθe ˈmutʃas ˈfotos"
+        bases: [{ word: "El", base: "el" }, { word: "fotógrafo", base: "fotógrafo" }, { word: "hace", ref: "es-0025" }, { word: "muchas", ref: "es-0053" }, { word: "fotos", ref: "es-1184" }]
+      - target: "La fotógrafa es muy buena."
+        ipa: "la foˈtoɡɾafa es mwi ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "fotógrafa", base: "fotógrafo" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-2666"
+    target: "brindar"
+    ipa: "bɾinˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "brindar", base: "brindar" }]
+    examples:
+      - target: "Brindamos por los novios."
+        ipa: "bɾinˈdamos poɾ los ˈnobjos"
+        bases: [{ word: "Brindamos", base: "brindar" }, { word: "por", base: "por" }, { word: "los", base: "los" }, { word: "novios", ref: "es-0174" }]
+      - target: "Brindo por la familia."
+        ipa: "ˈbɾindo poɾ la faˈmilja"
+        bases: [{ word: "Brindo", base: "brindar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }]
+  - id: "es-2667"
+    target: "el yerno"
+    ipa: "el ˈʝeɾno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "yerno", base: "yerno" }]
+    examples:
+      - target: "Mi yerno es médico."
+        ipa: "mi ˈʝeɾno es ˈmediko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "yerno", base: "yerno" }, { word: "es", ref: "es-0022" }, { word: "médico", ref: "es-0506" }]
+      - target: "El yerno llega mañana."
+        ipa: "el ˈʝeɾno ˈʝeɡa maˈɲana"
+        bases: [{ word: "El", base: "el" }, { word: "yerno", base: "yerno" }, { word: "llega", ref: "es-0290" }, { word: "mañana", ref: "es-0978" }]
+  - id: "es-2668"
+    target: "la nuera"
+    ipa: "la ˈnweɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nuera", base: "nuera" }]
+    examples:
+      - target: "Mi nuera es muy simpática."
+        ipa: "mi ˈnweɾa es mwi simˈpatika"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "nuera", base: "nuera" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "simpática", ref: "es-0422" }]
+      - target: "La nuera cocina bien."
+        ipa: "la ˈnweɾa koˈθina bjen"
+        bases: [{ word: "La", base: "la" }, { word: "nuera", base: "nuera" }, { word: "cocina", ref: "es-0284" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-2669"
+    target: "la pareja"
+    ipa: "la paˈɾexa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pareja", base: "pareja" }]
+    examples:
+      - target: "La pareja se casa en mayo."
+        ipa: "la paˈɾexa se ˈkasa en ˈmaʝo"
+        bases: [{ word: "La", base: "la" }, { word: "pareja", base: "pareja" }, { word: "se", base: "se" }, { word: "casa", base: "casarse" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }]
+      - target: "Mi pareja es muy amable."
+        ipa: "mi paˈɾexa es mwi aˈmable"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pareja", base: "pareja" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", base: "amable" }]
+  - id: "es-2670"
+    target: "el divorcio"
+    ipa: "el diˈboɾθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "divorcio", base: "divorcio" }]
+    examples:
+      - target: "El divorcio es difícil."
+        ipa: "el diˈboɾθjo es diˈfiθil"
+        bases: [{ word: "El", base: "el" }, { word: "divorcio", base: "divorcio" }, { word: "es", ref: "es-0022" }, { word: "difícil", ref: "es-0414" }]
+      - target: "Tramitan el divorcio."
+        ipa: "tɾaˈmitan el diˈboɾθjo"
+        bases: [{ word: "Tramitan", base: "tramitar" }, { word: "el", base: "el" }, { word: "divorcio", base: "divorcio" }]
+  - id: "es-2671"
+    target: "divorciarse"
+    ipa: "diboɾˈθjaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "divorciarse", base: "divorciarse" }]
+    examples:
+      - target: "Me divorcio en el juzgado."
+        ipa: "me diˈboɾθjo en el xuθˈɡado"
+        bases: [{ word: "Me", base: "me" }, { word: "divorcio", base: "divorciarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "juzgado", base: "juzgado" }]
+      - target: "Se divorcian en primavera."
+        ipa: "se diˈboɾθjan en pɾimaˈbeɾa"
+        bases: [{ word: "Se", base: "se" }, { word: "divorcian", base: "divorciarse" }, { word: "en", base: "en" }, { word: "primavera", ref: "es-0981" }]
+  - id: "es-2672"
+    target: "viudo"
+    ipa: "ˈbjudo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "viudo", base: "viudo" }]
+    examples:
+      - target: "Mi abuelo es viudo."
+        ipa: "mi aˈbwelo es ˈbjudo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }, { word: "es", ref: "es-0022" }, { word: "viudo", base: "viudo" }]
+      - target: "Mi abuela es viuda."
+        ipa: "mi aˈbwela es ˈbjuda"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuela", ref: "es-0166" }, { word: "es", ref: "es-0022" }, { word: "viuda", base: "viudo" }]

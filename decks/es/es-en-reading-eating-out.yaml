@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-eating-out"
+name: "Reading: booking and ordering"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a restaurant: a booking and a menu card with a recommendation. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-booking-a-table"
+    title: "Booking a table"
+    theme: "eating-out"
+    sentences:
+      - text: "Hola, tengo una reserva a las nueve."
+      - text: "Es para cuatro personas."
+      - text: "Quiero una mesa cerca de la ventana."
+      - text: "Gracias, hasta las nueve."
+    questions:
+      - id: "es-1296"
+        prompt: { en: "What time is the booking?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 2
+      - id: "es-1297"
+        prompt: { en: "How many people is the booking for?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Four" }
+        answer: 3
+      - id: "es-1298"
+        prompt: { en: "Where does the customer want to sit?" }
+        options:
+          - { en: "Near the window" }
+          - { en: "At the bar" }
+          - { en: "Outside the door" }
+        answer: 1
+  - id: "es-restaurant-bill"
+    title: "The bill and a tip"
+    theme: "eating-out"
+    sentences:
+      - text: "La cuenta, por favor."
+      - text: "Son veinte euros con el vino."
+      - text: "Dejo una propina de dos euros."
+      - text: "Gracias, todo estaba muy rico."
+    questions:
+      - id: "es-1299"
+        prompt: { en: "How much is the bill?" }
+        options:
+          - { en: "Twenty euros" }
+          - { en: "Two euros" }
+          - { en: "Ten euros" }
+        answer: 1
+      - id: "es-1300"
+        prompt: { en: "How much is the tip?" }
+        options:
+          - { en: "Ten euros" }
+          - { en: "Twenty euros" }
+          - { en: "Two euros" }
+        answer: 3
+      - id: "es-1301"
+        prompt: { en: "What does the customer say at the end?" }
+        options:
+          - { en: "Everything was very tasty" }
+          - { en: "Please bring the menu" }
+          - { en: "Good morning" }
+        answer: 1

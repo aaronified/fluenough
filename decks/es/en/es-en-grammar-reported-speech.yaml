@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-reported-speech"
+kind: "layer"
+core: "es-grammar-reported-speech"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reported speech: he said that"
+license: "CC-BY-SA-4.0"
+description: "When you report what someone said, the tense moves back one step: \"tengo hambre\" becomes dijo que tenía hambre, he said he was hungry. The future becomes the conditional, and a command becomes a request with the subjunctive: me pidió que viniera, he asked me to come. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Reported speech after decir"
+  slot_name: "shift"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "present → imperfect": "present becomes imperfect: dijo que tenía", "future → conditional": "future becomes conditional: dijo que tendría", "preterite → pluperfect": "preterite becomes pluperfect: dijo que había tenido", "order → subjunctive": "a command becomes a request: me pidió que tuviera" }
+  entries:
+    "tener": "to have"
+    "ser": "to be"
+    "estar": "to be (place, state)"
+    "ir": "to go"
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "trabajar": "to work"
+    "hacer": "to do; to make"
+    "venir": "to come"
+  notes: "Reporting a statement moves each tense back one step: present to imperfect (tengo, tenía), future to conditional (tendré, tendría), preterite to pluperfect (tuve, había tenido). A command or a request is reported with que and the subjunctive: me pidió que viniera. Dijo que is the usual opening, and the person who spoke does not change in the report."

@@ -1,0 +1,268 @@
+schema: 1
+id: "es-en-government"
+kind: "layer"
+core: "es-government"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government: offices, forms, laws and elections"
+license: "CC-BY-SA-4.0"
+description: "Words for the state and its offices: the government and the ministry, the town hall and the mayor, the vote and the candidate, the forms, certificates and fees you need, and the verbs to vote, govern and apply. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2260":
+    native: "government"
+    notes: { n1: "El gobierno is the government, the group that runs a country. Gobernar is to govern." }
+    bases: { "el": "the", "gobierno": "government" }
+    examples:
+      "El gobierno aprueba una ley.": { native: "The government passes a law.", bases: { "El": "the", "gobierno": "government", "una": "a" } }
+      "Quiero un gobierno justo.": { native: "I want a fair government.", bases: { "un": "a", "gobierno": "government" } }
+  "es-2261":
+    native: "minister"
+    notes: { n1: "El ministro is a government minister in charge of an area. The feminine is la ministra." }
+    bases: { "el": "the", "ministro": "minister" }
+    examples:
+      "El ministro habla en el parlamento.": { native: "The minister speaks in parliament.", bases: { "El": "the", "ministro": "minister", "en": "in" } }
+      "La ministra visita el hospital.": { native: "The minister visits the hospital.", bases: { "La": "the", "ministra": "minister", "el": "the" } }
+  "es-2262":
+    native: "ministry"
+    notes: { n1: "El ministerio is a government department, led by a minister." }
+    bases: { "el": "the", "ministerio": "ministry" }
+    examples:
+      "El ministerio está en el centro.": { native: "The ministry is in the centre.", bases: { "El": "the", "ministerio": "ministry", "en": "in", "centro": "centre" } }
+      "Llamo al ministerio de salud.": { native: "I call the health ministry.", bases: { "al": "to the", "ministerio": "ministry", "de": "of" } }
+  "es-2263":
+    native: "mayor"
+    notes: { n1: "El alcalde is the mayor of a town or city. The feminine is la alcaldesa." }
+    bases: { "el": "the", "alcalde": "mayor" }
+    examples:
+      "El alcalde da un discurso.": { native: "The mayor gives a speech.", bases: { "El": "the", "alcalde": "mayor", "un": "a", "discurso": "speech" } }
+      "La alcaldesa es muy conocida.": { native: "The mayor is very well known.", bases: { "La": "the", "alcaldesa": "mayor", "conocida": "well-known" } }
+  "es-2264":
+    native: "councillor"
+    notes: { n1: "El concejal is a councillor of a town, who helps run it. The feminine is la concejala." }
+    bases: { "el": "the", "concejal": "councillor" }
+    examples:
+      "El concejal habla del parque.": { native: "The councillor talks about the park.", bases: { "El": "the", "concejal": "councillor", "del": "of" } }
+      "Hay un concejal en la reunión.": { native: "There is a councillor at the meeting.", bases: { "Hay": "there is; there are", "un": "a", "concejal": "councillor", "en": "in", "la": "the" } }
+  "es-2265":
+    native: "parliament"
+    notes: { n1: "El parlamento is a parliament, the group of elected people who make laws." }
+    bases: { "el": "the", "parlamento": "parliament" }
+    examples:
+      "El parlamento aprueba la ley.": { native: "Parliament passes the law.", bases: { "El": "the", "parlamento": "parliament", "la": "the" } }
+      "Trabajo cerca del parlamento.": { native: "I work near parliament.", bases: { "del": "of", "parlamento": "parliament" } }
+  "es-2266":
+    native: "member of parliament"
+    notes: { n1: "El diputado is an elected member of a parliament. The feminine is la diputada." }
+    bases: { "el": "the", "diputado": "member of parliament" }
+    examples:
+      "El diputado vota en contra.": { native: "The MP votes against.", bases: { "El": "the", "diputado": "member of parliament", "en": "in", "contra": "against" } }
+      "Hay un diputado nuevo.": { native: "There is a new MP.", bases: { "Hay": "there is; there are", "un": "a", "diputado": "member of parliament" } }
+  "es-2267":
+    native: "vote"
+    notes: { n1: "El voto is a vote, the choice put on a paper or said aloud in an election." }
+    bases: { "el": "the", "voto": "vote" }
+    examples:
+      "Mi voto es secreto.": { native: "My vote is secret.", bases: { "voto": "vote", "secreto": "secret" } }
+      "Doy mi voto al candidato.": { native: "I give my vote to the candidate.", bases: { "voto": "vote", "al": "to the" } }
+  "es-2268":
+    native: "voter"
+    notes: { n1: "El votante is a person who votes in an election." }
+    bases: { "el": "the", "votante": "voter" }
+    examples:
+      "El votante elige un partido.": { native: "The voter chooses a party.", bases: { "El": "the", "votante": "voter", "un": "a" } }
+      "Hay muchos votantes jóvenes.": { native: "There are many young voters.", bases: { "Hay": "there is; there are", "votantes": "voter" } }
+  "es-2269":
+    native: "party (political)"
+    notes: { n1: "El partido is a political party, a group with the same ideas. Partido is also a match." }
+    bases: { "el": "the", "partido": "party (political)" }
+    examples:
+      "Mi partido gana la elección.": { native: "My party wins the election.", bases: { "partido": "party (political)", "la": "the" } }
+      "Soy miembro de un partido.": { native: "I am a member of a party.", bases: { "miembro": "member", "de": "of", "un": "a", "partido": "party (political)" } }
+  "es-2270":
+    native: "constitution"
+    notes: { n1: "La constitución is the basic law of a country." }
+    bases: { "la": "the", "constitución": "constitution" }
+    examples:
+      "La constitución protege los derechos.": { native: "The constitution protects the rights.", bases: { "La": "the", "constitución": "constitution", "protege": "to protect", "los": "the" } }
+      "La constitución es muy antigua.": { native: "The constitution is very old.", bases: { "La": "the", "constitución": "constitution" } }
+  "es-2271":
+    native: "right; law"
+    notes: { n1: "El derecho is a right, a freedom a person has, or the study of law." }
+    bases: { "el": "the", "derecho": "right; law" }
+    examples:
+      "Tengo derecho a votar.": { native: "I have the right to vote.", bases: { "derecho": "right; law", "a": "to" } }
+      "Estudio derecho en la universidad.": { native: "I study law at university.", bases: { "derecho": "right; law", "en": "in", "la": "the" } }
+  "es-2272":
+    native: "civil servant"
+    notes: { n1: "El funcionario is a civil servant, who works for the state. The feminine is la funcionaria." }
+    bases: { "el": "the", "funcionario": "civil servant" }
+    examples:
+      "El funcionario revisa el formulario.": { native: "The civil servant checks the form.", bases: { "El": "the", "funcionario": "civil servant", "revisa": "to check" } }
+      "Trabajo como funcionario.": { native: "I work as a civil servant.", bases: { "funcionario": "civil servant", "como": "as" } }
+  "es-2273":
+    native: "justice"
+    notes: { n1: "La justicia is justice, what is fair and lawful, or the courts." }
+    bases: { "la": "the", "justicia": "justice" }
+    examples:
+      "La justicia es para todos.": { native: "Justice is for all.", bases: { "La": "the", "justicia": "justice", "para": "for" } }
+      "Acudo a la justicia.": { native: "I go to the courts.", bases: { "Acudo": "to go to; to turn to", "a": "to", "la": "the", "justicia": "justice" } }
+  "es-2274":
+    native: "candidate"
+    notes: { n1: "El candidato is a person who stands for election. The feminine is la candidata." }
+    bases: { "el": "the", "candidato": "candidate" }
+    examples:
+      "El candidato habla en la radio.": { native: "The candidate speaks on the radio.", bases: { "El": "the", "candidato": "candidate", "en": "in", "la": "the" } }
+      "Hay tres candidatos.": { native: "There are three candidates.", bases: { "Hay": "there is; there are", "candidatos": "candidate" } }
+  "es-2275":
+    native: "campaign"
+    notes: { n1: "La campaña is a campaign, a set of actions to win votes or raise awareness." }
+    bases: { "la": "the", "campaña": "campaign" }
+    examples:
+      "La campaña empieza el lunes.": { native: "The campaign starts on Monday.", bases: { "La": "the", "campaña": "campaign", "el": "the" } }
+      "La campaña es muy costosa.": { native: "The campaign is very expensive.", bases: { "La": "the", "campaña": "campaign", "costosa": "costly" } }
+  "es-2276":
+    native: "register; registry"
+    notes: { n1: "El registro is an official list or record, or the office where it is kept." }
+    bases: { "el": "the", "registro": "register; registry" }
+    examples:
+      "Mi nombre está en el registro.": { native: "My name is on the register.", bases: { "en": "in", "el": "the", "registro": "register; registry" } }
+      "Voy al registro civil.": { native: "I go to the civil registry.", bases: { "al": "to the", "registro": "register; registry", "civil": "civil" } }
+  "es-2277":
+    native: "certificate"
+    notes: { n1: "El certificado is an official document that proves a fact." }
+    bases: { "el": "the", "certificado": "certificate" }
+    examples:
+      "Necesito un certificado de nacimiento.": { native: "I need a birth certificate.", bases: { "un": "a", "certificado": "certificate", "de": "of", "nacimiento": "birth" } }
+      "El certificado está listo.": { native: "The certificate is ready.", bases: { "El": "the", "certificado": "certificate" } }
+  "es-2278":
+    native: "identity card"
+    notes: { n1: "El DNI is the identity card of a Spanish citizen. It is a short name, like a card number." }
+    bases: { "el": "the", "DNI": "identity card" }
+    examples:
+      "Llevo el DNI siempre.": { native: "I always carry my identity card.", bases: { "el": "the", "DNI": "identity card" } }
+      "El DNI está caducado.": { native: "The identity card has expired.", bases: { "El": "the", "DNI": "identity card", "caducado": "expired" } }
+  "es-2279":
+    native: "municipal register"
+    notes: { n1: "El padrón is the register of residents in a town. Estar en el padrón is to be registered there." }
+    bases: { "el": "the", "padrón": "municipal register" }
+    examples:
+      "Estoy en el padrón de Madrid.": { native: "I am on the Madrid register.", bases: { "en": "in", "el": "the", "padrón": "municipal register", "de": "of" } }
+      "Pido un certificado del padrón.": { native: "I ask for a certificate from the register.", bases: { "un": "a", "del": "of", "padrón": "municipal register" } }
+  "es-2280":
+    native: "procedure; step"
+    notes: { n1: "El trámite is a step in an official procedure, something to do at an office." }
+    bases: { "el": "the", "trámite": "procedure; step" }
+    examples:
+      "El trámite es largo.": { native: "The procedure is long.", bases: { "El": "the", "trámite": "procedure; step" } }
+      "Hago los trámites en la mañana.": { native: "I do the paperwork in the morning.", bases: { "los": "the", "trámites": "procedure; step", "en": "in", "la": "the" } }
+  "es-2281":
+    native: "file; dossier"
+    notes: { n1: "El expediente is the file of papers kept for one case." }
+    bases: { "el": "the", "expediente": "file; dossier" }
+    examples:
+      "El expediente está en la oficina.": { native: "The file is in the office.", bases: { "El": "the", "expediente": "file; dossier", "en": "in", "la": "the" } }
+      "Busco mi expediente.": { native: "I look for my file.", bases: { "expediente": "file; dossier" } }
+  "es-2282":
+    native: "requirement"
+    notes: { n1: "El requisito is a requirement, something needed for a thing to be allowed." }
+    bases: { "el": "the", "requisito": "requirement" }
+    examples:
+      "Un requisito es tener la edad.": { native: "One requirement is to be of age.", bases: { "Un": "a", "requisito": "requirement", "la": "the" } }
+      "Cumplo todos los requisitos.": { native: "I meet all the requirements.", bases: { "Cumplo": "to meet; to fulfil", "los": "the", "requisitos": "requirement" } }
+  "es-2283":
+    native: "fine"
+    notes: { n1: "La multa is a fine, money to pay for breaking a rule." }
+    bases: { "la": "the", "multa": "fine" }
+    examples:
+      "Me ponen una multa.": { native: "I get a fine.", bases: { "Me": "to me", "una": "a", "multa": "fine" } }
+      "La multa es de cien euros.": { native: "The fine is a hundred euros./euro", bases: { "La": "the", "multa": "fine", "de": "of" } }
+  "es-2284":
+    native: "licence; permit"
+    notes: { n1: "La licencia is a licence or permit, an official right to do something." }
+    bases: { "la": "the", "licencia": "licence; permit" }
+    examples:
+      "Necesito una licencia para el negocio.": { native: "I need a licence for the business.", bases: { "una": "a", "licencia": "licence; permit", "para": "for", "el": "the" } }
+      "Tengo licencia de conducir.": { native: "I have a driving licence.", bases: { "licencia": "licence; permit", "de": "of" } }
+  "es-2285":
+    native: "printed form"
+    notes: { n1: "El impreso is a printed form, to fill in and hand in." }
+    bases: { "el": "the", "impreso": "printed form" }
+    examples:
+      "Relleno el impreso con tinta.": { native: "I fill in the form with ink.", bases: { "Relleno": "to fill in", "el": "the", "impreso": "printed form", "con": "with", "tinta": "ink" } }
+      "El impreso está en la ventanilla.": { native: "The form is at the counter.", bases: { "El": "the", "impreso": "printed form", "en": "in", "la": "the" } }
+  "es-2286":
+    native: "residence"
+    notes: { n1: "La residencia is a residence, the place where someone lives, or a permit to live in a country." }
+    bases: { "la": "the", "residencia": "residence" }
+    examples:
+      "Mi residencia es en Madrid.": { native: "My residence is in Madrid.", bases: { "residencia": "residence", "en": "in" } }
+      "Pido la residencia.": { native: "I apply for residence.", bases: { "la": "the", "residencia": "residence" } }
+  "es-2287":
+    native: "town hall; council"
+    notes: { n1: "El ayuntamiento is the town hall, where the local government works." }
+    bases: { "el": "the", "ayuntamiento": "town hall; council" }
+    examples:
+      "El ayuntamiento está en la plaza.": { native: "The town hall is in the square.", bases: { "El": "the", "ayuntamiento": "town hall; council", "en": "in", "la": "the" } }
+      "Voy al ayuntamiento hoy.": { native: "I go to the town hall today.", bases: { "al": "to the", "ayuntamiento": "town hall; council" } }
+  "es-2288":
+    native: "municipality"
+    notes: { n1: "El municipio is a municipality, a town with its own council." }
+    bases: { "el": "the", "municipio": "municipality" }
+    examples:
+      "Vivo en un municipio pequeño.": { native: "I live in a small municipality.", bases: { "en": "in", "un": "a", "municipio": "municipality" } }
+      "El municipio tiene mil habitantes.": { native: "The municipality has a thousand inhabitants.", bases: { "El": "the", "municipio": "municipality" } }
+  "es-2289":
+    native: "province"
+    notes: { n1: "La provincia is a province, a region of a country with its own capital." }
+    bases: { "la": "the", "provincia": "province" }
+    examples:
+      "Vivo en la provincia de Sevilla.": { native: "I live in the province of Seville.", bases: { "en": "in", "la": "the", "provincia": "province", "de": "of" } }
+      "La provincia es grande.": { native: "The province is big.", bases: { "La": "the", "provincia": "province" } }
+  "es-2290":
+    native: "nation"
+    notes: { n1: "La nación is a nation, a people with a shared country and history." }
+    bases: { "la": "the", "nación": "nation" }
+    examples:
+      "La nación celebra su día.": { native: "The nation celebrates its day.", bases: { "La": "the", "nación": "nation", "celebra": "to celebrate" } }
+      "Es una nación grande.": { native: "It is a large nation.", bases: { "una": "a", "nación": "nation" } }
+  "es-2291":
+    native: "governor"
+    notes: { n1: "El gobernador is the governor of a province or state. The feminine is la gobernadora." }
+    bases: { "el": "the", "gobernador": "governor" }
+    examples:
+      "El gobernador visita la provincia.": { native: "The governor visits the province.", bases: { "El": "the", "gobernador": "governor", "la": "the" } }
+      "La gobernadora habla en la radio.": { native: "The governor speaks on the radio.", bases: { "La": "the", "gobernadora": "governor", "en": "in" } }
+  "es-2292":
+    native: "vote; voting"
+    notes: { n1: "La votación is the act of voting, or the count of votes." }
+    bases: { "la": "the", "votación": "vote; voting" }
+    examples:
+      "La votación es el domingo.": { native: "The vote is on Sunday.", bases: { "La": "the", "votación": "vote; voting", "el": "the" } }
+      "Hay una votación en la clase.": { native: "There is a vote in the class.", bases: { "Hay": "there is; there are", "una": "a", "votación": "vote; voting", "en": "in", "la": "the" } }
+  "es-2293":
+    native: "to vote"
+    notes: { n1: "Votar is to vote for someone or something in an election." }
+    bases: { "votar": "to vote" }
+    examples:
+      "Voto por el candidato.": { native: "I vote for the candidate.", bases: { "Voto": "to vote", "por": "for", "el": "the" } }
+      "Votamos el martes.": { native: "We vote on Tuesday.", bases: { "Votamos": "to vote", "el": "the" } }
+  "es-2294":
+    native: "to govern"
+    notes: { n1: "Gobernar is to govern, to run a country or a region. Its stem changes: gobierno, gobiernas." }
+    bases: { "gobernar": "to govern" }
+    examples:
+      "El partido gobierna la ciudad.": { native: "The party governs the city.", bases: { "El": "the", "gobierna": "to govern", "la": "the" } }
+      "Gobiernan con una mayoría.": { native: "They govern with a majority.", bases: { "Gobiernan": "to govern", "con": "with", "una": "a", "mayoría": "majority" } }
+  "es-2295":
+    native: "to manage; to process"
+    notes: { n1: "Gestionar is to manage or process a matter, such as a form or a case." }
+    bases: { "gestionar": "to manage; to process" }
+    examples:
+      "Gestiono el trámite.": { native: "I process the procedure.", bases: { "Gestiono": "to manage; to process", "el": "the" } }
+      "Gestionan los documentos.": { native: "They process the documents.", bases: { "Gestionan": "to manage; to process", "los": "the" } }
+  "es-2296":
+    native: "to apply for; to request"
+    notes: { n1: "Solicitar is to apply for something official, such as a permit or a job." }
+    bases: { "solicitar": "to apply for; to request" }
+    examples:
+      "Solicito una licencia.": { native: "I apply for a licence.", bases: { "Solicito": "to apply for; to request", "una": "a" } }
+      "Solicitan el certificado.": { native: "They apply for the certificate.", bases: { "Solicitan": "to apply for; to request", "el": "the" } }

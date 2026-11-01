@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-verbs-4"
+name: "Reading: a short story with a turn"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages of a story, told in the past tense, with a turn at the end. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-short-story"
+    title: "A short story with a turn"
+    theme: "verbs-4"
+    sentences:
+      - text: "Una noche, la princesa escapó del castillo."
+      - text: "Un dragón la persiguió por el bosque."
+      - text: "Ella se escondió en una cueva oscura."
+      - text: "Al amanecer, encontró el tesoro."
+    questions:
+      - id: "es-2933"
+        prompt: { en: "Where did the princess escape from?" }
+        options:
+          - { en: "The castle" }
+          - { en: "The school" }
+          - { en: "The town" }
+        answer: 1
+      - id: "es-2934"
+        prompt: { en: "Who chased her?" }
+        options:
+          - { en: "A dragon" }
+          - { en: "A wolf" }
+          - { en: "A fox" }
+        answer: 1
+      - id: "es-2935"
+        prompt: { en: "When did she find the treasure?" }
+        options:
+          - { en: "At dawn" }
+          - { en: "At dusk" }
+          - { en: "At noon" }
+        answer: 1
+  - id: "es-the-turn"
+    title: "The turn"
+    theme: "verbs-4"
+    sentences:
+      - text: "El zorro descubrió el secreto del bosque."
+      - text: "Cuando abrió la puerta, todo estaba en silencio."
+      - text: "De repente, alguien le gritó desde la ventana."
+      - text: "Era su hermana, que lo había buscado toda la noche."
+    questions:
+      - id: "es-2936"
+        prompt: { en: "What did the fox discover?" }
+        options:
+          - { en: "The secret of the forest" }
+          - { en: "A new road" }
+          - { en: "A river" }
+        answer: 1
+      - id: "es-2937"
+        prompt: { en: "What was quiet when he opened the door?" }
+        options:
+          - { en: "Everything" }
+          - { en: "The street" }
+          - { en: "The garden" }
+        answer: 1
+      - id: "es-2938"
+        prompt: { en: "Who had been looking for him all night?" }
+        options:
+          - { en: "His sister" }
+          - { en: "The police" }
+          - { en: "A stranger" }
+        answer: 1

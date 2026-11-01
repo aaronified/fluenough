@@ -1,0 +1,156 @@
+schema: 1
+id: "es-en-money"
+kind: "layer"
+core: "es-money"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money: prices, bills and banking"
+license: "CC-BY-SA-4.0"
+description: "Words for money: the purse and the budget, the salary and the debt, the investment and the investor, the cost and the bill, the payment and the total, and the verbs to invest and pay. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2992":
+    native: "purse"
+    notes: { n1: "El monedero is a small purse for coins. The wallet for notes is la cartera." }
+    bases: { "el": "the", "monedero": "purse" }
+    examples:
+      "Guardo las monedas en el monedero.": { native: "I keep the coins in the purse.", bases: { "las": "the", "en": "in", "el": "the", "monedero": "purse" } }
+      "El monedero está vacío.": { native: "The purse is empty.", bases: { "El": "the", "monedero": "purse" } }
+  "es-2993":
+    native: "budget; estimate"
+    notes: { n1: "El presupuesto is a budget, the plan of money to spend, or an estimate of a cost." }
+    bases: { "el": "the", "presupuesto": "budget; estimate" }
+    examples:
+      "Hago un presupuesto para el mes.": { native: "I make a budget for the month.", bases: { "un": "a", "presupuesto": "budget; estimate", "para": "for", "el": "the" } }
+      "El presupuesto es ajustado.": { native: "The budget is tight.", bases: { "El": "the", "presupuesto": "budget; estimate", "ajustado": "tight; adjusted" } }
+  "es-2994":
+    native: "salary; wage"
+    notes: { n1: "El salario is a salary or wage, the money paid for work. Sueldo is also used for a monthly salary." }
+    bases: { "el": "the", "salario": "salary; wage" }
+    examples:
+      "El salario sube cada año.": { native: "The salary goes up every year.", bases: { "El": "the", "salario": "salary; wage" } }
+      "Mi salario es mensual.": { native: "My salary is monthly.", bases: { "salario": "salary; wage", "mensual": "monthly" } }
+  "es-2995":
+    native: "investment"
+    notes: { n1: "La inversión is an investment, money put into something to make more money. The verb is invertir." }
+    bases: { "la": "the", "inversión": "investment" }
+    examples:
+      "La inversión es segura.": { native: "The investment is safe.", bases: { "La": "the", "inversión": "investment" } }
+      "Hago una inversión en un negocio.": { native: "I make an investment in a business.", bases: { "una": "a", "inversión": "investment", "en": "in", "un": "a" } }
+  "es-2996":
+    native: "investor"
+    notes: { n1: "El inversor is an investor, a person who puts money into a business. The feminine is la inversora." }
+    bases: { "el": "the", "inversor": "investor" }
+    examples:
+      "El inversor compra acciones.": { native: "The investor buys shares.", bases: { "El": "the", "inversor": "investor", "acciones": "share; action" } }
+      "La inversora gana mucho dinero.": { native: "The investor earns a lot of money.", bases: { "La": "the", "inversora": "investor" } }
+  "es-2997":
+    native: "debt"
+    notes: { n1: "La deuda is a debt, money owed to someone." }
+    bases: { "la": "the", "deuda": "debt" }
+    examples:
+      "Tengo una deuda con el banco.": { native: "I have a debt with the bank.", bases: { "una": "a", "deuda": "debt", "con": "with", "el": "the" } }
+      "La deuda es grande.": { native: "The debt is large.", bases: { "La": "the", "deuda": "debt" } }
+  "es-2998":
+    native: "poor"
+    notes: { n1: "Pobre is poor, with little money. It does not change for gender. The opposite is rico." }
+    bases: { "pobre": "poor" }
+    examples:
+      "Es un país pobre.": { native: "It is a poor country.", bases: { "un": "a", "pobre": "poor" } }
+      "Una familia pobre vive aquí.": { native: "A poor family lives here.", bases: { "Una": "a", "pobre": "poor" } }
+  "es-2999":
+    native: "to invest"
+    notes: { n1: "Invertir is to put money into something to make a profit. Its stem changes: invierto, inviertes." }
+    bases: { "invertir": "to invest" }
+    examples:
+      "Invierto en la bolsa.": { native: "I invest in the stock market.", bases: { "Invierto": "to invest", "en": "in", "la": "the", "bolsa": "stock market" } }
+      "Invierten el dinero en una casa.": { native: "They invest the money in a house.", bases: { "Invierten": "to invest", "el": "the", "en": "in", "una": "a" } }
+  "es-3000":
+    native: "credit; loan"
+    notes: { n1: "El crédito is credit, money lent to be paid back later, or the trust to pay later." }
+    bases: { "el": "the", "crédito": "credit; loan" }
+    examples:
+      "Pido un crédito al banco.": { native: "I ask the bank for a loan.", bases: { "un": "a", "crédito": "credit; loan", "al": "to the" } }
+      "El crédito tiene interés.": { native: "The credit has interest.", bases: { "El": "the", "crédito": "credit; loan", "interés": "interest" } }
+  "es-3001":
+    native: "cost"
+    notes: { n1: "El coste is the cost, the amount of money something takes." }
+    bases: { "el": "the", "coste": "cost" }
+    examples:
+      "El coste es alto.": { native: "The cost is high.", bases: { "El": "the", "coste": "cost", "alto": "high" } }
+      "Calculo el coste del viaje.": { native: "I work out the cost of the trip.", bases: { "Calculo": "to calculate", "el": "the", "coste": "cost", "del": "of" } }
+  "es-3002":
+    native: "cent"
+    notes: { n1: "El céntimo is a cent, the small coin: a hundred cents make a euro." }
+    bases: { "el": "the", "céntimo": "cent" }
+    examples:
+      "Un euro son cien céntimos.": { native: "One euro is a hundred cents.", bases: { "Un": "a", "céntimos": "cent" } }
+      "Tengo diez céntimos.": { native: "I have ten cents.", bases: { "céntimos": "cent" } }
+  "es-3003":
+    native: "dollar"
+    notes: { n1: "El dólar is the dollar, the money of the United States and other countries." }
+    bases: { "el": "the", "dólar": "dollar" }
+    examples:
+      "El dólar sube hoy.": { native: "The dollar goes up today.", bases: { "El": "the", "dólar": "dollar" } }
+      "Pago cien dólares.": { native: "I pay a hundred dollars.", bases: { "dólares": "dollar" } }
+  "es-3004":
+    native: "pound"
+    notes: { n1: "La libra is the pound, the money of the United Kingdom, or a unit of weight." }
+    bases: { "la": "the", "libra": "pound" }
+    examples:
+      "La libra vale más que el euro.": { native: "The pound is worth more than the euro.", bases: { "La": "the", "libra": "pound", "vale": "to be worth", "que": "that", "el": "the" } }
+      "Cambio euros por libras.": { native: "I change euros/euro for pounds.", bases: { "por": "for", "libras": "pound" } }
+  "es-3005":
+    native: "currency"
+    notes: { n1: "La divisa is a currency, the money of a country." }
+    bases: { "la": "the", "divisa": "currency" }
+    examples:
+      "La divisa del país es el peso.": { native: "The currency of the country is the peso.", bases: { "La": "the", "divisa": "currency", "del": "of", "el": "the", "peso": "peso (currency)" } }
+      "Cambio dinero en la casa de divisas.": { native: "I change money at the currency exchange.", bases: { "en": "in", "la": "the", "de": "of", "divisas": "currency" } }
+  "es-3006":
+    native: "payment"
+    notes: { n1: "El pago is a payment, money given for something bought or owed." }
+    bases: { "el": "the", "pago": "payment" }
+    examples:
+      "El pago es al contado.": { native: "The payment is in cash.", bases: { "El": "the", "al": "to the", "contado": "cash (al contado)", "pago": "payment" } }
+      "Hago el pago con tarjeta.": { native: "I make the payment by card.", bases: { "el": "the", "con": "with", "pago": "payment" } }
+  "es-3007":
+    native: "collection; receipt of pay"
+    notes: { n1: "El cobro is the collection of money owed, or the receipt of a wage." }
+    bases: { "el": "the", "cobro": "collection; receipt of pay" }
+    examples:
+      "El cobro es el primero del mes.": { native: "The pay day is the first of the month.", bases: { "El": "the", "cobro": "collection; receipt of pay", "del": "of" } }
+      "Esperamos el cobro de la factura.": { native: "We wait for the payment of the bill.", bases: { "el": "the", "cobro": "collection; receipt of pay", "de": "of", "la": "the" } }
+  "es-3008":
+    native: "sum; total"
+    notes: { n1: "La suma is a sum, the result of adding numbers together." }
+    bases: { "la": "the", "suma": "sum; total" }
+    examples:
+      "La suma es cuarenta euros.": { native: "The total is forty euros./euro", bases: { "La": "the", "suma": "sum; total" } }
+      "Hago la suma de los gastos.": { native: "I add up the expenses.", bases: { "la": "the", "suma": "sum; total", "de": "of", "los": "the" } }
+  "es-3009":
+    native: "total"
+    notes: { n1: "El total is the total, the whole amount of a bill." }
+    bases: { "el": "the", "total": "total" }
+    examples:
+      "El total es cuarenta y cinco euros.": { native: "The total is forty-five euros./euro", bases: { "El": "the", "total": "total" } }
+      "¿Cuál es el total?": { native: "What is the total?", bases: { "el": "the", "total": "total" } }
+  "es-3010":
+    native: "banking"
+    notes: { n1: "La banca is banking, the business of banks." }
+    bases: { "la": "the", "banca": "banking" }
+    examples:
+      "Trabajo en la banca.": { native: "I work in banking.", bases: { "en": "in", "la": "the", "banca": "banking" } }
+      "La banca es muy importante.": { native: "Banking is very important.", bases: { "La": "the", "banca": "banking" } }
+  "es-3011":
+    native: "profit; gain"
+    notes: { n1: "La ganancia is a profit or gain, money earned above the cost." }
+    bases: { "la": "the", "ganancia": "profit; gain" }
+    examples:
+      "Hay una ganancia pequeña.": { native: "There is a small profit.", bases: { "Hay": "there is; there are", "una": "a", "ganancia": "profit; gain" } }
+      "Las ganancias suben cada año.": { native: "The profits go up every year.", bases: { "Las": "the", "ganancias": "profit; gain" } }
+  "es-3012":
+    native: "loss"
+    notes: { n1: "La pérdida is a loss, money lost, the opposite of profit." }
+    bases: { "la": "the", "pérdida": "loss" }
+    examples:
+      "La pérdida es grande.": { native: "The loss is great.", bases: { "La": "the", "pérdida": "loss" } }
+      "Hay una pérdida de dinero.": { native: "There is a loss of money.", bases: { "Hay": "there is; there are", "una": "a", "pérdida": "loss", "de": "of" } }

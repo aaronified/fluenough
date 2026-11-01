@@ -1,0 +1,50 @@
+schema: 1
+id: "es-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1972"
+    target: "El enfermero llama al médico."
+    ipa: "el enfeɾˈmeɾo ˈʝama al ˈmediko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "enfermero", ref: "es-1938" }, { word: "llama", ref: "es-0302" }, { word: "al", base: "al" }, { word: "médico", ref: "es-0506" }]
+    confusables: [{ id: "doctor", ref: "es-1468", kind: "word" }, { id: "clinica", ref: "es-1939", kind: "word" }]
+  - id: "es-1973"
+    target: "Hago ejercicio y como fruta todos los días."
+    ipa: "ˈaɡo exeɾˈθiθjo i ˈkomo ˈfɾuta ˈtodos los ˈdias"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicio", ref: "es-0913" }, { word: "y", ref: "es-0048" }, { word: "como", ref: "es-0028" }, { word: "fruta", ref: "es-0568" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", ref: "es-0019" }]
+    confusables: [{ id: "entrenar", ref: "es-1961", kind: "word" }, { id: "alimento", ref: "es-1949", kind: "word" }]
+  - id: "es-1974"
+    target: "Tengo mucho estrés y poca energía."
+    ipa: "ˈtenɡo ˈmutʃo esˈtɾes i ˈpoka eneɾˈxia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucho", ref: "es-0053" }, { word: "estrés", ref: "es-1942" }, { word: "y", ref: "es-0048" }, { word: "poca", ref: "es-0358" }, { word: "energía", ref: "es-1941" }]
+    confusables: [{ id: "cansancio", ref: "es-1940", kind: "word" }, { id: "fatiga", ref: "es-1970", kind: "word" }]
+  - id: "es-1975"
+    target: "Me relajo en el masaje."
+    ipa: "me reˈlaxo en el maˈsaxe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "relajo", ref: "es-1943" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "masaje", ref: "es-1955" }]
+    confusables: [{ id: "bienestar", ref: "es-1954", kind: "word" }, { id: "sano", ref: "es-1965", kind: "word" }]
+  - id: "es-1976"
+    target: "Los pulmones necesitan aire limpio."
+    ipa: "los pulˈmones neθeˈsitan ˈajɾe ˈlimpjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "pulmones", ref: "es-1956" }, { word: "necesitan", ref: "es-0288" }, { word: "aire", base: "aire" }, { word: "limpio", ref: "es-0285" }]
+    confusables: [{ id: "respiracion", ref: "es-1967", kind: "word" }, { id: "hueso", ref: "es-1957", kind: "word" }]
+  - id: "es-1977"
+    target: "Quiero adelgazar y no engordar."
+    ipa: "ˈkjeɾo adelɡaˈθaɾ i no enɡoɾˈdaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "adelgazar", ref: "es-1963" }, { word: "y", ref: "es-0048" }, { word: "no", ref: "es-0043" }, { word: "engordar", ref: "es-1964" }]
+    confusables: [{ id: "peso", ref: "es-1569", kind: "word" }, { id: "grasa", ref: "es-1951", kind: "word" }]

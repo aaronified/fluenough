@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-weddings"
+name: "Reading: a wedding card and the plans"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a wedding invitation card, and notes on who does what at the wedding. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-wedding-card"
+    title: "A wedding invitation card"
+    theme: "weddings"
+    sentences:
+      - text: "Ana y Luis se casan el 12 de junio."
+      - text: "La ceremonia es en la iglesia a las cinco."
+      - text: "El banquete será en el jardín."
+      - text: "Les pedimos que traigan un regalo, no flores."
+    questions:
+      - id: "es-2679"
+        prompt: { en: "When is the wedding?" }
+        options:
+          - { en: "12 June" }
+          - { en: "12 May" }
+          - { en: "21 June" }
+        answer: 1
+      - id: "es-2680"
+        prompt: { en: "Where is the ceremony?" }
+        options:
+          - { en: "In the church" }
+          - { en: "In the garden" }
+          - { en: "At the hotel" }
+        answer: 1
+      - id: "es-2681"
+        prompt: { en: "What are guests asked not to bring?" }
+        options:
+          - { en: "Flowers" }
+          - { en: "Gifts" }
+          - { en: "Food" }
+        answer: 1
+  - id: "es-wedding-plans"
+    title: "Who does what at the wedding"
+    theme: "weddings"
+    sentences:
+      - text: "La novia lleva un vestido blanco y un velo."
+      - text: "El padrino da un brindis en el banquete."
+      - text: "Mi hermana es la madrina de la boda."
+      - text: "El fotógrafo hace muchas fotos."
+    questions:
+      - id: "es-2682"
+        prompt: { en: "What is the bride wearing?" }
+        options:
+          - { en: "A white dress and a veil" }
+          - { en: "A red dress" }
+          - { en: "A suit" }
+        answer: 1
+      - id: "es-2683"
+        prompt: { en: "Who makes a toast?" }
+        options:
+          - { en: "The best man" }
+          - { en: "The bride" }
+          - { en: "The photographer" }
+        answer: 1
+      - id: "es-2684"
+        prompt: { en: "Who is the sister?" }
+        options:
+          - { en: "The bridesmaid" }
+          - { en: "The bride" }
+          - { en: "The guest" }
+        answer: 1

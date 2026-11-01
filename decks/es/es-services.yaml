@@ -1,0 +1,482 @@
+schema: 1
+id: "es-services"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "services"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2214"
+    target: "el cajero"
+    ipa: "el kaˈxeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cajero", base: "cajero" }]
+    examples:
+      - target: "Saco dinero del cajero."
+        ipa: "ˈsako diˈneɾo del kaˈxeɾo"
+        bases: [{ word: "Saco", ref: "es-1623" }, { word: "dinero", ref: "es-0513" }, { word: "del", base: "del" }, { word: "cajero", base: "cajero" }]
+      - target: "El cajero del banco es amable."
+        ipa: "el kaˈxeɾo del ˈbanko es aˈmable"
+        bases: [{ word: "El", base: "el" }, { word: "cajero", base: "cajero" }, { word: "del", base: "del" }, { word: "banco", ref: "es-0770" }, { word: "es", ref: "es-0022" }, { word: "amable", base: "amable" }]
+  - id: "es-2215"
+    target: "la postal"
+    ipa: "la posˈtal"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "postal", base: "postal" }]
+    examples:
+      - target: "Envío una postal a mi madre."
+        ipa: "enˈbio ˈuna posˈtal a mi ˈmadɾe"
+        bases: [{ word: "Envío", ref: "es-1652" }, { word: "una", base: "una" }, { word: "postal", base: "postal" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "La postal es de la playa."
+        ipa: "la posˈtal es de la ˈplaʝa"
+        bases: [{ word: "La", base: "la" }, { word: "postal", base: "postal" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "playa", ref: "es-0784" }]
+  - id: "es-2216"
+    target: "el sello"
+    ipa: "el ˈseʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sello", base: "sello" }]
+    examples:
+      - target: "Necesito un sello para la carta."
+        ipa: "neθeˈsito un ˈseʝo ˈpaɾa la ˈkaɾta"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "sello", base: "sello" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "carta", base: "carta" }]
+      - target: "El sello cuesta un euro."
+        ipa: "el ˈseʝo ˈkwesta un ˈewɾo"
+        bases: [{ word: "El", base: "el" }, { word: "sello", base: "sello" }, { word: "cuesta", ref: "es-0587" }, { word: "un", base: "un" }, { word: "euro", ref: "es-0550" }]
+  - id: "es-2217"
+    target: "la peluquería"
+    ipa: "la pelukeˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "peluquería", base: "peluquería" }]
+    examples:
+      - target: "La peluquería está en la esquina."
+        ipa: "la pelukeˈɾia esˈta en la esˈkina"
+        bases: [{ word: "La", base: "la" }, { word: "peluquería", base: "peluquería" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "esquina", ref: "es-0706" }]
+      - target: "Voy a la peluquería los sábados."
+        ipa: "boj a la pelukeˈɾia los ˈsabados"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "peluquería", base: "peluquería" }, { word: "los", base: "los" }, { word: "sábados", ref: "es-0963" }]
+  - id: "es-2218"
+    target: "el peluquero"
+    ipa: "el peluˈkeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "peluquero", base: "peluquero" }]
+    examples:
+      - target: "El peluquero corta el pelo."
+        ipa: "el peluˈkeɾo ˈkoɾta el ˈpelo"
+        bases: [{ word: "El", base: "el" }, { word: "peluquero", base: "peluquero" }, { word: "corta", ref: "es-1320" }, { word: "pelo", ref: "es-0748" }]
+      - target: "Mi peluquero es muy simpático."
+        ipa: "mi peluˈkeɾo es mwi simˈpatiko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "peluquero", base: "peluquero" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "simpático", ref: "es-0422" }]
+  - id: "es-2219"
+    target: "el sastre"
+    ipa: "el ˈsastɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sastre", base: "sastre" }]
+    examples:
+      - target: "El sastre arregla el pantalón."
+        ipa: "el ˈsastɾe aˈreɡla el pantaˈlon"
+        bases: [{ word: "El", base: "el" }, { word: "sastre", base: "sastre" }, { word: "arregla", ref: "es-1529" }, { word: "pantalón", ref: "es-1019" }]
+      - target: "Necesito un sastre para el traje."
+        ipa: "neθeˈsito un ˈsastɾe ˈpaɾa el ˈtɾaxe"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "sastre", base: "sastre" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "traje", ref: "es-1035" }]
+  - id: "es-2220"
+    target: "el zapatero"
+    ipa: "el θapaˈteɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "zapatero", base: "zapatero" }]
+    examples:
+      - target: "El zapatero repara los zapatos."
+        ipa: "el θapaˈteɾo reˈpaɾa los θaˈpatos"
+        bases: [{ word: "El", base: "el" }, { word: "zapatero", base: "zapatero" }, { word: "repara", ref: "es-2247" }, { word: "los", base: "los" }, { word: "zapatos", ref: "es-1022" }]
+      - target: "El zapatero está cerca del mercado."
+        ipa: "el θapaˈteɾo esˈta ˈθeɾka del meɾˈkado"
+        bases: [{ word: "El", base: "el" }, { word: "zapatero", base: "zapatero" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "mercado", ref: "es-0567" }]
+  - id: "es-2221"
+    target: "la tintorería"
+    ipa: "la tintoɾeˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tintorería", base: "tintorería" }]
+    examples:
+      - target: "Llevo el abrigo a la tintorería."
+        ipa: "ˈʝebo el aˈbɾiɡo a la tintoɾeˈɾia"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "tintorería", base: "tintorería" }]
+      - target: "La tintorería cierra a las siete."
+        ipa: "la tintoɾeˈɾia ˈθjera a las ˈsjete"
+        bases: [{ word: "La", base: "la" }, { word: "tintorería", base: "tintorería" }, { word: "cierra", ref: "es-0789" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+  - id: "es-2222"
+    target: "la lavandería"
+    ipa: "la labandeˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lavandería", base: "lavandería" }]
+    examples:
+      - target: "La lavandería lava la ropa."
+        ipa: "la labandeˈɾia ˈlaba la ˈropa"
+        bases: [{ word: "La", base: "la" }, { word: "lavandería", base: "lavandería" }, { word: "lava", ref: "es-0286" }, { word: "ropa", ref: "es-1027" }]
+      - target: "Llevo las sábanas a la lavandería."
+        ipa: "ˈʝebo las ˈsabanas a la labandeˈɾia"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "las", base: "las" }, { word: "sábanas", base: "sábana" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "lavandería", base: "lavandería" }]
+  - id: "es-2223"
+    target: "el ingreso"
+    ipa: "el inˈɡɾeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ingreso", base: "ingreso" }]
+    examples:
+      - target: "Hago un ingreso en el banco."
+        ipa: "ˈaɡo un inˈɡɾeso en el ˈbanko"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "ingreso", base: "ingreso" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "banco", ref: "es-0770" }]
+      - target: "El ingreso es de mil euros."
+        ipa: "el inˈɡɾeso es de mil ˈewɾos"
+        bases: [{ word: "El", base: "el" }, { word: "ingreso", base: "ingreso" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "mil", ref: "es-0546" }, { word: "euros", ref: "es-0550" }]
+  - id: "es-2224"
+    target: "retirar"
+    ipa: "retiˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "retirar", base: "retirar" }]
+    examples:
+      - target: "Retiro dinero del cajero."
+        ipa: "reˈtiɾo diˈneɾo del kaˈxeɾo"
+        bases: [{ word: "Retiro", base: "retirar" }, { word: "dinero", ref: "es-0513" }, { word: "del", base: "del" }, { word: "cajero", ref: "es-2214" }]
+      - target: "Retiran la publicidad."
+        ipa: "reˈtiɾan la publiθiˈdad"
+        bases: [{ word: "Retiran", base: "retirar" }, { word: "la", base: "la" }, { word: "publicidad", ref: "es-2073" }]
+  - id: "es-2225"
+    target: "depositar"
+    ipa: "deposiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "depositar", base: "depositar" }]
+    examples:
+      - target: "Deposito el cheque."
+        ipa: "depoˈsito el ˈtʃeke"
+        bases: [{ word: "Deposito", base: "depositar" }, { word: "el", base: "el" }, { word: "cheque", base: "cheque" }]
+      - target: "Depositan el dinero en el banco."
+        ipa: "depoˈsitan el diˈneɾo en el ˈbanko"
+        bases: [{ word: "Depositan", base: "depositar" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "banco", ref: "es-0770" }]
+  - id: "es-2226"
+    target: "la firma"
+    ipa: "la ˈfiɾma"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "firma", base: "firma" }]
+    examples:
+      - target: "Pongo mi firma en el papel."
+        ipa: "ˈponɡo mi ˈfiɾma en el paˈpel"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "mi", ref: "es-0129" }, { word: "firma", base: "firma" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "papel", ref: "es-1387" }]
+      - target: "La firma es necesaria."
+        ipa: "la ˈfiɾma es neθeˈsaɾja"
+        bases: [{ word: "La", base: "la" }, { word: "firma", base: "firma" }, { word: "es", ref: "es-0022" }, { word: "necesaria", ref: "es-2142" }]
+  - id: "es-2227"
+    target: "el formulario"
+    ipa: "el foɾmuˈlaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "formulario", base: "formulario" }]
+    examples:
+      - target: "Rellenar el formulario lleva diez minutos."
+        ipa: "reʝeˈnaɾ el foɾmuˈlaɾjo ˈʝeba djeθ miˈnutos"
+        bases: [{ word: "Rellenar", base: "rellenar" }, { word: "el", base: "el" }, { word: "formulario", base: "formulario" }, { word: "lleva", ref: "es-0623" }, { word: "diez", ref: "es-0214" }, { word: "minutos", ref: "es-0839" }]
+      - target: "Necesito un formulario para el banco."
+        ipa: "neθeˈsito un foɾmuˈlaɾjo ˈpaɾa el ˈbanko"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "formulario", base: "formulario" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "banco", ref: "es-0770" }]
+  - id: "es-2228"
+    target: "la solicitud"
+    ipa: "la soliθiˈtud"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "solicitud", base: "solicitud" }]
+    examples:
+      - target: "Presento mi solicitud hoy."
+        ipa: "pɾeˈsento mi soliθiˈtud oj"
+        bases: [{ word: "Presento", ref: "es-1873" }, { word: "mi", ref: "es-0129" }, { word: "solicitud", base: "solicitud" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La solicitud es para el trabajo."
+        ipa: "la soliθiˈtud es ˈpaɾa el tɾaˈbaxo"
+        bases: [{ word: "La", base: "la" }, { word: "solicitud", base: "solicitud" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }]
+  - id: "es-2229"
+    target: "la ventanilla"
+    ipa: "la bentaˈniʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ventanilla", base: "ventanilla" }]
+    examples:
+      - target: "Espero en la ventanilla número tres."
+        ipa: "esˈpeɾo en la bentaˈniʝa ˈnumeɾo tɾes"
+        bases: [{ word: "Espero", ref: "es-0930" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ventanilla", base: "ventanilla" }, { word: "número", ref: "es-0250" }, { word: "tres", ref: "es-0207" }]
+      - target: "La ventanilla está abierta."
+        ipa: "la bentaˈniʝa esˈta aˈbjeɾta"
+        bases: [{ word: "La", base: "la" }, { word: "ventanilla", base: "ventanilla" }, { word: "está", ref: "es-0023" }, { word: "abierta", ref: "es-0848" }]
+  - id: "es-2230"
+    target: "la tasa"
+    ipa: "la ˈtasa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tasa", base: "tasa" }]
+    examples:
+      - target: "La tasa es de diez euros."
+        ipa: "la ˈtasa es de djeθ ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "tasa", base: "tasa" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "diez", ref: "es-0214" }, { word: "euros", ref: "es-0550" }]
+      - target: "La tasa de interés es baja."
+        ipa: "la ˈtasa de inteˈɾes es ˈbaxa"
+        bases: [{ word: "La", base: "la" }, { word: "tasa", base: "tasa" }, { word: "de", base: "de" }, { word: "interés", base: "interés" }, { word: "es", ref: "es-0022" }, { word: "baja", base: "bajo" }]
+  - id: "es-2231"
+    target: "el impuesto"
+    ipa: "el imˈpwesto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "impuesto", base: "impuesto" }]
+    examples:
+      - target: "Pago los impuestos cada año."
+        ipa: "ˈpaɡo los imˈpwestos ˈkada ˈaɲo"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "los", base: "los" }, { word: "impuestos", base: "impuesto" }, { word: "cada", ref: "es-0366" }, { word: "año", ref: "es-0021" }]
+      - target: "El impuesto es alto."
+        ipa: "el imˈpwesto es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "impuesto", base: "impuesto" }, { word: "es", ref: "es-0022" }, { word: "alto", base: "alto" }]
+  - id: "es-2232"
+    target: "el préstamo"
+    ipa: "el ˈpɾestamo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "préstamo", base: "préstamo" }]
+    examples:
+      - target: "Pido un préstamo al banco."
+        ipa: "ˈpido un ˈpɾestamo al ˈbanko"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "un", base: "un" }, { word: "préstamo", base: "préstamo" }, { word: "al", base: "al" }, { word: "banco", ref: "es-0770" }]
+      - target: "El préstamo es a cinco años."
+        ipa: "el ˈpɾestamo es a ˈθinko ˈaɲos"
+        bases: [{ word: "El", base: "el" }, { word: "préstamo", base: "préstamo" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "cinco", ref: "es-0209" }, { word: "años", ref: "es-0021" }]
+  - id: "es-2233"
+    target: "la comisión"
+    ipa: "la komiˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "comisión", base: "comisión" }]
+    examples:
+      - target: "La comisión es de dos euros."
+        ipa: "la komiˈsjon es de dos ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "comisión", base: "comisión" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "dos", ref: "es-0206" }, { word: "euros", ref: "es-0550" }]
+      - target: "No hay comisión por el cambio."
+        ipa: "no aj komiˈsjon poɾ el ˈkambjo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "hay", base: "haber" }, { word: "comisión", base: "comisión" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "cambio", base: "cambio" }]
+  - id: "es-2234"
+    target: "el servicio"
+    ipa: "el seɾˈbiθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "servicio", base: "servicio" }]
+    examples:
+      - target: "El servicio es rápido."
+        ipa: "el seɾˈbiθjo es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "servicio", base: "servicio" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Hay un servicio de correo en el barrio."
+        ipa: "aj un seɾˈbiθjo de koˈreo en el ˈbarjo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "servicio", base: "servicio" }, { word: "de", base: "de" }, { word: "correo", ref: "es-0248" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "barrio", ref: "es-0251" }]
+  - id: "es-2235"
+    target: "la reparación"
+    ipa: "la repaɾaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reparación", base: "reparación" }]
+    examples:
+      - target: "La reparación cuesta cien euros."
+        ipa: "la repaɾaˈθjon ˈkwesta θjen ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "reparación", base: "reparación" }, { word: "cuesta", ref: "es-0587" }, { word: "cien", ref: "es-0543" }, { word: "euros", ref: "es-0550" }]
+      - target: "Pido una reparación del coche."
+        ipa: "ˈpido ˈuna repaɾaˈθjon del ˈkotʃe"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "una", base: "una" }, { word: "reparación", base: "reparación" }, { word: "del", base: "del" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-2236"
+    target: "el arreglo"
+    ipa: "el aˈreɡlo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "arreglo", base: "arreglo" }]
+    examples:
+      - target: "El arreglo está listo."
+        ipa: "el aˈreɡlo esˈta ˈlisto"
+        bases: [{ word: "El", base: "el" }, { word: "arreglo", ref: "es-1529" }, { word: "está", ref: "es-0023" }, { word: "listo", ref: "es-0932" }]
+      - target: "Necesito un arreglo en la camisa."
+        ipa: "neθeˈsito un aˈreɡlo en la kaˈmisa"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "arreglo", ref: "es-1529" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "camisa", ref: "es-1017" }]
+  - id: "es-2237"
+    target: "el mecánico"
+    ipa: "el meˈkaniko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mecánico", base: "mecánico" }]
+    examples:
+      - target: "El mecánico revisa el coche."
+        ipa: "el meˈkaniko reˈbisa el ˈkotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "mecánico", base: "mecánico" }, { word: "revisa", base: "revisar" }, { word: "coche", ref: "es-0678" }]
+      - target: "Llevo el coche al mecánico."
+        ipa: "ˈʝebo el ˈkotʃe al meˈkaniko"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "coche", ref: "es-0678" }, { word: "al", base: "al" }, { word: "mecánico", base: "mecánico" }]
+  - id: "es-2238"
+    target: "el fontanero"
+    ipa: "el fontaˈneɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fontanero", base: "fontanero" }]
+    examples:
+      - target: "El fontanero arregla el grifo."
+        ipa: "el fontaˈneɾo aˈreɡla el ˈɡɾifo"
+        bases: [{ word: "El", base: "el" }, { word: "fontanero", base: "fontanero" }, { word: "arregla", ref: "es-1529" }, { word: "grifo", ref: "es-1816" }]
+      - target: "Llamo al fontanero por la fuga."
+        ipa: "ˈʝamo al fontaˈneɾo poɾ la ˈfuɡa"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "al", base: "al" }, { word: "fontanero", base: "fontanero" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "fuga", base: "fuga" }]
+  - id: "es-2239"
+    target: "el electricista"
+    ipa: "el elektɾiˈθista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "electricista", base: "electricista" }]
+    examples:
+      - target: "El electricista revisa el enchufe."
+        ipa: "el elektɾiˈθista reˈbisa el enˈtʃufe"
+        bases: [{ word: "El", base: "el" }, { word: "electricista", base: "electricista" }, { word: "revisa", base: "revisar" }, { word: "enchufe", ref: "es-1820" }]
+      - target: "Necesito un electricista."
+        ipa: "neθeˈsito un elektɾiˈθista"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "electricista", base: "electricista" }]
+  - id: "es-2240"
+    target: "el carpintero"
+    ipa: "el kaɾpinˈteɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "carpintero", base: "carpintero" }]
+    examples:
+      - target: "El carpintero hace una mesa."
+        ipa: "el kaɾpinˈteɾo ˈaθe ˈuna ˈmesa"
+        bases: [{ word: "El", base: "el" }, { word: "carpintero", base: "carpintero" }, { word: "hace", ref: "es-0025" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }]
+      - target: "El carpintero trabaja con madera."
+        ipa: "el kaɾpinˈteɾo tɾaˈbaxa kon maˈdeɾa"
+        bases: [{ word: "El", base: "el" }, { word: "carpintero", base: "carpintero" }, { word: "trabaja", ref: "es-0259" }, { word: "con", base: "con" }, { word: "madera", ref: "es-1822" }]
+  - id: "es-2241"
+    target: "el cerrajero"
+    ipa: "el θeraˈxeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cerrajero", base: "cerrajero" }]
+    examples:
+      - target: "El cerrajero abre la puerta."
+        ipa: "el θeraˈxeɾo ˈabɾe la ˈpweɾta"
+        bases: [{ word: "El", base: "el" }, { word: "cerrajero", base: "cerrajero" }, { word: "abre", ref: "es-0298" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+      - target: "Llamo al cerrajero porque perdí la llave."
+        ipa: "ˈʝamo al θeraˈxeɾo ˈpoɾke peɾˈdi la ˈʝabe"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "al", base: "al" }, { word: "cerrajero", base: "cerrajero" }, { word: "porque", base: "porque" }, { word: "perdí", ref: "es-0874" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }]
+  - id: "es-2242"
+    target: "el pintor"
+    ipa: "el pinˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pintor", base: "pintor" }]
+    examples:
+      - target: "El pintor pinta la pared."
+        ipa: "el pinˈtoɾ ˈpinta la paˈɾed"
+        bases: [{ word: "El", base: "el" }, { word: "pintor", base: "pintor" }, { word: "pinta", ref: "es-1404" }, { word: "la", base: "la" }, { word: "pared", ref: "es-0818" }]
+      - target: "Mi tío es pintor de casas."
+        ipa: "mi ˈtio es pinˈtoɾ de ˈkasas"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", ref: "es-0167" }, { word: "es", ref: "es-0022" }, { word: "pintor", base: "pintor" }, { word: "de", base: "de" }, { word: "casas", ref: "es-0006" }]
+  - id: "es-2243"
+    target: "el sobre"
+    ipa: "el ˈsobɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sobre", base: "sobre" }]
+    examples:
+      - target: "Pongo la carta en el sobre."
+        ipa: "ˈponɡo la ˈkaɾta en el ˈsobɾe"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "la", base: "la" }, { word: "carta", base: "carta" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sobre", base: "sobre" }]
+      - target: "El sobre tiene la dirección."
+        ipa: "el ˈsobɾe ˈtjene la diɾekˈθjon"
+        bases: [{ word: "El", base: "el" }, { word: "sobre", base: "sobre" }, { word: "tiene", ref: "es-0024" }, { word: "la", base: "la" }, { word: "dirección", ref: "es-0249" }]
+  - id: "es-2244"
+    target: "el código"
+    ipa: "el ˈkodiɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "código", base: "código" }]
+    examples:
+      - target: "¿Cuál es el código postal?"
+        ipa: "kwal es el ˈkodiɡo posˈtal"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "código", base: "código" }, { word: "postal", ref: "es-2215" }]
+      - target: "Necesito el código de la tarjeta."
+        ipa: "neθeˈsito el ˈkodiɡo de la taɾˈxeta"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "código", base: "código" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "tarjeta", ref: "es-0879" }]
+  - id: "es-2245"
+    target: "el remitente"
+    ipa: "el remiˈtente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "remitente", base: "remitente" }]
+    examples:
+      - target: "El remitente escribe su nombre."
+        ipa: "el remiˈtente esˈkɾibe su ˈnombɾe"
+        bases: [{ word: "El", base: "el" }, { word: "remitente", base: "remitente" }, { word: "escribe", ref: "es-0297" }, { word: "su", ref: "es-0131" }, { word: "nombre", ref: "es-0091" }]
+      - target: "El remitente está en el sobre."
+        ipa: "el remiˈtente esˈta en el ˈsobɾe"
+        bases: [{ word: "El", base: "el" }, { word: "remitente", base: "remitente" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "sobre", ref: "es-2243" }]
+  - id: "es-2246"
+    target: "el destinatario"
+    ipa: "el destinaˈtaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "destinatario", base: "destinatario" }]
+    examples:
+      - target: "El destinatario firma el paquete."
+        ipa: "el destinaˈtaɾjo ˈfiɾma el paˈkete"
+        bases: [{ word: "El", base: "el" }, { word: "destinatario", base: "destinatario" }, { word: "firma", ref: "es-2226" }, { word: "paquete", ref: "es-0378" }]
+      - target: "El destinatario vive en Lima."
+        ipa: "el destinaˈtaɾjo ˈbibe en ˈlima"
+        bases: [{ word: "El", base: "el" }, { word: "destinatario", base: "destinatario" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Lima", base: "lima" }]
+  - id: "es-2247"
+    target: "reparar"
+    ipa: "repaˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reparar", base: "reparar" }]
+    examples:
+      - target: "Reparo la bicicleta."
+        ipa: "reˈpaɾo la biθiˈkleta"
+        bases: [{ word: "Reparo", base: "reparar" }, { word: "la", base: "la" }, { word: "bicicleta", ref: "es-0680" }]
+      - target: "El zapatero repara los zapatos."
+        ipa: "el θapaˈteɾo reˈpaɾa los θaˈpatos"
+        bases: [{ word: "El", base: "el" }, { word: "zapatero", ref: "es-2220" }, { word: "repara", base: "reparar" }, { word: "los", base: "los" }, { word: "zapatos", ref: "es-1022" }]

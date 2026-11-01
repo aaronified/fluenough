@@ -1,0 +1,240 @@
+schema: 1
+id: "es-en-school"
+kind: "layer"
+core: "es-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+license: "CC-BY-SA-4.0"
+description: "Words for a school day: the class, the exam and the grade, the board, the playground and the break, the subjects, and the verbs to ask, answer, remember and pass. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1355":
+    native: "school"
+    notes: { n1: "Escuela is a school, for children; colegio is the wider word. The plural is escuelas." }
+    bases: { "la": "the", "escuela": "school" }
+    examples:
+      "Mi hijo va a la escuela en bicicleta.": { native: "My son/ser goes to school by bike.", bases: { "a": "to", "la": "the", "escuela": "school", "en": "in" } }
+      "La escuela empieza a las ocho.": { native: "School starts at eight.", bases: { "La": "the", "escuela": "school", "a": "to", "las": "the" } }
+  "es-1356":
+    native: "class; lesson"
+    notes: { n1: "Clase is a lesson, and also the room where it is taught." }
+    bases: { "la": "the", "clase": "class; lesson" }
+    examples:
+      "La clase de inglés es los martes.": { native: "English class is on Tuesdays.", bases: { "La": "the", "clase": "class; lesson", "de": "of", "los": "the" } }
+      "Hay veinte alumnos en la clase.": { native: "There are twenty pupils in the class.", bases: { "Hay": "there is; there are", "en": "in", "la": "the", "clase": "class; lesson" } }
+  "es-1357":
+    native: "pupil; student"
+    notes: { n1: "Alumno is a pupil. For a girl, say alumna." }
+    bases: { "el": "the", "alumno": "pupil; student" }
+    examples:
+      "El alumno lee un libro.": { native: "The pupil reads a book.", bases: { "El": "the", "alumno": "pupil; student", "un": "a" } }
+      "Los alumnos hablan en clase.": { native: "The pupils talk in class.", bases: { "Los": "the", "alumnos": "pupil; student", "en": "in" } }
+  "es-1358":
+    native: "student"
+    notes: { n1: "Estudiante is a student at a university or a school. It is used for men and women." }
+    bases: { "el": "the", "estudiante": "student" }
+    examples:
+      "El estudiante escribe una carta.": { native: "The student writes a letter.", bases: { "El": "the", "estudiante": "student", "una": "a", "carta": "letter" } }
+      "Mi hermana es estudiante.": { native: "My sister is a student.", bases: { "estudiante": "student" } }
+  "es-1359":
+    native: "exam"
+    notes: { n1: "Examen is an exam or a test. The plural is exámenes." }
+    bases: { "el": "the", "examen": "exam" }
+    examples:
+      "El examen es el viernes.": { native: "The exam is on Friday.", bases: { "El": "the", "examen": "exam" } }
+      "Estudio para el examen.": { native: "I study for the exam.", bases: { "para": "for", "el": "the", "examen": "exam" } }
+  "es-1360":
+    native: "grade; mark"
+    notes: { n1: "Nota is the grade a pupil gets. Sacar una nota is to get a grade." }
+    bases: { "la": "the", "nota": "grade; mark" }
+    examples:
+      "Saco una buena nota.": { native: "I get a good grade.", bases: { "Saco": "to get; to take out", "una": "a", "nota": "grade; mark" } }
+      "¿Qué nota tienes?": { native: "What grade do you have?", bases: { "nota": "grade; mark" } }
+  "es-1361":
+    native: "board; whiteboard"
+    notes: { n1: "La pizarra is the board at the front of the class, where you write." }
+    bases: { "la": "the", "pizarra": "board; whiteboard" }
+    examples:
+      "La profesora escribe en la pizarra.": { native: "The teacher writes on the board.", bases: { "La": "the", "en": "in", "pizarra": "board; whiteboard" } }
+      "Borro la pizarra después de clase.": { native: "I clean the board after class.", bases: { "Borro": "to erase; to clean", "la": "the", "pizarra": "board; whiteboard", "de": "of" } }
+  "es-1362":
+    native: "dictionary"
+    notes: { n1: "El diccionario is the book of words, with their meanings." }
+    bases: { "el": "the", "diccionario": "dictionary" }
+    examples:
+      "Busco una palabra en el diccionario.": { native: "I look up a word in the dictionary.", bases: { "una": "a", "palabra": "word", "en": "in", "el": "the", "diccionario": "dictionary" } }
+      "El diccionario está en la mochila.": { native: "The dictionary is in the bag.", bases: { "El": "the", "diccionario": "dictionary", "en": "in", "la": "the" } }
+  "es-1363":
+    native: "break (at school)"
+    notes: { n1: "El recreo is the break between lessons, at school." }
+    bases: { "el": "the", "recreo": "break (at school)" }
+    examples:
+      "En el recreo jugamos en el patio.": { native: "At break we play in the playground.", bases: { "En": "in", "el": "the", "recreo": "break (at school)", "jugamos": "to play" } }
+      "El recreo es a las once.": { native: "Break is at eleven.", bases: { "El": "the", "recreo": "break (at school)", "a": "to", "las": "the" } }
+  "es-1364":
+    native: "playground; courtyard"
+    notes: { n1: "El patio is the open space at a school or a house, where children play." }
+    bases: { "el": "the", "patio": "playground; courtyard" }
+    examples:
+      "Los niños juegan en el patio.": { native: "The children play in the playground.", bases: { "Los": "the", "juegan": "to play", "en": "in", "el": "the", "patio": "playground; courtyard" } }
+      "El patio es grande.": { native: "The playground is big.", bases: { "El": "the", "patio": "playground; courtyard" } }
+  "es-1365":
+    native: "classroom"
+    notes: { n1: "El aula is the room where a class is taught. Its article is el, but it is feminine: la aula is not used." }
+    bases: { "el": "the", "aula": "classroom" }
+    examples:
+      "El aula está en el primer piso.": { native: "The classroom is on the first floor.", bases: { "El": "the", "aula": "classroom", "en": "in" } }
+      "El aula tiene veinte mesas.": { native: "The classroom has twenty tables.", bases: { "El": "the", "aula": "classroom" } }
+  "es-1366":
+    native: "subject (at school)"
+    notes: { n1: "Asignatura is a school subject, such as maths or science." }
+    bases: { "la": "the", "asignatura": "subject (at school)" }
+    examples:
+      "¿Cuál es tu asignatura favorita?": { native: "What is your favourite subject?", bases: { "asignatura": "subject (at school)", "favorita": "favourite" } }
+      "La asignatura de historia es difícil.": { native: "The history subject is hard.", bases: { "La": "the", "asignatura": "subject (at school)", "de": "of", "historia": "history" } }
+  "es-1367":
+    native: "science"
+    notes: { n1: "La ciencia is science, the study of nature and things." }
+    bases: { "la": "the", "ciencia": "science" }
+    examples:
+      "Me gusta la ciencia.": { native: "I like science.", bases: { "Me": "to me", "gusta": "to like", "la": "the", "ciencia": "science" } }
+      "La ciencia es interesante.": { native: "Science is interesting.", bases: { "La": "the", "ciencia": "science" } }
+  "es-1368":
+    native: "language"
+    notes: { n1: "La lengua is a language, such as Spanish or English. Lengua also means tongue." }
+    bases: { "la": "the", "lengua": "language" }
+    examples:
+      "Estudio una lengua nueva.": { native: "I study a new language.", bases: { "una": "a", "lengua": "language" } }
+      "La lengua oficial es el español.": { native: "The official language is Spanish.", bases: { "La": "the", "lengua": "language", "oficial": "official", "el": "the" } }
+  "es-1369":
+    native: "English (language)"
+    notes: { n1: "El inglés is the English language. Hablar inglés is to speak English." }
+    bases: { "el": "the", "inglés": "English (language)" }
+    examples:
+      "Estudio inglés en la escuela.": { native: "I study English at school.", bases: { "inglés": "English (language)", "en": "in", "la": "the" } }
+      "Mi profesora habla inglés.": { native: "My teacher speaks English.", bases: { "inglés": "English (language)" } }
+  "es-1370":
+    native: "Spanish (language)"
+    notes: { n1: "El español is the Spanish language. Español is also a person from Spain." }
+    bases: { "el": "the", "español": "Spanish (language)" }
+    examples:
+      "El profesor habla español.": { native: "The teacher speaks Spanish.", bases: { "El": "the", "español": "Spanish (language)" } }
+      "Aprendo español con mi hermana.": { native: "I learn Spanish with my sister.", bases: { "español": "Spanish (language)", "con": "with" } }
+  "es-1371":
+    native: "education"
+    notes: { n1: "La educación is education, the teaching and learning of a child or adult." }
+    bases: { "la": "the", "educación": "education" }
+    examples:
+      "La educación es importante.": { native: "Education is important.", bases: { "La": "the", "educación": "education" } }
+      "Tiene una buena educación.": { native: "They have a good education.", bases: { "una": "a", "educación": "education" } }
+  "es-1372":
+    native: "PE; gymnastics"
+    notes: { n1: "La gimnasia is physical education at school, or gymnastics." }
+    bases: { "la": "the", "gimnasia": "PE; gymnastics" }
+    examples:
+      "Hoy tenemos gimnasia.": { native: "Today we have PE.", bases: { "gimnasia": "PE; gymnastics" } }
+      "La gimnasia es mi clase favorita.": { native: "PE is my favourite class.", bases: { "La": "the", "gimnasia": "PE; gymnastics", "favorita": "favourite" } }
+  "es-1373":
+    native: "uniform"
+    notes: { n1: "El uniforme is the clothes that pupils wear at school." }
+    bases: { "el": "the", "uniforme": "uniform" }
+    examples:
+      "El uniforme es azul.": { native: "The uniform is blue.", bases: { "El": "the", "uniforme": "uniform" } }
+      "Llevo el uniforme todos los días.": { native: "I wear the uniform every day.", bases: { "el": "the", "uniforme": "uniform", "los": "the" } }
+  "es-1374":
+    native: "to attend"
+    notes: { n1: "Asistir a is to go to a class or an event regularly." }
+    bases: { "asistir": "to attend" }
+    examples:
+      "Asisto a clase todos los días.": { native: "I attend class every day.", bases: { "Asisto": "to attend", "a": "to", "los": "the" } }
+      "Asisten a la escuela desde los seis años.": { native: "They attend school from the age of six.", bases: { "Asisten": "to attend", "a": "to", "la": "the", "desde": "from", "los": "the" } }
+  "es-1375":
+    native: "to teach"
+    notes: { n1: "Enseñar is to teach someone a subject or a skill." }
+    bases: { "enseñar": "to teach" }
+    examples:
+      "Mi madre enseña inglés.": { native: "My mother teaches English.", bases: { "enseña": "to teach" } }
+      "Enseño la lección a mis hijos.": { native: "I teach the lesson to my children.", bases: { "Enseño": "to teach", "la": "the", "lección": "lesson", "a": "to" } }
+  "es-1376":
+    native: "to ask"
+    notes: { n1: "Preguntar is to ask a question. Pedir is to ask for something." }
+    bases: { "preguntar": "to ask" }
+    examples:
+      "Pregunto al profesor.": { native: "I ask the teacher.", bases: { "Pregunto": "to ask", "al": "to the" } }
+      "¿Puedo preguntar algo?": { native: "Can I ask something?", bases: { "Puedo": "to be able to; can", "preguntar": "to ask" } }
+  "es-1377":
+    native: "to answer"
+    notes: { n1: "Responder is to answer a question or a letter." }
+    bases: { "responder": "to answer" }
+    examples:
+      "Respondo a la pregunta.": { native: "I answer the question.", bases: { "Respondo": "to answer", "a": "to", "la": "the", "pregunta": "question" } }
+      "Responde con una palabra.": { native: "She answers with one word.", bases: { "Responde": "to answer", "con": "with", "una": "a", "palabra": "word" } }
+  "es-1378":
+    native: "to forget"
+    notes: { n1: "Olvidar is to forget something, such as a book at home." }
+    bases: { "olvidar": "to forget" }
+    examples:
+      "Olvido el libro en casa.": { native: "I forget the book at home.", bases: { "Olvido": "to forget", "el": "the", "en": "in" } }
+      "No olvides la tarea.": { native: "Do not forget the homework.", bases: { "olvides": "to forget", "la": "the" } }
+  "es-1379":
+    native: "to remember"
+    notes: { n1: "Recordar changes its stem: recuerdo, recuerdas. It is the opposite of olvidar." }
+    bases: { "recordar": "to remember" }
+    examples:
+      "No recuerdo la respuesta.": { native: "I do not remember the answer.", bases: { "recuerdo": "to remember", "la": "the", "respuesta": "answer" } }
+      "Recuerdo el primer día de clase.": { native: "I remember the first day of class.", bases: { "Recuerdo": "to remember", "el": "the", "de": "of" } }
+  "es-1380":
+    native: "to pass (an exam)"
+    notes: { n1: "Aprobar is to pass an exam. Its stem changes: apruebo, apruebas." }
+    bases: { "aprobar": "to pass (an exam)" }
+    examples:
+      "Apruebo el examen.": { native: "I pass the exam.", bases: { "Apruebo": "to pass (an exam)", "el": "the" } }
+      "Aprueban a todos los alumnos.": { native: "They pass all the pupils.", bases: { "Aprueban": "to pass (an exam)", "a": "to", "los": "the" } }
+  "es-1381":
+    native: "to fail (an exam)"
+    notes: { n1: "Suspender is to fail an exam. It is the opposite of aprobar." }
+    bases: { "suspender": "to fail (an exam)" }
+    examples:
+      "Suspendo el examen.": { native: "I fail the exam.", bases: { "Suspendo": "to fail (an exam)", "el": "the" } }
+      "Suspenden la asignatura.": { native: "They fail the subject.", bases: { "Suspenden": "to fail (an exam)", "la": "the" } }
+  "es-1382":
+    native: "scholarship; grant"
+    notes: { n1: "La beca is money given to a student to study." }
+    bases: { "la": "the", "beca": "scholarship; grant" }
+    examples:
+      "Tengo una beca para estudiar.": { native: "I have a scholarship to study.", bases: { "una": "a", "beca": "scholarship; grant", "para": "for" } }
+      "La beca paga los libros.": { native: "The grant pays for the books.", bases: { "La": "the", "beca": "scholarship; grant", "los": "the" } }
+  "es-1383":
+    native: "course; school year"
+    notes: { n1: "El curso is a course, or the school year from September to June." }
+    bases: { "el": "the", "curso": "course; school year" }
+    examples:
+      "El curso empieza en septiembre.": { native: "The school year starts in September.", bases: { "El": "the", "curso": "course; school year", "en": "in" } }
+      "Hago un curso de español.": { native: "I am doing a Spanish course.", bases: { "un": "a", "curso": "course; school year", "de": "of" } }
+  "es-1384":
+    native: "desk (for a pupil)"
+    notes: { n1: "El pupitre is the desk a pupil sits at in class." }
+    bases: { "el": "the", "pupitre": "desk (for a pupil)" }
+    examples:
+      "El pupitre está junto a la ventana.": { native: "The desk is next to the window.", bases: { "El": "the", "pupitre": "desk (for a pupil)", "junto": "next to", "a": "to", "la": "the" } }
+      "Mi pupitre es azul.": { native: "My desk is blue.", bases: { "pupitre": "desk (for a pupil)" } }
+  "es-1385":
+    native: "ruler; rule"
+    notes: { n1: "La regla is a ruler for drawing a line. It also means a rule." }
+    bases: { "la": "the", "regla": "ruler; rule" }
+    examples:
+      "Dibujo una línea con la regla.": { native: "I draw a line with a ruler.", bases: { "Dibujo": "to draw", "una": "a", "línea": "line", "con": "with", "la": "the", "regla": "ruler; rule" } }
+      "La regla es clara.": { native: "The rule is clear.", bases: { "La": "the", "regla": "ruler; rule" } }
+  "es-1386":
+    native: "sheet of paper"
+    notes: { n1: "La hoja is a sheet of paper, or a leaf of a plant." }
+    bases: { "la": "the", "hoja": "sheet of paper" }
+    examples:
+      "Escribo en una hoja de papel.": { native: "I write on a sheet of paper.", bases: { "en": "in", "una": "a", "hoja": "sheet of paper", "de": "of" } }
+      "La hoja está en blanco.": { native: "The sheet is blank.", bases: { "La": "the", "hoja": "sheet of paper", "en": "in", "blanco": "blank" } }
+  "es-1387":
+    native: "paper"
+    notes: { n1: "El papel is paper, for writing or printing." }
+    bases: { "el": "the", "papel": "paper" }
+    examples:
+      "Necesito papel y un lápiz.": { native: "I need paper and a pencil.", bases: { "papel": "paper", "un": "a" } }
+      "El papel es muy caro.": { native: "Paper is very expensive.", bases: { "El": "the", "papel": "paper" } }

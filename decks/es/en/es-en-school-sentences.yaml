@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-school-sentences"
+kind: "layer"
+core: "es-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: school"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about school and study, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1388":
+    native: "I study for the English exam."
+    bases: { "para": "for", "el": "the", "de": "of" }
+    confusables: { "aprobar": { why: "Aprobar is to pass, the result we want." }, "suspender": { why: "Suspender is to fail, the opposite result." } }
+  "es-1389":
+    native: "The teacher writes on the board."
+    bases: { "La": "the", "en": "in" }
+    confusables: { "ensenar": { why: "Enseñar is to teach, the job of the teacher." }, "libro": { why: "Libro is a book, not the board." } }
+  "es-1390":
+    native: "I do not remember the answer to the question."
+    bases: { "la": "the", "respuesta": "answer", "de": "of", "pregunta": "question" }
+    confusables: { "olvidar": { why: "Olvidar is to forget, similar but not the same." }, "responder": { why: "Responder is to answer, the action after remembering." } }
+  "es-1391":
+    native: "At break we play in the playground."
+    bases: { "En": "in", "el": "the", "jugamos": "to play" }
+    confusables: { "aula": { why: "Aula is the classroom, indoors, not the playground." }, "escuela": { why: "Escuela is the school as a whole." } }
+  "es-1392":
+    native: "I have a scholarship for the course."
+    bases: { "una": "a", "para": "for", "el": "the" }
+    confusables: { "examen": { why: "Examen is an exam, a test of what you learned." }, "nota": { why: "Nota is the grade you get, not the money." } }
+  "es-1393":
+    native: "I get a good grade in the subject."
+    bases: { "Saco": "to get; to take out", "una": "a", "en": "in", "la": "the" }
+    confusables: { "clase": { why: "Clase is a lesson, the time you spend learning." }, "examen": { why: "Examen is a test, not the subject it tests." } }

@@ -1,0 +1,548 @@
+schema: 1
+id: "es-arts"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2503"
+    target: "el arte"
+    ipa: "el ˈaɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "arte", base: "arte" }]
+    examples:
+      - target: "El arte es muy importante."
+        ipa: "el ˈaɾte es mwi impoɾˈtante"
+        bases: [{ word: "El", base: "el" }, { word: "arte", base: "arte" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "importante", ref: "es-0435" }]
+      - target: "Estudio arte en la universidad."
+        ipa: "esˈtudjo ˈaɾte en la unibeɾsiˈdad"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "arte", base: "arte" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "universidad", ref: "es-0785" }]
+  - id: "es-2504"
+    target: "la música"
+    ipa: "la ˈmusika"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "música", base: "música" }]
+    examples:
+      - target: "La música me relaja."
+        ipa: "la ˈmusika me reˈlaxa"
+        bases: [{ word: "La", base: "la" }, { word: "música", base: "música" }, { word: "me", base: "me" }, { word: "relaja", base: "relajar" }]
+      - target: "Escucho música cada día."
+        ipa: "esˈkutʃo ˈmusika ˈkada ˈdia"
+        bases: [{ word: "Escucho", ref: "es-0291" }, { word: "música", base: "música" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+  - id: "es-2505"
+    target: "la pintura"
+    ipa: "la pinˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pintura", base: "pintura" }]
+    examples:
+      - target: "La pintura es muy bonita."
+        ipa: "la pinˈtuɾa es mwi boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "pintura", base: "pintura" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Compro pintura para la pared."
+        ipa: "ˈkompɾo pinˈtuɾa ˈpaɾa la paˈɾed"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "pintura", base: "pintura" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "pared", ref: "es-0818" }]
+  - id: "es-2506"
+    target: "la escultura"
+    ipa: "la eskulˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "escultura", base: "escultura" }]
+    examples:
+      - target: "La escultura está en el museo."
+        ipa: "la eskulˈtuɾa esˈta en el muˈseo"
+        bases: [{ word: "La", base: "la" }, { word: "escultura", base: "escultura" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "museo", ref: "es-0776" }]
+      - target: "Me gusta la escultura moderna."
+        ipa: "me ˈɡusta la eskulˈtuɾa moˈdeɾna"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "la", base: "la" }, { word: "escultura", base: "escultura" }, { word: "moderna", ref: "es-1803" }]
+  - id: "es-2507"
+    target: "el escultor"
+    ipa: "el eskulˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "escultor", base: "escultor" }]
+    examples:
+      - target: "El escultor trabaja con mármol."
+        ipa: "el eskulˈtoɾ tɾaˈbaxa kon ˈmaɾmol"
+        bases: [{ word: "El", base: "el" }, { word: "escultor", base: "escultor" }, { word: "trabaja", ref: "es-0259" }, { word: "con", base: "con" }, { word: "mármol", base: "mármol" }]
+      - target: "Mi tía es escultora."
+        ipa: "mi ˈtia es eskulˈtoɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }, { word: "es", ref: "es-0022" }, { word: "escultora", base: "escultor" }]
+  - id: "es-2508"
+    target: "la exposición"
+    ipa: "la eksposiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "exposición", base: "exposición" }]
+    examples:
+      - target: "La exposición es gratis."
+        ipa: "la eksposiˈθjon es ˈɡɾatis"
+        bases: [{ word: "La", base: "la" }, { word: "exposición", base: "exposición" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+      - target: "Visito una exposición de fotos."
+        ipa: "biˈsito ˈuna eksposiˈθjon de ˈfotos"
+        bases: [{ word: "Visito", ref: "es-0787" }, { word: "una", base: "una" }, { word: "exposición", base: "exposición" }, { word: "de", base: "de" }, { word: "fotos", ref: "es-1184" }]
+  - id: "es-2509"
+    target: "la galería"
+    ipa: "la ɡaleˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "galería", base: "galería" }]
+    examples:
+      - target: "La galería está en el centro."
+        ipa: "la ɡaleˈɾia esˈta en el ˈθentɾo"
+        bases: [{ word: "La", base: "la" }, { word: "galería", base: "galería" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "Hay muchos cuadros en la galería."
+        ipa: "aj ˈmutʃos ˈkwadɾos en la ɡaleˈɾia"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "cuadros", ref: "es-2510" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "galería", base: "galería" }]
+  - id: "es-2510"
+    target: "el cuadro"
+    ipa: "el ˈkwadɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cuadro", base: "cuadro" }]
+    examples:
+      - target: "El cuadro es muy grande."
+        ipa: "el ˈkwadɾo es mwi ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "cuadro", base: "cuadro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "Pinto un cuadro del mar."
+        ipa: "ˈpinto un ˈkwadɾo del maɾ"
+        bases: [{ word: "Pinto", ref: "es-1404" }, { word: "un", base: "un" }, { word: "cuadro", base: "cuadro" }, { word: "del", base: "del" }, { word: "mar", ref: "es-1753" }]
+  - id: "es-2511"
+    target: "el escenario"
+    ipa: "el esθeˈnaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "escenario", base: "escenario" }]
+    examples:
+      - target: "El actor sube al escenario."
+        ipa: "el akˈtoɾ ˈsube al esθeˈnaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "actor", ref: "es-2381" }, { word: "sube", ref: "es-0691" }, { word: "al", base: "al" }, { word: "escenario", base: "escenario" }]
+      - target: "El escenario es pequeño."
+        ipa: "el esθeˈnaɾjo es peˈkeɲo"
+        bases: [{ word: "El", base: "el" }, { word: "escenario", base: "escenario" }, { word: "es", ref: "es-0022" }, { word: "pequeño", ref: "es-0032" }]
+  - id: "es-2512"
+    target: "la actuación"
+    ipa: "la aktwaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "actuación", base: "actuación" }]
+    examples:
+      - target: "La actuación es muy buena."
+        ipa: "la aktwaˈθjon es mwi ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "actuación", base: "actuación" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "buena", ref: "es-0033" }]
+      - target: "Su actuación es famosa."
+        ipa: "su aktwaˈθjon es faˈmosa"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "actuación", base: "actuación" }, { word: "es", ref: "es-0022" }, { word: "famosa", base: "famoso" }]
+  - id: "es-2513"
+    target: "la danza"
+    ipa: "la ˈdanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "danza", base: "danza" }]
+    examples:
+      - target: "La danza es elegante."
+        ipa: "la ˈdanθa es eleˈɡante"
+        bases: [{ word: "La", base: "la" }, { word: "danza", base: "danza" }, { word: "es", ref: "es-0022" }, { word: "elegante", ref: "es-1042" }]
+      - target: "Estudio danza clásica."
+        ipa: "esˈtudjo ˈdanθa ˈklasika"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "danza", base: "danza" }, { word: "clásica", base: "clásico" }]
+  - id: "es-2514"
+    target: "el coro"
+    ipa: "el ˈkoɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "coro", base: "coro" }]
+    examples:
+      - target: "Canto en el coro de la iglesia."
+        ipa: "ˈkanto en el ˈkoɾo de la iˈɡlesja"
+        bases: [{ word: "Canto", ref: "es-1405" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "coro", base: "coro" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "iglesia", ref: "es-0774" }]
+      - target: "El coro es muy bueno."
+        ipa: "el ˈkoɾo es mwi ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "coro", base: "coro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-2515"
+    target: "la orquesta"
+    ipa: "la oɾˈkesta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "orquesta", base: "orquesta" }]
+    examples:
+      - target: "La orquesta toca una sinfonía."
+        ipa: "la oɾˈkesta ˈtoka ˈuna sinfoˈnia"
+        bases: [{ word: "La", base: "la" }, { word: "orquesta", base: "orquesta" }, { word: "toca", ref: "es-1406" }, { word: "una", base: "una" }, { word: "sinfonía", base: "sinfonía" }]
+      - target: "Mi hermana toca en la orquesta."
+        ipa: "mi eɾˈmana ˈtoka en la oɾˈkesta"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "toca", ref: "es-1406" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "orquesta", base: "orquesta" }]
+  - id: "es-2516"
+    target: "el instrumento"
+    ipa: "el instɾuˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "instrumento", base: "instrumento" }]
+    examples:
+      - target: "El instrumento es de madera."
+        ipa: "el instɾuˈmento es de maˈdeɾa"
+        bases: [{ word: "El", base: "el" }, { word: "instrumento", base: "instrumento" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "madera", ref: "es-1822" }]
+      - target: "Toco un instrumento nuevo."
+        ipa: "ˈtoko un instɾuˈmento ˈnwebo"
+        bases: [{ word: "Toco", ref: "es-1406" }, { word: "un", base: "un" }, { word: "instrumento", base: "instrumento" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2517"
+    target: "la letra"
+    ipa: "la ˈletɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "letra", base: "letra" }]
+    examples:
+      - target: "La letra de la canción es bonita."
+        ipa: "la ˈletɾa de la kanˈθjon es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "letra", base: "letra" }, { word: "de", base: "de" }, { word: "canción", ref: "es-1425" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Escribo con buena letra."
+        ipa: "esˈkɾibo kon ˈbwena ˈletɾa"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "con", base: "con" }, { word: "buena", ref: "es-0033" }, { word: "letra", base: "letra" }]
+  - id: "es-2518"
+    target: "la melodía"
+    ipa: "la meloˈdia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "melodía", base: "melodía" }]
+    examples:
+      - target: "La melodía es muy alegre."
+        ipa: "la meloˈdia es mwi aˈleɡɾe"
+        bases: [{ word: "La", base: "la" }, { word: "melodía", base: "melodía" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alegre", ref: "es-2012" }]
+      - target: "Canto una melodía antigua."
+        ipa: "ˈkanto ˈuna meloˈdia anˈtiɡwa"
+        bases: [{ word: "Canto", ref: "es-1405" }, { word: "una", base: "una" }, { word: "melodía", base: "melodía" }, { word: "antigua", ref: "es-1804" }]
+  - id: "es-2519"
+    target: "el compositor"
+    ipa: "el komposiˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "compositor", base: "compositor" }]
+    examples:
+      - target: "El compositor escribe una sinfonía."
+        ipa: "el komposiˈtoɾ esˈkɾibe ˈuna sinfoˈnia"
+        bases: [{ word: "El", base: "el" }, { word: "compositor", base: "compositor" }, { word: "escribe", ref: "es-0297" }, { word: "una", base: "una" }, { word: "sinfonía", base: "sinfonía" }]
+      - target: "La compositora es muy famosa."
+        ipa: "la komposiˈtoɾa es mwi faˈmosa"
+        bases: [{ word: "La", base: "la" }, { word: "compositora", base: "compositor" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "famosa", base: "famoso" }]
+  - id: "es-2520"
+    target: "la ópera"
+    ipa: "la ˈopeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ópera", base: "ópera" }]
+    examples:
+      - target: "La ópera es muy larga."
+        ipa: "la ˈopeɾa es mwi ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "ópera", base: "ópera" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "larga", ref: "es-0429" }]
+      - target: "Vamos a la ópera el sábado."
+        ipa: "ˈbamos a la ˈopeɾa el ˈsabado"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "ópera", base: "ópera" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }]
+  - id: "es-2521"
+    target: "el espectáculo"
+    ipa: "el espekˈtakulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "espectáculo", base: "espectáculo" }]
+    examples:
+      - target: "El espectáculo es esta noche."
+        ipa: "el espekˈtakulo es ˈesta ˈnotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "espectáculo", base: "espectáculo" }, { word: "es", ref: "es-0022" }, { word: "esta", base: "esta" }, { word: "noche", ref: "es-0020" }]
+      - target: "Es un espectáculo de luz."
+        ipa: "es un espekˈtakulo de luθ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "espectáculo", base: "espectáculo" }, { word: "de", base: "de" }, { word: "luz", ref: "es-2434" }]
+  - id: "es-2522"
+    target: "la artesanía"
+    ipa: "la aɾtesaˈnia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "artesanía", base: "artesanía" }]
+    examples:
+      - target: "Compro artesanía en el mercado."
+        ipa: "ˈkompɾo aɾtesaˈnia en el meɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "artesanía", base: "artesanía" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+      - target: "La artesanía es tradicional."
+        ipa: "la aɾtesaˈnia es tɾadiθjoˈnal"
+        bases: [{ word: "La", base: "la" }, { word: "artesanía", base: "artesanía" }, { word: "es", ref: "es-0022" }, { word: "tradicional", base: "tradicional" }]
+  - id: "es-2523"
+    target: "la estatua"
+    ipa: "la esˈtatwa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "estatua", base: "estatua" }]
+    examples:
+      - target: "La estatua está en la plaza."
+        ipa: "la esˈtatwa esˈta en la ˈplaθa"
+        bases: [{ word: "La", base: "la" }, { word: "estatua", base: "estatua" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "plaza", ref: "es-0782" }]
+      - target: "La estatua es de bronce."
+        ipa: "la esˈtatwa es de ˈbɾonθe"
+        bases: [{ word: "La", base: "la" }, { word: "estatua", base: "estatua" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "bronce", base: "bronce" }]
+  - id: "es-2524"
+    target: "la arquitectura"
+    ipa: "la aɾkitekˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "arquitectura", base: "arquitectura" }]
+    examples:
+      - target: "La arquitectura de la ciudad es bonita."
+        ipa: "la aɾkitekˈtuɾa de la θjuˈdad es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "arquitectura", base: "arquitectura" }, { word: "de", base: "de" }, { word: "ciudad", ref: "es-0016" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Estudio arquitectura."
+        ipa: "esˈtudjo aɾkitekˈtuɾa"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "arquitectura", base: "arquitectura" }]
+  - id: "es-2525"
+    target: "el diseño"
+    ipa: "el diˈseɲo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "diseño", base: "diseño" }]
+    examples:
+      - target: "El diseño de la casa es moderno."
+        ipa: "el diˈseɲo de la ˈkasa es moˈdeɾno"
+        bases: [{ word: "El", base: "el" }, { word: "diseño", base: "diseño" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "moderno", ref: "es-1803" }]
+      - target: "Me gusta el diseño de este coche."
+        ipa: "me ˈɡusta el diˈseɲo de ˈeste ˈkotʃe"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "diseño", base: "diseño" }, { word: "de", base: "de" }, { word: "este", base: "este" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-2526"
+    target: "la creatividad"
+    ipa: "la kɾeatibiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "creatividad", base: "creatividad" }]
+    examples:
+      - target: "La creatividad es importante."
+        ipa: "la kɾeatibiˈdad es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "creatividad", base: "creatividad" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Tiene mucha creatividad."
+        ipa: "ˈtjene ˈmutʃa kɾeatibiˈdad"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "creatividad", base: "creatividad" }]
+  - id: "es-2527"
+    target: "el talento"
+    ipa: "el taˈlento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "talento", base: "talento" }]
+    examples:
+      - target: "Tiene mucho talento."
+        ipa: "ˈtjene ˈmutʃo taˈlento"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "mucho", ref: "es-0053" }, { word: "talento", base: "talento" }]
+      - target: "El talento se trabaja."
+        ipa: "el taˈlento se tɾaˈbaxa"
+        bases: [{ word: "El", base: "el" }, { word: "talento", base: "talento" }, { word: "se", base: "se" }, { word: "trabaja", ref: "es-0259" }]
+  - id: "es-2528"
+    target: "la cultura"
+    ipa: "la kulˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cultura", base: "cultura" }]
+    examples:
+      - target: "La cultura es rica."
+        ipa: "la kulˈtuɾa es ˈrika"
+        bases: [{ word: "La", base: "la" }, { word: "cultura", base: "cultura" }, { word: "es", ref: "es-0022" }, { word: "rica", ref: "es-0409" }]
+      - target: "Me interesa la cultura de Perú."
+        ipa: "me inteˈɾesa la kulˈtuɾa de peˈɾu"
+        bases: [{ word: "Me", base: "me" }, { word: "interesa", base: "interesar" }, { word: "la", base: "la" }, { word: "cultura", base: "cultura" }, { word: "de", base: "de" }, { word: "Perú", ref: "es-1914" }]
+  - id: "es-2529"
+    target: "el pincel"
+    ipa: "el pinˈθel"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pincel", base: "pincel" }]
+    examples:
+      - target: "El pincel está sucio."
+        ipa: "el pinˈθel esˈta ˈsuθjo"
+        bases: [{ word: "El", base: "el" }, { word: "pincel", base: "pincel" }, { word: "está", ref: "es-0023" }, { word: "sucio", ref: "es-0417" }]
+      - target: "Pinto con un pincel fino."
+        ipa: "ˈpinto kon un pinˈθel ˈfino"
+        bases: [{ word: "Pinto", ref: "es-1404" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "pincel", base: "pincel" }, { word: "fino", base: "fino" }]
+  - id: "es-2530"
+    target: "el lienzo"
+    ipa: "el ˈljenθo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "lienzo", base: "lienzo" }]
+    examples:
+      - target: "El lienzo es grande."
+        ipa: "el ˈljenθo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "lienzo", base: "lienzo" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Pinto en el lienzo."
+        ipa: "ˈpinto en el ˈljenθo"
+        bases: [{ word: "Pinto", ref: "es-1404" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "lienzo", base: "lienzo" }]
+  - id: "es-2531"
+    target: "la acuarela"
+    ipa: "la akwaˈɾela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "acuarela", base: "acuarela" }]
+    examples:
+      - target: "Pinto con acuarelas."
+        ipa: "ˈpinto kon akwaˈɾelas"
+        bases: [{ word: "Pinto", ref: "es-1404" }, { word: "con", base: "con" }, { word: "acuarelas", base: "acuarela" }]
+      - target: "La acuarela es suave."
+        ipa: "la akwaˈɾela es ˈswabe"
+        bases: [{ word: "La", base: "la" }, { word: "acuarela", base: "acuarela" }, { word: "es", ref: "es-0022" }, { word: "suave", base: "suave" }]
+  - id: "es-2532"
+    target: "el óleo"
+    ipa: "el ˈoleo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "óleo", base: "óleo" }]
+    examples:
+      - target: "Pinto al óleo."
+        ipa: "ˈpinto al ˈoleo"
+        bases: [{ word: "Pinto", ref: "es-1404" }, { word: "al", base: "al" }, { word: "óleo", base: "óleo" }]
+      - target: "El óleo es brillante."
+        ipa: "el ˈoleo es bɾiˈʝante"
+        bases: [{ word: "El", base: "el" }, { word: "óleo", base: "óleo" }, { word: "es", ref: "es-0022" }, { word: "brillante", base: "brillante" }]
+  - id: "es-2533"
+    target: "el mural"
+    ipa: "el muˈɾal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mural", base: "mural" }]
+    examples:
+      - target: "El mural está en la calle."
+        ipa: "el muˈɾal esˈta en la ˈkaʝe"
+        bases: [{ word: "El", base: "el" }, { word: "mural", base: "mural" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "El mural es de colores."
+        ipa: "el muˈɾal es de koˈloɾes"
+        bases: [{ word: "El", base: "el" }, { word: "mural", base: "mural" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "colores", ref: "es-1026" }]
+  - id: "es-2534"
+    target: "el grabado"
+    ipa: "el ɡɾaˈbado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "grabado", base: "grabado" }]
+    examples:
+      - target: "El grabado es antiguo."
+        ipa: "el ɡɾaˈbado es anˈtiɡwo"
+        bases: [{ word: "El", base: "el" }, { word: "grabado", base: "grabado" }, { word: "es", ref: "es-0022" }, { word: "antiguo", ref: "es-1804" }]
+      - target: "Compro un grabado."
+        ipa: "ˈkompɾo un ɡɾaˈbado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "grabado", base: "grabado" }]
+  - id: "es-2535"
+    target: "dirigir"
+    ipa: "diɾiˈxiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dirigir", base: "dirigir" }]
+    examples:
+      - target: "Dirijo una obra de teatro."
+        ipa: "diˈɾixo ˈuna ˈobɾa de teˈatɾo"
+        bases: [{ word: "Dirijo", base: "dirigir" }, { word: "una", base: "una" }, { word: "obra", base: "obra" }, { word: "de", base: "de" }, { word: "teatro", ref: "es-0780" }]
+      - target: "Dirige la orquesta."
+        ipa: "diˈɾixe la oɾˈkesta"
+        bases: [{ word: "Dirige", base: "dirigir" }, { word: "la", base: "la" }, { word: "orquesta", ref: "es-2515" }]
+  - id: "es-2536"
+    target: "componer"
+    ipa: "kompoˈneɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "componer", base: "componer" }]
+    examples:
+      - target: "Compongo una canción."
+        ipa: "komˈponɡo ˈuna kanˈθjon"
+        bases: [{ word: "Compongo", base: "componer" }, { word: "una", base: "una" }, { word: "canción", ref: "es-1425" }]
+      - target: "Compone música para películas."
+        ipa: "komˈpone ˈmusika ˈpaɾa peˈlikulas"
+        bases: [{ word: "Compone", base: "componer" }, { word: "música", ref: "es-2504" }, { word: "para", base: "para" }, { word: "películas", ref: "es-2459" }]
+  - id: "es-2537"
+    target: "interpretar"
+    ipa: "inteɾpɾeˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "interpretar", base: "interpretar" }]
+    examples:
+      - target: "Interpreto el papel del rey."
+        ipa: "inteɾˈpɾeto el paˈpel del rej"
+        bases: [{ word: "Interpreto", base: "interpretar" }, { word: "el", base: "el" }, { word: "papel", base: "papel" }, { word: "del", base: "del" }, { word: "rey", base: "rey" }]
+      - target: "Interpretan la sinfonía con emoción."
+        ipa: "inteɾˈpɾetan la sinfoˈnia kon emoˈθjon"
+        bases: [{ word: "Interpretan", base: "interpretar" }, { word: "la", base: "la" }, { word: "sinfonía", base: "sinfonía" }, { word: "con", base: "con" }, { word: "emoción", ref: "es-1991" }]
+  - id: "es-2538"
+    target: "expresar"
+    ipa: "ekspɾeˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "expresar", base: "expresar" }]
+    examples:
+      - target: "Expreso mis ideas con la pintura."
+        ipa: "eksˈpɾeso mis iˈdeas kon la pinˈtuɾa"
+        bases: [{ word: "Expreso", base: "expresar" }, { word: "mis", ref: "es-0129" }, { word: "ideas", ref: "es-2112" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "pintura", ref: "es-2505" }]
+      - target: "Expresan la alegría con la danza."
+        ipa: "eksˈpɾesan la aleˈɡɾia kon la ˈdanθa"
+        bases: [{ word: "Expresan", base: "expresar" }, { word: "la", base: "la" }, { word: "alegría", ref: "es-1992" }, { word: "con", base: "con" }, { word: "danza", ref: "es-2513" }]
+  - id: "es-2539"
+    target: "esculpir"
+    ipa: "eskulˈpiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "esculpir", base: "esculpir" }]
+    examples:
+      - target: "Esculpo una estatua."
+        ipa: "esˈkulpo ˈuna esˈtatwa"
+        bases: [{ word: "Esculpo", base: "esculpir" }, { word: "una", base: "una" }, { word: "estatua", ref: "es-2523" }]
+      - target: "Esculpen la piedra."
+        ipa: "esˈkulpen la ˈpjedɾa"
+        bases: [{ word: "Esculpen", base: "esculpir" }, { word: "la", base: "la" }, { word: "piedra", ref: "es-1762" }]
+  - id: "es-2540"
+    target: "creativo"
+    ipa: "kɾeaˈtibo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "creativo", base: "creativo" }]
+    examples:
+      - target: "Es una persona creativa."
+        ipa: "es ˈuna peɾˈsona kɾeaˈtiba"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "persona", ref: "es-0135" }, { word: "creativa", base: "creativo" }]
+      - target: "Tiene ideas creativas."
+        ipa: "ˈtjene iˈdeas kɾeaˈtibas"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "ideas", ref: "es-2112" }, { word: "creativas", base: "creativo" }]
+  - id: "es-2541"
+    target: "artístico"
+    ipa: "aɾˈtistiko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "artístico", base: "artístico" }]
+    examples:
+      - target: "Es un talento artístico."
+        ipa: "es un taˈlento aɾˈtistiko"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "talento", ref: "es-2527" }, { word: "artístico", base: "artístico" }]
+      - target: "La familia es muy artística."
+        ipa: "la faˈmilja es mwi aɾˈtistika"
+        bases: [{ word: "La", base: "la" }, { word: "familia", ref: "es-0158" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "artística", base: "artístico" }]

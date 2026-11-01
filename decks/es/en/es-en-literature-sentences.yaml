@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-literature-sentences"
+kind: "layer"
+core: "es-literature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: literature"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about books, poems and reading, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-3061":
+    native: "The author writes a short novel."
+    bases: { "El": "the", "una": "a" }
+    confusables: { "narrador": { why: "Narrador is the narrator, the teller of the story." }, "dramaturgo": { why: "Dramaturgo is a playwright, who writes plays." } }
+  "es-3062":
+    native: "The poem has three stanzas with rhyme."
+    bases: { "El": "the", "con": "with" }
+    confusables: { "verso": { why: "Verso is a single line, part of a stanza." }, "parrafo": { why: "Párrafo is a paragraph, in prose, not verse." } }
+  "es-3063":
+    native: "I read the chapter and underline a page."
+    bases: { "el": "the", "subrayo": "to underline", "una": "a" }
+    confusables: { "lectura": { why: "Lectura is reading, the activity itself." }, "lector": { why: "Lector is the reader, the person who reads." } }
+  "es-3064":
+    native: "The translation of the essay is faithful."
+    bases: { "La": "the", "del": "of", "fiel": "faithful" }
+    confusables: { "ilustracion": { why: "Ilustración is an illustration, a picture." }, "biografia": { why: "Biografía is a life story, a different genre." } }
+  "es-3065":
+    native: "I analyse the theme and describe the style."
+    bases: { "el": "the" }
+    confusables: { "comentar": { why: "Comentar is to comment, a more casual response." }, "narrar": { why: "Narrar is to narrate, to tell the story." } }
+  "es-3066":
+    native: "I recite a poem of old poetry."
+    bases: { "un": "a", "de": "of", "la": "the" }
+    confusables: { "obra": { why: "Obra is a work, a larger creation." }, "prologo": { why: "Prólogo is a preface, at the start of a book." } }

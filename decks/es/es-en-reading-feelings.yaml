@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-feelings"
+name: "Reading: a hard week and a letter to a friend"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a letter to a friend about a hard week, and a note about what made someone happy. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-a-hard-week"
+    title: "A hard week"
+    theme: "feelings"
+    sentences:
+      - text: "Querida Ana, esta semana estuve triste."
+      - text: "Tenía mucho estrés y poca calma."
+      - text: "Pero hoy estoy más tranquila y agradecida."
+      - text: "Gracias por tu ayuda."
+    questions:
+      - id: "es-2040"
+        prompt: { en: "How was the writer's week?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Sad and stressed" }
+          - { en: "Calm and bored" }
+        answer: 2
+      - id: "es-2041"
+        prompt: { en: "What does the writer feel today?" }
+        options:
+          - { en: "Calmer and grateful" }
+          - { en: "Scared" }
+          - { en: "Angry" }
+        answer: 1
+      - id: "es-2042"
+        prompt: { en: "What does the writer thank Ana for?" }
+        options:
+          - { en: "Her help" }
+          - { en: "Her money" }
+          - { en: "Her car" }
+        answer: 1
+  - id: "es-what-made-me-happy"
+    title: "What made me happy"
+    theme: "feelings"
+    sentences:
+      - text: "Mi abuela me sorprendió con una fiesta."
+      - text: "Toda la familia estaba emocionada."
+      - text: "Lloré de alegría cuando llegó el pastel."
+      - text: "Estoy orgulloso de mi familia."
+    questions:
+      - id: "es-2043"
+        prompt: { en: "What surprised the writer?" }
+        options:
+          - { en: "A party from grandmother" }
+          - { en: "A letter" }
+          - { en: "A new job" }
+        answer: 1
+      - id: "es-2044"
+        prompt: { en: "How did the writer cry?" }
+        options:
+          - { en: "From sadness" }
+          - { en: "From joy" }
+          - { en: "From pain" }
+        answer: 2
+      - id: "es-2045"
+        prompt: { en: "What does the writer feel about the family?" }
+        options:
+          - { en: "Proud" }
+          - { en: "Worried" }
+          - { en: "Confused" }
+        answer: 1

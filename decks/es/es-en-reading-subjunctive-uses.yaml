@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-subjunctive-uses"
+name: "Reading: doubts, feelings and needs"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short notes that use the subjunctive after doubt, feeling, need and purpose. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-opinion-notes"
+    title: "Short notes of opinion"
+    theme: "opinions"
+    sentences:
+      - text: "Es importante que vengas a la reunión."
+      - text: "Ojalá que todos estudien para el examen."
+      - text: "Dudo que el gobierno cambie la ley."
+      - text: "Me alegra que tengas tiempo."
+    questions:
+      - id: "es-2404"
+        prompt: { en: "What is important?" }
+        options:
+          - { en: "To come to the meeting" }
+          - { en: "To sleep late" }
+          - { en: "To buy a car" }
+        answer: 1
+      - id: "es-2405"
+        prompt: { en: "What is the writer hoping for?" }
+        options:
+          - { en: "That everyone studies for the exam" }
+          - { en: "That it rains" }
+          - { en: "That the shop closes" }
+        answer: 1
+      - id: "es-2406"
+        prompt: { en: "What does the writer doubt?" }
+        options:
+          - { en: "That the government changes the law" }
+          - { en: "That the bus is late" }
+          - { en: "That the food is cold" }
+        answer: 1
+  - id: "es-letter-of-doubts"
+    title: "A letter with doubts and hopes"
+    theme: "opinions"
+    sentences:
+      - text: "Espero que estés bien."
+      - text: "Es posible que llegue tarde."
+      - text: "Me alegra que vengas a mi casa."
+      - text: "Quiero que sepas la verdad."
+    questions:
+      - id: "es-2407"
+        prompt: { en: "What does the writer hope?" }
+        options:
+          - { en: "That you are well" }
+          - { en: "That you are tired" }
+          - { en: "That you are at work" }
+        answer: 1
+      - id: "es-2408"
+        prompt: { en: "What might happen?" }
+        options:
+          - { en: "Arriving late" }
+          - { en: "Missing the train" }
+          - { en: "Losing a bag" }
+        answer: 1
+      - id: "es-2409"
+        prompt: { en: "What does the writer want the reader to know?" }
+        options:
+          - { en: "The truth" }
+          - { en: "The price" }
+          - { en: "The time" }
+        answer: 1

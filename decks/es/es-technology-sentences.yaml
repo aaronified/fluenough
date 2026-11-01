@@ -1,0 +1,50 @@
+schema: 1
+id: "es-technology-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2347"
+    target: "Guardo el archivo en la carpeta."
+    ipa: "ˈɡwaɾdo el aɾˈtʃibo en la kaɾˈpeta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Guardo", ref: "es-1188" }, { word: "el", base: "el" }, { word: "archivo", ref: "es-2317" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "carpeta", ref: "es-2318" }]
+    confusables: [{ id: "disco", ref: "es-2320", kind: "word" }, { id: "memoria", ref: "es-2321", kind: "word" }]
+  - id: "es-2348"
+    target: "Instalo el software y reinicio el ordenador."
+    ipa: "insˈtalo el sofˈtwaɾe i rejˈniθjo el oɾdenaˈdoɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Instalo", ref: "es-2341" }, { word: "el", base: "el" }, { word: "software", ref: "es-2316" }, { word: "y", ref: "es-0048" }, { word: "reinicio", ref: "es-2343" }, { word: "ordenador", ref: "es-1173" }]
+    confusables: [{ id: "actualizar", ref: "es-2342", kind: "word" }, { id: "programar", ref: "es-2340", kind: "word" }]
+  - id: "es-2349"
+    target: "Hay un error y el sensor no funciona."
+    ipa: "aj un eˈroɾ i el senˈsoɾ no funˈθjona"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "error", ref: "es-2332" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "sensor", ref: "es-2331" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }]
+    confusables: [{ id: "fallo", ref: "es-2333", kind: "word" }, { id: "dispositivo", ref: "es-2330", kind: "word" }]
+  - id: "es-2350"
+    target: "Pulso el botón para compartir el enlace."
+    ipa: "ˈpulso el boˈton ˈpaɾa kompaɾˈtiɾ el enˈlaθe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pulso", base: "pulsar" }, { word: "el", base: "el" }, { word: "botón", ref: "es-2335" }, { word: "para", base: "para" }, { word: "compartir", ref: "es-2345" }, { word: "enlace", ref: "es-2326" }]
+    confusables: [{ id: "clic", ref: "es-2327", kind: "word" }, { id: "icono", ref: "es-2336", kind: "word" }]
+  - id: "es-2351"
+    target: "Navego por la web y leo un blog."
+    ipa: "naˈbeɡo poɾ la web i ˈleo un bloɡ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Navego", ref: "es-2346" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "web", ref: "es-2337" }, { word: "y", ref: "es-0048" }, { word: "leo", ref: "es-0296" }, { word: "un", base: "un" }, { word: "blog", ref: "es-2339" }]
+    confusables: [{ id: "sitio", ref: "es-2338", kind: "word" }, { id: "comentario", ref: "es-2328", kind: "word" }]
+  - id: "es-2352"
+    target: "El virus borra los datos del archivo."
+    ipa: "el ˈbiɾus ˈbora los ˈdatos del aɾˈtʃibo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "virus", ref: "es-2334" }, { word: "borra", ref: "es-1674" }, { word: "los", base: "los" }, { word: "datos", ref: "es-2324" }, { word: "del", base: "del" }, { word: "archivo", ref: "es-2317" }]
+    confusables: [{ id: "dato", ref: "es-2324", kind: "word" }, { id: "robot", ref: "es-2323", kind: "word" }]

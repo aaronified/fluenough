@@ -1,0 +1,247 @@
+schema: 1
+id: "es-en-health"
+kind: "layer"
+core: "es-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health and fitness"
+license: "CC-BY-SA-4.0"
+description: "Words for health and the body in use: the clinic and the nurse, the lungs and the bones, food and nutrition, stress and rest, the trainer and the training, and the verbs to relax, tire, gain and lose weight. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1938":
+    native: "male nurse"
+    notes: { n1: "El enfermero is a male nurse, who cares for patients. The feminine is la enfermera." }
+    bases: { "el": "the", "enfermero": "male nurse" }
+    examples:
+      "El enfermero me toma la tensión.": { native: "The nurse takes my blood pressure.", bases: { "El": "the", "enfermero": "male nurse", "me": "to me", "la": "the" } }
+      "Hay un enfermero en la clínica.": { native: "There is a nurse at the clinic.", bases: { "Hay": "there is; there are", "un": "a", "enfermero": "male nurse", "en": "in", "la": "the" } }
+  "es-1939":
+    native: "clinic"
+    notes: { n1: "La clínica is a clinic, a small medical centre for patients who are not in hospital." }
+    bases: { "la": "the", "clínica": "clinic" }
+    examples:
+      "La clínica está cerca de casa.": { native: "The clinic is near home.", bases: { "La": "the", "clínica": "clinic", "de": "of" } }
+      "Tengo una cita en la clínica.": { native: "I have an appointment at the clinic.", bases: { "una": "a", "en": "in", "la": "the", "clínica": "clinic" } }
+  "es-1940":
+    native: "tiredness"
+    notes: { n1: "El cansancio is tiredness, the feeling of having no energy. The verb is cansarse." }
+    bases: { "el": "the", "cansancio": "tiredness" }
+    examples:
+      "Siento mucho cansancio.": { native: "I feel very tired.", bases: { "cansancio": "tiredness" } }
+      "El cansancio es normal después del trabajo.": { native: "Tiredness is normal after work.", bases: { "El": "the", "cansancio": "tiredness", "normal": "normal", "del": "of" } }
+  "es-1941":
+    native: "energy"
+    notes: { n1: "La energía is energy, the strength to do things. Tener energía is to have energy." }
+    bases: { "la": "the", "energía": "energy" }
+    examples:
+      "Tengo mucha energía hoy.": { native: "I have a lot of energy today.", bases: { "energía": "energy" } }
+      "La energía del sol es limpia.": { native: "The energy from the sun is clean.", bases: { "La": "the", "energía": "energy", "del": "of" } }
+  "es-1942":
+    native: "stress"
+    notes: { n1: "El estrés is stress, the feeling of too much pressure." }
+    bases: { "el": "the", "estrés": "stress" }
+    examples:
+      "El estrés es malo para la salud.": { native: "Stress is bad for health.", bases: { "El": "the", "estrés": "stress", "para": "for", "la": "the" } }
+      "Tengo estrés por el trabajo.": { native: "I am stressed by work.", bases: { "estrés": "stress", "por": "for", "el": "the" } }
+  "es-1943":
+    native: "to relax"
+    notes: { n1: "Relajarse is to relax, to become calm. Its yo form is me relajo." }
+    bases: { "relajarse": "to relax" }
+    examples:
+      "Me relajo en el baño.": { native: "I relax in the bath.", bases: { "Me": "to me", "relajo": "to relax", "en": "in", "el": "the" } }
+      "Nos relajamos en el parque.": { native: "We relax in the park.", bases: { "Nos": "us", "relajamos": "to relax", "en": "in", "el": "the" } }
+  "es-1944":
+    native: "relaxed; calm"
+    notes: { n1: "Relajado is relaxed, calm and not tense. It agrees with the noun: relajada." }
+    bases: { "relajado": "relaxed; calm" }
+    examples:
+      "Estoy muy relajado hoy.": { native: "I am very relaxed today.", bases: { "relajado": "relaxed; calm" } }
+      "La familia está relajada.": { native: "The family is relaxed.", bases: { "La": "the", "relajada": "relaxed; calm" } }
+  "es-1945":
+    native: "nutrition"
+    notes: { n1: "La nutrición is nutrition, the food needed for health." }
+    bases: { "la": "the", "nutrición": "nutrition" }
+    examples:
+      "La nutrición es importante para los niños.": { native: "Nutrition is important for children.", bases: { "La": "the", "nutrición": "nutrition", "para": "for", "los": "the" } }
+      "Estudio nutrición en la universidad.": { native: "I study nutrition at university.", bases: { "nutrición": "nutrition", "en": "in", "la": "the" } }
+  "es-1946":
+    native: "vitamin"
+    notes: { n1: "La vitamina is a vitamin, found in fruit and vegetables." }
+    bases: { "la": "the", "vitamina": "vitamin" }
+    examples:
+      "La naranja tiene vitamina C.": { native: "The orange has vitamin C.", bases: { "La": "the", "vitamina": "vitamin", "C": "vitamin C (the letter)" } }
+      "Tomo una vitamina cada día.": { native: "I take a vitamin every day.", bases: { "una": "a", "vitamina": "vitamin" } }
+  "es-1947":
+    native: "calorie"
+    notes: { n1: "La caloría is a calorie, a unit of energy in food. The plural is calorías." }
+    bases: { "la": "the", "caloría": "calorie" }
+    examples:
+      "Este pastel tiene muchas calorías.": { native: "This cake has many calories.", bases: { "calorías": "calorie", "Este": "this" } }
+      "Cuento las calorías de la comida.": { native: "I count the calories in the meal.", bases: { "las": "the", "calorías": "calorie", "de": "of", "la": "the" } }
+  "es-1948":
+    native: "food; diet"
+    notes: { n1: "La alimentación is the way a person eats, or the food they have." }
+    bases: { "la": "the", "alimentación": "food; diet" }
+    examples:
+      "Una buena alimentación es importante.": { native: "Good food is important.", bases: { "Una": "a", "alimentación": "food; diet" } }
+      "La alimentación de los niños es sana.": { native: "The children's diet is healthy.", bases: { "La": "the", "alimentación": "food; diet", "de": "of", "los": "the" } }
+  "es-1949":
+    native: "food (item)"
+    notes: { n1: "El alimento is a food, a single thing that people eat." }
+    bases: { "el": "the", "alimento": "food (item)" }
+    examples:
+      "El pan es un alimento básico.": { native: "Bread is a basic food.", bases: { "El": "the", "un": "a", "alimento": "food (item)", "básico": "basic" } }
+      "Los alimentos frescos son mejores.": { native: "Fresh foods are better.", bases: { "Los": "the", "alimentos": "food (item)", "mejores": "better", "frescos": "fresh" } }
+  "es-1950":
+    native: "protein"
+    notes: { n1: "La proteína is protein, found in meat, fish, eggs and beans." }
+    bases: { "la": "the", "proteína": "protein" }
+    examples:
+      "El pollo tiene mucha proteína.": { native: "Chicken has a lot of protein.", bases: { "El": "the", "proteína": "protein" } }
+      "Las proteínas son buenas para los músculos.": { native: "Proteins are good for the muscles.", bases: { "Las": "the", "proteínas": "protein", "para": "for", "los": "the" } }
+  "es-1951":
+    native: "fat"
+    notes: { n1: "La grasa is fat, in food or in the body. Grasa is also grease." }
+    bases: { "la": "the", "grasa": "fat" }
+    examples:
+      "Esta carne tiene mucha grasa.": { native: "This meat has a lot of fat.", bases: { "Esta": "This", "grasa": "fat" } }
+      "Evito la grasa en la comida.": { native: "I avoid fat in my food.", bases: { "Evito": "to avoid", "la": "the", "grasa": "fat", "en": "in" } }
+  "es-1952":
+    native: "habit"
+    notes: { n1: "El hábito is a habit, something one does regularly." }
+    bases: { "el": "the", "hábito": "habit" }
+    examples:
+      "Tengo el hábito de caminar.": { native: "I have the habit of walking.", bases: { "el": "the", "hábito": "habit", "de": "of" } }
+      "Un buen hábito es dormir ocho horas.": { native: "A good habit is sleeping eight hours.", bases: { "Un": "a", "hábito": "habit" } }
+  "es-1953":
+    native: "custom; habit"
+    notes: { n1: "La costumbre is a custom, or a habit that is part of daily life." }
+    bases: { "la": "the", "costumbre": "custom; habit" }
+    examples:
+      "Es una costumbre sana.": { native: "It is a healthy habit.", bases: { "una": "a", "costumbre": "custom; habit" } }
+      "Por costumbre, me levanto temprano.": { native: "Out of habit, I get up early.", bases: { "Por": "for", "costumbre": "custom; habit", "me": "to me" } }
+  "es-1954":
+    native: "well-being"
+    notes: { n1: "El bienestar is well-being, feeling good in body and mind." }
+    bases: { "el": "the", "bienestar": "well-being" }
+    examples:
+      "El deporte da bienestar.": { native: "Sport gives well-being.", bases: { "El": "the", "bienestar": "well-being" } }
+      "Busco el bienestar en el campo.": { native: "I look for well-being in the countryside.", bases: { "el": "the", "bienestar": "well-being", "en": "in" } }
+  "es-1955":
+    native: "massage"
+    notes: { n1: "El masaje is a massage, pressing and rubbing the body to relax it." }
+    bases: { "el": "the", "masaje": "massage" }
+    examples:
+      "Quiero un masaje en la espalda.": { native: "I want a massage on my back.", bases: { "un": "a", "masaje": "massage", "en": "in", "la": "the" } }
+      "El masaje es muy relajante.": { native: "The massage is very relaxing.", bases: { "El": "the", "masaje": "massage", "relajante": "relaxing" } }
+  "es-1956":
+    native: "lung"
+    notes: { n1: "El pulmón is a lung. The plural is pulmones." }
+    bases: { "el": "the", "pulmón": "lung" }
+    examples:
+      "Los pulmones respiran el aire.": { native: "The lungs breathe the air.", bases: { "Los": "the", "pulmones": "lung", "el": "the", "aire": "air" } }
+      "Tengo un problema en el pulmón.": { native: "I have a problem with a lung.", bases: { "un": "a", "problema": "problem", "en": "in", "el": "the", "pulmón": "lung" } }
+  "es-1957":
+    native: "bone"
+    notes: { n1: "El hueso is a bone of the body." }
+    bases: { "el": "the", "hueso": "bone" }
+    examples:
+      "Me rompí un hueso del brazo.": { native: "I broke a bone in my arm.", bases: { "Me": "to me", "un": "a", "hueso": "bone", "del": "of" } }
+      "Los huesos son fuertes.": { native: "Bones are strong.", bases: { "Los": "the", "huesos": "bone" } }
+  "es-1958":
+    native: "muscle"
+    notes: { n1: "El músculo is a muscle, which moves the body when it works." }
+    bases: { "el": "the", "músculo": "muscle" }
+    examples:
+      "Tengo un músculo de la pierna dolorido.": { native: "I have a sore muscle in my leg.", bases: { "un": "a", "músculo": "muscle", "de": "of", "la": "the", "dolorido": "sore" } }
+      "El ejercicio fortalece los músculos.": { native: "Exercise strengthens the muscles.", bases: { "El": "the", "fortalece": "to strengthen", "los": "the", "músculos": "muscle" } }
+  "es-1959":
+    native: "trainer; coach"
+    notes: { n1: "El entrenador is a coach or trainer who teaches sport. The feminine is la entrenadora." }
+    bases: { "el": "the", "entrenador": "trainer; coach" }
+    examples:
+      "El entrenador llega a las siete.": { native: "The trainer arrives at seven.", bases: { "El": "the", "entrenador": "trainer; coach", "a": "to", "las": "the" } }
+      "Mi entrenador es muy amable.": { native: "My coach is very kind.", bases: { "entrenador": "trainer; coach", "amable": "kind" } }
+  "es-1960":
+    native: "training"
+    notes: { n1: "El entrenamiento is training, the regular practice for a sport." }
+    bases: { "el": "the", "entrenamiento": "training" }
+    examples:
+      "El entrenamiento es los martes.": { native: "The training is on Tuesdays.", bases: { "El": "the", "entrenamiento": "training", "los": "the" } }
+      "Hago un entrenamiento de media hora.": { native: "I do a half-hour training.", bases: { "un": "a", "entrenamiento": "training", "de": "of" } }
+  "es-1961":
+    native: "to train"
+    notes: { n1: "Entrenar is to train for a sport or a skill. Its noun is entrenamiento." }
+    bases: { "entrenar": "to train" }
+    examples:
+      "Entreno tres días a la semana.": { native: "I train three days a week.", bases: { "Entreno": "to train", "a": "to", "la": "the" } }
+      "Entrenamos para la carrera.": { native: "We train for the race.", bases: { "Entrenamos": "to train", "para": "for", "la": "the", "carrera": "race" } }
+  "es-1962":
+    native: "to get tired"
+    notes: { n1: "Cansarse is to get tired. Its yo form is me canso." }
+    bases: { "cansarse": "to get tired" }
+    examples:
+      "Me canso mucho en el gimnasio.": { native: "I get very tired at the gym.", bases: { "Me": "to me", "canso": "to get tired", "en": "in", "el": "the" } }
+      "Mi padre se cansa pronto.": { native: "My father gets tired quickly.", bases: { "se": "yourself", "cansa": "to get tired" } }
+  "es-1963":
+    native: "to lose weight"
+    notes: { n1: "Adelgazar is to lose weight, to get thinner. Its opposite is engordar." }
+    bases: { "adelgazar": "to lose weight" }
+    examples:
+      "Quiero adelgazar un poco.": { native: "I want to lose a little weight.", bases: { "adelgazar": "to lose weight", "un": "a" } }
+      "Adelgazo con la dieta.": { native: "I lose weight with the diet.", bases: { "Adelgazo": "to lose weight", "con": "with", "la": "the" } }
+  "es-1964":
+    native: "to gain weight"
+    notes: { n1: "Engordar is to put on weight, to get fatter. Its opposite is adelgazar." }
+    bases: { "engordar": "to gain weight" }
+    examples:
+      "Engordo si como mucho.": { native: "I gain weight if I eat a lot.", bases: { "Engordo": "to gain weight", "si": "if" } }
+      "Los niños engordan en invierno.": { native: "Children put on weight in winter.", bases: { "Los": "the", "engordan": "to gain weight", "en": "in" } }
+  "es-1965":
+    native: "healthy"
+    notes: { n1: "Sano is healthy. It agrees with the noun: sana. Its opposite is enfermo." }
+    bases: { "sano": "healthy" }
+    examples:
+      "Quiero comer sano.": { native: "I want to eat healthily.", bases: { "sano": "healthy" } }
+      "Mi hermana es sana y fuerte.": { native: "My sister is healthy and strong.", bases: { "sana": "healthy" } }
+  "es-1966":
+    native: "sedentary; inactive"
+    notes: { n1: "Sedentario is inactive, with little movement. It agrees with the noun: sedentaria." }
+    bases: { "sedentario": "sedentary; inactive" }
+    examples:
+      "Llevo una vida sedentaria.": { native: "I lead an inactive life.", bases: { "una": "a", "vida": "life", "sedentaria": "sedentary; inactive" } }
+      "El trabajo es sedentario.": { native: "The work is sedentary.", bases: { "El": "the", "sedentario": "sedentary; inactive" } }
+  "es-1967":
+    native: "breathing"
+    notes: { n1: "La respiración is breathing, the taking in and letting out of air." }
+    bases: { "la": "the", "respiración": "breathing" }
+    examples:
+      "La respiración es lenta.": { native: "Breathing is slow.", bases: { "La": "the", "respiración": "breathing" } }
+      "Hago ejercicios de respiración.": { native: "I do breathing exercises.", bases: { "de": "of", "respiración": "breathing" } }
+  "es-1968":
+    native: "rhythm; pace"
+    notes: { n1: "El ritmo is a rhythm, or the pace at which something is done." }
+    bases: { "el": "the", "ritmo": "rhythm; pace" }
+    examples:
+      "El ritmo del corazón es rápido.": { native: "The heartbeat is fast.", bases: { "El": "the", "ritmo": "rhythm; pace", "del": "of" } }
+      "Camino a un ritmo tranquilo.": { native: "I walk at a calm pace.", bases: { "a": "to", "un": "a", "ritmo": "rhythm; pace" } }
+  "es-1969":
+    native: "posture"
+    notes: { n1: "La postura is the way a person holds the body while sitting or standing." }
+    bases: { "la": "the", "postura": "posture" }
+    examples:
+      "Tengo una buena postura al sentarme.": { native: "I have good posture when I sit.", bases: { "una": "a", "postura": "posture", "al": "to the" } }
+      "La postura es importante para la espalda.": { native: "Posture is important for the back.", bases: { "La": "the", "postura": "posture", "para": "for" } }
+  "es-1970":
+    native: "fatigue"
+    notes: { n1: "La fatiga is fatigue, a deep tiredness that does not pass with rest." }
+    bases: { "la": "the", "fatiga": "fatigue" }
+    examples:
+      "Siento fatiga después del viaje.": { native: "I feel fatigue after the journey.", bases: { "fatiga": "fatigue", "del": "of" } }
+      "La fatiga es un síntoma.": { native: "Fatigue is a symptom.", bases: { "La": "the", "fatiga": "fatigue", "un": "a" } }
+  "es-1971":
+    native: "sweat"
+    notes: { n1: "El sudor is sweat, the liquid from the skin when hot or working." }
+    bases: { "el": "the", "sudor": "sweat" }
+    examples:
+      "El sudor cae por la frente.": { native: "The sweat runs down my forehead.", bases: { "El": "the", "sudor": "sweat", "cae": "to fall", "por": "for", "la": "the" } }
+      "Tengo sudor en la espalda.": { native: "I have sweat on my back.", bases: { "sudor": "sweat", "en": "in", "la": "the" } }

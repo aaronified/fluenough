@@ -1,0 +1,50 @@
+schema: 1
+id: "es-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2980"
+    target: "La paz y la igualdad son valores importantes."
+    ipa: "la paθ i la iɡwalˈdad son baˈloɾes impoɾˈtantes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "paz", ref: "es-2977" }, { word: "y", ref: "es-0048" }, { word: "igualdad", ref: "es-2939" }, { word: "son", ref: "es-0022" }, { word: "valores", ref: "es-2942" }, { word: "importantes", ref: "es-0435" }]
+    confusables: [{ id: "justicia", ref: "es-2273", kind: "word" }, { id: "libertad", ref: "es-2878", kind: "word" }]
+  - id: "es-2981"
+    target: "El esfuerzo es la base del progreso."
+    ipa: "el esˈfweɾθo es la ˈbase del pɾoˈɡɾeso"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "esfuerzo", ref: "es-2976" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "base", base: "base" }, { word: "del", base: "del" }, { word: "progreso", ref: "es-2961" }]
+    confusables: [{ id: "desarrollo", ref: "es-2962", kind: "word" }, { id: "objetivo", ref: "es-2948", kind: "word" }]
+  - id: "es-2982"
+    target: "La honestidad y la paciencia son virtudes."
+    ipa: "la onestiˈdad i la paˈθjenθja son biɾˈtudes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "honestidad", ref: "es-2941" }, { word: "y", ref: "es-0048" }, { word: "paciencia", ref: "es-2968" }, { word: "son", ref: "es-0022" }, { word: "virtudes", ref: "es-2943" }]
+    confusables: [{ id: "valor", ref: "es-2942", kind: "word" }, { id: "suerte", ref: "es-2967", kind: "word" }]
+  - id: "es-2983"
+    target: "Sin democracia no hay igualdad real."
+    ipa: "sin demoˈkɾaθja no aj iɡwalˈdad reˈal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Sin", base: "sin" }, { word: "democracia", ref: "es-2940" }, { word: "no", ref: "es-0043" }, { word: "hay", base: "haber" }, { word: "igualdad", ref: "es-2939" }, { word: "real", base: "real" }]
+    confusables: [{ id: "derecho", ref: "es-2271", kind: "word" }, { id: "identidad", ref: "es-2963", kind: "word" }]
+  - id: "es-2984"
+    target: "La causa del cambio es la consecuencia del esfuerzo."
+    ipa: "la ˈkawsa del ˈkambjo es la konseˈkwenθja del esˈfweɾθo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "causa", ref: "es-2951" }, { word: "del", base: "del" }, { word: "cambio", ref: "es-0588" }, { word: "es", ref: "es-0022" }, { word: "consecuencia", ref: "es-2952" }, { word: "esfuerzo", ref: "es-2976" }]
+    confusables: [{ id: "principio", ref: "es-2950", kind: "word" }, { id: "posibilidad", ref: "es-2953", kind: "word" }]
+  - id: "es-2985"
+    target: "La curiosidad y la imaginación ayudan al conocimiento."
+    ipa: "la kuɾjosiˈdad i la imaxinaˈθjon aˈʝudan al konoθiˈmjento"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "curiosidad", ref: "es-2974" }, { word: "y", ref: "es-0048" }, { word: "imaginación", ref: "es-2972" }, { word: "ayudan", ref: "es-0303" }, { word: "al", base: "al" }, { word: "conocimiento", ref: "es-2971" }]
+    confusables: [{ id: "inteligencia", ref: "es-2973", kind: "word" }, { id: "sabiduria", ref: "es-2970", kind: "word" }]

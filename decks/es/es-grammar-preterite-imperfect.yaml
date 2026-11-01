@@ -1,0 +1,50 @@
+schema: 1
+id: "es-grammar-preterite-imperfect"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["imperfecto", "indefinido"]
+  entries:
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "imperfecto": "tenía", "indefinido": "tuvo" }
+      ipas: { "imperfecto": "teˈnia", "indefinido": "ˈtubo" }
+    - lemma: "estar"
+      ipa: "esˈtaɾ"
+      forms: { "imperfecto": "estaba", "indefinido": "estuvo" }
+      ipas: { "imperfecto": "esˈtaba", "indefinido": "esˈtubo" }
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "imperfecto": "era", "indefinido": "fue" }
+      ipas: { "imperfecto": "ˈeɾa", "indefinido": "fwe" }
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "imperfecto": "hablaba", "indefinido": "habló" }
+      ipas: { "imperfecto": "aˈblaba", "indefinido": "aˈblo" }
+    - lemma: "llegar"
+      ipa: "ʝeˈɡaɾ"
+      forms: { "imperfecto": "llegaba", "indefinido": "llegó" }
+      ipas: { "imperfecto": "ʝeˈɡaba", "indefinido": "ʝeˈɡo" }
+    - lemma: "dormir"
+      ipa: "doɾˈmiɾ"
+      forms: { "imperfecto": "dormía", "indefinido": "durmió" }
+      ipas: { "imperfecto": "doɾˈmia", "indefinido": "duɾˈmjo" }
+    - lemma: "leer"
+      ipa: "leˈeɾ"
+      forms: { "imperfecto": "leía", "indefinido": "leyó" }
+      ipas: { "imperfecto": "leˈia", "indefinido": "leˈʝo" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "imperfecto": "vivía", "indefinido": "vivió" }
+      ipas: { "imperfecto": "biˈbia", "indefinido": "biˈbjo" }
+    - lemma: "trabajar"
+      ipa: "tɾabaˈxaɾ"
+      forms: { "imperfecto": "trabajaba", "indefinido": "trabajó" }
+      ipas: { "imperfecto": "tɾabaˈxaba", "indefinido": "tɾabaˈxo" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "imperfecto": "comía", "indefinido": "comió" }
+      ipas: { "imperfecto": "koˈmia", "indefinido": "koˈmjo" }

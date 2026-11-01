@@ -1,0 +1,34 @@
+schema: 1
+id: "es-grammar-se-passive"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["se + singular", "se + plural", "se + past", "se + modal + infinitive"]
+  entries:
+    - lemma: "vender"
+      ipa: "benˈdeɾ"
+      forms: { "se + singular": "Se vende pan aquí.", "se + plural": "Se venden casas.", "se + past": "Se vendió el coche.", "se + modal + infinitive": "Se puede vender pan." }
+      ipas: { "se + singular": "se ˈbende pan aˈki", "se + plural": "se ˈbenden ˈkasas", "se + past": "se benˈdjo el ˈkotʃe", "se + modal + infinitive": "se ˈpwede benˈdeɾ pan" }
+    - lemma: "abrir"
+      ipa: "aˈbɾiɾ"
+      forms: { "se + singular": "Se abre la tienda a las ocho.", "se + plural": "Se abren las puertas a las nueve.", "se + past": "Se abrió la puerta.", "se + modal + infinitive": "Se puede abrir la puerta." }
+      ipas: { "se + singular": "se ˈabɾe la ˈtjenda a las ˈotʃo", "se + plural": "se ˈabɾen las ˈpweɾtas a las ˈnwebe", "se + past": "se aˈbɾjo la ˈpweɾta", "se + modal + infinitive": "se ˈpwede aˈbɾiɾ la ˈpweɾta" }
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "se + singular": "Se habla español aquí.", "se + plural": "Se hablan tres idiomas.", "se + past": "Se habló de la fiesta.", "se + modal + infinitive": "Se puede hablar español." }
+      ipas: { "se + singular": "se ˈabla espaˈɲol aˈki", "se + plural": "se ˈablan tɾes iˈdjomas", "se + past": "se aˈblo de la ˈfjesta", "se + modal + infinitive": "se ˈpwede aˈblaɾ espaˈɲol" }
+    - lemma: "escribir"
+      ipa: "eskɾiˈbiɾ"
+      forms: { "se + singular": "Se escribe con cuidado.", "se + plural": "Se escriben cartas.", "se + past": "Se escribió la historia.", "se + modal + infinitive": "Se puede escribir aquí." }
+      ipas: { "se + singular": "se esˈkɾibe kon kwiˈdado", "se + plural": "se esˈkɾiben ˈkaɾtas", "se + past": "se eskɾiˈbjo la isˈtoɾja", "se + modal + infinitive": "se ˈpwede eskɾiˈbiɾ aˈki" }
+    - lemma: "cerrar"
+      ipa: "θeˈraɾ"
+      forms: { "se + singular": "Se cierra a las diez.", "se + plural": "Se cierran las tiendas.", "se + past": "Se cerró la calle.", "se + modal + infinitive": "Se puede cerrar la puerta." }
+      ipas: { "se + singular": "se ˈθjera a las djeθ", "se + plural": "se ˈθjeran las ˈtjendas", "se + past": "se θeˈro la ˈkaʝe", "se + modal + infinitive": "se ˈpwede θeˈraɾ la ˈpweɾta" }
+    - lemma: "construir"
+      ipa: "konsˈtɾwiɾ"
+      forms: { "se + singular": "Se construye una casa.", "se + plural": "Se construyen escuelas.", "se + past": "Se construyó el puente.", "se + modal + infinitive": "Se puede construir aquí." }
+      ipas: { "se + singular": "se konsˈtɾuʝe ˈuna ˈkasa", "se + plural": "se konsˈtɾuʝen esˈkwelas", "se + past": "se konstɾuˈʝo el ˈpwente", "se + modal + infinitive": "se ˈpwede konsˈtɾwiɾ aˈki" }

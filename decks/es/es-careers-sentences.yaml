@@ -1,0 +1,50 @@
+schema: 1
+id: "es-careers-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2392"
+    target: "Envío mi currículum y espero la entrevista."
+    ipa: "enˈbio mi kuˈrikulum i esˈpeɾo la entɾeˈbista"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Envío", ref: "es-1652" }, { word: "mi", ref: "es-0129" }, { word: "currículum", ref: "es-2362" }, { word: "y", ref: "es-0048" }, { word: "espero", ref: "es-0930" }, { word: "la", base: "la" }, { word: "entrevista", ref: "es-2080" }]
+    confusables: [{ id: "referencia", ref: "es-2368", kind: "word" }, { id: "empleo", ref: "es-2359", kind: "word" }]
+  - id: "es-2393"
+    target: "Tengo experiencia y una buena formación."
+    ipa: "ˈtenɡo ekspeˈɾjenθja i ˈuna ˈbwena foɾmaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "experiencia", ref: "es-2363" }, { word: "y", ref: "es-0048" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "formación", ref: "es-2364" }]
+    confusables: [{ id: "habilidad", ref: "es-2370", kind: "word" }, { id: "titulo", ref: "es-2365", kind: "word" }]
+  - id: "es-2394"
+    target: "El plazo para la vacante termina el lunes."
+    ipa: "el ˈplaθo ˈpaɾa la baˈkante teɾˈmina el ˈlunes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "plazo", ref: "es-2367" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "vacante", ref: "es-2369" }, { word: "termina", ref: "es-0521" }, { word: "lunes", ref: "es-0958" }]
+    confusables: [{ id: "oportunidad", ref: "es-2372", kind: "word" }, { id: "ascenso", ref: "es-2366", kind: "word" }]
+  - id: "es-2395"
+    target: "Soy responsable y ambicioso."
+    ipa: "soj responˈsable i ambiˈθjoso"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Soy", ref: "es-0022" }, { word: "responsable", ref: "es-2387" }, { word: "y", ref: "es-0048" }, { word: "ambicioso", ref: "es-2388" }]
+    confusables: [{ id: "motivado", ref: "es-2389", kind: "word" }, { id: "capacidad", ref: "es-2371", kind: "word" }]
+  - id: "es-2396"
+    target: "El abogado y el arquitecto trabajan juntos."
+    ipa: "el aboˈɡado i el aɾkiˈtekto tɾaˈbaxan ˈxuntos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "abogado", ref: "es-2374" }, { word: "y", ref: "es-0048" }, { word: "arquitecto", ref: "es-2375" }, { word: "trabajan", ref: "es-0259" }, { word: "juntos", base: "juntos" }]
+    confusables: [{ id: "carrera", ref: "es-2360", kind: "word" }, { id: "oficio", ref: "es-2361", kind: "word" }]
+  - id: "es-2397"
+    target: "Me gradúo y busco un empleo."
+    ipa: "me ɡɾaˈduo i ˈbusko un emˈpleo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "gradúo", ref: "es-2390" }, { word: "y", ref: "es-0048" }, { word: "busco", ref: "es-0289" }, { word: "un", base: "un" }, { word: "empleo", ref: "es-2359" }]
+    confusables: [{ id: "jubilacion", ref: "es-2373", kind: "word" }, { id: "presentarse", ref: "es-2391", kind: "word" }]

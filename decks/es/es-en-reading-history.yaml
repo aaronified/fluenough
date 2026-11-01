@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-history"
+name: "Reading: a museum card and a castle tour"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a museum card about a ruler, and a tour of an old castle. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-museum-card"
+    title: "A museum card about a ruler"
+    theme: "history"
+    sentences:
+      - text: "Este rey nació en 1452."
+      - text: "Conquistó la fortaleza después de una batalla."
+      - text: "Murió en el palacio, en su época más rica."
+      - text: "Su tumba está en la catedral."
+    questions:
+      - id: "es-2599"
+        prompt: { en: "When was the king born?" }
+        options:
+          - { en: "1452" }
+          - { en: "1552" }
+          - { en: "1352" }
+        answer: 1
+      - id: "es-2600"
+        prompt: { en: "What did he conquer?" }
+        options:
+          - { en: "A fortress after a battle" }
+          - { en: "A city by trade" }
+          - { en: "An island" }
+        answer: 1
+      - id: "es-2601"
+        prompt: { en: "Where is his tomb?" }
+        options:
+          - { en: "In the cathedral" }
+          - { en: "In the palace" }
+          - { en: "In the castle" }
+        answer: 1
+  - id: "es-castle-tour"
+    title: "A tour of an old castle"
+    theme: "history"
+    sentences:
+      - text: "El castillo se construyó en el siglo doce."
+      - text: "Los soldados vivían en la fortaleza."
+      - text: "Un rey heredó el imperio de su padre."
+      - text: "La guerra terminó con una victoria."
+    questions:
+      - id: "es-2602"
+        prompt: { en: "When was the castle built?" }
+        options:
+          - { en: "In the twelfth century" }
+          - { en: "In the twentieth century" }
+          - { en: "In the eighth century" }
+        answer: 1
+      - id: "es-2603"
+        prompt: { en: "Who lived in the fortress?" }
+        options:
+          - { en: "The soldiers" }
+          - { en: "The priests" }
+          - { en: "The farmers" }
+        answer: 1
+      - id: "es-2604"
+        prompt: { en: "How did the war end?" }
+        options:
+          - { en: "With a victory" }
+          - { en: "With a defeat" }
+          - { en: "With a treaty only" }
+        answer: 1

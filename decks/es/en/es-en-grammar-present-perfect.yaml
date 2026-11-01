@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-present-perfect"
+kind: "layer"
+core: "es-grammar-present-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present perfect: I have done"
+license: "CC-BY-SA-4.0"
+description: "The present perfect is haber in the present plus a past participle: he hablado, I have spoken. It tells what has happened in a time that is still going, or in life so far: ¿has viajado alguna vez?, have you ever travelled? Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Present perfect of regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "escribir": "to write"
+    "hacer": "to do; to make"
+    "ver": "to see"
+    "decir": "to say"
+    "poner": "to put"
+    "abrir": "to open"
+    "volver": "to return"
+  notes: "Haber takes the form of the subject (he, has, ha, hemos, habéis, han) and the participle does not change: he comido, ha comido, hemos comido. Regular participles end in -ado for -ar verbs and -ido for -er and -ir verbs. The common irregular participles are hecho, dicho, visto, escrito, puesto, vuelto, abierto and roto. Object pronouns go before haber: lo he visto, I have seen it."

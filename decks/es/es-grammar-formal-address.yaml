@@ -1,0 +1,50 @@
+schema: 1
+id: "es-grammar-formal-address"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["usted", "ustedes", "tú", "vosotros"]
+  entries:
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "usted": "¿Usted habla inglés?", "ustedes": "¿Ustedes hablan inglés?", "tú": "¿Tú hablas inglés?", "vosotros": "¿Vosotros habláis inglés?" }
+      ipas: { "usted": "usˈted ˈabla inˈɡles", "ustedes": "usˈtedes ˈablan inˈɡles", "tú": "tu ˈablas inˈɡles", "vosotros": "boˈsotɾos aˈblajs inˈɡles" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "usted": "¿Usted come aquí?", "ustedes": "¿Ustedes comen aquí?", "tú": "¿Tú comes aquí?", "vosotros": "¿Vosotros coméis aquí?" }
+      ipas: { "usted": "usˈted ˈkome aˈki", "ustedes": "usˈtedes ˈkomen aˈki", "tú": "tu ˈkomes aˈki", "vosotros": "boˈsotɾos koˈmejs aˈki" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "usted": "¿Usted vive en Madrid?", "ustedes": "¿Ustedes viven en Madrid?", "tú": "¿Tú vives en Madrid?", "vosotros": "¿Vosotros vivís en Madrid?" }
+      ipas: { "usted": "usˈted ˈbibe en maˈdɾid", "ustedes": "usˈtedes ˈbiben en maˈdɾid", "tú": "tu ˈbibes en maˈdɾid", "vosotros": "boˈsotɾos biˈbis en maˈdɾid" }
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "usted": "¿Usted es médico?", "ustedes": "¿Ustedes son médicos?", "tú": "¿Tú eres médico?", "vosotros": "¿Vosotros sois médicos?" }
+      ipas: { "usted": "usˈted es ˈmediko", "ustedes": "usˈtedes son ˈmedikos", "tú": "tu ˈeɾes ˈmediko", "vosotros": "boˈsotɾos sojs ˈmedikos" }
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "usted": "¿Usted tiene tiempo?", "ustedes": "¿Ustedes tienen tiempo?", "tú": "¿Tú tienes tiempo?", "vosotros": "¿Vosotros tenéis tiempo?" }
+      ipas: { "usted": "usˈted ˈtjene ˈtjempo", "ustedes": "usˈtedes ˈtjenen ˈtjempo", "tú": "tu ˈtjenes ˈtjempo", "vosotros": "boˈsotɾos teˈnejs ˈtjempo" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "usted": "¿Usted va a la oficina?", "ustedes": "¿Ustedes van a la oficina?", "tú": "¿Tú vas a la oficina?", "vosotros": "¿Vosotros vais a la oficina?" }
+      ipas: { "usted": "usˈted ba a la ofiˈθina", "ustedes": "usˈtedes ban a la ofiˈθina", "tú": "tu bas a la ofiˈθina", "vosotros": "boˈsotɾos bajs a la ofiˈθina" }
+    - lemma: "venir"
+      ipa: "beˈniɾ"
+      forms: { "usted": "¿Usted viene mañana?", "ustedes": "¿Ustedes vienen mañana?", "tú": "¿Tú vienes mañana?", "vosotros": "¿Vosotros venís mañana?" }
+      ipas: { "usted": "usˈted ˈbjene maˈɲana", "ustedes": "usˈtedes ˈbjenen maˈɲana", "tú": "tu ˈbjenes maˈɲana", "vosotros": "boˈsotɾos beˈnis maˈɲana" }
+    - lemma: "poder"
+      ipa: "poˈdeɾ"
+      forms: { "usted": "¿Usted puede ayudarme?", "ustedes": "¿Ustedes pueden ayudarme?", "tú": "¿Tú puedes ayudarme?", "vosotros": "¿Vosotros podéis ayudarme?" }
+      ipas: { "usted": "usˈted ˈpwede aʝuˈdaɾme", "ustedes": "usˈtedes ˈpweden aʝuˈdaɾme", "tú": "tu ˈpwedes aʝuˈdaɾme", "vosotros": "boˈsotɾos poˈdejs aʝuˈdaɾme" }
+    - lemma: "decir"
+      ipa: "deˈθiɾ"
+      forms: { "usted": "¿Usted dice la verdad?", "ustedes": "¿Ustedes dicen la verdad?", "tú": "¿Tú dices la verdad?", "vosotros": "¿Vosotros decís la verdad?" }
+      ipas: { "usted": "usˈted ˈdiθe la beɾˈdad", "ustedes": "usˈtedes ˈdiθen la beɾˈdad", "tú": "tu ˈdiθes la beɾˈdad", "vosotros": "boˈsotɾos deˈθis la beɾˈdad" }
+    - lemma: "saber"
+      ipa: "saˈbeɾ"
+      forms: { "usted": "¿Usted sabe dónde está?", "ustedes": "¿Ustedes saben dónde está?", "tú": "¿Tú sabes dónde está?", "vosotros": "¿Vosotros sabéis dónde está?" }
+      ipas: { "usted": "usˈted ˈsabe ˈdonde esˈta", "ustedes": "usˈtedes ˈsaben ˈdonde esˈta", "tú": "tu ˈsabes ˈdonde esˈta", "vosotros": "boˈsotɾos saˈbejs ˈdonde esˈta" }

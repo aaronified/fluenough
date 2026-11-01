@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-phone"
+name: "Reading: messages and a phone battery"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a few messages between friends, and a note about a phone that runs out. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-text-messages"
+    title: "A few text messages"
+    theme: "phone"
+    sentences:
+      - text: "¿Vienes a la fiesta esta noche?"
+      - text: "Sí, llego a las ocho."
+      - text: "Te envío la dirección por mensaje."
+      - text: "Perfecto, nos vemos allí."
+    questions:
+      - id: "es-1684"
+        prompt: { en: "What time does the friend arrive?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 2
+      - id: "es-1685"
+        prompt: { en: "How will the address be sent?" }
+        options:
+          - { en: "By message" }
+          - { en: "By email" }
+          - { en: "By post" }
+        answer: 1
+      - id: "es-1686"
+        prompt: { en: "Where will they meet?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At the party" }
+          - { en: "At the shop" }
+        answer: 2
+  - id: "es-phone-battery-note"
+    title: "A note about a phone"
+    theme: "phone"
+    sentences:
+      - text: "Mi teléfono no tiene batería."
+      - text: "Lo cargo en la cocina."
+      - text: "Hay mucha señal en la terraza."
+      - text: "Borro las fotos viejas para tener espacio."
+    questions:
+      - id: "es-1687"
+        prompt: { en: "What is the problem?" }
+        options:
+          - { en: "No battery" }
+          - { en: "No screen" }
+          - { en: "No photos" }
+        answer: 1
+      - id: "es-1688"
+        prompt: { en: "Where is the phone charged?" }
+        options:
+          - { en: "In the kitchen" }
+          - { en: "On the terrace" }
+          - { en: "In the bedroom" }
+        answer: 1
+      - id: "es-1689"
+        prompt: { en: "Where is the signal good?" }
+        options:
+          - { en: "In the kitchen" }
+          - { en: "In the bedroom" }
+          - { en: "On the terrace" }
+        answer: 3

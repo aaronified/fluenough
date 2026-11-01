@@ -1,0 +1,226 @@
+schema: 1
+id: "es-en-geography"
+kind: "layer"
+core: "es-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography: the world, maps and places"
+license: "CC-BY-SA-4.0"
+description: "Words for the world and the map: the continents and the countries where Spanish is spoken, the capitals and the cities, the borders, the regions and the words for places that are rural or urban. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1895":
+    native: "capital city"
+    notes: { n1: "La capital is the capital city of a country, where the government sits." }
+    bases: { "la": "the", "capital": "capital city" }
+    examples:
+      "La capital de España es Madrid.": { native: "The capital of Spain is Madrid.", bases: { "La": "the", "capital": "capital city", "de": "of" } }
+      "Lima es la capital de Perú.": { native: "Lima is the capital of Peru.", bases: { "Lima": "Lima", "la": "the", "capital": "capital city", "de": "of" } }
+  "es-1896":
+    native: "continent"
+    notes: { n1: "El continente is one of the large land masses of the world." }
+    bases: { "el": "the", "continente": "continent" }
+    examples:
+      "Europa es un continente.": { native: "Europe is a continent.", bases: { "un": "a", "continente": "continent" } }
+      "El continente tiene muchos países.": { native: "The continent has many countries.", bases: { "El": "the", "continente": "continent" } }
+  "es-1897":
+    native: "east"
+    notes: { n1: "El este is the east, where the sun rises. The opposite is el oeste." }
+    bases: { "el": "the", "este": "east" }
+    examples:
+      "El sol sale por el este.": { native: "The sun rises in the east.", bases: { "El": "the", "por": "for", "este": "east" } }
+      "La ciudad está al este de Madrid.": { native: "The city is to the east of Madrid.", bases: { "La": "the", "al": "to the", "este": "east", "de": "of" } }
+  "es-1898":
+    native: "border"
+    notes: { n1: "La frontera is the border between two countries." }
+    bases: { "la": "the", "frontera": "border" }
+    examples:
+      "Hay una frontera entre Francia y España.": { native: "There is a border between France and Spain.", bases: { "Hay": "there is; there are", "una": "a", "frontera": "border", "Francia": "France" } }
+      "Cruzamos la frontera en coche.": { native: "We cross the border by car.", bases: { "la": "the", "frontera": "border", "en": "in" } }
+  "es-1899":
+    native: "region"
+    notes: { n1: "La región is a region, a part of a country with its own character." }
+    bases: { "la": "the", "región": "region" }
+    examples:
+      "Esta región es muy bonita.": { native: "This region is very pretty.", bases: { "Esta": "This", "región": "region" } }
+      "La región tiene montañas y ríos.": { native: "The region has mountains and rivers.", bases: { "La": "the", "región": "region" } }
+  "es-1900":
+    native: "world"
+    notes: { n1: "El mundo is the world, the whole planet and all its people." }
+    bases: { "el": "the", "mundo": "world" }
+    examples:
+      "El mundo es grande.": { native: "The world is big.", bases: { "El": "the", "mundo": "world" } }
+      "Viajo por el mundo.": { native: "I travel around the world.", bases: { "por": "for", "el": "the", "mundo": "world" } }
+  "es-1901":
+    native: "inhabitant"
+    notes: { n1: "El habitante is a person who lives in a place. The plural is habitantes." }
+    bases: { "el": "the", "habitante": "inhabitant" }
+    examples:
+      "Madrid tiene tres millones de habitantes.": { native: "Madrid has three million inhabitants.", bases: { "millones": "million", "de": "of", "habitantes": "inhabitant" } }
+      "Los habitantes de la isla son pocos.": { native: "The inhabitants of the island are few.", bases: { "Los": "the", "habitantes": "inhabitant", "de": "of", "la": "the" } }
+  "es-1902":
+    native: "population"
+    notes: { n1: "La población is the number of people who live in a place." }
+    bases: { "la": "the", "población": "population" }
+    examples:
+      "La población de México es grande.": { native: "Mexico's population is large.", bases: { "La": "the", "población": "population", "de": "of" } }
+      "La población del pueblo es pequeña.": { native: "The village's population is small.", bases: { "La": "the", "población": "population", "del": "of" } }
+  "es-1903":
+    native: "citizen"
+    notes: { n1: "El ciudadano is a citizen, a person with the rights of a country." }
+    bases: { "el": "the", "ciudadano": "citizen" }
+    examples:
+      "Soy ciudadano de España.": { native: "I am a Spanish citizen.", bases: { "ciudadano": "citizen", "de": "of" } }
+      "Es un ciudadano de Chile.": { native: "He is a Chilean citizen.", bases: { "un": "a", "ciudadano": "citizen", "de": "of" } }
+  "es-1904":
+    native: "hemisphere"
+    notes: { n1: "El hemisferio is half of the earth, north or south of the equator." }
+    bases: { "el": "the", "hemisferio": "hemisphere" }
+    examples:
+      "España está en el hemisferio norte.": { native: "Spain is in the northern hemisphere.", bases: { "en": "in", "el": "the", "hemisferio": "hemisphere" } }
+      "Argentina está en el hemisferio sur.": { native: "Argentina is in the southern hemisphere.", bases: { "en": "in", "el": "the", "hemisferio": "hemisphere" } }
+  "es-1905":
+    native: "zone; area"
+    notes: { n1: "La zona is an area, a part of a place with a character of its own." }
+    bases: { "la": "the", "zona": "zone; area" }
+    examples:
+      "Es una zona tranquila.": { native: "It is a quiet area.", bases: { "una": "a", "zona": "zone; area" } }
+      "La zona norte es montañosa.": { native: "The north area is mountainous.", bases: { "La": "the", "zona": "zone; area" } }
+  "es-1906":
+    native: "rural"
+    notes: { n1: "Rural is of the countryside, not the city. It does not change for gender." }
+    bases: { "rural": "rural" }
+    examples:
+      "Vivo en una zona rural.": { native: "I live in a rural area.", bases: { "en": "in", "una": "a", "rural": "rural" } }
+      "El pueblo es rural.": { native: "The village is rural.", bases: { "El": "the", "rural": "rural" } }
+  "es-1907":
+    native: "urban"
+    notes: { n1: "Urbano is of the city. It is the opposite of rural. It agrees with the noun: urbana." }
+    bases: { "urbano": "urban" }
+    examples:
+      "Vivo en un barrio urbano.": { native: "I live in an urban area.", bases: { "en": "in", "un": "a", "urbano": "urban" } }
+      "La vida urbana es rápida.": { native: "Urban life is fast.", bases: { "La": "the", "vida": "life", "urbana": "urban" } }
+  "es-1908":
+    native: "Europe"
+    notes: { n1: "Europa is Europe, a continent. Spanish is spoken in Spain and not in most of Europe's other countries." }
+    bases: { "Europa": "Europe" }
+    examples:
+      "Europa es un continente.": { native: "Europe is a continent.", bases: { "Europa": "Europe", "un": "a" } }
+      "Viajo a Europa en verano.": { native: "I travel to Europe in summer.", bases: { "a": "to", "Europa": "Europe", "en": "in" } }
+  "es-1909":
+    native: "the Americas"
+    notes: { n1: "América is America, the continent of the north and the south. Latin America is where Spanish is widely spoken." }
+    bases: { "América": "the Americas" }
+    examples:
+      "América es muy grande.": { native: "The Americas are very large.", bases: { "América": "the Americas" } }
+      "Muchos países de América hablan español.": { native: "Many countries in the Americas speak Spanish.", bases: { "de": "of", "América": "the Americas" } }
+  "es-1910":
+    native: "Spain"
+    notes: { n1: "España is Spain, in Europe, where Spanish began." }
+    bases: { "España": "Spain" }
+    examples:
+      "Vivo en España.": { native: "I live in Spain.", bases: { "en": "in", "España": "Spain" } }
+      "España es un país europeo.": { native: "Spain is a European country.", bases: { "España": "Spain", "un": "a", "europeo": "European" } }
+  "es-1911":
+    native: "Mexico"
+    notes: { n1: "México is Mexico, in North America, with a large Spanish-speaking population." }
+    bases: { "México": "Mexico" }
+    examples:
+      "México es un país grande.": { native: "Mexico is a big country.", bases: { "México": "Mexico", "un": "a" } }
+      "Viajamos a México en invierno.": { native: "We travel to Mexico in winter.", bases: { "a": "to", "México": "Mexico", "en": "in" } }
+  "es-1912":
+    native: "Argentina"
+    notes: { n1: "Argentina is in South America, with Buenos Aires as its capital." }
+    bases: { "Argentina": "Argentina" }
+    examples:
+      "Argentina tiene una capital grande.": { native: "Argentina has a big capital.", bases: { "Argentina": "Argentina", "una": "a" } }
+      "Mi amiga es de Argentina.": { native: "My friend is from Argentina.", bases: { "amiga": "friend", "de": "of", "Argentina": "Argentina" } }
+  "es-1913":
+    native: "Colombia"
+    notes: { n1: "Colombia is in north-west South America, with Bogotá as its capital." }
+    bases: { "Colombia": "Colombia" }
+    examples:
+      "Colombia es un país bonito.": { native: "Colombia is a pretty country.", bases: { "Colombia": "Colombia", "un": "a" } }
+      "Bogotá es la capital de Colombia.": { native: "Bogotá is the capital of Colombia.", bases: { "Bogotá": "Bogotá", "la": "the", "de": "of", "Colombia": "Colombia" } }
+  "es-1914":
+    native: "Peru"
+    notes: { n1: "Perú is Peru, in South America, with Lima as its capital." }
+    bases: { "Perú": "Peru" }
+    examples:
+      "Perú tiene montañas altas.": { native: "Peru has high mountains.", bases: { "Perú": "Peru" } }
+      "Lima está en Perú.": { native: "Lima is in Peru.", bases: { "Lima": "Lima", "en": "in", "Perú": "Peru" } }
+  "es-1915":
+    native: "Chile"
+    notes: { n1: "Chile is a long country on the Pacific side of South America." }
+    bases: { "Chile": "Chile" }
+    examples:
+      "Chile es muy largo.": { native: "Chile is very long.", bases: { "Chile": "Chile" } }
+      "Santiago es la capital de Chile.": { native: "Santiago is the capital of Chile.", bases: { "la": "the", "de": "of", "Chile": "Chile" } }
+  "es-1916":
+    native: "Cuba"
+    notes: { n1: "Cuba is an island in the Caribbean, with Havana as its capital." }
+    bases: { "Cuba": "Cuba" }
+    examples:
+      "Cuba es una isla.": { native: "Cuba is an island.", bases: { "Cuba": "Cuba", "una": "a" } }
+      "La playa de Cuba es preciosa.": { native: "The beach in Cuba is beautiful.", bases: { "La": "the", "de": "of", "Cuba": "Cuba", "preciosa": "beautiful" } }
+  "es-1917":
+    native: "Venezuela"
+    notes: { n1: "Venezuela is in north South America, on the Caribbean coast." }
+    bases: { "Venezuela": "Venezuela" }
+    examples:
+      "Venezuela tiene playas bonitas.": { native: "Venezuela has pretty beaches.", bases: { "Venezuela": "Venezuela" } }
+      "Mi tío trabaja en Venezuela.": { native: "My uncle works in Venezuela.", bases: { "en": "in", "Venezuela": "Venezuela" } }
+  "es-1918":
+    native: "Ecuador"
+    notes: { n1: "Ecuador is in South America, on the equator, with Quito as its capital." }
+    bases: { "Ecuador": "Ecuador" }
+    examples:
+      "Ecuador está en América.": { native: "Ecuador is in America.", bases: { "Ecuador": "Ecuador", "en": "in", "América": "America" } }
+      "Quito es la capital de Ecuador.": { native: "Quito/quitar is the capital of Ecuador.", bases: { "Quito": "to remove; to take off", "la": "the", "de": "of", "Ecuador": "Ecuador" } }
+  "es-1919":
+    native: "Madrid"
+    notes: { n1: "Madrid is the capital of Spain, the largest city in the country." }
+    bases: { "Madrid": "Madrid" }
+    examples:
+      "Madrid es una ciudad grande.": { native: "Madrid is a big city.", bases: { "Madrid": "Madrid", "una": "a" } }
+      "Vivo en Madrid desde hace un año.": { native: "I have lived in Madrid for a year.", bases: { "en": "in", "Madrid": "Madrid", "desde": "from", "un": "a" } }
+  "es-1920":
+    native: "Barcelona"
+    notes: { n1: "Barcelona is a city on the coast of north-east Spain." }
+    bases: { "Barcelona": "Barcelona" }
+    examples:
+      "Barcelona está en la costa.": { native: "Barcelona is on the coast.", bases: { "Barcelona": "Barcelona", "en": "in", "la": "the" } }
+      "Barcelona es muy bonita.": { native: "Barcelona is very pretty.", bases: { "Barcelona": "Barcelona" } }
+  "es-1921":
+    native: "Seville"
+    notes: { n1: "Sevilla is Seville, a city in the south of Spain, with a hot summer." }
+    bases: { "Sevilla": "Seville" }
+    examples:
+      "Sevilla está en el sur de España.": { native: "Seville is in the south of Spain.", bases: { "Sevilla": "Seville", "en": "in", "el": "the", "de": "of" } }
+      "Sevilla es muy caliente en verano.": { native: "Seville is very hot in summer.", bases: { "Sevilla": "Seville", "en": "in" } }
+  "es-1922":
+    native: "Toledo"
+    notes: { n1: "Toledo is an old city in central Spain, on a hill above the river." }
+    bases: { "Toledo": "Toledo" }
+    examples:
+      "Toledo es una ciudad antigua.": { native: "Toledo is an old city.", bases: { "Toledo": "Toledo", "una": "a" } }
+      "Toledo está en el centro de España.": { native: "Toledo is in the centre of Spain.", bases: { "Toledo": "Toledo", "en": "in", "el": "the", "centro": "centre", "de": "of" } }
+  "es-1923":
+    native: "Granada"
+    notes: { n1: "Granada is a city in the south of Spain, under the mountains." }
+    bases: { "Granada": "Granada" }
+    examples:
+      "Granada es una ciudad bonita.": { native: "Granada is a pretty city.", bases: { "Granada": "Granada", "una": "a" } }
+      "Visitamos Granada en otoño.": { native: "We visit Granada in autumn.", bases: { "Granada": "Granada", "en": "in" } }
+  "es-1924":
+    native: "Bilbao"
+    notes: { n1: "Bilbao is a city in the north of Spain, in the Basque Country." }
+    bases: { "Bilbao": "Bilbao" }
+    examples:
+      "Bilbao está en el norte.": { native: "Bilbao is in the north.", bases: { "Bilbao": "Bilbao", "en": "in", "el": "the" } }
+      "Bilbao es un puerto importante.": { native: "Bilbao is an important port.", bases: { "Bilbao": "Bilbao", "un": "a", "puerto": "port" } }
+  "es-1925":
+    native: "Santiago"
+    notes: { n1: "Santiago is the capital of Chile, and also a city in north-west Spain." }
+    bases: { "Santiago": "Santiago" }
+    examples:
+      "Santiago es la capital de Chile.": { native: "Santiago is the capital of Chile.", bases: { "Santiago": "Santiago", "la": "the", "de": "of" } }
+      "Santiago tiene una catedral famosa.": { native: "Santiago has a famous cathedral.", bases: { "Santiago": "Santiago", "una": "a", "famosa": "famous" } }

@@ -1,0 +1,24 @@
+schema: 1
+id: "es-en-grammar-comparison"
+kind: "layer"
+core: "es-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing: más, menos, tan"
+license: "CC-BY-SA-4.0"
+description: "Comparing two things uses más or menos with que: más caro que, more expensive than. Equal things use tan ... como: tan caro como, as expensive as. The most is el más. Bueno and malo change: mejor and peor. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Comparing with adjectives"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "más": "more ... than", "menos": "less ... than", "tan": "as ... as", "el más": "the most (superlative)" }
+  entries:
+    "caro": "expensive"
+    "barato": "cheap"
+    "grande": "big"
+    "pequeno": "small"
+    "rapido": "fast"
+    "bueno": "good"
+    "malo": "bad"
+    "alto": "tall"
+    "joven": "young"
+  notes: "Más and menos come before the adjective and que comes after the thing compared: Madrid es más grande que Toledo. Tan ... como is for equal things. The superlative is el, la, los or las, then más, then the adjective, agreeing with the noun: la ciudad más cara. Bueno and malo change to mejor and peor (not más bueno or más malo), and the stem of bueno and malo is not used in these forms."

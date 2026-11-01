@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-abstract-words"
+name: "Reading: two opinion pieces on values"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short opinion texts about values, progress and the future. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-opinion-column"
+    title: "A short opinion column"
+    theme: "abstract-words"
+    sentences:
+      - text: "La paz es el valor más importante para una sociedad."
+      - text: "Sin igualdad no hay democracia verdadera."
+      - text: "La honestidad y la paciencia abren muchas puertas."
+      - text: "El futuro depende de nuestra solidaridad."
+    questions:
+      - id: "es-2986"
+        prompt: { en: "Which value is most important?" }
+        options:
+          - { en: "Peace" }
+          - { en: "Money" }
+          - { en: "Fame" }
+        answer: 1
+      - id: "es-2987"
+        prompt: { en: "What does the writer say without equality?" }
+        options:
+          - { en: "No real democracy" }
+          - { en: "Good weather" }
+          - { en: "Enough food" }
+        answer: 1
+      - id: "es-2988"
+        prompt: { en: "What does the future depend on?" }
+        options:
+          - { en: "Solidarity" }
+          - { en: "Luck" }
+          - { en: "Money" }
+        answer: 1
+  - id: "es-discussion-notes"
+    title: "Notes from a discussion"
+    theme: "abstract-words"
+    sentences:
+      - text: "El esfuerzo es la base del progreso."
+      - text: "La curiosidad y la imaginación nos llevan lejos."
+      - text: "La suerte ayuda, pero la disciplina es lo que cuenta."
+      - text: "El conocimiento da libertad."
+    questions:
+      - id: "es-2989"
+        prompt: { en: "What is the base of progress?" }
+        options:
+          - { en: "Effort" }
+          - { en: "Luck" }
+          - { en: "Money" }
+        answer: 1
+      - id: "es-2990"
+        prompt: { en: "What leads far?" }
+        options:
+          - { en: "Curiosity and imagination" }
+          - { en: "Money and fame" }
+          - { en: "Rest and sleep" }
+        answer: 1
+      - id: "es-2991"
+        prompt: { en: "What counts more than luck?" }
+        options:
+          - { en: "Discipline" }
+          - { en: "Money" }
+          - { en: "Time" }
+        answer: 1

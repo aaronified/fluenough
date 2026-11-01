@@ -1,0 +1,233 @@
+schema: 1
+id: "es-en-technology"
+kind: "layer"
+core: "es-technology"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Technology: computers, apps and the internet"
+license: "CC-BY-SA-4.0"
+description: "Words for computers and the internet: the file and the folder, the device and the memory, the link and the click, the error and the fault, and the verbs to install, update, restart, connect, share and browse. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2315":
+    native: "technology"
+    notes: { n1: "La tecnología is technology, the science and tools that make life easier." }
+    bases: { "la": "the", "tecnología": "technology" }
+    examples:
+      "La tecnología cambia rápido.": { native: "Technology changes fast.", bases: { "La": "the", "tecnología": "technology" } }
+      "Me interesa la tecnología.": { native: "I am interested in technology.", bases: { "Me": "to me", "interesa": "to interest", "la": "the", "tecnología": "technology" } }
+  "es-2316":
+    native: "software"
+    notes: { n1: "El software is software, the programs that run on a computer." }
+    bases: { "el": "the", "software": "software" }
+    examples:
+      "Este software es gratis.": { native: "This software is free.", bases: { "software": "software", "Este": "this" } }
+      "Instalo un software nuevo.": { native: "I install new software.", bases: { "un": "a", "software": "software" } }
+  "es-2317":
+    native: "file"
+    notes: { n1: "El archivo is a file on a computer, with a name and a type." }
+    bases: { "el": "the", "archivo": "file" }
+    examples:
+      "Guardo el archivo en la carpeta.": { native: "I save the file in the folder.", bases: { "el": "the", "archivo": "file", "en": "in", "la": "the" } }
+      "El archivo es muy grande.": { native: "The file is very big.", bases: { "El": "the", "archivo": "file" } }
+  "es-2318":
+    native: "folder"
+    notes: { n1: "La carpeta is a folder on a computer, where files are kept together." }
+    bases: { "la": "the", "carpeta": "folder" }
+    examples:
+      "Pongo las fotos en una carpeta.": { native: "I put the photos in a folder.", bases: { "las": "the", "en": "in", "una": "a", "carpeta": "folder" } }
+      "La carpeta está en el escritorio.": { native: "The folder is on the desktop.", bases: { "La": "the", "carpeta": "folder", "en": "in", "el": "the", "escritorio": "desktop" } }
+  "es-2319":
+    native: "image"
+    notes: { n1: "La imagen is an image, a picture on a screen or on paper." }
+    bases: { "la": "the", "imagen": "image" }
+    examples:
+      "La imagen es muy clara.": { native: "The image is very clear.", bases: { "La": "the", "imagen": "image" } }
+      "Subo una imagen a la web.": { native: "I upload an image to the web.", bases: { "una": "a", "imagen": "image", "a": "to", "la": "the" } }
+  "es-2320":
+    native: "disk; hard drive"
+    notes: { n1: "El disco is a disk, or the hard drive of a computer." }
+    bases: { "el": "the", "disco": "disk; hard drive" }
+    examples:
+      "El disco está lleno.": { native: "The disk is full.", bases: { "El": "the", "disco": "disk; hard drive" } }
+      "Guardo una copia en el disco.": { native: "I save a copy on the disk.", bases: { "una": "a", "copia": "copy", "en": "in", "el": "the", "disco": "disk; hard drive" } }
+  "es-2321":
+    native: "memory"
+    notes: { n1: "La memoria is the memory of a computer or a phone, where things are stored." }
+    bases: { "la": "the", "memoria": "memory" }
+    examples:
+      "La memoria del móvil está llena.": { native: "The phone's memory is full.", bases: { "La": "the", "memoria": "memory", "del": "of" } }
+      "Necesito más memoria.": { native: "I need more memory.", bases: { "memoria": "memory" } }
+  "es-2322":
+    native: "processor"
+    notes: { n1: "El procesador is the processor, the chip that runs a computer." }
+    bases: { "el": "the", "procesador": "processor" }
+    examples:
+      "El procesador es muy rápido.": { native: "The processor is very fast.", bases: { "El": "the", "procesador": "processor" } }
+      "Este procesador es nuevo.": { native: "This processor is new.", bases: { "procesador": "processor", "Este": "this" } }
+  "es-2323":
+    native: "robot"
+    notes: { n1: "El robot is a machine that moves and works by itself." }
+    bases: { "el": "the", "robot": "robot" }
+    examples:
+      "El robot limpia la casa.": { native: "The robot cleans the house.", bases: { "El": "the", "robot": "robot", "la": "the" } }
+      "Un robot trabaja en la fábrica.": { native: "A robot works in the factory.", bases: { "Un": "a", "robot": "robot", "en": "in", "la": "the" } }
+  "es-2324":
+    native: "fact; data item"
+    notes: { n1: "El dato is a fact, or one piece of information. Datos is data." }
+    bases: { "el": "the", "dato": "fact; data item" }
+    examples:
+      "Este dato es importante.": { native: "This fact is important.", bases: { "dato": "fact; data item", "Este": "this" } }
+      "Tengo muchos datos del proyecto.": { native: "I have a lot of data about the project.", bases: { "datos": "fact; data item", "del": "of" } }
+  "es-2325":
+    native: "programmer"
+    notes: { n1: "El programador is a person who writes computer programs. The feminine is la programadora." }
+    bases: { "el": "the", "programador": "programmer" }
+    examples:
+      "El programador escribe el código.": { native: "The programmer writes the code.", bases: { "El": "the", "programador": "programmer" } }
+      "Mi hermana es programadora.": { native: "My sister is a programmer.", bases: { "programadora": "programmer" } }
+  "es-2326":
+    native: "link"
+    notes: { n1: "El enlace is a link on a web page that takes you to another page." }
+    bases: { "el": "the", "enlace": "link" }
+    examples:
+      "Pulsa el enlace de abajo.": { native: "Click the link below.", bases: { "Pulsa": "to press", "el": "the", "enlace": "link", "de": "of", "abajo": "below" } }
+      "El enlace no funciona.": { native: "The link does not work.", bases: { "El": "the", "enlace": "link", "funciona": "to work" } }
+  "es-2327":
+    native: "click"
+    notes: { n1: "El clic is a click of the mouse. The plural is clics." }
+    bases: { "el": "the", "clic": "click" }
+    examples:
+      "Hago un clic en el botón.": { native: "I click the button.", bases: { "un": "a", "clic": "click", "en": "in", "el": "the" } }
+      "Un clic basta.": { native: "One click is enough.", bases: { "Un": "a", "clic": "click", "basta": "to be enough" } }
+  "es-2328":
+    native: "comment"
+    notes: { n1: "El comentario is a comment, a remark written or spoken about something." }
+    bases: { "el": "the", "comentario": "comment" }
+    examples:
+      "Dejo un comentario en la foto.": { native: "I leave a comment on the photo.", bases: { "un": "a", "comentario": "comment", "en": "in", "la": "the" } }
+      "El comentario es muy amable.": { native: "The comment is very kind.", bases: { "El": "the", "comentario": "comment", "amable": "kind" } }
+  "es-2329":
+    native: "follower"
+    notes: { n1: "El seguidor is a follower, a person who follows another online. The feminine is la seguidora." }
+    bases: { "el": "the", "seguidor": "follower" }
+    examples:
+      "Tengo mil seguidores.": { native: "I have a thousand followers.", bases: { "seguidores": "follower" } }
+      "El seguidor responde al mensaje.": { native: "The follower replies to the message.", bases: { "El": "the", "seguidor": "follower", "al": "to the" } }
+  "es-2330":
+    native: "device"
+    notes: { n1: "El dispositivo is a device, a machine or tool with a special job." }
+    bases: { "el": "the", "dispositivo": "device" }
+    examples:
+      "El dispositivo está en la mesa.": { native: "The device is on the table.", bases: { "El": "the", "dispositivo": "device", "en": "in", "la": "the" } }
+      "Conecto el dispositivo a internet.": { native: "I connect the device to the internet.", bases: { "el": "the", "dispositivo": "device", "a": "to" } }
+  "es-2331":
+    native: "sensor"
+    notes: { n1: "El sensor is a sensor, a part that detects light, heat or movement." }
+    bases: { "el": "the", "sensor": "sensor" }
+    examples:
+      "El sensor detecta el movimiento.": { native: "The sensor detects the movement.", bases: { "El": "the", "sensor": "sensor", "detecta": "to detect", "movimiento": "movement" } }
+      "El sensor de la cámara es bueno.": { native: "The camera's sensor is good.", bases: { "El": "the", "sensor": "sensor", "de": "of", "la": "the" } }
+  "es-2332":
+    native: "error; mistake"
+    notes: { n1: "El error is an error, a mistake made by a person or a machine." }
+    bases: { "el": "the", "error": "error; mistake" }
+    examples:
+      "Hay un error en el programa.": { native: "There is an error in the program.", bases: { "Hay": "there is; there are", "un": "a", "error": "error; mistake", "en": "in", "el": "the" } }
+      "Cometo un error.": { native: "I make a mistake.", bases: { "Cometo": "to commit (an error)", "un": "a", "error": "error; mistake" } }
+  "es-2333":
+    native: "fault; failure"
+    notes: { n1: "El fallo is a fault, a failure of a machine or a system." }
+    bases: { "el": "the", "fallo": "fault; failure" }
+    examples:
+      "El fallo es en el disco.": { native: "The fault is in the disk.", bases: { "El": "the", "fallo": "fault; failure", "en": "in" } }
+      "Hay un fallo en la red.": { native: "There is a fault in the network.", bases: { "Hay": "there is; there are", "un": "a", "fallo": "fault; failure", "en": "in", "la": "the" } }
+  "es-2334":
+    native: "virus"
+    notes: { n1: "El virus is a computer virus, a program that harms a device." }
+    bases: { "el": "the", "virus": "virus" }
+    examples:
+      "El virus borra los archivos.": { native: "The virus deletes the files.", bases: { "El": "the", "virus": "virus", "los": "the" } }
+      "Tengo un virus en el ordenador.": { native: "I have a virus on the computer.", bases: { "un": "a", "virus": "virus", "en": "in", "el": "the" } }
+  "es-2335":
+    native: "button"
+    notes: { n1: "El botón is a button, pressed to make a machine work." }
+    bases: { "el": "the", "botón": "button" }
+    examples:
+      "Pulsa el botón verde.": { native: "Press the green button.", bases: { "Pulsa": "to press", "el": "the", "botón": "button" } }
+      "El botón no funciona.": { native: "The button does not work.", bases: { "El": "the", "botón": "button", "funciona": "to work" } }
+  "es-2336":
+    native: "icon"
+    notes: { n1: "El icono is an icon, a small picture on a screen that stands for a program." }
+    bases: { "el": "the", "icono": "icon" }
+    examples:
+      "Pulso el icono de la aplicación.": { native: "I tap the app icon.", bases: { "Pulso": "to press", "el": "the", "icono": "icon", "de": "of", "la": "the" } }
+      "El icono es azul.": { native: "The icon is blue.", bases: { "El": "the", "icono": "icon" } }
+  "es-2337":
+    native: "web; website"
+    notes: { n1: "La web is the web, or a website. The short form of página web." }
+    bases: { "la": "the", "web": "web; website" }
+    examples:
+      "Busco información en la web.": { native: "I search for information on the web.", bases: { "información": "information", "en": "in", "la": "the", "web": "web; website" } }
+      "La web tiene muchas fotos.": { native: "The website has many photos.", bases: { "La": "the", "web": "web; website" } }
+  "es-2338":
+    native: "site; place"
+    notes: { n1: "El sitio is a website, or a place. Sitio web is website." }
+    bases: { "el": "the", "sitio": "site; place" }
+    examples:
+      "Visito un sitio de noticias.": { native: "I visit a news site.", bases: { "un": "a", "sitio": "site; place", "de": "of" } }
+      "El sitio es muy útil.": { native: "The site is very useful.", bases: { "El": "the", "sitio": "site; place" } }
+  "es-2339":
+    native: "blog"
+    notes: { n1: "El blog is a blog, a personal web page where entries are added regularly." }
+    bases: { "el": "the", "blog": "blog" }
+    examples:
+      "Escribo en un blog de viajes.": { native: "I write on a travel blog.", bases: { "en": "in", "un": "a", "blog": "blog", "de": "of" } }
+      "El blog es muy popular.": { native: "The blog is very popular.", bases: { "El": "the", "blog": "blog", "popular": "popular" } }
+  "es-2340":
+    native: "to program"
+    notes: { n1: "Programar is to write a program, or to set a device to do something later." }
+    bases: { "programar": "to program" }
+    examples:
+      "Programo el móvil para mañana.": { native: "I set the phone for tomorrow.", bases: { "Programo": "to program", "el": "the", "para": "for" } }
+      "Programan el ordenador para jugar.": { native: "They program the computer to play.", bases: { "Programan": "to program", "el": "the", "para": "for" } }
+  "es-2341":
+    native: "to install"
+    notes: { n1: "Instalar is to put a program or a device in place so it can be used." }
+    bases: { "instalar": "to install" }
+    examples:
+      "Instalo la aplicación hoy.": { native: "I install the app today.", bases: { "Instalo": "to install", "la": "the" } }
+      "Instalamos el software nuevo.": { native: "We install the new software.", bases: { "Instalamos": "to install", "el": "the" } }
+  "es-2342":
+    native: "to update"
+    notes: { n1: "Actualizar is to make a program or a device newer, with the latest version." }
+    bases: { "actualizar": "to update" }
+    examples:
+      "Actualizo el sistema.": { native: "I update the system.", bases: { "Actualizo": "to update", "el": "the", "sistema": "system" } }
+      "Actualizan la aplicación cada mes.": { native: "They update the app every month.", bases: { "Actualizan": "to update", "la": "the" } }
+  "es-2343":
+    native: "to restart"
+    notes: { n1: "Reiniciar is to start a device again, after switching it off." }
+    bases: { "reiniciar": "to restart" }
+    examples:
+      "Reinicio el ordenador.": { native: "I restart the computer.", bases: { "Reinicio": "to restart", "el": "the" } }
+      "Reinicia el móvil, por favor.": { native: "Restart the phone, please.", bases: { "Reinicia": "to restart", "el": "the", "por": "for", "favor": "please" } }
+  "es-2344":
+    native: "to connect"
+    notes: { n1: "Conectar is to join a device to a network, or to plug it in." }
+    bases: { "conectar": "to connect" }
+    examples:
+      "Conecto el móvil al wifi.": { native: "I connect the phone to the wifi.", bases: { "Conecto": "to connect", "el": "the", "al": "to the" } }
+      "Conecta el cable al enchufe.": { native: "Connect the cable to the socket.", bases: { "Conecta": "to connect", "el": "the", "al": "to the" } }
+  "es-2345":
+    native: "to share"
+    notes: { n1: "Compartir is to share something with other people, online or in person." }
+    bases: { "compartir": "to share" }
+    examples:
+      "Comparto las fotos con mis amigos.": { native: "I share the photos with my friends.", bases: { "Comparto": "to share", "las": "the", "con": "with" } }
+      "Compartimos la casa.": { native: "We share the house.", bases: { "Compartimos": "to share", "la": "the" } }
+  "es-2346":
+    native: "to browse; to sail"
+    notes: { n1: "Navegar is to browse the internet, or to sail on water." }
+    bases: { "navegar": "to browse; to sail" }
+    examples:
+      "Navego por internet.": { native: "I browse the internet.", bases: { "Navego": "to browse; to sail", "por": "for" } }
+      "Navegamos por el río.": { native: "We sail along the river.", bases: { "Navegamos": "to browse; to sail", "por": "for", "el": "the" } }

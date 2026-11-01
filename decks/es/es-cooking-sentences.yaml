@@ -1,0 +1,50 @@
+schema: 1
+id: "es-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1337"
+    target: "Pico el ajo y la cebolla."
+    ipa: "ˈpiko el ˈaxo i la θeˈboʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pico", ref: "es-1318" }, { word: "el", base: "el" }, { word: "ajo", ref: "es-1306" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "cebolla", ref: "es-0575" }]
+    confusables: [{ id: "cortar", ref: "es-1320", kind: "word" }, { id: "pelar", ref: "es-1319", kind: "word" }]
+  - id: "es-1338"
+    target: "Pongo la sartén en el fuego."
+    ipa: "ˈponɡo la saɾˈten en el ˈfweɡo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "sartén", ref: "es-1310" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "fuego", base: "fuego" }]
+    confusables: [{ id: "olla", ref: "es-1311", kind: "word" }, { id: "horno", ref: "es-0816", kind: "word" }]
+  - id: "es-1339"
+    target: "Hiervo el agua y añado la pasta."
+    ipa: "ˈjeɾbo el ˈaɡwa i aˈɲado la ˈpasta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hiervo", ref: "es-1316" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "y", ref: "es-0048" }, { word: "añado", ref: "es-1323" }, { word: "la", base: "la" }, { word: "pasta", ref: "es-1335" }]
+    confusables: [{ id: "batir", ref: "es-1322", kind: "word" }, { id: "calentar", ref: "es-1324", kind: "word" }]
+  - id: "es-1340"
+    target: "El pollo está crudo, lo cocino más."
+    ipa: "el ˈpoʝo esˈta ˈkɾudo lo koˈθino mas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "está", ref: "es-0023" }, { word: "crudo", ref: "es-1330" }, { word: "lo", base: "lo" }, { word: "cocino", ref: "es-0284" }, { word: "más", ref: "es-0363" }]
+    confusables: [{ id: "quemar", ref: "es-1327", kind: "word" }, { id: "cocido", ref: "es-1329", kind: "word" }]
+  - id: "es-1341"
+    target: "Mezclo la harina con dos huevos."
+    ipa: "ˈmeθklo la aˈɾina kon dos ˈwebos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mezclo", ref: "es-1321" }, { word: "la", base: "la" }, { word: "harina", ref: "es-0619" }, { word: "con", base: "con" }, { word: "dos", ref: "es-0206" }, { word: "huevos", ref: "es-0604" }]
+    confusables: [{ id: "batir", ref: "es-1322", kind: "word" }, { id: "anadir", ref: "es-1323", kind: "word" }]
+  - id: "es-1342"
+    target: "La receta dice una cucharada de sal."
+    ipa: "la reˈθeta ˈdiθe ˈuna kutʃaˈɾada de sal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "receta", ref: "es-1302" }, { word: "dice", base: "decir" }, { word: "una", base: "una" }, { word: "cucharada", ref: "es-1304" }, { word: "de", base: "de" }, { word: "sal", ref: "es-0607" }]
+    confusables: [{ id: "cucharadita", ref: "es-1305", kind: "word" }, { id: "ingrediente", ref: "es-1303", kind: "word" }]

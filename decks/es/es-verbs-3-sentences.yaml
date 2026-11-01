@@ -1,0 +1,50 @@
+schema: 1
+id: "es-verbs-3-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1638"
+    target: "Me despierto y me levanto a las siete."
+    ipa: "me desˈpjeɾto i me leˈbanto a las ˈsjete"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "despierto", ref: "es-1607" }, { word: "y", ref: "es-0048" }, { word: "levanto", ref: "es-1608" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+    confusables: [{ id: "dormirse", ref: "es-1621", kind: "word" }, { id: "sentarse", ref: "es-1615", kind: "word" }]
+  - id: "es-1639"
+    target: "Pienso que el café es muy bueno."
+    ipa: "ˈpjenso ke el kaˈfe es mwi ˈbweno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pienso", ref: "es-1617" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+    confusables: [{ id: "creer", ref: "es-1618", kind: "word" }, { id: "sentir", ref: "es-1619", kind: "word" }]
+  - id: "es-1640"
+    target: "Pongo la mesa y saco los platos."
+    ipa: "ˈponɡo la ˈmesa i ˈsako los ˈplatos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pongo", ref: "es-1628" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }, { word: "y", ref: "es-0048" }, { word: "saco", ref: "es-1623" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }]
+    confusables: [{ id: "meter", ref: "es-1624", kind: "word" }, { id: "dar", ref: "es-1629", kind: "word" }]
+  - id: "es-1641"
+    target: "No sé la respuesta, pero la busco."
+    ipa: "no se la resˈpwesta ˈpeɾo la ˈbusko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "sé", ref: "es-1630" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }, { word: "pero", ref: "es-0050" }, { word: "busco", ref: "es-0289" }]
+    confusables: [{ id: "conocer", ref: "es-1631", kind: "word" }, { id: "pensar", ref: "es-1617", kind: "word" }]
+  - id: "es-1642"
+    target: "Me peino y me cepillo los dientes."
+    ipa: "me ˈpejno i me θeˈpiʝo los ˈdjentes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "peino", ref: "es-1609" }, { word: "y", ref: "es-0048" }, { word: "cepillo", ref: "es-1611" }, { word: "los", base: "los" }, { word: "dientes", ref: "es-0752" }]
+    confusables: [{ id: "afeitarse", ref: "es-1610", kind: "word" }, { id: "maquillarse", ref: "es-1622", kind: "word" }]
+  - id: "es-1643"
+    target: "Vengo a clase en autobús."
+    ipa: "ˈbenɡo a ˈklase en awtoˈbus"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vengo", ref: "es-1632" }, { word: "a", base: "a" }, { word: "clase", ref: "es-1356" }, { word: "en", base: "en" }, { word: "autobús", ref: "es-0674" }]
+    confusables: [{ id: "ir", ref: "es-0026", kind: "word" }, { id: "volver", ref: "es-0929", kind: "word" }]

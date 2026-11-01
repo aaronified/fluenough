@@ -1,0 +1,23 @@
+schema: 1
+id: "es-en-grammar-preterite-irregular"
+kind: "layer"
+core: "es-grammar-preterite-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Preterite: irregular verbs"
+license: "CC-BY-SA-4.0"
+description: "Some common verbs change their stem in the preterite and take a new set of endings. Ser and ir share the same forms, fui and fue: the context says which one is meant. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Preterite of irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "ser": "to be"
+    "ir": "to go"
+    "tener": "to have"
+    "estar": "to be (place, state)"
+    "hacer": "to do; to make"
+    "querer": "to want"
+    "dormir": "to sleep"
+    "traer": "to bring"
+  notes: "These verbs change their stem and then take the endings -e, -iste, -o, -imos, -isteis, -ieron (with -j- before -eron in traer). Ser and ir share fui and fue: fue a Madrid means he went to Madrid, and fue un día bueno means it was a good day. Hacer uses hizo in the third person, with the spelling change from c to z. Dormir changes its stem vowel in the third person: durmió, durmieron."

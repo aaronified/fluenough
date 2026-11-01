@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-workplace"
+name: "Reading: an office notice and a first day"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a notice about a team meeting, and a note from a first day at work. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-office-notice"
+    title: "An office notice"
+    theme: "workplace"
+    sentences:
+      - text: "Reunión del equipo el martes a las diez."
+      - text: "La sala de reuniones está en el segundo piso."
+      - text: "Traigan el informe del proyecto."
+      - text: "Gracias, el director."
+    questions:
+      - id: "es-1889"
+        prompt: { en: "When is the meeting?" }
+        options:
+          - { en: "Monday at ten" }
+          - { en: "Tuesday at ten" }
+          - { en: "Tuesday at eleven" }
+        answer: 2
+      - id: "es-1890"
+        prompt: { en: "Where is the meeting room?" }
+        options:
+          - { en: "On the second floor" }
+          - { en: "On the ground floor" }
+          - { en: "In the basement" }
+        answer: 1
+      - id: "es-1891"
+        prompt: { en: "What should people bring?" }
+        options:
+          - { en: "The contract" }
+          - { en: "The project report" }
+          - { en: "A laptop" }
+        answer: 2
+  - id: "es-first-day-note"
+    title: "A first day at work"
+    theme: "workplace"
+    sentences:
+      - text: "Mi primer día en la empresa es hoy."
+      - text: "La secretaria me presenta al equipo."
+      - text: "El jefe explica el horario y el proyecto."
+      - text: "Firmo el contrato y recibo el permiso para entrar."
+    questions:
+      - id: "es-1892"
+        prompt: { en: "What is the day?" }
+        options:
+          - { en: "The first day at the company" }
+          - { en: "The last day" }
+          - { en: "A holiday" }
+        answer: 1
+      - id: "es-1893"
+        prompt: { en: "Who introduces the writer to the team?" }
+        options:
+          - { en: "The boss" }
+          - { en: "The secretary" }
+          - { en: "The director" }
+        answer: 2
+      - id: "es-1894"
+        prompt: { en: "What does the writer sign?" }
+        options:
+          - { en: "A report" }
+          - { en: "A contract" }
+          - { en: "A permit" }
+        answer: 2

@@ -1,0 +1,31 @@
+schema: 1
+id: "es-en-appearance-sentences"
+kind: "layer"
+core: "es-appearance-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: appearance"
+license: "CC-BY-SA-4.0"
+description: "Six sentences that describe people, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1589":
+    native: "My brother is tall, dark-haired and handsome."
+    confusables: { "rubio": { why: "Rubio is blond, the opposite of dark-haired." }, "calvo": { why: "Calvo is bald, with no hair at all." } }
+  "es-1590":
+    native: "She has long curly hair."
+    bases: { "el": "the" }
+    confusables: { "liso": { why: "Liso is straight, the opposite of curly." }, "cabello": { why: "Cabello is hair, the same thing as pelo." } }
+  "es-1591":
+    native: "The child has a big smile."
+    bases: { "El": "the", "una": "a" }
+    confusables: { "reir": { why: "Reír is to laugh, the action, not the look." }, "cara": { why: "Cara is the face, where the smile is." } }
+  "es-1592":
+    native: "I look like my father, we are very tall."
+    bases: { "Me": "to me", "a": "to" }
+    confusables: { "parecer": { why: "Parecer is to seem, a different use." }, "estatura": { why: "Estatura is height, the size of a person." } }
+  "es-1593":
+    native: "He has wrinkles on his forehead."
+    bases: { "en": "in", "la": "the" }
+    confusables: { "piel": { why: "Piel is skin, where the wrinkles are." }, "mejilla": { why: "Mejilla is the cheek, another part of the face." } }
+  "es-1594":
+    native: "My grandmother is very attractive."
+    confusables: { "joven": { why: "Joven is young, the opposite of old." }, "viejo": { why: "Viejo is old, the opposite of young." } }

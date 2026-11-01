@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-conditional"
+kind: "layer"
+core: "es-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Conditional: I would"
+license: "CC-BY-SA-4.0"
+description: "The conditional says what would happen, and makes polite requests: me gustaría, I would like; viviría en el campo, I would live in the countryside. It takes the future stem and the endings -ría, -rías, -ría, -ríamos, -ríais, -rían. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Conditional of regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "ir": "to go"
+    "tener": "to have"
+    "hacer": "to do; to make"
+    "poder": "to be able to"
+    "decir": "to say"
+    "querer": "to want"
+    "saber": "to know"
+  notes: "The conditional takes the same stems as the future (tendr-, har-, podr-, dir-, querr-, sabr-) with the endings -ía, -ías, -ía, -íamos, -íais, -ían. Use it for what would happen (viviría en el campo, I would live in the countryside) and for polite requests: ¿podría ayudarme? could you help me? Me gustaría is the polite form of I would like."

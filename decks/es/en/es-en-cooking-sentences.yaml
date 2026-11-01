@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-cooking-sentences"
+kind: "layer"
+core: "es-cooking-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: cooking"
+license: "CC-BY-SA-4.0"
+description: "Six sentences from a recipe and a kitchen, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1337":
+    native: "I chop the garlic and the onion."
+    bases: { "el": "the", "la": "the" }
+    confusables: { "cortar": { why: "Cortar is to cut in general, not to chop small." }, "pelar": { why: "Pelar is to peel, done before chopping." } }
+  "es-1338":
+    native: "I put the frying pan on the fire."
+    bases: { "Pongo": "to put", "la": "the", "en": "in", "el": "the", "fuego": "fire" }
+    confusables: { "olla": { why: "Olla is a pot, for water and soup, not a pan." }, "horno": { why: "Horno is the oven, where food is roasted." } }
+  "es-1339":
+    native: "I boil the water and add the pasta."
+    bases: { "el": "the", "la": "the" }
+    confusables: { "batir": { why: "Batir is to beat, not to boil." }, "calentar": { why: "Calentar is to heat, a general word." } }
+  "es-1340":
+    native: "The chicken is raw, I cook it more."
+    bases: { "El": "the", "lo": "it" }
+    confusables: { "quemar": { why: "Quemar is to burn, from too much heat." }, "cocido": { why: "Cocido is cooked, the result we want." } }
+  "es-1341":
+    native: "I mix the flour with two eggs."
+    bases: { "la": "the", "con": "with" }
+    confusables: { "batir": { why: "Batir is to beat the eggs until light and soft." }, "anadir": { why: "Añadir is to add one more thing." } }
+  "es-1342":
+    native: "The recipe says one spoonful of salt."
+    bases: { "La": "the", "dice": "to say; to tell", "una": "a", "de": "of" }
+    confusables: { "cucharadita": { why: "Cucharadita is a teaspoon, a smaller measure." }, "ingrediente": { why: "Ingrediente is one thing in the dish, not a measure." } }

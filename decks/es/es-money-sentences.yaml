@@ -1,0 +1,50 @@
+schema: 1
+id: "es-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-3013"
+    target: "Pago la cuenta y dejo una propina."
+    ipa: "ˈpaɡo la ˈkwenta i ˈdexo ˈuna pɾoˈpina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pago", ref: "es-0295" }, { word: "la", base: "la" }, { word: "cuenta", ref: "es-0653" }, { word: "y", ref: "es-0048" }, { word: "dejo", ref: "es-1190" }, { word: "una", base: "una" }, { word: "propina", ref: "es-0654" }]
+    confusables: [{ id: "total", ref: "es-3009", kind: "word" }, { id: "deuda", ref: "es-2997", kind: "word" }]
+  - id: "es-3014"
+    target: "Hago un presupuesto antes de comprar."
+    ipa: "ˈaɡo un pɾesuˈpwesto ˈantes de komˈpɾaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "presupuesto", ref: "es-2993" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "comprar", ref: "es-0280" }]
+    confusables: [{ id: "coste", ref: "es-3001", kind: "word" }, { id: "precio", ref: "es-0580", kind: "word" }]
+  - id: "es-3015"
+    target: "Invierto el dinero en un negocio."
+    ipa: "inˈbjeɾto el diˈneɾo en un neˈɡoθjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Invierto", ref: "es-2999" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "negocio", ref: "es-1865" }]
+    confusables: [{ id: "ahorrar", ref: "es-1229", kind: "word" }, { id: "gastar", ref: "es-1228", kind: "word" }]
+  - id: "es-3016"
+    target: "El salario es bajo y tengo una deuda."
+    ipa: "el saˈlaɾjo es ˈbaxo i ˈtenɡo ˈuna ˈdewda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "salario", ref: "es-2994" }, { word: "es", ref: "es-0022" }, { word: "bajo", base: "bajo" }, { word: "y", ref: "es-0048" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "deuda", ref: "es-2997" }]
+    confusables: [{ id: "credito", ref: "es-3000", kind: "word" }, { id: "pobre", ref: "es-2998", kind: "word" }]
+  - id: "es-3017"
+    target: "Cambio euros por dólares en el banco."
+    ipa: "ˈkambjo ˈewɾos poɾ ˈdolaɾes en el ˈbanko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cambio", ref: "es-0588" }, { word: "euros", ref: "es-0550" }, { word: "por", base: "por" }, { word: "dólares", ref: "es-3003" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "banco", ref: "es-0770" }]
+    confusables: [{ id: "divisa", ref: "es-3005", kind: "word" }, { id: "libra", ref: "es-3004", kind: "word" }]
+  - id: "es-3018"
+    target: "La ganancia es mayor que la pérdida."
+    ipa: "la ɡaˈnanθja es maˈʝoɾ ke la ˈpeɾdida"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "ganancia", ref: "es-3011" }, { word: "es", ref: "es-0022" }, { word: "mayor", ref: "es-1559" }, { word: "que", base: "que" }, { word: "pérdida", ref: "es-3012" }]
+    confusables: [{ id: "suma", ref: "es-3008", kind: "word" }, { id: "inversion", ref: "es-2995", kind: "word" }]

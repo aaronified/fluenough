@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-festivals"
+name: "Reading: a festival invitation and the days of the festival"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: an invitation to a village festival, and the plans for its days. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-festival-invitation"
+    title: "An invitation to a festival meal"
+    theme: "festivals"
+    sentences:
+      - text: "Estás invitado a la fiesta del pueblo."
+      - text: "Habrá un desfile, música y una comida tradicional."
+      - text: "Celebramos el día del santo en la plaza."
+      - text: "Trae un regalo, si quieres."
+    questions:
+      - id: "es-2645"
+        prompt: { en: "What is the invitation for?" }
+        options:
+          - { en: "A village festival" }
+          - { en: "A wedding" }
+          - { en: "A birthday only" }
+        answer: 1
+      - id: "es-2646"
+        prompt: { en: "What will there be?" }
+        options:
+          - { en: "A parade, music and a traditional meal" }
+          - { en: "A football match" }
+          - { en: "A market only" }
+        answer: 1
+      - id: "es-2647"
+        prompt: { en: "Where is the celebration?" }
+        options:
+          - { en: "In the square" }
+          - { en: "In the church" }
+          - { en: "At home" }
+        answer: 1
+  - id: "es-festival-plans"
+    title: "The days of the festival"
+    theme: "festivals"
+    sentences:
+      - text: "El viernes hay un desfile por la calle principal."
+      - text: "El sábado, la banda toca en la plaza."
+      - text: "El domingo hacemos una comida con los vecinos."
+      - text: "El carnaval termina con fuegos y globos."
+    questions:
+      - id: "es-2648"
+        prompt: { en: "What happens on Friday?" }
+        options:
+          - { en: "A parade" }
+          - { en: "A market" }
+          - { en: "A concert" }
+        answer: 1
+      - id: "es-2649"
+        prompt: { en: "What is on Sunday?" }
+        options:
+          - { en: "A meal with neighbours" }
+          - { en: "A parade" }
+          - { en: "A dance" }
+        answer: 1
+      - id: "es-2650"
+        prompt: { en: "How does the carnival end?" }
+        options:
+          - { en: "With fireworks and balloons" }
+          - { en: "With a prayer" }
+          - { en: "With a meal" }
+        answer: 1

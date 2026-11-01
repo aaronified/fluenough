@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-travel-sentences"
+kind: "layer"
+core: "es-travel-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: travel"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about trips and hotels, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2196":
+    native: "I confirm the booking at reception."
+    bases: { "la": "the", "en": "in" }
+    confusables: { "agencia": { why: "Agencia is a travel agency, which can also book." }, "visita": { why: "Visita is a visit, a trip to see a place." } }
+  "es-2197":
+    native: "I need a visa and travel insurance."
+    bases: { "un": "a", "de": "of" }
+    confusables: { "pasaporte": { why: "Pasaporte is the passport, a different document." }, "embajada": { why: "Embajada is the embassy, where the visa is applied for." } }
+  "es-2198":
+    native: "We go on a trip to the monument."
+    bases: { "una": "a", "al": "to the" }
+    confusables: { "museo": { why: "Museo is a museum, indoors." }, "paseo": { why: "Paseo is a walk, not a trip out." } }
+  "es-2199":
+    native: "The thief steals the wallet on the metro."
+    bases: { "El": "the", "la": "the", "en": "in" }
+    confusables: { "robo": { why: "Robo is the theft itself, a noun." }, "policia": { why: "Policía is the police, who you call." } }
+  "es-2200":
+    native: "I stay in a hostel near the station."
+    bases: { "Me": "to me", "en": "in", "un": "a", "de": "of", "la": "the" }
+    confusables: { "alojamiento": { why: "Alojamiento is accommodation, the place to stay." }, "hotel": { why: "Hotel is a larger place, with more rooms." } }
+  "es-2201":
+    native: "I buy a souvenir at the market."
+    bases: { "un": "a", "en": "in", "el": "the", "recuerdo": "souvenir" }
+    confusables: { "oferta": { why: "Oferta is an offer or a special price." }, "cargo": { why: "Cargo is a fee, a charge on a bill." } }

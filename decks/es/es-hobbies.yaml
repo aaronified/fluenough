@@ -1,0 +1,527 @@
+schema: 1
+id: "es-hobbies"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "hobbies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1400"
+    target: "la afición"
+    ipa: "la afiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "afición", base: "afición" }]
+    examples:
+      - target: "Mi afición es la lectura."
+        ipa: "mi afiˈθjon es la lekˈtuɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "afición", base: "afición" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "lectura", base: "lectura" }]
+      - target: "Tengo muchas aficiones."
+        ipa: "ˈtenɡo ˈmutʃas afiˈθjones"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "aficiones", base: "afición" }]
+  - id: "es-1401"
+    target: "el pasatiempo"
+    ipa: "el pasaˈtjempo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pasatiempo", base: "pasatiempo" }]
+    examples:
+      - target: "Mi pasatiempo favorito es pintar."
+        ipa: "mi pasaˈtjempo faboˈɾito es pinˈtaɾ"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pasatiempo", base: "pasatiempo" }, { word: "favorito", base: "favorito" }, { word: "es", ref: "es-0022" }, { word: "pintar", ref: "es-1404" }]
+      - target: "Los pasatiempos son divertidos."
+        ipa: "los pasaˈtjempos son dibeɾˈtidos"
+        bases: [{ word: "Los", base: "los" }, { word: "pasatiempos", base: "pasatiempo" }, { word: "son", ref: "es-0022" }, { word: "divertidos", ref: "es-0434" }]
+  - id: "es-1402"
+    target: "el deporte"
+    ipa: "el deˈpoɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "deporte", base: "deporte" }]
+    examples:
+      - target: "Hago deporte los sábados."
+        ipa: "ˈaɡo deˈpoɾte los ˈsabados"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "deporte", base: "deporte" }, { word: "los", base: "los" }, { word: "sábados", ref: "es-0963" }]
+      - target: "El deporte es bueno para la salud."
+        ipa: "el deˈpoɾte es ˈbweno ˈpaɾa la saˈlud"
+        bases: [{ word: "El", base: "el" }, { word: "deporte", base: "deporte" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "salud", base: "salud" }]
+  - id: "es-1403"
+    target: "jugar"
+    ipa: "xuˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "jugar", base: "jugar" }]
+    examples:
+      - target: "Juego al fútbol con mis amigos."
+        ipa: "ˈxweɡo al ˈfutbol kon mis aˈmiɡos"
+        bases: [{ word: "Juego", base: "jugar" }, { word: "al", base: "al" }, { word: "fútbol", ref: "es-1433" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+      - target: "Jugamos al tenis los domingos."
+        ipa: "xuˈɡamos al ˈtenis los doˈminɡos"
+        bases: [{ word: "Jugamos", base: "jugar" }, { word: "al", base: "al" }, { word: "tenis", ref: "es-1436" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+  - id: "es-1404"
+    target: "pintar"
+    ipa: "pinˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pintar", base: "pintar" }]
+    examples:
+      - target: "Pinto un cuadro."
+        ipa: "ˈpinto un ˈkwadɾo"
+        bases: [{ word: "Pinto", base: "pintar" }, { word: "un", base: "un" }, { word: "cuadro", base: "cuadro" }]
+      - target: "Me gusta pintar en casa."
+        ipa: "me ˈɡusta pinˈtaɾ en ˈkasa"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "pintar", base: "pintar" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-1405"
+    target: "cantar"
+    ipa: "kanˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cantar", base: "cantar" }]
+    examples:
+      - target: "Canto en el coro."
+        ipa: "ˈkanto en el ˈkoɾo"
+        bases: [{ word: "Canto", base: "cantar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "coro", base: "coro" }]
+      - target: "Mi hermana canta muy bien."
+        ipa: "mi eɾˈmana ˈkanta mwi bjen"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "canta", base: "cantar" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-1406"
+    target: "tocar"
+    ipa: "toˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tocar", base: "tocar" }]
+    examples:
+      - target: "Toco la guitarra por la tarde."
+        ipa: "ˈtoko la ɡiˈtara poɾ la ˈtaɾde"
+        bases: [{ word: "Toco", base: "tocar" }, { word: "la", base: "la" }, { word: "guitarra", ref: "es-1407" }, { word: "por", base: "por" }, { word: "tarde", ref: "es-0910" }]
+      - target: "Ella toca el piano."
+        ipa: "ˈeʝa ˈtoka el ˈpjano"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "toca", base: "tocar" }, { word: "el", base: "el" }, { word: "piano", ref: "es-1408" }]
+  - id: "es-1407"
+    target: "la guitarra"
+    ipa: "la ɡiˈtara"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "guitarra", base: "guitarra" }]
+    examples:
+      - target: "La guitarra es mi instrumento."
+        ipa: "la ɡiˈtara es mi instɾuˈmento"
+        bases: [{ word: "La", base: "la" }, { word: "guitarra", base: "guitarra" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "instrumento", base: "instrumento" }]
+      - target: "Toco la guitarra en el salón."
+        ipa: "ˈtoko la ɡiˈtara en el saˈlon"
+        bases: [{ word: "Toco", ref: "es-1406" }, { word: "la", base: "la" }, { word: "guitarra", base: "guitarra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "salón", ref: "es-0919" }]
+  - id: "es-1408"
+    target: "el piano"
+    ipa: "el ˈpjano"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "piano", base: "piano" }]
+    examples:
+      - target: "El piano está en la sala."
+        ipa: "el ˈpjano esˈta en la ˈsala"
+        bases: [{ word: "El", base: "el" }, { word: "piano", base: "piano" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "sala", base: "sala" }]
+      - target: "Estudio piano dos veces por semana."
+        ipa: "esˈtudjo ˈpjano dos ˈbeθes poɾ seˈmana"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "piano", base: "piano" }, { word: "dos", ref: "es-0206" }, { word: "veces", ref: "es-0322" }, { word: "por", base: "por" }, { word: "semana", ref: "es-0840" }]
+  - id: "es-1409"
+    target: "el violín"
+    ipa: "el bjoˈlin"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "violín", base: "violín" }]
+    examples:
+      - target: "El violín es difícil."
+        ipa: "el bjoˈlin es diˈfiθil"
+        bases: [{ word: "El", base: "el" }, { word: "violín", base: "violín" }, { word: "es", ref: "es-0022" }, { word: "difícil", ref: "es-0414" }]
+      - target: "Mi hijo toca el violín."
+        ipa: "mi ˈixo ˈtoka el bjoˈlin"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "toca", ref: "es-1406" }, { word: "el", base: "el" }, { word: "violín", base: "violín" }]
+  - id: "es-1410"
+    target: "la fotografía"
+    ipa: "la fotoɡɾaˈfia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fotografía", base: "fotografía" }]
+    examples:
+      - target: "La fotografía es mi afición."
+        ipa: "la fotoɡɾaˈfia es mi afiˈθjon"
+        bases: [{ word: "La", base: "la" }, { word: "fotografía", base: "fotografía" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "afición", ref: "es-1400" }]
+      - target: "Hago fotografías en la playa."
+        ipa: "ˈaɡo fotoɡɾaˈfias en la ˈplaʝa"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "fotografías", base: "fotografía" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]
+  - id: "es-1411"
+    target: "el club"
+    ipa: "el klub"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "club", base: "club" }]
+    examples:
+      - target: "Soy miembro de un club de lectura."
+        ipa: "soj ˈmjembɾo de un klub de lekˈtuɾa"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "miembro", base: "miembro" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "club", base: "club" }, { word: "lectura", base: "lectura" }]
+      - target: "El club es muy divertido."
+        ipa: "el klub es mwi dibeɾˈtido"
+        bases: [{ word: "El", base: "el" }, { word: "club", base: "club" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "divertido", ref: "es-0434" }]
+  - id: "es-1412"
+    target: "el equipo"
+    ipa: "el eˈkipo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "equipo", base: "equipo" }]
+    examples:
+      - target: "Mi equipo gana el partido."
+        ipa: "mi eˈkipo ˈɡana el paɾˈtido"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "equipo", base: "equipo" }, { word: "gana", ref: "es-0520" }, { word: "el", base: "el" }, { word: "partido", base: "partido" }]
+      - target: "El equipo entrena los lunes."
+        ipa: "el eˈkipo enˈtɾena los ˈlunes"
+        bases: [{ word: "El", base: "el" }, { word: "equipo", base: "equipo" }, { word: "entrena", base: "entrenar" }, { word: "los", base: "los" }, { word: "lunes", ref: "es-0958" }]
+  - id: "es-1413"
+    target: "montar"
+    ipa: "monˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "montar", base: "montar" }]
+    examples:
+      - target: "Monto en bicicleta por el parque."
+        ipa: "ˈmonto en biθiˈkleta poɾ el ˈpaɾke"
+        bases: [{ word: "Monto", base: "montar" }, { word: "en", base: "en" }, { word: "bicicleta", ref: "es-0680" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
+      - target: "Montamos a caballo en el campo."
+        ipa: "monˈtamos a kaˈbaʝo en el ˈkampo"
+        bases: [{ word: "Montamos", base: "montar" }, { word: "a", base: "a" }, { word: "caballo", ref: "es-1067" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", base: "campo" }]
+  - id: "es-1414"
+    target: "la colección"
+    ipa: "la kolekˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "colección", base: "colección" }]
+    examples:
+      - target: "Tengo una colección de sellos."
+        ipa: "ˈtenɡo ˈuna kolekˈθjon de ˈseʝos"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "colección", base: "colección" }, { word: "de", base: "de" }, { word: "sellos", base: "sello" }]
+      - target: "La colección es muy grande."
+        ipa: "la kolekˈθjon es mwi ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "colección", base: "colección" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1415"
+    target: "tejer"
+    ipa: "teˈxeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tejer", base: "tejer" }]
+    examples:
+      - target: "Mi madre teje bufandas."
+        ipa: "mi ˈmadɾe ˈtexe buˈfandas"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "teje", base: "tejer" }, { word: "bufandas", ref: "es-1032" }]
+      - target: "Tejo un jersey para mi hijo."
+        ipa: "ˈtexo un xeɾˈsej ˈpaɾa mi ˈixo"
+        bases: [{ word: "Tejo", base: "tejer" }, { word: "un", base: "un" }, { word: "jersey", ref: "es-1028" }, { word: "para", base: "para" }, { word: "mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }]
+  - id: "es-1416"
+    target: "el videojuego"
+    ipa: "el bideoˈxweɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "videojuego", base: "videojuego" }]
+    examples:
+      - target: "Me gustan los videojuegos."
+        ipa: "me ˈɡustan los bideoˈxweɡos"
+        bases: [{ word: "Me", base: "me" }, { word: "gustan", ref: "es-1432" }, { word: "los", base: "los" }, { word: "videojuegos", base: "videojuego" }]
+      - target: "Este videojuego es muy difícil."
+        ipa: "ˈeste bideoˈxweɡo es mwi diˈfiθil"
+        bases: [{ word: "Este", base: "este" }, { word: "videojuego", base: "videojuego" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "difícil", ref: "es-0414" }]
+  - id: "es-1417"
+    target: "la serie"
+    ipa: "la ˈseɾje"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "serie", base: "serie" }]
+    examples:
+      - target: "Veo una serie cada noche."
+        ipa: "ˈbeo ˈuna ˈseɾje ˈkada ˈnotʃe"
+        bases: [{ word: "Veo", base: "ver" }, { word: "una", base: "una" }, { word: "serie", base: "serie" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }]
+      - target: "La serie es muy buena."
+        ipa: "la ˈseɾje es mwi ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "serie", base: "serie" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-1418"
+    target: "el ajedrez"
+    ipa: "el axeˈdɾeθ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ajedrez", base: "ajedrez" }]
+    examples:
+      - target: "Juego al ajedrez los domingos."
+        ipa: "ˈxweɡo al axeˈdɾeθ los doˈminɡos"
+        bases: [{ word: "Juego", ref: "es-1403" }, { word: "al", base: "al" }, { word: "ajedrez", base: "ajedrez" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+      - target: "El ajedrez es un juego difícil."
+        ipa: "el axeˈdɾeθ es un ˈxweɡo diˈfiθil"
+        bases: [{ word: "El", base: "el" }, { word: "ajedrez", base: "ajedrez" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "juego", base: "juego" }, { word: "difícil", ref: "es-0414" }]
+  - id: "es-1419"
+    target: "pescar"
+    ipa: "pesˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pescar", base: "pescar" }]
+    examples:
+      - target: "Pesco en el río."
+        ipa: "ˈpesko en el ˈrio"
+        bases: [{ word: "Pesco", base: "pescar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "río", base: "río" }]
+      - target: "Pescan con su padre."
+        ipa: "ˈpeskan kon su ˈpadɾe"
+        bases: [{ word: "Pescan", base: "pescar" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "padre", ref: "es-0159" }]
+  - id: "es-1420"
+    target: "escalar"
+    ipa: "eskaˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "escalar", base: "escalar" }]
+    examples:
+      - target: "Escalo montañas en verano."
+        ipa: "esˈkalo monˈtaɲas en beˈɾano"
+        bases: [{ word: "Escalo", base: "escalar" }, { word: "montañas", base: "montaña" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]
+      - target: "Escalan la pared."
+        ipa: "esˈkalan la paˈɾed"
+        bases: [{ word: "Escalan", base: "escalar" }, { word: "la", base: "la" }, { word: "pared", ref: "es-0818" }]
+  - id: "es-1421"
+    target: "esquiar"
+    ipa: "esˈkjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "esquiar", base: "esquiar" }]
+    examples:
+      - target: "Esquío en invierno."
+        ipa: "esˈkio en inˈbjeɾno"
+        bases: [{ word: "Esquío", base: "esquiar" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+      - target: "Esquiamos en las montañas."
+        ipa: "esˈkjamos en las monˈtaɲas"
+        bases: [{ word: "Esquiamos", base: "esquiar" }, { word: "en", base: "en" }, { word: "las", base: "las" }, { word: "montañas", base: "montaña" }]
+  - id: "es-1422"
+    target: "el yoga"
+    ipa: "el ˈʝoɡa"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "yoga", base: "yoga" }]
+    examples:
+      - target: "Hago yoga por la mañana."
+        ipa: "ˈaɡo ˈʝoɡa poɾ la maˈɲana"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "yoga", base: "yoga" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+      - target: "El yoga es relajante."
+        ipa: "el ˈʝoɡa es relaˈxante"
+        bases: [{ word: "El", base: "el" }, { word: "yoga", base: "yoga" }, { word: "es", ref: "es-0022" }, { word: "relajante", base: "relajante" }]
+  - id: "es-1423"
+    target: "la piscina"
+    ipa: "la pisˈθina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "piscina", base: "piscina" }]
+    examples:
+      - target: "Nado en la piscina."
+        ipa: "ˈnado en la pisˈθina"
+        bases: [{ word: "Nado", ref: "es-1066" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "piscina", base: "piscina" }]
+      - target: "La piscina está cerrada hoy."
+        ipa: "la pisˈθina esˈta θeˈrada oj"
+        bases: [{ word: "La", base: "la" }, { word: "piscina", base: "piscina" }, { word: "está", ref: "es-0023" }, { word: "cerrada", ref: "es-0849" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-1424"
+    target: "el concierto"
+    ipa: "el konˈθjeɾto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "concierto", base: "concierto" }]
+    examples:
+      - target: "Vamos a un concierto el sábado."
+        ipa: "ˈbamos a un konˈθjeɾto el ˈsabado"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "un", base: "un" }, { word: "concierto", base: "concierto" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }]
+      - target: "El concierto empieza a las diez."
+        ipa: "el konˈθjeɾto emˈpjeθa a las djeθ"
+        bases: [{ word: "El", base: "el" }, { word: "concierto", base: "concierto" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "diez", ref: "es-0214" }]
+  - id: "es-1425"
+    target: "la canción"
+    ipa: "la kanˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "canción", base: "canción" }]
+    examples:
+      - target: "Esta canción es bonita."
+        ipa: "ˈesta kanˈθjon es boˈnita"
+        bases: [{ word: "Esta", base: "esta" }, { word: "canción", base: "canción" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Me gusta cantar esta canción."
+        ipa: "me ˈɡusta kanˈtaɾ ˈesta kanˈθjon"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "cantar", ref: "es-1405" }, { word: "esta", base: "esta" }, { word: "canción", base: "canción" }]
+  - id: "es-1426"
+    target: "el baile"
+    ipa: "el ˈbajle"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "baile", base: "baile" }]
+    examples:
+      - target: "El baile es divertido."
+        ipa: "el ˈbajle es dibeɾˈtido"
+        bases: [{ word: "El", base: "el" }, { word: "baile", base: "baile" }, { word: "es", ref: "es-0022" }, { word: "divertido", ref: "es-0434" }]
+      - target: "Me gusta el baile."
+        ipa: "me ˈɡusta el ˈbajle"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "baile", base: "baile" }]
+  - id: "es-1427"
+    target: "voluntario"
+    ipa: "bolunˈtaɾjo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "voluntario", base: "voluntario" }]
+    examples:
+      - target: "Soy voluntaria en una escuela."
+        ipa: "soj bolunˈtaɾja en ˈuna esˈkwela"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "voluntaria", base: "voluntario" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "escuela", ref: "es-1355" }]
+      - target: "Trabajo como voluntario los fines de semana."
+        ipa: "tɾaˈbaxo ˈkomo bolunˈtaɾjo los ˈfines de seˈmana"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "como", base: "como" }, { word: "voluntario", base: "voluntario" }, { word: "los", base: "los" }, { word: "fines", base: "fin" }, { word: "de", base: "de" }, { word: "semana", ref: "es-0840" }]
+  - id: "es-1428"
+    target: "la revista"
+    ipa: "la reˈbista"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "revista", base: "revista" }]
+    examples:
+      - target: "Leo una revista de cine."
+        ipa: "ˈleo ˈuna reˈbista de ˈθine"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "una", base: "una" }, { word: "revista", base: "revista" }, { word: "de", base: "de" }, { word: "cine", ref: "es-0779" }]
+      - target: "La revista es semanal."
+        ipa: "la reˈbista es semaˈnal"
+        bases: [{ word: "La", base: "la" }, { word: "revista", base: "revista" }, { word: "es", ref: "es-0022" }, { word: "semanal", base: "semanal" }]
+  - id: "es-1429"
+    target: "divertirse"
+    ipa: "dibeɾˈtiɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "divertirse", base: "divertirse" }]
+    examples:
+      - target: "Me divierto mucho con mis amigos."
+        ipa: "me diˈbjeɾto ˈmutʃo kon mis aˈmiɡos"
+        bases: [{ word: "Me", base: "me" }, { word: "divierto", base: "divertirse" }, { word: "mucho", ref: "es-0053" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+      - target: "Nos divertimos en el club."
+        ipa: "nos dibeɾˈtimos en el klub"
+        bases: [{ word: "Nos", base: "nos" }, { word: "divertimos", base: "divertirse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "club", ref: "es-1411" }]
+  - id: "es-1430"
+    target: "apasionado"
+    ipa: "apasjoˈnado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "apasionado", base: "apasionado" }]
+    examples:
+      - target: "Soy apasionada por el baile."
+        ipa: "soj apasjoˈnada poɾ el ˈbajle"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "apasionada", base: "apasionado" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "baile", ref: "es-1426" }]
+      - target: "Mi hermano está apasionado por el fútbol."
+        ipa: "mi eɾˈmano esˈta apasjoˈnado poɾ el ˈfutbol"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "está", ref: "es-0023" }, { word: "apasionado", base: "apasionado" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "fútbol", ref: "es-1433" }]
+  - id: "es-1431"
+    target: "disfrutar"
+    ipa: "disfɾuˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "disfrutar", base: "disfrutar" }]
+    examples:
+      - target: "Disfruto del tiempo libre."
+        ipa: "disˈfɾuto del ˈtjempo ˈlibɾe"
+        bases: [{ word: "Disfruto", base: "disfrutar" }, { word: "del", base: "del" }, { word: "tiempo", base: "tiempo" }, { word: "libre", ref: "es-0426" }]
+      - target: "Disfrutamos de la música."
+        ipa: "disfɾuˈtamos de la ˈmusika"
+        bases: [{ word: "Disfrutamos", base: "disfrutar" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "música", base: "música" }]
+  - id: "es-1432"
+    target: "gustar"
+    ipa: "ɡusˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "gustar", base: "gustar" }]
+    examples:
+      - target: "Me gusta leer."
+        ipa: "me ˈɡusta leˈeɾ"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "leer", ref: "es-0296" }]
+      - target: "¿Te gusta el fútbol?"
+        ipa: "te ˈɡusta el ˈfutbol"
+        bases: [{ word: "Te", base: "te" }, { word: "gusta", base: "gustar" }, { word: "el", base: "el" }, { word: "fútbol", ref: "es-1433" }]
+  - id: "es-1433"
+    target: "el fútbol"
+    ipa: "el ˈfutbol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fútbol", base: "fútbol" }]
+    examples:
+      - target: "Juego al fútbol los domingos."
+        ipa: "ˈxweɡo al ˈfutbol los doˈminɡos"
+        bases: [{ word: "Juego", ref: "es-1403" }, { word: "al", base: "al" }, { word: "fútbol", base: "fútbol" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+      - target: "El fútbol es el deporte más popular."
+        ipa: "el ˈfutbol es el deˈpoɾte mas popuˈlaɾ"
+        bases: [{ word: "El", base: "el" }, { word: "fútbol", base: "fútbol" }, { word: "es", ref: "es-0022" }, { word: "deporte", ref: "es-1402" }, { word: "más", ref: "es-0363" }, { word: "popular", base: "popular" }]
+  - id: "es-1434"
+    target: "la natación"
+    ipa: "la nataˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "natación", base: "natación" }]
+    examples:
+      - target: "La natación es buena para la espalda."
+        ipa: "la nataˈθjon es ˈbwena ˈpaɾa la esˈpalda"
+        bases: [{ word: "La", base: "la" }, { word: "natación", base: "natación" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "para", base: "para" }, { word: "espalda", ref: "es-0746" }]
+      - target: "Practico natación dos días."
+        ipa: "pɾakˈtiko nataˈθjon dos ˈdias"
+        bases: [{ word: "Practico", base: "practicar" }, { word: "natación", base: "natación" }, { word: "dos", ref: "es-0206" }, { word: "días", ref: "es-0019" }]
+  - id: "es-1435"
+    target: "el baloncesto"
+    ipa: "el balonˈθesto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "baloncesto", base: "baloncesto" }]
+    examples:
+      - target: "Veo el baloncesto por la noche."
+        ipa: "ˈbeo el balonˈθesto poɾ la ˈnotʃe"
+        bases: [{ word: "Veo", base: "ver" }, { word: "el", base: "el" }, { word: "baloncesto", base: "baloncesto" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "Juego al baloncesto en el gimnasio."
+        ipa: "ˈxweɡo al balonˈθesto en el ximˈnasjo"
+        bases: [{ word: "Juego", ref: "es-1403" }, { word: "al", base: "al" }, { word: "baloncesto", base: "baloncesto" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "gimnasio", ref: "es-0912" }]
+  - id: "es-1436"
+    target: "el tenis"
+    ipa: "el ˈtenis"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tenis", base: "tenis" }]
+    examples:
+      - target: "Juego al tenis en el club."
+        ipa: "ˈxweɡo al ˈtenis en el klub"
+        bases: [{ word: "Juego", ref: "es-1403" }, { word: "al", base: "al" }, { word: "tenis", base: "tenis" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "club", ref: "es-1411" }]
+      - target: "El tenis es un deporte difícil."
+        ipa: "el ˈtenis es un deˈpoɾte diˈfiθil"
+        bases: [{ word: "El", base: "el" }, { word: "tenis", base: "tenis" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "deporte", ref: "es-1402" }, { word: "difícil", ref: "es-0414" }]
+  - id: "es-1437"
+    target: "el dibujo"
+    ipa: "el diˈbuxo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dibujo", base: "dibujo" }]
+    examples:
+      - target: "El dibujo es mi afición."
+        ipa: "el diˈbuxo es mi afiˈθjon"
+        bases: [{ word: "El", base: "el" }, { word: "dibujo", base: "dibujar" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "afición", ref: "es-1400" }]
+      - target: "Hago un dibujo de mi casa."
+        ipa: "ˈaɡo un diˈbuxo de mi ˈkasa"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "dibujo", base: "dibujar" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "casa", ref: "es-0006" }]

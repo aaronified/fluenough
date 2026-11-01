@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-formal-address"
+name: "Reading: a formal letter and a question to an elder"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that use usted for formal letters and conversation, and tú for friends. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-formal-letter"
+    title: "A formal letter and its closing"
+    theme: "relationships"
+    sentences:
+      - text: "Estimado señor López:"
+      - text: "Le escribo para confirmar su cita del martes."
+      - text: "¿Podría usted enviarme el documento antes del viernes?"
+      - text: "Atentamente, Ana Ruiz."
+    questions:
+      - id: "es-3119"
+        prompt: { en: "Who is the letter addressed to?" }
+        options:
+          - { en: "Mr López" }
+          - { en: "Ana" }
+          - { en: "The bank" }
+        answer: 1
+      - id: "es-3120"
+        prompt: { en: "What is the letter confirming?" }
+        options:
+          - { en: "An appointment on Tuesday" }
+          - { en: "A payment" }
+          - { en: "A flight" }
+        answer: 1
+      - id: "es-3121"
+        prompt: { en: "What is asked?" }
+        options:
+          - { en: "To send a document before Friday" }
+          - { en: "To pay now" }
+          - { en: "To call back" }
+        answer: 1
+  - id: "es-elders-and-friends"
+    title: "Speaking to an elder and a friend"
+    theme: "relationships"
+    sentences:
+      - text: "Disculpe, señora, ¿sabe dónde está la estación?"
+      - text: "Perdón, abuelo, ¿quiere ayuda con las bolsas?"
+      - text: "Hola, Juan, ¿tienes tiempo para comer?"
+      - text: "Gracias, señora, muy amable."
+    questions:
+      - id: "es-3122"
+        prompt: { en: "What does the speaker ask the lady?" }
+        options:
+          - { en: "Where the station is" }
+          - { en: "For money" }
+          - { en: "For the way to the park" }
+        answer: 1
+      - id: "es-3123"
+        prompt: { en: "Who does the speaker offer help to?" }
+        options:
+          - { en: "The grandfather" }
+          - { en: "The friend" }
+          - { en: "The lady" }
+        answer: 1
+      - id: "es-3124"
+        prompt: { en: "How does the speaker address the friend?" }
+        options:
+          - { en: "With tú" }
+          - { en: "With usted" }
+          - { en: "With vosotros" }
+        answer: 1

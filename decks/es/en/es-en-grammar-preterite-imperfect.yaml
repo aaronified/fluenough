@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-preterite-imperfect"
+kind: "layer"
+core: "es-grammar-preterite-imperfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Preterite and imperfect together"
+license: "CC-BY-SA-4.0"
+description: "Two past tenses, two jobs. The imperfect is the background and the habit: llovía, it was raining. The preterite is the event that happened and ended: llegó, he arrived. Put together they tell a story: llovía cuando llegó, it was raining when he arrived. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Imperfect or preterite, for the same verb"
+  slot_name: "tense"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "imperfecto": "imperfect: background, habit, or how things were", "indefinido": "preterite: one finished event" }
+  entries:
+    "tener": "to have"
+    "estar": "to be (place, state)"
+    "ser": "to be"
+    "hablar": "to speak"
+    "llegar": "to arrive"
+    "dormir": "to sleep"
+    "leer": "to read"
+    "vivir": "to live"
+    "trabajar": "to work"
+    "comer": "to eat"
+  notes: "Use the imperfect for what was going on, what was usual, and how things were. Use the preterite for one event that began and ended. In a story, the imperfect sets the scene and the preterite moves it on: llovía cuando llegó el tren, it was raining when the train arrived. Some verbs change meaning: tener is to have in the imperfect and to get in the preterite (tuvo un problema, he had a problem); conocer and saber change in the same way."

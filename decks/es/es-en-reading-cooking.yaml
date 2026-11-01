@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-cooking"
+name: "Reading: a recipe and a kitchen"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: the steps of a simple dish and a note about the kitchen. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-recipe-card"
+    title: "A recipe card"
+    theme: "cooking"
+    sentences:
+      - text: "Pela las patatas y córtalas en trozos."
+      - text: "Pon el aceite en la sartén."
+      - text: "Añade la cebolla y cuécela cinco minutos."
+      - text: "Sirve el plato caliente."
+    questions:
+      - id: "es-1343"
+        prompt: { en: "What is the first step?" }
+        options:
+          - { en: "Peel the potatoes" }
+          - { en: "Heat the oven" }
+          - { en: "Serve the dish" }
+        answer: 1
+      - id: "es-1344"
+        prompt: { en: "How long is the onion cooked?" }
+        options:
+          - { en: "Ten minutes" }
+          - { en: "Five minutes" }
+          - { en: "One hour" }
+        answer: 2
+      - id: "es-1345"
+        prompt: { en: "When is the dish served?" }
+        options:
+          - { en: "Cold" }
+          - { en: "Frozen" }
+          - { en: "Hot" }
+        answer: 3
+  - id: "es-kitchen-note"
+    title: "A note about the kitchen"
+    theme: "cooking"
+    sentences:
+      - text: "La nevera está vacía."
+      - text: "La olla está en el fregadero."
+      - text: "El horno está caliente."
+      - text: "Lavo los platos después de cenar."
+    questions:
+      - id: "es-1346"
+        prompt: { en: "Where is the pot?" }
+        options:
+          - { en: "In the sink" }
+          - { en: "In the fridge" }
+          - { en: "In the oven" }
+        answer: 1
+      - id: "es-1347"
+        prompt: { en: "What does the writer do after dinner?" }
+        options:
+          - { en: "Buy milk" }
+          - { en: "Wash the dishes" }
+          - { en: "Cook the rice" }
+        answer: 2
+      - id: "es-1348"
+        prompt: { en: "What is hot?" }
+        options:
+          - { en: "The oven" }
+          - { en: "The fridge" }
+          - { en: "The sink" }
+        answer: 1

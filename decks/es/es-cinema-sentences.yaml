@@ -1,0 +1,50 @@
+schema: 1
+id: "es-cinema-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2485"
+    target: "Vemos una película de terror en la sala."
+    ipa: "ˈbemos ˈuna peˈlikula de teˈroɾ en la ˈsala"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vemos", ref: "es-1625" }, { word: "una", base: "una" }, { word: "película", ref: "es-2459" }, { word: "de", base: "de" }, { word: "terror", ref: "es-2471" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "sala", ref: "es-2463" }]
+    confusables: [{ id: "thriller", ref: "es-2472", kind: "word" }, { id: "drama", ref: "es-2470", kind: "word" }]
+  - id: "es-2486"
+    target: "El guion y los actores son buenos."
+    ipa: "el ɡjon i los akˈtoɾes son ˈbwenos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "guion", ref: "es-2460" }, { word: "y", ref: "es-0048" }, { word: "los", base: "los" }, { word: "actores", ref: "es-2381" }, { word: "son", ref: "es-0022" }, { word: "buenos", ref: "es-0033" }]
+    confusables: [{ id: "personaje", ref: "es-2474", kind: "word" }, { id: "resena", ref: "es-2479", kind: "word" }]
+  - id: "es-2487"
+    target: "El público aplaude al protagonista."
+    ipa: "el ˈpubliko aˈplawde al pɾotaɡoˈnista"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "público", ref: "es-2465" }, { word: "aplaude", base: "aplaudir" }, { word: "al", base: "al" }, { word: "protagonista", ref: "es-2475" }]
+    confusables: [{ id: "espectador", ref: "es-2464", kind: "word" }, { id: "premio", ref: "es-2466", kind: "word" }]
+  - id: "es-2488"
+    target: "Veo un documental en el festival."
+    ipa: "ˈbeo un dokumenˈtal en el festiˈbal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "documental", ref: "es-2468" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "festival", ref: "es-2467" }]
+    confusables: [{ id: "pelicula", ref: "es-2459", kind: "word" }, { id: "animacion", ref: "es-2473", kind: "word" }]
+  - id: "es-2489"
+    target: "La película tiene subtítulos en español."
+    ipa: "la peˈlikula ˈtjene subˈtitulos en espaˈɲol"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "película", ref: "es-2459" }, { word: "tiene", ref: "es-0024" }, { word: "subtítulos", ref: "es-2476" }, { word: "en", base: "en" }, { word: "español", ref: "es-1370" }]
+    confusables: [{ id: "doblar", ref: "es-2483", kind: "word" }, { id: "episodio", ref: "es-2477", kind: "word" }]
+  - id: "es-2490"
+    target: "El estreno es en la cartelera de la ciudad."
+    ipa: "el esˈtɾeno es en la kaɾteˈleɾa de la θjuˈdad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "estreno", ref: "es-2462" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cartelera", ref: "es-2478" }, { word: "de", base: "de" }, { word: "ciudad", ref: "es-0016" }]
+    confusables: [{ id: "escena", ref: "es-2461", kind: "word" }, { id: "comedia", ref: "es-2469", kind: "word" }]

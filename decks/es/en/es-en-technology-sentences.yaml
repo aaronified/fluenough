@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-technology-sentences"
+kind: "layer"
+core: "es-technology-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: technology"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about computers, apps and the internet, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2347":
+    native: "I save the file in the folder."
+    bases: { "el": "the", "en": "in", "la": "the" }
+    confusables: { "disco": { why: "Disco is a disk, the device where it is kept." }, "memoria": { why: "Memoria is the memory, where data is held." } }
+  "es-2348":
+    native: "I install the software and restart the computer."
+    bases: { "el": "the" }
+    confusables: { "actualizar": { why: "Actualizar is to update, a change to the same program." }, "programar": { why: "Programar is to write a program, a longer job." } }
+  "es-2349":
+    native: "There is an error and the sensor does not work."
+    bases: { "Hay": "there is; there are", "un": "a", "el": "the", "funciona": "to work" }
+    confusables: { "fallo": { why: "Fallo is a fault, the problem itself." }, "dispositivo": { why: "Dispositivo is a device, the whole machine." } }
+  "es-2350":
+    native: "I press the button to share the link."
+    bases: { "Pulso": "to press", "el": "the", "para": "for" }
+    confusables: { "clic": { why: "Clic is a click, the act of pressing." }, "icono": { why: "Icono is a small picture, the symbol on the screen." } }
+  "es-2351":
+    native: "I browse the web and read a blog."
+    bases: { "por": "for", "la": "the", "un": "a" }
+    confusables: { "sitio": { why: "Sitio is a website, a place on the web." }, "comentario": { why: "Comentario is a comment, written under a post." } }
+  "es-2352":
+    native: "The virus deletes the data in the file."
+    bases: { "El": "the", "los": "the", "del": "of" }
+    confusables: { "dato": { why: "Dato is one fact, not the whole file." }, "robot": { why: "Robot is a machine that works by itself, not a virus." } }

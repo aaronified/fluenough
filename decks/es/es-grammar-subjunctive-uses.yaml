@@ -1,0 +1,42 @@
+schema: 1
+id: "es-grammar-subjunctive-uses"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["dudar que", "alegrarse de que", "es necesario que", "para que"]
+  entries:
+    - lemma: "venir"
+      ipa: "beˈniɾ"
+      forms: { "dudar que": "Dudo que vengas.", "alegrarse de que": "Me alegra que vengas.", "es necesario que": "Es necesario que vengas.", "para que": "Te llamo para que vengas." }
+      ipas: { "dudar que": "ˈdudo ke ˈbenɡas", "alegrarse de que": "me aˈleɡɾa ke ˈbenɡas", "es necesario que": "es neθeˈsaɾjo ke ˈbenɡas", "para que": "te ˈʝamo ˈpaɾa ke ˈbenɡas" }
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "dudar que": "Dudo que tengas tiempo.", "alegrarse de que": "Me alegra que tengas amigos.", "es necesario que": "Es necesario que tengas paciencia.", "para que": "Te doy dinero para que tengas un regalo." }
+      ipas: { "dudar que": "ˈdudo ke ˈtenɡas ˈtjempo", "alegrarse de que": "me aˈleɡɾa ke ˈtenɡas aˈmiɡos", "es necesario que": "es neθeˈsaɾjo ke ˈtenɡas paˈθjenθja", "para que": "te doj diˈneɾo ˈpaɾa ke ˈtenɡas un reˈɡalo" }
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "dudar que": "Dudo que seas tan lento.", "alegrarse de que": "Me alegra que seas feliz.", "es necesario que": "Es necesario que seas puntual.", "para que": "Trabajo para que mis hijos sean felices." }
+      ipas: { "dudar que": "ˈdudo ke ˈseas tan ˈlento", "alegrarse de que": "me aˈleɡɾa ke ˈseas feˈliθ", "es necesario que": "es neθeˈsaɾjo ke ˈseas punˈtwal", "para que": "tɾaˈbaxo ˈpaɾa ke mis ˈixos ˈsean feˈliθes" }
+    - lemma: "saber"
+      ipa: "saˈbeɾ"
+      forms: { "dudar que": "Dudo que sepas la respuesta.", "alegrarse de que": "Me alegra que sepas inglés.", "es necesario que": "Es necesario que sepas la regla.", "para que": "Te explico para que sepas más." }
+      ipas: { "dudar que": "ˈdudo ke ˈsepas la resˈpwesta", "alegrarse de que": "me aˈleɡɾa ke ˈsepas inˈɡles", "es necesario que": "es neθeˈsaɾjo ke ˈsepas la ˈreɡla", "para que": "te eksˈpliko ˈpaɾa ke ˈsepas mas" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "dudar que": "Dudo que hagas el trabajo.", "alegrarse de que": "Me alegra que hagas deporte.", "es necesario que": "Es necesario que hagas los deberes.", "para que": "Te ayudo para que hagas la tarea." }
+      ipas: { "dudar que": "ˈdudo ke ˈaɡas el tɾaˈbaxo", "alegrarse de que": "me aˈleɡɾa ke ˈaɡas deˈpoɾte", "es necesario que": "es neθeˈsaɾjo ke ˈaɡas los deˈbeɾes", "para que": "te aˈʝudo ˈpaɾa ke ˈaɡas la taˈɾea" }
+    - lemma: "estudiar"
+      ipa: "estuˈdjaɾ"
+      forms: { "dudar que": "Dudo que estudies mucho.", "alegrarse de que": "Me alegra que estudies.", "es necesario que": "Es necesario que estudies cada día.", "para que": "Te doy tiempo para que estudies." }
+      ipas: { "dudar que": "ˈdudo ke esˈtudjes ˈmutʃo", "alegrarse de que": "me aˈleɡɾa ke esˈtudjes", "es necesario que": "es neθeˈsaɾjo ke esˈtudjes ˈkada ˈdia", "para que": "te doj ˈtjempo ˈpaɾa ke esˈtudjes" }
+    - lemma: "poder"
+      ipa: "poˈdeɾ"
+      forms: { "dudar que": "Dudo que puedas venir.", "alegrarse de que": "Me alegra que puedas venir.", "es necesario que": "Es necesario que puedas dormir.", "para que": "Te doy la llave para que puedas entrar." }
+      ipas: { "dudar que": "ˈdudo ke ˈpwedas beˈniɾ", "alegrarse de que": "me aˈleɡɾa ke ˈpwedas beˈniɾ", "es necesario que": "es neθeˈsaɾjo ke ˈpwedas doɾˈmiɾ", "para que": "te doj la ˈʝabe ˈpaɾa ke ˈpwedas enˈtɾaɾ" }
+    - lemma: "comprar"
+      ipa: "komˈpɾaɾ"
+      forms: { "dudar que": "Dudo que compres el coche.", "alegrarse de que": "Me alegra que compres pan.", "es necesario que": "Es necesario que compres la leche.", "para que": "Te doy dinero para que compres el regalo." }
+      ipas: { "dudar que": "ˈdudo ke ˈkompɾes el ˈkotʃe", "alegrarse de que": "me aˈleɡɾa ke ˈkompɾes pan", "es necesario que": "es neθeˈsaɾjo ke ˈkompɾes la ˈletʃe", "para que": "te doj diˈneɾo ˈpaɾa ke ˈkompɾes el reˈɡalo" }

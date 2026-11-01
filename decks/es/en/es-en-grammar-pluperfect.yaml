@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-pluperfect"
+kind: "layer"
+core: "es-grammar-pluperfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pluperfect: it had already happened"
+license: "CC-BY-SA-4.0"
+description: "The pluperfect is the past of the past: haber in the imperfect plus a participle, había comido. It says what had already happened before another past event: cuando llegué, ya había comido, when I arrived, I had already eaten. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Pluperfect of regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "escribir": "to write"
+    "hacer": "to do; to make"
+    "ver": "to see"
+    "decir": "to say"
+    "poner": "to put"
+    "abrir": "to open"
+    "volver": "to return"
+  notes: "Haber in the imperfect (había, habías, había, habíamos, habíais, habían) plus the same participle as the present perfect. Use it for an action that was already finished when another past action happened: cuando llegamos, ya había terminado, when we arrived, it had already finished. The irregular participles are the same: hecho, dicho, visto, escrito, puesto, vuelto, abierto."

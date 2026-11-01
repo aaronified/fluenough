@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-hobbies"
+name: "Reading: a club and the weekend"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a club poster and a note about what someone does at the weekend. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-club-poster"
+    title: "A poster for a club"
+    theme: "hobbies"
+    sentences:
+      - text: "¡Club de lectura y de ajedrez!"
+      - text: "Los martes, a las siete, en el club."
+      - text: "Juega al ajedrez o lee una revista."
+      - text: "¡Ven y disfruta con nosotros!"
+    questions:
+      - id: "es-1444"
+        prompt: { en: "When does the club meet?" }
+        options:
+          - { en: "On Sundays at nine" }
+          - { en: "On Fridays at six" }
+          - { en: "On Tuesdays at seven" }
+        answer: 3
+      - id: "es-1445"
+        prompt: { en: "What can you do at the club?" }
+        options:
+          - { en: "Ski and swim" }
+          - { en: "Play chess or read a magazine" }
+          - { en: "Paint a house" }
+        answer: 2
+      - id: "es-1446"
+        prompt: { en: "What does the poster invite you to do?" }
+        options:
+          - { en: "Call the doctor" }
+          - { en: "Pay for a ticket" }
+          - { en: "Come and enjoy with us" }
+        answer: 3
+  - id: "es-weekend-plans"
+    title: "The weekend"
+    theme: "hobbies"
+    sentences:
+      - text: "Los sábados juego al tenis."
+      - text: "Los domingos toco la guitarra."
+      - text: "Por la noche veo una serie."
+      - text: "Me gusta mucho el fin de semana."
+    questions:
+      - id: "es-1447"
+        prompt: { en: "What does the writer play on Saturdays?" }
+        options:
+          - { en: "Football" }
+          - { en: "Tennis" }
+          - { en: "Chess" }
+        answer: 2
+      - id: "es-1448"
+        prompt: { en: "What does the writer do on Sundays?" }
+        options:
+          - { en: "Plays the guitar" }
+          - { en: "Paints" }
+          - { en: "Swims" }
+        answer: 1
+      - id: "es-1449"
+        prompt: { en: "What does the writer watch at night?" }
+        options:
+          - { en: "A TV series" }
+          - { en: "A concert" }
+          - { en: "A film" }
+        answer: 1

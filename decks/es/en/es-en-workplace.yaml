@@ -1,0 +1,226 @@
+schema: 1
+id: "es-en-workplace"
+kind: "layer"
+core: "es-workplace"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace"
+license: "CC-BY-SA-4.0"
+description: "Words for a job and an office: the contract and the payslip, the project and the report, the boss and the team, full time or part time, and the verbs to hire, sign, present and plan. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1852":
+    native: "contract"
+    notes: { n1: "El contrato is a contract, signed by the worker and the company. The verb is contratar." }
+    bases: { "el": "the", "contrato": "contract" }
+    examples:
+      "Firmo el contrato hoy.": { native: "I sign the contract today.", bases: { "el": "the", "contrato": "contract" } }
+      "El contrato es de un año.": { native: "The contract is for a year.", bases: { "El": "the", "contrato": "contract", "de": "of", "un": "a" } }
+  "es-1853":
+    native: "project"
+    notes: { n1: "El proyecto is a project, a piece of work with a goal and a time." }
+    bases: { "el": "the", "proyecto": "project" }
+    examples:
+      "El proyecto es urgente.": { native: "The project is urgent.", bases: { "El": "the", "proyecto": "project" } }
+      "Trabajo en un proyecto nuevo.": { native: "I work on a new project.", bases: { "en": "in", "un": "a", "proyecto": "project" } }
+  "es-1854":
+    native: "report"
+    notes: { n1: "El informe is a written report on work or a study." }
+    bases: { "el": "the", "informe": "report" }
+    examples:
+      "Escribo el informe para el jefe.": { native: "I write the report for the boss.", bases: { "el": "the", "informe": "report", "para": "for" } }
+      "El informe está listo.": { native: "The report is ready.", bases: { "El": "the", "informe": "report" } }
+  "es-1855":
+    native: "office room"
+    notes: { n1: "El despacho is a private office, a room for one person or a small team." }
+    bases: { "el": "the", "despacho": "office room" }
+    examples:
+      "Mi despacho está en el segundo piso.": { native: "My office is on the second floor.", bases: { "despacho": "office room", "en": "in", "el": "the" } }
+      "El despacho es pequeño.": { native: "The office room is small.", bases: { "El": "the", "despacho": "office room" } }
+  "es-1856":
+    native: "director; head"
+    notes: { n1: "El director is the director or head of a school, a company or a department." }
+    bases: { "el": "the", "director": "director; head" }
+    examples:
+      "El director llega a las nueve.": { native: "The director arrives at nine.", bases: { "El": "the", "director": "director; head", "a": "to", "las": "the" } }
+      "Hablo con el director.": { native: "I talk to the director.", bases: { "con": "with", "el": "the", "director": "director; head" } }
+  "es-1857":
+    native: "manager"
+    notes: { n1: "El gerente is the manager of a shop, a bank or a company." }
+    bases: { "el": "the", "gerente": "manager" }
+    examples:
+      "La gerente es muy amable.": { native: "The manager is very kind.", bases: { "La": "the", "gerente": "manager", "amable": "kind" } }
+      "El gerente trabaja hoy.": { native: "The manager works today.", bases: { "El": "the", "gerente": "manager" } }
+  "es-1858":
+    native: "permission; leave"
+    notes: { n1: "El permiso is permission to do something, or a time off work." }
+    bases: { "el": "the", "permiso": "permission; leave" }
+    examples:
+      "Pido un permiso para salir.": { native: "I ask for permission to leave.", bases: { "un": "a", "permiso": "permission; leave", "para": "for" } }
+      "Tengo permiso para faltar.": { native: "I have leave to be absent.", bases: { "permiso": "permission; leave", "para": "for", "faltar": "to be missing" } }
+  "es-1859":
+    native: "workshop"
+    notes: { n1: "El taller is a workshop, where things are made or repaired." }
+    bases: { "el": "the", "taller": "workshop" }
+    examples:
+      "El taller está en la calle.": { native: "The workshop is on the street.", bases: { "El": "the", "taller": "workshop", "en": "in", "la": "the" } }
+      "Trabajo en un taller de coches.": { native: "I work in a car workshop.", bases: { "en": "in", "un": "a", "taller": "workshop", "de": "of" } }
+  "es-1860":
+    native: "factory"
+    notes: { n1: "La fábrica is a factory, where goods are made in large numbers." }
+    bases: { "la": "the", "fábrica": "factory" }
+    examples:
+      "Mi padre trabaja en una fábrica.": { native: "My father works in a factory.", bases: { "en": "in", "una": "a", "fábrica": "factory" } }
+      "La fábrica es grande.": { native: "The factory is big.", bases: { "La": "the", "fábrica": "factory" } }
+  "es-1861":
+    native: "businessman"
+    notes: { n1: "El empresario is a businessman, who owns or runs a company." }
+    bases: { "el": "the", "empresario": "businessman" }
+    examples:
+      "Es un empresario conocido.": { native: "He is a well-known businessman.", bases: { "un": "a", "empresario": "businessman", "conocido": "well-known" } }
+      "El empresario viaja mucho.": { native: "The businessman travels a lot.", bases: { "El": "the", "empresario": "businessman" } }
+  "es-1862":
+    native: "full"
+    notes: { n1: "Completo is full, whole. Tiempo completo is full time." }
+    bases: { "completo": "full" }
+    examples:
+      "Trabajo a tiempo completo.": { native: "I work full time.", bases: { "a": "to", "completo": "full", "tiempo": "time" } }
+      "El teatro está completo.": { native: "The theatre is full.", bases: { "El": "the", "completo": "full" } }
+  "es-1863":
+    native: "part-time; partial"
+    notes: { n1: "Parcial is partial, or part time. Tiempo parcial is part time." }
+    bases: { "parcial": "part-time; partial" }
+    examples:
+      "Tengo un trabajo parcial.": { native: "I have a part-time job.", bases: { "un": "a", "parcial": "part-time; partial" } }
+      "Trabajo a tiempo parcial.": { native: "I work part time.", bases: { "a": "to", "parcial": "part-time; partial", "tiempo": "time" } }
+  "es-1864":
+    native: "extra; additional"
+    notes: { n1: "Extra is extra, more than normal. It does not change for gender." }
+    bases: { "extra": "extra; additional" }
+    examples:
+      "Hago horas extra los viernes.": { native: "I work extra hours on Fridays.", bases: { "extra": "extra; additional", "los": "the" } }
+      "Pago un extra por el seguro.": { native: "I pay an extra for the insurance.", bases: { "un": "a", "extra": "extra; additional", "por": "for", "el": "the", "seguro": "secure; safe" } }
+  "es-1865":
+    native: "business"
+    notes: { n1: "El negocio is a business, a shop or a company, and the trade done in it." }
+    bases: { "el": "the", "negocio": "business" }
+    examples:
+      "Tengo un negocio pequeño.": { native: "I have a small business.", bases: { "un": "a", "negocio": "business" } }
+      "El negocio va bien.": { native: "The business is doing well.", bases: { "El": "the", "negocio": "business" } }
+  "es-1866":
+    native: "company"
+    notes: { n1: "La compañía is a company, a firm of people working together." }
+    bases: { "la": "the", "compañía": "company" }
+    examples:
+      "Trabajo para una compañía grande.": { native: "I work for a big company.", bases: { "para": "for", "una": "a", "compañía": "company" } }
+      "La compañía está en Madrid.": { native: "The company is in Madrid.", bases: { "La": "the", "compañía": "company", "en": "in", "Madrid": "Madrid" } }
+  "es-1867":
+    native: "warehouse"
+    notes: { n1: "El almacén is a warehouse, a building where goods are stored." }
+    bases: { "el": "the", "almacén": "warehouse" }
+    examples:
+      "Trabajo en un almacén.": { native: "I work in a warehouse.", bases: { "en": "in", "un": "a", "almacén": "warehouse" } }
+      "El almacén está lleno.": { native: "The warehouse is full.", bases: { "El": "the", "almacén": "warehouse" } }
+  "es-1868":
+    native: "worker"
+    notes: { n1: "El trabajador is a worker, a person who works for pay. The feminine is la trabajadora." }
+    bases: { "el": "the", "trabajador": "worker" }
+    examples:
+      "Es un trabajador muy bueno.": { native: "He is a very good worker.", bases: { "un": "a", "trabajador": "worker" } }
+      "Los trabajadores llegan temprano.": { native: "The workers arrive early.", bases: { "Los": "the", "trabajadores": "worker" } }
+  "es-1869":
+    native: "to hire"
+    notes: { n1: "Contratar is to hire someone for a job." }
+    bases: { "contratar": "to hire" }
+    examples:
+      "Contratan a dos personas.": { native: "They hire two people.", bases: { "Contratan": "to hire", "a": "to" } }
+      "Contrato a una secretaria.": { native: "I hire a secretary.", bases: { "Contrato": "to hire", "a": "to", "una": "a" } }
+  "es-1870":
+    native: "to dismiss; to fire"
+    notes: { n1: "Despedir is to dismiss someone from a job. Its stem changes: despido, despides." }
+    bases: { "despedir": "to dismiss; to fire" }
+    examples:
+      "Despiden a los trabajadores.": { native: "They dismiss the workers.", bases: { "Despiden": "to dismiss; to fire", "a": "to", "los": "the" } }
+      "Me despido del trabajo.": { native: "I leave the job.", bases: { "Me": "to me", "despido": "to leave (a job)", "del": "of" } }
+  "es-1871":
+    native: "to resign"
+    notes: { n1: "Dimitir is to resign from a job or a post." }
+    bases: { "dimitir": "to resign" }
+    examples:
+      "Dimito del puesto.": { native: "I resign from the post.", bases: { "Dimito": "to resign", "del": "of", "puesto": "post; job" } }
+      "Dimite el director.": { native: "The director resigns.", bases: { "Dimite": "to resign", "el": "the" } }
+  "es-1872":
+    native: "to retire"
+    notes: { n1: "Jubilarse is to retire from work, at the end of a career." }
+    bases: { "jubilarse": "to retire" }
+    examples:
+      "Me jubilo a los sesenta años.": { native: "I retire at sixty.", bases: { "Me": "to me", "jubilo": "to retire", "a": "to", "los": "the" } }
+      "Mi padre se jubila el año que viene.": { native: "My father retires next year.", bases: { "se": "yourself", "jubila": "to retire", "el": "the", "que": "that" } }
+  "es-1873":
+    native: "to present; to submit"
+    notes: { n1: "Presentar is to present something to others, or to submit a document." }
+    bases: { "presentar": "to present; to submit" }
+    examples:
+      "Presento el proyecto el lunes.": { native: "I present the project on Monday.", bases: { "Presento": "to present; to submit", "el": "the" } }
+      "Presenta el informe, por favor.": { native: "Submit the report, please.", bases: { "Presenta": "to present; to submit", "el": "the", "por": "for", "favor": "please" } }
+  "es-1874":
+    native: "to sign"
+    notes: { n1: "Firmar is to sign a name on a paper or a contract." }
+    bases: { "firmar": "to sign" }
+    examples:
+      "Firmo el contrato.": { native: "I sign the contract.", bases: { "Firmo": "to sign", "el": "the" } }
+      "Firman el documento.": { native: "They sign the document.", bases: { "Firman": "to sign", "el": "the" } }
+  "es-1875":
+    native: "to meet (with people)"
+    notes: { n1: "Reunirse is to meet with people for work. Its stem changes: me reúno." }
+    bases: { "reunirse": "to meet (with people)" }
+    examples:
+      "Nos reunimos en la oficina.": { native: "We meet in the office.", bases: { "Nos": "us", "reunimos": "to meet (with people)", "en": "in", "la": "the" } }
+      "Se reúnen cada martes.": { native: "They meet every Tuesday.", bases: { "Se": "yourself", "reúnen": "to meet (with people)" } }
+  "es-1876":
+    native: "to plan"
+    notes: { n1: "Planificar is to plan work or a trip in advance." }
+    bases: { "planificar": "to plan" }
+    examples:
+      "Planifico el trabajo.": { native: "I plan the work.", bases: { "Planifico": "to plan", "el": "the" } }
+      "Planificamos el viaje.": { native: "We plan the trip.", bases: { "Planificamos": "to plan", "el": "the" } }
+  "es-1877":
+    native: "to organize"
+    notes: { n1: "Organizar is to arrange something, or people, in order." }
+    bases: { "organizar": "to organize" }
+    examples:
+      "Organizo la reunión.": { native: "I organize the meeting.", bases: { "Organizo": "to organize", "la": "the" } }
+      "Organizan la fiesta.": { native: "They organize the party.", bases: { "Organizan": "to organize", "la": "the" } }
+  "es-1878":
+    native: "to discuss; to argue"
+    notes: { n1: "Discutir is to discuss something, or to argue about it." }
+    bases: { "discutir": "to discuss; to argue" }
+    examples:
+      "Discutimos el proyecto.": { native: "We discuss the project.", bases: { "Discutimos": "to discuss; to argue", "el": "the" } }
+      "No discuto con el jefe.": { native: "I do not argue with the boss.", bases: { "discuto": "to discuss; to argue", "con": "with", "el": "the" } }
+  "es-1879":
+    native: "to create"
+    notes: { n1: "Crear is to create something new, a team, a product or a plan." }
+    bases: { "crear": "to create" }
+    examples:
+      "Creo un equipo nuevo.": { native: "I create a new team.", bases: { "Creo": "to create", "un": "a" } }
+      "Creamos un producto.": { native: "We create a product.", bases: { "Creamos": "to create", "un": "a", "producto": "product" } }
+  "es-1880":
+    native: "payslip; pay"
+    notes: { n1: "La nómina is the payslip, the document that shows your pay." }
+    bases: { "la": "the", "nómina": "payslip; pay" }
+    examples:
+      "La nómina llega el día treinta.": { native: "The payslip comes/comer on the thirtieth.", bases: { "La": "the", "nómina": "payslip; pay", "el": "the" } }
+      "Miro la nómina cada mes.": { native: "I check the payslip every month.", bases: { "la": "the", "nómina": "payslip; pay" } }
+  "es-1881":
+    native: "secretary"
+    notes: { n1: "La secretaria is the secretary, who answers calls and writes letters." }
+    bases: { "la": "the", "secretaria": "secretary" }
+    examples:
+      "La secretaria contesta el teléfono.": { native: "The secretary answers the phone.", bases: { "La": "the", "secretaria": "secretary", "el": "the" } }
+      "Mi secretaria es muy eficiente.": { native: "My secretary is very efficient.", bases: { "secretaria": "secretary", "eficiente": "efficient" } }
+  "es-1882":
+    native: "sick leave"
+    notes: { n1: "La baja is sick leave, time off work because of illness." }
+    bases: { "la": "the", "baja": "sick leave" }
+    examples:
+      "Estoy de baja.": { native: "I am on sick leave.", bases: { "de": "of", "baja": "sick leave" } }
+      "La baja es de una semana.": { native: "The leave is for one week.", bases: { "La": "the", "baja": "sick leave", "de": "of", "una": "a" } }

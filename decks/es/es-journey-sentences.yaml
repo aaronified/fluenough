@@ -1,0 +1,50 @@
+schema: 1
+id: "es-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1724"
+    target: "Compro un billete de ida para el tren."
+    ipa: "ˈkompɾo un biˈʝete de ˈida ˈpaɾa el tɾen"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "de", base: "de" }, { word: "ida", ref: "es-1698" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }]
+    confusables: [{ id: "taquilla", ref: "es-1695", kind: "word" }, { id: "ticket", ref: "es-1706", kind: "word" }]
+  - id: "es-1725"
+    target: "El vuelo sale del aeropuerto a las nueve."
+    ipa: "el ˈbwelo ˈsale del aeɾoˈpweɾto a las ˈnwebe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "vuelo", base: "vuelo" }, { word: "sale", ref: "es-0690" }, { word: "del", base: "del" }, { word: "aeropuerto", ref: "es-0686" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+    confusables: [{ id: "avion", ref: "es-0679", kind: "word" }, { id: "cancelar", ref: "es-1703", kind: "word" }]
+  - id: "es-1726"
+    target: "El tren llega con retraso al andén."
+    ipa: "el tɾen ˈʝeɡa kon reˈtɾaso al anˈden"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "llega", ref: "es-0290" }, { word: "con", base: "con" }, { word: "retraso", ref: "es-1700" }, { word: "al", base: "al" }, { word: "andén", ref: "es-1693" }]
+    confusables: [{ id: "vagon", ref: "es-1696", kind: "word" }, { id: "via", ref: "es-1712", kind: "word" }]
+  - id: "es-1727"
+    target: "Facturo la maleta y paso el control."
+    ipa: "fakˈtuɾo la maˈleta i ˈpaso el konˈtɾol"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Facturo", ref: "es-1704" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }, { word: "y", ref: "es-0048" }, { word: "paso", ref: "es-1533" }, { word: "el", base: "el" }, { word: "control", ref: "es-1710" }]
+    confusables: [{ id: "equipaje", ref: "es-1694", kind: "word" }, { id: "aduana", ref: "es-1721", kind: "word" }]
+  - id: "es-1728"
+    target: "Viajo con mi pasaporte y mi billete."
+    ipa: "ˈbjaxo kon mi pasaˈpoɾte i mi biˈʝete"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Viajo", ref: "es-1691" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "pasaporte", ref: "es-0878" }, { word: "y", ref: "es-0048" }, { word: "billete", ref: "es-0685" }]
+    confusables: [{ id: "viajero", ref: "es-1692", kind: "word" }, { id: "pasajero", ref: "es-1702", kind: "word" }]
+  - id: "es-1729"
+    target: "Pago el peaje y compro gasolina."
+    ipa: "ˈpaɡo el peˈaxe i ˈkompɾo ɡasoˈlina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pago", ref: "es-0295" }, { word: "el", base: "el" }, { word: "peaje", ref: "es-1715" }, { word: "y", ref: "es-0048" }, { word: "compro", ref: "es-0280" }, { word: "gasolina", ref: "es-1716" }]
+    confusables: [{ id: "gasolinera", ref: "es-1717", kind: "word" }, { id: "tarifa", ref: "es-1705", kind: "word" }]

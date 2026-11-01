@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-imperfect"
+name: "Reading: a childhood summer"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that remember what used to happen, in the imperfect. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-childhood-note"
+    title: "A childhood summer"
+    theme: "family"
+    sentences:
+      - text: "De pequeño vivía en un pueblo."
+      - text: "Todos los veranos íbamos a la playa."
+      - text: "Mi abuela cocinaba pan y sopa."
+      - text: "Jugaba con mis primos en el río."
+    questions:
+      - id: "es-1736"
+        prompt: { en: "Where did the writer live as a child?" }
+        options:
+          - { en: "In a big city" }
+          - { en: "By the sea" }
+          - { en: "In a small village" }
+        answer: 3
+      - id: "es-1737"
+        prompt: { en: "Where did the family go every summer?" }
+        options:
+          - { en: "To the mountains" }
+          - { en: "To the beach" }
+          - { en: "To the city" }
+        answer: 2
+      - id: "es-1738"
+        prompt: { en: "Who did the writer play with?" }
+        options:
+          - { en: "The cousins" }
+          - { en: "The teachers" }
+          - { en: "The neighbours" }
+        answer: 1
+  - id: "es-summer-habits"
+    title: "Habits at home"
+    theme: "family"
+    sentences:
+      - text: "Mi padre trabajaba en una fábrica."
+      - text: "Mi madre escribía cartas a sus hermanas."
+      - text: "Comíamos juntos todos los días."
+      - text: "Yo era muy tímido."
+    questions:
+      - id: "es-1739"
+        prompt: { en: "Where did the father work?" }
+        options:
+          - { en: "In a factory" }
+          - { en: "In a shop" }
+          - { en: "In a school" }
+        answer: 1
+      - id: "es-1740"
+        prompt: { en: "What did the mother write?" }
+        options:
+          - { en: "Stories for children" }
+          - { en: "Letters to her sisters" }
+          - { en: "Songs" }
+        answer: 2
+      - id: "es-1741"
+        prompt: { en: "How was the writer as a child?" }
+        options:
+          - { en: "Very shy" }
+          - { en: "Very tall" }
+          - { en: "Very happy" }
+        answer: 1

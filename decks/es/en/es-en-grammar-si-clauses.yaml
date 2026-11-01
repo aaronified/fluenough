@@ -1,0 +1,24 @@
+schema: 1
+id: "es-en-grammar-si-clauses"
+kind: "layer"
+core: "es-grammar-si-clauses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Si clauses: if it rains"
+license: "CC-BY-SA-4.0"
+description: "A si clause sets the condition: si llueve, me quedo en casa, if it rains, I stay at home. For a real condition the si part takes the present, and the main part takes the future, the present, or the past: si tengo tiempo, iré; si voy, siempre compro pan; si fui, compré pan. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "If clauses: the real condition"
+  slot_name: "pattern"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "si + present → future": "si + present, then the future: will happen", "si + present → present (habit)": "si + present, then the present: what usually happens", "si + preterite → preterite": "si + preterite, then the preterite: what happened" }
+  entries:
+    "tener": "to have"
+    "ir": "to go"
+    "estar": "to be (place, state)"
+    "llamar": "to call"
+    "venir": "to come"
+    "comer": "to eat"
+    "poder": "to be able to"
+    "hacer": "to do; to make"
+    "hablar": "to speak"
+  notes: "For a real condition, the si clause takes the present and the main clause takes the future: si llueve, me quedo (or me quedaré). The present in both parts gives a habit: si llueve, siempre me quedo. The preterite in both parts gives a past event: si llegó tarde, se fue. Si never takes the future or the conditional in the si part."

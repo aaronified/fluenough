@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-geography"
+name: "Reading: where Spanish is spoken"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a map caption about the Spanish-speaking world, and a note about a trip between cities. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-spanish-speaking-map"
+    title: "A map caption"
+    theme: "geography"
+    sentences:
+      - text: "El español se habla en España y en América."
+      - text: "México, Colombia y Argentina son países grandes."
+      - text: "Cada país tiene su capital."
+      - text: "Muchos habitantes viven en la ciudad."
+    questions:
+      - id: "es-1932"
+        prompt: { en: "Where is Spanish spoken?" }
+        options:
+          - { en: "Only in Spain" }
+          - { en: "In Spain and in America" }
+          - { en: "Only in Mexico" }
+        answer: 2
+      - id: "es-1933"
+        prompt: { en: "Which country is named as large?" }
+        options:
+          - { en: "Chile" }
+          - { en: "Mexico" }
+          - { en: "Cuba" }
+        answer: 2
+      - id: "es-1934"
+        prompt: { en: "What does every country have?" }
+        options:
+          - { en: "A river" }
+          - { en: "A capital" }
+          - { en: "A border with France" }
+        answer: 2
+  - id: "es-train-between-cities"
+    title: "A trip between cities"
+    theme: "geography"
+    sentences:
+      - text: "Viajo de Madrid a Sevilla en tren."
+      - text: "Sevilla está en el sur y hace calor."
+      - text: "Después, voy a Granada."
+      - text: "Bilbao está en el norte, muy lejos."
+    questions:
+      - id: "es-1935"
+        prompt: { en: "How does the writer travel from Madrid to Seville?" }
+        options:
+          - { en: "By bus" }
+          - { en: "By train" }
+          - { en: "By plane" }
+        answer: 2
+      - id: "es-1936"
+        prompt: { en: "Where is Seville?" }
+        options:
+          - { en: "In the north" }
+          - { en: "In the south" }
+          - { en: "In the centre" }
+        answer: 2
+      - id: "es-1937"
+        prompt: { en: "Where is Bilbao?" }
+        options:
+          - { en: "In the north" }
+          - { en: "In the south" }
+          - { en: "In the west" }
+        answer: 1

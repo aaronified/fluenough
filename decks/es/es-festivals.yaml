@@ -1,0 +1,396 @@
+schema: 1
+id: "es-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "festivals"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2611"
+    target: "la celebración"
+    ipa: "la θelebɾaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "celebración", base: "celebración" }]
+    examples:
+      - target: "La celebración dura todo el día."
+        ipa: "la θelebɾaˈθjon ˈduɾa ˈtodo el ˈdia"
+        bases: [{ word: "La", base: "la" }, { word: "celebración", base: "celebración" }, { word: "dura", ref: "es-0851" }, { word: "todo", base: "todo" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }]
+      - target: "Hay una celebración en la plaza."
+        ipa: "aj ˈuna θelebɾaˈθjon en la ˈplaθa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "celebración", base: "celebración" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+  - id: "es-2612"
+    target: "el carnaval"
+    ipa: "el kaɾnaˈbal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "carnaval", base: "carnaval" }]
+    examples:
+      - target: "El carnaval es en febrero."
+        ipa: "el kaɾnaˈbal es en feˈbɾeɾo"
+        bases: [{ word: "El", base: "el" }, { word: "carnaval", base: "carnaval" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "febrero", ref: "es-0967" }]
+      - target: "Vamos al carnaval con disfraces."
+        ipa: "ˈbamos al kaɾnaˈbal kon disˈfɾaθes"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "al", base: "al" }, { word: "carnaval", base: "carnaval" }, { word: "con", base: "con" }, { word: "disfraces", ref: "es-2615" }]
+  - id: "es-2613"
+    target: "la procesión"
+    ipa: "la pɾoθeˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "procesión", base: "procesión" }]
+    examples:
+      - target: "La procesión pasa por la calle."
+        ipa: "la pɾoθeˈsjon ˈpasa poɾ la ˈkaʝe"
+        bases: [{ word: "La", base: "la" }, { word: "procesión", base: "procesión" }, { word: "pasa", ref: "es-1533" }, { word: "por", base: "por" }, { word: "calle", ref: "es-0017" }]
+      - target: "Vemos una procesión en el pueblo."
+        ipa: "ˈbemos ˈuna pɾoθeˈsjon en el ˈpweblo"
+        bases: [{ word: "Vemos", ref: "es-1625" }, { word: "una", base: "una" }, { word: "procesión", base: "procesión" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "pueblo", ref: "es-0783" }]
+  - id: "es-2614"
+    target: "el desfile"
+    ipa: "el desˈfile"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "desfile", base: "desfile" }]
+    examples:
+      - target: "El desfile empieza a las diez."
+        ipa: "el desˈfile emˈpjeθa a las djeθ"
+        bases: [{ word: "El", base: "el" }, { word: "desfile", base: "desfile" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "diez", ref: "es-0214" }]
+      - target: "Hay un desfile de niños."
+        ipa: "aj un desˈfile de ˈniɲos"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "desfile", base: "desfile" }, { word: "de", base: "de" }, { word: "niños", ref: "es-0003" }]
+  - id: "es-2615"
+    target: "el disfraz"
+    ipa: "el disˈfɾaθ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "disfraz", base: "disfraz" }]
+    examples:
+      - target: "Me pongo un disfraz de payaso."
+        ipa: "me ˈponɡo un disˈfɾaθ de paˈʝaso"
+        bases: [{ word: "Me", base: "me" }, { word: "pongo", ref: "es-1628" }, { word: "un", base: "un" }, { word: "disfraz", base: "disfraz" }, { word: "de", base: "de" }, { word: "payaso", base: "payaso" }]
+      - target: "El disfraz es muy bonito."
+        ipa: "el disˈfɾaθ es mwi boˈnito"
+        bases: [{ word: "El", base: "el" }, { word: "disfraz", base: "disfraz" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonito", ref: "es-0405" }]
+  - id: "es-2616"
+    target: "el cohete"
+    ipa: "el koˈete"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cohete", base: "cohete" }]
+    examples:
+      - target: "Lanzan un cohete al cielo."
+        ipa: "ˈlanθan un koˈete al ˈθjelo"
+        bases: [{ word: "Lanzan", base: "lanzar" }, { word: "un", base: "un" }, { word: "cohete", base: "cohete" }, { word: "al", base: "al" }, { word: "cielo", ref: "es-1122" }]
+      - target: "Los cohetes hacen mucho ruido."
+        ipa: "los koˈetes ˈaθen ˈmutʃo ˈrwido"
+        bases: [{ word: "Los", base: "los" }, { word: "cohetes", base: "cohete" }, { word: "hacen", ref: "es-0025" }, { word: "mucho", ref: "es-0053" }, { word: "ruido", ref: "es-2423" }]
+  - id: "es-2617"
+    target: "el globo"
+    ipa: "el ˈɡlobo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "globo", base: "globo" }]
+    examples:
+      - target: "Hay globos en la fiesta."
+        ipa: "aj ˈɡlobos en la ˈfjesta"
+        bases: [{ word: "Hay", base: "haber" }, { word: "globos", base: "globo" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
+      - target: "El globo es rojo."
+        ipa: "el ˈɡlobo es ˈroxo"
+        bases: [{ word: "El", base: "el" }, { word: "globo", base: "globo" }, { word: "es", ref: "es-0022" }, { word: "rojo", ref: "es-1007" }]
+  - id: "es-2618"
+    target: "la navidad"
+    ipa: "la nabiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "navidad", base: "navidad" }]
+    examples:
+      - target: "La navidad es en diciembre."
+        ipa: "la nabiˈdad es en diˈθjembɾe"
+        bases: [{ word: "La", base: "la" }, { word: "navidad", base: "navidad" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "diciembre", ref: "es-0977" }]
+      - target: "Cenamos juntos en Navidad."
+        ipa: "θeˈnamos ˈxuntos en nabiˈdad"
+        bases: [{ word: "Cenamos", ref: "es-0283" }, { word: "juntos", base: "juntos" }, { word: "en", base: "en" }, { word: "Navidad", base: "navidad" }]
+  - id: "es-2619"
+    target: "la nochevieja"
+    ipa: "la notʃeˈbjexa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nochevieja", base: "nochevieja" }]
+    examples:
+      - target: "La nochevieja es fiesta."
+        ipa: "la notʃeˈbjexa es ˈfjesta"
+        bases: [{ word: "La", base: "la" }, { word: "nochevieja", base: "nochevieja" }, { word: "es", ref: "es-0022" }, { word: "fiesta", ref: "es-0979" }]
+      - target: "Comemos las uvas en nochevieja."
+        ipa: "koˈmemos las ˈubas en notʃeˈbjexa"
+        bases: [{ word: "Comemos", ref: "es-0028" }, { word: "las", base: "las" }, { word: "uvas", base: "uva" }, { word: "en", base: "en" }, { word: "nochevieja", base: "nochevieja" }]
+  - id: "es-2620"
+    target: "la banda"
+    ipa: "la ˈbanda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "banda", base: "banda" }]
+    examples:
+      - target: "La banda toca en la calle."
+        ipa: "la ˈbanda ˈtoka en la ˈkaʝe"
+        bases: [{ word: "La", base: "la" }, { word: "banda", base: "banda" }, { word: "toca", ref: "es-1406" }, { word: "en", base: "en" }, { word: "calle", ref: "es-0017" }]
+      - target: "La banda de música es famosa."
+        ipa: "la ˈbanda de ˈmusika es faˈmosa"
+        bases: [{ word: "La", base: "la" }, { word: "banda", base: "banda" }, { word: "de", base: "de" }, { word: "música", ref: "es-2504" }, { word: "es", ref: "es-0022" }, { word: "famosa", base: "famoso" }]
+  - id: "es-2621"
+    target: "el invitado"
+    ipa: "el inbiˈtado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "invitado", base: "invitado" }]
+    examples:
+      - target: "Hay cien invitados."
+        ipa: "aj θjen inbiˈtados"
+        bases: [{ word: "Hay", base: "haber" }, { word: "cien", ref: "es-0543" }, { word: "invitados", base: "invitado" }]
+      - target: "El invitado trae un regalo."
+        ipa: "el inbiˈtado ˈtɾae un reˈɡalo"
+        bases: [{ word: "El", base: "el" }, { word: "invitado", base: "invitado" }, { word: "trae", ref: "es-1285" }, { word: "un", base: "un" }, { word: "regalo", ref: "es-1221" }]
+  - id: "es-2622"
+    target: "la decoración"
+    ipa: "la dekoɾaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "decoración", base: "decoración" }]
+    examples:
+      - target: "La decoración es bonita."
+        ipa: "la dekoɾaˈθjon es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "decoración", base: "decoración" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Hacemos la decoración de la sala."
+        ipa: "aˈθemos la dekoɾaˈθjon de la ˈsala"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "la", base: "la" }, { word: "decoración", base: "decoración" }, { word: "de", base: "de" }, { word: "sala", ref: "es-2463" }]
+  - id: "es-2623"
+    target: "el adorno"
+    ipa: "el aˈdoɾno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "adorno", base: "adorno" }]
+    examples:
+      - target: "El adorno es de papel."
+        ipa: "el aˈdoɾno es de paˈpel"
+        bases: [{ word: "El", base: "el" }, { word: "adorno", base: "adorno" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "papel", ref: "es-1387" }]
+      - target: "Pongo los adornos en el árbol."
+        ipa: "ˈponɡo los aˈdoɾnos en el ˈaɾbol"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "los", base: "los" }, { word: "adornos", base: "adorno" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "árbol", ref: "es-1748" }]
+  - id: "es-2624"
+    target: "la vela"
+    ipa: "la ˈbela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vela", base: "vela" }]
+    examples:
+      - target: "Enciendo una vela."
+        ipa: "enˈθjendo ˈuna ˈbela"
+        bases: [{ word: "Enciendo", ref: "es-1663" }, { word: "una", base: "una" }, { word: "vela", base: "vela" }]
+      - target: "La vela es blanca."
+        ipa: "la ˈbela es ˈblanka"
+        bases: [{ word: "La", base: "la" }, { word: "vela", base: "vela" }, { word: "es", ref: "es-0022" }, { word: "blanca", ref: "es-1012" }]
+  - id: "es-2625"
+    target: "el brindis"
+    ipa: "el ˈbɾindis"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "brindis", base: "brindis" }]
+    examples:
+      - target: "Hacemos un brindis por la familia."
+        ipa: "aˈθemos un ˈbɾindis poɾ la faˈmilja"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "un", base: "un" }, { word: "brindis", base: "brindis" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }]
+      - target: "El brindis es a las doce."
+        ipa: "el ˈbɾindis es a las ˈdoθe"
+        bases: [{ word: "El", base: "el" }, { word: "brindis", base: "brindis" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "doce", ref: "es-0216" }]
+  - id: "es-2626"
+    target: "la máscara"
+    ipa: "la ˈmaskaɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "máscara", base: "máscara" }]
+    examples:
+      - target: "Llevo una máscara en el carnaval."
+        ipa: "ˈʝebo ˈuna ˈmaskaɾa en el kaɾnaˈbal"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "máscara", base: "máscara" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "carnaval", ref: "es-2612" }]
+      - target: "La máscara es de plumas."
+        ipa: "la ˈmaskaɾa es de ˈplumas"
+        bases: [{ word: "La", base: "la" }, { word: "máscara", base: "máscara" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "plumas", base: "pluma" }]
+  - id: "es-2627"
+    target: "la multitud"
+    ipa: "la multiˈtud"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "multitud", base: "multitud" }]
+    examples:
+      - target: "Hay una multitud en la calle."
+        ipa: "aj ˈuna multiˈtud en la ˈkaʝe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "multitud", base: "multitud" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "La multitud aplaude."
+        ipa: "la multiˈtud aˈplawde"
+        bases: [{ word: "La", base: "la" }, { word: "multitud", base: "multitud" }, { word: "aplaude", base: "aplaudir" }]
+  - id: "es-2628"
+    target: "la feria"
+    ipa: "la ˈfeɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "feria", base: "feria" }]
+    examples:
+      - target: "La feria tiene atracciones."
+        ipa: "la ˈfeɾja ˈtjene atɾakˈθjones"
+        bases: [{ word: "La", base: "la" }, { word: "feria", base: "feria" }, { word: "tiene", ref: "es-0024" }, { word: "atracciones", base: "atracción" }]
+      - target: "Vamos a la feria del pueblo."
+        ipa: "ˈbamos a la ˈfeɾja del ˈpweblo"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "feria", base: "feria" }, { word: "del", base: "del" }, { word: "pueblo", ref: "es-0783" }]
+  - id: "es-2629"
+    target: "tradicional"
+    ipa: "tɾadiθjoˈnal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tradicional", base: "tradicional" }]
+    examples:
+      - target: "Es una comida tradicional."
+        ipa: "es ˈuna koˈmida tɾadiθjoˈnal"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "comida", ref: "es-0015" }, { word: "tradicional", base: "tradicional" }]
+      - target: "La fiesta es tradicional."
+        ipa: "la ˈfjesta es tɾadiθjoˈnal"
+        bases: [{ word: "La", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "es", ref: "es-0022" }, { word: "tradicional", base: "tradicional" }]
+  - id: "es-2630"
+    target: "religioso"
+    ipa: "reliˈxjoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "religioso", base: "religioso" }]
+    examples:
+      - target: "Es una fiesta religiosa."
+        ipa: "es ˈuna ˈfjesta reliˈxjosa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "fiesta", ref: "es-0979" }, { word: "religiosa", base: "religioso" }]
+      - target: "La procesión es religiosa."
+        ipa: "la pɾoθeˈsjon es reliˈxjosa"
+        bases: [{ word: "La", base: "la" }, { word: "procesión", ref: "es-2613" }, { word: "es", ref: "es-0022" }, { word: "religiosa", base: "religioso" }]
+  - id: "es-2631"
+    target: "la religión"
+    ipa: "la reliˈxjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "religión", base: "religión" }]
+    examples:
+      - target: "La religión es importante para mí."
+        ipa: "la reliˈxjon es impoɾˈtante ˈpaɾa mi"
+        bases: [{ word: "La", base: "la" }, { word: "religión", base: "religión" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "para", base: "para" }, { word: "mí", base: "mí" }]
+      - target: "Respeto todas las religiones."
+        ipa: "resˈpeto ˈtodas las reliˈxjones"
+        bases: [{ word: "Respeto", base: "respetar" }, { word: "todas", base: "todo" }, { word: "las", base: "las" }, { word: "religiones", base: "religión" }]
+  - id: "es-2632"
+    target: "el santo"
+    ipa: "el ˈsanto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "santo", base: "santo" }]
+    examples:
+      - target: "Hoy es el día del santo."
+        ipa: "oj es el ˈdia del ˈsanto"
+        bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }, { word: "del", base: "del" }, { word: "santo", base: "santo" }]
+      - target: "El santo del pueblo es Pedro."
+        ipa: "el ˈsanto del ˈpweblo es ˈpedɾo"
+        bases: [{ word: "El", base: "el" }, { word: "santo", base: "santo" }, { word: "del", base: "del" }, { word: "pueblo", ref: "es-0783" }, { word: "es", ref: "es-0022" }, { word: "Pedro", base: "pedro" }]
+  - id: "es-2633"
+    target: "la santa"
+    ipa: "la ˈsanta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "santa", base: "santa" }]
+    examples:
+      - target: "La santa es la patrona."
+        ipa: "la ˈsanta es la paˈtɾona"
+        bases: [{ word: "La", base: "la" }, { word: "santa", base: "santa" }, { word: "es", ref: "es-0022" }, { word: "patrona", base: "patrón" }]
+      - target: "Celebramos la fiesta de la santa."
+        ipa: "θeleˈbɾamos la ˈfjesta de la ˈsanta"
+        bases: [{ word: "Celebramos", ref: "es-2636" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "de", base: "de" }, { word: "santa", base: "santa" }]
+  - id: "es-2634"
+    target: "el dulce"
+    ipa: "el ˈdulθe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dulce", base: "dulce" }]
+    examples:
+      - target: "Compro dulces para la fiesta."
+        ipa: "ˈkompɾo ˈdulθes ˈpaɾa la ˈfjesta"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "dulces", base: "dulce" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
+      - target: "El dulce es de chocolate."
+        ipa: "el ˈdulθe es de tʃokoˈlate"
+        bases: [{ word: "El", base: "el" }, { word: "dulce", base: "dulce" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "chocolate", ref: "es-0622" }]
+  - id: "es-2635"
+    target: "el farol"
+    ipa: "el faˈɾol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "farol", base: "farol" }]
+    examples:
+      - target: "Hay faroles de colores."
+        ipa: "aj faˈɾoles de koˈloɾes"
+        bases: [{ word: "Hay", base: "haber" }, { word: "faroles", base: "farol" }, { word: "de", base: "de" }, { word: "colores", ref: "es-1026" }]
+      - target: "El farol de la calle es antiguo."
+        ipa: "el faˈɾol de la ˈkaʝe es anˈtiɡwo"
+        bases: [{ word: "El", base: "el" }, { word: "farol", base: "farol" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }, { word: "es", ref: "es-0022" }, { word: "antiguo", ref: "es-1804" }]
+  - id: "es-2636"
+    target: "celebrar"
+    ipa: "θeleˈbɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "celebrar", base: "celebrar" }]
+    examples:
+      - target: "Celebramos el cumpleaños."
+        ipa: "θeleˈbɾamos el kumpleˈaɲos"
+        bases: [{ word: "Celebramos", base: "celebrar" }, { word: "el", base: "el" }, { word: "cumpleaños", ref: "es-0246" }]
+      - target: "Celebran la fiesta en la plaza."
+        ipa: "θeˈlebɾan la ˈfjesta en la ˈplaθa"
+        bases: [{ word: "Celebran", base: "celebrar" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }, { word: "en", base: "en" }, { word: "plaza", ref: "es-0782" }]
+  - id: "es-2637"
+    target: "desfilar"
+    ipa: "desfiˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "desfilar", base: "desfilar" }]
+    examples:
+      - target: "Desfilan por la calle."
+        ipa: "desˈfilan poɾ la ˈkaʝe"
+        bases: [{ word: "Desfilan", base: "desfilar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "Desfilo con la banda."
+        ipa: "desˈfilo kon la ˈbanda"
+        bases: [{ word: "Desfilo", base: "desfilar" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "banda", ref: "es-2620" }]
+  - id: "es-2638"
+    target: "festejar"
+    ipa: "festeˈxaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "festejar", base: "festejar" }]
+    examples:
+      - target: "Festejamos el año nuevo."
+        ipa: "festeˈxamos el ˈaɲo ˈnwebo"
+        bases: [{ word: "Festejamos", base: "festejar" }, { word: "el", base: "el" }, { word: "año", ref: "es-0021" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Festejan la boda en casa."
+        ipa: "fesˈtexan la ˈboda en ˈkasa"
+        bases: [{ word: "Festejan", base: "festejar" }, { word: "la", base: "la" }, { word: "boda", base: "boda" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]

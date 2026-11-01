@@ -1,0 +1,205 @@
+schema: 1
+id: "es-en-relationships"
+kind: "layer"
+core: "es-relationships"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relationships: neighbours, friends and thank-you notes"
+license: "CC-BY-SA-4.0"
+description: "Words for the people we know: friendship and trust, the neighbour and the acquaintance, respect and thanks, the greeting and the kiss, and the verbs to greet, thank, forgive, fight and make up. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2730":
+    native: "friendship"
+    notes: { n1: "La amistad is friendship, the bond between friends. Its adjective is amistoso." }
+    bases: { "la": "the", "amistad": "friendship" }
+    examples:
+      "La amistad es un tesoro.": { native: "Friendship is a treasure.", bases: { "La": "the", "amistad": "friendship", "un": "a", "tesoro": "treasure" } }
+      "Nuestra amistad dura años.": { native: "Our friendship lasts years.", bases: { "Nuestra": "our", "amistad": "friendship" } }
+  "es-2731":
+    native: "neighbour"
+    notes: { n1: "El vecino is a neighbour, a person who lives next door. The feminine is la vecina." }
+    bases: { "el": "the", "vecino": "neighbour" }
+    examples:
+      "El vecino me ayuda con el jardín.": { native: "The neighbour helps me with the garden.", bases: { "El": "the", "vecino": "neighbour", "me": "to me", "con": "with" } }
+      "Mi vecina es muy amable.": { native: "My neighbour is very kind.", bases: { "vecina": "neighbour" } }
+  "es-2732":
+    native: "colleague; mate"
+    notes: { n1: "El colega is a colleague at work or a friend. It is used for men and women." }
+    bases: { "el": "the", "colega": "colleague; mate" }
+    examples:
+      "Mi colega trabaja en la oficina.": { native: "My colleague works in the office.", bases: { "colega": "colleague; mate", "en": "in", "la": "the" } }
+      "La colega me ayuda cada día.": { native: "The colleague helps me every day.", bases: { "La": "the", "colega": "colleague; mate", "me": "to me" } }
+  "es-2733":
+    native: "acquaintance"
+    notes: { n1: "El conocido is an acquaintance, someone you know but not well. The feminine is la conocida." }
+    bases: { "el": "the", "conocido": "acquaintance" }
+    examples:
+      "Es un conocido de mi madre.": { native: "He is an acquaintance of my mother.", bases: { "un": "a", "conocido": "acquaintance", "de": "of" } }
+      "La conocida me saluda.": { native: "The acquaintance greets me.", bases: { "La": "the", "conocida": "acquaintance", "me": "to me" } }
+  "es-2734":
+    native: "enemy"
+    notes: { n1: "El enemigo is an enemy, a person who wishes you harm. The feminine is la enemiga." }
+    bases: { "el": "the", "enemigo": "enemy" }
+    examples:
+      "El enemigo ataca el pueblo.": { native: "The enemy attacks the village.", bases: { "El": "the", "enemigo": "enemy", "ataca": "to attack" } }
+      "No tengo enemigos.": { native: "I have no enemies.", bases: { "enemigos": "enemy" } }
+  "es-2735":
+    native: "neighbourhood"
+    notes: { n1: "El vecindario is the neighbourhood, the people who live near each other." }
+    bases: { "el": "the", "vecindario": "neighbourhood" }
+    examples:
+      "El vecindario es tranquilo.": { native: "The neighbourhood is quiet.", bases: { "El": "the", "vecindario": "neighbourhood" } }
+      "Todo el vecindario viene a la fiesta.": { native: "The whole neighbourhood comes/comer to the party.", bases: { "Todo": "all", "el": "the", "vecindario": "neighbourhood", "a": "to", "la": "the" } }
+  "es-2736":
+    native: "trust; confidence"
+    notes: { n1: "La confianza is trust, a belief that someone is good and reliable. The verb is confiar." }
+    bases: { "la": "the", "confianza": "trust; confidence" }
+    examples:
+      "Tengo confianza en ti.": { native: "I have trust in you.", bases: { "confianza": "trust; confidence", "en": "in", "ti": "you" } }
+      "La confianza es importante.": { native: "Trust is important.", bases: { "La": "the", "confianza": "trust; confidence" } }
+  "es-2737":
+    native: "respect"
+    notes: { n1: "El respeto is respect, a good opinion of someone and their rights." }
+    bases: { "el": "the", "respeto": "respect" }
+    examples:
+      "Tengo mucho respeto por mi abuelo.": { native: "I have a lot of respect for my grandfather.", bases: { "respeto": "to respect", "por": "for" } }
+      "El respeto es la base.": { native: "Respect is the foundation.", bases: { "El": "the", "respeto": "to respect", "la": "the", "base": "base; basis" } }
+  "es-2738":
+    native: "gratitude; thanks"
+    notes: { n1: "El agradecimiento is gratitude, the feeling of being thankful. The verb is agradecer." }
+    bases: { "el": "the", "agradecimiento": "gratitude; thanks" }
+    examples:
+      "Le doy mi agradecimiento.": { native: "I give him my thanks.", bases: { "Le": "him; her; to him", "agradecimiento": "gratitude; thanks" } }
+      "Siento agradecimiento por la ayuda.": { native: "I feel gratitude for the help.", bases: { "agradecimiento": "gratitude; thanks", "por": "for", "la": "the" } }
+  "es-2739":
+    native: "greeting"
+    notes: { n1: "El saludo is a greeting, a word or a gesture that says hello." }
+    bases: { "el": "the", "saludo": "greeting" }
+    examples:
+      "Le doy un saludo a tu madre.": { native: "I send your mother my greetings.", bases: { "Le": "him; her; to him", "un": "a", "saludo": "greeting", "a": "to" } }
+      "El saludo es amable.": { native: "The greeting is friendly.", bases: { "El": "the", "saludo": "greeting" } }
+  "es-2740":
+    native: "hug"
+    notes: { n1: "El abrazo is a hug, the arms around someone." }
+    bases: { "el": "the", "abrazo": "hug" }
+    examples:
+      "Le doy un abrazo a mi amiga.": { native: "I give my friend a hug.", bases: { "Le": "him; her; to him", "un": "a", "abrazo": "hug", "a": "to", "amiga": "friend" } }
+      "El abrazo es cálido.": { native: "The hug is warm.", bases: { "El": "the", "abrazo": "hug" } }
+  "es-2741":
+    native: "kiss"
+    notes: { n1: "El beso is a kiss, a touch with the lips, to say hello or love." }
+    bases: { "el": "the", "beso": "kiss" }
+    examples:
+      "Le doy un beso a mi madre.": { native: "I give my mother a kiss.", bases: { "Le": "him; her; to him", "un": "a", "beso": "kiss", "a": "to" } }
+      "El beso es de bienvenida.": { native: "The kiss is a welcome.", bases: { "El": "the", "beso": "kiss", "de": "of", "bienvenida": "welcome" } }
+  "es-2742":
+    native: "support"
+    notes: { n1: "El apoyo is support, help given to someone in need." }
+    bases: { "el": "the", "apoyo": "support" }
+    examples:
+      "Tengo el apoyo de mi familia.": { native: "I have my family's support.", bases: { "el": "the", "de": "of" } }
+      "El apoyo de los vecinos es grande.": { native: "The neighbours' support is great.", bases: { "El": "the", "de": "of", "los": "the" } }
+  "es-2743":
+    native: "apology"
+    notes: { n1: "La disculpa is an apology, words said to show regret. Pedir disculpas is to apologise." }
+    bases: { "la": "the", "disculpa": "apology" }
+    examples:
+      "Te pido disculpas.": { native: "I apologise to you.", bases: { "Te": "you", "disculpas": "apology" } }
+      "La disculpa es sincera.": { native: "The apology is sincere.", bases: { "La": "the", "disculpa": "apology" } }
+  "es-2744":
+    native: "relationship"
+    notes: { n1: "La relación is a relationship, the connection between two people or things." }
+    bases: { "la": "the", "relación": "relationship" }
+    examples:
+      "Tengo una buena relación con mi vecino.": { native: "I have a good relationship with my neighbour.", bases: { "una": "a", "relación": "relationship", "con": "with" } }
+      "La relación es muy cercana.": { native: "The relationship is very close.", bases: { "La": "the", "relación": "relationship", "cercana": "close; nearby" } }
+  "es-2745":
+    native: "to trust"
+    notes: { n1: "Confiar is to trust someone or something. Its yo form is confío." }
+    bases: { "confiar": "to trust" }
+    examples:
+      "Confío en mi amigo.": { native: "I trust my friend.", bases: { "Confío": "to trust", "en": "in" } }
+      "Confían en el vecino.": { native: "They trust the neighbour.", bases: { "Confían": "to trust", "en": "in", "el": "the" } }
+  "es-2746":
+    native: "to thank; to be grateful"
+    notes: { n1: "Agradecer is to thank someone for something. Its yo form is agradezco." }
+    bases: { "agradecer": "to thank; to be grateful" }
+    examples:
+      "Te agradezco la ayuda.": { native: "I thank you for the help.", bases: { "Te": "you", "agradezco": "to thank; to be grateful", "la": "the" } }
+      "Agradecemos la visita.": { native: "We thank you for the visit.", bases: { "Agradecemos": "to thank; to be grateful", "la": "the" } }
+  "es-2747":
+    native: "to forgive"
+    notes: { n1: "Perdonar is to forgive someone, or to excuse a small fault." }
+    bases: { "perdonar": "to forgive" }
+    examples:
+      "Te perdono el error.": { native: "I forgive you the mistake.", bases: { "Te": "you", "perdono": "to forgive", "el": "the" } }
+      "Perdona la tardanza.": { native: "Forgive the lateness.", bases: { "Perdona": "to forgive", "la": "the", "tardanza": "lateness" } }
+  "es-2748":
+    native: "to greet"
+    notes: { n1: "Saludar is to greet someone with words or a gesture." }
+    bases: { "saludar": "to greet" }
+    examples:
+      "Saludo a mi vecino.": { native: "I greet my neighbour.", bases: { "Saludo": "to greet", "a": "to" } }
+      "Nos saludamos con un beso.": { native: "We greet each other with a kiss.", bases: { "Nos": "us", "saludamos": "to greet", "con": "with", "un": "a" } }
+  "es-2749":
+    native: "to fight; to quarrel"
+    notes: { n1: "Pelear is to fight, with the fists or with words." }
+    bases: { "pelear": "to fight; to quarrel" }
+    examples:
+      "Pelean por la pelota.": { native: "They fight over the ball.", bases: { "Pelean": "to fight; to quarrel", "por": "for", "la": "the" } }
+      "No quiero pelear con mi hermana.": { native: "I do not want to quarrel with my sister.", bases: { "pelear": "to fight; to quarrel", "con": "with" } }
+  "es-2750":
+    native: "to make up"
+    notes: { n1: "Reconciliarse is to make up with someone after a fight." }
+    bases: { "reconciliarse": "to make up" }
+    examples:
+      "Me reconcilio con mi amigo.": { native: "I make up with my friend.", bases: { "Me": "to me", "reconcilio": "to make up", "con": "with" } }
+      "Se reconcilian después de la discusión.": { native: "They make up after the argument.", bases: { "Se": "(reflexive) oneself", "reconcilian": "to make up", "de": "of", "la": "the", "discusión": "argument" } }
+  "es-2751":
+    native: "to get along"
+    notes: { n1: "Llevarse bien is to get along well with someone. Llevarse mal is to get on badly." }
+    bases: { "llevarse": "to get along" }
+    examples:
+      "Me llevo bien con mis vecinos.": { native: "I get on well with my neighbours.", bases: { "Me": "to me", "llevo": "to get along", "con": "with" } }
+      "Se llevan muy bien.": { native: "They get along very well.", bases: { "Se": "(reflexive) oneself" } }
+  "es-2752":
+    native: "friendly"
+    notes: { n1: "Amistoso is friendly, in a warm and kind way. It agrees with the noun: amistosa." }
+    bases: { "amistoso": "friendly" }
+    examples:
+      "Es un vecino amistoso.": { native: "He is a friendly neighbour.", bases: { "un": "a", "amistoso": "friendly" } }
+      "El ambiente es amistoso.": { native: "The atmosphere is friendly.", bases: { "El": "the", "amistoso": "friendly" } }
+  "es-2753":
+    native: "generous"
+    notes: { n1: "Generoso is generous, giving freely to others. It agrees with the noun: generosa." }
+    bases: { "generoso": "generous" }
+    examples:
+      "Es una persona generosa.": { native: "She is a generous person.", bases: { "una": "a", "generosa": "generous" } }
+      "El vecino es generoso con su tiempo.": { native: "The neighbour is generous with his time.", bases: { "El": "the", "generoso": "generous", "con": "with", "tiempo": "time" } }
+  "es-2754":
+    native: "sincere"
+    notes: { n1: "Sincero is sincere, honest in what one says. It agrees with the noun: sincera." }
+    bases: { "sincero": "sincere" }
+    examples:
+      "Es un amigo sincero.": { native: "He is a sincere friend.", bases: { "un": "a", "sincero": "sincere" } }
+      "Mi disculpa es sincera.": { native: "My apology is sincere.", bases: { "sincera": "sincere" } }
+  "es-2755":
+    native: "loyal"
+    notes: { n1: "Leal is loyal, faithful to a friend or a cause. It does not change for gender." }
+    bases: { "leal": "loyal" }
+    examples:
+      "Es una amiga leal.": { native: "She is a loyal friend.", bases: { "una": "a", "amiga": "friend", "leal": "loyal" } }
+      "Mi perro es muy leal.": { native: "My dog is very loyal.", bases: { "leal": "loyal" } }
+  "es-2756":
+    native: "kind; friendly"
+    notes: { n1: "Amable is kind, polite, pleasant to others. It does not change for gender." }
+    bases: { "amable": "kind; friendly" }
+    examples:
+      "Mi vecina es muy amable.": { native: "My neighbour is very kind.", bases: { "amable": "kind; friendly" } }
+      "El camarero es amable.": { native: "The waiter is friendly.", bases: { "El": "the", "amable": "kind; friendly" } }
+  "es-2757":
+    native: "charming"
+    notes: { n1: "Encantador is charming, delightful. It agrees with the noun: encantadora." }
+    bases: { "encantador": "charming" }
+    examples:
+      "Es un vecino encantador.": { native: "He is a charming neighbour.", bases: { "un": "a", "encantador": "charming" } }
+      "La niña es encantadora.": { native: "The girl is charming.", bases: { "La": "the", "encantadora": "charming" } }

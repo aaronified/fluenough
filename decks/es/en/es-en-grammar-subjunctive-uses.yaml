@@ -1,0 +1,23 @@
+schema: 1
+id: "es-en-grammar-subjunctive-uses"
+kind: "layer"
+core: "es-grammar-subjunctive-uses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Subjunctive after doubt, feeling and need"
+license: "CC-BY-SA-4.0"
+description: "The subjunctive comes after a trigger of doubt, feeling, need or purpose: dudo que vengas, I doubt you come; me alegra que estés aquí, I am glad you are here; es necesario que estudies, it is necessary that you study; te llamo para que vengas, I call you so that you come. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Subjunctive after a trigger"
+  slot_name: "trigger"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "dudar que": "doubt: dudo que ...", "alegrarse de que": "feeling: me alegra que ...", "es necesario que": "necessity: es necesario que ...", "para que": "purpose: para que ..." }
+  entries:
+    "venir": "to come"
+    "tener": "to have"
+    "ser": "to be"
+    "saber": "to know"
+    "hacer": "to do; to make"
+    "estudiar": "to study"
+    "poder": "to be able to"
+    "comprar": "to buy"
+  notes: "Use the subjunctive when the thing said is doubted, felt, needed or wanted, and the subject of the second verb is different: dudo que tengas tiempo. When there is only one subject, the infinitive is used instead: me alegra estar aquí. The subjunctive stems are the same as for espero que and quiero que."

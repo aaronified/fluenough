@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-adjectives-2"
+name: "Reading: a room to let and an old house"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: an advert for a room to rent, and a description of an old house. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-room-to-let"
+    title: "A room to let"
+    theme: "adjectives-2"
+    sentences:
+      - text: "Se alquila habitación en piso amueblado."
+      - text: "Habitación luminosa, con balcón y vista."
+      - text: "Cocina moderna y baño nuevo."
+      - text: "Precio: 300 euros al mes."
+    questions:
+      - id: "es-1840"
+        prompt: { en: "What is rented?" }
+        options:
+          - { en: "A whole house" }
+          - { en: "A garage" }
+          - { en: "A room in a furnished flat" }
+        answer: 3
+      - id: "es-1841"
+        prompt: { en: "What does the room have?" }
+        options:
+          - { en: "A balcony and a view" }
+          - { en: "A garden" }
+          - { en: "A basement" }
+        answer: 1
+      - id: "es-1842"
+        prompt: { en: "How much is the rent?" }
+        options:
+          - { en: "30 euros a week" }
+          - { en: "300 euros a month" }
+          - { en: "3000 euros a year" }
+        answer: 2
+  - id: "es-old-house"
+    title: "An old house"
+    theme: "adjectives-2"
+    sentences:
+      - text: "La casa es antigua y tiene un ático."
+      - text: "Las paredes son de piedra y los suelos de madera."
+      - text: "El salón es amplio y muy cálido."
+      - text: "Hay cortinas de lino en las ventanas."
+    questions:
+      - id: "es-1843"
+        prompt: { en: "How old is the house?" }
+        options:
+          - { en: "Old" }
+          - { en: "New" }
+          - { en: "Modern" }
+        answer: 1
+      - id: "es-1844"
+        prompt: { en: "What are the walls made of?" }
+        options:
+          - { en: "Stone" }
+          - { en: "Wood" }
+          - { en: "Glass" }
+        answer: 1
+      - id: "es-1845"
+        prompt: { en: "What are the curtains made of?" }
+        options:
+          - { en: "Silk" }
+          - { en: "Linen" }
+          - { en: "Leather" }
+        answer: 2

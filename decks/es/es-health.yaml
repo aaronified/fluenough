@@ -1,0 +1,477 @@
+schema: 1
+id: "es-health"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1938"
+    target: "el enfermero"
+    ipa: "el enfeɾˈmeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "enfermero", base: "enfermero" }]
+    examples:
+      - target: "El enfermero me toma la tensión."
+        ipa: "el enfeɾˈmeɾo me ˈtoma la tenˈsjon"
+        bases: [{ word: "El", base: "el" }, { word: "enfermero", base: "enfermero" }, { word: "me", base: "me" }, { word: "toma", ref: "es-0906" }, { word: "la", base: "la" }, { word: "tensión", ref: "es-1491" }]
+      - target: "Hay un enfermero en la clínica."
+        ipa: "aj un enfeɾˈmeɾo en la ˈklinika"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "enfermero", base: "enfermero" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clínica", ref: "es-1939" }]
+  - id: "es-1939"
+    target: "la clínica"
+    ipa: "la ˈklinika"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "clínica", base: "clínica" }]
+    examples:
+      - target: "La clínica está cerca de casa."
+        ipa: "la ˈklinika esˈta ˈθeɾka de ˈkasa"
+        bases: [{ word: "La", base: "la" }, { word: "clínica", base: "clínica" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "casa", ref: "es-0006" }]
+      - target: "Tengo una cita en la clínica."
+        ipa: "ˈtenɡo ˈuna ˈθita en la ˈklinika"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cita", ref: "es-0844" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clínica", base: "clínica" }]
+  - id: "es-1940"
+    target: "el cansancio"
+    ipa: "el kanˈsanθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cansancio", base: "cansancio" }]
+    examples:
+      - target: "Siento mucho cansancio."
+        ipa: "ˈsjento ˈmutʃo kanˈsanθjo"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "mucho", ref: "es-0053" }, { word: "cansancio", base: "cansancio" }]
+      - target: "El cansancio es normal después del trabajo."
+        ipa: "el kanˈsanθjo es noɾˈmal desˈpwes del tɾaˈbaxo"
+        bases: [{ word: "El", base: "el" }, { word: "cansancio", base: "cansancio" }, { word: "es", ref: "es-0022" }, { word: "normal", base: "normal" }, { word: "después", ref: "es-0336" }, { word: "del", base: "del" }, { word: "trabajo", ref: "es-0259" }]
+  - id: "es-1941"
+    target: "la energía"
+    ipa: "la eneɾˈxia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "energía", base: "energía" }]
+    examples:
+      - target: "Tengo mucha energía hoy."
+        ipa: "ˈtenɡo ˈmutʃa eneɾˈxia oj"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "energía", base: "energía" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La energía del sol es limpia."
+        ipa: "la eneɾˈxia del sol es ˈlimpja"
+        bases: [{ word: "La", base: "la" }, { word: "energía", base: "energía" }, { word: "del", base: "del" }, { word: "sol", ref: "es-1113" }, { word: "es", ref: "es-0022" }, { word: "limpia", ref: "es-0416" }]
+  - id: "es-1942"
+    target: "el estrés"
+    ipa: "el esˈtɾes"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estrés", base: "estrés" }]
+    examples:
+      - target: "El estrés es malo para la salud."
+        ipa: "el esˈtɾes es ˈmalo ˈpaɾa la saˈlud"
+        bases: [{ word: "El", base: "el" }, { word: "estrés", base: "estrés" }, { word: "es", ref: "es-0022" }, { word: "malo", ref: "es-0034" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "salud", ref: "es-1488" }]
+      - target: "Tengo estrés por el trabajo."
+        ipa: "ˈtenɡo esˈtɾes poɾ el tɾaˈbaxo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "estrés", base: "estrés" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }]
+  - id: "es-1943"
+    target: "relajarse"
+    ipa: "relaˈxaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "relajarse", base: "relajarse" }]
+    examples:
+      - target: "Me relajo en el baño."
+        ipa: "me reˈlaxo en el ˈbaɲo"
+        bases: [{ word: "Me", base: "me" }, { word: "relajo", base: "relajarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }]
+      - target: "Nos relajamos en el parque."
+        ipa: "nos relaˈxamos en el ˈpaɾke"
+        bases: [{ word: "Nos", base: "nos" }, { word: "relajamos", base: "relajarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
+  - id: "es-1944"
+    target: "relajado"
+    ipa: "relaˈxado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "relajado", base: "relajado" }]
+    examples:
+      - target: "Estoy muy relajado hoy."
+        ipa: "esˈtoj mwi relaˈxado oj"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "relajado", base: "relajado" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La familia está relajada."
+        ipa: "la faˈmilja esˈta relaˈxada"
+        bases: [{ word: "La", base: "la" }, { word: "familia", ref: "es-0158" }, { word: "está", ref: "es-0023" }, { word: "relajada", base: "relajado" }]
+  - id: "es-1945"
+    target: "la nutrición"
+    ipa: "la nutɾiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nutrición", base: "nutrición" }]
+    examples:
+      - target: "La nutrición es importante para los niños."
+        ipa: "la nutɾiˈθjon es impoɾˈtante ˈpaɾa los ˈniɲos"
+        bases: [{ word: "La", base: "la" }, { word: "nutrición", base: "nutrición" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "para", base: "para" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }]
+      - target: "Estudio nutrición en la universidad."
+        ipa: "esˈtudjo nutɾiˈθjon en la unibeɾsiˈdad"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "nutrición", base: "nutrición" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "universidad", ref: "es-0785" }]
+  - id: "es-1946"
+    target: "la vitamina"
+    ipa: "la bitaˈmina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vitamina", base: "vitamina" }]
+    examples:
+      - target: "La naranja tiene vitamina C."
+        ipa: "la naˈɾanxa ˈtjene bitaˈmina k"
+        bases: [{ word: "La", base: "la" }, { word: "naranja", ref: "es-1015" }, { word: "tiene", ref: "es-0024" }, { word: "vitamina", base: "vitamina" }, { word: "C", base: "c" }]
+      - target: "Tomo una vitamina cada día."
+        ipa: "ˈtomo ˈuna bitaˈmina ˈkada ˈdia"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "una", base: "una" }, { word: "vitamina", base: "vitamina" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+  - id: "es-1947"
+    target: "la caloría"
+    ipa: "la kaloˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "caloría", base: "caloría" }]
+    examples:
+      - target: "Este pastel tiene muchas calorías."
+        ipa: "ˈeste pasˈtel ˈtjene ˈmutʃas kaloˈɾias"
+        bases: [{ word: "Este", base: "este" }, { word: "pastel", ref: "es-1272" }, { word: "tiene", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "calorías", base: "caloría" }]
+      - target: "Cuento las calorías de la comida."
+        ipa: "ˈkwento las kaloˈɾias de la koˈmida"
+        bases: [{ word: "Cuento", ref: "es-1612" }, { word: "las", base: "las" }, { word: "calorías", base: "caloría" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }]
+  - id: "es-1948"
+    target: "la alimentación"
+    ipa: "la alimentaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alimentación", base: "alimentación" }]
+    examples:
+      - target: "Una buena alimentación es importante."
+        ipa: "ˈuna ˈbwena alimentaˈθjon es impoɾˈtante"
+        bases: [{ word: "Una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "alimentación", base: "alimentación" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "La alimentación de los niños es sana."
+        ipa: "la alimentaˈθjon de los ˈniɲos es ˈsana"
+        bases: [{ word: "La", base: "la" }, { word: "alimentación", base: "alimentación" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "es", ref: "es-0022" }, { word: "sana", ref: "es-1965" }]
+  - id: "es-1949"
+    target: "el alimento"
+    ipa: "el aliˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "alimento", base: "alimento" }]
+    examples:
+      - target: "El pan es un alimento básico."
+        ipa: "el pan es un aliˈmento ˈbasiko"
+        bases: [{ word: "El", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "alimento", base: "alimento" }, { word: "básico", base: "básico" }]
+      - target: "Los alimentos frescos son mejores."
+        ipa: "los aliˈmentos ˈfɾeskos son meˈxoɾes"
+        bases: [{ word: "Los", base: "los" }, { word: "alimentos", base: "alimento" }, { word: "frescos", base: "fresco" }, { word: "son", ref: "es-0022" }, { word: "mejores", base: "mejor" }]
+  - id: "es-1950"
+    target: "la proteína"
+    ipa: "la pɾoteˈina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "proteína", base: "proteína" }]
+    examples:
+      - target: "El pollo tiene mucha proteína."
+        ipa: "el ˈpoʝo ˈtjene ˈmutʃa pɾoteˈina"
+        bases: [{ word: "El", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "tiene", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "proteína", base: "proteína" }]
+      - target: "Las proteínas son buenas para los músculos."
+        ipa: "las pɾoteˈinas son ˈbwenas ˈpaɾa los ˈmuskulos"
+        bases: [{ word: "Las", base: "las" }, { word: "proteínas", base: "proteína" }, { word: "son", ref: "es-0022" }, { word: "buenas", ref: "es-0033" }, { word: "para", base: "para" }, { word: "los", base: "los" }, { word: "músculos", ref: "es-1958" }]
+  - id: "es-1951"
+    target: "la grasa"
+    ipa: "la ˈɡɾasa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "grasa", base: "grasa" }]
+    examples:
+      - target: "Esta carne tiene mucha grasa."
+        ipa: "ˈesta ˈkaɾne ˈtjene ˈmutʃa ˈɡɾasa"
+        bases: [{ word: "Esta", base: "esta" }, { word: "carne", ref: "es-0614" }, { word: "tiene", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "grasa", base: "grasa" }]
+      - target: "Evito la grasa en la comida."
+        ipa: "eˈbito la ˈɡɾasa en la koˈmida"
+        bases: [{ word: "Evito", base: "evitar" }, { word: "la", base: "la" }, { word: "grasa", base: "grasa" }, { word: "en", base: "en" }, { word: "comida", ref: "es-0015" }]
+  - id: "es-1952"
+    target: "el hábito"
+    ipa: "el ˈabito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hábito", base: "hábito" }]
+    examples:
+      - target: "Tengo el hábito de caminar."
+        ipa: "ˈtenɡo el ˈabito de kamiˈnaɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "el", base: "el" }, { word: "hábito", base: "hábito" }, { word: "de", base: "de" }, { word: "caminar", ref: "es-0281" }]
+      - target: "Un buen hábito es dormir ocho horas."
+        ipa: "un bwen ˈabito es doɾˈmiɾ ˈotʃo ˈoɾas"
+        bases: [{ word: "Un", base: "un" }, { word: "buen", ref: "es-0033" }, { word: "hábito", base: "hábito" }, { word: "es", ref: "es-0022" }, { word: "dormir", ref: "es-0904" }, { word: "ocho", ref: "es-0212" }, { word: "horas", ref: "es-0838" }]
+  - id: "es-1953"
+    target: "la costumbre"
+    ipa: "la kosˈtumbɾe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "costumbre", base: "costumbre" }]
+    examples:
+      - target: "Es una costumbre sana."
+        ipa: "es ˈuna kosˈtumbɾe ˈsana"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "costumbre", base: "costumbre" }, { word: "sana", ref: "es-1965" }]
+      - target: "Por costumbre, me levanto temprano."
+        ipa: "poɾ kosˈtumbɾe me leˈbanto temˈpɾano"
+        bases: [{ word: "Por", base: "por" }, { word: "costumbre", base: "costumbre" }, { word: "me", base: "me" }, { word: "levanto", ref: "es-1608" }, { word: "temprano", ref: "es-0338" }]
+  - id: "es-1954"
+    target: "el bienestar"
+    ipa: "el bjenesˈtaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bienestar", base: "bienestar" }]
+    examples:
+      - target: "El deporte da bienestar."
+        ipa: "el deˈpoɾte da bjenesˈtaɾ"
+        bases: [{ word: "El", base: "el" }, { word: "deporte", ref: "es-1402" }, { word: "da", ref: "es-1629" }, { word: "bienestar", base: "bienestar" }]
+      - target: "Busco el bienestar en el campo."
+        ipa: "ˈbusko el bjenesˈtaɾ en el ˈkampo"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "el", base: "el" }, { word: "bienestar", base: "bienestar" }, { word: "en", base: "en" }, { word: "campo", ref: "es-1772" }]
+  - id: "es-1955"
+    target: "el masaje"
+    ipa: "el maˈsaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "masaje", base: "masaje" }]
+    examples:
+      - target: "Quiero un masaje en la espalda."
+        ipa: "ˈkjeɾo un maˈsaxe en la esˈpalda"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "masaje", base: "masaje" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "espalda", ref: "es-0746" }]
+      - target: "El masaje es muy relajante."
+        ipa: "el maˈsaxe es mwi relaˈxante"
+        bases: [{ word: "El", base: "el" }, { word: "masaje", base: "masaje" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "relajante", base: "relajante" }]
+  - id: "es-1956"
+    target: "el pulmón"
+    ipa: "el pulˈmon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pulmón", base: "pulmón" }]
+    examples:
+      - target: "Los pulmones respiran el aire."
+        ipa: "los pulˈmones resˈpiɾan el ˈajɾe"
+        bases: [{ word: "Los", base: "los" }, { word: "pulmones", base: "pulmón" }, { word: "respiran", ref: "es-0755" }, { word: "el", base: "el" }, { word: "aire", base: "aire" }]
+      - target: "Tengo un problema en el pulmón."
+        ipa: "ˈtenɡo un pɾoˈblema en el pulˈmon"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "problema", base: "problema" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "pulmón", base: "pulmón" }]
+  - id: "es-1957"
+    target: "el hueso"
+    ipa: "el ˈweso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hueso", base: "hueso" }]
+    examples:
+      - target: "Me rompí un hueso del brazo."
+        ipa: "me romˈpi un ˈweso del ˈbɾaθo"
+        bases: [{ word: "Me", base: "me" }, { word: "rompí", ref: "es-1189" }, { word: "un", base: "un" }, { word: "hueso", base: "hueso" }, { word: "del", base: "del" }, { word: "brazo", ref: "es-0737" }]
+      - target: "Los huesos son fuertes."
+        ipa: "los ˈwesos son ˈfweɾtes"
+        bases: [{ word: "Los", base: "los" }, { word: "huesos", base: "hueso" }, { word: "son", ref: "es-0022" }, { word: "fuertes", ref: "es-0432" }]
+  - id: "es-1958"
+    target: "el músculo"
+    ipa: "el ˈmuskulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "músculo", base: "músculo" }]
+    examples:
+      - target: "Tengo un músculo de la pierna dolorido."
+        ipa: "ˈtenɡo un ˈmuskulo de la ˈpjeɾna doloˈɾido"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "músculo", base: "músculo" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "pierna", ref: "es-0740" }, { word: "dolorido", base: "dolorido" }]
+      - target: "El ejercicio fortalece los músculos."
+        ipa: "el exeɾˈθiθjo foɾtaˈleθe los ˈmuskulos"
+        bases: [{ word: "El", base: "el" }, { word: "ejercicio", ref: "es-0913" }, { word: "fortalece", base: "fortalecer" }, { word: "los", base: "los" }, { word: "músculos", base: "músculo" }]
+  - id: "es-1959"
+    target: "el entrenador"
+    ipa: "el entɾenaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "entrenador", base: "entrenador" }]
+    examples:
+      - target: "El entrenador llega a las siete."
+        ipa: "el entɾenaˈdoɾ ˈʝeɡa a las ˈsjete"
+        bases: [{ word: "El", base: "el" }, { word: "entrenador", base: "entrenador" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+      - target: "Mi entrenador es muy amable."
+        ipa: "mi entɾenaˈdoɾ es mwi aˈmable"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "entrenador", base: "entrenador" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", base: "amable" }]
+  - id: "es-1960"
+    target: "el entrenamiento"
+    ipa: "el entɾenaˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "entrenamiento", base: "entrenamiento" }]
+    examples:
+      - target: "El entrenamiento es los martes."
+        ipa: "el entɾenaˈmjento es los ˈmaɾtes"
+        bases: [{ word: "El", base: "el" }, { word: "entrenamiento", base: "entrenamiento" }, { word: "es", ref: "es-0022" }, { word: "los", base: "los" }, { word: "martes", ref: "es-0959" }]
+      - target: "Hago un entrenamiento de media hora."
+        ipa: "ˈaɡo un entɾenaˈmjento de ˈmedja ˈoɾa"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "entrenamiento", base: "entrenamiento" }, { word: "de", base: "de" }, { word: "media", ref: "es-0368" }, { word: "hora", ref: "es-0838" }]
+  - id: "es-1961"
+    target: "entrenar"
+    ipa: "entɾeˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "entrenar", base: "entrenar" }]
+    examples:
+      - target: "Entreno tres días a la semana."
+        ipa: "enˈtɾeno tɾes ˈdias a la seˈmana"
+        bases: [{ word: "Entreno", base: "entrenar" }, { word: "tres", ref: "es-0207" }, { word: "días", ref: "es-0019" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "semana", ref: "es-0840" }]
+      - target: "Entrenamos para la carrera."
+        ipa: "entɾeˈnamos ˈpaɾa la kaˈreɾa"
+        bases: [{ word: "Entrenamos", base: "entrenar" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "carrera", base: "carrera" }]
+  - id: "es-1962"
+    target: "cansarse"
+    ipa: "kanˈsaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cansarse", base: "cansarse" }]
+    examples:
+      - target: "Me canso mucho en el gimnasio."
+        ipa: "me ˈkanso ˈmutʃo en el ximˈnasjo"
+        bases: [{ word: "Me", base: "me" }, { word: "canso", base: "cansarse" }, { word: "mucho", ref: "es-0053" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "gimnasio", ref: "es-0912" }]
+      - target: "Mi padre se cansa pronto."
+        ipa: "mi ˈpadɾe se ˈkansa ˈpɾonto"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "se", base: "se" }, { word: "cansa", base: "cansarse" }, { word: "pronto", ref: "es-0337" }]
+  - id: "es-1963"
+    target: "adelgazar"
+    ipa: "adelɡaˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "adelgazar", base: "adelgazar" }]
+    examples:
+      - target: "Quiero adelgazar un poco."
+        ipa: "ˈkjeɾo adelɡaˈθaɾ un ˈpoko"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "adelgazar", base: "adelgazar" }, { word: "un", base: "un" }, { word: "poco", ref: "es-0358" }]
+      - target: "Adelgazo con la dieta."
+        ipa: "adelˈɡaθo kon la ˈdjeta"
+        bases: [{ word: "Adelgazo", base: "adelgazar" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "dieta", ref: "es-1336" }]
+  - id: "es-1964"
+    target: "engordar"
+    ipa: "enɡoɾˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "engordar", base: "engordar" }]
+    examples:
+      - target: "Engordo si como mucho."
+        ipa: "enˈɡoɾdo si ˈkomo ˈmutʃo"
+        bases: [{ word: "Engordo", base: "engordar" }, { word: "si", base: "si" }, { word: "como", ref: "es-0028" }, { word: "mucho", ref: "es-0053" }]
+      - target: "Los niños engordan en invierno."
+        ipa: "los ˈniɲos enˈɡoɾdan en inˈbjeɾno"
+        bases: [{ word: "Los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "engordan", base: "engordar" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+  - id: "es-1965"
+    target: "sano"
+    ipa: "ˈsano"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sano", base: "sano" }]
+    examples:
+      - target: "Quiero comer sano."
+        ipa: "ˈkjeɾo koˈmeɾ ˈsano"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "comer", ref: "es-0028" }, { word: "sano", base: "sano" }]
+      - target: "Mi hermana es sana y fuerte."
+        ipa: "mi eɾˈmana es ˈsana i ˈfweɾte"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "sana", base: "sano" }, { word: "y", ref: "es-0048" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-1966"
+    target: "sedentario"
+    ipa: "sedenˈtaɾjo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sedentario", base: "sedentario" }]
+    examples:
+      - target: "Llevo una vida sedentaria."
+        ipa: "ˈʝebo ˈuna ˈbida sedenˈtaɾja"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "vida", base: "vida" }, { word: "sedentaria", base: "sedentario" }]
+      - target: "El trabajo es sedentario."
+        ipa: "el tɾaˈbaxo es sedenˈtaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "trabajo", ref: "es-0259" }, { word: "es", ref: "es-0022" }, { word: "sedentario", base: "sedentario" }]
+  - id: "es-1967"
+    target: "la respiración"
+    ipa: "la respiɾaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "respiración", base: "respiración" }]
+    examples:
+      - target: "La respiración es lenta."
+        ipa: "la respiɾaˈθjon es ˈlenta"
+        bases: [{ word: "La", base: "la" }, { word: "respiración", base: "respiración" }, { word: "es", ref: "es-0022" }, { word: "lenta", ref: "es-0415" }]
+      - target: "Hago ejercicios de respiración."
+        ipa: "ˈaɡo exeɾˈθiθjos de respiɾaˈθjon"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicios", ref: "es-0913" }, { word: "de", base: "de" }, { word: "respiración", base: "respiración" }]
+  - id: "es-1968"
+    target: "el ritmo"
+    ipa: "el ˈritmo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ritmo", base: "ritmo" }]
+    examples:
+      - target: "El ritmo del corazón es rápido."
+        ipa: "el ˈritmo del koɾaˈθon es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "ritmo", base: "ritmo" }, { word: "del", base: "del" }, { word: "corazón", ref: "es-0750" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Camino a un ritmo tranquilo."
+        ipa: "kaˈmino a un ˈritmo tɾanˈkilo"
+        bases: [{ word: "Camino", ref: "es-0281" }, { word: "a", base: "a" }, { word: "un", base: "un" }, { word: "ritmo", base: "ritmo" }, { word: "tranquilo", ref: "es-0257" }]
+  - id: "es-1969"
+    target: "la postura"
+    ipa: "la posˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "postura", base: "postura" }]
+    examples:
+      - target: "Tengo una buena postura al sentarme."
+        ipa: "ˈtenɡo ˈuna ˈbwena posˈtuɾa al senˈtaɾme"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "postura", base: "postura" }, { word: "al", base: "al" }, { word: "sentarme", ref: "es-1615" }]
+      - target: "La postura es importante para la espalda."
+        ipa: "la posˈtuɾa es impoɾˈtante ˈpaɾa la esˈpalda"
+        bases: [{ word: "La", base: "la" }, { word: "postura", base: "postura" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "para", base: "para" }, { word: "espalda", ref: "es-0746" }]
+  - id: "es-1970"
+    target: "la fatiga"
+    ipa: "la faˈtiɡa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fatiga", base: "fatiga" }]
+    examples:
+      - target: "Siento fatiga después del viaje."
+        ipa: "ˈsjento faˈtiɡa desˈpwes del ˈbjaxe"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "fatiga", base: "fatiga" }, { word: "después", ref: "es-0336" }, { word: "del", base: "del" }, { word: "viaje", ref: "es-1690" }]
+      - target: "La fatiga es un síntoma."
+        ipa: "la faˈtiɡa es un ˈsintoma"
+        bases: [{ word: "La", base: "la" }, { word: "fatiga", base: "fatiga" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "síntoma", ref: "es-1470" }]
+  - id: "es-1971"
+    target: "el sudor"
+    ipa: "el suˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sudor", base: "sudor" }]
+    examples:
+      - target: "El sudor cae por la frente."
+        ipa: "el suˈdoɾ ˈkae poɾ la ˈfɾente"
+        bases: [{ word: "El", base: "el" }, { word: "sudor", base: "sudor" }, { word: "cae", base: "caer" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "frente", ref: "es-1555" }]
+      - target: "Tengo sudor en la espalda."
+        ipa: "ˈtenɡo suˈdoɾ en la esˈpalda"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "sudor", base: "sudor" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "espalda", ref: "es-0746" }]

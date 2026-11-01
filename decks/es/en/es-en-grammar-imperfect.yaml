@@ -1,0 +1,24 @@
+schema: 1
+id: "es-en-grammar-imperfect"
+kind: "layer"
+core: "es-grammar-imperfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Imperfect: what used to be"
+license: "CC-BY-SA-4.0"
+description: "The imperfect tells what used to happen, what was going on, and how things were: de pequeño vivía en un pueblo, when I was small I lived in a village. -ar verbs take -aba, -abas, -aba, -ábamos, -abais, -aban; -er and -ir verbs take -ía, -ías, -ía, -íamos, -íais, -ían. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Imperfect of regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "trabajar": "to work"
+    "jugar": "to play"
+    "comer": "to eat"
+    "vivir": "to live"
+    "escribir": "to write"
+    "ser": "to be (permanent)"
+    "ir": "to go"
+    "ver": "to see; to watch"
+  notes: "The imperfect takes the stem of the infinitive for -ar verbs with -aba, and for -er and -ir verbs with -ía, and it has no spelling change. Only three verbs are irregular: ser (era), ir (iba) and ver (veía). Use it for habits (todos los días), for descriptions of the past (era alto), and for what was going on when something else happened."

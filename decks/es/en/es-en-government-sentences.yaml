@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-government-sentences"
+kind: "layer"
+core: "es-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: government"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about government, offices and forms, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2297":
+    native: "The mayor signs the form at the town hall."
+    bases: { "El": "the", "en": "in" }
+    confusables: { "funcionario": { why: "Funcionario is a civil servant, who handles the form." }, "concejal": { why: "Concejal is a councillor, who sits on the council." } }
+  "es-2298":
+    native: "My vote is for the party's candidate."
+    bases: { "para": "for", "el": "the", "del": "of" }
+    confusables: { "votacion": { why: "Votación is the act of voting, the event." }, "campana": { why: "Campaña is the campaign before the vote." } }
+  "es-2299":
+    native: "I need a certificate and my identity card."
+    bases: { "un": "a", "el": "the" }
+    confusables: { "documento": { why: "Documento is a document, the general word." }, "padron": { why: "Padrón is the register of residents." } }
+  "es-2300":
+    native: "The minister talks about the government."
+    bases: { "El": "the", "del": "of" }
+    confusables: { "parlamento": { why: "Parlamento is the parliament, where laws are passed." }, "ministerio": { why: "Ministerio is the ministry, the department itself." } }
+  "es-2301":
+    native: "Paying the fine is a requirement."
+    bases: { "la": "the", "un": "a" }
+    confusables: { "tramite": { why: "Trámite is a procedure, a step in an office." }, "licencia": { why: "Licencia is a licence or permit to do something." } }
+  "es-2302":
+    native: "The constitution protects the right to vote."
+    bases: { "La": "the", "protege": "to protect", "el": "the", "a": "to" }
+    confusables: { "justicia": { why: "Justicia is justice, the courts and fairness." }, "nacion": { why: "Nación is a nation, the whole country." } }

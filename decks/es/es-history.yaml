@@ -1,0 +1,545 @@
+schema: 1
+id: "es-history"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "history"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2554"
+    target: "la historia"
+    ipa: "la isˈtoɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "historia", base: "historia" }]
+    examples:
+      - target: "La historia de España es larga."
+        ipa: "la isˈtoɾja de esˈpaɲa es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "historia", base: "historia" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+      - target: "Leo la historia de la ciudad."
+        ipa: "ˈleo la isˈtoɾja de la θjuˈdad"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "la", base: "la" }, { word: "historia", base: "historia" }, { word: "de", base: "de" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2555"
+    target: "el rey"
+    ipa: "el rej"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "rey", base: "rey" }]
+    examples:
+      - target: "El rey vive en el palacio."
+        ipa: "el rej ˈbibe en el paˈlaθjo"
+        bases: [{ word: "El", base: "el" }, { word: "rey", base: "rey" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "palacio", ref: "es-2578" }]
+      - target: "Hay un rey en la historia."
+        ipa: "aj un rej en la isˈtoɾja"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "rey", base: "rey" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "historia", ref: "es-2554" }]
+  - id: "es-2556"
+    target: "la reina"
+    ipa: "la ˈrejna"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reina", base: "reina" }]
+    examples:
+      - target: "La reina llega en un coche."
+        ipa: "la ˈrejna ˈʝeɡa en un ˈkotʃe"
+        bases: [{ word: "La", base: "la" }, { word: "reina", base: "reina" }, { word: "llega", ref: "es-0290" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "coche", ref: "es-0678" }]
+      - target: "La reina gobierna el país."
+        ipa: "la ˈrejna ɡoˈbjeɾna el paˈis"
+        bases: [{ word: "La", base: "la" }, { word: "reina", base: "reina" }, { word: "gobierna", ref: "es-2294" }, { word: "el", base: "el" }, { word: "país", ref: "es-0018" }]
+  - id: "es-2557"
+    target: "el emperador"
+    ipa: "el empeɾaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "emperador", base: "emperador" }]
+    examples:
+      - target: "El emperador manda en el imperio."
+        ipa: "el empeɾaˈdoɾ ˈmanda en el imˈpeɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "emperador", base: "emperador" }, { word: "manda", base: "mandar" }, { word: "en", base: "en" }, { word: "imperio", ref: "es-2566" }]
+      - target: "Un emperador vivió aquí."
+        ipa: "un empeɾaˈdoɾ biˈbjo aˈki"
+        bases: [{ word: "Un", base: "un" }, { word: "emperador", base: "emperador" }, { word: "vivió", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }]
+  - id: "es-2558"
+    target: "el príncipe"
+    ipa: "el ˈpɾinθipe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "príncipe", base: "príncipe" }]
+    examples:
+      - target: "El príncipe es muy joven."
+        ipa: "el ˈpɾinθipe es mwi ˈxoben"
+        bases: [{ word: "El", base: "el" }, { word: "príncipe", base: "príncipe" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "joven", ref: "es-0256" }]
+      - target: "El príncipe va al castillo."
+        ipa: "el ˈpɾinθipe ba al kasˈtiʝo"
+        bases: [{ word: "El", base: "el" }, { word: "príncipe", base: "príncipe" }, { word: "va", ref: "es-0026" }, { word: "al", base: "al" }, { word: "castillo", ref: "es-2561" }]
+  - id: "es-2559"
+    target: "la guerra"
+    ipa: "la ˈɡera"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "guerra", base: "guerra" }]
+    examples:
+      - target: "La guerra duró mucho tiempo."
+        ipa: "la ˈɡera duˈɾo ˈmutʃo ˈtjempo"
+        bases: [{ word: "La", base: "la" }, { word: "guerra", base: "guerra" }, { word: "duró", ref: "es-0851" }, { word: "mucho", ref: "es-0053" }, { word: "tiempo", base: "tiempo" }]
+      - target: "Muchas personas sufren la guerra."
+        ipa: "ˈmutʃas peɾˈsonas ˈsufɾen la ˈɡera"
+        bases: [{ word: "Muchas", ref: "es-0053" }, { word: "personas", ref: "es-0135" }, { word: "sufren", base: "sufrir" }, { word: "la", base: "la" }, { word: "guerra", base: "guerra" }]
+  - id: "es-2560"
+    target: "la batalla"
+    ipa: "la baˈtaʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "batalla", base: "batalla" }]
+    examples:
+      - target: "La batalla fue en el valle."
+        ipa: "la baˈtaʝa fwe en el ˈbaʝe"
+        bases: [{ word: "La", base: "la" }, { word: "batalla", base: "batalla" }, { word: "fue", base: "fue" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "valle", ref: "es-1773" }]
+      - target: "Ganaron la batalla."
+        ipa: "ɡaˈnaɾon la baˈtaʝa"
+        bases: [{ word: "Ganaron", ref: "es-0520" }, { word: "la", base: "la" }, { word: "batalla", base: "batalla" }]
+  - id: "es-2561"
+    target: "el castillo"
+    ipa: "el kasˈtiʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "castillo", base: "castillo" }]
+    examples:
+      - target: "El castillo está en la colina."
+        ipa: "el kasˈtiʝo esˈta en la koˈlina"
+        bases: [{ word: "El", base: "el" }, { word: "castillo", base: "castillo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "colina", ref: "es-1774" }]
+      - target: "Visitamos un castillo antiguo."
+        ipa: "bisiˈtamos un kasˈtiʝo anˈtiɡwo"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "un", base: "un" }, { word: "castillo", base: "castillo" }, { word: "antiguo", ref: "es-1804" }]
+  - id: "es-2562"
+    target: "la fortaleza"
+    ipa: "la foɾtaˈleθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fortaleza", base: "fortaleza" }]
+    examples:
+      - target: "La fortaleza tiene muros altos."
+        ipa: "la foɾtaˈleθa ˈtjene ˈmuɾos ˈaltos"
+        bases: [{ word: "La", base: "la" }, { word: "fortaleza", base: "fortaleza" }, { word: "tiene", ref: "es-0024" }, { word: "muros", base: "muro" }, { word: "altos", base: "alto" }]
+      - target: "Los soldados viven en la fortaleza."
+        ipa: "los solˈdados ˈbiben en la foɾtaˈleθa"
+        bases: [{ word: "Los", base: "los" }, { word: "soldados", ref: "es-2564" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fortaleza", base: "fortaleza" }]
+  - id: "es-2563"
+    target: "el ejército"
+    ipa: "el eˈxeɾθito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ejército", base: "ejército" }]
+    examples:
+      - target: "El ejército llega a la ciudad."
+        ipa: "el eˈxeɾθito ˈʝeɡa a la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "ejército", base: "ejército" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Hay un ejército grande."
+        ipa: "aj un eˈxeɾθito ˈɡɾande"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "ejército", base: "ejército" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2564"
+    target: "el soldado"
+    ipa: "el solˈdado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "soldado", base: "soldado" }]
+    examples:
+      - target: "El soldado lucha en la guerra."
+        ipa: "el solˈdado ˈlutʃa en la ˈɡera"
+        bases: [{ word: "El", base: "el" }, { word: "soldado", base: "soldado" }, { word: "lucha", ref: "es-2585" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "guerra", ref: "es-2559" }]
+      - target: "Los soldados descansan."
+        ipa: "los solˈdados desˈkansan"
+        bases: [{ word: "Los", base: "los" }, { word: "soldados", base: "soldado" }, { word: "descansan", ref: "es-0928" }]
+  - id: "es-2565"
+    target: "la conquista"
+    ipa: "la konˈkista"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "conquista", base: "conquista" }]
+    examples:
+      - target: "La conquista cambió el país."
+        ipa: "la konˈkista kamˈbjo el paˈis"
+        bases: [{ word: "La", base: "la" }, { word: "conquista", ref: "es-2584" }, { word: "cambió", ref: "es-0588" }, { word: "el", base: "el" }, { word: "país", ref: "es-0018" }]
+      - target: "Recuerdan la conquista."
+        ipa: "reˈkweɾdan la konˈkista"
+        bases: [{ word: "Recuerdan", ref: "es-1379" }, { word: "la", base: "la" }, { word: "conquista", ref: "es-2584" }]
+  - id: "es-2566"
+    target: "el imperio"
+    ipa: "el imˈpeɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "imperio", base: "imperio" }]
+    examples:
+      - target: "El imperio es muy grande."
+        ipa: "el imˈpeɾjo es mwi ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "imperio", base: "imperio" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "El imperio cae después de años."
+        ipa: "el imˈpeɾjo ˈkae desˈpwes de ˈaɲos"
+        bases: [{ word: "El", base: "el" }, { word: "imperio", base: "imperio" }, { word: "cae", base: "caer" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "años", ref: "es-0021" }]
+  - id: "es-2567"
+    target: "el siglo"
+    ipa: "el ˈsiɡlo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "siglo", base: "siglo" }]
+    examples:
+      - target: "Vivimos en el siglo veintiuno."
+        ipa: "biˈbimos en el ˈsiɡlo bejnˈtjuno"
+        bases: [{ word: "Vivimos", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "siglo", base: "siglo" }, { word: "veintiuno", ref: "es-0549" }]
+      - target: "El castillo es del siglo doce."
+        ipa: "el kasˈtiʝo es del ˈsiɡlo ˈdoθe"
+        bases: [{ word: "El", base: "el" }, { word: "castillo", ref: "es-2561" }, { word: "es", ref: "es-0022" }, { word: "del", base: "del" }, { word: "siglo", base: "siglo" }, { word: "doce", ref: "es-0216" }]
+  - id: "es-2568"
+    target: "la época"
+    ipa: "la ˈepoka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "época", base: "época" }]
+    examples:
+      - target: "Es una época difícil."
+        ipa: "es ˈuna ˈepoka diˈfiθil"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "época", base: "época" }, { word: "difícil", ref: "es-0414" }]
+      - target: "La época romana fue larga."
+        ipa: "la ˈepoka roˈmana fwe ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "época", base: "época" }, { word: "romana", base: "romano" }, { word: "fue", base: "fue" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-2569"
+    target: "la civilización"
+    ipa: "la θibiliθaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "civilización", base: "civilización" }]
+    examples:
+      - target: "La civilización romana es famosa."
+        ipa: "la θibiliθaˈθjon roˈmana es faˈmosa"
+        bases: [{ word: "La", base: "la" }, { word: "civilización", base: "civilización" }, { word: "romana", base: "romano" }, { word: "es", ref: "es-0022" }, { word: "famosa", base: "famoso" }]
+      - target: "Estudio una civilización antigua."
+        ipa: "esˈtudjo ˈuna θibiliθaˈθjon anˈtiɡwa"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "una", base: "una" }, { word: "civilización", base: "civilización" }, { word: "antigua", ref: "es-1804" }]
+  - id: "es-2570"
+    target: "la ruina"
+    ipa: "la ˈrwina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ruina", base: "ruina" }]
+    examples:
+      - target: "Las ruinas son muy bonitas."
+        ipa: "las ˈrwinas son mwi boˈnitas"
+        bases: [{ word: "Las", base: "las" }, { word: "ruinas", base: "ruina" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonitas", ref: "es-0405" }]
+      - target: "Visitamos las ruinas romanas."
+        ipa: "bisiˈtamos las ˈrwinas roˈmanas"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "las", base: "las" }, { word: "ruinas", base: "ruina" }, { word: "romanas", base: "romano" }]
+  - id: "es-2571"
+    target: "la tumba"
+    ipa: "la ˈtumba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tumba", base: "tumba" }]
+    examples:
+      - target: "La tumba está en la iglesia."
+        ipa: "la ˈtumba esˈta en la iˈɡlesja"
+        bases: [{ word: "La", base: "la" }, { word: "tumba", base: "tumba" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "iglesia", ref: "es-0774" }]
+      - target: "Visito la tumba del rey."
+        ipa: "biˈsito la ˈtumba del rej"
+        bases: [{ word: "Visito", ref: "es-0787" }, { word: "la", base: "la" }, { word: "tumba", base: "tumba" }, { word: "del", base: "del" }, { word: "rey", ref: "es-2555" }]
+  - id: "es-2572"
+    target: "el héroe"
+    ipa: "el ˈeɾoe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "héroe", base: "héroe" }]
+    examples:
+      - target: "El héroe salva la ciudad."
+        ipa: "el ˈeɾoe ˈsalba la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "héroe", base: "héroe" }, { word: "salva", base: "salvar" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Es un héroe nacional."
+        ipa: "es un ˈeɾoe naθjoˈnal"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "héroe", base: "héroe" }, { word: "nacional", base: "nacional" }]
+  - id: "es-2573"
+    target: "la revolución"
+    ipa: "la reboluˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "revolución", base: "revolución" }]
+    examples:
+      - target: "La revolución cambia el país."
+        ipa: "la reboluˈθjon ˈkambja el paˈis"
+        bases: [{ word: "La", base: "la" }, { word: "revolución", base: "revolución" }, { word: "cambia", ref: "es-0588" }, { word: "el", base: "el" }, { word: "país", ref: "es-0018" }]
+      - target: "Estudio la revolución francesa."
+        ipa: "esˈtudjo la reboluˈθjon fɾanˈθesa"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "la", base: "la" }, { word: "revolución", base: "revolución" }, { word: "francesa", base: "francés" }]
+  - id: "es-2574"
+    target: "la independencia"
+    ipa: "la indepenˈdenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "independencia", base: "independencia" }]
+    examples:
+      - target: "La independencia es un día de fiesta."
+        ipa: "la indepenˈdenθja es un ˈdia de ˈfjesta"
+        bases: [{ word: "La", base: "la" }, { word: "independencia", base: "independencia" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "día", ref: "es-0019" }, { word: "de", base: "de" }, { word: "fiesta", ref: "es-0979" }]
+      - target: "Celebran la independencia del país."
+        ipa: "θeˈlebɾan la indepenˈdenθja del paˈis"
+        bases: [{ word: "Celebran", base: "celebrar" }, { word: "la", base: "la" }, { word: "independencia", base: "independencia" }, { word: "del", base: "del" }, { word: "país", ref: "es-0018" }]
+  - id: "es-2575"
+    target: "la colonia"
+    ipa: "la koˈlonja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "colonia", base: "colonia" }]
+    examples:
+      - target: "La colonia tiene su propio gobierno."
+        ipa: "la koˈlonja ˈtjene su ˈpɾopjo ɡoˈbjeɾno"
+        bases: [{ word: "La", base: "la" }, { word: "colonia", base: "colonia" }, { word: "tiene", ref: "es-0024" }, { word: "su", ref: "es-0131" }, { word: "propio", base: "propio" }, { word: "gobierno", ref: "es-2260" }]
+      - target: "Vivían en una colonia."
+        ipa: "biˈbian en ˈuna koˈlonja"
+        bases: [{ word: "Vivían", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "colonia", base: "colonia" }]
+  - id: "es-2576"
+    target: "colonial"
+    ipa: "koloˈnjal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "colonial", base: "colonial" }]
+    examples:
+      - target: "La arquitectura colonial es bonita."
+        ipa: "la aɾkitekˈtuɾa koloˈnjal es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "arquitectura", ref: "es-2524" }, { word: "colonial", base: "colonial" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Es un período colonial."
+        ipa: "es un peˈɾiodo koloˈnjal"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "período", base: "período" }, { word: "colonial", base: "colonial" }]
+  - id: "es-2577"
+    target: "la dinastía"
+    ipa: "la dinasˈtia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "dinastía", base: "dinastía" }]
+    examples:
+      - target: "La dinastía gobernó mucho tiempo."
+        ipa: "la dinasˈtia ɡobeɾˈno ˈmutʃo ˈtjempo"
+        bases: [{ word: "La", base: "la" }, { word: "dinastía", base: "dinastía" }, { word: "gobernó", ref: "es-2294" }, { word: "mucho", ref: "es-0053" }, { word: "tiempo", base: "tiempo" }]
+      - target: "Es de una dinastía antigua."
+        ipa: "es de ˈuna dinasˈtia anˈtiɡwa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "una", base: "una" }, { word: "dinastía", base: "dinastía" }, { word: "antigua", ref: "es-1804" }]
+  - id: "es-2578"
+    target: "el palacio"
+    ipa: "el paˈlaθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "palacio", base: "palacio" }]
+    examples:
+      - target: "El palacio es muy grande."
+        ipa: "el paˈlaθjo es mwi ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "palacio", base: "palacio" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "Visito el palacio en verano."
+        ipa: "biˈsito el paˈlaθjo en beˈɾano"
+        bases: [{ word: "Visito", ref: "es-0787" }, { word: "el", base: "el" }, { word: "palacio", base: "palacio" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]
+  - id: "es-2579"
+    target: "el templo"
+    ipa: "el ˈtemplo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "templo", base: "templo" }]
+    examples:
+      - target: "El templo es muy antiguo."
+        ipa: "el ˈtemplo es mwi anˈtiɡwo"
+        bases: [{ word: "El", base: "el" }, { word: "templo", base: "templo" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "antiguo", ref: "es-1804" }]
+      - target: "Visitamos un templo romano."
+        ipa: "bisiˈtamos un ˈtemplo roˈmano"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "un", base: "un" }, { word: "templo", base: "templo" }, { word: "romano", base: "romano" }]
+  - id: "es-2580"
+    target: "el patrimonio"
+    ipa: "el patɾiˈmonjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "patrimonio", base: "patrimonio" }]
+    examples:
+      - target: "El patrimonio es importante."
+        ipa: "el patɾiˈmonjo es impoɾˈtante"
+        bases: [{ word: "El", base: "el" }, { word: "patrimonio", base: "patrimonio" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Cuidamos el patrimonio de la ciudad."
+        ipa: "kwiˈdamos el patɾiˈmonjo de la θjuˈdad"
+        bases: [{ word: "Cuidamos", ref: "es-1487" }, { word: "el", base: "el" }, { word: "patrimonio", base: "patrimonio" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2581"
+    target: "la tradición"
+    ipa: "la tɾadiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tradición", base: "tradición" }]
+    examples:
+      - target: "La tradición es muy antigua."
+        ipa: "la tɾadiˈθjon es mwi anˈtiɡwa"
+        bases: [{ word: "La", base: "la" }, { word: "tradición", base: "tradición" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "antigua", ref: "es-1804" }]
+      - target: "Es una tradición familiar."
+        ipa: "es ˈuna tɾadiˈθjon famiˈljaɾ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "tradición", base: "tradición" }, { word: "familiar", base: "familiar" }]
+  - id: "es-2582"
+    target: "el descubrimiento"
+    ipa: "el deskubɾiˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "descubrimiento", base: "descubrimiento" }]
+    examples:
+      - target: "El descubrimiento fue en el mar."
+        ipa: "el deskubɾiˈmjento fwe en el maɾ"
+        bases: [{ word: "El", base: "el" }, { word: "descubrimiento", base: "descubrimiento" }, { word: "fue", base: "fue" }, { word: "en", base: "en" }, { word: "mar", ref: "es-1753" }]
+      - target: "Es un gran descubrimiento."
+        ipa: "es un ɡɾan deskubɾiˈmjento"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "gran", ref: "es-0031" }, { word: "descubrimiento", base: "descubrimiento" }]
+  - id: "es-2583"
+    target: "el explorador"
+    ipa: "el eksploɾaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "explorador", base: "explorador" }]
+    examples:
+      - target: "El explorador viaja al sur."
+        ipa: "el eksploɾaˈdoɾ ˈbjaxa al suɾ"
+        bases: [{ word: "El", base: "el" }, { word: "explorador", base: "explorador" }, { word: "viaja", ref: "es-1691" }, { word: "al", base: "al" }, { word: "sur", ref: "es-0712" }]
+      - target: "La exploradora descubre una isla."
+        ipa: "la eksploɾaˈdoɾa desˈkubɾe ˈuna ˈisla"
+        bases: [{ word: "La", base: "la" }, { word: "exploradora", base: "explorador" }, { word: "descubre", base: "descubrir" }, { word: "una", base: "una" }, { word: "isla", ref: "es-1755" }]
+  - id: "es-2584"
+    target: "conquistar"
+    ipa: "konkisˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "conquistar", base: "conquistar" }]
+    examples:
+      - target: "Conquistan la ciudad."
+        ipa: "konˈkistan la θjuˈdad"
+        bases: [{ word: "Conquistan", base: "conquistar" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Conquistó a todos con su música."
+        ipa: "konkisˈto a ˈtodos kon su ˈmusika"
+        bases: [{ word: "Conquistó", base: "conquistar" }, { word: "a", base: "a" }, { word: "todos", ref: "es-0134" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "música", ref: "es-2504" }]
+  - id: "es-2585"
+    target: "luchar"
+    ipa: "luˈtʃaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "luchar", base: "luchar" }]
+    examples:
+      - target: "Luchamos por la libertad."
+        ipa: "luˈtʃamos poɾ la libeɾˈtad"
+        bases: [{ word: "Luchamos", base: "luchar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "libertad", base: "libertad" }]
+      - target: "Luchan en la guerra."
+        ipa: "ˈlutʃan en la ˈɡera"
+        bases: [{ word: "Luchan", base: "luchar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "guerra", ref: "es-2559" }]
+  - id: "es-2586"
+    target: "vencer"
+    ipa: "benˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "vencer", base: "vencer" }]
+    examples:
+      - target: "Vencemos al enemigo."
+        ipa: "benˈθemos al eneˈmiɡo"
+        bases: [{ word: "Vencemos", base: "vencer" }, { word: "al", base: "al" }, { word: "enemigo", base: "enemigo" }]
+      - target: "Venzo el miedo."
+        ipa: "ˈbenθo el ˈmjedo"
+        bases: [{ word: "Venzo", base: "vencer" }, { word: "el", base: "el" }, { word: "miedo", ref: "es-1994" }]
+  - id: "es-2587"
+    target: "derrotar"
+    ipa: "deroˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "derrotar", base: "derrotar" }]
+    examples:
+      - target: "Derrotan al ejército."
+        ipa: "deˈrotan al eˈxeɾθito"
+        bases: [{ word: "Derrotan", base: "derrotar" }, { word: "al", base: "al" }, { word: "ejército", ref: "es-2563" }]
+      - target: "Derroto al equipo rival."
+        ipa: "deˈroto al eˈkipo riˈbal"
+        bases: [{ word: "Derroto", base: "derrotar" }, { word: "al", base: "al" }, { word: "equipo", ref: "es-1412" }, { word: "rival", base: "rival" }]
+  - id: "es-2588"
+    target: "morir"
+    ipa: "moˈɾiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "morir", base: "morir" }]
+    examples:
+      - target: "El rey muere en el palacio."
+        ipa: "el rej ˈmweɾe en el paˈlaθjo"
+        bases: [{ word: "El", base: "el" }, { word: "rey", ref: "es-2555" }, { word: "muere", base: "morir" }, { word: "en", base: "en" }, { word: "palacio", ref: "es-2578" }]
+      - target: "Muchos soldados murieron."
+        ipa: "ˈmutʃos solˈdados muˈɾjeɾon"
+        bases: [{ word: "Muchos", ref: "es-0053" }, { word: "soldados", ref: "es-2564" }, { word: "murieron", base: "morir" }]
+  - id: "es-2589"
+    target: "nacer"
+    ipa: "naˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "nacer", base: "nacer" }]
+    examples:
+      - target: "Nací en Sevilla."
+        ipa: "naˈθi en seˈbiʝa"
+        bases: [{ word: "Nací", base: "nacer" }, { word: "en", base: "en" }, { word: "Sevilla", ref: "es-1921" }]
+      - target: "El príncipe nace en primavera."
+        ipa: "el ˈpɾinθipe ˈnaθe en pɾimaˈbeɾa"
+        bases: [{ word: "El", base: "el" }, { word: "príncipe", ref: "es-2558" }, { word: "nace", base: "nacer" }, { word: "en", base: "en" }, { word: "primavera", ref: "es-0981" }]
+  - id: "es-2590"
+    target: "fundar"
+    ipa: "funˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "fundar", base: "fundar" }]
+    examples:
+      - target: "Fundaron la ciudad en el siglo doce."
+        ipa: "funˈdaɾon la θjuˈdad en el ˈsiɡlo ˈdoθe"
+        bases: [{ word: "Fundaron", base: "fundar" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "siglo", ref: "es-2567" }, { word: "doce", ref: "es-0216" }]
+      - target: "Fundo una empresa nueva."
+        ipa: "ˈfundo ˈuna emˈpɾesa ˈnweba"
+        bases: [{ word: "Fundo", base: "fundar" }, { word: "una", base: "una" }, { word: "empresa", ref: "es-0514" }, { word: "nueva", ref: "es-0035" }]
+  - id: "es-2591"
+    target: "construir"
+    ipa: "konsˈtɾwiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "construir", base: "construir" }]
+    examples:
+      - target: "Construyeron el castillo."
+        ipa: "konstɾuˈʝeɾon el kasˈtiʝo"
+        bases: [{ word: "Construyeron", base: "construir" }, { word: "el", base: "el" }, { word: "castillo", ref: "es-2561" }]
+      - target: "Construyo la casa con piedra."
+        ipa: "konsˈtɾuʝo la ˈkasa kon ˈpjedɾa"
+        bases: [{ word: "Construyo", base: "construir" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "con", base: "con" }, { word: "piedra", ref: "es-1762" }]
+  - id: "es-2592"
+    target: "heredar"
+    ipa: "eɾeˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "heredar", base: "heredar" }]
+    examples:
+      - target: "Hereda el trono de su padre."
+        ipa: "eˈɾeda el ˈtɾono de su ˈpadɾe"
+        bases: [{ word: "Hereda", base: "heredar" }, { word: "el", base: "el" }, { word: "trono", base: "trono" }, { word: "de", base: "de" }, { word: "su", ref: "es-0131" }, { word: "padre", ref: "es-0159" }]
+      - target: "Heredamos la casa de la abuela."
+        ipa: "eɾeˈdamos la ˈkasa de la aˈbwela"
+        bases: [{ word: "Heredamos", base: "heredar" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "de", base: "de" }, { word: "abuela", ref: "es-0166" }]

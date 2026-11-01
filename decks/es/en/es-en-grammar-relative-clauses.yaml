@@ -1,0 +1,22 @@
+schema: 1
+id: "es-en-grammar-relative-clauses"
+kind: "layer"
+core: "es-grammar-relative-clauses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative clauses: who, which, where"
+license: "CC-BY-SA-4.0"
+description: "A relative clause adds a detail about a noun and joins to it with que, quien, donde or cuyo: el libro que leo, the book I read; la ciudad donde vivo, the city where I live. Que is the most common. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Relative pronouns after a noun"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "que": "que: the thing or person (most common)", "quien": "quien: a person, after a preposition", "donde": "donde: a place", "cuyo": "cuyo: whose" }
+  entries:
+    "persona": "person"
+    "tienda": "shop"
+    "ciudad": "city"
+    "amigo": "friend"
+    "libro": "book"
+    "casa": "house"
+    "profesor": "teacher"
+  notes: "Que works for people and things: el libro que leo. Quien is for a person after a preposition: la persona con quien hablo, the person I talk to. Donde is for a place: la casa donde vivo. Cuyo agrees with the noun that follows it, not with the noun before: cuya casa, cuyos amigos. A null cell means the pronoun is not used with that noun."

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-relative-clauses"
+name: "Reading: shop reviews and people"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that describe people, places and things with relative clauses. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-shop-reviews"
+    title: "Short reviews of a shop"
+    theme: "services"
+    sentences:
+      - text: "La tienda que está en la calle principal es muy buena."
+      - text: "El dependiente, quien trabaja los sábados, es muy amable."
+      - text: "La cajera, cuya sonrisa es bonita, nos ayuda."
+      - text: "Es la tienda donde compro el pan."
+    questions:
+      - id: "es-2309"
+        prompt: { en: "Which shop is very good?" }
+        options:
+          - { en: "The one on the main street" }
+          - { en: "The one by the sea" }
+          - { en: "The one at the station" }
+        answer: 1
+      - id: "es-2310"
+        prompt: { en: "When does the assistant work?" }
+        options:
+          - { en: "On Saturdays" }
+          - { en: "On Sundays" }
+          - { en: "Every day" }
+        answer: 1
+      - id: "es-2311"
+        prompt: { en: "Where does the writer buy bread?" }
+        options:
+          - { en: "In this shop" }
+          - { en: "At the bakery" }
+          - { en: "At the market" }
+        answer: 1
+  - id: "es-the-man-who-came"
+    title: "The man who came"
+    theme: "services"
+    sentences:
+      - text: "El hombre que llegó ayer es mi tío."
+      - text: "La mujer con quien hablo es de Chile."
+      - text: "La ciudad donde vivo tiene un río."
+      - text: "El libro que leí era muy largo."
+    questions:
+      - id: "es-2312"
+        prompt: { en: "Who arrived yesterday?" }
+        options:
+          - { en: "The uncle" }
+          - { en: "The neighbour" }
+          - { en: "The teacher" }
+        answer: 1
+      - id: "es-2313"
+        prompt: { en: "Where is the woman from?" }
+        options:
+          - { en: "Chile" }
+          - { en: "Peru" }
+          - { en: "Spain" }
+        answer: 1
+      - id: "es-2314"
+        prompt: { en: "What did the writer read?" }
+        options:
+          - { en: "A long book" }
+          - { en: "A short letter" }
+          - { en: "A newspaper" }
+        answer: 1

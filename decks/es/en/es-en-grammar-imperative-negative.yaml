@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-imperative-negative"
+kind: "layer"
+core: "es-grammar-imperative-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Negative commands: don't do that"
+license: "CC-BY-SA-4.0"
+description: "A negative command is no and the present subjunctive: no hables, do not speak (to a friend); no hable, do not speak (to a stranger, formal). The forms come from the same stems as the subjunctive, and an object pronoun goes between no and the verb: no lo hagas, do not do it. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Negative commands by person"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "tú": "you (to a friend)", "usted": "you (formal)", "nosotros": "let us", "vosotros": "you all (Spain)" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "decir": "to say"
+    "hacer": "to do; to make"
+    "ir": "to go"
+    "poner": "to put"
+    "tener": "to have"
+    "venir": "to come"
+    "salir": "to go out"
+  notes: "Negative commands take the present subjunctive after no: tú no hables, usted no hable, nosotros no hablemos, vosotros no habléis. The irregular stems of the subjunctive stay: no digas, no hagas, no vayas, no pongas, no tengas, no vengas, no salgas. Object pronouns go between no and the verb: no lo hagas."

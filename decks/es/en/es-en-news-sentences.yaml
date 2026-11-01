@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-news-sentences"
+kind: "layer"
+core: "es-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: news"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the news and the media, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2092":
+    native: "The journalist writes an article."
+    bases: { "El": "the", "un": "a" }
+    confusables: { "reportaje": { why: "Reportaje is a longer feature, not one article." }, "entrevista": { why: "Entrevista is a set of questions to a person." } }
+  "es-2093":
+    native: "The poll says that many want to change the law."
+    bases: { "La": "the", "que": "that" }
+    confusables: { "opinion": { why: "Opinión is one person's view, not a poll of many." }, "rumor": { why: "Rumor is a story with no proof." } }
+  "es-2094":
+    native: "The president announces a new election."
+    bases: { "El": "the", "una": "a" }
+    confusables: { "politico": { why: "Político is a politician, the person in the job." }, "comunicado": { why: "Comunicado is a written statement, a document." } }
+  "es-2095":
+    native: "There is a fire and the radio broadcasts a warning."
+    bases: { "Hay": "there is; there are", "un": "a", "la": "the", "aviso": "warning; notice" }
+    confusables: { "suceso": { why: "Suceso is an event, the general word." }, "emision": { why: "Emisión is a broadcast, the programme itself." } }
+  "es-2096":
+    native: "I read the headline on the front page."
+    bases: { "el": "the", "de": "of", "la": "the" }
+    confusables: { "columna": { why: "Columna is a regular column written by one author." }, "editorial": { why: "Editorial is the paper's own view." } }
+  "es-2097":
+    native: "The press publishes the news."
+    bases: { "La": "the" }
+    confusables: { "publicidad": { why: "Publicidad is advertising, the paid adverts." }, "noticiero": { why: "Noticiero is a news programme on screen." } }

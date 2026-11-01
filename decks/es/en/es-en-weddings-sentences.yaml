@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-weddings-sentences"
+kind: "layer"
+core: "es-weddings-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: weddings"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about weddings and families, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2673":
+    native: "The bride and groom marry in the church."
+    bases: { "La": "the", "el": "the", "se": "(reflexive) oneself", "casan": "to marry", "en": "in" }
+    confusables: { "ceremonia": { why: "Ceremonia is the formal event, the ritual itself." }, "boda": { why: "Boda is the wedding, the whole event." } }
+  "es-2674":
+    native: "The best man toasts the couple."
+    bases: { "El": "the", "por": "for", "los": "the" }
+    confusables: { "madrina": { why: "Madrina is the bridesmaid, the other role." }, "testigo": { why: "Testigo is a witness, who signs the papers." } }
+  "es-2675":
+    native: "We receive an invitation to the banquet."
+    bases: { "una": "a", "para": "for", "el": "the" }
+    confusables: { "anillo": { why: "Anillo is a ring, a jewellery item." }, "alianza": { why: "Alianza is the wedding ring, the couple's ring." } }
+  "es-2676":
+    native: "The bride carries a bouquet and wears a veil."
+    bases: { "La": "the", "un": "a" }
+    confusables: { "vestido": { why: "Vestido is a dress, the clothing." }, "fotografo": { why: "Fotógrafo is the photographer, who takes pictures." } }
+  "es-2677":
+    native: "My son-in-law and daughter-in-law come to the wedding."
+    bases: { "a": "to", "la": "the" }
+    confusables: { "primo": { why: "Primo is a cousin, a different family link." }, "cunado": { why: "Cuñado is a brother-in-law, another family link." } }
+  "es-2678":
+    native: "We spend the honeymoon at the sea."
+    bases: { "la": "the", "de": "of", "en": "in", "el": "the" }
+    confusables: { "pareja": { why: "Pareja is a couple, the two people together." }, "divorcio": { why: "Divorcio is a divorce, the end of a marriage." } }

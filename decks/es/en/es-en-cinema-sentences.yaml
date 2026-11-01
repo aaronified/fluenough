@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-cinema-sentences"
+kind: "layer"
+core: "es-cinema-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: cinema"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about films and the cinema, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2485":
+    native: "We watch a horror film in the screen."
+    bases: { "una": "a", "de": "of", "en": "in", "la": "the" }
+    confusables: { "thriller": { why: "Thriller is a suspense film, close in genre." }, "drama": { why: "Drama is a serious film, a different kind." } }
+  "es-2486":
+    native: "The script and the actors are good."
+    bases: { "El": "the", "los": "the" }
+    confusables: { "personaje": { why: "Personaje is a character, one role in the story." }, "resena": { why: "Reseña is a review, written about the film." } }
+  "es-2487":
+    native: "The audience applauds the lead."
+    bases: { "El": "the", "aplaude": "to applaud", "al": "to the" }
+    confusables: { "espectador": { why: "Espectador is one viewer, not the whole audience." }, "premio": { why: "Premio is a prize, given later at a ceremony." } }
+  "es-2488":
+    native: "I watch a documentary at the festival."
+    bases: { "un": "a", "en": "in", "el": "the" }
+    confusables: { "pelicula": { why: "Película is a film, the general word." }, "animacion": { why: "Animación is animation, drawn or made by computer." } }
+  "es-2489":
+    native: "The film has subtitles in Spanish."
+    bases: { "La": "the", "en": "in" }
+    confusables: { "doblar": { why: "Doblar is to dub, a different way to change the language." }, "episodio": { why: "Episodio is one part of a series." } }
+  "es-2490":
+    native: "The premiere is on the cinema listings in the city."
+    bases: { "El": "the", "en": "in", "la": "the", "de": "of" }
+    confusables: { "escena": { why: "Escena is one scene, a small part of the film." }, "comedia": { why: "Comedia is a comedy, a genre." } }

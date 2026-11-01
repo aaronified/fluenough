@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-verbs-5"
+name: "Reading: a company's story and a long journey"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a newspaper feature on a company, and an account of a journey in order. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-newspaper-feature"
+    title: "A company's story"
+    theme: "verbs-5"
+    sentences:
+      - text: "La empresa comenzó en un garaje hace diez años."
+      - text: "Al principio, los clientes no llegaron, pero ella intentó otra vez."
+      - text: "Hoy, la compañía produce mil productos al año."
+      - text: "Dice que el fracaso también enseña."
+    questions:
+      - id: "es-3113"
+        prompt: { en: "Where did the company start?" }
+        options:
+          - { en: "In a garage" }
+          - { en: "In an office" }
+          - { en: "In a shop" }
+        answer: 1
+      - id: "es-3114"
+        prompt: { en: "What happened at first?" }
+        options:
+          - { en: "Customers did not come" }
+          - { en: "The shop was too big" }
+          - { en: "The money was lost" }
+        answer: 1
+      - id: "es-3115"
+        prompt: { en: "How many products are made a year?" }
+        options:
+          - { en: "A thousand" }
+          - { en: "A hundred" }
+          - { en: "Ten thousand" }
+        answer: 1
+  - id: "es-what-happened-next"
+    title: "What happened next"
+    theme: "verbs-5"
+    sentences:
+      - text: "Primero salimos de casa, luego llegamos al puerto."
+      - text: "Después, el barco partió a las ocho."
+      - text: "Al final, el viaje resultó muy largo."
+      - text: "Nos separamos en el puerto y nos reunimos al día siguiente."
+    questions:
+      - id: "es-3116"
+        prompt: { en: "What did they do first?" }
+        options:
+          - { en: "Left home" }
+          - { en: "Ate lunch" }
+          - { en: "Slept" }
+        answer: 1
+      - id: "es-3117"
+        prompt: { en: "When did the boat leave?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 1
+      - id: "es-3118"
+        prompt: { en: "What happened at the port?" }
+        options:
+          - { en: "They separated and met the next day" }
+          - { en: "They stayed together" }
+          - { en: "They went home" }
+        answer: 1

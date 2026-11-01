@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-verbs-4-sentences"
+kind: "layer"
+core: "es-verbs-4-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: story actions"
+license: "CC-BY-SA-4.0"
+description: "Six sentences that tell a story, with the verbs each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2927":
+    native: "I discover a secret and I hide."
+    bases: { "un": "a", "me": "to me" }
+    confusables: { "ocultar": { why: "Ocultar is to keep something out of sight, another verb of hiding." }, "encontrar": { why: "Encontrar is to find something by looking." } }
+  "es-2928":
+    native: "The fox escapes from the dragon."
+    bases: { "El": "the", "del": "of" }
+    confusables: { "huir": { why: "Huir is to flee, a close word for running away." }, "perseguir": { why: "Perseguir is to chase, the action of the dragon." } }
+  "es-2929":
+    native: "They shout from the window, but whisper on entering."
+    bases: { "desde": "from", "la": "the", "al": "to the" }
+    confusables: { "gritar": { why: "Gritar is to shout, the loud opposite." }, "hablar": { why: "Hablar is to speak in a normal voice." } }
+  "es-2930":
+    native: "I push the door and fall to the ground."
+    bases: { "la": "the", "al": "to the" }
+    confusables: { "pegar": { why: "Pegar is to hit or stick, not to push." }, "correr": { why: "Correr is to run, a different movement." } }
+  "es-2931":
+    native: "It dawns and the dragon flees."
+    bases: { "el": "the" }
+    confusables: { "oscurecer": { why: "Oscurecer is to get dark, the opposite." }, "anochecer": { why: "Anochecer is to get dark in the evening." } }
+  "es-2932":
+    native: "I observe the treasure from the cave."
+    bases: { "el": "the", "desde": "from", "la": "the" }
+    confusables: { "mirar": { why: "Mirar is to look at something, a simpler word." }, "abrazar": { why: "Abrazar is to hug, a different action." } }

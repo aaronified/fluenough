@@ -1,0 +1,603 @@
+schema: 1
+id: "es-feelings"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "feelings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1990"
+    target: "el sentimiento"
+    ipa: "el sentiˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sentimiento", base: "sentimiento" }]
+    examples:
+      - target: "Tengo un sentimiento de paz."
+        ipa: "ˈtenɡo un sentiˈmjento de paθ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "sentimiento", base: "sentimiento" }, { word: "de", base: "de" }, { word: "paz", base: "paz" }]
+      - target: "Los sentimientos son importantes."
+        ipa: "los sentiˈmjentos son impoɾˈtantes"
+        bases: [{ word: "Los", base: "los" }, { word: "sentimientos", base: "sentimiento" }, { word: "son", ref: "es-0022" }, { word: "importantes", ref: "es-0435" }]
+  - id: "es-1991"
+    target: "la emoción"
+    ipa: "la emoˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "emoción", base: "emoción" }]
+    examples:
+      - target: "Siento mucha emoción por el viaje."
+        ipa: "ˈsjento ˈmutʃa emoˈθjon poɾ el ˈbjaxe"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "mucha", ref: "es-0053" }, { word: "emoción", base: "emoción" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+      - target: "La emoción del partido es grande."
+        ipa: "la emoˈθjon del paɾˈtido es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "emoción", base: "emoción" }, { word: "del", base: "del" }, { word: "partido", base: "partido" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1992"
+    target: "la alegría"
+    ipa: "la aleˈɡɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alegría", base: "alegría" }]
+    examples:
+      - target: "Tengo mucha alegría hoy."
+        ipa: "ˈtenɡo ˈmutʃa aleˈɡɾia oj"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "alegría", base: "alegría" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La alegría de los niños es grande."
+        ipa: "la aleˈɡɾia de los ˈniɲos es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "alegría", base: "alegría" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1993"
+    target: "la tristeza"
+    ipa: "la tɾisˈteθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tristeza", base: "tristeza" }]
+    examples:
+      - target: "Siento tristeza por la noticia."
+        ipa: "ˈsjento tɾisˈteθa poɾ la noˈtiθja"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "tristeza", base: "tristeza" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noticia", base: "noticia" }]
+      - target: "La tristeza no dura para siempre."
+        ipa: "la tɾisˈteθa no ˈduɾa ˈpaɾa ˈsjempɾe"
+        bases: [{ word: "La", base: "la" }, { word: "tristeza", base: "tristeza" }, { word: "no", ref: "es-0043" }, { word: "dura", ref: "es-0851" }, { word: "para", base: "para" }, { word: "siempre", ref: "es-0320" }]
+  - id: "es-1994"
+    target: "el miedo"
+    ipa: "el ˈmjedo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "miedo", base: "miedo" }]
+    examples:
+      - target: "Tengo miedo a la oscuridad."
+        ipa: "ˈtenɡo ˈmjedo a la oskuɾiˈdad"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "miedo", base: "miedo" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "oscuridad", base: "oscuridad" }]
+      - target: "El miedo es normal."
+        ipa: "el ˈmjedo es noɾˈmal"
+        bases: [{ word: "El", base: "el" }, { word: "miedo", base: "miedo" }, { word: "es", ref: "es-0022" }, { word: "normal", base: "normal" }]
+  - id: "es-1995"
+    target: "la preocupación"
+    ipa: "la pɾeokupaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "preocupación", base: "preocupación" }]
+    examples:
+      - target: "Tengo una gran preocupación."
+        ipa: "ˈtenɡo ˈuna ɡɾan pɾeokupaˈθjon"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "gran", ref: "es-0031" }, { word: "preocupación", base: "preocupación" }]
+      - target: "La preocupación no ayuda."
+        ipa: "la pɾeokupaˈθjon no aˈʝuda"
+        bases: [{ word: "La", base: "la" }, { word: "preocupación", base: "preocupación" }, { word: "no", ref: "es-0043" }, { word: "ayuda", ref: "es-0303" }]
+  - id: "es-1996"
+    target: "el enfado"
+    ipa: "el enˈfado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "enfado", base: "enfado" }]
+    examples:
+      - target: "Tiene un enfado grande."
+        ipa: "ˈtjene un enˈfado ˈɡɾande"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "enfado", base: "enfado" }, { word: "grande", ref: "es-0031" }]
+      - target: "El enfado pasa rápido."
+        ipa: "el enˈfado ˈpasa ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "enfado", base: "enfado" }, { word: "pasa", ref: "es-1533" }, { word: "rápido", ref: "es-0329" }]
+  - id: "es-1997"
+    target: "la sorpresa"
+    ipa: "la soɾˈpɾesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sorpresa", base: "sorpresa" }]
+    examples:
+      - target: "Es una sorpresa muy agradable."
+        ipa: "es ˈuna soɾˈpɾesa mwi aɡɾaˈdable"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "sorpresa", base: "sorpresa" }, { word: "muy", ref: "es-0330" }, { word: "agradable", base: "agradable" }]
+      - target: "Tengo una sorpresa para ti."
+        ipa: "ˈtenɡo ˈuna soɾˈpɾesa ˈpaɾa ti"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "sorpresa", base: "sorpresa" }, { word: "para", base: "para" }, { word: "ti", base: "ti" }]
+  - id: "es-1998"
+    target: "el amor"
+    ipa: "el aˈmoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "amor", base: "amor" }]
+    examples:
+      - target: "El amor es importante."
+        ipa: "el aˈmoɾ es impoɾˈtante"
+        bases: [{ word: "El", base: "el" }, { word: "amor", base: "amor" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Siento amor por mi familia."
+        ipa: "ˈsjento aˈmoɾ poɾ mi faˈmilja"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "amor", base: "amor" }, { word: "por", base: "por" }, { word: "mi", ref: "es-0129" }, { word: "familia", ref: "es-0158" }]
+  - id: "es-1999"
+    target: "el odio"
+    ipa: "el ˈodjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "odio", base: "odio" }]
+    examples:
+      - target: "El odio es un sentimiento triste."
+        ipa: "el ˈodjo es un sentiˈmjento ˈtɾiste"
+        bases: [{ word: "El", base: "el" }, { word: "odio", base: "odio" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "sentimiento", ref: "es-1990" }, { word: "triste", ref: "es-0419" }]
+      - target: "No tengo odio hacia nadie."
+        ipa: "no ˈtenɡo ˈodjo ˈaθja ˈnadje"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "odio", base: "odio" }, { word: "hacia", base: "hacia" }, { word: "nadie", ref: "es-0133" }]
+  - id: "es-2000"
+    target: "la vergüenza"
+    ipa: "la beɾˈɡwenθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vergüenza", base: "vergüenza" }]
+    examples:
+      - target: "Siento vergüenza por el error."
+        ipa: "ˈsjento beɾˈɡwenθa poɾ el eˈroɾ"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "vergüenza", base: "vergüenza" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "error", base: "error" }]
+      - target: "Tiene vergüenza de hablar."
+        ipa: "ˈtjene beɾˈɡwenθa de aˈblaɾ"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "vergüenza", base: "vergüenza" }, { word: "de", base: "de" }, { word: "hablar", ref: "es-0027" }]
+  - id: "es-2001"
+    target: "el orgullo"
+    ipa: "el oɾˈɡuʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "orgullo", base: "orgullo" }]
+    examples:
+      - target: "Siento orgullo de mis hijos."
+        ipa: "ˈsjento oɾˈɡuʝo de mis ˈixos"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "orgullo", base: "orgullo" }, { word: "de", base: "de" }, { word: "mis", ref: "es-0129" }, { word: "hijos", ref: "es-0163" }]
+      - target: "El orgullo es bueno cuando es justo."
+        ipa: "el oɾˈɡuʝo es ˈbweno ˈkwando es ˈxusto"
+        bases: [{ word: "El", base: "el" }, { word: "orgullo", base: "orgullo" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }, { word: "cuando", base: "cuando" }, { word: "justo", base: "justo" }]
+  - id: "es-2002"
+    target: "la ilusión"
+    ipa: "la iluˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ilusión", base: "ilusión" }]
+    examples:
+      - target: "Tengo mucha ilusión por el viaje."
+        ipa: "ˈtenɡo ˈmutʃa iluˈsjon poɾ el ˈbjaxe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "ilusión", base: "ilusión" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+      - target: "La ilusión de los niños es bonita."
+        ipa: "la iluˈsjon de los ˈniɲos es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "ilusión", base: "ilusión" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+  - id: "es-2003"
+    target: "la esperanza"
+    ipa: "la espeˈɾanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "esperanza", base: "esperanza" }]
+    examples:
+      - target: "Tengo esperanza en el futuro."
+        ipa: "ˈtenɡo espeˈɾanθa en el fuˈtuɾo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "esperanza", base: "esperanza" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "futuro", base: "futuro" }]
+      - target: "La esperanza es importante."
+        ipa: "la espeˈɾanθa es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "esperanza", base: "esperanza" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-2004"
+    target: "la calma"
+    ipa: "la ˈkalma"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "calma", base: "calma" }]
+    examples:
+      - target: "Necesito calma."
+        ipa: "neθeˈsito ˈkalma"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "calma", base: "calma" }]
+      - target: "Respiro con calma."
+        ipa: "resˈpiɾo kon ˈkalma"
+        bases: [{ word: "Respiro", ref: "es-0755" }, { word: "con", base: "con" }, { word: "calma", base: "calma" }]
+  - id: "es-2005"
+    target: "la felicidad"
+    ipa: "la feliθiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "felicidad", base: "felicidad" }]
+    examples:
+      - target: "La felicidad está en la familia."
+        ipa: "la feliθiˈdad esˈta en la faˈmilja"
+        bases: [{ word: "La", base: "la" }, { word: "felicidad", base: "felicidad" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "familia", ref: "es-0158" }]
+      - target: "Busco la felicidad."
+        ipa: "ˈbusko la feliθiˈdad"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "la", base: "la" }, { word: "felicidad", base: "felicidad" }]
+  - id: "es-2006"
+    target: "la soledad"
+    ipa: "la soleˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "soledad", base: "soledad" }]
+    examples:
+      - target: "La soledad es triste."
+        ipa: "la soleˈdad es ˈtɾiste"
+        bases: [{ word: "La", base: "la" }, { word: "soledad", base: "soledad" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+      - target: "Vivo con soledad desde que se fue."
+        ipa: "ˈbibo kon soleˈdad ˈdesde ke se fwe"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "con", base: "con" }, { word: "soledad", base: "soledad" }, { word: "desde", base: "desde" }, { word: "que", base: "que" }, { word: "se", base: "se" }, { word: "fue", base: "fue" }]
+  - id: "es-2007"
+    target: "la culpa"
+    ipa: "la ˈkulpa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "culpa", base: "culpa" }]
+    examples:
+      - target: "No tengo culpa de nada."
+        ipa: "no ˈtenɡo ˈkulpa de ˈnada"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "culpa", base: "culpa" }, { word: "de", base: "de" }, { word: "nada", ref: "es-0360" }]
+      - target: "Siento culpa por no llamar."
+        ipa: "ˈsjento ˈkulpa poɾ no ʝaˈmaɾ"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "culpa", base: "culpa" }, { word: "por", base: "por" }, { word: "no", ref: "es-0043" }, { word: "llamar", ref: "es-0302" }]
+  - id: "es-2008"
+    target: "la gratitud"
+    ipa: "la ɡɾatiˈtud"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "gratitud", base: "gratitud" }]
+    examples:
+      - target: "Siento gratitud por tu ayuda."
+        ipa: "ˈsjento ɡɾatiˈtud poɾ tu aˈʝuda"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "gratitud", base: "gratitud" }, { word: "por", base: "por" }, { word: "tu", ref: "es-0130" }, { word: "ayuda", ref: "es-0303" }]
+      - target: "La gratitud es un buen sentimiento."
+        ipa: "la ɡɾatiˈtud es un bwen sentiˈmjento"
+        bases: [{ word: "La", base: "la" }, { word: "gratitud", base: "gratitud" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "buen", ref: "es-0033" }, { word: "sentimiento", ref: "es-1990" }]
+  - id: "es-2009"
+    target: "la pena"
+    ipa: "la ˈpena"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pena", base: "pena" }]
+    examples:
+      - target: "Siento pena por la historia."
+        ipa: "ˈsjento ˈpena poɾ la isˈtoɾja"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "pena", base: "pena" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "historia", base: "historia" }]
+      - target: "Es una pena que no vengas."
+        ipa: "es ˈuna ˈpena ke no ˈbenɡas"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "pena", base: "pena" }, { word: "que", base: "que" }, { word: "no", ref: "es-0043" }, { word: "vengas", ref: "es-1632" }]
+  - id: "es-2010"
+    target: "el aburrimiento"
+    ipa: "el aburiˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aburrimiento", base: "aburrimiento" }]
+    examples:
+      - target: "El aburrimiento es malo."
+        ipa: "el aburiˈmjento es ˈmalo"
+        bases: [{ word: "El", base: "el" }, { word: "aburrimiento", base: "aburrimiento" }, { word: "es", ref: "es-0022" }, { word: "malo", ref: "es-0034" }]
+      - target: "Siento aburrimiento en la clase."
+        ipa: "ˈsjento aburiˈmjento en la ˈklase"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "aburrimiento", base: "aburrimiento" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-2011"
+    target: "la confusión"
+    ipa: "la konfuˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "confusión", base: "confusión" }]
+    examples:
+      - target: "Hay confusión en la sala."
+        ipa: "aj konfuˈsjon en la ˈsala"
+        bases: [{ word: "Hay", base: "haber" }, { word: "confusión", base: "confusión" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "sala", base: "sala" }]
+      - target: "La confusión es normal."
+        ipa: "la konfuˈsjon es noɾˈmal"
+        bases: [{ word: "La", base: "la" }, { word: "confusión", base: "confusión" }, { word: "es", ref: "es-0022" }, { word: "normal", base: "normal" }]
+  - id: "es-2012"
+    target: "alegre"
+    ipa: "aˈleɡɾe"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "alegre", base: "alegre" }]
+    examples:
+      - target: "Mi hermana es muy alegre."
+        ipa: "mi eɾˈmana es mwi aˈleɡɾe"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alegre", base: "alegre" }]
+      - target: "Los niños están alegres."
+        ipa: "los ˈniɲos esˈtan aˈleɡɾes"
+        bases: [{ word: "Los", base: "los" }, { word: "niños", ref: "es-0003" }, { word: "están", ref: "es-0023" }, { word: "alegres", base: "alegre" }]
+  - id: "es-2013"
+    target: "asustado"
+    ipa: "asusˈtado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "asustado", base: "asustado" }]
+    examples:
+      - target: "El niño está asustado."
+        ipa: "el ˈniɲo esˈta asusˈtado"
+        bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "está", ref: "es-0023" }, { word: "asustado", base: "asustado" }]
+      - target: "Estoy asustada por la tormenta."
+        ipa: "esˈtoj asusˈtada poɾ la toɾˈmenta"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "asustada", base: "asustado" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tormenta", ref: "es-1119" }]
+  - id: "es-2014"
+    target: "preocupado"
+    ipa: "pɾeokuˈpado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "preocupado", base: "preocupado" }]
+    examples:
+      - target: "Mi madre está preocupada."
+        ipa: "mi ˈmadɾe esˈta pɾeokuˈpada"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "está", ref: "es-0023" }, { word: "preocupada", base: "preocupado" }]
+      - target: "Estoy preocupado por el examen."
+        ipa: "esˈtoj pɾeokuˈpado poɾ el ekˈsamen"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "preocupado", base: "preocupado" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }]
+  - id: "es-2015"
+    target: "enfadado"
+    ipa: "enfaˈdado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enfadado", base: "enfadado" }]
+    examples:
+      - target: "Mi amigo está enfadado conmigo."
+        ipa: "mi aˈmiɡo esˈta enfaˈdado konˈmiɡo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }, { word: "está", ref: "es-0023" }, { word: "enfadado", base: "enfadado" }, { word: "conmigo", base: "conmigo" }]
+      - target: "El jefe está enfadado."
+        ipa: "el ˈxefe esˈta enfaˈdado"
+        bases: [{ word: "El", base: "el" }, { word: "jefe", ref: "es-0504" }, { word: "está", ref: "es-0023" }, { word: "enfadado", base: "enfadado" }]
+  - id: "es-2016"
+    target: "sorprendido"
+    ipa: "soɾpɾenˈdido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sorprendido", base: "sorprendido" }]
+    examples:
+      - target: "Estoy sorprendido por la noticia."
+        ipa: "esˈtoj soɾpɾenˈdido poɾ la noˈtiθja"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "sorprendido", base: "sorprendido" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noticia", base: "noticia" }]
+      - target: "La profesora está sorprendida."
+        ipa: "la pɾofeˈsoɾa esˈta soɾpɾenˈdida"
+        bases: [{ word: "La", base: "la" }, { word: "profesora", ref: "es-0094" }, { word: "está", ref: "es-0023" }, { word: "sorprendida", base: "sorprendido" }]
+  - id: "es-2017"
+    target: "avergonzado"
+    ipa: "abeɾɡonˈθado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "avergonzado", base: "avergonzado" }]
+    examples:
+      - target: "Estoy avergonzado por el error."
+        ipa: "esˈtoj abeɾɡonˈθado poɾ el eˈroɾ"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "avergonzado", base: "avergonzado" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "error", base: "error" }]
+      - target: "Ella está avergonzada."
+        ipa: "ˈeʝa esˈta abeɾɡonˈθada"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "está", ref: "es-0023" }, { word: "avergonzada", base: "avergonzado" }]
+  - id: "es-2018"
+    target: "orgulloso"
+    ipa: "oɾɡuˈʝoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "orgulloso", base: "orgulloso" }]
+    examples:
+      - target: "Mis padres están orgullosos de mí."
+        ipa: "mis ˈpadɾes esˈtan oɾɡuˈʝosos de mi"
+        bases: [{ word: "Mis", ref: "es-0129" }, { word: "padres", ref: "es-0159" }, { word: "están", ref: "es-0023" }, { word: "orgullosos", base: "orgulloso" }, { word: "de", base: "de" }, { word: "mí", base: "mí" }]
+      - target: "Estoy orgulloso de mi trabajo."
+        ipa: "esˈtoj oɾɡuˈʝoso de mi tɾaˈbaxo"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "orgulloso", base: "orgulloso" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "trabajo", ref: "es-0259" }]
+  - id: "es-2019"
+    target: "emocionado"
+    ipa: "emoθjoˈnado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "emocionado", base: "emocionado" }]
+    examples:
+      - target: "Estoy emocionado por el viaje."
+        ipa: "esˈtoj emoθjoˈnado poɾ el ˈbjaxe"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "emocionado", base: "emocionado" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+      - target: "La niña está emocionada."
+        ipa: "la ˈniɲa esˈta emoθjoˈnada"
+        bases: [{ word: "La", base: "la" }, { word: "niña", ref: "es-0004" }, { word: "está", ref: "es-0023" }, { word: "emocionada", base: "emocionado" }]
+  - id: "es-2020"
+    target: "enamorado"
+    ipa: "enamoˈɾado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enamorado", base: "enamorado" }]
+    examples:
+      - target: "Mi hermano está enamorado."
+        ipa: "mi eɾˈmano esˈta enamoˈɾado"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "está", ref: "es-0023" }, { word: "enamorado", base: "enamorado" }]
+      - target: "Estamos enamorados desde hace un año."
+        ipa: "esˈtamos enamoˈɾados ˈdesde ˈaθe un ˈaɲo"
+        bases: [{ word: "Estamos", ref: "es-0023" }, { word: "enamorados", base: "enamorado" }, { word: "desde", base: "desde" }, { word: "hace", ref: "es-0025" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+  - id: "es-2021"
+    target: "solo"
+    ipa: "ˈsolo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "solo", base: "solo" }]
+    examples:
+      - target: "Estoy solo en casa."
+        ipa: "esˈtoj ˈsolo en ˈkasa"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "solo", base: "solo" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "La abuela vive sola."
+        ipa: "la aˈbwela ˈbibe ˈsola"
+        bases: [{ word: "La", base: "la" }, { word: "abuela", ref: "es-0166" }, { word: "vive", ref: "es-0030" }, { word: "sola", base: "solo" }]
+  - id: "es-2022"
+    target: "aliviado"
+    ipa: "aliˈbjado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "aliviado", base: "aliviado" }]
+    examples:
+      - target: "Estoy aliviada, el examen ha terminado."
+        ipa: "esˈtoj aliˈbjada el ekˈsamen a teɾmiˈnado"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "aliviada", base: "aliviado" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }, { word: "ha", base: "haber" }, { word: "terminado", ref: "es-0521" }]
+      - target: "Estamos aliviados por la noticia."
+        ipa: "esˈtamos aliˈbjados poɾ la noˈtiθja"
+        bases: [{ word: "Estamos", ref: "es-0023" }, { word: "aliviados", base: "aliviado" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noticia", base: "noticia" }]
+  - id: "es-2023"
+    target: "frustrado"
+    ipa: "fɾusˈtɾado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "frustrado", base: "frustrado" }]
+    examples:
+      - target: "Estoy frustrado con el proyecto."
+        ipa: "esˈtoj fɾusˈtɾado kon el pɾoˈʝekto"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "frustrado", base: "frustrado" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "proyecto", ref: "es-1853" }]
+      - target: "Ella está frustrada."
+        ipa: "ˈeʝa esˈta fɾusˈtɾada"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "está", ref: "es-0023" }, { word: "frustrada", base: "frustrado" }]
+  - id: "es-2024"
+    target: "agradecido"
+    ipa: "aɡɾadeˈθido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "agradecido", base: "agradecido" }]
+    examples:
+      - target: "Estoy agradecido por tu ayuda."
+        ipa: "esˈtoj aɡɾadeˈθido poɾ tu aˈʝuda"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "agradecido", base: "agradecido" }, { word: "por", base: "por" }, { word: "tu", ref: "es-0130" }, { word: "ayuda", ref: "es-0303" }]
+      - target: "Estamos agradecidos a los vecinos."
+        ipa: "esˈtamos aɡɾadeˈθidos a los beˈθinos"
+        bases: [{ word: "Estamos", ref: "es-0023" }, { word: "agradecidos", base: "agradecido" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "vecinos", base: "vecino" }]
+  - id: "es-2025"
+    target: "confundido"
+    ipa: "konfunˈdido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "confundido", base: "confundido" }]
+    examples:
+      - target: "Estoy confundido con las instrucciones."
+        ipa: "esˈtoj konfunˈdido kon las instɾukˈθjones"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "confundido", base: "confundido" }, { word: "con", base: "con" }, { word: "las", base: "las" }, { word: "instrucciones", base: "instrucción" }]
+      - target: "La niña está confundida."
+        ipa: "la ˈniɲa esˈta konfunˈdida"
+        bases: [{ word: "La", base: "la" }, { word: "niña", ref: "es-0004" }, { word: "está", ref: "es-0023" }, { word: "confundida", base: "confundido" }]
+  - id: "es-2026"
+    target: "preocupar"
+    ipa: "pɾeokuˈpaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "preocupar", base: "preocupar" }]
+    examples:
+      - target: "Me preocupa el examen."
+        ipa: "me pɾeoˈkupa el ekˈsamen"
+        bases: [{ word: "Me", base: "me" }, { word: "preocupa", base: "preocupar" }, { word: "el", base: "el" }, { word: "examen", ref: "es-1359" }]
+      - target: "Nos preocupan los niños."
+        ipa: "nos pɾeoˈkupan los ˈniɲos"
+        bases: [{ word: "Nos", base: "nos" }, { word: "preocupan", base: "preocupar" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }]
+  - id: "es-2027"
+    target: "sorprender"
+    ipa: "soɾpɾenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sorprender", base: "sorprender" }]
+    examples:
+      - target: "Me sorprende la noticia."
+        ipa: "me soɾˈpɾende la noˈtiθja"
+        bases: [{ word: "Me", base: "me" }, { word: "sorprende", base: "sorprender" }, { word: "la", base: "la" }, { word: "noticia", base: "noticia" }]
+      - target: "Nos sorprende el frío."
+        ipa: "nos soɾˈpɾende el ˈfɾio"
+        bases: [{ word: "Nos", base: "nos" }, { word: "sorprende", base: "sorprender" }, { word: "el", base: "el" }, { word: "frío", ref: "es-0408" }]
+  - id: "es-2028"
+    target: "asustar"
+    ipa: "asusˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "asustar", base: "asustar" }]
+    examples:
+      - target: "Me asusta la oscuridad."
+        ipa: "me aˈsusta la oskuɾiˈdad"
+        bases: [{ word: "Me", base: "me" }, { word: "asusta", base: "asustar" }, { word: "la", base: "la" }, { word: "oscuridad", base: "oscuridad" }]
+      - target: "El ruido asusta al perro."
+        ipa: "el ˈrwido aˈsusta al ˈpero"
+        bases: [{ word: "El", base: "el" }, { word: "ruido", base: "ruido" }, { word: "asusta", base: "asustar" }, { word: "al", base: "al" }, { word: "perro", ref: "es-1061" }]
+  - id: "es-2029"
+    target: "llorar"
+    ipa: "ʝoˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "llorar", base: "llorar" }]
+    examples:
+      - target: "Lloro cuando veo una película triste."
+        ipa: "ˈʝoɾo ˈkwando ˈbeo ˈuna peˈlikula ˈtɾiste"
+        bases: [{ word: "Lloro", base: "llorar" }, { word: "cuando", base: "cuando" }, { word: "veo", ref: "es-1625" }, { word: "una", base: "una" }, { word: "película", base: "película" }, { word: "triste", ref: "es-0419" }]
+      - target: "El bebé llora mucho."
+        ipa: "el beˈbe ˈʝoɾa ˈmutʃo"
+        bases: [{ word: "El", base: "el" }, { word: "bebé", ref: "es-0138" }, { word: "llora", base: "llorar" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-2030"
+    target: "encantar"
+    ipa: "enkanˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "encantar", base: "encantar" }]
+    examples:
+      - target: "Me encanta el chocolate."
+        ipa: "me enˈkanta el tʃokoˈlate"
+        bases: [{ word: "Me", base: "me" }, { word: "encanta", base: "encantar" }, { word: "el", base: "el" }, { word: "chocolate", ref: "es-0622" }]
+      - target: "Nos encantan los viajes."
+        ipa: "nos enˈkantan los ˈbjaxes"
+        bases: [{ word: "Nos", base: "nos" }, { word: "encantan", base: "encantar" }, { word: "los", base: "los" }, { word: "viajes", ref: "es-1690" }]
+  - id: "es-2031"
+    target: "odiar"
+    ipa: "oˈdjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "odiar", base: "odiar" }]
+    examples:
+      - target: "Odio el frío."
+        ipa: "ˈodjo el ˈfɾio"
+        bases: [{ word: "Odio", base: "odiar" }, { word: "el", base: "el" }, { word: "frío", ref: "es-0408" }]
+      - target: "Odia esperar."
+        ipa: "ˈodja espeˈɾaɾ"
+        bases: [{ word: "Odia", base: "odiar" }, { word: "esperar", ref: "es-0930" }]
+  - id: "es-2032"
+    target: "temer"
+    ipa: "teˈmeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "temer", base: "temer" }]
+    examples:
+      - target: "Temo a las arañas."
+        ipa: "ˈtemo a las aˈɾaɲas"
+        bases: [{ word: "Temo", base: "temer" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "arañas", ref: "es-1092" }]
+      - target: "Temo que llueva."
+        ipa: "ˈtemo ke ˈʝweba"
+        bases: [{ word: "Temo", base: "temer" }, { word: "que", base: "que" }, { word: "llueva", ref: "es-1132" }]
+  - id: "es-2033"
+    target: "enamorarse"
+    ipa: "enamoˈɾaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enamorarse", base: "enamorarse" }]
+    examples:
+      - target: "Me enamoro con facilidad."
+        ipa: "me enaˈmoɾo kon faθiliˈdad"
+        bases: [{ word: "Me", base: "me" }, { word: "enamoro", base: "enamorarse" }, { word: "con", base: "con" }, { word: "facilidad", base: "facilidad" }]
+      - target: "Se enamoran en la fiesta."
+        ipa: "se enaˈmoɾan en la ˈfjesta"
+        bases: [{ word: "Se", base: "se" }, { word: "enamoran", base: "enamorarse" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
