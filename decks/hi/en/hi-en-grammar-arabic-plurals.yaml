@@ -1,0 +1,19 @@
+schema: 1
+id: "hi-en-grammar-arabic-plurals"
+kind: "layer"
+core: "hi-grammar-arabic-plurals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arabic plurals"
+license: "CC-BY-SA-4.0"
+description: "The Arabic plurals in -āt and the broken plurals of nouns. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Arabic plurals"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"singular": "one", "plural in -āt": "the plural with the ending -ات (-āt)", "broken plural": "the broken plural, whose stem changes"}
+  entries:
+    "kagaz": "paper"
+    "masala": "problem; matter"
+    "shakhs": "person"
+  notes: "The Arabic plural ending -āt is added to the singular: कागज़ (kāgaz) becomes कागज़ात (kāgzāt), papers. A broken plural changes the stem inside the word, as मसला (maslā) becomes मसाइल (masāil) and शख़्स (śak͟hs) becomes अश्ख़ास (aśk͟hās). Some words have only one plural, and the empty cell shows the form that is not used."

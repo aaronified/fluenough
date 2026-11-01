@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-sports"
+name: "Reading: sports"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short report of a cricket match, and a notice about a race. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-sports-match"
+    title: "A match report"
+    theme: "sports"
+    sentences:
+      - {"text": "कल के मैच में हमारी टीम ने तीन विकेट लिए।", "reading": "kal kē maic mēm̐ hamārī ṭīm nē tīn vikēṭ liē.", "ipa": "kəl keː mɛːtʃ mẽː ɦəmaːriː ʈiːm neː t̪iːn ʋɪkeːʈ lɪeː"}
+      - {"text": "स्टेडियम में दर्शक तालियाँ बजा रहे थे।", "reading": "sṭēḍiyam mēm̐ darśak tāliyām̐ bajā rahē thē.", "ipa": "sʈeːɖɪjəm mẽː d̪ərʃək t̪aːlɪjãː bədʒaː rəɦeː t̪ʰeː"}
+      - {"text": "कोच ने सबको अभ्यास की याद दिलाई।", "reading": "kōc nē sabkō abhyās kī yād dilāī.", "ipa": "koːtʃ neː səbkoː əbʱjaːs kiː jaːd̪ d̪ɪlaːiː"}
+      - {"text": "रेफ़री की सीटी के साथ मैच शुरू हुआ।", "reading": "rēfrī kī sīṭī kē sāth maic śurū huā.", "ipa": "reːfriː kiː siːʈiː keː saːt̪ʰ mɛːtʃ ʃʊruː ɦʊaː"}
+    questions:
+      - {"id": "hi-2557", "prompt": {"en": "Our team took three wickets."}, "answer": true}
+      - {"id": "hi-2558", "prompt": {"en": "What were the spectators doing?"}, "options": [{"en": "Clapping"}, {"en": "Leaving"}], "answer": 1}
+      - {"id": "hi-2559", "prompt": {"en": "The coach did not talk to the team."}, "answer": false}
+  - id: "hi-sports-notice"
+    title: "A notice about a race"
+    theme: "sports"
+    sentences:
+      - {"text": "सौ मीटर की दौड़ में सब भाग ले सकते हैं।", "reading": "sau mīṭar kī dauṛ mēm̐ sab bhāg lē saktē haim̐.", "ipa": "sɔː miːʈər kiː d̪ɔːɽ mẽː səb bʱaːɡ leː səkt̪eː ɦɛ̃ː"}
+      - {"text": "विजेता को पदक और कप दिया जाएगा।", "reading": "vijētā kō padak aur kap diyā jāēgā.", "ipa": "ʋɪdʒeːt̪aː koː pəd̪ək ɔːr kəp d̪ɪjaː dʒaːeːɡaː"}
+      - {"text": "जिम और योग का अभ्यास सुबह होता है।", "reading": "jim aur yōg kā abhyās subah hōtā hai.", "ipa": "dʒɪm ɔːr joːɡ kaː əbʱjaːs sʊbəɦ ɦoːt̪aː ɦɛː"}
+      - {"text": "नया रिकॉर्ड बनाने के लिए फ़िटनेस ज़रूरी है।", "reading": "nayā rikôrḍ banānē kē liē fiṭnēs zarūrī hai.", "ipa": "nəjaː rɪkɔrɖ bənaːneː keː lɪeː fɪʈneːs zəruːriː ɦɛː"}
+    questions:
+      - {"id": "hi-2560", "prompt": {"en": "Everyone can take part in the race."}, "answer": true}
+      - {"id": "hi-2561", "prompt": {"en": "What will the winner get?"}, "options": [{"en": "A medal and a cup"}, {"en": "Only a cheque"}], "answer": 1}
+      - {"id": "hi-2562", "prompt": {"en": "The gym is open only at night."}, "answer": false}

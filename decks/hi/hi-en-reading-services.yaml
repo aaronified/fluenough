@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-services"
+name: "Reading: services"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A notice at a bank, and a short note about a repair. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-services-bank"
+    title: "At the bank"
+    theme: "services"
+    sentences:
+      - {"text": "खाता खोलने के लिए फ़ॉर्म और पहचान का दस्तावेज़ लाओ।", "reading": "khātā khōlnē kē liē fôrm aur pahcān kā dastāvēz lāō.", "ipa": "kʰaːt̪aː kʰoːlneː keː lɪeː fɔrm ɔːr pəɦtʃaːn kaː d̪əst̪aːʋeːz laːoː"}
+      - {"text": "एटीएम से पैसे निकालते समय पिन मत बताओ।", "reading": "ēṭīēm sē paisē nikāltē samay pin mat batāō.", "ipa": "eːʈiːeːm seː pɛːseː nɪkaːlt̪eː səməj pɪn mət̪ bət̪aːoː"}
+      - {"text": "कर्ज़ पर ब्याज हर महीने लगता है।", "reading": "karz par byāj har mahīnē lagtā hai.", "ipa": "kərz pər bjaːdʒ ɦər məɦiːneː ləɡt̪aː ɦɛː"}
+      - {"text": "नकद भुगतान भी होता है और चेक भी।", "reading": "nakad bhugtān bhī hōtā hai aur cēk bhī.", "ipa": "nəkəd̪ bʱʊɡt̪aːn bʱiː ɦoːt̪aː ɦɛː ɔːr tʃeːk bʱiː"}
+    questions:
+      - {"id": "hi-2270", "prompt": {"en": "A form is needed to open an account."}, "answer": true}
+      - {"id": "hi-2271", "prompt": {"en": "When should the PIN not be told?"}, "options": [{"en": "At the ATM"}, {"en": "At home"}], "answer": 1}
+      - {"id": "hi-2272", "prompt": {"en": "Interest is charged every year."}, "answer": false}
+  - id: "hi-services-repair"
+    title: "A repair note"
+    theme: "services"
+    sentences:
+      - {"text": "नल की मरम्मत के लिए प्लंबर को बुलाओ।", "reading": "nal kī marammat kē liē plambar kō bulāō.", "ipa": "nəl kiː mərəmmət̪ keː lɪeː pləmbər koː bʊlaːoː"}
+      - {"text": "दर्ज़ी से कुर्ता सिलवाना है और मोची के पास जूते हैं।", "reading": "darzī sē kurtā silvānā hai aur mōcī kē pās jūtē haim̐.", "ipa": "d̪ərziː seː kʊrt̪aː sɪlʋaːnaː ɦɛː ɔːr moːtʃiː keː paːs dʒuːt̪eː ɦɛ̃ː"}
+      - {"text": "धोबी कपड़े कल लौटाएगा।", "reading": "dhōbī kapṛē kal lauṭāēgā.", "ipa": "d̪ʱoːbiː kəpɽeː kəl lɔːʈaːeːɡaː"}
+      - {"text": "शिकायत दर्ज करवाने का फ़ॉर्म दफ़्तर में उपलब्ध है।", "reading": "śikāyat darj karvānē kā fôrm daftar mēm̐ uplabdh hai.", "ipa": "ʃɪkaːjət̪ d̪ərdʒ kərʋaːneː kaː fɔrm d̪əft̪ər mẽː ʊpləbd̪ʱ ɦɛː"}
+    questions:
+      - {"id": "hi-2273", "prompt": {"en": "The plumber fixes the tap."}, "answer": true}
+      - {"id": "hi-2274", "prompt": {"en": "Where are the shoes?"}, "options": [{"en": "With the cobbler"}, {"en": "With the tailor"}], "answer": 1}
+      - {"id": "hi-2275", "prompt": {"en": "The clothes come back today."}, "answer": false}

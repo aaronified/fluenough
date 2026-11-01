@@ -1,0 +1,200 @@
+schema: 1
+id: "hi-en-news"
+kind: "layer"
+core: "hi-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News"
+license: "CC-BY-SA-4.0"
+description: "The news: newspapers and the radio, reports and reporters, elections and protests, and the words for what happened and what was said. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2147":
+    native: "news; a piece of news"
+    notes:
+      "n1": "A piece of news, or the news in general. The plural is खबरें (khabrēm̐)."
+    examples:
+      "आज एक बड़ी खबर है।": { "native": "There is big news today.", "bases": {} }
+      "यह खबर सच है।": { "native": "This news is true.", "bases": {"सच": "true"} }
+  "hi-2148":
+    native: "news (formal); news bulletin"
+    notes:
+      "n1": "The news, in a formal way. It is also the word for a news bulletin on the radio."
+    examples:
+      "रात नौ बजे समाचार आता है।": { "native": "The news comes at nine at night.", "bases": {} }
+      "समाचार सुनो।": { "native": "Listen to the news.", "bases": {} }
+  "hi-2149":
+    native: "newspaper"
+    notes:
+      "n1": "A paper printed every day with the news and other things."
+    examples:
+      "सुबह का अख़बार कहाँ है?": { "native": "Where is the morning paper?", "bases": {} }
+      "अख़बार में खेल की खबरें हैं।": { "native": "There is sports news in the paper.", "bases": {} }
+  "hi-2150":
+    native: "radio"
+    notes:
+      "n1": "A box that brings sound and music through the air."
+    examples:
+      "रेडियो पर गाना बज रहा है।": { "native": "A song is playing on the radio.", "bases": {} }
+      "रेडियो धीमा करो।": { "native": "Turn the radio down.", "bases": {} }
+  "hi-2151":
+    native: "correspondent; reporter"
+    notes:
+      "n1": "A person who sends news reports from a place to a newspaper or a channel."
+    examples:
+      "संवाददाता शहर से खबर भेज रहा है।": { "native": "The correspondent is sending news from the city.", "bases": {} }
+      "हमारा संवाददाता वहाँ है।": { "native": "Our correspondent is there.", "bases": {} }
+  "hi-2152":
+    native: "election"
+    notes:
+      "n1": "The process of voting to choose a leader or a representative."
+    examples:
+      "अगले महीने चुनाव है।": { "native": "There is an election next month.", "bases": {"अगले": "next"} }
+      "चुनाव में सब वोट डालें।": { "native": "Everyone should vote in the election.", "bases": {"वोट": "vote"} }
+  "hi-2153":
+    native: "leader; politician"
+    notes:
+      "n1": "A person who leads a group or a party, or who is in politics."
+    examples:
+      "नेता भाषण दे रहे हैं।": { "native": "The leader is giving a speech.", "bases": {"भाषण": "speech"} }
+      "यह नेता ईमानदार है।": { "native": "This leader is honest.", "bases": {} }
+  "hi-2154":
+    native: "minister"
+    notes:
+      "n1": "A member of the government who is in charge of a department."
+    examples:
+      "शिक्षा मंत्री ने बात की।": { "native": "The education minister spoke.", "bases": {"शिक्षा": "education", "ने": "by"} }
+      "मंत्री कल आएँगे।": { "native": "The minister will come tomorrow.", "bases": {} }
+  "hi-2155":
+    native: "incident; event"
+    notes:
+      "n1": "Something that happens, especially something important or sad."
+    examples:
+      "यह घटना कल हुई।": { "native": "This incident happened yesterday.", "bases": {} }
+      "घटना की जाँच हो रही है।": { "native": "The incident is being investigated.", "bases": {} }
+  "hi-2156":
+    native: "crime; offence"
+    notes:
+      "n1": "An act that the law forbids and punishes."
+    examples:
+      "शहर में अपराध बढ़ रहे हैं।": { "native": "Crimes are increasing in the city.", "bases": {"बढ़": "to grow"} }
+      "अपराध की खबर छपी।": { "native": "The news of the crime was printed.", "bases": {} }
+  "hi-2157":
+    native: "court (of law)"
+    notes:
+      "n1": "The place where judges hear cases and give decisions."
+    examples:
+      "मामला अदालत में है।": { "native": "The case is in the court.", "bases": {"मामला": "case"} }
+      "अदालत का फ़ैसला कल आएगा।": { "native": "The court's decision will come tomorrow.", "bases": {} }
+  "hi-2158":
+    native: "information; notice"
+    notes:
+      "n1": "Facts or news given to people, usually by an office or a notice."
+    examples:
+      "इस बारे में सूचना दो।": { "native": "Give information about this.", "bases": {"बारे": "about"} }
+      "सरकार की सूचना आई है।": { "native": "A notice has come from the government.", "bases": {"सरकार": "government", "सूचना": "notice"} }
+  "hi-2159":
+    native: "advertisement"
+    notes:
+      "n1": "A notice or film that tells people about a product or a service."
+    examples:
+      "टीवी पर नया विज्ञापन आया है।": { "native": "A new advertisement has come on the TV.", "bases": {} }
+      "अख़बार में विज्ञापन छपा।": { "native": "The advertisement was printed in the paper.", "bases": {} }
+  "hi-2160":
+    native: "headline"
+    notes:
+      "n1": "The main title of a news story, printed in large letters."
+    examples:
+      "आज की सुर्खी पढ़ो।": { "native": "Read today's headline.", "bases": {} }
+      "सुर्खी बड़ी है।": { "native": "The headline is big.", "bases": {} }
+  "hi-2161":
+    native: "article; essay"
+    notes:
+      "n1": "A piece of writing, in a paper or a book, on one subject."
+    examples:
+      "उसका लेख अख़बार में छपा।": { "native": "His article was printed in the paper.", "bases": {} }
+      "यह लेख दिलचस्प है।": { "native": "This article is interesting.", "bases": {} }
+  "hi-2162":
+    native: "editor"
+    notes:
+      "n1": "The person who decides what is printed in a newspaper or a magazine."
+    examples:
+      "संपादक ने खबर बदली।": { "native": "The editor changed the news.", "bases": {"ने": "by"} }
+      "संपादक से मिलो।": { "native": "Meet the editor.", "bases": {} }
+  "hi-2163":
+    native: "broadcast"
+    notes:
+      "n1": "The sending out of programmes or news by radio or television."
+    examples:
+      "आज का प्रसारण रद्द है।": { "native": "Today's broadcast is cancelled.", "bases": {"रद्द": "cancelled"} }
+      "प्रसारण सीधा दिखाया गया।": { "native": "The broadcast was shown live.", "bases": {} }
+  "hi-2164":
+    native: "movement; agitation"
+    notes:
+      "n1": "A large effort by many people to bring about change, often in public."
+    examples:
+      "किसानों का आंदोलन चल रहा है।": { "native": "The farmers' movement is going on.", "bases": {} }
+      "आंदोलन शांति से करो।": { "native": "Protest peacefully.", "bases": {} }
+  "hi-2165":
+    native: "protest; opposition"
+    notes:
+      "n1": "Speaking or acting against something one does not agree with."
+    examples:
+      "लोगों ने विरोध किया।": { "native": "People protested.", "bases": {"ने": "by"} }
+      "इस फ़ैसले का विरोध हो रहा है।": { "native": "This decision is being opposed.", "bases": {} }
+  "hi-2166":
+    native: "demonstration; display"
+    notes:
+      "n1": "A public gathering to show a protest or support, or a show of something."
+    examples:
+      "शहर में बड़ा प्रदर्शन हुआ।": { "native": "There was a big demonstration in the city.", "bases": {} }
+      "प्रदर्शन शांत रहा।": { "native": "The demonstration remained peaceful.", "bases": {} }
+  "hi-2167":
+    native: "statement"
+    notes:
+      "n1": "What a person says publicly, in writing or in speech, on a matter."
+    examples:
+      "मंत्री का बयान छपा है।": { "native": "The minister's statement has been printed.", "bases": {} }
+      "उसने बयान बदला।": { "native": "He changed his statement.", "bases": {} }
+  "hi-2168":
+    native: "decision; judgment"
+    notes:
+      "n1": "A choice made after thinking, or a judgment given by a court."
+    examples:
+      "यह फ़ैसला सही है।": { "native": "This decision is right.", "bases": {} }
+      "अदालत ने फ़ैसला सुनाया।": { "native": "The court gave its decision.", "bases": {"ने": "by"} }
+  "hi-2169":
+    native: "announcement"
+    notes:
+      "n1": "A public statement that tells people about something."
+    examples:
+      "सरकार ने नई योजना की घोषणा की।": { "native": "The government announced a new plan.", "bases": {"सरकार": "government", "ने": "by"} }
+      "घोषणा सुबह होगी।": { "native": "The announcement will be in the morning.", "bases": {} }
+  "hi-2170":
+    native: "promise"
+    notes:
+      "n1": "A statement that one will certainly do something."
+    examples:
+      "उसने वादा किया।": { "native": "He made a promise.", "bases": {} }
+      "वादा निभाओ।": { "native": "Keep your promise.", "bases": {"निभाओ": "to keep"} }
+  "hi-2171":
+    native: "accident; disaster"
+    notes:
+      "n1": "An event that causes harm or loss, usually sudden."
+    examples:
+      "सड़क पर हादसा हुआ।": { "native": "There was an accident on the road.", "bases": {} }
+      "हादसे में कोई घायल नहीं हुआ।": { "native": "No one was hurt in the accident.", "bases": {"हादसे": "accident", "घायल": "injured"} }
+  "hi-2172":
+    native: "to be printed; to be published"
+    notes:
+      "n1": "To be printed on paper, as a newspaper or a book is."
+    examples:
+      "खबर अख़बार में छपी।": { "native": "The news was printed in the paper.", "bases": {"छपी": "to be printed"} }
+      "किताब कब छपेगी?": { "native": "When will the book be published?", "bases": {"छपेगी": "to be printed"} }
+  "hi-2173":
+    native: "to tell; to recite; to narrate"
+    notes:
+      "n1": "To tell a story or a piece of news to someone, or to recite something."
+    examples:
+      "दादी कहानी सुनाती हैं।": { "native": "Grandmother tells stories.", "bases": {"कहानी": "story", "सुनाती": "to tell"} }
+      "उसने खबर सुनाई।": { "native": "He told the news.", "bases": {"सुनाई": "to tell"} }

@@ -1,0 +1,179 @@
+schema: 1
+id: "hi-en-cinema"
+kind: "layer"
+core: "hi-cinema"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema"
+license: "CC-BY-SA-4.0"
+description: "Films and the cinema: the actors and the director, the songs and the music, the story and the scenes, and the words for the audience and the theatre. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2420":
+    native: "cinema; films"
+    notes:
+      "n1": "The place where films are shown, or films in general. The word फ़िल्म (film) is for one film."
+    examples:
+      "आज सिनेमा चलें?": { "native": "Shall we go to the cinema today?", "bases": {} }
+      "सिनेमा हॉल में भीड़ है।": { "native": "There is a crowd in the cinema hall.", "bases": {"हॉल": "hall", "भीड़": "crowd"} }
+  "hi-2421":
+    native: "actor"
+    notes:
+      "n1": "A man who plays a part in a film or a play."
+    examples:
+      "वह एक अच्छा अभिनेता है।": { "native": "He is a good actor.", "bases": {} }
+      "अभिनेता ने दमदार रोल किया।": { "native": "The actor played a powerful role.", "bases": {"ने": "by", "दमदार": "powerful", "रोल": "role"} }
+  "hi-2422":
+    native: "actress"
+    notes:
+      "n1": "A woman who plays a part in a film or a play."
+    examples:
+      "वह मशहूर अभिनेत्री है।": { "native": "She is a famous actress.", "bases": {} }
+      "अभिनेत्री का गाना सुनो।": { "native": "Listen to the actress's song.", "bases": {} }
+  "hi-2423":
+    native: "director"
+    notes:
+      "n1": "The person who guides the actors and the making of a film."
+    examples:
+      "इस फ़िल्म का निर्देशक नया है।": { "native": "The director of this film is new.", "bases": {} }
+      "निर्देशक ने सीन दोबारा शूट किया।": { "native": "The director shot the scene again.", "bases": {"ने": "by", "शूट": "shoot"} }
+  "hi-2424":
+    native: "theatre"
+    notes:
+      "n1": "A building where plays and films are shown to an audience."
+    examples:
+      "थिएटर में नाटक लगा है।": { "native": "A play is on at the theatre.", "bases": {} }
+      "थिएटर पास में है।": { "native": "The theatre is nearby.", "bases": {} }
+  "hi-2425":
+    native: "screen; curtain"
+    notes:
+      "n1": "A cloth hung across a stage or a window, or the screen of a cinema."
+    examples:
+      "परदा खुला है।": { "native": "The curtain is open.", "bases": {} }
+      "परदे पर फ़िल्म चल रही है।": { "native": "The film is playing on the screen.", "bases": {"परदे": "screen"} }
+  "hi-2426":
+    native: "viewer; audience member"
+    notes:
+      "n1": "A person who watches a film, a play or a sport."
+    examples:
+      "दर्शक ताली बजा रहे हैं।": { "native": "The audience is clapping.", "bases": {"ताली": "clap", "बजा": "to play; to clap"} }
+      "दर्शकों को फ़िल्म पसंद आई।": { "native": "The audience liked the film.", "bases": {"दर्शकों": "audience member"} }
+  "hi-2427":
+    native: "scene"
+    notes:
+      "n1": "A part of a film or a play, shot or acted in one place."
+    examples:
+      "यह सीन बहुत अच्छा है।": { "native": "This scene is very good.", "bases": {} }
+      "अगला सीन कब आएगा?": { "native": "When will the next scene come?", "bases": {"अगला": "next"} }
+  "hi-2428":
+    native: "dialogue"
+    notes:
+      "n1": "The words that the actors speak in a film or a play."
+    examples:
+      "उसका डायलॉग याद है।": { "native": "I remember his dialogue.", "bases": {} }
+      "फ़िल्म के डायलॉग मज़ेदार हैं।": { "native": "The film's dialogues are fun.", "bases": {} }
+  "hi-2429":
+    native: "hero; male lead"
+    notes:
+      "n1": "The main male character in a film, or a brave man in a story."
+    examples:
+      "फ़िल्म का हीरो बहादुर है।": { "native": "The hero of the film is brave.", "bases": {"बहादुर": "brave"} }
+      "वह असली हीरो है।": { "native": "He is the real hero.", "bases": {} }
+  "hi-2430":
+    native: "heroine; female lead"
+    notes:
+      "n1": "The main female character in a film."
+    examples:
+      "हीरोइन बहुत सुंदर है।": { "native": "The heroine is very beautiful.", "bases": {} }
+      "फ़िल्म की हीरोइन नई है।": { "native": "The heroine of the film is new.", "bases": {} }
+  "hi-2431":
+    native: "villain"
+    notes:
+      "n1": "The bad person in a film or a story."
+    examples:
+      "विलेन बहुत डरावना है।": { "native": "The villain is very frightening.", "bases": {} }
+      "फ़िल्म में विलेन हार गया।": { "native": "The villain lost in the film.", "bases": {} }
+  "hi-2432":
+    native: "comedy"
+    notes:
+      "n1": "A film or a play that makes the audience laugh."
+    examples:
+      "यह कॉमेडी फ़िल्म है।": { "native": "This is a comedy film.", "bases": {} }
+      "कॉमेडी देखकर हँसी आई।": { "native": "On seeing the comedy I laughed.", "bases": {} }
+  "hi-2433":
+    native: "super hit; very successful"
+    notes:
+      "n1": "Very popular and successful, said of a film or a song."
+    examples:
+      "यह गाना सुपरहिट है।": { "native": "This song is a super hit.", "bases": {} }
+      "फ़िल्म सुपरहिट हुई।": { "native": "The film was a super hit.", "bases": {} }
+  "hi-2434":
+    native: "trailer"
+    notes:
+      "n1": "A short film that shows some scenes of a film before it comes out."
+    examples:
+      "फ़िल्म का ट्रेलर कल आएगा।": { "native": "The film's trailer will come tomorrow.", "bases": {} }
+      "ट्रेलर देखो।": { "native": "Watch the trailer.", "bases": {} }
+  "hi-2435":
+    native: "lyricist"
+    notes:
+      "n1": "A person who writes the words of songs."
+    examples:
+      "गीतकार ने नया गाना लिखा।": { "native": "The lyricist wrote a new song.", "bases": {"ने": "by"} }
+      "इस गाने के गीतकार कौन हैं?": { "native": "Who is the lyricist of this song?", "bases": {} }
+  "hi-2436":
+    native: "composer; music director"
+    notes:
+      "n1": "A person who writes the tune and music of songs."
+    examples:
+      "संगीतकार ने धुन बनाई।": { "native": "The composer made the tune.", "bases": {"ने": "by", "धुन": "tune"} }
+      "संगीतकार बहुत मशहूर है।": { "native": "The composer is very famous.", "bases": {} }
+  "hi-2437":
+    native: "cameraman"
+    notes:
+      "n1": "The person who operates the camera in a film or a television show."
+    examples:
+      "कैमरामैन ने अच्छा शॉट लिया।": { "native": "The cameraman took a good shot.", "bases": {"ने": "by", "शॉट": "shot"} }
+      "कैमरामैन कहाँ है?": { "native": "Where is the cameraman?", "bases": {} }
+  "hi-2438":
+    native: "shooting (of a film)"
+    notes:
+      "n1": "The filming of a scene or a whole film."
+    examples:
+      "शूटिंग कल शुरू होगी।": { "native": "The shooting will begin tomorrow.", "bases": {"शुरू": "start"} }
+      "शूटिंग के दौरान सब खुश थे।": { "native": "Everyone was happy during the shooting.", "bases": {"दौरान": "during"} }
+  "hi-2439":
+    native: "poster"
+    notes:
+      "n1": "A large printed picture or notice, usually stuck on a wall to advertise something."
+    examples:
+      "दीवार पर नया पोस्टर लगा है।": { "native": "A new poster is on the wall.", "bases": {"दीवार": "wall"} }
+      "पोस्टर में हीरो का चेहरा है।": { "native": "There is the hero's face on the poster.", "bases": {} }
+  "hi-2440":
+    native: "film set"
+    notes:
+      "n1": "The place and scenery where a film is shot."
+    examples:
+      "फ़िल्म का सेट बड़ा है।": { "native": "The film set is big.", "bases": {} }
+      "सेट पर सब तैयार हैं।": { "native": "Everyone is ready on the set.", "bases": {"तैयार": "ready"} }
+  "hi-2441":
+    native: "entertainment; amusement"
+    notes:
+      "n1": "Something that gives pleasure and fun, such as a film, a song or a game."
+    examples:
+      "फ़िल्में मनोरंजन का साधन हैं।": { "native": "Films are a means of entertainment.", "bases": {"मनोरंजन": "entertainment", "साधन": "means"} }
+      "बच्चों का मनोरंजन करो।": { "native": "Entertain the children.", "bases": {"मनोरंजन": "entertainment"} }
+  "hi-2442":
+    native: "thrilling; exciting"
+    notes:
+      "n1": "Full of excitement and fear, as a story or a race can be."
+    examples:
+      "यह फ़िल्म बहुत रोमांचक है।": { "native": "This film is very thrilling.", "bases": {"रोमांचक": "thrilling"} }
+      "रोमांचक खेल देखा।": { "native": "I watched an exciting match.", "bases": {} }
+  "hi-2443":
+    native: "drama"
+    notes:
+      "n1": "A film or a play about serious events, or a dramatic scene."
+    examples:
+      "यह फ़िल्म एक ड्रामा है।": { "native": "This film is a drama.", "bases": {} }
+      "उसने बहुत ड्रामा किया।": { "native": "He made a great deal of drama.", "bases": {} }

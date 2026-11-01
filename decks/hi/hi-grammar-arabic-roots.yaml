@@ -1,0 +1,29 @@
+schema: 1
+id: "hi-grammar-arabic-roots"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["knowledge (the noun)", "one who knows (the doer)", "known (the adjective)", "teaching (the causal noun)"]
+  entries:
+    - lemma: "इल्म"
+      key: "ilm"
+      reading: "ilm"
+      ipa: "ɪlm"
+      forms:
+        "knowledge (the noun)": "इल्म"
+        "one who knows (the doer)": "आलिम"
+        "known (the adjective)": "मालूम"
+        "teaching (the causal noun)": "तालीम"
+      readings:
+        "knowledge (the noun)": "ilm"
+        "one who knows (the doer)": "ālim"
+        "known (the adjective)": "mālūm"
+        "teaching (the causal noun)": "tālīm"
+      ipas:
+        "knowledge (the noun)": "ɪlm"
+        "one who knows (the doer)": "aːlɪm"
+        "known (the adjective)": "maːluːm"
+        "teaching (the causal noun)": "t̪aːliːm"

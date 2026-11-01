@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-travel"
+name: "Reading: travel"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A postcard from a trip, and a notice at a museum. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-travel-postcard"
+    title: "A postcard"
+    theme: "travel"
+    sentences:
+      - {"text": "यहाँ का किला बहुत दर्शनीय है।", "reading": "yahām̐ kā kilā bahut darśanīy hai.", "ipa": "jəɦãː kaː kɪlaː bəɦʊt̪ d̪ərʃəniːj ɦɛː"}
+      - {"text": "हम संग्रहालय गए और पुरानी तस्वीरें देखीं।", "reading": "ham saṅgrahālay gaē aur purānī tasvīrēm̐ dēkhīm̐.", "ipa": "ɦəm səŋɡrəɦaːləj ɡəeː ɔːr pʊraːniː t̪əsʋiːrẽː d̪eːkʰĩː"}
+      - {"text": "गाइड ने महल का इतिहास सुनाया।", "reading": "gāiḍ nē mahal kā itihās sunāyā.", "ipa": "ɡaːɪɖ neː məɦəl kaː ɪt̪ɪɦaːs sʊnaːjaː"}
+      - {"text": "कल हम विदेश के लिए निकलेंगे।", "reading": "kal ham vidēś kē liē niklēṅgē.", "ipa": "kəl ɦəm ʋɪd̪eːʃ keː lɪeː nɪkleːŋɡeː"}
+    questions:
+      - {"id": "hi-2238", "prompt": {"en": "The fort is worth seeing."}, "answer": true}
+      - {"id": "hi-2239", "prompt": {"en": "What did the visitors see at the museum?"}, "options": [{"en": "Old pictures"}, {"en": "Fish"}], "answer": 1}
+      - {"id": "hi-2240", "prompt": {"en": "The writer leaves for a foreign country next year."}, "answer": false}
+  - id: "hi-travel-notice"
+    title: "A museum notice"
+    theme: "travel"
+    sentences:
+      - {"text": "संग्रहालय सुबह दस बजे खुलता है।", "reading": "saṅgrahālay subah das bajē khultā hai.", "ipa": "səŋɡrəɦaːləj sʊbəɦ d̪əs bədʒeː kʰʊlt̪aː ɦɛː"}
+      - {"text": "विदेशी पर्यटकों के लिए टिकट अलग है।", "reading": "vidēśī paryaṭkōm̐ kē liē ṭikaṭ alag hai.", "ipa": "ʋɪd̪eːʃiː pərjəʈkõː keː lɪeː ʈɪkəʈ ələɡ ɦɛː"}
+      - {"text": "फ़ोटो खींचना मना है, पर यादगार के लिए खरीदें।", "reading": "fōṭō khīñcanā manā hai, par yādgār kē liē kharīdēm̐.", "ipa": "foːʈoː kʰiːɲtʃənaː mənaː ɦɛː pər jaːd̪ɡaːr keː lɪeː kʰəriːd̪ẽː"}
+      - {"text": "मुद्रा बदलने के लिए काउंटर पर जाएँ।", "reading": "mudrā badlnē kē liē kāuṇṭar par jāēm̐.", "ipa": "mʊd̪raː bəd̪lneː keː lɪeː kaːʊɳʈər pər dʒaːẽː"}
+    questions:
+      - {"id": "hi-2241", "prompt": {"en": "The museum opens at ten in the morning."}, "answer": true}
+      - {"id": "hi-2242", "prompt": {"en": "Who has a separate ticket?"}, "options": [{"en": "Foreign visitors"}, {"en": "Children"}], "answer": 1}
+      - {"id": "hi-2243", "prompt": {"en": "Photographs are allowed everywhere."}, "answer": false}

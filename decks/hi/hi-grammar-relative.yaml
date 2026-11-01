@@ -1,0 +1,88 @@
+schema: 1
+id: "hi-grammar-relative"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["relative (in the clause)", "correlative (in the main clause)"]
+  entries:
+    - lemma: "जो"
+      key: "jo"
+      reading: "jō"
+      ipa: "dʒoː"
+      forms:
+        "relative (in the clause)": "जो"
+        "correlative (in the main clause)": "वह"
+      readings:
+        "relative (in the clause)": "jō"
+        "correlative (in the main clause)": "vah"
+      ipas:
+        "relative (in the clause)": "dʒoː"
+        "correlative (in the main clause)": "ʋəɦ"
+    - lemma: "जहाँ"
+      key: "jahaan"
+      reading: "jahām̐"
+      ipa: "dʒəɦãː"
+      forms:
+        "relative (in the clause)": "जहाँ"
+        "correlative (in the main clause)": "वहाँ"
+      readings:
+        "relative (in the clause)": "jahām̐"
+        "correlative (in the main clause)": "vahām̐"
+      ipas:
+        "relative (in the clause)": "dʒəɦãː"
+        "correlative (in the main clause)": "ʋəɦãː"
+    - lemma: "जब"
+      key: "jab"
+      reading: "jab"
+      ipa: "dʒəb"
+      forms:
+        "relative (in the clause)": "जब"
+        "correlative (in the main clause)": "तब"
+      readings:
+        "relative (in the clause)": "jab"
+        "correlative (in the main clause)": "tab"
+      ipas:
+        "relative (in the clause)": "dʒəb"
+        "correlative (in the main clause)": "t̪əb"
+    - lemma: "जैसा"
+      key: "jaisa"
+      reading: "jaisā"
+      ipa: "dʒɛːsaː"
+      forms:
+        "relative (in the clause)": "जैसा"
+        "correlative (in the main clause)": "वैसा"
+      readings:
+        "relative (in the clause)": "jaisā"
+        "correlative (in the main clause)": "vaisā"
+      ipas:
+        "relative (in the clause)": "dʒɛːsaː"
+        "correlative (in the main clause)": "ʋɛːsaː"
+    - lemma: "जितना"
+      key: "jitna"
+      reading: "jitnā"
+      ipa: "dʒɪt̪naː"
+      forms:
+        "relative (in the clause)": "जितना"
+        "correlative (in the main clause)": "उतना"
+      readings:
+        "relative (in the clause)": "jitnā"
+        "correlative (in the main clause)": "utnā"
+      ipas:
+        "relative (in the clause)": "dʒɪt̪naː"
+        "correlative (in the main clause)": "ʊt̪naː"
+    - lemma: "जिधर"
+      key: "jidhar"
+      reading: "jidhar"
+      ipa: "dʒɪd̪ʱər"
+      forms:
+        "relative (in the clause)": "जिधर"
+        "correlative (in the main clause)": "उधर"
+      readings:
+        "relative (in the clause)": "jidhar"
+        "correlative (in the main clause)": "udhar"
+      ipas:
+        "relative (in the clause)": "dʒɪd̪ʱər"
+        "correlative (in the main clause)": "ʊd̪ʱər"

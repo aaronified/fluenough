@@ -1,0 +1,49 @@
+schema: 1
+id: "hi-grammar-concessive"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["concessive clause (even if, although)", "main clause (still, nevertheless)"]
+  entries:
+    - lemma: "चाहे"
+      key: "chahe"
+      reading: "cāhē"
+      ipa: "tʃaːɦeː"
+      forms:
+        "concessive clause (even if, although)": "चाहे"
+        "main clause (still, nevertheless)": "फिर भी"
+      readings:
+        "concessive clause (even if, although)": "cāhē"
+        "main clause (still, nevertheless)": "phir bhī"
+      ipas:
+        "concessive clause (even if, although)": "tʃaːɦeː"
+        "main clause (still, nevertheless)": "pʰɪr bʱiː"
+    - lemma: "भले ही"
+      key: "bhalehi"
+      reading: "bhalē hī"
+      ipa: "bʱəleː ɦiː"
+      forms:
+        "concessive clause (even if, although)": "भले ही"
+        "main clause (still, nevertheless)": "फिर भी"
+      readings:
+        "concessive clause (even if, although)": "bhalē hī"
+        "main clause (still, nevertheless)": "phir bhī"
+      ipas:
+        "concessive clause (even if, although)": "bʱəleː ɦiː"
+        "main clause (still, nevertheless)": "pʰɪr bʱiː"
+    - lemma: "हालाँकि"
+      key: "halanki"
+      reading: "hālām̐ki"
+      ipa: "ɦaːlãːkɪ"
+      forms:
+        "concessive clause (even if, although)": "हालाँकि"
+        "main clause (still, nevertheless)": "फिर भी"
+      readings:
+        "concessive clause (even if, although)": "hālām̐ki"
+        "main clause (still, nevertheless)": "phir bhī"
+      ipas:
+        "concessive clause (even if, although)": "ɦaːlãːkɪ"
+        "main clause (still, nevertheless)": "pʰɪr bʱiː"

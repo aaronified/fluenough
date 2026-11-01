@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-phone"
+name: "Reading: phone"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A message from a friend, and a notice from a phone shop. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-phone-message"
+    title: "A message from a friend"
+    theme: "phone"
+    sentences:
+      - {"text": "दोस्त, तेरा मैसेज मिला।", "reading": "dōst, tērā maisēj milā.", "ipa": "d̪oːst̪ t̪eːraː mɛːseːdʒ mɪlaː"}
+      - {"text": "कल फोन की बैटरी खराब हो गई थी।", "reading": "kal phōn kī baiṭrī kharāb hō gaī thī.", "ipa": "kəl pʰoːn kiː bɛːʈriː kʰəraːb ɦoː ɡəiː t̪ʰiː"}
+      - {"text": "अब नया चार्जर ले लिया है।", "reading": "ab nayā cārjar lē liyā hai.", "ipa": "əb nəjaː tʃaːrdʒər leː lɪjaː ɦɛː"}
+      - {"text": "रात को कॉल करना, ठीक रहेगा?", "reading": "rāt kō kôl karnā, ṭhīk rahēgā?", "ipa": "raːt̪ koː kɔl kərnaː ʈʰiːk rəɦeːɡaː"}
+    questions:
+      - {"id": "hi-1884", "prompt": {"en": "The friend's message was received."}, "answer": true}
+      - {"id": "hi-1885", "prompt": {"en": "What was bad yesterday?"}, "options": [{"en": "The phone's battery"}, {"en": "The internet"}], "answer": 1}
+      - {"id": "hi-1886", "prompt": {"en": "The writer bought a new charger."}, "answer": true}
+  - id: "hi-phone-shop"
+    title: "A notice at a phone shop"
+    theme: "phone"
+    sentences:
+      - {"text": "पुराने फोन का पासवर्ड बदलें।", "reading": "purānē phōn kā pāsvarḍ badlēm̐.", "ipa": "pʊraːneː pʰoːn kaː paːsʋərɖ bəd̪lẽː"}
+      - {"text": "हर महीने नया पैकेज लें।", "reading": "har mahīnē nayā paikēj lēm̐.", "ipa": "ɦər məɦiːneː nəjaː pɛːkeːdʒ lẽː"}
+      - {"text": "सिग्नल कम हो तो ऑफ़लाइन काम करें।", "reading": "signal kam hō tō ôflāin kām karēm̐.", "ipa": "sɪɡnəl kəm ɦoː t̪oː ɔflaːɪn kaːm kərẽː"}
+      - {"text": "सर्विस के लिए घंटी बजाएँ।", "reading": "sarvis kē liē ghaṇṭī bajāēm̐.", "ipa": "sərʋɪs keː lɪeː ɡʱəɳʈiː bədʒaːẽː"}
+    questions:
+      - {"id": "hi-1887", "prompt": {"en": "Customers should change the password of old phones."}, "answer": true}
+      - {"id": "hi-1888", "prompt": {"en": "When the signal is weak, what should one do?"}, "options": [{"en": "Work offline"}, {"en": "Buy a new SIM"}], "answer": 1}
+      - {"id": "hi-1889", "prompt": {"en": "The plan is changed once a year."}, "answer": false}

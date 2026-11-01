@@ -1,0 +1,172 @@
+schema: 1
+id: "hi-en-health"
+kind: "layer"
+core: "hi-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health"
+license: "CC-BY-SA-4.0"
+description: "Health and the doctor: illness, medicine and the pharmacy, tests and treatment, and the words for how the body is cared for. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2075":
+    native: "illness; disease"
+    notes:
+      "n1": "An illness of the body or the mind. The adjective is बीमार (bīmār), ill."
+    examples:
+      "उसे कोई गंभीर बीमारी है।": { "native": "He has some serious illness.", "bases": {"गंभीर": "serious"} }
+      "बीमारी से बचो।": { "native": "Avoid illness.", "bases": {} }
+  "hi-2076":
+    native: "health"
+    notes:
+      "n1": "The state of the body and mind being well. The everyday word is सेहत (sēhat)."
+    examples:
+      "अपने स्वास्थ्य का ध्यान रखो।": { "native": "Take care of your health.", "bases": {"ध्यान": "care; attention"} }
+      "स्वास्थ्य सबसे बड़ी दौलत है।": { "native": "Health is the greatest wealth.", "bases": {"सबसे": "most", "दौलत": "wealth"} }
+  "hi-2077":
+    native: "allergy"
+    notes:
+      "n1": "A reaction of the body to something that does not agree with it."
+    examples:
+      "मुझे धूल से एलर्जी है।": { "native": "I have an allergy to dust.", "bases": {} }
+      "दवा से एलर्जी हो गई।": { "native": "I got an allergy from the medicine.", "bases": {} }
+  "hi-2078":
+    native: "pulse"
+    notes:
+      "n1": "The beat of the blood that a doctor feels at the wrist."
+    examples:
+      "डॉक्टर ने नाड़ी देखी।": { "native": "The doctor checked the pulse.", "bases": {"ने": "by"} }
+      "नाड़ी तेज़ चल रही है।": { "native": "The pulse is fast.", "bases": {} }
+  "hi-2079":
+    native: "diarrhoea; loose motion"
+    notes:
+      "n1": "Loose and frequent motions of the bowels, as an illness can cause."
+    examples:
+      "बच्चे को दस्त लगे हैं।": { "native": "The child has loose motions.", "bases": {} }
+      "दस्त में पानी पियो।": { "native": "Drink water in case of loose motions.", "bases": {"पियो": "to drink"} }
+  "hi-2080":
+    native: "plaster; cast"
+    notes:
+      "n1": "A hard covering put on a broken bone to keep it still while it heals."
+    examples:
+      "पैर पर प्लास्टर है।": { "native": "There is a cast on the leg.", "bases": {} }
+      "प्लास्टर कब खुलेगा?": { "native": "When will the cast come off?", "bases": {"खुलेगा": "to open; to come off"} }
+  "hi-2082":
+    native: "injection"
+    notes:
+      "n1": "A medicine put into the body with a needle."
+    examples:
+      "नर्स ने इंजेक्शन लगाया।": { "native": "The nurse gave an injection.", "bases": {"ने": "by", "इंजेक्शन": "injection", "लगाया": "to give"} }
+      "इंजेक्शन से डर लगता है।": { "native": "I am afraid of injections.", "bases": {"डर": "fear"} }
+  "hi-2083":
+    native: "surgery"
+    notes:
+      "n1": "An operation done by cutting into the body to treat an illness."
+    examples:
+      "उसकी सर्जरी कल होगी।": { "native": "His surgery will be tomorrow.", "bases": {} }
+      "सर्जरी के बाद आराम करो।": { "native": "Rest after the surgery.", "bases": {"बाद": "after"} }
+  "hi-2084":
+    native: "operation (surgical)"
+    notes:
+      "n1": "A surgical treatment done in a hospital. It is also used for a planned action."
+    examples:
+      "डॉक्टर ने ऑपरेशन किया।": { "native": "The doctor performed the operation.", "bases": {"ने": "by"} }
+      "ऑपरेशन सफल रहा।": { "native": "The operation was successful.", "bases": {"सफल": "successful"} }
+  "hi-2085":
+    native: "patient"
+    notes:
+      "n1": "A person who is being treated for an illness."
+    examples:
+      "मरीज़ कमरे में है।": { "native": "The patient is in the room.", "bases": {} }
+      "मरीज़ों की भीड़ है।": { "native": "There is a crowd of patients.", "bases": {"मरीज़ों": "patients", "भीड़": "crowd"} }
+  "hi-2086":
+    native: "pharmacy; chemist's shop"
+    notes:
+      "n1": "The shop, or the part of a hospital, where medicines are sold or given."
+    examples:
+      "फ़ार्मेसी दस बजे खुलती है।": { "native": "The pharmacy opens at ten.", "bases": {"खुलती": "to open"} }
+      "दवा फ़ार्मेसी से लो।": { "native": "Take the medicine from the pharmacy.", "bases": {} }
+  "hi-2087":
+    native: "burn; burning pain"
+    notes:
+      "n1": "A feeling of burning, or a burn on the skin."
+    examples:
+      "हाथ पर जलन है।": { "native": "There is a burn on the hand.", "bases": {} }
+      "दवा लगाने से जलन कम होती है।": { "native": "Putting on the medicine lowers the burning.", "bases": {"लगाने": "to apply"} }
+  "hi-2088":
+    native: "fast; fasting"
+    notes:
+      "n1": "Going without food for a time, for health or for faith."
+    examples:
+      "आज मेरा उपवास है।": { "native": "I am fasting today.", "bases": {} }
+      "डॉक्टर ने उपवास से मना किया।": { "native": "The doctor forbade fasting.", "bases": {"ने": "by", "मना": "forbidden"} }
+  "hi-2089":
+    native: "medicine; tablet"
+    notes:
+      "n1": "A substance taken to cure or ease an illness. The everyday word is दवाई (davāī)."
+    examples:
+      "यह दवा दिन में दो बार लो।": { "native": "Take this medicine twice a day.", "bases": {"बार": "time"} }
+      "दवा खाने के बाद सो जाओ।": { "native": "Sleep after taking the medicine.", "bases": {"बाद": "after"} }
+  "hi-2090":
+    native: "massage"
+    notes:
+      "n1": "Rubbing the body with the hands, or with oil, to ease pain."
+    examples:
+      "दादी पैरों की मालिश करती हैं।": { "native": "Grandmother massages her legs.", "bases": {"मालिश": "massage"} }
+      "सरसों के तेल से मालिश करो।": { "native": "Massage with mustard oil.", "bases": {"सरसों": "mustard", "मालिश": "massage"} }
+  "hi-2091":
+    native: "to swell"
+    notes:
+      "n1": "To become puffed and larger, from an injury or an illness."
+    examples:
+      "पैर में सूजन है, पैर सूज गया है।": { "native": "There is swelling in the foot; the foot has swollen.", "bases": {"सूज": "to swell"} }
+      "हाथ सूजा हुआ है।": { "native": "The hand is swollen.", "bases": {"सूजा": "to swell"} }
+  "hi-2092":
+    native: "prescription; recipe"
+    notes:
+      "n1": "The paper on which a doctor writes the medicines to be bought. It is also a word for a recipe."
+    examples:
+      "डॉक्टर ने नुस्खा लिखा।": { "native": "The doctor wrote a prescription.", "bases": {"ने": "by"} }
+      "नुस्खा दिखाकर दवा लो।": { "native": "Show the prescription and take the medicine.", "bases": {} }
+  "hi-2093":
+    native: "diet; food"
+    notes:
+      "n1": "The food a person usually eats, especially for health."
+    examples:
+      "संतुलित आहार लो।": { "native": "Take a balanced diet.", "bases": {"संतुलित": "balanced"} }
+      "उसका आहार बहुत साधारण है।": { "native": "His diet is very simple.", "bases": {"साधारण": "simple"} }
+  "hi-2094":
+    native: "exercise"
+    notes:
+      "n1": "Physical movement done to keep the body fit."
+    examples:
+      "रोज़ व्यायाम करो।": { "native": "Exercise every day.", "bases": {} }
+      "सुबह का व्यायाम अच्छा है।": { "native": "Morning exercise is good.", "bases": {} }
+  "hi-2095":
+    native: "cigarette"
+    notes:
+      "n1": "A thin roll of tobacco that is smoked. Smoking harms the health."
+    examples:
+      "सिगरेट पीना नुकसानदेह है।": { "native": "Smoking cigarettes is harmful.", "bases": {"पीना": "to drink; to smoke", "नुकसानदेह": "harmful"} }
+      "उसने सिगरेट छोड़ दी।": { "native": "He gave up cigarettes.", "bases": {} }
+  "hi-2096":
+    native: "alcohol; liquor"
+    notes:
+      "n1": "A drink with alcohol in it, which harms the health when taken too much."
+    examples:
+      "शराब सेहत के लिए बुरी है।": { "native": "Alcohol is bad for health.", "bases": {"लिए": "for"} }
+      "शराब मत पियो।": { "native": "Do not drink alcohol.", "bases": {"मत": "do not", "पियो": "to drink"} }
+  "hi-2097":
+    native: "test; check-up"
+    notes:
+      "n1": "A medical check to find out what is wrong with the body."
+    examples:
+      "खून का टेस्ट कराओ।": { "native": "Get a blood test done.", "bases": {"कराओ": "to get done"} }
+      "टेस्ट की रिपोर्ट आ गई।": { "native": "The test report has come.", "bases": {} }
+  "hi-2098":
+    native: "medical"
+    notes:
+      "n1": "Of or about medicine and doctors. It is used of a shop or a check-up."
+    examples:
+      "मेडिकल स्टोर खुला है।": { "native": "The medical store is open.", "bases": {"स्टोर": "store"} }
+      "मेडिकल जाँच ज़रूरी है।": { "native": "A medical check-up is necessary.", "bases": {"ज़रूरी": "necessary"} }

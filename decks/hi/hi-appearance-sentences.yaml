@@ -1,0 +1,42 @@
+schema: 1
+id: "hi-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1786"
+    target: "उसकी चमकीली आँखें मुस्कुराती हैं।"
+    reading: "uskī camkīlī ām̐khēm̐ muskurātī haim̐."
+    ipa: "ʊskiː tʃəmkiːliː ãːkʰẽː mʊskʊraːt̪iː ɦɛ̃ː"
+    phonetic: "[ʊskiː tʃəmkiːliː ãːkʰẽː mʊskʊraːt̪iː ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "उसकी", "ref": "hi-0749"}, {"word": "चमकीली", "ref": "hi-1760"}, {"word": "आँखें", "ref": "hi-1025"}, {"word": "मुस्कुराती", "ref": "hi-1783"}, {"word": "हैं", "ref": "hi-0113"}]
+    confusables:
+      - {"id": "w1", "word": "सूरत", "reading": "sūrat", "ipa": "suːrət̪", "kind": "word"}
+      - {"id": "w2", "word": "उम्र", "reading": "umr", "ipa": "ʊmr", "kind": "word"}
+  - id: "hi-1787"
+    target: "वह लंबा और गोरा दिखता है।"
+    reading: "vah lambā aur gōrā dikhtā hai."
+    ipa: "ʋəɦ ləmbaː ɔːr ɡoːraː d̪ɪkʰt̪aː ɦɛː"
+    phonetic: "[ʋəɦ ləmbaː ɔːr ɡoːraː d̪ɪkʰt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "वह", "ref": "hi-0749"}, {"word": "लंबा", "ref": "hi-0906"}, {"word": "और", "ref": "hi-0337"}, {"word": "गोरा", "ref": "hi-1751"}, {"word": "दिखता", "ref": "hi-1779"}, {"word": "है", "ref": "hi-0112"}]
+    confusables:
+      - {"id": "w1", "word": "नाटा", "reading": "nāṭā", "ipa": "naːʈaː", "kind": "word"}
+      - {"id": "w2", "word": "सांवला", "reading": "sāṁvalā", "ipa": "sãːʋəlaː", "kind": "word"}
+  - id: "hi-1788"
+    target: "बुढ़ापे में सब गंजे और दुबले हो जाते हैं।"
+    reading: "buṛhāpē mēm̐ sab gañjē aur dublē hō jātē haim̐."
+    ipa: "bʊɽʱaːpeː mẽː səb ɡəɲdʒeː ɔːr d̪ʊbleː ɦoː dʒaːt̪eː ɦɛ̃ː"
+    phonetic: "[bʊɽʱaːpeː mẽː səb ɡəɲdʒeː ɔːr d̪ʊbleː ɦoː dʒaːt̪eː ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "बुढ़ापे", "ref": "hi-1771"}, {"word": "में", "ref": "hi-0274"}, {"word": "सब", "ref": "hi-0054"}, {"word": "गंजे", "ref": "hi-1759"}, {"word": "और", "ref": "hi-0337"}, {"word": "दुबले", "ref": "hi-1777"}, {"word": "हो", "ref": "hi-0780"}, {"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0113"}]
+    confusables:
+      - {"id": "w1", "word": "जवानी", "reading": "javānī", "ipa": "dʒəʋaːniː", "kind": "word"}
+      - {"id": "w2", "word": "बचपन", "reading": "bacpan", "ipa": "bətʃpən", "kind": "word"}

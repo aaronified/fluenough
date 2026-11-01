@@ -1,0 +1,23 @@
+schema: 1
+id: "hi-en-chores-sentences"
+kind: "layer"
+core: "hi-chores-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chores: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences using the words of the chores unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1741":
+    native: "Bring a broom and a mop to clean the room."
+    bases: {"करने": "to do", "लिए": "for", "लाओ": "to bring"}
+    confusables: {"w1": {"why": "A bucket, not a broom: बाल्टी (bāltī) holds water."}, "w2": {"why": "Not a dustbin: कूड़ेदान (kūṛēdān) holds rubbish, it does not sweep."}}
+  "hi-1742":
+    native: "Put hot water and detergent in the bucket."
+    bases: {"गरम": "hot", "डालो": "to put; to pour"}
+    confusables: {"w1": {"why": "A mop, not a bucket: पोंछा (pončhā) is the cloth."}, "w2": {"why": "A lid, not water: ढक्कन (ḍhakkan) closes a bucket."}}
+  "hi-1743":
+    native: "Iron the clothes after drying them in the sun."
+    bases: {"कपड़े": "cloth; clothes", "सुखाने": "to dry", "बाद": "after", "इस्त्री": "iron", "करो": "to do"}
+    confusables: {"w1": {"why": "A rope: रस्सी (rassī) is the line the clothes hang on."}, "w2": {"why": "Washing, not drying: धुलाई (dhulāī) is the wash."}}

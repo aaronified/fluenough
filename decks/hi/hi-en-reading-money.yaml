@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-money"
+name: "Reading: money"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A family's monthly budget, and a note from a shopkeeper about credit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-money-budget"
+    title: "A family budget"
+    theme: "money"
+    sentences:
+      - {"text": "इस महीने की आमदनी और ख़र्च का हिसाब बनाओ।", "reading": "is mahīnē kī āmdnī aur k͟harc kā hisāb banāō.", "ipa": "ɪs məɦiːneː kiː aːmd̪niː ɔːr xərtʃ kaː ɦɪsaːb bənaːoː"}
+      - {"text": "बजट में बचत के लिए थोड़ा हिस्सा रखो।", "reading": "bajaṭ mēm̐ bacat kē liē thōṛā hissā rakhō.", "ipa": "bədʒəʈ mẽː bətʃət̪ keː lɪeː t̪ʰoːɽaː ɦɪssaː rəkʰoː"}
+      - {"text": "दुकानदार ने उधार देने से मना किया।", "reading": "dukāndār nē udhār dēnē sē manā kiyā.", "ipa": "d̪ʊkaːnd̪aːr neː ʊd̪ʱaːr d̪eːneː seː mənaː kɪjaː"}
+      - {"text": "पिछले साल घाटा हुआ, पर इस साल लाभ होगा।", "reading": "pichlē sāl ghāṭā huā, par is sāl lābh hōgā.", "ipa": "pɪtʃʰleː saːl ɡʱaːʈaː ɦʊaː pər ɪs saːl laːbʱ ɦoːɡaː"}
+    questions:
+      - {"id": "hi-2760", "prompt": {"en": "The family should make a budget for the month."}, "answer": true}
+      - {"id": "hi-2761", "prompt": {"en": "What did the shopkeeper refuse?"}, "options": [{"en": "Credit"}, {"en": "Change"}], "answer": 1}
+      - {"id": "hi-2762", "prompt": {"en": "There was a profit last year."}, "answer": false}
+  - id: "hi-money-note"
+    title: "A note on careful spending"
+    theme: "money"
+    sentences:
+      - {"text": "कंजूस मत बनो, पर ख़र्च सोच-समझकर करो।", "reading": "kañjūs mat banō, par k͟harc sōc-samjhkar karō.", "ipa": "kəɲdʒuːs mət̪ bənoː pər xərtʃ soːtʃsəmdʒʱkər kəroː"}
+      - {"text": "उसकी कमाई बढ़ी, पर दौलत का सही इस्तेमाल भी ज़रूरी है।", "reading": "uskī kamāī baṛhī, par daulat kā sahī istēmāl bhī zarūrī hai.", "ipa": "ʊskiː kəmaːiː bəɽʱiː pər d̪ɔːlət̪ kaː səɦiː ɪst̪eːmaːl bʱiː zəruːriː ɦɛː"}
+      - {"text": "नुकसान से बचने के लिए कर्ज़ कम लो।", "reading": "nuksān sē bacnē kē liē karz kam lō.", "ipa": "nʊksaːn seː bətʃneː keː lɪeː kərz kəm loː"}
+      - {"text": "दिवालिया होने से पहले बजट सुधारो।", "reading": "divāliyā hōnē sē pahlē bajaṭ sudhārō.", "ipa": "d̪ɪʋaːlɪjaː ɦoːneː seː pəɦleː bədʒəʈ sʊd̪ʱaːroː"}
+    questions:
+      - {"id": "hi-2763", "prompt": {"en": "Spend carefully, but do not be stingy."}, "answer": true}
+      - {"id": "hi-2764", "prompt": {"en": "What should be less?"}, "options": [{"en": "Debt"}, {"en": "Savings"}], "answer": 1}
+      - {"id": "hi-2765", "prompt": {"en": "One should not improve the budget."}, "answer": false}

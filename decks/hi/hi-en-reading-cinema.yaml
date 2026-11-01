@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-cinema"
+name: "Reading: cinema"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short review of a film, and a notice at a theatre. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-cinema-review"
+    title: "A film review"
+    theme: "cinema"
+    sentences:
+      - {"text": "इस फ़िल्म का निर्देशक नया है, पर कहानी पुरानी है।", "reading": "is film kā nirdēśak nayā hai, par kahānī purānī hai.", "ipa": "ɪs fɪlm kaː nɪrd̪eːʃək nəjaː ɦɛː pər kəɦaːniː pʊraːniː ɦɛː"}
+      - {"text": "हीरो और हीरोइन की जोड़ी अच्छी है।", "reading": "hīrō aur hīrōin kī jōṛī acchī hai.", "ipa": "ɦiːroː ɔːr ɦiːroːɪn kiː dʒoːɽiː ətʃtʃʰiː ɦɛː"}
+      - {"text": "गाने सुपरहिट हैं और कैमरामैन का काम शानदार है।", "reading": "gānē suprhiṭ haim̐ aur kaimrāmain kā kām śāndār hai.", "ipa": "ɡaːneː sʊprɦɪʈ ɦɛ̃ː ɔːr kɛːmraːmɛːn kaː kaːm ʃaːnd̪aːr ɦɛː"}
+      - {"text": "कॉमेडी और ड्रामा दोनों हैं।", "reading": "kômēḍī aur ḍrāmā dōnōm̐ haim̐.", "ipa": "kɔmeːɖiː ɔːr ɖraːmaː d̪oːnõː ɦɛ̃ː"}
+    questions:
+      - {"id": "hi-2444", "prompt": {"en": "The director is new."}, "answer": true}
+      - {"id": "hi-2445", "prompt": {"en": "What is old in the film?"}, "options": [{"en": "The story"}, {"en": "The songs"}], "answer": 1}
+      - {"id": "hi-2446", "prompt": {"en": "The camera work is poor."}, "answer": false}
+  - id: "hi-cinema-notice"
+    title: "A notice at a theatre"
+    theme: "cinema"
+    sentences:
+      - {"text": "टिकट खिड़की सुबह दस बजे खुलेगी।", "reading": "ṭikaṭ khiṛkī subah das bajē khulēgī.", "ipa": "ʈɪkəʈ kʰɪɽkiː sʊbəɦ d̪əs bədʒeː kʰʊleːɡiː"}
+      - {"text": "परदे पर ट्रेलर चलाया जाएगा।", "reading": "pardē par ṭrēlar calāyā jāēgā.", "ipa": "pərd̪eː pər ʈreːlər tʃəlaːjaː dʒaːeːɡaː"}
+      - {"text": "दर्शकों से अनुरोध है कि फ़ोन बंद रखें।", "reading": "darśakōm̐ sē anurōdh hai ki fōn band rakhēm̐.", "ipa": "d̪ərʃəkõː seː ənʊroːd̪ʱ ɦɛː kɪ foːn bənd̪ rəkʰẽː"}
+      - {"text": "शूटिंग के कारण सेट बंद है।", "reading": "śūṭiṅg kē kāraṇ sēṭ band hai.", "ipa": "ʃuːʈɪŋɡ keː kaːrəɳ seːʈ bənd̪ ɦɛː"}
+    questions:
+      - {"id": "hi-2447", "prompt": {"en": "The ticket window opens at ten."}, "answer": true}
+      - {"id": "hi-2448", "prompt": {"en": "What must the audience do with the phones?"}, "options": [{"en": "Keep them off"}, {"en": "Sell them"}], "answer": 1}
+      - {"id": "hi-2449", "prompt": {"en": "The set is open."}, "answer": false}

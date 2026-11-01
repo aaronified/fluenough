@@ -1,0 +1,19 @@
+schema: 1
+id: "hi-en-grammar-concessive"
+kind: "layer"
+core: "hi-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Concessive (even if, although)"
+license: "CC-BY-SA-4.0"
+description: "Even if and although, answered by still in the main clause, as in chaahe barish ho, phir bhi hum jaayenge. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Concessive (even if, although)"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"concessive clause (even if, although)": "the word that opens the clause", "main clause (still, nevertheless)": "the word that answers it in the main clause"}
+  entries:
+    "chahe": "even if; whether or not"
+    "bhalehi": "even though; even if"
+    "halanki": "although; though"
+  notes: "A concessive clause gives a condition or a fact that does not stop the main action, and is answered in the main clause by फिर भी (phir bhī), still or nevertheless. For example, चाहे बारिश हो (cāhē bāriś hō) फिर भी (phir bhī) हम जाएँगे (ham jāēm̐gē): even if it rains, we will go anyway. भले ही (bhalē hī) and हालाँकि (hālām̐ki) work the same way, with फिर भी (phir bhī) in the main clause. The subjunctive form of the verb is used in the clause with चाहे (cāhē) and भले ही (bhalē hī)."

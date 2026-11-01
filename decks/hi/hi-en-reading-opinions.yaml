@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-opinions"
+name: "Reading: opinions"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short debate between two students, and a note from a teacher. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-opinions-debate"
+    title: "A debate at school"
+    theme: "opinions"
+    sentences:
+      - {"text": "मेरी राय में बिजली बचाना ज़रूरी है।", "reading": "mērī rāy mēm̐ bijlī bacānā zarūrī hai.", "ipa": "meːriː raːj mẽː bɪdʒliː bətʃaːnaː zəruːriː ɦɛː"}
+      - {"text": "दूसरा छात्र असहमत था और उसने तर्क दिए।", "reading": "dūsrā chātr ashmat thā aur usnē tark diē.", "ipa": "d̪uːsraː tʃʰaːt̪r əsɦmət̪ t̪ʰaː ɔːr ʊsneː t̪ərk d̪ɪeː"}
+      - {"text": "टीचर ने सुझाव दिया कि दोनों पक्ष समझौता करें।", "reading": "ṭīcar nē sujhāv diyā ki dōnōm̐ pakś samjhautā karēm̐.", "ipa": "ʈiːtʃər neː sʊdʒʱaːʋ d̪ɪjaː kɪ d̪oːnõː pəkʃ səmdʒʱɔːt̪aː kərẽː"}
+      - {"text": "सबूत के बिना कोई बात मानना मुश्किल है।", "reading": "sabūt kē binā kōī bāt mānnā muśkil hai.", "ipa": "səbuːt̪ keː bɪnaː koːiː baːt̪ maːnnaː mʊʃkɪl ɦɛː"}
+    questions:
+      - {"id": "hi-2208", "prompt": {"en": "The writer thinks saving electricity is necessary."}, "answer": true}
+      - {"id": "hi-2209", "prompt": {"en": "What did the other student do?"}, "options": [{"en": "Gave reasons"}, {"en": "Agreed at once"}], "answer": 1}
+      - {"id": "hi-2210", "prompt": {"en": "The teacher asked for no compromise."}, "answer": false}
+  - id: "hi-opinions-note"
+    title: "A note to a friend"
+    theme: "opinions"
+    sentences:
+      - {"text": "प्रिय दोस्त, तुम्हारी सलाह सही थी।", "reading": "priy dōst, tumhārī salāh sahī thī.", "ipa": "prɪj d̪oːst̪ t̪ʊmɦaːriː səlaːɦ səɦiː t̪ʰiː"}
+      - {"text": "मुझे यकीन है कि नया तरीका कारगर होगा।", "reading": "mujhē yakīn hai ki nayā tarīkā kārgar hōgā.", "ipa": "mʊdʒʱeː jəkiːn ɦɛː kɪ nəjaː t̪əriːkaː kaːrɡər ɦoːɡaː"}
+      - {"text": "पर एक शक है, इसलिए निश्चित होकर बताना।", "reading": "par ēk śak hai, isliē niścit hōkar batānā.", "ipa": "pər eːk ʃək ɦɛː ɪslɪeː nɪʃtʃɪt̪ ɦoːkər bət̪aːnaː"}
+      - {"text": "ज़रूर लिखना, मैं तुम्हारी बात सुनने को तैयार हूँ।", "reading": "zarūr likhnā, maim̐ tumhārī bāt sunnē kō taiyār hūm̐.", "ipa": "zəruːr lɪkʰnaː mɛ̃ː t̪ʊmɦaːriː baːt̪ sʊnneː koː t̪ɛːjaːr ɦũː"}
+    questions:
+      - {"id": "hi-2211", "prompt": {"en": "The writer took the friend's advice."}, "answer": true}
+      - {"id": "hi-2212", "prompt": {"en": "What does the writer doubt?"}, "options": [{"en": "Whether the new way works"}, {"en": "The friend's name"}], "answer": 1}
+      - {"id": "hi-2213", "prompt": {"en": "The writer refuses to listen."}, "answer": false}

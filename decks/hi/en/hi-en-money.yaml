@@ -1,0 +1,130 @@
+schema: 1
+id: "hi-en-money"
+kind: "layer"
+core: "hi-money"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money"
+license: "CC-BY-SA-4.0"
+description: "Money in daily life: what one earns and spends, the budget and the debt, profit and loss, and the words for being careful or ruined. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2743":
+    native: "expense; spending"
+    notes:
+      "n1": "Money spent on something. The verb is ख़र्च करना (k͟harc karnā), to spend."
+    examples:
+      "घर का ख़र्च बढ़ गया है।": { "native": "The household expenses have risen.", "bases": {"बढ़": "to rise"} }
+      "ख़र्च ध्यान से सोचकर करो।": { "native": "Spend after thinking carefully.", "bases": {"ध्यान": "care; attention"} }
+  "hi-2744":
+    native: "income"
+    notes:
+      "n1": "The money one earns in a month or a year."
+    examples:
+      "उसकी आमदनी अच्छी है।": { "native": "His income is good.", "bases": {} }
+      "आमदनी से ज़्यादा ख़र्च मत करो।": { "native": "Do not spend more than your income.", "bases": {"मत": "do not"} }
+  "hi-2745":
+    native: "earnings; the money earned"
+    notes:
+      "n1": "The money that a person has earned by work."
+    examples:
+      "मेरी कमाई इस महीने कम है।": { "native": "My earnings this month are low.", "bases": {} }
+      "मेहनत की कमाई पर गर्व करो।": { "native": "Be proud of money earned by hard work.", "bases": {"मेहनत": "hard work", "कमाई": "earnings"} }
+  "hi-2746":
+    native: "budget"
+    notes:
+      "n1": "A plan of how much money to spend and save in a period."
+    examples:
+      "इस महीने का बजट तैयार करो।": { "native": "Prepare this month's budget.", "bases": {"तैयार": "ready"} }
+      "बजट से बाहर मत जाओ।": { "native": "Do not go beyond the budget.", "bases": {"मत": "do not"} }
+  "hi-2747":
+    native: "credit; loan; on loan"
+    notes:
+      "n1": "Money or goods given or taken to be paid back later, without paying at once."
+    examples:
+      "उसने मुझसे उधार लिया।": { "native": "He took a loan from me.", "bases": {} }
+      "दुकान पर उधार नहीं मिलेगा।": { "native": "You will not get credit at the shop.", "bases": {} }
+  "hi-2748":
+    native: "profit; benefit"
+    notes:
+      "n1": "The money gained in trade, or a good that one gets from something."
+    examples:
+      "इस सौदे में बड़ा लाभ है।": { "native": "There is a big profit in this deal.", "bases": {} }
+      "योजना से सबको लाभ होगा।": { "native": "Everyone will benefit from the plan.", "bases": {} }
+  "hi-2749":
+    native: "loss (in money)"
+    notes:
+      "n1": "Money lost in a business, when it costs more than it earns."
+    examples:
+      "इस साल दुकान में घाटा हुआ।": { "native": "The shop made a loss this year.", "bases": {} }
+      "घाटे से बचने के लिए बजट बनाओ।": { "native": "Make a budget to avoid a loss.", "bases": {"घाटे": "loss", "लिए": "for"} }
+  "hi-2750":
+    native: "miserly; stingy"
+    notes:
+      "n1": "Unwilling to spend money, even when it is needed."
+    examples:
+      "वह बहुत कंजूस है।": { "native": "He is very miserly.", "bases": {} }
+      "कंजूस मत बनो।": { "native": "Do not be stingy.", "bases": {"मत": "do not"} }
+  "hi-2751":
+    native: "bankrupt"
+    notes:
+      "n1": "Unable to pay one's debts, and declared unable to carry on in business."
+    examples:
+      "कंपनी दिवालिया हो गई।": { "native": "The company went bankrupt.", "bases": {} }
+      "दिवालिया आदमी को उधार मत दो।": { "native": "Do not give credit to a bankrupt man.", "bases": {"मत": "do not"} }
+  "hi-2752":
+    native: "loss; harm; damage"
+    notes:
+      "n1": "Harm, or money lost, from something that goes wrong."
+    examples:
+      "बारिश से फ़सल का नुकसान हुआ।": { "native": "The crop was damaged by the rain.", "bases": {} }
+      "इससे किसी को नुकसान नहीं होगा।": { "native": "No one will be harmed by this.", "bases": {"किसी": "someone"} }
+  "hi-2753":
+    native: "wealth; riches"
+    notes:
+      "n1": "A large amount of money and goods that a person owns."
+    examples:
+      "उसके पास बहुत दौलत है।": { "native": "He has a lot of wealth.", "bases": {} }
+      "दौलत से सुख नहीं मिलता।": { "native": "Happiness does not come from wealth.", "bases": {"सुख": "happiness"} }
+  "hi-2754":
+    native: "profit"
+    notes:
+      "n1": "The money left over after costs are paid in a business. The opposite is घाटा (ghāṭā)."
+    examples:
+      "इस साल दुकान को अच्छा मुनाफ़ा हुआ।": { "native": "The shop made a good profit this year.", "bases": {"मुनाफ़ा": "profit"} }
+      "मुनाफ़ा कितना है?": { "native": "How much is the profit?", "bases": {} }
+  "hi-2755":
+    native: "capital; savings"
+    notes:
+      "n1": "The money that is put into a business to start or to run it."
+    examples:
+      "व्यापार के लिए पूँजी चाहिए।": { "native": "Capital is needed for business.", "bases": {"लिए": "for"} }
+      "उसकी सारी पूँजी डूब गई।": { "native": "All his capital has sunk.", "bases": {} }
+  "hi-2756":
+    native: "economy; thrift"
+    notes:
+      "n1": "Careful use of money or goods, so that nothing is wasted."
+    examples:
+      "किफ़ायत से ख़र्च करो।": { "native": "Spend economically.", "bases": {} }
+      "किफ़ायत करना अच्छी आदत है।": { "native": "Being thrifty is a good habit.", "bases": {"आदत": "habit"} }
+  "hi-2757":
+    native: "wastefulness; extravagance"
+    notes:
+      "n1": "Spending money on things that are not needed."
+    examples:
+      "फ़िज़ूलख़र्ची मत करो।": { "native": "Do not be wasteful.", "bases": {"मत": "do not"} }
+      "फ़िज़ूलख़र्ची से बजट बिगड़ता है।": { "native": "Wastefulness spoils the budget.", "bases": {"बिगड़ता": "to spoil"} }
+  "hi-2758":
+    native: "donation; subscription"
+    notes:
+      "n1": "Money that people give together for a cause or a function."
+    examples:
+      "मंदिर के लिए चंदा दो।": { "native": "Give a donation for the temple.", "bases": {"लिए": "for"} }
+      "सबने मिलकर चंदा जमा किया।": { "native": "Everyone together collected donations.", "bases": {"चंदा": "donation"} }
+  "hi-2759":
+    native: "wages"
+    notes:
+      "n1": "The money paid for work, especially manual work."
+    examples:
+      "मज़दूरी समय पर मिलनी चाहिए।": { "native": "Wages should be paid on time.", "bases": {} }
+      "उसकी मज़दूरी बढ़ी है।": { "native": "His wages have risen.", "bases": {"बढ़ी": "to rise"} }

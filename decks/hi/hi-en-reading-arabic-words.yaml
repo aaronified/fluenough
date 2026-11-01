@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-arabic-words"
+name: "Reading: arabic-words"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A formal letter with Arabic words of learning, papers and the government. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-arabic-letter"
+    title: "A formal letter"
+    theme: "arabic-words"
+    sentences:
+      - {"text": "मुअल्लिम साहब की तालीम का मुल्क में बड़ा असर है।", "reading": "muallim sāhab kī tālīm kā mulk mēm̐ baṛā asar hai.", "ipa": "mʊəllɪm saːɦəb kiː t̪aːliːm kaː mʊlk mẽː bəɽaː əsər ɦɛː"}
+      - {"text": "सारे कागज़ात और मालूमात साथ लाएँ।", "reading": "sārē kāgzāt aur mālūmāt sāth lāēm̐.", "ipa": "saːreː kaːɡzaːt̪ ɔːr maːluːmaːt̪ saːt̪ʰ laːẽː"}
+      - {"text": "हुकूमत ने इल्म और तालीम के लिए नई योजना बनाई।", "reading": "hukūmat nē ilm aur tālīm kē liē naī yōjnā banāī.", "ipa": "ɦʊkuːmət̪ neː ɪlm ɔːr t̪aːliːm keː lɪeː nəiː joːdʒnaː bənaːiː"}
+      - {"text": "हर शख़्स को अपनी ज़बान में पढ़ने का हक है।", "reading": "har śak͟hs kō apnī zabān mēm̐ paṛhnē kā hak hai.", "ipa": "ɦər ʃəxs koː əpniː zəbaːn mẽː pəɽʱneː kaː ɦək ɦɛː"}
+    questions:
+      - {"id": "hi-2830", "prompt": {"en": "The teacher's education has a big effect in the country."}, "answer": true}
+      - {"id": "hi-2831", "prompt": {"en": "What should be brought along?"}, "options": [{"en": "The papers and information"}, {"en": "A ball"}], "answer": 1}
+      - {"id": "hi-2832", "prompt": {"en": "The government has made no plan for learning."}, "answer": false}
+  - id: "hi-arabic-school"
+    title: "A notice at a madrasa"
+    theme: "arabic-words"
+    sentences:
+      - {"text": "मदरसे में नया दाख़िला शुरू है।", "reading": "madrsē mēm̐ nayā dāk͟hilā śurū hai.", "ipa": "məd̪rseː mẽː nəjaː d̪aːxɪlaː ʃʊruː ɦɛː"}
+      - {"text": "वक़्त पर आना ज़रूरी है।", "reading": "vaqt par ānā zarūrī hai.", "ipa": "ʋəqt̪ pər aːnaː zəruːriː ɦɛː"}
+      - {"text": "मसला हो तो आलिम से मिलें।", "reading": "maslā hō tō ālim sē milēm̐.", "ipa": "məslaː ɦoː t̪oː aːlɪm seː mɪlẽː"}
+      - {"text": "हर शख़्स को अपना हक़ मालूम होना चाहिए।", "reading": "har śak͟hs kō apnā haq mālūm hōnā cāhiē.", "ipa": "ɦər ʃəxs koː əpnaː ɦəq maːluːm ɦoːnaː tʃaːɦɪeː"}
+    questions:
+      - {"id": "hi-2833", "prompt": {"en": "New admission has started at the madrasa."}, "answer": true}
+      - {"id": "hi-2834", "prompt": {"en": "Who should be met if there is a problem?"}, "options": [{"en": "A scholar"}, {"en": "The cook"}], "answer": 1}
+      - {"id": "hi-2835", "prompt": {"en": "Being on time is not necessary."}, "answer": false}

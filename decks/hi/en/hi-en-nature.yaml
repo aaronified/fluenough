@@ -1,0 +1,235 @@
+schema: 1
+id: "hi-en-nature"
+kind: "layer"
+core: "hi-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature: trees, land and water"
+license: "CC-BY-SA-4.0"
+description: "The land and what grows on it: trees, leaves, rocks and sand, and the streams, falls and fires of the country. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1926":
+    native: "tree"
+    notes:
+      "n1": "A tree, with a trunk, branches and leaves. The branch is डाल (ḍāl) and the leaf is पत्ता (pattā)."
+    examples:
+      "आँगन में बड़ा पेड़ है।": { "native": "There is a big tree in the courtyard.", "bases": {"आँगन": "courtyard"} }
+      "इस पेड़ की छाया ठंडी है।": { "native": "The shade of this tree is cool.", "bases": {} }
+  "hi-1927":
+    native: "leaf"
+    notes:
+      "n1": "A leaf of a tree or plant. The plural is पत्ते (pattē)."
+    examples:
+      "पेड़ से पत्ता गिरा।": { "native": "A leaf fell from the tree.", "bases": {} }
+      "हरे पत्ते सुंदर हैं।": { "native": "The green leaves are beautiful.", "bases": {"पत्ते": "leaf"} }
+  "hi-1928":
+    native: "flower"
+    notes:
+      "n1": "The part of a plant that is coloured and often sweet-smelling."
+    examples:
+      "बगीचे में फूल खिले हैं।": { "native": "Flowers have bloomed in the garden.", "bases": {} }
+      "लाल फूल सुंदर है।": { "native": "The red flower is beautiful.", "bases": {} }
+  "hi-1929":
+    native: "waterfall; spring"
+    notes:
+      "n1": "Water that falls down a rock, or flows from the ground. The plural is झरने (jharnē)."
+    examples:
+      "पहाड़ से झरना बहता है।": { "native": "A waterfall flows from the mountain.", "bases": {} }
+      "झरने का पानी ठंडा है।": { "native": "The water of the waterfall is cold.", "bases": {"झरने": "waterfall"} }
+  "hi-1930":
+    native: "sand"
+    notes:
+      "n1": "The fine grains of earth that cover a beach or a desert."
+    examples:
+      "समुद्र के किनारे रेत है।": { "native": "There is sand on the seashore.", "bases": {} }
+      "रेत पर पैर मत रखो।": { "native": "Do not put your foot on the sand.", "bases": {"मत": "do not"} }
+  "hi-1931":
+    native: "stone"
+    notes:
+      "n1": "A small or large piece of rock. A big one is a चट्टान (caṭṭān)."
+    examples:
+      "सड़क पर पत्थर है।": { "native": "There is a stone on the road.", "bases": {} }
+      "पत्थर भारी है।": { "native": "The stone is heavy.", "bases": {} }
+  "hi-1932":
+    native: "rock; cliff"
+    notes:
+      "n1": "A large mass of rock, on a hill or by the sea."
+    examples:
+      "नदी के किनारे चट्टान है।": { "native": "There is a rock on the bank of the river.", "bases": {} }
+      "चट्टान पर बैठो।": { "native": "Sit on the rock.", "bases": {} }
+  "hi-1933":
+    native: "grass"
+    notes:
+      "n1": "The green plant that covers the ground in a field."
+    examples:
+      "मैदान में हरी घास है।": { "native": "There is green grass in the field.", "bases": {} }
+      "घास पर मत चलो।": { "native": "Do not walk on the grass.", "bases": {"मत": "do not"} }
+  "hi-1934":
+    native: "root"
+    notes:
+      "n1": "The part of a plant that goes into the ground and takes up water."
+    examples:
+      "पेड़ की जड़ गहरी है।": { "native": "The root of the tree is deep.", "bases": {} }
+      "जड़ें पानी लेती हैं।": { "native": "Roots take in water.", "bases": {"जड़ें": "root"} }
+  "hi-1935":
+    native: "stem; trunk"
+    notes:
+      "n1": "The main stem of a tree, from which the branches grow."
+    examples:
+      "पेड़ का तना मोटा है।": { "native": "The trunk of the tree is thick.", "bases": {} }
+      "तने पर निशान है।": { "native": "There is a mark on the trunk.", "bases": {"तने": "trunk", "निशान": "mark"} }
+  "hi-1936":
+    native: "seed"
+    notes:
+      "n1": "The small part of a plant from which a new plant grows."
+    examples:
+      "बीज ज़मीन में बोओ।": { "native": "Sow the seed in the ground.", "bases": {"ज़मीन": "ground; land", "बोओ": "to sow"} }
+      "बीज से पौधा उगता है।": { "native": "A plant grows from a seed.", "bases": {} }
+  "hi-1937":
+    native: "bud"
+    notes:
+      "n1": "A flower before it opens."
+    examples:
+      "गुलाब की कली खिली।": { "native": "The rose bud opened.", "bases": {"गुलाब": "rose"} }
+      "कली कल फूल बनेगी।": { "native": "The bud will become a flower tomorrow.", "bases": {} }
+  "hi-1938":
+    native: "earth; ground"
+    notes:
+      "n1": "The earth, the planet we live on, or the ground."
+    examples:
+      "धरती गोल है।": { "native": "The earth is round.", "bases": {"गोल": "round"} }
+      "बारिश से धरती गीली हो गई।": { "native": "The ground became wet after the rain.", "bases": {} }
+  "hi-1939":
+    native: "plant; sapling"
+    notes:
+      "n1": "A young plant or a small tree, grown from a seed."
+    examples:
+      "पौधे को पानी दो।": { "native": "Give the plant some water.", "bases": {"पौधे": "plant"} }
+      "छोटा पौधा बड़ा होता है।": { "native": "A small plant grows big.", "bases": {} }
+  "hi-1940":
+    native: "well"
+    notes:
+      "n1": "A deep hole dug in the ground to get water."
+    examples:
+      "गाँव में कुआँ है।": { "native": "There is a well in the village.", "bases": {} }
+      "कुएँ से पानी लाओ।": { "native": "Bring water from the well.", "bases": {"कुएँ": "well"} }
+  "hi-1941":
+    native: "stream; current"
+    notes:
+      "n1": "The flow of water in a river or stream."
+    examples:
+      "नदी की धारा तेज़ है।": { "native": "The current of the river is strong.", "bases": {} }
+      "पानी की धारा बहती है।": { "native": "A stream of water flows.", "bases": {} }
+  "hi-1942":
+    native: "desert"
+    notes:
+      "n1": "A very dry land where very little rain falls and few plants grow."
+    examples:
+      "रेगिस्तान बहुत गरम है।": { "native": "The desert is very hot.", "bases": {} }
+      "ऊँट रेगिस्तान में चलता है।": { "native": "The camel walks in the desert.", "bases": {"ऊँट": "camel"} }
+  "hi-1943":
+    native: "forest; jungle"
+    notes:
+      "n1": "A large area of land covered with trees."
+    examples:
+      "वन में शेर रहता है।": { "native": "A lion lives in the forest.", "bases": {} }
+      "वन में बहुत पेड़ हैं।": { "native": "There are many trees in the forest.", "bases": {} }
+  "hi-1944":
+    native: "fire"
+    notes:
+      "n1": "The flame and heat of something burning."
+    examples:
+      "आग जलाओ।": { "native": "Light the fire.", "bases": {} }
+      "आग से बचो।": { "native": "Keep away from the fire.", "bases": {} }
+  "hi-1945":
+    native: "smoke"
+    notes:
+      "n1": "The grey or black cloud that rises from a fire."
+    examples:
+      "चिमनी से धुआँ निकलता है।": { "native": "Smoke comes out of the chimney.", "bases": {"चिमनी": "chimney", "निकलता": "to come out"} }
+      "धुएँ से आँखें जलती हैं।": { "native": "Smoke makes the eyes sting.", "bases": {"धुएँ": "smoke", "जलती": "to burn"} }
+  "hi-1946":
+    native: "shade; shadow"
+    notes:
+      "n1": "A dark place made by a thing that stops the sun, or the dark shape a thing makes."
+    examples:
+      "पेड़ की छाया में बैठो।": { "native": "Sit in the shade of the tree.", "bases": {} }
+      "छाया में ठंड लगती है।": { "native": "It feels cold in the shade.", "bases": {} }
+  "hi-1947":
+    native: "pit; hole"
+    notes:
+      "n1": "A hole in the ground, or in a road."
+    examples:
+      "सड़क पर गड्ढा है।": { "native": "There is a pit on the road.", "bases": {} }
+      "गड्ढे में पानी भरा है।": { "native": "Water has collected in the hole.", "bases": {"गड्ढे": "pit"} }
+  "hi-1948":
+    native: "mound; small hill"
+    notes:
+      "n1": "A small hill of earth or sand."
+    examples:
+      "रेत का टीला ऊँचा है।": { "native": "The sand dune is high.", "bases": {} }
+      "उस टीले पर चढ़ो।": { "native": "Climb that mound.", "bases": {"टीले": "mound"} }
+  "hi-1949":
+    native: "greenery"
+    notes:
+      "n1": "The green colour and growth of plants over a land."
+    examples:
+      "गाँव में हरियाली है।": { "native": "There is greenery in the village.", "bases": {} }
+      "बारिश के बाद हरियाली बढ़ती है।": { "native": "After the rain the greenery grows.", "bases": {"बाद": "after", "बढ़ती": "to grow"} }
+  "hi-1950":
+    native: "to sprout; to grow up"
+    notes:
+      "n1": "To come up out of the ground, as a plant or a seed does."
+    examples:
+      "धूप में घास उगती है।": { "native": "Grass grows in the sun.", "bases": {"उगती": "to sprout"} }
+      "पहाड़ पर पेड़ उगते हैं।": { "native": "Trees grow on the mountain.", "bases": {"उगते": "to sprout"} }
+  "hi-1951":
+    native: "to flow"
+    notes:
+      "n1": "To flow, as water in a river or sweat from the body."
+    examples:
+      "नदी धीरे बहती है।": { "native": "The river flows slowly.", "bases": {"बहती": "to flow"} }
+      "पसीना माथे से बहता है।": { "native": "Sweat flows from the forehead.", "bases": {"बहता": "to flow"} }
+  "hi-1952":
+    native: "to bloom; to open"
+    notes:
+      "n1": "To open out, as a flower or a bud does."
+    examples:
+      "फूल खिलते हैं।": { "native": "Flowers bloom.", "bases": {"खिलते": "to bloom"} }
+      "सुबह कमल खिलता है।": { "native": "In the morning the lotus opens.", "bases": {"खिलता": "to bloom"} }
+  "hi-1953":
+    native: "to fall off; to shed"
+    notes:
+      "n1": "To fall off a plant, as leaves do in autumn."
+    examples:
+      "पतझड़ में पत्ते झड़ते हैं।": { "native": "In autumn the leaves fall.", "bases": {"झड़ते": "to fall off"} }
+      "पेड़ के पत्ते झड़ गए।": { "native": "The tree's leaves fell off.", "bases": {"झड़": "to fall off"} }
+  "hi-1954":
+    native: "to spread; to scatter"
+    notes:
+      "n1": "To spread out by itself, as smoke or light does."
+    examples:
+      "धुआँ पूरे कमरे में फैल गया।": { "native": "The smoke spread through the whole room.", "bases": {"फैल": "to spread"} }
+      "रोशनी चारों ओर फैलती है।": { "native": "Light spreads all around.", "bases": {"ओर": "direction", "फैलती": "to spread"} }
+  "hi-1955":
+    native: "to sink; to set"
+    notes:
+      "n1": "To go under water, or for the sun to go down."
+    examples:
+      "पत्थर पानी में डूब गया।": { "native": "The stone sank in the water.", "bases": {"डूब": "to sink"} }
+      "सूरज डूब रहा है।": { "native": "The sun is setting.", "bases": {"डूब": "to set"} }
+  "hi-1956":
+    native: "to fly"
+    notes:
+      "n1": "To fly through the air, as a bird, a kite or a leaf does."
+    examples:
+      "चिड़िया आसमान में उड़ती है।": { "native": "The bird flies in the sky.", "bases": {"उड़ती": "to fly"} }
+      "पत्ते हवा में उड़ रहे हैं।": { "native": "Leaves are flying in the wind.", "bases": {"उड़": "to fly"} }
+  "hi-1957":
+    native: "to chirp; to twitter"
+    notes:
+      "n1": "To make the high sound that birds make in the morning."
+    examples:
+      "सुबह चिड़िया चहचहाती है।": { "native": "In the morning the bird chirps.", "bases": {"चहचहाती": "to chirp"} }
+      "पेड़ पर चिड़ियाँ चहचहा रही हैं।": { "native": "Birds are chirping in the tree.", "bases": {"चहचहा": "to chirp"} }

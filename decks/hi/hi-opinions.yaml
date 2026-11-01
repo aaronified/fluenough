@@ -1,0 +1,405 @@
+schema: 1
+id: "hi-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2180"
+    target: "राय"
+    target_scripts: {"perso_arabic": "رائے"}
+    reading: "rāy"
+    ipa: "raːj"
+    phonetic: "[raːj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरी राय में यह ठीक है।", "reading": "mērī rāy mēm̐ yah ṭhīk hai.", "ipa": "meːriː raːj mẽː jəɦ ʈʰiːk ɦɛː", "bases": [{"word": "मेरी", "ref": "hi-0752"}, {"word": "में", "ref": "hi-0274"}, {"word": "यह", "ref": "hi-0748"}, {"word": "ठीक", "ref": "hi-1457"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसकी राय सुनो।", "reading": "uskī rāy sunō.", "ipa": "ʊskiː raːj sʊnoː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "सुनो", "ref": "hi-0783"}]}
+  - id: "hi-2181"
+    target: "विचार"
+    target_scripts: {"perso_arabic": "سوچ"}
+    reading: "vicār"
+    ipa: "ʋɪtʃaːr"
+    phonetic: "[ʋɪtʃaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसके विचार अच्छे हैं।", "reading": "uskē vicār acchē haim̐.", "ipa": "ʊskeː ʋɪtʃaːr ətʃtʃʰeː ɦɛ̃ː", "bases": [{"word": "उसके", "ref": "hi-0749"}, {"word": "अच्छे", "ref": "hi-0898"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "इस विचार पर सोचो।", "reading": "is vicār par sōcō.", "ipa": "ɪs ʋɪtʃaːr pər soːtʃoː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "पर", "ref": "hi-0275"}, {"word": "सोचो", "ref": "hi-0953"}]}
+  - id: "hi-2182"
+    target: "सहमत"
+    target_scripts: {"perso_arabic": "متفق"}
+    reading: "sahmat"
+    ipa: "səɦmət̪"
+    phonetic: "[səɦmət̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैं तुम्हारी बात से सहमत हूँ।", "reading": "maim̐ tumhārī bāt sē sahmat hūm̐.", "ipa": "mɛ̃ː t̪ʊmɦaːriː baːt̪ seː səɦmət̪ ɦũː", "bases": [{"word": "मैं", "ref": "hi-0745"}, {"word": "तुम्हारी", "ref": "hi-0754"}, {"word": "बात", "ref": "hi-1864"}, {"word": "से", "ref": "hi-0276"}, {"word": "हूँ", "ref": "hi-0780"}]}
+      - {"target": "सब लोग इस पर सहमत हैं।", "reading": "sab lōg is par sahmat haim̐.", "ipa": "səb loːɡ ɪs pər səɦmət̪ ɦɛ̃ː", "bases": [{"word": "सब", "ref": "hi-0054"}, {"word": "लोग", "ref": "hi-0761"}, {"word": "इस", "ref": "hi-0748"}, {"word": "पर", "ref": "hi-0275"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2183"
+    target: "असहमत"
+    target_scripts: {"perso_arabic": "غیر متفق"}
+    reading: "ashmat"
+    ipa: "əsɦmət̪"
+    phonetic: "[əsɦmət̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैं इस फ़ैसले से असहमत हूँ।", "reading": "maim̐ is faislē sē ashmat hūm̐.", "ipa": "mɛ̃ː ɪs fɛːsleː seː əsɦmət̪ ɦũː", "bases": [{"word": "मैं", "ref": "hi-0745"}, {"word": "इस", "ref": "hi-0748"}, {"word": "फ़ैसले", "ref": "hi-2168"}, {"word": "से", "ref": "hi-0276"}, {"word": "हूँ", "ref": "hi-0780"}]}
+      - {"target": "वह असहमत दिखता है।", "reading": "vah ashmat dikhtā hai.", "ipa": "ʋəɦ əsɦmət̪ d̪ɪkʰt̪aː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "दिखता", "ref": "hi-1779"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2184"
+    target: "मानना"
+    target_scripts: {"perso_arabic": "ماننا"}
+    reading: "mānnā"
+    ipa: "maːnnaː"
+    phonetic: "[maːnnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैं तुम्हारी बात मानता हूँ।", "reading": "maim̐ tumhārī bāt māntā hūm̐.", "ipa": "mɛ̃ː t̪ʊmɦaːriː baːt̪ maːnt̪aː ɦũː", "bases": [{"word": "मैं", "ref": "hi-0745"}, {"word": "तुम्हारी", "ref": "hi-0754"}, {"word": "बात", "ref": "hi-1864"}, {"word": "मानता", "base": "मानना", "reading": "mānnā"}, {"word": "हूँ", "ref": "hi-0780"}]}
+      - {"target": "बड़ों की बात मानो।", "reading": "baṛōm̐ kī bāt mānō.", "ipa": "bəɽõː kiː baːt̪ maːnoː", "bases": [{"word": "बड़ों", "ref": "hi-0894"}, {"word": "की", "ref": "hi-0279"}, {"word": "बात", "ref": "hi-1864"}, {"word": "मानो", "base": "मानना", "reading": "mānnā"}]}
+  - id: "hi-2185"
+    target: "पक्ष"
+    target_scripts: {"perso_arabic": "طرف"}
+    reading: "pakś"
+    ipa: "pəkʃ"
+    phonetic: "[pəkʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैं तुम्हारे पक्ष में हूँ।", "reading": "maim̐ tumhārē pakś mēm̐ hūm̐.", "ipa": "mɛ̃ː t̪ʊmɦaːreː pəkʃ mẽː ɦũː", "bases": [{"word": "मैं", "ref": "hi-0745"}, {"word": "तुम्हारे", "ref": "hi-0754"}, {"word": "पक्ष", "base": "पक्ष", "reading": "pakś"}, {"word": "में", "ref": "hi-0274"}, {"word": "हूँ", "ref": "hi-0780"}]}
+      - {"target": "दोनों पक्षों की बात सुनो।", "reading": "dōnōm̐ pakśōm̐ kī bāt sunō.", "ipa": "d̪oːnõː pəkʃõː kiː baːt̪ sʊnoː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "पक्षों", "base": "पक्ष", "reading": "pakś"}, {"word": "की", "ref": "hi-0279"}, {"word": "बात", "ref": "hi-1864"}, {"word": "सुनो", "ref": "hi-0783"}]}
+  - id: "hi-2186"
+    target: "तर्क"
+    target_scripts: {"perso_arabic": "منطق"}
+    reading: "tark"
+    ipa: "t̪ərk"
+    phonetic: "[t̪ərk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका तर्क सही है।", "reading": "uskā tark sahī hai.", "ipa": "ʊskaː t̪ərk səɦiː ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "सही", "ref": "hi-0822"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बिना तर्क के मत मानो।", "reading": "binā tark kē mat mānō.", "ipa": "bɪnaː t̪ərk keː mət̪ maːnoː", "bases": [{"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "के", "ref": "hi-0279"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "मानो", "ref": "hi-2184"}]}
+  - id: "hi-2187"
+    target: "सबूत"
+    target_scripts: {"perso_arabic": "ثبوت"}
+    reading: "sabūt"
+    ipa: "səbuːt̪"
+    phonetic: "[səbuːt̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तुम्हारे पास सबूत है?", "reading": "tumhārē pās sabūt hai?", "ipa": "t̪ʊmɦaːreː paːs səbuːt̪ ɦɛː", "bases": [{"word": "तुम्हारे", "ref": "hi-0754"}, {"word": "पास", "ref": "hi-0293"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "इस बात का कोई सबूत नहीं।", "reading": "is bāt kā kōī sabūt nahīm̐.", "ipa": "ɪs baːt̪ kaː koːiː səbuːt̪ nəɦĩː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "बात", "ref": "hi-1864"}, {"word": "का", "ref": "hi-0279"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "सबूत", "base": "सबूत", "reading": "sabūt"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2188"
+    target: "सच्चाई"
+    target_scripts: {"perso_arabic": "سچائی"}
+    reading: "saccāī"
+    ipa: "sətʃtʃaːiː"
+    phonetic: "[sətʃtʃaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सच्चाई छिपी नहीं रहती।", "reading": "saccāī chipī nahīm̐ rahtī.", "ipa": "sətʃtʃaːiː tʃʰɪpiː nəɦĩː rəɦt̪iː", "bases": [{"word": "छिपी", "base": "छिपना", "reading": "chipnā"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "रहती", "ref": "hi-0791"}]}
+      - {"target": "उसकी सच्चाई पर भरोसा है।", "reading": "uskī saccāī par bharōsā hai.", "ipa": "ʊskiː sətʃtʃaːiː pər bʱəroːsaː ɦɛː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "पर", "ref": "hi-0275"}, {"word": "भरोसा", "ref": "hi-2116"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2189"
+    target: "दलील"
+    target_scripts: {"perso_arabic": "دلیل"}
+    reading: "dalīl"
+    ipa: "d̪əliːl"
+    phonetic: "[d̪əliːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसकी दलील मज़बूत थी।", "reading": "uskī dalīl mazbūt thī.", "ipa": "ʊskiː d̪əliːl məzbuːt̪ t̪ʰiː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "मज़बूत", "ref": "hi-1978"}, {"word": "थी", "ref": "hi-0780"}]}
+      - {"target": "मेरी दलील कोई नहीं सुनता।", "reading": "mērī dalīl kōī nahīm̐ suntā.", "ipa": "meːriː d̪əliːl koːiː nəɦĩː sʊnt̪aː", "bases": [{"word": "मेरी", "ref": "hi-0752"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "सुनता", "ref": "hi-0783"}]}
+  - id: "hi-2190"
+    target: "ख़याल"
+    target_scripts: {"perso_arabic": "خیال"}
+    reading: "k͟hayāl"
+    ipa: "xəjaːl"
+    phonetic: "[xəjaːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह ख़याल अच्छा है।", "reading": "yah k͟hayāl acchā hai.", "ipa": "jəɦ xəjaːl ətʃtʃʰaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अपना ख़याल रखो।", "reading": "apnā k͟hayāl rakhō.", "ipa": "əpnaː xəjaːl rəkʰoː", "bases": [{"word": "अपना", "ref": "hi-0760"}, {"word": "रखो", "ref": "hi-0950"}]}
+  - id: "hi-2191"
+    target: "नज़रिया"
+    target_scripts: {"perso_arabic": "نظریہ"}
+    reading: "nazriyā"
+    ipa: "nəzrɪjaː"
+    phonetic: "[nəzrɪjaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका नज़रिया अलग है।", "reading": "uskā nazriyā alag hai.", "ipa": "ʊskaː nəzrɪjaː ələɡ ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "अलग", "ref": "hi-1985"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सबका नज़रिया एक जैसा नहीं होता।", "reading": "sabkā nazriyā ēk jaisā nahīm̐ hōtā.", "ipa": "səbkaː nəzrɪjaː eːk dʒɛːsaː nəɦĩː ɦoːt̪aː", "bases": [{"word": "सबका", "ref": "hi-0054"}, {"word": "एक", "ref": "hi-0198"}, {"word": "जैसा", "base": "जैसा", "reading": "jaisā"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "होता", "ref": "hi-0780"}]}
+  - id: "hi-2192"
+    target: "नापसंद"
+    target_scripts: {"perso_arabic": "ناپسند"}
+    reading: "nāpsand"
+    ipa: "naːpsənd̪"
+    phonetic: "[naːpsən̪d̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुझे यह रंग नापसंद है।", "reading": "mujhē yah raṅg nāpsand hai.", "ipa": "mʊdʒʱeː jəɦ rəŋɡ naːpsənd̪ ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "यह", "ref": "hi-0748"}, {"word": "रंग", "ref": "hi-1309"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसकी नापसंद चीज़ें मत लाओ।", "reading": "uskī nāpsand cīzēm̐ mat lāō.", "ipa": "ʊskiː naːpsənd̪ tʃiːzẽː mət̪ laːoː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "चीज़ें", "ref": "hi-1351"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "लाओ", "ref": "hi-0949"}]}
+  - id: "hi-2193"
+    target: "बहस"
+    target_scripts: {"perso_arabic": "بحث"}
+    reading: "bahas"
+    ipa: "bəɦəs"
+    phonetic: "[bəɦəs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों के बीच बहस हुई।", "reading": "dōnōm̐ kē bīc bahas huī.", "ipa": "d̪oːnõː keː biːtʃ bəɦəs ɦʊiː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "के", "ref": "hi-0279"}, {"word": "बीच", "base": "बीच", "reading": "bīc"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "इस बहस का कोई अंत नहीं।", "reading": "is bahas kā kōī ant nahīm̐.", "ipa": "ɪs bəɦəs kaː koːiː ənt̪ nəɦĩː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "बहस", "base": "बहस", "reading": "bahas"}, {"word": "का", "ref": "hi-0279"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "अंत", "base": "अंत", "reading": "ant"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2194"
+    target: "सुझाव"
+    target_scripts: {"perso_arabic": "مشورہ"}
+    reading: "sujhāv"
+    ipa: "sʊdʒʱaːʋ"
+    phonetic: "[sʊdʒʱaːʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तुम्हारा सुझाव अच्छा है।", "reading": "tumhārā sujhāv acchā hai.", "ipa": "t̪ʊmɦaːraː sʊdʒʱaːʋ ətʃtʃʰaː ɦɛː", "bases": [{"word": "तुम्हारा", "ref": "hi-0754"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मेरा एक सुझाव है।", "reading": "mērā ēk sujhāv hai.", "ipa": "meːraː eːk sʊdʒʱaːʋ ɦɛː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "एक", "ref": "hi-0198"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2195"
+    target: "सलाह"
+    target_scripts: {"perso_arabic": "صلاح"}
+    reading: "salāh"
+    ipa: "səlaːɦ"
+    phonetic: "[səlaːɦ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "डॉक्टर की सलाह मानो।", "reading": "ḍôkṭar kī salāh mānō.", "ipa": "ɖɔkʈər kiː səlaːɦ maːnoː", "bases": [{"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "की", "ref": "hi-0279"}, {"word": "मानो", "ref": "hi-2184"}]}
+      - {"target": "मुझे एक सलाह दो।", "reading": "mujhē ēk salāh dō.", "ipa": "mʊdʒʱeː eːk səlaːɦ d̪oː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "एक", "ref": "hi-0198"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2196"
+    target: "शक"
+    target_scripts: {"perso_arabic": "شک"}
+    reading: "śak"
+    ipa: "ʃək"
+    phonetic: "[ʃək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुझे उस पर शक है।", "reading": "mujhē us par śak hai.", "ipa": "mʊdʒʱeː ʊs pər ʃək ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "उस", "ref": "hi-0749"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "इसमें कोई शक नहीं।", "reading": "ismēm̐ kōī śak nahīm̐.", "ipa": "ɪsmẽː koːiː ʃək nəɦĩː", "bases": [{"word": "इसमें", "base": "इस", "reading": "is"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2197"
+    target: "यकीन"
+    target_scripts: {"perso_arabic": "یقین"}
+    reading: "yakīn"
+    ipa: "jəkiːn"
+    phonetic: "[jəkiːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुझे उसकी बात का यकीन है।", "reading": "mujhē uskī bāt kā yakīn hai.", "ipa": "mʊdʒʱeː ʊskiː baːt̪ kaː jəkiːn ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "उसकी", "ref": "hi-0749"}, {"word": "बात", "ref": "hi-1864"}, {"word": "का", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यकीन मानो, यह सच है।", "reading": "yakīn mānō, yah sac hai.", "ipa": "jəkiːn maːnoː jəɦ sətʃ ɦɛː", "bases": [{"word": "मानो", "ref": "hi-2184"}, {"word": "यह", "ref": "hi-0748"}, {"word": "सच", "base": "सच", "reading": "sac"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2199"
+    target: "अवश्य"
+    target_scripts: {"perso_arabic": "یقیناً"}
+    reading: "avaśy"
+    ipa: "əʋəʃj"
+    phonetic: "[əʋəʃj]"
+    phonetic_source: "rules"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आप अवश्य आइए।", "reading": "āp avaśy āiē.", "ipa": "aːp əʋəʃj aːɪeː", "bases": [{"word": "आप", "ref": "hi-0134"}, {"word": "आइए", "ref": "hi-0778"}]}
+      - {"target": "यह काम अवश्य होगा।", "reading": "yah kām avaśy hōgā.", "ipa": "jəɦ kaːm əʋəʃj ɦoːɡaː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "काम", "ref": "hi-0194"}, {"word": "होगा", "ref": "hi-0780"}]}
+  - id: "hi-2200"
+    target: "निश्चित"
+    target_scripts: {"perso_arabic": "یقینی"}
+    reading: "niścit"
+    ipa: "nɪʃtʃɪt̪"
+    phonetic: "[nɪʃtʃɪt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मीटिंग का समय निश्चित है।", "reading": "mīṭiṅg kā samay niścit hai.", "ipa": "miːʈɪŋɡ kaː səməj nɪʃtʃɪt̪ ɦɛː", "bases": [{"word": "मीटिंग", "ref": "hi-2007"}, {"word": "का", "ref": "hi-0279"}, {"word": "समय", "ref": "hi-0607"}, {"word": "निश्चित", "base": "निश्चित", "reading": "niścit"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मुझे निश्चित पता है।", "reading": "mujhē niścit patā hai.", "ipa": "mʊdʒʱeː nɪʃtʃɪt̪ pət̪aː ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "पता", "base": "पता", "reading": "patā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2201"
+    target: "संभव"
+    target_scripts: {"perso_arabic": "ممکن"}
+    reading: "sambhav"
+    ipa: "səmbʱəʋ"
+    phonetic: "[səmbʱəʋ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "क्या यह संभव है?", "reading": "kyā yah sambhav hai?", "ipa": "kjaː jəɦ səmbʱəʋ ɦɛː", "bases": [{"word": "क्या", "ref": "hi-0157"}, {"word": "यह", "ref": "hi-0748"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यह काम आज संभव नहीं है।", "reading": "yah kām āj sambhav nahīm̐ hai.", "ipa": "jəɦ kaːm aːdʒ səmbʱəʋ nəɦĩː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "काम", "ref": "hi-0194"}, {"word": "आज", "ref": "hi-0299"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2202"
+    target: "असंभव"
+    target_scripts: {"perso_arabic": "ناممکن"}
+    reading: "asambhav"
+    ipa: "əsəmbʱəʋ"
+    phonetic: "[əsəmbʱəʋ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह असंभव लगता है।", "reading": "yah asambhav lagtā hai.", "ipa": "jəɦ əsəmbʱəʋ ləɡt̪aː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "लगता", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कुछ भी असंभव नहीं।", "reading": "kuch bhī asambhav nahīm̐.", "ipa": "kʊtʃʰ bʱiː əsəmbʱəʋ nəɦĩː", "bases": [{"word": "कुछ", "ref": "hi-0759"}, {"word": "भी", "ref": "hi-0350"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2203"
+    target: "स्वीकार"
+    target_scripts: {"perso_arabic": "قبولیت"}
+    reading: "svīkār"
+    ipa: "sʋiːkaːr"
+    phonetic: "[sʋiːkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका प्रस्ताव स्वीकार हुआ।", "reading": "uskā prastāv svīkār huā.", "ipa": "ʊskaː prəst̪aːʋ sʋiːkaːr ɦʊaː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "प्रस्ताव", "ref": "hi-2008"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "सबने उसका स्वीकार किया।", "reading": "sabnē uskā svīkār kiyā.", "ipa": "səbneː ʊskaː sʋiːkaːr kɪjaː", "bases": [{"word": "सबने", "ref": "hi-0054"}, {"word": "उसका", "ref": "hi-0749"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2204"
+    target: "इनकार"
+    target_scripts: {"perso_arabic": "انکار"}
+    reading: "inkār"
+    ipa: "ɪnkaːr"
+    phonetic: "[ɪŋkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने साफ़ इनकार किया।", "reading": "usnē sāf inkār kiyā.", "ipa": "ʊsneː saːf ɪnkaːr kɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "साफ़", "ref": "hi-0901"}, {"word": "किया", "ref": "hi-0779"}]}
+      - {"target": "इनकार मत करो।", "reading": "inkār mat karō.", "ipa": "ɪnkaːr mət̪ kəroː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2205"
+    target: "सुझाना"
+    target_scripts: {"perso_arabic": "تجویز کرنا"}
+    reading: "sujhānā"
+    ipa: "sʊdʒʱaːnaː"
+    phonetic: "[sʊdʒʱaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैं एक नया रास्ता सुझाता हूँ।", "reading": "maim̐ ēk nayā rāstā sujhātā hūm̐.", "ipa": "mɛ̃ː eːk nəjaː raːst̪aː sʊdʒʱaːt̪aː ɦũː", "bases": [{"word": "मैं", "ref": "hi-0745"}, {"word": "एक", "ref": "hi-0198"}, {"word": "नया", "ref": "hi-0896"}, {"word": "रास्ता", "ref": "hi-0297"}, {"word": "सुझाता", "base": "सुझाना", "reading": "sujhānā"}, {"word": "हूँ", "ref": "hi-0780"}]}
+      - {"target": "उसने जगह सुझाई।", "reading": "usnē jagah sujhāī.", "ipa": "ʊsneː dʒəɡəɦ sʊdʒʱaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "जगह", "base": "जगह", "reading": "jagah"}, {"word": "सुझाई", "base": "सुझाना", "reading": "sujhānā"}]}
+  - id: "hi-2206"
+    target: "समझौता"
+    target_scripts: {"perso_arabic": "سمجھوتہ"}
+    reading: "samjhautā"
+    ipa: "səmdʒʱɔːt̪aː"
+    phonetic: "[səmdʒʱɔːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों पक्षों में समझौता हुआ।", "reading": "dōnōm̐ pakśōm̐ mēm̐ samjhautā huā.", "ipa": "d̪oːnõː pəkʃõː mẽː səmdʒʱɔːt̪aː ɦʊaː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "पक्षों", "ref": "hi-2185"}, {"word": "में", "ref": "hi-0274"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "थोड़ा समझौता करो।", "reading": "thōṛā samjhautā karō.", "ipa": "t̪ʰoːɽaː səmdʒʱɔːt̪aː kəroː", "bases": [{"word": "थोड़ा", "ref": "hi-0865"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2207"
+    target: "स्वीकारना"
+    target_scripts: {"perso_arabic": "قبول کرنا"}
+    reading: "svīkārnā"
+    ipa: "sʋiːkaːrnaː"
+    phonetic: "[sʋiːkaːrnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने गलती स्वीकारी।", "reading": "usnē galtī svīkārī.", "ipa": "ʊsneː ɡəlt̪iː sʋiːkaːriː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "गलती", "ref": "hi-1597"}, {"word": "स्वीकारी", "base": "स्वीकारना", "reading": "svīkārnā"}]}
+      - {"target": "सच स्वीकारो।", "reading": "sac svīkārō.", "ipa": "sətʃ sʋiːkaːroː", "bases": [{"word": "सच", "base": "सच", "reading": "sac"}, {"word": "स्वीकारो", "base": "स्वीकारना", "reading": "svīkārnā"}]}

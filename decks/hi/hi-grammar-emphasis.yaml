@@ -1,0 +1,49 @@
+schema: 1
+id: "hi-grammar-emphasis"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["after a noun", "after a verb"]
+  entries:
+    - lemma: "ही"
+      key: "hi"
+      reading: "hī"
+      ipa: "ɦiː"
+      forms:
+        "after a noun": "घर ही"
+        "after a verb": "जाता ही है"
+      readings:
+        "after a noun": "ghar hī"
+        "after a verb": "jātā hī hai"
+      ipas:
+        "after a noun": "ɡʱər ɦiː"
+        "after a verb": "dʒaːt̪aː ɦiː ɦɛː"
+    - lemma: "भी"
+      key: "bhi"
+      reading: "bhī"
+      ipa: "bʱiː"
+      forms:
+        "after a noun": "घर भी"
+        "after a verb": "जाता भी है"
+      readings:
+        "after a noun": "ghar bhī"
+        "after a verb": "jātā bhī hai"
+      ipas:
+        "after a noun": "ɡʱər bʱiː"
+        "after a verb": "dʒaːt̪aː bʱiː ɦɛː"
+    - lemma: "तो"
+      key: "to"
+      reading: "tō"
+      ipa: "t̪oː"
+      forms:
+        "after a noun": "घर तो"
+        "after a verb": "जाता तो है"
+      readings:
+        "after a noun": "ghar tō"
+        "after a verb": "jātā tō hai"
+      ipas:
+        "after a noun": "ɡʱər t̪oː"
+        "after a verb": "dʒaːt̪aː t̪oː ɦɛː"

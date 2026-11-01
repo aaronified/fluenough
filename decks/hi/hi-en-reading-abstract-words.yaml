@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-abstract-words"
+name: "Reading: abstract-words"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A letter about honesty and patience, and a short note on a difficult situation. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-abstract-letter"
+    title: "A letter about character"
+    theme: "abstract-words"
+    sentences:
+      - {"text": "ईमानदारी और धैर्य से बड़ी कोई पूँजी नहीं।", "reading": "īmāndārī aur dhairy sē baṛī kōī pūm̐jī nahīm̐.", "ipa": "iːmaːnd̪aːriː ɔːr d̪ʱɛːrj seː bəɽiː koːiː pũːdʒiː nəɦĩː"}
+      - {"text": "उसका स्वभाव शांत है, पर अहंकार बिल्कुल नहीं।", "reading": "uskā svabhāv śānt hai, par ahaṅkār bilkul nahīm̐.", "ipa": "ʊskaː sʋəbʱaːʋ ʃaːnt̪ ɦɛː pər əɦəŋkaːr bɪlkʊl nəɦĩː"}
+      - {"text": "कठिन परिस्थिति में भी उसने साहस नहीं छोड़ा।", "reading": "kaṭhin paristhiti mēm̐ bhī usnē sāhas nahīm̐ chōṛā.", "ipa": "kəʈʰɪn pərɪst̪ʰɪt̪ɪ mẽː bʱiː ʊsneː saːɦəs nəɦĩː tʃʰoːɽaː"}
+      - {"text": "हर समस्या का कोई न कोई हल होता है।", "reading": "har samasyā kā kōī na kōī hal hōtā hai.", "ipa": "ɦər səməsjaː kaː koːiː nə koːiː ɦəl ɦoːt̪aː ɦɛː"}
+    questions:
+      - {"id": "hi-2737", "prompt": {"en": "Honesty and patience are the best capital."}, "answer": true}
+      - {"id": "hi-2738", "prompt": {"en": "What is absent in his nature?"}, "options": [{"en": "Arrogance"}, {"en": "Calm"}], "answer": 1}
+      - {"id": "hi-2739", "prompt": {"en": "He gave up his courage in the hard situation."}, "answer": false}
+  - id: "hi-abstract-note"
+    title: "A note on purpose"
+    theme: "abstract-words"
+    sentences:
+      - {"text": "हमारा उद्देश्य सबकी भलाई है।", "reading": "hamārā uddēśy sabkī bhalāī hai.", "ipa": "ɦəmaːraː ʊd̪d̪eːʃj səbkiː bʱəlaːiː ɦɛː"}
+      - {"text": "इसमें समय लगेगा, पर सफलता की संभावना है।", "reading": "ismēm̐ samay lagēgā, par saphltā kī sambhāvnā hai.", "ipa": "ɪsmẽː səməj ləɡeːɡaː pər səpʰlt̪aː kiː səmbʱaːʋnaː ɦɛː"}
+      - {"text": "लोभ और आलस्य से दूर रहो।", "reading": "lōbh aur ālasy sē dūr rahō.", "ipa": "loːbʱ ɔːr aːləsj seː d̪uːr rəɦoː"}
+      - {"text": "सार यह है कि सत्य और नैतिकता हमेशा साथ रहें।", "reading": "sār yah hai ki saty aur naitiktā hamēśā sāth rahēm̐.", "ipa": "saːr jəɦ ɦɛː kɪ sət̪j ɔːr nɛːt̪ɪkt̪aː ɦəmeːʃaː saːt̪ʰ rəɦẽː"}
+    questions:
+      - {"id": "hi-2740", "prompt": {"en": "The aim is the good of everyone."}, "answer": true}
+      - {"id": "hi-2741", "prompt": {"en": "What should be kept away?"}, "options": [{"en": "Greed and laziness"}, {"en": "Truth"}], "answer": 1}
+      - {"id": "hi-2742", "prompt": {"en": "Success is impossible."}, "answer": false}

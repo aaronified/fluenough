@@ -1,0 +1,130 @@
+schema: 1
+id: "hi-en-arts"
+kind: "layer"
+core: "hi-arts"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arts"
+license: "CC-BY-SA-4.0"
+description: "The arts: painting and sculpture, dance and music and their instruments, poetry and literature, and the words for a work and its audience. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2450":
+    native: "painter"
+    notes:
+      "n1": "A person who paints pictures. The word for the picture is चित्र (citr)."
+    examples:
+      "यह चित्रकार बहुत मशहूर है।": { "native": "This painter is very famous.", "bases": {} }
+      "चित्रकार ने नदी का चित्र बनाया।": { "native": "The painter made a picture of the river.", "bases": {"ने": "by"} }
+  "hi-2451":
+    native: "sculptor"
+    notes:
+      "n1": "A person who makes figures out of stone, metal or clay."
+    examples:
+      "मूर्तिकार ने पत्थर तराशा।": { "native": "The sculptor carved the stone.", "bases": {"ने": "by", "तराशा": "to carve"} }
+      "मूर्तिकार की कला अद्भुत है।": { "native": "The sculptor's art is wonderful.", "bases": {"अद्भुत": "wonderful"} }
+  "hi-2452":
+    native: "player (of a musical instrument)"
+    notes:
+      "n1": "A musician who plays an instrument, such as the tabla or the flute."
+    examples:
+      "तबला वादक बहुत अच्छा है।": { "native": "The tabla player is very good.", "bases": {} }
+      "वादक ने राग बजाया।": { "native": "The player played the raga.", "bases": {"ने": "by", "बजाया": "to play"} }
+  "hi-2453":
+    native: "poetry (Urdu style)"
+    notes:
+      "n1": "Poetry in Urdu or Hindi, usually in couplets of ghazal or nazm."
+    examples:
+      "उसकी शायरी दिल को छूती है।": { "native": "His poetry touches the heart.", "bases": {} }
+      "शायरी सुनाओ।": { "native": "Recite some poetry.", "bases": {} }
+  "hi-2454":
+    native: "exhibition"
+    notes:
+      "n1": "A public show of paintings, objects or works of art."
+    examples:
+      "चित्रों की प्रदर्शनी कल खुलेगी।": { "native": "The exhibition of paintings will open tomorrow.", "bases": {"प्रदर्शनी": "exhibition", "खुलेगी": "to open"} }
+      "प्रदर्शनी देखने चलें।": { "native": "Let us go and see the exhibition.", "bases": {} }
+  "hi-2455":
+    native: "literature"
+    notes:
+      "n1": "Written works such as poems, novels and plays, valued for their art."
+    examples:
+      "हिंदी साहित्य बहुत पुराना है।": { "native": "Hindi literature is very old.", "bases": {"हिंदी": "Hindi"} }
+      "साहित्य पढ़ने का शौक है।": { "native": "I enjoy reading literature.", "bases": {} }
+  "hi-2456":
+    native: "composition; work of art"
+    notes:
+      "n1": "A piece of writing, music or art that someone has made."
+    examples:
+      "यह उनकी सबसे अच्छी रचना है।": { "native": "This is his best composition.", "bases": {"सबसे": "most"} }
+      "नई रचना कब छपेगी?": { "native": "When will the new work be published?", "bases": {} }
+  "hi-2457":
+    native: "work of art; artwork"
+    notes:
+      "n1": "A painting, a sculpture or other object made as art."
+    examples:
+      "यह कलाकृति बहुत सुंदर है।": { "native": "This artwork is very beautiful.", "bases": {} }
+      "कलाकृति दीवार पर टँगी है।": { "native": "The artwork hangs on the wall.", "bases": {"दीवार": "wall"} }
+  "hi-2458":
+    native: "dancer (woman)"
+    notes:
+      "n1": "A woman who performs classical or folk dance."
+    examples:
+      "नृत्यांगना मंच पर नाच रही है।": { "native": "The dancer is dancing on the stage.", "bases": {} }
+      "वह प्रसिद्ध नृत्यांगना है।": { "native": "She is a famous dancer.", "bases": {"प्रसिद्ध": "famous"} }
+  "hi-2459":
+    native: "master (of an art)"
+    notes:
+      "n1": "A great teacher or master in music, art or a craft."
+    examples:
+      "उस्ताद ने सितार सिखाया।": { "native": "The master taught the sitar.", "bases": {"ने": "by"} }
+      "यह उस्ताद बहुत मशहूर हैं।": { "native": "This master is very famous.", "bases": {} }
+  "hi-2460":
+    native: "musical instrument"
+    notes:
+      "n1": "An instrument played to make music, such as a sitar or a drum."
+    examples:
+      "साज़ों की आवाज़ अच्छी है।": { "native": "The sound of the instruments is good.", "bases": {"साज़ों": "instrument"} }
+      "साज़ बजाना सीखो।": { "native": "Learn to play an instrument.", "bases": {"बजाना": "to play"} }
+  "hi-2461":
+    native: "raga; melody"
+    notes:
+      "n1": "A fixed pattern of notes in Indian music, sung or played to create a mood."
+    examples:
+      "यह राग शाम को गाया जाता है।": { "native": "This raga is sung in the evening.", "bases": {} }
+      "राग में सुर लगाओ।": { "native": "Sing the notes in the raga.", "bases": {"लगाओ": "to apply; to set"} }
+  "hi-2462":
+    native: "rhythm; beat"
+    notes:
+      "n1": "The beat or rhythm of a piece of music, kept by the drum."
+    examples:
+      "तबले की ताल तेज़ है।": { "native": "The beat of the tabla is fast.", "bases": {} }
+      "ताल पर ताली बजाओ।": { "native": "Clap to the beat.", "bases": {"ताली": "clap", "बजाओ": "to play; to clap"} }
+  "hi-2463":
+    native: "note; tune; pitch"
+    notes:
+      "n1": "A musical note or the correct pitch of a voice."
+    examples:
+      "उसका सुर सही है।": { "native": "His pitch is right.", "bases": {} }
+      "सुर में गाओ।": { "native": "Sing in tune.", "bases": {} }
+  "hi-2464":
+    native: "poet"
+    notes:
+      "n1": "A person who writes poems."
+    examples:
+      "कवि ने नई कविता लिखी।": { "native": "The poet wrote a new poem.", "bases": {"ने": "by"} }
+      "यह कवि बहुत प्रसिद्ध है।": { "native": "This poet is very famous.", "bases": {"प्रसिद्ध": "famous"} }
+  "hi-2465":
+    native: "writing"
+    notes:
+      "n1": "The act or art of writing, and the style of it."
+    examples:
+      "उसका लेखन सरल है।": { "native": "His writing is simple.", "bases": {} }
+      "लेखन की कला सीखो।": { "native": "Learn the art of writing.", "bases": {} }
+  "hi-2466":
+    native: "paintbrush"
+    notes:
+      "n1": "The brush that a painter uses to put colour on a picture."
+    examples:
+      "तूलिका से रंग भरो।": { "native": "Fill in colour with the brush.", "bases": {} }
+      "नई तूलिका खरीदो।": { "native": "Buy a new brush.", "bases": {"तूलिका": "brush", "खरीदो": "to buy"} }

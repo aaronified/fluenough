@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-literature"
+name: "Reading: literature"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short review of a novel, and a note about poetry. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-literature-review"
+    title: "A book review"
+    theme: "literature"
+    sentences:
+      - {"text": "इस उपन्यास का पात्र बहुत जीवंत है।", "reading": "is upanyās kā pātr bahut jīvant hai.", "ipa": "ɪs ʊpənjaːs kaː paːt̪r bəɦʊt̪ dʒiːʋənt̪ ɦɛː"}
+      - {"text": "पहला अध्याय पढ़ने में मज़ा आता है।", "reading": "pahlā adhyāy paṛhnē mēm̐ mazā ātā hai.", "ipa": "pəɦlaː əd̪ʱjaːj pəɽʱneː mẽː məzaː aːt̪aː ɦɛː"}
+      - {"text": "पाठक को शीर्षक से ही कहानी का सार मिल जाता है।", "reading": "pāṭhak kō śīrśak sē hī kahānī kā sār mil jātā hai.", "ipa": "paːʈʰək koː ʃiːrʃək seː ɦiː kəɦaːniː kaː saːr mɪl dʒaːt̪aː ɦɛː"}
+      - {"text": "भूमिका में लेखक ने अपने अनुभव बताए हैं।", "reading": "bhūmikā mēm̐ lēkhak nē apnē anubhav batāē haim̐.", "ipa": "bʱuːmɪkaː mẽː leːkʰək neː əpneː ənʊbʱəʋ bət̪aːeː ɦɛ̃ː"}
+    questions:
+      - {"id": "hi-2784", "prompt": {"en": "The novel's character is very lively."}, "answer": true}
+      - {"id": "hi-2785", "prompt": {"en": "What does the reader get from the title?"}, "options": [{"en": "A sense of the story"}, {"en": "A price"}], "answer": 1}
+      - {"id": "hi-2786", "prompt": {"en": "The preface has no words from the writer."}, "answer": false}
+  - id: "hi-literature-verse"
+    title: "A note on verse"
+    theme: "literature"
+    sentences:
+      - {"text": "ग़ज़ल और नज़्म में फ़र्क़ है।", "reading": "ġazal aur nazm mēm̐ farq hai.", "ipa": "ɣəzəl ɔːr nəzm mẽː fərq ɦɛː"}
+      - {"text": "दोहे में दो पंक्तियाँ होती हैं।", "reading": "dōhē mēm̐ dō paṅktiyām̐ hōtī haim̐.", "ipa": "d̪oːɦeː mẽː d̪oː pəŋkt̪ɪjãː ɦoːt̪iː ɦɛ̃ː"}
+      - {"text": "मुहावरे और कहावत का अर्थ अलग है।", "reading": "muhāvrē aur kahāvat kā arth alag hai.", "ipa": "mʊɦaːʋreː ɔːr kəɦaːʋət̪ kaː ərt̪ʰ ələɡ ɦɛː"}
+      - {"text": "व्याकरण का शब्दकोश भी काम आता है।", "reading": "vyākraṇ kā śabdakōś bhī kām ātā hai.", "ipa": "ʋjaːkrəɳ kaː ʃəbd̪əkoːʃ bʱiː kaːm aːt̪aː ɦɛː"}
+    questions:
+      - {"id": "hi-2787", "prompt": {"en": "A ghazal and a nazm are different."}, "answer": true}
+      - {"id": "hi-2788", "prompt": {"en": "How many lines does a couplet have?"}, "options": [{"en": "Two"}, {"en": "Four"}], "answer": 1}
+      - {"id": "hi-2789", "prompt": {"en": "A proverb and an idiom have the same meaning."}, "answer": false}

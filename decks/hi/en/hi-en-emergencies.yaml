@@ -1,0 +1,123 @@
+schema: 1
+id: "hi-en-emergencies"
+kind: "layer"
+core: "hi-emergencies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies"
+license: "CC-BY-SA-4.0"
+description: "What to do in an emergency: danger and warnings, accidents and injuries, the ambulance and the fire brigade, and how to ask for help. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2650":
+    native: "emergency"
+    notes:
+      "n1": "A sudden time of danger, when quick action is needed."
+    examples:
+      "आपातकाल में हेल्पलाइन पर फोन करो।": { "native": "In an emergency, phone the helpline.", "bases": {"आपातकाल": "emergency", "फोन": "phone"} }
+      "देश में आपातकाल लगा।": { "native": "An emergency was declared in the country.", "bases": {} }
+  "hi-2651":
+    native: "urgent; emergency"
+    notes:
+      "n1": "Needing quick action, as an emergency does."
+    examples:
+      "यह आपात स्थिति है।": { "native": "This is an emergency situation.", "bases": {"स्थिति": "situation"} }
+      "आपात काम के लिए बुलाओ।": { "native": "Call for an urgent job.", "bases": {"लिए": "for"} }
+  "hi-2652":
+    native: "emergency (adjective)"
+    notes:
+      "n1": "Of an emergency, used of a room, a number or a service."
+    examples:
+      "आपातकालीन कक्ष खुला है।": { "native": "The emergency room is open.", "bases": {"कक्ष": "room"} }
+      "आपातकालीन सेवा चौबीस घंटे है।": { "native": "The emergency service is twenty-four hours.", "bases": {"घंटे": "hour"} }
+  "hi-2653":
+    native: "accident"
+    notes:
+      "n1": "An event in which people or things are hurt or damaged, by chance."
+    examples:
+      "सड़क पर दुर्घटना हुई।": { "native": "An accident happened on the road.", "bases": {} }
+      "दुर्घटना में कोई नहीं मरा।": { "native": "No one died in the accident.", "bases": {"मरा": "to die"} }
+  "hi-2654":
+    native: "ambulance"
+    notes:
+      "n1": "A vehicle that carries sick or hurt people to a hospital."
+    examples:
+      "एम्बुलेंस को बुलाओ।": { "native": "Call the ambulance.", "bases": {} }
+      "एम्बुलेंस आ गई है।": { "native": "The ambulance has come.", "bases": {} }
+  "hi-2655":
+    native: "fire brigade; fire engine"
+    notes:
+      "n1": "The team that puts out fires and rescues people from them."
+    examples:
+      "दमकल आग बुझा रही है।": { "native": "The fire brigade is putting out the fire.", "bases": {"दमकल": "fire brigade", "बुझा": "to put out"} }
+      "दमकल को फोन करो।": { "native": "Phone the fire brigade.", "bases": {"दमकल": "fire brigade", "फोन": "phone"} }
+  "hi-2656":
+    native: "rescue; protection"
+    notes:
+      "n1": "The act of saving a person from danger or harm."
+    examples:
+      "बचाव दल पहुँच गया।": { "native": "The rescue team has arrived.", "bases": {"दल": "team"} }
+      "बचाव का काम जारी है।": { "native": "The rescue work is going on.", "bases": {"जारी": "going on"} }
+  "hi-2657":
+    native: "careful; alert; watch out"
+    notes:
+      "n1": "Taking care and paying attention, to avoid danger."
+    examples:
+      "सड़क पर सावधान रहो।": { "native": "Be careful on the road.", "bases": {} }
+      "सावधान! आगे गड्ढा है।": { "native": "Watch out! There is a pit ahead.", "bases": {} }
+  "hi-2658":
+    native: "warning"
+    notes:
+      "n1": "A notice or a sign that tells of possible danger."
+    examples:
+      "मौसम की चेतावनी जारी हुई।": { "native": "A weather warning was issued.", "bases": {"जारी": "issued"} }
+      "चेतावनी पर ध्यान दो।": { "native": "Pay attention to the warning.", "bases": {"ध्यान": "attention"} }
+  "hi-2659":
+    native: "danger; risk"
+    notes:
+      "n1": "The chance that something bad will happen."
+    examples:
+      "यहाँ खतरा है।": { "native": "There is danger here.", "bases": {} }
+      "बिजली से खतरा है, मत छुओ।": { "native": "There is danger from electricity, do not touch.", "bases": {"मत": "do not"} }
+  "hi-2660":
+    native: "dangerous"
+    notes:
+      "n1": "Likely to cause harm, as a road, a animal or a machine can be."
+    examples:
+      "यह रास्ता खतरनाक है।": { "native": "This road is dangerous.", "bases": {} }
+      "साँप खतरनाक होता है।": { "native": "A snake is dangerous.", "bases": {} }
+  "hi-2661":
+    native: "exit"
+    notes:
+      "n1": "The way out of a building or a place."
+    examples:
+      "आपातकाल में निकास से निकलो।": { "native": "In an emergency, leave by the exit.", "bases": {"निकास": "exit", "निकलो": "to leave"} }
+      "निकास कहाँ है?": { "native": "Where is the exit?", "bases": {} }
+  "hi-2662":
+    native: "disaster"
+    notes:
+      "n1": "A sudden great misfortune, such as a flood, an earthquake or a fire."
+    examples:
+      "बाढ़ एक बड़ी आपदा है।": { "native": "A flood is a big disaster.", "bases": {} }
+      "आपदा में सबकी मदद करो।": { "native": "Help everyone in the disaster.", "bases": {} }
+  "hi-2663":
+    native: "helpline"
+    notes:
+      "n1": "A telephone number that people can call for help or information."
+    examples:
+      "हेल्पलाइन नंबर याद रखो।": { "native": "Remember the helpline number.", "bases": {} }
+      "हेल्पलाइन पर बात करो।": { "native": "Speak on the helpline.", "bases": {} }
+  "hi-2664":
+    native: "injured; wounded"
+    notes:
+      "n1": "Hurt in an accident or a fight, but alive."
+    examples:
+      "दो लोग घायल हैं।": { "native": "Two people are injured.", "bases": {} }
+      "घायल को अस्पताल ले जाओ।": { "native": "Take the injured person to hospital.", "bases": {} }
+  "hi-2665":
+    native: "wounded; hurt"
+    notes:
+      "n1": "Having a wound or cut on the body, from an injury."
+    examples:
+      "ज़ख़्मी आदमी को सहारा दो।": { "native": "Support the wounded man.", "bases": {"सहारा": "support"} }
+      "उसका हाथ ज़ख़्मी है।": { "native": "His hand is wounded.", "bases": {} }

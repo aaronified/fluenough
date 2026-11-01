@@ -1,0 +1,42 @@
+schema: 1
+id: "hi-chores-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1741"
+    target: "कमरा साफ़ करने के लिए झाड़ू और पोंछा लाओ।"
+    reading: "kamrā sāf karnē kē liē jhāṛū aur pōñchā lāō."
+    ipa: "kəmraː saːf kərneː keː lɪeː dʒʱaːɽuː ɔːr poːɲtʃʰaː laːoː"
+    phonetic: "[kəmraː saːf kərneː keː lɪeː dʒʱaːɽuː ɔːr poːɲtʃʰaː laːoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "कमरा", "ref": "hi-0421"}, {"word": "साफ़", "ref": "hi-0901"}, {"word": "करने", "base": "करना", "reading": "karnā"}, {"word": "के", "ref": "hi-0279"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "झाड़ू", "ref": "hi-1705"}, {"word": "और", "ref": "hi-0337"}, {"word": "पोंछा", "ref": "hi-1706"}, {"word": "लाओ", "base": "लाना", "reading": "lānā"}]
+    confusables:
+      - {"id": "w1", "word": "बाल्टी", "reading": "bālṭī", "ipa": "baːlʈiː", "kind": "word"}
+      - {"id": "w2", "ref": "hi-1708", "kind": "word"}
+  - id: "hi-1742"
+    target: "बाल्टी में गरम पानी और डिटर्जेंट डालो।"
+    reading: "bālṭī mēm̐ garam pānī aur ḍiṭarjēṇṭ ḍālō."
+    ipa: "baːlʈiː mẽː ɡərəm paːniː ɔːr ɖɪʈərdʒeːɳʈ ɖaːloː"
+    phonetic: "[baːlʈiː mẽː ɡərəm paːniː ɔːr ɖɪʈərdʒeːɳʈ ɖaːloː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "बाल्टी", "ref": "hi-1709"}, {"word": "में", "ref": "hi-0274"}, {"word": "गरम", "base": "गरम", "reading": "garam"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "और", "ref": "hi-0337"}, {"word": "डिटर्जेंट", "ref": "hi-1714"}, {"word": "डालो", "base": "डालना", "reading": "ḍālnā"}]
+    confusables:
+      - {"id": "w1", "word": "पोंछा", "reading": "pōñchā", "ipa": "poːɲtʃʰaː", "kind": "word"}
+      - {"id": "w2", "word": "ढक्कन", "reading": "ḍhakkan", "ipa": "ɖʱəkkən", "kind": "word"}
+  - id: "hi-1743"
+    target: "कपड़े धूप में सुखाने के बाद इस्त्री करो।"
+    reading: "kapṛē dhūp mēm̐ sukhānē kē bād istrī karō."
+    ipa: "kəpɽeː d̪ʱuːp mẽː sʊkʰaːneː keː baːd̪ ɪst̪riː kəroː"
+    phonetic: "[kəpɽeː d̪ʱuːp mẽː sʊkʰaːneː keː baːd̪ ɪst̪riː kəroː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{"word": "कपड़े", "base": "कपड़ा", "reading": "kapṛā"}, {"word": "धूप", "ref": "hi-1255"}, {"word": "में", "ref": "hi-0274"}, {"word": "सुखाने", "base": "सुखाना", "reading": "sukhānā"}, {"word": "के", "ref": "hi-0279"}, {"word": "बाद", "base": "बाद", "reading": "bād"}, {"word": "इस्त्री", "base": "इस्त्री", "reading": "istrī"}, {"word": "करो", "base": "करना", "reading": "karnā"}]
+    confusables:
+      - {"id": "w1", "word": "रस्सी", "reading": "rassī", "ipa": "rəssiː", "kind": "word"}
+      - {"id": "w2", "word": "धुलाई", "reading": "dhulāī", "ipa": "d̪ʱʊlaːiː", "kind": "word"}

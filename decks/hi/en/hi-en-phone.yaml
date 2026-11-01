@@ -1,0 +1,263 @@
+schema: 1
+id: "hi-en-phone"
+kind: "layer"
+core: "hi-phone"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone"
+license: "CC-BY-SA-4.0"
+description: "Phones and screens: messages, calls, chargers, the internet and the words the phone shows. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1845":
+    native: "message (text)"
+    notes:
+      "n1": "A text message sent on a phone. The formal word is संदेश (sandēś)."
+    examples:
+      "उसका मैसेज आया है।": { "native": "His message has come.", "bases": {} }
+      "मैसेज पढ़ो।": { "native": "Read the message.", "bases": {} }
+  "hi-1846":
+    native: "message (formal); news sent"
+    notes:
+      "n1": "A message, in a formal or written way. For a short text, use मैसेज (maisēj)."
+    examples:
+      "उसका संदेश आया।": { "native": "His message came.", "bases": {} }
+      "संदेश भेजो।": { "native": "Send the message.", "bases": {} }
+  "hi-1847":
+    native: "charger"
+    notes:
+      "n1": "The device that puts power into a phone battery."
+    examples:
+      "चार्जर कहाँ है?": { "native": "Where is the charger?", "bases": {} }
+      "फोन का चार्जर लाओ।": { "native": "Bring the phone's charger.", "bases": {"फोन": "phone"} }
+  "hi-1848":
+    native: "battery"
+    notes:
+      "n1": "The power store of a phone or a torch. It is also used of the power left in it."
+    examples:
+      "बैटरी कम है।": { "native": "The battery is low.", "bases": {} }
+      "बैटरी फुल है।": { "native": "The battery is full.", "bases": {"फुल": "full"} }
+  "hi-1849":
+    native: "internet"
+    notes:
+      "n1": "The network that a phone or a computer uses to get information. It is also called नेट (nēṭ)."
+    examples:
+      "यहाँ इंटरनेट नहीं है।": { "native": "There is no internet here.", "bases": {} }
+      "इंटरनेट धीमा है।": { "native": "The internet is slow.", "bases": {} }
+  "hi-1850":
+    native: "app; application"
+    notes:
+      "n1": "A program on a phone. Apps are installed from the store."
+    examples:
+      "यह ऐप मुफ़्त है।": { "native": "This app is free.", "bases": {} }
+      "नई ऐप डाउनलोड करो।": { "native": "Download a new app.", "bases": {"डाउनलोड": "download"} }
+  "hi-1851":
+    native: "screen"
+    notes:
+      "n1": "The glass part of a phone, computer or TV that shows the picture."
+    examples:
+      "स्क्रीन साफ़ करो।": { "native": "Clean the screen.", "bases": {} }
+      "स्क्रीन बड़ी है।": { "native": "The screen is big.", "bases": {} }
+  "hi-1852":
+    native: "video"
+    notes:
+      "n1": "A moving picture with sound. The word is used for any recording."
+    examples:
+      "मैं वीडियो देख रहा हूँ।": { "native": "I am watching a video.", "bases": {} }
+      "वीडियो लंबा है।": { "native": "The video is long.", "bases": {} }
+  "hi-1853":
+    native: "email"
+    notes:
+      "n1": "A message sent electronically over the internet. The verb is भेजना (bhējnā), to send."
+    examples:
+      "ईमेल भेजो।": { "native": "Send an email.", "bases": {} }
+      "उसका ईमेल आया है।": { "native": "His email has come.", "bases": {} }
+  "hi-1854":
+    native: "password"
+    notes:
+      "n1": "The secret word that opens a phone or an account."
+    examples:
+      "पासवर्ड मत भूलो।": { "native": "Do not forget your password.", "bases": {"मत": "do not"} }
+      "पासवर्ड किसी को मत बताओ।": { "native": "Do not tell anyone your password.", "bases": {"मत": "do not"} }
+  "hi-1855":
+    native: "bluetooth"
+    notes:
+      "n1": "A short-range link between two devices, without wires."
+    examples:
+      "ब्लूटूथ चालू करो।": { "native": "Switch on the Bluetooth.", "bases": {} }
+      "ब्लूटूथ से फ़ाइल भेजो।": { "native": "Send the file by Bluetooth.", "bases": {} }
+  "hi-1856":
+    native: "headphones; earphones"
+    notes:
+      "n1": "The small speakers worn in or over the ears, with a phone or music player."
+    examples:
+      "हेडफोन कान में लगाओ।": { "native": "Put the headphones in your ears.", "bases": {"लगाओ": "to put on; to apply"} }
+      "हेडफोन खो गया।": { "native": "The headphones are lost.", "bases": {"खो": "to lose"} }
+  "hi-1857":
+    native: "speaker (sound)"
+    notes:
+      "n1": "The part of a phone or a set that makes the sound come out."
+    examples:
+      "स्पीकर की आवाज़ तेज़ है।": { "native": "The speaker's sound is loud.", "bases": {} }
+      "स्पीकर धीमा करो।": { "native": "Turn the speaker down.", "bases": {} }
+  "hi-1858":
+    native: "SIM card"
+    notes:
+      "n1": "The small card that connects a phone to a mobile network."
+    examples:
+      "मेरी सिम बदल गई।": { "native": "My SIM has changed.", "bases": {} }
+      "सिम कार्ड कहाँ है?": { "native": "Where is the SIM card?", "bases": {} }
+  "hi-1859":
+    native: "contact (saved number)"
+    notes:
+      "n1": "A person saved in the phone's list of numbers."
+    examples:
+      "नंबर संपर्क में सेव करो।": { "native": "Save the number in the contacts.", "bases": {"सेव": "save"} }
+      "उसका संपर्क नंबर लिखो।": { "native": "Write down his contact number.", "bases": {} }
+  "hi-1860":
+    native: "line; connection"
+    notes:
+      "n1": "A phone line, or the connection with another person on the phone."
+    examples:
+      "लाइन व्यस्त है।": { "native": "The line is busy.", "bases": {"व्यस्त": "busy"} }
+      "फोन की लाइन कट गई।": { "native": "The phone line was cut.", "bases": {"कट": "to be cut", "फोन": "phone"} }
+  "hi-1861":
+    native: "signal"
+    notes:
+      "n1": "The strength of the connection with a mobile tower."
+    examples:
+      "यहाँ सिग्नल नहीं है।": { "native": "There is no signal here.", "bases": {} }
+      "सिग्नल कमज़ोर है।": { "native": "The signal is weak.", "bases": {} }
+  "hi-1862":
+    native: "voice; sound"
+    notes:
+      "n1": "The sound of a voice or of a thing. The word is used for both."
+    examples:
+      "आवाज़ साफ़ नहीं आ रही।": { "native": "The voice is not coming clearly.", "bases": {} }
+      "आवाज़ ज़रा धीमी करो।": { "native": "Turn the sound down a little.", "bases": {"ज़रा": "a little"} }
+  "hi-1863":
+    native: "force; loudness"
+    notes:
+      "n1": "Strength or force, or the loudness of a sound."
+    examples:
+      "ज़ोर से बोलो।": { "native": "Speak loudly.", "bases": {} }
+      "ज़ोर का झटका लगा।": { "native": "A strong jolt was felt.", "bases": {"झटका": "jolt"} }
+  "hi-1864":
+    native: "talk; conversation; matter"
+    notes:
+      "n1": "A talk or a conversation, or a matter that is being discussed."
+    examples:
+      "उससे बात हुई।": { "native": "I spoke with him.", "bases": {} }
+      "बात सुनो।": { "native": "Listen to what I say.", "bases": {} }
+  "hi-1865":
+    native: "computer"
+    notes:
+      "n1": "A machine that works with programs and data."
+    examples:
+      "कंप्यूटर चालू है।": { "native": "The computer is on.", "bases": {} }
+      "मेरा कंप्यूटर धीमा है।": { "native": "My computer is slow.", "bases": {} }
+  "hi-1866":
+    native: "laptop"
+    notes:
+      "n1": "A small, portable computer."
+    examples:
+      "लैपटॉप मेज़ पर है।": { "native": "The laptop is on the table.", "bases": {} }
+      "लैपटॉप की बैटरी खराब है।": { "native": "The laptop's battery is bad.", "bases": {} }
+  "hi-1867":
+    native: "television; TV"
+    notes:
+      "n1": "The set that shows programmes on a screen."
+    examples:
+      "टीवी बंद करो।": { "native": "Switch off the TV.", "bases": {} }
+      "टीवी की आवाज़ कम करो।": { "native": "Turn the TV's sound down.", "bases": {} }
+  "hi-1868":
+    native: "remote control"
+    notes:
+      "n1": "The small device that works a TV or another machine from a distance."
+    examples:
+      "रिमोट कहाँ है?": { "native": "Where is the remote?", "bases": {} }
+      "रिमोट से चैनल बदलो।": { "native": "Change the channel with the remote.", "bases": {"चैनल": "channel"} }
+  "hi-1869":
+    native: "notification"
+    notes:
+      "n1": "A message from an app that shows on the phone's screen."
+    examples:
+      "फोन पर नोटिफ़िकेशन आया।": { "native": "A notification came on the phone.", "bases": {"फोन": "phone"} }
+      "नोटिफ़िकेशन बंद करो।": { "native": "Switch off the notifications.", "bases": {} }
+  "hi-1870":
+    native: "online"
+    notes:
+      "n1": "Connected to the internet. The opposite is ऑफ़लाइन (ôflāin)."
+    examples:
+      "वह ऑनलाइन है।": { "native": "He is online.", "bases": {} }
+      "ऑनलाइन पढ़ाई अच्छी है।": { "native": "Online study is good.", "bases": {} }
+  "hi-1871":
+    native: "offline"
+    notes:
+      "n1": "Not connected to the internet. The opposite is ऑनलाइन (ônlāin)."
+    examples:
+      "मैं ऑफ़लाइन हूँ।": { "native": "I am offline.", "bases": {} }
+      "ऑफ़लाइन काम करो।": { "native": "Work offline.", "bases": {} }
+  "hi-1872":
+    native: "recharge"
+    notes:
+      "n1": "Adding money or a plan to a phone's account, so that calls and data work."
+    examples:
+      "मैंने रीचार्ज किया।": { "native": "I recharged it.", "bases": {} }
+      "रीचार्ज कब तक है?": { "native": "Until when is the recharge valid?", "bases": {} }
+  "hi-1873":
+    native: "file"
+    notes:
+      "n1": "A set of data kept on a computer or a phone under one name."
+    examples:
+      "फ़ाइल भेजो।": { "native": "Send the file.", "bases": {} }
+      "यह फ़ाइल खोलो।": { "native": "Open this file.", "bases": {} }
+  "hi-1874":
+    native: "alarm"
+    notes:
+      "n1": "The sound or the signal that wakes a person at a set time."
+    examples:
+      "अलार्म सात बजे है।": { "native": "The alarm is set for seven o'clock.", "bases": {} }
+      "अलार्म बंद करो।": { "native": "Switch off the alarm.", "bases": {} }
+  "hi-1875":
+    native: "on; working; running"
+    notes:
+      "n1": "Switched on and working. The opposite is बंद (band), off."
+    examples:
+      "फोन चालू है।": { "native": "The phone is on.", "bases": {"फोन": "phone"} }
+      "टीवी चालू करो।": { "native": "Switch on the TV.", "bases": {} }
+  "hi-1876":
+    native: "bad; broken; out of order"
+    notes:
+      "n1": "Broken or not working, of a thing. It is also used of bad food and bad weather."
+    examples:
+      "फोन खराब हो गया।": { "native": "The phone has broken.", "bases": {"फोन": "phone"} }
+      "यह चार्जर खराब है।": { "native": "This charger is faulty.", "bases": {} }
+  "hi-1877":
+    native: "slow; low (of sound)"
+    notes:
+      "n1": "Slow, or soft and low, said of a sound or a speed. The opposite is तेज़ (tēz)."
+    examples:
+      "पंखा धीमा चलाओ।": { "native": "Run the fan slowly.", "bases": {} }
+      "इंटरनेट बहुत धीमा है।": { "native": "The internet is very slow.", "bases": {} }
+  "hi-1878":
+    native: "to ring; to sound"
+    notes:
+      "n1": "To ring, as a bell or a phone does, or to play as music. The causal is बजाना (bajānā)."
+    examples:
+      "फोन बज रहा है।": { "native": "The phone is ringing.", "bases": {"बज": "to ring", "फोन": "phone"} }
+      "घंटी बजती है।": { "native": "The bell rings.", "bases": {"बजती": "to ring"} }
+  "hi-1879":
+    native: "plan; package"
+    notes:
+      "n1": "A set plan of data or calls offered by a phone company."
+    examples:
+      "मेरा पैकेज महँगा है।": { "native": "My plan is expensive.", "bases": {} }
+      "नया पैकेज लो।": { "native": "Take a new plan.", "bases": {} }
+  "hi-1880":
+    native: "information; knowledge"
+    notes:
+      "n1": "Facts that a person knows or is given about something."
+    examples:
+      "मुझे जानकारी चाहिए।": { "native": "I need information.", "bases": {} }
+      "फोन की जानकारी दो।": { "native": "Give information about the phone.", "bases": {"फोन": "phone"} }

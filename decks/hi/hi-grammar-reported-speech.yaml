@@ -1,0 +1,40 @@
+schema: 1
+id: "hi-grammar-reported-speech"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["reported statement (said that)"]
+  entries:
+    - lemma: "कहना"
+      key: "kahna"
+      reading: "kahnā"
+      ipa: "kəɦnaː"
+      forms:
+        "reported statement (said that)": "कहा कि"
+      readings:
+        "reported statement (said that)": "kahā ki"
+      ipas:
+        "reported statement (said that)": "kəɦaː kɪ"
+    - lemma: "बताना"
+      key: "batana"
+      reading: "batānā"
+      ipa: "bət̪aːnaː"
+      forms:
+        "reported statement (said that)": "बताया कि"
+      readings:
+        "reported statement (said that)": "batāyā ki"
+      ipas:
+        "reported statement (said that)": "bət̪aːjaː kɪ"
+    - lemma: "सोचना"
+      key: "sochna"
+      reading: "sōcnā"
+      ipa: "soːtʃnaː"
+      forms:
+        "reported statement (said that)": "सोचा कि"
+      readings:
+        "reported statement (said that)": "sōcā ki"
+      ipas:
+        "reported statement (said that)": "soːtʃaː kɪ"

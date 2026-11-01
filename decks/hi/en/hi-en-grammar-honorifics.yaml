@@ -1,0 +1,21 @@
+schema: 1
+id: "hi-en-grammar-honorifics"
+kind: "layer"
+core: "hi-grammar-honorifics"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Honorifics and respect"
+license: "CC-BY-SA-4.0"
+description: "Showing respect: the verb endings for a child, a friend and an elder, as tu jaata hai, tum jaate ho and aap jaate hain. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Honorifics and respect"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"तू (intimate)": "to a child or a very close friend", "तुम (familiar)": "to someone you know well", "आप (honorific)": "to an elder, a stranger or a superior"}
+  entries:
+    "jana": "to go"
+    "ana": "to come"
+    "karna": "to do"
+    "bolna": "to speak"
+    "khana": "to eat"
+  notes: "Hindi marks respect in the verb and the pronoun together. The intimate तू (tū) takes the verb ending ता है (tā hai), the familiar तुम (tum) takes ते हो (tē hō), and the honorific आप (āp) takes ते हैं (tē haim̐), the plural form, even for one person. Hindi also adds जी (jī) after a name or a title to show respect, as in पंडित जी (paṇḍit jī). In the command, आप (āp) takes the form in इए (iē), as in आइए (āiē): please come."

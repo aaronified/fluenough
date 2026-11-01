@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-arts"
+name: "Reading: arts"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A visitor's note on an art show, and a short poem notice. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-arts-exhibition"
+    title: "At an exhibition"
+    theme: "arts"
+    sentences:
+      - {"text": "इस प्रदर्शनी में चित्रकार की कलाकृतियाँ हैं।", "reading": "is pradarśanī mēm̐ citrakār kī kalākritiyām̐ haim̐.", "ipa": "ɪs prəd̪ərʃəniː mẽː tʃɪt̪rəkaːr kiː kəlaːkrɪt̪ɪjãː ɦɛ̃ː"}
+      - {"text": "मूर्तिकार ने पत्थर से सुंदर मूर्ति बनाई है।", "reading": "mūrtikār nē patthar sē sundar mūrti banāī hai.", "ipa": "muːrt̪ɪkaːr neː pət̪t̪ʰər seː sʊnd̪ər muːrt̪ɪ bənaːiː ɦɛː"}
+      - {"text": "वहाँ एक कवि शायरी सुना रहे थे।", "reading": "vahām̐ ēk kavi śāyrī sunā rahē thē.", "ipa": "ʋəɦãː eːk kəʋɪ ʃaːjriː sʊnaː rəɦeː t̪ʰeː"}
+      - {"text": "संगीत के साज़ भी रखे गए हैं।", "reading": "saṅgīt kē sāz bhī rakhē gaē haim̐.", "ipa": "səŋɡiːt̪ keː saːz bʱiː rəkʰeː ɡəeː ɦɛ̃ː"}
+    questions:
+      - {"id": "hi-2467", "prompt": {"en": "The exhibition has paintings by a painter."}, "answer": true}
+      - {"id": "hi-2468", "prompt": {"en": "What did the sculptor make?"}, "options": [{"en": "A statue"}, {"en": "A poem"}], "answer": 1}
+      - {"id": "hi-2469", "prompt": {"en": "The poet recited no poetry."}, "answer": false}
+  - id: "hi-arts-notice"
+    title: "A notice about a concert"
+    theme: "arts"
+    sentences:
+      - {"text": "राग यमन पर आधारित संगीत सभा शाम सात बजे है।", "reading": "rāg yaman par ādhārit saṅgīt sabhā śām sāt bajē hai.", "ipa": "raːɡ jəmən pər aːd̪ʱaːrɪt̪ səŋɡiːt̪ səbʱaː ʃaːm saːt̪ bədʒeː ɦɛː"}
+      - {"text": "तबला वादक और गायक मंच पर होंगे।", "reading": "tablā vādak aur gāyak mañc par hōṅgē.", "ipa": "t̪əblaː ʋaːd̪ək ɔːr ɡaːjək məɲtʃ pər ɦoːŋɡeː"}
+      - {"text": "नृत्यांगना का प्रदर्शन भी होगा।", "reading": "nrityāṅganā kā pradarśan bhī hōgā.", "ipa": "nrɪt̪jaːŋɡənaː kaː prəd̪ərʃən bʱiː ɦoːɡaː"}
+      - {"text": "सभी दर्शक समय पर पहुँचें।", "reading": "sabhī darśak samay par pahum̐cēm̐.", "ipa": "səbʱiː d̪ərʃək səməj pər pəɦʊ̃tʃẽː"}
+    questions:
+      - {"id": "hi-2470", "prompt": {"en": "The concert is based on a raga."}, "answer": true}
+      - {"id": "hi-2471", "prompt": {"en": "Who will be on the stage?"}, "options": [{"en": "The tabla player and singer"}, {"en": "Only the dancer"}], "answer": 1}
+      - {"id": "hi-2472", "prompt": {"en": "The concert starts in the morning."}, "answer": false}

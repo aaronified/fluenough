@@ -1,0 +1,265 @@
+schema: 1
+id: "hi-arts"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2450"
+    target: "चित्रकार"
+    target_scripts: {"perso_arabic": "مصور"}
+    reading: "citrakār"
+    ipa: "tʃɪt̪rəkaːr"
+    phonetic: "[tʃɪt̪rəkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह चित्रकार बहुत मशहूर है।", "reading": "yah citrakār bahut maśhūr hai.", "ipa": "jəɦ tʃɪt̪rəkaːr bəɦʊt̪ məʃɦuːr ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "मशहूर", "ref": "hi-1983"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "चित्रकार ने नदी का चित्र बनाया।", "reading": "citrakār nē nadī kā citr banāyā.", "ipa": "tʃɪt̪rəkaːr neː nəd̪iː kaː tʃɪt̪r bənaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नदी", "ref": "hi-1064"}, {"word": "का", "ref": "hi-0279"}, {"word": "चित्र", "ref": "hi-1606"}, {"word": "बनाया", "ref": "hi-1502"}]}
+  - id: "hi-2451"
+    target: "मूर्तिकार"
+    target_scripts: {"perso_arabic": "مجسمہ ساز"}
+    reading: "mūrtikār"
+    ipa: "muːrt̪ɪkaːr"
+    phonetic: "[muːrt̪ɪkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मूर्तिकार ने पत्थर तराशा।", "reading": "mūrtikār nē patthar tarāśā.", "ipa": "muːrt̪ɪkaːr neː pət̪t̪ʰər t̪əraːʃaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "पत्थर", "ref": "hi-1931"}, {"word": "तराशा", "base": "तराशना", "reading": "tarāśnā"}]}
+      - {"target": "मूर्तिकार की कला अद्भुत है।", "reading": "mūrtikār kī kalā adbhut hai.", "ipa": "muːrt̪ɪkaːr kiː kəlaː əd̪bʱʊt̪ ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "कला", "ref": "hi-1683"}, {"word": "अद्भुत", "base": "अद्भुत", "reading": "adbhut"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2452"
+    target: "वादक"
+    target_scripts: {"perso_arabic": "بجانے والا"}
+    reading: "vādak"
+    ipa: "ʋaːd̪ək"
+    phonetic: "[ʋaːd̪ək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तबला वादक बहुत अच्छा है।", "reading": "tablā vādak bahut acchā hai.", "ipa": "t̪əblaː ʋaːd̪ək bəɦʊt̪ ətʃtʃʰaː ɦɛː", "bases": [{"word": "तबला", "ref": "hi-1653"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "वादक ने राग बजाया।", "reading": "vādak nē rāg bajāyā.", "ipa": "ʋaːd̪ək neː raːɡ bədʒaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "राग", "ref": "hi-2461"}, {"word": "बजाया", "base": "बजाना", "reading": "bajānā"}]}
+  - id: "hi-2453"
+    target: "शायरी"
+    target_scripts: {"perso_arabic": "شاعری"}
+    reading: "śāyrī"
+    ipa: "ʃaːjriː"
+    phonetic: "[ʃaːjriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसकी शायरी दिल को छूती है।", "reading": "uskī śāyrī dil kō chūtī hai.", "ipa": "ʊskiː ʃaːjriː d̪ɪl koː tʃʰuːt̪iː ɦɛː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "दिल", "ref": "hi-1044"}, {"word": "को", "ref": "hi-0277"}, {"word": "छूती", "ref": "hi-1797"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "शायरी सुनाओ।", "reading": "śāyrī sunāō.", "ipa": "ʃaːjriː sʊnaːoː", "bases": [{"word": "सुनाओ", "ref": "hi-2173"}]}
+  - id: "hi-2454"
+    target: "प्रदर्शनी"
+    target_scripts: {"perso_arabic": "نمائش"}
+    reading: "pradarśanī"
+    ipa: "prəd̪ərʃəniː"
+    phonetic: "[prəd̪ərʃəniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "चित्रों की प्रदर्शनी कल खुलेगी।", "reading": "citrōm̐ kī pradarśanī kal khulēgī.", "ipa": "tʃɪt̪rõː kiː prəd̪ərʃəniː kəl kʰʊleːɡiː", "bases": [{"word": "चित्रों", "ref": "hi-1606"}, {"word": "की", "ref": "hi-0279"}, {"word": "प्रदर्शनी", "base": "प्रदर्शनी", "reading": "pradarśanī"}, {"word": "कल", "ref": "hi-0300"}, {"word": "खुलेगी", "base": "खुलना", "reading": "khulnā"}]}
+      - {"target": "प्रदर्शनी देखने चलें।", "reading": "pradarśanī dēkhnē calēm̐.", "ipa": "prəd̪ərʃəniː d̪eːkʰneː tʃəlẽː", "bases": [{"word": "देखने", "ref": "hi-0784"}, {"word": "चलें", "ref": "hi-0801"}]}
+  - id: "hi-2455"
+    target: "साहित्य"
+    target_scripts: {"perso_arabic": "ادب"}
+    reading: "sāhity"
+    ipa: "saːɦɪt̪j"
+    phonetic: "[saːɦɪt̪j]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हिंदी साहित्य बहुत पुराना है।", "reading": "hindī sāhity bahut purānā hai.", "ipa": "ɦɪnd̪iː saːɦɪt̪j bəɦʊt̪ pʊraːnaː ɦɛː", "bases": [{"word": "हिंदी", "base": "हिंदी", "reading": "hindī"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "साहित्य पढ़ने का शौक है।", "reading": "sāhity paṛhnē kā śauk hai.", "ipa": "saːɦɪt̪j pəɽʱneː kaː ʃɔːk ɦɛː", "bases": [{"word": "पढ़ने", "ref": "hi-0114"}, {"word": "का", "ref": "hi-0279"}, {"word": "शौक", "ref": "hi-1637"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2456"
+    target: "रचना"
+    target_scripts: {"perso_arabic": "تخلیق"}
+    reading: "racnā"
+    ipa: "rətʃnaː"
+    phonetic: "[rətʃnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह उनकी सबसे अच्छी रचना है।", "reading": "yah unkī sabsē acchī racnā hai.", "ipa": "jəɦ ʊnkiː səbseː ətʃtʃʰiː rətʃnaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "उनकी", "ref": "hi-0749"}, {"word": "सबसे", "base": "सबसे", "reading": "sabsē"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "नई रचना कब छपेगी?", "reading": "naī racnā kab chapēgī?", "ipa": "nəiː rətʃnaː kəb tʃʰəpeːɡiː", "bases": [{"word": "नई", "ref": "hi-0896"}, {"word": "कब", "ref": "hi-0160"}, {"word": "छपेगी", "ref": "hi-2172"}]}
+  - id: "hi-2457"
+    target: "कलाकृति"
+    target_scripts: {"perso_arabic": "فن پارہ"}
+    reading: "kalākriti"
+    ipa: "kəlaːkrɪt̪ɪ"
+    phonetic: "[kəlaːkrɪt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह कलाकृति बहुत सुंदर है।", "reading": "yah kalākriti bahut sundar hai.", "ipa": "jəɦ kəlaːkrɪt̪ɪ bəɦʊt̪ sʊnd̪ər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कलाकृति दीवार पर टँगी है।", "reading": "kalākriti dīvār par ṭam̐gī hai.", "ipa": "kəlaːkrɪt̪ɪ d̪iːʋaːr pər ʈə̃ɡiː ɦɛː", "bases": [{"word": "दीवार", "base": "दीवार", "reading": "dīvār"}, {"word": "पर", "ref": "hi-0275"}, {"word": "टँगी", "ref": "hi-1830"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2458"
+    target: "नृत्यांगना"
+    target_scripts: {"perso_arabic": "رقاصہ"}
+    reading: "nrityāṅganā"
+    ipa: "nrɪt̪jaːŋɡənaː"
+    phonetic: "[nrɪt̪jaːŋɡənaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नृत्यांगना मंच पर नाच रही है।", "reading": "nrityāṅganā mañc par nāc rahī hai.", "ipa": "nrɪt̪jaːŋɡənaː məɲtʃ pər naːtʃ rəɦiː ɦɛː", "bases": [{"word": "मंच", "ref": "hi-2237"}, {"word": "पर", "ref": "hi-0275"}, {"word": "नाच", "ref": "hi-1643"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "वह प्रसिद्ध नृत्यांगना है।", "reading": "vah prasiddh nrityāṅganā hai.", "ipa": "ʋəɦ prəsɪd̪d̪ʱ nrɪt̪jaːŋɡənaː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "प्रसिद्ध", "base": "प्रसिद्ध", "reading": "prasiddh"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2459"
+    target: "उस्ताद"
+    target_scripts: {"perso_arabic": "استاد"}
+    reading: "ustād"
+    ipa: "ʊst̪aːd̪"
+    phonetic: "[ʊst̪aːd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उस्ताद ने सितार सिखाया।", "reading": "ustād nē sitār sikhāyā.", "ipa": "ʊst̪aːd̪ neː sɪt̪aːr sɪkʰaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सितार", "ref": "hi-1654"}, {"word": "सिखाया", "ref": "hi-0954"}]}
+      - {"target": "यह उस्ताद बहुत मशहूर हैं।", "reading": "yah ustād bahut maśhūr haim̐.", "ipa": "jəɦ ʊst̪aːd̪ bəɦʊt̪ məʃɦuːr ɦɛ̃ː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "मशहूर", "ref": "hi-1983"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2460"
+    target: "साज़"
+    target_scripts: {"perso_arabic": "ساز"}
+    reading: "sāz"
+    ipa: "saːz"
+    phonetic: "[saːz]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "साज़ों की आवाज़ अच्छी है।", "reading": "sāzōm̐ kī āvāz acchī hai.", "ipa": "saːzõː kiː aːʋaːz ətʃtʃʰiː ɦɛː", "bases": [{"word": "साज़ों", "base": "साज़", "reading": "sāz"}, {"word": "की", "ref": "hi-0279"}, {"word": "आवाज़", "ref": "hi-1862"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "साज़ बजाना सीखो।", "reading": "sāz bajānā sīkhō.", "ipa": "saːz bədʒaːnaː siːkʰoː", "bases": [{"word": "बजाना", "base": "बजाना", "reading": "bajānā"}, {"word": "सीखो", "ref": "hi-0952"}]}
+  - id: "hi-2461"
+    target: "राग"
+    target_scripts: {"perso_arabic": "راگ"}
+    reading: "rāg"
+    ipa: "raːɡ"
+    phonetic: "[raːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह राग शाम को गाया जाता है।", "reading": "yah rāg śām kō gāyā jātā hai.", "ipa": "jəɦ raːɡ ʃaːm koː ɡaːjaː dʒaːt̪aː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "शाम", "ref": "hi-0303"}, {"word": "को", "ref": "hi-0277"}, {"word": "गाया", "ref": "hi-1639"}, {"word": "जाता", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "राग में सुर लगाओ।", "reading": "rāg mēm̐ sur lagāō.", "ipa": "raːɡ mẽː sʊr ləɡaːoː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "सुर", "ref": "hi-2463"}, {"word": "लगाओ", "base": "लगाना", "reading": "lagānā"}]}
+  - id: "hi-2462"
+    target: "ताल"
+    target_scripts: {"perso_arabic": "تال"}
+    reading: "tāl"
+    ipa: "t̪aːl"
+    phonetic: "[t̪aːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तबले की ताल तेज़ है।", "reading": "tablē kī tāl tēz hai.", "ipa": "t̪əbleː kiː t̪aːl t̪eːz ɦɛː", "bases": [{"word": "तबले", "ref": "hi-1653"}, {"word": "की", "ref": "hi-0279"}, {"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ताल पर ताली बजाओ।", "reading": "tāl par tālī bajāō.", "ipa": "t̪aːl pər t̪aːliː bədʒaːoː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "ताली", "base": "ताली", "reading": "tālī"}, {"word": "बजाओ", "base": "बजाना", "reading": "bajānā"}]}
+  - id: "hi-2463"
+    target: "सुर"
+    target_scripts: {"perso_arabic": "سر"}
+    reading: "sur"
+    ipa: "sʊr"
+    phonetic: "[sʊr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका सुर सही है।", "reading": "uskā sur sahī hai.", "ipa": "ʊskaː sʊr səɦiː ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "सही", "ref": "hi-0822"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सुर में गाओ।", "reading": "sur mēm̐ gāō.", "ipa": "sʊr mẽː ɡaːoː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "गाओ", "ref": "hi-1639"}]}
+  - id: "hi-2464"
+    target: "कवि"
+    target_scripts: {"perso_arabic": "شاعر"}
+    reading: "kavi"
+    ipa: "kəʋɪ"
+    phonetic: "[kəʋɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कवि ने नई कविता लिखी।", "reading": "kavi nē naī kavitā likhī.", "ipa": "kəʋɪ neː nəiː kəʋɪt̪aː lɪkʰiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नई", "ref": "hi-0896"}, {"word": "कविता", "ref": "hi-1682"}, {"word": "लिखी", "ref": "hi-0781"}]}
+      - {"target": "यह कवि बहुत प्रसिद्ध है।", "reading": "yah kavi bahut prasiddh hai.", "ipa": "jəɦ kəʋɪ bəɦʊt̪ prəsɪd̪d̪ʱ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "प्रसिद्ध", "base": "प्रसिद्ध", "reading": "prasiddh"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2465"
+    target: "लेखन"
+    target_scripts: {"perso_arabic": "تحریر"}
+    reading: "lēkhan"
+    ipa: "leːkʰən"
+    phonetic: "[leːkʰən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका लेखन सरल है।", "reading": "uskā lēkhan saral hai.", "ipa": "ʊskaː leːkʰən sərəl ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "सरल", "ref": "hi-0612"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "लेखन की कला सीखो।", "reading": "lēkhan kī kalā sīkhō.", "ipa": "leːkʰən kiː kəlaː siːkʰoː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "कला", "ref": "hi-1683"}, {"word": "सीखो", "ref": "hi-0952"}]}
+  - id: "hi-2466"
+    target: "तूलिका"
+    target_scripts: {"perso_arabic": "موقلم"}
+    reading: "tūlikā"
+    ipa: "t̪uːlɪkaː"
+    phonetic: "[t̪uːlɪkaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "तूलिका से रंग भरो।", "reading": "tūlikā sē raṅg bharō.", "ipa": "t̪uːlɪkaː seː rəŋɡ bʱəroː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "रंग", "ref": "hi-1309"}, {"word": "भरो", "ref": "hi-1732"}]}
+      - {"target": "नई तूलिका खरीदो।", "reading": "naī tūlikā kharīdō.", "ipa": "nəiː t̪uːlɪkaː kʰəriːd̪oː", "bases": [{"word": "नई", "ref": "hi-0896"}, {"word": "तूलिका", "base": "तूलिका", "reading": "tūlikā"}, {"word": "खरीदो", "base": "खरीदना", "reading": "kharīdnā"}]}

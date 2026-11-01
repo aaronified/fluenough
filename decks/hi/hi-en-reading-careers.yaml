@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-careers"
+name: "Reading: careers"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A letter about a job interview, and a note from a training centre. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-careers-letter"
+    title: "A letter about a job"
+    theme: "careers"
+    sentences:
+      - {"text": "मेरा साक्षात्कार अगले हफ़्ते है।", "reading": "mērā sākśātkār aglē haftē hai.", "ipa": "meːraː saːkʃaːt̪kaːr əɡleː ɦəft̪eː ɦɛː"}
+      - {"text": "मैंने उद्यम के लिए प्रशिक्षण लिया है।", "reading": "mainnē udyam kē liē praśikśaṇ liyā hai.", "ipa": "mɛːnneː ʊd̪jəm keː lɪeː prəʃɪkʃəɳ lɪjaː ɦɛː"}
+      - {"text": "पिताजी सेवानिवृत्त हो गए हैं, पर वे अब भी सलाह देते हैं।", "reading": "pitājī sēvānivritt hō gaē haim̐, par vē ab bhī salāh dētē haim̐.", "ipa": "pɪt̪aːdʒiː seːʋaːnɪʋrɪt̪t̪ ɦoː ɡəeː ɦɛ̃ː pər ʋeː əb bʱiː səlaːɦ d̪eːt̪eː ɦɛ̃ː"}
+      - {"text": "असफलता से डरना नहीं, कौशल बढ़ाना है।", "reading": "asphltā sē ḍarnā nahīm̐, kauśal baṛhānā hai.", "ipa": "əspʰlt̪aː seː ɖərnaː nəɦĩː kɔːʃəl bəɽʱaːnaː ɦɛː"}
+    questions:
+      - {"id": "hi-2362", "prompt": {"en": "The interview is next week."}, "answer": true}
+      - {"id": "hi-2363", "prompt": {"en": "What did the writer train for?"}, "options": [{"en": "An enterprise"}, {"en": "The army"}], "answer": 1}
+      - {"id": "hi-2364", "prompt": {"en": "The father is still working."}, "answer": false}
+  - id: "hi-careers-notice"
+    title: "A notice at a training centre"
+    theme: "careers"
+    sentences:
+      - {"text": "भर्ती के लिए आवेदन पत्र भरें।", "reading": "bhartī kē liē āvēdan patr bharēm̐.", "ipa": "bʱərt̪iː keː lɪeː aːʋeːd̪ən pət̪r bʱərẽː"}
+      - {"text": "कलाकार और व्यवसायी दोनों आमंत्रित हैं।", "reading": "kalākār aur vyavsāyī dōnōm̐ āmantrit haim̐.", "ipa": "kəlaːkaːr ɔːr ʋjəʋsaːjiː d̪oːnõː aːmənt̪rɪt̪ ɦɛ̃ː"}
+      - {"text": "नाविक और माली के लिए अलग प्रशिक्षण है।", "reading": "nāvik aur mālī kē liē alag praśikśaṇ hai.", "ipa": "naːʋɪk ɔːr maːliː keː lɪeː ələɡ prəʃɪkʃəɳ ɦɛː"}
+      - {"text": "रसोइये के लिए कौशल प्रमाणपत्र ज़रूरी है।", "reading": "rasōiyē kē liē kauśal pramāṇpatr zarūrī hai.", "ipa": "rəsoːɪjeː keː lɪeː kɔːʃəl prəmaːɳpət̪r zəruːriː ɦɛː"}
+    questions:
+      - {"id": "hi-2365", "prompt": {"en": "Application forms are filled in for recruitment."}, "answer": true}
+      - {"id": "hi-2366", "prompt": {"en": "Who is invited?"}, "options": [{"en": "Artists and traders"}, {"en": "Only doctors"}], "answer": 1}
+      - {"id": "hi-2367", "prompt": {"en": "There is one training for all."}, "answer": false}

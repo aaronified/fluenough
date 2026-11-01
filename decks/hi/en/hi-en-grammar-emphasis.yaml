@@ -1,0 +1,19 @@
+schema: 1
+id: "hi-en-grammar-emphasis"
+kind: "layer"
+core: "hi-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emphasis: only, also, indeed"
+license: "CC-BY-SA-4.0"
+description: "Only, also and indeed: the particles that stress the word before them. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Emphasis: only, also, indeed"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"after a noun": "placed after a noun, as the subject or object", "after a verb": "placed after the verb"}
+  entries:
+    "hi": "only; just; indeed"
+    "bhi": "also; too; even"
+    "to": "indeed; as for; then"
+  notes: "The particles ही (hī), भी (bhī) and तो (tō) are placed after the word they stress. ही (hī) means only, or just, and gives force, as in मैं ही जाऊँगा (maim̐ hī jāūm̐gā): I will go, and no one else. भी (bhī) means also or even, as in वह भी आया (vah bhī āyā): he came too. तो (tō) marks a contrast or a sure fact, as in वह तो जाता है (vah tō jātā hai): he does go, but. The table shows each particle after a noun and after a verb, for the same stem."

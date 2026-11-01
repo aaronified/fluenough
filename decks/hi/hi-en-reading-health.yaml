@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-health"
+name: "Reading: health"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short visit to the clinic, and a notice at a pharmacy. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-health-clinic"
+    title: "At the clinic"
+    theme: "health"
+    sentences:
+      - {"text": "डॉक्टर ने मेरी नाड़ी देखी और एक्सरे माँगा।", "reading": "ḍôkṭar nē mērī nāṛī dēkhī aur ēksarē mām̐gā.", "ipa": "ɖɔkʈər neː meːriː naːɽiː d̪eːkʰiː ɔːr eːksəreː mãːɡaː"}
+      - {"text": "रिपोर्ट आने तक आराम करो।", "reading": "ripōrṭ ānē tak ārām karō.", "ipa": "rɪpoːrʈ aːneː t̪ək aːraːm kəroː"}
+      - {"text": "दवा खाने के बाद पानी पियो।", "reading": "davā khānē kē bād pānī piyō.", "ipa": "d̪əʋaː kʰaːneː keː baːd̪ paːniː pɪjoː"}
+      - {"text": "सुबह व्यायाम और संतुलित आहार लो।", "reading": "subah vyāyām aur santulit āhār lō.", "ipa": "sʊbəɦ ʋjaːjaːm ɔːr sənt̪ʊlɪt̪ aːɦaːr loː"}
+    questions:
+      - {"id": "hi-2099", "prompt": {"en": "The doctor checked the pulse."}, "answer": true}
+      - {"id": "hi-2100", "prompt": {"en": "What was asked for?"}, "options": [{"en": "An X-ray"}, {"en": "A bandage"}], "answer": 1}
+      - {"id": "hi-2101", "prompt": {"en": "The medicine is taken before water."}, "answer": true}
+  - id: "hi-health-notice"
+    title: "A notice at a pharmacy"
+    theme: "health"
+    sentences:
+      - {"text": "दवा का नुस्खा दिखाए बिना दवा नहीं मिलेगी।", "reading": "davā kā nuskhā dikhāē binā davā nahīm̐ milēgī.", "ipa": "d̪əʋaː kaː nʊskʰaː d̪ɪkʰaːeː bɪnaː d̪əʋaː nəɦĩː mɪleːɡiː"}
+      - {"text": "इंजेक्शन के लिए पहले टेस्ट कराएँ।", "reading": "iñjēkśan kē liē pahlē ṭēsṭ karāēm̐.", "ipa": "ɪɲdʒeːkʃən keː lɪeː pəɦleː ʈeːsʈ kəraːẽː"}
+      - {"text": "शराब और सिगरेट से सेहत खराब होती है।", "reading": "śarāb aur sigrēṭ sē sēhat kharāb hōtī hai.", "ipa": "ʃəraːb ɔːr sɪɡreːʈ seː seːɦət̪ kʰəraːb ɦoːt̪iː ɦɛː"}
+      - {"text": "मरीज़ों के लिए फ़ार्मेसी सुबह नौ बजे खुलती है।", "reading": "marīzōm̐ kē liē fārmēsī subah nau bajē khultī hai.", "ipa": "məriːzõː keː lɪeː faːrmeːsiː sʊbəɦ nɔː bədʒeː kʰʊlt̪iː ɦɛː"}
+    questions:
+      - {"id": "hi-2102", "prompt": {"en": "Medicine is given without a prescription."}, "answer": false}
+      - {"id": "hi-2103", "prompt": {"en": "What must be done before an injection?"}, "options": [{"en": "A test"}, {"en": "A meal"}], "answer": 1}
+      - {"id": "hi-2104", "prompt": {"en": "The pharmacy opens at nine."}, "answer": true}

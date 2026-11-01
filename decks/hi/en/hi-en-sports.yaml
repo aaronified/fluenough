@@ -1,0 +1,172 @@
+schema: 1
+id: "hi-en-sports"
+kind: "layer"
+core: "hi-sports"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports"
+license: "CC-BY-SA-4.0"
+description: "Sports and games: the match, the team and the referee, the stadium and the prizes, and the words for winning, losing and training. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2534":
+    native: "wicket; stump"
+    notes:
+      "n1": "In cricket, the three sticks at which the batter stands, or the batter's dismissal."
+    examples:
+      "उसने दो विकेट लिए।": { "native": "He took two wickets.", "bases": {} }
+      "विकेट गिर गया।": { "native": "The wicket has fallen.", "bases": {} }
+  "hi-2535":
+    native: "run (in cricket); point"
+    notes:
+      "n1": "A point scored in cricket, made by the batters running between the wickets."
+    examples:
+      "उसने सौ रन बनाए।": { "native": "He scored a hundred runs.", "bases": {} }
+      "हमारी टीम को बीस रन चाहिए।": { "native": "Our team needs twenty runs.", "bases": {} }
+  "hi-2536":
+    native: "stadium"
+    notes:
+      "n1": "A large ground with seats for people to watch a match."
+    examples:
+      "स्टेडियम भरा हुआ है।": { "native": "The stadium is full.", "bases": {} }
+      "हम कल स्टेडियम जाएँगे।": { "native": "We will go to the stadium tomorrow.", "bases": {} }
+  "hi-2537":
+    native: "victory; win"
+    notes:
+      "n1": "The fact of winning a game, a race or a contest. The opposite is हार (hār)."
+    examples:
+      "हमारी टीम की जीत हुई।": { "native": "Our team won.", "bases": {} }
+      "जीत पर सब खुश हैं।": { "native": "Everyone is happy at the win.", "bases": {} }
+  "hi-2538":
+    native: "defeat; loss"
+    notes:
+      "n1": "The fact of losing a game, a race or a contest. The opposite is जीत (jīt)."
+    examples:
+      "हार से मत घबराओ।": { "native": "Do not be upset by defeat.", "bases": {"मत": "do not"} }
+      "इस हार का कारण क्या है?": { "native": "What is the reason for this defeat?", "bases": {"हार": "defeat", "कारण": "reason"} }
+  "hi-2539":
+    native: "coach; trainer"
+    notes:
+      "n1": "A person who trains players for a sport."
+    examples:
+      "कोच ने नया अभ्यास दिया।": { "native": "The coach gave a new practice.", "bases": {"ने": "by"} }
+      "हमारे कोच बहुत सख़्त हैं।": { "native": "Our coach is very strict.", "bases": {"सख़्त": "strict"} }
+  "hi-2540":
+    native: "race; running"
+    notes:
+      "n1": "A race in which people run, or the act of running fast."
+    examples:
+      "सौ मीटर की दौड़ शुरू होगी।": { "native": "The hundred-metre race will begin.", "bases": {"मीटर": "metre", "शुरू": "start"} }
+      "दौड़ में वह सबसे आगे था।": { "native": "He was ahead of everyone in the race.", "bases": {"सबसे": "most"} }
+  "hi-2541":
+    native: "hockey"
+    notes:
+      "n1": "A game played with curved sticks and a small ball on a field."
+    examples:
+      "मुझे हॉकी खेलना पसंद है।": { "native": "I like playing hockey.", "bases": {} }
+      "हॉकी की टीम जीत गई।": { "native": "The hockey team won.", "bases": {} }
+  "hi-2542":
+    native: "tennis"
+    notes:
+      "n1": "A game played with a racket and a ball over a net."
+    examples:
+      "वह टेनिस अच्छा खेलती है।": { "native": "She plays tennis well.", "bases": {} }
+      "टेनिस कोर्ट खाली है।": { "native": "The tennis court is empty.", "bases": {"कोर्ट": "court"} }
+  "hi-2543":
+    native: "medal"
+    notes:
+      "n1": "A metal award given to a winner in a contest, usually gold, silver or bronze."
+    examples:
+      "उसे सोने का पदक मिला।": { "native": "He got a gold medal.", "bases": {"पदक": "medal", "सोने": "gold"} }
+      "पदक जीतना बड़ी बात है।": { "native": "Winning a medal is a big thing.", "bases": {} }
+  "hi-2544":
+    native: "record"
+    notes:
+      "n1": "The best or the highest result that has been achieved so far."
+    examples:
+      "उसने नया रिकॉर्ड बनाया।": { "native": "He made a new record.", "bases": {} }
+      "यह रिकॉर्ड टूटेगा या नहीं?": { "native": "Will this record be broken or not?", "bases": {} }
+  "hi-2545":
+    native: "competition; contest"
+    notes:
+      "n1": "An event in which people try to win against others."
+    examples:
+      "कल एक प्रतियोगिता है।": { "native": "There is a competition tomorrow.", "bases": {} }
+      "प्रतियोगिता में सब भाग लो।": { "native": "Everyone take part in the competition.", "bases": {"भाग": "part"} }
+  "hi-2546":
+    native: "whistle"
+    notes:
+      "n1": "A small instrument blown to make a sharp sound, used by a referee."
+    examples:
+      "रेफ़री ने सीटी बजाई।": { "native": "The referee blew the whistle.", "bases": {"ने": "by", "बजाई": "to play; to blow"} }
+      "सीटी बजते ही खेल शुरू हुआ।": { "native": "The game started as soon as the whistle blew.", "bases": {"ही": "as soon as", "शुरू": "start"} }
+  "hi-2547":
+    native: "referee; umpire"
+    notes:
+      "n1": "The person who makes sure the rules of a game are followed."
+    examples:
+      "रेफ़री का फ़ैसला अंतिम है।": { "native": "The referee's decision is final.", "bases": {"अंतिम": "final"} }
+      "रेफ़री ने गोल नहीं दिया।": { "native": "The referee did not give the goal.", "bases": {"ने": "by", "गोल": "goal"} }
+  "hi-2548":
+    native: "practice; training"
+    notes:
+      "n1": "Doing a thing again and again to get better at it."
+    examples:
+      "रोज़ अभ्यास करो।": { "native": "Practise every day.", "bases": {} }
+      "अभ्यास से सब आता है।": { "native": "Everything comes with practice.", "bases": {} }
+  "hi-2549":
+    native: "gym"
+    notes:
+      "n1": "A room with machines and weights, where people exercise."
+    examples:
+      "वह रोज़ जिम जाता है।": { "native": "He goes to the gym every day.", "bases": {} }
+      "जिम में नई मशीन लगी है।": { "native": "A new machine has been fixed in the gym.", "bases": {} }
+  "hi-2550":
+    native: "volleyball"
+    notes:
+      "n1": "A game in which a ball is hit over a high net with the hands."
+    examples:
+      "बच्चे वॉलीबॉल खेल रहे हैं।": { "native": "The children are playing volleyball.", "bases": {} }
+      "वॉलीबॉल का मैच कल है।": { "native": "The volleyball match is tomorrow.", "bases": {} }
+  "hi-2551":
+    native: "Olympics"
+    notes:
+      "n1": "The great international games held every four years."
+    examples:
+      "वह ओलंपिक में खेलेगा।": { "native": "He will play in the Olympics.", "bases": {} }
+      "ओलंपिक का झंडा ऊँचा है।": { "native": "The Olympic flag is high.", "bases": {"झंडा": "flag"} }
+  "hi-2552":
+    native: "winner; champion"
+    notes:
+      "n1": "The person who wins a contest or a prize."
+    examples:
+      "विजेता को पुरस्कार मिला।": { "native": "The winner got the prize.", "bases": {"पुरस्कार": "prize"} }
+      "सबसे तेज़ दौड़ने वाला विजेता है।": { "native": "The fastest runner is the winner.", "bases": {"सबसे": "most", "वाला": "one who", "विजेता": "winner"} }
+  "hi-2553":
+    native: "cup; trophy"
+    notes:
+      "n1": "A cup-shaped prize given to the winner of a tournament."
+    examples:
+      "हमारी टीम ने कप जीता।": { "native": "Our team won the cup.", "bases": {"ने": "by", "कप": "cup"} }
+      "कप अलमारी में रखो।": { "native": "Keep the cup in the cupboard.", "bases": {"अलमारी": "cupboard"} }
+  "hi-2554":
+    native: "tournament"
+    notes:
+      "n1": "A series of games or matches, in which teams compete for a prize."
+    examples:
+      "राज्य स्तर का टूर्नामेंट शुरू हुआ।": { "native": "A state-level tournament has begun.", "bases": {"स्तर": "level", "शुरू": "start"} }
+      "टूर्नामेंट में कितनी टीमें हैं?": { "native": "How many teams are in the tournament?", "bases": {} }
+  "hi-2555":
+    native: "fitness"
+    notes:
+      "n1": "The state of being strong and healthy in body."
+    examples:
+      "फ़िटनेस के लिए रोज़ दौड़ो।": { "native": "Run every day for fitness.", "bases": {"लिए": "for"} }
+      "उसकी फ़िटनेस अच्छी है।": { "native": "His fitness is good.", "bases": {} }
+  "hi-2556":
+    native: "goalkeeper"
+    notes:
+      "n1": "The player who guards the goal in a game such as football or hockey."
+    examples:
+      "गोलकीपर ने गेंद पकड़ी।": { "native": "The goalkeeper caught the ball.", "bases": {"ने": "by"} }
+      "हमारा गोलकीपर बहुत अच्छा है।": { "native": "Our goalkeeper is very good.", "bases": {} }

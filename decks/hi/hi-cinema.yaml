@@ -1,0 +1,368 @@
+schema: 1
+id: "hi-cinema"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "cinema"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2420"
+    target: "सिनेमा"
+    target_scripts: {"perso_arabic": "سینما"}
+    reading: "sinēmā"
+    ipa: "sɪneːmaː"
+    phonetic: "[sɪneːmaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज सिनेमा चलें?", "reading": "āj sinēmā calēm̐?", "ipa": "aːdʒ sɪneːmaː tʃəlẽː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "चलें", "ref": "hi-0801"}]}
+      - {"target": "सिनेमा हॉल में भीड़ है।", "reading": "sinēmā hôl mēm̐ bhīṛ hai.", "ipa": "sɪneːmaː ɦɔl mẽː bʱiːɽ ɦɛː", "bases": [{"word": "हॉल", "base": "हॉल", "reading": "hôl"}, {"word": "में", "ref": "hi-0274"}, {"word": "भीड़", "base": "भीड़", "reading": "bhīṛ"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2421"
+    target: "अभिनेता"
+    target_scripts: {"perso_arabic": "اداکار"}
+    reading: "abhinētā"
+    ipa: "əbʱɪneːt̪aː"
+    phonetic: "[əbʱɪneːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह एक अच्छा अभिनेता है।", "reading": "vah ēk acchā abhinētā hai.", "ipa": "ʋəɦ eːk ətʃtʃʰaː əbʱɪneːt̪aː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "एक", "ref": "hi-0198"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अभिनेता ने दमदार रोल किया।", "reading": "abhinētā nē damdār rōl kiyā.", "ipa": "əbʱɪneːt̪aː neː d̪əmd̪aːr roːl kɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "दमदार", "base": "दमदार", "reading": "damdār"}, {"word": "रोल", "base": "रोल", "reading": "rōl"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2422"
+    target: "अभिनेत्री"
+    target_scripts: {"perso_arabic": "اداکارہ"}
+    reading: "abhinētrī"
+    ipa: "əbʱɪneːt̪riː"
+    phonetic: "[əbʱɪneːt̪riː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह मशहूर अभिनेत्री है।", "reading": "vah maśhūr abhinētrī hai.", "ipa": "ʋəɦ məʃɦuːr əbʱɪneːt̪riː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "मशहूर", "ref": "hi-1983"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अभिनेत्री का गाना सुनो।", "reading": "abhinētrī kā gānā sunō.", "ipa": "əbʱɪneːt̪riː kaː ɡaːnaː sʊnoː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "गाना", "ref": "hi-1639"}, {"word": "सुनो", "ref": "hi-0783"}]}
+  - id: "hi-2423"
+    target: "निर्देशक"
+    target_scripts: {"perso_arabic": "ہدایتکار"}
+    reading: "nirdēśak"
+    ipa: "nɪrd̪eːʃək"
+    phonetic: "[nɪrd̪eːʃək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस फ़िल्म का निर्देशक नया है।", "reading": "is film kā nirdēśak nayā hai.", "ipa": "ɪs fɪlm kaː nɪrd̪eːʃək nəjaː ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "का", "ref": "hi-0279"}, {"word": "नया", "ref": "hi-0896"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "निर्देशक ने सीन दोबारा शूट किया।", "reading": "nirdēśak nē sīn dōbārā śūṭ kiyā.", "ipa": "nɪrd̪eːʃək neː siːn d̪oːbaːraː ʃuːʈ kɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सीन", "ref": "hi-2427"}, {"word": "दोबारा", "ref": "hi-0828"}, {"word": "शूट", "base": "शूट", "reading": "śūṭ"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2424"
+    target: "थिएटर"
+    target_scripts: {"perso_arabic": "تھیٹر"}
+    reading: "thiēṭar"
+    ipa: "t̪ʰɪeːʈər"
+    phonetic: "[t̪ʰɪeːʈər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "थिएटर में नाटक लगा है।", "reading": "thiēṭar mēm̐ nāṭak lagā hai.", "ipa": "t̪ʰɪeːʈər mẽː naːʈək ləɡaː ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "नाटक", "ref": "hi-1686"}, {"word": "लगा", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "थिएटर पास में है।", "reading": "thiēṭar pās mēm̐ hai.", "ipa": "t̪ʰɪeːʈər paːs mẽː ɦɛː", "bases": [{"word": "पास", "ref": "hi-0293"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2425"
+    target: "परदा"
+    target_scripts: {"perso_arabic": "پردہ"}
+    reading: "pardā"
+    ipa: "pərd̪aː"
+    phonetic: "[pərd̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "परदा खुला है।", "reading": "pardā khulā hai.", "ipa": "pərd̪aː kʰʊlaː ɦɛː", "bases": [{"word": "खुला", "ref": "hi-1357"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "परदे पर फ़िल्म चल रही है।", "reading": "pardē par film cal rahī hai.", "ipa": "pərd̪eː pər fɪlm tʃəl rəɦiː ɦɛː", "bases": [{"word": "परदे", "base": "परदा", "reading": "pardā"}, {"word": "पर", "ref": "hi-0275"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "चल", "ref": "hi-0801"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2426"
+    target: "दर्शक"
+    target_scripts: {"perso_arabic": "ناظر"}
+    reading: "darśak"
+    ipa: "d̪ərʃək"
+    phonetic: "[d̪ərʃək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दर्शक ताली बजा रहे हैं।", "reading": "darśak tālī bajā rahē haim̐.", "ipa": "d̪ərʃək t̪aːliː bədʒaː rəɦeː ɦɛ̃ː", "bases": [{"word": "ताली", "base": "ताली", "reading": "tālī"}, {"word": "बजा", "base": "बजाना", "reading": "bajānā"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "दर्शकों को फ़िल्म पसंद आई।", "reading": "darśakōm̐ kō film pasand āī.", "ipa": "d̪ərʃəkõː koː fɪlm pəsənd̪ aːiː", "bases": [{"word": "दर्शकों", "base": "दर्शक", "reading": "darśak"}, {"word": "को", "ref": "hi-0277"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "पसंद", "ref": "hi-0469"}, {"word": "आई", "ref": "hi-0778"}]}
+  - id: "hi-2427"
+    target: "सीन"
+    target_scripts: {"perso_arabic": "سین"}
+    reading: "sīn"
+    ipa: "siːn"
+    phonetic: "[siːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह सीन बहुत अच्छा है।", "reading": "yah sīn bahut acchā hai.", "ipa": "jəɦ siːn bəɦʊt̪ ətʃtʃʰaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अगला सीन कब आएगा?", "reading": "aglā sīn kab āēgā?", "ipa": "əɡlaː siːn kəb aːeːɡaː", "bases": [{"word": "अगला", "base": "अगला", "reading": "aglā"}, {"word": "कब", "ref": "hi-0160"}, {"word": "आएगा", "ref": "hi-0778"}]}
+  - id: "hi-2428"
+    target: "डायलॉग"
+    target_scripts: {"perso_arabic": "ڈائیلاگ"}
+    reading: "ḍāylôg"
+    ipa: "ɖaːjlɔɡ"
+    phonetic: "[ɖaːjlɔɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका डायलॉग याद है।", "reading": "uskā ḍāylôg yād hai.", "ipa": "ʊskaː ɖaːjlɔɡ jaːd̪ ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "याद", "ref": "hi-1594"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "फ़िल्म के डायलॉग मज़ेदार हैं।", "reading": "film kē ḍāylôg mazēdār haim̐.", "ipa": "fɪlm keː ɖaːjlɔɡ məzeːd̪aːr ɦɛ̃ː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "के", "ref": "hi-0279"}, {"word": "मज़ेदार", "ref": "hi-1964"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2429"
+    target: "हीरो"
+    target_scripts: {"perso_arabic": "ہیرو"}
+    reading: "hīrō"
+    ipa: "ɦiːroː"
+    phonetic: "[ɦiːroː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िल्म का हीरो बहादुर है।", "reading": "film kā hīrō bahādur hai.", "ipa": "fɪlm kaː ɦiːroː bəɦaːd̪ʊr ɦɛː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "का", "ref": "hi-0279"}, {"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "वह असली हीरो है।", "reading": "vah aslī hīrō hai.", "ipa": "ʋəɦ əsliː ɦiːroː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "असली", "ref": "hi-1382"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2430"
+    target: "हीरोइन"
+    target_scripts: {"perso_arabic": "ہیروئن"}
+    reading: "hīrōin"
+    ipa: "ɦiːroːɪn"
+    phonetic: "[ɦiːroːɪn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हीरोइन बहुत सुंदर है।", "reading": "hīrōin bahut sundar hai.", "ipa": "ɦiːroːɪn bəɦʊt̪ sʊnd̪ər ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "फ़िल्म की हीरोइन नई है।", "reading": "film kī hīrōin naī hai.", "ipa": "fɪlm kiː ɦiːroːɪn nəiː ɦɛː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "की", "ref": "hi-0279"}, {"word": "नई", "ref": "hi-0896"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2431"
+    target: "विलेन"
+    target_scripts: {"perso_arabic": "ولن"}
+    reading: "vilēn"
+    ipa: "ʋɪleːn"
+    phonetic: "[ʋɪleːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "विलेन बहुत डरावना है।", "reading": "vilēn bahut ḍarāvnā hai.", "ipa": "ʋɪleːn bəɦʊt̪ ɖəraːʋnaː ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "डरावना", "ref": "hi-1992"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "फ़िल्म में विलेन हार गया।", "reading": "film mēm̐ vilēn hār gayā.", "ipa": "fɪlm mẽː ʋɪleːn ɦaːr ɡəjaː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "में", "ref": "hi-0274"}, {"word": "हार", "ref": "hi-0957"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2432"
+    target: "कॉमेडी"
+    target_scripts: {"perso_arabic": "کامیڈی"}
+    reading: "kômēḍī"
+    ipa: "kɔmeːɖiː"
+    phonetic: "[kɔmeːɖiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह कॉमेडी फ़िल्म है।", "reading": "yah kômēḍī film hai.", "ipa": "jəɦ kɔmeːɖiː fɪlm ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कॉमेडी देखकर हँसी आई।", "reading": "kômēḍī dēkhkar ham̐sī āī.", "ipa": "kɔmeːɖiː d̪eːkʰkər ɦə̃siː aːiː", "bases": [{"word": "देखकर", "ref": "hi-0784"}, {"word": "हँसी", "ref": "hi-2119"}, {"word": "आई", "ref": "hi-0778"}]}
+  - id: "hi-2433"
+    target: "सुपरहिट"
+    target_scripts: {"perso_arabic": "سپرہٹ"}
+    reading: "suprhiṭ"
+    ipa: "sʊprɦɪʈ"
+    phonetic: "[sʊprɦɪʈ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह गाना सुपरहिट है।", "reading": "yah gānā suprhiṭ hai.", "ipa": "jəɦ ɡaːnaː sʊprɦɪʈ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "गाना", "ref": "hi-1639"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "फ़िल्म सुपरहिट हुई।", "reading": "film suprhiṭ huī.", "ipa": "fɪlm sʊprɦɪʈ ɦʊiː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "हुई", "ref": "hi-0780"}]}
+  - id: "hi-2434"
+    target: "ट्रेलर"
+    target_scripts: {"perso_arabic": "ٹریلر"}
+    reading: "ṭrēlar"
+    ipa: "ʈreːlər"
+    phonetic: "[ʈreːlər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िल्म का ट्रेलर कल आएगा।", "reading": "film kā ṭrēlar kal āēgā.", "ipa": "fɪlm kaː ʈreːlər kəl aːeːɡaː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "का", "ref": "hi-0279"}, {"word": "कल", "ref": "hi-0300"}, {"word": "आएगा", "ref": "hi-0778"}]}
+      - {"target": "ट्रेलर देखो।", "reading": "ṭrēlar dēkhō.", "ipa": "ʈreːlər d̪eːkʰoː", "bases": [{"word": "देखो", "ref": "hi-0784"}]}
+  - id: "hi-2435"
+    target: "गीतकार"
+    target_scripts: {"perso_arabic": "نغمہ نگار"}
+    reading: "gītkār"
+    ipa: "ɡiːt̪kaːr"
+    phonetic: "[ɡiːt̪kaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गीतकार ने नया गाना लिखा।", "reading": "gītkār nē nayā gānā likhā.", "ipa": "ɡiːt̪kaːr neː nəjaː ɡaːnaː lɪkʰaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नया", "ref": "hi-0896"}, {"word": "गाना", "ref": "hi-1639"}, {"word": "लिखा", "ref": "hi-0781"}]}
+      - {"target": "इस गाने के गीतकार कौन हैं?", "reading": "is gānē kē gītkār kaun haim̐?", "ipa": "ɪs ɡaːneː keː ɡiːt̪kaːr kɔːn ɦɛ̃ː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "गाने", "ref": "hi-1639"}, {"word": "के", "ref": "hi-0279"}, {"word": "कौन", "ref": "hi-0158"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2436"
+    target: "संगीतकार"
+    target_scripts: {"perso_arabic": "موسیقار"}
+    reading: "saṅgītkār"
+    ipa: "səŋɡiːt̪kaːr"
+    phonetic: "[səŋɡiːt̪kaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संगीतकार ने धुन बनाई।", "reading": "saṅgītkār nē dhun banāī.", "ipa": "səŋɡiːt̪kaːr neː d̪ʱʊn bənaːiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "धुन", "base": "धुन", "reading": "dhun"}, {"word": "बनाई", "ref": "hi-1502"}]}
+      - {"target": "संगीतकार बहुत मशहूर है।", "reading": "saṅgītkār bahut maśhūr hai.", "ipa": "səŋɡiːt̪kaːr bəɦʊt̪ məʃɦuːr ɦɛː", "bases": [{"word": "बहुत", "ref": "hi-0866"}, {"word": "मशहूर", "ref": "hi-1983"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2437"
+    target: "कैमरामैन"
+    target_scripts: {"perso_arabic": "کیمرہ مین"}
+    reading: "kaimrāmain"
+    ipa: "kɛːmraːmɛːn"
+    phonetic: "[kɛːmraːmɛːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कैमरामैन ने अच्छा शॉट लिया।", "reading": "kaimrāmain nē acchā śôṭ liyā.", "ipa": "kɛːmraːmɛːn neː ətʃtʃʰaː ʃɔʈ lɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "शॉट", "base": "शॉट", "reading": "śôṭ"}, {"word": "लिया", "ref": "hi-0786"}]}
+      - {"target": "कैमरामैन कहाँ है?", "reading": "kaimrāmain kahām̐ hai?", "ipa": "kɛːmraːmɛːn kəɦãː ɦɛː", "bases": [{"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2438"
+    target: "शूटिंग"
+    target_scripts: {"perso_arabic": "شوٹنگ"}
+    reading: "śūṭiṅg"
+    ipa: "ʃuːʈɪŋɡ"
+    phonetic: "[ʃuːʈɪŋɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शूटिंग कल शुरू होगी।", "reading": "śūṭiṅg kal śurū hōgī.", "ipa": "ʃuːʈɪŋɡ kəl ʃʊruː ɦoːɡiː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "होगी", "ref": "hi-0780"}]}
+      - {"target": "शूटिंग के दौरान सब खुश थे।", "reading": "śūṭiṅg kē daurān sab khuś thē.", "ipa": "ʃuːʈɪŋɡ keː d̪ɔːraːn səb kʰʊʃ t̪ʰeː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "दौरान", "base": "दौरान", "reading": "daurān"}, {"word": "सब", "ref": "hi-0054"}, {"word": "खुश", "ref": "hi-0912"}, {"word": "थे", "ref": "hi-0780"}]}
+  - id: "hi-2439"
+    target: "पोस्टर"
+    target_scripts: {"perso_arabic": "پوسٹر"}
+    reading: "pōsṭar"
+    ipa: "poːsʈər"
+    phonetic: "[poːsʈər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दीवार पर नया पोस्टर लगा है।", "reading": "dīvār par nayā pōsṭar lagā hai.", "ipa": "d̪iːʋaːr pər nəjaː poːsʈər ləɡaː ɦɛː", "bases": [{"word": "दीवार", "base": "दीवार", "reading": "dīvār"}, {"word": "पर", "ref": "hi-0275"}, {"word": "नया", "ref": "hi-0896"}, {"word": "लगा", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पोस्टर में हीरो का चेहरा है।", "reading": "pōsṭar mēm̐ hīrō kā cēhrā hai.", "ipa": "poːsʈər mẽː ɦiːroː kaː tʃeːɦraː ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "हीरो", "ref": "hi-2429"}, {"word": "का", "ref": "hi-0279"}, {"word": "चेहरा", "ref": "hi-1766"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2440"
+    target: "सेट"
+    target_scripts: {"perso_arabic": "سیٹ"}
+    reading: "sēṭ"
+    ipa: "seːʈ"
+    phonetic: "[seːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िल्म का सेट बड़ा है।", "reading": "film kā sēṭ baṛā hai.", "ipa": "fɪlm kaː seːʈ bəɽaː ɦɛː", "bases": [{"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "का", "ref": "hi-0279"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सेट पर सब तैयार हैं।", "reading": "sēṭ par sab taiyār haim̐.", "ipa": "seːʈ pər səb t̪ɛːjaːr ɦɛ̃ː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "सब", "ref": "hi-0054"}, {"word": "तैयार", "base": "तैयार", "reading": "taiyār"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2441"
+    target: "मनोरंजन"
+    target_scripts: {"perso_arabic": "تفریح"}
+    reading: "manōrañjan"
+    ipa: "mənoːrəɲdʒən"
+    phonetic: "[mənoːrəɲdʒən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िल्में मनोरंजन का साधन हैं।", "reading": "filmēm̐ manōrañjan kā sādhan haim̐.", "ipa": "fɪlmẽː mənoːrəɲdʒən kaː saːd̪ʱən ɦɛ̃ː", "bases": [{"word": "फ़िल्में", "ref": "hi-1680"}, {"word": "मनोरंजन", "base": "मनोरंजन", "reading": "manōrañjan"}, {"word": "का", "ref": "hi-0279"}, {"word": "साधन", "base": "साधन", "reading": "sādhan"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "बच्चों का मनोरंजन करो।", "reading": "baccōm̐ kā manōrañjan karō.", "ipa": "bətʃtʃõː kaː mənoːrəɲdʒən kəroː", "bases": [{"word": "बच्चों", "ref": "hi-0111"}, {"word": "का", "ref": "hi-0279"}, {"word": "मनोरंजन", "base": "मनोरंजन", "reading": "manōrañjan"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2442"
+    target: "रोमांचक"
+    target_scripts: {"perso_arabic": "سنسنی خیز"}
+    reading: "rōmāñcak"
+    ipa: "roːmaːɲtʃək"
+    phonetic: "[roːmaːɲtʃək]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह फ़िल्म बहुत रोमांचक है।", "reading": "yah film bahut rōmāñcak hai.", "ipa": "jəɦ fɪlm bəɦʊt̪ roːmaːɲtʃək ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "रोमांचक", "base": "रोमांचक", "reading": "rōmāñcak"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "रोमांचक खेल देखा।", "reading": "rōmāñcak khēl dēkhā.", "ipa": "roːmaːɲtʃək kʰeːl d̪eːkʰaː", "bases": [{"word": "खेल", "ref": "hi-1638"}, {"word": "देखा", "ref": "hi-0784"}]}
+  - id: "hi-2443"
+    target: "ड्रामा"
+    target_scripts: {"perso_arabic": "ڈرامہ"}
+    reading: "ḍrāmā"
+    ipa: "ɖraːmaː"
+    phonetic: "[ɖraːmaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह फ़िल्म एक ड्रामा है।", "reading": "yah film ēk ḍrāmā hai.", "ipa": "jəɦ fɪlm eːk ɖraːmaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "फ़िल्म", "ref": "hi-1680"}, {"word": "एक", "ref": "hi-0198"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसने बहुत ड्रामा किया।", "reading": "usnē bahut ḍrāmā kiyā.", "ipa": "ʊsneː bəɦʊt̪ ɖraːmaː kɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "किया", "ref": "hi-0779"}]}

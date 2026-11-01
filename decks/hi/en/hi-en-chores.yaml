@@ -1,0 +1,263 @@
+schema: 1
+id: "hi-en-chores"
+kind: "layer"
+core: "hi-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chores"
+license: "CC-BY-SA-4.0"
+description: "Household chores: sweeping, mopping, washing, drying and the things they use. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1705":
+    native: "broom"
+    notes:
+      "n1": "A broom for the floor. The phrase झाड़ू लगाना (jhāṛū lagānā) means to sweep."
+    examples:
+      "सुबह झाड़ू से कमरा साफ़ करो।": { "native": "Sweep the room with the broom in the morning.", "bases": {"करो": "to do"} }
+      "झाड़ू कोने में रखी है।": { "native": "The broom is kept in the corner.", "bases": {"कोने": "corner", "रखी": "kept; put"} }
+  "hi-1706":
+    native: "mop; wiping cloth"
+    notes:
+      "n1": "A cloth for wiping the floor. The phrase पोंछा लगाना (pōñchā lagānā) means to mop."
+    examples:
+      "फर्श पर पोंछा लगाओ।": { "native": "Mop the floor.", "bases": {"लगाओ": "to put on; to apply"} }
+      "पोंछा गीला है।": { "native": "The mop is wet.", "bases": {} }
+  "hi-1707":
+    native: "rubbish; waste"
+    notes:
+      "n1": "Things thrown away. It is the waste of a house, not the bin: for the bin see कूड़ेदान (kūṛēdān)."
+    examples:
+      "कचरा बाहर फेंको।": { "native": "Throw the rubbish outside.", "bases": {"फेंको": "to throw"} }
+      "कचरा रोज़ निकालो।": { "native": "Take the rubbish out every day.", "bases": {"निकालो": "to take out"} }
+  "hi-1708":
+    native: "dustbin"
+    notes:
+      "n1": "The bin the rubbish goes into. It is also written कूड़ादान (kūṛādān)."
+    examples:
+      "कूड़ेदान रसोई में है।": { "native": "The dustbin is in the kitchen.", "bases": {} }
+      "कूड़ेदान का ढक्कन बंद करो।": { "native": "Close the lid of the dustbin.", "bases": {"बंद": "closed; shut", "करो": "to do"} }
+  "hi-1709":
+    native: "bucket"
+    notes:
+      "n1": "A bucket for water. It is often plastic, and is carried by its handle."
+    examples:
+      "बाल्टी में पानी भरो।": { "native": "Fill the bucket with water.", "bases": {"भरो": "to fill"} }
+      "बाल्टी भारी है।": { "native": "The bucket is heavy.", "bases": {} }
+  "hi-1710":
+    native: "bedsheet; sheet"
+    notes:
+      "n1": "The sheet put over a bed. A cover for the bed is also called चादर (cādar)."
+    examples:
+      "बिस्तर पर साफ़ चादर है।": { "native": "There is a clean sheet on the bed.", "bases": {} }
+      "चादर धूप में सुखाओ।": { "native": "Dry the sheet in the sun.", "bases": {"सुखाओ": "to dry"} }
+  "hi-1711":
+    native: "pillow"
+    notes:
+      "n1": "A pillow for the head in bed. The word तकिया (takiyā) is used in both Hindi and Urdu."
+    examples:
+      "तकिया नरम है।": { "native": "The pillow is soft.", "bases": {} }
+      "तकिये पर सिर रखो।": { "native": "Rest your head on the pillow.", "bases": {"तकिये": "pillow", "सिर": "head", "रखो": "to keep; to put"} }
+  "hi-1712":
+    native: "tap"
+    notes:
+      "n1": "A tap for water. The water comes out when the tap is open."
+    examples:
+      "नल से पानी आ रहा है।": { "native": "Water is coming from the tap.", "bases": {"रहा": "to keep on; to be"} }
+      "नल बंद करो।": { "native": "Turn off the tap.", "bases": {"करो": "to do"} }
+  "hi-1713":
+    native: "iron (for clothes)"
+    notes:
+      "n1": "The appliance for pressing clothes. The verb is इस्त्री करना (istrī karnā), to iron."
+    examples:
+      "कपड़ों पर इस्त्री करो।": { "native": "Iron the clothes.", "bases": {"कपड़ों": "cloth; clothes", "करो": "to do"} }
+      "इस्त्री गरम है।": { "native": "The iron is hot.", "bases": {} }
+  "hi-1714":
+    native: "detergent; washing powder"
+    notes:
+      "n1": "The powder or liquid used with water to wash clothes or dishes."
+    examples:
+      "डिटर्जेंट पानी में घोलो।": { "native": "Dissolve the detergent in water.", "bases": {"घोलो": "to dissolve"} }
+      "यह डिटर्जेंट अच्छा है।": { "native": "This detergent is good.", "bases": {} }
+  "hi-1715":
+    native: "washing; laundry"
+    notes:
+      "n1": "The act of washing. It is said of clothes, cars and dishes alike."
+    examples:
+      "कपड़ों की धुलाई हर हफ़्ते होती है।": { "native": "The clothes are washed every week.", "bases": {"कपड़ों": "cloth; clothes", "हर": "every; each", "हफ़्ते": "week", "होती": "to be; to happen"} }
+      "धुलाई के बाद सुखाओ।": { "native": "Dry it after washing.", "bases": {"बाद": "after", "सुखाओ": "to dry"} }
+  "hi-1716":
+    native: "cleaning; cleanliness"
+    notes:
+      "n1": "The act of cleaning, and the state of being clean. The opposite is गंदगी (gandagī)."
+    examples:
+      "घर की सफ़ाई सब मिलकर करते हैं।": { "native": "Everyone cleans the house together.", "bases": {"मिलकर": "to meet; (here) together", "करते": "to do"} }
+      "सफ़ाई रोज़ करो।": { "native": "Clean every day.", "bases": {"करो": "to do"} }
+  "hi-1717":
+    native: "dust"
+    notes:
+      "n1": "Fine dry earth that settles on things. It is wiped or swept away."
+    examples:
+      "मेज़ पर धूल है।": { "native": "There is dust on the table.", "bases": {} }
+      "धूल झाड़ो।": { "native": "Dust it off.", "bases": {"झाड़ो": "to sweep; to dust"} }
+  "hi-1718":
+    native: "stain; mark"
+    notes:
+      "n1": "A mark left on cloth or a surface. It can be washed out."
+    examples:
+      "कपड़े पर दाग़ है।": { "native": "There is a stain on the clothes.", "bases": {"कपड़े": "cloth; clothes"} }
+      "यह दाग़ नहीं जाता।": { "native": "This stain does not come out.", "bases": {"जाता": "to go"} }
+  "hi-1719":
+    native: "rope; washing line"
+    notes:
+      "n1": "A rope. A washing line is the rope on which clothes are hung to dry."
+    examples:
+      "कपड़े रस्सी पर सुखाओ।": { "native": "Dry the clothes on the washing line.", "bases": {"कपड़े": "cloth; clothes", "सुखाओ": "to dry"} }
+      "रस्सी मज़बूत है।": { "native": "The rope is strong.", "bases": {"मज़बूत": "strong"} }
+  "hi-1720":
+    native: "lid; cover"
+    notes:
+      "n1": "The cover that closes a pot, bottle or bin."
+    examples:
+      "बर्तन का ढक्कन कहाँ है?": { "native": "Where is the lid of the pot?", "bases": {} }
+      "ढक्कन बंद करो।": { "native": "Close the lid.", "bases": {"बंद": "closed; shut", "करो": "to do"} }
+  "hi-1721":
+    native: "floor"
+    notes:
+      "n1": "The floor of a room. The wall is दीवार (dīvār)."
+    examples:
+      "फर्श गीला है।": { "native": "The floor is wet.", "bases": {} }
+      "फर्श पर पानी मत गिराओ।": { "native": "Do not spill water on the floor.", "bases": {"मत": "do not", "गिराओ": "to drop; to spill"} }
+  "hi-1722":
+    native: "soil; mud; clay"
+    notes:
+      "n1": "Earth, soil or clay. It is also the dirt that sticks to shoes."
+    examples:
+      "बगीचे की मिट्टी गीली है।": { "native": "The soil of the garden is wet.", "bases": {"बगीचे": "garden", "गीली": "wet"} }
+      "जूते पर मिट्टी लगी है।": { "native": "There is mud on the shoes.", "bases": {"जूते": "shoe", "लगी": "to be applied; to stick"} }
+  "hi-1723":
+    native: "mud"
+    notes:
+      "n1": "Wet mud on the ground, after rain. It is thicker than मिट्टी (miṭṭī)."
+    examples:
+      "बारिश में सड़क पर कीचड़ है।": { "native": "After the rain there is mud on the road.", "bases": {"बारिश": "rain"} }
+      "कीचड़ में मत जाओ।": { "native": "Do not go into the mud.", "bases": {"मत": "do not", "जाओ": "to go"} }
+  "hi-1724":
+    native: "dirt; filth"
+    notes:
+      "n1": "Dirt and filth. The adjective is गंदा (gandā), dirty."
+    examples:
+      "यहाँ बहुत गंदगी है।": { "native": "There is a lot of dirt here.", "bases": {} }
+      "गंदगी साफ़ करो।": { "native": "Clean up the dirt.", "bases": {"करो": "to do"} }
+  "hi-1725":
+    native: "to sweep; to dust"
+    notes:
+      "n1": "To brush off or sweep. The noun is झाड़ू (jhāṛū), the broom."
+    examples:
+      "उसने सारा कमरा झाड़ा।": { "native": "He swept the whole room.", "bases": {"उसने": "he; she; that", "सारा": "whole; all", "झाड़ा": "to sweep; to dust"} }
+      "रोज़ सुबह झाड़ो।": { "native": "Sweep every morning.", "bases": {"झाड़ो": "to sweep; to dust"} }
+  "hi-1726":
+    native: "to wipe"
+    notes:
+      "n1": "To wipe a surface or something wet, with a cloth. The noun is पोंछा (pōñchā)."
+    examples:
+      "मेज़ पोंछो।": { "native": "Wipe the table.", "bases": {"पोंछो": "to wipe"} }
+      "उसने हाथ पोंछे।": { "native": "He wiped his hands.", "bases": {"उसने": "he; she; that", "पोंछे": "to wipe"} }
+  "hi-1727":
+    native: "to dry (something)"
+    notes:
+      "n1": "To make something dry, as clothes in the sun. The one that dries by itself is सूखना (sūkhnā)."
+    examples:
+      "कपड़े धूप में सुखाओ।": { "native": "Dry the clothes in the sun.", "bases": {"कपड़े": "cloth; clothes", "सुखाओ": "to dry"} }
+      "उसने बाल सुखाए।": { "native": "He dried his hair.", "bases": {"उसने": "he; she; that", "बाल": "hair", "सुखाए": "to dry"} }
+  "hi-1728":
+    native: "to dry (by itself)"
+    notes:
+      "n1": "To become dry without anyone drying it. The opposite is गीला होना (gīlā hōnā), to get wet."
+    examples:
+      "कपड़े जल्दी सूखते हैं।": { "native": "The clothes dry quickly.", "bases": {"कपड़े": "cloth; clothes", "सूखते": "to dry (by itself)"} }
+      "गीला फर्श अभी सूख रहा है।": { "native": "The wet floor is drying now.", "bases": {"अभी": "now", "सूख": "to dry (by itself)", "रहा": "to keep on; to be"} }
+  "hi-1729":
+    native: "to take out; to remove"
+    notes:
+      "n1": "To take something out of a place. The word is also used of money taken out of a bank."
+    examples:
+      "उसने जेब से चाबी निकाली।": { "native": "He took the key out of his pocket.", "bases": {"उसने": "he; she; that", "निकाली": "to take out"} }
+      "बाहर का सामान निकालो।": { "native": "Take out the things outside.", "bases": {"निकालो": "to take out"} }
+  "hi-1730":
+    native: "to throw; to throw away"
+    notes:
+      "n1": "To throw something, or to throw it away. The noun for the bin is कूड़ेदान (kūṛēdān)."
+    examples:
+      "पुराने कपड़े मत फेंको।": { "native": "Do not throw away the old clothes.", "bases": {"पुराने": "old", "कपड़े": "cloth; clothes", "मत": "do not", "फेंको": "to throw"} }
+      "यह डिब्बा फेंक दो।": { "native": "Throw this box away.", "bases": {"डिब्बा": "box; tin", "फेंक": "to throw", "दो": "to give"} }
+  "hi-1731":
+    native: "to lift; to pick up"
+    notes:
+      "n1": "To lift something off the ground, or to pick it up."
+    examples:
+      "भारी बाल्टी उठाओ।": { "native": "Lift the heavy bucket.", "bases": {"उठाओ": "to lift; to pick up"} }
+      "उसने कचरा उठाया।": { "native": "He picked up the rubbish.", "bases": {"उसने": "he; she; that", "उठाया": "to lift; to pick up"} }
+  "hi-1732":
+    native: "to fill"
+    notes:
+      "n1": "To fill something up. The opposite is खाली करना (khālī karnā), to empty."
+    examples:
+      "बाल्टी पानी से भरो।": { "native": "Fill the bucket with water.", "bases": {"भरो": "to fill"} }
+      "कूड़ेदान भर गया है।": { "native": "The dustbin is full.", "bases": {"भर": "to fill", "गया": "to go"} }
+  "hi-1733":
+    native: "to spread out; to scatter"
+    notes:
+      "n1": "To spread something out, or to scatter it about. Things spread on their own take फैलना (phailnā)."
+    examples:
+      "आटा मेज़ पर मत फैलाओ।": { "native": "Do not spread the flour on the table.", "bases": {"आटा": "flour", "मत": "do not", "फैलाओ": "to spread out; to scatter"} }
+      "कमरे में किताबें फैली हैं।": { "native": "Books are lying scattered in the room.", "bases": {"कमरे": "room", "किताबें": "book", "फैली": "to spread (by itself)"} }
+  "hi-1734":
+    native: "to gather up; to tidy"
+    notes:
+      "n1": "To gather scattered things together and put them away."
+    examples:
+      "खिलौने समेटो।": { "native": "Gather up the toys.", "bases": {"खिलौने": "toy", "समेटो": "to gather up; to tidy"} }
+      "जल्दी से सामान समेटो।": { "native": "Quickly gather up the things.", "bases": {"सामान": "things; goods", "समेटो": "to gather up; to tidy"} }
+  "hi-1735":
+    native: "to get wet"
+    notes:
+      "n1": "To become wet from rain or water."
+    examples:
+      "बारिश में कपड़े भीग गए।": { "native": "The clothes got wet in the rain.", "bases": {"कपड़े": "cloth; clothes", "भीग": "to get wet", "गए": "to go"} }
+      "मेरी चादर भीग गई है।": { "native": "My sheet has got wet.", "bases": {"मेरी": "my", "भीग": "to get wet", "गई": "to go"} }
+  "hi-1736":
+    native: "to take down; to take off"
+    notes:
+      "n1": "To take something off or down, as shoes, clothes or a load."
+    examples:
+      "कपड़े रस्सी से उतारो।": { "native": "Take the clothes down from the line.", "bases": {"कपड़े": "cloth; clothes", "उतारो": "to take down; to take off"} }
+      "जूते उतारो।": { "native": "Take off your shoes.", "bases": {"जूते": "shoe", "उतारो": "to take down; to take off"} }
+  "hi-1737":
+    native: "to put on; to put up"
+    notes:
+      "n1": "To put a cover on something, or to raise a thing up on to another."
+    examples:
+      "कुर्सी पर नई चादर चढ़ाओ।": { "native": "Put a new cover on the chair.", "bases": {"कुर्सी": "chair", "नई": "new", "चढ़ाओ": "to put on; to put up"} }
+      "कुर्सी पर गद्दी चढ़ाई।": { "native": "I put a cushion on the chair.", "bases": {"गद्दी": "cushion; mattress", "चढ़ाई": "to put on; to put up"} }
+  "hi-1738":
+    native: "dirty; soiled"
+    notes:
+      "n1": "Dirty, from use or dust. गंदा (gandā) is a stronger word, for filthy."
+    examples:
+      "यह कपड़ा मैला है।": { "native": "This cloth is dirty.", "bases": {"कपड़ा": "cloth"} }
+      "मैले बर्तन सिंक में हैं।": { "native": "The dirty dishes are in the sink.", "bases": {"मैले": "dirty", "सिंक": "sink"} }
+  "hi-1739":
+    native: "neat; clean and tidy"
+    notes:
+      "n1": "Clean and neat, tidy in appearance. साफ़ (sāf) is only clean."
+    examples:
+      "कमरा सुथरा है।": { "native": "The room is neat.", "bases": {"कमरा": "room"} }
+      "सुथरे कपड़े पहनो।": { "native": "Wear clean clothes.", "bases": {"सुथरे": "neat", "कपड़े": "cloth; clothes", "पहनो": "to wear"} }
+  "hi-1740":
+    native: "to break; to be broken"
+    notes:
+      "n1": "To break by itself or by an accident. The transitive is तोड़ना (tōṛnā), to break something."
+    examples:
+      "नल टूट गया है।": { "native": "The tap has broken.", "bases": {"टूट": "to break; to be broken", "गया": "to go"} }
+      "बाल्टी का हैंडल टूट गया।": { "native": "The handle of the bucket broke.", "bases": {"बाल्टी": "bucket", "हैंडल": "handle", "टूट": "to break; to be broken", "गया": "to go"} }

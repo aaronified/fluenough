@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-verbs-4"
+name: "Reading: verbs-4"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about cooking and the garden. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-verbs4-kitchen"
+    title: "In the kitchen"
+    theme: "verbs-4"
+    sentences:
+      - {"text": "दूध उबल रहा है, इसे धीरे-धीरे चलाओ।", "reading": "dūdh ubal rahā hai, isē dhīrē-dhīrē calāō.", "ipa": "d̪uːd̪ʱ ʊbəl rəɦaː ɦɛː ɪseː d̪ʱiːreːd̪ʱiːreː tʃəlaːoː"}
+      - {"text": "बर्फ़ पिघल गई, इसलिए पानी ठंडा है।", "reading": "barf pighal gaī, isliē pānī ṭhaṇḍā hai.", "ipa": "bərf pɪɡʱəl ɡəiː ɪslɪeː paːniː ʈʰəɳɖaː ɦɛː"}
+      - {"text": "नींबू निचोड़ो और चखकर बताओ।", "reading": "nīmbū nicōṛō aur cakhkar batāō.", "ipa": "niːmbuː nɪtʃoːɽoː ɔːr tʃəkʰkər bət̪aːoː"}
+      - {"text": "पौधों को रोज़ सींचो और बीज बोओ।", "reading": "paudhōm̐ kō rōz sīñcō aur bīj bōō.", "ipa": "pɔːd̪ʱõː koː roːz siːɲtʃoː ɔːr biːdʒ boːoː"}
+    questions:
+      - {"id": "hi-2644", "prompt": {"en": "The milk is boiling."}, "answer": true}
+      - {"id": "hi-2645", "prompt": {"en": "What should be squeezed?"}, "options": [{"en": "A lemon"}, {"en": "A cloth"}], "answer": 1}
+      - {"id": "hi-2646", "prompt": {"en": "The water is warm."}, "answer": false}
+  - id: "hi-verbs4-yard"
+    title: "In the yard"
+    theme: "verbs-4"
+    sentences:
+      - {"text": "बच्चे पतंग उड़ा रहे थे और दीया बुझ गया।", "reading": "baccē pataṅg uṛā rahē thē aur dīyā bujh gayā.", "ipa": "bətʃtʃeː pət̪əŋɡ ʊɽaː rəɦeː t̪ʰeː ɔːr d̪iːjaː bʊdʒʱ ɡəjaː"}
+      - {"text": "गेंद को पकड़ो, वह छत से गिर रही है।", "reading": "gēnd kō pakṛō, vah chat sē gir rahī hai.", "ipa": "ɡeːnd̪ koː pəkɽoː ʋəɦ tʃʰət̪ seː ɡɪr rəɦiː ɦɛː"}
+      - {"text": "कुत्ते ने रस्सी चबाई।", "reading": "kuttē nē rassī cabāī.", "ipa": "kʊt̪t̪eː neː rəssiː tʃəbaːiː"}
+      - {"text": "दरवाज़ा बंद करो और खिड़की मत खोलो।", "reading": "darvāzā band karō aur khiṛkī mat khōlō.", "ipa": "d̪ərʋaːzaː bənd̪ kəroː ɔːr kʰɪɽkiː mət̪ kʰoːloː"}
+    questions:
+      - {"id": "hi-2647", "prompt": {"en": "The children were flying a kite."}, "answer": true}
+      - {"id": "hi-2648", "prompt": {"en": "What fell from the roof?"}, "options": [{"en": "The ball"}, {"en": "The kite"}], "answer": 1}
+      - {"id": "hi-2649", "prompt": {"en": "The dog chewed a stone."}, "answer": false}

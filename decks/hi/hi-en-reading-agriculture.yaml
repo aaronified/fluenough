@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-agriculture"
+name: "Reading: agriculture"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A farmer's year, and a short note from the co-operative. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-agriculture-village"
+    title: "A year on the farm"
+    theme: "agriculture"
+    sentences:
+      - {"text": "किसान सुबह हल लेकर खेत जाता है।", "reading": "kisān subah hal lēkar khēt jātā hai.", "ipa": "kɪsaːn sʊbəɦ ɦəl leːkər kʰeːt̪ dʒaːt̪aː ɦɛː"}
+      - {"text": "बुवाई जुलाई में होती है और कटाई अप्रैल में।", "reading": "buvāī julāī mēm̐ hōtī hai aur kaṭāī aprail mēm̐.", "ipa": "bʊʋaːiː dʒʊlaːiː mẽː ɦoːt̪iː ɦɛː ɔːr kəʈaːiː əprɛːl mẽː"}
+      - {"text": "सिंचाई के लिए नहर का पानी लेते हैं।", "reading": "siñcāī kē liē nahar kā pānī lētē haim̐.", "ipa": "sɪɲtʃaːiː keː lɪeː nəɦər kaː paːniː leːt̪eː ɦɛ̃ː"}
+      - {"text": "गेहूँ और सरसों की उपज इस साल अच्छी है।", "reading": "gēhūm̐ aur sarsōm̐ kī upaj is sāl acchī hai.", "ipa": "ɡeːɦũː ɔːr sərsõː kiː ʊpədʒ ɪs saːl ətʃtʃʰiː ɦɛː"}
+    questions:
+      - {"id": "hi-2414", "prompt": {"en": "The farmer goes to the field in the morning."}, "answer": true}
+      - {"id": "hi-2415", "prompt": {"en": "When is the sowing?"}, "options": [{"en": "July"}, {"en": "April"}], "answer": 1}
+      - {"id": "hi-2416", "prompt": {"en": "The harvest is in July."}, "answer": false}
+  - id: "hi-agriculture-note"
+    title: "A note from the co-operative"
+    theme: "agriculture"
+    sentences:
+      - {"text": "खाद और बीज सहकारी समिति में मिलेंगे।", "reading": "khād aur bīj sahkārī samiti mēm̐ milēṅgē.", "ipa": "kʰaːd̪ ɔːr biːdʒ səɦkaːriː səmɪt̪ɪ mẽː mɪleːŋɡeː"}
+      - {"text": "ट्रैक्टर का किराया प्रति घंटा है।", "reading": "ṭraikṭar kā kirāyā prati ghaṇṭā hai.", "ipa": "ʈrɛːkʈər kaː kɪraːjaː prət̪ɪ ɡʱəɳʈaː ɦɛː"}
+      - {"text": "बाजरा और ज्वार सूखे इलाकों के लिए अच्छे हैं।", "reading": "bājrā aur jvār sūkhē ilākōm̐ kē liē acchē haim̐.", "ipa": "baːdʒraː ɔːr dʒʋaːr suːkʰeː ɪlaːkõː keː lɪeː ətʃtʃʰeː ɦɛ̃ː"}
+      - {"text": "कपास की नई फ़सल के लिए मंडी में बात करो।", "reading": "kapās kī naī fasal kē liē maṇḍī mēm̐ bāt karō.", "ipa": "kəpaːs kiː nəiː fəsəl keː lɪeː məɳɖiː mẽː baːt̪ kəroː"}
+    questions:
+      - {"id": "hi-2417", "prompt": {"en": "Seeds and manure can be had at the co-operative."}, "answer": true}
+      - {"id": "hi-2418", "prompt": {"en": "Which grains suit dry areas?"}, "options": [{"en": "Millet and sorghum"}, {"en": "Wheat and rice"}], "answer": 1}
+      - {"id": "hi-2419", "prompt": {"en": "The tractor is rented per day."}, "answer": false}
