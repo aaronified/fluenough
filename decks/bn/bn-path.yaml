@@ -699,11 +699,15 @@ units:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
   - decks: ["bn-reading-verbs-4"]
     words: 0
-  - planned: { id: "bn-grammar-passive", grammar: "passive" }
+  - decks: ["bn-grammar-passive", "bn-grammar-passive-sentences"]
+    words: 0
+    grammar: ["passive"]
     listening_passages:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
+  - decks: ["bn-reading-passive"]
+    words: 0
   - planned: { id: "bn-abstract-words", theme: "abstract-words", words: 55 }
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
