@@ -2345,7 +2345,8 @@ language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: fal
   its `ipa-path.yaml` lists its decks in order, and the validator asks for
   no milestones on it.
 - **A card's sounds.** Every card of every language that has an `ipa` has a
-  button, "The sounds of this word", which opens a recorded session of the
+  button (labelled "The sounds of this word" for a screen reader, with the
+  tooltip "Symbols"), which opens a recorded session of the
   IPA cards whose symbols occur in that `ipa`: a card's `target`, found in
   the word's transcription. So an IPA card's `target` is exactly the
   symbol as it is written in a transcription.

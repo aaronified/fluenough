@@ -254,7 +254,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                       padding: const EdgeInsetsDirectional.only(end: 12),
                       child: IconButton(
                         key: const ValueKey<String>('know-report'),
-                        tooltip: l10n.knownReportMistake,
+                        tooltip: l10n.hintReport,
                         icon: const Icon(Icons.bug_report_outlined),
                         constraints: const BoxConstraints(
                           minWidth: 48,

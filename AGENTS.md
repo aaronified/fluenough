@@ -233,6 +233,11 @@ Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never
 so a translator controls word order. Use ICU `plural`, not `if (n == 1)`. Do not
 size a widget to the length of the English string.
 
+Every icon-only button has a tooltip of one word, two at most; natural
+English, no invented skill names (owner, 2026-11-01). Where the screen reader
+needs more (which part a pencil edits), use `LabelledIconButton`: the long
+words are its label, the hint stays short.
+
 This is not anticipating a need. Four of the five starter languages are read by
 people whose interface language is not English, and one of them — Urdu — is
 right to left (#33). See [ADR-0006](docs/adr/0006-interface-text-is-tokens.md).

@@ -97,7 +97,7 @@ class _PinPageState extends State<PinPage> {
         leading: canPop
             ? IconButton(
                 icon: const BackButtonIcon(),
-                tooltip: l10n.pinBackToProfiles,
+                tooltip: l10n.commonBack,
                 onPressed: () => Navigator.of(context).maybePop(),
               )
             : null,
@@ -277,7 +277,7 @@ class PinKeypad extends StatelessWidget {
         return Center(
           child: IconButton(
             onPressed: onDelete,
-            tooltip: l10n.pinDeleteDigit,
+            tooltip: l10n.brailleBackspace,
             iconSize: 28,
             color: scheme.onSurface,
             style: IconButton.styleFrom(

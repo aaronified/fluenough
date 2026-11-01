@@ -339,17 +339,24 @@ void main() {
             final tip = tester.widget<Tooltip>(
               find.descendant(of: _badge(key), matching: find.byType(Tooltip)),
             );
-            expect(tip.message, value, reason: key);
+            final verified = key.endsWith('Covered');
+            expect(
+              tip.message,
+              verified ? l10n.languagesPillCheckedHint : value,
+              reason: key,
+            );
+            expect(
+              tip.message.trim().split(RegExp(r'\s+')).length,
+              lessThanOrEqualTo(2),
+              reason: '$key: the tooltip rule, two words at most',
+            );
           }
           final target = _badge('spoken/knowBothCovered');
           await tester.ensureVisible(target);
           await tester.pumpAndSettle();
           await tester.longPress(target);
           await tester.pumpAndSettle();
-          expect(
-            find.text(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
-            findsOneWidget,
-          );
+          expect(find.text(l10n.languagesPillCheckedHint), findsOneWidget);
         } finally {
           handle.dispose();
         }

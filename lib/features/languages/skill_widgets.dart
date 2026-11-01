@@ -130,6 +130,18 @@ String pillTip(
   return markIsVerified(mark) ? l10n.languagesPillChecked(tip) : tip;
 }
 
+/// What the long press shows (the tooltip rule: one word, two at most): the
+/// level's own words, or "Checked" for a known skill the placement test
+/// found. A screen reader still reads the whole [pillTip].
+String pillHint(
+  AppLocalizations l10n,
+  SkillKind kind,
+  SkillMark mark, {
+  required bool combined,
+}) => markIsVerified(mark)
+    ? l10n.languagesPillCheckedHint
+    : pillTip(l10n, kind, mark, combined: combined);
+
 /// The name of a script's pill: "Script Devanagari".
 String scriptPillName(AppLocalizations l10n, String script, String fallback) =>
     l10n.languagesSkillScript(
@@ -322,7 +334,11 @@ class SkillBadge extends StatelessWidget {
       button: onTap != null,
       excludeSemantics: true,
       onTap: onTap,
-      child: Hint(message: tip, excludeFromSemantics: true, child: tappable),
+      child: Hint(
+        message: pillHint(l10n, kind, mark, combined: combined),
+        excludeFromSemantics: true,
+        child: tappable,
+      ),
     );
   }
 }

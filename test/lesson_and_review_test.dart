@@ -94,8 +94,9 @@ import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/ipa_line.dart';
-import 'package:fluenough/ui/widgets/play_button.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
+import 'package:fluenough/ui/widgets/play_button.dart';
+import 'package:fluenough/ui/widgets/speaker.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -3834,11 +3835,18 @@ cards:
             tester,
             find.text(l10n.readingSource(readingFixtureSource)),
           );
-          expect(find.byTooltip(l10n.readingPlaySentence), findsNWidgets(4));
+          expect(find.byType(SpeakerIcon), findsNWidgets(4));
           // No question yet.
           expect(find.text('What does the buyer ask first?'), findsNothing);
 
-          await tester.tap(find.byTooltip(l10n.readingPlaySentence).at(1));
+          await tester.tap(
+            find
+                .byWidgetPredicate(
+                  (w) =>
+                      w is SpeakerIcon && w.label == l10n.readingPlaySentence,
+                )
+                .at(1),
+          );
           await tester.pumpAndSettle();
           expect(tts.spoken.single.text, shop[1]);
           expect(tts.spoken.single.bcp47, 'bn-IN');
@@ -4947,10 +4955,10 @@ cards:
       expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
       expect(minus().onPressed, isNull);
 
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      await tapVisible(tester, find.byTooltip(l10n.minutesMore));
+      await tapVisible(tester, find.byTooltip(l10n.minutesMore));
       expect(find.text(l10n.todayRevisionStart(15)), findsOneWidget);
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionLess(5)));
+      await tapVisible(tester, find.byTooltip(l10n.minutesLess));
       expect(find.text(l10n.todayRevisionStart(10)), findsOneWidget);
       expect(minus().onPressed, isNotNull);
 
@@ -5023,8 +5031,8 @@ cards:
         expect(find.byType(DeckTile), findsNothing);
         // Five minutes to begin with, between a minus and a plus.
         expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
-        expect(find.byTooltip(l10n.todayRevisionLess(5)), findsOneWidget);
-        expect(find.byTooltip(l10n.todayRevisionMore(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.minutesLess), findsOneWidget);
+        expect(find.byTooltip(l10n.minutesMore), findsOneWidget);
         // Nothing taught yet: the start button is off, and the line says why.
         expect(find.text(l10n.todayRevisionNone), findsOneWidget);
         final five = tester.widget<FilledButton>(

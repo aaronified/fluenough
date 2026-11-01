@@ -475,10 +475,16 @@ class _ReviewRow extends StatelessWidget {
               ),
             ),
           ),
-          IconButton.outlined(
-            tooltip: l10n.reviewSuggestOn(card.native),
-            onPressed: onSuggest,
-            icon: const Icon(Icons.edit_outlined, size: 20),
+          Semantics(
+            label: l10n.reviewSuggestOn(card.native),
+            button: true,
+            excludeSemantics: true,
+            onTap: onSuggest,
+            child: IconButton.outlined(
+              tooltip: l10n.hintEdit,
+              onPressed: onSuggest,
+              icon: const Icon(Icons.edit_outlined, size: 20),
+            ),
           ),
           const SizedBox(width: 8),
           mark,

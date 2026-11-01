@@ -4,6 +4,7 @@
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/features/decks/ipa_info_dot.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/settings/ipa_replaces_tile.dart';
 import 'package:fluenough/features/settings/languages_page.dart';
@@ -77,7 +78,7 @@ void main() {
     await pumpWordSheet(tester, replaces: false);
     expect(find.text('pattā'), findsOneWidget);
     expect(find.text('/pʰəɳ/'), findsOneWidget);
-    expect(find.byTooltip(l10nOf(tester).ipaInfoDot), findsOneWidget);
+    expect(find.byType(IpaInfoDot), findsOneWidget);
   });
 
   testWidgets('word sheet, switch on: the IPA in the transliteration\'s place, '
@@ -85,7 +86,7 @@ void main() {
     await pumpWordSheet(tester, replaces: true);
     expect(find.text('pattā'), findsNothing);
     expect(find.text('/pʰəɳ/'), findsOneWidget);
-    expect(find.byTooltip(l10nOf(tester).ipaInfoDot), findsOneWidget);
+    expect(find.byType(IpaInfoDot), findsOneWidget);
   });
 
   testWidgets('IPA on and the switch on: the IPA is the reading, and the '
