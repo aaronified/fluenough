@@ -449,7 +449,9 @@ units:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
-  - planned: { id: "es-grammar-si-clauses", grammar: "si-clauses" }
+  - decks: ["es-grammar-si-clauses", "es-reading-si-clauses"]
+    words: 0
+    grammar: ["si-clauses"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:

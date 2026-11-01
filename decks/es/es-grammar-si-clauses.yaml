@@ -1,0 +1,46 @@
+schema: 1
+id: "es-grammar-si-clauses"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["si + present → future", "si + present → present (habit)", "si + preterite → preterite"]
+  entries:
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "si + present → future": "Si tengo dinero, compraré un coche.", "si + present → present (habit)": "Si tengo hambre, como pan.", "si + preterite → preterite": "Si tuve tiempo, fui al cine." }
+      ipas: { "si + present → future": "si ˈtenɡo diˈneɾo kompɾaˈɾe un ˈkotʃe", "si + present → present (habit)": "si ˈtenɡo ˈambɾe ˈkomo pan", "si + preterite → preterite": "si ˈtube ˈtjempo fwi al ˈθine" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "si + present → future": "Si voy al mercado, compraré pan.", "si + present → present (habit)": "Si voy al mercado, siempre compro pan.", "si + preterite → preterite": "Si fui al mercado, compré pan." }
+      ipas: { "si + present → future": "si boj al meɾˈkado kompɾaˈɾe pan", "si + present → present (habit)": "si boj al meɾˈkado ˈsjempɾe ˈkompɾo pan", "si + preterite → preterite": "si fwi al meɾˈkado komˈpɾe pan" }
+    - lemma: "estar"
+      ipa: "esˈtaɾ"
+      forms: { "si + present → future": "Si estoy cansado, dormiré mucho.", "si + present → present (habit)": "Si estoy cansado, descanso.", "si + preterite → preterite": "Si estuve enfermo, fui al médico." }
+      ipas: { "si + present → future": "si esˈtoj kanˈsado doɾmiˈɾe ˈmutʃo", "si + present → present (habit)": "si esˈtoj kanˈsado desˈkanso", "si + preterite → preterite": "si esˈtube enˈfeɾmo fwi al ˈmediko" }
+    - lemma: "llamar"
+      ipa: "ʝaˈmaɾ"
+      forms: { "si + present → future": "Si me llamas, responderé.", "si + present → present (habit)": "Si me llamas, siempre contesto.", "si + preterite → preterite": "Si me llamaste, no te oí." }
+      ipas: { "si + present → future": "si me ˈʝamas respondeˈɾe", "si + present → present (habit)": "si me ˈʝamas ˈsjempɾe konˈtesto", "si + preterite → preterite": "si me ʝaˈmaste no te oˈi" }
+    - lemma: "venir"
+      ipa: "beˈniɾ"
+      forms: { "si + present → future": "Si vienes, cenaremos juntos.", "si + present → present (habit)": "Si vienes, hay una fiesta.", "si + preterite → preterite": "Si viniste, no te vi." }
+      ipas: { "si + present → future": "si ˈbjenes θenaˈɾemos ˈxuntos", "si + present → present (habit)": "si ˈbjenes aj ˈuna ˈfjesta", "si + preterite → preterite": "si biˈniste no te bi" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "si + present → future": "Si como mucho, engordaré.", "si + present → present (habit)": "Si como pan, me lleno.", "si + preterite → preterite": "Si comí mucho, me dolió el estómago." }
+      ipas: { "si + present → future": "si ˈkomo ˈmutʃo enɡoɾdaˈɾe", "si + present → present (habit)": "si ˈkomo pan me ˈʝeno", "si + preterite → preterite": "si koˈmi ˈmutʃo me doˈljo el esˈtomaɡo" }
+    - lemma: "poder"
+      ipa: "poˈdeɾ"
+      forms: { "si + present → future": "Si puedo, vendré.", "si + present → present (habit)": "Si puedo, camino al trabajo.", "si + preterite → preterite": "Si pude, fui a la reunión." }
+      ipas: { "si + present → future": "si ˈpwedo benˈdɾe", "si + present → present (habit)": "si ˈpwedo kaˈmino al tɾaˈbaxo", "si + preterite → preterite": "si ˈpude fwi a la rewˈnjon" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "si + present → future": "Si hago la cena, comeremos temprano.", "si + present → present (habit)": "Si hago deporte, duermo mejor.", "si + preterite → preterite": "Si hice la tarea, jugué." }
+      ipas: { "si + present → future": "si ˈaɡo la ˈθena komeˈɾemos temˈpɾano", "si + present → present (habit)": "si ˈaɡo deˈpoɾte ˈdweɾmo meˈxoɾ", "si + preterite → preterite": "si ˈiθe la taˈɾea xuˈɡe" }
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "si + present → future": "Si hablo con él, te digo.", "si + present → present (habit)": "Si hablo mucho, me canso.", "si + preterite → preterite": "Si hablé con el jefe, me dijo que sí." }
+      ipas: { "si + present → future": "si ˈablo kon el te ˈdiɡo", "si + present → present (habit)": "si ˈablo ˈmutʃo me ˈkanso", "si + preterite → preterite": "si aˈble kon el ˈxefe me ˈdixo ke si" }
