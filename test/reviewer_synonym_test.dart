@@ -125,7 +125,8 @@ void main() {
         ],
       );
       final json = jsonDecode(jsonEncode(review.toJson())) as Map;
-      final parts = (json['suggestions'] as List<Object?>).cast<Map>();
+      final parts = (json['suggestions'] as List<Object?>)
+          .cast<Map<String, Object?>>();
       expect(
         parts.map((p) => (p['part'], p['action'], p['now'], p['text'])),
         <Object>[
@@ -476,7 +477,7 @@ void main() {
     );
 
     test('waits as a proposal, in the comparison form the bot writes', () {
-      final own = Proposal(
+      final own = const Proposal(
         id: 'aaaaaaaaaa',
         card: plainCard,
         field: ProposalField.notSynonymsAdd,
