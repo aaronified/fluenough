@@ -351,11 +351,14 @@ units:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
   - decks: ["as-reading-chores"]
     words: 0
-  - planned: { id: "as-appearance", theme: "appearance", words: 50 }
+  - decks: ["as-appearance", "as-appearance-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
+  - decks: ["as-reading-appearance"]
+    words: 0
   - planned: { id: "as-verbs-3", theme: "verbs-3", words: 60 }
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }

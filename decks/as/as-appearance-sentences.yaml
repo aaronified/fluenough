@@ -1,0 +1,83 @@
+schema: 1
+id: "as-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2896"
+    target: "তাৰ উচ্চতা ডাঙৰ আৰু সি মোটা।"
+    reading: "tār ucchôtā dāṅôr āru xi motā."
+    ipa: "taɹ ussɔta daŋɔɹ aɹu si mʊta"
+    pos: "phrase"
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "পাতল", reading: "patôl", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "xôru", kind: "word" }
+  - id: "as-2897"
+    target: "শিশু শুই আছে।"
+    reading: "xixu xui āse."
+    ipa: "xixu xui ase"
+    pos: "phrase"
+    bases:
+      - { word: "শুই", ref: "as-0379" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "বুঢ়া", reading: "burhā", kind: "word" }
+      - { id: "c2", word: "তৰুণ", reading: "tôruṇ", kind: "word" }
+  - id: "as-2898"
+    target: "বুঢ়ী আৰু শিশু।"
+    reading: "burhī āru xixu."
+    ipa: "buɹi aɹu xixu"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মহিলা", reading: "mohilā", kind: "word" }
+      - { id: "c2", word: "পুৰুষ", reading: "purux", kind: "word" }
+  - id: "as-2899"
+    target: "মহিলাজনৰ চুলি দীঘল।"
+    reading: "mohilāzônôr suli dighôl."
+    ipa: "mohilazɔnɔɹ suli diɡʱɔl"
+    pos: "phrase"
+    bases:
+      - { word: "মহিলাজনৰ", ref: "as-2888" }
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "ওখ", reading: "ukh", kind: "word" }
+  - id: "as-2900"
+    target: "তেওঁৰ দাড়ি আছে।"
+    reading: "teum̐r dāṛi āse."
+    ipa: "teʊ̃ɹ daɹi ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "গোঁফ", reading: "gum̐ph", kind: "word" }
+      - { id: "c2", word: "চশমা", reading: "sôxômā", kind: "word" }
+  - id: "as-2901"
+    target: "তাই আকৰ্ষণীয় দেখা লাগে।"
+    reading: "tāi ākôrxôṇīyā dekhā lāge."
+    ipa: "tai akɔɹxonij dekʰa laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "বৃদ্ধ", reading: "buddhô", kind: "word" }
+      - { id: "c2", word: "ফৰ্চা", reading: "phôrsā", kind: "word" }
+  - id: "as-2902"
+    target: "পুৰুষ আৰু তৰুণ মানুহ।"
+    reading: "purux āru tôruṇ mānuh."
+    ipa: "puɹux aɹu toɹun manuh"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বুঢ়া", reading: "burhā", kind: "word" }
+      - { id: "c2", word: "মহিলা", reading: "mohilā", kind: "word" }
+  - id: "as-2903"
+    target: "এইটো বিশেষ পোছাক।"
+    reading: "eitu bixeś pōxāk."
+    ipa: "eitʊ bixex pʊsak"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "নতুন", reading: "nôtun", kind: "word" }
+      - { id: "c2", word: "পুৰণি", reading: "puroni", kind: "word" }

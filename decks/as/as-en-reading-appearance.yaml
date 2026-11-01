@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-appearance"
+name: "Assamese reading: appearance: looks, height and age"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-describing-a-friend"
+    title: "Describing a friend"
+    theme: "appearance"
+    sentences:
+      - text: "বন্ধুজন ডাঙৰ আৰু পাতল।"
+        reading: "bondhujôn dāṅôr āru patôl."
+      - text: "তেওঁৰ চুলি দীঘল।"
+        reading: "teum̐r suli dighôl."
+      - text: "তেওঁৰ চশমা আছে।"
+        reading: "teum̐r sôxômā āse."
+      - text: "তেওঁ তৰুণ।"
+        reading: "teum̐ tôruṇ."
+    questions:
+      - id: "as-2904"
+        prompt: { en: "The friend is tall and thin." }
+        answer: true
+      - id: "as-2905"
+        prompt: { en: "What does the friend wear?" }
+        options:
+          - { en: "A hat" }
+          - { en: "Glasses" }
+          - { en: "A beard" }
+        answer: 2
+      - id: "as-2906"
+        prompt: { en: "How old is the friend?" }
+        options:
+          - { en: "Old" }
+          - { en: "Young" }
+          - { en: "A child" }
+        answer: 2
+  - id: "as-lost-and-found-notice"
+    title: "A lost-and-found notice"
+    theme: "appearance"
+    sentences:
+      - text: "এটা বেগ হেৰাল।"
+        reading: "etā beg herāl."
+      - text: "বেগটো ক'লা।"
+        reading: "begtu kolā."
+      - text: "বেগত কিতাপ আছে।"
+        reading: "begôt kitāp āse."
+      - text: "পাওঁতে কওক।"
+        reading: "pāum̐tôt kôok."
+    questions:
+      - id: "as-2907"
+        prompt: { en: "A bag was lost." }
+        answer: true
+      - id: "as-2908"
+        prompt: { en: "What colour is the bag?" }
+        options:
+          - { en: "Red" }
+          - { en: "Black" }
+          - { en: "White" }
+        answer: 2
+      - id: "as-2909"
+        prompt: { en: "What is in the bag?" }
+        options:
+          - { en: "A book" }
+          - { en: "Food" }
+          - { en: "Money" }
+        answer: 1
