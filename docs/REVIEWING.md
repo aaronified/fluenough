@@ -153,7 +153,15 @@ checked the whole unit.
   once the usual agreement threshold is met. The bot leaves a refused word for the
   owner when it is one of the card's own answers or no set would accept it
   anyway. You never edit the shared synonym list: words proposed on several
-  cards are collected by a tool for the owner to review.
+  cards are collected by a tool for the owner to review. In **Suggest a
+  change**, under Meaning, **Another accepted answer** and (on English cards)
+  **Not a synonym** list what the card has now, read only, with **Add another
+  accepted answer** and **Add a word that is not a synonym** under them. Type
+  one word or phrase and, if you like, why. The app stops a word the card has
+  already, a word that is one of its own answers, an answer written as several
+  split by `;`, an answer the card refuses, and a refused word on a card whose
+  meanings are not English, and says why. These only add: you cannot change or
+  remove an item there.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
