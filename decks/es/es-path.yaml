@@ -161,11 +161,9 @@ units:
     words: 37
   - decks: ["es-weather", "es-weather-sentences", "es-reading-weather", "*"]
     words: 40
-  - planned: { id: "es-grammar-estar-gerund", grammar: "estar-gerund" }
-    listening_passages:
-      - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now" } }
-    reading_passages:
-      - { id: "chat-messages", text: { "en": "A few messages about what each person is doing" } }
+  - decks: ["es-grammar-estar-gerund", "es-reading-estar-gerund"]
+    words: 0
+    grammar: ["estar-gerund"]
   - planned: { id: "es-things", theme: "things", words: 40 }
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
