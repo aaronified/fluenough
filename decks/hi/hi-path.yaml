@@ -520,7 +520,8 @@ units:
       - { id: "monsoon-floods", text: { "en": "Neighbours talk about the monsoon rains and a river in flood" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "hi-agriculture", theme: "agriculture", words: 50 }
+  - decks: ["hi-agriculture", "hi-reading-agriculture", "*"]
+    words: 19
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's wheat and sugarcane" } }
     reading_passages:

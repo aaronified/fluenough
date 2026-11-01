@@ -1,0 +1,295 @@
+schema: 1
+id: "hi-agriculture"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "agriculture"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2395"
+    target: "खेती"
+    target_scripts: {"perso_arabic": "کھیتی"}
+    reading: "khētī"
+    ipa: "kʰeːt̪iː"
+    phonetic: "[kʰeːt̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमारे गाँव में खेती होती है।", "reading": "hamārē gām̐v mēm̐ khētī hōtī hai.", "ipa": "ɦəmaːreː ɡãːʋ mẽː kʰeːt̪iː ɦoːt̪iː ɦɛː", "bases": [{"word": "हमारे", "ref": "hi-0756"}, {"word": "गाँव", "ref": "hi-1080"}, {"word": "में", "ref": "hi-0274"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "खेती के लिए अच्छी ज़मीन चाहिए।", "reading": "khētī kē liē acchī zamīn cāhiē.", "ipa": "kʰeːt̪iː keː lɪeː ətʃtʃʰiː zəmiːn tʃaːɦɪeː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "ज़मीन", "base": "ज़मीन", "reading": "zamīn"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+  - id: "hi-2396"
+    target: "फ़सल"
+    target_scripts: {"perso_arabic": "فصل"}
+    reading: "fasal"
+    ipa: "fəsəl"
+    phonetic: "[fəsəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस साल फ़सल अच्छी है।", "reading": "is sāl fasal acchī hai.", "ipa": "ɪs saːl fəsəl ətʃtʃʰiː ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "साल", "ref": "hi-0318"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "फ़सल काटने का समय आ गया।", "reading": "fasal kāṭnē kā samay ā gayā.", "ipa": "fəsəl kaːʈneː kaː səməj aː ɡəjaː", "bases": [{"word": "काटने", "ref": "hi-0939"}, {"word": "का", "ref": "hi-0279"}, {"word": "समय", "ref": "hi-0607"}, {"word": "आ", "ref": "hi-0778"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2397"
+    target: "खाद"
+    target_scripts: {"perso_arabic": "کھاد"}
+    reading: "khād"
+    ipa: "kʰaːd̪"
+    phonetic: "[kʰaːd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "खेत में खाद डालो।", "reading": "khēt mēm̐ khād ḍālō.", "ipa": "kʰeːt̪ mẽː kʰaːd̪ ɖaːloː", "bases": [{"word": "खेत", "ref": "hi-1070"}, {"word": "में", "ref": "hi-0274"}, {"word": "डालो", "ref": "hi-0941"}]}
+      - {"target": "जैविक खाद अच्छी होती है।", "reading": "jaivik khād acchī hōtī hai.", "ipa": "dʒɛːʋɪk kʰaːd̪ ətʃtʃʰiː ɦoːt̪iː ɦɛː", "bases": [{"word": "जैविक", "base": "जैविक", "reading": "jaivik"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2398"
+    target: "सिंचाई"
+    target_scripts: {"perso_arabic": "آبپاشی"}
+    reading: "siñcāī"
+    ipa: "sɪɲtʃaːiː"
+    phonetic: "[sɪɲtʃaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सिंचाई के लिए नहर है।", "reading": "siñcāī kē liē nahar hai.", "ipa": "sɪɲtʃaːiː keː lɪeː nəɦər ɦɛː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "नहर", "base": "नहर", "reading": "nahar"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सिंचाई कम होने से फ़सल सूख गई।", "reading": "siñcāī kam hōnē sē fasal sūkh gaī.", "ipa": "sɪɲtʃaːiː kəm ɦoːneː seː fəsəl suːkʰ ɡəiː", "bases": [{"word": "कम", "ref": "hi-0105"}, {"word": "होने", "ref": "hi-0780"}, {"word": "से", "ref": "hi-0276"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "सूख", "ref": "hi-1728"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2399"
+    target: "हल"
+    target_scripts: {"perso_arabic": "ہل"}
+    reading: "hal"
+    ipa: "ɦəl"
+    phonetic: "[ɦəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "किसान हल चला रहा है।", "reading": "kisān hal calā rahā hai.", "ipa": "kɪsaːn ɦəl tʃəlaː rəɦaː ɦɛː", "bases": [{"word": "किसान", "ref": "hi-0407"}, {"word": "चला", "ref": "hi-1804"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हल बैल से चलता है।", "reading": "hal bail sē caltā hai.", "ipa": "ɦəl bɛːl seː tʃəlt̪aː ɦɛː", "bases": [{"word": "बैल", "ref": "hi-2400"}, {"word": "से", "ref": "hi-0276"}, {"word": "चलता", "ref": "hi-0801"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2400"
+    target: "बैल"
+    target_scripts: {"perso_arabic": "بیل"}
+    reading: "bail"
+    ipa: "bɛːl"
+    phonetic: "[bɛːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बैल खेत जोतते हैं।", "reading": "bail khēt jōttē haim̐.", "ipa": "bɛːl kʰeːt̪ dʒoːt̪t̪eː ɦɛ̃ː", "bases": [{"word": "खेत", "ref": "hi-1070"}, {"word": "जोतते", "base": "जोतना", "reading": "jōtnā"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "बैल गाड़ी धीरे चलती है।", "reading": "bail gāṛī dhīrē caltī hai.", "ipa": "bɛːl ɡaːɽiː d̪ʱiːreː tʃəlt̪iː ɦɛː", "bases": [{"word": "गाड़ी", "ref": "hi-1907"}, {"word": "धीरे", "ref": "hi-0820"}, {"word": "चलती", "ref": "hi-0801"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2401"
+    target: "ट्रैक्टर"
+    target_scripts: {"perso_arabic": "ٹریکٹر"}
+    reading: "ṭraikṭar"
+    ipa: "ʈrɛːkʈər"
+    phonetic: "[ʈrɛːkʈər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ट्रैक्टर नया है।", "reading": "ṭraikṭar nayā hai.", "ipa": "ʈrɛːkʈər nəjaː ɦɛː", "bases": [{"word": "नया", "ref": "hi-0896"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ट्रैक्टर से खेत जोतो।", "reading": "ṭraikṭar sē khēt jōtō.", "ipa": "ʈrɛːkʈər seː kʰeːt̪ dʒoːt̪oː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "खेत", "ref": "hi-1070"}, {"word": "जोतो", "base": "जोतना", "reading": "jōtnā"}]}
+  - id: "hi-2402"
+    target: "फावड़ा"
+    target_scripts: {"perso_arabic": "پھاوڑا"}
+    reading: "phāvṛā"
+    ipa: "pʰaːʋɽaː"
+    phonetic: "[pʰaːʋɽaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फावड़े से गड्ढा खोदो।", "reading": "phāvṛē sē gaḍḍhā khōdō.", "ipa": "pʰaːʋɽeː seː ɡəɖɖʱaː kʰoːd̪oː", "bases": [{"word": "फावड़े", "base": "फावड़ा", "reading": "phāvṛā"}, {"word": "से", "ref": "hi-0276"}, {"word": "गड्ढा", "ref": "hi-1947"}, {"word": "खोदो", "base": "खोदना", "reading": "khōdnā"}]}
+      - {"target": "फावड़ा कहाँ रखा है?", "reading": "phāvṛā kahām̐ rakhā hai?", "ipa": "pʰaːʋɽaː kəɦãː rəkʰaː ɦɛː", "bases": [{"word": "कहाँ", "ref": "hi-0159"}, {"word": "रखा", "ref": "hi-0950"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2403"
+    target: "दराँती"
+    target_scripts: {"perso_arabic": "درانتی"}
+    reading: "darām̐tī"
+    ipa: "d̪ərãːt̪iː"
+    phonetic: "[d̪ərãːt̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दराँती से फ़सल काटो।", "reading": "darām̐tī sē fasal kāṭō.", "ipa": "d̪ərãːt̪iː seː fəsəl kaːʈoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "काटो", "ref": "hi-0939"}]}
+      - {"target": "दराँती तेज़ है।", "reading": "darām̐tī tēz hai.", "ipa": "d̪ərãːt̪iː t̪eːz ɦɛː", "bases": [{"word": "तेज़", "ref": "hi-1289"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2404"
+    target: "अनाज"
+    target_scripts: {"perso_arabic": "اناج"}
+    reading: "anāj"
+    ipa: "ənaːdʒ"
+    phonetic: "[ənaːdʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गोदाम में अनाज भरा है।", "reading": "gōdām mēm̐ anāj bharā hai.", "ipa": "ɡoːd̪aːm mẽː ənaːdʒ bʱəraː ɦɛː", "bases": [{"word": "गोदाम", "base": "गोदाम", "reading": "gōdām"}, {"word": "में", "ref": "hi-0274"}, {"word": "भरा", "ref": "hi-1732"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अनाज की कीमत बढ़ी है।", "reading": "anāj kī kīmat baṛhī hai.", "ipa": "ənaːdʒ kiː kiːmət̪ bəɽʱiː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "कीमत", "ref": "hi-1342"}, {"word": "बढ़ी", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2405"
+    target: "गन्ना"
+    target_scripts: {"perso_arabic": "گنا"}
+    reading: "gannā"
+    ipa: "ɡənnaː"
+    phonetic: "[ɡənnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "खेत में गन्ना लगा है।", "reading": "khēt mēm̐ gannā lagā hai.", "ipa": "kʰeːt̪ mẽː ɡənnaː ləɡaː ɦɛː", "bases": [{"word": "खेत", "ref": "hi-1070"}, {"word": "में", "ref": "hi-0274"}, {"word": "लगा", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "गन्ने का रस मीठा है।", "reading": "gannē kā ras mīṭhā hai.", "ipa": "ɡənneː kaː rəs miːʈʰaː ɦɛː", "bases": [{"word": "गन्ने", "base": "गन्ना", "reading": "gannā"}, {"word": "का", "ref": "hi-0279"}, {"word": "रस", "base": "रस", "reading": "ras"}, {"word": "मीठा", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2406"
+    target: "कपास"
+    target_scripts: {"perso_arabic": "کپاس"}
+    reading: "kapās"
+    ipa: "kəpaːs"
+    phonetic: "[kəpaːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कपास से कपड़ा बनता है।", "reading": "kapās sē kapṛā bantā hai.", "ipa": "kəpaːs seː kəpɽaː bənt̪aː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "कपड़ा", "ref": "hi-1106"}, {"word": "बनता", "ref": "hi-1833"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कपास की फ़सल अच्छी है।", "reading": "kapās kī fasal acchī hai.", "ipa": "kəpaːs kiː fəsəl ətʃtʃʰiː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2407"
+    target: "बुवाई"
+    target_scripts: {"perso_arabic": "بوائی"}
+    reading: "buvāī"
+    ipa: "bʊʋaːiː"
+    phonetic: "[bʊʋaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बुवाई का समय जुलाई है।", "reading": "buvāī kā samay julāī hai.", "ipa": "bʊʋaːiː kaː səməj dʒʊlaːiː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "समय", "ref": "hi-0607"}, {"word": "जुलाई", "ref": "hi-0326"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बुवाई से पहले खेत जोतो।", "reading": "buvāī sē pahlē khēt jōtō.", "ipa": "bʊʋaːiː seː pəɦleː kʰeːt̪ dʒoːt̪oː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "पहले", "ref": "hi-0823"}, {"word": "खेत", "ref": "hi-1070"}, {"word": "जोतो", "base": "जोतना", "reading": "jōtnā"}]}
+  - id: "hi-2408"
+    target: "उपज"
+    target_scripts: {"perso_arabic": "پیداوار"}
+    reading: "upaj"
+    ipa: "ʊpədʒ"
+    phonetic: "[ʊpədʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस बार उपज अच्छी हुई।", "reading": "is bār upaj acchī huī.", "ipa": "ɪs baːr ʊpədʒ ətʃtʃʰiː ɦʊiː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "बार", "base": "बार", "reading": "bār"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "उपज बाज़ार में बिकी।", "reading": "upaj bāzār mēm̐ bikī.", "ipa": "ʊpədʒ baːzaːr mẽː bɪkiː", "bases": [{"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "बिकी", "base": "बिकना", "reading": "biknā"}]}
+  - id: "hi-2409"
+    target: "गेहूँ"
+    target_scripts: {"perso_arabic": "گیہوں"}
+    reading: "gēhūm̐"
+    ipa: "ɡeːɦũː"
+    phonetic: "[ɡeːɦũː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गेहूँ की फ़सल कटी।", "reading": "gēhūm̐ kī fasal kaṭī.", "ipa": "ɡeːɦũː kiː fəsəl kəʈiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "कटी", "base": "कटना", "reading": "kaṭnā"}]}
+      - {"target": "गेहूँ पीसकर आटा बनाओ।", "reading": "gēhūm̐ pīskar āṭā banāō.", "ipa": "ɡeːɦũː piːskər aːʈaː bənaːoː", "bases": [{"word": "पीसकर", "ref": "hi-1499"}, {"word": "आटा", "ref": "hi-1509"}, {"word": "बनाओ", "ref": "hi-1502"}]}
+  - id: "hi-2410"
+    target: "सरसों"
+    target_scripts: {"perso_arabic": "سرسوں"}
+    reading: "sarsōm̐"
+    ipa: "sərsõː"
+    phonetic: "[sərsõː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सरसों का तेल अच्छा है।", "reading": "sarsōm̐ kā tēl acchā hai.", "ipa": "sərsõː kaː t̪eːl ətʃtʃʰaː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "तेल", "ref": "hi-1021"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "खेत में सरसों पीली है।", "reading": "khēt mēm̐ sarsōm̐ pīlī hai.", "ipa": "kʰeːt̪ mẽː sərsõː piːliː ɦɛː", "bases": [{"word": "खेत", "ref": "hi-1070"}, {"word": "में", "ref": "hi-0274"}, {"word": "पीली", "ref": "hi-0919"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2411"
+    target: "बाजरा"
+    target_scripts: {"perso_arabic": "باجرا"}
+    reading: "bājrā"
+    ipa: "baːdʒraː"
+    phonetic: "[baːdʒraː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बाजरे की रोटी खाओ।", "reading": "bājrē kī rōṭī khāō.", "ipa": "baːdʒreː kiː roːʈiː kʰaːoː", "bases": [{"word": "बाजरे", "base": "बाजरा", "reading": "bājrā"}, {"word": "की", "ref": "hi-0279"}, {"word": "रोटी", "ref": "hi-0335"}, {"word": "खाओ", "ref": "hi-0332"}]}
+      - {"target": "बाजरा सूखे खेत में होता है।", "reading": "bājrā sūkhē khēt mēm̐ hōtā hai.", "ipa": "baːdʒraː suːkʰeː kʰeːt̪ mẽː ɦoːt̪aː ɦɛː", "bases": [{"word": "सूखे", "ref": "hi-1277"}, {"word": "खेत", "ref": "hi-1070"}, {"word": "में", "ref": "hi-0274"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2412"
+    target: "ज्वार"
+    target_scripts: {"perso_arabic": "جوار"}
+    reading: "jvār"
+    ipa: "dʒʋaːr"
+    phonetic: "[dʒʋaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ज्वार की फ़सल सूखे में भी होती है।", "reading": "jvār kī fasal sūkhē mēm̐ bhī hōtī hai.", "ipa": "dʒʋaːr kiː fəsəl suːkʰeː mẽː bʱiː ɦoːt̪iː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "सूखे", "ref": "hi-1277"}, {"word": "में", "ref": "hi-0274"}, {"word": "भी", "ref": "hi-0350"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ज्वार का आटा अच्छा है।", "reading": "jvār kā āṭā acchā hai.", "ipa": "dʒʋaːr kaː aːʈaː ətʃtʃʰaː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "आटा", "ref": "hi-1509"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2413"
+    target: "पशु"
+    target_scripts: {"perso_arabic": "پشو"}
+    reading: "paśu"
+    ipa: "pəʃʊ"
+    phonetic: "[pəʃʊ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "खेत पर पशु बँधे हैं।", "reading": "khēt par paśu bam̐dhē haim̐.", "ipa": "kʰeːt̪ pər pəʃʊ bə̃d̪ʱeː ɦɛ̃ː", "bases": [{"word": "खेत", "ref": "hi-1070"}, {"word": "पर", "ref": "hi-0275"}, {"word": "बँधे", "base": "बँधना", "reading": "bam̐dhanā"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "पशुओं को चारा दो।", "reading": "paśuōm̐ kō cārā dō.", "ipa": "pəʃʊõː koː tʃaːraː d̪oː", "bases": [{"word": "पशुओं", "base": "पशु", "reading": "paśu"}, {"word": "को", "ref": "hi-0277"}, {"word": "चारा", "base": "चारा", "reading": "cārā"}, {"word": "दो", "ref": "hi-0785"}]}
