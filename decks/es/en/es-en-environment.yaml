@@ -1,0 +1,268 @@
+schema: 1
+id: "es-en-environment"
+kind: "layer"
+core: "es-environment"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Environment: air, pollution, waste and care"
+license: "CC-BY-SA-4.0"
+description: "Words for looking after the planet: the air and the smoke, pollution and waste, the containers and the recycling, the energy from the sun and the wind, the climate, and the verbs to protect, reduce and reuse. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2410":
+    native: "pollution"
+    notes: { n1: "La contaminación is pollution, the dirt put into the air, water or land. The verb is contaminar." }
+    bases: { "la": "the", "contaminación": "pollution" }
+    examples:
+      "La contaminación del aire es grave.": { native: "Air pollution is serious.", bases: { "La": "the", "contaminación": "pollution", "del": "of", "grave": "serious" } }
+      "Hay mucha contaminación en la ciudad.": { native: "There is a lot of pollution in the city.", bases: { "Hay": "there is; there are", "contaminación": "pollution", "en": "in", "la": "the" } }
+  "es-2411":
+    native: "to pollute"
+    notes: { n1: "Contaminar is to make something dirty or harmful with waste or chemicals." }
+    bases: { "contaminar": "to pollute" }
+    examples:
+      "No contamino el río.": { native: "I do not pollute the river.", bases: { "contamino": "to pollute", "el": "the" } }
+      "Las fábricas contaminan el aire.": { native: "Factories pollute the air.", bases: { "Las": "the", "contaminan": "to pollute", "el": "the" } }
+  "es-2412":
+    native: "waste; residue"
+    notes: { n1: "El residuo is waste, the things left over after use. The plural is residuos." }
+    bases: { "el": "the", "residuo": "waste; residue" }
+    examples:
+      "Separo los residuos en casa.": { native: "I separate the waste at home.", bases: { "Separo": "to separate", "los": "the", "residuos": "waste; residue", "en": "in" } }
+      "Los residuos van al contenedor.": { native: "The waste goes in the bin.", bases: { "Los": "the", "residuos": "waste; residue", "al": "to the" } }
+  "es-2413":
+    native: "warming"
+    notes: { n1: "El calentamiento is warming, the rise in heat of the earth. Calentamiento global is global warming." }
+    bases: { "el": "the", "calentamiento": "warming" }
+    examples:
+      "El calentamiento global es real.": { native: "Global warming is real./real", bases: { "El": "the", "calentamiento": "warming", "global": "global", "real": "real" } }
+      "Hay un calentamiento del planeta.": { native: "There is a warming of the planet.", bases: { "Hay": "there is; there are", "un": "a", "calentamiento": "warming", "del": "of" } }
+  "es-2414":
+    native: "gas"
+    notes: { n1: "El gas is a gas, such as the air, or the fuel for cooking and heating." }
+    bases: { "el": "the", "gas": "gas" }
+    examples:
+      "El gas sale de la fábrica.": { native: "The gas comes/comer out of the factory.", bases: { "El": "the", "gas": "gas", "de": "of", "la": "the" } }
+      "Cocino con gas.": { native: "I cook with gas.", bases: { "con": "with", "gas": "gas" } }
+  "es-2415":
+    native: "deforestation"
+    notes: { n1: "La deforestación is deforestation, the cutting down of forests." }
+    bases: { "la": "the", "deforestación": "deforestation" }
+    examples:
+      "La deforestación destruye la selva.": { native: "Deforestation destroys the jungle.", bases: { "La": "the", "deforestación": "deforestation", "destruye": "to destroy", "la": "the" } }
+      "La deforestación es un problema grave.": { native: "Deforestation is a serious problem.", bases: { "La": "the", "deforestación": "deforestation", "un": "a", "problema": "problem", "grave": "serious" } }
+  "es-2416":
+    native: "species"
+    notes: { n1: "La especie is a species, a group of living things that can breed together." }
+    bases: { "la": "the", "especie": "species" }
+    examples:
+      "Esta especie de pájaro es rara.": { native: "This species of bird is rare.", bases: { "Esta": "This", "especie": "species", "de": "of", "rara": "strange; odd" } }
+      "Hay muchas especies en la selva.": { native: "There are many species in the jungle.", bases: { "Hay": "there is; there are", "especies": "species", "en": "in", "la": "the" } }
+  "es-2417":
+    native: "extinction"
+    notes: { n1: "La extinción is extinction, when a species disappears for ever." }
+    bases: { "la": "the", "extinción": "extinction" }
+    examples:
+      "La extinción de animales es triste.": { native: "The extinction of animals is sad.", bases: { "La": "the", "extinción": "extinction", "de": "of" } }
+      "Muchas especies están en peligro de extinción.": { native: "Many species are in danger of extinction.", bases: { "en": "in", "peligro": "danger", "de": "of", "extinción": "extinction" } }
+  "es-2418":
+    native: "protection"
+    notes: { n1: "La protección is protection, keeping something safe from harm." }
+    bases: { "la": "the", "protección": "protection" }
+    examples:
+      "La protección del parque es importante.": { native: "Protecting the park is important.", bases: { "La": "the", "protección": "protection", "del": "of" } }
+      "Hay protección para los animales.": { native: "There is protection for the animals.", bases: { "Hay": "there is; there are", "protección": "protection", "para": "for", "los": "the" } }
+  "es-2419":
+    native: "saving"
+    notes: { n1: "El ahorro is saving, using less of something, or money put aside." }
+    bases: { "el": "the", "ahorro": "saving" }
+    examples:
+      "El ahorro de agua es necesario.": { native: "Saving water is necessary.", bases: { "El": "the", "ahorro": "saving", "de": "of" } }
+      "Hago un ahorro cada mes.": { native: "I save each month.", bases: { "un": "a", "ahorro": "saving" } }
+  "es-2420":
+    native: "smoke"
+    notes: { n1: "El humo is smoke, the grey cloud from a fire or a car." }
+    bases: { "el": "the", "humo": "smoke" }
+    examples:
+      "El humo sale del coche.": { native: "The smoke comes/comer out of the car.", bases: { "El": "the", "humo": "smoke", "del": "of" } }
+      "Hay mucho humo en la ciudad.": { native: "There is a lot of smoke in the city.", bases: { "Hay": "there is; there are", "humo": "smoke", "en": "in", "la": "the" } }
+  "es-2421":
+    native: "drought"
+    notes: { n1: "La sequía is a drought, a long time without rain." }
+    bases: { "la": "the", "sequía": "drought" }
+    examples:
+      "La sequía dura un año.": { native: "The drought lasts a year.", bases: { "La": "the", "sequía": "drought", "un": "a" } }
+      "La sequía afecta a los campos.": { native: "The drought affects the fields.", bases: { "La": "the", "sequía": "drought", "afecta": "to affect", "a": "to", "los": "the" } }
+  "es-2422":
+    native: "flood"
+    notes: { n1: "La inundación is a flood, when water covers the land." }
+    bases: { "la": "the", "inundación": "flood" }
+    examples:
+      "La inundación llega a la casa.": { native: "The flood reaches the house.", bases: { "La": "the", "inundación": "flood", "a": "to", "la": "the" } }
+      "Hay una inundación en el pueblo.": { native: "There is a flood in the village.", bases: { "Hay": "there is; there are", "una": "a", "inundación": "flood", "en": "in", "el": "the" } }
+  "es-2423":
+    native: "noise"
+    notes: { n1: "El ruido is noise, a sound that is loud or unpleasant." }
+    bases: { "el": "the", "ruido": "noise" }
+    examples:
+      "Hay mucho ruido en la calle.": { native: "There is a lot of noise in the street.", bases: { "Hay": "there is; there are", "ruido": "noise", "en": "in", "la": "the" } }
+      "El ruido es insoportable.": { native: "The noise is unbearable.", bases: { "El": "the", "ruido": "noise", "insoportable": "unbearable" } }
+  "es-2424":
+    native: "traffic"
+    notes: { n1: "El tráfico is traffic, the cars and vehicles on the road." }
+    bases: { "el": "the", "tráfico": "traffic" }
+    examples:
+      "Hay mucho tráfico por la mañana.": { native: "There is a lot of traffic in the morning.", bases: { "Hay": "there is; there are", "tráfico": "traffic", "por": "for", "la": "the" } }
+      "El tráfico contamina el aire.": { native: "Traffic pollutes the air.", bases: { "El": "the", "tráfico": "traffic", "el": "the" } }
+  "es-2425":
+    native: "transport"
+    notes: { n1: "El transporte is transport, moving people or goods. Transporte público is public transport." }
+    bases: { "el": "the", "transporte": "transport" }
+    examples:
+      "El transporte público es barato.": { native: "Public transport is cheap.", bases: { "El": "the", "transporte": "transport", "público": "public" } }
+      "Voy al trabajo en transporte.": { native: "I go to work by transport.", bases: { "al": "to the", "en": "in", "transporte": "transport" } }
+  "es-2426":
+    native: "landfill; dump"
+    notes: { n1: "El vertedero is a landfill, a place where rubbish is put in the ground." }
+    bases: { "el": "the", "vertedero": "landfill; dump" }
+    examples:
+      "El vertedero está lejos de la ciudad.": { native: "The landfill is far from the city.", bases: { "El": "the", "vertedero": "landfill; dump", "de": "of", "la": "the" } }
+      "La basura va al vertedero.": { native: "The rubbish goes to the landfill.", bases: { "La": "the", "al": "to the", "vertedero": "landfill; dump" } }
+  "es-2427":
+    native: "dirt"
+    notes: { n1: "La suciedad is dirt, the thing that makes something dirty." }
+    bases: { "la": "the", "suciedad": "dirt" }
+    examples:
+      "La suciedad está en el suelo.": { native: "The dirt is on the floor.", bases: { "La": "the", "suciedad": "dirt", "en": "in", "el": "the" } }
+      "Quito la suciedad del coche.": { native: "I remove the dirt from the car.", bases: { "Quito": "to remove; to take off", "la": "the", "suciedad": "dirt", "del": "of" } }
+  "es-2428":
+    native: "air"
+    notes: { n1: "El aire is air, the gas we breathe, and the feeling it gives." }
+    bases: { "el": "the", "aire": "air" }
+    examples:
+      "El aire es fresco.": { native: "The air is fresh.", bases: { "El": "the", "aire": "air" } }
+      "Necesitamos aire limpio.": { native: "We need clean air.", bases: { "aire": "air" } }
+  "es-2429":
+    native: "environment; atmosphere"
+    notes: { n1: "El ambiente is the environment around a person, or the atmosphere of a place." }
+    bases: { "el": "the", "ambiente": "environment; atmosphere" }
+    examples:
+      "El ambiente de la fiesta es bueno.": { native: "The atmosphere at the party is good.", bases: { "El": "the", "ambiente": "environment; atmosphere", "de": "of", "la": "the" } }
+      "Cuidamos el ambiente.": { native: "We look after the environment.", bases: { "el": "the", "ambiente": "environment; atmosphere" } }
+  "es-2430":
+    native: "planet"
+    notes: { n1: "El planeta is a planet. The Earth is el planeta Tierra." }
+    bases: { "el": "the", "planeta": "planet" }
+    examples:
+      "El planeta está en peligro.": { native: "The planet is in danger.", bases: { "El": "the", "planeta": "planet", "en": "in", "peligro": "danger" } }
+      "Vivimos en un planeta grande.": { native: "We live on a big planet.", bases: { "en": "in", "un": "a", "planeta": "planet" } }
+  "es-2431":
+    native: "effect"
+    notes: { n1: "El efecto is an effect, the result of a cause. Efecto invernadero is the greenhouse effect." }
+    bases: { "el": "the", "efecto": "effect" }
+    examples:
+      "El efecto es grave.": { native: "The effect is serious.", bases: { "El": "the", "efecto": "effect", "grave": "serious" } }
+      "El efecto del calor es fuerte.": { native: "The effect of the heat is strong.", bases: { "El": "the", "efecto": "effect", "del": "of" } }
+  "es-2432":
+    native: "coal"
+    notes: { n1: "El carbón is coal, a black fuel that pollutes when burnt." }
+    bases: { "el": "the", "carbón": "coal" }
+    examples:
+      "El carbón contamina mucho.": { native: "Coal pollutes a lot.", bases: { "El": "the", "carbón": "coal" } }
+      "Usan carbón en la fábrica.": { native: "They use coal in the factory.", bases: { "carbón": "coal", "en": "in", "la": "the" } }
+  "es-2433":
+    native: "oil; petroleum"
+    notes: { n1: "El petróleo is oil, a fuel from the ground used for cars and factories." }
+    bases: { "el": "the", "petróleo": "oil; petroleum" }
+    examples:
+      "El petróleo es caro.": { native: "Oil is expensive.", bases: { "El": "the", "petróleo": "oil; petroleum" } }
+      "El petróleo contamina el mar.": { native: "Oil pollutes the sea.", bases: { "El": "the", "petróleo": "oil; petroleum", "el": "the" } }
+  "es-2434":
+    native: "light; electricity"
+    notes: { n1: "La luz is light, or electricity in a house. The plural is luces." }
+    bases: { "la": "the", "luz": "light; electricity" }
+    examples:
+      "La luz del sol es fuerte.": { native: "The sunlight is strong.", bases: { "La": "the", "luz": "light; electricity", "del": "of" } }
+      "Apago la luz al salir.": { native: "I switch off the light when I leave.", bases: { "la": "the", "luz": "light; electricity", "al": "to the" } }
+  "es-2435":
+    native: "bin; container"
+    notes: { n1: "El contenedor is a large bin for rubbish or recycling." }
+    bases: { "el": "the", "contenedor": "bin; container" }
+    examples:
+      "El contenedor está en la calle.": { native: "The bin is in the street.", bases: { "El": "the", "contenedor": "bin; container", "en": "in", "la": "the" } }
+      "Echo el vidrio en el contenedor.": { native: "I put the glass in the bin.", bases: { "Echo": "to throw in; to pour", "el": "the", "en": "in", "contenedor": "bin; container" } }
+  "es-2436":
+    native: "packaging; container"
+    notes: { n1: "El envase is the packaging of a product, such as a box or a bottle." }
+    bases: { "el": "the", "envase": "packaging; container" }
+    examples:
+      "El envase es de plástico.": { native: "The packaging is plastic.", bases: { "El": "the", "envase": "packaging; container", "de": "of" } }
+      "Reciclo el envase.": { native: "I recycle the packaging.", bases: { "el": "the", "envase": "packaging; container" } }
+  "es-2437":
+    native: "cardboard"
+    notes: { n1: "El cartón is cardboard, a thick paper used for boxes." }
+    bases: { "el": "the", "cartón": "cardboard" }
+    examples:
+      "El cartón va al contenedor azul.": { native: "The cardboard goes in the blue bin.", bases: { "El": "the", "cartón": "cardboard", "al": "to the" } }
+      "La caja es de cartón.": { native: "The box is made of cardboard.", bases: { "La": "the", "de": "of", "cartón": "cardboard" } }
+  "es-2438":
+    native: "renewable"
+    notes: { n1: "Renovable is renewable, a source of energy that does not run out. It does not change for gender." }
+    bases: { "renovable": "renewable" }
+    examples:
+      "La energía solar es renovable.": { native: "Solar energy is renewable.", bases: { "La": "the", "renovable": "renewable" } }
+      "Usamos fuentes renovables.": { native: "We use renewable sources.", bases: { "renovables": "renewable" } }
+  "es-2439":
+    native: "solar"
+    notes: { n1: "Solar is of the sun. It does not change for gender." }
+    bases: { "solar": "solar" }
+    examples:
+      "El panel solar da luz.": { native: "The solar panel/panel gives light.", bases: { "El": "the", "panel": "panel", "solar": "solar" } }
+      "La energía solar es limpia.": { native: "Solar energy is clean.", bases: { "La": "the", "solar": "solar" } }
+  "es-2440":
+    native: "wind (adj)"
+    notes: { n1: "Eólico is of the wind, as in a wind farm. It agrees with the noun: eólica." }
+    bases: { "eólico": "wind (adj)" }
+    examples:
+      "La energía eólica es buena.": { native: "Wind energy is good.", bases: { "La": "the", "eólica": "wind (adj)" } }
+      "Hay un parque eólico en el valle.": { native: "There is a wind farm in the valley.", bases: { "Hay": "there is; there are", "un": "a", "eólico": "wind (adj)", "en": "in", "el": "the" } }
+  "es-2441":
+    native: "drinkable"
+    notes: { n1: "Potable is safe to drink, for water. It does not change for gender." }
+    bases: { "potable": "drinkable" }
+    examples:
+      "El agua potable es necesaria.": { native: "Drinking water is necessary.", bases: { "El": "the", "potable": "drinkable" } }
+      "Esta agua es potable.": { native: "This water is drinkable.", bases: { "Esta": "This", "potable": "drinkable" } }
+  "es-2442":
+    native: "to protect"
+    notes: { n1: "Proteger is to keep something safe. Its yo form is protejo." }
+    bases: { "proteger": "to protect" }
+    examples:
+      "Protejo los bosques.": { native: "I protect the forests.", bases: { "Protejo": "to protect", "los": "the" } }
+      "Protegen a los animales.": { native: "They protect the animals.", bases: { "Protegen": "to protect", "a": "to", "los": "the" } }
+  "es-2443":
+    native: "to conserve; to keep"
+    notes: { n1: "Conservar is to keep something in good condition, or to save it." }
+    bases: { "conservar": "to conserve; to keep" }
+    examples:
+      "Conservo el agua.": { native: "I conserve water.", bases: { "Conservo": "to conserve; to keep", "el": "the" } }
+      "Conservan la naturaleza.": { native: "They conserve nature.", bases: { "Conservan": "to conserve; to keep", "la": "the" } }
+  "es-2444":
+    native: "to reduce"
+    notes: { n1: "Reducir is to make something smaller or less. Its yo form is reduzco." }
+    bases: { "reducir": "to reduce" }
+    examples:
+      "Reduzco el uso del coche.": { native: "I reduce car use.", bases: { "Reduzco": "to reduce", "el": "the", "del": "of" } }
+      "Reducimos la basura.": { native: "We reduce the rubbish.", bases: { "Reducimos": "to reduce", "la": "the" } }
+  "es-2445":
+    native: "to reuse"
+    notes: { n1: "Reutilizar is to use something again, rather than throwing it away." }
+    bases: { "reutilizar": "to reuse" }
+    examples:
+      "Reutilizo las bolsas.": { native: "I reuse the bags.", bases: { "Reutilizo": "to reuse", "las": "the" } }
+      "Reutilizan el agua de lluvia.": { native: "They reuse rainwater.", bases: { "Reutilizan": "to reuse", "el": "the", "de": "of" } }
+  "es-2446":
+    native: "to reforest"
+    notes: { n1: "Reforestar is to plant trees on land that had lost its forest." }
+    bases: { "reforestar": "to reforest" }
+    examples:
+      "Reforestamos la montaña.": { native: "We reforest the mountain.", bases: { "Reforestamos": "to reforest", "la": "the" } }
+      "Reforestan el bosque quemado.": { native: "They reforest the burnt forest.", bases: { "Reforestan": "to reforest", "el": "the" } }

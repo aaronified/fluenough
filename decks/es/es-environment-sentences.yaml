@@ -1,0 +1,50 @@
+schema: 1
+id: "es-environment-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2447"
+    target: "Separo los residuos y reciclo el cartón."
+    ipa: "seˈpaɾo los reˈsidwos i reˈθiklo el kaɾˈton"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Separo", base: "separar" }, { word: "los", base: "los" }, { word: "residuos", ref: "es-2412" }, { word: "y", ref: "es-0048" }, { word: "reciclo", ref: "es-1517" }, { word: "el", base: "el" }, { word: "cartón", ref: "es-2437" }]
+    confusables: [{ id: "envase", ref: "es-2436", kind: "word" }, { id: "reutilizar", ref: "es-2445", kind: "word" }]
+  - id: "es-2448"
+    target: "Hay mucho humo y mucho tráfico en la ciudad."
+    ipa: "aj ˈmutʃo ˈumo i ˈmutʃo ˈtɾafiko en la θjuˈdad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "mucho", ref: "es-0053" }, { word: "humo", ref: "es-2420" }, { word: "y", ref: "es-0048" }, { word: "mucho", ref: "es-0053" }, { word: "tráfico", ref: "es-2424" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+    confusables: [{ id: "contaminacion", ref: "es-2410", kind: "word" }, { id: "ruido", ref: "es-2423", kind: "word" }]
+  - id: "es-2449"
+    target: "La sequía afecta a los campos y al agua."
+    ipa: "la seˈkia aˈfekta a los ˈkampos i al ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "sequía", ref: "es-2421" }, { word: "afecta", base: "afectar" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "campos", ref: "es-1772" }, { word: "y", ref: "es-0048" }, { word: "al", base: "al" }, { word: "agua", ref: "es-0012" }]
+    confusables: [{ id: "inundacion", ref: "es-2422", kind: "word" }, { id: "potable", ref: "es-2441", kind: "word" }]
+  - id: "es-2450"
+    target: "Reduzco el uso del carbón y del petróleo."
+    ipa: "reˈduθko el ˈuso del kaɾˈbon i del peˈtɾoleo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Reduzco", ref: "es-2444" }, { word: "el", base: "el" }, { word: "uso", ref: "es-0287" }, { word: "del", base: "del" }, { word: "carbón", ref: "es-2432" }, { word: "y", ref: "es-0048" }, { word: "del", base: "del" }, { word: "petróleo", ref: "es-2433" }]
+    confusables: [{ id: "gas", ref: "es-2414", kind: "word" }, { id: "renovable", ref: "es-2438", kind: "word" }]
+  - id: "es-2451"
+    target: "Protejo los bosques y reforesto la montaña."
+    ipa: "pɾoˈtexo los ˈboskes i refoˈɾesto la monˈtaɲa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Protejo", ref: "es-2442" }, { word: "los", base: "los" }, { word: "bosques", ref: "es-1749" }, { word: "y", ref: "es-0048" }, { word: "reforesto", ref: "es-2446" }, { word: "la", base: "la" }, { word: "montaña", ref: "es-1750" }]
+    confusables: [{ id: "deforestacion", ref: "es-2415", kind: "word" }, { id: "conservar", ref: "es-2443", kind: "word" }]
+  - id: "es-2452"
+    target: "El vertedero contamina el suelo y el aire."
+    ipa: "el beɾteˈdeɾo kontaˈmina el ˈswelo i el ˈajɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "vertedero", ref: "es-2426" }, { word: "contamina", ref: "es-2411" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "aire", ref: "es-2428" }]
+    confusables: [{ id: "planeta", ref: "es-2430", kind: "word" }, { id: "efecto", ref: "es-2431", kind: "word" }]
