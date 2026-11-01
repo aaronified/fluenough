@@ -1,0 +1,360 @@
+schema: 1
+id: "hi-en-illness"
+kind: "layer"
+core: "hi-illness"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness and the doctor"
+license: "CC-BY-SA-4.0"
+description: "Words for feeling ill, the body in pain, medicine and the doctor. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1430":
+    native: "sick; ill"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is रोगी (rogī), a sick person."
+    examples:
+      "मैं बीमार हूँ।": { native: "I am ill.", bases: { "बीमार": "sick", "हूँ": "to be" } }
+      "वह आज बीमार है।": { native: "He is ill today.", bases: { "बीमार": "sick" } }
+  "hi-1431":
+    native: "fever"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is ज्वर (jvar), fever."
+    examples:
+      "उसे बुखार है।": { native: "He has a fever.", bases: { "उसे": "to him or her", "बुखार": "fever" } }
+      "बच्चे को तेज़ बुखार है।": { native: "The child has a high fever.", bases: { "बच्चे": "child", "बुखार": "fever" } }
+  "hi-1432":
+    native: "cough"
+    notes:
+      "n1": "The verb is खाँसना (khām̐snā), to cough."
+    examples:
+      "मुझे खाँसी है।": { native: "I have a cough.", bases: { "मुझे": "to me", "खाँसी": "cough" } }
+      "खाँसी में गरम पानी पियो।": { native: "For a cough, drink warm water.", bases: { "खाँसी": "cough", "पियो": "to drink" } }
+  "hi-1433":
+    native: "a cold (the illness, with a runny nose)"
+    notes:
+      "n1": "Not the same as सर्दी (sardī), the cold weather. ज़ुकाम (zukām) is the illness."
+    examples:
+      "मुझे ज़ुकाम है।": { native: "I have a cold.", bases: { "मुझे": "to me", "ज़ुकाम": "a cold (the illness, with a runny nose)" } }
+      "ज़ुकाम में नाक बहती है।": { native: "With a cold, the nose runs.", bases: { "ज़ुकाम": "a cold (the illness, with a runny nose)", "बहती": "to flow" } }
+  "hi-1434":
+    native: "headache"
+    notes:
+      "n1": "Made of सिर (sir), head, and दर्द (dard), pain."
+    examples:
+      "मुझे सिरदर्द है।": { native: "I have a headache.", bases: { "मुझे": "to me", "सिरदर्द": "headache" } }
+      "सिरदर्द में आराम करो।": { native: "For a headache, rest.", bases: { "सिरदर्द": "headache", "करो": "to do" } }
+  "hi-1435":
+    native: "vomiting; vomit"
+    notes:
+      "n1": "The verb is उल्टी करना (ultī karnā), to vomit."
+    examples:
+      "उसे उल्टी हो रही है।": { native: "He is vomiting.", bases: { "उसे": "to him or her", "उल्टी": "vomiting", "हो": "to be", "रही": "to be" } }
+      "उल्टी के बाद पानी पियो।": { native: "Drink water after vomiting.", bases: { "उल्टी": "vomiting", "बाद": "after", "पियो": "to drink" } }
+  "hi-1436":
+    native: "dizziness; a spin"
+    notes:
+      "n1": "In the idiom चक्कर आना (chakkar ānā), to feel dizzy."
+    examples:
+      "मुझे चक्कर आ रहा है।": { native: "I feel dizzy.", bases: { "मुझे": "to me", "चक्कर": "dizziness", "आ": "to come", "रहा": "to be" } }
+      "धूप में चक्कर आते हैं।": { native: "In the sun you get dizzy.", bases: { "चक्कर": "dizziness", "आते": "to come" } }
+  "hi-1437":
+    native: "swelling"
+    notes:
+      "n1": "The verb is सूजना (sūjnā), to swell."
+    examples:
+      "पैर में सूजन है।": { native: "There is swelling in the foot.", bases: { "सूजन": "swelling" } }
+      "सूजन पर बर्फ़ लगाओ।": { native: "Put ice on the swelling.", bases: { "सूजन": "swelling", "लगाओ": "to apply" } }
+  "hi-1438":
+    native: "wound"
+    notes:
+      "n1": "Persian-leaning synonym: ज़ख़्म (zak͟hm), a wound."
+    examples:
+      "हाथ पर घाव है।": { native: "There is a wound on the hand.", bases: { "घाव": "wound" } }
+      "घाव को साफ़ पानी से धोओ।": { native: "Wash the wound with clean water.", bases: { "घाव": "wound", "धोओ": "to wash" } }
+  "hi-1439":
+    native: "injury; bruise"
+    notes:
+      "n1": "The phrase चोट लगना (chōṭ lagnā) means to get hurt."
+    examples:
+      "मुझे पैर में चोट लगी है।": { native: "I have hurt my foot.", bases: { "मुझे": "to me", "चोट": "injury", "लगी": "to get" } }
+      "चोट पर मरहम लगाओ।": { native: "Put ointment on the bruise.", bases: { "चोट": "injury", "लगाओ": "to apply" } }
+  "hi-1440":
+    native: "scratch"
+    notes:
+      "n1": "A small mark on the skin. The bigger word is चोट (chōṭ), injury."
+    examples:
+      "बच्चे के हाथ पर खरोंच है।": { native: "The child has a scratch on the hand.", bases: { "बच्चे": "child", "खरोंच": "scratch" } }
+      "खरोंच पर पट्टी बाँधो।": { native: "Tie a bandage over the scratch.", bases: { "खरोंच": "scratch", "बाँधो": "to tie" } }
+  "hi-1441":
+    native: "bandage; strip"
+    notes:
+      "n1": "Also a strip of cloth or paper. The verb is बाँधना (bāṁdhnā), to tie."
+    examples:
+      "डॉक्टर ने पट्टी बाँधी।": { native: "The doctor tied a bandage.", bases: { "ने": "marks the doer of a past verb", "पट्टी": "bandage", "बाँधी": "to tie" } }
+      "पट्टी साफ़ रखो।": { native: "Keep the bandage clean.", bases: { "पट्टी": "bandage", "रखो": "to keep" } }
+  "hi-1442":
+    native: "ointment; cream for a wound"
+    notes:
+      "n1": "Goes on the skin, not into the mouth. दवाई (davāī) is what is swallowed."
+    examples:
+      "यह मरहम दिन में दो बार लगाओ।": { native: "Apply this ointment twice a day.", bases: { "मरहम": "ointment", "दो": "two", "बार": "time", "लगाओ": "to apply" } }
+      "मरहम से दर्द कम होता है।": { native: "The ointment lessens the pain.", bases: { "मरहम": "ointment", "होता": "to be" } }
+  "hi-1443":
+    native: "tablet; pill"
+    notes:
+      "n1": "Also means a bullet. With a doctor it is a tablet."
+    examples:
+      "डॉक्टर ने गोली दी।": { native: "The doctor gave a tablet.", bases: { "ने": "marks the doer of a past verb", "गोली": "tablet", "दी": "to give" } }
+      "खाने के बाद एक गोली लो।": { native: "Take one tablet after eating.", bases: { "खाने": "to eat", "बाद": "after", "गोली": "tablet", "लो": "to take" } }
+  "hi-1444":
+    native: "prescription slip"
+    notes:
+      "n1": "Also a leaflet or handout. From a doctor it is the slip with the medicines written on it."
+    examples:
+      "डॉक्टर ने पर्चा लिखा।": { native: "The doctor wrote a prescription.", bases: { "ने": "marks the doer of a past verb", "पर्चा": "prescription slip", "लिखा": "to write" } }
+      "पर्चा दवाई की दुकान पर दिखाओ।": { native: "Show the prescription at the medicine shop.", bases: { "पर्चा": "prescription slip", "दिखाओ": "to show" } }
+  "hi-1445":
+    native: "treatment; cure"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is चिकित्सा (cikitsā), treatment."
+    examples:
+      "उसका इलाज अस्पताल में चल रहा है।": { native: "His treatment is going on in hospital.", bases: { "इलाज": "treatment", "चल": "to go on", "रहा": "to be" } }
+      "सही इलाज से वह ठीक होगा।": { native: "With the right treatment he will get well.", bases: { "इलाज": "treatment", "होगा": "to be" } }
+  "hi-1446":
+    native: "check-up; test"
+    notes:
+      "n1": "A test or an examination: खून की जाँच (khūn kī jām̐c), a blood test."
+    examples:
+      "डॉक्टर खून की जाँच करेंगे।": { native: "The doctor will test the blood.", bases: { "जाँच": "check-up", "करेंगे": "to do" } }
+      "जाँच की रिपोर्ट कल आएगी।": { native: "The test report will come tomorrow.", bases: { "जाँच": "check-up", "रिपोर्ट": "report", "आएगी": "to come" } }
+  "hi-1447":
+    native: "X-ray"
+    notes:
+      "n1": "The English word, written with a hyphen. It shows the bones inside the body."
+    examples:
+      "पैर का एक्स-रे हुआ।": { native: "The foot was X-rayed.", bases: { "एक्स-रे": "X-ray", "हुआ": "to happen" } }
+      "एक्स-रे में हड्डी टूटी नहीं है।": { native: "The X-ray shows that the bone is not broken.", bases: { "एक्स-रे": "X-ray", "टूटी": "to break" } }
+  "hi-1448":
+    native: "vaccine; a shot"
+    notes:
+      "n1": "In health it is a vaccination. It is also a mark on the forehead."
+    examples:
+      "बच्चों को टीका लगता है।": { native: "Children are given vaccines.", bases: { "बच्चों": "child", "टीका": "vaccine", "लगता": "to be given" } }
+      "टीका लगवाने के लिए अस्पताल जाओ।": { native: "Go to the hospital to get the shot.", bases: { "टीका": "vaccine", "लगवाने": "to get done", "लिए": "for", "जाओ": "to go" } }
+  "hi-1449":
+    native: "health; how one feels"
+    notes:
+      "n1": "Persian-leaning. तबीयत ठीक है (tabīyat ṭhīk hai) means I am well."
+    examples:
+      "आपकी तबीयत कैसी है?": { native: "How are you feeling?", bases: { "आपकी": "your", "तबीयत": "health", "कैसी": "how" } }
+      "मेरी तबीयत आज ठीक है।": { native: "I am well today.", bases: { "मेरी": "my", "तबीयत": "health" } }
+  "hi-1450":
+    native: "health of the body"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is स्वास्थ्य (svāsthya), health."
+    examples:
+      "सेहत के लिए पानी पियो।": { native: "Drink water for your health.", bases: { "सेहत": "health of the body", "लिए": "for", "पियो": "to drink" } }
+      "अच्छी सेहत ज़रूरी है।": { native: "Good health is necessary.", bases: { "अच्छी": "good", "सेहत": "health of the body", "ज़रूरी": "necessary" } }
+  "hi-1451":
+    native: "weakness"
+    notes:
+      "n1": "The adjective is कमज़ोर (kamzōr), weak."
+    examples:
+      "बुखार के बाद कमज़ोरी होती है।": { native: "After a fever there is weakness.", bases: { "बाद": "after", "कमज़ोरी": "weakness", "होती": "to be" } }
+      "उसे बहुत कमज़ोरी लग रही है।": { native: "He feels very weak.", bases: { "उसे": "to him or her", "कमज़ोरी": "weakness", "लग": "to feel", "रही": "to be" } }
+  "hi-1452":
+    native: "tiredness"
+    notes:
+      "n1": "The adjective is थका (thakā), tired; for a woman, थकी (thakī)."
+    examples:
+      "मुझे बहुत थकान है।": { native: "I am very tired.", bases: { "मुझे": "to me", "थकान": "tiredness" } }
+      "सफ़र के बाद थकान होती है।": { native: "After a journey you feel tired.", bases: { "सफ़र": "journey", "बाद": "after", "थकान": "tiredness", "होती": "to be" } }
+  "hi-1453":
+    native: "rest"
+    notes:
+      "n1": "Also means comfort. आराम से (ārām se) means comfortably or slowly."
+    examples:
+      "डॉक्टर ने दो दिन आराम करने को कहा।": { native: "The doctor told him to rest for two days.", bases: { "ने": "marks the doer of a past verb", "दो": "two", "आराम": "rest", "करने": "to do", "को": "to", "कहा": "to say" } }
+      "आराम से लेटो।": { native: "Lie down comfortably.", bases: { "आराम": "rest", "लेटो": "to lie down" } }
+  "hi-1454":
+    native: "thirst"
+    notes:
+      "n1": "The adjective is प्यासा (pyāsā), thirsty."
+    examples:
+      "मुझे बहुत प्यास लगी है।": { native: "I am very thirsty.", bases: { "मुझे": "to me", "प्यास": "thirst", "लगी": "to feel" } }
+      "बुखार में प्यास ज़्यादा लगती है।": { native: "With a fever you feel more thirsty.", bases: { "प्यास": "thirst", "लगती": "to feel" } }
+  "hi-1455":
+    native: "hunger; appetite"
+    notes:
+      "n1": "The adjective is भूखा (bhūkhā), hungry."
+    examples:
+      "बीमारी में भूख कम लगती है।": { native: "When you are ill you feel less hungry.", bases: { "बीमारी": "illness", "भूख": "hunger", "लगती": "to feel" } }
+      "उसे आज भूख नहीं है।": { native: "He has no appetite today.", bases: { "उसे": "to him or her", "भूख": "hunger" } }
+  "hi-1456":
+    native: "a sneeze"
+    notes:
+      "n1": "The verb is छींकना (chhīṅknā), to sneeze."
+    examples:
+      "उसे छींक आ रही है।": { native: "He is sneezing.", bases: { "उसे": "to him or her", "छींक": "a sneeze", "आ": "to come", "रही": "to be" } }
+      "छींक आए तो मुँह ढकिए।": { native: "If you sneeze, cover your mouth.", bases: { "छींक": "a sneeze", "आए": "to come", "तो": "then", "ढकिए": "to cover" } }
+  "hi-1457":
+    native: "well; fine; right"
+    notes:
+      "n1": "Used of health, of a thing being right, and to say OK."
+    examples:
+      "अब मैं ठीक हूँ।": { native: "Now I am fine.", bases: { "अब": "now", "ठीक": "well", "हूँ": "to be" } }
+      "क्या आप ठीक हैं?": { native: "Are you all right?", bases: { "ठीक": "well" } }
+  "hi-1458":
+    native: "sweat"
+    notes:
+      "n1": "The phrase पसीना आना (pasīnā ānā) means to sweat."
+    examples:
+      "गर्मी में पसीना आता है।": { native: "In the heat you sweat.", bases: { "पसीना": "sweat", "आता": "to come" } }
+      "बुखार में बहुत पसीना आया।": { native: "There was a lot of sweating with the fever.", bases: { "पसीना": "sweat", "आया": "to come" } }
+  "hi-1459":
+    native: "needle; injection"
+    notes:
+      "n1": "The same word for a sewing needle. In a clinic it means the injection."
+    examples:
+      "सुई लगेगी, डरो मत।": { native: "The injection will be given, so do not be afraid.", bases: { "सुई": "needle", "लगेगी": "to be given", "डरो": "to fear", "मत": "do not" } }
+      "नर्स ने सुई लगाई।": { native: "The nurse gave an injection.", bases: { "ने": "marks the doer of a past verb", "सुई": "needle", "लगाई": "to give" } }
+  "hi-1460":
+    native: "to cough"
+    notes:
+      "n1": "The noun is खाँसी (khām̐sī), a cough."
+    examples:
+      "वह रात भर खाँसता रहा।": { native: "He coughed all night.", bases: { "रात": "night", "भर": "all", "खाँसता": "to cough", "रहा": "to keep on" } }
+      "ज़ोर से मत खाँसो।": { native: "Do not cough loudly.", bases: { "ज़ोर": "force; loudness", "मत": "do not", "खाँसो": "to cough" } }
+  "hi-1461":
+    native: "to sneeze"
+    notes:
+      "n1": "The noun is छींक (chhīṅk), a sneeze."
+    examples:
+      "वह ज़ोर से छींकता है।": { native: "He sneezes loudly.", bases: { "ज़ोर": "force; loudness", "छींकता": "to sneeze" } }
+      "छींकते समय मुँह ढको।": { native: "Cover your mouth when you sneeze.", bases: { "छींकते": "to sneeze", "ढको": "to cover" } }
+  "hi-1462":
+    native: "to lie down"
+    notes:
+      "n1": "लेटना (leṭnā) is to lie down; बैठना (baiṭhnā) is to sit."
+    examples:
+      "बीमार हो तो लेटे रहो।": { native: "If you are ill, stay lying down.", bases: { "हो": "to be", "तो": "then", "लेटे": "to lie down", "रहो": "to stay" } }
+      "वह बिस्तर पर लेटा है।": { native: "He is lying in bed.", bases: { "लेटा": "to lie down" } }
+  "hi-1463":
+    native: "to ache; to hurt"
+    notes:
+      "n1": "The body part is the subject: सिर दुखता है (sir dukhtā hai), my head aches."
+    examples:
+      "मेरा सिर दुखता है।": { native: "My head aches.", bases: { "दुखता": "to ache" } }
+      "आँख दुख रही है।": { native: "My eye is aching.", bases: { "दुख": "to ache", "रही": "to be" } }
+  "hi-1464":
+    native: "unconscious; fainted"
+    notes:
+      "n1": "The phrase बेहोश होना (behosh honā) means to faint."
+    examples:
+      "गर्मी से वह बेहोश हो गया।": { native: "From the heat he fainted.", bases: { "बेहोश": "unconscious", "हो": "to be", "गया": "to go" } }
+      "बेहोश आदमी के मुँह में पानी मत डालो।": { native: "Do not pour water into the mouth of an unconscious man.", bases: { "बेहोश": "unconscious", "मत": "do not", "डालो": "to pour" } }
+  "hi-1465":
+    native: "strength"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is शक्ति (śakti), strength."
+    examples:
+      "दूध से ताक़त आती है।": { native: "Milk gives strength.", bases: { "ताक़त": "strength", "आती": "to come" } }
+      "बुखार के बाद ताक़त वापस आती है।": { native: "After a fever, strength comes back.", bases: { "बाद": "after", "ताक़त": "strength", "वापस": "back", "आती": "to come" } }
+  "hi-1466":
+    native: "weak"
+    notes:
+      "n1": "The noun is कमज़ोरी (kamzōrī), weakness."
+    examples:
+      "वह बहुत कमज़ोर है।": { native: "He is very weak.", bases: { "कमज़ोर": "weak" } }
+      "बूढ़े लोग कमज़ोर होते हैं।": { native: "Old people are weak.", bases: { "बूढ़े": "old", "कमज़ोर": "weak", "होते": "to be" } }
+  "hi-1467":
+    native: "brain; mind"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is मस्तिष्क (mastiṣk), brain."
+    examples:
+      "दिमाग़ में दर्द है।": { native: "There is pain in the head.", bases: { "दिमाग़": "brain" } }
+      "उसका दिमाग़ ठीक है।": { native: "His mind is fine.", bases: { "दिमाग़": "brain" } }
+  "hi-1468":
+    native: "finger"
+    notes:
+      "n1": "The thumb is अँगूठा (aṅgūṭhā)."
+    examples:
+      "उंगली में चोट है।": { native: "There is an injury to the finger.", bases: { "उंगली": "finger" } }
+      "उंगली पर पट्टी है।": { native: "The finger has a bandage.", bases: { "उंगली": "finger" } }
+  "hi-1469":
+    native: "chest"
+    notes:
+      "n1": "As a verb, सीना (sīnā) means to sew."
+    examples:
+      "सीने में दर्द है।": { native: "There is pain in the chest.", bases: { "सीने": "chest" } }
+      "सीना सीधा रखो।": { native: "Keep your chest upright.", bases: { "सीना": "chest", "सीधा": "straight", "रखो": "to keep" } }
+  "hi-1470":
+    native: "elbow"
+    notes:
+      "n1": "The joint between the upper arm and the forearm."
+    examples:
+      "कोहनी पर चोट लगी है।": { native: "The elbow has been hurt.", bases: { "कोहनी": "elbow", "लगी": "to get" } }
+      "कोहनी को पानी से धोओ।": { native: "Wash the elbow with water.", bases: { "कोहनी": "elbow", "धोओ": "to wash" } }
+  "hi-1471":
+    native: "pulse"
+    notes:
+      "n1": "Felt at the wrist. The doctor feels it to count the beats."
+    examples:
+      "डॉक्टर नब्ज़ देखते हैं।": { native: "The doctor checks the pulse.", bases: { "नब्ज़": "pulse", "देखते": "to see" } }
+      "नब्ज़ तेज़ चल रही है।": { native: "The pulse is fast.", bases: { "नब्ज़": "pulse", "चल": "to go", "रही": "to be" } }
+  "hi-1472":
+    native: "heartbeat"
+    notes:
+      "n1": "The beating of the heart. The verb is धड़कना (dhaṛaknā), to beat."
+    examples:
+      "दिल की धड़कन तेज़ है।": { native: "The heartbeat is fast.", bases: { "धड़कन": "heartbeat" } }
+      "डर से धड़कन बढ़ती है।": { native: "Fear makes the heartbeat quicken.", bases: { "डर": "fear", "धड़कन": "heartbeat", "बढ़ती": "to rise" } }
+  "hi-1473":
+    native: "breath"
+    notes:
+      "n1": "The phrase साँस लेना (sāṁs lenā) means to breathe in."
+    examples:
+      "साँस लेने में तकलीफ़ है।": { native: "There is difficulty in breathing.", bases: { "साँस": "breath", "लेने": "to take", "तकलीफ़": "trouble" } }
+      "गहरी साँस लो।": { native: "Take a deep breath.", bases: { "गहरी": "deep", "साँस": "breath", "लो": "to take" } }
+  "hi-1474":
+    native: "itch"
+    notes:
+      "n1": "The verb is खुजाना (khujānā), to scratch."
+    examples:
+      "हाथ में खुजली है।": { native: "The hand itches.", bases: { "खुजली": "itch" } }
+      "खुजली होने पर भी मत खुजाओ।": { native: "Do not scratch, even when it itches.", bases: { "खुजली": "itch", "होने": "to be", "मत": "do not", "खुजाओ": "to scratch" } }
+  "hi-1475":
+    native: "leg (informal)"
+    notes:
+      "n1": "Informal. The usual word for the leg is पैर (pair)."
+    examples:
+      "मेरी टाँग में मोच है।": { native: "My leg has a sprain.", bases: { "मेरी": "my", "टाँग": "leg (informal)", "मोच": "sprain" } }
+      "टाँग पर बर्फ़ रखो।": { native: "Put ice on the leg.", bases: { "टाँग": "leg (informal)", "रखो": "to keep" } }
+  "hi-1476":
+    native: "sleep"
+    notes:
+      "n1": "The verb सोना (sōnā) means to sleep. नींद आना (nīnd ānā) means to feel sleepy."
+    examples:
+      "बुखार में नींद नहीं आती है।": { native: "With a fever, sleep does not come.", bases: { "नींद": "sleep", "आती": "to come" } }
+      "रात को अच्छी नींद लो।": { native: "Get a good night's sleep.", bases: { "अच्छी": "good", "नींद": "sleep", "लो": "to take" } }
+  "hi-1477":
+    native: "wound"
+    notes:
+      "n1": "Persian-leaning synonym of घाव (ghāv), a wound."
+    examples:
+      "ज़ख़्म पर पट्टी बाँधो।": { native: "Tie a bandage on the wound.", bases: { "ज़ख़्म": "wound", "बाँधो": "to tie" } }
+      "ज़ख़्म से खून बह रहा है।": { native: "Blood is flowing from the wound.", bases: { "ज़ख़्म": "wound", "बह": "to flow", "रहा": "to be" } }
+  "hi-1478":
+    native: "body"
+    notes:
+      "n1": "Persian-leaning. The Sanskrit-leaning word is शरीर (sharīr), body."
+    examples:
+      "बदन को पानी चाहिए।": { native: "The body needs water.", bases: { "बदन": "body" } }
+      "बदन में ताक़त कम है।": { native: "The body has little strength.", bases: { "बदन": "body" } }
+  "hi-1479":
+    native: "pain; ache"
+    notes:
+      "n1": "Sanskrit-leaning. The everyday word is दर्द (dard), pain."
+    examples:
+      "उसे पेट में पीड़ा है।": { native: "He has pain in the stomach.", bases: { "उसे": "to him or her", "पीड़ा": "pain" } }
+      "पीड़ा कम करने की दवाई लो।": { native: "Take a medicine to ease the pain.", bases: { "पीड़ा": "pain", "करने": "to do", "लो": "to take" } }
