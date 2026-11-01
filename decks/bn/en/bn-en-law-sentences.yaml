@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-law-sentences"
+kind: "layer"
+core: "bn-law-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law: sentences"
+description: "Short sentences about the police, the court, a case and a citizen's rights. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4126":
+    native: "The police took the theft complaint."
+    confusables: { "c1": { why: "robbery: a different crime, taken by force" }, "c2": { why: "murder: a different and more serious crime" } }
+  "bn-4127":
+    native: "The court gave its verdict in the case."
+    confusables: { "c1": { why: "punishment: follows the verdict, not the verdict itself" }, "c2": { why: "appeal: asks for the verdict to be changed" } }
+  "bn-4128":
+    native: "The plaintiff and the defendant both came to court."
+    bases: { "দুজনেই": "both" }
+    confusables: { "c1": { why: "witness: someone who saw, not a party to the case" }, "c2": { why: "judge: decides the case, not a party" } }
+  "bn-4129":
+    native: "On bail he went back home."
+    confusables: { "c1": { why: "jail: the opposite, a place he left" }, "c2": { why: "prison: a formal word for jail, the opposite" } }
+  "bn-4130":
+    native: "Smoking is prohibited here."
+    bases: { "ধূমপান": "smoking" }
+    confusables: { "c1": { why: "permission: the opposite of prohibition" }, "c2": { why: "licence: a document, not a rule" } }
+  "bn-4131":
+    native: "Show proof of citizenship. (familiar)"
+    confusables: { "c1": { why: "identity card: a document, not citizenship itself" }, "c2": { why: "certificate: a paper, a different thing" } }
+  "bn-4132":
+    native: "The criminal has been arrested."
+    bases: { "গ্রেফতার": "arrested" }
+    confusables: { "c1": { why: "innocent: the opposite of guilty" }, "c2": { why: "plaintiff: brings a case, not a criminal" } }
+  "bn-4133":
+    native: "The lawyer gave me good advice."
+    confusables: { "c1": { why: "doctor: advises on health, not on law" }, "c2": { why: "teacher: a different profession" } }
+  "bn-4134":
+    native: "The notice is not legal."
+    confusables: { "c1": { why: "legal: the opposite of illegal" }, "c2": { why: "illegal: the same idea, a different word" } }
+  "bn-4135":
+    native: "Justice is everyone's right."
+    confusables: { "c1": { why: "injustice: the opposite of justice" }, "c2": { why: "human rights: a related but wider idea" } }
+  "bn-4136":
+    native: "Both a fine and a punishment were given."
+    confusables: { "c1": { why: "jail: a punishment, but not a fine" }, "c2": { why: "sentence: the court's penalty, a related word" } }
+  "bn-4137":
+    native: "The police have a warrant."
+    bases: { "আছে": "have" }
+    confusables: { "c1": { why: "a receipt: proof of payment, not an order" }, "c2": { why: "a charge sheet: a related document" } }

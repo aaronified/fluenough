@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3100"
+    target: "আমার মালপত্র গাড়িতে আছে।"
+    reading: "āmār mālopotro gāṛite āche."
+    ipa: "amar malopot̪r ɡaɽit̪e atʃʰe"
+    phonetic: "[amar malopot̪r ɡaɽit̪e atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "মালপত্র", ref: "bn-3045" }, { word: "গাড়িতে", ref: "bn-1163" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "ভ্যান", reading: "bhyān", kind: "word" }, { id: "c2", word: "নৌকা", reading: "naukā", kind: "word" }]
+  - id: "bn-3101"
+    target: "আমরা হোস্টেলে থাকব।"
+    reading: "āmorā hosṭele thākob."
+    ipa: "amora ɦosʈele t̪ʰakob"
+    phonetic: "[amora ɦosʈele t̪ʰakob]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "হোস্টেলে", ref: "bn-3060" }, { word: "থাকব", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "হোটেল", reading: "hoṭel", kind: "word" }, { id: "c2", word: "পার্ক", reading: "pārk", kind: "word" }]
+  - id: "bn-3102"
+    target: "ট্রেনের প্রস্থান দশটায়।"
+    reading: "ṭrener prôsthān dôśoṭāy."
+    ipa: "ʈrener prɔst̪ʰan d̪ɔʃoʈaj"
+    phonetic: "[ʈrener prɔst̪ʰan d̪ɔʃoʈaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ট্রেনের", ref: "bn-1164" }, { word: "দশটায়", base: "দশটা", reading: "dôśoṭāy" }]
+    confusables: [{ id: "c1", word: "আগমন", reading: "āgaman", kind: "word" }, { id: "c2", word: "সূচি", reading: "sūci", kind: "word" }]
+  - id: "bn-3103"
+    target: "এখানে সহজে ট্যাক্সি পাওয়া যায়।"
+    reading: "ekhāne sôhoje ṭêksi pāoyā jāy."
+    ipa: "ekʰane sɔɦodʒe ʈæksi paoja dʒaj"
+    phonetic: "[ekʰane sɔɦodʒe ʈæksi paoja dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এখানে", ref: "bn-0311" }, { word: "সহজে", ref: "bn-3093" }, { word: "ট্যাক্সি", ref: "bn-0282" }, { word: "পাওয়া", ref: "bn-0891" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "কঠিন", reading: "kaṭhin", kind: "word" }, { id: "c2", word: "রিকশা", reading: "rikśā", kind: "word" }]
+  - id: "bn-3104"
+    target: "আমি একটা কম্বল বুক করেছি।"
+    reading: "āmi ekoṭā kômbol buk kôrechi."
+    ipa: "ami ekoʈa kɔmbol buk kɔretʃʰi"
+    phonetic: "[ami ekoʈa kɔmbol buk kɔretʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "কম্বল", ref: "bn-3065" }, { word: "বুক", base: "বুক", reading: "buk" }, { word: "করেছি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "জ্যাকেট", reading: "jyākeṭ", kind: "word" }, { id: "c2", word: "তোয়ালে", reading: "toẏāle", kind: "word" }]
+  - id: "bn-3105"
+    target: "সৈকতে অনেক পর্যটক।"
+    reading: "soikote ônek pôrjoṭok."
+    ipa: "soikot̪e ɔnek pɔrdʒoʈok"
+    phonetic: "[soikot̪e ɔnek pɔrdʒoʈok]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সৈকতে", ref: "bn-3049" }, { word: "অনেক", ref: "bn-0550" }, { word: "পর্যটক", ref: "bn-3047" }]
+    confusables: [{ id: "c1", word: "উদ্যান", reading: "udyān", kind: "word" }, { id: "c2", word: "পাহাড়", reading: "pāhāṛ", kind: "word" }]
+  - id: "bn-3106"
+    target: "জাদুঘরের টিকিট কত?"
+    reading: "jādughorer ṭikiṭ kôt?"
+    ipa: "dʒad̪uɡʱorer ʈikiʈ kɔt̪"
+    phonetic: "[dʒad̪uɡʱorer ʈikiʈ kɔt̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "জাদুঘরের", ref: "bn-3070" }, { word: "টিকিট", ref: "bn-0289" }, { word: "কত", ref: "bn-0167" }]
+    confusables: [{ id: "c1", word: "ফটক", reading: "phaṭak", kind: "word" }, { id: "c2", word: "গাইড", reading: "gāiḍ", kind: "word" }]
+  - id: "bn-3107"
+    target: "ট্রেন বাতিল হয়েছে।"
+    reading: "ṭren bātil hôyeche."
+    ipa: "ʈren bat̪il ɦɔjetʃʰe"
+    phonetic: "[ʈren bat̪il ɦɔjetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ট্রেন", ref: "bn-1164" }, { word: "বাতিল", ref: "bn-3081" }, { word: "হয়েছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "দর্শনীয়", reading: "darśanīẏa", kind: "word" }, { id: "c2", word: "নিরাপদ", reading: "nirāpad", kind: "word" }]
+  - id: "bn-3108"
+    target: "আগেভাগে স্টেশনে যাও।"
+    reading: "āgebhāge sṭeśone jāo."
+    ipa: "aɡebʱaɡe sʈeʃone dʒao"
+    phonetic: "[aɡebʱaɡe sʈeʃone dʒao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আগেভাগে", ref: "bn-3096" }, { word: "স্টেশনে", ref: "bn-0288" }, { word: "যাও", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "দেরিতে", reading: "derite", kind: "word" }, { id: "c2", word: "আগাম", reading: "āgām", kind: "word" }]
+  - id: "bn-3109"
+    target: "ভ্রমণসূচিতে তিনটে শহর আছে।"
+    reading: "bhrômonosucite tinoṭe śôhor āche."
+    ipa: "bʱrɔmonosutʃit̪e t̪inoʈe ʃɔɦor atʃʰe"
+    phonetic: "[bʱrɔmonosutʃit̪e t̪inoʈe ʃɔɦor atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ভ্রমণসূচিতে", ref: "bn-3056" }, { word: "তিনটে", base: "তিনটে", reading: "tinoṭe" }, { word: "শহর", ref: "bn-0199" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "মানচিত্র", reading: "mānacitra", kind: "word" }, { id: "c2", word: "সূচি", reading: "sūci", kind: "word" }]

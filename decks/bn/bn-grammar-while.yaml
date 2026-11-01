@@ -1,0 +1,68 @@
+schema: 1
+id: "bn-grammar-while"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["while", "during"]
+  entries:
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "while": "আসতে আসতে", "during": "আসার সময়" }
+      readings: { "while": "āsote āsote", "during": "āsār sômoy" }
+      ipas: { "while": "asot̪e asot̪e", "during": "asar sɔmoj" }
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "while": "যেতে যেতে", "during": "যাওয়ার সময়" }
+      readings: { "while": "jete jete", "during": "jāoyār sômoy" }
+      ipas: { "while": "dʒet̪e dʒet̪e", "during": "dʒaojar sɔmoj" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "while": "খেতে খেতে", "during": "খাওয়ার সময়" }
+      readings: { "while": "khete khete", "during": "khāoyār sômoy" }
+      ipas: { "while": "kʰet̪e kʰet̪e", "during": "kʰaojar sɔmoj" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "while": "করতে করতে", "during": "করার সময়" }
+      readings: { "while": "kôrote kôrote", "during": "kôrār sômoy" }
+      ipas: { "while": "kɔrot̪e kɔrot̪e", "during": "kɔrar sɔmoj" }
+    - lemma: "থাকা"
+      key: "thaka"
+      reading: "thākā"
+      ipa: "t̪ʰaka"
+      forms: { "while": "থাকতে থাকতে", "during": "থাকার সময়" }
+      readings: { "while": "thākote thākote", "during": "thākār sômoy" }
+      ipas: { "while": "t̪ʰakot̪e t̪ʰakot̪e", "during": "t̪ʰakar sɔmoj" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "while": "দেখতে দেখতে", "during": "দেখার সময়" }
+      readings: { "while": "dekhote dekhote", "during": "dekhār sômoy" }
+      ipas: { "while": "d̪ekʰot̪e d̪ekʰot̪e", "during": "d̪ekʰar sɔmoj" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "while": "বলতে বলতে", "during": "বলার সময়" }
+      readings: { "while": "bôlote bôlote", "during": "bôlār sômoy" }
+      ipas: { "while": "bɔlot̪e bɔlot̪e", "during": "bɔlar sɔmoj" }
+    - lemma: "পাওয়া"
+      key: "paoa"
+      reading: "pāoyā"
+      ipa: "paoja"
+      forms: { "while": "পেতে পেতে", "during": "পাওয়ার সময়" }
+      readings: { "while": "pete pete", "during": "pāoyār sômoy" }
+      ipas: { "while": "pet̪e pet̪e", "during": "paojar sɔmoj" }

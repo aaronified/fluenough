@@ -1,0 +1,25 @@
+schema: 1
+id: "bn-en-grammar-passive"
+kind: "layer"
+core: "bn-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "It is done: the passive"
+license: "CC-BY-SA-4.0"
+description: "The passive: the thing done becomes the subject, and the verb is made from the verb's stem with হয় (hôy, is) or হলো (holo, was). Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Passive"
+  slot_name: "form"
+  slots: { "active": "someone does it (the plain verb)", "passive": "it is done (the verb with হয় (hôy), is or was)" }
+  entries:
+    "lekha": "to write"
+    "khaoa": "to eat"
+    "banano": "to make"
+    "pora": "to read"
+    "kena": "to buy"
+    "khola": "to open"
+    "bondho-kora": "to close"
+    "deoa": "to give"
+    "bola": "to say"
+    "shekha": "to learn"
+  notes: "To say that something is done without saying by whom, put the verb's stem with হয় (hôy), it is, or হলো (holo), it was: চিঠিটা লেখা হয় (ciṭṭhiṭā lekhā hôy), the letter is written; চিঠিটা লেখা হলো (ciṭṭhiṭā lekhā holo), the letter was written. The active verb is the one that names the doer: সে চিঠি লেখে (se ciṭṭhi lekhe), she writes a letter. The passive stem is the plain form of the verb, not the 3rd-person ending."

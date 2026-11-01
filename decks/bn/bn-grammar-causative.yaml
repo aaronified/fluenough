@@ -1,0 +1,89 @@
+schema: 1
+id: "bn-grammar-causative"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["simple", "causative"]
+  entries:
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "simple": "খায়", "causative": "খাওয়ায়" }
+      readings: { "simple": "khāy", "causative": "khāoyāy" }
+      ipas: { "simple": "kʰaj", "causative": "kʰaojaj" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "simple": "করে", "causative": "করায়" }
+      readings: { "simple": "kôre", "causative": "kôrāy" }
+      ipas: { "simple": "kɔre", "causative": "kɔraj" }
+    - lemma: "লেখা"
+      key: "lekha"
+      reading: "lekhā"
+      ipa: "lekʰa"
+      forms: { "simple": "লেখে", "causative": "লেখায়" }
+      readings: { "simple": "lekhe", "causative": "lekhāy" }
+      ipas: { "simple": "lekʰe", "causative": "lekʰaj" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "simple": "দেখে", "causative": "দেখায়" }
+      readings: { "simple": "dekhe", "causative": "dekhāy" }
+      ipas: { "simple": "d̪ekʰe", "causative": "d̪ekʰaj" }
+    - lemma: "শোনা"
+      key: "shona"
+      reading: "śonā"
+      ipa: "ʃona"
+      forms: { "simple": "শোনে", "causative": "শোনায়" }
+      readings: { "simple": "śone", "causative": "śonāy" }
+      ipas: { "simple": "ʃone", "causative": "ʃonaj" }
+    - lemma: "পড়া"
+      key: "pora"
+      reading: "pôṛā"
+      ipa: "pɔɽa"
+      forms: { "simple": "পড়ে", "causative": "পড়ায়" }
+      readings: { "simple": "pôṛe", "causative": "pôṛāy" }
+      ipas: { "simple": "pɔɽe", "causative": "pɔɽaj" }
+    - lemma: "বসা"
+      key: "bosa"
+      reading: "bôsā"
+      ipa: "bɔsa"
+      forms: { "simple": "বসে", "causative": "বসায়" }
+      readings: { "simple": "bôse", "causative": "bôsāy" }
+      ipas: { "simple": "bɔse", "causative": "bɔsaj" }
+    - lemma: "ওঠা"
+      key: "otha"
+      reading: "oṭhā"
+      ipa: "oʈʰa"
+      forms: { "simple": "ওঠে", "causative": "ওঠায়" }
+      readings: { "simple": "oṭhe", "causative": "oṭhāy" }
+      ipas: { "simple": "oʈʰe", "causative": "oʈʰaj" }
+    - lemma: "কেনা"
+      key: "kena"
+      reading: "kenā"
+      ipa: "kena"
+      forms: { "simple": "কেনে", "causative": "কেনায়" }
+      readings: { "simple": "kene", "causative": "kenāy" }
+      ipas: { "simple": "kene", "causative": "kenaj" }
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "simple": "যায়", "causative": "যাওয়ায়" }
+      readings: { "simple": "jāy", "causative": "jāoyāy" }
+      ipas: { "simple": "dʒaj", "causative": "dʒaojaj" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "simple": "বলে", "causative": "বলায়" }
+      readings: { "simple": "bôle", "causative": "bôlāy" }
+      ipas: { "simple": "bɔle", "causative": "bɔlaj" }

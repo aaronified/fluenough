@@ -1,0 +1,82 @@
+schema: 1
+id: "bn-grammar-passive"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["active", "passive"]
+  entries:
+    - lemma: "লেখা"
+      key: "lekha"
+      reading: "lekhā"
+      ipa: "lekʰa"
+      forms: { "active": "লেখে", "passive": "লেখা হয়" }
+      readings: { "active": "lekhe", "passive": "lekhā hôy" }
+      ipas: { "active": "lekʰe", "passive": "lekʰa ɦɔj" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "active": "খায়", "passive": "খাওয়া হয়" }
+      readings: { "active": "khāy", "passive": "khāoyā hôy" }
+      ipas: { "active": "kʰaj", "passive": "kʰaoja ɦɔj" }
+    - lemma: "বানানো"
+      key: "banano"
+      reading: "bānāno"
+      ipa: "banano"
+      forms: { "active": "বানায়", "passive": "বানানো হয়" }
+      readings: { "active": "bānāy", "passive": "bānāno hôy" }
+      ipas: { "active": "banaj", "passive": "banano ɦɔj" }
+    - lemma: "পড়া"
+      key: "pora"
+      reading: "pôṛā"
+      ipa: "pɔɽa"
+      forms: { "active": "পড়ে", "passive": "পড়া হয়" }
+      readings: { "active": "pôṛe", "passive": "pôṛā hôy" }
+      ipas: { "active": "pɔɽe", "passive": "pɔɽa ɦɔj" }
+    - lemma: "কেনা"
+      key: "kena"
+      reading: "kenā"
+      ipa: "kena"
+      forms: { "active": "কেনে", "passive": "কেনা হয়" }
+      readings: { "active": "kene", "passive": "kenā hôy" }
+      ipas: { "active": "kene", "passive": "kena ɦɔj" }
+    - lemma: "খোলা"
+      key: "khola"
+      reading: "kholā"
+      ipa: "kʰola"
+      forms: { "active": "খোলে", "passive": "খোলা হয়" }
+      readings: { "active": "khole", "passive": "kholā hôy" }
+      ipas: { "active": "kʰole", "passive": "kʰola ɦɔj" }
+    - lemma: "বন্ধ করা"
+      key: "bondho-kora"
+      reading: "bôndh kôrā"
+      ipa: "bɔnd̪ʱ kɔra"
+      forms: { "active": "বন্ধ করে", "passive": "বন্ধ করা হয়" }
+      readings: { "active": "bôndh kôre", "passive": "bôndh kôrā hôy" }
+      ipas: { "active": "bɔnd̪ʱ kɔre", "passive": "bɔnd̪ʱ kɔra ɦɔj" }
+    - lemma: "দেওয়া"
+      key: "deoa"
+      reading: "deoyā"
+      ipa: "d̪eoja"
+      forms: { "active": "দেয়", "passive": "দেওয়া হয়" }
+      readings: { "active": "dey", "passive": "deoyā hôy" }
+      ipas: { "active": "d̪ej", "passive": "d̪eoja ɦɔj" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "active": "বলে", "passive": "বলা হয়" }
+      readings: { "active": "bôle", "passive": "bôlā hôy" }
+      ipas: { "active": "bɔle", "passive": "bɔla ɦɔj" }
+    - lemma: "শেখা"
+      key: "shekha"
+      reading: "śekhā"
+      ipa: "ʃekʰa"
+      forms: { "active": "শেখে", "passive": "শেখা হয়" }
+      readings: { "active": "śekhe", "passive": "śekhā hôy" }
+      ipas: { "active": "ʃekʰe", "passive": "ʃekʰa ɦɔj" }

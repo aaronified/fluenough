@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-feelings"
+name: "Reading: feelings"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A friend's hard week, and a letter about worries and hopes, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-hard-week"
+    title: "A hard week"
+    theme: "feelings"
+    sentences:
+      - { text: "এই সপ্তাহটা খুব কঠিন গেছে।", reading: "ei sôptāhoṭā khub koṭhin geche.", ipa: "ei sɔpt̪aɦoʈa kʰub koʈʰin ɡetʃʰe" }
+      - { text: "কাজে চাপ বেশি, আর মনটা ভালো নেই।", reading: "kāje cāp beśi, ār mônoṭā bhālo nei.", ipa: "kadʒe tʃap beʃi ar mɔnoʈa bʱalo nei" }
+      - { text: "আমি প্রায়ই চিন্তিত থাকি।", reading: "āmi prāyoi cintit thāki.", ipa: "ami prajoi tʃint̪it̪ t̪ʰaki" }
+      - { text: "কিন্তু বন্ধুরা আমার পাশে আছে।", reading: "kintu bondhurā āmār pāśe āche.", ipa: "kint̪u bond̪ʱura amar paʃe atʃʰe" }
+      - { text: "তাদের সঙ্গে কথা বললে স্বস্তি পাই।", reading: "tāder sôṅge kôthā bôlole sosti pāi.", ipa: "t̪ad̪er sɔŋɡe kɔt̪ʰa bɔlole sost̪i pai" }
+    questions:
+      - id: "bn-2878"
+        prompt: { "en": "The writer has had an easy week." }
+        answer: false
+      - id: "bn-2879"
+        prompt: { "en": "What does the writer often feel?" }
+        options: [{ "en": "Worried" }, { "en": "Bored" }]
+        answer: 1
+      - id: "bn-2880"
+        prompt: { "en": "What helps the writer?" }
+        options: [{ "en": "Talking with friends" }, { "en": "Working more" }]
+        answer: 1
+  - id: "bn-letter-to-a-friend"
+    title: "A letter to a friend"
+    theme: "feelings"
+    sentences:
+      - { text: "প্রিয় রিনা,", reading: "priy rinā,", ipa: "prij rina" }
+      - { text: "তোমাকে খুব মিস করছি।", reading: "tomāke khub mis kôrochi.", ipa: "t̪omake kʰub mis kɔrotʃʰi" }
+      - { text: "আমার আশা, তুমি ভালো আছ।", reading: "āmār āśā, tumi bhālo āch.", ipa: "amar aʃa t̪umi bʱalo atʃʰ" }
+      - { text: "এখানে অনেক স্মৃতি আর একটু উদ্বেগ আছে।", reading: "ekhāne ônek smriti ār ekoṭu uddeg āche.", ipa: "ekʰane ɔnek smrit̪i ar ekoʈu ud̪d̪eɡ atʃʰe" }
+      - { text: "তোমার খবর পেলে আমার স্বস্তি হবে।", reading: "tomār khôbor pele āmār sosti hôbe.", ipa: "t̪omar kʰɔbor pele amar sost̪i ɦɔbe" }
+    questions:
+      - id: "bn-2881"
+        prompt: { "en": "The writer misses the friend." }
+        answer: true
+      - id: "bn-2882"
+        prompt: { "en": "What is the writer's hope?" }
+        options: [{ "en": "That the friend is well" }, { "en": "That the friend is angry" }]
+        answer: 1
+      - id: "bn-2883"
+        prompt: { "en": "What would bring the writer relief?" }
+        options: [{ "en": "News from the friend" }, { "en": "A new job" }]
+        answer: 1

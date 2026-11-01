@@ -1,0 +1,290 @@
+schema: 1
+id: "bn-en-government"
+kind: "layer"
+core: "bn-government"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government"
+description: "How a country and its towns are run: ministers, parliament, elections, laws and taxes. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3177":
+    native: "minister"
+    notes:
+      "n1": "{1}: A minister: a member of the government who runs a department."
+    examples:
+      "মন্ত্রী আজ আসবেন।": { native: "The minister will come today.", bases: { "আজ": "today" } }
+      "মন্ত্রীর সঙ্গে কথা বলো।": { native: "Talk to the minister. (familiar)", bases: { "মন্ত্রীর": "minister", "সঙ্গে": "with" } }
+  "bn-3178":
+    native: "parliament"
+    notes:
+      "n1": "{1}: Parliament: the body of elected people who make the laws."
+    examples:
+      "সংসদে নতুন আইন এসেছে।": { native: "A new law has come to parliament.", bases: { "সংসদে": "parliament" } }
+      "সংসদের অধিবেশন শুরু হলো।": { native: "The session of parliament has started.", bases: { "সংসদের": "parliament", "অধিবেশন": "session", "শুরু": "started" } }
+  "bn-3179":
+    native: "vote"
+    notes:
+      "n1": "{1}: A vote: a choice made by people at an election."
+    examples:
+      "আমি প্রথমবার ভোট দিলাম।": { native: "I voted for the first time.", bases: { "প্রথমবার": "for the first time" } }
+      "ভোটের দিন ছুটি।": { native: "A holiday on polling day.", bases: { "ভোটের": "vote" } }
+  "bn-3180":
+    native: "law"
+    notes:
+      "n1": "{1}: A law: a rule that all people must obey."
+    examples:
+      "আইন সবার জন্য।": { native: "The law is for everyone.", bases: { "সবার": "of everyone", "জন্য": "for" } }
+      "আইন না মানলে শাস্তি হয়।": { native: "If you do not obey the law, there is a punishment.", bases: { "আইন": "law", "মানলে": "obeying", "শাস্তি": "punishment" } }
+  "bn-3181":
+    native: "judge"
+    notes:
+      "n1": "{1}: A judge: the person who decides a case in court."
+    examples:
+      "বিচারক রায় দিয়েছেন।": { native: "The judge has given the verdict.", bases: { "রায়": "verdict" } }
+      "বিচারকের সামনে যাও।": { native: "Go in front of the judge. (familiar)", bases: { "বিচারকের": "judge", "সামনে": "in front" } }
+  "bn-3182":
+    native: "politics"
+    notes:
+      "n1": "{1}: Politics: the work of running a country and its parties."
+    examples:
+      "রাজনীতি নিয়ে কথা হচ্ছে।": { native: "They are talking about politics.", bases: { "নিয়ে": "about" } }
+      "রাজনীতি আমার পছন্দ না।": { native: "I do not like politics.", bases: { "না": "not" } }
+  "bn-3183":
+    native: "leader"
+    notes:
+      "n1": "{1}: A leader: a person who leads a group or a party."
+    examples:
+      "দলের নেতা এসেছেন।": { native: "The leader of the party has come.", bases: { "দলের": "of the party" } }
+      "নেতাকে প্রশ্ন করো।": { native: "Ask the leader a question. (familiar)", bases: { "নেতাকে": "leader" } }
+  "bn-3184":
+    native: "policy"
+    notes:
+      "n1": "{1}: A policy: a plan of action a government follows."
+    examples:
+      "নতুন নীতি ভালো।": "The new policy is good."
+      "নীতিটা বদলানো হবে।": { native: "The policy will be changed.", bases: { "নীতিটা": "policy", "বদলানো": "changed" } }
+  "bn-3185":
+    native: "tax"
+    notes:
+      "n1": "{1}: A tax: money paid to the government from income or goods."
+    examples:
+      "কর বেড়েছে।": { native: "Tax has gone up.", bases: { "বেড়েছে": "gone up" } }
+      "করের হার কত?": { native: "What is the rate of tax?", bases: { "করের": "tax", "হার": "rate" } }
+  "bn-3186":
+    native: "municipality"
+    notes:
+      "n1": "{1}: A municipality: the local government of a town."
+    examples:
+      "পৌরসভা রাস্তা ঠিক করছে।": { native: "The municipality is repairing the road.", bases: { "ঠিক": "right" } }
+      "পৌরসভার অফিস কোথায়?": { native: "Where is the municipality office?", bases: { "পৌরসভার": "municipality" } }
+  "bn-3187":
+    native: "council"
+    notes:
+      "n1": "{1}: A council: a group of people who advise or govern."
+    examples:
+      "গ্রামের পরিষদ সভা করেছে।": "The village council has held a meeting."
+      "পরিষদের সদস্য এসেছেন।": { native: "A member of the council has come.", bases: { "পরিষদের": "council", "সদস্য": "member" } }
+  "bn-3188":
+    native: "mayor"
+    notes:
+      "n1": "{1}: A mayor: the elected head of a city."
+    examples:
+      "মেয়র শহরে এসেছেন।": "The mayor has come to the town."
+      "মেয়রের বক্তব্য শুনলাম।": { native: "I heard the mayor's speech.", bases: { "মেয়রের": "mayor", "বক্তব্য": "speech", "শুনলাম": "heard" } }
+  "bn-3189":
+    native: "governor"
+    notes:
+      "n1": "{1}: A governor: the head of a state's government."
+    examples:
+      "রাজ্যপাল আজ আসবেন।": { native: "The governor will come today.", bases: { "আজ": "today" } }
+      "রাজ্যপালের বাড়ি বড়।": { native: "The governor's house is big.", bases: { "রাজ্যপালের": "governor" } }
+  "bn-3190":
+    native: "prime minister"
+    notes:
+      "n1": "{1}: The prime minister: the head of the government."
+    examples:
+      "প্রধানমন্ত্রী একটা ঘোষণা দিয়েছেন।": { native: "The prime minister has made an announcement.", bases: { "ঘোষণা": "announcement" } }
+      "প্রধানমন্ত্রীর কথা শুনছি।": { native: "I am listening to the prime minister's words.", bases: { "প্রধানমন্ত্রীর": "prime minister", "শুনছি": "listening" } }
+  "bn-3191":
+    native: "president"
+    notes:
+      "n1": "{1}: The president: the head of state of a country."
+    examples:
+      "রাষ্ট্রপতি অনুষ্ঠানে এসেছেন।": { native: "The president has come to the event.", bases: { "অনুষ্ঠানে": "to the event" } }
+      "রাষ্ট্রপতিকে সম্মান জানাও।": { native: "Show respect to the president. (familiar)", bases: { "রাষ্ট্রপতিকে": "president", "সম্মান": "respect", "জানাও": "show" } }
+  "bn-3192":
+    native: "constitution"
+    notes:
+      "n1": "{1}: A constitution: the basic law of a country."
+    examples:
+      "সংবিধান সবার জন্য লেখা।": { native: "The constitution is written for everyone.", bases: { "সবার": "of everyone", "জন্য": "for", "লেখা": "written" } }
+      "সংবিধানে অধিকার আছে।": { native: "There are rights in the constitution.", bases: { "সংবিধানে": "constitution", "আছে": "there are" } }
+  "bn-3193":
+    native: "right"
+    notes:
+      "n1": "{1}: A right: something a person is allowed to have or do."
+    examples:
+      "প্রতিটি মানুষের অধিকার আছে।": { native: "Every person has rights.", bases: { "প্রতিটি": "every", "মানুষের": "of a person", "আছে": "has" } }
+      "অধিকারের জন্য লড়াই।": { native: "A fight for rights.", bases: { "অধিকারের": "right", "জন্য": "for", "লড়াই": "fight" } }
+  "bn-3194":
+    native: "duty"
+    notes:
+      "n1": "{1}: A duty: something a person must do."
+    examples:
+      "নাগরিকের কর্তব্য ভোট দেওয়া।": "A citizen's duty is to vote."
+      "কর্তব্য ভুলো না।": { native: "Do not forget your duty. (familiar)", bases: { "কর্তব্য": "duty", "ভুলো": "forget", "না": "not" } }
+  "bn-3195":
+    native: "freedom"
+    notes:
+      "n1": "{1}: Freedom: being free to act and speak."
+    examples:
+      "স্বাধীনতা সবার চাওয়া।": { native: "Freedom is what everyone wants.", bases: { "সবার": "of everyone" } }
+      "কথা বলার স্বাধীনতা আছে।": { native: "There is freedom of speech.", bases: { "বলার": "of speaking", "আছে": "there is" } }
+  "bn-3196":
+    native: "census"
+    notes:
+      "n1": "{1}: A census: a count of all the people in a country."
+    examples:
+      "জনগণনা হচ্ছে।": "The census is being taken."
+      "জনগণনার ফর্ম কোথায়?": { native: "Where is the census form?", bases: { "জনগণনার": "census" } }
+  "bn-3197":
+    native: "oath"
+    notes:
+      "n1": "{1}: An oath: a solemn promise, often taken at office."
+    examples:
+      "শপথ নেওয়ার দিন আজ।": { native: "Today is the day of taking the oath.", bases: { "আজ": "today" } }
+      "শপথের কথা মনে রেখো।": { native: "Remember the words of the oath. (familiar)", bases: { "শপথের": "oath" } }
+  "bn-3198":
+    native: "legislature"
+    notes:
+      "n1": "{1}: A legislature: the body that makes laws."
+    examples:
+      "আইনসভা নতুন আইন পাস করেছে।": "The legislature has passed a new law."
+      "আইনসভার বৈঠক আজ।": { native: "The legislature meets today.", bases: { "আইনসভার": "legislature", "বৈঠক": "meeting", "আজ": "today" } }
+  "bn-3199":
+    native: "society"
+    notes:
+      "n1": "{1}: Society: the people living together in a community."
+    examples:
+      "সমাজে অনেক মানুষ।": { native: "There are many people in society.", bases: { "সমাজে": "society", "মানুষ": "people" } }
+      "সমাজের উন্নতি দরকার।": { native: "Society needs to improve.", bases: { "সমাজের": "society", "উন্নতি": "improvement" } }
+  "bn-3200":
+    native: "state"
+    notes:
+      "n1": "{1}: A state: a country with its own government."
+    examples:
+      "রাষ্ট্রটা নতুন।": { native: "The state is new.", bases: { "রাষ্ট্রটা": "state" } }
+      "রাষ্ট্র নাগরিককে রক্ষা করে।": { native: "The state protects its citizens.", bases: { "রক্ষা": "protection" } }
+  "bn-3201":
+    native: "political party"
+    notes:
+      "n1": "{1}: A political party: a group that seeks power through elections."
+    examples:
+      "কোন পার্টিতে যাবে?": { native: "Which party will you join?", bases: { "কোন": "which", "পার্টিতে": "to the party" } }
+      "পার্টির সভা কাল।": { native: "The party meeting is tomorrow.", bases: { "পার্টির": "political party", "কাল": "tomorrow" } }
+  "bn-3202":
+    native: "candidate"
+    notes:
+      "n1": "{1}: A candidate: a person standing for election."
+    examples:
+      "প্রার্থী অনেক।": "There are many candidates."
+      "প্রার্থীর নাম কী?": { native: "What is the candidate's name?", bases: { "প্রার্থীর": "candidate", "নাম": "name", "কী": "what" } }
+  "bn-3203":
+    native: "voter"
+    notes:
+      "n1": "{1}: A voter: a person who has the right to vote."
+    examples:
+      "ভোটার তালিকায় আমার নাম আছে।": { native: "My name is on the voters' list.", bases: { "তালিকায়": "on the list", "নাম": "name", "আছে": "is" } }
+      "ভোটারদের লাইন বড়।": { native: "The line of voters is long.", bases: { "ভোটারদের": "voter" } }
+  "bn-3204":
+    native: "court case"
+    notes:
+      "n1": "{1}: A court case: a legal action taken before a judge."
+    examples:
+      "মামলাটা আদালতে আছে।": { native: "The case is in court.", bases: { "মামলাটা": "court case", "আছে": "is" } }
+      "মামলা করা সহজ না।": { native: "Filing a case is not easy.", bases: { "মামলা": "court case", "সহজ": "easy", "না": "not" } }
+  "bn-3205":
+    native: "elected"
+    notes:
+      "n1": "{1}: Elected: chosen by a vote."
+    examples:
+      "নির্বাচিত মেয়র কাজ শুরু করেছেন।": { native: "The elected mayor has begun work.", bases: { "শুরু": "begun" } }
+      "নির্বাচিত প্রতিনিধি এসেছেন।": { native: "The elected representative has come.", bases: { "প্রতিনিধি": "representative" } }
+  "bn-3206":
+    native: "governmental"
+    notes:
+      "n1": "{1}: Governmental: of or run by the government."
+    examples:
+      "এটা সরকারি অফিস।": "This is a government office."
+      "সরকারি কাজ ধীরে হয়।": { native: "Government work is slow.", bases: { "ধীরে": "slowly" } }
+  "bn-3207":
+    native: "political"
+    notes:
+      "n1": "{1}: Political: of politics."
+    examples:
+      "এটা একটা রাজনৈতিক প্রশ্ন।": "This is a political question."
+      "রাজনৈতিক দল নতুন নীতি আনছে।": { native: "The political party is bringing a new policy.", bases: { "দল": "party", "আনছে": "bringing" } }
+  "bn-3208":
+    native: "administrative"
+    notes:
+      "n1": "{1}: Administrative: of running an office or a government."
+    examples:
+      "প্রশাসনিক কাজ শেষ।": { native: "The administrative work is finished.", bases: { "শেষ": "finished" } }
+      "এটা একটা প্রশাসনিক ভুল।": "This is an administrative mistake."
+  "bn-3209":
+    native: "to vote"
+    notes:
+      "n1": "{1}: To vote: to make your choice at an election."
+    examples:
+      "আমি ভোট দিয়েছি।": "I have voted."
+      "সবাই ভোট দাও।": { native: "Everyone, vote. (familiar)", bases: { "সবাই": "everyone" } }
+  "bn-3210":
+    native: "to be elected"
+    notes:
+      "n1": "{1}: To be elected: to be chosen by a vote."
+    examples:
+      "তিনি নির্বাচিত হয়েছেন।": { native: "He has been elected.", bases: { "তিনি": "he (formal)" } }
+      "নির্বাচিত হলে কাজ করবেন।": "If elected, he will work."
+  "bn-3211":
+    native: "to take an oath"
+    notes:
+      "n1": "{1}: To take an oath: to make a solemn promise at office."
+    examples:
+      "মন্ত্রী শপথ নিয়েছেন।": "The minister has taken the oath."
+      "শপথ নিতে এসো।": "Come to take the oath. (familiar)"
+  "bn-3212":
+    native: "to pass a law"
+    notes:
+      "n1": "{1}: To pass a law: to approve a law in parliament."
+    examples:
+      "সংসদ নতুন আইন পাস করেছে।": "Parliament has passed a new law."
+      "আইনটা পাস করা হবে।": "The law will be passed."
+  "bn-3213":
+    native: "to pay tax"
+    notes:
+      "n1": "{1}: To pay tax: to pay the government tax."
+    examples:
+      "সবাই কর দেয়।": { native: "Everyone pays tax.", bases: { "সবাই": "everyone" } }
+      "কর দিতে ভুলো না।": { native: "Do not forget to pay tax. (familiar)", bases: { "ভুলো": "forget", "না": "not" } }
+  "bn-3214":
+    native: "to file a case"
+    notes:
+      "n1": "{1}: To file a case: to take legal action in court."
+    examples:
+      "সে মামলা করেছে।": "She has filed a case."
+      "মামলা করার আগে ভাবো।": { native: "Think before filing a case. (familiar)", bases: { "ভাবো": "think" } }
+  "bn-3215":
+    native: "officially"
+    notes:
+      "n1": "{1}: Officially: by the government."
+    examples:
+      "এটা সরকারিভাবে ঘোষণা হয়েছে।": { native: "This has been officially announced.", bases: { "ঘোষণা": "announced" } }
+      "সরকারিভাবে কিছু জানানো হয়নি।": { native: "Nothing has been announced officially.", bases: { "কিছু": "anything", "জানানো": "announced" } }
+  "bn-3216":
+    native: "legally"
+    notes:
+      "n1": "{1}: Legally: according to the law."
+    examples:
+      "এটা আইনত ঠিক।": { native: "This is legally correct.", bases: { "ঠিক": "correct" } }
+      "আইনত তোমার অধিকার আছে।": { native: "You legally have the right.", bases: { "আছে": "have" } }

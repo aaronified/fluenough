@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-literature"
+name: "Reading: literature"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A teacher reads a short poem and explains it, and the back-cover blurb of a novel, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-poem-read-aloud"
+    title: "A teacher reads a short poem and explains it"
+    theme: "literature"
+    sentences:
+      - { text: "আজ শিক্ষক একটা ছোট কবিতা আবৃত্তি করলেন।", reading: "āj śikkhok ekoṭā choṭ kobitā ābritti kôrolen.", ipa: "adʒ ʃikkʰok ekoʈa tʃʰoʈ kobit̪a abrit̪t̪i kɔrolen" }
+      - { text: "কবিতায় সন্ধ্যার আকাশ আর পাখিরা ফিরছে।", reading: "kobitāy sônddhār ākāś ār pākhirā phiroche.", ipa: "kobit̪aj sɔnd̪d̪ʱar akaʃ ar pakʰira pʰirotʃʰe" }
+      - { text: "কবি সুন্দর উপমায় গ্রামের নদীকে বর্ণনা করেছেন।", reading: "kobi sundor upomāy grāmer nodike bôrnonā kôrechen.", ipa: "kobi sund̪or upomaj ɡramer nod̪ike bɔrnona kɔretʃʰen" }
+      - { text: "শিক্ষক বললেন, ছন্দটা শুনে দেখো।", reading: "śikkhok bôlolen, chôndoṭā śune dekho.", ipa: "ʃikkʰok bɔlolen tʃʰɔnd̪oʈa ʃune d̪ekʰo" }
+      - { text: "আমরা সবাই কবিতাটা মুখস্থ করলাম।", reading: "āmorā sôbāi kobitāṭā mukhosth kôrolām.", ipa: "amora sɔbai kobit̪aʈa mukʰost̪ʰ kɔrolam" }
+    questions:
+      - id: "bn-4458"
+        prompt: { "en": "The teacher reads a poem about evening." }
+        answer: true
+      - id: "bn-4459"
+        prompt: { "en": "What comes back to the sky in the poem?" }
+        options: [{ "en": "Birds" }, { "en": "Trains" }]
+        answer: 1
+      - id: "bn-4460"
+        prompt: { "en": "What did the class do with the poem?" }
+        options: [{ "en": "They learnt it by heart" }, { "en": "They burned it" }]
+        answer: 1
+  - id: "bn-book-blurb"
+    title: "The back-cover blurb of a novel"
+    theme: "literature"
+    sentences:
+      - { text: "এই উপন্যাসে এক গ্রামের মেয়ের গল্প বলা হয়েছে।", reading: "ei uponnāse ek grāmer meyer gôlp bôlā hôyeche.", ipa: "ei uponnase ek ɡramer mejer ɡɔlp bɔla ɦɔjetʃʰe" }
+      - { text: "তার জীবনের সংগ্রাম আর ভালোবাসার কাহিনি এখানে আছে।", reading: "tār jiboner sôṅgrām ār bhālobāsār kāhini ekhāne āche.", ipa: "t̪ar dʒiboner sɔŋɡram ar bʱalobasar kaɦini ekʰane atʃʰe" }
+      - { text: "একটি খলনায়ক তার পথে বাধা হয়ে দাঁড়ায়।", reading: "ekoṭi khôlonāyok tār pôthe bādhā hôye dām̐ṛāy.", ipa: "ekoʈi kʰɔlonajok t̪ar pɔt̪ʰe bad̪ʱa ɦɔje d̪ãɽaj" }
+      - { text: "শেষে গল্পটা এক সুখের মিলনে শেষ হয়।", reading: "śeśe gôlpoṭā ek sukher milone śeś hôy.", ipa: "ʃeʃe ɡɔlpoʈa ek sukʰer milone ʃeʃ ɦɔj" }
+      - { text: "বইটির ভূমিকা লিখেছেন একজন বিখ্যাত ঔপন্যাসিক।", reading: "boiṭir bhumikā likhechen ekojon bikkhāt ouponnāsik.", ipa: "boiʈir bʱumika likʰetʃʰen ekodʒon bikkʰat̪ ouponnasik" }
+    questions:
+      - id: "bn-4461"
+        prompt: { "en": "The novel tells the story of a village girl." }
+        answer: true
+      - id: "bn-4462"
+        prompt: { "en": "Who writes the preface of the book?" }
+        options: [{ "en": "A famous novelist" }, { "en": "The publisher" }]
+        answer: 1
+      - id: "bn-4463"
+        prompt: { "en": "How does the story end?" }
+        options: [{ "en": "In a happy union" }, { "en": "In sorrow" }]
+        answer: 1

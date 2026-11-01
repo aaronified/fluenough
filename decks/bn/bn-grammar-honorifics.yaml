@@ -1,0 +1,82 @@
+schema: 1
+id: "bn-grammar-honorifics"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["intimate", "familiar", "respectful"]
+  entries:
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "intimate": "যা", "familiar": "যাও", "respectful": "যান" }
+      readings: { "intimate": "jā", "familiar": "jāo", "respectful": "jān" }
+      ipas: { "intimate": "dʒa", "familiar": "dʒao", "respectful": "dʒan" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "intimate": "খা", "familiar": "খাও", "respectful": "খান" }
+      readings: { "intimate": "khā", "familiar": "khāo", "respectful": "khān" }
+      ipas: { "intimate": "kʰa", "familiar": "kʰao", "respectful": "kʰan" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "intimate": "বল", "familiar": "বলো", "respectful": "বলুন" }
+      readings: { "intimate": "bôl", "familiar": "bôlo", "respectful": "bolun" }
+      ipas: { "intimate": "bɔl", "familiar": "bɔlo", "respectful": "bolun" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "intimate": "দেখ", "familiar": "দেখো", "respectful": "দেখুন" }
+      readings: { "intimate": "dekh", "familiar": "dekho", "respectful": "dekhun" }
+      ipas: { "intimate": "d̪ekʰ", "familiar": "d̪ekʰo", "respectful": "d̪ekʰun" }
+    - lemma: "বসা"
+      key: "bosa"
+      reading: "bôsā"
+      ipa: "bɔsa"
+      forms: { "intimate": "বস", "familiar": "বসো", "respectful": "বসুন" }
+      readings: { "intimate": "bôs", "familiar": "bôso", "respectful": "bosun" }
+      ipas: { "intimate": "bɔs", "familiar": "bɔso", "respectful": "bosun" }
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "intimate": "আয়", "familiar": "এসো", "respectful": "আসুন" }
+      readings: { "intimate": "āy", "familiar": "eso", "respectful": "āsun" }
+      ipas: { "intimate": "aj", "familiar": "eso", "respectful": "asun" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "intimate": "কর", "familiar": "করো", "respectful": "করুন" }
+      readings: { "intimate": "kôr", "familiar": "kôro", "respectful": "korun" }
+      ipas: { "intimate": "kɔr", "familiar": "kɔro", "respectful": "korun" }
+    - lemma: "শোনা"
+      key: "shona"
+      reading: "śonā"
+      ipa: "ʃona"
+      forms: { "intimate": "শোন", "familiar": "শোনো", "respectful": "শুনুন" }
+      readings: { "intimate": "śon", "familiar": "śono", "respectful": "śunun" }
+      ipas: { "intimate": "ʃon", "familiar": "ʃono", "respectful": "ʃunun" }
+    - lemma: "লেখা"
+      key: "lekha"
+      reading: "lekhā"
+      ipa: "lekʰa"
+      forms: { "intimate": "লেখ", "familiar": "লেখো", "respectful": "লিখুন" }
+      readings: { "intimate": "lekh", "familiar": "lekho", "respectful": "likhun" }
+      ipas: { "intimate": "lekʰ", "familiar": "lekʰo", "respectful": "likʰun" }
+    - lemma: "পড়া"
+      key: "pora"
+      reading: "pôṛā"
+      ipa: "pɔɽa"
+      forms: { "intimate": "পড়", "familiar": "পড়ো", "respectful": "পড়ুন" }
+      readings: { "intimate": "pôṛ", "familiar": "pôṛo", "respectful": "poṛun" }
+      ipas: { "intimate": "pɔɽ", "familiar": "pɔɽo", "respectful": "poɽun" }

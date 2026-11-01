@@ -1,0 +1,45 @@
+schema: 1
+id: "bn-en-adjectives-2-sentences"
+kind: "layer"
+core: "bn-adjectives-2-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More describing words: sentences"
+description: "Short sentences about a room and its things. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2604":
+    native: "This room is very bright."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "the clock: a thing, not a room" }, "c2": { why: "the door: a thing you go through, not the room" } }
+  "bn-2605":
+    native: "There is a picture on the wall."
+    bases: { "আছে": "there is" }
+    confusables: { "c1": { why: "a book: it is held, it does not hang on a wall" }, "c2": { why: "a notebook: a school thing, not one for a wall" } }
+  "bn-2606":
+    native: "The bed is comfortable, but small."
+    bases: { "তবে": "but" }
+    confusables: { "c1": { why: "big: the opposite size, not the point here" }, "c2": { why: "soft: a feel, not a size" } }
+  "bn-2607":
+    native: "The cupboard is dusty."
+    confusables: { "c1": { why: "a chair: a thing to sit on, not a cupboard" }, "c2": { why: "a table: a flat top, not a cupboard" } }
+  "bn-2608":
+    native: "The room is crammed, there is no place to sit."
+    bases: { "জায়গা": "place", "নেই": "there is not" }
+    confusables: { "c1": { why: "free: open and clear, the opposite of crammed" }, "c2": { why: "empty of everything: a room with nothing in it" } }
+  "bn-2609":
+    native: "The landlord rents out the room."
+    confusables: { "c1": { why: "takes: the opposite side of the deal, not the one who lets" }, "c2": { why: "eats: a meal, not a rent" } }
+  "bn-2610":
+    native: "The ceiling fan is loose."
+    confusables: { "c1": { why: "of the wall: where a clock hangs, not the ceiling" }, "c2": { why: "of the window: a different fixture" } }
+  "bn-2611":
+    native: "Fix the latch on the door."
+    bases: { "লাগাও": "to fix on" }
+    confusables: { "c1": { why: "tie: fasten with a cord, not a latch" }, "c2": { why: "open: the opposite of fixing shut" } }
+  "bn-2612":
+    native: "Light comes in through the opening."
+    confusables: { "c1": { why: "goes away: the opposite movement" }, "c2": { why: "eats: not a movement of light" } }
+  "bn-2613":
+    native: "The carpet on the floor is very old."
+    confusables: { "c1": { why: "the floor itself, not the carpet on it" }, "c2": { why: "a rug: a smaller floor covering, not a fitted carpet" } }
