@@ -95,7 +95,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Son mari est professeur.", ipa: "sɔ̃ maʁi ɛ pʁɔfesœʁ", bases: [{ word: "Son", ref: "fr-0138" }, { word: "mari", base: "mari" }, { word: "est", ref: "fr-0021" }, { word: "professeur", ref: "fr-0105" }] }
-      - { target: "Le mari de Marie aime le vin.", ipa: "lə maʁi də maʁi ɛm lə vɛ̃", bases: [{ word: "Le", base: "le" }, { word: "mari", base: "mari" }, { word: "de", base: "de" }, { word: "Marie", base: "Marie" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "vin", ref: "fr-0035" }] }
+      - { target: "Le mari de Marie aime le vin.", ipa: "lə maʁi də maʁi ɛm lə vɛ̃", bases: [{ word: "Le", base: "le" }, { word: "mari", base: "mari" }, { word: "de", base: "de" }, { word: "Marie", base: "Marie" }, { word: "aime", base: "aimer" }, { word: "vin", ref: "fr-0035" }] }
   - id: "fr-0172"
     target: "femme"
     ipa: "fam"
@@ -125,10 +125,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "grand", base: "grand" }, { word: "père", ref: "fr-0165" }]
     examples:
-      - { target: "Mon grand-père est vieux.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ vjø", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand-père", base: "grand-père" }, { word: "est", ref: "fr-0021" }, { word: "vieux", ref: "fr-0109" }] }
-      - { target: "Le grand-père parle lentement.", ipa: "lə ɡʁɑ̃pɛʁ paʁl lɑ̃tmɑ̃", bases: [{ word: "Le", base: "le" }, { word: "grand-père", base: "grand-père" }, { word: "parle", ref: "fr-0023" }, { word: "lentement", base: "lentement" }] }
+      - { target: "Mon grand-père est vieux.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ vjø", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand", base: "grand" }, { word: "père", ref: "fr-0165" }, { word: "est", ref: "fr-0021" }, { word: "vieux", ref: "fr-0109" }] }
+      - { target: "Le grand-père parle lentement.", ipa: "lə ɡʁɑ̃pɛʁ paʁl lɑ̃tmɑ̃", bases: [{ word: "Le", base: "le" }, { word: "grand", base: "grand" }, { word: "père", ref: "fr-0165" }, { word: "parle", ref: "fr-0023" }, { word: "lentement", base: "lentement" }] }
   - id: "fr-0175"
     target: "grand-mère"
     ipa: "ɡʁɑ̃mɛʁ"
@@ -136,10 +136,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "grand", base: "grand" }, { word: "mère", ref: "fr-0166" }]
     examples:
-      - { target: "Ma grand-mère est ici.", ipa: "ma ɡʁɑ̃mɛʁ ɛ isi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "grand-mère", base: "grand-mère" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "La grand-mère aime le lait.", ipa: "la ɡʁɑ̃mɛʁ ɛm lə lɛ", bases: [{ word: "La", base: "la" }, { word: "grand-mère", base: "grand-mère" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }] }
+      - { target: "Ma grand-mère est ici.", ipa: "ma ɡʁɑ̃mɛʁ ɛ isi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "grand", base: "grand" }, { word: "mère", ref: "fr-0166" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "La grand-mère aime le lait.", ipa: "la ɡʁɑ̃mɛʁ ɛm lə lɛ", bases: [{ word: "La", base: "la" }, { word: "grand", base: "grand" }, { word: "mère", ref: "fr-0166" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }] }
   - id: "fr-0176"
     target: "oncle"
     ipa: "ɔ̃kl"
@@ -172,7 +172,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Mon cousin est jeune.", ipa: "mɔ̃ kuzɛ̃ ɛ ʒœn", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "cousin", base: "cousin" }, { word: "est", ref: "fr-0021" }, { word: "jeune", ref: "fr-0108" }] }
-      - { target: "Le cousin de Paul aime le vin.", ipa: "lə kuzɛ̃ də pɔl ɛm lə vɛ̃", bases: [{ word: "Le", base: "le" }, { word: "cousin", base: "cousin" }, { word: "de", base: "de" }, { word: "Paul", base: "Paul" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "vin", ref: "fr-0035" }] }
+      - { target: "Le cousin de Paul aime le vin.", ipa: "lə kuzɛ̃ də pɔl ɛm lə vɛ̃", bases: [{ word: "Le", base: "le" }, { word: "cousin", base: "cousin" }, { word: "de", base: "de" }, { word: "Paul", base: "Paul" }, { word: "aime", base: "aimer" }, { word: "vin", ref: "fr-0035" }] }
   - id: "fr-0179"
     target: "cousine"
     ipa: "kuzin"
@@ -235,10 +235,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "belle", base: "belle" }, { word: "mère", ref: "fr-0166" }]
     examples:
-      - { target: "Ma belle-mère est ici.", ipa: "ma bɛlmɛʁ ɛ isi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "belle-mère", base: "belle-mère" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "La belle-mère parle français.", ipa: "la bɛlmɛʁ paʁl fʁɑ̃sɛ", bases: [{ word: "La", base: "la" }, { word: "belle-mère", base: "belle-mère" }, { word: "parle", ref: "fr-0023" }, { word: "français", base: "français" }] }
+      - { target: "Ma belle-mère est ici.", ipa: "ma bɛlmɛʁ ɛ isi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "belle", base: "belle" }, { word: "mère", ref: "fr-0166" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "La belle-mère parle français.", ipa: "la bɛlmɛʁ paʁl fʁɑ̃sɛ", bases: [{ word: "La", base: "la" }, { word: "belle", base: "belle" }, { word: "mère", ref: "fr-0166" }, { word: "parle", ref: "fr-0023" }, { word: "français", base: "français" }] }
   - id: "fr-0185"
     target: "jumeau"
     ipa: "ʒymo"

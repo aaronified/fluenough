@@ -172,10 +172,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "e", base: "e" }, { word: "mail", base: "mail" }]
     examples:
-      - { target: "Mon e-mail est court.", ipa: "mɔ̃n imɛl ɛ kuʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "e-mail", base: "e-mail" }, { word: "est", ref: "fr-0021" }, { word: "court", base: "court" }] }
-      - { target: "Quel est votre e-mail ?", ipa: "kɛl ɛ vɔtʁ imɛl", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "e-mail", base: "e-mail" }] }
+      - { target: "Mon e-mail est court.", ipa: "mɔ̃n imɛl ɛ kuʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "e", base: "e" }, { word: "mail", base: "mail" }, { word: "est", ref: "fr-0021" }, { word: "court", base: "court" }] }
+      - { target: "Quel est votre e-mail ?", ipa: "kɛl ɛ vɔtʁ imɛl", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "e", base: "e" }, { word: "mail", base: "mail" }] }
   - id: "fr-0259"
     target: "an"
     ipa: "ɑ̃"

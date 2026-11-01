@@ -131,7 +131,6 @@ cards:
           "de": "of"
           "Marie": "Marie (a first name)"
           "aime": "likes; loves"
-          "le": "the"
   "fr-0172":
     native: "wife; woman"
     notes:
@@ -159,7 +158,6 @@ cards:
       "Les parents de Paul sont là.":
         native: "Paul's parents are here."
         bases:
-          "Les": "the"
           "parents": "parents"
           "de": "of"
           "Paul": "Paul (a first name)"
@@ -167,31 +165,35 @@ cards:
     native: "grandfather"
     notes:
       "n1": "Grand-père is 'grandfather', masculine. The grandmother is grand-mère."
+    bases:
+      "grand": "big"
     examples:
       "Mon grand-père est vieux.":
         native: "My grandfather is old."
         bases:
-          "grand-père": "grandfather"
+          "grand": "big"
       "Le grand-père parle lentement.":
         native: "The grandfather speaks slowly."
         bases:
           "Le": "the"
-          "grand-père": "grandfather"
+          "grand": "big"
           "lentement": "slowly"
   "fr-0175":
     native: "grandmother"
     notes:
       "n1": "Grand-mère is 'grandmother', feminine. The grandfather is grand-père."
+    bases:
+      "grand": "big"
     examples:
       "Ma grand-mère est ici.":
         native: "My grandmother is here."
         bases:
-          "grand-mère": "grandmother"
+          "grand": "big"
       "La grand-mère aime le lait.":
         native: "The grandmother likes milk."
         bases:
           "La": "the"
-          "grand-mère": "grandmother"
+          "grand": "big"
           "aime": "likes; loves"
           "le": "the"
   "fr-0176":
@@ -242,7 +244,6 @@ cards:
           "de": "of"
           "Paul": "Paul (a first name)"
           "aime": "likes; loves"
-          "le": "the"
   "fr-0179":
     native: "cousin (a girl or woman)"
     notes:
@@ -323,16 +324,18 @@ cards:
     native: "mother-in-law; stepmother"
     notes:
       "n1": "Belle-mère is your partner's mother, or your father's new wife. It is feminine: la belle-mère."
+    bases:
+      "belle": "beautiful"
     examples:
       "Ma belle-mère est ici.":
         native: "My mother-in-law is here."
         bases:
-          "belle-mère": "mother-in-law"
+          "belle": "beautiful"
       "La belle-mère parle français.":
         native: "The stepmother speaks French."
         bases:
           "La": "the"
-          "belle-mère": "stepmother"
+          "belle": "beautiful"
           "français": "French"
   "fr-0185":
     native: "twin (a boy or man)"

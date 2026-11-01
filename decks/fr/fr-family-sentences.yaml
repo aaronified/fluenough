@@ -64,7 +64,7 @@ cards:
       - { word: "cousine", ref: "fr-0179" }
       - { word: "dort", base: "dormir" }
     confusables:
-      - { id: "garçon", ref: "fr-0181", kind: "word" }
+      - { id: "boy", ref: "fr-0181", kind: "word" }
       - { id: "fille", ref: "fr-0168", kind: "word" }
   - id: "fr-0198"
     target: "Mon grand-père est un homme gentil."
@@ -73,7 +73,8 @@ cards:
     tags: ["sentence"]
     bases:
       - { word: "Mon", ref: "fr-0037" }
-      - { word: "grand-père", ref: "fr-0174" }
+      - { word: "grand", base: "grand" }
+      - { word: "père", ref: "fr-0165" }
       - { word: "est", ref: "fr-0021" }
       - { word: "un", base: "un" }
       - { word: "homme", ref: "fr-0182" }
@@ -123,5 +124,5 @@ cards:
       - { word: "ton", ref: "fr-0141" }
       - { word: "fils", ref: "fr-0167" }
     confusables:
-      - { id: "garçon", ref: "fr-0181", kind: "word" }
+      - { id: "boy", ref: "fr-0181", kind: "word" }
       - { id: "baby", ref: "fr-0180", kind: "word" }
