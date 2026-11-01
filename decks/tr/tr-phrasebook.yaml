@@ -1,0 +1,168 @@
+schema: 1
+id: "tr-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "tr", iso639_3: "tur", name: "Turkish", script: "latin", tts: "tr-TR", icon: "T" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tr-0011"
+    target: "Günaydın."
+    ipa: "ɟynajˈdɯn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Günaydın", base: "günaydın" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0012"
+    target: "İyi akşamlar."
+    ipa: "ˈiji akʃamˈlar"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "İyi", ref: "tr-0009" }, { word: "akşamlar", base: "akşam" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0013"
+    target: "İyi geceler."
+    ipa: "ˈiji ɟeˈdʒeler"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "İyi", ref: "tr-0009" }, { word: "geceler", base: "gece" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0014"
+    target: "Hoşça kalın."
+    ipa: "hoʃˈtʃa kaˈlɯn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hoşça", base: "hoşça" }, { word: "kalın", base: "kalmak" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0015"
+    target: "Görüşürüz."
+    ipa: "ɟøryʃyˈɾyz"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Görüşürüz", base: "görüşmek" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0016"
+    target: "Özür dilerim."
+    ipa: "ˈøzyɾ dileˈɾim"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Özür", base: "özür" }, { word: "dilerim", base: "dilemek" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0017"
+    target: "Affedersiniz."
+    ipa: "affedeɾˈsiniz"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Affedersiniz", base: "affetmek" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0018"
+    target: "Anlamıyorum."
+    ipa: "anlamɯˈjorum"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Anlamıyorum", base: "anlamak" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0019"
+    target: "Türkçe konuşmuyorum."
+    ipa: "tyɾkˈtʃe konuʃˈmujorum"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Türkçe", base: "Türkçe" }, { word: "konuşmuyorum", base: "konuşmak" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0020"
+    target: "Türkçe konuşuyor musunuz?"
+    ipa: "tyɾkˈtʃe koˈnuʃujor muˈsunuz"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Türkçe", base: "Türkçe" }, { word: "konuşuyor", base: "konuşmak" }, { word: "musunuz", base: "mı" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0021"
+    target: "Yavaş konuşun, lütfen."
+    ipa: "jaˈvaʃ koˈnuʃun ˈlytfɛn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Yavaş", base: "yavaş" }, { word: "konuşun", base: "konuşmak" }, { word: "lütfen", ref: "tr-0005" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0022"
+    target: "Bir daha, lütfen."
+    ipa: "bir ˈdaha ˈlytfɛn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Bir", base: "bir" }, { word: "daha", base: "daha" }, { word: "lütfen", ref: "tr-0005" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0023"
+    target: "Ne kadar?"
+    ipa: "ne kaˈdaɾ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Ne", base: "ne" }, { word: "kadar", base: "kadar" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0024"
+    target: "Hesap, lütfen."
+    ipa: "heˈsap ˈlytfɛn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hesap", base: "hesap" }, { word: "lütfen", ref: "tr-0005" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0025"
+    target: "İmdat!"
+    ipa: "imˈdat"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "İmdat", base: "imdat" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0026"
+    target: "Tuvalet nerede?"
+    ipa: "tuvaˈlet neˈɾede"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Tuvalet", base: "tuvalet" }, { word: "nerede", base: "nerede" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0027"
+    target: "Bu ne anlama geliyor?"
+    ipa: "bu ne anˈlama ɡeˈlijor"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Bu", base: "bu" }, { word: "ne", base: "ne" }, { word: "anlama", base: "anlam" }, { word: "geliyor", base: "gelmek" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0028"
+    target: "Adım Anna."
+    ipa: "aˈdɯm ˈanna"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Adım", base: "ad" }, { word: "Anna", base: "Anna" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0029"
+    target: "Memnun oldum."
+    ipa: "mɛmˈnun olˈdum"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Memnun", base: "memnun" }, { word: "oldum", base: "olmak" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "tr-0030"
+    target: "Afiyet olsun!"
+    ipa: "aˈfijet olˈsun"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Afiyet", base: "afiyet" }, { word: "olsun", base: "olmak" }]
+    notes:
+      - { id: "n1", kind: "note" }
