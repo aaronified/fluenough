@@ -1,0 +1,178 @@
+schema: 1
+id: "ru-en-first-words"
+kind: "layer"
+core: "ru-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Written in Cyrillic; readings are based on a scholarly romanisation in the BGN/PCGN style, with the soft sign written as an apostrophe. Not yet checked by a Russian speaker: please report any mistake."
+cards:
+  "ru-0001":
+    native: "yes"
+    notes:
+      "n1": "Да (da) is the plain yes. A negative question is answered with it too, as in English: Aren't you coming? Yes, I am."
+    examples:
+      "Да, спасибо.":
+        native: "Yes, thank you."
+        bases:
+          "Да": "yes"
+          "спасибо": "thank you"
+      "Да, я понимаю.":
+        native: "Yes, I understand."
+        bases:
+          "Да": "yes"
+          "я": "I"
+          "понимаю": "I understand"
+  "ru-0002":
+    native: "no"
+    notes:
+      "n1": "Нет (net) is 'no'. Не (ne) is 'not', and it comes before the verb: я не понимаю (ya ne ponimayu), I don't understand."
+    examples:
+      "Нет, спасибо.":
+        native: "No, thank you."
+        bases:
+          "Нет": "no"
+          "спасибо": "thank you"
+      "Нет, я не понимаю.":
+        native: "No, I don't understand."
+        bases:
+          "Нет": "no"
+          "я": "I"
+          "не": "not"
+          "понимаю": "I understand"
+  "ru-0003":
+    native: "I"
+    notes:
+      "n1": "Я (ya) is I. The verb takes its own ending for each person: я знаю (ya znayu), I know."
+    examples:
+      "Я студент.":
+        native: "I am a student."
+        bases:
+          "Я": "I"
+          "студент": "student"
+      "Я не знаю.":
+        native: "I don't know."
+        bases:
+          "Я": "I"
+          "не": "not"
+          "знаю": "I know"
+  "ru-0004":
+    native: "you"
+    notes:
+      "n1": "Вы (vy) is the polite 'you', and the plural. The informal 'you' is ты (ty), used with friends, family and children."
+    examples:
+      "Вы говорите на английском?":
+        native: "Do you speak English?"
+        bases:
+          "Вы": "you"
+          "говорите": "speak"
+          "на": "in"
+          "английском": "English"
+      "Вы хорошо говорите.":
+        native: "You speak well."
+        bases:
+          "Вы": "you"
+          "хорошо": "well"
+          "говорите": "speak"
+  "ru-0005":
+    native: "and"
+    notes:
+      "n1": "И (i) is 'and' between two words, as in чай и хлеб (chay i khleb), tea and bread."
+    examples:
+      "Чай и хлеб.":
+        native: "Tea and bread."
+        bases:
+          "Чай": "tea"
+          "и": "and"
+          "хлеб": "bread"
+      "Я и вы.":
+        native: "You and I."
+        bases:
+          "Я": "I"
+          "и": "and"
+          "вы": "you"
+  "ru-0006":
+    native: "or"
+    notes:
+      "n1": "Или (ili) is 'or', as in a question that offers a choice: чай или кофе (chay ili kofe), tea or coffee."
+    examples:
+      "Чай или кофе?":
+        native: "Tea or coffee?"
+        bases:
+          "Чай": "tea"
+          "или": "or"
+          "кофе": "coffee"
+      "Сегодня или завтра?":
+        native: "Today or tomorrow?"
+        bases:
+          "Сегодня": "today"
+          "или": "or"
+          "завтра": "tomorrow"
+  "ru-0007":
+    native: "but"
+    notes:
+      "n1": "Но (no) is 'but'. It is not the word for 'no', which is нет (net)."
+    examples:
+      "Да, но я устал.":
+        native: "Yes, but I am tired."
+        bases:
+          "Да": "yes"
+          "но": "but"
+          "я": "I"
+          "устал": "tired"
+      "Хорошо, но дорого.":
+        native: "Good, but expensive."
+        bases:
+          "Хорошо": "good"
+          "но": "but"
+          "дорого": "expensive"
+  "ru-0008":
+    native: "good; well; OK"
+    notes:
+      "n1": "Хорошо (khorosho) means 'good', 'well' and 'OK'. The adjective 'good' is хороший (khoroshiy), which changes with the noun: хороший чай (khoroshiy chay), good tea."
+    examples:
+      "Всё хорошо.":
+        native: "Everything is fine."
+        bases:
+          "Всё": "everything"
+          "хорошо": "fine"
+      "Хорошо, спасибо.":
+        native: "Fine, thank you."
+        bases:
+          "Хорошо": "fine"
+          "спасибо": "thank you"
+  "ru-0009":
+    native: "one"
+    alt_native: ["a"]
+    notes:
+      "n1": "Один (odin) changes with the noun's gender: одна (odna) with a feminine noun, одно (odno) with a neuter one."
+    examples:
+      "Один чай, пожалуйста.":
+        native: "One tea, please."
+        bases:
+          "Один": "one"
+          "чай": "tea"
+          "пожалуйста": "please"
+      "У меня один брат.":
+        native: "I have one brother."
+        bases:
+          "У": "at"
+          "меня": "me"
+          "один": "one"
+          "брат": "brother"
+  "ru-0010":
+    native: "water"
+    notes:
+      "n1": "Вода (voda) is feminine. Its accusative form is воду (vodu), as in я пью воду (ya pyu vodu), I drink water."
+    examples:
+      "Вода, пожалуйста.":
+        native: "Water, please."
+        bases:
+          "Вода": "water"
+          "пожалуйста": "please"
+      "Я пью воду.":
+        native: "I drink water."
+        bases:
+          "Я": "I"
+          "пью": "drink"
+          "воду": "water"
