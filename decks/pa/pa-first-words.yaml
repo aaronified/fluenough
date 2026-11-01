@@ -1,0 +1,272 @@
+schema: 1
+id: pa-first-words
+part: core
+kind: vocab
+language:
+  code: pa
+  iso639_3: pan
+  name: Punjabi
+  script: gurmukhi
+  tts: pa-IN
+  icon: ਪੰ
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: pa-0001
+  target: ਹਾਂ
+  reading: hāṁ
+  ipa: ɦãː
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਹਾਂ, ਮੈਂ ਆ ਰਿਹਾ ਹਾਂ।
+    reading: hāṁ, maiṁ ā rihā hāṁ.
+    ipa: ɦãː, mɛ̃ɛ aː ɾɪɦaː ɦaː.
+    bases:
+    - word: ਆ
+      ref: pa-0010
+    - word: ਰਿਹਾ
+      base: ਰਹਿਣਾ
+      reading: rahiṇā
+  - target: ਹਾਂ, ਪਾਣੀ ਚੰਗਾ ਹੈ।
+    reading: hāṁ, pāṇī caṅgā hai.
+    ipa: ɦãː, paːɳiː tʃəŋɡaː ɦɛː.
+    bases:
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+- id: pa-0002
+  target: ਨਹੀਂ
+  reading: nahīṁ
+  ipa: nəɦĩː
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਪਾਣੀ ਨਹੀਂ ਹੈ।
+    reading: pāṇī nahīṁ hai.
+    ipa: paːɳiː nəɦĩː ɦɛː.
+    bases:
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+  - target: ਮੈਂ ਨਹੀਂ ਆਵਾਂਗਾ।
+    reading: maiṁ nahīṁ āvāṁgā.
+    ipa: mɛ̃ɛ nəɦĩː aʋaːŋɡaː.
+    bases:
+    - word: ਆਵਾਂਗਾ
+      base: ਆਉਣਾ
+      reading: āuṇā
+- id: pa-0003
+  target: ਮੈਂ
+  reading: maiṁ
+  ipa: mɛ̃ɛ
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਮੈਂ ਪਾਣੀ ਪੀਂਦਾ ਹਾਂ।
+    reading: maiṁ pāṇī pīṁdā hāṁ.
+    ipa: mɛ̃ɛ paːɳiː piːndaː ɦaː.
+    bases:
+    - word: ਪੀਂਦਾ
+      base: ਪੀਣਾ
+      reading: pīṇā
+  - target: ਮੈਂ ਠੀਕ ਹਾਂ।
+    reading: maiṁ ṭhīk hāṁ.
+    ipa: mɛ̃ɛ ʈʰiːk ɦaː.
+    bases:
+    - word: ਠੀਕ
+      base: ਠੀਕ
+      reading: ṭhīk
+- id: pa-0004
+  target: ਤੁਸੀਂ
+  reading: tusīṁ
+  ipa: tʊsiː̃
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਤੁਸੀਂ ਆ ਰਹੇ ਹੋ?
+    reading: tusīṁ ā rahe ho?
+    ipa: tʊsiː̃ aː ɾəɦe ɦo?
+    bases:
+    - word: ਆ
+      ref: pa-0010
+    - word: ਰਹੇ
+      base: ਰਹਿਣਾ
+      reading: rahiṇā
+    - word: ਹੋ
+      base: ਹੋਣਾ
+      reading: hoṇā
+  - target: ਤੁਸੀਂ ਪਾਣੀ ਪੀਂਦੇ ਹੋ?
+    reading: tusīṁ pāṇī pīṁde ho?
+    ipa: tʊsiː̃ paːɳiː piːnde ɦo?
+    bases:
+    - word: ਪੀਂਦੇ
+      base: ਪੀਣਾ
+      reading: pīṇā
+    - word: ਹੋ
+      base: ਹੋਣਾ
+      reading: hoṇā
+- id: pa-0005
+  target: ਪਾਣੀ
+  reading: pāṇī
+  ipa: paːɳiː
+  pos: noun
+  gender: m
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਪਾਣੀ ਚੰਗਾ ਹੈ।
+    reading: pāṇī caṅgā hai.
+    ipa: paːɳiː tʃəŋɡaː ɦɛː.
+    bases:
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+  - target: ਇਹ ਪਾਣੀ ਹੈ।
+    reading: ih pāṇī hai.
+    ipa: ɪɦ paːɳiː ɦɛː.
+    bases:
+    - word: ਇਹ
+      base: ਇਹ
+      reading: ih
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+- id: pa-0006
+  target: ਚੰਗਾ
+  reading: caṅgā
+  ipa: tʃəŋɡaː
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਚੰਗਾ ਘਰ।
+    reading: caṅgā ghar.
+    ipa: tʃəŋɡaː ɡʰəɾ.
+    bases:
+    - word: ਘਰ
+      ref: pa-0009
+  - target: ਬਹੁਤ ਚੰਗਾ!
+    reading: bahut caṅgā!
+    ipa: bəɦut tʃəŋɡaː!
+    bases:
+    - word: ਬਹੁਤ
+      base: ਬਹੁਤ
+      reading: bahut
+- id: pa-0007
+  target: ਇੱਕ
+  reading: ikk
+  ipa: ɪkk
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਇੱਕ, ਦੋ।
+    reading: ikk, do.
+    ipa: ɪkk, do.
+    bases:
+    - word: ਦੋ
+      base: ਦੋ
+      reading: do
+  - target: ਇੱਕ ਘਰ।
+    reading: ikk ghar.
+    ipa: ɪkk ɡʰəɾ.
+    bases:
+    - word: ਘਰ
+      ref: pa-0009
+- id: pa-0008
+  target: ਵੱਡਾ
+  reading: vaḍḍā
+  ipa: ʋəɖːaː
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਵੱਡਾ ਘਰ।
+    reading: vaḍḍā ghar.
+    ipa: ʋəɖːaː ɡʰəɾ.
+    bases:
+    - word: ਘਰ
+      ref: pa-0009
+  - target: ਇਹ ਵੱਡਾ ਹੈ।
+    reading: ih vaḍḍā hai.
+    ipa: ɪɦ ʋəɖːaː ɦɛː.
+    bases:
+    - word: ਇਹ
+      base: ਇਹ
+      reading: ih
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+- id: pa-0009
+  target: ਘਰ
+  reading: ghar
+  ipa: ɡʰəɾ
+  pos: noun
+  gender: m
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਇਹ ਮੇਰਾ ਘਰ ਹੈ।
+    reading: ih merā ghar hai.
+    ipa: ɪɦ meːraː ɡʰəɾ ɦɛː.
+    bases:
+    - word: ਇਹ
+      base: ਇਹ
+      reading: ih
+    - word: ਮੇਰਾ
+      ref: pa-0003
+    - word: ਹੈ
+      base: ਹੋਣਾ
+      reading: hoṇā
+  - target: ਘਰ ਵਿੱਚ ਪਾਣੀ ਨਹੀਂ।
+    reading: ghar vicc pāṇī nahīṁ.
+    ipa: ɡʰəɾ ʋɪtʃtʃ paːɳiː nəɦĩː.
+    bases:
+    - word: ਵਿੱਚ
+      base: ਵਿੱਚ
+      reading: vicc
+- id: pa-0010
+  target: ਆਓ
+  reading: āo
+  ipa: aːo
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ਆਓ, ਚੱਲੀਏ।
+    reading: āo, callīe.
+    ipa: aːo, tʃəlːiːe.
+    bases:
+    - word: ਚੱਲੀਏ
+      base: ਚੱਲਣਾ
+      reading: callṇā
+  - target: ਮੈਂ ਕੱਲ੍ਹ ਆਵਾਂਗਾ।
+    reading: maiṁ kall āvāṁgā.
+    ipa: mɛ̃ɛ kəlːə aʋaːŋɡaː.
+    bases:
+    - word: ਕੱਲ੍ਹ
+      base: ਕੱਲ੍ਹ
+      reading: kall
+    - word: ਆਵਾਂਗਾ
+      base: ਆਉਣਾ
+      reading: āuṇā
