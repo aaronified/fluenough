@@ -506,7 +506,8 @@ units:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "es-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["es-abstract-words", "es-abstract-words-sentences", "es-reading-abstract-words", "*"]
+    words: 41
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:

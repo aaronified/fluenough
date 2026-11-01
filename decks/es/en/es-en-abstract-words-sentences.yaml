@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-abstract-words-sentences"
+kind: "layer"
+core: "es-abstract-words-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: abstract words"
+license: "CC-BY-SA-4.0"
+description: "Six sentences that use abstract words, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2980":
+    native: "Peace and equality are important values."
+    bases: { "La": "the", "la": "the" }
+    confusables: { "justicia": { why: "Justicia is justice, a related but different value." }, "libertad": { why: "Libertad is freedom, another value." } }
+  "es-2981":
+    native: "Effort is the basis of progress."
+    bases: { "El": "the", "la": "the", "base": "base; basis", "del": "of" }
+    confusables: { "desarrollo": { why: "Desarrollo is development, a bigger change." }, "objetivo": { why: "Objetivo is a goal, what one aims for." } }
+  "es-2982":
+    native: "Honesty and patience are virtues."
+    bases: { "La": "the", "la": "the" }
+    confusables: { "valor": { why: "Valor is a value, or courage." }, "suerte": { why: "Suerte is luck, not a virtue." } }
+  "es-2983":
+    native: "Without democracy there is no real equality."
+    bases: { "Sin": "without", "hay": "there is; there are", "real": "real" }
+    confusables: { "derecho": { why: "Derecho is a right, one of the results." }, "identidad": { why: "Identidad is identity, who a person is." } }
+  "es-2984":
+    native: "The cause of the change is the consequence of effort."
+    bases: { "La": "the", "del": "of", "la": "the" }
+    confusables: { "principio": { why: "Principio is a principle or a beginning." }, "posibilidad": { why: "Posibilidad is a possibility, something that might happen." } }
+  "es-2985":
+    native: "Curiosity and imagination help knowledge."
+    bases: { "La": "the", "la": "the", "al": "to the" }
+    confusables: { "inteligencia": { why: "Inteligencia is intelligence, the power to think." }, "sabiduria": { why: "Sabiduría is wisdom, deep knowledge with judgement." } }

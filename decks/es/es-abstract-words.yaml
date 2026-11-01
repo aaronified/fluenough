@@ -1,0 +1,583 @@
+schema: 1
+id: "es-abstract-words"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "abstract-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2939"
+    target: "la igualdad"
+    ipa: "la iɡwalˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "igualdad", base: "igualdad" }]
+    examples:
+      - target: "La igualdad es un derecho."
+        ipa: "la iɡwalˈdad es un deˈɾetʃo"
+        bases: [{ word: "La", base: "la" }, { word: "igualdad", base: "igualdad" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "derecho", ref: "es-2271" }]
+      - target: "Hay igualdad entre hombres y mujeres."
+        ipa: "aj iɡwalˈdad ˈentɾe ˈombɾes i muˈxeɾes"
+        bases: [{ word: "Hay", base: "haber" }, { word: "igualdad", base: "igualdad" }, { word: "entre", ref: "es-0719" }, { word: "hombres", ref: "es-0001" }, { word: "y", ref: "es-0048" }, { word: "mujeres", ref: "es-0002" }]
+  - id: "es-2940"
+    target: "la democracia"
+    ipa: "la demoˈkɾaθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "democracia", base: "democracia" }]
+    examples:
+      - target: "La democracia da voz a todos."
+        ipa: "la demoˈkɾaθja da boθ a ˈtodos"
+        bases: [{ word: "La", base: "la" }, { word: "democracia", base: "democracia" }, { word: "da", ref: "es-1629" }, { word: "voz", base: "voz" }, { word: "a", base: "a" }, { word: "todos", ref: "es-0134" }]
+      - target: "La democracia necesita votantes."
+        ipa: "la demoˈkɾaθja neθeˈsita boˈtantes"
+        bases: [{ word: "La", base: "la" }, { word: "democracia", base: "democracia" }, { word: "necesita", ref: "es-0288" }, { word: "votantes", ref: "es-2268" }]
+  - id: "es-2941"
+    target: "la honestidad"
+    ipa: "la onestiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "honestidad", base: "honestidad" }]
+    examples:
+      - target: "La honestidad es importante."
+        ipa: "la onestiˈdad es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "honestidad", base: "honestidad" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Tiene honestidad en todo."
+        ipa: "ˈtjene onestiˈdad en ˈtodo"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "honestidad", base: "honestidad" }, { word: "en", base: "en" }, { word: "todo", base: "todo" }]
+  - id: "es-2942"
+    target: "el valor"
+    ipa: "el baˈloɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "valor", base: "valor" }]
+    examples:
+      - target: "El valor de la familia es grande."
+        ipa: "el baˈloɾ de la faˈmilja es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "valor", base: "valor" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Tiene valor para hablar."
+        ipa: "ˈtjene baˈloɾ ˈpaɾa aˈblaɾ"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "valor", base: "valor" }, { word: "para", base: "para" }, { word: "hablar", ref: "es-0027" }]
+  - id: "es-2943"
+    target: "la virtud"
+    ipa: "la biɾˈtud"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "virtud", base: "virtud" }]
+    examples:
+      - target: "La paciencia es una virtud."
+        ipa: "la paˈθjenθja es ˈuna biɾˈtud"
+        bases: [{ word: "La", base: "la" }, { word: "paciencia", ref: "es-2968" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "virtud", base: "virtud" }]
+      - target: "La generosidad es una virtud."
+        ipa: "la xeneɾosiˈdad es ˈuna biɾˈtud"
+        bases: [{ word: "La", base: "la" }, { word: "generosidad", ref: "es-2966" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "virtud", base: "virtud" }]
+  - id: "es-2944"
+    target: "la fe"
+    ipa: "la fe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fe", base: "fe" }]
+    examples:
+      - target: "Tengo fe en el futuro."
+        ipa: "ˈtenɡo fe en el fuˈtuɾo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "fe", base: "fe" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "futuro", ref: "es-2978" }]
+      - target: "Tiene fe en Dios."
+        ipa: "ˈtjene fe en djos"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "fe", base: "fe" }, { word: "en", base: "en" }, { word: "Dios", base: "dios" }]
+  - id: "es-2945"
+    target: "el concepto"
+    ipa: "el konˈθepto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "concepto", base: "concepto" }]
+    examples:
+      - target: "El concepto es claro."
+        ipa: "el konˈθepto es ˈklaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "concepto", base: "concepto" }, { word: "es", ref: "es-0022" }, { word: "claro", ref: "es-0438" }]
+      - target: "Hablamos de concepto con mis amigos."
+        ipa: "aˈblamos de konˈθepto kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "concepto", base: "concepto" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2946"
+    target: "el significado"
+    ipa: "el siɡnifiˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "significado", base: "significado" }]
+    examples:
+      - target: "El significado de la palabra es claro."
+        ipa: "el siɡnifiˈkado de la paˈlabɾa es ˈklaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "significado", base: "significado" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "palabra", base: "palabra" }, { word: "es", ref: "es-0022" }, { word: "claro", ref: "es-0438" }]
+      - target: "Hablamos de significado con mis amigos."
+        ipa: "aˈblamos de siɡnifiˈkado kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "significado", base: "significado" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2947"
+    target: "el propósito"
+    ipa: "el pɾoˈposito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "propósito", base: "propósito" }]
+    examples:
+      - target: "Mi propósito es ayudar."
+        ipa: "mi pɾoˈposito es aʝuˈdaɾ"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "propósito", base: "propósito" }, { word: "es", ref: "es-0022" }, { word: "ayudar", ref: "es-0303" }]
+      - target: "Hablamos de propósito con mis amigos."
+        ipa: "aˈblamos de pɾoˈposito kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "propósito", base: "propósito" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2948"
+    target: "el objetivo"
+    ipa: "el obxeˈtibo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "objetivo", base: "objetivo" }]
+    examples:
+      - target: "El objetivo es terminar hoy."
+        ipa: "el obxeˈtibo es teɾmiˈnaɾ oj"
+        bases: [{ word: "El", base: "el" }, { word: "objetivo", base: "objetivo" }, { word: "es", ref: "es-0022" }, { word: "terminar", ref: "es-0521" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Hablamos de objetivo con mis amigos."
+        ipa: "aˈblamos de obxeˈtibo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "objetivo", base: "objetivo" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2949"
+    target: "la meta"
+    ipa: "la ˈmeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "meta", base: "meta" }]
+    examples:
+      - target: "Llego a la meta primero."
+        ipa: "ˈʝeɡo a la ˈmeta pɾiˈmeɾo"
+        bases: [{ word: "Llego", ref: "es-0290" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "meta", base: "meta" }, { word: "primero", ref: "es-0551" }]
+      - target: "Hablamos de meta con mis amigos."
+        ipa: "aˈblamos de ˈmeta kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "meta", base: "meta" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2950"
+    target: "el principio"
+    ipa: "el pɾinˈθipjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "principio", base: "principio" }]
+    examples:
+      - target: "Al principio fue difícil."
+        ipa: "al pɾinˈθipjo fwe diˈfiθil"
+        bases: [{ word: "Al", base: "al" }, { word: "principio", base: "principio" }, { word: "fue", base: "fue" }, { word: "difícil", ref: "es-0414" }]
+      - target: "Hablamos de principio con mis amigos."
+        ipa: "aˈblamos de pɾinˈθipjo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "principio", base: "principio" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2951"
+    target: "la causa"
+    ipa: "la ˈkawsa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "causa", base: "causa" }]
+    examples:
+      - target: "La causa del problema es el ruido."
+        ipa: "la ˈkawsa del pɾoˈblema es el ˈrwido"
+        bases: [{ word: "La", base: "la" }, { word: "causa", base: "causa" }, { word: "del", base: "del" }, { word: "problema", base: "problema" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "ruido", ref: "es-2423" }]
+      - target: "Hablamos de causa con mis amigos."
+        ipa: "aˈblamos de ˈkawsa kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "causa", base: "causa" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2952"
+    target: "la consecuencia"
+    ipa: "la konseˈkwenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "consecuencia", base: "consecuencia" }]
+    examples:
+      - target: "Hay consecuencias graves."
+        ipa: "aj konseˈkwenθjas ˈɡɾabes"
+        bases: [{ word: "Hay", base: "haber" }, { word: "consecuencias", base: "consecuencia" }, { word: "graves", ref: "es-2826" }]
+      - target: "Hablamos de consecuencia con mis amigos."
+        ipa: "aˈblamos de konseˈkwenθja kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "consecuencia", base: "consecuencia" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2953"
+    target: "la posibilidad"
+    ipa: "la posibiliˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "posibilidad", base: "posibilidad" }]
+    examples:
+      - target: "Hay una posibilidad de éxito."
+        ipa: "aj ˈuna posibiliˈdad de ˈeksito"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "posibilidad", base: "posibilidad" }, { word: "de", base: "de" }, { word: "éxito", base: "éxito" }]
+      - target: "Hablamos de posibilidad con mis amigos."
+        ipa: "aˈblamos de posibiliˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "posibilidad", base: "posibilidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2954"
+    target: "la necesidad"
+    ipa: "la neθesiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "necesidad", base: "necesidad" }]
+    examples:
+      - target: "La necesidad es grande."
+        ipa: "la neθesiˈdad es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "necesidad", base: "necesidad" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hablamos de necesidad con mis amigos."
+        ipa: "aˈblamos de neθesiˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "necesidad", base: "necesidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2955"
+    target: "la disciplina"
+    ipa: "la disθiˈplina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "disciplina", base: "disciplina" }]
+    examples:
+      - target: "La disciplina es necesaria."
+        ipa: "la disθiˈplina es neθeˈsaɾja"
+        bases: [{ word: "La", base: "la" }, { word: "disciplina", base: "disciplina" }, { word: "es", ref: "es-0022" }, { word: "necesaria", ref: "es-2142" }]
+      - target: "Hablamos de disciplina con mis amigos."
+        ipa: "aˈblamos de disθiˈplina kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "disciplina", base: "disciplina" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2956"
+    target: "la tolerancia"
+    ipa: "la toleˈɾanθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tolerancia", base: "tolerancia" }]
+    examples:
+      - target: "La tolerancia une a las personas."
+        ipa: "la toleˈɾanθja ˈune a las peɾˈsonas"
+        bases: [{ word: "La", base: "la" }, { word: "tolerancia", base: "tolerancia" }, { word: "une", base: "unir" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "personas", ref: "es-0135" }]
+      - target: "Hablamos de tolerancia con mis amigos."
+        ipa: "aˈblamos de toleˈɾanθja kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "tolerancia", base: "tolerancia" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2957"
+    target: "la solidaridad"
+    ipa: "la solidaɾiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "solidaridad", base: "solidaridad" }]
+    examples:
+      - target: "La solidaridad ayuda a todos."
+        ipa: "la solidaɾiˈdad aˈʝuda a ˈtodos"
+        bases: [{ word: "La", base: "la" }, { word: "solidaridad", base: "solidaridad" }, { word: "ayuda", ref: "es-0303" }, { word: "a", base: "a" }, { word: "todos", ref: "es-0134" }]
+      - target: "Hablamos de solidaridad con mis amigos."
+        ipa: "aˈblamos de solidaɾiˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "solidaridad", base: "solidaridad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2958"
+    target: "el compromiso"
+    ipa: "el kompɾoˈmiso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "compromiso", base: "compromiso" }]
+    examples:
+      - target: "Tengo un compromiso con mi equipo."
+        ipa: "ˈtenɡo un kompɾoˈmiso kon mi eˈkipo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "compromiso", base: "compromiso" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "equipo", ref: "es-1412" }]
+      - target: "Hablamos de compromiso con mis amigos."
+        ipa: "aˈblamos de kompɾoˈmiso kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "compromiso", base: "compromiso" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2959"
+    target: "la promesa"
+    ipa: "la pɾoˈmesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "promesa", base: "promesa" }]
+    examples:
+      - target: "Cumplo mi promesa."
+        ipa: "ˈkumplo mi pɾoˈmesa"
+        bases: [{ word: "Cumplo", base: "cumplir" }, { word: "mi", ref: "es-0129" }, { word: "promesa", base: "promesa" }]
+      - target: "Hablamos de promesa con mis amigos."
+        ipa: "aˈblamos de pɾoˈmesa kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "promesa", base: "promesa" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2960"
+    target: "el equilibrio"
+    ipa: "el ekiˈlibɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "equilibrio", base: "equilibrio" }]
+    examples:
+      - target: "Busco el equilibrio en la vida."
+        ipa: "ˈbusko el ekiˈlibɾjo en la ˈbida"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "el", base: "el" }, { word: "equilibrio", base: "equilibrio" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "vida", base: "vida" }]
+      - target: "Hablamos de equilibrio con mis amigos."
+        ipa: "aˈblamos de ekiˈlibɾjo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "equilibrio", base: "equilibrio" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2961"
+    target: "el progreso"
+    ipa: "el pɾoˈɡɾeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "progreso", base: "progreso" }]
+    examples:
+      - target: "El progreso es lento."
+        ipa: "el pɾoˈɡɾeso es ˈlento"
+        bases: [{ word: "El", base: "el" }, { word: "progreso", base: "progreso" }, { word: "es", ref: "es-0022" }, { word: "lento", ref: "es-0415" }]
+      - target: "Hablamos de progreso con mis amigos."
+        ipa: "aˈblamos de pɾoˈɡɾeso kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "progreso", base: "progreso" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2962"
+    target: "el desarrollo"
+    ipa: "el desaˈroʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "desarrollo", base: "desarrollo" }]
+    examples:
+      - target: "El desarrollo del país es rápido."
+        ipa: "el desaˈroʝo del paˈis es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "desarrollo", base: "desarrollo" }, { word: "del", base: "del" }, { word: "país", ref: "es-0018" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Hablamos de desarrollo con mis amigos."
+        ipa: "aˈblamos de desaˈroʝo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "desarrollo", base: "desarrollo" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2963"
+    target: "la identidad"
+    ipa: "la identiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "identidad", base: "identidad" }]
+    examples:
+      - target: "La identidad es personal."
+        ipa: "la identiˈdad es peɾsoˈnal"
+        bases: [{ word: "La", base: "la" }, { word: "identidad", base: "identidad" }, { word: "es", ref: "es-0022" }, { word: "personal", base: "personal" }]
+      - target: "Hablamos de identidad con mis amigos."
+        ipa: "aˈblamos de identiˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "identidad", base: "identidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2964"
+    target: "la dignidad"
+    ipa: "la diɡniˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "dignidad", base: "dignidad" }]
+    examples:
+      - target: "Todos tenemos dignidad."
+        ipa: "ˈtodos teˈnemos diɡniˈdad"
+        bases: [{ word: "Todos", ref: "es-0134" }, { word: "tenemos", ref: "es-0024" }, { word: "dignidad", base: "dignidad" }]
+      - target: "Hablamos de dignidad con mis amigos."
+        ipa: "aˈblamos de diɡniˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "dignidad", base: "dignidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2965"
+    target: "la humildad"
+    ipa: "la umilˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "humildad", base: "humildad" }]
+    examples:
+      - target: "La humildad es una buena cualidad."
+        ipa: "la umilˈdad es ˈuna ˈbwena kwaliˈdad"
+        bases: [{ word: "La", base: "la" }, { word: "humildad", base: "humildad" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "cualidad", base: "cualidad" }]
+      - target: "Hablamos de humildad con mis amigos."
+        ipa: "aˈblamos de umilˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "humildad", base: "humildad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2966"
+    target: "la generosidad"
+    ipa: "la xeneɾosiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "generosidad", base: "generosidad" }]
+    examples:
+      - target: "Su generosidad es grande."
+        ipa: "su xeneɾosiˈdad es ˈɡɾande"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "generosidad", base: "generosidad" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hablamos de generosidad con mis amigos."
+        ipa: "aˈblamos de xeneɾosiˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "generosidad", base: "generosidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2967"
+    target: "la suerte"
+    ipa: "la ˈsweɾte"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "suerte", base: "suerte" }]
+    examples:
+      - target: "Tengo suerte hoy."
+        ipa: "ˈtenɡo ˈsweɾte oj"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "suerte", base: "suerte" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Hablamos de suerte con mis amigos."
+        ipa: "aˈblamos de ˈsweɾte kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "suerte", base: "suerte" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2968"
+    target: "la paciencia"
+    ipa: "la paˈθjenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "paciencia", base: "paciencia" }]
+    examples:
+      - target: "Necesito paciencia."
+        ipa: "neθeˈsito paˈθjenθja"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "paciencia", base: "paciencia" }]
+      - target: "Hablamos de paciencia con mis amigos."
+        ipa: "aˈblamos de paˈθjenθja kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "paciencia", base: "paciencia" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2969"
+    target: "el honor"
+    ipa: "el oˈnoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "honor", base: "honor" }]
+    examples:
+      - target: "Es un honor estar aquí."
+        ipa: "es un oˈnoɾ esˈtaɾ aˈki"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "honor", base: "honor" }, { word: "estar", ref: "es-0023" }, { word: "aquí", ref: "es-0051" }]
+      - target: "Hablamos de honor con mis amigos."
+        ipa: "aˈblamos de oˈnoɾ kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "honor", base: "honor" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2970"
+    target: "la sabiduría"
+    ipa: "la sabiduˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sabiduría", base: "sabiduría" }]
+    examples:
+      - target: "La sabiduría viene con la edad."
+        ipa: "la sabiduˈɾia ˈbjene kon la eˈdad"
+        bases: [{ word: "La", base: "la" }, { word: "sabiduría", base: "sabiduría" }, { word: "viene", ref: "es-1632" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "edad", ref: "es-0242" }]
+      - target: "Hablamos de sabiduría con mis amigos."
+        ipa: "aˈblamos de sabiduˈɾia kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "sabiduría", base: "sabiduría" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2971"
+    target: "el conocimiento"
+    ipa: "el konoθiˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "conocimiento", base: "conocimiento" }]
+    examples:
+      - target: "El conocimiento cambia el mundo."
+        ipa: "el konoθiˈmjento ˈkambja el ˈmundo"
+        bases: [{ word: "El", base: "el" }, { word: "conocimiento", base: "conocimiento" }, { word: "cambia", ref: "es-0588" }, { word: "el", base: "el" }, { word: "mundo", ref: "es-1900" }]
+      - target: "Hablamos de conocimiento con mis amigos."
+        ipa: "aˈblamos de konoθiˈmjento kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "conocimiento", base: "conocimiento" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2972"
+    target: "la imaginación"
+    ipa: "la imaxinaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "imaginación", base: "imaginación" }]
+    examples:
+      - target: "La imaginación es libre."
+        ipa: "la imaxinaˈθjon es ˈlibɾe"
+        bases: [{ word: "La", base: "la" }, { word: "imaginación", base: "imaginación" }, { word: "es", ref: "es-0022" }, { word: "libre", ref: "es-0426" }]
+      - target: "Hablamos de imaginación con mis amigos."
+        ipa: "aˈblamos de imaxinaˈθjon kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "imaginación", base: "imaginación" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2973"
+    target: "la inteligencia"
+    ipa: "la inteliˈxenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "inteligencia", base: "inteligencia" }]
+    examples:
+      - target: "La inteligencia no es suficiente."
+        ipa: "la inteliˈxenθja no es sufiˈθjente"
+        bases: [{ word: "La", base: "la" }, { word: "inteligencia", base: "inteligencia" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "suficiente", ref: "es-0365" }]
+      - target: "Hablamos de inteligencia con mis amigos."
+        ipa: "aˈblamos de inteliˈxenθja kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "inteligencia", base: "inteligencia" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2974"
+    target: "la curiosidad"
+    ipa: "la kuɾjosiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "curiosidad", base: "curiosidad" }]
+    examples:
+      - target: "La curiosidad abre la mente."
+        ipa: "la kuɾjosiˈdad ˈabɾe la ˈmente"
+        bases: [{ word: "La", base: "la" }, { word: "curiosidad", base: "curiosidad" }, { word: "abre", ref: "es-0298" }, { word: "la", base: "la" }, { word: "mente", base: "mente" }]
+      - target: "Hablamos de curiosidad con mis amigos."
+        ipa: "aˈblamos de kuɾjosiˈdad kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "curiosidad", base: "curiosidad" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2975"
+    target: "la ambición"
+    ipa: "la ambiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ambición", base: "ambición" }]
+    examples:
+      - target: "La ambición es buena si es sana."
+        ipa: "la ambiˈθjon es ˈbwena si es ˈsana"
+        bases: [{ word: "La", base: "la" }, { word: "ambición", base: "ambición" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "si", base: "si" }, { word: "es", ref: "es-0022" }, { word: "sana", ref: "es-1965" }]
+      - target: "Hablamos de ambición con mis amigos."
+        ipa: "aˈblamos de ambiˈθjon kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "ambición", base: "ambición" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2976"
+    target: "el esfuerzo"
+    ipa: "el esˈfweɾθo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "esfuerzo", base: "esfuerzo" }]
+    examples:
+      - target: "El esfuerzo vale la pena."
+        ipa: "el esˈfweɾθo ˈbale la ˈpena"
+        bases: [{ word: "El", base: "el" }, { word: "esfuerzo", base: "esfuerzo" }, { word: "vale", base: "valer" }, { word: "la", base: "la" }, { word: "pena", ref: "es-2009" }]
+      - target: "Hablamos de esfuerzo con mis amigos."
+        ipa: "aˈblamos de esˈfweɾθo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "esfuerzo", base: "esfuerzo" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2977"
+    target: "la paz"
+    ipa: "la paθ"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "paz", base: "paz" }]
+    examples:
+      - target: "La paz es un bien común."
+        ipa: "la paθ es un bjen koˈmun"
+        bases: [{ word: "La", base: "la" }, { word: "paz", base: "paz" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "bien", ref: "es-0326" }, { word: "común", base: "común" }]
+      - target: "Hablamos de paz con mis amigos."
+        ipa: "aˈblamos de paθ kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "paz", base: "paz" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2978"
+    target: "el futuro"
+    ipa: "el fuˈtuɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "futuro", base: "futuro" }]
+    examples:
+      - target: "El futuro es incierto."
+        ipa: "el fuˈtuɾo es inˈθjeɾto"
+        bases: [{ word: "El", base: "el" }, { word: "futuro", base: "futuro" }, { word: "es", ref: "es-0022" }, { word: "incierto", base: "incierto" }]
+      - target: "Hablamos de futuro con mis amigos."
+        ipa: "aˈblamos de fuˈtuɾo kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "futuro", base: "futuro" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2979"
+    target: "el presente"
+    ipa: "el pɾeˈsente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "presente", base: "presente" }]
+    examples:
+      - target: "Vivo en el presente."
+        ipa: "ˈbibo en el pɾeˈsente"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "presente", base: "presente" }]
+      - target: "Hablamos de presente con mis amigos."
+        ipa: "aˈblamos de pɾeˈsente kon mis aˈmiɡos"
+        bases: [{ word: "Hablamos", ref: "es-0027" }, { word: "de", base: "de" }, { word: "presente", base: "presente" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
