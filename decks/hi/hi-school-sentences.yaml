@@ -1,0 +1,119 @@
+schema: 1
+id: "hi-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1621"
+    target: "हमारी कक्षा में नया शिक्षक आया है।"
+    reading: "hamārī kakśā mēm̐ nayā śikśak āyā hai."
+    ipa: "ɦəmaːriː kəkʃaː mẽː nəjaː ʃɪkʃək aːjaː ɦɛː"
+    phonetic: "[ɦəmaːriː kəkʃaː mẽː nəjaː ʃɪkʃək aːjaː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "हमारी", "base": "हमारा", "reading": "hamārā" }, { "word": "कक्षा", "ref": "hi-1571" }, { "word": "में", "ref": "hi-0274" }, { "word": "नया", "base": "नया", "reading": "nayā" }, { "word": "शिक्षक", "ref": "hi-1574" }, { "word": "आया", "base": "आना", "reading": "ānā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1575", kind: "word" }
+      - { id: "f2", word: "आई", reading: "āī", ipa: "aːiː", kind: "form" }
+  - id: "hi-1622"
+    target: "बस्ते में कॉपी, किताब और पेन हैं।"
+    reading: "bastē mēm̐ kôpī, kitāb aur pēn haim̐."
+    ipa: "bəst̪eː mẽː kɔpiː kɪt̪aːb ɔːr peːn ɦɛ̃ː"
+    phonetic: "[bəst̪eː mẽː kɔpiː kɪt̪aːb ɔːr peːn ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "बस्ते", "base": "बस्ता", "reading": "bastā" }, { "word": "में", "ref": "hi-0274" }, { "word": "कॉपी", "ref": "hi-1572" }, { "word": "किताब", "ref": "hi-1095" }, { "word": "और", "ref": "hi-0337" }, { "word": "पेन", "ref": "hi-1591" }, { "word": "हैं", "ref": "hi-0113" }]
+    confusables:
+      - { id: "w1", ref: "hi-1590", kind: "word" }
+      - { id: "f2", word: "है", reading: "hai", ipa: "ɦɛː", kind: "form" }
+  - id: "hi-1623"
+    target: "परीक्षा में सवाल का जवाब लिखो।"
+    reading: "parīkśā mēm̐ savāl kā javāb likhō."
+    ipa: "pəriːkʃaː mẽː səʋaːl kaː dʒəʋaːb lɪkʰoː"
+    phonetic: "[pəriːkʃaː mẽː səʋaːl kaː dʒəʋaːb lɪkʰoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "परीक्षा", "ref": "hi-1576" }, { "word": "में", "ref": "hi-0274" }, { "word": "सवाल", "ref": "hi-1595" }, { "word": "का", "ref": "hi-0279" }, { "word": "जवाब", "ref": "hi-1596" }, { "word": "लिखो", "base": "लिखना", "reading": "likhnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1600", kind: "word" }
+      - { id: "f2", word: "लिखा", reading: "likhā", ipa: "lɪkʰaː", kind: "form" }
+  - id: "hi-1624"
+    target: "गणित और विज्ञान मेरे पसंदीदा विषय हैं।"
+    reading: "gaṇit aur vigyān mērē pasandīdā viśay haim̐."
+    ipa: "ɡəɳɪt̪ ɔːr ʋɪɡjaːn meːreː pəsənd̪iːd̪aː ʋɪʃəj ɦɛ̃ː"
+    phonetic: "[ɡəɳɪt̪ ɔːr ʋɪɡjaːn meːreː pəsən̪d̪iːd̪aː ʋɪʃəj ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "गणित", "ref": "hi-1578" }, { "word": "और", "ref": "hi-0337" }, { "word": "विज्ञान", "ref": "hi-1579" }, { "word": "मेरे", "base": "मेरा", "reading": "mērā" }, { "word": "पसंदीदा", "base": "पसंदीदा", "reading": "pasandīdā" }, { "word": "विषय", "base": "विषय", "reading": "viśay" }, { "word": "हैं", "ref": "hi-0113" }]
+    confusables:
+      - { id: "w1", ref: "hi-1580", kind: "word" }
+      - { id: "f2", word: "है", reading: "hai", ipa: "ɦɛː", kind: "form" }
+  - id: "hi-1625"
+    target: "घंटी बजी और बच्चे कक्षा से बाहर गए।"
+    reading: "ghaṇṭī bajī aur baccē kakśā sē bāhar gaē."
+    ipa: "ɡʱəɳʈiː bədʒiː ɔːr bətʃtʃeː kəkʃaː seː baːɦər ɡəeː"
+    phonetic: "[ɡʱəɳʈiː bədʒiː ɔːr bətʃtʃeː kəkʃaː seː baːɦər ɡəeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "घंटी", "ref": "hi-1584" }, { "word": "बजी", "base": "बजना", "reading": "bajnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "बच्चे", "ref": "hi-0383" }, { "word": "कक्षा", "ref": "hi-1571" }, { "word": "से", "ref": "hi-0276" }, { "word": "बाहर", "base": "बाहर", "reading": "bāhar" }, { "word": "गए", "base": "जाना", "reading": "jānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1617", kind: "word" }
+      - { id: "f2", word: "बजा", reading: "bajā", ipa: "bədʒaː", kind: "form" }
+  - id: "hi-1626"
+    target: "रजिस्टर में नाम लिखकर कक्षा में बैठो।"
+    reading: "rajisṭar mēm̐ nām likhkar kakśā mēm̐ baiṭhō."
+    ipa: "rədʒɪsʈər mẽː naːm lɪkʰkər kəkʃaː mẽː bɛːʈʰoː"
+    phonetic: "[rədʒɪsʈər mẽː naːm lɪkʰkər kəkʃaː mẽː bɛːʈʰoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "रजिस्टर", "ref": "hi-1592" }, { "word": "में", "ref": "hi-0274" }, { "word": "नाम", "base": "नाम", "reading": "nām" }, { "word": "लिखकर", "base": "लिखना", "reading": "likhnā" }, { "word": "कक्षा", "ref": "hi-1571" }, { "word": "में", "ref": "hi-0274" }, { "word": "बैठो", "base": "बैठना", "reading": "baiṭhnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1619", kind: "word" }
+      - { id: "f2", word: "बैठना", reading: "baiṭhnā", ipa: "bɛːʈʰnaː", kind: "form" }
+  - id: "hi-1627"
+    target: "गलत जवाब से डरो मत।"
+    reading: "galat javāb sē ḍarō mat."
+    ipa: "ɡələt̪ dʒəʋaːb seː ɖəroː mət̪"
+    phonetic: "[ɡələt̪ dʒəʋaːb seː ɖəroː mət̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "गलत", "ref": "hi-1598" }, { "word": "जवाब", "base": "जवाब", "reading": "javāb" }, { "word": "से", "ref": "hi-0276" }, { "word": "डरो", "base": "डरना", "reading": "ḍarnā" }, { "word": "मत", "base": "मत", "reading": "mat" }]
+    confusables:
+      - { id: "w1", ref: "hi-0822", kind: "word" }
+      - { id: "f2", word: "गलती", reading: "galtī", ipa: "ɡəlt̪iː", kind: "form" }
+  - id: "hi-1628"
+    target: "हर सुबह प्रार्थना होती है।"
+    reading: "har subah prārthanā hōtī hai."
+    ipa: "ɦər sʊbəɦ praːrt̪ʰənaː ɦoːt̪iː ɦɛː"
+    phonetic: "[ɦər sʊbəɦ praːrt̪ʰənaː ɦoːt̪iː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "हर", "base": "हर", "reading": "har" }, { "word": "सुबह", "base": "सुबह", "reading": "subah" }, { "word": "प्रार्थना", "ref": "hi-1617" }, { "word": "होती", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1584", kind: "word" }
+      - { id: "f2", word: "होते", reading: "hōtē", ipa: "ɦoːt̪eː", kind: "form" }
+  - id: "hi-1629"
+    target: "सीढ़ियाँ धीरे चढ़ो, बेंच पर बैठो।"
+    reading: "sīṛhiyām̐ dhīrē caṛhō, bēñc par baiṭhō."
+    ipa: "siːɽʱɪjãː d̪ʱiːreː tʃəɽʱoː beːɲtʃ pər bɛːʈʰoː"
+    phonetic: "[siːɽʱɪjãː d̪ʱiːreː tʃəɽʱoː beːɲtʃ pər bɛːʈʰoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "सीढ़ियाँ", "base": "सीढ़ी", "reading": "sīṛhī" }, { "word": "धीरे", "ref": "hi-0820" }, { "word": "चढ़ो", "base": "चढ़ना", "reading": "caṛhnā" }, { "word": "बेंच", "ref": "hi-1603" }, { "word": "पर", "ref": "hi-0275" }, { "word": "बैठो", "base": "बैठना", "reading": "baiṭhnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1571", kind: "word" }
+      - { id: "f2", word: "चढ़ना", reading: "caṛhnā", ipa: "tʃəɽʱnaː", kind: "form" }
+  - id: "hi-1630"
+    target: "प्रयोगशाला में प्रयोग करो, फिर रजिस्टर में लिखो।"
+    reading: "prayōgśālā mēm̐ prayōg karō, phir rajisṭar mēm̐ likhō."
+    ipa: "prəjoːɡʃaːlaː mẽː prəjoːɡ kəroː pʰɪr rədʒɪsʈər mẽː lɪkʰoː"
+    phonetic: "[prəjoːɡʃaːlaː mẽː prəjoːɡ kəroː pʰɪr rədʒɪsʈər mẽː lɪkʰoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "प्रयोगशाला", "ref": "hi-1610" }, { "word": "में", "ref": "hi-0274" }, { "word": "प्रयोग", "base": "प्रयोग", "reading": "prayōg" }, { "word": "करो", "base": "करना", "reading": "karnā" }, { "word": "फिर", "base": "फिर", "reading": "phir" }, { "word": "रजिस्टर", "ref": "hi-1592" }, { "word": "में", "ref": "hi-0274" }, { "word": "लिखो", "base": "लिखना", "reading": "likhnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1609", kind: "word" }
+      - { id: "f2", word: "करें", reading: "karēm̐", ipa: "kərẽː", kind: "form" }

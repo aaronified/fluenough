@@ -1,0 +1,360 @@
+schema: 1
+id: "hi-en-school"
+kind: "layer"
+core: "hi-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+license: "CC-BY-SA-4.0"
+description: "Words of the classroom: the school day, the lessons and the things pupils carry. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1571":
+    native: "classroom; class"
+    notes:
+      "n1": "The room, and also the class of pupils. Class one is कक्षा एक (kakṣā ek)."
+    examples:
+      "हमारी कक्षा बड़ी है।": { native: "Our classroom is big.", bases: { "हमारी": "our", "कक्षा": "classroom", "बड़ी": "big" } }
+      "कक्षा में बच्चे पढ़ते हैं।": { native: "The children study in the classroom.", bases: { "कक्षा": "classroom", "पढ़ते": "to read" } }
+  "hi-1572":
+    native: "exercise book; notebook"
+    notes:
+      "n1": "The exercise book a pupil writes in, from the English word copy."
+    examples:
+      "मेरी कॉपी नई है।": { native: "My exercise book is new.", bases: { "मेरी": "my", "कॉपी": "exercise book", "नई": "new" } }
+      "कॉपी में लिखो।": { native: "Write in the exercise book.", bases: { "कॉपी": "exercise book", "लिखो": "to write" } }
+  "hi-1573":
+    native: "school bag"
+    notes:
+      "n1": "The bag a pupil carries to school."
+    examples:
+      "बस्ता भारी है।": { native: "The school bag is heavy.", bases: { "बस्ता": "school bag", "भारी": "heavy" } }
+      "बस्ते में किताब रखो।": { native: "Put the book in the school bag.", bases: { "बस्ते": "school bag", "रखो": "to keep" } }
+  "hi-1574":
+    native: "teacher (formal)"
+    notes:
+      "n1": "Formal and Sanskrit-leaning. In speech a teacher is often called मास्टर जी (māstar jī)."
+    examples:
+      "शिक्षक ने पाठ पढ़ाया।": { native: "The teacher taught the lesson.", bases: { "शिक्षक": "teacher (formal)", "ने": "marks the doer of a past verb", "पाठ": "lesson", "पढ़ाया": "to teach" } }
+      "शिक्षक कक्षा में आए।": { native: "The teacher came into the classroom.", bases: { "शिक्षक": "teacher (formal)", "आए": "to come" } }
+  "hi-1575":
+    native: "student; pupil (formal)"
+    notes:
+      "n1": "Formal. The everyday word for a school pupil is छात्र (chhātra)."
+    examples:
+      "विद्यार्थी स्कूल जाते हैं।": { native: "The students go to school.", bases: { "विद्यार्थी": "student", "जाते": "to go" } }
+      "हर विद्यार्थी को कॉपी मिलती है।": { native: "Every student gets an exercise book.", bases: { "हर": "each", "विद्यार्थी": "student", "मिलती": "to get" } }
+  "hi-1576":
+    native: "exam; test"
+    notes:
+      "n1": "To sit an exam is परीक्षा देना (parīkṣā denā)."
+    examples:
+      "कल परीक्षा है।": { native: "The exam is tomorrow.", bases: { "परीक्षा": "exam" } }
+      "परीक्षा में अच्छे नंबर लाओ।": { native: "Get good marks in the exam.", bases: { "परीक्षा": "exam", "अच्छे": "good", "नंबर": "marks", "लाओ": "to bring" } }
+  "hi-1577":
+    native: "homework"
+    notes:
+      "n1": "An English word, used in school. Hindi also has गृहकार्य (gṛhkārya)."
+    examples:
+      "रोज़ होमवर्क करो।": { native: "Do the homework every day.", bases: { "होमवर्क": "homework", "करो": "to do" } }
+      "होमवर्क पूरा करो।": { native: "Finish the homework.", bases: { "होमवर्क": "homework", "पूरा": "complete", "करो": "to do" } }
+  "hi-1578":
+    native: "mathematics; maths"
+    notes:
+      "n1": "A school subject. The word also means calculation."
+    examples:
+      "गणित मुश्किल है।": { native: "Maths is difficult.", bases: { "गणित": "mathematics", "मुश्किल": "difficult" } }
+      "मुझे गणित पसंद है।": { native: "I like maths.", bases: { "मुझे": "to me", "गणित": "mathematics", "पसंद": "liking" } }
+  "hi-1579":
+    native: "science"
+    notes:
+      "n1": "A school subject. Sanskrit-leaning, from विज्ञ (vijña), knowing."
+    examples:
+      "विज्ञान में प्रयोग होता है।": { native: "There are experiments in science.", bases: { "विज्ञान": "science", "प्रयोग": "experiment", "होता": "to be" } }
+      "विज्ञान की किताब कहाँ है?": { native: "Where is the science book?", bases: { "विज्ञान": "science", "कहाँ": "where" } }
+  "hi-1580":
+    native: "history"
+    notes:
+      "n1": "A school subject: the story of the past, of kings and wars."
+    examples:
+      "इतिहास में राजा और युद्ध पढ़ते हैं।": { native: "In history we read about kings and wars.", bases: { "इतिहास": "history", "राजा": "king", "युद्ध": "war", "पढ़ते": "to read" } }
+      "इतिहास पुराना है।": { native: "History is old.", bases: { "इतिहास": "history", "पुराना": "old" } }
+  "hi-1581":
+    native: "geography"
+    notes:
+      "n1": "A school subject: the earth, its rivers and its maps."
+    examples:
+      "भूगोल में नक्शा देखो।": { native: "In geography, look at the map.", bases: { "भूगोल": "geography", "नक्शा": "map", "देखो": "to see" } }
+      "भूगोल में नदियाँ पढ़ते हैं।": { native: "In geography we read about rivers.", bases: { "भूगोल": "geography", "नदियाँ": "river", "पढ़ते": "to read" } }
+  "hi-1582":
+    native: "English (the language)"
+    notes:
+      "n1": "The language. The adjective and the language are the same word."
+    examples:
+      "मुझे अंग्रेज़ी पसंद है।": { native: "I like English.", bases: { "मुझे": "to me", "अंग्रेज़ी": "English (the language)", "पसंद": "liking" } }
+      "अंग्रेज़ी में वाक्य लिखो।": { native: "Write a sentence in English.", bases: { "अंग्रेज़ी": "English (the language)", "वाक्य": "sentence", "लिखो": "to write" } }
+  "hi-1583":
+    native: "Sanskrit"
+    notes:
+      "n1": "The classical language, the root of many Hindi words."
+    examples:
+      "संस्कृत एक पुरानी भाषा है।": { native: "Sanskrit is an old language.", bases: { "संस्कृत": "Sanskrit", "एक": "one", "पुरानी": "old", "भाषा": "language" } }
+      "संस्कृत पढ़ना कठिन है।": { native: "Studying Sanskrit is difficult.", bases: { "संस्कृत": "Sanskrit", "कठिन": "difficult" } }
+  "hi-1584":
+    native: "bell"
+    notes:
+      "n1": "The school bell that marks the end of a lesson."
+    examples:
+      "घंटी बजी।": { native: "The bell rang.", bases: { "घंटी": "bell", "बजी": "to ring" } }
+      "घंटी बजते ही बच्चे बाहर गए।": { native: "As soon as the bell rang, the children went outside.", bases: { "घंटी": "bell", "बजते": "to ring", "ही": "just; as soon as", "बाहर": "outside", "गए": "to go" } }
+  "hi-1585":
+    native: "marks; number"
+    notes:
+      "n1": "The marks in an exam, or a number."
+    examples:
+      "उसका नंबर अच्छा है।": { native: "His marks are good.", bases: { "उसका": "his or her", "नंबर": "marks", "अच्छा": "good" } }
+      "नंबर कम मत लाओ।": { native: "Do not get low marks.", bases: { "नंबर": "marks", "मत": "do not", "लाओ": "to bring" } }
+  "hi-1586":
+    native: "letter (of the alphabet); handwriting"
+    notes:
+      "n1": "A letter of the alphabet. अच्छे अक्षर (acche akṣar) is neat handwriting."
+    examples:
+      "अक्षर सुंदर लिखो।": { native: "Write neat letters.", bases: { "अक्षर": "letter (of the alphabet)", "सुंदर": "beautiful", "लिखो": "to write" } }
+      "हिंदी के अक्षर सीखो।": { native: "Learn the letters of Hindi.", bases: { "हिंदी": "Hindi", "अक्षर": "letter (of the alphabet)", "सीखो": "to learn" } }
+  "hi-1587":
+    native: "word"
+    notes:
+      "n1": "Sanskrit-leaning. The everyday word for a word in speech is बात (bāt), though शब्द (śabd) is used for a word in a text."
+    examples:
+      "यह शब्द नया है।": { native: "This word is new.", bases: { "शब्द": "word", "नया": "new" } }
+      "हर शब्द का अर्थ लिखो।": { native: "Write the meaning of each word.", bases: { "हर": "each", "शब्द": "word", "अर्थ": "meaning", "लिखो": "to write" } }
+  "hi-1588":
+    native: "sentence (in grammar)"
+    notes:
+      "n1": "Sanskrit-leaning. Used for a sentence in grammar lessons."
+    examples:
+      "यह वाक्य सही है।": { native: "This sentence is right.", bases: { "वाक्य": "sentence (in grammar)", "सही": "right" } }
+      "वाक्य पूरा करो।": { native: "Complete the sentence.", bases: { "वाक्य": "sentence (in grammar)", "करो": "to do" } }
+  "hi-1589":
+    native: "map"
+    notes:
+      "n1": "A map of a country or the world."
+    examples:
+      "नक्शा दीवार पर है।": { native: "The map is on the wall.", bases: { "नक्शा": "map", "दीवार": "wall" } }
+      "नक्शे में भारत देखो।": { native: "Look at India on the map.", bases: { "नक्शे": "map", "भारत": "India", "देखो": "to see" } }
+  "hi-1590":
+    native: "eraser; rubber"
+    notes:
+      "n1": "Rubs out pencil. The same word means rubber, the material."
+    examples:
+      "पेंसिल की गलती रबड़ से मिटाओ।": { native: "Rub out the pencil mistake with the eraser.", bases: { "पेंसिल": "pencil", "गलती": "mistake", "रबड़": "eraser", "मिटाओ": "to erase" } }
+      "रबड़ मेरे पास है।": { native: "I have the eraser.", bases: { "रबड़": "eraser", "मेरे": "my", "पास": "near" } }
+  "hi-1591":
+    native: "pen"
+    notes:
+      "n1": "An English word for a pen. कलम (kalam) is the older word."
+    examples:
+      "मेरा पेन कहाँ है?": { native: "Where is my pen?", bases: { "मेरा": "my", "पेन": "pen", "कहाँ": "where" } }
+      "पेन से लिखो।": { native: "Write with a pen.", bases: { "पेन": "pen", "लिखो": "to write" } }
+  "hi-1592":
+    native: "register; record book"
+    notes:
+      "n1": "The book in which the school keeps its list of names."
+    examples:
+      "रजिस्टर में नाम लिखो।": { native: "Write the name in the register.", bases: { "रजिस्टर": "register", "नाम": "name", "लिखो": "to write" } }
+      "रजिस्टर मेज़ पर है।": { native: "The register is on the table.", bases: { "रजिस्टर": "register", "मेज़": "table" } }
+  "hi-1593":
+    native: "uniform"
+    notes:
+      "n1": "An English word. The school uniform is a set of clothes for every pupil."
+    examples:
+      "स्कूल की यूनिफ़ॉर्म सफ़ेद है।": { native: "The school uniform is white.", bases: { "स्कूल": "school", "यूनिफ़ॉर्म": "uniform", "सफ़ेद": "white" } }
+      "यूनिफ़ॉर्म पहनो।": { native: "Wear the uniform.", bases: { "यूनिफ़ॉर्म": "uniform", "पहनो": "to wear" } }
+  "hi-1594":
+    native: "memory"
+    notes:
+      "n1": "The verb is याद करना (yād karnā), to learn by heart."
+    examples:
+      "मुझे यह बात याद है।": { native: "I remember this.", bases: { "मुझे": "to me", "बात": "matter", "याद": "memory" } }
+      "याद करो।": { native: "Learn it by heart.", bases: { "याद": "memory", "करो": "to do" } }
+  "hi-1595":
+    native: "question (in a test)"
+    notes:
+      "n1": "A question in a test or a sum. Persian-leaning."
+    examples:
+      "सवाल कठिन है।": { native: "The question is difficult.", bases: { "सवाल": "question (in a test)", "कठिन": "difficult" } }
+      "शिक्षक ने सवाल पूछा।": { native: "The teacher asked a question.", bases: { "ने": "marks the doer of a past verb", "सवाल": "question (in a test)", "पूछा": "to ask" } }
+  "hi-1596":
+    native: "answer"
+    notes:
+      "n1": "The answer to a सवाल (savāl), a question."
+    examples:
+      "जवाब सही है।": { native: "The answer is right.", bases: { "जवाब": "answer", "सही": "right" } }
+      "सवाल का जवाब दो।": { native: "Give the answer to the question.", bases: { "जवाब": "answer", "दो": "to give" } }
+  "hi-1597":
+    native: "mistake"
+    notes:
+      "n1": "The adjective is गलत (galat), wrong."
+    examples:
+      "गलती मत करो।": { native: "Do not make a mistake.", bases: { "गलती": "mistake", "मत": "do not", "करो": "to do" } }
+      "मेरी गलती थी।": { native: "It was my mistake.", bases: { "मेरी": "my", "गलती": "mistake", "थी": "was" } }
+  "hi-1598":
+    native: "wrong"
+    notes:
+      "n1": "The opposite is सही (sahī), right."
+    examples:
+      "यह जवाब गलत है।": { native: "This answer is wrong.", bases: { "गलत": "wrong" } }
+      "गलत शब्द मत लिखो।": { native: "Do not write a wrong word.", bases: { "गलत": "wrong", "मत": "do not", "लिखो": "to write" } }
+  "hi-1599":
+    native: "lesson (what is to be learnt)"
+    notes:
+      "n1": "Persian-leaning. Like पाठ (pāṭh), but the lesson to be learnt by heart."
+    examples:
+      "आज का सबक़ याद करो।": { native: "Learn today's lesson by heart.", bases: { "सबक़": "lesson (what is to be learnt)", "करो": "to do" } }
+      "सबक़ पढ़ो।": { native: "Read the lesson.", bases: { "सबक़": "lesson (what is to be learnt)", "पढ़ो": "to read" } }
+  "hi-1600":
+    native: "lesson (in a book)"
+    notes:
+      "n1": "Sanskrit-leaning. A chapter of a school book."
+    examples:
+      "पाठ नया है।": { native: "The lesson is new.", bases: { "पाठ": "lesson (in a book)", "नया": "new" } }
+      "पाठ को ध्यान से पढ़ो।": { native: "Read the lesson carefully.", bases: { "पाठ": "lesson (in a book)", "ध्यान": "attention", "पढ़ो": "to read" } }
+  "hi-1601":
+    native: "to teach"
+    notes:
+      "n1": "The opposite of the pupil's side is पढ़ना (paṛhnā), to read or study."
+    examples:
+      "वह हमें गणित पढ़ाती है।": { native: "She teaches us maths.", bases: { "हमें": "to us", "पढ़ाती": "to teach" } }
+      "अध्यापक हिंदी पढ़ाते हैं।": { native: "The teacher teaches Hindi.", bases: { "हिंदी": "Hindi", "पढ़ाते": "to teach" } }
+  "hi-1602":
+    native: "stairs; ladder"
+    notes:
+      "n1": "The steps of a building: सीढ़ियाँ (sīṛhiyāṁ), stairs."
+    examples:
+      "सीढ़ी से ऊपर जाओ।": { native: "Go up by the stairs.", bases: { "सीढ़ी": "stairs", "ऊपर": "up", "जाओ": "to go" } }
+      "सीढ़ियाँ धीरे चढ़ो।": { native: "Climb the stairs slowly.", bases: { "सीढ़ियाँ": "stairs", "चढ़ो": "to climb" } }
+  "hi-1603":
+    native: "bench"
+    notes:
+      "n1": "A long seat for two or three pupils."
+    examples:
+      "बेंच पर बैठो।": { native: "Sit on the bench.", bases: { "बेंच": "bench", "बैठो": "to sit" } }
+      "बेंच टूटी है।": { native: "The bench is broken.", bases: { "बेंच": "bench", "टूटी": "to break" } }
+  "hi-1604":
+    native: "blackboard"
+    notes:
+      "n1": "An English word for the board the teacher writes on."
+    examples:
+      "ब्लैकबोर्ड पर लिखो।": { native: "Write on the blackboard.", bases: { "ब्लैकबोर्ड": "blackboard", "लिखो": "to write" } }
+      "ब्लैकबोर्ड साफ़ करो।": { native: "Clean the blackboard.", bases: { "ब्लैकबोर्ड": "blackboard", "साफ़": "clean", "करो": "to do" } }
+  "hi-1605":
+    native: "chalk"
+    notes:
+      "n1": "The chalk for the blackboard."
+    examples:
+      "चॉक से लिखो।": { native: "Write with chalk.", bases: { "चॉक": "chalk", "लिखो": "to write" } }
+      "चॉक नहीं है।": { native: "There is no chalk.", bases: { "चॉक": "chalk", "नहीं": "not" } }
+  "hi-1606":
+    native: "picture; drawing"
+    notes:
+      "n1": "A drawing or a painting. Sanskrit-leaning."
+    examples:
+      "यह चित्र सुंदर है।": { native: "This drawing is beautiful.", bases: { "चित्र": "picture", "सुंदर": "beautiful" } }
+      "चित्र में पेड़ हैं।": { native: "There are trees in the picture.", bases: { "चित्र": "picture", "पेड़": "tree" } }
+  "hi-1607":
+    native: "school fee"
+    notes:
+      "n1": "The money paid to a school."
+    examples:
+      "स्कूल की फ़ीस कितनी है?": { native: "How much is the school fee?", bases: { "स्कूल": "school", "फ़ीस": "school fee", "कितनी": "how much" } }
+      "फ़ीस समय पर दो।": { native: "Pay the fee on time.", bases: { "फ़ीस": "school fee", "समय": "time", "दो": "to give" } }
+  "hi-1608":
+    native: "music"
+    notes:
+      "n1": "Sanskrit-leaning. The music lesson is in school."
+    examples:
+      "संगीत की कक्षा अच्छी है।": { native: "The music class is good.", bases: { "संगीत": "music", "अच्छी": "good" } }
+      "संगीत सुनो।": { native: "Listen to music.", bases: { "संगीत": "music", "सुनो": "to listen" } }
+  "hi-1609":
+    native: "library"
+    notes:
+      "n1": "Sanskrit-leaning. The room of books in a school."
+    examples:
+      "पुस्तकालय में शांति रखो।": { native: "Keep quiet in the library.", bases: { "पुस्तकालय": "library", "शांति": "quiet", "रखो": "to keep" } }
+      "पुस्तकालय से किताब लो।": { native: "Borrow a book from the library.", bases: { "पुस्तकालय": "library", "लो": "to take" } }
+  "hi-1610":
+    native: "laboratory"
+    notes:
+      "n1": "Sanskrit-leaning. The room for experiments in science."
+    examples:
+      "प्रयोगशाला में प्रयोग करो।": { native: "Do the experiments in the laboratory.", bases: { "प्रयोगशाला": "laboratory", "करो": "to do" } }
+      "प्रयोगशाला बड़ी है।": { native: "The laboratory is big.", bases: { "प्रयोगशाला": "laboratory", "बड़ी": "big" } }
+  "hi-1611":
+    native: "hostel"
+    notes:
+      "n1": "Sanskrit-leaning. The building where pupils live away from home."
+    examples:
+      "वह छात्रावास में रहता है।": { native: "He lives in the hostel.", bases: { "छात्रावास": "hostel", "रहता": "to live" } }
+      "छात्रावास साफ़ है।": { native: "The hostel is clean.", bases: { "छात्रावास": "hostel", "साफ़": "clean" } }
+  "hi-1612":
+    native: "slate; writing board"
+    notes:
+      "n1": "A small wooden board, used in primary school."
+    examples:
+      "तख़्ती पर नाम लिखो।": { native: "Write the name on the slate.", bases: { "तख़्ती": "slate", "लिखो": "to write" } }
+      "तख़्ती छोटी है।": { native: "The slate is small.", bases: { "तख़्ती": "slate", "छोटी": "small" } }
+  "hi-1613":
+    native: "attendance; roll call"
+    notes:
+      "n1": "The roll call in which each pupil answers that they are present."
+    examples:
+      "हाज़िरी दो।": { native: "Answer the roll call.", bases: { "हाज़िरी": "attendance", "दो": "to give" } }
+      "रोज़ हाज़िरी होती है।": { native: "There is a roll call every day.", bases: { "हाज़िरी": "attendance", "होती": "to be" } }
+  "hi-1614":
+    native: "studies"
+    notes:
+      "n1": "The study of lessons. The verb is पढ़ना (paṛhnā), to read."
+    examples:
+      "पढ़ाई ध्यान से करो।": { native: "Study carefully.", bases: { "पढ़ाई": "studies", "ध्यान": "attention", "करो": "to do" } }
+      "पढ़ाई के बाद खेलो।": { native: "Play after your studies.", bases: { "पढ़ाई": "studies", "बाद": "after", "खेलो": "to play" } }
+  "hi-1615":
+    native: "scissors"
+    notes:
+      "n1": "Cuts paper and cloth."
+    examples:
+      "कैंची से कागज़ काटो।": { native: "Cut the paper with scissors.", bases: { "कैंची": "scissors", "कागज़": "paper", "काटो": "to cut" } }
+      "कैंची तेज़ है।": { native: "The scissors are sharp.", bases: { "कैंची": "scissors", "तेज़": "sharp" } }
+  "hi-1616":
+    native: "glue"
+    notes:
+      "n1": "Sticks paper together."
+    examples:
+      "गोंद से चिपकाओ।": { native: "Stick it with glue.", bases: { "गोंद": "glue", "चिपकाओ": "to stick" } }
+      "गोंद मेज़ पर है।": { native: "The glue is on the table.", bases: { "गोंद": "glue", "मेज़": "table" } }
+  "hi-1617":
+    native: "prayer; assembly prayer"
+    notes:
+      "n1": "Sanskrit-leaning. The prayer at the start of school."
+    examples:
+      "सुबह प्रार्थना होती है।": { native: "There is a prayer in the morning.", bases: { "सुबह": "morning", "प्रार्थना": "prayer", "होती": "to be" } }
+      "प्रार्थना के बाद कक्षा में जाओ।": { native: "After the prayer, go to the classroom.", bases: { "प्रार्थना": "prayer", "बाद": "after", "जाओ": "to go" } }
+  "hi-1618":
+    native: "lunch box; tiffin"
+    notes:
+      "n1": "The lunch box a pupil brings to school."
+    examples:
+      "मेरा टिफ़िन खोलो।": { native: "Open my lunch box.", bases: { "मेरा": "my", "टिफ़िन": "lunch box", "खोलो": "to open" } }
+      "टिफ़िन में रोटी है।": { native: "There is bread in the lunch box.", bases: { "टिफ़िन": "lunch box" } }
+  "hi-1619":
+    native: "notebook"
+    notes:
+      "n1": "An English word. For notes, not the school register."
+    examples:
+      "नोटबुक नई है।": { native: "The notebook is new.", bases: { "नोटबुक": "notebook", "नई": "new" } }
+      "नोटबुक में लिखो।": { native: "Write in the notebook.", bases: { "नोटबुक": "notebook", "लिखो": "to write" } }
+  "hi-1620":
+    native: "mischief; naughtiness"
+    notes:
+      "n1": "The noun for a naughty act."
+    examples:
+      "शरारत मत करो।": { native: "Do not be naughty.", bases: { "शरारत": "mischief", "मत": "do not", "करो": "to do" } }
+      "शरारत की सज़ा मिलती है।": { native: "Mischief is punished.", bases: { "शरारत": "mischief", "सज़ा": "punishment", "मिलती": "to get" } }
