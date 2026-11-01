@@ -32,7 +32,7 @@ import 'skill_widgets.dart';
 /// Opens [view]'s skills sheet over [context]'s screen, as the Languages
 /// page does: [all] names the languages for placement, and a language whose
 /// last skill goes to Leave is toasted, with Undo. The Decks path's "Add it"
-/// opens it too (#977).
+/// opens it too.
 Future<void> showLanguageSkills(
   BuildContext context,
   AppState state,

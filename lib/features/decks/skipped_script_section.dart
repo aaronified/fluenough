@@ -13,7 +13,7 @@ import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 import 'path_model.dart';
 
 /// The decks of a script the learner does not learn, under the course's
-/// path (#977, owner's choice C of `skill-pills-onboarding` screen 4,
+/// path (owner's choice C of `skill-pills-onboarding` screen 4,
 /// 2026-11-01): a box naming the script, how many decks and cards it holds,
 /// why they are not on the path and an Add it button that opens the
 /// language's skills sheet, and the decks listed under it, each opening its

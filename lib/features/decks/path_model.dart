@@ -298,7 +298,7 @@ final class UnitStep extends PathStep {
   final CefrLevel? level;
 
   /// Whether it is the first unit of the one script the learner learns, in
-  /// a language written in several: the path says so (#977). False for a
+  /// a language written in several: the path says so. False for a
   /// learner of every script, and for a language with one.
   final bool yourScript;
 
@@ -454,7 +454,7 @@ class CourseView {
 
   /// The script decks of a script the learner skips, a script at a time, in
   /// the language's script order: they leave [otherDecks] for a section of
-  /// their own (#977). Empty unless the language is written in several
+  /// their own. Empty unless the language is written in several
   /// scripts and the learner learns some but not all of them.
   final List<SkippedScript> skippedScripts;
 
@@ -523,7 +523,7 @@ CourseView? courseView(
 
   // A language written in several scripts that the learner learns in some
   // and not all: its skipped script decks get a section of their own, and
-  // the first unit of the one script learned a "Your script" mark (#977).
+  // the first unit of the one script learned a "Your script" mark.
   final courseLanguage = first.language;
   final allScripts = <String>{
     state.primaryScript(language),

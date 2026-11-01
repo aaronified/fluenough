@@ -1,5 +1,5 @@
 // The Decks path for a learner of one script of a language written in
-// several (#977, mockup skill-pills-onboarding screen 4, approved
+// several (mockup skill-pills-onboarding screen 4, approved
 // 2026-11-01): the decks of the script they skip get a titled section with
 // an Add it button instead of sitting under Other decks, and the first unit
 // of their script says "Your script". A learner of every script, and a
