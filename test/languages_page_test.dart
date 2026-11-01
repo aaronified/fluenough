@@ -141,15 +141,8 @@ void main() {
     await tester.pumpAndSettle();
     await tester.longPress(speak);
     await tester.pumpAndSettle();
-    expect(
-      find.text(
-        text.languagesSkillState(
-          text.languagesSkillSpoken,
-          SpokenLevel.learn.label(text),
-        ),
-      ),
-      findsOneWidget,
-    );
+    // The long press says the level in a word: Spanish is Learn.
+    expect(find.text(text.languagesPillLearning), findsOneWidget);
     expect(state.settings.languageSkillsOf('es'), before, reason: 'no cycle');
     await tapKey(tester, 'skill-spoken');
     expect(state.settings.languageSkillsOf('es'), isNot(before));
@@ -179,7 +172,7 @@ void main() {
       expect(
         find.descendant(
           of: find.byKey(ValueKey<String>('skill-$id')),
-          matching: find.byIcon(Icons.done_all),
+          matching: find.byKey(const ValueKey<String>('pill-mark-verified')),
         ),
         findsOneWidget,
         reason: id,
