@@ -133,11 +133,8 @@ units:
   # 3. No script units: French is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "fr-about-me", theme: "about-me", words: 25 }
-    listening_passages:
-      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
-    reading_passages:
-      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - decks: ["fr-about-me", "fr-about-me-sentences", "fr-reading-about-me", "*"]
+    words: 25
   - planned: { id: "fr-everyday-verbs", theme: "everyday-verbs", words: 40 }
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }

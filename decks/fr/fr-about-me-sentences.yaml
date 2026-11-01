@@ -1,0 +1,127 @@
+schema: 1
+id: "fr-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0268"
+    target: "Je m'appelle Paul, et j'habite à Lyon."
+    ipa: "ʒə mapɛl pɔl e ʒabit a ljɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "m'appelle", base: "appeler" }
+      - { word: "Paul", base: "Paul" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "j'habite", base: "habiter" }
+      - { word: "à", base: "à" }
+      - { word: "Lyon", base: "Lyon" }
+    confusables:
+      - { id: "travailler", ref: "fr-0252", kind: "word" }
+      - { id: "pays", ref: "fr-0243", kind: "word" }
+  - id: "fr-0269"
+    target: "Je suis étudiante."
+    ipa: "ʒə sɥi etydjɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "étudiante", base: "étudiant" }
+    confusables:
+      - { id: "travail", ref: "fr-0255", kind: "word" }
+      - { id: "anglais", ref: "fr-0247", kind: "word" }
+  - id: "fr-0270"
+    target: "Quelle est votre adresse et votre téléphone ?"
+    ipa: "kɛl ɛ vɔtʁ adʁɛs e vɔtʁ telefɔn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quelle", ref: "fr-0072" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "votre", ref: "fr-0140" }
+      - { word: "adresse", ref: "fr-0256" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "votre", ref: "fr-0140" }
+      - { word: "téléphone", ref: "fr-0257" }
+    confusables:
+      - { id: "date", ref: "fr-0260", kind: "word" }
+      - { id: "e-mail", ref: "fr-0258", kind: "word" }
+  - id: "fr-0271"
+    target: "Je suis marié et j'ai deux enfants."
+    ipa: "ʒə sɥi maʁje e ʒe døz ɑ̃fɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "marié", ref: "fr-0249" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "j'ai", base: "avoir" }
+      - { word: "deux", ref: "fr-0209" }
+      - { word: "enfants", base: "enfant" }
+    confusables:
+      - { id: "célibataire", ref: "fr-0250", kind: "word" }
+      - { id: "mari", ref: "fr-0171", kind: "word" }
+  - id: "fr-0272"
+    target: "Elle travaille à la gare."
+    ipa: "ɛl tʁavaj a la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "travaille", base: "travailler" }
+      - { word: "à", base: "à" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "musée", ref: "fr-0077", kind: "word" }
+      - { id: "travail", ref: "fr-0255", kind: "word" }
+  - id: "fr-0273"
+    target: "Ma langue est le français."
+    ipa: "ma lɑ̃ɡ ɛ lə fʁɑ̃sɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "langue", ref: "fr-0262" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "le", base: "le" }
+      - { word: "français", ref: "fr-0246" }
+    confusables:
+      - { id: "anglais", ref: "fr-0247", kind: "word" }
+      - { id: "nationalité", ref: "fr-0245", kind: "word" }
+  - id: "fr-0274"
+    target: "Vous aimez la musique ?"
+    ipa: "vu ɛme la myzik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Vous", ref: "fr-0096" }
+      - { word: "aimez", base: "aimer" }
+      - { word: "la", base: "la" }
+      - { word: "musique", ref: "fr-0266" }
+    confusables:
+      - { id: "sport", ref: "fr-0265", kind: "word" }
+      - { id: "content", ref: "fr-0264", kind: "word" }
+  - id: "fr-0275"
+    target: "C'est la date de naissance de ma sœur."
+    ipa: "sɛ la dat də nɛsɑ̃s də ma sœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "C'est", base: "ce" }
+      - { word: "la", base: "la" }
+      - { word: "date", ref: "fr-0260" }
+      - { word: "de", base: "de" }
+      - { word: "naissance", ref: "fr-0261" }
+      - { word: "de", base: "de" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+    confusables:
+      - { id: "an", ref: "fr-0259", kind: "word" }
+      - { id: "adresse", ref: "fr-0256", kind: "word" }

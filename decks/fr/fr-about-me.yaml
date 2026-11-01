@@ -1,0 +1,275 @@
+schema: 1
+id: "fr-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0243"
+    target: "pays"
+    ipa: "pei"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon pays est la France.", ipa: "mɔ̃ pei ɛ la fʁɑ̃s", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "pays", base: "pays" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "France", base: "France" }] }
+      - { target: "Le pays de Paul est beau.", ipa: "lə pei də pɔl ɛ bo", bases: [{ word: "Le", base: "le" }, { word: "pays", base: "pays" }, { word: "de", base: "de" }, { word: "Paul", base: "Paul" }, { word: "est", ref: "fr-0021" }, { word: "beau", base: "beau" }] }
+  - id: "fr-0244"
+    target: "ville"
+    ipa: "vil"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma ville est petite.", ipa: "ma vil ɛ pəti", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "ville", base: "ville" }, { word: "est", ref: "fr-0021" }, { word: "petite", base: "petit" }] }
+      - { target: "La ville est grande.", ipa: "la vil ɛ ɡʁɑ̃d", bases: [{ word: "La", base: "la" }, { word: "ville", base: "ville" }, { word: "est", ref: "fr-0021" }, { word: "grande", base: "grand" }] }
+  - id: "fr-0245"
+    target: "nationalité"
+    ipa: "nasjɔnalite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est votre nationalité ?", ipa: "kɛl ɛ vɔtʁ nasjɔnalite", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "nationalité", base: "nationalité" }] }
+      - { target: "Ma nationalité est française.", ipa: "ma nasjɔnalite ɛ fʁɑ̃sɛz", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "nationalité", base: "nationalité" }, { word: "est", ref: "fr-0021" }, { word: "française", base: "français" }] }
+  - id: "fr-0246"
+    target: "français"
+    ipa: "fʁɑ̃sɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis français.", ipa: "ʒə sɥi fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "français", base: "français" }] }
+      - { target: "Mon ami est français.", ipa: "mɔ̃n ami ɛ fʁɑ̃sɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "français", base: "français" }] }
+  - id: "fr-0247"
+    target: "anglais"
+    ipa: "ɑ̃ɡlɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis anglais.", ipa: "ʒə sɥi ɑ̃ɡlɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "anglais", base: "anglais" }] }
+      - { target: "Elle est anglaise.", ipa: "ɛl ɛ ɑ̃ɡlɛz", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "anglaise", base: "anglais" }] }
+  - id: "fr-0248"
+    target: "indien"
+    ipa: "ɛ̃djɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père est indien.", ipa: "mɔ̃ pɛʁ ɛ ɛ̃djɛ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "est", ref: "fr-0021" }, { word: "indien", base: "indien" }] }
+      - { target: "Ma sœur est indienne.", ipa: "ma sœʁ ɛ ɛ̃djɛn", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "indienne", base: "indien" }] }
+  - id: "fr-0249"
+    target: "marié"
+    ipa: "maʁje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis marié.", ipa: "ʒə sɥi maʁje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "marié", base: "marié" }] }
+      - { target: "Ma sœur est mariée.", ipa: "ma sœʁ ɛ maʁje", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "mariée", base: "marié" }] }
+  - id: "fr-0250"
+    target: "célibataire"
+    ipa: "selibatɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est célibataire.", ipa: "ɛl ɛ selibatɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "célibataire", base: "célibataire" }] }
+      - { target: "Vous êtes célibataire ?", ipa: "vu zɛt selibatɛʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "célibataire", base: "célibataire" }] }
+  - id: "fr-0251"
+    target: "habiter"
+    ipa: "abite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'habite à Paris.", ipa: "ʒabit a paʁi", bases: [{ word: "J'habite", base: "habiter" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Nous habitons ici.", ipa: "nu zabitɔ̃ isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "habitons", base: "habiter" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0252"
+    target: "travailler"
+    ipa: "tʁavaje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je travaille ici.", ipa: "ʒə tʁavaj isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", base: "travailler" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elle travaille à la gare.", ipa: "ɛl tʁavaj a la ɡaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", base: "travailler" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0253"
+    target: "étudier"
+    ipa: "etydje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'étudie le français.", ipa: "ʒetydi lə fʁɑ̃sɛ", bases: [{ word: "J'étudie", base: "étudier" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Mon fils étudie à Paris.", ipa: "mɔ̃ fis etydi a paʁi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "étudie", base: "étudier" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-0254"
+    target: "étudiant"
+    ipa: "etydjɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis étudiant.", ipa: "ʒə sɥi etydjɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "étudiant", base: "étudiant" }] }
+      - { target: "Mon frère est étudiant à Lyon.", ipa: "mɔ̃ fʁɛʁ ɛ etydjɑ̃ a ljɔ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "étudiant", base: "étudiant" }, { word: "à", base: "à" }, { word: "Lyon", base: "Lyon" }] }
+  - id: "fr-0255"
+    target: "travail"
+    ipa: "tʁavaj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est votre travail ?", ipa: "kɛl ɛ vɔtʁ tʁavaj", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "travail", base: "travail" }] }
+      - { target: "Mon travail est ici.", ipa: "mɔ̃ tʁavaj ɛ isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "travail", base: "travail" }, { word: "est", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0256"
+    target: "adresse"
+    ipa: "adʁɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est votre adresse ?", ipa: "kɛl ɛ vɔtʁ adʁɛs", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "adresse", base: "adresse" }] }
+      - { target: "Mon adresse est à Paris.", ipa: "mɔ̃n adʁɛs ɛ a paʁi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "adresse", base: "adresse" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-0257"
+    target: "téléphone"
+    ipa: "telefɔn"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est votre téléphone ?", ipa: "kɛl ɛ vɔtʁ telefɔn", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "téléphone", base: "téléphone" }] }
+      - { target: "Mon téléphone est là.", ipa: "mɔ̃ telefɔn ɛ la", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "téléphone", base: "téléphone" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0258"
+    target: "e-mail"
+    ipa: "imɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon e-mail est court.", ipa: "mɔ̃n imɛl ɛ kuʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "e-mail", base: "e-mail" }, { word: "est", ref: "fr-0021" }, { word: "court", base: "court" }] }
+      - { target: "Quel est votre e-mail ?", ipa: "kɛl ɛ vɔtʁ imɛl", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "e-mail", base: "e-mail" }] }
+  - id: "fr-0259"
+    target: "an"
+    ipa: "ɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un an a douze mois.", ipa: "œ̃n an a duz mwa", bases: [{ word: "Un", base: "un" }, { word: "an", base: "an" }, { word: "a", base: "avoir" }, { word: "douze", ref: "fr-0219" }, { word: "mois", base: "mois" }] }
+      - { target: "Mon fils a deux ans.", ipa: "mɔ̃ fis a dø zɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "a", base: "avoir" }, { word: "deux", ref: "fr-0209" }, { word: "ans", base: "an" }] }
+  - id: "fr-0260"
+    target: "date"
+    ipa: "dat"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est la date ?", ipa: "kɛl ɛ la dat", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "date", base: "date" }] }
+      - { target: "Quelle est votre date de naissance ?", ipa: "kɛl ɛ vɔtʁ dat də nɛsɑ̃s", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "date", base: "date" }, { word: "de", base: "de" }, { word: "naissance", ref: "fr-0261" }] }
+  - id: "fr-0261"
+    target: "naissance"
+    ipa: "nɛsɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis né à Paris.", ipa: "ʒə sɥi ne a paʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "né", base: "né" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "C'est la naissance de mon fils.", ipa: "sɛ la nɛsɑ̃s də mɔ̃ fis", bases: [{ word: "C'est", base: "ce" }, { word: "la", base: "la" }, { word: "naissance", base: "naissance" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }] }
+  - id: "fr-0262"
+    target: "langue"
+    ipa: "lɑ̃ɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle langue parlez-vous ?", ipa: "kɛl lɑ̃ɡ paʁle vu", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "langue", base: "langue" }, { word: "parlez", ref: "fr-0023" }, { word: "vous", ref: "fr-0096" }] }
+      - { target: "Ma langue est le français.", ipa: "ma lɑ̃ɡ ɛ lə fʁɑ̃sɛ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "langue", base: "langue" }, { word: "est", ref: "fr-0021" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0263"
+    target: "aimer"
+    ipa: "ɛme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime la musique.", ipa: "ʒɛm la myzik", bases: [{ word: "J'aime", base: "aimer" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "Vous aimez le sport ?", ipa: "vu ɛme lə spɔʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "aimez", base: "aimer" }, { word: "le", base: "le" }, { word: "sport", ref: "fr-0265" }] }
+  - id: "fr-0264"
+    target: "content"
+    ipa: "kɔ̃tɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis content.", ipa: "ʒə sɥi kɔ̃tɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "content", base: "content" }] }
+      - { target: "Elle est contente.", ipa: "ɛl ɛ kɔ̃tɑ̃t", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "contente", base: "content" }] }
+  - id: "fr-0265"
+    target: "sport"
+    ipa: "spɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sport est bon.", ipa: "lə spɔʁ ɛ bɔ̃", bases: [{ word: "Le", base: "le" }, { word: "sport", base: "sport" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Mon fils aime le sport.", ipa: "mɔ̃ fis ɛm lə spɔʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "sport", base: "sport" }] }
+  - id: "fr-0266"
+    target: "musique"
+    ipa: "myzik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La musique est belle.", ipa: "la myzik ɛ bɛl", bases: [{ word: "La", base: "la" }, { word: "musique", base: "musique" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "Ma sœur joue de la musique.", ipa: "ma sœʁ ʒu də la myzik", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "joue", base: "jouer" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "musique", base: "musique" }] }
+  - id: "fr-0267"
+    target: "vie"
+    ipa: "vi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vie est belle.", ipa: "la vi ɛ bɛl", bases: [{ word: "La", base: "la" }, { word: "vie", base: "vie" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "Ma vie est à Paris.", ipa: "ma vi ɛ a paʁi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "vie", base: "vie" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }

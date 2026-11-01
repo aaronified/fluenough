@@ -1,0 +1,74 @@
+schema: 1
+id: "fr-en-about-me-sentences"
+kind: "layer"
+core: "fr-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: about me"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences for talking about yourself, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0268":
+    native: "My name is Paul, and I live in Lyon."
+    bases:
+      "m'appelle": "I am called"
+      "Paul": "Paul (a first name)"
+      "j'habite": "I live"
+      "à": "in"
+      "Lyon": "Lyon"
+    confusables:
+      "travailler": { why: "Travailler is 'to work', not 'to live'." }
+      "pays": { why: "Pays is 'country'; the sentence names a city, Lyon." }
+  "fr-0269":
+    native: "I am a student (a woman)."
+    bases:
+      "étudiante": "student (a woman)"
+    confusables:
+      "travail": { why: "Travail is 'work' or 'job', not a student." }
+      "anglais": { why: "Anglais is 'English', a nationality, not a job." }
+  "fr-0270":
+    native: "What is your address and your phone number?"
+    confusables:
+      "date": { why: "Date is a date, not an address or a number." }
+      "e-mail": { why: "E-mail is an address on the internet: a different address." }
+  "fr-0271":
+    native: "I am married and I have two children."
+    bases:
+      "j'ai": "I have"
+      "enfants": "children"
+    confusables:
+      "célibataire": { why: "Célibataire means single, not married." }
+      "mari": { why: "Mari is 'husband': the sentence describes the speaker, not a husband." }
+  "fr-0272":
+    native: "She works at the station."
+    bases:
+      "travaille": "works"
+      "à": "at"
+      "la": "the"
+    confusables:
+      "musée": { why: "Musée is 'museum', a place, not a job." }
+      "travail": { why: "Travail is the noun 'work'; the sentence uses the verb." }
+  "fr-0273":
+    native: "My language is French."
+    bases:
+      "le": "the"
+    confusables:
+      "anglais": { why: "Anglais is English; the sentence names French." }
+      "nationalité": { why: "Nationalité is nationality, not language." }
+  "fr-0274":
+    native: "Do you like music?"
+    bases:
+      "aimez": "do you like"
+      "la": "the"
+    confusables:
+      "sport": { why: "Sport is sport; the question asks about music." }
+      "content": { why: "Content is 'happy', a feeling, not a taste." }
+  "fr-0275":
+    native: "It is my sister's date of birth."
+    bases:
+      "C'est": "it is"
+      "la": "the"
+      "de": "of"
+    confusables:
+      "an": { why: "An is a year, not a date." }
+      "adresse": { why: "Adresse is 'address', not 'date'." }
