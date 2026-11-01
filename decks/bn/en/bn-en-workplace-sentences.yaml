@@ -1,0 +1,48 @@
+schema: 1
+id: "bn-en-workplace-sentences"
+kind: "layer"
+core: "bn-workplace-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace: sentences"
+description: "Short sentences about an office and its work. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2665":
+    native: "My boss's room is big."
+    confusables: { "c1": { why: "the boy: a person, not a room" }, "c2": { why: "the car: a vehicle, not a room" } }
+  "bn-2666":
+    native: "The meeting will start at noon."
+    bases: { "শুরু": "start" }
+    confusables: { "c1": { why: "a ceremony: a planned event, not a work meeting" }, "c2": { why: "a party: a social gathering, not work" } }
+  "bn-2667":
+    native: "Send the report today. (familiar)"
+    bases: { "আজই": "today itself" }
+    confusables: { "c1": { why: "a poster: a sheet on a wall, not a report" }, "c2": { why: "a magazine: printed, not sent" } }
+  "bn-2668":
+    native: "The security guard is at the gate."
+    bases: { "গেটে": "at the gate", "আছেন": "is" }
+    confusables: { "c1": { why: "a doorman: a different job at the door" }, "c2": { why: "the police: not a guard of a building" } }
+  "bn-2669":
+    native: "The document has been signed by the manager."
+    confusables: { "c1": { why: "writing: text, not a signature" }, "c2": { why: "reading: a different act with a paper" } }
+  "bn-2670":
+    native: "The manager is on leave today."
+    bases: { "আজ": "today" }
+    confusables: { "c1": { why: "work: what the manager does, not a leave" }, "c2": { why: "ill: a reason for leave, not the leave itself" } }
+  "bn-2671":
+    native: "The printer is broken."
+    bases: { "খারাপ": "bad", "আছে": "is" }
+    confusables: { "c1": { why: "a scanner: copies, not prints" }, "c2": { why: "a fan: a machine that moves air" } }
+  "bn-2672":
+    native: "The deadline for this project is tomorrow."
+    bases: { "এই": "this", "কাল": "tomorrow" }
+    confusables: { "c1": { why: "yesterday: the other way in time" }, "c2": { why: "the day after tomorrow: a day further off" } }
+  "bn-2673":
+    native: "The new staff will join tomorrow."
+    bases: { "কাল": "tomorrow", "যোগ": "join" }
+    confusables: { "c1": { why: "worthy: a quality, not joining" }, "c2": { why: "enjoyment: not joining" } }
+  "bn-2674":
+    native: "I will not come late."
+    bases: { "না": "not" }
+    confusables: { "c1": { why: "sleep: a reason to be late, not the lateness" }, "c2": { why: "a game: not the work" } }

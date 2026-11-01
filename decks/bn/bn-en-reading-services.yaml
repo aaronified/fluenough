@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-services"
+name: "Reading: services"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "At a post office counter, and a simple bank form, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-post-office"
+    title: "At the post office counter"
+    theme: "services"
+    sentences:
+      - { text: "ডাকঘরে একটা পার্সেল পাঠাতে হবে।", reading: "ḍākoghore ekoṭā pārsel pāṭhāte hôbe.", ipa: "ɖakoɡʱore ekoʈa parsel paʈʰat̪e ɦɔbe" }
+      - { text: "কাউন্টারে পার্সেলের ওজন মাপা হবে।", reading: "kāunṭāre pārseler ojon māpā hôbe.", ipa: "kaunʈare parseler odʒon mapa ɦɔbe" }
+      - { text: "কত টাকা লাগবে, সেটা জানাবেন।", reading: "kôt ṭākā lāgobe, seṭā jānāben.", ipa: "kɔt̪ ʈaka laɡobe seʈa dʒanaben" }
+      - { text: "এখানে টোকেন নিন।", reading: "ekhāne ṭoken nin.", ipa: "ekʰane ʈoken nin" }
+      - { text: "অপেক্ষা করুন, নম্বর ডাকা হবে।", reading: "ôpekkhā korun, nômbor ḍākā hôbe.", ipa: "ɔpekkʰa korun nɔmbor ɖaka ɦɔbe" }
+    questions:
+      - id: "bn-3171"
+        prompt: { "en": "The parcel must be sent from the post office." }
+        answer: true
+      - id: "bn-3172"
+        prompt: { "en": "What is weighed at the counter?" }
+        options: [{ "en": "The parcel" }, { "en": "The customer" }]
+        answer: 1
+      - id: "bn-3173"
+        prompt: { "en": "What does the customer take?" }
+        options: [{ "en": "A token" }, { "en": "A receipt" }]
+        answer: 1
+  - id: "bn-bank-form"
+    title: "A simple bank form"
+    theme: "services"
+    sentences:
+      - { text: "আবেদনের আগে ফর্মটি পূরণ করুন।", reading: "ābedoner āge phôrmoṭi puron korun.", ipa: "abed̪oner aɡe pʰɔrmoʈi puron korun" }
+      - { text: "নাম আর ঠিকানা লিখুন।", reading: "nām ār ṭhikānā likhun.", ipa: "nam ar ʈʰikana likʰun" }
+      - { text: "সঙ্গে একটা ছবি দিন।", reading: "sôṅge ekoṭā chobi din.", ipa: "sɔŋɡe ekoʈa tʃʰobi d̪in" }
+      - { text: "অফিসে জমা দিন।", reading: "ôphise jômā din.", ipa: "ɔpʰise dʒɔma d̪in" }
+      - { text: "নিয়ম মেনে কাজ করুন।", reading: "niyom mene kāj korun.", ipa: "nijom mene kadʒ korun" }
+    questions:
+      - id: "bn-3174"
+        prompt: { "en": "The form must be filled in before applying." }
+        answer: true
+      - id: "bn-3175"
+        prompt: { "en": "What must be written on the form?" }
+        options: [{ "en": "Name and address" }, { "en": "Favourite colour" }]
+        answer: 1
+      - id: "bn-3176"
+        prompt: { "en": "Where is the form handed in?" }
+        options: [{ "en": "At the office" }, { "en": "Online only" }]
+        answer: 1

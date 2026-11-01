@@ -1,0 +1,68 @@
+schema: 1
+id: "bn-grammar-relative"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["present", "past", "future"]
+  entries:
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "present": "যে আসে", "past": "যে এসেছে", "future": "যে আসবে" }
+      readings: { "present": "je āse", "past": "je eseche", "future": "je āsobe" }
+      ipas: { "present": "dʒe ase", "past": "dʒe esetʃʰe", "future": "dʒe asobe" }
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "present": "যে যায়", "past": "যে গেছে", "future": "যে যাবে" }
+      readings: { "present": "je jāy", "past": "je geche", "future": "je jābe" }
+      ipas: { "present": "dʒe dʒaj", "past": "dʒe ɡetʃʰe", "future": "dʒe dʒabe" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "present": "যে খায়", "past": "যে খেয়েছে", "future": "যে খাবে" }
+      readings: { "present": "je khāy", "past": "je kheyeche", "future": "je khābe" }
+      ipas: { "present": "dʒe kʰaj", "past": "dʒe kʰejetʃʰe", "future": "dʒe kʰabe" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "present": "যে করে", "past": "যে করেছে", "future": "যে করবে" }
+      readings: { "present": "je kôre", "past": "je kôreche", "future": "je kôrobe" }
+      ipas: { "present": "dʒe kɔre", "past": "dʒe kɔretʃʰe", "future": "dʒe kɔrobe" }
+    - lemma: "থাকা"
+      key: "thaka"
+      reading: "thākā"
+      ipa: "t̪ʰaka"
+      forms: { "present": "যে থাকে", "past": "যে থেকেছে", "future": "যে থাকবে" }
+      readings: { "present": "je thāke", "past": "je thekeche", "future": "je thākobe" }
+      ipas: { "present": "dʒe t̪ʰake", "past": "dʒe t̪ʰeketʃʰe", "future": "dʒe t̪ʰakobe" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "present": "যে দেখে", "past": "যে দেখেছে", "future": "যে দেখবে" }
+      readings: { "present": "je dekhe", "past": "je dekheche", "future": "je dekhobe" }
+      ipas: { "present": "dʒe d̪ekʰe", "past": "dʒe d̪ekʰetʃʰe", "future": "dʒe d̪ekʰobe" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "present": "যে বলে", "past": "যে বলেছে", "future": "যে বলবে" }
+      readings: { "present": "je bôle", "past": "je bôleche", "future": "je bôlobe" }
+      ipas: { "present": "dʒe bɔle", "past": "dʒe bɔletʃʰe", "future": "dʒe bɔlobe" }
+    - lemma: "পাওয়া"
+      key: "paoa"
+      reading: "pāoyā"
+      ipa: "paoja"
+      forms: { "present": "যে পায়", "past": "যে পেয়েছে", "future": "যে পাবে" }
+      readings: { "present": "je pāy", "past": "je peyeche", "future": "je pābe" }
+      ipas: { "present": "dʒe paj", "past": "dʒe pejetʃʰe", "future": "dʒe pabe" }

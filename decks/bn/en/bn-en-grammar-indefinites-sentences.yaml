@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-grammar-indefinites-sentences"
+kind: "layer"
+core: "bn-grammar-indefinites-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Indefinites: sentences"
+description: "Short sentences with কেউ (keu), কিছু (kichu), কোথাও (kothāo) and কখনো (kôkhono): someone, something, somewhere and sometimes. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3949":
+    native: "Someone is knocking at the door."
+    bases: { "কেউ": "someone", "নক": "knock" }
+    confusables: { "c1": { why: "everyone: all people, not one person" }, "c2": { why: "no one at all: a negative, not a visitor" } }
+  "bn-3950":
+    native: "I want to eat something."
+    confusables: { "c1": { why: "everything: all things, not some" }, "c2": { why: "any: a different word for some" } }
+  "bn-3951":
+    native: "The boy did not go anywhere."
+    bases: { "কোথাও": "anywhere" }
+    confusables: { "c1": { why: "here: a place, not 'anywhere'" }, "c2": { why: "there: a place, not 'anywhere'" } }
+  "bn-3952":
+    native: "Sometimes I watch films."
+    confusables: { "c1": { why: "usually: most of the time, not sometimes" }, "c2": { why: "always: every time, not sometimes" } }
+  "bn-3953":
+    native: "Do you have anything? (familiar)"
+    bases: { "আছে": "have" }
+    confusables: { "c1": { why: "what: a question word, not an indefinite" }, "c2": { why: "any: a different word" } }
+  "bn-3954":
+    native: "No one has phoned."
+    bases: { "কেউ": "no one" }
+    confusables: { "c1": { why: "everyone: the opposite of no one" }, "c2": { why: "someone: a positive, not a negative" } }
+  "bn-3955":
+    native: "There is no need to go anywhere."
+    bases: { "কোথাও": "anywhere" }
+    confusables: { "c1": { why: "where: a question word, not a negative" }, "c2": { why: "home: a place, not 'anywhere'" } }
+  "bn-3956":
+    native: "Never make a mistake. (familiar)"
+    confusables: { "c1": { why: "always: the opposite of never" }, "c2": { why: "now and then: not never" } }
+  "bn-3957":
+    native: "Some people live here."
+    bases: { "মানুষ": "people" }
+    confusables: { "c1": { why: "everyone: all people, not some" }, "c2": { why: "many: a larger number, not some" } }
+  "bn-3958":
+    native: "Someone opened the door."
+    bases: { "কেউ": "someone", "একজন": "a person" }
+    confusables: { "c1": { why: "everyone: many people, not one" }, "c2": { why: "no one at all: a negative" } }

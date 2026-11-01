@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-travel"
+name: "Reading: travel"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A two-day trip itinerary, and a short sign at a railway station, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-hotel-booking"
+    title: "Booking a hotel room over the phone"
+    theme: "travel"
+    sentences:
+      - { text: "আমি একটা হোটেল ঘর বুক করতে চাই।", reading: "āmi ekoṭā hoṭel ghôr buk kôrote cāi.", ipa: "ami ekoʈa ɦoʈel ɡʱɔr buk kɔrot̪e tʃai" }
+      - { text: "কবে থেকে থাকবেন?", reading: "kôbe theke thākoben?", ipa: "kɔbe t̪ʰeke t̪ʰakoben" }
+      - { text: "শুক্রবার থেকে রবিবার পর্যন্ত।", reading: "śukrobār theke robibār pôrjont.", ipa: "ʃukrobar t̪ʰeke robibar pɔrdʒont̪" }
+      - { text: "ঘরটা নিরাপদ আর স্টেশনের কাছে।", reading: "ghôroṭā nirāpod ār sṭeśoner kāche.", ipa: "ɡʱɔroʈa nirapod̪ ar sʈeʃoner katʃʰe" }
+      - { text: "আগাম টাকা দিলে ঘর রাখা হবে।", reading: "āgām ṭākā dile ghôr rākhā hôbe.", ipa: "aɡam ʈaka d̪ile ɡʱɔr rakʰa ɦɔbe" }
+    questions:
+      - id: "bn-3110"
+        prompt: { "en": "The caller wants to book a hotel room." }
+        answer: true
+      - id: "bn-3111"
+        prompt: { "en": "Which days is the room needed?" }
+        options: [{ "en": "Friday to Sunday" }, { "en": "Monday to Tuesday" }]
+        answer: 1
+      - id: "bn-3112"
+        prompt: { "en": "What is needed to keep the room?" }
+        options: [{ "en": "Money in advance" }, { "en": "A letter" }]
+        answer: 1
+  - id: "bn-itinerary"
+    title: "A two-day trip itinerary"
+    theme: "travel"
+    sentences:
+      - { text: "প্রথম দিন আমরা জাদুঘরে যাব।", reading: "prôthom din āmorā jādughore jāb.", ipa: "prɔt̪ʰom d̪in amora dʒad̪uɡʱore dʒab" }
+      - { text: "দুপুরে একটা ক্যাফেতে খাব।", reading: "dupure ekoṭā kêphete khāb.", ipa: "d̪upure ekoʈa kæpʰet̪e kʰab" }
+      - { text: "বিকেলে উদ্যানে ঘুরে দেখব।", reading: "bikele uddāne ghure dekhob.", ipa: "bikele ud̪d̪ane ɡʱure d̪ekʰob" }
+      - { text: "দ্বিতীয় দিন সৈকতে যাব।", reading: "ditiy din soikote jāb.", ipa: "d̪it̪ij d̪in soikot̪e dʒab" }
+      - { text: "রাতে আমরা হোস্টেলে থাকব।", reading: "rāte āmorā hosṭele thākob.", ipa: "rat̪e amora ɦosʈele t̪ʰakob" }
+    questions:
+      - id: "bn-3113"
+        prompt: { "en": "The first day includes a museum visit." }
+        answer: true
+      - id: "bn-3114"
+        prompt: { "en": "Where will they stay at night?" }
+        options: [{ "en": "A hostel" }, { "en": "A tent" }]
+        answer: 1
+      - id: "bn-3115"
+        prompt: { "en": "What will they do in the afternoon of the first day?" }
+        options: [{ "en": "Visit a park" }, { "en": "Go to the beach" }]
+        answer: 1

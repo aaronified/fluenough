@@ -1,0 +1,23 @@
+schema: 1
+id: "bn-en-grammar-conditional"
+kind: "layer"
+core: "bn-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If: the -লে (-le) form"
+license: "CC-BY-SA-4.0"
+description: "The conditional: a verb's -লে (-le) form says 'if', and না (nā) before it says 'if not'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "If"
+  slot_name: "form"
+  slots: { "conditional": "if (it is so), the verb with -le", "negative conditional": "if not (it is not so)" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "thaka": "to stay"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+  notes: "The -লে (-le) form of a verb is its 'if' form: আসলে (āsle), if (you) come; গেলে (gele), if (you) go. Put না (nā) before it for 'if not': না আসলে (nā āsle). Some verbs change their stem: যাওয়া (jāoā) gives গেলে (gele), খাওয়া (khāoā) gives খেলে (khele), পাওয়া (pāoā) gives পেলে (pele), হওয়া (hôoā) gives হলে (hôle). The form is the same for every person."

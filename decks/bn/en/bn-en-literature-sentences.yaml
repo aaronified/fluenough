@@ -1,0 +1,52 @@
+schema: 1
+id: "bn-en-literature-sentences"
+kind: "layer"
+core: "bn-literature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature: sentences"
+description: "Short sentences about books, poems, writers and the parts of a book. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4446":
+    native: "The writer published his new novel."
+    confusables: { "c1": { why: "reader: reads the book, does not publish it" }, "c2": { why: "publisher: prints the book, a different role" } }
+  "bn-4447":
+    native: "The poem is written in a beautiful metre."
+    confusables: { "c1": { why: "prose: not verse" }, "c2": { why: "a play: a different form" } }
+  "bn-4448":
+    native: "The first chapter of the book is very interesting."
+    confusables: { "c1": { why: "preface: before the chapters, not a chapter" }, "c2": { why: "cover: the outside of the book" } }
+  "bn-4449":
+    native: "The poet used a beautiful simile."
+    bases: { "একটা": "a", "ব্যবহার": "used" }
+    confusables: { "c1": { why: "translation: a different kind of work" }, "c2": { why: "metaphor: a related but different figure" } }
+  "bn-4450":
+    native: "Who wrote the preface of this book?"
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "conclusion: at the end, not the start" }, "c2": { why: "index: a list of contents" } }
+  "bn-4451":
+    native: "He writes essays and short stories."
+    confusables: { "c1": { why: "novel: longer, a different form" }, "c2": { why: "poems: a different form" } }
+  "bn-4452":
+    native: "The reader wanted to know the end of the story."
+    bases: { "শেষটা": "the end" }
+    confusables: { "c1": { why: "writer: writes, does not read" }, "c2": { why: "critic: judges, does not read for pleasure" } }
+  "bn-4453":
+    native: "The tragic play made everyone cry."
+    confusables: { "c1": { why: "happy-ending: the opposite" }, "c2": { why: "humour: a different feeling" } }
+  "bn-4454":
+    native: "There is a villain in this story."
+    bases: { "এই": "this", "একটা": "a", "আছে": "there is" }
+    confusables: { "c1": { why: "hero: the good character" }, "c2": { why: "character: a general word" } }
+  "bn-4455":
+    native: "I read the old fairy tale again."
+    confusables: { "c1": { why: "folk tale: close, a different word" }, "c2": { why: "news: a different kind of story" } }
+  "bn-4456":
+    native: "The beginning of the story is very wonderful."
+    bases: { "চমৎকার": "wonderful" }
+    confusables: { "c1": { why: "the end: the opposite place in the story" }, "c2": { why: "conclusion: the end, a different word" } }
+  "bn-4457":
+    native: "The meaning of the word is in the glossary."
+    bases: { "মানে": "meaning", "আছে": "is" }
+    confusables: { "c1": { why: "dictionary: a whole book, a close word" }, "c2": { why: "a store: a related word" } }

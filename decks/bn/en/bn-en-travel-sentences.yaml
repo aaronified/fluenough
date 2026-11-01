@@ -1,0 +1,44 @@
+schema: 1
+id: "bn-en-travel-sentences"
+kind: "layer"
+core: "bn-travel-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel: sentences"
+description: "Short sentences about trips, tickets and places to stay. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3100":
+    native: "My luggage is in the car."
+    bases: { "আছে": "is" }
+    confusables: { "c1": { why: "a van: a different vehicle" }, "c2": { why: "a boat: not a car" } }
+  "bn-3101":
+    native: "We will stay in a hostel."
+    confusables: { "c1": { why: "a hotel: a bigger place to stay" }, "c2": { why: "a park: outdoors, not a place to sleep" } }
+  "bn-3102":
+    native: "The train leaves at ten."
+    bases: { "দশটায়": "at ten o'clock" }
+    confusables: { "c1": { why: "arrival: the opposite of departure" }, "c2": { why: "a timetable: a list, not a departure" } }
+  "bn-3103":
+    native: "Taxis can be found easily here."
+    confusables: { "c1": { why: "hard: the opposite of easily" }, "c2": { why: "a rickshaw: a different vehicle" } }
+  "bn-3104":
+    native: "I have booked a blanket."
+    bases: { "বুক": "booking" }
+    confusables: { "c1": { why: "a jacket: a different warm thing" }, "c2": { why: "a towel: a different thing" } }
+  "bn-3105":
+    native: "There are many tourists on the beach."
+    confusables: { "c1": { why: "a park: green, not sandy" }, "c2": { why: "a hill: not a beach" } }
+  "bn-3106":
+    native: "How much is the museum ticket?"
+    confusables: { "c1": { why: "a gate: an entrance, not a ticket" }, "c2": { why: "a guide: a person, not a ticket" } }
+  "bn-3107":
+    native: "The train has been cancelled."
+    confusables: { "c1": { why: "worth seeing: the opposite sense" }, "c2": { why: "safe: a quality, not a cancellation" } }
+  "bn-3108":
+    native: "Go to the station early. (familiar)"
+    confusables: { "c1": { why: "late: the opposite of early" }, "c2": { why: "in advance: about booking, not arriving" } }
+  "bn-3109":
+    native: "The itinerary has three towns."
+    bases: { "তিনটে": "three", "আছে": "has" }
+    confusables: { "c1": { why: "a map: a drawing, not a plan of visits" }, "c2": { why: "a timetable: about times, not places" } }

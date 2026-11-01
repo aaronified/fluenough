@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-arts"
+name: "Reading: arts"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A teacher explains a music class, and a notice for an art exhibition, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-music-class"
+    title: "A teacher explains a music class"
+    theme: "arts"
+    sentences:
+      - { text: "আজ আমাদের গানের ক্লাস ছিল।", reading: "āj āmāder gāner klās chil.", ipa: "adʒ amad̪er ɡaner klas tʃʰil" }
+      - { text: "শিক্ষক প্রথমে সুর আর তাল বোঝালেন।", reading: "śikkhok prôthome sur ār tāl bojhālen.", ipa: "ʃikkʰok prɔt̪ʰome sur ar t̪al bodʒʱalen" }
+      - { text: "তারপর আমরা একসঙ্গে গান গাইলাম।", reading: "tāropor āmorā ekosoṅge gān gāilām.", ipa: "t̪aropor amora ekosoŋɡe ɡan ɡailam" }
+      - { text: "আমার তবলার তাল একটু ভুল হলো।", reading: "āmār tôbolār tāl ekoṭu bhul hôlo.", ipa: "amar t̪ɔbolar t̪al ekoʈu bʱul ɦɔlo" }
+      - { text: "তবু শিক্ষক বললেন, চর্চা করলে ভালো হবে।", reading: "tobu śikkhok bôlolen, côrcā kôrole bhālo hôbe.", ipa: "t̪obu ʃikkʰok bɔlolen tʃɔrtʃa kɔrole bʱalo ɦɔbe" }
+    questions:
+      - id: "bn-3665"
+        prompt: { "en": "The class was about songs, rhythm and tune." }
+        answer: true
+      - id: "bn-3666"
+        prompt: { "en": "What did the teacher explain first?" }
+        options: [{ "en": "Rhythm and tune" }, { "en": "The price of the class" }]
+        answer: 1
+      - id: "bn-3667"
+        prompt: { "en": "What did the writer play?" }
+        options: [{ "en": "The tabla" }, { "en": "The sitar" }]
+        answer: 1
+  - id: "bn-exhibition-notice"
+    title: "A notice for an art exhibition"
+    theme: "arts"
+    sentences:
+      - { text: "প্রদর্শনীটি সোমবার থেকে শুরু হবে।", reading: "prôdorśoniṭi somobār theke śuru hôbe.", ipa: "prɔd̪orʃoniʈi somobar t̪ʰeke ʃuru ɦɔbe" }
+      - { text: "এখানে ক্যানভাসের ছবি, মূর্তি আর ভাস্কর্য থাকবে।", reading: "ekhāne kênobhāser chobi, murti ār bhāskorjo thākobe.", ipa: "ekʰane kænobʱaser tʃʰobi murt̪i ar bʱaskordʒ t̪ʰakobe" }
+      - { text: "প্রবেশ বিনামূল্যে।", reading: "prôbeś bināmulle.", ipa: "prɔbeʃ binamulle" }
+      - { text: "দুপুর থেকে সন্ধ্যা পর্যন্ত গ্যালারি খোলা থাকবে।", reading: "dupur theke sônddhā pôrjont gêlāri kholā thākobe.", ipa: "d̪upur t̪ʰeke sɔnd̪d̪ʱa pɔrdʒont̪ ɡælari kʰola t̪ʰakobe" }
+      - { text: "সবাইকে স্বাগত।", reading: "sôbāike sāgot.", ipa: "sɔbaike saɡot̪" }
+    questions:
+      - id: "bn-3668"
+        prompt: { "en": "The exhibition starts on Monday." }
+        answer: true
+      - id: "bn-3669"
+        prompt: { "en": "What will be shown?" }
+        options: [{ "en": "Paintings, statues and sculptures" }, { "en": "Cars and buses" }]
+        answer: 1
+      - id: "bn-3670"
+        prompt: { "en": "When is the gallery open?" }
+        options: [{ "en": "From noon to evening" }, { "en": "Only at midnight" }]
+        answer: 1
