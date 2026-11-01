@@ -63,6 +63,7 @@ Future<AppState> pumpScreen(
   Widget child, {
   AppState? state,
   ThemeMode themeMode = ThemeMode.light,
+  bool settle = true,
 }) async {
   final s = state ?? AppState.test();
   await s.load();
@@ -89,7 +90,13 @@ Future<AppState> pumpScreen(
       ),
     ),
   );
-  await tester.pumpAndSettle();
+  // A screen that waits on a spinner never settles: [settle] false draws one
+  // frame and leaves the rest to the test.
+  if (settle) {
+    await tester.pumpAndSettle();
+  } else {
+    await tester.pump();
+  }
   return s;
 }
 

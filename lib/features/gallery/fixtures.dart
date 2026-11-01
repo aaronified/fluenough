@@ -17,6 +17,7 @@ import '../../core/tts/fixed_tts_engine.dart';
 import '../../core/updates/apk_install.dart';
 import '../../core/updates/release_check.dart';
 import '../../core/updates/release_notes.dart';
+import '../stats/progress_numbers.dart';
 
 /// Fixture data for the debug gallery, and for widget tests that want the
 /// design's people and a history to show.
@@ -68,6 +69,7 @@ abstract final class GalleryFixtures {
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
+    ProgressRunner progressRunner = progressInPlace,
   }) {
     final progress = MemoryProgress();
     if (history) seedHistory(progress, app.decks, app.now());
@@ -89,6 +91,8 @@ abstract final class GalleryFixtures {
       // How you learn's figures at once, on the fixture's few reviews, so
       // that a preview never waits on an isolate.
       paceRunner: paceInPlace,
+      // Progress's numbers at once too.
+      progressRunner: progressRunner,
     );
   }
 

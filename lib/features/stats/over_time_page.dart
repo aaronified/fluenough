@@ -7,7 +7,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/report_button.dart';
-import 'progress_mastery.dart';
 import 'skill_lines.dart';
 
 /// Where the star leads (#678): two charts over the last twelve weeks, each
@@ -33,12 +32,17 @@ class OverTimePage extends StatelessWidget {
       body: SafeArea(
         top: false,
         child: ListenableBuilder(
-          listenable: state.progress,
+          listenable: Listenable.merge(<Listenable>[
+            state.progress,
+            // The numbers come back from an isolate (#857).
+            state.progressNumbers,
+          ]),
           builder: (context, _) {
-            final series = ProgressMastery.of(
-              state,
-              state.progressLanguage,
-            ).overTime();
+            final numbers = state.progressNumbers.of(state.progressLanguage);
+            if (numbers == null) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            final series = numbers.mastery.overTime();
             return ListView(
               padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
               children: <Widget>[
