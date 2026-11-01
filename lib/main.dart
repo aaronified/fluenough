@@ -143,7 +143,7 @@ Future<void> main() async {
   }
 
   state.addListener(catalogReady);
-  runApp(FluenoughApp(state: state));
+  runApp(FluenoughApp(state: state, splash: true));
   marks.mark('runApp');
   // Junk (old update files, half-written downloads, stale report
   // attachments) is cleaned once a day, a little after the first frame so

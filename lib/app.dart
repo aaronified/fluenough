@@ -14,6 +14,8 @@ import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
 import 'features/placement/language_picker_page.dart';
 import 'features/settings/settings_page.dart';
+import 'features/splash/splash_gate.dart';
+import 'features/splash/splash_progress.dart';
 import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
 import 'l10n/app_localizations.dart';
@@ -29,9 +31,20 @@ import 'ui/widgets/tab_pager.dart';
 /// for a newer one if the learner has switched that on and no check has
 /// reached GitHub in the last day.
 class FluenoughApp extends StatefulWidget {
-  const FluenoughApp({super.key, required this.state, this.frame});
+  const FluenoughApp({
+    super.key,
+    required this.state,
+    this.frame,
+    this.splash = false,
+  });
 
   final AppState state;
+
+  /// Whether to cover the first moments of a cold start with the splash
+  /// screen and its loading bar: at least two seconds, and until the review
+  /// log, the catalog and Today's first numbers are ready. On for the real
+  /// app (`main.dart`, `main_web.dart`); off in tests.
+  final bool splash;
 
   /// Wraps everything under [MaterialApp], inside the text cap: the web
   /// build's phone-shaped frame (`webPhoneFrame`). Null on a phone.
@@ -57,11 +70,48 @@ class _FluenoughAppState extends State<FluenoughApp>
     // depends on them (#90).
     widget.state.load().whenComplete(widget.state.reminders.appResumed);
     widget.state.updates.atLaunch();
+    if (widget.splash) _watchStartUp(_splash);
   }
+
+  /// What the splash waits for: the review log read, the catalog read, and
+  /// the first frame that shows it, which is where Today's numbers are first
+  /// worked out (the same seams as `StartupMarks`, #857).
+  final SplashProgress _splash = SplashProgress();
+  bool _disposed = false;
+
+  void _watchStartUp(SplashProgress splash) {
+    final state = widget.state;
+    // `ready` never throws; either way the wait is over.
+    state.progress.ready.whenComplete(() {
+      if (!_disposed) splash.complete(SplashStage.history);
+    });
+    void catalogReady() {
+      if (state.status == CatalogStatus.loading) return;
+      state.removeListener(catalogReady);
+      splash.complete(SplashStage.catalog);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!_disposed) splash.complete(SplashStage.today);
+      });
+      // A frame is certain even if nothing on screen listens to the catalog.
+      WidgetsBinding.instance.scheduleFrame();
+    }
+
+    if (state.status != CatalogStatus.loading) {
+      catalogReady();
+    } else {
+      state.addListener(catalogReady);
+      _removeCatalogListener = () => state.removeListener(catalogReady);
+    }
+  }
+
+  VoidCallback? _removeCatalogListener;
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    _removeCatalogListener?.call();
+    _disposed = true;
+    _splash.dispose();
     super.dispose();
   }
 
@@ -83,6 +133,17 @@ class _FluenoughAppState extends State<FluenoughApp>
       case AppLifecycleState.detached:
         break;
     }
+  }
+
+  /// The text cap, then the splash over the app (inside the web frame, so
+  /// that it covers the phone and not the page), then the web frame. The app
+  /// stays mounted under the splash.
+  Widget _builder(BuildContext context, Widget? child) {
+    final capped = capTextScale(context, child);
+    final covered = widget.splash
+        ? SplashGate(progress: _splash, child: capped)
+        : capped;
+    return widget.frame == null ? covered : widget.frame!(context, covered);
   }
 
   @override
@@ -113,10 +174,7 @@ class _FluenoughAppState extends State<FluenoughApp>
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
           navigatorObservers: _observers,
-          builder: widget.frame == null
-              ? capTextScale
-              : (context, child) =>
-                    widget.frame!(context, capTextScale(context, child)),
+          builder: _builder,
           // The first launch: welcome, tour and the languages the learner
           // speaks (#118, #53), then which they want to learn, their first
           // decks downloaded (#210), and placement (#117). Each answer saved

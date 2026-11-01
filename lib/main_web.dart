@@ -39,6 +39,7 @@ Future<void> main() async {
   runApp(
     FluenoughApp(
       frame: webPhoneFrame,
+      splash: true,
       state: AppState(
         catalog: DeckCatalog(
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **A splash screen with a loading bar.** Every cold start now opens on the app's mark and name over a thin bar that fills as the review history, the courses and Today's first numbers are ready, for at least two seconds and until all three are, then fades out (not at all with animations off); a line under the bar says which is under way (owner, 2026-11-01: "The performance is still not instantaneous. Leave it. Better add a splash screen with a loading bar (min 2 s, max till all calc ends)"). It does not return when the app is reopened from the background.
+
 ## [0.7.1] - 2026-11-01
 
 ### Added

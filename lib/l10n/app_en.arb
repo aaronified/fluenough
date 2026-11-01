@@ -13593,5 +13593,35 @@
   "appUpdateLinkCopied": "Couldn’t open GitHub, so the link to the newest app is copied.",
   "@appUpdateLinkCopied": {
     "description": "Toast when Update could not open the newest release's page and copied its link instead."
+  },
+  "splashLoading": "Loading",
+  "@splashLoading": {
+    "description": "The splash screen shown at every cold start: the screen-reader label of its loading bar, and what is announced when it appears."
+  },
+  "splashPercent": "{percent} percent",
+  "@splashPercent": {
+    "description": "Screen-reader value of the splash screen's loading bar, in steps of ten. The placeholder is a whole number from 0 to 100.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "splashOpeningHistory": "Opening your history",
+  "@splashOpeningHistory": {
+    "description": "The splash screen's one-line status while the learner's review history is read."
+  },
+  "splashLoadingCourses": "Loading courses",
+  "@splashLoadingCourses": {
+    "description": "The splash screen's one-line status while the decks and courses are read."
+  },
+  "splashGettingToday": "Getting Today ready",
+  "@splashGettingToday": {
+    "description": "The splash screen's one-line status while the numbers on the Today tab are worked out for the first time."
+  },
+  "splashReady": "Ready",
+  "@splashReady": {
+    "description": "The splash screen's one-line status once everything is loaded, while it waits out its minimum time and fades."
   }
 }
