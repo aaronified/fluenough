@@ -1,0 +1,85 @@
+schema: 1
+id: "mr-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1107"
+    target: "स्वयंपाक"
+    reading: "svayampāk"
+    ipa: "sʋəjəmpak"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "स्वयंपाक", reading: "svayampāk" }] }
+    examples:
+      - { target: "आज माझा स्वयंपाक आहे.", reading: "āj mājhā svayampāk āhe.", ipa: "adz madzʱa sʋəjəmpak aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "स्वयंपाकात मीठ घातलं.", reading: "svayampākāt miṭh ghātlam̐.", ipa: "sʋəjəmpakat̪ miʈʰ ɡʱat̪lə̃", bases: [{ word: "स्वयंपाकात", ref: "mr-1107" }, { word: "घातलं", ref: "mr-0792" }] }
+  - id: "mr-1108"
+    target: "भाजणे"
+    reading: "bhājṇe"
+    ipa: "bʱadzɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "भाजणे", reading: "bhājṇe" }] }
+    examples:
+      - { target: "शेंगदाणे भाजा.", reading: "śeṅgadāṇe bhājā.", ipa: "ʃeŋɡəd̪aɳe bʱadza", bases: [{ word: "भाजा", ref: "mr-1108" }] }
+      - { target: "तवा गरम झाला की पोळी भाजा.", reading: "tavā garam jhālā ki poḷi bhājā.", ipa: "t̪əʋa ɡərəm dzʱala ki poɭi bʱadza", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "भाजा", ref: "mr-1108" }] }
+  - id: "mr-1109"
+    target: "कणिक"
+    reading: "kaṇik"
+    ipa: "kəɳik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कणिक", reading: "kaṇik" }] }
+    examples:
+      - { target: "कणिक मळून ठेवा.", reading: "kaṇik maḷun ṭhevā.", ipa: "kəɳik məɭun ʈʰeʋa", bases: [{ word: "मळून", base: "मळणे", reading: "maḷṇe" }, { word: "ठेवा", ref: "mr-0723" }] }
+      - { target: "कणकेच्या पोळ्या मऊ असतात.", reading: "kaṇkecyā poḷyā mau astāt.", ipa: "kəɳketʃja poɭja məu əst̪at̪", bases: [{ word: "कणकेच्या", ref: "mr-1109" }, { word: "पोळ्या", ref: "mr-0570" }, { word: "असतात", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1110"
+    target: "तूप"
+    reading: "tup"
+    ipa: "t̪up"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तूप", reading: "tup" }] }
+    examples:
+      - { target: "पोळीवर तूप लावा.", reading: "poḷivar tup lāvā.", ipa: "poɭiʋər t̪up laʋa", bases: [{ word: "पोळीवर", ref: "mr-0570" }, { word: "लावा", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "गरम भातावर तूप छान लागतं.", reading: "garam bhātāvar tup chān lāgtam̐.", ipa: "ɡərəm bʱat̪aʋər t̪up tʃʰan laɡt̪ə̃", bases: [{ word: "गरम", ref: "mr-0764" }, { word: "भातावर", ref: "mr-0561" }, { word: "लागतं", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1111"
+    target: "मसाला"
+    reading: "masālā"
+    ipa: "məsala"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मसाला", reading: "masālā" }] }
+    examples:
+      - { target: "भाजीला मसाला लावा.", reading: "bhājilā masālā lāvā.", ipa: "bʱadʒila məsala laʋa", bases: [{ word: "भाजीला", ref: "mr-0390" }, { word: "लावा", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "गरम मसाला घातला.", reading: "garam masālā ghātlā.", ipa: "ɡərəm məsala ɡʱat̪la", bases: [{ word: "घातला", ref: "mr-0792" }] }
+  - id: "mr-1112"
+    target: "चविष्ट"
+    reading: "caviṣṭ"
+    ipa: "tsəʋiʂʈ"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चविष्ट", reading: "caviṣṭ" }] }
+    examples:
+      - { target: "जेवण चविष्ट आहे.", reading: "jevaṇ caviṣṭ āhe.", ipa: "dʒeʋəɳ tsəʋiʂʈ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ही भाजी खूप चविष्ट आहे.", reading: "hi bhāji khup caviṣṭ āhe.", ipa: "ɦi bʱadʒi kʰup tsəʋiʂʈ aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1113"
+    target: "खारट"
+    reading: "khāraṭ"
+    ipa: "kʰarəʈ"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खारट", reading: "khāraṭ" }] }
+    examples:
+      - { target: "भाजी खारट झाली.", reading: "bhāji khāraṭ jhāli.", ipa: "bʱadʒi kʰarəʈ dzʱali", bases: [{ word: "भाजी", ref: "mr-0390" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "खारट चव आवडत नाही.", reading: "khāraṭ cav āvḍat nāhi.", ipa: "kʰarəʈ tsəʋ aʋɖət̪ naɦi", bases: [{ word: "चव", base: "चव", reading: "cav" }, { word: "आवडत", ref: "mr-0585" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }

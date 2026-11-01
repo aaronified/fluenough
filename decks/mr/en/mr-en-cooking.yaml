@@ -1,0 +1,59 @@
+schema: 1
+id: "mr-en-cooking"
+kind: "layer"
+core: "mr-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+description: "Cooking at home: the verbs for frying and boiling, the pots and spices, the flour, oil and ghee of a dish. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1107":
+    native: "cooking (at home)"
+    notes:
+      "n1": "{1} is cooking, the food made at home."
+    examples:
+      "आज माझा स्वयंपाक आहे.": { native: "Today I am cooking.", bases: { "आहे": "to be" } }
+      "स्वयंपाकात मीठ घातलं.": "I put salt in the cooking."
+  "mr-1108":
+    native: "to roast; to toast"
+    notes:
+      "n1": "{1} is roasting or toasting over fire or on a pan."
+    examples:
+      "शेंगदाणे भाजा.": "Roast the peanuts."
+      "तवा गरम झाला की पोळी भाजा.": { native: "When the griddle is hot, toast the flatbread.", bases: { "झाला": "to become" } }
+  "mr-1109":
+    native: "dough, wheat flour"
+    notes:
+      "n1": "{1} is wheat flour kneaded into dough for bread."
+    examples:
+      "कणिक मळून ठेवा.": { native: "Knead the dough and leave it.", bases: { "मळून": "to knead" } }
+      "कणकेच्या पोळ्या मऊ असतात.": { native: "Flatbreads made of dough are soft.", bases: { "असतात": "to be" } }
+  "mr-1110":
+    native: "ghee, clarified butter"
+    notes:
+      "n1": "{1} is ghee, clarified butter used for flavour."
+    examples:
+      "पोळीवर तूप लावा.": { native: "Put ghee on the flatbread.", bases: { "लावा": "to apply" } }
+      "गरम भातावर तूप छान लागतं.": { native: "Ghee tastes good on hot rice.", bases: { "लागतं": "to taste" } }
+  "mr-1111":
+    native: "spice mix"
+    notes:
+      "n1": "{1} is a spice mix, the spices that flavour a dish."
+    examples:
+      "भाजीला मसाला लावा.": { native: "Add spices to the vegetable.", bases: { "लावा": "to apply" } }
+      "गरम मसाला घातला.": "I added garam masala."
+  "mr-1112":
+    native: "tasty"
+    notes:
+      "n1": "{1} describes food that tastes good."
+    examples:
+      "जेवण चविष्ट आहे.": { native: "The food is tasty.", bases: { "आहे": "to be" } }
+      "ही भाजी खूप चविष्ट आहे.": { native: "This vegetable is very tasty.", bases: { "आहे": "to be" } }
+  "mr-1113":
+    native: "salty"
+    notes:
+      "n1": "{1} is salty. Its opposite is गोड (goḍ), sweet."
+    examples:
+      "भाजी खारट झाली.": { native: "The vegetable became salty.", bases: { "झाली": "to become" } }
+      "खारट चव आवडत नाही.": { native: "I do not like a salty taste.", bases: { "चव": "taste", "नाही": "not" } }

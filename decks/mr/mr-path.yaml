@@ -287,7 +287,8 @@ units:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
   - decks: ["mr-eating-out", "*"]
     words: 13
-  - planned: { id: "mr-cooking", theme: "cooking", words: 50 }
+  - decks: ["mr-cooking", "*"]
+    words: 7
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
