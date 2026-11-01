@@ -220,14 +220,22 @@ void main() {
         'its two scripts apart by their letters, at 1.4x in ${mode.name}', (
       tester,
     ) async {
-      final state = learner()
-        ..settings.setLanguageSkills('hi', <String, String>{
-          'speak': 'learn',
-          'hear': 'learn',
-          'read:devanagari': 'learn',
-          'write:devanagari': 'learn',
-          'read:perso_arabic': 'know',
-        });
+      // Skills are read only while they agree with the learned list, so
+      // Hindustani, with Learn skills, is a language this profile learns.
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es', 'hi'],
+          learningChosen: true,
+        )..scriptsRead = <String, bool>{'en': true},
+      );
+      state.settings.setLanguageSkills('hi', <String, String>{
+        'speak': 'learn',
+        'hear': 'learn',
+        'read:devanagari': 'learn',
+        'write:devanagari': 'learn',
+        'read:perso_arabic': 'learn',
+      });
       await pumpLanguages(tester, state: state, mode: mode);
       final row = find.byKey(const ValueKey<String>('language-hi'));
       final chips = find.descendant(of: row, matching: find.byType(SkillBadge));
