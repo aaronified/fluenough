@@ -41,7 +41,13 @@ Future<ProfileStorage> openProfileStorage(
       ),
     );
     return (
-      progress: DatabaseProgress.opening(db, onStage: onStage),
+      progress: DatabaseProgress.opening(
+        db,
+        // After the learner pauses for this long, the replay of their log is
+        // kept for the next launch (#857, ADR-0051).
+        snapshotAfter: const Duration(seconds: 45),
+        onStage: onStage,
+      ),
       settings: (await StoredSettings.open(db)).settings,
     );
   } catch (error, stack) {
