@@ -1,0 +1,90 @@
+schema: 1
+id: "as-hobbies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2818"
+    target: "মই প্ৰতি সপ্তাহে ফুটবল খেলোঁ।"
+    reading: "moi prôti xôptāhe phutbol khelum̐."
+    ipa: "moi pɹoti sɔptahe pʰutɔbɔl kʰelʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "প্ৰতি", base: "প্ৰতি", reading: "prôti" }
+      - { word: "সপ্তাহে", ref: "as-0362" }
+      - { word: "খেলোঁ", ref: "as-2213" }
+    confusables:
+      - { id: "c1", word: "সাঁতুৰা", reading: "sām̐turā", kind: "word" }
+      - { id: "c2", word: "গোৱা", reading: "guwā", kind: "word" }
+  - id: "as-2819"
+    target: "তাই বাঁহী বজায়।"
+    reading: "tāi bām̐hī bôzāy."
+    ipa: "tai bãhi bɔzaj"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "বজায়", ref: "as-2815" }
+    confusables:
+      - { id: "c1", word: "গিটাৰ", reading: "gitār", kind: "word" }
+      - { id: "c2", word: "ছবি", reading: "sôbi", kind: "word" }
+  - id: "as-2820"
+    target: "আমি ক্লাবলৈ যাওঁ।"
+    reading: "āmi klābôlôi zāum̐."
+    ipa: "ami klabɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "ক্লাবলৈ", ref: "as-2807" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "স্কুল", reading: "skul", kind: "word" }
+      - { id: "c2", word: "বাগান", reading: "bāgān", kind: "word" }
+  - id: "as-2821"
+    target: "এইটো ৰঙা ছবি।"
+    reading: "eitu rôṅā sôbi."
+    ipa: "eitʊ ɹɔŋa sobi"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "নীলা", reading: "nilā", kind: "word" }
+      - { id: "c2", word: "বগা", reading: "bôgā", kind: "word" }
+  - id: "as-2822"
+    target: "মই গল্প শুনিছোঁ।"
+    reading: "moi galpô xunisum̐."
+    ipa: "moi ɡɔlp xunisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "শুনিছোঁ", ref: "as-2205" }
+    confusables:
+      - { id: "c1", word: "কৌতুক", reading: "koutuk", kind: "word" }
+      - { id: "c2", word: "গীত", reading: "git", kind: "word" }
+  - id: "as-2823"
+    target: "ফুটবলত আমি জয় পালোঁ।"
+    reading: "phutbôlôt āmi zoy pālōm̐."
+    ipa: "pʰutɔbɔlɔt ami zɔj palʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "ফুটবলত", ref: "as-2800" }
+      - { word: "পালোঁ", base: "পোৱা", reading: "puwā" }
+    confusables:
+      - { id: "c1", word: "পৰাজয়", reading: "porāzoy", kind: "word" }
+      - { id: "c2", word: "প্ৰতিযোগিতা", reading: "prôtiyôgitā", kind: "word" }
+  - id: "as-2824"
+    target: "সংগীত ভাল লাগে।"
+    reading: "xôṅgit bhāl lāge."
+    ipa: "soŋɡit bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খেল", reading: "khel", kind: "word" }
+      - { id: "c2", word: "আগ্ৰহ", reading: "ôgrôh", kind: "word" }
+  - id: "as-2825"
+    target: "বাগানত ফুল ফুটে।"
+    reading: "bāgānôt phul phute."
+    ipa: "baɡanɔt pʰul pʰute"
+    pos: "phrase"
+    bases:
+      - { word: "বাগানত", ref: "as-2816" }
+      - { word: "ফুটে", base: "ফুটা", reading: "phutā" }
+    confusables:
+      - { id: "c1", word: "ৰং", reading: "rông", kind: "word" }
+      - { id: "c2", word: "ভ্ৰমণ", reading: "bhrômôn", kind: "word" }

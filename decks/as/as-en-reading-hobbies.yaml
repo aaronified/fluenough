@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-hobbies"
+name: "Assamese reading: hobbies"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-weekend-hobbies"
+    title: "Weekend hobbies"
+    theme: "hobbies"
+    sentences:
+      - text: "মোৰ শখ গীত গোৱা।"
+        reading: "mur xôkh git guwā."
+      - text: "বন্ধু সাঁতুৰে।"
+        reading: "bondhu sām̐ture."
+      - text: "আমি ক্লাবত খেলোঁ।"
+        reading: "āmi klābôt khelum̐."
+      - text: "ৰাতি সংগীত শুনোঁ।"
+        reading: "rāti xôṅgit xunum̐."
+    questions:
+      - id: "as-2826"
+        prompt: { en: "The speaker likes to sing songs." }
+        answer: true
+      - id: "as-2827"
+        prompt: { en: "What does the friend do?" }
+        options:
+          - { en: "Sings" }
+          - { en: "Swims" }
+          - { en: "Draws" }
+        answer: 2
+      - id: "as-2828"
+        prompt: { en: "Where do \"we\" play?" }
+        options:
+          - { en: "At the club" }
+          - { en: "At school" }
+          - { en: "At home" }
+        answer: 1
+  - id: "as-club-poster"
+    title: "A poster for a club"
+    theme: "hobbies"
+    sentences:
+      - text: "ক্লাবত নতুন খেল।"
+        reading: "klābôt nôtun khel."
+      - text: "সাঁতোৰ আৰু ফুটবল।"
+        reading: "sām̐tor āru phutbol."
+      - text: "বাদ্য শিকা।"
+        reading: "bādyô xikā."
+      - text: "আগ্ৰহ থাকিলে আহিবা।"
+        reading: "ôgrôh thākile āhibā."
+    questions:
+      - id: "as-2829"
+        prompt: { en: "The club has new games." }
+        answer: true
+      - id: "as-2830"
+        prompt: { en: "What is taught besides games?" }
+        options:
+          - { en: "Cooking" }
+          - { en: "Musical instruments" }
+          - { en: "Driving" }
+        answer: 2
+      - id: "as-2831"
+        prompt: { en: "Who is invited?" }
+        options:
+          - { en: "Those with interest" }
+          - { en: "Only children" }
+          - { en: "Nobody" }
+        answer: 1

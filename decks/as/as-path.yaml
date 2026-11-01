@@ -326,11 +326,14 @@ units:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
   - decks: ["as-reading-school"]
     words: 0
-  - planned: { id: "as-hobbies", theme: "hobbies", words: 50 }
+  - decks: ["as-hobbies", "as-hobbies-sentences", "*"]
+    words: 24
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  - decks: ["as-reading-hobbies"]
+    words: 0
   - planned: { id: "as-grammar-past-continuous", grammar: "past-continuous" }
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
