@@ -301,55 +301,58 @@ void main() {
       testWidgets('a long press says the level in a word or two and a screen '
           'reader reads the name and the full phrase', (tester) async {
         final handle = tester.ensureSemantics();
-        addTearDown(handle.dispose);
-        await _pumpPills(tester, mode);
-        final l10n = AppLocalizations.of(
-          tester.element(find.byType(Scaffold)),
-        )!;
-        final spoken = <String, String>{
-          'spoken/leave': l10n.languagesPillLeave,
-          'spoken/learn': l10n.languagesPillLearning,
-          'spoken/know': l10n.languagesPillHear,
-          'spoken/knowBoth': l10n.languagesPillHearSpeak,
-          'spoken/knowCovered': l10n.languagesPillChecked(
-            l10n.languagesPillHear,
-          ),
-          'spoken/knowBothCovered': l10n.languagesPillChecked(
-            l10n.languagesPillHearSpeak,
-          ),
-          'script/know': l10n.languagesPillRead,
-          'script/knowBothCovered': l10n.languagesPillChecked(
-            l10n.languagesPillReadWrite,
-          ),
-          'gesture/learn': l10n.languagesPillLearnGesture,
-          'gesture/know': l10n.languagesPillGesture,
-        };
-        for (final MapEntry(:key, :value) in spoken.entries) {
-          final name = key.startsWith('spoken')
-              ? 'Spoken'
-              : key.startsWith('script')
-              ? 'Script'
-              : 'Gestures';
+        try {
+          await _pumpPills(tester, mode);
+          final l10n = AppLocalizations.of(
+            tester.element(find.byType(Scaffold)),
+          )!;
+          final spoken = <String, String>{
+            'spoken/leave': l10n.languagesPillLeave,
+            'spoken/learn': l10n.languagesPillLearning,
+            'spoken/know': l10n.languagesPillHear,
+            'spoken/knowBoth': l10n.languagesPillHearSpeak,
+            'spoken/knowCovered': l10n.languagesPillChecked(
+              l10n.languagesPillHear,
+            ),
+            'spoken/knowBothCovered': l10n.languagesPillChecked(
+              l10n.languagesPillHearSpeak,
+            ),
+            'script/know': l10n.languagesPillRead,
+            'script/knowBothCovered': l10n.languagesPillChecked(
+              l10n.languagesPillReadWrite,
+            ),
+            'gesture/learn': l10n.languagesPillLearnGesture,
+            'gesture/know': l10n.languagesPillGesture,
+          };
+          for (final MapEntry(:key, :value) in spoken.entries) {
+            final name = key.startsWith('spoken')
+                ? 'Spoken'
+                : key.startsWith('script')
+                ? 'Script'
+                : 'Gestures';
+            expect(
+              tester.getSemantics(_badge(key)).label,
+              l10n.languagesSkillState(name, value),
+              reason: key,
+            );
+            // The long press shows the level's own words, nothing else.
+            final tip = tester.widget<Tooltip>(
+              find.descendant(of: _badge(key), matching: find.byType(Tooltip)),
+            );
+            expect(tip.message, value, reason: key);
+          }
+          final target = _badge('spoken/knowBothCovered');
+          await tester.ensureVisible(target);
+          await tester.pumpAndSettle();
+          await tester.longPress(target);
+          await tester.pumpAndSettle();
           expect(
-            tester.getSemantics(_badge(key)).label,
-            l10n.languagesSkillState(name, value),
-            reason: key,
+            find.text(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
+            findsOneWidget,
           );
-          // The long press shows the level's own words, nothing else.
-          final tip = tester.widget<Tooltip>(
-            find.descendant(of: _badge(key), matching: find.byType(Tooltip)),
-          );
-          expect(tip.message, value, reason: key);
+        } finally {
+          handle.dispose();
         }
-        final target = _badge('spoken/knowBothCovered');
-        await tester.ensureVisible(target);
-        await tester.pumpAndSettle();
-        await tester.longPress(target);
-        await tester.pumpAndSettle();
-        expect(
-          find.text(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
-          findsOneWidget,
-        );
       });
 
       testWidgets('the Learn pill has a visible edge against the surface', (
