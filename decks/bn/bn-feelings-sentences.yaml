@@ -1,0 +1,101 @@
+schema: 1
+id: "bn-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2868"
+    target: "আমি আজ খুব খুশি।"
+    reading: "āmi āj khub khuśi."
+    ipa: "ami adʒ kʰub kʰuʃi"
+    phonetic: "[ami adʒ kʰub kʰuʃi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "আজ", base: "আজ", reading: "āj" }, { word: "খুব", ref: "bn-0641" }]
+    confusables: [{ id: "c1", word: "দুঃখী", reading: "dukkhī", kind: "word" }, { id: "c2", word: "বিষণ্ণ", reading: "bisanna", kind: "word" }]
+  - id: "bn-2869"
+    target: "সে আমার কথায় চিন্তিত।"
+    reading: "se āmār kôthāy cintit."
+    ipa: "se amar kɔt̪ʰaj tʃint̪it̪"
+    phonetic: "[se amar kɔt̪ʰaj tʃint̪it̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "আমার", ref: "bn-0833" }, { word: "কথায়", ref: "bn-2409" }]
+    confusables: [{ id: "c1", word: "চিন্তা", reading: "cintā", kind: "word" }, { id: "c2", word: "ভয়", reading: "bhôy", kind: "word" }]
+  - id: "bn-2870"
+    target: "বাবা আমাকে ক্ষমা করেন।"
+    reading: "bābā āmāke kkhômā kôren."
+    ipa: "baba amake kkʰɔma kɔren"
+    phonetic: "[baba amake kkʰɔma kɔren]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "বাবা", ref: "bn-0423" }, { word: "আমাকে", ref: "bn-0833" }, { word: "ক্ষমা", ref: "bn-2850" }, { word: "করেন", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "রাগ", reading: "rāg", kind: "word" }, { id: "c2", word: "ভালোবাসা", reading: "bhālobāśā", kind: "word" }]
+  - id: "bn-2871"
+    target: "এই খবরে সবাই আনন্দিত।"
+    reading: "ei khôbore sôbāi ānondit."
+    ipa: "ei kʰɔbore sɔbai anond̪it̪"
+    phonetic: "[ei kʰɔbore sɔbai anond̪it̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "খবরে", base: "খবরে", reading: "khôbore" }, { word: "সবাই", base: "সবাই", reading: "sôbāi" }]
+    confusables: [{ id: "c1", word: "দুঃখিত", reading: "dukkhit", kind: "word" }, { id: "c2", word: "উদ্বিগ্ন", reading: "udvigna", kind: "word" }]
+  - id: "bn-2872"
+    target: "আমি একটু নার্ভাস।"
+    reading: "āmi ekoṭu nārbhās."
+    ipa: "ami ekoʈu narbʱas"
+    phonetic: "[ami ekoʈu narbʱas]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটু", ref: "bn-0551" }]
+    confusables: [{ id: "c1", word: "শান্ত", reading: "śānto", kind: "word" }, { id: "c2", word: "বিরক্ত", reading: "birôktō", kind: "word" }]
+  - id: "bn-2873"
+    target: "তোমাকে খুব মিস করছি।"
+    reading: "tomāke khub mis kôrochi."
+    ipa: "t̪omake kʰub mis kɔrotʃʰi"
+    phonetic: "[t̪omake kʰub mis kɔrotʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "তোমাকে", ref: "bn-0835" }, { word: "খুব", ref: "bn-0641" }, { word: "মিস", base: "মিস", reading: "mis" }, { word: "করছি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ভুলে", reading: "bhule", kind: "word" }, { id: "c2", word: "দেখে", reading: "dekhe", kind: "word" }]
+  - id: "bn-2874"
+    target: "ভয় পেয়ো না, সব ঠিক হবে।"
+    reading: "bhôy peyo nā, sôb ṭhik hôbe."
+    ipa: "bʱɔj pejo na sɔb ʈʰik ɦɔbe"
+    phonetic: "[bʱɔj pejo na sɔb ʈʰik ɦɔbe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ভয়", ref: "bn-1248" }, { word: "পেয়ো", ref: "bn-0891" }, { word: "না", base: "না", reading: "nā" }, { word: "সব", ref: "bn-0552" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ঘাবড়ানো", reading: "ghābṛānō", kind: "word" }, { id: "c2", word: "হাসা", reading: "hāsā", kind: "word" }]
+  - id: "bn-2875"
+    target: "ধৈর্য ধরে অপেক্ষা করো।"
+    reading: "dhoirj dhôre ôpekkhā kôro."
+    ipa: "d̪ʱoirdʒ d̪ʱɔre ɔpekkʰa kɔro"
+    phonetic: "[d̪ʱoirdʒ d̪ʱɔre ɔpekkʰa kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ধৈর্য", ref: "bn-2842" }, { word: "ধরে", base: "ধরে", reading: "dhôre" }, { word: "অপেক্ষা", base: "অপেক্ষা", reading: "ôpekkhā" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "তাড়া", reading: "tārā", kind: "word" }, { id: "c2", word: "দৌড়", reading: "dôṛ", kind: "word" }]
+  - id: "bn-2876"
+    target: "আমার মন আজ ভালো।"
+    reading: "āmār môn āj bhālo."
+    ipa: "amar mɔn adʒ bʱalo"
+    phonetic: "[amar mɔn adʒ bʱalo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "মন", ref: "bn-2846" }, { word: "আজ", base: "আজ", reading: "āj" }, { word: "ভালো", ref: "bn-0617" }]
+    confusables: [{ id: "c1", word: "মেজাজ", reading: "mejāj", kind: "word" }, { id: "c2", word: "শরীর", reading: "śôrir", kind: "word" }]
+  - id: "bn-2877"
+    target: "এত বিরক্তি দেখিও না।"
+    reading: "et birokti dekhio nā."
+    ipa: "et̪ birokt̪i d̪ekʰio na"
+    phonetic: "[et̪ birokt̪i d̪ekʰio na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এত", base: "এত", reading: "et" }, { word: "বিরক্তি", ref: "bn-2854" }, { word: "দেখিও", base: "দেখিও", reading: "dekhio" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "শান্তি", reading: "śānti", kind: "word" }, { id: "c2", word: "স্বস্তি", reading: "svasti", kind: "word" }]

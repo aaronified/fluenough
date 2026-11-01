@@ -455,11 +455,14 @@ units:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
   - decks: ["bn-reading-health"]
     words: 0
-  - planned: { id: "bn-feelings", theme: "feelings", words: 55 }
+  - decks: ["bn-feelings", "bn-feelings-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - decks: ["bn-reading-feelings"]
+    words: 0
   - planned: { id: "bn-grammar-relative", grammar: "relative" }
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
