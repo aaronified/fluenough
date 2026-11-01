@@ -22,6 +22,7 @@ import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
+import 'support/labelled.dart';
 import 'support/review_fixture.dart';
 
 /// "mother", also accepted as "mum", and refusing "woman".
@@ -400,7 +401,7 @@ void main() {
         SuggestSheet.newItemKey(CardPart.notSynonyms, 0, 'text'),
         'lady',
       );
-      await _tap(tester, find.byTooltip(l10n.reviewAddRemove));
+      await _tap(tester, byButtonLabel(l10n.reviewAddRemove));
       expect(_canSave(tester), isFalse);
       expect(_kept(state), isEmpty);
     });

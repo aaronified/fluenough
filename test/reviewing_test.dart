@@ -42,6 +42,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
+import 'support/labelled.dart';
 import 'support/review_fixture.dart';
 
 // From rater_code_test.dart.
@@ -97,7 +98,7 @@ Future<AppState> openSheet(
 
 Future<void> pencil(WidgetTester tester, String part) async {
   final l10n = l10nOf(tester);
-  await tester.tap(find.byTooltip(l10n.reviewSuggestEditPart(part)));
+  await tester.tap(byButtonLabel(l10n.reviewSuggestEditPart(part)));
   await tester.pumpAndSettle();
 }
 
@@ -185,7 +186,7 @@ Future<void> newWord(WidgetTester tester) async {
   final l10n = l10nOf(tester);
   await tap(
     tester,
-    find.byTooltip(l10n.reviewSuggestEditPart(l10n.reviewPartWord)),
+    byButtonLabel(l10n.reviewSuggestEditPart(l10n.reviewPartWord)),
   );
   await type(tester, SuggestSheet.textKey(CardPart.word), 'మా అమ్మ');
   await type(tester, SuggestSheet.whyKey(CardPart.word), 'As said');
@@ -724,7 +725,7 @@ void main() {
             CardPart.picture,
           ]) {
             expect(
-              find.byTooltip(l10n.reviewSuggestEditPart(partName(l10n, part))),
+              byButtonLabel(l10n.reviewSuggestEditPart(partName(l10n, part))),
               findsOneWidget,
             );
           }
@@ -736,7 +737,7 @@ void main() {
           );
           expect(saveButton().onPressed, isNull);
           await tester.tap(
-            find.byTooltip(l10n.reviewSuggestEditPart(l10n.reviewPartNotes)),
+            byButtonLabel(l10n.reviewSuggestEditPart(l10n.reviewPartNotes)),
           );
           await tester.pumpAndSettle();
           expect(find.text(l10n.reviewSuggestNow), findsOneWidget);
@@ -902,7 +903,7 @@ void main() {
         );
         final l10n = l10nOf(tester);
         await tester.tap(
-          find.byTooltip(l10n.reviewSuggestRemove(l10n.reviewPartMeaning)),
+          byButtonLabel(l10n.reviewSuggestRemove(l10n.reviewPartMeaning)),
         );
         await pencil(tester, l10n.reviewPartWord);
         await tester.enterText(
@@ -981,7 +982,7 @@ void main() {
       expect(find.text('Unit 1 · More family words'), findsOneWidget);
       await tap(
         tester,
-        find.byTooltip(l10n.reviewSuggestRemove(l10n.reviewPartPlace)),
+        byButtonLabel(l10n.reviewSuggestRemove(l10n.reviewPartPlace)),
       );
       await save(tester);
       expect(savedOn(state), isEmpty);
@@ -1041,7 +1042,7 @@ void main() {
       (tester) async {
         final state = await openSheetBaseChange(tester);
         final l10n = l10nOf(tester);
-        final delete = find.byTooltip(l10n.reviewBaseRemove('అమ్మ'));
+        final delete = byButtonLabel(l10n.reviewBaseRemove('అమ్మ'));
         await tap(tester, delete);
         expect(find.text(l10n.reviewBaseRemoved), findsOneWidget);
         final struck = tester.widget<RichText>(

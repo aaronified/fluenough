@@ -131,7 +131,7 @@ class _CourseCardState extends State<CourseCard> {
               badge: IncomingBadgePlacement.none,
               child: IconButton(
                 icon: const Icon(Icons.sync),
-                tooltip: l10n.deckDownloadsCheck,
+                tooltip: l10n.hintUpdate,
                 onPressed: _checking ? null : _update,
               ),
             ),

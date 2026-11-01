@@ -48,12 +48,16 @@ class LabelledIconButton extends StatelessWidget {
     required this.hint,
     required this.onPressed,
     required this.icon,
+    this.color,
   });
 
   final String label;
   final String hint;
   final VoidCallback? onPressed;
   final Widget icon;
+
+  /// The icon's colour, when it is not the theme's.
+  final Color? color;
 
   @override
   Widget build(BuildContext context) => Semantics(
@@ -62,6 +66,11 @@ class LabelledIconButton extends StatelessWidget {
     enabled: onPressed != null,
     excludeSemantics: true,
     onTap: onPressed,
-    child: IconButton(tooltip: hint, onPressed: onPressed, icon: icon),
+    child: IconButton(
+      tooltip: hint,
+      color: color,
+      onPressed: onPressed,
+      icon: icon,
+    ),
   );
 }

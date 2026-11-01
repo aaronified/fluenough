@@ -147,7 +147,7 @@ class SpeakerIcon extends StatelessWidget {
 
   final VoidCallback onPlay;
 
-  /// What it plays, for screen readers and as its tooltip.
+  /// What it plays, for screen readers. Its tooltip is one word (#913).
   final String label;
 
   final bool playing;
@@ -172,7 +172,7 @@ class SpeakerIcon extends StatelessWidget {
           onLongPress: longPress,
           onLongPressHint: l10n.speakerLongPressHint,
           child: Tooltip(
-            message: label,
+            message: playing ? l10n.hintStop : l10n.hintPlay,
             // Long press is the speaker's own: the tooltip waits for hover.
             triggerMode: TooltipTriggerMode.manual,
             child: InkResponse(
