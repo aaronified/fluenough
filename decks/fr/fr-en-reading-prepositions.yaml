@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-prepositions"
+name: "Reading: prepositions"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that say where people are and who they go with, with avec, pour, vers and pendant. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-room-description"
+    title: "Going out with friends"
+    theme: "location"
+    sentences:
+      - text: "Ma sœur marche avec moi."
+      - text: "Nous passons par la rue."
+      - text: "Il part sans toi."
+      - text: "Vous attendez pendant une heure."
+    questions:
+      - id: "fr-0599"
+        prompt: { en: "Who walks with the speaker?" }
+        options:
+          - { en: "My sister" }
+          - { en: "My father" }
+          - { en: "My friend" }
+        answer: 1
+      - id: "fr-0600"
+        prompt: { en: "What do 'we' pass?" }
+        options:
+          - { en: "The street" }
+          - { en: "The station" }
+          - { en: "The bag" }
+        answer: 1
+      - id: "fr-0601"
+        prompt: { en: "How long do 'you' wait?" }
+        options:
+          - { en: "An hour" }
+          - { en: "A day" }
+          - { en: "A minute" }
+        answer: 1
+  - id: "fr-where-is-it"
+    title: "Where things are and who we work for"
+    theme: "location"
+    sentences:
+      - text: "Le musée est près de la gare."
+      - text: "Nous allons vers le musée."
+      - text: "Je travaille pour mon père."
+      - text: "Ils mangent après nous."
+    questions:
+      - id: "fr-0602"
+        prompt: { en: "What is near the station?" }
+        options:
+          - { en: "The museum" }
+          - { en: "The street" }
+          - { en: "The bag" }
+        answer: 1
+      - id: "fr-0603"
+        prompt: { en: "Where do 'we' go?" }
+        options:
+          - { en: "Towards the museum" }
+          - { en: "Away from the station" }
+          - { en: "Home" }
+        answer: 1
+      - id: "fr-0604"
+        prompt: { en: "Who does the speaker work for?" }
+        options:
+          - { en: "My father" }
+          - { en: "My sister" }
+          - { en: "A friend" }
+        answer: 1

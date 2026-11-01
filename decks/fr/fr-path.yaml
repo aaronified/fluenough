@@ -172,11 +172,9 @@ units:
   - decks: ["fr-grammar-est-ce-que", "fr-grammar-inversion", "fr-reading-grammar-questions"]
     words: 0
     grammar: ["est-ce-que", "inversion"]
-  - planned: { id: "fr-grammar-prepositions", grammar: ["prepositions", "au-du-contractions"] }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Saying where things are and where you go: to the market, from the station" } }
-    reading_passages:
-      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
+  - decks: ["fr-prepositions", "fr-grammar-prepositions", "fr-grammar-au-du-contractions", "fr-reading-prepositions"]
+    words: 8
+    grammar: ["prepositions", "au-du-contractions"]
   - planned: { id: "fr-grammar-present-ir-re", grammar: ["present-ir", "present-re"] }
     listening_passages:
       - { id: "finishing-and-waiting", text: { "en": "Saying when you finish work and who you wait for" } }
