@@ -836,11 +836,20 @@ void main() {
   });
 
   group('the Voices page', () {
-    Future<void> tapInstall(WidgetTester tester, AppState state) async {
+    Future<void> tapInstall(
+      WidgetTester tester,
+      FixedSystemSettings phone,
+    ) async {
       usePhone(tester);
-      // Tall enough for every bundled language's row and what is under them
-      // (about sixty-five courses now, starter decks included).
-      tester.view.physicalSize = const Size(390 * 3, 24000 * 3);
+      // One language learned, so the others stay folded and the page is a few
+      // cards long whatever the number of courses; the button sits under them.
+      final state = AppState.test(
+        systemSettings: phone,
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        ),
+      );
       await pumpScreen(tester, const VoicesPage(), state: state);
       await scrollTo(tester, find.text(l10nOf(tester).voicesInstall));
       await tester.tap(find.text(l10nOf(tester).voicesInstall));
@@ -898,13 +907,13 @@ void main() {
       semantics.dispose();
 
       final phone = FixedSystemSettings();
-      await tapInstall(tester, AppState.test(systemSettings: phone));
+      await tapInstall(tester, phone);
       expect(phone.voiceSettingsAsked, 1);
       expect(find.byType(AlertDialog), findsNothing);
 
       {
         final phone = FixedSystemSettings(opens: VoiceSettingsPage.none);
-        await tapInstall(tester, AppState.test(systemSettings: phone));
+        await tapInstall(tester, phone);
         expect(phone.voiceSettingsAsked, 1);
         expectExplained(tester);
         await tester.tap(find.text(l10nOf(tester).commonGotIt));
