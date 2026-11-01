@@ -1,0 +1,195 @@
+schema: 1
+id: "kn-money"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "money"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0299"
+  - id: "kn-1680"
+    target: "ಪೈಸೆ"
+    reading: "paise"
+    ipa: "paise"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪೈಸೆ ಇಲ್ಲ.", reading: "paise illa.", ipa: "paise illa" }
+      - { target: "ಪೈಸೆ ಕೊಡು.", reading: "paise koḍu.", ipa: "paise koɖu" }
+  - id: "kn-1681"
+    target: "ನಾಣ್ಯ"
+    reading: "nāṇya"
+    ipa: "naːɳja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾಣ್ಯ ಎಲ್ಲಿ?", reading: "nāṇya elli?", ipa: "naːɳja elli" }
+      - { target: "ನಾಣ್ಯ ಚಿಕ್ಕದು.", reading: "nāṇya cikkadu.", ipa: "naːɳja tʃikkad̪u", bases: [{ word: "ಚಿಕ್ಕದು", ref: "kn-0403" }] }
+  - id: "kn-1682"
+    target: "ನೋಟು"
+    reading: "nōṭu"
+    ipa: "noːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೋಟು ಬೇಕು.", reading: "nōṭu bēku.", ipa: "noːʈu beːku" }
+      - { target: "ಹೊಸ ನೋಟು ಇದೆ.", reading: "hosa nōṭu ide.", ipa: "hosa noːʈu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1683"
+    target: "ಬಡ್ಡಿ"
+    reading: "baḍḍi"
+    ipa: "baɖɖi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಡ್ಡಿ ಎಷ್ಟು?", reading: "baḍḍi eṣṭu?", ipa: "baɖɖi eʂʈu" }
+      - { target: "ಬ್ಯಾಂಕ್ ಬಡ್ಡಿ ಕೊಡುತ್ತದೆ.", reading: "byāṅk baḍḍi koḍuttade.", ipa: "bjaːŋk baɖɖi koɖut̪t̪ad̪e", bases: [{ word: "ಕೊಡುತ್ತದೆ", ref: "kn-0114" }] }
+  - id: "kn-1684"
+    target: "ಉಳಿತಾಯ"
+    reading: "uḷitāya"
+    ipa: "uɭit̪aːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉಳಿತಾಯ ಬೇಕು.", reading: "uḷitāya bēku.", ipa: "uɭit̪aːja beːku" }
+      - { target: "ನನ್ನ ಉಳಿತಾಯ ಇದೆ.", reading: "nanna uḷitāya ide.", ipa: "nanna uɭit̪aːja id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1685"
+    target: "ಖರ್ಚು"
+    reading: "kharcu"
+    ipa: "kʰartʃu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಖರ್ಚು ಆಯಿತು.", reading: "kharcu āyitu.", ipa: "kʰartʃu aːjit̪u" }
+      - { target: "ಖರ್ಚು ಕಡಿಮೆ ಮಾಡು.", reading: "kharcu kaḍime māḍu.", ipa: "kʰartʃu kaɖime maːɖu" }
+  - id: "kn-1686"
+    target: "ಆದಾಯ"
+    reading: "ādāya"
+    ipa: "aːd̪aːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆದಾಯ ಎಷ್ಟು?", reading: "ādāya eṣṭu?", ipa: "aːd̪aːja eʂʈu" }
+      - { target: "ಆದಾಯ ಹೆಚ್ಚು ಆಯಿತು.", reading: "ādāya heccu āyitu.", ipa: "aːd̪aːja hetʃtʃu aːjit̪u" }
+  - id: "kn-1687"
+    target: "ಲಾಭ"
+    reading: "lābha"
+    ipa: "laːbʱa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲಾಭ ಆಯಿತು.", reading: "lābha āyitu.", ipa: "laːbʱa aːjit̪u" }
+      - { target: "ಲಾಭ ಬೇಕು.", reading: "lābha bēku.", ipa: "laːbʱa beːku" }
+  - id: "kn-1688"
+    target: "ನಷ್ಟ"
+    reading: "naṣṭa"
+    ipa: "naʂʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಷ್ಟ ಆಯಿತು.", reading: "naṣṭa āyitu.", ipa: "naʂʈa aːjit̪u" }
+      - { target: "ನಷ್ಟ ಬೇಡ.", reading: "naṣṭa bēḍa.", ipa: "naʂʈa beːɖa" }
+  - id: "kn-1689"
+    target: "ವಹಿವಾಟು"
+    reading: "vahivāṭu"
+    ipa: "ʋahiʋaːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಹಿವಾಟು ಚೆನ್ನಾಗಿದೆ.", reading: "vahivāṭu cennāgide.", ipa: "ʋahiʋaːʈu tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ವಹಿವಾಟು ಮುಗಿಯಿತು.", reading: "vahivāṭu mugiyitu.", ipa: "ʋahiʋaːʈu muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", ref: "kn-1277" }] }
+  - id: "kn-1690"
+    target: "ಬಜೆಟ್"
+    reading: "bajeṭ"
+    ipa: "badʒeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಜೆಟ್ ಇದೆ.", reading: "bajeṭ ide.", ipa: "badʒeʈ id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಬಜೆಟ್ ಬೇಕು.", reading: "bajeṭ bēku.", ipa: "badʒeʈ beːku" }
+  - id: "kn-1691"
+    target: "ಎಟಿಎಂ"
+    reading: "eṭiem"
+    ipa: "eʈiem"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಎಟಿಎಂ ಎಲ್ಲಿ?", reading: "eṭiem elli?", ipa: "eʈiem elli" }
+      - { target: "ಎಟಿಎಂ ಬೇಕು.", reading: "eṭiem bēku.", ipa: "eʈiem beːku" }
+  - id: "kn-1692"
+    target: "ಲೆಕ್ಕ"
+    reading: "lekka"
+    ipa: "lekka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲೆಕ್ಕ ಸರಿ.", reading: "lekka sari.", ipa: "lekka sari" }
+      - { target: "ಲೆಕ್ಕ ಬರೆ.", reading: "lekka bare.", ipa: "lekka bare" }
+  - id: "kn-1693"
+    target: "ಎಣಿಸು"
+    reading: "eṇisu"
+    ipa: "eɳisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೋಟು ಎಣಿಸು.", reading: "nōṭu eṇisu.", ipa: "noːʈu eɳisu" }
+      - { target: "ಅವನು ಹಣ ಎಣಿಸುತ್ತಾನೆ.", reading: "avanu haṇa eṇisuttāne.", ipa: "aʋanu haɳa eɳisut̪t̪aːne", bases: [{ word: "ಎಣಿಸುತ್ತಾನೆ", base: "ಎಣಿಸು", reading: "eṇisu" }] }
+  - id: "kn-1694"
+    target: "ಕೂಡಿಡು"
+    reading: "kūḍiḍu"
+    ipa: "kuːɖiɖu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹಣ ಕೂಡಿಡು.", reading: "haṇa kūḍiḍu.", ipa: "haɳa kuːɖiɖu" }
+      - { target: "ಅವಳು ಹಣ ಕೂಡಿಟ್ಟಳು.", reading: "avaḷu haṇa kūḍiṭṭaḷu.", ipa: "aʋaɭu haɳa kuːɖiʈʈaɭu", bases: [{ word: "ಕೂಡಿಟ್ಟಳು", base: "ಕೂಡಿಡು", reading: "kūḍiḍu" }] }
+  - id: "kn-1695"
+    target: "ವೆಚ್ಚ"
+    reading: "vecca"
+    ipa: "ʋetʃtʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೆಚ್ಚ ಎಷ್ಟು?", reading: "vecca eṣṭu?", ipa: "ʋetʃtʃa eʂʈu" }
+      - { target: "ವೆಚ್ಚ ಜಾಸ್ತಿ.", reading: "vecca jāsti.", ipa: "ʋetʃtʃa dʒaːst̪i" }
+  - id: "kn-1696"
+    target: "ಹೂಡಿಕೆ"
+    reading: "hūḍike"
+    ipa: "huːɖike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹೂಡಿಕೆ ಮಾಡು.", reading: "hūḍike māḍu.", ipa: "huːɖike maːɖu" }
+      - { target: "ಹೂಡಿಕೆ ಲಾಭ ಕೊಡುತ್ತದೆ.", reading: "hūḍike lābha koḍuttade.", ipa: "huːɖike laːbʱa koɖut̪t̪ad̪e", bases: [{ word: "ಕೊಡುತ್ತದೆ", ref: "kn-0114" }] }

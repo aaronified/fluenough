@@ -602,7 +602,8 @@ units:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "kn-money", theme: "money", words: 45 }
+  - decks: ["kn-money", "*"]
+    words: 18
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
