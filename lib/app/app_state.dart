@@ -278,7 +278,9 @@ class AppState extends ChangeNotifier {
     _lastAdult = adult;
     _lastShown = shown;
     _lastProgressAll = all;
-    notifyListeners();
+    // The setting that moved already bumped the settings version, which
+    // drops what is kept for a queue.
+    _notifyKeepingStructure();
   }
 
   /// A reviewer is offered a deck update when only proposals changed, as
@@ -1174,8 +1176,9 @@ class AppState extends ChangeNotifier {
   /// microphone permission if it has not been granted, so call it only when
   /// the learner switches speaking on.
   Future<SpeechSetup> startSpeech() async {
+    var queues = _queueInputs();
     _speechChecking = true;
-    notifyListeners();
+    queues = _notifyVoiceChange(queues);
     var setup = SpeechSetup.noRecogniser;
     try {
       final ready = await _speech.start();
@@ -1195,7 +1198,7 @@ class AppState extends ChangeNotifier {
       _speechLanguages = const <String>{};
     } finally {
       _speechChecking = false;
-      if (!_disposed) notifyListeners();
+      if (!_disposed) _notifyVoiceChange(queues);
     }
     return setup;
   }
@@ -1468,10 +1471,13 @@ class AppState extends ChangeNotifier {
     final answers = await Future.wait(<Future<bool>>[
       for (final tag in tags) _voiceAvailable(tag),
     ]);
+    final before = _queueInputs();
     for (final (index, tag) in tags.indexed) {
       _voices[tag] = answers[index];
     }
-    notifyListeners();
+    // The answers move the queues only if the counts see a difference: a
+    // phone that has the voice, as nearly all do, changes nothing (#857).
+    _notifyVoiceChange(before);
   }
 
   Future<bool> _voiceAvailable(String tag) async {
@@ -1847,7 +1853,59 @@ class AppState extends ChangeNotifier {
   }
 
   void _structureChanged() {
-    if (!_lazyNotifying) _structureVersion++;
+    if (!_lazyNotifying && !_keepStructure) _structureVersion++;
+  }
+
+  /// Set while a notification is sent about a change that leaves every
+  /// queue as it was (#857): it is not a structural change, so nothing
+  /// kept for a queue is dropped.
+  bool _keepStructure = false;
+
+  /// Notifies without calling the change structural.
+  void _notifyKeepingStructure() {
+    _keepStructure = true;
+    try {
+      notifyListeners();
+    } finally {
+      _keepStructure = false;
+    }
+  }
+
+  /// What the queues read from the voices and the recogniser, as the counts
+  /// see it (#857): for each language the decks teach, whether it counts as
+  /// spoken and as heard.
+  List<bool> _queueInputs() {
+    final seen = <String>{};
+    final inputs = <bool>[];
+    for (final entry in decks) {
+      final language = entry.language;
+      if (!seen.add('${language.code}/${language.ttsTag}/${language.script}')) {
+        continue;
+      }
+      inputs
+        ..add(_countsAsSpoken(language))
+        ..add(_countsAsHeard(language));
+    }
+    return inputs;
+  }
+
+  /// Notifies about a change to the voices or the recogniser. It is a
+  /// structural change only if what the queues read from them changed since
+  /// [before]; returns what they read now.
+  List<bool> _notifyVoiceChange(List<bool> before) {
+    // What was worked out from the old answers must not be read again.
+    _derived.clear();
+    final now = _queueInputs();
+    var same = now.length == before.length;
+    for (var i = 0; same && i < now.length; i++) {
+      same = now[i] == before[i];
+    }
+    if (same) {
+      _notifyKeepingStructure();
+    } else {
+      notifyListeners();
+    }
+    return now;
   }
 
   /// What a value kept for language [scope] ('*' for all) was worked out
