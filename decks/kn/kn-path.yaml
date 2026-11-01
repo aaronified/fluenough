@@ -615,7 +615,8 @@ units:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
-  - planned: { id: "kn-literature", theme: "literature", words: 50 }
+  - decks: ["kn-literature", "*"]
+    words: 21
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
