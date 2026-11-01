@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-chores"
+name: "Assamese reading: chores"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-cleaning-day"
+    title: "Cleaning day"
+    theme: "chores"
+    sentences:
+      - text: "আজি সকলো মিলি ঘৰ চাফা কৰোঁ।"
+        reading: "āzi sôkôlu mili ghôr sāphā kôrum̐."
+      - text: "মই ঝাৰু লওঁ।"
+        reading: "moi jhārū lôu."
+      - text: "ভাই বাচন ধোৱে।"
+        reading: "bhāi bāsôn dhuwe."
+      - text: "আইতাই আবৰ্জনা পেলাই।"
+        reading: "āitāi ābôrjônā pelāi."
+    questions:
+      - id: "as-2871"
+        prompt: { en: "The family cleans the house together." }
+        answer: true
+      - id: "as-2872"
+        prompt: { en: "What does the speaker take?" }
+        options:
+          - { en: "A broom" }
+          - { en: "A plate" }
+          - { en: "A bucket" }
+        answer: 1
+      - id: "as-2873"
+        prompt: { en: "Who throws the rubbish away?" }
+        options:
+          - { en: "The brother" }
+          - { en: "The grandmother" }
+          - { en: "Nobody" }
+        answer: 2
+  - id: "as-chore-list"
+    title: "A weekly chore list"
+    theme: "chores"
+    sentences:
+      - text: "সোমবাৰ: বাচন ধোৱা।"
+        reading: "xumbār: bāsôn dhuwā."
+      - text: "মঙলবাৰ: কাপোৰ ধোৱা।"
+        reading: "môṅôlbār: kāpur dhuwā."
+      - text: "বুধবাৰ: ঝাৰু মচা।"
+        reading: "budhbār: jhārū mosā."
+      - text: "শুক্ৰবাৰ: আবৰ্জনা পেলোৱা।"
+        reading: "xukrôbār: ābôrjônā pelōwā."
+    questions:
+      - id: "as-2874"
+        prompt: { en: "The dishes are washed on Monday." }
+        answer: true
+      - id: "as-2875"
+        prompt: { en: "What is done on Wednesday?" }
+        options:
+          - { en: "Washing the clothes" }
+          - { en: "Sweeping" }
+          - { en: "Throwing away" }
+        answer: 2
+      - id: "as-2876"
+        prompt: { en: "What is thrown away on Friday?" }
+        options:
+          - { en: "The rubbish" }
+          - { en: "The dishes" }
+          - { en: "The clothes" }
+        answer: 1

@@ -343,11 +343,14 @@ units:
       - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
   - decks: ["as-reading-past-continuous"]
     words: 0
-  - planned: { id: "as-chores", theme: "chores", words: 40 }
+  - decks: ["as-chores", "as-chores-sentences", "*"]
+    words: 18
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+  - decks: ["as-reading-chores"]
+    words: 0
   - planned: { id: "as-appearance", theme: "appearance", words: 50 }
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
