@@ -589,7 +589,9 @@ units:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "kn-grammar-passive", grammar: "passive" }
+  - decks: ["kn-grammar-passive"]
+    words: 0
+    grammar: ["passive"]
     listening_passages:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:

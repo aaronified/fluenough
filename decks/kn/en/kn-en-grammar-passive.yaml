@@ -1,0 +1,22 @@
+schema: 1
+id: "kn-en-grammar-passive"
+kind: "layer"
+core: "kn-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Passive: it was done"
+license: "CC-BY-SA-4.0"
+description: "Saying what was done, or what is done, without saying by whom. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Passive"
+  slot_name: "tense"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "bare": "to write"
+    "oodu": "to read"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "noodu": "to see"
+    "kodu": "to give"
+  notes: "The passive takes the basic form of the verb, then ಆಯಿತು (āyitu) for was, or ಆಗುತ್ತದೆ (āguttade) for is: ಮಾಡಲಾಯಿತು (māḍalāyitu), it was done, and ಮಾಡಲಾಗುತ್ತದೆ (māḍalāguttade), it is done. The doer is not named: ಪುಸ್ತಕ ಓದಲಾಯಿತು (pustaka ōdalāyitu), the book was read."
