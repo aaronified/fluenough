@@ -10,6 +10,7 @@ import 'tables/converters.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
@@ -49,6 +50,7 @@ part 'database.g.dart';
     LeechActions,
     FsrsParameters,
     Restores,
+    ReplaySnapshots,
   ],
   daos: [
     DecksDao,
@@ -59,6 +61,7 @@ part 'database.g.dart';
     LeechActionsDao,
     FsrsParametersDao,
     RestoresDao,
+    ReplaySnapshotsDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -79,12 +82,15 @@ class AppDatabase extends _$AppDatabase {
   /// 9: `reviews` gains `script` and `asked`: the script each answer was
   ///    shown or typed in, and how it was asked, for the script skills per
   ///    script (#653). Older rows keep null.
+  /// 10: `replay_snapshots`, a cache of what replaying the review log gives,
+  ///    checked against the log before each use (#857, ADR-0051). `reviews`
+  ///    is not touched.
   @override
   int get schemaVersion => currentSchemaVersion;
 
   /// [schemaVersion], for what needs it without a database: a backup says
   /// which schema it was made under (#470).
-  static const int currentSchemaVersion = 9;
+  static const int currentSchemaVersion = 10;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -169,6 +175,16 @@ class AppDatabase extends _$AppDatabase {
         ]) {
           if (!has.contains(column.name)) await m.addColumn(reviews, column);
         }
+      }
+      if (from < 10) {
+        // Once, as in step 5: a step cut off part-way runs again. A new
+        // table only: `reviews` and its triggers are not touched, and an
+        // empty cache simply means the next launch replays the log.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'replay_snapshots'",
+        ).get();
+        if (exists.isEmpty) await m.createTable(replaySnapshots);
       }
     },
   );

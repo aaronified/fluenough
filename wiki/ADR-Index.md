@@ -53,5 +53,6 @@ Every architecture decision record in the repo's docs/adr folder. Each one has i
 - [ADR-0048](ADR-0048-Catalog-Snapshot): The catalog snapshot: the decks' YAML kept as JSON, keyed by SHA-256
 - [ADR-0049](ADR-0049-Deck-Search-Fts5): Deck search: FTS5 trigram to retrieve, edit distance to forgive, a pure-Dart matcher as fallback
 - [ADR-0050](ADR-0050-English-Synonym-Sets): Typed English meanings accept words from a curated file of synonym sets
+- [ADR-0051](ADR-0051-Replay-Snapshot): The replay snapshot: what opening the review log works out, kept and checked against the log
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
