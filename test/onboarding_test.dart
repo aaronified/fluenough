@@ -749,6 +749,7 @@ void main() {
 
     Future<void> tapKey(WidgetTester tester, String key) async {
       final finder = find.byKey(ValueKey<String>(key));
+      await scrollListTo(tester, finder);
       await tester.ensureVisible(finder);
       await tester.pumpAndSettle();
       await tester.tap(finder);

@@ -705,7 +705,8 @@ void main() {
       tester,
       OnboardingFlow(startAt: 'languages', choices: choices),
     );
-    await tester.tap(
+    await tapShown(
+      tester,
       find.byKey(const ValueKey<String>('onboarding-add-language')),
     );
     await tester.pumpAndSettle();
@@ -783,7 +784,8 @@ void main() {
           await tester.tap(find.byType(FilledButton));
           await tester.pumpAndSettle();
           await expectLater(tester, meetsGuideline(textContrastGuideline));
-          await tester.tap(
+          await tapShown(
+            tester,
             find.byKey(const ValueKey<String>('onboarding-add-language')),
           );
           await tester.pumpAndSettle();

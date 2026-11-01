@@ -218,6 +218,7 @@ Future<void> knowLanguage(
   bool reads = true,
 }) async {
   final add = find.byKey(const ValueKey<String>('onboarding-add-language'));
+  await scrollListTo(tester, add);
   await tester.ensureVisible(add);
   await tester.pumpAndSettle();
   await tester.tap(add);
@@ -265,6 +266,26 @@ Future<void> knowLanguage(
 Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
   for (var i = 0; i < 10 && finder.evaluate().isEmpty; i++) {
     await tester.drag(find.byType(Scrollable).first, const Offset(0, -200));
+    await tester.pumpAndSettle();
+  }
+}
+
+/// Brings [finder] into the tree by scrolling the page's vertical list, if it
+/// is not built yet: back to the top first, then down a step at a time. At a
+/// large text size a list builds only the children near the screen, so a
+/// button below its heading (the onboarding list's "Add a language") and a
+/// row above the screen both need scrolling before they can be tapped.
+Future<void> scrollListTo(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isNotEmpty) return;
+  final list = find
+      .byWidgetPredicate(
+        (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+      )
+      .first;
+  await tester.drag(list, const Offset(0, 4000));
+  await tester.pumpAndSettle();
+  for (var i = 0; i < 20 && finder.evaluate().isEmpty; i++) {
+    await tester.drag(list, const Offset(0, -200));
     await tester.pumpAndSettle();
   }
 }
