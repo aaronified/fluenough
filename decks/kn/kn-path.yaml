@@ -467,7 +467,8 @@ units:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - planned: { id: "kn-careers", theme: "careers", words: 50 }
+  - decks: ["kn-careers", "*"]
+    words: 19
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
