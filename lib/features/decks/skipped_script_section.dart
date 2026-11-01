@@ -9,7 +9,6 @@ import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../languages/language_skills_sheet.dart';
 import '../languages/language_views.dart';
-import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 import 'path_model.dart';
 
 /// The decks of a script the learner does not learn, under the course's
@@ -47,7 +46,7 @@ class _SkippedScriptSectionState extends State<SkippedScriptSection> {
       _catalog ??= widget.spokenList != null
       ? Future<List<SpokenLanguage>>.value(widget.spokenList)
       : DefaultAssetBundle.of(context)
-            .loadString(SpokenLanguagesPicker.asset)
+            .loadString(spokenLanguagesAsset)
             .then(parseSpokenLanguages);
 
   Future<void> _add() async {

@@ -8,10 +8,10 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/wave_progress.dart';
-import '../profiles/spoken_languages_picker.dart';
+import 'languages_intro_step.dart';
+import 'languages_step.dart';
 import 'onboarding_step.dart';
 import 'sound_check_step.dart';
-import 'spoken_step.dart';
 import 'tour_step.dart';
 import 'welcome_step.dart';
 
@@ -21,7 +21,8 @@ final List<OnboardingStep> onboardingSteps = <OnboardingStep>[
   welcomeStep,
   tourStep,
   soundCheckStep,
-  spokenStep,
+  languagesIntroStep,
+  languagesStep,
 ];
 
 /// The first launch: the app's home while no spoken language is saved
@@ -37,7 +38,7 @@ class OnboardingFlow extends StatefulWidget {
     this.steps,
     this.startAt,
     this.page = 0,
-    this.spoken = const <String>[],
+    this.chosen = const <String, ChosenLanguage>{},
     this.choices,
   });
 
@@ -50,8 +51,8 @@ class OnboardingFlow extends StatefulWidget {
   /// The page of [startAt] to open on.
   final int page;
 
-  /// Languages ticked from the start, for the gallery and tests.
-  final List<String> spoken;
+  /// Languages set from the start, by code, for the gallery and tests.
+  final Map<String, ChosenLanguage> chosen;
 
   /// For tests. Null reads `assets/languages.yaml` once, as the flow starts,
   /// so the question never waits for it.
@@ -69,7 +70,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
   );
   late int _page = widget.page;
   late final OnboardingAnswers _answers = OnboardingAnswers(
-    spoken: widget.spoken,
+    chosen: widget.chosen,
   );
   late List<SpokenLanguage>? _choices = widget.choices;
 
@@ -89,7 +90,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     super.didChangeDependencies();
     if (_choices != null) return;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((choices) {
           if (mounted) setState(() => _choices = choices);
@@ -218,7 +219,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                     )
                   : const SizedBox.shrink(),
             ),
-            if (step.skippable && _page < step.pages - 1)
+            if (step.skippable && (_page < step.pages - 1 || step.pages == 1))
               TextButton(
                 onPressed: () => _skip(from),
                 child: Text(l10n.onboardingSkip),

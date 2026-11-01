@@ -4699,7 +4699,71 @@
       }
     }
   },
-  "onboardingSpokenNeedOne": "Choose at least one language to go on.",
+  "onboardingLanguagesTitle": "What do you know, and what do you want to learn?",
+  "@onboardingLanguagesTitle": {
+    "description": "First-launch screen before the languages: its title. The next screen lists the languages, and the learner sets for each what they know and what they want to learn (owner, 2026-11-01)."
+  },
+  "onboardingLanguagesIntro": "Next you choose your languages. Each one has pills you tap. Touch and hold a pill to read what it means.",
+  "@onboardingLanguagesIntro": {
+    "description": "Under that title: what comes next. A pill is the small coloured control, with icons and no words, that sets one skill of a language."
+  },
+  "onboardingLanguagesTerm": "{term}: {meaning}",
+  "@onboardingLanguagesTerm": {
+    "description": "One line explaining a pill's level, with the term in bold. {term} is the level's name as the Languages page shows it (Learn, Know, Not learning) and {meaning} one of the three meaning texts after it. The term must stay in the sentence, as it is drawn in bold.",
+    "placeholders": {
+      "term": {
+        "type": "String",
+        "example": "Learn"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "practise it in daily drills."
+      }
+    }
+  },
+  "onboardingLanguagesLearnMeaning": "practise it in daily drills. Its decks are downloaded.",
+  "@onboardingLanguagesLearnMeaning": {
+    "description": "What a language set to Learn means, after its name (Learn)."
+  },
+  "onboardingLanguagesKnowMeaning": "you already can. It shapes your daily facts and the decks you can review.",
+  "@onboardingLanguagesKnowMeaning": {
+    "description": "What a language set to Know means, after its name (Know)."
+  },
+  "onboardingLanguagesLeaveMeaning": "not for you. Nothing is asked about it.",
+  "@onboardingLanguagesLeaveMeaning": {
+    "description": "What a language set to Not learning means, after its name (Not learning)."
+  },
+  "onboardingLanguagesIcons": "The icons show what you can do:",
+  "@onboardingLanguagesIcons": {
+    "description": "Introduces the four skill icons: read, write, hear and speak, each drawn beside its name."
+  },
+  "onboardingLanguagesPairs": "Hearing and speaking go together, and so do reading and writing. Tap a pill to step up:",
+  "@onboardingLanguagesPairs": {
+    "description": "After the four icons: the pairs a pill covers, then the four pills a tap steps through."
+  },
+  "onboardingLanguagesChecked": "Two ticks mean a short check, “{check}”, confirmed it.",
+  "@onboardingLanguagesChecked": {
+    "description": "Explains the double tick on a pill: the level was found by the placement check. {check} is the name of that check on the Languages page (Find my level).",
+    "placeholders": {
+      "check": {
+        "type": "String",
+        "example": "Find my level"
+      }
+    }
+  },
+  "onboardingLanguagesAction": "Choose my languages",
+  "@onboardingLanguagesAction": {
+    "description": "Button of the first-launch explanation of what to know and learn: goes on to the list of languages."
+  },
+  "onboardingLanguagesListTitle": "Which languages do you know, and which do you want to learn?",
+  "@onboardingLanguagesListTitle": {
+    "description": "First-launch question over the list of languages the learner has set so far."
+  },
+  "onboardingLanguagesListBody": "Tap a language to set it. English is already yours.",
+  "@onboardingLanguagesListBody": {
+    "description": "Under that question: how to set a language. English is fixed as known and cannot be changed."
+  },
+  "onboardingSpokenNeedOne": "Choose at least one language besides English to go on.",
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },

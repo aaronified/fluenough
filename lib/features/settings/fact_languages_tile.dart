@@ -4,7 +4,6 @@ import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 import '../today/fact_languages_sheet.dart';
 
 /// Settings' Fact languages row (#926): the languages Today's fact is shown
@@ -38,7 +37,7 @@ class _FactLanguagesTileState extends State<FactLanguagesTile> {
     if (_asked || _all != null) return;
     _asked = true;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((list) {
           if (mounted) setState(() => _all = list);

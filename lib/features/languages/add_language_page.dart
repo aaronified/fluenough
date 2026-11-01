@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
-import '../../app/app_state.dart';
 import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
-import '../downloads/app_update_needed.dart';
+import 'language_pick_list.dart';
 import 'language_skills_sheet.dart';
 import 'language_views.dart';
 
-/// "Add a language" (#907): a search over every language, grouped by family.
-/// Picking one opens its sheet as a draft: nothing is saved until "Add".
-/// Adding pops this page, back to the list.
+/// "Add a language" (#907): a search over every language, grouped by family
+/// ([LanguagePickList]). Picking one opens its sheet as a draft: nothing is
+/// saved until "Add". Adding pops this page, back to the list.
 class AddLanguagePage extends StatefulWidget {
   const AddLanguagePage({
     super.key,
@@ -31,22 +29,6 @@ class AddLanguagePage extends StatefulWidget {
 }
 
 class _AddLanguagePageState extends State<AddLanguagePage> {
-  late final TextEditingController _search = TextEditingController(
-    text: widget.initialQuery,
-  );
-
-  @override
-  void initState() {
-    super.initState();
-    _search.addListener(() => setState(() {}));
-  }
-
-  @override
-  void dispose() {
-    _search.dispose();
-    super.dispose();
-  }
-
   Future<void> _pick(LanguageView view) async {
     final state = AppScope.read(context);
     final all = widget.spokenList;
@@ -76,200 +58,19 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
     final state = AppScope.of(context);
-    final views = languageViews(state, widget.spokenList);
-    final query = _search.text.trim();
-    final matching = <LanguageView>[
-      for (final v in views)
-        if (query.isEmpty || v.language.matches(query)) v,
-    ];
-    final groups = <String?, List<LanguageView>>{};
-    for (final v in matching) {
-      final family = languageFamilies.contains(v.language.family)
-          ? v.language.family
-          : null;
-      groups.putIfAbsent(family, () => <LanguageView>[]).add(v);
-    }
-    final order = <String?>[...languageFamilies, null];
     return Scaffold(
       appBar: AppBar(title: Text(l10n.languagesAddTitle)),
       body: SafeArea(
         bottom: false,
         child: ListenableBuilder(
           listenable: state.settings,
-          builder: (context, _) => ListView(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
-            children: <Widget>[
-              TextField(
-                key: const ValueKey<String>('languages-add-search'),
-                controller: _search,
-                autocorrect: false,
-                decoration: InputDecoration(
-                  hintText: l10n.languagesAddSearch,
-                  prefixIcon: const Icon(Icons.search),
-                  filled: true,
-                  fillColor: scheme.surfaceContainerHigh,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppRadii.field),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-              if (matching.isEmpty)
-                Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(vertical: 24),
-                  child: Text(
-                    l10n.languagesAddNoMatch(query),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              for (final family in order)
-                if (groups[family] case final list?) ...<Widget>[
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(
-                      top: 12,
-                      bottom: 2,
-                    ),
-                    child: Text(
-                      l10n.knownFamily(family ?? 'other'),
-                      style: theme.textTheme.titleSmall!.copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  for (final v in list) _row(context, state, v),
-                ],
-            ],
+          builder: (context, _) => LanguagePickList(
+            views: languageViews(state, widget.spokenList),
+            initialQuery: widget.initialQuery,
+            isAdded: (v) => !state.skillsOf(v.language).isAllLeave,
+            onPick: _pick,
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _row(BuildContext context, AppState state, LanguageView view) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final added = !state.skillsOf(view.language).isAllLeave;
-    final own = view.language.ownName;
-    // A course this app is too old to read is shown greyed, with the app
-    // version it needs; a tap opens where the app is downloaded (ADR-0052).
-    final needs = view.needsApp;
-    // hint-ok: shows text
-    return InkWell(
-      key: ValueKey<String>('add-${view.code}'),
-      onTap: needs == null ? () => _pick(view) : () => openAppUpdate(context),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: 56),
-        child: Row(
-          children: <Widget>[
-            ExcludeSemantics(
-              child: Container(
-                width: 36,
-                height: 36,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: needs != null
-                      ? scheme.surfaceContainerHighest
-                      : added
-                      ? scheme.primary
-                      : scheme.secondaryContainer,
-                  shape: BoxShape.circle,
-                ),
-                child: Text(
-                  view.glyph,
-                  textScaler: TextScaler.noScaling,
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1,
-                    color: needs != null
-                        ? scheme.onSurfaceVariant
-                        : added
-                        ? scheme.onPrimary
-                        : scheme.onSecondaryContainer,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    view.name,
-                    style: theme.textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: needs != null ? scheme.onSurfaceVariant : null,
-                    ),
-                  ),
-                  if (needs != null)
-                    Text(
-                      l10n.appUpdateNeeded(needs),
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  if (own.isNotEmpty && own != view.name)
-                    Text(
-                      own,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                ],
-              ),
-            ),
-            if (needs != null)
-              Text(
-                l10n.appUpdateAction,
-                style: theme.textTheme.labelLarge!.copyWith(
-                  color: scheme.primary,
-                  fontWeight: FontWeight.w700,
-                ),
-              )
-            else if (added)
-              Container(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 10,
-                  vertical: 2,
-                ),
-                decoration: BoxDecoration(
-                  color: scheme.primaryContainer,
-                  borderRadius: BorderRadius.circular(AppRadii.control),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.check,
-                      size: 16,
-                      color: scheme.onPrimaryContainer,
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      l10n.languagesAdded,
-                      style: theme.textTheme.labelMedium!.copyWith(
-                        color: scheme.onPrimaryContainer,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            else if (!view.canLearn)
-              Text(
-                l10n.languagesNoCourse,
-                style: theme.textTheme.labelMedium!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            const SizedBox(width: 4),
-            Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
-          ],
         ),
       ),
     );

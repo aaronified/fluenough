@@ -206,35 +206,58 @@ Future<AppState> withDeckTaught(
   return build(progress);
 }
 
-/// Chooses [name] on Languages you know: finds it with the search, taps its
-/// row and answers its sheet, [reads] its script or speaks only (#490).
+/// Adds [name] (language [code]) on the first launch's list of languages, as
+/// a learner does: Add a language, the search, the row, the Know sheet's
+/// answer where the language asks one ([reads] its script, or speaks only),
+/// then the skills sheet's "Add" with what the Know sheet filled in. A
+/// language that asks no script question goes straight to the skills sheet.
 Future<void> knowLanguage(
   WidgetTester tester,
+  String code,
   String name, {
   bool reads = true,
 }) async {
+  final add = find.byKey(const ValueKey<String>('onboarding-add-language'));
+  await scrollListTo(tester, add);
+  await tester.ensureVisible(add);
+  await tester.pumpAndSettle();
+  await tester.tap(add);
+  await tester.pumpAndSettle();
   await tester.enterText(
-    find.byKey(const ValueKey<String>('known-search')),
+    find.byKey(const ValueKey<String>('languages-add-search')),
     name,
   );
   await tester.pumpAndSettle();
-  await tester.tap(find.widgetWithText(ListTile, name).first);
+  await tester.tap(find.byKey(ValueKey<String>('add-$code')));
   await tester.pumpAndSettle();
   final oneScript = find.byKey(const ValueKey<String>('know-read'));
-  if (reads && oneScript.evaluate().isEmpty) {
-    // A language written in several scripts: tick its first, then Done.
-    await tester.tap(
-      find
-          .byWidgetPredicate((w) => w.key.toString().contains("'know-script-"))
-          .first,
-    );
+  final severalScripts = find.byKey(const ValueKey<String>('know-done'));
+  if (oneScript.evaluate().isNotEmpty || severalScripts.evaluate().isNotEmpty) {
+    if (!reads) {
+      await tester.tap(find.byKey(const ValueKey<String>('know-speak')));
+    } else if (oneScript.evaluate().isNotEmpty) {
+      await tester.tap(oneScript);
+    } else {
+      // A language written in several scripts: tick its first, then Done.
+      await tester.tap(
+        find
+            .byWidgetPredicate(
+              (w) => w.key.toString().contains("'know-script-"),
+            )
+            .first,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(severalScripts);
+    }
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const ValueKey<String>('know-done')));
-  } else {
-    await tester.tap(
-      find.byKey(ValueKey<String>(reads ? 'know-read' : 'know-speak')),
-    );
   }
+  await tester.tap(
+    find.widgetWithText(
+      FilledButton,
+      AppLocalizations.of(tester.element(find.byType(Scaffold).first))!
+          .languagesAddLanguage(name),
+    ),
+  );
   await tester.pumpAndSettle();
 }
 
@@ -243,6 +266,26 @@ Future<void> knowLanguage(
 Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
   for (var i = 0; i < 10 && finder.evaluate().isEmpty; i++) {
     await tester.drag(find.byType(Scrollable).first, const Offset(0, -200));
+    await tester.pumpAndSettle();
+  }
+}
+
+/// Brings [finder] into the tree by scrolling the page's vertical list, if it
+/// is not built yet: back to the top first, then down a step at a time. At a
+/// large text size a list builds only the children near the screen, so a
+/// button below its heading (the onboarding list's "Add a language") and a
+/// row above the screen both need scrolling before they can be tapped.
+Future<void> scrollListTo(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isNotEmpty) return;
+  final list = find
+      .byWidgetPredicate(
+        (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+      )
+      .first;
+  await tester.drag(list, const Offset(0, 4000));
+  await tester.pumpAndSettle();
+  for (var i = 0; i < 20 && finder.evaluate().isEmpty; i++) {
+    await tester.drag(list, const Offset(0, -200));
     await tester.pumpAndSettle();
   }
 }

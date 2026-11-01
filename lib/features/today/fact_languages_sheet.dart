@@ -6,7 +6,6 @@ import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
-import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 
 /// The small button at the top left of Today's fact card (#926): it opens
 /// the choice of the languages the fact is shown in. Icon only, so it has a
@@ -108,7 +107,7 @@ class _FactLanguagesSheetState extends State<FactLanguagesSheet> {
     if (_asked || _all != null) return;
     _asked = true;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((list) {
           if (mounted) setState(() => _all = list);

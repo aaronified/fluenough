@@ -1,5 +1,8 @@
 import 'package:yaml/yaml.dart';
 
+/// Where the languages a learner can name are listed.
+const String spokenLanguagesAsset = 'assets/languages.yaml';
+
 /// A language a learner can say they speak (#53).
 class SpokenLanguage {
   const SpokenLanguage({
@@ -119,6 +122,29 @@ class SpokenLanguage {
   /// The own-script "I can read it" answer for [script] of a language
   /// written in several, or null: none written.
   String? canReadIn(String script) => scriptCanReadFor[script];
+
+  /// Whether [text] is written in the Perso-Arabic script (Urdu's, and
+  /// Shahmukhi), which is drawn right to left. Decided by the text itself:
+  /// a Shahmukhi answer written in Gurmukhi stays left to right.
+  static bool isRtlText(String text) => text.runes.any(
+    (r) =>
+        (r >= 0x0600 && r <= 0x06FF) ||
+        (r >= 0x0750 && r <= 0x077F) ||
+        (r >= 0xFB50 && r <= 0xFDFF) ||
+        (r >= 0xFE70 && r <= 0xFEFF),
+  );
+
+  /// The language code to mark [text], one of this language's own-script
+  /// answers, with, for the voice and font that read it: Urdu for text in the
+  /// Perso-Arabic script where that is not the language's own first script
+  /// (Hindustani's second script), as the cards do, else the language's code.
+  String localeCodeFor(String text) =>
+      isRtlText(text) && !_ownScriptIsRtl ? 'ur' : code;
+
+  /// Whether the language's own script is written right to left. Arabic is
+  /// listed too, so a future Arabic-script own answer is drawn right to left.
+  bool get _ownScriptIsRtl =>
+      script == 'perso_arabic' || script == 'shahmukhi' || script == 'arabic';
 
   /// The one dialect the app teaches, by its proper name, such as
   /// "Majhi (ਮਾਝੀ), the Eastern Punjabi standard" (#907), or null where the
