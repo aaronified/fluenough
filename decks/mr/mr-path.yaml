@@ -569,7 +569,9 @@ units:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
-  - planned: { id: "mr-grammar-emphasis", grammar: "emphasis" }
+  - decks: ["mr-grammar-emphasis"]
+    words: 0
+    grammar: ["emphasis"]
     listening_passages:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
