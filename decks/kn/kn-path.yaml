@@ -499,7 +499,8 @@ units:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
-  - planned: { id: "kn-cinema", theme: "cinema", words: 55 }
+  - decks: ["kn-cinema", "*"]
+    words: 19
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:

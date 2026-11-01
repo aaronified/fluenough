@@ -1,0 +1,198 @@
+schema: 1
+id: "kn-cinema"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "cinema"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0840"
+  - id: "kn-1507"
+    target: "ನಟ"
+    reading: "naṭa"
+    ipa: "naʈa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಟ ಬಂದ.", reading: "naṭa banda.", ipa: "naʈa band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಆ ನಟ ಚೆನ್ನಾಗಿ ಅಭಿನಯಿಸಿದ.", reading: "ā naṭa cennāgi abhinayisida.", ipa: "aː naʈa tʃennaːɡi abʱinajisid̪a", bases: [{ word: "ಅಭಿನಯಿಸಿದ", base: "ಅಭಿನಯಿಸು", reading: "abhinayisu" }] }
+  - id: "kn-1508"
+    target: "ನಟಿ"
+    reading: "naṭi"
+    ipa: "naʈi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಟಿ ಬಂದರು.", reading: "naṭi bandaru.", ipa: "naʈi band̪aru" }
+      - { target: "ನಟಿ ನೃತ್ಯ ಮಾಡಿದರು.", reading: "naṭi nrutya māḍidaru.", ipa: "naʈi nrut̪ja maːɖid̪aru", bases: [{ word: "ಮಾಡಿದರು", ref: "kn-0630" }] }
+  - id: "kn-1509"
+    target: "ಅಭಿನಯ"
+    reading: "abhinaya"
+    ipa: "abʱinaja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನ ಅಭಿನಯ ಚೆನ್ನಾಗಿದೆ.", reading: "avana abhinaya cennāgide.", ipa: "aʋana abʱinaja tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಅಭಿನಯ ಮಾಡು.", reading: "abhinaya māḍu.", ipa: "abʱinaja maːɖu" }
+  - id: "kn-1510"
+    target: "ನಿರ್ದೇಶಕ"
+    reading: "nirdēśaka"
+    ipa: "nird̪eːʃaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿರ್ದೇಶಕ ಬಂದರು.", reading: "nirdēśaka bandaru.", ipa: "nird̪eːʃaka band̪aru" }
+      - { target: "ನಿರ್ದೇಶಕ ಹೊಸ ಸಿನಿಮಾ ಮಾಡಿದರು.", reading: "nirdēśaka hosa sinimā māḍidaru.", ipa: "nird̪eːʃaka hosa sinimaː maːɖid̪aru", bases: [{ word: "ಮಾಡಿದರು", ref: "kn-0630" }] }
+  - id: "kn-1511"
+    target: "ಕಥೆ"
+    reading: "kathe"
+    ipa: "kat̪ʰe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಥೆ ಚೆನ್ನಾಗಿದೆ.", reading: "kathe cennāgide.", ipa: "kat̪ʰe tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಈ ಸಿನಿಮಾದ ಕಥೆ ದೊಡ್ಡದು.", reading: "ī sinimāda kathe doḍḍadu.", ipa: "iː sinimaːd̪a kat̪ʰe d̪oɖɖad̪u", bases: [{ word: "ಸಿನಿಮಾದ", ref: "kn-0840" }, { word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1512"
+    target: "ಪಾತ್ರ"
+    reading: "pātra"
+    ipa: "paːt̪ra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನ ಪಾತ್ರ ಸುಂದರ.", reading: "avana pātra sundara.", ipa: "aʋana paːt̪ra sund̪ara" }
+      - { target: "ಪಾತ್ರ ಚೆನ್ನಾಗಿದೆ.", reading: "pātra cennāgide.", ipa: "paːt̪ra tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1513"
+    target: "ಗೀತೆ"
+    reading: "gīte"
+    ipa: "ɡiːt̪e"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೀತೆ ಕೇಳು.", reading: "gīte kēḷu.", ipa: "ɡiːt̪e keːɭu" }
+      - { target: "ಗೀತೆ ಸುಂದರ.", reading: "gīte sundara.", ipa: "ɡiːt̪e sund̪ara" }
+  - ref: "kn-0855"
+  - id: "kn-1514"
+    target: "ಪ್ರೇಕ್ಷಕ"
+    reading: "prēkṣaka"
+    ipa: "preːkʂaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರೇಕ್ಷಕರು ನಕ್ಕರು.", reading: "prēkṣakaru nakkaru.", ipa: "preːkʂakaru nakkaru", bases: [{ word: "ಪ್ರೇಕ್ಷಕರು", base: "ಪ್ರೇಕ್ಷಕ", reading: "prēkṣaka" }, { word: "ನಕ್ಕರು", ref: "kn-0754" }] }
+      - { target: "ಪ್ರೇಕ್ಷಕ ಬಂದ.", reading: "prēkṣaka banda.", ipa: "preːkʂaka band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+  - id: "kn-1515"
+    target: "ದೃಶ್ಯ"
+    reading: "druśya"
+    ipa: "d̪ruʃja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ದೃಶ್ಯ ಸುಂದರ.", reading: "ī druśya sundara.", ipa: "iː d̪ruʃja sund̪ara" }
+      - { target: "ದೃಶ್ಯ ದೊಡ್ಡದು.", reading: "druśya doḍḍadu.", ipa: "d̪ruʃja d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1516"
+    target: "ಸಂಭಾಷಣೆ"
+    reading: "sambhāṣaṇe"
+    ipa: "sambʱaːʂaɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಂಭಾಷಣೆ ಚೆನ್ನಾಗಿದೆ.", reading: "sambhāṣaṇe cennāgide.", ipa: "sambʱaːʂaɳe tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಸಂಭಾಷಣೆ ಕೇಳು.", reading: "sambhāṣaṇe kēḷu.", ipa: "sambʱaːʂaɳe keːɭu" }
+  - id: "kn-1517"
+    target: "ನಿರ್ಮಾಪಕ"
+    reading: "nirmāpaka"
+    ipa: "nirmaːpaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿರ್ಮಾಪಕ ಬಂದ.", reading: "nirmāpaka banda.", ipa: "nirmaːpaka band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ನಿರ್ಮಾಪಕ ಹಣ ಕೊಟ್ಟ.", reading: "nirmāpaka haṇa koṭṭa.", ipa: "nirmaːpaka haɳa koʈʈa", bases: [{ word: "ಕೊಟ್ಟ", ref: "kn-0114" }] }
+  - id: "kn-1518"
+    target: "ಪ್ರಶಸ್ತಿ"
+    reading: "praśasti"
+    ipa: "praʃast̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಶಸ್ತಿ ಸಿಕ್ಕಿತು.", reading: "praśasti sikkitu.", ipa: "praʃast̪i sikkit̪u", bases: [{ word: "ಸಿಕ್ಕಿತು", base: "ಸಿಕ್ಕು", reading: "sikku" }] }
+      - { target: "ಅವನಿಗೆ ಪ್ರಶಸ್ತಿ ಬಂತು.", reading: "avanige praśasti bantu.", ipa: "aʋaniɡe praʃast̪i bant̪u", bases: [{ word: "ಅವನಿಗೆ", ref: "kn-0612" }, { word: "ಬಂತು", ref: "kn-0632" }] }
+  - id: "kn-1519"
+    target: "ಉಪಶೀರ್ಷಿಕೆ"
+    reading: "upaśīrṣike"
+    ipa: "upaʃiːrʂike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉಪಶೀರ್ಷಿಕೆ ಇದೆಯೇ?", reading: "upaśīrṣike ideyē?", ipa: "upaʃiːrʂike id̪ejeː", bases: [{ word: "ಇದೆಯೇ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಉಪಶೀರ್ಷಿಕೆ ಓದು.", reading: "upaśīrṣike ōdu.", ipa: "upaʃiːrʂike oːd̪u" }
+  - id: "kn-1520"
+    target: "ಹಿನ್ನೆಲೆ"
+    reading: "hinnele"
+    ipa: "hinnele"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹಿನ್ನೆಲೆ ಸಂಗೀತ ಇದೆ.", reading: "hinnele saṅgīta ide.", ipa: "hinnele saŋɡiːt̪a id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಹಿನ್ನೆಲೆ ಚೆನ್ನಾಗಿದೆ.", reading: "hinnele cennāgide.", ipa: "hinnele tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1521"
+    target: "ಕಲೆ"
+    reading: "kale"
+    ipa: "kale"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಲೆ ಇಷ್ಟ.", reading: "kale iṣṭa.", ipa: "kale iʂʈa" }
+      - { target: "ಕಲೆ ಕಲಿ.", reading: "kale kali.", ipa: "kale kali" }
+  - id: "kn-1522"
+    target: "ಕಥಾನಾಯಕ"
+    reading: "kathānāyaka"
+    ipa: "kat̪ʰaːnaːjaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಥಾನಾಯಕ ಬಂದ.", reading: "kathānāyaka banda.", ipa: "kat̪ʰaːnaːjaka band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಕಥಾನಾಯಕನ ಪಾತ್ರ ಸುಂದರ.", reading: "kathānāyakana pātra sundara.", ipa: "kat̪ʰaːnaːjakana paːt̪ra sund̪ara", bases: [{ word: "ಕಥಾನಾಯಕನ", base: "ಕಥಾನಾಯಕ", reading: "kathānāyaka" }] }
+  - id: "kn-1523"
+    target: "ಚಪ್ಪಾಳೆ"
+    reading: "cappāḷe"
+    ipa: "tʃappaːɭe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಪ್ಪಾಳೆ ಬೇಕು.", reading: "cappāḷe bēku.", ipa: "tʃappaːɭe beːku" }
+      - { target: "ಜನರು ಚಪ್ಪಾಳೆ ತಟ್ಟಿದರು.", reading: "janaru cappāḷe taṭṭidaru.", ipa: "dʒanaru tʃappaːɭe t̪aʈʈid̪aru", bases: [{ word: "ಜನರು", ref: "kn-0050" }, { word: "ತಟ್ಟಿದರು", base: "ತಟ್ಟು", reading: "taṭṭu" }] }
