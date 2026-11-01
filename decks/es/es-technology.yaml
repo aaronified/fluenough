@@ -1,0 +1,450 @@
+schema: 1
+id: "es-technology"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "technology"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2315"
+    target: "la tecnología"
+    ipa: "la teknoloˈxia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tecnología", base: "tecnología" }]
+    examples:
+      - target: "La tecnología cambia rápido."
+        ipa: "la teknoloˈxia ˈkambja ˈrapido"
+        bases: [{ word: "La", base: "la" }, { word: "tecnología", base: "tecnología" }, { word: "cambia", ref: "es-0588" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Me interesa la tecnología."
+        ipa: "me inteˈɾesa la teknoloˈxia"
+        bases: [{ word: "Me", base: "me" }, { word: "interesa", base: "interesar" }, { word: "la", base: "la" }, { word: "tecnología", base: "tecnología" }]
+  - id: "es-2316"
+    target: "el software"
+    ipa: "el sofˈtwaɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "software", base: "software" }]
+    examples:
+      - target: "Este software es gratis."
+        ipa: "ˈeste sofˈtwaɾe es ˈɡɾatis"
+        bases: [{ word: "Este", ref: "es-1897" }, { word: "software", base: "software" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+      - target: "Instalo un software nuevo."
+        ipa: "insˈtalo un sofˈtwaɾe ˈnwebo"
+        bases: [{ word: "Instalo", ref: "es-2341" }, { word: "un", base: "un" }, { word: "software", base: "software" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2317"
+    target: "el archivo"
+    ipa: "el aɾˈtʃibo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "archivo", base: "archivo" }]
+    examples:
+      - target: "Guardo el archivo en la carpeta."
+        ipa: "ˈɡwaɾdo el aɾˈtʃibo en la kaɾˈpeta"
+        bases: [{ word: "Guardo", ref: "es-1188" }, { word: "el", base: "el" }, { word: "archivo", base: "archivo" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "carpeta", ref: "es-2318" }]
+      - target: "El archivo es muy grande."
+        ipa: "el aɾˈtʃibo es mwi ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "archivo", base: "archivo" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2318"
+    target: "la carpeta"
+    ipa: "la kaɾˈpeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "carpeta", base: "carpeta" }]
+    examples:
+      - target: "Pongo las fotos en una carpeta."
+        ipa: "ˈponɡo las ˈfotos en ˈuna kaɾˈpeta"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "las", base: "las" }, { word: "fotos", ref: "es-1184" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "carpeta", base: "carpeta" }]
+      - target: "La carpeta está en el escritorio."
+        ipa: "la kaɾˈpeta esˈta en el eskɾiˈtoɾjo"
+        bases: [{ word: "La", base: "la" }, { word: "carpeta", base: "carpeta" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "escritorio", base: "escritorio" }]
+  - id: "es-2319"
+    target: "la imagen"
+    ipa: "la iˈmaxen"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "imagen", base: "imagen" }]
+    examples:
+      - target: "La imagen es muy clara."
+        ipa: "la iˈmaxen es mwi ˈklaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "imagen", base: "imagen" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "clara", ref: "es-0438" }]
+      - target: "Subo una imagen a la web."
+        ipa: "ˈsubo ˈuna iˈmaxen a la web"
+        bases: [{ word: "Subo", ref: "es-0691" }, { word: "una", base: "una" }, { word: "imagen", base: "imagen" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "web", ref: "es-2337" }]
+  - id: "es-2320"
+    target: "el disco"
+    ipa: "el ˈdisko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "disco", base: "disco" }]
+    examples:
+      - target: "El disco está lleno."
+        ipa: "el ˈdisko esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "disco", base: "disco" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+      - target: "Guardo una copia en el disco."
+        ipa: "ˈɡwaɾdo ˈuna ˈkopja en el ˈdisko"
+        bases: [{ word: "Guardo", ref: "es-1188" }, { word: "una", base: "una" }, { word: "copia", base: "copia" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "disco", base: "disco" }]
+  - id: "es-2321"
+    target: "la memoria"
+    ipa: "la meˈmoɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "memoria", base: "memoria" }]
+    examples:
+      - target: "La memoria del móvil está llena."
+        ipa: "la meˈmoɾja del ˈmobil esˈta ˈʝena"
+        bases: [{ word: "La", base: "la" }, { word: "memoria", base: "memoria" }, { word: "del", base: "del" }, { word: "móvil", ref: "es-0920" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }]
+      - target: "Necesito más memoria."
+        ipa: "neθeˈsito mas meˈmoɾja"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "más", ref: "es-0363" }, { word: "memoria", base: "memoria" }]
+  - id: "es-2322"
+    target: "el procesador"
+    ipa: "el pɾoθesaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "procesador", base: "procesador" }]
+    examples:
+      - target: "El procesador es muy rápido."
+        ipa: "el pɾoθesaˈdoɾ es mwi ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "procesador", base: "procesador" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Este procesador es nuevo."
+        ipa: "ˈeste pɾoθesaˈdoɾ es ˈnwebo"
+        bases: [{ word: "Este", ref: "es-1897" }, { word: "procesador", base: "procesador" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2323"
+    target: "el robot"
+    ipa: "el roˈbot"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "robot", base: "robot" }]
+    examples:
+      - target: "El robot limpia la casa."
+        ipa: "el roˈbot ˈlimpja la ˈkasa"
+        bases: [{ word: "El", base: "el" }, { word: "robot", base: "robot" }, { word: "limpia", ref: "es-0416" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+      - target: "Un robot trabaja en la fábrica."
+        ipa: "un roˈbot tɾaˈbaxa en la ˈfabɾika"
+        bases: [{ word: "Un", base: "un" }, { word: "robot", base: "robot" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fábrica", ref: "es-1860" }]
+  - id: "es-2324"
+    target: "el dato"
+    ipa: "el ˈdato"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dato", base: "dato" }]
+    examples:
+      - target: "Este dato es importante."
+        ipa: "ˈeste ˈdato es impoɾˈtante"
+        bases: [{ word: "Este", ref: "es-1897" }, { word: "dato", base: "dato" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Tengo muchos datos del proyecto."
+        ipa: "ˈtenɡo ˈmutʃos ˈdatos del pɾoˈʝekto"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "muchos", ref: "es-0053" }, { word: "datos", base: "dato" }, { word: "del", base: "del" }, { word: "proyecto", ref: "es-1853" }]
+  - id: "es-2325"
+    target: "el programador"
+    ipa: "el pɾoɡɾamaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "programador", base: "programador" }]
+    examples:
+      - target: "El programador escribe el código."
+        ipa: "el pɾoɡɾamaˈdoɾ esˈkɾibe el ˈkodiɡo"
+        bases: [{ word: "El", base: "el" }, { word: "programador", base: "programador" }, { word: "escribe", ref: "es-0297" }, { word: "el", base: "el" }, { word: "código", ref: "es-2244" }]
+      - target: "Mi hermana es programadora."
+        ipa: "mi eɾˈmana es pɾoɡɾamaˈdoɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "programadora", base: "programador" }]
+  - id: "es-2326"
+    target: "el enlace"
+    ipa: "el enˈlaθe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "enlace", base: "enlace" }]
+    examples:
+      - target: "Pulsa el enlace de abajo."
+        ipa: "ˈpulsa el enˈlaθe de aˈbaxo"
+        bases: [{ word: "Pulsa", base: "pulsar" }, { word: "el", base: "el" }, { word: "enlace", base: "enlace" }, { word: "de", base: "de" }, { word: "abajo", base: "abajo" }]
+      - target: "El enlace no funciona."
+        ipa: "el enˈlaθe no funˈθjona"
+        bases: [{ word: "El", base: "el" }, { word: "enlace", base: "enlace" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }]
+  - id: "es-2327"
+    target: "el clic"
+    ipa: "el klik"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "clic", base: "clic" }]
+    examples:
+      - target: "Hago un clic en el botón."
+        ipa: "ˈaɡo un klik en el boˈton"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "clic", base: "clic" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "botón", ref: "es-2335" }]
+      - target: "Un clic basta."
+        ipa: "un klik ˈbasta"
+        bases: [{ word: "Un", base: "un" }, { word: "clic", base: "clic" }, { word: "basta", base: "bastar" }]
+  - id: "es-2328"
+    target: "el comentario"
+    ipa: "el komenˈtaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "comentario", base: "comentario" }]
+    examples:
+      - target: "Dejo un comentario en la foto."
+        ipa: "ˈdexo un komenˈtaɾjo en la ˈfoto"
+        bases: [{ word: "Dejo", ref: "es-1190" }, { word: "un", base: "un" }, { word: "comentario", base: "comentario" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "foto", ref: "es-1184" }]
+      - target: "El comentario es muy amable."
+        ipa: "el komenˈtaɾjo es mwi aˈmable"
+        bases: [{ word: "El", base: "el" }, { word: "comentario", base: "comentario" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", base: "amable" }]
+  - id: "es-2329"
+    target: "el seguidor"
+    ipa: "el seɡiˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "seguidor", base: "seguidor" }]
+    examples:
+      - target: "Tengo mil seguidores."
+        ipa: "ˈtenɡo mil seɡiˈdoɾes"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mil", ref: "es-0546" }, { word: "seguidores", base: "seguidor" }]
+      - target: "El seguidor responde al mensaje."
+        ipa: "el seɡiˈdoɾ resˈponde al menˈsaxe"
+        bases: [{ word: "El", base: "el" }, { word: "seguidor", base: "seguidor" }, { word: "responde", ref: "es-1377" }, { word: "al", base: "al" }, { word: "mensaje", ref: "es-1651" }]
+  - id: "es-2330"
+    target: "el dispositivo"
+    ipa: "el disposiˈtibo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dispositivo", base: "dispositivo" }]
+    examples:
+      - target: "El dispositivo está en la mesa."
+        ipa: "el disposiˈtibo esˈta en la ˈmesa"
+        bases: [{ word: "El", base: "el" }, { word: "dispositivo", base: "dispositivo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+      - target: "Conecto el dispositivo a internet."
+        ipa: "koˈnekto el disposiˈtibo a inteɾˈnet"
+        bases: [{ word: "Conecto", ref: "es-2344" }, { word: "el", base: "el" }, { word: "dispositivo", base: "dispositivo" }, { word: "a", base: "a" }, { word: "internet", ref: "es-1656" }]
+  - id: "es-2331"
+    target: "el sensor"
+    ipa: "el senˈsoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sensor", base: "sensor" }]
+    examples:
+      - target: "El sensor detecta el movimiento."
+        ipa: "el senˈsoɾ deˈtekta el mobiˈmjento"
+        bases: [{ word: "El", base: "el" }, { word: "sensor", base: "sensor" }, { word: "detecta", base: "detectar" }, { word: "el", base: "el" }, { word: "movimiento", base: "movimiento" }]
+      - target: "El sensor de la cámara es bueno."
+        ipa: "el senˈsoɾ de la ˈkamaɾa es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "sensor", base: "sensor" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "cámara", ref: "es-1172" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-2332"
+    target: "el error"
+    ipa: "el eˈroɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "error", base: "error" }]
+    examples:
+      - target: "Hay un error en el programa."
+        ipa: "aj un eˈroɾ en el pɾoˈɡɾama"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "error", base: "error" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "programa", ref: "es-2071" }]
+      - target: "Cometo un error."
+        ipa: "koˈmeto un eˈroɾ"
+        bases: [{ word: "Cometo", base: "cometer" }, { word: "un", base: "un" }, { word: "error", base: "error" }]
+  - id: "es-2333"
+    target: "el fallo"
+    ipa: "el ˈfaʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fallo", base: "fallo" }]
+    examples:
+      - target: "El fallo es en el disco."
+        ipa: "el ˈfaʝo es en el ˈdisko"
+        bases: [{ word: "El", base: "el" }, { word: "fallo", base: "fallo" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "disco", ref: "es-2320" }]
+      - target: "Hay un fallo en la red."
+        ipa: "aj un ˈfaʝo en la red"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "fallo", base: "fallo" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "red", ref: "es-1666" }]
+  - id: "es-2334"
+    target: "el virus"
+    ipa: "el ˈbiɾus"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "virus", base: "virus" }]
+    examples:
+      - target: "El virus borra los archivos."
+        ipa: "el ˈbiɾus ˈbora los aɾˈtʃibos"
+        bases: [{ word: "El", base: "el" }, { word: "virus", base: "virus" }, { word: "borra", ref: "es-1674" }, { word: "los", base: "los" }, { word: "archivos", ref: "es-2317" }]
+      - target: "Tengo un virus en el ordenador."
+        ipa: "ˈtenɡo un ˈbiɾus en el oɾdenaˈdoɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "virus", base: "virus" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "ordenador", ref: "es-1173" }]
+  - id: "es-2335"
+    target: "el botón"
+    ipa: "el boˈton"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "botón", base: "botón" }]
+    examples:
+      - target: "Pulsa el botón verde."
+        ipa: "ˈpulsa el boˈton ˈbeɾde"
+        bases: [{ word: "Pulsa", base: "pulsar" }, { word: "el", base: "el" }, { word: "botón", base: "botón" }, { word: "verde", ref: "es-1009" }]
+      - target: "El botón no funciona."
+        ipa: "el boˈton no funˈθjona"
+        bases: [{ word: "El", base: "el" }, { word: "botón", base: "botón" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }]
+  - id: "es-2336"
+    target: "el icono"
+    ipa: "el iˈkono"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "icono", base: "icono" }]
+    examples:
+      - target: "Pulso el icono de la aplicación."
+        ipa: "ˈpulso el iˈkono de la aplikaˈθjon"
+        bases: [{ word: "Pulso", base: "pulsar" }, { word: "el", base: "el" }, { word: "icono", base: "icono" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "aplicación", ref: "es-1654" }]
+      - target: "El icono es azul."
+        ipa: "el iˈkono es aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "icono", base: "icono" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+  - id: "es-2337"
+    target: "la web"
+    ipa: "la web"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "web", base: "web" }]
+    examples:
+      - target: "Busco información en la web."
+        ipa: "ˈbusko infoɾmaˈθjon en la web"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "información", base: "información" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "web", base: "web" }]
+      - target: "La web tiene muchas fotos."
+        ipa: "la web ˈtjene ˈmutʃas ˈfotos"
+        bases: [{ word: "La", base: "la" }, { word: "web", base: "web" }, { word: "tiene", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "fotos", ref: "es-1184" }]
+  - id: "es-2338"
+    target: "el sitio"
+    ipa: "el ˈsitjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sitio", base: "sitio" }]
+    examples:
+      - target: "Visito un sitio de noticias."
+        ipa: "biˈsito un ˈsitjo de noˈtiθjas"
+        bases: [{ word: "Visito", ref: "es-0787" }, { word: "un", base: "un" }, { word: "sitio", base: "sitio" }, { word: "de", base: "de" }, { word: "noticias", ref: "es-2052" }]
+      - target: "El sitio es muy útil."
+        ipa: "el ˈsitjo es mwi ˈutil"
+        bases: [{ word: "El", base: "el" }, { word: "sitio", base: "sitio" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "útil", ref: "es-1197" }]
+  - id: "es-2339"
+    target: "el blog"
+    ipa: "el bloɡ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "blog", base: "blog" }]
+    examples:
+      - target: "Escribo en un blog de viajes."
+        ipa: "esˈkɾibo en un bloɡ de ˈbjaxes"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "blog", base: "blog" }, { word: "de", base: "de" }, { word: "viajes", ref: "es-1690" }]
+      - target: "El blog es muy popular."
+        ipa: "el bloɡ es mwi popuˈlaɾ"
+        bases: [{ word: "El", base: "el" }, { word: "blog", base: "blog" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "popular", base: "popular" }]
+  - id: "es-2340"
+    target: "programar"
+    ipa: "pɾoɡɾaˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "programar", base: "programar" }]
+    examples:
+      - target: "Programo el móvil para mañana."
+        ipa: "pɾoˈɡɾamo el ˈmobil ˈpaɾa maˈɲana"
+        bases: [{ word: "Programo", base: "programar" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }, { word: "para", base: "para" }, { word: "mañana", ref: "es-0841" }]
+      - target: "Programan el ordenador para jugar."
+        ipa: "pɾoˈɡɾaman el oɾdenaˈdoɾ ˈpaɾa xuˈɡaɾ"
+        bases: [{ word: "Programan", base: "programar" }, { word: "el", base: "el" }, { word: "ordenador", ref: "es-1173" }, { word: "para", base: "para" }, { word: "jugar", ref: "es-1403" }]
+  - id: "es-2341"
+    target: "instalar"
+    ipa: "instaˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "instalar", base: "instalar" }]
+    examples:
+      - target: "Instalo la aplicación hoy."
+        ipa: "insˈtalo la aplikaˈθjon oj"
+        bases: [{ word: "Instalo", base: "instalar" }, { word: "la", base: "la" }, { word: "aplicación", ref: "es-1654" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Instalamos el software nuevo."
+        ipa: "instaˈlamos el sofˈtwaɾe ˈnwebo"
+        bases: [{ word: "Instalamos", base: "instalar" }, { word: "el", base: "el" }, { word: "software", ref: "es-2316" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2342"
+    target: "actualizar"
+    ipa: "aktwaliˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "actualizar", base: "actualizar" }]
+    examples:
+      - target: "Actualizo el sistema."
+        ipa: "aktwaˈliθo el sisˈtema"
+        bases: [{ word: "Actualizo", base: "actualizar" }, { word: "el", base: "el" }, { word: "sistema", base: "sistema" }]
+      - target: "Actualizan la aplicación cada mes."
+        ipa: "aktwaˈliθan la aplikaˈθjon ˈkada mes"
+        bases: [{ word: "Actualizan", base: "actualizar" }, { word: "la", base: "la" }, { word: "aplicación", ref: "es-1654" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+  - id: "es-2343"
+    target: "reiniciar"
+    ipa: "rejniˈθjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reiniciar", base: "reiniciar" }]
+    examples:
+      - target: "Reinicio el ordenador."
+        ipa: "rejˈniθjo el oɾdenaˈdoɾ"
+        bases: [{ word: "Reinicio", base: "reiniciar" }, { word: "el", base: "el" }, { word: "ordenador", ref: "es-1173" }]
+      - target: "Reinicia el móvil, por favor."
+        ipa: "rejˈniθja el ˈmobil poɾ faˈboɾ"
+        bases: [{ word: "Reinicia", base: "reiniciar" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-2344"
+    target: "conectar"
+    ipa: "konekˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "conectar", base: "conectar" }]
+    examples:
+      - target: "Conecto el móvil al wifi."
+        ipa: "koˈnekto el ˈmobil al ˈwifi"
+        bases: [{ word: "Conecto", base: "conectar" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }, { word: "al", base: "al" }, { word: "wifi", ref: "es-1657" }]
+      - target: "Conecta el cable al enchufe."
+        ipa: "koˈnekta el ˈkable al enˈtʃufe"
+        bases: [{ word: "Conecta", base: "conectar" }, { word: "el", base: "el" }, { word: "cable", ref: "es-1668" }, { word: "al", base: "al" }, { word: "enchufe", ref: "es-1820" }]
+  - id: "es-2345"
+    target: "compartir"
+    ipa: "kompaɾˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "compartir", base: "compartir" }]
+    examples:
+      - target: "Comparto las fotos con mis amigos."
+        ipa: "komˈpaɾto las ˈfotos kon mis aˈmiɡos"
+        bases: [{ word: "Comparto", base: "compartir" }, { word: "las", base: "las" }, { word: "fotos", ref: "es-1184" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+      - target: "Compartimos la casa."
+        ipa: "kompaɾˈtimos la ˈkasa"
+        bases: [{ word: "Compartimos", base: "compartir" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-2346"
+    target: "navegar"
+    ipa: "nabeˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "navegar", base: "navegar" }]
+    examples:
+      - target: "Navego por internet."
+        ipa: "naˈbeɡo poɾ inteɾˈnet"
+        bases: [{ word: "Navego", base: "navegar" }, { word: "por", base: "por" }, { word: "internet", ref: "es-1656" }]
+      - target: "Navegamos por el río."
+        ipa: "nabeˈɡamos poɾ el ˈrio"
+        bases: [{ word: "Navegamos", base: "navegar" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "río", ref: "es-1751" }]
