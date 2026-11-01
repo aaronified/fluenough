@@ -28,20 +28,20 @@ cards:
       "n1": "{1} is a journalist who writes or reports the news."
     examples:
       "पत्रकार प्रश्न विचारत होते.": { native: "The journalists were asking questions.", bases: { "प्रश्न": "questions", "होते": "to be" } }
-      "पत्रकाराने मुलाखत घेतली.": "The journalist took an interview."
+      "पत्रकाराने मुलाखत घेतली.": { native: "The journalist took an interview.", bases: { "पत्रकाराने": "journalist" } }
   "mr-1343":
     native: "television"
     notes:
       "n1": "{1} is a television, a loanword from English."
     examples:
-      "टीव्हीवर बातम्या लागल्या.": { native: "The news came on the television.", bases: { "लागल्या": "to start" } }
+      "टीव्हीवर बातम्या लागल्या.": { native: "The news came on the television.", bases: { "लागल्या": "to start", "टीव्हीवर": "television" } }
       "टीव्ही बंद करा.": { native: "Switch off the television.", bases: { "बंद": "off" } }
   "mr-1344":
     native: "radio"
     notes:
       "n1": "{1} is a radio, a loanword from English."
     examples:
-      "रेडिओवर गाणी लागली.": { native: "Songs came on the radio.", bases: { "गाणी": "songs", "लागली": "to start" } }
+      "रेडिओवर गाणी लागली.": { native: "Songs came on the radio.", bases: { "गाणी": "songs", "लागली": "to start", "रेडिओवर": "radio" } }
       "रेडिओ ऐकणं आवडतं.": "I like listening to the radio."
   "mr-1345":
     native: "news channel"
@@ -55,7 +55,7 @@ cards:
     notes:
       "n1": "{1} is the headline of a news story."
     examples:
-      "पहिल्या पानावर मथळा मोठा आहे.": { native: "The headline on the front page is big.", bases: { "पहिल्या": "first", "पानावर": "on the page", "आहे": "to be" } }
+      "पहिल्या पानावर मथळा मोठा आहे.": { native: "The headline on the front page is big.", bases: { "पहिल्या": "first", "पानावर": "on the page", "आहे": "to be", "मथळा": "headline" } }
       "मथळा वाचून सगळे थांबले.": "Everyone stopped after reading the headline."
   "mr-1347":
     native: "article"
@@ -69,7 +69,7 @@ cards:
     notes:
       "n1": "{1} is the editor of a newspaper, who decides what is printed."
     examples:
-      "संपादकांनी लेख मंजूर केला.": { native: "The editor approved the article.", bases: { "मंजूर": "approved" } }
+      "संपादकांनी लेख मंजूर केला.": { native: "The editor approved the article.", bases: { "मंजूर": "approved", "संपादकांनी": "editor" } }
       "संपादक नवीन आहेत.": { native: "The editor is new.", bases: { "आहेत": "to be" } }
   "mr-1349":
     native: "event, incident"
@@ -77,7 +77,7 @@ cards:
       "n1": "{1} is an event or an incident that happened."
     examples:
       "ही घटना काल घडली.": "This event happened yesterday."
-      "घटनेची बातमी सगळीकडे पसरली.": "The news of the incident spread everywhere."
+      "घटनेची बातमी सगळीकडे पसरली.": { native: "The news of the incident spread everywhere.", bases: { "घटनेची": "event, incident" } }
   "mr-1350":
     native: "local"
     notes:
@@ -139,8 +139,8 @@ cards:
     notes:
       "n1": "{1} is letting someone know."
     examples:
-      "मला लवकर कळवा.": "Let me know soon."
-      "त्यांनी आम्हाला बातमी कळवली.": "They informed us of the news."
+      "मला लवकर कळवा.": { native: "Let me know soon.", bases: { "कळवा": "to inform" } }
+      "त्यांनी आम्हाला बातमी कळवली.": { native: "They informed us of the news.", bases: { "कळवली": "to inform" } }
   "mr-1359":
     native: "to publish"
     notes:
@@ -153,12 +153,12 @@ cards:
     notes:
       "n1": "{1} is happening, used for events."
     examples:
-      "काल काय घडलं?": "What happened yesterday?"
-      "ही घटना कुठे घडली?": "Where did this incident happen?"
+      "काल काय घडलं?": { native: "What happened yesterday?", bases: { "घडलं": "to happen" } }
+      "ही घटना कुठे घडली?": { native: "Where did this incident happen?", bases: { "घडली": "to happen" } }
   "mr-1361":
     native: "to spread"
     notes:
       "n1": "{1} is spreading, used for news, fire or a disease."
     examples:
-      "बातमी गावभर पसरली.": "The news spread all over the village."
-      "आग वेगाने पसरत होती.": { native: "The fire was spreading fast.", bases: { "वेगाने": "fast", "होती": "to be" } }
+      "बातमी गावभर पसरली.": { native: "The news spread all over the village.", bases: { "पसरली": "to spread" } }
+      "आग वेगाने पसरत होती.": { native: "The fire was spreading fast.", bases: { "वेगाने": "fast", "होती": "to be", "पसरत": "to spread" } }

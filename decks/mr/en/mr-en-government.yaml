@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is the government, the people who run a state or country."
     examples:
       "सरकार नवीन योजना आणत आहे.": { native: "The government is bringing in a new scheme.", bases: { "नवीन": "new", "आहे": "to be" } }
-      "सरकारने निर्णय घेतला.": { native: "The government took a decision.", bases: { "निर्णय": "decision" } }
+      "सरकारने निर्णय घेतला.": { native: "The government took a decision.", bases: { "निर्णय": "decision", "सरकारने": "government" } }
   "mr-1424":
     native: "government (adjective)"
     notes:
@@ -28,41 +28,41 @@ cards:
       "n1": "{1} is a minister in the government."
     examples:
       "मंत्री भाषण देत होते.": { native: "The minister was giving a speech.", bases: { "भाषण": "speech", "होते": "to be" } }
-      "मंत्र्यांनी बैठक घेतली.": "The minister held a meeting."
+      "मंत्र्यांनी बैठक घेतली.": { native: "The minister held a meeting.", bases: { "मंत्र्यांनी": "minister" } }
   "mr-1426":
     native: "member of the legislative assembly (MLA)"
     notes:
       "n1": "{1} is an elected member of a state assembly."
     examples:
       "आमदार गावात आले.": "The MLA came to the village."
-      "आमदारांना निवेदन दिलं.": { native: "I gave a petition to the MLA.", bases: { "निवेदन": "petition" } }
+      "आमदारांना निवेदन दिलं.": { native: "I gave a petition to the MLA.", bases: { "निवेदन": "petition", "आमदारांना": "member of the legislative assembly (MLA)" } }
   "mr-1427":
     native: "member of parliament (MP)"
     notes:
       "n1": "{1} is an elected member of parliament."
     examples:
       "खासदार दिल्लीत आहेत.": { native: "The MP is in Delhi.", bases: { "आहेत": "to be" } }
-      "खासदारांनी आश्वासन दिलं.": { native: "The MP gave a promise.", bases: { "आश्वासन": "promise" } }
+      "खासदारांनी आश्वासन दिलं.": { native: "The MP gave a promise.", bases: { "आश्वासन": "promise", "खासदारांनी": "member of parliament (MP)" } }
   "mr-1428":
     native: "election"
     notes:
       "n1": "{1} is an election, where people choose their representatives."
     examples:
       "पुढच्या महिन्यात निवडणूक आहे.": { native: "The election is next month.", bases: { "पुढच्या": "next", "आहे": "to be" } }
-      "निवडणुकीत कोण जिंकलं?": "Who won the election?"
+      "निवडणुकीत कोण जिंकलं?": { native: "Who won the election?", bases: { "निवडणुकीत": "election" } }
   "mr-1429":
     native: "voting, polling"
     notes:
       "n1": "{1} is voting, the act of casting a vote."
     examples:
       "मतदान सकाळी सात वाजता सुरू होतं.": { native: "Voting starts at seven in the morning.", bases: { "वाजता": "at", "सुरू": "starts", "होतं": "to be" } }
-      "मतदानाला सगळे आले.": "Everyone came to vote."
+      "मतदानाला सगळे आले.": { native: "Everyone came to vote.", bases: { "मतदानाला": "voting, polling" } }
   "mr-1430":
     native: "voter"
     notes:
       "n1": "{1} is a voter, a person who has the right to vote."
     examples:
-      "प्रत्येक मतदाराने मत द्यावं.": "Every voter should give their vote."
+      "प्रत्येक मतदाराने मत द्यावं.": { native: "Every voter should give their vote.", bases: { "मतदाराने": "voter" } }
       "माझं नाव मतदार यादीत आहे.": { native: "My name is on the voter list.", bases: { "यादीत": "in the list", "आहे": "to be" } }
   "mr-1431":
     native: "officer, official"
@@ -70,7 +70,7 @@ cards:
       "n1": "{1} is an official or an officer in an office."
     examples:
       "अधिकारी ऑफिसमध्ये आहेत.": { native: "The officer is in the office.", bases: { "आहेत": "to be" } }
-      "अधिकाऱ्यांनी फॉर्म तपासला.": "The officers checked the form."
+      "अधिकाऱ्यांनी फॉर्म तपासला.": { native: "The officers checked the form.", bases: { "अधिकाऱ्यांनी": "officer, official" } }
   "mr-1432":
     native: "tax"
     notes:
@@ -83,14 +83,14 @@ cards:
     notes:
       "n1": "{1} is a citizen of a country."
     examples:
-      "प्रत्येक नागरिकाला हक्क आहे.": { native: "Every citizen has a right.", bases: { "आहे": "to be" } }
-      "नागरिकांनी नियम पाळावे.": { native: "Citizens should follow the rules.", bases: { "नियम": "rules", "पाळावे": "to follow" } }
+      "प्रत्येक नागरिकाला हक्क आहे.": { native: "Every citizen has a right.", bases: { "आहे": "to be", "नागरिकाला": "citizen" } }
+      "नागरिकांनी नियम पाळावे.": { native: "Citizens should follow the rules.", bases: { "नियम": "rules", "पाळावे": "to follow", "नागरिकांनी": "citizen" } }
   "mr-1434":
     native: "scheme, plan"
     notes:
       "n1": "{1} is a government scheme or plan."
     examples:
-      "या योजनेचा फायदा घ्या.": "Take advantage of this scheme."
+      "या योजनेचा फायदा घ्या.": { native: "Take advantage of this scheme.", bases: { "योजनेचा": "scheme, plan" } }
       "नवीन योजना सुरू झाली.": { native: "A new scheme started.", bases: { "नवीन": "new", "सुरू": "started", "झाली": "to become" } }
   "mr-1435":
     native: "democracy"
@@ -98,21 +98,21 @@ cards:
       "n1": "{1} is democracy, government by the people."
     examples:
       "भारत लोकशाही देश आहे.": { native: "India is a democracy.", bases: { "आहे": "to be" } }
-      "लोकशाहीत मत देणं महत्त्वाचं असतं.": { native: "In a democracy giving your vote is important.", bases: { "असतं": "to be" } }
+      "लोकशाहीत मत देणं महत्त्वाचं असतं.": { native: "In a democracy giving your vote is important.", bases: { "असतं": "to be", "लोकशाहीत": "democracy" } }
   "mr-1436":
     native: "nation"
     notes:
       "n1": "{1} is a nation, a country as a whole."
     examples:
       "आपलं राष्ट्र मोठं आहे.": { native: "Our nation is big.", bases: { "आपलं": "our", "आहे": "to be" } }
-      "राष्ट्रासाठी काम करा.": "Work for the nation."
+      "राष्ट्रासाठी काम करा.": { native: "Work for the nation.", bases: { "राष्ट्रासाठी": "nation" } }
   "mr-1437":
     native: "resolution, motion"
     notes:
       "n1": "{1} is a formal resolution passed by a group."
     examples:
       "सभेत ठराव मंजूर झाला.": { native: "The resolution was passed at the meeting.", bases: { "सभेत": "at the meeting", "मंजूर": "passed", "झाला": "to become" } }
-      "ठरावाला विरोध झाला.": { native: "The resolution was opposed.", bases: { "विरोध": "opposition", "झाला": "to become" } }
+      "ठरावाला विरोध झाला.": { native: "The resolution was opposed.", bases: { "विरोध": "opposition", "झाला": "to become", "ठरावाला": "resolution, motion" } }
   "mr-1438":
     native: "to vote"
     notes:

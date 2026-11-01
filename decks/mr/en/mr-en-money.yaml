@@ -14,21 +14,21 @@ cards:
       "n1": "{1} is money. In speech the plural पैसे (paise) is more common."
     examples:
       "माझ्याकडे पैसा नाही.": { native: "I have no money.", bases: { "नाही": "not" } }
-      "पैशांचं नियोजन करा.": { native: "Plan your money.", bases: { "नियोजन": "planning" } }
+      "पैशांचं नियोजन करा.": { native: "Plan your money.", bases: { "नियोजन": "planning", "पैशांचं": "money" } }
   "mr-1748":
     native: "earnings, income"
     notes:
       "n1": "{1} is what a person earns by work."
     examples:
       "त्याची महिन्याची कमाई चांगली आहे.": { native: "His monthly earnings are good.", bases: { "आहे": "to be" } }
-      "कमाईतून घर चालतं.": "The household runs on the earnings."
+      "कमाईतून घर चालतं.": { native: "The household runs on the earnings.", bases: { "कमाईतून": "earnings, income" } }
   "mr-1749":
     native: "income"
     notes:
       "n1": "{1} is income, money coming in over a period."
     examples:
       "माझं वार्षिक उत्पन्न वाढलं.": { native: "My annual income rose.", bases: { "वार्षिक": "annual" } }
-      "उत्पन्नाचा दाखला आणा.": { native: "Bring the income certificate.", bases: { "दाखला": "certificate" } }
+      "उत्पन्नाचा दाखला आणा.": { native: "Bring the income certificate.", bases: { "दाखला": "certificate", "उत्पन्नाचा": "income" } }
   "mr-1750":
     native: "expense, spending"
     notes:
@@ -49,7 +49,7 @@ cards:
       "n1": "{1} is an investment, money put in to earn more money later."
     examples:
       "ही चांगली गुंतवणूक आहे.": { native: "This is a good investment.", bases: { "आहे": "to be" } }
-      "गुंतवणुकीचा विचार करा.": "Think about the investment."
+      "गुंतवणुकीचा विचार करा.": { native: "Think about the investment.", bases: { "गुंतवणुकीचा": "investment" } }
   "mr-1753":
     native: "loan, debt"
     notes:
@@ -70,7 +70,7 @@ cards:
       "n1": "{1} is insurance, a payment that protects against a loss."
     examples:
       "आरोग्य विमा घेतला.": "I took health insurance."
-      "विम्याची रक्कम किती आहे?": { native: "What is the amount of the insurance?", bases: { "आहे": "to be" } }
+      "विम्याची रक्कम किती आहे?": { native: "What is the amount of the insurance?", bases: { "आहे": "to be", "विम्याची": "insurance" } }
   "mr-1756":
     native: "budget"
     notes:
@@ -84,7 +84,7 @@ cards:
       "n1": "{1} is an item of jewellery. The plural is दागिने (dāgine)."
     examples:
       "तिने सुंदर दागिने घातले.": "She wore beautiful jewellery."
-      "दागिन्यांची किंमत जास्त आहे.": { native: "The jewellery's price is high.", bases: { "जास्त": "high", "आहे": "to be" } }
+      "दागिन्यांची किंमत जास्त आहे.": { native: "The jewellery's price is high.", bases: { "जास्त": "high", "आहे": "to be", "दागिन्यांची": "jewellery, ornament" } }
   "mr-1758":
     native: "poor"
     notes:
@@ -112,7 +112,7 @@ cards:
       "n1": "{1} is profit, the money left after costs."
     examples:
       "या व्यवसायात नफा चांगला आहे.": { native: "This business has good profit.", bases: { "आहे": "to be" } }
-      "नफ्यातला वाटा द्या.": { native: "Give your share of the profit.", bases: { "वाटा": "share" } }
+      "नफ्यातला वाटा द्या.": { native: "Give your share of the profit.", bases: { "वाटा": "share", "नफ्यातला": "profit" } }
   "mr-1762":
     native: "salary, pay"
     notes:
@@ -125,8 +125,8 @@ cards:
     notes:
       "n1": "{1} is earning money by work."
     examples:
-      "तो चांगले पैसे कमावतो.": "He earns good money."
-      "मी स्वतः पैसे कमावले.": "I earned the money myself."
+      "तो चांगले पैसे कमावतो.": { native: "He earns good money.", bases: { "कमावतो": "to earn" } }
+      "मी स्वतः पैसे कमावले.": { native: "I earned the money myself.", bases: { "कमावले": "to earn" } }
   "mr-1764":
     native: "to spend"
     notes:
@@ -146,8 +146,8 @@ cards:
     notes:
       "n1": "{1} is putting money into something to earn more."
     examples:
-      "त्याने शेअर्समध्ये पैसे गुंतवले.": "He invested money in shares."
-      "पैसे कुठे गुंतवायचे?": { native: "Where should the money be invested?", bases: { "कुठे": "where" } }
+      "त्याने शेअर्समध्ये पैसे गुंतवले.": { native: "He invested money in shares.", bases: { "गुंतवले": "to invest" } }
+      "पैसे कुठे गुंतवायचे?": { native: "Where should the money be invested?", bases: { "कुठे": "where", "गुंतवायचे": "to invest" } }
   "mr-1767":
     native: "to borrow, to take a loan"
     notes:

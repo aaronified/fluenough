@@ -21,14 +21,14 @@ cards:
       "n1": "{1} is a tenant who pays rent to live in a place."
     examples:
       "भाडेकरू वेळेवर भाडं देतो.": "The tenant pays the rent on time."
-      "भाडेकरूने खोली सोडली.": "The tenant left the room."
+      "भाडेकरूने खोली सोडली.": { native: "The tenant left the room.", bases: { "भाडेकरूने": "tenant" } }
   "mr-1647":
     native: "landlord, house owner"
     notes:
       "n1": "{1} is the owner of a house who lets it to tenants."
     examples:
       "घरमालक खूप चांगले आहेत.": { native: "The landlord is very good.", bases: { "आहेत": "to be" } }
-      "घरमालकाला फोन केला.": "I called the landlord."
+      "घरमालकाला फोन केला.": { native: "I called the landlord.", bases: { "घरमालकाला": "landlord, house owner" } }
   "mr-1648":
     native: "security deposit"
     notes:
@@ -42,27 +42,27 @@ cards:
       "n1": "{1} is a written agreement, such as a rent contract."
     examples:
       "भाडेकरार अकरा महिन्यांचा आहे.": { native: "The rent agreement is for eleven months.", bases: { "आहे": "to be" } }
-      "करारावर सही करा.": "Sign the agreement."
+      "करारावर सही करा.": { native: "Sign the agreement.", bases: { "करारावर": "agreement, contract" } }
   "mr-1650":
     native: "lease"
     notes:
       "n1": "{1} is a lease, the formal rent agreement for a property."
     examples:
       "भाडेपट्टा नोंदवला.": { native: "The lease was registered.", bases: { "नोंदवला": "to register" } }
-      "भाडेपट्ट्याच्या अटी वाचा.": { native: "Read the terms of the lease.", bases: { "अटी": "terms" } }
+      "भाडेपट्ट्याच्या अटी वाचा.": { native: "Read the terms of the lease.", bases: { "अटी": "terms", "भाडेपट्ट्याच्या": "lease" } }
   "mr-1651":
     native: "bathroom"
     notes:
       "n1": "{1} is a bathroom, a formal word. Daily speech uses बाथरूम (bātharūm)."
     examples:
       "स्नानगृह स्वच्छ आहे.": { native: "The bathroom is clean.", bases: { "आहे": "to be" } }
-      "स्नानगृहाचा नळ गळतो.": { native: "The bathroom tap is leaking.", bases: { "गळतो": "to leak" } }
+      "स्नानगृहाचा नळ गळतो.": { native: "The bathroom tap is leaking.", bases: { "गळतो": "to leak", "स्नानगृहाचा": "bathroom" } }
   "mr-1652":
     native: "balcony"
     notes:
       "n1": "{1} is a balcony, a loanword from English."
     examples:
-      "बाल्कनीत झाडं आहेत.": { native: "There are plants on the balcony.", bases: { "आहेत": "to be" } }
+      "बाल्कनीत झाडं आहेत.": { native: "There are plants on the balcony.", bases: { "आहेत": "to be", "बाल्कनीत": "balcony" } }
       "संध्याकाळी बाल्कनीत बसतो.": { native: "In the evening I sit on the balcony.", bases: { "बसतो": "to sit" } }
   "mr-1653":
     native: "door"
@@ -76,28 +76,28 @@ cards:
     notes:
       "n1": "{1} is a roof or a ceiling."
     examples:
-      "छतावर पाणी गळतं.": { native: "Water leaks through the roof.", bases: { "गळतं": "to leak" } }
+      "छतावर पाणी गळतं.": { native: "Water leaks through the roof.", bases: { "गळतं": "to leak", "छतावर": "roof, ceiling" } }
       "छत उंच आहे.": { native: "The ceiling is high.", bases: { "आहे": "to be" } }
   "mr-1655":
     native: "wall"
     notes:
       "n1": "{1} is a wall."
     examples:
-      "भिंतीला रंग दिला.": { native: "I painted the wall.", bases: { "रंग": "paint" } }
-      "भिंतीवर फोटो लावला.": { native: "I hung a photo on the wall.", bases: { "लावला": "to hang" } }
+      "भिंतीला रंग दिला.": { native: "I painted the wall.", bases: { "रंग": "paint", "भिंतीला": "wall" } }
+      "भिंतीवर फोटो लावला.": { native: "I hung a photo on the wall.", bases: { "लावला": "to hang", "भिंतीवर": "wall" } }
   "mr-1656":
     native: "lift, elevator"
     notes:
       "n1": "{1} is a lift, a loanword from English."
     examples:
       "लिफ्ट बंद आहे.": { native: "The lift is out of order.", bases: { "बंद": "out of order", "आहे": "to be" } }
-      "लिफ्टने वर जा.": "Go up by the lift."
+      "लिफ्टने वर जा.": { native: "Go up by the lift.", bases: { "लिफ्टने": "lift, elevator" } }
   "mr-1657":
     native: "parking"
     notes:
       "n1": "{1} is a parking place, a loanword from English."
     examples:
-      "गाडी पार्किंगमध्ये लावा.": { native: "Park the car in the parking.", bases: { "लावा": "to park" } }
+      "गाडी पार्किंगमध्ये लावा.": { native: "Park the car in the parking.", bases: { "लावा": "to park", "पार्किंगमध्ये": "parking" } }
       "पार्किंग मोफत आहे.": { native: "The parking is free.", bases: { "आहे": "to be" } }
   "mr-1658":
     native: "furniture"

@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खरेदी", reading: "kharedi" }] }
     examples:
-      - { target: "आज खरेदीला जाऊ.", reading: "āj kharedilā jāu.", ipa: "adz kʰəred̪ila dzau", bases: [{ word: "खरेदीला", ref: "mr-1067" }, { word: "जाऊ", ref: "mr-0710" }] }
+      - { target: "आज खरेदीला जाऊ.", reading: "āj kharedilā jāu.", ipa: "adz kʰəred̪ila dzau", bases: [{ word: "खरेदीला", base: "खरेदी", reading: "kharedi" }, { word: "जाऊ", ref: "mr-0710" }] }
       - { target: "खरेदी छान झाली.", reading: "kharedi chān jhāli.", ipa: "kʰəred̪i tʃʰan dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1068"
     target: "सवलत"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पावती", reading: "pāvti" }] }
     examples:
       - { target: "पावती घ्या.", reading: "pāvti ghyā.", ipa: "paʋt̪i ɡʱja", bases: [{ word: "घ्या", ref: "mr-0722" }] }
-      - { target: "पावतीवर तारीख आहे.", reading: "pāvtivar tārikh āhe.", ipa: "paʋt̪iʋər t̪arikʰ aɦe", bases: [{ word: "पावतीवर", ref: "mr-1069" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पावतीवर तारीख आहे.", reading: "pāvtivar tārikh āhe.", ipa: "paʋt̪iʋər t̪arikʰ aɦe", bases: [{ word: "पावतीवर", base: "पावती", reading: "pāvti" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1070"
     target: "ग्राहक"
     reading: "grāhak"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ग्राहक", reading: "grāhak" }] }
     examples:
       - { target: "ग्राहक दुकानात आले.", reading: "grāhak dukānāt āle.", ipa: "ɡraɦək d̪ukanat̪ ale", bases: [{ word: "दुकानात", ref: "mr-0376" }, { word: "आले", ref: "mr-0711" }] }
-      - { target: "ग्राहकाला मदत करा.", reading: "grāhkālā madat karā.", ipa: "ɡraɦkala məd̪ət̪ kəra", bases: [{ word: "ग्राहकाला", ref: "mr-1070" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "ग्राहकाला मदत करा.", reading: "grāhkālā madat karā.", ipa: "ɡraɦkala məd̪ət̪ kəra", bases: [{ word: "ग्राहकाला", base: "ग्राहक", reading: "grāhak" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1071"
     target: "विक्रेता"
     reading: "vikretā"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विक्रेता", reading: "vikretā" }] }
     examples:
       - { target: "विक्रेता हसला.", reading: "vikretā haslā.", ipa: "ʋikret̪a ɦəsla", bases: [{ word: "हसला", base: "हसणे", reading: "hasṇe" }] }
-      - { target: "विक्रेत्याकडे फळं आहेत.", reading: "vikretyākḍe phaḷam̐ āhet.", ipa: "ʋikret̪jakɖe pʰəɭə̃ aɦet̪", bases: [{ word: "विक्रेत्याकडे", ref: "mr-1071" }, { word: "फळं", ref: "mr-0056" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "विक्रेत्याकडे फळं आहेत.", reading: "vikretyākḍe phaḷam̐ āhet.", ipa: "ʋikret̪jakɖe pʰəɭə̃ aɦet̪", bases: [{ word: "विक्रेत्याकडे", base: "विक्रेता", reading: "vikretā" }, { word: "फळं", ref: "mr-0056" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1072"
     target: "घासाघीस"
     reading: "ghāsāghis"
@@ -114,8 +114,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "विकणे", reading: "vikṇe" }] }
     examples:
-      - { target: "तो भाजी विकतो.", reading: "to bhāji vikto.", ipa: "t̪o bʱadʒi ʋikt̪o", bases: [{ word: "विकतो", ref: "mr-1076" }] }
-      - { target: "हे दुकान फळं विकतं.", reading: "he dukān phaḷam̐ viktam̐.", ipa: "ɦe d̪ukan pʰəɭə̃ ʋikt̪ə̃", bases: [{ word: "विकतं", ref: "mr-1076" }, { word: "फळं", ref: "mr-0056" }] }
+      - { target: "तो भाजी विकतो.", reading: "to bhāji vikto.", ipa: "t̪o bʱadʒi ʋikt̪o", bases: [{ word: "विकतो", base: "विकणे", reading: "vikṇe" }] }
+      - { target: "हे दुकान फळं विकतं.", reading: "he dukān phaḷam̐ viktam̐.", ipa: "ɦe d̪ukan pʰəɭə̃ ʋikt̪ə̃", bases: [{ word: "विकतं", base: "विकणे", reading: "vikṇe" }, { word: "फळं", ref: "mr-0056" }] }
   - id: "mr-1077"
     target: "मोजणे"
     reading: "mojṇe"
@@ -124,8 +124,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मोजणे", reading: "mojṇe" }] }
     examples:
-      - { target: "पैसे मोजा.", reading: "paise mojā.", ipa: "pəise modza", bases: [{ word: "मोजा", ref: "mr-1077" }] }
-      - { target: "त्याने पैसे मोजले.", reading: "tyāne paise mojle.", ipa: "t̪jane pəise modzle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "मोजले", ref: "mr-1077" }] }
+      - { target: "पैसे मोजा.", reading: "paise mojā.", ipa: "pəise modza", bases: [{ word: "मोजा", base: "मोजणे", reading: "mojṇe" }] }
+      - { target: "त्याने पैसे मोजले.", reading: "tyāne paise mojle.", ipa: "t̪jane pəise modzle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "मोजले", base: "मोजणे", reading: "mojṇe" }] }
   - id: "mr-1078"
     target: "बदलणे"
     reading: "badlṇe"
@@ -134,8 +134,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बदलणे", reading: "badlṇe" }] }
     examples:
-      - { target: "हा शर्ट बदलता येईल का?", reading: "hā śarṭ badltā yeil kā?", ipa: "ɦa ʃərʈ bəd̪lt̪a jeil ka", bases: [{ word: "बदलता", ref: "mr-1078" }, { word: "येईल", ref: "mr-0711" }] }
-      - { target: "रंग बदलायचा आहे.", reading: "raṅg badlāycā āhe.", ipa: "rəŋɡ bəd̪lajtsa aɦe", bases: [{ word: "बदलायचा", ref: "mr-1078" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "हा शर्ट बदलता येईल का?", reading: "hā śarṭ badltā yeil kā?", ipa: "ɦa ʃərʈ bəd̪lt̪a jeil ka", bases: [{ word: "बदलता", base: "बदलणे", reading: "badlṇe" }, { word: "येईल", ref: "mr-0711" }] }
+      - { target: "रंग बदलायचा आहे.", reading: "raṅg badlāycā āhe.", ipa: "rəŋɡ bəd̪lajtsa aɦe", bases: [{ word: "बदलायचा", base: "बदलणे", reading: "badlṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1079"
     target: "वस्तू"
     reading: "vastu"
@@ -151,7 +151,7 @@ cards:
     target: "मोफत"
     reading: "mophat"
     ipa: "mopʰət̪"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मोफत", reading: "mophat" }] }
     examples:
@@ -188,7 +188,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "स्टॉल", reading: "sṭôl" }] }
     examples:
-      - { target: "स्टॉलवर भाज्या आहेत.", reading: "sṭôlvar bhājyā āhet.", ipa: "sʈɔlʋər bʱadʒja aɦet̪", bases: [{ word: "स्टॉलवर", ref: "mr-1083" }, { word: "भाज्या", ref: "mr-0390" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "स्टॉलवर भाज्या आहेत.", reading: "sṭôlvar bhājyā āhet.", ipa: "sʈɔlʋər bʱadʒja aɦet̪", bases: [{ word: "स्टॉलवर", base: "स्टॉल", reading: "sṭôl" }, { word: "भाज्या", ref: "mr-0390" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
       - { target: "हा स्टॉल सकाळी उघडतो.", reading: "hā sṭôl sakāḷi ughḍto.", ipa: "ɦa sʈɔl səkaɭi uɡʱɖt̪o", bases: [{ word: "उघडतो", ref: "mr-0724" }] }
   - id: "mr-1084"
     target: "पेमेंट"

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "इतिहास", reading: "itihās" }] }
     examples:
       - { target: "मला इतिहास आवडतो.", reading: "malā itihās āvḍto.", ipa: "məla it̪iɦas aʋɖt̪o", bases: [{ word: "मला", ref: "mr-0080" }, { word: "आवडतो", ref: "mr-0585" }] }
-      - { target: "इतिहासाचा अभ्यास केला.", reading: "itihāsācā abhyās kelā.", ipa: "it̪iɦasatsa əbʱjas kela", bases: [{ word: "इतिहासाचा", ref: "mr-1566" }, { word: "अभ्यास", ref: "mr-1115" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "इतिहासाचा अभ्यास केला.", reading: "itihāsācā abhyās kelā.", ipa: "it̪iɦasatsa əbʱjas kela", bases: [{ word: "इतिहासाचा", base: "इतिहास", reading: "itihās" }, { word: "अभ्यास", ref: "mr-1115" }, { word: "केला", ref: "mr-0712" }] }
   - id: "mr-1567"
     target: "राजा"
     reading: "rājā"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "राजा", reading: "rājā" }] }
     examples:
       - { target: "राजा प्रजेची काळजी घेत असे.", reading: "rājā prajeci kāḷji ghet ase.", ipa: "radza prədʒetʃi kaɭdʒi ɡʱet̪ əse", bases: [{ word: "प्रजेची", base: "प्रजा", reading: "prajā" }, { word: "काळजी", ref: "mr-1313" }, { word: "घेत", ref: "mr-0722" }, { word: "असे", base: "असणे", reading: "asṇe" }] }
-      - { target: "राजाने किल्ला बांधला.", reading: "rājāne killā bāndhalā.", ipa: "radzane killa band̪ʱəla", bases: [{ word: "राजाने", ref: "mr-1567" }, { word: "किल्ला", ref: "mr-0988" }, { word: "बांधला", base: "बांधणे", reading: "bāndhaṇe" }] }
+      - { target: "राजाने किल्ला बांधला.", reading: "rājāne killā bāndhalā.", ipa: "radzane killa band̪ʱəla", bases: [{ word: "राजाने", base: "राजा", reading: "rājā" }, { word: "किल्ला", ref: "mr-0988" }, { word: "बांधला", base: "बांधणे", reading: "bāndhaṇe" }] }
   - id: "mr-1568"
     target: "राणी"
     reading: "rāṇi"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "राणी", reading: "rāṇi" }] }
     examples:
       - { target: "राणी सुंदर होती.", reading: "rāṇi sundar hoti.", ipa: "raɳi sund̪ər ɦot̪i", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
-      - { target: "राणीचा महाल मोठा आहे.", reading: "rāṇicā mahāl moṭhā āhe.", ipa: "raɳitsa məɦal moʈʰa aɦe", bases: [{ word: "राणीचा", ref: "mr-1568" }, { word: "महाल", base: "महाल", reading: "mahāl" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "राणीचा महाल मोठा आहे.", reading: "rāṇicā mahāl moṭhā āhe.", ipa: "raɳitsa məɦal moʈʰa aɦe", bases: [{ word: "राणीचा", base: "राणी", reading: "rāṇi" }, { word: "महाल", base: "महाल", reading: "mahāl" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1569"
     target: "सम्राट"
     reading: "samrāṭ"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सम्राट", reading: "samrāṭ" }] }
     examples:
       - { target: "सम्राट मोठ्या सैन्यासह आला.", reading: "samrāṭ moṭhyā sainyāsah ālā.", ipa: "səmraʈ moʈʰja səinjasəɦ ala", bases: [{ word: "मोठ्या", ref: "mr-0760" }, { word: "सैन्यासह", base: "सैन्य", reading: "sainy" }, { word: "आला", ref: "mr-0711" }] }
-      - { target: "सम्राटाचं राज्य विशाल होतं.", reading: "samrāṭācam̐ rājy viśāl hotam̐.", ipa: "səmraʈatsə̃ radʒj ʋiʃal ɦot̪ə̃", bases: [{ word: "सम्राटाचं", ref: "mr-1569" }, { word: "राज्य", ref: "mr-1280" }, { word: "विशाल", base: "विशाल", reading: "viśāl" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "सम्राटाचं राज्य विशाल होतं.", reading: "samrāṭācam̐ rājy viśāl hotam̐.", ipa: "səmraʈatsə̃ radʒj ʋiʃal ɦot̪ə̃", bases: [{ word: "सम्राटाचं", base: "सम्राट", reading: "samrāṭ" }, { word: "राज्य", ref: "mr-1280" }, { word: "विशाल", base: "विशाल", reading: "viśāl" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1570"
     target: "साम्राज्य"
     reading: "sāmrājy"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "युद्ध", reading: "yuddh" }] }
     examples:
       - { target: "युद्ध अनेक वर्षं चाललं.", reading: "yuddh anek varṣam̐ cāllam̐.", ipa: "jud̪d̪ʱ ənek ʋərʂə̃ tsallə̃", bases: [{ word: "वर्षं", ref: "mr-0515" }, { word: "चाललं", ref: "mr-0512" }] }
-      - { target: "युद्धात खूप लोक मेले.", reading: "yuddhāt khup lok mele.", ipa: "jud̪d̪ʱat̪ kʰup lok mele", bases: [{ word: "युद्धात", ref: "mr-1571" }, { word: "लोक", ref: "mr-0687" }, { word: "मेले", base: "मरणे", reading: "marṇe" }] }
+      - { target: "युद्धात खूप लोक मेले.", reading: "yuddhāt khup lok mele.", ipa: "jud̪d̪ʱat̪ kʰup lok mele", bases: [{ word: "युद्धात", base: "युद्ध", reading: "yuddh" }, { word: "लोक", ref: "mr-0687" }, { word: "मेले", base: "मरणे", reading: "marṇe" }] }
   - id: "mr-1572"
     target: "लढाई"
     reading: "laḍhāi"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "लढाई", reading: "laḍhāi" }] }
     examples:
       - { target: "ही लढाई मोठी होती.", reading: "hi laḍhāi moṭhi hoti.", ipa: "ɦi ləɖʱai moʈʰi ɦot̪i", bases: [{ word: "ही", ref: "mr-0679" }, { word: "मोठी", ref: "mr-0760" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
-      - { target: "लढाईत त्याने पराक्रम केला.", reading: "laḍhāit tyāne parākram kelā.", ipa: "ləɖʱait̪ t̪jane pərakrəm kela", bases: [{ word: "लढाईत", ref: "mr-1572" }, { word: "पराक्रम", ref: "mr-1575" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "लढाईत त्याने पराक्रम केला.", reading: "laḍhāit tyāne parākram kelā.", ipa: "ləɖʱait̪ t̪jane pərakrəm kela", bases: [{ word: "लढाईत", base: "लढाई", reading: "laḍhāi" }, { word: "पराक्रम", ref: "mr-1575" }, { word: "केला", ref: "mr-0712" }] }
   - id: "mr-1573"
     target: "लढणे"
     reading: "laḍhṇe"
@@ -94,7 +94,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "लढणे", reading: "laḍhṇe" }] }
     examples:
-      - { target: "सैनिक शत्रूशी लढले.", reading: "sainik śatruśi laḍhle.", ipa: "səinik ʃət̪ruʃi ləɖʱle", bases: [{ word: "सैनिक", ref: "mr-1296" }, { word: "शत्रूशी", base: "शत्रू", reading: "śatru" }, { word: "लढले", ref: "mr-1573" }] }
+      - { target: "सैनिक शत्रूशी लढले.", reading: "sainik śatruśi laḍhle.", ipa: "səinik ʃət̪ruʃi ləɖʱle", bases: [{ word: "सैनिक", ref: "mr-1296" }, { word: "शत्रूशी", base: "शत्रू", reading: "śatru" }, { word: "लढले", base: "लढणे", reading: "laḍhṇe" }] }
       - { target: "त्याने संकटाशी लढा दिला.", reading: "tyāne saṅkaṭāśi laḍhā dilā.", ipa: "t̪jane səŋkəʈaʃi ləɖʱa d̪ila", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "संकटाशी", base: "संकट", reading: "saṅkaṭ" }, { word: "लढा", base: "लढा", reading: "laḍhā" }, { word: "दिला", ref: "mr-0721" }] }
   - id: "mr-1574"
     target: "वीर"
@@ -106,7 +106,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वीर", reading: "vir" }] }
     examples:
       - { target: "वीर योद्धा लढला.", reading: "vir yoddhā laḍhlā.", ipa: "ʋir jod̪d̪ʱa ləɖʱla", bases: [{ word: "योद्धा", base: "योद्धा", reading: "yoddhā" }, { word: "लढला", ref: "mr-1573" }] }
-      - { target: "वीरांची गाथा सांगितली.", reading: "virāñci gāthā sāṅgitli.", ipa: "ʋiraɲtʃi ɡat̪ʰa saŋɡit̪li", bases: [{ word: "वीरांची", ref: "mr-1574" }, { word: "गाथा", base: "गाथा", reading: "gāthā" }, { word: "सांगितली", ref: "mr-0720" }] }
+      - { target: "वीरांची गाथा सांगितली.", reading: "virāñci gāthā sāṅgitli.", ipa: "ʋiraɲtʃi ɡat̪ʰa saŋɡit̪li", bases: [{ word: "वीरांची", base: "वीर", reading: "vir" }, { word: "गाथा", base: "गाथा", reading: "gāthā" }, { word: "सांगितली", ref: "mr-0720" }] }
   - id: "mr-1575"
     target: "पराक्रम"
     reading: "parākram"
@@ -117,7 +117,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पराक्रम", reading: "parākram" }] }
     examples:
       - { target: "त्याने मोठा पराक्रम केला.", reading: "tyāne moṭhā parākram kelā.", ipa: "t̪jane moʈʰa pərakrəm kela", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "मोठा", ref: "mr-0760" }, { word: "केला", ref: "mr-0712" }] }
-      - { target: "पराक्रमाच्या कथा ऐकल्या.", reading: "parākramācyā kathā aikalyā.", ipa: "pərakrəmatʃja kət̪ʰa əikəlja", bases: [{ word: "पराक्रमाच्या", ref: "mr-1575" }, { word: "कथा", ref: "mr-1528" }, { word: "ऐकल्या", ref: "mr-0715" }] }
+      - { target: "पराक्रमाच्या कथा ऐकल्या.", reading: "parākramācyā kathā aikalyā.", ipa: "pərakrəmatʃja kət̪ʰa əikəlja", bases: [{ word: "पराक्रमाच्या", base: "पराक्रम", reading: "parākram" }, { word: "कथा", ref: "mr-1528" }, { word: "ऐकल्या", ref: "mr-0715" }] }
   - id: "mr-1576"
     target: "बलिदान"
     reading: "balidān"
@@ -150,12 +150,12 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "राजवाडा", reading: "rājvāḍā" }] }
     examples:
       - { target: "राजवाडा खूप सुंदर आहे.", reading: "rājvāḍā khup sundar āhe.", ipa: "radzʋaɖa kʰup sund̪ər aɦe", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "राजवाड्यात बरेच दरबार भरत.", reading: "rājvāḍyāt barec darbār bharat.", ipa: "radzʋaɖjat̪ bərets d̪ərbar bʱərət̪", bases: [{ word: "राजवाड्यात", ref: "mr-1578" }, { word: "बरेच", base: "बरेच", reading: "barec" }, { word: "दरबार", base: "दरबार", reading: "darbār" }, { word: "भरत", ref: "mr-0795" }] }
+      - { target: "राजवाड्यात बरेच दरबार भरत.", reading: "rājvāḍyāt barec darbār bharat.", ipa: "radzʋaɖjat̪ bərets d̪ərbar bʱərət̪", bases: [{ word: "राजवाड्यात", base: "राजवाडा", reading: "rājvāḍā" }, { word: "बरेच", base: "बरेच", reading: "barec" }, { word: "दरबार", base: "दरबार", reading: "darbār" }, { word: "भरत", ref: "mr-0795" }] }
   - id: "mr-1579"
     target: "ऐतिहासिक"
     reading: "aitihāsik"
     ipa: "əit̪iɦasik"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ऐतिहासिक", reading: "aitihāsik" }] }
     examples:
@@ -165,7 +165,7 @@ cards:
     target: "प्राचीन"
     reading: "prācin"
     ipa: "pratʃin"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्राचीन", reading: "prācin" }] }
     examples:
@@ -175,7 +175,7 @@ cards:
     target: "आधुनिक"
     reading: "ādhunik"
     ipa: "ad̪ʱunik"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आधुनिक", reading: "ādhunik" }] }
     examples:
@@ -191,7 +191,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शतक", reading: "śatak" }] }
     examples:
       - { target: "हा किल्ला सातशे वर्षं जुना आहे.", reading: "hā killā sātśe varṣam̐ junā āhe.", ipa: "ɦa killa sat̪ʃe ʋərʂə̃ dzuna aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "वर्षं", ref: "mr-0515" }, { word: "जुना", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "गेल्या शतकात मोठे बदल झाले.", reading: "gelyā śatkāt moṭhe badal jhāle.", ipa: "ɡelja ʃət̪kat̪ moʈʰe bəd̪əl dzʱale", bases: [{ word: "गेल्या", base: "गेलेला", reading: "gelelā" }, { word: "शतकात", ref: "mr-1582" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गेल्या शतकात मोठे बदल झाले.", reading: "gelyā śatkāt moṭhe badal jhāle.", ipa: "ɡelja ʃət̪kat̪ moʈʰe bəd̪əl dzʱale", bases: [{ word: "गेल्या", base: "गेलेला", reading: "gelelā" }, { word: "शतकात", base: "शतक", reading: "śatak" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1583"
     target: "संस्कृती"
     reading: "saṁskruti"
@@ -243,4 +243,4 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "स्मरणे", reading: "smarṇe" }] }
     examples:
       - { target: "आपण शहिदांना स्मरण करतो.", reading: "āpaṇ śahidānnā smaraṇ karto.", ipa: "apəɳ ʃəɦid̪anna smərəɳ kərt̪o", bases: [{ word: "शहिदांना", base: "शहीद", reading: "śahid" }, { word: "स्मरण", base: "स्मरण", reading: "smaraṇ" }, { word: "करतो", ref: "mr-0712" }] }
-      - { target: "त्यांची आठवण सतत स्मरते.", reading: "tyāñci āṭhvaṇ satat smarte.", ipa: "t̪jaɲtʃi aʈʰʋəɳ sət̪ət̪ smərt̪e", bases: [{ word: "त्यांची", ref: "mr-0678" }, { word: "आठवण", base: "आठवण", reading: "āṭhvaṇ" }, { word: "सतत", base: "सतत", reading: "satat" }, { word: "स्मरते", ref: "mr-1587" }] }
+      - { target: "त्यांची आठवण सतत स्मरते.", reading: "tyāñci āṭhvaṇ satat smarte.", ipa: "t̪jaɲtʃi aʈʰʋəɳ sət̪ət̪ smərt̪e", bases: [{ word: "त्यांची", ref: "mr-0678" }, { word: "आठवण", base: "आठवण", reading: "āṭhvaṇ" }, { word: "सतत", base: "सतत", reading: "satat" }, { word: "स्मरते", base: "स्मरणे", reading: "smarṇe" }] }

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "स्वयंपाक", reading: "svayampāk" }] }
     examples:
       - { target: "आज माझा स्वयंपाक आहे.", reading: "āj mājhā svayampāk āhe.", ipa: "adz madzʱa sʋəjəmpak aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "स्वयंपाकात मीठ घातलं.", reading: "svayampākāt miṭh ghātlam̐.", ipa: "sʋəjəmpakat̪ miʈʰ ɡʱat̪lə̃", bases: [{ word: "स्वयंपाकात", ref: "mr-1107" }, { word: "घातलं", ref: "mr-0792" }] }
+      - { target: "स्वयंपाकात मीठ घातलं.", reading: "svayampākāt miṭh ghātlam̐.", ipa: "sʋəjəmpakat̪ miʈʰ ɡʱat̪lə̃", bases: [{ word: "स्वयंपाकात", base: "स्वयंपाक", reading: "svayampāk" }, { word: "घातलं", ref: "mr-0792" }] }
   - id: "mr-1108"
     target: "भाजणे"
     reading: "bhājṇe"
@@ -28,8 +28,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "भाजणे", reading: "bhājṇe" }] }
     examples:
-      - { target: "शेंगदाणे भाजा.", reading: "śeṅgadāṇe bhājā.", ipa: "ʃeŋɡəd̪aɳe bʱadza", bases: [{ word: "भाजा", ref: "mr-1108" }] }
-      - { target: "तवा गरम झाला की पोळी भाजा.", reading: "tavā garam jhālā ki poḷi bhājā.", ipa: "t̪əʋa ɡərəm dzʱala ki poɭi bʱadza", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "भाजा", ref: "mr-1108" }] }
+      - { target: "शेंगदाणे भाजा.", reading: "śeṅgadāṇe bhājā.", ipa: "ʃeŋɡəd̪aɳe bʱadza", bases: [{ word: "भाजा", base: "भाजणे", reading: "bhājṇe" }] }
+      - { target: "तवा गरम झाला की पोळी भाजा.", reading: "tavā garam jhālā ki poḷi bhājā.", ipa: "t̪əʋa ɡərəm dzʱala ki poɭi bʱadza", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "भाजा", base: "भाजणे", reading: "bhājṇe" }] }
   - id: "mr-1109"
     target: "कणिक"
     reading: "kaṇik"
@@ -40,7 +40,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कणिक", reading: "kaṇik" }] }
     examples:
       - { target: "कणिक मळून ठेवा.", reading: "kaṇik maḷun ṭhevā.", ipa: "kəɳik məɭun ʈʰeʋa", bases: [{ word: "मळून", base: "मळणे", reading: "maḷṇe" }, { word: "ठेवा", ref: "mr-0723" }] }
-      - { target: "कणकेच्या पोळ्या मऊ असतात.", reading: "kaṇkecyā poḷyā mau astāt.", ipa: "kəɳketʃja poɭja məu əst̪at̪", bases: [{ word: "कणकेच्या", ref: "mr-1109" }, { word: "पोळ्या", ref: "mr-0570" }, { word: "असतात", base: "असणे", reading: "asṇe" }] }
+      - { target: "कणकेच्या पोळ्या मऊ असतात.", reading: "kaṇkecyā poḷyā mau astāt.", ipa: "kəɳketʃja poɭja məu əst̪at̪", bases: [{ word: "कणकेच्या", base: "कणिक", reading: "kaṇik" }, { word: "पोळ्या", ref: "mr-0570" }, { word: "असतात", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1110"
     target: "तूप"
     reading: "tup"
@@ -67,7 +67,7 @@ cards:
     target: "चविष्ट"
     reading: "caviṣṭ"
     ipa: "tsəʋiʂʈ"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "चविष्ट", reading: "caviṣṭ" }] }
     examples:
@@ -77,7 +77,7 @@ cards:
     target: "खारट"
     reading: "khāraṭ"
     ipa: "kʰarəʈ"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खारट", reading: "khāraṭ" }] }
     examples:

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कला", reading: "kalā" }] }
     examples:
       - { target: "ही कला खूप सुंदर आहे.", reading: "hi kalā khup sundar āhe.", ipa: "ɦi kəla kʰup sund̪ər aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "सुंदर", ref: "mr-0770" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कलेला वय नसतं.", reading: "kalelā vay nastam̐.", ipa: "kəlela ʋəj nəst̪ə̃", bases: [{ word: "कलेला", ref: "mr-1545" }, { word: "वय", ref: "mr-0210" }, { word: "नसतं", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "कलेला वय नसतं.", reading: "kalelā vay nastam̐.", ipa: "kəlela ʋəj nəst̪ə̃", bases: [{ word: "कलेला", base: "कला", reading: "kalā" }, { word: "वय", ref: "mr-0210" }, { word: "नसतं", base: "नसणे", reading: "nasṇe" }] }
   - id: "mr-1546"
     target: "चित्र"
     reading: "citr"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "चित्रकार", reading: "citrakār" }] }
     examples:
       - { target: "चित्रकार रंग मिसळतो.", reading: "citrakār raṅg misḷto.", ipa: "tʃit̪rəkar rəŋɡ misɭt̪o", bases: [{ word: "रंग", base: "रंग", reading: "raṅg" }, { word: "मिसळतो", ref: "mr-0787" }] }
-      - { target: "चित्रकाराचं प्रदर्शन आहे.", reading: "citrakārācam̐ pradarśan āhe.", ipa: "tʃit̪rəkaratsə̃ prəd̪ərʃən aɦe", bases: [{ word: "चित्रकाराचं", ref: "mr-1547" }, { word: "प्रदर्शन", ref: "mr-1559" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "चित्रकाराचं प्रदर्शन आहे.", reading: "citrakārācam̐ pradarśan āhe.", ipa: "tʃit̪rəkaratsə̃ prəd̪ərʃən aɦe", bases: [{ word: "चित्रकाराचं", base: "चित्रकार", reading: "citrakār" }, { word: "प्रदर्शन", ref: "mr-1559" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1548"
     target: "शिल्प"
     reading: "śilp"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शिल्प", reading: "śilp" }] }
     examples:
       - { target: "हे शिल्प दगडाचं आहे.", reading: "he śilp dagḍācam̐ āhe.", ipa: "ɦe ʃilp d̪əɡɖatsə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "दगडाचं", base: "दगड", reading: "dagaḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "शिल्पावर सुरेख कोरीव काम आहे.", reading: "śilpāvar surekh koriv kām āhe.", ipa: "ʃilpaʋər surekʰ koriʋ kam aɦe", bases: [{ word: "शिल्पावर", ref: "mr-1548" }, { word: "कोरीव", ref: "mr-1561" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "शिल्पावर सुरेख कोरीव काम आहे.", reading: "śilpāvar surekh koriv kām āhe.", ipa: "ʃilpaʋər surekʰ koriʋ kam aɦe", bases: [{ word: "शिल्पावर", base: "शिल्प", reading: "śilp" }, { word: "कोरीव", ref: "mr-1561" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1549"
     target: "शिल्पकार"
     reading: "śilpakār"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शिल्पकार", reading: "śilpakār" }] }
     examples:
       - { target: "शिल्पकार दगड कोरतो.", reading: "śilpakār dagaḍ korto.", ipa: "ʃilpəkar d̪əɡəɖ kort̪o", bases: [{ word: "दगड", base: "दगड", reading: "dagaḍ" }, { word: "कोरतो", ref: "mr-1564" }] }
-      - { target: "शिल्पकाराने मूर्ती घडवली.", reading: "śilpakārāne murti ghaḍvli.", ipa: "ʃilpəkarane murt̪i ɡʱəɖʋli", bases: [{ word: "शिल्पकाराने", ref: "mr-1549" }, { word: "मूर्ती", base: "मूर्ती", reading: "murti" }, { word: "घडवली", base: "घडवणे", reading: "ghaḍvṇe" }] }
+      - { target: "शिल्पकाराने मूर्ती घडवली.", reading: "śilpakārāne murti ghaḍvli.", ipa: "ʃilpəkarane murt̪i ɡʱəɖʋli", bases: [{ word: "शिल्पकाराने", base: "शिल्पकार", reading: "śilpakār" }, { word: "मूर्ती", base: "मूर्ती", reading: "murti" }, { word: "घडवली", base: "घडवणे", reading: "ghaḍvṇe" }] }
   - id: "mr-1550"
     target: "नृत्य"
     reading: "nruty"
@@ -106,7 +106,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ढोलकी", reading: "ḍholki" }] }
     examples:
-      - { target: "ढोलकीच्या ताला वर नाचतात.", reading: "ḍholkicyā tālā var nāctāt.", ipa: "ɖʱolkitʃja t̪ala ʋər natst̪at̪", bases: [{ word: "ढोलकीच्या", ref: "mr-1553" }, { word: "तालावर", base: "ताल", reading: "tāl" }, { word: "नाचतात", ref: "mr-1065" }] }
+      - { target: "ढोलकीच्या ताला वर नाचतात.", reading: "ḍholkicyā tālā var nāctāt.", ipa: "ɖʱolkitʃja t̪ala ʋər natst̪at̪", bases: [{ word: "ढोलकीच्या", base: "ढोलकी", reading: "ḍholki" }, { word: "तालावर", base: "ताल", reading: "tāl" }, { word: "नाचतात", ref: "mr-1065" }] }
       - { target: "ढोलकी जोरात वाजली.", reading: "ḍholki jorāt vājli.", ipa: "ɖʱolki dzorat̪ ʋadzli", bases: [{ word: "जोरात", base: "जोरात", reading: "jorāt" }, { word: "वाजली", base: "वाजणे", reading: "vājṇe" }] }
   - id: "mr-1554"
     target: "कविता"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कवी", reading: "kavi" }] }
     examples:
       - { target: "कवी प्रेमाबद्दल लिहितो.", reading: "kavi premābaddal lihito.", ipa: "kəʋi premabəd̪d̪əl liɦit̪o", bases: [{ word: "प्रेमाबद्दल", ref: "mr-1320" }, { word: "लिहितो", ref: "mr-0716" }] }
-      - { target: "कवीने नवीन कविता सादर केली.", reading: "kavine navin kavitā sādar keli.", ipa: "kəʋine nəʋin kəʋit̪a sad̪ər keli", bases: [{ word: "कवीने", ref: "mr-1555" }, { word: "नवीन", base: "नवा", reading: "navā" }, { word: "सादर", base: "सादर", reading: "sādar" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "कवीने नवीन कविता सादर केली.", reading: "kavine navin kavitā sādar keli.", ipa: "kəʋine nəʋin kəʋit̪a sad̪ər keli", bases: [{ word: "कवीने", base: "कवी", reading: "kavi" }, { word: "नवीन", base: "नवा", reading: "navā" }, { word: "सादर", base: "सादर", reading: "sādar" }, { word: "केली", ref: "mr-0712" }] }
   - id: "mr-1556"
     target: "ओवी"
     reading: "ovi"
@@ -151,7 +151,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "लावणी", reading: "lāvṇi" }] }
     examples:
       - { target: "लावणी नृत्य रंगभूमीवर होतं.", reading: "lāvṇi nruty raṅgabhumivar hotam̐.", ipa: "laʋɳi nrut̪j rəŋɡəbʱumiʋər ɦot̪ə̃", bases: [{ word: "रंगभूमीवर", base: "रंगभूमी", reading: "raṅgabhumi" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
-      - { target: "लावणीची सुंदर चाल आहे.", reading: "lāvṇici sundar cāl āhe.", ipa: "laʋɳitʃi sund̪ər tsal aɦe", bases: [{ word: "लावणीची", ref: "mr-1557" }, { word: "सुंदर", ref: "mr-0770" }, { word: "चाल", base: "चाल", reading: "cāl" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "लावणीची सुंदर चाल आहे.", reading: "lāvṇici sundar cāl āhe.", ipa: "laʋɳitʃi sund̪ər tsal aɦe", bases: [{ word: "लावणीची", base: "लावणी", reading: "lāvṇi" }, { word: "सुंदर", ref: "mr-0770" }, { word: "चाल", base: "चाल", reading: "cāl" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1558"
     target: "रंगमंच"
     reading: "raṅgamañc"
@@ -161,7 +161,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "रंगमंच", reading: "raṅgamañc" }] }
     examples:
-      - { target: "रंगमंचावर नाटक सुरू झालं.", reading: "raṅgamañcāvar nāṭak suru jhālam̐.", ipa: "rəŋɡəməɲtsaʋər naʈək suru dzʱalə̃", bases: [{ word: "रंगमंचावर", ref: "mr-1558" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "रंगमंचावर नाटक सुरू झालं.", reading: "raṅgamañcāvar nāṭak suru jhālam̐.", ipa: "rəŋɡəməɲtsaʋər naʈək suru dzʱalə̃", bases: [{ word: "रंगमंचावर", base: "रंगमंच", reading: "raṅgamañc" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
       - { target: "कलाकार रंगमंचावर आले.", reading: "kalākār raṅgamañcāvar āle.", ipa: "kəlakar rəŋɡəməɲtsaʋər ale", bases: [{ word: "कलाकार", ref: "mr-1470" }, { word: "आले", ref: "mr-0711" }] }
   - id: "mr-1559"
     target: "प्रदर्शनी"
@@ -173,12 +173,12 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रदर्शनी", reading: "pradarśani" }] }
     examples:
       - { target: "प्रदर्शनी आज शेवटची आहे.", reading: "pradarśani āj śevṭci āhe.", ipa: "prəd̪ərʃəni adz ʃeʋʈtʃi aɦe", bases: [{ word: "शेवटची", base: "शेवटचा", reading: "śevṭcā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "प्रदर्शनीत अनेक चित्रं आहेत.", reading: "pradarśanit anek citram̐ āhet.", ipa: "prəd̪ərʃənit̪ ənek tʃit̪rə̃ aɦet̪", bases: [{ word: "प्रदर्शनीत", ref: "mr-1559" }, { word: "चित्रं", ref: "mr-1546" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "प्रदर्शनीत अनेक चित्रं आहेत.", reading: "pradarśanit anek citram̐ āhet.", ipa: "prəd̪ərʃənit̪ ənek tʃit̪rə̃ aɦet̪", bases: [{ word: "प्रदर्शनीत", base: "प्रदर्शनी", reading: "pradarśani" }, { word: "चित्रं", ref: "mr-1546" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1560"
     target: "सुरेल"
     reading: "surel"
     ipa: "surel"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सुरेल", reading: "surel" }] }
     examples:
@@ -188,7 +188,7 @@ cards:
     target: "कोरीव"
     reading: "koriv"
     ipa: "koriʋ"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कोरीव", reading: "koriv" }] }
     examples:
@@ -202,8 +202,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गाणे", reading: "gāṇe" }] }
     examples:
-      - { target: "ती छान गाते.", reading: "ti chān gāte.", ipa: "t̪i tʃʰan ɡat̪e", bases: [{ word: "गाते", ref: "mr-1562" }] }
-      - { target: "आम्ही मिळून गाणं गायलो.", reading: "āmhi miḷun gāṇam̐ gāylo.", ipa: "amɦi miɭun ɡaɳə̃ ɡajlo", bases: [{ word: "गाणं", ref: "mr-1535" }, { word: "गायलो", ref: "mr-1562" }] }
+      - { target: "ती छान गाते.", reading: "ti chān gāte.", ipa: "t̪i tʃʰan ɡat̪e", bases: [{ word: "गाते", base: "गाणे", reading: "gāṇe" }] }
+      - { target: "आम्ही मिळून गाणं गायलो.", reading: "āmhi miḷun gāṇam̐ gāylo.", ipa: "amɦi miɭun ɡaɳə̃ ɡajlo", bases: [{ word: "गाणं", ref: "mr-1535" }, { word: "गायलो", base: "गाणे", reading: "gāṇe" }] }
   - id: "mr-1563"
     target: "रंगवणे"
     reading: "raṅgavṇe"
@@ -212,8 +212,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "रंगवणे", reading: "raṅgavṇe" }] }
     examples:
-      - { target: "भिंत निळ्या रंगाने रंगवली.", reading: "bhint niḷyā raṅgāne raṅgavli.", ipa: "bʱint̪ niɭja rəŋɡane rəŋɡəʋli", bases: [{ word: "निळ्या", ref: "mr-0881" }, { word: "रंगाने", base: "रंग", reading: "raṅg" }, { word: "रंगवली", ref: "mr-1563" }] }
-      - { target: "मुलांनी चित्र रंगवलं.", reading: "mulānni citr raṅgavlam̐.", ipa: "mulanni tʃit̪r rəŋɡəʋlə̃", bases: [{ word: "मुलांनी", ref: "mr-0224" }, { word: "चित्र", ref: "mr-1546" }, { word: "रंगवलं", ref: "mr-1563" }] }
+      - { target: "भिंत निळ्या रंगाने रंगवली.", reading: "bhint niḷyā raṅgāne raṅgavli.", ipa: "bʱint̪ niɭja rəŋɡane rəŋɡəʋli", bases: [{ word: "निळ्या", ref: "mr-0881" }, { word: "रंगाने", base: "रंग", reading: "raṅg" }, { word: "रंगवली", base: "रंगवणे", reading: "raṅgavṇe" }] }
+      - { target: "मुलांनी चित्र रंगवलं.", reading: "mulānni citr raṅgavlam̐.", ipa: "mulanni tʃit̪r rəŋɡəʋlə̃", bases: [{ word: "मुलांनी", ref: "mr-0224" }, { word: "चित्र", ref: "mr-1546" }, { word: "रंगवलं", base: "रंगवणे", reading: "raṅgavṇe" }] }
   - id: "mr-1564"
     target: "कोरणे"
     reading: "korṇe"
@@ -222,8 +222,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कोरणे", reading: "korṇe" }] }
     examples:
-      - { target: "शिल्पकार दगडावर नक्षी कोरतो.", reading: "śilpakār dagḍāvar nakṣi korto.", ipa: "ʃilpəkar d̪əɡɖaʋər nəkʂi kort̪o", bases: [{ word: "दगडावर", base: "दगड", reading: "dagaḍ" }, { word: "कोरतो", ref: "mr-1564" }] }
-      - { target: "लाकडावर सुंदर नक्षी कोरली.", reading: "lākḍāvar sundar nakṣi korli.", ipa: "lakɖaʋər sund̪ər nəkʂi korli", bases: [{ word: "लाकडावर", base: "लाकूड", reading: "lākuḍ" }, { word: "कोरली", ref: "mr-1564" }] }
+      - { target: "शिल्पकार दगडावर नक्षी कोरतो.", reading: "śilpakār dagḍāvar nakṣi korto.", ipa: "ʃilpəkar d̪əɡɖaʋər nəkʂi kort̪o", bases: [{ word: "दगडावर", base: "दगड", reading: "dagaḍ" }, { word: "कोरतो", base: "कोरणे", reading: "korṇe" }] }
+      - { target: "लाकडावर सुंदर नक्षी कोरली.", reading: "lākḍāvar sundar nakṣi korli.", ipa: "lakɖaʋər sund̪ər nəkʂi korli", bases: [{ word: "लाकडावर", base: "लाकूड", reading: "lākuḍ" }, { word: "कोरली", base: "कोरणे", reading: "korṇe" }] }
   - id: "mr-1565"
     target: "वाजवणे"
     reading: "vājvṇe"
@@ -232,5 +232,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "वाजवणे", reading: "vājvṇe" }] }
     examples:
-      - { target: "तो बासरी वाजवतो.", reading: "to bāsri vājvto.", ipa: "t̪o basri ʋadzʋt̪o", bases: [{ word: "वाजवतो", ref: "mr-1565" }] }
-      - { target: "मुलगी तबला वाजवते.", reading: "mulgi tablā vājvte.", ipa: "mulɡi t̪əbla ʋadzʋt̪e", bases: [{ word: "मुलगी", ref: "mr-0223" }, { word: "वाजवते", ref: "mr-1565" }] }
+      - { target: "तो बासरी वाजवतो.", reading: "to bāsri vājvto.", ipa: "t̪o basri ʋadzʋt̪o", bases: [{ word: "वाजवतो", base: "वाजवणे", reading: "vājvṇe" }] }
+      - { target: "मुलगी तबला वाजवते.", reading: "mulgi tablā vājvte.", ipa: "mulɡi t̪əbla ʋadzʋt̪e", bases: [{ word: "मुलगी", ref: "mr-0223" }, { word: "वाजवते", base: "वाजवणे", reading: "vājvṇe" }] }

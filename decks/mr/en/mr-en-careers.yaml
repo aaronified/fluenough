@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is a career, the work a person does over many years, a loanword from English."
     examples:
       "माझं करिअर आता सुरू झालं.": { native: "My career has now started.", bases: { "सुरू": "started", "झालं": "to become" } }
-      "करिअरसाठी चांगलं शिक्षण हवं.": { native: "A good education is needed for a career.", bases: { "शिक्षण": "education" } }
+      "करिअरसाठी चांगलं शिक्षण हवं.": { native: "A good education is needed for a career.", bases: { "शिक्षण": "education", "करिअरसाठी": "career" } }
   "mr-1463":
     native: "profession, occupation"
     notes:
@@ -56,7 +56,7 @@ cards:
       "n1": "{1} is a lawyer."
     examples:
       "वकील न्यायालयात बोलले.": "The lawyer spoke in court."
-      "वकिलांची फी जास्त आहे.": { native: "The lawyer's fee is high.", bases: { "फी": "fee", "जास्त": "high", "आहे": "to be" } }
+      "वकिलांची फी जास्त आहे.": { native: "The lawyer's fee is high.", bases: { "फी": "fee", "जास्त": "high", "आहे": "to be", "वकिलांची": "lawyer, advocate" } }
   "mr-1469":
     native: "pilot"
     notes:
@@ -69,7 +69,7 @@ cards:
     notes:
       "n1": "{1} is an artist or a performer."
     examples:
-      "कलाकारांनी सुंदर नाच केला.": "The artists danced beautifully."
+      "कलाकारांनी सुंदर नाच केला.": { native: "The artists danced beautifully.", bases: { "कलाकारांनी": "artist, performer" } }
       "ती चांगली कलाकार आहे.": { native: "She is a good artist.", bases: { "आहे": "to be" } }
   "mr-1471":
     native: "singer"
@@ -77,14 +77,14 @@ cards:
       "n1": "{1} is a male singer. A female singer is गायिका (gāyikā)."
     examples:
       "गायक छान गातो.": { native: "The singer sings nicely.", bases: { "गातो": "to sing" } }
-      "गायकाला पुरस्कार मिळाला.": { native: "The singer got an award.", bases: { "पुरस्कार": "award", "मिळाला": "to get" } }
+      "गायकाला पुरस्कार मिळाला.": { native: "The singer got an award.", bases: { "पुरस्कार": "award", "मिळाला": "to get", "गायकाला": "singer" } }
   "mr-1472":
     native: "writer, author"
     notes:
       "n1": "{1} is a writer or an author. A woman writer is लेखिका (lekhikā)."
     examples:
       "लेखक नवीन कादंबरी लिहितो.": { native: "The writer writes a new novel.", bases: { "नवीन": "new" } }
-      "लेखकाची पुस्तकं प्रसिद्ध आहेत.": { native: "The writer's books are famous.", bases: { "प्रसिद्ध": "famous", "आहेत": "to be" } }
+      "लेखकाची पुस्तकं प्रसिद्ध आहेत.": { native: "The writer's books are famous.", bases: { "प्रसिद्ध": "famous", "आहेत": "to be", "लेखकाची": "writer, author" } }
   "mr-1473":
     native: "player, sportsperson"
     notes:
@@ -98,21 +98,21 @@ cards:
       "n1": "{1} is a merchant or a trader."
     examples:
       "व्यापारी दुकानात बसलेला होता.": { native: "The merchant was sitting in the shop.", bases: { "बसलेला": "sitting", "होता": "to be" } }
-      "व्यापाऱ्याने वजन केलं.": { native: "The merchant weighed it.", bases: { "वजन": "weight" } }
+      "व्यापाऱ्याने वजन केलं.": { native: "The merchant weighed it.", bases: { "वजन": "weight", "व्यापाऱ्याने": "merchant, trader" } }
   "mr-1475":
     native: "craftsman, artisan"
     notes:
       "n1": "{1} is a skilled craftsman who makes things by hand."
     examples:
       "कारागीर सुंदर भांडी बनवतो.": "The craftsman makes beautiful pots."
-      "कारागिराचं काम कौतुकास्पद आहे.": { native: "The craftsman's work is praiseworthy.", bases: { "आहे": "to be" } }
+      "कारागिराचं काम कौतुकास्पद आहे.": { native: "The craftsman's work is praiseworthy.", bases: { "आहे": "to be", "कारागिराचं": "craftsman, artisan" } }
   "mr-1476":
     native: "training"
     notes:
       "n1": "{1} is training, learning a job or skill from others."
     examples:
       "नवीन कर्मचाऱ्यांना प्रशिक्षण दिलं.": { native: "New staff were given training.", bases: { "नवीन": "new" } }
-      "प्रशिक्षणासाठी शहरात गेलो.": { native: "I went to the city for training.", bases: { "शहरात": "to the city" } }
+      "प्रशिक्षणासाठी शहरात गेलो.": { native: "I went to the city for training.", bases: { "शहरात": "to the city", "प्रशिक्षणासाठी": "training" } }
   "mr-1477":
     native: "opportunity"
     notes:
@@ -139,8 +139,8 @@ cards:
     notes:
       "n1": "{1} is choosing one thing from several."
     examples:
-      "मी शिक्षण क्षेत्र निवडलं.": { native: "I chose the field of teaching.", bases: { "क्षेत्र": "field" } }
-      "कोणता पर्याय निवडशील?": { native: "Which option will you choose?", bases: { "पर्याय": "option" } }
+      "मी शिक्षण क्षेत्र निवडलं.": { native: "I chose the field of teaching.", bases: { "क्षेत्र": "field", "निवडलं": "to choose, to select" } }
+      "कोणता पर्याय निवडशील?": { native: "Which option will you choose?", bases: { "पर्याय": "option", "निवडशील": "to choose, to select" } }
   "mr-1481":
     native: "to succeed"
     notes:

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "करिअर", reading: "kariar" }] }
     examples:
       - { target: "माझं करिअर आता सुरू झालं.", reading: "mājham̐ kariar ātā suru jhālam̐.", ipa: "madzʱə̃ kəriər at̪a suru dzʱalə̃", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
-      - { target: "करिअरसाठी चांगलं शिक्षण हवं.", reading: "kariarsāṭhi cāṅgalam̐ śikṣaṇ havam̐.", ipa: "kəriərsaʈʰi tsaŋɡələ̃ ʃikʂəɳ ɦəʋə̃", bases: [{ word: "करिअरसाठी", ref: "mr-1462" }, { word: "चांगलं", ref: "mr-0759" }, { word: "शिक्षण", base: "शिक्षण", reading: "śikṣaṇ" }, { word: "हवं", ref: "mr-1018" }] }
+      - { target: "करिअरसाठी चांगलं शिक्षण हवं.", reading: "kariarsāṭhi cāṅgalam̐ śikṣaṇ havam̐.", ipa: "kəriərsaʈʰi tsaŋɡələ̃ ʃikʂəɳ ɦəʋə̃", bases: [{ word: "करिअरसाठी", base: "करिअर", reading: "kariar" }, { word: "चांगलं", ref: "mr-0759" }, { word: "शिक्षण", base: "शिक्षण", reading: "śikṣaṇ" }, { word: "हवं", ref: "mr-1018" }] }
   - id: "mr-1463"
     target: "पेशा"
     reading: "peśā"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वकील", reading: "vakil" }] }
     examples:
       - { target: "वकील न्यायालयात बोलले.", reading: "vakil nyāyālyāt bolle.", ipa: "ʋəkil njajaljat̪ bolle", bases: [{ word: "न्यायालयात", ref: "mr-0978" }, { word: "बोलले", ref: "mr-0713" }] }
-      - { target: "वकिलांची फी जास्त आहे.", reading: "vakilāñci phi jāst āhe.", ipa: "ʋəkilaɲtʃi pʰi dzast̪ aɦe", bases: [{ word: "वकिलांची", ref: "mr-1468" }, { word: "फी", base: "फी", reading: "phi" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "वकिलांची फी जास्त आहे.", reading: "vakilāñci phi jāst āhe.", ipa: "ʋəkilaɲtʃi pʰi dzast̪ aɦe", bases: [{ word: "वकिलांची", base: "वकील", reading: "vakil" }, { word: "फी", base: "फी", reading: "phi" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1469"
     target: "पायलट"
     reading: "pāylaṭ"
@@ -106,7 +106,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कलाकार", reading: "kalākār" }] }
     examples:
-      - { target: "कलाकारांनी सुंदर नाच केला.", reading: "kalākārānni sundar nāc kelā.", ipa: "kəlakaranni sund̪ər nats kela", bases: [{ word: "कलाकारांनी", ref: "mr-1470" }, { word: "सुंदर", ref: "mr-0770" }, { word: "नाच", ref: "mr-1053" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "कलाकारांनी सुंदर नाच केला.", reading: "kalākārānni sundar nāc kelā.", ipa: "kəlakaranni sund̪ər nats kela", bases: [{ word: "कलाकारांनी", base: "कलाकार", reading: "kalākār" }, { word: "सुंदर", ref: "mr-0770" }, { word: "नाच", ref: "mr-1053" }, { word: "केला", ref: "mr-0712" }] }
       - { target: "ती चांगली कलाकार आहे.", reading: "ti cāṅgali kalākār āhe.", ipa: "t̪i tsaŋɡəli kəlakar aɦe", bases: [{ word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1471"
     target: "गायक"
@@ -118,7 +118,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गायक", reading: "gāyak" }] }
     examples:
       - { target: "गायक छान गातो.", reading: "gāyak chān gāto.", ipa: "ɡajək tʃʰan ɡat̪o", bases: [{ word: "गातो", base: "गाणे", reading: "gāṇe" }] }
-      - { target: "गायकाला पुरस्कार मिळाला.", reading: "gāykālā puraskār miḷālā.", ipa: "ɡajkala purəskar miɭala", bases: [{ word: "गायकाला", ref: "mr-1471" }, { word: "पुरस्कार", base: "पुरस्कार", reading: "puraskār" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "गायकाला पुरस्कार मिळाला.", reading: "gāykālā puraskār miḷālā.", ipa: "ɡajkala purəskar miɭala", bases: [{ word: "गायकाला", base: "गायक", reading: "gāyak" }, { word: "पुरस्कार", base: "पुरस्कार", reading: "puraskār" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
   - id: "mr-1472"
     target: "लेखक"
     reading: "lekhak"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "लेखक", reading: "lekhak" }] }
     examples:
       - { target: "लेखक नवीन कादंबरी लिहितो.", reading: "lekhak navin kādambari lihito.", ipa: "lekʰək nəʋin kad̪əmbəri liɦit̪o", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "लिहितो", ref: "mr-0716" }] }
-      - { target: "लेखकाची पुस्तकं प्रसिद्ध आहेत.", reading: "lekhkāci pustakam̐ prasiddh āhet.", ipa: "lekʰkatʃi pust̪əkə̃ prəsid̪d̪ʱ aɦet̪", bases: [{ word: "लेखकाची", ref: "mr-1472" }, { word: "पुस्तकं", ref: "mr-0384" }, { word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "लेखकाची पुस्तकं प्रसिद्ध आहेत.", reading: "lekhkāci pustakam̐ prasiddh āhet.", ipa: "lekʰkatʃi pust̪əkə̃ prəsid̪d̪ʱ aɦet̪", bases: [{ word: "लेखकाची", base: "लेखक", reading: "lekhak" }, { word: "पुस्तकं", ref: "mr-0384" }, { word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1473"
     target: "खेळाडू"
     reading: "kheḷāḍu"
@@ -151,7 +151,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "व्यापारी", reading: "vyāpāri" }] }
     examples:
       - { target: "व्यापारी दुकानात बसलेला होता.", reading: "vyāpāri dukānāt baslelā hotā.", ipa: "ʋjapari d̪ukanat̪ bəslela ɦot̪a", bases: [{ word: "दुकानात", ref: "mr-0376" }, { word: "बसलेला", base: "बसणे", reading: "basṇe" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
-      - { target: "व्यापाऱ्याने वजन केलं.", reading: "vyāpāryāne vajan kelam̐.", ipa: "ʋjaparjane ʋədzən kelə̃", bases: [{ word: "व्यापाऱ्याने", ref: "mr-1474" }, { word: "वजन", base: "वजन", reading: "vajan" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "व्यापाऱ्याने वजन केलं.", reading: "vyāpāryāne vajan kelam̐.", ipa: "ʋjaparjane ʋədzən kelə̃", bases: [{ word: "व्यापाऱ्याने", base: "व्यापारी", reading: "vyāpāri" }, { word: "वजन", base: "वजन", reading: "vajan" }, { word: "केलं", ref: "mr-0712" }] }
   - id: "mr-1475"
     target: "कारागीर"
     reading: "kārāgir"
@@ -162,7 +162,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कारागीर", reading: "kārāgir" }] }
     examples:
       - { target: "कारागीर सुंदर भांडी बनवतो.", reading: "kārāgir sundar bhāṇḍi banvto.", ipa: "karaɡir sund̪ər bʱaɳɖi bənʋt̪o", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "बनवतो", ref: "mr-0801" }] }
-      - { target: "कारागिराचं काम कौतुकास्पद आहे.", reading: "kārāgirācam̐ kām kautukāspad āhe.", ipa: "karaɡiratsə̃ kam kəut̪ukaspəd̪ aɦe", bases: [{ word: "कारागिराचं", ref: "mr-1475" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कारागिराचं काम कौतुकास्पद आहे.", reading: "kārāgirācam̐ kām kautukāspad āhe.", ipa: "karaɡiratsə̃ kam kəut̪ukaspəd̪ aɦe", bases: [{ word: "कारागिराचं", base: "कारागीर", reading: "kārāgir" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1476"
     target: "प्रशिक्षण"
     reading: "praśikṣaṇ"
@@ -173,7 +173,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रशिक्षण", reading: "praśikṣaṇ" }] }
     examples:
       - { target: "नवीन कर्मचाऱ्यांना प्रशिक्षण दिलं.", reading: "navin karmacāryānnā praśikṣaṇ dilam̐.", ipa: "nəʋin kərmətsarjanna prəʃikʂəɳ d̪ilə̃", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "कर्मचाऱ्यांना", ref: "mr-1267" }, { word: "दिलं", ref: "mr-0721" }] }
-      - { target: "प्रशिक्षणासाठी शहरात गेलो.", reading: "praśikṣaṇāsāṭhi śahrāt gelo.", ipa: "prəʃikʂəɳasaʈʰi ʃəɦrat̪ ɡelo", bases: [{ word: "प्रशिक्षणासाठी", ref: "mr-1476" }, { word: "शहरात", base: "शहर", reading: "śahar" }, { word: "गेलो", ref: "mr-0710" }] }
+      - { target: "प्रशिक्षणासाठी शहरात गेलो.", reading: "praśikṣaṇāsāṭhi śahrāt gelo.", ipa: "prəʃikʂəɳasaʈʰi ʃəɦrat̪ ɡelo", bases: [{ word: "प्रशिक्षणासाठी", base: "प्रशिक्षण", reading: "praśikṣaṇ" }, { word: "शहरात", base: "शहर", reading: "śahar" }, { word: "गेलो", ref: "mr-0710" }] }
   - id: "mr-1477"
     target: "संधी"
     reading: "sandhi"
@@ -189,7 +189,7 @@ cards:
     target: "यशस्वी"
     reading: "yaśasvi"
     ipa: "jəʃəsʋi"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "यशस्वी", reading: "yaśasvi" }] }
     examples:
@@ -199,7 +199,7 @@ cards:
     target: "कुशल"
     reading: "kuśal"
     ipa: "kuʃəl"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कुशल", reading: "kuśal" }] }
     examples:
@@ -213,8 +213,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "निवडणे", reading: "nivḍṇe" }] }
     examples:
-      - { target: "मी शिक्षण क्षेत्र निवडलं.", reading: "mi śikṣaṇ kṣetr nivḍlam̐.", ipa: "mi ʃikʂəɳ kʂet̪r niʋɖlə̃", bases: [{ word: "क्षेत्र", base: "क्षेत्र", reading: "kṣetr" }, { word: "निवडलं", ref: "mr-1480" }] }
-      - { target: "कोणता पर्याय निवडशील?", reading: "koṇtā paryāy nivḍśil?", ipa: "koɳt̪a pərjaj niʋɖʃil", bases: [{ word: "पर्याय", base: "पर्याय", reading: "paryāy" }, { word: "निवडशील", ref: "mr-1480" }] }
+      - { target: "मी शिक्षण क्षेत्र निवडलं.", reading: "mi śikṣaṇ kṣetr nivḍlam̐.", ipa: "mi ʃikʂəɳ kʂet̪r niʋɖlə̃", bases: [{ word: "क्षेत्र", base: "क्षेत्र", reading: "kṣetr" }, { word: "निवडलं", base: "निवडणे", reading: "nivḍṇe" }] }
+      - { target: "कोणता पर्याय निवडशील?", reading: "koṇtā paryāy nivḍśil?", ipa: "koɳt̪a pərjaj niʋɖʃil", bases: [{ word: "पर्याय", base: "पर्याय", reading: "paryāy" }, { word: "निवडशील", base: "निवडणे", reading: "nivḍṇe" }] }
   - id: "mr-1481"
     target: "यशस्वी होणे"
     reading: "yaśasvi hoṇe"

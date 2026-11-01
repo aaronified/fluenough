@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "तंत्रज्ञान", reading: "tantradnyān" }] }
     examples:
       - { target: "तंत्रज्ञान वेगाने बदलतं.", reading: "tantradnyān vegāne badltam̐.", ipa: "t̪ənt̪rəd̪ɲan ʋeɡane bəd̪lt̪ə̃", bases: [{ word: "वेगाने", base: "वेग", reading: "veg" }, { word: "बदलतं", ref: "mr-1078" }] }
-      - { target: "तंत्रज्ञानामुळे काम सोपं झालं.", reading: "tantradnyānāmuḷe kām sopam̐ jhālam̐.", ipa: "t̪ənt̪rəd̪ɲanamuɭe kam sopə̃ dzʱalə̃", bases: [{ word: "तंत्रज्ञानामुळे", ref: "mr-1441" }, { word: "सोपं", ref: "mr-0768" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "तंत्रज्ञानामुळे काम सोपं झालं.", reading: "tantradnyānāmuḷe kām sopam̐ jhālam̐.", ipa: "t̪ənt̪rəd̪ɲanamuɭe kam sopə̃ dzʱalə̃", bases: [{ word: "तंत्रज्ञानामुळे", base: "तंत्रज्ञान", reading: "tantradnyān" }, { word: "सोपं", ref: "mr-0768" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1442"
     target: "यंत्र"
     reading: "yantr"
@@ -79,7 +79,7 @@ cards:
     target: "ऑनलाइन"
     reading: "ônlāin"
     ipa: "ɔnlain"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ऑनलाइन", reading: "ônlāin" }] }
     examples:
@@ -117,7 +117,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कोड", reading: "koḍ" }] }
     examples:
       - { target: "हा कोड कोणी लिहिला?", reading: "hā koḍ koṇi lihilā?", ipa: "ɦa koɖ koɳi liɦila", bases: [{ word: "हा", ref: "mr-0679" }, { word: "लिहिला", ref: "mr-0716" }] }
-      - { target: "कोडमध्ये चूक आहे.", reading: "koḍmadhye cuk āhe.", ipa: "koɖməd̪ʱje tsuk aɦe", bases: [{ word: "कोडमध्ये", ref: "mr-1450" }, { word: "चूक", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कोडमध्ये चूक आहे.", reading: "koḍmadhye cuk āhe.", ipa: "koɖməd̪ʱje tsuk aɦe", bases: [{ word: "कोडमध्ये", base: "कोड", reading: "koḍ" }, { word: "चूक", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1451"
     target: "प्रोग्राम"
     reading: "progrām"
@@ -233,5 +233,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "चालवणे", reading: "cālvṇe" }] }
     examples:
-      - { target: "तो संगणक चालवतो.", reading: "to saṅgaṇak cālvto.", ipa: "t̪o səŋɡəɳək tsalʋt̪o", bases: [{ word: "संगणक", ref: "mr-0622" }, { word: "चालवतो", ref: "mr-1461" }] }
-      - { target: "यंत्र कसं चालवायचं?", reading: "yantr kasam̐ cālvāycam̐?", ipa: "jənt̪r kəsə̃ tsalʋajtsə̃", bases: [{ word: "चालवायचं", ref: "mr-1461" }] }
+      - { target: "तो संगणक चालवतो.", reading: "to saṅgaṇak cālvto.", ipa: "t̪o səŋɡəɳək tsalʋt̪o", bases: [{ word: "संगणक", ref: "mr-0622" }, { word: "चालवतो", base: "चालवणे", reading: "cālvṇe" }] }
+      - { target: "यंत्र कसं चालवायचं?", reading: "yantr kasam̐ cālvāycam̐?", ipa: "jənt̪r kəsə̃ tsalʋajtsə̃", bases: [{ word: "चालवायचं", base: "चालवणे", reading: "cālvṇe" }] }

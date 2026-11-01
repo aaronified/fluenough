@@ -14,14 +14,14 @@ cards:
       "n1": "{1} is a journey or a trip from one place to another."
     examples:
       "आमचा प्रवास लांब होता.": { native: "Our journey was long.", bases: { "होता": "to be" } }
-      "प्रवासात झोप लागली.": { native: "I fell asleep during the journey.", bases: { "लागली": "to fall" } }
+      "प्रवासात झोप लागली.": { native: "I fell asleep during the journey.", bases: { "लागली": "to fall", "प्रवासात": "journey, trip" } }
   "mr-1212":
     native: "outing, excursion"
     notes:
       "n1": "{1} is an outing or a short trip for fun."
     examples:
       "शाळेची सहल कुठे आहे?": { native: "Where is the school outing?", bases: { "आहे": "to be" } }
-      "उद्या सहलीला जाऊ.": "Let's go on an outing tomorrow."
+      "उद्या सहलीला जाऊ.": { native: "Let's go on an outing tomorrow.", bases: { "सहलीला": "outing, excursion" } }
   "mr-1213":
     native: "reservation"
     notes:
@@ -34,15 +34,15 @@ cards:
     notes:
       "n1": "{1} is a railway platform, a loanword from English."
     examples:
-      "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.": "The train will come to platform number three."
-      "प्लॅटफॉर्मवर गर्दी आहे.": { native: "There is a crowd on the platform.", bases: { "आहे": "to be" } }
+      "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.": { native: "The train will come to platform number three.", bases: { "प्लॅटफॉर्म": "platform" } }
+      "प्लॅटफॉर्मवर गर्दी आहे.": { native: "There is a crowd on the platform.", bases: { "आहे": "to be", "प्लॅटफॉर्मवर": "platform" } }
   "mr-1215":
     native: "aeroplane"
     notes:
       "n1": "{1} is an aeroplane."
     examples:
       "विमान उडालं.": { native: "The plane took off.", bases: { "उडालं": "to fly" } }
-      "विमानात खिडकीची जागा आवडते.": "I like a window seat in the plane."
+      "विमानात खिडकीची जागा आवडते.": { native: "I like a window seat in the plane.", bases: { "विमानात": "aeroplane" } }
   "mr-1216":
     native: "passport"
     notes:
@@ -56,21 +56,21 @@ cards:
       "n1": "{1} is a visa, a loanword from English."
     examples:
       "व्हिसा मिळाला.": { native: "I got the visa.", bases: { "मिळाला": "to get" } }
-      "व्हिसाची मुदत संपली.": { native: "The visa has expired.", bases: { "मुदत": "period", "संपली": "to end" } }
+      "व्हिसाची मुदत संपली.": { native: "The visa has expired.", bases: { "मुदत": "period", "संपली": "to end", "व्हिसाची": "visa" } }
   "mr-1218":
     native: "stop (bus stop)"
     notes:
       "n1": "{1} is a stop where a bus stops."
     examples:
       "पुढचा थांबा कोणता?": { native: "What is the next stop?", bases: { "पुढचा": "next", "कोणता": "which" } }
-      "थांब्यावर थांबा.": "Wait at the stop."
+      "थांब्यावर थांबा.": { native: "Wait at the stop.", bases: { "थांब्यावर": "stop (bus stop)" } }
   "mr-1219":
     native: "passenger, traveller"
     notes:
       "n1": "{1} is a passenger or a traveller."
     examples:
       "प्रवासी गाडीत चढले.": "The passengers got on the train."
-      "प्रवाशांनी रांग लावली.": { native: "The passengers formed a queue.", bases: { "रांग": "queue", "लावली": "to form" } }
+      "प्रवाशांनी रांग लावली.": { native: "The passengers formed a queue.", bases: { "रांग": "queue", "लावली": "to form", "प्रवाशांनी": "passenger, traveller" } }
   "mr-1220":
     native: "route, way"
     notes:
@@ -98,7 +98,7 @@ cards:
       "n1": "{1} is a map."
     examples:
       "नकाशा बघ.": { native: "Look at the map.", bases: { "बघ": "to look" } }
-      "नकाशात रस्ता दिसत नाही.": { native: "The road does not show on the map.", bases: { "दिसत": "to appear", "नाही": "not" } }
+      "नकाशात रस्ता दिसत नाही.": { native: "The road does not show on the map.", bases: { "दिसत": "to appear", "नाही": "not", "नकाशात": "map" } }
   "mr-1224":
     native: "to travel"
     notes:
@@ -118,19 +118,19 @@ cards:
     notes:
       "n1": "{1} is getting off a bus or a train."
     examples:
-      "आम्ही पुढच्या स्टेशनवर उतरलो.": { native: "We got off at the next station.", bases: { "पुढच्या": "next" } }
-      "बाबा गाडीतून उतरले.": "Father got off the train."
+      "आम्ही पुढच्या स्टेशनवर उतरलो.": { native: "We got off at the next station.", bases: { "पुढच्या": "next", "उतरलो": "to get off, to alight" } }
+      "बाबा गाडीतून उतरले.": { native: "Father got off the train.", bases: { "उतरले": "to get off, to alight" } }
   "mr-1227":
     native: "to get on, to board"
     notes:
       "n1": "{1} is getting on a bus or a train."
     examples:
-      "बसमध्ये चढा.": "Get on the bus."
-      "तो रेल्वेत चढला.": "He got into the train."
+      "बसमध्ये चढा.": { native: "Get on the bus.", bases: { "चढा": "to get on, to board" } }
+      "तो रेल्वेत चढला.": { native: "He got into the train.", bases: { "चढला": "to get on, to board" } }
   "mr-1228":
     native: "to reach, to arrive"
     notes:
       "n1": "{1} is arriving at a place."
     examples:
-      "आम्ही सात वाजता पोहोचलो.": { native: "We arrived at seven o'clock.", bases: { "वाजता": "at" } }
-      "पत्र अजून पोहोचलं नाही.": { native: "The letter has not reached yet.", bases: { "अजून": "yet", "नाही": "not" } }
+      "आम्ही सात वाजता पोहोचलो.": { native: "We arrived at seven o'clock.", bases: { "वाजता": "at", "पोहोचलो": "to reach, to arrive" } }
+      "पत्र अजून पोहोचलं नाही.": { native: "The letter has not reached yet.", bases: { "अजून": "yet", "नाही": "not", "पोहोचलं": "to reach, to arrive" } }

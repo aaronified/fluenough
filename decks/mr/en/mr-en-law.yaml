@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is a law, a rule made by a government and followed by all."
     examples:
       "हा कायदा सगळ्यांना लागू आहे.": { native: "This law applies to everyone.", bases: { "लागू": "applicable", "आहे": "to be" } }
-      "कायद्याने हे चुकीचं आहे.": { native: "This is wrong by law.", bases: { "चुकीचं": "wrong", "आहे": "to be" } }
+      "कायद्याने हे चुकीचं आहे.": { native: "This is wrong by law.", bases: { "चुकीचं": "wrong", "आहे": "to be", "कायद्याने": "law" } }
   "mr-1679":
     native: "justice"
     notes:
@@ -34,7 +34,7 @@ cards:
     notes:
       "n1": "{1} is a criminal, a person who has committed a crime."
     examples:
-      "गुन्हेगाराला अटक झाली.": { native: "The criminal was arrested.", bases: { "झाली": "to become" } }
+      "गुन्हेगाराला अटक झाली.": { native: "The criminal was arrested.", bases: { "झाली": "to become", "गुन्हेगाराला": "criminal" } }
       "गुन्हेगार पळून गेला.": "The criminal ran away."
   "mr-1682":
     native: "theft"
@@ -49,14 +49,14 @@ cards:
       "n1": "{1} is fraud, cheating someone to take money or goods."
     examples:
       "ऑनलाईन फसवणूक झाली.": { native: "There was an online fraud.", bases: { "झाली": "to become" } }
-      "फसवणुकीपासून सावध रहा.": { native: "Be careful of fraud.", bases: { "सावध": "careful" } }
+      "फसवणुकीपासून सावध रहा.": { native: "Be careful of fraud.", bases: { "सावध": "careful", "फसवणुकीपासून": "fraud, cheating" } }
   "mr-1684":
     native: "murder"
     notes:
       "n1": "{1} is murder, killing a person on purpose."
     examples:
       "शहरात खून झाला.": { native: "A murder happened in the city.", bases: { "शहरात": "in the city", "झाला": "to become" } }
-      "खुनाचा तपास सुरू आहे.": { native: "The murder investigation is going on.", bases: { "तपास": "investigation", "सुरू": "going on", "आहे": "to be" } }
+      "खुनाचा तपास सुरू आहे.": { native: "The murder investigation is going on.", bases: { "तपास": "investigation", "सुरू": "going on", "आहे": "to be", "खुनाचा": "murder" } }
   "mr-1685":
     native: "complaint"
     notes:
@@ -77,13 +77,13 @@ cards:
       "n1": "{1} is a witness who saw the event and speaks in court."
     examples:
       "साक्षीदार न्यायालयात आला.": "The witness came to court."
-      "साक्षीदाराने सत्य सांगितलं.": { native: "The witness told the truth.", bases: { "सत्य": "truth" } }
+      "साक्षीदाराने सत्य सांगितलं.": { native: "The witness told the truth.", bases: { "सत्य": "truth", "साक्षीदाराने": "witness" } }
   "mr-1688":
     native: "judge"
     notes:
       "n1": "{1} is a judge who decides a case in court."
     examples:
-      "न्यायाधीशांनी निकाल दिला.": "The judge gave the verdict."
+      "न्यायाधीशांनी निकाल दिला.": { native: "The judge gave the verdict.", bases: { "न्यायाधीशांनी": "judge" } }
       "न्यायाधीश शिक्षा सुनावणार आहेत.": { native: "The judge is going to pass sentence.", bases: { "सुनावणार": "to pronounce", "आहेत": "to be" } }
   "mr-1689":
     native: "charge, accusation"
@@ -112,7 +112,7 @@ cards:
       "n1": "{1} is a legal case in court."
     examples:
       "खटला पाच वर्षं चालला.": "The case went on for five years."
-      "खटल्याचा निकाल लागला.": { native: "The case was decided.", bases: { "लागला": "to come" } }
+      "खटल्याचा निकाल लागला.": { native: "The case was decided.", bases: { "लागला": "to come", "खटल्याचा": "case, lawsuit" } }
   "mr-1693":
     native: "right (legal)"
     notes:

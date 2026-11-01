@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कायदा", reading: "kāydā" }] }
     examples:
       - { target: "हा कायदा सगळ्यांना लागू आहे.", reading: "hā kāydā sagaḷyānnā lāgu āhe.", ipa: "ɦa kajd̪a səɡəɭjanna laɡu aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "सगळ्यांना", ref: "mr-0684" }, { word: "लागू", base: "लागू", reading: "lāgu" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कायद्याने हे चुकीचं आहे.", reading: "kāyadyāne he cukicam̐ āhe.", ipa: "kajəd̪jane ɦe tsukitsə̃ aɦe", bases: [{ word: "कायद्याने", ref: "mr-1678" }, { word: "चुकीचं", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कायद्याने हे चुकीचं आहे.", reading: "kāyadyāne he cukicam̐ āhe.", ipa: "kajəd̪jane ɦe tsukitsə̃ aɦe", bases: [{ word: "कायद्याने", base: "कायदा", reading: "kāydā" }, { word: "चुकीचं", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1679"
     target: "न्याय"
     reading: "nyāy"
@@ -51,7 +51,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गुन्हेगार", reading: "gunhegār" }] }
     examples:
-      - { target: "गुन्हेगाराला अटक झाली.", reading: "gunhegārālā aṭak jhāli.", ipa: "ɡunɦeɡarala əʈək dzʱali", bases: [{ word: "गुन्हेगाराला", ref: "mr-1681" }, { word: "अटक", ref: "mr-1690" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गुन्हेगाराला अटक झाली.", reading: "gunhegārālā aṭak jhāli.", ipa: "ɡunɦeɡarala əʈək dzʱali", bases: [{ word: "गुन्हेगाराला", base: "गुन्हेगार", reading: "gunhegār" }, { word: "अटक", ref: "mr-1690" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
       - { target: "गुन्हेगार पळून गेला.", reading: "gunhegār paḷun gelā.", ipa: "ɡunɦeɡar pəɭun ɡela", bases: [{ word: "पळून", ref: "mr-1184" }, { word: "गेला", ref: "mr-0710" }] }
   - id: "mr-1682"
     target: "चोरी"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "फसवणूक", reading: "phasvṇuk" }] }
     examples:
       - { target: "ऑनलाईन फसवणूक झाली.", reading: "ônlāin phasvṇuk jhāli.", ipa: "ɔnlain pʰəsʋɳuk dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
-      - { target: "फसवणुकीपासून सावध रहा.", reading: "phasvṇukipāsun sāvadh rahā.", ipa: "pʰəsʋɳukipasun saʋəd̪ʱ rəɦa", bases: [{ word: "फसवणुकीपासून", ref: "mr-1683" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }] }
+      - { target: "फसवणुकीपासून सावध रहा.", reading: "phasvṇukipāsun sāvadh rahā.", ipa: "pʰəsʋɳukipasun saʋəd̪ʱ rəɦa", bases: [{ word: "फसवणुकीपासून", base: "फसवणूक", reading: "phasvṇuk" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }] }
   - id: "mr-1684"
     target: "खून"
     reading: "khun"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खून", reading: "khun" }] }
     examples:
       - { target: "शहरात खून झाला.", reading: "śahrāt khun jhālā.", ipa: "ʃəɦrat̪ kʰun dzʱala", bases: [{ word: "शहरात", base: "शहर", reading: "śahar" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "खुनाचा तपास सुरू आहे.", reading: "khunācā tapās suru āhe.", ipa: "kʰunatsa t̪əpas suru aɦe", bases: [{ word: "खुनाचा", ref: "mr-1684" }, { word: "तपास", base: "तपास", reading: "tapās" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खुनाचा तपास सुरू आहे.", reading: "khunācā tapās suru āhe.", ipa: "kʰunatsa t̪əpas suru aɦe", bases: [{ word: "खुनाचा", base: "खून", reading: "khun" }, { word: "तपास", base: "तपास", reading: "tapās" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1685"
     target: "तक्रार"
     reading: "takrār"
@@ -118,7 +118,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "साक्षीदार", reading: "sākṣidār" }] }
     examples:
       - { target: "साक्षीदार न्यायालयात आला.", reading: "sākṣidār nyāyālyāt ālā.", ipa: "sakʂid̪ar njajaljat̪ ala", bases: [{ word: "न्यायालयात", ref: "mr-0978" }, { word: "आला", ref: "mr-0711" }] }
-      - { target: "साक्षीदाराने सत्य सांगितलं.", reading: "sākṣidārāne saty sāṅgitlam̐.", ipa: "sakʂid̪arane sət̪j saŋɡit̪lə̃", bases: [{ word: "साक्षीदाराने", ref: "mr-1687" }, { word: "सत्य", base: "सत्य", reading: "saty" }, { word: "सांगितलं", ref: "mr-0720" }] }
+      - { target: "साक्षीदाराने सत्य सांगितलं.", reading: "sākṣidārāne saty sāṅgitlam̐.", ipa: "sakʂid̪arane sət̪j saŋɡit̪lə̃", bases: [{ word: "साक्षीदाराने", base: "साक्षीदार", reading: "sākṣidār" }, { word: "सत्य", base: "सत्य", reading: "saty" }, { word: "सांगितलं", ref: "mr-0720" }] }
   - id: "mr-1688"
     target: "न्यायाधीश"
     reading: "nyāyādhiś"
@@ -128,7 +128,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "न्यायाधीश", reading: "nyāyādhiś" }] }
     examples:
-      - { target: "न्यायाधीशांनी निकाल दिला.", reading: "nyāyādhiśānni nikāl dilā.", ipa: "njajad̪ʱiʃanni nikal d̪ila", bases: [{ word: "न्यायाधीशांनी", ref: "mr-1688" }, { word: "निकाल", ref: "mr-1118" }, { word: "दिला", ref: "mr-0721" }] }
+      - { target: "न्यायाधीशांनी निकाल दिला.", reading: "nyāyādhiśānni nikāl dilā.", ipa: "njajad̪ʱiʃanni nikal d̪ila", bases: [{ word: "न्यायाधीशांनी", base: "न्यायाधीश", reading: "nyāyādhiś" }, { word: "निकाल", ref: "mr-1118" }, { word: "दिला", ref: "mr-0721" }] }
       - { target: "न्यायाधीश शिक्षा सुनावणार आहेत.", reading: "nyāyādhiś śikṣā sunāvṇār āhet.", ipa: "njajad̪ʱiʃ ʃikʂa sunaʋɳar aɦet̪", bases: [{ word: "सुनावणार", base: "सुनावणे", reading: "sunāvṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1689"
     target: "आरोप"
@@ -173,7 +173,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खटला", reading: "khaṭlā" }] }
     examples:
       - { target: "खटला पाच वर्षं चालला.", reading: "khaṭlā pāc varṣam̐ cāllā.", ipa: "kʰəʈla pats ʋərʂə̃ tsalla", bases: [{ word: "वर्षं", ref: "mr-0515" }, { word: "चालला", ref: "mr-0512" }] }
-      - { target: "खटल्याचा निकाल लागला.", reading: "khaṭalyācā nikāl lāglā.", ipa: "kʰəʈəljatsa nikal laɡla", bases: [{ word: "खटल्याचा", ref: "mr-1692" }, { word: "निकाल", ref: "mr-1118" }, { word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "खटल्याचा निकाल लागला.", reading: "khaṭalyācā nikāl lāglā.", ipa: "kʰəʈəljatsa nikal laɡla", bases: [{ word: "खटल्याचा", base: "खटला", reading: "khaṭlā" }, { word: "निकाल", ref: "mr-1118" }, { word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
   - id: "mr-1693"
     target: "हक्क"
     reading: "hakk"

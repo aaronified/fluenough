@@ -39,8 +39,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "धुणे", reading: "dhuṇe" }] }
     examples:
-      - { target: "आई कपडे धुते.", reading: "āi kapḍe dhute.", ipa: "ai kəpɖe d̪ʱut̪e", bases: [{ word: "धुते", ref: "mr-1148" }] }
-      - { target: "कपडे धुऊन वाळत टाका.", reading: "kapḍe dhuun vāḷat ṭākā.", ipa: "kəpɖe d̪ʱuun ʋaɭət̪ ʈaka", bases: [{ word: "धुऊन", ref: "mr-1148" }, { word: "टाका", base: "टाकणे", reading: "ṭākṇe" }] }
+      - { target: "आई कपडे धुते.", reading: "āi kapḍe dhute.", ipa: "ai kəpɖe d̪ʱut̪e", bases: [{ word: "धुते", base: "धुणे", reading: "dhuṇe" }] }
+      - { target: "कपडे धुऊन वाळत टाका.", reading: "kapḍe dhuun vāḷat ṭākā.", ipa: "kəpɖe d̪ʱuun ʋaɭət̪ ʈaka", bases: [{ word: "धुऊन", base: "धुणे", reading: "dhuṇe" }, { word: "टाका", base: "टाकणे", reading: "ṭākṇe" }] }
   - id: "mr-1149"
     target: "भांडी"
     reading: "bhāṇḍi"
@@ -60,8 +60,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "घासणे", reading: "ghāsṇe" }] }
     examples:
-      - { target: "भांडी घासा.", reading: "bhāṇḍi ghāsā.", ipa: "bʱaɳɖi ɡʱasa", bases: [{ word: "घासा", ref: "mr-1150" }] }
-      - { target: "फरशी घासून स्वच्छ झाली.", reading: "pharśi ghāsun svacch jhāli.", ipa: "pʰərʃi ɡʱasun sʋətstʃʰ dzʱali", bases: [{ word: "घासून", ref: "mr-1150" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "भांडी घासा.", reading: "bhāṇḍi ghāsā.", ipa: "bʱaɳɖi ɡʱasa", bases: [{ word: "घासा", base: "घासणे", reading: "ghāsṇe" }] }
+      - { target: "फरशी घासून स्वच्छ झाली.", reading: "pharśi ghāsun svacch jhāli.", ipa: "pʰərʃi ɡʱasun sʋətstʃʰ dzʱali", bases: [{ word: "घासून", base: "घासणे", reading: "ghāsṇe" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1151"
     target: "साफ करणे"
     reading: "sāph karṇe"
@@ -82,7 +82,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "इस्त्री", reading: "istri" }] }
     examples:
       - { target: "इस्त्री कुठे आहे?", reading: "istri kuṭhe āhe?", ipa: "ist̪ri kuʈʰe aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "शर्ट इस्त्री करून घाला.", reading: "śarṭ istri karun ghālā.", ipa: "ʃərʈ ist̪ri kərun ɡʱala", bases: [{ word: "शर्ट", ref: "mr-0865" }, { word: "इस्त्री", ref: "mr-1152" }, { word: "करून", ref: "mr-0712" }, { word: "घाला", ref: "mr-0792" }] }
+      - { target: "शर्ट इस्त्री करून घाला.", reading: "śarṭ istri karun ghālā.", ipa: "ʃərʈ ist̪ri kərun ɡʱala", bases: [{ word: "शर्ट", ref: "mr-0865" }, { word: "इस्त्री", base: "इस्त्री", reading: "istri" }, { word: "करून", ref: "mr-0712" }, { word: "घाला", ref: "mr-0792" }] }
   - id: "mr-1153"
     target: "कचरा"
     reading: "kacrā"
@@ -93,7 +93,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कचरा", reading: "kacrā" }] }
     examples:
       - { target: "कचरा बाहेर टाका.", reading: "kacrā bāher ṭākā.", ipa: "kətsra baɦer ʈaka", bases: [{ word: "बाहेर", base: "बाहेर", reading: "bāher" }, { word: "टाका", base: "टाकणे", reading: "ṭākṇe" }] }
-      - { target: "कचऱ्याची गाडी सकाळी येते.", reading: "kacaryāci gāḍi sakāḷi yete.", ipa: "kətsərjatʃi ɡaɖi səkaɭi jet̪e", bases: [{ word: "कचऱ्याची", ref: "mr-1153" }, { word: "गाडी", ref: "mr-0430" }, { word: "येते", ref: "mr-0711" }] }
+      - { target: "कचऱ्याची गाडी सकाळी येते.", reading: "kacaryāci gāḍi sakāḷi yete.", ipa: "kətsərjatʃi ɡaɖi səkaɭi jet̪e", bases: [{ word: "कचऱ्याची", base: "कचरा", reading: "kacrā" }, { word: "गाडी", ref: "mr-0430" }, { word: "येते", ref: "mr-0711" }] }
   - id: "mr-1154"
     target: "स्वच्छता"
     reading: "svacchatā"
@@ -114,7 +114,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बादली", reading: "bādli" }] }
     examples:
-      - { target: "बादलीत पाणी भरा.", reading: "bādlit pāṇi bharā.", ipa: "bad̪lit̪ paɳi bʱəra", bases: [{ word: "बादलीत", ref: "mr-1155" }, { word: "भरा", ref: "mr-0795" }] }
+      - { target: "बादलीत पाणी भरा.", reading: "bādlit pāṇi bharā.", ipa: "bad̪lit̪ paɳi bʱəra", bases: [{ word: "बादलीत", base: "बादली", reading: "bādli" }, { word: "भरा", ref: "mr-0795" }] }
       - { target: "बादली रिकामी आहे.", reading: "bādli rikāmi āhe.", ipa: "bad̪li rikami aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1156"
     target: "कपाट"
@@ -125,7 +125,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कपाट", reading: "kapāṭ" }] }
     examples:
-      - { target: "कपाटात कपडे ठेवा.", reading: "kapāṭāt kapḍe ṭhevā.", ipa: "kəpaʈat̪ kəpɖe ʈʰeʋa", bases: [{ word: "कपाटात", ref: "mr-1156" }, { word: "ठेवा", ref: "mr-0723" }] }
+      - { target: "कपाटात कपडे ठेवा.", reading: "kapāṭāt kapḍe ṭhevā.", ipa: "kəpaʈat̪ kəpɖe ʈʰeʋa", bases: [{ word: "कपाटात", base: "कपाट", reading: "kapāṭ" }, { word: "ठेवा", ref: "mr-0723" }] }
       - { target: "कपाट बंद करा.", reading: "kapāṭ band karā.", ipa: "kəpaʈ bənd̪ kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
   - id: "mr-1157"
     target: "पाणी भरणे"
@@ -145,8 +145,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "शिवणे", reading: "śivṇe" }] }
     examples:
-      - { target: "आजी कपडे शिवते.", reading: "āji kapḍe śivte.", ipa: "adʒi kəpɖe ʃiʋt̪e", bases: [{ word: "शिवते", ref: "mr-1158" }] }
-      - { target: "ब्लाउज शिवला.", reading: "blāuj śivlā.", ipa: "blaudz ʃiʋla", bases: [{ word: "शिवला", ref: "mr-1158" }] }
+      - { target: "आजी कपडे शिवते.", reading: "āji kapḍe śivte.", ipa: "adʒi kəpɖe ʃiʋt̪e", bases: [{ word: "शिवते", base: "शिवणे", reading: "śivṇe" }] }
+      - { target: "ब्लाउज शिवला.", reading: "blāuj śivlā.", ipa: "blaudz ʃiʋla", bases: [{ word: "शिवला", base: "शिवणे", reading: "śivṇe" }] }
   - id: "mr-1159"
     target: "मदत"
     reading: "madat"

@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is literature, written works of art and thought."
     examples:
       "मला मराठी साहित्य आवडतं.": { native: "I like Marathi literature.", bases: { "मराठी": "Marathi" } }
-      "साहित्याचा अभ्यास करतो.": "I study literature."
+      "साहित्याचा अभ्यास करतो.": { native: "I study literature.", bases: { "साहित्याचा": "literature" } }
   "mr-1770":
     native: "novel"
     notes:
@@ -35,7 +35,7 @@ cards:
       "n1": "{1} is a collection of short stories."
     examples:
       "त्याचा नवा कथासंग्रह आला.": { native: "His new collection of stories came out.", bases: { "नवा": "new" } }
-      "कथासंग्रहातली पहिली कथा छान आहे.": { native: "The first story in the collection is nice.", bases: { "पहिली": "first", "आहे": "to be" } }
+      "कथासंग्रहातली पहिली कथा छान आहे.": { native: "The first story in the collection is nice.", bases: { "पहिली": "first", "आहे": "to be", "कथासंग्रहातली": "collection of short stories" } }
   "mr-1773":
     native: "collection of poems"
     notes:
@@ -63,7 +63,7 @@ cards:
       "n1": "{1} is a chapter of a book."
     examples:
       "पहिला अध्याय वाचला.": { native: "I read the first chapter.", bases: { "पहिला": "first" } }
-      "या अध्यायात इतिहास आहे.": { native: "This chapter has history.", bases: { "आहे": "to be" } }
+      "या अध्यायात इतिहास आहे.": { native: "This chapter has history.", bases: { "आहे": "to be", "अध्यायात": "chapter" } }
   "mr-1777":
     native: "title"
     notes:
@@ -77,7 +77,7 @@ cards:
       "n1": "{1} is the front cover of a book."
     examples:
       "मुखपृष्ठ रंगीत आहे.": { native: "The cover is colourful.", bases: { "रंगीत": "colourful", "आहे": "to be" } }
-      "मुखपृष्ठावर चित्र काढलं.": "A picture was drawn on the cover."
+      "मुखपृष्ठावर चित्र काढलं.": { native: "A picture was drawn on the cover.", bases: { "मुखपृष्ठावर": "cover (of a book)" } }
   "mr-1779":
     native: "preface, introduction"
     notes:
@@ -98,7 +98,7 @@ cards:
       "n1": "{1} is a character in a story or a play."
     examples:
       "कथेतलं मुख्य पात्र शेतकरी आहे.": { native: "The main character of the story is a farmer.", bases: { "मुख्य": "main", "आहे": "to be" } }
-      "या पात्राचा स्वभाव विनोदी आहे.": { native: "The nature of this character is comic.", bases: { "स्वभाव": "nature", "आहे": "to be" } }
+      "या पात्राचा स्वभाव विनोदी आहे.": { native: "The nature of this character is comic.", bases: { "स्वभाव": "nature", "आहे": "to be", "पात्राचा": "character (in a story)" } }
   "mr-1782":
     native: "style"
     notes:
@@ -119,7 +119,7 @@ cards:
       "n1": "{1} is a true story, based on real events."
     examples:
       "ही सत्यकथा आहे.": { native: "This is a true story.", bases: { "आहे": "to be" } }
-      "सत्यकथेवर चित्रपट बनला.": { native: "A film was made on a true story.", bases: { "बनला": "to be made" } }
+      "सत्यकथेवर चित्रपट बनला.": { native: "A film was made on a true story.", bases: { "बनला": "to be made", "सत्यकथेवर": "true story" } }
   "mr-1785":
     native: "line (of a poem or text)"
     notes:
@@ -139,14 +139,14 @@ cards:
     notes:
       "n1": "{1} is a translator."
     examples:
-      "अनुवादकाने पुस्तक छान अनुवादलं.": "The translator translated the book nicely."
+      "अनुवादकाने पुस्तक छान अनुवादलं.": { native: "The translator translated the book nicely.", bases: { "अनुवादकाने": "translator" } }
       "हा अनुवादक इंग्रजी जाणतो.": { native: "This translator knows English.", bases: { "इंग्रजी": "English", "जाणतो": "to know" } }
   "mr-1788":
     native: "publisher"
     notes:
       "n1": "{1} is a publisher, the company that prints and sells books."
     examples:
-      "प्रकाशकाने पुस्तक छापलं.": { native: "The publisher printed the book.", bases: { "छापलं": "to print" } }
+      "प्रकाशकाने पुस्तक छापलं.": { native: "The publisher printed the book.", bases: { "छापलं": "to print", "प्रकाशकाने": "publisher" } }
       "प्रकाशक नवीन लेखकांना संधी देतात.": { native: "Publishers give new writers a chance.", bases: { "नवीन": "new" } }
   "mr-1789":
     native: "to publish"
@@ -181,5 +181,5 @@ cards:
     notes:
       "n1": "{1} is unfolding a story or a mystery bit by bit."
     examples:
-      "कथा हळूहळू उलगडत गेली.": { native: "The story unfolded slowly.", bases: { "हळूहळू": "slowly" } }
-      "रहस्य शेवटी उलगडलं.": { native: "The mystery was finally revealed.", bases: { "शेवटी": "at the end" } }
+      "कथा हळूहळू उलगडत गेली.": { native: "The story unfolded slowly.", bases: { "हळूहळू": "slowly", "उलगडत": "to unfold, to reveal" } }
+      "रहस्य शेवटी उलगडलं.": { native: "The mystery was finally revealed.", bases: { "शेवटी": "at the end", "उलगडलं": "to unfold, to reveal" } }

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "भूगोल", reading: "bhugol" }] }
     examples:
       - { target: "मला भूगोल आवडतो.", reading: "malā bhugol āvḍto.", ipa: "məla bʱuɡol aʋɖt̪o", bases: [{ word: "मला", ref: "mr-0080" }, { word: "आवडतो", ref: "mr-0585" }] }
-      - { target: "भूगोलाचं पुस्तक जाड आहे.", reading: "bhugolācam̐ pustak jāḍ āhe.", ipa: "bʱuɡolatsə̃ pust̪ək dzaɖ aɦe", bases: [{ word: "भूगोलाचं", ref: "mr-1279" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "भूगोलाचं पुस्तक जाड आहे.", reading: "bhugolācam̐ pustak jāḍ āhe.", ipa: "bʱuɡolatsə̃ pust̪ək dzaɖ aɦe", bases: [{ word: "भूगोलाचं", base: "भूगोल", reading: "bhugol" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1280"
     target: "राज्य"
     reading: "rājy"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "राज्य", reading: "rājy" }] }
     examples:
       - { target: "महाराष्ट्र एक मोठं राज्य आहे.", reading: "mahārāṣṭr ek moṭham̐ rājy āhe.", ipa: "məɦaraʂʈr ek moʈʰə̃ radʒj aɦe", bases: [{ word: "मोठं", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "भारतात अनेक राज्यं आहेत.", reading: "bhārtāt anek rājyam̐ āhet.", ipa: "bʱart̪at̪ ənek radʒjə̃ aɦet̪", bases: [{ word: "भारतात", base: "भारत", reading: "bhārat" }, { word: "राज्यं", ref: "mr-1280" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "भारतात अनेक राज्यं आहेत.", reading: "bhārtāt anek rājyam̐ āhet.", ipa: "bʱart̪at̪ ənek radʒjə̃ aɦet̪", bases: [{ word: "भारतात", base: "भारत", reading: "bhārat" }, { word: "राज्यं", base: "राज्य", reading: "rājy" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1281"
     target: "महाराष्ट्र"
     reading: "mahārāṣṭr"
@@ -40,8 +40,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "महाराष्ट्र", reading: "mahārāṣṭr" }] }
     examples:
-      - { target: "मी महाराष्ट्रात राहतो.", reading: "mi mahārāṣṭrāt rāhto.", ipa: "mi məɦaraʂʈrat̪ raɦt̪o", bases: [{ word: "मी", ref: "mr-0080" }, { word: "महाराष्ट्रात", ref: "mr-1281" }, { word: "राहतो", ref: "mr-1182" }] }
-      - { target: "महाराष्ट्राची राजधानी मुंबई आहे.", reading: "mahārāṣṭrāci rājdhāni mumbai āhe.", ipa: "məɦaraʂʈratʃi radzd̪ʱani mumbəi aɦe", bases: [{ word: "महाराष्ट्राची", ref: "mr-1281" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मी महाराष्ट्रात राहतो.", reading: "mi mahārāṣṭrāt rāhto.", ipa: "mi məɦaraʂʈrat̪ raɦt̪o", bases: [{ word: "मी", ref: "mr-0080" }, { word: "महाराष्ट्रात", base: "महाराष्ट्र", reading: "mahārāṣṭr" }, { word: "राहतो", ref: "mr-1182" }] }
+      - { target: "महाराष्ट्राची राजधानी मुंबई आहे.", reading: "mahārāṣṭrāci rājdhāni mumbai āhe.", ipa: "məɦaraʂʈratʃi radzd̪ʱani mumbəi aɦe", bases: [{ word: "महाराष्ट्राची", base: "महाराष्ट्र", reading: "mahārāṣṭr" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1282"
     target: "राजधानी"
     reading: "rājdhāni"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "जिल्हा", reading: "jilhā" }] }
     examples:
       - { target: "आमचा जिल्हा कोणता?", reading: "āmcā jilhā koṇtā?", ipa: "amtsa dʒilɦa koɳt̪a", bases: [{ word: "आमचा", ref: "mr-0138" }, { word: "कोणता", base: "कोणता", reading: "koṇtā" }] }
-      - { target: "पुणे जिल्ह्यात पाऊस जास्त आहे.", reading: "puṇe jilhyāt pāus jāst āhe.", ipa: "puɳe dʒilɦjat̪ paus dzast̪ aɦe", bases: [{ word: "जिल्ह्यात", ref: "mr-1283" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पुणे जिल्ह्यात पाऊस जास्त आहे.", reading: "puṇe jilhyāt pāus jāst āhe.", ipa: "puɳe dʒilɦjat̪ paus dzast̪ aɦe", bases: [{ word: "जिल्ह्यात", base: "जिल्हा", reading: "jilhā" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1284"
     target: "सीमा"
     reading: "simā"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सीमा", reading: "simā" }] }
     examples:
       - { target: "भारताची सीमा लांब आहे.", reading: "bhārtāci simā lāmb āhe.", ipa: "bʱart̪atʃi sima lamb aɦe", bases: [{ word: "भारताची", base: "भारत", reading: "bhārat" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "सीमेवर सैनिक उभे आहेत.", reading: "simevar sainik ubhe āhet.", ipa: "simeʋər səinik ubʱe aɦet̪", bases: [{ word: "सीमेवर", ref: "mr-1284" }, { word: "सैनिक", ref: "mr-1296" }, { word: "उभे", base: "उभे", reading: "ubhe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "सीमेवर सैनिक उभे आहेत.", reading: "simevar sainik ubhe āhet.", ipa: "simeʋər səinik ubʱe aɦet̪", bases: [{ word: "सीमेवर", base: "सीमा", reading: "simā" }, { word: "सैनिक", ref: "mr-1296" }, { word: "उभे", base: "उभे", reading: "ubhe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1285"
     target: "शेजारी"
     reading: "śejāri"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शेजारी", reading: "śejāri" }] }
     examples:
       - { target: "शेजारी राहणारे लोक चांगले आहेत.", reading: "śejāri rāhṇāre lok cāṅgale āhet.", ipa: "ʃedzari raɦɳare lok tsaŋɡəle aɦet̪", bases: [{ word: "राहणारे", ref: "mr-1182" }, { word: "लोक", ref: "mr-0687" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "शेजाऱ्यांची मुलं खेळत आहेत.", reading: "śejāryāñci mulam̐ kheḷat āhet.", ipa: "ʃedzarjaɲtʃi mulə̃ kʰeɭət̪ aɦet̪", bases: [{ word: "शेजाऱ्यांची", ref: "mr-1285" }, { word: "मुलं", ref: "mr-0224" }, { word: "खेळत", ref: "mr-0725" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "शेजाऱ्यांची मुलं खेळत आहेत.", reading: "śejāryāñci mulam̐ kheḷat āhet.", ipa: "ʃedzarjaɲtʃi mulə̃ kʰeɭət̪ aɦet̪", bases: [{ word: "शेजाऱ्यांची", base: "शेजारी", reading: "śejāri" }, { word: "मुलं", ref: "mr-0224" }, { word: "खेळत", ref: "mr-0725" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1286"
     target: "कर्नाटक"
     reading: "karnāṭak"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कर्नाटक", reading: "karnāṭak" }] }
     examples:
       - { target: "कर्नाटक महाराष्ट्राच्या दक्षिणेला आहे.", reading: "karnāṭak mahārāṣṭrācyā dakṣiṇelā āhe.", ipa: "kərnaʈək məɦaraʂʈratʃja d̪əkʂiɳela aɦe", bases: [{ word: "महाराष्ट्राच्या", ref: "mr-1281" }, { word: "दक्षिणेला", ref: "mr-1291" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कर्नाटकात कन्नड बोलतात.", reading: "karnāṭkāt kannaḍ boltāt.", ipa: "kərnaʈkat̪ kənnəɖ bolt̪at̪", bases: [{ word: "कर्नाटकात", ref: "mr-1286" }, { word: "बोलतात", ref: "mr-0713" }] }
+      - { target: "कर्नाटकात कन्नड बोलतात.", reading: "karnāṭkāt kannaḍ boltāt.", ipa: "kərnaʈkat̪ kənnəɖ bolt̪at̪", bases: [{ word: "कर्नाटकात", base: "कर्नाटक", reading: "karnāṭak" }, { word: "बोलतात", ref: "mr-0713" }] }
   - id: "mr-1287"
     target: "गुजरात"
     reading: "gujrāt"
@@ -107,7 +107,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गुजरात", reading: "gujrāt" }] }
     examples:
       - { target: "गुजरात उत्तरेला आहे.", reading: "gujrāt uttarelā āhe.", ipa: "ɡudzrat̪ ut̪t̪ərela aɦe", bases: [{ word: "उत्तरेला", ref: "mr-1292" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "गुजरातमध्ये समुद्र मोठा आहे.", reading: "gujrātmadhye samudr moṭhā āhe.", ipa: "ɡudzrat̪məd̪ʱje səmud̪r moʈʰa aɦe", bases: [{ word: "गुजरातमध्ये", ref: "mr-1287" }, { word: "समुद्र", ref: "mr-0989" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गुजरातमध्ये समुद्र मोठा आहे.", reading: "gujrātmadhye samudr moṭhā āhe.", ipa: "ɡudzrat̪məd̪ʱje səmud̪r moʈʰa aɦe", bases: [{ word: "गुजरातमध्ये", base: "गुजरात", reading: "gujrāt" }, { word: "समुद्र", ref: "mr-0989" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1288"
     target: "दिल्ली"
     reading: "dilli"
@@ -128,8 +128,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पश्चिम", reading: "paścim" }] }
     examples:
-      - { target: "सूर्य पश्चिमेला मावळतो.", reading: "sury paścimelā māvḷto.", ipa: "surj pəʃtʃimela maʋɭt̪o", bases: [{ word: "पश्चिमेला", ref: "mr-1289" }, { word: "मावळतो", ref: "mr-1242" }] }
-      - { target: "समुद्र पश्चिमेला आहे.", reading: "samudr paścimelā āhe.", ipa: "səmud̪r pəʃtʃimela aɦe", bases: [{ word: "पश्चिमेला", ref: "mr-1289" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सूर्य पश्चिमेला मावळतो.", reading: "sury paścimelā māvḷto.", ipa: "surj pəʃtʃimela maʋɭt̪o", bases: [{ word: "पश्चिमेला", base: "पश्चिम", reading: "paścim" }, { word: "मावळतो", ref: "mr-1242" }] }
+      - { target: "समुद्र पश्चिमेला आहे.", reading: "samudr paścimelā āhe.", ipa: "səmud̪r pəʃtʃimela aɦe", bases: [{ word: "पश्चिमेला", base: "पश्चिम", reading: "paścim" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1290"
     target: "पूर्व"
     reading: "purv"
@@ -139,7 +139,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पूर्व", reading: "purv" }] }
     examples:
-      - { target: "सूर्य पूर्वेला उगवतो.", reading: "sury purvelā ugvto.", ipa: "surj purʋela uɡʋt̪o", bases: [{ word: "पूर्वेला", ref: "mr-1290" }, { word: "उगवतो", ref: "mr-1241" }] }
+      - { target: "सूर्य पूर्वेला उगवतो.", reading: "sury purvelā ugvto.", ipa: "surj purʋela uɡʋt̪o", bases: [{ word: "पूर्वेला", base: "पूर्व", reading: "purv" }, { word: "उगवतो", ref: "mr-1241" }] }
       - { target: "पूर्वेकडे चाललो.", reading: "purvekḍe cāllo.", ipa: "purʋekɖe tsallo", bases: [{ word: "चाललो", ref: "mr-0512" }] }
   - id: "mr-1291"
     target: "दक्षिण"
@@ -150,7 +150,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दक्षिण", reading: "dakṣiṇ" }] }
     examples:
-      - { target: "दक्षिणेला पाऊस जास्त असतो.", reading: "dakṣiṇelā pāus jāst asto.", ipa: "d̪əkʂiɳela paus dzast̪ əst̪o", bases: [{ word: "दक्षिणेला", ref: "mr-1291" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "असतो", base: "असणे", reading: "asṇe" }] }
+      - { target: "दक्षिणेला पाऊस जास्त असतो.", reading: "dakṣiṇelā pāus jāst asto.", ipa: "d̪əkʂiɳela paus dzast̪ əst̪o", bases: [{ word: "दक्षिणेला", base: "दक्षिण", reading: "dakṣiṇ" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "असतो", base: "असणे", reading: "asṇe" }] }
       - { target: "शहर दक्षिणेकडे आहे.", reading: "śahar dakṣiṇekḍe āhe.", ipa: "ʃəɦər d̪əkʂiɳekɖe aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1292"
     target: "उत्तर"
@@ -161,8 +161,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "उत्तर", reading: "uttar" }] }
     examples:
-      - { target: "उत्तरेला बर्फ पडतो.", reading: "uttarelā barph paḍto.", ipa: "ut̪t̪ərela bərpʰ pəɖt̪o", bases: [{ word: "उत्तरेला", ref: "mr-1292" }, { word: "पडतो", ref: "mr-1024" }] }
-      - { target: "उत्तरेकडे डोंगर आहेत.", reading: "uttarekḍe ḍoṅgar āhet.", ipa: "ut̪t̪ərekɖe ɖoŋɡər aɦet̪", bases: [{ word: "उत्तरेकडे", ref: "mr-1292" }, { word: "डोंगर", ref: "mr-0967" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "उत्तरेला बर्फ पडतो.", reading: "uttarelā barph paḍto.", ipa: "ut̪t̪ərela bərpʰ pəɖt̪o", bases: [{ word: "उत्तरेला", base: "उत्तर", reading: "uttar" }, { word: "पडतो", ref: "mr-1024" }] }
+      - { target: "उत्तरेकडे डोंगर आहेत.", reading: "uttarekḍe ḍoṅgar āhet.", ipa: "ut̪t̪ərekɖe ɖoŋɡər aɦet̪", bases: [{ word: "उत्तरेकडे", base: "उत्तर", reading: "uttar" }, { word: "डोंगर", ref: "mr-0967" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1293"
     target: "किनारा"
     reading: "kinārā"
@@ -173,7 +173,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "किनारा", reading: "kinārā" }] }
     examples:
       - { target: "समुद्रकिनारा स्वच्छ आहे.", reading: "samudrakinārā svacch āhe.", ipa: "səmud̪rəkinara sʋətstʃʰ aɦe", bases: [{ word: "स्वच्छ", ref: "mr-0766" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "नदीच्या किनाऱ्यावर बसलो.", reading: "nadicyā kināryāvar baslo.", ipa: "nəd̪itʃja kinarjaʋər bəslo", bases: [{ word: "नदीच्या", ref: "mr-0966" }, { word: "किनाऱ्यावर", ref: "mr-1293" }, { word: "बसलो", base: "बसणे", reading: "basṇe" }] }
+      - { target: "नदीच्या किनाऱ्यावर बसलो.", reading: "nadicyā kināryāvar baslo.", ipa: "nəd̪itʃja kinarjaʋər bəslo", bases: [{ word: "नदीच्या", ref: "mr-0966" }, { word: "किनाऱ्यावर", base: "किनारा", reading: "kinārā" }, { word: "बसलो", base: "बसणे", reading: "basṇe" }] }
   - id: "mr-1294"
     target: "लोकसंख्या"
     reading: "loksaṅkhyā"
@@ -189,7 +189,7 @@ cards:
     target: "शेजारचा"
     reading: "śejārcā"
     ipa: "ʃedzartsa"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "शेजारचा", reading: "śejārcā" }] }
     examples:
@@ -205,4 +205,4 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सैनिक", reading: "sainik" }] }
     examples:
       - { target: "सैनिक देशाचं रक्षण करतात.", reading: "sainik deśācam̐ rakṣaṇ kartāt.", ipa: "səinik d̪eʃatsə̃ rəkʂəɳ kərt̪at̪", bases: [{ word: "देशाचं", ref: "mr-0208" }, { word: "रक्षण", base: "रक्षण", reading: "rakṣaṇ" }, { word: "करतात", ref: "mr-0712" }] }
-      - { target: "सैनिकांना सलाम करा.", reading: "sainikānnā salām karā.", ipa: "səinikanna səlam kəra", bases: [{ word: "सैनिकांना", ref: "mr-1296" }, { word: "सलाम", base: "सलाम", reading: "salām" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "सैनिकांना सलाम करा.", reading: "sainikānnā salām karā.", ipa: "səinikanna səlam kəra", bases: [{ word: "सैनिकांना", base: "सैनिक", reading: "sainik" }, { word: "सलाम", base: "सलाम", reading: "salām" }, { word: "करा", ref: "mr-0712" }] }

@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is the environment, the air, water and land around us."
     examples:
       "पर्यावरण स्वच्छ ठेवा.": "Keep the environment clean."
-      "पर्यावरणाचं रक्षण करणं गरजेचं आहे.": { native: "It is necessary to protect the environment.", bases: { "रक्षण": "protection", "आहे": "to be" } }
+      "पर्यावरणाचं रक्षण करणं गरजेचं आहे.": { native: "It is necessary to protect the environment.", bases: { "रक्षण": "protection", "आहे": "to be", "पर्यावरणाचं": "environment" } }
   "mr-1483":
     native: "pollution"
     notes:
@@ -48,7 +48,7 @@ cards:
     notes:
       "n1": "{1} is deforestation, cutting down forests."
     examples:
-      "जंगलतोडीमुळे पाऊस कमी झाला.": { native: "Because of deforestation the rain reduced.", bases: { "कमी": "less", "झाला": "to become" } }
+      "जंगलतोडीमुळे पाऊस कमी झाला.": { native: "Because of deforestation the rain reduced.", bases: { "कमी": "less", "झाला": "to become", "जंगलतोडीमुळे": "deforestation" } }
       "जंगलतोड थांबवा.": { native: "Stop deforestation.", bases: { "थांबवा": "to stop" } }
   "mr-1488":
     native: "global warming"
@@ -56,7 +56,7 @@ cards:
       "n1": "{1} is the warming of the earth's temperature."
     examples:
       "तापमानवाढ ही मोठी समस्या आहे.": { native: "Global warming is a big problem.", bases: { "समस्या": "problem", "आहे": "to be" } }
-      "तापमानवाढीमुळे बर्फ वितळतो.": { native: "Because of global warming ice melts.", bases: { "बर्फ": "ice", "वितळतो": "to melt" } }
+      "तापमानवाढीमुळे बर्फ वितळतो.": { native: "Because of global warming ice melts.", bases: { "बर्फ": "ice", "वितळतो": "to melt", "तापमानवाढीमुळे": "global warming" } }
   "mr-1489":
     native: "green"
     notes:
@@ -77,14 +77,14 @@ cards:
       "n1": "{1} is the conservation or care of something valuable."
     examples:
       "पाण्याचं संवर्धन करा.": "Conserve the water."
-      "वन्यजीव संवर्धनासाठी काम होतं.": { native: "Work for wildlife conservation is done.", bases: { "होतं": "to be" } }
+      "वन्यजीव संवर्धनासाठी काम होतं.": { native: "Work for wildlife conservation is done.", bases: { "होतं": "to be", "संवर्धनासाठी": "conservation" } }
   "mr-1492":
     native: "wildlife"
     notes:
       "n1": "{1} is wildlife, animals living wild in forests."
     examples:
       "जंगलात वन्यजीव राहतात.": "Wildlife lives in the forest."
-      "वन्यजीवांचं रक्षण करा.": { native: "Protect wildlife.", bases: { "रक्षण": "protection" } }
+      "वन्यजीवांचं रक्षण करा.": { native: "Protect wildlife.", bases: { "रक्षण": "protection", "वन्यजीवांचं": "wildlife" } }
   "mr-1493":
     native: "protection"
     notes:
@@ -112,35 +112,35 @@ cards:
       "n1": "{1} is wastewater from homes and factories."
     examples:
       "सांडपाणी नदीत सोडू नका.": "Do not let the sewage go into the river."
-      "सांडपाण्याचा निचरा झाला पाहिजे.": { native: "The sewage must be drained.", bases: { "निचरा": "drainage", "झाला": "to become" } }
+      "सांडपाण्याचा निचरा झाला पाहिजे.": { native: "The sewage must be drained.", bases: { "निचरा": "drainage", "झाला": "to become", "सांडपाण्याचा": "sewage, wastewater" } }
   "mr-1497":
     native: "water shortage"
     notes:
       "n1": "{1} is a shortage of water."
     examples:
       "उन्हाळ्यात पाणीटंचाई असते.": { native: "There is water shortage in summer.", bases: { "असते": "to be" } }
-      "पाणीटंचाईमुळे लोक त्रस्त आहेत.": { native: "People are troubled by the water shortage.", bases: { "त्रस्त": "troubled", "आहेत": "to be" } }
+      "पाणीटंचाईमुळे लोक त्रस्त आहेत.": { native: "People are troubled by the water shortage.", bases: { "त्रस्त": "troubled", "आहेत": "to be", "पाणीटंचाईमुळे": "water shortage" } }
   "mr-1498":
     native: "to save"
     notes:
       "n1": "{1} is saving something from loss or harm."
     examples:
-      "पाणी वाचवा.": "Save water."
-      "त्याने मुलाचा जीव वाचवला.": "He saved the child's life."
+      "पाणी वाचवा.": { native: "Save water.", bases: { "वाचवा": "to save" } }
+      "त्याने मुलाचा जीव वाचवला.": { native: "He saved the child's life.", bases: { "वाचवला": "to save" } }
   "mr-1499":
     native: "to take care of, to protect"
     notes:
       "n1": "{1} is looking after something carefully so it is kept safe."
     examples:
-      "निसर्ग जपला पाहिजे.": "We must protect nature."
-      "आजी फोटो जपून ठेवते.": "Grandmother keeps the photo carefully."
+      "निसर्ग जपला पाहिजे.": { native: "We must protect nature.", bases: { "जपला": "to take care of, to protect" } }
+      "आजी फोटो जपून ठेवते.": { native: "Grandmother keeps the photo carefully.", bases: { "जपून": "to take care of, to protect" } }
   "mr-1500":
     native: "to avoid"
     notes:
       "n1": "{1} is avoiding something."
     examples:
-      "प्लास्टिक पिशव्या टाळा.": "Avoid plastic bags."
-      "धूर टाळलेला बरा.": "It is better to avoid smoke."
+      "प्लास्टिक पिशव्या टाळा.": { native: "Avoid plastic bags.", bases: { "टाळा": "to avoid" } }
+      "धूर टाळलेला बरा.": { native: "It is better to avoid smoke.", bases: { "टाळलेला": "to avoid" } }
   "mr-1501":
     native: "to reduce"
     notes:

@@ -13,7 +13,7 @@ cards:
     notes:
       "n1": "{1} is shopping or a purchase. Shopping is खरेदी करणे (kharedī karṇe), to buy."
     examples:
-      "आज खरेदीला जाऊ.": "Let's go shopping today."
+      "आज खरेदीला जाऊ.": { native: "Let's go shopping today.", bases: { "खरेदीला": "shopping, a purchase" } }
       "खरेदी छान झाली.": { native: "The shopping went well.", bases: { "झाली": "to become" } }
   "mr-1068":
     native: "discount"
@@ -28,21 +28,21 @@ cards:
       "n1": "{1} is a receipt: the paper that shows you paid."
     examples:
       "पावती घ्या.": "Take the receipt."
-      "पावतीवर तारीख आहे.": { native: "The receipt has the date on it.", bases: { "आहे": "to be" } }
+      "पावतीवर तारीख आहे.": { native: "The receipt has the date on it.", bases: { "आहे": "to be", "पावतीवर": "receipt" } }
   "mr-1070":
     native: "customer"
     notes:
       "n1": "{1} is a customer, the person who buys."
     examples:
       "ग्राहक दुकानात आले.": "Customers came into the shop."
-      "ग्राहकाला मदत करा.": "Help the customer."
+      "ग्राहकाला मदत करा.": { native: "Help the customer.", bases: { "ग्राहकाला": "customer" } }
   "mr-1071":
     native: "seller"
     notes:
       "n1": "{1} is a seller. The feminine is विक्रेती (vikretī)."
     examples:
       "विक्रेता हसला.": { native: "The seller smiled.", bases: { "हसला": "to smile" } }
-      "विक्रेत्याकडे फळं आहेत.": { native: "The seller has fruit.", bases: { "आहेत": "to be" } }
+      "विक्रेत्याकडे फळं आहेत.": { native: "The seller has fruit.", bases: { "आहेत": "to be", "विक्रेत्याकडे": "seller" } }
   "mr-1072":
     native: "bargaining"
     notes:
@@ -76,22 +76,22 @@ cards:
     notes:
       "n1": "{1} is the verb for selling."
     examples:
-      "तो भाजी विकतो.": "He sells vegetables."
-      "हे दुकान फळं विकतं.": "This shop sells fruit."
+      "तो भाजी विकतो.": { native: "He sells vegetables.", bases: { "विकतो": "to sell" } }
+      "हे दुकान फळं विकतं.": { native: "This shop sells fruit.", bases: { "विकतं": "to sell" } }
   "mr-1077":
     native: "to count"
     notes:
       "n1": "{1} is the verb for counting money or things."
     examples:
-      "पैसे मोजा.": "Count the money."
-      "त्याने पैसे मोजले.": "He counted the money."
+      "पैसे मोजा.": { native: "Count the money.", bases: { "मोजा": "to count" } }
+      "त्याने पैसे मोजले.": { native: "He counted the money.", bases: { "मोजले": "to count" } }
   "mr-1078":
     native: "to change; to exchange"
     notes:
       "n1": "{1} is used for exchanging an item or changing a colour."
     examples:
-      "हा शर्ट बदलता येईल का?": "Can I exchange this shirt?"
-      "रंग बदलायचा आहे.": { native: "I want to change the colour.", bases: { "आहे": "to be" } }
+      "हा शर्ट बदलता येईल का?": { native: "Can I exchange this shirt?", bases: { "बदलता": "to change; to exchange" } }
+      "रंग बदलायचा आहे.": { native: "I want to change the colour.", bases: { "आहे": "to be", "बदलायचा": "to change; to exchange" } }
   "mr-1079":
     native: "item, goods"
     notes:
@@ -125,7 +125,7 @@ cards:
     notes:
       "n1": "{1} is a stall, a small shop on a street or in a market."
     examples:
-      "स्टॉलवर भाज्या आहेत.": { native: "There are vegetables at the stall.", bases: { "आहेत": "to be" } }
+      "स्टॉलवर भाज्या आहेत.": { native: "There are vegetables at the stall.", bases: { "आहेत": "to be", "स्टॉलवर": "stall" } }
       "हा स्टॉल सकाळी उघडतो.": "This stall opens in the morning."
   "mr-1084":
     native: "payment"

@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "आपत्ती", reading: "āpatti" }] }
     examples:
       - { target: "ही मोठी आपत्ती आहे.", reading: "hi moṭhi āpatti āhe.", ipa: "ɦi moʈʰi apət̪t̪i aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "मोठी", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "आपत्तीच्या वेळी शांत राहा.", reading: "āpatticyā veḷi śānt rāhā.", ipa: "apət̪t̪itʃja ʋeɭi ʃant̪ raɦa", bases: [{ word: "आपत्तीच्या", ref: "mr-1661" }, { word: "वेळी", ref: "mr-0122" }, { word: "शांत", ref: "mr-1246" }, { word: "राहा", ref: "mr-1182" }] }
+      - { target: "आपत्तीच्या वेळी शांत राहा.", reading: "āpatticyā veḷi śānt rāhā.", ipa: "apət̪t̪itʃja ʋeɭi ʃant̪ raɦa", bases: [{ word: "आपत्तीच्या", base: "आपत्ती", reading: "āpatti" }, { word: "वेळी", ref: "mr-0122" }, { word: "शांत", ref: "mr-1246" }, { word: "राहा", ref: "mr-1182" }] }
   - id: "mr-1662"
     target: "भूकंप"
     reading: "bhukamp"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "भूकंप", reading: "bhukamp" }] }
     examples:
       - { target: "काल रात्री भूकंप झाला.", reading: "kāl rātri bhukamp jhālā.", ipa: "kal rat̪ri bʱukəmp dzʱala", bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "भूकंपाचे धक्के जाणवले.", reading: "bhukampāce dhakke jāṇvle.", ipa: "bʱukəmpatʃe d̪ʱəkke dzaɳʋle", bases: [{ word: "भूकंपाचे", ref: "mr-1662" }, { word: "धक्के", base: "धक्का", reading: "dhakkā" }, { word: "जाणवले", base: "जाणवणे", reading: "jāṇvṇe" }] }
+      - { target: "भूकंपाचे धक्के जाणवले.", reading: "bhukampāce dhakke jāṇvle.", ipa: "bʱukəmpatʃe d̪ʱəkke dzaɳʋle", bases: [{ word: "भूकंपाचे", base: "भूकंप", reading: "bhukamp" }, { word: "धक्के", base: "धक्का", reading: "dhakkā" }, { word: "जाणवले", base: "जाणवणे", reading: "jāṇvṇe" }] }
   - id: "mr-1663"
     target: "दुर्घटना"
     reading: "durghaṭnā"
@@ -41,17 +41,17 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "दुर्घटना", reading: "durghaṭnā" }] }
     examples:
       - { target: "रस्त्यावर दुर्घटना झाली.", reading: "rastyāvar durghaṭnā jhāli.", ipa: "rəst̪jaʋər d̪urɡʱəʈna dzʱali", bases: [{ word: "रस्त्यावर", ref: "mr-0971" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
-      - { target: "दुर्घटनेत एक माणूस जखमी झाला.", reading: "durghaṭnet ek māṇus jakhmi jhālā.", ipa: "d̪urɡʱəʈnet̪ ek maɳus dzəkʰmi dzʱala", bases: [{ word: "दुर्घटनेत", ref: "mr-1663" }, { word: "माणूस", ref: "mr-0686" }, { word: "जखमी", ref: "mr-1664" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "दुर्घटनेत एक माणूस जखमी झाला.", reading: "durghaṭnet ek māṇus jakhmi jhālā.", ipa: "d̪urɡʱəʈnet̪ ek maɳus dzəkʰmi dzʱala", bases: [{ word: "दुर्घटनेत", base: "दुर्घटना", reading: "durghaṭnā" }, { word: "माणूस", ref: "mr-0686" }, { word: "जखमी", ref: "mr-1664" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1664"
     target: "जखमी"
     reading: "jakhmi"
     ipa: "dzəkʰmi"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "जखमी", reading: "jakhmi" }] }
     examples:
       - { target: "तो जखमी झाला.", reading: "to jakhmi jhālā.", ipa: "t̪o dzəkʰmi dzʱala", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "जखमींना रुग्णालयात नेलं.", reading: "jakhminnā rugṇālyāt nelam̐.", ipa: "dzəkʰminna ruɡɳaljat̪ nelə̃", bases: [{ word: "जखमींना", ref: "mr-1664" }, { word: "रुग्णालयात", ref: "mr-0596" }, { word: "नेलं", ref: "mr-1188" }] }
+      - { target: "जखमींना रुग्णालयात नेलं.", reading: "jakhminnā rugṇālyāt nelam̐.", ipa: "dzəkʰminna ruɡɳaljat̪ nelə̃", bases: [{ word: "जखमींना", base: "जखमी", reading: "jakhmi" }, { word: "रुग्णालयात", ref: "mr-0596" }, { word: "नेलं", ref: "mr-1188" }] }
   - id: "mr-1665"
     target: "मृत्यू"
     reading: "mrutyu"
@@ -62,7 +62,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मृत्यू", reading: "mrutyu" }] }
     examples:
       - { target: "त्याचा मृत्यू झाला.", reading: "tyācā mrutyu jhālā.", ipa: "t̪jatsa mrut̪ju dzʱala", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "मृत्यूची बातमी ऐकून सगळे रडले.", reading: "mrutyuci bātmi aikun sagḷe raḍle.", ipa: "mrut̪jutʃi bat̪mi əikun səɡɭe rəɖle", bases: [{ word: "मृत्यूची", ref: "mr-1665" }, { word: "बातमी", ref: "mr-1340" }, { word: "ऐकून", ref: "mr-0715" }, { word: "रडले", ref: "mr-1185" }] }
+      - { target: "मृत्यूची बातमी ऐकून सगळे रडले.", reading: "mrutyuci bātmi aikun sagḷe raḍle.", ipa: "mrut̪jutʃi bat̪mi əikun səɡɭe rəɖle", bases: [{ word: "मृत्यूची", base: "मृत्यू", reading: "mrutyu" }, { word: "बातमी", ref: "mr-1340" }, { word: "ऐकून", ref: "mr-0715" }, { word: "रडले", ref: "mr-1185" }] }
   - id: "mr-1666"
     target: "रुग्णवाहिका"
     reading: "rugṇavāhikā"
@@ -73,7 +73,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "रुग्णवाहिका", reading: "rugṇavāhikā" }] }
     examples:
       - { target: "रुग्णवाहिका लवकर आली.", reading: "rugṇavāhikā lavkar āli.", ipa: "ruɡɳəʋaɦika ləʋkər ali", bases: [{ word: "लवकर", ref: "mr-0509" }, { word: "आली", ref: "mr-0711" }] }
-      - { target: "रुग्णवाहिकेला फोन करा.", reading: "rugṇavāhikelā phon karā.", ipa: "ruɡɳəʋaɦikela pʰon kəra", bases: [{ word: "रुग्णवाहिकेला", ref: "mr-1666" }, { word: "फोन", ref: "mr-0858" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "रुग्णवाहिकेला फोन करा.", reading: "rugṇavāhikelā phon karā.", ipa: "ruɡɳəʋaɦikela pʰon kəra", bases: [{ word: "रुग्णवाहिकेला", base: "रुग्णवाहिका", reading: "rugṇavāhikā" }, { word: "फोन", ref: "mr-0858" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1667"
     target: "अग्निशमन"
     reading: "agniśman"
@@ -106,12 +106,12 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "इशारा", reading: "iśārā" }] }
     examples:
       - { target: "पावसाचा इशारा दिला आहे.", reading: "pāvsācā iśārā dilā āhe.", ipa: "paʋsatsa iʃara d̪ila aɦe", bases: [{ word: "पावसाचा", ref: "mr-1005" }, { word: "दिला", ref: "mr-0721" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "इशाऱ्याकडे लक्ष द्या.", reading: "iśāryākḍe lakṣ dyā.", ipa: "iʃarjakɖe ləkʂ d̪ja", bases: [{ word: "इशाऱ्याकडे", ref: "mr-1669" }, { word: "लक्ष", base: "लक्ष", reading: "lakṣ" }, { word: "द्या", ref: "mr-0721" }] }
+      - { target: "इशाऱ्याकडे लक्ष द्या.", reading: "iśāryākḍe lakṣ dyā.", ipa: "iʃarjakɖe ləkʂ d̪ja", bases: [{ word: "इशाऱ्याकडे", base: "इशारा", reading: "iśārā" }, { word: "लक्ष", base: "लक्ष", reading: "lakṣ" }, { word: "द्या", ref: "mr-0721" }] }
   - id: "mr-1670"
     target: "आपत्कालीन"
     reading: "āpatkālin"
     ipa: "apət̪kalin"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आपत्कालीन", reading: "āpatkālin" }] }
     examples:
@@ -127,7 +127,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सायरन", reading: "sāyran" }] }
     examples:
       - { target: "सायरन वाजला.", reading: "sāyran vājlā.", ipa: "sajrən ʋadzla", bases: [{ word: "वाजला", base: "वाजणे", reading: "vājṇe" }] }
-      - { target: "सायरनचा आवाज ऐकू आला.", reading: "sāyrncā āvāj aiku ālā.", ipa: "sajrntsa aʋadz əiku ala", bases: [{ word: "सायरनचा", ref: "mr-1671" }, { word: "आवाज", base: "आवाज", reading: "āvāj" }, { word: "ऐकू", base: "ऐकू", reading: "aiku" }, { word: "आला", ref: "mr-0711" }] }
+      - { target: "सायरनचा आवाज ऐकू आला.", reading: "sāyrncā āvāj aiku ālā.", ipa: "sajrntsa aʋadz əiku ala", bases: [{ word: "सायरनचा", base: "सायरन", reading: "sāyran" }, { word: "आवाज", base: "आवाज", reading: "āvāj" }, { word: "ऐकू", base: "ऐकू", reading: "aiku" }, { word: "आला", ref: "mr-0711" }] }
   - id: "mr-1672"
     target: "गॅस गळती"
     reading: "gês gaḷti"
@@ -158,8 +158,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ओरडणे", reading: "orḍṇe" }] }
     examples:
-      - { target: "तो मदतीसाठी ओरडला.", reading: "to madtisāṭhi orḍlā.", ipa: "t̪o məd̪t̪isaʈʰi orɖla", bases: [{ word: "मदतीसाठी", ref: "mr-1159" }, { word: "ओरडला", ref: "mr-1674" }] }
-      - { target: "कोणीतरी ओरडलं.", reading: "koṇitri orḍlam̐.", ipa: "koɳit̪ri orɖlə̃", bases: [{ word: "ओरडलं", ref: "mr-1674" }] }
+      - { target: "तो मदतीसाठी ओरडला.", reading: "to madtisāṭhi orḍlā.", ipa: "t̪o məd̪t̪isaʈʰi orɖla", bases: [{ word: "मदतीसाठी", ref: "mr-1159" }, { word: "ओरडला", base: "ओरडणे", reading: "orḍṇe" }] }
+      - { target: "कोणीतरी ओरडलं.", reading: "koṇitri orḍlam̐.", ipa: "koɳit̪ri orɖlə̃", bases: [{ word: "ओरडलं", base: "ओरडणे", reading: "orḍṇe" }] }
   - id: "mr-1675"
     target: "बाहेर पडणे"
     reading: "bāher paḍṇe"
@@ -178,13 +178,13 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बोलवणे", reading: "bolvṇe" }] }
     examples:
-      - { target: "डॉक्टरांना बोलवा.", reading: "ḍôkṭarānnā bolvā.", ipa: "ɖɔkʈəranna bolʋa", bases: [{ word: "डॉक्टरांना", ref: "mr-0238" }, { word: "बोलवा", ref: "mr-1676" }] }
-      - { target: "त्याने मदतीसाठी लोकांना बोलवलं.", reading: "tyāne madtisāṭhi lokānnā bolvlam̐.", ipa: "t̪jane məd̪t̪isaʈʰi lokanna bolʋlə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "लोकांना", ref: "mr-0687" }, { word: "बोलवलं", ref: "mr-1676" }] }
+      - { target: "डॉक्टरांना बोलवा.", reading: "ḍôkṭarānnā bolvā.", ipa: "ɖɔkʈəranna bolʋa", bases: [{ word: "डॉक्टरांना", ref: "mr-0238" }, { word: "बोलवा", base: "बोलवणे", reading: "bolvṇe" }] }
+      - { target: "त्याने मदतीसाठी लोकांना बोलवलं.", reading: "tyāne madtisāṭhi lokānnā bolvlam̐.", ipa: "t̪jane məd̪t̪isaʈʰi lokanna bolʋlə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "लोकांना", ref: "mr-0687" }, { word: "बोलवलं", base: "बोलवणे", reading: "bolvṇe" }] }
   - id: "mr-1677"
     target: "सुरक्षित"
     reading: "surakṣit"
     ipa: "surəkʂit̪"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सुरक्षित", reading: "surakṣit" }] }
     examples:

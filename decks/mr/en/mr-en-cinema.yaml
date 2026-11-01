@@ -21,7 +21,7 @@ cards:
       "n1": "{1} is a cinema hall where films are shown."
     examples:
       "सिनेमागृह मोठं आहे.": { native: "The cinema hall is big.", bases: { "आहे": "to be" } }
-      "सिनेमागृहात खूप गर्दी होती.": { native: "There was a big crowd in the cinema hall.", bases: { "गर्दी": "crowd", "होती": "to be" } }
+      "सिनेमागृहात खूप गर्दी होती.": { native: "There was a big crowd in the cinema hall.", bases: { "गर्दी": "crowd", "होती": "to be", "सिनेमागृहात": "cinema hall" } }
   "mr-1524":
     native: "play, drama"
     notes:
@@ -35,20 +35,20 @@ cards:
       "n1": "{1} is an actor. The actress is अभिनेत्री (abhinetrī)."
     examples:
       "तो चांगला अभिनेता आहे.": { native: "He is a good actor.", bases: { "आहे": "to be" } }
-      "अभिनेत्याने चांगलं काम केलं.": "The actor did a good job."
+      "अभिनेत्याने चांगलं काम केलं.": { native: "The actor did a good job.", bases: { "अभिनेत्याने": "actor" } }
   "mr-1526":
     native: "actress"
     notes:
       "n1": "{1} is an actress."
     examples:
       "ती प्रसिद्ध अभिनेत्री आहे.": { native: "She is a famous actress.", bases: { "प्रसिद्ध": "famous", "आहे": "to be" } }
-      "अभिनेत्रीचा अभिनय सुंदर होता.": { native: "The actress's acting was beautiful.", bases: { "होता": "to be" } }
+      "अभिनेत्रीचा अभिनय सुंदर होता.": { native: "The actress's acting was beautiful.", bases: { "होता": "to be", "अभिनेत्रीचा": "actress" } }
   "mr-1527":
     native: "director"
     notes:
       "n1": "{1} is a film director."
     examples:
-      "दिग्दर्शकाने नवीन चित्रपट बनवला.": { native: "The director made a new film.", bases: { "नवीन": "new" } }
+      "दिग्दर्शकाने नवीन चित्रपट बनवला.": { native: "The director made a new film.", bases: { "नवीन": "new", "दिग्दर्शकाने": "director" } }
       "दिग्दर्शक मुलाखत देत होते.": { native: "The director was giving an interview.", bases: { "होते": "to be" } }
   "mr-1528":
     native: "story, plot"
@@ -70,13 +70,13 @@ cards:
       "n1": "{1} is the male hero of a film. The female hero is नायिका (nāyikā)."
     examples:
       "चित्रपटाचा नायक खूप देखणा आहे.": { native: "The hero of the film is very handsome.", bases: { "देखणा": "handsome", "आहे": "to be" } }
-      "नायकाचा डायलॉग गाजला.": { native: "The hero's dialogue became famous.", bases: { "डायलॉग": "dialogue", "गाजला": "to become famous" } }
+      "नायकाचा डायलॉग गाजला.": { native: "The hero's dialogue became famous.", bases: { "डायलॉग": "dialogue", "गाजला": "to become famous", "नायकाचा": "hero (male lead)" } }
   "mr-1531":
     native: "villain"
     notes:
       "n1": "{1} is the villain of a film."
     examples:
-      "खलनायकाला सगळे घाबरतात.": "Everyone fears the villain."
+      "खलनायकाला सगळे घाबरतात.": { native: "Everyone fears the villain.", bases: { "खलनायकाला": "villain" } }
       "तो या चित्रपटात खलनायक आहे.": { native: "He is the villain in this film.", bases: { "आहे": "to be" } }
   "mr-1532":
     native: "comic, funny"
@@ -111,28 +111,28 @@ cards:
     notes:
       "n1": "{1} is a composer or music director of a film."
     examples:
-      "संगीतकाराने सुंदर चाल दिली.": { native: "The composer gave a beautiful tune.", bases: { "चाल": "tune" } }
+      "संगीतकाराने सुंदर चाल दिली.": { native: "The composer gave a beautiful tune.", bases: { "चाल": "tune", "संगीतकाराने": "composer, music director" } }
       "हे गाणं कोणी संगीतबद्ध केलं?": "Who composed this song?"
   "mr-1537":
     native: "playback singer"
     notes:
       "n1": "{1} is a singer who sings the songs for an actor in a film."
     examples:
-      "पार्श्वगायकाने गाणं गायलं.": { native: "The playback singer sang the song.", bases: { "गायलं": "to sing" } }
+      "पार्श्वगायकाने गाणं गायलं.": { native: "The playback singer sang the song.", bases: { "गायलं": "to sing", "पार्श्वगायकाने": "playback singer" } }
       "हा पार्श्वगायक खूप लोकप्रिय आहे.": { native: "This playback singer is very popular.", bases: { "लोकप्रिय": "popular", "आहे": "to be" } }
   "mr-1538":
     native: "screen, curtain"
     notes:
       "n1": "{1} is a screen in a cinema or a stage curtain."
     examples:
-      "पडद्यावर चित्रपट दिसतो.": { native: "The film appears on the screen.", bases: { "दिसतो": "to appear" } }
+      "पडद्यावर चित्रपट दिसतो.": { native: "The film appears on the screen.", bases: { "दिसतो": "to appear", "पडद्यावर": "screen, curtain" } }
       "पडदा उघडला.": "The curtain opened."
   "mr-1539":
     native: "audience, spectator"
     notes:
       "n1": "{1} is an audience or a spectator."
     examples:
-      "प्रेक्षकांनी टाळ्या वाजवल्या.": { native: "The audience clapped.", bases: { "टाळ्या": "claps", "वाजवल्या": "to play" } }
+      "प्रेक्षकांनी टाळ्या वाजवल्या.": { native: "The audience clapped.", bases: { "टाळ्या": "claps", "वाजवल्या": "to play", "प्रेक्षकांनी": "audience, spectator" } }
       "प्रेक्षक हसत होते.": { native: "The audience was laughing.", bases: { "होते": "to be" } }
   "mr-1540":
     native: "dialogue"
@@ -140,7 +140,7 @@ cards:
       "n1": "{1} is a dialogue, the words the actors speak to each other."
     examples:
       "संवाद खूप मजेदार होते.": { native: "The dialogues were very funny.", bases: { "मजेदार": "funny", "होते": "to be" } }
-      "त्या संवादाची चर्चा झाली.": { native: "That dialogue was discussed.", bases: { "चर्चा": "discussion", "झाली": "to become" } }
+      "त्या संवादाची चर्चा झाली.": { native: "That dialogue was discussed.", bases: { "चर्चा": "discussion", "झाली": "to become", "संवादाची": "dialogue" } }
   "mr-1541":
     native: "serial, TV series"
     notes:
@@ -154,7 +154,7 @@ cards:
       "n1": "{1} is acting, the art of an actor."
     examples:
       "त्याचा अभिनय चांगला होता.": { native: "His acting was good.", bases: { "होता": "to be" } }
-      "अभिनयाचा सराव करतो.": "I practise acting."
+      "अभिनयाचा सराव करतो.": { native: "I practise acting.", bases: { "अभिनयाचा": "acting" } }
   "mr-1543":
     native: "to act"
     notes:

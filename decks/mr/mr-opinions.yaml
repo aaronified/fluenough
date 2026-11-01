@@ -24,7 +24,7 @@ cards:
     target: "सहमत"
     reading: "sahmat"
     ipa: "səɦmət̪"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सहमत", reading: "sahmat" }] }
     examples:
@@ -34,7 +34,7 @@ cards:
     target: "असहमत"
     reading: "ashmat"
     ipa: "əsɦmət̪"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "असहमत", reading: "ashmat" }] }
     examples:
@@ -59,8 +59,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पटणे", reading: "paṭṇe" }] }
     examples:
-      - { target: "तुझं म्हणणं मला पटलं.", reading: "tujham̐ mhaṇṇam̐ malā paṭlam̐.", ipa: "t̪udzʱə̃ mɦəɳɳə̃ məla pəʈlə̃", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "मला", ref: "mr-0080" }, { word: "पटलं", ref: "mr-1366" }] }
-      - { target: "हे उत्तर पटत नाही.", reading: "he uttar paṭat nāhi.", ipa: "ɦe ut̪t̪ər pəʈət̪ naɦi", bases: [{ word: "हे", ref: "mr-0679" }, { word: "पटत", ref: "mr-1366" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "तुझं म्हणणं मला पटलं.", reading: "tujham̐ mhaṇṇam̐ malā paṭlam̐.", ipa: "t̪udzʱə̃ mɦəɳɳə̃ məla pəʈlə̃", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "मला", ref: "mr-0080" }, { word: "पटलं", base: "पटणे", reading: "paṭṇe" }] }
+      - { target: "हे उत्तर पटत नाही.", reading: "he uttar paṭat nāhi.", ipa: "ɦe ut̪t̪ər pəʈət̪ naɦi", bases: [{ word: "हे", ref: "mr-0679" }, { word: "पटत", base: "पटणे", reading: "paṭṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
   - id: "mr-1367"
     target: "वाद"
     reading: "vād"
@@ -109,7 +109,7 @@ cards:
     target: "कदाचित"
     reading: "kadācit"
     ipa: "kəd̪atʃit̪"
-    pos: "adverb"
+    pos: "adv"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कदाचित", reading: "kadācit" }] }
     examples:
@@ -119,7 +119,7 @@ cards:
     target: "खरं"
     reading: "kharam̐"
     ipa: "kʰərə̃"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खरं", reading: "kharam̐" }] }
     examples:
@@ -129,7 +129,7 @@ cards:
     target: "खोटं"
     reading: "khoṭam̐"
     ipa: "kʰoʈə̃"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खोटं", reading: "khoṭam̐" }] }
     examples:
@@ -145,7 +145,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "परिणाम", reading: "pariṇām" }] }
     examples:
       - { target: "याचा परिणाम वाईट झाला.", reading: "yācā pariṇām vāiṭ jhālā.", ipa: "jatsa pəriɳam ʋaiʈ dzʱala", bases: [{ word: "याचा", ref: "mr-0679" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "चांगल्या परिणामासाठी मेहनत करा.", reading: "cāṅgalyā pariṇāmāsāṭhi mehnat karā.", ipa: "tsaŋɡəlja pəriɳamasaʈʰi meɦnət̪ kəra", bases: [{ word: "चांगल्या", ref: "mr-0759" }, { word: "परिणामासाठी", ref: "mr-1374" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "चांगल्या परिणामासाठी मेहनत करा.", reading: "cāṅgalyā pariṇāmāsāṭhi mehnat karā.", ipa: "tsaŋɡəlja pəriɳamasaʈʰi meɦnət̪ kəra", bases: [{ word: "चांगल्या", ref: "mr-0759" }, { word: "परिणामासाठी", base: "परिणाम", reading: "pariṇām" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1375"
     target: "महत्त्व"
     reading: "mahattv"
@@ -240,5 +240,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सुचवणे", reading: "sucvṇe" }] }
     examples:
-      - { target: "मी एक कल्पना सुचवली.", reading: "mi ek kalpanā sucvli.", ipa: "mi ek kəlpəna sutsʋli", bases: [{ word: "सुचवली", ref: "mr-1383" }] }
-      - { target: "तू काय सुचवतोस?", reading: "tu kāy sucvtos?", ipa: "t̪u kaj sutsʋt̪os", bases: [{ word: "तू", ref: "mr-0675" }, { word: "सुचवतोस", ref: "mr-1383" }] }
+      - { target: "मी एक कल्पना सुचवली.", reading: "mi ek kalpanā sucvli.", ipa: "mi ek kəlpəna sutsʋli", bases: [{ word: "सुचवली", base: "सुचवणे", reading: "sucvṇe" }] }
+      - { target: "तू काय सुचवतोस?", reading: "tu kāy sucvtos?", ipa: "t̪u kaj sutsʋt̪os", bases: [{ word: "तू", ref: "mr-0675" }, { word: "सुचवतोस", base: "सुचवणे", reading: "sucvṇe" }] }

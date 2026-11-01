@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पर्यटन", reading: "paryaṭan" }] }
     examples:
-      - { target: "पर्यटनामुळे गावाला पैसे मिळतात.", reading: "paryaṭnāmuḷe gāvālā paise miḷtāt.", ipa: "pərjəʈnamuɭe ɡaʋala pəise miɭt̪at̪", bases: [{ word: "पर्यटनामुळे", ref: "mr-1384" }, { word: "गावाला", ref: "mr-0209" }, { word: "मिळतात", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "पर्यटनामुळे गावाला पैसे मिळतात.", reading: "paryaṭnāmuḷe gāvālā paise miḷtāt.", ipa: "pərjəʈnamuɭe ɡaʋala pəise miɭt̪at̪", bases: [{ word: "पर्यटनामुळे", base: "पर्यटन", reading: "paryaṭan" }, { word: "गावाला", ref: "mr-0209" }, { word: "मिळतात", base: "मिळणे", reading: "miḷṇe" }] }
       - { target: "पर्यटन वाढलं आहे.", reading: "paryaṭan vāḍhlam̐ āhe.", ipa: "pərjəʈən ʋaɖʱlə̃ aɦe", bases: [{ word: "वाढलं", ref: "mr-1027" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1385"
     target: "पर्यटक"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पर्यटक", reading: "paryaṭak" }] }
     examples:
       - { target: "पर्यटक किल्ला पाहायला आले.", reading: "paryaṭak killā pāhāylā āle.", ipa: "pərjəʈək killa paɦajla ale", bases: [{ word: "किल्ला", ref: "mr-0988" }, { word: "पाहायला", ref: "mr-0714" }, { word: "आले", ref: "mr-0711" }] }
-      - { target: "पर्यटकांची गर्दी वाढली.", reading: "paryaṭkāñci gardi vāḍhli.", ipa: "pərjəʈkaɲtʃi ɡərd̪i ʋaɖʱli", bases: [{ word: "पर्यटकांची", ref: "mr-1385" }, { word: "गर्दी", base: "गर्दी", reading: "gardi" }, { word: "वाढली", ref: "mr-1027" }] }
+      - { target: "पर्यटकांची गर्दी वाढली.", reading: "paryaṭkāñci gardi vāḍhli.", ipa: "pərjəʈkaɲtʃi ɡərd̪i ʋaɖʱli", bases: [{ word: "पर्यटकांची", base: "पर्यटक", reading: "paryaṭak" }, { word: "गर्दी", base: "गर्दी", reading: "gardi" }, { word: "वाढली", ref: "mr-1027" }] }
   - id: "mr-1386"
     target: "स्मारक"
     reading: "smārak"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "स्मारक", reading: "smārak" }] }
     examples:
       - { target: "हे स्मारक खूप जुनं आहे.", reading: "he smārak khup junam̐ āhe.", ipa: "ɦe smarək kʰup dzunə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "जुनं", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "स्मारकाला भेट द्या.", reading: "smārkālā bheṭ dyā.", ipa: "smarkala bʱeʈ d̪ja", bases: [{ word: "स्मारकाला", ref: "mr-1386" }, { word: "भेट", ref: "mr-1396" }, { word: "द्या", ref: "mr-0721" }] }
+      - { target: "स्मारकाला भेट द्या.", reading: "smārkālā bheṭ dyā.", ipa: "smarkala bʱeʈ d̪ja", bases: [{ word: "स्मारकाला", base: "स्मारक", reading: "smārak" }, { word: "भेट", ref: "mr-1396" }, { word: "द्या", ref: "mr-0721" }] }
   - id: "mr-1387"
     target: "ठिकाण"
     reading: "ṭhikāṇ"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "तंबू", reading: "tambu" }] }
     examples:
       - { target: "आम्ही तंबू लावला.", reading: "āmhi tambu lāvlā.", ipa: "amɦi t̪əmbu laʋla", bases: [{ word: "लावला", base: "लावणे", reading: "lāvṇe" }] }
-      - { target: "तंबूत रात्र काढली.", reading: "tambut rātr kāḍhli.", ipa: "t̪əmbut̪ rat̪r kaɖʱli", bases: [{ word: "तंबूत", ref: "mr-1389" }, { word: "रात्र", ref: "mr-0480" }, { word: "काढली", ref: "mr-0796" }] }
+      - { target: "तंबूत रात्र काढली.", reading: "tambut rātr kāḍhli.", ipa: "t̪əmbut̪ rat̪r kaɖʱli", bases: [{ word: "तंबूत", base: "तंबू", reading: "tambu" }, { word: "रात्र", ref: "mr-0480" }, { word: "काढली", ref: "mr-0796" }] }
   - id: "mr-1390"
     target: "गाईड"
     reading: "gāiḍ"
@@ -107,7 +107,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "हॉस्टेल", reading: "hôsṭel" }] }
     examples:
       - { target: "हॉस्टेल स्वस्त आहे.", reading: "hôsṭel svast āhe.", ipa: "ɦɔsʈel sʋəst̪ aɦe", bases: [{ word: "स्वस्त", ref: "mr-0380" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "आम्ही हॉस्टेलमध्ये राहिलो.", reading: "āmhi hôsṭelmadhye rāhilo.", ipa: "amɦi ɦɔsʈelməd̪ʱje raɦilo", bases: [{ word: "हॉस्टेलमध्ये", ref: "mr-1392" }, { word: "राहिलो", ref: "mr-1182" }] }
+      - { target: "आम्ही हॉस्टेलमध्ये राहिलो.", reading: "āmhi hôsṭelmadhye rāhilo.", ipa: "amɦi ɦɔsʈelməd̪ʱje raɦilo", bases: [{ word: "हॉस्टेलमध्ये", base: "हॉस्टेल", reading: "hôsṭel" }, { word: "राहिलो", ref: "mr-1182" }] }
   - id: "mr-1393"
     target: "बुकिंग"
     reading: "bukiṅg"
@@ -139,7 +139,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "विदेश", reading: "videś" }] }
     examples:
-      - { target: "तो विदेशात गेला.", reading: "to videśāt gelā.", ipa: "t̪o ʋid̪eʃat̪ ɡela", bases: [{ word: "विदेशात", ref: "mr-1395" }, { word: "गेला", ref: "mr-0710" }] }
+      - { target: "तो विदेशात गेला.", reading: "to videśāt gelā.", ipa: "t̪o ʋid̪eʃat̪ ɡela", bases: [{ word: "विदेशात", base: "विदेश", reading: "videś" }, { word: "गेला", ref: "mr-0710" }] }
       - { target: "विदेशी पर्यटक आले.", reading: "videśi paryaṭak āle.", ipa: "ʋid̪eʃi pərjəʈək ale", bases: [{ word: "विदेशी", base: "विदेशी", reading: "videśi" }, { word: "पर्यटक", ref: "mr-1385" }, { word: "आले", ref: "mr-0711" }] }
   - id: "mr-1396"
     target: "भेट"
@@ -181,8 +181,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सुटणे", reading: "suṭṇe" }] }
     examples:
-      - { target: "गाडी वेळेवर सुटली.", reading: "gāḍi veḷevar suṭli.", ipa: "ɡaɖi ʋeɭeʋər suʈli", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "सुटली", ref: "mr-1399" }] }
-      - { target: "शेवटची बस सुटली.", reading: "śevṭci bas suṭli.", ipa: "ʃeʋʈtʃi bəs suʈli", bases: [{ word: "शेवटची", base: "शेवटचा", reading: "śevṭcā" }, { word: "बस", ref: "mr-0052" }, { word: "सुटली", ref: "mr-1399" }] }
+      - { target: "गाडी वेळेवर सुटली.", reading: "gāḍi veḷevar suṭli.", ipa: "ɡaɖi ʋeɭeʋər suʈli", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "सुटली", base: "सुटणे", reading: "suṭṇe" }] }
+      - { target: "शेवटची बस सुटली.", reading: "śevṭci bas suṭli.", ipa: "ʃeʋʈtʃi bəs suʈli", bases: [{ word: "शेवटची", base: "शेवटचा", reading: "śevṭcā" }, { word: "बस", ref: "mr-0052" }, { word: "सुटली", base: "सुटणे", reading: "suṭṇe" }] }
   - id: "mr-1400"
     target: "ओळख"
     reading: "oḷakh"
@@ -198,7 +198,7 @@ cards:
     target: "देशी"
     reading: "deśi"
     ipa: "d̪eʃi"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "देशी", reading: "deśi" }] }
     examples:

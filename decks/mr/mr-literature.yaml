@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "साहित्य", reading: "sāhity" }] }
     examples:
       - { target: "मला मराठी साहित्य आवडतं.", reading: "malā marāṭhi sāhity āvḍtam̐.", ipa: "məla məraʈʰi saɦit̪j aʋɖt̪ə̃", bases: [{ word: "मला", ref: "mr-0080" }, { word: "मराठी", base: "मराठी", reading: "marāṭhi" }, { word: "आवडतं", ref: "mr-0585" }] }
-      - { target: "साहित्याचा अभ्यास करतो.", reading: "sāhityācā abhyās karto.", ipa: "saɦit̪jatsa əbʱjas kərt̪o", bases: [{ word: "साहित्याचा", ref: "mr-1769" }, { word: "अभ्यास", ref: "mr-1115" }, { word: "करतो", ref: "mr-0712" }] }
+      - { target: "साहित्याचा अभ्यास करतो.", reading: "sāhityācā abhyās karto.", ipa: "saɦit̪jatsa əbʱjas kərt̪o", bases: [{ word: "साहित्याचा", base: "साहित्य", reading: "sāhity" }, { word: "अभ्यास", ref: "mr-1115" }, { word: "करतो", ref: "mr-0712" }] }
   - id: "mr-1770"
     target: "कादंबरी"
     reading: "kādambari"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कथासंग्रह", reading: "kathāsaṅgrah" }] }
     examples:
       - { target: "त्याचा नवा कथासंग्रह आला.", reading: "tyācā navā kathāsaṅgrah ālā.", ipa: "t̪jatsa nəʋa kət̪ʰasəŋɡrəɦ ala", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "नवा", base: "नवा", reading: "navā" }, { word: "आला", ref: "mr-0711" }] }
-      - { target: "कथासंग्रहातली पहिली कथा छान आहे.", reading: "kathāsaṅgrahātli pahili kathā chān āhe.", ipa: "kət̪ʰasəŋɡrəɦat̪li pəɦili kət̪ʰa tʃʰan aɦe", bases: [{ word: "कथासंग्रहातली", ref: "mr-1772" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कथा", ref: "mr-1528" }, { word: "छान", ref: "mr-0758" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कथासंग्रहातली पहिली कथा छान आहे.", reading: "kathāsaṅgrahātli pahili kathā chān āhe.", ipa: "kət̪ʰasəŋɡrəɦat̪li pəɦili kət̪ʰa tʃʰan aɦe", bases: [{ word: "कथासंग्रहातली", base: "कथासंग्रह", reading: "kathāsaṅgrah" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कथा", ref: "mr-1528" }, { word: "छान", ref: "mr-0758" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1773"
     target: "कवितासंग्रह"
     reading: "kavitāsaṅgrah"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "अध्याय", reading: "adhyāy" }] }
     examples:
       - { target: "पहिला अध्याय वाचला.", reading: "pahilā adhyāy vāclā.", ipa: "pəɦila əd̪ʱjaj ʋatsla", bases: [{ word: "पहिला", base: "पहिला", reading: "pahilā" }, { word: "वाचला", ref: "mr-0513" }] }
-      - { target: "या अध्यायात इतिहास आहे.", reading: "yā adhyāyāt itihās āhe.", ipa: "ja əd̪ʱjajat̪ it̪iɦas aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "अध्यायात", ref: "mr-1776" }, { word: "इतिहास", ref: "mr-1566" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या अध्यायात इतिहास आहे.", reading: "yā adhyāyāt itihās āhe.", ipa: "ja əd̪ʱjajat̪ it̪iɦas aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "अध्यायात", base: "अध्याय", reading: "adhyāy" }, { word: "इतिहास", ref: "mr-1566" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1777"
     target: "शीर्षक"
     reading: "śirṣak"
@@ -118,7 +118,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मुखपृष्ठ", reading: "mukhpruṣṭh" }] }
     examples:
       - { target: "मुखपृष्ठ रंगीत आहे.", reading: "mukhpruṣṭh raṅgit āhe.", ipa: "mukʰpruʂʈʰ rəŋɡit̪ aɦe", bases: [{ word: "रंगीत", base: "रंगीत", reading: "raṅgit" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "मुखपृष्ठावर चित्र काढलं.", reading: "mukhpruṣṭhāvar citr kāḍhlam̐.", ipa: "mukʰpruʂʈʰaʋər tʃit̪r kaɖʱlə̃", bases: [{ word: "मुखपृष्ठावर", ref: "mr-1778" }, { word: "चित्र", ref: "mr-1546" }, { word: "काढलं", ref: "mr-0796" }] }
+      - { target: "मुखपृष्ठावर चित्र काढलं.", reading: "mukhpruṣṭhāvar citr kāḍhlam̐.", ipa: "mukʰpruʂʈʰaʋər tʃit̪r kaɖʱlə̃", bases: [{ word: "मुखपृष्ठावर", base: "मुखपृष्ठ", reading: "mukhpruṣṭh" }, { word: "चित्र", ref: "mr-1546" }, { word: "काढलं", ref: "mr-0796" }] }
   - id: "mr-1779"
     target: "प्रस्तावना"
     reading: "prastāvnā"
@@ -151,7 +151,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पात्र", reading: "pātr" }] }
     examples:
       - { target: "कथेतलं मुख्य पात्र शेतकरी आहे.", reading: "kathetlam̐ mukhy pātr śetkri āhe.", ipa: "kət̪ʰet̪lə̃ mukʰj pat̪r ʃet̪kri aɦe", bases: [{ word: "कथेतलं", ref: "mr-1528" }, { word: "मुख्य", base: "मुख्य", reading: "mukhy" }, { word: "शेतकरी", ref: "mr-0239" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "या पात्राचा स्वभाव विनोदी आहे.", reading: "yā pātrācā svabhāv vinodi āhe.", ipa: "ja pat̪ratsa sʋəbʱaʋ ʋinod̪i aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "पात्राचा", ref: "mr-1781" }, { word: "स्वभाव", base: "स्वभाव", reading: "svabhāv" }, { word: "विनोदी", ref: "mr-1532" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या पात्राचा स्वभाव विनोदी आहे.", reading: "yā pātrācā svabhāv vinodi āhe.", ipa: "ja pat̪ratsa sʋəbʱaʋ ʋinod̪i aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "पात्राचा", base: "पात्र", reading: "pātr" }, { word: "स्वभाव", base: "स्वभाव", reading: "svabhāv" }, { word: "विनोदी", ref: "mr-1532" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1782"
     target: "शैली"
     reading: "śaili"
@@ -167,7 +167,7 @@ cards:
     target: "कल्पित"
     reading: "kalpit"
     ipa: "kəlpit̪"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कल्पित", reading: "kalpit" }] }
     examples:
@@ -183,7 +183,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सत्यकथा", reading: "satyakthā" }] }
     examples:
       - { target: "ही सत्यकथा आहे.", reading: "hi satyakthā āhe.", ipa: "ɦi sət̪jəkt̪ʰa aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "सत्यकथेवर चित्रपट बनला.", reading: "satyakthevar citrapaṭ banlā.", ipa: "sət̪jəkt̪ʰeʋər tʃit̪rəpəʈ bənla", bases: [{ word: "सत्यकथेवर", ref: "mr-1784" }, { word: "चित्रपट", ref: "mr-1522" }, { word: "बनला", base: "बनणे", reading: "banṇe" }] }
+      - { target: "सत्यकथेवर चित्रपट बनला.", reading: "satyakthevar citrapaṭ banlā.", ipa: "sət̪jəkt̪ʰeʋər tʃit̪rəpəʈ bənla", bases: [{ word: "सत्यकथेवर", base: "सत्यकथा", reading: "satyakthā" }, { word: "चित्रपट", ref: "mr-1522" }, { word: "बनला", base: "बनणे", reading: "banṇe" }] }
   - id: "mr-1785"
     target: "ओळ"
     reading: "oḷ"
@@ -215,7 +215,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "अनुवादक", reading: "anuvādak" }] }
     examples:
-      - { target: "अनुवादकाने पुस्तक छान अनुवादलं.", reading: "anuvādkāne pustak chān anuvādlam̐.", ipa: "ənuʋad̪kane pust̪ək tʃʰan ənuʋad̪lə̃", bases: [{ word: "अनुवादकाने", ref: "mr-1787" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छान", ref: "mr-0758" }] }
+      - { target: "अनुवादकाने पुस्तक छान अनुवादलं.", reading: "anuvādkāne pustak chān anuvādlam̐.", ipa: "ənuʋad̪kane pust̪ək tʃʰan ənuʋad̪lə̃", bases: [{ word: "अनुवादकाने", base: "अनुवादक", reading: "anuvādak" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छान", ref: "mr-0758" }] }
       - { target: "हा अनुवादक इंग्रजी जाणतो.", reading: "hā anuvādak iṅgraji jāṇto.", ipa: "ɦa ənuʋad̪ək iŋɡrədʒi dzaɳt̪o", bases: [{ word: "हा", ref: "mr-0679" }, { word: "इंग्रजी", base: "इंग्रजी", reading: "iṅgraji" }, { word: "जाणतो", base: "जाणणे", reading: "jāṇṇe" }] }
   - id: "mr-1788"
     target: "प्रकाशक"
@@ -226,7 +226,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्रकाशक", reading: "prakāśak" }] }
     examples:
-      - { target: "प्रकाशकाने पुस्तक छापलं.", reading: "prakāśkāne pustak chāplam̐.", ipa: "prəkaʃkane pust̪ək tʃʰaplə̃", bases: [{ word: "प्रकाशकाने", ref: "mr-1788" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छापलं", base: "छापणे", reading: "chāpṇe" }] }
+      - { target: "प्रकाशकाने पुस्तक छापलं.", reading: "prakāśkāne pustak chāplam̐.", ipa: "prəkaʃkane pust̪ək tʃʰaplə̃", bases: [{ word: "प्रकाशकाने", base: "प्रकाशक", reading: "prakāśak" }, { word: "पुस्तक", ref: "mr-0384" }, { word: "छापलं", base: "छापणे", reading: "chāpṇe" }] }
       - { target: "प्रकाशक नवीन लेखकांना संधी देतात.", reading: "prakāśak navin lekhkānnā sandhi detāt.", ipa: "prəkaʃək nəʋin lekʰkanna sənd̪ʱi d̪et̪at̪", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "लेखकांना", ref: "mr-1472" }, { word: "संधी", ref: "mr-1477" }, { word: "देतात", ref: "mr-0721" }] }
   - id: "mr-1789"
     target: "प्रकाशित करणे"
@@ -276,5 +276,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "उलगडणे", reading: "ulgḍṇe" }] }
     examples:
-      - { target: "कथा हळूहळू उलगडत गेली.", reading: "kathā haḷuhḷu ulgḍat geli.", ipa: "kət̪ʰa ɦəɭuɦɭu ulɡɖət̪ ɡeli", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "उलगडत", ref: "mr-1793" }, { word: "गेली", ref: "mr-0710" }] }
-      - { target: "रहस्य शेवटी उलगडलं.", reading: "rahasy śevṭi ulgḍlam̐.", ipa: "rəɦəsj ʃeʋʈi ulɡɖlə̃", bases: [{ word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "उलगडलं", ref: "mr-1793" }] }
+      - { target: "कथा हळूहळू उलगडत गेली.", reading: "kathā haḷuhḷu ulgḍat geli.", ipa: "kət̪ʰa ɦəɭuɦɭu ulɡɖət̪ ɡeli", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "उलगडत", base: "उलगडणे", reading: "ulgḍṇe" }, { word: "गेली", ref: "mr-0710" }] }
+      - { target: "रहस्य शेवटी उलगडलं.", reading: "rahasy śevṭi ulgḍlam̐.", ipa: "rəɦəsj ʃeʋʈi ulɡɖlə̃", bases: [{ word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "उलगडलं", base: "उलगडणे", reading: "ulgḍṇe" }] }

@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is art, a skill used to make beautiful things."
     examples:
       "ही कला खूप सुंदर आहे.": { native: "This art is very beautiful.", bases: { "आहे": "to be" } }
-      "कलेला वय नसतं.": { native: "Art has no age.", bases: { "नसतं": "not" } }
+      "कलेला वय नसतं.": { native: "Art has no age.", bases: { "नसतं": "not", "कलेला": "art" } }
   "mr-1546":
     native: "picture, painting"
     notes:
@@ -28,21 +28,21 @@ cards:
       "n1": "{1} is a painter. The feminine is चित्रकर्ती (citrakartī)."
     examples:
       "चित्रकार रंग मिसळतो.": { native: "The painter mixes colours.", bases: { "रंग": "colours" } }
-      "चित्रकाराचं प्रदर्शन आहे.": { native: "The painter has an exhibition.", bases: { "आहे": "to be" } }
+      "चित्रकाराचं प्रदर्शन आहे.": { native: "The painter has an exhibition.", bases: { "आहे": "to be", "चित्रकाराचं": "painter, artist" } }
   "mr-1548":
     native: "sculpture, craft"
     notes:
       "n1": "{1} is a sculpture or a crafted object."
     examples:
       "हे शिल्प दगडाचं आहे.": { native: "This sculpture is of stone.", bases: { "दगडाचं": "of stone", "आहे": "to be" } }
-      "शिल्पावर सुरेख कोरीव काम आहे.": { native: "The sculpture has fine carving.", bases: { "आहे": "to be" } }
+      "शिल्पावर सुरेख कोरीव काम आहे.": { native: "The sculpture has fine carving.", bases: { "आहे": "to be", "शिल्पावर": "sculpture, craft" } }
   "mr-1549":
     native: "sculptor"
     notes:
       "n1": "{1} is a sculptor who carves or shapes sculptures."
     examples:
       "शिल्पकार दगड कोरतो.": { native: "The sculptor carves stone.", bases: { "दगड": "stone" } }
-      "शिल्पकाराने मूर्ती घडवली.": { native: "The sculptor shaped the statue.", bases: { "मूर्ती": "statue", "घडवली": "to shape" } }
+      "शिल्पकाराने मूर्ती घडवली.": { native: "The sculptor shaped the statue.", bases: { "मूर्ती": "statue", "घडवली": "to shape", "शिल्पकाराने": "sculptor" } }
   "mr-1550":
     native: "dance (classical)"
     notes:
@@ -69,7 +69,7 @@ cards:
     notes:
       "n1": "{1} is a dholak, a small barrel drum."
     examples:
-      "ढोलकीच्या ताला वर नाचतात.": { native: "They dance to the beat of the dholak.", bases: { "तालावर": "to the beat" } }
+      "ढोलकीच्या ताला वर नाचतात.": { native: "They dance to the beat of the dholak.", bases: { "तालावर": "to the beat", "ढोलकीच्या": "dholak, small drum" } }
       "ढोलकी जोरात वाजली.": { native: "The dholak played loudly.", bases: { "जोरात": "loudly", "वाजली": "to play" } }
   "mr-1554":
     native: "poem"
@@ -84,7 +84,7 @@ cards:
       "n1": "{1} is a poet. The feminine is कवयित्री (kavayitrī)."
     examples:
       "कवी प्रेमाबद्दल लिहितो.": "The poet writes about love."
-      "कवीने नवीन कविता सादर केली.": { native: "The poet presented a new poem.", bases: { "नवीन": "new", "सादर": "presented" } }
+      "कवीने नवीन कविता सादर केली.": { native: "The poet presented a new poem.", bases: { "नवीन": "new", "सादर": "presented", "कवीने": "poet" } }
   "mr-1556":
     native: "folk verse (ovi)"
     notes:
@@ -98,13 +98,13 @@ cards:
       "n1": "{1} is lavani, a folk song and dance of Maharashtra."
     examples:
       "लावणी नृत्य रंगभूमीवर होतं.": { native: "Lavani dance was staged on the stage.", bases: { "रंगभूमीवर": "on the stage", "होतं": "to be" } }
-      "लावणीची सुंदर चाल आहे.": { native: "The lavani has a beautiful tune.", bases: { "चाल": "tune", "आहे": "to be" } }
+      "लावणीची सुंदर चाल आहे.": { native: "The lavani has a beautiful tune.", bases: { "चाल": "tune", "आहे": "to be", "लावणीची": "lavani, folk dance" } }
   "mr-1558":
     native: "stage"
     notes:
       "n1": "{1} is a stage for performances."
     examples:
-      "रंगमंचावर नाटक सुरू झालं.": { native: "The play started on the stage.", bases: { "सुरू": "started", "झालं": "to become" } }
+      "रंगमंचावर नाटक सुरू झालं.": { native: "The play started on the stage.", bases: { "सुरू": "started", "झालं": "to become", "रंगमंचावर": "stage" } }
       "कलाकार रंगमंचावर आले.": "The artists came onto the stage."
   "mr-1559":
     native: "exhibition"
@@ -112,7 +112,7 @@ cards:
       "n1": "{1} is an exhibition of art or things."
     examples:
       "प्रदर्शनी आज शेवटची आहे.": { native: "The exhibition is on its last day today.", bases: { "शेवटची": "last", "आहे": "to be" } }
-      "प्रदर्शनीत अनेक चित्रं आहेत.": { native: "There are many pictures at the exhibition.", bases: { "आहेत": "to be" } }
+      "प्रदर्शनीत अनेक चित्रं आहेत.": { native: "There are many pictures at the exhibition.", bases: { "आहेत": "to be", "प्रदर्शनीत": "exhibition" } }
   "mr-1560":
     native: "melodious, tuneful"
     notes:
@@ -132,26 +132,26 @@ cards:
     notes:
       "n1": "{1} is singing. The noun form is गाणं (gāṇaṁ), a song."
     examples:
-      "ती छान गाते.": "She sings nicely."
-      "आम्ही मिळून गाणं गायलो.": "We sang a song together."
+      "ती छान गाते.": { native: "She sings nicely.", bases: { "गाते": "to sing" } }
+      "आम्ही मिळून गाणं गायलो.": { native: "We sang a song together.", bases: { "गायलो": "to sing" } }
   "mr-1563":
     native: "to paint, to colour"
     notes:
       "n1": "{1} is painting or colouring a surface."
     examples:
-      "भिंत निळ्या रंगाने रंगवली.": { native: "I painted the wall blue.", bases: { "रंगाने": "with colour" } }
-      "मुलांनी चित्र रंगवलं.": "The children coloured the picture."
+      "भिंत निळ्या रंगाने रंगवली.": { native: "I painted the wall blue.", bases: { "रंगाने": "with colour", "रंगवली": "to paint, to colour" } }
+      "मुलांनी चित्र रंगवलं.": { native: "The children coloured the picture.", bases: { "रंगवलं": "to paint, to colour" } }
   "mr-1564":
     native: "to carve"
     notes:
       "n1": "{1} is carving a design into stone or wood."
     examples:
-      "शिल्पकार दगडावर नक्षी कोरतो.": { native: "The sculptor carves a design on the stone.", bases: { "दगडावर": "on the stone" } }
-      "लाकडावर सुंदर नक्षी कोरली.": { native: "A beautiful design was carved on the wood.", bases: { "लाकडावर": "on the wood" } }
+      "शिल्पकार दगडावर नक्षी कोरतो.": { native: "The sculptor carves a design on the stone.", bases: { "दगडावर": "on the stone", "कोरतो": "to carve" } }
+      "लाकडावर सुंदर नक्षी कोरली.": { native: "A beautiful design was carved on the wood.", bases: { "लाकडावर": "on the wood", "कोरली": "to carve" } }
   "mr-1565":
     native: "to play (an instrument)"
     notes:
       "n1": "{1} is playing a musical instrument."
     examples:
-      "तो बासरी वाजवतो.": "He plays the flute."
-      "मुलगी तबला वाजवते.": "The girl plays the tabla."
+      "तो बासरी वाजवतो.": { native: "He plays the flute.", bases: { "वाजवतो": "to play (an instrument)" } }
+      "मुलगी तबला वाजवते.": { native: "The girl plays the tabla.", bases: { "वाजवते": "to play (an instrument)" } }

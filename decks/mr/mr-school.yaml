@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शिक्षिका", reading: "śikṣikā" }] }
     examples:
       - { target: "शिक्षिका हुशार आहे.", reading: "śikṣikā huśār āhe.", ipa: "ʃikʂika ɦuʃar aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "शिक्षिकेने परीक्षा घेतली.", reading: "śikṣikene parikṣā ghetli.", ipa: "ʃikʂikene pərikʂa ɡʱet̪li", bases: [{ word: "शिक्षिकेने", ref: "mr-1114" }, { word: "घेतली", ref: "mr-0722" }] }
+      - { target: "शिक्षिकेने परीक्षा घेतली.", reading: "śikṣikene parikṣā ghetli.", ipa: "ʃikʂikene pərikʂa ɡʱet̪li", bases: [{ word: "शिक्षिकेने", base: "शिक्षिका", reading: "śikṣikā" }, { word: "घेतली", ref: "mr-0722" }] }
   - id: "mr-1115"
     target: "अभ्यास"
     reading: "abhyās"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "परीक्षा", reading: "parikṣā" }] }
     examples:
       - { target: "उद्या परीक्षा आहे.", reading: "udyā parikṣā āhe.", ipa: "ud̪ja pərikʂa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "परीक्षेचा निकाल उद्या येईल.", reading: "parikṣecā nikāl udyā yeil.", ipa: "pərikʂetsa nikal ud̪ja jeil", bases: [{ word: "परीक्षेचा", ref: "mr-1117" }, { word: "येईल", ref: "mr-0711" }] }
+      - { target: "परीक्षेचा निकाल उद्या येईल.", reading: "parikṣecā nikāl udyā yeil.", ipa: "pərikʂetsa nikal ud̪ja jeil", bases: [{ word: "परीक्षेचा", base: "परीक्षा", reading: "parikṣā" }, { word: "येईल", ref: "mr-0711" }] }
   - id: "mr-1118"
     target: "निकाल"
     reading: "nikāl"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खोडरबर", reading: "khoḍrbar" }] }
     examples:
       - { target: "खोडरबर दे.", reading: "khoḍrbar de.", ipa: "kʰoɖrbər d̪e", bases: [{ word: "दे", ref: "mr-0721" }] }
-      - { target: "चुकीचं उत्तर खोडरबरने पुसलं.", reading: "cukicam̐ uttar khoḍrbrne puslam̐.", ipa: "tsukitsə̃ ut̪t̪ər kʰoɖrbrne puslə̃", bases: [{ word: "खोडरबरने", ref: "mr-1119" }, { word: "पुसलं", ref: "mr-0793" }] }
+      - { target: "चुकीचं उत्तर खोडरबरने पुसलं.", reading: "cukicam̐ uttar khoḍrbrne puslam̐.", ipa: "tsukitsə̃ ut̪t̪ər kʰoɖrbrne puslə̃", bases: [{ word: "खोडरबरने", base: "खोडरबर", reading: "khoḍrbar" }, { word: "पुसलं", ref: "mr-0793" }] }
   - id: "mr-1120"
     target: "दप्तर"
     reading: "daptar"
@@ -95,7 +95,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "फळा", reading: "phaḷā" }] }
     examples:
-      - { target: "फळ्यावर लिही.", reading: "phaḷyāvar lihi.", ipa: "pʰəɭjaʋər liɦi", bases: [{ word: "फळ्यावर", ref: "mr-1121" }, { word: "लिही", ref: "mr-0716" }] }
+      - { target: "फळ्यावर लिही.", reading: "phaḷyāvar lihi.", ipa: "pʰəɭjaʋər liɦi", bases: [{ word: "फळ्यावर", base: "फळा", reading: "phaḷā" }, { word: "लिही", ref: "mr-0716" }] }
       - { target: "फळा स्वच्छ कर.", reading: "phaḷā svacch kar.", ipa: "pʰəɭa sʋətstʃʰ kər", bases: [{ word: "स्वच्छ", ref: "mr-0766" }, { word: "कर", ref: "mr-0712" }] }
   - id: "mr-1122"
     target: "खडू"
@@ -107,7 +107,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खडू", reading: "khaḍu" }] }
     examples:
       - { target: "खडू संपला.", reading: "khaḍu sampalā.", ipa: "kʰəɖu səmpəla", bases: [{ word: "संपला", base: "संपणे", reading: "sampaṇe" }] }
-      - { target: "खडूने फळ्यावर लिहिलं.", reading: "khaḍune phaḷyāvar lihilam̐.", ipa: "kʰəɖune pʰəɭjaʋər liɦilə̃", bases: [{ word: "खडूने", ref: "mr-1122" }, { word: "फळ्यावर", ref: "mr-1121" }, { word: "लिहिलं", ref: "mr-0716" }] }
+      - { target: "खडूने फळ्यावर लिहिलं.", reading: "khaḍune phaḷyāvar lihilam̐.", ipa: "kʰəɖune pʰəɭjaʋər liɦilə̃", bases: [{ word: "खडूने", base: "खडू", reading: "khaḍu" }, { word: "फळ्यावर", ref: "mr-1121" }, { word: "लिहिलं", ref: "mr-0716" }] }
   - id: "mr-1123"
     target: "गणित"
     reading: "gaṇit"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विज्ञान", reading: "vidnyān" }] }
     examples:
       - { target: "विज्ञान शिकायला मजा येते.", reading: "vidnyān śikāylā majā yete.", ipa: "ʋid̪ɲan ʃikajla mədza jet̪e", bases: [{ word: "शिकायला", ref: "mr-0717" }, { word: "येते", ref: "mr-0711" }] }
-      - { target: "विज्ञानाचं पुस्तक जड आहे.", reading: "vidnyānācam̐ pustak jaḍ āhe.", ipa: "ʋid̪ɲanatsə̃ pust̪ək dzəɖ aɦe", bases: [{ word: "विज्ञानाचं", ref: "mr-1124" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "विज्ञानाचं पुस्तक जड आहे.", reading: "vidnyānācam̐ pustak jaḍ āhe.", ipa: "ʋid̪ɲanatsə̃ pust̪ək dzəɖ aɦe", bases: [{ word: "विज्ञानाचं", base: "विज्ञान", reading: "vidnyān" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1125"
     target: "प्रयोगशाळा"
     reading: "prayogśāḷā"
@@ -139,7 +139,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्रयोगशाळा", reading: "prayogśāḷā" }] }
     examples:
-      - { target: "प्रयोगशाळेत प्रयोग केला.", reading: "prayogśāḷet prayog kelā.", ipa: "prəjoɡʃaɭet̪ prəjoɡ kela", bases: [{ word: "प्रयोगशाळेत", ref: "mr-1125" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "प्रयोगशाळेत प्रयोग केला.", reading: "prayogśāḷet prayog kelā.", ipa: "prəjoɡʃaɭet̪ prəjoɡ kela", bases: [{ word: "प्रयोगशाळेत", base: "प्रयोगशाळा", reading: "prayogśāḷā" }, { word: "केला", ref: "mr-0712" }] }
       - { target: "प्रयोगशाळा बंद आहे.", reading: "prayogśāḷā band āhe.", ipa: "prəjoɡʃaɭa bənd̪ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1126"
     target: "उत्तीर्ण होणे"

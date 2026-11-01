@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is a female teacher."
     examples:
       "शिक्षिका हुशार आहे.": { native: "The teacher is clever.", bases: { "आहे": "to be" } }
-      "शिक्षिकेने परीक्षा घेतली.": "The teacher took the exam."
+      "शिक्षिकेने परीक्षा घेतली.": { native: "The teacher took the exam.", bases: { "शिक्षिकेने": "teacher (woman)" } }
   "mr-1115":
     native: "study, practice"
     notes:
@@ -35,7 +35,7 @@ cards:
       "n1": "{1} is an exam or a test."
     examples:
       "उद्या परीक्षा आहे.": { native: "There is an exam tomorrow.", bases: { "आहे": "to be" } }
-      "परीक्षेचा निकाल उद्या येईल.": "The exam result will come tomorrow."
+      "परीक्षेचा निकाल उद्या येईल.": { native: "The exam result will come tomorrow.", bases: { "परीक्षेचा": "exam" } }
   "mr-1118":
     native: "result"
     notes:
@@ -49,7 +49,7 @@ cards:
       "n1": "{1} is an eraser, rubber for pencil."
     examples:
       "खोडरबर दे.": "Give me the eraser."
-      "चुकीचं उत्तर खोडरबरने पुसलं.": "I erased the wrong answer with the eraser."
+      "चुकीचं उत्तर खोडरबरने पुसलं.": { native: "I erased the wrong answer with the eraser.", bases: { "खोडरबरने": "eraser" } }
   "mr-1120":
     native: "school bag"
     notes:
@@ -62,7 +62,7 @@ cards:
     notes:
       "n1": "{1} is the blackboard that the teacher writes on."
     examples:
-      "फळ्यावर लिही.": "Write on the board."
+      "फळ्यावर लिही.": { native: "Write on the board.", bases: { "फळ्यावर": "blackboard" } }
       "फळा स्वच्छ कर.": "Clean the board."
   "mr-1122":
     native: "chalk"
@@ -70,7 +70,7 @@ cards:
       "n1": "{1} is chalk, used on the blackboard."
     examples:
       "खडू संपला.": { native: "The chalk has run out.", bases: { "संपला": "to end" } }
-      "खडूने फळ्यावर लिहिलं.": "She wrote on the board with chalk."
+      "खडूने फळ्यावर लिहिलं.": { native: "She wrote on the board with chalk.", bases: { "खडूने": "chalk" } }
   "mr-1123":
     native: "mathematics"
     notes:
@@ -84,13 +84,13 @@ cards:
       "n1": "{1} is science, a school subject."
     examples:
       "विज्ञान शिकायला मजा येते.": "It is fun to learn science."
-      "विज्ञानाचं पुस्तक जड आहे.": { native: "The science book is heavy.", bases: { "आहे": "to be" } }
+      "विज्ञानाचं पुस्तक जड आहे.": { native: "The science book is heavy.", bases: { "आहे": "to be", "विज्ञानाचं": "science" } }
   "mr-1125":
     native: "laboratory"
     notes:
       "n1": "{1} is a laboratory, the room for science experiments."
     examples:
-      "प्रयोगशाळेत प्रयोग केला.": "We did an experiment in the laboratory."
+      "प्रयोगशाळेत प्रयोग केला.": { native: "We did an experiment in the laboratory.", bases: { "प्रयोगशाळेत": "laboratory" } }
       "प्रयोगशाळा बंद आहे.": { native: "The laboratory is closed.", bases: { "आहे": "to be" } }
   "mr-1126":
     native: "to pass (an exam)"

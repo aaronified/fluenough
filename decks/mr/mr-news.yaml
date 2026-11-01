@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पत्रकार", reading: "patrakār" }] }
     examples:
       - { target: "पत्रकार प्रश्न विचारत होते.", reading: "patrakār praśn vicārat hote.", ipa: "pət̪rəkar prəʃn ʋitsarət̪ ɦot̪e", bases: [{ word: "प्रश्न", base: "प्रश्न", reading: "praśn" }, { word: "विचारत", ref: "mr-1177" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
-      - { target: "पत्रकाराने मुलाखत घेतली.", reading: "patrakārāne mulākhat ghetli.", ipa: "pət̪rəkarane mulakʰət̪ ɡʱet̪li", bases: [{ word: "पत्रकाराने", ref: "mr-1342" }, { word: "मुलाखत", ref: "mr-1265" }, { word: "घेतली", ref: "mr-0722" }] }
+      - { target: "पत्रकाराने मुलाखत घेतली.", reading: "patrakārāne mulākhat ghetli.", ipa: "pət̪rəkarane mulakʰət̪ ɡʱet̪li", bases: [{ word: "पत्रकाराने", base: "पत्रकार", reading: "patrakār" }, { word: "मुलाखत", ref: "mr-1265" }, { word: "घेतली", ref: "mr-0722" }] }
   - id: "mr-1343"
     target: "टीव्ही"
     reading: "ṭivhi"
@@ -51,7 +51,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "टीव्ही", reading: "ṭivhi" }] }
     examples:
-      - { target: "टीव्हीवर बातम्या लागल्या.", reading: "ṭivhivar bātamyā lāgalyā.", ipa: "ʈiʋɦiʋər bat̪əmja laɡəlja", bases: [{ word: "टीव्हीवर", ref: "mr-1343" }, { word: "लागल्या", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "टीव्हीवर बातम्या लागल्या.", reading: "ṭivhivar bātamyā lāgalyā.", ipa: "ʈiʋɦiʋər bat̪əmja laɡəlja", bases: [{ word: "टीव्हीवर", base: "टीव्ही", reading: "ṭivhi" }, { word: "लागल्या", base: "लागणे", reading: "lāgṇe" }] }
       - { target: "टीव्ही बंद करा.", reading: "ṭivhi band karā.", ipa: "ʈiʋɦi bənd̪ kəra", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1344"
     target: "रेडिओ"
@@ -62,7 +62,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "रेडिओ", reading: "reḍio" }] }
     examples:
-      - { target: "रेडिओवर गाणी लागली.", reading: "reḍiovar gāṇi lāgli.", ipa: "reɖioʋər ɡaɳi laɡli", bases: [{ word: "रेडिओवर", ref: "mr-1344" }, { word: "गाणी", base: "गाणं", reading: "gāṇam̐" }, { word: "लागली", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "रेडिओवर गाणी लागली.", reading: "reḍiovar gāṇi lāgli.", ipa: "reɖioʋər ɡaɳi laɡli", bases: [{ word: "रेडिओवर", base: "रेडिओ", reading: "reḍio" }, { word: "गाणी", base: "गाणं", reading: "gāṇam̐" }, { word: "लागली", base: "लागणे", reading: "lāgṇe" }] }
       - { target: "रेडिओ ऐकणं आवडतं.", reading: "reḍio aikṇam̐ āvḍtam̐.", ipa: "reɖio əikɳə̃ aʋɖt̪ə̃", bases: [{ word: "ऐकणं", ref: "mr-0715" }, { word: "आवडतं", ref: "mr-0585" }] }
   - id: "mr-1345"
     target: "वृत्तवाहिनी"
@@ -84,7 +84,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मथळा", reading: "mathḷā" }] }
     examples:
-      - { target: "पहिल्या पानावर मथळा मोठा आहे.", reading: "pahilyā pānāvar mathḷā moṭhā āhe.", ipa: "pəɦilja panaʋər mət̪ʰɭa moʈʰa aɦe", bases: [{ word: "पहिल्या", base: "पहिला", reading: "pahilā" }, { word: "पानावर", base: "पान", reading: "pān" }, { word: "मथळा", ref: "mr-1346" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पहिल्या पानावर मथळा मोठा आहे.", reading: "pahilyā pānāvar mathḷā moṭhā āhe.", ipa: "pəɦilja panaʋər mət̪ʰɭa moʈʰa aɦe", bases: [{ word: "पहिल्या", base: "पहिला", reading: "pahilā" }, { word: "पानावर", base: "पान", reading: "pān" }, { word: "मथळा", base: "मथळा", reading: "mathḷā" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
       - { target: "मथळा वाचून सगळे थांबले.", reading: "mathḷā vācun sagḷe thāmbale.", ipa: "mət̪ʰɭa ʋatsun səɡɭe t̪ʰambəle", bases: [{ word: "वाचून", ref: "mr-0513" }, { word: "थांबले", ref: "mr-0803" }] }
   - id: "mr-1347"
     target: "लेख"
@@ -106,7 +106,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "संपादक", reading: "sampādak" }] }
     examples:
-      - { target: "संपादकांनी लेख मंजूर केला.", reading: "sampādkānni lekh mañjur kelā.", ipa: "səmpad̪kanni lekʰ məɲdzur kela", bases: [{ word: "संपादकांनी", ref: "mr-1348" }, { word: "लेख", ref: "mr-1347" }, { word: "मंजूर", base: "मंजूर", reading: "mañjur" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "संपादकांनी लेख मंजूर केला.", reading: "sampādkānni lekh mañjur kelā.", ipa: "səmpad̪kanni lekʰ məɲdzur kela", bases: [{ word: "संपादकांनी", base: "संपादक", reading: "sampādak" }, { word: "लेख", ref: "mr-1347" }, { word: "मंजूर", base: "मंजूर", reading: "mañjur" }, { word: "केला", ref: "mr-0712" }] }
       - { target: "संपादक नवीन आहेत.", reading: "sampādak navin āhet.", ipa: "səmpad̪ək nəʋin aɦet̪", bases: [{ word: "आहेत", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1349"
     target: "घटना"
@@ -118,12 +118,12 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "घटना", reading: "ghaṭnā" }] }
     examples:
       - { target: "ही घटना काल घडली.", reading: "hi ghaṭnā kāl ghaḍli.", ipa: "ɦi ɡʱəʈna kal ɡʱəɖli", bases: [{ word: "ही", ref: "mr-0679" }, { word: "घडली", ref: "mr-1360" }] }
-      - { target: "घटनेची बातमी सगळीकडे पसरली.", reading: "ghaṭneci bātmi sagḷikḍe pasrli.", ipa: "ɡʱəʈnetʃi bat̪mi səɡɭikɖe pəsrli", bases: [{ word: "घटनेची", ref: "mr-1349" }, { word: "बातमी", ref: "mr-1340" }, { word: "पसरली", ref: "mr-1361" }] }
+      - { target: "घटनेची बातमी सगळीकडे पसरली.", reading: "ghaṭneci bātmi sagḷikḍe pasrli.", ipa: "ɡʱəʈnetʃi bat̪mi səɡɭikɖe pəsrli", bases: [{ word: "घटनेची", base: "घटना", reading: "ghaṭnā" }, { word: "बातमी", ref: "mr-1340" }, { word: "पसरली", ref: "mr-1361" }] }
   - id: "mr-1350"
     target: "स्थानिक"
     reading: "sthānik"
     ipa: "st̪ʰanik"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "स्थानिक", reading: "sthānik" }] }
     examples:
@@ -133,7 +133,7 @@ cards:
     target: "राष्ट्रीय"
     reading: "rāṣṭriy"
     ipa: "raʂʈrij"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "राष्ट्रीय", reading: "rāṣṭriy" }] }
     examples:
@@ -143,7 +143,7 @@ cards:
     target: "आंतरराष्ट्रीय"
     reading: "āntarrāṣṭriy"
     ipa: "ant̪ərraʂʈrij"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आंतरराष्ट्रीय", reading: "āntarrāṣṭriy" }] }
     examples:
@@ -212,8 +212,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कळवणे", reading: "kaḷvṇe" }] }
     examples:
-      - { target: "मला लवकर कळवा.", reading: "malā lavkar kaḷvā.", ipa: "məla ləʋkər kəɭʋa", bases: [{ word: "मला", ref: "mr-0080" }, { word: "कळवा", ref: "mr-1358" }] }
-      - { target: "त्यांनी आम्हाला बातमी कळवली.", reading: "tyānni āmhālā bātmi kaḷvli.", ipa: "t̪janni amɦala bat̪mi kəɭʋli", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "आम्हाला", ref: "mr-0138" }, { word: "कळवली", ref: "mr-1358" }] }
+      - { target: "मला लवकर कळवा.", reading: "malā lavkar kaḷvā.", ipa: "məla ləʋkər kəɭʋa", bases: [{ word: "मला", ref: "mr-0080" }, { word: "कळवा", base: "कळवणे", reading: "kaḷvṇe" }] }
+      - { target: "त्यांनी आम्हाला बातमी कळवली.", reading: "tyānni āmhālā bātmi kaḷvli.", ipa: "t̪janni amɦala bat̪mi kəɭʋli", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "आम्हाला", ref: "mr-0138" }, { word: "कळवली", base: "कळवणे", reading: "kaḷvṇe" }] }
   - id: "mr-1359"
     target: "प्रसिद्ध करणे"
     reading: "prasiddh karṇe"
@@ -232,8 +232,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "घडणे", reading: "ghaḍṇe" }] }
     examples:
-      - { target: "काल काय घडलं?", reading: "kāl kāy ghaḍlam̐?", ipa: "kal kaj ɡʱəɖlə̃", bases: [{ word: "घडलं", ref: "mr-1360" }] }
-      - { target: "ही घटना कुठे घडली?", reading: "hi ghaṭnā kuṭhe ghaḍli?", ipa: "ɦi ɡʱəʈna kuʈʰe ɡʱəɖli", bases: [{ word: "घडली", ref: "mr-1360" }] }
+      - { target: "काल काय घडलं?", reading: "kāl kāy ghaḍlam̐?", ipa: "kal kaj ɡʱəɖlə̃", bases: [{ word: "घडलं", base: "घडणे", reading: "ghaḍṇe" }] }
+      - { target: "ही घटना कुठे घडली?", reading: "hi ghaṭnā kuṭhe ghaḍli?", ipa: "ɦi ɡʱəʈna kuʈʰe ɡʱəɖli", bases: [{ word: "घडली", base: "घडणे", reading: "ghaḍṇe" }] }
   - id: "mr-1361"
     target: "पसरणे"
     reading: "pasrṇe"
@@ -242,5 +242,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पसरणे", reading: "pasrṇe" }] }
     examples:
-      - { target: "बातमी गावभर पसरली.", reading: "bātmi gāvbhar pasrli.", ipa: "bat̪mi ɡaʋbʱər pəsrli", bases: [{ word: "गावभर", ref: "mr-0209" }, { word: "पसरली", ref: "mr-1361" }] }
-      - { target: "आग वेगाने पसरत होती.", reading: "āg vegāne pasrat hoti.", ipa: "aɡ ʋeɡane pəsrət̪ ɦot̪i", bases: [{ word: "वेगाने", base: "वेग", reading: "veg" }, { word: "पसरत", ref: "mr-1361" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
+      - { target: "बातमी गावभर पसरली.", reading: "bātmi gāvbhar pasrli.", ipa: "bat̪mi ɡaʋbʱər pəsrli", bases: [{ word: "गावभर", ref: "mr-0209" }, { word: "पसरली", base: "पसरणे", reading: "pasrṇe" }] }
+      - { target: "आग वेगाने पसरत होती.", reading: "āg vegāne pasrat hoti.", ipa: "aɡ ʋeɡane pəsrət̪ ɦot̪i", bases: [{ word: "वेगाने", base: "वेग", reading: "veg" }, { word: "पसरत", base: "पसरणे", reading: "pasrṇe" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }

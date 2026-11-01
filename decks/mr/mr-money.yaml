@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पैसा", reading: "paisā" }] }
     examples:
       - { target: "माझ्याकडे पैसा नाही.", reading: "mājhyākḍe paisā nāhi.", ipa: "madʒʱjakɖe pəisa naɦi", bases: [{ word: "माझ्याकडे", ref: "mr-0080" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
-      - { target: "पैशांचं नियोजन करा.", reading: "paiśāñcam̐ niyojan karā.", ipa: "pəiʃaɲtsə̃ nijodzən kəra", bases: [{ word: "पैशांचं", ref: "mr-1747" }, { word: "नियोजन", base: "नियोजन", reading: "niyojan" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "पैशांचं नियोजन करा.", reading: "paiśāñcam̐ niyojan karā.", ipa: "pəiʃaɲtsə̃ nijodzən kəra", bases: [{ word: "पैशांचं", base: "पैसा", reading: "paisā" }, { word: "नियोजन", base: "नियोजन", reading: "niyojan" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1748"
     target: "कमाई"
     reading: "kamāi"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कमाई", reading: "kamāi" }] }
     examples:
       - { target: "त्याची महिन्याची कमाई चांगली आहे.", reading: "tyāci mahinyāci kamāi cāṅgali āhe.", ipa: "t̪jatʃi məɦinjatʃi kəmai tsaŋɡəli aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "महिन्याची", ref: "mr-0514" }, { word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कमाईतून घर चालतं.", reading: "kamāitun ghar cāltam̐.", ipa: "kəmait̪un ɡʱər tsalt̪ə̃", bases: [{ word: "कमाईतून", ref: "mr-1748" }, { word: "घर", ref: "mr-0048" }, { word: "चालतं", ref: "mr-0512" }] }
+      - { target: "कमाईतून घर चालतं.", reading: "kamāitun ghar cāltam̐.", ipa: "kəmait̪un ɡʱər tsalt̪ə̃", bases: [{ word: "कमाईतून", base: "कमाई", reading: "kamāi" }, { word: "घर", ref: "mr-0048" }, { word: "चालतं", ref: "mr-0512" }] }
   - id: "mr-1749"
     target: "उत्पन्न"
     reading: "utpann"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "उत्पन्न", reading: "utpann" }] }
     examples:
       - { target: "माझं वार्षिक उत्पन्न वाढलं.", reading: "mājham̐ vārṣik utpann vāḍhlam̐.", ipa: "madzʱə̃ ʋarʂik ut̪pənn ʋaɖʱlə̃", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "वार्षिक", base: "वार्षिक", reading: "vārṣik" }, { word: "वाढलं", ref: "mr-1027" }] }
-      - { target: "उत्पन्नाचा दाखला आणा.", reading: "utpannācā dākhlā āṇā.", ipa: "ut̪pənnatsa d̪akʰla aɳa", bases: [{ word: "उत्पन्नाचा", ref: "mr-1749" }, { word: "दाखला", base: "दाखला", reading: "dākhlā" }, { word: "आणा", ref: "mr-0800" }] }
+      - { target: "उत्पन्नाचा दाखला आणा.", reading: "utpannācā dākhlā āṇā.", ipa: "ut̪pənnatsa d̪akʰla aɳa", bases: [{ word: "उत्पन्नाचा", base: "उत्पन्न", reading: "utpann" }, { word: "दाखला", base: "दाखला", reading: "dākhlā" }, { word: "आणा", ref: "mr-0800" }] }
   - id: "mr-1750"
     target: "खर्च"
     reading: "kharc"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गुंतवणूक", reading: "guntavṇuk" }] }
     examples:
       - { target: "ही चांगली गुंतवणूक आहे.", reading: "hi cāṅgali guntavṇuk āhe.", ipa: "ɦi tsaŋɡəli ɡunt̪əʋɳuk aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "गुंतवणुकीचा विचार करा.", reading: "guntavṇukicā vicār karā.", ipa: "ɡunt̪əʋɳukitsa ʋitsar kəra", bases: [{ word: "गुंतवणुकीचा", ref: "mr-1752" }, { word: "विचार", ref: "mr-1365" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "गुंतवणुकीचा विचार करा.", reading: "guntavṇukicā vicār karā.", ipa: "ɡunt̪əʋɳukitsa ʋitsar kəra", bases: [{ word: "गुंतवणुकीचा", base: "गुंतवणूक", reading: "guntavṇuk" }, { word: "विचार", ref: "mr-1365" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1753"
     target: "कर्ज"
     reading: "karj"
@@ -107,7 +107,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विमा", reading: "vimā" }] }
     examples:
       - { target: "आरोग्य विमा घेतला.", reading: "ārogy vimā ghetlā.", ipa: "aroɡj ʋima ɡʱet̪la", bases: [{ word: "आरोग्य", ref: "mr-1297" }, { word: "घेतला", ref: "mr-0722" }] }
-      - { target: "विम्याची रक्कम किती आहे?", reading: "vimyāci rakkam kiti āhe?", ipa: "ʋimjatʃi rəkkəm kit̪i aɦe", bases: [{ word: "विम्याची", ref: "mr-1755" }, { word: "रक्कम", ref: "mr-1419" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "विम्याची रक्कम किती आहे?", reading: "vimyāci rakkam kiti āhe?", ipa: "ʋimjatʃi rəkkəm kit̪i aɦe", bases: [{ word: "विम्याची", base: "विमा", reading: "vimā" }, { word: "रक्कम", ref: "mr-1419" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1756"
     target: "बजेट"
     reading: "bajeṭ"
@@ -129,12 +129,12 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "दागिना", reading: "dāginā" }] }
     examples:
       - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", ref: "mr-0792" }] }
-      - { target: "दागिन्यांची किंमत जास्त आहे.", reading: "dāginyāñci kimmat jāst āhe.", ipa: "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", bases: [{ word: "दागिन्यांची", ref: "mr-1757" }, { word: "किंमत", ref: "mr-0370" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "दागिन्यांची किंमत जास्त आहे.", reading: "dāginyāñci kimmat jāst āhe.", ipa: "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", bases: [{ word: "दागिन्यांची", base: "दागिना", reading: "dāginā" }, { word: "किंमत", ref: "mr-0370" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1758"
     target: "गरीब"
     reading: "garib"
     ipa: "ɡərib"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गरीब", reading: "garib" }] }
     examples:
@@ -144,7 +144,7 @@ cards:
     target: "बेरोजगार"
     reading: "berojgār"
     ipa: "berodzɡar"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बेरोजगार", reading: "berojgār" }] }
     examples:
@@ -154,7 +154,7 @@ cards:
     target: "आर्थिक"
     reading: "ārthik"
     ipa: "art̪ʰik"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आर्थिक", reading: "ārthik" }] }
     examples:
@@ -170,7 +170,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "नफा", reading: "naphā" }] }
     examples:
       - { target: "या व्यवसायात नफा चांगला आहे.", reading: "yā vyavsāyāt naphā cāṅgalā āhe.", ipa: "ja ʋjəʋsajat̪ nəpʰa tsaŋɡəla aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "व्यवसायात", ref: "mr-0250" }, { word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "नफ्यातला वाटा द्या.", reading: "naphyātlā vāṭā dyā.", ipa: "nəpʰjat̪la ʋaʈa d̪ja", bases: [{ word: "नफ्यातला", ref: "mr-1761" }, { word: "वाटा", base: "वाटा", reading: "vāṭā" }, { word: "द्या", ref: "mr-0721" }] }
+      - { target: "नफ्यातला वाटा द्या.", reading: "naphyātlā vāṭā dyā.", ipa: "nəpʰjat̪la ʋaʈa d̪ja", bases: [{ word: "नफ्यातला", base: "नफा", reading: "naphā" }, { word: "वाटा", base: "वाटा", reading: "vāṭā" }, { word: "द्या", ref: "mr-0721" }] }
   - id: "mr-1762"
     target: "वेतन"
     reading: "vetan"
@@ -190,8 +190,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कमावणे", reading: "kamāvṇe" }] }
     examples:
-      - { target: "तो चांगले पैसे कमावतो.", reading: "to cāṅgale paise kamāvto.", ipa: "t̪o tsaŋɡəle pəise kəmaʋt̪o", bases: [{ word: "पैसे", ref: "mr-1747" }, { word: "कमावतो", ref: "mr-1763" }] }
-      - { target: "मी स्वतः पैसे कमावले.", reading: "mi svataḥ paise kamāvle.", ipa: "mi sʋət̪əh pəise kəmaʋle", bases: [{ word: "स्वतः", ref: "mr-0682" }, { word: "कमावले", ref: "mr-1763" }] }
+      - { target: "तो चांगले पैसे कमावतो.", reading: "to cāṅgale paise kamāvto.", ipa: "t̪o tsaŋɡəle pəise kəmaʋt̪o", bases: [{ word: "पैसे", ref: "mr-1747" }, { word: "कमावतो", base: "कमावणे", reading: "kamāvṇe" }] }
+      - { target: "मी स्वतः पैसे कमावले.", reading: "mi svataḥ paise kamāvle.", ipa: "mi sʋət̪əh pəise kəmaʋle", bases: [{ word: "स्वतः", ref: "mr-0682" }, { word: "कमावले", base: "कमावणे", reading: "kamāvṇe" }] }
   - id: "mr-1764"
     target: "खर्च करणे"
     reading: "kharc karṇe"
@@ -220,8 +220,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गुंतवणे", reading: "guntavṇe" }] }
     examples:
-      - { target: "त्याने शेअर्समध्ये पैसे गुंतवले.", reading: "tyāne śearsamadhye paise guntavle.", ipa: "t̪jane ʃeərsəməd̪ʱje pəise ɡunt̪əʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पैसे", ref: "mr-1747" }, { word: "गुंतवले", ref: "mr-1766" }] }
-      - { target: "पैसे कुठे गुंतवायचे?", reading: "paise kuṭhe guntavāyce?", ipa: "pəise kuʈʰe ɡunt̪əʋajtʃe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "गुंतवायचे", ref: "mr-1766" }] }
+      - { target: "त्याने शेअर्समध्ये पैसे गुंतवले.", reading: "tyāne śearsamadhye paise guntavle.", ipa: "t̪jane ʃeərsəməd̪ʱje pəise ɡunt̪əʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पैसे", ref: "mr-1747" }, { word: "गुंतवले", base: "गुंतवणे", reading: "guntavṇe" }] }
+      - { target: "पैसे कुठे गुंतवायचे?", reading: "paise kuṭhe guntavāyce?", ipa: "pəise kuʈʰe ɡunt̪əʋajtʃe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "गुंतवायचे", base: "गुंतवणे", reading: "guntavṇe" }] }
   - id: "mr-1767"
     target: "कर्ज घेणे"
     reading: "karj gheṇe"

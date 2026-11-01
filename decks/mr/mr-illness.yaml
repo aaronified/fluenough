@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सर्दी", reading: "sardi" }] }
     examples:
       - { target: "मला सर्दी झाली आहे.", reading: "malā sardi jhāli āhe.", ipa: "məla sərd̪i dzʱali aɦe", bases: [{ word: "मला", ref: "mr-0080" }, { word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "सर्दीमुळे नाक वाहतं.", reading: "sardimuḷe nāk vāhtam̐.", ipa: "sərd̪imuɭe nak ʋaɦt̪ə̃", bases: [{ word: "सर्दीमुळे", ref: "mr-1090" }, { word: "वाहतं", ref: "mr-1023" }] }
+      - { target: "सर्दीमुळे नाक वाहतं.", reading: "sardimuḷe nāk vāhtam̐.", ipa: "sərd̪imuɭe nak ʋaɦt̪ə̃", bases: [{ word: "सर्दीमुळे", base: "सर्दी", reading: "sardi" }, { word: "वाहतं", ref: "mr-1023" }] }
   - id: "mr-1091"
     target: "खोकला"
     reading: "khoklā"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खोकला", reading: "khoklā" }] }
     examples:
       - { target: "रात्री खोकला येतो.", reading: "rātri khoklā yeto.", ipa: "rat̪ri kʰokla jet̪o", bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "येतो", ref: "mr-0711" }] }
-      - { target: "खोकल्याचं औषध घ्या.", reading: "khokalyācam̐ auṣadh ghyā.", ipa: "kʰokəljatsə̃ əuʂəd̪ʱ ɡʱja", bases: [{ word: "खोकल्याचं", ref: "mr-1091" }, { word: "घ्या", ref: "mr-0722" }] }
+      - { target: "खोकल्याचं औषध घ्या.", reading: "khokalyācam̐ auṣadh ghyā.", ipa: "kʰokəljatsə̃ əuʂəd̪ʱ ɡʱja", bases: [{ word: "खोकल्याचं", base: "खोकला", reading: "khoklā" }, { word: "घ्या", ref: "mr-0722" }] }
   - id: "mr-1092"
     target: "डोकेदुखी"
     reading: "ḍokedukhi"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पोटदुखी", reading: "poṭdukhi" }] }
     examples:
       - { target: "बाळाला पोटदुखी होते.", reading: "bāḷālā poṭdukhi hote.", ipa: "baɭala poʈd̪ukʰi ɦot̪e", bases: [{ word: "बाळाला", base: "बाळ", reading: "bāḷ" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
-      - { target: "पोटदुखीसाठी गोळी घ्या.", reading: "poṭdukhisāṭhi goḷi ghyā.", ipa: "poʈd̪ukʰisaʈʰi ɡoɭi ɡʱja", bases: [{ word: "पोटदुखीसाठी", ref: "mr-1093" }, { word: "घ्या", ref: "mr-0722" }] }
+      - { target: "पोटदुखीसाठी गोळी घ्या.", reading: "poṭdukhisāṭhi goḷi ghyā.", ipa: "poʈd̪ukʰisaʈʰi ɡoɭi ɡʱja", bases: [{ word: "पोटदुखीसाठी", base: "पोटदुखी", reading: "poṭdukhi" }, { word: "घ्या", ref: "mr-0722" }] }
   - id: "mr-1094"
     target: "गोळी"
     reading: "goḷi"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गोळी", reading: "goḷi" }] }
     examples:
       - { target: "गोळी गिळा.", reading: "goḷi giḷā.", ipa: "ɡoɭi ɡiɭa", bases: [{ word: "गिळा", base: "गिळणे", reading: "giḷṇe" }] }
-      - { target: "दोन गोळ्या घ्या.", reading: "don goḷyā ghyā.", ipa: "d̪on ɡoɭja ɡʱja", bases: [{ word: "गोळ्या", ref: "mr-1094" }, { word: "घ्या", ref: "mr-0722" }] }
+      - { target: "दोन गोळ्या घ्या.", reading: "don goḷyā ghyā.", ipa: "d̪on ɡoɭja ɡʱja", bases: [{ word: "गोळ्या", base: "गोळी", reading: "goḷi" }, { word: "घ्या", ref: "mr-0722" }] }
   - id: "mr-1095"
     target: "नर्स"
     reading: "nars"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "रुग्ण", reading: "rugṇ" }] }
     examples:
       - { target: "रुग्ण बरा होतोय.", reading: "rugṇ barā hotoy.", ipa: "ruɡɳ bəra ɦot̪oj", bases: [{ word: "बरा", ref: "mr-0779" }, { word: "होतोय", base: "होणे", reading: "hoṇe" }] }
-      - { target: "रुग्णाला पाणी द्या.", reading: "rugṇālā pāṇi dyā.", ipa: "ruɡɳala paɳi d̪ja", bases: [{ word: "रुग्णाला", ref: "mr-1096" }, { word: "द्या", ref: "mr-0721" }] }
+      - { target: "रुग्णाला पाणी द्या.", reading: "rugṇālā pāṇi dyā.", ipa: "ruɡɳala paɳi d̪ja", bases: [{ word: "रुग्णाला", base: "रुग्ण", reading: "rugṇ" }, { word: "द्या", ref: "mr-0721" }] }
   - id: "mr-1097"
     target: "थकवा"
     reading: "thakvā"
@@ -182,8 +182,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दुखणे", reading: "dukhṇe" }] }
     examples:
-      - { target: "पाय दुखतो.", reading: "pāy dukhto.", ipa: "paj d̪ukʰt̪o", bases: [{ word: "दुखतो", ref: "mr-1105" }] }
-      - { target: "डोळे दुखतात.", reading: "ḍoḷe dukhtāt.", ipa: "ɖoɭe d̪ukʰt̪at̪", bases: [{ word: "दुखतात", ref: "mr-1105" }] }
+      - { target: "पाय दुखतो.", reading: "pāy dukhto.", ipa: "paj d̪ukʰt̪o", bases: [{ word: "दुखतो", base: "दुखणे", reading: "dukhṇe" }] }
+      - { target: "डोळे दुखतात.", reading: "ḍoḷe dukhtāt.", ipa: "ɖoɭe d̪ukʰt̪at̪", bases: [{ word: "दुखतात", base: "दुखणे", reading: "dukhṇe" }] }
   - id: "mr-1106"
     target: "तपासणे"
     reading: "tapāsṇe"
@@ -192,5 +192,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "तपासणे", reading: "tapāsṇe" }] }
     examples:
-      - { target: "डॉक्टर मला तपासतात.", reading: "ḍôkṭar malā tapāstāt.", ipa: "ɖɔkʈər məla t̪əpast̪at̪", bases: [{ word: "तपासतात", ref: "mr-1106" }] }
-      - { target: "नर्सने तापमान तपासलं.", reading: "narsane tāpmān tapāslam̐.", ipa: "nərsəne t̪apman t̪əpaslə̃", bases: [{ word: "नर्सने", ref: "mr-1095" }, { word: "तपासलं", ref: "mr-1106" }] }
+      - { target: "डॉक्टर मला तपासतात.", reading: "ḍôkṭar malā tapāstāt.", ipa: "ɖɔkʈər məla t̪əpast̪at̪", bases: [{ word: "तपासतात", base: "तपासणे", reading: "tapāsṇe" }] }
+      - { target: "नर्सने तापमान तपासलं.", reading: "narsane tāpmān tapāslam̐.", ipa: "nərsəne t̪apman t̪əpaslə̃", bases: [{ word: "नर्सने", ref: "mr-1095" }, { word: "तपासलं", base: "तपासणे", reading: "tapāsṇe" }] }

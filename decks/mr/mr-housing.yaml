@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "भाडेकरू", reading: "bhāḍekru" }] }
     examples:
       - { target: "भाडेकरू वेळेवर भाडं देतो.", reading: "bhāḍekru veḷevar bhāḍam̐ deto.", ipa: "bʱaɖekru ʋeɭeʋər bʱaɖə̃ d̪et̪o", bases: [{ word: "भाडं", ref: "mr-1394" }, { word: "देतो", ref: "mr-0721" }] }
-      - { target: "भाडेकरूने खोली सोडली.", reading: "bhāḍekrune kholi soḍli.", ipa: "bʱaɖekrune kʰoli soɖli", bases: [{ word: "भाडेकरूने", ref: "mr-1646" }, { word: "खोली", ref: "mr-0459" }, { word: "सोडली", ref: "mr-1180" }] }
+      - { target: "भाडेकरूने खोली सोडली.", reading: "bhāḍekrune kholi soḍli.", ipa: "bʱaɖekrune kʰoli soɖli", bases: [{ word: "भाडेकरूने", base: "भाडेकरू", reading: "bhāḍekru" }, { word: "खोली", ref: "mr-0459" }, { word: "सोडली", ref: "mr-1180" }] }
   - id: "mr-1647"
     target: "घरमालक"
     reading: "gharmālak"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "घरमालक", reading: "gharmālak" }] }
     examples:
       - { target: "घरमालक खूप चांगले आहेत.", reading: "gharmālak khup cāṅgale āhet.", ipa: "ɡʱərmalək kʰup tsaŋɡəle aɦet̪", bases: [{ word: "चांगले", ref: "mr-0759" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "घरमालकाला फोन केला.", reading: "gharmālkālā phon kelā.", ipa: "ɡʱərmalkala pʰon kela", bases: [{ word: "घरमालकाला", ref: "mr-1647" }, { word: "फोन", ref: "mr-0858" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "घरमालकाला फोन केला.", reading: "gharmālkālā phon kelā.", ipa: "ɡʱərmalkala pʰon kela", bases: [{ word: "घरमालकाला", base: "घरमालक", reading: "gharmālak" }, { word: "फोन", ref: "mr-0858" }, { word: "केला", ref: "mr-0712" }] }
   - id: "mr-1648"
     target: "अनामत"
     reading: "anāmat"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "करार", reading: "karār" }] }
     examples:
       - { target: "भाडेकरार अकरा महिन्यांचा आहे.", reading: "bhāḍekrār akrā mahinyāñcā āhe.", ipa: "bʱaɖekrar əkra məɦinjaɲtsa aɦe", bases: [{ word: "अकरा", ref: "mr-0262" }, { word: "महिन्यांचा", ref: "mr-0514" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "करारावर सही करा.", reading: "karārāvar sahi karā.", ipa: "kəraraʋər səɦi kəra", bases: [{ word: "करारावर", ref: "mr-1649" }, { word: "सही", ref: "mr-1410" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "करारावर सही करा.", reading: "karārāvar sahi karā.", ipa: "kəraraʋər səɦi kəra", bases: [{ word: "करारावर", base: "करार", reading: "karār" }, { word: "सही", ref: "mr-1410" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1650"
     target: "भाडेपट्टा"
     reading: "bhāḍepaṭṭā"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "भाडेपट्टा", reading: "bhāḍepaṭṭā" }] }
     examples:
       - { target: "भाडेपट्टा नोंदवला.", reading: "bhāḍepaṭṭā nondavlā.", ipa: "bʱaɖepəʈʈa nond̪əʋla", bases: [{ word: "नोंदवला", base: "नोंदवणे", reading: "nondavṇe" }] }
-      - { target: "भाडेपट्ट्याच्या अटी वाचा.", reading: "bhāḍepaṭṭyācyā aṭi vācā.", ipa: "bʱaɖepəʈʈjatʃja əʈi ʋatsa", bases: [{ word: "भाडेपट्ट्याच्या", ref: "mr-1650" }, { word: "अटी", base: "अट", reading: "aṭ" }, { word: "वाचा", ref: "mr-0513" }] }
+      - { target: "भाडेपट्ट्याच्या अटी वाचा.", reading: "bhāḍepaṭṭyācyā aṭi vācā.", ipa: "bʱaɖepəʈʈjatʃja əʈi ʋatsa", bases: [{ word: "भाडेपट्ट्याच्या", base: "भाडेपट्टा", reading: "bhāḍepaṭṭā" }, { word: "अटी", base: "अट", reading: "aṭ" }, { word: "वाचा", ref: "mr-0513" }] }
   - id: "mr-1651"
     target: "स्नानगृह"
     reading: "snāngruh"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "स्नानगृह", reading: "snāngruh" }] }
     examples:
       - { target: "स्नानगृह स्वच्छ आहे.", reading: "snāngruh svacch āhe.", ipa: "snanɡruɦ sʋətstʃʰ aɦe", bases: [{ word: "स्वच्छ", ref: "mr-0766" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "स्नानगृहाचा नळ गळतो.", reading: "snāngruhācā naḷ gaḷto.", ipa: "snanɡruɦatsa nəɭ ɡəɭt̪o", bases: [{ word: "स्नानगृहाचा", ref: "mr-1651" }, { word: "नळ", ref: "mr-0051" }, { word: "गळतो", base: "गळणे", reading: "gaḷṇe" }] }
+      - { target: "स्नानगृहाचा नळ गळतो.", reading: "snāngruhācā naḷ gaḷto.", ipa: "snanɡruɦatsa nəɭ ɡəɭt̪o", bases: [{ word: "स्नानगृहाचा", base: "स्नानगृह", reading: "snāngruh" }, { word: "नळ", ref: "mr-0051" }, { word: "गळतो", base: "गळणे", reading: "gaḷṇe" }] }
   - id: "mr-1652"
     target: "बाल्कनी"
     reading: "bālkani"
@@ -95,7 +95,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बाल्कनी", reading: "bālkani" }] }
     examples:
-      - { target: "बाल्कनीत झाडं आहेत.", reading: "bālkanit jhāḍam̐ āhet.", ipa: "balkənit̪ dzʱaɖə̃ aɦet̪", bases: [{ word: "बाल्कनीत", ref: "mr-1652" }, { word: "झाडं", ref: "mr-1231" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "बाल्कनीत झाडं आहेत.", reading: "bālkanit jhāḍam̐ āhet.", ipa: "balkənit̪ dzʱaɖə̃ aɦet̪", bases: [{ word: "बाल्कनीत", base: "बाल्कनी", reading: "bālkani" }, { word: "झाडं", ref: "mr-1231" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
       - { target: "संध्याकाळी बाल्कनीत बसतो.", reading: "sandhyākāḷi bālkanit basto.", ipa: "sənd̪ʱjakaɭi balkənit̪ bəst̪o", bases: [{ word: "संध्याकाळी", ref: "mr-0479" }, { word: "बसतो", base: "बसणे", reading: "basṇe" }] }
   - id: "mr-1653"
     target: "दरवाजा"
@@ -117,7 +117,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "छत", reading: "chat" }] }
     examples:
-      - { target: "छतावर पाणी गळतं.", reading: "chatāvar pāṇi gaḷtam̐.", ipa: "tʃʰət̪aʋər paɳi ɡəɭt̪ə̃", bases: [{ word: "छतावर", ref: "mr-1654" }, { word: "गळतं", base: "गळणे", reading: "gaḷṇe" }] }
+      - { target: "छतावर पाणी गळतं.", reading: "chatāvar pāṇi gaḷtam̐.", ipa: "tʃʰət̪aʋər paɳi ɡəɭt̪ə̃", bases: [{ word: "छतावर", base: "छत", reading: "chat" }, { word: "गळतं", base: "गळणे", reading: "gaḷṇe" }] }
       - { target: "छत उंच आहे.", reading: "chat uñc āhe.", ipa: "tʃʰət̪ uɲts aɦe", bases: [{ word: "उंच", ref: "mr-0771" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1655"
     target: "भिंत"
@@ -128,8 +128,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "भिंत", reading: "bhint" }] }
     examples:
-      - { target: "भिंतीला रंग दिला.", reading: "bhintilā raṅg dilā.", ipa: "bʱint̪ila rəŋɡ d̪ila", bases: [{ word: "भिंतीला", ref: "mr-1655" }, { word: "रंग", base: "रंग", reading: "raṅg" }, { word: "दिला", ref: "mr-0721" }] }
-      - { target: "भिंतीवर फोटो लावला.", reading: "bhintivar phoṭo lāvlā.", ipa: "bʱint̪iʋər pʰoʈo laʋla", bases: [{ word: "भिंतीवर", ref: "mr-1655" }, { word: "फोटो", ref: "mr-1203" }, { word: "लावला", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "भिंतीला रंग दिला.", reading: "bhintilā raṅg dilā.", ipa: "bʱint̪ila rəŋɡ d̪ila", bases: [{ word: "भिंतीला", base: "भिंत", reading: "bhint" }, { word: "रंग", base: "रंग", reading: "raṅg" }, { word: "दिला", ref: "mr-0721" }] }
+      - { target: "भिंतीवर फोटो लावला.", reading: "bhintivar phoṭo lāvlā.", ipa: "bʱint̪iʋər pʰoʈo laʋla", bases: [{ word: "भिंतीवर", base: "भिंत", reading: "bhint" }, { word: "फोटो", ref: "mr-1203" }, { word: "लावला", base: "लावणे", reading: "lāvṇe" }] }
   - id: "mr-1656"
     target: "लिफ्ट"
     reading: "liphṭ"
@@ -140,7 +140,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "लिफ्ट", reading: "liphṭ" }] }
     examples:
       - { target: "लिफ्ट बंद आहे.", reading: "liphṭ band āhe.", ipa: "lipʰʈ bənd̪ aɦe", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "लिफ्टने वर जा.", reading: "liphṭane var jā.", ipa: "lipʰʈəne ʋər dza", bases: [{ word: "लिफ्टने", ref: "mr-1656" }, { word: "वर", ref: "mr-0740" }, { word: "जा", ref: "mr-0710" }] }
+      - { target: "लिफ्टने वर जा.", reading: "liphṭane var jā.", ipa: "lipʰʈəne ʋər dza", bases: [{ word: "लिफ्टने", base: "लिफ्ट", reading: "liphṭ" }, { word: "वर", ref: "mr-0740" }, { word: "जा", ref: "mr-0710" }] }
   - id: "mr-1657"
     target: "पार्किंग"
     reading: "pārkiṅg"
@@ -150,7 +150,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पार्किंग", reading: "pārkiṅg" }] }
     examples:
-      - { target: "गाडी पार्किंगमध्ये लावा.", reading: "gāḍi pārkiṅgamadhye lāvā.", ipa: "ɡaɖi parkiŋɡəməd̪ʱje laʋa", bases: [{ word: "पार्किंगमध्ये", ref: "mr-1657" }, { word: "लावा", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "गाडी पार्किंगमध्ये लावा.", reading: "gāḍi pārkiṅgamadhye lāvā.", ipa: "ɡaɖi parkiŋɡəməd̪ʱje laʋa", bases: [{ word: "पार्किंगमध्ये", base: "पार्किंग", reading: "pārkiṅg" }, { word: "लावा", base: "लावणे", reading: "lāvṇe" }] }
       - { target: "पार्किंग मोफत आहे.", reading: "pārkiṅg mophat āhe.", ipa: "parkiŋɡ mopʰət̪ aɦe", bases: [{ word: "मोफत", ref: "mr-1080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1658"
     target: "फर्निचर"

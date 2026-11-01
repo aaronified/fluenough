@@ -14,21 +14,21 @@ cards:
       "n1": "{1} is cricket, a loanword from English, the most popular game in India."
     examples:
       "आम्ही रोज क्रिकेट खेळतो.": "We play cricket every day."
-      "क्रिकेटचा सामना टीव्हीवर होता.": { native: "The cricket match was on television.", bases: { "होता": "to be" } }
+      "क्रिकेटचा सामना टीव्हीवर होता.": { native: "The cricket match was on television.", bases: { "होता": "to be", "क्रिकेटचा": "cricket" } }
   "mr-1606":
     native: "football"
     notes:
       "n1": "{1} is football, a loanword from English."
     examples:
       "मुलं मैदानात फुटबॉल खेळत होती.": { native: "The children were playing football in the playground.", bases: { "होती": "to be" } }
-      "फुटबॉलचा बॉल हरवला.": "The football was lost."
+      "फुटबॉलचा बॉल हरवला.": { native: "The football was lost.", bases: { "फुटबॉलचा": "football" } }
   "mr-1607":
     native: "kabaddi"
     notes:
       "n1": "{1} is kabaddi, a traditional team game of Maharashtra and India."
     examples:
       "कबड्डी हा आपला पारंपरिक खेळ आहे.": { native: "Kabaddi is our traditional game.", bases: { "आपला": "our", "खेळ": "game", "आहे": "to be" } }
-      "कबड्डीचा सामना जिंकला.": "We won the kabaddi match."
+      "कबड्डीचा सामना जिंकला.": { native: "We won the kabaddi match.", bases: { "कबड्डीचा": "kabaddi" } }
   "mr-1608":
     native: "kho-kho"
     notes:
@@ -49,35 +49,35 @@ cards:
       "n1": "{1} is badminton, a loanword from English."
     examples:
       "बॅडमिंटन कोर्ट मोकळं आहे.": { native: "The badminton court is free.", bases: { "मोकळं": "free", "आहे": "to be" } }
-      "बहिणीने बॅडमिंटनमध्ये पदक जिंकलं.": "My sister won a medal in badminton."
+      "बहिणीने बॅडमिंटनमध्ये पदक जिंकलं.": { native: "My sister won a medal in badminton.", bases: { "बॅडमिंटनमध्ये": "badminton" } }
   "mr-1611":
     native: "tennis"
     notes:
       "n1": "{1} is tennis, a loanword from English."
     examples:
       "टेनिस खेळायला आवडतं.": "I like to play tennis."
-      "टेनिसचा बॉल कुठे आहे?": { native: "Where is the tennis ball?", bases: { "आहे": "to be" } }
+      "टेनिसचा बॉल कुठे आहे?": { native: "Where is the tennis ball?", bases: { "आहे": "to be", "टेनिसचा": "tennis" } }
   "mr-1612":
     native: "team"
     notes:
       "n1": "{1} is a team in a sport."
     examples:
       "आमचा संघ जिंकला.": "Our team won."
-      "संघात अकरा खेळाडू असतात.": { native: "A team has eleven players.", bases: { "असतात": "to be" } }
+      "संघात अकरा खेळाडू असतात.": { native: "A team has eleven players.", bases: { "असतात": "to be", "संघात": "team" } }
   "mr-1613":
     native: "captain"
     notes:
       "n1": "{1} is the captain of a team."
     examples:
       "कर्णधार नाणेफेक जिंकला.": { native: "The captain won the toss.", bases: { "नाणेफेक": "toss" } }
-      "कर्णधारानं चांगला खेळ केला.": { native: "The captain played well.", bases: { "खेळ": "game" } }
+      "कर्णधारानं चांगला खेळ केला.": { native: "The captain played well.", bases: { "खेळ": "game", "कर्णधारानं": "captain" } }
   "mr-1614":
     native: "coach"
     notes:
       "n1": "{1} is a coach who trains players."
     examples:
       "प्रशिक्षक खेळाडूंना शिकवतात.": "The coach teaches the players."
-      "प्रशिक्षकाचा सल्ला ऐका.": "Listen to the coach's advice."
+      "प्रशिक्षकाचा सल्ला ऐका.": { native: "Listen to the coach's advice.", bases: { "प्रशिक्षकाचा": "coach" } }
   "mr-1615":
     native: "match"
     notes:
@@ -118,7 +118,7 @@ cards:
     notes:
       "n1": "{1} is a winner or a champion. The feminine is विजेती (vijetī)."
     examples:
-      "विजेत्याला पदक मिळालं.": { native: "The winner got a medal.", bases: { "मिळालं": "to get" } }
+      "विजेत्याला पदक मिळालं.": { native: "The winner got a medal.", bases: { "मिळालं": "to get", "विजेत्याला": "winner, champion" } }
       "ती राज्यस्तरावरची विजेती आहे.": { native: "She is the state-level champion.", bases: { "आहे": "to be" } }
   "mr-1621":
     native: "defeat"
@@ -126,14 +126,14 @@ cards:
       "n1": "{1} is a defeat, losing a match or a war."
     examples:
       "आमचा पराभव झाला.": { native: "We were defeated.", bases: { "झाला": "to become" } }
-      "पराभवातून शिका.": "Learn from defeat."
+      "पराभवातून शिका.": { native: "Learn from defeat.", bases: { "पराभवातून": "defeat" } }
   "mr-1622":
     native: "victory"
     notes:
       "n1": "{1} is a victory, the win in a contest."
     examples:
       "हा मोठा विजय आहे.": { native: "This is a great victory.", bases: { "आहे": "to be" } }
-      "विजयाचा आनंद साजरा केला.": "We celebrated the joy of victory."
+      "विजयाचा आनंद साजरा केला.": { native: "We celebrated the joy of victory.", bases: { "विजयाचा": "victory" } }
   "mr-1623":
     native: "medal"
     notes:
@@ -160,12 +160,12 @@ cards:
     notes:
       "n1": "{1} is catching a ball."
     examples:
-      "त्याने चेंडू झेलला.": "He caught the ball."
+      "त्याने चेंडू झेलला.": { native: "He caught the ball.", bases: { "झेलला": "to catch (a ball)" } }
       "कर्णधाराने झेल सोडला.": { native: "The captain dropped the catch.", bases: { "झेल": "catch" } }
   "mr-1627":
     native: "to throw"
     notes:
       "n1": "{1} is throwing something."
     examples:
-      "बॉल जोरात फेका.": { native: "Throw the ball hard.", bases: { "जोरात": "hard" } }
-      "त्याने दगड फेकला.": { native: "He threw a stone.", bases: { "दगड": "stone" } }
+      "बॉल जोरात फेका.": { native: "Throw the ball hard.", bases: { "जोरात": "hard", "फेका": "to throw" } }
+      "त्याने दगड फेकला.": { native: "He threw a stone.", bases: { "दगड": "stone", "फेकला": "to throw" } }

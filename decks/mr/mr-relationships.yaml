@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "जोडीदार", reading: "joḍidār" }] }
     examples:
       - { target: "माझा जोडीदार चांगला आहे.", reading: "mājhā joḍidār cāṅgalā āhe.", ipa: "madzʱa dzoɖid̪ar tsaŋɡəla aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "जोडीदाराशी बोलणं महत्त्वाचं असतं.", reading: "joḍidārāśi bolṇam̐ mahattvācam̐ astam̐.", ipa: "dzoɖid̪araʃi bolɳə̃ məɦət̪t̪ʋatsə̃ əst̪ə̃", bases: [{ word: "जोडीदाराशी", ref: "mr-1630" }, { word: "बोलणं", ref: "mr-0713" }, { word: "महत्त्वाचं", base: "महत्त्वाचा", reading: "mahattvācā" }, { word: "असतं", base: "असणे", reading: "asṇe" }] }
+      - { target: "जोडीदाराशी बोलणं महत्त्वाचं असतं.", reading: "joḍidārāśi bolṇam̐ mahattvācam̐ astam̐.", ipa: "dzoɖid̪araʃi bolɳə̃ məɦət̪t̪ʋatsə̃ əst̪ə̃", bases: [{ word: "जोडीदाराशी", base: "जोडीदार", reading: "joḍidār" }, { word: "बोलणं", ref: "mr-0713" }, { word: "महत्त्वाचं", base: "महत्त्वाचा", reading: "mahattvācā" }, { word: "असतं", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1631"
     target: "सून"
     reading: "sun"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सून", reading: "sun" }] }
     examples:
       - { target: "सून घरी आली.", reading: "sun ghari āli.", ipa: "sun ɡʱəri ali", bases: [{ word: "घरी", ref: "mr-0048" }, { word: "आली", ref: "mr-0711" }] }
-      - { target: "सुनेने सगळ्यांसाठी स्वयंपाक केला.", reading: "sunene sagaḷyāṁsāṭhi svayampāk kelā.", ipa: "sunene səɡəɭjãsaʈʰi sʋəjəmpak kela", bases: [{ word: "सुनेने", ref: "mr-1631" }, { word: "सगळ्यांसाठी", ref: "mr-0684" }, { word: "स्वयंपाक", ref: "mr-1107" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "सुनेने सगळ्यांसाठी स्वयंपाक केला.", reading: "sunene sagaḷyāṁsāṭhi svayampāk kelā.", ipa: "sunene səɡəɭjãsaʈʰi sʋəjəmpak kela", bases: [{ word: "सुनेने", base: "सून", reading: "sun" }, { word: "सगळ्यांसाठी", ref: "mr-0684" }, { word: "स्वयंपाक", ref: "mr-1107" }, { word: "केला", ref: "mr-0712" }] }
   - id: "mr-1632"
     target: "जावई"
     reading: "jāvai"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "जावई", reading: "jāvai" }] }
     examples:
       - { target: "जावई आज येणार आहेत.", reading: "jāvai āj yeṇār āhet.", ipa: "dzaʋəi adz jeɳar aɦet̪", bases: [{ word: "येणार", ref: "mr-0711" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "जावयाला भेटवस्तू दिली.", reading: "jāvyālā bheṭvastu dili.", ipa: "dzaʋjala bʱeʈʋəst̪u d̪ili", bases: [{ word: "जावयाला", ref: "mr-1632" }, { word: "भेटवस्तू", ref: "mr-1051" }, { word: "दिली", ref: "mr-0721" }] }
+      - { target: "जावयाला भेटवस्तू दिली.", reading: "jāvyālā bheṭvastu dili.", ipa: "dzaʋjala bʱeʈʋəst̪u d̪ili", bases: [{ word: "जावयाला", base: "जावई", reading: "jāvai" }, { word: "भेटवस्तू", ref: "mr-1051" }, { word: "दिली", ref: "mr-0721" }] }
   - id: "mr-1633"
     target: "दीर"
     reading: "dir"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वहिनी", reading: "vahini" }] }
     examples:
       - { target: "वहिनी स्वयंपाकघरात आहेत.", reading: "vahini svayampākghrāt āhet.", ipa: "ʋəɦini sʋəjəmpakɡʱrat̪ aɦet̪", bases: [{ word: "स्वयंपाकघरात", ref: "mr-0460" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "वहिनीनी भेट दिली.", reading: "vahinini bheṭ dili.", ipa: "ʋəɦinini bʱeʈ d̪ili", bases: [{ word: "वहिनीनी", ref: "mr-1634" }, { word: "भेट", ref: "mr-1396" }, { word: "दिली", ref: "mr-0721" }] }
+      - { target: "वहिनीनी भेट दिली.", reading: "vahinini bheṭ dili.", ipa: "ʋəɦinini bʱeʈ d̪ili", bases: [{ word: "वहिनीनी", base: "वहिनी", reading: "vahini" }, { word: "भेट", ref: "mr-1396" }, { word: "दिली", ref: "mr-0721" }] }
   - id: "mr-1635"
     target: "सहवास"
     reading: "sahvās"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सहवास", reading: "sahvās" }] }
     examples:
       - { target: "तुझा सहवास आवडतो.", reading: "tujhā sahvās āvḍto.", ipa: "t̪udzʱa səɦʋas aʋɖt̪o", bases: [{ word: "तुझा", ref: "mr-0675" }, { word: "आवडतो", ref: "mr-0585" }] }
-      - { target: "आजीच्या सहवासात खूप शिकलो.", reading: "ājicyā sahvāsāt khup śiklo.", ipa: "adʒitʃja səɦʋasat̪ kʰup ʃiklo", bases: [{ word: "आजीच्या", ref: "mr-0197" }, { word: "सहवासात", ref: "mr-1635" }, { word: "शिकलो", ref: "mr-0717" }] }
+      - { target: "आजीच्या सहवासात खूप शिकलो.", reading: "ājicyā sahvāsāt khup śiklo.", ipa: "adʒitʃja səɦʋasat̪ kʰup ʃiklo", bases: [{ word: "आजीच्या", ref: "mr-0197" }, { word: "सहवासात", base: "सहवास", reading: "sahvās" }, { word: "शिकलो", ref: "mr-0717" }] }
   - id: "mr-1636"
     target: "विश्वास"
     reading: "viśvās"
@@ -160,8 +160,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "भांडणे", reading: "bhāṇḍaṇe" }] }
     examples:
-      - { target: "ते का भांडत आहेत?", reading: "te kā bhāṇḍat āhet?", ipa: "t̪e ka bʱaɳɖət̪ aɦet̪", bases: [{ word: "भांडत", ref: "mr-1641" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "भावंडं नेहमी भांडतात.", reading: "bhāvaṇḍam̐ nehmi bhāṇḍatāt.", ipa: "bʱaʋəɳɖə̃ neɦmi bʱaɳɖət̪at̪", bases: [{ word: "भावंडं", base: "भावंड", reading: "bhāvaṇḍ" }, { word: "भांडतात", ref: "mr-1641" }] }
+      - { target: "ते का भांडत आहेत?", reading: "te kā bhāṇḍat āhet?", ipa: "t̪e ka bʱaɳɖət̪ aɦet̪", bases: [{ word: "भांडत", base: "भांडणे", reading: "bhāṇḍaṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "भावंडं नेहमी भांडतात.", reading: "bhāvaṇḍam̐ nehmi bhāṇḍatāt.", ipa: "bʱaʋəɳɖə̃ neɦmi bʱaɳɖət̪at̪", bases: [{ word: "भावंडं", base: "भावंड", reading: "bhāvaṇḍ" }, { word: "भांडतात", base: "भांडणे", reading: "bhāṇḍaṇe" }] }
   - id: "mr-1642"
     target: "माफ करणे"
     reading: "māph karṇe"

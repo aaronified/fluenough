@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रवास", reading: "pravās" }] }
     examples:
       - { target: "आमचा प्रवास लांब होता.", reading: "āmcā pravās lāmb hotā.", ipa: "amtsa prəʋas lamb ɦot̪a", bases: [{ word: "आमचा", ref: "mr-0138" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
-      - { target: "प्रवासात झोप लागली.", reading: "pravāsāt jhop lāgli.", ipa: "prəʋasat̪ dzʱop laɡli", bases: [{ word: "प्रवासात", ref: "mr-1211" }, { word: "लागली", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "प्रवासात झोप लागली.", reading: "pravāsāt jhop lāgli.", ipa: "prəʋasat̪ dzʱop laɡli", bases: [{ word: "प्रवासात", base: "प्रवास", reading: "pravās" }, { word: "लागली", base: "लागणे", reading: "lāgṇe" }] }
   - id: "mr-1212"
     target: "सहल"
     reading: "sahal"
@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सहल", reading: "sahal" }] }
     examples:
       - { target: "शाळेची सहल कुठे आहे?", reading: "śāḷeci sahal kuṭhe āhe?", ipa: "ʃaɭetʃi səɦəl kuʈʰe aɦe", bases: [{ word: "शाळेची", ref: "mr-0957" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "उद्या सहलीला जाऊ.", reading: "udyā sahlilā jāu.", ipa: "ud̪ja səɦlila dzau", bases: [{ word: "सहलीला", ref: "mr-1212" }, { word: "जाऊ", ref: "mr-0710" }] }
+      - { target: "उद्या सहलीला जाऊ.", reading: "udyā sahlilā jāu.", ipa: "ud̪ja səɦlila dzau", bases: [{ word: "सहलीला", base: "सहल", reading: "sahal" }, { word: "जाऊ", ref: "mr-0710" }] }
   - id: "mr-1213"
     target: "आरक्षण"
     reading: "ārakṣaṇ"
@@ -51,8 +51,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्लॅटफॉर्म", reading: "plêṭphôrm" }] }
     examples:
-      - { target: "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.", reading: "gāḍi plêṭphôrm nambar tinvar yeil.", ipa: "ɡaɖi plæʈpʰɔrm nəmbər t̪inʋər jeil", bases: [{ word: "प्लॅटफॉर्म", ref: "mr-1214" }, { word: "येईल", ref: "mr-0711" }] }
-      - { target: "प्लॅटफॉर्मवर गर्दी आहे.", reading: "plêṭphôrmavar gardi āhe.", ipa: "plæʈpʰɔrməʋər ɡərd̪i aɦe", bases: [{ word: "प्लॅटफॉर्मवर", ref: "mr-1214" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.", reading: "gāḍi plêṭphôrm nambar tinvar yeil.", ipa: "ɡaɖi plæʈpʰɔrm nəmbər t̪inʋər jeil", bases: [{ word: "प्लॅटफॉर्म", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "येईल", ref: "mr-0711" }] }
+      - { target: "प्लॅटफॉर्मवर गर्दी आहे.", reading: "plêṭphôrmavar gardi āhe.", ipa: "plæʈpʰɔrməʋər ɡərd̪i aɦe", bases: [{ word: "प्लॅटफॉर्मवर", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1215"
     target: "विमान"
     reading: "vimān"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विमान", reading: "vimān" }] }
     examples:
       - { target: "विमान उडालं.", reading: "vimān uḍālam̐.", ipa: "ʋiman uɖalə̃", bases: [{ word: "उडालं", base: "उडणे", reading: "uḍṇe" }] }
-      - { target: "विमानात खिडकीची जागा आवडते.", reading: "vimānāt khiḍkici jāgā āvḍte.", ipa: "ʋimanat̪ kʰiɖkitʃi dzaɡa aʋɖt̪e", bases: [{ word: "विमानात", ref: "mr-1215" }, { word: "आवडते", ref: "mr-0585" }] }
+      - { target: "विमानात खिडकीची जागा आवडते.", reading: "vimānāt khiḍkici jāgā āvḍte.", ipa: "ʋimanat̪ kʰiɖkitʃi dzaɡa aʋɖt̪e", bases: [{ word: "विमानात", base: "विमान", reading: "vimān" }, { word: "आवडते", ref: "mr-0585" }] }
   - id: "mr-1216"
     target: "पासपोर्ट"
     reading: "pāsporṭ"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "व्हिसा", reading: "vhisā" }] }
     examples:
       - { target: "व्हिसा मिळाला.", reading: "vhisā miḷālā.", ipa: "ʋɦisa miɭala", bases: [{ word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
-      - { target: "व्हिसाची मुदत संपली.", reading: "vhisāci mudat sampali.", ipa: "ʋɦisatʃi mud̪ət̪ səmpəli", bases: [{ word: "व्हिसाची", ref: "mr-1217" }, { word: "मुदत", base: "मुदत", reading: "mudat" }, { word: "संपली", base: "संपणे", reading: "sampaṇe" }] }
+      - { target: "व्हिसाची मुदत संपली.", reading: "vhisāci mudat sampali.", ipa: "ʋɦisatʃi mud̪ət̪ səmpəli", bases: [{ word: "व्हिसाची", base: "व्हिसा", reading: "vhisā" }, { word: "मुदत", base: "मुदत", reading: "mudat" }, { word: "संपली", base: "संपणे", reading: "sampaṇe" }] }
   - id: "mr-1218"
     target: "थांबा"
     reading: "thāmbā"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "थांबा", reading: "thāmbā" }] }
     examples:
       - { target: "पुढचा थांबा कोणता?", reading: "puḍhcā thāmbā koṇtā?", ipa: "puɖʱtsa t̪ʰamba koɳt̪a", bases: [{ word: "पुढचा", base: "पुढचा", reading: "puḍhcā" }, { word: "कोणता", base: "कोणता", reading: "koṇtā" }] }
-      - { target: "थांब्यावर थांबा.", reading: "thāmbyāvar thāmbā.", ipa: "t̪ʰambjaʋər t̪ʰamba", bases: [{ word: "थांब्यावर", ref: "mr-1218" }, { word: "थांबा", ref: "mr-0803" }] }
+      - { target: "थांब्यावर थांबा.", reading: "thāmbyāvar thāmbā.", ipa: "t̪ʰambjaʋər t̪ʰamba", bases: [{ word: "थांब्यावर", base: "थांबा", reading: "thāmbā" }, { word: "थांबा", ref: "mr-0803" }] }
   - id: "mr-1219"
     target: "प्रवासी"
     reading: "pravāsi"
@@ -107,7 +107,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रवासी", reading: "pravāsi" }] }
     examples:
       - { target: "प्रवासी गाडीत चढले.", reading: "pravāsi gāḍit caḍhle.", ipa: "prəʋasi ɡaɖit̪ tsəɖʱle", bases: [{ word: "गाडीत", ref: "mr-0430" }, { word: "चढले", ref: "mr-1227" }] }
-      - { target: "प्रवाशांनी रांग लावली.", reading: "pravāśānni rāṅg lāvli.", ipa: "prəʋaʃanni raŋɡ laʋli", bases: [{ word: "प्रवाशांनी", ref: "mr-1219" }, { word: "रांग", base: "रांग", reading: "rāṅg" }, { word: "लावली", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "प्रवाशांनी रांग लावली.", reading: "pravāśānni rāṅg lāvli.", ipa: "prəʋaʃanni raŋɡ laʋli", bases: [{ word: "प्रवाशांनी", base: "प्रवासी", reading: "pravāsi" }, { word: "रांग", base: "रांग", reading: "rāṅg" }, { word: "लावली", base: "लावणे", reading: "lāvṇe" }] }
   - id: "mr-1220"
     target: "मार्ग"
     reading: "mārg"
@@ -134,7 +134,7 @@ cards:
     target: "वेळेवर"
     reading: "veḷevar"
     ipa: "ʋeɭeʋər"
-    pos: "adverb"
+    pos: "adv"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "वेळेवर", reading: "veḷevar" }] }
     examples:
@@ -150,7 +150,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "नकाशा", reading: "nakāśā" }] }
     examples:
       - { target: "नकाशा बघ.", reading: "nakāśā bagh.", ipa: "nəkaʃa bəɡʱ", bases: [{ word: "बघ", base: "बघणे", reading: "baghṇe" }] }
-      - { target: "नकाशात रस्ता दिसत नाही.", reading: "nakāśāt rastā disat nāhi.", ipa: "nəkaʃat̪ rəst̪a d̪isət̪ naɦi", bases: [{ word: "नकाशात", ref: "mr-1223" }, { word: "दिसत", base: "दिसणे", reading: "disṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "नकाशात रस्ता दिसत नाही.", reading: "nakāśāt rastā disat nāhi.", ipa: "nəkaʃat̪ rəst̪a d̪isət̪ naɦi", bases: [{ word: "नकाशात", base: "नकाशा", reading: "nakāśā" }, { word: "दिसत", base: "दिसणे", reading: "disṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
   - id: "mr-1224"
     target: "प्रवास करणे"
     reading: "pravās karṇe"
@@ -179,8 +179,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "उतरणे", reading: "utrṇe" }] }
     examples:
-      - { target: "आम्ही पुढच्या स्टेशनवर उतरलो.", reading: "āmhi puḍhacyā sṭeśnvar utrlo.", ipa: "amɦi puɖʱətʃja sʈeʃnʋər ut̪rlo", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "स्टेशनवर", ref: "mr-0422" }, { word: "उतरलो", ref: "mr-1226" }] }
-      - { target: "बाबा गाडीतून उतरले.", reading: "bābā gāḍitun utrle.", ipa: "baba ɡaɖit̪un ut̪rle", bases: [{ word: "गाडीतून", ref: "mr-0430" }, { word: "उतरले", ref: "mr-1226" }] }
+      - { target: "आम्ही पुढच्या स्टेशनवर उतरलो.", reading: "āmhi puḍhacyā sṭeśnvar utrlo.", ipa: "amɦi puɖʱətʃja sʈeʃnʋər ut̪rlo", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "स्टेशनवर", ref: "mr-0422" }, { word: "उतरलो", base: "उतरणे", reading: "utrṇe" }] }
+      - { target: "बाबा गाडीतून उतरले.", reading: "bābā gāḍitun utrle.", ipa: "baba ɡaɖit̪un ut̪rle", bases: [{ word: "गाडीतून", ref: "mr-0430" }, { word: "उतरले", base: "उतरणे", reading: "utrṇe" }] }
   - id: "mr-1227"
     target: "चढणे"
     reading: "caḍhṇe"
@@ -189,8 +189,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "चढणे", reading: "caḍhṇe" }] }
     examples:
-      - { target: "बसमध्ये चढा.", reading: "basmadhye caḍhā.", ipa: "bəsməd̪ʱje tsəɖʱa", bases: [{ word: "बसमध्ये", ref: "mr-0052" }, { word: "चढा", ref: "mr-1227" }] }
-      - { target: "तो रेल्वेत चढला.", reading: "to relvet caḍhlā.", ipa: "t̪o relʋet̪ tsəɖʱla", bases: [{ word: "रेल्वेत", ref: "mr-0996" }, { word: "चढला", ref: "mr-1227" }] }
+      - { target: "बसमध्ये चढा.", reading: "basmadhye caḍhā.", ipa: "bəsməd̪ʱje tsəɖʱa", bases: [{ word: "बसमध्ये", ref: "mr-0052" }, { word: "चढा", base: "चढणे", reading: "caḍhṇe" }] }
+      - { target: "तो रेल्वेत चढला.", reading: "to relvet caḍhlā.", ipa: "t̪o relʋet̪ tsəɖʱla", bases: [{ word: "रेल्वेत", ref: "mr-0996" }, { word: "चढला", base: "चढणे", reading: "caḍhṇe" }] }
   - id: "mr-1228"
     target: "पोहोचणे"
     reading: "pohocṇe"
@@ -199,5 +199,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पोहोचणे", reading: "pohocṇe" }] }
     examples:
-      - { target: "आम्ही सात वाजता पोहोचलो.", reading: "āmhi sāt vājtā pohoclo.", ipa: "amɦi sat̪ ʋadzt̪a poɦotslo", bases: [{ word: "वाजता", base: "वाजणे", reading: "vājṇe" }, { word: "पोहोचलो", ref: "mr-1228" }] }
-      - { target: "पत्र अजून पोहोचलं नाही.", reading: "patr ajun pohoclam̐ nāhi.", ipa: "pət̪r ədzun poɦotslə̃ naɦi", bases: [{ word: "अजून", base: "अजून", reading: "ajun" }, { word: "पोहोचलं", ref: "mr-1228" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "आम्ही सात वाजता पोहोचलो.", reading: "āmhi sāt vājtā pohoclo.", ipa: "amɦi sat̪ ʋadzt̪a poɦotslo", bases: [{ word: "वाजता", base: "वाजणे", reading: "vājṇe" }, { word: "पोहोचलो", base: "पोहोचणे", reading: "pohocṇe" }] }
+      - { target: "पत्र अजून पोहोचलं नाही.", reading: "patr ajun pohoclam̐ nāhi.", ipa: "pət̪r ədzun poɦotslə̃ naɦi", bases: [{ word: "अजून", base: "अजून", reading: "ajun" }, { word: "पोहोचलं", base: "पोहोचणे", reading: "pohocṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
