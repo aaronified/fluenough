@@ -1,0 +1,100 @@
+schema: 1
+id: "fr-grammar-plural"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural"]
+  entries:
+    - lemma: "ami"
+      ipa: "ami"
+      forms:
+        "singular": "un ami"
+        "plural": "des amis"
+    - lemma: "sac"
+      ipa: "sak"
+      forms:
+        "singular": "un sac"
+        "plural": "des sacs"
+    - lemma: "table"
+      ipa: "tabl"
+      forms:
+        "singular": "une table"
+        "plural": "des tables"
+    - lemma: "clé"
+      key: "cle"
+      ipa: "kle"
+      forms:
+        "singular": "une clé"
+        "plural": "des clés"
+    - lemma: "train"
+      ipa: "tʁɛ̃"
+      forms:
+        "singular": "un train"
+        "plural": "des trains"
+    - lemma: "rue"
+      ipa: "ʁy"
+      forms:
+        "singular": "une rue"
+        "plural": "des rues"
+    - lemma: "adresse"
+      ipa: "adʁɛs"
+      forms:
+        "singular": "une adresse"
+        "plural": "des adresses"
+    - lemma: "heure"
+      ipa: "œʁ"
+      forms:
+        "singular": "une heure"
+        "plural": "des heures"
+    - lemma: "nom"
+      ipa: "nɔ̃"
+      forms:
+        "singular": "un nom"
+        "plural": "des noms"
+    - lemma: "frère"
+      key: "frere"
+      ipa: "fʁɛʁ"
+      forms:
+        "singular": "un frère"
+        "plural": "des frères"
+    - lemma: "sœur"
+      key: "soeur"
+      ipa: "sœʁ"
+      forms:
+        "singular": "une sœur"
+        "plural": "des sœurs"
+    - lemma: "tasse"
+      ipa: "tas"
+      forms:
+        "singular": "une tasse"
+        "plural": "des tasses"
+    - lemma: "vin"
+      ipa: "vɛ̃"
+      forms:
+        "singular": "un vin"
+        "plural": "des vins"
+    - lemma: "musée"
+      key: "musee"
+      ipa: "myze"
+      forms:
+        "singular": "un musée"
+        "plural": "des musées"
+    - lemma: "gare"
+      ipa: "gaʁ"
+      forms:
+        "singular": "une gare"
+        "plural": "des gares"
+    - lemma: "pays"
+      ipa: "pei"
+      forms:
+        "singular": "un pays"
+        "plural": "des pays"
+    - lemma: "an"
+      key: "an"
+      ipa: "ɑ̃"
+      forms:
+        "singular": "un an"
+        "plural": "des ans"
