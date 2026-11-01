@@ -156,7 +156,7 @@ below is written from `decks/index.json` each time the decks change.
 | Malay | Latin | in progress |
 | Malayalam | Malayalam | in progress |
 | Mandarin Chinese | Simplified Hanzi, Traditional Hanzi | in progress |
-| Marathi | Devanagari | A1 |
+| Marathi | Devanagari | B1 |
 | Middle English | Latin | in progress |
 | Norwegian (Bokmål) | Latin | in progress |
 | Odia | Odia | in progress |
