@@ -191,6 +191,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 .any((s) => skills.scriptLevelOf(s) != ScriptLevel.leave),
       LanguageFilter.write =>
         !view.language.isSign &&
+            view.language.typed &&
             state
                 .skillScripts(view.language)
                 .any(
@@ -534,7 +535,8 @@ class LanguageRow extends StatelessWidget {
         hasDecks &&
         !learns &&
         state.settings.languageSkillsOf(view.code) != null;
-    final dialect = !view.language.scriptOnly && speaks
+    final dialect =
+        !view.language.scriptOnly && !view.language.isNotation && speaks
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);

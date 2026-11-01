@@ -1517,7 +1517,11 @@ void main() {
       final state = await pumpFirstLaunch(tester);
       final l10n = l10nOf(tester);
 
+      // Found by search, not by scrolling: where a row sits in the full list
+      // changes with every course written.
+      await searchPicker(tester, 'Hindustani');
       await pickLanguage(tester, 'hi');
+      await searchPicker(tester, 'Bengali');
       await pickLanguage(tester, 'bn');
       await tapText(tester, l10n.commonContinue);
       // In the catalog's order, asking at once: "Find my level" was chosen in

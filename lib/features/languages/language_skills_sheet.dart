@@ -201,7 +201,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   /// Read, Read and Write).
   Future<void> _cycleScript(String script) {
     final l10n = AppLocalizations.of(context)!;
-    final next = _skills.cycledScript(script, canLearn: _view.canLearn);
+    final next = _skills.cycledScript(
+      script,
+      canLearn: _view.canLearn,
+      canWrite: _view.language.typed,
+    );
     final scriptName = l10n.scriptNameOr(script, _view.name);
     return _change(
       next,
@@ -261,8 +265,9 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     setState(() {
       _skills = next;
       for (final key in keys) {
-        // A gesture skill has nothing to check.
-        toLearn && !key.kind.isGesture
+        // A gesture skill has nothing to check, and neither has a notation:
+        // the IPA and braille have no voice and no font to try.
+        toLearn && !key.kind.isGesture && !_view.language.isNotation
             ? _pending.add(key)
             : _pending.remove(key);
       }
@@ -706,7 +711,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   const SizedBox(height: 4),
                   _Note(text: l10n.languagesDecksRemoved),
                 ],
-                if (!_isDraft && _view.canLearn && !_locked) ...<Widget>[
+                if (!_isDraft &&
+                    _view.canLearn &&
+                    !_locked &&
+                    !_view.language.isNotation) ...<Widget>[
                   _levelRow(context),
                   _placedRow(context),
                 ],
@@ -724,22 +732,23 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   ),
                 ] else if (!_view.language.scriptOnly) ...<Widget>[
                   _Heading(icon: Icons.mic_none, text: l10n.languagesSpeakHear),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(bottom: 4),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          l10n.languagesDialectLabel,
-                          style: theme.textTheme.labelMedium!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                            fontWeight: FontWeight.w700,
+                  if (!_view.language.isNotation)
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(bottom: 4),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            l10n.languagesDialectLabel,
+                            style: theme.textTheme.labelMedium!.copyWith(
+                              color: scheme.onSurfaceVariant,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        ),
-                        Text(dialect, style: theme.textTheme.bodyLarge),
-                      ],
+                          Text(dialect, style: theme.textTheme.bodyLarge),
+                        ],
+                      ),
                     ),
-                  ),
                   _skillRow(
                     context,
                     tile: const _Tile(icon: Icons.mic_none),
@@ -880,7 +889,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       }
     }
     if (needsLevelFit(
-      reviewOn: _state.settings.reviewDecks,
+      // A notation has no level to find.
+      reviewOn: _state.settings.reviewDecks && !_view.language.isNotation,
       skills: _skills,
       rows: keys,
       covered: (_) => _covers(),
@@ -969,7 +979,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     final l10n = AppLocalizations.of(context)!;
     final level = _skills.scriptLevelOf(script);
     final covered = level.isKnow && _covers();
-    final next = nextScriptLevel(level, canLearn: _view.canLearn);
+    final next = nextScriptLevel(
+      level,
+      canLearn: _view.canLearn,
+      canWrite: _view.language.typed,
+    );
     final name = scriptPillName(l10n, script, _view.name);
     return SkillBadge(
       key: ValueKey<String>('skill-script:$script'),
@@ -1516,7 +1530,9 @@ class _InfoDialog extends StatelessWidget {
               CourseLine(levels: progress.levels),
             ],
             const SizedBox(height: 8),
-            if (!view.language.scriptOnly && !view.language.isSign)
+            if (!view.language.scriptOnly &&
+                !view.language.isSign &&
+                !view.language.isNotation)
               kv(l10n.languagesInfoDialect, dialectOf(l10n, view.language)),
             for (final script in scripts)
               kv(
