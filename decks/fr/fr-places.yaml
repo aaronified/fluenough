@@ -1,0 +1,229 @@
+schema: 1
+id: "fr-places"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0963"
+    target: "pharmacie"
+    ipa: "faʁmasi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pharmacie est près de la gare.", ipa: "la faʁmasi ɛ pʁɛ də la gaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "pharmacie", base: "pharmacie" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je vais à la pharmacie.", ipa: "ʒə ve a la faʁmasi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "pharmacie", base: "pharmacie" }] }
+  - id: "fr-0964"
+    target: "école"
+    ipa: "ekɔl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'école est grande.", ipa: "lekɔl ɛ ɡʁɑ̃d", bases: [{ word: "L'école", base: "école" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Ma sœur va à l'école.", ipa: "ma sœʁ va a lekɔl", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "va", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "l'école", base: "école" }] }
+  - id: "fr-0965"
+    target: "banque"
+    ipa: "bɑ̃k"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La banque est fermée.", ipa: "la bɑ̃k ɛ fɛʁme", bases: [{ word: "La", ref: "fr-0544" }, { word: "banque", base: "banque" }, { word: "est", ref: "fr-0021" }, { word: "fermée", ref: "fr-0438" }] }
+      - { target: "Je travaille près de la banque.", ipa: "ʒə tʁavaj pʁɛ də la bɑ̃k", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "banque", base: "banque" }] }
+  - id: "fr-0966"
+    target: "église"
+    ipa: "eɡliz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'église est vieille.", ipa: "legliz ɛ vjɛj", bases: [{ word: "L'église", base: "église" }, { word: "est", ref: "fr-0021" }, { word: "vieille", ref: "fr-0109" }] }
+      - { target: "Nous marchons vers l'église.", ipa: "nu maʁʃɔ̃ vɛʁ leɡliz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", ref: "fr-0306" }, { word: "vers", ref: "fr-0594" }, { word: "l'église", base: "église" }] }
+  - id: "fr-0967"
+    target: "bibliothèque"
+    ipa: "bibljɔtɛk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bibliothèque est ouverte.", ipa: "la bibljɔtɛk ɛ uvɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "bibliothèque", base: "bibliothèque" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", ref: "fr-0437" }] }
+      - { target: "Je lis à la bibliothèque.", ipa: "ʒə li a la bibljɔtɛk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "bibliothèque", base: "bibliothèque" }] }
+  - id: "fr-0968"
+    target: "parc"
+    ipa: "paʁk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le parc est grand.", ipa: "lə paʁk ɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "parc", base: "parc" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Nous marchons dans le parc.", ipa: "nu maʁʃɔ̃ dɑ̃ lə paʁk", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", ref: "fr-0306" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "parc", base: "parc" }] }
+  - id: "fr-0969"
+    target: "hôtel"
+    ipa: "otɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'hôtel est près de la gare.", ipa: "lotɛl ɛ pʁɛ də la gaʁ", bases: [{ word: "L'hôtel", base: "hôtel" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Vous restez à l'hôtel.", ipa: "vu ʁɛste a lotɛl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "restez", ref: "fr-0514" }, { word: "à", base: "à" }, { word: "l'hôtel", base: "hôtel" }] }
+  - id: "fr-0970"
+    target: "restaurant"
+    ipa: "ʁɛstɔʁɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le restaurant est plein.", ipa: "lə ʁɛstɔʁɑ̃ ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "restaurant", base: "restaurant" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Je mange au restaurant.", ipa: "ʒə mɑ̃ʒ o ʁɛstɔʁɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "au", base: "au" }, { word: "restaurant", base: "restaurant" }] }
+  - id: "fr-0971"
+    target: "cinéma"
+    ipa: "sinema"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cinéma est loin.", ipa: "lə sinema ɛ lwɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cinéma", base: "cinéma" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Je vais au cinéma.", ipa: "ʒə ve o sinema", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "au", base: "au" }, { word: "cinéma", base: "cinéma" }] }
+  - id: "fr-0972"
+    target: "théâtre"
+    ipa: "teɑtʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le théâtre est près du musée.", ipa: "lə teɑtʁ ɛ pʁɛ dy myze", bases: [{ word: "Le", ref: "fr-0543" }, { word: "théâtre", base: "théâtre" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "du" }, { word: "musée", ref: "fr-0077" }] }
+      - { target: "Nous allons au théâtre.", ipa: "nu zalɔ̃ o teɑtʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "au", base: "au" }, { word: "théâtre", base: "théâtre" }] }
+  - id: "fr-0973"
+    target: "boulangerie"
+    ipa: "bulɑ̃ʒʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La boulangerie est ouverte.", ipa: "la bulɑ̃ʒʁi ɛ uvɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "boulangerie", base: "boulangerie" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", ref: "fr-0437" }] }
+      - { target: "Je vais à la boulangerie.", ipa: "ʒə ve a la bulɑ̃ʒʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "boulangerie", base: "boulangerie" }] }
+  - id: "fr-0974"
+    target: "mairie"
+    ipa: "mɛʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mairie est là.", ipa: "la mɛʁi ɛ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "mairie", base: "mairie" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Où est la mairie ?", ipa: "u ɛ la mɛʁi", bases: [{ word: "Où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "mairie", base: "mairie" }] }
+  - id: "fr-0975"
+    target: "piscine"
+    ipa: "pisin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La piscine est grande.", ipa: "la pisin ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "piscine", base: "piscine" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Nous nageons à la piscine.", ipa: "nu naʒɔ̃ a la pisin", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "nageons", ref: "fr-0524" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "piscine", base: "piscine" }] }
+  - id: "fr-0976"
+    target: "hôpital"
+    ipa: "opital"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'hôpital est loin.", ipa: "lopital ɛ lwɛ̃", bases: [{ word: "L'hôpital", base: "hôpital" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Il travaille à l'hôpital.", ipa: "il tʁavaj a lopital", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "à", base: "à" }, { word: "l'hôpital", base: "hôpital" }] }
+  - id: "fr-0977"
+    target: "université"
+    ipa: "yniveʁsite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'université est grande.", ipa: "lyniveʁsite ɛ ɡʁɑ̃d", bases: [{ word: "L'université", base: "université" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "J'étudie à l'université.", ipa: "ʒetydi a lyniveʁsite", bases: [{ word: "J'étudie", ref: "fr-0253" }, { word: "à", base: "à" }, { word: "l'université", base: "université" }] }
+  - id: "fr-0978"
+    target: "centre"
+    ipa: "sɑ̃tʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le centre est près de la place.", ipa: "lə sɑ̃tʁ ɛ pʁɛ də la plas", bases: [{ word: "Le", ref: "fr-0543" }, { word: "centre", base: "centre" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "place", ref: "fr-0901" }] }
+      - { target: "Nous allons au centre.", ipa: "nu zalɔ̃ o sɑ̃tʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "au", base: "au" }, { word: "centre", base: "centre" }] }
+  - id: "fr-0979"
+    target: "stade"
+    ipa: "stad"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le stade est grand.", ipa: "lə stad ɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stade", base: "stade" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Ils jouent au stade.", ipa: "il ʒu o stad", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "jouent", ref: "fr-0308" }, { word: "au", base: "au" }, { word: "stade", base: "stade" }] }
+  - id: "fr-0980"
+    target: "boucherie"
+    ipa: "buʃʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La boucherie est près du marché.", ipa: "la buʃʁi ɛ pʁɛ dy maʁʃe", bases: [{ word: "La", ref: "fr-0544" }, { word: "boucherie", base: "boucherie" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "du" }, { word: "marché", ref: "fr-0735" }] }
+      - { target: "Je vais à la boucherie.", ipa: "ʒə ve a la buʃʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "boucherie", base: "boucherie" }] }
+  - id: "fr-0981"
+    target: "quartier"
+    ipa: "kaʁtje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le quartier est calme.", ipa: "lə kaʁtje ɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "quartier", base: "quartier" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+      - { target: "J'habite dans un quartier calme.", ipa: "ʒabit dɑ̃ zœ̃ kaʁtje kalm", bases: [{ word: "J'habite", ref: "fr-0251" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "quartier", base: "quartier" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-0982"
+    target: "public"
+    ipa: "pyblik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le parc est public.", ipa: "lə paʁk ɛ pyblik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "parc", ref: "fr-0968" }, { word: "est", ref: "fr-0021" }, { word: "public", base: "public" }] }
+      - { target: "La piscine est publique.", ipa: "la pisin ɛ pyblik", bases: [{ word: "La", ref: "fr-0544" }, { word: "piscine", ref: "fr-0975" }, { word: "est", ref: "fr-0021" }, { word: "publique", base: "public" }] }

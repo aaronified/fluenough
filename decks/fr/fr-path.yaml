@@ -208,11 +208,8 @@ units:
     words: 21
   - decks: ["fr-body", "fr-body-sentences", "fr-reading-body", "*"]
     words: 24
-  - planned: { id: "fr-places", theme: "places", words: 35 }
-    listening_passages:
-      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
-    reading_passages:
-      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
+  - decks: ["fr-places", "fr-places-sentences", "fr-reading-places", "*"]
+    words: 20
   - decks: ["fr-demonstratives", "fr-grammar-demonstratives", "fr-reading-demonstratives"]
     words: 2
     grammar: ["demonstratives"]
