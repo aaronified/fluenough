@@ -1,0 +1,282 @@
+schema: 1
+id: "fr-market"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0735"
+    target: "marché"
+    ipa: "maʁʃe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vais au marché.", ipa: "ʒə ve o maʁʃe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "au", base: "au" }, { word: "marché", base: "marché" }] }
+      - { target: "Le marché est grand.", ipa: "lə maʁʃe ɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marché", base: "marché" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-0736"
+    target: "vendeur"
+    ipa: "vɑ̃dœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vendeur parle français.", ipa: "lə vɑ̃dœʁ paʁl fʁɑ̃sɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vendeur", base: "vendeur" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Mon ami est vendeur.", ipa: "mɔ̃n ami ɛ vɑ̃dœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "vendeur", base: "vendeur" }] }
+  - id: "fr-0737"
+    target: "prix"
+    ipa: "pʁi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est le prix ?", ipa: "kɛl ɛ lə pʁi", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "prix", base: "prix" }] }
+      - { target: "Le prix est bon.", ipa: "lə pʁi ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "prix", base: "prix" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0738"
+    target: "fruit"
+    ipa: "fʁɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les fruits sont frais.", ipa: "le fʁɥi sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "fruits", base: "fruit" }, { word: "sont", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+      - { target: "J'aime le fruit.", ipa: "ʒɛm lə fʁɥi", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "fruit", base: "fruit" }] }
+  - id: "fr-0739"
+    target: "légume"
+    ipa: "legym"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les légumes sont bons.", ipa: "le legym sɔ̃ bɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "légumes", base: "légume" }, { word: "sont", ref: "fr-0021" }, { word: "bons", ref: "fr-0040" }] }
+      - { target: "Je mange des légumes.", ipa: "ʒə mɑ̃ʒ de legym", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "des", ref: "fr-0546" }, { word: "légumes", base: "légume" }] }
+  - id: "fr-0740"
+    target: "pomme"
+    ipa: "pɔm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange une pomme.", ipa: "ʒə mɑ̃ʒ yn pɔm", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "pomme", base: "pomme" }] }
+      - { target: "La pomme est mûre.", ipa: "la pɔm ɛ myʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "pomme", base: "pomme" }, { word: "est", ref: "fr-0021" }, { word: "mûre", ref: "fr-0754" }] }
+  - id: "fr-0741"
+    target: "poire"
+    ipa: "pwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La poire est bonne.", ipa: "la pwaʁ ɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "poire", base: "poire" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "Elle achète une poire.", ipa: "ɛl aʃɛt yn pwaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "achète", ref: "fr-0294" }, { word: "une", ref: "fr-0545" }, { word: "poire", base: "poire" }] }
+  - id: "fr-0742"
+    target: "banane"
+    ipa: "banan"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends une banane.", ipa: "ʒə pʁɑ̃ yn banan", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "banane", base: "banane" }] }
+      - { target: "Les bananes sont chères.", ipa: "le banan sɔ̃ ʃɛʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "bananes", base: "banane" }, { word: "sont", ref: "fr-0021" }, { word: "chères", ref: "fr-0104" }] }
+  - id: "fr-0743"
+    target: "fraise"
+    ipa: "fʁɛz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les fraises sont bonnes.", ipa: "le fʁɛz sɔ̃ bɔn", bases: [{ word: "Les", ref: "fr-0043" }, { word: "fraises", base: "fraise" }, { word: "sont", ref: "fr-0021" }, { word: "bonnes", ref: "fr-0040" }] }
+      - { target: "Nous mangeons des fraises.", ipa: "nu mɑ̃ʒɔ̃ de fʁɛz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "des", ref: "fr-0546" }, { word: "fraises", base: "fraise" }] }
+  - id: "fr-0744"
+    target: "tomate"
+    ipa: "tɔmat"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tomate est fraîche.", ipa: "la tɔmat ɛ fʁɛʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "tomate", base: "tomate" }, { word: "est", ref: "fr-0021" }, { word: "fraîche", ref: "fr-0753" }] }
+      - { target: "Je mange une tomate.", ipa: "ʒə mɑ̃ʒ yn tɔmat", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "tomate", base: "tomate" }] }
+  - id: "fr-0745"
+    target: "carotte"
+    ipa: "kaʁɔt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma mère achète des carottes.", ipa: "ma mɛʁ aʃɛt de kaʁɔt", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "achète", ref: "fr-0294" }, { word: "des", ref: "fr-0546" }, { word: "carottes", base: "carotte" }] }
+      - { target: "La carotte est longue.", ipa: "la kaʁɔt ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "carotte", base: "carotte" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+  - id: "fr-0746"
+    target: "salade"
+    ipa: "salad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous mangez la salade.", ipa: "vu mɑ̃ʒe la salad", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "mangez", ref: "fr-0282" }, { word: "la", ref: "fr-0544" }, { word: "salade", base: "salade" }] }
+      - { target: "Une salade coûte peu.", ipa: "yn salad kut pø", bases: [{ word: "Une", ref: "fr-0545" }, { word: "salade", base: "salade" }, { word: "coûte", ref: "fr-0752" }, { word: "peu", ref: "fr-0342" }] }
+  - id: "fr-0747"
+    target: "oignon"
+    ipa: "ɔɲɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il met un oignon dans la salade.", ipa: "il mɛ œ̃n ɔɲɔ̃ dɑ̃ la salad", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "oignon", base: "oignon" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }] }
+      - { target: "L'oignon est petit.", ipa: "lɔɲɔ̃ ɛ pəti", bases: [{ word: "L'oignon", base: "oignon" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+  - id: "fr-0748"
+    target: "panier"
+    ipa: "panje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon panier est plein.", ipa: "mɔ̃ panje ɛ plɛ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "panier", base: "panier" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Je mets les fruits dans le panier.", ipa: "ʒə mɛ le fʁɥi dɑ̃ lə panje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "les", ref: "fr-0043" }, { word: "fruits", ref: "fr-0738" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "panier", base: "panier" }] }
+  - id: "fr-0749"
+    target: "caisse"
+    ipa: "kɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La caisse est là.", ipa: "la kɛs ɛ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "caisse", base: "caisse" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Je paie à la caisse.", ipa: "ʒə pɛ a la kɛs", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "caisse", base: "caisse" }] }
+  - id: "fr-0750"
+    target: "monnaie"
+    ipa: "mɔnɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous avez la monnaie ?", ipa: "vu zave la mɔnɛ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "la", ref: "fr-0544" }, { word: "monnaie", base: "monnaie" }] }
+      - { target: "Je n'ai pas de monnaie.", ipa: "ʒə nɛ pa də mɔnɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "monnaie", base: "monnaie" }] }
+  - id: "fr-0751"
+    target: "argent"
+    ipa: "aʁʒɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je n'ai pas d'argent.", ipa: "ʒə nɛ pa daʁʒɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "d'argent", base: "argent" }] }
+      - { target: "L'argent est important.", ipa: "laʁʒɑ̃ ɛ ɛ̃poʁtɑ̃", bases: [{ word: "L'argent", base: "argent" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-0752"
+    target: "coûter"
+    ipa: "kute"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ça coûte cher.", ipa: "sa kut ʃɛʁ", bases: [{ word: "Ça", base: "ça" }, { word: "coûte", base: "coûter" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "Combien ça coûte ?", ipa: "kɔ̃bjɛ̃ sa kut", bases: [{ word: "Combien", ref: "fr-0071" }, { word: "ça", base: "ça" }, { word: "coûte", base: "coûter" }] }
+  - id: "fr-0753"
+    target: "frais"
+    ipa: "fʁɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les fruits sont frais.", ipa: "le fʁɥi sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "fruits", ref: "fr-0738" }, { word: "sont", ref: "fr-0021" }, { word: "frais", base: "frais" }] }
+      - { target: "L'eau est fraîche.", ipa: "lo ɛ fʁɛʃ", bases: [{ word: "L'eau", ref: "fr-0024" }, { word: "est", ref: "fr-0021" }, { word: "fraîche", base: "frais" }] }
+  - id: "fr-0754"
+    target: "mûr"
+    ipa: "myʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pomme est mûre.", ipa: "la pɔm ɛ myʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "pomme", ref: "fr-0740" }, { word: "est", ref: "fr-0021" }, { word: "mûre", base: "mûr" }] }
+      - { target: "Les poires sont mûres.", ipa: "le pwaʁ sɔ̃ myʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "poires", ref: "fr-0741" }, { word: "sont", ref: "fr-0021" }, { word: "mûres", base: "mûr" }] }
+  - id: "fr-0755"
+    target: "orange"
+    ipa: "ɔʁɑ̃ʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange une orange.", ipa: "ʒə mɑ̃ʒ yn ɔʁɑ̃ʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "orange", base: "orange" }] }
+      - { target: "L'orange est bonne.", ipa: "lɔʁɑ̃ʒ ɛ bɔn", bases: [{ word: "L'orange", base: "orange" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+  - id: "fr-0756"
+    target: "cerise"
+    ipa: "səʁiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les cerises sont bonnes.", ipa: "le səʁiz sɔ̃ bɔn", bases: [{ word: "Les", ref: "fr-0043" }, { word: "cerises", base: "cerise" }, { word: "sont", ref: "fr-0021" }, { word: "bonnes", ref: "fr-0040" }] }
+      - { target: "Je mange des cerises.", ipa: "ʒə mɑ̃ʒ de səʁiz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "des", ref: "fr-0546" }, { word: "cerises", base: "cerise" }] }
+  - id: "fr-0757"
+    target: "raisin"
+    ipa: "ʁɛzɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le raisin est bon.", ipa: "lə ʁɛzɛ̃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "raisin", base: "raisin" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Nous achetons du raisin.", ipa: "nu zaʃtɔ̃ dy ʁɛzɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "achetons", ref: "fr-0294" }, { word: "du", base: "du" }, { word: "raisin", base: "raisin" }] }
+  - id: "fr-0758"
+    target: "marchand"
+    ipa: "maʁʃɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le marchand est gentil.", ipa: "lə maʁʃɑ̃ ɛ ʒɑ̃ti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marchand", base: "marchand" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Mon ami parle au marchand.", ipa: "mɔ̃n ami paʁl o maʁʃɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "au" }, { word: "marchand", base: "marchand" }] }
+  - id: "fr-0759"
+    target: "étal"
+    ipa: "etal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'étal est plein.", ipa: "letal ɛ plɛ̃", bases: [{ word: "L'étal", base: "étal" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Le marchand est à son étal.", ipa: "lə maʁʃɑ̃ ɛ a sɔ̃ etal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marchand", ref: "fr-0758" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "son", ref: "fr-0138" }, { word: "étal", base: "étal" }] }

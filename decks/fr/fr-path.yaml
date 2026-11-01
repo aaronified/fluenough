@@ -193,11 +193,8 @@ units:
     grammar: ["possessives"]
   - decks: ["fr-numbers-big", "fr-numbers-big-sentences", "fr-reading-numbers-big", "*"]
     words: 20
-  - planned: { id: "fr-market", theme: "market", words: 35 }
-    listening_passages:
-      - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
-    reading_passages:
-      - { id: "market-price-board", text: { "en": "A price board at a market" } }
+  - decks: ["fr-market", "fr-market-sentences", "fr-reading-market", "*"]
+    words: 25
   - planned: { id: "fr-groceries", theme: "groceries", words: 35 }
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
