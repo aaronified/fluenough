@@ -445,15 +445,14 @@ class _PassageText extends StatelessWidget {
                           fontSize: 22,
                           textAlign: TextAlign.start,
                         ),
-                        if (showReading && sentence.reading != null)
-                          Text(
-                            sentence.reading!,
-                            style: theme.textTheme.bodyMedium!.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
+                        ReadingIpaLines(
+                          reading: sentence.reading,
+                          ipa: sentence.ipa,
+                          showReading: showReading,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: scheme.onSurfaceVariant,
                           ),
-                        if (ipaToShow(context, sentence.ipa) case final ipa?)
-                          IpaLine(ipa, textAlign: TextAlign.start),
+                        ),
                       ],
                     ),
                   ),
@@ -609,15 +608,14 @@ class Glossary extends StatelessWidget {
                       ],
                     ],
                   ),
-                  if (settings.showRomanisation && entry.reading != null)
-                    Text(
-                      entry.reading!,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
+                  ReadingIpaLines(
+                    reading: entry.reading,
+                    ipa: entry.ipa,
+                    showReading: settings.showRomanisation,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
                     ),
-                  if (ipaToShow(context, entry.ipa) case final ipa?)
-                    IpaLine(ipa, textAlign: TextAlign.start),
+                  ),
                   _InLanguage(
                     entry.meaning[bestLanguage(entry.meaning.keys, spoken)]!,
                     code: bestLanguage(entry.meaning.keys, spoken),

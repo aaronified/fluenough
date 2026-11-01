@@ -242,6 +242,7 @@ void changeAll(SettingsNotifier s) {
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
     ..showIpa = false
+    ..ipaReplacesReading = true
     ..autoplay = true
     ..matchTapToHear = false
     ..countSpeakerTap()
@@ -1163,6 +1164,8 @@ void main() {
       // Saved at all: a key left out of toStored would round-trip as its
       // default on both sides, and pass.
       expect(changed.toStored()['pure_black'], 'true');
+      expect(changed.toStored()['ipa_replaces_reading'], 'true');
+      expect(SettingsNotifier().ipaReplacesReading, isFalse);
       expect(changed.toStored()['auto_adjust'], 'false');
       expect(SettingsNotifier().autoAdjust, isTrue, reason: 'on by default');
       final restored = SettingsNotifier()..restore(changed.toStored());

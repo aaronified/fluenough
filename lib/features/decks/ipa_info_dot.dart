@@ -59,3 +59,30 @@ class IpaWithInfo extends StatelessWidget {
     ],
   );
 }
+
+/// A reading line that [swapped] to the IPA (#697, "IPA replaces
+/// transliteration") with the [IpaInfoDot] of [card] beside it, as the IPA
+/// has one everywhere else. Not swapped, [reading] is returned as it is.
+class ReadingWithInfo extends StatelessWidget {
+  const ReadingWithInfo({
+    super.key,
+    required this.reading,
+    required this.card,
+    required this.swapped,
+  });
+
+  final Widget reading;
+  final Card card;
+  final bool swapped;
+
+  @override
+  Widget build(BuildContext context) => swapped
+      ? Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Flexible(child: reading),
+            IpaInfoDot(card: card),
+          ],
+        )
+      : reading;
+}

@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../placement/native_choice.dart';
 import 'fact_languages_tile.dart';
+import 'ipa_replaces_tile.dart';
 import 'settings_section_page.dart';
 import 'sources_page.dart';
 import 'your_decks_page.dart';
@@ -65,6 +66,8 @@ class LanguagesSettingsPage extends StatelessWidget {
           value: settings.showIpa,
           onChanged: (on) => settings.showIpa = on,
         ),
+        // Greyed out, and says why, while IPA is off (#697).
+        ipaReplacesTile(l10n, settings),
         GroupedTile.toggle(
           leading: GroupedTile.noIcon,
           title: l10n.settingsAdult,
