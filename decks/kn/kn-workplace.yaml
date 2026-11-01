@@ -1,0 +1,229 @@
+schema: 1
+id: "kn-workplace"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "workplace"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1260"
+    target: "ಸಹೋದ್ಯೋಗಿ"
+    reading: "sahōdyōgi"
+    ipa: "sahoːd̪joːɡi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಹೋದ್ಯೋಗಿ ಬಂದಿದ್ದಾರೆ.", reading: "sahōdyōgi bandiddāre.", ipa: "sahoːd̪joːɡi band̪id̪d̪aːre", bases: [{ word: "ಬಂದಿದ್ದಾರೆ", ref: "kn-0632" }] }
+      - { target: "ಸಹೋದ್ಯೋಗಿಗೆ ಸಹಾಯ ಮಾಡು.", reading: "sahōdyōgige sahāya māḍu.", ipa: "sahoːd̪joːɡiɡe sahaːja maːɖu", bases: [{ word: "ಸಹೋದ್ಯೋಗಿಗೆ", base: "ಸಹೋದ್ಯೋಗಿ", reading: "sahōdyōgi" }] }
+  - id: "kn-1261"
+    target: "ಮ್ಯಾನೇಜರ್"
+    reading: "myānējar"
+    ipa: "mjaːneːdʒar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮ್ಯಾನೇಜರ್ ಕರೆದರು.", reading: "myānējar karedaru.", ipa: "mjaːneːdʒar kared̪aru", bases: [{ word: "ಕರೆದರು", ref: "kn-0654" }] }
+      - { target: "ಮ್ಯಾನೇಜರ್ ಹೇಳಿದರು.", reading: "myānējar hēḷidaru.", ipa: "mjaːneːdʒar heːɭid̪aru", bases: [{ word: "ಹೇಳಿದರು", ref: "kn-0642" }] }
+  - id: "kn-1262"
+    target: "ಮೇಲಧಿಕಾರಿ"
+    reading: "mēladhikāri"
+    ipa: "meːlad̪ʱikaːri"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮೇಲಧಿಕಾರಿ ಬಂದರು.", reading: "mēladhikāri bandaru.", ipa: "meːlad̪ʱikaːri band̪aru" }
+      - { target: "ಮೇಲಧಿಕಾರಿಗೆ ವರದಿ ಕೊಡು.", reading: "mēladhikārige varadi koḍu.", ipa: "meːlad̪ʱikaːriɡe ʋarad̪i koɖu", bases: [{ word: "ಮೇಲಧಿಕಾರಿಗೆ", base: "ಮೇಲಧಿಕಾರಿ", reading: "mēladhikāri" }] }
+  - id: "kn-1263"
+    target: "ಕೆಲಸಗಾರ"
+    reading: "kelasagāra"
+    ipa: "kelasaɡaːra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೆಲಸಗಾರ ಬಂದ.", reading: "kelasagāra banda.", ipa: "kelasaɡaːra band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಕೆಲಸಗಾರರು ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದಾರೆ.", reading: "kelasagāraru kelasa māḍuttiddāre.", ipa: "kelasaɡaːraru kelasa maːɖut̪t̪id̪d̪aːre", bases: [{ word: "ಕೆಲಸಗಾರರು", base: "ಕೆಲಸಗಾರ", reading: "kelasagāra" }, { word: "ಮಾಡುತ್ತಿದ್ದಾರೆ", ref: "kn-0630" }] }
+  - id: "kn-1264"
+    target: "ಸಭೆ"
+    reading: "sabhe"
+    ipa: "sabʱe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ಸಭೆ ಇದೆ.", reading: "indu sabhe ide.", ipa: "ind̪u sabʱe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಸಭೆಯಲ್ಲಿ ಮಾತಾಡು.", reading: "sabheyalli mātāḍu.", ipa: "sabʱejalli maːt̪aːɖu", bases: [{ word: "ಸಭೆಯಲ್ಲಿ", base: "ಸಭೆ", reading: "sabhe" }] }
+  - id: "kn-1265"
+    target: "ಕಾರ್ಯದರ್ಶಿ"
+    reading: "kāryadarśi"
+    ipa: "kaːrjad̪arʃi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾರ್ಯದರ್ಶಿ ಬಂದರು.", reading: "kāryadarśi bandaru.", ipa: "kaːrjad̪arʃi band̪aru" }
+      - { target: "ಕಾರ್ಯದರ್ಶಿ ಸಭೆ ಕರೆದರು.", reading: "kāryadarśi sabhe karedaru.", ipa: "kaːrjad̪arʃi sabʱe kared̪aru", bases: [{ word: "ಕರೆದರು", ref: "kn-0654" }] }
+  - ref: "kn-0238"
+  - id: "kn-1266"
+    target: "ವೇತನ"
+    reading: "vētana"
+    ipa: "ʋeːt̪ana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೇತನ ಹೆಚ್ಚು ಆಯಿತು.", reading: "vētana heccu āyitu.", ipa: "ʋeːt̪ana hetʃtʃu aːjit̪u" }
+      - { target: "ವೇತನ ಕಡಿಮೆ.", reading: "vētana kaḍime.", ipa: "ʋeːt̪ana kaɖime" }
+  - id: "kn-1267"
+    target: "ಕಡತ"
+    reading: "kaḍata"
+    ipa: "kaɖat̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಡತ ಎಲ್ಲಿ?", reading: "kaḍata elli?", ipa: "kaɖat̪a elli" }
+      - { target: "ಕಡತ ಮೇಜಿನ ಮೇಲೆ ಇದೆ.", reading: "kaḍata mējina mēle ide.", ipa: "kaɖat̪a meːdʒina meːle id̪e", bases: [{ word: "ಮೇಜಿನ", ref: "kn-0392" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1268"
+    target: "ಕಂಪ್ಯೂಟರ್"
+    reading: "kampyūṭar"
+    ipa: "kampjuːʈar"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಂಪ್ಯೂಟರ್ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ.", reading: "kampyūṭar kelasa māḍuttilla.", ipa: "kampjuːʈar kelasa maːɖut̪t̪illa", bases: [{ word: "ಮಾಡುತ್ತಿಲ್ಲ", ref: "kn-0630" }] }
+      - { target: "ಕಂಪ್ಯೂಟರ್ ಹೊಸದು.", reading: "kampyūṭar hosadu.", ipa: "kampjuːʈar hosad̪u", bases: [{ word: "ಹೊಸದು", ref: "kn-0404" }] }
+  - id: "kn-1269"
+    target: "ವರದಿ"
+    reading: "varadi"
+    ipa: "ʋarad̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವರದಿ ಬರೆ.", reading: "varadi bare.", ipa: "ʋarad̪i bare" }
+      - { target: "ವರದಿ ಮುಗಿಯಿತು.", reading: "varadi mugiyitu.", ipa: "ʋarad̪i muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", base: "ಮುಗಿ", reading: "mugi" }] }
+  - id: "kn-1270"
+    target: "ಯೋಜನೆ"
+    reading: "yōjane"
+    ipa: "joːdʒane"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹೊಸ ಯೋಜನೆ ಇದೆ.", reading: "hosa yōjane ide.", ipa: "hosa joːdʒane id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಯೋಜನೆ ಚೆನ್ನಾಗಿದೆ.", reading: "yōjane cennāgide.", ipa: "joːdʒane tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1271"
+    target: "ಗುರಿ"
+    reading: "guri"
+    ipa: "ɡuri"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗುರಿ ದೊಡ್ಡದು.", reading: "guri doḍḍadu.", ipa: "ɡuri d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಗುರಿ ತಲುಪು.", reading: "guri talupu.", ipa: "ɡuri t̪alupu" }
+  - id: "kn-1272"
+    target: "ತಂಡ"
+    reading: "taṇḍa"
+    ipa: "t̪aɳɖa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತಂಡ ಒಳ್ಳೆಯದು.", reading: "taṇḍa oḷḷeyadu.", ipa: "t̪aɳɖa oɭɭejad̪u" }
+      - { target: "ನಮ್ಮ ತಂಡ ಕೆಲಸ ಮಾಡುತ್ತದೆ.", reading: "namma taṇḍa kelasa māḍuttade.", ipa: "namma t̪aɳɖa kelasa maːɖut̪t̪ad̪e", bases: [{ word: "ಮಾಡುತ್ತದೆ", ref: "kn-0630" }] }
+  - id: "kn-1273"
+    target: "ನಿರ್ಧಾರ"
+    reading: "nirdhāra"
+    ipa: "nird̪ʱaːra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿರ್ಧಾರ ಮಾಡು.", reading: "nirdhāra māḍu.", ipa: "nird̪ʱaːra maːɖu" }
+      - { target: "ನಿರ್ಧಾರ ಕಷ್ಟ.", reading: "nirdhāra kaṣṭa.", ipa: "nird̪ʱaːra kaʂʈa" }
+  - id: "kn-1274"
+    target: "ಇಮೇಲ್"
+    reading: "imēl"
+    ipa: "imeːl"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಮೇಲ್ ಕಳುಹಿಸು.", reading: "imēl kaḷuhisu.", ipa: "imeːl kaɭuhisu" }
+      - { target: "ಇಮೇಲ್ ಬಂದಿದೆ.", reading: "imēl bandide.", ipa: "imeːl band̪id̪e", bases: [{ word: "ಬಂದಿದೆ", ref: "kn-0632" }] }
+  - id: "kn-1275"
+    target: "ದಾಖಲೆ"
+    reading: "dākhale"
+    ipa: "d̪aːkʰale"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದಾಖಲೆ ತೋರಿಸು.", reading: "dākhale tōrisu.", ipa: "d̪aːkʰale t̪oːrisu" }
+      - { target: "ದಾಖಲೆ ಬೇಕು.", reading: "dākhale bēku.", ipa: "d̪aːkʰale beːku" }
+  - id: "kn-1276"
+    target: "ಯೋಚಿಸು"
+    reading: "yōcisu"
+    ipa: "joːtʃisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ಯೋಚಿಸುತ್ತಾನೆ.", reading: "avanu yōcisuttāne.", ipa: "aʋanu joːtʃisut̪t̪aːne", bases: [{ word: "ಯೋಚಿಸುತ್ತಾನೆ", base: "ಯೋಚಿಸು", reading: "yōcisu" }] }
+      - { target: "ಅವರು ಯೋಚಿಸುತ್ತಾರೆ.", reading: "avaru yōcisuttāre.", ipa: "aʋaru joːtʃisut̪t̪aːre", bases: [{ word: "ಯೋಚಿಸುತ್ತಾರೆ", base: "ಯೋಚಿಸು", reading: "yōcisu" }] }
+  - id: "kn-1277"
+    target: "ಮುಗಿ"
+    reading: "mugi"
+    ipa: "muɡi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೆಲಸ ಮುಗಿಯಿತು.", reading: "kelasa mugiyitu.", ipa: "kelasa muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", base: "ಮುಗಿ", reading: "mugi" }] }
+      - { target: "ಸಭೆ ಮುಗಿಸಿದರು.", reading: "sabhe mugisidaru.", ipa: "sabʱe muɡisid̪aru", bases: [{ word: "ಮುಗಿಸಿದರು", base: "ಮುಗಿಸು", reading: "mugisu" }] }
+  - id: "kn-1278"
+    target: "ಶುರು"
+    reading: "śuru"
+    ipa: "ʃuru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಭೆ ಶುರು ಆಯಿತು.", reading: "sabhe śuru āyitu.", ipa: "sabʱe ʃuru aːjit̪u" }
+      - { target: "ಶುರು ಆಯಿತು!", reading: "śuru āyitu!", ipa: "ʃuru aːjit̪u" }
+  - id: "kn-1279"
+    target: "ಸಹಕಾರ"
+    reading: "sahakāra"
+    ipa: "sahakaːra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಹಕಾರ ಬೇಕು.", reading: "sahakāra bēku.", ipa: "sahakaːra beːku" }
+      - { target: "ನಿನ್ನ ಸಹಕಾರ ಚೆನ್ನಾಗಿದೆ.", reading: "ninna sahakāra cennāgide.", ipa: "ninna sahakaːra tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - ref: "kn-0863"
