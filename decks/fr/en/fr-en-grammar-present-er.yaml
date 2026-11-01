@@ -1,0 +1,29 @@
+schema: 1
+id: "fr-en-grammar-present-er"
+kind: "layer"
+core: "fr-grammar-present-er"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present of -er verbs"
+license: "CC-BY-SA-4.0"
+description: "Most French verbs end in -er and follow one pattern in the present. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Pattern"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "parler": "to speak"
+    "aimer": "to like; to love"
+    "habiter": "to live (in a place)"
+    "travailler": "to work"
+    "etudier": "to study"
+    "manger": "to eat"
+    "jouer": "to play"
+    "ecouter": "to listen to"
+    "regarder": "to watch; to look at"
+    "acheter": "to buy"
+    "chercher": "to look for"
+    "trouver": "to find"
+    "cuisiner": "to cook"
+    "commencer": "to begin; to start"
+  notes: "The endings are -e, -es, -e, -ons, -ez, -ent. The -e, -es and -ent are silent in speech, so je parle, tu parles, il parle and ils parlent are said the same. Manger and commencer keep an e or add a cedilla before -ons (nous mangeons, nous commençons). Acheter changes è before a silent ending (j'achète) but not before -ons (nous achetons). J' comes before a vowel: j'aime, j'habite, j'étudie."

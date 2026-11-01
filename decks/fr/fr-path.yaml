@@ -163,11 +163,9 @@ units:
   - decks: ["fr-grammar-etre", "fr-grammar-avoir", "fr-grammar-il-y-a", "fr-reading-etre-avoir"]
     words: 0
     grammar: ["etre", "avoir", "il-y-a"]
-  - planned: { id: "fr-grammar-present-er", grammar: "present-er" }
-    listening_passages:
-      - { id: "what-we-like", text: { "en": "Friends say what they like, where they live and what they speak" } }
-    reading_passages:
-      - { id: "pen-pal-letter", text: { "en": "A short letter to a pen pal" } }
+  - decks: ["fr-grammar-present-er", "fr-reading-present-er"]
+    words: 0
+    grammar: ["present-er"]
   - planned: { id: "fr-grammar-negation", grammar: "ne-pas" }
     listening_passages:
       - { id: "no-thank-you", text: { "en": "Saying what you do not eat, do not like and do not have" } }
