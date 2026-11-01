@@ -186,11 +186,8 @@ units:
     grammar: ["imperatives"]
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
-  - planned: { id: "fr-work", theme: "work", words: 30 }
-    listening_passages:
-      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
-    reading_passages:
-      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  - decks: ["fr-work", "fr-work-sentences", "fr-reading-work", "*"]
+    words: 30
   - decks: ["fr-possessives", "fr-grammar-possessives", "fr-reading-possessives"]
     words: 8
     grammar: ["possessives"]

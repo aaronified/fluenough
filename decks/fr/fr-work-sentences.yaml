@@ -1,0 +1,104 @@
+schema: 1
+id: "fr-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0689"
+    target: "Je travaille dans le bureau."
+    ipa: "ʒə tʁavaj dɑ̃ lə byʁo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "travaille", ref: "fr-0252" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "bureau", ref: "fr-0660" }
+    confusables:
+      - { id: "usine", ref: "fr-0669", kind: "word" }
+      - { id: "emploi", ref: "fr-0677", kind: "word" }
+  - id: "fr-0690"
+    target: "Le patron est gentil."
+    ipa: "lə patʁɔ̃ ɛ ʒɑ̃ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "patron", ref: "fr-0662" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "gentil", ref: "fr-0434" }
+    confusables:
+      - { id: "chef", ref: "fr-0676", kind: "word" }
+      - { id: "client", ref: "fr-0685", kind: "word" }
+  - id: "fr-0691"
+    target: "La réunion est à dix heures."
+    ipa: "la ʁeynjɔ̃ ɛ a dis œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "réunion", ref: "fr-0664" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "à", base: "à" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "heures", ref: "fr-0074" }
+    confusables:
+      - { id: "pause", ref: "fr-0681", kind: "word" }
+      - { id: "conge", ref: "fr-0680", kind: "word" }
+  - id: "fr-0692"
+    target: "Je gagne un bon salaire."
+    ipa: "ʒə ɡaɲ œ̃ bɔ̃ salɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "gagne", ref: "fr-0670" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "bon", ref: "fr-0040" }
+      - { word: "salaire", ref: "fr-0667" }
+    confusables:
+      - { id: "reussir", ref: "fr-0674", kind: "word" }
+      - { id: "emploi", ref: "fr-0677", kind: "word" }
+  - id: "fr-0693"
+    target: "Nous envoyons le dossier."
+    ipa: "nu ɑ̃vwajɔ̃ lə dosje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "envoyons", ref: "fr-0672" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "dossier", ref: "fr-0665" }
+    confusables:
+      - { id: "projet", ref: "fr-0682", kind: "word" }
+      - { id: "ordinateur", ref: "fr-0666", kind: "word" }
+  - id: "fr-0694"
+    target: "Je suis occupé."
+    ipa: "ʒə sɥi ɔkype"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "occupé", ref: "fr-0675" }
+    confusables:
+      - { id: "pret", ref: "fr-0687", kind: "word" }
+      - { id: "dernier", ref: "fr-0688", kind: "word" }
+  - id: "fr-0695"
+    target: "C'est est un bon poste."
+    ipa: "sə ɛ œ̃ bɔ̃ pɔst"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "C'est", ref: "fr-0143" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "bon", ref: "fr-0040" }
+      - { word: "poste", ref: "fr-0679" }
+    confusables:
+      - { id: "metier", ref: "fr-0659", kind: "word" }
+      - { id: "emploi", ref: "fr-0677", kind: "word" }
