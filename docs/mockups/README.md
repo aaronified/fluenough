@@ -4,16 +4,21 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `skill-pills-onboarding.html`: the skill pills redrawn and the first launch
-  asking Know and Learn (owner, 2026-11-01: "The pill transitions are not
-  very clear." and "During onboarding, show the language screen and explain
-  the options, and then let the users choose what they know and what they
-  want to learn."). NA for Leave, one tint per level, the double tick only
-  for a level found by placement, single skills with their own icon, combined
-  pills with none; the Languages page row and sheet; onboarding's explanation,
-  shared list, skills sheet and Know sheet. Hindustani and Bengali, light and
-  dark, 1.4x. Choices are tweak controls and are listed in
-  `skill-pills-onboarding.md`, with the self-check.
+- `skill-pills-onboarding.html`: the skill pills redrawn, the first launch
+  asking Know and Learn, and the Decks tab for a learner of one script
+  (owner, 2026-11-01: "The pill transitions are not very clear.", "During
+  onboarding, show the language screen and explain the options, and then let
+  the users choose what they know and what they want to learn.", and on the
+  pills "Icons only. Toast explains"). Revised after the owner's answers:
+  icons only on every pill (single skills their own icon; combined pills only
+  the icons of the levels reached; a ring for Learn, one tick for Know, two
+  for checked, a tint per level), Not learning as a block icon or the text NA
+  (tweak, icon recommended), a tooltip on every pill, toasts in the plain
+  words of PR #975, and the Decks path for a one-script learner: a titled
+  "not in your scripts" section with Add it, and a Your script pill. Hindustani
+  and Bengali, light and dark, 1.4x. Choices are tweak controls and are listed
+  in `skill-pills-onboarding.md`, with the exact tooltip wording, the
+  contrast self-check and the open questions.
 
 - `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
   the progress screen. The overall structure is fine, just think on the
