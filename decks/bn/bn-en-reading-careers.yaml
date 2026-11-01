@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-careers"
+name: "Reading: careers"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A short job interview, and a job advert, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-job-interview"
+    title: "A short job interview"
+    theme: "careers"
+    sentences:
+      - { text: "আপনার অভিজ্ঞতা কতদিনের?", reading: "āponār ôbhiggotā kôtodiner?", ipa: "aponar ɔbʱiɡɡot̪a kɔt̪od̪iner" }
+      - { text: "পাঁচ বছরের, আর কম্পিউটারে দক্ষতা আছে।", reading: "pām̐c bôchorer, ār kompiuṭāre dôkkhotā āche.", ipa: "pãtʃ bɔtʃʰorer ar kompiuʈare d̪ɔkkʰot̪a atʃʰe" }
+      - { text: "কেন এই কোম্পানিতে কাজ করতে চান?", reading: "ken ei kompānite kāj kôrote cān?", ipa: "ken ei kompanit̪e kadʒ kɔrot̪e tʃan" }
+      - { text: "এখানে নতুন কাজ শেখার সুযোগ আছে।", reading: "ekhāne notun kāj śekhār sujog āche.", ipa: "ekʰane not̪un kadʒ ʃekʰar sudʒoɡ atʃʰe" }
+      - { text: "ধন্যবাদ, আমরা আপনাকে জানাব।", reading: "dhonnobād, āmorā āponāke jānāb.", ipa: "d̪ʱonnobad̪ amora aponake dʒanab" }
+    questions:
+      - id: "bn-3373"
+        prompt: { "en": "The candidate has five years of experience." }
+        answer: true
+      - id: "bn-3374"
+        prompt: { "en": "What skill does the candidate have?" }
+        options: [{ "en": "Computers" }, { "en": "Cooking" }]
+        answer: 1
+      - id: "bn-3375"
+        prompt: { "en": "What will the company do next?" }
+        options: [{ "en": "Let the candidate know" }, { "en": "Hire at once" }]
+        answer: 1
+  - id: "bn-job-advert"
+    title: "A job advert"
+    theme: "careers"
+    sentences:
+      - { text: "একটি শূন্যপদের জন্য লোক দরকার।", reading: "ekoṭi śunnopoder jonn lok dôrokār.", ipa: "ekoʈi ʃunnopod̪er dʒonn lok d̪ɔrokar" }
+      - { text: "যোগ্যতা: ডিগ্রি আর কম্পিউটার জ্ঞান।", reading: "joggotā: ḍigri ār kompiuṭār ggān.", ipa: "dʒoɡɡot̪a ɖiɡri ar kompiuʈar ɡɡan" }
+      - { text: "বেতনভাতা ভালো, ওভারটাইমের সুযোগ আছে।", reading: "betonobhātā bhālo, obhāroṭāimer sujog āche.", ipa: "bet̪onobʱat̪a bʱalo obʱaroʈaimer sudʒoɡ atʃʰe" }
+      - { text: "জীবনবৃত্তান্ত পাঠান।", reading: "jibonobrittānt pāṭhān.", ipa: "dʒibonobrit̪t̪ant̪ paʈʰan" }
+      - { text: "আবেদনের শেষ তারিখ শুক্রবার।", reading: "ābedoner śeś tārikh śukrobār.", ipa: "abed̪oner ʃeʃ t̪arikʰ ʃukrobar" }
+    questions:
+      - id: "bn-3376"
+        prompt: { "en": "The advert asks for people for a vacancy." }
+        answer: true
+      - id: "bn-3377"
+        prompt: { "en": "What qualifications are needed?" }
+        options: [{ "en": "A degree and computer skills" }, { "en": "A driving licence" }]
+        answer: 1
+      - id: "bn-3378"
+        prompt: { "en": "What must be sent?" }
+        options: [{ "en": "A CV" }, { "en": "A photograph" }]
+        answer: 1
