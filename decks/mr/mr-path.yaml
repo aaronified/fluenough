@@ -531,7 +531,9 @@ units:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
-  - planned: { id: "mr-grammar-concessive", grammar: "concessive" }
+  - decks: ["mr-grammar-concessive"]
+    words: 0
+    grammar: ["concessive"]
     listening_passages:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
