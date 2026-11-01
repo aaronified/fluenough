@@ -376,7 +376,8 @@ units:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "kn-geography", theme: "geography", words: 45 }
+  - decks: ["kn-geography", "*"]
+    words: 22
     listening_passages:
       - { id: "where-in-karnataka", text: { "en": "Naming districts and cities of Karnataka" } }
     reading_passages:
