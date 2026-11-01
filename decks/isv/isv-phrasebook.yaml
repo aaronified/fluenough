@@ -1,0 +1,292 @@
+schema: 1
+id: isv-phrasebook
+part: core
+kind: vocab
+language:
+  code: isv
+  iso639_3: isv
+  name: Interslavic
+  script: latin
+  scripts:
+  - latin
+  - cyrillic
+  icon: Me
+license: CC-BY-SA-4.0
+tags:
+- beginner
+- unreviewed
+cards:
+- id: isv-0011
+  target: Zdravo!
+  ipa: zdravo
+  pos: other
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Zdravo
+    base: zdravo
+- id: isv-0012
+  target: Dobry den!
+  ipa: dobrɨ den
+  pos: phrase
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: den
+    base: den
+- id: isv-0013
+  target: Do vidženja.
+  ipa: do vidʒenja
+  pos: phrase
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Do
+    base: do
+  - word: vidženja
+    base: vidženje
+- id: isv-0014
+  target: Hvala.
+  ipa: xvala
+  pos: other
+  tags:
+  - polite
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Hvala
+    base: hvala
+- id: isv-0015
+  target: Izvinite.
+  ipa: izvinite
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Izvinite
+    base: izviniti
+- id: isv-0016
+  target: Prošu.
+  ipa: proʃu
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Prošu
+    base: prositi
+- id: isv-0017
+  target: Ja ne razumim.
+  ipa: ja ne razumim
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Ja
+    ref: isv-0003
+  - word: ne
+    ref: isv-0002
+  - word: razumim
+    base: razumeti
+- id: isv-0018
+  target: Govorite medlenno, prošu.
+  ipa: govorite medlenno, proʃu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Govorite
+    base: govoriti
+  - word: medlenno
+    base: medlenno
+  - word: prošu
+    base: prositi
+- id: isv-0019
+  target: Ja govorim malo.
+  ipa: ja govorim malo
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Ja
+    ref: isv-0003
+  - word: govorim
+    base: govoriti
+  - word: malo
+    base: malo
+- id: isv-0020
+  target: Pomožite mi, prošu.
+  ipa: pomoʒite mi, proʃu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Pomožite
+    base: pomoči
+  - word: mi
+    ref: isv-0003
+  - word: prošu
+    base: prositi
+- id: isv-0021
+  target: Kde je toalet?
+  ipa: kde je toalet
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Kde
+    base: kde
+  - word: je
+    base: byti
+  - word: toalet
+    base: toalet
+- id: isv-0022
+  target: Koliko to stoji?
+  ipa: koliko to stoji
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Koliko
+    base: koliko
+  - word: to
+    base: to
+  - word: stoji
+    base: stojati
+- id: isv-0023
+  target: Ja ne znam.
+  ipa: ja ne znam
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Ja
+    ref: isv-0003
+  - word: ne
+    ref: isv-0002
+  - word: znam
+    base: znati
+- id: isv-0024
+  target: Ja malo znam medžuslovjansky.
+  ipa: ja malo znam meʤuslovjanski
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Ja
+    ref: isv-0003
+  - word: malo
+    base: malo
+  - word: znam
+    base: znati
+  - word: medžuslovjansky
+    base: medžuslovjansky
+- id: isv-0025
+  target: Dobro.
+  ipa: dobro
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Dobro
+    base: dobro
+- id: isv-0026
+  target: Ladno.
+  ipa: ladno
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Ladno
+    base: ladno
+- id: isv-0027
+  target: Jedin moment.
+  ipa: jedin moment
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: moment
+    base: moment
+- id: isv-0028
+  target: Jedna kava, prošu.
+  ipa: jedna kava, proʃu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Jedna
+    ref: isv-0007
+  - word: kava
+    base: kava
+  - word: prošu
+    base: prositi
+- id: isv-0029
+  target: Povtorite, prošu.
+  ipa: povtorite, proʃu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Povtorite
+    base: povtoriti
+  - word: prošu
+    base: prositi
+- id: isv-0030
+  target: Hvala za pomoč.
+  ipa: xvala za pomotʃ
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: Hvala
+    base: hvala
+  - word: za
+    base: za
+  - word: pomoč
+    base: pomoč

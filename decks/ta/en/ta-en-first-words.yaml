@@ -1,0 +1,124 @@
+schema: 1
+id: ta-en-first-words
+kind: layer
+core: ta-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, come. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ta-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer to a question. ஆமாம் (āmām) is the fuller form, said to stress it.
+    examples:
+      ஆம், நான் வருகிறேன்.: Yes, I am coming.
+      ஆம், தண்ணீர் வேண்டும்.:
+        native: Yes, I need water.
+        bases:
+          வேண்டும்: to want; to need
+  ta-0002:
+    native: no; there is not
+    notes:
+      n1: The short answer 'no', and also 'there is not'. Tamil uses it on its own, without a verb.
+    examples:
+      இல்லை, தண்ணீர் இல்லை.: No, there is no water.
+      இது நல்லது இல்லை.:
+        native: This is not good.
+        bases:
+          இது: this
+  ta-0003:
+    native: I; me
+    notes:
+      n1: The first person. Tamil often leaves it out, since the verb already shows who is speaking.
+    examples:
+      நான் வருகிறேன்.: I am coming.
+      நான் தண்ணீர் குடிக்கிறேன்.:
+        native: I am drinking water.
+        bases:
+          குடிக்கிறேன்: to drink
+  ta-0004:
+    native: you (polite); you (plural)
+    notes:
+      n1: Used for an elder, a stranger or anyone you respect, and for more than one person. A friend or a child is addressed with நீ (nī).
+    examples:
+      நீங்கள் வருகிறீர்களா?: Are you coming?
+      நீங்கள் தண்ணீர் குடிக்கிறீர்களா?:
+        native: Are you drinking water?
+        bases:
+          குடிக்கிறீர்களா: to drink
+  ta-0005:
+    native: water
+    notes:
+      n1: The everyday word. In formal writing, நீர் (nīr) is also used.
+    examples:
+      தண்ணீர் வேண்டும்.:
+        native: Water is needed.
+        bases:
+          வேண்டும்: to want; to need
+      தண்ணீர் நல்லது.: Water is good.
+  ta-0006:
+    native: good
+    notes:
+      n1: 'Alone, நல்லது (nallatu) means ''it is good''. Before a noun, Tamil uses நல்ல (nalla): நல்ல தண்ணீர் (nalla taṇṇīr), good water.'
+    examples:
+      இது நல்லது.:
+        native: This is good.
+        bases:
+          இது: this
+      நல்லது, நான் வருகிறேன்.: Good, I am coming.
+  ta-0007:
+    native: one
+    notes:
+      n1: 'The number 1 when counting. Before a noun, Tamil says ஒரு (oru): ஒரு வீடு (oru vīṭu), one house.'
+    examples:
+      ஒன்று, இரண்டு.:
+        native: One, two.
+        bases:
+          இரண்டு: two
+      ஒரு வீடு நல்லது.:
+        native: One house is good.
+        bases:
+          ஒரு: one (before a noun)
+  ta-0008:
+    native: big; large
+    notes:
+      n1: 'Before a noun: பெரிய வீடு (periya vīṭu), a big house. Alone, Tamil says பெரிது (peridu), it is big.'
+    examples:
+      பெரிய வீடு.: A big house.
+      நான் பெரிய வீட்டில் இருக்கிறேன்.:
+        native: I live in a big house.
+        bases:
+          இருக்கிறேன்: to be; to live
+  ta-0009:
+    native: house; home
+    notes:
+      n1: 'Before an ending it becomes வீட்டு- (vīṭṭu-): வீட்டில் (vīṭṭil), in the house.'
+    examples:
+      இது என் வீடு.:
+        native: This is my house.
+        bases:
+          இது: this
+      வீட்டில் தண்ணீர் இல்லை.:
+        native: There is no water in the house.
+        bases:
+          வீட்டில்: house
+  ta-0010:
+    native: come
+    notes:
+      n1: The imperative. In the present and past, வா changes its stem to வரு- (varu-), as in வருகிறேன் (varukiṟēṉ), I am coming.
+    examples:
+      வா, சாப்பிடலாம்.:
+        native: Come, let's eat.
+        bases:
+          சாப்பிடலாம்: to eat
+      நான் நாளை வருகிறேன்.:
+        native: I am coming tomorrow.
+        bases:
+          நாளை: tomorrow
+          வருகிறேன்: to come
