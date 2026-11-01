@@ -5,9 +5,11 @@ import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/script_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -212,6 +214,120 @@ void main() {
     }
     expect(tops.length, 1, reason: 'the two chips share a line');
   });
+
+  for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('a Hindustani row shows the skill icons at Learn and tells '
+        'its two scripts apart by their letters, at 1.4x in ${mode.name}', (
+      tester,
+    ) async {
+      // Skills are read only while they agree with the learned list, so
+      // Hindustani, with Learn skills, is a language this profile learns.
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es', 'hi'],
+          learningChosen: true,
+        )..scriptsRead = <String, bool>{'en': true},
+      );
+      state.settings.setLanguageSkills('hi', <String, String>{
+        'speak': 'learn',
+        'hear': 'learn',
+        'read:devanagari': 'learn',
+        'write:devanagari': 'learn',
+        'read:perso_arabic': 'learn',
+      });
+      await pumpLanguages(tester, state: state, mode: mode);
+      final row = find.byKey(const ValueKey<String>('language-hi'));
+      final chips = find.descendant(of: row, matching: find.byType(SkillBadge));
+      // Spoken, Devanagari and Perso-Arabic.
+      expect(chips, findsNWidgets(3));
+      Finder icon(int i, SkillKind k) => find.descendant(
+        of: chips.at(i),
+        matching: find.byKey(ValueKey<String>('pill-icon-${k.name}')),
+      );
+      expect(icon(0, SkillKind.hear), findsOneWidget);
+      expect(icon(0, SkillKind.speak), findsOneWidget);
+      expect(
+        find.descendant(
+          of: chips.at(0),
+          matching: find.byKey(const ValueKey<String>('pill-mark-learn')),
+        ),
+        findsOneWidget,
+      );
+      expect(icon(1, SkillKind.read), findsOneWidget);
+      expect(icon(1, SkillKind.write), findsOneWidget);
+      // Perso-Arabic is at Learn too: its eye and keyboard, with the cap.
+      expect(icon(2, SkillKind.read), findsOneWidget);
+      expect(icon(2, SkillKind.write), findsOneWidget);
+      expect(
+        find.descendant(
+          of: chips.at(2),
+          matching: find.byKey(const ValueKey<String>('pill-mark-learn')),
+        ),
+        findsOneWidget,
+      );
+      String glyph(int i) => tester
+          .widget<Text>(
+            find.descendant(
+              of: chips.at(i),
+              matching: find.byKey(const ValueKey<String>('pill-glyph')),
+            ),
+          )
+          .data!;
+      expect(
+        find.descendant(
+          of: chips.at(0),
+          matching: find.byKey(const ValueKey<String>('pill-glyph')),
+        ),
+        findsNothing,
+      );
+      // The first letter of each script's sample word (नमस्ते, شکریہ).
+      expect(glyph(1), 'न');
+      expect(glyph(2), 'ش');
+      expect(glyph(1), isNot(glyph(2)));
+      // The two script chips carry their own names, so a screen reader tells
+      // them apart.
+      final handle = tester.ensureSemantics();
+      expect(
+        find.bySemanticsLabel(RegExp('Script Devanagari')),
+        findsOneWidget,
+      );
+      expect(
+        find.bySemanticsLabel(RegExp('Script Perso-Arabic')),
+        findsOneWidget,
+      );
+      handle.dispose();
+      // Three wider chips still fit the row: they wrap, none overflows.
+      final rowWidth = tester.getSize(row).width;
+      for (var i = 0; i < 3; i++) {
+        expect(tester.getSize(chips.at(i)).width, lessThan(rowWidth));
+      }
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the sheet pills for a script show no letter and Learn as '
+        'the cap alone, at 1.4x in ${mode.name}', (tester) async {
+      await pumpLanguages(tester, mode: mode);
+      await tapKey(tester, 'language-es');
+      final spoken = find.byKey(const ValueKey<String>('skill-spoken'));
+      expect(
+        find.descendant(
+          of: spoken,
+          matching: find.byKey(const ValueKey<String>('pill-icon-hear')),
+        ),
+        findsNothing,
+      );
+      final script = find.byKey(const ValueKey<String>('skill-script:latin'));
+      expect(
+        find.descendant(
+          of: script,
+          matching: find.byKey(const ValueKey<String>('pill-glyph')),
+        ),
+        findsNothing,
+      );
+      expect(tester.takeException(), isNull);
+    });
+  }
 
   for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
     testWidgets('the sheet has one Spoken pill and one pill for the script, '
@@ -491,5 +607,24 @@ void main() {
       }
       expect(tester.takeException(), isNull);
     });
+  });
+
+  testWidgets('every script in assets/languages.yaml gives a chip one glyph, '
+      'and one with no sample draws its own name (#981)', (tester) async {
+    await pumpLanguages(tester);
+    final text = l10n(tester);
+    final scripts = <String>{for (final l in pickerSpokenList) ...l.scripts};
+    expect(scripts, isNotEmpty);
+    for (final script in scripts) {
+      final glyph = scriptGlyph(script, text.scriptNameOr(script, 'Language'));
+      expect(glyph, isNotEmpty, reason: script);
+      expect(glyph.characters.length, 1, reason: '$script: "$glyph"');
+    }
+    // No sample for Arabic: the glyph is the first letter of its name.
+    expect(
+      scriptGlyph('arabic', text.scriptNameOr('arabic', 'Language')),
+      text.scriptNameOr('arabic', 'Language').characters.first,
+    );
+    expect(tester.takeException(), isNull);
   });
 }

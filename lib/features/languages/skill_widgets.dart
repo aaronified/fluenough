@@ -242,6 +242,8 @@ class SkillBadge extends StatelessWidget {
     this.onTap,
     this.hint,
     this.big = false,
+    this.richIcons = false,
+    this.glyph,
   });
 
   final SkillKind kind;
@@ -261,6 +263,16 @@ class SkillBadge extends StatelessWidget {
   /// The sheet's pill, 48 px high; else the list's chip.
   final bool big;
 
+  /// The Languages page's rows: a combined pill at Learn shows the icons of
+  /// both its skills (Hear and Speak, Read and Write) with the cap, not the cap
+  /// alone (owner, 2026-11-02). Off on the sheet and elsewhere.
+  final bool richIcons;
+
+  /// The letter of a script, drawn first on that script's pill so two scripts
+  /// of one language are told apart (Devanagari 'अ', Perso-Arabic 'ا'). Null
+  /// draws none. Only the Languages page's rows pass it.
+  final String? glyph;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -271,14 +283,31 @@ class SkillBadge extends StatelessWidget {
     final radius = big ? AppRadii.chip : AppRadii.control;
     final iconSize = big ? 20.0 : 16.0;
     final icons = <SkillKind>[
-      if (!leave && (!combined || (mark != SkillMark.learn))) kind,
-      if (combined && markIsBoth(mark)) secondKind(kind),
+      if (!leave && (!combined || richIcons || (mark != SkillMark.learn))) kind,
+      if (combined &&
+          (markIsBoth(mark) || (richIcons && mark == SkillMark.learn)))
+        secondKind(kind),
     ];
     final tip = pillTip(l10n, kind, mark, combined: combined);
     final content = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        if (glyph != null && glyph!.isNotEmpty)
+          Padding(
+            padding: EdgeInsetsDirectional.only(end: big ? 4 : 3),
+            child: Text(
+              glyph!,
+              key: const ValueKey<String>('pill-glyph'),
+              textScaler: TextScaler.noScaling,
+              style: TextStyle(
+                fontSize: big ? 18 : 15,
+                height: 1,
+                fontWeight: FontWeight.w600,
+                color: fg,
+              ),
+            ),
+          ),
         for (final k in icons) ...<Widget>[
           Icon(
             k.icon,
