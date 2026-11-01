@@ -16,6 +16,7 @@ import '../../core/review/move_targets.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart';
 import '../decks/card_notes.dart';
@@ -1673,9 +1674,10 @@ class _SuggestSheetState extends State<SuggestSheet> {
             (p.part == CardPart.notes || p.part == CardPart.example))
           const CheckTag(),
         if (edit == null)
-          IconButton(
+          LabelledIconButton(
             onPressed: () => _edit(p),
-            tooltip: l10n.reviewSuggestEditPart(name),
+            label: l10n.reviewSuggestEditPart(name),
+            hint: l10n.hintEdit,
             icon: const Icon(Icons.edit_outlined),
           ),
       ],
@@ -2021,9 +2023,10 @@ class _SuggestSheetState extends State<SuggestSheet> {
                 ),
               ),
               if (edit == null)
-                IconButton(
+                LabelledIconButton(
                   onPressed: () => _edit(p),
-                  tooltip: l10n.reviewSuggestEditPart(name),
+                  label: l10n.reviewSuggestEditPart(name),
+                  hint: l10n.hintEdit,
                   icon: const Icon(Icons.edit_outlined),
                 ),
             ],
@@ -2151,13 +2154,14 @@ class _SuggestSheetState extends State<SuggestSheet> {
         outlined: true,
         label: _label(add, const <String>[]),
         actions: <Widget>[
-          IconButton(
+          LabelledIconButton(
             onPressed: () => setState(() {
               final list = _newItems[part]!;
               _retire(<TextEditingController>[edit.text, edit.why]);
               list.removeAt(index);
             }),
-            tooltip: l10n.reviewAddRemove,
+            label: l10n.reviewAddRemove,
+            hint: l10n.hintRemove,
             icon: const Icon(Icons.delete_outline),
           ),
         ],
@@ -2207,19 +2211,21 @@ class _SuggestSheetState extends State<SuggestSheet> {
       outlined: picked,
       label: _label(name, const <String>[]),
       actions: <Widget>[
-        IconButton(
+        LabelledIconButton(
           key: SuggestSheet.warningKey,
           onPressed: _pickWarning,
-          tooltip: l10n.reviewSuggestEditPart(name),
+          label: l10n.reviewSuggestEditPart(name),
+          hint: l10n.hintEdit,
           icon: const Icon(Icons.edit_outlined),
         ),
         if (picked)
-          IconButton(
+          LabelledIconButton(
             onPressed: () => setState(() {
               _warning = null;
               _warningWhy = '';
             }),
-            tooltip: l10n.reviewSuggestRemove(name),
+            label: l10n.reviewSuggestRemove(name),
+            hint: l10n.hintRemove,
             icon: const Icon(Icons.delete_outline),
           ),
       ],
@@ -2408,10 +2414,11 @@ class _SuggestSheetState extends State<SuggestSheet> {
       label: _label(name, const <String>[]),
       actions: <Widget>[
         if (!moving)
-          IconButton(
+          LabelledIconButton(
             key: SuggestSheet.placeKey,
             onPressed: _chooseMove,
-            tooltip: l10n.reviewSuggestEditPart(name),
+            label: l10n.reviewSuggestEditPart(name),
+            hint: l10n.hintEdit,
             icon: const Icon(Icons.edit_outlined),
           ),
       ],
@@ -2437,18 +2444,20 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   ),
                 ),
               ),
-              IconButton(
+              LabelledIconButton(
                 onPressed: _chooseMove,
-                tooltip: l10n.reviewSuggestEditPart(name),
+                label: l10n.reviewSuggestEditPart(name),
+                hint: l10n.hintEdit,
                 icon: const Icon(Icons.edit_outlined),
               ),
-              IconButton(
+              LabelledIconButton(
                 onPressed: () => setState(() {
                   _moveTo = null;
                   _moveLabel = null;
                   _moveWhy.clear();
                 }),
-                tooltip: l10n.reviewSuggestRemove(name),
+                label: l10n.reviewSuggestRemove(name),
+                hint: l10n.hintRemove,
                 icon: const Icon(Icons.delete_outline),
               ),
             ],
@@ -2592,7 +2601,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       label: label,
       actions: <Widget>[
         if (check) const CheckTag(),
-        IconButton(
+        LabelledIconButton(
           onPressed: () => setState(() {
             _removed.remove(p);
             _baseEdits[word] = _fieldsFor(
@@ -2602,13 +2611,15 @@ class _SuggestSheetState extends State<SuggestSheet> {
               link: false,
             );
           }),
-          tooltip: l10n.reviewSuggestEditPart(name),
+          label: l10n.reviewSuggestEditPart(name),
+          hint: l10n.hintEdit,
           icon: const Icon(Icons.edit_outlined),
         ),
-        IconButton(
+        LabelledIconButton(
           onPressed: () =>
               setState(() => _baseRemoved[word] = TextEditingController()),
-          tooltip: l10n.reviewBaseRemove(b.shown.base),
+          label: l10n.reviewBaseRemove(b.shown.base),
+          hint: l10n.hintRemove,
           icon: const Icon(Icons.delete_outline),
         ),
       ],
@@ -2664,12 +2675,13 @@ class _SuggestSheetState extends State<SuggestSheet> {
       outlined: true,
       label: _label(l10n.reviewBaseNew, const <String>[]),
       actions: <Widget>[
-        IconButton(
+        LabelledIconButton(
           onPressed: () => setState(() {
             _added.remove(edit);
             _retire(edit.all);
           }),
-          tooltip: l10n.reviewBaseNewRemove,
+          label: l10n.reviewBaseNewRemove,
+          hint: l10n.hintRemove,
           icon: const Icon(Icons.delete_outline),
         ),
       ],
@@ -2778,9 +2790,10 @@ class _SuggestSheetState extends State<SuggestSheet> {
               ),
             ),
           ),
-          IconButton(
+          LabelledIconButton(
             onPressed: () => setState(() => _removed.add(p)),
-            tooltip: l10n.reviewSuggestRemove(name),
+            label: l10n.reviewSuggestRemove(name),
+            hint: l10n.hintRemove,
             color: scheme.onPrimaryContainer,
             icon: const Icon(Icons.delete_outline),
           ),

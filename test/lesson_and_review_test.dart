@@ -4947,10 +4947,10 @@ cards:
       expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
       expect(minus().onPressed, isNull);
 
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      await tapVisible(tester, find.byTooltip(l10n.minutesMore));
+      await tapVisible(tester, find.byTooltip(l10n.minutesMore));
       expect(find.text(l10n.todayRevisionStart(15)), findsOneWidget);
-      await tapVisible(tester, find.byTooltip(l10n.todayRevisionLess(5)));
+      await tapVisible(tester, find.byTooltip(l10n.minutesLess));
       expect(find.text(l10n.todayRevisionStart(10)), findsOneWidget);
       expect(minus().onPressed, isNotNull);
 
@@ -5013,8 +5013,8 @@ cards:
         expect(find.byType(DeckTile), findsNothing);
         // Five minutes to begin with, between a minus and a plus.
         expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
-        expect(find.byTooltip(l10n.todayRevisionLess(5)), findsOneWidget);
-        expect(find.byTooltip(l10n.todayRevisionMore(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.minutesLess), findsOneWidget);
+        expect(find.byTooltip(l10n.minutesMore), findsOneWidget);
         // Nothing taught yet: the start button is off, and the line says why.
         expect(find.text(l10n.todayRevisionNone), findsOneWidget);
         final five = tester.widget<FilledButton>(

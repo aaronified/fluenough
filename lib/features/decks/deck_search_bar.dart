@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../core/search/query.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 import 'unit_search.dart' show SearchSuggestion, searchKindLabel;
 
 /// A token's value as its chip and its menu show it.
@@ -380,8 +381,9 @@ class SuggestionRows extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
-                      tooltip: l10n.searchSuggestionEdit(s.text),
+                    LabelledIconButton(
+                      label: l10n.searchSuggestionEdit(s.text),
+                      hint: l10n.hintEdit,
                       icon: const Icon(Icons.north_west),
                       onPressed: () => onEdit(s),
                     ),
