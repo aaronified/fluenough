@@ -528,6 +528,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     required this.reading,
     required this.pair,
     required this.gesture,
+    required this.pillLeave,
+    required this.pillLearn,
+    required this.pillKnow,
+    required this.pillVerified,
   });
 
   static const ModeColors light = ModeColors(
@@ -539,6 +543,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     reading: ModeColor(Color(0xFFF6E388), Color(0xFF211B00)),
     pair: ModeColor(Color(0xFFFFD8EC), Color(0xFF3A0028)),
     gesture: ModeColor(Color(0xFFFFDAD6), Color(0xFF410002)),
+    pillLeave: ModeColor(Color(0xFFFFDAD6), Color(0xFF93000A)),
+    pillLearn: ModeColor(Color(0xFFFFF3C2), Color(0xFF3A2F00)),
+    pillKnow: ModeColor(Color(0xFFF2C230), Color(0xFF211B00)),
+    pillVerified: ModeColor(Color(0xFF1B5E20), Color(0xFFFFFFFF)),
   );
 
   static const ModeColors dark = ModeColors(
@@ -550,6 +558,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     reading: ModeColor(Color(0xFF524700), Color(0xFFF6E388)),
     pair: ModeColor(Color(0xFF7A2963), Color(0xFFFFD8EC)),
     gesture: ModeColor(Color(0xFF93000A), Color(0xFFFFDAD6)),
+    pillLeave: ModeColor(Color(0xFF93000A), Color(0xFFFFDAD6)),
+    pillLearn: ModeColor(Color(0xFF4A3F00), Color(0xFFF6E388)),
+    pillKnow: ModeColor(Color(0xFFE2C23D), Color(0xFF211B00)),
+    pillVerified: ModeColor(Color(0xFF2E7D32), Color(0xFFFFFFFF)),
   );
 
   static const ModeColors lightHigh = ModeColors(
@@ -561,6 +573,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     reading: ModeColor(Color(0xFF524700), Color(0xFFFFFFFF)),
     pair: ModeColor(Color(0xFF772761), Color(0xFFFFFFFF)),
     gesture: ModeColor(Color(0xFF93000A), Color(0xFFFFFFFF)),
+    pillLeave: ModeColor(Color(0xFF93000A), Color(0xFFFFFFFF)),
+    pillLearn: ModeColor(Color(0xFFFFF3C2), Color(0xFF000000)),
+    pillKnow: ModeColor(Color(0xFFFFD54F), Color(0xFF000000)),
+    pillVerified: ModeColor(Color(0xFF0B3D0F), Color(0xFFFFFFFF)),
   );
 
   static const ModeColors darkHigh = ModeColors(
@@ -572,6 +588,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     reading: ModeColor(Color(0xFFD9C76F), Color(0xFF000000)),
     pair: ModeColor(Color(0xFFFFADDF), Color(0xFF000000)),
     gesture: ModeColor(Color(0xFFFFB4AB), Color(0xFF000000)),
+    pillLeave: ModeColor(Color(0xFFFFB4AB), Color(0xFF000000)),
+    pillLearn: ModeColor(Color(0xFF5C4D00), Color(0xFFFFFFFF)),
+    pillKnow: ModeColor(Color(0xFFFFD54F), Color(0xFF000000)),
+    pillVerified: ModeColor(Color(0xFF7BC67E), Color(0xFF000000)),
   );
 
   final ModeColor recognition;
@@ -585,6 +605,17 @@ class ModeColors extends ThemeExtension<ModeColors> {
   /// A sign language's one skill, Gestures: red, apart from the others
   /// above, in the same tones.
   final ModeColor gesture;
+
+  /// The skill pills' colour by level, not by skill (owner, 2026-11-01): Leave
+  /// red, Learn and Know two yellow tints (pale, then strong), Learnt, the
+  /// level verified by placement, dark green. Icon, tick and ring (the text
+  /// colour) are 4.5:1 or better on the container in all four sets: light
+  /// 7.2 / 11.9 / 10.3 / 7.9, dark 7.2 / 8.1 / 9.8 / 5.1, light high
+  /// 9.4 / 18.9 / 14.9 / 12.4, dark high 12.4 / 8.3 / 14.9 / 10.2.
+  final ModeColor pillLeave;
+  final ModeColor pillLearn;
+  final ModeColor pillKnow;
+  final ModeColor pillVerified;
 
   /// The colours for [skill].
   ModeColor forSkill(Skill skill) => switch (skill) {
@@ -612,6 +643,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     ModeColor? reading,
     ModeColor? pair,
     ModeColor? gesture,
+    ModeColor? pillLeave,
+    ModeColor? pillLearn,
+    ModeColor? pillKnow,
+    ModeColor? pillVerified,
   }) => ModeColors(
     recognition: recognition ?? this.recognition,
     production: production ?? this.production,
@@ -621,6 +656,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
     reading: reading ?? this.reading,
     pair: pair ?? this.pair,
     gesture: gesture ?? this.gesture,
+    pillLeave: pillLeave ?? this.pillLeave,
+    pillLearn: pillLearn ?? this.pillLearn,
+    pillKnow: pillKnow ?? this.pillKnow,
+    pillVerified: pillVerified ?? this.pillVerified,
   );
 
   @override
@@ -635,6 +674,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
       reading: ModeColor.lerp(reading, other.reading, t),
       pair: ModeColor.lerp(pair, other.pair, t),
       gesture: ModeColor.lerp(gesture, other.gesture, t),
+      pillLeave: ModeColor.lerp(pillLeave, other.pillLeave, t),
+      pillLearn: ModeColor.lerp(pillLearn, other.pillLearn, t),
+      pillKnow: ModeColor.lerp(pillKnow, other.pillKnow, t),
+      pillVerified: ModeColor.lerp(pillVerified, other.pillVerified, t),
     );
   }
 }

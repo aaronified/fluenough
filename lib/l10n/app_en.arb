@@ -12603,17 +12603,73 @@
       }
     }
   },
-  "languagesSkillStateCovered": "{skill}: {state}, level found",
-  "@languagesSkillStateCovered": {
-    "description": "A known skill the found level covers, for a screen reader.",
+  "languagesPillLeave": "Not learning",
+  "@languagesPillLeave": {
+    "description": "Tooltip of a skill pill that is off (the red block icon)."
+  },
+  "languagesPillLearning": "Learning",
+  "@languagesPillLearning": {
+    "description": "Tooltip of a combined pill (Spoken, a script) set to Learn (the cap)."
+  },
+  "languagesPillRead": "Reading",
+  "@languagesPillRead": {
+    "description": "Tooltip of a script pill at Read, or of a Read pill that is known."
+  },
+  "languagesPillReadWrite": "Reading, writing",
+  "@languagesPillReadWrite": {
+    "description": "Tooltip of a script pill at Read and Write."
+  },
+  "languagesPillHear": "Listening",
+  "@languagesPillHear": {
+    "description": "Tooltip of the Spoken pill at Hear, or of a Hear pill that is known."
+  },
+  "languagesPillHearSpeak": "Listening, speaking",
+  "@languagesPillHearSpeak": {
+    "description": "Tooltip of the Spoken pill at Hear and Speak."
+  },
+  "languagesPillWrite": "Writing",
+  "@languagesPillWrite": {
+    "description": "Tooltip of a Write pill that is known."
+  },
+  "languagesPillSpeak": "Speaking",
+  "@languagesPillSpeak": {
+    "description": "Tooltip of a Say pill that is known."
+  },
+  "languagesPillGesture": "Signing",
+  "@languagesPillGesture": {
+    "description": "Tooltip of a Gestures pill that is known."
+  },
+  "languagesPillLearnRead": "Learn reading",
+  "@languagesPillLearnRead": {
+    "description": "Tooltip of a Read pill set to Learn."
+  },
+  "languagesPillLearnWrite": "Learn writing",
+  "@languagesPillLearnWrite": {
+    "description": "Tooltip of a Write pill set to Learn."
+  },
+  "languagesPillLearnSpeak": "Learn speaking",
+  "@languagesPillLearnSpeak": {
+    "description": "Tooltip of a Say pill set to Learn."
+  },
+  "languagesPillLearnHear": "Learn listening",
+  "@languagesPillLearnHear": {
+    "description": "Tooltip of a Hear pill set to Learn."
+  },
+  "languagesPillLearnGesture": "Learn signing",
+  "@languagesPillLearnGesture": {
+    "description": "Tooltip of a Gestures pill set to Learn."
+  },
+  "languagesPillCheckedHint": "Checked",
+  "@languagesPillCheckedHint": {
+    "description": "Tooltip of a known skill whose level was found by the placement test (the double tick): one word, as every hint is; a screen reader reads the level and this word."
+  },
+  "languagesPillChecked": "{tip}, checked",
+  "@languagesPillChecked": {
+    "description": "What a screen reader reads for a known skill whose level was found by the placement test (the double tick): Reading, checked. The tooltip is the one word of languagesPillCheckedHint.",
     "placeholders": {
-      "skill": {
+      "tip": {
         "type": "String",
-        "example": "Read"
-      },
-      "state": {
-        "type": "String",
-        "example": "Know"
+        "example": "Reading"
       }
     }
   },

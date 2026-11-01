@@ -906,8 +906,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       kind: SkillKind.gesture,
       big: true,
       mark: markOf(state, covered: covered),
-      label: pillSemantics(l10n, name, state.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, state.label(l10n)),
+      name: name,
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
       onTap: _locked ? null : _cycleGesture,
     );
@@ -924,17 +923,17 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     return SkillBadge(
       key: const ValueKey<String>('skill-spoken'),
       kind: SkillKind.hear,
+      combined: true,
       big: true,
       mark: spokenMarkOf(level, covered: covered),
-      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      name: name,
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
       onTap: _locked ? null : _cycleSpoken,
     );
   }
 
-  /// The one pill of a script's Read and Write: its glyph, then the tick and
-  /// the Write icon once both are known.
+  /// The one pill of a script's Read and Write: the eye alone at Read, the eye and
+  /// the keyboard at Read and Write, each with its tick.
   Widget _scriptPill(BuildContext context, String script) {
     final l10n = AppLocalizations.of(context)!;
     final level = _skills.scriptLevelOf(script);
@@ -946,11 +945,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       kind: SkillKind.read,
       big: true,
       mark: scriptMarkOf(level, covered: covered),
-      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      name: name,
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
       onTap: _locked ? null : () => _cycleScript(script),
-      scriptGlyph: scriptGlyph(script, l10n.scriptNameOr(script, _view.name)),
+      combined: true,
     );
   }
 
