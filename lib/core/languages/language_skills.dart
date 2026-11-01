@@ -93,11 +93,13 @@ class SkillKey {
 /// course such as English Braille), then Read and Write for each of
 /// [scripts], in the order shown (all Read, then all Write). A [sign]
 /// language has only the Gestures skill; a language with no [scripts]
-/// otherwise has nothing to read or write, so no Read or Write.
+/// otherwise has nothing to read or write, so no Read or Write. A language
+/// whose answers are not [typed] (the IPA) has no Write.
 List<SkillKey> skillsOfLanguage(
   Iterable<String> scripts, {
   bool scriptOnly = false,
   bool sign = false,
+  bool typed = true,
 }) {
   if (sign) {
     return const <SkillKey>[SkillKey(SkillKind.gesture)];
@@ -109,7 +111,8 @@ List<SkillKey> skillsOfLanguage(
       const SkillKey(SkillKind.hear),
     ],
     for (final s in list) SkillKey(SkillKind.read, s),
-    for (final s in list) SkillKey(SkillKind.write, s),
+    if (typed)
+      for (final s in list) SkillKey(SkillKind.write, s),
   ];
 }
 
@@ -146,14 +149,18 @@ enum ScriptLevel {
 
 /// The level a tap on a script's pill gives next: Leave, Learn, Read, Read
 /// and Write, Leave. Where the language has no decks to learn ([canLearn]
-/// false) Learn is skipped.
-ScriptLevel nextScriptLevel(ScriptLevel level, {required bool canLearn}) =>
-    switch (level) {
-      ScriptLevel.leave => canLearn ? ScriptLevel.learn : ScriptLevel.read,
-      ScriptLevel.learn => ScriptLevel.read,
-      ScriptLevel.read => ScriptLevel.readWrite,
-      ScriptLevel.readWrite => ScriptLevel.leave,
-    };
+/// false) Learn is skipped; where nothing is typed in it ([canWrite] false,
+/// the IPA) Read and Write is skipped.
+ScriptLevel nextScriptLevel(
+  ScriptLevel level, {
+  required bool canLearn,
+  bool canWrite = true,
+}) => switch (level) {
+  ScriptLevel.leave => canLearn ? ScriptLevel.learn : ScriptLevel.read,
+  ScriptLevel.learn => ScriptLevel.read,
+  ScriptLevel.read => canWrite ? ScriptLevel.readWrite : ScriptLevel.leave,
+  ScriptLevel.readWrite => ScriptLevel.leave,
+};
 
 /// The levels of the Spoken pill (Speak and Hear together), in the order a
 /// tap goes through them: Leave, Learn, Hear, Hear and Speak, Leave. Hear
@@ -246,17 +253,22 @@ class LanguageSkills {
 
   /// [script] at [level], written as its two stored skills: Learn is Learn
   /// and Learn, Read is Know and Leave, Read and Write is Know and Know.
-  LanguageSkills withScriptLevel(String script, ScriptLevel level) {
+  LanguageSkills withScriptLevel(
+    String script,
+    ScriptLevel level, {
+    bool canWrite = true,
+  }) {
     final (read, write) = switch (level) {
       ScriptLevel.leave => (SkillState.leave, SkillState.leave),
       ScriptLevel.learn => (SkillState.learn, SkillState.learn),
       ScriptLevel.read => (SkillState.know, SkillState.leave),
       ScriptLevel.readWrite => (SkillState.know, SkillState.know),
     };
-    return withState(
-      SkillKey(SkillKind.read, script),
-      read,
-    ).withState(SkillKey(SkillKind.write, script), write);
+    final reading = withState(SkillKey(SkillKind.read, script), read);
+    // A script nothing is typed in has no Write skill to hold.
+    return canWrite
+        ? reading.withState(SkillKey(SkillKind.write, script), write)
+        : reading;
   }
 
   /// The level of the Spoken pill, read from Speak and Hear: Learn if either
@@ -292,11 +304,19 @@ class LanguageSkills {
       withSpokenLevel(nextSpokenLevel(spokenLevel, canLearn: canLearn));
 
   /// [script] after a tap on its pill.
-  LanguageSkills cycledScript(String script, {required bool canLearn}) =>
-      withScriptLevel(
-        script,
-        nextScriptLevel(scriptLevelOf(script), canLearn: canLearn),
-      );
+  LanguageSkills cycledScript(
+    String script, {
+    required bool canLearn,
+    bool canWrite = true,
+  }) => withScriptLevel(
+    script,
+    nextScriptLevel(
+      scriptLevelOf(script),
+      canLearn: canLearn,
+      canWrite: canWrite,
+    ),
+    canWrite: canWrite,
+  );
 
   /// A language with every skill Leave goes back to the pool: it leaves the
   /// list, and its decks are removed the next time the app opens.
@@ -354,6 +374,7 @@ LanguageSkills skillsFromLegacy({
   required bool Function(String script) readsScript,
   bool scriptOnly = false,
   bool sign = false,
+  bool typed = true,
 }) {
   if (!learned && !known) return LanguageSkills();
   final states = <SkillKey, SkillState>{};
@@ -371,7 +392,7 @@ LanguageSkills skillsFromLegacy({
   for (final script in all) {
     if (learned && learnedScripts.contains(script)) {
       states[SkillKey(SkillKind.read, script)] = SkillState.learn;
-      states[SkillKey(SkillKind.write, script)] = SkillState.learn;
+      if (typed) states[SkillKey(SkillKind.write, script)] = SkillState.learn;
     } else if (readsScript(script)) {
       states[SkillKey(SkillKind.read, script)] = SkillState.know;
     }
