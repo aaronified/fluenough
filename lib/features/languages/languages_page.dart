@@ -8,6 +8,7 @@ import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -191,6 +192,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 .any((s) => skills.scriptLevelOf(s) != ScriptLevel.leave),
       LanguageFilter.write =>
         !view.language.isSign &&
+            view.language.typed &&
             state
                 .skillScripts(view.language)
                 .any(
@@ -395,7 +397,11 @@ class _Key extends StatelessWidget {
               extra: <SkillKind>[SkillKind.write, SkillKind.speak],
             ),
             entry(SkillMark.knowCovered, l10n.languagesKeyLevel),
-            entry(SkillMark.learn, l10n.languagesStateLearn),
+            entry(
+              SkillMark.learn,
+              l10n.languagesStateLearn,
+              extra: <SkillKind>[SkillKind.read, SkillKind.write],
+            ),
             entry(SkillMark.leave, l10n.languagesStateLeave),
           ],
         ),
@@ -534,7 +540,8 @@ class LanguageRow extends StatelessWidget {
         hasDecks &&
         !learns &&
         state.settings.languageSkillsOf(view.code) != null;
-    final dialect = !view.language.scriptOnly && speaks
+    final dialect =
+        !view.language.scriptOnly && !view.language.isNotation && speaks
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);
@@ -719,6 +726,7 @@ class LanguageRow extends StatelessWidget {
       combined: true,
       mark: spokenMarkOf(level, covered: covered),
       name: name,
+      richIcons: true,
     );
   }
 
@@ -737,6 +745,8 @@ class LanguageRow extends StatelessWidget {
       mark: scriptMarkOf(level, covered: covered),
       name: name,
       combined: true,
+      richIcons: true,
+      glyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
     );
   }
 }

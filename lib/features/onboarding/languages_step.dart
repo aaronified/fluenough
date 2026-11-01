@@ -33,11 +33,12 @@ final OnboardingStep languagesStep = OnboardingStep(
 
 /// Whether a language is first asked what script the learner reads
 /// ([KnownLanguageSheet]): not a sign language, not a script-only course, not
-/// one written in Latin letters alone (everyone who knows English reads
-/// them), and one the list names a script for.
+/// a notation (the IPA), not one written in Latin letters alone (everyone who
+/// knows English reads them), and one the list names a script for.
 bool asksWhichScripts(SpokenLanguage language) =>
     !language.isSign &&
     !language.scriptOnly &&
+    !language.isNotation &&
     language.scripts.isNotEmpty &&
     !(language.scripts.length == 1 && language.scripts.first == latinScript);
 

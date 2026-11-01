@@ -63,6 +63,9 @@
 #                   for the owner or a native reviewer to confirm.
 #   script_only     optional, `true` for a course that teaches a script and
 #                   no speech (English Braille): Read and Write only.
+#   typed           optional, `false` for a course whose answers are never
+#                   typed (the IPA): its scripts have a Read level but no
+#                   Write. Default `true`.
 #   script_question, script_can_read
 #                   optional: the sheet's question and its "I can read it"
 #                   answer, written in the language's own script by a speaker
@@ -88,6 +91,10 @@
 #                   latin script. Why! Fix this right away"; this replaces
 #                   2026-10-17's "English for all unchecked"). A speaker who
 #                   has checked and corrected the texts removes the mark.
+#
+# The notations taught like languages, the IPA (ADR-0041) and English Braille
+# (ADR-0043), are listed at the end: a course whose language block is in
+# `decks/ipa` or `decks/qbe` is on the Languages page only if it is here too.
 #
 # The texts marked "Claude-written" were written by Claude (#552), not by a
 # speaker: each is to be checked by a speaker of the language, as deck text
@@ -263,3 +270,11 @@ languages:
   - { code: "qya", iso639_3: "qya", name: "Quenya", own_name: "Quenya", scripts: ["latin"], family: "constructed" }
   - { code: "qdo", iso639_3: "qdo", name: "Dothraki", own_name: "Lekh Dothraki", scripts: ["latin"], family: "constructed" }
   - { code: "qhv", iso639_3: "qhv", name: "High Valyrian", own_name: "Valyrio", scripts: ["latin"], family: "constructed" }
+  # The notations (ADR-0041, ADR-0043): courses on a script, with no speech of
+  # their own. The IPA is heard, spoken and read, never typed; English Braille
+  # is read and written, on the app's own keyboard, and never spoken. Each
+  # carries the script name the app gives its decks (`ipa`, `braille`).
+  - { code: "ipa", iso639_3: "zxx", name: "IPA", own_name: "International Phonetic Alphabet", scripts: ["ipa"], family: "constructed", typed: false,
+      aliases: ["phonetic alphabet", "phonetics", "transcription"] }
+  - { code: "qbe", iso639_3: "qbe", name: "English Braille", own_name: "English Braille", scripts: ["braille"], family: "constructed", script_only: true,
+      aliases: ["Braille", "UEB"] }

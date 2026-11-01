@@ -35,12 +35,22 @@ class LanguageView {
       ? name
       : '$name · ${language.ownName}';
 
-  /// The glyph on the language's tile: the first letter of its own name.
+  /// The glyph on the language's tile: the first letter of its own name, or
+  /// for a notation its own mark (`ə` for the IPA, `⠃` for braille).
   String get glyph {
+    final mark = language.isNotation ? notationGlyphs[language.script] : null;
+    if (mark != null) return mark;
     final own = language.ownName.isEmpty ? name : language.ownName;
     return own.characters.first;
   }
 }
+
+/// The glyph a notation's script is shown by: the IPA's schwa, and the braille
+/// cell of dot 1 and 2, as the courses' icons are (ADR-0041, ADR-0043).
+const Map<String, String> notationGlyphs = <String, String>{
+  'ipa': 'ə',
+  'braille': '⠃',
+};
 
 /// The families the app names, in the order the Add a language page lists
 /// them; a language with none, or an unknown one, goes last there and shows
@@ -96,6 +106,7 @@ String dialectOf(AppLocalizations l10n, SpokenLanguage language) =>
 /// name for a script with no sample.
 String scriptGlyph(String script, String name) {
   if (script == 'latin') return 'A';
+  if (notationGlyphs[script] case final mark?) return mark;
   final sample = scriptSamples[script]?.text;
   final text = sample == null || sample.isEmpty ? name : sample;
   return text.isEmpty ? '' : text.characters.first;

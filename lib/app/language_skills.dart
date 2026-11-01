@@ -16,6 +16,7 @@ extension LanguageSkillsOnState on AppState {
     skillScripts(language),
     scriptOnly: language.scriptOnly,
     sign: language.isSign,
+    typed: language.typed,
   );
 
   /// Where [script] of [language] is kept in `scripts_read`.
@@ -50,12 +51,16 @@ extension LanguageSkillsOnState on AppState {
       known: settings.spokenLanguages.contains(code),
       learnedScripts: settings.scriptsLearned(
         code,
-        primary: primaryScript(code),
+        // A notation's one script is known before its decks are on the phone.
+        primary: language.isNotation && language.script != null
+            ? language.script!
+            : primaryScript(code),
       ),
       readsScript: (s) =>
           read?.contains(language.scripts.isEmpty ? '' : s) ?? false,
       scriptOnly: language.scriptOnly,
       sign: language.isSign,
+      typed: language.typed,
     );
     // The Latin script is known for everyone.
     return withLatinKnown(legacy, skillScripts(language));
@@ -152,7 +157,11 @@ extension LanguageSkillsOnState on AppState {
       kinds: const <SkillKind>{SkillKind.read},
     );
     final answers = Map<String, bool>.of(settings.scriptsRead);
-    if (speaks || reads.isNotEmpty) {
+    if (language.isNotation) {
+      // A notation (the IPA, braille) is not a language the learner speaks or
+      // reads through: it stays out of both lists, and its skills are kept as
+      // set. An older list that holds it is left as it was.
+    } else if (speaks || reads.isNotEmpty) {
       if (!spoken.contains(code)) spoken.add(code);
       for (final script in _answered(language)) {
         answers[_readKey(language, script)] = reads.contains(script);
