@@ -1,0 +1,477 @@
+schema: 1
+id: "es-journey"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "journey"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1690"
+    target: "el viaje"
+    ipa: "el ˈbjaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "viaje", base: "viaje" }]
+    examples:
+      - target: "Hago un viaje a Sevilla."
+        ipa: "ˈaɡo un ˈbjaxe a seˈbiʝa"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "viaje", base: "viaje" }, { word: "a", base: "a" }, { word: "Sevilla", base: "sevilla" }]
+      - target: "El viaje dura cuatro horas."
+        ipa: "el ˈbjaxe ˈduɾa ˈkwatɾo ˈoɾas"
+        bases: [{ word: "El", base: "el" }, { word: "viaje", base: "viaje" }, { word: "dura", ref: "es-0851" }, { word: "cuatro", ref: "es-0208" }, { word: "horas", ref: "es-0838" }]
+  - id: "es-1691"
+    target: "viajar"
+    ipa: "bjaˈxaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "viajar", base: "viajar" }]
+    examples:
+      - target: "Viajo en tren."
+        ipa: "ˈbjaxo en tɾen"
+        bases: [{ word: "Viajo", base: "viajar" }, { word: "en", base: "en" }, { word: "tren", ref: "es-0676" }]
+      - target: "Viajamos mucho."
+        ipa: "bjaˈxamos ˈmutʃo"
+        bases: [{ word: "Viajamos", base: "viajar" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1692"
+    target: "el viajero"
+    ipa: "el bjaˈxeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "viajero", base: "viajero" }]
+    examples:
+      - target: "El viajero espera en el andén."
+        ipa: "el bjaˈxeɾo esˈpeɾa en el anˈden"
+        bases: [{ word: "El", base: "el" }, { word: "viajero", base: "viajero" }, { word: "espera", ref: "es-0930" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "andén", ref: "es-1693" }]
+      - target: "Los viajeros llegan tarde."
+        ipa: "los bjaˈxeɾos ˈʝeɡan ˈtaɾde"
+        bases: [{ word: "Los", base: "los" }, { word: "viajeros", base: "viajero" }, { word: "llegan", ref: "es-0290" }, { word: "tarde", ref: "es-0910" }]
+  - id: "es-1693"
+    target: "el andén"
+    ipa: "el anˈden"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "andén", base: "andén" }]
+    examples:
+      - target: "El tren sale del andén dos."
+        ipa: "el tɾen ˈsale del anˈden dos"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "sale", ref: "es-0690" }, { word: "del", base: "del" }, { word: "andén", base: "andén" }, { word: "dos", ref: "es-0206" }]
+      - target: "El andén está lleno."
+        ipa: "el anˈden esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "andén", base: "andén" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+  - id: "es-1694"
+    target: "el equipaje"
+    ipa: "el ekiˈpaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "equipaje", base: "equipaje" }]
+    examples:
+      - target: "Mi equipaje es muy pesado."
+        ipa: "mi ekiˈpaxe es mwi peˈsado"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "equipaje", base: "equipaje" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "pesado", ref: "es-1194" }]
+      - target: "No llevo equipaje."
+        ipa: "no ˈʝebo ekiˈpaxe"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "llevo", ref: "es-0623" }, { word: "equipaje", base: "equipaje" }]
+  - id: "es-1695"
+    target: "la taquilla"
+    ipa: "la taˈkiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "taquilla", base: "taquilla" }]
+    examples:
+      - target: "Compro el billete en la taquilla."
+        ipa: "ˈkompɾo el biˈʝete en la taˈkiʝa"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "el", base: "el" }, { word: "billete", ref: "es-0685" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "taquilla", base: "taquilla" }]
+      - target: "La taquilla está cerrada."
+        ipa: "la taˈkiʝa esˈta θeˈrada"
+        bases: [{ word: "La", base: "la" }, { word: "taquilla", base: "taquilla" }, { word: "está", ref: "es-0023" }, { word: "cerrada", ref: "es-0849" }]
+  - id: "es-1696"
+    target: "el vagón"
+    ipa: "el baˈɡon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vagón", base: "vagón" }]
+    examples:
+      - target: "El vagón está lleno."
+        ipa: "el baˈɡon esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "vagón", base: "vagón" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+      - target: "Mi asiento está en el vagón tres."
+        ipa: "mi aˈsjento esˈta en el baˈɡon tɾes"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "asiento", ref: "es-1697" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "vagón", base: "vagón" }, { word: "tres", ref: "es-0207" }]
+  - id: "es-1697"
+    target: "el asiento"
+    ipa: "el aˈsjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "asiento", base: "asiento" }]
+    examples:
+      - target: "¿Este asiento está libre?"
+        ipa: "ˈeste aˈsjento esˈta ˈlibɾe"
+        bases: [{ word: "Este", base: "este" }, { word: "asiento", base: "asiento" }, { word: "está", ref: "es-0023" }, { word: "libre", ref: "es-0426" }]
+      - target: "Mi asiento es el número doce."
+        ipa: "mi aˈsjento es el ˈnumeɾo ˈdoθe"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "asiento", base: "asiento" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "número", ref: "es-0250" }, { word: "doce", ref: "es-0216" }]
+  - id: "es-1698"
+    target: "la ida"
+    ipa: "la ˈida"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ida", base: "ida" }]
+    examples:
+      - target: "Un billete de ida, por favor."
+        ipa: "un biˈʝete de ˈida poɾ faˈboɾ"
+        bases: [{ word: "Un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "de", base: "de" }, { word: "ida", base: "ida" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La ida es a las ocho."
+        ipa: "la ˈida es a las ˈotʃo"
+        bases: [{ word: "La", base: "la" }, { word: "ida", base: "ida" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+  - id: "es-1699"
+    target: "la vuelta"
+    ipa: "la ˈbwelta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vuelta", base: "vuelta" }]
+    examples:
+      - target: "Quiero un billete de ida y vuelta."
+        ipa: "ˈkjeɾo un biˈʝete de ˈida i ˈbwelta"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "de", base: "de" }, { word: "ida", ref: "es-1698" }, { word: "y", ref: "es-0048" }, { word: "vuelta", base: "vuelta" }]
+      - target: "La vuelta es el domingo."
+        ipa: "la ˈbwelta es el doˈminɡo"
+        bases: [{ word: "La", base: "la" }, { word: "vuelta", base: "vuelta" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "domingo", ref: "es-0964" }]
+  - id: "es-1700"
+    target: "el retraso"
+    ipa: "el reˈtɾaso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "retraso", base: "retraso" }]
+    examples:
+      - target: "El tren tiene un retraso de diez minutos."
+        ipa: "el tɾen ˈtjene un reˈtɾaso de djeθ miˈnutos"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "retraso", base: "retraso" }, { word: "de", base: "de" }, { word: "diez", ref: "es-0214" }, { word: "minutos", ref: "es-0839" }]
+      - target: "Hay un retraso en el vuelo."
+        ipa: "aj un reˈtɾaso en el ˈbwelo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "retraso", base: "retraso" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "vuelo", ref: "es-1064" }]
+  - id: "es-1701"
+    target: "el vuelo"
+    ipa: "el ˈbwelo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vuelo", base: "vuelo" }]
+    examples:
+      - target: "Mi vuelo sale a las nueve."
+        ipa: "mi ˈbwelo ˈsale a las ˈnwebe"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "vuelo", ref: "es-1064" }, { word: "sale", ref: "es-0690" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "El vuelo es directo."
+        ipa: "el ˈbwelo es diˈɾekto"
+        bases: [{ word: "El", base: "el" }, { word: "vuelo", ref: "es-1064" }, { word: "es", ref: "es-0022" }, { word: "directo", base: "directo" }]
+  - id: "es-1702"
+    target: "el pasajero"
+    ipa: "el pasaˈxeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pasajero", base: "pasajero" }]
+    examples:
+      - target: "El pasajero muestra el billete."
+        ipa: "el pasaˈxeɾo ˈmwestɾa el biˈʝete"
+        bases: [{ word: "El", base: "el" }, { word: "pasajero", base: "pasajero" }, { word: "muestra", ref: "es-1635" }, { word: "el", base: "el" }, { word: "billete", ref: "es-0685" }]
+      - target: "Los pasajeros esperan en la puerta."
+        ipa: "los pasaˈxeɾos esˈpeɾan en la ˈpweɾta"
+        bases: [{ word: "Los", base: "los" }, { word: "pasajeros", base: "pasajero" }, { word: "esperan", ref: "es-0930" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+  - id: "es-1703"
+    target: "cancelar"
+    ipa: "kanθeˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cancelar", base: "cancelar" }]
+    examples:
+      - target: "Cancelan el vuelo."
+        ipa: "kanˈθelan el ˈbwelo"
+        bases: [{ word: "Cancelan", base: "cancelar" }, { word: "el", base: "el" }, { word: "vuelo", ref: "es-1064" }]
+      - target: "Cancelo la reserva."
+        ipa: "kanˈθelo la reˈseɾba"
+        bases: [{ word: "Cancelo", base: "cancelar" }, { word: "la", base: "la" }, { word: "reserva", ref: "es-1258" }]
+  - id: "es-1704"
+    target: "facturar"
+    ipa: "faktuˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "facturar", base: "facturar" }]
+    examples:
+      - target: "Facturo la maleta."
+        ipa: "fakˈtuɾo la maˈleta"
+        bases: [{ word: "Facturo", base: "facturar" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }]
+      - target: "Facturamos antes de las seis."
+        ipa: "faktuˈɾamos ˈantes de las sejs"
+        bases: [{ word: "Facturamos", base: "facturar" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "las", base: "las" }, { word: "seis", ref: "es-0210" }]
+  - id: "es-1705"
+    target: "la tarifa"
+    ipa: "la taˈɾifa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tarifa", base: "tarifa" }]
+    examples:
+      - target: "La tarifa es barata."
+        ipa: "la taˈɾifa es baˈɾata"
+        bases: [{ word: "La", base: "la" }, { word: "tarifa", base: "tarifa" }, { word: "es", ref: "es-0022" }, { word: "barata", ref: "es-0411" }]
+      - target: "¿Cuál es la tarifa?"
+        ipa: "kwal es la taˈɾifa"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "tarifa", base: "tarifa" }]
+  - id: "es-1706"
+    target: "el ticket"
+    ipa: "el tikˈket"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ticket", base: "ticket" }]
+    examples:
+      - target: "Compro un ticket."
+        ipa: "ˈkompɾo un tikˈket"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "ticket", base: "ticket" }]
+      - target: "El ticket es de papel."
+        ipa: "el tikˈket es de paˈpel"
+        bases: [{ word: "El", base: "el" }, { word: "ticket", base: "ticket" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "papel", ref: "es-1387" }]
+  - id: "es-1707"
+    target: "retrasarse"
+    ipa: "retɾaˈsaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "retrasarse", base: "retrasarse" }]
+    examples:
+      - target: "El tren se retrasa hoy."
+        ipa: "el tɾen se reˈtɾasa oj"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "se", base: "se" }, { word: "retrasa", base: "retrasarse" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Nos retrasamos por el tráfico."
+        ipa: "nos retɾaˈsamos poɾ el ˈtɾafiko"
+        bases: [{ word: "Nos", base: "nos" }, { word: "retrasamos", base: "retrasarse" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "tráfico", base: "tráfico" }]
+  - id: "es-1708"
+    target: "perderse"
+    ipa: "peɾˈdeɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "perderse", base: "perderse" }]
+    examples:
+      - target: "Me pierdo en la ciudad."
+        ipa: "me ˈpjeɾdo en la θjuˈdad"
+        bases: [{ word: "Me", base: "me" }, { word: "pierdo", base: "perderse" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "No te pierdas el tren."
+        ipa: "no te ˈpjeɾdas el tɾen"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "te", base: "te" }, { word: "pierdas", base: "perderse" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }]
+  - id: "es-1709"
+    target: "embarcar"
+    ipa: "embaɾˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "embarcar", base: "embarcar" }]
+    examples:
+      - target: "Embarcamos en el barco."
+        ipa: "embaɾˈkamos en el ˈbaɾko"
+        bases: [{ word: "Embarcamos", base: "embarcar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "barco", ref: "es-0682" }]
+      - target: "Embarcan a las ocho."
+        ipa: "emˈbaɾkan a las ˈotʃo"
+        bases: [{ word: "Embarcan", base: "embarcar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+  - id: "es-1710"
+    target: "el control"
+    ipa: "el konˈtɾol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "control", base: "control" }]
+    examples:
+      - target: "El control de seguridad es largo."
+        ipa: "el konˈtɾol de seɡuɾiˈdad es ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "control", base: "control" }, { word: "de", base: "de" }, { word: "seguridad", base: "seguridad" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+      - target: "Hay un control en la puerta."
+        ipa: "aj un konˈtɾol en la ˈpweɾta"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "control", base: "control" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+  - id: "es-1711"
+    target: "el destino"
+    ipa: "el desˈtino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "destino", base: "destino" }]
+    examples:
+      - target: "¿Cuál es tu destino?"
+        ipa: "kwal es tu desˈtino"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "destino", base: "destino" }]
+      - target: "Llegamos a nuestro destino."
+        ipa: "ʝeˈɡamos a ˈnwestɾo desˈtino"
+        bases: [{ word: "Llegamos", ref: "es-0290" }, { word: "a", base: "a" }, { word: "nuestro", base: "nuestro" }, { word: "destino", base: "destino" }]
+  - id: "es-1712"
+    target: "la vía"
+    ipa: "la ˈbia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vía", base: "vía" }]
+    examples:
+      - target: "El tren sale de la vía tres."
+        ipa: "el tɾen ˈsale de la ˈbia tɾes"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "sale", ref: "es-0690" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "vía", base: "vía" }, { word: "tres", ref: "es-0207" }]
+      - target: "La vía está mojada."
+        ipa: "la ˈbia esˈta moˈxada"
+        bases: [{ word: "La", base: "la" }, { word: "vía", base: "vía" }, { word: "está", ref: "es-0023" }, { word: "mojada", ref: "es-0440" }]
+  - id: "es-1713"
+    target: "aterrizar"
+    ipa: "ateriˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "aterrizar", base: "aterrizar" }]
+    examples:
+      - target: "El avión aterriza a las cinco."
+        ipa: "el aˈbjon ateˈriθa a las ˈθinko"
+        bases: [{ word: "El", base: "el" }, { word: "avión", ref: "es-0679" }, { word: "aterriza", base: "aterrizar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "cinco", ref: "es-0209" }]
+      - target: "Aterrizamos en Madrid."
+        ipa: "ateriˈθamos en maˈdɾid"
+        bases: [{ word: "Aterrizamos", base: "aterrizar" }, { word: "en", base: "en" }, { word: "Madrid", base: "madrid" }]
+  - id: "es-1714"
+    target: "despegar"
+    ipa: "despeˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "despegar", base: "despegar" }]
+    examples:
+      - target: "El avión despega a tiempo."
+        ipa: "el aˈbjon desˈpeɡa a ˈtjempo"
+        bases: [{ word: "El", base: "el" }, { word: "avión", ref: "es-0679" }, { word: "despega", base: "despegar" }, { word: "a", base: "a" }, { word: "tiempo", ref: "es-1112" }]
+      - target: "Despegamos a las nueve."
+        ipa: "despeˈɡamos a las ˈnwebe"
+        bases: [{ word: "Despegamos", base: "despegar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+  - id: "es-1715"
+    target: "el peaje"
+    ipa: "el peˈaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "peaje", base: "peaje" }]
+    examples:
+      - target: "Pagamos el peaje."
+        ipa: "paˈɡamos el peˈaxe"
+        bases: [{ word: "Pagamos", ref: "es-0295" }, { word: "el", base: "el" }, { word: "peaje", base: "peaje" }]
+      - target: "El peaje es caro."
+        ipa: "el peˈaxe es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "peaje", base: "peaje" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+  - id: "es-1716"
+    target: "la gasolina"
+    ipa: "la ɡasoˈlina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "gasolina", base: "gasolina" }]
+    examples:
+      - target: "Necesitamos gasolina."
+        ipa: "neθesiˈtamos ɡasoˈlina"
+        bases: [{ word: "Necesitamos", ref: "es-0288" }, { word: "gasolina", base: "gasolina" }]
+      - target: "La gasolina es cara."
+        ipa: "la ɡasoˈlina es ˈkaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "gasolina", base: "gasolina" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }]
+  - id: "es-1717"
+    target: "la gasolinera"
+    ipa: "la ɡasoliˈneɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "gasolinera", base: "gasolinera" }]
+    examples:
+      - target: "La gasolinera está cerca."
+        ipa: "la ɡasoliˈneɾa esˈta ˈθeɾka"
+        bases: [{ word: "La", base: "la" }, { word: "gasolinera", base: "gasolinera" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+      - target: "Paro en la gasolinera."
+        ipa: "ˈpaɾo en la ɡasoliˈneɾa"
+        bases: [{ word: "Paro", base: "parar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "gasolinera", base: "gasolinera" }]
+  - id: "es-1718"
+    target: "el itinerario"
+    ipa: "el itineˈɾaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "itinerario", base: "itinerario" }]
+    examples:
+      - target: "El itinerario es muy largo."
+        ipa: "el itineˈɾaɾjo es mwi ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "itinerario", base: "itinerario" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", ref: "es-0429" }]
+      - target: "Tengo un itinerario claro."
+        ipa: "ˈtenɡo un itineˈɾaɾjo ˈklaɾo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "itinerario", base: "itinerario" }, { word: "claro", ref: "es-0438" }]
+  - id: "es-1719"
+    target: "la guía"
+    ipa: "la ˈɡia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "guía", base: "guía" }]
+    examples:
+      - target: "La guía dice que el museo es bonito."
+        ipa: "la ˈɡia ˈdiθe ke el muˈseo es boˈnito"
+        bases: [{ word: "La", base: "la" }, { word: "guía", base: "guía" }, { word: "dice", ref: "es-1627" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "museo", ref: "es-0776" }, { word: "es", ref: "es-0022" }, { word: "bonito", ref: "es-0405" }]
+      - target: "Tenemos una guía en el viaje."
+        ipa: "teˈnemos ˈuna ˈɡia en el ˈbjaxe"
+        bases: [{ word: "Tenemos", ref: "es-0024" }, { word: "una", base: "una" }, { word: "guía", base: "guía" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+  - id: "es-1720"
+    target: "el embarque"
+    ipa: "el emˈbaɾke"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "embarque", base: "embarque" }]
+    examples:
+      - target: "El embarque empieza a las ocho."
+        ipa: "el emˈbaɾke emˈpjeθa a las ˈotʃo"
+        bases: [{ word: "El", base: "el" }, { word: "embarque", base: "embarque" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "La puerta de embarque es la cinco."
+        ipa: "la ˈpweɾta de emˈbaɾke es la ˈθinko"
+        bases: [{ word: "La", base: "la" }, { word: "puerta", ref: "es-0007" }, { word: "de", base: "de" }, { word: "embarque", base: "embarque" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "cinco", ref: "es-0209" }]
+  - id: "es-1721"
+    target: "la aduana"
+    ipa: "la aˈdwana"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "aduana", base: "aduana" }]
+    examples:
+      - target: "Pasamos por la aduana."
+        ipa: "paˈsamos poɾ la aˈdwana"
+        bases: [{ word: "Pasamos", ref: "es-1533" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "aduana", base: "aduana" }]
+      - target: "La aduana está cerrada."
+        ipa: "la aˈdwana esˈta θeˈrada"
+        bases: [{ word: "La", base: "la" }, { word: "aduana", base: "aduana" }, { word: "está", ref: "es-0023" }, { word: "cerrada", ref: "es-0849" }]
+  - id: "es-1722"
+    target: "el casco"
+    ipa: "el ˈkasko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "casco", base: "casco" }]
+    examples:
+      - target: "Llevo casco en la bicicleta."
+        ipa: "ˈʝebo ˈkasko en la biθiˈkleta"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "casco", base: "casco" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "bicicleta", ref: "es-0680" }]
+      - target: "El casco es azul."
+        ipa: "el ˈkasko es aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "casco", base: "casco" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+  - id: "es-1723"
+    target: "el hostal"
+    ipa: "el osˈtal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hostal", base: "hostal" }]
+    examples:
+      - target: "Nos quedamos en un hostal."
+        ipa: "nos keˈdamos en un osˈtal"
+        bases: [{ word: "Nos", base: "nos" }, { word: "quedamos", ref: "es-1616" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hostal", base: "hostal" }]
+      - target: "El hostal es barato."
+        ipa: "el osˈtal es baˈɾato"
+        bases: [{ word: "El", base: "el" }, { word: "hostal", base: "hostal" }, { word: "es", ref: "es-0022" }, { word: "barato", ref: "es-0411" }]
