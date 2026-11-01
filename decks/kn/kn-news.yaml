@@ -1,0 +1,229 @@
+schema: 1
+id: "kn-news"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "news"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1341"
+    target: "ಸುದ್ದಿ"
+    reading: "suddi"
+    ipa: "sud̪d̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ಒಳ್ಳೆಯ ಸುದ್ದಿ ಇದೆ.", reading: "indu oḷḷeya suddi ide.", ipa: "ind̪u oɭɭeja sud̪d̪i id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಸುದ್ದಿ ಕೇಳು.", reading: "suddi kēḷu.", ipa: "sud̪d̪i keːɭu" }
+  - id: "kn-1342"
+    target: "ಪತ್ರಿಕೆ"
+    reading: "patrike"
+    ipa: "pat̪rike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪತ್ರಿಕೆ ಓದು.", reading: "patrike ōdu.", ipa: "pat̪rike oːd̪u" }
+      - { target: "ಪತ್ರಿಕೆಯಲ್ಲಿ ಸುದ್ದಿ ಇದೆ.", reading: "patrikeyalli suddi ide.", ipa: "pat̪rikejalli sud̪d̪i id̪e", bases: [{ word: "ಪತ್ರಿಕೆಯಲ್ಲಿ", base: "ಪತ್ರಿಕೆ", reading: "patrike" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1343"
+    target: "ವರದಿಗಾರ"
+    reading: "varadigāra"
+    ipa: "ʋarad̪iɡaːra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವರದಿಗಾರ ಬಂದ.", reading: "varadigāra banda.", ipa: "ʋarad̪iɡaːra band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ವರದಿಗಾರ ಪ್ರಶ್ನೆ ಕೇಳಿದ.", reading: "varadigāra praśne kēḷida.", ipa: "ʋarad̪iɡaːra praʃne keːɭid̪a", bases: [{ word: "ಕೇಳಿದ", ref: "kn-0637" }] }
+  - ref: "kn-0897"
+  - id: "kn-1344"
+    target: "ರೇಡಿಯೋ"
+    reading: "rēḍiyō"
+    ipa: "reːɖijoː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರೇಡಿಯೋ ಕೇಳು.", reading: "rēḍiyō kēḷu.", ipa: "reːɖijoː keːɭu" }
+      - { target: "ರೇಡಿಯೋ ಹಾಡು ಹಾಕು.", reading: "rēḍiyō hāḍu hāku.", ipa: "reːɖijoː haːɖu haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+  - id: "kn-1345"
+    target: "ಚುನಾವಣೆ"
+    reading: "cunāvaṇe"
+    ipa: "tʃunaːʋaɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚುನಾವಣೆ ಯಾವಾಗ?", reading: "cunāvaṇe yāvāga?", ipa: "tʃunaːʋaɳe jaːʋaːɡa" }
+      - { target: "ಚುನಾವಣೆ ಇದೆ.", reading: "cunāvaṇe ide.", ipa: "tʃunaːʋaɳe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1346"
+    target: "ಮತ"
+    reading: "mata"
+    ipa: "mat̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮತ ಕೊಡು.", reading: "mata koḍu.", ipa: "mat̪a koɖu" }
+      - { target: "ನನ್ನ ಮತ ಬೇಕು.", reading: "nanna mata bēku.", ipa: "nanna mat̪a beːku" }
+  - id: "kn-1347"
+    target: "ಮತದಾರ"
+    reading: "matadāra"
+    ipa: "mat̪ad̪aːra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮತದಾರರು ಬಂದರು.", reading: "matadāraru bandaru.", ipa: "mat̪ad̪aːraru band̪aru", bases: [{ word: "ಮತದಾರರು", base: "ಮತದಾರ", reading: "matadāra" }] }
+      - { target: "ಮತದಾರ ಸಾಲಿನಲ್ಲಿ ನಿಂತ.", reading: "matadāra sālinalli ninta.", ipa: "mat̪ad̪aːra saːlinalli nint̪a", bases: [{ word: "ಸಾಲಿನಲ್ಲಿ", base: "ಸಾಲು", reading: "sālu" }, { word: "ನಿಂತ", ref: "kn-0652" }] }
+  - ref: "kn-0554"
+  - id: "kn-1348"
+    target: "ಘಟನೆ"
+    reading: "ghaṭane"
+    ipa: "ɡʱaʈane"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಘಟನೆ ನಡೆಯಿತು.", reading: "ghaṭane naḍeyitu.", ipa: "ɡʱaʈane naɖejit̪u", bases: [{ word: "ನಡೆಯಿತು", ref: "kn-0643" }] }
+      - { target: "ಈ ಘಟನೆ ದೊಡ್ಡದು.", reading: "ī ghaṭane doḍḍadu.", ipa: "iː ɡʱaʈane d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1349"
+    target: "ಅಪಘಾತ"
+    reading: "apaghāta"
+    ipa: "apaɡʱaːt̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಸ್ತೆಯಲ್ಲಿ ಅಪಘಾತ ಆಯಿತು.", reading: "rasteyalli apaghāta āyitu.", ipa: "rast̪ejalli apaɡʱaːt̪a aːjit̪u", bases: [{ word: "ರಸ್ತೆಯಲ್ಲಿ", ref: "kn-0378" }] }
+      - { target: "ಅಪಘಾತ ದೊಡ್ಡದು.", reading: "apaghāta doḍḍadu.", ipa: "apaɡʱaːt̪a d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1350"
+    target: "ಬೆಂಕಿ"
+    reading: "beṅki"
+    ipa: "beŋki"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಂಕಿ ಹೊತ್ತಿತು.", reading: "beṅki hottitu.", ipa: "beŋki hot̪t̪it̪u", bases: [{ word: "ಹೊತ್ತಿತು", base: "ಹೊತ್ತು", reading: "hottu" }] }
+      - { target: "ಬೆಂಕಿ ಎಚ್ಚರಿಕೆ.", reading: "beṅki eccarike.", ipa: "beŋki etʃtʃarike" }
+  - id: "kn-1351"
+    target: "ಭೂಕಂಪ"
+    reading: "bhūkampa"
+    ipa: "bʱuːkampa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭೂಕಂಪ ಆಯಿತು.", reading: "bhūkampa āyitu.", ipa: "bʱuːkampa aːjit̪u" }
+      - { target: "ಭೂಕಂಪದ ಸುದ್ದಿ ಇದೆ.", reading: "bhūkampada suddi ide.", ipa: "bʱuːkampad̪a sud̪d̪i id̪e", bases: [{ word: "ಭೂಕಂಪದ", base: "ಭೂಕಂಪ", reading: "bhūkampa" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1352"
+    target: "ಹೇಳಿಕೆ"
+    reading: "hēḷike"
+    ipa: "heːɭike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವರು ಹೇಳಿಕೆ ಕೊಟ್ಟರು.", reading: "avaru hēḷike koṭṭaru.", ipa: "aʋaru heːɭike koʈʈaru", bases: [{ word: "ಕೊಟ್ಟರು", ref: "kn-0114" }] }
+      - { target: "ಹೇಳಿಕೆ ಓದು.", reading: "hēḷike ōdu.", ipa: "heːɭike oːd̪u" }
+  - id: "kn-1353"
+    target: "ಶೀರ್ಷಿಕೆ"
+    reading: "śīrṣike"
+    ipa: "ʃiːrʂike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶೀರ್ಷಿಕೆ ದೊಡ್ಡದು.", reading: "śīrṣike doḍḍadu.", ipa: "ʃiːrʂike d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಶೀರ್ಷಿಕೆ ಓದು.", reading: "śīrṣike ōdu.", ipa: "ʃiːrʂike oːd̪u" }
+  - id: "kn-1354"
+    target: "ಲೇಖನ"
+    reading: "lēkhana"
+    ipa: "leːkʰana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲೇಖನ ಚೆನ್ನಾಗಿದೆ.", reading: "lēkhana cennāgide.", ipa: "leːkʰana tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಪತ್ರಿಕೆಯಲ್ಲಿ ಹೊಸ ಲೇಖನ ಇದೆ.", reading: "patrikeyalli hosa lēkhana ide.", ipa: "pat̪rikejalli hosa leːkʰana id̪e", bases: [{ word: "ಪತ್ರಿಕೆಯಲ್ಲಿ", base: "ಪತ್ರಿಕೆ", reading: "patrike" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1355"
+    target: "ಪ್ರಕಟಿಸು"
+    reading: "prakaṭisu"
+    ipa: "prakaʈisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪತ್ರಿಕೆ ಪ್ರಕಟಿಸುತ್ತದೆ.", reading: "patrike prakaṭisuttade.", ipa: "pat̪rike prakaʈisut̪t̪ad̪e", bases: [{ word: "ಪ್ರಕಟಿಸುತ್ತದೆ", base: "ಪ್ರಕಟಿಸು", reading: "prakaṭisu" }] }
+      - { target: "ಸುದ್ದಿ ಪ್ರಕಟಿಸಿದರು.", reading: "suddi prakaṭisidaru.", ipa: "sud̪d̪i prakaʈisid̪aru", bases: [{ word: "ಪ್ರಕಟಿಸಿದರು", base: "ಪ್ರಕಟಿಸು", reading: "prakaṭisu" }] }
+  - id: "kn-1356"
+    target: "ಘೋಷಿಸು"
+    reading: "ghōṣisu"
+    ipa: "ɡʱoːʂisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವರು ಸುದ್ದಿ ಘೋಷಿಸಿದರು.", reading: "avaru suddi ghōṣisidaru.", ipa: "aʋaru sud̪d̪i ɡʱoːʂisid̪aru", bases: [{ word: "ಘೋಷಿಸಿದರು", base: "ಘೋಷಿಸು", reading: "ghōṣisu" }] }
+      - { target: "ರಜೆ ಘೋಷಿಸು.", reading: "raje ghōṣisu.", ipa: "radʒe ɡʱoːʂisu" }
+  - id: "kn-1357"
+    target: "ಬಿಡುಗಡೆ"
+    reading: "biḍugaḍe"
+    ipa: "biɖuɡaɖe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹೊಸ ಪುಸ್ತಕ ಬಿಡುಗಡೆ ಆಯಿತು.", reading: "hosa pustaka biḍugaḍe āyitu.", ipa: "hosa pust̪aka biɖuɡaɖe aːjit̪u" }
+      - { target: "ಬಿಡುಗಡೆ ಯಾವಾಗ?", reading: "biḍugaḍe yāvāga?", ipa: "biɖuɡaɖe jaːʋaːɡa" }
+  - id: "kn-1358"
+    target: "ಸಾವು"
+    reading: "sāvu"
+    ipa: "saːʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾವು ಸುದ್ದಿ.", reading: "sāvu suddi.", ipa: "saːʋu sud̪d̪i" }
+      - { target: "ಅಪಘಾತದಲ್ಲಿ ಸಾವು ಆಯಿತು.", reading: "apaghātadalli sāvu āyitu.", ipa: "apaɡʱaːt̪ad̪alli saːʋu aːjit̪u", bases: [{ word: "ಅಪಘಾತದಲ್ಲಿ", base: "ಅಪಘಾತ", reading: "apaghāta" }] }
+  - id: "kn-1359"
+    target: "ಗೆಲುವು"
+    reading: "geluvu"
+    ipa: "ɡeluʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೆಲುವು ಸಿಕ್ಕಿತು.", reading: "geluvu sikkitu.", ipa: "ɡeluʋu sikkit̪u", bases: [{ word: "ಸಿಕ್ಕಿತು", base: "ಸಿಕ್ಕು", reading: "sikku" }] }
+      - { target: "ಅವರ ಗೆಲುವು ದೊಡ್ಡದು.", reading: "avara geluvu doḍḍadu.", ipa: "aʋara ɡeluʋu d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1360"
+    target: "ಮತದಾನ"
+    reading: "matadāna"
+    ipa: "mat̪ad̪aːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮತದಾನ ಇದೆ.", reading: "matadāna ide.", ipa: "mat̪ad̪aːna id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಮತದಾನದಲ್ಲಿ ನನಗೆ ಮತ ಇದೆ.", reading: "matadānadalli nanage mata ide.", ipa: "mat̪ad̪aːnad̪alli nanaɡe mat̪a id̪e", bases: [{ word: "ಮತದಾನದಲ್ಲಿ", base: "ಮತದಾನ", reading: "matadāna" }, { word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }

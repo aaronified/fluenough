@@ -1,0 +1,150 @@
+schema: 1
+id: "kn-en-news"
+kind: "layer"
+core: "kn-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News: papers, reporters, elections and warnings"
+license: "CC-BY-SA-4.0"
+description: "News: the paper and the radio, the reporter and the headline, elections and votes, and the warnings and accidents people hear about. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "kn-1341":
+    native: "news"
+    notes:
+      "n1": "News, what has happened, told to others."
+    examples:
+      "ಇಂದು ಒಳ್ಳೆಯ ಸುದ್ದಿ ಇದೆ.": { native: "There is good news today.", bases: { "ಇದೆ": "there is" } }
+      "ಸುದ್ದಿ ಕೇಳು.": "Listen to the news."
+  "kn-1342":
+    native: "newspaper"
+    notes:
+      "n1": "A newspaper, printed every day or every week."
+    examples:
+      "ಪತ್ರಿಕೆ ಓದು.": "Read the newspaper."
+      "ಪತ್ರಿಕೆಯಲ್ಲಿ ಸುದ್ದಿ ಇದೆ.": { native: "There is news in the newspaper.", bases: { "ಪತ್ರಿಕೆಯಲ್ಲಿ": "in the newspaper", "ಇದೆ": "there is" } }
+  "kn-1343":
+    native: "reporter"
+    notes:
+      "n1": "A reporter, who writes or speaks the news."
+    examples:
+      "ವರದಿಗಾರ ಬಂದ.": "The reporter came."
+      "ವರದಿಗಾರ ಪ್ರಶ್ನೆ ಕೇಳಿದ.": "The reporter asked a question."
+  "kn-1344":
+    native: "radio"
+    notes:
+      "n1": "A radio, which plays news and songs."
+    examples:
+      "ರೇಡಿಯೋ ಕೇಳು.": "Listen to the radio."
+      "ರೇಡಿಯೋ ಹಾಡು ಹಾಕು.": { native: "Play a song on the radio.", bases: { "ಹಾಕು": "play" } }
+  "kn-1345":
+    native: "election"
+    notes:
+      "n1": "An election, when people vote for leaders."
+    examples:
+      "ಚುನಾವಣೆ ಯಾವಾಗ?": "When is the election?"
+      "ಚುನಾವಣೆ ಇದೆ.": { native: "There is an election.", bases: { "ಇದೆ": "there is" } }
+  "kn-1346":
+    native: "vote"
+    notes:
+      "n1": "A vote, given in an election. Voting is ಮತದಾನ (matadāna)."
+    examples:
+      "ಮತ ಕೊಡು.": "Give your vote."
+      "ನನ್ನ ಮತ ಬೇಕು.": "I need my vote."
+  "kn-1347":
+    native: "voter"
+    notes:
+      "n1": "A voter, a person who has the right to vote."
+    examples:
+      "ಮತದಾರರು ಬಂದರು.": { native: "The voters came.", bases: { "ಮತದಾರರು": "the voters" } }
+      "ಮತದಾರ ಸಾಲಿನಲ್ಲಿ ನಿಂತ.": { native: "The voter stood in the queue.", bases: { "ಸಾಲಿನಲ್ಲಿ": "in the queue" } }
+  "kn-1348":
+    native: "event, incident"
+    notes:
+      "n1": "An event or an incident, something that happened."
+    examples:
+      "ಘಟನೆ ನಡೆಯಿತು.": "The incident took place."
+      "ಈ ಘಟನೆ ದೊಡ್ಡದು.": "This incident is big."
+  "kn-1349":
+    native: "accident"
+    notes:
+      "n1": "A road accident or any other accident."
+    examples:
+      "ರಸ್ತೆಯಲ್ಲಿ ಅಪಘಾತ ಆಯಿತು.": "There was an accident on the road."
+      "ಅಪಘಾತ ದೊಡ್ಡದು.": "The accident was big."
+  "kn-1350":
+    native: "fire"
+    notes:
+      "n1": "Fire, which burns and gives heat."
+    examples:
+      "ಬೆಂಕಿ ಹೊತ್ತಿತು.": { native: "A fire started.", bases: { "ಹೊತ್ತಿತು": "started" } }
+      "ಬೆಂಕಿ ಎಚ್ಚರಿಕೆ.": "A fire warning."
+  "kn-1351":
+    native: "earthquake"
+    notes:
+      "n1": "An earthquake, when the ground shakes."
+    examples:
+      "ಭೂಕಂಪ ಆಯಿತು.": "There was an earthquake."
+      "ಭೂಕಂಪದ ಸುದ್ದಿ ಇದೆ.": { native: "There is news of the earthquake.", bases: { "ಭೂಕಂಪದ": "of the earthquake", "ಇದೆ": "there is" } }
+  "kn-1352":
+    native: "statement"
+    notes:
+      "n1": "A statement, what a person says officially."
+    examples:
+      "ಅವರು ಹೇಳಿಕೆ ಕೊಟ್ಟರು.": "They gave a statement."
+      "ಹೇಳಿಕೆ ಓದು.": "Read the statement."
+  "kn-1353":
+    native: "headline, title"
+    notes:
+      "n1": "The headline or the title of a news story."
+    examples:
+      "ಶೀರ್ಷಿಕೆ ದೊಡ್ಡದು.": "The headline is big."
+      "ಶೀರ್ಷಿಕೆ ಓದು.": "Read the headline."
+  "kn-1354":
+    native: "article"
+    notes:
+      "n1": "An article, a piece of writing in a newspaper."
+    examples:
+      "ಲೇಖನ ಚೆನ್ನಾಗಿದೆ.": "The article is good."
+      "ಪತ್ರಿಕೆಯಲ್ಲಿ ಹೊಸ ಲೇಖನ ಇದೆ.": { native: "There is a new article in the newspaper.", bases: { "ಪತ್ರಿಕೆಯಲ್ಲಿ": "in the newspaper", "ಇದೆ": "there is" } }
+  "kn-1355":
+    native: "to publish"
+    notes:
+      "n1": "To publish, to print and make known."
+    examples:
+      "ಪತ್ರಿಕೆ ಪ್ರಕಟಿಸುತ್ತದೆ.": { native: "The newspaper publishes.", bases: { "ಪ್ರಕಟಿಸುತ್ತದೆ": "publishes" } }
+      "ಸುದ್ದಿ ಪ್ರಕಟಿಸಿದರು.": { native: "They published the news.", bases: { "ಪ್ರಕಟಿಸಿದರು": "published" } }
+  "kn-1356":
+    native: "to announce"
+    notes:
+      "n1": "To announce something to the public."
+    examples:
+      "ಅವರು ಸುದ್ದಿ ಘೋಷಿಸಿದರು.": { native: "They announced the news.", bases: { "ಘೋಷಿಸಿದರು": "announced" } }
+      "ರಜೆ ಘೋಷಿಸು.": "Announce a holiday."
+  "kn-1357":
+    native: "release"
+    notes:
+      "n1": "A release, when a film, a book or a person is let out or made public."
+    examples:
+      "ಹೊಸ ಪುಸ್ತಕ ಬಿಡುಗಡೆ ಆಯಿತು.": "The new book was released."
+      "ಬಿಡುಗಡೆ ಯಾವಾಗ?": "When is the release?"
+  "kn-1358":
+    native: "death"
+    notes:
+      "n1": "Death, when a person or an animal dies."
+    examples:
+      "ಸಾವು ಸುದ್ದಿ.": "It is news of a death."
+      "ಅಪಘಾತದಲ್ಲಿ ಸಾವು ಆಯಿತು.": { native: "There was a death in the accident.", bases: { "ಅಪಘಾತದಲ್ಲಿ": "in the accident" } }
+  "kn-1359":
+    native: "victory, win"
+    notes:
+      "n1": "A victory, a win in a game or a fight."
+    examples:
+      "ಗೆಲುವು ಸಿಕ್ಕಿತು.": { native: "The victory came.", bases: { "ಸಿಕ್ಕಿತು": "came" } }
+      "ಅವರ ಗೆಲುವು ದೊಡ್ಡದು.": "Their victory is big."
+  "kn-1360":
+    native: "voting"
+    notes:
+      "n1": "Voting, the act of giving a vote."
+    examples:
+      "ಮತದಾನ ಇದೆ.": { native: "There is voting.", bases: { "ಇದೆ": "there is" } }
+      "ಮತದಾನದಲ್ಲಿ ನನಗೆ ಮತ ಇದೆ.": { native: "I have a vote in the voting.", bases: { "ಮತದಾನದಲ್ಲಿ": "in the voting", "ಇದೆ": "have" } }
