@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-present-ir-re"
+name: "Reading: -ir and -re verbs"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about finishing work, choosing, answering and listening, with -ir and -re verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-finishing-and-waiting"
+    title: "Finishing and waiting"
+    theme: "more-verbs"
+    sentences:
+      - text: "Je finis mon travail tard."
+      - text: "Nous choisissons le vin."
+      - text: "Tu attends le train."
+      - text: "Elles descendent à la gare."
+    questions:
+      - id: "fr-0605"
+        prompt: { en: "When does the speaker finish work?" }
+        options:
+          - { en: "Late" }
+          - { en: "Early" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-0606"
+        prompt: { en: "What do 'we' choose?" }
+        options:
+          - { en: "The wine" }
+          - { en: "The street" }
+          - { en: "The key" }
+        answer: 1
+      - id: "fr-0607"
+        prompt: { en: "What does 'you' wait for?" }
+        options:
+          - { en: "The train" }
+          - { en: "The bus" }
+          - { en: "The friend" }
+        answer: 1
+  - id: "fr-lunch-notes"
+    title: "Short notes at lunch"
+    theme: "more-verbs"
+    sentences:
+      - text: "Il vend des tasses."
+      - text: "Vous répondez vite."
+      - text: "Ils entendent la musique."
+      - text: "Je descends ici."
+    questions:
+      - id: "fr-0608"
+        prompt: { en: "What does he sell?" }
+        options:
+          - { en: "Cups" }
+          - { en: "Keys" }
+          - { en: "Trains" }
+        answer: 1
+      - id: "fr-0609"
+        prompt: { en: "How do 'you' answer?" }
+        options:
+          - { en: "Quickly" }
+          - { en: "Slowly" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-0610"
+        prompt: { en: "What do they hear?" }
+        options:
+          - { en: "Music" }
+          - { en: "Trains" }
+          - { en: "Nothing" }
+        answer: 1

@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-demonstratives"
+kind: "layer"
+core: "fr-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and these with each noun"
+license: "CC-BY-SA-4.0"
+description: "Each row is one noun, and the column is the form of this or these that goes with it. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Demonstrative"
+  slot_name: "noun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "masc-cons": "masculine, before a consonant", "masc-vowel": "masculine, before a vowel", "fem": "feminine", "plural": "plural" }
+  entries:
+    "sac": "bag"
+    "train": "train"
+    "musee": "museum"
+    "ami": "friend"
+    "table": "table"
+    "gare": "station"
+    "ville": "town; city"
+    "heure": "hour; time"
+  notes: "Ce goes before a masculine noun that starts with a consonant, cet before one that starts with a vowel or a silent h, cette before every feminine singular noun, and ces before every plural. This and that are not told apart in the word itself: the contrast with -ci and -là is taught later."

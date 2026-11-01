@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-grammar-inversion"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "inversion"]
+  entries:
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "statement": "tu parles français."
+        "inversion": "parles-tu français ?"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "statement": "vous êtes là."
+        "inversion": "êtes-vous là ?"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "statement": "tu as un frère."
+        "inversion": "as-tu un frère ?"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "statement": "vous allez bien."
+        "inversion": "allez-vous bien ?"
+    - lemma: "habiter"
+      ipa: "abite"
+      forms:
+        "statement": "il habite ici."
+        "inversion": "habite-t-il ici ?"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "statement": "elles mangent ici."
+        "inversion": "mangent-elles ici ?"

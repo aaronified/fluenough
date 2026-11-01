@@ -1,0 +1,100 @@
+schema: 1
+id: "fr-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0760"
+    target: "Je vais au marché."
+    ipa: "ʒə ve o maʁʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "vais", ref: "fr-0286" }
+      - { word: "au", base: "au" }
+      - { word: "marché", ref: "fr-0735" }
+    confusables:
+      - { id: "caisse", ref: "fr-0749", kind: "word" }
+      - { id: "etal", ref: "fr-0759", kind: "word" }
+  - id: "fr-0761"
+    target: "Les fruits sont frais."
+    ipa: "le fʁɥi sɔ̃ fʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "fruits", ref: "fr-0738" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "frais", ref: "fr-0753" }
+    confusables:
+      - { id: "legume", ref: "fr-0739", kind: "word" }
+      - { id: "mur", ref: "fr-0754", kind: "word" }
+  - id: "fr-0762"
+    target: "Le prix est bon."
+    ipa: "lə pʁi ɛ bɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "prix", ref: "fr-0737" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "bon", ref: "fr-0040" }
+    confusables:
+      - { id: "argent", ref: "fr-0751", kind: "word" }
+      - { id: "monnaie", ref: "fr-0750", kind: "word" }
+  - id: "fr-0763"
+    target: "Je paie à la caisse."
+    ipa: "ʒə pɛ a la kɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "paie", ref: "fr-0310" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "caisse", ref: "fr-0749" }
+    confusables:
+      - { id: "monnaie", ref: "fr-0750", kind: "word" }
+      - { id: "panier", ref: "fr-0748", kind: "word" }
+  - id: "fr-0764"
+    target: "Ça coûte cher."
+    ipa: "sa kut ʃɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ça", base: "ça" }
+      - { word: "coûte", ref: "fr-0752" }
+      - { word: "cher", ref: "fr-0104" }
+    confusables:
+      - { id: "prix", ref: "fr-0737", kind: "word" }
+      - { id: "argent", ref: "fr-0751", kind: "word" }
+  - id: "fr-0765"
+    target: "Le marchand est gentil."
+    ipa: "lə maʁʃɑ̃ ɛ ʒɑ̃ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "marchand", ref: "fr-0758" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "gentil", ref: "fr-0434" }
+    confusables:
+      - { id: "vendeur", ref: "fr-0736", kind: "word" }
+      - { id: "client", ref: "fr-0685", kind: "word" }
+  - id: "fr-0766"
+    target: "Une salade coûte peu."
+    ipa: "yn salad kut pø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Une", ref: "fr-0545" }
+      - { word: "salade", ref: "fr-0746" }
+      - { word: "coûte", ref: "fr-0752" }
+      - { word: "peu", ref: "fr-0342" }
+    confusables:
+      - { id: "poire", ref: "fr-0741", kind: "word" }
+      - { id: "oignon", ref: "fr-0747", kind: "word" }

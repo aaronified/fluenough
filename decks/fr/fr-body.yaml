@@ -1,0 +1,273 @@
+schema: 1
+id: "fr-body"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "body"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0926"
+    target: "corps"
+    ipa: "kɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le corps est fort.", ipa: "lə kɔʁ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "corps", base: "corps" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "Je bouge tout le corps.", ipa: "ʒə buʒ tu lə kɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bouge", ref: "fr-0949" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "corps", base: "corps" }] }
+  - id: "fr-0927"
+    target: "tête"
+    ipa: "tɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à la tête.", ipa: "ʒe mal a la tɛt", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "tête", base: "tête" }] }
+      - { target: "Ma tête est lourde.", ipa: "ma tɛt ɛ luʁd", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tête", base: "tête" }, { word: "est", ref: "fr-0021" }, { word: "lourde", ref: "fr-0442" }] }
+  - id: "fr-0928"
+    target: "bras"
+    ipa: "bʁa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bras est long.", ipa: "lə bʁa ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bras", base: "bras" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Mon bras est fort.", ipa: "mɔ̃ bʁa ɛ fɔʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "bras", base: "bras" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-0929"
+    target: "jambe"
+    ipa: "ʒɑ̃b"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La jambe est fatiguée.", ipa: "la ʒɑ̃b ɛ fatiɡe", bases: [{ word: "La", ref: "fr-0544" }, { word: "jambe", base: "jambe" }, { word: "est", ref: "fr-0021" }, { word: "fatiguée", ref: "fr-0431" }] }
+      - { target: "J'ai mal à la jambe.", ipa: "ʒe mal a la ʒɑ̃b", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "jambe", base: "jambe" }] }
+  - id: "fr-0930"
+    target: "pied"
+    ipa: "pje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon pied est petit.", ipa: "mɔ̃ pje ɛ pəti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "pied", base: "pied" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "J'ai mal au pied.", ipa: "ʒe mal o pje", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "pied", base: "pied" }] }
+  - id: "fr-0931"
+    target: "genou"
+    ipa: "ʒənu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le genou est fatigué.", ipa: "lə ʒənu ɛ fatiɡe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "genou", base: "genou" }, { word: "est", ref: "fr-0021" }, { word: "fatigué", ref: "fr-0431" }] }
+      - { target: "J'ai mal au genou.", ipa: "ʒe mal o ʒənu", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "genou", base: "genou" }] }
+  - id: "fr-0932"
+    target: "dos"
+    ipa: "do"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal au dos.", ipa: "ʒe mal o do", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "dos", base: "dos" }] }
+      - { target: "Le dos est droit.", ipa: "lə do ɛ dʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dos", base: "dos" }, { word: "est", ref: "fr-0021" }, { word: "droit", ref: "fr-0894" }] }
+  - id: "fr-0933"
+    target: "ventre"
+    ipa: "vɑ̃tʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal au ventre.", ipa: "ʒe mal o vɑ̃tʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "ventre", base: "ventre" }] }
+      - { target: "Le ventre est plein.", ipa: "lə vɑ̃tʁ ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ventre", base: "ventre" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+  - id: "fr-0934"
+    target: "bouche"
+    ipa: "buʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ouvrez la bouche.", ipa: "uvʁe la buʃ", bases: [{ word: "Ouvrez", ref: "fr-0298" }, { word: "la", ref: "fr-0544" }, { word: "bouche", base: "bouche" }] }
+      - { target: "La bouche est petite.", ipa: "la buʃ ɛ pətit", bases: [{ word: "La", ref: "fr-0544" }, { word: "bouche", base: "bouche" }, { word: "est", ref: "fr-0021" }, { word: "petite", ref: "fr-0411" }] }
+  - id: "fr-0935"
+    target: "dent"
+    ipa: "dɑ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à la dent.", ipa: "ʒe mal a la dɑ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "dent", base: "dent" }] }
+      - { target: "Les dents sont fortes.", ipa: "le dɑ̃ sɔ̃ fɔʁt", bases: [{ word: "Les", ref: "fr-0043" }, { word: "dents", base: "dent" }, { word: "sont", ref: "fr-0021" }, { word: "fortes", ref: "fr-0425" }] }
+  - id: "fr-0936"
+    target: "nez"
+    ipa: "ne"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon nez est long.", ipa: "mɔ̃ ne ɛ lɔ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "nez", base: "nez" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Le nez est petit.", ipa: "lə ne ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nez", base: "nez" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+  - id: "fr-0937"
+    target: "œil"
+    ipa: "œj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à l'œil.", ipa: "ʒe mal a lœj", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "l'œil", base: "œil" }] }
+      - { target: "Les yeux sont fatigués.", ipa: "lez jø sɔ̃ fatiɡe", bases: [{ word: "Les", ref: "fr-0043" }, { word: "yeux", base: "œil" }, { word: "sont", ref: "fr-0021" }, { word: "fatigués", ref: "fr-0431" }] }
+  - id: "fr-0938"
+    target: "oreille"
+    ipa: "ɔʁɛj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à l'oreille.", ipa: "ʒe mal a lɔʁɛj", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "l'oreille", base: "oreille" }] }
+      - { target: "Mon oreille est petite.", ipa: "mɔ̃n ɔʁɛj ɛ pətit", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oreille", base: "oreille" }, { word: "est", ref: "fr-0021" }, { word: "petite", ref: "fr-0411" }] }
+  - id: "fr-0939"
+    target: "cheveu"
+    ipa: "ʃəvø"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes cheveux sont longs.", ipa: "me ʃəvø sɔ̃ lɔ̃", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "cheveux", base: "cheveu" }, { word: "sont", ref: "fr-0021" }, { word: "longs", ref: "fr-0421" }] }
+      - { target: "Ses cheveux sont courts.", ipa: "se ʃəvø sɔ̃ kuʁ", bases: [{ word: "Ses", ref: "fr-0625" }, { word: "cheveux", base: "cheveu" }, { word: "sont", ref: "fr-0021" }, { word: "courts", ref: "fr-0422" }] }
+  - id: "fr-0940"
+    target: "cœur"
+    ipa: "kœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cœur est fort.", ipa: "lə kœʁ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cœur", base: "cœur" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "J'ai mal au cœur.", ipa: "ʒe mal o kœʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "cœur", base: "cœur" }] }
+  - id: "fr-0941"
+    target: "doigt"
+    ipa: "dwa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le doigt est petit.", ipa: "lə dwa ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "doigt", base: "doigt" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "J'ai mal au doigt.", ipa: "ʒe mal o dwa", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "doigt", base: "doigt" }] }
+  - id: "fr-0942"
+    target: "épaule"
+    ipa: "epol"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'épaule est fatiguée.", ipa: "lepol ɛ fatiɡe", bases: [{ word: "L'épaule", base: "épaule" }, { word: "est", ref: "fr-0021" }, { word: "fatiguée", ref: "fr-0431" }] }
+      - { target: "J'ai mal à l'épaule.", ipa: "ʒe mal a lepol", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "l'épaule", base: "épaule" }] }
+  - id: "fr-0943"
+    target: "cou"
+    ipa: "ku"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cou est long.", ipa: "lə ku ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cou", base: "cou" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "J'ai mal au cou.", ipa: "ʒe mal o ku", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "au" }, { word: "cou", base: "cou" }] }
+  - id: "fr-0944"
+    target: "visage"
+    ipa: "vizaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le visage est fatigué.", ipa: "lə vizaʒ ɛ fatiɡe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "visage", base: "visage" }, { word: "est", ref: "fr-0021" }, { word: "fatigué", ref: "fr-0431" }] }
+      - { target: "Ton visage est joli.", ipa: "tɔ̃ vizaʒ ɛ ʒoli", bases: [{ word: "Ton", ref: "fr-0141" }, { word: "visage", base: "visage" }, { word: "est", ref: "fr-0021" }, { word: "joli", ref: "fr-0414" }] }
+  - id: "fr-0945"
+    target: "peau"
+    ipa: "po"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La peau est froide.", ipa: "la po ɛ fʁwad", bases: [{ word: "La", ref: "fr-0544" }, { word: "peau", base: "peau" }, { word: "est", ref: "fr-0021" }, { word: "froide", ref: "fr-0420" }] }
+      - { target: "Sa peau est chaude.", ipa: "sa po ɛ ʃod", bases: [{ word: "Sa", ref: "fr-0627" }, { word: "peau", base: "peau" }, { word: "est", ref: "fr-0021" }, { word: "chaude", ref: "fr-0419" }] }
+  - id: "fr-0946"
+    target: "douleur"
+    ipa: "dulœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une douleur.", ipa: "ʒe yn dulœʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "douleur", base: "douleur" }] }
+      - { target: "La douleur est forte.", ipa: "la dulœʁ ɛ fɔʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "douleur", base: "douleur" }, { word: "est", ref: "fr-0021" }, { word: "forte", ref: "fr-0425" }] }
+  - id: "fr-0947"
+    target: "sang"
+    ipa: "sɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sang est chaud.", ipa: "lə sɑ̃ ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sang", base: "sang" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+      - { target: "Vous avez du sang ?", ipa: "vu zave dy sɑ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "sang", base: "sang" }] }
+  - id: "fr-0948"
+    target: "gorge"
+    ipa: "ɡɔʁʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à la gorge.", ipa: "ʒe mal a la ɡɔʁʒ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gorge", base: "gorge" }] }
+      - { target: "Ma gorge est fatiguée.", ipa: "ma ɡɔʁʒ ɛ fatiɡe", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "gorge", base: "gorge" }, { word: "est", ref: "fr-0021" }, { word: "fatiguée", ref: "fr-0431" }] }
+  - id: "fr-0949"
+    target: "bouger"
+    ipa: "buʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ne bouge pas.", ipa: "ʒə nə buʒ pa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "bouge", base: "bouger" }, { word: "pas", base: "pas" }] }
+      - { target: "Tu bouges souvent.", ipa: "ty buʒ suvɑ̃", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "bouges", base: "bouger" }, { word: "souvent", ref: "fr-0326" }] }

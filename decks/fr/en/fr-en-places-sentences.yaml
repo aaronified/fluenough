@@ -1,0 +1,53 @@
+schema: 1
+id: "fr-en-places-sentences"
+kind: "layer"
+core: "fr-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: places in town"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about places in a town, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0983":
+    native: "The pharmacy is near the station."
+    bases:
+      "de": "of; from; some"
+    confusables:
+      "hopital": { why: "Hôpital is 'hospital', for serious care." }
+      "banque": { why: "Banque is 'bank'." }
+  "fr-0984":
+    native: "I go to school."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "universite": { why: "Université is 'university', for adults." }
+      "bibliotheque": { why: "Bibliothèque is 'library'." }
+  "fr-0985":
+    native: "The bank is closed."
+    confusables:
+      "boulangerie": { why: "Boulangerie is 'bakery'." }
+      "mairie": { why: "Mairie is 'town hall'." }
+  "fr-0986":
+    native: "We walk towards the church."
+    confusables:
+      "mairie": { why: "Mairie is 'town hall'." }
+      "centre": { why: "Centre is 'centre'." }
+  "fr-0987":
+    native: "I eat at the restaurant."
+    bases:
+      "au": "to the (masculine)"
+    confusables:
+      "hotel": { why: "Hôtel is 'hotel', where you sleep." }
+      "cinema": { why: "Cinéma is 'cinema'." }
+  "fr-0988":
+    native: "The stadium is big."
+    confusables:
+      "parc": { why: "Parc is 'park'." }
+      "piscine": { why: "Piscine is 'swimming pool'." }
+  "fr-0989":
+    native: "He works at the hospital."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "pharmacie": { why: "Pharmacie is 'pharmacy'." }
+      "ecole": { why: "École is 'school'." }

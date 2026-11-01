@@ -1,0 +1,51 @@
+schema: 1
+id: "fr-en-market-sentences"
+kind: "layer"
+core: "fr-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: market"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about buying at a market, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0760":
+    native: "I go to the market."
+    bases:
+      "au": "to the (masculine)"
+    confusables:
+      "caisse": { why: "Caisse is 'checkout', inside the shop." }
+      "etal": { why: "Étal is 'stall', a part of the market." }
+  "fr-0761":
+    native: "The fruit is fresh."
+    confusables:
+      "legume": { why: "Légume is 'vegetable', not fruit." }
+      "mur": { why: "Mûr is 'ripe', which is not the same as fresh." }
+  "fr-0762":
+    native: "The price is good."
+    confusables:
+      "argent": { why: "Argent is 'money', not a price." }
+      "monnaie": { why: "Monnaie is 'change', the coins you get back." }
+  "fr-0763":
+    native: "I pay at the checkout."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "monnaie": { why: "Monnaie is 'change', not the place to pay." }
+      "panier": { why: "Panier is 'basket'." }
+  "fr-0764":
+    native: "It costs a lot."
+    bases:
+      "Ça": "that; it (informal)"
+    confusables:
+      "prix": { why: "Prix is 'price', the noun, not the verb." }
+      "argent": { why: "Argent is 'money'." }
+  "fr-0765":
+    native: "The merchant is kind."
+    confusables:
+      "vendeur": { why: "Vendeur is 'seller' in a shop." }
+      "client": { why: "Client is 'customer', the buyer." }
+  "fr-0766":
+    native: "A salad costs little."
+    confusables:
+      "poire": { why: "Poire is 'pear'." }
+      "oignon": { why: "Oignon is 'onion'." }

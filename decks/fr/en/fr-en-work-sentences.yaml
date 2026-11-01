@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-work-sentences"
+kind: "layer"
+core: "fr-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: work"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about work, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0689":
+    native: "I work in the office."
+    confusables:
+      "usine": { why: "Usine is 'factory', a different workplace." }
+      "emploi": { why: "Emploi is 'job', not the place where you work." }
+  "fr-0690":
+    native: "The boss is kind."
+    confusables:
+      "chef": { why: "Chef is also 'boss', so it is close here." }
+      "client": { why: "Client is 'customer', not the boss." }
+  "fr-0691":
+    native: "The meeting is at ten o'clock."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "pause": { why: "Pause is 'break', not a meeting." }
+      "conge": { why: "Congé is 'day off'." }
+  "fr-0692":
+    native: "I earn a good salary."
+    confusables:
+      "reussir": { why: "Réussir is 'to succeed', not 'to earn'." }
+      "emploi": { why: "Emploi is 'job', not 'pay'." }
+  "fr-0693":
+    native: "We send the file."
+    confusables:
+      "projet": { why: "Projet is 'project', not 'file'." }
+      "ordinateur": { why: "Ordinateur is 'computer', which is how it is sent." }
+  "fr-0694":
+    native: "I am busy."
+    confusables:
+      "pret": { why: "Prêt is 'ready', the opposite." }
+      "dernier": { why: "Dernier is 'last'." }
+  "fr-0695":
+    native: "It is a good post."
+    confusables:
+      "metier": { why: "Métier is 'trade' or 'job', not a position." }
+      "emploi": { why: "Emploi is 'job'." }

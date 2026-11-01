@@ -1,0 +1,28 @@
+schema: 1
+id: "fr-grammar-present-ir"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "je": "je finis"
+        "tu": "tu finis"
+        "il-elle": "il finit"
+        "nous": "nous finissons"
+        "vous": "vous finissez"
+        "ils-elles": "ils finissent"
+    - lemma: "choisir"
+      ipa: "ʃwaziʁ"
+      forms:
+        "je": "je choisis"
+        "tu": "tu choisis"
+        "il-elle": "il choisit"
+        "nous": "nous choisissons"
+        "vous": "vous choisissez"
+        "ils-elles": "ils choisissent"

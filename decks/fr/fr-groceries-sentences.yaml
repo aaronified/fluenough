@@ -1,0 +1,101 @@
+schema: 1
+id: "fr-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0800"
+    target: "J'ajoute du sel."
+    ipa: "ʒaʒut dy sɛl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ajoute", ref: "fr-0796" }
+      - { word: "du", base: "du" }
+      - { word: "sel", ref: "fr-0778" }
+    confusables:
+      - { id: "poivre", ref: "fr-0779", kind: "word" }
+      - { id: "sucre", ref: "fr-0777", kind: "word" }
+  - id: "fr-0801"
+    target: "Le pain est frais."
+    ipa: "lə pɛ̃ ɛ fʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "pain", ref: "fr-0773" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "frais", ref: "fr-0753" }
+    confusables:
+      - { id: "beurre", ref: "fr-0774", kind: "word" }
+      - { id: "gateau", ref: "fr-0789", kind: "word" }
+  - id: "fr-0802"
+    target: "Nous manquons de sucre."
+    ipa: "nu mɑ̃kɔ̃ də sykʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "manquons", ref: "fr-0797" }
+      - { word: "de", base: "de" }
+      - { word: "sucre", ref: "fr-0777" }
+    confusables:
+      - { id: "ajouter", ref: "fr-0796", kind: "word" }
+      - { id: "liste", ref: "fr-0788", kind: "word" }
+  - id: "fr-0803"
+    target: "Je prends un café."
+    ipa: "ʒə pʁɑ̃ œ̃ kafe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "café", ref: "fr-0793" }
+    confusables:
+      - { id: "the", ref: "fr-0792", kind: "word" }
+      - { id: "jus", ref: "fr-0791", kind: "word" }
+  - id: "fr-0804"
+    target: "La boîte est vide."
+    ipa: "la bwat ɛ vid"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "boîte", ref: "fr-0785" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "vide", ref: "fr-0440" }
+    confusables:
+      - { id: "bouteille", ref: "fr-0786", kind: "word" }
+      - { id: "paquet", ref: "fr-0787", kind: "word" }
+  - id: "fr-0805"
+    target: "Le poulet est prêt."
+    ipa: "lə pulɛ ɛ pʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "poulet", ref: "fr-0784" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "prêt", ref: "fr-0687" }
+    confusables:
+      - { id: "poisson", ref: "fr-0783", kind: "word" }
+      - { id: "viande", ref: "fr-0782", kind: "word" }
+  - id: "fr-0806"
+    target: "L'épicerie est près de la gare."
+    ipa: "lepisʁi ɛ pʁɛ də la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'épicerie", ref: "fr-0794" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "magasin", ref: "fr-0795", kind: "word" }
+      - { id: "marche", ref: "fr-0735", kind: "word" }

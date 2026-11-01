@@ -1,0 +1,313 @@
+schema: 1
+id: "fr-food"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0813"
+    target: "repas"
+    ipa: "ʁəpa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le repas est bon.", ipa: "lə ʁəpa ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "repas", base: "repas" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Nous prenons le repas ensemble.", ipa: "nu pʁənɔ̃ lə ʁəpa ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "repas", base: "repas" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-0814"
+    target: "déjeuner"
+    ipa: "deʒøne"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le déjeuner est prêt.", ipa: "lə deʒøne ɛ pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "déjeuner", base: "déjeuner" }, { word: "est", ref: "fr-0021" }, { word: "prêt", ref: "fr-0687" }] }
+      - { target: "Je mange le déjeuner.", ipa: "ʒə mɑ̃ʒ lə deʒøne", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "le", ref: "fr-0543" }, { word: "déjeuner", base: "déjeuner" }] }
+  - id: "fr-0815"
+    target: "dîner"
+    ipa: "dine"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dîner est bon.", ipa: "lə dine ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dîner", base: "dîner" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Nous mangeons le dîner.", ipa: "nu mɑ̃ʒɔ̃ lə dine", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "le", ref: "fr-0543" }, { word: "dîner", base: "dîner" }] }
+  - id: "fr-0816"
+    target: "soupe"
+    ipa: "sup"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La soupe est chaude.", ipa: "la sup ɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "soupe", base: "soupe" }, { word: "est", ref: "fr-0021" }, { word: "chaude", ref: "fr-0419" }] }
+      - { target: "Je prends une soupe.", ipa: "ʒə pʁɑ̃ yn sup", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "soupe", base: "soupe" }] }
+  - id: "fr-0817"
+    target: "dessert"
+    ipa: "desɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dessert est bon.", ipa: "lə desɛʁ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dessert", base: "dessert" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Le dessert est sucré.", ipa: "lə desɛʁ ɛ sykʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dessert", base: "dessert" }, { word: "est", ref: "fr-0021" }, { word: "sucré", ref: "fr-0798" }] }
+  - id: "fr-0818"
+    target: "entrée"
+    ipa: "ɑ̃tʁe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'entrée est bonne.", ipa: "lɑ̃tʁe ɛ bɔn", bases: [{ word: "L'entrée", base: "entrée" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "Je prends une entrée.", ipa: "ʒə pʁɑ̃ yn ɑ̃tʁe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "entrée", base: "entrée" }] }
+  - id: "fr-0819"
+    target: "plat"
+    ipa: "pla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le plat est chaud.", ipa: "lə pla ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plat", base: "plat" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+      - { target: "Je prends le plat.", ipa: "ʒə pʁɑ̃ lə pla", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "plat", base: "plat" }] }
+  - id: "fr-0820"
+    target: "bière"
+    ipa: "bjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois une bière.", ipa: "ʒə bwa yn bjɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", ref: "fr-0283" }, { word: "une", ref: "fr-0545" }, { word: "bière", base: "bière" }] }
+      - { target: "La bière est fraîche.", ipa: "la bjɛʁ ɛ fʁɛʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "bière", base: "bière" }, { word: "est", ref: "fr-0021" }, { word: "fraîche", ref: "fr-0753" }] }
+  - id: "fr-0821"
+    target: "glace"
+    ipa: "ɡlas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange une glace.", ipa: "ʒə mɑ̃ʒ yn ɡlas", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "glace", base: "glace" }] }
+      - { target: "La glace est froide.", ipa: "la ɡlas ɛ fʁwad", bases: [{ word: "La", ref: "fr-0544" }, { word: "glace", base: "glace" }, { word: "est", ref: "fr-0021" }, { word: "froide", ref: "fr-0420" }] }
+  - id: "fr-0822"
+    target: "cuisine"
+    ipa: "kɥizin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cuisine est grande.", ipa: "la kɥizin ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "cuisine", base: "cuisine" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "J'aime la cuisine.", ipa: "ʒɛm la kɥizin", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", base: "cuisine" }] }
+  - id: "fr-0823"
+    target: "menu"
+    ipa: "məny"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le menu est long.", ipa: "lə məny ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "menu", base: "menu" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je lis le menu.", ipa: "ʒə li lə məny", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "le", ref: "fr-0543" }, { word: "menu", base: "menu" }] }
+  - id: "fr-0824"
+    target: "carte"
+    ipa: "kaʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La carte est sur la table.", ipa: "la kaʁt ɛ syʁ la tabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "carte", base: "carte" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je lis la carte.", ipa: "ʒə li la kaʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "la", ref: "fr-0544" }, { word: "carte", base: "carte" }] }
+  - id: "fr-0825"
+    target: "addition"
+    ipa: "adisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'addition est chère.", ipa: "ladisjɔ̃ ɛ ʃɛʁ", bases: [{ word: "L'addition", base: "addition" }, { word: "est", ref: "fr-0021" }, { word: "chère", ref: "fr-0104" }] }
+      - { target: "Nous avons l'addition.", ipa: "nu zavɔ̃ ladisjɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "l'addition", base: "addition" }] }
+  - id: "fr-0826"
+    target: "serveur"
+    ipa: "sɛʁvœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le serveur parle français.", ipa: "lə sɛʁvœʁ paʁl fʁɑ̃sɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "serveur", base: "serveur" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Mon ami est serveur.", ipa: "mɔ̃n ami ɛ sɛʁvœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "serveur", base: "serveur" }] }
+  - id: "fr-0827"
+    target: "végétarien"
+    ipa: "veʒetaʁjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon ami est végétarien.", ipa: "mɔ̃n ami ɛ veʒetaʁjɛ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "végétarien", base: "végétarien" }] }
+      - { target: "Elle est végétarienne.", ipa: "ɛl ɛ veʒetaʁjɛn", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "végétarienne", base: "végétarien" }] }
+  - id: "fr-0828"
+    target: "assiette"
+    ipa: "asjɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'assiette est pleine.", ipa: "lasjɛt ɛ plɛn", bases: [{ word: "L'assiette", base: "assiette" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }] }
+      - { target: "Je mets la soupe dans l'assiette.", ipa: "ʒə mɛ la sup dɑ̃ lasjɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "dans", ref: "fr-0049" }, { word: "l'assiette", base: "assiette" }] }
+  - id: "fr-0829"
+    target: "couteau"
+    ipa: "kuto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le couteau est petit.", ipa: "lə kuto ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "couteau", base: "couteau" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "Je prends le couteau.", ipa: "ʒə pʁɑ̃ lə kuto", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "couteau", base: "couteau" }] }
+  - id: "fr-0830"
+    target: "fourchette"
+    ipa: "fuʁʃɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fourchette est à gauche.", ipa: "la fuʁʃɛt ɛ a ɡoʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fourchette", base: "fourchette" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "gauche", ref: "fr-0478" }] }
+      - { target: "Tu mets la fourchette.", ipa: "ty mɛ la fuʁʃɛt", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "mets", ref: "fr-0529" }, { word: "la", ref: "fr-0544" }, { word: "fourchette", base: "fourchette" }] }
+  - id: "fr-0831"
+    target: "cuillère"
+    ipa: "kɥijɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cuillère est dans la tasse.", ipa: "la kɥijɛʁ ɛ dɑ̃ la tas", bases: [{ word: "La", ref: "fr-0544" }, { word: "cuillère", base: "cuillère" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "tasse", ref: "fr-0386" }] }
+      - { target: "Je prends une cuillère.", ipa: "ʒə pʁɑ̃ yn kɥijɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "cuillère", base: "cuillère" }] }
+  - id: "fr-0832"
+    target: "sandwich"
+    ipa: "sɑ̃dwitʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange un sandwich.", ipa: "ʒə mɑ̃ʒ œ̃ sɑ̃dwitʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "un", ref: "fr-0208" }, { word: "sandwich", base: "sandwich" }] }
+      - { target: "Le sandwich est bon.", ipa: "lə sɑ̃dwitʃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sandwich", base: "sandwich" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0833"
+    target: "pizza"
+    ipa: "pidza"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pizza est chaude.", ipa: "la pidza ɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "pizza", base: "pizza" }, { word: "est", ref: "fr-0021" }, { word: "chaude", ref: "fr-0419" }] }
+      - { target: "Je mange une pizza.", ipa: "ʒə mɑ̃ʒ yn pidza", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "pizza", base: "pizza" }] }
+  - id: "fr-0834"
+    target: "bœuf"
+    ipa: "bœf"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bœuf est bon.", ipa: "lə bœf ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bœuf", base: "bœuf" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Je mange du bœuf.", ipa: "ʒə mɑ̃ʒ dy bœf", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "du", base: "du" }, { word: "bœuf", base: "bœuf" }] }
+  - id: "fr-0835"
+    target: "porc"
+    ipa: "pɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le porc est bon.", ipa: "lə pɔʁ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "porc", base: "porc" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Je ne mange pas de porc.", ipa: "ʒə nə mɑ̃ʒ pa də pɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "mange", ref: "fr-0282" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "porc", base: "porc" }] }
+  - id: "fr-0836"
+    target: "délicieux"
+    ipa: "delisjø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le repas est délicieux.", ipa: "lə ʁəpa ɛ delisjø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }, { word: "est", ref: "fr-0021" }, { word: "délicieux", base: "délicieux" }] }
+      - { target: "La soupe est délicieuse.", ipa: "la sup ɛ delisjøz", bases: [{ word: "La", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "est", ref: "fr-0021" }, { word: "délicieuse", base: "délicieux" }] }
+  - id: "fr-0837"
+    target: "épicé"
+    ipa: "epise"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le plat est épicé.", ipa: "lə pla ɛ epise", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plat", ref: "fr-0819" }, { word: "est", ref: "fr-0021" }, { word: "épicé", base: "épicé" }] }
+      - { target: "La soupe est épicée.", ipa: "la sup ɛ epise", bases: [{ word: "La", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "est", ref: "fr-0021" }, { word: "épicée", base: "épicé" }] }
+  - id: "fr-0838"
+    target: "commander"
+    ipa: "kɔmɑ̃de"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je commande un plat.", ipa: "ʒə kɔmɑ̃d œ̃ pla", bases: [{ word: "Je", ref: "fr-0126" }, { word: "commande", base: "commander" }, { word: "un", ref: "fr-0208" }, { word: "plat", ref: "fr-0819" }] }
+      - { target: "Nous commandons un dessert.", ipa: "nu kɔmɑ̃dɔ̃ œ̃ desɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "commandons", base: "commander" }, { word: "un", ref: "fr-0208" }, { word: "dessert", ref: "fr-0817" }] }
+  - id: "fr-0839"
+    target: "servir"
+    ipa: "sɛʁviʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le serveur sert la soupe.", ipa: "lə sɛʁvœʁ sɛʁ la sup", bases: [{ word: "Le", ref: "fr-0543" }, { word: "serveur", ref: "fr-0826" }, { word: "sert", base: "servir" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }] }
+      - { target: "Il sert le repas.", ipa: "il sɛʁ lə ʁəpa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "sert", base: "servir" }, { word: "le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }] }
+  - id: "fr-0840"
+    target: "goûter"
+    ipa: "ɡute"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je goûte le dessert.", ipa: "ʒə ɡut lə desɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "goûte", base: "goûter" }, { word: "le", ref: "fr-0543" }, { word: "dessert", ref: "fr-0817" }] }
+      - { target: "Tu goûtes la soupe.", ipa: "ty ɡut la sup", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "goûtes", base: "goûter" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }] }

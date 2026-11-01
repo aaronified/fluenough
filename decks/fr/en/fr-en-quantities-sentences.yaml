@@ -1,0 +1,49 @@
+schema: 1
+id: "fr-en-quantities-sentences"
+kind: "layer"
+core: "fr-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: how much and how many"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about amounts, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0397":
+    native: "He does nothing."
+    bases:
+      "ne": "not (with pas, jamais and plus)"
+    confusables:
+      "aucun": { why: "Aucun means 'no' before a noun, not 'nothing'." }
+      "tout": { why: "Tout is 'all' or 'everything'." }
+  "fr-0398":
+    native: "I have a few friends."
+    confusables:
+      "plusieurs": { why: "Plusieurs is 'several', more than a few." }
+      "aucun": { why: "Aucun means 'no', not 'a few'." }
+  "fr-0399":
+    native: "My sister eats as much as me."
+    bases:
+      "que": "than"
+    confusables:
+      "tellement": { why: "Tellement is 'so much', not 'as much as'." }
+      "trop": { why: "Trop is 'too much'." }
+  "fr-0400":
+    native: "A dozen is twelve."
+    confusables:
+      "paire": { why: "Paire is 'pair', two of one kind." }
+      "vingtaine": { why: "Vingtaine is 'about twenty', not twelve." }
+  "fr-0401":
+    native: "I drink a glass of water."
+    confusables:
+      "tasse": { why: "Tasse is 'cup', which is not a glass." }
+      "litre": { why: "Litre is a measure, not a glass." }
+  "fr-0402":
+    native: "Each friend speaks French."
+    confusables:
+      "chacun": { why: "Chacun is 'each one', said without a noun." }
+      "plusieurs": { why: "Plusieurs is 'several'." }
+  "fr-0403":
+    native: "The number is ten."
+    confusables:
+      "quantite": { why: "Quantité is 'quantity', not 'number'." }
+      "environ": { why: "Environ is 'about', not an exact number." }

@@ -1,0 +1,49 @@
+schema: 1
+id: "fr-en-transport-sentences"
+kind: "layer"
+core: "fr-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: transport"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about travel, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0879":
+    native: "I take the bus."
+    confusables:
+      "metro": { why: "Métro is 'underground train', not a bus." }
+      "taxi": { why: "Taxi is a car you hire, not a bus." }
+  "fr-0880":
+    native: "The train leaves from the platform."
+    bases:
+      "du": "of the (masculine); some"
+    confusables:
+      "arret": { why: "Arrêt is 'stop', for a bus." }
+      "station": { why: "Station is the place of a line, not a platform." }
+  "fr-0881":
+    native: "My brother drives the car."
+    confusables:
+      "velo": { why: "Vélo is 'bike'." }
+      "avion": { why: "Avion is 'plane'." }
+  "fr-0882":
+    native: "The flight is direct."
+    confusables:
+      "trajet": { why: "Trajet is 'journey', not a flight." }
+      "horaire": { why: "Horaire is 'timetable'." }
+  "fr-0883":
+    native: "I have a ticket."
+    confusables:
+      "valise": { why: "Valise is 'suitcase'." }
+      "bagage": { why: "Bagage is 'luggage'." }
+  "fr-0884":
+    native: "The next train leaves at eight o'clock."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "dernier": { why: "Dernier is 'last', not 'next'." }
+      "direct": { why: "Direct is 'direct', with no stop." }
+  "fr-0885":
+    native: "We often travel."
+    confusables:
+      "voyage": { why: "Voyage is the noun 'trip', not the verb." }
+      "trajet": { why: "Trajet is 'journey', one part of a trip." }

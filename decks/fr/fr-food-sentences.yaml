@@ -1,0 +1,99 @@
+schema: 1
+id: "fr-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0841"
+    target: "Je commande un plat."
+    ipa: "ʒə kɔmɑ̃d œ̃ pla"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "commande", ref: "fr-0838" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "plat", ref: "fr-0819" }
+    confusables:
+      - { id: "menu", ref: "fr-0823", kind: "word" }
+      - { id: "entree", ref: "fr-0818", kind: "word" }
+  - id: "fr-0842"
+    target: "Le dessert est sucré."
+    ipa: "lə desɛʁ ɛ sykʁe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "dessert", ref: "fr-0817" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "sucré", ref: "fr-0798" }
+    confusables:
+      - { id: "sale", ref: "fr-0799", kind: "word" }
+      - { id: "glace", ref: "fr-0821", kind: "word" }
+  - id: "fr-0843"
+    target: "La soupe est chaude."
+    ipa: "la sup ɛ ʃod"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "soupe", ref: "fr-0816" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "chaude", ref: "fr-0419" }
+    confusables:
+      - { id: "froid", ref: "fr-0420", kind: "word" }
+      - { id: "epice", ref: "fr-0837", kind: "word" }
+  - id: "fr-0844"
+    target: "L'addition est chère."
+    ipa: "ladisjɔ̃ ɛ ʃɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'addition", ref: "fr-0825" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "chère", ref: "fr-0104" }
+    confusables:
+      - { id: "carte", ref: "fr-0824", kind: "word" }
+      - { id: "menu", ref: "fr-0823", kind: "word" }
+  - id: "fr-0845"
+    target: "Je prends une fourchette."
+    ipa: "ʒə pʁɑ̃ yn fuʁʃɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "fourchette", ref: "fr-0830" }
+    confusables:
+      - { id: "couteau", ref: "fr-0829", kind: "word" }
+      - { id: "cuillere", ref: "fr-0831", kind: "word" }
+  - id: "fr-0846"
+    target: "Il sert le repas."
+    ipa: "il sɛʁ lə ʁəpa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "sert", ref: "fr-0839" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "repas", ref: "fr-0813" }
+    confusables:
+      - { id: "gouter", ref: "fr-0840", kind: "word" }
+      - { id: "commander", ref: "fr-0838", kind: "word" }
+  - id: "fr-0847"
+    target: "Mon ami est végétarien."
+    ipa: "mɔ̃n ami ɛ veʒetaʁjɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "ami", ref: "fr-0100" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "végétarien", ref: "fr-0827" }
+    confusables:
+      - { id: "porc", ref: "fr-0835", kind: "word" }
+      - { id: "buf", ref: "fr-0834", kind: "word" }

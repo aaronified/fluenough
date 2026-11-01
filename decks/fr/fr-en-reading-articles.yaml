@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-articles"
+name: "Reading: articles"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about where things are, with le, la, un, une and des. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-in-the-kitchen"
+    title: "In the kitchen"
+    theme: "first-words"
+    sentences:
+      - text: "Le sac est sur la table."
+      - text: "Une tasse est sur la table."
+      - text: "Les amis sont à la gare."
+      - text: "L'adresse est dans le sac."
+    questions:
+      - id: "fr-0548"
+        prompt: { en: "Where is the bag?" }
+        options:
+          - { en: "On the table" }
+          - { en: "In the street" }
+          - { en: "At the station" }
+        answer: 1
+      - id: "fr-0549"
+        prompt: { en: "What is on the table?" }
+        options:
+          - { en: "A cup" }
+          - { en: "A key" }
+          - { en: "A train" }
+        answer: 1
+      - id: "fr-0550"
+        prompt: { en: "Where are the friends?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 1
+  - id: "fr-a-note-about-the-flat"
+    title: "A note about the flat"
+    theme: "first-words"
+    sentences:
+      - text: "La rue est près de la gare."
+      - text: "Une adresse est sur le sac."
+      - text: "Le vin est dans une tasse."
+      - text: "Les frères sont là."
+    questions:
+      - id: "fr-0551"
+        prompt: { en: "What is near the station?" }
+        options:
+          - { en: "The street" }
+          - { en: "The wine" }
+          - { en: "The cup" }
+        answer: 1
+      - id: "fr-0552"
+        prompt: { en: "What is on the bag?" }
+        options:
+          - { en: "An address" }
+          - { en: "A cup" }
+          - { en: "A key" }
+        answer: 1
+      - id: "fr-0553"
+        prompt: { en: "Where is the wine?" }
+        options:
+          - { en: "In a cup" }
+          - { en: "On the street" }
+          - { en: "At the station" }
+        answer: 1

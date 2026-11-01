@@ -1,0 +1,299 @@
+schema: 1
+id: "fr-en-home"
+kind: "layer"
+core: "fr-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home and neighbourhood"
+license: "CC-BY-SA-4.0"
+description: "Words for a home: maison, appartement, chambre, salon, jardin, balcon, escalier, porte, fenêtre, lit, chaise, canapé, frigo, douche, étage, immeuble and garage. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0996":
+    native: "house; home"
+    notes:
+      "n1": "Maison is 'house' or 'home', a feminine noun. À la maison is 'at home'."
+    examples:
+      "La maison est grande.":
+        native: "The house is big."
+        bases:
+          "maison": "house; home"
+      "Ma maison est près du parc.":
+        native: "My house is near the park."
+        bases:
+          "maison": "house; home"
+          "du": "of the (masculine); some"
+  "fr-0997":
+    native: "flat; apartment"
+    notes:
+      "n1": "Appartement is 'flat' or 'apartment', a masculine noun. It is one home in a block."
+    examples:
+      "Mon appartement est petit.":
+        native: "My flat is small."
+        bases:
+          "appartement": "flat; apartment"
+      "J'habite dans un appartement.":
+        native: "I live in a flat."
+        bases:
+          "appartement": "flat; apartment"
+  "fr-0998":
+    native: "bedroom"
+    notes:
+      "n1": "Chambre is 'bedroom', a feminine noun. It is also 'room' in a hotel: une chambre d'hôtel."
+    examples:
+      "La chambre est calme.":
+        native: "The bedroom is quiet."
+        bases:
+          "chambre": "bedroom"
+      "Je dors dans la chambre.":
+        native: "I sleep in the bedroom."
+        bases:
+          "chambre": "bedroom"
+  "fr-0999":
+    native: "living room; sitting room"
+    notes:
+      "n1": "Salon is 'living room' or 'sitting room', a masculine noun. It is where the family sits together."
+    examples:
+      "Le salon est grand.":
+        native: "The living room is big."
+        bases:
+          "salon": "living room; sitting room"
+      "Nous mangeons dans le salon.":
+        native: "We eat in the living room."
+        bases:
+          "salon": "living room; sitting room"
+  "fr-1000":
+    native: "garden"
+    notes:
+      "n1": "Jardin is 'garden', a masculine noun. It is a place with plants outside the house."
+    examples:
+      "Le jardin est joli.":
+        native: "The garden is pretty."
+        bases:
+          "jardin": "garden"
+      "Nous jouons dans le jardin.":
+        native: "We play in the garden."
+        bases:
+          "jardin": "garden"
+  "fr-1001":
+    native: "balcony"
+    notes:
+      "n1": "Balcon is 'balcony', a masculine noun. It is outside, on an upper floor."
+    examples:
+      "Le balcon est petit.":
+        native: "The balcony is small."
+        bases:
+          "balcon": "balcony"
+      "Je travaille sur le balcon.":
+        native: "I work on the balcony."
+        bases:
+          "balcon": "balcony"
+  "fr-1002":
+    native: "staircase; stairs"
+    notes:
+      "n1": "Escalier is 'staircase' or 'stairs', a masculine noun. Monter l'escalier is 'to go up the stairs'."
+    examples:
+      "L'escalier est long.":
+        native: "The staircase is long."
+        bases:
+          "L'escalier": "staircase; stairs"
+      "Je monte l'escalier.":
+        native: "I go up the stairs."
+        bases:
+          "l'escalier": "staircase; stairs"
+  "fr-1003":
+    native: "door"
+    notes:
+      "n1": "Porte is 'door', a feminine noun. It is the way in and out of a room."
+    examples:
+      "La porte est ouverte.":
+        native: "The door is open."
+        bases:
+          "porte": "door"
+      "Fermez la porte.":
+        native: "Close the door."
+        bases:
+          "porte": "door"
+  "fr-1004":
+    native: "window"
+    notes:
+      "n1": "Fenêtre is 'window', a feminine noun. It lets light and air into a room."
+    examples:
+      "La fenêtre est fermée.":
+        native: "The window is closed."
+        bases:
+          "fenêtre": "window"
+      "Ouvrez la fenêtre.":
+        native: "Open the window."
+        bases:
+          "fenêtre": "window"
+  "fr-1005":
+    native: "bed"
+    notes:
+      "n1": "Lit is 'bed', a masculine noun: aller au lit is 'to go to bed'."
+    examples:
+      "Le lit est petit.":
+        native: "The bed is small."
+        bases:
+          "lit": "bed"
+      "Je dors dans un lit.":
+        native: "I sleep in a bed."
+        bases:
+          "lit": "bed"
+  "fr-1006":
+    native: "chair"
+    notes:
+      "n1": "Chaise is 'chair', a feminine noun. It has a back and four legs."
+    examples:
+      "La chaise est là.":
+        native: "The chair is there."
+        bases:
+          "chaise": "chair"
+      "Je prends une chaise.":
+        native: "I take a chair."
+        bases:
+          "chaise": "chair"
+  "fr-1007":
+    native: "sofa"
+    notes:
+      "n1": "Canapé is 'sofa', a masculine noun. It is a seat for two or more people."
+    examples:
+      "Le canapé est grand.":
+        native: "The sofa is big."
+        bases:
+          "canapé": "sofa"
+      "Je dors sur le canapé.":
+        native: "I sleep on the sofa."
+        bases:
+          "canapé": "sofa"
+  "fr-1008":
+    native: "fridge"
+    notes:
+      "n1": "Frigo is 'fridge', a masculine noun, a short form of réfrigérateur."
+    examples:
+      "Le frigo est plein.":
+        native: "The fridge is full."
+        bases:
+          "frigo": "fridge"
+      "Le frigo est vide.":
+        native: "The fridge is empty."
+        bases:
+          "frigo": "fridge"
+  "fr-1009":
+    native: "shower"
+    notes:
+      "n1": "Douche is 'shower', a feminine noun. Prendre une douche is 'to have a shower'."
+    examples:
+      "La douche est froide.":
+        native: "The shower is cold."
+        bases:
+          "douche": "shower"
+      "Je prends une douche.":
+        native: "I have a shower."
+        bases:
+          "douche": "shower"
+  "fr-1010":
+    native: "floor; storey"
+    notes:
+      "n1": "Étage is 'floor' or 'storey' of a building, a masculine noun. The ground floor is le rez-de-chaussée."
+    examples:
+      "L'étage est haut.":
+        native: "The floor is high."
+        bases:
+          "L'étage": "floor; storey"
+      "Ma chambre est à l'étage.":
+        native: "My bedroom is upstairs."
+        bases:
+          "à": "to; at; in"
+          "l'étage": "floor; storey"
+  "fr-1011":
+    native: "block of flats; building"
+    notes:
+      "n1": "Immeuble is 'block of flats' or 'building', a masculine noun. It has several floors and homes."
+    examples:
+      "L'immeuble est grand.":
+        native: "The building is big."
+        bases:
+          "L'immeuble": "block of flats; building"
+      "J'habite dans un immeuble.":
+        native: "I live in a block of flats."
+        bases:
+          "immeuble": "block of flats; building"
+  "fr-1012":
+    native: "garage"
+    notes:
+      "n1": "Garage is 'garage', a masculine noun: a place to park a car, or a workshop."
+    examples:
+      "Le garage est fermé.":
+        native: "The garage is closed."
+        bases:
+          "garage": "garage"
+      "Je mets la voiture dans le garage.":
+        native: "I put the car in the garage."
+        bases:
+          "garage": "garage"
+  "fr-1013":
+    native: "toilet"
+    notes:
+      "n1": "Toilette is 'toilet', a feminine noun. The plural les toilettes is the usual word."
+    examples:
+      "La toilette est propre.":
+        native: "The toilet is clean."
+        bases:
+          "toilette": "toilet"
+      "Où est la toilette ?":
+        native: "Where is the toilet?"
+        bases:
+          "toilette": "toilet"
+  "fr-1014":
+    native: "room (large)"
+    notes:
+      "n1": "Salle is 'room', a larger room in a building, as in la salle de classe (the classroom). It is a feminine noun."
+    examples:
+      "La salle est grande.":
+        native: "The room is big."
+        bases:
+          "salle": "room (large)"
+      "Nous travaillons dans la salle.":
+        native: "We work in the room."
+        bases:
+          "salle": "room (large)"
+  "fr-1015":
+    native: "wall"
+    notes:
+      "n1": "Mur is 'wall', a masculine noun. Its plural is murs."
+      "n2": "Only the accent differs from mûr (ripe): mur, without it, means 'wall'."
+    examples:
+      "Le mur est haut.":
+        native: "The wall is high."
+        bases:
+          "mur": "wall"
+      "Le mur est froid.":
+        native: "The wall is cold."
+        bases:
+          "mur": "wall"
+  "fr-1016":
+    native: "floor (ground)"
+    notes:
+      "n1": "Sol is 'floor' in the sense of the ground under your feet. It is a masculine noun."
+    examples:
+      "Le sol est sale.":
+        native: "The floor is dirty."
+        bases:
+          "sol": "floor (ground)"
+      "Le sol est propre.":
+        native: "The floor is clean."
+        bases:
+          "sol": "floor (ground)"
+  "fr-1017":
+    native: "lamp"
+    notes:
+      "n1": "Lampe is 'lamp', a feminine noun. It gives light in a room."
+    examples:
+      "La lampe est sur la table.":
+        native: "The lamp is on the table."
+        bases:
+          "lampe": "lamp"
+      "La lampe est petite.":
+        native: "The lamp is small."
+        bases:
+          "lampe": "lamp"

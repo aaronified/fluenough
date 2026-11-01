@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-location"
+name: "Reading: where things are"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short notes that say where things are, with words such as sous, sur, près and à gauche. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-note-for-a-guest"
+    title: "A note for a guest"
+    theme: "location"
+    sentences:
+      - text: "La clé est sous le sac."
+      - text: "Le sac est sur la table."
+      - text: "La gare est loin."
+      - text: "Mon père est ailleurs."
+    questions:
+      - id: "fr-0494"
+        prompt: { en: "Where is the key?" }
+        options:
+          - { en: "Under the bag" }
+          - { en: "On the table" }
+          - { en: "In the street" }
+        answer: 1
+      - id: "fr-0495"
+        prompt: { en: "Where is the bag?" }
+        options:
+          - { en: "On the table" }
+          - { en: "Under the key" }
+          - { en: "Far away" }
+        answer: 1
+      - id: "fr-0496"
+        prompt: { en: "Where is the father?" }
+        options:
+          - { en: "Elsewhere" }
+          - { en: "Next to the bag" }
+          - { en: "On the left" }
+        answer: 1
+  - id: "fr-finding-the-museum"
+    title: "Finding the museum"
+    theme: "location"
+    sentences:
+      - text: "Le musée est près de la gare."
+      - text: "La rue est à droite."
+      - text: "Le musée est à gauche."
+      - text: "Le milieu de la ville est calme."
+    questions:
+      - id: "fr-0497"
+        prompt: { en: "What is near the station?" }
+        options:
+          - { en: "The museum" }
+          - { en: "The bag" }
+          - { en: "The key" }
+        answer: 1
+      - id: "fr-0498"
+        prompt: { en: "Which side is the street on?" }
+        options:
+          - { en: "Right" }
+          - { en: "Left" }
+          - { en: "Behind" }
+        answer: 1
+      - id: "fr-0499"
+        prompt: { en: "What is the middle of the town like?" }
+        options:
+          - { en: "Quiet" }
+          - { en: "Noisy" }
+          - { en: "Far" }
+        answer: 1
