@@ -50,7 +50,7 @@ cards:
     notes:
       - {"id": "n1", "kind": "note"}
     examples:
-      - {"target": "गाँव की पंचायत बैठक करती है।", "reading": "gām̐v kī pañcāyat baiṭhak kartī hai.", "ipa": "ɡãːʋ kiː pəɲtʃaːjət̪ bɛːʈʰək kərt̪iː ɦɛː", "bases": [{"word": "गाँव", "ref": "hi-1080"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "ref": "hi-0424"}, {"word": "करती", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "गाँव की पंचायत बैठक करती है।", "reading": "gām̐v kī pañcāyat baiṭhak kartī hai.", "ipa": "ɡãːʋ kiː pəɲtʃaːjət̪ bɛːʈʰək kərt̪iː ɦɛː", "bases": [{"word": "गाँव", "ref": "hi-1080"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "base": "बैठक", "reading": "baiṭhak"}, {"word": "करती", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0780"}]}
       - {"target": "पंचायत ने सड़क बनवाई।", "reading": "pañcāyat nē saṛak banvāī.", "ipa": "pəɲtʃaːjət̪ neː səɽək bənʋaːiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सड़क", "ref": "hi-0298"}, {"word": "बनवाई", "base": "बनवाना", "reading": "banvānā"}]}
   - id: "hi-2279"
     target: "विभाग"
@@ -185,8 +185,8 @@ cards:
     notes:
       - {"id": "n1", "kind": "note"}
     examples:
-      - {"target": "नगर परिषद की बैठक है।", "reading": "nagar pariśad kī baiṭhak hai.", "ipa": "nəɡər pərɪʃəd̪ kiː bɛːʈʰək ɦɛː", "bases": [{"word": "नगर", "ref": "hi-2061"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "ref": "hi-0424"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "परिषद ने नियम पास किया।", "reading": "pariśad nē niyam pās kiyā.", "ipa": "pərɪʃəd̪ neː nɪjəm paːs kɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नियम", "ref": "hi-2281"}, {"word": "पास", "ref": "hi-0293"}, {"word": "किया", "ref": "hi-0779"}]}
+      - {"target": "नगर परिषद की बैठक है।", "reading": "nagar pariśad kī baiṭhak hai.", "ipa": "nəɡər pərɪʃəd̪ kiː bɛːʈʰək ɦɛː", "bases": [{"word": "नगर", "ref": "hi-2061"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "base": "बैठक", "reading": "baiṭhak"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "परिषद ने नियम पास किया।", "reading": "pariśad nē niyam pās kiyā.", "ipa": "pərɪʃəd̪ neː nɪjəm paːs kɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नियम", "ref": "hi-2281"}, {"word": "पास", "base": "पास", "reading": "pās"}, {"word": "किया", "ref": "hi-0779"}]}
   - id: "hi-2288"
     target: "सचिव"
     target_scripts: {"perso_arabic": "سکریٹری"}
@@ -230,7 +230,7 @@ cards:
     notes:
       - {"id": "n1", "kind": "note"}
     examples:
-      - {"target": "बिना अनुमति के अंदर मत जाओ।", "reading": "binā anumti kē andar mat jāō.", "ipa": "bɪnaː ənʊmt̪ɪ keː ənd̪ər mət̪ dʒaːoː", "bases": [{"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "अनुमति", "base": "अनुमति", "reading": "anumti"}, {"word": "के", "ref": "hi-0065"}, {"word": "अंदर", "ref": "hi-0836"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "जाओ", "ref": "hi-0777"}]}
+      - {"target": "बिना अनुमति के अंदर मत जाओ।", "reading": "binā anumti kē andar mat jāō.", "ipa": "bɪnaː ənʊmt̪ɪ keː ənd̪ər mət̪ dʒaːoː", "bases": [{"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "अनुमति", "base": "अनुमति", "reading": "anumti"}, {"word": "के", "ref": "hi-0279"}, {"word": "अंदर", "ref": "hi-0836"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "जाओ", "ref": "hi-0777"}]}
       - {"target": "अनुमति मिल गई।", "reading": "anumti mil gaī.", "ipa": "ənʊmt̪ɪ mɪl ɡəiː", "bases": [{"word": "मिल", "ref": "hi-0793"}, {"word": "गई", "ref": "hi-0777"}]}
   - id: "hi-2291"
     target: "प्रमाणपत्र"
@@ -261,7 +261,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "मेरा ड्राइविंग लाइसेंस बना।", "reading": "mērā ḍrāiviṅg lāisēṁs banā.", "ipa": "meːraː ɖraːɪʋɪŋɡ laːɪsẽːs bənaː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "ड्राइविंग", "base": "ड्राइविंग", "reading": "ḍrāiviṅg"}, {"word": "बना", "ref": "hi-1833"}]}
-      - {"target": "लाइसेंस के बिना गाड़ी मत चलाओ।", "reading": "lāisēṁs kē binā gāṛī mat calāō.", "ipa": "laːɪsẽːs keː bɪnaː ɡaːɽiː mət̪ tʃəlaːoː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "गाड़ी", "ref": "hi-1907"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "चलाओ", "ref": "hi-1804"}]}
+      - {"target": "लाइसेंस के बिना गाड़ी मत चलाओ।", "reading": "lāisēṁs kē binā gāṛī mat calāō.", "ipa": "laːɪsẽːs keː bɪnaː ɡaːɽiː mət̪ tʃəlaːoː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "गाड़ी", "ref": "hi-1907"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "चलाओ", "ref": "hi-1804"}]}
   - id: "hi-2293"
     target: "कर"
     target_scripts: {"perso_arabic": "ٹیکس"}
@@ -321,7 +321,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "सबको बोलने का अधिकार है।", "reading": "sabkō bōlnē kā adhikār hai.", "ipa": "səbkoː boːlneː kaː əd̪ʱɪkaːr ɦɛː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "बोलने", "ref": "hi-0782"}, {"word": "का", "ref": "hi-0279"}, {"word": "अधिकार", "base": "अधिकार", "reading": "adhikār"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "अधिकार के साथ कर्तव्य भी है।", "reading": "adhikār kē sāth kartavy bhī hai.", "ipa": "əd̪ʱɪkaːr keː saːt̪ʰ kərt̪əʋj bʱiː ɦɛː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "कर्तव्य", "base": "कर्तव्य", "reading": "kartavy"}, {"word": "भी", "ref": "hi-0350"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अधिकार के साथ कर्तव्य भी है।", "reading": "adhikār kē sāth kartavy bhī hai.", "ipa": "əd̪ʱɪkaːr keː saːt̪ʰ kərt̪əʋj bʱiː ɦɛː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "कर्तव्य", "base": "कर्तव्य", "reading": "kartavy"}, {"word": "भी", "ref": "hi-0350"}, {"word": "है", "ref": "hi-0780"}]}
   - id: "hi-2297"
     target: "सेना"
     target_scripts: {"perso_arabic": "فوج"}
@@ -336,7 +336,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "सेना सरहद पर खड़ी है।", "reading": "sēnā sarhad par khaṛī hai.", "ipa": "seːnaː sərɦəd̪ pər kʰəɽiː ɦɛː", "bases": [{"word": "सरहद", "ref": "hi-2052"}, {"word": "पर", "ref": "hi-0275"}, {"word": "खड़ी", "base": "खड़ा", "reading": "khaṛā"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "सेना के जवान बहादुर हैं।", "reading": "sēnā kē javān bahādur haim̐.", "ipa": "seːnaː keː dʒəʋaːn bəɦaːd̪ʊr ɦɛ̃ː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "जवान", "ref": "hi-1755"}, {"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "सेना के जवान बहादुर हैं।", "reading": "sēnā kē javān bahādur haim̐.", "ipa": "seːnaː keː dʒəʋaːn bəɦaːd̪ʊr ɦɛ̃ː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "जवान", "ref": "hi-1755"}, {"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "हैं", "ref": "hi-0780"}]}
   - id: "hi-2298"
     target: "सत्र"
     target_scripts: {"perso_arabic": "سیشن"}

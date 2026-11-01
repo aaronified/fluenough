@@ -22,7 +22,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "कार्यालय सुबह नौ बजे खुलता है।", "reading": "kāryālay subah nau bajē khultā hai.", "ipa": "kaːrjaːləj sʊbəɦ nɔː bədʒeː kʰʊlt̪aː ɦɛː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "नौ", "ref": "hi-0206"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "खुलता", "base": "खुलना", "reading": "khulnā"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "कार्यालय में बैठक है।", "reading": "kāryālay mēm̐ baiṭhak hai.", "ipa": "kaːrjaːləj mẽː bɛːʈʰək ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "बैठक", "ref": "hi-0424"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कार्यालय में बैठक है।", "reading": "kāryālay mēm̐ baiṭhak hai.", "ipa": "kaːrjaːləj mẽː bɛːʈʰək ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "बैठक", "base": "बैठक", "reading": "baiṭhak"}, {"word": "है", "ref": "hi-0780"}]}
   - id: "hi-2005"
     target: "बॉस"
     target_scripts: {"perso_arabic": "باس"}
@@ -52,7 +52,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "मेरे सहकर्मी बहुत अच्छे हैं।", "reading": "mērē sahkarmī bahut acchē haim̐.", "ipa": "meːreː səɦkərmiː bəɦʊt̪ ətʃtʃʰeː ɦɛ̃ː", "bases": [{"word": "मेरे", "ref": "hi-0752"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छे", "ref": "hi-0898"}, {"word": "हैं", "ref": "hi-0780"}]}
-      - {"target": "सहकर्मी के साथ लंच करो।", "reading": "sahkarmī kē sāth lañc karō.", "ipa": "səɦkərmiː keː saːt̪ʰ ləɲtʃ kəroː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "लंच", "base": "लंच", "reading": "lañc"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "सहकर्मी के साथ लंच करो।", "reading": "sahkarmī kē sāth lañc karō.", "ipa": "səɦkərmiː keː saːt̪ʰ ləɲtʃ kəroː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "लंच", "base": "लंच", "reading": "lañc"}, {"word": "करो", "ref": "hi-0779"}]}
   - id: "hi-2007"
     target: "मीटिंग"
     target_scripts: {"perso_arabic": "میٹنگ"}
@@ -322,7 +322,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "उसे नया पद मिला।", "reading": "usē nayā pad milā.", "ipa": "ʊseː nəjaː pəd̪ mɪlaː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "नया", "ref": "hi-0896"}, {"word": "मिला", "ref": "hi-0793"}]}
-      - {"target": "इस पद के लिए आवेदन करो।", "reading": "is pad kē liē āvēdan karō.", "ipa": "ɪs pəd̪ keː lɪeː aːʋeːd̪ən kəroː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "पद", "base": "पद", "reading": "pad"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "आवेदन", "base": "आवेदन", "reading": "āvēdan"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "इस पद के लिए आवेदन करो।", "reading": "is pad kē liē āvēdan karō.", "ipa": "ɪs pəd̪ keː lɪeː aːʋeːd̪ən kəroː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "पद", "base": "पद", "reading": "pad"}, {"word": "के", "ref": "hi-0279"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "आवेदन", "base": "आवेदन", "reading": "āvēdan"}, {"word": "करो", "ref": "hi-0779"}]}
   - id: "hi-2025"
     target: "ज़िम्मेदारी"
     target_scripts: {"perso_arabic": "ذمہ داری"}
