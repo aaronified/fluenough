@@ -242,7 +242,8 @@ units:
   - decks: ["kn-daily-life", "kn-grammar-negative", "*"]
     words: 15
     grammar: ["negative"]
-  - planned: { id: "kn-weather", theme: "weather", words: 45 }
+  - decks: ["kn-weather", "*"]
+    words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:

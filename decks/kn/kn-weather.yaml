@@ -1,0 +1,468 @@
+schema: 1
+id: "kn-weather"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0122"
+  - ref: "kn-0882"
+  - ref: "kn-0406"
+  - id: "kn-0953"
+    target: "ಬಿಸಿಲು"
+    reading: "bisilu"
+    ipa: "bisilu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇವತ್ತು ತುಂಬಾ ಬಿಸಿಲು ಇದೆ.", reading: "ivattu tumbā bisilu ide.", ipa: "iʋat̪t̪u t̪umbaː bisilu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಬಿಸಿಲಿನಲ್ಲಿ ನಡೆಯಬೇಡ.", reading: "bisilinalli naḍeyabēḍa.", ipa: "bisilinalli naɖejabeːɖa", bases: [{ word: "ಬಿಸಿಲಿನಲ್ಲಿ", base: "ಬಿಸಿಲು", reading: "bisilu" }, { word: "ನಡೆಯಬೇಡ", ref: "kn-0643" }] }
+  - id: "kn-0954"
+    target: "ಗಾಳಿ"
+    reading: "gāḷi"
+    ipa: "ɡaːɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.", reading: "indu gāḷi bīsuttide.", ipa: "ind̪u ɡaːɭi biːsut̪t̪id̪e", bases: [{ word: "ಬೀಸುತ್ತಿದೆ", base: "ಬೀಸು", reading: "bīsu" }] }
+      - { target: "ತಂಪಾದ ಗಾಳಿ ಬರುತ್ತದೆ.", reading: "tampāda gāḷi baruttade.", ipa: "t̪ampaːd̪a ɡaːɭi barut̪t̪ad̪e", bases: [{ word: "ತಂಪಾದ", base: "ತಂಪು", reading: "tampu" }] }
+  - id: "kn-0955"
+    target: "ಮೋಡ"
+    reading: "mōḍa"
+    ipa: "moːɖa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಕಾಶದಲ್ಲಿ ಮೋಡ ಇದೆ.", reading: "ākāśadalli mōḍa ide.", ipa: "aːkaːʃad̪alli moːɖa id̪e", bases: [{ word: "ಆಕಾಶದಲ್ಲಿ", base: "ಆಕಾಶ", reading: "ākāśa" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಇವತ್ತು ಮೋಡ ಕವಿದಿದೆ.", reading: "ivattu mōḍa kavidide.", ipa: "iʋat̪t̪u moːɖa kaʋid̪id̪e", bases: [{ word: "ಕವಿದಿದೆ", base: "ಕವಿ", reading: "kavi" }] }
+  - id: "kn-0956"
+    target: "ಚಳಿ"
+    reading: "caḷi"
+    ipa: "tʃaɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ತುಂಬಾ ಚಳಿ ಇದೆ.", reading: "indu tumbā caḷi ide.", ipa: "ind̪u t̪umbaː tʃaɭi id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಚಳಿಯಲ್ಲಿ ಬೆಚ್ಚಗಿನ ಬಟ್ಟೆ ಬೇಕು.", reading: "caḷiyalli beccagina baṭṭe bēku.", ipa: "tʃaɭijalli betʃtʃaɡina baʈʈe beːku", bases: [{ word: "ಚಳಿಯಲ್ಲಿ", base: "ಚಳಿ", reading: "caḷi" }] }
+  - id: "kn-0957"
+    target: "ಸೆಕೆ"
+    reading: "seke"
+    ipa: "seke"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇವತ್ತು ತುಂಬಾ ಸೆಕೆ ಇದೆ.", reading: "ivattu tumbā seke ide.", ipa: "iʋat̪t̪u t̪umbaː seke id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಸೆಕೆಯಲ್ಲಿ ನೀರು ಕುಡಿ.", reading: "sekeyalli nīru kuḍi.", ipa: "sekejalli niːru kuɖi", bases: [{ word: "ಸೆಕೆಯಲ್ಲಿ", base: "ಸೆಕೆ", reading: "seke" }] }
+  - id: "kn-0958"
+    target: "ಆಕಾಶ"
+    reading: "ākāśa"
+    ipa: "aːkaːʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಕಾಶದಲ್ಲಿ ಮೋಡ ಇಲ್ಲ.", reading: "ākāśadalli mōḍa illa.", ipa: "aːkaːʃad̪alli moːɖa illa", bases: [{ word: "ಆಕಾಶದಲ್ಲಿ", base: "ಆಕಾಶ", reading: "ākāśa" }] }
+      - { target: "ಆಕಾಶ ನೋಡು.", reading: "ākāśa nōḍu.", ipa: "aːkaːʃa noːɖu" }
+  - id: "kn-0959"
+    target: "ಸೂರ್ಯ"
+    reading: "sūrya"
+    ipa: "suːrja"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೂರ್ಯ ಉದಯಿಸುತ್ತಿದ್ದಾನೆ.", reading: "sūrya udayisuttiddāne.", ipa: "suːrja ud̪ajisut̪t̪id̪d̪aːne", bases: [{ word: "ಉದಯಿಸುತ್ತಿದ್ದಾನೆ", base: "ಉದಯಿಸು", reading: "udayisu" }] }
+      - { target: "ಸೂರ್ಯ ತುಂಬಾ ಬಿಸಿ.", reading: "sūrya tumbā bisi.", ipa: "suːrja t̪umbaː bisi" }
+  - id: "kn-0960"
+    target: "ಚಂದ್ರ"
+    reading: "candra"
+    ipa: "tʃand̪ra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಕಾಶದಲ್ಲಿ ಚಂದ್ರ ಇದೆ.", reading: "ākāśadalli candra ide.", ipa: "aːkaːʃad̪alli tʃand̪ra id̪e", bases: [{ word: "ಆಕಾಶದಲ್ಲಿ", base: "ಆಕಾಶ", reading: "ākāśa" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಚಂದ್ರ ಕಾಣುತ್ತಾನೆ.", reading: "candra kāṇuttāne.", ipa: "tʃand̪ra kaːɳut̪t̪aːne", bases: [{ word: "ಕಾಣುತ್ತಾನೆ", base: "ಕಾಣು", reading: "kāṇu" }] }
+  - id: "kn-0961"
+    target: "ನಕ್ಷತ್ರ"
+    reading: "nakṣatra"
+    ipa: "nakʂat̪ra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಕ್ಷತ್ರಗಳು ಮಿನುಗುತ್ತಿವೆ.", reading: "nakṣatragaḷu minuguttive.", ipa: "nakʂat̪raɡaɭu minuɡut̪t̪iʋe", bases: [{ word: "ನಕ್ಷತ್ರಗಳು", base: "ನಕ್ಷತ್ರ", reading: "nakṣatra" }, { word: "ಮಿನುಗುತ್ತಿವೆ", base: "ಮಿನುಗು", reading: "minugu" }] }
+      - { target: "ಆಕಾಶದಲ್ಲಿ ನಕ್ಷತ್ರ ಇದೆ.", reading: "ākāśadalli nakṣatra ide.", ipa: "aːkaːʃad̪alli nakʂat̪ra id̪e", bases: [{ word: "ಆಕಾಶದಲ್ಲಿ", base: "ಆಕಾಶ", reading: "ākāśa" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0962"
+    target: "ಗುಡುಗು"
+    reading: "guḍugu"
+    ipa: "ɡuɖuɡu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗುಡುಗು ಕೇಳಿಸುತ್ತಿದೆ.", reading: "guḍugu kēḷisuttide.", ipa: "ɡuɖuɡu keːɭisut̪t̪id̪e", bases: [{ word: "ಕೇಳಿಸುತ್ತಿದೆ", base: "ಕೇಳಿಸು", reading: "kēḷisu" }] }
+      - { target: "ಗುಡುಗು ಬಂದ ಮೇಲೆ ಮಳೆ ಬರುತ್ತದೆ.", reading: "guḍugu banda mēle maḷe baruttade.", ipa: "ɡuɖuɡu band̪a meːle maɭe barut̪t̪ad̪e", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+  - id: "kn-0963"
+    target: "ಮಿಂಚು"
+    reading: "miñcu"
+    ipa: "miɲtʃu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಿಂಚು ಹೊಡೆಯಿತು.", reading: "miñcu hoḍeyitu.", ipa: "miɲtʃu hoɖejit̪u", bases: [{ word: "ಹೊಡೆಯಿತು", base: "ಹೊಡೆ", reading: "hoḍe" }] }
+      - { target: "ಮಿಂಚು ಮತ್ತು ಗುಡುಗು ಬರುತ್ತವೆ.", reading: "miñcu mattu guḍugu baruttave.", ipa: "miɲtʃu mat̪t̪u ɡuɖuɡu barut̪t̪aʋe", bases: [{ word: "ಬರುತ್ತವೆ", base: "ಬರು", reading: "baru" }] }
+  - id: "kn-0964"
+    target: "ಬಿರುಗಾಳಿ"
+    reading: "birugāḷi"
+    ipa: "biruɡaːɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ಬಿರುಗಾಳಿ ಬೀಸುತ್ತಿದೆ.", reading: "indu birugāḷi bīsuttide.", ipa: "ind̪u biruɡaːɭi biːsut̪t̪id̪e", bases: [{ word: "ಬೀಸುತ್ತಿದೆ", base: "ಬೀಸು", reading: "bīsu" }] }
+      - { target: "ಬಿರುಗಾಳಿಯಲ್ಲಿ ಮರ ಬಿತ್ತು.", reading: "birugāḷiyalli mara bittu.", ipa: "biruɡaːɭijalli mara bit̪t̪u", bases: [{ word: "ಬಿರುಗಾಳಿಯಲ್ಲಿ", base: "ಬಿರುಗಾಳಿ", reading: "birugāḷi" }, { word: "ಬಿತ್ತು", base: "ಬೀಳು", reading: "bīḷu" }] }
+  - id: "kn-0965"
+    target: "ಚಂಡಮಾರುತ"
+    reading: "caṇḍamāruta"
+    ipa: "tʃaɳɖamaːrut̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಂಡಮಾರುತ ಕರಾವಳಿಗೆ ಬರುತ್ತಿದೆ.", reading: "caṇḍamāruta karāvaḷige baruttide.", ipa: "tʃaɳɖamaːrut̪a karaːʋaɭiɡe barut̪t̪id̪e", bases: [{ word: "ಕರಾವಳಿಗೆ", base: "ಕರಾವಳಿ", reading: "karāvaḷi" }, { word: "ಬರುತ್ತಿದೆ", base: "ಬರು", reading: "baru" }] }
+      - { target: "ಚಂಡಮಾರುತ ತುಂಬಾ ಅಪಾಯಕಾರಿ.", reading: "caṇḍamāruta tumbā apāyakāri.", ipa: "tʃaɳɖamaːrut̪a t̪umbaː apaːjakaːri", bases: [{ word: "ಅಪಾಯಕಾರಿ", base: "ಅಪಾಯ", reading: "apāya" }] }
+  - id: "kn-0966"
+    target: "ಮಳೆಬಿಲ್ಲು"
+    reading: "maḷebillu"
+    ipa: "maɭebillu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆ ನಿಂತ ಮೇಲೆ ಮಳೆಬಿಲ್ಲು ಕಾಣಿಸಿತು.", reading: "maḷe ninta mēle maḷebillu kāṇisitu.", ipa: "maɭe nint̪a meːle maɭebillu kaːɳisit̪u", bases: [{ word: "ನಿಂತ", ref: "kn-0652" }, { word: "ಕಾಣಿಸಿತು", base: "ಕಾಣಿಸು", reading: "kāṇisu" }] }
+      - { target: "ಆಕಾಶದಲ್ಲಿ ಮಳೆಬಿಲ್ಲು ಇದೆ.", reading: "ākāśadalli maḷebillu ide.", ipa: "aːkaːʃad̪alli maɭebillu id̪e", bases: [{ word: "ಆಕಾಶದಲ್ಲಿ", base: "ಆಕಾಶ", reading: "ākāśa" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0967"
+    target: "ಹನಿ"
+    reading: "hani"
+    ipa: "hani"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆ ಹನಿ ಬೀಳುತ್ತಿದೆ.", reading: "maḷe hani bīḷuttide.", ipa: "maɭe hani biːɭut̪t̪id̪e", bases: [{ word: "ಬೀಳುತ್ತಿದೆ", base: "ಬೀಳು", reading: "bīḷu" }] }
+      - { target: "ಕೆಳಗೆ ಒಂದು ಹನಿ ಬಿತ್ತು.", reading: "keḷage ondu hani bittu.", ipa: "keɭaɡe ond̪u hani bit̪t̪u", bases: [{ word: "ಬಿತ್ತು", base: "ಬೀಳು", reading: "bīḷu" }] }
+  - id: "kn-0968"
+    target: "ಮಂಜು"
+    reading: "mañju"
+    ipa: "maɲdʒu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಳಿಗಾಲದಲ್ಲಿ ಮಂಜು ಬೀಳುತ್ತದೆ.", reading: "caḷigāladalli mañju bīḷuttade.", ipa: "tʃaɭiɡaːlad̪alli maɲdʒu biːɭut̪t̪ad̪e", bases: [{ word: "ಚಳಿಗಾಲದಲ್ಲಿ", base: "ಚಳಿಗಾಲ", reading: "caḷigāla" }, { word: "ಬೀಳುತ್ತದೆ", base: "ಬೀಳು", reading: "bīḷu" }] }
+      - { target: "ಬೆಟ್ಟದ ಮೇಲೆ ಮಂಜು ಇದೆ.", reading: "beṭṭada mēle mañju ide.", ipa: "beʈʈad̪a meːle maɲdʒu id̪e", bases: [{ word: "ಬೆಟ್ಟದ", ref: "kn-0836" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0969"
+    target: "ಇಬ್ಬನಿ"
+    reading: "ibbani"
+    ipa: "ibbani"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಳಿಗ್ಗೆ ಹುಲ್ಲಿನ ಮೇಲೆ ಇಬ್ಬನಿ ಇದೆ.", reading: "beḷigge hullina mēle ibbani ide.", ipa: "beɭiɡɡe hullina meːle ibbani id̪e", bases: [{ word: "ಹುಲ್ಲಿನ", base: "ಹುಲ್ಲು", reading: "hullu" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಇಬ್ಬನಿ ತಂಪು.", reading: "ibbani tampu.", ipa: "ibbani t̪ampu" }
+  - id: "kn-0970"
+    target: "ಹಿಮ"
+    reading: "hima"
+    ipa: "hima"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಟ್ಟದ ಮೇಲೆ ಹಿಮ ಇದೆ.", reading: "beṭṭada mēle hima ide.", ipa: "beʈʈad̪a meːle hima id̪e", bases: [{ word: "ಬೆಟ್ಟದ", ref: "kn-0836" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಹಿಮ ತುಂಬಾ ತಂಪು.", reading: "hima tumbā tampu.", ipa: "hima t̪umbaː t̪ampu" }
+  - id: "kn-0971"
+    target: "ಮುಂಗಾರು"
+    reading: "muṅgāru"
+    ipa: "muŋɡaːru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮುಂಗಾರು ಮಳೆ ಬರುತ್ತದೆ.", reading: "muṅgāru maḷe baruttade.", ipa: "muŋɡaːru maɭe barut̪t̪ad̪e" }
+      - { target: "ಮುಂಗಾರಿನಲ್ಲಿ ಮಳೆ ತುಂಬಾ ಇದೆ.", reading: "muṅgārinalli maḷe tumbā ide.", ipa: "muŋɡaːrinalli maɭe t̪umbaː id̪e", bases: [{ word: "ಮುಂಗಾರಿನಲ್ಲಿ", base: "ಮುಂಗಾರು", reading: "muṅgāru" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0972"
+    target: "ಬೇಸಿಗೆ"
+    reading: "bēsige"
+    ipa: "beːsiɡe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೇಸಿಗೆಯಲ್ಲಿ ತುಂಬಾ ಬಿಸಿಲು ಇದೆ.", reading: "bēsigeyalli tumbā bisilu ide.", ipa: "beːsiɡejalli t̪umbaː bisilu id̪e", bases: [{ word: "ಬೇಸಿಗೆಯಲ್ಲಿ", base: "ಬೇಸಿಗೆ", reading: "bēsige" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಬೇಸಿಗೆ ಮುಗಿದ ಮೇಲೆ ಮಳೆ ಬರುತ್ತದೆ.", reading: "bēsige mugida mēle maḷe baruttade.", ipa: "beːsiɡe muɡid̪a meːle maɭe barut̪t̪ad̪e", bases: [{ word: "ಮುಗಿದ", base: "ಮುಗಿ", reading: "mugi" }] }
+  - id: "kn-0973"
+    target: "ಚಳಿಗಾಲ"
+    reading: "caḷigāla"
+    ipa: "tʃaɭiɡaːla"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಳಿಗಾಲದಲ್ಲಿ ಚಳಿ ಇದೆ.", reading: "caḷigāladalli caḷi ide.", ipa: "tʃaɭiɡaːlad̪alli tʃaɭi id̪e", bases: [{ word: "ಚಳಿಗಾಲದಲ್ಲಿ", base: "ಚಳಿಗಾಲ", reading: "caḷigāla" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಚಳಿಗಾಲದಲ್ಲಿ ಮಂಜು ಬೀಳುತ್ತದೆ.", reading: "caḷigāladalli mañju bīḷuttade.", ipa: "tʃaɭiɡaːlad̪alli maɲdʒu biːɭut̪t̪ad̪e", bases: [{ word: "ಚಳಿಗಾಲದಲ್ಲಿ", base: "ಚಳಿಗಾಲ", reading: "caḷigāla" }, { word: "ಬೀಳುತ್ತದೆ", base: "ಬೀಳು", reading: "bīḷu" }] }
+  - id: "kn-0974"
+    target: "ಮಳೆಗಾಲ"
+    reading: "maḷegāla"
+    ipa: "maɭeɡaːla"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆಗಾಲದಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆ.", reading: "maḷegāladalli maḷe baruttade.", ipa: "maɭeɡaːlad̪alli maɭe barut̪t̪ad̪e", bases: [{ word: "ಮಳೆಗಾಲದಲ್ಲಿ", base: "ಮಳೆಗಾಲ", reading: "maḷegāla" }] }
+      - { target: "ಮಳೆಗಾಲದಲ್ಲಿ ಛತ್ರಿ ಬೇಕು.", reading: "maḷegāladalli chatri bēku.", ipa: "maɭeɡaːlad̪alli tʃʰat̪ri beːku", bases: [{ word: "ಮಳೆಗಾಲದಲ್ಲಿ", base: "ಮಳೆಗಾಲ", reading: "maḷegāla" }] }
+  - id: "kn-0975"
+    target: "ಹವಾಮಾನ"
+    reading: "havāmāna"
+    ipa: "haʋaːmaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದಿನ ಹವಾಮಾನ ಹೇಗಿದೆ?", reading: "indina havāmāna hēgide?", ipa: "ind̪ina haʋaːmaːna heːɡid̪e", bases: [{ word: "ಇಂದಿನ", ref: "kn-0547" }, { word: "ಹೇಗಿದೆ", ref: "kn-0172" }] }
+      - { target: "ಹವಾಮಾನ ಚೆನ್ನಾಗಿದೆ.", reading: "havāmāna cennāgide.", ipa: "haʋaːmaːna tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-0976"
+    target: "ತಾಪಮಾನ"
+    reading: "tāpamāna"
+    ipa: "t̪aːpamaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತಾಪಮಾನ ಕಡಿಮೆ.", reading: "tāpamāna kaḍime.", ipa: "t̪aːpamaːna kaɖime" }
+      - { target: "ಇವತ್ತಿನ ತಾಪಮಾನ ಎಷ್ಟು?", reading: "ivattina tāpamāna eṣṭu?", ipa: "iʋat̪t̪ina t̪aːpamaːna eʂʈu", bases: [{ word: "ಇವತ್ತಿನ", ref: "kn-0413" }] }
+  - id: "kn-0977"
+    target: "ತಂಪು"
+    reading: "tampu"
+    ipa: "t̪ampu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಂಜೆ ತಂಪು ಆಗಿದೆ.", reading: "sañje tampu āgide.", ipa: "saɲdʒe t̪ampu aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ತಂಪು ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.", reading: "tampu gāḷi bīsuttide.", ipa: "t̪ampu ɡaːɭi biːsut̪t̪id̪e", bases: [{ word: "ಬೀಸುತ್ತಿದೆ", base: "ಬೀಸು", reading: "bīsu" }] }
+  - id: "kn-0978"
+    target: "ಒಣ"
+    reading: "oṇa"
+    ipa: "oɳa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಬೇಸಿಗೆ ತುಂಬಾ ಒಣ.", reading: "ī bēsige tumbā oṇa.", ipa: "iː beːsiɡe t̪umbaː oɳa" }
+      - { target: "ಮಳೆ ಇಲ್ಲ, ಕೆರೆ ಒಣ ಆಗಿದೆ.", reading: "maḷe illa, kere oṇa āgide.", ipa: "maɭe illa kere oɳa aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+  - id: "kn-0979"
+    target: "ತೇವ"
+    reading: "tēva"
+    ipa: "t̪eːʋa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟ್ಟೆ ತೇವ ಆಗಿದೆ.", reading: "baṭṭe tēva āgide.", ipa: "baʈʈe t̪eːʋa aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ಮಳೆಗಾಲದಲ್ಲಿ ತೇವ ತುಂಬಾ.", reading: "maḷegāladalli tēva tumbā.", ipa: "maɭeɡaːlad̪alli t̪eːʋa t̪umbaː", bases: [{ word: "ಮಳೆಗಾಲದಲ್ಲಿ", base: "ಮಳೆಗಾಲ", reading: "maḷegāla" }] }
+  - id: "kn-0980"
+    target: "ಬರ"
+    reading: "bara"
+    ipa: "bara"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆ ಇಲ್ಲದೆ ಬರ ಬಂತು.", reading: "maḷe illade bara bantu.", ipa: "maɭe illad̪e bara bant̪u", bases: [{ word: "ಇಲ್ಲದೆ", ref: "kn-0165" }, { word: "ಬಂತು", ref: "kn-0632" }] }
+      - { target: "ಬರ ಇದ್ದರೆ ನೀರು ಕಡಿಮೆ.", reading: "bara iddare nīru kaḍime.", ipa: "bara id̪d̪are niːru kaɖime", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0981"
+    target: "ಪ್ರವಾಹ"
+    reading: "pravāha"
+    ipa: "praʋaːha"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನದಿಯಲ್ಲಿ ಪ್ರವಾಹ ಬಂತು.", reading: "nadiyalli pravāha bantu.", ipa: "nad̪ijalli praʋaːha bant̪u", bases: [{ word: "ನದಿಯಲ್ಲಿ", ref: "kn-0835" }, { word: "ಬಂತು", ref: "kn-0632" }] }
+      - { target: "ಮಳೆ ತುಂಬಾ ಬಂದರೆ ಪ್ರವಾಹ ಬರುತ್ತದೆ.", reading: "maḷe tumbā bandare pravāha baruttade.", ipa: "maɭe t̪umbaː band̪are praʋaːha barut̪t̪ad̪e" }
+  - id: "kn-0982"
+    target: "ಬೀಳು"
+    reading: "bīḷu"
+    ipa: "biːɭu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆ ಬೀಳುತ್ತಿದೆ.", reading: "maḷe bīḷuttide.", ipa: "maɭe biːɭut̪t̪id̪e", bases: [{ word: "ಬೀಳುತ್ತಿದೆ", base: "ಬೀಳು", reading: "bīḷu" }] }
+      - { target: "ಮರ ಕೆಳಗೆ ಬಿತ್ತು.", reading: "mara keḷage bittu.", ipa: "mara keɭaɡe bit̪t̪u", bases: [{ word: "ಬಿತ್ತು", base: "ಬೀಳು", reading: "bīḷu" }] }
+  - id: "kn-0983"
+    target: "ಬೀಸು"
+    reading: "bīsu"
+    ipa: "biːsu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಾಳಿ ಬೀಸಿತು.", reading: "gāḷi bīsitu.", ipa: "ɡaːɭi biːsit̪u", bases: [{ word: "ಬೀಸಿತು", base: "ಬೀಸು", reading: "bīsu" }] }
+      - { target: "ಬೀಸುವ ಗಾಳಿ ತಂಪು.", reading: "bīsuva gāḷi tampu.", ipa: "biːsuʋa ɡaːɭi t̪ampu", bases: [{ word: "ಬೀಸುವ", base: "ಬೀಸು", reading: "bīsu" }] }
+  - id: "kn-0984"
+    target: "ಉರಿ"
+    reading: "uri"
+    ipa: "uri"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಿಸಿಲು ತುಂಬಾ ಉರಿಯುತ್ತಿದೆ.", reading: "bisilu tumbā uriyuttide.", ipa: "bisilu t̪umbaː urijut̪t̪id̪e", bases: [{ word: "ಉರಿಯುತ್ತಿದೆ", base: "ಉರಿ", reading: "uri" }] }
+      - { target: "ಉರಿ ಬಿಸಿಲಿನಲ್ಲಿ ಹೋಗಬೇಡ.", reading: "uri bisilinalli hōgabēḍa.", ipa: "uri bisilinalli hoːɡabeːɖa", bases: [{ word: "ಬಿಸಿಲಿನಲ್ಲಿ", base: "ಬಿಸಿಲು", reading: "bisilu" }, { word: "ಹೋಗಬೇಡ", ref: "kn-0631" }] }
+  - id: "kn-0985"
+    target: "ಬೆಚ್ಚಗಿನ"
+    reading: "beccagina"
+    ipa: "betʃtʃaɡina"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಚ್ಚಗಿನ ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.", reading: "beccagina gāḷi bīsuttide.", ipa: "betʃtʃaɡina ɡaːɭi biːsut̪t̪id̪e", bases: [{ word: "ಬೀಸುತ್ತಿದೆ", base: "ಬೀಸು", reading: "bīsu" }] }
+      - { target: "ಚಳಿಗಾಲದಲ್ಲಿ ಬೆಚ್ಚಗಿನ ಬಟ್ಟೆ ಬೇಕು.", reading: "caḷigāladalli beccagina baṭṭe bēku.", ipa: "tʃaɭiɡaːlad̪alli betʃtʃaɡina baʈʈe beːku", bases: [{ word: "ಚಳಿಗಾಲದಲ್ಲಿ", base: "ಚಳಿಗಾಲ", reading: "caḷigāla" }] }
+  - id: "kn-0986"
+    target: "ಬೆಳಕು"
+    reading: "beḷaku"
+    ipa: "beɭaku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಳಕು ಇದೆ.", reading: "beḷaku ide.", ipa: "beɭaku id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಕತ್ತಲಲ್ಲಿ ಬೆಳಕು ಬೇಕು.", reading: "kattalalli beḷaku bēku.", ipa: "kat̪t̪alalli beɭaku beːku", bases: [{ word: "ಕತ್ತಲಲ್ಲಿ", base: "ಕತ್ತಲು", reading: "kattalu" }] }
+  - id: "kn-0987"
+    target: "ಕತ್ತಲು"
+    reading: "kattalu"
+    ipa: "kat̪t̪alu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾತ್ರಿ ಕತ್ತಲು ಆಯಿತು.", reading: "rātri kattalu āyitu.", ipa: "raːt̪ri kat̪t̪alu aːjit̪u" }
+      - { target: "ಮೋಡದಿಂದ ಕತ್ತಲು ಆಯಿತು.", reading: "mōḍadinda kattalu āyitu.", ipa: "moːɖad̪ind̪a kat̪t̪alu aːjit̪u", bases: [{ word: "ಮೋಡದಿಂದ", base: "ಮೋಡ", reading: "mōḍa" }] }
+  - id: "kn-0988"
+    target: "ನೆರಳು"
+    reading: "neraḷu"
+    ipa: "neraɭu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮರದ ನೆರಳು ತಂಪು.", reading: "marada neraḷu tampu.", ipa: "marad̪a neraɭu t̪ampu", bases: [{ word: "ಮರದ", ref: "kn-0048" }] }
+      - { target: "ಬಿಸಿಲಿನಲ್ಲಿ ನೆರಳು ಇಲ್ಲ.", reading: "bisilinalli neraḷu illa.", ipa: "bisilinalli neraɭu illa", bases: [{ word: "ಬಿಸಿಲಿನಲ್ಲಿ", base: "ಬಿಸಿಲು", reading: "bisilu" }] }
+  - id: "kn-0989"
+    target: "ಬಿಸಿಗಾಳಿ"
+    reading: "bisigāḷi"
+    ipa: "bisiɡaːɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಸಿಗಾಳಿ ಬೀಸುತ್ತದೆ.", reading: "bēsigeyalli bisigāḷi bīsuttade.", ipa: "beːsiɡejalli bisiɡaːɭi biːsut̪t̪ad̪e", bases: [{ word: "ಬೇಸಿಗೆಯಲ್ಲಿ", base: "ಬೇಸಿಗೆ", reading: "bēsige" }, { word: "ಬೀಸುತ್ತದೆ", base: "ಬೀಸು", reading: "bīsu" }] }
+      - { target: "ಬಿಸಿಗಾಳಿಯಲ್ಲಿ ಬೆವರು ಬರುತ್ತದೆ.", reading: "bisigāḷiyalli bevaru baruttade.", ipa: "bisiɡaːɭijalli beʋaru barut̪t̪ad̪e", bases: [{ word: "ಬಿಸಿಗಾಳಿಯಲ್ಲಿ", base: "ಬಿಸಿಗಾಳಿ", reading: "bisigāḷi" }] }
+  - id: "kn-0990"
+    target: "ಕೆಸರು"
+    reading: "kesaru"
+    ipa: "kesaru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಳೆ ಬಂದ ಮೇಲೆ ರಸ್ತೆ ಕೆಸರು ಆಯಿತು.", reading: "maḷe banda mēle raste kesaru āyitu.", ipa: "maɭe band̪a meːle rast̪e kesaru aːjit̪u", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಕೆಸರು ನೀರು ಇದೆ.", reading: "kesaru nīru ide.", ipa: "kesaru niːru id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-0991"
+    target: "ಆಲಿಕಲ್ಲು"
+    reading: "ālikallu"
+    ipa: "aːlikallu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಲಿಕಲ್ಲು ಬಿತ್ತು.", reading: "ālikallu bittu.", ipa: "aːlikallu bit̪t̪u", bases: [{ word: "ಬಿತ್ತು", base: "ಬೀಳು", reading: "bīḷu" }] }
+      - { target: "ಆಲಿಕಲ್ಲು ಮತ್ತು ಮಳೆ ಬಂತು.", reading: "ālikallu mattu maḷe bantu.", ipa: "aːlikallu mat̪t̪u maɭe bant̪u", bases: [{ word: "ಬಂತು", ref: "kn-0632" }] }
+  - id: "kn-0992"
+    target: "ಬೆವರು"
+    reading: "bevaru"
+    ipa: "beʋaru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೆಕೆಯಲ್ಲಿ ಬೆವರು ಬರುತ್ತದೆ.", reading: "sekeyalli bevaru baruttade.", ipa: "sekejalli beʋaru barut̪t̪ad̪e", bases: [{ word: "ಸೆಕೆಯಲ್ಲಿ", base: "ಸೆಕೆ", reading: "seke" }] }
+      - { target: "ನನಗೆ ಬೆವರು ಬರುತ್ತಿದೆ.", reading: "nanage bevaru baruttide.", ipa: "nanaɡe beʋaru barut̪t̪id̪e", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಬರುತ್ತಿದೆ", base: "ಬರು", reading: "baru" }] }
+  - id: "kn-0993"
+    target: "ಋತು"
+    reading: "rutu"
+    ipa: "rut̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈಗ ಮಳೆ ಋತು.", reading: "īga maḷe rutu.", ipa: "iːɡa maɭe rut̪u" }
+      - { target: "ಇದು ಯಾವ ಋತು?", reading: "idu yāva rutu?", ipa: "id̪u jaːʋa rut̪u" }
+  - id: "kn-0994"
+    target: "ಧೂಳು"
+    reading: "dhūḷu"
+    ipa: "d̪ʱuːɭu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಾಳಿಯಲ್ಲಿ ಧೂಳು ಇದೆ.", reading: "gāḷiyalli dhūḷu ide.", ipa: "ɡaːɭijalli d̪ʱuːɭu id̪e", bases: [{ word: "ಗಾಳಿಯಲ್ಲಿ", base: "ಗಾಳಿ", reading: "gāḷi" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಮಳೆ ಬಂದರೆ ಧೂಳು ಹೋಗುತ್ತದೆ.", reading: "maḷe bandare dhūḷu hōguttade.", ipa: "maɭe band̪are d̪ʱuːɭu hoːɡut̪t̪ad̪e", bases: [{ word: "ಹೋಗುತ್ತದೆ", ref: "kn-0631" }] }

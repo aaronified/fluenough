@@ -1,0 +1,304 @@
+schema: 1
+id: "kn-en-weather"
+kind: "layer"
+core: "kn-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+license: "CC-BY-SA-4.0"
+description: "Weather and seasons: rain, sun, wind, cloud, the monsoon and the seasons, and what the weather is like. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "kn-0953":
+    native: "sunshine"
+    notes:
+      "n1": "The light and heat of the sun. The sun itself is ಸೂರ್ಯ (sūrya)."
+    examples:
+      "ಇವತ್ತು ತುಂಬಾ ಬಿಸಿಲು ಇದೆ.": { native: "It is very sunny today.", bases: { "ಇದೆ": "is, there is" } }
+      "ಬಿಸಿಲಿನಲ್ಲಿ ನಡೆಯಬೇಡ.": { native: "Do not walk in the sun.", bases: { "ಬಿಸಿಲಿನಲ್ಲಿ": "in the sun" } }
+  "kn-0954":
+    native: "wind, air"
+    notes:
+      "n1": "Wind and air are both ಗಾಳಿ (gāḷi). A strong wind is ಬಿರುಗಾಳಿ (birugāḷi)."
+    examples:
+      "ಇಂದು ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.": { native: "The wind is blowing today.", bases: { "ಬೀಸುತ್ತಿದೆ": "is blowing" } }
+      "ತಂಪಾದ ಗಾಳಿ ಬರುತ್ತದೆ.": { native: "A cool breeze comes.", bases: { "ತಂಪಾದ": "cool" } }
+  "kn-0955":
+    native: "cloud"
+    notes:
+      "n1": "Rain clouds are ಮಳೆ ಮೋಡ (maḷe mōḍa), and a cloudy sky is said as ಮೋಡ ಕವಿದಿದೆ (mōḍa kavidide)."
+    examples:
+      "ಆಕಾಶದಲ್ಲಿ ಮೋಡ ಇದೆ.": { native: "There is a cloud in the sky.", bases: { "ಆಕಾಶದಲ್ಲಿ": "in the sky", "ಇದೆ": "is, there is" } }
+      "ಇವತ್ತು ಮೋಡ ಕವಿದಿದೆ.": { native: "Today it is cloudy.", bases: { "ಕವಿದಿದೆ": "has covered over" } }
+  "kn-0956":
+    native: "cold"
+    notes:
+      "n1": "The cold of the weather, and also the cold you feel. Winter is ಚಳಿಗಾಲ (caḷigāla)."
+    examples:
+      "ಇಂದು ತುಂಬಾ ಚಳಿ ಇದೆ.": { native: "It is very cold today.", bases: { "ಇದೆ": "is, there is" } }
+      "ಚಳಿಯಲ್ಲಿ ಬೆಚ್ಚಗಿನ ಬಟ್ಟೆ ಬೇಕು.": { native: "In the cold you need warm clothes.", bases: { "ಚಳಿಯಲ್ಲಿ": "in the cold" } }
+  "kn-0957":
+    native: "heat, sultry heat"
+    notes:
+      "n1": "The sticky heat of humid days. Dry, strong heat is ಬಿಸಿಲು (bisilu)."
+    examples:
+      "ಇವತ್ತು ತುಂಬಾ ಸೆಕೆ ಇದೆ.": { native: "It is very hot and sticky today.", bases: { "ಇದೆ": "is, there is" } }
+      "ಸೆಕೆಯಲ್ಲಿ ನೀರು ಕುಡಿ.": { native: "Drink water in the heat.", bases: { "ಸೆಕೆಯಲ್ಲಿ": "in the heat" } }
+  "kn-0958":
+    native: "sky"
+    notes:
+      "n1": "The sky is ಆಕಾಶ (ākāśa), the word for the open space above you."
+    examples:
+      "ಆಕಾಶದಲ್ಲಿ ಮೋಡ ಇಲ್ಲ.": { native: "There are no clouds in the sky.", bases: { "ಆಕಾಶದಲ್ಲಿ": "in the sky" } }
+      "ಆಕಾಶ ನೋಡು.": "Look at the sky."
+  "kn-0959":
+    native: "sun"
+    notes:
+      "n1": "The sun itself. The sunlight is ಬಿಸಿಲು (bisilu)."
+    examples:
+      "ಸೂರ್ಯ ಉದಯಿಸುತ್ತಿದ್ದಾನೆ.": { native: "The sun is rising.", bases: { "ಉದಯಿಸುತ್ತಿದ್ದಾನೆ": "is rising" } }
+      "ಸೂರ್ಯ ತುಂಬಾ ಬಿಸಿ.": "The sun is very hot."
+  "kn-0960":
+    native: "moon"
+    notes:
+      "n1": "The moon is ಚಂದ್ರ (candra); the sun is ಸೂರ್ಯ (sūrya), and a star is ನಕ್ಷತ್ರ (nakṣatra)."
+    examples:
+      "ಆಕಾಶದಲ್ಲಿ ಚಂದ್ರ ಇದೆ.": { native: "There is the moon in the sky.", bases: { "ಆಕಾಶದಲ್ಲಿ": "in the sky", "ಇದೆ": "is, there is" } }
+      "ಚಂದ್ರ ಕಾಣುತ್ತಾನೆ.": { native: "The moon can be seen.", bases: { "ಕಾಣುತ್ತಾನೆ": "can be seen" } }
+  "kn-0961":
+    native: "star"
+    notes:
+      "n1": "The plural is ನಕ್ಷತ್ರಗಳು (nakṣatragaḷu), stars."
+    examples:
+      "ನಕ್ಷತ್ರಗಳು ಮಿನುಗುತ್ತಿವೆ.": { native: "The stars are twinkling.", bases: { "ನಕ್ಷತ್ರಗಳು": "stars", "ಮಿನುಗುತ್ತಿವೆ": "are twinkling" } }
+      "ಆಕಾಶದಲ್ಲಿ ನಕ್ಷತ್ರ ಇದೆ.": { native: "There is a star in the sky.", bases: { "ಆಕಾಶದಲ್ಲಿ": "in the sky", "ಇದೆ": "is, there is" } }
+  "kn-0962":
+    native: "thunder"
+    notes:
+      "n1": "Thunder is ಗುಡುಗು (guḍugu); lightning is ಮಿಂಚು (miñcu). Thunder usually comes with rain."
+    examples:
+      "ಗುಡುಗು ಕೇಳಿಸುತ್ತಿದೆ.": { native: "Thunder can be heard.", bases: { "ಕೇಳಿಸುತ್ತಿದೆ": "can be heard" } }
+      "ಗುಡುಗು ಬಂದ ಮೇಲೆ ಮಳೆ ಬರುತ್ತದೆ.": "After the thunder, the rain comes."
+  "kn-0963":
+    native: "lightning"
+    notes:
+      "n1": "Lightning is ಮಿಂಚು (miñcu). A bolt of lightning strikes; it is seen before the thunder is heard."
+    examples:
+      "ಮಿಂಚು ಹೊಡೆಯಿತು.": { native: "Lightning struck.", bases: { "ಹೊಡೆಯಿತು": "struck" } }
+      "ಮಿಂಚು ಮತ್ತು ಗುಡುಗು ಬರುತ್ತವೆ.": { native: "Lightning and thunder come.", bases: { "ಬರುತ್ತವೆ": "come" } }
+  "kn-0964":
+    native: "storm, strong wind"
+    notes:
+      "n1": "A strong wind, or a storm. A storm on the sea is ಚಂಡಮಾರುತ (caṇḍamāruta)."
+    examples:
+      "ಇಂದು ಬಿರುಗಾಳಿ ಬೀಸುತ್ತಿದೆ.": { native: "A storm is blowing today.", bases: { "ಬೀಸುತ್ತಿದೆ": "is blowing" } }
+      "ಬಿರುಗಾಳಿಯಲ್ಲಿ ಮರ ಬಿತ್ತು.": { native: "A tree fell in the storm.", bases: { "ಬಿರುಗಾಳಿಯಲ್ಲಿ": "in the storm", "ಬಿತ್ತು": "fell" } }
+  "kn-0965":
+    native: "cyclone"
+    notes:
+      "n1": "A big storm over the sea, which can reach the coast."
+    examples:
+      "ಚಂಡಮಾರುತ ಕರಾವಳಿಗೆ ಬರುತ್ತಿದೆ.": { native: "A cyclone is coming to the coast.", bases: { "ಕರಾವಳಿಗೆ": "to the coast", "ಬರುತ್ತಿದೆ": "is coming" } }
+      "ಚಂಡಮಾರುತ ತುಂಬಾ ಅಪಾಯಕಾರಿ.": { native: "A cyclone is very dangerous.", bases: { "ಅಪಾಯಕಾರಿ": "dangerous" } }
+  "kn-0966":
+    native: "rainbow"
+    notes:
+      "n1": "Made of rain and sun, it is seen after the rain stops."
+    examples:
+      "ಮಳೆ ನಿಂತ ಮೇಲೆ ಮಳೆಬಿಲ್ಲು ಕಾಣಿಸಿತು.": { native: "After the rain stopped, a rainbow appeared.", bases: { "ಕಾಣಿಸಿತು": "appeared" } }
+      "ಆಕಾಶದಲ್ಲಿ ಮಳೆಬಿಲ್ಲು ಇದೆ.": { native: "There is a rainbow in the sky.", bases: { "ಆಕಾಶದಲ್ಲಿ": "in the sky", "ಇದೆ": "is, there is" } }
+  "kn-0967":
+    native: "drop"
+    notes:
+      "n1": "A drop of rain or water. Rain drops are said as ಮಳೆ ಹನಿ (maḷe hani)."
+    examples:
+      "ಮಳೆ ಹನಿ ಬೀಳುತ್ತಿದೆ.": { native: "Raindrops are falling.", bases: { "ಬೀಳುತ್ತಿದೆ": "is falling" } }
+      "ಕೆಳಗೆ ಒಂದು ಹನಿ ಬಿತ್ತು.": { native: "A drop fell down.", bases: { "ಬಿತ್ತು": "fell" } }
+  "kn-0968":
+    native: "fog, mist"
+    notes:
+      "n1": "Fog and mist are both ಮಂಜು (mañju). Morning dew is ಇಬ್ಬನಿ (ibbani)."
+    examples:
+      "ಚಳಿಗಾಲದಲ್ಲಿ ಮಂಜು ಬೀಳುತ್ತದೆ.": { native: "In winter, fog falls.", bases: { "ಚಳಿಗಾಲದಲ್ಲಿ": "in winter", "ಬೀಳುತ್ತದೆ": "falls" } }
+      "ಬೆಟ್ಟದ ಮೇಲೆ ಮಂಜು ಇದೆ.": { native: "There is fog on the hill.", bases: { "ಇದೆ": "is, there is" } }
+  "kn-0969":
+    native: "dew"
+    notes:
+      "n1": "Dew forms in the cool morning, on grass and leaves."
+    examples:
+      "ಬೆಳಿಗ್ಗೆ ಹುಲ್ಲಿನ ಮೇಲೆ ಇಬ್ಬನಿ ಇದೆ.": { native: "In the morning there is dew on the grass.", bases: { "ಹುಲ್ಲಿನ": "of the grass", "ಇದೆ": "is, there is" } }
+      "ಇಬ್ಬನಿ ತಂಪು.": "Dew is cool."
+  "kn-0970":
+    native: "snow"
+    notes:
+      "n1": "Snow, which falls on high hills in winter."
+    examples:
+      "ಬೆಟ್ಟದ ಮೇಲೆ ಹಿಮ ಇದೆ.": { native: "There is snow on the hill.", bases: { "ಇದೆ": "is, there is" } }
+      "ಹಿಮ ತುಂಬಾ ತಂಪು.": "Snow is very cold."
+  "kn-0971":
+    native: "monsoon"
+    notes:
+      "n1": "The monsoon: the main rains from the south-west, which come in June."
+    examples:
+      "ಮುಂಗಾರು ಮಳೆ ಬರುತ್ತದೆ.": "The monsoon rain comes."
+      "ಮುಂಗಾರಿನಲ್ಲಿ ಮಳೆ ತುಂಬಾ ಇದೆ.": { native: "There is a lot of rain in the monsoon.", bases: { "ಮುಂಗಾರಿನಲ್ಲಿ": "in the monsoon", "ಇದೆ": "is, there is" } }
+  "kn-0972":
+    native: "summer"
+    notes:
+      "n1": "The hot season. Summer heat is ಸೆಕೆ (seke) or ಬಿಸಿಲು (bisilu)."
+    examples:
+      "ಬೇಸಿಗೆಯಲ್ಲಿ ತುಂಬಾ ಬಿಸಿಲು ಇದೆ.": { native: "In summer there is a lot of sun.", bases: { "ಬೇಸಿಗೆಯಲ್ಲಿ": "in summer", "ಇದೆ": "is, there is" } }
+      "ಬೇಸಿಗೆ ಮುಗಿದ ಮೇಲೆ ಮಳೆ ಬರುತ್ತದೆ.": { native: "After summer ends, the rain comes.", bases: { "ಮುಗಿದ": "ended" } }
+  "kn-0973":
+    native: "winter"
+    notes:
+      "n1": "The cold season. Its cold is ಚಳಿ (caḷi)."
+    examples:
+      "ಚಳಿಗಾಲದಲ್ಲಿ ಚಳಿ ಇದೆ.": { native: "There is cold in winter.", bases: { "ಚಳಿಗಾಲದಲ್ಲಿ": "in winter", "ಇದೆ": "is, there is" } }
+      "ಚಳಿಗಾಲದಲ್ಲಿ ಮಂಜು ಬೀಳುತ್ತದೆ.": { native: "In winter, fog falls.", bases: { "ಚಳಿಗಾಲದಲ್ಲಿ": "in winter", "ಬೀಳುತ್ತದೆ": "falls" } }
+  "kn-0974":
+    native: "rainy season"
+    notes:
+      "n1": "The season of rain. The rain itself is ಮಳೆ (maḷe)."
+    examples:
+      "ಮಳೆಗಾಲದಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆ.": { native: "In the rainy season, rain comes.", bases: { "ಮಳೆಗಾಲದಲ್ಲಿ": "in the rainy season" } }
+      "ಮಳೆಗಾಲದಲ್ಲಿ ಛತ್ರಿ ಬೇಕು.": { native: "In the rainy season you need an umbrella.", bases: { "ಮಳೆಗಾಲದಲ್ಲಿ": "in the rainy season" } }
+  "kn-0975":
+    native: "weather, climate"
+    notes:
+      "n1": "The weather of a place and a day. Asking how the weather is: ಹವಾಮಾನ ಹೇಗಿದೆ? (havāmāna hēgide?)"
+    examples:
+      "ಇಂದಿನ ಹವಾಮಾನ ಹೇಗಿದೆ?": "How is today's weather?"
+      "ಹವಾಮಾನ ಚೆನ್ನಾಗಿದೆ.": "The weather is good."
+  "kn-0976":
+    native: "temperature"
+    notes:
+      "n1": "How hot or cold it is, in degrees."
+    examples:
+      "ತಾಪಮಾನ ಕಡಿಮೆ.": "The temperature is low."
+      "ಇವತ್ತಿನ ತಾಪಮಾನ ಎಷ್ಟು?": "What is today's temperature?"
+  "kn-0977":
+    native: "cool"
+    notes:
+      "n1": "Cool, not cold. The noun for a coolness is also ತಂಪು (tampu)."
+    examples:
+      "ಸಂಜೆ ತಂಪು ಆಗಿದೆ.": { native: "It is cool in the evening.", bases: { "ಆಗಿದೆ": "has become, is" } }
+      "ತಂಪು ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.": { native: "A cool wind is blowing.", bases: { "ಬೀಸುತ್ತಿದೆ": "is blowing" } }
+  "kn-0978":
+    native: "dry"
+    notes:
+      "n1": "Dry, with no water in it."
+    examples:
+      "ಈ ಬೇಸಿಗೆ ತುಂಬಾ ಒಣ.": "This summer is very dry."
+      "ಮಳೆ ಇಲ್ಲ, ಕೆರೆ ಒಣ ಆಗಿದೆ.": { native: "There is no rain, and the pond is dry.", bases: { "ಆಗಿದೆ": "has become, is" } }
+  "kn-0979":
+    native: "damp, moisture"
+    notes:
+      "n1": "Damp things, such as cloth in the rain, are ತೇವ (tēva)."
+    examples:
+      "ಬಟ್ಟೆ ತೇವ ಆಗಿದೆ.": { native: "The cloth is damp.", bases: { "ಆಗಿದೆ": "has become, is" } }
+      "ಮಳೆಗಾಲದಲ್ಲಿ ತೇವ ತುಂಬಾ.": { native: "There is a lot of damp in the rainy season.", bases: { "ಮಳೆಗಾಲದಲ್ಲಿ": "in the rainy season" } }
+  "kn-0980":
+    native: "drought"
+    notes:
+      "n1": "A drought, when there is no rain for a long time."
+    examples:
+      "ಮಳೆ ಇಲ್ಲದೆ ಬರ ಬಂತು.": "Without rain, a drought came."
+      "ಬರ ಇದ್ದರೆ ನೀರು ಕಡಿಮೆ.": { native: "If there is a drought, water is scarce.", bases: { "ಇದ್ದರೆ": "if there is" } }
+  "kn-0981":
+    native: "flood"
+    notes:
+      "n1": "Water that covers the land after too much rain."
+    examples:
+      "ನದಿಯಲ್ಲಿ ಪ್ರವಾಹ ಬಂತು.": "A flood came in the river."
+      "ಮಳೆ ತುಂಬಾ ಬಂದರೆ ಪ್ರವಾಹ ಬರುತ್ತದೆ.": "If too much rain comes, a flood comes."
+  "kn-0982":
+    native: "to fall"
+    notes:
+      "n1": "To fall, as rain or a tree does."
+    examples:
+      "ಮಳೆ ಬೀಳುತ್ತಿದೆ.": { native: "Rain is falling.", bases: { "ಬೀಳುತ್ತಿದೆ": "is falling" } }
+      "ಮರ ಕೆಳಗೆ ಬಿತ್ತು.": { native: "The tree fell down.", bases: { "ಬಿತ್ತು": "fell" } }
+  "kn-0983":
+    native: "to blow"
+    notes:
+      "n1": "To blow, said of the wind."
+    examples:
+      "ಗಾಳಿ ಬೀಸಿತು.": { native: "The wind blew.", bases: { "ಬೀಸಿತು": "blew" } }
+      "ಬೀಸುವ ಗಾಳಿ ತಂಪು.": { native: "The blowing wind is cool.", bases: { "ಬೀಸುವ": "blowing" } }
+  "kn-0984":
+    native: "to blaze, to burn"
+    notes:
+      "n1": "To blaze, said of the sun. A burn is also ಉರಿ (uri)."
+    examples:
+      "ಬಿಸಿಲು ತುಂಬಾ ಉರಿಯುತ್ತಿದೆ.": { native: "The sun is blazing a lot.", bases: { "ಉರಿಯುತ್ತಿದೆ": "is blazing" } }
+      "ಉರಿ ಬಿಸಿಲಿನಲ್ಲಿ ಹೋಗಬೇಡ.": { native: "Do not go out in the blazing sun.", bases: { "ಬಿಸಿಲಿನಲ್ಲಿ": "in the sun" } }
+  "kn-0985":
+    native: "warm"
+    notes:
+      "n1": "Warm, not hot: the warm wind of spring is a ಬೆಚ್ಚಗಿನ ಗಾಳಿ (beccagina gāḷi)."
+    examples:
+      "ಬೆಚ್ಚಗಿನ ಗಾಳಿ ಬೀಸುತ್ತಿದೆ.": { native: "A warm wind is blowing.", bases: { "ಬೀಸುತ್ತಿದೆ": "is blowing" } }
+      "ಚಳಿಗಾಲದಲ್ಲಿ ಬೆಚ್ಚಗಿನ ಬಟ್ಟೆ ಬೇಕು.": { native: "In winter you need warm clothes.", bases: { "ಚಳಿಗಾಲದಲ್ಲಿ": "in winter" } }
+  "kn-0986":
+    native: "light"
+    notes:
+      "n1": "Light, which lets you see; the opposite is ಕತ್ತಲು (kattalu)."
+    examples:
+      "ಬೆಳಕು ಇದೆ.": { native: "There is light.", bases: { "ಇದೆ": "is, there is" } }
+      "ಕತ್ತಲಲ್ಲಿ ಬೆಳಕು ಬೇಕು.": { native: "In the dark you need light.", bases: { "ಕತ್ತಲಲ್ಲಿ": "in the dark" } }
+  "kn-0987":
+    native: "darkness"
+    notes:
+      "n1": "Darkness, as at night or in a storm."
+    examples:
+      "ರಾತ್ರಿ ಕತ್ತಲು ಆಯಿತು.": "It became dark at night."
+      "ಮೋಡದಿಂದ ಕತ್ತಲು ಆಯಿತು.": { native: "The clouds made it dark.", bases: { "ಮೋಡದಿಂದ": "by the cloud" } }
+  "kn-0988":
+    native: "shade"
+    notes:
+      "n1": "The shade is cool; the shade of a tree is ಮರದ ನೆರಳು (marada neraḷu)."
+    examples:
+      "ಮರದ ನೆರಳು ತಂಪು.": "The shade of the tree is cool."
+      "ಬಿಸಿಲಿನಲ್ಲಿ ನೆರಳು ಇಲ್ಲ.": { native: "There is no shade in the sun.", bases: { "ಬಿಸಿಲಿನಲ್ಲಿ": "in the sun" } }
+  "kn-0989":
+    native: "hot wind"
+    notes:
+      "n1": "A hot wind, dry from the land, in the hot season."
+    examples:
+      "ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಸಿಗಾಳಿ ಬೀಸುತ್ತದೆ.": { native: "In summer a hot wind blows.", bases: { "ಬೇಸಿಗೆಯಲ್ಲಿ": "in summer", "ಬೀಸುತ್ತದೆ": "blows" } }
+      "ಬಿಸಿಗಾಳಿಯಲ್ಲಿ ಬೆವರು ಬರುತ್ತದೆ.": { native: "In a hot wind you sweat.", bases: { "ಬಿಸಿಗಾಳಿಯಲ್ಲಿ": "in a hot wind" } }
+  "kn-0990":
+    native: "mud"
+    notes:
+      "n1": "Mud after rain, on the road."
+    examples:
+      "ಮಳೆ ಬಂದ ಮೇಲೆ ರಸ್ತೆ ಕೆಸರು ಆಯಿತು.": "After the rain, the road turned muddy."
+      "ಕೆಸರು ನೀರು ಇದೆ.": { native: "There is muddy water.", bases: { "ಇದೆ": "is, there is" } }
+  "kn-0991":
+    native: "hail"
+    notes:
+      "n1": "Hail: small balls of ice that fall with the rain in a storm."
+    examples:
+      "ಆಲಿಕಲ್ಲು ಬಿತ್ತು.": { native: "Hail fell.", bases: { "ಬಿತ್ತು": "fell" } }
+      "ಆಲಿಕಲ್ಲು ಮತ್ತು ಮಳೆ ಬಂತು.": "Hail and rain came."
+  "kn-0992":
+    native: "sweat"
+    notes:
+      "n1": "Sweat, which comes in the heat or in hard work."
+    examples:
+      "ಸೆಕೆಯಲ್ಲಿ ಬೆವರು ಬರುತ್ತದೆ.": { native: "In the heat, sweat comes.", bases: { "ಸೆಕೆಯಲ್ಲಿ": "in the heat" } }
+      "ನನಗೆ ಬೆವರು ಬರುತ್ತಿದೆ.": { native: "I am sweating.", bases: { "ಬರುತ್ತಿದೆ": "is coming" } }
+  "kn-0993":
+    native: "season"
+    notes:
+      "n1": "A season of the year, such as ಮಳೆಗಾಲ (maḷegāla) or ಚಳಿಗಾಲ (caḷigāla)."
+    examples:
+      "ಈಗ ಮಳೆ ಋತು.": "It is the rainy season now."
+      "ಇದು ಯಾವ ಋತು?": "Which season is this?"
+  "kn-0994":
+    native: "dust"
+    notes:
+      "n1": "Dust in the air, blown by the wind."
+    examples:
+      "ಗಾಳಿಯಲ್ಲಿ ಧೂಳು ಇದೆ.": { native: "There is dust in the air.", bases: { "ಗಾಳಿಯಲ್ಲಿ": "in the air", "ಇದೆ": "is, there is" } }
+      "ಮಳೆ ಬಂದರೆ ಧೂಳು ಹೋಗುತ್ತದೆ.": "If it rains, the dust goes away."
