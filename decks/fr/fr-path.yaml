@@ -178,11 +178,9 @@ units:
   - decks: ["fr-grammar-present-ir", "fr-grammar-present-re", "fr-reading-present-ir-re"]
     words: 0
     grammar: ["present-ir", "present-re"]
-  - planned: { id: "fr-grammar-present-irregular", grammar: "present-irregular" }
-    listening_passages:
-      - { id: "what-do-you-do-today", text: { "en": "Saying what you do, where you go and what you can and want to do" } }
-    reading_passages:
-      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  - decks: ["fr-grammar-present-irregular", "fr-reading-present-irregular"]
+    words: 0
+    grammar: ["present-irregular"]
   - planned: { id: "fr-grammar-imperatives", grammar: "imperatives" }
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
