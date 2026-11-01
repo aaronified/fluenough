@@ -213,11 +213,8 @@ units:
   - decks: ["fr-demonstratives", "fr-grammar-demonstratives", "fr-reading-demonstratives"]
     words: 2
     grammar: ["demonstratives"]
-  - planned: { id: "fr-home", theme: "home", words: 35 }
-    listening_passages:
-      - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
-    reading_passages:
-      - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
+  - decks: ["fr-home", "fr-home-sentences", "fr-reading-home", "*"]
+    words: 22
   - planned: { id: "fr-time", theme: "time", words: 30 }
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }

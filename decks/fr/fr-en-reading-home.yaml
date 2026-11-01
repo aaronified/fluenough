@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-home"
+name: "Reading: home"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a flat: a tour of the rooms and an advert, with words such as chambre, balcon and immeuble. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-flat-tour"
+    title: "A tour of a flat, room by room"
+    theme: "home"
+    sentences:
+      - text: "Mon appartement est petit."
+      - text: "La chambre est au premier étage."
+      - text: "Le salon est grand."
+      - text: "Le balcon est près de la fenêtre."
+    questions:
+      - id: "fr-1025"
+        prompt: { en: "How big is the flat?" }
+        options:
+          - { en: "Small" }
+          - { en: "Big" }
+          - { en: "Huge" }
+        answer: 1
+      - id: "fr-1026"
+        prompt: { en: "Which floor is the bedroom on?" }
+        options:
+          - { en: "The first floor" }
+          - { en: "The ground floor" }
+          - { en: "The top floor" }
+        answer: 1
+      - id: "fr-1027"
+        prompt: { en: "What is near the window?" }
+        options:
+          - { en: "The balcony" }
+          - { en: "The garage" }
+          - { en: "The door" }
+        answer: 1
+  - id: "fr-flat-advert"
+    title: "A short advert for a flat"
+    theme: "home"
+    sentences:
+      - text: "Un appartement dans un immeuble."
+      - text: "La cuisine est grande."
+      - text: "Le garage est fermé."
+      - text: "Le jardin est joli."
+    questions:
+      - id: "fr-1028"
+        prompt: { en: "Where is the flat?" }
+        options:
+          - { en: "In a block of flats" }
+          - { en: "In a house" }
+          - { en: "In a garden" }
+        answer: 1
+      - id: "fr-1029"
+        prompt: { en: "What is big?" }
+        options:
+          - { en: "The kitchen" }
+          - { en: "The garage" }
+          - { en: "The window" }
+        answer: 1
+      - id: "fr-1030"
+        prompt: { en: "What is closed?" }
+        options:
+          - { en: "The garage" }
+          - { en: "The garden" }
+          - { en: "The kitchen" }
+        answer: 1

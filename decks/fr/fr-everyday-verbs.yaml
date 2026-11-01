@@ -17,7 +17,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je mange une pomme.", ipa: "ʒə mɑ̃ʒ yn pɔm", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", ref: "fr-0545" }, { word: "pomme", ref: "fr-0740" }] }
-      - { target: "Nous mangeons à la maison.", ipa: "nu mɑ̃ʒɔ̃ a la mɛzɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "maison", base: "maison" }] }
+      - { target: "Nous mangeons à la maison.", ipa: "nu mɑ̃ʒɔ̃ a la mɛzɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
   - id: "fr-0283"
     target: "boire"
     ipa: "bwaʁ"
@@ -166,7 +166,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je nettoie la maison.", ipa: "ʒə netwa la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "maison", base: "maison" }] }
+      - { target: "Je nettoie la maison.", ipa: "ʒə netwa la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
       - { target: "Vous nettoyez la table ?", ipa: "vu netwaje la tabl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "nettoyez", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "table", base: "table" }] }
   - id: "fr-0298"
     target: "ouvrir"
@@ -176,8 +176,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'ouvre la porte.", ipa: "ʒuvʁ la pɔʁt", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "porte", base: "porte" }] }
-      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }] }
+      - { target: "J'ouvre la porte.", ipa: "ʒuvʁ la pɔʁt", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", ref: "fr-1004" }] }
   - id: "fr-0299"
     target: "fermer"
     ipa: "fɛʁme"
@@ -186,8 +186,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je ferme la porte.", ipa: "ʒə fɛʁm la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ferme", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "porte", base: "porte" }] }
-      - { target: "Fermez la fenêtre !", ipa: "fɛʁme la fənɛtʁ", bases: [{ word: "Fermez", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }] }
+      - { target: "Je ferme la porte.", ipa: "ʒə fɛʁm la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ferme", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Fermez la fenêtre !", ipa: "fɛʁme la fənɛtʁ", bases: [{ word: "Fermez", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", ref: "fr-1004" }] }
   - id: "fr-0300"
     target: "chercher"
     ipa: "ʃɛʁʃe"

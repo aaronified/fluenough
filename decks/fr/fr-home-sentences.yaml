@@ -1,0 +1,103 @@
+schema: 1
+id: "fr-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1018"
+    target: "Ma maison est près du parc."
+    ipa: "ma mɛzɔ̃ ɛ pʁɛ dy paʁk"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "maison", ref: "fr-0996" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "du", base: "du" }
+      - { word: "parc", ref: "fr-0968" }
+    confusables:
+      - { id: "appartement", ref: "fr-0997", kind: "word" }
+      - { id: "immeuble", ref: "fr-1011", kind: "word" }
+  - id: "fr-1019"
+    target: "Je dors dans la chambre."
+    ipa: "ʒə dɔʁ dɑ̃ la ʃɑ̃bʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "dors", ref: "fr-0284" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "chambre", ref: "fr-0998" }
+    confusables:
+      - { id: "salon", ref: "fr-0999", kind: "word" }
+      - { id: "salle", ref: "fr-1014", kind: "word" }
+  - id: "fr-1020"
+    target: "La porte est fermée."
+    ipa: "la pɔʁt ɛ fɛʁme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "porte", ref: "fr-1003" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fermée", ref: "fr-0438" }
+    confusables:
+      - { id: "fenetre", ref: "fr-1004", kind: "word" }
+      - { id: "mur", ref: "fr-1015", kind: "word" }
+  - id: "fr-1021"
+    target: "Le frigo est plein."
+    ipa: "lə fʁigo ɛ plɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "frigo", ref: "fr-1008" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "plein", ref: "fr-0439" }
+    confusables:
+      - { id: "lit", ref: "fr-1005", kind: "word" }
+      - { id: "canape", ref: "fr-1007", kind: "word" }
+  - id: "fr-1022"
+    target: "Je monte l'escalier."
+    ipa: "ʒə mɔ̃t lɛskalje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "monte", ref: "fr-0516" }
+      - { word: "l'escalier", ref: "fr-1002" }
+    confusables:
+      - { id: "etage", ref: "fr-1010", kind: "word" }
+      - { id: "balcon", ref: "fr-1001", kind: "word" }
+  - id: "fr-1023"
+    target: "Nous jouons dans le jardin."
+    ipa: "nu ʒwɔ̃ dɑ̃ lə ʒaʁdɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "jouons", ref: "fr-0308" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "jardin", ref: "fr-1000" }
+    confusables:
+      - { id: "balcon", ref: "fr-1001", kind: "word" }
+      - { id: "garage", ref: "fr-1012", kind: "word" }
+  - id: "fr-1024"
+    target: "Le sol est propre."
+    ipa: "lə sɔl ɛ pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sol", ref: "fr-1016" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "propre", ref: "fr-0427" }
+    confusables:
+      - { id: "mur", ref: "fr-1015", kind: "word" }
+      - { id: "lampe", ref: "fr-1017", kind: "word" }

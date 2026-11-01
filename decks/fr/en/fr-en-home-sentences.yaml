@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-home-sentences"
+kind: "layer"
+core: "fr-home-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: home"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about a home, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1018":
+    native: "My house is near the park."
+    bases:
+      "du": "of the (masculine); some"
+    confusables:
+      "appartement": { why: "Appartement is 'flat', one home in a block." }
+      "immeuble": { why: "Immeuble is 'block of flats'." }
+  "fr-1019":
+    native: "I sleep in the bedroom."
+    confusables:
+      "salon": { why: "Salon is 'living room'." }
+      "salle": { why: "Salle is 'room', a larger room." }
+  "fr-1020":
+    native: "The door is closed."
+    confusables:
+      "fenetre": { why: "Fenêtre is 'window'." }
+      "mur": { why: "Mur is 'wall'." }
+  "fr-1021":
+    native: "The fridge is full."
+    confusables:
+      "lit": { why: "Lit is 'bed'." }
+      "canape": { why: "Canapé is 'sofa'." }
+  "fr-1022":
+    native: "I go up the stairs."
+    confusables:
+      "etage": { why: "Étage is 'floor', a level of the building." }
+      "balcon": { why: "Balcon is 'balcony', outside." }
+  "fr-1023":
+    native: "We play in the garden."
+    confusables:
+      "balcon": { why: "Balcon is 'balcony', above the street." }
+      "garage": { why: "Garage is 'garage'." }
+  "fr-1024":
+    native: "The floor is clean."
+    confusables:
+      "mur": { why: "Mur is 'wall'." }
+      "lampe": { why: "Lampe is 'lamp'." }
