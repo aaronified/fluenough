@@ -1,0 +1,85 @@
+schema: 1
+id: "as-grammar-past-continuous-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2832"
+    target: "মই আজি ভাত খাই আছিলোঁ।"
+    reading: "moi āzi bhāt khāi āsilum̐."
+    ipa: "moi azi bʱat kʰai asilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "খাই", ref: "as-0109" }
+      - { word: "আছিলোঁ", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "খাইছোঁ", reading: "khāisum̐", kind: "form" }
+      - { id: "c2", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+  - id: "as-2833"
+    target: "তুমি কিতাপ পঢ়ি আছিলা।"
+    reading: "tumi kitāp pôrhi āsilā."
+    ipa: "tumi kitap poɹi asila"
+    pos: "phrase"
+    bases:
+      - { word: "পঢ়ি", ref: "as-2203" }
+      - { word: "আছিলা", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "পঢ়িছা", reading: "pôrhisā", kind: "form" }
+      - { id: "c2", word: "পঢ়িবা", reading: "pôrhibā", kind: "form" }
+  - id: "as-2834"
+    target: "সি ৰান্ধি আছিল।"
+    reading: "xi rāndhi āsil."
+    ipa: "si ɹandʱi asil"
+    pos: "phrase"
+    bases:
+      - { word: "ৰান্ধি", ref: "as-2209" }
+      - { word: "আছিল", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ৰান্ধে", reading: "rāndhe", kind: "form" }
+      - { id: "c2", word: "ৰান্ধিব", reading: "rāndhib", kind: "form" }
+  - id: "as-2835"
+    target: "আমি গৈ আছিলো।"
+    reading: "āmi goi āsilu."
+    ipa: "ami ɡɔi asilʊ"
+    pos: "phrase"
+    bases:
+      - { word: "গৈ", ref: "as-2200" }
+      - { word: "আছিলো", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "গৈছো", reading: "goisu", kind: "form" }
+      - { id: "c2", word: "যাওঁ", reading: "zāum̐", kind: "form" }
+  - id: "as-2836"
+    target: "তেওঁ শুই আছিল।"
+    reading: "teum̐ xui āsil."
+    ipa: "teʊ̃ xui asil"
+    pos: "phrase"
+    bases:
+      - { word: "শুই", ref: "as-0379" }
+      - { word: "আছিল", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "শুইছে", reading: "xuise", kind: "form" }
+      - { id: "c2", word: "শোৱা", reading: "xuwā", kind: "word" }
+  - id: "as-2837"
+    target: "মই কিতাপ পঢ়ি আছিলোঁ।"
+    reading: "moi kitāp pôrhi āsilum̐."
+    ipa: "moi kitap poɹi asilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "পঢ়ি", ref: "as-2203" }
+      - { word: "আছিলোঁ", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "লিখি", reading: "likhi", kind: "form" }
+      - { id: "c2", word: "দেখি", reading: "dekhi", kind: "form" }
+  - id: "as-2838"
+    target: "সি কাম কৰি আছিল।"
+    reading: "xi kām kôri āsil."
+    ipa: "si kam koɹi asil"
+    pos: "phrase"
+    bases:
+      - { word: "কৰি", ref: "as-2202" }
+      - { word: "আছিল", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "খালী", reading: "khāli", kind: "word" }
+      - { id: "c2", word: "ঘৰ", reading: "ghôr", kind: "word" }

@@ -1,0 +1,30 @@
+schema: 1
+id: "as-en-grammar-past-continuous"
+kind: "layer"
+core: "as-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Was doing: the past continuous"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says what was going on at a time in the past: the verb in its joining form, then আছিল (āsil), was. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Was doing: the past continuous"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "I: মই (moi)": "I"
+    "you: তুমি (tumi)": "you (informal)"
+    "he or she: সি (xi)": "he or she"
+    "we: আমি (āmi)": "we"
+  entries:
+    "khua": "to eat"
+    "kora": "to do"
+    "zua": "to go"
+    "porha": "to read; to study"
+    "likha": "to write"
+    "xuna": "to hear; to listen"
+    "dekha": "to see; to look at"
+    "aha": "to come"
+    "xua": "to sleep; to lie down"
+    "randha": "to cook"
+  notes: "The joining form of the verb (খাই (khāi), কৰি (kôri), গৈ (goi)), then আছিল (āsil) with the person ending: -লোঁ (-lum̐) for I, -লা (-lā) for you, -ল (-l) for he or she, -লো (-lu) for we. For যোৱা (zuwā), go, the joining form is গৈ (goi): গৈ আছিলোঁ (goi āsilum̐), I was going."

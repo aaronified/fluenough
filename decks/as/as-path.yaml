@@ -334,11 +334,15 @@ units:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
   - decks: ["as-reading-hobbies"]
     words: 0
-  - planned: { id: "as-grammar-past-continuous", grammar: "past-continuous" }
+  - decks: ["as-grammar-past-continuous", "as-grammar-past-continuous-sentences"]
+    words: 0
+    grammar: ["past-continuous"]
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
       - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
+  - decks: ["as-reading-past-continuous"]
+    words: 0
   - planned: { id: "as-chores", theme: "chores", words: 40 }
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }

@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-past-continuous"
+name: "Assamese reading: was doing: the past continuous"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-what-was-happening"
+    title: "What was happening"
+    sentences:
+      - text: "আমি তেতিয়া ভাত খাই আছিলো।"
+        reading: "āmi tetiyā bhāt khāi āsilu."
+      - text: "মই কিতাপ পঢ়ি আছিলোঁ।"
+        reading: "moi kitāp pôrhi āsilum̐."
+      - text: "তাই গীত গাই আছিল।"
+        reading: "tāi git gāi āsil."
+      - text: "সি শুই আছিল।"
+        reading: "xi xui āsil."
+    questions:
+      - id: "as-2839"
+        prompt: { en: "The speaker was eating rice." }
+        answer: true
+      - id: "as-2840"
+        prompt: { en: "What was the speaker reading?" }
+        options:
+          - { en: "A book" }
+          - { en: "A letter" }
+          - { en: "A sign" }
+        answer: 1
+      - id: "as-2841"
+        prompt: { en: "What was he doing?" }
+        options:
+          - { en: "Cooking" }
+          - { en: "Lying down" }
+          - { en: "Dancing" }
+        answer: 2
+  - id: "as-power-cut-story"
+    title: "An evening in a power cut"
+    sentences:
+      - text: "সেইদিনা বিজুলী নাই।"
+        reading: "seidinā bijuli nāi."
+      - text: "আমি বাহিৰত বহি আছিলো।"
+        reading: "āmi bāhirôt bôhi āsilu."
+      - text: "ল'ৰাটো গল্প কৈ আছিল।"
+        reading: "lorātu galpô kôi āsil."
+      - text: "তেতিয়া ৰাতি হৈছিল।"
+        reading: "tetiyā rāti hôisil."
+    questions:
+      - id: "as-2842"
+        prompt: { en: "There was no electricity that day." }
+        answer: true
+      - id: "as-2843"
+        prompt: { en: "Where were the people sitting?" }
+        options:
+          - { en: "Inside" }
+          - { en: "Outside" }
+          - { en: "On the roof" }
+        answer: 2
+      - id: "as-2844"
+        prompt: { en: "What was the boy doing?" }
+        options:
+          - { en: "Telling a story" }
+          - { en: "Sleeping" }
+          - { en: "Eating" }
+        answer: 1
