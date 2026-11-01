@@ -1,0 +1,263 @@
+schema: 1
+id: "hi-money"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "money"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2743"
+    target: "ख़र्च"
+    target_scripts: {"perso_arabic": "خرچ"}
+    reading: "k͟harc"
+    ipa: "xərtʃ"
+    phonetic: "[xərtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "घर का ख़र्च बढ़ गया है।", "reading": "ghar kā k͟harc baṛh gayā hai.", "ipa": "ɡʱər kaː xərtʃ bəɽʱ ɡəjaː ɦɛː", "bases": [{"word": "घर", "ref": "hi-0192"}, {"word": "का", "ref": "hi-0279"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "गया", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ख़र्च ध्यान से सोचकर करो।", "reading": "k͟harc dhyān sē sōckar karō.", "ipa": "xərtʃ d̪ʱjaːn seː soːtʃkər kəroː", "bases": [{"word": "ध्यान", "base": "ध्यान", "reading": "dhyān"}, {"word": "से", "ref": "hi-0276"}, {"word": "सोचकर", "ref": "hi-0953"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2744"
+    target: "आमदनी"
+    target_scripts: {"perso_arabic": "آمدنی"}
+    reading: "āmdnī"
+    ipa: "aːmd̪niː"
+    phonetic: "[aːmd̪niː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसकी आमदनी अच्छी है।", "reading": "uskī āmdnī acchī hai.", "ipa": "ʊskiː aːmd̪niː ətʃtʃʰiː ɦɛː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आमदनी से ज़्यादा ख़र्च मत करो।", "reading": "āmdnī sē zyādā k͟harc mat karō.", "ipa": "aːmd̪niː seː zjaːd̪aː xərtʃ mət̪ kəroː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "ज़्यादा", "ref": "hi-0816"}, {"word": "ख़र्च", "ref": "hi-2743"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2745"
+    target: "कमाई"
+    target_scripts: {"perso_arabic": "کمائی"}
+    reading: "kamāī"
+    ipa: "kəmaːiː"
+    phonetic: "[kəmaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरी कमाई इस महीने कम है।", "reading": "mērī kamāī is mahīnē kam hai.", "ipa": "meːriː kəmaːiː ɪs məɦiːneː kəm ɦɛː", "bases": [{"word": "मेरी", "ref": "hi-0752"}, {"word": "इस", "ref": "hi-0748"}, {"word": "महीने", "ref": "hi-0317"}, {"word": "कम", "ref": "hi-0105"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मेहनत की कमाई पर गर्व करो।", "reading": "mēhnat kī kamāī par garv karō.", "ipa": "meːɦnət̪ kiː kəmaːiː pər ɡərʋ kəroː", "bases": [{"word": "मेहनत", "base": "मेहनत", "reading": "mēhnat"}, {"word": "की", "ref": "hi-0279"}, {"word": "कमाई", "base": "कमाई", "reading": "kamāī"}, {"word": "पर", "ref": "hi-0275"}, {"word": "गर्व", "ref": "hi-2117"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2746"
+    target: "बजट"
+    target_scripts: {"perso_arabic": "بجٹ"}
+    reading: "bajaṭ"
+    ipa: "bədʒəʈ"
+    phonetic: "[bədʒəʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस महीने का बजट तैयार करो।", "reading": "is mahīnē kā bajaṭ taiyār karō.", "ipa": "ɪs məɦiːneː kaː bədʒəʈ t̪ɛːjaːr kəroː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "महीने", "ref": "hi-0317"}, {"word": "का", "ref": "hi-0279"}, {"word": "तैयार", "base": "तैयार", "reading": "taiyār"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "बजट से बाहर मत जाओ।", "reading": "bajaṭ sē bāhar mat jāō.", "ipa": "bədʒəʈ seː baːɦər mət̪ dʒaːoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बाहर", "ref": "hi-0837"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "जाओ", "ref": "hi-0777"}]}
+  - id: "hi-2747"
+    target: "उधार"
+    target_scripts: {"perso_arabic": "ادھار"}
+    reading: "udhār"
+    ipa: "ʊd̪ʱaːr"
+    phonetic: "[ʊd̪ʱaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने मुझसे उधार लिया।", "reading": "usnē mujhsē udhār liyā.", "ipa": "ʊsneː mʊdʒʱseː ʊd̪ʱaːr lɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "मुझसे", "ref": "hi-0745"}, {"word": "लिया", "ref": "hi-0786"}]}
+      - {"target": "दुकान पर उधार नहीं मिलेगा।", "reading": "dukān par udhār nahīm̐ milēgā.", "ipa": "d̪ʊkaːn pər ʊd̪ʱaːr nəɦĩː mɪleːɡaː", "bases": [{"word": "दुकान", "ref": "hi-0239"}, {"word": "पर", "ref": "hi-0275"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "मिलेगा", "ref": "hi-0793"}]}
+  - id: "hi-2748"
+    target: "लाभ"
+    target_scripts: {"perso_arabic": "فائدہ"}
+    reading: "lābh"
+    ipa: "laːbʱ"
+    phonetic: "[laːbʱ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस सौदे में बड़ा लाभ है।", "reading": "is saudē mēm̐ baṛā lābh hai.", "ipa": "ɪs sɔːd̪eː mẽː bəɽaː laːbʱ ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "सौदे", "ref": "hi-1360"}, {"word": "में", "ref": "hi-0274"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "योजना से सबको लाभ होगा।", "reading": "yōjnā sē sabkō lābh hōgā.", "ipa": "joːdʒnaː seː səbkoː laːbʱ ɦoːɡaː", "bases": [{"word": "योजना", "ref": "hi-2018"}, {"word": "से", "ref": "hi-0276"}, {"word": "सबको", "ref": "hi-0054"}, {"word": "होगा", "ref": "hi-0780"}]}
+  - id: "hi-2749"
+    target: "घाटा"
+    target_scripts: {"perso_arabic": "گھاٹا"}
+    reading: "ghāṭā"
+    ipa: "ɡʱaːʈaː"
+    phonetic: "[ɡʱaːʈaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस साल दुकान में घाटा हुआ।", "reading": "is sāl dukān mēm̐ ghāṭā huā.", "ipa": "ɪs saːl d̪ʊkaːn mẽː ɡʱaːʈaː ɦʊaː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "साल", "ref": "hi-0318"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "में", "ref": "hi-0274"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "घाटे से बचने के लिए बजट बनाओ।", "reading": "ghāṭē sē bacnē kē liē bajaṭ banāō.", "ipa": "ɡʱaːʈeː seː bətʃneː keː lɪeː bədʒəʈ bənaːoː", "bases": [{"word": "घाटे", "base": "घाटा", "reading": "ghāṭā"}, {"word": "से", "ref": "hi-0276"}, {"word": "बचने", "ref": "hi-1826"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "बजट", "ref": "hi-2746"}, {"word": "बनाओ", "ref": "hi-1502"}]}
+  - id: "hi-2750"
+    target: "कंजूस"
+    target_scripts: {"perso_arabic": "کنجوس"}
+    reading: "kañjūs"
+    ipa: "kəɲdʒuːs"
+    phonetic: "[kəɲdʒuːs]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह बहुत कंजूस है।", "reading": "vah bahut kañjūs hai.", "ipa": "ʋəɦ bəɦʊt̪ kəɲdʒuːs ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कंजूस मत बनो।", "reading": "kañjūs mat banō.", "ipa": "kəɲdʒuːs mət̪ bənoː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "बनो", "ref": "hi-1833"}]}
+  - id: "hi-2751"
+    target: "दिवालिया"
+    target_scripts: {"perso_arabic": "دیوالیہ"}
+    reading: "divāliyā"
+    ipa: "d̪ɪʋaːlɪjaː"
+    phonetic: "[d̪ɪʋaːlɪjaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कंपनी दिवालिया हो गई।", "reading": "kampanī divāliyā hō gaī.", "ipa": "kəmpəniː d̪ɪʋaːlɪjaː ɦoː ɡəiː", "bases": [{"word": "कंपनी", "ref": "hi-2010"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गई", "ref": "hi-0777"}]}
+      - {"target": "दिवालिया आदमी को उधार मत दो।", "reading": "divāliyā ādmī kō udhār mat dō.", "ipa": "d̪ɪʋaːlɪjaː aːd̪miː koː ʊd̪ʱaːr mət̪ d̪oː", "bases": [{"word": "आदमी", "ref": "hi-0762"}, {"word": "को", "ref": "hi-0277"}, {"word": "उधार", "ref": "hi-2747"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2752"
+    target: "नुकसान"
+    target_scripts: {"perso_arabic": "نقصان"}
+    reading: "nuksān"
+    ipa: "nʊksaːn"
+    phonetic: "[nʊksaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बारिश से फ़सल का नुकसान हुआ।", "reading": "bāriś sē fasal kā nuksān huā.", "ipa": "baːrɪʃ seː fəsəl kaː nʊksaːn ɦʊaː", "bases": [{"word": "बारिश", "ref": "hi-1254"}, {"word": "से", "ref": "hi-0276"}, {"word": "फ़सल", "ref": "hi-2396"}, {"word": "का", "ref": "hi-0279"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "इससे किसी को नुकसान नहीं होगा।", "reading": "issē kisī kō nuksān nahīm̐ hōgā.", "ipa": "ɪsseː kɪsiː koː nʊksaːn nəɦĩː ɦoːɡaː", "bases": [{"word": "इससे", "ref": "hi-0748"}, {"word": "किसी", "base": "किसी", "reading": "kisī"}, {"word": "को", "ref": "hi-0277"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "होगा", "ref": "hi-0780"}]}
+  - id: "hi-2753"
+    target: "दौलत"
+    target_scripts: {"perso_arabic": "دولت"}
+    reading: "daulat"
+    ipa: "d̪ɔːlət̪"
+    phonetic: "[d̪ɔːlət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसके पास बहुत दौलत है।", "reading": "uskē pās bahut daulat hai.", "ipa": "ʊskeː paːs bəɦʊt̪ d̪ɔːlət̪ ɦɛː", "bases": [{"word": "उसके", "ref": "hi-0749"}, {"word": "पास", "ref": "hi-0293"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दौलत से सुख नहीं मिलता।", "reading": "daulat sē sukh nahīm̐ miltā.", "ipa": "d̪ɔːlət̪ seː sʊkʰ nəɦĩː mɪlt̪aː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "सुख", "base": "सुख", "reading": "sukh"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "मिलता", "ref": "hi-0793"}]}
+  - id: "hi-2754"
+    target: "मुनाफ़ा"
+    target_scripts: {"perso_arabic": "منافع"}
+    reading: "munāfā"
+    ipa: "mʊnaːfaː"
+    phonetic: "[mʊnaːfaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस साल दुकान को अच्छा मुनाफ़ा हुआ।", "reading": "is sāl dukān kō acchā munāfā huā.", "ipa": "ɪs saːl d̪ʊkaːn koː ətʃtʃʰaː mʊnaːfaː ɦʊaː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "साल", "ref": "hi-0318"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "को", "ref": "hi-0277"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "मुनाफ़ा", "base": "मुनाफ़ा", "reading": "munāfā"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "मुनाफ़ा कितना है?", "reading": "munāfā kitnā hai?", "ipa": "mʊnaːfaː kɪt̪naː ɦɛː", "bases": [{"word": "कितना", "ref": "hi-0163"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2755"
+    target: "पूँजी"
+    target_scripts: {"perso_arabic": "سرمایہ"}
+    reading: "pūm̐jī"
+    ipa: "pũːdʒiː"
+    phonetic: "[pũːdʒiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "व्यापार के लिए पूँजी चाहिए।", "reading": "vyāpār kē liē pūm̐jī cāhiē.", "ipa": "ʋjaːpaːr keː lɪeː pũːdʒiː tʃaːɦɪeː", "bases": [{"word": "व्यापार", "ref": "hi-0414"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+      - {"target": "उसकी सारी पूँजी डूब गई।", "reading": "uskī sārī pūm̐jī ḍūb gaī.", "ipa": "ʊskiː saːriː pũːdʒiː ɖuːb ɡəiː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "सारी", "ref": "hi-0867"}, {"word": "डूब", "ref": "hi-1955"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2756"
+    target: "किफ़ायत"
+    target_scripts: {"perso_arabic": "کفایت"}
+    reading: "kifāyat"
+    ipa: "kɪfaːjət̪"
+    phonetic: "[kɪfaːjət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "किफ़ायत से ख़र्च करो।", "reading": "kifāyat sē k͟harc karō.", "ipa": "kɪfaːjət̪ seː xərtʃ kəroː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "ख़र्च", "ref": "hi-2743"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "किफ़ायत करना अच्छी आदत है।", "reading": "kifāyat karnā acchī ādat hai.", "ipa": "kɪfaːjət̪ kərnaː ətʃtʃʰiː aːd̪ət̪ ɦɛː", "bases": [{"word": "करना", "ref": "hi-0779"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "आदत", "base": "आदत", "reading": "ādat"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2757"
+    target: "फ़िज़ूलख़र्ची"
+    target_scripts: {"perso_arabic": "فضول خرچی"}
+    reading: "fizūlk͟harcī"
+    ipa: "fɪzuːlxərtʃiː"
+    phonetic: "[fɪzuːlxərtʃiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िज़ूलख़र्ची मत करो।", "reading": "fizūlk͟harcī mat karō.", "ipa": "fɪzuːlxərtʃiː mət̪ kəroː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "फ़िज़ूलख़र्ची से बजट बिगड़ता है।", "reading": "fizūlk͟harcī sē bajaṭ bigṛtā hai.", "ipa": "fɪzuːlxərtʃiː seː bədʒəʈ bɪɡɽt̪aː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बजट", "ref": "hi-2746"}, {"word": "बिगड़ता", "base": "बिगड़ना", "reading": "bigṛnā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2758"
+    target: "चंदा"
+    target_scripts: {"perso_arabic": "چندہ"}
+    reading: "candā"
+    ipa: "tʃənd̪aː"
+    phonetic: "[tʃən̪d̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मंदिर के लिए चंदा दो।", "reading": "mandir kē liē candā dō.", "ipa": "mənd̪ɪr keː lɪeː tʃənd̪aː d̪oː", "bases": [{"word": "मंदिर", "ref": "hi-1058"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "सबने मिलकर चंदा जमा किया।", "reading": "sabnē milkar candā jamā kiyā.", "ipa": "səbneː mɪlkər tʃənd̪aː dʒəmaː kɪjaː", "bases": [{"word": "सबने", "ref": "hi-0054"}, {"word": "मिलकर", "ref": "hi-0793"}, {"word": "चंदा", "base": "चंदा", "reading": "candā"}, {"word": "जमा", "ref": "hi-2264"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2759"
+    target: "मज़दूरी"
+    target_scripts: {"perso_arabic": "مزدوری"}
+    reading: "mazdūrī"
+    ipa: "məzd̪uːriː"
+    phonetic: "[məzd̪uːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मज़दूरी समय पर मिलनी चाहिए।", "reading": "mazdūrī samay par milnī cāhiē.", "ipa": "məzd̪uːriː səməj pər mɪlniː tʃaːɦɪeː", "bases": [{"word": "समय", "ref": "hi-0607"}, {"word": "पर", "ref": "hi-0275"}, {"word": "मिलनी", "ref": "hi-0793"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+      - {"target": "उसकी मज़दूरी बढ़ी है।", "reading": "uskī mazdūrī baṛhī hai.", "ipa": "ʊskiː məzd̪uːriː bəɽʱiː ɦɛː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "बढ़ी", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "है", "ref": "hi-0780"}]}
