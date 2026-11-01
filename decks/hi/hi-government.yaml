@@ -1,0 +1,354 @@
+schema: 1
+id: "hi-government"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "government"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2276"
+    target: "सरकार"
+    target_scripts: {"perso_arabic": "حکومت"}
+    reading: "sarkār"
+    ipa: "sərkaːr"
+    phonetic: "[sərkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सरकार ने नई योजना शुरू की।", "reading": "sarkār nē naī yōjnā śurū kī.", "ipa": "sərkaːr neː nəiː joːdʒnaː ʃʊruː kiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नई", "ref": "hi-0896"}, {"word": "योजना", "ref": "hi-2018"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "की", "ref": "hi-0779"}]}
+      - {"target": "सरकार हर गाँव तक पहुँचना चाहती है।", "reading": "sarkār har gām̐v tak pahum̐canā cāhtī hai.", "ipa": "sərkaːr ɦər ɡãːʋ t̪ək pəɦʊ̃tʃənaː tʃaːɦt̪iː ɦɛː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "गाँव", "ref": "hi-1080"}, {"word": "तक", "ref": "hi-0278"}, {"word": "पहुँचना", "ref": "hi-1913"}, {"word": "चाहती", "ref": "hi-0792"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2277"
+    target: "सरकारी"
+    target_scripts: {"perso_arabic": "سرکاری"}
+    reading: "sarkārī"
+    ipa: "sərkaːriː"
+    phonetic: "[sərkaːriː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह सरकारी दफ़्तर है।", "reading": "yah sarkārī daftar hai.", "ipa": "jəɦ sərkaːriː d̪əft̪ər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "दफ़्तर", "ref": "hi-0400"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सरकारी स्कूल में पढ़ाई मुफ़्त है।", "reading": "sarkārī skūl mēm̐ paṛhāī muft hai.", "ipa": "sərkaːriː skuːl mẽː pəɽʱaːiː mʊft̪ ɦɛː", "bases": [{"word": "स्कूल", "ref": "hi-1056"}, {"word": "में", "ref": "hi-0274"}, {"word": "पढ़ाई", "ref": "hi-1614"}, {"word": "मुफ़्त", "ref": "hi-1359"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2278"
+    target: "पंचायत"
+    target_scripts: {"perso_arabic": "پنچایت"}
+    reading: "pañcāyat"
+    ipa: "pəɲtʃaːjət̪"
+    phonetic: "[pəɲtʃaːjət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गाँव की पंचायत बैठक करती है।", "reading": "gām̐v kī pañcāyat baiṭhak kartī hai.", "ipa": "ɡãːʋ kiː pəɲtʃaːjət̪ bɛːʈʰək kərt̪iː ɦɛː", "bases": [{"word": "गाँव", "ref": "hi-1080"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "ref": "hi-0424"}, {"word": "करती", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पंचायत ने सड़क बनवाई।", "reading": "pañcāyat nē saṛak banvāī.", "ipa": "pəɲtʃaːjət̪ neː səɽək bənʋaːiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सड़क", "ref": "hi-0298"}, {"word": "बनवाई", "base": "बनवाना", "reading": "banvānā"}]}
+  - id: "hi-2279"
+    target: "विभाग"
+    target_scripts: {"perso_arabic": "محکمہ"}
+    reading: "vibhāg"
+    ipa: "ʋɪbʱaːɡ"
+    phonetic: "[ʋɪbʱaːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शिक्षा विभाग ने नोटिस भेजा।", "reading": "śikśā vibhāg nē nōṭis bhējā.", "ipa": "ʃɪkʃaː ʋɪbʱaːɡ neː noːʈɪs bʱeːdʒaː", "bases": [{"word": "शिक्षा", "base": "शिक्षा", "reading": "śikśā"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नोटिस", "base": "नोटिस", "reading": "nōṭis"}, {"word": "भेजा", "ref": "hi-0797"}]}
+      - {"target": "यह किस विभाग का दफ़्तर है?", "reading": "yah kis vibhāg kā daftar hai?", "ipa": "jəɦ kɪs ʋɪbʱaːɡ kaː d̪əft̪ər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "किस", "base": "किस", "reading": "kis"}, {"word": "विभाग", "base": "विभाग", "reading": "vibhāg"}, {"word": "का", "ref": "hi-0279"}, {"word": "दफ़्तर", "ref": "hi-0400"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2280"
+    target: "अधिकारी"
+    target_scripts: {"perso_arabic": "افسر"}
+    reading: "adhikārī"
+    ipa: "əd̪ʱɪkaːriː"
+    phonetic: "[əd̪ʱɪkaːriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "अधिकारी कल मिलेंगे।", "reading": "adhikārī kal milēṅgē.", "ipa": "əd̪ʱɪkaːriː kəl mɪleːŋɡeː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "मिलेंगे", "ref": "hi-0793"}]}
+      - {"target": "अधिकारी की मेज़ पर फ़ाइल है।", "reading": "adhikārī kī mēz par fāil hai.", "ipa": "əd̪ʱɪkaːriː kiː meːz pər faːɪl ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "मेज़", "ref": "hi-0434"}, {"word": "पर", "ref": "hi-0275"}, {"word": "फ़ाइल", "ref": "hi-1873"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2281"
+    target: "नियम"
+    target_scripts: {"perso_arabic": "قاعدہ"}
+    reading: "niyam"
+    ipa: "nɪjəm"
+    phonetic: "[nɪjəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह नियम सबके लिए है।", "reading": "yah niyam sabkē liē hai.", "ipa": "jəɦ nɪjəm səbkeː lɪeː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सबके", "ref": "hi-0054"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "नियम मत तोड़ो।", "reading": "niyam mat tōṛō.", "ipa": "nɪjəm mət̪ t̪oːɽoː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "तोड़ो", "base": "तोड़ना", "reading": "tōṛnā"}]}
+  - id: "hi-2282"
+    target: "मंत्रालय"
+    target_scripts: {"perso_arabic": "وزارت"}
+    reading: "mantrālay"
+    ipa: "mənt̪raːləj"
+    phonetic: "[mən̪t̪raːləj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मंत्रालय की नई इमारत बनी है।", "reading": "mantrālay kī naī imārat banī hai.", "ipa": "mənt̪raːləj kiː nəiː ɪmaːrət̪ bəniː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "नई", "ref": "hi-0896"}, {"word": "इमारत", "base": "इमारत", "reading": "imārat"}, {"word": "बनी", "ref": "hi-1833"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मंत्रालय से जवाब आया।", "reading": "mantrālay sē javāb āyā.", "ipa": "mənt̪raːləj seː dʒəʋaːb aːjaː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "जवाब", "ref": "hi-1596"}, {"word": "आया", "ref": "hi-0778"}]}
+  - id: "hi-2283"
+    target: "संसद"
+    target_scripts: {"perso_arabic": "پارلیمان"}
+    reading: "saṁsad"
+    ipa: "sə̃səd̪"
+    phonetic: "[sə̃səd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संसद में बहस हो रही है।", "reading": "saṁsad mēm̐ bahas hō rahī hai.", "ipa": "sə̃səd̪ mẽː bəɦəs ɦoː rəɦiː ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "बहस", "ref": "hi-2193"}, {"word": "हो", "ref": "hi-0780"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "संसद का सत्र कल शुरू होगा।", "reading": "saṁsad kā satr kal śurū hōgā.", "ipa": "sə̃səd̪ kaː sət̪r kəl ʃʊruː ɦoːɡaː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "सत्र", "ref": "hi-2298"}, {"word": "कल", "ref": "hi-0300"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "होगा", "ref": "hi-0780"}]}
+  - id: "hi-2284"
+    target: "विधानसभा"
+    target_scripts: {"perso_arabic": "اسمبلی"}
+    reading: "vidhānsbhā"
+    ipa: "ʋɪd̪ʱaːnsbʱaː"
+    phonetic: "[ʋɪd̪ʱaːnsbʱaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "विधानसभा का चुनाव है।", "reading": "vidhānsbhā kā cunāv hai.", "ipa": "ʋɪd̪ʱaːnsbʱaː kaː tʃʊnaːʋ ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "चुनाव", "ref": "hi-2152"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "विधानसभा में नया बिल आया।", "reading": "vidhānsbhā mēm̐ nayā bil āyā.", "ipa": "ʋɪd̪ʱaːnsbʱaː mẽː nəjaː bɪl aːjaː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "नया", "ref": "hi-0896"}, {"word": "बिल", "ref": "hi-1348"}, {"word": "आया", "ref": "hi-0778"}]}
+  - id: "hi-2285"
+    target: "मतदान"
+    target_scripts: {"perso_arabic": "ووٹنگ"}
+    reading: "matdān"
+    ipa: "mət̪d̪aːn"
+    phonetic: "[mət̪d̪aːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मतदान सुबह सात बजे शुरू होगा।", "reading": "matdān subah sāt bajē śurū hōgā.", "ipa": "mət̪d̪aːn sʊbəɦ saːt̪ bədʒeː ʃʊruː ɦoːɡaː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "सात", "ref": "hi-0204"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "होगा", "ref": "hi-0780"}]}
+      - {"target": "मतदान केंद्र यहाँ है।", "reading": "matdān kēndr yahām̐ hai.", "ipa": "mət̪d̪aːn keːnd̪r jəɦãː ɦɛː", "bases": [{"word": "केंद्र", "base": "केंद्र", "reading": "kēndr"}, {"word": "यहाँ", "ref": "hi-0295"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2286"
+    target: "मतदाता"
+    target_scripts: {"perso_arabic": "ووٹر"}
+    reading: "matdātā"
+    ipa: "mət̪d̪aːt̪aː"
+    phonetic: "[mət̪d̪aːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सभी मतदाता वोट डालें।", "reading": "sabhī matdātā vōṭ ḍālēm̐.", "ipa": "səbʱiː mət̪d̪aːt̪aː ʋoːʈ ɖaːlẽː", "bases": [{"word": "सभी", "base": "सभी", "reading": "sabhī"}, {"word": "वोट", "base": "वोट", "reading": "vōṭ"}, {"word": "डालें", "ref": "hi-0941"}]}
+      - {"target": "मतदाता सूची में नाम देखो।", "reading": "matdātā sūcī mēm̐ nām dēkhō.", "ipa": "mət̪d̪aːt̪aː suːtʃiː mẽː naːm d̪eːkʰoː", "bases": [{"word": "सूची", "base": "सूची", "reading": "sūcī"}, {"word": "में", "ref": "hi-0274"}, {"word": "नाम", "ref": "hi-0187"}, {"word": "देखो", "ref": "hi-0784"}]}
+  - id: "hi-2287"
+    target: "परिषद"
+    target_scripts: {"perso_arabic": "کونسل"}
+    reading: "pariśad"
+    ipa: "pərɪʃəd̪"
+    phonetic: "[pərɪʃəd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नगर परिषद की बैठक है।", "reading": "nagar pariśad kī baiṭhak hai.", "ipa": "nəɡər pərɪʃəd̪ kiː bɛːʈʰək ɦɛː", "bases": [{"word": "नगर", "ref": "hi-2061"}, {"word": "की", "ref": "hi-0279"}, {"word": "बैठक", "ref": "hi-0424"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "परिषद ने नियम पास किया।", "reading": "pariśad nē niyam pās kiyā.", "ipa": "pərɪʃəd̪ neː nɪjəm paːs kɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नियम", "ref": "hi-2281"}, {"word": "पास", "ref": "hi-0293"}, {"word": "किया", "ref": "hi-0779"}]}
+  - id: "hi-2288"
+    target: "सचिव"
+    target_scripts: {"perso_arabic": "سکریٹری"}
+    reading: "saciv"
+    ipa: "sətʃɪʋ"
+    phonetic: "[sətʃɪʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सचिव ने फ़ाइल पर दस्तखत किए।", "reading": "saciv nē fāil par dastakhat kiē.", "ipa": "sətʃɪʋ neː faːɪl pər d̪əst̪əkʰət̪ kɪeː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "फ़ाइल", "ref": "hi-1873"}, {"word": "पर", "ref": "hi-0275"}, {"word": "दस्तखत", "base": "दस्तखत", "reading": "dastakhat"}, {"word": "किए", "ref": "hi-0779"}]}
+      - {"target": "सचिव से मिलो।", "reading": "saciv sē milō.", "ipa": "sətʃɪʋ seː mɪloː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "मिलो", "ref": "hi-0793"}]}
+  - id: "hi-2289"
+    target: "नीति"
+    target_scripts: {"perso_arabic": "پالیسی"}
+    reading: "nīti"
+    ipa: "niːt̪ɪ"
+    phonetic: "[niːt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सरकार की नई नीति आई है।", "reading": "sarkār kī naī nīti āī hai.", "ipa": "sərkaːr kiː nəiː niːt̪ɪ aːiː ɦɛː", "bases": [{"word": "सरकार", "ref": "hi-2276"}, {"word": "की", "ref": "hi-0279"}, {"word": "नई", "ref": "hi-0896"}, {"word": "आई", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यह नीति सबके हित में है।", "reading": "yah nīti sabkē hit mēm̐ hai.", "ipa": "jəɦ niːt̪ɪ səbkeː ɦɪt̪ mẽː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सबके", "ref": "hi-0054"}, {"word": "हित", "base": "हित", "reading": "hit"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2290"
+    target: "अनुमति"
+    target_scripts: {"perso_arabic": "اجازت"}
+    reading: "anumti"
+    ipa: "ənʊmt̪ɪ"
+    phonetic: "[ənʊmt̪ɪ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बिना अनुमति के अंदर मत जाओ।", "reading": "binā anumti kē andar mat jāō.", "ipa": "bɪnaː ənʊmt̪ɪ keː ənd̪ər mət̪ dʒaːoː", "bases": [{"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "अनुमति", "base": "अनुमति", "reading": "anumti"}, {"word": "के", "ref": "hi-0065"}, {"word": "अंदर", "ref": "hi-0836"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "जाओ", "ref": "hi-0777"}]}
+      - {"target": "अनुमति मिल गई।", "reading": "anumti mil gaī.", "ipa": "ənʊmt̪ɪ mɪl ɡəiː", "bases": [{"word": "मिल", "ref": "hi-0793"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2291"
+    target: "प्रमाणपत्र"
+    target_scripts: {"perso_arabic": "سرٹیفکیٹ"}
+    reading: "pramāṇpatr"
+    ipa: "prəmaːɳpət̪r"
+    phonetic: "[prəmaːɳpət̪r]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "जन्म का प्रमाणपत्र कहाँ है?", "reading": "janm kā pramāṇpatr kahām̐ hai?", "ipa": "dʒənm kaː prəmaːɳpət̪r kəɦãː ɦɛː", "bases": [{"word": "जन्म", "base": "जन्म", "reading": "janm"}, {"word": "का", "ref": "hi-0279"}, {"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रमाणपत्र पर मोहर लगाओ।", "reading": "pramāṇpatr par mōhar lagāō.", "ipa": "prəmaːɳpət̪r pər moːɦər ləɡaːoː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "मोहर", "base": "मोहर", "reading": "mōhar"}, {"word": "लगाओ", "base": "लगाना", "reading": "lagānā"}]}
+  - id: "hi-2292"
+    target: "लाइसेंस"
+    target_scripts: {"perso_arabic": "لائسنس"}
+    reading: "lāisēṁs"
+    ipa: "laːɪsẽːs"
+    phonetic: "[laːɪsẽːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरा ड्राइविंग लाइसेंस बना।", "reading": "mērā ḍrāiviṅg lāisēṁs banā.", "ipa": "meːraː ɖraːɪʋɪŋɡ laːɪsẽːs bənaː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "ड्राइविंग", "base": "ड्राइविंग", "reading": "ḍrāiviṅg"}, {"word": "बना", "ref": "hi-1833"}]}
+      - {"target": "लाइसेंस के बिना गाड़ी मत चलाओ।", "reading": "lāisēṁs kē binā gāṛī mat calāō.", "ipa": "laːɪsẽːs keː bɪnaː ɡaːɽiː mət̪ tʃəlaːoː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "बिना", "base": "बिना", "reading": "binā"}, {"word": "गाड़ी", "ref": "hi-1907"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "चलाओ", "ref": "hi-1804"}]}
+  - id: "hi-2293"
+    target: "कर"
+    target_scripts: {"perso_arabic": "ٹیکس"}
+    reading: "kar"
+    ipa: "kər"
+    phonetic: "[kər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सबको कर देना है।", "reading": "sabkō kar dēnā hai.", "ipa": "səbkoː kər d̪eːnaː ɦɛː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "देना", "ref": "hi-0785"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दुकान पर कर बढ़ा।", "reading": "dukān par kar baṛhā.", "ipa": "d̪ʊkaːn pər kər bəɽʱaː", "bases": [{"word": "दुकान", "ref": "hi-0239"}, {"word": "पर", "ref": "hi-0275"}, {"word": "बढ़ा", "base": "बढ़ना", "reading": "baṛhnā"}]}
+  - id: "hi-2294"
+    target: "आयोग"
+    target_scripts: {"perso_arabic": "کمیشن"}
+    reading: "āyōg"
+    ipa: "aːjoːɡ"
+    phonetic: "[aːjoːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "चुनाव आयोग ने तारीख़ बताई।", "reading": "cunāv āyōg nē tārīk͟h batāī.", "ipa": "tʃʊnaːʋ aːjoːɡ neː t̪aːriːx bət̪aːiː", "bases": [{"word": "चुनाव", "ref": "hi-2152"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "तारीख़", "base": "तारीख", "reading": "tārīkh"}, {"word": "बताई", "ref": "hi-0796"}]}
+      - {"target": "आयोग की रिपोर्ट आने वाली है।", "reading": "āyōg kī ripōrṭ ānē vālī hai.", "ipa": "aːjoːɡ kiː rɪpoːrʈ aːneː ʋaːliː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "रिपोर्ट", "ref": "hi-2009"}, {"word": "आने", "ref": "hi-0778"}, {"word": "वाली", "base": "वाला", "reading": "vālā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2295"
+    target: "नागरिक"
+    target_scripts: {"perso_arabic": "شہری"}
+    reading: "nāgrik"
+    ipa: "naːɡrɪk"
+    phonetic: "[naːɡrɪk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हर नागरिक को वोट का हक है।", "reading": "har nāgrik kō vōṭ kā hak hai.", "ipa": "ɦər naːɡrɪk koː ʋoːʈ kaː ɦək ɦɛː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "को", "ref": "hi-0277"}, {"word": "वोट", "base": "वोट", "reading": "vōṭ"}, {"word": "का", "ref": "hi-0279"}, {"word": "हक", "base": "हक", "reading": "hak"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "नागरिक अपने अधिकार जानें।", "reading": "nāgrik apnē adhikār jānēm̐.", "ipa": "naːɡrɪk əpneː əd̪ʱɪkaːr dʒaːnẽː", "bases": [{"word": "अपने", "ref": "hi-0760"}, {"word": "अधिकार", "ref": "hi-2296"}, {"word": "जानें", "ref": "hi-0790"}]}
+  - id: "hi-2296"
+    target: "अधिकार"
+    target_scripts: {"perso_arabic": "حق"}
+    reading: "adhikār"
+    ipa: "əd̪ʱɪkaːr"
+    phonetic: "[əd̪ʱɪkaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सबको बोलने का अधिकार है।", "reading": "sabkō bōlnē kā adhikār hai.", "ipa": "səbkoː boːlneː kaː əd̪ʱɪkaːr ɦɛː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "बोलने", "ref": "hi-0782"}, {"word": "का", "ref": "hi-0279"}, {"word": "अधिकार", "base": "अधिकार", "reading": "adhikār"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अधिकार के साथ कर्तव्य भी है।", "reading": "adhikār kē sāth kartavy bhī hai.", "ipa": "əd̪ʱɪkaːr keː saːt̪ʰ kərt̪əʋj bʱiː ɦɛː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "कर्तव्य", "base": "कर्तव्य", "reading": "kartavy"}, {"word": "भी", "ref": "hi-0350"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2297"
+    target: "सेना"
+    target_scripts: {"perso_arabic": "فوج"}
+    reading: "sēnā"
+    ipa: "seːnaː"
+    phonetic: "[seːnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सेना सरहद पर खड़ी है।", "reading": "sēnā sarhad par khaṛī hai.", "ipa": "seːnaː sərɦəd̪ pər kʰəɽiː ɦɛː", "bases": [{"word": "सरहद", "ref": "hi-2052"}, {"word": "पर", "ref": "hi-0275"}, {"word": "खड़ी", "base": "खड़ा", "reading": "khaṛā"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सेना के जवान बहादुर हैं।", "reading": "sēnā kē javān bahādur haim̐.", "ipa": "seːnaː keː dʒəʋaːn bəɦaːd̪ʊr ɦɛ̃ː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "जवान", "ref": "hi-1755"}, {"word": "बहादुर", "base": "बहादुर", "reading": "bahādur"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2298"
+    target: "सत्र"
+    target_scripts: {"perso_arabic": "سیشن"}
+    reading: "satr"
+    ipa: "sət̪r"
+    phonetic: "[sət̪r]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "अगला सत्र अगले महीने है।", "reading": "aglā satr aglē mahīnē hai.", "ipa": "əɡlaː sət̪r əɡleː məɦiːneː ɦɛː", "bases": [{"word": "अगला", "base": "अगला", "reading": "aglā"}, {"word": "अगले", "base": "अगला", "reading": "aglā"}, {"word": "महीने", "ref": "hi-0317"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सत्र शुरू हो गया।", "reading": "satr śurū hō gayā.", "ipa": "sət̪r ʃʊruː ɦoː ɡəjaː", "bases": [{"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गया", "ref": "hi-0777"}]}

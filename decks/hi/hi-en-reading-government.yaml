@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-government"
+name: "Reading: government"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A notice from the village council, and a note about the voter list. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-government-village"
+    title: "The village council"
+    theme: "government"
+    sentences:
+      - {"text": "गाँव की पंचायत ने नए नियम बनाए हैं।", "reading": "gām̐v kī pañcāyat nē naē niyam banāē haim̐.", "ipa": "ɡãːʋ kiː pəɲtʃaːjət̪ neː nəeː nɪjəm bənaːeː ɦɛ̃ː"}
+      - {"text": "सरकारी दफ़्तर से प्रमाणपत्र लेने के लिए आवेदन दो।", "reading": "sarkārī daftar sē pramāṇpatr lēnē kē liē āvēdan dō.", "ipa": "sərkaːriː d̪əft̪ər seː prəmaːɳpət̪r leːneː keː lɪeː aːʋeːd̪ən d̪oː"}
+      - {"text": "हर नागरिक को मतदान का अधिकार है।", "reading": "har nāgrik kō matdān kā adhikār hai.", "ipa": "ɦər naːɡrɪk koː mət̪d̪aːn kaː əd̪ʱɪkaːr ɦɛː"}
+      - {"text": "मतदाता सूची में नाम जाँचना ज़रूरी है।", "reading": "matdātā sūcī mēm̐ nām jām̐canā zarūrī hai.", "ipa": "mət̪d̪aːt̪aː suːtʃiː mẽː naːm dʒãːtʃənaː zəruːriː ɦɛː"}
+    questions:
+      - {"id": "hi-2299", "prompt": {"en": "The council has made new rules."}, "answer": true}
+      - {"id": "hi-2300", "prompt": {"en": "Where is the certificate taken from?"}, "options": [{"en": "A government office"}, {"en": "A bank"}], "answer": 1}
+      - {"id": "hi-2301", "prompt": {"en": "Voting is not a right for citizens."}, "answer": false}
+  - id: "hi-government-notice"
+    title: "A notice of a department"
+    theme: "government"
+    sentences:
+      - {"text": "विभाग का नया सचिव कल पदभार संभालेगा।", "reading": "vibhāg kā nayā saciv kal padbhār sambhālēgā.", "ipa": "ʋɪbʱaːɡ kaː nəjaː sətʃɪʋ kəl pəd̪bʱaːr səmbʱaːleːɡaː"}
+      - {"text": "लाइसेंस के लिए अनुमति लेनी होगी।", "reading": "lāisēṁs kē liē anumti lēnī hōgī.", "ipa": "laːɪsẽːs keː lɪeː ənʊmt̪ɪ leːniː ɦoːɡiː"}
+      - {"text": "कर का भुगतान समय पर करें।", "reading": "kar kā bhugtān samay par karēm̐.", "ipa": "kər kaː bʱʊɡt̪aːn səməj pər kərẽː"}
+      - {"text": "सेना और संसद के बारे में जानकारी पुस्तकालय में है।", "reading": "sēnā aur saṁsad kē bārē mēm̐ jānkārī pustakālay mēm̐ hai.", "ipa": "seːnaː ɔːr sə̃səd̪ keː baːreː mẽː dʒaːnkaːriː pʊst̪əkaːləj mẽː ɦɛː"}
+    questions:
+      - {"id": "hi-2302", "prompt": {"en": "The new secretary takes charge tomorrow."}, "answer": true}
+      - {"id": "hi-2303", "prompt": {"en": "What must be obtained for a licence?"}, "options": [{"en": "Permission"}, {"en": "A ticket"}], "answer": 1}
+      - {"id": "hi-2304", "prompt": {"en": "Taxes can be paid late."}, "answer": false}
