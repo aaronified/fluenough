@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-se-passive"
+name: "Reading: a notice board and what was done"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with se: announcements on a notice board, and what was done in the town. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-notice-board"
+    title: "A notice board with announcements"
+    theme: "housing"
+    sentences:
+      - text: "Se alquilan bicicletas en la plaza."
+      - text: "Se prohíbe fumar en el parque."
+      - text: "Se abre la piscina a las siete."
+      - text: "Se buscan voluntarios para la limpieza."
+    questions:
+      - id: "es-2770"
+        prompt: { en: "What is rented?" }
+        options:
+          - { en: "Bicycles" }
+          - { en: "Cars" }
+          - { en: "Flats" }
+        answer: 1
+      - id: "es-2771"
+        prompt: { en: "What is forbidden?" }
+        options:
+          - { en: "Smoking in the park" }
+          - { en: "Swimming" }
+          - { en: "Walking dogs" }
+        answer: 1
+      - id: "es-2772"
+        prompt: { en: "When does the pool open?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 1
+  - id: "es-it-was-done"
+    title: "What was done in the town"
+    theme: "housing"
+    sentences:
+      - text: "Ayer se terminó el puente."
+      - text: "Se construyeron dos escuelas el año pasado."
+      - text: "Se cerró la calle por la obra."
+      - text: "Se puede pasar por la plaza."
+    questions:
+      - id: "es-2773"
+        prompt: { en: "What was finished yesterday?" }
+        options:
+          - { en: "The bridge" }
+          - { en: "The school" }
+          - { en: "The road" }
+        answer: 1
+      - id: "es-2774"
+        prompt: { en: "What was built last year?" }
+        options:
+          - { en: "Two schools" }
+          - { en: "A bridge" }
+          - { en: "A park" }
+        answer: 1
+      - id: "es-2775"
+        prompt: { en: "Why was the street closed?" }
+        options:
+          - { en: "For the building work" }
+          - { en: "For a festival" }
+          - { en: "For a parade" }
+        answer: 1
