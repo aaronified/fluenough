@@ -321,7 +321,8 @@ units:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
       - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
-  - planned: { id: "kn-chores", theme: "chores", words: 40 }
+  - decks: ["kn-chores", "*"]
+    words: 24
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
