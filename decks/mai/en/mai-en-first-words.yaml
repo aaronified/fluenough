@@ -1,0 +1,144 @@
+schema: 1
+id: mai-en-first-words
+kind: layer
+core: mai-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, come. Written in Devanagari, with readings based on ISO 15919. Not yet checked by a Maithili speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  mai-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer 'yes', said on its own or to agree with what was just said.
+    examples:
+      हँ, पानि नीक अछि।:
+        native: Yes, the water is good.
+        bases:
+          अछि: to be
+      हँ, ई घर अछि।:
+        native: Yes, this is a house.
+        bases:
+          ई: this
+          अछि: to be
+  mai-0002:
+    native: no; not
+    notes:
+      n1: 'The short answer ''no'', and the negative of a verb or of ''is'': ई नीक नहि अछि (ī nīk nahi achi), this is not good.'
+    examples:
+      पानि नहि अछि।:
+        native: There is no water.
+        bases:
+          अछि: to be
+      ई नीक नहि अछि।:
+        native: This is not good.
+        bases:
+          ई: this
+          अछि: to be
+  mai-0003:
+    native: I; me
+    notes:
+      n1: The first person. Maithili often leaves it out, since the verb shows who is speaking.
+    examples:
+      हम ठीक छी।:
+        native: I am fine.
+        bases:
+          ठीक: fine; right
+          छी: to be
+      हम पानि पीबैत छी।:
+        native: I am drinking water.
+        bases:
+          पीबैत: to drink
+          छी: to be
+  mai-0004:
+    native: you (honoured)
+    notes:
+      n1: The honoured 'you'. An intimate 'you' is तोँ (tõ), and the most honoured is अपने (apane).
+    examples:
+      अहाँ ठीक छी?:
+        native: Are you well?
+        bases:
+          छी: to be
+      अहाँ नीक छी।:
+        native: You are well.
+        bases:
+          छी: to be
+  mai-0005:
+    native: water
+    notes:
+      n1: The everyday word for water.
+    examples:
+      पानि नीक अछि।:
+        native: Water is good.
+        bases:
+          अछि: to be
+      ई पानि अछि।:
+        native: This is water.
+        bases:
+          ई: this
+          अछि: to be
+  mai-0006:
+    native: good
+    notes:
+      n1: 'Before a noun it stays the same: नीक घर (nīk ghar), a good house.'
+    examples:
+      नीक घर।: A good house.
+      बड्ड नीक!:
+        native: Very good!
+        bases:
+          बड्ड: very
+  mai-0007:
+    native: one
+    notes:
+      n1: 'The number 1 when counting. Before a noun it is also एक: एक घर (ek ghar), one house.'
+    examples:
+      एक, दू।:
+        native: One, two.
+        bases:
+          दू: two
+      एक घर।: One house.
+  mai-0008:
+    native: big; large
+    notes:
+      n1: 'Before a noun it stays the same: पैघ घर (paigh ghar), a big house.'
+    examples:
+      पैघ घर।: A big house.
+      ई पैघ अछि।:
+        native: This is big.
+        bases:
+          ई: this
+          अछि: to be
+  mai-0009:
+    native: house; home
+    notes:
+      n1: In the house is घर मे (ghar me).
+    examples:
+      ई हमर घर अछि।:
+        native: This is my house.
+        bases:
+          ई: this
+          अछि: to be
+      घर मे पानि नहि अछि।:
+        native: There is no water in the house.
+        bases:
+          मे: in
+          अछि: to be
+  mai-0010:
+    native: come
+    notes:
+      n1: 'The imperative, said to one person. In the future, the stem is आए- (āe-): आएब (āeb), I will come.'
+    examples:
+      आउ, चलू।:
+        native: Come, let's go.
+        bases:
+          चलू: to go
+      हम काल्हि आएब।:
+        native: I will come tomorrow.
+        bases:
+          काल्हि: tomorrow
+          आएब: to come

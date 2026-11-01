@@ -1,0 +1,275 @@
+schema: 1
+id: mai-first-words
+part: core
+kind: vocab
+language:
+  code: mai
+  iso639_3: mai
+  name: Maithili
+  script: devanagari
+  tts: hi-IN
+  icon: मै
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: mai-0001
+  target: हँ
+  reading: hã
+  ipa: ɦɔ̃
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: हँ, पानि नीक अछि।
+    reading: hã, pāni nīk achi.
+    ipa: ɦɔ̃, paːni niːk ətʃʰi.
+    bases:
+    - word: अछि
+      base: अछ
+      reading: ach
+  - target: हँ, ई घर अछि।
+    reading: hã, ī ghar achi.
+    ipa: ɦɔ̃, iː gʱər ətʃʰi.
+    bases:
+    - word: ई
+      base: ई
+      reading: ī
+    - word: अछि
+      base: अछ
+      reading: ach
+- id: mai-0002
+  target: नहि
+  reading: nahi
+  ipa: nəɦi
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: पानि नहि अछि।
+    reading: pāni nahi achi.
+    ipa: paːni nəɦi ətʃʰi.
+    bases:
+    - word: अछि
+      base: अछ
+      reading: ach
+  - target: ई नीक नहि अछि।
+    reading: ī nīk nahi achi.
+    ipa: iː niːk nəɦi ətʃʰi.
+    bases:
+    - word: ई
+      base: ई
+      reading: ī
+    - word: अछि
+      base: अछ
+      reading: ach
+- id: mai-0003
+  target: हम
+  reading: ham
+  ipa: ɦəm
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: हम ठीक छी।
+    reading: ham ṭhīk chī.
+    ipa: ɦəm ʈʰiːk tʃʰiː.
+    bases:
+    - word: ठीक
+      base: ठीक
+      reading: ṭhīk
+    - word: छी
+      base: छ
+      reading: cha
+  - target: हम पानि पीबैत छी।
+    reading: ham pāni pībait chī.
+    ipa: ɦəm paːni piːbait tʃʰiː.
+    bases:
+    - word: पीबैत
+      base: पीब
+      reading: pīb
+    - word: छी
+      base: छ
+      reading: cha
+- id: mai-0004
+  target: अहाँ
+  reading: ahā̃
+  ipa: ɔɦɔ̃
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: अहाँ ठीक छी?
+    reading: ahā̃ ṭhīk chī?
+    ipa: ɔɦɔ̃ ʈʰiːk tʃʰiː?
+    bases:
+    - word: छी
+      base: छ
+      reading: cha
+  - target: अहाँ नीक छी।
+    reading: ahā̃ nīk chī.
+    ipa: ɔɦɔ̃ niːk tʃʰiː.
+    bases:
+    - word: छी
+      base: छ
+      reading: cha
+- id: mai-0005
+  target: पानि
+  reading: pāni
+  ipa: paːni
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: पानि नीक अछि।
+    reading: pāni nīk achi.
+    ipa: paːni niːk ətʃʰi.
+    bases:
+    - word: अछि
+      base: अछ
+      reading: ach
+  - target: ई पानि अछि।
+    reading: ī pāni achi.
+    ipa: iː paːni ətʃʰi.
+    bases:
+    - word: ई
+      base: ई
+      reading: ī
+    - word: अछि
+      base: अछ
+      reading: ach
+- id: mai-0006
+  target: नीक
+  reading: nīk
+  ipa: niːk
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: नीक घर।
+    reading: nīk ghar.
+    ipa: niːk gʱər.
+    bases:
+    - word: घर
+      ref: mai-0009
+  - target: बड्ड नीक!
+    reading: baḍḍa nīk!
+    ipa: bəɖːɔ niːk!
+    bases:
+    - word: बड्ड
+      base: बड्ड
+      reading: baḍḍa
+- id: mai-0007
+  target: एक
+  reading: ek
+  ipa: ek
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: एक, दू।
+    reading: ek, dū.
+    ipa: ek, duː.
+    bases:
+    - word: दू
+      base: दू
+      reading: dū
+  - target: एक घर।
+    reading: ek ghar.
+    ipa: ek gʱər.
+    bases:
+    - word: घर
+      ref: mai-0009
+- id: mai-0008
+  target: पैघ
+  reading: paigh
+  ipa: pɛɡʱ
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: पैघ घर।
+    reading: paigh ghar.
+    ipa: pɛɡʱ gʱər.
+    bases:
+    - word: घर
+      ref: mai-0009
+  - target: ई पैघ अछि।
+    reading: ī paigh achi.
+    ipa: iː pɛɡʱ ətʃʰi.
+    bases:
+    - word: ई
+      base: ई
+      reading: ī
+    - word: अछि
+      base: अछ
+      reading: ach
+- id: mai-0009
+  target: घर
+  reading: ghar
+  ipa: gʱər
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ई हमर घर अछि।
+    reading: ī hamar ghar achi.
+    ipa: iː həmər gʱər ətʃʰi.
+    bases:
+    - word: ई
+      base: ई
+      reading: ī
+    - word: हमर
+      ref: mai-0003
+    - word: अछि
+      base: अछ
+      reading: ach
+  - target: घर मे पानि नहि अछि।
+    reading: ghar me pāni nahi achi.
+    ipa: gʱər me paːni nəɦi ətʃʰi.
+    bases:
+    - word: मे
+      base: मे
+      reading: me
+    - word: अछि
+      base: अछ
+      reading: ach
+- id: mai-0010
+  target: आउ
+  reading: āu
+  ipa: aːu
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: आउ, चलू।
+    reading: āu, calū.
+    ipa: aːu, tʃəlu.
+    bases:
+    - word: चलू
+      base: चल
+      reading: cal
+  - target: हम काल्हि आएब।
+    reading: ham kālhi āeb.
+    ipa: ɦəm kaːlɦi aːeb.
+    bases:
+    - word: काल्हि
+      base: काल्हि
+      reading: kālhi
+    - word: आएब
+      base: आउ
+      reading: āu
