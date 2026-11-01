@@ -345,8 +345,14 @@ void main() {
               verified ? l10n.languagesPillCheckedHint : value,
               reason: key,
             );
+            final words = (tip.message ?? '').trim();
             expect(
-              tip.message.trim().split(RegExp(r'\s+')).length,
+              words,
+              isNotEmpty,
+              reason: '$key: the tooltip must not be empty',
+            );
+            expect(
+              words.split(RegExp(r'\s+')).length,
               lessThanOrEqualTo(2),
               reason: '$key: the tooltip rule, two words at most',
             );
