@@ -583,11 +583,14 @@ units:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
   - decks: ["bn-reading-while"]
     words: 0
-  - planned: { id: "bn-cinema", theme: "cinema", words: 55 }
+  - decks: ["bn-cinema", "bn-cinema-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
+  - decks: ["bn-reading-cinema"]
+    words: 0
   - planned: { id: "bn-arts", theme: "arts", words: 45 }
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
