@@ -1,0 +1,65 @@
+schema: 1
+id: "fr-en-family-sentences"
+kind: "layer"
+core: "fr-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: family"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences about a family, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0194":
+    native: "Here is my family."
+    bases:
+      "Voici": "here is"
+    confusables:
+      "fille": { why: "Fille is 'daughter' or 'girl': one person, not the whole family." }
+      "brother": { why: "Frère is 'brother': one man, not the family." }
+  "fr-0195":
+    native: "My father and my mother are here."
+    confusables:
+      "parents": { why: "Parents means both parents together; this sentence names the father and the mother one by one." }
+      "grandmother": { why: "Grand-mère is 'grandmother', not 'mother'." }
+  "fr-0196":
+    native: "My sister and my brother are here."
+    confusables:
+      "cousin": { why: "Cousin is a cousin, not a brother or a sister." }
+      "oncle": { why: "Oncle is 'uncle', not a brother or sister." }
+  "fr-0197":
+    native: "The baby of my cousin is sleeping."
+    bases:
+      "Le": "the"
+      "de": "of"
+      "dort": "sleeps"
+    confusables:
+      "garçon": { why: "Garçon is 'boy'; the sentence speaks of a baby." }
+      "fille": { why: "Fille is 'girl' or 'daughter'; the sentence does not name the baby's sex." }
+  "fr-0198":
+    native: "My grandfather is a kind man."
+    bases:
+      "un": "a"
+      "gentil": "kind; nice"
+    confusables:
+      "grandmother": { why: "Grand-mère is 'grandmother': a woman, not a grandfather." }
+      "vieux": { why: "Vieux is 'old'; it describes age, not a family word." }
+  "fr-0199":
+    native: "You have a nice family."
+    bases:
+      "as": "have"
+      "une": "a"
+      "belle": "nice; beautiful"
+    confusables:
+      "stepmother": { why: "Belle-mère is a mother-in-law or stepmother: one person, not a family." }
+      "mariage": { why: "Mariage is 'marriage' or 'wedding', not a family." }
+  "fr-0200":
+    native: "My wife and my husband are here."
+    confusables:
+      "wife-formal": { why: "Épouse is 'wife' in a more formal style; femme is the everyday word, as used here." }
+      "fiance": { why: "Fiancé is a man who is engaged, not one who is married." }
+  "fr-0201":
+    native: "How old is your son?"
+    bases:
+      "a": "has"
+    confusables:
+      "garçon": { why: "Garçon is 'boy', not 'son'." }
+      "baby": { why: "Bébé is 'baby': this asks about an older child, not a baby." }
