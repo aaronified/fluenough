@@ -1,0 +1,19 @@
+schema: 1
+id: "hi-en-grammar-reported-speech"
+kind: "layer"
+core: "hi-grammar-reported-speech"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reported speech"
+license: "CC-BY-SA-4.0"
+description: "What someone said or asked, reported with that (ki) and whether (kya). Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Reported speech"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"reported statement (said that)": "the report of what was said", "reported question (asked whether)": "the report of a question asked"}
+  entries:
+    "kahna": "to say; to tell"
+    "batana": "to tell; to inform"
+    "sochna": "to think"
+  notes: "In reported speech the verb of saying takes कि (ki) (that) for a statement, as in उसने कहा कि वह आएगा (usnē kahā ki vah āēgā): he said that he would come. A question is reported with क्या (kyā) (whether) after कि (ki), as in उसने पूछा कि क्या तुम आओगे (usnē pūchā ki kyā tum āōgē): he asked whether you would come. The table gives the report of a statement and of a question for three verbs of saying and thinking."
