@@ -1,0 +1,185 @@
+schema: 1
+id: "mr-en-feelings"
+kind: "layer"
+core: "mr-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings"
+description: "How people feel: anger, fear, hope, shame, love and loneliness, with the words for a mood and the verbs for showing it. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1315":
+    native: "feeling, emotion"
+    notes:
+      "n1": "{1} is a feeling or an emotion. The plural is भावना (bhāvanā) too."
+    examples:
+      "त्याच्या भावना समजतात.": "His feelings are understood."
+      "सगळ्यांनी भावना व्यक्त केल्या.": { native: "Everyone expressed their feelings.", bases: { "व्यक्त": "expressed" } }
+  "mr-1316":
+    native: "sorrow, grief"
+    notes:
+      "n1": "{1} is sorrow or grief. Its adjective is दुःखी (duḥkhī), sad."
+    examples:
+      "त्याच्या दुःखात सगळे सामील झाले.": { native: "Everyone joined in his sorrow.", bases: { "सामील": "joined", "झाले": "to become" } }
+      "दुःख वाटून घेतलं की कमी होतं.": { native: "When sorrow is shared, it becomes less.", bases: { "वाटून": "to share", "होतं": "to become" } }
+  "mr-1317":
+    native: "anger"
+    notes:
+      "n1": "{1} is anger."
+    examples:
+      "त्याला खूप राग आला.": "He became very angry."
+      "रागावर ताबा ठेवा.": "Keep your anger under control."
+  "mr-1318":
+    native: "fear"
+    notes:
+      "n1": "{1} is fear. Being afraid is भीती वाटणे (bhītī vāṭṇe)."
+    examples:
+      "अंधाराची भीती वाटते.": { native: "I am afraid of the dark.", bases: { "अंधाराची": "of the dark", "वाटते": "to feel" } }
+      "त्याच्या चेहऱ्यावर भीती दिसत होती.": { native: "Fear was visible on his face.", bases: { "दिसत": "to appear", "होती": "to be" } }
+  "mr-1319":
+    native: "hope"
+    notes:
+      "n1": "{1} is hope."
+    examples:
+      "मला आशा आहे.": { native: "I have hope.", bases: { "आहे": "to be" } }
+      "आशा सोडू नका.": "Do not give up hope."
+  "mr-1320":
+    native: "love"
+    notes:
+      "n1": "{1} is love, the feeling for a person."
+    examples:
+      "आईचं प्रेम मोठं असतं.": { native: "A mother's love is great.", bases: { "असतं": "to be" } }
+      "एकमेकांवर प्रेम करा.": "Love one another."
+  "mr-1321":
+    native: "hatred"
+    notes:
+      "n1": "{1} is hatred, the opposite of love."
+    examples:
+      "द्वेषाने काही मिळत नाही.": { native: "Nothing is gained by hatred.", bases: { "मिळत": "to get", "नाही": "not" } }
+      "त्याने कोणाचा द्वेष केला नाही.": { native: "He did not hate anyone.", bases: { "नाही": "not" } }
+  "mr-1322":
+    native: "shame, embarrassment"
+    notes:
+      "n1": "{1} is shame or embarrassment. Feeling shy is लाज वाटणे (lāj vāṭṇe)."
+    examples:
+      "मला लाज वाटली.": { native: "I felt embarrassed.", bases: { "वाटली": "to feel" } }
+      "चुकीची लाज वाटू नका.": { native: "Do not be ashamed of a mistake.", bases: { "चुकीची": "of a mistake", "वाटू": "to feel" } }
+  "mr-1323":
+    native: "pride"
+    notes:
+      "n1": "{1} is pride in someone or something."
+    examples:
+      "मला तुझा अभिमान आहे.": { native: "I am proud of you.", bases: { "आहे": "to be" } }
+      "अभिमानाने सांगितलं.": "I said it proudly."
+  "mr-1324":
+    native: "worry, anxiety"
+    notes:
+      "n1": "{1} is worry about something that may happen."
+    examples:
+      "तिला चिंता वाटते.": { native: "She is worried.", bases: { "वाटते": "to feel" } }
+      "चिंता करू नका.": "Do not worry."
+  "mr-1325":
+    native: "loneliness"
+    notes:
+      "n1": "{1} is loneliness, the feeling of being alone."
+    examples:
+      "शहरात त्याला एकटेपणा वाटतो.": { native: "In the city he feels lonely.", bases: { "शहरात": "in the city", "वाटतो": "to feel" } }
+      "एकटेपणा घालवायला मित्रांना भेटतो.": { native: "To pass the loneliness, I meet my friends.", bases: { "घालवायला": "to pass", "भेटतो": "to meet" } }
+  "mr-1326":
+    native: "contentment, satisfaction"
+    notes:
+      "n1": "{1} is satisfaction, the feeling of being content."
+    examples:
+      "या कामात समाधान आहे.": { native: "There is satisfaction in this work.", bases: { "आहे": "to be" } }
+      "त्याला समाधान मिळालं.": { native: "He got satisfaction.", bases: { "मिळालं": "to get" } }
+  "mr-1327":
+    native: "boredom"
+    notes:
+      "n1": "{1} is boredom. Being bored is कंटाळा येणे (kaṇṭāḷā yeṇe)."
+    examples:
+      "मला कंटाळा आला.": "I got bored."
+      "कंटाळा घालवायला पुस्तक वाचतो.": { native: "To pass the time I read a book.", bases: { "घालवायला": "to pass" } }
+  "mr-1328":
+    native: "enthusiasm, excitement"
+    notes:
+      "n1": "{1} is enthusiasm or excitement."
+    examples:
+      "सगळ्यांमध्ये उत्साह होता.": { native: "There was excitement among everyone.", bases: { "होता": "to be" } }
+      "उत्साहाने काम सुरू केलं.": { native: "He started the work with enthusiasm.", bases: { "सुरू": "started" } }
+  "mr-1329":
+    native: "satisfied, content"
+    notes:
+      "n1": "{1} describes someone content with what they have."
+    examples:
+      "ती आपल्या कामावर समाधानी आहे.": { native: "She is satisfied with her work.", bases: { "आपल्या": "her own", "आहे": "to be" } }
+      "समाधानी माणूस आनंदी असतो.": { native: "A content person is happy.", bases: { "असतो": "to be" } }
+  "mr-1330":
+    native: "irritable"
+    notes:
+      "n1": "{1} describes someone who is easily annoyed."
+    examples:
+      "तो आज चिडचिडा आहे.": { native: "He is irritable today.", bases: { "आहे": "to be" } }
+      "चिडचिडा स्वभाव वाईट असतो.": { native: "An irritable nature is bad.", bases: { "स्वभाव": "nature", "असतो": "to be" } }
+  "mr-1331":
+    native: "shy"
+    notes:
+      "n1": "{1} describes someone who is shy."
+    examples:
+      "ती लाजाळू मुलगी आहे.": { native: "She is a shy girl.", bases: { "आहे": "to be" } }
+      "लाजाळू लोक हळू बोलतात.": "Shy people speak softly."
+  "mr-1332":
+    native: "brave"
+    notes:
+      "n1": "{1} describes a brave person."
+    examples:
+      "तो धैर्यवान माणूस आहे.": { native: "He is a brave man.", bases: { "आहे": "to be" } }
+      "धैर्यवान व्हा.": { native: "Be brave.", bases: { "व्हा": "to become" } }
+  "mr-1333":
+    native: "timid, easily scared"
+    notes:
+      "n1": "{1} describes someone who is easily scared."
+    examples:
+      "तो फार घाबरट आहे.": { native: "He is very timid.", bases: { "आहे": "to be" } }
+      "घाबरट मुलाला अंधार आवडत नाही.": { native: "The timid child does not like the dark.", bases: { "नाही": "not" } }
+  "mr-1334":
+    native: "to be scared"
+    notes:
+      "n1": "{1} is becoming scared or afraid."
+    examples:
+      "ती अंधारात घाबरली.": { native: "She was scared in the dark.", bases: { "अंधारात": "in the dark" } }
+      "कुत्र्याला पाहून घाबरू नका.": "Do not be scared of the dog."
+  "mr-1335":
+    native: "to get angry"
+    notes:
+      "n1": "{1} is getting angry with someone."
+    examples:
+      "आई माझ्यावर रागावली.": "Mother got angry with me."
+      "तू का रागावलास?": "Why did you get angry?"
+  "mr-1336":
+    native: "to get irritated"
+    notes:
+      "n1": "{1} is getting annoyed or irritated."
+    examples:
+      "तो लवकर चिडतो.": "He gets irritated quickly."
+      "मुलं गोंधळ करून चिडवतात.": { native: "The children make a noise and annoy.", bases: { "चिडवतात": "to annoy" } }
+  "mr-1337":
+    native: "to be bored"
+    notes:
+      "n1": "{1} is becoming bored with something."
+    examples:
+      "मी या कामाला कंटाळलो.": "I got bored of this work."
+      "तो लवकर कंटाळतो.": "He gets bored quickly."
+  "mr-1338":
+    native: "to laugh, to smile"
+    notes:
+      "n1": "{1} is laughing or smiling."
+    examples:
+      "सगळे खूप हसले.": "Everyone laughed a lot."
+      "ती गोड हसते.": "She smiles sweetly."
+  "mr-1339":
+    native: "to love"
+    notes:
+      "n1": "{1} is the verb for loving someone."
+    examples:
+      "मी तुझ्यावर प्रेम करतो.": "I love you."
+      "ते एकमेकांवर प्रेम करतात.": { native: "They love each other.", bases: { "एकमेकांवर": "each other" } }
