@@ -1,0 +1,413 @@
+schema: 1
+id: "hi-news"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "news"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2147"
+    target: "खबर"
+    target_scripts: {"perso_arabic": "خبر"}
+    reading: "khabar"
+    ipa: "kʰəbər"
+    phonetic: "[kʰəbər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज एक बड़ी खबर है।", "reading": "āj ēk baṛī khabar hai.", "ipa": "aːdʒ eːk bəɽiː kʰəbər ɦɛː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "एक", "ref": "hi-0198"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यह खबर सच है।", "reading": "yah khabar sac hai.", "ipa": "jəɦ kʰəbər sətʃ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सच", "base": "सच", "reading": "sac"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2148"
+    target: "समाचार"
+    target_scripts: {"perso_arabic": "خبریں"}
+    reading: "samācār"
+    ipa: "səmaːtʃaːr"
+    phonetic: "[səmaːtʃaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रात नौ बजे समाचार आता है।", "reading": "rāt nau bajē samācār ātā hai.", "ipa": "raːt̪ nɔː bədʒeː səmaːtʃaːr aːt̪aː ɦɛː", "bases": [{"word": "रात", "ref": "hi-0304"}, {"word": "नौ", "ref": "hi-0206"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "आता", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "समाचार सुनो।", "reading": "samācār sunō.", "ipa": "səmaːtʃaːr sʊnoː", "bases": [{"word": "सुनो", "ref": "hi-0783"}]}
+  - id: "hi-2149"
+    target: "अख़बार"
+    target_scripts: {"perso_arabic": "اخبار"}
+    reading: "ak͟hbār"
+    ipa: "əxbaːr"
+    phonetic: "[əxbaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सुबह का अख़बार कहाँ है?", "reading": "subah kā ak͟hbār kahām̐ hai?", "ipa": "sʊbəɦ kaː əxbaːr kəɦãː ɦɛː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "का", "ref": "hi-0279"}, {"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अख़बार में खेल की खबरें हैं।", "reading": "ak͟hbār mēm̐ khēl kī khabrēm̐ haim̐.", "ipa": "əxbaːr mẽː kʰeːl kiː kʰəbrẽː ɦɛ̃ː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "खेल", "ref": "hi-1638"}, {"word": "की", "ref": "hi-0279"}, {"word": "खबरें", "ref": "hi-2147"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2150"
+    target: "रेडियो"
+    target_scripts: {"perso_arabic": "ریڈیو"}
+    reading: "rēḍiyō"
+    ipa: "reːɖɪjoː"
+    phonetic: "[reːɖɪjoː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रेडियो पर गाना बज रहा है।", "reading": "rēḍiyō par gānā baj rahā hai.", "ipa": "reːɖɪjoː pər ɡaːnaː bədʒ rəɦaː ɦɛː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "गाना", "ref": "hi-1639"}, {"word": "बज", "ref": "hi-1878"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "रेडियो धीमा करो।", "reading": "rēḍiyō dhīmā karō.", "ipa": "reːɖɪjoː d̪ʱiːmaː kəroː", "bases": [{"word": "धीमा", "ref": "hi-1877"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2151"
+    target: "संवाददाता"
+    target_scripts: {"perso_arabic": "نامہ نگار"}
+    reading: "saṁvāddātā"
+    ipa: "sə̃ʋaːd̪d̪aːt̪aː"
+    phonetic: "[sə̃ʋaːd̪d̪aːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संवाददाता शहर से खबर भेज रहा है।", "reading": "saṁvāddātā śahar sē khabar bhēj rahā hai.", "ipa": "sə̃ʋaːd̪d̪aːt̪aː ʃəɦər seː kʰəbər bʱeːdʒ rəɦaː ɦɛː", "bases": [{"word": "शहर", "ref": "hi-0195"}, {"word": "से", "ref": "hi-0276"}, {"word": "खबर", "ref": "hi-2147"}, {"word": "भेज", "ref": "hi-0797"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हमारा संवाददाता वहाँ है।", "reading": "hamārā saṁvāddātā vahām̐ hai.", "ipa": "ɦəmaːraː sə̃ʋaːd̪d̪aːt̪aː ʋəɦãː ɦɛː", "bases": [{"word": "हमारा", "ref": "hi-0756"}, {"word": "वहाँ", "ref": "hi-0296"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2152"
+    target: "चुनाव"
+    target_scripts: {"perso_arabic": "انتخاب"}
+    reading: "cunāv"
+    ipa: "tʃʊnaːʋ"
+    phonetic: "[tʃʊnaːʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "अगले महीने चुनाव है।", "reading": "aglē mahīnē cunāv hai.", "ipa": "əɡleː məɦiːneː tʃʊnaːʋ ɦɛː", "bases": [{"word": "अगले", "base": "अगला", "reading": "aglā"}, {"word": "महीने", "ref": "hi-0317"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "चुनाव में सब वोट डालें।", "reading": "cunāv mēm̐ sab vōṭ ḍālēm̐.", "ipa": "tʃʊnaːʋ mẽː səb ʋoːʈ ɖaːlẽː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "सब", "ref": "hi-0054"}, {"word": "वोट", "base": "वोट", "reading": "vōṭ"}, {"word": "डालें", "ref": "hi-0941"}]}
+  - id: "hi-2153"
+    target: "नेता"
+    target_scripts: {"perso_arabic": "رہنما"}
+    reading: "nētā"
+    ipa: "neːt̪aː"
+    phonetic: "[neːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नेता भाषण दे रहे हैं।", "reading": "nētā bhāśaṇ dē rahē haim̐.", "ipa": "neːt̪aː bʱaːʃəɳ d̪eː rəɦeː ɦɛ̃ː", "bases": [{"word": "भाषण", "base": "भाषण", "reading": "bhāśaṇ"}, {"word": "दे", "ref": "hi-0785"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "यह नेता ईमानदार है।", "reading": "yah nētā īmāndār hai.", "ipa": "jəɦ neːt̪aː iːmaːnd̪aːr ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "ईमानदार", "ref": "hi-1388"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2154"
+    target: "मंत्री"
+    target_scripts: {"perso_arabic": "وزیر"}
+    reading: "mantrī"
+    ipa: "mənt̪riː"
+    phonetic: "[mən̪t̪riː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शिक्षा मंत्री ने बात की।", "reading": "śikśā mantrī nē bāt kī.", "ipa": "ʃɪkʃaː mənt̪riː neː baːt̪ kiː", "bases": [{"word": "शिक्षा", "base": "शिक्षा", "reading": "śikśā"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "बात", "ref": "hi-1864"}, {"word": "की", "ref": "hi-0779"}]}
+      - {"target": "मंत्री कल आएँगे।", "reading": "mantrī kal āēm̐gē.", "ipa": "mənt̪riː kəl aːẽːɡeː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "आएँगे", "ref": "hi-0778"}]}
+  - id: "hi-2155"
+    target: "घटना"
+    target_scripts: {"perso_arabic": "واقعہ"}
+    reading: "ghaṭnā"
+    ipa: "ɡʱəʈnaː"
+    phonetic: "[ɡʱəʈnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह घटना कल हुई।", "reading": "yah ghaṭnā kal huī.", "ipa": "jəɦ ɡʱəʈnaː kəl ɦʊiː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "कल", "ref": "hi-0300"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "घटना की जाँच हो रही है।", "reading": "ghaṭnā kī jām̐c hō rahī hai.", "ipa": "ɡʱəʈnaː kiː dʒãːtʃ ɦoː rəɦiː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "जाँच", "ref": "hi-1446"}, {"word": "हो", "ref": "hi-0780"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2156"
+    target: "अपराध"
+    target_scripts: {"perso_arabic": "جرم"}
+    reading: "aprādh"
+    ipa: "əpraːd̪ʱ"
+    phonetic: "[əpraːd̪ʱ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शहर में अपराध बढ़ रहे हैं।", "reading": "śahar mēm̐ aprādh baṛh rahē haim̐.", "ipa": "ʃəɦər mẽː əpraːd̪ʱ bəɽʱ rəɦeː ɦɛ̃ː", "bases": [{"word": "शहर", "ref": "hi-0195"}, {"word": "में", "ref": "hi-0274"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "अपराध की खबर छपी।", "reading": "aprādh kī khabar chapī.", "ipa": "əpraːd̪ʱ kiː kʰəbər tʃʰəpiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "खबर", "ref": "hi-2147"}, {"word": "छपी", "ref": "hi-2172"}]}
+  - id: "hi-2157"
+    target: "अदालत"
+    target_scripts: {"perso_arabic": "عدالت"}
+    reading: "adālat"
+    ipa: "əd̪aːlət̪"
+    phonetic: "[əd̪aːlət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मामला अदालत में है।", "reading": "māmlā adālat mēm̐ hai.", "ipa": "maːmlaː əd̪aːlət̪ mẽː ɦɛː", "bases": [{"word": "मामला", "base": "मामला", "reading": "māmlā"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अदालत का फ़ैसला कल आएगा।", "reading": "adālat kā faislā kal āēgā.", "ipa": "əd̪aːlət̪ kaː fɛːslaː kəl aːeːɡaː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "फ़ैसला", "ref": "hi-2168"}, {"word": "कल", "ref": "hi-0300"}, {"word": "आएगा", "ref": "hi-0778"}]}
+  - id: "hi-2158"
+    target: "सूचना"
+    target_scripts: {"perso_arabic": "اطلاع"}
+    reading: "sūcnā"
+    ipa: "suːtʃnaː"
+    phonetic: "[suːtʃnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस बारे में सूचना दो।", "reading": "is bārē mēm̐ sūcnā dō.", "ipa": "ɪs baːreː mẽː suːtʃnaː d̪oː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "बारे", "base": "बारे", "reading": "bārē"}, {"word": "में", "ref": "hi-0274"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "सरकार की सूचना आई है।", "reading": "sarkār kī sūcnā āī hai.", "ipa": "sərkaːr kiː suːtʃnaː aːiː ɦɛː", "bases": [{"word": "सरकार", "base": "सरकार", "reading": "sarkār"}, {"word": "की", "ref": "hi-0279"}, {"word": "सूचना", "base": "सूचना", "reading": "sūcnā"}, {"word": "आई", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2159"
+    target: "विज्ञापन"
+    target_scripts: {"perso_arabic": "اشتہار"}
+    reading: "vigyāpan"
+    ipa: "ʋɪɡjaːpən"
+    phonetic: "[ʋɪɡjaːpən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "टीवी पर नया विज्ञापन आया है।", "reading": "ṭīvī par nayā vigyāpan āyā hai.", "ipa": "ʈiːʋiː pər nəjaː ʋɪɡjaːpən aːjaː ɦɛː", "bases": [{"word": "टीवी", "ref": "hi-1867"}, {"word": "पर", "ref": "hi-0275"}, {"word": "नया", "ref": "hi-0896"}, {"word": "आया", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अख़बार में विज्ञापन छपा।", "reading": "ak͟hbār mēm̐ vigyāpan chapā.", "ipa": "əxbaːr mẽː ʋɪɡjaːpən tʃʰəpaː", "bases": [{"word": "अख़बार", "ref": "hi-2149"}, {"word": "में", "ref": "hi-0274"}, {"word": "छपा", "ref": "hi-2172"}]}
+  - id: "hi-2160"
+    target: "सुर्खी"
+    target_scripts: {"perso_arabic": "سرخی"}
+    reading: "surkhī"
+    ipa: "sʊrkʰiː"
+    phonetic: "[sʊrkʰiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज की सुर्खी पढ़ो।", "reading": "āj kī surkhī paṛhō.", "ipa": "aːdʒ kiː sʊrkʰiː pəɽʱoː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "की", "ref": "hi-0279"}, {"word": "पढ़ो", "ref": "hi-0114"}]}
+      - {"target": "सुर्खी बड़ी है।", "reading": "surkhī baṛī hai.", "ipa": "sʊrkʰiː bəɽiː ɦɛː", "bases": [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2161"
+    target: "लेख"
+    target_scripts: {"perso_arabic": "مضمون"}
+    reading: "lēkh"
+    ipa: "leːkʰ"
+    phonetic: "[leːkʰ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका लेख अख़बार में छपा।", "reading": "uskā lēkh ak͟hbār mēm̐ chapā.", "ipa": "ʊskaː leːkʰ əxbaːr mẽː tʃʰəpaː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "अख़बार", "ref": "hi-2149"}, {"word": "में", "ref": "hi-0274"}, {"word": "छपा", "ref": "hi-2172"}]}
+      - {"target": "यह लेख दिलचस्प है।", "reading": "yah lēkh dilcasp hai.", "ipa": "jəɦ leːkʰ d̪ɪltʃəsp ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "दिलचस्प", "ref": "hi-1966"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2162"
+    target: "संपादक"
+    target_scripts: {"perso_arabic": "مدیر"}
+    reading: "sampādak"
+    ipa: "səmpaːd̪ək"
+    phonetic: "[səmpaːd̪ək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "संपादक ने खबर बदली।", "reading": "sampādak nē khabar badlī.", "ipa": "səmpaːd̪ək neː kʰəbər bəd̪liː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "खबर", "ref": "hi-2147"}, {"word": "बदली", "ref": "hi-1364"}]}
+      - {"target": "संपादक से मिलो।", "reading": "sampādak sē milō.", "ipa": "səmpaːd̪ək seː mɪloː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "मिलो", "ref": "hi-0793"}]}
+  - id: "hi-2163"
+    target: "प्रसारण"
+    target_scripts: {"perso_arabic": "نشریات"}
+    reading: "prasāraṇ"
+    ipa: "prəsaːrəɳ"
+    phonetic: "[prəsaːrəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज का प्रसारण रद्द है।", "reading": "āj kā prasāraṇ radd hai.", "ipa": "aːdʒ kaː prəsaːrəɳ rəd̪d̪ ɦɛː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "का", "ref": "hi-0279"}, {"word": "रद्द", "base": "रद्द", "reading": "radd"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रसारण सीधा दिखाया गया।", "reading": "prasāraṇ sīdhā dikhāyā gayā.", "ipa": "prəsaːrəɳ siːd̪ʱaː d̪ɪkʰaːjaː ɡəjaː", "bases": [{"word": "सीधा", "ref": "hi-1969"}, {"word": "दिखाया", "ref": "hi-1815"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2164"
+    target: "आंदोलन"
+    target_scripts: {"perso_arabic": "تحریک"}
+    reading: "āndōlan"
+    ipa: "aːnd̪oːlən"
+    phonetic: "[aːn̪d̪oːlən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "किसानों का आंदोलन चल रहा है।", "reading": "kisānōm̐ kā āndōlan cal rahā hai.", "ipa": "kɪsaːnõː kaː aːnd̪oːlən tʃəl rəɦaː ɦɛː", "bases": [{"word": "किसानों", "ref": "hi-0407"}, {"word": "का", "ref": "hi-0279"}, {"word": "चल", "ref": "hi-0801"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आंदोलन शांति से करो।", "reading": "āndōlan śānti sē karō.", "ipa": "aːnd̪oːlən ʃaːnt̪ɪ seː kəroː", "bases": [{"word": "शांति", "ref": "hi-2115"}, {"word": "से", "ref": "hi-0276"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2165"
+    target: "विरोध"
+    target_scripts: {"perso_arabic": "مخالفت"}
+    reading: "virōdh"
+    ipa: "ʋɪroːd̪ʱ"
+    phonetic: "[ʋɪroːd̪ʱ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "लोगों ने विरोध किया।", "reading": "lōgōm̐ nē virōdh kiyā.", "ipa": "loːɡõː neː ʋɪroːd̪ʱ kɪjaː", "bases": [{"word": "लोगों", "ref": "hi-0761"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "किया", "ref": "hi-0779"}]}
+      - {"target": "इस फ़ैसले का विरोध हो रहा है।", "reading": "is faislē kā virōdh hō rahā hai.", "ipa": "ɪs fɛːsleː kaː ʋɪroːd̪ʱ ɦoː rəɦaː ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "फ़ैसले", "ref": "hi-2168"}, {"word": "का", "ref": "hi-0279"}, {"word": "हो", "ref": "hi-0780"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2166"
+    target: "प्रदर्शन"
+    target_scripts: {"perso_arabic": "مظاہرہ"}
+    reading: "pradarśan"
+    ipa: "prəd̪ərʃən"
+    phonetic: "[prəd̪ərʃən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शहर में बड़ा प्रदर्शन हुआ।", "reading": "śahar mēm̐ baṛā pradarśan huā.", "ipa": "ʃəɦər mẽː bəɽaː prəd̪ərʃən ɦʊaː", "bases": [{"word": "शहर", "ref": "hi-0195"}, {"word": "में", "ref": "hi-0274"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "प्रदर्शन शांत रहा।", "reading": "pradarśan śānt rahā.", "ipa": "prəd̪ərʃən ʃaːnt̪ rəɦaː", "bases": [{"word": "शांत", "ref": "hi-1993"}, {"word": "रहा", "ref": "hi-0791"}]}
+  - id: "hi-2167"
+    target: "बयान"
+    target_scripts: {"perso_arabic": "بیان"}
+    reading: "bayān"
+    ipa: "bəjaːn"
+    phonetic: "[bəjaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मंत्री का बयान छपा है।", "reading": "mantrī kā bayān chapā hai.", "ipa": "mənt̪riː kaː bəjaːn tʃʰəpaː ɦɛː", "bases": [{"word": "मंत्री", "ref": "hi-2154"}, {"word": "का", "ref": "hi-0279"}, {"word": "छपा", "ref": "hi-2172"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसने बयान बदला।", "reading": "usnē bayān badlā.", "ipa": "ʊsneː bəjaːn bəd̪laː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "बदला", "ref": "hi-1364"}]}
+  - id: "hi-2168"
+    target: "फ़ैसला"
+    target_scripts: {"perso_arabic": "فیصلہ"}
+    reading: "faislā"
+    ipa: "fɛːslaː"
+    phonetic: "[fɛːslaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह फ़ैसला सही है।", "reading": "yah faislā sahī hai.", "ipa": "jəɦ fɛːslaː səɦiː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सही", "ref": "hi-0822"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अदालत ने फ़ैसला सुनाया।", "reading": "adālat nē faislā sunāyā.", "ipa": "əd̪aːlət̪ neː fɛːslaː sʊnaːjaː", "bases": [{"word": "अदालत", "ref": "hi-2157"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सुनाया", "ref": "hi-2173"}]}
+  - id: "hi-2169"
+    target: "घोषणा"
+    target_scripts: {"perso_arabic": "اعلان"}
+    reading: "ghōśṇā"
+    ipa: "ɡʱoːʃɳaː"
+    phonetic: "[ɡʱoːʃɳaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सरकार ने नई योजना की घोषणा की।", "reading": "sarkār nē naī yōjnā kī ghōśṇā kī.", "ipa": "sərkaːr neː nəiː joːdʒnaː kiː ɡʱoːʃɳaː kiː", "bases": [{"word": "सरकार", "base": "सरकार", "reading": "sarkār"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नई", "ref": "hi-0896"}, {"word": "योजना", "ref": "hi-2018"}, {"word": "की", "ref": "hi-0779"}]}
+      - {"target": "घोषणा सुबह होगी।", "reading": "ghōśṇā subah hōgī.", "ipa": "ɡʱoːʃɳaː sʊbəɦ ɦoːɡiː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "होगी", "ref": "hi-0780"}]}
+  - id: "hi-2170"
+    target: "वादा"
+    target_scripts: {"perso_arabic": "وعدہ"}
+    reading: "vādā"
+    ipa: "ʋaːd̪aː"
+    phonetic: "[ʋaːd̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने वादा किया।", "reading": "usnē vādā kiyā.", "ipa": "ʊsneː ʋaːd̪aː kɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "किया", "ref": "hi-0779"}]}
+      - {"target": "वादा निभाओ।", "reading": "vādā nibhāō.", "ipa": "ʋaːd̪aː nɪbʱaːoː", "bases": [{"word": "निभाओ", "base": "निभाना", "reading": "nibhānā"}]}
+  - id: "hi-2171"
+    target: "हादसा"
+    target_scripts: {"perso_arabic": "حادثہ"}
+    reading: "hādsā"
+    ipa: "ɦaːd̪saː"
+    phonetic: "[ɦaːd̪saː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सड़क पर हादसा हुआ।", "reading": "saṛak par hādsā huā.", "ipa": "səɽək pər ɦaːd̪saː ɦʊaː", "bases": [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "हादसे में कोई घायल नहीं हुआ।", "reading": "hādsē mēm̐ kōī ghāyal nahīm̐ huā.", "ipa": "ɦaːd̪seː mẽː koːiː ɡʱaːjəl nəɦĩː ɦʊaː", "bases": [{"word": "हादसे", "base": "हादसा", "reading": "hādsā"}, {"word": "में", "ref": "hi-0274"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "घायल", "base": "घायल", "reading": "ghāyal"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "हुआ", "ref": "hi-0780"}]}
+  - id: "hi-2172"
+    target: "छपना"
+    target_scripts: {"perso_arabic": "چھپنا"}
+    reading: "chapnā"
+    ipa: "tʃʰəpnaː"
+    phonetic: "[tʃʰəpnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "खबर अख़बार में छपी।", "reading": "khabar ak͟hbār mēm̐ chapī.", "ipa": "kʰəbər əxbaːr mẽː tʃʰəpiː", "bases": [{"word": "खबर", "ref": "hi-2147"}, {"word": "अख़बार", "ref": "hi-2149"}, {"word": "में", "ref": "hi-0274"}, {"word": "छपी", "base": "छपना", "reading": "chapnā"}]}
+      - {"target": "किताब कब छपेगी?", "reading": "kitāb kab chapēgī?", "ipa": "kɪt̪aːb kəb tʃʰəpeːɡiː", "bases": [{"word": "किताब", "ref": "hi-1095"}, {"word": "कब", "ref": "hi-0160"}, {"word": "छपेगी", "base": "छपना", "reading": "chapnā"}]}
+  - id: "hi-2173"
+    target: "सुनाना"
+    target_scripts: {"perso_arabic": "سنانا"}
+    reading: "sunānā"
+    ipa: "sʊnaːnaː"
+    phonetic: "[sʊnaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दादी कहानी सुनाती हैं।", "reading": "dādī kahānī sunātī haim̐.", "ipa": "d̪aːd̪iː kəɦaːniː sʊnaːt̪iː ɦɛ̃ː", "bases": [{"word": "दादी", "ref": "hi-0385"}, {"word": "कहानी", "base": "कहानी", "reading": "kahānī"}, {"word": "सुनाती", "base": "सुनाना", "reading": "sunānā"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "उसने खबर सुनाई।", "reading": "usnē khabar sunāī.", "ipa": "ʊsneː kʰəbər sʊnaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "खबर", "ref": "hi-2147"}, {"word": "सुनाई", "base": "सुनाना", "reading": "sunānā"}]}

@@ -441,7 +441,8 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "hi-news", theme: "news", words: 55 }
+  - decks: ["hi-news", "hi-reading-news", "*"]
+    words: 27
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
