@@ -1,0 +1,31 @@
+schema: 1
+id: "bn-en-grammar-conditional-sentences"
+kind: "layer"
+core: "bn-grammar-conditional-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If: sentences"
+description: "Short sentences with the -লে (-le) form for 'if'. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3022":
+    native: "If you come, I will be happy."
+    bases: { "আসলে": "if (you) come", "খুশি": "happy" }
+    confusables: { "c1": { why: "sad: the opposite feeling" }, "c2": { why: "busy: not what the sentence says" } }
+  "bn-3023":
+    native: "If she does not eat, I will not eat."
+    bases: { "না": "not" }
+    confusables: { "c1": { why: "if (one) sleeps: a different act" }, "c2": { why: "if (one) reads: a different act" } }
+  "bn-3024":
+    native: "If it rains, we will stay at home."
+    bases: { "বৃষ্টি": "rain" }
+    confusables: { "c1": { why: "sunshine: the opposite weather" }, "c2": { why: "a storm: a different weather" } }
+  "bn-3025":
+    native: "If the train is late, we will walk."
+    confusables: { "c1": { why: "a bus: a different transport" }, "c2": { why: "a boat: a different transport" } }
+  "bn-3026":
+    native: "If you say so, I will go."
+    confusables: { "c1": { why: "if (one) hears: a different act" }, "c2": { why: "if (one) thinks: a different act" } }
+  "bn-3027":
+    native: "If I get money, I will buy a new book."
+    confusables: { "c1": { why: "a loan: not money in hand" }, "c2": { why: "a price: not the money one gets" } }

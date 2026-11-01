@@ -487,11 +487,15 @@ units:
   - decks: ["bn-grammar-verb-classes", "bn-grammar-can-must"]
     words: 2
     grammar: ["verb-classes", "can-must"]
-  - planned: { id: "bn-grammar-conditional", grammar: "conditional" }
+  - decks: ["bn-grammar-conditional", "bn-grammar-conditional-sentences"]
+    words: 0
+    grammar: ["conditional"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - decks: ["bn-reading-conditional"]
+    words: 0
   - planned: { id: "bn-travel", theme: "travel", words: 55 }
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
