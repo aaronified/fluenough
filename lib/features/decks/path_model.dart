@@ -278,6 +278,7 @@ final class UnitStep extends PathStep {
     required this.due,
     required this.onPath,
     this.level,
+    this.yourScript = false,
   });
 
   /// Its place in the course, from 1.
@@ -295,6 +296,11 @@ final class UnitStep extends PathStep {
 
   /// The level it belongs to, when the path marks levels.
   final CefrLevel? level;
+
+  /// Whether it is the first unit of the one script the learner learns, in
+  /// a language written in several: the path says so. False for a
+  /// learner of every script, and for a language with one.
+  final bool yourScript;
 
   List<DeckEntry> get decks => content.decks;
 }
@@ -409,6 +415,20 @@ final class MilestoneStep extends PathStep {
   final int toGo;
 }
 
+/// The decks of one script the learner does not learn, which the path
+/// leaves out: they show under the script's name, not under "Other decks".
+final class SkippedScript {
+  const SkippedScript({required this.script, required this.decks});
+
+  /// The script, as deck files name it (`devanagari`).
+  final String script;
+
+  final List<DeckEntry> decks;
+
+  /// The cards in all of [decks].
+  int get cards => decks.fold(0, (sum, e) => sum + e.cards.length);
+}
+
 /// A course's path, with what the learner has done of it.
 class CourseView {
   CourseView({
@@ -417,6 +437,7 @@ class CourseView {
     required this.steps,
     required this.otherDecks,
     required this.plan,
+    this.skippedScripts = const <SkippedScript>[],
   });
 
   final LanguageInfo language;
@@ -430,6 +451,12 @@ class CourseView {
   /// and those that need an alphabet the learner skips. Each opens its own
   /// screen.
   final List<DeckEntry> otherDecks;
+
+  /// The script decks of a script the learner skips, a script at a time, in
+  /// the language's script order: they leave [otherDecks] for a section of
+  /// their own. Empty unless the language is written in several
+  /// scripts and the learner learns some but not all of them.
+  final List<SkippedScript> skippedScripts;
 
   final CoursePlan plan;
 
@@ -494,6 +521,27 @@ CourseView? courseView(
     return null;
   }
 
+  // A language written in several scripts that the learner learns in some
+  // and not all: its skipped script decks get a section of their own, and
+  // the first unit of the one script learned a "Your script" mark.
+  final courseLanguage = first.language;
+  final allScripts = <String>{
+    state.primaryScript(language),
+    ...courseLanguage.allScripts,
+  };
+  final learnedScripts = state.learnedScripts(courseLanguage);
+  final partial =
+      allScripts.length > 1 &&
+      learnedScripts.isNotEmpty &&
+      learnedScripts.length < allScripts.length;
+  final yourScriptAt = !partial || learnedScripts.length != 1
+      ? -1
+      : units.indexWhere(
+          (u) =>
+              u.every(state.needsAlphabet) &&
+              u.first.language.script == learnedScripts.single,
+        );
+
   // Units, with their status.
   final unitSteps = <UnitStep>[];
   var foundNext = false;
@@ -515,6 +563,7 @@ CourseView? courseView(
         due: state.buildSession(DrillRequest(deckIds: ids)).due.length,
         onPath: state.pathOf(decks.first)?.unitOf(decks.first.id) != null,
         level: levelOf(i),
+        yourScript: i == yourScriptAt,
       ),
     );
   }
@@ -750,14 +799,35 @@ CourseView? courseView(
     for (final unit in units)
       for (final entry in unit) entry.id,
   };
+  final left = <DeckEntry>[
+    for (final entry in state.decks)
+      if (entry.language.code == language && !inCourse.contains(entry.id))
+        entry,
+  ];
+  // The course's own script decks of a script not learned: the decks its
+  // units left out (`AppState.courseUnits`).
+  bool skipped(DeckEntry e) =>
+      partial &&
+      e.deck.native.code == first.deck.native.code &&
+      allScripts.contains(e.language.script) &&
+      state.needsAlphabet(e) &&
+      !state.learnsScriptOf(e.language);
   return CourseView(
     language: first.language,
     native: first.deck.native,
     steps: steps,
     otherDecks: <DeckEntry>[
-      for (final entry in state.decks)
-        if (entry.language.code == language && !inCourse.contains(entry.id))
-          entry,
+      for (final entry in left)
+        if (!skipped(entry)) entry,
+    ],
+    skippedScripts: <SkippedScript>[
+      for (final script in allScripts)
+        if (<DeckEntry>[
+              for (final entry in left)
+                if (skipped(entry) && entry.language.script == script) entry,
+            ]
+            case final decks when decks.isNotEmpty)
+          SkippedScript(script: script, decks: decks),
     ],
     plan: thePlan,
   );
