@@ -1,0 +1,19 @@
+schema: 1
+id: "fr-grammar-avoir"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "je": "j'ai"
+        "tu": "tu as"
+        "il-elle": "il a"
+        "nous": "nous avons"
+        "vous": "vous avez"
+        "ils-elles": "ils ont"

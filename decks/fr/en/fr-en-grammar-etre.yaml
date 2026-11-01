@@ -1,0 +1,16 @@
+schema: 1
+id: "fr-en-grammar-etre"
+kind: "layer"
+core: "fr-grammar-etre"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: être"
+license: "CC-BY-SA-4.0"
+description: "Être is the verb 'to be', and it is irregular in every person. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Conjugation"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "etre": "to be"
+  notes: "Être is 'to be': je suis (I am), tu es (you are), il est (he is), nous sommes (we are), vous êtes (you are), ils sont (they are). It says who someone is and where they are: je suis étudiant (I am a student), nous sommes à la gare (we are at the station). Vous êtes is said vouz-ɛt before a vowel."

@@ -160,11 +160,9 @@ units:
   - decks: ["fr-grammar-adjective-agreement", "fr-grammar-adjective-position", "fr-reading-adjectives"]
     words: 0
     grammar: ["adjective-agreement", "adjective-position"]
-  - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir", "il-y-a"] }
-    listening_passages:
-      - { id: "who-and-what-they-have", text: { "en": "Saying who someone is and what they have" } }
-    reading_passages:
-      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, what they have" } }
+  - decks: ["fr-grammar-etre", "fr-grammar-avoir", "fr-grammar-il-y-a", "fr-reading-etre-avoir"]
+    words: 0
+    grammar: ["etre", "avoir", "il-y-a"]
   - planned: { id: "fr-grammar-present-er", grammar: "present-er" }
     listening_passages:
       - { id: "what-we-like", text: { "en": "Friends say what they like, where they live and what they speak" } }
