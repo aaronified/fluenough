@@ -577,7 +577,8 @@ units:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
-  - planned: { id: "kn-law", theme: "law", words: 35 }
+  - decks: ["kn-law", "*"]
+    words: 16
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
