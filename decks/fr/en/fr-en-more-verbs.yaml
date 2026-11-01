@@ -1,0 +1,430 @@
+schema: 1
+id: "fr-en-more-verbs"
+kind: "layer"
+core: "fr-more-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More verbs"
+license: "CC-BY-SA-4.0"
+description: "Thirty more verbs, taught in their dictionary form: pouvoir, devoir, savoir, connaître, finir, comprendre, rester, entendre, mettre and more. Each example shows the form used. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0500":
+    native: "can; to be able to"
+    notes:
+      "n1": "Pouvoir is 'can' or 'to be able to': je peux (I can), vous pouvez (you can). It is often followed by another verb."
+    examples:
+      "Je peux parler français.":
+        native: "I can speak French."
+        bases:
+          "peux": "can; to be able to"
+      "Vous pouvez venir ici.":
+        native: "You can come here."
+        bases:
+          "pouvez": "can; to be able to"
+  "fr-0501":
+    native: "must; to have to"
+    notes:
+      "n1": "Devoir is 'must' or 'to have to', and it is followed by a verb: je dois partir (I must leave)."
+    examples:
+      "Je dois partir.":
+        native: "I must leave."
+        bases:
+          "dois": "must; to have to"
+      "Tu dois manger.":
+        native: "You must eat."
+        bases:
+          "dois": "must; to have to"
+  "fr-0502":
+    native: "to know (a fact); to know how"
+    notes:
+      "n1": "Savoir is 'to know' a fact or how to do something. For people and places use connaître."
+    examples:
+      "Je sais le français.":
+        native: "I know French."
+        bases:
+          "sais": "to know (a fact); to know how"
+          "le": "the"
+      "Elle sait où est la gare.":
+        native: "She knows where the station is."
+        bases:
+          "sait": "to know (a fact); to know how"
+          "la": "the"
+  "fr-0503":
+    native: "to know (a person or place)"
+    notes:
+      "n1": "Connaître is 'to know' a person or a place, not a fact. Je connais Paul is 'I know Paul'."
+    examples:
+      "Je connais Paul.":
+        native: "I know Paul."
+        bases:
+          "connais": "to know (a person or place)"
+          "Paul": "Paul (a first name)"
+      "Vous connaissez la ville ?":
+        native: "Do you know the town?"
+        bases:
+          "connaissez": "to know (a person or place)"
+          "la": "the"
+  "fr-0504":
+    native: "to answer; to reply"
+    notes:
+      "n1": "Répondre is 'to answer' or 'to reply'. It is followed by à when the answer goes to someone."
+    examples:
+      "Tu réponds bien.":
+        native: "You answer well."
+        bases:
+          "réponds": "to answer; to reply"
+      "Il répond vite.":
+        native: "He answers quickly."
+        bases:
+          "répond": "to answer; to reply"
+  "fr-0505":
+    native: "to sell"
+    notes:
+      "n1": "Vendre is 'to sell'. It is the opposite of acheter (to buy)."
+    examples:
+      "Elle vend des pâtes.":
+        native: "She sells pasta."
+        bases:
+          "vend": "to sell"
+          "des": "some; of the (plural)"
+          "pâtes": "dough; pasta (in the plural)"
+      "Nous vendons ici.":
+        native: "We sell things here."
+        bases:
+          "vendons": "to sell"
+  "fr-0506":
+    native: "to finish; to end"
+    notes:
+      "n1": "Finir is 'to finish' or 'to end'. Its nous form ends in -issons: nous finissons (we finish)."
+    examples:
+      "Je finis mon travail.":
+        native: "I finish my work."
+        bases:
+          "finis": "to finish; to end"
+      "Nous finissons tard.":
+        native: "We finish late."
+        bases:
+          "finissons": "to finish; to end"
+  "fr-0507":
+    native: "to choose"
+    notes:
+      "n1": "Choisir is 'to choose'. It takes its -iss- in the plural: nous choisissons (we choose)."
+    examples:
+      "Tu choisis ici.":
+        native: "You choose here."
+        bases:
+          "choisis": "to choose"
+      "Elle choisit le vin.":
+        native: "She chooses the wine."
+        bases:
+          "choisit": "to choose"
+          "le": "the"
+  "fr-0508":
+    native: "to begin; to start"
+    notes:
+      "n1": "Commencer is 'to begin' or 'to start'. Nous commençons has a cedilla on the c, which is said s."
+    examples:
+      "Je commence maintenant.":
+        native: "I begin now."
+        bases:
+          "commence": "to begin; to start"
+      "Nous commençons tôt.":
+        native: "We begin early."
+        bases:
+          "commençons": "to begin; to start"
+  "fr-0509":
+    native: "to forget"
+    notes:
+      "n1": "Oublier is 'to forget'. It is followed by a noun or by de and a verb."
+    examples:
+      "J'oublie le nom.":
+        native: "I forget the name."
+        bases:
+          "J'oublie": "to forget"
+          "le": "the"
+      "Tu n'oublies jamais.":
+        native: "You never forget."
+        bases:
+          "n'oublies": "to forget"
+  "fr-0510":
+    native: "to think"
+    notes:
+      "n1": "Penser is 'to think'. Penser à is 'to think of' a person or thing: je pense à toi (I think of you)."
+    examples:
+      "Je pense à toi.":
+        native: "I think of you."
+        bases:
+          "pense": "to think"
+          "à": "to; at; in"
+      "Ils pensent que ce est bon.":
+        native: "They think it is good."
+        bases:
+          "pensent": "to think"
+          "que": "than"
+  "fr-0511":
+    native: "to believe; to think"
+    notes:
+      "n1": "Croire is 'to believe' or 'to think' that something is true. It is followed by que."
+    examples:
+      "Je crois que tu es gentil.":
+        native: "I believe you are kind."
+        bases:
+          "crois": "to believe; to think"
+          "que": "than"
+      "Il croit Paul.":
+        native: "He believes Paul."
+        bases:
+          "croit": "to believe; to think"
+          "Paul": "Paul (a first name)"
+  "fr-0512":
+    native: "to understand"
+    notes:
+      "n1": "Comprendre is 'to understand'. It is conjugated like prendre (to take)."
+    examples:
+      "Je comprends le français.":
+        native: "I understand French."
+        bases:
+          "comprends": "to understand"
+          "le": "the"
+      "Vous comprenez ?":
+        native: "Do you understand?"
+        bases:
+          "comprenez": "to understand"
+  "fr-0513":
+    native: "to learn"
+    notes:
+      "n1": "Apprendre is 'to learn'. It is conjugated like prendre (to take)."
+    examples:
+      "J'apprends le français.":
+        native: "I am learning French."
+        bases:
+          "J'apprends": "to learn"
+          "le": "the"
+      "Elle apprend vite.":
+        native: "She learns quickly."
+        bases:
+          "apprend": "to learn"
+  "fr-0514":
+    native: "to stay; to remain"
+    notes:
+      "n1": "Rester is 'to stay' or 'to remain'. It takes être in the compound past, which is taught at A2."
+    examples:
+      "Je reste ici.":
+        native: "I stay here."
+        bases:
+          "reste": "to stay; to remain"
+      "Nous restons ensemble.":
+        native: "We stay together."
+        bases:
+          "restons": "to stay; to remain"
+  "fr-0515":
+    native: "to enter; to come in"
+    notes:
+      "n1": "Entrer is 'to enter' or 'to come in'. Entre ! is 'Come in!'. It is followed by dans for a place."
+    examples:
+      "Entre !":
+        native: "Come in!"
+        bases:
+          "Entre": "to enter; to come in"
+      "Vous entrez dans la gare.":
+        native: "You enter the station."
+        bases:
+          "entrez": "to enter; to come in"
+          "la": "the"
+  "fr-0516":
+    native: "to go up; to get on"
+    notes:
+      "n1": "Monter is 'to go up' or 'to get on' a vehicle: monter dans le train (to get on the train)."
+    examples:
+      "Je monte dans le train.":
+        native: "I get on the train."
+        bases:
+          "monte": "to go up; to get on"
+          "le": "the"
+      "Ils montent.":
+        native: "They go up."
+        bases:
+          "montent": "to go up; to get on"
+  "fr-0517":
+    native: "to go down; to get off"
+    notes:
+      "n1": "Descendre is 'to go down' or 'to get off' a vehicle: descendre à la gare (to get off at the station)."
+    examples:
+      "Je descends à la gare.":
+        native: "I get off at the station."
+        bases:
+          "descends": "to go down; to get off"
+          "à": "to; at; in"
+          "la": "the"
+      "Elles descendent.":
+        native: "They go down."
+        bases:
+          "descendent": "to go down; to get off"
+  "fr-0518":
+    native: "to fall"
+    notes:
+      "n1": "Tomber is 'to fall', and it is also used for 'to drop' something that falls."
+    examples:
+      "Il tombe.":
+        native: "He falls."
+        bases:
+          "tombe": "to fall"
+      "Le verre tombe.":
+        native: "The glass falls."
+        bases:
+          "Le": "the"
+          "tombe": "to fall"
+  "fr-0519":
+    native: "to pass; to spend; to drop by"
+    notes:
+      "n1": "Passer is 'to pass', 'to spend' (time), or 'to drop by' somewhere: passer chez toi (to drop by your place)."
+    examples:
+      "Je passe chez toi.":
+        native: "I drop by your place."
+        bases:
+          "passe": "to pass; to spend; to drop by"
+      "Nous passons ici.":
+        native: "We pass here."
+        bases:
+          "passons": "to pass; to spend; to drop by"
+  "fr-0520":
+    native: "to hear"
+    notes:
+      "n1": "Entendre is 'to hear'. Écouter is 'to listen', which is a choice; entendre is what the ear picks up."
+    examples:
+      "J'entends la musique.":
+        native: "I hear the music."
+        bases:
+          "J'entends": "to hear"
+          "la": "the"
+      "Tu entends ?":
+        native: "Do you hear?"
+        bases:
+          "entends": "to hear"
+  "fr-0521":
+    native: "to ask; to ask for"
+    notes:
+      "n1": "Demander is 'to ask' or 'to ask for' something. Demander à is 'to ask someone to do' something."
+    examples:
+      "Il demande le nom.":
+        native: "He asks for the name."
+        bases:
+          "demande": "to ask; to ask for"
+          "le": "the"
+      "Nous demandons souvent.":
+        native: "We often ask."
+        bases:
+          "demandons": "to ask; to ask for"
+  "fr-0522":
+    native: "to sing"
+    notes:
+      "n1": "Chanter is 'to sing'. Chanter faux is 'to sing out of tune'."
+    examples:
+      "Elle chante bien.":
+        native: "She sings well."
+        bases:
+          "chante": "to sing"
+      "Je chante souvent.":
+        native: "I often sing."
+        bases:
+          "chante": "to sing"
+  "fr-0523":
+    native: "to dance"
+    notes:
+      "n1": "Danser is 'to dance'. It is a regular verb, like chanter."
+    examples:
+      "Nous dansons ensemble.":
+        native: "We dance together."
+        bases:
+          "dansons": "to dance"
+      "Ma sœur danse mieux que moi.":
+        native: "My sister dances better than me."
+        bases:
+          "danse": "to dance"
+          "que": "than"
+  "fr-0524":
+    native: "to swim"
+    notes:
+      "n1": "Nager is 'to swim'. The e after the g is kept before -ons: nous nageons (we swim)."
+    examples:
+      "Je nage.":
+        native: "I swim."
+        bases:
+          "nage": "to swim"
+      "Ils nagent ici.":
+        native: "They swim here."
+        bases:
+          "nagent": "to swim"
+  "fr-0525":
+    native: "to tell; to tell a story"
+    notes:
+      "n1": "Raconter is 'to tell' or 'to tell a story'. It is a regular verb, like chanter."
+    examples:
+      "Mon père raconte souvent.":
+        native: "My father often tells stories."
+        bases:
+          "raconte": "to tell; to tell a story"
+      "Elle raconte tout.":
+        native: "She tells everything."
+        bases:
+          "raconte": "to tell; to tell a story"
+  "fr-0526":
+    native: "to change"
+    notes:
+      "n1": "Changer is 'to change'. The e is kept before -ons: nous changeons (we change)."
+    examples:
+      "Il change tout.":
+        native: "He changes everything."
+        bases:
+          "change": "to change"
+      "Vous changez souvent.":
+        native: "You change often."
+        bases:
+          "changez": "to change"
+  "fr-0527":
+    native: "to carry; to wear"
+    notes:
+      "n1": "Porter is 'to carry' or 'to wear' (clothes). It is a regular verb."
+    examples:
+      "Elle porte la tasse.":
+        native: "She carries the cup."
+        bases:
+          "porte": "to carry; to wear"
+          "la": "the"
+      "Il porte le sac.":
+        native: "He carries the bag."
+        bases:
+          "porte": "to carry; to wear"
+          "le": "the"
+  "fr-0528":
+    native: "to hold; to keep"
+    notes:
+      "n1": "Tenir is 'to hold' or 'to keep'. It is conjugated like venir: je tiens, nous tenons."
+    examples:
+      "Je tiens le sac.":
+        native: "I hold the bag."
+        bases:
+          "tiens": "to hold; to keep"
+          "le": "the"
+      "Tu tiens la clé ?":
+        native: "Do you have the key?"
+        bases:
+          "tiens": "to hold; to keep"
+          "la": "the"
+  "fr-0529":
+    native: "to put; to put on"
+    notes:
+      "n1": "Mettre is 'to put' or 'to put on' (clothes). It is an irregular verb: je mets, nous mettons."
+    examples:
+      "Je mets le sac sur la table.":
+        native: "I put the bag on the table."
+        bases:
+          "mets": "to put; to put on"
+          "le": "the"
+          "la": "the"
+      "Il met la clé dans le sac.":
+        native: "He puts the key in the bag."
+        bases:
+          "met": "to put; to put on"
+          "la": "the"
+          "le": "the"
