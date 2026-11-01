@@ -463,11 +463,15 @@ units:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
   - decks: ["bn-reading-feelings"]
     words: 0
-  - planned: { id: "bn-grammar-relative", grammar: "relative" }
+  - decks: ["bn-grammar-relative", "bn-grammar-relative-sentences"]
+    words: 0
+    grammar: ["relative"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - decks: ["bn-reading-relative"]
+    words: 0
   - decks: ["bn-news", "bn-news-sentences", "*"]
     words: 55
     listening_passages:
