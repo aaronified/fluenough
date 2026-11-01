@@ -1,0 +1,137 @@
+schema: 1
+id: "hi-en-literature"
+kind: "layer"
+core: "hi-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature"
+license: "CC-BY-SA-4.0"
+description: "Books and writing: novels and stories, poems and their forms, the characters and chapters of a book, and the proverbs and idioms of the language. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2766":
+    native: "novel"
+    notes:
+      "n1": "A long story in a book, with many characters and events."
+    examples:
+      "यह उपन्यास बहुत मशहूर है।": { "native": "This novel is very famous.", "bases": {} }
+      "मुझे उपन्यास पढ़ना अच्छा लगता है।": { "native": "I like reading novels.", "bases": {} }
+  "hi-2767":
+    native: "reader"
+    notes:
+      "n1": "A person who reads a book, a newspaper or a magazine."
+    examples:
+      "पाठक इस किताब को पसंद करते हैं।": { "native": "Readers like this book.", "bases": {} }
+      "पाठकों की राय सुनो।": { "native": "Hear the readers' opinions.", "bases": {"पाठकों": "reader"} }
+  "hi-2768":
+    native: "page"
+    notes:
+      "n1": "One side of a leaf of a book, or one leaf."
+    examples:
+      "पन्ना पलटो।": { "native": "Turn the page.", "bases": {"पलटो": "to turn over"} }
+      "यह पन्ना फटा है।": { "native": "This page is torn.", "bases": {"फटा": "to be torn"} }
+  "hi-2769":
+    native: "chapter"
+    notes:
+      "n1": "A part of a book with its own number and title."
+    examples:
+      "पहला अध्याय पढ़ो।": { "native": "Read the first chapter.", "bases": {"पहला": "first"} }
+      "यह अध्याय बहुत लंबा है।": { "native": "This chapter is very long.", "bases": {} }
+  "hi-2770":
+    native: "preface; introduction; role"
+    notes:
+      "n1": "The short note at the start of a book, or a part played in a story or a play."
+    examples:
+      "किताब की भूमिका अच्छी है।": { "native": "The preface of the book is good.", "bases": {} }
+      "उसने फ़िल्म में अच्छी भूमिका निभाई।": { "native": "He played a good role in the film.", "bases": {"निभाई": "to play a role"} }
+  "hi-2771":
+    native: "title; heading"
+    notes:
+      "n1": "The name given to a book, a story or a section."
+    examples:
+      "कहानी का शीर्षक क्या है?": { "native": "What is the title of the story?", "bases": {"कहानी": "story"} }
+      "शीर्षक बड़े अक्षरों में लिखो।": { "native": "Write the title in large letters.", "bases": {} }
+  "hi-2772":
+    native: "character (in a story)"
+    notes:
+      "n1": "A person or an animal in a story, a play or a film."
+    examples:
+      "कहानी के पात्र बहुत अच्छे हैं।": { "native": "The characters of the story are very good.", "bases": {"कहानी": "story"} }
+      "मुख्य पात्र कौन है?": { "native": "Who is the main character?", "bases": {"मुख्य": "main"} }
+  "hi-2773":
+    native: "metre; verse form"
+    notes:
+      "n1": "The pattern of beats in a poem, which gives it its rhythm."
+    examples:
+      "इस कविता का छंद सुंदर है।": { "native": "The metre of this poem is beautiful.", "bases": {} }
+      "छंद में गाओ।": { "native": "Sing in metre.", "bases": {} }
+  "hi-2774":
+    native: "ghazal"
+    notes:
+      "n1": "A form of Urdu and Hindi poetry, of couplets that share a rhyme and a refrain."
+    examples:
+      "उसने नई ग़ज़ल सुनाई।": { "native": "He recited a new ghazal.", "bases": {} }
+      "ग़ज़ल सुनना मुझे पसंद है।": { "native": "I like listening to ghazals.", "bases": {} }
+  "hi-2775":
+    native: "nazm; free-verse poem"
+    notes:
+      "n1": "A poem of a single subject, written in one piece and not in couplets."
+    examples:
+      "यह नज़्म दिल को छूती है।": { "native": "This nazm touches the heart.", "bases": {} }
+      "शायर ने नज़्म लिखी।": { "native": "The poet wrote a nazm.", "bases": {"शायर": "poet", "ने": "by"} }
+  "hi-2776":
+    native: "couplet (dohā)"
+    notes:
+      "n1": "A short verse of two lines, with a fixed pattern, often a saying."
+    examples:
+      "कबीर का दोहा याद है?": { "native": "Do you remember Kabir's couplet?", "bases": {"कबीर": "Kabir"} }
+      "दोहे में गहरी बात है।": { "native": "There is a deep idea in the couplet.", "bases": {"दोहे": "couplet"} }
+  "hi-2777":
+    native: "idiom; expression"
+    notes:
+      "n1": "A group of words whose meaning is not the sum of its words, such as आँखें बिछाना (ām̐khēm̐ bichānā)."
+    examples:
+      "यह मुहावरा कहाँ से आया?": { "native": "Where did this idiom come from?", "bases": {} }
+      "मुहावरे का अर्थ बताओ।": { "native": "Tell the meaning of the idiom.", "bases": {"मुहावरे": "idiom"} }
+  "hi-2778":
+    native: "proverb"
+    notes:
+      "n1": "A short saying that is well known and gives advice or a truth."
+    examples:
+      "कहावत सही है।": { "native": "The proverb is right.", "bases": {} }
+      "हर कहावत के पीछे एक अनुभव होता है।": { "native": "Behind every proverb there is an experience.", "bases": {"हर": "every; each", "कहावत": "proverb"} }
+  "hi-2779":
+    native: "grammar"
+    notes:
+      "n1": "The rules of how words are formed and put together in a language."
+    examples:
+      "हिंदी का व्याकरण सीखो।": { "native": "Learn Hindi grammar.", "bases": {"हिंदी": "Hindi"} }
+      "व्याकरण की किताब लाओ।": { "native": "Bring a grammar book.", "bases": {} }
+  "hi-2780":
+    native: "publisher"
+    notes:
+      "n1": "A person or a company that prints and sells books."
+    examples:
+      "प्रकाशक ने किताब छापी।": { "native": "The publisher printed the book.", "bases": {"ने": "by", "छापी": "to print"} }
+      "प्रकाशक से मिलो।": { "native": "Meet the publisher.", "bases": {} }
+  "hi-2781":
+    native: "collection"
+    notes:
+      "n1": "Things put together and kept, such as stories, stamps or poems."
+    examples:
+      "उसके पास टिकटों का संग्रह है।": { "native": "He has a collection of stamps.", "bases": {"संग्रह": "collection"} }
+      "कविताओं का संग्रह छपेगा।": { "native": "A collection of poems will be published.", "bases": {"संग्रह": "collection"} }
+  "hi-2782":
+    native: "episode; context; occasion"
+    notes:
+      "n1": "A part of a story, or the situation in which something is said."
+    examples:
+      "कहानी का यह प्रसंग मज़ेदार है।": { "native": "This episode of the story is funny.", "bases": {"कहानी": "story"} }
+      "इस प्रसंग में क्या हुआ?": { "native": "What happened in this context?", "bases": {"प्रसंग": "context"} }
+  "hi-2783":
+    native: "dictionary"
+    notes:
+      "n1": "A book that lists words with their meanings, in order."
+    examples:
+      "शब्दकोश में यह शब्द देखो।": { "native": "Look up this word in the dictionary.", "bases": {} }
+      "मेरे पास अच्छा शब्दकोश है।": { "native": "I have a good dictionary.", "bases": {} }
