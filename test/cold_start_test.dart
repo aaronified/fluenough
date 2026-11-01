@@ -86,6 +86,8 @@ void main() {
       await first.close();
 
       final eager = await DatabaseProgress.open(fileDb());
+      await eager
+          .flush(); // its snapshot is kept before another connection reads
       final lazy = DatabaseProgress.opening(fileDb());
       addTearDown(eager.close);
       addTearDown(lazy.close);
