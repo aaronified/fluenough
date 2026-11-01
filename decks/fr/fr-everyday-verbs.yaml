@@ -16,8 +16,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je mange une pomme.", ipa: "ʒə mɑ̃ʒ yn pɔm", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", base: "une" }, { word: "pomme", base: "pomme" }] }
-      - { target: "Nous mangeons à la maison.", ipa: "nu mɑ̃ʒɔ̃ a la mɛzɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "maison", base: "maison" }] }
+      - { target: "Je mange une pomme.", ipa: "ʒə mɑ̃ʒ yn pɔm", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", ref: "fr-0545" }, { word: "pomme", base: "pomme" }] }
+      - { target: "Nous mangeons à la maison.", ipa: "nu mɑ̃ʒɔ̃ a la mɛzɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "maison", base: "maison" }] }
   - id: "fr-0283"
     target: "boire"
     ipa: "bwaʁ"
@@ -56,7 +56,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je vais à la gare.", ipa: "ʒə ve a la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je vais à la gare.", ipa: "ʒə ve a la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
       - { target: "Nous allons au marché.", ipa: "nu zalɔ̃ o maʁʃe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", base: "aller" }, { word: "au", base: "à" }, { word: "marché", base: "marché" }] }
   - id: "fr-0287"
     target: "faire"
@@ -67,7 +67,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je fais du sport.", ipa: "ʒə fɛ dy spɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "du", base: "du" }, { word: "sport", ref: "fr-0265" }] }
-      - { target: "Vous faites la cuisine.", ipa: "vu fɛt la kɥizin", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "faites", base: "faire" }, { word: "la", base: "la" }, { word: "cuisine", base: "cuisine" }] }
+      - { target: "Vous faites la cuisine.", ipa: "vu fɛt la kɥizin", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "faites", base: "faire" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", base: "cuisine" }] }
   - id: "fr-0288"
     target: "prendre"
     ipa: "pʁɑ̃dʁ"
@@ -76,8 +76,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je prends le train.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
-      - { target: "Ils prennent le bus.", ipa: "il pʁɛn lə bys", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "prennent", base: "prendre" }, { word: "le", base: "le" }, { word: "bus", base: "bus" }] }
+      - { target: "Je prends le train.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ils prennent le bus.", ipa: "il pʁɛn lə bys", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "prennent", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "bus", base: "bus" }] }
   - id: "fr-0289"
     target: "voir"
     ipa: "vwaʁ"
@@ -97,7 +97,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je lis un livre.", ipa: "ʒə li œ̃ livʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", base: "lire" }, { word: "un", base: "un" }, { word: "livre", base: "livre" }] }
-      - { target: "Elle lit le journal.", ipa: "ɛl li lə ʒuʁnal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", base: "lire" }, { word: "le", base: "le" }, { word: "journal", base: "journal" }] }
+      - { target: "Elle lit le journal.", ipa: "ɛl li lə ʒuʁnal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", base: "lire" }, { word: "le", ref: "fr-0543" }, { word: "journal", base: "journal" }] }
   - id: "fr-0291"
     target: "écrire"
     ipa: "ekʁiʁ"
@@ -106,7 +106,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'écris une lettre.", ipa: "ʒekʁi yn lɛtʁ", bases: [{ word: "J'écris", base: "écrire" }, { word: "une", base: "une" }, { word: "lettre", base: "lettre" }] }
+      - { target: "J'écris une lettre.", ipa: "ʒekʁi yn lɛtʁ", bases: [{ word: "J'écris", base: "écrire" }, { word: "une", ref: "fr-0545" }, { word: "lettre", base: "lettre" }] }
       - { target: "Vous écrivez un e-mail ?", ipa: "vu zekʁive œ̃n imɛl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "écrivez", base: "écrire" }, { word: "un", base: "un" }, { word: "e", base: "e" }, { word: "mail", base: "mail" }] }
   - id: "fr-0292"
     target: "écouter"
@@ -116,7 +116,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'écoute la radio.", ipa: "ʒekut la ʁadjo", bases: [{ word: "J'écoute", base: "écouter" }, { word: "la", base: "la" }, { word: "radio", base: "radio" }] }
+      - { target: "J'écoute la radio.", ipa: "ʒekut la ʁadjo", bases: [{ word: "J'écoute", base: "écouter" }, { word: "la", ref: "fr-0544" }, { word: "radio", base: "radio" }] }
       - { target: "Écoutez bien.", ipa: "ekute bjɛ̃", bases: [{ word: "Écoutez", base: "écouter" }, { word: "bien", ref: "fr-0032" }] }
   - id: "fr-0293"
     target: "regarder"
@@ -126,7 +126,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je regarde la télé.", ipa: "ʒə ʁəɡaʁd la tele", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", base: "regarder" }, { word: "la", base: "la" }, { word: "télé", base: "télé" }] }
+      - { target: "Je regarde la télé.", ipa: "ʒə ʁəɡaʁd la tele", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", base: "regarder" }, { word: "la", ref: "fr-0544" }, { word: "télé", base: "télé" }] }
       - { target: "Regardez ici.", ipa: "ʁəɡaʁde isi", bases: [{ word: "Regardez", base: "regarder" }, { word: "ici", ref: "fr-0029" }] }
   - id: "fr-0294"
     target: "acheter"
@@ -146,7 +146,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je prépare le dîner.", ipa: "ʒə pʁepaʁ lə dine", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prépare", base: "préparer" }, { word: "le", base: "le" }, { word: "dîner", base: "dîner" }] }
+      - { target: "Je prépare le dîner.", ipa: "ʒə pʁepaʁ lə dine", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prépare", base: "préparer" }, { word: "le", ref: "fr-0543" }, { word: "dîner", base: "dîner" }] }
       - { target: "Nous préparons un café.", ipa: "nu pʁepaʁɔ̃ œ̃ kafe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "préparons", base: "préparer" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
   - id: "fr-0296"
     target: "laver"
@@ -156,7 +156,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je lave la voiture.", ipa: "ʒə lav la vwatyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", base: "laver" }, { word: "la", base: "la" }, { word: "voiture", base: "voiture" }] }
+      - { target: "Je lave la voiture.", ipa: "ʒə lav la vwatyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", base: "laver" }, { word: "la", ref: "fr-0544" }, { word: "voiture", base: "voiture" }] }
       - { target: "Il lave les mains.", ipa: "il lav le mɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "lave", base: "laver" }, { word: "les", ref: "fr-0043" }, { word: "mains", ref: "fr-0038" }] }
   - id: "fr-0297"
     target: "nettoyer"
@@ -166,8 +166,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je nettoie la maison.", ipa: "ʒə netwa la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", base: "la" }, { word: "maison", base: "maison" }] }
-      - { target: "Vous nettoyez la table ?", ipa: "vu netwaje la tabl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "nettoyez", base: "nettoyer" }, { word: "la", base: "la" }, { word: "table", base: "table" }] }
+      - { target: "Je nettoie la maison.", ipa: "ʒə netwa la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "maison", base: "maison" }] }
+      - { target: "Vous nettoyez la table ?", ipa: "vu netwaje la tabl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "nettoyez", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "table", base: "table" }] }
   - id: "fr-0298"
     target: "ouvrir"
     ipa: "uvʁiʁ"
@@ -176,8 +176,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'ouvre la porte.", ipa: "ʒuvʁ la pɔʁt", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", base: "la" }, { word: "porte", base: "porte" }] }
-      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", base: "ouvrir" }, { word: "la", base: "la" }, { word: "fenêtre", base: "fenêtre" }] }
+      - { target: "J'ouvre la porte.", ipa: "ʒuvʁ la pɔʁt", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "porte", base: "porte" }] }
+      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }] }
   - id: "fr-0299"
     target: "fermer"
     ipa: "fɛʁme"
@@ -186,8 +186,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je ferme la porte.", ipa: "ʒə fɛʁm la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ferme", base: "fermer" }, { word: "la", base: "la" }, { word: "porte", base: "porte" }] }
-      - { target: "Fermez la fenêtre !", ipa: "fɛʁme la fənɛtʁ", bases: [{ word: "Fermez", base: "fermer" }, { word: "la", base: "la" }, { word: "fenêtre", base: "fenêtre" }] }
+      - { target: "Je ferme la porte.", ipa: "ʒə fɛʁm la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ferme", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "porte", base: "porte" }] }
+      - { target: "Fermez la fenêtre !", ipa: "fɛʁme la fənɛtʁ", bases: [{ word: "Fermez", base: "fermer" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }] }
   - id: "fr-0300"
     target: "chercher"
     ipa: "ʃɛʁʃe"
@@ -196,7 +196,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je cherche la gare.", ipa: "ʒə ʃɛʁʃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je cherche la gare.", ipa: "ʒə ʃɛʁʃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
       - { target: "Vous cherchez quoi ?", ipa: "vu ʃɛʁʃe kwa", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "cherchez", base: "chercher" }, { word: "quoi", ref: "fr-0066" }] }
   - id: "fr-0301"
     target: "trouver"
@@ -207,7 +207,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je trouve mon téléphone.", ipa: "ʒə tʁuv mɔ̃ telefɔn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "trouve", base: "trouver" }, { word: "mon", ref: "fr-0037" }, { word: "téléphone", ref: "fr-0257" }] }
-      - { target: "Tu trouves la gare ?", ipa: "ty tʁuv la ɡaʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "trouves", base: "trouver" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Tu trouves la gare ?", ipa: "ty tʁuv la ɡaʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "trouves", base: "trouver" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0302"
     target: "donner"
     ipa: "dɔne"
@@ -226,7 +226,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'attends le train.", ipa: "ʒatɑ̃ lə tʁɛ̃", bases: [{ word: "J'attends", base: "attendre" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "J'attends le train.", ipa: "ʒatɑ̃ lə tʁɛ̃", bases: [{ word: "J'attends", base: "attendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
       - { target: "Attendez un moment.", ipa: "atɑ̃de œ̃ mɔmɑ̃", bases: [{ word: "Attendez", base: "attendre" }, { word: "un", base: "un" }, { word: "moment", base: "moment" }] }
   - id: "fr-0304"
     target: "partir"
@@ -236,7 +236,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le train part demain.", ipa: "lə tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Le", base: "le" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le train part demain.", ipa: "lə tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
       - { target: "Nous partons à huit heures.", ipa: "nu paʁtɔ̃ a ɥit œʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", base: "partir" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
   - id: "fr-0305"
     target: "arriver"
@@ -246,8 +246,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le bus arrive ici.", ipa: "lə bys aʁiv isi", bases: [{ word: "Le", base: "le" }, { word: "bus", base: "bus" }, { word: "arrive", base: "arriver" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "J'arrive à la gare.", ipa: "ʒaʁiv a la ɡaʁ", bases: [{ word: "J'arrive", base: "arriver" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Le bus arrive ici.", ipa: "lə bys aʁiv isi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bus", base: "bus" }, { word: "arrive", base: "arriver" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "J'arrive à la gare.", ipa: "ʒaʁiv a la ɡaʁ", bases: [{ word: "J'arrive", base: "arriver" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0306"
     target: "marcher"
     ipa: "maʁʃe"
@@ -277,7 +277,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Il joue au football.", ipa: "il ʒu o futbol", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", base: "jouer" }, { word: "au", base: "à" }, { word: "football", base: "football" }] }
-      - { target: "Nous jouons de la musique.", ipa: "nu ʒwɔ̃ də la myzik", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", base: "jouer" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "Nous jouons de la musique.", ipa: "nu ʒwɔ̃ də la myzik", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", base: "jouer" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }] }
   - id: "fr-0309"
     target: "cuisiner"
     ipa: "kɥizine"
@@ -286,7 +286,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je cuisine le soir.", ipa: "ʒə kɥizin lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cuisine", base: "cuisiner" }, { word: "le", base: "le" }, { word: "soir", base: "soir" }] }
+      - { target: "Je cuisine le soir.", ipa: "ʒə kɥizin lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cuisine", base: "cuisiner" }, { word: "le", ref: "fr-0543" }, { word: "soir", base: "soir" }] }
       - { target: "Ma mère cuisine bien.", ipa: "ma mɛʁ kɥizin bjɛ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "cuisine", base: "cuisiner" }, { word: "bien", ref: "fr-0032" }] }
   - id: "fr-0310"
     target: "payer"
@@ -296,7 +296,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je paie le café.", ipa: "ʒə pe lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "le", base: "le" }, { word: "café", base: "café" }] }
+      - { target: "Je paie le café.", ipa: "ʒə pe lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "le", ref: "fr-0543" }, { word: "café", base: "café" }] }
       - { target: "Vous payez combien ?", ipa: "vu peje kɔ̃bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", base: "payer" }, { word: "combien", ref: "fr-0071" }] }
   - id: "fr-0311"
     target: "vouloir"

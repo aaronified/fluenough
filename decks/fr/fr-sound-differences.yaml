@@ -18,7 +18,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0036" }
     bases: "self"
     examples:
-      - { target: "Le vin est bon.", ipa: "lə vɛ̃ ɛ bɔ̃", bases: [{ word: "Le", base: "le" }, { word: "vin", base: "vin" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Le vin est bon.", ipa: "lə vɛ̃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vin", base: "vin" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
       - { target: "Un verre de vin.", ipa: "œ̃ vɛʁ də vɛ̃", bases: [{ word: "Un", base: "un" }, { word: "verre", base: "verre" }, { word: "de", base: "de" }, { word: "vin", base: "vin" }] }
   - id: "fr-0036"
     target: "vent"
@@ -31,7 +31,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Il y a du vent.", ipa: "il i a dy vɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "de" }, { word: "vent", base: "vent" }] }
-      - { target: "Le vent est fort.", ipa: "lə vɑ̃ ɛ fɔʁ", bases: [{ word: "Le", base: "le" }, { word: "vent", base: "vent" }, { word: "est", ref: "fr-0021" }, { word: "fort", base: "fort" }] }
+      - { target: "Le vent est fort.", ipa: "lə vɑ̃ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vent", base: "vent" }, { word: "est", ref: "fr-0021" }, { word: "fort", base: "fort" }] }
   - id: "fr-0037"
     target: "mon"
     ipa: "mɔ̃"
@@ -53,7 +53,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0037" }
     bases: "self"
     examples:
-      - { target: "Je lève la main.", ipa: "ʒə lɛv la mɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lève", base: "lever" }, { word: "la", base: "la" }, { word: "main", base: "main" }] }
+      - { target: "Je lève la main.", ipa: "ʒə lɛv la mɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lève", base: "lever" }, { word: "la", ref: "fr-0544" }, { word: "main", base: "main" }] }
       - { target: "Ma main est froide.", ipa: "ma mɛ̃ ɛ fʁwad", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "main", base: "main" }, { word: "est", ref: "fr-0021" }, { word: "froide", base: "froid" }] }
   - id: "fr-0039"
     target: "banc"
@@ -65,7 +65,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0040" }
     bases: "self"
     examples:
-      - { target: "Le banc est vide.", ipa: "lə bɑ̃ ɛ vid", bases: [{ word: "Le", base: "le" }, { word: "banc", base: "banc" }, { word: "est", ref: "fr-0021" }, { word: "vide", base: "vide" }] }
+      - { target: "Le banc est vide.", ipa: "lə bɑ̃ ɛ vid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "banc", base: "banc" }, { word: "est", ref: "fr-0021" }, { word: "vide", base: "vide" }] }
       - { target: "Un banc au soleil.", ipa: "œ̃ bɑ̃ o sɔlɛj", bases: [{ word: "Un", base: "un" }, { word: "banc", base: "banc" }, { word: "au", base: "à" }, { word: "soleil", base: "soleil" }] }
   - id: "fr-0040"
     target: "bon"
@@ -77,7 +77,7 @@ cards:
       - { id: "fem", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Le café est bon.", ipa: "lə kafe ɛ bɔ̃", bases: [{ word: "Le", base: "le" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "bon", base: "bon" }] }
+      - { target: "Le café est bon.", ipa: "lə kafe ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", base: "café" }, { word: "est", ref: "fr-0021" }, { word: "bon", base: "bon" }] }
       - { target: "C'est très bon.", ipa: "sɛ tʁɛ bɔ̃", bases: [{ word: "C'est", base: "c'est" }, { word: "très", ref: "fr-0031" }, { word: "bon", base: "bon" }] }
   - id: "fr-0041"
     target: "rue"
@@ -89,8 +89,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0042" }
     bases: "self"
     examples:
-      - { target: "La rue est calme.", ipa: "la ʁy ɛ kalm", bases: [{ word: "La", base: "la" }, { word: "rue", base: "rue" }, { word: "est", ref: "fr-0021" }, { word: "calme", base: "calme" }] }
-      - { target: "Je traverse la rue.", ipa: "ʒə tʁavɛʁs la ʁy", bases: [{ word: "Je", ref: "fr-0126" }, { word: "traverse", base: "traverser" }, { word: "la", base: "la" }, { word: "rue", base: "rue" }] }
+      - { target: "La rue est calme.", ipa: "la ʁy ɛ kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "rue", base: "rue" }, { word: "est", ref: "fr-0021" }, { word: "calme", base: "calme" }] }
+      - { target: "Je traverse la rue.", ipa: "ʒə tʁavɛʁs la ʁy", bases: [{ word: "Je", ref: "fr-0126" }, { word: "traverse", base: "traverser" }, { word: "la", ref: "fr-0544" }, { word: "rue", base: "rue" }] }
   - id: "fr-0042"
     target: "roue"
     ipa: "ʁu"
@@ -101,7 +101,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0041" }
     bases: "self"
     examples:
-      - { target: "La roue tourne.", ipa: "la ʁu tuʁn", bases: [{ word: "La", base: "la" }, { word: "roue", base: "roue" }, { word: "tourne", base: "tourner" }] }
+      - { target: "La roue tourne.", ipa: "la ʁu tuʁn", bases: [{ word: "La", ref: "fr-0544" }, { word: "roue", base: "roue" }, { word: "tourne", base: "tourner" }] }
       - { target: "Une roue de vélo.", ipa: "yn ʁu də velo", bases: [{ word: "Une", base: "un" }, { word: "roue", base: "roue" }, { word: "de", base: "de" }, { word: "vélo", base: "vélo" }] }
   - id: "fr-0043"
     target: "les"
@@ -124,7 +124,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0043" }
     bases: "self"
     examples:
-      - { target: "Le lait est froid.", ipa: "lə lɛ ɛ fʁwa", bases: [{ word: "Le", base: "le" }, { word: "lait", base: "lait" }, { word: "est", ref: "fr-0021" }, { word: "froid", base: "froid" }] }
+      - { target: "Le lait est froid.", ipa: "lə lɛ ɛ fʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lait", base: "lait" }, { word: "est", ref: "fr-0021" }, { word: "froid", base: "froid" }] }
       - { target: "Un café au lait.", ipa: "œ̃ kafe o lɛ", bases: [{ word: "Un", base: "un" }, { word: "café", base: "café" }, { word: "au", base: "à" }, { word: "lait", base: "lait" }] }
   - id: "fr-0045"
     target: "fée"
@@ -136,8 +136,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0046" }
     bases: "self"
     examples:
-      - { target: "La fée est belle.", ipa: "la fe ɛ bɛl", bases: [{ word: "La", base: "la" }, { word: "fée", base: "fée" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
-      - { target: "Une fée dans le jardin.", ipa: "yn fe dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Une", base: "un" }, { word: "fée", base: "fée" }, { word: "dans", ref: "fr-0049" }, { word: "le", base: "le" }, { word: "jardin", base: "jardin" }] }
+      - { target: "La fée est belle.", ipa: "la fe ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "fée", base: "fée" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "Une fée dans le jardin.", ipa: "yn fe dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Une", base: "un" }, { word: "fée", base: "fée" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "jardin", base: "jardin" }] }
   - id: "fr-0046"
     target: "fait"
     ipa: "fɛ"
@@ -149,7 +149,7 @@ cards:
     bases: "self"
     examples:
       - { target: "C'est un fait.", ipa: "sɛt œ̃ fɛ", bases: [{ word: "C'est", base: "c'est" }, { word: "un", base: "un" }, { word: "fait", base: "fait" }] }
-      - { target: "Le fait est clair.", ipa: "lə fɛ ɛ klɛʁ", bases: [{ word: "Le", base: "le" }, { word: "fait", base: "fait" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+      - { target: "Le fait est clair.", ipa: "lə fɛ ɛ klɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "fait", base: "fait" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
   - id: "fr-0047"
     target: "chou"
     ipa: "ʃu"
@@ -160,7 +160,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0048" }
     bases: "self"
     examples:
-      - { target: "Le chou est vert.", ipa: "lə ʃu ɛ vɛʁ", bases: [{ word: "Le", base: "le" }, { word: "chou", base: "chou" }, { word: "est", ref: "fr-0021" }, { word: "vert", base: "vert" }] }
+      - { target: "Le chou est vert.", ipa: "lə ʃu ɛ vɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chou", base: "chou" }, { word: "est", ref: "fr-0021" }, { word: "vert", base: "vert" }] }
       - { target: "Un chou et une carotte.", ipa: "œ̃ ʃu e yn kaʁɔt", bases: [{ word: "Un", base: "un" }, { word: "chou", base: "chou" }, { word: "et", ref: "fr-0027" }, { word: "une", base: "un" }, { word: "carotte", base: "carotte" }] }
   - id: "fr-0048"
     target: "joue"
@@ -172,7 +172,7 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0047" }
     bases: "self"
     examples:
-      - { target: "Il a la joue rouge.", ipa: "il a la ʒu ʁuʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "la", base: "la" }, { word: "joue", base: "joue" }, { word: "rouge", base: "rouge" }] }
+      - { target: "Il a la joue rouge.", ipa: "il a la ʒu ʁuʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "la", ref: "fr-0544" }, { word: "joue", base: "joue" }, { word: "rouge", base: "rouge" }] }
       - { target: "Une joue rouge.", ipa: "yn ʒu ʁuʒ", bases: [{ word: "Une", base: "un" }, { word: "joue", base: "joue" }, { word: "rouge", base: "rouge" }] }
   - id: "fr-0049"
     target: "dans"
@@ -183,8 +183,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "fr-0050" }
     bases: "self"
     examples:
-      - { target: "Le pain est dans la boîte.", ipa: "lə pɛ̃ ɛ dɑ̃ la bwat", bases: [{ word: "Le", base: "le" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", base: "la" }, { word: "boîte", base: "boîte" }] }
-      - { target: "Je suis dans la gare.", ipa: "ʒə sɥi dɑ̃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Le pain est dans la boîte.", ipa: "lə pɛ̃ ɛ dɑ̃ la bwat", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", base: "pain" }, { word: "est", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", ref: "fr-0544" }, { word: "boîte", base: "boîte" }] }
+      - { target: "Je suis dans la gare.", ipa: "ʒə sɥi dɑ̃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "dans", base: "dans" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0050"
     target: "tant"
     ipa: "tɑ̃"

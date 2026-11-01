@@ -1,0 +1,53 @@
+schema: 1
+id: "fr-articles"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0543"
+    target: "le"
+    ipa: "lə"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sac est sur la table.", ipa: "lə sak ɛ syʁ la tabl", bases: [{ word: "Le", base: "le" }, { word: "sac", ref: "fr-0485" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Le train est rapide.", ipa: "lə tʁɛ̃ ɛ ʁapid", bases: [{ word: "Le", base: "le" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-0544"
+    target: "la"
+    ipa: "la"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La gare est loin.", ipa: "la gaʁ ɛ lwɛ̃", bases: [{ word: "La", base: "la" }, { word: "gare", ref: "fr-0075" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "La rue est à droite.", ipa: "la ʁy ɛ a dʁwat", bases: [{ word: "La", base: "la" }, { word: "rue", ref: "fr-0041" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "droite", ref: "fr-0479" }] }
+  - id: "fr-0545"
+    target: "une"
+    ipa: "yn"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une tasse.", ipa: "il a yn tas", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", base: "une" }, { word: "tasse", ref: "fr-0386" }] }
+      - { target: "Une clé est sous le sac.", ipa: "yn kle ɛ su lə sak", bases: [{ word: "Une", base: "une" }, { word: "clé", ref: "fr-0484" }, { word: "est", ref: "fr-0021" }, { word: "sous", ref: "fr-0468" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-0546"
+    target: "des"
+    ipa: "de"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai des amis.", ipa: "ʒe de zami", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "des", base: "des" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Des tasses sont sur la table.", ipa: "de tas sɔ̃ syʁ la tabl", bases: [{ word: "Des", base: "des" }, { word: "tasses", ref: "fr-0386" }, { word: "sont", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - kind: "set"
+    id: "fr-0547"
+    members: [{ ref: "fr-0543" }, { ref: "fr-0544" }, { ref: "fr-0043" }, { ref: "fr-0208" }, { ref: "fr-0545" }, { ref: "fr-0546" }]

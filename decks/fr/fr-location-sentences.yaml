@@ -13,12 +13,12 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases:
-      - { word: "Le", base: "le" }
+      - { word: "Le", ref: "fr-0543" }
       - { word: "musée", ref: "fr-0077" }
       - { word: "est", ref: "fr-0021" }
       - { word: "près", ref: "fr-0464" }
       - { word: "de", base: "de" }
-      - { word: "la", base: "la" }
+      - { word: "la", ref: "fr-0544" }
       - { word: "gare", ref: "fr-0075" }
     confusables:
       - { id: "loin", ref: "fr-0465", kind: "word" }
@@ -29,11 +29,11 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases:
-      - { word: "La", base: "la" }
+      - { word: "La", ref: "fr-0544" }
       - { word: "clé", ref: "fr-0484" }
       - { word: "est", ref: "fr-0021" }
       - { word: "sous", ref: "fr-0468" }
-      - { word: "le", base: "le" }
+      - { word: "le", ref: "fr-0543" }
       - { word: "sac", ref: "fr-0485" }
     confusables:
       - { id: "sur", ref: "fr-0469", kind: "word" }
@@ -62,7 +62,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases:
-      - { word: "Le", base: "le" }
+      - { word: "Le", ref: "fr-0543" }
       - { word: "sac", ref: "fr-0485" }
       - { word: "est", ref: "fr-0021" }
       - { word: "à", base: "à" }
@@ -91,7 +91,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases:
-      - { word: "La", base: "la" }
+      - { word: "La", ref: "fr-0544" }
       - { word: "rue", ref: "fr-0041" }
       - { word: "est", ref: "fr-0021" }
       - { word: "à", base: "à" }

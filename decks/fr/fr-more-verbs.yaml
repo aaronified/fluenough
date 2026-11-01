@@ -36,8 +36,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je sais le français.", ipa: "ʒə sɛ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sais", base: "savoir" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
-      - { target: "Elle sait où est la gare.", ipa: "ɛl sɛ u ɛ la gaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sait", base: "savoir" }, { word: "où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je sais le français.", ipa: "ʒə sɛ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sais", base: "savoir" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Elle sait où est la gare.", ipa: "ɛl sɛ u ɛ la gaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sait", base: "savoir" }, { word: "où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0503"
     target: "connaître"
     ipa: "kɔnɛtʁ"
@@ -47,7 +47,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je connais Paul.", ipa: "ʒə kɔnɛ pɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "connais", base: "connaître" }, { word: "Paul", base: "Paul" }] }
-      - { target: "Vous connaissez la ville ?", ipa: "vu kɔnɛse la vil", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "connaissez", base: "connaître" }, { word: "la", base: "la" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Vous connaissez la ville ?", ipa: "vu kɔnɛse la vil", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "connaissez", base: "connaître" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
   - id: "fr-0504"
     target: "répondre"
     ipa: "ʁepɔ̃dʁ"
@@ -66,7 +66,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Elle vend des pâtes.", ipa: "ɛl vɑ̃ de pɑt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "vend", base: "vendre" }, { word: "des", base: "des" }, { word: "pâtes", base: "pâte" }] }
+      - { target: "Elle vend des pâtes.", ipa: "ɛl vɑ̃ de pɑt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "vend", base: "vendre" }, { word: "des", ref: "fr-0546" }, { word: "pâtes", base: "pâte" }] }
       - { target: "Nous vendons ici.", ipa: "nu vɑ̃dɔ̃ isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "vendons", base: "vendre" }, { word: "ici", ref: "fr-0029" }] }
   - id: "fr-0506"
     target: "finir"
@@ -87,7 +87,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Tu choisis ici.", ipa: "ty ʃwazi isi", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "choisis", base: "choisir" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "Elle choisit le vin.", ipa: "ɛl ʃwazi lə vɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "choisit", base: "choisir" }, { word: "le", base: "le" }, { word: "vin", ref: "fr-0035" }] }
+      - { target: "Elle choisit le vin.", ipa: "ɛl ʃwazi lə vɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "choisit", base: "choisir" }, { word: "le", ref: "fr-0543" }, { word: "vin", ref: "fr-0035" }] }
   - id: "fr-0508"
     target: "commencer"
     ipa: "kɔmɑ̃se"
@@ -106,7 +106,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'oublie le nom.", ipa: "ʒublij lə nɔ̃", bases: [{ word: "J'oublie", base: "oublier" }, { word: "le", base: "le" }, { word: "nom", ref: "fr-0073" }] }
+      - { target: "J'oublie le nom.", ipa: "ʒublij lə nɔ̃", bases: [{ word: "J'oublie", base: "oublier" }, { word: "le", ref: "fr-0543" }, { word: "nom", ref: "fr-0073" }] }
       - { target: "Tu n'oublies jamais.", ipa: "ty nubli ʒamɛ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "n'oublies", base: "oublier" }, { word: "jamais", ref: "fr-0328" }] }
   - id: "fr-0510"
     target: "penser"
@@ -136,7 +136,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je comprends le français.", ipa: "ʒə kɔ̃pʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "comprends", base: "comprendre" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Je comprends le français.", ipa: "ʒə kɔ̃pʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "comprends", base: "comprendre" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
       - { target: "Vous comprenez ?", ipa: "vu kɔ̃pʁəne", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "comprenez", base: "comprendre" }] }
   - id: "fr-0513"
     target: "apprendre"
@@ -146,7 +146,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'apprends le français.", ipa: "ʒapʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "J'apprends", base: "apprendre" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "J'apprends le français.", ipa: "ʒapʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "J'apprends", base: "apprendre" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
       - { target: "Elle apprend vite.", ipa: "ɛl apʁɑ̃ vit", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "apprend", base: "apprendre" }, { word: "vite", ref: "fr-0338" }] }
   - id: "fr-0514"
     target: "rester"
@@ -167,7 +167,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Entre !", ipa: "ɑ̃tʁ", bases: [{ word: "Entre", base: "entrer" }] }
-      - { target: "Vous entrez dans la gare.", ipa: "vu zɑ̃tʁe dɑ̃ la gaʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "entrez", base: "entrer" }, { word: "dans", ref: "fr-0049" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Vous entrez dans la gare.", ipa: "vu zɑ̃tʁe dɑ̃ la gaʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "entrez", base: "entrer" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0516"
     target: "monter"
     ipa: "mɔ̃te"
@@ -177,7 +177,7 @@ cards:
     bases: "self"
     antonyms: [{ ref: "fr-0517" }]
     examples:
-      - { target: "Je monte dans le train.", ipa: "ʒə mɔ̃t dɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "monte", base: "monter" }, { word: "dans", ref: "fr-0049" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Je monte dans le train.", ipa: "ʒə mɔ̃t dɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "monte", base: "monter" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
       - { target: "Ils montent.", ipa: "il mɔ̃t", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "montent", base: "monter" }] }
   - id: "fr-0517"
     target: "descendre"
@@ -188,7 +188,7 @@ cards:
     bases: "self"
     antonyms: [{ ref: "fr-0516" }]
     examples:
-      - { target: "Je descends à la gare.", ipa: "ʒə desɑ̃ a la gaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "descends", base: "descendre" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Je descends à la gare.", ipa: "ʒə desɑ̃ a la gaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "descends", base: "descendre" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
       - { target: "Elles descendent.", ipa: "ɛl desɑ̃d", bases: [{ word: "Elles", ref: "fr-0131" }, { word: "descendent", base: "descendre" }] }
   - id: "fr-0518"
     target: "tomber"
@@ -199,7 +199,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Il tombe.", ipa: "il tɔ̃b", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tombe", base: "tomber" }] }
-      - { target: "Le verre tombe.", ipa: "lə vɛʁ tɔ̃b", bases: [{ word: "Le", base: "le" }, { word: "verre", ref: "fr-0385" }, { word: "tombe", base: "tomber" }] }
+      - { target: "Le verre tombe.", ipa: "lə vɛʁ tɔ̃b", bases: [{ word: "Le", ref: "fr-0543" }, { word: "verre", ref: "fr-0385" }, { word: "tombe", base: "tomber" }] }
   - id: "fr-0519"
     target: "passer"
     ipa: "pase"
@@ -218,7 +218,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'entends la musique.", ipa: "ʒɑ̃tɑ̃ la myzik", bases: [{ word: "J'entends", base: "entendre" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "J'entends la musique.", ipa: "ʒɑ̃tɑ̃ la myzik", bases: [{ word: "J'entends", base: "entendre" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }] }
       - { target: "Tu entends ?", ipa: "ty ɑ̃tɑ̃d", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "entends", base: "entendre" }] }
   - id: "fr-0521"
     target: "demander"
@@ -228,7 +228,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il demande le nom.", ipa: "il dəmɑ̃d lə nɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "demande", base: "demander" }, { word: "le", base: "le" }, { word: "nom", ref: "fr-0073" }] }
+      - { target: "Il demande le nom.", ipa: "il dəmɑ̃d lə nɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "demande", base: "demander" }, { word: "le", ref: "fr-0543" }, { word: "nom", ref: "fr-0073" }] }
       - { target: "Nous demandons souvent.", ipa: "nu dəmɑ̃dɔ̃ suvɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "demandons", base: "demander" }, { word: "souvent", ref: "fr-0326" }] }
   - id: "fr-0522"
     target: "chanter"
@@ -288,8 +288,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Elle porte la tasse.", ipa: "ɛl pɔʁt la tas", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", base: "porter" }, { word: "la", base: "la" }, { word: "tasse", ref: "fr-0386" }] }
-      - { target: "Il porte le sac.", ipa: "il pɔʁt lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", base: "porter" }, { word: "le", base: "le" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Elle porte la tasse.", ipa: "ɛl pɔʁt la tas", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", base: "porter" }, { word: "la", ref: "fr-0544" }, { word: "tasse", ref: "fr-0386" }] }
+      - { target: "Il porte le sac.", ipa: "il pɔʁt lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", base: "porter" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
   - id: "fr-0528"
     target: "tenir"
     ipa: "tniʁ"
@@ -298,8 +298,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je tiens le sac.", ipa: "ʒə tjɛ̃ lə sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "tiens", base: "tenir" }, { word: "le", base: "le" }, { word: "sac", ref: "fr-0485" }] }
-      - { target: "Tu tiens la clé ?", ipa: "ty tjɛ̃ la kle", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "tiens", base: "tenir" }, { word: "la", base: "la" }, { word: "clé", ref: "fr-0484" }] }
+      - { target: "Je tiens le sac.", ipa: "ʒə tjɛ̃ lə sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "tiens", base: "tenir" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Tu tiens la clé ?", ipa: "ty tjɛ̃ la kle", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "tiens", base: "tenir" }, { word: "la", ref: "fr-0544" }, { word: "clé", ref: "fr-0484" }] }
   - id: "fr-0529"
     target: "mettre"
     ipa: "mɛtʁ"
@@ -308,5 +308,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je mets le sac sur la table.", ipa: "ʒə mɛ lə sak syʁ la tabl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "le", base: "le" }, { word: "sac", ref: "fr-0485" }, { word: "sur", ref: "fr-0469" }, { word: "la", base: "la" }, { word: "table", ref: "fr-0486" }] }
-      - { target: "Il met la clé dans le sac.", ipa: "il mɛ la kle dɑ̃ lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", base: "mettre" }, { word: "la", base: "la" }, { word: "clé", ref: "fr-0484" }, { word: "dans", ref: "fr-0049" }, { word: "le", base: "le" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Je mets le sac sur la table.", ipa: "ʒə mɛ lə sak syʁ la tabl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Il met la clé dans le sac.", ipa: "il mɛ la kle dɑ̃ lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", base: "mettre" }, { word: "la", ref: "fr-0544" }, { word: "clé", ref: "fr-0484" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }

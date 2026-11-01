@@ -151,11 +151,9 @@ units:
   # the plural and adjective agreement first, then the verbs to be and to
   # have, the present, negation and questions, the prepositions, and the
   # imperatives.
-  - planned: { id: "fr-grammar-articles-gender", grammar: ["articles-gender", "elision"] }
-    listening_passages:
-      - { id: "le-or-la", text: { "en": "Naming things in a kitchen with le, la, l' and les, un and une" } }
-    reading_passages:
-      - { id: "shop-labels", text: { "en": "Labels on the shelves of a small shop" } }
+  - decks: ["fr-articles", "fr-grammar-articles-gender", "fr-grammar-elision", "fr-reading-articles"]
+    words: 4
+    grammar: ["articles-gender", "elision"]
   - planned: { id: "fr-grammar-plural", grammar: ["plural", "liaison"] }
     listening_passages:
       - { id: "several-things", text: { "en": "Naming several things in a kitchen: les, des and the plural endings, with the liaison in les amis and des enfants" } }

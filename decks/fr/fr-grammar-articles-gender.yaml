@@ -1,0 +1,116 @@
+schema: 1
+id: "fr-grammar-articles-gender"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["definite", "plural", "indefinite"]
+  entries:
+    - lemma: "ami"
+      ipa: "ami"
+      forms:
+        "definite": "l'ami"
+        "plural": "les amis"
+        "indefinite": "un ami"
+    - lemma: "ville"
+      ipa: "vil"
+      forms:
+        "definite": "la ville"
+        "plural": "les villes"
+        "indefinite": "une ville"
+    - lemma: "sac"
+      ipa: "sak"
+      forms:
+        "definite": "le sac"
+        "plural": "les sacs"
+        "indefinite": "un sac"
+    - lemma: "table"
+      ipa: "tabl"
+      forms:
+        "definite": "la table"
+        "plural": "les tables"
+        "indefinite": "une table"
+    - lemma: "clé"
+      key: "cle"
+      ipa: "kle"
+      forms:
+        "definite": "la clé"
+        "plural": "les clés"
+        "indefinite": "une clé"
+    - lemma: "train"
+      ipa: "tʁɛ̃"
+      forms:
+        "definite": "le train"
+        "plural": "les trains"
+        "indefinite": "un train"
+    - lemma: "gare"
+      ipa: "gaʁ"
+      forms:
+        "definite": "la gare"
+        "plural": "les gares"
+        "indefinite": "une gare"
+    - lemma: "musée"
+      key: "musee"
+      ipa: "myze"
+      forms:
+        "definite": "le musée"
+        "plural": "les musées"
+        "indefinite": "un musée"
+    - lemma: "rue"
+      ipa: "ʁy"
+      forms:
+        "definite": "la rue"
+        "plural": "les rues"
+        "indefinite": "une rue"
+    - lemma: "vin"
+      ipa: "vɛ̃"
+      forms:
+        "definite": "le vin"
+        "plural": "les vins"
+        "indefinite": "un vin"
+    - lemma: "adresse"
+      ipa: "adʁɛs"
+      forms:
+        "definite": "l'adresse"
+        "plural": "les adresses"
+        "indefinite": "une adresse"
+    - lemma: "heure"
+      ipa: "œʁ"
+      forms:
+        "definite": "l'heure"
+        "plural": "les heures"
+        "indefinite": "une heure"
+    - lemma: "nom"
+      ipa: "nɔ̃"
+      forms:
+        "definite": "le nom"
+        "plural": "les noms"
+        "indefinite": "un nom"
+    - lemma: "frère"
+      key: "frere"
+      ipa: "fʁɛʁ"
+      forms:
+        "definite": "le frère"
+        "plural": "les frères"
+        "indefinite": "un frère"
+    - lemma: "sœur"
+      key: "soeur"
+      ipa: "sœʁ"
+      forms:
+        "definite": "la sœur"
+        "plural": "les sœurs"
+        "indefinite": "une sœur"
+    - lemma: "pays"
+      ipa: "pei"
+      forms:
+        "definite": "le pays"
+        "plural": "les pays"
+        "indefinite": "un pays"
+    - lemma: "tasse"
+      ipa: "tas"
+      forms:
+        "definite": "la tasse"
+        "plural": "les tasses"
+        "indefinite": "une tasse"
