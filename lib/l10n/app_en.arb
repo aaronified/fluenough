@@ -6969,7 +6969,7 @@
   "@reviewSettingsCopy": {
     "description": "Tooltip of the button that copies the rater code."
   },
-  "reviewSettingsCopied": "Rater code copied",
+  "reviewSettingsCopied": "Reviewer code copied",
   "@reviewSettingsCopied": {
     "description": "Shown once the rater code is copied."
   },
@@ -7467,7 +7467,7 @@
   "@reviewTurnOnMany": {
     "description": "Second paragraph of the turn-on dialog: several decks go in one mail (owner, 2026-10-09)."
   },
-  "reviewTurnOnPublic": "Rater codes are public, to thank you. Your mail address is not.",
+  "reviewTurnOnPublic": "Reviewer codes are public, to thank you. Your mail address is not.",
   "@reviewTurnOnPublic": {
     "description": "Last paragraph of the turn-on dialog."
   },
@@ -8011,7 +8011,7 @@
   "@reviewSignedOff": {
     "description": "Review screen button once the unit is signed off."
   },
-  "reviewSignedOffDone": "Signed off. Send your review when you are ready.",
+  "reviewSignedOffDone": "Marked as done. Send your review when you are ready.",
   "@reviewSignedOffDone": {
     "description": "Shown once a unit is signed off."
   },
@@ -9282,7 +9282,7 @@
   "@soundsOfWordOfferNotNow": {
     "description": "Button that closes the question about adding the IPA course without adding it."
   },
-  "soundsOfWordNone": "The IPA course has no symbols for the sounds of this word yet.",
+  "soundsOfWordNone": "This word has no pronunciation symbols yet.",
   "@soundsOfWordNone": {
     "description": "Said when the sounds-of-this-word button finds no IPA card whose symbol occurs in the word."
   },
@@ -12363,7 +12363,7 @@
   "@languagesEmptyTitle": {
     "description": "Title of the Languages page before any language is added."
   },
-  "languagesEmptyBody": "For each language, set each skill to Know or Learn: speak, hear, read and write.",
+  "languagesEmptyBody": "For each language, say what you already know and what you want to learn: speaking, listening, reading and writing.",
   "@languagesEmptyBody": {
     "description": "Body of the empty Languages page."
   },
@@ -12587,7 +12587,7 @@
   "@languagesScriptRW": {
     "description": "Heading of the sheet's script row for a language with one script."
   },
-  "languagesNoCourseNote": "There is no {language} course. You can set Know.",
+  "languagesNoCourseNote": "There is no {language} course yet. You can mark what you already know.",
   "@languagesNoCourseNote": {
     "description": "Note on the sheet of a language with no course.",
     "placeholders": {
@@ -12657,7 +12657,7 @@
   "@languagesSetOne": {
     "description": "Disabled bottom button of the sheet of a language not added yet."
   },
-  "languagesDraftMeta": "Set each skill: Know, Learn or Leave",
+  "languagesDraftMeta": "Tap each skill: you know it, you want to learn it, or neither",
   "@languagesDraftMeta": {
     "description": "Line under the badges on the sheet of a language not added yet."
   },
@@ -12817,7 +12817,7 @@
       }
     }
   },
-  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. Skills you are learning become Leave; Know stays. Your progress stays in the review log and comes back with the decks.",
+  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. What you are learning stops; what you already know stays. Your progress stays in the review log and comes back with the decks.",
   "@languagesDeleteBody": {
     "description": "Body of the delete dialog.",
     "placeholders": {
@@ -12883,9 +12883,9 @@
   "@languagesTestAgain": {
     "description": "Sound test's retry button."
   },
-  "languagesToastSkill": "{name}: {skill} set to {state}",
+  "languagesToastSkill": "{name}: {state, select, learn{you’re learning {skill}} know{you already know {skill}} other{not learning {skill} now}}",
   "@languagesToastSkill": {
-    "description": "Toast after a skill's pill changes. {name} is the language, with its script in brackets for one of several scripts.",
+    "description": "Toast after a skill's pill changes, in plain words with no level names. {name} is the language, {skill} a phrase from the languagesToastPhrase keys, {state} learn, know or leave.",
     "placeholders": {
       "name": {
         "type": "String",
@@ -12893,13 +12893,45 @@
       },
       "skill": {
         "type": "String",
-        "example": "Read"
+        "example": "speaking and listening"
       },
       "state": {
         "type": "String",
-        "example": "Know"
+        "example": "learn"
       }
     }
+  },
+  "languagesToastPhraseSpoken": "speaking and listening",
+  "@languagesToastPhraseSpoken": {
+    "description": "The Spoken skill in a skill toast, as the {skill} of languagesToastSkill."
+  },
+  "languagesToastPhraseHear": "listening",
+  "@languagesToastPhraseHear": {
+    "description": "The Spoken skill at its Hear level, in a skill toast."
+  },
+  "languagesToastPhraseScript": "reading and writing {script}",
+  "@languagesToastPhraseScript": {
+    "description": "A script's skills in a skill toast. {script} is the script's own name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastPhraseRead": "reading {script}",
+  "@languagesToastPhraseRead": {
+    "description": "A script's skill at its Read level, in a skill toast. {script} is the script's own name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "languagesToastPhraseGestures": "sign language",
+  "@languagesToastPhraseGestures": {
+    "description": "The Gestures skill of a sign language, in a skill toast."
   },
   "languagesToastNameScript": "{language} ({script})",
   "@languagesToastNameScript": {
@@ -12915,7 +12947,7 @@
       }
     }
   },
-  "languagesToastPool": "{language} is back in the language pool. Find it again with Add a language.",
+  "languagesToastPool": "{language} removed. Add it back from Add a language.",
   "@languagesToastPool": {
     "description": "Toast and snackbar after a language's last skill is set to Leave.",
     "placeholders": {
@@ -13051,7 +13083,7 @@
       }
     }
   },
-  "languagesToastLevel": "{language}: level found",
+  "languagesToastLevel": "{language}: we found your level",
   "@languagesToastLevel": {
     "description": "Toast after Find my level or Fit my level finishes.",
     "placeholders": {
@@ -13061,7 +13093,7 @@
       }
     }
   },
-  "languagesLevelNeedsDecks": "Set a skill to Learn to download the decks first, then find your level.",
+  "languagesLevelNeedsDecks": "Start learning this language first, so its decks download. Then find your level.",
   "@languagesLevelNeedsDecks": {
     "description": "Toast when Find my level is tapped for a language with no decks on the phone."
   },
