@@ -418,7 +418,8 @@ units:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
-  - planned: { id: "es-arts", theme: "arts", words: 45 }
+  - decks: ["es-arts", "es-arts-sentences", "es-reading-arts", "*"]
+    words: 39
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:

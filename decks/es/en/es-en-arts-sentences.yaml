@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-arts-sentences"
+kind: "layer"
+core: "es-arts-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: arts"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about painting, music and the stage, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2542":
+    native: "The sculptor paints a picture on the canvas."
+    bases: { "El": "the", "un": "a", "en": "in", "el": "the" }
+    confusables: { "pincel": { why: "Pincel is a brush, the tool used to paint." }, "oleo": { why: "Óleo is oil paint, the material used." } }
+  "es-2543":
+    native: "The orchestra plays a melody on the stage."
+    bases: { "La": "the", "una": "a", "en": "in", "el": "the" }
+    confusables: { "coro": { why: "Coro is a choir, singers not instruments." }, "instrumento": { why: "Instrumento is an instrument, one tool of the group." } }
+  "es-2544":
+    native: "The exhibition is in the gallery in the centre."
+    bases: { "La": "the", "en": "in", "la": "the", "del": "of", "centro": "centre" }
+    confusables: { "museo": { why: "Museo is a museum, a permanent collection." }, "cuadro": { why: "Cuadro is a single picture, one work." } }
+  "es-2545":
+    native: "I compose a song with my friend's lyrics."
+    bases: { "una": "a", "con": "with", "la": "the", "de": "of" }
+    confusables: { "melodia": { why: "Melodía is the tune, one part of the song." }, "compositor": { why: "Compositor is the person who writes the music." } }
+  "es-2546":
+    native: "The dance show is very pretty."
+    bases: { "El": "the", "de": "of" }
+    confusables: { "actuacion": { why: "Actuación is a performance, one act of the show." }, "opera": { why: "Ópera is an opera, a different kind of show." } }
+  "es-2547":
+    native: "There is a mural and a statue in the square."
+    bases: { "Hay": "there is; there are", "un": "a", "una": "a", "en": "in", "la": "the" }
+    confusables: { "grabado": { why: "Grabado is a print, made by pressing ink." }, "artesania": { why: "Artesanía is handicraft, made by hand." } }

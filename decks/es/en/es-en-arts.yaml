@@ -1,0 +1,282 @@
+schema: 1
+id: "es-en-arts"
+kind: "layer"
+core: "es-arts"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arts: music, dance, painting and the stage"
+license: "CC-BY-SA-4.0"
+description: "Words for the arts: painting and sculpture, the gallery and the exhibition, music and the orchestra, dance and the stage, the tools of the painter and the artist's talent, and the verbs to direct, compose and perform. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2503":
+    native: "art"
+    notes: { n1: "El arte is art, the making of beautiful or meaningful things. The plural las artes is the arts." }
+    bases: { "el": "the", "arte": "art" }
+    examples:
+      "El arte es muy importante.": { native: "Art is very important.", bases: { "El": "the", "arte": "art" } }
+      "Estudio arte en la universidad.": { native: "I study art at university.", bases: { "arte": "art", "en": "in", "la": "the" } }
+  "es-2504":
+    native: "music"
+    notes: { n1: "La música is music, sounds arranged to be heard in rhythm and melody." }
+    bases: { "la": "the", "música": "music" }
+    examples:
+      "La música me relaja.": { native: "Music relaxes me.", bases: { "La": "the", "música": "music", "me": "to me", "relaja": "to relax" } }
+      "Escucho música cada día.": { native: "I listen to music every day.", bases: { "música": "music" } }
+  "es-2505":
+    native: "painting; paint"
+    notes: { n1: "La pintura is painting, the art of making pictures with colour, or the paint itself." }
+    bases: { "la": "the", "pintura": "painting; paint" }
+    examples:
+      "La pintura es muy bonita.": { native: "The painting is very pretty.", bases: { "La": "the", "pintura": "painting; paint" } }
+      "Compro pintura para la pared.": { native: "I buy paint for the wall.", bases: { "pintura": "painting; paint", "para": "for", "la": "the" } }
+  "es-2506":
+    native: "sculpture"
+    notes: { n1: "La escultura is sculpture, a work of art made of stone, metal or wood." }
+    bases: { "la": "the", "escultura": "sculpture" }
+    examples:
+      "La escultura está en el museo.": { native: "The sculpture is in the museum.", bases: { "La": "the", "escultura": "sculpture", "en": "in", "el": "the" } }
+      "Me gusta la escultura moderna.": { native: "I like modern sculpture.", bases: { "Me": "to me", "la": "the", "escultura": "sculpture" } }
+  "es-2507":
+    native: "sculptor"
+    notes: { n1: "El escultor is a sculptor, who makes statues. The feminine is la escultora." }
+    bases: { "el": "the", "escultor": "sculptor" }
+    examples:
+      "El escultor trabaja con mármol.": { native: "The sculptor works with marble.", bases: { "El": "the", "escultor": "sculptor", "con": "with", "mármol": "marble" } }
+      "Mi tía es escultora.": { native: "My aunt is a sculptor.", bases: { "escultora": "sculptor" } }
+  "es-2508":
+    native: "exhibition"
+    notes: { n1: "La exposición is an exhibition of art, photos or objects for people to see." }
+    bases: { "la": "the", "exposición": "exhibition" }
+    examples:
+      "La exposición es gratis.": { native: "The exhibition is free.", bases: { "La": "the", "exposición": "exhibition" } }
+      "Visito una exposición de fotos.": { native: "I visit a photo exhibition.", bases: { "una": "a", "exposición": "exhibition", "de": "of" } }
+  "es-2509":
+    native: "gallery"
+    notes: { n1: "La galería is an art gallery, a place where pictures are shown and sold." }
+    bases: { "la": "the", "galería": "gallery" }
+    examples:
+      "La galería está en el centro.": { native: "The gallery is in the centre.", bases: { "La": "the", "galería": "gallery", "en": "in", "el": "the", "centro": "centre" } }
+      "Hay muchos cuadros en la galería.": { native: "There are many paintings in the gallery.", bases: { "Hay": "there is; there are", "en": "in", "la": "the", "galería": "gallery" } }
+  "es-2510":
+    native: "painting; picture"
+    notes: { n1: "El cuadro is a painting or a picture, often framed and hung on a wall." }
+    bases: { "el": "the", "cuadro": "painting; picture" }
+    examples:
+      "El cuadro es muy grande.": { native: "The painting is very big.", bases: { "El": "the", "cuadro": "painting; picture" } }
+      "Pinto un cuadro del mar.": { native: "I paint a picture of the sea.", bases: { "un": "a", "cuadro": "painting; picture", "del": "of" } }
+  "es-2511":
+    native: "stage"
+    notes: { n1: "El escenario is the stage of a theatre or a concert hall." }
+    bases: { "el": "the", "escenario": "stage" }
+    examples:
+      "El actor sube al escenario.": { native: "The actor goes up on stage.", bases: { "El": "the", "al": "to the", "escenario": "stage" } }
+      "El escenario es pequeño.": { native: "The stage is small.", bases: { "El": "the", "escenario": "stage" } }
+  "es-2512":
+    native: "performance; acting"
+    notes: { n1: "La actuación is a performance on stage or in a film, or the acting itself." }
+    bases: { "la": "the", "actuación": "performance; acting" }
+    examples:
+      "La actuación es muy buena.": { native: "The performance is very good.", bases: { "La": "the", "actuación": "performance; acting" } }
+      "Su actuación es famosa.": { native: "Their acting is famous.", bases: { "actuación": "performance; acting", "famosa": "famous" } }
+  "es-2513":
+    native: "dance"
+    notes: { n1: "La danza is dance, the art of moving the body to music." }
+    bases: { "la": "the", "danza": "dance" }
+    examples:
+      "La danza es elegante.": { native: "Dance is elegant.", bases: { "La": "the", "danza": "dance" } }
+      "Estudio danza clásica.": { native: "I study classical dance.", bases: { "danza": "dance", "clásica": "classical" } }
+  "es-2514":
+    native: "choir"
+    notes: { n1: "El coro is a choir, a group of people who sing together." }
+    bases: { "el": "the", "coro": "choir" }
+    examples:
+      "Canto en el coro de la iglesia.": { native: "I sing in the church choir.", bases: { "en": "in", "el": "the", "coro": "choir", "de": "of", "la": "the" } }
+      "El coro es muy bueno.": { native: "The choir is very good.", bases: { "El": "the", "coro": "choir" } }
+  "es-2515":
+    native: "orchestra"
+    notes: { n1: "La orquesta is an orchestra, a large group of musicians who play together." }
+    bases: { "la": "the", "orquesta": "orchestra" }
+    examples:
+      "La orquesta toca una sinfonía.": { native: "The orchestra plays a symphony.", bases: { "La": "the", "orquesta": "orchestra", "una": "a", "sinfonía": "symphony" } }
+      "Mi hermana toca en la orquesta.": { native: "My sister plays in the orchestra.", bases: { "en": "in", "la": "the", "orquesta": "orchestra" } }
+  "es-2516":
+    native: "instrument"
+    notes: { n1: "El instrumento is a musical instrument, such as a guitar or a piano." }
+    bases: { "el": "the", "instrumento": "instrument" }
+    examples:
+      "El instrumento es de madera.": { native: "The instrument is made of wood.", bases: { "El": "the", "instrumento": "instrument", "de": "of" } }
+      "Toco un instrumento nuevo.": { native: "I play a new instrument.", bases: { "un": "a", "instrumento": "instrument" } }
+  "es-2517":
+    native: "lyrics; letter"
+    notes: { n1: "La letra is the words of a song, or a letter of the alphabet, or handwriting." }
+    bases: { "la": "the", "letra": "lyrics; letter" }
+    examples:
+      "La letra de la canción es bonita.": { native: "The lyrics of the song are pretty.", bases: { "La": "the", "letra": "lyrics; letter", "de": "of", "la": "the" } }
+      "Escribo con buena letra.": { native: "I write with good handwriting.", bases: { "con": "with", "letra": "lyrics; letter" } }
+  "es-2518":
+    native: "melody"
+    notes: { n1: "La melodía is a melody, the tune of a song." }
+    bases: { "la": "the", "melodía": "melody" }
+    examples:
+      "La melodía es muy alegre.": { native: "The melody is very cheerful.", bases: { "La": "the", "melodía": "melody" } }
+      "Canto una melodía antigua.": { native: "I sing an old melody.", bases: { "una": "a", "melodía": "melody" } }
+  "es-2519":
+    native: "composer"
+    notes: { n1: "El compositor is a person who writes music. The feminine is la compositora." }
+    bases: { "el": "the", "compositor": "composer" }
+    examples:
+      "El compositor escribe una sinfonía.": { native: "The composer writes a symphony.", bases: { "El": "the", "compositor": "composer", "una": "a", "sinfonía": "symphony" } }
+      "La compositora es muy famosa.": { native: "The composer is very famous.", bases: { "La": "the", "compositora": "composer", "famosa": "famous" } }
+  "es-2520":
+    native: "opera"
+    notes: { n1: "La ópera is an opera, a play where the words are sung." }
+    bases: { "la": "the", "ópera": "opera" }
+    examples:
+      "La ópera es muy larga.": { native: "The opera is very long.", bases: { "La": "the", "ópera": "opera" } }
+      "Vamos a la ópera el sábado.": { native: "We go to the opera on Saturday.", bases: { "a": "to", "la": "the", "ópera": "opera", "el": "the" } }
+  "es-2521":
+    native: "show; spectacle"
+    notes: { n1: "El espectáculo is a show, a performance for an audience." }
+    bases: { "el": "the", "espectáculo": "show; spectacle" }
+    examples:
+      "El espectáculo es esta noche.": { native: "The show is tonight.", bases: { "El": "the", "espectáculo": "show; spectacle", "esta": "This" } }
+      "Es un espectáculo de luz.": { native: "It is a light show.", bases: { "un": "a", "espectáculo": "show; spectacle", "de": "of" } }
+  "es-2522":
+    native: "craft; handicraft"
+    notes: { n1: "La artesanía is handicraft, objects made by hand with skill." }
+    bases: { "la": "the", "artesanía": "craft; handicraft" }
+    examples:
+      "Compro artesanía en el mercado.": { native: "I buy handicrafts at the market.", bases: { "artesanía": "craft; handicraft", "en": "in", "el": "the" } }
+      "La artesanía es tradicional.": { native: "Handicraft is traditional.", bases: { "La": "the", "artesanía": "craft; handicraft", "tradicional": "traditional" } }
+  "es-2523":
+    native: "statue"
+    notes: { n1: "La estatua is a statue, a figure of a person or an animal made of stone or metal." }
+    bases: { "la": "the", "estatua": "statue" }
+    examples:
+      "La estatua está en la plaza.": { native: "The statue is in the square.", bases: { "La": "the", "estatua": "statue", "en": "in", "la": "the" } }
+      "La estatua es de bronce.": { native: "The statue is made of bronze.", bases: { "La": "the", "estatua": "statue", "de": "of", "bronce": "bronze" } }
+  "es-2524":
+    native: "architecture"
+    notes: { n1: "La arquitectura is architecture, the art and science of designing buildings." }
+    bases: { "la": "the", "arquitectura": "architecture" }
+    examples:
+      "La arquitectura de la ciudad es bonita.": { native: "The architecture of the city is pretty.", bases: { "La": "the", "arquitectura": "architecture", "de": "of", "la": "the" } }
+      "Estudio arquitectura.": { native: "I study architecture.", bases: { "arquitectura": "architecture" } }
+  "es-2525":
+    native: "design"
+    notes: { n1: "El diseño is design, the plan and style of an object or a building." }
+    bases: { "el": "the", "diseño": "design" }
+    examples:
+      "El diseño de la casa es moderno.": { native: "The design of the house is modern.", bases: { "El": "the", "diseño": "design", "de": "of", "la": "the" } }
+      "Me gusta el diseño de este coche.": { native: "I like the design of this car.", bases: { "Me": "to me", "el": "the", "diseño": "design", "de": "of" } }
+  "es-2526":
+    native: "creativity"
+    notes: { n1: "La creatividad is creativity, the ability to make new ideas." }
+    bases: { "la": "the", "creatividad": "creativity" }
+    examples:
+      "La creatividad es importante.": { native: "Creativity is important.", bases: { "La": "the", "creatividad": "creativity" } }
+      "Tiene mucha creatividad.": { native: "She has a lot of creativity.", bases: { "creatividad": "creativity" } }
+  "es-2527":
+    native: "talent"
+    notes: { n1: "El talento is talent, a natural ability to do something well." }
+    bases: { "el": "the", "talento": "talent" }
+    examples:
+      "Tiene mucho talento.": { native: "She has a lot of talent.", bases: { "talento": "talent" } }
+      "El talento se trabaja.": { native: "Talent is worked at.", bases: { "El": "the", "talento": "talent", "se": "yourself" } }
+  "es-2528":
+    native: "culture"
+    notes: { n1: "La cultura is culture, the arts, customs and knowledge of a people." }
+    bases: { "la": "the", "cultura": "culture" }
+    examples:
+      "La cultura es rica.": { native: "The culture is rich.", bases: { "La": "the", "cultura": "culture" } }
+      "Me interesa la cultura de Perú.": { native: "I am interested in the culture of Peru.", bases: { "Me": "to me", "interesa": "to interest", "la": "the", "cultura": "culture", "de": "of" } }
+  "es-2529":
+    native: "paintbrush"
+    notes: { n1: "El pincel is a paintbrush, used to put paint on a surface." }
+    bases: { "el": "the", "pincel": "paintbrush" }
+    examples:
+      "El pincel está sucio.": { native: "The paintbrush is dirty.", bases: { "El": "the", "pincel": "paintbrush" } }
+      "Pinto con un pincel fino.": { native: "I paint with a fine brush.", bases: { "con": "with", "un": "a", "pincel": "paintbrush", "fino": "fine; thin" } }
+  "es-2530":
+    native: "canvas"
+    notes: { n1: "El lienzo is canvas, the cloth a painter works on." }
+    bases: { "el": "the", "lienzo": "canvas" }
+    examples:
+      "El lienzo es grande.": { native: "The canvas is big.", bases: { "El": "the", "lienzo": "canvas" } }
+      "Pinto en el lienzo.": { native: "I paint on the canvas.", bases: { "en": "in", "el": "the", "lienzo": "canvas" } }
+  "es-2531":
+    native: "watercolour"
+    notes: { n1: "La acuarela is watercolour, a paint mixed with water." }
+    bases: { "la": "the", "acuarela": "watercolour" }
+    examples:
+      "Pinto con acuarelas.": { native: "I paint with watercolours.", bases: { "con": "with", "acuarelas": "watercolour" } }
+      "La acuarela es suave.": { native: "The watercolour is soft.", bases: { "La": "the", "acuarela": "watercolour", "suave": "soft" } }
+  "es-2532":
+    native: "oil paint"
+    notes: { n1: "El óleo is oil paint, a thick paint used for paintings." }
+    bases: { "el": "the", "óleo": "oil paint" }
+    examples:
+      "Pinto al óleo.": { native: "I paint in oils.", bases: { "al": "to the", "óleo": "oil paint" } }
+      "El óleo es brillante.": { native: "The oil paint is bright.", bases: { "El": "the", "óleo": "oil paint", "brillante": "bright" } }
+  "es-2533":
+    native: "mural"
+    notes: { n1: "El mural is a mural, a large painting on a wall." }
+    bases: { "el": "the", "mural": "mural" }
+    examples:
+      "El mural está en la calle.": { native: "The mural is on the street.", bases: { "El": "the", "mural": "mural", "en": "in", "la": "the" } }
+      "El mural es de colores.": { native: "The mural is in colours.", bases: { "El": "the", "mural": "mural", "de": "of" } }
+  "es-2534":
+    native: "print; engraving"
+    notes: { n1: "El grabado is a print, an image made by pressing ink from a plate." }
+    bases: { "el": "the", "grabado": "print; engraving" }
+    examples:
+      "El grabado es antiguo.": { native: "The print is old.", bases: { "El": "the", "grabado": "print; engraving" } }
+      "Compro un grabado.": { native: "I buy a print.", bases: { "un": "a", "grabado": "print; engraving" } }
+  "es-2535":
+    native: "to direct"
+    notes: { n1: "Dirigir is to direct a film or a play, or to lead a group. Its yo form is dirijo." }
+    bases: { "dirigir": "to direct" }
+    examples:
+      "Dirijo una obra de teatro.": { native: "I direct a play.", bases: { "Dirijo": "to direct", "una": "a", "obra": "building site; work", "de": "of" } }
+      "Dirige la orquesta.": { native: "She conducts the orchestra.", bases: { "Dirige": "to direct", "la": "the" } }
+  "es-2536":
+    native: "to compose"
+    notes: { n1: "Componer is to write a piece of music, or to make up a whole from parts." }
+    bases: { "componer": "to compose" }
+    examples:
+      "Compongo una canción.": { native: "I compose a song.", bases: { "Compongo": "to compose", "una": "a" } }
+      "Compone música para películas.": { native: "He composes music for films.", bases: { "Compone": "to compose", "para": "for" } }
+  "es-2537":
+    native: "to perform; to interpret"
+    notes: { n1: "Interpretar is to perform a role or a piece of music, or to explain its meaning." }
+    bases: { "interpretar": "to perform; to interpret" }
+    examples:
+      "Interpreto el papel del rey.": { native: "I play the king's role.", bases: { "Interpreto": "to perform; to interpret", "el": "the", "del": "of", "rey": "king" } }
+      "Interpretan la sinfonía con emoción.": { native: "They perform the symphony with emotion.", bases: { "Interpretan": "to perform; to interpret", "la": "the", "sinfonía": "symphony", "con": "with" } }
+  "es-2538":
+    native: "to express"
+    notes: { n1: "Expresar is to show a feeling or an idea in words or in art." }
+    bases: { "expresar": "to express" }
+    examples:
+      "Expreso mis ideas con la pintura.": { native: "I express my ideas/idea with painting.", bases: { "Expreso": "to express", "con": "with", "la": "the" } }
+      "Expresan la alegría con la danza.": { native: "They express joy with dance.", bases: { "Expresan": "to express", "la": "the", "con": "with" } }
+  "es-2539":
+    native: "to sculpt"
+    notes: { n1: "Esculpir is to carve or shape a sculpture from stone, wood or metal." }
+    bases: { "esculpir": "to sculpt" }
+    examples:
+      "Esculpo una estatua.": { native: "I sculpt a statue.", bases: { "Esculpo": "to sculpt", "una": "a" } }
+      "Esculpen la piedra.": { native: "They carve the stone.", bases: { "Esculpen": "to sculpt", "la": "the" } }
+  "es-2540":
+    native: "creative"
+    notes: { n1: "Creativo is creative, able to make new things. It agrees with the noun: creativa." }
+    bases: { "creativo": "creative" }
+    examples:
+      "Es una persona creativa.": { native: "She is a creative person.", bases: { "una": "a", "creativa": "creative" } }
+      "Tiene ideas creativas.": { native: "He has creative ideas./idea", bases: { "creativas": "creative" } }
+  "es-2541":
+    native: "artistic"
+    notes: { n1: "Artístico is artistic, of art or the arts. It agrees with the noun: artística." }
+    bases: { "artístico": "artistic" }
+    examples:
+      "Es un talento artístico.": { native: "It is an artistic talent.", bases: { "un": "a", "artístico": "artistic" } }
+      "La familia es muy artística.": { native: "The family is very artistic.", bases: { "La": "the", "artística": "artistic" } }
