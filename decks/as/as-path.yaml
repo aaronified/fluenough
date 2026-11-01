@@ -400,11 +400,14 @@ units:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
   - decks: ["as-reading-conjunctive"]
     words: 0
-  - planned: { id: "as-adjectives-2", theme: "adjectives-2", words: 55 }
+  - decks: ["as-adjectives-2", "as-adjectives-2-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - decks: ["as-reading-adjectives-2"]
+    words: 0
   - planned: { id: "as-workplace", theme: "workplace", words: 45 }
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }

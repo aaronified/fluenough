@@ -1,0 +1,83 @@
+schema: 1
+id: "as-adjectives-2-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3079"
+    target: "কোঠাটো বহল আৰু আলোকিত।"
+    reading: "kuthātu bôhôl āru ālokit."
+    ipa: "kʊtʰatʊ bɔhɔl aɹu alʊkit"
+    pos: "phrase"
+    bases:
+      - { word: "কোঠাটো", ref: "as-0328" }
+    confusables:
+      - { id: "c1", word: "অন্ধকাৰ", reading: "ôndhôkār", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "xôru", kind: "word" }
+  - id: "as-3080"
+    target: "দেৱাল চিকণ নহয়।"
+    reading: "dewāl sikôṇ nôhôy."
+    ipa: "dewal sikɔn nɔhɔj"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খৰখৰীয়া", reading: "khôrôkhôriyā", kind: "word" }
+      - { id: "c2", word: "উজ্জ্বল", reading: "ujjwôl", kind: "word" }
+  - id: "as-3081"
+    target: "চকী আৰামী।"
+    reading: "soki ārāmi."
+    ipa: "soki aɹami"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "শক্ত", reading: "xôkt", kind: "word" }
+      - { id: "c2", word: "নৰম", reading: "nôrôm", kind: "word" }
+  - id: "as-3082"
+    target: "আলমাৰীত কাপোৰ আছে।"
+    reading: "ālmāriyt kāpur āse."
+    ipa: "alɔmaɹit kapʊɹ ase"
+    pos: "phrase"
+    bases:
+      - { word: "আলমাৰীত", ref: "as-3071" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ৰেক", reading: "rek", kind: "word" }
+      - { id: "c2", word: "কাৰ্পেট", reading: "kārpet", kind: "word" }
+  - id: "as-3083"
+    target: "চালত পৰ্দা নাই।"
+    reading: "sālôt pôrdā nāi."
+    ipa: "salɔt pɔɹda nai"
+    pos: "phrase"
+    bases:
+      - { word: "চালত", ref: "as-3069" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "তলা", reading: "talā", kind: "word" }
+      - { id: "c2", word: "দেৱাল", reading: "dewāl", kind: "word" }
+  - id: "as-3084"
+    target: "কোঠা শীতল।"
+    reading: "kuthā xītôl."
+    ipa: "kʊtʰa xitɔl"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "গৰম", reading: "gôrôm", kind: "word" }
+      - { id: "c2", word: "উম", reading: "um", kind: "word" }
+  - id: "as-3085"
+    target: "ৰাতি কোঠা অন্ধকাৰ।"
+    reading: "rāti kuthā ôndhôkār."
+    ipa: "ɹati kʊtʰa ɔndʱɔkaɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "দিনটো", reading: "dintu", kind: "word" }
+      - { id: "c2", word: "আলো", reading: "ālo", kind: "word" }
+  - id: "as-3086"
+    target: "দেৱালত ছবি আছে।"
+    reading: "dewālôt sôbi āse."
+    ipa: "dewalɔt sobi ase"
+    pos: "phrase"
+    bases:
+      - { word: "দেৱালত", ref: "as-3070" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "তলাত", reading: "talāt", kind: "word" }
+      - { id: "c2", word: "চালত", reading: "sālôt", kind: "word" }

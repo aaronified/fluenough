@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-adjectives-2"
+name: "Assamese reading: describing a room"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-describing-a-room"
+    title: "Describing a room"
+    theme: "adjectives-2"
+    sentences:
+      - text: "কোঠাটো বহল।"
+        reading: "kuthātu bôhôl."
+      - text: "দেৱাল সেউজ।"
+        reading: "dewāl seuziyā."
+      - text: "খিৰিকীত পৰ্দা আছে।"
+        reading: "khirikit pôrdā āse."
+      - text: "কোঠা শীতল আৰু আলোকিত।"
+        reading: "kuthā xītôl āru ālokit."
+    questions:
+      - id: "as-3087"
+        prompt: { en: "The room is wide." }
+        answer: true
+      - id: "as-3088"
+        prompt: { en: "What colour is the wall?" }
+        options:
+          - { en: "Red" }
+          - { en: "Green" }
+          - { en: "Blue" }
+        answer: 2
+      - id: "as-3089"
+        prompt: { en: "What is at the window?" }
+        options:
+          - { en: "A curtain" }
+          - { en: "A shelf" }
+          - { en: "A carpet" }
+        answer: 1
+  - id: "as-room-to-let"
+    title: "A room to let"
+    theme: "adjectives-2"
+    sentences:
+      - text: "ভাড়াৰ কোঠা খালী।"
+        reading: "bhārār kuthā khālī."
+      - text: "কোঠা আৰামী আৰু উজ্জ্বল।"
+        reading: "kuthā ārāmi āru ujjwôl."
+      - text: "তলা চিকণ।"
+        reading: "talā sikôṇ."
+      - text: "ভাড়া কিমান?"
+        reading: "bhārā kimān?"
+    questions:
+      - id: "as-3090"
+        prompt: { en: "The room is empty to rent." }
+        answer: true
+      - id: "as-3091"
+        prompt: { en: "What is the floor like?" }
+        options:
+          - { en: "Rough" }
+          - { en: "Smooth" }
+          - { en: "Wet" }
+        answer: 2
+      - id: "as-3092"
+        prompt: { en: "What does the advert ask?" }
+        options:
+          - { en: "The rent" }
+          - { en: "The colour" }
+          - { en: "The age" }
+        answer: 1
