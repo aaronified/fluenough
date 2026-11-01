@@ -130,11 +130,10 @@ units:
   # an-ub-da limmu₂-ba (king of the four quarters), nin-a-ni-ir (for his
   # lady), nam-ti-la-ni-še₃ (for his life), e₂-a-ni mu-na-du₃ (he built her
   # house for her), a mu-na-ru (he dedicated it to her).
-  - planned: { id: "sux-phrasebook", theme: "first-words", words: 15 }
-    listening_passages:
-      - { id: "brick-read-aloud", text: { "en": "Ur-Namma's brick stamp read aloud: Nanna, his lord, Ur-Namma, king of Ur, built his house (ORACC)" } }
-    reading_passages:
-      - { id: "ur-namma-brick", text: { "en": "The stamp on a baked brick of Ur-Namma from Ur, in transliteration with its translation (ORACC)" } }
+  # The first words are written: sux-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["sux-phrasebook", "sux-first-words", "*"]
+    words: 10
   # 2. Transliteration and the reconstructed sounds: sign values joined by
   # hyphens, indices (du, du₃), UPPERCASE sign names, superscript
   # determinatives; ĝ (ng), ḫ (as in Scottish loch), š (sh), and the

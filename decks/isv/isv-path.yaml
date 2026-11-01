@@ -123,11 +123,10 @@ regions:
 units:
   # 1. The phrasebook, taught whole from the first lesson.
   # isv-first-words joins it when written.
-  - planned: { id: "isv-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Dobry denj, hvala and do viděnja: greeting someone at a meeting and leaving" } }
-    reading_passages:
-      - { id: "door-signs", text: { "en": "Signs on doors: open, closed, push, pull, welcome" } }
+  # The first words are written: isv-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["isv-phrasebook", "isv-first-words", "*"]
+    words: 10
   # 2. The first word units, in the Latin alphabet. The sounds first: č š
   # ž and dž, c said ts, h, j said y, lj and nj, y and i, ě (said e or je,
   # as the reader's own language has it), and a stress that is not fixed.

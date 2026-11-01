@@ -177,6 +177,37 @@ Each new language needs what an existing one has:
 - facts, 30 or more (AGENTS.md);
 - sounds, number rules, a script guide, and its romanisation.
 
+## The generated paths (#959)
+
+`tools/gen_planned_paths.py` writes the path file of every planned language
+except the sign and fiction ones: the 26 living languages (Portuguese,
+Italian, Catalan, Swedish, Norwegian, Yiddish, Russian, Polish,
+Serbo-Croatian, Greek, Hebrew, Finnish, Hungarian, Turkish, Basque, Irish,
+Arabic, Cantonese, Thai, Vietnamese, Filipino, Malay, Swahili, Hausa, Somali,
+Quechua) and the ancient Vedic Sanskrit, Latin, Old English and Middle
+English. Each path holds the whole plan to B1 from the scheme's template: the
+sounds, the first four themes, the script where the language has one to
+learn, then the other themes woven with the grammar of the language's family
+(cases for Slavic, suffixes and harmony for Turkic and Uralic, root and
+pattern for Semitic, tones for Cantonese, Thai, Vietnamese and Hausa, noun
+classes for Swahili, ergativity for Basque, mutations for Irish). Grammar
+topics are generic category names, never a stated rule of the language. Only
+unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words);
+every other unit is `planned:` with placeholder listening and reading
+passages, to be reworded when written.
+
+Living languages use the plan's sizes (A1 700, A2 900, B1 1,200 words); the
+four ancient ones set `levels` (Latin 600, 800 and 1,100; Vedic 300, 400 and
+600; Old English 400, 600 and 800; Middle English 350, 500 and 700) and leave
+out themes of modern life. The generator also turns unit 1 of the courses
+that already had a full all-planned path (German, Esperanto, Maithili,
+Malayalam, Odia, Punjabi, Tamil, Lojban, Interslavic, Mycenaean Greek,
+Sumerian, Egyptian, Proto-Indo-European) into the written unit and touches
+nothing else of them. `--check` fails when a file differs from the
+generator. To change a language's plan before its decks exist, edit the
+generator's data and run it again; once a unit is written, edit the path by
+hand and take the language out of the generator.
+
 ## What the app needs for new scripts
 
 - **Fonts** for Nastaliq, Hebrew, Arabic, Thai, hanzi, kanji and Hangul, where
