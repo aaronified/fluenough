@@ -29,7 +29,7 @@ cards:
       "n1": "The device that puts power into a phone battery."
     examples:
       "चार्जर कहाँ है?": { "native": "Where is the charger?", "bases": {} }
-      "फोन का चार्जर लाओ।": { "native": "Bring the phone's charger.", "bases": {} }
+      "फोन का चार्जर लाओ।": { "native": "Bring the phone's charger.", "bases": {"फोन": "phone"} }
   "hi-1848":
     native: "battery"
     notes:
@@ -120,7 +120,7 @@ cards:
       "n1": "A phone line, or the connection with another person on the phone."
     examples:
       "लाइन व्यस्त है।": { "native": "The line is busy.", "bases": {"व्यस्त": "busy"} }
-      "फोन की लाइन कट गई।": { "native": "The phone line was cut.", "bases": {"कट": "to be cut"} }
+      "फोन की लाइन कट गई।": { "native": "The phone line was cut.", "bases": {"कट": "to be cut", "फोन": "phone"} }
   "hi-1861":
     native: "signal"
     notes:
@@ -182,7 +182,7 @@ cards:
     notes:
       "n1": "A message from an app that shows on the phone's screen."
     examples:
-      "फोन पर नोटिफ़िकेशन आया।": { "native": "A notification came on the phone.", "bases": {} }
+      "फोन पर नोटिफ़िकेशन आया।": { "native": "A notification came on the phone.", "bases": {"फोन": "phone"} }
       "नोटिफ़िकेशन बंद करो।": { "native": "Switch off the notifications.", "bases": {} }
   "hi-1870":
     native: "online"
@@ -224,14 +224,14 @@ cards:
     notes:
       "n1": "Switched on and working. The opposite is बंद (band), off."
     examples:
-      "फोन चालू है।": { "native": "The phone is on.", "bases": {} }
+      "फोन चालू है।": { "native": "The phone is on.", "bases": {"फोन": "phone"} }
       "टीवी चालू करो।": { "native": "Switch on the TV.", "bases": {} }
   "hi-1876":
     native: "bad; broken; out of order"
     notes:
       "n1": "Broken or not working, of a thing. It is also used of bad food and bad weather."
     examples:
-      "फोन खराब हो गया।": { "native": "The phone has broken.", "bases": {} }
+      "फोन खराब हो गया।": { "native": "The phone has broken.", "bases": {"फोन": "phone"} }
       "यह चार्जर खराब है।": { "native": "This charger is faulty.", "bases": {} }
   "hi-1877":
     native: "slow; low (of sound)"
@@ -245,7 +245,7 @@ cards:
     notes:
       "n1": "To ring, as a bell or a phone does, or to play as music. The causal is बजाना (bajānā)."
     examples:
-      "फोन बज रहा है।": { "native": "The phone is ringing.", "bases": {"बज": "to ring"} }
+      "फोन बज रहा है।": { "native": "The phone is ringing.", "bases": {"बज": "to ring", "फोन": "phone"} }
       "घंटी बजती है।": { "native": "The bell rings.", "bases": {"बजती": "to ring"} }
   "hi-1879":
     native: "plan; package"
@@ -260,4 +260,4 @@ cards:
       "n1": "Facts that a person knows or is given about something."
     examples:
       "मुझे जानकारी चाहिए।": { "native": "I need information.", "bases": {} }
-      "फोन की जानकारी दो।": { "native": "Give information about the phone.", "bases": {} }
+      "फोन की जानकारी दो।": { "native": "Give information about the phone.", "bases": {"फोन": "phone"} }

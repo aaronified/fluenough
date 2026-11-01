@@ -21,7 +21,7 @@ cards:
     notes:
       - {"id": "n1", "kind": "note"}
     examples:
-      - {"target": "इल्म बड़ी दौलत है।", "reading": "ilm baṛī daulat hai.", "ipa": "ɪlm bəɽiː d̪ɔːlət̪ ɦɛː", "bases": [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "दौलत", "ref": "hi-2753"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "इल्म बड़ी दौलत है।", "reading": "ilm baṛī daulat hai.", "ipa": "ɪlm bəɽiː d̪ɔːlət̪ ɦɛː", "bases": [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "दौलत", "base": "दौलत", "reading": "daulat"}, {"word": "है", "ref": "hi-0780"}]}
       - {"target": "इल्म हासिल करो।", "reading": "ilm hāsil karō.", "ipa": "ɪlm ɦaːsɪl kəroː", "bases": [{"word": "हासिल", "base": "हासिल", "reading": "hāsil"}, {"word": "करो", "ref": "hi-0779"}]}
   - id: "hi-2816"
     target: "आलिम"
@@ -37,7 +37,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "वह बहुत बड़ा आलिम है।", "reading": "vah bahut baṛā ālim hai.", "ipa": "ʋəɦ bəɦʊt̪ bəɽaː aːlɪm ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "आलिम लोगों की राय सुनो।", "reading": "ālim lōgōm̐ kī rāy sunō.", "ipa": "aːlɪm loːɡõː kiː raːj sʊnoː", "bases": [{"word": "लोगों", "ref": "hi-0761"}, {"word": "की", "ref": "hi-0279"}, {"word": "राय", "ref": "hi-2180"}, {"word": "सुनो", "ref": "hi-0783"}]}
+      - {"target": "आलिम लोगों की राय सुनो।", "reading": "ālim lōgōm̐ kī rāy sunō.", "ipa": "aːlɪm loːɡõː kiː raːj sʊnoː", "bases": [{"word": "लोगों", "ref": "hi-0761"}, {"word": "की", "ref": "hi-0279"}, {"word": "राय", "base": "राय", "reading": "rāy"}, {"word": "सुनो", "ref": "hi-0783"}]}
   - id: "hi-2817"
     target: "मालूम"
     target_scripts: {"perso_arabic": "معلوم"}
@@ -156,7 +156,7 @@ cards:
       - {"id": "n1", "kind": "note"}
     examples:
       - {"target": "यह शख़्स बहुत अच्छा है।", "reading": "yah śak͟hs bahut acchā hai.", "ipa": "jəɦ ʃəxs bəɦʊt̪ ətʃtʃʰaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
-      - {"target": "हर शख़्स को इज़्ज़त मिलनी चाहिए।", "reading": "har śak͟hs kō izzat milnī cāhiē.", "ipa": "ɦər ʃəxs koː ɪzzət̪ mɪlniː tʃaːɦɪeː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "को", "ref": "hi-0277"}, {"word": "इज़्ज़त", "ref": "hi-2568"}, {"word": "मिलनी", "ref": "hi-0793"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+      - {"target": "हर शख़्स को इज़्ज़त मिलनी चाहिए।", "reading": "har śak͟hs kō izzat milnī cāhiē.", "ipa": "ɦər ʃəxs koː ɪzzət̪ mɪlniː tʃaːɦɪeː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "को", "ref": "hi-0277"}, {"word": "इज़्ज़त", "base": "इज़्ज़त", "reading": "izzat"}, {"word": "मिलनी", "ref": "hi-0793"}, {"word": "चाहिए", "ref": "hi-0460"}]}
   - id: "hi-2825"
     target: "वक़्त"
     target_scripts: {"perso_arabic": "وقت"}
@@ -199,7 +199,7 @@ cards:
     notes:
       - {"id": "n1", "kind": "note"}
     examples:
-      - {"target": "हुकूमत ने नया कानून बनाया।", "reading": "hukūmat nē nayā kānūn banāyā.", "ipa": "ɦʊkuːmət̪ neː nəjaː kaːnuːn bənaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नया", "ref": "hi-0896"}, {"word": "कानून", "ref": "hi-2672"}, {"word": "बनाया", "ref": "hi-1502"}]}
+      - {"target": "हुकूमत ने नया कानून बनाया।", "reading": "hukūmat nē nayā kānūn banāyā.", "ipa": "ɦʊkuːmət̪ neː nəjaː kaːnuːn bənaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नया", "ref": "hi-0896"}, {"word": "कानून", "base": "कानून", "reading": "kānūn"}, {"word": "बनाया", "ref": "hi-1502"}]}
       - {"target": "हुकूमत की ज़िम्मेदारी है।", "reading": "hukūmat kī zimmēdārī hai.", "ipa": "ɦʊkuːmət̪ kiː zɪmmeːd̪aːriː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "ज़िम्मेदारी", "ref": "hi-2025"}, {"word": "है", "ref": "hi-0780"}]}
   - id: "hi-2828"
     target: "मुल्क"
