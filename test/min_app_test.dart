@@ -45,7 +45,7 @@ String _index({String? language, Map<String, String> needs = const {}}) {
     'native': ?native,
     'deck': ?deck,
     if (core) 'part': 'core',
-    if (needs[path] case final version?) 'min_app': version,
+    'min_app': ?needs[path],
   };
   return jsonEncode(<String, Object?>{
     'version': 1,
