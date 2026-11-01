@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-feelings"
+name: "Assamese reading: feelings and moods"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-hard-week"
+    title: "A hard week"
+    theme: "feelings"
+    sentences:
+      - text: "এই সপ্তাহ কঠিন আছিল।"
+        reading: "ei xôptāh kôthin āsil."
+      - text: "মই বহুত চিন্তা কৰিছিলোঁ।"
+        reading: "moi bohut cintā kôrisilōm̐."
+      - text: "আজি মই আনন্দিত।"
+        reading: "āzi moi ônôndit."
+      - text: "বন্ধুৱে আশা দিলে।"
+        reading: "bondhuwe āxā dile."
+    questions:
+      - id: "as-3224"
+        prompt: { en: "The week was hard." }
+        answer: true
+      - id: "as-3225"
+        prompt: { en: "How does the speaker feel today?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Angry" }
+          - { en: "Afraid" }
+        answer: 1
+      - id: "as-3226"
+        prompt: { en: "What did the friend give?" }
+        options:
+          - { en: "Money" }
+          - { en: "Hope" }
+          - { en: "Food" }
+        answer: 2
+  - id: "as-letter-to-a-friend"
+    title: "A letter to a friend"
+    theme: "feelings"
+    sentences:
+      - text: "প্ৰিয় বন্ধু, মই দুখিত।"
+        reading: "priyô bondhu, moi dukhit."
+      - text: "মোৰ মনত ভয় আছে।"
+        reading: "mur mônôt bhôy āse."
+      - text: "তুমি মোক স্নেহ কৰা।"
+        reading: "tumi mok xnehô kôrā."
+      - text: "মই তোমাক ভালপাওঁ।"
+        reading: "moi tomāk bhālpāum̐."
+    questions:
+      - id: "as-3227"
+        prompt: { en: "The writer is sad." }
+        answer: true
+      - id: "as-3228"
+        prompt: { en: "What is in the writer's mind?" }
+        options:
+          - { en: "Fear" }
+          - { en: "Joy" }
+          - { en: "Money" }
+        answer: 1
+      - id: "as-3229"
+        prompt: { en: "What does the writer say about the friend?" }
+        options:
+          - { en: "They are envious" }
+          - { en: "They love the friend" }
+          - { en: "They are angry" }
+        answer: 2

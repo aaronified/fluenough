@@ -436,11 +436,14 @@ units:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
   - decks: ["as-reading-health"]
     words: 0
-  - planned: { id: "as-feelings", theme: "feelings", words: 55 }
+  - decks: ["as-feelings", "as-feelings-sentences", "*"]
+    words: 23
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - decks: ["as-reading-feelings"]
+    words: 0
   - decks: ["as-slang"]
     words: 9
   - planned: { id: "as-grammar-relative", grammar: "relative" }

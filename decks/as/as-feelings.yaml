@@ -1,0 +1,237 @@
+schema: 1
+id: "as-feelings"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "feelings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3193"
+    target: "আনন্দিত"
+    reading: "ônôndit"
+    ipa: "anondit"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই আনন্দিত।", reading: "moi ônôndit.", ipa: "moi anondit" }
+      - { target: "তাই আনন্দিত।", reading: "tāi ônôndit.", ipa: "tai anondit", bases: [{ word: "তাই", ref: "as-2180" }] }
+  - id: "as-3194"
+    target: "দুখিত"
+    reading: "dukhit"
+    ipa: "dukʰit"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তাই দুখিত।", reading: "tāi dukhit.", ipa: "tai dukʰit", bases: [{ word: "তাই", ref: "as-2180" }] }
+      - { target: "মই দুখিত।", reading: "moi dukhit.", ipa: "moi dukʰit" }
+  - id: "as-3195"
+    target: "দুখ"
+    reading: "dukh"
+    ipa: "dukʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ দুখ বহুত।", reading: "mur dukh bohut.", ipa: "mʊɹ dukʰ bohut" }
+      - { target: "দুখ নাই।", reading: "dukh nāi.", ipa: "dukʰ nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3196"
+    target: "ভয়"
+    reading: "bhôy"
+    ipa: "bʱɔj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভয় লাগে।", reading: "bhôy lāge.", ipa: "bʱɔj laɡe" }
+      - { target: "তাৰ ভয় আছে।", reading: "tār bhôy āse.", ipa: "taɹ bʱɔj ase", bases: [{ word: "তাৰ", ref: "as-2180" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3197"
+    target: "ৰাগ"
+    reading: "rāg"
+    ipa: "ɹaɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তাৰ ৰাগ উঠিছে।", reading: "tār rāg uthise.", ipa: "taɹ ɹaɡ utʰise", bases: [{ word: "তাৰ", ref: "as-2180" }, { word: "উঠিছে", ref: "as-0370" }] }
+      - { target: "ৰাগ বেয়া।", reading: "rāg beyā.", ipa: "ɹaɡ beja" }
+  - id: "as-3198"
+    target: "খং"
+    reading: "không"
+    ipa: "kʰɔŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তাৰ খং উঠিছে।", reading: "tār không uthise.", ipa: "taɹ kʰɔŋ utʰise", bases: [{ word: "তাৰ", ref: "as-2180" }, { word: "উঠিছে", ref: "as-0370" }] }
+      - { target: "খং নকৰিবা।", reading: "không nôkôribā.", ipa: "kʰɔŋ nɔkoɹiba", bases: [{ word: "নকৰিবা", ref: "as-2202" }] }
+  - id: "as-3199"
+    target: "আশা"
+    reading: "āxā"
+    ipa: "axa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আশা আছে।", reading: "āxā āse.", ipa: "axa ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "মোৰ আশা ভাল।", reading: "mur āxā bhāl.", ipa: "mʊɹ axa bʱal" }
+  - id: "as-3200"
+    target: "চিন্তা"
+    reading: "cintā"
+    ipa: "sinta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ চিন্তা বহুত।", reading: "mur cintā bohut.", ipa: "mʊɹ sinta bohut" }
+      - { target: "চিন্তা নকৰিবা।", reading: "cintā nôkôribā.", ipa: "sinta nɔkoɹiba", bases: [{ word: "নকৰিবা", ref: "as-2202" }] }
+  - id: "as-3201"
+    target: "উদ্বিগ্ন"
+    reading: "udbignô"
+    ipa: "uddiɡn"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তেওঁ উদ্বিগ্ন।", reading: "teum̐ udbignô.", ipa: "teʊ̃ uddiɡn" }
+      - { target: "মই উদ্বিগ্ন।", reading: "moi udbignô.", ipa: "moi uddiɡn" }
+  - id: "as-3202"
+    target: "লাজ"
+    reading: "lāz"
+    ipa: "laz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "লাজ লাগে।", reading: "lāz lāge.", ipa: "laz laɡe" }
+      - { target: "লাজ নাই।", reading: "lāz nāi.", ipa: "laz nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3203"
+    target: "গৰ্ব"
+    reading: "gôrbô"
+    ipa: "ɡɔɹɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গৰ্ব বহুত।", reading: "gôrbô bohut.", ipa: "ɡɔɹɹ bohut" }
+      - { target: "তাৰ গৰ্ব আছে।", reading: "tār gôrbô āse.", ipa: "taɹ ɡɔɹɹ ase", bases: [{ word: "তাৰ", ref: "as-2180" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3204"
+    target: "সন্তোষ"
+    reading: "xôntoś"
+    ipa: "sɔntʊx"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সন্তোষ ভাল।", reading: "xôntoś bhāl.", ipa: "sɔntʊx bʱal" }
+      - { target: "মোৰ সন্তোষ আছে।", reading: "mur xôntoś āse.", ipa: "mʊɹ sɔntʊx ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3205"
+    target: "নিৰাশ"
+    reading: "nirāx"
+    ipa: "niɹax"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তেওঁ নিৰাশ।", reading: "teum̐ nirāx.", ipa: "teʊ̃ niɹax" }
+      - { target: "মই নিৰাশ।", reading: "moi nirāx.", ipa: "moi niɹax" }
+  - id: "as-3206"
+    target: "আবেগ"
+    reading: "ābegô"
+    ipa: "abeɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আবেগ বহুত।", reading: "ābegô bohut.", ipa: "abeɡ bohut" }
+      - { target: "তাৰ আবেগ ভাল।", reading: "tār ābegô bhāl.", ipa: "taɹ abeɡ bʱal", bases: [{ word: "তাৰ", ref: "as-2180" }] }
+  - id: "as-3207"
+    target: "স্নেহ"
+    reading: "xnehô"
+    ipa: "sneh"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মাৰ স্নেহ।", reading: "mār xnehô.", ipa: "maɹ sneh", bases: [{ word: "মাৰ", ref: "as-0078" }] }
+      - { target: "স্নেহ বহুত।", reading: "xnehô bohut.", ipa: "sneh bohut" }
+  - id: "as-3208"
+    target: "ভালপোৱা"
+    reading: "bhālpuwā"
+    ipa: "bʱalɔpʊwa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভালপোৱা বহুত।", reading: "bhālpuwā bohut.", ipa: "bʱalɔpʊwa bohut" }
+      - { target: "মোৰ ভালপোৱা।", reading: "mur bhālpuwā.", ipa: "mʊɹ bʱalɔpʊwa" }
+  - id: "as-3209"
+    target: "ঘৃণা"
+    reading: "ghrinā"
+    ipa: "ɡʱrina"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঘৃণা নকৰিবা।", reading: "ghrinā nôkôribā.", ipa: "ɡʱrina nɔkoɹiba", bases: [{ word: "নকৰিবা", ref: "as-2202" }] }
+      - { target: "ঘৃণা বেয়া।", reading: "ghrinā beyā.", ipa: "ɡʱrina beja" }
+  - id: "as-3210"
+    target: "হিংসা"
+    reading: "hiṅxā"
+    ipa: "hiŋsa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "হিংসা বেয়া।", reading: "hiṅxā beyā.", ipa: "hiŋsa beja" }
+      - { target: "হিংসা নকৰিবা।", reading: "hiṅxā nôkôribā.", ipa: "hiŋsa nɔkoɹiba", bases: [{ word: "নকৰিবা", ref: "as-2202" }] }
+  - id: "as-3211"
+    target: "বিৰক্তি"
+    reading: "birôktī"
+    ipa: "biɹokti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিৰক্তি লাগে।", reading: "birôktī lāge.", ipa: "biɹokti laɡe" }
+      - { target: "বিৰক্তি বহুত।", reading: "birôktī bohut.", ipa: "biɹokti bohut" }
+  - id: "as-3212"
+    target: "মন"
+    reading: "môn"
+    ipa: "mɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মন ভাল।", reading: "môn bhāl.", ipa: "mɔn bʱal" }
+      - { target: "মনত চিন্তা।", reading: "mônôt cintā.", ipa: "mɔnɔt sinta", bases: [{ word: "মনত", base: "মন", reading: "môn" }] }
+  - id: "as-3213"
+    target: "ভয় পোৱা"
+    reading: "bhôy puwā"
+    ipa: "bʱɔj pʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "পোৱা", base: "পোৱা", reading: "puwā" }
+    examples:
+  - id: "as-3214"
+    target: "আনন্দ পোৱা"
+    reading: "ānôndô puwā"
+    ipa: "anɔnd pʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "পোৱা", base: "পোৱা", reading: "puwā" }
+    examples:
+  - id: "as-3215"
+    target: "চিন্তা কৰা"
+    reading: "cintā kôrā"
+    ipa: "sinta kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

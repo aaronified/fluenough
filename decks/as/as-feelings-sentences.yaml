@@ -1,0 +1,83 @@
+schema: 1
+id: "as-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3216"
+    target: "মই আনন্দিত আৰু খুচীয়া।"
+    reading: "moi ônôndit āru khusiyā."
+    ipa: "moi anondit aɹu kʰusija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "দুখিত", reading: "dukhit", kind: "word" }
+      - { id: "c2", word: "নিৰাশ", reading: "nirāx", kind: "word" }
+  - id: "as-3217"
+    target: "তাই দুখিত, কিয়নো বৰষুণ।"
+    reading: "tāi dukhit, kiyônu bôrôxun."
+    ipa: "tai dukʰit kijɔnʊ bɔɹoxun"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "খুচীয়া", reading: "khusiyā", kind: "word" }
+      - { id: "c2", word: "আনন্দিত", reading: "ônôndit", kind: "word" }
+  - id: "as-3218"
+    target: "মোৰ মনত চিন্তা আছে।"
+    reading: "mur mônôt cintā āse."
+    ipa: "mʊɹ mɔnɔt sinta ase"
+    pos: "phrase"
+    bases:
+      - { word: "মনত", ref: "as-0056" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "শান্তি", reading: "xāntī", kind: "word" }
+      - { id: "c2", word: "আশা", reading: "āxā", kind: "word" }
+  - id: "as-3219"
+    target: "তেওঁ খং উঠিছে।"
+    reading: "teum̐ không uthise."
+    ipa: "teʊ̃ kʰɔŋ utʰise"
+    pos: "phrase"
+    bases:
+      - { word: "উঠিছে", ref: "as-0370" }
+    confusables:
+      - { id: "c1", word: "সন্তোষ", reading: "xôntoś", kind: "word" }
+      - { id: "c2", word: "ভয়", reading: "bhôy", kind: "word" }
+  - id: "as-3220"
+    target: "তাৰ ভয় লাগে।"
+    reading: "tār bhôy lāge."
+    ipa: "taɹ bʱɔj laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "লাজ", reading: "lāz", kind: "word" }
+      - { id: "c2", word: "সাহস", reading: "xāhôx", kind: "word" }
+  - id: "as-3221"
+    target: "মাৰ স্নেহ বহুত।"
+    reading: "mār xnehô bohut."
+    ipa: "maɹ sneh bohut"
+    pos: "phrase"
+    bases:
+      - { word: "মাৰ", ref: "as-0078" }
+    confusables:
+      - { id: "c1", word: "ঘৃণা", reading: "ghrinā", kind: "word" }
+      - { id: "c2", word: "হিংসা", reading: "hiṅxā", kind: "word" }
+  - id: "as-3222"
+    target: "তেওঁ উদ্বিগ্ন।"
+    reading: "teum̐ udbignô."
+    ipa: "teʊ̃ uddiɡn"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "নিশ্চিন্ত", reading: "nixcintô", kind: "word" }
+      - { id: "c2", word: "গৰ্ব", reading: "gôrbô", kind: "word" }
+  - id: "as-3223"
+    target: "মই নিৰাশ।"
+    reading: "moi nirāx."
+    ipa: "moi niɹax"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আশা", reading: "āxā", kind: "word" }
+      - { id: "c2", word: "সন্তোষ", reading: "xôntoś", kind: "word" }
