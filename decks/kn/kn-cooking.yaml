@@ -1,0 +1,271 @@
+schema: 1
+id: "kn-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1086"
+    target: "ಅಡುಗೆ"
+    reading: "aḍuge"
+    ipa: "aɖuɡe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಡುಗೆ ಮಾಡು.", reading: "aḍuge māḍu.", ipa: "aɖuɡe maːɖu" }
+      - { target: "ಅವಳು ಅಡುಗೆ ಮಾಡುತ್ತಾಳೆ.", reading: "avaḷu aḍuge māḍuttāḷe.", ipa: "aʋaɭu aɖuɡe maːɖut̪t̪aːɭe", bases: [{ word: "ಮಾಡುತ್ತಾಳೆ", ref: "kn-0630" }] }
+  - ref: "kn-0381"
+  - ref: "kn-0767"
+  - id: "kn-1087"
+    target: "ಅರಿಶಿನ"
+    reading: "ariśina"
+    ipa: "ariʃina"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅರಿಶಿನ ಹಾಕು.", reading: "ariśina hāku.", ipa: "ariʃina haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಅರಿಶಿನ ಬೇಕು.", reading: "ariśina bēku.", ipa: "ariʃina beːku" }
+  - ref: "kn-0318"
+  - ref: "kn-0316"
+  - ref: "kn-0319"
+  - id: "kn-1088"
+    target: "ಶುಂಠಿ"
+    reading: "śuṇṭhi"
+    ipa: "ʃuɳʈʰi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶುಂಠಿ ಚಹಾ ಕುಡಿ.", reading: "śuṇṭhi cahā kuḍi.", ipa: "ʃuɳʈʰi tʃahaː kuɖi" }
+      - { target: "ಶುಂಠಿ ರುಬ್ಬು.", reading: "śuṇṭhi rubbu.", ipa: "ʃuɳʈʰi rubbu" }
+  - id: "kn-1089"
+    target: "ಜೀರಿಗೆ"
+    reading: "jīrige"
+    ipa: "dʒiːriɡe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಜೀರಿಗೆ ಹಾಕು.", reading: "jīrige hāku.", ipa: "dʒiːriɡe haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಜೀರಿಗೆ ಹುರಿ.", reading: "jīrige huri.", ipa: "dʒiːriɡe huri" }
+  - id: "kn-1090"
+    target: "ಸಾಸಿವೆ"
+    reading: "sāsive"
+    ipa: "saːsiʋe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾಸಿವೆ ಹಾಕು.", reading: "sāsive hāku.", ipa: "saːsiʋe haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಸಾಸಿವೆ ಎಣ್ಣೆ ಬೇಕು.", reading: "sāsive eṇṇe bēku.", ipa: "saːsiʋe eɳɳe beːku" }
+  - id: "kn-1091"
+    target: "ಕರಿಬೇವು"
+    reading: "karibēvu"
+    ipa: "karibeːʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕರಿಬೇವು ಹಾಕು.", reading: "karibēvu hāku.", ipa: "karibeːʋu haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಕರಿಬೇವು ಇದೆ.", reading: "karibēvu ide.", ipa: "karibeːʋu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0794"
+  - ref: "kn-0768"
+  - ref: "kn-0325"
+  - ref: "kn-0324"
+  - ref: "kn-0648"
+  - ref: "kn-0733"
+  - ref: "kn-0734"
+  - ref: "kn-0732"
+  - id: "kn-1092"
+    target: "ರುಬ್ಬು"
+    reading: "rubbu"
+    ipa: "rubbu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಸಾಲೆ ರುಬ್ಬು.", reading: "masāle rubbu.", ipa: "masaːle rubbu" }
+      - { target: "ಚಟ್ನಿ ರುಬ್ಬಿದೆ.", reading: "caṭni rubbide.", ipa: "tʃaʈni rubbid̪e", bases: [{ word: "ರುಬ್ಬಿದೆ", base: "ರುಬ್ಬು", reading: "rubbu" }] }
+  - ref: "kn-0738"
+  - ref: "kn-0704"
+  - id: "kn-1093"
+    target: "ಪಾತ್ರೆ"
+    reading: "pātre"
+    ipa: "paːt̪re"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಾತ್ರೆ ಕೊಡು.", reading: "pātre koḍu.", ipa: "paːt̪re koɖu" }
+      - { target: "ಪಾತ್ರೆಯಲ್ಲಿ ನೀರು ಇದೆ.", reading: "pātreyalli nīru ide.", ipa: "paːt̪rejalli niːru id̪e", bases: [{ word: "ಪಾತ್ರೆಯಲ್ಲಿ", base: "ಪಾತ್ರೆ", reading: "pātre" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1094"
+    target: "ತವ"
+    reading: "tava"
+    ipa: "t̪aʋa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತವ ಬಿಸಿ ಮಾಡು.", reading: "tava bisi māḍu.", ipa: "t̪aʋa bisi maːɖu" }
+      - { target: "ತವದಲ್ಲಿ ದೋಸೆ ಹುರಿ.", reading: "tavadalli dōse huri.", ipa: "t̪aʋad̪alli d̪oːse huri", bases: [{ word: "ತವದಲ್ಲಿ", base: "ತವ", reading: "tava" }] }
+  - ref: "kn-0705"
+  - id: "kn-1095"
+    target: "ರುಚಿ"
+    reading: "ruci"
+    ipa: "rutʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರುಚಿ ಚೆನ್ನಾಗಿದೆ.", reading: "ruci cennāgide.", ipa: "rutʃi tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಅಡುಗೆ ರುಚಿ ಇದೆ.", reading: "aḍuge ruci ide.", ipa: "aɖuɡe rutʃi id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0498"
+  - ref: "kn-0731"
+  - id: "kn-1096"
+    target: "ಒಗ್ಗರಣೆ"
+    reading: "oggaraṇe"
+    ipa: "oɡɡaraɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಒಗ್ಗರಣೆ ಹಾಕು.", reading: "oggaraṇe hāku.", ipa: "oɡɡaraɳe haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಸಾರಿಗೆ ಒಗ್ಗರಣೆ ಇದೆ.", reading: "sārige oggaraṇe ide.", ipa: "saːriɡe oɡɡaraɳe id̪e", bases: [{ word: "ಸಾರಿಗೆ", ref: "kn-0757" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1097"
+    target: "ಪಾಕವಿಧಾನ"
+    reading: "pākavidhāna"
+    ipa: "paːkaʋid̪ʱaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಾಕವಿಧಾನ ಬೇಕು.", reading: "pākavidhāna bēku.", ipa: "paːkaʋid̪ʱaːna beːku" }
+      - { target: "ಈ ಪಾಕವಿಧಾನ ಸುಲಭ.", reading: "ī pākavidhāna sulabha.", ipa: "iː paːkaʋid̪ʱaːna sulabʱa" }
+  - id: "kn-1098"
+    target: "ಸೊಪ್ಪು"
+    reading: "soppu"
+    ipa: "soppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೊಪ್ಪು ತಂದೆ.", reading: "soppu tande.", ipa: "soppu t̪and̪e", bases: [{ word: "ತಂದೆ", ref: "kn-0744" }] }
+      - { target: "ಸೊಪ್ಪು ಸಾರು ಮಾಡು.", reading: "soppu sāru māḍu.", ipa: "soppu saːru maːɖu" }
+  - id: "kn-1099"
+    target: "ಹದ"
+    reading: "hada"
+    ipa: "had̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹದ ಆಯಿತು.", reading: "hada āyitu.", ipa: "had̪a aːjit̪u" }
+      - { target: "ಸಾರು ಹದ ಆಯಿತು.", reading: "sāru hada āyitu.", ipa: "saːru had̪a aːjit̪u" }
+  - ref: "kn-0326"
+  - ref: "kn-0772"
+  - ref: "kn-0757"
+  - id: "kn-1100"
+    target: "ಹಸಿ"
+    reading: "hasi"
+    ipa: "hasi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹಸಿ ತರಕಾರಿ.", reading: "hasi tarakāri.", ipa: "hasi t̪arakaːri" }
+      - { target: "ಈರುಳ್ಳಿ ಹಸಿ ಇದೆ.", reading: "īruḷḷi hasi ide.", ipa: "iːruɭɭi hasi id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0747"
+  - id: "kn-1101"
+    target: "ಬೆಂದ"
+    reading: "benda"
+    ipa: "bend̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅನ್ನ ಬೆಂದಿದೆ.", reading: "anna bendide.", ipa: "anna bend̪id̪e", bases: [{ word: "ಬೆಂದಿದೆ", base: "ಬೆಂದ", reading: "benda" }] }
+      - { target: "ಬೆಂದ ತರಕಾರಿ ತಿನ್ನು.", reading: "benda tarakāri tinnu.", ipa: "bend̪a t̪arakaːri t̪innu" }
+  - ref: "kn-0769"
+  - id: "kn-1102"
+    target: "ಬೆಲ್ಲ"
+    reading: "bella"
+    ipa: "bella"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೆಲ್ಲ ಸಿಹಿ.", reading: "bella sihi.", ipa: "bella sihi" }
+      - { target: "ಬೆಲ್ಲ ಮತ್ತು ತುಪ್ಪ ಬೇಕು.", reading: "bella mattu tuppa bēku.", ipa: "bella mat̪t̪u t̪uppa beːku" }
+  - id: "kn-1103"
+    target: "ಕಡಾಯಿ"
+    reading: "kaḍāyi"
+    ipa: "kaɖaːji"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಡಾಯಿ ಬಿಸಿ ಮಾಡು.", reading: "kaḍāyi bisi māḍu.", ipa: "kaɖaːji bisi maːɖu" }
+      - { target: "ಕಡಾಯಿಯಲ್ಲಿ ಎಣ್ಣೆ ಹಾಕು.", reading: "kaḍāyiyalli eṇṇe hāku.", ipa: "kaɖaːjijalli eɳɳe haːku", bases: [{ word: "ಕಡಾಯಿಯಲ್ಲಿ", base: "ಕಡಾಯಿ", reading: "kaḍāyi" }, { word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+  - id: "kn-1104"
+    target: "ಸೌಟು"
+    reading: "sauṭu"
+    ipa: "sauʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೌಟು ತೆಗೆದುಕೊ.", reading: "sauṭu tegeduko.", ipa: "sauʈu t̪eɡed̪uko" }
+      - { target: "ಸೌಟಿನಲ್ಲಿ ಸಾರು ಹಾಕು.", reading: "sauṭinalli sāru hāku.", ipa: "sauʈinalli saːru haːku", bases: [{ word: "ಸೌಟಿನಲ್ಲಿ", base: "ಸೌಟು", reading: "sauṭu" }, { word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+  - id: "kn-1105"
+    target: "ತುರಿ"
+    reading: "turi"
+    ipa: "t̪uri"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈರುಳ್ಳಿ ತುರಿ.", reading: "īruḷḷi turi.", ipa: "iːruɭɭi t̪uri" }
+      - { target: "ಈರುಳ್ಳಿ ತುರಿದೆ.", reading: "īruḷḷi turide.", ipa: "iːruɭɭi t̪urid̪e", bases: [{ word: "ತುರಿದೆ", base: "ತುರಿ", reading: "turi" }] }
+  - ref: "kn-0737"
+  - id: "kn-1106"
+    target: "ಕಾಯಿಸು"
+    reading: "kāyisu"
+    ipa: "kaːjisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಎಣ್ಣೆ ಕಾಯಿಸು.", reading: "eṇṇe kāyisu.", ipa: "eɳɳe kaːjisu" }
+      - { target: "ತವ ಕಾಯಿಸಿದೆ.", reading: "tava kāyiside.", ipa: "t̪aʋa kaːjisid̪e", bases: [{ word: "ಕಾಯಿಸಿದೆ", base: "ಕಾಯಿಸು", reading: "kāyisu" }] }
+  - id: "kn-1107"
+    target: "ಆರಿಸು"
+    reading: "ārisu"
+    ipa: "aːrisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾರು ಆರಿಸು.", reading: "sāru ārisu.", ipa: "saːru aːrisu" }
+      - { target: "ಅನ್ನ ಆರಿತು.", reading: "anna āritu.", ipa: "anna aːrit̪u", bases: [{ word: "ಆರಿತು", base: "ಆರಿಸು", reading: "ārisu" }] }
+  - ref: "kn-0409"
+  - ref: "kn-0647"
