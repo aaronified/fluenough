@@ -309,33 +309,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
     AppState state,
     List<SpokenLanguage> all,
     LanguageView view,
-  ) {
-    final messenger = ScaffoldMessenger.of(context);
-    final l10n = AppLocalizations.of(context)!;
-    return showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
-      showDragHandle: true,
-      builder: (_) => LanguageSkillsSheet(
-        view: view,
-        names: _names(all),
-        onPooled: (previous) {
-          messenger
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content: Text(l10n.languagesToastPool(view.name)),
-                action: SnackBarAction(
-                  label: l10n.languagesUndo,
-                  onPressed: () => state.applySkills(view.language, previous),
-                ),
-              ),
-            );
-        },
-      ),
-    );
-  }
+  ) => showLanguageSkills(context, state, all, view);
 
   Future<void> _add(
     AppState state,
