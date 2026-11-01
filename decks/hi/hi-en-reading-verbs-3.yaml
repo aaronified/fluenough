@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-verbs-3"
+name: "Reading: verbs-3"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about everyday actions at home and in a shop. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-verbs3-home"
+    title: "Morning and night at home"
+    theme: "verbs-3"
+    sentences:
+      - {"text": "रात को मैं कंबल ओढ़कर सोता हूँ।", "reading": "rāt kō maim̐ kambal ōṛhkar sōtā hūm̐.", "ipa": "raːt̪ koː mɛ̃ː kəmbəl oːɽʱkər soːt̪aː ɦũː"}
+      - {"text": "सुबह मम्मी मुझे जगाती हैं।", "reading": "subah mammī mujhē jagātī haim̐.", "ipa": "sʊbəɦ məmmiː mʊdʒʱeː dʒəɡaːt̪iː ɦɛ̃ː"}
+      - {"text": "वह दरवाज़ा धकेलकर अंदर आता है।", "reading": "vah darvāzā dhakēlkar andar ātā hai.", "ipa": "ʋəɦ d̪ərʋaːzaː d̪ʱəkeːlkər ənd̪ər aːt̪aː ɦɛː"}
+      - {"text": "चाबी ताले में फँस गई है।", "reading": "cābī tālē mēm̐ pham̐s gaī hai.", "ipa": "tʃaːbiː t̪aːleː mẽː pʰə̃s ɡəiː ɦɛː"}
+    questions:
+      - {"id": "hi-1839", "prompt": {"en": "The writer sleeps with a blanket at night."}, "answer": true}
+      - {"id": "hi-1840", "prompt": {"en": "Who wakes the writer in the morning?"}, "options": [{"en": "Mum"}, {"en": "The neighbour"}], "answer": 1}
+      - {"id": "hi-1841", "prompt": {"en": "The key is lying on the table."}, "answer": false}
+  - id: "hi-verbs3-shop"
+    title: "A shop and a stall"
+    theme: "verbs-3"
+    sentences:
+      - {"text": "दुकानदार ने पैसे गिने।", "reading": "dukāndār nē paisē ginē.", "ipa": "d̪ʊkaːnd̪aːr neː pɛːseː ɡɪneː"}
+      - {"text": "पोस्टर दीवार पर चिपकाओ।", "reading": "pōsṭar dīvār par cipkāō.", "ipa": "poːsʈər d̪iːʋaːr pər tʃɪpkaːoː"}
+      - {"text": "बच्चा गेंद को ज़ोर से मारता है।", "reading": "baccā gēnd kō zōr sē mārtā hai.", "ipa": "bətʃtʃaː ɡeːnd̪ koː zoːr seː maːrt̪aː ɦɛː"}
+      - {"text": "उसने नई कमीज़ नापी।", "reading": "usnē naī kamīz nāpī.", "ipa": "ʊsneː nəiː kəmiːz naːpiː"}
+    questions:
+      - {"id": "hi-1842", "prompt": {"en": "The shopkeeper counted the money."}, "answer": true}
+      - {"id": "hi-1843", "prompt": {"en": "What is stuck on the wall?"}, "options": [{"en": "A poster"}, {"en": "A clock"}], "answer": 1}
+      - {"id": "hi-1844", "prompt": {"en": "The child throws the ball gently."}, "answer": false}
