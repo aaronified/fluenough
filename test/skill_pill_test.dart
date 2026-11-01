@@ -85,6 +85,43 @@ Future<void> _pumpPills(WidgetTester tester, ThemeMode mode) async {
   );
 }
 
+/// The Languages page's row chips: the same pills, small, with the row-only
+/// options on.
+Future<void> _pumpRowChips(WidgetTester tester, ThemeMode mode) async {
+  usePhone(tester, textScale: 1.4);
+  await pumpScreen(
+    tester,
+    Scaffold(
+      body: SingleChildScrollView(
+        child: Wrap(
+          children: <Widget>[
+            for (final mark in _marks) ...<Widget>[
+              SkillBadge(
+                key: ValueKey<String>('script/${mark.name}'),
+                kind: SkillKind.read,
+                combined: true,
+                mark: mark,
+                name: 'Script',
+                richIcons: true,
+                glyph: 'अ',
+              ),
+              SkillBadge(
+                key: ValueKey<String>('spoken/${mark.name}'),
+                kind: SkillKind.hear,
+                combined: true,
+                mark: mark,
+                name: 'Spoken',
+                richIcons: true,
+              ),
+            ],
+          ],
+        ),
+      ),
+    ),
+    themeMode: mode,
+  );
+}
+
 void main() {
   group('colour tokens', () {
     final sets = <String, ModeColors>{
@@ -389,6 +426,84 @@ void main() {
         final edge = (ring.border! as Border).top.color;
         expect(edge, modes.pillLearn.onContainer);
         expect(contrast(edge, surface), greaterThanOrEqualTo(3));
+      });
+
+      testWidgets('a row chip at Learn shows its skills icons and the cap, '
+          'a script chip starts with its glyph, a plain pill has none', (
+        tester,
+      ) async {
+        await _pumpRowChips(tester, mode);
+        expect(tester.takeException(), isNull);
+        final script = _badge('script/learn');
+        expect(_icon(script, SkillKind.read), findsOneWidget);
+        expect(_icon(script, SkillKind.write), findsOneWidget);
+        expect(_mark(script, 'learn'), findsOneWidget);
+        final spoken = _badge('spoken/learn');
+        expect(_icon(spoken, SkillKind.hear), findsOneWidget);
+        expect(_icon(spoken, SkillKind.speak), findsOneWidget);
+        expect(_mark(spoken, 'learn'), findsOneWidget);
+        // The yellow Learn ring stays.
+        final modes = ModeColors.of(tester.element(find.byType(Scaffold)));
+        final ring = tester
+            .widgetList<Container>(
+              find.descendant(of: spoken, matching: find.byType(Container)),
+            )
+            .map((c) => c.foregroundDecoration)
+            .whereType<BoxDecoration>()
+            .single;
+        expect((ring.border! as Border).top.color, modes.pillLearn.onContainer);
+        // Know keeps its levels' icons only.
+        expect(_icon(_badge('script/know'), SkillKind.write), findsNothing);
+        expect(
+          _icon(_badge('spoken/knowBoth'), SkillKind.speak),
+          findsOneWidget,
+        );
+        // The glyph is on every script chip, never on the Spoken chip.
+        for (final mark in _marks) {
+          expect(
+            find.descendant(
+              of: _badge('script/${mark.name}'),
+              matching: find.text('अ'),
+            ),
+            findsOneWidget,
+            reason: mark.name,
+          );
+          expect(
+            find.descendant(
+              of: _badge('spoken/${mark.name}'),
+              matching: find.byKey(const ValueKey<String>('pill-glyph')),
+            ),
+            findsNothing,
+            reason: mark.name,
+          );
+        }
+        // The sheet's pills, which ask for neither, show the cap alone and no
+        // glyph.
+        await _pumpPills(tester, mode);
+        expect(_icon(_badge('script/learn'), SkillKind.read), findsNothing);
+        expect(find.byKey(const ValueKey<String>('pill-glyph')), findsNothing);
+      });
+
+      testWidgets('a row chip keeps the level in words for a screen reader', (
+        tester,
+      ) async {
+        final handle = tester.ensureSemantics();
+        try {
+          await _pumpRowChips(tester, mode);
+          final l10n = AppLocalizations.of(
+            tester.element(find.byType(Scaffold)),
+          )!;
+          expect(
+            tester.getSemantics(_badge('script/learn')).label,
+            l10n.languagesSkillState('Script', l10n.languagesPillLearning),
+          );
+          expect(
+            tester.getSemantics(_badge('script/knowBoth')).label,
+            l10n.languagesSkillState('Script', l10n.languagesPillReadWrite),
+          );
+        } finally {
+          handle.dispose();
+        }
       });
     });
   }
