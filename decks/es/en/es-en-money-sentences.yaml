@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-money-sentences"
+kind: "layer"
+core: "es-money-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: money"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about prices, bills and banks, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-3013":
+    native: "I pay the bill and leave a tip."
+    bases: { "la": "the", "una": "a" }
+    confusables: { "total": { why: "Total is the whole amount, the final sum." }, "pago": { why: "Pago is the payment itself, the act of paying." } }
+  "es-3014":
+    native: "I make a budget before buying."
+    bases: { "un": "a", "de": "of" }
+    confusables: { "coste": { why: "Coste is the cost of one thing, not the plan." }, "precio": { why: "Precio is the price on the label." } }
+  "es-3015":
+    native: "I invest the money in a business."
+    bases: { "el": "the", "en": "in", "un": "a" }
+    confusables: { "ahorrar": { why: "Ahorrar is to save money, not to invest it." }, "gastar": { why: "Gastar is to spend money, the opposite." } }
+  "es-3016":
+    native: "The salary is low and I have a debt."
+    bases: { "El": "the", "una": "a" }
+    confusables: { "credito": { why: "Crédito is a loan, a sum to be repaid." }, "pobre": { why: "Pobre is poor, with little money." } }
+  "es-3017":
+    native: "I change euros for dollars at the bank."
+    bases: { "por": "for", "en": "in", "el": "the" }
+    confusables: { "divisa": { why: "Divisa is a currency, the money of a country." }, "libra": { why: "Libra is the pound, another currency." } }
+  "es-3018":
+    native: "The profit is greater than the loss."
+    bases: { "La": "the", "que": "that", "la": "the" }
+    confusables: { "suma": { why: "Suma is a sum, the adding of numbers." }, "inversion": { why: "Inversión is an investment, the money put in." } }

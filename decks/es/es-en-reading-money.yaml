@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-money"
+name: "Reading: a bill and a bank counter"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a bill and a receipt from a shop, and a visit to a bank counter. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-bill-and-receipt"
+    title: "A bill and a receipt"
+    theme: "money"
+    sentences:
+      - text: "Total: 45 euros, con la propina incluida."
+      - text: "Pago con tarjeta y recibo el cambio."
+      - text: "Recibo número 2341, fecha 12 de mayo."
+      - text: "Gracias por su compra."
+    questions:
+      - id: "es-3019"
+        prompt: { en: "What is the total?" }
+        options:
+          - { en: "45 euros" }
+          - { en: "54 euros" }
+          - { en: "10 euros" }
+        answer: 1
+      - id: "es-3020"
+        prompt: { en: "How was the bill paid?" }
+        options:
+          - { en: "By card" }
+          - { en: "In cash" }
+          - { en: "By cheque" }
+        answer: 1
+      - id: "es-3021"
+        prompt: { en: "What is the receipt for?" }
+        options:
+          - { en: "A purchase" }
+          - { en: "A loan" }
+          - { en: "A deposit" }
+        answer: 1
+  - id: "es-bank-counter-note"
+    title: "At the bank counter"
+    theme: "money"
+    sentences:
+      - text: "Quiero abrir una cuenta en el banco."
+      - text: "Necesito un ingreso de mil euros al mes."
+      - text: "La inversión es de cinco años."
+      - text: "Mi deuda ya está pagada."
+    questions:
+      - id: "es-3022"
+        prompt: { en: "What does the customer want?" }
+        options:
+          - { en: "To open an account" }
+          - { en: "To close an account" }
+          - { en: "To get a loan" }
+        answer: 1
+      - id: "es-3023"
+        prompt: { en: "What income is needed?" }
+        options:
+          - { en: "A thousand euros a month" }
+          - { en: "Ten euros a month" }
+          - { en: "A hundred euros a week" }
+        answer: 1
+      - id: "es-3024"
+        prompt: { en: "How long is the investment?" }
+        options:
+          - { en: "Five years" }
+          - { en: "One year" }
+          - { en: "Ten years" }
+        answer: 1

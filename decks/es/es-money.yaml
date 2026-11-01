@@ -1,0 +1,301 @@
+schema: 1
+id: "es-money"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "money"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2992"
+    target: "el monedero"
+    ipa: "el moneˈdeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "monedero", base: "monedero" }]
+    examples:
+      - target: "Guardo las monedas en el monedero."
+        ipa: "ˈɡwaɾdo las moˈnedas en el moneˈdeɾo"
+        bases: [{ word: "Guardo", ref: "es-1188" }, { word: "las", base: "las" }, { word: "monedas", ref: "es-1186" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "monedero", base: "monedero" }]
+      - target: "El monedero está vacío."
+        ipa: "el moneˈdeɾo esˈta baˈθio"
+        bases: [{ word: "El", base: "el" }, { word: "monedero", base: "monedero" }, { word: "está", ref: "es-0023" }, { word: "vacío", ref: "es-0428" }]
+  - id: "es-2993"
+    target: "el presupuesto"
+    ipa: "el pɾesuˈpwesto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "presupuesto", base: "presupuesto" }]
+    examples:
+      - target: "Hago un presupuesto para el mes."
+        ipa: "ˈaɡo un pɾesuˈpwesto ˈpaɾa el mes"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "un", base: "un" }, { word: "presupuesto", base: "presupuesto" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "mes", ref: "es-0980" }]
+      - target: "El presupuesto es ajustado."
+        ipa: "el pɾesuˈpwesto es axusˈtado"
+        bases: [{ word: "El", base: "el" }, { word: "presupuesto", base: "presupuesto" }, { word: "es", ref: "es-0022" }, { word: "ajustado", base: "ajustado" }]
+  - id: "es-2994"
+    target: "el salario"
+    ipa: "el saˈlaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "salario", base: "salario" }]
+    examples:
+      - target: "El salario sube cada año."
+        ipa: "el saˈlaɾjo ˈsube ˈkada ˈaɲo"
+        bases: [{ word: "El", base: "el" }, { word: "salario", base: "salario" }, { word: "sube", ref: "es-0691" }, { word: "cada", ref: "es-0366" }, { word: "año", ref: "es-0021" }]
+      - target: "Mi salario es mensual."
+        ipa: "mi saˈlaɾjo es menˈswal"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "salario", base: "salario" }, { word: "es", ref: "es-0022" }, { word: "mensual", base: "mensual" }]
+  - id: "es-2995"
+    target: "la inversión"
+    ipa: "la inbeɾˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "inversión", base: "inversión" }]
+    examples:
+      - target: "La inversión es segura."
+        ipa: "la inbeɾˈsjon es seˈɡuɾa"
+        bases: [{ word: "La", base: "la" }, { word: "inversión", base: "inversión" }, { word: "es", ref: "es-0022" }, { word: "segura", ref: "es-2138" }]
+      - target: "Hago una inversión en un negocio."
+        ipa: "ˈaɡo ˈuna inbeɾˈsjon en un neˈɡoθjo"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "una", base: "una" }, { word: "inversión", base: "inversión" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "negocio", ref: "es-1865" }]
+  - id: "es-2996"
+    target: "el inversor"
+    ipa: "el inbeɾˈsoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "inversor", base: "inversor" }]
+    examples:
+      - target: "El inversor compra acciones."
+        ipa: "el inbeɾˈsoɾ ˈkompɾa akˈθjones"
+        bases: [{ word: "El", base: "el" }, { word: "inversor", base: "inversor" }, { word: "compra", ref: "es-0280" }, { word: "acciones", base: "acción" }]
+      - target: "La inversora gana mucho dinero."
+        ipa: "la inbeɾˈsoɾa ˈɡana ˈmutʃo diˈneɾo"
+        bases: [{ word: "La", base: "la" }, { word: "inversora", base: "inversor" }, { word: "gana", ref: "es-0520" }, { word: "mucho", ref: "es-0053" }, { word: "dinero", ref: "es-0513" }]
+  - id: "es-2997"
+    target: "la deuda"
+    ipa: "la ˈdewda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "deuda", base: "deuda" }]
+    examples:
+      - target: "Tengo una deuda con el banco."
+        ipa: "ˈtenɡo ˈuna ˈdewda kon el ˈbanko"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "deuda", base: "deuda" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "banco", ref: "es-0770" }]
+      - target: "La deuda es grande."
+        ipa: "la ˈdewda es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "deuda", base: "deuda" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2998"
+    target: "pobre"
+    ipa: "ˈpobɾe"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pobre", base: "pobre" }]
+    examples:
+      - target: "Es un país pobre."
+        ipa: "es un paˈis ˈpobɾe"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "país", ref: "es-0018" }, { word: "pobre", base: "pobre" }]
+      - target: "Una familia pobre vive aquí."
+        ipa: "ˈuna faˈmilja ˈpobɾe ˈbibe aˈki"
+        bases: [{ word: "Una", base: "una" }, { word: "familia", ref: "es-0158" }, { word: "pobre", base: "pobre" }, { word: "vive", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }]
+  - id: "es-2999"
+    target: "invertir"
+    ipa: "inbeɾˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "invertir", base: "invertir" }]
+    examples:
+      - target: "Invierto en la bolsa."
+        ipa: "inˈbjeɾto en la ˈbolsa"
+        bases: [{ word: "Invierto", base: "invertir" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "bolsa", ref: "es-0380" }]
+      - target: "Invierten el dinero en una casa."
+        ipa: "inˈbjeɾten el diˈneɾo en ˈuna ˈkasa"
+        bases: [{ word: "Invierten", base: "invertir" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-3000"
+    target: "el crédito"
+    ipa: "el ˈkɾedito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "crédito", base: "crédito" }]
+    examples:
+      - target: "Pido un crédito al banco."
+        ipa: "ˈpido un ˈkɾedito al ˈbanko"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "un", base: "un" }, { word: "crédito", base: "crédito" }, { word: "al", base: "al" }, { word: "banco", ref: "es-0770" }]
+      - target: "El crédito tiene interés."
+        ipa: "el ˈkɾedito ˈtjene inteˈɾes"
+        bases: [{ word: "El", base: "el" }, { word: "crédito", base: "crédito" }, { word: "tiene", ref: "es-0024" }, { word: "interés", base: "interés" }]
+  - id: "es-3001"
+    target: "el coste"
+    ipa: "el ˈkoste"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "coste", base: "coste" }]
+    examples:
+      - target: "El coste es alto."
+        ipa: "el ˈkoste es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "coste", base: "coste" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+      - target: "Calculo el coste del viaje."
+        ipa: "kalˈkulo el ˈkoste del ˈbjaxe"
+        bases: [{ word: "Calculo", base: "calcular" }, { word: "el", base: "el" }, { word: "coste", base: "coste" }, { word: "del", base: "del" }, { word: "viaje", ref: "es-1690" }]
+  - id: "es-3002"
+    target: "el céntimo"
+    ipa: "el ˈθentimo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "céntimo", base: "céntimo" }]
+    examples:
+      - target: "Un euro son cien céntimos."
+        ipa: "un ˈewɾo son θjen ˈθentimos"
+        bases: [{ word: "Un", base: "un" }, { word: "euro", ref: "es-0550" }, { word: "son", ref: "es-0022" }, { word: "cien", ref: "es-0543" }, { word: "céntimos", base: "céntimo" }]
+      - target: "Tengo diez céntimos."
+        ipa: "ˈtenɡo djeθ ˈθentimos"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "diez", ref: "es-0214" }, { word: "céntimos", base: "céntimo" }]
+  - id: "es-3003"
+    target: "el dólar"
+    ipa: "el ˈdolaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dólar", base: "dólar" }]
+    examples:
+      - target: "El dólar sube hoy."
+        ipa: "el ˈdolaɾ ˈsube oj"
+        bases: [{ word: "El", base: "el" }, { word: "dólar", base: "dólar" }, { word: "sube", ref: "es-0691" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Pago cien dólares."
+        ipa: "ˈpaɡo θjen ˈdolaɾes"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "cien", ref: "es-0543" }, { word: "dólares", base: "dólar" }]
+  - id: "es-3004"
+    target: "la libra"
+    ipa: "la ˈlibɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "libra", base: "libra" }]
+    examples:
+      - target: "La libra vale más que el euro."
+        ipa: "la ˈlibɾa ˈbale mas ke el ˈewɾo"
+        bases: [{ word: "La", base: "la" }, { word: "libra", base: "libra" }, { word: "vale", base: "valer" }, { word: "más", ref: "es-0363" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "euro", ref: "es-0550" }]
+      - target: "Cambio euros por libras."
+        ipa: "ˈkambjo ˈewɾos poɾ ˈlibɾas"
+        bases: [{ word: "Cambio", ref: "es-0588" }, { word: "euros", ref: "es-0550" }, { word: "por", base: "por" }, { word: "libras", base: "libra" }]
+  - id: "es-3005"
+    target: "la divisa"
+    ipa: "la diˈbisa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "divisa", base: "divisa" }]
+    examples:
+      - target: "La divisa del país es el peso."
+        ipa: "la diˈbisa del paˈis es el ˈpeso"
+        bases: [{ word: "La", base: "la" }, { word: "divisa", base: "divisa" }, { word: "del", base: "del" }, { word: "país", ref: "es-0018" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "peso", ref: "es-1569" }]
+      - target: "Cambio dinero en la casa de divisas."
+        ipa: "ˈkambjo diˈneɾo en la ˈkasa de diˈbisas"
+        bases: [{ word: "Cambio", ref: "es-0588" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "de", base: "de" }, { word: "divisas", base: "divisa" }]
+  - id: "es-3006"
+    target: "el pago"
+    ipa: "el ˈpaɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pago", base: "pago" }]
+    examples:
+      - target: "El pago es al contado."
+        ipa: "el ˈpaɡo es al konˈtado"
+        bases: [{ word: "El", base: "el" }, { word: "pago", ref: "es-0295" }, { word: "es", ref: "es-0022" }, { word: "al", base: "al" }, { word: "contado", base: "contado" }]
+      - target: "Hago el pago con tarjeta."
+        ipa: "ˈaɡo el ˈpaɡo kon taɾˈxeta"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "el", base: "el" }, { word: "pago", ref: "es-0295" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }]
+  - id: "es-3007"
+    target: "el cobro"
+    ipa: "el ˈkobɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cobro", base: "cobro" }]
+    examples:
+      - target: "El cobro es el primero del mes."
+        ipa: "el ˈkobɾo es el pɾiˈmeɾo del mes"
+        bases: [{ word: "El", base: "el" }, { word: "cobro", base: "cobro" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "primero", ref: "es-0551" }, { word: "del", base: "del" }, { word: "mes", ref: "es-0980" }]
+      - target: "Esperamos el cobro de la factura."
+        ipa: "espeˈɾamos el ˈkobɾo de la fakˈtuɾa"
+        bases: [{ word: "Esperamos", ref: "es-0930" }, { word: "el", base: "el" }, { word: "cobro", base: "cobro" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "factura", ref: "es-1222" }]
+  - id: "es-3008"
+    target: "la suma"
+    ipa: "la ˈsuma"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "suma", base: "suma" }]
+    examples:
+      - target: "La suma es cuarenta euros."
+        ipa: "la ˈsuma es kwaˈɾenta ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "suma", base: "suma" }, { word: "es", ref: "es-0022" }, { word: "cuarenta", ref: "es-0537" }, { word: "euros", ref: "es-0550" }]
+      - target: "Hago la suma de los gastos."
+        ipa: "ˈaɡo la ˈsuma de los ˈɡastos"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "la", base: "la" }, { word: "suma", base: "suma" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "gastos", ref: "es-2787" }]
+  - id: "es-3009"
+    target: "el total"
+    ipa: "el toˈtal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "total", base: "total" }]
+    examples:
+      - target: "El total es cuarenta y cinco euros."
+        ipa: "el toˈtal es kwaˈɾenta i ˈθinko ˈewɾos"
+        bases: [{ word: "El", base: "el" }, { word: "total", base: "total" }, { word: "es", ref: "es-0022" }, { word: "cuarenta", ref: "es-0537" }, { word: "y", ref: "es-0048" }, { word: "cinco", ref: "es-0209" }, { word: "euros", ref: "es-0550" }]
+      - target: "¿Cuál es el total?"
+        ipa: "kwal es el toˈtal"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "total", base: "total" }]
+  - id: "es-3010"
+    target: "la banca"
+    ipa: "la ˈbanka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "banca", base: "banca" }]
+    examples:
+      - target: "Trabajo en la banca."
+        ipa: "tɾaˈbaxo en la ˈbanka"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "banca", base: "banca" }]
+      - target: "La banca es muy importante."
+        ipa: "la ˈbanka es mwi impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "banca", base: "banca" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-3011"
+    target: "la ganancia"
+    ipa: "la ɡaˈnanθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ganancia", base: "ganancia" }]
+    examples:
+      - target: "Hay una ganancia pequeña."
+        ipa: "aj ˈuna ɡaˈnanθja peˈkeɲa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "ganancia", base: "ganancia" }, { word: "pequeña", ref: "es-0032" }]
+      - target: "Las ganancias suben cada año."
+        ipa: "las ɡaˈnanθjas ˈsuben ˈkada ˈaɲo"
+        bases: [{ word: "Las", base: "las" }, { word: "ganancias", base: "ganancia" }, { word: "suben", ref: "es-0691" }, { word: "cada", ref: "es-0366" }, { word: "año", ref: "es-0021" }]
+  - id: "es-3012"
+    target: "la pérdida"
+    ipa: "la ˈpeɾdida"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pérdida", base: "pérdida" }]
+    examples:
+      - target: "La pérdida es grande."
+        ipa: "la ˈpeɾdida es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "pérdida", base: "pérdida" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hay una pérdida de dinero."
+        ipa: "aj ˈuna ˈpeɾdida de diˈneɾo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "pérdida", base: "pérdida" }, { word: "de", base: "de" }, { word: "dinero", ref: "es-0513" }]
