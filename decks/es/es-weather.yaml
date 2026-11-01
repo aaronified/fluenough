@@ -1,0 +1,432 @@
+schema: 1
+id: "es-weather"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1112"
+    target: "el tiempo"
+    ipa: "el ˈtjempo"
+    phonetic: "[el ˈt̪jempo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "tiempo", base: "tiempo" }]
+    examples:
+      - { target: "¿Qué tiempo hace hoy?", ipa: "ke ˈtjempo ˈaθe oj", bases: [{ word: "Qué", ref: "es-0054" }, { word: "tiempo", base: "tiempo" }, { word: "hace", ref: "es-0025" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "El tiempo es bueno.", ipa: "el ˈtjempo es ˈbweno", bases: [{ word: "El", base: "el" }, { word: "tiempo", base: "tiempo" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }] }
+  - id: "es-1113"
+    target: "el sol"
+    ipa: "el sol"
+    phonetic: "[el sol]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sol", base: "sol" }]
+    examples:
+      - { target: "Hoy hay sol.", ipa: "oj aj sol", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hay", base: "haber" }, { word: "sol", base: "sol" }] }
+      - { target: "El sol brilla en verano.", ipa: "el sol ˈbɾiʝa en beˈɾano", bases: [{ word: "El", base: "el" }, { word: "sol", base: "sol" }, { word: "brilla", base: "brillar" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }] }
+  - id: "es-1114"
+    target: "la lluvia"
+    ipa: "la ˈʝubja"
+    phonetic: "[la ˈʝuβja]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "lluvia", base: "lluvia" }]
+    examples:
+      - { target: "Hoy hay lluvia.", ipa: "oj aj ˈʝubja", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hay", base: "haber" }, { word: "lluvia", base: "lluvia" }] }
+      - { target: "Hay lluvia en la ciudad.", ipa: "aj ˈʝubja en la θjuˈdad", bases: [{ word: "Hay", base: "haber" }, { word: "lluvia", base: "lluvia" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }] }
+  - id: "es-1115"
+    target: "el viento"
+    ipa: "el ˈbjento"
+    phonetic: "[el ˈβjen̪t̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "viento", base: "viento" }]
+    examples:
+      - { target: "Hace viento hoy.", ipa: "ˈaθe ˈbjento oj", bases: [{ word: "Hace", ref: "es-0025" }, { word: "viento", base: "viento" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "El viento es fuerte.", ipa: "el ˈbjento es ˈfwerte", bases: [{ word: "El", base: "el" }, { word: "viento", base: "viento" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }] }
+  - id: "es-1116"
+    target: "la nieve"
+    ipa: "la ˈnjeβe"
+    phonetic: "[la ˈnjeβe]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "nieve", base: "nieve" }]
+    examples:
+      - { target: "En invierno hay nieve.", ipa: "en imˈbjeɾno aj ˈnjeβe", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "hay", base: "haber" }, { word: "nieve", base: "nieve" }] }
+      - { target: "La nieve es blanca.", ipa: "la ˈnjeβe es ˈblaŋka", bases: [{ word: "La", base: "la" }, { word: "nieve", base: "nieve" }, { word: "es", ref: "es-0022" }, { word: "blanca", base: "blanco" }] }
+  - id: "es-1117"
+    target: "la nube"
+    ipa: "la ˈnuβe"
+    phonetic: "[la ˈnuβe]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "nube", base: "nube" }]
+    examples:
+      - { target: "Hoy hay nubes.", ipa: "oj aj ˈnuβes", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hay", base: "haber" }, { word: "nubes", base: "nube" }] }
+      - { target: "Una nube grande está en el cielo.", ipa: "ˈuna ˈnuβe ˈɣɾande esˈta en el ˈθjelo", bases: [{ word: "Una", base: "una" }, { word: "nube", base: "nube" }, { word: "grande", ref: "es-0031" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cielo", base: "cielo" }] }
+  - id: "es-1118"
+    target: "la niebla"
+    ipa: "la ˈnjeβla"
+    phonetic: "[la ˈnjeβla]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "niebla", base: "niebla" }]
+    examples:
+      - { target: "Por la mañana hay niebla.", ipa: "poɾ la maˈɲana aj ˈnjeβla", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "hay", base: "haber" }, { word: "niebla", base: "niebla" }] }
+      - { target: "Con niebla no veo bien.", ipa: "kon ˈnjeβla no ˈbeo bjen", bases: [{ word: "Con", base: "con" }, { word: "niebla", base: "niebla" }, { word: "no", ref: "es-0043" }, { word: "veo", base: "ver" }, { word: "bien", ref: "es-0326" }] }
+  - id: "es-1119"
+    target: "la tormenta"
+    ipa: "la toɾˈmenta"
+    phonetic: "[la t̪oɾˈmen̪t̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "tormenta", base: "tormenta" }]
+    examples:
+      - { target: "Esta noche hay una tormenta.", ipa: "ˈesta ˈnoʧe aj ˈuna toɾˈmenta", bases: [{ word: "Esta", base: "este" }, { word: "noche", ref: "es-0020" }, { word: "hay", base: "haber" }, { word: "una", base: "una" }, { word: "tormenta", base: "tormenta" }] }
+      - { target: "La tormenta es muy fuerte.", ipa: "la toɾˈmenta es muj ˈfwerte", bases: [{ word: "La", base: "la" }, { word: "tormenta", base: "tormenta" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }] }
+  - id: "es-1120"
+    target: "el calor"
+    ipa: "el kaˈloɾ"
+    phonetic: "[el kaˈloɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "calor", base: "calor" }]
+    examples:
+      - { target: "Hace mucho calor en verano.", ipa: "ˈaθe ˈmutʃo kaˈloɾ en beˈɾano", bases: [{ word: "Hace", ref: "es-0025" }, { word: "mucho", ref: "es-0053" }, { word: "calor", base: "calor" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }] }
+      - { target: "Tengo calor.", ipa: "ˈtengo kaˈloɾ", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "calor", base: "calor" }] }
+  - id: "es-1121"
+    target: "la temperatura"
+    ipa: "la tempeɾaˈtuɾa"
+    phonetic: "[la t̪empeɾaˈt̪uɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "temperatura", base: "temperatura" }]
+    examples:
+      - { target: "La temperatura hoy es alta.", ipa: "la tempeɾaˈtuɾa oj es ˈalta", bases: [{ word: "La", base: "la" }, { word: "temperatura", base: "temperatura" }, { word: "hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }] }
+      - { target: "¿Cuál es la temperatura?", ipa: "kwal es la tempeɾaˈtuɾa", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "temperatura", base: "temperatura" }] }
+  - id: "es-1122"
+    target: "el cielo"
+    ipa: "el ˈθjelo"
+    phonetic: "[el ˈθjelo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cielo", base: "cielo" }]
+    examples:
+      - { target: "El cielo está azul.", ipa: "el ˈθjelo esˈta aˈθul", bases: [{ word: "El", base: "el" }, { word: "cielo", base: "cielo" }, { word: "está", ref: "es-0023" }, { word: "azul", ref: "es-1008" }] }
+      - { target: "Hoy el cielo está gris.", ipa: "oj el ˈθjelo esˈta ɡɾis", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "el", base: "el" }, { word: "cielo", base: "cielo" }, { word: "está", ref: "es-0023" }, { word: "gris", ref: "es-1013" }] }
+  - id: "es-1123"
+    target: "el paraguas"
+    ipa: "el paɾaˈɣwas"
+    phonetic: "[el paɾaˈɣwas]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "paraguas", base: "paraguas" }]
+    examples:
+      - { target: "Lleva el paraguas, va a llover.", ipa: "ˈʝeβa el paɾaˈɣwas ba a ʝoˈβeɾ", bases: [{ word: "Lleva", ref: "es-0623" }, { word: "el", base: "el" }, { word: "paraguas", base: "paraguas" }, { word: "va", ref: "es-0026" }, { word: "a", base: "a" }, { word: "llover", base: "llover" }] }
+      - { target: "No olvides el paraguas.", ipa: "no olˈβiðes el paɾaˈɣwas", bases: [{ word: "No", ref: "es-0043" }, { word: "olvides", base: "olvidar" }, { word: "el", base: "el" }, { word: "paraguas", base: "paraguas" }] }
+  - id: "es-1124"
+    target: "el grado"
+    ipa: "el ˈɡɾaðo"
+    phonetic: "[el ˈɣɾaðo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "grado", base: "grado" }]
+    examples:
+      - { target: "Hoy hay veinte grados.", ipa: "oj aj ˈbeinte ˈɡɾaðos", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hay", base: "haber" }, { word: "veinte", ref: "es-0224" }, { word: "grados", base: "grado" }] }
+      - { target: "Hay cinco grados en la calle.", ipa: "aj ˈθinko ˈɡɾaðos en la ˈkaʝe", bases: [{ word: "Hay", base: "haber" }, { word: "cinco", ref: "es-0209" }, { word: "grados", base: "grado" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }] }
+  - id: "es-1125"
+    target: "el trueno"
+    ipa: "el ˈtɾweno"
+    phonetic: "[el ˈt̪ɾweno]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "trueno", base: "trueno" }]
+    examples:
+      - { target: "Se oye un trueno.", ipa: "se ˈoje un ˈtɾweno", bases: [{ word: "Se", base: "se" }, { word: "oye", base: "oír" }, { word: "un", base: "un" }, { word: "trueno", base: "trueno" }] }
+      - { target: "El trueno suena muy fuerte.", ipa: "el ˈtɾweno ˈswena muj ˈfwerte", bases: [{ word: "El", base: "el" }, { word: "trueno", base: "trueno" }, { word: "suena", base: "sonar" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }] }
+  - id: "es-1126"
+    target: "el granizo"
+    ipa: "el ɡɾaˈniθo"
+    phonetic: "[el ɣɾaˈniθo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "granizo", base: "granizo" }]
+    examples:
+      - { target: "Hoy cae granizo.", ipa: "oj ˈkae ɡɾaˈniθo", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "cae", base: "caer" }, { word: "granizo", base: "granizo" }] }
+      - { target: "Con granizo no salgo.", ipa: "kon ɡɾaˈniθo no ˈsalɣo", bases: [{ word: "Con", base: "con" }, { word: "granizo", base: "granizo" }, { word: "no", ref: "es-0043" }, { word: "salgo", ref: "es-0690" }] }
+  - id: "es-1127"
+    target: "la humedad"
+    ipa: "la umeˈðad"
+    phonetic: "[la umeˈðað]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "humedad", base: "humedad" }]
+    examples:
+      - { target: "Hay mucha humedad hoy.", ipa: "aj ˈmutʃa umeˈðad oj", bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "humedad", base: "humedad" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "La humedad hace calor.", ipa: "la umeˈðad ˈaθe kaˈloɾ", bases: [{ word: "La", base: "la" }, { word: "humedad", base: "humedad" }, { word: "hace", ref: "es-0025" }, { word: "calor", base: "calor" }] }
+  - id: "es-1128"
+    target: "el clima"
+    ipa: "el ˈklima"
+    phonetic: "[el ˈklima]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "clima", base: "clima" }]
+    examples:
+      - { target: "El clima de Madrid es seco.", ipa: "el ˈklima de maˈðɾiðs es ˈseko", bases: [{ word: "El", base: "el" }, { word: "clima", base: "clima" }, { word: "de", base: "de" }, { word: "Madrid", base: "Madrid" }, { word: "es", ref: "es-0022" }, { word: "seco", ref: "es-0441" }] }
+      - { target: "El clima cambia mucho.", ipa: "el ˈklima ˈkambja ˈmutʃo", bases: [{ word: "El", base: "el" }, { word: "clima", base: "clima" }, { word: "cambia", ref: "es-0588" }, { word: "mucho", ref: "es-0053" }] }
+  - id: "es-1129"
+    target: "la previsión"
+    ipa: "la pɾeβiˈsjon"
+    phonetic: "[la pɾeβiˈsjon]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "previsión", base: "previsión" }]
+    examples:
+      - { target: "Mira la previsión del tiempo.", ipa: "ˈmiɾa la pɾeβiˈsjon del ˈtjempo", bases: [{ word: "Mira", ref: "es-0292" }, { word: "la", base: "la" }, { word: "previsión", base: "previsión" }, { word: "del", base: "de" }, { word: "tiempo", base: "tiempo" }] }
+      - { target: "La previsión es buena hoy.", ipa: "la pɾeβiˈsjon es ˈbwena oj", bases: [{ word: "La", base: "la" }, { word: "previsión", base: "previsión" }, { word: "es", ref: "es-0022" }, { word: "buena", base: "bueno" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-1130"
+    target: "el arcoíris"
+    ipa: "el aɾkoˈiɾis"
+    phonetic: "[el aɾkoˈiɾis]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "arcoíris", base: "arcoíris" }]
+    examples:
+      - { target: "Hay un arcoíris en el cielo.", ipa: "aj un aɾkoˈiɾis en el ˈθjelo", bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "arcoíris", base: "arcoíris" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cielo", base: "cielo" }] }
+      - { target: "Después de la lluvia sale un arcoíris.", ipa: "desˈpwes de la ˈʝubja ˈsale un aɾkoˈiɾis", bases: [{ word: "Después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "lluvia", ref: "es-1114" }, { word: "sale", ref: "es-0690" }, { word: "un", base: "un" }, { word: "arcoíris", base: "arcoíris" }] }
+  - id: "es-1131"
+    target: "la sombra"
+    ipa: "la ˈsombɾa"
+    phonetic: "[la ˈsombɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "sombra", base: "sombra" }]
+    examples:
+      - { target: "Hace calor, busco la sombra.", ipa: "ˈaθe kaˈloɾ ˈbusko la ˈsombɾa", bases: [{ word: "Hace", ref: "es-0025" }, { word: "calor", base: "calor" }, { word: "busco", ref: "es-0289" }, { word: "la", base: "la" }, { word: "sombra", base: "sombra" }] }
+      - { target: "Descansamos a la sombra del árbol.", ipa: "deskanˈsamos a la ˈsombɾa del ˈaɾβol", bases: [{ word: "Descansamos", ref: "es-0928" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "sombra", base: "sombra" }, { word: "del", base: "de" }, { word: "árbol", base: "árbol" }] }
+  - id: "es-1132"
+    target: "llover"
+    ipa: "ʝoˈβeɾ"
+    phonetic: "[ʝoˈβeɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hoy llueve mucho.", ipa: "oj ˈʝueβe ˈmutʃo", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "llueve", base: "llover" }, { word: "mucho", ref: "es-0053" }] }
+      - { target: "Mañana puede llover.", ipa: "maˈɲana ˈpwede ʝoˈβeɾ", bases: [{ word: "Mañana", ref: "es-0978" }, { word: "puede", base: "poder" }, { word: "llover", base: "llover" }] }
+  - id: "es-1133"
+    target: "nevar"
+    ipa: "neˈβaɾ"
+    phonetic: "[neˈβaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hoy nieva en la montaña.", ipa: "oj ˈnjeβa en la monˈtaɲa", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "nieva", base: "nevar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "montaña", base: "montaña" }] }
+      - { target: "Ayer no nevó.", ipa: "aˈʝeɾ no neˈβo", bases: [{ word: "Ayer", ref: "es-0332" }, { word: "no", ref: "es-0043" }, { word: "nevó", base: "nevar" }] }
+  - id: "es-1134"
+    target: "brillar"
+    ipa: "bɾiˈʝaɾ"
+    phonetic: "[bɾiˈʝaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El sol brilla.", ipa: "el sol ˈbɾiʝa", bases: [{ word: "El", base: "el" }, { word: "sol", ref: "es-1113" }, { word: "brilla", base: "brillar" }] }
+      - { target: "La luna brilla de noche.", ipa: "la ˈluna ˈbɾiʝa de ˈnoʧe", bases: [{ word: "La", base: "la" }, { word: "luna", base: "luna" }, { word: "brilla", base: "brillar" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }] }
+  - id: "es-1135"
+    target: "soplar"
+    ipa: "soˈplaɾ"
+    phonetic: "[soˈplaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hoy sopla un viento fuerte.", ipa: "oj ˈsopla un ˈbjento ˈfwerte", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "sopla", base: "soplar" }, { word: "un", base: "un" }, { word: "viento", ref: "es-1115" }, { word: "fuerte", ref: "es-0432" }] }
+      - { target: "El viento sopla desde el norte.", ipa: "el ˈbjento ˈsopla ˈdesde el ˈnoɾte", bases: [{ word: "El", base: "el" }, { word: "viento", ref: "es-1115" }, { word: "sopla", base: "soplar" }, { word: "desde", base: "desde" }, { word: "norte", ref: "es-0711" }] }
+  - id: "es-1136"
+    target: "helar"
+    ipa: "eˈlaɾ"
+    phonetic: "[eˈlaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Anoche heló.", ipa: "aˈnoʧe eˈlo", bases: [{ word: "Anoche", base: "anoche" }, { word: "heló", base: "helar" }] }
+      - { target: "En invierno hiela.", ipa: "en imˈbjeɾno ˈjela", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "hiela", base: "helar" }] }
+  - id: "es-1137"
+    target: "soleado"
+    ipa: "soleˈaðo"
+    phonetic: "[soleˈaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "soleado", base: "soleado" }]
+    antonyms:
+      - { id: "cloudy", ref: "es-1138" }
+    examples:
+      - { target: "Hoy es un día soleado.", ipa: "oj es un ˈdia soleˈaðo", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "día", ref: "es-0019" }, { word: "soleado", base: "soleado" }] }
+      - { target: "Mañana será soleado.", ipa: "maˈɲana seˈɾa soleˈaðo", bases: [{ word: "Mañana", ref: "es-0978" }, { word: "será", base: "ser" }, { word: "soleado", base: "soleado" }] }
+  - id: "es-1138"
+    target: "nublado"
+    ipa: "nuˈβlaðo"
+    phonetic: "[nuˈβlaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "nublado", base: "nublado" }]
+    antonyms:
+      - { id: "sunny", ref: "es-1137" }
+    examples:
+      - { target: "El cielo está nublado.", ipa: "el ˈθjelo esˈta nuˈβlaðo", bases: [{ word: "El", base: "el" }, { word: "cielo", ref: "es-1122" }, { word: "está", ref: "es-0023" }, { word: "nublado", base: "nublado" }] }
+      - { target: "Hoy está nublado.", ipa: "oj esˈta nuˈβlaðo", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "está", ref: "es-0023" }, { word: "nublado", base: "nublado" }] }
+  - id: "es-1139"
+    target: "lluvioso"
+    ipa: "ʝuˈβjoso"
+    phonetic: "[ʝuˈβjoso]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "lluvioso", base: "lluvioso" }]
+    examples:
+      - { target: "Es un día lluvioso.", ipa: "es un ˈdia ʝuˈβjoso", bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "día", ref: "es-0019" }, { word: "lluvioso", base: "lluvioso" }] }
+      - { target: "En abril el tiempo es lluvioso.", ipa: "en aˈβɾil el ˈtjempo es ʝuˈβjoso", bases: [{ word: "En", base: "en" }, { word: "abril", ref: "es-0969" }, { word: "el", base: "el" }, { word: "tiempo", ref: "es-1112" }, { word: "es", ref: "es-0022" }, { word: "lluvioso", base: "lluvioso" }] }
+  - id: "es-1140"
+    target: "ventoso"
+    ipa: "benˈtoso"
+    phonetic: "[ben̪ˈt̪oso]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ventoso", base: "ventoso" }]
+    examples:
+      - { target: "La playa es ventosa hoy.", ipa: "la ˈplaʝa es benˈtosa oj", bases: [{ word: "La", base: "la" }, { word: "playa", ref: "es-0784" }, { word: "es", ref: "es-0022" }, { word: "ventosa", base: "ventoso" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "Hoy es un día muy ventoso.", ipa: "oj es un ˈdia muj benˈtoso", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "día", ref: "es-0019" }, { word: "muy", ref: "es-0330" }, { word: "ventoso", base: "ventoso" }] }
+  - id: "es-1141"
+    target: "húmedo"
+    ipa: "ˈumeðo"
+    phonetic: "[ˈumeðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "húmedo", base: "húmedo" }]
+    examples:
+      - { target: "El aire es húmedo en verano.", ipa: "el ˈajɾe es ˈumeðo en beˈɾano", bases: [{ word: "El", base: "el" }, { word: "aire", base: "aire" }, { word: "es", ref: "es-0022" }, { word: "húmedo", base: "húmedo" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }] }
+      - { target: "La ropa está húmeda.", ipa: "la ˈropa esˈta ˈumeða", bases: [{ word: "La", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "está", ref: "es-0023" }, { word: "húmeda", base: "húmedo" }] }
+  - id: "es-1142"
+    target: "templado"
+    ipa: "temˈplaðo"
+    phonetic: "[t̪emˈplaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "templado", base: "templado" }]
+    examples:
+      - { target: "En primavera el clima es templado.", ipa: "en pɾimaˈbeɾa el ˈklima es temˈplaðo", bases: [{ word: "En", base: "en" }, { word: "primavera", ref: "es-0981" }, { word: "el", base: "el" }, { word: "clima", ref: "es-1128" }, { word: "es", ref: "es-0022" }, { word: "templado", base: "templado" }] }
+      - { target: "Hace un tiempo templado.", ipa: "ˈaθe un ˈtjempo temˈplaðo", bases: [{ word: "Hace", ref: "es-0025" }, { word: "un", base: "un" }, { word: "tiempo", ref: "es-1112" }, { word: "templado", base: "templado" }] }
+  - id: "es-1143"
+    target: "despejado"
+    ipa: "despeˈxaðo"
+    phonetic: "[d̪espeˈxaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "despejado", base: "despejado" }]
+    examples:
+      - { target: "El cielo está despejado.", ipa: "el ˈθjelo esˈta despeˈxaðo", bases: [{ word: "El", base: "el" }, { word: "cielo", ref: "es-1122" }, { word: "está", ref: "es-0023" }, { word: "despejado", base: "despejado" }] }
+      - { target: "Mañana el cielo estará despejado.", ipa: "maˈɲana el ˈθjelo esteˈɾa despeˈxaðo", bases: [{ word: "Mañana", ref: "es-0978" }, { word: "el", base: "el" }, { word: "cielo", ref: "es-1122" }, { word: "estará", base: "estar" }, { word: "despejado", base: "despejado" }] }
+  - id: "es-1144"
+    target: "fresco"
+    ipa: "ˈfɾesko"
+    phonetic: "[ˈfɾesko]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "fresco", base: "fresco" }]
+    antonyms:
+      - { id: "hot", ref: "es-0407" }
+    examples:
+      - { target: "Hoy hace fresco.", ipa: "oj ˈaθe ˈfɾesko", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hace", ref: "es-0025" }, { word: "fresco", base: "fresco" }] }
+      - { target: "Por la noche hace fresco.", ipa: "poɾ la ˈnoʧe ˈaθe ˈfɾesko", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }, { word: "hace", ref: "es-0025" }, { word: "fresco", base: "fresco" }] }
