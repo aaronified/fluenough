@@ -339,6 +339,7 @@ class _UnitNode extends StatelessWidget {
     final semantics = joinParts(l10n, <String>[
       l10n.pathUnitSemantics(step.title, step.number, statusWord, meta),
       if (step.due > 0) l10n.commonDueBadge(step.due),
+      if (step.yourScript) l10n.pathYourScript,
       if (toReview) l10n.pathToReview,
     ]);
     final leading = switch (status) {
@@ -413,6 +414,15 @@ class _UnitNode extends StatelessWidget {
                             color: sub,
                           ),
                         ),
+                      if (step.yourScript) ...<Widget>[
+                        const SizedBox(height: 4),
+                        Pill(
+                          key: const ValueKey<String>('your-script'),
+                          text: l10n.pathYourScript,
+                          background: scheme.tertiaryContainer,
+                          foreground: scheme.onTertiaryContainer,
+                        ),
+                      ],
                       if (toReview) ...<Widget>[
                         const SizedBox(height: 4),
                         Pill(

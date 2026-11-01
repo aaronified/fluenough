@@ -1706,6 +1706,62 @@
   "@pathOtherDecks": {
     "description": "Heading under a course's path: the language's decks its path leaves out, each opening its own screen."
   },
+  "pathYourScript": "Your script",
+  "@pathYourScript": {
+    "description": "Small mark under the name of the first unit of the one script the learner learns, on the Decks path of a language written in several scripts (owner, 2026-11-01, choice D of skill-pills-onboarding screen 4). It tells the learner which script units are theirs."
+  },
+  "pathSkippedScriptTitle": "{script} · not in your scripts",
+  "@pathSkippedScriptTitle": {
+    "description": "Heading of the section under a course's path for the decks of a script the learner does not learn (owner, 2026-11-01, choice C of skill-pills-onboarding screen 4). It replaces Other decks for those decks. {script} is the script's name, such as Devanagari.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "pathSkippedScriptCount": "{decks, plural, =1{1 deck} other{{decks} decks}} · {cards, plural, =1{1 card} other{{cards} cards}}",
+  "@pathSkippedScriptCount": {
+    "description": "The line under the heading of the skipped script's section: how many decks it holds and how many cards they have in all.",
+    "placeholders": {
+      "decks": {
+        "type": "int",
+        "example": "7"
+      },
+      "cards": {
+        "type": "int",
+        "example": "125"
+      }
+    }
+  },
+  "pathSkippedScriptWhy": "You learn {language} in the {script} script, so these decks are not on your path. You can still open any of them.",
+  "@pathSkippedScriptWhy": {
+    "description": "One line in the skipped script's section: what is skipped and why, and that the decks still open. {language} is the course's language, such as Hindustani; {script} the script the learner does learn, such as Perso-Arabic.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "script": {
+        "type": "String",
+        "example": "Perso-Arabic"
+      }
+    }
+  },
+  "pathSkippedScriptAdd": "Add it",
+  "@pathSkippedScriptAdd": {
+    "description": "Text button in the skipped script's section. It opens the language's skills sheet, where the learner can add the script to the ones they learn."
+  },
+  "pathSkippedScriptAddSemantics": "Add {script} to your scripts",
+  "@pathSkippedScriptAddSemantics": {
+    "description": "What a screen reader hears for the Add it button of the skipped script's section. {script} is the script's name, such as Devanagari.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
   "pathBrokenFiles": "Files that couldn’t be read",
   "@pathBrokenFiles": {
     "description": "Heading under a course's path: deck files that failed to parse."
