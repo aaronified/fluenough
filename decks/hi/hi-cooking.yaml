@@ -1,0 +1,693 @@
+schema: 1
+id: "hi-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1496"
+    target: "तलना"
+    reading: "talnā"
+    ipa: "t̪əlnaː"
+    phonetic: "[t̪əlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पकौड़े तेल में तले गए।", reading: "pakauṛē tēl mēm̐ talē gaē.", ipa: "pəkɔːɽeː t̪eːl mẽː t̪əleː ɡəeː", bases: [{ "word": "पकौड़े", "base": "पकौड़ा", "reading": "pakauṛā" }, { "word": "तेल", "ref": "hi-1021" }, { "word": "में", "ref": "hi-0274" }, { "word": "तले", "base": "तलना", "reading": "talnā" }, { "word": "गए", "base": "जाना", "reading": "jānā" }] }
+      - { target: "आलू को तलो।", reading: "ālū kō talō.", ipa: "aːluː koː t̪əloː", bases: [{ "word": "आलू", "ref": "hi-0250" }, { "word": "को", "ref": "hi-0277" }, { "word": "तलो", "base": "तलना", "reading": "talnā" }] }
+  - id: "hi-1497"
+    target: "भूनना"
+    reading: "bhūnnā"
+    ipa: "bʱuːnnaː"
+    phonetic: "[bʱuːnnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "प्याज़ भूनो।", reading: "pyāz bhūnō.", ipa: "pjaːz bʱuːnoː", bases: [{ "word": "प्याज़", "ref": "hi-0251" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }] }
+      - { target: "मसाला भूनो।", reading: "masālā bhūnō.", ipa: "məsaːlaː bʱuːnoː", bases: [{ "word": "मसाला", "ref": "hi-1508" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }] }
+  - id: "hi-1498"
+    target: "छीलना"
+    reading: "chīlnā"
+    ipa: "tʃʰiːlnaː"
+    phonetic: "[tʃʰiːlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गाजर छीलो।", reading: "gājar chīlō.", ipa: "ɡaːdʒər tʃʰiːloː", bases: [{ "word": "गाजर", "ref": "hi-1019" }, { "word": "छीलो", "base": "छीलना", "reading": "chīlnā" }] }
+      - { target: "आलू छीलकर पकाओ।", reading: "ālū chīlkar pakāō.", ipa: "aːluː tʃʰiːlkər pəkaːoː", bases: [{ "word": "आलू", "ref": "hi-0250" }, { "word": "छीलकर", "base": "छीलकर", "reading": "chīlkar" }, { "word": "पकाओ", "base": "पकाना", "reading": "pakānā" }] }
+  - id: "hi-1499"
+    target: "पीसना"
+    reading: "pīsnā"
+    ipa: "piːsnaː"
+    phonetic: "[piːsnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जीरा और धनिया पीसो।", reading: "jīrā aur dhaniyā pīsō.", ipa: "dʒiːraː ɔːr d̪ʱənɪjaː piːsoː", bases: [{ "word": "जीरा", "ref": "hi-1506" }, { "word": "और", "ref": "hi-0337" }, { "word": "धनिया", "ref": "hi-1507" }, { "word": "पीसो", "base": "पीसना", "reading": "pīsnā" }] }
+      - { target: "मसाला बारीक पीसो।", reading: "masālā bārīk pīsō.", ipa: "məsaːlaː baːriːk piːsoː", bases: [{ "word": "मसाला", "ref": "hi-1508" }, { "word": "बारीक", "base": "बारीक", "reading": "bārīk" }, { "word": "पीसो", "base": "पीसना", "reading": "pīsnā" }] }
+  - id: "hi-1500"
+    target: "गूँधना"
+    reading: "gūm̐dhanā"
+    ipa: "ɡũːd̪ʱənaː"
+    phonetic: "[ɡũːd̪ʱənaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आटा नरम गूँधो।", reading: "āṭā naram gūm̐dhō.", ipa: "aːʈaː nərəm ɡũːd̪ʱoː", bases: [{ "word": "आटा", "ref": "hi-1509" }, { "word": "नरम", "ref": "hi-1538" }, { "word": "गूँधो", "base": "गूँधना", "reading": "gūm̐dhanā" }] }
+      - { target: "आटा गूँधो और ढक दो।", reading: "āṭā gūm̐dhō aur ḍhak dō.", ipa: "aːʈaː ɡũːd̪ʱoː ɔːr ɖʱək d̪oː", bases: [{ "word": "आटा", "ref": "hi-1509" }, { "word": "गूँधो", "base": "गूँधना", "reading": "gūm̐dhanā" }, { "word": "और", "ref": "hi-0337" }, { "word": "ढक", "base": "ढकना", "reading": "ḍhaknā" }, { "word": "दो", "base": "देना", "reading": "dēnā" }] }
+  - id: "hi-1501"
+    target: "बेलना"
+    reading: "bēlnā"
+    ipa: "beːlnaː"
+    phonetic: "[beːlnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "रोटी बेलो।", reading: "rōṭī bēlō.", ipa: "roːʈiː beːloː", bases: [{ "word": "रोटी", "ref": "hi-0335" }, { "word": "बेलो", "base": "बेलना", "reading": "bēlnā" }] }
+      - { target: "पूरी बेलो और तलो।", reading: "pūrī bēlō aur talō.", ipa: "puːriː beːloː ɔːr t̪əloː", bases: [{ "word": "पूरी", "ref": "hi-0991" }, { "word": "बेलो", "base": "बेलना", "reading": "bēlnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "तलो", "base": "तलना", "reading": "talnā" }] }
+  - id: "hi-1502"
+    target: "बनाना"
+    reading: "banānā"
+    ipa: "bənaːnaː"
+    phonetic: "[bənaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "खाना बनाओ।", reading: "khānā banāō.", ipa: "kʰaːnaː bənaːoː", bases: [{ "word": "खाना", "ref": "hi-0332" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+      - { target: "आज कढ़ी बनाओ।", reading: "āj kaṛhī banāō.", ipa: "aːdʒ kəɽʱiː bənaːoː", bases: [{ "word": "आज", "ref": "hi-0299" }, { "word": "कढ़ी", "ref": "hi-1532" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+  - id: "hi-1503"
+    target: "सेंकना"
+    reading: "sēṅkanā"
+    ipa: "seːŋkənaː"
+    phonetic: "[seːŋkənaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "रोटी को तवे पर सेंको।", reading: "rōṭī kō tavē par sēṅkō.", ipa: "roːʈiː koː t̪əʋeː pər seːŋkoː", bases: [{ "word": "रोटी", "ref": "hi-0335" }, { "word": "को", "ref": "hi-0277" }, { "word": "तवे", "base": "तवा", "reading": "tavā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "सेंको", "base": "सेंकना", "reading": "sēṅkanā" }] }
+      - { target: "रोटी सेंकते समय ध्यान रखो।", reading: "rōṭī sēṅkatē samay dhyān rakhō.", ipa: "roːʈiː seːŋkət̪eː səməj d̪ʱjaːn rəkʰoː", bases: [{ "word": "रोटी", "ref": "hi-0335" }, { "word": "सेंकते", "base": "सेंकना", "reading": "sēṅkanā" }, { "word": "समय", "base": "समय", "reading": "samay" }, { "word": "ध्यान", "base": "ध्यान", "reading": "dhyān" }, { "word": "रखो", "base": "रखना", "reading": "rakhnā" }] }
+  - id: "hi-1504"
+    target: "मिलाना"
+    reading: "milānā"
+    ipa: "mɪlaːnaː"
+    phonetic: "[mɪlaːnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब्ज़ी में मसाला मिलाओ।", reading: "sabzī mēm̐ masālā milāō.", ipa: "səbziː mẽː məsaːlaː mɪlaːoː", bases: [{ "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "में", "ref": "hi-0274" }, { "word": "मसाला", "ref": "hi-1508" }, { "word": "मिलाओ", "base": "मिलाना", "reading": "milānā" }] }
+      - { target: "दही और चीनी मिलाओ।", reading: "dahī aur cīnī milāō.", ipa: "d̪əɦiː ɔːr tʃiːniː mɪlaːoː", bases: [{ "word": "दही", "ref": "hi-1012" }, { "word": "और", "ref": "hi-0337" }, { "word": "चीनी", "ref": "hi-1015" }, { "word": "मिलाओ", "base": "मिलाना", "reading": "milānā" }] }
+  - id: "hi-1505"
+    target: "हल्दी"
+    reading: "haldī"
+    ipa: "ɦəld̪iː"
+    phonetic: "[ɦəld̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दाल में हल्दी डालो।", reading: "dāl mēm̐ haldī ḍālō.", ipa: "d̪aːl mẽː ɦəld̪iː ɖaːloː", bases: [{ "word": "दाल", "ref": "hi-0261" }, { "word": "में", "ref": "hi-0274" }, { "word": "हल्दी", "base": "हल्दी", "reading": "haldī" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+      - { target: "हल्दी पीली है।", reading: "haldī pīlī hai.", ipa: "ɦəld̪iː piːliː ɦɛː", bases: [{ "word": "हल्दी", "base": "हल्दी", "reading": "haldī" }, { "word": "पीली", "base": "पीला", "reading": "pīlā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1506"
+    target: "जीरा"
+    reading: "jīrā"
+    ipa: "dʒiːraː"
+    phonetic: "[dʒiːraː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जीरा तेल में भूनो।", reading: "jīrā tēl mēm̐ bhūnō.", ipa: "dʒiːraː t̪eːl mẽː bʱuːnoː", bases: [{ "word": "जीरा", "base": "जीरा", "reading": "jīrā" }, { "word": "तेल", "ref": "hi-1021" }, { "word": "में", "ref": "hi-0274" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }] }
+      - { target: "जीरा खाने का स्वाद बढ़ाता है।", reading: "jīrā khānē kā svād baṛhātā hai.", ipa: "dʒiːraː kʰaːneː kaː sʋaːd̪ bəɽʱaːt̪aː ɦɛː", bases: [{ "word": "जीरा", "base": "जीरा", "reading": "jīrā" }, { "word": "खाने", "base": "खाना", "reading": "khānā" }, { "word": "का", "ref": "hi-0279" }, { "word": "स्वाद", "base": "स्वाद", "reading": "svād" }, { "word": "बढ़ाता", "base": "बढ़ाना", "reading": "baṛhānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1507"
+    target: "धनिया"
+    reading: "dhaniyā"
+    ipa: "d̪ʱənɪjaː"
+    phonetic: "[d̪ʱənɪjaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब्ज़ी पर धनिया डालो।", reading: "sabzī par dhaniyā ḍālō.", ipa: "səbziː pər d̪ʱənɪjaː ɖaːloː", bases: [{ "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "पर", "ref": "hi-0275" }, { "word": "धनिया", "base": "धनिया", "reading": "dhaniyā" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+      - { target: "धनिया हरा है।", reading: "dhaniyā harā hai.", ipa: "d̪ʱənɪjaː ɦəraː ɦɛː", bases: [{ "word": "धनिया", "base": "धनिया", "reading": "dhaniyā" }, { "word": "हरा", "base": "हरा", "reading": "harā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1508"
+    target: "मसाला"
+    reading: "masālā"
+    ipa: "məsaːlaː"
+    phonetic: "[məsaːlaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मसाला तेज़ है।", reading: "masālā tēz hai.", ipa: "məsaːlaː t̪eːz ɦɛː", bases: [{ "word": "मसाला", "base": "मसाला", "reading": "masālā" }, { "word": "तेज़", "ref": "hi-1289" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मसाला सब्ज़ी में डालो।", reading: "masālā sabzī mēm̐ ḍālō.", ipa: "məsaːlaː səbziː mẽː ɖaːloː", bases: [{ "word": "मसाला", "base": "मसाला", "reading": "masālā" }, { "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "में", "ref": "hi-0274" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+  - id: "hi-1509"
+    target: "आटा"
+    reading: "āṭā"
+    ipa: "aːʈaː"
+    phonetic: "[aːʈaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आटे में पानी डालो।", reading: "āṭē mēm̐ pānī ḍālō.", ipa: "aːʈeː mẽː paːniː ɖaːloː", bases: [{ "word": "आटे", "base": "आटा", "reading": "āṭā" }, { "word": "में", "ref": "hi-0274" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+      - { target: "आटा रोटी के लिए है।", reading: "āṭā rōṭī kē liē hai.", ipa: "aːʈaː roːʈiː keː lɪeː ɦɛː", bases: [{ "word": "आटा", "base": "आटा", "reading": "āṭā" }, { "word": "रोटी", "ref": "hi-0335" }, { "word": "के", "ref": "hi-0065" }, { "word": "लिए", "base": "लिए", "reading": "liē" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1510"
+    target: "मैदा"
+    reading: "maidā"
+    ipa: "mɛːd̪aː"
+    phonetic: "[mɛːd̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "मैदा नरम होता है।", reading: "maidā naram hōtā hai.", ipa: "mɛːd̪aː nərəm ɦoːt̪aː ɦɛː", bases: [{ "word": "मैदा", "base": "मैदा", "reading": "maidā" }, { "word": "नरम", "ref": "hi-1538" }, { "word": "होता", "base": "होना", "reading": "hōnā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मैदे की पूरी बनती है।", reading: "maidē kī pūrī bantī hai.", ipa: "mɛːd̪eː kiː puːriː bənt̪iː ɦɛː", bases: [{ "word": "मैदे", "base": "मैदा", "reading": "maidā" }, { "word": "की", "ref": "hi-0061" }, { "word": "पूरी", "ref": "hi-0991" }, { "word": "बनती", "base": "बनना", "reading": "bannā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1511"
+    target: "खिचड़ी"
+    reading: "khicṛī"
+    ipa: "kʰɪtʃɽiː"
+    phonetic: "[kʰɪtʃɽiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "आज खिचड़ी बनी है।", reading: "āj khicṛī banī hai.", ipa: "aːdʒ kʰɪtʃɽiː bəniː ɦɛː", bases: [{ "word": "आज", "ref": "hi-0299" }, { "word": "खिचड़ी", "base": "खिचड़ी", "reading": "khicṛī" }, { "word": "बनी", "base": "बनना", "reading": "bannā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "बीमार हो तो खिचड़ी खाओ।", reading: "bīmār hō tō khicṛī khāō.", ipa: "biːmaːr ɦoː t̪oː kʰɪtʃɽiː kʰaːoː", bases: [{ "word": "बीमार", "ref": "hi-1430" }, { "word": "हो", "base": "होना", "reading": "hōnā" }, { "word": "तो", "base": "तो", "reading": "tō" }, { "word": "खिचड़ी", "base": "खिचड़ी", "reading": "khicṛī" }, { "word": "खाओ", "base": "खाना", "reading": "khānā" }] }
+  - id: "hi-1512"
+    target: "गोभी"
+    reading: "gōbhī"
+    ipa: "ɡoːbʱiː"
+    phonetic: "[ɡoːbʱiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गोभी की सब्ज़ी अच्छी है।", reading: "gōbhī kī sabzī acchī hai.", ipa: "ɡoːbʱiː kiː səbziː ətʃtʃʰiː ɦɛː", bases: [{ "word": "गोभी", "base": "गोभी", "reading": "gōbhī" }, { "word": "की", "ref": "hi-0061" }, { "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "गोभी को धोओ।", reading: "gōbhī kō dhōō.", ipa: "ɡoːbʱiː koː d̪ʱoːoː", bases: [{ "word": "गोभी", "base": "गोभी", "reading": "gōbhī" }, { "word": "को", "ref": "hi-0277" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+  - id: "hi-1513"
+    target: "पालक"
+    reading: "pālak"
+    ipa: "paːlək"
+    phonetic: "[paːlək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पालक हरी है।", reading: "pālak harī hai.", ipa: "paːlək ɦəriː ɦɛː", bases: [{ "word": "पालक", "base": "पालक", "reading": "pālak" }, { "word": "हरी", "base": "हरा", "reading": "harā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पालक पनीर बनाओ।", reading: "pālak panīr banāō.", ipa: "paːlək pəniːr bənaːoː", bases: [{ "word": "पालक", "base": "पालक", "reading": "pālak" }, { "word": "पनीर", "ref": "hi-0994" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+  - id: "hi-1514"
+    target: "भिंडी"
+    reading: "bhiṇḍī"
+    ipa: "bʱɪɳɖiː"
+    phonetic: "[bʱɪɳɖiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "भिंडी को धोकर काटो।", reading: "bhiṇḍī kō dhōkar kāṭō.", ipa: "bʱɪɳɖiː koː d̪ʱoːkər kaːʈoː", bases: [{ "word": "भिंडी", "base": "भिंडी", "reading": "bhiṇḍī" }, { "word": "को", "ref": "hi-0277" }, { "word": "धोकर", "base": "धोकर", "reading": "dhōkar" }, { "word": "काटो", "base": "काटना", "reading": "kāṭnā" }] }
+      - { target: "भिंडी तली जाती है।", reading: "bhiṇḍī talī jātī hai.", ipa: "bʱɪɳɖiː t̪əliː dʒaːt̪iː ɦɛː", bases: [{ "word": "भिंडी", "base": "भिंडी", "reading": "bhiṇḍī" }, { "word": "तली", "base": "तलना", "reading": "talnā" }, { "word": "जाती", "base": "जाना", "reading": "jānā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1515"
+    target: "बैंगन"
+    reading: "baiṅgan"
+    ipa: "bɛːŋɡən"
+    phonetic: "[bɛːŋɡən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बैंगन भूनो।", reading: "baiṅgan bhūnō.", ipa: "bɛːŋɡən bʱuːnoː", bases: [{ "word": "बैंगन", "base": "बैंगन", "reading": "baiṅgan" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }] }
+      - { target: "बैंगन लंबा है।", reading: "baiṅgan lambā hai.", ipa: "bɛːŋɡən ləmbaː ɦɛː", bases: [{ "word": "बैंगन", "base": "बैंगन", "reading": "baiṅgan" }, { "word": "लंबा", "base": "लंबा", "reading": "lambā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1516"
+    target: "कड़ाही"
+    reading: "kaṛāhī"
+    ipa: "kəɽaːɦiː"
+    phonetic: "[kəɽaːɦiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कड़ाही में तेल गरम करो।", reading: "kaṛāhī mēm̐ tēl garam karō.", ipa: "kəɽaːɦiː mẽː t̪eːl ɡərəm kəroː", bases: [{ "word": "कड़ाही", "base": "कड़ाही", "reading": "kaṛāhī" }, { "word": "में", "ref": "hi-0274" }, { "word": "तेल", "ref": "hi-1021" }, { "word": "गरम", "base": "गरम", "reading": "garam" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+      - { target: "कड़ाही को धोओ।", reading: "kaṛāhī kō dhōō.", ipa: "kəɽaːɦiː koː d̪ʱoːoː", bases: [{ "word": "कड़ाही", "base": "कड़ाही", "reading": "kaṛāhī" }, { "word": "को", "ref": "hi-0277" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+  - id: "hi-1517"
+    target: "तवा"
+    reading: "tavā"
+    ipa: "t̪əʋaː"
+    phonetic: "[t̪əʋaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "तवा गरम है।", reading: "tavā garam hai.", ipa: "t̪əʋaː ɡərəm ɦɛː", bases: [{ "word": "तवा", "base": "तवा", "reading": "tavā" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "तवे पर रोटी सेंको।", reading: "tavē par rōṭī sēṅkō.", ipa: "t̪əʋeː pər roːʈiː seːŋkoː", bases: [{ "word": "तवे", "base": "तवा", "reading": "tavā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "रोटी", "ref": "hi-0335" }, { "word": "सेंको", "base": "सेंकना", "reading": "sēṅkanā" }] }
+  - id: "hi-1518"
+    target: "बर्तन"
+    reading: "bartan"
+    ipa: "bərt̪ən"
+    phonetic: "[bərt̪ən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बर्तन धोओ।", reading: "bartan dhōō.", ipa: "bərt̪ən d̪ʱoːoː", bases: [{ "word": "बर्तन", "base": "बर्तन", "reading": "bartan" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+      - { target: "यह बर्तन भारी है।", reading: "yah bartan bhārī hai.", ipa: "jəɦ bərt̪ən bʱaːriː ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "बर्तन", "base": "बर्तन", "reading": "bartan" }, { "word": "भारी", "base": "भारी", "reading": "bhārī" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1519"
+    target: "प्लेट"
+    reading: "plēṭ"
+    ipa: "pleːʈ"
+    phonetic: "[pleːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "प्लेट में खाना परोसो।", reading: "plēṭ mēm̐ khānā parōsō.", ipa: "pleːʈ mẽː kʰaːnaː pəroːsoː", bases: [{ "word": "प्लेट", "base": "प्लेट", "reading": "plēṭ" }, { "word": "में", "ref": "hi-0274" }, { "word": "खाना", "ref": "hi-0332" }, { "word": "परोसो", "base": "परोसना", "reading": "parōsnā" }] }
+      - { target: "प्लेट साफ़ है।", reading: "plēṭ sāf hai.", ipa: "pleːʈ saːf ɦɛː", bases: [{ "word": "प्लेट", "base": "प्लेट", "reading": "plēṭ" }, { "word": "साफ़", "base": "साफ़", "reading": "sāf" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1520"
+    target: "चाकू"
+    reading: "cākū"
+    ipa: "tʃaːkuː"
+    phonetic: "[tʃaːkuː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चाकू तेज़ है।", reading: "cākū tēz hai.", ipa: "tʃaːkuː t̪eːz ɦɛː", bases: [{ "word": "चाकू", "base": "चाकू", "reading": "cākū" }, { "word": "तेज़", "base": "तेज़", "reading": "tēz" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "चाकू से सब्ज़ी काटो।", reading: "cākū sē sabzī kāṭō.", ipa: "tʃaːkuː seː səbziː kaːʈoː", bases: [{ "word": "चाकू", "base": "चाकू", "reading": "cākū" }, { "word": "से", "ref": "hi-0276" }, { "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "काटो", "base": "काटना", "reading": "kāṭnā" }] }
+  - id: "hi-1521"
+    target: "स्वाद"
+    reading: "svād"
+    ipa: "sʋaːd̪"
+    phonetic: "[sʋaːd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "खाने का स्वाद अच्छा है।", reading: "khānē kā svād acchā hai.", ipa: "kʰaːneː kaː sʋaːd̪ ətʃtʃʰaː ɦɛː", bases: [{ "word": "खाने", "base": "खाना", "reading": "khānā" }, { "word": "का", "ref": "hi-0279" }, { "word": "स्वाद", "base": "स्वाद", "reading": "svād" }, { "word": "अच्छा", "ref": "hi-0898" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "स्वाद में नमक कम है।", reading: "svād mēm̐ namak kam hai.", ipa: "sʋaːd̪ mẽː nəmək kəm ɦɛː", bases: [{ "word": "स्वाद", "base": "स्वाद", "reading": "svād" }, { "word": "में", "ref": "hi-0274" }, { "word": "नमक", "ref": "hi-0051" }, { "word": "कम", "ref": "hi-0105" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1522"
+    target: "ओवन"
+    reading: "ōvan"
+    ipa: "oːʋən"
+    phonetic: "[oːʋən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ओवन गरम करो।", reading: "ōvan garam karō.", ipa: "oːʋən ɡərəm kəroː", bases: [{ "word": "ओवन", "base": "ओवन", "reading": "ōvan" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+      - { target: "केक ओवन में पकता है।", reading: "kēk ōvan mēm̐ paktā hai.", ipa: "keːk oːʋən mẽː pəkt̪aː ɦɛː", bases: [{ "word": "केक", "base": "केक", "reading": "kēk" }, { "word": "ओवन", "base": "ओवन", "reading": "ōvan" }, { "word": "में", "ref": "hi-0274" }, { "word": "पकता", "base": "पकना", "reading": "paknā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1523"
+    target: "गैस"
+    reading: "gais"
+    ipa: "ɡɛːs"
+    phonetic: "[ɡɛːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "गैस धीमी करो।", reading: "gais dhīmī karō.", ipa: "ɡɛːs d̪ʱiːmiː kəroː", bases: [{ "word": "गैस", "base": "गैस", "reading": "gais" }, { "word": "धीमी", "base": "धीमा", "reading": "dhīmā" }, { "word": "करो", "base": "करना", "reading": "karnā" }] }
+      - { target: "गैस पर दूध उबालो।", reading: "gais par dūdh ubālō.", ipa: "ɡɛːs pər d̪uːd̪ʱ ʊbaːloː", bases: [{ "word": "गैस", "base": "गैस", "reading": "gais" }, { "word": "पर", "ref": "hi-0275" }, { "word": "दूध", "ref": "hi-0259" }, { "word": "उबालो", "base": "उबालना", "reading": "ubālnā" }] }
+  - id: "hi-1524"
+    target: "चूल्हा"
+    reading: "cūlhā"
+    ipa: "tʃuːlɦaː"
+    phonetic: "[tʃuːlɦaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चूल्हे पर चाय बनाओ।", reading: "cūlhē par cāy banāō.", ipa: "tʃuːlɦeː pər tʃaːj bənaːoː", bases: [{ "word": "चूल्हे", "base": "चूल्हा", "reading": "cūlhā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "चाय", "ref": "hi-0334" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+      - { target: "चूल्हा जलाओ।", reading: "cūlhā jalāō.", ipa: "tʃuːlɦaː dʒəlaːoː", bases: [{ "word": "चूल्हा", "base": "चूल्हा", "reading": "cūlhā" }, { "word": "जलाओ", "base": "जलाना", "reading": "jalānā" }] }
+  - id: "hi-1525"
+    target: "छलनी"
+    reading: "chalnī"
+    ipa: "tʃʰəlniː"
+    phonetic: "[tʃʰəlniː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "छलनी से आटा छानो।", reading: "chalnī sē āṭā chānō.", ipa: "tʃʰəlniː seː aːʈaː tʃʰaːnoː", bases: [{ "word": "छलनी", "base": "छलनी", "reading": "chalnī" }, { "word": "से", "ref": "hi-0276" }, { "word": "आटा", "ref": "hi-1509" }, { "word": "छानो", "base": "छानना", "reading": "chānnā" }] }
+      - { target: "दाल को छलनी में धोओ।", reading: "dāl kō chalnī mēm̐ dhōō.", ipa: "d̪aːl koː tʃʰəlniː mẽː d̪ʱoːoː", bases: [{ "word": "दाल", "ref": "hi-0261" }, { "word": "को", "ref": "hi-0277" }, { "word": "छलनी", "base": "छलनी", "reading": "chalnī" }, { "word": "में", "ref": "hi-0274" }, { "word": "धोओ", "base": "धोना", "reading": "dhōnā" }] }
+  - id: "hi-1526"
+    target: "कटोरा"
+    reading: "kaṭōrā"
+    ipa: "kəʈoːraː"
+    phonetic: "[kəʈoːraː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कटोरे में दही है।", reading: "kaṭōrē mēm̐ dahī hai.", ipa: "kəʈoːreː mẽː d̪əɦiː ɦɛː", bases: [{ "word": "कटोरे", "base": "कटोरा", "reading": "kaṭōrā" }, { "word": "में", "ref": "hi-0274" }, { "word": "दही", "ref": "hi-1012" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "एक कटोरा सूप दो।", reading: "ēk kaṭōrā sūp dō.", ipa: "eːk kəʈoːraː suːp d̪oː", bases: [{ "word": "एक", "ref": "hi-0198" }, { "word": "कटोरा", "base": "कटोरा", "reading": "kaṭōrā" }, { "word": "सूप", "ref": "hi-0992" }, { "word": "दो", "base": "देना", "reading": "dēnā" }] }
+  - id: "hi-1527"
+    target: "भात"
+    reading: "bhāt"
+    ipa: "bʱaːt̪"
+    phonetic: "[bʱaːt̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "भात और दाल खाओ।", reading: "bhāt aur dāl khāō.", ipa: "bʱaːt̪ ɔːr d̪aːl kʰaːoː", bases: [{ "word": "भात", "base": "भात", "reading": "bhāt" }, { "word": "और", "ref": "hi-0337" }, { "word": "दाल", "ref": "hi-0261" }, { "word": "खाओ", "base": "खाना", "reading": "khānā" }] }
+      - { target: "भात गरम है।", reading: "bhāt garam hai.", ipa: "bʱaːt̪ ɡərəm ɦɛː", bases: [{ "word": "भात", "base": "भात", "reading": "bhāt" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1528"
+    target: "प्याला"
+    reading: "pyālā"
+    ipa: "pjaːlaː"
+    phonetic: "[pjaːlaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चाय का प्याला दो।", reading: "cāy kā pyālā dō.", ipa: "tʃaːj kaː pjaːlaː d̪oː", bases: [{ "word": "चाय", "ref": "hi-0334" }, { "word": "का", "ref": "hi-0279" }, { "word": "प्याला", "base": "प्याला", "reading": "pyālā" }, { "word": "दो", "base": "देना", "reading": "dēnā" }] }
+      - { target: "प्याला गरम है।", reading: "pyālā garam hai.", ipa: "pjaːlaː ɡərəm ɦɛː", bases: [{ "word": "प्याला", "base": "प्याला", "reading": "pyālā" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1529"
+    target: "भाप"
+    reading: "bhāp"
+    ipa: "bʱaːp"
+    phonetic: "[bʱaːp]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "भाप से खाना पकाओ।", reading: "bhāp sē khānā pakāō.", ipa: "bʱaːp seː kʰaːnaː pəkaːoː", bases: [{ "word": "भाप", "base": "भाप", "reading": "bhāp" }, { "word": "से", "ref": "hi-0276" }, { "word": "खाना", "ref": "hi-0332" }, { "word": "पकाओ", "base": "पकाना", "reading": "pakānā" }] }
+      - { target: "ढक्कन खोलो तो भाप निकलती है।", reading: "ḍhakkan khōlō tō bhāp nikltī hai.", ipa: "ɖʱəkkən kʰoːloː t̪oː bʱaːp nɪklt̪iː ɦɛː", bases: [{ "word": "ढक्कन", "base": "ढक्कन", "reading": "ḍhakkan" }, { "word": "खोलो", "base": "खोलना", "reading": "khōlnā" }, { "word": "तो", "base": "तो", "reading": "tō" }, { "word": "भाप", "base": "भाप", "reading": "bhāp" }, { "word": "निकलती", "base": "निकलना", "reading": "niklnā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1530"
+    target: "जलेबी"
+    reading: "jalēbī"
+    ipa: "dʒəleːbiː"
+    phonetic: "[dʒəleːbiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "जलेबी मीठी है।", reading: "jalēbī mīṭhī hai.", ipa: "dʒəleːbiː miːʈʰiː ɦɛː", bases: [{ "word": "जलेबी", "base": "जलेबी", "reading": "jalēbī" }, { "word": "मीठी", "base": "मीठा", "reading": "mīṭhā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सुबह जलेबी खाओ।", reading: "subah jalēbī khāō.", ipa: "sʊbəɦ dʒəleːbiː kʰaːoː", bases: [{ "word": "सुबह", "ref": "hi-0302" }, { "word": "जलेबी", "base": "जलेबी", "reading": "jalēbī" }, { "word": "खाओ", "base": "खाना", "reading": "khānā" }] }
+  - id: "hi-1531"
+    target: "कुकर"
+    reading: "kukar"
+    ipa: "kʊkər"
+    phonetic: "[kʊkər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कुकर में दाल पकाओ।", reading: "kukar mēm̐ dāl pakāō.", ipa: "kʊkər mẽː d̪aːl pəkaːoː", bases: [{ "word": "कुकर", "base": "कुकर", "reading": "kukar" }, { "word": "में", "ref": "hi-0274" }, { "word": "दाल", "ref": "hi-0261" }, { "word": "पकाओ", "base": "पकाना", "reading": "pakānā" }] }
+      - { target: "कुकर की सीटी बजी।", reading: "kukar kī sīṭī bajī.", ipa: "kʊkər kiː siːʈiː bədʒiː", bases: [{ "word": "कुकर", "base": "कुकर", "reading": "kukar" }, { "word": "की", "ref": "hi-0061" }, { "word": "सीटी", "base": "सीटी", "reading": "sīṭī" }, { "word": "बजी", "base": "बजना", "reading": "bajnā" }] }
+  - id: "hi-1532"
+    target: "कढ़ी"
+    reading: "kaṛhī"
+    ipa: "kəɽʱiː"
+    phonetic: "[kəɽʱiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "कढ़ी गाढ़ी है।", reading: "kaṛhī gāṛhī hai.", ipa: "kəɽʱiː ɡaːɽʱiː ɦɛː", bases: [{ "word": "कढ़ी", "base": "कढ़ी", "reading": "kaṛhī" }, { "word": "गाढ़ी", "base": "गाढ़ा", "reading": "gāṛhā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "आज कढ़ी बनाओ।", reading: "āj kaṛhī banāō.", ipa: "aːdʒ kəɽʱiː bənaːoː", bases: [{ "word": "आज", "ref": "hi-0299" }, { "word": "कढ़ी", "base": "कढ़ी", "reading": "kaṛhī" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+  - id: "hi-1533"
+    target: "रायता"
+    reading: "rāytā"
+    ipa: "raːjt̪aː"
+    phonetic: "[raːjt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "खाने के साथ रायता परोसो।", reading: "khānē kē sāth rāytā parōsō.", ipa: "kʰaːneː keː saːt̪ʰ raːjt̪aː pəroːsoː", bases: [{ "word": "खाने", "base": "खाना", "reading": "khānā" }, { "word": "के", "ref": "hi-0065" }, { "word": "साथ", "ref": "hi-0838" }, { "word": "रायता", "base": "रायता", "reading": "rāytā" }, { "word": "परोसो", "base": "परोसना", "reading": "parōsnā" }] }
+      - { target: "रायता ठंडा है।", reading: "rāytā ṭhaṇḍā hai.", ipa: "raːjt̪aː ʈʰəɳɖaː ɦɛː", bases: [{ "word": "रायता", "base": "रायता", "reading": "rāytā" }, { "word": "ठंडा", "base": "ठंडा", "reading": "ṭhaṇḍā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1534"
+    target: "अचार"
+    reading: "acār"
+    ipa: "ətʃaːr"
+    phonetic: "[ətʃaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "अचार तीखा है।", reading: "acār tīkhā hai.", ipa: "ətʃaːr t̪iːkʰaː ɦɛː", bases: [{ "word": "अचार", "base": "अचार", "reading": "acār" }, { "word": "तीखा", "base": "तीखा", "reading": "tīkhā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "रोटी के साथ अचार दो।", reading: "rōṭī kē sāth acār dō.", ipa: "roːʈiː keː saːt̪ʰ ətʃaːr d̪oː", bases: [{ "word": "रोटी", "ref": "hi-0335" }, { "word": "के", "ref": "hi-0065" }, { "word": "साथ", "ref": "hi-0838" }, { "word": "अचार", "base": "अचार", "reading": "acār" }, { "word": "दो", "base": "देना", "reading": "dēnā" }] }
+  - id: "hi-1535"
+    target: "पापड़"
+    reading: "pāpaṛ"
+    ipa: "paːpəɽ"
+    phonetic: "[paːpəɽ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "पापड़ कुरकुरा है।", reading: "pāpaṛ kurkurā hai.", ipa: "paːpəɽ kʊrkʊraː ɦɛː", bases: [{ "word": "पापड़", "base": "पापड़", "reading": "pāpaṛ" }, { "word": "कुरकुरा", "base": "कुरकुरा", "reading": "kurkurā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पापड़ तलो।", reading: "pāpaṛ talō.", ipa: "paːpəɽ t̪əloː", bases: [{ "word": "पापड़", "base": "पापड़", "reading": "pāpaṛ" }, { "word": "तलो", "base": "तलना", "reading": "talnā" }] }
+  - id: "hi-1536"
+    target: "सिरका"
+    reading: "sirkā"
+    ipa: "sɪrkaː"
+    phonetic: "[sɪrkaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सलाद में सिरका डालो।", reading: "salād mēm̐ sirkā ḍālō.", ipa: "səlaːd̪ mẽː sɪrkaː ɖaːloː", bases: [{ "word": "सलाद", "ref": "hi-1007" }, { "word": "में", "ref": "hi-0274" }, { "word": "सिरका", "base": "सिरका", "reading": "sirkā" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+      - { target: "सिरका खट्टा है।", reading: "sirkā khaṭṭā hai.", ipa: "sɪrkaː kʰəʈʈaː ɦɛː", bases: [{ "word": "सिरका", "base": "सिरका", "reading": "sirkā" }, { "word": "खट्टा", "base": "खट्टा", "reading": "khaṭṭā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1537"
+    target: "बेसन"
+    reading: "bēsan"
+    ipa: "beːsən"
+    phonetic: "[beːsən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "बेसन में पानी मिलाओ।", reading: "bēsan mēm̐ pānī milāō.", ipa: "beːsən mẽː paːniː mɪlaːoː", bases: [{ "word": "बेसन", "base": "बेसन", "reading": "bēsan" }, { "word": "में", "ref": "hi-0274" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "मिलाओ", "base": "मिलाना", "reading": "milānā" }] }
+      - { target: "बेसन नरम है।", reading: "bēsan naram hai.", ipa: "beːsən nərəm ɦɛː", bases: [{ "word": "बेसन", "base": "बेसन", "reading": "bēsan" }, { "word": "नरम", "ref": "hi-1538" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1538"
+    target: "नरम"
+    reading: "naram"
+    ipa: "nərəm"
+    phonetic: "[nərəm]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "रोटी नरम है।", reading: "rōṭī naram hai.", ipa: "roːʈiː nərəm ɦɛː", bases: [{ "word": "रोटी", "ref": "hi-0335" }, { "word": "नरम", "base": "नरम", "reading": "naram" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "आटा नरम गूँधो।", reading: "āṭā naram gūm̐dhō.", ipa: "aːʈaː nərəm ɡũːd̪ʱoː", bases: [{ "word": "आटा", "ref": "hi-1509" }, { "word": "नरम", "base": "नरम", "reading": "naram" }, { "word": "गूँधो", "base": "गूँधना", "reading": "gūm̐dhanā" }] }
+  - id: "hi-1539"
+    target: "नमकीन"
+    reading: "namkīn"
+    ipa: "nəmkiːn"
+    phonetic: "[nəmkiːn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह नमकीन है।", reading: "yah namkīn hai.", ipa: "jəɦ nəmkiːn ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "नमकीन", "base": "नमकीन", "reading": "namkīn" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "सब्ज़ी नमकीन है, चीनी मत डालो।", reading: "sabzī namkīn hai, cīnī mat ḍālō.", ipa: "səbziː nəmkiːn ɦɛː tʃiːniː mət̪ ɖaːloː", bases: [{ "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "नमकीन", "base": "नमकीन", "reading": "namkīn" }, { "word": "है", "ref": "hi-0112" }, { "word": "चीनी", "ref": "hi-1015" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+  - id: "hi-1540"
+    target: "कच्चा"
+    reading: "kaccā"
+    ipa: "kətʃtʃaː"
+    phonetic: "[kətʃtʃaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह आम कच्चा है।", reading: "yah ām kaccā hai.", ipa: "jəɦ aːm kətʃtʃaː ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "आम", "ref": "hi-1018" }, { "word": "कच्चा", "base": "कच्चा", "reading": "kaccā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मांस कच्चा मत खाओ।", reading: "māṁs kaccā mat khāō.", ipa: "mãːs kətʃtʃaː mət̪ kʰaːoː", bases: [{ "word": "मांस", "base": "मांस", "reading": "māṁs" }, { "word": "कच्चा", "base": "कच्चा", "reading": "kaccā" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "खाओ", "base": "खाना", "reading": "khānā" }] }
+  - id: "hi-1541"
+    target: "पतला"
+    reading: "patlā"
+    ipa: "pət̪laː"
+    phonetic: "[pət̪laː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "दाल पतली है।", reading: "dāl patlī hai.", ipa: "d̪aːl pət̪liː ɦɛː", bases: [{ "word": "दाल", "ref": "hi-0261" }, { "word": "पतली", "base": "पतला", "reading": "patlā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "दाल पतली है, थोड़ा पानी डालो।", reading: "dāl patlī hai, thōṛā pānī ḍālō.", ipa: "d̪aːl pət̪liː ɦɛː t̪ʰoːɽaː paːniː ɖaːloː", bases: [{ "word": "दाल", "ref": "hi-0261" }, { "word": "पतली", "base": "पतला", "reading": "patlā" }, { "word": "है", "ref": "hi-0112" }, { "word": "थोड़ा", "base": "थोड़ा", "reading": "thōṛā" }, { "word": "पानी", "ref": "hi-0333" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }] }
+  - id: "hi-1542"
+    target: "गाढ़ा"
+    reading: "gāṛhā"
+    ipa: "ɡaːɽʱaː"
+    phonetic: "[ɡaːɽʱaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब्ज़ी गाढ़ी है।", reading: "sabzī gāṛhī hai.", ipa: "səbziː ɡaːɽʱiː ɦɛː", bases: [{ "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "गाढ़ी", "base": "गाढ़ा", "reading": "gāṛhā" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "दही गाढ़ा है।", reading: "dahī gāṛhā hai.", ipa: "d̪əɦiː ɡaːɽʱaː ɦɛː", bases: [{ "word": "दही", "ref": "hi-1012" }, { "word": "गाढ़ा", "base": "गाढ़ा", "reading": "gāṛhā" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1543"
+    target: "कड़वा"
+    reading: "kaṛvā"
+    ipa: "kəɽʋaː"
+    phonetic: "[kəɽʋaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "चाय कड़वी मत बनाओ।", reading: "cāy kaṛvī mat banāō.", ipa: "tʃaːj kəɽʋiː mət̪ bənaːoː", bases: [{ "word": "चाय", "ref": "hi-0334" }, { "word": "कड़वी", "base": "कड़वा", "reading": "kaṛvā" }, { "word": "मत", "base": "मत", "reading": "mat" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }] }
+      - { target: "कड़वा स्वाद अच्छा नहीं है।", reading: "kaṛvā svād acchā nahīm̐ hai.", ipa: "kəɽʋaː sʋaːd̪ ətʃtʃʰaː nəɦĩː ɦɛː", bases: [{ "word": "कड़वा", "base": "कड़वा", "reading": "kaṛvā" }, { "word": "स्वाद", "ref": "hi-1521" }, { "word": "अच्छा", "ref": "hi-0898" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1544"
+    target: "मसालेदार"
+    reading: "masālēdār"
+    ipa: "məsaːleːd̪aːr"
+    phonetic: "[məsaːleːd̪aːr]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "यह सब्ज़ी मसालेदार है।", reading: "yah sabzī masālēdār hai.", ipa: "jəɦ səbziː məsaːleːd̪aːr ɦɛː", bases: [{ "word": "यह", "ref": "hi-0748" }, { "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "मसालेदार", "base": "मसालेदार", "reading": "masālēdār" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "मसालेदार खाना अच्छा है।", reading: "masālēdār khānā acchā hai.", ipa: "məsaːleːd̪aːr kʰaːnaː ətʃtʃʰaː ɦɛː", bases: [{ "word": "मसालेदार", "base": "मसालेदार", "reading": "masālēdār" }, { "word": "खाना", "base": "खाना", "reading": "khānā" }, { "word": "अच्छा", "ref": "hi-0898" }, { "word": "है", "ref": "hi-0112" }] }
+  - id: "hi-1545"
+    target: "उबला"
+    reading: "ublā"
+    ipa: "ʊblaː"
+    phonetic: "[ʊblaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "उबला आलू नरम है।", reading: "ublā ālū naram hai.", ipa: "ʊblaː aːluː nərəm ɦɛː", bases: [{ "word": "उबला", "base": "उबला", "reading": "ublā" }, { "word": "आलू", "ref": "hi-0250" }, { "word": "नरम", "ref": "hi-1538" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "उबला दूध पियो।", reading: "ublā dūdh piyō.", ipa: "ʊblaː d̪uːd̪ʱ pɪjoː", bases: [{ "word": "उबला", "base": "उबला", "reading": "ublā" }, { "word": "दूध", "ref": "hi-0259" }, { "word": "पियो", "base": "पीना", "reading": "pīnā" }] }

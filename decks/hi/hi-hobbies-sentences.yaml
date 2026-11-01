@@ -1,0 +1,119 @@
+schema: 1
+id: "hi-hobbies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1687"
+    target: "मेरा शौक पेंटिंग है।"
+    reading: "mērā śauk pēṇṭiṅg hai."
+    ipa: "meːraː ʃɔːk peːɳʈɪŋɡ ɦɛː"
+    phonetic: "[meːraː ʃɔːk peːɳʈɪŋɡ ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मेरा", "base": "मेरा", "reading": "mērā" }, { "word": "शौक", "base": "शौक", "reading": "śauk" }, { "word": "पेंटिंग", "base": "पेंटिंग", "reading": "pēṇṭiṅg" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1680", kind: "word" }
+      - { id: "f2", word: "हैं", reading: "haim̐", ipa: "ɦɛ̃ː", kind: "form" }
+  - id: "hi-1688"
+    target: "शाम को हम क्रिकेट खेलते हैं।"
+    reading: "śām kō ham krikēṭ khēltē haim̐."
+    ipa: "ʃaːm koː ɦəm krɪkeːʈ kʰeːlt̪eː ɦɛ̃ː"
+    phonetic: "[ʃaːm koː ɦəm krɪkeːʈ kʰeːlt̪eː ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "शाम", "ref": "hi-0303" }, { "word": "को", "ref": "hi-0277" }, { "word": "हम", "ref": "hi-0053" }, { "word": "क्रिकेट", "base": "क्रिकेट", "reading": "krikēṭ" }, { "word": "खेलते", "base": "खेलना", "reading": "khēlnā" }, { "word": "हैं", "ref": "hi-0113" }]
+    confusables:
+      - { id: "w1", ref: "hi-1674", kind: "word" }
+      - { id: "f2", word: "खेलता", reading: "khēltā", ipa: "kʰeːlt̪aː", kind: "form" }
+  - id: "hi-1689"
+    target: "माँ सुबह बाग़वानी करती है।"
+    reading: "mām̐ subah bāġvānī kartī hai."
+    ipa: "mãː sʊbəɦ baːɣʋaːniː kərt̪iː ɦɛː"
+    phonetic: "[mãː sʊbəɦ baːɣʋaːniː kərt̪iː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "माँ", "ref": "hi-0377" }, { "word": "सुबह", "ref": "hi-0302" }, { "word": "बाग़वानी", "base": "बाग़वानी", "reading": "bāġvānī" }, { "word": "करती", "base": "करना", "reading": "karnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1660", kind: "word" }
+      - { id: "f2", word: "करता", reading: "kartā", ipa: "kərt̪aː", kind: "form" }
+  - id: "hi-1690"
+    target: "वह हर रविवार तैरने जाता है।"
+    reading: "vah har ravivār tairnē jātā hai."
+    ipa: "ʋəɦ ɦər rəʋɪʋaːr t̪ɛːrneː dʒaːt̪aː ɦɛː"
+    phonetic: "[ʋəɦ ɦər rəʋɪʋaːr t̪ɛːrneː dʒaːt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "हर", "base": "हर", "reading": "har" }, { "word": "रविवार", "base": "रविवार", "reading": "ravivār" }, { "word": "तैरने", "base": "तैरना", "reading": "tairnā" }, { "word": "जाता", "base": "जाना", "reading": "jānā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1667", kind: "word" }
+      - { id: "f2", word: "तैरना", reading: "tairnā", ipa: "t̪ɛːrnaː", kind: "form" }
+  - id: "hi-1691"
+    target: "मैं गिटार बजाता हूँ।"
+    reading: "maim̐ giṭār bajātā hūm̐."
+    ipa: "mɛ̃ː ɡɪʈaːr bədʒaːt̪aː ɦũː"
+    phonetic: "[mɛ̃ː ɡɪʈaːr bədʒaːt̪aː ɦũː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मैं", "ref": "hi-0745" }, { "word": "गिटार", "base": "गिटार", "reading": "giṭār" }, { "word": "बजाता", "base": "बजाना", "reading": "bajānā" }, { "word": "हूँ", "base": "होना", "reading": "hōnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1653", kind: "word" }
+      - { id: "f2", word: "बजाती", reading: "bajātī", ipa: "bədʒaːt̪iː", kind: "form" }
+  - id: "hi-1692"
+    target: "बच्चे पतंग उड़ाते हैं।"
+    reading: "baccē pataṅg uṛātē haim̐."
+    ipa: "bətʃtʃeː pət̪əŋɡ ʊɽaːt̪eː ɦɛ̃ː"
+    phonetic: "[bətʃtʃeː pət̪əŋɡ ʊɽaːt̪eː ɦɛ̃ː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "बच्चे", "base": "बच्चा", "reading": "baccā" }, { "word": "पतंग", "base": "पतंग", "reading": "pataṅg" }, { "word": "उड़ाते", "base": "उड़ाना", "reading": "uṛānā" }, { "word": "हैं", "ref": "hi-0113" }]
+    confusables:
+      - { id: "w1", ref: "hi-1676", kind: "word" }
+      - { id: "f2", word: "उड़ाता", reading: "uṛātā", ipa: "ʊɽaːt̪aː", kind: "form" }
+  - id: "hi-1693"
+    target: "फ़ुटबॉल की टीम अच्छी खेलती है।"
+    reading: "fuṭbôl kī ṭīm acchī khēltī hai."
+    ipa: "fʊʈbɔl kiː ʈiːm ətʃtʃʰiː kʰeːlt̪iː ɦɛː"
+    phonetic: "[fʊʈbɔl kiː ʈiːm ətʃtʃʰiː kʰeːlt̪iː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "फ़ुटबॉल", "base": "फ़ुटबॉल", "reading": "fuṭbôl" }, { "word": "की", "ref": "hi-0061" }, { "word": "टीम", "base": "टीम", "reading": "ṭīm" }, { "word": "अच्छी", "base": "अच्छा", "reading": "acchā" }, { "word": "खेलती", "base": "खेलना", "reading": "khēlnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1679", kind: "word" }
+      - { id: "f2", word: "खेलते", reading: "khēltē", ipa: "kʰeːlt̪eː", kind: "form" }
+  - id: "hi-1694"
+    target: "शतरंज में दिमाग़ लगता है।"
+    reading: "śatrañj mēm̐ dimāġ lagtā hai."
+    ipa: "ʃət̪rəɲdʒ mẽː d̪ɪmaːɣ ləɡt̪aː ɦɛː"
+    phonetic: "[ʃət̪rəɲdʒ mẽː d̪ɪmaːɣ ləɡt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "शतरंज", "base": "शतरंज", "reading": "śatrañj" }, { "word": "में", "ref": "hi-0274" }, { "word": "दिमाग़", "base": "दिमाग़", "reading": "dimāġ" }, { "word": "लगता", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1670", kind: "word" }
+      - { id: "f2", word: "लगती", reading: "lagtī", ipa: "ləɡt̪iː", kind: "form" }
+  - id: "hi-1695"
+    target: "रविवार को नृत्य और गाना सुनना अच्छा लगता है।"
+    reading: "ravivār kō nrity aur gānā sunnā acchā lagtā hai."
+    ipa: "rəʋɪʋaːr koː nrɪt̪j ɔːr ɡaːnaː sʊnnaː ətʃtʃʰaː ləɡt̪aː ɦɛː"
+    phonetic: "[rəʋɪʋaːr koː nrɪt̪j ɔːr ɡaːnaː sʊnnaː ətʃtʃʰaː ləɡt̪aː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "रविवार", "base": "रविवार", "reading": "ravivār" }, { "word": "को", "ref": "hi-0277" }, { "word": "नृत्य", "base": "नृत्य", "reading": "nrity" }, { "word": "और", "ref": "hi-0337" }, { "word": "गाना", "base": "गाना", "reading": "gānā" }, { "word": "सुनना", "base": "सुनना", "reading": "sunnā" }, { "word": "अच्छा", "base": "अच्छा", "reading": "acchā" }, { "word": "लगता", "base": "लगना", "reading": "lagnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-1682", kind: "word" }
+      - { id: "f2", word: "सुनने", reading: "sunnē", ipa: "sʊnneː", kind: "form" }
+  - id: "hi-1696"
+    target: "सैर करने के लिए पार्क जाओ।"
+    reading: "sair karnē kē liē pārk jāō."
+    ipa: "sɛːr kərneː keː lɪeː paːrk dʒaːoː"
+    phonetic: "[sɛːr kərneː keː lɪeː paːrk dʒaːoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "सैर", "base": "सैर", "reading": "sair" }, { "word": "करने", "base": "करना", "reading": "karnā" }, { "word": "के", "ref": "hi-0065" }, { "word": "लिए", "base": "लिए", "reading": "liē" }, { "word": "पार्क", "base": "पार्क", "reading": "pārk" }, { "word": "जाओ", "base": "जाना", "reading": "jānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1085", kind: "word" }
+      - { id: "f2", word: "करो", reading: "karō", ipa: "kəroː", kind: "form" }
