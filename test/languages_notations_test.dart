@@ -216,7 +216,8 @@ void main() {
     final text = l10n(tester);
     expect(find.byKey(const ValueKey<String>('skill-spoken')), findsOneWidget);
     expect(find.text(text.languagesDialectLabel), findsNothing);
-    // Learn, then Read, then Leave: never Read and Write.
+    // The IPA starts at Learn: Read, Leave, Learn (the IPA has decks to
+    // learn), Read. Never Read and Write.
     final seen = <ScriptLevel>[];
     for (var i = 0; i < 4; i++) {
       await tapKey(tester, 'skill-script:ipa');
@@ -225,9 +226,9 @@ void main() {
     expect(seen, <ScriptLevel>[
       ScriptLevel.read,
       ScriptLevel.leave,
+      ScriptLevel.learn,
       ScriptLevel.read,
-      ScriptLevel.leave,
-    ], reason: 'no decks here to learn, and no Write level');
+    ], reason: 'no Write level');
     expect(
       state.settings.languageSkillsOf('ipa')!.keys,
       isNot(contains('write:ipa')),
@@ -320,6 +321,8 @@ void main() {
       );
       await tester.pumpAndSettle();
       await tapKey(tester, 'add-ipa');
+      // Leave, Learn, Hear: two taps on the Spoken pill reach Hear.
+      await tapKey(tester, 'skill-spoken');
       await tapKey(tester, 'skill-spoken');
       await tester.tap(find.text(l10n(tester).languagesAddLanguage('IPA')));
       await tester.pumpAndSettle();
@@ -342,6 +345,8 @@ void main() {
       );
       await tester.pumpAndSettle();
       await tapKey(tester, 'add-qbe');
+      // Leave, Learn, Read, Read and Write: three taps on the script pill.
+      await tapKey(tester, 'skill-script:braille');
       await tapKey(tester, 'skill-script:braille');
       await tapKey(tester, 'skill-script:braille');
       await tester.tap(
