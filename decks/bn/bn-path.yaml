@@ -524,11 +524,15 @@ units:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
   - decks: ["bn-reading-government"]
     words: 0
-  - planned: { id: "bn-grammar-purpose", grammar: "purpose" }
+  - decks: ["bn-grammar-purpose", "bn-grammar-purpose-sentences"]
+    words: 0
+    grammar: ["purpose"]
     listening_passages:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
+  - decks: ["bn-reading-purpose"]
+    words: 0
   - planned: { id: "bn-technology", theme: "technology", words: 50 }
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }

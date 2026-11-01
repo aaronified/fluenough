@@ -1,0 +1,68 @@
+schema: 1
+id: "bn-grammar-purpose"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["to", "for"]
+  entries:
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "to": "আসতে", "for": "আসার জন্য" }
+      readings: { "to": "āsote", "for": "āsār jonn" }
+      ipas: { "to": "asot̪e", "for": "asar dʒonn" }
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "to": "যেতে", "for": "যাওয়ার জন্য" }
+      readings: { "to": "jete", "for": "jāoyār jonn" }
+      ipas: { "to": "dʒet̪e", "for": "dʒaojar dʒonn" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "to": "খেতে", "for": "খাওয়ার জন্য" }
+      readings: { "to": "khete", "for": "khāoyār jonn" }
+      ipas: { "to": "kʰet̪e", "for": "kʰaojar dʒonn" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "to": "করতে", "for": "করার জন্য" }
+      readings: { "to": "kôrote", "for": "kôrār jonn" }
+      ipas: { "to": "kɔrot̪e", "for": "kɔrar dʒonn" }
+    - lemma: "থাকা"
+      key: "thaka"
+      reading: "thākā"
+      ipa: "t̪ʰaka"
+      forms: { "to": "থাকতে", "for": "থাকার জন্য" }
+      readings: { "to": "thākote", "for": "thākār jonn" }
+      ipas: { "to": "t̪ʰakot̪e", "for": "t̪ʰakar dʒonn" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "to": "দেখতে", "for": "দেখার জন্য" }
+      readings: { "to": "dekhote", "for": "dekhār jonn" }
+      ipas: { "to": "d̪ekʰot̪e", "for": "d̪ekʰar dʒonn" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "to": "বলতে", "for": "বলার জন্য" }
+      readings: { "to": "bôlote", "for": "bôlār jonn" }
+      ipas: { "to": "bɔlot̪e", "for": "bɔlar dʒonn" }
+    - lemma: "পাওয়া"
+      key: "paoa"
+      reading: "pāoyā"
+      ipa: "paoja"
+      forms: { "to": "পেতে", "for": "পাওয়ার জন্য" }
+      readings: { "to": "pete", "for": "pāoyār jonn" }
+      ipas: { "to": "pet̪e", "for": "paojar dʒonn" }
