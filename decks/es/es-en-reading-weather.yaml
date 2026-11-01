@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-weather"
+name: "Reading: the weather"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the weather: today's sky and the wind, and a cold winter day. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-el-tiempo-de-hoy"
+    title: "Today's weather"
+    theme: "weather"
+    sentences:
+      - text: "Hoy el cielo está despejado y hace sol."
+      - text: "Por la tarde el viento sopla fuerte."
+      - text: "Mañana llueve, así que lleva el paraguas."
+      - text: "Por la noche hace fresco."
+    questions:
+      - id: "es-1153"
+        prompt: { en: "What is the weather like today?" }
+        options:
+          - { en: "Clear and sunny" }
+          - { en: "Rainy and windy" }
+          - { en: "Snowy" }
+        answer: 1
+      - id: "es-1154"
+        prompt: { en: "What should the speaker take tomorrow?" }
+        options:
+          - { en: "A hat" }
+          - { en: "An umbrella" }
+          - { en: "A coat" }
+        answer: 2
+      - id: "es-1155"
+        prompt: { en: "When does the wind blow strongly?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "At night" }
+          - { en: "In the afternoon" }
+        answer: 3
+  - id: "es-un-dia-de-invierno"
+    title: "A winter day"
+    theme: "weather"
+    sentences:
+      - text: "En invierno hace frío y a veces nieva."
+      - text: "Ayer nevó, y hoy brilla el sol."
+      - text: "Hoy la temperatura es de cinco grados."
+      - text: "Por la mañana hay niebla."
+    questions:
+      - id: "es-1156"
+        prompt: { en: "What happened yesterday?" }
+        options:
+          - { en: "It rained" }
+          - { en: "It snowed" }
+          - { en: "It was windy" }
+        answer: 2
+      - id: "es-1157"
+        prompt: { en: "How cold is it today?" }
+        options:
+          - { en: "Zero degrees" }
+          - { en: "Ten degrees" }
+          - { en: "Five degrees" }
+        answer: 3
+      - id: "es-1158"
+        prompt: { en: "When is there fog?" }
+        options:
+          - { en: "At noon" }
+          - { en: "In the morning" }
+          - { en: "At night" }
+        answer: 2

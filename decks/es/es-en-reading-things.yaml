@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-things"
+name: "Reading: things we carry and use"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about things: a suitcase packed for a trip, and the things in a home that do not work. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-la-maleta"
+    title: "The suitcase"
+    theme: "things"
+    sentences:
+      - text: "Mi maleta es grande, pero la cartera es pequeña."
+      - text: "Tengo el cargador, la cámara y el peine."
+      - text: "El paraguas está en la maleta."
+      - text: "¿Dónde está el bolígrafo?"
+    questions:
+      - id: "es-1206"
+        prompt: { en: "Which thing is big?" }
+        options:
+          - { en: "The suitcase" }
+          - { en: "The wallet" }
+          - { en: "The pen" }
+        answer: 1
+      - id: "es-1207"
+        prompt: { en: "What does the speaker have?" }
+        options:
+          - { en: "A charger, a camera and a comb" }
+          - { en: "A pen, a pencil and a notebook" }
+          - { en: "A towel, soap and a spoon" }
+        answer: 1
+      - id: "es-1208"
+        prompt: { en: "Where is the umbrella?" }
+        options:
+          - { en: "In the wallet" }
+          - { en: "In the suitcase" }
+          - { en: "On the bed" }
+        answer: 2
+  - id: "es-cosas-en-casa"
+    title: "Things at home"
+    theme: "things"
+    sentences:
+      - text: "La toalla está húmeda."
+      - text: "La bombilla no funciona."
+      - text: "La cuchara está sucia, dame una limpia."
+      - text: "No rompas el plato."
+    questions:
+      - id: "es-1209"
+        prompt: { en: "What is wrong with the light?" }
+        options:
+          - { en: "It does not work" }
+          - { en: "It is too big" }
+          - { en: "It is dirty" }
+        answer: 1
+      - id: "es-1210"
+        prompt: { en: "What state is the spoon in?" }
+        options:
+          - { en: "Clean" }
+          - { en: "Dirty" }
+          - { en: "Broken" }
+        answer: 2
+      - id: "es-1211"
+        prompt: { en: "What should the reader not do?" }
+        options:
+          - { en: "Wash the spoon" }
+          - { en: "Break the plate" }
+          - { en: "Cook the soup" }
+        answer: 2

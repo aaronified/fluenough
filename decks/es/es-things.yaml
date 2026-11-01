@@ -1,0 +1,431 @@
+schema: 1
+id: "es-things"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1165"
+    target: "el objeto"
+    ipa: "el obˈxeto"
+    phonetic: "[el oβˈxet̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "objeto", base: "objeto" }]
+    examples:
+      - { target: "Este objeto es muy útil.", ipa: "ˈeste obˈxeto es muj uˈtil", bases: [{ word: "Este", base: "este" }, { word: "objeto", base: "objeto" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "útil", ref: "es-1197" }] }
+      - { target: "¿Qué es este objeto?", ipa: "ke es ˈeste obˈxeto", bases: [{ word: "Qué", ref: "es-0054" }, { word: "es", ref: "es-0022" }, { word: "este", base: "este" }, { word: "objeto", base: "objeto" }] }
+  - id: "es-1166"
+    target: "la cosa"
+    ipa: "la ˈkosa"
+    phonetic: "[la ˈkosa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cosa", base: "cosa" }]
+    examples:
+      - { target: "Tengo muchas cosas en la maleta.", ipa: "ˈtengo ˈmutʃas ˈkosas en la maˈleta", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "cosas", base: "cosa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }] }
+      - { target: "Es una cosa pequeña.", ipa: "es ˈuna ˈkosa peˈkeɲa", bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "cosa", base: "cosa" }, { word: "pequeña", ref: "es-0032" }] }
+  - id: "es-1167"
+    target: "la maleta"
+    ipa: "la maˈleta"
+    phonetic: "[la maˈlet̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "maleta", base: "maleta" }]
+    examples:
+      - { target: "Mi maleta es grande.", ipa: "mi maˈleta es ˈɡɾande", bases: [{ word: "Mi", ref: "es-0129" }, { word: "maleta", base: "maleta" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Necesito una maleta más grande.", ipa: "neθeˈsito ˈuna maˈleta mas ˈɡɾande", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "maleta", base: "maleta" }, { word: "más", ref: "es-0363" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-1168"
+    target: "la cartera"
+    ipa: "la kaɾˈteɾa"
+    phonetic: "[la kaɾˈt̪eɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cartera", base: "cartera" }]
+    examples:
+      - { target: "Tengo la cartera en el bolso.", ipa: "ˈtengo la kaɾˈteɾa en el ˈbolso", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "la", base: "la" }, { word: "cartera", base: "cartera" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bolso", ref: "es-0880" }] }
+      - { target: "¿Dónde está mi cartera?", ipa: "ˈdonde esˈta mi kaɾˈteɾa", bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "mi", ref: "es-0129" }, { word: "cartera", base: "cartera" }] }
+  - id: "es-1169"
+    target: "el cuaderno"
+    ipa: "el kwaˈðeɾno"
+    phonetic: "[el kwaˈðeɾno]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cuaderno", base: "cuaderno" }]
+    examples:
+      - { target: "Escribo en el cuaderno.", ipa: "esˈkɾiβo en el kwaˈðeɾno", bases: [{ word: "Escribo", ref: "es-0297" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cuaderno", base: "cuaderno" }] }
+      - { target: "El cuaderno es azul.", ipa: "el kwaˈðeɾno es aˈθul", bases: [{ word: "El", base: "el" }, { word: "cuaderno", base: "cuaderno" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }] }
+  - id: "es-1170"
+    target: "el lápiz"
+    ipa: "el ˈlapiθ"
+    phonetic: "[el ˈlapiθ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "lápiz", base: "lápiz" }]
+    examples:
+      - { target: "Necesito un lápiz.", ipa: "neθeˈsito un ˈlapiθ", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "lápiz", base: "lápiz" }] }
+      - { target: "El lápiz está en la mesa.", ipa: "el ˈlapiθ esˈta en la ˈmesa", bases: [{ word: "El", base: "el" }, { word: "lápiz", base: "lápiz" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+  - id: "es-1171"
+    target: "el bolígrafo"
+    ipa: "el boˈliɣɾafo"
+    phonetic: "[el βoˈliɣɾafo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "bolígrafo", base: "bolígrafo" }]
+    examples:
+      - { target: "Este bolígrafo no escribe.", ipa: "ˈeste boˈliɣɾafo no esˈkɾiβe", bases: [{ word: "Este", base: "este" }, { word: "bolígrafo", base: "bolígrafo" }, { word: "no", ref: "es-0043" }, { word: "escribe", ref: "es-0297" }] }
+      - { target: "¿Tienes un bolígrafo?", ipa: "ˈtjenes un boˈliɣɾafo", bases: [{ word: "Tienes", ref: "es-0024" }, { word: "un", base: "un" }, { word: "bolígrafo", base: "bolígrafo" }] }
+  - id: "es-1172"
+    target: "la cámara"
+    ipa: "la ˈkamaɾa"
+    phonetic: "[la ˈkamaɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cámara", base: "cámara" }]
+    examples:
+      - { target: "Mi cámara es nueva.", ipa: "mi ˈkamaɾa es ˈnweβa", bases: [{ word: "Mi", ref: "es-0129" }, { word: "cámara", base: "cámara" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }] }
+      - { target: "Tomo una foto con la cámara.", ipa: "ˈtomo ˈuna ˈfoto kon la ˈkamaɾa", bases: [{ word: "Tomo", ref: "es-0906" }, { word: "una", base: "una" }, { word: "foto", ref: "es-1184" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "cámara", base: "cámara" }] }
+  - id: "es-1173"
+    target: "el ordenador"
+    ipa: "el oɾdenaˈdoɾ"
+    phonetic: "[el oɾðenaˈðoɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "ordenador", base: "ordenador" }]
+    examples:
+      - { target: "El ordenador está en la mesa.", ipa: "el oɾdenaˈdoɾ esˈta en la ˈmesa", bases: [{ word: "El", base: "el" }, { word: "ordenador", base: "ordenador" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+      - { target: "Trabajo con el ordenador.", ipa: "tɾaˈβaxo kon el oɾdenaˈdoɾ", bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "ordenador", base: "ordenador" }] }
+  - id: "es-1174"
+    target: "el cargador"
+    ipa: "el kaɾɣaˈdoɾ"
+    phonetic: "[el kaɾɣaˈðoɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cargador", base: "cargador" }]
+    examples:
+      - { target: "¿Dónde está el cargador?", ipa: "ˈdonde esˈta el kaɾɣaˈdoɾ", bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "cargador", base: "cargador" }] }
+      - { target: "Necesito el cargador del móvil.", ipa: "neθeˈsito el kaɾɣaˈdoɾ del ˈmoβil", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "cargador", base: "cargador" }, { word: "del", base: "de" }, { word: "móvil", ref: "es-0920" }] }
+  - id: "es-1175"
+    target: "el peine"
+    ipa: "el ˈpejne"
+    phonetic: "[el ˈpejne]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "peine", base: "peine" }]
+    examples:
+      - { target: "Uso el peine por la mañana.", ipa: "ˈuso el ˈpejne poɾ la maˈɲana", bases: [{ word: "Uso", ref: "es-0287" }, { word: "el", base: "el" }, { word: "peine", base: "peine" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }] }
+      - { target: "El peine es de plástico.", ipa: "el ˈpejne es de ˈplastiko", bases: [{ word: "El", base: "el" }, { word: "peine", base: "peine" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "plástico", base: "plástico" }] }
+  - id: "es-1176"
+    target: "la toalla"
+    ipa: "la toˈaʝa"
+    phonetic: "[la t̪oˈaʝa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "toalla", base: "toalla" }]
+    examples:
+      - { target: "La toalla está húmeda.", ipa: "la toˈaʝa esˈta ˈumeða", bases: [{ word: "La", base: "la" }, { word: "toalla", base: "toalla" }, { word: "está", ref: "es-0023" }, { word: "húmeda", ref: "es-1141" }] }
+      - { target: "Necesito una toalla limpia.", ipa: "neθeˈsito ˈuna toˈaʝa ˈlimpja", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "toalla", base: "toalla" }, { word: "limpia", ref: "es-0416" }] }
+  - id: "es-1177"
+    target: "el jabón"
+    ipa: "el xaˈβon"
+    phonetic: "[el xaˈβon]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "jabón", base: "jabón" }]
+    examples:
+      - { target: "Me lavo las manos con jabón.", ipa: "me ˈlaβo las ˈmanos kon xaˈβon", bases: [{ word: "Me", base: "me" }, { word: "lavo", ref: "es-0286" }, { word: "las", base: "las" }, { word: "manos", ref: "es-0738" }, { word: "con", base: "con" }, { word: "jabón", base: "jabón" }] }
+      - { target: "El jabón está en la ducha.", ipa: "el xaˈβon esˈta en la ˈdutʃa", bases: [{ word: "El", base: "el" }, { word: "jabón", base: "jabón" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ducha", ref: "es-0817" }] }
+  - id: "es-1178"
+    target: "la bombilla"
+    ipa: "la bomˈbiʝa"
+    phonetic: "[la βomˈbiʝa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "bombilla", base: "bombilla" }]
+    examples:
+      - { target: "La bombilla no funciona.", ipa: "la bomˈbiʝa no funˈθjona", bases: [{ word: "La", base: "la" }, { word: "bombilla", base: "bombilla" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }] }
+      - { target: "Cambia la bombilla, por favor.", ipa: "ˈkambja la bomˈbiʝa poɾ faˈβoɾ", bases: [{ word: "Cambia", ref: "es-0588" }, { word: "la", base: "la" }, { word: "bombilla", base: "bombilla" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+  - id: "es-1179"
+    target: "la cuchara"
+    ipa: "la kuˈtʃaɾa"
+    phonetic: "[la kuˈtʃaɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cuchara", base: "cuchara" }]
+    examples:
+      - { target: "Como la sopa con una cuchara.", ipa: "ˈkomo la ˈsopa kon ˈuna kuˈtʃaɾa", bases: [{ word: "Como", ref: "es-0028" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "con", base: "con" }, { word: "una", base: "una" }, { word: "cuchara", base: "cuchara" }] }
+      - { target: "La cuchara está sucia.", ipa: "la kuˈtʃaɾa esˈta ˈsuθja", bases: [{ word: "La", base: "la" }, { word: "cuchara", base: "cuchara" }, { word: "está", ref: "es-0023" }, { word: "sucia", ref: "es-0417" }] }
+  - id: "es-1180"
+    target: "el tenedor"
+    ipa: "el teneˈdoɾ"
+    phonetic: "[el t̪eneˈðoɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "tenedor", base: "tenedor" }]
+    examples:
+      - { target: "Necesito un tenedor.", ipa: "neθeˈsito un teneˈðoɾ", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "tenedor", base: "tenedor" }] }
+      - { target: "El tenedor está a la izquierda.", ipa: "el teneˈðoɾ esˈta a la iθˈkjeɾða", bases: [{ word: "El", base: "el" }, { word: "tenedor", base: "tenedor" }, { word: "está", ref: "es-0023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", ref: "es-0715" }] }
+  - id: "es-1181"
+    target: "el cuchillo"
+    ipa: "el kuˈtʃiʝo"
+    phonetic: "[el kuˈtʃiʝo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cuchillo", base: "cuchillo" }]
+    examples:
+      - { target: "Corta el pan con el cuchillo.", ipa: "ˈkoɾta el pan kon el kuˈtʃiʝo", bases: [{ word: "Corta", base: "cortar" }, { word: "el", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "con", base: "con" }, { word: "cuchillo", base: "cuchillo" }] }
+      - { target: "El cuchillo está en la mesa.", ipa: "el kuˈtʃiʝo esˈta en la ˈmesa", bases: [{ word: "El", base: "el" }, { word: "cuchillo", base: "cuchillo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+  - id: "es-1182"
+    target: "la pila"
+    ipa: "la ˈpila"
+    phonetic: "[la ˈpila]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "pila", base: "pila" }]
+    examples:
+      - { target: "Esta pila está vacía.", ipa: "ˈesta ˈpila esˈta baˈθia", bases: [{ word: "Esta", base: "este" }, { word: "pila", base: "pila" }, { word: "está", ref: "es-0023" }, { word: "vacía", ref: "es-0428" }] }
+      - { target: "Necesito una pila nueva.", ipa: "neθeˈsito ˈuna ˈpila ˈnweβa", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "pila", base: "pila" }, { word: "nueva", ref: "es-0035" }] }
+  - id: "es-1183"
+    target: "el mando"
+    ipa: "el ˈmando"
+    phonetic: "[el ˈman̪d̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "mando", base: "mando" }]
+    examples:
+      - { target: "¿Dónde está el mando?", ipa: "ˈdonde esˈta el ˈmando", bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "mando", base: "mando" }] }
+      - { target: "Dame el mando, por favor.", ipa: "ˈdame el ˈmando poɾ faˈβoɾ", bases: [{ word: "Dame", base: "dar" }, { word: "el", base: "el" }, { word: "mando", base: "mando" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+  - id: "es-1184"
+    target: "la foto"
+    ipa: "la ˈfoto"
+    phonetic: "[la ˈfot̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "foto", base: "foto" }]
+    examples:
+      - { target: "Esta foto es bonita.", ipa: "ˈesta ˈfoto es boˈnita", bases: [{ word: "Esta", base: "este" }, { word: "foto", base: "foto" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }] }
+      - { target: "Quiero ver tus fotos.", ipa: "ˈkjeɾo beɾ tus ˈfotos", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "ver", base: "ver" }, { word: "tus", base: "tu" }, { word: "fotos", base: "foto" }] }
+  - id: "es-1185"
+    target: "la pantalla"
+    ipa: "la panˈtaʝa"
+    phonetic: "[la pan̪ˈt̪aʝa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "pantalla", base: "pantalla" }]
+    examples:
+      - { target: "La pantalla del móvil es grande.", ipa: "la panˈtaʝa del ˈmoβil es ˈɡɾande", bases: [{ word: "La", base: "la" }, { word: "pantalla", base: "pantalla" }, { word: "del", base: "de" }, { word: "móvil", ref: "es-0920" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Mira la pantalla.", ipa: "ˈmiɾa la panˈtaʝa", bases: [{ word: "Mira", ref: "es-0292" }, { word: "la", base: "la" }, { word: "pantalla", base: "pantalla" }] }
+  - id: "es-1186"
+    target: "la moneda"
+    ipa: "la moˈneða"
+    phonetic: "[la moˈneða]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "moneda", base: "moneda" }]
+    examples:
+      - { target: "Tengo una moneda en el bolsillo.", ipa: "ˈtengo ˈuna moˈneða en el bolˈsiʝo", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "moneda", base: "moneda" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bolsillo", base: "bolsillo" }] }
+      - { target: "Esta moneda es de un euro.", ipa: "ˈesta moˈneða es de un eˈuɾo", bases: [{ word: "Esta", base: "este" }, { word: "moneda", base: "moneda" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "euro", ref: "es-0550" }] }
+  - id: "es-1187"
+    target: "la escoba"
+    ipa: "la esˈkoba"
+    phonetic: "[la esˈkoβa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "escoba", base: "escoba" }]
+    examples:
+      - { target: "Barro el suelo con la escoba.", ipa: "ˈbaro el ˈswelo kon la esˈkoba", bases: [{ word: "Barro", base: "barrer" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "escoba", base: "escoba" }] }
+      - { target: "La escoba está detrás de la puerta.", ipa: "la esˈkoba esˈta deˈtɾas de la ˈpweɾta", bases: [{ word: "La", base: "la" }, { word: "escoba", base: "escoba" }, { word: "está", ref: "es-0023" }, { word: "detrás", base: "detrás" }, { word: "de", base: "de" }, { word: "puerta", ref: "es-0007" }] }
+  - id: "es-1188"
+    target: "guardar"
+    ipa: "ɡwaɾˈdaɾ"
+    phonetic: "[ɡwaɾˈðaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Guardo las cosas en la caja.", ipa: "ˈɡwaɾdo las ˈkosas en la ˈkaxa", bases: [{ word: "Guardo", base: "guardar" }, { word: "las", base: "las" }, { word: "cosas", base: "cosa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "caja", ref: "es-0382" }] }
+      - { target: "Guardar el dinero es importante.", ipa: "ɡwaɾˈdaɾ el diˈnero es impoɾˈtante", bases: [{ word: "Guardar", base: "guardar" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }] }
+  - id: "es-1189"
+    target: "romper"
+    ipa: "roˈmpeɾ"
+    phonetic: "[roˈmpeɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Rompí la taza.", ipa: "romˈpi la ˈtaθa", bases: [{ word: "Rompí", base: "romper" }, { word: "la", base: "la" }, { word: "taza", ref: "es-0383" }] }
+      - { target: "No rompas el plato.", ipa: "no ˈrompas el ˈplato", bases: [{ word: "No", ref: "es-0043" }, { word: "rompas", base: "romper" }, { word: "el", base: "el" }, { word: "plato", ref: "es-0641" }] }
+  - id: "es-1190"
+    target: "dejar"
+    ipa: "deˈxaɾ"
+    phonetic: "[d̪eˈxaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dejo el paraguas en casa.", ipa: "ˈdexo el paɾaˈɣwas en ˈkasa", bases: [{ word: "Dejo", base: "dejar" }, { word: "el", base: "el" }, { word: "paraguas", ref: "es-1123" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }] }
+      - { target: "Deja la maleta aquí.", ipa: "ˈdexa la maˈleta aˈki", bases: [{ word: "Deja", base: "dejar" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-1191"
+    target: "recoger"
+    ipa: "rekoˈxeɾ"
+    phonetic: "[rekoˈxeɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Recojo las cosas del suelo.", ipa: "reˈkoxo las ˈkosas del ˈswelo", bases: [{ word: "Recojo", base: "recoger" }, { word: "las", base: "las" }, { word: "cosas", base: "cosa" }, { word: "del", base: "de" }, { word: "suelo", ref: "es-0819" }] }
+      - { target: "Tengo que recoger el cuarto.", ipa: "ˈtengo ke rekoˈxeɾ el ˈkwaɾto", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "que", base: "que" }, { word: "recoger", base: "recoger" }, { word: "el", base: "el" }, { word: "cuarto", ref: "es-0804" }] }
+  - id: "es-1192"
+    target: "cargar"
+    ipa: "kaɾˈɣaɾ"
+    phonetic: "[kaɾˈɣaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cargo el móvil por la noche.", ipa: "ˈkaɾɣo el ˈmoβil poɾ la ˈnotʃe", bases: [{ word: "Cargo", base: "cargar" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }] }
+      - { target: "¿Cargas el ordenador?", ipa: "ˈkaɾɣas el oɾdenaˈdoɾ", bases: [{ word: "Cargas", base: "cargar" }, { word: "el", base: "el" }, { word: "ordenador", ref: "es-1173" }] }
+  - id: "es-1193"
+    target: "prestar"
+    ipa: "pɾesˈtaɾ"
+    phonetic: "[pɾesˈt̪aɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Me prestas el lápiz?", ipa: "me ˈpɾestas el ˈlapiθ", bases: [{ word: "Me", base: "me" }, { word: "prestas", base: "prestar" }, { word: "el", base: "el" }, { word: "lápiz", ref: "es-1170" }] }
+      - { target: "Te presto mi bolígrafo.", ipa: "te ˈpɾesto mi boˈliɣɾafo", bases: [{ word: "Te", base: "te" }, { word: "presto", base: "prestar" }, { word: "mi", ref: "es-0129" }, { word: "bolígrafo", ref: "es-1171" }] }
+  - id: "es-1194"
+    target: "pesado"
+    ipa: "peˈsaðo"
+    phonetic: "[peˈsaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "pesado", base: "pesado" }]
+    examples:
+      - { target: "Esta maleta es muy pesada.", ipa: "ˈesta maˈleta es muj peˈsaða", bases: [{ word: "Esta", base: "este" }, { word: "maleta", ref: "es-1167" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "pesada", base: "pesado" }] }
+      - { target: "El paquete es pesado.", ipa: "el paˈkete es peˈsaðo", bases: [{ word: "El", base: "el" }, { word: "paquete", ref: "es-0378" }, { word: "es", ref: "es-0022" }, { word: "pesado", base: "pesado" }] }
+  - id: "es-1195"
+    target: "ligero"
+    ipa: "liˈɣeɾo"
+    phonetic: "[liˈɣeɾo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ligero", base: "ligero" }]
+    antonyms:
+      - { id: "heavy", ref: "es-1194" }
+    examples:
+      - { target: "Mi mochila es ligera.", ipa: "mi moˈtʃila es liˈɣeɾa", bases: [{ word: "Mi", ref: "es-0129" }, { word: "mochila", ref: "es-0916" }, { word: "es", ref: "es-0022" }, { word: "ligera", base: "ligero" }] }
+      - { target: "Un bolso ligero es mejor.", ipa: "un ˈbolso liˈɣeɾo es meˈxoɾ", bases: [{ word: "Un", base: "un" }, { word: "bolso", ref: "es-0880" }, { word: "ligero", base: "ligero" }, { word: "es", ref: "es-0022" }, { word: "mejor", base: "mejor" }] }
+  - id: "es-1196"
+    target: "roto"
+    ipa: "ˈroto"
+    phonetic: "[ˈrot̪o]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "roto", base: "roto" }]
+    examples:
+      - { target: "La pantalla está rota.", ipa: "la panˈtaʝa esˈta ˈrota", bases: [{ word: "La", base: "la" }, { word: "pantalla", ref: "es-1185" }, { word: "está", ref: "es-0023" }, { word: "rota", base: "roto" }] }
+      - { target: "El reloj está roto.", ipa: "el reˈlox esˈta ˈroto", bases: [{ word: "El", base: "el" }, { word: "reloj", ref: "es-0845" }, { word: "está", ref: "es-0023" }, { word: "roto", base: "roto" }] }
+  - id: "es-1197"
+    target: "útil"
+    ipa: "uˈtil"
+    phonetic: "[uˈt̪il]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "útil", base: "útil" }]
+    examples:
+      - { target: "Un cargador es muy útil.", ipa: "un kaɾɣaˈdoɾ es muj uˈtil", bases: [{ word: "Un", base: "un" }, { word: "cargador", ref: "es-1174" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "útil", base: "útil" }] }
+      - { target: "Es útil tener una cámara.", ipa: "es uˈtil teˈneɾ ˈuna ˈkamaɾa", bases: [{ word: "Es", ref: "es-0022" }, { word: "útil", base: "útil" }, { word: "tener", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cámara", ref: "es-1172" }] }

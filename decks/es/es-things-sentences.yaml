@@ -1,0 +1,81 @@
+schema: 1
+id: "es-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1198"
+    target: "Pongo la cartera y las llaves en la maleta."
+    ipa: "ˈpongo la kaɾˈteɾa i las ˈʝaβes en la maˈleta"
+    phonetic: "[ˈponɡo la kaɾˈt̪eɾa i las ˈʝaβes en la maˈlet̪a]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "cartera", ref: "es-1168" }, { word: "y", ref: "es-0048" }, { word: "las", base: "las" }, { word: "llaves", ref: "es-0877" }, { word: "en", base: "en" }, { word: "maleta", ref: "es-1167" }]
+    confusables: [{ id: "bag", ref: "es-0380", kind: "word" }, { id: "backpack", ref: "es-0916", kind: "word" }]
+  - id: "es-1199"
+    target: "El cargador del móvil está en la mesa."
+    ipa: "el kaɾɣaˈdoɾ del ˈmoβil esˈta en la ˈmesa"
+    phonetic: "[el kaɾɣaˈðoɾ ðel ˈmoβil esˈt̪a en la ˈmesa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "cargador", ref: "es-1174" }, { word: "del", base: "de" }, { word: "móvil", ref: "es-0920" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+    confusables: [{ id: "battery", ref: "es-1182", kind: "word" }, { id: "remote", ref: "es-1183", kind: "word" }]
+  - id: "es-1200"
+    target: "Mira la foto en la pantalla del ordenador."
+    ipa: "ˈmiɾa la ˈfoto en la panˈtaʝa del oɾdenaˈdoɾ"
+    phonetic: "[ˈmiɾa la ˈfot̪o en la pan̪ˈt̪aʝa ðel oɾðenaˈðoɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mira", ref: "es-0292" }, { word: "la", base: "la" }, { word: "foto", ref: "es-1184" }, { word: "en", base: "en" }, { word: "pantalla", ref: "es-1185" }, { word: "del", base: "de" }, { word: "ordenador", ref: "es-1173" }]
+    confusables: [{ id: "camera", ref: "es-1172", kind: "word" }, { id: "remote", ref: "es-1183", kind: "word" }]
+  - id: "es-1201"
+    target: "Dejo la cuchara y el tenedor en la mesa."
+    ipa: "ˈdexo la kuˈtʃaɾa i el teneˈðoɾ en la ˈmesa"
+    phonetic: "[ˈd̪exo la kuˈtʃaɾa i el t̪eneˈðoɾ en la ˈmesa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Dejo", base: "dejar" }, { word: "la", base: "la" }, { word: "cuchara", ref: "es-1179" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "tenedor", ref: "es-1180" }, { word: "en", base: "en" }, { word: "mesa", ref: "es-0009" }]
+    confusables: [{ id: "knife", ref: "es-1181", kind: "word" }, { id: "plate", ref: "es-0641", kind: "word" }]
+  - id: "es-1202"
+    target: "La bombilla no funciona y la pila está vacía."
+    ipa: "la bomˈbiʝa no funˈθjona i la ˈpila esˈta baˈθia"
+    phonetic: "[la βomˈbiʝa no fun̪ˈθjona i la ˈpila esˈt̪a βaˈθia]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "bombilla", ref: "es-1178" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }, { word: "y", ref: "es-0048" }, { word: "pila", ref: "es-1182" }, { word: "está", ref: "es-0023" }, { word: "vacía", ref: "es-0428" }]
+    confusables: [{ id: "towel", ref: "es-1176", kind: "word" }, { id: "soap", ref: "es-1177", kind: "word" }]
+  - id: "es-1203"
+    target: "Guardo el bolígrafo en el bolso."
+    ipa: "ˈɡwaɾdo el boˈliɣɾafo en el ˈbolso"
+    phonetic: "[ˈɡwaɾðo el βoˈliɣɾafo en el ˈβolso]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Guardo", base: "guardar" }, { word: "el", base: "el" }, { word: "bolígrafo", ref: "es-1171" }, { word: "en", base: "en" }, { word: "bolso", ref: "es-0880" }]
+    confusables: [{ id: "pencil", ref: "es-1170", kind: "word" }, { id: "notebook", ref: "es-1169", kind: "word" }]
+  - id: "es-1204"
+    target: "¿Me prestas la moneda para el café?"
+    ipa: "me ˈpɾestas la moˈneða ˈpaɾa el kaˈfe"
+    phonetic: "[me ˈpɾest̪as la moˈneða ˈpaɾa el kaˈfe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "prestas", base: "prestar" }, { word: "la", base: "la" }, { word: "moneda", ref: "es-1186" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }]
+    confusables: [{ id: "euro", ref: "es-0550", kind: "word" }, { id: "bill", ref: "es-0685", kind: "word" }]
+  - id: "es-1205"
+    target: "El paquete es pesado y la mochila es ligera."
+    ipa: "el paˈkete es peˈsaðo i la moˈtʃila es liˈɣeɾa"
+    phonetic: "[el paˈket̪e es peˈsaðo i la moˈtʃila es liˈɣeɾa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "paquete", ref: "es-0378" }, { word: "es", ref: "es-0022" }, { word: "pesado", ref: "es-1194" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "mochila", ref: "es-0916" }, { word: "ligera", ref: "es-1195" }]
+    confusables: [{ id: "box", ref: "es-0382", kind: "word" }, { id: "bag", ref: "es-0380", kind: "word" }]

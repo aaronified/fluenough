@@ -1,0 +1,494 @@
+schema: 1
+id: es-en-shopping
+kind: layer
+core: es-shopping
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Shopping
+license: CC-BY-SA-4.0
+description: 'Words for shops and buying: prices, discounts, receipts, paying and returning things. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1212:
+    native: discount
+    notes:
+      n1: 'Descuento is a discount, masculine: el descuento. Del diez por ciento is of ten per cent.'
+    bases:
+      el: the
+      descuento: discount
+    examples:
+      Hay un descuento del diez por ciento.:
+        native: There is a ten per cent discount.
+        bases:
+          Hay: There is
+          un: a
+          descuento: discount
+          del: of
+          por: per
+          ciento: hundred
+      ¿Tienen descuento para estudiantes?:
+        native: Do you have a discount for students?
+        bases:
+          descuento: discount
+          para: for
+          estudiantes: students
+  es-1213:
+    native: sale, reduced price
+    notes:
+      n1: Rebaja is a reduction in price, feminine. The plural las rebajas is the sales season, when a whole shop is cheaper.
+    bases:
+      la: the
+      rebaja: reduction
+    examples:
+      Las rebajas empiezan el lunes.:
+        native: The sales start on Monday.
+        bases:
+          Las: The
+          rebajas: sales
+          empiezan: start
+          el: 'on'
+      Esta camisa está en rebaja.:
+        native: This shirt is on sale.
+        bases:
+          en: 'on'
+          rebaja: sale
+          Esta: This
+  es-1214:
+    native: receipt
+    notes:
+      n1: 'Recibo is a receipt for money paid, masculine: el recibo. A bill to pay later is a factura.'
+    bases:
+      el: the
+      recibo: receipt
+    examples:
+      ¿Me da el recibo, por favor?:
+        native: Can you give me the receipt, please?
+        bases:
+          da: give
+          el: the
+          recibo: receipt
+          por: please
+          Me: me
+          favor: please
+      Guarde el recibo para devolver la camisa.:
+        native: Keep the receipt to return the shirt.
+        bases:
+          Guarde: Keep
+          el: the
+          recibo: receipt
+          para: to
+          la: the
+  es-1215:
+    native: trolley, shopping cart
+    notes:
+      n1: 'Carrito is a small trolley or cart, masculine: el carrito. In a supermarket you take un carrito, and a basket is a cesta.'
+    bases:
+      el: the
+      carrito: trolley
+    examples:
+      Pongo la compra en el carrito.:
+        native: I put the shopping in the trolley.
+        bases:
+          Pongo: I put
+          la: the
+          en: in
+          el: the
+          carrito: trolley
+      Necesito un carrito grande.:
+        native: I need a big trolley.
+        bases:
+          un: a
+          carrito: trolley
+  es-1216:
+    native: basket
+    notes:
+      n1: 'Cesta is a basket you carry by hand, feminine: la cesta. A trolley with wheels is el carrito.'
+    bases:
+      la: the
+      cesta: basket
+    examples:
+      Llevo una cesta, no un carrito.:
+        native: I am carrying a basket, not a trolley.
+        bases:
+          una: a
+          cesta: basket
+          un: a
+      La cesta es pequeña.:
+        native: The basket is small.
+        bases:
+          La: The
+          cesta: basket
+  es-1217:
+    native: shopping centre, mall
+    notes:
+      n1: 'Centro comercial is a shopping centre or mall. It is masculine: el centro comercial.'
+    bases:
+      el: the
+      centro: centre
+      comercial: commercial
+    examples:
+      El centro comercial está cerca.:
+        native: The shopping centre is near.
+        bases:
+          El: The
+          centro: centre
+          comercial: commercial
+      Voy al centro comercial el sábado.:
+        native: I go to the shopping centre on Saturday.
+        bases:
+          al: to the
+          centro: centre
+          comercial: commercial
+          el: 'on'
+  es-1218:
+    native: shop window
+    notes:
+      n1: 'Escaparate is a shop window, masculine: el escaparate. Things in a window are displayed there.'
+    bases:
+      el: the
+      escaparate: shop window
+    examples:
+      Miro el escaparate de la tienda.:
+        native: I look at the shop window.
+        bases:
+          el: the
+          escaparate: shop window
+          de: of
+          la: the
+      El vestido está en el escaparate.:
+        native: The dress is in the shop window.
+        bases:
+          El: The
+          en: in
+          escaparate: shop window
+  es-1219:
+    native: cashier
+    notes:
+      n1: 'Cajera is a cashier, a woman who takes the money, feminine: la cajera. For a man the word is cajero.'
+    bases:
+      la: the
+      cajera: cashier
+    examples:
+      La cajera cobra la compra.:
+        native: The cashier charges for the shopping.
+        bases:
+          La: The
+          cajera: cashier
+      Pregunto a la cajera el precio.:
+        native: I ask the cashier the price.
+        bases:
+          Pregunto: I ask
+          a: the
+          la: the
+          cajera: cashier
+          el: the
+  es-1220:
+    native: cash
+    notes:
+      n1: 'Efectivo is cash, the money in notes and coins, masculine: el efectivo. Pagar en efectivo means to pay in cash.'
+    bases:
+      el: the
+      efectivo: cash
+    examples:
+      ¿Puedo pagar en efectivo?:
+        native: Can I pay in cash?
+        bases:
+          Puedo: Can I
+          en: in
+          efectivo: cash
+      Prefiero pagar con efectivo.:
+        native: I prefer to pay in cash.
+        bases:
+          Prefiero: I prefer
+          con: with
+          efectivo: cash
+  es-1221:
+    native: gift, present
+    notes:
+      n1: 'Regalo is a gift, masculine: el regalo. Para means for: para mi madre is for my mother.'
+    bases:
+      el: the
+      regalo: gift
+    examples:
+      Es un regalo para mi madre.:
+        native: It is a gift for my mother.
+        bases:
+          un: a
+          regalo: gift
+          para: for
+      Compro un regalo para mi padre.:
+        native: I buy a gift for my father.
+        bases:
+          un: a
+          regalo: gift
+          para: for
+  es-1222:
+    native: bill, invoice
+    notes:
+      n1: 'Factura is a bill or an invoice that says what you owe, feminine: la factura. A shop receipt is el recibo.'
+    bases:
+      la: the
+      factura: bill
+    examples:
+      La factura es de cien euros.:
+        native: The bill is for one hundred euros.
+        bases:
+          La: The
+          factura: bill
+          de: of
+          euros: euros
+      ¿Necesita factura?:
+        native: Do you need an invoice?
+        bases:
+          factura: invoice
+  es-1223:
+    native: price tag, label
+    notes:
+      n1: 'Etiqueta is a label or a price tag, feminine: la etiqueta. The price is written on it.'
+    bases:
+      la: the
+      etiqueta: label
+    examples:
+      El precio está en la etiqueta.:
+        native: The price is on the label.
+        bases:
+          El: The
+          en: 'on'
+          la: the
+          etiqueta: label
+      'Mira la etiqueta: es de talla grande.':
+        native: 'Look at the label: it is a large size.'
+        bases:
+          la: the
+          etiqueta: label
+          de: of
+  es-1224:
+    native: counter
+    notes:
+      n1: 'Mostrador is the counter in a shop or a bank, masculine: el mostrador. You pay at the counter.'
+    bases:
+      el: the
+      mostrador: counter
+    examples:
+      Pago en el mostrador.:
+        native: I pay at the counter.
+        bases:
+          en: at
+          el: the
+          mostrador: counter
+      El mostrador está al fondo.:
+        native: The counter is at the back.
+        bases:
+          El: The
+          mostrador: counter
+          al: at the
+          fondo: back
+  es-1225:
+    native: queue
+    notes:
+      n1: 'Cola is a queue, feminine: la cola. Hacer cola means to queue, to wait in line.'
+    bases:
+      la: the
+      cola: queue
+    examples:
+      Hay mucha cola en la caja.:
+        native: There is a long queue at the till.
+        bases:
+          Hay: There is
+          cola: queue
+          en: at
+          la: the
+      Espero en la cola.:
+        native: I wait in the queue.
+        bases:
+          en: in
+          la: the
+          cola: queue
+  es-1226:
+    native: sale
+    notes:
+      n1: 'Venta is a sale, the act of selling, feminine: la venta. For a sale in a shop with lower prices, say rebajas.'
+    bases:
+      la: the
+      venta: sale
+    examples:
+      Hay venta de ropa hoy.:
+        native: There is a clothes sale today.
+        bases:
+          Hay: There is
+          venta: sale
+          de: of
+      La venta empieza el viernes.:
+        native: The sale starts on Friday.
+        bases:
+          La: The
+          venta: sale
+          empieza: starts
+          el: 'on'
+  es-1227:
+    native: balance
+    notes:
+      n1: 'Saldo is a balance, the money in an account, masculine: el saldo.'
+    bases:
+      el: the
+      saldo: balance
+    examples:
+      ¿Cuál es mi saldo?:
+        native: What is my balance?
+        bases:
+          saldo: balance
+      El saldo de la cuenta es bajo.:
+        native: The balance of the account is low.
+        bases:
+          El: The
+          saldo: balance
+          de: of
+          la: the
+  es-1228:
+    native: to spend
+    notes:
+      n1: Gastar is to spend money or to use up. Gastar mucho means to spend a lot.
+    examples:
+      No quiero gastar mucho dinero.:
+        native: I do not want to spend a lot of money.
+        bases:
+          gastar: to spend
+      Gasto mucho en ropa.:
+        native: I spend a lot on clothes.
+        bases:
+          Gasto: I spend
+          en: 'on'
+  es-1229:
+    native: to save
+    notes:
+      n1: Ahorrar is to save money, to put money aside for later. Ahorrar tiempo means to save time.
+    examples:
+      Quiero ahorrar para un viaje.:
+        native: I want to save for a trip.
+        bases:
+          ahorrar: to save
+          para: for
+          un: a
+          viaje: trip
+      Ahorro dinero cada mes.:
+        native: I save money every month.
+        bases:
+          Ahorro: I save
+  es-1230:
+    native: to return
+    notes:
+      n1: 'Devolver is to give something back, or to return a thing you bought. The verb is o-to-ue in the present: devuelvo, devuelves.'
+    examples:
+      Quiero devolver esta camisa.:
+        native: I want to return this shirt.
+        bases:
+          devolver: to return
+          esta: this
+      Puedo devolverlo si no me gusta.:
+        native: I can return it if I do not like it.
+        bases:
+          Puedo: I can
+          devolverlo: return it
+          si: if
+          me: me
+          gusta: like
+  es-1231:
+    native: to choose
+    notes:
+      n1: 'Elegir is to choose. It is an e-to-i verb: elijo, eliges, elige.'
+    examples:
+      Elijo la camisa azul.:
+        native: I choose the blue shirt.
+        bases:
+          Elijo: I choose
+          la: the
+      Es difícil elegir un regalo.:
+        native: It is hard to choose a gift.
+        bases:
+          elegir: to choose
+          un: a
+  es-1232:
+    native: to charge, to cost
+    notes:
+      n1: 'Cobrar is to charge someone a price, or to be paid. Cobrar and costar are both about price: costar is the price of a thing, cobrar is what is charged.'
+    examples:
+      ¿Cuánto me cobra?:
+        native: How much do you charge me?
+        bases:
+          me: me
+          cobra: charge
+      Me cobran diez euros.:
+        native: They charge me ten euros.
+        bases:
+          Me: me
+          cobran: charge
+          euros: euros
+  es-1233:
+    native: to accept
+    notes:
+      n1: Aceptar is to accept, to say yes to a payment or an offer.
+    examples:
+      Aceptamos tarjeta y efectivo.:
+        native: We accept card and cash.
+        bases:
+          Aceptamos: We accept
+      No aceptan billetes grandes.:
+        native: They do not accept large notes.
+        bases:
+          aceptan: accept
+  es-1234:
+    native: second-hand, used
+    notes:
+      n1: Usado is used or second-hand, for a thing that someone had before. Un coche usado is a used car.
+    bases:
+      usado: used
+    examples:
+      Compro un coche usado.:
+        native: I buy a used car.
+        bases:
+          un: a
+          usado: used
+      La tienda vende libros usados.:
+        native: The shop sells second-hand books.
+        bases:
+          La: The
+          libros: books
+          usados: second-hand
+  es-1235:
+    native: free
+    notes:
+      n1: Gratis is free, with no charge. It does not change in the feminine or the plural.
+    bases:
+      gratis: free
+    examples:
+      La entrada es gratis.:
+        native: Entry is free.
+        bases:
+          La: The
+          entrada: entry
+          gratis: free
+      El envío es gratis hoy.:
+        native: Delivery is free today.
+        bases:
+          El: The
+          envío: delivery
+          gratis: free
+  es-1236:
+    native: sold out
+    notes:
+      n1: 'Agotado is sold out or used up. For a feminine thing it is agotada: esta talla está agotada.'
+    bases:
+      agotado: sold out
+    examples:
+      Esta talla está agotada.:
+        native: This size is sold out.
+        bases:
+          Esta: This
+          agotada: sold out
+      El modelo está agotado.:
+        native: The model is sold out.
+        bases:
+          El: The
+          modelo: model
+          agotado: sold out

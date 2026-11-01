@@ -1,0 +1,81 @@
+schema: 1
+id: "es-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1145"
+    target: "Hoy llueve y mañana nieva."
+    ipa: "oj ˈʝueβe i maˈɲana ˈnjeβa"
+    phonetic: "[oj ˈʝueβe i maˈɲana ˈnjeβa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "llueve", base: "llover" }, { word: "y", ref: "es-0048" }, { word: "mañana", ref: "es-0978" }, { word: "nieva", base: "nevar" }]
+    confusables: [{ id: "sunny", ref: "es-1137", kind: "word" }, { id: "windy", ref: "es-1140", kind: "word" }]
+  - id: "es-1146"
+    target: "Hace viento y hace frío."
+    ipa: "ˈaθe ˈbjento i ˈaθe ˈfɾio"
+    phonetic: "[ˈaθe ˈβjen̪t̪o i ˈaθe ˈfɾio]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hace", ref: "es-0025" }, { word: "viento", ref: "es-1115" }, { word: "y", ref: "es-0048" }, { word: "frío", ref: "es-0408" }]
+    confusables: [{ id: "rain", ref: "es-1114", kind: "word" }, { id: "snow", ref: "es-1116", kind: "word" }]
+  - id: "es-1147"
+    target: "El sol brilla y el cielo está despejado."
+    ipa: "el sol ˈbɾiʝa i el ˈθjelo esˈta despeˈxaðo"
+    phonetic: "[el sol ˈβɾiʝa i el ˈθjelo esˈt̪a ðespeˈxaðo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "sol", ref: "es-1113" }, { word: "brilla", base: "brillar" }, { word: "y", ref: "es-0048" }, { word: "cielo", ref: "es-1122" }, { word: "está", ref: "es-0023" }, { word: "despejado", ref: "es-1143" }]
+    confusables: [{ id: "cloud", ref: "es-1117", kind: "word" }, { id: "rain", ref: "es-1114", kind: "word" }]
+  - id: "es-1148"
+    target: "Hoy hace mucho calor, pero mañana llueve."
+    ipa: "oj ˈaθe ˈmutʃo kaˈloɾ peɾo maˈɲana ˈʝueβe"
+    phonetic: "[oj ˈaθe ˈmutʃo kaˈloɾ peɾo maˈɲana ˈʝueβe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hace", ref: "es-0025" }, { word: "mucho", ref: "es-0053" }, { word: "calor", ref: "es-1120" }, { word: "pero", ref: "es-0050" }, { word: "mañana", ref: "es-0978" }, { word: "llueve", base: "llover" }]
+    confusables: [{ id: "cold", ref: "es-0408", kind: "word" }, { id: "snow", ref: "es-1116", kind: "word" }]
+  - id: "es-1149"
+    target: "Ponte el abrigo, hace frío."
+    ipa: "ˈponte el aˈbɾiɣo ˈaθe ˈfɾio"
+    phonetic: "[ˈpon̪t̪e el aˈβɾiɣo ˈaθe ˈfɾio]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ponte", base: "ponerse" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "hace", ref: "es-0025" }, { word: "frío", ref: "es-0408" }]
+    confusables: [{ id: "shirt", ref: "es-1017", kind: "word" }, { id: "umbrella", ref: "es-1123", kind: "word" }]
+  - id: "es-1150"
+    target: "Llevo el paraguas porque va a llover."
+    ipa: "ˈʝeβo el paɾaˈɣwas poɾˈke ba a ʝoˈβeɾ"
+    phonetic: "[ˈʝeβo el paɾaˈɣwas poɾˈke βa a ʝoˈβeɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "paraguas", ref: "es-1123" }, { word: "porque", base: "porque" }, { word: "va", ref: "es-0026" }, { word: "a", base: "a" }, { word: "llover", base: "llover" }]
+    confusables: [{ id: "sun", ref: "es-1113", kind: "word" }, { id: "hat", ref: "es-1031", kind: "word" }]
+  - id: "es-1151"
+    target: "Hoy el tiempo es templado, no hace calor ni frío."
+    ipa: "oj el ˈtjempo es temˈplaðo no ˈaθe kaˈloɾ ni ˈfɾio"
+    phonetic: "[oj el ˈt̪jempo es t̪emˈplaðo no ˈaθe kaˈloɾ ni ˈfɾio]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "el", base: "el" }, { word: "tiempo", ref: "es-1112" }, { word: "es", ref: "es-0022" }, { word: "templado", ref: "es-1142" }, { word: "no", ref: "es-0043" }, { word: "hace", ref: "es-0025" }, { word: "calor", ref: "es-1120" }, { word: "ni", base: "ni" }, { word: "frío", ref: "es-0408" }]
+    confusables: [{ id: "hot", ref: "es-0407", kind: "word" }, { id: "fresh", ref: "es-1144", kind: "word" }]
+  - id: "es-1152"
+    target: "En otoño el cielo está nublado y llueve."
+    ipa: "en oˈtoɲo el ˈθjelo esˈta nuˈβlaðo i ˈʝueβe"
+    phonetic: "[en oˈt̪oɲo el ˈθjelo esˈt̪a nuˈβlaðo i ˈʝueβe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "En", base: "en" }, { word: "otoño", ref: "es-0983" }, { word: "el", base: "el" }, { word: "cielo", ref: "es-1122" }, { word: "está", ref: "es-0023" }, { word: "nublado", ref: "es-1138" }, { word: "y", ref: "es-0048" }, { word: "llueve", base: "llover" }]
+    confusables: [{ id: "spring", ref: "es-0981", kind: "word" }, { id: "winter", ref: "es-0990", kind: "word" }]
