@@ -1,0 +1,211 @@
+schema: 1
+id: "fr-numbers-big"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "numbers-big"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0702"
+    target: "trente"
+    ipa: "tʁɑ̃t"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai trente ans.", ipa: "ʒe tʁɑ̃t ɑ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "trente", base: "trente" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont trente.", ipa: "il sɔ̃ tʁɑ̃t", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "trente", base: "trente" }] }
+  - id: "fr-0703"
+    target: "quarante"
+    ipa: "kaʁɑ̃t"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père a quarante ans.", ipa: "mɔ̃ pɛʁ a karɑ̃t ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "a", ref: "fr-0022" }, { word: "quarante", base: "quarante" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Nous sommes quarante.", ipa: "nu sɔm karɑ̃t", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "quarante", base: "quarante" }] }
+  - id: "fr-0704"
+    target: "cinquante"
+    ipa: "sɛ̃kɑ̃t"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma tante a cinquante ans.", ipa: "ma tɑ̃t a sɛ̃kɑ̃t ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tante", ref: "fr-0177" }, { word: "a", ref: "fr-0022" }, { word: "cinquante", base: "cinquante" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont cinquante.", ipa: "il sɔ̃ sɛ̃kɑ̃t", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "cinquante", base: "cinquante" }] }
+  - id: "fr-0705"
+    target: "soixante"
+    ipa: "swasɑ̃t"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon oncle a soixante ans.", ipa: "mɔ̃n ɔ̃kl a swasɑ̃t ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "a", ref: "fr-0022" }, { word: "soixante", base: "soixante" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils ont soixante ans.", ipa: "il ɔ̃ swasɑ̃t ɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "soixante", base: "soixante" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-0706"
+    target: "soixante-dix"
+    ipa: "swasɑ̃tdis"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma mère a soixante-dix ans.", ipa: "ma mɛʁ a swasɑ̃tdis ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "a", ref: "fr-0022" }, { word: "soixante", ref: "fr-0705" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont soixante-dix.", ipa: "il sɔ̃ swasɑ̃tdis", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "soixante", ref: "fr-0705" }, { word: "dix", ref: "fr-0217" }] }
+  - id: "fr-0707"
+    target: "quatre-vingts"
+    ipa: "katʁəvɛ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma tante a quatre-vingts ans.", ipa: "ma tɑ̃t a katʁəvɛ̃ ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tante", ref: "fr-0177" }, { word: "a", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vingts", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils ont quatre-vingts ans.", ipa: "il ɔ̃ katʁəvɛ̃ ɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vingts", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-0708"
+    target: "quatre-vingt-dix"
+    ipa: "katʁəvɛ̃dis"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont quatre-vingt-dix.", ipa: "il sɔ̃ katʁəvɛ̃dis", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "dix", ref: "fr-0217" }] }
+      - { target: "Nous sommes quatre-vingt-dix.", ipa: "nu sɔm katʁəvɛ̃dis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "dix", ref: "fr-0217" }] }
+  - id: "fr-0709"
+    target: "cent"
+    ipa: "sɑ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est cent.", ipa: "sə ɛ sɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "cent", base: "cent" }] }
+      - { target: "J'ai cent amis.", ipa: "ʒe sɑ̃ zami", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "cent", base: "cent" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-0710"
+    target: "mille"
+    ipa: "mil"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est mille.", ipa: "sə ɛ mil", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "mille", base: "mille" }] }
+      - { target: "Il a mille amis.", ipa: "il a mil zami", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "mille", base: "mille" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-0711"
+    target: "million"
+    ipa: "miljɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est un million.", ipa: "sɛ œ̃ miljɔ̃", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "million", base: "million" }] }
+      - { target: "Un million de amis.", ipa: "œ̃ miljɔ̃ də zami", bases: [{ word: "Un", ref: "fr-0208" }, { word: "million", base: "million" }, { word: "de", base: "de" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-0712"
+    target: "zéro"
+    ipa: "zeʁo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est zéro.", ipa: "sə ɛ zeʁo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "zéro", base: "zéro" }] }
+      - { target: "Nous avons zéro problème.", ipa: "nu zavɔ̃ zeʁo pʁɔblɛm", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "zéro", base: "zéro" }, { word: "problème", ref: "fr-0684" }] }
+  - id: "fr-0713"
+    target: "vingt-et-un"
+    ipa: "vɛ̃teœ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai vingt-et-un ans.", ipa: "ʒe vɛ̃teœ̃ ɑ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "vingt", ref: "fr-0227" }, { word: "et", ref: "fr-0027" }, { word: "un", ref: "fr-0208" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Vingt-et-un amis sont là.", ipa: "vɛ̃teœ̃ zami sɔ̃ la", bases: [{ word: "Vingt", ref: "fr-0227" }, { word: "et", ref: "fr-0027" }, { word: "un", ref: "fr-0208" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0714"
+    target: "trente-deux"
+    ipa: "tʁɑ̃tdø"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont trente-deux.", ipa: "il sɔ̃ tʁɑ̃tdø", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "trente", ref: "fr-0702" }, { word: "deux", ref: "fr-0209" }] }
+      - { target: "Il a trente-deux amis.", ipa: "il a tʁɑ̃tdø zami", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "trente", ref: "fr-0702" }, { word: "deux", ref: "fr-0209" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-0715"
+    target: "quarante-cinq"
+    ipa: "karɑ̃tsɛ̃k"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père a quarante-cinq ans.", ipa: "mɔ̃ pɛʁ a karɑ̃tsɛ̃k ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "a", ref: "fr-0022" }, { word: "quarante", ref: "fr-0703" }, { word: "cinq", ref: "fr-0212" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ce est quarante-cinq.", ipa: "sə ɛ karɑ̃tsɛ̃k", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "quarante", ref: "fr-0703" }, { word: "cinq", ref: "fr-0212" }] }
+  - id: "fr-0716"
+    target: "soixante-quinze"
+    ipa: "swasɑ̃tkɛ̃z"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont soixante-quinze.", ipa: "il sɔ̃ swasɑ̃tkɛ̃z", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "soixante", ref: "fr-0705" }, { word: "quinze", ref: "fr-0222" }] }
+      - { target: "Il a soixante-quinze ans.", ipa: "il a swasɑ̃tkɛ̃z ɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "soixante", ref: "fr-0705" }, { word: "quinze", ref: "fr-0222" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-0717"
+    target: "quatre-vingt-dix-neuf"
+    ipa: "katʁəvɛ̃dizœf"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont quatre-vingt-dix-neuf.", ipa: "il sɔ̃ katʁəvɛ̃dizœf", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "dix", ref: "fr-0217" }, { word: "neuf", ref: "fr-0216" }] }
+      - { target: "Ce est quatre-vingt-dix-neuf.", ipa: "sə ɛ katʁəvɛ̃dizœf", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "dix", ref: "fr-0217" }, { word: "neuf", ref: "fr-0216" }] }
+  - id: "fr-0718"
+    target: "soixante-cinq"
+    ipa: "swasɑ̃tsɛ̃k"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon oncle a soixante-cinq ans.", ipa: "mɔ̃n ɔ̃kl a swasɑ̃tsɛ̃k ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "a", ref: "fr-0022" }, { word: "soixante", ref: "fr-0705" }, { word: "cinq", ref: "fr-0212" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ce est soixante-cinq.", ipa: "sə ɛ swasɑ̃tsɛ̃k", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "soixante", ref: "fr-0705" }, { word: "cinq", ref: "fr-0212" }] }
+  - id: "fr-0719"
+    target: "cinquante-deux"
+    ipa: "sɛ̃kɑ̃tdø"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma tante a cinquante-deux ans.", ipa: "ma tɑ̃t a sɛ̃kɑ̃tdø ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tante", ref: "fr-0177" }, { word: "a", ref: "fr-0022" }, { word: "cinquante", ref: "fr-0704" }, { word: "deux", ref: "fr-0209" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont cinquante-deux.", ipa: "il sɔ̃ sɛ̃kɑ̃tdø", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "cinquante", ref: "fr-0704" }, { word: "deux", ref: "fr-0209" }] }
+  - id: "fr-0720"
+    target: "soixante-et-onze"
+    ipa: "swasɑ̃teɔ̃z"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a soixante-et-onze ans.", ipa: "il a swasɑ̃teɔ̃z ɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "soixante", ref: "fr-0705" }, { word: "et", ref: "fr-0027" }, { word: "onze", ref: "fr-0218" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont soixante-et-onze.", ipa: "il sɔ̃ swasɑ̃teɔ̃z", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "soixante", ref: "fr-0705" }, { word: "et", ref: "fr-0027" }, { word: "onze", ref: "fr-0218" }] }
+  - id: "fr-0721"
+    target: "quatre-vingt-un"
+    ipa: "katʁəvɛ̃œ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma tante a quatre-vingt-un ans.", ipa: "ma tɑ̃t a katʁəvɛ̃œ̃ ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tante", ref: "fr-0177" }, { word: "a", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "un", ref: "fr-0208" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils sont quatre-vingt-un.", ipa: "il sɔ̃ katʁəvɛ̃œ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "quatre", ref: "fr-0211" }, { word: "vingt", ref: "fr-0227" }, { word: "un", ref: "fr-0208" }] }

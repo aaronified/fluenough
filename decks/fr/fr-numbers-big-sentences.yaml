@@ -1,0 +1,103 @@
+schema: 1
+id: "fr-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0722"
+    target: "J'ai trente ans."
+    ipa: "ʒe tʁɑ̃t ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "trente", ref: "fr-0702" }
+      - { word: "ans", ref: "fr-0259" }
+    confusables:
+      - { id: "quarante", ref: "fr-0703", kind: "word" }
+      - { id: "vingt-et-un", ref: "fr-0713", kind: "word" }
+  - id: "fr-0723"
+    target: "Mon père a quarante ans."
+    ipa: "mɔ̃ pɛʁ a karɑ̃t ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "quarante", ref: "fr-0703" }
+      - { word: "ans", ref: "fr-0259" }
+    confusables:
+      - { id: "cinquante", ref: "fr-0704", kind: "word" }
+      - { id: "trente", ref: "fr-0702", kind: "word" }
+  - id: "fr-0724"
+    target: "Ma tante a soixante-dix ans."
+    ipa: "ma tɑ̃t a swasɑ̃tdis ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "tante", ref: "fr-0177" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "soixante", ref: "fr-0705" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "ans", ref: "fr-0259" }
+    confusables:
+      - { id: "soixante", ref: "fr-0705", kind: "word" }
+      - { id: "quatre-vingts", ref: "fr-0707", kind: "word" }
+  - id: "fr-0725"
+    target: "Ils sont quatre-vingt-dix."
+    ipa: "il sɔ̃ katʁəvɛ̃dis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "quatre", ref: "fr-0211" }
+      - { word: "vingt", ref: "fr-0227" }
+      - { word: "dix", ref: "fr-0217" }
+    confusables:
+      - { id: "quatre-vingts", ref: "fr-0707", kind: "word" }
+      - { id: "cent", ref: "fr-0709", kind: "word" }
+  - id: "fr-0726"
+    target: "Ce est cent."
+    ipa: "sə ɛ sɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "cent", ref: "fr-0709" }
+    confusables:
+      - { id: "mille", ref: "fr-0710", kind: "word" }
+      - { id: "quatre-vingt-dix-neuf", ref: "fr-0717", kind: "word" }
+  - id: "fr-0727"
+    target: "Il a mille amis."
+    ipa: "il a mil zami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "mille", ref: "fr-0710" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "million", ref: "fr-0711", kind: "word" }
+      - { id: "cent", ref: "fr-0709", kind: "word" }
+  - id: "fr-0728"
+    target: "Ils ont quatre-vingts ans."
+    ipa: "il ɔ̃ katʁəvɛ̃ ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "ont", ref: "fr-0022" }
+      - { word: "quatre", ref: "fr-0211" }
+      - { word: "vingts", ref: "fr-0227" }
+      - { word: "ans", ref: "fr-0259" }
+    confusables:
+      - { id: "quatre-vingt-dix", ref: "fr-0708", kind: "word" }
+      - { id: "soixante-dix", ref: "fr-0706", kind: "word" }

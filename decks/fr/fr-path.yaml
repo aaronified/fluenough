@@ -191,11 +191,8 @@ units:
   - decks: ["fr-possessives", "fr-grammar-possessives", "fr-reading-possessives"]
     words: 8
     grammar: ["possessives"]
-  - planned: { id: "fr-numbers-big", theme: "numbers-big", words: 40 }
-    listening_passages:
-      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with soixante-dix, quatre-vingts and quatre-vingt-dix-neuf" } }
-    reading_passages:
-      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board, from soixante-dix to quatre-vingt-dix-neuf" } }
+  - decks: ["fr-numbers-big", "fr-numbers-big-sentences", "fr-reading-numbers-big", "*"]
+    words: 20
   - planned: { id: "fr-market", theme: "market", words: 35 }
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
