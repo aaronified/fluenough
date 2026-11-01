@@ -309,7 +309,9 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "es-grammar-present-perfect", grammar: "present-perfect" }
+  - decks: ["es-grammar-present-perfect", "es-reading-present-perfect"]
+    words: 0
+    grammar: ["present-perfect"]
     listening_passages:
       - { id: "have-you-ever", text: { "en": "Asking and saying what you have already done" } }
     reading_passages:
