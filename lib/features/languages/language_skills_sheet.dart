@@ -10,6 +10,7 @@ import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
 import '../../app/placement.dart' show ScriptStanding;
 import '../../app/placement_credit.dart';
+import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
@@ -27,6 +28,43 @@ import '../placement/placed_review_choice.dart';
 import '../placement/placement_page.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
+
+/// Opens [view]'s skills sheet over [context]'s screen, as the Languages
+/// page does: [all] names the languages for placement, and a language whose
+/// last skill goes to Leave is toasted, with Undo. The Decks path's "Add it"
+/// opens it too (#977).
+Future<void> showLanguageSkills(
+  BuildContext context,
+  AppState state,
+  List<SpokenLanguage> all,
+  LanguageView view,
+) {
+  final messenger = ScaffoldMessenger.of(context);
+  final l10n = AppLocalizations.of(context)!;
+  return showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (_) => LanguageSkillsSheet(
+      view: view,
+      names: <String, String>{for (final l in all) l.code: l.name},
+      onPooled: (previous) {
+        messenger
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            SnackBar(
+              content: Text(l10n.languagesToastPool(view.name)),
+              action: SnackBarAction(
+                label: l10n.languagesUndo,
+                onPressed: () => state.applySkills(view.language, previous),
+              ),
+            ),
+          );
+      },
+    ),
+  );
+}
 
 /// A language's sheet on the Languages page (#907, the mockup
 /// `languages-merged`, approved 2026-10-30): its dialect, one pill for each
