@@ -1,0 +1,317 @@
+schema: 1
+id: "es-en-feelings"
+kind: "layer"
+core: "es-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings and moods"
+license: "CC-BY-SA-4.0"
+description: "Words for how people feel: joy and sadness, fear and worry, anger and surprise, love and pride, and the adjectives that go with them, plus the verbs to scare, worry, cry and fall in love. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1990":
+    native: "feeling; sentiment"
+    notes: { n1: "Sentimiento is a feeling in the heart, often deep and lasting. Sentir is to feel." }
+    bases: { "el": "the", "sentimiento": "feeling; sentiment" }
+    examples:
+      "Tengo un sentimiento de paz.": { native: "I have a feeling of peace.", bases: { "un": "a", "sentimiento": "feeling; sentiment", "de": "of", "paz": "peace" } }
+      "Los sentimientos son importantes.": { native: "Feelings are important.", bases: { "Los": "the", "sentimientos": "feeling; sentiment" } }
+  "es-1991":
+    native: "emotion; excitement"
+    notes: { n1: "La emoción is an emotion, a strong feeling that comes quickly." }
+    bases: { "la": "the", "emoción": "emotion; excitement" }
+    examples:
+      "Siento mucha emoción por el viaje.": { native: "I feel a lot of excitement about the trip.", bases: { "emoción": "emotion; excitement", "por": "for", "el": "the" } }
+      "La emoción del partido es grande.": { native: "The excitement of the match is great.", bases: { "La": "the", "emoción": "emotion; excitement", "del": "of", "partido": "match" } }
+  "es-1992":
+    native: "joy; happiness"
+    notes: { n1: "La alegría is joy, a bright happy feeling. Its adjective is alegre." }
+    bases: { "la": "the", "alegría": "joy; happiness" }
+    examples:
+      "Tengo mucha alegría hoy.": { native: "I feel a lot of joy today.", bases: { "alegría": "joy; happiness" } }
+      "La alegría de los niños es grande.": { native: "The children's joy is great.", bases: { "La": "the", "alegría": "joy; happiness", "de": "of", "los": "the" } }
+  "es-1993":
+    native: "sadness"
+    notes: { n1: "La tristeza is sadness, a heavy feeling of loss. Its adjective is triste." }
+    bases: { "la": "the", "tristeza": "sadness" }
+    examples:
+      "Siento tristeza por la noticia.": { native: "I feel sad about the news.", bases: { "tristeza": "sadness", "por": "for", "la": "the", "noticia": "news item" } }
+      "La tristeza no dura para siempre.": { native: "Sadness does not last forever.", bases: { "La": "the", "tristeza": "sadness", "para": "for" } }
+  "es-1994":
+    native: "fear"
+    notes: { n1: "El miedo is fear, the feeling when something seems dangerous. Tener miedo is to be afraid." }
+    bases: { "el": "the", "miedo": "fear" }
+    examples:
+      "Tengo miedo a la oscuridad.": { native: "I am afraid of the dark.", bases: { "miedo": "fear", "a": "to", "la": "the", "oscuridad": "darkness" } }
+      "El miedo es normal.": { native: "Fear is normal.", bases: { "El": "the", "miedo": "fear", "normal": "normal" } }
+  "es-1995":
+    native: "worry"
+    notes: { n1: "La preocupación is worry, a feeling of concern about something. The verb is preocupar." }
+    bases: { "la": "the", "preocupación": "worry" }
+    examples:
+      "Tengo una gran preocupación.": { native: "I have a great worry.", bases: { "una": "a", "preocupación": "worry" } }
+      "La preocupación no ayuda.": { native: "Worry does not help.", bases: { "La": "the", "preocupación": "worry" } }
+  "es-1996":
+    native: "anger; annoyance"
+    notes: { n1: "El enfado is anger, the feeling when you are cross with someone." }
+    bases: { "el": "the", "enfado": "anger; annoyance" }
+    examples:
+      "Tiene un enfado grande.": { native: "They have a great anger.", bases: { "un": "a", "enfado": "anger; annoyance" } }
+      "El enfado pasa rápido.": { native: "The anger passes quickly.", bases: { "El": "the", "enfado": "anger; annoyance" } }
+  "es-1997":
+    native: "surprise"
+    notes: { n1: "La sorpresa is surprise, the feeling when something is not expected." }
+    bases: { "la": "the", "sorpresa": "surprise" }
+    examples:
+      "Es una sorpresa muy agradable.": { native: "It is a very pleasant surprise.", bases: { "una": "a", "sorpresa": "surprise", "agradable": "pleasant" } }
+      "Tengo una sorpresa para ti.": { native: "I have a surprise for you.", bases: { "una": "a", "sorpresa": "surprise", "para": "for", "ti": "you" } }
+  "es-1998":
+    native: "love"
+    notes: { n1: "El amor is love, a deep feeling for a person or a thing." }
+    bases: { "el": "the", "amor": "love" }
+    examples:
+      "El amor es importante.": { native: "Love is important.", bases: { "El": "the", "amor": "love" } }
+      "Siento amor por mi familia.": { native: "I feel love for my family.", bases: { "amor": "love", "por": "for" } }
+  "es-1999":
+    native: "hatred"
+    notes: { n1: "El odio is hatred, a very strong dislike. The verb is odiar." }
+    bases: { "el": "the", "odio": "hatred" }
+    examples:
+      "El odio es un sentimiento triste.": { native: "Hatred is a sad feeling.", bases: { "El": "the", "odio": "hatred", "un": "a" } }
+      "No tengo odio hacia nadie.": { native: "I have no hatred towards anyone.", bases: { "odio": "hatred", "hacia": "towards" } }
+  "es-2000":
+    native: "shame; embarrassment"
+    notes: { n1: "La vergüenza is shame or embarrassment, when you feel bad in front of others." }
+    bases: { "la": "the", "vergüenza": "shame; embarrassment" }
+    examples:
+      "Siento vergüenza por el error.": { native: "I feel embarrassed about the mistake.", bases: { "vergüenza": "shame; embarrassment", "por": "for", "el": "the", "error": "mistake" } }
+      "Tiene vergüenza de hablar.": { native: "They are shy about speaking.", bases: { "vergüenza": "shame; embarrassment", "de": "of" } }
+  "es-2001":
+    native: "pride"
+    notes: { n1: "El orgullo is pride, a good feeling about what you or others have done." }
+    bases: { "el": "the", "orgullo": "pride" }
+    examples:
+      "Siento orgullo de mis hijos.": { native: "I feel proud of my children.", bases: { "orgullo": "pride", "de": "of" } }
+      "El orgullo es bueno cuando es justo.": { native: "Pride is good when it is fair.", bases: { "El": "the", "orgullo": "pride", "cuando": "when", "justo": "fair; just" } }
+  "es-2002":
+    native: "excitement; hope"
+    notes: { n1: "La ilusión is excitement about a future thing, a hope with joy." }
+    bases: { "la": "the", "ilusión": "excitement; hope" }
+    examples:
+      "Tengo mucha ilusión por el viaje.": { native: "I am very excited about the trip.", bases: { "ilusión": "excitement; hope", "por": "for", "el": "the" } }
+      "La ilusión de los niños es bonita.": { native: "The children's excitement is lovely.", bases: { "La": "the", "ilusión": "excitement; hope", "de": "of", "los": "the" } }
+  "es-2003":
+    native: "hope"
+    notes: { n1: "La esperanza is hope, the belief that something good will happen." }
+    bases: { "la": "the", "esperanza": "hope" }
+    examples:
+      "Tengo esperanza en el futuro.": { native: "I have hope for the future.", bases: { "esperanza": "hope", "en": "in", "el": "the", "futuro": "future" } }
+      "La esperanza es importante.": { native: "Hope is important.", bases: { "La": "the", "esperanza": "hope" } }
+  "es-2004":
+    native: "calm"
+    notes: { n1: "La calma is calm, a state with no worry or noise." }
+    bases: { "la": "the", "calma": "calm" }
+    examples:
+      "Necesito calma.": { native: "I need calm.", bases: { "calma": "calm" } }
+      "Respiro con calma.": { native: "I breathe calmly.", bases: { "con": "with", "calma": "calm" } }
+  "es-2005":
+    native: "happiness"
+    notes: { n1: "La felicidad is happiness, a deep and lasting joy. Its adjective is feliz." }
+    bases: { "la": "the", "felicidad": "happiness" }
+    examples:
+      "La felicidad está en la familia.": { native: "Happiness is in the family.", bases: { "La": "the", "felicidad": "happiness", "en": "in", "la": "the" } }
+      "Busco la felicidad.": { native: "I look for happiness.", bases: { "la": "the", "felicidad": "happiness" } }
+  "es-2006":
+    native: "loneliness"
+    notes: { n1: "La soledad is loneliness, the feeling of being alone. Its adjective is solo." }
+    bases: { "la": "the", "soledad": "loneliness" }
+    examples:
+      "La soledad es triste.": { native: "Loneliness is sad.", bases: { "La": "the", "soledad": "loneliness" } }
+      "Vivo con soledad desde que se fue.": { native: "I live with loneliness since they left.", bases: { "con": "with", "soledad": "loneliness", "desde": "from", "que": "that", "se": "yourself", "fue": "was; went" } }
+  "es-2007":
+    native: "blame; guilt"
+    notes: { n1: "La culpa is guilt, or the blame for something. Its adjective is culpable." }
+    bases: { "la": "the", "culpa": "blame; guilt" }
+    examples:
+      "No tengo culpa de nada.": { native: "I am not to blame for anything.", bases: { "culpa": "blame; guilt", "de": "of" } }
+      "Siento culpa por no llamar.": { native: "I feel guilty for not calling.", bases: { "culpa": "blame; guilt", "por": "for" } }
+  "es-2008":
+    native: "gratitude"
+    notes: { n1: "La gratitud is gratitude, a thankful feeling. Its adjective is agradecido." }
+    bases: { "la": "the", "gratitud": "gratitude" }
+    examples:
+      "Siento gratitud por tu ayuda.": { native: "I feel grateful for your help.", bases: { "gratitud": "gratitude", "por": "for" } }
+      "La gratitud es un buen sentimiento.": { native: "Gratitude is a good feeling.", bases: { "La": "the", "gratitud": "gratitude", "un": "a" } }
+  "es-2009":
+    native: "sorrow; pity"
+    notes: { n1: "La pena is sorrow or a sad feeling. Es una pena is it is a pity." }
+    bases: { "la": "the", "pena": "sorrow; pity" }
+    examples:
+      "Siento pena por la historia.": { native: "I feel sorry for the story.", bases: { "pena": "sorrow; pity", "por": "for", "la": "the", "historia": "history" } }
+      "Es una pena que no vengas.": { native: "It is a pity you are not coming.", bases: { "una": "a", "pena": "sorrow; pity", "que": "that" } }
+  "es-2010":
+    native: "boredom"
+    notes: { n1: "El aburrimiento is boredom, the feeling of having nothing to do. Its adjective is aburrido." }
+    bases: { "el": "the", "aburrimiento": "boredom" }
+    examples:
+      "El aburrimiento es malo.": { native: "Boredom is bad.", bases: { "El": "the", "aburrimiento": "boredom" } }
+      "Siento aburrimiento en la clase.": { native: "I feel bored in class.", bases: { "aburrimiento": "boredom", "en": "in", "la": "the" } }
+  "es-2011":
+    native: "confusion"
+    notes: { n1: "La confusión is confusion, not knowing what is going on. Its adjective is confundido." }
+    bases: { "la": "the", "confusión": "confusion" }
+    examples:
+      "Hay confusión en la sala.": { native: "There is confusion in the room.", bases: { "Hay": "there is; there are", "confusión": "confusion", "en": "in", "la": "the", "sala": "living room" } }
+      "La confusión es normal.": { native: "Confusion is normal.", bases: { "La": "the", "confusión": "confusion", "normal": "normal" } }
+  "es-2012":
+    native: "cheerful; happy"
+    notes: { n1: "Alegre is cheerful, in a good mood. It does not change for gender." }
+    bases: { "alegre": "cheerful; happy" }
+    examples:
+      "Mi hermana es muy alegre.": { native: "My sister is very cheerful.", bases: { "alegre": "cheerful; happy" } }
+      "Los niños están alegres.": { native: "The children are cheerful.", bases: { "Los": "the", "alegres": "cheerful; happy" } }
+  "es-2013":
+    native: "scared"
+    notes: { n1: "Asustado is frightened, scared. It agrees with the noun: asustada." }
+    bases: { "asustado": "scared" }
+    examples:
+      "El niño está asustado.": { native: "The child is scared.", bases: { "El": "the", "asustado": "scared" } }
+      "Estoy asustada por la tormenta.": { native: "I am scared by the storm.", bases: { "asustada": "scared", "por": "for", "la": "the" } }
+  "es-2014":
+    native: "worried"
+    notes: { n1: "Preocupado is worried. It agrees with the noun: preocupada." }
+    bases: { "preocupado": "worried" }
+    examples:
+      "Mi madre está preocupada.": { native: "My mother is worried.", bases: { "preocupada": "worried" } }
+      "Estoy preocupado por el examen.": { native: "I am worried about the exam.", bases: { "preocupado": "worried", "por": "for", "el": "the" } }
+  "es-2015":
+    native: "cross; angry"
+    notes: { n1: "Enfadado is cross, angry with someone. It agrees with the noun: enfadada." }
+    bases: { "enfadado": "cross; angry" }
+    examples:
+      "Mi amigo está enfadado conmigo.": { native: "My friend is cross with me.", bases: { "enfadado": "cross; angry", "conmigo": "with me" } }
+      "El jefe está enfadado.": { native: "The boss is angry.", bases: { "El": "the", "enfadado": "cross; angry" } }
+  "es-2016":
+    native: "surprised"
+    notes: { n1: "Sorprendido is surprised. It agrees with the noun: sorprendida." }
+    bases: { "sorprendido": "surprised" }
+    examples:
+      "Estoy sorprendido por la noticia.": { native: "I am surprised by the news.", bases: { "sorprendido": "surprised", "por": "for", "la": "the", "noticia": "news item" } }
+      "La profesora está sorprendida.": { native: "The teacher is surprised.", bases: { "La": "the", "sorprendida": "surprised" } }
+  "es-2017":
+    native: "ashamed; embarrassed"
+    notes: { n1: "Avergonzado is ashamed or embarrassed. It agrees with the noun: avergonzada." }
+    bases: { "avergonzado": "ashamed; embarrassed" }
+    examples:
+      "Estoy avergonzado por el error.": { native: "I am embarrassed by the mistake.", bases: { "avergonzado": "ashamed; embarrassed", "por": "for", "el": "the", "error": "mistake" } }
+      "Ella está avergonzada.": { native: "She is embarrassed.", bases: { "avergonzada": "ashamed; embarrassed" } }
+  "es-2018":
+    native: "proud"
+    notes: { n1: "Orgulloso is proud. It agrees with the noun: orgullosa." }
+    bases: { "orgulloso": "proud" }
+    examples:
+      "Mis padres están orgullosos de mí.": { native: "My parents are proud of me.", bases: { "orgullosos": "proud", "de": "of", "mí": "me" } }
+      "Estoy orgulloso de mi trabajo.": { native: "I am proud of my work.", bases: { "orgulloso": "proud", "de": "of" } }
+  "es-2019":
+    native: "excited; moved"
+    notes: { n1: "Emocionado is excited or moved by something. It agrees with the noun: emocionada." }
+    bases: { "emocionado": "excited; moved" }
+    examples:
+      "Estoy emocionado por el viaje.": { native: "I am excited about the trip.", bases: { "emocionado": "excited; moved", "por": "for", "el": "the" } }
+      "La niña está emocionada.": { native: "The girl is excited.", bases: { "La": "the", "emocionada": "excited; moved" } }
+  "es-2020":
+    native: "in love"
+    notes: { n1: "Enamorado is in love with someone. It agrees with the noun: enamorada." }
+    bases: { "enamorado": "in love" }
+    examples:
+      "Mi hermano está enamorado.": { native: "My brother is in love.", bases: { "enamorado": "in love" } }
+      "Estamos enamorados desde hace un año.": { native: "We have been in love for a year.", bases: { "enamorados": "in love", "desde": "from", "un": "a" } }
+  "es-2021":
+    native: "alone"
+    notes: { n1: "Solo is alone, by oneself. It agrees with the noun: sola. Solo without the accent means only." }
+    bases: { "solo": "alone" }
+    examples:
+      "Estoy solo en casa.": { native: "I am alone at home.", bases: { "solo": "alone", "en": "in" } }
+      "La abuela vive sola.": { native: "Grandmother lives alone.", bases: { "La": "the", "sola": "alone" } }
+  "es-2022":
+    native: "relieved"
+    notes: { n1: "Aliviado is relieved, when a worry goes away. It agrees with the noun: aliviada." }
+    bases: { "aliviado": "relieved" }
+    examples:
+      "Estoy aliviada, el examen ha terminado.": { native: "I am relieved, the exam is over.", bases: { "aliviada": "relieved", "el": "the", "ha": "there is; there are" } }
+      "Estamos aliviados por la noticia.": { native: "We are relieved by the news.", bases: { "aliviados": "relieved", "por": "for", "la": "the", "noticia": "news item" } }
+  "es-2023":
+    native: "frustrated"
+    notes: { n1: "Frustrado is frustrated, when something does not go as planned. It agrees with the noun: frustrada." }
+    bases: { "frustrado": "frustrated" }
+    examples:
+      "Estoy frustrado con el proyecto.": { native: "I am frustrated with the project.", bases: { "frustrado": "frustrated", "con": "with", "el": "the" } }
+      "Ella está frustrada.": { native: "She is frustrated.", bases: { "frustrada": "frustrated" } }
+  "es-2024":
+    native: "grateful; thankful"
+    notes: { n1: "Agradecido is grateful, with thanks in the heart. It agrees with the noun: agradecida." }
+    bases: { "agradecido": "grateful; thankful" }
+    examples:
+      "Estoy agradecido por tu ayuda.": { native: "I am grateful for your help.", bases: { "agradecido": "grateful; thankful", "por": "for" } }
+      "Estamos agradecidos a los vecinos.": { native: "We are grateful to the neighbours.", bases: { "agradecidos": "grateful; thankful", "a": "to", "los": "the", "vecinos": "neighbour" } }
+  "es-2025":
+    native: "confused"
+    notes: { n1: "Confundido is confused, not sure what is true. It agrees with the noun: confundida." }
+    bases: { "confundido": "confused" }
+    examples:
+      "Estoy confundido con las instrucciones.": { native: "I am confused by the instructions.", bases: { "confundido": "confused", "con": "with", "las": "the", "instrucciones": "instruction" } }
+      "La niña está confundida.": { native: "The girl is confused.", bases: { "La": "the", "confundida": "confused" } }
+  "es-2026":
+    native: "to worry (someone)"
+    notes: { n1: "Preocupar is to worry someone, or to cause concern. Preocuparse is to worry oneself." }
+    bases: { "preocupar": "to worry (someone)" }
+    examples:
+      "Me preocupa el examen.": { native: "The exam worries me.", bases: { "Me": "to me", "preocupa": "to worry (someone)", "el": "the" } }
+      "Nos preocupan los niños.": { native: "The children worry us.", bases: { "Nos": "us", "preocupan": "to worry (someone)", "los": "the" } }
+  "es-2027":
+    native: "to surprise"
+    notes: { n1: "Sorprender is to surprise someone, to be unexpected." }
+    bases: { "sorprender": "to surprise" }
+    examples:
+      "Me sorprende la noticia.": { native: "The news surprises me.", bases: { "Me": "to me", "sorprende": "to surprise", "la": "the", "noticia": "news item" } }
+      "Nos sorprende el frío.": { native: "The cold surprises us.", bases: { "Nos": "us", "sorprende": "to surprise", "el": "the" } }
+  "es-2028":
+    native: "to scare"
+    notes: { n1: "Asustar is to scare someone. Asustarse is to become scared." }
+    bases: { "asustar": "to scare" }
+    examples:
+      "Me asusta la oscuridad.": { native: "The dark scares me.", bases: { "Me": "to me", "asusta": "to scare", "la": "the", "oscuridad": "darkness" } }
+      "El ruido asusta al perro.": { native: "The noise scares the dog.", bases: { "El": "the", "ruido": "noise", "asusta": "to scare", "al": "to the" } }
+  "es-2029":
+    native: "to cry"
+    notes: { n1: "Llorar is to cry, with tears. Its stem changes: lloro, lloras." }
+    bases: { "llorar": "to cry" }
+    examples:
+      "Lloro cuando veo una película triste.": { native: "I cry when I see a sad film.", bases: { "Lloro": "to cry", "cuando": "when", "una": "a", "película": "film" } }
+      "El bebé llora mucho.": { native: "The baby cries a lot.", bases: { "El": "the", "llora": "to cry" } }
+  "es-2030":
+    native: "to love (things); to delight"
+    notes: { n1: "Encantar is to delight someone, used like gustar: me encanta, I love it." }
+    bases: { "encantar": "to love (things); to delight" }
+    examples:
+      "Me encanta el chocolate.": { native: "I love chocolate.", bases: { "Me": "to me", "encanta": "to love (things); to delight", "el": "the" } }
+      "Nos encantan los viajes.": { native: "We love travel.", bases: { "Nos": "us", "encantan": "to love (things); to delight", "los": "the" } }
+  "es-2031":
+    native: "to hate"
+    notes: { n1: "Odiar is to hate something or someone. Its yo form is odio." }
+    bases: { "odiar": "to hate" }
+    examples:
+      "Odio el frío.": { native: "I hate the cold.", bases: { "Odio": "to hate", "el": "the" } }
+      "Odia esperar.": { native: "She hates waiting.", bases: { "Odia": "to hate" } }
+  "es-2032":
+    native: "to fear; to be afraid of"
+    notes: { n1: "Temer is to fear, to be afraid of something. Its yo form is temo." }
+    bases: { "temer": "to fear; to be afraid of" }
+    examples:
+      "Temo a las arañas.": { native: "I am afraid of spiders.", bases: { "Temo": "to fear; to be afraid of", "a": "to", "las": "the" } }
+      "Temo que llueva.": { native: "I fear it will rain.", bases: { "Temo": "to fear; to be afraid of", "que": "that" } }
+  "es-2033":
+    native: "to fall in love"
+    notes: { n1: "Enamorarse is to fall in love. Its yo form is me enamoro." }
+    bases: { "enamorarse": "to fall in love" }
+    examples:
+      "Me enamoro con facilidad.": { native: "I fall in love easily.", bases: { "Me": "to me", "enamoro": "to fall in love", "con": "with", "facilidad": "ease; facility" } }
+      "Se enamoran en la fiesta.": { native: "They fall in love at the party.", bases: { "Se": "yourself", "enamoran": "to fall in love", "en": "in", "la": "the" } }

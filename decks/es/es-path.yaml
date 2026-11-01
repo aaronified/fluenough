@@ -316,7 +316,8 @@ units:
       - { id: "have-you-ever", text: { "en": "Asking and saying what you have already done" } }
     reading_passages:
       - { id: "experience-survey", text: { "en": "A short survey about experiences" } }
-  - planned: { id: "es-feelings", theme: "feelings", words: 55 }
+  - decks: ["es-feelings", "es-feelings-sentences", "es-reading-feelings", "*"]
+    words: 44
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
