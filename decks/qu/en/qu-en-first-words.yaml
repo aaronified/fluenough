@@ -1,0 +1,166 @@
+schema: 1
+id: "qu-en-first-words"
+kind: "layer"
+core: "qu-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and big. This is Southern Quechua as spoken around Cusco, in the Peruvian official spelling: ll is a palatal l, and an apostrophe marks an ejective consonant. Not yet checked by a Quechua speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "qu-0001":
+    native: "yes"
+    notes:
+      "n1": "Arí is the everyday yes. The no is mana, on the next card."
+    examples:
+      "Arí, allinmi.":
+        native: "Yes, it's fine."
+        bases:
+          "Arí": "yes"
+          "allinmi": "good; fine"
+      "Arí, ñuqa munani.":
+        native: "Yes, I want."
+        bases:
+          "Arí": "yes"
+          "ñuqa": "I"
+          "munani": "to want (I want)"
+  "qu-0002":
+    native: "no; not"
+    notes:
+      "n1": "Mana is no, and it makes a verb negative with -chu at its end: mana yachanichu, I don't know."
+    examples:
+      "Mana allinchu.":
+        native: "Not good."
+        bases:
+          "Mana": "not"
+          "allinchu": "good"
+      "Mana yachanichu.":
+        native: "I don't know."
+        bases:
+          "Mana": "not"
+          "yachanichu": "to know (I do not know)"
+  "qu-0003":
+    native: "I; me"
+    notes:
+      "n1": "Ñuqa is I. The verb ending -ni is also I, so ñuqa is often left out: yachani is I know."
+    examples:
+      "Ñuqa runa.":
+        native: "I am a person."
+        bases:
+          "Ñuqa": "I"
+          "runa": "person"
+      "Ñuqa unuta munani.":
+        native: "I want water."
+        bases:
+          "Ñuqa": "I"
+          "unuta": "water"
+          "munani": "to want (I want)"
+  "qu-0004":
+    native: "you (one person)"
+    notes:
+      "n1": "Qan is you, said to one person. The verb ending -nki is also you: yachanki is you know."
+    examples:
+      "Qan runa.":
+        native: "You are a person."
+        bases:
+          "Qan": "you"
+          "runa": "person"
+      "Qan unuta munanki?":
+        native: "Do you want water?"
+        bases:
+          "Qan": "you"
+          "unuta": "water"
+          "munanki": "to want (you want)"
+  "qu-0005":
+    native: "water"
+    notes:
+      "n1": "Unu is water. Q'asi is cold, and upyay is to drink."
+    examples:
+      "Unu q'asi.":
+        native: "Cold water."
+        bases:
+          "Unu": "water"
+          "q'asi": "cold"
+      "Unuta upyay.":
+        native: "Drink water."
+        bases:
+          "Unuta": "water"
+          "upyay": "to drink"
+  "qu-0006":
+    native: "good; well"
+    notes:
+      "n1": "Allin is good or well. Allin p'unchay is good day."
+    examples:
+      "Allin p'unchay.":
+        native: "Good day."
+        bases:
+          "Allin": "good"
+          "p'unchay": "day"
+      "Allin runa.":
+        native: "A good person."
+        bases:
+          "Allin": "good"
+          "runa": "person"
+  "qu-0007":
+    native: "one"
+    notes:
+      "n1": "Huk is one. Iskay, two, follows on the next card."
+    examples:
+      "Huk, iskay, kinsa.":
+        native: "One, two, three."
+        bases:
+          "Huk": "one"
+          "iskay": "two"
+          "kinsa": "three"
+      "Huk runa.":
+        native: "One person."
+        bases:
+          "Huk": "one"
+          "runa": "person"
+  "qu-0008":
+    native: "two"
+    notes:
+      "n1": "Iskay is two. Kinsa is three."
+    examples:
+      "Iskay runa.":
+        native: "Two people."
+        bases:
+          "Iskay": "two"
+          "runa": "person"
+      "Iskay p'unchay.":
+        native: "Two days."
+        bases:
+          "Iskay": "two"
+          "p'unchay": "day"
+  "qu-0009":
+    native: "here"
+    notes:
+      "n1": "Kaypi is here. Chaypi is there, near the listener."
+    examples:
+      "Ñuqa kaypi kani.":
+        native: "I am here."
+        bases:
+          "Ñuqa": "I"
+          "kaypi": "here"
+          "kani": "to be (I am)"
+      "Qan kaypi kanki.":
+        native: "You are here."
+        bases:
+          "Qan": "you"
+          "kaypi": "here"
+          "kanki": "to be (you are)"
+  "qu-0010":
+    native: "big"
+    notes:
+      "n1": "Hatun is big. Wasi is house, and runa is person."
+    examples:
+      "Hatun wasi.":
+        native: "A big house."
+        bases:
+          "Hatun": "big"
+          "wasi": "house"
+      "Runa hatun.":
+        native: "A big person."
+        bases:
+          "Runa": "person"
+          "hatun": "big"
