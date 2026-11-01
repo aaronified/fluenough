@@ -1,0 +1,146 @@
+schema: 1
+id: "as-en-journey"
+kind: "layer"
+core: "as-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey"
+license: "CC-BY-SA-4.0"
+description: "Going on a trip by train, ship or road: the platform, the seat, the timetable, the distance and the ticket counter. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2976":
+    native: "journey; trip"
+    notes:
+      "n1": "A trip from one place to another. The traveller is যাত্ৰী (zātri)."
+    examples:
+      "যাত্ৰা ভাল।": "The journey is good."
+      "আমাৰ যাত্ৰা দীঘল।": "Our journey is long."
+  "as-2977":
+    native: "train"
+    notes:
+      "n1": "The train on the rails. Written as said in English as ৰেল (rel) plus গাড়ী (gāṛi)."
+    examples:
+      "ৰেলগাড়ী আহিছে।": "The train has come."
+      "ৰেলগাড়ী দেৰি।": "The train is late."
+  "as-2978":
+    native: "platform"
+    notes:
+      "n1": "The raised place where a train stops. Written as said in English."
+    examples:
+      "প্লেটফৰ্মত মানুহ।": { native: "There are people on the platform.", bases: { "প্লেটফৰ্মত": "platform" } }
+      "প্লেটফৰ্ম নম্বৰ কিমান?": "What is the platform number?"
+  "as-2979":
+    native: "ship; large boat"
+    notes:
+      "n1": "A large ship on a big river or the sea. A small boat is নাও (nāo)."
+    examples:
+      "জাহাজ ডাঙৰ।": "The ship is big."
+      "জাহাজ ছাড়িছে।": "The ship is leaving."
+  "as-2980":
+    native: "timetable; schedule"
+    notes:
+      "n1": "The list of times of trains and buses."
+    examples:
+      "সময়সূচী চাবা।": "Look at the timetable."
+      "সময়সূচী ঠিক।": "The timetable is right."
+  "as-2981":
+    native: "seat"
+    notes:
+      "n1": "A place to sit in a bus or train. Also ছিট (sit) in speech."
+    examples:
+      "আসন খালী আছে।": { native: "There is a free seat.", bases: { "আছে": "to be; there is; to have" } }
+      "আসনত বহা।": { native: "Sit in the seat.", bases: { "আসনত": "seat" } }
+  "as-2982":
+    native: "to arrive; to reach"
+    notes:
+      "n1": "To get to a place at the end of a journey."
+    examples:
+      "মই ঘৰত পৌঁছিলোঁ।": { native: "I reached home.", bases: { "পৌঁছিলোঁ": "to arrive; to reach" } }
+      "ৰেলগাড়ী পৌঁছে।": { native: "The train arrives.", bases: { "পৌঁছে": "to arrive; to reach" } }
+  "as-2983":
+    native: "to leave; to depart"
+    notes:
+      "n1": "To go away from a place, of a train or a bus. The opposite is পৌঁছা (pōm̐chā)."
+    examples:
+      "বাছ ছাড়িল।": { native: "The bus left.", bases: { "ছাড়িল": "to leave; to depart" } }
+      "আমি এতিয়া ছাড়িম।": { native: "We will leave now.", bases: { "ছাড়িম": "to leave; to depart" } }
+  "as-2984":
+    native: "to book; to reserve"
+    notes:
+      "n1": "To reserve a seat or a room in advance."
+    bases:
+      "বুক": "book (a seat or ticket)"
+    examples:
+  "as-2985":
+    native: "reservation"
+    notes:
+      "n1": "A seat kept for you before the journey. Written as said in English."
+    examples:
+      "ৰিজাৰ্ভেচন আছে।": { native: "There is a reservation.", bases: { "আছে": "to be; there is; to have" } }
+      "ৰিজাৰ্ভেচন নাই।": "There is no reservation."
+  "as-2986":
+    native: "kilometre"
+    notes:
+      "n1": "A unit of distance. Written as said in English."
+    examples:
+      "পাঁচ কিলোমিটাৰ।": "Five kilometres."
+      "দহ কিলোমিটাৰ দূৰ।": "Ten kilometres away."
+  "as-2987":
+    native: "distance"
+    notes:
+      "n1": "How far one place is from another."
+    examples:
+      "দূৰত্ব বেছি।": "The distance is great."
+      "দূৰত্ব কিমান?": "What is the distance?"
+  "as-2988":
+    native: "convenience; advantage"
+    notes:
+      "n1": "The opposite is অসুবিধা (ônsubidhā), inconvenience."
+    examples:
+      "ইয়াত সুবিধা।": "It is convenient here."
+      "সুবিধা ভাল।": "The convenience is good."
+  "as-2989":
+    native: "inconvenience; difficulty"
+    notes:
+      "n1": "The opposite of সুবিধা (subidhā)."
+    examples:
+      "অসুবিধা বহুত।": "There is a lot of difficulty."
+      "মোৰ অসুবিধা।": "I have a problem."
+  "as-2990":
+    native: "driver (of a vehicle)"
+    notes:
+      "n1": "The person who drives a bus, a train or a car."
+    examples:
+      "চালক ভাল।": "The driver is good."
+      "চালক আহিছে।": "The driver has come."
+  "as-2991":
+    native: "delay; lateness"
+    notes:
+      "n1": "When something is late. Quoted as দেৰি হৈছে (deri hôise), it is late."
+    examples:
+      "দেৰি হৈছে।": { native: "It is late.", bases: { "হৈছে": "to become; to be" } }
+      "বাছত দেৰি।": "The bus is late."
+  "as-2992":
+    native: "on time"
+    notes:
+      "n1": "Arriving at the right time, as planned."
+    examples:
+      "ৰেলগাড়ী সময়ত।": "The train is on time."
+      "আমি সময়ত পৌঁছিলোঁ।": "We arrived on time."
+  "as-2993":
+    native: "passenger; traveller"
+    notes:
+      "n1": "A person who travels, man or woman."
+    examples:
+      "যাত্ৰী বহুত।": "There are many passengers."
+      "যাত্ৰী আহিছে।": "The passenger has come."
+  "as-2994":
+    native: "the ticket price; fare"
+    notes:
+      "n1": "The money paid for a ticket."
+    examples:
+  "as-2995":
+    native: "on the road"
+    notes:
+      "n1": "On the road, during the journey."
+    examples:

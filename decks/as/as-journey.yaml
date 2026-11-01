@@ -1,0 +1,207 @@
+schema: 1
+id: "as-journey"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "journey"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2976"
+    target: "যাত্ৰা"
+    reading: "zātrā"
+    ipa: "zatɹa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "যাত্ৰা ভাল।", reading: "zātrā bhāl.", ipa: "zatɹa bʱal" }
+      - { target: "আমাৰ যাত্ৰা দীঘল।", reading: "āmār zātrā dighôl.", ipa: "amaɹ zatɹa diɡʱɔl" }
+  - id: "as-2977"
+    target: "ৰেলগাড়ী"
+    reading: "relgāṛi"
+    ipa: "ɹelɔɡaɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰেলগাড়ী আহিছে।", reading: "relgāṛi āhise.", ipa: "ɹelɔɡaɹi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "ৰেলগাড়ী দেৰি।", reading: "relgāṛi deri.", ipa: "ɹelɔɡaɹi deɹi" }
+  - id: "as-2978"
+    target: "প্লেটফৰ্ম"
+    reading: "pleṭphôrm"
+    ipa: "pletɔpʰɔɹm"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্লেটফৰ্মত মানুহ।", reading: "pleṭphôrmôt mānuh.", ipa: "pletɔpʰɔɹmɔt manuh", bases: [{ word: "প্লেটফৰ্মত", base: "প্লেটফৰ্ম", reading: "pleṭphôrm" }] }
+      - { target: "প্লেটফৰ্ম নম্বৰ কিমান?", reading: "pleṭphôrm nômbôr kimān?", ipa: "pletɔpʰɔɹm nɔmbɔɹ kiman" }
+  - id: "as-2979"
+    target: "জাহাজ"
+    reading: "zāhāz"
+    ipa: "zahaz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জাহাজ ডাঙৰ।", reading: "zāhāz dāṅôr.", ipa: "zahaz daŋɔɹ" }
+      - { target: "জাহাজ ছাড়িছে।", reading: "zāhāz sāṛise.", ipa: "zahaz saɹise", bases: [{ word: "ছাড়িছে", ref: "as-2983" }] }
+  - id: "as-2980"
+    target: "সময়সূচী"
+    reading: "xômôyxūci"
+    ipa: "sɔmɔjosusi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সময়সূচী চাবা।", reading: "xômôyxūci sābā.", ipa: "sɔmɔjosusi saba", bases: [{ word: "চাবা", ref: "as-2224" }] }
+      - { target: "সময়সূচী ঠিক।", reading: "xômôyxūci ṭhik.", ipa: "sɔmɔjosusi tʰik" }
+  - id: "as-2981"
+    target: "আসন"
+    reading: "ôxôn"
+    ipa: "asɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আসন খালী আছে।", reading: "ôxôn khālī āse.", ipa: "asɔn kʰali ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "আসনত বহা।", reading: "ôxônôt bôhā.", ipa: "asɔnɔt bɔha", bases: [{ word: "আসনত", base: "আসন", reading: "ôxôn" }] }
+  - id: "as-2982"
+    target: "পৌঁছা"
+    reading: "pōm̐chā"
+    ipa: "pɔũsa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই ঘৰত পৌঁছিলোঁ।", reading: "moi ghôrôt pōm̐chilōm̐.", ipa: "moi ɡʱɔɹɔt pɔũsilʊ̃", bases: [{ word: "পৌঁছিলোঁ", base: "পৌঁছা", reading: "pōm̐chā" }] }
+      - { target: "ৰেলগাড়ী পৌঁছে।", reading: "relgāṛi pōm̐che.", ipa: "ɹelɔɡaɹi pɔũse", bases: [{ word: "পৌঁছে", base: "পৌঁছা", reading: "pōm̐chā" }] }
+  - id: "as-2983"
+    target: "ছাড়া"
+    reading: "sāṛā"
+    ipa: "saɹa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাছ ছাড়িল।", reading: "bās sāṛil.", ipa: "bas saɹil", bases: [{ word: "ছাড়িল", base: "ছাড়া", reading: "sāṛā" }] }
+      - { target: "আমি এতিয়া ছাড়িম।", reading: "āmi etiyā sāṛim.", ipa: "ami etija saɹim", bases: [{ word: "ছাড়িম", base: "ছাড়া", reading: "sāṛā" }] }
+  - id: "as-2984"
+    target: "বুক কৰা"
+    reading: "buk kôrā"
+    ipa: "buk kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বুক", base: "বুক", reading: "buk" }
+    examples:
+  - id: "as-2985"
+    target: "ৰিজাৰ্ভেচন"
+    reading: "rijārbhesôn"
+    ipa: "ɹizaɹbʱesɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰিজাৰ্ভেচন আছে।", reading: "rijārbhesôn āse.", ipa: "ɹizaɹbʱesɔn ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ৰিজাৰ্ভেচন নাই।", reading: "rijārbhesôn nāi.", ipa: "ɹizaɹbʱesɔn nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2986"
+    target: "কিলোমিটাৰ"
+    reading: "kilomitār"
+    ipa: "kilʊmitaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাঁচ কিলোমিটাৰ।", reading: "pām̐s kilomitār.", ipa: "pãs kilʊmitaɹ" }
+      - { target: "দহ কিলোমিটাৰ দূৰ।", reading: "dôh kilomitār dur.", ipa: "dɔh kilʊmitaɹ duɹ" }
+  - id: "as-2987"
+    target: "দূৰত্ব"
+    reading: "durôtvô"
+    ipa: "duɹɔtt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দূৰত্ব বেছি।", reading: "durôtvô besi.", ipa: "duɹɔtt besi" }
+      - { target: "দূৰত্ব কিমান?", reading: "durôtvô kimān?", ipa: "duɹɔtt kiman" }
+  - id: "as-2988"
+    target: "সুবিধা"
+    reading: "subidhā"
+    ipa: "subidʱa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইয়াত সুবিধা।", reading: "iyāt subidhā.", ipa: "ijat subidʱa" }
+      - { target: "সুবিধা ভাল।", reading: "subidhā bhāl.", ipa: "subidʱa bʱal" }
+  - id: "as-2989"
+    target: "অসুবিধা"
+    reading: "ônsubidhā"
+    ipa: "ɔsubidʱa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অসুবিধা বহুত।", reading: "ônsubidhā bohut.", ipa: "ɔsubidʱa bohut" }
+      - { target: "মোৰ অসুবিধা।", reading: "mur ônsubidhā.", ipa: "mʊɹ ɔsubidʱa" }
+  - id: "as-2990"
+    target: "চালক"
+    reading: "sālôk"
+    ipa: "salɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চালক ভাল।", reading: "sālôk bhāl.", ipa: "salɔk bʱal" }
+      - { target: "চালক আহিছে।", reading: "sālôk āhise.", ipa: "salɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-2991"
+    target: "দেৰি"
+    reading: "deri"
+    ipa: "deɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দেৰি হৈছে।", reading: "deri hôise.", ipa: "deɹi hɔise", bases: [{ word: "হৈছে", base: "হোৱা", reading: "huwā" }] }
+      - { target: "বাছত দেৰি।", reading: "bāxôt deri.", ipa: "basɔt deɹi", bases: [{ word: "বাছত", ref: "as-0298" }] }
+  - id: "as-2992"
+    target: "সময়ত"
+    reading: "xômôyôt"
+    ipa: "sɔmɔjɔt"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰেলগাড়ী সময়ত।", reading: "relgāṛi xômôyôt.", ipa: "ɹelɔɡaɹi sɔmɔjɔt" }
+      - { target: "আমি সময়ত পৌঁছিলোঁ।", reading: "āmi xômôyôt pōm̐chilōm̐.", ipa: "ami sɔmɔjɔt pɔũsilʊ̃", bases: [{ word: "পৌঁছিলোঁ", ref: "as-2982" }] }
+  - id: "as-2993"
+    target: "যাত্ৰী"
+    reading: "zātri"
+    ipa: "zatɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "যাত্ৰী বহুত।", reading: "zātri bohut.", ipa: "zatɹi bohut" }
+      - { target: "যাত্ৰী আহিছে।", reading: "zātri āhise.", ipa: "zatɹi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-2994"
+    target: "টিকটৰ দাম"
+    reading: "tikôtôr dām"
+    ipa: "tikɔtɔɹ dam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "টিকটৰ", ref: "as-0308" }
+    examples:
+  - id: "as-2995"
+    target: "ৰাস্তাত"
+    reading: "rāstātô"
+    ipa: "ɹastat"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

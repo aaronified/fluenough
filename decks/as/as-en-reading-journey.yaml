@@ -1,0 +1,69 @@
+schema: 1
+id: "as-en-reading-journey"
+name: "Assamese reading: journey"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-ticket-counter"
+    title: "At the ticket counter"
+    theme: "journey"
+    sentences:
+      - text: "এখন টিকট দিয়ক।"
+        reading: "ekhôn tikôt diyôk."
+      - text: "কোনটো প্লেটফৰ্ম?"
+        reading: "kuntu pleṭphôrm?"
+      - text: "ৰেলগাড়ী কেতিয়া ছাড়িব?"
+        reading: "relgāṛi ketiyā sāṛib?"
+      - text: "এক ঘন্টাত ছাড়িব।"
+        reading: "ek ghôntāt sāṛib."
+    questions:
+      - id: "as-3004"
+        prompt: { en: "The passenger asks for one ticket." }
+        answer: true
+      - id: "as-3005"
+        prompt: { en: "What does the passenger ask about the platform?" }
+        options:
+          - { en: "Its number" }
+          - { en: "Its price" }
+          - { en: "Its colour" }
+        answer: 1
+      - id: "as-3006"
+        prompt: { en: "When does the train leave?" }
+        options:
+          - { en: "Now" }
+          - { en: "In one hour" }
+          - { en: "Tomorrow" }
+        answer: 2
+  - id: "as-train-timetable"
+    title: "A train timetable"
+    theme: "journey"
+    sentences:
+      - text: "সকালে পাঁচ বজাত ছাড়ে।"
+        reading: "xokālē pām̐s bôzāt sāṛe."
+      - text: "দুপৰে বাৰ বজাত পৌঁছে।"
+        reading: "duporē bār bôzāt pōm̐che."
+      - text: "প্লেটফৰ্ম তিনি।"
+        reading: "pleṭphôrm tini."
+      - text: "আজি দেৰি নাই।"
+        reading: "āzi deri nāi."
+    questions:
+      - id: "as-3007"
+        prompt: { en: "The train leaves in the morning." }
+        answer: true
+      - id: "as-3008"
+        prompt: { en: "When does the train arrive?" }
+        options:
+          - { en: "At noon" }
+          - { en: "At night" }
+          - { en: "At five" }
+        answer: 1
+      - id: "as-3009"
+        prompt: { en: "Is the train late today?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 2

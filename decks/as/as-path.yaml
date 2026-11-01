@@ -375,11 +375,14 @@ units:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
   - decks: ["as-reading-phone"]
     words: 0
-  - planned: { id: "as-journey", theme: "journey", words: 55 }
+  - decks: ["as-journey", "as-journey-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  - decks: ["as-reading-journey"]
+    words: 0
   - planned: { id: "as-nature", theme: "nature", words: 50 }
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
