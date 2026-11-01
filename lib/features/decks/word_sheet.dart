@@ -22,7 +22,7 @@ import 'card_blocks.dart';
 import 'card_facts.dart';
 import 'card_notes.dart';
 import 'checked_by_line.dart';
-import 'ipa_symbols.dart';
+import 'ipa_info_dot.dart';
 import 'path_model.dart' show isSentence;
 import 'path_parts.dart' show joinParts, masteryName;
 import 'wiktionary_links.dart';
@@ -55,7 +55,8 @@ bool adultContentOn(AppState state) => state.settings.adultContent;
 /// The word sheet: everything a card has, inline and unfolded, from a word's
 /// row on a deck's or a unit's screen (owner, 2026-10-22, #691; it replaces
 /// Inspect). Top to bottom: the word large, its reading, a speaker and its
-/// IPA; each sound of the IPA, from the IPA course, with its practice; the
+/// IPA with an info dot, whose popup has each sound of the IPA, from the IPA
+/// course, with its practice; the
 /// meaning, its part of speech and gender, other meanings and accepted
 /// answers; its picture; its notes; the base words of its forms; the
 /// warnings, each with its title; the dictionary entry; every example; the
@@ -153,21 +154,14 @@ class WordSheet extends StatelessWidget {
                         onPlay: () => state.speakCard(card, language),
                         label: l10n.drillPlay,
                       ),
-                    if (ipa != null)
+                    if (ipa != null) ...<Widget>[
                       Flexible(child: IpaLine(ipa, textAlign: TextAlign.start)),
+                      IpaInfoDot(card: card),
+                    ],
                   ],
                 ),
               ],
             ),
-            if (ipa != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                spacing: 4,
-                children: <Widget>[
-                  CardLabel(l10n.cardIpaHeading),
-                  IpaSymbols(card: card),
-                ],
-              ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
