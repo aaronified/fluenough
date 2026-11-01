@@ -435,13 +435,16 @@ units:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
   - decks: ["bn-reading-workplace"]
     words: 0
-  - planned: { id: "bn-geography", theme: "geography", words: 45 }
+  - decks: ["bn-geography", "bn-geography-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "where-in-bengal", text: { "en": "Naming districts, rivers and cities of Bengal" } }
     reading_passages:
       - { id: "map-caption", text: { "en": "A map caption: West Bengal and Bangladesh" } }
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
+  - decks: ["bn-reading-geography"]
+    words: 0
   - decks: ["bn-slang"]
     words: 0
   - planned: { id: "bn-health", theme: "health", words: 55 }
