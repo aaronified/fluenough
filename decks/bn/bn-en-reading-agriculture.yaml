@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-agriculture"
+name: "Reading: farming"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A farmer talks about rice and jute, and a crop price board at a market, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-farmer-talks"
+    title: "A farmer talks about the season's rice and jute"
+    theme: "agriculture"
+    sentences:
+      - { text: "এ বছর ধানের মৌসুম ভালো গেছে।", reading: "e bôchor dhāner mousum bhālo geche.", ipa: "e bɔtʃʰor d̪ʱaner mousum bʱalo ɡetʃʰe" }
+      - { text: "পাটও প্রচুর হয়েছে।", reading: "pāṭoo procur hôyeche.", ipa: "paʈoo protʃur ɦɔjetʃʰe" }
+      - { text: "সার আর সেচ ঠিক মতো দিয়েছি।", reading: "sār ār sec ṭhik môto diyechi.", ipa: "sar ar setʃ ʈʰik mɔt̪o d̪ijetʃʰi" }
+      - { text: "তবু বাজারে দাম কম।", reading: "tobu bājāre dām kôm.", ipa: "t̪obu badʒare d̪am kɔm" }
+      - { text: "ব্যাপারীরা কম দামে কিনতে চায়।", reading: "bêpārirā kôm dāme kinote cāy.", ipa: "bæparira kɔm d̪ame kinot̪e tʃaj" }
+    questions:
+      - id: "bn-3519"
+        prompt: { "en": "The farmer's rice season went well." }
+        answer: true
+      - id: "bn-3520"
+        prompt: { "en": "What does the farmer say about the price?" }
+        options: [{ "en": "It is low" }, { "en": "It is high" }]
+        answer: 1
+      - id: "bn-3521"
+        prompt: { "en": "What do the traders want?" }
+        options: [{ "en": "To buy cheaply" }, { "en": "To sell cheaply" }]
+        answer: 1
+  - id: "bn-market-prices"
+    title: "A crop price board at a market"
+    theme: "agriculture"
+    sentences:
+      - { text: "আজকের বাজারদর।", reading: "ājoker bājārodor.", ipa: "adʒoker badʒarod̪or" }
+      - { text: "ধান: প্রতি মণ আটশো টাকা।", reading: "dhān: proti môn āṭośo ṭākā.", ipa: "d̪ʱan prot̪i mɔn aʈoʃo ʈaka" }
+      - { text: "পাট: প্রতি মণ বারোশো টাকা।", reading: "pāṭ: proti môn bārośo ṭākā.", ipa: "paʈ prot̪i mɔn baroʃo ʈaka" }
+      - { text: "আলু: প্রতি কেজি বিশ টাকা।", reading: "ālu: proti keji biś ṭākā.", ipa: "alu prot̪i kedʒi biʃ ʈaka" }
+      - { text: "মূল্য বাড়লে জানানো হবে।", reading: "mull bāṛole jānāno hôbe.", ipa: "mull baɽole dʒanano ɦɔbe" }
+    questions:
+      - id: "bn-3522"
+        prompt: { "en": "The board lists prices for crops." }
+        answer: true
+      - id: "bn-3523"
+        prompt: { "en": "Which crop is the most expensive per maund?" }
+        options: [{ "en": "Jute" }, { "en": "Rice" }]
+        answer: 1
+      - id: "bn-3524"
+        prompt: { "en": "What will happen if prices rise?" }
+        options: [{ "en": "The board will be updated" }, { "en": "The market will close" }]
+        answer: 1

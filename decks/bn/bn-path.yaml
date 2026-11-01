@@ -566,11 +566,14 @@ units:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
   - decks: ["bn-reading-environment"]
     words: 0
-  - planned: { id: "bn-agriculture", theme: "agriculture", words: 50 }
+  - decks: ["bn-agriculture", "bn-agriculture-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's rice and jute" } }
     reading_passages:
       - { id: "market-prices", text: { "en": "A crop price board at a market" } }
+  - decks: ["bn-reading-agriculture"]
+    words: 0
   - planned: { id: "bn-grammar-while", grammar: "while" }
     listening_passages:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
