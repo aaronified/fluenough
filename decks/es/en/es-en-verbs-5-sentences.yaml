@@ -1,0 +1,32 @@
+schema: 1
+id: "es-en-verbs-5-sentences"
+kind: "layer"
+core: "es-verbs-5-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: story in order"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the stages of an event, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-3107":
+    native: "I begin the trip and finish the book."
+    bases: { "el": "the" }
+    confusables: { "continuar": { why: "Continuar is to carry on, not to start." }, "terminar": { why: "Terminar is to finish, a close word to acabar." } }
+  "es-3108":
+    native: "I try to arrive, but I fail."
+    confusables: { "lograr": { why: "Lograr is to achieve, the success I want." }, "conseguir": { why: "Conseguir is to get something, another success word." } }
+  "es-3109":
+    native: "The train leaves and the passenger returns."
+    bases: { "El": "the", "el": "the" }
+    confusables: { "llegar": { why: "Llegar is to arrive, the other end of the trip." }, "volver": { why: "Volver is to come back, a close word to regresar." } }
+  "es-3110":
+    native: "I divide the task and separate the papers."
+    bases: { "la": "the", "los": "the" }
+    confusables: { "unir": { why: "Unir is to join, the opposite of separating." }, "reunir": { why: "Reunir is to gather, bring together." } }
+  "es-3111":
+    native: "Strange things happen and the books disappear."
+    bases: { "raras": "strange; odd", "los": "the" }
+    confusables: { "aparecer": { why: "Aparecer is to appear, the opposite of disappear." }, "ocurrir": { why: "Ocurrir is to happen, close to suceder." } }
+  "es-3112":
+    native: "The plan turns out well and evolves over time."
+    bases: { "El": "the", "plan": "plan", "con": "with", "el": "the" }
+    confusables: { "transformar": { why: "Transformar is to change in form." }, "madurar": { why: "Madurar is to mature, a personal growth." } }
