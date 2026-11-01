@@ -28,7 +28,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ভাঙানো", reading: "bhāṅāno" }] }
     examples:
       - { target: "এক শো টাকা ভাঙাল।", reading: "ek śo ṭākā bhāṅāl.", ipa: "ek ʃo ʈaka bʱaŋal", bases: [{ word: "এক", ref: "bn-0202" }, { word: "শো", base: "শো", reading: "śo" }, { word: "টাকা", ref: "bn-0245" }, { word: "ভাঙাল", base: "ভাঙানো", reading: "bhāṅāl" }] }
-      - { target: "পাঁচ টাকার খুচরো ভাঙিয়ে দাও।", reading: "pām̐c ṭākār khucoro bhāṅiye dāo.", ipa: "pãtʃ ʈakar kʰutʃoro bʱaŋije d̪ao", bases: [{ word: "খুচরো", ref: "bn-0246" }, { word: "ভাঙিয়ে", base: "ভাঙানো", reading: "bhāṅiye" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "পাঁচ টাকার খুচরো ভাঙিয়ে দাও।", reading: "pām̐c ṭākār khucoro bhāṅiye dāo.", ipa: "pãtʃ ʈakar kʰutʃoro bʱaŋije d̪ao", bases: [{ word: "খুচরো", ref: "bn-0246" }, { word: "ভাঙিয়ে", base: "ভাঙানো", reading: "bhāṅiye" }, { word: "দাও", ref: "bn-0888" }, { word: "টাকার", ref: "bn-0245" }] }
   - id: "bn-4482"
     target: "মেলানো"
     reading: "melāno"
@@ -77,7 +77,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বাঁধানো", reading: "bām̐dhāno" }] }
     examples:
-      - { target: "ছবিটা ফ্রেমে বাঁধানো হলো।", reading: "chobiṭā phreme bām̐dhāno hôlo.", ipa: "tʃʰobiʈa pʰreme bãd̪ʱano ɦɔlo", bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "ফ্রেমে", base: "ফ্রেম", reading: "phreme" }, { word: "বাঁধানো", base: "বাঁধানো", reading: "bām̐dhāno" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "ছবিটা ফ্রেমে বাঁধানো হলো।", reading: "chobiṭā phreme bām̐dhāno hôlo.", ipa: "tʃʰobiʈa pʰreme bãd̪ʱano ɦɔlo", bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "ফ্রেমে", base: "ফ্রেম", reading: "phreme" }, { word: "বাঁধানো", base: "বাঁধানো", reading: "bām̐dhāno" }, { word: "হলো", ref: "bn-0874" }] }
       - { target: "গাছে দড়ি বাঁধাও।", reading: "gāche doṛi bām̐dhāo.", ipa: "ɡatʃʰe d̪oɽi bãd̪ʱao", bases: [{ word: "গাছে", ref: "bn-2285" }, { word: "দড়ি", ref: "bn-3975" }, { word: "বাঁধাও", base: "বাঁধানো", reading: "bām̐dhāo" }] }
   - id: "bn-4487"
     target: "জমানো"
@@ -128,7 +128,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "রাঁধানো", reading: "rām̐dhāno" }] }
     examples:
       - { target: "মা লোক দিয়ে রাঁধালেন।", reading: "mā lok diye rām̐dhālen.", ipa: "ma lok d̪ije rãd̪ʱalen", bases: [{ word: "মা", ref: "bn-0424" }, { word: "লোক", base: "লোক", reading: "lok" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "রাঁধালেন", base: "রাঁধানো", reading: "rām̐dhālen" }] }
-      - { target: "আজ ভাত রাঁধিয়ে নাও।", reading: "āj bhāt rām̐dhiye nāo.", ipa: "adʒ bʱat̪ rãd̪ʱije nao", bases: [{ word: "আজ", ref: "bn-0315" }, { word: "ভাত", ref: "bn-0352" }, { word: "রাঁধিয়ে", base: "রাঁধানো", reading: "rām̐dhiye" }] }
+      - { target: "আজ ভাত রাঁধিয়ে নাও।", reading: "āj bhāt rām̐dhiye nāo.", ipa: "adʒ bʱat̪ rãd̪ʱije nao", bases: [{ word: "আজ", ref: "bn-0315" }, { word: "ভাত", ref: "bn-0352" }, { word: "রাঁধিয়ে", base: "রাঁধানো", reading: "rām̐dhiye" }, { word: "নাও", ref: "bn-0889" }] }
   - id: "bn-4492"
     target: "ধরানো"
     reading: "dhôrāno"
@@ -184,21 +184,23 @@ cards:
     reading: "jācāi kôrā"
     ipa: "dʒatʃai kɔra"
     pos: "verb"
+    bases: [{ word: "যাচাই", base: "যাচাই", reading: "jācāi" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "যাচাই করা", reading: "jācāi kôrā" }] }
     examples:
-      - { target: "খবরটা যাচাই করা হলো।", reading: "khôboroṭā jācāi kôrā hôlo.", ipa: "kʰɔboroʈa dʒatʃai kɔra ɦɔlo", bases: [{ word: "খবরটা", ref: "bn-2884" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "খবরটা যাচাই করা হলো।", reading: "khôboroṭā jācāi kôrā hôlo.", ipa: "kʰɔboroʈa dʒatʃai kɔra ɦɔlo", bases: [{ word: "খবরটা", ref: "bn-2884" }, { word: "হলো", ref: "bn-0874" }, { word: "যাচাই", base: "যাচাই", reading: "jācāi" }] }
       - { target: "তথ্য যাচাই করে দেখো।", reading: "totth jācāi kôre dekho.", ipa: "t̪ot̪t̪ʰ dʒatʃai kɔre d̪ekʰo", bases: [{ word: "তথ্য", ref: "bn-2904" }, { word: "যাচাই", base: "যাচাই করা", reading: "jācāi" }, { word: "করে", ref: "bn-0102" }, { word: "দেখো", ref: "bn-0877" }] }
   - id: "bn-4498"
     target: "প্রস্তুত করা"
     reading: "prostut kôrā"
     ipa: "prost̪ut̪ kɔra"
     pos: "verb"
+    bases: [{ word: "প্রস্তুত", base: "প্রস্তুত", reading: "prostut" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "প্রস্তুত করা", reading: "prostut kôrā" }] }
     examples:
-      - { target: "সে খাবার প্রস্তুত করল।", reading: "se khābār prostut kôrol.", ipa: "se kʰabar prost̪ut̪ kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "খাবার", ref: "bn-0349" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "পরীক্ষার জন্য প্রস্তুত হও।", reading: "porikkhār jonn prostut hôo.", ipa: "porikkʰar dʒonn prost̪ut̪ ɦɔo", bases: [{ word: "পরীক্ষার", ref: "bn-1776" }, { word: "জন্য", ref: "bn-0297" }, { word: "হও", ref: "bn-0874" }] }
+      - { target: "সে খাবার প্রস্তুত করল।", reading: "se khābār prostut kôrol.", ipa: "se kʰabar prost̪ut̪ kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "খাবার", ref: "bn-0349" }, { word: "করল", ref: "bn-0102" }, { word: "প্রস্তুত", base: "প্রস্তুত", reading: "prostut" }] }
+      - { target: "পরীক্ষার জন্য প্রস্তুত হও।", reading: "porikkhār jonn prostut hôo.", ipa: "porikkʰar dʒonn prost̪ut̪ ɦɔo", bases: [{ word: "পরীক্ষার", ref: "bn-1776" }, { word: "জন্য", ref: "bn-0297" }, { word: "হও", ref: "bn-0874" }, { word: "প্রস্তুত", base: "প্রস্তুত", reading: "prostut" }] }
   - id: "bn-4499"
     target: "পরিকল্পনা করা"
     reading: "porikolponā kôrā"
@@ -224,11 +226,12 @@ cards:
     reading: "sômponn kôrā"
     ipa: "sɔmponn kɔra"
     pos: "verb"
+    bases: [{ word: "সম্পন্ন", base: "সম্পন্ন", reading: "sômponn" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "সম্পন্ন করা", reading: "sômponn kôrā" }] }
     examples:
-      - { target: "কাজটা সম্পন্ন হলো।", reading: "kājoṭā sômponn hôlo.", ipa: "kadʒoʈa sɔmponn ɦɔlo", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "হলো", ref: "bn-0812" }] }
-      - { target: "সে সব কাজ সম্পন্ন করল।", reading: "se sôb kāj sômponn kôrol.", ipa: "se sɔb kadʒ sɔmponn kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সব", ref: "bn-0552" }, { word: "কাজ", ref: "bn-0198" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "কাজটা সম্পন্ন হলো।", reading: "kājoṭā sômponn hôlo.", ipa: "kadʒoʈa sɔmponn ɦɔlo", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "হলো", ref: "bn-0874" }, { word: "সম্পন্ন", base: "সম্পন্ন", reading: "sômponn" }] }
+      - { target: "সে সব কাজ সম্পন্ন করল।", reading: "se sôb kāj sômponn kôrol.", ipa: "se sɔb kadʒ sɔmponn kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সব", ref: "bn-0552" }, { word: "কাজ", ref: "bn-0198" }, { word: "করল", ref: "bn-0102" }, { word: "সম্পন্ন", base: "সম্পন্ন", reading: "sômponn" }] }
   - id: "bn-4502"
     target: "নির্বাচন করা"
     reading: "nirrācon kôrā"
@@ -244,11 +247,12 @@ cards:
     reading: "mullāyon kôrā"
     ipa: "mullajon kɔra"
     pos: "verb"
+    bases: [{ word: "মূল্যায়ন", base: "মূল্যায়ন", reading: "mullāyon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মূল্যায়ন করা", reading: "mullāyon kôrā" }] }
     examples:
-      - { target: "শিক্ষক খাতা মূল্যায়ন করলেন।", reading: "śikkhok khātā mullāyon kôrolen.", ipa: "ʃikkʰok kʰat̪a mullajon kɔrolen", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "খাতা", ref: "bn-1140" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "কাজটা ভালো মূল্যায়ন হলো।", reading: "kājoṭā bhālo mullāyon hôlo.", ipa: "kadʒoʈa bʱalo mullajon ɦɔlo", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "ভালো", ref: "bn-0617" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "শিক্ষক খাতা মূল্যায়ন করলেন।", reading: "śikkhok khātā mullāyon kôrolen.", ipa: "ʃikkʰok kʰat̪a mullajon kɔrolen", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "খাতা", ref: "bn-1140" }, { word: "করলেন", ref: "bn-0102" }, { word: "মূল্যায়ন", base: "মূল্যায়ন", reading: "mullāyon" }] }
+      - { target: "কাজটা ভালো মূল্যায়ন হলো।", reading: "kājoṭā bhālo mullāyon hôlo.", ipa: "kadʒoʈa bʱalo mullajon ɦɔlo", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "ভালো", ref: "bn-0617" }, { word: "হলো", ref: "bn-0874" }, { word: "মূল্যায়ন", base: "মূল্যায়ন", reading: "mullāyon" }] }
   - id: "bn-4504"
     target: "সমাধান করা"
     reading: "sômādhān kôrā"
@@ -264,41 +268,45 @@ cards:
     reading: "grôhon kôrā"
     ipa: "ɡrɔɦon kɔra"
     pos: "verb"
+    bases: [{ word: "গ্রহণ", base: "গ্রহণ", reading: "grôhon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "গ্রহণ করা", reading: "grôhon kôrā" }] }
     examples:
-      - { target: "তিনি উপহারটা গ্রহণ করলেন।", reading: "tini upohāroṭā grôhon kôrolen.", ipa: "t̪ini upoɦaroʈa ɡrɔɦon kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "উপহারটা", ref: "bn-1664" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "আমার অনুরোধ গ্রহণ করো।", reading: "āmār ônurodh grôhon kôro.", ipa: "amar ɔnurod̪ʱ ɡrɔɦon kɔro", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "অনুরোধ", base: "অনুরোধ", reading: "ônurodh" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "তিনি উপহারটা গ্রহণ করলেন।", reading: "tini upohāroṭā grôhon kôrolen.", ipa: "t̪ini upoɦaroʈa ɡrɔɦon kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "উপহারটা", ref: "bn-1664" }, { word: "করলেন", ref: "bn-0102" }, { word: "গ্রহণ", base: "গ্রহণ", reading: "grôhon" }] }
+      - { target: "আমার অনুরোধ গ্রহণ করো।", reading: "āmār ônurodh grôhon kôro.", ipa: "amar ɔnurod̪ʱ ɡrɔɦon kɔro", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "অনুরোধ", base: "অনুরোধ", reading: "ônurodh" }, { word: "করো", ref: "bn-0102" }, { word: "গ্রহণ", base: "গ্রহণ", reading: "grôhon" }] }
   - id: "bn-4506"
     target: "বর্জন করা"
     reading: "bôrjon kôrā"
     ipa: "bɔrdʒon kɔra"
     pos: "verb"
+    bases: [{ word: "বর্জন", base: "বর্জন", reading: "bôrjon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বর্জন করা", reading: "bôrjon kôrā" }] }
     examples:
-      - { target: "সে প্রস্তাবটা বর্জন করল।", reading: "se prôstāboṭā bôrjon kôrol.", ipa: "se prɔst̪aboʈa bɔrdʒon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "প্রস্তাবটা", ref: "bn-2972" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "ক্ষতিকর জিনিস বর্জন করো।", reading: "kkhotikor jinis bôrjon kôro.", ipa: "kkʰot̪ikor dʒinis bɔrdʒon kɔro", bases: [{ word: "ক্ষতিকর", base: "ক্ষতিকর", reading: "kkhotikor" }, { word: "জিনিস", ref: "bn-1713" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "সে প্রস্তাবটা বর্জন করল।", reading: "se prôstāboṭā bôrjon kôrol.", ipa: "se prɔst̪aboʈa bɔrdʒon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "প্রস্তাবটা", ref: "bn-2972" }, { word: "করল", ref: "bn-0102" }, { word: "বর্জন", base: "বর্জন", reading: "bôrjon" }] }
+      - { target: "ক্ষতিকর জিনিস বর্জন করো।", reading: "kkhotikor jinis bôrjon kôro.", ipa: "kkʰot̪ikor dʒinis bɔrdʒon kɔro", bases: [{ word: "ক্ষতিকর", base: "ক্ষতিকর", reading: "kkhotikor" }, { word: "জিনিস", ref: "bn-1713" }, { word: "করো", ref: "bn-0102" }, { word: "বর্জন", base: "বর্জন", reading: "bôrjon" }] }
   - id: "bn-4507"
     target: "অর্জন করা"
     reading: "ôrjon kôrā"
     ipa: "ɔrdʒon kɔra"
     pos: "verb"
+    bases: [{ word: "অর্জন", base: "অর্জন", reading: "ôrjon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "অর্জন করা", reading: "ôrjon kôrā" }] }
     examples:
-      - { target: "সে পদক অর্জন করল।", reading: "se pôdok ôrjon kôrol.", ipa: "se pɔd̪ok ɔrdʒon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "পদক", ref: "bn-3838" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "জ্ঞান অর্জন করা কঠিন নয়।", reading: "ggān ôrjon kôrā koṭhin nôy.", ipa: "ɡɡan ɔrdʒon kɔra koʈʰin nɔj", bases: [{ word: "জ্ঞান", ref: "bn-4252" }, { word: "কঠিন", ref: "bn-0624" }, { word: "নয়", ref: "bn-0210" }] }
+      - { target: "সে পদক অর্জন করল।", reading: "se pôdok ôrjon kôrol.", ipa: "se pɔd̪ok ɔrdʒon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "পদক", ref: "bn-3838" }, { word: "করল", ref: "bn-0102" }, { word: "অর্জন", base: "অর্জন", reading: "ôrjon" }] }
+      - { target: "জ্ঞান অর্জন করা কঠিন নয়।", reading: "ggān ôrjon kôrā koṭhin nôy.", ipa: "ɡɡan ɔrdʒon kɔra koʈʰin nɔj", bases: [{ word: "জ্ঞান", ref: "bn-4252" }, { word: "কঠিন", ref: "bn-0624" }, { word: "নয়", ref: "bn-0210" }, { word: "অর্জন", base: "অর্জন", reading: "ôrjon" }] }
   - id: "bn-4508"
     target: "উপভোগ করা"
     reading: "upobhog kôrā"
     ipa: "upobʱoɡ kɔra"
     pos: "verb"
+    bases: [{ word: "উপভোগ", base: "উপভোগ", reading: "upobhog" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "উপভোগ করা", reading: "upobhog kôrā" }] }
     examples:
-      - { target: "আমরা ছুটিটা উপভোগ করলাম।", reading: "āmorā chuṭiṭā upobhog kôrolām.", ipa: "amora tʃʰuʈiʈa upobʱoɡ kɔrolam", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "ছুটিটা", ref: "bn-0463" }, { word: "করলাম", ref: "bn-0102" }] }
-      - { target: "গানটা উপভোগ করো।", reading: "gānoṭā upobhog kôro.", ipa: "ɡanoʈa upobʱoɡ kɔro", bases: [{ word: "গানটা", ref: "bn-1668" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "আমরা ছুটিটা উপভোগ করলাম।", reading: "āmorā chuṭiṭā upobhog kôrolām.", ipa: "amora tʃʰuʈiʈa upobʱoɡ kɔrolam", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "ছুটিটা", ref: "bn-0463" }, { word: "করলাম", ref: "bn-0102" }, { word: "উপভোগ", base: "উপভোগ", reading: "upobhog" }] }
+      - { target: "গানটা উপভোগ করো।", reading: "gānoṭā upobhog kôro.", ipa: "ɡanoʈa upobʱoɡ kɔro", bases: [{ word: "গানটা", ref: "bn-1668" }, { word: "করো", ref: "bn-0102" }, { word: "উপভোগ", base: "উপভোগ", reading: "upobhog" }] }
   - id: "bn-4509"
     target: "সংগ্রহ করা"
     reading: "sôṅgroh kôrā"
@@ -314,71 +322,78 @@ cards:
     reading: "bibeconā kôrā"
     ipa: "bibetʃona kɔra"
     pos: "verb"
+    bases: [{ word: "বিবেচনা", base: "বিবেচনা", reading: "bibeconā" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বিবেচনা করা", reading: "bibeconā kôrā" }] }
     examples:
-      - { target: "আমরা প্রস্তাবটা বিবেচনা করব।", reading: "āmorā prôstāboṭā bibeconā kôrob.", ipa: "amora prɔst̪aboʈa bibetʃona kɔrob", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "প্রস্তাবটা", ref: "bn-2972" }, { word: "করব", ref: "bn-0102" }] }
+      - { target: "আমরা প্রস্তাবটা বিবেচনা করব।", reading: "āmorā prôstāboṭā bibeconā kôrob.", ipa: "amora prɔst̪aboʈa bibetʃona kɔrob", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "প্রস্তাবটা", ref: "bn-2972" }, { word: "করব", ref: "bn-0102" }, { word: "বিবেচনা", base: "বিবেচনা", reading: "bibeconā" }] }
       - { target: "সবকিছু বিবেচনা করে দেখো।", reading: "sôbokichu bibeconā kôre dekho.", ipa: "sɔbokitʃʰu bibetʃona kɔre d̪ekʰo", bases: [{ word: "সবকিছু", base: "সবকিছু", reading: "sôbokichu" }, { word: "বিবেচনা", base: "বিবেচনা করা", reading: "bibeconā" }, { word: "করে", ref: "bn-0102" }, { word: "দেখো", ref: "bn-0877" }] }
   - id: "bn-4511"
     target: "সংশোধন করা"
     reading: "sôṅśodhon kôrā"
     ipa: "sɔŋʃod̪ʱon kɔra"
     pos: "verb"
+    bases: [{ word: "সংশোধন", base: "সংশোধন", reading: "sôṅśodhon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "সংশোধন করা", reading: "sôṅśodhon kôrā" }] }
     examples:
-      - { target: "শিক্ষক ভুলগুলো সংশোধন করলেন।", reading: "śikkhok bhulogulo sôṅśodhon kôrolen.", ipa: "ʃikkʰok bʱuloɡulo sɔŋʃod̪ʱon kɔrolen", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "ভুলগুলো", ref: "bn-1244" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "লেখাটা সংশোধন করো।", reading: "lekhāṭā sôṅśodhon kôro.", ipa: "lekʰaʈa sɔŋʃod̪ʱon kɔro", bases: [{ word: "লেখাটা", ref: "bn-0880" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "শিক্ষক ভুলগুলো সংশোধন করলেন।", reading: "śikkhok bhulogulo sôṅśodhon kôrolen.", ipa: "ʃikkʰok bʱuloɡulo sɔŋʃod̪ʱon kɔrolen", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "ভুলগুলো", ref: "bn-1244" }, { word: "করলেন", ref: "bn-0102" }, { word: "সংশোধন", base: "সংশোধন", reading: "sôṅśodhon" }] }
+      - { target: "লেখাটা সংশোধন করো।", reading: "lekhāṭā sôṅśodhon kôro.", ipa: "lekʰaʈa sɔŋʃod̪ʱon kɔro", bases: [{ word: "লেখাটা", ref: "bn-0880" }, { word: "করো", ref: "bn-0102" }, { word: "সংশোধন", base: "সংশোধন", reading: "sôṅśodhon" }] }
   - id: "bn-4512"
     target: "অনুমান করা"
     reading: "ônumān kôrā"
     ipa: "ɔnuman kɔra"
     pos: "verb"
+    bases: [{ word: "অনুমান", base: "অনুমান", reading: "ônumān" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "অনুমান করা", reading: "ônumān kôrā" }] }
     examples:
-      - { target: "সে সময়টা অনুমান করল।", reading: "se sômoyoṭā ônumān kôrol.", ipa: "se sɔmojoʈa ɔnuman kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সময়টা", ref: "bn-0061" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "কী অনুমান করছ?", reading: "ki ônumān kôroch?", ipa: "ki ɔnuman kɔrotʃʰ", bases: [{ word: "কী", ref: "bn-0161" }, { word: "করছ", ref: "bn-0102" }] }
+      - { target: "সে সময়টা অনুমান করল।", reading: "se sômoyoṭā ônumān kôrol.", ipa: "se sɔmojoʈa ɔnuman kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সময়টা", ref: "bn-0061" }, { word: "করল", ref: "bn-0102" }, { word: "অনুমান", base: "অনুমান", reading: "ônumān" }] }
+      - { target: "কী অনুমান করছ?", reading: "ki ônumān kôroch?", ipa: "ki ɔnuman kɔrotʃʰ", bases: [{ word: "কী", ref: "bn-0161" }, { word: "করছ", ref: "bn-0102" }, { word: "অনুমান", base: "অনুমান", reading: "ônumān" }] }
   - id: "bn-4513"
     target: "স্বীকার করা"
     reading: "sikār kôrā"
     ipa: "sikar kɔra"
     pos: "verb"
+    bases: [{ word: "স্বীকার", base: "স্বীকার", reading: "sikār" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "স্বীকার করা", reading: "sikār kôrā" }] }
     examples:
-      - { target: "সে ভুল স্বীকার করল।", reading: "se bhul sikār kôrol.", ipa: "se bʱul sikar kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "ভুল", ref: "bn-1244" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "ভুলটা স্বীকার করো।", reading: "bhuloṭā sikār kôro.", ipa: "bʱuloʈa sikar kɔro", bases: [{ word: "ভুলটা", ref: "bn-1244" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "সে ভুল স্বীকার করল।", reading: "se bhul sikār kôrol.", ipa: "se bʱul sikar kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "ভুল", ref: "bn-1244" }, { word: "করল", ref: "bn-0102" }, { word: "স্বীকার", base: "স্বীকার", reading: "sikār" }] }
+      - { target: "ভুলটা স্বীকার করো।", reading: "bhuloṭā sikār kôro.", ipa: "bʱuloʈa sikar kɔro", bases: [{ word: "ভুলটা", ref: "bn-1244" }, { word: "করো", ref: "bn-0102" }, { word: "স্বীকার", base: "স্বীকার", reading: "sikār" }] }
   - id: "bn-4514"
     target: "পর্যবেক্ষণ করা"
     reading: "pôrjobekkhon kôrā"
     ipa: "pɔrdʒobekkʰon kɔra"
     pos: "verb"
+    bases: [{ word: "পর্যবেক্ষণ", base: "পর্যবেক্ষণ", reading: "pôrjobekkhon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "পর্যবেক্ষণ করা", reading: "pôrjobekkhon kôrā" }] }
     examples:
-      - { target: "বিজ্ঞানী পাখিদের পর্যবেক্ষণ করলেন।", reading: "biggāni pākhider pôrjobekkhon kôrolen.", ipa: "biɡɡani pakʰid̪er pɔrdʒobekkʰon kɔrolen", bases: [{ word: "বিজ্ঞানী", ref: "bn-3336" }, { word: "পাখিদের", ref: "bn-1289" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "নিয়মিত পর্যবেক্ষণ করো।", reading: "niyomit pôrjobekkhon kôro.", ipa: "nijomit̪ pɔrdʒobekkʰon kɔro", bases: [{ word: "নিয়মিত", ref: "bn-2795" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "বিজ্ঞানী পাখিদের পর্যবেক্ষণ করলেন।", reading: "biggāni pākhider pôrjobekkhon kôrolen.", ipa: "biɡɡani pakʰid̪er pɔrdʒobekkʰon kɔrolen", bases: [{ word: "বিজ্ঞানী", ref: "bn-3336" }, { word: "পাখিদের", ref: "bn-1289" }, { word: "করলেন", ref: "bn-0102" }, { word: "পর্যবেক্ষণ", base: "পর্যবেক্ষণ", reading: "pôrjobekkhon" }] }
+      - { target: "নিয়মিত পর্যবেক্ষণ করো।", reading: "niyomit pôrjobekkhon kôro.", ipa: "nijomit̪ pɔrdʒobekkʰon kɔro", bases: [{ word: "নিয়মিত", ref: "bn-2795" }, { word: "করো", ref: "bn-0102" }, { word: "পর্যবেক্ষণ", base: "পর্যবেক্ষণ", reading: "pôrjobekkhon" }] }
   - id: "bn-4515"
     target: "পরিদর্শন করা"
     reading: "poridorśon kôrā"
     ipa: "porid̪orʃon kɔra"
     pos: "verb"
+    bases: [{ word: "পরিদর্শন", base: "পরিদর্শন", reading: "poridorśon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "পরিদর্শন করা", reading: "poridorśon kôrā" }] }
     examples:
-      - { target: "কর্মকর্তা স্কুল পরিদর্শন করলেন।", reading: "kôrmokortā skul poridorśon kôrolen.", ipa: "kɔrmokort̪a skul porid̪orʃon kɔrolen", bases: [{ word: "কর্মকর্তা", ref: "bn-3127" }, { word: "স্কুল", ref: "bn-1037" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "কাজটা পরিদর্শন করা হবে।", reading: "kājoṭā poridorśon kôrā hôbe.", ipa: "kadʒoʈa porid̪orʃon kɔra ɦɔbe", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "কর্মকর্তা স্কুল পরিদর্শন করলেন।", reading: "kôrmokortā skul poridorśon kôrolen.", ipa: "kɔrmokort̪a skul porid̪orʃon kɔrolen", bases: [{ word: "কর্মকর্তা", ref: "bn-3127" }, { word: "স্কুল", ref: "bn-1037" }, { word: "করলেন", ref: "bn-0102" }, { word: "পরিদর্শন", base: "পরিদর্শন", reading: "poridorśon" }] }
+      - { target: "কাজটা পরিদর্শন করা হবে।", reading: "kājoṭā poridorśon kôrā hôbe.", ipa: "kadʒoʈa porid̪orʃon kɔra ɦɔbe", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "হবে", ref: "bn-0874" }, { word: "পরিদর্শন", base: "পরিদর্শন", reading: "poridorśon" }] }
   - id: "bn-4516"
     target: "স্থাপন করা"
     reading: "sthāpon kôrā"
     ipa: "st̪ʰapon kɔra"
     pos: "verb"
+    bases: [{ word: "স্থাপন", base: "স্থাপন", reading: "sthāpon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "স্থাপন করা", reading: "sthāpon kôrā" }] }
     examples:
-      - { target: "তারা নতুন বিদ্যালয় স্থাপন করল।", reading: "tārā notun biddāloy sthāpon kôrol.", ipa: "t̪ara not̪un bid̪d̪aloj st̪ʰapon kɔrol", bases: [{ word: "তারা", ref: "bn-0840" }, { word: "নতুন", ref: "bn-0620" }, { word: "বিদ্যালয়", ref: "bn-2198" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "একটা স্মারক স্থাপন করা হলো।", reading: "ekoṭā smārok sthāpon kôrā hôlo.", ipa: "ekoʈa smarok st̪ʰapon kɔra ɦɔlo", bases: [{ word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "স্মারক", ref: "bn-3048" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "তারা নতুন বিদ্যালয় স্থাপন করল।", reading: "tārā notun biddāloy sthāpon kôrol.", ipa: "t̪ara not̪un bid̪d̪aloj st̪ʰapon kɔrol", bases: [{ word: "তারা", ref: "bn-0840" }, { word: "নতুন", ref: "bn-0620" }, { word: "বিদ্যালয়", ref: "bn-2198" }, { word: "করল", ref: "bn-0102" }, { word: "স্থাপন", base: "স্থাপন", reading: "sthāpon" }] }
+      - { target: "একটা স্মারক স্থাপন করা হলো।", reading: "ekoṭā smārok sthāpon kôrā hôlo.", ipa: "ekoʈa smarok st̪ʰapon kɔra ɦɔlo", bases: [{ word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "স্মারক", ref: "bn-3048" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }, { word: "স্থাপন", base: "স্থাপন", reading: "sthāpon" }] }
   - id: "bn-4517"
     target: "আয়োজন করা"
     reading: "āyojon kôrā"
@@ -394,68 +409,75 @@ cards:
     reading: "prôyog kôrā"
     ipa: "prɔjoɡ kɔra"
     pos: "verb"
+    bases: [{ word: "প্রয়োগ", base: "প্রয়োগ", reading: "prôyog" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "প্রয়োগ করা", reading: "prôyog kôrā" }] }
     examples:
-      - { target: "সে নিয়মটা প্রয়োগ করল।", reading: "se niyomoṭā prôyog kôrol.", ipa: "se nijomoʈa prɔjoɡ kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "নিয়মটা", ref: "bn-2284" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "শিখে নেওয়া জ্ঞান প্রয়োগ করো।", reading: "śikhe neoyā ggān prôyog kôro.", ipa: "ʃikʰe neoja ɡɡan prɔjoɡ kɔro", bases: [{ word: "শিখে", ref: "bn-0883" }, { word: "নেওয়া", ref: "bn-0889" }, { word: "জ্ঞান", ref: "bn-4252" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "সে নিয়মটা প্রয়োগ করল।", reading: "se niyomoṭā prôyog kôrol.", ipa: "se nijomoʈa prɔjoɡ kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "নিয়মটা", ref: "bn-2284" }, { word: "করল", ref: "bn-0102" }, { word: "প্রয়োগ", base: "প্রয়োগ", reading: "prôyog" }] }
+      - { target: "শিখে নেওয়া জ্ঞান প্রয়োগ করো।", reading: "śikhe neoyā ggān prôyog kôro.", ipa: "ʃikʰe neoja ɡɡan prɔjoɡ kɔro", bases: [{ word: "শিখে", ref: "bn-0883" }, { word: "নেওয়া", ref: "bn-0889" }, { word: "জ্ঞান", ref: "bn-4252" }, { word: "করো", ref: "bn-0102" }, { word: "প্রয়োগ", base: "প্রয়োগ", reading: "prôyog" }] }
   - id: "bn-4519"
     target: "বিশ্লেষণ করা"
     reading: "biśleśon kôrā"
     ipa: "biʃleʃon kɔra"
     pos: "verb"
+    bases: [{ word: "বিশ্লেষণ", base: "বিশ্লেষণ", reading: "biśleśon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বিশ্লেষণ করা", reading: "biśleśon kôrā" }] }
     examples:
-      - { target: "সে তথ্যগুলো বিশ্লেষণ করল।", reading: "se totthogulo biśleśon kôrol.", ipa: "se t̪ot̪t̪ʰoɡulo biʃleʃon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "তথ্যগুলো", ref: "bn-2904" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "ফলাফল বিশ্লেষণ করো।", reading: "phôlāphol biśleśon kôro.", ipa: "pʰɔlapʰol biʃleʃon kɔro", bases: [{ word: "ফলাফল", base: "ফলাফল", reading: "phôlāphol" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "সে তথ্যগুলো বিশ্লেষণ করল।", reading: "se totthogulo biśleśon kôrol.", ipa: "se t̪ot̪t̪ʰoɡulo biʃleʃon kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "তথ্যগুলো", ref: "bn-2904" }, { word: "করল", ref: "bn-0102" }, { word: "বিশ্লেষণ", base: "বিশ্লেষণ", reading: "biśleśon" }] }
+      - { target: "ফলাফল বিশ্লেষণ করো।", reading: "phôlāphol biśleśon kôro.", ipa: "pʰɔlapʰol biʃleʃon kɔro", bases: [{ word: "ফলাফল", base: "ফলাফল", reading: "phôlāphol" }, { word: "করো", ref: "bn-0102" }, { word: "বিশ্লেষণ", base: "বিশ্লেষণ", reading: "biśleśon" }] }
   - id: "bn-4520"
     target: "উল্লেখ করা"
     reading: "ullekh kôrā"
     ipa: "ullekʰ kɔra"
     pos: "verb"
+    bases: [{ word: "উল্লেখ", base: "উল্লেখ", reading: "ullekh" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "উল্লেখ করা", reading: "ullekh kôrā" }] }
     examples:
-      - { target: "তিনি তার নাম উল্লেখ করলেন।", reading: "tini tār nām ullekh kôrolen.", ipa: "t̪ini t̪ar nam ullekʰ kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "তার", ref: "bn-3275" }, { word: "নাম", ref: "bn-0191" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "এই বিষয়টা উল্লেখ করো না।", reading: "ei biśoyoṭā ullekh kôro nā.", ipa: "ei biʃojoʈa ullekʰ kɔro na", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বিষয়টা", ref: "bn-2164" }, { word: "করো", ref: "bn-0102" }, { word: "না", ref: "bn-0160" }] }
+      - { target: "তিনি তার নাম উল্লেখ করলেন।", reading: "tini tār nām ullekh kôrolen.", ipa: "t̪ini t̪ar nam ullekʰ kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "তার", ref: "bn-3275" }, { word: "নাম", ref: "bn-0191" }, { word: "করলেন", ref: "bn-0102" }, { word: "উল্লেখ", base: "উল্লেখ", reading: "ullekh" }] }
+      - { target: "এই বিষয়টা উল্লেখ করো না।", reading: "ei biśoyoṭā ullekh kôro nā.", ipa: "ei biʃojoʈa ullekʰ kɔro na", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বিষয়টা", ref: "bn-2164" }, { word: "করো", ref: "bn-0102" }, { word: "না", ref: "bn-0160" }, { word: "উল্লেখ", base: "উল্লেখ", reading: "ullekh" }] }
   - id: "bn-4521"
     target: "পর্যালোচনা করা"
     reading: "pôrjāloconā kôrā"
     ipa: "pɔrdʒalotʃona kɔra"
     pos: "verb"
+    bases: [{ word: "পর্যালোচনা", base: "পর্যালোচনা", reading: "pôrjāloconā" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "পর্যালোচনা করা", reading: "pôrjāloconā kôrā" }] }
     examples:
-      - { target: "সম্পাদক লেখাটা পর্যালোচনা করলেন।", reading: "sômpādok lekhāṭā pôrjāloconā kôrolen.", ipa: "sɔmpad̪ok lekʰaʈa pɔrdʒalotʃona kɔrolen", bases: [{ word: "সম্পাদক", ref: "bn-2891" }, { word: "লেখাটা", ref: "bn-0880" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "বইটা পর্যালোচনা করো।", reading: "boiṭā pôrjāloconā kôro.", ipa: "boiʈa pɔrdʒalotʃona kɔro", bases: [{ word: "বইটা", ref: "bn-0131" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "সম্পাদক লেখাটা পর্যালোচনা করলেন।", reading: "sômpādok lekhāṭā pôrjāloconā kôrolen.", ipa: "sɔmpad̪ok lekʰaʈa pɔrdʒalotʃona kɔrolen", bases: [{ word: "সম্পাদক", ref: "bn-2891" }, { word: "লেখাটা", ref: "bn-0880" }, { word: "করলেন", ref: "bn-0102" }, { word: "পর্যালোচনা", base: "পর্যালোচনা", reading: "pôrjāloconā" }] }
+      - { target: "বইটা পর্যালোচনা করো।", reading: "boiṭā pôrjāloconā kôro.", ipa: "boiʈa pɔrdʒalotʃona kɔro", bases: [{ word: "বইটা", ref: "bn-0131" }, { word: "করো", ref: "bn-0102" }, { word: "পর্যালোচনা", base: "পর্যালোচনা", reading: "pôrjāloconā" }] }
   - id: "bn-4522"
     target: "বিতরণ করা"
     reading: "bitoron kôrā"
     ipa: "bit̪oron kɔra"
     pos: "verb"
+    bases: [{ word: "বিতরণ", base: "বিতরণ", reading: "bitoron" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বিতরণ করা", reading: "bitoron kôrā" }] }
     examples:
-      - { target: "স্বেচ্ছাসেবকরা খাবার বিতরণ করল।", reading: "secchāsebokorā khābār bitoron kôrol.", ipa: "setʃtʃʰasebokora kʰabar bit̪oron kɔrol", bases: [{ word: "স্বেচ্ছাসেবকরা", ref: "bn-4039" }, { word: "খাবার", ref: "bn-0349" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "বই বিতরণ করা হলো।", reading: "boi bitoron kôrā hôlo.", ipa: "boi bit̪oron kɔra ɦɔlo", bases: [{ word: "বই", ref: "bn-1139" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "স্বেচ্ছাসেবকরা খাবার বিতরণ করল।", reading: "secchāsebokorā khābār bitoron kôrol.", ipa: "setʃtʃʰasebokora kʰabar bit̪oron kɔrol", bases: [{ word: "স্বেচ্ছাসেবকরা", ref: "bn-4039" }, { word: "খাবার", ref: "bn-0349" }, { word: "করল", ref: "bn-0102" }, { word: "বিতরণ", base: "বিতরণ", reading: "bitoron" }] }
+      - { target: "বই বিতরণ করা হলো।", reading: "boi bitoron kôrā hôlo.", ipa: "boi bit̪oron kɔra ɦɔlo", bases: [{ word: "বই", ref: "bn-1139" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }, { word: "বিতরণ", base: "বিতরণ", reading: "bitoron" }] }
   - id: "bn-4523"
     target: "সংযোজন করা"
     reading: "sôṅjojon kôrā"
     ipa: "sɔŋdʒodʒon kɔra"
     pos: "verb"
+    bases: [{ word: "সংযোজন", base: "সংযোজন", reading: "sôṅjojon" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "সংযোজন করা", reading: "sôṅjojon kôrā" }] }
     examples:
-      - { target: "লেখকরা একটা নতুন অধ্যায় সংযোজন করলেন।", reading: "lekhokorā ekoṭā notun ôddhāy sôṅjojon kôrolen.", ipa: "lekʰokora ekoʈa not̪un ɔd̪d̪ʱaj sɔŋdʒodʒon kɔrolen", bases: [{ word: "লেখকরা", ref: "bn-0461" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "নতুন", ref: "bn-0620" }, { word: "অধ্যায়", ref: "bn-4402" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "এই তথ্যটা সংযোজন করো।", reading: "ei totthoṭā sôṅjojon kôro.", ipa: "ei t̪ot̪t̪ʰoʈa sɔŋdʒodʒon kɔro", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "তথ্যটা", ref: "bn-2904" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "লেখকরা একটা নতুন অধ্যায় সংযোজন করলেন।", reading: "lekhokorā ekoṭā notun ôddhāy sôṅjojon kôrolen.", ipa: "lekʰokora ekoʈa not̪un ɔd̪d̪ʱaj sɔŋdʒodʒon kɔrolen", bases: [{ word: "লেখকরা", ref: "bn-0461" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "নতুন", ref: "bn-0620" }, { word: "অধ্যায়", ref: "bn-4402" }, { word: "করলেন", ref: "bn-0102" }, { word: "সংযোজন", base: "সংযোজন", reading: "sôṅjojon" }] }
+      - { target: "এই তথ্যটা সংযোজন করো।", reading: "ei totthoṭā sôṅjojon kôro.", ipa: "ei t̪ot̪t̪ʰoʈa sɔŋdʒodʒon kɔro", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "তথ্যটা", ref: "bn-2904" }, { word: "করো", ref: "bn-0102" }, { word: "সংযোজন", base: "সংযোজন", reading: "sôṅjojon" }] }
   - id: "bn-4524"
     target: "প্রতিষ্ঠা করা"
     reading: "protiśṭhā kôrā"
     ipa: "prot̪iʃʈʰa kɔra"
     pos: "verb"
+    bases: [{ word: "প্রতিষ্ঠা", base: "প্রতিষ্ঠা", reading: "protiśṭhā" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "প্রতিষ্ঠা করা", reading: "protiśṭhā kôrā" }] }
     examples:
-      - { target: "তিনি একটা সংস্থা প্রতিষ্ঠা করলেন।", reading: "tini ekoṭā sôṅsthā protiśṭhā kôrolen.", ipa: "t̪ini ekoʈa sɔŋst̪ʰa prot̪iʃʈʰa kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "সংস্থা", ref: "bn-2649" }, { word: "করলেন", ref: "bn-0102" }] }
-      - { target: "বিদ্যালয়টি প্রতিষ্ঠা করা হয়েছে।", reading: "biddāloyoṭi protiśṭhā kôrā hôyeche.", ipa: "bid̪d̪alojoʈi prot̪iʃʈʰa kɔra ɦɔjetʃʰe", bases: [{ word: "বিদ্যালয়টি", ref: "bn-2198" }, { word: "করা", ref: "bn-0102" }, { word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "তিনি একটা সংস্থা প্রতিষ্ঠা করলেন।", reading: "tini ekoṭā sôṅsthā protiśṭhā kôrolen.", ipa: "t̪ini ekoʈa sɔŋst̪ʰa prot̪iʃʈʰa kɔrolen", bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "সংস্থা", ref: "bn-2649" }, { word: "করলেন", ref: "bn-0102" }, { word: "প্রতিষ্ঠা", base: "প্রতিষ্ঠা", reading: "protiśṭhā" }] }
+      - { target: "বিদ্যালয়টি প্রতিষ্ঠা করা হয়েছে।", reading: "biddāloyoṭi protiśṭhā kôrā hôyeche.", ipa: "bid̪d̪alojoʈi prot̪iʃʈʰa kɔra ɦɔjetʃʰe", bases: [{ word: "বিদ্যালয়টি", ref: "bn-2198" }, { word: "করা", ref: "bn-0102" }, { word: "হয়েছে", ref: "bn-0874" }, { word: "প্রতিষ্ঠা", base: "প্রতিষ্ঠা", reading: "protiśṭhā" }] }

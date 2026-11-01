@@ -105,7 +105,7 @@ cards:
       "n1": "{1}: Envy: a bad feeling when you want what someone else has."
     examples:
       "হিংসা খারাপ জিনিস।": "Envy is a bad thing."
-      "কারো প্রতি হিংসা রেখো না।": "Do not hold envy against anyone. (familiar)"
+      "কারো প্রতি হিংসা রেখো না।": { native: "Do not hold envy against anyone. (familiar)", bases: { "কারো": "anyone" } }
   "bn-3901":
     native: "jealousy"
     notes:
@@ -125,7 +125,7 @@ cards:
     notes:
       "n1": "{1}: An elderly person: someone who is older and respected."
     examples:
-      "প্রবীণরা পার্কে বসেছিলেন।": "The elderly people were sitting in the park."
+      "প্রবীণরা পার্কে বসেছিলেন।": { native: "The elderly people were sitting in the park.", bases: { "প্রবীণরা": "elder" } }
       "প্রবীণের কথা শোনা উচিত।": { native: "One should listen to the elderly.", bases: { "প্রবীণের": "elderly person" } }
   "bn-3904":
     native: "companion"
@@ -209,7 +209,7 @@ cards:
     notes:
       "n1": "{1}: A close one: a family member or a very close friend."
     examples:
-      "আপনজনরা সবাই এল।": "All the close ones came."
+      "আপনজনরা সবাই এল।": { native: "All the close ones came.", bases: { "আপনজনরা": "close one" } }
       "আপনজনের খবর নিলাম।": { native: "I asked about my close one.", bases: { "আপনজনের": "close one" } }
   "bn-3916":
     native: "family members"
@@ -217,7 +217,7 @@ cards:
       "n1": "{1}: Family members and dependants: the people of one's household."
     examples:
       "পরিজনদের খবর ভালো।": { native: "The news of the family is good.", bases: { "পরিজনদের": "family members" } }
-      "সে পরিজনকে ছেড়ে গেল।": { native: "He left his family.", bases: { "পরিজনকে": "family members" } }
+      "সে পরিজনকে ছেড়ে গেল।": { native: "He left his family.", bases: { "পরিজনকে": "family members", "ছেড়ে": "to leave" } }
   "bn-3917":
     native: "companion; mate"
     notes:
@@ -237,8 +237,8 @@ cards:
     notes:
       "n1": "{1}: A traitor: a person who betrays a trust."
     examples:
-      "বিশ্বাসঘাতককে কেউ ভালোবাসে না।": { native: "No one loves a traitor.", bases: { "কেউ": "no one" } }
-      "বিশ্বাসঘাতকতা করা খারাপ।": "Betrayal is bad."
+      "বিশ্বাসঘাতককে কেউ ভালোবাসে না।": { native: "No one loves a traitor.", bases: { "কেউ": "no one", "বিশ্বাসঘাতককে": "traitor" } }
+      "বিশ্বাসঘাতকতা করা খারাপ।": { native: "Betrayal is bad.", bases: { "বিশ্বাসঘাতকতা": "betrayal" } }
   "bn-3920":
     native: "close; one's own"
     notes:

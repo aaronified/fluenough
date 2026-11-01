@@ -129,18 +129,20 @@ cards:
       "যন্ত্রটা পরীক্ষা করো।": "Test the machine. (familiar)"
   "bn-4497":
     native: "to verify"
+    bases: { "যাচাই": "check" }
     notes:
       "n1": "{1}: To verify: to check that something is true."
     examples:
-      "খবরটা যাচাই করা হলো।": "The news was verified."
+      "খবরটা যাচাই করা হলো।": { native: "The news was verified.", bases: { "যাচাই": "check" } }
       "তথ্য যাচাই করে দেখো।": { native: "Verify the facts and see. (familiar)", bases: { "যাচাই": "to verify" } }
   "bn-4498":
     native: "to prepare"
+    bases: { "প্রস্তুত": "ready" }
     notes:
       "n1": "{1}: To prepare: to get something ready."
     examples:
-      "সে খাবার প্রস্তুত করল।": "She prepared the food."
-      "পরীক্ষার জন্য প্রস্তুত হও।": "Get ready for the exam. (familiar)"
+      "সে খাবার প্রস্তুত করল।": { native: "She prepared the food.", bases: { "প্রস্তুত": "ready" } }
+      "পরীক্ষার জন্য প্রস্তুত হও।": { native: "Get ready for the exam. (familiar)", bases: { "প্রস্তুত": "ready" } }
   "bn-4499":
     native: "to plan"
     notes:
@@ -157,11 +159,12 @@ cards:
       "আরো অনুশীলন করো।": { native: "Practise more. (familiar)", bases: { "আরো": "more" } }
   "bn-4501":
     native: "to complete"
+    bases: { "সম্পন্ন": "complete" }
     notes:
       "n1": "{1}: To complete: to finish a task."
     examples:
-      "কাজটা সম্পন্ন হলো।": "The work was completed."
-      "সে সব কাজ সম্পন্ন করল।": "She completed all the work."
+      "কাজটা সম্পন্ন হলো।": { native: "The work was completed.", bases: { "সম্পন্ন": "complete" } }
+      "সে সব কাজ সম্পন্ন করল।": { native: "She completed all the work.", bases: { "সম্পন্ন": "complete" } }
   "bn-4502":
     native: "to select"
     notes:
@@ -171,11 +174,12 @@ cards:
       "সঠিক উত্তরটা নির্বাচন করো।": { native: "Select the correct answer. (familiar)", bases: { "সঠিক": "correct" } }
   "bn-4503":
     native: "to assess"
+    bases: { "মূল্যায়ন": "assessment" }
     notes:
       "n1": "{1}: To assess or to evaluate: to judge the value or quality of something."
     examples:
-      "শিক্ষক খাতা মূল্যায়ন করলেন।": "The teacher assessed the papers."
-      "কাজটা ভালো মূল্যায়ন হলো।": "The work was assessed well."
+      "শিক্ষক খাতা মূল্যায়ন করলেন।": { native: "The teacher assessed the papers.", bases: { "মূল্যায়ন": "assessment" } }
+      "কাজটা ভালো মূল্যায়ন হলো।": { native: "The work was assessed well.", bases: { "মূল্যায়ন": "assessment" } }
   "bn-4504":
     native: "to solve"
     notes:
@@ -185,32 +189,36 @@ cards:
       "সমস্যাটা সমাধান করো।": "Solve the problem. (familiar)"
   "bn-4505":
     native: "to accept"
+    bases: { "গ্রহণ": "acceptance" }
     notes:
       "n1": "{1}: To accept or to receive: to take something offered."
     examples:
-      "তিনি উপহারটা গ্রহণ করলেন।": "He accepted the gift."
-      "আমার অনুরোধ গ্রহণ করো।": { native: "Accept my request. (familiar)", bases: { "অনুরোধ": "request" } }
+      "তিনি উপহারটা গ্রহণ করলেন।": { native: "He accepted the gift.", bases: { "গ্রহণ": "acceptance" } }
+      "আমার অনুরোধ গ্রহণ করো।": { native: "Accept my request. (familiar)", bases: { "অনুরোধ": "request", "গ্রহণ": "acceptance" } }
   "bn-4506":
     native: "to reject"
+    bases: { "বর্জন": "rejection" }
     notes:
       "n1": "{1}: To reject or to give up: to refuse to use or keep something."
     examples:
-      "সে প্রস্তাবটা বর্জন করল।": "He rejected the proposal."
-      "ক্ষতিকর জিনিস বর্জন করো।": { native: "Give up harmful things. (familiar)", bases: { "ক্ষতিকর": "harmful" } }
+      "সে প্রস্তাবটা বর্জন করল।": { native: "He rejected the proposal.", bases: { "বর্জন": "rejection" } }
+      "ক্ষতিকর জিনিস বর্জন করো।": { native: "Give up harmful things. (familiar)", bases: { "ক্ষতিকর": "harmful", "বর্জন": "rejection" } }
   "bn-4507":
     native: "to achieve"
+    bases: { "অর্জন": "achievement" }
     notes:
       "n1": "{1}: To achieve: to gain something through effort."
     examples:
-      "সে পদক অর্জন করল।": "She achieved a medal."
-      "জ্ঞান অর্জন করা কঠিন নয়।": "Gaining knowledge is not hard."
+      "সে পদক অর্জন করল।": { native: "She achieved a medal.", bases: { "অর্জন": "achievement" } }
+      "জ্ঞান অর্জন করা কঠিন নয়।": { native: "Gaining knowledge is not hard.", bases: { "অর্জন": "achievement" } }
   "bn-4508":
     native: "to enjoy"
+    bases: { "উপভোগ": "enjoyment" }
     notes:
       "n1": "{1}: To enjoy: to take pleasure in something."
     examples:
-      "আমরা ছুটিটা উপভোগ করলাম।": "We enjoyed the holiday."
-      "গানটা উপভোগ করো।": "Enjoy the song. (familiar)"
+      "আমরা ছুটিটা উপভোগ করলাম।": { native: "We enjoyed the holiday.", bases: { "উপভোগ": "enjoyment" } }
+      "গানটা উপভোগ করো।": { native: "Enjoy the song. (familiar)", bases: { "উপভোগ": "enjoyment" } }
   "bn-4509":
     native: "to collect"
     notes:
@@ -220,53 +228,60 @@ cards:
       "তথ্য সংগ্রহ করো।": "Collect the information. (familiar)"
   "bn-4510":
     native: "to consider"
+    bases: { "বিবেচনা": "consideration" }
     notes:
       "n1": "{1}: To consider: to think carefully about a matter."
     examples:
-      "আমরা প্রস্তাবটা বিবেচনা করব।": "We will consider the proposal."
+      "আমরা প্রস্তাবটা বিবেচনা করব।": { native: "We will consider the proposal.", bases: { "বিবেচনা": "consideration" } }
       "সবকিছু বিবেচনা করে দেখো।": { native: "Consider everything and see. (familiar)", bases: { "সবকিছু": "everything", "বিবেচনা": "to consider" } }
   "bn-4511":
     native: "to correct"
+    bases: { "সংশোধন": "correction" }
     notes:
       "n1": "{1}: To correct or to revise: to make something right."
     examples:
-      "শিক্ষক ভুলগুলো সংশোধন করলেন।": "The teacher corrected the mistakes."
-      "লেখাটা সংশোধন করো।": "Correct the writing. (familiar)"
+      "শিক্ষক ভুলগুলো সংশোধন করলেন।": { native: "The teacher corrected the mistakes.", bases: { "সংশোধন": "correction" } }
+      "লেখাটা সংশোধন করো।": { native: "Correct the writing. (familiar)", bases: { "সংশোধন": "correction" } }
   "bn-4512":
     native: "to guess"
+    bases: { "অনুমান": "guess" }
     notes:
       "n1": "{1}: To guess or to estimate: to judge something without full proof."
     examples:
-      "সে সময়টা অনুমান করল।": "She estimated the time."
-      "কী অনুমান করছ?": "What are you guessing? (familiar)"
+      "সে সময়টা অনুমান করল।": { native: "She estimated the time.", bases: { "অনুমান": "guess" } }
+      "কী অনুমান করছ?": { native: "What are you guessing? (familiar)", bases: { "অনুমান": "guess" } }
   "bn-4513":
     native: "to admit"
+    bases: { "স্বীকার": "admission" }
     notes:
       "n1": "{1}: To admit: to accept that something is true."
     examples:
-      "সে ভুল স্বীকার করল।": "He admitted the mistake."
-      "ভুলটা স্বীকার করো।": "Admit the mistake. (familiar)"
+      "সে ভুল স্বীকার করল।": { native: "He admitted the mistake.", bases: { "স্বীকার": "admission" } }
+      "ভুলটা স্বীকার করো।": { native: "Admit the mistake. (familiar)", bases: { "স্বীকার": "admission" } }
   "bn-4514":
     native: "to observe"
+    bases: { "পর্যবেক্ষণ": "observation" }
     notes:
       "n1": "{1}: To observe: to watch closely and note what happens."
     examples:
-      "বিজ্ঞানী পাখিদের পর্যবেক্ষণ করলেন।": "The scientist observed the birds."
-      "নিয়মিত পর্যবেক্ষণ করো।": "Observe regularly. (familiar)"
+      "বিজ্ঞানী পাখিদের পর্যবেক্ষণ করলেন।": { native: "The scientist observed the birds.", bases: { "পর্যবেক্ষণ": "observation" } }
+      "নিয়মিত পর্যবেক্ষণ করো।": { native: "Observe regularly. (familiar)", bases: { "পর্যবেক্ষণ": "observation" } }
   "bn-4515":
     native: "to inspect"
+    bases: { "পরিদর্শন": "inspection" }
     notes:
       "n1": "{1}: To inspect or to visit officially: to look over a place carefully."
     examples:
-      "কর্মকর্তা স্কুল পরিদর্শন করলেন।": "The officer inspected the school."
-      "কাজটা পরিদর্শন করা হবে।": "The work will be inspected."
+      "কর্মকর্তা স্কুল পরিদর্শন করলেন।": { native: "The officer inspected the school.", bases: { "পরিদর্শন": "inspection" } }
+      "কাজটা পরিদর্শন করা হবে।": { native: "The work will be inspected.", bases: { "পরিদর্শন": "inspection" } }
   "bn-4516":
     native: "to establish"
+    bases: { "স্থাপন": "setting up" }
     notes:
       "n1": "{1}: To establish or to set up: to place or start something firmly."
     examples:
-      "তারা নতুন বিদ্যালয় স্থাপন করল।": "They established a new school."
-      "একটা স্মারক স্থাপন করা হলো।": { native: "A memorial was set up.", bases: { "একটা": "a" } }
+      "তারা নতুন বিদ্যালয় স্থাপন করল।": { native: "They established a new school.", bases: { "স্থাপন": "setting up" } }
+      "একটা স্মারক স্থাপন করা হলো।": { native: "A memorial was set up.", bases: { "একটা": "a", "স্থাপন": "setting up" } }
   "bn-4517":
     native: "to arrange"
     notes:
@@ -276,50 +291,57 @@ cards:
       "সভার আয়োজন করো।": "Arrange the meeting. (familiar)"
   "bn-4518":
     native: "to apply"
+    bases: { "প্রয়োগ": "use" }
     notes:
       "n1": "{1}: To apply: to use a rule or a method in practice."
     examples:
-      "সে নিয়মটা প্রয়োগ করল।": "She applied the rule."
-      "শিখে নেওয়া জ্ঞান প্রয়োগ করো।": "Apply the knowledge you have learnt. (familiar)"
+      "সে নিয়মটা প্রয়োগ করল।": { native: "She applied the rule.", bases: { "প্রয়োগ": "use" } }
+      "শিখে নেওয়া জ্ঞান প্রয়োগ করো।": { native: "Apply the knowledge you have learnt. (familiar)", bases: { "প্রয়োগ": "use" } }
   "bn-4519":
     native: "to analyse"
+    bases: { "বিশ্লেষণ": "analysis" }
     notes:
       "n1": "{1}: To analyse: to examine the parts of something in detail."
     examples:
-      "সে তথ্যগুলো বিশ্লেষণ করল।": "She analysed the data."
-      "ফলাফল বিশ্লেষণ করো।": { native: "Analyse the results. (familiar)", bases: { "ফলাফল": "results" } }
+      "সে তথ্যগুলো বিশ্লেষণ করল।": { native: "She analysed the data.", bases: { "বিশ্লেষণ": "analysis" } }
+      "ফলাফল বিশ্লেষণ করো।": { native: "Analyse the results. (familiar)", bases: { "ফলাফল": "results", "বিশ্লেষণ": "analysis" } }
   "bn-4520":
     native: "to mention"
+    bases: { "উল্লেখ": "mention" }
     notes:
       "n1": "{1}: To mention: to refer to something in speech or writing."
     examples:
-      "তিনি তার নাম উল্লেখ করলেন।": "He mentioned his name."
-      "এই বিষয়টা উল্লেখ করো না।": { native: "Do not mention this matter. (familiar)", bases: { "এই": "this" } }
+      "তিনি তার নাম উল্লেখ করলেন।": { native: "He mentioned his name.", bases: { "উল্লেখ": "mention" } }
+      "এই বিষয়টা উল্লেখ করো না।": { native: "Do not mention this matter. (familiar)", bases: { "এই": "this", "উল্লেখ": "mention" } }
   "bn-4521":
     native: "to review"
+    bases: { "পর্যালোচনা": "review" }
     notes:
       "n1": "{1}: To review: to look again at a piece of work and judge it."
     examples:
-      "সম্পাদক লেখাটা পর্যালোচনা করলেন।": "The editor reviewed the piece."
-      "বইটা পর্যালোচনা করো।": "Review the book. (familiar)"
+      "সম্পাদক লেখাটা পর্যালোচনা করলেন।": { native: "The editor reviewed the piece.", bases: { "পর্যালোচনা": "review" } }
+      "বইটা পর্যালোচনা করো।": { native: "Review the book. (familiar)", bases: { "পর্যালোচনা": "review" } }
   "bn-4522":
     native: "to distribute"
+    bases: { "বিতরণ": "distribution" }
     notes:
       "n1": "{1}: To distribute: to share out things among people."
     examples:
-      "স্বেচ্ছাসেবকরা খাবার বিতরণ করল।": "The volunteers distributed food."
-      "বই বিতরণ করা হলো।": "Books were distributed."
+      "স্বেচ্ছাসেবকরা খাবার বিতরণ করল।": { native: "The volunteers distributed food.", bases: { "বিতরণ": "distribution" } }
+      "বই বিতরণ করা হলো।": { native: "Books were distributed.", bases: { "বিতরণ": "distribution" } }
   "bn-4523":
     native: "to add"
+    bases: { "সংযোজন": "addition" }
     notes:
       "n1": "{1}: To add: to put something into a larger whole."
     examples:
-      "লেখকরা একটা নতুন অধ্যায় সংযোজন করলেন।": { native: "The writers added a new chapter.", bases: { "একটা": "a" } }
-      "এই তথ্যটা সংযোজন করো।": { native: "Add this information. (familiar)", bases: { "এই": "this" } }
+      "লেখকরা একটা নতুন অধ্যায় সংযোজন করলেন।": { native: "The writers added a new chapter.", bases: { "একটা": "a", "সংযোজন": "addition" } }
+      "এই তথ্যটা সংযোজন করো।": { native: "Add this information. (familiar)", bases: { "এই": "this", "সংযোজন": "addition" } }
   "bn-4524":
     native: "to found"
+    bases: { "প্রতিষ্ঠা": "founding" }
     notes:
       "n1": "{1}: To found or to establish an institution."
     examples:
-      "তিনি একটা সংস্থা প্রতিষ্ঠা করলেন।": { native: "He founded an organisation.", bases: { "একটা": "an" } }
-      "বিদ্যালয়টি প্রতিষ্ঠা করা হয়েছে।": "The school has been founded."
+      "তিনি একটা সংস্থা প্রতিষ্ঠা করলেন।": { native: "He founded an organisation.", bases: { "একটা": "an", "প্রতিষ্ঠা": "founding" } }
+      "বিদ্যালয়টি প্রতিষ্ঠা করা হয়েছে।": { native: "The school has been founded.", bases: { "প্রতিষ্ঠা": "founding" } }

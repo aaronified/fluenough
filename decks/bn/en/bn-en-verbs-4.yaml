@@ -153,7 +153,7 @@ cards:
     notes:
       "n1": "{1}: To shout out: to call out loudly."
     examples:
-      "সে জোরে হাঁক দিল।": "He gave a loud shout."
+      "সে জোরে হাঁক দিল।": { native: "He gave a loud shout.", bases: { "হাঁক": "a shout" } }
       "কেউ নাম ধরে হাঁকছে।": { native: "Someone is calling out the name.", bases: { "কেউ": "someone", "হাঁকছে": "to shout out" } }
   "bn-4165":
     native: "to swell"
@@ -419,7 +419,7 @@ cards:
     notes:
       "n1": "{1}: To cool: to make something cold."
     examples:
-      "চাটা ঠান্ডা করো।": { native: "Cool the tea. (familiar)", bases: { "টা": "the" } }
+      "চাটা ঠান্ডা করো।": { native: "Cool the tea. (familiar)", bases: { "চাটা": "tea" } }
       "ফ্রিজে জল ঠান্ডা করা হলো।": "The water was cooled in the fridge."
   "bn-4203":
     native: "to trust; to rely on"
@@ -430,11 +430,12 @@ cards:
       "আমি তোমার ওপর ভরসা করি।": { native: "I rely on you.", bases: { "ওপর": "on" } }
   "bn-4204":
     native: "to demand"
+    bases: { "দাবি": "claim" }
     notes:
       "n1": "{1}: To demand or to claim: to ask for something as one's right."
     examples:
-      "সে বেতন বাড়ানোর দাবি করল।": { native: "She demanded a pay rise.", bases: { "বাড়ানোর": "raising" } }
-      "লোকেরা ন্যায় দাবি করছে।": { native: "People are demanding justice.", bases: { "লোকেরা": "people" } }
+      "সে বেতন বাড়ানোর দাবি করল।": { native: "She demanded a pay rise.", bases: { "বাড়ানোর": "raising", "দাবি": "claim" } }
+      "লোকেরা ন্যায় দাবি করছে।": { native: "People are demanding justice.", bases: { "লোকেরা": "people", "দাবি": "claim" } }
   "bn-4205":
     native: "to ask a question"
     notes:
@@ -444,11 +445,12 @@ cards:
       "শিক্ষককে প্রশ্ন করো।": "Ask the teacher a question. (familiar)"
   "bn-4206":
     native: "to shout"
+    bases: { "চিৎকার": "shout" }
     notes:
       "n1": "{1}: To shout: to cry out loudly."
     examples:
-      "সে চিৎকার করল।": "She shouted."
-      "কেন চিৎকার করছ?": "Why are you shouting? (familiar)"
+      "সে চিৎকার করল।": { native: "She shouted.", bases: { "চিৎকার": "shout" } }
+      "কেন চিৎকার করছ?": { native: "Why are you shouting? (familiar)", bases: { "চিৎকার": "shout" } }
   "bn-4207":
     native: "to explain"
     notes:

@@ -188,7 +188,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ফটোগ্রাফ", reading: "phôṭogrāph" }] }
     examples:
       - { target: "ফটোগ্রাফ তোলো।", reading: "phôṭogrāph tolo.", ipa: "pʰɔʈoɡrapʰ t̪olo", bases: [{ word: "তোলো", ref: "bn-1104" }] }
-      - { target: "ফটোগ্রাফগুলো দেখো।", reading: "phôṭogrāphogulo dekho.", ipa: "pʰɔʈoɡrapʰoɡulo d̪ekʰo", bases: [{ word: "দেখো", ref: "bn-0877" }] }
+      - { target: "ফটোগ্রাফগুলো দেখো।", reading: "phôṭogrāphogulo dekho.", ipa: "pʰɔʈoɡrapʰoɡulo d̪ekʰo", bases: [{ word: "দেখো", ref: "bn-0877" }, { word: "ফটোগ্রাফগুলো", base: "ফটোগ্রাফ", reading: "phôṭogrāphogulo" }] }
   - id: "bn-3627"
     target: "স্কেচ"
     reading: "skec"
@@ -257,8 +257,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "চিত্র", reading: "citr" }] }
     examples:
-      - { target: "এই চিত্রটি বড় একটি ক্যানভাসে আঁকা।", reading: "ei citroṭi bôṛ ekoṭi kênobhāse ām̐kā.", ipa: "ei tʃit̪roʈi bɔɽ ekoʈi kænobʱase ãka", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বড়", ref: "bn-0062" }, { word: "একটি", ref: "bn-0202" }, { word: "ক্যানভাসে", base: "ক্যানভাস", reading: "kênobhāse" }, { word: "আঁকা", ref: "bn-2217" }] }
-      - { target: "চিত্রটি খুব দামি।", reading: "citroṭi khub dāmi.", ipa: "tʃit̪roʈi kʰub d̪ami", bases: [{ word: "খুব", ref: "bn-0641" }, { word: "দামি", ref: "bn-0247" }] }
+      - { target: "এই চিত্রটি বড় একটি ক্যানভাসে আঁকা।", reading: "ei citroṭi bôṛ ekoṭi kênobhāse ām̐kā.", ipa: "ei tʃit̪roʈi bɔɽ ekoʈi kænobʱase ãka", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বড়", ref: "bn-0062" }, { word: "একটি", ref: "bn-0202" }, { word: "ক্যানভাসে", base: "ক্যানভাস", reading: "kênobhāse" }, { word: "আঁকা", ref: "bn-2217" }, { word: "চিত্রটি", base: "চিত্র", reading: "citroṭi" }] }
+      - { target: "চিত্রটি খুব দামি।", reading: "citroṭi khub dāmi.", ipa: "tʃit̪roʈi kʰub d̪ami", bases: [{ word: "খুব", ref: "bn-0641" }, { word: "দামি", ref: "bn-0247" }, { word: "চিত্রটি", base: "চিত্র", reading: "citroṭi" }] }
   - id: "bn-3634"
     target: "চিত্রশিল্প"
     reading: "citrośilp"
@@ -298,7 +298,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "পোশাক", reading: "pośāk" }] }
     examples:
       - { target: "নাটকে নায়িকার পোশাক লাল।", reading: "nāṭoke nāyikār pośāk lāl.", ipa: "naʈoke najikar poʃak lal", bases: [{ word: "নাটকে", ref: "bn-2238" }, { word: "নায়িকার", ref: "bn-3541" }, { word: "লাল", ref: "bn-1204" }] }
-      - { target: "পোশাকটা খুব সুন্দর।", reading: "pośākoṭā khub sundor.", ipa: "poʃakoʈa kʰub sund̪or", bases: [{ word: "খুব", ref: "bn-0641" }, { word: "সুন্দর", ref: "bn-0625" }] }
+      - { target: "পোশাকটা খুব সুন্দর।", reading: "pośākoṭā khub sundor.", ipa: "poʃakoʈa kʰub sund̪or", bases: [{ word: "খুব", ref: "bn-0641" }, { word: "সুন্দর", ref: "bn-0625" }, { word: "পোশাকটা", base: "পোশাক", reading: "pośākoṭā" }] }
   - id: "bn-3638"
     target: "ঢোল"
     reading: "ḍhol"
@@ -347,7 +347,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "নিলাম", reading: "nilām" }] }
     examples:
-      - { target: "নিলামে ছবিটা বিক্রি হলো।", reading: "nilāme chobiṭā bikri hôlo.", ipa: "nilame tʃʰobiʈa bikri ɦɔlo", bases: [{ word: "নিলামে", base: "নিলাম", reading: "nilāme" }, { word: "ছবিটা", ref: "bn-1145" }, { word: "বিক্রি", ref: "bn-1688" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "নিলামে ছবিটা বিক্রি হলো।", reading: "nilāme chobiṭā bikri hôlo.", ipa: "nilame tʃʰobiʈa bikri ɦɔlo", bases: [{ word: "নিলামে", base: "নিলাম", reading: "nilāme" }, { word: "ছবিটা", ref: "bn-1145" }, { word: "বিক্রি", ref: "bn-1688" }, { word: "হলো", ref: "bn-0874" }] }
       - { target: "নিলাম কাল শুরু হবে।", reading: "nilām kāl śuru hôbe.", ipa: "nilam kal ʃuru ɦɔbe", bases: [{ word: "কাল", ref: "bn-0316" }, { word: "শুরু", ref: "bn-2480" }, { word: "হবে", ref: "bn-0874" }] }
   - id: "bn-3643"
     target: "শিল্পকলা"
@@ -357,7 +357,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "শিল্পকলা", reading: "śilpokolā" }] }
     examples:
-      - { target: "শিল্পকলা মানুষের মন ভালো রাখে।", reading: "śilpokolā mānuśer môn bhālo rākhe.", ipa: "ʃilpokola manuʃer mɔn bʱalo rakʰe", bases: [{ word: "মানুষের", base: "মানুষ", reading: "mānuśer" }, { word: "মন", ref: "bn-2846" }, { word: "ভালো", ref: "bn-0617" }] }
+      - { target: "শিল্পকলা মানুষের মন ভালো রাখে।", reading: "śilpokolā mānuśer môn bhālo rākhe.", ipa: "ʃilpokola manuʃer mɔn bʱalo rakʰe", bases: [{ word: "মানুষের", base: "মানুষ", reading: "mānuśer" }, { word: "মন", ref: "bn-2846" }, { word: "ভালো", ref: "bn-0617" }, { word: "রাখে", ref: "bn-0894" }] }
       - { target: "শিল্পকলা বিষয়ে তিনি পড়েন।", reading: "śilpokolā biśoye tini pôṛen.", ipa: "ʃilpokola biʃoje t̪ini pɔɽen", bases: [{ word: "বিষয়ে", ref: "bn-2164" }, { word: "তিনি", ref: "bn-0841" }, { word: "পড়েন", ref: "bn-0119" }] }
   - id: "bn-3644"
     target: "পট"
@@ -437,8 +437,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "অঙ্কন করা", reading: "ôṅkon kôrā" }] }
     examples:
-      - { target: "ছবি অঙ্কন করি।", reading: "chobi ôṅkon kori.", ipa: "tʃʰobi ɔŋkon kori", bases: [{ word: "ছবি", ref: "bn-1145" }] }
-      - { target: "সে রোজ অঙ্কন করে।", reading: "se roj ôṅkon kôre.", ipa: "se rodʒ ɔŋkon kɔre", bases: [{ word: "সে", ref: "bn-0839" }, { word: "রোজ", ref: "bn-1528" }] }
+      - { target: "ছবি অঙ্কন করি।", reading: "chobi ôṅkon kori.", ipa: "tʃʰobi ɔŋkon kori", bases: [{ word: "ছবি", ref: "bn-1145" }, { word: "করি", ref: "bn-0102" }] }
+      - { target: "সে রোজ অঙ্কন করে।", reading: "se roj ôṅkon kôre.", ipa: "se rodʒ ɔŋkon kɔre", bases: [{ word: "সে", ref: "bn-0839" }, { word: "রোজ", ref: "bn-1528" }, { word: "করে", ref: "bn-0102" }] }
   - id: "bn-3652"
     target: "প্রদর্শন করা"
     reading: "prôdorśon kôrā"
@@ -447,7 +447,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "প্রদর্শন করা", reading: "prôdorśon kôrā" }] }
     examples:
-      - { target: "গ্যালারিতে ছবি প্রদর্শন করা হলো।", reading: "gêlārite chobi prôdorśon kôrā hôlo.", ipa: "ɡælarit̪e tʃʰobi prɔd̪orʃon kɔra ɦɔlo", bases: [{ word: "গ্যালারিতে", base: "গ্যালারি", reading: "gêlārite" }, { word: "ছবি", ref: "bn-1145" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "গ্যালারিতে ছবি প্রদর্শন করা হলো।", reading: "gêlārite chobi prôdorśon kôrā hôlo.", ipa: "ɡælarit̪e tʃʰobi prɔd̪orʃon kɔra ɦɔlo", bases: [{ word: "গ্যালারিতে", base: "গ্যালারি", reading: "gêlārite" }, { word: "ছবি", ref: "bn-1145" }, { word: "হলো", ref: "bn-0874" }] }
       - { target: "আমরা নতুন ছবি প্রদর্শন করব।", reading: "āmorā notun chobi prôdorśon kôrob.", ipa: "amora not̪un tʃʰobi prɔd̪orʃon kɔrob", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "নতুন", ref: "bn-0620" }, { word: "ছবি", ref: "bn-1145" }, { word: "করব", ref: "bn-0102" }] }
   - id: "bn-3653"
     target: "রূপ"

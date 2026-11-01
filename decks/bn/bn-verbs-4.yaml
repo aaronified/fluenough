@@ -217,7 +217,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "হাঁকা", reading: "hām̐kā" }] }
     examples:
-      - { target: "সে জোরে হাঁক দিল।", reading: "se jore hām̐k dil.", ipa: "se dʒore ɦãk d̪il", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জোরে", ref: "bn-1555" }, { word: "দিল", ref: "bn-0888" }] }
+      - { target: "সে জোরে হাঁক দিল।", reading: "se jore hām̐k dil.", ipa: "se dʒore ɦãk d̪il", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জোরে", ref: "bn-1555" }, { word: "দিল", ref: "bn-0888" }, { word: "হাঁক", base: "হাঁক", reading: "hām̐k" }] }
       - { target: "কেউ নাম ধরে হাঁকছে।", reading: "keu nām dhôre hām̐koche.", ipa: "keu nam d̪ʱɔre ɦãkotʃʰe", bases: [{ word: "কেউ", base: "কেউ", reading: "keu" }, { word: "নাম", ref: "bn-0191" }, { word: "ধরে", ref: "bn-1107" }, { word: "হাঁকছে", base: "হাঁকা", reading: "hām̐koche" }] }
   - id: "bn-4165"
     target: "ফুলা"
@@ -277,7 +277,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মোড়া", reading: "moṛā" }] }
     examples:
-      - { target: "উপহারটা কাগজে মোড়া হলো।", reading: "upohāroṭā kāgoje moṛā hôlo.", ipa: "upoɦaroʈa kaɡodʒe moɽa ɦɔlo", bases: [{ word: "উপহারটা", ref: "bn-1664" }, { word: "কাগজে", ref: "bn-1143" }, { word: "মোড়া", base: "মোড়া", reading: "moṛā" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "উপহারটা কাগজে মোড়া হলো।", reading: "upohāroṭā kāgoje moṛā hôlo.", ipa: "upoɦaroʈa kaɡodʒe moɽa ɦɔlo", bases: [{ word: "উপহারটা", ref: "bn-1664" }, { word: "কাগজে", ref: "bn-1143" }, { word: "মোড়া", base: "মোড়া", reading: "moṛā" }, { word: "হলো", ref: "bn-0874" }] }
       - { target: "কাপড়টা মুড়ে রাখো।", reading: "kāpoṛoṭā muṛe rākho.", ipa: "kapoɽoʈa muɽe rakʰo", bases: [{ word: "কাপড়টা", ref: "bn-1188" }, { word: "মুড়ে", base: "মোড়া", reading: "muṛe" }, { word: "রাখো", ref: "bn-0894" }] }
   - id: "bn-4171"
     target: "ঘুমানো"
@@ -288,7 +288,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ঘুমানো", reading: "ghumāno" }] }
     examples:
       - { target: "শিশুটি এখন ঘুমাচ্ছে।", reading: "śiśuṭi ekhon ghumācche.", ipa: "ʃiʃuʈi ekʰon ɡʱumatʃtʃʰe", bases: [{ word: "শিশুটি", base: "শিশু", reading: "śiśuṭi" }, { word: "এখন", ref: "bn-0317" }, { word: "ঘুমাচ্ছে", base: "ঘুমানো", reading: "ghumācche" }] }
-      - { target: "রাতে ভালো করে ঘুমাও।", reading: "rāte bhālo kôre ghumāo.", ipa: "rat̪e bʱalo kɔre ɡʱumao", bases: [{ word: "রাতে", ref: "bn-1547" }, { word: "ভালো", ref: "bn-0617" }, { word: "ঘুমাও", base: "ঘুমানো", reading: "ghumāo" }] }
+      - { target: "রাতে ভালো করে ঘুমাও।", reading: "rāte bhālo kôre ghumāo.", ipa: "rat̪e bʱalo kɔre ɡʱumao", bases: [{ word: "রাতে", ref: "bn-1547" }, { word: "ভালো", ref: "bn-0617" }, { word: "ঘুমাও", base: "ঘুমানো", reading: "ghumāo" }, { word: "করে", ref: "bn-0102" }] }
   - id: "bn-4172"
     target: "বসানো"
     reading: "bôsāno"
@@ -308,7 +308,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "লেখানো", reading: "lekhāno" }] }
     examples:
       - { target: "শিক্ষক ছাত্রকে বোর্ডে লেখাল।", reading: "śikkhok chātroke borḍe lekhāl.", ipa: "ʃikkʰok tʃʰat̪roke borɖe lekʰal", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "ছাত্রকে", ref: "bn-0470" }, { word: "বোর্ডে", ref: "bn-2152" }, { word: "লেখাল", base: "লেখানো", reading: "lekhāl" }] }
-      - { target: "চিঠিটা লেখানো হলো।", reading: "ciṭhiṭā lekhāno hôlo.", ipa: "tʃiʈʰiʈa lekʰano ɦɔlo", bases: [{ word: "চিঠিটা", ref: "bn-1144" }, { word: "লেখানো", base: "লেখানো", reading: "lekhāno" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "চিঠিটা লেখানো হলো।", reading: "ciṭhiṭā lekhāno hôlo.", ipa: "tʃiʈʰiʈa lekʰano ɦɔlo", bases: [{ word: "চিঠিটা", ref: "bn-1144" }, { word: "লেখানো", base: "লেখানো", reading: "lekhāno" }, { word: "হলো", ref: "bn-0874" }] }
   - id: "bn-4174"
     target: "সরানো"
     reading: "sôrāno"
@@ -548,7 +548,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "খালি করা", reading: "khāli kôrā" }] }
     examples:
       - { target: "বালতিটা খালি করো।", reading: "bālotiṭā khāli kôro.", ipa: "balot̪iʈa kʰali kɔro", bases: [{ word: "বালতিটা", ref: "bn-1158" }, { word: "করো", ref: "bn-0102" }] }
-      - { target: "ঘরটা খালি করা হলো।", reading: "ghôroṭā khāli kôrā hôlo.", ipa: "ɡʱɔroʈa kʰali kɔra ɦɔlo", bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "ঘরটা খালি করা হলো।", reading: "ghôroṭā khāli kôrā hôlo.", ipa: "ɡʱɔroʈa kʰali kɔra ɦɔlo", bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
   - id: "bn-4198"
     target: "ওজন করা"
     reading: "ojon kôrā"
@@ -588,7 +588,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "সেদ্ধ করা", reading: "seddh kôrā" }] }
     examples:
       - { target: "ডিমটা সেদ্ধ করো।", reading: "ḍimoṭā seddh kôro.", ipa: "ɖimoʈa sed̪d̪ʱ kɔro", bases: [{ word: "ডিমটা", ref: "bn-0270" }, { word: "করো", ref: "bn-0102" }] }
-      - { target: "আলু সেদ্ধ করা হলো।", reading: "ālu seddh kôrā hôlo.", ipa: "alu sed̪d̪ʱ kɔra ɦɔlo", bases: [{ word: "আলু", ref: "bn-0261" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "আলু সেদ্ধ করা হলো।", reading: "ālu seddh kôrā hôlo.", ipa: "alu sed̪d̪ʱ kɔra ɦɔlo", bases: [{ word: "আলু", ref: "bn-0261" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
   - id: "bn-4202"
     target: "ঠান্ডা করা"
     reading: "ṭhānḍā kôrā"
@@ -597,8 +597,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ঠান্ডা করা", reading: "ṭhānḍā kôrā" }] }
     examples:
-      - { target: "চাটা ঠান্ডা করো।", reading: "cāṭā ṭhānḍā kôro.", ipa: "tʃaʈa ʈʰanɖa kɔro", bases: [{ word: "চা", ref: "bn-0351" }, { word: "টা", base: "টা", reading: "ṭā" }, { word: "করো", ref: "bn-0102" }] }
-      - { target: "ফ্রিজে জল ঠান্ডা করা হলো।", reading: "phrije jôl ṭhānḍā kôrā hôlo.", ipa: "pʰridʒe dʒɔl ʈʰanɖa kɔra ɦɔlo", bases: [{ word: "ফ্রিজে", ref: "bn-3992" }, { word: "জল", ref: "bn-0350" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "চাটা ঠান্ডা করো।", reading: "cāṭā ṭhānḍā kôro.", ipa: "tʃaʈa ʈʰanɖa kɔro", bases: [{ word: "করো", ref: "bn-0102" }, { word: "চাটা", base: "চা", reading: "cāṭā" }] }
+      - { target: "ফ্রিজে জল ঠান্ডা করা হলো।", reading: "phrije jôl ṭhānḍā kôrā hôlo.", ipa: "pʰridʒe dʒɔl ʈʰanɖa kɔra ɦɔlo", bases: [{ word: "ফ্রিজে", ref: "bn-3992" }, { word: "জল", ref: "bn-0350" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
   - id: "bn-4203"
     target: "ভরসা করা"
     reading: "bhôrosā kôrā"
@@ -614,11 +614,12 @@ cards:
     reading: "dābi kôrā"
     ipa: "d̪abi kɔra"
     pos: "verb"
+    bases: [{ word: "দাবি", base: "দাবি", reading: "dābi" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "দাবি করা", reading: "dābi kôrā" }] }
     examples:
-      - { target: "সে বেতন বাড়ানোর দাবি করল।", reading: "se beton bāṛānor dābi kôrol.", ipa: "se bet̪on baɽanor d̪abi kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বেতন", ref: "bn-0472" }, { word: "বাড়ানোর", base: "বাড়ানো", reading: "bāṛānor" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "লোকেরা ন্যায় দাবি করছে।", reading: "lokerā nêy dābi kôroche.", ipa: "lokera næj d̪abi kɔrotʃʰe", bases: [{ word: "লোকেরা", base: "লোক", reading: "lokerā" }, { word: "ন্যায়", ref: "bn-4110" }, { word: "করছে", ref: "bn-0102" }] }
+      - { target: "সে বেতন বাড়ানোর দাবি করল।", reading: "se beton bāṛānor dābi kôrol.", ipa: "se bet̪on baɽanor d̪abi kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বেতন", ref: "bn-0472" }, { word: "বাড়ানোর", base: "বাড়ানো", reading: "bāṛānor" }, { word: "করল", ref: "bn-0102" }, { word: "দাবি", base: "দাবি", reading: "dābi" }] }
+      - { target: "লোকেরা ন্যায় দাবি করছে।", reading: "lokerā nêy dābi kôroche.", ipa: "lokera næj d̪abi kɔrotʃʰe", bases: [{ word: "লোকেরা", base: "লোক", reading: "lokerā" }, { word: "ন্যায়", ref: "bn-4110" }, { word: "করছে", ref: "bn-0102" }, { word: "দাবি", base: "দাবি", reading: "dābi" }] }
   - id: "bn-4205"
     target: "প্রশ্ন করা"
     reading: "prôśn kôrā"
@@ -634,11 +635,12 @@ cards:
     reading: "citkār kôrā"
     ipa: "tʃit̪kar kɔra"
     pos: "verb"
+    bases: [{ word: "চিৎকার", base: "চিৎকার", reading: "citkār" }]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "চিৎকার করা", reading: "citkār kôrā" }] }
     examples:
-      - { target: "সে চিৎকার করল।", reading: "se citkār kôrol.", ipa: "se tʃit̪kar kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "করল", ref: "bn-0102" }] }
-      - { target: "কেন চিৎকার করছ?", reading: "ken citkār kôroch?", ipa: "ken tʃit̪kar kɔrotʃʰ", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "করছ", ref: "bn-0102" }] }
+      - { target: "সে চিৎকার করল।", reading: "se citkār kôrol.", ipa: "se tʃit̪kar kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "করল", ref: "bn-0102" }, { word: "চিৎকার", base: "চিৎকার", reading: "citkār" }] }
+      - { target: "কেন চিৎকার করছ?", reading: "ken citkār kôroch?", ipa: "ken tʃit̪kar kɔrotʃʰ", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "করছ", ref: "bn-0102" }, { word: "চিৎকার", base: "চিৎকার", reading: "citkār" }] }
   - id: "bn-4207"
     target: "ব্যাখ্যা করা"
     reading: "bêkkhā kôrā"

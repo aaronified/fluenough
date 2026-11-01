@@ -27,7 +27,7 @@ cards:
     notes:
       "n1": "{1}: An explosion: a sudden loud burst with fire or force."
     examples:
-      "বিস্ফোরণের শব্দ শোনা গেল।": "The sound of an explosion was heard."
+      "বিস্ফোরণের শব্দ শোনা গেল।": { native: "The sound of an explosion was heard.", bases: { "বিস্ফোরণের": "explosion" } }
       "বিস্ফোরণে কেউ আহত হয়নি।": { native: "No one was injured in the explosion.", bases: { "বিস্ফোরণে": "explosion", "কেউ": "no one" } }
   "bn-4026":
     native: "caution; warning"
@@ -108,32 +108,34 @@ cards:
       "বিপদসংকেতের লাল আলো জ্বলছে।": { native: "The red light of the danger signal is on.", bases: { "বিপদসংকেতের": "danger signal", "জ্বলছে": "is on" } }
   "bn-4037":
     native: "emergency"
+    bases: { "অবস্থা": "state" }
     notes:
       "n1": "{1}: An emergency: a state of urgent need or danger."
     examples:
-      "জরুরি অবস্থা ঘোষণা হলো।": "A state of emergency was declared."
+      "জরুরি অবস্থা ঘোষণা হলো।": { native: "A state of emergency was declared.", bases: { "অবস্থা": "state" } }
       "জরুরি অবস্থায় ফোন করো।": { native: "Call in an emergency. (familiar)", bases: { "অবস্থায়": "in a state" } }
   "bn-4038":
     native: "rescuer"
     notes:
       "n1": "{1}: A rescuer: a person who saves others from danger."
     examples:
-      "উদ্ধারকারীরা নদীতে নামলেন।": "The rescuers went into the river."
+      "উদ্ধারকারীরা নদীতে নামলেন।": { native: "The rescuers went into the river.", bases: { "উদ্ধারকারীরা": "rescuer" } }
       "উদ্ধারকারীদের ধন্যবাদ।": { native: "Thanks to the rescuers.", bases: { "উদ্ধারকারীদের": "rescuer" } }
   "bn-4039":
     native: "volunteer"
     notes:
       "n1": "{1}: A volunteer: a person who helps without pay."
     examples:
-      "স্বেচ্ছাসেবকরা ত্রাণ বিলোলেন।": { native: "The volunteers distributed relief.", bases: { "বিলোলেন": "distributed" } }
+      "স্বেচ্ছাসেবকরা ত্রাণ বিলোলেন।": { native: "The volunteers distributed relief.", bases: { "বিলোলেন": "distributed", "স্বেচ্ছাসেবকরা": "volunteer" } }
       "স্বেচ্ছাসেবক হিসেবে কাজ করি।": { native: "I work as a volunteer.", bases: { "হিসেবে": "as" } }
   "bn-4040":
     native: "first aid"
+    bases: { "প্রাথমিক": "first; primary" }
     notes:
       "n1": "{1}: First aid: the first help given to a hurt person before a doctor comes."
     examples:
-      "প্রাথমিক চিকিৎসার বাক্স কোথায়?": "Where is the first aid box?"
-      "প্রাথমিক চিকিৎসা জানা জরুরি।": "Knowing first aid is important."
+      "প্রাথমিক চিকিৎসার বাক্স কোথায়?": { native: "Where is the first aid box?", bases: { "প্রাথমিক": "first; primary" } }
+      "প্রাথমিক চিকিৎসা জানা জরুরি।": { native: "Knowing first aid is important.", bases: { "প্রাথমিক": "first; primary" } }
   "bn-4041":
     native: "storm surge"
     notes:
@@ -234,11 +236,12 @@ cards:
       "আমাদের উদ্ধার করা হয়েছে।": "We have been rescued."
   "bn-4055":
     native: "to evacuate"
+    bases: { "সরিয়ে": "to move away" }
     notes:
       "n1": "{1}: To evacuate: to move people from danger to a safe place."
     examples:
-      "লোকদের সরিয়ে নেওয়া হলো।": { native: "The people were evacuated.", bases: { "লোকদের": "people" } }
-      "আমাদের নিরাপদ জায়গায় সরিয়ে নেওয়া হবে।": { native: "We will be moved to a safe place.", bases: { "জায়গায়": "place" } }
+      "লোকদের সরিয়ে নেওয়া হলো।": { native: "The people were evacuated.", bases: { "লোকদের": "people", "সরিয়ে": "to move away" } }
+      "আমাদের নিরাপদ জায়গায় সরিয়ে নেওয়া হবে।": { native: "We will be moved to a safe place.", bases: { "জায়গায়": "place", "সরিয়ে": "to move away" } }
   "bn-4056":
     native: "to put out a fire"
     notes:

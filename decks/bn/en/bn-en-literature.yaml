@@ -63,7 +63,7 @@ cards:
       "n1": "{1}: Metre or rhythm: the regular beat of words in a poem."
     examples:
       "কবিতার ছন্দ সুন্দর।": "The metre of the poem is beautiful."
-      "এই ছন্দে লেখা।": { native: "Written in this metre.", bases: { "এই": "this" } }
+      "এই ছন্দে লেখা।": { native: "Written in this metre.", bases: { "এই": "this", "ছন্দে": "rhythm" } }
   "bn-4404":
     native: "simile"
     notes:
@@ -76,8 +76,8 @@ cards:
     notes:
       "n1": "{1}: A sentence: a group of words that makes a complete statement."
     examples:
-      "এই বাক্যটা ভুল।": { native: "This sentence is wrong.", bases: { "এই": "this" } }
-      "বাক্যটা আবার লেখো।": "Write the sentence again. (familiar)"
+      "এই বাক্যটা ভুল।": { native: "This sentence is wrong.", bases: { "এই": "this", "বাক্যটা": "sentence" } }
+      "বাক্যটা আবার লেখো।": { native: "Write the sentence again. (familiar)", bases: { "বাক্যটা": "sentence" } }
   "bn-4406":
     native: "translation"
     notes:
@@ -91,7 +91,7 @@ cards:
       "n1": "{1}: An autobiography: a book in which a person tells their own life."
     examples:
       "তিনি আত্মজীবনী লিখেছেন।": "He has written an autobiography."
-      "আত্মজীবনীটা পড়ো।": "Read the autobiography. (familiar)"
+      "আত্মজীবনীটা পড়ো।": { native: "Read the autobiography. (familiar)", bases: { "আত্মজীবনীটা": "autobiography" } }
   "bn-4408":
     native: "biography"
     notes:
@@ -104,7 +104,7 @@ cards:
     notes:
       "n1": "{1}: An article or essay: a short piece of writing on one topic."
     examples:
-      "এই নিবন্ধটা খবরের কাগজে ছাপা হলো।": { native: "This article was printed in the newspaper.", bases: { "এই": "this", "ছাপা": "printed" } }
+      "এই নিবন্ধটা খবরের কাগজে ছাপা হলো।": { native: "This article was printed in the newspaper.", bases: { "এই": "this", "ছাপা": "printed", "নিবন্ধটা": "article" } }
       "নিবন্ধ লিখতে সময় লাগল।": "Writing the article took time."
   "bn-4410":
     native: "preface"
@@ -112,13 +112,13 @@ cards:
       "n1": "{1}: A preface or introduction: the opening words of a book."
     examples:
       "বইটার ভূমিকা খুব সুন্দর।": "The preface of the book is very beautiful."
-      "ভূমিকাটা আগে পড়ো।": "Read the preface first. (familiar)"
+      "ভূমিকাটা আগে পড়ো।": { native: "Read the preface first. (familiar)", bases: { "ভূমিকাটা": "introduction" } }
   "bn-4411":
     native: "cover"
     notes:
       "n1": "{1}: A cover: the outside of a book."
     examples:
-      "বইয়ের মলাটটা নীল।": "The book's cover is blue."
+      "বইয়ের মলাটটা নীল।": { native: "The book's cover is blue.", bases: { "মলাটটা": "cover" } }
       "মলাট ছেঁড়া।": { native: "The cover is torn.", bases: { "ছেঁড়া": "torn" } }
   "bn-4412":
     native: "quotation"
@@ -188,14 +188,14 @@ cards:
     notes:
       "n1": "{1}: An epic: a long poem about heroes and great events."
     examples:
-      "রামায়ণ একটি মহাকাব্য।": { native: "The Ramayana is an epic.", bases: { "মহাকাব্য": "epic" } }
+      "রামায়ণ একটি মহাকাব্য।": { native: "The Ramayana is an epic.", bases: { "মহাকাব্য": "epic", "রামায়ণ": "the Ramayana" } }
       "মহাকাব্যের নায়ক বীর।": { native: "The hero of the epic is brave.", bases: { "মহাকাব্যের": "epic", "বীর": "brave" } }
   "bn-4422":
     native: "sonnet"
     notes:
       "n1": "{1}: A sonnet: a poem of fourteen lines."
     examples:
-      "এই সনেটটা খুব সুন্দর।": { native: "This sonnet is very beautiful.", bases: { "এই": "this" } }
+      "এই সনেটটা খুব সুন্দর।": { native: "This sonnet is very beautiful.", bases: { "এই": "this", "সনেটটা": "sonnet" } }
       "সনেট লিখতে কঠিন।": "Writing a sonnet is hard."
   "bn-4423":
     native: "author; composer"
@@ -223,14 +223,14 @@ cards:
     notes:
       "n1": "{1}: A letter of the alphabet."
     examples:
-      "এই অক্ষরটা কী?": { native: "What is this letter? (familiar)", bases: { "এই": "this" } }
+      "এই অক্ষরটা কী?": { native: "What is this letter? (familiar)", bases: { "এই": "this", "অক্ষরটা": "letter" } }
       "অক্ষরগুলো ছোট।": { native: "The letters are small.", bases: { "অক্ষরগুলো": "letter" } }
   "bn-4427":
     native: "dictionary"
     notes:
       "n1": "{1}: A dictionary: a book that explains the meaning of words."
     examples:
-      "শব্দটার অর্থ অভিধানে দেখো।": "Look up the meaning of the word in the dictionary. (familiar)"
+      "শব্দটার অর্থ অভিধানে দেখো।": { native: "Look up the meaning of the word in the dictionary. (familiar)", bases: { "অভিধানে": "dictionary" } }
       "অভিধানটা নতুন।": { native: "The dictionary is new.", bases: { "অভিধানটা": "dictionary" } }
   "bn-4428":
     native: "conclusion"
@@ -308,7 +308,7 @@ cards:
       "n1": "{1}: An edition: one printed version of a book."
     examples:
       "এই বইয়ের নতুন সংস্করণ বেরোল।": { native: "A new edition of this book came out.", bases: { "এই": "this" } }
-      "প্রথম সংস্করণটা দুর্লভ।": { native: "The first edition is rare.", bases: { "দুর্লভ": "rare" } }
+      "প্রথম সংস্করণটা দুর্লভ।": { native: "The first edition is rare.", bases: { "দুর্লভ": "rare", "সংস্করণটা": "edition" } }
   "bn-4439":
     native: "cover design"
     notes:
@@ -332,11 +332,12 @@ cards:
       "পাঠ্য বইটা পড়ো।": "Read the textbook. (familiar)"
   "bn-4442":
     native: "to recite"
+    bases: { "আবৃত্তি": "recitation" }
     notes:
       "n1": "{1}: To recite: to say a poem aloud from memory."
     examples:
-      "সে একটা কবিতা আবৃত্তি করল।": { native: "She recited a poem.", bases: { "একটা": "a" } }
-      "ছোটরা সুন্দর আবৃত্তি করে।": "The little ones recite beautifully."
+      "সে একটা কবিতা আবৃত্তি করল।": { native: "She recited a poem.", bases: { "একটা": "a", "আবৃত্তি": "recitation" } }
+      "ছোটরা সুন্দর আবৃত্তি করে।": { native: "The little ones recite beautifully.", bases: { "আবৃত্তি": "recitation" } }
   "bn-4443":
     native: "to memorise"
     notes:

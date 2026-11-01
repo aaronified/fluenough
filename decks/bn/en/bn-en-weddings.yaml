@@ -34,14 +34,14 @@ cards:
     notes:
       "n1": "{1}: The groom's party: the guests who go with the groom to the bride's house."
     examples:
-      "বরযাত্রীরা সকালে এল।": "The groom's party came in the morning."
+      "বরযাত্রীরা সকালে এল।": { native: "The groom's party came in the morning.", bases: { "বরযাত্রীরা": "groom's guest" } }
       "বরযাত্রীদের খাবারের আয়োজন হলো।": { native: "Food was arranged for the groom's party.", bases: { "বরযাত্রীদের": "groom's party" } }
   "bn-3756":
     native: "invited guest"
     notes:
       "n1": "{1}: An invited guest: a person who has been asked to a wedding or a meal."
     examples:
-      "নিমন্ত্রিতরা খেতে বসলেন।": "The invited guests sat down to eat."
+      "নিমন্ত্রিতরা খেতে বসলেন।": { native: "The invited guests sat down to eat.", bases: { "নিমন্ত্রিতরা": "invited guest" } }
       "নিমন্ত্রিত অতিথিদের নাম লেখা হলো।": "The names of the invited guests were written down."
   "bn-3757":
     native: "blessing"
@@ -52,11 +52,12 @@ cards:
       "তোমার আশীর্বাদ চাই।": "I want your blessing. (familiar)"
   "bn-3758":
     native: "turmeric rite"
+    bases: { "গায়ে": "body" }
     notes:
       "n1": "{1}: The turmeric rite: a ceremony before a wedding when turmeric is put on the bride or the groom."
     examples:
-      "গায়ে হলুদের অনুষ্ঠান আজ।": "The turmeric ceremony is today."
-      "গায়ে হলুদে সবাই নাচল।": "Everyone danced at the turmeric rite."
+      "গায়ে হলুদের অনুষ্ঠান আজ।": { native: "The turmeric ceremony is today.", bases: { "গায়ে": "body", "হলুদের": "turmeric" } }
+      "গায়ে হলুদে সবাই নাচল।": { native: "Everyone danced at the turmeric rite.", bases: { "গায়ে": "body", "হলুদে": "turmeric" } }
   "bn-3759":
     native: "vermilion"
     notes:
@@ -139,7 +140,7 @@ cards:
     notes:
       "n1": "{1}: The wedding-night room: the room where a newly married couple spend their first night."
     examples:
-      "বাসরে ফুল সাজানো হলো।": "Flowers were arranged in the wedding room."
+      "বাসরে ফুল সাজানো হলো।": { native: "Flowers were arranged in the wedding room.", bases: { "বাসরে": "bridal chamber" } }
       "বাসরের গান শুনতে ভালো লাগে।": { native: "It is nice to hear the songs of the wedding room.", bases: { "বাসরের": "wedding-night room" } }
   "bn-3771":
     native: "witness"
@@ -223,7 +224,7 @@ cards:
     notes:
       "n1": "{1}: Sandalwood paste: a fragrant paste put on the forehead or body."
     examples:
-      "কপালে চন্দনের টিপ।": { native: "A sandalwood mark on the forehead.", bases: { "টিপ": "mark" } }
+      "কপালে চন্দনের টিপ।": { native: "A sandalwood mark on the forehead.", bases: { "টিপ": "mark", "চন্দনের": "sandalwood paste" } }
       "চন্দনের গন্ধ ভালো লাগে।": { native: "I like the smell of sandalwood.", bases: { "চন্দনের": "sandalwood" } }
   "bn-3783":
     native: "life"
@@ -251,7 +252,7 @@ cards:
     notes:
       "n1": "{1}: Ululation: women's high cry of joy at a wedding or a festival."
     examples:
-      "উলুধ্বনিতে বাড়ি ভরে গেল।": "The house was filled with ululation."
+      "উলুধ্বনিতে বাড়ি ভরে গেল।": { native: "The house was filled with ululation.", bases: { "উলুধ্বনিতে": "ululation" } }
       "উলুধ্বনি শুনে সবাই এল।": "Everyone came hearing the ululation."
   "bn-3787":
     native: "conch shell"
@@ -304,6 +305,7 @@ cards:
       "বিয়েটা আনন্দময় হলো।": "The wedding became joyful."
   "bn-3794":
     native: "to exchange garlands"
+    bases: { "বদল": "exchange" }
     notes:
       "n1": "{1}: To exchange garlands: the bride and the groom each give the other a garland at the wedding."
     examples:

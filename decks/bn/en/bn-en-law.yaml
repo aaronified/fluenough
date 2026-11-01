@@ -97,7 +97,7 @@ cards:
     notes:
       "n1": "{1}: An affidavit: a sworn written statement."
     examples:
-      "হলফনামায় সই করো।": "Sign the affidavit. (familiar)"
+      "হলফনামায় সই করো।": { native: "Sign the affidavit. (familiar)", bases: { "হলফনামায়": "affidavit" } }
       "হলফনামাটা আদালতে জমা দেওয়া হলো।": { native: "The affidavit was submitted to court.", bases: { "হলফনামাটা": "affidavit" } }
   "bn-4104":
     native: "signature"
@@ -105,7 +105,7 @@ cards:
       "n1": "{1}: A signature: a person's written name on a paper."
     examples:
       "এখানে স্বাক্ষর করুন।": "Please sign here."
-      "স্বাক্ষরটা মিলছে না।": { native: "The signature does not match.", bases: { "স্বাক্ষরটা": "signature" } }
+      "স্বাক্ষরটা মিলছে না।": { native: "The signature does not match.", bases: { "স্বাক্ষরটা": "signature", "মিলছে": "to match" } }
   "bn-4105":
     native: "warrant"
     notes:
@@ -248,6 +248,7 @@ cards:
       "শাস্তি দিতে হবে।": "A punishment must be given."
   "bn-4125":
     native: "to arrest"
+    bases: { "গ্রেফতার": "arrest" }
     notes:
       "n1": "{1}: To arrest: to take a person into custody."
     examples:

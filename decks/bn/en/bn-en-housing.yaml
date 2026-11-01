@@ -41,21 +41,21 @@ cards:
     notes:
       "n1": "{1}: A bedroom, a formal word: the room where one sleeps."
     examples:
-      "শয়নকক্ষে একটা খাট আছে।": { native: "There is a bed in the bedroom.", bases: { "একটা": "a", "আছে": "there is" } }
+      "শয়নকক্ষে একটা খাট আছে।": { native: "There is a bed in the bedroom.", bases: { "একটা": "a", "আছে": "there is", "শয়নকক্ষে": "bedroom" } }
       "শয়নকক্ষের জানালা বড়।": { native: "The bedroom's window is big.", bases: { "শয়নকক্ষের": "bedroom" } }
   "bn-3970":
     native: "room (formal)"
     notes:
       "n1": "{1}: A room, a formal word for any room."
     examples:
-      "কক্ষটি খুব বড়।": "The room is very big."
+      "কক্ষটি খুব বড়।": { native: "The room is very big.", bases: { "কক্ষটি": "room" } }
       "সভার কক্ষে অনেক লোক।": { native: "There are many people in the meeting room.", bases: { "কক্ষে": "room (formal)", "লোক": "people" } }
   "bn-3971":
     native: "oven"
     notes:
       "n1": "{1}: An oven: a box for baking and heating food."
     examples:
-      "ওভেনে কেক বানাও।": { native: "Bake a cake in the oven. (familiar)", bases: { "কেক": "cake", "বানাও": "bake" } }
+      "ওভেনে কেক বানাও।": { native: "Bake a cake in the oven. (familiar)", bases: { "কেক": "cake", "বানাও": "bake", "ওভেনে": "oven" } }
       "ওভেনটা গরম হচ্ছে।": { native: "The oven is getting hot.", bases: { "ওভেনটা": "oven" } }
   "bn-3972":
     native: "cooker"
@@ -104,7 +104,7 @@ cards:
     notes:
       "n1": "{1}: A mug: a cup with a handle, for tea or water."
     examples:
-      "মগে চা দাও।": "Give tea in a mug. (familiar)"
+      "মগে চা দাও।": { native: "Give tea in a mug. (familiar)", bases: { "মগে": "mug" } }
       "মগটা ধুয়ে রাখো।": { native: "Wash the mug and keep it. (familiar)", bases: { "মগটা": "mug" } }
   "bn-3979":
     native: "tenant"
@@ -195,14 +195,14 @@ cards:
     notes:
       "n1": "{1}: Housekeeping: the work of running a home."
     examples:
-      "গৃহস্থালির কাজ অনেক।": "There is a lot of housework."
+      "গৃহস্থালির কাজ অনেক।": { native: "There is a lot of housework.", bases: { "গৃহস্থালির": "household" } }
       "গৃহস্থালি সামলানো কঠিন।": { native: "Managing the household is hard.", bases: { "গৃহস্থালি": "housekeeping", "সামলানো": "managing" } }
   "bn-3992":
     native: "fridge"
     notes:
       "n1": "{1}: A fridge: a cabinet that keeps food cold."
     examples:
-      "ফ্রিজে দুধ রাখো।": "Keep the milk in the fridge. (familiar)"
+      "ফ্রিজে দুধ রাখো।": { native: "Keep the milk in the fridge. (familiar)", bases: { "ফ্রিজে": "fridge" } }
       "ফ্রিজটা বন্ধ করো।": { native: "Close the fridge. (familiar)", bases: { "ফ্রিজটা": "fridge" } }
   "bn-3993":
     native: "brick"
@@ -283,8 +283,9 @@ cards:
       "বাথটাবটা পরিষ্কার করো।": { native: "Clean the bathtub. (familiar)", bases: { "বাথটাবটা": "bathtub" } }
   "bn-4004":
     native: "to live"
+    bases: { "বসবাস": "living in a place" }
     notes:
       "n1": "{1}: To live: to stay and make one's home somewhere."
     examples:
-      "আমরা এই শহরে বসবাস করি।": { native: "We live in this city.", bases: { "এই": "this" } }
-      "সে বিদেশে বসবাস করে।": "He lives abroad."
+      "আমরা এই শহরে বসবাস করি।": { native: "We live in this city.", bases: { "এই": "this", "বসবাস": "living in a place" } }
+      "সে বিদেশে বসবাস করে।": { native: "He lives abroad.", bases: { "বসবাস": "living in a place" } }
