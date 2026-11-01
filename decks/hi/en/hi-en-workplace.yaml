@@ -1,0 +1,221 @@
+schema: 1
+id: "hi-en-workplace"
+kind: "layer"
+core: "hi-workplace"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace"
+license: "CC-BY-SA-4.0"
+description: "Work and the office: the boss and colleagues, meetings and reports, pay and contracts, and the words for plans and targets. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2004":
+    native: "office (formal)"
+    notes:
+      "n1": "The formal word for an office. The everyday word is दफ़्तर (daftar)."
+    examples:
+      "कार्यालय सुबह नौ बजे खुलता है।": { "native": "The office opens at nine in the morning.", "bases": {"खुलता": "to open"} }
+      "कार्यालय में बैठक है।": { "native": "There is a meeting in the office.", "bases": {} }
+  "hi-2005":
+    native: "boss"
+    notes:
+      "n1": "The person who is in charge of your work. The word is used in both Hindi and English."
+    examples:
+      "बॉस ने मुझे बुलाया।": { "native": "The boss called me.", "bases": {"ने": "by"} }
+      "बॉस आज छुट्टी पर हैं।": { "native": "The boss is on leave today.", "bases": {} }
+  "hi-2006":
+    native: "colleague"
+    notes:
+      "n1": "A person who works in the same place as you."
+    examples:
+      "मेरे सहकर्मी बहुत अच्छे हैं।": { "native": "My colleagues are very good.", "bases": {} }
+      "सहकर्मी के साथ लंच करो।": { "native": "Have lunch with a colleague.", "bases": {"लंच": "lunch"} }
+  "hi-2007":
+    native: "meeting"
+    notes:
+      "n1": "A gathering of people to discuss work."
+    examples:
+      "कल सुबह मीटिंग है।": { "native": "There is a meeting tomorrow morning.", "bases": {} }
+      "मीटिंग दस बजे शुरू होगी।": { "native": "The meeting will begin at ten.", "bases": {"शुरू": "beginning; start"} }
+  "hi-2008":
+    native: "proposal; offer"
+    notes:
+      "n1": "A plan or an idea put forward for others to accept or refuse."
+    examples:
+      "उसने एक नया प्रस्ताव रखा।": { "native": "He put forward a new proposal.", "bases": {} }
+      "प्रस्ताव मंज़ूर हो गया।": { "native": "The proposal was approved.", "bases": {} }
+  "hi-2009":
+    native: "report"
+    notes:
+      "n1": "A written account of work done or of a matter studied."
+    examples:
+      "रिपोर्ट कल तक दो।": { "native": "Give me the report by tomorrow.", "bases": {} }
+      "रिपोर्ट में गलती है।": { "native": "There is a mistake in the report.", "bases": {} }
+  "hi-2010":
+    native: "company; firm"
+    notes:
+      "n1": "A business or a firm that employs people."
+    examples:
+      "मेरी कंपनी बड़ी है।": { "native": "My company is big.", "bases": {} }
+      "कंपनी ने नए लोग रखे।": { "native": "The company hired new people.", "bases": {"ने": "by"} }
+  "hi-2011":
+    native: "employee; staff member"
+    notes:
+      "n1": "A person who works for a company or an office."
+    examples:
+      "कर्मचारी समय पर आते हैं।": { "native": "The employees come on time.", "bases": {"समय": "time"} }
+      "नया कर्मचारी आज आया है।": { "native": "A new employee has come today.", "bases": {} }
+  "hi-2012":
+    native: "salary; pay"
+    notes:
+      "n1": "The money paid each month for work. The everyday word is तनख़्वाह (tanak͟hvāh)."
+    examples:
+      "इस महीने वेतन मिल गया।": { "native": "The salary has come this month.", "bases": {} }
+      "वेतन बढ़ेगा।": { "native": "The salary will rise.", "bases": {"बढ़ेगा": "to rise; to grow"} }
+  "hi-2013":
+    native: "contract"
+    notes:
+      "n1": "A written agreement to do a piece of work for a price."
+    examples:
+      "उसने सड़क बनाने का ठेका लिया।": { "native": "He took the contract to build the road.", "bases": {} }
+      "ठेका कल तक पूरा होगा।": { "native": "The contract will be complete by tomorrow.", "bases": {} }
+  "hi-2014":
+    native: "manager; administrator"
+    notes:
+      "n1": "The person who runs a unit of a company or an office."
+    examples:
+      "प्रबंधक ने नियम बदले।": { "native": "The manager changed the rules.", "bases": {"ने": "by", "नियम": "rule"} }
+      "हमारे प्रबंधक बहुत सख़्त हैं।": { "native": "Our manager is very strict.", "bases": {"सख़्त": "strict"} }
+  "hi-2015":
+    native: "manager (everyday word)"
+    notes:
+      "n1": "The everyday word for a manager, used beside प्रबंधक (prabandhak)."
+    examples:
+      "मैनेजर अभी आएगा।": { "native": "The manager will come now.", "bases": {} }
+      "मैनेजर से बात करो।": { "native": "Talk to the manager.", "bases": {} }
+  "hi-2016":
+    native: "collaborator; partner"
+    notes:
+      "n1": "A person who works with you towards a common aim."
+    examples:
+      "मेरे सहयोगी ने मदद की।": { "native": "My colleague helped.", "bases": {"ने": "by"} }
+      "सहयोगी से पूछो।": { "native": "Ask your partner.", "bases": {} }
+  "hi-2017":
+    native: "project"
+    notes:
+      "n1": "A piece of planned work with a clear aim and an end."
+    examples:
+      "प्रोजेक्ट अगले हफ़्ते पूरा होगा।": { "native": "The project will be complete next week.", "bases": {"अगले": "next"} }
+      "यह प्रोजेक्ट बड़ा है।": { "native": "This project is big.", "bases": {} }
+  "hi-2018":
+    native: "plan; scheme"
+    notes:
+      "n1": "A plan for doing something in the future."
+    examples:
+      "हमारी योजना अच्छी है।": { "native": "Our plan is good.", "bases": {} }
+      "नई योजना पर काम करो।": { "native": "Work on the new plan.", "bases": {} }
+  "hi-2019":
+    native: "target; goal"
+    notes:
+      "n1": "A thing one is trying to reach, a number or an aim."
+    examples:
+      "इस महीने का लक्ष्य पूरा करो।": { "native": "Complete this month's target.", "bases": {} }
+      "हमारा लक्ष्य बड़ा है।": { "native": "Our goal is big.", "bases": {} }
+  "hi-2020":
+    native: "limit; deadline"
+    notes:
+      "n1": "The furthest point or the last day allowed. The phrase समय-सीमा (samay-sīmā) means deadline."
+    examples:
+      "काम की सीमा कल है।": { "native": "The deadline for the work is tomorrow.", "bases": {} }
+      "इस सीमा तक जाओ।": { "native": "Go up to this limit.", "bases": {} }
+  "hi-2021":
+    native: "training"
+    notes:
+      "n1": "Teaching for a job or a skill, given before or during work."
+    examples:
+      "नए कर्मचारी की ट्रेनिंग हुई।": { "native": "The new employees were trained.", "bases": {} }
+      "ट्रेनिंग के बाद काम मिलेगा।": { "native": "You will get work after the training.", "bases": {"बाद": "after"} }
+  "hi-2022":
+    native: "interview"
+    notes:
+      "n1": "A meeting in which a person is asked questions for a job."
+    examples:
+      "कल मेरा इंटरव्यू है।": { "native": "My interview is tomorrow.", "bases": {} }
+      "इंटरव्यू में सच बोलो।": { "native": "Speak the truth in the interview.", "bases": {"सच": "truth"} }
+  "hi-2023":
+    native: "experience"
+    notes:
+      "n1": "Knowledge or skill gained by doing something."
+    examples:
+      "उसे काम का अनुभव है।": { "native": "He has work experience.", "bases": {} }
+      "अनुभव से सीखो।": { "native": "Learn from experience.", "bases": {} }
+  "hi-2024":
+    native: "post; rank; position"
+    notes:
+      "n1": "A job or a position in an office, or a rank in an organisation."
+    examples:
+      "उसे नया पद मिला।": { "native": "He got a new post.", "bases": {} }
+      "इस पद के लिए आवेदन करो।": { "native": "Apply for this post.", "bases": {"पद": "post", "लिए": "for", "आवेदन": "application"} }
+  "hi-2025":
+    native: "responsibility; duty"
+    notes:
+      "n1": "A duty that one must carry out, or a thing one is in charge of."
+    examples:
+      "अब यह तुम्हारी ज़िम्मेदारी है।": { "native": "Now this is your responsibility.", "bases": {} }
+      "काम की ज़िम्मेदारी सँभालो।": { "native": "Take charge of the work.", "bases": {} }
+  "hi-2026":
+    native: "promotion; progress"
+    notes:
+      "n1": "Moving up to a higher post, or progress in general."
+    examples:
+      "उसे तरक्की मिली।": { "native": "He got a promotion.", "bases": {} }
+      "देश की तरक्की हो रही है।": { "native": "The country is progressing.", "bases": {} }
+  "hi-2027":
+    native: "overtime"
+    notes:
+      "n1": "Extra time worked beyond the normal hours."
+    examples:
+      "आज ओवरटाइम करना पड़ेगा।": { "native": "I will have to do overtime today.", "bases": {} }
+      "ओवरटाइम का पैसा मिलता है।": { "native": "You get money for overtime.", "bases": {"पैसा": "money"} }
+  "hi-2028":
+    native: "paper; document"
+    notes:
+      "n1": "A sheet of paper, or a document that is written or printed on it."
+    examples:
+      "ये काग़ज़ अलमारी में रखो।": { "native": "Keep these papers in the cupboard.", "bases": {"अलमारी": "cupboard"} }
+      "सारे काग़ज़ पूरे हैं।": { "native": "All the documents are complete.", "bases": {} }
+  "hi-2029":
+    native: "to hand over; to entrust"
+    notes:
+      "n1": "To give a task or a charge to someone else."
+    examples:
+      "यह काम मुझे सौंप दो।": { "native": "Hand this work over to me.", "bases": {"सौंप": "to hand over"} }
+      "उसने खाते की ज़िम्मेदारी सौंपी।": { "native": "He entrusted the responsibility of the accounts.", "bases": {"खाते": "account", "सौंपी": "to hand over"} }
+  "hi-2030":
+    native: "to settle; to finish off"
+    notes:
+      "n1": "To finish a piece of work, or to deal with a matter."
+    examples:
+      "सारा काम जल्दी निपटाओ।": { "native": "Finish all the work quickly.", "bases": {"निपटाओ": "to settle"} }
+      "उसने रिपोर्ट निपटाई।": { "native": "He finished the report.", "bases": {"निपटाई": "to settle"} }
+  "hi-2031":
+    native: "to handle; to manage"
+    notes:
+      "n1": "To take care of a thing or a task, or to hold something steady."
+    examples:
+      "सारा दफ़्तर वही संभालता है।": { "native": "He handles the whole office.", "bases": {"वही": "that very", "संभालता": "to handle"} }
+      "मेरी छोटी बहन घर संभालती है।": { "native": "My younger sister looks after the house.", "bases": {"संभालती": "to handle"} }
+  "hi-2032":
+    native: "busy"
+    notes:
+      "n1": "Having a lot to do, so that one has no time to spare."
+    examples:
+      "मैं आज बहुत व्यस्त हूँ।": { "native": "I am very busy today.", "bases": {} }
+      "वह व्यस्त आदमी है।": { "native": "He is a busy man.", "bases": {} }
+  "hi-2033":
+    native: "approved; accepted"
+    notes:
+      "n1": "Agreed to or accepted by someone in charge. The opposite is नामंज़ूर (nāmaṁzūr), refused."
+    examples:
+      "आपकी अर्ज़ी मंज़ूर हो गई।": { "native": "Your application has been approved.", "bases": {"अर्ज़ी": "application"} }
+      "यह प्रस्ताव मंज़ूर है।": { "native": "This proposal is approved.", "bases": {} }

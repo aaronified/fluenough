@@ -393,7 +393,8 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "hi-workplace", theme: "workplace", words: 45 }
+  - decks: ["hi-workplace", "hi-reading-workplace", "*"]
+    words: 30
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
