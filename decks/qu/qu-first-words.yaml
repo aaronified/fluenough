@@ -1,0 +1,120 @@
+schema: 1
+id: "qu-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "qu", iso639_3: "que", name: "Quechua", script: "latin", tts: "qu-PE", icon: "Qu" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "qu-0001"
+    target: "Arí"
+    ipa: "ari"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Arí, allinmi.", ipa: "ari aʎinmi", bases: [{ word: "Arí", base: "arí" }, { word: "allinmi", base: "allin" }] }
+      - { target: "Arí, ñuqa munani.", ipa: "ari ɲuqa munani", bases: [{ word: "Arí", base: "arí" }, { word: "ñuqa", base: "ñuqa" }, { word: "munani", base: "munay" }] }
+  - id: "qu-0002"
+    target: "Mana"
+    ipa: "mana"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mana allinchu.", ipa: "mana aʎintʃu", bases: [{ word: "Mana", base: "mana" }, { word: "allinchu", base: "allin" }] }
+      - { target: "Mana yachanichu.", ipa: "mana jatʃanitʃu", bases: [{ word: "Mana", base: "mana" }, { word: "yachanichu", base: "yachay" }] }
+  - id: "qu-0003"
+    target: "Ñuqa"
+    ipa: "ɲuqa"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ñuqa runa.", ipa: "ɲuqa runa", bases: [{ word: "Ñuqa", base: "ñuqa" }, { word: "runa", base: "runa" }] }
+      - { target: "Ñuqa unuta munani.", ipa: "ɲuqa unuta munani", bases: [{ word: "Ñuqa", base: "ñuqa" }, { word: "unuta", base: "unu" }, { word: "munani", base: "munay" }] }
+  - id: "qu-0004"
+    target: "Qan"
+    ipa: "qan"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Qan runa.", ipa: "qan runa", bases: [{ word: "Qan", base: "qan" }, { word: "runa", base: "runa" }] }
+      - { target: "Qan unuta munanki?", ipa: "qan unuta munaŋki", bases: [{ word: "Qan", base: "qan" }, { word: "unuta", base: "unu" }, { word: "munanki", base: "munay" }] }
+  - id: "qu-0005"
+    target: "Unu"
+    ipa: "unu"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Unu q'asi.", ipa: "unu qʼasi", bases: [{ word: "Unu", base: "unu" }, { word: "q'asi", base: "qʼasi" }] }
+      - { target: "Unuta upyay.", ipa: "unuta upjaj", bases: [{ word: "Unuta", base: "unu" }, { word: "upyay", base: "upyay" }] }
+  - id: "qu-0006"
+    target: "Allin"
+    ipa: "aʎin"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Allin p'unchay.", ipa: "aʎin pʼuntʃaj", bases: [{ word: "Allin", base: "allin" }, { word: "p'unchay", base: "p'unchay" }] }
+      - { target: "Allin runa.", ipa: "aʎin runa", bases: [{ word: "Allin", base: "allin" }, { word: "runa", base: "runa" }] }
+  - id: "qu-0007"
+    target: "Huk"
+    ipa: "huk"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Huk, iskay, kinsa.", ipa: "huk iskaj kinsa", bases: [{ word: "Huk", base: "huk" }, { word: "iskay", base: "iskay" }, { word: "kinsa", base: "kinsa" }] }
+      - { target: "Huk runa.", ipa: "huk runa", bases: [{ word: "Huk", base: "huk" }, { word: "runa", base: "runa" }] }
+  - id: "qu-0008"
+    target: "Iskay"
+    ipa: "iskaj"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Iskay runa.", ipa: "iskaj runa", bases: [{ word: "Iskay", base: "iskay" }, { word: "runa", base: "runa" }] }
+      - { target: "Iskay p'unchay.", ipa: "iskaj pʼuntʃaj", bases: [{ word: "Iskay", base: "iskay" }, { word: "p'unchay", base: "p'unchay" }] }
+  - id: "qu-0009"
+    target: "Kaypi"
+    ipa: "kajpi"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ñuqa kaypi kani.", ipa: "ɲuqa kajpi kani", bases: [{ word: "Ñuqa", base: "ñuqa" }, { word: "kaypi", base: "kaypi" }, { word: "kani", base: "kay" }] }
+      - { target: "Qan kaypi kanki.", ipa: "qan kajpi kaŋki", bases: [{ word: "Qan", base: "qan" }, { word: "kaypi", base: "kaypi" }, { word: "kanki", base: "kay" }] }
+  - id: "qu-0010"
+    target: "Hatun"
+    ipa: "hatun"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hatun wasi.", ipa: "hatun wasi", bases: [{ word: "Hatun", base: "hatun" }, { word: "wasi", base: "wasi" }] }
+      - { target: "Runa hatun.", ipa: "runa hatun", bases: [{ word: "Runa", base: "runa" }, { word: "hatun", base: "hatun" }] }
