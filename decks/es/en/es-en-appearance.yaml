@@ -1,0 +1,296 @@
+schema: 1
+id: "es-en-appearance"
+kind: "layer"
+core: "es-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Appearance: looks, height and age"
+license: "CC-BY-SA-4.0"
+description: "Words for describing a person: the face and its parts, the hair, the build and the height, the age, and the verbs to smile, laugh, look like and dress. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1548":
+    native: "look; appearance"
+    notes: { n1: "Aspecto is how someone or something looks. Tener buen aspecto is to look well." }
+    bases: { "el": "the", "aspecto": "look; appearance" }
+    examples:
+      "Su aspecto es muy elegante.": { native: "Their look is very elegant.", bases: { "aspecto": "look; appearance" } }
+      "El aspecto de la casa es bonito.": { native: "The house looks pretty.", bases: { "El": "the", "aspecto": "look; appearance", "de": "of", "la": "the" } }
+  "es-1549":
+    native: "appearance (outward)"
+    notes: { n1: "Apariencia is how something seems from outside. It is less about a person than aspecto." }
+    bases: { "la": "the", "apariencia": "appearance (outward)" }
+    examples:
+      "La apariencia no es lo importante.": { native: "Appearance is not what matters.", bases: { "La": "the", "apariencia": "appearance (outward)", "lo": "it" } }
+      "Tiene una apariencia joven.": { native: "They look young.", bases: { "una": "a", "apariencia": "appearance (outward)" } }
+  "es-1550":
+    native: "hair"
+    notes: { n1: "Cabello is hair, the word for the hair on the head. In talk, pelo is more common." }
+    bases: { "el": "the", "cabello": "hair" }
+    examples:
+      "Tiene el cabello largo.": { native: "She has long hair.", bases: { "el": "the", "cabello": "hair" } }
+      "Su cabello es negro.": { native: "Her hair is black.", bases: { "cabello": "hair" } }
+  "es-1551":
+    native: "beard"
+    notes: { n1: "La barba is a beard, the hair on a man's chin and cheeks." }
+    bases: { "la": "the", "barba": "beard" }
+    examples:
+      "Mi padre tiene barba.": { native: "My father has a beard.", bases: { "barba": "beard" } }
+      "La barba es gris.": { native: "The beard is grey.", bases: { "La": "the", "barba": "beard" } }
+  "es-1552":
+    native: "moustache"
+    notes: { n1: "El bigote is a moustache, above the mouth." }
+    bases: { "el": "the", "bigote": "moustache" }
+    examples:
+      "Él tiene bigote.": { native: "He has a moustache.", bases: { "bigote": "moustache" } }
+      "El bigote es negro.": { native: "The moustache is black.", bases: { "El": "the", "bigote": "moustache" } }
+  "es-1553":
+    native: "lip"
+    notes: { n1: "El labio is a lip. The plural is labios." }
+    bases: { "el": "the", "labio": "lip" }
+    examples:
+      "Tiene los labios rojos.": { native: "She has red lips.", bases: { "los": "the", "labios": "lip" } }
+      "Se muerde el labio.": { native: "He bites his lip.", bases: { "Se": "yourself", "muerde": "to bite", "el": "the", "labio": "lip" } }
+  "es-1554":
+    native: "face"
+    notes: { n1: "La cara is the face of a person." }
+    bases: { "la": "the", "cara": "face" }
+    examples:
+      "Tiene una cara bonita.": { native: "She has a pretty face.", bases: { "una": "a" } }
+      "Su cara es redonda.": { native: "Her face is round.", bases: { "redonda": "round" } }
+  "es-1555":
+    native: "forehead"
+    notes: { n1: "La frente is the forehead, above the eyes." }
+    bases: { "la": "the", "frente": "forehead" }
+    examples:
+      "Tiene una frente alta.": { native: "They have a high forehead.", bases: { "una": "a", "frente": "forehead" } }
+      "Me pongo la mano en la frente.": { native: "I put my hand on my forehead.", bases: { "Me": "to me", "pongo": "to put", "la": "the", "en": "in", "frente": "forehead" } }
+  "es-1556":
+    native: "shoulder"
+    notes: { n1: "El hombro is a shoulder, the joint between the arm and the body." }
+    bases: { "el": "the", "hombro": "shoulder" }
+    examples:
+      "Lleva la mochila en el hombro.": { native: "He carries the bag on his shoulder.", bases: { "la": "the", "en": "in", "el": "the", "hombro": "shoulder" } }
+      "Me duele el hombro.": { native: "My shoulder hurts.", bases: { "Me": "to me", "el": "the", "hombro": "shoulder" } }
+  "es-1557":
+    native: "waist"
+    notes: { n1: "La cintura is the waist, the narrow part of the body." }
+    bases: { "la": "the", "cintura": "waist" }
+    examples:
+      "Tiene la cintura delgada.": { native: "She has a slim waist.", bases: { "la": "the", "cintura": "waist" } }
+      "La cintura es pequeña.": { native: "The waist is small.", bases: { "La": "the", "cintura": "waist" } }
+  "es-1558":
+    native: "fat; stout"
+    notes: { n1: "Gordo is fat or stout. It agrees with the noun: gorda. It is a blunt word, so use it with care." }
+    bases: { "gordo": "fat; stout" }
+    examples:
+      "El gato es gordo.": { native: "The cat is fat.", bases: { "El": "the", "gordo": "fat; stout" } }
+      "Mi tío no es gordo.": { native: "My uncle is not fat.", bases: { "gordo": "fat; stout" } }
+  "es-1559":
+    native: "older; elder"
+    notes: { n1: "Mayor is older. Mayor que is older than. It does not change for gender." }
+    bases: { "mayor": "older; elder" }
+    examples:
+      "Mi hermana es mayor que yo.": { native: "My sister is older than me.", bases: { "mayor": "older; elder", "que": "that" } }
+      "Es la persona mayor de la familia.": { native: "She is the eldest person in the family.", bases: { "la": "the", "mayor": "older; elder", "de": "of" } }
+  "es-1560":
+    native: "attractive"
+    notes: { n1: "Atractivo is attractive. It agrees with the noun: atractiva." }
+    bases: { "atractivo": "attractive" }
+    examples:
+      "Es un hombre atractivo.": { native: "He is an attractive man.", bases: { "un": "a", "atractivo": "attractive" } }
+      "Su sonrisa es muy atractiva": { native: "Her smile is very attractive.", bases: { "atractiva": "attractive" } }
+  "es-1561":
+    native: "red-haired"
+    notes: { n1: "Pelirrojo is red-haired. It agrees with the noun: pelirroja." }
+    bases: { "pelirrojo": "red-haired" }
+    examples:
+      "Mi amigo es pelirrojo.": { native: "My friend has red hair.", bases: { "pelirrojo": "red-haired" } }
+      "Ella es pelirroja.": { native: "She has red hair.", bases: { "pelirroja": "red-haired" } }
+  "es-1562":
+    native: "blond"
+    notes: { n1: "Rubio is blond. It agrees with the noun: rubia." }
+    bases: { "rubio": "blond" }
+    examples:
+      "El niño es rubio.": { native: "The child is blond.", bases: { "El": "the", "rubio": "blond" } }
+      "Tiene el pelo rubio.": { native: "He has blond hair.", bases: { "el": "the", "rubio": "blond" } }
+  "es-1563":
+    native: "dark-haired; tanned"
+    notes: { n1: "Moreno is dark-haired, or tanned by the sun. It agrees with the noun: morena." }
+    bases: { "moreno": "dark-haired; tanned" }
+    examples:
+      "Es moreno y alto.": { native: "He is dark-haired and tall.", bases: { "moreno": "dark-haired; tanned" } }
+      "Mi madre es morena.": { native: "My mother has dark hair.", bases: { "morena": "dark-haired; tanned" } }
+  "es-1564":
+    native: "brown (hair or eyes)"
+    notes: { n1: "Castaño is chestnut-brown, for hair or eyes. It agrees with the noun: castaña." }
+    bases: { "castaño": "brown (hair or eyes)" }
+    examples:
+      "Tiene los ojos castaños.": { native: "She has brown eyes.", bases: { "los": "the", "castaños": "brown (hair or eyes)" } }
+      "Su pelo es castaño.": { native: "Her hair is brown.", bases: { "castaño": "brown (hair or eyes)" } }
+  "es-1565":
+    native: "bald"
+    notes: { n1: "Calvo is bald, with no hair on the head. It agrees with the noun: calva." }
+    bases: { "calvo": "bald" }
+    examples:
+      "Mi abuelo es calvo.": { native: "My grandfather is bald.", bases: { "calvo": "bald" } }
+      "Ella no es calva.": { native: "She is not bald.", bases: { "calva": "bald" } }
+  "es-1566":
+    native: "curly"
+    notes: { n1: "Rizado is curly. It agrees with the noun: rizada. The opposite is liso." }
+    bases: { "rizado": "curly" }
+    examples:
+      "Tiene el pelo rizado.": { native: "She has curly hair.", bases: { "el": "the", "rizado": "curly" } }
+      "Sus rizos son bonitos.": { native: "Her curls are pretty.", bases: { "rizos": "curl" } }
+  "es-1567":
+    native: "straight (hair); smooth"
+    notes: { n1: "Liso is straight, or smooth to touch. It agrees with the noun: lisa." }
+    bases: { "liso": "straight (hair); smooth" }
+    examples:
+      "Mi pelo es liso.": { native: "My hair is straight.", bases: { "liso": "straight (hair); smooth" } }
+      "La piel es lisa.": { native: "The skin is smooth.", bases: { "La": "the", "lisa": "straight (hair); smooth" } }
+  "es-1568":
+    native: "height"
+    notes: { n1: "La altura is height, of a person, a building or a mountain." }
+    bases: { "la": "the", "altura": "height" }
+    examples:
+      "La altura del edificio es grande.": { native: "The height of the building is big.", bases: { "La": "the", "altura": "height", "del": "of" } }
+      "Mide un metro ochenta de altura.": { native: "He is one metre eighty tall.", bases: { "Mide": "to measure", "un": "a", "de": "of", "altura": "height" } }
+  "es-1569":
+    native: "weight"
+    notes: { n1: "El peso is weight, how heavy a person or a thing is." }
+    bases: { "el": "the", "peso": "weight" }
+    examples:
+      "El peso es importante para la salud.": { native: "Weight is important for health.", bases: { "El": "the", "peso": "weight", "para": "for", "la": "the" } }
+      "Tengo que controlar el peso.": { native: "I have to watch my weight.", bases: { "que": "that", "controlar": "to control", "el": "the", "peso": "weight" } }
+  "es-1570":
+    native: "height (of a person)"
+    notes: { n1: "La estatura is the height of a person, from head to foot." }
+    bases: { "la": "the", "estatura": "height (of a person)" }
+    examples:
+      "Tiene una estatura media.": { native: "They are of average height.", bases: { "una": "a", "estatura": "height (of a person)" } }
+      "La estatura de mi padre es alta.": { native: "My father's height is tall.", bases: { "La": "the", "estatura": "height (of a person)", "de": "of" } }
+  "es-1571":
+    native: "feature; trait"
+    notes: { n1: "El rasgo is a feature of the face, or a trait of character." }
+    bases: { "el": "the", "rasgo": "feature; trait" }
+    examples:
+      "Su rasgo más claro es la sonrisa.": { native: "Her clearest feature is her smile.", bases: { "rasgo": "feature; trait", "la": "the" } }
+      "Es un rasgo de la familia.": { native: "It is a family trait.", bases: { "un": "a", "rasgo": "feature; trait", "de": "of", "la": "the" } }
+  "es-1572":
+    native: "eyebrow"
+    notes: { n1: "La ceja is an eyebrow, above the eye. The plural is cejas." }
+    bases: { "la": "the", "ceja": "eyebrow" }
+    examples:
+      "Tiene las cejas gruesas.": { native: "He has thick eyebrows.", bases: { "las": "the", "cejas": "eyebrow", "gruesas": "thick" } }
+      "Se pinta la ceja.": { native: "She draws on her eyebrow.", bases: { "Se": "yourself", "la": "the", "ceja": "eyebrow" } }
+  "es-1573":
+    native: "eyelash"
+    notes: { n1: "La pestaña is an eyelash, the hair at the edge of the eye." }
+    bases: { "la": "the", "pestaña": "eyelash" }
+    examples:
+      "Tiene pestañas largas.": { native: "She has long eyelashes.", bases: { "pestañas": "eyelash" } }
+      "Una pestaña cae en el ojo.": { native: "An eyelash falls in the eye.", bases: { "Una": "a", "pestaña": "eyelash", "cae": "to fall", "en": "in", "el": "the" } }
+  "es-1574":
+    native: "cheek"
+    notes: { n1: "La mejilla is the cheek, the soft part of the face under the eye." }
+    bases: { "la": "the", "mejilla": "cheek" }
+    examples:
+      "Ella tiene mejillas rojas.": { native: "She has red cheeks.", bases: { "mejillas": "cheek" } }
+      "Me da un beso en la mejilla.": { native: "She kisses me on the cheek.", bases: { "Me": "to me", "da": "to give", "un": "a", "beso": "kiss", "en": "in", "la": "the", "mejilla": "cheek" } }
+  "es-1575":
+    native: "chin"
+    notes: { n1: "La barbilla is the chin, at the bottom of the face." }
+    bases: { "la": "the", "barbilla": "chin" }
+    examples:
+      "Se pone la mano en la barbilla.": { native: "He puts his hand on his chin.", bases: { "Se": "yourself", "pone": "to put", "la": "the", "en": "in", "barbilla": "chin" } }
+      "La barbilla es fuerte.": { native: "The chin is strong.", bases: { "La": "the", "barbilla": "chin" } }
+  "es-1576":
+    native: "skin"
+    notes: { n1: "La piel is the skin that covers the body." }
+    bases: { "la": "the", "piel": "skin" }
+    examples:
+      "Tiene la piel muy clara.": { native: "She has very fair skin.", bases: { "la": "the", "piel": "skin" } }
+      "La piel es sensible.": { native: "The skin is sensitive.", bases: { "La": "the", "piel": "skin", "sensible": "sensitive" } }
+  "es-1577":
+    native: "wrinkle"
+    notes: { n1: "La arruga is a wrinkle in the skin, with age. The plural is arrugas." }
+    bases: { "la": "the", "arruga": "wrinkle" }
+    examples:
+      "Tiene arrugas en la cara.": { native: "He has wrinkles on his face.", bases: { "arrugas": "wrinkle", "en": "in", "la": "the" } }
+      "Las arrugas aparecen con la edad.": { native: "Wrinkles appear with age.", bases: { "Las": "the", "arrugas": "wrinkle", "aparecen": "to appear", "con": "with", "la": "the" } }
+  "es-1578":
+    native: "freckle"
+    notes: { n1: "La peca is a freckle, a small brown spot on the skin. The plural is pecas." }
+    bases: { "la": "the", "peca": "freckle" }
+    examples:
+      "Tiene pecas en la nariz.": { native: "She has freckles on her nose.", bases: { "pecas": "freckle", "en": "in", "la": "the" } }
+      "Las pecas son muy bonitas.": { native: "Freckles are very pretty.", bases: { "Las": "the", "pecas": "freckle" } }
+  "es-1579":
+    native: "tattoo"
+    notes: { n1: "El tatuaje is a tattoo, a picture drawn on the skin with ink." }
+    bases: { "el": "the", "tatuaje": "tattoo" }
+    examples:
+      "Tiene un tatuaje en el brazo.": { native: "He has a tattoo on his arm.", bases: { "un": "a", "tatuaje": "tattoo", "en": "in", "el": "the" } }
+      "El tatuaje es azul.": { native: "The tattoo is blue.", bases: { "El": "the", "tatuaje": "tattoo" } }
+  "es-1580":
+    native: "to smile"
+    notes: { n1: "Sonreír changes its stem: sonrío, sonríes. Its noun is sonrisa." }
+    bases: { "sonreír": "to smile" }
+    examples:
+      "Sonríe siempre.": { native: "She always smiles.", bases: { "Sonríe": "to smile" } }
+      "Me sonríe": { native: "He smiles at me.", bases: { "Me": "to me", "sonríe": "to smile" } }
+  "es-1581":
+    native: "smile"
+    notes: { n1: "La sonrisa is a smile." }
+    bases: { "la": "the", "sonrisa": "smile" }
+    examples:
+      "Tiene una sonrisa bonita.": { native: "She has a nice smile.", bases: { "una": "a", "sonrisa": "smile" } }
+      "Su sonrisa es grande.": { native: "Her smile is big.", bases: { "sonrisa": "smile" } }
+  "es-1582":
+    native: "to laugh"
+    notes: { n1: "Reír changes its stem: río, ríes. It is the verb for laughing." }
+    bases: { "reír": "to laugh" }
+    examples:
+      "Ríe mucho con sus amigos.": { native: "He laughs a lot with his friends.", bases: { "Ríe": "to laugh", "con": "with" } }
+      "Nos reímos juntos.": { native: "We laugh together.", bases: { "Nos": "us", "reímos": "to laugh", "juntos": "together" } }
+  "es-1583":
+    native: "to look like"
+    notes: { n1: "Parecerse a is to look like someone. Its yo form is me parezco." }
+    bases: { "parecerse": "to look like" }
+    examples:
+      "Me parezco a mi madre.": { native: "I look like my mother.", bases: { "Me": "to me", "parezco": "to look like", "a": "to" } }
+      "Os parecéis mucho.": { native: "You look very alike.", bases: { "Os": "you (plural)", "parecéis": "to look like" } }
+  "es-1584":
+    native: "to seem; to look"
+    notes: { n1: "Parecer is to seem, or to look as if. Its yo form is parezco." }
+    bases: { "parecer": "to seem; to look" }
+    examples:
+      "Parece muy joven.": { native: "She seems very young.", bases: { "Parece": "to seem; to look" } }
+      "Parece cansado.": { native: "He looks tired.", bases: { "Parece": "to seem; to look" } }
+  "es-1585":
+    native: "to be called"
+    notes: { n1: "Llamarse is to be called. Its yo form is me llamo." }
+    bases: { "llamarse": "to be called" }
+    examples:
+      "Me llamo Ana.": { native: "My name is Ana.", bases: { "Me": "to me", "llamo": "to be called", "Ana": "Ana" } }
+      "¿Cómo te llamas?": { native: "What is your name?", bases: { "te": "you" } }
+  "es-1586":
+    native: "to dress; to wear"
+    notes: { n1: "Vestir changes its stem: visto, vistes. Vestirse is to dress oneself." }
+    bases: { "vestir": "to dress; to wear" }
+    examples:
+      "Viste de azul.": { native: "She dresses in blue.", bases: { "Viste": "to dress; to wear", "de": "of" } }
+      "Visto a mi hijo.": { native: "I dress my son./ser", bases: { "Visto": "to dress; to wear", "a": "to" } }
+  "es-1587":
+    native: "body"
+    notes: { n1: "El cuerpo is the body of a person or an animal." }
+    bases: { "el": "the", "cuerpo": "body" }
+    examples:
+      "El cuerpo es importante.": { native: "The body is important.", bases: { "El": "the", "cuerpo": "body" } }
+      "Hago ejercicio para el cuerpo.": { native: "I exercise for the body.", bases: { "para": "for", "el": "the", "cuerpo": "body" } }
+  "es-1588":
+    native: "thin; skinny"
+    notes: { n1: "Flaco is thin, often too thin. It agrees with the noun: flaca." }
+    bases: { "flaco": "thin; skinny" }
+    examples:
+      "Es muy flaco.": { native: "He is very thin.", bases: { "flaco": "thin; skinny" } }
+      "La niña es flaca.": { native: "The girl is thin.", bases: { "La": "the", "flaca": "thin; skinny" } }

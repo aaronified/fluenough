@@ -1,0 +1,50 @@
+schema: 1
+id: "es-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1589"
+    target: "Mi hermano es alto, moreno y guapo."
+    ipa: "mi eɾˈmano es ˈalto moˈɾeno i ˈɡwapo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }, { word: "moreno", ref: "es-1563" }, { word: "y", ref: "es-0048" }, { word: "guapo", ref: "es-0406" }]
+    confusables: [{ id: "rubio", ref: "es-1562", kind: "word" }, { id: "calvo", ref: "es-1565", kind: "word" }]
+  - id: "es-1590"
+    target: "Ella tiene el pelo rizado y largo."
+    ipa: "ˈeʝa ˈtjene el ˈpelo riˈθado i ˈlaɾɡo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ella", ref: "es-0121" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-1319" }, { word: "rizado", ref: "es-1566" }, { word: "y", ref: "es-0048" }, { word: "largo", ref: "es-0429" }]
+    confusables: [{ id: "liso", ref: "es-1567", kind: "word" }, { id: "cabello", ref: "es-1550", kind: "word" }]
+  - id: "es-1591"
+    target: "El niño tiene una sonrisa grande."
+    ipa: "el ˈniɲo ˈtjene ˈuna sonˈrisa ˈɡɾande"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "sonrisa", ref: "es-1581" }, { word: "grande", ref: "es-0031" }]
+    confusables: [{ id: "reir", ref: "es-1582", kind: "word" }, { id: "cara", ref: "es-1554", kind: "word" }]
+  - id: "es-1592"
+    target: "Me parezco a mi padre, somos muy altos."
+    ipa: "me paˈɾeθko a mi ˈpadɾe ˈsomos mwi ˈaltos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "parezco", ref: "es-1584" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "somos", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "altos", ref: "es-0254" }]
+    confusables: [{ id: "parecer", ref: "es-1584", kind: "word" }, { id: "estatura", ref: "es-1570", kind: "word" }]
+  - id: "es-1593"
+    target: "Tiene arrugas en la frente."
+    ipa: "ˈtjene aˈruɡas en la ˈfɾente"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tiene", ref: "es-0024" }, { word: "arrugas", ref: "es-1577" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "frente", ref: "es-1555" }]
+    confusables: [{ id: "piel", ref: "es-1576", kind: "word" }, { id: "mejilla", ref: "es-1574", kind: "word" }]
+  - id: "es-1594"
+    target: "Mi abuela es muy atractiva."
+    ipa: "mi aˈbwela es mwi atɾakˈtiba"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuela", ref: "es-0166" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "atractiva", ref: "es-1560" }]
+    confusables: [{ id: "joven", ref: "es-0256", kind: "word" }, { id: "viejo", ref: "es-0431", kind: "word" }]
