@@ -12,9 +12,8 @@ language's family, three milestones, and a placeholder listening and reading
 passage for every planned unit. Only unit 1 is written (the phrasebook and
 the first words); every other unit is a `planned:` unit.
 
-The path files of the nine path-only courses and the four ancient courses
-that already have a full plan (`WIRED`) are not rewritten: only their unit 1
-is turned into the written unit.
+The path files of the nine courses that already have a full plan (`WIRED`)
+are not rewritten: only their unit 1 is turned into the written unit.
 
 The data below is deliberately conservative. A grammar topic is a generic
 category name of the language's family or typology (cases, aspect, tones,
@@ -679,13 +678,7 @@ LANGS = {
 }
 
 # Courses that already have a full all-planned path: only unit 1 changes.
-# Courses whose unit 1 teaches the first words alone: their phrasebook is
-# below the validator's 15-card minimum, so none is written (owner,
-# 2026-11-01: "Drop the phrasebook, keep only first-words").
-NO_PHRASEBOOK = {"egy", "sux", "gmy", "ine"}
-
-WIRED = ["de", "eo", "mai", "ml", "or", "pa", "ta", "jbo", "isv",
-         "gmy", "sux", "egy", "ine"]
+WIRED = ["de", "eo", "mai", "ml", "or", "pa", "ta", "jbo", "isv"]
 
 
 # --------------------------------------------------------------------------
@@ -884,10 +877,7 @@ def render(code: str) -> str:
 # --------------------------------------------------------------------------
 def wire_unit_one(code: str, text: str) -> str:
     """Turns the planned phrasebook unit into the written unit 1. A path
-    already written that way is returned unchanged. A course in
-    NO_PHRASEBOOK gets the first words alone."""
-    if code in NO_PHRASEBOOK:
-        return _wire_first_words_only(code, text)
+    already written that way is returned unchanged."""
     if f'decks: ["{code}-phrasebook"' in text:
         return text
     pattern = re.compile(
@@ -899,28 +889,6 @@ def wire_unit_one(code: str, text: str) -> str:
            f'  - decks: ["{code}-phrasebook", "{code}-first-words", "*"]\n'
            f"    words: {FIRST_WORDS}\n")
     return pattern.sub(lambda m: new, text, count=1)
-
-
-def _wire_first_words_only(code: str, text: str) -> str:
-    """Unit 1 teaches `<code>-first-words` alone, from a planned phrasebook
-    unit, a unit 1 wired with the phrasebook, or one already first-words."""
-    new = (f"  # The first words are written: {code}-first-words is unit 1 (10 words).\n"
-           f"  # No phrasebook is written: its few cards are below the 15 a phrasebook\n"
-           f"  # needs.\n"
-           f'  - decks: ["{code}-first-words", "*"]\n'
-           f"    words: {FIRST_WORDS}\n")
-    if f'decks: ["{code}-first-words", "*"]' in text:
-        return text
-    wired = re.compile(
-        rf'^  # The first words are written: [^\n]*\n  # phrasebook \(10 words\)\.\n'
-        rf'  - decks: \["{code}-phrasebook", "{code}-first-words", "\*"\]\n    words: \d+\n', re.M)
-    if wired.search(text):
-        return wired.sub(lambda m: new, text, count=1)
-    planned = re.compile(
-        rf'^  - planned: \{{ id: "{code}-phrasebook"[^\n]*\n(?:    [^\n]*\n)+', re.M)
-    if not planned.search(text):
-        raise ValueError(f"{code}: no phrasebook unit to wire")
-    return planned.sub(lambda m: new, text, count=1)
 
 
 # --------------------------------------------------------------------------

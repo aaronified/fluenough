@@ -192,21 +192,21 @@ learn, then the other themes woven with the grammar of the language's family
 pattern for Semitic, tones for Cantonese, Thai, Vietnamese and Hausa, noun
 classes for Swahili, ergativity for Basque, mutations for Irish). Grammar
 topics are generic category names, never a stated rule of the language. Only
-unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words;
-Egyptian, Sumerian, Mycenaean Greek and Proto-Indo-European have no
-phrasebook, their cards being below the validator's 15, so unit 1 is
-`<code>-first-words` alone, owner, 2026-11-01; `NO_PHRASEBOOK` in the generator);
+unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words);
 every other unit is `planned:` with placeholder listening and reading
-passages, to be reworded when written.
+passages, to be reworded when written. Egyptian, Sumerian, Mycenaean Greek
+and Proto-Indo-European are not in the generator: they are taken out of this
+change, and their path and first-words files stay as main has them, until the
+validator's phrasebook rule is settled (their phrasebook would be below its
+15-card minimum).
 
 Living languages use the plan's sizes (A1 700, A2 900, B1 1,200 words); the
 four ancient ones set `levels` (Latin 600, 800 and 1,100; Vedic 300, 400 and
 600; Old English 400, 600 and 800; Middle English 350, 500 and 700) and leave
 out themes of modern life. The generator also turns unit 1 of the courses
 that already had a full all-planned path (German, Esperanto, Maithili,
-Malayalam, Odia, Punjabi, Tamil, Lojban, Interslavic, Mycenaean Greek,
-Sumerian, Egyptian, Proto-Indo-European) into the written unit and touches
-nothing else of them. `--check` fails when a file differs from the
+Malayalam, Odia, Punjabi, Tamil, Lojban, Interslavic) into the written unit
+and touches nothing else of them. `--check` fails when a file differs from the
 generator. To change a language's plan before its decks exist, edit the
 generator's data and run it again; once a unit is written, edit the path by
 hand and take the language out of the generator.
