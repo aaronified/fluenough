@@ -202,11 +202,8 @@ units:
     grammar: ["partitive"]
   - decks: ["fr-food", "fr-food-sentences", "fr-reading-food", "*"]
     words: 28
-  - planned: { id: "fr-transport", theme: "transport", words: 30 }
-    listening_passages:
-      - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
-    reading_passages:
-      - { id: "timetable", text: { "en": "A bus and metro timetable" } }
+  - decks: ["fr-transport", "fr-transport-sentences", "fr-reading-transport", "*"]
+    words: 25
   - planned: { id: "fr-directions", theme: "directions", words: 30 }
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }

@@ -1,0 +1,343 @@
+schema: 1
+id: "fr-en-transport"
+kind: "layer"
+core: "fr-transport"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Bus, car, train and plane"
+license: "CC-BY-SA-4.0"
+description: "Words for getting around: bus, métro, billet, arrêt, taxi, voiture, vélo, avion, aéroport, vol, quai, horaire, voyage and trajet, with voyager and conduire. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0854":
+    native: "bus"
+    notes:
+      "n1": "Bus is 'bus', a masculine noun. It is the same word in French and English, said bys."
+    examples:
+      "Le bus est rapide.":
+        native: "The bus is fast."
+        bases:
+          "bus": "bus"
+      "Je prends le bus.":
+        native: "I take the bus."
+        bases:
+          "bus": "bus"
+  "fr-0855":
+    native: "metro; underground"
+    notes:
+      "n1": "Métro is 'metro' or 'underground', a masculine noun. It is short for chemin de fer métropolitain."
+    examples:
+      "Je prends le métro.":
+        native: "I take the metro."
+        bases:
+          "métro": "metro; underground"
+      "Le métro est bruyant.":
+        native: "The metro is noisy."
+        bases:
+          "métro": "metro; underground"
+  "fr-0856":
+    native: "ticket"
+    notes:
+      "n1": "Billet is 'ticket' for a journey or a show, a masculine noun."
+    examples:
+      "Le billet est cher.":
+        native: "The ticket is dear."
+        bases:
+          "billet": "ticket"
+      "J'ai un billet.":
+        native: "I have a ticket."
+        bases:
+          "billet": "ticket"
+  "fr-0857":
+    native: "stop"
+    notes:
+      "n1": "Arrêt is 'stop', a place where a bus or tram stops. It is a masculine noun."
+    examples:
+      "L'arrêt est près de la gare.":
+        native: "The stop is near the station."
+        bases:
+          "L'arrêt": "stop"
+          "de": "of; from; some"
+      "Nous attendons à l'arrêt.":
+        native: "We wait at the stop."
+        bases:
+          "à": "to; at; in"
+          "l'arrêt": "stop"
+  "fr-0858":
+    native: "taxi"
+    notes:
+      "n1": "Taxi is 'taxi', a masculine noun. It is the same word in French and English."
+    examples:
+      "Je prends un taxi.":
+        native: "I take a taxi."
+        bases:
+          "taxi": "taxi"
+      "Le taxi est là.":
+        native: "The taxi is there."
+        bases:
+          "taxi": "taxi"
+  "fr-0859":
+    native: "car"
+    notes:
+      "n1": "Voiture is 'car', a feminine noun. It is a motor vehicle with four wheels."
+    examples:
+      "La voiture est vieille.":
+        native: "The car is old."
+        bases:
+          "voiture": "car"
+      "Mon père conduit la voiture.":
+        native: "My father drives the car."
+        bases:
+          "voiture": "car"
+  "fr-0860":
+    native: "bicycle; bike"
+    notes:
+      "n1": "Vélo is 'bicycle' or 'bike', a masculine noun. It is short for vélocipède."
+    examples:
+      "Je prends mon vélo.":
+        native: "I take my bike."
+        bases:
+          "vélo": "bicycle; bike"
+      "Le vélo est rapide.":
+        native: "The bike is fast."
+        bases:
+          "vélo": "bicycle; bike"
+  "fr-0861":
+    native: "plane; aeroplane"
+    notes:
+      "n1": "Avion is 'plane' or 'aeroplane', a masculine noun."
+    examples:
+      "L'avion est rapide.":
+        native: "The plane is fast."
+        bases:
+          "L'avion": "plane; aeroplane"
+      "Nous prenons l'avion.":
+        native: "We take the plane."
+        bases:
+          "l'avion": "plane; aeroplane"
+  "fr-0862":
+    native: "airport"
+    notes:
+      "n1": "Aéroport is 'airport', a masculine noun. It is spelled with an accent on the first e."
+    examples:
+      "L'aéroport est loin.":
+        native: "The airport is far."
+        bases:
+          "L'aéroport": "airport"
+      "Vous attendez à l'aéroport.":
+        native: "You wait at the airport."
+        bases:
+          "à": "to; at; in"
+          "l'aéroport": "airport"
+  "fr-0863":
+    native: "flight"
+    notes:
+      "n1": "Vol is 'flight', a masculine noun. It is also 'theft', in another sense."
+    examples:
+      "Le vol est long.":
+        native: "The flight is long."
+        bases:
+          "vol": "flight"
+      "J'ai un vol.":
+        native: "I have a flight."
+        bases:
+          "vol": "flight"
+  "fr-0864":
+    native: "line; route"
+    notes:
+      "n1": "Ligne is 'line', a feminine noun, for a bus or metro route: la ligne 1 (the line 1)."
+    examples:
+      "La ligne est directe.":
+        native: "The line is direct."
+        bases:
+          "ligne": "line; route"
+      "Tu prends la ligne ?":
+        native: "Are you taking the line?"
+        bases:
+          "ligne": "line; route"
+  "fr-0865":
+    native: "timetable; schedule"
+    notes:
+      "n1": "Horaire is 'timetable' or 'schedule', a masculine noun: l'horaire du train (the train timetable)."
+    examples:
+      "L'horaire est bon.":
+        native: "The timetable is good."
+        bases:
+          "L'horaire": "timetable; schedule"
+      "Quel est l'horaire ?":
+        native: "What is the timetable?"
+        bases:
+          "l'horaire": "timetable; schedule"
+  "fr-0866":
+    native: "platform"
+    notes:
+      "n1": "Quai is 'platform' at a station, a masculine noun. It is also the quay by the river."
+    examples:
+      "Le train part du quai.":
+        native: "The train leaves from the platform."
+        bases:
+          "du": "of the (masculine); some"
+          "quai": "platform"
+      "Le quai est loin.":
+        native: "The platform is far."
+        bases:
+          "quai": "platform"
+  "fr-0867":
+    native: "trip; journey"
+    notes:
+      "n1": "Voyage is 'trip' or 'journey', a masculine noun. Faire un voyage is 'to go on a trip'."
+    examples:
+      "Le voyage est long.":
+        native: "The journey is long."
+        bases:
+          "voyage": "trip; journey"
+      "Je fais un voyage.":
+        native: "I go on a trip."
+        bases:
+          "voyage": "trip; journey"
+  "fr-0868":
+    native: "to travel"
+    notes:
+      "n1": "Voyager is 'to travel'. It is a regular verb: nous voyageons, with an e kept before -ons."
+    examples:
+      "Nous voyageons souvent.":
+        native: "We often travel."
+        bases:
+          "voyageons": "to travel"
+      "Tu voyages avec ton frère.":
+        native: "You travel with your brother."
+        bases:
+          "voyages": "to travel"
+  "fr-0869":
+    native: "to drive"
+    notes:
+      "n1": "Conduire is 'to drive' a car or a bus. It is irregular: je conduis, nous conduisons."
+    examples:
+      "Je conduis vite.":
+        native: "I drive fast."
+        bases:
+          "conduis": "to drive"
+      "Ils conduisent lentement.":
+        native: "They drive slowly."
+        bases:
+          "conduisent": "to drive"
+  "fr-0870":
+    native: "delay; lateness"
+    notes:
+      "n1": "Retard is 'delay' or 'lateness', a masculine noun: avoir du retard (to be late). It is the noun of the adjective late."
+    examples:
+      "Le train a du retard.":
+        native: "The train is late."
+        bases:
+          "du": "of the (masculine); some"
+          "retard": "delay; lateness"
+      "Le bus a du retard.":
+        native: "The bus is late."
+        bases:
+          "du": "of the (masculine); some"
+          "retard": "delay; lateness"
+  "fr-0871":
+    native: "station"
+    notes:
+      "n1": "Station is 'station', a feminine noun: a metro station or a bus station. The gare is for trains."
+    examples:
+      "La station est loin.":
+        native: "The station is far."
+        bases:
+          "station": "station"
+      "Nous attendons à la station.":
+        native: "We wait at the station."
+        bases:
+          "à": "to; at; in"
+          "station": "station"
+  "fr-0872":
+    native: "passenger"
+    notes:
+      "n1": "Passager is 'passenger', a masculine noun. The feminine is passagère."
+    examples:
+      "Le passager attend.":
+        native: "The passenger waits."
+        bases:
+          "passager": "passenger"
+      "Mon frère est passager.":
+        native: "My brother is a passenger."
+        bases:
+          "passager": "passenger"
+  "fr-0873":
+    native: "driver"
+    notes:
+      "n1": "Chauffeur is 'driver', a masculine noun: un chauffeur de taxi (a taxi driver)."
+    examples:
+      "Le chauffeur est gentil.":
+        native: "The driver is kind."
+        bases:
+          "chauffeur": "driver"
+      "Mon ami est chauffeur.":
+        native: "My friend is a driver."
+        bases:
+          "chauffeur": "driver"
+  "fr-0874":
+    native: "journey; route"
+    notes:
+      "n1": "Trajet is 'journey' or 'route' from one place to another. It is a masculine noun."
+    examples:
+      "Le trajet est court.":
+        native: "The journey is short."
+        bases:
+          "trajet": "journey; route"
+      "Je fais le trajet.":
+        native: "I make the journey."
+        bases:
+          "trajet": "journey; route"
+  "fr-0875":
+    native: "luggage"
+    notes:
+      "n1": "Bagage is 'luggage', a masculine noun. It is used in the singular for all your bags."
+    examples:
+      "Mon bagage est lourd.":
+        native: "My luggage is heavy."
+        bases:
+          "bagage": "luggage"
+      "Je prends mon bagage.":
+        native: "I take my luggage."
+        bases:
+          "bagage": "luggage"
+  "fr-0876":
+    native: "suitcase"
+    notes:
+      "n1": "Valise is 'suitcase', a feminine noun: une valise (a suitcase)."
+    examples:
+      "La valise est lourde.":
+        native: "The suitcase is heavy."
+        bases:
+          "valise": "suitcase"
+      "J'ai une valise.":
+        native: "I have a suitcase."
+        bases:
+          "valise": "suitcase"
+  "fr-0877":
+    native: "next"
+    notes:
+      "n1": "Prochain is 'next', as in the next train. The feminine is prochaine (pʁɔʃɛn)."
+    examples:
+      "Le prochain train part à huit heures.":
+        native: "The next train leaves at eight o'clock."
+        bases:
+          "prochain": "next"
+          "à": "to; at; in"
+      "La prochaine station est loin.":
+        native: "The next station is far."
+        bases:
+          "prochaine": "next"
+  "fr-0878":
+    native: "direct"
+    notes:
+      "n1": "Direct is 'direct', with no stop. The feminine is directe (diʁɛkt), said the same."
+    examples:
+      "Le vol est direct.":
+        native: "The flight is direct."
+        bases:
+          "direct": "direct"
+      "Le train est direct.":
+        native: "The train is direct."
+        bases:
+          "direct": "direct"
