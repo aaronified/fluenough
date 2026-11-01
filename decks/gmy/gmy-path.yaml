@@ -134,9 +134,10 @@ units:
   # words beside them: wa-na-ka (wanax, king), da-mo (dāmos, the people),
   # po-ti-ni-ja (potnia, mistress), pa-te (patēr, father). gmy-first-words
   # joins this unit when written.
-  # The first words are written: gmy-first-words is taught with the
-  # phrasebook (10 words).
-  - decks: ["gmy-phrasebook", "gmy-first-words", "*"]
+  # The first words are written: gmy-first-words is unit 1 (10 words).
+  # No phrasebook is written: its few cards are below the 15 a phrasebook
+  # needs.
+  - decks: ["gmy-first-words", "*"]
     words: 10
   # 2. The first word units, read in transliteration: the spelling rules
   # first. Linear B writes open syllables only, so readers restore the

@@ -52,8 +52,8 @@ SHA-256, and the app reads it from `main` on GitHub. Only `themes.yaml`
 ships inside the app. After a merge touching `decks/`, a workflow writes the
 index again on main; do not run `tools/deck_index.py` or commit the index.
 Validating a single deck or one language directory only checks what you
-pointed it at. `decks/ja/` is left out of the index on purpose for now: it is
-listed in `HIDDEN` in `tools/deck_index.py`, and still validated.
+pointed it at. A language listed in `HIDDEN` in `tools/deck_index.py` is left out of the
+index but still validated; none is hidden now.
 
 **Reviewers change these files too** (ADR-0038). A native speaker's
 suggestion arrives as a `proposed` line on its card, written by the review

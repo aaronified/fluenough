@@ -66,21 +66,14 @@ _BADGE = re.compile(r'(badge/languages-)\d+(-[^"\s]*"\s+alt=")\d+( languages")')
 # for an app update; raise it only for a change an older app would misread.
 INDEX_VERSION = 1
 
-# Languages kept in the repository, and validated like any other, but not
-# offered in the app for now. Remove a line to offer the language.
-# Japanese, hidden until 2026-10-20, is offered (owner: write its first
-# decks).
-# Planned languages' starter decks (#959) are in the repository but hidden
-# from the index, so a phone on 0.7.0 sees nothing new: these are the codes
-# that assets/languages.yaml at v0.7.0 did not list. Remove them once the
-# owner has released 0.7.1 and the min-app gate is in (then unhide, in a
-# later change; add the code to SHIPPED in tools/test_deck_index.py too).
-HIDDEN: set[str] = {
-    "ang", "ar", "arc", "ca", "egy", "el", "enm", "eu", "fi", "fil", "ga",
-    "gmy", "grc", "ha", "hbs", "he", "hu", "ine", "it", "la", "ms", "nb",
-    "pl", "pli", "pt", "qap", "qgh", "qgk", "qu", "ru", "so", "sux", "sv",
-    "sw", "th", "tr", "vi", "vsn", "yi", "yue",
-}
+# Languages kept in the repository, and validated like any other, but left
+# out of the index so no phone is offered them. Empty: v0.7.1 is released
+# with the language list (the planned languages' starter decks, #959, are
+# offered to every phone; owner, 2026-11-01). To hide a language again, for
+# example while its first decks are drafted, add its code here: it stays
+# validated but is not listed. Keep SHIPPED in tools/test_deck_index.py in
+# step when a language goes out.
+HIDDEN: set[str] = set()
 
 # What ships inside the app rather than downloading (the plan's item 7):
 # the theme list. The spoken languages live in assets/, not here.
