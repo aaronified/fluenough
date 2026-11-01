@@ -1,0 +1,240 @@
+schema: 1
+id: "es-en-eating-out"
+kind: "layer"
+core: "es-eating-out"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Eating out"
+license: "CC-BY-SA-4.0"
+description: "Words for a restaurant or a bar: booking a table, the menu card, the glass and the cutlery, the starter, and the taste words bitter, sour and fried. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1257":
+    native: "reservation; booking"
+    notes: { n1: "Reserva is a booking, for a table or a room. The verb is reservar." }
+    bases: { "la": "the", "reserva": "reservation; booking" }
+    examples:
+      "Tengo una reserva a las nueve.": { native: "I have a booking for nine.", bases: { "una": "a", "reserva": "reservation; booking", "a": "to", "las": "the" } }
+      "La reserva es para cuatro personas.": { native: "The booking is for four people.", bases: { "La": "the", "reserva": "reservation; booking", "para": "for" } }
+  "es-1258":
+    native: "to book; to reserve"
+    notes: { n1: "Reservar is to book a table in advance. Its stem does not change." }
+    bases: { "reservar": "to book; to reserve" }
+    examples:
+      "Quiero reservar una mesa para dos.": { native: "I want to book a table for two.", bases: { "reservar": "to book; to reserve", "una": "a", "para": "for" } }
+      "¿Puedo reservar para mañana?": { native: "Can I book for tomorrow?", bases: { "Puedo": "to be able to; can", "reservar": "to book; to reserve", "para": "for" } }
+  "es-1259":
+    native: "menu card"
+    notes: { n1: "La carta is the list of dishes in a restaurant, the menu card. The menú del día is a fixed menu." }
+    bases: { "la": "the", "carta": "menu card" }
+    examples:
+      "La carta tiene pescado y carne.": { native: "The menu card has fish and meat.", bases: { "La": "the", "carta": "menu card" } }
+      "Miro la carta antes de pedir.": { native: "I look at the menu card before ordering.", bases: { "la": "the", "carta": "menu card", "de": "of" } }
+  "es-1260":
+    native: "glass"
+    notes: { n1: "Vaso is a drinking glass, for water or juice. A wine glass is a copa." }
+    bases: { "el": "the", "vaso": "glass" }
+    examples:
+      "Quiero un vaso de agua.": { native: "I want a glass of water.", bases: { "un": "a", "vaso": "glass", "de": "of" } }
+      "El vaso está sucio.": { native: "The glass is dirty.", bases: { "El": "the", "vaso": "glass" } }
+  "es-1261":
+    native: "napkin"
+    notes: { n1: "La servilleta is the napkin you put on your lap or wipe your mouth with." }
+    bases: { "la": "the", "servilleta": "napkin" }
+    examples:
+      "Necesito una servilleta, por favor.": { native: "I need a napkin, please.", bases: { "una": "a", "servilleta": "napkin", "por": "for", "favor": "please" } }
+      "La servilleta está en la mesa.": { native: "The napkin is on the table.", bases: { "La": "the", "servilleta": "napkin", "en": "in", "la": "the" } }
+  "es-1262":
+    native: "pepper"
+    notes: { n1: "La pimienta is black pepper, the spice in a pepper mill. Pimiento is the vegetable pepper, a different word." }
+    bases: { "la": "the", "pimienta": "pepper" }
+    examples:
+      "¿Me pasa la sal y la pimienta?": { native: "Could you pass me the salt and the pepper?", bases: { "Me": "to me", "pasa": "to pass", "la": "the", "pimienta": "pepper" } }
+      "Sin pimienta, por favor.": { native: "Without pepper, please.", bases: { "Sin": "without", "pimienta": "pepper", "por": "for", "favor": "please" } }
+  "es-1263":
+    native: "vinegar"
+    notes: { n1: "El vinagre is vinegar, used on salad with oil." }
+    bases: { "el": "the", "vinagre": "vinegar" }
+    examples:
+      "La ensalada tiene aceite y vinagre.": { native: "The salad has oil and vinegar.", bases: { "La": "the", "vinagre": "vinegar" } }
+      "No me gusta el vinagre.": { native: "I do not like vinegar.", bases: { "me": "to me", "gusta": "to like", "el": "the", "vinagre": "vinegar" } }
+  "es-1264":
+    native: "ice"
+    notes: { n1: "El hielo is ice, for a drink. Pedir sin hielo is to ask for a drink without ice." }
+    bases: { "el": "the", "hielo": "ice" }
+    examples:
+      "Quiero el café con hielo.": { native: "I want the coffee with ice.", bases: { "el": "the", "con": "with", "hielo": "ice" } }
+      "El agua no tiene hielo.": { native: "The water has no ice.", bases: { "El": "the", "hielo": "ice" } }
+  "es-1265":
+    native: "to recommend"
+    notes: { n1: "Recomendar changes its stem in the yo form and in the usted form: recomiendo, recomienda." }
+    bases: { "recomendar": "to recommend" }
+    examples:
+      "¿Qué me recomienda usted?": { native: "What do you recommend?", bases: { "me": "to me", "recomienda": "to recommend" } }
+      "Recomiendo la sopa de hoy.": { native: "I recommend today's soup.", bases: { "Recomiendo": "to recommend", "la": "the", "de": "of" } }
+  "es-1266":
+    native: "to try; to taste"
+    notes: { n1: "Probar changes its stem in the yo form: pruebo. It means to taste a food or try a drink." }
+    bases: { "probar": "to try; to taste" }
+    examples:
+      "Pruebo el pastel, está muy bueno.": { native: "I try the cake, it is very good.", bases: { "Pruebo": "to try; to taste", "el": "the" } }
+      "¿Puedo probar el vino?": { native: "Can I taste the wine?", bases: { "Puedo": "to be able to; can", "probar": "to try; to taste", "el": "the" } }
+  "es-1267":
+    native: "delicious"
+    notes: { n1: "Delicioso is used for food that is very good to taste. It agrees with the noun: delicioso, deliciosa." }
+    bases: { "delicioso": "delicious" }
+    examples:
+      "La sopa está deliciosa.": { native: "The soup is delicious.", bases: { "La": "the", "deliciosa": "delicious" } }
+      "El postre es delicioso.": { native: "The dessert is delicious.", bases: { "El": "the", "delicioso": "delicious" } }
+  "es-1268":
+    native: "starter"
+    notes: { n1: "El entrante is the first course, before the main dish. Primer plato is the same idea." }
+    bases: { "el": "the", "entrante": "starter" }
+    examples:
+      "¿Quieres un entrante?": { native: "Do you want a starter?", bases: { "un": "a", "entrante": "starter" } }
+      "El entrante es una ensalada.": { native: "The starter is a salad.", bases: { "El": "the", "entrante": "starter", "una": "a" } }
+  "es-1269":
+    native: "soft drink"
+    notes: { n1: "El refresco is a cold soft drink, not water and not wine." }
+    bases: { "el": "the", "refresco": "soft drink" }
+    examples:
+      "Un refresco, por favor.": { native: "A soft drink, please.", bases: { "Un": "a", "refresco": "soft drink", "por": "for", "favor": "please" } }
+      "Tomo un refresco con la comida.": { native: "I have a soft drink with the meal.", bases: { "un": "a", "refresco": "soft drink", "con": "with", "la": "the" } }
+  "es-1270":
+    native: "bar counter"
+    notes: { n1: "La barra is the counter of a bar, where you stand to have a drink." }
+    bases: { "la": "the", "barra": "bar counter" }
+    examples:
+      "Tomo un café en la barra.": { native: "I have a coffee at the bar counter.", bases: { "un": "a", "en": "in", "la": "the", "barra": "bar counter" } }
+      "Hay tres personas en la barra.": { native: "There are three people at the bar counter.", bases: { "Hay": "there is; there are", "en": "in", "la": "the", "barra": "bar counter" } }
+  "es-1271":
+    native: "ham"
+    notes: { n1: "El jamón is cured ham, sliced thin, and very common in a bocadillo." }
+    bases: { "el": "the", "jamón": "ham" }
+    examples:
+      "El bocadillo es de jamón.": { native: "The sandwich is ham.", bases: { "El": "the", "de": "of", "jamón": "ham" } }
+      "No como jamón.": { native: "I do not eat ham.", bases: { "jamón": "ham" } }
+  "es-1272":
+    native: "cake"
+    notes: { n1: "El pastel is a cake or a pie. A tarta is a larger cake, often for a party." }
+    bases: { "el": "the", "pastel": "cake" }
+    examples:
+      "El pastel es de chocolate.": { native: "The cake is chocolate.", bases: { "El": "the", "pastel": "cake", "de": "of" } }
+      "Quiero un pastel de fresa.": { native: "I want a strawberry cake.", bases: { "un": "a", "pastel": "cake", "de": "of" } }
+  "es-1273":
+    native: "bitter"
+    notes: { n1: "Amargo is the taste of coffee without sugar, or of a green fruit. Its opposite is dulce." }
+    bases: { "amargo": "bitter" }
+    examples:
+      "El café es muy amargo.": { native: "The coffee is very bitter.", bases: { "El": "the", "amargo": "bitter" } }
+      "El té es amargo sin azúcar.": { native: "The tea is bitter without sugar.", bases: { "El": "the", "amargo": "bitter", "sin": "without" } }
+  "es-1274":
+    native: "sour"
+    notes: { n1: "Ácido is sour, like lemon or vinegar. It agrees with the noun: ácido, ácida." }
+    bases: { "ácido": "sour" }
+    examples:
+      "El vinagre es ácido.": { native: "Vinegar is sour.", bases: { "El": "the", "ácido": "sour" } }
+      "Este vino es muy ácido.": { native: "This wine is very sour.", bases: { "Este": "this", "ácido": "sour" } }
+  "es-1275":
+    native: "taste; flavour"
+    notes: { n1: "El sabor is the taste of a food. Tener sabor is to have a strong taste." }
+    bases: { "el": "the", "sabor": "taste; flavour" }
+    examples:
+      "¿Qué sabor tiene el helado?": { native: "What flavour is the ice cream?", bases: { "sabor": "taste; flavour", "el": "the" } }
+      "La sopa tiene mucho sabor.": { native: "The soup has a lot of flavour.", bases: { "La": "the", "sabor": "taste; flavour" } }
+  "es-1276":
+    native: "fried"
+    notes: { n1: "Frito is fried in oil. It agrees with the noun: frito, frita." }
+    bases: { "frito": "fried" }
+    examples:
+      "El pescado frito es muy bueno.": { native: "Fried fish is very good.", bases: { "El": "the", "frito": "fried" } }
+      "No quiero pollo frito.": { native: "I do not want fried chicken.", bases: { "frito": "fried" } }
+  "es-1277":
+    native: "grilled; roasted"
+    notes: { n1: "Asado is cooked over a fire or in an oven, not fried. It agrees with the noun." }
+    bases: { "asado": "grilled; roasted" }
+    examples:
+      "El pollo asado está en el menú.": { native: "The roast chicken is on the menu.", bases: { "El": "the", "asado": "grilled; roasted", "en": "in", "el": "the" } }
+      "Quiero carne asada.": { native: "I want grilled meat.", bases: { "asada": "grilled; roasted" } }
+  "es-1278":
+    native: "jug"
+    notes: { n1: "La jarra is a jug, for water or wine for the whole table." }
+    bases: { "la": "the", "jarra": "jug" }
+    examples:
+      "Una jarra de agua, por favor.": { native: "A jug of water, please.", bases: { "Una": "a", "jarra": "jug", "de": "of", "por": "for", "favor": "please" } }
+      "La jarra está llena.": { native: "The jug is full.", bases: { "La": "the", "jarra": "jug" } }
+  "es-1279":
+    native: "order"
+    notes: { n1: "El pedido is what you ask for in a restaurant. The verb is pedir." }
+    bases: { "el": "the", "pedido": "order" }
+    examples:
+      "El pedido es para la mesa seis.": { native: "The order is for table six.", bases: { "El": "the", "pedido": "order", "para": "for", "la": "the" } }
+      "Ya tengo el pedido.": { native: "I already have the order.", bases: { "el": "the", "pedido": "order" } }
+  "es-1280":
+    native: "thirst"
+    notes: { n1: "La sed is thirst. Tener sed is to be thirsty." }
+    bases: { "la": "the", "sed": "thirst" }
+    examples:
+      "Tengo sed.": { native: "I am thirsty.", bases: { "sed": "thirst" } }
+      "Quiero algo fresco, tengo sed.": { native: "I want something cool, I am thirsty.", bases: { "sed": "thirst" } }
+  "es-1281":
+    native: "tablecloth"
+    notes: { n1: "El mantel is the cloth on a table, for a meal." }
+    bases: { "el": "the", "mantel": "tablecloth" }
+    examples:
+      "Hay un mantel en la mesa.": { native: "There is a tablecloth on the table.", bases: { "Hay": "there is; there are", "un": "a", "mantel": "tablecloth", "en": "in", "la": "the" } }
+      "El mantel es blanco.": { native: "The tablecloth is white.", bases: { "El": "the", "mantel": "tablecloth" } }
+  "es-1282":
+    native: "tray"
+    notes: { n1: "La bandeja is a tray, for plates and glasses." }
+    bases: { "la": "the", "bandeja": "tray" }
+    examples:
+      "El camarero trae la comida en una bandeja.": { native: "The waiter brings the food on a tray.", bases: { "El": "the", "la": "the", "en": "in", "una": "a", "bandeja": "tray" } }
+      "La bandeja está en la barra.": { native: "The tray is at the bar counter.", bases: { "La": "the", "bandeja": "tray", "en": "in", "la": "the" } }
+  "es-1283":
+    native: "to invite; to treat"
+    notes: { n1: "Invitar is to invite someone, and to pay for them: Te invito is I'll treat you." }
+    bases: { "invitar": "to invite; to treat" }
+    examples:
+      "Hoy te invito.": { native: "Today I'm treating you.", bases: { "te": "you", "invito": "to invite; to treat" } }
+      "Ella nos invita a comer.": { native: "She invites us to eat.", bases: { "nos": "us", "invita": "to invite; to treat", "a": "to" } }
+  "es-1284":
+    native: "to serve"
+    notes: { n1: "Servir changes its stem in the present: sirvo, sirven. It means to serve food or drink." }
+    bases: { "servir": "to serve" }
+    examples:
+      "¿Qué sirven de postre?": { native: "What do they serve for dessert?", bases: { "sirven": "to serve", "de": "of" } }
+      "Sirven el café después de la comida.": { native: "They serve coffee after the meal.", bases: { "Sirven": "to serve", "el": "the", "de": "of", "la": "the" } }
+  "es-1285":
+    native: "to bring"
+    notes: { n1: "Traer is to bring something to you or to the place you are in." }
+    bases: { "traer": "to bring" }
+    examples:
+      "¿Me trae agua, por favor?": { native: "Could you bring me water, please?", bases: { "Me": "to me", "trae": "to bring", "por": "for", "favor": "please" } }
+      "Mi amigo trae el vino.": { native: "My friend brings the wine.", bases: { "trae": "to bring", "el": "the" } }
+  "es-1286":
+    native: "to take (time)"
+    notes: { n1: "Tardar is to take time: tarda mucho means it takes a long time." }
+    bases: { "tardar": "to take (time)" }
+    examples:
+      "La comida tarda mucho.": { native: "The food takes a long time.", bases: { "La": "the", "tarda": "to take (time)" } }
+      "¿Cuánto tarda el pedido?": { native: "How long does the order take?", bases: { "tarda": "to take (time)", "el": "the" } }
+  "es-1287":
+    native: "bowl"
+    notes: { n1: "El bol is a deep bowl for soup or salad." }
+    bases: { "el": "the", "bol": "bowl" }
+    examples:
+      "Una sopa en un bol.": { native: "A soup in a bowl.", bases: { "Una": "a", "en": "in", "un": "a", "bol": "bowl" } }
+      "El bol está lleno.": { native: "The bowl is full.", bases: { "El": "the", "bol": "bowl" } }
+  "es-1288":
+    native: "wine glass"
+    notes: { n1: "La copa is a glass with a stem, for wine. Una copa is also a drink." }
+    bases: { "la": "the", "copa": "wine glass" }
+    examples:
+      "Una copa de vino, por favor.": { native: "A glass of wine, please.", bases: { "Una": "a", "copa": "wine glass", "de": "of", "por": "for", "favor": "please" } }
+      "Brindamos con una copa.": { native: "We toast with a glass.", bases: { "Brindamos": "to toast", "con": "with", "una": "a", "copa": "wine glass" } }
+  "es-1289":
+    native: "tapa; small snack"
+    notes: { n1: "La tapa is a small dish eaten at the bar, with a drink. Tapas is the plural." }
+    bases: { "la": "the", "tapa": "tapa; small snack" }
+    examples:
+      "Tomamos una tapa en la barra.": { native: "We have a small snack at the bar counter.", bases: { "una": "a", "tapa": "tapa; small snack", "en": "in", "la": "the" } }
+      "Las tapas son pequeñas.": { native: "The tapas/tapa are small.", bases: { "Las": "the", "tapas": "tapa; small snack" } }

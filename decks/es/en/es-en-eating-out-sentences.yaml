@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-eating-out-sentences"
+kind: "layer"
+core: "es-eating-out-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: eating out"
+license: "CC-BY-SA-4.0"
+description: "Six sentences for ordering and booking, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1290":
+    native: "I want to book a table for two."
+    bases: { "una": "a", "para": "for" }
+    confusables: { "pedir": { why: "Pedir is to order food, not to book a table." }, "cuenta": { why: "La cuenta is the bill, asked for at the end." } }
+  "es-1291":
+    native: "Could you bring me the menu, please?"
+    bases: { "Me": "to me", "la": "the", "por": "for", "favor": "please" }
+    confusables: { "pedir": { why: "Pedir is to order, the choice after the menu." }, "cuenta": { why: "La cuenta is the bill, not the menu." } }
+  "es-1292":
+    native: "The waiter brings the order to the table."
+    bases: { "El": "the", "el": "the", "a": "to", "la": "the" }
+    confusables: { "propina": { why: "La propina is the tip, the money left extra." }, "cuenta": { why: "La cuenta is the bill, the money to pay." } }
+  "es-1293":
+    native: "I try the soup, it is very hot."
+    bases: { "la": "the" }
+    confusables: { "rico": { why: "Rico is tasty, a result of tasting." }, "frio": { why: "Frío is cold, the opposite of hot." } }
+  "es-1294":
+    native: "I want a glass of water with ice."
+    bases: { "un": "a", "de": "of", "con": "with" }
+    confusables: { "botella": { why: "Botella is a bottle, larger than a glass." }, "jarra": { why: "Jarra is a jug, for several glasses." } }
+  "es-1295":
+    native: "The bill, please, and a tip."
+    bases: { "La": "the", "por": "for", "favor": "please", "una": "a" }
+    confusables: { "menu": { why: "Menú is the menu, not the bill." }, "pagar": { why: "Pagar is to pay, the action after the bill." } }

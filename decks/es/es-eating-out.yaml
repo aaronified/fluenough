@@ -1,0 +1,459 @@
+schema: 1
+id: "es-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "eating-out"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1257"
+    target: "la reserva"
+    ipa: "la reˈseɾba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reserva", base: "reserva" }]
+    examples:
+      - target: "Tengo una reserva a las nueve."
+        ipa: "ˈtenɡo ˈuna reˈseɾba a las ˈnwebe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "reserva", base: "reserva" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "La reserva es para cuatro personas."
+        ipa: "la reˈseɾba es ˈpaɾa ˈkwatɾo peɾˈsonas"
+        bases: [{ word: "La", base: "la" }, { word: "reserva", base: "reserva" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "cuatro", ref: "es-0208" }, { word: "personas", ref: "es-0135" }]
+  - id: "es-1258"
+    target: "reservar"
+    ipa: "reseɾˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reservar", base: "reservar" }]
+    examples:
+      - target: "Quiero reservar una mesa para dos."
+        ipa: "ˈkjeɾo reseɾˈbaɾ ˈuna ˈmesa ˈpaɾa dos"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "reservar", base: "reservar" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }, { word: "para", base: "para" }, { word: "dos", ref: "es-0206" }]
+      - target: "¿Puedo reservar para mañana?"
+        ipa: "ˈpwedo reseɾˈbaɾ ˈpaɾa maˈɲana"
+        bases: [{ word: "Puedo", base: "poder" }, { word: "reservar", base: "reservar" }, { word: "para", base: "para" }, { word: "mañana", ref: "es-0841" }]
+  - id: "es-1259"
+    target: "la carta"
+    ipa: "la ˈkaɾta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "carta", base: "carta" }]
+    examples:
+      - target: "La carta tiene pescado y carne."
+        ipa: "la ˈkaɾta ˈtjene pesˈkado i ˈkaɾne"
+        bases: [{ word: "La", base: "la" }, { word: "carta", base: "carta" }, { word: "tiene", ref: "es-0024" }, { word: "pescado", ref: "es-0616" }, { word: "y", ref: "es-0048" }, { word: "carne", ref: "es-0614" }]
+      - target: "Miro la carta antes de pedir."
+        ipa: "ˈmiɾo la ˈkaɾta ˈantes de peˈdiɾ"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "la", base: "la" }, { word: "carta", base: "carta" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "pedir", ref: "es-0659" }]
+  - id: "es-1260"
+    target: "el vaso"
+    ipa: "el ˈbaso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vaso", base: "vaso" }]
+    examples:
+      - target: "Quiero un vaso de agua."
+        ipa: "ˈkjeɾo un ˈbaso de ˈaɡwa"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "vaso", base: "vaso" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }]
+      - target: "El vaso está sucio."
+        ipa: "el ˈbaso esˈta ˈsuθjo"
+        bases: [{ word: "El", base: "el" }, { word: "vaso", base: "vaso" }, { word: "está", ref: "es-0023" }, { word: "sucio", ref: "es-0417" }]
+  - id: "es-1261"
+    target: "la servilleta"
+    ipa: "la seɾbiˈʝeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "servilleta", base: "servilleta" }]
+    examples:
+      - target: "Necesito una servilleta, por favor."
+        ipa: "neθeˈsito ˈuna seɾbiˈʝeta poɾ faˈboɾ"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "servilleta", base: "servilleta" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La servilleta está en la mesa."
+        ipa: "la seɾbiˈʝeta esˈta en la ˈmesa"
+        bases: [{ word: "La", base: "la" }, { word: "servilleta", base: "servilleta" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-1262"
+    target: "la pimienta"
+    ipa: "la piˈmjenta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pimienta", base: "pimienta" }]
+    examples:
+      - target: "¿Me pasa la sal y la pimienta?"
+        ipa: "me ˈpasa la sal i la piˈmjenta"
+        bases: [{ word: "Me", base: "me" }, { word: "pasa", base: "pasar" }, { word: "la", base: "la" }, { word: "sal", ref: "es-0607" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "pimienta", base: "pimienta" }]
+      - target: "Sin pimienta, por favor."
+        ipa: "sin piˈmjenta poɾ faˈboɾ"
+        bases: [{ word: "Sin", base: "sin" }, { word: "pimienta", base: "pimienta" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-1263"
+    target: "el vinagre"
+    ipa: "el biˈnaɡɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vinagre", base: "vinagre" }]
+    examples:
+      - target: "La ensalada tiene aceite y vinagre."
+        ipa: "la ensaˈlada ˈtjene aˈθejte i biˈnaɡɾe"
+        bases: [{ word: "La", base: "la" }, { word: "ensalada", ref: "es-0643" }, { word: "tiene", ref: "es-0024" }, { word: "aceite", ref: "es-0608" }, { word: "y", ref: "es-0048" }, { word: "vinagre", base: "vinagre" }]
+      - target: "No me gusta el vinagre."
+        ipa: "no me ˈɡusta el biˈnaɡɾe"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "el", base: "el" }, { word: "vinagre", base: "vinagre" }]
+  - id: "es-1264"
+    target: "el hielo"
+    ipa: "el ˈjelo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hielo", base: "hielo" }]
+    examples:
+      - target: "Quiero el café con hielo."
+        ipa: "ˈkjeɾo el kaˈfe kon ˈjelo"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "hielo", base: "hielo" }]
+      - target: "El agua no tiene hielo."
+        ipa: "el ˈaɡwa no ˈtjene ˈjelo"
+        bases: [{ word: "El", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "no", ref: "es-0043" }, { word: "tiene", ref: "es-0024" }, { word: "hielo", base: "hielo" }]
+  - id: "es-1265"
+    target: "recomendar"
+    ipa: "rekomenˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "recomendar", base: "recomendar" }]
+    examples:
+      - target: "¿Qué me recomienda usted?"
+        ipa: "ke me rekoˈmjenda usˈted"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "me", base: "me" }, { word: "recomienda", base: "recomendar" }, { word: "usted", ref: "es-0087" }]
+      - target: "Recomiendo la sopa de hoy."
+        ipa: "rekoˈmjendo la ˈsopa de oj"
+        bases: [{ word: "Recomiendo", base: "recomendar" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "de", base: "de" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-1266"
+    target: "probar"
+    ipa: "pɾoˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "probar", base: "probar" }]
+    examples:
+      - target: "Pruebo el pastel, está muy bueno."
+        ipa: "ˈpɾwebo el pasˈtel esˈta mwi ˈbweno"
+        bases: [{ word: "Pruebo", base: "probar" }, { word: "el", base: "el" }, { word: "pastel", ref: "es-1272" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+      - target: "¿Puedo probar el vino?"
+        ipa: "ˈpwedo pɾoˈbaɾ el ˈbino"
+        bases: [{ word: "Puedo", base: "poder" }, { word: "probar", base: "probar" }, { word: "el", base: "el" }, { word: "vino", ref: "es-0620" }]
+  - id: "es-1267"
+    target: "delicioso"
+    ipa: "deliˈθjoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "delicioso", base: "delicioso" }]
+    examples:
+      - target: "La sopa está deliciosa."
+        ipa: "la ˈsopa esˈta deliˈθjosa"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "está", ref: "es-0023" }, { word: "deliciosa", base: "delicioso" }]
+      - target: "El postre es delicioso."
+        ipa: "el ˈpostɾe es deliˈθjoso"
+        bases: [{ word: "El", base: "el" }, { word: "postre", ref: "es-0642" }, { word: "es", ref: "es-0022" }, { word: "delicioso", base: "delicioso" }]
+  - id: "es-1268"
+    target: "el entrante"
+    ipa: "el enˈtɾante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "entrante", base: "entrante" }]
+    examples:
+      - target: "¿Quieres un entrante?"
+        ipa: "ˈkjeɾes un enˈtɾante"
+        bases: [{ word: "Quieres", ref: "es-0661" }, { word: "un", base: "un" }, { word: "entrante", base: "entrante" }]
+      - target: "El entrante es una ensalada."
+        ipa: "el enˈtɾante es ˈuna ensaˈlada"
+        bases: [{ word: "El", base: "el" }, { word: "entrante", base: "entrante" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "ensalada", ref: "es-0643" }]
+  - id: "es-1269"
+    target: "el refresco"
+    ipa: "el reˈfɾesko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "refresco", base: "refresco" }]
+    examples:
+      - target: "Un refresco, por favor."
+        ipa: "un reˈfɾesko poɾ faˈboɾ"
+        bases: [{ word: "Un", base: "un" }, { word: "refresco", base: "refresco" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "Tomo un refresco con la comida."
+        ipa: "ˈtomo un reˈfɾesko kon la koˈmida"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "refresco", base: "refresco" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }]
+  - id: "es-1270"
+    target: "la barra"
+    ipa: "la ˈbara"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "barra", base: "barra" }]
+    examples:
+      - target: "Tomo un café en la barra."
+        ipa: "ˈtomo un kaˈfe en la ˈbara"
+        bases: [{ word: "Tomo", ref: "es-0906" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "barra", base: "barra" }]
+      - target: "Hay tres personas en la barra."
+        ipa: "aj tɾes peɾˈsonas en la ˈbara"
+        bases: [{ word: "Hay", base: "haber" }, { word: "tres", ref: "es-0207" }, { word: "personas", ref: "es-0135" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "barra", base: "barra" }]
+  - id: "es-1271"
+    target: "el jamón"
+    ipa: "el xaˈmon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "jamón", base: "jamón" }]
+    examples:
+      - target: "El bocadillo es de jamón."
+        ipa: "el bokaˈdiʝo es de xaˈmon"
+        bases: [{ word: "El", base: "el" }, { word: "bocadillo", ref: "es-0647" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "jamón", base: "jamón" }]
+      - target: "No como jamón."
+        ipa: "no ˈkomo xaˈmon"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "como", ref: "es-0028" }, { word: "jamón", base: "jamón" }]
+  - id: "es-1272"
+    target: "el pastel"
+    ipa: "el pasˈtel"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pastel", base: "pastel" }]
+    examples:
+      - target: "El pastel es de chocolate."
+        ipa: "el pasˈtel es de tʃokoˈlate"
+        bases: [{ word: "El", base: "el" }, { word: "pastel", base: "pastel" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "chocolate", ref: "es-0622" }]
+      - target: "Quiero un pastel de fresa."
+        ipa: "ˈkjeɾo un pasˈtel de ˈfɾesa"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "pastel", base: "pastel" }, { word: "de", base: "de" }, { word: "fresa", ref: "es-0572" }]
+  - id: "es-1273"
+    target: "amargo"
+    ipa: "aˈmaɾɡo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "amargo", base: "amargo" }]
+    examples:
+      - target: "El café es muy amargo."
+        ipa: "el kaˈfe es mwi aˈmaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "café", ref: "es-0611" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amargo", base: "amargo" }]
+      - target: "El té es amargo sin azúcar."
+        ipa: "el te es aˈmaɾɡo sin aˈθukaɾ"
+        bases: [{ word: "El", base: "el" }, { word: "té", ref: "es-0612" }, { word: "es", ref: "es-0022" }, { word: "amargo", base: "amargo" }, { word: "sin", base: "sin" }, { word: "azúcar", ref: "es-0606" }]
+  - id: "es-1274"
+    target: "ácido"
+    ipa: "ˈaθido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ácido", base: "ácido" }]
+    examples:
+      - target: "El vinagre es ácido."
+        ipa: "el biˈnaɡɾe es ˈaθido"
+        bases: [{ word: "El", base: "el" }, { word: "vinagre", ref: "es-1263" }, { word: "es", ref: "es-0022" }, { word: "ácido", base: "ácido" }]
+      - target: "Este vino es muy ácido."
+        ipa: "ˈeste ˈbino es mwi ˈaθido"
+        bases: [{ word: "Este", base: "este" }, { word: "vino", ref: "es-0620" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "ácido", base: "ácido" }]
+  - id: "es-1275"
+    target: "el sabor"
+    ipa: "el saˈboɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sabor", base: "sabor" }]
+    examples:
+      - target: "¿Qué sabor tiene el helado?"
+        ipa: "ke saˈboɾ ˈtjene el eˈlado"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "sabor", base: "sabor" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "helado", ref: "es-0649" }]
+      - target: "La sopa tiene mucho sabor."
+        ipa: "la ˈsopa ˈtjene ˈmutʃo saˈboɾ"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "tiene", ref: "es-0024" }, { word: "mucho", ref: "es-0053" }, { word: "sabor", base: "sabor" }]
+  - id: "es-1276"
+    target: "frito"
+    ipa: "ˈfɾito"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "frito", base: "frito" }]
+    examples:
+      - target: "El pescado frito es muy bueno."
+        ipa: "el pesˈkado ˈfɾito es mwi ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "pescado", ref: "es-0616" }, { word: "frito", base: "frito" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+      - target: "No quiero pollo frito."
+        ipa: "no ˈkjeɾo ˈpoʝo ˈfɾito"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "quiero", ref: "es-0661" }, { word: "pollo", ref: "es-0615" }, { word: "frito", base: "frito" }]
+  - id: "es-1277"
+    target: "asado"
+    ipa: "aˈsado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "asado", base: "asado" }]
+    examples:
+      - target: "El pollo asado está en el menú."
+        ipa: "el ˈpoʝo aˈsado esˈta en el meˈnu"
+        bases: [{ word: "El", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "asado", base: "asado" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "menú", ref: "es-0640" }]
+      - target: "Quiero carne asada."
+        ipa: "ˈkjeɾo ˈkaɾne aˈsada"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "carne", ref: "es-0614" }, { word: "asada", base: "asado" }]
+  - id: "es-1278"
+    target: "la jarra"
+    ipa: "la ˈxara"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "jarra", base: "jarra" }]
+    examples:
+      - target: "Una jarra de agua, por favor."
+        ipa: "ˈuna ˈxara de ˈaɡwa poɾ faˈboɾ"
+        bases: [{ word: "Una", base: "una" }, { word: "jarra", base: "jarra" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La jarra está llena."
+        ipa: "la ˈxara esˈta ˈʝena"
+        bases: [{ word: "La", base: "la" }, { word: "jarra", base: "jarra" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }]
+  - id: "es-1279"
+    target: "el pedido"
+    ipa: "el peˈdido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pedido", base: "pedido" }]
+    examples:
+      - target: "El pedido es para la mesa seis."
+        ipa: "el peˈdido es ˈpaɾa la ˈmesa sejs"
+        bases: [{ word: "El", base: "el" }, { word: "pedido", base: "pedido" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }, { word: "seis", ref: "es-0210" }]
+      - target: "Ya tengo el pedido."
+        ipa: "ʝa ˈtenɡo el peˈdido"
+        bases: [{ word: "Ya", ref: "es-0340" }, { word: "tengo", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pedido", base: "pedido" }]
+  - id: "es-1280"
+    target: "la sed"
+    ipa: "la sed"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sed", base: "sed" }]
+    examples:
+      - target: "Tengo sed."
+        ipa: "ˈtenɡo sed"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "sed", base: "sed" }]
+      - target: "Quiero algo fresco, tengo sed."
+        ipa: "ˈkjeɾo ˈalɡo ˈfɾesko ˈtenɡo sed"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "algo", ref: "es-0359" }, { word: "fresco", ref: "es-1144" }, { word: "tengo", ref: "es-0024" }, { word: "sed", base: "sed" }]
+  - id: "es-1281"
+    target: "el mantel"
+    ipa: "el manˈtel"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mantel", base: "mantel" }]
+    examples:
+      - target: "Hay un mantel en la mesa."
+        ipa: "aj un manˈtel en la ˈmesa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "mantel", base: "mantel" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+      - target: "El mantel es blanco."
+        ipa: "el manˈtel es ˈblanko"
+        bases: [{ word: "El", base: "el" }, { word: "mantel", base: "mantel" }, { word: "es", ref: "es-0022" }, { word: "blanco", ref: "es-1012" }]
+  - id: "es-1282"
+    target: "la bandeja"
+    ipa: "la banˈdexa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "bandeja", base: "bandeja" }]
+    examples:
+      - target: "El camarero trae la comida en una bandeja."
+        ipa: "el kamaˈɾeɾo ˈtɾae la koˈmida en ˈuna banˈdexa"
+        bases: [{ word: "El", base: "el" }, { word: "camarero", ref: "es-0651" }, { word: "trae", ref: "es-1285" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "bandeja", base: "bandeja" }]
+      - target: "La bandeja está en la barra."
+        ipa: "la banˈdexa esˈta en la ˈbara"
+        bases: [{ word: "La", base: "la" }, { word: "bandeja", base: "bandeja" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "barra", ref: "es-1270" }]
+  - id: "es-1283"
+    target: "invitar"
+    ipa: "inbiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "invitar", base: "invitar" }]
+    examples:
+      - target: "Hoy te invito."
+        ipa: "oj te inˈbito"
+        bases: [{ word: "Hoy", ref: "es-0331" }, { word: "te", base: "te" }, { word: "invito", base: "invitar" }]
+      - target: "Ella nos invita a comer."
+        ipa: "ˈeʝa nos inˈbita a koˈmeɾ"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "nos", base: "nos" }, { word: "invita", base: "invitar" }, { word: "a", base: "a" }, { word: "comer", ref: "es-0028" }]
+  - id: "es-1284"
+    target: "servir"
+    ipa: "seɾˈbiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "servir", base: "servir" }]
+    examples:
+      - target: "¿Qué sirven de postre?"
+        ipa: "ke ˈsiɾben de ˈpostɾe"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "sirven", base: "servir" }, { word: "de", base: "de" }, { word: "postre", ref: "es-0642" }]
+      - target: "Sirven el café después de la comida."
+        ipa: "ˈsiɾben el kaˈfe desˈpwes de la koˈmida"
+        bases: [{ word: "Sirven", base: "servir" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }]
+  - id: "es-1285"
+    target: "traer"
+    ipa: "tɾaˈeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "traer", base: "traer" }]
+    examples:
+      - target: "¿Me trae agua, por favor?"
+        ipa: "me ˈtɾae ˈaɡwa poɾ faˈboɾ"
+        bases: [{ word: "Me", base: "me" }, { word: "trae", base: "traer" }, { word: "agua", ref: "es-0012" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "Mi amigo trae el vino."
+        ipa: "mi aˈmiɡo ˈtɾae el ˈbino"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }, { word: "trae", base: "traer" }, { word: "el", base: "el" }, { word: "vino", ref: "es-0620" }]
+  - id: "es-1286"
+    target: "tardar"
+    ipa: "taɾˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tardar", base: "tardar" }]
+    examples:
+      - target: "La comida tarda mucho."
+        ipa: "la koˈmida ˈtaɾda ˈmutʃo"
+        bases: [{ word: "La", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "tarda", base: "tardar" }, { word: "mucho", ref: "es-0053" }]
+      - target: "¿Cuánto tarda el pedido?"
+        ipa: "ˈkwanto ˈtaɾda el peˈdido"
+        bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "tarda", base: "tardar" }, { word: "el", base: "el" }, { word: "pedido", ref: "es-1279" }]
+  - id: "es-1287"
+    target: "el bol"
+    ipa: "el bol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bol", base: "bol" }]
+    examples:
+      - target: "Una sopa en un bol."
+        ipa: "ˈuna ˈsopa en un bol"
+        bases: [{ word: "Una", base: "una" }, { word: "sopa", ref: "es-0644" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "bol", base: "bol" }]
+      - target: "El bol está lleno."
+        ipa: "el bol esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "bol", base: "bol" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+  - id: "es-1288"
+    target: "la copa"
+    ipa: "la ˈkopa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "copa", base: "copa" }]
+    examples:
+      - target: "Una copa de vino, por favor."
+        ipa: "ˈuna ˈkopa de ˈbino poɾ faˈboɾ"
+        bases: [{ word: "Una", base: "una" }, { word: "copa", base: "copa" }, { word: "de", base: "de" }, { word: "vino", ref: "es-0620" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "Brindamos con una copa."
+        ipa: "bɾinˈdamos kon ˈuna ˈkopa"
+        bases: [{ word: "Brindamos", base: "brindar" }, { word: "con", base: "con" }, { word: "una", base: "una" }, { word: "copa", base: "copa" }]
+  - id: "es-1289"
+    target: "la tapa"
+    ipa: "la ˈtapa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tapa", base: "tapa" }]
+    examples:
+      - target: "Tomamos una tapa en la barra."
+        ipa: "toˈmamos ˈuna ˈtapa en la ˈbara"
+        bases: [{ word: "Tomamos", ref: "es-0906" }, { word: "una", base: "una" }, { word: "tapa", base: "tapa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "barra", ref: "es-1270" }]
+      - target: "Las tapas son pequeñas."
+        ipa: "las ˈtapas son peˈkeɲas"
+        bases: [{ word: "Las", base: "las" }, { word: "tapas", base: "tapa" }, { word: "son", ref: "es-0022" }, { word: "pequeñas", ref: "es-0032" }]

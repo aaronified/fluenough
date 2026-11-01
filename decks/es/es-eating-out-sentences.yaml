@@ -1,0 +1,50 @@
+schema: 1
+id: "es-eating-out-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1290"
+    target: "Quiero reservar una mesa para dos."
+    ipa: "ˈkjeɾo reseɾˈbaɾ ˈuna ˈmesa ˈpaɾa dos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "reservar", ref: "es-1258" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }, { word: "para", base: "para" }, { word: "dos", ref: "es-0206" }]
+    confusables: [{ id: "pedir", ref: "es-0659", kind: "word" }, { id: "cuenta", ref: "es-0653", kind: "word" }]
+  - id: "es-1291"
+    target: "¿Me trae la carta, por favor?"
+    ipa: "me ˈtɾae la ˈkaɾta poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "trae", ref: "es-1285" }, { word: "la", base: "la" }, { word: "carta", ref: "es-1259" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "pedir", ref: "es-0659", kind: "word" }, { id: "cuenta", ref: "es-0653", kind: "word" }]
+  - id: "es-1292"
+    target: "El camarero trae el pedido a la mesa."
+    ipa: "el kamaˈɾeɾo ˈtɾae el peˈdido a la ˈmesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "camarero", ref: "es-0651" }, { word: "trae", ref: "es-1285" }, { word: "el", base: "el" }, { word: "pedido", ref: "es-1279" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+    confusables: [{ id: "propina", ref: "es-0654", kind: "word" }, { id: "cuenta", ref: "es-0653", kind: "word" }]
+  - id: "es-1293"
+    target: "Pruebo la sopa, está muy caliente."
+    ipa: "ˈpɾwebo la ˈsopa esˈta mwi kaˈljente"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pruebo", ref: "es-1266" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }]
+    confusables: [{ id: "rico", ref: "es-0409", kind: "word" }, { id: "frio", ref: "es-0408", kind: "word" }]
+  - id: "es-1294"
+    target: "Quiero un vaso de agua con hielo."
+    ipa: "ˈkjeɾo un ˈbaso de ˈaɡwa kon ˈjelo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "vaso", ref: "es-1260" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }, { word: "con", base: "con" }, { word: "hielo", ref: "es-1264" }]
+    confusables: [{ id: "botella", ref: "es-0379", kind: "word" }, { id: "jarra", ref: "es-1278", kind: "word" }]
+  - id: "es-1295"
+    target: "La cuenta, por favor, y una propina."
+    ipa: "la ˈkwenta poɾ faˈboɾ i ˈuna pɾoˈpina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "cuenta", ref: "es-0653" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }, { word: "y", ref: "es-0048" }, { word: "una", base: "una" }, { word: "propina", ref: "es-0654" }]
+    confusables: [{ id: "menu", ref: "es-0640", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
