@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-adjectives-2"
+name: "Reading: adjectives-2"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a shop sign and a note about a book. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-adjectives2-shop"
+    title: "A shop window"
+    theme: "adjectives-2"
+    sentences:
+      - {"text": "दुकान की खिड़की पर चमकदार कपड़े हैं।", "reading": "dukān kī khiṛkī par camkdār kapṛē haim̐.", "ipa": "d̪ʊkaːn kiː kʰɪɽkiː pər tʃəmkd̪aːr kəpɽeː ɦɛ̃ː"}
+      - {"text": "सुनहरे रंग की चप्पल सस्ती नहीं है।", "reading": "sunhrē raṅg kī cappal sastī nahīm̐ hai.", "ipa": "sʊnɦreː rəŋɡ kiː tʃəppəl səst̪iː nəɦĩː ɦɛː"}
+      - {"text": "पुरानी किताब दिलचस्प है, पर पन्ने फीके हैं।", "reading": "purānī kitāb dilcasp hai, par pannē phīkē haim̐.", "ipa": "pʊraːniː kɪt̪aːb d̪ɪltʃəsp ɦɛː pər pənneː pʰiːkeː ɦɛ̃ː"}
+      - {"text": "कीमती चीज़ें अलमारी में रखो।", "reading": "kīmtī cīzēm̐ almārī mēm̐ rakhō.", "ipa": "kiːmt̪iː tʃiːzẽː əlmaːriː mẽː rəkʰoː"}
+    questions:
+      - {"id": "hi-1998", "prompt": {"en": "The cloths in the window are shiny."}, "answer": true}
+      - {"id": "hi-1999", "prompt": {"en": "What colour are the sandals?"}, "options": [{"en": "Golden"}, {"en": "Silver"}], "answer": 1}
+      - {"id": "hi-2000", "prompt": {"en": "The old book is boring."}, "answer": false}
+  - id: "hi-adjectives2-note"
+    title: "A note about a trip"
+    theme: "adjectives-2"
+    sentences:
+      - {"text": "यात्रा मज़ेदार थी, पर रास्ता टेढ़ा था।", "reading": "yātrā mazēdār thī, par rāstā ṭēṛhā thā.", "ipa": "jaːt̪raː məzeːd̪aːr t̪ʰiː pər raːst̪aː ʈeːɽʱaː t̪ʰaː"}
+      - {"text": "पहाड़ पर घास चिकनी और फिसलन भरी थी।", "reading": "pahāṛ par ghās ciknī aur phislan bharī thī.", "ipa": "pəɦaːɽ pər ɡʱaːs tʃɪkniː ɔːr pʰɪslən bʱəriː t̪ʰiː"}
+      - {"text": "झील बहुत शांत और गहरी थी।", "reading": "jhīl bahut śānt aur gahrī thī.", "ipa": "dʒʱiːl bəɦʊt̪ ʃaːnt̪ ɔːr ɡəɦriː t̪ʰiː"}
+      - {"text": "हम सबके लिए यह अनोखा अनुभव था।", "reading": "ham sabkē liē yah anōkhā anubhav thā.", "ipa": "ɦəm səbkeː lɪeː jəɦ ənoːkʰaː ənʊbʱəʋ t̪ʰaː"}
+    questions:
+      - {"id": "hi-2001", "prompt": {"en": "The road was straight."}, "answer": false}
+      - {"id": "hi-2002", "prompt": {"en": "What was the trip?"}, "options": [{"en": "Fun"}, {"en": "Boring"}], "answer": 1}
+      - {"id": "hi-2003", "prompt": {"en": "The lake was calm."}, "answer": true}
