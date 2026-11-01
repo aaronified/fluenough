@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-opinions"
+name: "Reading: opinions"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Two people agree and disagree over tea, and two short letters to a newspaper, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-agreeing-and-disagreeing"
+    title: "Agreeing and disagreeing"
+    theme: "opinions"
+    sentences:
+      - { text: "আমি তোমার সঙ্গে একমত, আজ ভালো দিন।", reading: "āmi tomār sôṅge ekomot, āj bhālo din.", ipa: "ami t̪omar sɔŋɡe ekomot̪ adʒ bʱalo d̪in" }
+      - { text: "কিন্তু আমার মনে হয় বৃষ্টি হবে।", reading: "kintu āmār mône hôy briśṭi hôbe.", ipa: "kint̪u amar mɔne ɦɔj briʃʈi ɦɔbe" }
+      - { text: "তর্ক না করে চা খাও।", reading: "tôrk nā kôre cā khāo.", ipa: "t̪ɔrk na kɔre tʃa kʰao" }
+      - { text: "আমি ওর মতের সঙ্গে একমত নই।", reading: "āmi or môter sôṅge ekomot noi.", ipa: "ami or mɔt̪er sɔŋɡe ekomot̪ noi" }
+      - { text: "ঠিক আছে, তবে আমি কথা দিচ্ছি।", reading: "ṭhik āche, tôbe āmi kôthā dicchi.", ipa: "ʈʰik atʃʰe t̪ɔbe ami kɔt̪ʰa d̪itʃtʃʰi" }
+    questions:
+      - id: "bn-3016"
+        prompt: { "en": "The first speaker agrees with the other." }
+        answer: true
+      - id: "bn-3017"
+        prompt: { "en": "What does the first speaker think will happen?" }
+        options: [{ "en": "Rain" }, { "en": "A holiday" }]
+        answer: 1
+      - id: "bn-3018"
+        prompt: { "en": "What does the second speaker disagree with?" }
+        options: [{ "en": "A view of someone else" }, { "en": "The tea" }]
+        answer: 1
+  - id: "bn-readers-letters"
+    title: "Two letters to a newspaper"
+    theme: "opinions"
+    sentences:
+      - { text: "সম্পাদক মহাশয়,", reading: "sômpādok môhāśoy,", ipa: "sɔmpad̪ok mɔɦaʃoj" }
+      - { text: "আমার মতে নতুন প্রস্তাবটা উপকারী।", reading: "āmār môte notun prôstāboṭā upokāri.", ipa: "amar mɔt̪e not̪un prɔst̪aboʈa upokari" }
+      - { text: "তবে অনেকের মত আলাদা।", reading: "tôbe ôneker môt ālādā.", ipa: "t̪ɔbe ɔneker mɔt̪ alad̪a" }
+      - { text: "আমি সমালোচনাকে ন্যায্য মনে করি।", reading: "āmi sômāloconāke nêjj mône kori.", ipa: "ami sɔmalotʃonake nædʒdʒ mɔne kori" }
+      - { text: "ধন্যবাদ, একজন পাঠক।", reading: "dhonnobād, ekojon pāṭhok.", ipa: "d̪ʱonnobad̪ ekodʒon paʈʰok" }
+    questions:
+      - id: "bn-3019"
+        prompt: { "en": "The writer thinks the new proposal is useful." }
+        answer: true
+      - id: "bn-3020"
+        prompt: { "en": "What does the writer think of the criticism?" }
+        options: [{ "en": "It is fair" }, { "en": "It is unfair" }]
+        answer: 1
+      - id: "bn-3021"
+        prompt: { "en": "Who signs the letter?" }
+        options: [{ "en": "A reader" }, { "en": "The editor" }]
+        answer: 1
