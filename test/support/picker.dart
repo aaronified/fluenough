@@ -90,12 +90,32 @@ Future<void> scrollToInPicker(WidgetTester tester, Finder finder) async {
   await tester.pumpAndSettle();
 }
 
+/// Types [text] into the picker's search bar, so that its list shows only the
+/// languages [text] matches. This is how a learner finds a row, and how a
+/// test should: the list is lazy and grows with every course, so where a row
+/// sits, and whether a scroll reaches it, depends on the courses written.
+Future<void> searchPicker(WidgetTester tester, String text) async {
+  await tester.enterText(
+    find.descendant(
+      of: find.byType(LanguagePickerPage),
+      matching: find.byType(TextField),
+    ),
+    text,
+  );
+  await tester.pumpAndSettle();
+}
+
 /// Opens [code]'s sheet: taps its row, opening the families first when it is
-/// in none that is open.
+/// in none that is open. A row that scrolling does not reach is found by
+/// searching for its name, which the list then shows alone.
 Future<void> openSheet(WidgetTester tester, String code) async {
   await settleAssets(tester);
   if (languageCard(code).evaluate().isEmpty) {
     await openFamilies(tester);
+  }
+  if (languageCard(code).evaluate().isEmpty) {
+    final name = pickerSpokenList.singleWhere((l) => l.code == code).name;
+    await searchPicker(tester, name);
   }
   await scrollToInPicker(tester, languageCard(code));
   // The row's own button: its middle can fall between it and the buttons

@@ -1,5 +1,7 @@
 import 'package:yaml/yaml.dart';
 
+import '../decks/notation.dart';
+
 /// Where the languages a learner can name are listed.
 const String spokenLanguagesAsset = 'assets/languages.yaml';
 
@@ -20,6 +22,7 @@ class SpokenLanguage {
     this.aliases = const <String>[],
     this.dialect,
     this.scriptOnly = false,
+    this.typed = true,
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -154,6 +157,14 @@ class SpokenLanguage {
   /// Whether the course teaches a script only, with no speech: English
   /// Braille. Such a language has Read and Write and no Speak or Hear.
   final bool scriptOnly;
+
+  /// Whether answers in it are typed (`typed: false` in the list, the IPA):
+  /// where not, its scripts have a Read level and no Write.
+  final bool typed;
+
+  /// Whether it is a notation taught like a language, the IPA or English
+  /// Braille (ADR-0041, ADR-0043): it has no dialect, voice or level to find.
+  bool get isNotation => isNotationCode(code);
 
   /// Other names a search finds it by (`aliases`), such as "Urdu" for
   /// Hindustani (#623).
@@ -395,6 +406,7 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         aliases: _aliases(item, i),
         dialect: _optional(item, 'dialect', i),
         scriptOnly: item['script_only'] == true,
+        typed: item['typed'] != false,
       ),
     );
   }
