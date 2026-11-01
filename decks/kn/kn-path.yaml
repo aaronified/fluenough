@@ -274,7 +274,8 @@ units:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "kn-shopping", theme: "shopping", words: 50 }
+  - decks: ["kn-shopping", "*"]
+    words: 41
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
     reading_passages:
