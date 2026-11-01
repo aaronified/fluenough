@@ -386,7 +386,7 @@ void main() {
         expect(backup.settings, a.state.settings.toStored());
         expect(backup.settings['rater_code'], 'FL-7K3M-Q9TD-6');
         expect(backup.appVersion, isNotEmpty);
-        expect(backup.schemaVersion, 9);
+        expect(backup.schemaVersion, 10);
         final back = AppBackup.decode(backup.encode());
         expect(back.settings, a.state.settings.toStored());
         expect(back.reviews.single.key.cardId, 'hi-0231');

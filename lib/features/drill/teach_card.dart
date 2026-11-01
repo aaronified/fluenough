@@ -14,6 +14,7 @@ import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart' show baseFinder;
 import '../decks/card_blocks.dart';
 import '../decks/card_notes.dart' show proseNoteList;
+import '../decks/ipa_info_dot.dart';
 import '../decks/ipa_symbols.dart';
 import '../decks/path_parts.dart' show joinParts;
 import '../decks/word_sheet.dart' show adultContentOn;
@@ -279,6 +280,7 @@ class TeachCard extends StatelessWidget {
                           onPressed: () => showPronunciation(context, card),
                         ),
                       ),
+                    if (ipa != null) IpaInfoDot(card: card),
                   ],
                 ),
               meaning,

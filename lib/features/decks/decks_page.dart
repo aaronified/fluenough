@@ -505,6 +505,7 @@ class _DecksPageState extends State<DecksPage> {
       );
     }
     return VisibleListenableBuilder(
+      warmUp: true,
       listenable: Listenable.merge(<Listenable>[
         state.progress,
         state.settings,

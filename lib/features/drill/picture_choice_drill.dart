@@ -14,6 +14,7 @@ import 'drill_session.dart';
 import 'picture_tile.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
+import '../decks/ipa_info_dot.dart';
 
 /// Picture choice (#91, owner 2026-10-30: "A form of Recognition"): the word,
 /// shown ([Ask.choosePicture]) or played ([Ask.hearPicture]), and its picture
@@ -170,7 +171,7 @@ class PictureChoiceDrill extends StatelessWidget {
           ),
       ],
       // How it is said: the word is shown, so this gives nothing away.
-      if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
+      if (lines.ipa case final ipa?) IpaWithInfo(ipa, card: card, fontSize: 16),
       if (session.canPlay)
         Speaker(
           key: const ValueKey<String>('speaker'),

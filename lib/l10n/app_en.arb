@@ -1077,14 +1077,6 @@
       }
     }
   },
-  "situationPrevious": "Previous card",
-  "@situationPrevious": {
-    "description": "Inspect view: back one card."
-  },
-  "situationNext": "Next card",
-  "@situationNext": {
-    "description": "Inspect view: on one card."
-  },
   "situationOpenInDeck": "Open in deck",
   "@situationOpenInDeck": {
     "description": "Inspect view: opens the deck the card is in."
@@ -4679,9 +4671,9 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} latin{Latin} cyrillic{Cyrillic} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} other{}}",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} brahmi{Brahmi} latin{Latin} cyrillic{Cyrillic} greek{Greek} hebrew{Hebrew} thai{Thai} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} other{}}",
   "@scriptName": {
-    "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is Perso-Arabic; perso_arabic is the Perso-Arabic script as Hindustani and Urdu write it, in Nastaliq (#623); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. han_simplified and han_traditional are the two forms of Chinese characters Mandarin is written in, shown as Simplified Hanzi and Traditional Hanzi, and han the same characters as Japanese writes them, shown as Kanji (owner, 2026-10-24: the Japanese call their Chinese script kanji). The codes never change, only the names shown; kana is Japanese's hiragana and katakana, hangul Korean's alphabet, and cyrillic Interslavic's second script (#613). A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
+    "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is the Arabic script of Modern Standard Arabic; perso_arabic is the Perso-Arabic script as Hindustani, Urdu, Kashmiri and Sindhi write it, in Nastaliq (#623, #959); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. han_simplified and han_traditional are the two forms of Chinese characters Mandarin is written in, shown as Simplified Hanzi and Traditional Hanzi, and han the same characters as Japanese writes them, shown as Kanji (owner, 2026-10-24: the Japanese call their Chinese script kanji). The codes never change, only the names shown; kana is Japanese's hiragana and katakana, hangul Korean's alphabet, and cyrillic Interslavic's second script (#613). A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
       "script": {
         "type": "String",
@@ -4745,9 +4737,9 @@
   "@knownByFamily": {
     "description": "Languages you know: beside that heading."
   },
-  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} romance{Romance} sinitic{Sinitic} koreanic{Koreanic} japonic{Japonic} constructed{Constructed} other{Other languages}}",
+  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} romance{Romance} sinitic{Sinitic} koreanic{Koreanic} japonic{Japonic} constructed{Constructed} slavic{Slavic} hellenic{Hellenic} italic{Italic} celtic{Celtic} uralic{Uralic} turkic{Turkic} afroasiatic{Afroasiatic} austronesian{Austronesian} kra_dai{Kra-Dai} niger_congo{Niger-Congo} quechuan{Quechuan} indo_european{Indo-European} isolate{Language isolates} sign{Sign languages} other{Other languages}}",
   "@knownFamily": {
-    "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml; constructed groups the languages made on purpose (Esperanto, Toki Pona, Lojban, Interslavic) (#613).",
+    "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml; constructed groups the languages made on purpose (Esperanto, Toki Pona, Lojban, Interslavic, Klingon) (#613, #959). isolate holds a language with no known relative (Basque, Sumerian).",
     "placeholders": {
       "family": {
         "type": "String",
@@ -11064,9 +11056,9 @@
       }
     }
   },
-  "cardIpaHeading": "Pronunciation · IPA course",
-  "@cardIpaHeading": {
-    "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
+  "ipaInfoDot": "About these sounds",
+  "@ipaInfoDot": {
+    "description": "Hint and screen-reader label of the small info dot beside a card's IPA; it opens the popup that explains each sound."
   },
   "cardWiktionaryLink": "Wiktionary: {word}",
   "@cardWiktionaryLink": {
@@ -12463,9 +12455,33 @@
   "@languagesSkillWrite": {
     "description": "The Write skill."
   },
+  "languagesSkillGestures": "Gestures",
+  "@languagesSkillGestures": {
+    "description": "A sign language's one skill, as a one-word pill name beside Speak and Hear: recognising and producing signs, one state for both."
+  },
+  "languagesGestures": "Gestures",
+  "@languagesGestures": {
+    "description": "Heading and row of a sign language's one skill on the sheet."
+  },
   "languagesSkillReadWrite": "Read and Write",
   "@languagesSkillReadWrite": {
     "description": "Read and Write of one script, named together."
+  },
+  "languagesSkillHearSpeak": "Hear and Speak",
+  "@languagesSkillHearSpeak": {
+    "description": "The higher level of the Spoken pill: Speak and Hear both known. One cannot speak a language without hearing it."
+  },
+  "languagesSkillSpoken": "Spoken",
+  "@languagesSkillSpoken": {
+    "description": "The name of the one pill for Speak and Hear together (levels Leave, Learn, Hear, Hear and Speak)."
+  },
+  "languagesSkillScriptName": "Script",
+  "@languagesSkillScriptName": {
+    "description": "The word for a script's pill in a toast: Hindustani (Devanagari): Script set to Read."
+  },
+  "languagesKeyBoth": "Read and write, or hear and speak",
+  "@languagesKeyBoth": {
+    "description": "Key entry: the higher level of a script's pill or the Spoken pill, shown as a tick and the icon of the extra skill."
   },
   "languagesSkillScript": "{skill} {script}",
   "@languagesSkillScript": {
@@ -13566,5 +13582,62 @@
   "hintReplay": "Replay",
   "@hintReplay": {
     "description": "Hint shown on a long press on the button that plays the same word again in the minimal-pair popup (#423). One word, no full stop."
+  },
+  "appUpdateNeeded": "Needs app {version}",
+  "@appUpdateNeeded": {
+    "description": "Second line of a language's row in Add a language and in the language list when its decks need a newer app than the one installed (min_app, ADR-0052). The row is greyed. {version} is the app version it needs, such as 0.7.1.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.7.1"
+      }
+    }
+  },
+  "appUpdateAction": "Update",
+  "@appUpdateAction": {
+    "description": "Button, or the end of a greyed row, that opens the newest release's page on GitHub, where the app is downloaded: beside a language or deck that needs a newer app than the one installed (ADR-0052)."
+  },
+  "appUpdateDecksNotice": "{count, plural, =1{1 new deck needs an app update} other{{count} new decks need an app update}}",
+  "@appUpdateDecksNotice": {
+    "description": "Quiet line under the deck update button in Languages when new decks are on GitHub that the installed app is too old to read (ADR-0052). {count} is how many decks.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appUpdateLinkCopied": "Couldn’t open GitHub, so the link to the newest app is copied.",
+  "@appUpdateLinkCopied": {
+    "description": "Toast when Update could not open the newest release's page and copied its link instead."
+  },
+  "splashLoading": "Loading",
+  "@splashLoading": {
+    "description": "The splash screen shown at every cold start: the screen-reader label of its loading bar, and what is announced when it appears."
+  },
+  "splashPercent": "{percent} percent",
+  "@splashPercent": {
+    "description": "Screen-reader value of the splash screen's loading bar, in steps of ten. The placeholder is a whole number from 0 to 100.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "splashOpeningHistory": "Opening your history",
+  "@splashOpeningHistory": {
+    "description": "The splash screen's one-line status while the learner's review history is read."
+  },
+  "splashLoadingCourses": "Loading courses",
+  "@splashLoadingCourses": {
+    "description": "The splash screen's one-line status while the decks and courses are read."
+  },
+  "splashGettingToday": "Getting Today ready",
+  "@splashGettingToday": {
+    "description": "The splash screen's one-line status while the numbers on the Today tab are worked out for the first time."
+  },
+  "splashReady": "Ready",
+  "@splashReady": {
+    "description": "The splash screen's one-line status once everything is loaded, while it waits out its minimum time and fades."
   }
 }

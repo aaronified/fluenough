@@ -3,7 +3,6 @@ import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
-import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/progress/tag_strength.dart';
 
@@ -36,51 +35,34 @@ CardLookup _indexCards(List<DeckEntry> decks) {
 /// Finds the language a deck teaches, by code, or null if it cannot tell.
 typedef LanguageLookup = String? Function(String deckId);
 
-/// A [LanguageLookup] over [state]'s catalog. A deck that has left it is
-/// placed by its id, which names the language it teaches first
-/// (`es-en-core-100`, #51), when the catalog has that language.
-LanguageLookup languageLookupOf(AppState state) {
-  final byDeck = <String, String>{
-    for (final entry in state.decks) entry.id: entry.language.code,
-  };
-  final codes = <String>{for (final language in state.languages) language.code};
-  return (deckId) {
+/// What [languageLookupOf] knows, as plain data: it crosses to an isolate
+/// (#857), which a lookup closure cannot.
+class LanguageTable {
+  const LanguageTable({required this.byDeck, required this.codes});
+
+  /// A table over [state]'s catalog.
+  factory LanguageTable.of(AppState state) => LanguageTable(
+    byDeck: <String, String>{
+      for (final entry in state.decks) entry.id: entry.language.code,
+    },
+    codes: <String>{for (final language in state.languages) language.code},
+  );
+
+  final Map<String, String> byDeck;
+  final Set<String> codes;
+
+  /// The language [deckId] teaches. A deck that has left the catalog is
+  /// placed by its id, which names the language it teaches first
+  /// (`es-en-core-100`, #51), when the catalog has that language.
+  String? of(String deckId) {
     if (byDeck[deckId] case final code?) return code;
     final named = deckId.split('-').first;
     return codes.contains(named) ? named : null;
-  };
+  }
 }
 
-/// The languages [progress]'s log has reviews in, most recently reviewed
-/// first by the reviews' own times, since an imported backup can add older
-/// reviews after newer ones. Languages last reviewed at the same moment keep
-/// [languages]' order. Reviews whose language cannot be told count under
-/// none of them, only under every language together.
-List<LanguageInfo> practisedLanguages(
-  ProgressStore progress, {
-  required List<LanguageInfo> languages,
-  required LanguageLookup languageOf,
-}) {
-  final latest = <String, DateTime>{};
-  for (final e in progress.log.answered) {
-    final code = languageOf(e.deckId);
-    if (code == null) continue;
-    final at = latest[code];
-    if (at == null || e.at.isAfter(at)) latest[code] = e.at;
-  }
-  final practised = <LanguageInfo>[
-    for (final language in languages)
-      if (latest.containsKey(language.code)) language,
-  ];
-  // List.sort is not stable, so ties fall back to the catalog's order.
-  final rank = <String, int>{
-    for (final (i, language) in practised.indexed) language.code: i,
-  };
-  return practised..sort((a, b) {
-    final byTime = latest[b.code]!.compareTo(latest[a.code]!);
-    return byTime != 0 ? byTime : rank[a.code]!.compareTo(rank[b.code]!);
-  });
-}
+/// A [LanguageLookup] over [state]'s catalog.
+LanguageLookup languageLookupOf(AppState state) => LanguageTable.of(state).of;
 
 /// The time ranges Progress offers.
 enum StatsRange {
@@ -105,6 +87,26 @@ class Tally {
   /// The share remembered, 0–1. [total] is never zero for a shown tally.
   double get ratio => total == 0 ? 0 : correct / total;
 }
+
+/// The [count] tags with the lowest share of their taught pairs known at
+/// [now], weakest first, each as the pairs known out of those taught
+/// ([tagStrengths]). Shared by [StatsNumbers] and the isolate job that
+/// Progress's Weakest tags come from (#857).
+Map<String, Tally> weakestTally(
+  Iterable<ReviewEvent> reviews, {
+  required Iterable<String> Function(ReviewEvent review) tagsOf,
+  required DateTime now,
+  required int count,
+  List<double> Function(ReviewEvent review)? parametersOf,
+}) => <String, Tally>{
+  for (final entry in tagStrengths(
+    reviews,
+    tagsOf: tagsOf,
+    now: now,
+    parametersOf: parametersOf,
+  ).take(count))
+    entry.tag: Tally(entry.known, entry.taught),
+};
 
 /// How many days the activity grid shows: twelve weeks.
 const int kHeatmapWeeks = 12;
@@ -201,12 +203,13 @@ class StatsNumbers {
 
     // The weakest tags are of how well their pairs are known now, whatever
     // the range (#678).
-    final weakest = tagStrengths(
+    final weakest = weakestTally(
       log,
       tagsOf: (e) =>
           cardOf(e.cardId, deckId: e.deckId)?.tags ?? const <String>[],
       now: now,
       parametersOf: parametersOf,
+      count: tagCount,
     );
 
     final firstDay = addDays(today, 1 - kHeatmapDays);
@@ -236,10 +239,7 @@ class StatsNumbers {
             if (script[(script: name, mode: mode)] case final t?)
               (script: name, mode: mode): Tally(t[0], t[1]),
       },
-      weakestTags: <String, Tally>{
-        for (final entry in weakest.take(tagCount))
-          entry.tag: Tally(entry.known, entry.taught),
-      },
+      weakestTags: weakest,
       heatmap: List<int>.unmodifiable(heatmap),
     );
   }

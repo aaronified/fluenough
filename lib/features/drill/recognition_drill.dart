@@ -13,6 +13,7 @@ import 'drill_session.dart';
 import 'set_drill.dart';
 import 'rating_buttons.dart';
 import 'taught_details.dart';
+import '../decks/ipa_info_dot.dart';
 
 /// Recognition: the target, big, with its reading and, where the phone has
 /// a voice, its speaker; "Show answer"; then the meaning, the note and an
@@ -96,7 +97,8 @@ class RecognitionDrill extends StatelessWidget {
                 .forIpa(lines.swapped),
           ),
         // How it is said: the word is shown, so this gives nothing away.
-        if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
+        if (lines.ipa case final ipa?)
+          IpaWithInfo(ipa, card: card, fontSize: 16),
         // From the start: hearing the word gives nothing away. Keyed, so
         // that showing the answer does not play it again.
         if (session.canPlay)

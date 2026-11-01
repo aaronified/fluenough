@@ -1,0 +1,91 @@
+schema: 1
+id: es-en-weather-sentences
+kind: layer
+core: es-weather-sentences
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Sentences: weather'
+license: CC-BY-SA-4.0
+description: 'Eight sentences about the weather, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1145:
+    native: It rains today and tomorrow it snows.
+    bases:
+      llueve: it rains
+      nieva: it snows
+    confusables:
+      sunny:
+        why: Soleado is sunny; this sentence has rain and snow, not sun.
+      windy:
+        why: Ventoso is windy; this sentence says rain and snow.
+  es-1146:
+    native: It is windy and it is cold.
+    confusables:
+      rain:
+        why: 'Lluvia is rain, which is not in this sentence: it is wind and cold.'
+      snow:
+        why: Nieve is snow, another kind of cold weather, not wind.
+  es-1147:
+    native: The sun shines and the sky is clear.
+    bases:
+      El: The
+      brilla: shines
+    confusables:
+      cloud:
+        why: Nube is a cloud; this sentence has a clear sky with no clouds.
+      rain:
+        why: Lluvia is rain, not sun.
+  es-1148:
+    native: Today it is very hot, but tomorrow it rains.
+    bases:
+      llueve: it rains
+    confusables:
+      cold:
+        why: Frío is cold; the sentence says hot.
+      snow:
+        why: Nieve is snow; tomorrow it rains, it does not snow.
+  es-1149:
+    native: Put on your coat, it is cold.
+    bases:
+      Ponte: put on
+      el: your
+    confusables:
+      shirt:
+        why: Camisa is a shirt, a thin top, not a coat for cold weather.
+      umbrella:
+        why: Paraguas is an umbrella, for rain, not for cold.
+  es-1150:
+    native: I am taking the umbrella because it is going to rain.
+    bases:
+      el: the
+      porque: because
+      a: to
+      llover: to rain
+    confusables:
+      sun:
+        why: Sol is the sun; the sentence is about rain.
+      hat:
+        why: Sombrero is a hat, which keeps off the sun, not the rain.
+  es-1151:
+    native: Today the weather is mild, it is neither hot nor cold.
+    bases:
+      el: the
+      ni: nor
+    confusables:
+      hot:
+        why: Caliente is hot; this sentence says neither hot nor cold.
+      fresh:
+        why: Fresco is cool, a little cold; the sentence says mild.
+  es-1152:
+    native: In autumn the sky is cloudy and it rains.
+    bases:
+      En: In
+      el: the
+      llueve: it rains
+    confusables:
+      spring:
+        why: Primavera is spring, the season after winter.
+      winter:
+        why: Invierno is winter, not autumn.

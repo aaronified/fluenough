@@ -50,6 +50,7 @@ extension LanguageOffer on AppState {
           scriptDecks: language.scriptDecks,
           natives: language.natives,
           size: deckDownloads!.sizeOnPhone(language.code),
+          needsApp: language.needsApp,
         )
       : language;
 

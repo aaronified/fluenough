@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-shopping"
+name: "Reading: shopping"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about shopping: a sale notice in a shop window, and a short talk at the checkout. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-rebajas-de-verano"
+    title: "Summer sale"
+    theme: "shopping"
+    sentences:
+      - text: "¡Rebajas! Hay descuento en toda la tienda."
+      - text: "Esta chaqueta es barata y el precio está en la etiqueta."
+      - text: "Las ofertas empiezan el viernes."
+      - text: "El probador está al fondo."
+    questions:
+      - id: "es-1245"
+        prompt: { en: "What is on sale?" }
+        options:
+          - { en: "The whole shop" }
+          - { en: "Only the windows" }
+          - { en: "Only the shoes" }
+        answer: 1
+      - id: "es-1246"
+        prompt: { en: "When do the offers start?" }
+        options:
+          - { en: "On Monday" }
+          - { en: "On Friday" }
+          - { en: "On Sunday" }
+        answer: 2
+      - id: "es-1247"
+        prompt: { en: "Where is the changing room?" }
+        options:
+          - { en: "At the back" }
+          - { en: "At the front" }
+          - { en: "At the door" }
+        answer: 1
+  - id: "es-en-la-caja"
+    title: "At the checkout"
+    theme: "shopping"
+    sentences:
+      - text: "Pago en efectivo, no con tarjeta."
+      - text: "¿Cuánto cuesta el vestido?"
+      - text: "Quiero devolver esta camisa, no me gusta."
+      - text: "Lo siento, este modelo está agotado."
+    questions:
+      - id: "es-1248"
+        prompt: { en: "How does the customer pay?" }
+        options:
+          - { en: "By card" }
+          - { en: "In cash" }
+          - { en: "With a cheque" }
+        answer: 2
+      - id: "es-1249"
+        prompt: { en: "What does the customer want to do with the shirt?" }
+        options:
+          - { en: "Return it" }
+          - { en: "Buy a second one" }
+          - { en: "Wash it" }
+        answer: 1
+      - id: "es-1250"
+        prompt: { en: "Why can the customer not buy this model?" }
+        options:
+          - { en: "It is sold out" }
+          - { en: "It is too expensive" }
+          - { en: "It is broken" }
+        answer: 1

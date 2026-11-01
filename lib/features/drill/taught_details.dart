@@ -17,6 +17,7 @@ import 'drill_session.dart';
 import 'ipa_examples.dart';
 import 'one_note.dart';
 import 'pair_compare.dart';
+import '../decks/ipa_info_dot.dart';
 
 /// How [TaughtDetails] shows a word's reading.
 enum TaughtReading {
@@ -130,7 +131,8 @@ class TaughtDetails extends StatelessWidget {
           if (word) ...<Widget>[
             ..._word(theme, lines.reading, lines.swapped),
             // How it is said, under the word and its reading (ADR-0025).
-            if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
+            if (lines.ipa case final ipa?)
+              IpaWithInfo(ipa, card: card, fontSize: 16),
           ],
           if (meaning)
             Text(

@@ -19,6 +19,7 @@ import 'drill_session.dart';
 import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
+import '../decks/ipa_info_dot.dart';
 
 /// Multiple choice (ADR-0024), recorded as soon as an option is picked:
 ///
@@ -191,7 +192,7 @@ class ChoiceDrill extends StatelessWidget {
           ),
       ],
       // How it is said: the word is shown, so this gives nothing away.
-      if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 16),
+      if (lines.ipa case final ipa?) IpaWithInfo(ipa, card: card, fontSize: 16),
       // From the start: the word is shown anyway.
       ?_speaker(),
       // The word is on the card already: what its lesson showed under it.

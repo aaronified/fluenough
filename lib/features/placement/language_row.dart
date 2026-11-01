@@ -114,6 +114,7 @@ class LanguageRow extends StatelessWidget {
     this.query = '',
     this.actions,
     this.below = const <Widget>[],
+    this.needsApp,
   });
 
   final CatalogLanguage language;
@@ -140,6 +141,11 @@ class LanguageRow extends StatelessWidget {
   /// More under the row: a download, a notice.
   final List<Widget> below;
 
+  /// The app version this app must be updated to before the language can be
+  /// downloaded (ADR-0052). Then the row is greyed, says so, and [onTap]
+  /// opens where the app is downloaded.
+  final String? needsApp;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -164,6 +170,7 @@ class LanguageRow extends StatelessWidget {
       ?tag?.label,
       if (progress != null && planned) l10n.pickerWritten(progress.percent),
       ?youText,
+      if (needsApp case final version?) l10n.appUpdateNeeded(version),
     ].join(l10n.commonListSeparator);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -186,8 +193,21 @@ class LanguageRow extends StatelessWidget {
                       children: <Widget>[
                         Text.rich(
                           languageNames(context, language, query: query),
-                          style: theme.textTheme.titleMedium,
+                          style: needsApp == null
+                              ? theme.textTheme.titleMedium
+                              : theme.textTheme.titleMedium!.copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
                         ),
+                        if (needsApp case final version?) ...<Widget>[
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.appUpdateNeeded(version),
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
                         if (tag != null || youText != null) ...<Widget>[
                           const SizedBox(height: 4),
                           Wrap(
@@ -211,10 +231,19 @@ class LanguageRow extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Icon(
-                    chosen ? Icons.check_circle : Icons.chevron_right,
-                    color: chosen ? scheme.primary : scheme.onSurfaceVariant,
-                  ),
+                  if (needsApp != null)
+                    Text(
+                      l10n.appUpdateAction,
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: scheme.primary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  else
+                    Icon(
+                      chosen ? Icons.check_circle : Icons.chevron_right,
+                      color: chosen ? scheme.primary : scheme.onSurfaceVariant,
+                    ),
                 ],
               ),
             ),
