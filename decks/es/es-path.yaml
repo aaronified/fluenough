@@ -367,7 +367,8 @@ units:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - planned: { id: "es-government", theme: "government", words: 40 }
+  - decks: ["es-government", "es-government-sentences", "es-reading-government", "*"]
+    words: 37
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:

@@ -1,0 +1,523 @@
+schema: 1
+id: "es-government"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "government"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2260"
+    target: "el gobierno"
+    ipa: "el ɡoˈbjeɾno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gobierno", base: "gobierno" }]
+    examples:
+      - target: "El gobierno aprueba una ley."
+        ipa: "el ɡoˈbjeɾno aˈpɾweba ˈuna lej"
+        bases: [{ word: "El", base: "el" }, { word: "gobierno", base: "gobierno" }, { word: "aprueba", ref: "es-1380" }, { word: "una", base: "una" }, { word: "ley", ref: "es-2061" }]
+      - target: "Quiero un gobierno justo."
+        ipa: "ˈkjeɾo un ɡoˈbjeɾno ˈxusto"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "gobierno", base: "gobierno" }, { word: "justo", ref: "es-2131" }]
+  - id: "es-2261"
+    target: "el ministro"
+    ipa: "el miˈnistɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ministro", base: "ministro" }]
+    examples:
+      - target: "El ministro habla en el parlamento."
+        ipa: "el miˈnistɾo ˈabla en el paɾlaˈmento"
+        bases: [{ word: "El", base: "el" }, { word: "ministro", base: "ministro" }, { word: "habla", ref: "es-0027" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parlamento", ref: "es-2265" }]
+      - target: "La ministra visita el hospital."
+        ipa: "la miˈnistɾa biˈsita el ospiˈtal"
+        bases: [{ word: "La", base: "la" }, { word: "ministra", base: "ministro" }, { word: "visita", ref: "es-0787" }, { word: "el", base: "el" }, { word: "hospital", ref: "es-0772" }]
+  - id: "es-2262"
+    target: "el ministerio"
+    ipa: "el minisˈteɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ministerio", base: "ministerio" }]
+    examples:
+      - target: "El ministerio está en el centro."
+        ipa: "el minisˈteɾjo esˈta en el ˈθentɾo"
+        bases: [{ word: "El", base: "el" }, { word: "ministerio", base: "ministerio" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "Llamo al ministerio de salud."
+        ipa: "ˈʝamo al minisˈteɾjo de saˈlud"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "al", base: "al" }, { word: "ministerio", base: "ministerio" }, { word: "de", base: "de" }, { word: "salud", ref: "es-1488" }]
+  - id: "es-2263"
+    target: "el alcalde"
+    ipa: "el alˈkalde"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "alcalde", base: "alcalde" }]
+    examples:
+      - target: "El alcalde da un discurso."
+        ipa: "el alˈkalde da un disˈkuɾso"
+        bases: [{ word: "El", base: "el" }, { word: "alcalde", base: "alcalde" }, { word: "da", ref: "es-1629" }, { word: "un", base: "un" }, { word: "discurso", base: "discurso" }]
+      - target: "La alcaldesa es muy conocida."
+        ipa: "la alkalˈdesa es mwi konoˈθida"
+        bases: [{ word: "La", base: "la" }, { word: "alcaldesa", base: "alcalde" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "conocida", base: "conocido" }]
+  - id: "es-2264"
+    target: "el concejal"
+    ipa: "el konθeˈxal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "concejal", base: "concejal" }]
+    examples:
+      - target: "El concejal habla del parque."
+        ipa: "el konθeˈxal ˈabla del ˈpaɾke"
+        bases: [{ word: "El", base: "el" }, { word: "concejal", base: "concejal" }, { word: "habla", ref: "es-0027" }, { word: "del", base: "del" }, { word: "parque", ref: "es-0777" }]
+      - target: "Hay un concejal en la reunión."
+        ipa: "aj un konθeˈxal en la rewˈnjon"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "concejal", base: "concejal" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "reunión", ref: "es-0511" }]
+  - id: "es-2265"
+    target: "el parlamento"
+    ipa: "el paɾlaˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "parlamento", base: "parlamento" }]
+    examples:
+      - target: "El parlamento aprueba la ley."
+        ipa: "el paɾlaˈmento aˈpɾweba la lej"
+        bases: [{ word: "El", base: "el" }, { word: "parlamento", base: "parlamento" }, { word: "aprueba", ref: "es-1380" }, { word: "la", base: "la" }, { word: "ley", ref: "es-2061" }]
+      - target: "Trabajo cerca del parlamento."
+        ipa: "tɾaˈbaxo ˈθeɾka del paɾlaˈmento"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "parlamento", base: "parlamento" }]
+  - id: "es-2266"
+    target: "el diputado"
+    ipa: "el dipuˈtado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "diputado", base: "diputado" }]
+    examples:
+      - target: "El diputado vota en contra."
+        ipa: "el dipuˈtado ˈbota en ˈkontɾa"
+        bases: [{ word: "El", base: "el" }, { word: "diputado", base: "diputado" }, { word: "vota", ref: "es-2293" }, { word: "en", base: "en" }, { word: "contra", base: "contra" }]
+      - target: "Hay un diputado nuevo."
+        ipa: "aj un dipuˈtado ˈnwebo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "diputado", base: "diputado" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2267"
+    target: "el voto"
+    ipa: "el ˈboto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "voto", base: "voto" }]
+    examples:
+      - target: "Mi voto es secreto."
+        ipa: "mi ˈboto es seˈkɾeto"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "voto", base: "voto" }, { word: "es", ref: "es-0022" }, { word: "secreto", base: "secreto" }]
+      - target: "Doy mi voto al candidato."
+        ipa: "doj mi ˈboto al kandiˈdato"
+        bases: [{ word: "Doy", ref: "es-1629" }, { word: "mi", ref: "es-0129" }, { word: "voto", base: "voto" }, { word: "al", base: "al" }, { word: "candidato", ref: "es-2274" }]
+  - id: "es-2268"
+    target: "el votante"
+    ipa: "el boˈtante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "votante", base: "votante" }]
+    examples:
+      - target: "El votante elige un partido."
+        ipa: "el boˈtante eˈlixe un paɾˈtido"
+        bases: [{ word: "El", base: "el" }, { word: "votante", base: "votante" }, { word: "elige", ref: "es-1231" }, { word: "un", base: "un" }, { word: "partido", ref: "es-2269" }]
+      - target: "Hay muchos votantes jóvenes."
+        ipa: "aj ˈmutʃos boˈtantes ˈxobenes"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "votantes", base: "votante" }, { word: "jóvenes", ref: "es-0256" }]
+  - id: "es-2269"
+    target: "el partido"
+    ipa: "el paɾˈtido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "partido", base: "partido" }]
+    examples:
+      - target: "Mi partido gana la elección."
+        ipa: "mi paɾˈtido ˈɡana la elekˈθjon"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "partido", base: "partido" }, { word: "gana", ref: "es-0520" }, { word: "la", base: "la" }, { word: "elección", ref: "es-2058" }]
+      - target: "Soy miembro de un partido."
+        ipa: "soj ˈmjembɾo de un paɾˈtido"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "miembro", base: "miembro" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "partido", base: "partido" }]
+  - id: "es-2270"
+    target: "la constitución"
+    ipa: "la konstituˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "constitución", base: "constitución" }]
+    examples:
+      - target: "La constitución protege los derechos."
+        ipa: "la konstituˈθjon pɾoˈtexe los deˈɾetʃos"
+        bases: [{ word: "La", base: "la" }, { word: "constitución", base: "constitución" }, { word: "protege", base: "proteger" }, { word: "los", base: "los" }, { word: "derechos", ref: "es-2271" }]
+      - target: "La constitución es muy antigua."
+        ipa: "la konstituˈθjon es mwi anˈtiɡwa"
+        bases: [{ word: "La", base: "la" }, { word: "constitución", base: "constitución" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "antigua", ref: "es-1804" }]
+  - id: "es-2271"
+    target: "el derecho"
+    ipa: "el deˈɾetʃo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "derecho", base: "derecho" }]
+    examples:
+      - target: "Tengo derecho a votar."
+        ipa: "ˈtenɡo deˈɾetʃo a boˈtaɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "derecho", base: "derecho" }, { word: "a", base: "a" }, { word: "votar", ref: "es-2293" }]
+      - target: "Estudio derecho en la universidad."
+        ipa: "esˈtudjo deˈɾetʃo en la unibeɾsiˈdad"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "derecho", base: "derecho" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "universidad", ref: "es-0785" }]
+  - id: "es-2272"
+    target: "el funcionario"
+    ipa: "el funθjoˈnaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "funcionario", base: "funcionario" }]
+    examples:
+      - target: "El funcionario revisa el formulario."
+        ipa: "el funθjoˈnaɾjo reˈbisa el foɾmuˈlaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "funcionario", base: "funcionario" }, { word: "revisa", base: "revisar" }, { word: "el", base: "el" }, { word: "formulario", ref: "es-2227" }]
+      - target: "Trabajo como funcionario."
+        ipa: "tɾaˈbaxo ˈkomo funθjoˈnaɾjo"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "como", ref: "es-0028" }, { word: "funcionario", base: "funcionario" }]
+  - id: "es-2273"
+    target: "la justicia"
+    ipa: "la xusˈtiθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "justicia", base: "justicia" }]
+    examples:
+      - target: "La justicia es para todos."
+        ipa: "la xusˈtiθja es ˈpaɾa ˈtodos"
+        bases: [{ word: "La", base: "la" }, { word: "justicia", base: "justicia" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "todos", ref: "es-0134" }]
+      - target: "Acudo a la justicia."
+        ipa: "aˈkudo a la xusˈtiθja"
+        bases: [{ word: "Acudo", base: "acudir" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "justicia", base: "justicia" }]
+  - id: "es-2274"
+    target: "el candidato"
+    ipa: "el kandiˈdato"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "candidato", base: "candidato" }]
+    examples:
+      - target: "El candidato habla en la radio."
+        ipa: "el kandiˈdato ˈabla en la ˈradjo"
+        bases: [{ word: "El", base: "el" }, { word: "candidato", base: "candidato" }, { word: "habla", ref: "es-0027" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "radio", ref: "es-2069" }]
+      - target: "Hay tres candidatos."
+        ipa: "aj tɾes kandiˈdatos"
+        bases: [{ word: "Hay", base: "haber" }, { word: "tres", ref: "es-0207" }, { word: "candidatos", base: "candidato" }]
+  - id: "es-2275"
+    target: "la campaña"
+    ipa: "la kamˈpaɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "campaña", base: "campaña" }]
+    examples:
+      - target: "La campaña empieza el lunes."
+        ipa: "la kamˈpaɲa emˈpjeθa el ˈlunes"
+        bases: [{ word: "La", base: "la" }, { word: "campaña", base: "campaña" }, { word: "empieza", ref: "es-0852" }, { word: "el", base: "el" }, { word: "lunes", ref: "es-0958" }]
+      - target: "La campaña es muy costosa."
+        ipa: "la kamˈpaɲa es mwi kosˈtosa"
+        bases: [{ word: "La", base: "la" }, { word: "campaña", base: "campaña" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "costosa", base: "costoso" }]
+  - id: "es-2276"
+    target: "el registro"
+    ipa: "el reˈxistɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "registro", base: "registro" }]
+    examples:
+      - target: "Mi nombre está en el registro."
+        ipa: "mi ˈnombɾe esˈta en el reˈxistɾo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "nombre", ref: "es-0091" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "registro", base: "registro" }]
+      - target: "Voy al registro civil."
+        ipa: "boj al reˈxistɾo θiˈbil"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "registro", base: "registro" }, { word: "civil", base: "civil" }]
+  - id: "es-2277"
+    target: "el certificado"
+    ipa: "el θeɾtifiˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "certificado", base: "certificado" }]
+    examples:
+      - target: "Necesito un certificado de nacimiento."
+        ipa: "neθeˈsito un θeɾtifiˈkado de naθiˈmjento"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "certificado", base: "certificado" }, { word: "de", base: "de" }, { word: "nacimiento", base: "nacimiento" }]
+      - target: "El certificado está listo."
+        ipa: "el θeɾtifiˈkado esˈta ˈlisto"
+        bases: [{ word: "El", base: "el" }, { word: "certificado", base: "certificado" }, { word: "está", ref: "es-0023" }, { word: "listo", ref: "es-0932" }]
+  - id: "es-2278"
+    target: "el DNI"
+    ipa: "el dni"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "DNI", base: "dni" }]
+    examples:
+      - target: "Llevo el DNI siempre."
+        ipa: "ˈʝebo el dni ˈsjempɾe"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "DNI", base: "dni" }, { word: "siempre", ref: "es-0320" }]
+      - target: "El DNI está caducado."
+        ipa: "el dni esˈta kaduˈkado"
+        bases: [{ word: "El", base: "el" }, { word: "DNI", base: "dni" }, { word: "está", ref: "es-0023" }, { word: "caducado", base: "caducado" }]
+  - id: "es-2279"
+    target: "el padrón"
+    ipa: "el paˈdɾon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "padrón", base: "padrón" }]
+    examples:
+      - target: "Estoy en el padrón de Madrid."
+        ipa: "esˈtoj en el paˈdɾon de maˈdɾid"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "padrón", base: "padrón" }, { word: "de", base: "de" }, { word: "Madrid", ref: "es-1919" }]
+      - target: "Pido un certificado del padrón."
+        ipa: "ˈpido un θeɾtifiˈkado del paˈdɾon"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "un", base: "un" }, { word: "certificado", ref: "es-2277" }, { word: "del", base: "del" }, { word: "padrón", base: "padrón" }]
+  - id: "es-2280"
+    target: "el trámite"
+    ipa: "el ˈtɾamite"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "trámite", base: "trámite" }]
+    examples:
+      - target: "El trámite es largo."
+        ipa: "el ˈtɾamite es ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "trámite", base: "trámite" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+      - target: "Hago los trámites en la mañana."
+        ipa: "ˈaɡo los ˈtɾamites en la maˈɲana"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "los", base: "los" }, { word: "trámites", base: "trámite" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+  - id: "es-2281"
+    target: "el expediente"
+    ipa: "el ekspeˈdjente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "expediente", base: "expediente" }]
+    examples:
+      - target: "El expediente está en la oficina."
+        ipa: "el ekspeˈdjente esˈta en la ofiˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "expediente", base: "expediente" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+      - target: "Busco mi expediente."
+        ipa: "ˈbusko mi ekspeˈdjente"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "mi", ref: "es-0129" }, { word: "expediente", base: "expediente" }]
+  - id: "es-2282"
+    target: "el requisito"
+    ipa: "el rekiˈsito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "requisito", base: "requisito" }]
+    examples:
+      - target: "Un requisito es tener la edad."
+        ipa: "un rekiˈsito es teˈneɾ la eˈdad"
+        bases: [{ word: "Un", base: "un" }, { word: "requisito", base: "requisito" }, { word: "es", ref: "es-0022" }, { word: "tener", ref: "es-0024" }, { word: "la", base: "la" }, { word: "edad", ref: "es-0242" }]
+      - target: "Cumplo todos los requisitos."
+        ipa: "ˈkumplo ˈtodos los rekiˈsitos"
+        bases: [{ word: "Cumplo", base: "cumplir" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "requisitos", base: "requisito" }]
+  - id: "es-2283"
+    target: "la multa"
+    ipa: "la ˈmulta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "multa", base: "multa" }]
+    examples:
+      - target: "Me ponen una multa."
+        ipa: "me ˈponen ˈuna ˈmulta"
+        bases: [{ word: "Me", base: "me" }, { word: "ponen", ref: "es-1628" }, { word: "una", base: "una" }, { word: "multa", base: "multa" }]
+      - target: "La multa es de cien euros."
+        ipa: "la ˈmulta es de θjen ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "multa", base: "multa" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "cien", ref: "es-0543" }, { word: "euros", ref: "es-0550" }]
+  - id: "es-2284"
+    target: "la licencia"
+    ipa: "la liˈθenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "licencia", base: "licencia" }]
+    examples:
+      - target: "Necesito una licencia para el negocio."
+        ipa: "neθeˈsito ˈuna liˈθenθja ˈpaɾa el neˈɡoθjo"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "licencia", base: "licencia" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "negocio", ref: "es-1865" }]
+      - target: "Tengo licencia de conducir."
+        ipa: "ˈtenɡo liˈθenθja de konduˈθiɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "licencia", base: "licencia" }, { word: "de", base: "de" }, { word: "conducir", ref: "es-1636" }]
+  - id: "es-2285"
+    target: "el impreso"
+    ipa: "el imˈpɾeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "impreso", base: "impreso" }]
+    examples:
+      - target: "Relleno el impreso con tinta."
+        ipa: "reˈʝeno el imˈpɾeso kon ˈtinta"
+        bases: [{ word: "Relleno", base: "rellenar" }, { word: "el", base: "el" }, { word: "impreso", base: "impreso" }, { word: "con", base: "con" }, { word: "tinta", base: "tinta" }]
+      - target: "El impreso está en la ventanilla."
+        ipa: "el imˈpɾeso esˈta en la bentaˈniʝa"
+        bases: [{ word: "El", base: "el" }, { word: "impreso", base: "impreso" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ventanilla", ref: "es-2229" }]
+  - id: "es-2286"
+    target: "la residencia"
+    ipa: "la resiˈdenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "residencia", base: "residencia" }]
+    examples:
+      - target: "Mi residencia es en Madrid."
+        ipa: "mi resiˈdenθja es en maˈdɾid"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "residencia", base: "residencia" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "Madrid", ref: "es-1919" }]
+      - target: "Pido la residencia."
+        ipa: "ˈpido la resiˈdenθja"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "la", base: "la" }, { word: "residencia", base: "residencia" }]
+  - id: "es-2287"
+    target: "el ayuntamiento"
+    ipa: "el aʝuntaˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ayuntamiento", base: "ayuntamiento" }]
+    examples:
+      - target: "El ayuntamiento está en la plaza."
+        ipa: "el aʝuntaˈmjento esˈta en la ˈplaθa"
+        bases: [{ word: "El", base: "el" }, { word: "ayuntamiento", base: "ayuntamiento" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+      - target: "Voy al ayuntamiento hoy."
+        ipa: "boj al aʝuntaˈmjento oj"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "ayuntamiento", base: "ayuntamiento" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-2288"
+    target: "el municipio"
+    ipa: "el muniˈθipjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "municipio", base: "municipio" }]
+    examples:
+      - target: "Vivo en un municipio pequeño."
+        ipa: "ˈbibo en un muniˈθipjo peˈkeɲo"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "municipio", base: "municipio" }, { word: "pequeño", ref: "es-0032" }]
+      - target: "El municipio tiene mil habitantes."
+        ipa: "el muniˈθipjo ˈtjene mil abiˈtantes"
+        bases: [{ word: "El", base: "el" }, { word: "municipio", base: "municipio" }, { word: "tiene", ref: "es-0024" }, { word: "mil", ref: "es-0546" }, { word: "habitantes", ref: "es-1901" }]
+  - id: "es-2289"
+    target: "la provincia"
+    ipa: "la pɾoˈbinθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "provincia", base: "provincia" }]
+    examples:
+      - target: "Vivo en la provincia de Sevilla."
+        ipa: "ˈbibo en la pɾoˈbinθja de seˈbiʝa"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "provincia", base: "provincia" }, { word: "de", base: "de" }, { word: "Sevilla", ref: "es-1921" }]
+      - target: "La provincia es grande."
+        ipa: "la pɾoˈbinθja es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "provincia", base: "provincia" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2290"
+    target: "la nación"
+    ipa: "la naˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nación", base: "nación" }]
+    examples:
+      - target: "La nación celebra su día."
+        ipa: "la naˈθjon θeˈlebɾa su ˈdia"
+        bases: [{ word: "La", base: "la" }, { word: "nación", base: "nación" }, { word: "celebra", base: "celebrar" }, { word: "su", ref: "es-0131" }, { word: "día", ref: "es-0019" }]
+      - target: "Es una nación grande."
+        ipa: "es ˈuna naˈθjon ˈɡɾande"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "nación", base: "nación" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2291"
+    target: "el gobernador"
+    ipa: "el ɡobeɾnaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gobernador", base: "gobernador" }]
+    examples:
+      - target: "El gobernador visita la provincia."
+        ipa: "el ɡobeɾnaˈdoɾ biˈsita la pɾoˈbinθja"
+        bases: [{ word: "El", base: "el" }, { word: "gobernador", base: "gobernador" }, { word: "visita", ref: "es-0787" }, { word: "la", base: "la" }, { word: "provincia", ref: "es-2289" }]
+      - target: "La gobernadora habla en la radio."
+        ipa: "la ɡobeɾnaˈdoɾa ˈabla en la ˈradjo"
+        bases: [{ word: "La", base: "la" }, { word: "gobernadora", base: "gobernador" }, { word: "habla", ref: "es-0027" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "radio", ref: "es-2069" }]
+  - id: "es-2292"
+    target: "la votación"
+    ipa: "la botaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "votación", base: "votación" }]
+    examples:
+      - target: "La votación es el domingo."
+        ipa: "la botaˈθjon es el doˈminɡo"
+        bases: [{ word: "La", base: "la" }, { word: "votación", base: "votación" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "domingo", ref: "es-0964" }]
+      - target: "Hay una votación en la clase."
+        ipa: "aj ˈuna botaˈθjon en la ˈklase"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "votación", base: "votación" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-2293"
+    target: "votar"
+    ipa: "boˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "votar", base: "votar" }]
+    examples:
+      - target: "Voto por el candidato."
+        ipa: "ˈboto poɾ el kandiˈdato"
+        bases: [{ word: "Voto", base: "votar" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "candidato", ref: "es-2274" }]
+      - target: "Votamos el martes."
+        ipa: "boˈtamos el ˈmaɾtes"
+        bases: [{ word: "Votamos", base: "votar" }, { word: "el", base: "el" }, { word: "martes", ref: "es-0959" }]
+  - id: "es-2294"
+    target: "gobernar"
+    ipa: "ɡobeɾˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "gobernar", base: "gobernar" }]
+    examples:
+      - target: "El partido gobierna la ciudad."
+        ipa: "el paɾˈtido ɡoˈbjeɾna la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "partido", ref: "es-2269" }, { word: "gobierna", base: "gobernar" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Gobiernan con una mayoría."
+        ipa: "ɡoˈbjeɾnan kon ˈuna maʝoˈɾia"
+        bases: [{ word: "Gobiernan", base: "gobernar" }, { word: "con", base: "con" }, { word: "una", base: "una" }, { word: "mayoría", base: "mayoría" }]
+  - id: "es-2295"
+    target: "gestionar"
+    ipa: "xestjoˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "gestionar", base: "gestionar" }]
+    examples:
+      - target: "Gestiono el trámite."
+        ipa: "xesˈtjono el ˈtɾamite"
+        bases: [{ word: "Gestiono", base: "gestionar" }, { word: "el", base: "el" }, { word: "trámite", ref: "es-2280" }]
+      - target: "Gestionan los documentos."
+        ipa: "xesˈtjonan los dokuˈmentos"
+        bases: [{ word: "Gestionan", base: "gestionar" }, { word: "los", base: "los" }, { word: "documentos", ref: "es-0519" }]
+  - id: "es-2296"
+    target: "solicitar"
+    ipa: "soliθiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "solicitar", base: "solicitar" }]
+    examples:
+      - target: "Solicito una licencia."
+        ipa: "soliˈθito ˈuna liˈθenθja"
+        bases: [{ word: "Solicito", base: "solicitar" }, { word: "una", base: "una" }, { word: "licencia", ref: "es-2284" }]
+      - target: "Solicitan el certificado."
+        ipa: "soliˈθitan el θeɾtifiˈkado"
+        bases: [{ word: "Solicitan", base: "solicitar" }, { word: "el", base: "el" }, { word: "certificado", ref: "es-2277" }]
