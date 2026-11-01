@@ -128,7 +128,7 @@ below is written from `decks/index.json` each time the decks change.
 | Ashokan Prakrit | Devanagari, Brahmi | in progress |
 | Assamese | Eastern Nagari | A1 |
 | Basque | Latin | in progress |
-| Bengali | Eastern Nagari | A1 |
+| Bengali | Eastern Nagari | B1 |
 | Cantonese | Traditional Hanzi | in progress |
 | Catalan | Latin | in progress |
 | Classical Greek | Greek | in progress |
