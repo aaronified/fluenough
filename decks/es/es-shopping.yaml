@@ -1,0 +1,326 @@
+schema: 1
+id: "es-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-1212"
+    target: "el descuento"
+    ipa: "el deskuˈento"
+    phonetic: "[el d̪eskuˈen̪t̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "descuento", base: "descuento" }]
+    examples:
+      - { target: "Hay un descuento del diez por ciento.", ipa: "aj un deskuˈento del ˈdjeθ poɾ ˈθjento", bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "descuento", base: "descuento" }, { word: "del", base: "de" }, { word: "diez", ref: "es-0214" }, { word: "por", base: "por" }, { word: "ciento", base: "ciento" }] }
+      - { target: "¿Tienen descuento para estudiantes?", ipa: "ˈtjenen deskuˈento ˈpaɾa estuˈðjantes", bases: [{ word: "Tienen", ref: "es-0024" }, { word: "descuento", base: "descuento" }, { word: "para", base: "para" }, { word: "estudiantes", base: "estudiante" }] }
+  - id: "es-1213"
+    target: "la rebaja"
+    ipa: "la reˈβaxa"
+    phonetic: "[la reˈβaxa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "rebaja", base: "rebaja" }]
+    examples:
+      - { target: "Las rebajas empiezan el lunes.", ipa: "las reˈβaxas emˈpjeθan el ˈlunes", bases: [{ word: "Las", base: "las" }, { word: "rebajas", base: "rebaja" }, { word: "empiezan", base: "empezar" }, { word: "el", base: "el" }, { word: "lunes", ref: "es-0958" }] }
+      - { target: "Esta camisa está en rebaja.", ipa: "ˈesta kaˈmisa esˈta en reˈβaxa", bases: [{ word: "Esta", base: "este" }, { word: "camisa", ref: "es-1017" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "rebaja", base: "rebaja" }] }
+  - id: "es-1214"
+    target: "el recibo"
+    ipa: "el reˈθiβo"
+    phonetic: "[el reˈθiβo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "recibo", base: "recibo" }]
+    examples:
+      - { target: "¿Me da el recibo, por favor?", ipa: "me da el reˈθiβo poɾ faˈβoɾ", bases: [{ word: "Me", base: "me" }, { word: "da", base: "dar" }, { word: "el", base: "el" }, { word: "recibo", base: "recibo" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+      - { target: "Guarde el recibo para devolver la camisa.", ipa: "ɡwaɾˈde el reˈθiβo ˈpaɾa deβolˈβeɾ la kaˈmisa", bases: [{ word: "Guarde", base: "guardar" }, { word: "el", base: "el" }, { word: "recibo", base: "recibo" }, { word: "para", base: "para" }, { word: "devolver", ref: "es-1230" }, { word: "la", base: "la" }, { word: "camisa", ref: "es-1017" }] }
+  - id: "es-1215"
+    target: "el carrito"
+    ipa: "el kaˈrito"
+    phonetic: "[el kaˈrit̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "carrito", base: "carrito" }]
+    examples:
+      - { target: "Pongo la compra en el carrito.", ipa: "ˈpongo la ˈkompɾa en el kaˈrito", bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "compra", ref: "es-0914" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "carrito", base: "carrito" }] }
+      - { target: "Necesito un carrito grande.", ipa: "neθeˈsito un kaˈrito ˈɡɾande", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "carrito", base: "carrito" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-1216"
+    target: "la cesta"
+    ipa: "la ˈθesta"
+    phonetic: "[la ˈθest̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cesta", base: "cesta" }]
+    examples:
+      - { target: "Llevo una cesta, no un carrito.", ipa: "ˈʝeβo ˈuna ˈθesta no un kaˈrito", bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "cesta", base: "cesta" }, { word: "no", ref: "es-0043" }, { word: "un", base: "un" }, { word: "carrito", ref: "es-1215" }] }
+      - { target: "La cesta es pequeña.", ipa: "la ˈθesta es peˈkeɲa", bases: [{ word: "La", base: "la" }, { word: "cesta", base: "cesta" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }] }
+  - id: "es-1217"
+    target: "el centro comercial"
+    ipa: "el ˈθentɾo komeɾˈθjal"
+    phonetic: "[el ˈθen̪t̪ɾo komeɾˈθjal]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "centro", base: "centro" }, { word: "comercial", base: "comercial" }]
+    examples:
+      - { target: "El centro comercial está cerca.", ipa: "el ˈθentɾo komeɾˈθjal esˈta ˈθeɾka", bases: [{ word: "El", base: "el" }, { word: "centro", base: "centro" }, { word: "comercial", base: "comercial" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }] }
+      - { target: "Voy al centro comercial el sábado.", ipa: "boj al ˈθentɾo komeɾˈθjal el ˈsabado", bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "a" }, { word: "centro", base: "centro" }, { word: "comercial", base: "comercial" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }] }
+  - id: "es-1218"
+    target: "el escaparate"
+    ipa: "el eskapaˈɾate"
+    phonetic: "[el eskapaˈɾat̪e]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "escaparate", base: "escaparate" }]
+    examples:
+      - { target: "Miro el escaparate de la tienda.", ipa: "ˈmiɾo el eskapaˈɾate de la ˈtjenda", bases: [{ word: "Miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "escaparate", base: "escaparate" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }] }
+      - { target: "El vestido está en el escaparate.", ipa: "el besˈtiðo esˈta en el eskapaˈɾate", bases: [{ word: "El", base: "el" }, { word: "vestido", ref: "es-1018" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "escaparate", base: "escaparate" }] }
+  - id: "es-1219"
+    target: "la cajera"
+    ipa: "la kaˈxeɾa"
+    phonetic: "[la kaˈxeɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cajera", base: "cajera" }]
+    examples:
+      - { target: "La cajera cobra la compra.", ipa: "la kaˈxeɾa ˈkobɾa la ˈkompɾa", bases: [{ word: "La", base: "la" }, { word: "cajera", base: "cajera" }, { word: "cobra", ref: "es-1232" }, { word: "compra", ref: "es-0914" }] }
+      - { target: "Pregunto a la cajera el precio.", ipa: "pɾeˈɣunto a la kaˈxeɾa el ˈpɾeθjo", bases: [{ word: "Pregunto", base: "preguntar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "cajera", base: "cajera" }, { word: "el", base: "el" }, { word: "precio", ref: "es-0580" }] }
+  - id: "es-1220"
+    target: "el efectivo"
+    ipa: "el efekˈtiβo"
+    phonetic: "[el efekˈt̪iβo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "efectivo", base: "efectivo" }]
+    examples:
+      - { target: "¿Puedo pagar en efectivo?", ipa: "ˈpwedo paˈɣaɾ en efekˈtiβo", bases: [{ word: "Puedo", base: "poder" }, { word: "pagar", ref: "es-0295" }, { word: "en", base: "en" }, { word: "efectivo", base: "efectivo" }] }
+      - { target: "Prefiero pagar con efectivo.", ipa: "pɾeˈfjeɾo paˈɣaɾ kon efekˈtiβo", bases: [{ word: "Prefiero", base: "preferir" }, { word: "pagar", ref: "es-0295" }, { word: "con", base: "con" }, { word: "efectivo", base: "efectivo" }] }
+  - id: "es-1221"
+    target: "el regalo"
+    ipa: "el reˈɣalo"
+    phonetic: "[el reˈɣalo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "regalo", base: "regalo" }]
+    examples:
+      - { target: "Es un regalo para mi madre.", ipa: "es un reˈɣalo ˈpaɾa mi ˈmaðɾe", bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "regalo", base: "regalo" }, { word: "para", base: "para" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }] }
+      - { target: "Compro un regalo para mi padre.", ipa: "komˈpɾo un reˈɣalo ˈpaɾa mi ˈpaðɾe", bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "regalo", base: "regalo" }, { word: "para", base: "para" }, { word: "mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }] }
+  - id: "es-1222"
+    target: "la factura"
+    ipa: "la fakˈtuɾa"
+    phonetic: "[la fakˈt̪uɾa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "factura", base: "factura" }]
+    examples:
+      - { target: "La factura es de cien euros.", ipa: "la fakˈtuɾa es de ˈθjen eˈuɾos", bases: [{ word: "La", base: "la" }, { word: "factura", base: "factura" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "cien", ref: "es-0543" }, { word: "euros", base: "euro" }] }
+      - { target: "¿Necesita factura?", ipa: "neθeˈsita fakˈtuɾa", bases: [{ word: "Necesita", ref: "es-0288" }, { word: "factura", base: "factura" }] }
+  - id: "es-1223"
+    target: "la etiqueta"
+    ipa: "la etiˈketa"
+    phonetic: "[la et̪iˈket̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "etiqueta", base: "etiqueta" }]
+    examples:
+      - { target: "El precio está en la etiqueta.", ipa: "el ˈpɾeθjo esˈta en la etiˈketa", bases: [{ word: "El", base: "el" }, { word: "precio", ref: "es-0580" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "etiqueta", base: "etiqueta" }] }
+      - { target: "Mira la etiqueta: es de talla grande.", ipa: "ˈmiɾa la etiˈketa es de ˈtaʝa ˈɡɾande", bases: [{ word: "Mira", ref: "es-0292" }, { word: "la", base: "la" }, { word: "etiqueta", base: "etiqueta" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "talla", ref: "es-1036" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-1224"
+    target: "el mostrador"
+    ipa: "el mostɾaˈðoɾ"
+    phonetic: "[el most̪ɾaˈðoɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "mostrador", base: "mostrador" }]
+    examples:
+      - { target: "Pago en el mostrador.", ipa: "ˈpaɣo en el mostɾaˈðoɾ", bases: [{ word: "Pago", ref: "es-0295" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mostrador", base: "mostrador" }] }
+      - { target: "El mostrador está al fondo.", ipa: "el mostɾaˈðoɾ esˈta al ˈfondo", bases: [{ word: "El", base: "el" }, { word: "mostrador", base: "mostrador" }, { word: "está", ref: "es-0023" }, { word: "al", base: "a" }, { word: "fondo", base: "fondo" }] }
+  - id: "es-1225"
+    target: "la cola"
+    ipa: "la ˈkola"
+    phonetic: "[la ˈkola]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cola", base: "cola" }]
+    examples:
+      - { target: "Hay mucha cola en la caja.", ipa: "aj ˈmutʃa ˈkola en la ˈkaxa", bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "cola", base: "cola" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "caja", ref: "es-0382" }] }
+      - { target: "Espero en la cola.", ipa: "esˈpeɾo en la ˈkola", bases: [{ word: "Espero", ref: "es-0930" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cola", base: "cola" }] }
+  - id: "es-1226"
+    target: "la venta"
+    ipa: "la ˈbenta"
+    phonetic: "[la ˈβen̪t̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "venta", base: "venta" }]
+    examples:
+      - { target: "Hay venta de ropa hoy.", ipa: "aj ˈbenta de ˈropa oj", bases: [{ word: "Hay", base: "haber" }, { word: "venta", base: "venta" }, { word: "de", base: "de" }, { word: "ropa", ref: "es-1027" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "La venta empieza el viernes.", ipa: "la ˈbenta emˈpjeθa el bjeɾnes", bases: [{ word: "La", base: "la" }, { word: "venta", base: "venta" }, { word: "empieza", base: "empezar" }, { word: "el", base: "el" }, { word: "viernes", ref: "es-0962" }] }
+  - id: "es-1227"
+    target: "el saldo"
+    ipa: "el ˈsalðo"
+    phonetic: "[el ˈsalðo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "saldo", base: "saldo" }]
+    examples:
+      - { target: "¿Cuál es mi saldo?", ipa: "kwal es mi ˈsalðo", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "saldo", base: "saldo" }] }
+      - { target: "El saldo de la cuenta es bajo.", ipa: "el ˈsalðo de la ˈkwenta es ˈbaxo", bases: [{ word: "El", base: "el" }, { word: "saldo", base: "saldo" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "cuenta", ref: "es-0653" }, { word: "es", ref: "es-0022" }, { word: "bajo", ref: "es-0255" }] }
+  - id: "es-1228"
+    target: "gastar"
+    ipa: "ɣasˈtaɾ"
+    phonetic: "[ɣasˈt̪aɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "No quiero gastar mucho dinero.", ipa: "no ˈkjeɾo ɣasˈtaɾ ˈmutʃo diˈneɾo", bases: [{ word: "No", ref: "es-0043" }, { word: "quiero", ref: "es-0661" }, { word: "gastar", base: "gastar" }, { word: "mucho", ref: "es-0053" }, { word: "dinero", ref: "es-0513" }] }
+      - { target: "Gasto mucho en ropa.", ipa: "ˈɣasto ˈmutʃo en ˈropa", bases: [{ word: "Gasto", base: "gastar" }, { word: "mucho", ref: "es-0053" }, { word: "en", base: "en" }, { word: "ropa", ref: "es-1027" }] }
+  - id: "es-1229"
+    target: "ahorrar"
+    ipa: "aoˈraɾ"
+    phonetic: "[aoˈraɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero ahorrar para un viaje.", ipa: "ˈkjeɾo aoˈraɾ ˈpaɾa un ˈbjaxe", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "ahorrar", base: "ahorrar" }, { word: "para", base: "para" }, { word: "un", base: "un" }, { word: "viaje", base: "viaje" }] }
+      - { target: "Ahorro dinero cada mes.", ipa: "aˈoro diˈneɾo ˈkaða mes", bases: [{ word: "Ahorro", base: "ahorrar" }, { word: "dinero", ref: "es-0513" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }] }
+  - id: "es-1230"
+    target: "devolver"
+    ipa: "debolˈβeɾ"
+    phonetic: "[d̪eβolˈβeɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero devolver esta camisa.", ipa: "ˈkjeɾo deβolˈβeɾ ˈesta kaˈmisa", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "devolver", base: "devolver" }, { word: "esta", base: "este" }, { word: "camisa", ref: "es-1017" }] }
+      - { target: "Puedo devolverlo si no me gusta.", ipa: "ˈpwedo deβolˈβeɾlo si no me ˈɣusta", bases: [{ word: "Puedo", base: "poder" }, { word: "devolverlo", base: "devolver" }, { word: "si", base: "si" }, { word: "no", ref: "es-0043" }, { word: "me", base: "me" }, { word: "gusta", base: "gustar" }] }
+  - id: "es-1231"
+    target: "elegir"
+    ipa: "eleˈxiɾ"
+    phonetic: "[eleˈxiɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elijo la camisa azul.", ipa: "eˈlixo la kaˈmisa aˈθul", bases: [{ word: "Elijo", base: "elegir" }, { word: "la", base: "la" }, { word: "camisa", ref: "es-1017" }, { word: "azul", ref: "es-1008" }] }
+      - { target: "Es difícil elegir un regalo.", ipa: "es diˈfiθil eleˈxiɾ un reˈɣalo", bases: [{ word: "Es", ref: "es-0022" }, { word: "difícil", ref: "es-0414" }, { word: "elegir", base: "elegir" }, { word: "un", base: "un" }, { word: "regalo", ref: "es-1221" }] }
+  - id: "es-1232"
+    target: "cobrar"
+    ipa: "koˈβɾaɾ"
+    phonetic: "[koˈβɾaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Cuánto me cobra?", ipa: "ˈkwanto me ˈkobɾa", bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "me", base: "me" }, { word: "cobra", base: "cobrar" }] }
+      - { target: "Me cobran diez euros.", ipa: "me ˈkobɾan ˈdjeθ eˈuɾos", bases: [{ word: "Me", base: "me" }, { word: "cobran", base: "cobrar" }, { word: "diez", ref: "es-0214" }, { word: "euros", base: "euro" }] }
+  - id: "es-1233"
+    target: "aceptar"
+    ipa: "aθepˈtaɾ"
+    phonetic: "[aθepˈt̪aɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aceptamos tarjeta y efectivo.", ipa: "aθepˈtamos taɾˈxeta i efekˈtiβo", bases: [{ word: "Aceptamos", base: "aceptar" }, { word: "tarjeta", ref: "es-0879" }, { word: "y", ref: "es-0048" }, { word: "efectivo", ref: "es-1220" }] }
+      - { target: "No aceptan billetes grandes.", ipa: "no aθepˈtan biˈʝetes ˈɡɾandes", bases: [{ word: "No", ref: "es-0043" }, { word: "aceptan", base: "aceptar" }, { word: "billetes", ref: "es-0685" }, { word: "grandes", ref: "es-0031" }] }
+  - id: "es-1234"
+    target: "usado"
+    ipa: "uˈsaðo"
+    phonetic: "[uˈsaðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "usado", base: "usado" }]
+    examples:
+      - { target: "Compro un coche usado.", ipa: "komˈpɾo un ˈkotʃe uˈsaðo", bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "coche", ref: "es-0678" }, { word: "usado", base: "usado" }] }
+      - { target: "La tienda vende libros usados.", ipa: "la ˈtjenda ˈbende ˈlibɾos uˈsaðos", bases: [{ word: "La", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "vende", ref: "es-0522" }, { word: "libros", base: "libro" }, { word: "usados", base: "usado" }] }
+  - id: "es-1235"
+    target: "gratis"
+    ipa: "ˈɣɾatis"
+    phonetic: "[ˈɣɾat̪is]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "gratis", base: "gratis" }]
+    examples:
+      - { target: "La entrada es gratis.", ipa: "la enˈtɾaða es ˈɣɾatis", bases: [{ word: "La", base: "la" }, { word: "entrada", base: "entrada" }, { word: "es", ref: "es-0022" }, { word: "gratis", base: "gratis" }] }
+      - { target: "El envío es gratis hoy.", ipa: "el emˈbio es ˈɣɾatis oj", bases: [{ word: "El", base: "el" }, { word: "envío", base: "envío" }, { word: "es", ref: "es-0022" }, { word: "gratis", base: "gratis" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-1236"
+    target: "agotado"
+    ipa: "aɣoˈtaðo"
+    phonetic: "[aɣoˈt̪aðo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "agotado", base: "agotado" }]
+    examples:
+      - { target: "Esta talla está agotada.", ipa: "ˈesta ˈtaʝa esˈta aɣoˈtaða", bases: [{ word: "Esta", base: "este" }, { word: "talla", ref: "es-1036" }, { word: "está", ref: "es-0023" }, { word: "agotada", base: "agotado" }] }
+      - { target: "El modelo está agotado.", ipa: "el moˈdelo esˈta aɣoˈtaðo", bases: [{ word: "El", base: "el" }, { word: "modelo", base: "modelo" }, { word: "está", ref: "es-0023" }, { word: "agotado", base: "agotado" }] }
