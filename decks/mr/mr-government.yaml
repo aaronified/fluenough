@@ -1,0 +1,205 @@
+schema: 1
+id: "mr-government"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "government"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1423"
+    target: "सरकार"
+    reading: "sarkār"
+    ipa: "sərkar"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सरकार", reading: "sarkār" }] }
+    examples:
+      - { target: "सरकार नवीन योजना आणत आहे.", reading: "sarkār navin yojnā āṇat āhe.", ipa: "sərkar nəʋin jodzna aɳət̪ aɦe", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "योजना", ref: "mr-1434" }, { word: "आणत", ref: "mr-0800" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सरकारने निर्णय घेतला.", reading: "sarkārne nirṇay ghetlā.", ipa: "sərkarne nirɳəj ɡʱet̪la", bases: [{ word: "सरकारने", ref: "mr-1423" }, { word: "निर्णय", base: "निर्णय", reading: "nirṇay" }, { word: "घेतला", ref: "mr-0722" }] }
+  - id: "mr-1424"
+    target: "सरकारी"
+    reading: "sarkāri"
+    ipa: "sərkari"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सरकारी", reading: "sarkāri" }] }
+    examples:
+      - { target: "ही सरकारी शाळा आहे.", reading: "hi sarkāri śāḷā āhe.", ipa: "ɦi sərkari ʃaɭa aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "शाळा", ref: "mr-0957" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सरकारी कार्यालय सकाळी उघडतं.", reading: "sarkāri kāryālay sakāḷi ughḍtam̐.", ipa: "sərkari karjaləj səkaɭi uɡʱɖt̪ə̃", bases: [{ word: "कार्यालय", ref: "mr-1262" }, { word: "उघडतं", ref: "mr-0724" }] }
+  - id: "mr-1425"
+    target: "मंत्री"
+    reading: "mantri"
+    ipa: "mənt̪ri"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मंत्री", reading: "mantri" }] }
+    examples:
+      - { target: "मंत्री भाषण देत होते.", reading: "mantri bhāṣaṇ det hote.", ipa: "mənt̪ri bʱaʂəɳ d̪et̪ ɦot̪e", bases: [{ word: "भाषण", base: "भाषण", reading: "bhāṣaṇ" }, { word: "देत", ref: "mr-0721" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "मंत्र्यांनी बैठक घेतली.", reading: "mantryānni baiṭhak ghetli.", ipa: "mənt̪rjanni bəiʈʰək ɡʱet̪li", bases: [{ word: "मंत्र्यांनी", ref: "mr-1425" }, { word: "बैठक", ref: "mr-1269" }, { word: "घेतली", ref: "mr-0722" }] }
+  - id: "mr-1426"
+    target: "आमदार"
+    reading: "āmdār"
+    ipa: "amd̪ar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आमदार", reading: "āmdār" }] }
+    examples:
+      - { target: "आमदार गावात आले.", reading: "āmdār gāvāt āle.", ipa: "amd̪ar ɡaʋat̪ ale", bases: [{ word: "गावात", ref: "mr-0209" }, { word: "आले", ref: "mr-0711" }] }
+      - { target: "आमदारांना निवेदन दिलं.", reading: "āmdārānnā nivedan dilam̐.", ipa: "amd̪aranna niʋed̪ən d̪ilə̃", bases: [{ word: "आमदारांना", ref: "mr-1426" }, { word: "निवेदन", base: "निवेदन", reading: "nivedan" }, { word: "दिलं", ref: "mr-0721" }] }
+  - id: "mr-1427"
+    target: "खासदार"
+    reading: "khāsdār"
+    ipa: "kʰasd̪ar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खासदार", reading: "khāsdār" }] }
+    examples:
+      - { target: "खासदार दिल्लीत आहेत.", reading: "khāsdār dillit āhet.", ipa: "kʰasd̪ar d̪illit̪ aɦet̪", bases: [{ word: "दिल्लीत", ref: "mr-1288" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "खासदारांनी आश्वासन दिलं.", reading: "khāsdārānni āśvāsan dilam̐.", ipa: "kʰasd̪aranni aʃʋasən d̪ilə̃", bases: [{ word: "खासदारांनी", ref: "mr-1427" }, { word: "आश्वासन", base: "आश्वासन", reading: "āśvāsan" }, { word: "दिलं", ref: "mr-0721" }] }
+  - id: "mr-1428"
+    target: "निवडणूक"
+    reading: "nivḍṇuk"
+    ipa: "niʋɖɳuk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "निवडणूक", reading: "nivḍṇuk" }] }
+    examples:
+      - { target: "पुढच्या महिन्यात निवडणूक आहे.", reading: "puḍhacyā mahinyāt nivḍṇuk āhe.", ipa: "puɖʱətʃja məɦinjat̪ niʋɖɳuk aɦe", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "महिन्यात", ref: "mr-0514" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "निवडणुकीत कोण जिंकलं?", reading: "nivḍṇukit koṇ jiṅkalam̐?", ipa: "niʋɖɳukit̪ koɳ dʒiŋkələ̃", bases: [{ word: "निवडणुकीत", ref: "mr-1428" }, { word: "जिंकलं", ref: "mr-1142" }] }
+  - id: "mr-1429"
+    target: "मतदान"
+    reading: "matdān"
+    ipa: "mət̪d̪an"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मतदान", reading: "matdān" }] }
+    examples:
+      - { target: "मतदान सकाळी सात वाजता सुरू होतं.", reading: "matdān sakāḷi sāt vājtā suru hotam̐.", ipa: "mət̪d̪an səkaɭi sat̪ ʋadzt̪a suru ɦot̪ə̃", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "वाजता", base: "वाजणे", reading: "vājṇe" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "मतदानाला सगळे आले.", reading: "matdānālā sagḷe āle.", ipa: "mət̪d̪anala səɡɭe ale", bases: [{ word: "मतदानाला", ref: "mr-1429" }, { word: "सगळे", ref: "mr-0684" }, { word: "आले", ref: "mr-0711" }] }
+  - id: "mr-1430"
+    target: "मतदार"
+    reading: "matdār"
+    ipa: "mət̪d̪ar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मतदार", reading: "matdār" }] }
+    examples:
+      - { target: "प्रत्येक मतदाराने मत द्यावं.", reading: "pratyek matdārāne mat dyāvam̐.", ipa: "prət̪jek mət̪d̪arane mət̪ d̪jaʋə̃", bases: [{ word: "मतदाराने", ref: "mr-1430" }, { word: "द्यावं", ref: "mr-0721" }] }
+      - { target: "माझं नाव मतदार यादीत आहे.", reading: "mājham̐ nāv matdār yādit āhe.", ipa: "madzʱə̃ naʋ mət̪d̪ar jad̪it̪ aɦe", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "यादीत", base: "यादी", reading: "yādi" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1431"
+    target: "अधिकारी"
+    reading: "adhikāri"
+    ipa: "əd̪ʱikari"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अधिकारी", reading: "adhikāri" }] }
+    examples:
+      - { target: "अधिकारी ऑफिसमध्ये आहेत.", reading: "adhikāri ôphismadhye āhet.", ipa: "əd̪ʱikari ɔpʰisməd̪ʱje aɦet̪", bases: [{ word: "ऑफिसमध्ये", ref: "mr-0236" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "अधिकाऱ्यांनी फॉर्म तपासला.", reading: "adhikāryānni phôrm tapāslā.", ipa: "əd̪ʱikarjanni pʰɔrm t̪əpasla", bases: [{ word: "अधिकाऱ्यांनी", ref: "mr-1431" }, { word: "फॉर्म", ref: "mr-1409" }, { word: "तपासला", ref: "mr-1106" }] }
+  - id: "mr-1432"
+    target: "कर"
+    reading: "kar"
+    ipa: "kər"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर", reading: "kar" }] }
+    examples:
+      - { target: "कर भरणं गरजेचं आहे.", reading: "kar bharṇam̐ garjecam̐ āhe.", ipa: "kər bʱərɳə̃ ɡərdʒetsə̃ aɦe", bases: [{ word: "भरणं", ref: "mr-0795" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कर किती लागेल?", reading: "kar kiti lāgel?", ipa: "kər kit̪i laɡel", bases: [{ word: "लागेल", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1433"
+    target: "नागरिक"
+    reading: "nāgrik"
+    ipa: "naɡrik"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नागरिक", reading: "nāgrik" }] }
+    examples:
+      - { target: "प्रत्येक नागरिकाला हक्क आहे.", reading: "pratyek nāgrikālā hakk āhe.", ipa: "prət̪jek naɡrikala ɦəkk aɦe", bases: [{ word: "नागरिकाला", ref: "mr-1433" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "नागरिकांनी नियम पाळावे.", reading: "nāgrikānni niyam pāḷāve.", ipa: "naɡrikanni nijəm paɭaʋe", bases: [{ word: "नागरिकांनी", ref: "mr-1433" }, { word: "नियम", base: "नियम", reading: "niyam" }, { word: "पाळावे", base: "पाळणे", reading: "pāḷṇe" }] }
+  - id: "mr-1434"
+    target: "योजना"
+    reading: "yojnā"
+    ipa: "jodzna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "योजना", reading: "yojnā" }] }
+    examples:
+      - { target: "या योजनेचा फायदा घ्या.", reading: "yā yojnecā phāydā ghyā.", ipa: "ja jodznetsa pʰajd̪a ɡʱja", bases: [{ word: "या", ref: "mr-0679" }, { word: "योजनेचा", ref: "mr-1434" }, { word: "घ्या", ref: "mr-0722" }] }
+      - { target: "नवीन योजना सुरू झाली.", reading: "navin yojnā suru jhāli.", ipa: "nəʋin jodzna suru dzʱali", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1435"
+    target: "लोकशाही"
+    reading: "lokśāhi"
+    ipa: "lokʃaɦi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "लोकशाही", reading: "lokśāhi" }] }
+    examples:
+      - { target: "भारत लोकशाही देश आहे.", reading: "bhārat lokśāhi deś āhe.", ipa: "bʱarət̪ lokʃaɦi d̪eʃ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "लोकशाहीत मत देणं महत्त्वाचं असतं.", reading: "lokśāhit mat deṇam̐ mahattvācam̐ astam̐.", ipa: "lokʃaɦit̪ mət̪ d̪eɳə̃ məɦət̪t̪ʋatsə̃ əst̪ə̃", bases: [{ word: "लोकशाहीत", ref: "mr-1435" }, { word: "देणं", ref: "mr-0721" }, { word: "असतं", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1436"
+    target: "राष्ट्र"
+    reading: "rāṣṭr"
+    ipa: "raʂʈr"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "राष्ट्र", reading: "rāṣṭr" }] }
+    examples:
+      - { target: "आपलं राष्ट्र मोठं आहे.", reading: "āplam̐ rāṣṭr moṭham̐ āhe.", ipa: "aplə̃ raʂʈr moʈʰə̃ aɦe", bases: [{ word: "आपलं", base: "आपला", reading: "āplā" }, { word: "मोठं", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "राष्ट्रासाठी काम करा.", reading: "rāṣṭrāsāṭhi kām karā.", ipa: "raʂʈrasaʈʰi kam kəra", bases: [{ word: "राष्ट्रासाठी", ref: "mr-1436" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1437"
+    target: "ठराव"
+    reading: "ṭharāv"
+    ipa: "ʈʰəraʋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ठराव", reading: "ṭharāv" }] }
+    examples:
+      - { target: "सभेत ठराव मंजूर झाला.", reading: "sabhet ṭharāv mañjur jhālā.", ipa: "səbʱet̪ ʈʰəraʋ məɲdzur dzʱala", bases: [{ word: "सभेत", base: "सभा", reading: "sabhā" }, { word: "मंजूर", base: "मंजूर", reading: "mañjur" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "ठरावाला विरोध झाला.", reading: "ṭharāvālā virodh jhālā.", ipa: "ʈʰəraʋala ʋirod̪ʱ dzʱala", bases: [{ word: "ठरावाला", ref: "mr-1437" }, { word: "विरोध", base: "विरोध", reading: "virodh" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1438"
+    target: "मतदान करणे"
+    reading: "matdān karṇe"
+    ipa: "mət̪d̪an kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मतदान करणे", reading: "matdān karṇe" }] }
+    examples:
+      - { target: "मी मतदान केलं.", reading: "mi matdān kelam̐.", ipa: "mi mət̪d̪an kelə̃", bases: [{ word: "केलं", ref: "mr-0712" }] }
+      - { target: "सगळ्यांनी मतदान करावं.", reading: "sagaḷyānni matdān karāvam̐.", ipa: "səɡəɭjanni mət̪d̪an kəraʋə̃", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "करावं", ref: "mr-0712" }] }
+  - id: "mr-1439"
+    target: "निवडून येणे"
+    reading: "nivḍun yeṇe"
+    ipa: "niʋɖun jeɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "निवडून येणे", reading: "nivḍun yeṇe" }] }
+    examples:
+      - { target: "तो दोनदा निवडून आला.", reading: "to dondā nivḍun ālā.", ipa: "t̪o d̪ond̪a niʋɖun ala", bases: [{ word: "दोनदा", base: "दोनदा", reading: "dondā" }, { word: "आला", ref: "mr-0711" }] }
+      - { target: "कोण निवडून येईल?", reading: "koṇ nivḍun yeil?", ipa: "koɳ niʋɖun jeil", bases: [{ word: "येईल", ref: "mr-0711" }] }
+  - id: "mr-1440"
+    target: "कर भरणे"
+    reading: "kar bharṇe"
+    ipa: "kər bʱərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर भरणे", reading: "kar bharṇe" }] }
+    examples:
+      - { target: "दरवर्षी कर भरतो.", reading: "darvarṣi kar bharto.", ipa: "d̪ərʋərʂi kər bʱərt̪o", bases: [{ word: "दरवर्षी", base: "दरवर्षी", reading: "darvarṣi" }, { word: "भरतो", ref: "mr-0795" }] }
+      - { target: "वेळेवर कर भरा.", reading: "veḷevar kar bharā.", ipa: "ʋeɭeʋər kər bʱəra", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "भरा", ref: "mr-0795" }] }
