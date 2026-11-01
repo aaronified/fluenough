@@ -1,0 +1,423 @@
+schema: 1
+id: "es-literature"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "literature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-3031"
+    target: "la novela"
+    ipa: "la noˈbela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "novela", base: "novela" }]
+    examples:
+      - target: "Leo una novela cada mes."
+        ipa: "ˈleo ˈuna noˈbela ˈkada mes"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "una", base: "una" }, { word: "novela", base: "novela" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+      - target: "La novela es muy larga."
+        ipa: "la noˈbela es mwi ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "novela", base: "novela" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-3032"
+    target: "el poema"
+    ipa: "el poˈema"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "poema", base: "poema" }]
+    examples:
+      - target: "El poema habla del amor."
+        ipa: "el poˈema ˈabla del aˈmoɾ"
+        bases: [{ word: "El", base: "el" }, { word: "poema", base: "poema" }, { word: "habla", ref: "es-0027" }, { word: "del", base: "del" }, { word: "amor", ref: "es-1998" }]
+      - target: "Escribo un poema para ti."
+        ipa: "esˈkɾibo un poˈema ˈpaɾa ti"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "un", base: "un" }, { word: "poema", base: "poema" }, { word: "para", base: "para" }, { word: "ti", base: "ti" }]
+  - id: "es-3033"
+    target: "el poeta"
+    ipa: "el poˈeta"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "poeta", base: "poeta" }]
+    examples:
+      - target: "El poeta vive en Sevilla."
+        ipa: "el poˈeta ˈbibe en seˈbiʝa"
+        bases: [{ word: "El", base: "el" }, { word: "poeta", base: "poeta" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Sevilla", ref: "es-1921" }]
+      - target: "La poeta recita sus versos."
+        ipa: "la poˈeta reˈθita sus ˈbeɾsos"
+        bases: [{ word: "La", base: "la" }, { word: "poeta", base: "poeta" }, { word: "recita", ref: "es-3057" }, { word: "sus", ref: "es-0131" }, { word: "versos", ref: "es-3043" }]
+  - id: "es-3034"
+    target: "la poesía"
+    ipa: "la poeˈsia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "poesía", base: "poesía" }]
+    examples:
+      - target: "Me gusta la poesía."
+        ipa: "me ˈɡusta la poeˈsia"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "la", base: "la" }, { word: "poesía", base: "poesía" }]
+      - target: "La poesía es bella."
+        ipa: "la poeˈsia es ˈbeʝa"
+        bases: [{ word: "La", base: "la" }, { word: "poesía", base: "poesía" }, { word: "es", ref: "es-0022" }, { word: "bella", base: "bello" }]
+  - id: "es-3035"
+    target: "el autor"
+    ipa: "el awˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "autor", base: "autor" }]
+    examples:
+      - target: "El autor escribe muy bien."
+        ipa: "el awˈtoɾ esˈkɾibe mwi bjen"
+        bases: [{ word: "El", base: "el" }, { word: "autor", base: "autor" }, { word: "escribe", ref: "es-0297" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
+      - target: "Es el autor de este libro."
+        ipa: "es el awˈtoɾ de ˈeste ˈlibɾo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "autor", base: "autor" }, { word: "de", base: "de" }, { word: "este", ref: "es-1897" }, { word: "libro", ref: "es-0011" }]
+  - id: "es-3036"
+    target: "el capítulo"
+    ipa: "el kaˈpitulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "capítulo", base: "capítulo" }]
+    examples:
+      - target: "El capítulo es corto."
+        ipa: "el kaˈpitulo es ˈkoɾto"
+        bases: [{ word: "El", base: "el" }, { word: "capítulo", base: "capítulo" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-1320" }]
+      - target: "Leo el primer capítulo."
+        ipa: "ˈleo el pɾiˈmeɾ kaˈpitulo"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "primer", ref: "es-0551" }, { word: "capítulo", base: "capítulo" }]
+  - id: "es-3037"
+    target: "el párrafo"
+    ipa: "el ˈparafo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "párrafo", base: "párrafo" }]
+    examples:
+      - target: "El párrafo tiene cinco líneas."
+        ipa: "el ˈparafo ˈtjene ˈθinko ˈlineas"
+        bases: [{ word: "El", base: "el" }, { word: "párrafo", base: "párrafo" }, { word: "tiene", ref: "es-0024" }, { word: "cinco", ref: "es-0209" }, { word: "líneas", base: "línea" }]
+      - target: "Subrayo un párrafo importante."
+        ipa: "suˈbɾaʝo un ˈparafo impoɾˈtante"
+        bases: [{ word: "Subrayo", base: "subrayar" }, { word: "un", base: "un" }, { word: "párrafo", base: "párrafo" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-3038"
+    target: "la página"
+    ipa: "la ˈpaxina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "página", base: "página" }]
+    examples:
+      - target: "La página está rota."
+        ipa: "la ˈpaxina esˈta ˈrota"
+        bases: [{ word: "La", base: "la" }, { word: "página", base: "página" }, { word: "está", ref: "es-0023" }, { word: "rota", ref: "es-1196" }]
+      - target: "Leo cien páginas hoy."
+        ipa: "ˈleo θjen ˈpaxinas oj"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "cien", ref: "es-0543" }, { word: "páginas", base: "página" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-3039"
+    target: "el narrador"
+    ipa: "el naraˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "narrador", base: "narrador" }]
+    examples:
+      - target: "El narrador es un niño."
+        ipa: "el naraˈdoɾ es un ˈniɲo"
+        bases: [{ word: "El", base: "el" }, { word: "narrador", base: "narrador" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "niño", ref: "es-0003" }]
+      - target: "La narradora cuenta la historia."
+        ipa: "la naraˈdoɾa ˈkwenta la isˈtoɾja"
+        bases: [{ word: "La", base: "la" }, { word: "narradora", base: "narrador" }, { word: "cuenta", ref: "es-1612" }, { word: "la", base: "la" }, { word: "historia", ref: "es-2554" }]
+  - id: "es-3040"
+    target: "el prólogo"
+    ipa: "el ˈpɾoloɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "prólogo", base: "prólogo" }]
+    examples:
+      - target: "El prólogo explica el libro."
+        ipa: "el ˈpɾoloɡo eksˈplika el ˈlibɾo"
+        bases: [{ word: "El", base: "el" }, { word: "prólogo", base: "prólogo" }, { word: "explica", base: "explicar" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }]
+      - target: "Leo el prólogo primero."
+        ipa: "ˈleo el ˈpɾoloɡo pɾiˈmeɾo"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "prólogo", base: "prólogo" }, { word: "primero", ref: "es-0551" }]
+  - id: "es-3041"
+    target: "el estilo"
+    ipa: "el esˈtilo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estilo", base: "estilo" }]
+    examples:
+      - target: "Su estilo es claro."
+        ipa: "su esˈtilo es ˈklaɾo"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "estilo", base: "estilo" }, { word: "es", ref: "es-0022" }, { word: "claro", ref: "es-0438" }]
+      - target: "Me gusta el estilo de este autor."
+        ipa: "me ˈɡusta el esˈtilo de ˈeste awˈtoɾ"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "estilo", base: "estilo" }, { word: "de", base: "de" }, { word: "este", ref: "es-1897" }, { word: "autor", ref: "es-3035" }]
+  - id: "es-3042"
+    target: "el género"
+    ipa: "el ˈxeneɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "género", base: "género" }]
+    examples:
+      - target: "Me gusta el género policiaco."
+        ipa: "me ˈɡusta el ˈxeneɾo poliˈθjako"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "género", base: "género" }, { word: "policiaco", base: "policiaco" }]
+      - target: "El género de la novela es histórico."
+        ipa: "el ˈxeneɾo de la noˈbela es isˈtoɾiko"
+        bases: [{ word: "El", base: "el" }, { word: "género", base: "género" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "novela", ref: "es-3031" }, { word: "es", ref: "es-0022" }, { word: "histórico", base: "histórico" }]
+  - id: "es-3043"
+    target: "el verso"
+    ipa: "el ˈbeɾso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "verso", base: "verso" }]
+    examples:
+      - target: "El verso es corto."
+        ipa: "el ˈbeɾso es ˈkoɾto"
+        bases: [{ word: "El", base: "el" }, { word: "verso", base: "verso" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-1320" }]
+      - target: "Cada verso tiene once sílabas."
+        ipa: "ˈkada ˈbeɾso ˈtjene ˈonθe ˈsilabas"
+        bases: [{ word: "Cada", ref: "es-0366" }, { word: "verso", base: "verso" }, { word: "tiene", ref: "es-0024" }, { word: "once", ref: "es-0215" }, { word: "sílabas", base: "sílaba" }]
+  - id: "es-3044"
+    target: "la rima"
+    ipa: "la ˈrima"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "rima", base: "rima" }]
+    examples:
+      - target: "La rima es perfecta."
+        ipa: "la ˈrima es peɾˈfekta"
+        bases: [{ word: "La", base: "la" }, { word: "rima", base: "rima" }, { word: "es", ref: "es-0022" }, { word: "perfecta", base: "perfecto" }]
+      - target: "Este poema tiene rima."
+        ipa: "ˈeste poˈema ˈtjene ˈrima"
+        bases: [{ word: "Este", ref: "es-1897" }, { word: "poema", ref: "es-3032" }, { word: "tiene", ref: "es-0024" }, { word: "rima", base: "rima" }]
+  - id: "es-3045"
+    target: "la estrofa"
+    ipa: "la esˈtɾofa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "estrofa", base: "estrofa" }]
+    examples:
+      - target: "La primera estrofa es triste."
+        ipa: "la pɾiˈmeɾa esˈtɾofa es ˈtɾiste"
+        bases: [{ word: "La", base: "la" }, { word: "primera", ref: "es-0551" }, { word: "estrofa", base: "estrofa" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+      - target: "Cada estrofa tiene cuatro versos."
+        ipa: "ˈkada esˈtɾofa ˈtjene ˈkwatɾo ˈbeɾsos"
+        bases: [{ word: "Cada", ref: "es-0366" }, { word: "estrofa", base: "estrofa" }, { word: "tiene", ref: "es-0024" }, { word: "cuatro", ref: "es-0208" }, { word: "versos", ref: "es-3043" }]
+  - id: "es-3046"
+    target: "el ensayo"
+    ipa: "el enˈsaʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ensayo", base: "ensayo" }]
+    examples:
+      - target: "El ensayo es sobre la libertad."
+        ipa: "el enˈsaʝo es ˈsobɾe la libeɾˈtad"
+        bases: [{ word: "El", base: "el" }, { word: "ensayo", base: "ensayo" }, { word: "es", ref: "es-0022" }, { word: "sobre", ref: "es-2243" }, { word: "la", base: "la" }, { word: "libertad", ref: "es-2878" }]
+      - target: "Escribo un ensayo para la clase."
+        ipa: "esˈkɾibo un enˈsaʝo ˈpaɾa la ˈklase"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "un", base: "un" }, { word: "ensayo", base: "ensayo" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-3047"
+    target: "la biografía"
+    ipa: "la bjoɡɾaˈfia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "biografía", base: "biografía" }]
+    examples:
+      - target: "Leo la biografía de un poeta."
+        ipa: "ˈleo la bjoɡɾaˈfia de un poˈeta"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "la", base: "la" }, { word: "biografía", base: "biografía" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "poeta", ref: "es-3033" }]
+      - target: "La biografía es muy interesante."
+        ipa: "la bjoɡɾaˈfia es mwi inteɾeˈsante"
+        bases: [{ word: "La", base: "la" }, { word: "biografía", base: "biografía" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", ref: "es-0424" }]
+  - id: "es-3048"
+    target: "el lector"
+    ipa: "el lekˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "lector", base: "lector" }]
+    examples:
+      - target: "El lector cierra el libro."
+        ipa: "el lekˈtoɾ ˈθjera el ˈlibɾo"
+        bases: [{ word: "El", base: "el" }, { word: "lector", base: "lector" }, { word: "cierra", ref: "es-0789" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }]
+      - target: "La lectora habla del libro."
+        ipa: "la lekˈtoɾa ˈabla del ˈlibɾo"
+        bases: [{ word: "La", base: "la" }, { word: "lectora", base: "lector" }, { word: "habla", ref: "es-0027" }, { word: "del", base: "del" }, { word: "libro", ref: "es-0011" }]
+  - id: "es-3049"
+    target: "la lectura"
+    ipa: "la lekˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lectura", base: "lectura" }]
+    examples:
+      - target: "La lectura es un placer."
+        ipa: "la lekˈtuɾa es un plaˈθeɾ"
+        bases: [{ word: "La", base: "la" }, { word: "lectura", base: "lectura" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "placer", base: "placer" }]
+      - target: "Tengo una lectura para hoy."
+        ipa: "ˈtenɡo ˈuna lekˈtuɾa ˈpaɾa oj"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "lectura", base: "lectura" }, { word: "para", base: "para" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-3050"
+    target: "la ilustración"
+    ipa: "la ilustɾaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ilustración", base: "ilustración" }]
+    examples:
+      - target: "La ilustración es bonita."
+        ipa: "la ilustɾaˈθjon es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "ilustración", base: "ilustración" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "El libro tiene muchas ilustraciones."
+        ipa: "el ˈlibɾo ˈtjene ˈmutʃas ilustɾaˈθjones"
+        bases: [{ word: "El", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "tiene", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "ilustraciones", base: "ilustración" }]
+  - id: "es-3051"
+    target: "la traducción"
+    ipa: "la tɾadukˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "traducción", base: "traducción" }]
+    examples:
+      - target: "La traducción es fiel."
+        ipa: "la tɾadukˈθjon es fjel"
+        bases: [{ word: "La", base: "la" }, { word: "traducción", base: "traducción" }, { word: "es", ref: "es-0022" }, { word: "fiel", base: "fiel" }]
+      - target: "Leo la traducción al español."
+        ipa: "ˈleo la tɾadukˈθjon al espaˈɲol"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "la", base: "la" }, { word: "traducción", base: "traducción" }, { word: "al", base: "al" }, { word: "español", ref: "es-1370" }]
+  - id: "es-3052"
+    target: "traducir"
+    ipa: "tɾaduˈθiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "traducir", base: "traducir" }]
+    examples:
+      - target: "Traduzco el poema."
+        ipa: "tɾaˈduθko el poˈema"
+        bases: [{ word: "Traduzco", base: "traducir" }, { word: "el", base: "el" }, { word: "poema", ref: "es-3032" }]
+      - target: "Traducen la novela al inglés."
+        ipa: "tɾaˈduθen la noˈbela al inˈɡles"
+        bases: [{ word: "Traducen", base: "traducir" }, { word: "la", base: "la" }, { word: "novela", ref: "es-3031" }, { word: "al", base: "al" }, { word: "inglés", ref: "es-1369" }]
+  - id: "es-3053"
+    target: "comentar"
+    ipa: "komenˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "comentar", base: "comentar" }]
+    examples:
+      - target: "Comento el libro con mi amiga."
+        ipa: "koˈmento el ˈlibɾo kon mi aˈmiɡa"
+        bases: [{ word: "Comento", base: "comentar" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "amiga", base: "amiga" }]
+      - target: "Comentan la película."
+        ipa: "koˈmentan la peˈlikula"
+        bases: [{ word: "Comentan", base: "comentar" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }]
+  - id: "es-3054"
+    target: "analizar"
+    ipa: "analiˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "analizar", base: "analizar" }]
+    examples:
+      - target: "Analizo el poema."
+        ipa: "anaˈliθo el poˈema"
+        bases: [{ word: "Analizo", base: "analizar" }, { word: "el", base: "el" }, { word: "poema", ref: "es-3032" }]
+      - target: "Analizan el texto en clase."
+        ipa: "anaˈliθan el ˈteksto en ˈklase"
+        bases: [{ word: "Analizan", base: "analizar" }, { word: "el", base: "el" }, { word: "texto", base: "texto" }, { word: "en", base: "en" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-3055"
+    target: "describir"
+    ipa: "deskɾiˈbiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "describir", base: "describir" }]
+    examples:
+      - target: "Describo la casa."
+        ipa: "desˈkɾibo la ˈkasa"
+        bases: [{ word: "Describo", base: "describir" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+      - target: "Describe el mar al atardecer."
+        ipa: "desˈkɾibe el maɾ al ataɾdeˈθeɾ"
+        bases: [{ word: "Describe", base: "describir" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }, { word: "al", base: "al" }, { word: "atardecer", base: "atardecer" }]
+  - id: "es-3056"
+    target: "narrar"
+    ipa: "naˈraɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "narrar", base: "narrar" }]
+    examples:
+      - target: "Narro la historia de mi abuelo."
+        ipa: "ˈnaro la isˈtoɾja de mi aˈbwelo"
+        bases: [{ word: "Narro", base: "narrar" }, { word: "la", base: "la" }, { word: "historia", ref: "es-2554" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }]
+      - target: "Narran un cuento a los niños."
+        ipa: "ˈnaran un ˈkwento a los ˈniɲos"
+        bases: [{ word: "Narran", base: "narrar" }, { word: "un", base: "un" }, { word: "cuento", ref: "es-1612" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }]
+  - id: "es-3057"
+    target: "recitar"
+    ipa: "reθiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "recitar", base: "recitar" }]
+    examples:
+      - target: "Recito un poema."
+        ipa: "reˈθito un poˈema"
+        bases: [{ word: "Recito", base: "recitar" }, { word: "un", base: "un" }, { word: "poema", ref: "es-3032" }]
+      - target: "Recitan los versos en la clase."
+        ipa: "reˈθitan los ˈbeɾsos en la ˈklase"
+        bases: [{ word: "Recitan", base: "recitar" }, { word: "los", base: "los" }, { word: "versos", ref: "es-3043" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clase", ref: "es-1356" }]
+  - id: "es-3058"
+    target: "el dramaturgo"
+    ipa: "el dɾamaˈtuɾɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dramaturgo", base: "dramaturgo" }]
+    examples:
+      - target: "El dramaturgo escribe obras."
+        ipa: "el dɾamaˈtuɾɡo esˈkɾibe ˈobɾas"
+        bases: [{ word: "El", base: "el" }, { word: "dramaturgo", base: "dramaturgo" }, { word: "escribe", ref: "es-0297" }, { word: "obras", ref: "es-3059" }]
+      - target: "La dramaturga estrena una obra."
+        ipa: "la dɾamaˈtuɾɡa esˈtɾena ˈuna ˈobɾa"
+        bases: [{ word: "La", base: "la" }, { word: "dramaturga", base: "dramaturgo" }, { word: "estrena", base: "estrenar" }, { word: "una", base: "una" }, { word: "obra", ref: "es-3059" }]
+  - id: "es-3059"
+    target: "la obra"
+    ipa: "la ˈobɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "obra", base: "obra" }]
+    examples:
+      - target: "La obra es famosa."
+        ipa: "la ˈobɾa es faˈmosa"
+        bases: [{ word: "La", base: "la" }, { word: "obra", base: "obra" }, { word: "es", ref: "es-0022" }, { word: "famosa", base: "famoso" }]
+      - target: "Veo una obra de teatro."
+        ipa: "ˈbeo ˈuna ˈobɾa de teˈatɾo"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "una", base: "una" }, { word: "obra", base: "obra" }, { word: "de", base: "de" }, { word: "teatro", ref: "es-0780" }]
+  - id: "es-3060"
+    target: "el tema"
+    ipa: "el ˈtema"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tema", base: "tema" }]
+    examples:
+      - target: "El tema del libro es la familia."
+        ipa: "el ˈtema del ˈlibɾo es la faˈmilja"
+        bases: [{ word: "El", base: "el" }, { word: "tema", base: "tema" }, { word: "del", base: "del" }, { word: "libro", ref: "es-0011" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }]
+      - target: "El tema es interesante."
+        ipa: "el ˈtema es inteɾeˈsante"
+        bases: [{ word: "El", base: "el" }, { word: "tema", base: "tema" }, { word: "es", ref: "es-0022" }, { word: "interesante", ref: "es-0424" }]

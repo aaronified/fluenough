@@ -1,0 +1,219 @@
+schema: 1
+id: "es-en-literature"
+kind: "layer"
+core: "es-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature: novels, poems and reading"
+license: "CC-BY-SA-4.0"
+description: "Words for books and poems: the novel and the poem, the author and the poet, the chapter, the page and the stanza, the narrator and the style, the translation and the illustration, and the verbs to describe, analyse, narrate and recite. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-3031":
+    native: "novel"
+    notes: { n1: "La novela is a novel, a long story in prose. A short one is a novela corta." }
+    bases: { "la": "the", "novela": "novel" }
+    examples:
+      "Leo una novela cada mes.": { native: "I read a novel every month.", bases: { "una": "a", "novela": "novel" } }
+      "La novela es muy larga.": { native: "The novel is very long.", bases: { "La": "the", "novela": "novel" } }
+  "es-3032":
+    native: "poem"
+    notes: { n1: "El poema is a poem, a text written in verse. The plural is poemas." }
+    bases: { "el": "the", "poema": "poem" }
+    examples:
+      "El poema habla del amor.": { native: "The poem speaks of love.", bases: { "El": "the", "poema": "poem", "del": "of" } }
+      "Escribo un poema para ti.": { native: "I write a poem for you.", bases: { "un": "a", "poema": "poem", "para": "for", "ti": "you" } }
+  "es-3033":
+    native: "poet"
+    notes: { n1: "El poeta is a poet, a person who writes poems. The feminine is la poeta." }
+    bases: { "el": "the", "poeta": "poet" }
+    examples:
+      "El poeta vive en Sevilla.": { native: "The poet lives in Seville.", bases: { "El": "the", "poeta": "poet", "en": "in" } }
+      "La poeta recita sus versos.": { native: "The poet recites her verses.", bases: { "La": "the", "poeta": "poet" } }
+  "es-3034":
+    native: "poetry"
+    notes: { n1: "La poesía is poetry, the art of writing poems." }
+    bases: { "la": "the", "poesía": "poetry" }
+    examples:
+      "Me gusta la poesía.": { native: "I like poetry.", bases: { "Me": "to me", "la": "the", "poesía": "poetry" } }
+      "La poesía es bella.": { native: "Poetry is beautiful.", bases: { "La": "the", "poesía": "poetry", "bella": "beautiful" } }
+  "es-3035":
+    native: "author"
+    notes: { n1: "El autor is the author of a book or a play. The feminine is la autora." }
+    bases: { "el": "the", "autor": "author" }
+    examples:
+      "El autor escribe muy bien.": { native: "The author writes very well.", bases: { "El": "the", "autor": "author" } }
+      "Es el autor de este libro.": { native: "He is the author of this book.", bases: { "el": "the", "autor": "author", "de": "of" } }
+  "es-3036":
+    native: "chapter"
+    notes: { n1: "El capítulo is a chapter, one part of a book." }
+    bases: { "el": "the", "capítulo": "chapter" }
+    examples:
+      "El capítulo es corto.": { native: "The chapter is short.", bases: { "El": "the", "capítulo": "chapter" } }
+      "Leo el primer capítulo.": { native: "I read the first chapter.", bases: { "el": "the", "capítulo": "chapter" } }
+  "es-3037":
+    native: "paragraph"
+    notes: { n1: "El párrafo is a paragraph, a group of sentences in a text." }
+    bases: { "el": "the", "párrafo": "paragraph" }
+    examples:
+      "El párrafo tiene cinco líneas.": { native: "The paragraph has five lines.", bases: { "El": "the", "párrafo": "paragraph", "líneas": "line" } }
+      "Subrayo un párrafo importante.": { native: "I underline an important paragraph.", bases: { "Subrayo": "to underline", "un": "a", "párrafo": "paragraph" } }
+  "es-3038":
+    native: "page"
+    notes: { n1: "La página is a page of a book, a sheet with writing on both sides." }
+    bases: { "la": "the", "página": "page" }
+    examples:
+      "La página está rota.": { native: "The page is torn.", bases: { "La": "the", "página": "page" } }
+      "Leo cien páginas hoy.": { native: "I read a hundred pages today.", bases: { "páginas": "page" } }
+  "es-3039":
+    native: "narrator"
+    notes: { n1: "El narrador is the person who tells a story. The feminine is la narradora." }
+    bases: { "el": "the", "narrador": "narrator" }
+    examples:
+      "El narrador es un niño.": { native: "The narrator is a child.", bases: { "El": "the", "narrador": "narrator", "un": "a" } }
+      "La narradora cuenta la historia.": { native: "The narrator tells the story.", bases: { "La": "the", "narradora": "narrator", "la": "the" } }
+  "es-3040":
+    native: "prologue; preface"
+    notes: { n1: "El prólogo is the introduction at the start of a book, written before the story." }
+    bases: { "el": "the", "prólogo": "prologue; preface" }
+    examples:
+      "El prólogo explica el libro.": { native: "The preface explains the book.", bases: { "El": "the", "prólogo": "prologue; preface", "explica": "to explain", "el": "the" } }
+      "Leo el prólogo primero.": { native: "I read the preface first.", bases: { "el": "the", "prólogo": "prologue; preface" } }
+  "es-3041":
+    native: "style"
+    notes: { n1: "El estilo is style, the way a writer or artist writes or makes things." }
+    bases: { "el": "the", "estilo": "style" }
+    examples:
+      "Su estilo es claro.": { native: "Their style is clear.", bases: { "estilo": "style" } }
+      "Me gusta el estilo de este autor.": { native: "I like this author's style.", bases: { "Me": "to me", "el": "the", "estilo": "style", "de": "of" } }
+  "es-3042":
+    native: "genre; gender"
+    notes: { n1: "El género is a genre, a type of book or film, or a grammatical gender." }
+    bases: { "el": "the", "género": "genre; gender" }
+    examples:
+      "Me gusta el género policiaco.": { native: "I like the crime genre.", bases: { "Me": "to me", "el": "the", "género": "genre; gender", "policiaco": "crime (genre)" } }
+      "El género de la novela es histórico.": { native: "The genre of the novel is historical.", bases: { "El": "the", "género": "genre; gender", "de": "of", "la": "the", "histórico": "historical" } }
+  "es-3043":
+    native: "verse; line of poetry"
+    notes: { n1: "El verso is a line of a poem. The plural is versos." }
+    bases: { "el": "the", "verso": "verse; line of poetry" }
+    examples:
+      "El verso es corto.": { native: "The line is short.", bases: { "El": "the", "verso": "verse; line of poetry" } }
+      "Cada verso tiene once sílabas.": { native: "Each line has eleven syllables.", bases: { "verso": "verse; line of poetry", "sílabas": "syllable" } }
+  "es-3044":
+    native: "rhyme"
+    notes: { n1: "La rima is a rhyme, the sound at the end of two lines that match." }
+    bases: { "la": "the", "rima": "rhyme" }
+    examples:
+      "La rima es perfecta.": { native: "The rhyme is perfect.", bases: { "La": "the", "rima": "rhyme", "perfecta": "perfect" } }
+      "Este poema tiene rima.": { native: "This poem has rhyme.", bases: { "rima": "rhyme" } }
+  "es-3045":
+    native: "stanza"
+    notes: { n1: "La estrofa is a stanza, a group of lines in a poem." }
+    bases: { "la": "the", "estrofa": "stanza" }
+    examples:
+      "La primera estrofa es triste.": { native: "The first stanza is sad.", bases: { "La": "the", "estrofa": "stanza" } }
+      "Cada estrofa tiene cuatro versos.": { native: "Each stanza has four lines.", bases: { "estrofa": "stanza" } }
+  "es-3046":
+    native: "essay"
+    notes: { n1: "El ensayo is an essay, a short text that argues a point." }
+    bases: { "el": "the", "ensayo": "essay" }
+    examples:
+      "El ensayo es sobre la libertad.": { native: "The essay is about freedom.", bases: { "El": "the", "ensayo": "essay", "la": "the" } }
+      "Escribo un ensayo para la clase.": { native: "I write an essay for the class.", bases: { "un": "a", "ensayo": "essay", "para": "for", "la": "the" } }
+  "es-3047":
+    native: "biography"
+    notes: { n1: "La biografía is a biography, the story of a person's life, written by another." }
+    bases: { "la": "the", "biografía": "biography" }
+    examples:
+      "Leo la biografía de un poeta.": { native: "I read the biography of a poet.", bases: { "la": "the", "biografía": "biography", "de": "of", "un": "a" } }
+      "La biografía es muy interesante.": { native: "The biography is very interesting.", bases: { "La": "the", "biografía": "biography" } }
+  "es-3048":
+    native: "reader"
+    notes: { n1: "El lector is a reader, a person who reads a book. The feminine is la lectora." }
+    bases: { "el": "the", "lector": "reader" }
+    examples:
+      "El lector cierra el libro.": { native: "The reader closes the book.", bases: { "El": "the", "lector": "reader", "el": "the" } }
+      "La lectora habla del libro.": { native: "The reader talks about the book.", bases: { "La": "the", "lectora": "reader", "del": "of" } }
+  "es-3049":
+    native: "reading"
+    notes: { n1: "La lectura is the act of reading, or the thing one reads." }
+    bases: { "la": "the", "lectura": "reading" }
+    examples:
+      "La lectura es un placer.": { native: "Reading is a pleasure.", bases: { "La": "the", "lectura": "reading", "un": "a", "placer": "pleasure" } }
+      "Tengo una lectura para hoy.": { native: "I have a reading for today.", bases: { "una": "a", "lectura": "reading", "para": "for" } }
+  "es-3050":
+    native: "illustration"
+    notes: { n1: "La ilustración is an illustration, a picture that goes with a text." }
+    bases: { "la": "the", "ilustración": "illustration" }
+    examples:
+      "La ilustración es bonita.": { native: "The illustration is pretty.", bases: { "La": "the", "ilustración": "illustration" } }
+      "El libro tiene muchas ilustraciones.": { native: "The book has many illustrations.", bases: { "El": "the", "ilustraciones": "illustration" } }
+  "es-3051":
+    native: "translation"
+    notes: { n1: "La traducción is a translation, a text put into another language." }
+    bases: { "la": "the", "traducción": "translation" }
+    examples:
+      "La traducción es fiel.": { native: "The translation is faithful.", bases: { "La": "the", "traducción": "translation", "fiel": "faithful" } }
+      "Leo la traducción al español.": { native: "I read the translation into Spanish.", bases: { "la": "the", "traducción": "translation", "al": "to the" } }
+  "es-3052":
+    native: "to translate"
+    notes: { n1: "Traducir is to put a text from one language into another. Its yo form is traduzco." }
+    bases: { "traducir": "to translate" }
+    examples:
+      "Traduzco el poema.": { native: "I translate the poem.", bases: { "Traduzco": "to translate", "el": "the" } }
+      "Traducen la novela al inglés.": { native: "They translate the novel into English.", bases: { "Traducen": "to translate", "la": "the", "al": "to the" } }
+  "es-3053":
+    native: "to comment on"
+    notes: { n1: "Comentar is to give an opinion or an explanation about a text or a fact." }
+    bases: { "comentar": "to comment on" }
+    examples:
+      "Comento el libro con mi amiga.": { native: "I comment on the book with my friend.", bases: { "Comento": "to comment on", "el": "the", "con": "with", "amiga": "friend" } }
+      "Comentan la película.": { native: "They comment on the film.", bases: { "Comentan": "to comment on", "la": "the" } }
+  "es-3054":
+    native: "to analyse"
+    notes: { n1: "Analizar is to study something in detail, to look at its parts." }
+    bases: { "analizar": "to analyse" }
+    examples:
+      "Analizo el poema.": { native: "I analyse the poem.", bases: { "Analizo": "to analyse", "el": "the" } }
+      "Analizan el texto en clase.": { native: "They analyse the text in class.", bases: { "Analizan": "to analyse", "el": "the", "texto": "text", "en": "in" } }
+  "es-3055":
+    native: "to describe"
+    notes: { n1: "Describir is to say what something is like, with details. Its yo form is describo." }
+    bases: { "describir": "to describe" }
+    examples:
+      "Describo la casa.": { native: "I describe/describir the house.", bases: { "Describo": "to describe", "la": "the" } }
+      "Describe el mar al atardecer.": { native: "She describes the sea at dusk.", bases: { "Describe": "to describe", "el": "the", "al": "to the", "atardecer": "dusk; late afternoon" } }
+  "es-3056":
+    native: "to narrate"
+    notes: { n1: "Narrar is to tell a story, to say what happened in order." }
+    bases: { "narrar": "to narrate" }
+    examples:
+      "Narro la historia de mi abuelo.": { native: "I narrate my grandfather's story.", bases: { "Narro": "to narrate", "la": "the", "de": "of" } }
+      "Narran un cuento a los niños.": { native: "They narrate a story to the children.", bases: { "Narran": "to narrate", "un": "a", "a": "to", "los": "the" } }
+  "es-3057":
+    native: "to recite"
+    notes: { n1: "Recitar is to say a poem or a text aloud from memory." }
+    bases: { "recitar": "to recite" }
+    examples:
+      "Recito un poema.": { native: "I recite a poem.", bases: { "Recito": "to recite", "un": "a" } }
+      "Recitan los versos en la clase.": { native: "They recite the verses in class.", bases: { "Recitan": "to recite", "los": "the", "en": "in", "la": "the" } }
+  "es-3058":
+    native: "playwright"
+    notes: { n1: "El dramaturgo is a playwright, a person who writes plays. The feminine is la dramaturga." }
+    bases: { "el": "the", "dramaturgo": "playwright" }
+    examples:
+      "El dramaturgo escribe obras.": { native: "The playwright writes plays.", bases: { "El": "the", "dramaturgo": "playwright" } }
+      "La dramaturga estrena una obra.": { native: "The playwright premieres a play.", bases: { "La": "the", "dramaturga": "playwright", "estrena": "to premiere", "una": "a" } }
+  "es-3059":
+    native: "work; play"
+    notes: { n1: "La obra is a work of art, a book, a play, or a piece of building." }
+    bases: { "la": "the", "obra": "work; play" }
+    examples:
+      "La obra es famosa.": { native: "The work is famous.", bases: { "La": "the", "obra": "work; play", "famosa": "famous" } }
+      "Veo una obra de teatro.": { native: "I see a play.", bases: { "una": "a", "obra": "work; play", "de": "of" } }
+  "es-3060":
+    native: "theme; topic"
+    notes: { n1: "El tema is the theme or topic of a text, a talk or a song." }
+    bases: { "el": "the", "tema": "theme; topic" }
+    examples:
+      "El tema del libro es la familia.": { native: "The theme of the book is family.", bases: { "El": "the", "tema": "theme; topic", "del": "of", "la": "the" } }
+      "El tema es interesante.": { native: "The topic is interesting.", bases: { "El": "the", "tema": "theme; topic" } }

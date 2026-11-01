@@ -525,7 +525,8 @@ units:
       - { id: "if-i-were-you", text: { "en": "Giving advice with if I were you" } }
     reading_passages:
       - { id: "advice-column", text: { "en": "A short advice column" } }
-  - planned: { id: "es-literature", theme: "literature", words: 50 }
+  - decks: ["es-literature", "es-literature-sentences", "es-reading-literature", "*"]
+    words: 30
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:

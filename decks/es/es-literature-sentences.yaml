@@ -1,0 +1,50 @@
+schema: 1
+id: "es-literature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-3061"
+    target: "El autor escribe una novela corta."
+    ipa: "el awˈtoɾ esˈkɾibe ˈuna noˈbela ˈkoɾta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "autor", ref: "es-3035" }, { word: "escribe", ref: "es-0297" }, { word: "una", base: "una" }, { word: "novela", ref: "es-3031" }, { word: "corta", ref: "es-1320" }]
+    confusables: [{ id: "narrador", ref: "es-3039", kind: "word" }, { id: "dramaturgo", ref: "es-3058", kind: "word" }]
+  - id: "es-3062"
+    target: "El poema tiene tres estrofas con rima."
+    ipa: "el poˈema ˈtjene tɾes esˈtɾofas kon ˈrima"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "poema", ref: "es-3032" }, { word: "tiene", ref: "es-0024" }, { word: "tres", ref: "es-0207" }, { word: "estrofas", ref: "es-3045" }, { word: "con", base: "con" }, { word: "rima", ref: "es-3044" }]
+    confusables: [{ id: "verso", ref: "es-3043", kind: "word" }, { id: "parrafo", ref: "es-3037", kind: "word" }]
+  - id: "es-3063"
+    target: "Leo el capítulo y subrayo una página."
+    ipa: "ˈleo el kaˈpitulo i suˈbɾaʝo ˈuna ˈpaxina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "capítulo", ref: "es-3036" }, { word: "y", ref: "es-0048" }, { word: "subrayo", base: "subrayar" }, { word: "una", base: "una" }, { word: "página", ref: "es-3038" }]
+    confusables: [{ id: "lectura", ref: "es-3049", kind: "word" }, { id: "lector", ref: "es-3048", kind: "word" }]
+  - id: "es-3064"
+    target: "La traducción del ensayo es fiel."
+    ipa: "la tɾadukˈθjon del enˈsaʝo es fjel"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "traducción", ref: "es-3051" }, { word: "del", base: "del" }, { word: "ensayo", ref: "es-3046" }, { word: "es", ref: "es-0022" }, { word: "fiel", base: "fiel" }]
+    confusables: [{ id: "ilustracion", ref: "es-3050", kind: "word" }, { id: "biografia", ref: "es-3047", kind: "word" }]
+  - id: "es-3065"
+    target: "Analizo el tema y describo el estilo."
+    ipa: "anaˈliθo el ˈtema i desˈkɾibo el esˈtilo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Analizo", ref: "es-3054" }, { word: "el", base: "el" }, { word: "tema", ref: "es-3060" }, { word: "y", ref: "es-0048" }, { word: "describo", ref: "es-3055" }, { word: "el", base: "el" }, { word: "estilo", ref: "es-3041" }]
+    confusables: [{ id: "comentar", ref: "es-3053", kind: "word" }, { id: "narrar", ref: "es-3056", kind: "word" }]
+  - id: "es-3066"
+    target: "Recito un poema de la poesía antigua."
+    ipa: "reˈθito un poˈema de la poeˈsia anˈtiɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Recito", ref: "es-3057" }, { word: "un", base: "un" }, { word: "poema", ref: "es-3032" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "poesía", ref: "es-3034" }, { word: "antigua", ref: "es-1804" }]
+    confusables: [{ id: "obra", ref: "es-3059", kind: "word" }, { id: "prologo", ref: "es-3040", kind: "word" }]
