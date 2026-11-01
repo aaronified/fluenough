@@ -55,6 +55,7 @@ class StatsPage extends StatelessWidget {
 
     final actions = LeechActions.of(state.progress);
     return VisibleListenableBuilder(
+      warmUp: true,
       listenable: Listenable.merge(<Listenable>[
         state.progress,
         actions,
