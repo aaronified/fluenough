@@ -1,0 +1,381 @@
+schema: 1
+id: "fr-en-location"
+kind: "layer"
+core: "fr-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+license: "CC-BY-SA-4.0"
+description: "Words for where things are: près, loin, devant, derrière, sous, sur, entre, contre, chez, à côté, à gauche and à droite, with clé, sac and table. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0464":
+    native: "near"
+    notes:
+      "n1": "Près is 'near'. With de it means 'near to': près de la gare (near the station). Its opposite is loin."
+    examples:
+      "Le musée est près de la gare.":
+        native: "The museum is near the station."
+        bases:
+          "Le": "the"
+          "près": "near"
+          "de": "of; from; some"
+          "la": "the"
+      "Ma mère habite près de la gare.":
+        native: "My mother lives near the station."
+        bases:
+          "près": "near"
+          "de": "of; from; some"
+          "la": "the"
+  "fr-0465":
+    native: "far"
+    notes:
+      "n1": "Loin is 'far'. Its opposite is près. With de it means 'far from': loin de la gare (far from the station)."
+    examples:
+      "La gare est loin.":
+        native: "The station is far."
+        bases:
+          "La": "the"
+          "loin": "far"
+      "Mon père habite loin.":
+        native: "My father lives far away."
+        bases:
+          "loin": "far"
+  "fr-0466":
+    native: "in front of"
+    notes:
+      "n1": "Devant is 'in front of'. It is followed by a noun or a pronoun: devant moi (in front of me)."
+    examples:
+      "Le train est devant la gare.":
+        native: "The train is in front of the station."
+        bases:
+          "Le": "the"
+          "devant": "in front of"
+          "la": "the"
+      "Ma sœur est devant moi.":
+        native: "My sister is in front of me."
+        bases:
+          "devant": "in front of"
+  "fr-0467":
+    native: "behind"
+    notes:
+      "n1": "Derrière is 'behind'. It is the opposite of devant (in front of)."
+    examples:
+      "Ma mère est derrière moi.":
+        native: "My mother is behind me."
+        bases:
+          "derrière": "behind"
+      "Le musée est derrière la gare.":
+        native: "The museum is behind the station."
+        bases:
+          "Le": "the"
+          "derrière": "behind"
+          "la": "the"
+  "fr-0468":
+    native: "under"
+    notes:
+      "n1": "Sous is 'under'. It is followed by a noun: sous la table (under the table). Its opposite is sur."
+    examples:
+      "La clé est sous le sac.":
+        native: "The key is under the bag."
+        bases:
+          "La": "the"
+          "sous": "under"
+          "le": "the"
+      "Il est sous la table.":
+        native: "It is under the table."
+        bases:
+          "sous": "under"
+          "la": "the"
+  "fr-0469":
+    native: "on"
+    notes:
+      "n1": "Sur is 'on', as on top of something. Its opposite is sous (under)."
+    examples:
+      "Le sac est sur la table.":
+        native: "The bag is on the table."
+        bases:
+          "Le": "the"
+          "sur": "on"
+          "la": "the"
+      "Ma clé est sur le sac.":
+        native: "My key is on the bag."
+        bases:
+          "sur": "on"
+          "le": "the"
+  "fr-0470":
+    native: "between"
+    notes:
+      "n1": "Entre is 'between', with two things or people: entre le musée et la gare (between the museum and the station)."
+    examples:
+      "La rue est entre la gare et le musée.":
+        native: "The street is between the station and the museum."
+        bases:
+          "La": "the"
+          "entre": "between"
+          "la": "the"
+          "le": "the"
+      "Ma sœur est entre mon père et ma mère.":
+        native: "My sister is between my father and my mother."
+        bases:
+          "entre": "between"
+  "fr-0471":
+    native: "against"
+    notes:
+      "n1": "Contre is 'against' or 'next to' something it touches, as in contre la table (against the table)."
+    examples:
+      "Le sac est contre la table.":
+        native: "The bag is against the table."
+        bases:
+          "Le": "the"
+          "contre": "against"
+          "la": "the"
+      "Vous êtes contre moi.":
+        native: "You are against me."
+        bases:
+          "contre": "against"
+  "fr-0472":
+    native: "at the home of; at"
+    notes:
+      "n1": "Chez is 'at the home of' or 'at the place of'. Chez moi is 'at my home', and chez mon ami is 'at my friend's'."
+    examples:
+      "Je mange chez moi.":
+        native: "I eat at home."
+        bases:
+          "chez": "at the home of; at"
+      "Nous sommes chez mon ami.":
+        native: "We are at my friend's place."
+        bases:
+          "chez": "at the home of; at"
+  "fr-0473":
+    native: "side; next to"
+    notes:
+      "n1": "Côté is 'side'. À côté de is 'next to'. It is a masculine noun: le côté (the side)."
+    examples:
+      "Le musée est à côté de la gare.":
+        native: "The museum is next to the station."
+        bases:
+          "Le": "the"
+          "à": "to; at; in"
+          "côté": "side; next to"
+          "de": "of; from; some"
+          "la": "the"
+      "Le sac est à côté de moi.":
+        native: "The bag is next to me."
+        bases:
+          "Le": "the"
+          "à": "to; at; in"
+          "côté": "side; next to"
+          "de": "of; from; some"
+  "fr-0474":
+    native: "corner"
+    notes:
+      "n1": "Coin is 'corner', a masculine noun: le coin (the corner). It is also a small place in a room."
+    examples:
+      "Le sac est dans le coin.":
+        native: "The bag is in the corner."
+        bases:
+          "Le": "the"
+          "le": "the"
+          "coin": "corner"
+      "Le coin est petit.":
+        native: "The corner is small."
+        bases:
+          "Le": "the"
+          "coin": "corner"
+  "fr-0475":
+    native: "middle"
+    notes:
+      "n1": "Milieu is 'middle', a masculine noun: le milieu de la ville (the middle of the town)."
+    examples:
+      "Le milieu de la table est vide.":
+        native: "The middle of the table is empty."
+        bases:
+          "Le": "the"
+          "milieu": "middle"
+          "de": "of; from; some"
+          "la": "the"
+      "Le musée est dans le milieu de la ville.":
+        native: "The museum is in the middle of the town."
+        bases:
+          "Le": "the"
+          "le": "the"
+          "milieu": "middle"
+          "de": "of; from; some"
+          "la": "the"
+  "fr-0476":
+    native: "bottom; back; end"
+    notes:
+      "n1": "Fond is 'bottom', 'back' or 'end', a masculine noun. Dans le fond is 'at the back'."
+    examples:
+      "La clé est dans le fond.":
+        native: "The key is at the bottom."
+        bases:
+          "La": "the"
+          "le": "the"
+          "fond": "bottom; back; end"
+      "Le fond de la rue est loin.":
+        native: "The end of the street is far."
+        bases:
+          "Le": "the"
+          "fond": "bottom; back; end"
+          "de": "of; from; some"
+          "la": "the"
+  "fr-0477":
+    native: "face; opposite"
+    notes:
+      "n1": "Face is 'face', a feminine noun. Face à is 'opposite' or 'facing': face à la gare (opposite the station)."
+    examples:
+      "Le musée est face à la gare.":
+        native: "The museum is opposite the station."
+        bases:
+          "Le": "the"
+          "face": "face; opposite"
+          "à": "to; at; in"
+          "la": "the"
+      "Ma sœur est face à moi.":
+        native: "My sister is facing me."
+        bases:
+          "face": "face; opposite"
+          "à": "to; at; in"
+  "fr-0478":
+    native: "left"
+    notes:
+      "n1": "Gauche is 'left', a feminine noun: à gauche (on the left). Its opposite is droite."
+    examples:
+      "La gare est à gauche.":
+        native: "The station is on the left."
+        bases:
+          "La": "the"
+          "à": "to; at; in"
+          "gauche": "left"
+      "Le sac est à gauche.":
+        native: "The bag is on the left."
+        bases:
+          "Le": "the"
+          "à": "to; at; in"
+          "gauche": "left"
+  "fr-0479":
+    native: "right"
+    notes:
+      "n1": "Droite is 'right', a feminine noun: à droite (on the right). Its opposite is gauche."
+    examples:
+      "La rue est à droite.":
+        native: "The street is on the right."
+        bases:
+          "La": "the"
+          "à": "to; at; in"
+          "droite": "right"
+      "Ma clé est à droite.":
+        native: "My key is on the right."
+        bases:
+          "à": "to; at; in"
+          "droite": "right"
+  "fr-0480":
+    native: "on top; above"
+    notes:
+      "n1": "Dessus is 'on top' or 'above', with no noun after it: la clé est dessus (the key is on top)."
+    examples:
+      "La clé est dessus.":
+        native: "The key is on top."
+        bases:
+          "La": "the"
+          "dessus": "on top; above"
+      "Le sac est dessus.":
+        native: "The bag is on top."
+        bases:
+          "Le": "the"
+          "dessus": "on top; above"
+  "fr-0481":
+    native: "underneath; below"
+    notes:
+      "n1": "Dessous is 'underneath' or 'below', with no noun after it. Its opposite is dessus."
+    examples:
+      "La clé est dessous.":
+        native: "The key is underneath."
+        bases:
+          "La": "the"
+          "dessous": "underneath; below"
+      "Le sac est dessous.":
+        native: "The bag is underneath."
+        bases:
+          "Le": "the"
+          "dessous": "underneath; below"
+  "fr-0482":
+    native: "around"
+    notes:
+      "n1": "Autour is 'around'. Autour de is 'around' something: autour de la table (around the table)."
+    examples:
+      "Ma famille est autour de la table.":
+        native: "My family is around the table."
+        bases:
+          "autour": "around"
+          "de": "of; from; some"
+          "la": "the"
+      "Les amis sont autour de moi.":
+        native: "The friends are around me."
+        bases:
+          "autour": "around"
+          "de": "of; from; some"
+  "fr-0483":
+    native: "elsewhere"
+    notes:
+      "n1": "Ailleurs is 'elsewhere' or 'somewhere else'. It is used when a thing or a person is not here."
+    examples:
+      "Mon père est ailleurs.":
+        native: "My father is somewhere else."
+        bases:
+          "ailleurs": "elsewhere"
+      "Ma clé est ailleurs.":
+        native: "My key is elsewhere."
+        bases:
+          "ailleurs": "elsewhere"
+  "fr-0484":
+    native: "key"
+    notes:
+      "n1": "Clé is 'key', a feminine noun: la clé (the key). It is spelled with an accent and said kle."
+    examples:
+      "La clé est sous le sac.":
+        native: "The key is under the bag."
+        bases:
+          "La": "the"
+          "clé": "key"
+          "le": "the"
+      "Ma clé est à droite.":
+        native: "My key is on the right."
+        bases:
+          "clé": "key"
+          "à": "to; at; in"
+  "fr-0485":
+    native: "bag"
+    notes:
+      "n1": "Sac is 'bag', a masculine noun: le sac (the bag). It can be a shopping bag or a handbag."
+    examples:
+      "Le sac est sur la table.":
+        native: "The bag is on the table."
+        bases:
+          "Le": "the"
+          "sac": "bag"
+          "la": "the"
+      "Le sac est à gauche.":
+        native: "The bag is on the left."
+        bases:
+          "Le": "the"
+          "sac": "bag"
+          "à": "to; at; in"
+  "fr-0486":
+    native: "table"
+    notes:
+      "n1": "Table is 'table', a feminine noun: la table (the table). It is the same word in English and French."
+    examples:
+      "Il est sous la table.":
+        native: "It is under the table."
+        bases:
+          "la": "the"
+          "table": "table"
+      "Le milieu de la table est vide.":
+        native: "The middle of the table is empty."
+        bases:
+          "Le": "the"
+          "de": "of; from; some"
+          "la": "the"
+          "table": "table"

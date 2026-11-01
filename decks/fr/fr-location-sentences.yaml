@@ -1,0 +1,114 @@
+schema: 1
+id: "fr-location-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0487"
+    target: "Le musée est près de la gare."
+    ipa: "lə myze ɛ pʁɛ də la gaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "musée", ref: "fr-0077" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "loin", ref: "fr-0465", kind: "word" }
+      - { id: "devant", ref: "fr-0466", kind: "word" }
+  - id: "fr-0488"
+    target: "La clé est sous le sac."
+    ipa: "la kle ɛ su lə sak"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "clé", ref: "fr-0484" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "sous", ref: "fr-0468" }
+      - { word: "le", base: "le" }
+      - { word: "sac", ref: "fr-0485" }
+    confusables:
+      - { id: "sur", ref: "fr-0469", kind: "word" }
+      - { id: "dessous", ref: "fr-0481", kind: "word" }
+  - id: "fr-0489"
+    target: "Ma sœur est entre mon père et ma mère."
+    ipa: "ma sœʁ ɛ ɑ̃tʁ mɔ̃ pɛʁ e ma mɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "entre", ref: "fr-0470" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "mère", ref: "fr-0166" }
+    confusables:
+      - { id: "contre", ref: "fr-0471", kind: "word" }
+      - { id: "autour", ref: "fr-0482", kind: "word" }
+  - id: "fr-0490"
+    target: "Le sac est à côté de moi."
+    ipa: "lə sak ɛ a kote də mwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "sac", ref: "fr-0485" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "à", base: "à" }
+      - { word: "côté", ref: "fr-0473" }
+      - { word: "de", base: "de" }
+      - { word: "moi", ref: "fr-0133" }
+    confusables:
+      - { id: "chez", ref: "fr-0472", kind: "word" }
+      - { id: "contre", ref: "fr-0471", kind: "word" }
+  - id: "fr-0491"
+    target: "Je mange chez moi."
+    ipa: "ʒə mɑ̃ʒ ʃe mwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mange", ref: "fr-0282" }
+      - { word: "chez", ref: "fr-0472" }
+      - { word: "moi", ref: "fr-0133" }
+    confusables:
+      - { id: "ailleurs", ref: "fr-0483", kind: "word" }
+      - { id: "dans", ref: "fr-0049", kind: "word" }
+  - id: "fr-0492"
+    target: "La rue est à droite."
+    ipa: "la ʁy ɛ a dʁwat"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "rue", ref: "fr-0041" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "à", base: "à" }
+      - { word: "droite", ref: "fr-0479" }
+    confusables:
+      - { id: "gauche", ref: "fr-0478", kind: "word" }
+      - { id: "devant", ref: "fr-0466", kind: "word" }
+  - id: "fr-0493"
+    target: "Mon père est ailleurs."
+    ipa: "mɔ̃ pɛʁ ɛ ajœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "ailleurs", ref: "fr-0483" }
+    confusables:
+      - { id: "loin", ref: "fr-0465", kind: "word" }
+      - { id: "derriere", ref: "fr-0467", kind: "word" }

@@ -1,0 +1,59 @@
+schema: 1
+id: "fr-en-location-sentences"
+kind: "layer"
+core: "fr-location-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: where things are"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about where things are, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0487":
+    native: "The museum is near the station."
+    bases:
+      "Le": "the"
+      "de": "of; from; some"
+      "la": "the"
+    confusables:
+      "loin": { why: "Loin is 'far', the opposite." }
+      "devant": { why: "Devant is 'in front of', a place, not near." }
+  "fr-0488":
+    native: "The key is under the bag."
+    bases:
+      "La": "the"
+      "le": "the"
+    confusables:
+      "sur": { why: "Sur is 'on', the opposite of sous." }
+      "dessous": { why: "Dessous is 'underneath' with no noun after it." }
+  "fr-0489":
+    native: "My sister is between my father and my mother."
+    confusables:
+      "contre": { why: "Contre is 'against', not 'between'." }
+      "autour": { why: "Autour is 'around', not 'between'." }
+  "fr-0490":
+    native: "The bag is next to me."
+    bases:
+      "Le": "the"
+      "à": "to; at; in"
+      "de": "of; from; some"
+    confusables:
+      "chez": { why: "Chez is 'at the home of', not 'next to'." }
+      "contre": { why: "Contre is 'against' something it touches." }
+  "fr-0491":
+    native: "I eat at home."
+    confusables:
+      "ailleurs": { why: "Ailleurs is 'elsewhere', the opposite of chez moi." }
+      "dans": { why: "Dans is 'in', a different word for a place." }
+  "fr-0492":
+    native: "The street is on the right."
+    bases:
+      "La": "the"
+      "à": "to; at; in"
+    confusables:
+      "gauche": { why: "Gauche is 'left', the opposite." }
+      "devant": { why: "Devant is 'in front of', not 'on the right'." }
+  "fr-0493":
+    native: "My father is somewhere else."
+    confusables:
+      "loin": { why: "Loin is 'far', which is a distance, not 'elsewhere'." }
+      "derriere": { why: "Derrière is 'behind'." }
