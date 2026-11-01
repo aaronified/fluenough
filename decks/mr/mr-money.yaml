@@ -1,0 +1,244 @@
+schema: 1
+id: "mr-money"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "money"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1747"
+    target: "पैसा"
+    reading: "paisā"
+    ipa: "pəisa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पैसा", reading: "paisā" }] }
+    examples:
+      - { target: "माझ्याकडे पैसा नाही.", reading: "mājhyākḍe paisā nāhi.", ipa: "madʒʱjakɖe pəisa naɦi", bases: [{ word: "माझ्याकडे", ref: "mr-0080" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "पैशांचं नियोजन करा.", reading: "paiśāñcam̐ niyojan karā.", ipa: "pəiʃaɲtsə̃ nijodzən kəra", bases: [{ word: "पैशांचं", ref: "mr-1747" }, { word: "नियोजन", base: "नियोजन", reading: "niyojan" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1748"
+    target: "कमाई"
+    reading: "kamāi"
+    ipa: "kəmai"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कमाई", reading: "kamāi" }] }
+    examples:
+      - { target: "त्याची महिन्याची कमाई चांगली आहे.", reading: "tyāci mahinyāci kamāi cāṅgali āhe.", ipa: "t̪jatʃi məɦinjatʃi kəmai tsaŋɡəli aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "महिन्याची", ref: "mr-0514" }, { word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कमाईतून घर चालतं.", reading: "kamāitun ghar cāltam̐.", ipa: "kəmait̪un ɡʱər tsalt̪ə̃", bases: [{ word: "कमाईतून", ref: "mr-1748" }, { word: "घर", ref: "mr-0048" }, { word: "चालतं", ref: "mr-0512" }] }
+  - id: "mr-1749"
+    target: "उत्पन्न"
+    reading: "utpann"
+    ipa: "ut̪pənn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उत्पन्न", reading: "utpann" }] }
+    examples:
+      - { target: "माझं वार्षिक उत्पन्न वाढलं.", reading: "mājham̐ vārṣik utpann vāḍhlam̐.", ipa: "madzʱə̃ ʋarʂik ut̪pənn ʋaɖʱlə̃", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "वार्षिक", base: "वार्षिक", reading: "vārṣik" }, { word: "वाढलं", ref: "mr-1027" }] }
+      - { target: "उत्पन्नाचा दाखला आणा.", reading: "utpannācā dākhlā āṇā.", ipa: "ut̪pənnatsa d̪akʰla aɳa", bases: [{ word: "उत्पन्नाचा", ref: "mr-1749" }, { word: "दाखला", base: "दाखला", reading: "dākhlā" }, { word: "आणा", ref: "mr-0800" }] }
+  - id: "mr-1750"
+    target: "खर्च"
+    reading: "kharc"
+    ipa: "kʰərts"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खर्च", reading: "kharc" }] }
+    examples:
+      - { target: "महिन्याचा खर्च जास्त झाला.", reading: "mahinyācā kharc jāst jhālā.", ipa: "məɦinjatsa kʰərts dzast̪ dzʱala", bases: [{ word: "महिन्याचा", ref: "mr-0514" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "खर्च कमी करायला हवा.", reading: "kharc kami karāylā havā.", ipa: "kʰərts kəmi kərajla ɦəʋa", bases: [{ word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवा", ref: "mr-1018" }] }
+  - id: "mr-1751"
+    target: "बचत"
+    reading: "bacat"
+    ipa: "bətsət̪"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बचत", reading: "bacat" }] }
+    examples:
+      - { target: "दरमहा थोडी बचत करतो.", reading: "darmhā thoḍi bacat karto.", ipa: "d̪ərmɦa t̪ʰoɖi bətsət̪ kərt̪o", bases: [{ word: "दरमहा", base: "दरमहा", reading: "darmhā" }, { word: "थोडी", base: "थोडा", reading: "thoḍā" }, { word: "करतो", ref: "mr-0712" }] }
+      - { target: "बचत बँकेत ठेवा.", reading: "bacat bam̐ket ṭhevā.", ipa: "bətsət̪ bə̃ket̪ ʈʰeʋa", bases: [{ word: "बँकेत", ref: "mr-0959" }, { word: "ठेवा", ref: "mr-0723" }] }
+  - id: "mr-1752"
+    target: "गुंतवणूक"
+    reading: "guntavṇuk"
+    ipa: "ɡunt̪əʋɳuk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गुंतवणूक", reading: "guntavṇuk" }] }
+    examples:
+      - { target: "ही चांगली गुंतवणूक आहे.", reading: "hi cāṅgali guntavṇuk āhe.", ipa: "ɦi tsaŋɡəli ɡunt̪əʋɳuk aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गुंतवणुकीचा विचार करा.", reading: "guntavṇukicā vicār karā.", ipa: "ɡunt̪əʋɳukitsa ʋitsar kəra", bases: [{ word: "गुंतवणुकीचा", ref: "mr-1752" }, { word: "विचार", ref: "mr-1365" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1753"
+    target: "कर्ज"
+    reading: "karj"
+    ipa: "kərdz"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर्ज", reading: "karj" }] }
+    examples:
+      - { target: "त्याने बँकेकडून कर्ज घेतलं.", reading: "tyāne bam̐kekḍun karj ghetlam̐.", ipa: "t̪jane bə̃kekɖun kərdz ɡʱet̪lə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "बँकेकडून", ref: "mr-0959" }, { word: "घेतलं", ref: "mr-0722" }] }
+      - { target: "कर्ज फेडायला वेळ लागेल.", reading: "karj pheḍāylā veḷ lāgel.", ipa: "kərdz pʰeɖajla ʋeɭ laɡel", bases: [{ word: "फेडायला", base: "फेडणे", reading: "pheḍṇe" }, { word: "वेळ", ref: "mr-0122" }, { word: "लागेल", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1754"
+    target: "व्याज"
+    reading: "vyāj"
+    ipa: "ʋjadz"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "व्याज", reading: "vyāj" }] }
+    examples:
+      - { target: "बँकेत व्याज मिळतं.", reading: "bam̐ket vyāj miḷtam̐.", ipa: "bə̃ket̪ ʋjadz miɭt̪ə̃", bases: [{ word: "बँकेत", ref: "mr-0959" }, { word: "मिळतं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "कर्जावर जास्त व्याज आहे.", reading: "karjāvar jāst vyāj āhe.", ipa: "kərdzaʋər dzast̪ ʋjadz aɦe", bases: [{ word: "कर्जावर", ref: "mr-1753" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1755"
+    target: "विमा"
+    reading: "vimā"
+    ipa: "ʋima"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विमा", reading: "vimā" }] }
+    examples:
+      - { target: "आरोग्य विमा घेतला.", reading: "ārogy vimā ghetlā.", ipa: "aroɡj ʋima ɡʱet̪la", bases: [{ word: "आरोग्य", ref: "mr-1297" }, { word: "घेतला", ref: "mr-0722" }] }
+      - { target: "विम्याची रक्कम किती आहे?", reading: "vimyāci rakkam kiti āhe?", ipa: "ʋimjatʃi rəkkəm kit̪i aɦe", bases: [{ word: "विम्याची", ref: "mr-1755" }, { word: "रक्कम", ref: "mr-1419" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1756"
+    target: "बजेट"
+    reading: "bajeṭ"
+    ipa: "bədʒeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बजेट", reading: "bajeṭ" }] }
+    examples:
+      - { target: "महिन्याचं बजेट ठरवलं.", reading: "mahinyācam̐ bajeṭ ṭharvlam̐.", ipa: "məɦinjatsə̃ bədʒeʈ ʈʰərʋlə̃", bases: [{ word: "महिन्याचं", ref: "mr-0514" }, { word: "ठरवलं", ref: "mr-1603" }] }
+      - { target: "बजेट मध्ये राहा.", reading: "bajeṭ madhye rāhā.", ipa: "bədʒeʈ məd̪ʱje raɦa", bases: [{ word: "मध्ये", base: "मध्ये", reading: "madhye" }, { word: "राहा", ref: "mr-1182" }] }
+  - id: "mr-1757"
+    target: "दागिना"
+    reading: "dāginā"
+    ipa: "d̪aɡina"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दागिना", reading: "dāginā" }] }
+    examples:
+      - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", ref: "mr-0792" }] }
+      - { target: "दागिन्यांची किंमत जास्त आहे.", reading: "dāginyāñci kimmat jāst āhe.", ipa: "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", bases: [{ word: "दागिन्यांची", ref: "mr-1757" }, { word: "किंमत", ref: "mr-0370" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1758"
+    target: "गरीब"
+    reading: "garib"
+    ipa: "ɡərib"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गरीब", reading: "garib" }] }
+    examples:
+      - { target: "गरीब माणसाला मदत करा.", reading: "garib māṇsālā madat karā.", ipa: "ɡərib maɳsala məd̪ət̪ kəra", bases: [{ word: "माणसाला", ref: "mr-0686" }, { word: "मदत", ref: "mr-1159" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "गरीब कुटुंबं शिकायला संधी मिळावी.", reading: "garib kuṭumbam̐ śikāylā sandhi miḷāvi.", ipa: "ɡərib kuʈumbə̃ ʃikajla sənd̪ʱi miɭaʋi", bases: [{ word: "कुटुंबं", ref: "mr-0231" }, { word: "शिकायला", ref: "mr-0717" }, { word: "संधी", ref: "mr-1477" }, { word: "मिळावी", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1759"
+    target: "बेरोजगार"
+    reading: "berojgār"
+    ipa: "berodzɡar"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बेरोजगार", reading: "berojgār" }] }
+    examples:
+      - { target: "तो सहा महिने बेरोजगार होता.", reading: "to sahā mahine berojgār hotā.", ipa: "t̪o səɦa məɦine berodzɡar ɦot̪a", bases: [{ word: "महिने", ref: "mr-0514" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "बेरोजगारी कमी करायला हवी.", reading: "berojgāri kami karāylā havi.", ipa: "berodzɡari kəmi kərajla ɦəʋi", bases: [{ word: "बेरोजगारी", base: "बेरोजगारी", reading: "berojgāri" }, { word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवी", ref: "mr-1018" }] }
+  - id: "mr-1760"
+    target: "आर्थिक"
+    reading: "ārthik"
+    ipa: "art̪ʰik"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आर्थिक", reading: "ārthik" }] }
+    examples:
+      - { target: "आर्थिक अडचण आहे.", reading: "ārthik aḍcaṇ āhe.", ipa: "art̪ʰik əɖtsəɳ aɦe", bases: [{ word: "अडचण", base: "अडचण", reading: "aḍcaṇ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आर्थिक नियोजन महत्त्वाचं आहे.", reading: "ārthik niyojan mahattvācam̐ āhe.", ipa: "art̪ʰik nijodzən məɦət̪t̪ʋatsə̃ aɦe", bases: [{ word: "नियोजन", base: "नियोजन", reading: "niyojan" }, { word: "महत्त्वाचं", base: "महत्त्वाचा", reading: "mahattvācā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1761"
+    target: "नफा"
+    reading: "naphā"
+    ipa: "nəpʰa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नफा", reading: "naphā" }] }
+    examples:
+      - { target: "या व्यवसायात नफा चांगला आहे.", reading: "yā vyavsāyāt naphā cāṅgalā āhe.", ipa: "ja ʋjəʋsajat̪ nəpʰa tsaŋɡəla aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "व्यवसायात", ref: "mr-0250" }, { word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "नफ्यातला वाटा द्या.", reading: "naphyātlā vāṭā dyā.", ipa: "nəpʰjat̪la ʋaʈa d̪ja", bases: [{ word: "नफ्यातला", ref: "mr-1761" }, { word: "वाटा", base: "वाटा", reading: "vāṭā" }, { word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1762"
+    target: "वेतन"
+    reading: "vetan"
+    ipa: "ʋet̪ən"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वेतन", reading: "vetan" }] }
+    examples:
+      - { target: "वेतन महिन्याच्या शेवटी मिळतं.", reading: "vetan mahinyācyā śevṭi miḷtam̐.", ipa: "ʋet̪ən məɦinjatʃja ʃeʋʈi miɭt̪ə̃", bases: [{ word: "महिन्याच्या", ref: "mr-0514" }, { word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "मिळतं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "वेतनवाढ झाली.", reading: "vetnvāḍh jhāli.", ipa: "ʋet̪nʋaɖʱ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1763"
+    target: "कमावणे"
+    reading: "kamāvṇe"
+    ipa: "kəmaʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कमावणे", reading: "kamāvṇe" }] }
+    examples:
+      - { target: "तो चांगले पैसे कमावतो.", reading: "to cāṅgale paise kamāvto.", ipa: "t̪o tsaŋɡəle pəise kəmaʋt̪o", bases: [{ word: "पैसे", ref: "mr-1747" }, { word: "कमावतो", ref: "mr-1763" }] }
+      - { target: "मी स्वतः पैसे कमावले.", reading: "mi svataḥ paise kamāvle.", ipa: "mi sʋət̪əh pəise kəmaʋle", bases: [{ word: "स्वतः", ref: "mr-0682" }, { word: "कमावले", ref: "mr-1763" }] }
+  - id: "mr-1764"
+    target: "खर्च करणे"
+    reading: "kharc karṇe"
+    ipa: "kʰərts kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खर्च करणे", reading: "kharc karṇe" }] }
+    examples:
+      - { target: "सणाला खूप पैसे खर्च केले.", reading: "saṇālā khup paise kharc kele.", ipa: "səɳala kʰup pəise kʰərts kele", bases: [{ word: "सणाला", ref: "mr-1038" }, { word: "खूप", ref: "mr-0742" }, { word: "पैसे", ref: "mr-1747" }, { word: "केले", ref: "mr-0712" }] }
+      - { target: "विचार करून खर्च करा.", reading: "vicār karun kharc karā.", ipa: "ʋitsar kərun kʰərts kəra", bases: [{ word: "विचार", ref: "mr-1365" }, { word: "करून", ref: "mr-0712" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1765"
+    target: "बचत करणे"
+    reading: "bacat karṇe"
+    ipa: "bətsət̪ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बचत करणे", reading: "bacat karṇe" }] }
+    examples:
+      - { target: "ती रोज थोडी बचत करते.", reading: "ti roj thoḍi bacat karte.", ipa: "t̪i rodz t̪ʰoɖi bətsət̪ kərt̪e", bases: [{ word: "थोडी", base: "थोडा", reading: "thoḍā" }, { word: "करते", ref: "mr-0712" }] }
+      - { target: "पैसे बचत करायला शिका.", reading: "paise bacat karāylā śikā.", ipa: "pəise bətsət̪ kərajla ʃika", bases: [{ word: "करायला", ref: "mr-0712" }, { word: "शिका", ref: "mr-0717" }] }
+  - id: "mr-1766"
+    target: "गुंतवणे"
+    reading: "guntavṇe"
+    ipa: "ɡunt̪əʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गुंतवणे", reading: "guntavṇe" }] }
+    examples:
+      - { target: "त्याने शेअर्समध्ये पैसे गुंतवले.", reading: "tyāne śearsamadhye paise guntavle.", ipa: "t̪jane ʃeərsəməd̪ʱje pəise ɡunt̪əʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पैसे", ref: "mr-1747" }, { word: "गुंतवले", ref: "mr-1766" }] }
+      - { target: "पैसे कुठे गुंतवायचे?", reading: "paise kuṭhe guntavāyce?", ipa: "pəise kuʈʰe ɡunt̪əʋajtʃe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "गुंतवायचे", ref: "mr-1766" }] }
+  - id: "mr-1767"
+    target: "कर्ज घेणे"
+    reading: "karj gheṇe"
+    ipa: "kərdz ɡʱeɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर्ज घेणे", reading: "karj gheṇe" }] }
+    examples:
+      - { target: "घर बांधण्यासाठी कर्ज घेतलं.", reading: "ghar bāndhaṇyāsāṭhi karj ghetlam̐.", ipa: "ɡʱər band̪ʱəɳjasaʈʰi kərdz ɡʱet̪lə̃", bases: [{ word: "बांधण्यासाठी", base: "बांधणे", reading: "bāndhaṇe" }, { word: "कर्ज", ref: "mr-1753" }, { word: "घेतलं", ref: "mr-0722" }] }
+      - { target: "मित्राकडून पैसे उधार घेतले.", reading: "mitrākḍun paise udhār ghetle.", ipa: "mit̪rakɖun pəise ud̪ʱar ɡʱet̪le", bases: [{ word: "मित्राकडून", ref: "mr-0213" }, { word: "उधार", base: "उधार", reading: "udhār" }, { word: "घेतले", ref: "mr-0722" }] }
+  - id: "mr-1768"
+    target: "कर्ज फेडणे"
+    reading: "karj pheḍṇe"
+    ipa: "kərdz pʰeɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर्ज फेडणे", reading: "karj pheḍṇe" }] }
+    examples:
+      - { target: "कर्ज हळूहळू फेडलं.", reading: "karj haḷuhḷu pheḍlam̐.", ipa: "kərdz ɦəɭuɦɭu pʰeɖlə̃", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "फेडलं", base: "फेडणे", reading: "pheḍṇe" }] }
+      - { target: "कर्ज वेळेवर फेडा.", reading: "karj veḷevar pheḍā.", ipa: "kərdz ʋeɭeʋər pʰeɖa", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "फेडा", base: "फेडणे", reading: "pheḍṇe" }] }
