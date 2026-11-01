@@ -620,7 +620,8 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "mr-verbs-5", theme: "verbs-5", words: 45 }
+  - decks: ["mr-verbs-5", "*"]
+    words: 22
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
