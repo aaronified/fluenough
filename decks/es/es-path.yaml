@@ -295,7 +295,8 @@ units:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "es-geography", theme: "geography", words: 35 }
+  - decks: ["es-geography", "es-geography-sentences", "es-reading-geography", "*"]
+    words: 31
     listening_passages:
       - { id: "where-spanish-is-spoken", text: { "en": "Naming regions and cities of the Spanish-speaking world" } }
     reading_passages:

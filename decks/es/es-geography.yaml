@@ -1,0 +1,441 @@
+schema: 1
+id: "es-geography"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "geography"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1895"
+    target: "la capital"
+    ipa: "la kapiˈtal"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "capital", base: "capital" }]
+    examples:
+      - target: "La capital de España es Madrid."
+        ipa: "la kapiˈtal de esˈpaɲa es maˈdɾid"
+        bases: [{ word: "La", base: "la" }, { word: "capital", base: "capital" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }, { word: "es", ref: "es-0022" }, { word: "Madrid", ref: "es-1919" }]
+      - target: "Lima es la capital de Perú."
+        ipa: "ˈlima es la kapiˈtal de peˈɾu"
+        bases: [{ word: "Lima", base: "lima" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", base: "capital" }, { word: "de", base: "de" }, { word: "Perú", ref: "es-1914" }]
+  - id: "es-1896"
+    target: "el continente"
+    ipa: "el kontiˈnente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "continente", base: "continente" }]
+    examples:
+      - target: "Europa es un continente."
+        ipa: "ewˈɾopa es un kontiˈnente"
+        bases: [{ word: "Europa", ref: "es-1908" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "continente", base: "continente" }]
+      - target: "El continente tiene muchos países."
+        ipa: "el kontiˈnente ˈtjene ˈmutʃos paˈises"
+        bases: [{ word: "El", base: "el" }, { word: "continente", base: "continente" }, { word: "tiene", ref: "es-0024" }, { word: "muchos", ref: "es-0053" }, { word: "países", ref: "es-0018" }]
+  - id: "es-1897"
+    target: "el este"
+    ipa: "el ˈeste"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "este", base: "este" }]
+    examples:
+      - target: "El sol sale por el este."
+        ipa: "el sol ˈsale poɾ el ˈeste"
+        bases: [{ word: "El", base: "el" }, { word: "sol", ref: "es-1113" }, { word: "sale", ref: "es-0690" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "este", base: "este" }]
+      - target: "La ciudad está al este de Madrid."
+        ipa: "la θjuˈdad esˈta al ˈeste de maˈdɾid"
+        bases: [{ word: "La", base: "la" }, { word: "ciudad", ref: "es-0016" }, { word: "está", ref: "es-0023" }, { word: "al", base: "al" }, { word: "este", base: "este" }, { word: "de", base: "de" }, { word: "Madrid", ref: "es-1919" }]
+  - id: "es-1898"
+    target: "la frontera"
+    ipa: "la fɾonˈteɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "frontera", base: "frontera" }]
+    examples:
+      - target: "Hay una frontera entre Francia y España."
+        ipa: "aj ˈuna fɾonˈteɾa ˈentɾe ˈfɾanθja i esˈpaɲa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "frontera", base: "frontera" }, { word: "entre", ref: "es-0719" }, { word: "Francia", base: "francia" }, { word: "y", ref: "es-0048" }, { word: "España", ref: "es-1910" }]
+      - target: "Cruzamos la frontera en coche."
+        ipa: "kɾuˈθamos la fɾonˈteɾa en ˈkotʃe"
+        bases: [{ word: "Cruzamos", ref: "es-0721" }, { word: "la", base: "la" }, { word: "frontera", base: "frontera" }, { word: "en", base: "en" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-1899"
+    target: "la región"
+    ipa: "la reˈxjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "región", base: "región" }]
+    examples:
+      - target: "Esta región es muy bonita."
+        ipa: "ˈesta reˈxjon es mwi boˈnita"
+        bases: [{ word: "Esta", base: "esta" }, { word: "región", base: "región" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonita", ref: "es-0405" }]
+      - target: "La región tiene montañas y ríos."
+        ipa: "la reˈxjon ˈtjene monˈtaɲas i ˈrios"
+        bases: [{ word: "La", base: "la" }, { word: "región", base: "región" }, { word: "tiene", ref: "es-0024" }, { word: "montañas", ref: "es-1750" }, { word: "y", ref: "es-0048" }, { word: "ríos", ref: "es-1751" }]
+  - id: "es-1900"
+    target: "el mundo"
+    ipa: "el ˈmundo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mundo", base: "mundo" }]
+    examples:
+      - target: "El mundo es grande."
+        ipa: "el ˈmundo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "mundo", base: "mundo" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Viajo por el mundo."
+        ipa: "ˈbjaxo poɾ el ˈmundo"
+        bases: [{ word: "Viajo", ref: "es-1691" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "mundo", base: "mundo" }]
+  - id: "es-1901"
+    target: "el habitante"
+    ipa: "el abiˈtante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "habitante", base: "habitante" }]
+    examples:
+      - target: "Madrid tiene tres millones de habitantes."
+        ipa: "maˈdɾid ˈtjene tɾes miˈʝones de abiˈtantes"
+        bases: [{ word: "Madrid", ref: "es-1919" }, { word: "tiene", ref: "es-0024" }, { word: "tres", ref: "es-0207" }, { word: "millones", base: "millones" }, { word: "de", base: "de" }, { word: "habitantes", base: "habitante" }]
+      - target: "Los habitantes de la isla son pocos."
+        ipa: "los abiˈtantes de la ˈisla son ˈpokos"
+        bases: [{ word: "Los", base: "los" }, { word: "habitantes", base: "habitante" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "isla", ref: "es-1755" }, { word: "son", ref: "es-0022" }, { word: "pocos", ref: "es-0358" }]
+  - id: "es-1902"
+    target: "la población"
+    ipa: "la poblaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "población", base: "población" }]
+    examples:
+      - target: "La población de México es grande."
+        ipa: "la poblaˈθjon de ˈmeksiko es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "población", base: "población" }, { word: "de", base: "de" }, { word: "México", ref: "es-1911" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "La población del pueblo es pequeña."
+        ipa: "la poblaˈθjon del ˈpweblo es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "población", base: "población" }, { word: "del", base: "del" }, { word: "pueblo", ref: "es-0783" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-1903"
+    target: "el ciudadano"
+    ipa: "el θjudaˈdano"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ciudadano", base: "ciudadano" }]
+    examples:
+      - target: "Soy ciudadano de España."
+        ipa: "soj θjudaˈdano de esˈpaɲa"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "ciudadano", base: "ciudadano" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }]
+      - target: "Es un ciudadano de Chile."
+        ipa: "es un θjudaˈdano de ˈtʃile"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "ciudadano", base: "ciudadano" }, { word: "de", base: "de" }, { word: "Chile", ref: "es-1915" }]
+  - id: "es-1904"
+    target: "el hemisferio"
+    ipa: "el emisˈfeɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hemisferio", base: "hemisferio" }]
+    examples:
+      - target: "España está en el hemisferio norte."
+        ipa: "esˈpaɲa esˈta en el emisˈfeɾjo ˈnoɾte"
+        bases: [{ word: "España", ref: "es-1910" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hemisferio", base: "hemisferio" }, { word: "norte", ref: "es-0711" }]
+      - target: "Argentina está en el hemisferio sur."
+        ipa: "aɾxenˈtina esˈta en el emisˈfeɾjo suɾ"
+        bases: [{ word: "Argentina", ref: "es-1912" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hemisferio", base: "hemisferio" }, { word: "sur", ref: "es-0712" }]
+  - id: "es-1905"
+    target: "la zona"
+    ipa: "la ˈθona"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "zona", base: "zona" }]
+    examples:
+      - target: "Es una zona tranquila."
+        ipa: "es ˈuna ˈθona tɾanˈkila"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "zona", base: "zona" }, { word: "tranquila", ref: "es-0257" }]
+      - target: "La zona norte es montañosa."
+        ipa: "la ˈθona ˈnoɾte es montaˈɲosa"
+        bases: [{ word: "La", base: "la" }, { word: "zona", base: "zona" }, { word: "norte", ref: "es-0711" }, { word: "es", ref: "es-0022" }, { word: "montañosa", ref: "es-1782" }]
+  - id: "es-1906"
+    target: "rural"
+    ipa: "ruˈɾal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rural", base: "rural" }]
+    examples:
+      - target: "Vivo en una zona rural."
+        ipa: "ˈbibo en ˈuna ˈθona ruˈɾal"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "zona", ref: "es-1905" }, { word: "rural", base: "rural" }]
+      - target: "El pueblo es rural."
+        ipa: "el ˈpweblo es ruˈɾal"
+        bases: [{ word: "El", base: "el" }, { word: "pueblo", ref: "es-0783" }, { word: "es", ref: "es-0022" }, { word: "rural", base: "rural" }]
+  - id: "es-1907"
+    target: "urbano"
+    ipa: "uɾˈbano"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "urbano", base: "urbano" }]
+    examples:
+      - target: "Vivo en un barrio urbano."
+        ipa: "ˈbibo en un ˈbarjo uɾˈbano"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "barrio", ref: "es-0251" }, { word: "urbano", base: "urbano" }]
+      - target: "La vida urbana es rápida."
+        ipa: "la ˈbida uɾˈbana es ˈrapida"
+        bases: [{ word: "La", base: "la" }, { word: "vida", base: "vida" }, { word: "urbana", base: "urbano" }, { word: "es", ref: "es-0022" }, { word: "rápida", ref: "es-0329" }]
+  - id: "es-1908"
+    target: "Europa"
+    ipa: "ewˈɾopa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Europa", base: "Europa" }]
+    examples:
+      - target: "Europa es un continente."
+        ipa: "ewˈɾopa es un kontiˈnente"
+        bases: [{ word: "Europa", base: "Europa" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "continente", ref: "es-1896" }]
+      - target: "Viajo a Europa en verano."
+        ipa: "ˈbjaxo a ewˈɾopa en beˈɾano"
+        bases: [{ word: "Viajo", ref: "es-1691" }, { word: "a", base: "a" }, { word: "Europa", base: "Europa" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]
+  - id: "es-1909"
+    target: "América"
+    ipa: "aˈmeɾika"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "América", base: "América" }]
+    examples:
+      - target: "América es muy grande."
+        ipa: "aˈmeɾika es mwi ˈɡɾande"
+        bases: [{ word: "América", base: "América" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "Muchos países de América hablan español."
+        ipa: "ˈmutʃos paˈises de aˈmeɾika ˈablan espaˈɲol"
+        bases: [{ word: "Muchos", ref: "es-0053" }, { word: "países", ref: "es-0018" }, { word: "de", base: "de" }, { word: "América", base: "América" }, { word: "hablan", ref: "es-0027" }, { word: "español", ref: "es-1370" }]
+  - id: "es-1910"
+    target: "España"
+    ipa: "esˈpaɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "España", base: "España" }]
+    examples:
+      - target: "Vivo en España."
+        ipa: "ˈbibo en esˈpaɲa"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "España", base: "España" }]
+      - target: "España es un país europeo."
+        ipa: "esˈpaɲa es un paˈis ewɾoˈpeo"
+        bases: [{ word: "España", base: "España" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "país", ref: "es-0018" }, { word: "europeo", base: "europeo" }]
+  - id: "es-1911"
+    target: "México"
+    ipa: "ˈmeksiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "México", base: "México" }]
+    examples:
+      - target: "México es un país grande."
+        ipa: "ˈmeksiko es un paˈis ˈɡɾande"
+        bases: [{ word: "México", base: "México" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "país", ref: "es-0018" }, { word: "grande", ref: "es-0031" }]
+      - target: "Viajamos a México en invierno."
+        ipa: "bjaˈxamos a ˈmeksiko en inˈbjeɾno"
+        bases: [{ word: "Viajamos", ref: "es-1691" }, { word: "a", base: "a" }, { word: "México", base: "México" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+  - id: "es-1912"
+    target: "Argentina"
+    ipa: "aɾxenˈtina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Argentina", base: "Argentina" }]
+    examples:
+      - target: "Argentina tiene una capital grande."
+        ipa: "aɾxenˈtina ˈtjene ˈuna kapiˈtal ˈɡɾande"
+        bases: [{ word: "Argentina", base: "Argentina" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "capital", ref: "es-1895" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mi amiga es de Argentina."
+        ipa: "mi aˈmiɡa es de aɾxenˈtina"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "amiga", base: "amiga" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Argentina", base: "Argentina" }]
+  - id: "es-1913"
+    target: "Colombia"
+    ipa: "koˈlombja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Colombia", base: "Colombia" }]
+    examples:
+      - target: "Colombia es un país bonito."
+        ipa: "koˈlombja es un paˈis boˈnito"
+        bases: [{ word: "Colombia", base: "Colombia" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "país", ref: "es-0018" }, { word: "bonito", ref: "es-0405" }]
+      - target: "Bogotá es la capital de Colombia."
+        ipa: "boɡoˈta es la kapiˈtal de koˈlombja"
+        bases: [{ word: "Bogotá", base: "bogotá" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Colombia", base: "Colombia" }]
+  - id: "es-1914"
+    target: "Perú"
+    ipa: "peˈɾu"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Perú", base: "Perú" }]
+    examples:
+      - target: "Perú tiene montañas altas."
+        ipa: "peˈɾu ˈtjene monˈtaɲas ˈaltas"
+        bases: [{ word: "Perú", base: "Perú" }, { word: "tiene", ref: "es-0024" }, { word: "montañas", ref: "es-1750" }, { word: "altas", ref: "es-0254" }]
+      - target: "Lima está en Perú."
+        ipa: "ˈlima esˈta en peˈɾu"
+        bases: [{ word: "Lima", base: "lima" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "Perú", base: "Perú" }]
+  - id: "es-1915"
+    target: "Chile"
+    ipa: "ˈtʃile"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Chile", base: "Chile" }]
+    examples:
+      - target: "Chile es muy largo."
+        ipa: "ˈtʃile es mwi ˈlaɾɡo"
+        bases: [{ word: "Chile", base: "Chile" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", ref: "es-0429" }]
+      - target: "Santiago es la capital de Chile."
+        ipa: "sanˈtjaɡo es la kapiˈtal de ˈtʃile"
+        bases: [{ word: "Santiago", ref: "es-1925" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Chile", base: "Chile" }]
+  - id: "es-1916"
+    target: "Cuba"
+    ipa: "ˈkuba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Cuba", base: "Cuba" }]
+    examples:
+      - target: "Cuba es una isla."
+        ipa: "ˈkuba es ˈuna ˈisla"
+        bases: [{ word: "Cuba", base: "Cuba" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "isla", ref: "es-1755" }]
+      - target: "La playa de Cuba es preciosa."
+        ipa: "la ˈplaʝa de ˈkuba es pɾeˈθjosa"
+        bases: [{ word: "La", base: "la" }, { word: "playa", ref: "es-0784" }, { word: "de", base: "de" }, { word: "Cuba", base: "Cuba" }, { word: "es", ref: "es-0022" }, { word: "preciosa", base: "precioso" }]
+  - id: "es-1917"
+    target: "Venezuela"
+    ipa: "beneˈθwela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Venezuela", base: "Venezuela" }]
+    examples:
+      - target: "Venezuela tiene playas bonitas."
+        ipa: "beneˈθwela ˈtjene ˈplaʝas boˈnitas"
+        bases: [{ word: "Venezuela", base: "Venezuela" }, { word: "tiene", ref: "es-0024" }, { word: "playas", ref: "es-0784" }, { word: "bonitas", ref: "es-0405" }]
+      - target: "Mi tío trabaja en Venezuela."
+        ipa: "mi ˈtio tɾaˈbaxa en beneˈθwela"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", ref: "es-0167" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "Venezuela", base: "Venezuela" }]
+  - id: "es-1918"
+    target: "Ecuador"
+    ipa: "ekwaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ecuador", base: "Ecuador" }]
+    examples:
+      - target: "Ecuador está en el ecuador."
+        ipa: "ekwaˈdoɾ esˈta en el ekwaˈdoɾ"
+        bases: [{ word: "Ecuador", base: "Ecuador" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "ecuador", base: "Ecuador" }]
+      - target: "Quito es la capital de Ecuador."
+        ipa: "ˈkito es la kapiˈtal de ekwaˈdoɾ"
+        bases: [{ word: "Quito", base: "quitar" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Ecuador", base: "Ecuador" }]
+  - id: "es-1919"
+    target: "Madrid"
+    ipa: "maˈdɾid"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Madrid", base: "Madrid" }]
+    examples:
+      - target: "Madrid es una ciudad grande."
+        ipa: "maˈdɾid es ˈuna θjuˈdad ˈɡɾande"
+        bases: [{ word: "Madrid", base: "Madrid" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "ciudad", ref: "es-0016" }, { word: "grande", ref: "es-0031" }]
+      - target: "Vivo en Madrid desde hace un año."
+        ipa: "ˈbibo en maˈdɾid ˈdesde ˈaθe un ˈaɲo"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Madrid", base: "Madrid" }, { word: "desde", base: "desde" }, { word: "hace", ref: "es-0025" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+  - id: "es-1920"
+    target: "Barcelona"
+    ipa: "baɾθeˈlona"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Barcelona", base: "Barcelona" }]
+    examples:
+      - target: "Barcelona está en la costa."
+        ipa: "baɾθeˈlona esˈta en la ˈkosta"
+        bases: [{ word: "Barcelona", base: "Barcelona" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "costa", ref: "es-1776" }]
+      - target: "Barcelona es muy bonita."
+        ipa: "baɾθeˈlona es mwi boˈnita"
+        bases: [{ word: "Barcelona", base: "Barcelona" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonita", ref: "es-0405" }]
+  - id: "es-1921"
+    target: "Sevilla"
+    ipa: "seˈbiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Sevilla", base: "Sevilla" }]
+    examples:
+      - target: "Sevilla está en el sur de España."
+        ipa: "seˈbiʝa esˈta en el suɾ de esˈpaɲa"
+        bases: [{ word: "Sevilla", base: "Sevilla" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sur", ref: "es-0712" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }]
+      - target: "Sevilla es muy caliente en verano."
+        ipa: "seˈbiʝa es mwi kaˈljente en beˈɾano"
+        bases: [{ word: "Sevilla", base: "Sevilla" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }, { word: "en", base: "en" }, { word: "verano", ref: "es-0982" }]
+  - id: "es-1922"
+    target: "Toledo"
+    ipa: "toˈledo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Toledo", base: "Toledo" }]
+    examples:
+      - target: "Toledo es una ciudad antigua."
+        ipa: "toˈledo es ˈuna θjuˈdad anˈtiɡwa"
+        bases: [{ word: "Toledo", base: "Toledo" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "ciudad", ref: "es-0016" }, { word: "antigua", ref: "es-1804" }]
+      - target: "Toledo está en el centro de España."
+        ipa: "toˈledo esˈta en el ˈθentɾo de esˈpaɲa"
+        bases: [{ word: "Toledo", base: "Toledo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }]
+  - id: "es-1923"
+    target: "Granada"
+    ipa: "ɡɾaˈnada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Granada", base: "Granada" }]
+    examples:
+      - target: "Granada es una ciudad bonita."
+        ipa: "ɡɾaˈnada es ˈuna θjuˈdad boˈnita"
+        bases: [{ word: "Granada", base: "Granada" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "ciudad", ref: "es-0016" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Visitamos Granada en otoño."
+        ipa: "bisiˈtamos ɡɾaˈnada en oˈtoɲo"
+        bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "Granada", base: "Granada" }, { word: "en", base: "en" }, { word: "otoño", ref: "es-0983" }]
+  - id: "es-1924"
+    target: "Bilbao"
+    ipa: "bilˈbao"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Bilbao", base: "Bilbao" }]
+    examples:
+      - target: "Bilbao está en el norte."
+        ipa: "bilˈbao esˈta en el ˈnoɾte"
+        bases: [{ word: "Bilbao", base: "Bilbao" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "norte", ref: "es-0711" }]
+      - target: "Bilbao es un puerto importante."
+        ipa: "bilˈbao es un ˈpweɾto impoɾˈtante"
+        bases: [{ word: "Bilbao", base: "Bilbao" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "puerto", base: "puerto" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-1925"
+    target: "Santiago"
+    ipa: "sanˈtjaɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Santiago", base: "Santiago" }]
+    examples:
+      - target: "Santiago es la capital de Chile."
+        ipa: "sanˈtjaɡo es la kapiˈtal de ˈtʃile"
+        bases: [{ word: "Santiago", base: "Santiago" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Chile", ref: "es-1915" }]
+      - target: "Santiago tiene una catedral famosa."
+        ipa: "sanˈtjaɡo ˈtjene ˈuna kateˈdɾal faˈmosa"
+        bases: [{ word: "Santiago", base: "Santiago" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "catedral", ref: "es-0775" }, { word: "famosa", base: "famoso" }]
