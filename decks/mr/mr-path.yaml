@@ -385,7 +385,8 @@ units:
   # B1: the themes and grammar of the CEFR's B1.
   - decks: ["mr-registers"]
     words: 12
-  - planned: { id: "mr-health", theme: "health", words: 55 }
+  - decks: ["mr-health", "*"]
+    words: 18
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
