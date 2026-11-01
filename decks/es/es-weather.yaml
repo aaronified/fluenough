@@ -110,7 +110,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "tormenta", base: "tormenta" }]
     examples:
-      - { target: "Esta noche hay una tormenta.", ipa: "ˈesta ˈnoʧe aj ˈuna toɾˈmenta", bases: [{ word: "Esta", base: "este" }, { word: "noche", ref: "es-0020" }, { word: "hay", base: "haber" }, { word: "una", base: "una" }, { word: "tormenta", base: "tormenta" }] }
+      - { target: "Esta noche hay una tormenta.", ipa: "ˈesta ˈnotʃe aj ˈuna toɾˈmenta", bases: [{ word: "Esta", base: "este" }, { word: "noche", ref: "es-0020" }, { word: "hay", base: "haber" }, { word: "una", base: "una" }, { word: "tormenta", base: "tormenta" }] }
       - { target: "La tormenta es muy fuerte.", ipa: "la toɾˈmenta es muj ˈfwerte", bases: [{ word: "La", base: "la" }, { word: "tormenta", base: "tormenta" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }] }
   - id: "es-1120"
     target: "el calor"
@@ -215,7 +215,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "humedad", base: "humedad" }]
     examples:
       - { target: "Hay mucha humedad hoy.", ipa: "aj ˈmutʃa umeˈðad oj", bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "humedad", base: "humedad" }, { word: "hoy", ref: "es-0331" }] }
-      - { target: "La humedad hace calor.", ipa: "la umeˈðad ˈaθe kaˈloɾ", bases: [{ word: "La", base: "la" }, { word: "humedad", base: "humedad" }, { word: "hace", ref: "es-0025" }, { word: "calor", base: "calor" }] }
+      - { target: "La humedad es alta.", ipa: "la umeˈðad es ˈalta", bases: [{ word: "La", base: "la" }, { word: "humedad", base: "humedad" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }] }
   - id: "es-1128"
     target: "el clima"
     ipa: "el ˈklima"
@@ -227,7 +227,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "clima", base: "clima" }]
     examples:
-      - { target: "El clima de Madrid es seco.", ipa: "el ˈklima de maˈðɾiðs es ˈseko", bases: [{ word: "El", base: "el" }, { word: "clima", base: "clima" }, { word: "de", base: "de" }, { word: "Madrid", base: "Madrid" }, { word: "es", ref: "es-0022" }, { word: "seco", ref: "es-0441" }] }
+      - { target: "El clima de Madrid es seco.", ipa: "el ˈklima de maˈðɾið es ˈseko", bases: [{ word: "El", base: "el" }, { word: "clima", base: "clima" }, { word: "de", base: "de" }, { word: "Madrid", base: "Madrid" }, { word: "es", ref: "es-0022" }, { word: "seco", ref: "es-0441" }] }
       - { target: "El clima cambia mucho.", ipa: "el ˈklima ˈkambja ˈmutʃo", bases: [{ word: "El", base: "el" }, { word: "clima", base: "clima" }, { word: "cambia", ref: "es-0588" }, { word: "mucho", ref: "es-0053" }] }
   - id: "es-1129"
     target: "la previsión"
@@ -303,7 +303,7 @@ cards:
     bases: "self"
     examples:
       - { target: "El sol brilla.", ipa: "el sol ˈbɾiʝa", bases: [{ word: "El", base: "el" }, { word: "sol", ref: "es-1113" }, { word: "brilla", base: "brillar" }] }
-      - { target: "La luna brilla de noche.", ipa: "la ˈluna ˈbɾiʝa de ˈnoʧe", bases: [{ word: "La", base: "la" }, { word: "luna", base: "luna" }, { word: "brilla", base: "brillar" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }] }
+      - { target: "La luna brilla de noche.", ipa: "la ˈluna ˈbɾiʝa de ˈnotʃe", bases: [{ word: "La", base: "la" }, { word: "luna", base: "luna" }, { word: "brilla", base: "brillar" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }] }
   - id: "es-1135"
     target: "soplar"
     ipa: "soˈplaɾ"
@@ -326,7 +326,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Anoche heló.", ipa: "aˈnoʧe eˈlo", bases: [{ word: "Anoche", base: "anoche" }, { word: "heló", base: "helar" }] }
+      - { target: "Anoche heló.", ipa: "aˈnotʃe eˈlo", bases: [{ word: "Anoche", base: "anoche" }, { word: "heló", base: "helar" }] }
       - { target: "En invierno hiela.", ipa: "en imˈbjeɾno ˈjela", bases: [{ word: "En", base: "en" }, { word: "invierno", ref: "es-0990" }, { word: "hiela", base: "helar" }] }
   - id: "es-1137"
     target: "soleado"
@@ -429,4 +429,4 @@ cards:
       - { id: "hot", ref: "es-0407" }
     examples:
       - { target: "Hoy hace fresco.", ipa: "oj ˈaθe ˈfɾesko", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hace", ref: "es-0025" }, { word: "fresco", base: "fresco" }] }
-      - { target: "Por la noche hace fresco.", ipa: "poɾ la ˈnoʧe ˈaθe ˈfɾesko", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }, { word: "hace", ref: "es-0025" }, { word: "fresco", base: "fresco" }] }
+      - { target: "Por la noche hace fresco.", ipa: "poɾ la ˈnotʃe ˈaθe ˈfɾesko", bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }, { word: "hace", ref: "es-0025" }, { word: "fresco", base: "fresco" }] }
