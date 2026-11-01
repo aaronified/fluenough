@@ -1,0 +1,474 @@
+schema: 1
+id: "fr-en-family"
+kind: "layer"
+core: "fr-family"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family"
+license: "CC-BY-SA-4.0"
+description: "The people in a family: parents, children, brothers and sisters, grandparents, aunts, uncles and cousins, the words for in-laws and twins, and the ages and weddings that go with them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0164":
+    native: "family"
+    notes:
+      "n1": "Famille is 'family', a feminine noun: la famille, ma famille (my family)."
+    examples:
+      "Ma famille est grande.":
+        native: "My family is big."
+        bases:
+          "famille": "family"
+          "grande": "big; tall"
+      "La famille parle français.":
+        native: "The family speaks French."
+        bases:
+          "La": "the"
+          "famille": "family"
+          "français": "French"
+  "fr-0165":
+    native: "father"
+    notes:
+      "n1": "Père is 'father', a masculine noun. Papa is the everyday word a child uses."
+    examples:
+      "Mon père est professeur.":
+        native: "My father is a teacher."
+        bases:
+          "père": "father"
+      "Le père de Paul est là.":
+        native: "Paul's father is here."
+        bases:
+          "Le": "the"
+          "père": "father"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+  "fr-0166":
+    native: "mother"
+    notes:
+      "n1": "Mère is 'mother', a feminine noun. Maman is the everyday word a child uses."
+    examples:
+      "Ma mère travaille ici.":
+        native: "My mother works here."
+        bases:
+          "mère": "mother"
+          "travaille": "to work"
+      "Votre mère est là ?":
+        native: "Is your mother here?"
+        bases:
+          "mère": "mother"
+  "fr-0167":
+    native: "son"
+    notes:
+      "n1": "Fils is 'son', masculine. The daughter is fille."
+    examples:
+      "Son fils est petit.":
+        native: "His son is small."
+        bases:
+          "fils": "son"
+          "petit": "small; little"
+      "Le fils de Marie parle bien.":
+        native: "Marie's son speaks well."
+        bases:
+          "Le": "the"
+          "fils": "son"
+          "de": "of"
+          "Marie": "Marie (a first name)"
+  "fr-0168":
+    native: "daughter; girl"
+    notes:
+      "n1": "Fille is 'daughter', and also 'girl'. It is feminine: la fille, ma fille."
+    examples:
+      "Ma fille est jeune.":
+        native: "My daughter is young."
+        bases:
+          "fille": "daughter"
+      "La fille de Paul est là.":
+        native: "Paul's daughter is here."
+        bases:
+          "La": "the"
+          "fille": "daughter"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+  "fr-0169":
+    native: "brother"
+    notes:
+      "n1": "Frère is 'brother', masculine. The sister is sœur."
+    examples:
+      "Mon frère est docteur.":
+        native: "My brother is a doctor."
+        bases:
+          "frère": "brother"
+      "Son frère parle très bien.":
+        native: "His brother speaks very well."
+        bases:
+          "frère": "brother"
+  "fr-0170":
+    native: "sister"
+    notes:
+      "n1": "Sœur is 'sister', feminine. The brother is frère."
+    examples:
+      "Ma sœur est ici.":
+        native: "My sister is here."
+        bases:
+          "sœur": "sister"
+      "Votre sœur parle français.":
+        native: "Your sister speaks French."
+        bases:
+          "sœur": "sister"
+          "français": "French"
+  "fr-0171":
+    native: "husband"
+    notes:
+      "n1": "Mari is 'husband', masculine. For a wife, see femme and épouse."
+    examples:
+      "Son mari est professeur.":
+        native: "Her husband is a teacher."
+        bases:
+          "mari": "husband"
+      "Le mari de Marie aime le vin.":
+        native: "Marie's husband likes wine."
+        bases:
+          "Le": "the"
+          "mari": "husband"
+          "de": "of"
+          "Marie": "Marie (a first name)"
+          "aime": "likes; loves"
+  "fr-0172":
+    native: "wife; woman"
+    notes:
+      "n1": "Femme is 'wife', and also 'woman'. It is feminine: la femme, ma femme."
+    examples:
+      "Ma femme parle bien.":
+        native: "My wife speaks well."
+        bases:
+          "femme": "wife"
+      "La femme est là.":
+        native: "The woman is here."
+        bases:
+          "La": "the"
+          "femme": "woman"
+  "fr-0173":
+    native: "parents"
+    notes:
+      "n1": "Parents is masculine and always plural, even for both parents: mes parents. One parent is père or mère."
+    examples:
+      "Mes parents sont ici.":
+        native: "My parents are here."
+        bases:
+          "Mes": "my"
+          "parents": "parents"
+      "Les parents de Paul sont là.":
+        native: "Paul's parents are here."
+        bases:
+          "parents": "parents"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+  "fr-0174":
+    native: "grandfather"
+    notes:
+      "n1": "Grand-père is 'grandfather', masculine. The grandmother is grand-mère."
+    bases:
+      "grand": "big"
+    examples:
+      "Mon grand-père est vieux.":
+        native: "My grandfather is old."
+        bases:
+          "grand": "big"
+      "Le grand-père parle lentement.":
+        native: "The grandfather speaks slowly."
+        bases:
+          "Le": "the"
+          "grand": "big"
+          "lentement": "slowly"
+  "fr-0175":
+    native: "grandmother"
+    notes:
+      "n1": "Grand-mère is 'grandmother', feminine. The grandfather is grand-père."
+    bases:
+      "grand": "big"
+    examples:
+      "Ma grand-mère est ici.":
+        native: "My grandmother is here."
+        bases:
+          "grand": "big"
+      "La grand-mère aime le lait.":
+        native: "The grandmother likes milk."
+        bases:
+          "La": "the"
+          "grand": "big"
+          "aime": "likes; loves"
+          "le": "the"
+  "fr-0176":
+    native: "uncle"
+    notes:
+      "n1": "Oncle is 'uncle', masculine. The aunt is tante."
+    examples:
+      "Mon oncle est grand.":
+        native: "My uncle is tall."
+        bases:
+          "oncle": "uncle"
+          "grand": "tall; big"
+      "Votre oncle parle français.":
+        native: "Your uncle speaks French."
+        bases:
+          "oncle": "uncle"
+          "français": "French"
+  "fr-0177":
+    native: "aunt"
+    notes:
+      "n1": "Tante is 'aunt', feminine. The uncle is oncle."
+    examples:
+      "Ma tante est ici.":
+        native: "My aunt is here."
+        bases:
+          "tante": "aunt"
+      "La tante de Marie parle bien.":
+        native: "Marie's aunt speaks well."
+        bases:
+          "La": "the"
+          "tante": "aunt"
+          "de": "of"
+          "Marie": "Marie (a first name)"
+  "fr-0178":
+    native: "cousin (a man or boy)"
+    notes:
+      "n1": "Cousin is a male cousin. A female cousin is cousine."
+    examples:
+      "Mon cousin est jeune.":
+        native: "My cousin is young."
+        bases:
+          "cousin": "cousin"
+      "Le cousin de Paul aime le vin.":
+        native: "Paul's cousin likes wine."
+        bases:
+          "Le": "the"
+          "cousin": "cousin"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+          "aime": "likes; loves"
+  "fr-0179":
+    native: "cousin (a girl or woman)"
+    notes:
+      "n1": "Cousine is a female cousin. A male cousin is cousin."
+    examples:
+      "Ma cousine est ici.":
+        native: "My cousin is here."
+        bases:
+          "cousine": "cousin"
+      "La cousine parle très bien.":
+        native: "The cousin speaks very well."
+        bases:
+          "La": "the"
+          "cousine": "cousin"
+  "fr-0180":
+    native: "baby"
+    notes:
+      "n1": "Bébé is 'baby'. It is a masculine noun, le bébé, even for a girl."
+    examples:
+      "Le bébé est là.":
+        native: "The baby is here."
+        bases:
+          "Le": "the"
+          "bébé": "baby"
+      "Notre bébé dort.":
+        native: "Our baby is sleeping."
+        bases:
+          "bébé": "baby"
+          "dort": "sleeps"
+  "fr-0181":
+    native: "boy"
+    notes:
+      "n1": "Garçon is 'boy' or 'young man'. A girl is fille."
+    examples:
+      "Le garçon est jeune.":
+        native: "The boy is young."
+        bases:
+          "Le": "the"
+          "garçon": "boy"
+      "Mon garçon parle bien.":
+        native: "My boy speaks well."
+        bases:
+          "garçon": "boy"
+  "fr-0182":
+    native: "man"
+    notes:
+      "n1": "Homme is 'man'. Vieux becomes vieil before a vowel sound: un vieil homme (an old man)."
+    examples:
+      "Un homme est là.":
+        native: "A man is here."
+        bases:
+          "Un": "a"
+          "homme": "man"
+      "Le vieil homme parle lentement.":
+        native: "The old man speaks slowly."
+        bases:
+          "Le": "the"
+          "vieil": "old"
+          "homme": "man"
+          "lentement": "slowly"
+  "fr-0183":
+    native: "son-in-law"
+    notes:
+      "n1": "Gendre is 'son-in-law', masculine. A daughter-in-law is belle-fille."
+    examples:
+      "Mon gendre est professeur.":
+        native: "My son-in-law is a teacher."
+        bases:
+          "gendre": "son-in-law"
+      "Le gendre de Marie parle bien.":
+        native: "Marie's son-in-law speaks well."
+        bases:
+          "Le": "the"
+          "gendre": "son-in-law"
+          "de": "of"
+          "Marie": "Marie (a first name)"
+  "fr-0184":
+    native: "mother-in-law; stepmother"
+    notes:
+      "n1": "Belle-mère is your partner's mother, or your father's new wife. It is feminine: la belle-mère."
+    bases:
+      "belle": "beautiful"
+    examples:
+      "Ma belle-mère est ici.":
+        native: "My mother-in-law is here."
+        bases:
+          "belle": "beautiful"
+      "La belle-mère parle français.":
+        native: "The stepmother speaks French."
+        bases:
+          "La": "the"
+          "belle": "beautiful"
+          "français": "French"
+  "fr-0185":
+    native: "twin (a boy or man)"
+    notes:
+      "n1": "Jumeau is a male twin. A female twin is jumelle."
+    examples:
+      "Mon jumeau est jeune.":
+        native: "My twin is young."
+        bases:
+          "jumeau": "twin"
+      "Le jumeau de Paul parle bien.":
+        native: "Paul's twin speaks well."
+        bases:
+          "Le": "the"
+          "jumeau": "twin"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+  "fr-0186":
+    native: "twin (a girl or woman)"
+    notes:
+      "n1": "Jumelle is a female twin. A male twin is jumeau."
+    examples:
+      "Ma jumelle est ici.":
+        native: "My twin is here."
+        bases:
+          "jumelle": "twin"
+      "La jumelle parle très bien.":
+        native: "The twin speaks very well."
+        bases:
+          "La": "the"
+          "jumelle": "twin"
+  "fr-0187":
+    native: "marriage; wedding"
+    notes:
+      "n1": "Mariage is 'marriage', and 'wedding' for the day. It is masculine: le mariage, votre mariage."
+    examples:
+      "Le mariage est demain.":
+        native: "The wedding is tomorrow."
+        bases:
+          "Le": "the"
+          "mariage": "wedding"
+      "Votre mariage est beau.":
+        native: "Your wedding is beautiful."
+        bases:
+          "mariage": "wedding"
+          "beau": "beautiful"
+  "fr-0188":
+    native: "wife (formal word)"
+    notes:
+      "n1": "Épouse is 'wife' or 'spouse', a more formal word than femme. The husband in the same sense is époux."
+    examples:
+      "Son épouse parle français.":
+        native: "His wife speaks French."
+        bases:
+          "épouse": "wife"
+          "français": "French"
+      "Une épouse est là.":
+        native: "A wife is here."
+        bases:
+          "Une": "a"
+          "épouse": "wife"
+  "fr-0189":
+    native: "nephew"
+    notes:
+      "n1": "Neveu is 'nephew', masculine. The niece is nièce."
+    examples:
+      "Mon neveu est jeune.":
+        native: "My nephew is young."
+        bases:
+          "neveu": "nephew"
+      "Le neveu de Marie est là.":
+        native: "Marie's nephew is here."
+        bases:
+          "Le": "the"
+          "neveu": "nephew"
+          "de": "of"
+          "Marie": "Marie (a first name)"
+  "fr-0190":
+    native: "niece"
+    notes:
+      "n1": "Nièce is 'niece', feminine. The nephew is neveu."
+    examples:
+      "Ma nièce est petite.":
+        native: "My niece is small."
+        bases:
+          "nièce": "niece"
+          "petite": "small; little"
+      "La nièce parle bien.":
+        native: "The niece speaks well."
+        bases:
+          "La": "the"
+          "nièce": "niece"
+  "fr-0191":
+    native: "fiancé"
+    notes:
+      "n1": "Fiancé is a man who is engaged to be married. A woman is fiancée."
+    examples:
+      "Mon fiancé est docteur.":
+        native: "My fiancé is a doctor."
+        bases:
+          "fiancé": "fiancé"
+      "Le fiancé parle français.":
+        native: "The fiancé speaks French."
+        bases:
+          "Le": "the"
+          "fiancé": "fiancé"
+          "français": "French"
+  "fr-0192":
+    native: "fiancée"
+    notes:
+      "n1": "Fiancée is a woman who is engaged to be married. A man is fiancé."
+    examples:
+      "Ma fiancée est jeune.":
+        native: "My fiancée is young."
+        bases:
+          "fiancée": "fiancée"
+      "La fiancée est ici.":
+        native: "The fiancée is here."
+        bases:
+          "La": "the"
+          "fiancée": "fiancée"
+  "fr-0193":
+    native: "age"
+    notes:
+      "n1": "Âge is 'age', a masculine noun. Quel âge a... ? asks how old someone is."
+    examples:
+      "Quel âge a votre fils ?":
+        native: "How old is your son?"
+        bases:
+          "âge": "age"
+          "a": "has"
+      "Quel âge avez-vous ?":
+        native: "How old are you?"
+        bases:
+          "âge": "age"
+          "avez": "have"
