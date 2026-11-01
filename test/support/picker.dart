@@ -7,7 +7,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
-import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 
 /// Driving Languages I'm learning (#211, #626) in widget tests: its list is
 /// built lazily, so a row is scrolled to before it is found, and a language
@@ -29,7 +28,7 @@ final List<SpokenLanguage> pickerSpokenList = parseSpokenLanguages(
 /// offered its course's own script only. Anything else is read as ever.
 class LanguageListBundle extends AssetBundle {
   final Future<String> _list = Future<String>.value(
-    File(SpokenLanguagesPicker.asset).readAsStringSync(),
+    File(spokenLanguagesAsset).readAsStringSync(),
   );
 
   @override
@@ -37,7 +36,7 @@ class LanguageListBundle extends AssetBundle {
 
   @override
   Future<String> loadString(String key, {bool cache = true}) =>
-      key == SpokenLanguagesPicker.asset
+      key == spokenLanguagesAsset
       ? _list
       : rootBundle.loadString(key, cache: cache);
 }

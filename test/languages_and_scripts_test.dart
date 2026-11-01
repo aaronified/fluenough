@@ -49,7 +49,6 @@ import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
-import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -999,7 +998,7 @@ void main() {
   // CI shard: a read left half done by an earlier test, or the 100 ms a
   // helper waits for a read of its own. Read once here, in real time, and
   // every test finds the finished read in the cache, in any order.
-  setUpAll(() => rootBundle.loadString(SpokenLanguagesPicker.asset));
+  setUpAll(() => rootBundle.loadString(spokenLanguagesAsset));
 
   group('the language picker', () {
     group('search', () {

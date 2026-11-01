@@ -76,6 +76,12 @@ Future<void> showLanguageSkills(
 /// For a language already on the page every change is saved at once and
 /// toasted; for [draft], a language being added, nothing is saved until
 /// "Add". Pops `true` when a draft was added.
+///
+/// On the first launch (owner, 2026-11-01) the same sheet is shown with
+/// [onSet]: nothing is saved either way, and the skills are handed to
+/// [onSet] by "Add" (a [draft]) or "Done" (a language already chosen, with
+/// its [initial] skills), because nothing reaches the settings before the
+/// last step of the first launch.
 class LanguageSkillsSheet extends StatefulWidget {
   const LanguageSkillsSheet({
     super.key,
@@ -84,10 +90,21 @@ class LanguageSkillsSheet extends StatefulWidget {
     this.others = const <String, LanguageSkills>{},
     this.names = const <String, String>{},
     this.onPooled,
+    this.initial,
+    this.onSet,
   });
 
   final LanguageView view;
   final bool draft;
+
+  /// The skills to start from: for a [draft], what the Know sheet answered
+  /// (the scripts known from other languages are added to it); with [onSet]
+  /// and no [draft], the skills the language has so far.
+  final LanguageSkills? initial;
+
+  /// The first launch: called with the skills when the sheet is confirmed,
+  /// instead of saving them. Null on the Languages page.
+  final ValueChanged<LanguageSkills>? onSet;
 
   /// The skills of the languages already on the page, by name, for a draft:
   /// a script known there starts as Know here.
@@ -112,6 +129,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   bool _busy = false;
 
   LanguageView get _view => widget.view;
+
+  /// Whether nothing is saved from here: a language being added, or the first
+  /// launch, which keeps its answers until its last step.
+  bool get _isDraft => widget.draft || widget.onSet != null;
   String get _code => _view.code;
   List<SkillKey> get _shape => _state.skillShape(_view.language);
   List<String> get _scripts => _state.skillScripts(_view.language);
@@ -123,9 +144,14 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     _state = AppScope.read(context);
     if (widget.draft) {
       _auto = autoKnownFrom(scripts: _scripts, others: widget.others);
+      final initial = widget.initial;
       _skills = LanguageSkills(<SkillKey, SkillState>{
         for (final key in _auto.keys) key: SkillState.know,
+        if (initial != null)
+          for (final key in initial.held) key: initial.stateOf(key),
       });
+    } else if (widget.initial case final initial?) {
+      _skills = initial;
     } else {
       _skills = _state.skillsOf(_view.language);
     }
@@ -224,7 +250,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     required bool toLearn,
   }) async {
     final before = _skills;
-    if (!widget.draft &&
+    if (!_isDraft &&
         toLearn &&
         !before.anyLearn &&
         _needsDownload &&
@@ -249,7 +275,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       AppLocalizations.of(context)!
           .languagesToastSkill(name, skill, state.name),
     );
-    if (widget.draft) return;
+    if (_isDraft) return;
     _state.applySkills(_view.language, next);
     if (!before.anyLearn && next.anyLearn) _startDownload();
     if (next.isAllLeave) {
@@ -360,6 +386,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   Future<void> _commit() async {
     final l10n = AppLocalizations.of(context)!;
+    if (widget.onSet case final onSet?) {
+      onSet(_skills);
+      Navigator.of(context).pop(true);
+      return;
+    }
     if (_skills.anyLearn && _needsDownload && !await _confirmDownload()) return;
     if (!mounted) return;
     _state.applySkills(_view.language, _skills);
@@ -533,7 +564,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       builder: (context) => _InfoDialog(
         view: _view,
         skills: _skills,
-        draft: widget.draft,
+        draft: _isDraft,
         state: _state,
         scripts: _scripts,
         title: _view.title,
@@ -572,7 +603,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
     final nLearn = _skills.count(SkillState.learn, _shape);
     final nKnow = _skills.count(SkillState.know, _shape);
-    final meta = widget.draft
+    final meta = _isDraft
         ? l10n.languagesDraftMeta
         : <String>[
             if (nLearn > 0) l10n.languagesMetaLearning(nLearn),
@@ -580,7 +611,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           ].join(' · ');
     final download = downloads?.progressOf(_code);
     final pendingDecks =
-        !widget.draft &&
+        !_isDraft &&
         hasDecks &&
         !_skills.anyLearn &&
         _state.settings.languageSkillsOf(_code) != null;
@@ -602,9 +633,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   ),
                 ),
               ),
-              if (!widget.draft &&
-                  _view.canLearn &&
-                  (hasDecks || _skills.anyLearn))
+              if (!_isDraft && _view.canLearn && (hasDecks || _skills.anyLearn))
                 LabelledIconButton(
                   label: l10n.languagesUpdateIcon,
                   hint: l10n.hintUpdate,
@@ -658,7 +687,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   const SizedBox(height: 12),
                   CourseLine(levels: progress.levels),
                 ],
-                if (download != null && !widget.draft) ...<Widget>[
+                if (download != null && !_isDraft) ...<Widget>[
                   const SizedBox(height: 8),
                   LinearProgressIndicator(
                     value: download.total == 0
@@ -677,7 +706,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   const SizedBox(height: 4),
                   _Note(text: l10n.languagesDecksRemoved),
                 ],
-                if (!widget.draft && _view.canLearn && !_locked) ...<Widget>[
+                if (!_isDraft && _view.canLearn && !_locked) ...<Widget>[
                   _levelRow(context),
                   _placedRow(context),
                 ],
@@ -742,7 +771,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     keys: _skills.keysOfScript(script),
                     pill: _scriptPill(context, script),
                   ),
-                if (!widget.draft && _skills.anyLearn) _learningBlock(context),
+                if (!_isDraft && _skills.anyLearn) _learningBlock(context),
               ],
             ),
           ),
@@ -755,7 +784,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 12),
             child: Row(
               children: <Widget>[
-                if (!widget.draft && hasDecks)
+                if (!_isDraft && hasDecks)
                   LabelledIconButton(
                     label: l10n.languagesDeleteData,
                     hint: l10n.hintDelete,
@@ -768,6 +797,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                         ? _runChecks
                         : widget.draft
                         ? (_skills.isAllLeave ? null : _commit)
+                        : widget.onSet != null
+                        ? _commit
                         : () => Navigator.of(context).pop(),
                     child: Text(
                       checks
