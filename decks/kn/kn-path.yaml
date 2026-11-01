@@ -558,7 +558,8 @@ units:
       - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
     reading_passages:
       - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
-  - planned: { id: "kn-housing", theme: "housing", words: 40 }
+  - decks: ["kn-housing", "*"]
+    words: 15
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
