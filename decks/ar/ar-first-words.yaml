@@ -1,0 +1,130 @@
+schema: 1
+id: "ar-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ar", iso639_3: "arb", name: "Arabic", script: "arabic", rtl: true, tts: "ar-SA", icon: "ع" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ar-0001"
+    target: "نعم"
+    reading: "naʿam"
+    ipa: "naʕam"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "نعم, شكراً.", reading: "naʿam, shukran.", ipa: "naʕam ʃukran", bases: [{ word: "شكراً", base: "شكر", reading: "shukr" }] }
+      - { target: "نعم, أنا أفهم.", reading: "naʿam, anā afhamu.", ipa: "naʕam ʔana ʔafhamu", bases: [{ word: "أفهم", base: "فهم", reading: "fahima" }] }
+  - id: "ar-0002"
+    target: "لا"
+    reading: "lā"
+    ipa: "laː"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "لا, شكراً.", reading: "lā, shukran.", ipa: "laː ʃukran", bases: [{ word: "شكراً", base: "شكر", reading: "shukr" }] }
+      - { target: "لا أعرف.", reading: "lā aʿrif.", ipa: "laː ʔaʕrif", bases: [{ word: "أعرف", base: "عرف", reading: "ʿarafa" }] }
+  - id: "ar-0003"
+    target: "أنا"
+    reading: "anā"
+    ipa: "ʔana"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "أنا طالب.", reading: "anā ṭālib.", ipa: "ʔana ˈtˤaːlib", bases: [{ word: "طالب", base: "طالب", reading: "ṭālib" }] }
+      - { target: "أنا أتكلم قليلاً.", reading: "anā atakallamu qalīlan.", ipa: "ʔana ʔatakallam qaliːlan", bases: [{ word: "أتكلم", base: "تكلم", reading: "takallama" }, { word: "قليلاً", base: "قليل", reading: "qalīl" }] }
+  - id: "ar-0004"
+    target: "أنت"
+    reading: "anta"
+    ipa: "ʔanta"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "أنت طالب؟", reading: "anta ṭālib?", ipa: "ʔanta ˈtˤaːlib", bases: [{ word: "طالب", base: "طالب", reading: "ṭālib" }] }
+      - { target: "أنت من مصر؟", reading: "anta min miṣr?", ipa: "ʔanta min misˤr", bases: [{ word: "من", base: "من", reading: "min" }, { word: "مصر", base: "مصر", reading: "miṣr" }] }
+  - id: "ar-0005"
+    target: "و"
+    reading: "wa"
+    ipa: "wa"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "قهوة وشاي.", reading: "qahwa wa-shāy.", ipa: "qahwa wa ʃaːj", bases: [{ word: "قهوة", base: "قهوة", reading: "qahwa" }, { word: "وشاي", base: "شاي", reading: "shāy" }] }
+      - { target: "أنا وأنت.", reading: "anā wa-anta.", ipa: "ʔana wa ʔanta", bases: [{ word: "وأنت", base: "أنت", reading: "anta" }] }
+  - id: "ar-0006"
+    target: "أو"
+    reading: "aw"
+    ipa: "ʔaw"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "قهوة أو شاي؟", reading: "qahwa aw shāy?", ipa: "qahwa ʔaw ʃaːj", bases: [{ word: "قهوة", base: "قهوة", reading: "qahwa" }, { word: "شاي", base: "شاي", reading: "shāy" }] }
+      - { target: "اليوم أو غداً؟", reading: "al-yawm aw ghadan?", ipa: "alˈjawm ʔaw ɣadan", bases: [{ word: "اليوم", base: "يوم", reading: "yawm" }, { word: "غداً", base: "غد", reading: "ghad" }] }
+  - id: "ar-0007"
+    target: "لكن"
+    reading: "lākinna"
+    ipa: "laːkinna"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "جيد, لكن غالٍ.", reading: "jayyid, lākinna ghālin.", ipa: "dʒajjid laːkinna ɣaːlin", bases: [{ word: "غالٍ", base: "غالي", reading: "ghālī" }] }
+      - { target: "لكن لا أفهم.", reading: "lākinna lā afhamu.", ipa: "laːkinna laː ʔafhamu", bases: [{ word: "أفهم", base: "فهم", reading: "fahima" }] }
+  - id: "ar-0008"
+    target: "جيد"
+    reading: "jayyid"
+    ipa: "dʒajjid"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "القهوة جيدة.", reading: "al-qahwa jayyida.", ipa: "alˈqahwa dʒajjida", bases: [{ word: "القهوة", base: "قهوة", reading: "qahwa" }, { word: "جيدة", base: "جيد", reading: "jayyid" }] }
+      - { target: "الشاي جيد جداً.", reading: "ash-shāy jayyid jiddan.", ipa: "aʃˈʃaːj dʒajjid dʒiddan", bases: [{ word: "الشاي", base: "شاي", reading: "shāy" }, { word: "جداً", base: "جد", reading: "jidd" }] }
+  - id: "ar-0009"
+    target: "واحد"
+    reading: "wāḥid"
+    ipa: "waːħid"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "قهوة واحدة, من فضلك.", reading: "qahwa wāḥida, min faḍlika.", ipa: "qahwa waːħida min faˈdˤlika", bases: [{ word: "واحدة", base: "واحد", reading: "wāḥid" }, { word: "من", base: "من", reading: "min" }, { word: "فضلك", base: "فضل", reading: "faḍl" }] }
+      - { target: "واحد, اثنان, ثلاثة.", reading: "wāḥid, ithnān, thalātha.", ipa: "waːħid itˈnaːn θalaːθa", bases: [{ word: "اثنان", base: "اثنان", reading: "ithnān" }, { word: "ثلاثة", base: "ثلاثة", reading: "thalātha" }] }
+  - id: "ar-0010"
+    target: "ماء"
+    reading: "māʾ"
+    ipa: "maːʔ"
+    pos: "noun"
+    gender: "m"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ماء, من فضلك.", reading: "māʾ, min faḍlika.", ipa: "maːʔ min faˈdˤlika", bases: [{ word: "من", base: "من", reading: "min" }, { word: "فضلك", base: "فضل", reading: "faḍl" }] }
+      - { target: "أريد ماءً بارداً.", reading: "urīdu māʾan bāridan.", ipa: "ʔuriːdu maːʔan baːridan", bases: [{ word: "أريد", base: "أراد", reading: "arāda" }, { word: "ماءً", base: "ماء", reading: "māʾ" }, { word: "بارداً", base: "بارد", reading: "bārid" }] }
