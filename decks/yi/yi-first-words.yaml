@@ -1,0 +1,130 @@
+schema: 1
+id: "yi-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "yi", iso639_3: "yid", name: "Yiddish", script: "hebrew", icon: "יי" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "yi-0001"
+    target: "יאָ"
+    reading: "yo"
+    ipa: "jo"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "יאָ, דאַנק.", reading: "yo, dank.", ipa: "jo dɑŋk", bases: [{ word: "יאָ", base: "יאָ", reading: "yo" }, { word: "דאַנק", base: "דאַנק", reading: "dank" }] }
+      - { target: "יאָ, איך רעד ייִדיש.", reading: "yo, ikh red yidish.", ipa: "jo ɪx rɛd ˈjɪdɪʃ", bases: [{ word: "יאָ", base: "יאָ", reading: "yo" }, { word: "איך", base: "איך", reading: "ikh" }, { word: "רעד", base: "רעדן", reading: "redn" }, { word: "ייִדיש", base: "ייִדיש", reading: "yidish" }] }
+  - id: "yi-0002"
+    target: "ניין"
+    reading: "nayn"
+    ipa: "nɑjn"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ניין, דאַנק.", reading: "nayn, dank.", ipa: "nɑjn dɑŋk", bases: [{ word: "ניין", base: "ניין", reading: "nayn" }, { word: "דאַנק", base: "דאַנק", reading: "dank" }] }
+      - { target: "איך רעד ניט ייִדיש.", reading: "ikh red nit yidish.", ipa: "ɪx rɛd nɪt ˈjɪdɪʃ", bases: [{ word: "איך", base: "איך", reading: "ikh" }, { word: "רעד", base: "רעדן", reading: "redn" }, { word: "ניט", base: "ניט", reading: "nit" }, { word: "ייִדיש", base: "ייִדיש", reading: "yidish" }] }
+  - id: "yi-0003"
+    target: "איך"
+    reading: "ikh"
+    ipa: "ɪx"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "איך בין אַ סטודענט.", reading: "ikh bin a student.", ipa: "ɪx bɪn ɑ studɛnt", bases: [{ word: "איך", base: "איך", reading: "ikh" }, { word: "בין", base: "זײַן", reading: "zayn" }, { word: "אַ", base: "אַ", reading: "a" }, { word: "סטודענט", base: "סטודענט", reading: "student" }] }
+      - { target: "איך פֿאַרשטײ ניט.", reading: "ikh farshtey nit.", ipa: "ɪx fɑrˈʃtaj nɪt", bases: [{ word: "איך", base: "איך", reading: "ikh" }, { word: "פֿאַרשטײ", base: "פֿאַרשטײן", reading: "farshteyn" }, { word: "ניט", base: "ניט", reading: "nit" }] }
+  - id: "yi-0004"
+    target: "דו"
+    reading: "du"
+    ipa: "du"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "דו ביסט גוט.", reading: "du bist gut.", ipa: "du bɪst ɡut", bases: [{ word: "דו", base: "דו", reading: "du" }, { word: "ביסט", base: "זײַן", reading: "zayn" }, { word: "גוט", base: "גוט", reading: "gut" }] }
+      - { target: "רעדסט דו ייִדיש?", reading: "redst du yidish?", ipa: "rɛdst du ˈjɪdɪʃ", bases: [{ word: "רעדסט", base: "רעדן", reading: "redn" }, { word: "דו", base: "דו", reading: "du" }, { word: "ייִדיש", base: "ייִדיש", reading: "yidish" }] }
+  - id: "yi-0005"
+    target: "און"
+    reading: "un"
+    ipa: "ʊn"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ברױט און בוטער.", reading: "broyt un buter.", ipa: "brojt ʊn ˈbutər", bases: [{ word: "ברױט", base: "ברױט", reading: "broyt" }, { word: "און", base: "און", reading: "un" }, { word: "בוטער", base: "בוטער", reading: "buter" }] }
+      - { target: "איך און דו.", reading: "ikh un du.", ipa: "ɪx ʊn du", bases: [{ word: "איך", base: "איך", reading: "ikh" }, { word: "און", base: "און", reading: "un" }, { word: "דו", base: "דו", reading: "du" }] }
+  - id: "yi-0006"
+    target: "אָדער"
+    reading: "oder"
+    ipa: "ˈodər"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "טיי אָדער קאַווע?", reading: "tey oder kave?", ipa: "tɛj ˈodər ˈkɑvə", bases: [{ word: "טיי", base: "טיי", reading: "tey" }, { word: "אָדער", base: "אָדער", reading: "oder" }, { word: "קאַווע", base: "קאַווע", reading: "kave" }] }
+      - { target: "הײַנט אָדער מאָרגן?", reading: "haynt oder morgn?", ipa: "hajnt ˈodər ˈmorɡn", bases: [{ word: "הײַנט", base: "הײַנט", reading: "haynt" }, { word: "אָדער", base: "אָדער", reading: "oder" }, { word: "מאָרגן", base: "מאָרגן", reading: "morgn" }] }
+  - id: "yi-0007"
+    target: "אָבער"
+    reading: "ober"
+    ipa: "ˈobər"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "יאָ, אָבער איך בין מיד.", reading: "yo, ober ikh bin myd.", ipa: "jo ˈobər ɪx bɪn mɪd", bases: [{ word: "יאָ", base: "יאָ", reading: "yo" }, { word: "אָבער", base: "אָבער", reading: "ober" }, { word: "איך", base: "איך", reading: "ikh" }, { word: "בין", base: "זײַן", reading: "zayn" }, { word: "מיד", base: "מיד", reading: "myd" }] }
+      - { target: "גוט, אָבער טײַער.", reading: "gut, ober tayer.", ipa: "ɡut ˈobər ˈtajər", bases: [{ word: "גוט", base: "גוט", reading: "gut" }, { word: "אָבער", base: "אָבער", reading: "ober" }, { word: "טײַער", base: "טײַער", reading: "tayer" }] }
+  - id: "yi-0008"
+    target: "גוט"
+    reading: "gut"
+    ipa: "ɡut"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "דאָס איז גוט.", reading: "dos iz gut.", ipa: "dos ɪz ɡut", bases: [{ word: "דאָס", base: "דאָס", reading: "dos" }, { word: "איז", base: "זײַן", reading: "zayn" }, { word: "גוט", base: "גוט", reading: "gut" }] }
+      - { target: "אַ גוטער טאָג.", reading: "a guter tog.", ipa: "ɑ ˈɡutər tɔɡ", bases: [{ word: "אַ", base: "אַ", reading: "a" }, { word: "גוטער", base: "גוט", reading: "gut" }, { word: "טאָג", base: "טאָג", reading: "tog" }] }
+  - id: "yi-0009"
+    target: "אײנס"
+    reading: "eyns"
+    ipa: "ajns"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "אײנס, ביטע.", reading: "eyns, bite.", ipa: "ajns ˈbitə", bases: [{ word: "אײנס", base: "אײנס", reading: "eyns" }, { word: "ביטע", base: "ביטע", reading: "bite" }] }
+      - { target: "אײנס, צװײ, דרײַ.", reading: "eyns, tsvey, dray.", ipa: "ajns tsvaj drɑj", bases: [{ word: "אײנס", base: "אײנס", reading: "eyns" }, { word: "צװײ", base: "צװײ", reading: "tsvey" }, { word: "דרײַ", base: "דרײַ", reading: "dray" }] }
+  - id: "yi-0010"
+    target: "װאַסער"
+    reading: "vaser"
+    ipa: "ˈvɑsər"
+    pos: "noun"
+    gender: "n"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "װאַסער, ביטע.", reading: "vaser, bite.", ipa: "ˈvɑsər ˈbitə", bases: [{ word: "װאַסער", base: "װאַסער", reading: "vaser" }, { word: "ביטע", base: "ביטע", reading: "bite" }] }
+      - { target: "איך טרינק װאַסער.", reading: "ikh trink vaser.", ipa: "ɪx trɪŋk ˈvɑsər", bases: [{ word: "איך", base: "איך", reading: "ikh" }, { word: "טרינק", base: "טרינקען", reading: "trinken" }, { word: "װאַסער", base: "װאַסער", reading: "vaser" }] }
