@@ -475,7 +475,8 @@ units:
       - { id: "it-was-done", text: { "en": "Saying what is done or was done, without saying by whom" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
-  - planned: { id: "es-housing", theme: "housing", words: 40 }
+  - decks: ["es-housing", "es-housing-sentences", "es-reading-housing", "*"]
+    words: 23
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:

@@ -1,0 +1,328 @@
+schema: 1
+id: "es-housing"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "housing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2776"
+    target: "la hipoteca"
+    ipa: "la ipoˈteka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "hipoteca", base: "hipoteca" }]
+    examples:
+      - target: "Pago la hipoteca cada mes."
+        ipa: "ˈpaɡo la ipoˈteka ˈkada mes"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "la", base: "la" }, { word: "hipoteca", base: "hipoteca" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+      - target: "La hipoteca es de veinte años."
+        ipa: "la ipoˈteka es de ˈbejnte ˈaɲos"
+        bases: [{ word: "La", base: "la" }, { word: "hipoteca", base: "hipoteca" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "veinte", ref: "es-0224" }, { word: "años", ref: "es-0021" }]
+  - id: "es-2777"
+    target: "la inmobiliaria"
+    ipa: "la inmobiˈljaɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "inmobiliaria", base: "inmobiliaria" }]
+    examples:
+      - target: "La inmobiliaria tiene pisos en alquiler."
+        ipa: "la inmobiˈljaɾja ˈtjene ˈpisos en alkiˈleɾ"
+        bases: [{ word: "La", base: "la" }, { word: "inmobiliaria", base: "inmobiliaria" }, { word: "tiene", ref: "es-0024" }, { word: "pisos", ref: "es-0803" }, { word: "en", base: "en" }, { word: "alquiler", ref: "es-0824" }]
+      - target: "Llamo a la inmobiliaria."
+        ipa: "ˈʝamo a la inmobiˈljaɾja"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "inmobiliaria", base: "inmobiliaria" }]
+  - id: "es-2778"
+    target: "la fianza"
+    ipa: "la ˈfjanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fianza", base: "fianza" }]
+    examples:
+      - target: "Pago la fianza al firmar."
+        ipa: "ˈpaɡo la ˈfjanθa al fiɾˈmaɾ"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "la", base: "la" }, { word: "fianza", base: "fianza" }, { word: "al", base: "al" }, { word: "firmar", ref: "es-1874" }]
+      - target: "La fianza es de un mes."
+        ipa: "la ˈfjanθa es de un mes"
+        bases: [{ word: "La", base: "la" }, { word: "fianza", base: "fianza" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "mes", ref: "es-0980" }]
+  - id: "es-2779"
+    target: "el inquilino"
+    ipa: "el inkiˈlino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "inquilino", base: "inquilino" }]
+    examples:
+      - target: "El inquilino paga el alquiler."
+        ipa: "el inkiˈlino ˈpaɡa el alkiˈleɾ"
+        bases: [{ word: "El", base: "el" }, { word: "inquilino", base: "inquilino" }, { word: "paga", ref: "es-0295" }, { word: "el", base: "el" }, { word: "alquiler", ref: "es-0824" }]
+      - target: "Soy la inquilina del piso."
+        ipa: "soj la inkiˈlina del ˈpiso"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "la", base: "la" }, { word: "inquilina", base: "inquilino" }, { word: "del", base: "del" }, { word: "piso", ref: "es-0803" }]
+  - id: "es-2780"
+    target: "el propietario"
+    ipa: "el pɾopjeˈtaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "propietario", base: "propietario" }]
+    examples:
+      - target: "El propietario vive en el piso."
+        ipa: "el pɾopjeˈtaɾjo ˈbibe en el ˈpiso"
+        bases: [{ word: "El", base: "el" }, { word: "propietario", base: "propietario" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "piso", ref: "es-0803" }]
+      - target: "La propietaria es muy amable."
+        ipa: "la pɾopjeˈtaɾja es mwi aˈmable"
+        bases: [{ word: "La", base: "la" }, { word: "propietaria", base: "propietario" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", ref: "es-2756" }]
+  - id: "es-2781"
+    target: "el portal"
+    ipa: "el poɾˈtal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "portal", base: "portal" }]
+    examples:
+      - target: "El portal está cerrado."
+        ipa: "el poɾˈtal esˈta θeˈrado"
+        bases: [{ word: "El", base: "el" }, { word: "portal", base: "portal" }, { word: "está", ref: "es-0023" }, { word: "cerrado", ref: "es-0849" }]
+      - target: "Dejo la bici en el portal."
+        ipa: "ˈdexo la ˈbiθi en el poɾˈtal"
+        bases: [{ word: "Dejo", ref: "es-1190" }, { word: "la", base: "la" }, { word: "bici", base: "bici" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "portal", base: "portal" }]
+  - id: "es-2782"
+    target: "el estudio"
+    ipa: "el esˈtudjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estudio", base: "estudio" }]
+    examples:
+      - target: "Vivo en un estudio pequeño."
+        ipa: "ˈbibo en un esˈtudjo peˈkeɲo"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "estudio", ref: "es-0258" }, { word: "pequeño", ref: "es-0032" }]
+      - target: "El estudio es muy luminoso."
+        ipa: "el esˈtudjo es mwi lumiˈnoso"
+        bases: [{ word: "El", base: "el" }, { word: "estudio", ref: "es-0258" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "luminoso", ref: "es-1799" }]
+  - id: "es-2783"
+    target: "el ascensor"
+    ipa: "el asθenˈsoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ascensor", base: "ascensor" }]
+    examples:
+      - target: "El ascensor está roto."
+        ipa: "el asθenˈsoɾ esˈta ˈroto"
+        bases: [{ word: "El", base: "el" }, { word: "ascensor", base: "ascensor" }, { word: "está", ref: "es-0023" }, { word: "roto", ref: "es-1196" }]
+      - target: "Subimos en el ascensor."
+        ipa: "suˈbimos en el asθenˈsoɾ"
+        bases: [{ word: "Subimos", ref: "es-0691" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "ascensor", base: "ascensor" }]
+  - id: "es-2784"
+    target: "la calefacción"
+    ipa: "la kalefakˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "calefacción", base: "calefacción" }]
+    examples:
+      - target: "La calefacción funciona bien."
+        ipa: "la kalefakˈθjon funˈθjona bjen"
+        bases: [{ word: "La", base: "la" }, { word: "calefacción", base: "calefacción" }, { word: "funciona", base: "funcionar" }, { word: "bien", ref: "es-0326" }]
+      - target: "Enciendo la calefacción en invierno."
+        ipa: "enˈθjendo la kalefakˈθjon en inˈbjeɾno"
+        bases: [{ word: "Enciendo", ref: "es-1663" }, { word: "la", base: "la" }, { word: "calefacción", base: "calefacción" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+  - id: "es-2785"
+    target: "la cerradura"
+    ipa: "la θeraˈduɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cerradura", base: "cerradura" }]
+    examples:
+      - target: "La cerradura está rota."
+        ipa: "la θeraˈduɾa esˈta ˈrota"
+        bases: [{ word: "La", base: "la" }, { word: "cerradura", base: "cerradura" }, { word: "está", ref: "es-0023" }, { word: "rota", ref: "es-1196" }]
+      - target: "Cambian la cerradura."
+        ipa: "ˈkambjan la θeraˈduɾa"
+        bases: [{ word: "Cambian", ref: "es-0588" }, { word: "la", base: "la" }, { word: "cerradura", base: "cerradura" }]
+  - id: "es-2786"
+    target: "la mudanza"
+    ipa: "la muˈdanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mudanza", base: "mudanza" }]
+    examples:
+      - target: "La mudanza es el sábado."
+        ipa: "la muˈdanθa es el ˈsabado"
+        bases: [{ word: "La", base: "la" }, { word: "mudanza", base: "mudanza" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "sábado", ref: "es-0963" }]
+      - target: "Hacemos la mudanza en un día."
+        ipa: "aˈθemos la muˈdanθa en un ˈdia"
+        bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "la", base: "la" }, { word: "mudanza", base: "mudanza" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "día", ref: "es-0019" }]
+  - id: "es-2787"
+    target: "el gasto"
+    ipa: "el ˈɡasto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gasto", base: "gasto" }]
+    examples:
+      - target: "Los gastos son altos."
+        ipa: "los ˈɡastos son ˈaltos"
+        bases: [{ word: "Los", base: "los" }, { word: "gastos", base: "gasto" }, { word: "son", ref: "es-0022" }, { word: "altos", ref: "es-0254" }]
+      - target: "Controlo mis gastos cada mes."
+        ipa: "konˈtɾolo mis ˈɡastos ˈkada mes"
+        bases: [{ word: "Controlo", base: "controlar" }, { word: "mis", ref: "es-0129" }, { word: "gastos", base: "gasto" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+  - id: "es-2788"
+    target: "la reforma"
+    ipa: "la reˈfoɾma"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reforma", base: "reforma" }]
+    examples:
+      - target: "La reforma tarda tres meses."
+        ipa: "la reˈfoɾma ˈtaɾda tɾes ˈmeses"
+        bases: [{ word: "La", base: "la" }, { word: "reforma", base: "reforma" }, { word: "tarda", ref: "es-1286" }, { word: "tres", ref: "es-0207" }, { word: "meses", ref: "es-0980" }]
+      - target: "Hago una reforma en la cocina."
+        ipa: "ˈaɡo ˈuna reˈfoɾma en la koˈθina"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "una", base: "una" }, { word: "reforma", base: "reforma" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+  - id: "es-2789"
+    target: "la comunidad"
+    ipa: "la komuniˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "comunidad", base: "comunidad" }]
+    examples:
+      - target: "La comunidad aprueba el arreglo."
+        ipa: "la komuniˈdad aˈpɾweba el aˈreɡlo"
+        bases: [{ word: "La", base: "la" }, { word: "comunidad", base: "comunidad" }, { word: "aprueba", ref: "es-1380" }, { word: "el", base: "el" }, { word: "arreglo", ref: "es-1529" }]
+      - target: "Pago la cuota de la comunidad."
+        ipa: "ˈpaɡo la ˈkwota de la komuniˈdad"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "la", base: "la" }, { word: "cuota", base: "cuota" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "comunidad", base: "comunidad" }]
+  - id: "es-2790"
+    target: "el hogar"
+    ipa: "el oˈɡaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hogar", base: "hogar" }]
+    examples:
+      - target: "Mi hogar es mi familia."
+        ipa: "mi oˈɡaɾ es mi faˈmilja"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hogar", base: "hogar" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "familia", ref: "es-0158" }]
+      - target: "Creamos un hogar cálido."
+        ipa: "kɾeˈamos un oˈɡaɾ ˈkalido"
+        bases: [{ word: "Creamos", ref: "es-1879" }, { word: "un", base: "un" }, { word: "hogar", base: "hogar" }, { word: "cálido", ref: "es-1807" }]
+  - id: "es-2791"
+    target: "el arrendamiento"
+    ipa: "el arendaˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "arrendamiento", base: "arrendamiento" }]
+    examples:
+      - target: "El arrendamiento dura un año."
+        ipa: "el arendaˈmjento ˈduɾa un ˈaɲo"
+        bases: [{ word: "El", base: "el" }, { word: "arrendamiento", base: "arrendamiento" }, { word: "dura", ref: "es-1332" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+      - target: "Firmo el arrendamiento."
+        ipa: "ˈfiɾmo el arendaˈmjento"
+        bases: [{ word: "Firmo", ref: "es-1874" }, { word: "el", base: "el" }, { word: "arrendamiento", base: "arrendamiento" }]
+  - id: "es-2792"
+    target: "el depósito"
+    ipa: "el deˈposito"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "depósito", base: "depósito" }]
+    examples:
+      - target: "Pago un depósito para la casa."
+        ipa: "ˈpaɡo un deˈposito ˈpaɾa la ˈkasa"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "un", base: "un" }, { word: "depósito", base: "depósito" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+      - target: "El depósito se devuelve al final."
+        ipa: "el deˈposito se deˈbwelbe al fiˈnal"
+        bases: [{ word: "El", base: "el" }, { word: "depósito", base: "depósito" }, { word: "se", base: "se" }, { word: "devuelve", ref: "es-1230" }, { word: "al", base: "al" }, { word: "final", base: "final" }]
+  - id: "es-2793"
+    target: "mudarse"
+    ipa: "muˈdaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "mudarse", base: "mudarse" }]
+    examples:
+      - target: "Me mudo a Madrid en julio."
+        ipa: "me ˈmudo a maˈdɾid en ˈxuljo"
+        bases: [{ word: "Me", base: "me" }, { word: "mudo", base: "mudarse" }, { word: "a", base: "a" }, { word: "Madrid", ref: "es-1919" }, { word: "en", base: "en" }, { word: "julio", ref: "es-0972" }]
+      - target: "Se mudan al piso nuevo."
+        ipa: "se ˈmudan al ˈpiso ˈnwebo"
+        bases: [{ word: "Se", base: "se" }, { word: "mudan", base: "mudarse" }, { word: "al", base: "al" }, { word: "piso", ref: "es-0803" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2794"
+    target: "habitar"
+    ipa: "abiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "habitar", base: "habitar" }]
+    examples:
+      - target: "Habitamos una casa grande."
+        ipa: "abiˈtamos ˈuna ˈkasa ˈɡɾande"
+        bases: [{ word: "Habitamos", base: "habitar" }, { word: "una", base: "una" }, { word: "casa", ref: "es-0006" }, { word: "grande", ref: "es-0031" }]
+      - target: "Muchas familias habitan el edificio."
+        ipa: "ˈmutʃas faˈmiljas aˈbitan el ediˈfiθjo"
+        bases: [{ word: "Muchas", ref: "es-0053" }, { word: "familias", ref: "es-0158" }, { word: "habitan", base: "habitar" }, { word: "el", base: "el" }, { word: "edificio", ref: "es-0786" }]
+  - id: "es-2795"
+    target: "céntrico"
+    ipa: "ˈθentɾiko"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "céntrico", base: "céntrico" }]
+    examples:
+      - target: "El piso es céntrico."
+        ipa: "el ˈpiso es ˈθentɾiko"
+        bases: [{ word: "El", base: "el" }, { word: "piso", ref: "es-0803" }, { word: "es", ref: "es-0022" }, { word: "céntrico", base: "céntrico" }]
+      - target: "Vivo en una zona céntrica."
+        ipa: "ˈbibo en ˈuna ˈθona ˈθentɾika"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "zona", ref: "es-1905" }, { word: "céntrica", base: "céntrico" }]
+  - id: "es-2796"
+    target: "el agente"
+    ipa: "el aˈxente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "agente", base: "agente" }]
+    examples:
+      - target: "El agente enseña el piso."
+        ipa: "el aˈxente enˈseɲa el ˈpiso"
+        bases: [{ word: "El", base: "el" }, { word: "agente", base: "agente" }, { word: "enseña", ref: "es-1375" }, { word: "el", base: "el" }, { word: "piso", ref: "es-0803" }]
+      - target: "Hablo con el agente de la inmobiliaria."
+        ipa: "ˈablo kon el aˈxente de la inmobiˈljaɾja"
+        bases: [{ word: "Hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "agente", base: "agente" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "inmobiliaria", ref: "es-2777" }]
+  - id: "es-2797"
+    target: "el inmueble"
+    ipa: "el inˈmweble"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "inmueble", base: "inmueble" }]
+    examples:
+      - target: "Compro un inmueble en la costa."
+        ipa: "ˈkompɾo un inˈmweble en la ˈkosta"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "inmueble", base: "inmueble" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "costa", ref: "es-1776" }]
+      - target: "El inmueble tiene tres plantas."
+        ipa: "el inˈmweble ˈtjene tɾes ˈplantas"
+        bases: [{ word: "El", base: "el" }, { word: "inmueble", base: "inmueble" }, { word: "tiene", ref: "es-0024" }, { word: "tres", ref: "es-0207" }, { word: "plantas", ref: "es-1528" }]
+  - id: "es-2798"
+    target: "la vivienda"
+    ipa: "la biˈbjenda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vivienda", base: "vivienda" }]
+    examples:
+      - target: "La vivienda es cara en la ciudad."
+        ipa: "la biˈbjenda es ˈkaɾa en la θjuˈdad"
+        bases: [{ word: "La", base: "la" }, { word: "vivienda", base: "vivienda" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Busco una vivienda para la familia."
+        ipa: "ˈbusko ˈuna biˈbjenda ˈpaɾa la faˈmilja"
+        bases: [{ word: "Busco", ref: "es-0289" }, { word: "una", base: "una" }, { word: "vivienda", base: "vivienda" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }]

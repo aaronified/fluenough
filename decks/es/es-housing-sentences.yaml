@@ -1,0 +1,50 @@
+schema: 1
+id: "es-housing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2799"
+    target: "Pago el alquiler y la fianza al firmar."
+    ipa: "ˈpaɡo el alkiˈleɾ i la ˈfjanθa al fiɾˈmaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pago", ref: "es-0295" }, { word: "el", base: "el" }, { word: "alquiler", ref: "es-0824" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "fianza", ref: "es-2778" }, { word: "al", base: "al" }, { word: "firmar", ref: "es-1874" }]
+    confusables: [{ id: "deposito", ref: "es-2792", kind: "word" }, { id: "arrendamiento", ref: "es-2791", kind: "word" }]
+  - id: "es-2800"
+    target: "El propietario vive en el piso del tercero."
+    ipa: "el pɾopjeˈtaɾjo ˈbibe en el ˈpiso del teɾˈθeɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "propietario", ref: "es-2780" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "piso", ref: "es-0803" }, { word: "del", base: "del" }, { word: "tercero", base: "tercero" }]
+    confusables: [{ id: "inquilino", ref: "es-2779", kind: "word" }, { id: "comunidad", ref: "es-2789", kind: "word" }]
+  - id: "es-2801"
+    target: "Subimos en el ascensor hasta el ático."
+    ipa: "suˈbimos en el asθenˈsoɾ ˈasta el ˈatiko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Subimos", ref: "es-0691" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "ascensor", ref: "es-2783" }, { word: "hasta", base: "hasta" }, { word: "el", base: "el" }, { word: "ático", ref: "es-1814" }]
+    confusables: [{ id: "escalera", ref: "es-1812", kind: "word" }, { id: "portal", ref: "es-2781", kind: "word" }]
+  - id: "es-2802"
+    target: "La calefacción y la cerradura están rotas."
+    ipa: "la kalefakˈθjon i la θeraˈduɾa esˈtan ˈrotas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "calefacción", ref: "es-2784" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "cerradura", ref: "es-2785" }, { word: "están", ref: "es-0023" }, { word: "rotas", ref: "es-1196" }]
+    confusables: [{ id: "reforma", ref: "es-2788", kind: "word" }, { id: "gasto", ref: "es-2787", kind: "word" }]
+  - id: "es-2803"
+    target: "Me mudo al piso céntrico en julio."
+    ipa: "me ˈmudo al ˈpiso ˈθentɾiko en ˈxuljo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "mudo", ref: "es-2793" }, { word: "al", base: "al" }, { word: "piso", ref: "es-0803" }, { word: "céntrico", ref: "es-2795" }, { word: "en", base: "en" }, { word: "julio", ref: "es-0972" }]
+    confusables: [{ id: "hipoteca", ref: "es-2776", kind: "word" }, { id: "mudanza", ref: "es-2786", kind: "word" }]
+  - id: "es-2804"
+    target: "La inmobiliaria busca una vivienda para mí."
+    ipa: "la inmobiˈljaɾja ˈbuska ˈuna biˈbjenda ˈpaɾa mi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "inmobiliaria", ref: "es-2777" }, { word: "busca", ref: "es-0289" }, { word: "una", base: "una" }, { word: "vivienda", ref: "es-2798" }, { word: "para", base: "para" }, { word: "mí", base: "mí" }]
+    confusables: [{ id: "hogar", ref: "es-2790", kind: "word" }, { id: "agente", ref: "es-2796", kind: "word" }]
