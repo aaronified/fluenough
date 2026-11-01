@@ -169,7 +169,7 @@ below is written from `decks/index.json` each time the decks change.
 | Russian | Cyrillic | in progress |
 | Serbo-Croatian | Latin, Cyrillic | in progress |
 | Somali | Latin | in progress |
-| Spanish | Latin | A1 |
+| Spanish | Latin | B1 |
 | Swahili | Latin | in progress |
 | Swedish | Latin | in progress |
 | Tamil | Tamil | in progress |
