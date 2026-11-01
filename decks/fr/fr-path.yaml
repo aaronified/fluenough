@@ -200,11 +200,8 @@ units:
   - decks: ["fr-grammar-partitive", "fr-reading-partitive"]
     words: 0
     grammar: ["partitive"]
-  - planned: { id: "fr-food", theme: "food", words: 50 }
-    listening_passages:
-      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
-    reading_passages:
-      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - decks: ["fr-food", "fr-food-sentences", "fr-reading-food", "*"]
+    words: 28
   - planned: { id: "fr-transport", theme: "transport", words: 30 }
     listening_passages:
       - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
