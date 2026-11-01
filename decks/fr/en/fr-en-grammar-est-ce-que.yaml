@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-est-ce-que"
+kind: "layer"
+core: "fr-grammar-est-ce-que"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions with est-ce que"
+license: "CC-BY-SA-4.0"
+description: "Est-ce que in front of a statement makes it a question, with the words in the same order. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Question"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "statement", "question": "question" }
+  entries:
+    "parler": "to speak"
+    "habiter": "to live"
+    "manger": "to eat"
+    "aller": "to go"
+    "etre": "to be"
+    "avoir": "to have"
+    "comprendre": "to understand"
+  notes: "Est-ce que is said before any statement, and it turns it into a question without changing the order of the words. It is the easiest way to ask a yes-or-no question. Est-ce que becomes est-ce qu' before a vowel: est-ce qu'il parle ? (does he speak?)."

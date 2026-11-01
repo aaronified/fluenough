@@ -169,11 +169,9 @@ units:
   - decks: ["fr-grammar-ne-pas", "fr-reading-negation"]
     words: 0
     grammar: ["ne-pas"]
-  - planned: { id: "fr-grammar-questions", grammar: ["est-ce-que", "inversion"] }
-    listening_passages:
-      - { id: "three-ways-to-ask", text: { "en": "The same question asked three ways: by the voice, with est-ce que, and turned round" } }
-    reading_passages:
-      - { id: "interview-questions", text: { "en": "The questions of a short magazine interview" } }
+  - decks: ["fr-grammar-est-ce-que", "fr-grammar-inversion", "fr-reading-grammar-questions"]
+    words: 0
+    grammar: ["est-ce-que", "inversion"]
   - planned: { id: "fr-grammar-prepositions", grammar: ["prepositions", "au-du-contractions"] }
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are and where you go: to the market, from the station" } }
