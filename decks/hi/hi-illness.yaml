@@ -253,12 +253,12 @@ cards:
     phonetic_source: "rules"
     pos: "noun"
     gender: "m"
-    bases: "self"
+    bases: [{ "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }]
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "पैर का एक्स-रे हुआ।", reading: "pair kā ēks-rē huā.", ipa: "pɛːr kaː eːksreː ɦʊaː", bases: [{ "word": "पैर", "ref": "hi-1039" }, { "word": "का", "ref": "hi-0279" }, { "word": "एक्स-रे", "base": "एक्स-रे", "reading": "ēks-rē" }, { "word": "हुआ", "base": "होना", "reading": "hōnā" }] }
-      - { target: "एक्स-रे में हड्डी टूटी नहीं है।", reading: "ēks-rē mēm̐ haḍḍī ṭūṭī nahīm̐ hai.", ipa: "eːksreː mẽː ɦəɖɖiː ʈuːʈiː nəɦĩː ɦɛː", bases: [{ "word": "एक्स-रे", "base": "एक्स-रे", "reading": "ēks-rē" }, { "word": "में", "ref": "hi-0274" }, { "word": "हड्डी", "ref": "hi-1047" }, { "word": "टूटी", "base": "टूटना", "reading": "ṭūṭnā" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }] }
+      - { target: "पैर का एक्स-रे हुआ।", reading: "pair kā ēks-rē huā.", ipa: "pɛːr kaː eːksreː ɦʊaː", bases: [{ "word": "पैर", "ref": "hi-1039" }, { "word": "का", "ref": "hi-0279" }, { "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }, { "word": "हुआ", "base": "होना", "reading": "hōnā" }] }
+      - { target: "एक्स-रे में हड्डी टूटी नहीं है।", reading: "ēks-rē mēm̐ haḍḍī ṭūṭī nahīm̐ hai.", ipa: "eːksreː mẽː ɦəɖɖiː ʈuːʈiː nəɦĩː ɦɛː", bases: [{ "word": "एक्स", "base": "एक्स", "reading": "ēks" }, { "word": "रे", "base": "रे", "reading": "rē" }, { "word": "में", "ref": "hi-0274" }, { "word": "हड्डी", "ref": "hi-1047" }, { "word": "टूटी", "base": "टूटना", "reading": "ṭūṭnā" }, { "word": "नहीं", "ref": "hi-0156" }, { "word": "है", "ref": "hi-0112" }] }
   - id: "hi-1448"
     target: "टीका"
     reading: "ṭīkā"
@@ -451,7 +451,7 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "वह ज़ोर से छींकता है।", reading: "vah zōr sē chīṅkatā hai.", ipa: "ʋəɦ zoːr seː tʃʰiːŋkət̪aː ɦɛː", bases: [{ "word": "वह", "ref": "hi-0749" }, { "word": "ज़ोर", "base": "ज़ोर", "reading": "zōr" }, { "word": "से", "ref": "hi-0276" }, { "word": "छींकता", "base": "छींकना", "reading": "chīṅkanā" }, { "word": "है", "ref": "hi-0112" }] }
-      - { target: "छींकते समय मुँह ढको।", reading: "chīṅkatē samay mum̐h ḍhakō.", ipa: "tʃʰiːŋkət̪eː səməj mʊ̃ɦ ɖʱəkoː", bases: [{ "word": "छींकते", "base": "छींकना", "reading": "chīṅkanā" }, { "word": "समय", "ref": "hi-0607" }, { "word": "मुँह", "ref": "hi-1028" }, { "word": "ढको", "base": "ढकना", "reading": "ḍhaknā" }] }
+      - { target: "छींकते समय मुँह ढको।", reading: "chīṅkatē samay mum̐h ḍhakō.", ipa: "tʃʰiːŋkət̪eː səməj mʊ̃ɦ ɖʱəkoː", bases: [{ "word": "छींकते", "base": "छींकना", "reading": "chīṅkanā" }, { "word": "समय", "base": "समय", "reading": "samay" }, { "word": "मुँह", "ref": "hi-1028" }, { "word": "ढको", "base": "ढकना", "reading": "ḍhaknā" }] }
   - id: "hi-1462"
     target: "लेटना"
     reading: "lēṭnā"
