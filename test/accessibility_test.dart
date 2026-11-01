@@ -436,7 +436,13 @@ void main() {
     screen('the tour', page(const OnboardingFlow(startAt: 'tour', page: 1)));
     screen('the sound check', gallery('onboarding-sound'));
     screen('what Know and Learn mean', gallery('onboarding-languages-intro'));
-    screen('the languages question', gallery('onboarding-languages'));
+    // The gallery's entry reads the language list from the asset bundle, which
+    // a widget test's clock never finishes (the step shows a spinner until it
+    // does, so pumpAndSettle times out): the list is handed in instead.
+    screen(
+      'the languages question',
+      page(OnboardingFlow(startAt: 'languages', choices: choices)),
+    );
     screen('the languages question, a language\'s Know sheet open', (
       tester,
       mode,
