@@ -1,0 +1,182 @@
+schema: 1
+id: "ga-en-first-words"
+kind: "layer"
+core: "ga-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence. Irish answers with its verb as often as with a word, so these cards say how. Greetings and thanks are in the phrasebook. Not yet checked by an Irish speaker: please report any mistake."
+cards:
+  "ga-0001":
+    native: "yes"
+    notes:
+      "n1": "Sea is yes. Irish has no single word for yes in answer to a question about a verb: the answer repeats the verb, so Tá? (is it?) gets Tá (it is) back. Sea answers a question that asks about a thing or a fact."
+    examples:
+      "Sea, is maith liom é.":
+        native: "Yes, I like it."
+        bases:
+          "is": "is"
+          "maith": "good"
+          "liom": "with me"
+          "é": "it"
+      "Sea, tá mé go maith.":
+        native: "Yes, I am well."
+        bases:
+          "tá": "is"
+          "go": "to"
+          "maith": "good"
+  "ga-0002":
+    native: "no; is not"
+    notes:
+      "n1": "Níl is the negative of tá (is): it means is not, and answers a question that has tá in it. Irish often says no by repeating the verb in its negative form."
+    examples:
+      "Níl, ní thuigim.":
+        native: "No, I don't understand."
+        bases:
+          "Níl": "is not"
+          "ní": "not"
+          "thuigim": "I understand"
+      "Níl sé anseo.":
+        native: "He is not here."
+        bases:
+          "Níl": "is not"
+          "sé": "he"
+          "anseo": "here"
+  "ga-0003":
+    native: "I"
+    notes:
+      "n1": "Mé is I. Mise is the emphatic form, as in Is mise Aoife, It is I, Aoife."
+    examples:
+      "Is mise Aoife.":
+        native: "I am Aoife."
+        bases:
+          "Is": "is"
+          "mise": "I"
+          "Aoife": "Aoife"
+      "Is múinteoir mé.":
+        native: "I am a teacher."
+        bases:
+          "Is": "is"
+          "múinteoir": "teacher"
+          "mé": "I"
+  "ga-0004":
+    native: "you"
+    notes:
+      "n1": "Tú is you, to one person, and is the form for friends. Sibh is you for more than one person, and is also used for one person in formal speech."
+    examples:
+      "An bhfuil tú anseo?":
+        native: "Are you here?"
+        bases:
+          "An": "question word"
+          "bhfuil": "is"
+          "tú": "you"
+          "anseo": "here"
+      "Tá tú go maith?":
+        native: "Are you well?"
+        bases:
+          "Tá": "is"
+          "tú": "you"
+          "go": "to"
+          "maith": "good"
+  "ga-0005":
+    native: "and"
+    notes:
+      "n1": "Agus is and. It joins two words or two parts of a sentence, as in tae agus caife, tea and coffee."
+    examples:
+      "Tae agus caife.":
+        native: "Tea and coffee."
+        bases:
+          "Tae": "tea"
+          "caife": "coffee"
+      "Mé agus tú.":
+        native: "Me and you."
+        bases:
+          "Mé": "I"
+          "tú": "you"
+  "ga-0006":
+    native: "or"
+    notes:
+      "n1": "Nó is or, most often in a question that gives a choice: tae nó caife, tea or coffee?"
+    examples:
+      "Tae nó caife?":
+        native: "Tea or coffee?"
+        bases:
+          "Tae": "tea"
+          "caife": "coffee"
+      "Inniu nó amárach?":
+        native: "Today or tomorrow?"
+        bases:
+          "Inniu": "today"
+          "amárach": "tomorrow"
+  "ga-0007":
+    native: "but"
+    notes:
+      "n1": "Ach is but. It comes before the second part of a sentence that goes against the first."
+    examples:
+      "Maith go leor, ach daor.":
+        native: "Good enough, but expensive."
+        bases:
+          "Maith": "good"
+          "go": "to"
+          "leor": "enough"
+          "daor": "expensive"
+      "Tá mé tuirseach, ach tá mé sásta.":
+        native: "I am tired, but I am happy."
+        bases:
+          "Tá": "is"
+          "tuirseach": "tired"
+          "sásta": "happy"
+  "ga-0008":
+    native: "good"
+    notes:
+      "n1": "Maith is good. Go maith, with go before it, means well or fine: Tá mé go maith, I am well."
+    examples:
+      "Tá an bia go maith.":
+        native: "The food is good."
+        bases:
+          "Tá": "is"
+          "an": "the"
+          "bia": "food"
+          "go": "to"
+      "Is maith liom tae.":
+        native: "I like tea."
+        bases:
+          "Is": "is"
+          "liom": "with me"
+          "tae": "tea"
+  "ga-0009":
+    native: "one"
+    notes:
+      "n1": "A haon is one, as a number counted on its own. Before a noun it is aon, as in aon uair amháin, once only."
+    examples:
+      "A haon, a dó, a trí.":
+        native: "One, two, three."
+        bases:
+          "A": "one"
+          "haon": "one"
+          "dó": "two"
+          "trí": "three"
+      "Aon uair amháin.":
+        native: "Only once."
+        bases:
+          "Aon": "one"
+          "uair": "time"
+          "amháin": "only"
+  "ga-0010":
+    native: "water"
+    notes:
+      "n1": "Uisce is water, a masculine noun. With the article it is an t-uisce: the t- goes in before a word that starts with a vowel."
+    examples:
+      "Uisce, le do thoil.":
+        native: "Water, please."
+        bases:
+          "le": "with"
+          "do": "your"
+          "thoil": "will"
+      "Tá an t-uisce fuar.":
+        native: "The water is cold."
+        bases:
+          "Tá": "is"
+          "an": "the"
+          "t-uisce": "water"
+          "fuar": "cold"

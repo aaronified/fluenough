@@ -1,0 +1,152 @@
+schema: 1
+id: "ar-en-first-words"
+kind: "layer"
+core: "ar-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence, in Modern Standard Arabic with the vowels in their readings. Greetings and thanks are in the phrasebook. Not yet checked by an Arabic speaker: please report any mistake."
+cards:
+  "ar-0001":
+    native: "yes"
+    notes:
+      "n1": "نعم (naʿam) is yes. Its opposite is لا (lā), no."
+    examples:
+      "نعم, شكراً.":
+        native: "Yes, thank you."
+        bases:
+          "شكراً": "thanks"
+      "نعم, أنا أفهم.":
+        native: "Yes, I understand."
+        bases:
+          "أفهم": "I understand"
+  "ar-0002":
+    native: "no"
+    notes:
+      "n1": "لا (lā) is no, and is also the word for not. Before a verb it is written with the verb: لا أعرف (lā aʿrif), I don't know."
+    examples:
+      "لا, شكراً.":
+        native: "No, thank you."
+        bases:
+          "شكراً": "thanks"
+      "لا أعرف.":
+        native: "I don't know."
+        bases:
+          "أعرف": "I know"
+  "ar-0003":
+    native: "I"
+    notes:
+      "n1": "أنا (anā) is I. Arabic verbs carry the subject in their ending, so أنا is often left out: أفهم (afhamu) alone means I understand."
+    examples:
+      "أنا طالب.":
+        native: "I am a student."
+        bases:
+          "طالب": "student"
+      "أنا أتكلم قليلاً.":
+        native: "I speak a little."
+        bases:
+          "أتكلم": "I speak"
+          "قليلاً": "a little"
+  "ar-0004":
+    native: "you (to a man)"
+    notes:
+      "n1": "أنت (anta) is you, said to a man. To a woman say أنتِ (anti)."
+    examples:
+      "أنت طالب؟":
+        native: "Are you a student?"
+        bases:
+          "طالب": "student"
+      "أنت من مصر؟":
+        native: "Are you from Egypt?"
+        bases:
+          "من": "from"
+          "مصر": "Egypt"
+  "ar-0005":
+    native: "and"
+    notes:
+      "n1": "و (wa) is and. It is written joined to the word after it, as in وشاي (wa-shāy), and tea."
+    examples:
+      "قهوة وشاي.":
+        native: "Coffee and tea."
+        bases:
+          "قهوة": "coffee"
+          "وشاي": "and tea"
+      "أنا وأنت.":
+        native: "Me and you."
+        bases:
+          "وأنت": "and you"
+  "ar-0006":
+    native: "or"
+    notes:
+      "n1": "أو (aw) is or. In a question it asks the listener to choose between two things."
+    examples:
+      "قهوة أو شاي؟":
+        native: "Coffee or tea?"
+        bases:
+          "قهوة": "coffee"
+          "شاي": "tea"
+      "اليوم أو غداً؟":
+        native: "Today or tomorrow?"
+        bases:
+          "اليوم": "today"
+          "غداً": "tomorrow"
+  "ar-0007":
+    native: "but"
+    notes:
+      "n1": "لكن (lākinna) is but. It joins two parts of a sentence that contrast with each other."
+    examples:
+      "جيد, لكن غالٍ.":
+        native: "Good, but expensive."
+        bases:
+          "غالٍ": "expensive"
+      "لكن لا أفهم.":
+        native: "But I don't understand."
+        bases:
+          "أفهم": "I understand"
+  "ar-0008":
+    native: "good"
+    notes:
+      "n1": "جيد (jayyid) is good, of quality: القهوة جيدة (al-qahwa jayyida), the coffee is good. For a person who is well, say بخير (bi-khayr)."
+    examples:
+      "القهوة جيدة.":
+        native: "The coffee is good."
+        bases:
+          "القهوة": "the coffee"
+          "جيدة": "good"
+      "الشاي جيد جداً.":
+        native: "The tea is very good."
+        bases:
+          "الشاي": "the tea"
+          "جداً": "very"
+  "ar-0009":
+    native: "one"
+    notes:
+      "n1": "واحد (wāḥid) is one. With a feminine noun it is واحدة (wāḥida): قهوة واحدة (qahwa wāḥida), one coffee."
+    examples:
+      "قهوة واحدة, من فضلك.":
+        native: "One coffee, please."
+        bases:
+          "واحدة": "one"
+          "من": "from"
+          "فضلك": "favour"
+      "واحد, اثنان, ثلاثة.":
+        native: "One, two, three."
+        bases:
+          "اثنان": "two"
+          "ثلاثة": "three"
+  "ar-0010":
+    native: "water"
+    notes:
+      "n1": "ماء (māʾ) is water, a masculine word. Its plural is مياه (miyāh), waters."
+    examples:
+      "ماء, من فضلك.":
+        native: "Water, please."
+        bases:
+          "من": "from"
+          "فضلك": "favour"
+      "أريد ماءً بارداً.":
+        native: "I want cold water."
+        bases:
+          "أريد": "I want"
+          "ماءً": "water"
+          "بارداً": "cold"

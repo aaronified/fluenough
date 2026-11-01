@@ -1,0 +1,131 @@
+schema: 1
+id: "he-en-first-words"
+kind: "layer"
+core: "he-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Written with niqqud (the vowel marks) so the word is clear. The readings are a simple transliteration of Modern Hebrew, not a strict standard. Their first sentences are in the examples. Not yet checked by a Hebrew speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "he-0001":
+    native: "yes"
+    notes:
+      "n1": "The yes. Its opposite is לֹא (lo), no."
+    examples:
+      "כֵּן, תּוֹדָה.": "Yes, thanks."
+      "כֵּן, אֲנִי מֵבִין.":
+        native: "Yes, I understand."
+        bases:
+          "מֵבִין": "to understand"
+  "he-0002":
+    native: "no; not"
+    notes:
+      "n1": "Also not, before a verb or an adjective: לֹא טוֹב (lo tov), not good."
+    examples:
+      "לֹא, תּוֹדָה.": "No, thanks."
+      "אֲנִי לֹא יוֹדֵעַ.":
+        native: "I don't know."
+        bases:
+          "יוֹדֵעַ": "to know"
+  "he-0003":
+    native: "hello; goodbye; peace"
+    notes:
+      "n1": "Hello, goodbye and peace: all three are shalom."
+    examples:
+      "שָׁלוֹם, מָה שְׁלוֹמְךָ?":
+        native: "Hi, how are you? (to a man)"
+        bases:
+          "מָה": "what"
+          "שְׁלוֹמְךָ": "peace; hello"
+      "שָׁלוֹם, חָבֵר.":
+        native: "Hello, friend."
+        bases:
+          "חָבֵר": "friend"
+  "he-0004":
+    native: "thanks; thank you"
+    notes:
+      "n1": "Thanks. The fuller form is תּוֹדָה רַבָּה (toda raba), thank you very much."
+    examples:
+      "תּוֹדָה רַבָּה.":
+        native: "Thank you very much."
+        bases:
+          "רַבָּה": "much; many"
+      "תּוֹדָה, זֶה טוֹב.":
+        native: "Thanks, this is good."
+        bases:
+          "זֶה": "this"
+  "he-0005":
+    native: "please; you're welcome; here you are"
+    notes:
+      "n1": "Also you're welcome, in reply to thanks, and here you are."
+    examples:
+      "כּוֹס מַיִם, בְּבַקָּשָׁה.":
+        native: "A glass of water, please."
+        bases:
+          "כּוֹס": "glass; cup"
+      "בְּבַקָּשָׁה, שֵׁב.":
+        native: "Please, sit down. (to a man)"
+        bases:
+          "שֵׁב": "to sit"
+  "he-0006":
+    native: "I"
+    notes:
+      "n1": "The same for a man and a woman. The present verb shows the speaker's gender: מֵבִין (mevín) for a man, מְבִינָה (mevína) for a woman."
+    examples:
+      "אֲנִי רוֹצֶה מַיִם.":
+        native: "I want water."
+        bases:
+          "רוֹצֶה": "to want"
+      "אֲנִי לֹא יוֹדֵעַ.":
+        native: "I don't know."
+        bases:
+          "יוֹדֵעַ": "to know"
+  "he-0007":
+    native: "you (to a man)"
+    notes:
+      "n1": "To a man. To a woman, say אַתְּ (at)."
+    examples:
+      "אַתָּה מְדַבֵּר עִבְרִית?":
+        native: "Do you speak Hebrew? (to a man)"
+        bases:
+          "מְדַבֵּר": "to speak"
+          "עִבְרִית": "Hebrew (language)"
+      "אַתָּה טוֹב.": "You are good. (to a man)"
+  "he-0008":
+    native: "water"
+    notes:
+      "n1": "Plural in form, as Hebrew water always is. A glass of water is כּוֹס מַיִם (kos mayim)."
+    examples:
+      "הַמַּיִם קָרִים.":
+        native: "The water is cold."
+        bases:
+          "הַמַּיִם": "water"
+          "קָרִים": "cold"
+      "אַתָּה רוֹצֶה מַיִם?":
+        native: "Do you want water? (to a man)"
+        bases:
+          "רוֹצֶה": "to want"
+  "he-0009":
+    native: "good"
+    notes:
+      "n1": "The masculine form. The feminine is טוֹבָה (tová)."
+    examples:
+      "בֹּקֶר טוֹב.":
+        native: "Good morning."
+        bases:
+          "בֹּקֶר": "morning"
+      "יוֹם טוֹב.":
+        native: "Good day."
+        bases:
+          "יוֹם": "day"
+  "he-0010":
+    native: "very"
+    notes:
+      "n1": "Goes after the word it describes: טוֹב מְאוֹד (tov meód), very good."
+    examples:
+      "טוֹב מְאוֹד.": "Very good."
+      "אֲנִי עָיֵף מְאוֹד.":
+        native: "I am very tired."
+        bases:
+          "עָיֵף": "tired"
