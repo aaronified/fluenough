@@ -403,7 +403,11 @@ void main() {
         findsNothing,
       );
       // Tapping the greyed row opens the page, not the skills sheet.
-      await tester.scrollUntilVisible(hi, -200);
+      // Back up: the greyed row is no longer built down here, so drag the
+      // list to its top, where it is.
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, 100000));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(hi);
       await tester.pumpAndSettle();
       await tester.tap(hi);
       await tester.pumpAndSettle();
