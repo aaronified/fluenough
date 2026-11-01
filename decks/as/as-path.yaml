@@ -359,11 +359,14 @@ units:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
   - decks: ["as-reading-appearance"]
     words: 0
-  - planned: { id: "as-verbs-3", theme: "verbs-3", words: 60 }
+  - decks: ["as-verbs-3", "as-verbs-3-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - decks: ["as-reading-verbs-3"]
+    words: 0
   - planned: { id: "as-phone", theme: "phone", words: 40 }
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }

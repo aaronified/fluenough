@@ -1,0 +1,91 @@
+schema: 1
+id: "as-verbs-3-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2929"
+    target: "মই বাছৰ পৰা নামোঁ।"
+    reading: "moi bāsôr pôrā namum̐."
+    ipa: "moi basɔɹ pɔɹa namʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "বাছৰ", ref: "as-0298" }
+      - { word: "নামোঁ", ref: "as-2912" }
+    confusables:
+      - { id: "c1", word: "উঠা", reading: "uthā", kind: "word" }
+      - { id: "c2", word: "সোমোৱা", reading: "xomuwā", kind: "word" }
+  - id: "as-2930"
+    target: "দুৱাৰ বন্ধ কৰা।"
+    reading: "duwār bôndhô kôrā."
+    ipa: "duwaɹ bɔndʱ kɔɹa"
+    pos: "phrase"
+    bases:
+      - { word: "বন্ধ", base: "বন্ধ", reading: "bôndhô" }
+    confusables:
+      - { id: "c1", word: "খোলা", reading: "khulā", kind: "word" }
+      - { id: "c2", word: "ফালা", reading: "phālā", kind: "word" }
+  - id: "as-2931"
+    target: "সি বাটত দৌৰে।"
+    reading: "xi bāṭôt doure."
+    ipa: "si batɔt dɔuɹe"
+    pos: "phrase"
+    bases:
+      - { word: "বাটত", ref: "as-0325" }
+      - { word: "দৌৰে", ref: "as-2917" }
+    confusables:
+      - { id: "c1", word: "চলা", reading: "sôlā", kind: "word" }
+      - { id: "c2", word: "উৰা", reading: "urā", kind: "word" }
+  - id: "as-2932"
+    target: "বাতি জ্বলে।"
+    reading: "bāti zwôle."
+    ipa: "bati zɔle"
+    pos: "phrase"
+    bases:
+      - { word: "জ্বলে", ref: "as-2923" }
+    confusables:
+      - { id: "c1", word: "নিভা", reading: "nibhā", kind: "word" }
+      - { id: "c2", word: "চিঞৰা", reading: "sinjôrā", kind: "word" }
+  - id: "as-2933"
+    target: "মই চাবি হেৰালোঁ।"
+    reading: "moi sābi herālum̐."
+    ipa: "moi sabi heɹalʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "হেৰালোঁ", ref: "as-2921" }
+    confusables:
+      - { id: "c1", word: "পোৱা", reading: "puwā", kind: "word" }
+      - { id: "c2", word: "বিচাৰা", reading: "bisārā", kind: "word" }
+  - id: "as-2934"
+    target: "তাই প্ৰশ্ন সুধে।"
+    reading: "tāi prôśn xudhe."
+    ipa: "tai pɹɔxn sudʱe"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "সুধে", ref: "as-2919" }
+    confusables:
+      - { id: "c1", word: "উত্তৰ", reading: "uttôr", kind: "word" }
+      - { id: "c2", word: "দিয়া", reading: "diyā", kind: "word" }
+  - id: "as-2935"
+    target: "মোনা বান্ধিব।"
+    reading: "munā bāndhib."
+    ipa: "mʊna bandʱib"
+    pos: "phrase"
+    bases:
+      - { word: "বান্ধিব", ref: "as-2924" }
+    confusables:
+      - { id: "c1", word: "খোলা", reading: "khulā", kind: "word" }
+      - { id: "c2", word: "ফালা", reading: "phālā", kind: "word" }
+  - id: "as-2936"
+    target: "চৰাই উৰিছে।"
+    reading: "sôrāi urise."
+    ipa: "sɔɹai uɹise"
+    pos: "phrase"
+    bases:
+      - { word: "উৰিছে", ref: "as-2916" }
+    confusables:
+      - { id: "c1", word: "ৰখা", reading: "rôkhā", kind: "word" }
+      - { id: "c2", word: "দৌৰা", reading: "dourā", kind: "word" }

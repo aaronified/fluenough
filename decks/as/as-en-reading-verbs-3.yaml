@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-verbs-3"
+name: "Assamese reading: more daily actions"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-busy-day"
+    title: "A busy day"
+    theme: "verbs-3"
+    sentences:
+      - text: "মই বাছৰ পৰা নামোঁ।"
+        reading: "moi bāsôr pôrā namum̐."
+      - text: "তাৰ পাছত ঘৰলৈ সোমাওঁ।"
+        reading: "tār pāsôt ghôrôlôi xomāum̐."
+      - text: "মই কিতাপ গুছোঁ।"
+        reading: "moi kitāp gusum̐."
+      - text: "তাৰ পাছত বাতি জ্বলাওঁ।"
+        reading: "tār pāsôt bāti zwālāum̐."
+    questions:
+      - id: "as-2937"
+        prompt: { en: "The speaker gets off the bus." }
+        answer: true
+      - id: "as-2938"
+        prompt: { en: "What does the speaker do after getting home?" }
+        options:
+          - { en: "Runs" }
+          - { en: "Tidies the books" }
+          - { en: "Shouts" }
+        answer: 2
+      - id: "as-2939"
+        prompt: { en: "What does the speaker light?" }
+        options:
+          - { en: "A fire" }
+          - { en: "A lamp" }
+          - { en: "A candle" }
+        answer: 2
+  - id: "as-diary-entry"
+    title: "A short diary entry"
+    theme: "verbs-3"
+    sentences:
+      - text: "আজি মই চাবি হেৰালোঁ।"
+        reading: "āzi moi sābi herālum̐."
+      - text: "মই বল বিচাৰিলোঁ।"
+        reading: "moi bôl bisārilum̐."
+      - text: "তাৰ পাছত বন্ধু আহিল।"
+        reading: "tār pāsôt bondhu āhil."
+      - text: "আমি একেলগে দৌৰিলোঁ।"
+        reading: "āmi ekelôge dourilum̐."
+    questions:
+      - id: "as-2940"
+        prompt: { en: "The writer lost a key today." }
+        answer: true
+      - id: "as-2941"
+        prompt: { en: "What did the writer search for?" }
+        options:
+          - { en: "A key" }
+          - { en: "A ball" }
+          - { en: "A bag" }
+        answer: 2
+      - id: "as-2942"
+        prompt: { en: "What did the writer and the friend do together?" }
+        options:
+          - { en: "Ran" }
+          - { en: "Flew" }
+          - { en: "Sang" }
+        answer: 1
