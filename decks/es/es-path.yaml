@@ -361,7 +361,8 @@ units:
       - { id: "wishes-and-advice", text: { "en": "Friends make wishes and give advice: I hope you come, I want you to rest" } }
     reading_passages:
       - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
-  - planned: { id: "es-services", theme: "services", words: 45 }
+  - decks: ["es-services", "es-services-sentences", "es-reading-services", "*"]
+    words: 34
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:

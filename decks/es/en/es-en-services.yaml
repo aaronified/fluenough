@@ -1,0 +1,247 @@
+schema: 1
+id: "es-en-services"
+kind: "layer"
+core: "es-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services: bank, post, repair and tailor"
+license: "CC-BY-SA-4.0"
+description: "Words for the services in a town: the bank and the cash machine, the post office and the parcel, the hairdresser and the tailor, the repairer and the plumber, and the forms and fees you meet at the counter. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2214":
+    native: "cash machine; cashier"
+    notes: { n1: "El cajero is a cash machine, or a cashier at a counter. El cajero automático is the cash machine." }
+    bases: { "el": "the", "cajero": "cash machine; cashier" }
+    examples:
+      "Saco dinero del cajero.": { native: "I take money out of the cash machine.", bases: { "del": "of", "cajero": "cash machine; cashier" } }
+      "El cajero del banco es amable.": { native: "The bank cashier is kind.", bases: { "El": "the", "cajero": "cash machine; cashier", "del": "of", "amable": "kind" } }
+  "es-2215":
+    native: "postcard"
+    notes: { n1: "La postal is a postcard, sent from a trip to friends." }
+    bases: { "la": "the", "postal": "postcard" }
+    examples:
+      "Envío una postal a mi madre.": { native: "I send a postcard to my mother.", bases: { "una": "a", "postal": "postcard", "a": "to" } }
+      "La postal es de la playa.": { native: "The postcard is from the beach.", bases: { "La": "the", "postal": "postcard", "de": "of", "la": "the" } }
+  "es-2216":
+    native: "stamp"
+    notes: { n1: "El sello is a postage stamp, put on a letter or a parcel." }
+    bases: { "el": "the", "sello": "stamp" }
+    examples:
+      "Necesito un sello para la carta.": { native: "I need a stamp for the letter.", bases: { "un": "a", "sello": "stamp", "para": "for", "la": "the" } }
+      "El sello cuesta un euro.": { native: "The stamp costs one euro.", bases: { "El": "the", "sello": "stamp", "un": "a" } }
+  "es-2217":
+    native: "hairdresser's"
+    notes: { n1: "La peluquería is a hairdresser's shop, where hair is cut and styled." }
+    bases: { "la": "the", "peluquería": "hairdresser's" }
+    examples:
+      "La peluquería está en la esquina.": { native: "The hairdresser's is on the corner.", bases: { "La": "the", "peluquería": "hairdresser's", "en": "in", "la": "the" } }
+      "Voy a la peluquería los sábados.": { native: "I go to the hairdresser's on Saturdays.", bases: { "a": "to", "la": "the", "peluquería": "hairdresser's", "los": "the" } }
+  "es-2218":
+    native: "hairdresser"
+    notes: { n1: "El peluquero is a hairdresser, who cuts and styles hair. The feminine is la peluquera." }
+    bases: { "el": "the", "peluquero": "hairdresser" }
+    examples:
+      "El peluquero corta el pelo.": { native: "The hairdresser cuts the hair.", bases: { "El": "the", "peluquero": "hairdresser", "el": "the" } }
+      "Mi peluquero es muy simpático.": { native: "My hairdresser is very nice.", bases: { "peluquero": "hairdresser" } }
+  "es-2219":
+    native: "tailor"
+    notes: { n1: "El sastre is a tailor, who makes and changes clothes. The feminine is la sastra." }
+    bases: { "el": "the", "sastre": "tailor" }
+    examples:
+      "El sastre arregla el pantalón.": { native: "The tailor fixes the trousers.", bases: { "El": "the", "sastre": "tailor", "el": "the" } }
+      "Necesito un sastre para el traje.": { native: "I need a tailor for the suit.", bases: { "un": "a", "sastre": "tailor", "para": "for", "el": "the" } }
+  "es-2220":
+    native: "shoe repairer"
+    notes: { n1: "El zapatero is a shoe repairer, or a shoe seller. The feminine is la zapatera." }
+    bases: { "el": "the", "zapatero": "shoe repairer" }
+    examples:
+      "El zapatero repara los zapatos.": { native: "The shoe repairer mends the shoes.", bases: { "El": "the", "zapatero": "shoe repairer", "los": "the" } }
+      "El zapatero está cerca del mercado.": { native: "The shoe repairer is near the market.", bases: { "El": "the", "zapatero": "shoe repairer", "del": "of" } }
+  "es-2221":
+    native: "dry cleaner's"
+    notes: { n1: "La tintorería is a dry cleaner's, where clothes are cleaned with chemicals." }
+    bases: { "la": "the", "tintorería": "dry cleaner's" }
+    examples:
+      "Llevo el abrigo a la tintorería.": { native: "I take the coat to the dry cleaner's.", bases: { "el": "the", "a": "to", "la": "the", "tintorería": "dry cleaner's" } }
+      "La tintorería cierra a las siete.": { native: "The dry cleaner's closes at seven.", bases: { "La": "the", "tintorería": "dry cleaner's", "a": "to", "las": "the" } }
+  "es-2222":
+    native: "laundry"
+    notes: { n1: "La lavandería is a laundry, where clothes are washed for you." }
+    bases: { "la": "the", "lavandería": "laundry" }
+    examples:
+      "La lavandería lava la ropa.": { native: "The laundry washes the clothes.", bases: { "La": "the", "lavandería": "laundry", "la": "the" } }
+      "Llevo las sábanas a la lavandería.": { native: "I take the sheets to the laundry.", bases: { "las": "the", "sábanas": "sheet", "a": "to", "la": "the", "lavandería": "laundry" } }
+  "es-2223":
+    native: "deposit; income"
+    notes: { n1: "El ingreso is money paid into a bank account, or income from work." }
+    bases: { "el": "the", "ingreso": "deposit; income" }
+    examples:
+      "Hago un ingreso en el banco.": { native: "I make a deposit at the bank.", bases: { "un": "a", "ingreso": "deposit; income", "en": "in", "el": "the" } }
+      "El ingreso es de mil euros.": { native: "The income is a thousand euros./euro", bases: { "El": "the", "ingreso": "deposit; income", "de": "of" } }
+  "es-2224":
+    native: "to withdraw"
+    notes: { n1: "Retirar is to take money out of a bank account, or to take something away." }
+    bases: { "retirar": "to withdraw" }
+    examples:
+      "Retiro dinero del cajero.": { native: "I withdraw money from the cash machine.", bases: { "Retiro": "to withdraw", "del": "of" } }
+      "Retiran la publicidad.": { native: "They remove the advert.", bases: { "Retiran": "to withdraw", "la": "the" } }
+  "es-2225":
+    native: "to deposit"
+    notes: { n1: "Depositar is to put money into a bank account, or to leave something in a place." }
+    bases: { "depositar": "to deposit" }
+    examples:
+      "Deposito el cheque.": { native: "I deposit the cheque./cheque", bases: { "Deposito": "to deposit", "el": "the", "cheque": "cheque" } }
+      "Depositan el dinero en el banco.": { native: "They deposit the money at the bank.", bases: { "Depositan": "to deposit", "el": "the", "en": "in" } }
+  "es-2226":
+    native: "signature"
+    notes: { n1: "La firma is a signature, the name written by hand on a paper." }
+    bases: { "la": "the", "firma": "signature" }
+    examples:
+      "Pongo mi firma en el papel.": { native: "I put my signature on the paper.", bases: { "firma": "signature", "en": "in", "el": "the" } }
+      "La firma es necesaria.": { native: "The signature is necessary.", bases: { "La": "the", "firma": "signature" } }
+  "es-2227":
+    native: "form"
+    notes: { n1: "El formulario is a form, a paper with boxes to fill in." }
+    bases: { "el": "the", "formulario": "form" }
+    examples:
+      "Rellenar el formulario lleva diez minutos.": { native: "Filling in the form takes ten minutes.", bases: { "Rellenar": "to fill in", "el": "the", "formulario": "form" } }
+      "Necesito un formulario para el banco.": { native: "I need a form for the bank.", bases: { "un": "a", "formulario": "form", "para": "for", "el": "the" } }
+  "es-2228":
+    native: "application"
+    notes: { n1: "La solicitud is an application for a job, a loan or a permit." }
+    bases: { "la": "the", "solicitud": "application" }
+    examples:
+      "Presento mi solicitud hoy.": { native: "I submit my application today.", bases: { "solicitud": "application" } }
+      "La solicitud es para el trabajo.": { native: "The application is for the job.", bases: { "La": "the", "solicitud": "application", "para": "for", "el": "the" } }
+  "es-2229":
+    native: "counter window"
+    notes: { n1: "La ventanilla is a small window at a counter, where you are served." }
+    bases: { "la": "the", "ventanilla": "counter window" }
+    examples:
+      "Espero en la ventanilla número tres.": { native: "I wait at counter window three.", bases: { "en": "in", "la": "the", "ventanilla": "counter window" } }
+      "La ventanilla está abierta.": { native: "The counter is open.", bases: { "La": "the", "ventanilla": "counter window" } }
+  "es-2230":
+    native: "fee; rate"
+    notes: { n1: "La tasa is a fee paid to the state or a rate of interest." }
+    bases: { "la": "the", "tasa": "fee; rate" }
+    examples:
+      "La tasa es de diez euros.": { native: "The fee is ten euros./euro", bases: { "La": "the", "tasa": "fee; rate", "de": "of" } }
+      "La tasa de interés es baja.": { native: "The interest rate is low.", bases: { "La": "the", "tasa": "fee; rate", "de": "of", "interés": "interest" } }
+  "es-2231":
+    native: "tax"
+    notes: { n1: "El impuesto is a tax paid to the government." }
+    bases: { "el": "the", "impuesto": "tax" }
+    examples:
+      "Pago los impuestos cada año.": { native: "I pay my taxes every year.", bases: { "los": "the", "impuestos": "tax" } }
+      "El impuesto es alto.": { native: "The tax is high.", bases: { "El": "the", "impuesto": "tax" } }
+  "es-2232":
+    native: "loan"
+    notes: { n1: "El préstamo is a loan of money, paid back later." }
+    bases: { "el": "the", "préstamo": "loan" }
+    examples:
+      "Pido un préstamo al banco.": { native: "I ask the bank for a loan.", bases: { "un": "a", "préstamo": "loan", "al": "to the" } }
+      "El préstamo es a cinco años.": { native: "The loan is for five years.", bases: { "El": "the", "préstamo": "loan", "a": "to" } }
+  "es-2233":
+    native: "commission; fee"
+    notes: { n1: "La comisión is a commission, the fee a bank or agent charges for a service." }
+    bases: { "la": "the", "comisión": "commission; fee" }
+    examples:
+      "La comisión es de dos euros.": { native: "The commission is two euros./euro", bases: { "La": "the", "comisión": "commission; fee", "de": "of" } }
+      "No hay comisión por el cambio.": { native: "There is no fee for the exchange.", bases: { "hay": "there is; there are", "comisión": "commission; fee", "por": "for", "el": "the" } }
+  "es-2234":
+    native: "service"
+    notes: { n1: "El servicio is a service, the work done for others, or the staff of a place." }
+    bases: { "el": "the", "servicio": "service" }
+    examples:
+      "El servicio es rápido.": { native: "The service is quick.", bases: { "El": "the", "servicio": "service" } }
+      "Hay un servicio de correo en el barrio.": { native: "There is a postal service in the neighbourhood.", bases: { "Hay": "there is; there are", "un": "a", "servicio": "service", "de": "of", "en": "in", "el": "the" } }
+  "es-2235":
+    native: "repair"
+    notes: { n1: "La reparación is the repair of something that is broken." }
+    bases: { "la": "the", "reparación": "repair" }
+    examples:
+      "La reparación cuesta cien euros.": { native: "The repair costs a hundred euros./euro", bases: { "La": "the", "reparación": "repair" } }
+      "Pido una reparación del coche.": { native: "I ask for the car to be repaired.", bases: { "una": "a", "reparación": "repair", "del": "of" } }
+  "es-2236":
+    native: "repair; fix"
+    notes: { n1: "El arreglo is a repair, or the work done to fix something." }
+    bases: { "el": "the", "arreglo": "repair; fix" }
+    examples:
+      "El arreglo está listo.": { native: "The repair is ready.", bases: { "El": "the" } }
+      "Necesito un arreglo en la camisa.": { native: "I need a repair on the shirt.", bases: { "un": "a", "en": "in", "la": "the" } }
+  "es-2237":
+    native: "mechanic"
+    notes: { n1: "El mecánico is a mechanic, who repairs cars and machines. The feminine is la mecánica." }
+    bases: { "el": "the", "mecánico": "mechanic" }
+    examples:
+      "El mecánico revisa el coche.": { native: "The mechanic checks the car.", bases: { "El": "the", "mecánico": "mechanic", "revisa": "to check", "el": "the" } }
+      "Llevo el coche al mecánico.": { native: "I take the car to the mechanic.", bases: { "el": "the", "al": "to the", "mecánico": "mechanic" } }
+  "es-2238":
+    native: "plumber"
+    notes: { n1: "El fontanero is a plumber, who fixes pipes and water." }
+    bases: { "el": "the", "fontanero": "plumber" }
+    examples:
+      "El fontanero arregla el grifo.": { native: "The plumber fixes the tap.", bases: { "El": "the", "fontanero": "plumber", "el": "the" } }
+      "Llamo al fontanero por la fuga.": { native: "I call the plumber about the leak.", bases: { "al": "to the", "fontanero": "plumber", "por": "for", "la": "the", "fuga": "leak" } }
+  "es-2239":
+    native: "electrician"
+    notes: { n1: "El electricista is an electrician, who fixes electrical things. The feminine is la electricista." }
+    bases: { "el": "the", "electricista": "electrician" }
+    examples:
+      "El electricista revisa el enchufe.": { native: "The electrician checks the socket.", bases: { "El": "the", "electricista": "electrician", "revisa": "to check", "el": "the" } }
+      "Necesito un electricista.": { native: "I need an electrician.", bases: { "un": "a", "electricista": "electrician" } }
+  "es-2240":
+    native: "carpenter"
+    notes: { n1: "El carpintero is a carpenter, who makes things from wood." }
+    bases: { "el": "the", "carpintero": "carpenter" }
+    examples:
+      "El carpintero hace una mesa.": { native: "The carpenter makes a table.", bases: { "El": "the", "carpintero": "carpenter", "una": "a" } }
+      "El carpintero trabaja con madera.": { native: "The carpenter works with wood.", bases: { "El": "the", "carpintero": "carpenter", "con": "with" } }
+  "es-2241":
+    native: "locksmith"
+    notes: { n1: "El cerrajero is a locksmith, who opens doors and fixes locks." }
+    bases: { "el": "the", "cerrajero": "locksmith" }
+    examples:
+      "El cerrajero abre la puerta.": { native: "The locksmith opens the door.", bases: { "El": "the", "cerrajero": "locksmith", "la": "the" } }
+      "Llamo al cerrajero porque perdí la llave.": { native: "I call the locksmith because I lost the key.", bases: { "al": "to the", "cerrajero": "locksmith", "porque": "because", "la": "the" } }
+  "es-2242":
+    native: "painter"
+    notes: { n1: "El pintor is a painter, who paints walls or pictures. The feminine is la pintora." }
+    bases: { "el": "the", "pintor": "painter" }
+    examples:
+      "El pintor pinta la pared.": { native: "The painter paints the wall.", bases: { "El": "the", "pintor": "painter", "la": "the" } }
+      "Mi tío es pintor de casas.": { native: "My uncle is a house painter.", bases: { "pintor": "painter", "de": "of" } }
+  "es-2243":
+    native: "envelope"
+    notes: { n1: "El sobre is an envelope, for a letter." }
+    bases: { "el": "the", "sobre": "envelope" }
+    examples:
+      "Pongo la carta en el sobre.": { native: "I put the letter in the envelope.", bases: { "la": "the", "en": "in", "el": "the", "sobre": "envelope" } }
+      "El sobre tiene la dirección.": { native: "The envelope has the address.", bases: { "El": "the", "sobre": "envelope", "la": "the" } }
+  "es-2244":
+    native: "code; postcode"
+    notes: { n1: "El código is a code, a set of numbers or letters, or a postcode." }
+    bases: { "el": "the", "código": "code; postcode" }
+    examples:
+      "¿Cuál es el código postal?": { native: "What is the postcode?", bases: { "el": "the", "código": "code; postcode" } }
+      "Necesito el código de la tarjeta.": { native: "I need the card's code.", bases: { "el": "the", "código": "code; postcode", "de": "of", "la": "the" } }
+  "es-2245":
+    native: "sender"
+    notes: { n1: "El remitente is the sender of a letter or a parcel." }
+    bases: { "el": "the", "remitente": "sender" }
+    examples:
+      "El remitente escribe su nombre.": { native: "The sender writes their name.", bases: { "El": "the", "remitente": "sender" } }
+      "El remitente está en el sobre.": { native: "The sender is on the envelope.", bases: { "El": "the", "remitente": "sender", "en": "in", "el": "the" } }
+  "es-2246":
+    native: "recipient"
+    notes: { n1: "El destinatario is the person who receives a letter or a parcel." }
+    bases: { "el": "the", "destinatario": "recipient" }
+    examples:
+      "El destinatario firma el paquete.": { native: "The recipient signs for the parcel.", bases: { "El": "the", "destinatario": "recipient", "el": "the" } }
+      "El destinatario vive en Lima.": { native: "The recipient lives in Lima.", bases: { "El": "the", "destinatario": "recipient", "en": "in", "Lima": "Lima" } }
+  "es-2247":
+    native: "to repair"
+    notes: { n1: "Reparar is to repair something that is broken." }
+    bases: { "reparar": "to repair" }
+    examples:
+      "Reparo la bicicleta.": { native: "I repair the bicycle.", bases: { "Reparo": "to repair", "la": "the" } }
+      "El zapatero repara los zapatos.": { native: "The shoe repairer mends the shoes.", bases: { "El": "the", "repara": "to repair", "los": "the" } }
