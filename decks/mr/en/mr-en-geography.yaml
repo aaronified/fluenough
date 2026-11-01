@@ -1,0 +1,129 @@
+schema: 1
+id: "mr-en-geography"
+kind: "layer"
+core: "mr-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography"
+description: "India and its states: Maharashtra and its neighbours, the capital, the coast and the directions, with the words for borders and population. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1279":
+    native: "geography"
+    notes:
+      "n1": "{1} is geography, the study of the land, its places and people."
+    examples:
+      "मला भूगोल आवडतो.": "I like geography."
+      "भूगोलाचं पुस्तक जाड आहे.": { native: "The geography book is thick.", bases: { "आहे": "to be", "भूगोलाचं": "geography" } }
+  "mr-1280":
+    native: "state (of India)"
+    notes:
+      "n1": "{1} is a state of India, a region with its own government."
+    examples:
+      "महाराष्ट्र एक मोठं राज्य आहे.": { native: "Maharashtra is a big state.", bases: { "आहे": "to be" } }
+      "भारतात अनेक राज्यं आहेत.": { native: "India has many states.", bases: { "भारतात": "in India", "आहेत": "to be", "राज्यं": "state (of India)", "अनेक": "many" } }
+  "mr-1281":
+    native: "Maharashtra"
+    notes:
+      "n1": "{1} is the state of Maharashtra, whose language is Marathi."
+    examples:
+      "मी महाराष्ट्रात राहतो.": { native: "I live in Maharashtra.", bases: { "महाराष्ट्रात": "Maharashtra" } }
+      "महाराष्ट्राची राजधानी मुंबई आहे.": { native: "The capital of Maharashtra is Mumbai.", bases: { "आहे": "to be", "महाराष्ट्राची": "Maharashtra", "मुंबई": "Mumbai" } }
+  "mr-1282":
+    native: "capital (city)"
+    notes:
+      "n1": "{1} is the capital city of a state or a country."
+    examples:
+      "भारताची राजधानी दिल्ली आहे.": { native: "The capital of India is Delhi.", bases: { "भारताची": "of India", "आहे": "to be" } }
+      "राजधानी मोठी आहे.": { native: "The capital is big.", bases: { "आहे": "to be" } }
+  "mr-1283":
+    native: "district"
+    notes:
+      "n1": "{1} is a district, a division of a state."
+    examples:
+      "आमचा जिल्हा कोणता?": { native: "Which district are we in?", bases: { "कोणता": "which" } }
+      "पुणे जिल्ह्यात पाऊस जास्त आहे.": { native: "There is more rain in Pune district.", bases: { "जास्त": "more", "आहे": "to be", "जिल्ह्यात": "district", "पुणे": "Pune" } }
+  "mr-1284":
+    native: "border"
+    notes:
+      "n1": "{1} is a border between places."
+    examples:
+      "भारताची सीमा लांब आहे.": { native: "India's border is long.", bases: { "भारताची": "of India", "आहे": "to be" } }
+      "सीमेवर सैनिक उभे आहेत.": { native: "Soldiers are standing at the border.", bases: { "उभे": "standing", "आहेत": "to be", "सीमेवर": "border" } }
+  "mr-1286":
+    native: "Karnataka"
+    notes:
+      "n1": "{1} is a state to the south of Maharashtra."
+    examples:
+      "कर्नाटक महाराष्ट्राच्या दक्षिणेला आहे.": { native: "Karnataka is to the south of Maharashtra.", bases: { "आहे": "to be" } }
+      "कर्नाटकात कन्नड बोलतात.": { native: "In Karnataka they speak Kannada.", bases: { "कर्नाटकात": "Karnataka", "कन्नड": "Kannada" } }
+  "mr-1287":
+    native: "Gujarat"
+    notes:
+      "n1": "{1} is a state to the north-west of Maharashtra."
+    examples:
+      "गुजरात उत्तरेला आहे.": { native: "Gujarat is to the north.", bases: { "आहे": "to be" } }
+      "गुजरातमध्ये समुद्र मोठा आहे.": { native: "The sea is big in Gujarat.", bases: { "आहे": "to be", "गुजरातमध्ये": "Gujarat" } }
+  "mr-1288":
+    native: "Delhi"
+    notes:
+      "n1": "{1} is Delhi, the capital of India."
+    examples:
+      "दिल्ली मोठं शहर आहे.": { native: "Delhi is a big city.", bases: { "शहर": "city", "आहे": "to be" } }
+      "दिल्लीला गेलो होतो.": { native: "I had gone to Delhi.", bases: { "होतो": "to be", "दिल्लीला": "to Delhi" } }
+  "mr-1289":
+    native: "west"
+    notes:
+      "n1": "{1} is the west, one of the four directions."
+    examples:
+      "सूर्य पश्चिमेला मावळतो.": { native: "The sun sets in the west.", bases: { "पश्चिमेला": "west" } }
+      "समुद्र पश्चिमेला आहे.": { native: "The sea is to the west.", bases: { "आहे": "to be", "पश्चिमेला": "west" } }
+  "mr-1290":
+    native: "east"
+    notes:
+      "n1": "{1} is the east, the direction the sun rises from."
+    examples:
+      "सूर्य पूर्वेला उगवतो.": { native: "The sun rises in the east.", bases: { "पूर्वेला": "east" } }
+      "पूर्वेकडे चाललो.": { native: "I walked towards the east.", bases: { "पूर्वेकडे": "towards the east" } }
+  "mr-1291":
+    native: "south"
+    notes:
+      "n1": "{1} is the south."
+    examples:
+      "दक्षिणेला पाऊस जास्त असतो.": { native: "There is more rain in the south.", bases: { "जास्त": "more", "असतो": "to be", "दक्षिणेला": "south" } }
+      "शहर दक्षिणेकडे आहे.": { native: "The city is to the south.", bases: { "आहे": "to be", "दक्षिणेकडे": "towards the south" } }
+  "mr-1292":
+    native: "north"
+    notes:
+      "n1": "{1} is the north. It also means an answer."
+    examples:
+      "उत्तरेला बर्फ पडतो.": { native: "Snow falls in the north.", bases: { "उत्तरेला": "north", "बर्फ": "snow" } }
+      "उत्तरेकडे डोंगर आहेत.": { native: "There are mountains to the north.", bases: { "आहेत": "to be", "उत्तरेकडे": "north" } }
+  "mr-1293":
+    native: "shore, coast"
+    notes:
+      "n1": "{1} is a shore or coast by the sea or a river."
+    examples:
+      "समुद्रकिनारा स्वच्छ आहे.": { native: "The seashore is clean.", bases: { "आहे": "to be", "समुद्रकिनारा": "seashore" } }
+      "नदीच्या किनाऱ्यावर बसलो.": { native: "I sat on the riverbank.", bases: { "बसलो": "to sit", "किनाऱ्यावर": "shore, coast" } }
+  "mr-1294":
+    native: "population"
+    notes:
+      "n1": "{1} is the population of a place: the number of people who live there."
+    examples:
+      "शहराची लोकसंख्या जास्त आहे.": { native: "The city's population is high.", bases: { "शहराची": "of the city", "जास्त": "high", "आहे": "to be" } }
+      "भारताची लोकसंख्या मोठी आहे.": { native: "India's population is big.", bases: { "भारताची": "of India", "आहे": "to be" } }
+  "mr-1295":
+    native: "neighbouring"
+    notes:
+      "n1": "{1} describes a place next to another."
+    examples:
+      "शेजारचा जिल्हा मोठा आहे.": { native: "The neighbouring district is big.", bases: { "आहे": "to be" } }
+      "शेजारचं राज्य सुंदर आहे.": { native: "The neighbouring state is beautiful.", bases: { "आहे": "to be", "शेजारचं": "neighbouring" } }
+  "mr-1296":
+    native: "soldier"
+    notes:
+      "n1": "{1} is a soldier who serves in the army."
+    examples:
+      "सैनिक देशाचं रक्षण करतात.": { native: "Soldiers protect the country.", bases: { "रक्षण": "protection" } }
+      "सैनिकांना सलाम करा.": { native: "Salute the soldiers.", bases: { "सलाम": "salute", "सैनिकांना": "soldier" } }

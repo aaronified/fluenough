@@ -1,0 +1,152 @@
+schema: 1
+id: "mr-en-law"
+kind: "layer"
+core: "mr-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law"
+description: "The law and its words: a crime and a complaint, the police and the court, witnesses and bail, and a citizen's rights and duties. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1678":
+    native: "law"
+    notes:
+      "n1": "{1} is a law, a rule made by a government and followed by all."
+    examples:
+      "हा कायदा सगळ्यांना लागू आहे.": { native: "This law applies to everyone.", bases: { "लागू": "applicable", "आहे": "to be" } }
+      "कायद्याने हे चुकीचं आहे.": { native: "This is wrong by law.", bases: { "चुकीचं": "wrong", "आहे": "to be", "कायद्याने": "law" } }
+  "mr-1679":
+    native: "justice"
+    notes:
+      "n1": "{1} is justice, what is fair under the law."
+    examples:
+      "सगळ्यांना न्याय मिळाला पाहिजे.": { native: "Everyone should get justice.", bases: { "मिळाला": "to get" } }
+      "त्याला न्याय हवा आहे.": { native: "He wants justice.", bases: { "आहे": "to be" } }
+  "mr-1680":
+    native: "crime, offence"
+    notes:
+      "n1": "{1} is a crime, something the law forbids."
+    examples:
+      "हा गंभीर गुन्हा आहे.": { native: "This is a serious crime.", bases: { "गंभीर": "serious", "आहे": "to be" } }
+      "गुन्हा कधी घडला?": "When was the crime committed?"
+  "mr-1681":
+    native: "criminal"
+    notes:
+      "n1": "{1} is a criminal, a person who has committed a crime."
+    examples:
+      "गुन्हेगाराला अटक झाली.": { native: "The criminal was arrested.", bases: { "झाली": "to become", "गुन्हेगाराला": "criminal" } }
+      "गुन्हेगार पळून गेला.": "The criminal ran away."
+  "mr-1682":
+    native: "theft"
+    notes:
+      "n1": "{1} is theft, stealing something."
+    examples:
+      "घरात चोरी झाली.": { native: "There was a theft in the house.", bases: { "झाली": "to become" } }
+      "चोरी केल्याबद्दल त्याला शिक्षा झाली.": { native: "He was punished for the theft.", bases: { "शिक्षा": "punishment", "झाली": "to become" } }
+  "mr-1683":
+    native: "fraud, cheating"
+    notes:
+      "n1": "{1} is fraud, cheating someone to take money or goods."
+    examples:
+      "ऑनलाईन फसवणूक झाली.": { native: "There was an online fraud.", bases: { "झाली": "to become", "ऑनलाईन": "online" } }
+      "फसवणुकीपासून सावध रहा.": { native: "Be careful of fraud.", bases: { "सावध": "careful", "फसवणुकीपासून": "fraud, cheating" } }
+  "mr-1684":
+    native: "murder"
+    notes:
+      "n1": "{1} is murder, killing a person on purpose."
+    examples:
+      "शहरात खून झाला.": { native: "A murder happened in the city.", bases: { "शहरात": "in the city", "झाला": "to become" } }
+      "खुनाचा तपास सुरू आहे.": { native: "The murder investigation is going on.", bases: { "तपास": "investigation", "सुरू": "going on", "आहे": "to be", "खुनाचा": "murder" } }
+  "mr-1685":
+    native: "complaint"
+    notes:
+      "n1": "{1} is a complaint made to the police or an office."
+    examples:
+      "पोलिसांकडे तक्रार नोंदवली.": { native: "I registered a complaint with the police.", bases: { "नोंदवली": "to register" } }
+      "तक्रार लेखी करा.": { native: "Make the complaint in writing.", bases: { "लेखी": "in writing" } }
+  "mr-1686":
+    native: "evidence, proof"
+    notes:
+      "n1": "{1} is evidence, proof of something in court."
+    examples:
+      "पुरावा दाखवा.": "Show the evidence."
+      "पुरावे नसल्यामुळे तो सुटला.": { native: "He was released because there was no evidence.", bases: { "नसल्यामुळे": "because not", "सुटला": "to be released" } }
+  "mr-1687":
+    native: "witness"
+    notes:
+      "n1": "{1} is a witness who saw the event and speaks in court."
+    examples:
+      "साक्षीदार न्यायालयात आला.": "The witness came to court."
+      "साक्षीदाराने सत्य सांगितलं.": { native: "The witness told the truth.", bases: { "सत्य": "truth", "साक्षीदाराने": "witness" } }
+  "mr-1688":
+    native: "judge"
+    notes:
+      "n1": "{1} is a judge who decides a case in court."
+    examples:
+      "न्यायाधीशांनी निकाल दिला.": { native: "The judge gave the verdict.", bases: { "न्यायाधीशांनी": "judge" } }
+      "न्यायाधीश शिक्षा सुनावणार आहेत.": { native: "The judge is going to pass sentence.", bases: { "सुनावणार": "to pronounce", "आहेत": "to be", "शिक्षा": "punishment" } }
+  "mr-1689":
+    native: "charge, accusation"
+    notes:
+      "n1": "{1} is an accusation that someone did something wrong."
+    examples:
+      "त्याच्यावर आरोप आहे.": { native: "He has been charged.", bases: { "आहे": "to be" } }
+      "आरोप खोटे आहेत.": { native: "The charges are false.", bases: { "आहेत": "to be" } }
+  "mr-1690":
+    native: "arrest"
+    notes:
+      "n1": "{1} is an arrest by the police."
+    examples:
+      "पोलिसांनी त्याला अटक केली.": "The police arrested him."
+      "अटक टाळता येत नाही.": { native: "The arrest cannot be avoided.", bases: { "नाही": "not" } }
+  "mr-1691":
+    native: "bail"
+    notes:
+      "n1": "{1} is bail, money or a promise that lets an accused person go free before trial."
+    examples:
+      "त्याला जामीन मिळाला.": { native: "He got bail.", bases: { "मिळाला": "to get" } }
+      "जामीनदार कोण आहे?": { native: "Who is the guarantor?", bases: { "जामीनदार": "guarantor", "कोण": "who", "आहे": "to be" } }
+  "mr-1692":
+    native: "case, lawsuit"
+    notes:
+      "n1": "{1} is a legal case in court."
+    examples:
+      "खटला पाच वर्षं चालला.": { native: "The case went on for five years.", bases: { "चालला": "to go on" } }
+      "खटल्याचा निकाल लागला.": { native: "The case was decided.", bases: { "लागला": "to come", "खटल्याचा": "case, lawsuit" } }
+  "mr-1693":
+    native: "right (legal)"
+    notes:
+      "n1": "{1} is a right that a person is entitled to by law."
+    examples:
+      "प्रत्येकाला मत देण्याचा हक्क आहे.": { native: "Everyone has the right to vote.", bases: { "आहे": "to be" } }
+      "माझे हक्क कोणी काढून घेऊ शकत नाही.": { native: "No one can take away my rights.", bases: { "शकत": "can", "नाही": "not" } }
+  "mr-1694":
+    native: "duty"
+    notes:
+      "n1": "{1} is a duty, something a person must do."
+    examples:
+      "नागरिक म्हणून हे आपलं कर्तव्य आहे.": { native: "As a citizen this is our duty.", bases: { "आपलं": "our", "आहे": "to be" } }
+      "कर्तव्य पार पाडा.": { native: "Do your duty.", bases: { "पार": "through", "पाडा": "to carry out" } }
+  "mr-1695":
+    native: "evidence (plural)"
+    notes:
+      "n1": "{1} is the plural of पुरावा (purāvā), evidence."
+    examples:
+      "पुरावे गोळा केले.": { native: "The evidence was gathered.", bases: { "गोळा": "gathered" } }
+      "पुराव्यांची तपासणी झाली.": { native: "The evidence was checked.", bases: { "झाली": "to become" } }
+  "mr-1696":
+    native: "to punish, to sentence"
+    notes:
+      "n1": "{1} is punishing someone under the law."
+    bases:
+      "शिक्षा": "punishment"
+    examples:
+      "न्यायालयाने त्याला शिक्षा केली.": { native: "The court punished him.", bases: { "शिक्षा": "punishment" } }
+      "चुकीसाठी शिक्षा होते.": { native: "A mistake is punished.", bases: { "चुकीसाठी": "for a mistake", "होते": "to become", "शिक्षा": "punishment" } }
+  "mr-1697":
+    native: "to complain, to file a complaint"
+    notes:
+      "n1": "{1} is making a complaint about someone or something."
+    examples:
+      "त्याने पोलिसांत तक्रार केली.": "He filed a complaint with the police."
+      "तक्रार करू नका.": "Do not complain."

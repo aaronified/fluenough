@@ -1,0 +1,166 @@
+schema: 1
+id: "mr-en-money"
+kind: "layer"
+core: "mr-money"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money"
+description: "Money in daily life: earning and spending, saving and investing, loans and interest, and the words of a household budget. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1747":
+    native: "money"
+    notes:
+      "n1": "{1} is money. In speech the plural पैसे (paise) is more common."
+    examples:
+      "माझ्याकडे पैसा नाही.": { native: "I have no money.", bases: { "नाही": "not" } }
+      "पैशांचं नियोजन करा.": { native: "Plan your money.", bases: { "नियोजन": "planning", "पैशांचं": "money" } }
+  "mr-1748":
+    native: "earnings, income"
+    notes:
+      "n1": "{1} is what a person earns by work."
+    examples:
+      "त्याची महिन्याची कमाई चांगली आहे.": { native: "His monthly earnings are good.", bases: { "आहे": "to be" } }
+      "कमाईतून घर चालतं.": { native: "The household runs on the earnings.", bases: { "कमाईतून": "earnings, income", "चालतं": "to run, to work" } }
+  "mr-1749":
+    native: "income"
+    notes:
+      "n1": "{1} is income, money coming in over a period."
+    examples:
+      "माझं वार्षिक उत्पन्न वाढलं.": { native: "My annual income rose.", bases: { "वार्षिक": "annual" } }
+      "उत्पन्नाचा दाखला आणा.": { native: "Bring the income certificate.", bases: { "दाखला": "certificate", "उत्पन्नाचा": "income" } }
+  "mr-1750":
+    native: "expense, spending"
+    notes:
+      "n1": "{1} is an expense or spending."
+    examples:
+      "महिन्याचा खर्च जास्त झाला.": { native: "The monthly expense went up.", bases: { "जास्त": "more", "झाला": "to become" } }
+      "खर्च कमी करायला हवा.": { native: "We should reduce spending.", bases: { "कमी": "less" } }
+  "mr-1751":
+    native: "savings"
+    notes:
+      "n1": "{1} is savings, money put aside."
+    examples:
+      "दरमहा थोडी बचत करतो.": { native: "I save a little every month.", bases: { "दरमहा": "every month", "थोडी": "a little" } }
+      "बचत बँकेत ठेवा.": "Keep your savings in the bank."
+  "mr-1752":
+    native: "investment"
+    notes:
+      "n1": "{1} is an investment, money put in to earn more money later."
+    examples:
+      "ही चांगली गुंतवणूक आहे.": { native: "This is a good investment.", bases: { "आहे": "to be" } }
+      "गुंतवणुकीचा विचार करा.": { native: "Think about the investment.", bases: { "गुंतवणुकीचा": "investment" } }
+  "mr-1753":
+    native: "loan, debt"
+    notes:
+      "n1": "{1} is a loan or a debt that must be paid back."
+    examples:
+      "त्याने बँकेकडून कर्ज घेतलं.": "He took a loan from the bank."
+      "कर्ज फेडायला वेळ लागेल.": { native: "It will take time to repay the loan.", bases: { "फेडायला": "to repay", "लागेल": "to take" } }
+  "mr-1754":
+    native: "interest (on money)"
+    notes:
+      "n1": "{1} is interest, the extra money paid on a loan or earned on savings."
+    examples:
+      "बँकेत व्याज मिळतं.": { native: "Interest is earned in the bank.", bases: { "मिळतं": "to get" } }
+      "कर्जावर जास्त व्याज आहे.": { native: "The loan has high interest.", bases: { "जास्त": "high", "आहे": "to be" } }
+  "mr-1755":
+    native: "insurance"
+    notes:
+      "n1": "{1} is insurance, a payment that protects against a loss."
+    examples:
+      "आरोग्य विमा घेतला.": "I took health insurance."
+      "विम्याची रक्कम किती आहे?": { native: "What is the amount of the insurance?", bases: { "आहे": "to be", "विम्याची": "insurance" } }
+  "mr-1756":
+    native: "budget"
+    notes:
+      "n1": "{1} is a budget, a plan of how money will be spent, a loanword from English."
+    examples:
+      "महिन्याचं बजेट ठरवलं.": "I decided the monthly budget."
+      "बजेट मध्ये राहा.": { native: "Stay within the budget.", bases: { "मध्ये": "within" } }
+  "mr-1757":
+    native: "jewellery, ornament"
+    notes:
+      "n1": "{1} is an item of jewellery. The plural is दागिने (dāgine)."
+    examples:
+      "तिने सुंदर दागिने घातले.": { native: "She wore beautiful jewellery.", bases: { "दागिने": "jewellery", "घातले": "to wear" } }
+      "दागिन्यांची किंमत जास्त आहे.": { native: "The jewellery's price is high.", bases: { "जास्त": "high", "आहे": "to be", "दागिन्यांची": "jewellery, ornament" } }
+  "mr-1758":
+    native: "poor"
+    notes:
+      "n1": "{1} describes a poor person. Its opposite is श्रीमंत (śrīmant), rich."
+    examples:
+      "गरीब माणसाला मदत करा.": "Help the poor person."
+      "गरीब कुटुंबं शिकायला संधी मिळावी.": { native: "Poor families should get a chance to study.", bases: { "मिळावी": "to get" } }
+  "mr-1759":
+    native: "unemployed"
+    notes:
+      "n1": "{1} describes someone without a job."
+    examples:
+      "तो सहा महिने बेरोजगार होता.": { native: "He was unemployed for six months.", bases: { "होता": "to be" } }
+      "बेरोजगारी कमी करायला हवी.": { native: "Unemployment should be reduced.", bases: { "बेरोजगारी": "unemployment", "कमी": "reduced" } }
+  "mr-1760":
+    native: "financial, economic"
+    notes:
+      "n1": "{1} describes money matters."
+    examples:
+      "आर्थिक अडचण आहे.": { native: "There is a financial difficulty.", bases: { "अडचण": "difficulty", "आहे": "to be" } }
+      "आर्थिक नियोजन महत्त्वाचं आहे.": { native: "Financial planning is important.", bases: { "नियोजन": "planning", "महत्त्वाचं": "important", "आहे": "to be" } }
+  "mr-1761":
+    native: "profit"
+    notes:
+      "n1": "{1} is profit, the money left after costs."
+    examples:
+      "या व्यवसायात नफा चांगला आहे.": { native: "This business has good profit.", bases: { "आहे": "to be" } }
+      "नफ्यातला वाटा द्या.": { native: "Give your share of the profit.", bases: { "वाटा": "share", "नफ्यातला": "profit" } }
+  "mr-1762":
+    native: "salary, pay"
+    notes:
+      "n1": "{1} is a salary, a formal word for pay."
+    examples:
+      "वेतन महिन्याच्या शेवटी मिळतं.": { native: "The salary is received at the end of the month.", bases: { "शेवटी": "at the end", "मिळतं": "to get" } }
+      "वेतनवाढ झाली.": { native: "A salary increase happened.", bases: { "झाली": "to become", "वेतनवाढ": "pay rise" } }
+  "mr-1763":
+    native: "to earn"
+    notes:
+      "n1": "{1} is earning money by work."
+    examples:
+      "तो चांगले पैसे कमावतो.": { native: "He earns good money.", bases: { "कमावतो": "to earn" } }
+      "मी स्वतः पैसे कमावले.": { native: "I earned the money myself.", bases: { "कमावले": "to earn" } }
+  "mr-1764":
+    native: "to spend"
+    notes:
+      "n1": "{1} is spending money or time."
+    examples:
+      "सणाला खूप पैसे खर्च केले.": "I spent a lot of money on the festival."
+      "विचार करून खर्च करा.": "Spend after thinking."
+  "mr-1765":
+    native: "to save money"
+    notes:
+      "n1": "{1} is putting money aside for later."
+    examples:
+      "ती रोज थोडी बचत करते.": { native: "She saves a little every day.", bases: { "थोडी": "a little" } }
+      "पैसे बचत करायला शिका.": "Learn to save money."
+  "mr-1766":
+    native: "to invest"
+    notes:
+      "n1": "{1} is putting money into something to earn more."
+    examples:
+      "त्याने शेअर्समध्ये पैसे गुंतवले.": { native: "He invested money in shares.", bases: { "गुंतवले": "to invest", "शेअर्समध्ये": "in shares" } }
+      "पैसे कुठे गुंतवायचे?": { native: "Where should the money be invested?", bases: { "कुठे": "where", "गुंतवायचे": "to invest" } }
+  "mr-1767":
+    native: "to borrow, to take a loan"
+    notes:
+      "n1": "{1} is taking a loan from someone or a bank."
+    examples:
+      "घर बांधण्यासाठी कर्ज घेतलं.": { native: "I took a loan to build a house.", bases: { "बांधण्यासाठी": "to build" } }
+      "मित्राकडून पैसे उधार घेतले.": { native: "I borrowed money from a friend.", bases: { "उधार": "borrowed" } }
+  "mr-1768":
+    native: "to repay a loan"
+    notes:
+      "n1": "{1} is paying back a debt."
+    bases:
+      "फेडणे": "to repay"
+    examples:
+      "कर्ज हळूहळू फेडलं.": { native: "I repaid the loan slowly.", bases: { "हळूहळू": "slowly", "फेडलं": "to repay" } }
+      "कर्ज वेळेवर फेडा.": { native: "Repay the loan on time.", bases: { "फेडा": "to repay" } }

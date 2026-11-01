@@ -1,0 +1,120 @@
+schema: 1
+id: "mr-en-school"
+kind: "layer"
+core: "mr-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+description: "A school day: teachers and students, lessons, homework, exams and the things in a school bag. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1114":
+    native: "teacher (woman)"
+    notes:
+      "n1": "{1} is a female teacher."
+    examples:
+      "शिक्षिका हुशार आहे.": { native: "The teacher is clever.", bases: { "आहे": "to be" } }
+      "शिक्षिकेने परीक्षा घेतली.": { native: "The teacher took the exam.", bases: { "शिक्षिकेने": "teacher (woman)" } }
+  "mr-1115":
+    native: "study, practice"
+    notes:
+      "n1": "{1} is study or practice. The verb is अभ्यास करणे (abhyās karṇe), to study."
+    examples:
+      "रोज अभ्यास करा.": "Study every day."
+      "परीक्षेसाठी खूप अभ्यास केला.": "I studied a lot for the exam."
+  "mr-1116":
+    native: "homework"
+    notes:
+      "n1": "{1} is homework, the work set to do at home."
+    examples:
+      "आज गृहपाठ आहे.": { native: "There is homework today.", bases: { "आहे": "to be" } }
+      "गृहपाठ पूर्ण केला का?": { native: "Did you finish the homework?", bases: { "पूर्ण": "complete" } }
+  "mr-1117":
+    native: "exam"
+    notes:
+      "n1": "{1} is an exam or a test."
+    examples:
+      "उद्या परीक्षा आहे.": { native: "There is an exam tomorrow.", bases: { "आहे": "to be" } }
+      "परीक्षेचा निकाल उद्या येईल.": { native: "The exam result will come tomorrow.", bases: { "परीक्षेचा": "exam" } }
+  "mr-1118":
+    native: "result"
+    notes:
+      "n1": "{1} is the result of an exam or a race."
+    examples:
+      "निकाल चांगला लागला.": { native: "The result was good.", bases: { "लागला": "to come out" } }
+      "निकाल कधी जाहीर होईल?": { native: "When will the result be announced?", bases: { "होईल": "to be", "जाहीर": "announced" } }
+  "mr-1119":
+    native: "eraser"
+    notes:
+      "n1": "{1} is an eraser, rubber for pencil."
+    examples:
+      "खोडरबर दे.": "Give me the eraser."
+      "चुकीचं उत्तर खोडरबरने पुसलं.": { native: "I erased the wrong answer with the eraser.", bases: { "खोडरबरने": "eraser", "चुकीचं": "wrong" } }
+  "mr-1120":
+    native: "school bag"
+    notes:
+      "n1": "{1} is a school bag, the bag for books."
+    examples:
+      "दप्तर जड आहे.": { native: "The school bag is heavy.", bases: { "आहे": "to be" } }
+      "दप्तर भरलं का?": "Did you pack the school bag?"
+  "mr-1121":
+    native: "blackboard"
+    notes:
+      "n1": "{1} is the blackboard that the teacher writes on."
+    examples:
+      "फळ्यावर लिही.": { native: "Write on the board.", bases: { "फळ्यावर": "blackboard" } }
+      "फळा स्वच्छ कर.": "Clean the board."
+  "mr-1122":
+    native: "chalk"
+    notes:
+      "n1": "{1} is chalk, used on the blackboard."
+    examples:
+      "खडू संपला.": { native: "The chalk has run out.", bases: { "संपला": "to end" } }
+      "खडूने फळ्यावर लिहिलं.": { native: "She wrote on the board with chalk.", bases: { "खडूने": "chalk" } }
+  "mr-1123":
+    native: "mathematics"
+    notes:
+      "n1": "{1} is maths, a school subject."
+    examples:
+      "गणित अवघड आहे.": { native: "Maths is difficult.", bases: { "आहे": "to be", "अवघड": "difficult" } }
+      "मला गणित आवडतं.": "I like maths."
+  "mr-1124":
+    native: "science"
+    notes:
+      "n1": "{1} is science, a school subject."
+    examples:
+      "विज्ञान शिकायला मजा येते.": { native: "It is fun to learn science.", bases: { "मजा": "fun" } }
+      "विज्ञानाचं पुस्तक जड आहे.": { native: "The science book is heavy.", bases: { "आहे": "to be", "विज्ञानाचं": "science" } }
+  "mr-1125":
+    native: "laboratory"
+    notes:
+      "n1": "{1} is a laboratory, the room for science experiments."
+    examples:
+      "प्रयोगशाळेत प्रयोग केला.": { native: "We did an experiment in the laboratory.", bases: { "प्रयोगशाळेत": "laboratory", "प्रयोग": "experiment" } }
+      "प्रयोगशाळा बंद आहे.": { native: "The laboratory is closed.", bases: { "आहे": "to be", "बंद": "closed" } }
+  "mr-1126":
+    native: "to pass (an exam)"
+    notes:
+      "n1": "{1} is passing an exam, the opposite of नापास होणे (nāpās hoṇe), to fail."
+    bases:
+      "उत्तीर्ण": "passed"
+      "होणे": "to be; to become"
+    examples:
+      "तो परीक्षेत उत्तीर्ण झाला.": { native: "He passed the exam.", bases: { "झाला": "to become", "उत्तीर्ण": "passed" } }
+      "सगळे विद्यार्थी उत्तीर्ण झाले.": { native: "All the students passed.", bases: { "झाले": "to become", "उत्तीर्ण": "passed" } }
+  "mr-1127":
+    native: "timetable, schedule"
+    notes:
+      "n1": "{1} is a timetable: the list of lessons and times."
+    examples:
+      "वेळापत्रक भिंतीवर लावलं.": { native: "The timetable was hung on the wall.", bases: { "भिंतीवर": "on the wall", "लावलं": "to hang" } }
+      "उद्याचं वेळापत्रक बदललं.": { native: "Tomorrow's timetable changed.", bases: { "उद्याचं": "tomorrow's" } }
+  "mr-1128":
+    native: "break, recess"
+    notes:
+      "n1": "{1} is the break between lessons."
+    bases:
+      "मधली": "middle"
+    examples:
+      "मधल्या सुट्टीत खेळलो.": { native: "I played during the break.", bases: { "मधल्या": "during the" } }
+      "मधली सुट्टी दहा मिनिटांची आहे.": { native: "The break is ten minutes long.", bases: { "आहे": "to be", "मधली": "middle" } }

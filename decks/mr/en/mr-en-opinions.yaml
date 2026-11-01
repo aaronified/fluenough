@@ -1,0 +1,168 @@
+schema: 1
+id: "mr-en-opinions"
+kind: "layer"
+core: "mr-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions"
+description: "Saying what you think: an opinion, agreeing and disagreeing politely, giving reasons and advice, and the words for doubt and certainty. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1362":
+    native: "opinion, view"
+    notes:
+      "n1": "{1} is an opinion. The phrase मत व्यक्त करणे (mat vyakta karṇe) means to express an opinion."
+    examples:
+      "माझं मत वेगळं आहे.": { native: "My opinion is different.", bases: { "वेगळं": "different", "आहे": "to be" } }
+      "तुझं मत काय आहे?": { native: "What is your opinion?", bases: { "आहे": "to be" } }
+  "mr-1363":
+    native: "in agreement"
+    notes:
+      "n1": "{1} describes agreeing with someone. Its opposite is असहमत (asahmat), disagreeing."
+    examples:
+      "मी तुझ्याशी सहमत आहे.": { native: "I agree with you.", bases: { "आहे": "to be" } }
+      "सगळे सहमत झाले.": { native: "Everyone agreed.", bases: { "झाले": "to become" } }
+  "mr-1364":
+    native: "not in agreement"
+    notes:
+      "n1": "{1} describes disagreeing with someone."
+    examples:
+      "मी या विचाराशी असहमत आहे.": { native: "I disagree with this idea.", bases: { "आहे": "to be" } }
+      "ती असहमत होती.": { native: "She disagreed.", bases: { "होती": "to be" } }
+  "mr-1365":
+    native: "thought, idea"
+    notes:
+      "n1": "{1} is a thought, an idea or a view."
+    examples:
+      "तुझा विचार चांगला आहे.": { native: "Your idea is good.", bases: { "आहे": "to be" } }
+      "या विषयावर विचार करा.": { native: "Think about this subject.", bases: { "विषयावर": "on the subject" } }
+  "mr-1366":
+    native: "to be convinced, to seem right"
+    notes:
+      "n1": "{1} is finding a thing acceptable or convincing: मला पटलं (malā paṭlaṁ), I am convinced."
+    examples:
+      "तुझं म्हणणं मला पटलं.": { native: "I was convinced by what you said.", bases: { "म्हणणं": "saying", "पटलं": "to be convinced, to seem right" } }
+      "हे उत्तर पटत नाही.": { native: "I am not convinced by this answer.", bases: { "नाही": "not", "पटत": "to be convinced, to seem right" } }
+  "mr-1367":
+    native: "argument, dispute"
+    notes:
+      "n1": "{1} is an argument or a dispute between people."
+    examples:
+      "दोघांमध्ये वाद झाला.": { native: "The two of them had an argument.", bases: { "दोघांमध्ये": "between the two", "झाला": "to become" } }
+      "वाद मिटवा.": { native: "Settle the argument.", bases: { "मिटवा": "to settle" } }
+  "mr-1368":
+    native: "argument, reasoning"
+    notes:
+      "n1": "{1} is a reasoned argument, the case you make for a view."
+    examples:
+      "त्याचा युक्तिवाद पटण्यासारखा होता.": { native: "His argument was convincing.", bases: { "होता": "to be" } }
+      "युक्तिवाद चुकीचा आहे.": { native: "The argument is wrong.", bases: { "चुकीचा": "wrong", "आहे": "to be" } }
+  "mr-1369":
+    native: "certainty, assurance"
+    notes:
+      "n1": "{1} is certainty, being sure of something."
+    examples:
+      "मला खात्री आहे.": { native: "I am sure.", bases: { "आहे": "to be" } }
+      "खात्री करून घ्या.": "Make sure of it."
+  "mr-1370":
+    native: "possibility"
+    notes:
+      "n1": "{1} is a possibility, something that may happen."
+    examples:
+      "पाऊस येण्याची शक्यता आहे.": { native: "There is a possibility of rain.", bases: { "आहे": "to be" } }
+      "ही शक्यता नाकारता येत नाही.": { native: "This possibility cannot be denied.", bases: { "नाकारता": "to deny", "नाही": "not" } }
+  "mr-1371":
+    native: "perhaps, maybe"
+    notes:
+      "n1": "{1} means perhaps or maybe."
+    examples:
+      "कदाचित उद्या येईल.": "Perhaps he will come tomorrow."
+      "कदाचित तो बरोबर असेल.": { native: "Perhaps he is right.", bases: { "बरोबर": "right", "असेल": "to be" } }
+  "mr-1372":
+    native: "true, real"
+    notes:
+      "n1": "{1} means true. Its opposite is खोटं (khoṭaṁ), false."
+    examples:
+      "ते खरं आहे.": { native: "That is true.", bases: { "आहे": "to be" } }
+      "खरं सांग.": "Tell the truth."
+  "mr-1373":
+    native: "false, untrue"
+    notes:
+      "n1": "{1} means false or untrue."
+    examples:
+      "हे खोटं आहे.": { native: "This is false.", bases: { "आहे": "to be" } }
+      "खोटं बोलू नको.": "Do not lie."
+  "mr-1374":
+    native: "result, effect"
+    notes:
+      "n1": "{1} is the result or effect of something."
+    examples:
+      "याचा परिणाम वाईट झाला.": { native: "The result of this was bad.", bases: { "झाला": "to become" } }
+      "चांगल्या परिणामासाठी मेहनत करा.": { native: "Work hard for a good result.", bases: { "परिणामासाठी": "result, effect", "मेहनत": "hard work" } }
+  "mr-1375":
+    native: "importance"
+    notes:
+      "n1": "{1} is importance, how much a thing matters."
+    examples:
+      "शिक्षणाचं महत्त्व मोठं आहे.": { native: "Education is very important.", bases: { "शिक्षणाचं": "of education", "आहे": "to be" } }
+      "या गोष्टीला महत्त्व द्या.": { native: "Give importance to this thing.", bases: { "गोष्टीला": "to the thing" } }
+  "mr-1376":
+    native: "benefit, advantage"
+    notes:
+      "n1": "{1} is a benefit or an advantage."
+    examples:
+      "व्यायामाचा फायदा होतो.": { native: "Exercise is beneficial.", bases: { "होतो": "to be" } }
+      "यात तुमचा फायदा आहे.": { native: "There is an advantage for you in this.", bases: { "आहे": "to be" } }
+  "mr-1377":
+    native: "loss, disadvantage"
+    notes:
+      "n1": "{1} is a loss or a disadvantage. Its opposite is फायदा (phāydā), benefit."
+    examples:
+      "या व्यवसायात तोटा झाला.": { native: "This business made a loss.", bases: { "झाला": "to become" } }
+      "तोटा सहन करावा लागला.": { native: "We had to bear the loss.", bases: { "सहन": "bear", "लागला": "to need" } }
+  "mr-1378":
+    native: "advice"
+    notes:
+      "n1": "{1} is advice, what someone suggests you do."
+    examples:
+      "डॉक्टरांचा सल्ला घ्या.": "Take the doctor's advice."
+      "मला त्याचा सल्ला आवडला.": "I liked his advice."
+  "mr-1379":
+    native: "criticism"
+    notes:
+      "n1": "{1} is criticism of a person or a work."
+    examples:
+      "त्याच्यावर टीका झाली.": { native: "He was criticised.", bases: { "झाली": "to become" } }
+      "टीका सहन करणे कठीण असतं.": { native: "It is hard to bear criticism.", bases: { "सहन": "bearing", "असतं": "to be" } }
+  "mr-1380":
+    native: "support"
+    notes:
+      "n1": "{1} is support for a person or a view."
+    examples:
+      "सगळ्यांनी पाठिंबा दिला.": "Everyone gave support."
+      "त्याच्या मताला पाठिंबा आहे.": { native: "His view has support.", bases: { "आहे": "to be" } }
+  "mr-1381":
+    native: "to accept, to agree to"
+    notes:
+      "n1": "{1} is accepting something as true or allowed."
+    bases:
+      "मान्य": "accepted"
+    examples:
+      "मी तुझं म्हणणं मान्य करतो.": { native: "I accept what you say.", bases: { "म्हणणं": "saying", "मान्य": "accepted" } }
+      "सगळ्यांनी प्रस्ताव मान्य केला.": { native: "Everyone accepted the proposal.", bases: { "प्रस्ताव": "proposal", "मान्य": "accepted" } }
+  "mr-1382":
+    native: "to oppose"
+    notes:
+      "n1": "{1} is opposing a view, a plan or a person."
+    bases:
+      "विरोध": "opposition"
+    examples:
+      "काही लोकांनी विरोध केला.": { native: "Some people opposed it.", bases: { "विरोध": "opposition" } }
+      "मी त्याच्या मताला विरोध करतो.": { native: "I oppose his view.", bases: { "विरोध": "opposition" } }
+  "mr-1383":
+    native: "to suggest"
+    notes:
+      "n1": "{1} is putting forward an idea for someone to consider."
+    examples:
+      "मी एक कल्पना सुचवली.": { native: "I suggested an idea.", bases: { "सुचवली": "to suggest" } }
+      "तू काय सुचवतोस?": { native: "What do you suggest?", bases: { "सुचवतोस": "to suggest" } }

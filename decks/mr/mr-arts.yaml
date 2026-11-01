@@ -1,0 +1,236 @@
+schema: 1
+id: "mr-arts"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1545"
+    target: "कला"
+    reading: "kalā"
+    ipa: "kəla"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कला", reading: "kalā" }] }
+    examples:
+      - { target: "ही कला खूप सुंदर आहे.", reading: "hi kalā khup sundar āhe.", ipa: "ɦi kəla kʰup sund̪ər aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "सुंदर", ref: "mr-0770" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कलेला वय नसतं.", reading: "kalelā vay nastam̐.", ipa: "kəlela ʋəj nəst̪ə̃", bases: [{ word: "कलेला", base: "कला", reading: "kalā" }, { word: "वय", ref: "mr-0210" }, { word: "नसतं", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1546"
+    target: "चित्र"
+    reading: "citr"
+    ipa: "tʃit̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चित्र", reading: "citr" }] }
+    examples:
+      - { target: "भिंतीवर सुंदर चित्र लावलं.", reading: "bhintivar sundar citr lāvlam̐.", ipa: "bʱint̪iʋər sund̪ər tʃit̪r laʋlə̃", bases: [{ word: "भिंतीवर", base: "भिंत", reading: "bhint" }, { word: "सुंदर", ref: "mr-0770" }, { word: "लावलं", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "त्याने चित्र काढलं.", reading: "tyāne citr kāḍhlam̐.", ipa: "t̪jane tʃit̪r kaɖʱlə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "काढलं", base: "काढणे", reading: "kāḍhṇe" }] }
+  - id: "mr-1547"
+    target: "चित्रकार"
+    reading: "citrakār"
+    ipa: "tʃit̪rəkar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चित्रकार", reading: "citrakār" }] }
+    examples:
+      - { target: "चित्रकार रंग मिसळतो.", reading: "citrakār raṅg misḷto.", ipa: "tʃit̪rəkar rəŋɡ misɭt̪o", bases: [{ word: "रंग", base: "रंग", reading: "raṅg" }, { word: "मिसळतो", ref: "mr-0787" }] }
+      - { target: "चित्रकाराचं प्रदर्शन आहे.", reading: "citrakārācam̐ pradarśan āhe.", ipa: "tʃit̪rəkaratsə̃ prəd̪ərʃən aɦe", bases: [{ word: "चित्रकाराचं", base: "चित्रकार", reading: "citrakār" }, { word: "प्रदर्शन", ref: "mr-1559" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1548"
+    target: "शिल्प"
+    reading: "śilp"
+    ipa: "ʃilp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शिल्प", reading: "śilp" }] }
+    examples:
+      - { target: "हे शिल्प दगडाचं आहे.", reading: "he śilp dagḍācam̐ āhe.", ipa: "ɦe ʃilp d̪əɡɖatsə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "दगडाचं", base: "दगड", reading: "dagaḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "शिल्पावर सुरेख कोरीव काम आहे.", reading: "śilpāvar surekh koriv kām āhe.", ipa: "ʃilpaʋər surekʰ koriʋ kam aɦe", bases: [{ word: "शिल्पावर", base: "शिल्प", reading: "śilp" }, { word: "कोरीव", ref: "mr-1561" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "सुरेख", base: "सुरेख", reading: "surekh" }] }
+  - id: "mr-1549"
+    target: "शिल्पकार"
+    reading: "śilpakār"
+    ipa: "ʃilpəkar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शिल्पकार", reading: "śilpakār" }] }
+    examples:
+      - { target: "शिल्पकार दगड कोरतो.", reading: "śilpakār dagaḍ korto.", ipa: "ʃilpəkar d̪əɡəɖ kort̪o", bases: [{ word: "दगड", base: "दगड", reading: "dagaḍ" }, { word: "कोरतो", ref: "mr-1564" }] }
+      - { target: "शिल्पकाराने मूर्ती घडवली.", reading: "śilpakārāne murti ghaḍvli.", ipa: "ʃilpəkarane murt̪i ɡʱəɖʋli", bases: [{ word: "शिल्पकाराने", base: "शिल्पकार", reading: "śilpakār" }, { word: "मूर्ती", base: "मूर्ती", reading: "murti" }, { word: "घडवली", base: "घडवणे", reading: "ghaḍvṇe" }] }
+  - id: "mr-1550"
+    target: "नृत्य"
+    reading: "nruty"
+    ipa: "nrut̪j"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नृत्य", reading: "nruty" }] }
+    examples:
+      - { target: "नृत्य पाहायला आवडतं.", reading: "nruty pāhāylā āvḍtam̐.", ipa: "nrut̪j paɦajla aʋɖt̪ə̃", bases: [{ word: "पाहायला", ref: "mr-0714" }, { word: "आवडतं", ref: "mr-0585" }] }
+      - { target: "भरतनाट्यम हे नृत्य आहे.", reading: "bhartnāṭyam he nruty āhe.", ipa: "bʱərt̪naʈjəm ɦe nrut̪j aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "भरतनाट्यम", base: "भरतनाट्यम", reading: "bhartnāṭyam" }] }
+  - id: "mr-1551"
+    target: "वाद्य"
+    reading: "vādy"
+    ipa: "ʋad̪j"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाद्य", reading: "vādy" }] }
+    examples:
+      - { target: "सगळ्यांनी आपापली वाद्यं वाजवली.", reading: "sagaḷyānni āpāpli vādyam̐ vājvli.", ipa: "səɡəɭjanni apapli ʋad̪jə̃ ʋadzʋli", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "वाजवली", ref: "mr-1565" }, { word: "आपापली", base: "आपापला", reading: "āpāplā" }, { word: "वाद्यं", base: "वाद्य", reading: "vādy" }] }
+      - { target: "हे वाद्य जुनं आहे.", reading: "he vādy junam̐ āhe.", ipa: "ɦe ʋad̪j dzunə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "जुनं", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1552"
+    target: "तबला"
+    reading: "tablā"
+    ipa: "t̪əbla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तबला", reading: "tablā" }] }
+    examples:
+      - { target: "तबला सुरेल वाजला.", reading: "tablā surel vājlā.", ipa: "t̪əbla surel ʋadzla", bases: [{ word: "सुरेल", ref: "mr-1560" }, { word: "वाजला", base: "वाजणे", reading: "vājṇe" }] }
+      - { target: "तो तबला शिकतो.", reading: "to tablā śikto.", ipa: "t̪o t̪əbla ʃikt̪o", bases: [{ word: "शिकतो", ref: "mr-0717" }] }
+  - id: "mr-1553"
+    target: "ढोलकी"
+    reading: "ḍholki"
+    ipa: "ɖʱolki"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ढोलकी", reading: "ḍholki" }] }
+    examples:
+      - { target: "ढोलकीच्या तालावर नाचतात.", reading: "ḍholkicyā tālāvar nāctāt.", ipa: "ɖʱolkitʃja t̪alaʋər natst̪at̪", bases: [{ word: "ढोलकीच्या", base: "ढोलकी", reading: "ḍholki" }, { word: "तालावर", base: "ताल", reading: "tāl" }, { word: "नाचतात", ref: "mr-1065" }] }
+      - { target: "ढोलकी जोरात वाजली.", reading: "ḍholki jorāt vājli.", ipa: "ɖʱolki dzorat̪ ʋadzli", bases: [{ word: "जोरात", base: "जोरात", reading: "jorāt" }, { word: "वाजली", base: "वाजणे", reading: "vājṇe" }] }
+  - id: "mr-1554"
+    target: "कविता"
+    reading: "kavitā"
+    ipa: "kəʋit̪a"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कविता", reading: "kavitā" }] }
+    examples:
+      - { target: "ती सुंदर कविता लिहिते.", reading: "ti sundar kavitā lihite.", ipa: "t̪i sund̪ər kəʋit̪a liɦit̪e", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "लिहिते", ref: "mr-0716" }] }
+      - { target: "कविता मोठ्याने वाचा.", reading: "kavitā moṭhyāne vācā.", ipa: "kəʋit̪a moʈʰjane ʋatsa", bases: [{ word: "मोठ्याने", base: "मोठ्याने", reading: "moṭhyāne" }, { word: "वाचा", ref: "mr-0513" }] }
+  - id: "mr-1555"
+    target: "कवी"
+    reading: "kavi"
+    ipa: "kəʋi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कवी", reading: "kavi" }] }
+    examples:
+      - { target: "कवी प्रेमाबद्दल लिहितो.", reading: "kavi premābaddal lihito.", ipa: "kəʋi premabəd̪d̪əl liɦit̪o", bases: [{ word: "प्रेमाबद्दल", ref: "mr-1320" }, { word: "लिहितो", ref: "mr-0716" }] }
+      - { target: "कवीने नवीन कविता सादर केली.", reading: "kavine navin kavitā sādar keli.", ipa: "kəʋine nəʋin kəʋit̪a sad̪ər keli", bases: [{ word: "कवीने", base: "कवी", reading: "kavi" }, { word: "नवीन", base: "नवा", reading: "navā" }, { word: "सादर", base: "सादर", reading: "sādar" }, { word: "केली", ref: "mr-0712" }] }
+  - id: "mr-1556"
+    target: "ओवी"
+    reading: "ovi"
+    ipa: "oʋi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ओवी", reading: "ovi" }] }
+    examples:
+      - { target: "आजी ओवी म्हणते.", reading: "āji ovi mhaṇte.", ipa: "adʒi oʋi mɦəɳt̪e", bases: [{ word: "म्हणते", base: "म्हणणे", reading: "mhaṇṇe" }] }
+      - { target: "ओवी ऐकताना मन भरून येतं.", reading: "ovi aiktānā man bharun yetam̐.", ipa: "oʋi əikt̪ana mən bʱərun jet̪ə̃", bases: [{ word: "ऐकताना", ref: "mr-0715" }, { word: "मन", ref: "mr-0053" }, { word: "भरून", ref: "mr-0795" }, { word: "येतं", ref: "mr-0711" }] }
+  - id: "mr-1557"
+    target: "लावणी"
+    reading: "lāvṇi"
+    ipa: "laʋɳi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "लावणी", reading: "lāvṇi" }] }
+    examples:
+      - { target: "लावणी नृत्य रंगभूमीवर होतं.", reading: "lāvṇi nruty raṅgabhumivar hotam̐.", ipa: "laʋɳi nrut̪j rəŋɡəbʱumiʋər ɦot̪ə̃", bases: [{ word: "रंगभूमीवर", base: "रंगभूमी", reading: "raṅgabhumi" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "लावणीची सुंदर चाल आहे.", reading: "lāvṇici sundar cāl āhe.", ipa: "laʋɳitʃi sund̪ər tsal aɦe", bases: [{ word: "लावणीची", base: "लावणी", reading: "lāvṇi" }, { word: "सुंदर", ref: "mr-0770" }, { word: "चाल", base: "चाल", reading: "cāl" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1558"
+    target: "रंगमंच"
+    reading: "raṅgamañc"
+    ipa: "rəŋɡəməɲts"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रंगमंच", reading: "raṅgamañc" }] }
+    examples:
+      - { target: "रंगमंचावर नाटक सुरू झालं.", reading: "raṅgamañcāvar nāṭak suru jhālam̐.", ipa: "rəŋɡəməɲtsaʋər naʈək suru dzʱalə̃", bases: [{ word: "रंगमंचावर", base: "रंगमंच", reading: "raṅgamañc" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "कलाकार रंगमंचावर आले.", reading: "kalākār raṅgamañcāvar āle.", ipa: "kəlakar rəŋɡəməɲtsaʋər ale", bases: [{ word: "कलाकार", ref: "mr-1470" }, { word: "आले", ref: "mr-0711" }, { word: "रंगमंचावर", base: "रंगमंच", reading: "raṅgamañc" }] }
+  - id: "mr-1559"
+    target: "प्रदर्शनी"
+    reading: "pradarśani"
+    ipa: "prəd̪ərʃəni"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रदर्शनी", reading: "pradarśani" }] }
+    examples:
+      - { target: "प्रदर्शनी आज शेवटची आहे.", reading: "pradarśani āj śevṭci āhe.", ipa: "prəd̪ərʃəni adz ʃeʋʈtʃi aɦe", bases: [{ word: "शेवटची", base: "शेवटचा", reading: "śevṭcā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "प्रदर्शनीत अनेक चित्रं आहेत.", reading: "pradarśanit anek citram̐ āhet.", ipa: "prəd̪ərʃənit̪ ənek tʃit̪rə̃ aɦet̪", bases: [{ word: "प्रदर्शनीत", base: "प्रदर्शनी", reading: "pradarśani" }, { word: "चित्रं", ref: "mr-1546" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "अनेक", base: "अनेक", reading: "anek" }] }
+  - id: "mr-1560"
+    target: "सुरेल"
+    reading: "surel"
+    ipa: "surel"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सुरेल", reading: "surel" }] }
+    examples:
+      - { target: "तिचा आवाज सुरेल आहे.", reading: "ticā āvāj surel āhe.", ipa: "t̪itsa aʋadz surel aɦe", bases: [{ word: "तिचा", ref: "mr-0677" }, { word: "आवाज", base: "आवाज", reading: "āvāj" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सुरेल गाणं ऐकलं.", reading: "surel gāṇam̐ aiklam̐.", ipa: "surel ɡaɳə̃ əiklə̃", bases: [{ word: "गाणं", ref: "mr-1535" }, { word: "ऐकलं", ref: "mr-0715" }] }
+  - id: "mr-1561"
+    target: "कोरीव"
+    reading: "koriv"
+    ipa: "koriʋ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कोरीव", reading: "koriv" }] }
+    examples:
+      - { target: "दारावर कोरीव काम आहे.", reading: "dārāvar koriv kām āhe.", ipa: "d̪araʋər koriʋ kam aɦe", bases: [{ word: "दारावर", ref: "mr-0111" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कोरीव दगड सुंदर दिसतो.", reading: "koriv dagaḍ sundar disto.", ipa: "koriʋ d̪əɡəɖ sund̪ər d̪ist̪o", bases: [{ word: "दगड", base: "दगड", reading: "dagaḍ" }, { word: "दिसतो", base: "दिसणे", reading: "disṇe" }] }
+  - id: "mr-1562"
+    target: "गाणे"
+    reading: "gāṇe"
+    ipa: "ɡaɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गाणे", reading: "gāṇe" }] }
+    examples:
+      - { target: "ती छान गाते.", reading: "ti chān gāte.", ipa: "t̪i tʃʰan ɡat̪e", bases: [{ word: "गाते", base: "गाणे", reading: "gāṇe" }] }
+      - { target: "आम्ही मिळून गाणं गायलो.", reading: "āmhi miḷun gāṇam̐ gāylo.", ipa: "amɦi miɭun ɡaɳə̃ ɡajlo", bases: [{ word: "गाणं", ref: "mr-1535" }, { word: "गायलो", base: "गाणे", reading: "gāṇe" }, { word: "मिळून", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1563"
+    target: "रंगवणे"
+    reading: "raṅgavṇe"
+    ipa: "rəŋɡəʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रंगवणे", reading: "raṅgavṇe" }] }
+    examples:
+      - { target: "भिंत निळ्या रंगाने रंगवली.", reading: "bhint niḷyā raṅgāne raṅgavli.", ipa: "bʱint̪ niɭja rəŋɡane rəŋɡəʋli", bases: [{ word: "निळ्या", ref: "mr-0881" }, { word: "रंगाने", base: "रंग", reading: "raṅg" }, { word: "रंगवली", base: "रंगवणे", reading: "raṅgavṇe" }] }
+      - { target: "मुलांनी चित्र रंगवलं.", reading: "mulānni citr raṅgavlam̐.", ipa: "mulanni tʃit̪r rəŋɡəʋlə̃", bases: [{ word: "मुलांनी", ref: "mr-0224" }, { word: "चित्र", ref: "mr-1546" }, { word: "रंगवलं", base: "रंगवणे", reading: "raṅgavṇe" }] }
+  - id: "mr-1564"
+    target: "कोरणे"
+    reading: "korṇe"
+    ipa: "korɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कोरणे", reading: "korṇe" }] }
+    examples:
+      - { target: "शिल्पकार दगडावर नक्षी कोरतो.", reading: "śilpakār dagḍāvar nakṣi korto.", ipa: "ʃilpəkar d̪əɡɖaʋər nəkʂi kort̪o", bases: [{ word: "दगडावर", base: "दगड", reading: "dagaḍ" }, { word: "कोरतो", base: "कोरणे", reading: "korṇe" }, { word: "नक्षी", base: "नक्षी", reading: "nakṣi" }] }
+      - { target: "लाकडावर सुंदर नक्षी कोरली.", reading: "lākḍāvar sundar nakṣi korli.", ipa: "lakɖaʋər sund̪ər nəkʂi korli", bases: [{ word: "लाकडावर", base: "लाकूड", reading: "lākuḍ" }, { word: "कोरली", base: "कोरणे", reading: "korṇe" }, { word: "नक्षी", base: "नक्षी", reading: "nakṣi" }] }
+  - id: "mr-1565"
+    target: "वाजवणे"
+    reading: "vājvṇe"
+    ipa: "ʋadzʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाजवणे", reading: "vājvṇe" }] }
+    examples:
+      - { target: "तो बासरी वाजवतो.", reading: "to bāsri vājvto.", ipa: "t̪o basri ʋadzʋt̪o", bases: [{ word: "वाजवतो", base: "वाजवणे", reading: "vājvṇe" }] }
+      - { target: "मुलगी तबला वाजवते.", reading: "mulgi tablā vājvte.", ipa: "mulɡi t̪əbla ʋadzʋt̪e", bases: [{ word: "मुलगी", ref: "mr-0223" }, { word: "वाजवते", base: "वाजवणे", reading: "vājvṇe" }] }

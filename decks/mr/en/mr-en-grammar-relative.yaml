@@ -1,0 +1,18 @@
+schema: 1
+id: "mr-en-grammar-relative"
+kind: "layer"
+core: "mr-grammar-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative clauses: who came, that one is"
+license: "CC-BY-SA-4.0"
+description: "The man who came is my friend, where you live is there: linking two clauses with the relative word and its matching word. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Relative and correlative pairs"
+  slot_name: "word"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "relative": "the relative word, in the clause that starts with it", "correlative": "the matching word in the main clause" }
+  entries:
+    "to": "he; that"
+    "tithe": "there"
+  notes: "A relative clause starts with जो (jo), who or which, and the main clause answers it with तो (to), that one: जो माणूस आला तो माझा मित्र आहे (jo māṇūs ālā to mājhā mitra āhe), the man who came is my friend. The pair works for a place too: जिथे (jithe), where, and तिथे (tithe), there. Other pairs follow the same pattern: जेव्हा (jevhā), when, with तेव्हा (tevhā), then; and जसा (jasā), as, with तसा (tasā), so. The relative word comes first in the sentence, and its clause is said before the main clause."
