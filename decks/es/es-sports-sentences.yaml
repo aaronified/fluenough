@@ -1,0 +1,50 @@
+schema: 1
+id: "es-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2718"
+    target: "El portero para el gol del rival."
+    ipa: "el poɾˈteɾo ˈpaɾa el ɡol del riˈbal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "portero", ref: "es-2692" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "gol", ref: "es-2691" }, { word: "del", base: "del" }, { word: "rival", ref: "es-2712" }]
+    confusables: [{ id: "arbitro", ref: "es-2693", kind: "word" }, { id: "jugador", ref: "es-2694", kind: "word" }]
+  - id: "es-2719"
+    target: "Ganamos la victoria en la liga."
+    ipa: "ɡaˈnamos la bikˈtoɾja en la ˈliɡa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ganamos", ref: "es-0520" }, { word: "la", base: "la" }, { word: "victoria", ref: "es-2699" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "liga", ref: "es-2697" }]
+    confusables: [{ id: "campeonato", ref: "es-2696", kind: "word" }, { id: "derrota", ref: "es-2700", kind: "word" }]
+  - id: "es-2720"
+    target: "El marcador dice un empate a dos."
+    ipa: "el maɾkaˈdoɾ ˈdiθe un emˈpate a dos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "marcador", ref: "es-2702" }, { word: "dice", ref: "es-1627" }, { word: "un", base: "un" }, { word: "empate", ref: "es-2701" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }]
+    confusables: [{ id: "marcador", ref: "es-2702", kind: "word" }, { id: "empate", ref: "es-2701", kind: "word" }]
+  - id: "es-2721"
+    target: "La atleta bate el récord en la pista."
+    ipa: "la aˈtleta ˈbate el ˈrekoɾd en la ˈpista"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "atleta", ref: "es-2707" }, { word: "bate", ref: "es-1322" }, { word: "el", base: "el" }, { word: "récord", ref: "es-2709" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pista", ref: "es-2705" }]
+    confusables: [{ id: "cancha", ref: "es-2704", kind: "word" }, { id: "pista", ref: "es-2705", kind: "word" }]
+  - id: "es-2722"
+    target: "El campeón recibe la medalla de oro."
+    ipa: "el kampeˈon reˈθibe la meˈdaʝa de ˈoɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "campeón", ref: "es-2695" }, { word: "recibe", ref: "es-0301" }, { word: "la", base: "la" }, { word: "medalla", ref: "es-2698" }, { word: "de", base: "de" }, { word: "oro", base: "oro" }]
+    confusables: [{ id: "ganador", ref: "es-2713", kind: "word" }, { id: "competicion", ref: "es-2708", kind: "word" }]
+  - id: "es-2723"
+    target: "Lanzo la pelota y salto para cogerla."
+    ipa: "ˈlanθo la peˈlota i ˈsalto ˈpaɾa koˈxeɾla"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Lanzo", ref: "es-2716" }, { word: "la", base: "la" }, { word: "pelota", ref: "es-2710" }, { word: "y", ref: "es-0048" }, { word: "salto", ref: "es-1075" }, { word: "para", base: "para" }, { word: "cogerla", base: "coger" }]
+    confusables: [{ id: "raqueta", ref: "es-2711", kind: "word" }, { id: "estadio", ref: "es-2703", kind: "word" }]

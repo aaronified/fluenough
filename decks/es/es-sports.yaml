@@ -1,0 +1,384 @@
+schema: 1
+id: "es-sports"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "sports"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2691"
+    target: "el gol"
+    ipa: "el ɡol"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gol", base: "gol" }]
+    examples:
+      - target: "Marca un gol en el último minuto."
+        ipa: "ˈmaɾka un ɡol en el ˈultimo miˈnuto"
+        bases: [{ word: "Marca", ref: "es-1675" }, { word: "un", base: "un" }, { word: "gol", base: "gol" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "último", base: "último" }, { word: "minuto", ref: "es-0839" }]
+      - target: "El gol es muy bonito."
+        ipa: "el ɡol es mwi boˈnito"
+        bases: [{ word: "El", base: "el" }, { word: "gol", base: "gol" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonito", ref: "es-0405" }]
+  - id: "es-2692"
+    target: "el portero"
+    ipa: "el poɾˈteɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "portero", base: "portero" }]
+    examples:
+      - target: "El portero para el balón."
+        ipa: "el poɾˈteɾo ˈpaɾa el baˈlon"
+        bases: [{ word: "El", base: "el" }, { word: "portero", base: "portero" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "balón", base: "balón" }]
+      - target: "El portero es muy alto."
+        ipa: "el poɾˈteɾo es mwi ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "portero", base: "portero" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alto", ref: "es-0254" }]
+  - id: "es-2693"
+    target: "el árbitro"
+    ipa: "el ˈaɾbitɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "árbitro", base: "árbitro" }]
+    examples:
+      - target: "El árbitro pita el final."
+        ipa: "el ˈaɾbitɾo ˈpita el fiˈnal"
+        bases: [{ word: "El", base: "el" }, { word: "árbitro", base: "árbitro" }, { word: "pita", base: "pitar" }, { word: "el", base: "el" }, { word: "final", base: "final" }]
+      - target: "El árbitro es justo."
+        ipa: "el ˈaɾbitɾo es ˈxusto"
+        bases: [{ word: "El", base: "el" }, { word: "árbitro", base: "árbitro" }, { word: "es", ref: "es-0022" }, { word: "justo", ref: "es-2131" }]
+  - id: "es-2694"
+    target: "el jugador"
+    ipa: "el xuɡaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "jugador", base: "jugador" }]
+    examples:
+      - target: "El jugador corre con la pelota."
+        ipa: "el xuɡaˈdoɾ ˈkore kon la peˈlota"
+        bases: [{ word: "El", base: "el" }, { word: "jugador", base: "jugador" }, { word: "corre", ref: "es-1068" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "pelota", ref: "es-2710" }]
+      - target: "Mi hermana es jugadora de tenis."
+        ipa: "mi eɾˈmana es xuɡaˈdoɾa de ˈtenis"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "jugadora", base: "jugador" }, { word: "de", base: "de" }, { word: "tenis", ref: "es-1436" }]
+  - id: "es-2695"
+    target: "el campeón"
+    ipa: "el kampeˈon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "campeón", base: "campeón" }]
+    examples:
+      - target: "El campeón gana la copa."
+        ipa: "el kampeˈon ˈɡana la ˈkopa"
+        bases: [{ word: "El", base: "el" }, { word: "campeón", base: "campeón" }, { word: "gana", ref: "es-0520" }, { word: "la", base: "la" }, { word: "copa", ref: "es-1288" }]
+      - target: "Es el campeón del mundo."
+        ipa: "es el kampeˈon del ˈmundo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "campeón", base: "campeón" }, { word: "del", base: "del" }, { word: "mundo", ref: "es-1900" }]
+  - id: "es-2696"
+    target: "el campeonato"
+    ipa: "el kampeoˈnato"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "campeonato", base: "campeonato" }]
+    examples:
+      - target: "El campeonato empieza en mayo."
+        ipa: "el kampeoˈnato emˈpjeθa en ˈmaʝo"
+        bases: [{ word: "El", base: "el" }, { word: "campeonato", base: "campeonato" }, { word: "empieza", ref: "es-0852" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }]
+      - target: "Ganamos el campeonato."
+        ipa: "ɡaˈnamos el kampeoˈnato"
+        bases: [{ word: "Ganamos", ref: "es-0520" }, { word: "el", base: "el" }, { word: "campeonato", base: "campeonato" }]
+  - id: "es-2697"
+    target: "la liga"
+    ipa: "la ˈliɡa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "liga", base: "liga" }]
+    examples:
+      - target: "La liga tiene veinte equipos."
+        ipa: "la ˈliɡa ˈtjene ˈbejnte eˈkipos"
+        bases: [{ word: "La", base: "la" }, { word: "liga", base: "liga" }, { word: "tiene", ref: "es-0024" }, { word: "veinte", ref: "es-0224" }, { word: "equipos", ref: "es-1412" }]
+      - target: "Juega en la liga nacional."
+        ipa: "ˈxweɡa en la ˈliɡa naθjoˈnal"
+        bases: [{ word: "Juega", ref: "es-1403" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "liga", base: "liga" }, { word: "nacional", base: "nacional" }]
+  - id: "es-2698"
+    target: "la medalla"
+    ipa: "la meˈdaʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "medalla", base: "medalla" }]
+    examples:
+      - target: "Gana una medalla de plata."
+        ipa: "ˈɡana ˈuna meˈdaʝa de ˈplata"
+        bases: [{ word: "Gana", ref: "es-0520" }, { word: "una", base: "una" }, { word: "medalla", base: "medalla" }, { word: "de", base: "de" }, { word: "plata", base: "plata" }]
+      - target: "La medalla es de oro."
+        ipa: "la meˈdaʝa es de ˈoɾo"
+        bases: [{ word: "La", base: "la" }, { word: "medalla", base: "medalla" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "oro", base: "oro" }]
+  - id: "es-2699"
+    target: "la victoria"
+    ipa: "la bikˈtoɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "victoria", base: "victoria" }]
+    examples:
+      - target: "La victoria es nuestra."
+        ipa: "la bikˈtoɾja es ˈnwestɾa"
+        bases: [{ word: "La", base: "la" }, { word: "victoria", base: "victoria" }, { word: "es", ref: "es-0022" }, { word: "nuestra", base: "nuestro" }]
+      - target: "Celebramos la victoria."
+        ipa: "θeleˈbɾamos la bikˈtoɾja"
+        bases: [{ word: "Celebramos", ref: "es-2636" }, { word: "la", base: "la" }, { word: "victoria", base: "victoria" }]
+  - id: "es-2700"
+    target: "la derrota"
+    ipa: "la deˈrota"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "derrota", base: "derrota" }]
+    examples:
+      - target: "Sufrimos una derrota."
+        ipa: "suˈfɾimos ˈuna deˈrota"
+        bases: [{ word: "Sufrimos", base: "sufrir" }, { word: "una", base: "una" }, { word: "derrota", base: "derrota" }]
+      - target: "La derrota es dura."
+        ipa: "la deˈrota es ˈduɾa"
+        bases: [{ word: "La", base: "la" }, { word: "derrota", base: "derrota" }, { word: "es", ref: "es-0022" }, { word: "dura", ref: "es-1332" }]
+  - id: "es-2701"
+    target: "el empate"
+    ipa: "el emˈpate"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "empate", base: "empate" }]
+    examples:
+      - target: "Hay un empate a dos."
+        ipa: "aj un emˈpate a dos"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "empate", base: "empate" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }]
+      - target: "El empate no es malo."
+        ipa: "el emˈpate no es ˈmalo"
+        bases: [{ word: "El", base: "el" }, { word: "empate", base: "empate" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "malo", ref: "es-0034" }]
+  - id: "es-2702"
+    target: "el marcador"
+    ipa: "el maɾkaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "marcador", base: "marcador" }]
+    examples:
+      - target: "El marcador dice uno a cero."
+        ipa: "el maɾkaˈdoɾ ˈdiθe ˈuno a ˈθeɾo"
+        bases: [{ word: "El", base: "el" }, { word: "marcador", base: "marcador" }, { word: "dice", ref: "es-1627" }, { word: "uno", ref: "es-0205" }, { word: "a", base: "a" }, { word: "cero", ref: "es-0204" }]
+      - target: "Miro el marcador al final."
+        ipa: "ˈmiɾo el maɾkaˈdoɾ al fiˈnal"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "marcador", base: "marcador" }, { word: "al", base: "al" }, { word: "final", base: "final" }]
+  - id: "es-2703"
+    target: "el estadio"
+    ipa: "el esˈtadjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estadio", base: "estadio" }]
+    examples:
+      - target: "El estadio está lleno."
+        ipa: "el esˈtadjo esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "estadio", base: "estadio" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+      - target: "Vamos al estadio el domingo."
+        ipa: "ˈbamos al esˈtadjo el doˈminɡo"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "al", base: "al" }, { word: "estadio", base: "estadio" }, { word: "el", base: "el" }, { word: "domingo", ref: "es-0964" }]
+  - id: "es-2704"
+    target: "la cancha"
+    ipa: "la ˈkantʃa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cancha", base: "cancha" }]
+    examples:
+      - target: "La cancha es de madera."
+        ipa: "la ˈkantʃa es de maˈdeɾa"
+        bases: [{ word: "La", base: "la" }, { word: "cancha", base: "cancha" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "madera", ref: "es-1822" }]
+      - target: "Jugamos en la cancha de la escuela."
+        ipa: "xuˈɡamos en la ˈkantʃa de la esˈkwela"
+        bases: [{ word: "Jugamos", ref: "es-1403" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cancha", base: "cancha" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "escuela", ref: "es-1355" }]
+  - id: "es-2705"
+    target: "la pista"
+    ipa: "la ˈpista"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pista", base: "pista" }]
+    examples:
+      - target: "La pista de atletismo es roja."
+        ipa: "la ˈpista de atleˈtismo es ˈroxa"
+        bases: [{ word: "La", base: "la" }, { word: "pista", base: "pista" }, { word: "de", base: "de" }, { word: "atletismo", base: "atletismo" }, { word: "es", ref: "es-0022" }, { word: "roja", ref: "es-1007" }]
+      - target: "Corro en la pista."
+        ipa: "ˈkoro en la ˈpista"
+        bases: [{ word: "Corro", ref: "es-1068" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pista", base: "pista" }]
+  - id: "es-2706"
+    target: "el aficionado"
+    ipa: "el afiθjoˈnado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aficionado", base: "aficionado" }]
+    examples:
+      - target: "El aficionado grita en el estadio."
+        ipa: "el afiθjoˈnado ˈɡɾita en el esˈtadjo"
+        bases: [{ word: "El", base: "el" }, { word: "aficionado", base: "aficionado" }, { word: "grita", base: "gritar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "estadio", ref: "es-2703" }]
+      - target: "Soy aficionada al fútbol."
+        ipa: "soj afiθjoˈnada al ˈfutbol"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "aficionada", base: "aficionado" }, { word: "al", base: "al" }, { word: "fútbol", ref: "es-1433" }]
+  - id: "es-2707"
+    target: "el atleta"
+    ipa: "el aˈtleta"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "atleta", base: "atleta" }]
+    examples:
+      - target: "El atleta corre muy rápido."
+        ipa: "el aˈtleta ˈkore mwi ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "atleta", base: "atleta" }, { word: "corre", ref: "es-1068" }, { word: "muy", ref: "es-0330" }, { word: "rápido", ref: "es-0329" }]
+      - target: "La atleta gana el premio."
+        ipa: "la aˈtleta ˈɡana el ˈpɾemjo"
+        bases: [{ word: "La", base: "la" }, { word: "atleta", base: "atleta" }, { word: "gana", ref: "es-0520" }, { word: "el", base: "el" }, { word: "premio", ref: "es-2466" }]
+  - id: "es-2708"
+    target: "la competición"
+    ipa: "la kompetiˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "competición", base: "competición" }]
+    examples:
+      - target: "La competición empieza mañana."
+        ipa: "la kompetiˈθjon emˈpjeθa maˈɲana"
+        bases: [{ word: "La", base: "la" }, { word: "competición", base: "competición" }, { word: "empieza", ref: "es-0852" }, { word: "mañana", ref: "es-0841" }]
+      - target: "Participo en una competición."
+        ipa: "paɾtiˈθipo en ˈuna kompetiˈθjon"
+        bases: [{ word: "Participo", base: "participar" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "competición", base: "competición" }]
+  - id: "es-2709"
+    target: "el récord"
+    ipa: "el ˈrekoɾd"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "récord", base: "récord" }]
+    examples:
+      - target: "Bate el récord del año."
+        ipa: "ˈbate el ˈrekoɾd del ˈaɲo"
+        bases: [{ word: "Bate", ref: "es-1322" }, { word: "el", base: "el" }, { word: "récord", base: "récord" }, { word: "del", base: "del" }, { word: "año", ref: "es-0021" }]
+      - target: "El récord es de hace diez años."
+        ipa: "el ˈrekoɾd es de ˈaθe djeθ ˈaɲos"
+        bases: [{ word: "El", base: "el" }, { word: "récord", base: "récord" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "hace", ref: "es-0025" }, { word: "diez", ref: "es-0214" }, { word: "años", ref: "es-0021" }]
+  - id: "es-2710"
+    target: "la pelota"
+    ipa: "la peˈlota"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pelota", base: "pelota" }]
+    examples:
+      - target: "Lanza la pelota."
+        ipa: "ˈlanθa la peˈlota"
+        bases: [{ word: "Lanza", ref: "es-2716" }, { word: "la", base: "la" }, { word: "pelota", base: "pelota" }]
+      - target: "La pelota es blanca."
+        ipa: "la peˈlota es ˈblanka"
+        bases: [{ word: "La", base: "la" }, { word: "pelota", base: "pelota" }, { word: "es", ref: "es-0022" }, { word: "blanca", ref: "es-1012" }]
+  - id: "es-2711"
+    target: "la raqueta"
+    ipa: "la raˈketa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "raqueta", base: "raqueta" }]
+    examples:
+      - target: "Compro una raqueta nueva."
+        ipa: "ˈkompɾo ˈuna raˈketa ˈnweba"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "raqueta", base: "raqueta" }, { word: "nueva", ref: "es-0035" }]
+      - target: "La raqueta es ligera."
+        ipa: "la raˈketa es liˈxeɾa"
+        bases: [{ word: "La", base: "la" }, { word: "raqueta", base: "raqueta" }, { word: "es", ref: "es-0022" }, { word: "ligera", ref: "es-1195" }]
+  - id: "es-2712"
+    target: "el rival"
+    ipa: "el riˈbal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "rival", base: "rival" }]
+    examples:
+      - target: "El rival marca un gol."
+        ipa: "el riˈbal ˈmaɾka un ɡol"
+        bases: [{ word: "El", base: "el" }, { word: "rival", base: "rival" }, { word: "marca", ref: "es-1675" }, { word: "un", base: "un" }, { word: "gol", ref: "es-2691" }]
+      - target: "Mi rival es muy fuerte."
+        ipa: "mi riˈbal es mwi ˈfweɾte"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "rival", base: "rival" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-2713"
+    target: "el ganador"
+    ipa: "el ɡanaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ganador", base: "ganador" }]
+    examples:
+      - target: "El ganador recibe la medalla."
+        ipa: "el ɡanaˈdoɾ reˈθibe la meˈdaʝa"
+        bases: [{ word: "El", base: "el" }, { word: "ganador", base: "ganador" }, { word: "recibe", ref: "es-0301" }, { word: "la", base: "la" }, { word: "medalla", ref: "es-2698" }]
+      - target: "La ganadora sonríe."
+        ipa: "la ɡanaˈdoɾa sonˈrie"
+        bases: [{ word: "La", base: "la" }, { word: "ganadora", base: "ganador" }, { word: "sonríe", ref: "es-1580" }]
+  - id: "es-2714"
+    target: "el perdedor"
+    ipa: "el peɾdeˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "perdedor", base: "perdedor" }]
+    examples:
+      - target: "El perdedor felicita al ganador."
+        ipa: "el peɾdeˈdoɾ feliˈθita al ɡanaˈdoɾ"
+        bases: [{ word: "El", base: "el" }, { word: "perdedor", base: "perdedor" }, { word: "felicita", base: "felicitar" }, { word: "al", base: "al" }, { word: "ganador", ref: "es-2713" }]
+      - target: "No soy perdedor."
+        ipa: "no soj peɾdeˈdoɾ"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "soy", ref: "es-0022" }, { word: "perdedor", base: "perdedor" }]
+  - id: "es-2715"
+    target: "empatar"
+    ipa: "empaˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "empatar", base: "empatar" }]
+    examples:
+      - target: "Empatamos dos a dos."
+        ipa: "empaˈtamos dos a dos"
+        bases: [{ word: "Empatamos", base: "empatar" }, { word: "dos", ref: "es-0206" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }]
+      - target: "Empatan al final."
+        ipa: "emˈpatan al fiˈnal"
+        bases: [{ word: "Empatan", base: "empatar" }, { word: "al", base: "al" }, { word: "final", base: "final" }]
+  - id: "es-2716"
+    target: "lanzar"
+    ipa: "lanˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "lanzar", base: "lanzar" }]
+    examples:
+      - target: "Lanzo la pelota."
+        ipa: "ˈlanθo la peˈlota"
+        bases: [{ word: "Lanzo", base: "lanzar" }, { word: "la", base: "la" }, { word: "pelota", ref: "es-2710" }]
+      - target: "El jugador lanza el disco."
+        ipa: "el xuɡaˈdoɾ ˈlanθa el ˈdisko"
+        bases: [{ word: "El", base: "el" }, { word: "jugador", ref: "es-2694" }, { word: "lanza", base: "lanzar" }, { word: "el", base: "el" }, { word: "disco", ref: "es-2320" }]
+  - id: "es-2717"
+    target: "competir"
+    ipa: "kompeˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "competir", base: "competir" }]
+    examples:
+      - target: "Compito en la carrera."
+        ipa: "komˈpito en la kaˈreɾa"
+        bases: [{ word: "Compito", base: "competir" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "carrera", ref: "es-2360" }]
+      - target: "Compiten por la medalla."
+        ipa: "komˈpiten poɾ la meˈdaʝa"
+        bases: [{ word: "Compiten", base: "competir" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "medalla", ref: "es-2698" }]
