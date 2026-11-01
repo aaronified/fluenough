@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-nature"
+name: "Assamese reading: nature: trees, land and water"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-walk-by-the-river"
+    title: "A walk by the river"
+    theme: "nature"
+    sentences:
+      - text: "আমি নদীৰ পাৰত হাঁটোঁ।"
+        reading: "āmi nodir pārôt hāṭum̐."
+      - text: "বালিত পাথৰ আছে।"
+        reading: "bālit pāthôr āse."
+      - text: "গছৰ ছাঁ শীতল।"
+        reading: "gôsôr sām̐ xītôl."
+      - text: "মৌ ফুলত উৰে।"
+        reading: "mou phulôt ure."
+    questions:
+      - id: "as-3041"
+        prompt: { en: "The walk is by the river." }
+        answer: true
+      - id: "as-3042"
+        prompt: { en: "What is on the sand?" }
+        options:
+          - { en: "Stones" }
+          - { en: "Snow" }
+          - { en: "Water" }
+        answer: 1
+      - id: "as-3043"
+        prompt: { en: "What flies to the flower?" }
+        options:
+          - { en: "A bee" }
+          - { en: "A tiger" }
+          - { en: "A fish" }
+        answer: 1
+  - id: "as-park-signs"
+    title: "Signs in a park"
+    theme: "nature"
+    sentences:
+      - text: "ঘাঁহত নহঁটিব।"
+        reading: "ghām̐hôt nôhôm̐ṭib."
+      - text: "ফুল নিছিঁবা।"
+        reading: "phul nisim̐bā."
+      - text: "গছৰ ডাল নেভাঙিবা।"
+        reading: "gôsôr dāl nebhāṅibā."
+      - text: "পাৰ্কত মৌ আছে।"
+        reading: "pārkôt mou āse."
+    questions:
+      - id: "as-3044"
+        prompt: { en: "Visitors may walk on the grass." }
+        answer: false
+      - id: "as-3045"
+        prompt: { en: "What should not be picked?" }
+        options:
+          - { en: "Flowers" }
+          - { en: "Stones" }
+          - { en: "Leaves" }
+        answer: 1
+      - id: "as-3046"
+        prompt: { en: "What is there in the park?" }
+        options:
+          - { en: "Bees" }
+          - { en: "Tigers" }
+          - { en: "Snakes" }
+        answer: 1

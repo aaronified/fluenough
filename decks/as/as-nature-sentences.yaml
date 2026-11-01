@@ -1,0 +1,91 @@
+schema: 1
+id: "as-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3033"
+    target: "বসন্তত ফুল ফুটে।"
+    reading: "bôsôntôt phul phute."
+    ipa: "bɔsɔntɔt pʰul pʰute"
+    pos: "phrase"
+    bases:
+      - { word: "বসন্তত", ref: "as-2541" }
+      - { word: "ফুটে", ref: "as-3023" }
+    confusables:
+      - { id: "c1", word: "বতৰ", reading: "botôr", kind: "word" }
+      - { id: "c2", word: "শৰৎ", reading: "xôrôt", kind: "word" }
+  - id: "as-3034"
+    target: "গছৰ ছাঁত বহা।"
+    reading: "gôsôr sām̐t bôhā."
+    ipa: "ɡɔsɔɹ sãt bɔha"
+    pos: "phrase"
+    bases:
+      - { word: "গছৰ", ref: "as-2564" }
+      - { word: "ছাঁত", ref: "as-3018" }
+    confusables:
+      - { id: "c1", word: "ৰ'দ", reading: "rod", kind: "word" }
+      - { id: "c2", word: "বৰষুণ", reading: "bôrôxun", kind: "word" }
+  - id: "as-3035"
+    target: "নদীৰ পাৰত বালি।"
+    reading: "nodir pārôt bāli."
+    ipa: "nodiɹ paɹɔt bali"
+    pos: "phrase"
+    bases:
+      - { word: "নদীৰ", ref: "as-2407" }
+      - { word: "পাৰত", base: "পাৰ", reading: "pār" }
+    confusables:
+      - { id: "c1", word: "পাথৰ", reading: "pāthôr", kind: "word" }
+      - { id: "c2", word: "মাটি", reading: "māṭi", kind: "word" }
+  - id: "as-3036"
+    target: "মৌ ফুলত উৰে।"
+    reading: "mou phulôt ure."
+    ipa: "mɔu pʰulɔt uɹe"
+    pos: "phrase"
+    bases:
+      - { word: "ফুলত", ref: "as-2563" }
+      - { word: "উৰে", ref: "as-2916" }
+    confusables:
+      - { id: "c1", word: "চৰাই", reading: "sôrāi", kind: "word" }
+      - { id: "c2", word: "প্ৰাণী", reading: "prāṇī", kind: "word" }
+  - id: "as-3037"
+    target: "উপত্যকাত ঘাঁহ সেউজ।"
+    reading: "upôtyôkāt ghām̐h seuziyā."
+    ipa: "upɔtjɔkat ɡʱãh seuz"
+    pos: "phrase"
+    bases:
+      - { word: "উপত্যকাত", ref: "as-3019" }
+    confusables:
+      - { id: "c1", word: "কাঁইট", reading: "kām̐it", kind: "word" }
+      - { id: "c2", word: "কাঠ", reading: "kāth", kind: "word" }
+  - id: "as-3038"
+    target: "গছ বাঢ়িছে।"
+    reading: "gôs bārhise."
+    ipa: "ɡɔs baɹise"
+    pos: "phrase"
+    bases:
+      - { word: "বাঢ়িছে", ref: "as-3024" }
+    confusables:
+      - { id: "c1", word: "শুকান", reading: "xukān", kind: "word" }
+      - { id: "c2", word: "পৰা", reading: "pôrā", kind: "word" }
+  - id: "as-3039"
+    target: "জংগলত বাঘ আছে।"
+    reading: "zônggôlôt bāgh āse."
+    ipa: "zɔŋɡɔlɔt baɡʱ ase"
+    pos: "phrase"
+    bases:
+      - { word: "জংগলত", ref: "as-3020" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "হাতী", reading: "hāti", kind: "word" }
+      - { id: "c2", word: "সিংহ", reading: "siṅh", kind: "word" }
+  - id: "as-3040"
+    target: "সৌন্দৰ্য ভাল লাগে।"
+    reading: "xounddôrjô bhāl lāge."
+    ipa: "sɔundɔɹz bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আনন্দ", reading: "ānôndô", kind: "word" }
+      - { id: "c2", word: "শাক", reading: "xāk", kind: "word" }

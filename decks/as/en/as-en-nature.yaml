@@ -1,0 +1,167 @@
+schema: 1
+id: "as-en-nature"
+kind: "layer"
+core: "as-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature: trees, land and water"
+license: "CC-BY-SA-4.0"
+description: "The natural world: the trees and their parts, the land, the sand and the stones, the grass and the thorns, and the living things around us. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3010":
+    native: "nature"
+    notes:
+      "n1": "The natural world, the land, the sky and the living things in it."
+    examples:
+      "প্ৰকৃতি ধুনীয়া।": "Nature is beautiful."
+      "প্ৰকৃতি বহুত।": "There is a lot of nature."
+  "as-3011":
+    native: "root"
+    notes:
+      "n1": "The part of a plant under the ground that drinks water."
+    examples:
+      "গছৰ মূল ডাঙৰ।": "The tree has big roots."
+      "মূল ভিতৰত।": "The root is inside the ground."
+  "as-3012":
+    native: "branch"
+    notes:
+      "n1": "A branch of a tree, with leaves on it."
+    examples:
+      "ডাল ভাঙিল।": "The branch broke."
+      "ডালত চৰাই আছে।": { native: "There is a bird on the branch.", bases: { "ডালত": "branch", "আছে": "to be; there is; to have" } }
+  "as-3013":
+    native: "seed"
+    notes:
+      "n1": "The small part of a plant from which a new plant grows."
+    examples:
+      "বীজ মাটিত।": "The seed is in the soil."
+      "বীজ সৰু।": "The seed is small."
+  "as-3014":
+    native: "sand"
+    notes:
+      "n1": "The fine yellow grains on a river bank."
+    examples:
+      "নদীৰ পাৰত বালি।": { native: "There is sand on the river bank.", bases: { "পাৰত": "riverbank; side; edge" } }
+      "বালি ৰ'দত উম।": "The sand is warm in the sun."
+  "as-3015":
+    native: "stone; rock"
+    notes:
+      "n1": "A hard stone. A big rock is also পাথৰ (pāthôr)."
+    examples:
+      "পাথৰ ডাঙৰ।": "The rock is big."
+      "পাথৰ ভাৰী।": "The stone is heavy."
+  "as-3016":
+    native: "grass"
+    notes:
+      "n1": "The green grass in the fields and the gardens."
+    examples:
+      "ঘাঁহ সেউজ।": "The grass is green."
+      "ঘাঁহত বহা।": { native: "Sit on the grass.", bases: { "ঘাঁহত": "grass" } }
+  "as-3017":
+    native: "thorn"
+    notes:
+      "n1": "The sharp points on some plants."
+    examples:
+      "কাঁইট বহুত।": "There are many thorns."
+      "কাঁইট ডাঙৰ।": "The thorn is big."
+  "as-3018":
+    native: "shade; shadow"
+    notes:
+      "n1": "The cool dark place under a tree. The shadow of a person is also ছাঁ (sām̐)."
+    examples:
+      "গছৰ ছাঁ।": "The shade of the tree."
+      "ছাঁত বহা।": { native: "Sit in the shade.", bases: { "ছাঁত": "shade; shadow" } }
+  "as-3019":
+    native: "valley"
+    notes:
+      "n1": "The low land between two hills."
+    examples:
+      "উপত্যকা ধুনীয়া।": "The valley is lovely."
+      "উপত্যকাত গাঁও।": { native: "A village in the valley.", bases: { "উপত্যকাত": "valley" } }
+  "as-3020":
+    native: "jungle; wild forest"
+    notes:
+      "n1": "A thick, wild forest. The ordinary word for forest is বন (bôn)."
+    examples:
+      "জংগলত বাঘ।": { native: "There is a tiger in the jungle.", bases: { "জংগলত": "jungle; wild forest" } }
+      "জংগল বহুত ডাঙৰ।": "The jungle is very big."
+  "as-3021":
+    native: "wood; timber"
+    notes:
+      "n1": "The wood of a tree, used to build and to burn."
+    examples:
+      "কাঠ শুকান।": "The wood is dry."
+      "কাঠৰ ঘৰ।": { native: "A house of wood.", bases: { "কাঠৰ": "wood; timber" } }
+  "as-3022":
+    native: "honey bee"
+    notes:
+      "n1": "The bee that makes honey. Honey is মধু (modhu)."
+    examples:
+      "মৌ উৰে।": "The bee flies."
+      "ফুলত মৌ আছে।": { native: "There are bees on the flowers.", bases: { "আছে": "to be; there is; to have" } }
+  "as-3023":
+    native: "to bloom; to open (of a flower)"
+    notes:
+      "n1": "Of a flower opening in the spring."
+    examples:
+      "ফুল ফুটে।": { native: "The flower blooms.", bases: { "ফুটে": "to bloom; to open" } }
+      "ফুল ফুটিছে।": { native: "The flowers are blooming.", bases: { "ফুটিছে": "to bloom; to open" } }
+  "as-3024":
+    native: "to grow"
+    notes:
+      "n1": "Of plants, trees and children."
+    examples:
+      "গছ বাঢ়ে।": { native: "The tree grows.", bases: { "বাঢ়ে": "to grow" } }
+      "ল'ৰা বাঢ়িছে।": { native: "The boy is growing.", bases: { "বাঢ়িছে": "to grow" } }
+  "as-3025":
+    native: "plantation; orchard"
+    notes:
+      "n1": "A large garden of tea or fruit trees."
+    examples:
+      "বাগিচা ডাঙৰ।": "The plantation is big."
+      "বাগিচাত চাহ।": { native: "Tea in the plantation.", bases: { "বাগিচাত": "plantation; orchard" } }
+  "as-3026":
+    native: "greenery; the green"
+    notes:
+      "n1": "The green colour of plants and fields."
+    examples:
+      "সেউজ ধুনীয়া।": "The greenery is lovely."
+      "পথাৰত সেউজ।": "The field is green."
+  "as-3027":
+    native: "land; ground; earth"
+    notes:
+      "n1": "The land, as a place to live and farm."
+    examples:
+      "ভূমি বহল।": "The land is wide."
+      "ভূমি বহুত।": "There is a lot of land."
+  "as-3028":
+    native: "animal; living creature"
+    notes:
+      "n1": "A living animal. People are also living creatures."
+    examples:
+      "প্ৰাণী বহুত।": "There are many animals."
+      "এইটো প্ৰাণী সৰু।": "This animal is small."
+  "as-3029":
+    native: "living creature; life"
+    notes:
+      "n1": "Any living thing, such as a plant, a bird or a person."
+    examples:
+      "জীৱ ধুনীয়া।": "Life is beautiful."
+      "জীৱ বহুত।": "There are many living things."
+  "as-3030":
+    native: "beauty"
+    notes:
+      "n1": "How beautiful something is."
+    examples:
+      "সৌন্দৰ্য বহুত।": "There is a lot of beauty."
+      "গাঁওৰ সৌন্দৰ্য।": "The beauty of the village."
+  "as-3031":
+    native: "flowers bloom"
+    notes:
+      "n1": "The time when flowers open, in spring."
+    examples:
+  "as-3032":
+    native: "to water (plants)"
+    notes:
+      "n1": "To give water to the plants in the garden."
+    examples:

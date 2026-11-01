@@ -1,0 +1,235 @@
+schema: 1
+id: "as-nature"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "nature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3010"
+    target: "প্ৰকৃতি"
+    reading: "prôkrôti"
+    ipa: "pɹokriti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰকৃতি ধুনীয়া।", reading: "prôkrôti dhuniyā.", ipa: "pɹokriti dʱunija" }
+      - { target: "প্ৰকৃতি বহুত।", reading: "prôkrôti bohut.", ipa: "pɹokriti bohut" }
+  - id: "as-3011"
+    target: "মূল"
+    reading: "mul"
+    ipa: "mul"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গছৰ মূল ডাঙৰ।", reading: "gôsôr mul dāṅôr.", ipa: "ɡɔsɔɹ mul daŋɔɹ", bases: [{ word: "গছৰ", ref: "as-2564" }] }
+      - { target: "মূল ভিতৰত।", reading: "mul bhitôrôt.", ipa: "mul bʱitɔɹɔt" }
+  - id: "as-3012"
+    target: "ডাল"
+    reading: "dāl"
+    ipa: "dal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ডাল ভাঙিল।", reading: "dāl bhāṅil.", ipa: "dal bʱaŋil", bases: [{ word: "ভাঙিল", ref: "as-2301" }] }
+      - { target: "ডালত চৰাই আছে।", reading: "dālôt sôrāi āse.", ipa: "dalɔt sɔɹai ase", bases: [{ word: "ডালত", base: "ডাল", reading: "dāl" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3013"
+    target: "বীজ"
+    reading: "bij"
+    ipa: "biz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বীজ মাটিত।", reading: "bij māṭit.", ipa: "biz matit", bases: [{ word: "মাটিত", ref: "as-2565" }] }
+      - { target: "বীজ সৰু।", reading: "bij xôru.", ipa: "biz soɹu" }
+  - id: "as-3014"
+    target: "বালি"
+    reading: "bāli"
+    ipa: "bali"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নদীৰ পাৰত বালি।", reading: "nodir pārôt bāli.", ipa: "nodiɹ paɹɔt bali", bases: [{ word: "নদীৰ", ref: "as-2407" }, { word: "পাৰত", base: "পাৰ", reading: "pār" }] }
+      - { target: "বালি ৰ'দত উম।", reading: "bāli rodôt um.", ipa: "bali ɹodɔt um", bases: [{ word: "ৰ'দত", ref: "as-2533" }] }
+  - id: "as-3015"
+    target: "পাথৰ"
+    reading: "pāthôr"
+    ipa: "patʰɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাথৰ ডাঙৰ।", reading: "pāthôr dāṅôr.", ipa: "patʰɔɹ daŋɔɹ" }
+      - { target: "পাথৰ ভাৰী।", reading: "pāthôr bhāri.", ipa: "patʰɔɹ bʱaɹi" }
+  - id: "as-3016"
+    target: "ঘাঁহ"
+    reading: "ghām̐h"
+    ipa: "ɡʱãh"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঘাঁহ সেউজ।", reading: "ghām̐h seuziyā.", ipa: "ɡʱãh seuz" }
+      - { target: "ঘাঁহত বহা।", reading: "ghām̐hôt bôhā.", ipa: "ɡʱãhɔt bɔha", bases: [{ word: "ঘাঁহত", base: "ঘাঁহ", reading: "ghām̐h" }] }
+  - id: "as-3017"
+    target: "কাঁইট"
+    reading: "kām̐it"
+    ipa: "kãit"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাঁইট বহুত।", reading: "kām̐it bohut.", ipa: "kãit bohut" }
+      - { target: "কাঁইট ডাঙৰ।", reading: "kām̐it dāṅôr.", ipa: "kãit daŋɔɹ" }
+  - id: "as-3018"
+    target: "ছাঁ"
+    reading: "sām̐"
+    ipa: "sã"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গছৰ ছাঁ।", reading: "gôsôr sām̐.", ipa: "ɡɔsɔɹ sã", bases: [{ word: "গছৰ", ref: "as-2564" }] }
+      - { target: "ছাঁত বহা।", reading: "sām̐t bôhā.", ipa: "sãt bɔha", bases: [{ word: "ছাঁত", base: "ছাঁ", reading: "sām̐" }] }
+  - id: "as-3019"
+    target: "উপত্যকা"
+    reading: "upôtyôkā"
+    ipa: "upɔtjɔka"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "উপত্যকা ধুনীয়া।", reading: "upôtyôkā dhuniyā.", ipa: "upɔtjɔka dʱunija" }
+      - { target: "উপত্যকাত গাঁও।", reading: "upôtyôkāt gām̐o.", ipa: "upɔtjɔkat ɡãʊ", bases: [{ word: "উপত্যকাত", base: "উপত্যকা", reading: "upôtyôkā" }] }
+  - id: "as-3020"
+    target: "জংগল"
+    reading: "zônggôl"
+    ipa: "zɔŋɡɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জংগলত বাঘ।", reading: "zônggôlôt bāgh.", ipa: "zɔŋɡɔlɔt baɡʱ", bases: [{ word: "জংগলত", base: "জংগল", reading: "zônggôl" }] }
+      - { target: "জংগল বহুত ডাঙৰ।", reading: "zônggôl bohut dāṅôr.", ipa: "zɔŋɡɔl bohut daŋɔɹ" }
+  - id: "as-3021"
+    target: "কাঠ"
+    reading: "kāth"
+    ipa: "katʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাঠ শুকান।", reading: "kāth xukān.", ipa: "katʰ xukan" }
+      - { target: "কাঠৰ ঘৰ।", reading: "kāthôr ghôr.", ipa: "katʰɔɹ ɡʱɔɹ", bases: [{ word: "কাঠৰ", base: "কাঠ", reading: "kāth" }] }
+  - id: "as-3022"
+    target: "মৌ"
+    reading: "mou"
+    ipa: "mɔu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মৌ উৰে।", reading: "mou ure.", ipa: "mɔu uɹe", bases: [{ word: "উৰে", ref: "as-2916" }] }
+      - { target: "ফুলত মৌ আছে।", reading: "phulôt mou āse.", ipa: "pʰulɔt mɔu ase", bases: [{ word: "ফুলত", ref: "as-2563" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3023"
+    target: "ফুটা"
+    reading: "phutā"
+    ipa: "pʰuta"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফুল ফুটে।", reading: "phul phute.", ipa: "pʰul pʰute", bases: [{ word: "ফুটে", base: "ফুটা", reading: "phutā" }] }
+      - { target: "ফুল ফুটিছে।", reading: "phul phutise.", ipa: "pʰul pʰutise", bases: [{ word: "ফুটিছে", base: "ফুটা", reading: "phutā" }] }
+  - id: "as-3024"
+    target: "বাঢ়া"
+    reading: "bārhā"
+    ipa: "baɹa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গছ বাঢ়ে।", reading: "gôs bārhe.", ipa: "ɡɔs baɹe", bases: [{ word: "বাঢ়ে", base: "বাঢ়া", reading: "bārhā" }] }
+      - { target: "ল'ৰা বাঢ়িছে।", reading: "lorā bārhise.", ipa: "loɹa baɹise", bases: [{ word: "বাঢ়িছে", base: "বাঢ়া", reading: "bārhā" }] }
+  - id: "as-3025"
+    target: "বাগিচা"
+    reading: "bāgicā"
+    ipa: "baɡisa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাগিচা ডাঙৰ।", reading: "bāgicā dāṅôr.", ipa: "baɡisa daŋɔɹ" }
+      - { target: "বাগিচাত চাহ।", reading: "bāgicāt sāh.", ipa: "baɡisat sah", bases: [{ word: "বাগিচাত", base: "বাগিচা", reading: "bāgicā" }] }
+  - id: "as-3026"
+    target: "সেউজ"
+    reading: "seuz"
+    ipa: "seuz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সেউজ ধুনীয়া।", reading: "seuz dhuniyā.", ipa: "seuz dʱunija" }
+      - { target: "পথাৰত সেউজ।", reading: "pôthārôt seuz.", ipa: "pɔtʰaɹɔt seuz", bases: [{ word: "পথাৰত", ref: "as-2414" }] }
+  - id: "as-3027"
+    target: "ভূমি"
+    reading: "bhumi"
+    ipa: "bʱumi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভূমি বহল।", reading: "bhumi bôhôl.", ipa: "bʱumi bɔhɔl" }
+      - { target: "ভূমি বহুত।", reading: "bhumi bohut.", ipa: "bʱumi bohut" }
+  - id: "as-3028"
+    target: "প্ৰাণী"
+    reading: "prāṇī"
+    ipa: "pɹani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰাণী বহুত।", reading: "prāṇī bohut.", ipa: "pɹani bohut" }
+      - { target: "এইটো প্ৰাণী সৰু।", reading: "eitu prāṇī xôru.", ipa: "eitʊ pɹani soɹu" }
+  - id: "as-3029"
+    target: "জীৱ"
+    reading: "zībô"
+    ipa: "ziw"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জীৱ ধুনীয়া।", reading: "zībô dhuniyā.", ipa: "ziw dʱunija" }
+      - { target: "জীৱ বহুত।", reading: "zībô bohut.", ipa: "ziw bohut" }
+  - id: "as-3030"
+    target: "সৌন্দৰ্য"
+    reading: "xounddôrjô"
+    ipa: "sɔundɔɹz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সৌন্দৰ্য বহুত।", reading: "xounddôrjô bohut.", ipa: "sɔundɔɹz bohut" }
+      - { target: "গাঁওৰ সৌন্দৰ্য।", reading: "gām̐or xounddôrjô.", ipa: "ɡãʊɹ sɔundɔɹz", bases: [{ word: "গাঁওৰ", ref: "as-0172" }] }
+  - id: "as-3031"
+    target: "ফুল ফুটা"
+    reading: "phul phutā"
+    ipa: "pʰul pʰuta"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3032"
+    target: "পানী দিয়া"
+    reading: "pāni diyā"
+    ipa: "pani dija"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
