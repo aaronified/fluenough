@@ -539,7 +539,8 @@ units:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
-  - planned: { id: "kn-sports", theme: "sports", words: 40 }
+  - decks: ["kn-sports", "*"]
+    words: 16
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
