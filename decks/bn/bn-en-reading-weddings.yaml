@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-weddings"
+name: "Reading: weddings"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Relatives plan a wedding, and a wedding invitation card, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-wedding-plans"
+    title: "Relatives plan a wedding"
+    theme: "weddings"
+    sentences:
+      - { text: "আগামী মাসে আমাদের বাড়িতে বিয়ে।", reading: "āgāmi māse āmāder bāṛite biye.", ipa: "aɡami mase amad̪er baɽit̪e bije" }
+      - { text: "মা বললেন, সবাইকে নিমন্ত্রণ করতে হবে।", reading: "mā bôlolen, sôbāike nimontron kôrote hôbe.", ipa: "ma bɔlolen sɔbaike nimont̪ron kɔrot̪e ɦɔbe" }
+      - { text: "বাবা মণ্ডপের আয়োজন করবেন।", reading: "bābā mônḍoper āyojon kôroben.", ipa: "baba mɔnɖoper ajodʒon kɔroben" }
+      - { text: "কাকা আর মামা বাজনার ব্যবস্থা করবেন।", reading: "kākā ār māmā bājonār bêbosthā kôroben.", ipa: "kaka ar mama badʒonar bæbost̪ʰa kɔroben" }
+      - { text: "আমি বধূর জন্য একটা বেনারসি কিনব।", reading: "āmi bodhur jonn ekoṭā benārosi kinob.", ipa: "ami bod̪ʱur dʒonn ekoʈa benarosi kinob" }
+    questions:
+      - id: "bn-3808"
+        prompt: { "en": "The family is planning a wedding for next month." }
+        answer: true
+      - id: "bn-3809"
+        prompt: { "en": "Who will arrange the band?" }
+        options: [{ "en": "The uncle and the maternal uncle" }, { "en": "The bride" }]
+        answer: 1
+      - id: "bn-3810"
+        prompt: { "en": "Who will arrange the pavilion?" }
+        options: [{ "en": "The father" }, { "en": "The guests" }]
+        answer: 1
+  - id: "bn-wedding-card"
+    title: "A wedding invitation card"
+    theme: "weddings"
+    sentences:
+      - { text: "শুভ বিবাহ উপলক্ষে আপনাকে নিমন্ত্রণ জানানো হচ্ছে।", reading: "śubh bibāh upolokkhe āponāke nimontron jānāno hôcche.", ipa: "ʃubʱ bibaɦ upolokkʰe aponake nimont̪ron dʒanano ɦɔtʃtʃʰe" }
+      - { text: "অনুষ্ঠান শুক্রবার সন্ধ্যা সাতটায়।", reading: "ônuśṭhān śukrobār sônddhā sātoṭāy.", ipa: "ɔnuʃʈʰan ʃukrobar sɔnd̪d̪ʱa sat̪oʈaj" }
+      - { text: "স্থান: আমাদের বাড়ির মণ্ডপ।", reading: "sthān: āmāder bāṛir mônḍop.", ipa: "st̪ʰan amad̪er baɽir mɔnɖop" }
+      - { text: "দয়া করে সময়মতো আসবেন।", reading: "dôyā kôre sômoyomoto āsoben.", ipa: "d̪ɔja kɔre sɔmojomot̪o asoben" }
+      - { text: "আপনাদের আশীর্বাদ প্রার্থী।", reading: "āponāder āśirrād prārthi.", ipa: "aponad̪er aʃirrad̪ prart̪ʰi" }
+    questions:
+      - id: "bn-3811"
+        prompt: { "en": "The card invites the reader to a wedding." }
+        answer: true
+      - id: "bn-3812"
+        prompt: { "en": "When does the ceremony start?" }
+        options: [{ "en": "On Friday evening at seven" }, { "en": "On Monday morning" }]
+        answer: 1
+      - id: "bn-3813"
+        prompt: { "en": "Where is the ceremony held?" }
+        options: [{ "en": "In the family's own pavilion" }, { "en": "In a hotel" }]
+        answer: 1

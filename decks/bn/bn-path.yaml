@@ -616,11 +616,14 @@ units:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
   - decks: ["bn-reading-history"]
     words: 0
-  - planned: { id: "bn-weddings", theme: "weddings", words: 45 }
+  - decks: ["bn-weddings", "bn-weddings-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - decks: ["bn-reading-weddings"]
+    words: 0
   - planned: { id: "bn-grammar-concessive", grammar: "concessive" }
     listening_passages:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
