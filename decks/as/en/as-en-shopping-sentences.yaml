@@ -1,0 +1,54 @@
+schema: 1
+id: "as-en-shopping-sentences"
+kind: "layer"
+core: "as-shopping-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2659":
+    native: "I buy two kilos of rice."
+    confusables:
+      "c1": { why: "To sell, the other side of buying." }
+      "c2": { why: "The verb is buy; a wrong verb for the sentence." }
+  "as-2660":
+    native: "How much is this?"
+    confusables:
+      "c1": { why: "Also means price, but formal; the question is the same." }
+      "c2": { why: "Weight, not price." }
+  "as-2661":
+    native: "This is cheap, but good."
+    confusables:
+      "c1": { why: "The opposite of cheap." }
+      "c2": { why: "A loss, not a quality." }
+  "as-2662":
+    native: "The shopkeeper gives back the change."
+    confusables:
+      "c1": { why: "The customer, the other person in the shop." }
+      "c2": { why: "Cash, not the act of giving change." }
+  "as-2663":
+    native: "There is a sale today."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Close in meaning, but a single deal rather than the sale." }
+      "c2": { why: "A discount, a part of a sale." }
+  "as-2664":
+    native: "We choose an offer online."
+    confusables:
+      "c1": { why: "A shop, not the internet." }
+      "c2": { why: "A market, not online." }
+  "as-2665":
+    native: "If the size is right, I will buy it."
+    bases:
+      "হ'লে": "to become; to be"
+    confusables:
+      "c1": { why: "To sell, not to buy." }
+      "c2": { why: "Another, not the size." }
+  "as-2666":
+    native: "How much is still owed?"
+    confusables:
+      "c1": { why: "A discount, not what is still owed." }
+      "c2": { why: "Back, not what is owed." }

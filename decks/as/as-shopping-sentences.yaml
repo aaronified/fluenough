@@ -1,0 +1,84 @@
+schema: 1
+id: "as-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2659"
+    target: "মই দুটা কিলো চাউল কিনোঁ।"
+    reading: "moi dutā kilo sāul kinum̐."
+    ipa: "moi duta kilʊ saul kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কিনোঁ", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "বেচা", reading: "besā", kind: "word" }
+      - { id: "c2", word: "কিনা", reading: "kinā", kind: "word" }
+  - id: "as-2660"
+    target: "এইটো দাম কিমান?"
+    reading: "eitu dām kimān?"
+    ipa: "eitʊ dam kiman"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মূল্য", reading: "mulyô", kind: "word" }
+      - { id: "c2", word: "ওজন", reading: "ozôn", kind: "word" }
+  - id: "as-2661"
+    target: "এইটো সস্তা, কিন্তু ভাল।"
+    reading: "eitu xôstā, kintu bhāl."
+    ipa: "eitʊ sɔsta kintu bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "দামী", reading: "dāmi", kind: "word" }
+      - { id: "c2", word: "ক্ষতি", reading: "kkhôti", kind: "word" }
+  - id: "as-2662"
+    target: "দোকানী ফেৰত দিয়ে।"
+    reading: "dukāni pherôt diye."
+    ipa: "dʊkani pʰeɹɔt dije"
+    pos: "phrase"
+    bases:
+      - { word: "দিয়ে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "গ্ৰাহক", reading: "grāhôk", kind: "word" }
+      - { id: "c2", word: "নগদ", reading: "nôgôd", kind: "word" }
+  - id: "as-2663"
+    target: "আজি বিক্ৰী আছে।"
+    reading: "āzi bikrī āse."
+    ipa: "azi bikɹi ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "অফাৰ", reading: "ophār", kind: "word" }
+      - { id: "c2", word: "ছাড়", reading: "sār", kind: "word" }
+  - id: "as-2664"
+    target: "আমি অনলাইনত অফাৰ বাছোঁ।"
+    reading: "āmi ônlāinôt ophār bāsum̐."
+    ipa: "ami ɔnɔlainɔt ɔpʰaɹ basʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "অনলাইনত", ref: "as-2652" }
+      - { word: "বাছোঁ", ref: "as-2645" }
+    confusables:
+      - { id: "c1", word: "দোকান", reading: "dukān", kind: "word" }
+      - { id: "c2", word: "বজাৰ", reading: "bôzār", kind: "word" }
+  - id: "as-2665"
+    target: "মাপ ঠিক হ'লে কিনিম।"
+    reading: "māp ṭhik hôle kinim."
+    ipa: "map tʰik hole kinim"
+    pos: "phrase"
+    bases:
+      - { word: "হ'লে", base: "হোৱা", reading: "huwā" }
+      - { word: "কিনিম", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "বেচা", reading: "besā", kind: "word" }
+      - { id: "c2", word: "আন", reading: "ān", kind: "word" }
+  - id: "as-2666"
+    target: "বাকী কিমান?"
+    reading: "bāki kimān?"
+    ipa: "baki kiman"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ছাড়", reading: "sār", kind: "word" }
+      - { id: "c2", word: "ফেৰত", reading: "pherôt", kind: "word" }

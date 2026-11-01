@@ -1,0 +1,229 @@
+schema: 1
+id: "as-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2637"
+    target: "বেচা"
+    reading: "besā"
+    ipa: "besa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দোকানী চাউল বেচে।", reading: "dukāni chāul bece.", ipa: "dʊkani saul bese", bases: [{ word: "বেচে", base: "বেচা", reading: "besā" }] }
+      - { target: "আমি পুৰণি কিতাপ বেচিছোঁ।", reading: "āmi puroni kitāp becisum̐.", ipa: "ami puɹoni kitap besisʊ̃", bases: [{ word: "বেচিছোঁ", base: "বেচা", reading: "besā" }] }
+  - id: "as-2638"
+    target: "গ্ৰাহক"
+    reading: "grāhôk"
+    ipa: "ɡɹahɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গ্ৰাহক বহুত।", reading: "grāhôk bohut.", ipa: "ɡɹahɔk bohut" }
+      - { target: "গ্ৰাহক দাম সুধিছে।", reading: "grāhôk dām xudhise.", ipa: "ɡɹahɔk dam sudʱise", bases: [{ word: "সুধিছে", base: "সুধা", reading: "xudhā" }] }
+  - id: "as-2639"
+    target: "মূল্য"
+    reading: "mulyô"
+    ipa: "mulj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো মূল্য ভাল।", reading: "eitu mulyô bhāl.", ipa: "eitʊ mulj bʱal" }
+      - { target: "মূল্য বেছি।", reading: "mulyô besi.", ipa: "mulj besi" }
+  - id: "as-2640"
+    target: "ছাড়"
+    reading: "sār"
+    ipa: "saɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আজি ছাড় আছে।", reading: "āzi sār āse.", ipa: "azi saɹ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ছাড় বহুত।", reading: "sār bohut.", ipa: "saɹ bohut" }
+  - id: "as-2641"
+    target: "সস্তা"
+    reading: "xôstā"
+    ipa: "sɔsta"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো সস্তা।", reading: "eitu xôstā.", ipa: "eitʊ sɔsta" }
+      - { target: "বজাৰত সস্তা।", reading: "bôzārôt xôstā.", ipa: "bɔzaɹɔt sɔsta", bases: [{ word: "বজাৰত", ref: "as-0266" }] }
+  - id: "as-2642"
+    target: "দামী"
+    reading: "dāmi"
+    ipa: "dami"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো দামী।", reading: "eitu dāmi.", ipa: "eitʊ dami" }
+      - { target: "দামী কাপোৰ।", reading: "dāmi kāpur.", ipa: "dami kapʊɹ" }
+  - id: "as-2643"
+    target: "ফেৰত"
+    reading: "pherôt"
+    ipa: "pʰeɹɔt"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই ফেৰত দিম।", reading: "moi pherôt dim.", ipa: "moi pʰeɹɔt dim", bases: [{ word: "দিম", ref: "as-2218" }] }
+      - { target: "খুচুৰা ফেৰত আহিল।", reading: "khusurā pherôt āhil.", ipa: "kʰusuɹa pʰeɹɔt ahil", bases: [{ word: "আহিল", ref: "as-2201" }] }
+  - id: "as-2644"
+    target: "আন"
+    reading: "ān"
+    ipa: "an"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আন কাপোৰ নাই।", reading: "ān kāpur nāi.", ipa: "an kapʊɹ nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+      - { target: "আন এটা দিয়ক।", reading: "ān etā diyôk.", ipa: "an eta dijɔk" }
+  - id: "as-2645"
+    target: "বাছা"
+    reading: "bāsā"
+    ipa: "basa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই ভাল মাপ বাছোঁ।", reading: "moi bhāl māp bāsum̐.", ipa: "moi bʱal map basʊ̃", bases: [{ word: "বাছোঁ", base: "বাছা", reading: "bāsā" }] }
+      - { target: "তুমি কোনটো বাছা?", reading: "tumi kuntu bāsā?", ipa: "tumi kʊnɔtʊ basa" }
+  - id: "as-2646"
+    target: "মাপ"
+    reading: "māp"
+    ipa: "map"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটোৰ মাপ কিমান?", reading: "eitôr māp kimān?", ipa: "eitʊɹ map kiman", bases: [{ word: "এইটোৰ", ref: "as-2193" }] }
+      - { target: "মাপ ঠিক আছে।", reading: "māp ṭhik āse.", ipa: "map tʰik ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2647"
+    target: "আকাৰ"
+    reading: "ākār"
+    ipa: "akaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ডাঙৰ আকাৰ।", reading: "dāṅôr ākār.", ipa: "daŋɔɹ akaɹ" }
+      - { target: "সৰু আকাৰ।", reading: "xôru ākār.", ipa: "soɹu akaɹ" }
+  - id: "as-2648"
+    target: "বিক্ৰী"
+    reading: "bikrī"
+    ipa: "bikɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আজি বিক্ৰী আছে।", reading: "āzi bikrī āse.", ipa: "azi bikɹi ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "বিক্ৰী বহুত।", reading: "bikrī bohut.", ipa: "bikɹi bohut" }
+  - id: "as-2649"
+    target: "অফাৰ"
+    reading: "ophār"
+    ipa: "ɔpʰaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো অফাৰ ভাল।", reading: "eitu ophār bhāl.", ipa: "eitʊ ɔpʰaɹ bʱal" }
+      - { target: "অফাৰ এতিয়া আছে।", reading: "ophār etiyā āse.", ipa: "ɔpʰaɹ etija ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2650"
+    target: "নগদ"
+    reading: "nôgôd"
+    ipa: "nɔɡɔd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নগদ দিব পাৰিবা?", reading: "nôgôd dib pāribā?", ipa: "nɔɡɔd dib paɹiba", bases: [{ word: "দিব", ref: "as-2218" }, { word: "পাৰিবা", base: "পাৰা", reading: "pārā" }] }
+      - { target: "মই নগদ দিম।", reading: "moi nôgôd dim.", ipa: "moi nɔɡɔd dim", bases: [{ word: "দিম", ref: "as-2218" }] }
+  - id: "as-2651"
+    target: "কাৰ্ড"
+    reading: "kārd"
+    ipa: "kaɹd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাৰ্ড আছে নেকি?", reading: "kārd āse neki?", ipa: "kaɹd ase neki", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "কাৰ্ডত দিম।", reading: "kārdôt dim.", ipa: "kaɹdɔt dim", bases: [{ word: "কাৰ্ডত", base: "কাৰ্ড", reading: "kārd" }, { word: "দিম", ref: "as-2218" }] }
+  - id: "as-2652"
+    target: "অনলাইন"
+    reading: "ônlāin"
+    ipa: "ɔnɔlain"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অনলাইনত কিনোঁ।", reading: "ônlāinôt kinum̐.", ipa: "ɔnɔlainɔt kinʊ̃", bases: [{ word: "অনলাইনত", base: "অনলাইন", reading: "ônlāin" }, { word: "কিনোঁ", ref: "as-2210" }] }
+      - { target: "অনলাইনত অফাৰ আছে।", reading: "ônlāinôt ophār āse.", ipa: "ɔnɔlainɔt ɔpʰaɹ ase", bases: [{ word: "অনলাইনত", base: "অনলাইন", reading: "ônlāin" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2653"
+    target: "প্লাষ্টিক"
+    reading: "plāstik"
+    ipa: "plaxtik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্লাষ্টিকৰ মোনা।", reading: "plāstikôr mônā.", ipa: "plaxtikɔɹ mʊna", bases: [{ word: "প্লাষ্টিকৰ", base: "প্লাষ্টিক", reading: "plāstik" }] }
+      - { target: "প্লাষ্টিক ভাল নহয়।", reading: "plāstik bhāl nôhôy.", ipa: "plaxtik bʱal nɔhɔj" }
+  - id: "as-2654"
+    target: "ওজন"
+    reading: "ozôn"
+    ipa: "ʊzɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ওজন ঠিক।", reading: "ozôn ṭhik.", ipa: "ʊzɔn tʰik" }
+      - { target: "ওজন বেছি।", reading: "ozôn besi.", ipa: "ʊzɔn besi" }
+  - id: "as-2655"
+    target: "লাভ"
+    reading: "lāb"
+    ipa: "labʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দোকানীৰ লাভ বেছি।", reading: "dukānir lāb besi.", ipa: "dʊkaniɹ labʱ besi", bases: [{ word: "দোকানীৰ", ref: "as-0202" }] }
+      - { target: "আজি লাভ নাই।", reading: "āzi lāb nāi.", ipa: "azi labʱ nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2656"
+    target: "ক্ষতি"
+    reading: "kkhôti"
+    ipa: "kkʰoti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটোত ক্ষতি।", reading: "eitōt kkhôti.", ipa: "eitʊt kkʰoti", bases: [{ word: "এইটোত", ref: "as-2193" }] }
+      - { target: "ক্ষতি বহুত।", reading: "kkhôti bohut.", ipa: "kkʰoti bohut" }
+  - id: "as-2657"
+    target: "পূৰণ"
+    reading: "purôn"
+    ipa: "puɹɔn"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোনা পূৰণ।", reading: "mônā purôn.", ipa: "mʊna puɹɔn" }
+      - { target: "বাকচ পূৰণ।", reading: "bākôs purôn.", ipa: "bakɔs puɹɔn" }
+  - id: "as-2658"
+    target: "বাকী"
+    reading: "bāki"
+    ipa: "baki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাকী কিমান?", reading: "bāki kimān?", ipa: "baki kiman" }
+      - { target: "মোৰ বাকী নাই।", reading: "mur bāki nāi.", ipa: "mʊɹ baki nai", bases: [{ word: "নাই", ref: "as-0142" }] }
