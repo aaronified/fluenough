@@ -103,7 +103,7 @@ cards:
     tags: ["place"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "Ĉi", base: "ĉi" }, { word: "tie", base: "tie" }]
     examples:
       - { target: "Venu ĉi tien.", ipa: "venu tʃi tien", bases: [{ word: "Venu", base: "veni" }, { word: "ĉi", base: "ĉi" }, { word: "tien", base: "tie" }] }
       - { target: "Mi estas ĉi tie.", ipa: "mi ɛstas tʃi tie", bases: [{ word: "Mi", base: "mi" }, { word: "estas", base: "esti" }, { word: "ĉi", base: "ĉi" }, { word: "tie", base: "tie" }] }

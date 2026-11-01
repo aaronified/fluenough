@@ -102,7 +102,7 @@ cards:
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "a", base: "a" }, { word: "haon", base: "haon" }]
     examples:
       - { target: "A haon, a dó, a trí.", ipa: "ə ˈheːn ə doː ə ˈtriː", bases: [{ word: "A", base: "a" }, { word: "haon", base: "haon" }, { word: "dó", base: "dó" }, { word: "trí", base: "trí" }] }
       - { target: "Aon uair amháin.", ipa: "eːn ˈuːɾʲə əˈwɪn", bases: [{ word: "Aon", base: "aon" }, { word: "uair", base: "uair" }, { word: "amháin", base: "amháin" }] }
@@ -117,4 +117,4 @@ cards:
     bases: "self"
     examples:
       - { target: "Uisce, le do thoil.", ipa: "ˈɪʃkʲə lʲə də hɪl", bases: [{ word: "le", base: "le" }, { word: "do", base: "do" }, { word: "thoil", base: "toil" }] }
-      - { target: "Tá an t-uisce fuar.", ipa: "taː ən ˈtɪʃkʲə ˈfuːər", bases: [{ word: "Tá", base: "bí" }, { word: "an", base: "an" }, { word: "t-uisce", base: "uisce" }, { word: "fuar", base: "fuar" }] }
+      - { target: "Tá an t-uisce fuar.", ipa: "taː ən ˈtɪʃkʲə ˈfuːər", bases: [{ word: "Tá", base: "bí" }, { word: "an", base: "an" }, { word: "t", base: "an" }, { word: "fuar", base: "fuar" }] }
