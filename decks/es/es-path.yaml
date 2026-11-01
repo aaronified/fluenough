@@ -187,7 +187,9 @@ units:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "es-grammar-preterite-regular", grammar: "preterite-regular" }
+  - decks: ["es-grammar-preterite-regular", "es-reading-preterite-regular"]
+    words: 0
+    grammar: ["preterite-regular"]
     listening_passages:
       - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
     reading_passages:

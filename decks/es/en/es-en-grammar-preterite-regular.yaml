@@ -1,0 +1,23 @@
+schema: 1
+id: "es-en-grammar-preterite-regular"
+kind: "layer"
+core: "es-grammar-preterite-regular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Preterite: regular verbs"
+license: "CC-BY-SA-4.0"
+description: "The preterite tells what happened and finished in the past: ayer hablé con mi madre, yesterday I spoke with my mother. -ar verbs take -é, -aste, -ó, -amos, -asteis, -aron; -er and -ir verbs take -í, -iste, -ió, -imos, -isteis, -ieron. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Preterite of regular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "trabajar": "to work"
+    "comprar": "to buy"
+    "cocinar": "to cook"
+    "llegar": "to arrive"
+    "comer": "to eat"
+    "vivir": "to live"
+    "escribir": "to write"
+  notes: "The stem stays the same, and the ending does the work. For -ar verbs: -é, -aste, -ó, -amos, -asteis, -aron. For -er and -ir verbs: -í, -iste, -ió, -imos, -isteis, -ieron. Llegar and cocinar change their spelling in the yo form to keep the sound: llegué, cociné. Use the preterite for a finished action at a set time: ayer, anoche, el lunes."
