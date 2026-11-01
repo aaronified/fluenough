@@ -866,6 +866,22 @@ class SettingsNotifier extends ChangeNotifier {
     scriptsRead = answers;
   }
 
+  /// Kashmiri and Sindhi name their script `perso_arabic`, not `arabic`
+  /// (#959), which is their own, first script, so its answer is kept under
+  /// the bare code (`SpokenLanguage.readKey`). An answer saved as `ks:arabic`
+  /// or `sd:arabic` is read as that answer, unless one is kept already.
+  /// Reading the stored answers again after this is a no-op.
+  void _renameArabicOfKashmiriAndSindhi() {
+    const codes = <String>['ks', 'sd'];
+    if (!codes.any((code) => _scriptsRead.containsKey('$code:arabic'))) return;
+    final answers = Map<String, bool>.of(_scriptsRead);
+    for (final code in codes) {
+      final old = answers.remove('$code:arabic');
+      if (old != null) answers.putIfAbsent(code, () => old);
+    }
+    scriptsRead = answers;
+  }
+
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
     final i = _spokenLanguages.indexOf(code);
@@ -1517,6 +1533,7 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('latin_known_done', flag) case final v?) latinKnownDone = v;
     _foldUrduIntoHindustani();
+    _renameArabicOfKashmiriAndSindhi();
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       for (final MapEntry(:key, :value) in v.entries) {

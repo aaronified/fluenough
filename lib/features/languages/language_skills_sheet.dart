@@ -138,7 +138,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     if (!mounted) return;
     setState(() {
       _skills = next;
-      to == SkillState.learn ? _pending.add(key) : _pending.remove(key);
+      // A gesture skill has nothing to check.
+      to == SkillState.learn && !key.kind.isGesture
+          ? _pending.add(key)
+          : _pending.remove(key);
       _auto = <SkillKey, String>{
         for (final e in _auto.entries)
           if (e.key != key) e.key: e.value,
@@ -587,7 +590,18 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   _levelRow(context),
                   _placedRow(context),
                 ],
-                if (!_view.language.scriptOnly) ...<Widget>[
+                if (_view.language.isSign) ...<Widget>[
+                  _Heading(
+                    icon: SkillKind.gesture.icon,
+                    text: l10n.languagesGestures,
+                  ),
+                  _skillRow(
+                    context,
+                    tile: _Tile(icon: SkillKind.gesture.icon),
+                    title: l10n.languagesGestures,
+                    keys: const <SkillKey>[SkillKey(SkillKind.gesture)],
+                  ),
+                ] else if (!_view.language.scriptOnly) ...<Widget>[
                   _Heading(icon: Icons.mic_none, text: l10n.languagesSpeakHear),
                   Padding(
                     padding: const EdgeInsetsDirectional.only(bottom: 4),
@@ -615,12 +629,13 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     ],
                   ),
                 ],
-                _Heading(
-                  icon: Icons.translate,
-                  text: _several
-                      ? l10n.languagesScriptsRW
-                      : l10n.languagesScriptRW,
-                ),
+                if (_scripts.isNotEmpty)
+                  _Heading(
+                    icon: Icons.translate,
+                    text: _several
+                        ? l10n.languagesScriptsRW
+                        : l10n.languagesScriptRW,
+                  ),
                 for (final script in _scripts)
                   _skillRow(
                     context,
@@ -1326,7 +1341,7 @@ class _InfoDialog extends StatelessWidget {
               CourseLine(levels: progress.levels),
             ],
             const SizedBox(height: 8),
-            if (!view.language.scriptOnly)
+            if (!view.language.scriptOnly && !view.language.isSign)
               kv(l10n.languagesInfoDialect, dialectOf(l10n, view.language)),
             for (final script in scripts)
               kv(

@@ -147,7 +147,26 @@ void main() {
       expect(scriptOf('123 ?'), isNull);
     });
 
+    test('the ancient, Arabic, Odia and Thai scripts are told apart', () {
+      expect(scriptOf('العربية'), 'arabic');
+      expect(scriptOf('ଓଡ଼ିଆ'), 'odia');
+      expect(scriptOf('ภาษาไทย'), 'thai');
+      expect(scriptOf('שלום'), 'hebrew');
+      expect(scriptOf('\u{10000}\u{10001}'), 'linear_b');
+      expect(scriptOf('\u{12000}\u{12001}'), 'cuneiform');
+      expect(scriptOf('\u{13000}\u{13001}'), 'egyptian_hieroglyphs');
+    });
+
+    test('Arabic letters read as any Arabic-script course', () {
+      for (final course in ['arabic', 'perso_arabic', 'shahmukhi']) {
+        expect(scriptBelongsTo('arabic', <String>[course]), isTrue);
+      }
+      expect(scriptBelongsTo('arabic', <String>['hebrew']), isFalse);
+      expect(scriptBelongsTo('odia', <String>['odia']), isTrue);
+    });
+
     test('a Chinese variant reads Han', () {
+      expect(scriptBelongsTo('han', <String>['han_traditional']), isTrue);
       expect(scriptBelongsTo('han', <String>['han_simplified']), isTrue);
       expect(scriptBelongsTo('latin', <String>['devanagari']), isFalse);
     });

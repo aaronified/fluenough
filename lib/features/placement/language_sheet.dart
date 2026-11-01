@@ -102,6 +102,7 @@ const Set<String> _rightToLeft = <String>{
   'arabic',
   'perso_arabic',
   'shahmukhi',
+  'hebrew',
 };
 
 /// A language's bottom sheet in Languages I'm learning (#626, the approved

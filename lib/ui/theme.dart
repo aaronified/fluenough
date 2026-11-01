@@ -527,6 +527,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     required this.grammar,
     required this.reading,
     required this.pair,
+    required this.gesture,
   });
 
   static const ModeColors light = ModeColors(
@@ -537,6 +538,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     grammar: ModeColor(Color(0xFFB8F0E4), Color(0xFF00201B)),
     reading: ModeColor(Color(0xFFF6E388), Color(0xFF211B00)),
     pair: ModeColor(Color(0xFFFFD8EC), Color(0xFF3A0028)),
+    gesture: ModeColor(Color(0xFFFFDAD6), Color(0xFF410002)),
   );
 
   static const ModeColors dark = ModeColors(
@@ -547,6 +549,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     grammar: ModeColor(Color(0xFF00504A), Color(0xFFB8F0E4)),
     reading: ModeColor(Color(0xFF524700), Color(0xFFF6E388)),
     pair: ModeColor(Color(0xFF7A2963), Color(0xFFFFD8EC)),
+    gesture: ModeColor(Color(0xFF93000A), Color(0xFFFFDAD6)),
   );
 
   static const ModeColors lightHigh = ModeColors(
@@ -557,6 +560,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     grammar: ModeColor(Color(0xFF00504A), Color(0xFFFFFFFF)),
     reading: ModeColor(Color(0xFF524700), Color(0xFFFFFFFF)),
     pair: ModeColor(Color(0xFF772761), Color(0xFFFFFFFF)),
+    gesture: ModeColor(Color(0xFF93000A), Color(0xFFFFFFFF)),
   );
 
   static const ModeColors darkHigh = ModeColors(
@@ -567,6 +571,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     grammar: ModeColor(Color(0xFF92D2CA), Color(0xFF000000)),
     reading: ModeColor(Color(0xFFD9C76F), Color(0xFF000000)),
     pair: ModeColor(Color(0xFFFFADDF), Color(0xFF000000)),
+    gesture: ModeColor(Color(0xFFFFB4AB), Color(0xFF000000)),
   );
 
   final ModeColor recognition;
@@ -576,6 +581,10 @@ class ModeColors extends ThemeExtension<ModeColors> {
   final ModeColor grammar;
   final ModeColor reading;
   final ModeColor pair;
+
+  /// A sign language's one skill, Gestures: red, apart from the others
+  /// above, in the same tones.
+  final ModeColor gesture;
 
   /// The colours for [skill].
   ModeColor forSkill(Skill skill) => switch (skill) {
@@ -602,6 +611,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     ModeColor? grammar,
     ModeColor? reading,
     ModeColor? pair,
+    ModeColor? gesture,
   }) => ModeColors(
     recognition: recognition ?? this.recognition,
     production: production ?? this.production,
@@ -610,6 +620,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     grammar: grammar ?? this.grammar,
     reading: reading ?? this.reading,
     pair: pair ?? this.pair,
+    gesture: gesture ?? this.gesture,
   );
 
   @override
@@ -623,6 +634,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
       grammar: ModeColor.lerp(grammar, other.grammar, t),
       reading: ModeColor.lerp(reading, other.reading, t),
       pair: ModeColor.lerp(pair, other.pair, t),
+      gesture: ModeColor.lerp(gesture, other.gesture, t),
     );
   }
 }

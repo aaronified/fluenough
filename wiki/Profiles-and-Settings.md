@@ -78,7 +78,7 @@ See also: [Learner guide](Learner-Guide), [Home](Home).
 
 ## Languages (Settings > Your languages > Languages)
 
-One page for the languages you know and the ones you are learning (owner, 2026-10-30, #907). Each language has four skills: **Speak** and **Hear**, which belong to the one dialect the app teaches (named above Speak, such as Khari Boli for Hindustani), and **Read** and **Write**, which belong to a script: a language written in two scripts has a Read and a Write for each (Eastern Nagari for Bengali, Devanagari and Perso-Arabic for Hindustani).
+One page for the languages you know and the ones you are learning (owner, 2026-10-30, #907). Each language has four skills: **Speak** and **Hear**, which belong to the one dialect the app teaches (named above Speak, such as Khari Boli for Hindustani), and **Read** and **Write**, which belong to a script: a language written in two scripts has a Read and a Write for each (Eastern Nagari for Bengali, Devanagari and Perso-Arabic for Hindustani). A language with no script has no Read or Write. A **sign language** (Indian and American Sign Language) has one skill, **Gestures**, in place of all four, with its own icon (a raised hand): it covers recognising a sign and making one, with one Know, Learn or Leave for both (owner, 2026-11-01: "It is one skill, tested both ways. One cannot write a script without being able to read it."). Its drills wait for the sign deck format (#579), so it can be set to Know now and Learn is offered when a course exists. An answer saved as `ks:arabic` or `sd:arabic` is read as Kashmiri's or Sindhi's Perso-Arabic one.
 
 Each skill is one pill. Tap it to cycle **Leave**, **Know**, **Learn**:
 
