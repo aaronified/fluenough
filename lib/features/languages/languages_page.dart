@@ -488,7 +488,7 @@ class _LanguageRow extends StatelessWidget {
         hasDecks &&
         !learns &&
         state.settings.languageSkillsOf(view.code) != null;
-    final dialect = !view.language.scriptOnly && speaks
+    final dialect = !view.language.scriptOnly && !view.language.isSign && speaks
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);

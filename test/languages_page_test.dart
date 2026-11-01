@@ -247,4 +247,47 @@ void main() {
     await tapKey(tester, 'filter-learning');
     expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
   });
+
+  testWidgets('a sign language has one skill, Gestures, with its own icon, '
+      'and it cycles and is restored (owner, 2026-11-01)', (tester) async {
+    final state = AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en', 'ase'],
+        learningChosen: true,
+      )..scriptsRead = <String, bool>{'en': true, 'ase': false},
+    );
+    await pumpLanguages(tester, state: state);
+    await tapKey(tester, 'language-ase');
+    final text = l10n(tester);
+    Finder pill(String id) => find.byKey(ValueKey<String>('skill-$id'));
+    expect(pill('gesture'), findsOneWidget);
+    expect(find.text(text.languagesGestures), findsWidgets);
+    for (final id in <String>['speak', 'hear', 'read:latin', 'write:latin']) {
+      expect(pill(id), findsNothing, reason: 'a sign language has no $id');
+    }
+    expect(find.text(text.languagesSpeakHear), findsNothing);
+    expect(find.text(text.languagesScriptRW), findsNothing);
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byIcon(SkillKind.gesture.icon),
+      ),
+      findsOneWidget,
+    );
+    final used = <IconData>{for (final k in SkillKind.values) k.icon};
+    expect(used.length, SkillKind.values.length, reason: 'each its own icon');
+
+    await tapKey(tester, 'skill-gesture');
+    final ase = pickerSpokenList.singleWhere((l) => l.code == 'ase');
+    expect(state.skillsOf(ase).held, <SkillKey>[
+      const SkillKey(SkillKind.gesture),
+    ]);
+    final restored = SettingsNotifier()..restore(state.settings.toStored());
+    expect(
+      LanguageSkills.fromStored(restored.languageSkillsOf('ase')!)
+          .stateOf(const SkillKey(SkillKind.gesture)),
+      SkillState.know,
+    );
+    expect(tester.takeException(), isNull);
+  });
 }

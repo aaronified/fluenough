@@ -180,4 +180,21 @@ void main() {
     expect(state.learningCodes, isNot(contains('en')));
     expect(state.skillsOf(en), englishKnownByDefault());
   });
+
+  test('a saved Kashmiri or Sindhi Arabic answer is read as its '
+      'Perso-Arabic one, and a backup keeps it', () {
+    final settings = SettingsNotifier()
+      ..restore(const <String, String>{
+        'scripts_read': '{"ks:arabic":true,"sd:arabic":false,"hi":true}',
+      });
+    expect(settings.scriptsRead, <String, bool>{
+      'ks': true,
+      'sd': false,
+      'hi': true,
+    });
+    final ks = pickerSpokenList.firstWhere((l) => l.code == 'ks');
+    expect(ks.scriptsReadIn(settings.scriptsRead), <String>['perso_arabic']);
+    final again = SettingsNotifier()..restore(settings.toStored());
+    expect(again.scriptsRead, settings.scriptsRead);
+  });
 }

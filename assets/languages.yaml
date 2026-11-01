@@ -4,7 +4,7 @@
 # widely spoken ones beside them, and every language a course path teaches
 # or plans (#613, #959). Planned languages are listed with no decks yet
 # (owner, 2026-10-31, #959: "the 40+ list", with Latin, Old English and
-# Middle English added; 2026-11-01: all 65 entries): the living ones, the
+# Middle English added; 2026-11-01: all of them): the living ones, the
 # ancient and reconstructed ones (Mycenaean Greek, Sumerian, Egyptian,
 # Proto-Indo-European, Vedic Sanskrit, Latin, Old and Middle English, the
 # Archaic, Classical Attic and Koine stages of Ancient Greek, Pali, Imperial
@@ -13,7 +13,15 @@
 # "spoken ones only" rule of 2026-10-23. A language with no course is shown
 # on Add a language as having none yet.
 #
-#   code, iso639_3  the code decks use, and its ISO 639-3 code
+#   code, iso639_3  the code decks use, and its ISO 639-3 code. Two entries
+#                   hold another ISO 639 code, or a private-use one, here:
+#                   Proto-Indo-European's `ine` is the ISO 639-5 code of the
+#                   whole Indo-European family (a collective, not a
+#                   language), the only one there is, and the private-use
+#                   codes below (`qap`, `qgh`, `qgk`, `qaa` to `qtz`) are no
+#                   ISO 639-3 code either. The field is the code a deck's
+#                   `iso639_3` carries, three letters, not a promise that it
+#                   is in ISO 639-3.
 #   name, own_name  its English name, and its name for itself (in its script)
 #   scripts         the scripts it is written in, as deck files name them
 #                   (`latin`, `bengali`), its own first: the one its courses
@@ -44,7 +52,9 @@
 #                   inscriptions, is named in the app; it has no font yet,
 #                   so Ashokan Prakrit is written in Devanagari for now.
 #   scripts omitted a sign language has no written script of its own here:
-#                   leave `scripts` out.
+#                   leave `scripts` out. It has no Read or Write either, and
+#                   one skill, Gestures, in place of all four (owner,
+#                   2026-11-01).
 #   dialect         optional: the one dialect the app teaches, by its proper
 #                   name, shown on the Languages page above Speak and Hear
 #                   (#907). Without it the page says "Standard" and the

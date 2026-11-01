@@ -73,4 +73,13 @@ void main() {
     expect(arb['scriptName'], contains('arabic{Arabic}'));
     expect(arb['scriptName'], contains('perso_arabic{Perso-Arabic}'));
   });
+
+  test('iso639_3 is a three-letter code, and Proto-Indo-European holds the '
+      'ISO 639-5 collective one, as the list says', () {
+    for (final l in all) {
+      expect(l.iso639_3, matches(RegExp(r'^[a-z]{3}$')), reason: l.code);
+    }
+    expect(all.singleWhere((l) => l.code == 'ine').iso639_3, 'ine');
+    expect(File('assets/languages.yaml').readAsStringSync(), contains('639-5'));
+  });
 }
