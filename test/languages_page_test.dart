@@ -410,10 +410,11 @@ void main() {
     }
     expect(find.text(text.languagesSpeakHear), findsNothing);
     expect(find.text(text.languagesScriptRW), findsNothing);
+    // Leave shows the block mark alone, no skill icon (skill_widgets.dart).
     expect(
       find.descendant(
         of: pill('gesture'),
-        matching: find.byIcon(SkillKind.gesture.icon),
+        matching: find.byKey(const ValueKey<String>('pill-mark-leave')),
       ),
       findsOneWidget,
     );
@@ -431,6 +432,21 @@ void main() {
     }
 
     await tapKey(tester, 'skill-gesture');
+    // Know shows the sign language's own icon, the raised hand.
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byKey(const ValueKey<String>('pill-icon-gesture')),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byIcon(SkillKind.gesture.icon),
+      ),
+      findsOneWidget,
+    );
     await tester.tap(
       find.text(text.languagesAddLanguage('American Sign Language')),
     );
