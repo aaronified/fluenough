@@ -1,0 +1,164 @@
+schema: 1
+id: "mr-en-history"
+kind: "layer"
+core: "mr-history"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History"
+description: "The history of a place: kings and queens, forts and palaces, wars and freedom, and the words to talk about the past. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1566":
+    native: "history"
+    notes:
+      "n1": "{1} is history, the study and record of the past."
+    examples:
+      "मला इतिहास आवडतो.": "I like history."
+      "इतिहासाचा अभ्यास केला.": "I studied history."
+  "mr-1567":
+    native: "king"
+    notes:
+      "n1": "{1} is a king. The queen is राणी (rāṇī)."
+    examples:
+      "राजा प्रजेची काळजी घेत असे.": { native: "The king used to look after the people.", bases: { "प्रजेची": "of the people", "असे": "to be" } }
+      "राजाने किल्ला बांधला.": { native: "The king built the fort.", bases: { "बांधला": "to build" } }
+  "mr-1568":
+    native: "queen"
+    notes:
+      "n1": "{1} is a queen."
+    examples:
+      "राणी सुंदर होती.": { native: "The queen was beautiful.", bases: { "होती": "to be" } }
+      "राणीचा महाल मोठा आहे.": { native: "The queen's palace is big.", bases: { "महाल": "palace", "आहे": "to be" } }
+  "mr-1569":
+    native: "emperor"
+    notes:
+      "n1": "{1} is an emperor, the ruler of an empire."
+    examples:
+      "सम्राट मोठ्या सैन्यासह आला.": { native: "The emperor came with a large army.", bases: { "सैन्यासह": "with an army" } }
+      "सम्राटाचं राज्य विशाल होतं.": { native: "The emperor's kingdom was vast.", bases: { "विशाल": "vast", "होतं": "to be" } }
+  "mr-1570":
+    native: "empire"
+    notes:
+      "n1": "{1} is an empire, a large group of lands under one ruler."
+    examples:
+      "मराठा साम्राज्य मोठं होतं.": { native: "The Maratha empire was big.", bases: { "मराठा": "Maratha", "होतं": "to be" } }
+      "साम्राज्य पसरलं.": "The empire spread."
+  "mr-1571":
+    native: "war"
+    notes:
+      "n1": "{1} is a war between countries or kings."
+    examples:
+      "युद्ध अनेक वर्षं चाललं.": "The war went on for many years."
+      "युद्धात खूप लोक मेले.": { native: "Many people died in the war.", bases: { "मेले": "to die" } }
+  "mr-1572":
+    native: "battle"
+    notes:
+      "n1": "{1} is a battle."
+    examples:
+      "ही लढाई मोठी होती.": { native: "This battle was big.", bases: { "होती": "to be" } }
+      "लढाईत त्याने पराक्रम केला.": "He showed bravery in the battle."
+  "mr-1573":
+    native: "to fight"
+    notes:
+      "n1": "{1} is fighting in a battle or against difficulty."
+    examples:
+      "सैनिक शत्रूशी लढले.": { native: "The soldiers fought the enemy.", bases: { "शत्रूशी": "with the enemy" } }
+      "त्याने संकटाशी लढा दिला.": { native: "He fought against the difficulty.", bases: { "संकटाशी": "with difficulty", "लढा": "fight" } }
+  "mr-1574":
+    native: "hero, brave warrior"
+    notes:
+      "n1": "{1} is a brave warrior or a hero."
+    examples:
+      "वीर योद्धा लढला.": { native: "The brave warrior fought.", bases: { "योद्धा": "warrior" } }
+      "वीरांची गाथा सांगितली.": { native: "The story of the heroes was told.", bases: { "गाथा": "tale" } }
+  "mr-1575":
+    native: "bravery, valour"
+    notes:
+      "n1": "{1} is bravery or valour in battle."
+    examples:
+      "त्याने मोठा पराक्रम केला.": "He showed great bravery."
+      "पराक्रमाच्या कथा ऐकल्या.": "I heard tales of valour."
+  "mr-1576":
+    native: "sacrifice"
+    notes:
+      "n1": "{1} is a sacrifice, giving up something precious for a cause."
+    examples:
+      "देशासाठी बलिदान दिलं.": "He sacrificed for the country."
+      "त्यांचं बलिदान कधीच विसरता येणार नाही.": { native: "Their sacrifice can never be forgotten.", bases: { "नाही": "not" } }
+  "mr-1577":
+    native: "freedom, independence"
+    notes:
+      "n1": "{1} is freedom, independence from control."
+    examples:
+      "स्वातंत्र्य हा मोठा हक्क आहे.": { native: "Freedom is a great right.", bases: { "हक्क": "right", "आहे": "to be" } }
+      "१५ ऑगस्टला स्वातंत्र्य दिवस साजरा होतो.": { native: "Independence Day is celebrated on the 15th of August.", bases: { "होतो": "to be" } }
+  "mr-1578":
+    native: "palace"
+    notes:
+      "n1": "{1} is a palace, the home of a king or noble."
+    examples:
+      "राजवाडा खूप सुंदर आहे.": { native: "The palace is very beautiful.", bases: { "आहे": "to be" } }
+      "राजवाड्यात बरेच दरबार भरत.": { native: "Many courts used to be held in the palace.", bases: { "बरेच": "many", "दरबार": "courts" } }
+  "mr-1579":
+    native: "historical"
+    notes:
+      "n1": "{1} describes something from history or famous in history."
+    examples:
+      "हे ऐतिहासिक ठिकाण आहे.": { native: "This is a historical place.", bases: { "आहे": "to be" } }
+      "ऐतिहासिक घटनांचा अभ्यास करा.": "Study historical events."
+  "mr-1580":
+    native: "ancient"
+    notes:
+      "n1": "{1} describes something from very long ago."
+    examples:
+      "हे प्राचीन मंदिर आहे.": { native: "This is an ancient temple.", bases: { "आहे": "to be" } }
+      "प्राचीन काळी लोक शेती करत.": "In ancient times people farmed."
+  "mr-1581":
+    native: "modern"
+    notes:
+      "n1": "{1} describes something of the present or recent times."
+    examples:
+      "आधुनिक इमारत उंच आहे.": { native: "The modern building is tall.", bases: { "आहे": "to be" } }
+      "आधुनिक काळात सगळं वेगवान आहे.": { native: "In modern times everything is fast.", bases: { "सगळं": "everything", "वेगवान": "fast", "आहे": "to be" } }
+  "mr-1582":
+    native: "century"
+    notes:
+      "n1": "{1} is a century, a hundred years."
+    examples:
+      "हा किल्ला सातशे वर्षं जुना आहे.": { native: "This fort is seven hundred years old.", bases: { "आहे": "to be" } }
+      "गेल्या शतकात मोठे बदल झाले.": { native: "Big changes happened in the last century.", bases: { "गेल्या": "last", "झाले": "to become" } }
+  "mr-1583":
+    native: "culture"
+    notes:
+      "n1": "{1} is culture, the customs and arts of a people."
+    examples:
+      "महाराष्ट्राची संस्कृती सुंदर आहे.": { native: "The culture of Maharashtra is beautiful.", bases: { "आहे": "to be" } }
+      "संस्कृती जपली पाहिजे.": "Culture must be preserved."
+  "mr-1584":
+    native: "heritage"
+    notes:
+      "n1": "{1} is a heritage handed down from the past."
+    examples:
+      "हा आपला वारसा आहे.": { native: "This is our heritage.", bases: { "आपला": "our", "आहे": "to be" } }
+      "वारसा जपणं महत्त्वाचं आहे.": { native: "Preserving heritage is important.", bases: { "महत्त्वाचं": "important", "आहे": "to be" } }
+  "mr-1585":
+    native: "to build a memorial"
+    notes:
+      "n1": "{1} is building a monument to remember someone."
+    examples:
+      "त्यांनी स्मारक बांधलं.": { native: "They built a memorial.", bases: { "बांधलं": "to build" } }
+      "शहीदांसाठी स्मारक उभारलं.": { native: "A memorial was built for the martyrs.", bases: { "शहीदांसाठी": "for the martyrs", "उभारलं": "to build" } }
+  "mr-1586":
+    native: "to rule"
+    notes:
+      "n1": "{1} is ruling a kingdom."
+    examples:
+      "राजा शंभर वर्षं राज्य करत होता.": { native: "The king had been ruling for a hundred years.", bases: { "होता": "to be" } }
+      "कोण राज्य करेल?": "Who will rule?"
+  "mr-1587":
+    native: "to remember, to commemorate"
+    notes:
+      "n1": "{1} is remembering a person or event with honour."
+    examples:
+      "आपण शहिदांना स्मरण करतो.": { native: "We remember the martyrs.", bases: { "शहिदांना": "the martyrs", "स्मरण": "remembrance" } }
+      "त्यांची आठवण सतत स्मरते.": { native: "Their memory is always remembered.", bases: { "आठवण": "memory", "सतत": "always" } }
