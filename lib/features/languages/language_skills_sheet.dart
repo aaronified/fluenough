@@ -95,17 +95,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   bool get _locked => _code == englishCode;
 
-  bool _covers(SkillKey key) => levelCovers(
+  bool _covers() => levelCovers(
     levelFound: _state.levelFound(_code),
     taught: _view.canLearn,
     english: _locked,
-  );
-
-  String _nameOf(AppLocalizations l10n, SkillKey key) => skillName(
-    l10n,
-    key,
-    severalScripts: _several,
-    fallbackScript: _view.name,
   );
 
   void _toast(String message) => showAppSnackBar(context, message);
@@ -123,13 +116,67 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     }
   }
 
-  Future<void> _cycle(SkillKey key) async {
+  /// A tap on the Spoken pill: Speak and Hear together (Leave, Learn, Hear,
+  /// Hear and Speak).
+  Future<void> _cycleSpoken() {
     final l10n = AppLocalizations.of(context)!;
+    final next = _skills.cycledSpoken(canLearn: _view.canLearn);
+    return _change(
+      next,
+      const <SkillKey>[SkillKey(SkillKind.speak), SkillKey(SkillKind.hear)],
+      name: _view.name,
+      skill: l10n.languagesSkillSpoken,
+      level: next.spokenLevel.label(l10n),
+      toLearn: next.spokenLevel == SpokenLevel.learn,
+    );
+  }
+
+  /// A tap on a script's pill: its Read and Write together (Leave, Learn,
+  /// Read, Read and Write).
+  Future<void> _cycleScript(String script) {
+    final l10n = AppLocalizations.of(context)!;
+    final next = _skills.cycledScript(script, canLearn: _view.canLearn);
+    final scriptName = l10n.scriptNameOr(script, _view.name);
+    return _change(
+      next,
+      _skills.keysOfScript(script),
+      name: _several
+          ? l10n.languagesToastNameScript(_view.name, scriptName)
+          : _view.name,
+      skill: l10n.languagesSkillScriptName,
+      level: next.scriptLevelOf(script).label(l10n),
+      toLearn: next.scriptLevelOf(script) == ScriptLevel.learn,
+    );
+  }
+
+  /// A tap on the Gestures pill: Leave, Know, Learn, Leave (Learn skipped
+  /// where there are no decks to learn).
+  Future<void> _cycleGesture() {
+    final l10n = AppLocalizations.of(context)!;
+    const key = SkillKey(SkillKind.gesture);
+    final next = _skills.cycled(key, canLearn: _view.canLearn);
+    final level = next.stateOf(key);
+    return _change(
+      next,
+      const <SkillKey>[key],
+      name: _view.name,
+      skill: l10n.languagesSkillGestures,
+      level: level.label(l10n),
+      toLearn: level == SkillState.learn,
+    );
+  }
+
+  Future<void> _change(
+    LanguageSkills next,
+    List<SkillKey> keys, {
+    required String name,
+    required String skill,
+    required String level,
+    required bool toLearn,
+  }) async {
     final before = _skills;
-    final next = before.cycled(key, canLearn: _view.canLearn);
-    final to = next.stateOf(key);
     if (!widget.draft &&
-        to == SkillState.learn &&
+        toLearn &&
         !before.anyLearn &&
         _needsDownload &&
         !await _confirmDownload()) {
@@ -138,26 +185,19 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     if (!mounted) return;
     setState(() {
       _skills = next;
-      // A gesture skill has nothing to check.
-      to == SkillState.learn && !key.kind.isGesture
-          ? _pending.add(key)
-          : _pending.remove(key);
+      for (final key in keys) {
+        // A gesture skill has nothing to check.
+        toLearn && !key.kind.isGesture
+            ? _pending.add(key)
+            : _pending.remove(key);
+      }
       _auto = <SkillKey, String>{
         for (final e in _auto.entries)
-          if (e.key != key) e.key: e.value,
+          if (!keys.contains(e.key)) e.key: e.value,
       };
     });
-    final scriptName = key.script == null || !_several
-        ? null
-        : l10n.scriptNameOr(key.script, _view.name);
     _toast(
-      l10n.languagesToastSkill(
-        scriptName == null
-            ? _view.name
-            : l10n.languagesToastNameScript(_view.name, scriptName),
-        key.kind.label(l10n),
-        to.label(l10n),
-      ),
+      AppLocalizations.of(context)!.languagesToastSkill(name, skill, level),
     );
     if (widget.draft) return;
     _state.applySkills(_view.language, next);
@@ -600,6 +640,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     tile: _Tile(icon: SkillKind.gesture.icon),
                     title: l10n.languagesGestures,
                     keys: const <SkillKey>[SkillKey(SkillKind.gesture)],
+                    pill: _gesturePill(context),
                   ),
                 ] else if (!_view.language.scriptOnly) ...<Widget>[
                   _Heading(icon: Icons.mic_none, text: l10n.languagesSpeakHear),
@@ -622,11 +663,12 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   _skillRow(
                     context,
                     tile: const _Tile(icon: Icons.mic_none),
-                    title: l10n.languagesSpeakHear,
+                    title: l10n.languagesSkillSpoken,
                     keys: const <SkillKey>[
                       SkillKey(SkillKind.speak),
                       SkillKey(SkillKind.hear),
                     ],
+                    pill: _spokenPill(context),
                   ),
                 ],
                 if (_scripts.isNotEmpty)
@@ -646,10 +688,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                       ),
                     ),
                     title: l10n.scriptNameOr(script, _view.name),
-                    keys: <SkillKey>[
-                      SkillKey(SkillKind.read, script),
-                      SkillKey(SkillKind.write, script),
-                    ],
+                    keys: _skills.keysOfScript(script),
+                    pill: _scriptPill(context, script),
                   ),
                 if (!widget.draft && _skills.anyLearn) _learningBlock(context),
               ],
@@ -729,13 +769,14 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
-  /// One row of pills: its tile, its title and one pill for each of [keys],
+  /// One row: its tile, its title and its one [pill] (for the stored [keys]),
   /// with what is known from elsewhere or still to fit under it.
   Widget _skillRow(
     BuildContext context, {
     required Widget tile,
     required String title,
     required List<SkillKey> keys,
+    required Widget pill,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -760,7 +801,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       reviewOn: _state.settings.reviewDecks,
       skills: _skills,
       rows: keys,
-      covered: _covers,
+      covered: (_) => _covers(),
     )) {
       subs.add(l10n.languagesFitLevel);
     }
@@ -782,10 +823,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 ),
               ),
               const SizedBox(width: 8),
-              for (final (i, key) in keys.indexed) ...<Widget>[
-                if (i > 0) const SizedBox(width: 8),
-                _pill(context, key),
-              ],
+              pill,
             ],
           ),
           for (final sub in subs)
@@ -803,21 +841,65 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
-  Widget _pill(BuildContext context, SkillKey key) {
+  /// The Gestures pill of a sign language: its own icon, with the tick once
+  /// it is known.
+  Widget _gesturePill(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    const key = SkillKey(SkillKind.gesture);
     final state = _skills.stateOf(key);
-    final covered = state == SkillState.know && _covers(key);
+    final covered = state == SkillState.know && _covers();
     final next = nextSkillState(state, canLearn: _view.canLearn);
-    final name = _nameOf(l10n, key);
+    final name = l10n.languagesSkillGestures;
     return SkillBadge(
-      key: ValueKey<String>('skill-${key.id}'),
-      kind: key.kind,
+      key: const ValueKey<String>('skill-gesture'),
+      kind: SkillKind.gesture,
       big: true,
       mark: markOf(state, covered: covered),
-      label: skillSemantics(l10n, name, state, covered: covered),
+      label: pillSemantics(l10n, name, state.label(l10n), covered: covered),
       tip: l10n.languagesSkillState(name, state.label(l10n)),
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
-      onTap: _locked ? null : () => _cycle(key),
+      onTap: _locked ? null : _cycleGesture,
+    );
+  }
+
+  /// The one pill of Speak and Hear: the Hear icon, then the tick and the
+  /// Speak icon once both are known.
+  Widget _spokenPill(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final level = _skills.spokenLevel;
+    final covered = level.isKnow && _covers();
+    final next = nextSpokenLevel(level, canLearn: _view.canLearn);
+    final name = l10n.languagesSkillSpoken;
+    return SkillBadge(
+      key: const ValueKey<String>('skill-spoken'),
+      kind: SkillKind.hear,
+      big: true,
+      mark: spokenMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
+      onTap: _locked ? null : _cycleSpoken,
+    );
+  }
+
+  /// The one pill of a script's Read and Write: its glyph, then the tick and
+  /// the Write icon once both are known.
+  Widget _scriptPill(BuildContext context, String script) {
+    final l10n = AppLocalizations.of(context)!;
+    final level = _skills.scriptLevelOf(script);
+    final covered = level.isKnow && _covers();
+    final next = nextScriptLevel(level, canLearn: _view.canLearn);
+    final name = scriptPillName(l10n, script, _view.name);
+    return SkillBadge(
+      key: ValueKey<String>('skill-script:$script'),
+      kind: SkillKind.read,
+      big: true,
+      mark: scriptMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
+      onTap: _locked ? null : () => _cycleScript(script),
+      scriptGlyph: scriptGlyph(script, l10n.scriptNameOr(script, _view.name)),
     );
   }
 
