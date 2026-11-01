@@ -1,0 +1,28 @@
+schema: 1
+id: "as-en-grammar-conjunctive"
+kind: "layer"
+core: "as-grammar-conjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "One action after another: the joining form"
+license: "CC-BY-SA-4.0"
+description: "How Assamese chains actions in one breath: the verb takes its joining form, such as উঠি (uthi), খাই (khāi) or গৈ (goi), and the next verb follows. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "One action after another: the joining form"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "joining form": "the joining form (then, and)"
+    "chained: the first action, then another": "two actions in a row (e.g. get up, then eat)"
+  entries:
+    "uta": "to get up"
+    "khua": "to eat; to drink"
+    "dhua": "to wash"
+    "zua": "to go"
+    "aha": "to come"
+    "kora": "to do"
+    "loa": "to take"
+    "diya": "to give"
+    "porha": "to read; to study"
+    "xua": "to sleep; to lie down"
+  notes: "A verb with its joining form tells the first of two actions that happen one after the other: উঠি খাওঁ (uthi khāum̐), I get up and eat. The second verb takes the normal ending. Use the joining form of যোৱা (zuwā), go, as গৈ (goi): গৈ খাওঁ (goi khāum̐), I go and eat."

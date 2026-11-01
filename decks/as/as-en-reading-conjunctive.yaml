@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-conjunctive"
+name: "Assamese reading: one action after another: the joining form"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-what-i-did-today"
+    title: "What I did today"
+    sentences:
+      - text: "মই উঠি চাহ খাওঁ।"
+        reading: "moi uthi sāh khāum̐."
+      - text: "তাৰ পাছত কিতাপ পঢ়ি শোৱা।"
+        reading: "tār pāsôt kitāp pôrhi xuwā."
+      - text: "মই বজাৰলৈ গৈ কিনোঁ।"
+        reading: "moi bôzārôlôi goi kinum̐."
+      - text: "ৰাতি শুই উঠোঁ।"
+        reading: "rāti xui uthum̐."
+    questions:
+      - id: "as-3054"
+        prompt: { en: "The speaker drinks tea after getting up." }
+        answer: true
+      - id: "as-3055"
+        prompt: { en: "What does the speaker do after reading?" }
+        options:
+          - { en: "Eats" }
+          - { en: "Sleeps" }
+          - { en: "Runs" }
+        answer: 2
+      - id: "as-3056"
+        prompt: { en: "Where does the speaker go to buy things?" }
+        options:
+          - { en: "The market" }
+          - { en: "The school" }
+          - { en: "The hills" }
+        answer: 1
+  - id: "as-travel-diary"
+    title: "A travel diary"
+    sentences:
+      - text: "আমি ৰেলত উঠি গৈ আহিলো।"
+        reading: "āmi relôt uthi goi āhilo."
+      - text: "বাটত খাই আহিলো।"
+        reading: "bāṭôt khāi āhilo."
+      - text: "গৌহাটীত নামি হোটেললৈ গ'লো।"
+        reading: "gôuhātītôt nāmi hoṭelôlôi golo."
+      - text: "তাত শুই থাকিলো।"
+        reading: "tāt xui thākilo."
+    questions:
+      - id: "as-3057"
+        prompt: { en: "The travellers went by train." }
+        answer: true
+      - id: "as-3058"
+        prompt: { en: "Where did they go after getting down in Guwahati?" }
+        options:
+          - { en: "A hotel" }
+          - { en: "A school" }
+          - { en: "A temple" }
+        answer: 1
+      - id: "as-3059"
+        prompt: { en: "What did they do at the hotel?" }
+        options:
+          - { en: "Ate" }
+          - { en: "Slept" }
+          - { en: "Sang" }
+        answer: 2

@@ -1,0 +1,86 @@
+schema: 1
+id: "as-grammar-conjunctive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3047"
+    target: "মই উঠি চাহ খাওঁ।"
+    reading: "moi uthi sāh khāum̐."
+    ipa: "moi utʰi sah kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "উঠি", ref: "as-0370" }
+      - { word: "খাওঁ", base: "খাওঁ", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "শুই", reading: "xui", kind: "form" }
+      - { id: "c2", word: "খালোঁ", reading: "khālum̐", kind: "form" }
+  - id: "as-3048"
+    target: "তাই ধুই খায়।"
+    reading: "tāi dhui khāy."
+    ipa: "tai dʱui kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "ধুই", ref: "as-2221" }
+      - { word: "খায়", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "ধুইছে", reading: "dhuise", kind: "form" }
+      - { id: "c2", word: "খাইছে", reading: "khāise", kind: "form" }
+  - id: "as-3049"
+    target: "সি আহি বহে।"
+    reading: "xi āhi bôhe."
+    ipa: "si ahi bɔhe"
+    pos: "phrase"
+    bases:
+      - { word: "আহি", ref: "as-2201" }
+      - { word: "বহে", ref: "as-2208" }
+    confusables:
+      - { id: "c1", word: "আহিছে", reading: "āhise", kind: "form" }
+      - { id: "c2", word: "বহিছে", reading: "bôhise", kind: "form" }
+  - id: "as-3050"
+    target: "আমি বজাৰলৈ গৈ কিনোঁ।"
+    reading: "āmi bôzārôlôi goi kinum̐."
+    ipa: "ami bɔzaɹɔlɔi ɡɔi kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "গৈ", ref: "as-2200" }
+      - { word: "কিনোঁ", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "বেচা", reading: "besā", kind: "word" }
+      - { id: "c2", word: "দৌৰা", reading: "dourā", kind: "word" }
+  - id: "as-3051"
+    target: "মই কিতাপ লৈ যাওঁ।"
+    reading: "moi kitāp loi zāum̐."
+    ipa: "moi kitap lɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "লৈ", ref: "as-2219" }
+      - { word: "যাওঁ", base: "যাওঁ", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "দি", reading: "di", kind: "form" }
+      - { id: "c2", word: "যাম", reading: "zām", kind: "form" }
+  - id: "as-3052"
+    target: "তেওঁ শুই উঠে।"
+    reading: "teum̐ xui uthe."
+    ipa: "teʊ̃ xui utʰe"
+    pos: "phrase"
+    bases:
+      - { word: "শুই", ref: "as-0379" }
+      - { word: "উঠে", ref: "as-0370" }
+    confusables:
+      - { id: "c1", word: "উঠিছে", reading: "uthise", kind: "form" }
+      - { id: "c2", word: "শুইছে", reading: "xuise", kind: "form" }
+  - id: "as-3053"
+    target: "মই কৰি যাওঁ।"
+    reading: "moi kôri zāum̐."
+    ipa: "moi koɹi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কৰি", ref: "as-2202" }
+      - { word: "যাওঁ", base: "যাওঁ", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "কৰিছোঁ", reading: "kôrisum̐", kind: "form" }
+      - { id: "c2", word: "কৰিম", reading: "kôrim", kind: "form" }
