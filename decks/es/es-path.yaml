@@ -329,7 +329,8 @@ units:
       - { id: "next-year", text: { "en": "Saying what will happen next year" } }
     reading_passages:
       - { id: "horoscope-column", text: { "en": "A short horoscope column" } }
-  - planned: { id: "es-news", theme: "news", words: 55 }
+  - decks: ["es-news", "es-news-sentences", "es-reading-news", "*"]
+    words: 40
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:

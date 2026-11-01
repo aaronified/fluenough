@@ -1,0 +1,289 @@
+schema: 1
+id: "es-en-news"
+kind: "layer"
+core: "es-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News: papers, reporters, elections and warnings"
+license: "CC-BY-SA-4.0"
+description: "Words for the news: the paper and the headline, the reporter and the interview, the channel and the broadcast, the poll and the election, and the verbs to inform, announce, publish and broadcast. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2052":
+    native: "news item"
+    notes: { n1: "La noticia is a piece of news. Dar una noticia is to give news; noticias is the news in general." }
+    bases: { "la": "the", "noticia": "news item" }
+    examples:
+      "Tengo una buena noticia.": { native: "I have good news.", bases: { "una": "a", "noticia": "news item" } }
+      "La noticia es de ayer.": { native: "The news is from yesterday.", bases: { "La": "the", "noticia": "news item", "de": "of" } }
+  "es-2053":
+    native: "newspaper"
+    notes: { n1: "El periódico is a newspaper, printed daily or weekly. Diario is also a daily paper." }
+    bases: { "el": "the", "periódico": "newspaper" }
+    examples:
+      "Leo el periódico cada mañana.": { native: "I read the newspaper every morning.", bases: { "el": "the", "periódico": "newspaper" } }
+      "El periódico cuesta un euro.": { native: "The newspaper costs one euro.", bases: { "El": "the", "periódico": "newspaper", "un": "a" } }
+  "es-2054":
+    native: "journalist"
+    notes: { n1: "El periodista is a journalist who writes or reports the news. The feminine is la periodista." }
+    bases: { "el": "the", "periodista": "journalist" }
+    examples:
+      "El periodista hace una entrevista.": { native: "The journalist does an interview.", bases: { "El": "the", "periodista": "journalist", "una": "a" } }
+      "Mi hermana es periodista.": { native: "My sister is a journalist.", bases: { "periodista": "journalist" } }
+  "es-2055":
+    native: "headline"
+    notes: { n1: "El titular is the headline, the big line at the top of a news story." }
+    bases: { "el": "the", "titular": "headline" }
+    examples:
+      "El titular dice que llueve.": { native: "The headline says it is raining.", bases: { "El": "the", "titular": "headline", "que": "that" } }
+      "Leo el titular y no el artículo.": { native: "I read the headline and not the article.", bases: { "el": "the", "titular": "headline" } }
+  "es-2056":
+    native: "front page"
+    notes: { n1: "La portada is the front page of a newspaper or the cover of a book." }
+    bases: { "la": "the", "portada": "front page" }
+    examples:
+      "La portada es muy grande.": { native: "The front page is very big.", bases: { "La": "the", "portada": "front page" } }
+      "Hay una foto en la portada.": { native: "There is a photo on the front page.", bases: { "Hay": "there is; there are", "una": "a", "en": "in", "la": "the", "portada": "front page" } }
+  "es-2057":
+    native: "article"
+    notes: { n1: "El artículo is an article in a newspaper or a magazine. It is also the word el or la." }
+    bases: { "el": "the", "artículo": "article" }
+    examples:
+      "El artículo es sobre el tiempo.": { native: "The article is about the weather.", bases: { "El": "the", "artículo": "article", "sobre": "over", "el": "the" } }
+      "Escribo un artículo para la revista.": { native: "I write an article for the magazine.", bases: { "un": "a", "artículo": "article", "para": "for", "la": "the" } }
+  "es-2058":
+    native: "election"
+    notes: { n1: "La elección is an election, a vote to choose someone. The plural is elecciones." }
+    bases: { "la": "the", "elección": "election" }
+    examples:
+      "Las elecciones son en mayo.": { native: "The elections are in May.", bases: { "Las": "the", "elecciones": "election", "en": "in" } }
+      "Hay una elección en la ciudad.": { native: "There is an election in the city.", bases: { "Hay": "there is; there are", "una": "a", "elección": "election", "en": "in", "la": "the" } }
+  "es-2059":
+    native: "politician"
+    notes: { n1: "El político is a politician, a person who works in government. The feminine is la política." }
+    bases: { "el": "the", "político": "politician" }
+    examples:
+      "El político habla en la radio.": { native: "The politician speaks on the radio.", bases: { "El": "the", "político": "politician", "en": "in", "la": "the" } }
+      "Los políticos discuten el tema.": { native: "The politicians discuss the subject.", bases: { "Los": "the", "políticos": "politician", "el": "the", "tema": "topic" } }
+  "es-2060":
+    native: "president"
+    notes: { n1: "El presidente is the president of a country or an organization. The feminine is la presidenta." }
+    bases: { "el": "the", "presidente": "president" }
+    examples:
+      "El presidente anuncia una ley.": { native: "The president announces a law.", bases: { "El": "the", "presidente": "president", "una": "a" } }
+      "Hablo con el presidente de la empresa.": { native: "I talk to the president of the company.", bases: { "con": "with", "el": "the", "presidente": "president", "de": "of", "la": "the" } }
+  "es-2061":
+    native: "law"
+    notes: { n1: "La ley is a law, a rule made by a government. The plural is leyes." }
+    bases: { "la": "the", "ley": "law" }
+    examples:
+      "Hay una ley nueva.": { native: "There is a new law.", bases: { "Hay": "there is; there are", "una": "a", "ley": "law" } }
+      "La ley protege a los trabajadores.": { native: "The law protects the workers.", bases: { "La": "the", "ley": "law", "protege": "to protect", "a": "to", "los": "the" } }
+  "es-2062":
+    native: "crisis"
+    notes: { n1: "La crisis is a crisis, a time of great difficulty. It does not change in the plural." }
+    bases: { "la": "the", "crisis": "crisis" }
+    examples:
+      "Hay una crisis en el país.": { native: "There is a crisis in the country.", bases: { "Hay": "there is; there are", "una": "a", "crisis": "crisis", "en": "in", "el": "the" } }
+      "La crisis afecta a muchas familias.": { native: "The crisis affects many families.", bases: { "La": "the", "crisis": "crisis", "afecta": "to affect", "a": "to" } }
+  "es-2063":
+    native: "large fire"
+    notes: { n1: "El incendio is a large fire that burns a forest or a building." }
+    bases: { "el": "the", "incendio": "large fire" }
+    examples:
+      "Un incendio quema el bosque.": { native: "A fire burns the forest.", bases: { "Un": "a", "incendio": "large fire", "el": "the" } }
+      "El incendio está controlado.": { native: "The fire is under control.", bases: { "El": "the", "incendio": "large fire", "controlado": "to control" } }
+  "es-2064":
+    native: "strike"
+    notes: { n1: "La huelga is a strike, when workers stop working to ask for something." }
+    bases: { "la": "the", "huelga": "strike" }
+    examples:
+      "Hay huelga de trenes el martes.": { native: "There is a train strike on Tuesday.", bases: { "Hay": "there is; there are", "huelga": "strike", "de": "of", "el": "the" } }
+      "La huelga dura una semana.": { native: "The strike lasts a week.", bases: { "La": "the", "huelga": "strike", "una": "a" } }
+  "es-2065":
+    native: "demonstration"
+    notes: { n1: "La manifestación is a march or demonstration in the street." }
+    bases: { "la": "the", "manifestación": "demonstration" }
+    examples:
+      "Hay una manifestación en el centro.": { native: "There is a demonstration in the centre.", bases: { "Hay": "there is; there are", "una": "a", "manifestación": "demonstration", "en": "in", "el": "the", "centro": "centre" } }
+      "La manifestación es pacífica.": { native: "The demonstration is peaceful.", bases: { "La": "the", "manifestación": "demonstration", "pacífica": "peaceful" } }
+  "es-2066":
+    native: "poll; survey"
+    notes: { n1: "La encuesta is a poll or survey, asking people for their views." }
+    bases: { "la": "the", "encuesta": "poll; survey" }
+    examples:
+      "La encuesta dice que gana el partido.": { native: "The poll says the party wins.", bases: { "La": "the", "encuesta": "poll; survey", "que": "that", "el": "the", "partido": "match" } }
+      "Hago una encuesta en la calle.": { native: "I do a survey in the street.", bases: { "una": "a", "encuesta": "poll; survey", "en": "in", "la": "the" } }
+  "es-2067":
+    native: "channel"
+    notes: { n1: "El canal is a television channel, or a river channel." }
+    bases: { "el": "the", "canal": "channel" }
+    examples:
+      "Pongo el canal de noticias.": { native: "I put on the news channel.", bases: { "el": "the", "canal": "channel", "de": "of" } }
+      "El canal de la televisión es nuevo.": { native: "The television channel is new.", bases: { "El": "the", "canal": "channel", "de": "of", "la": "the" } }
+  "es-2068":
+    native: "television"
+    notes: { n1: "La televisión is television, the set and the channels." }
+    bases: { "la": "the", "televisión": "television" }
+    examples:
+      "Veo la televisión por la noche.": { native: "I watch television at night.", bases: { "la": "the", "televisión": "television", "por": "for" } }
+      "La televisión es muy grande.": { native: "The television is very big.", bases: { "La": "the", "televisión": "television" } }
+  "es-2069":
+    native: "radio"
+    notes: { n1: "La radio is the radio, the set, and the broadcasts." }
+    bases: { "la": "the", "radio": "radio" }
+    examples:
+      "Escucho la radio por la mañana.": { native: "I listen to the radio in the morning.", bases: { "la": "the", "radio": "radio", "por": "for" } }
+      "La radio tiene buenas noticias.": { native: "The radio has good news.", bases: { "La": "the", "radio": "radio" } }
+  "es-2070":
+    native: "broadcast"
+    notes: { n1: "La emisión is a broadcast, a programme put out on air." }
+    bases: { "la": "the", "emisión": "broadcast" }
+    examples:
+      "La emisión empieza a las ocho.": { native: "The broadcast starts at eight.", bases: { "La": "the", "emisión": "broadcast", "a": "to", "las": "the" } }
+      "Esta emisión es muy famosa.": { native: "This broadcast is very famous.", bases: { "Esta": "This", "emisión": "broadcast", "famosa": "famous" } }
+  "es-2071":
+    native: "programme"
+    notes: { n1: "El programa is a programme on television or the radio, or a plan." }
+    bases: { "el": "the", "programa": "programme" }
+    examples:
+      "Veo un programa de noticias.": { native: "I watch a news programme.", bases: { "un": "a", "programa": "programme", "de": "of" } }
+      "El programa es muy interesante.": { native: "The programme is very interesting.", bases: { "El": "the", "programa": "programme" } }
+  "es-2072":
+    native: "advert; announcement"
+    notes: { n1: "El anuncio is an advert, or an announcement made to people." }
+    bases: { "el": "the", "anuncio": "advert; announcement" }
+    examples:
+      "Veo un anuncio en la televisión.": { native: "I see an advert on television.", bases: { "un": "a", "anuncio": "advert; announcement", "en": "in", "la": "the" } }
+      "El anuncio es para el nuevo coche.": { native: "The advert is for the new car.", bases: { "El": "the", "anuncio": "advert; announcement", "para": "for", "el": "the" } }
+  "es-2073":
+    native: "advertising"
+    notes: { n1: "La publicidad is advertising, the work of selling things through adverts." }
+    bases: { "la": "the", "publicidad": "advertising" }
+    examples:
+      "La publicidad es muy cara.": { native: "Advertising is very expensive.", bases: { "La": "the", "publicidad": "advertising" } }
+      "Hay mucha publicidad en la calle.": { native: "There is a lot of advertising in the street.", bases: { "Hay": "there is; there are", "publicidad": "advertising", "en": "in", "la": "the" } }
+  "es-2074":
+    native: "rumour"
+    notes: { n1: "El rumor is a rumour, a story that is passed on without proof." }
+    bases: { "el": "the", "rumor": "rumour" }
+    examples:
+      "Es un rumor, no es verdad.": { native: "It is a rumour, it is not true.", bases: { "un": "a", "rumor": "rumour", "verdad": "truth" } }
+      "Corre un rumor en la ciudad.": { native: "A rumour is going around the city.", bases: { "un": "a", "rumor": "rumour", "en": "in", "la": "the" } }
+  "es-2075":
+    native: "source; fountain"
+    notes: { n1: "La fuente is a source of information, or a fountain for water." }
+    bases: { "la": "the", "fuente": "source; fountain" }
+    examples:
+      "Mi fuente es un amigo.": { native: "My source is a friend.", bases: { "fuente": "source; fountain", "un": "a" } }
+      "La fuente de la plaza es bonita.": { native: "The fountain in the square is pretty.", bases: { "La": "the", "fuente": "source; fountain", "de": "of", "la": "the" } }
+  "es-2076":
+    native: "opinion"
+    notes: { n1: "La opinión is an opinion, what you think about something." }
+    bases: { "la": "the", "opinión": "opinion" }
+    examples:
+      "Mi opinión es diferente.": { native: "My opinion is different.", bases: { "opinión": "opinion", "diferente": "different" } }
+      "Quiero dar mi opinión.": { native: "I want to give my opinion.", bases: { "opinión": "opinion" } }
+  "es-2077":
+    native: "column"
+    notes: { n1: "La columna is a column, a piece in a newspaper written by one person." }
+    bases: { "la": "the", "columna": "column" }
+    examples:
+      "Leo la columna de opinión.": { native: "I read the opinion column.", bases: { "la": "the", "columna": "column", "de": "of" } }
+      "La columna es sobre el deporte.": { native: "The column is about sport.", bases: { "La": "the", "columna": "column", "sobre": "over", "el": "the" } }
+  "es-2078":
+    native: "editorial"
+    notes: { n1: "El editorial is the leading article of a newspaper, giving its view." }
+    bases: { "el": "the", "editorial": "editorial" }
+    examples:
+      "El editorial critica el gobierno.": { native: "The editorial criticises the government.", bases: { "El": "the", "editorial": "editorial", "critica": "to criticise", "el": "the", "gobierno": "government" } }
+      "Leo el editorial del diario.": { native: "I read the newspaper's editorial.", bases: { "el": "the", "editorial": "editorial", "del": "of" } }
+  "es-2079":
+    native: "newsroom; editorial staff"
+    notes: { n1: "La redacción is the newsroom, where the articles are written." }
+    bases: { "la": "the", "redacción": "newsroom; editorial staff" }
+    examples:
+      "La redacción está en el centro.": { native: "The newsroom is in the centre.", bases: { "La": "the", "redacción": "newsroom; editorial staff", "en": "in", "el": "the", "centro": "centre" } }
+      "Trabajo en la redacción del diario.": { native: "I work in the newspaper's newsroom.", bases: { "en": "in", "la": "the", "redacción": "newsroom; editorial staff", "del": "of" } }
+  "es-2080":
+    native: "interview"
+    notes: { n1: "La entrevista is an interview, a set of questions with a person." }
+    bases: { "la": "the", "entrevista": "interview" }
+    examples:
+      "Hago una entrevista al alcalde.": { native: "I interview the mayor.", bases: { "una": "a", "entrevista": "interview", "al": "to the", "alcalde": "mayor" } }
+      "La entrevista es en la radio.": { native: "The interview is on the radio.", bases: { "La": "the", "entrevista": "interview", "en": "in", "la": "the" } }
+  "es-2081":
+    native: "report; feature"
+    notes: { n1: "El reportaje is a long report or a feature in a newspaper or on television." }
+    bases: { "el": "the", "reportaje": "report; feature" }
+    examples:
+      "El reportaje es sobre la pobreza.": { native: "The feature is about poverty.", bases: { "El": "the", "reportaje": "report; feature", "sobre": "over", "la": "the", "pobreza": "poverty" } }
+      "Veo un reportaje de la guerra.": { native: "I watch a report on the war.", bases: { "un": "a", "reportaje": "report; feature", "de": "of", "la": "the", "guerra": "war" } }
+  "es-2082":
+    native: "event; incident"
+    notes: { n1: "El suceso is an event or an incident, often one that is reported as news." }
+    bases: { "el": "the", "suceso": "event; incident" }
+    examples:
+      "El suceso ocurre de noche.": { native: "The incident happens at night.", bases: { "El": "the", "suceso": "event; incident", "de": "of" } }
+      "Leo sobre el suceso en el periódico.": { native: "I read about the incident in the newspaper.", bases: { "sobre": "over", "el": "the", "suceso": "event; incident", "en": "in" } }
+  "es-2083":
+    native: "news programme"
+    notes: { n1: "El noticiero is a news programme on television or radio." }
+    bases: { "el": "the", "noticiero": "news programme" }
+    examples:
+      "Veo el noticiero a las nueve.": { native: "I watch the news at nine.", bases: { "el": "the", "noticiero": "news programme", "a": "to", "las": "the" } }
+      "El noticiero es muy corto.": { native: "The news programme is very short.", bases: { "El": "the", "noticiero": "news programme" } }
+  "es-2084":
+    native: "daily newspaper"
+    notes: { n1: "El diario is a daily newspaper. Diario is also daily, every day." }
+    bases: { "el": "the", "diario": "daily newspaper" }
+    examples:
+      "Compro el diario en la esquina.": { native: "I buy the daily paper on the corner.", bases: { "el": "the", "diario": "daily newspaper", "en": "in", "la": "the" } }
+      "Leo el diario con el café.": { native: "I read the newspaper with my coffee.", bases: { "el": "the", "diario": "daily newspaper", "con": "with" } }
+  "es-2085":
+    native: "press; newspapers"
+    notes: { n1: "La prensa is the press, the newspapers and the journalists as a group." }
+    bases: { "la": "the", "prensa": "press; newspapers" }
+    examples:
+      "La prensa informa de la noticia.": { native: "The press reports the news.", bases: { "La": "the", "prensa": "press; newspapers", "de": "of", "la": "the" } }
+      "La prensa es libre.": { native: "The press is free.", bases: { "La": "the", "prensa": "press; newspapers" } }
+  "es-2086":
+    native: "statement; press release"
+    notes: { n1: "El comunicado is an official statement given to the press." }
+    bases: { "el": "the", "comunicado": "statement; press release" }
+    examples:
+      "El comunicado dice la verdad.": { native: "The statement tells the truth.", bases: { "El": "the", "comunicado": "statement; press release", "la": "the", "verdad": "truth" } }
+      "Hay un comunicado del gobierno.": { native: "There is a statement from the government.", bases: { "Hay": "there is; there are", "un": "a", "comunicado": "statement; press release", "del": "of", "gobierno": "government" } }
+  "es-2087":
+    native: "to inform; to report"
+    notes: { n1: "Informar is to tell people about something, to report it." }
+    bases: { "informar": "to inform; to report" }
+    examples:
+      "Informo de la noticia.": { native: "I report the news.", bases: { "Informo": "to inform; to report", "de": "of", "la": "the" } }
+      "El periódico informa a los lectores.": { native: "The paper informs the readers.", bases: { "El": "the", "informa": "to inform; to report", "a": "to", "los": "the", "lectores": "reader" } }
+  "es-2088":
+    native: "to announce"
+    notes: { n1: "Anunciar is to announce something to the public." }
+    bases: { "anunciar": "to announce" }
+    examples:
+      "El presidente anuncia la ley.": { native: "The president announces the law.", bases: { "El": "the", "anuncia": "to announce", "la": "the" } }
+      "Anunciamos el resultado.": { native: "We announce the result.", bases: { "Anunciamos": "to announce", "el": "the", "resultado": "result" } }
+  "es-2089":
+    native: "to publish"
+    notes: { n1: "Publicar is to publish a book, an article or a photo." }
+    bases: { "publicar": "to publish" }
+    examples:
+      "Publico un artículo hoy.": { native: "I publish an article today.", bases: { "Publico": "to publish", "un": "a" } }
+      "El diario publica la noticia.": { native: "The paper publishes the news.", bases: { "El": "the", "publica": "to publish", "la": "the" } }
+  "es-2090":
+    native: "to broadcast"
+    notes: { n1: "Emitir is to broadcast on radio or television, or to give out." }
+    bases: { "emitir": "to broadcast" }
+    examples:
+      "La radio emite el programa.": { native: "The radio broadcasts the programme.", bases: { "La": "the", "emite": "to broadcast", "el": "the" } }
+      "Emitimos la noticia.": { native: "We broadcast the news.", bases: { "Emitimos": "to broadcast", "la": "the" } }
+  "es-2091":
+    native: "to transmit; to broadcast"
+    notes: { n1: "Transmitir is to send out a signal, or to pass a message on." }
+    bases: { "transmitir": "to transmit; to broadcast" }
+    examples:
+      "Transmiten el partido en directo.": { native: "They broadcast the match live.", bases: { "Transmiten": "to transmit; to broadcast", "el": "the", "partido": "match", "en": "in", "directo": "direct" } }
+      "Transmito el mensaje.": { native: "I pass on the message.", bases: { "Transmito": "to transmit; to broadcast", "el": "the" } }

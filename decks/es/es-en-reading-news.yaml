@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-news"
+name: "Reading: headlines and a radio bulletin"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a list of newspaper headlines, and a short radio news bulletin. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-headline-list"
+    title: "A list of newspaper headlines"
+    theme: "news"
+    sentences:
+      - text: "Titular: la ciudad tiene un puente nuevo."
+      - text: "Huelga de trenes el martes."
+      - text: "Encuesta: la mayoría prefiere el tren."
+      - text: "Elecciones en mayo: los candidatos hablan."
+    questions:
+      - id: "es-2098"
+        prompt: { en: "What is the headline about the bridge?" }
+        options:
+          - { en: "The bridge is closed" }
+          - { en: "The bridge is old" }
+          - { en: "The city has a new bridge" }
+        answer: 3
+      - id: "es-2099"
+        prompt: { en: "When is the train strike?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Tuesday" }
+          - { en: "Wednesday" }
+        answer: 2
+      - id: "es-2100"
+        prompt: { en: "What does the poll show?" }
+        options:
+          - { en: "Most prefer the train" }
+          - { en: "Most prefer the car" }
+          - { en: "Nobody votes" }
+        answer: 1
+  - id: "es-radio-bulletin"
+    title: "A radio bulletin"
+    theme: "news"
+    sentences:
+      - text: "Buenas noches, esta es la noticia de hoy."
+      - text: "Un incendio en el bosque obliga a salir a los vecinos."
+      - text: "El presidente anuncia una nueva ley."
+      - text: "Mañana habrá una manifestación en el centro."
+    questions:
+      - id: "es-2101"
+        prompt: { en: "What happened in the forest?" }
+        options:
+          - { en: "A fire" }
+          - { en: "A flood" }
+          - { en: "A storm" }
+        answer: 1
+      - id: "es-2102"
+        prompt: { en: "Who announces a new law?" }
+        options:
+          - { en: "The mayor" }
+          - { en: "The teacher" }
+          - { en: "The president" }
+        answer: 3
+      - id: "es-2103"
+        prompt: { en: "Where is the demonstration?" }
+        options:
+          - { en: "In the centre" }
+          - { en: "In the forest" }
+          - { en: "At the station" }
+        answer: 1

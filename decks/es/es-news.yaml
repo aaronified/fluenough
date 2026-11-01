@@ -1,0 +1,564 @@
+schema: 1
+id: "es-news"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "news"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2052"
+    target: "la noticia"
+    ipa: "la noˈtiθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "noticia", base: "noticia" }]
+    examples:
+      - target: "Tengo una buena noticia."
+        ipa: "ˈtenɡo ˈuna ˈbwena noˈtiθja"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "noticia", base: "noticia" }]
+      - target: "La noticia es de ayer."
+        ipa: "la noˈtiθja es de aˈʝeɾ"
+        bases: [{ word: "La", base: "la" }, { word: "noticia", base: "noticia" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "ayer", ref: "es-0332" }]
+  - id: "es-2053"
+    target: "el periódico"
+    ipa: "el peˈɾjodiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "periódico", base: "periódico" }]
+    examples:
+      - target: "Leo el periódico cada mañana."
+        ipa: "ˈleo el peˈɾjodiko ˈkada maˈɲana"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "periódico", base: "periódico" }, { word: "cada", ref: "es-0366" }, { word: "mañana", ref: "es-0841" }]
+      - target: "El periódico cuesta un euro."
+        ipa: "el peˈɾjodiko ˈkwesta un ˈewɾo"
+        bases: [{ word: "El", base: "el" }, { word: "periódico", base: "periódico" }, { word: "cuesta", ref: "es-0587" }, { word: "un", base: "un" }, { word: "euro", ref: "es-0550" }]
+  - id: "es-2054"
+    target: "el periodista"
+    ipa: "el peɾjoˈdista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "periodista", base: "periodista" }]
+    examples:
+      - target: "El periodista hace una entrevista."
+        ipa: "el peɾjoˈdista ˈaθe ˈuna entɾeˈbista"
+        bases: [{ word: "El", base: "el" }, { word: "periodista", base: "periodista" }, { word: "hace", ref: "es-0025" }, { word: "una", base: "una" }, { word: "entrevista", ref: "es-2080" }]
+      - target: "Mi hermana es periodista."
+        ipa: "mi eɾˈmana es peɾjoˈdista"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "periodista", base: "periodista" }]
+  - id: "es-2055"
+    target: "el titular"
+    ipa: "el tituˈlaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "titular", base: "titular" }]
+    examples:
+      - target: "El titular dice que llueve."
+        ipa: "el tituˈlaɾ ˈdiθe ke ˈʝwebe"
+        bases: [{ word: "El", base: "el" }, { word: "titular", base: "titular" }, { word: "dice", ref: "es-1627" }, { word: "que", base: "que" }, { word: "llueve", ref: "es-1132" }]
+      - target: "Leo el titular y no el artículo."
+        ipa: "ˈleo el tituˈlaɾ i no el aɾˈtikulo"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "titular", base: "titular" }, { word: "y", ref: "es-0048" }, { word: "no", ref: "es-0043" }, { word: "el", base: "el" }, { word: "artículo", ref: "es-2057" }]
+  - id: "es-2056"
+    target: "la portada"
+    ipa: "la poɾˈtada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "portada", base: "portada" }]
+    examples:
+      - target: "La portada es muy grande."
+        ipa: "la poɾˈtada es mwi ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "portada", base: "portada" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hay una foto en la portada."
+        ipa: "aj ˈuna ˈfoto en la poɾˈtada"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "foto", ref: "es-1184" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "portada", base: "portada" }]
+  - id: "es-2057"
+    target: "el artículo"
+    ipa: "el aɾˈtikulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "artículo", base: "artículo" }]
+    examples:
+      - target: "El artículo es sobre el tiempo."
+        ipa: "el aɾˈtikulo es ˈsobɾe el ˈtjempo"
+        bases: [{ word: "El", base: "el" }, { word: "artículo", base: "artículo" }, { word: "es", ref: "es-0022" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "tiempo", ref: "es-1112" }]
+      - target: "Escribo un artículo para la revista."
+        ipa: "esˈkɾibo un aɾˈtikulo ˈpaɾa la reˈbista"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "un", base: "un" }, { word: "artículo", base: "artículo" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "revista", ref: "es-1428" }]
+  - id: "es-2058"
+    target: "la elección"
+    ipa: "la elekˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "elección", base: "elección" }]
+    examples:
+      - target: "Las elecciones son en mayo."
+        ipa: "las elekˈθjones son en ˈmaʝo"
+        bases: [{ word: "Las", base: "las" }, { word: "elecciones", base: "elección" }, { word: "son", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }]
+      - target: "Hay una elección en la ciudad."
+        ipa: "aj ˈuna elekˈθjon en la θjuˈdad"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "elección", base: "elección" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2059"
+    target: "el político"
+    ipa: "el poˈlitiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "político", base: "político" }]
+    examples:
+      - target: "El político habla en la radio."
+        ipa: "el poˈlitiko ˈabla en la ˈradjo"
+        bases: [{ word: "El", base: "el" }, { word: "político", base: "político" }, { word: "habla", ref: "es-0027" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "radio", ref: "es-2069" }]
+      - target: "Los políticos discuten el tema."
+        ipa: "los poˈlitikos disˈkuten el ˈtema"
+        bases: [{ word: "Los", base: "los" }, { word: "políticos", base: "político" }, { word: "discuten", ref: "es-1878" }, { word: "el", base: "el" }, { word: "tema", base: "tema" }]
+  - id: "es-2060"
+    target: "el presidente"
+    ipa: "el pɾesiˈdente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "presidente", base: "presidente" }]
+    examples:
+      - target: "El presidente anuncia una ley."
+        ipa: "el pɾesiˈdente aˈnunθja ˈuna lej"
+        bases: [{ word: "El", base: "el" }, { word: "presidente", base: "presidente" }, { word: "anuncia", ref: "es-2088" }, { word: "una", base: "una" }, { word: "ley", ref: "es-2061" }]
+      - target: "Hablo con el presidente de la empresa."
+        ipa: "ˈablo kon el pɾesiˈdente de la emˈpɾesa"
+        bases: [{ word: "Hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "presidente", base: "presidente" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "empresa", ref: "es-0514" }]
+  - id: "es-2061"
+    target: "la ley"
+    ipa: "la lej"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ley", base: "ley" }]
+    examples:
+      - target: "Hay una ley nueva."
+        ipa: "aj ˈuna lej ˈnweba"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "ley", base: "ley" }, { word: "nueva", ref: "es-0035" }]
+      - target: "La ley protege a los trabajadores."
+        ipa: "la lej pɾoˈtexe a los tɾabaxaˈdoɾes"
+        bases: [{ word: "La", base: "la" }, { word: "ley", base: "ley" }, { word: "protege", base: "proteger" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "trabajadores", ref: "es-1868" }]
+  - id: "es-2062"
+    target: "la crisis"
+    ipa: "la ˈkɾisis"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "crisis", base: "crisis" }]
+    examples:
+      - target: "Hay una crisis en el país."
+        ipa: "aj ˈuna ˈkɾisis en el paˈis"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "crisis", base: "crisis" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "país", ref: "es-0018" }]
+      - target: "La crisis afecta a muchas familias."
+        ipa: "la ˈkɾisis aˈfekta a ˈmutʃas faˈmiljas"
+        bases: [{ word: "La", base: "la" }, { word: "crisis", base: "crisis" }, { word: "afecta", base: "afectar" }, { word: "a", base: "a" }, { word: "muchas", ref: "es-0053" }, { word: "familias", ref: "es-0158" }]
+  - id: "es-2063"
+    target: "el incendio"
+    ipa: "el inˈθendjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "incendio", base: "incendio" }]
+    examples:
+      - target: "Un incendio quema el bosque."
+        ipa: "un inˈθendjo ˈkema el ˈboske"
+        bases: [{ word: "Un", base: "un" }, { word: "incendio", base: "incendio" }, { word: "quema", ref: "es-1327" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }]
+      - target: "El incendio está controlado."
+        ipa: "el inˈθendjo esˈta kontɾoˈlado"
+        bases: [{ word: "El", base: "el" }, { word: "incendio", base: "incendio" }, { word: "está", ref: "es-0023" }, { word: "controlado", base: "controlar" }]
+  - id: "es-2064"
+    target: "la huelga"
+    ipa: "la ˈwelɡa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "huelga", base: "huelga" }]
+    examples:
+      - target: "Hay huelga de trenes el martes."
+        ipa: "aj ˈwelɡa de ˈtɾenes el ˈmaɾtes"
+        bases: [{ word: "Hay", base: "haber" }, { word: "huelga", base: "huelga" }, { word: "de", base: "de" }, { word: "trenes", ref: "es-0676" }, { word: "el", base: "el" }, { word: "martes", ref: "es-0959" }]
+      - target: "La huelga dura una semana."
+        ipa: "la ˈwelɡa ˈduɾa ˈuna seˈmana"
+        bases: [{ word: "La", base: "la" }, { word: "huelga", base: "huelga" }, { word: "dura", ref: "es-1332" }, { word: "una", base: "una" }, { word: "semana", ref: "es-0840" }]
+  - id: "es-2065"
+    target: "la manifestación"
+    ipa: "la manifestaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "manifestación", base: "manifestación" }]
+    examples:
+      - target: "Hay una manifestación en el centro."
+        ipa: "aj ˈuna manifestaˈθjon en el ˈθentɾo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "manifestación", base: "manifestación" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "La manifestación es pacífica."
+        ipa: "la manifestaˈθjon es paˈθifika"
+        bases: [{ word: "La", base: "la" }, { word: "manifestación", base: "manifestación" }, { word: "es", ref: "es-0022" }, { word: "pacífica", base: "pacífico" }]
+  - id: "es-2066"
+    target: "la encuesta"
+    ipa: "la enˈkwesta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "encuesta", base: "encuesta" }]
+    examples:
+      - target: "La encuesta dice que gana el partido."
+        ipa: "la enˈkwesta ˈdiθe ke ˈɡana el paɾˈtido"
+        bases: [{ word: "La", base: "la" }, { word: "encuesta", base: "encuesta" }, { word: "dice", ref: "es-1627" }, { word: "que", base: "que" }, { word: "gana", ref: "es-0520" }, { word: "el", base: "el" }, { word: "partido", base: "partido" }]
+      - target: "Hago una encuesta en la calle."
+        ipa: "ˈaɡo ˈuna enˈkwesta en la ˈkaʝe"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "una", base: "una" }, { word: "encuesta", base: "encuesta" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+  - id: "es-2067"
+    target: "el canal"
+    ipa: "el kaˈnal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "canal", base: "canal" }]
+    examples:
+      - target: "Pongo el canal de noticias."
+        ipa: "ˈponɡo el kaˈnal de noˈtiθjas"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "el", base: "el" }, { word: "canal", base: "canal" }, { word: "de", base: "de" }, { word: "noticias", ref: "es-2052" }]
+      - target: "El canal de la televisión es nuevo."
+        ipa: "el kaˈnal de la telebiˈsjon es ˈnwebo"
+        bases: [{ word: "El", base: "el" }, { word: "canal", base: "canal" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "televisión", ref: "es-2068" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-2068"
+    target: "la televisión"
+    ipa: "la telebiˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "televisión", base: "televisión" }]
+    examples:
+      - target: "Veo la televisión por la noche."
+        ipa: "ˈbeo la telebiˈsjon poɾ la ˈnotʃe"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "la", base: "la" }, { word: "televisión", base: "televisión" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "La televisión es muy grande."
+        ipa: "la telebiˈsjon es mwi ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "televisión", base: "televisión" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2069"
+    target: "la radio"
+    ipa: "la ˈradjo"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "radio", base: "radio" }]
+    examples:
+      - target: "Escucho la radio por la mañana."
+        ipa: "esˈkutʃo la ˈradjo poɾ la maˈɲana"
+        bases: [{ word: "Escucho", ref: "es-0291" }, { word: "la", base: "la" }, { word: "radio", base: "radio" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+      - target: "La radio tiene buenas noticias."
+        ipa: "la ˈradjo ˈtjene ˈbwenas noˈtiθjas"
+        bases: [{ word: "La", base: "la" }, { word: "radio", base: "radio" }, { word: "tiene", ref: "es-0024" }, { word: "buenas", ref: "es-0033" }, { word: "noticias", ref: "es-2052" }]
+  - id: "es-2070"
+    target: "la emisión"
+    ipa: "la emiˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "emisión", base: "emisión" }]
+    examples:
+      - target: "La emisión empieza a las ocho."
+        ipa: "la emiˈsjon emˈpjeθa a las ˈotʃo"
+        bases: [{ word: "La", base: "la" }, { word: "emisión", base: "emisión" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "Esta emisión es muy famosa."
+        ipa: "ˈesta emiˈsjon es mwi faˈmosa"
+        bases: [{ word: "Esta", base: "esta" }, { word: "emisión", base: "emisión" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "famosa", base: "famoso" }]
+  - id: "es-2071"
+    target: "el programa"
+    ipa: "el pɾoˈɡɾama"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "programa", base: "programa" }]
+    examples:
+      - target: "Veo un programa de noticias."
+        ipa: "ˈbeo un pɾoˈɡɾama de noˈtiθjas"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "programa", base: "programa" }, { word: "de", base: "de" }, { word: "noticias", ref: "es-2052" }]
+      - target: "El programa es muy interesante."
+        ipa: "el pɾoˈɡɾama es mwi inteɾeˈsante"
+        bases: [{ word: "El", base: "el" }, { word: "programa", base: "programa" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", ref: "es-0424" }]
+  - id: "es-2072"
+    target: "el anuncio"
+    ipa: "el aˈnunθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "anuncio", base: "anuncio" }]
+    examples:
+      - target: "Veo un anuncio en la televisión."
+        ipa: "ˈbeo un aˈnunθjo en la telebiˈsjon"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "anuncio", base: "anuncio" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "televisión", ref: "es-2068" }]
+      - target: "El anuncio es para el nuevo coche."
+        ipa: "el aˈnunθjo es ˈpaɾa el ˈnwebo ˈkotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "anuncio", base: "anuncio" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "nuevo", ref: "es-0035" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-2073"
+    target: "la publicidad"
+    ipa: "la publiθiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "publicidad", base: "publicidad" }]
+    examples:
+      - target: "La publicidad es muy cara."
+        ipa: "la publiθiˈdad es mwi ˈkaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "publicidad", base: "publicidad" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "cara", ref: "es-0412" }]
+      - target: "Hay mucha publicidad en la calle."
+        ipa: "aj ˈmutʃa publiθiˈdad en la ˈkaʝe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "mucha", ref: "es-0053" }, { word: "publicidad", base: "publicidad" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+  - id: "es-2074"
+    target: "el rumor"
+    ipa: "el ruˈmoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "rumor", base: "rumor" }]
+    examples:
+      - target: "Es un rumor, no es verdad."
+        ipa: "es un ruˈmoɾ no es beɾˈdad"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "rumor", base: "rumor" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "verdad", base: "verdad" }]
+      - target: "Corre un rumor en la ciudad."
+        ipa: "ˈkore un ruˈmoɾ en la θjuˈdad"
+        bases: [{ word: "Corre", ref: "es-1068" }, { word: "un", base: "un" }, { word: "rumor", base: "rumor" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-2075"
+    target: "la fuente"
+    ipa: "la ˈfwente"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fuente", base: "fuente" }]
+    examples:
+      - target: "Mi fuente es un amigo."
+        ipa: "mi ˈfwente es un aˈmiɡo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "fuente", base: "fuente" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "amigo", ref: "es-0005" }]
+      - target: "La fuente de la plaza es bonita."
+        ipa: "la ˈfwente de la ˈplaθa es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "fuente", base: "fuente" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+  - id: "es-2076"
+    target: "la opinión"
+    ipa: "la opiˈnjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "opinión", base: "opinión" }]
+    examples:
+      - target: "Mi opinión es diferente."
+        ipa: "mi opiˈnjon es difeˈɾente"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "opinión", base: "opinión" }, { word: "es", ref: "es-0022" }, { word: "diferente", base: "diferente" }]
+      - target: "Quiero dar mi opinión."
+        ipa: "ˈkjeɾo daɾ mi opiˈnjon"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "dar", ref: "es-1629" }, { word: "mi", ref: "es-0129" }, { word: "opinión", base: "opinión" }]
+  - id: "es-2077"
+    target: "la columna"
+    ipa: "la koˈlumna"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "columna", base: "columna" }]
+    examples:
+      - target: "Leo la columna de opinión."
+        ipa: "ˈleo la koˈlumna de opiˈnjon"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "la", base: "la" }, { word: "columna", base: "columna" }, { word: "de", base: "de" }, { word: "opinión", ref: "es-2076" }]
+      - target: "La columna es sobre el deporte."
+        ipa: "la koˈlumna es ˈsobɾe el deˈpoɾte"
+        bases: [{ word: "La", base: "la" }, { word: "columna", base: "columna" }, { word: "es", ref: "es-0022" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "deporte", ref: "es-1402" }]
+  - id: "es-2078"
+    target: "el editorial"
+    ipa: "el editoˈɾjal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "editorial", base: "editorial" }]
+    examples:
+      - target: "El editorial critica el gobierno."
+        ipa: "el editoˈɾjal kɾiˈtika el ɡoˈbjeɾno"
+        bases: [{ word: "El", base: "el" }, { word: "editorial", base: "editorial" }, { word: "critica", base: "criticar" }, { word: "el", base: "el" }, { word: "gobierno", base: "gobierno" }]
+      - target: "Leo el editorial del diario."
+        ipa: "ˈleo el editoˈɾjal del ˈdjaɾjo"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "editorial", base: "editorial" }, { word: "del", base: "del" }, { word: "diario", ref: "es-2084" }]
+  - id: "es-2079"
+    target: "la redacción"
+    ipa: "la redakˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "redacción", base: "redacción" }]
+    examples:
+      - target: "La redacción está en el centro."
+        ipa: "la redakˈθjon esˈta en el ˈθentɾo"
+        bases: [{ word: "La", base: "la" }, { word: "redacción", base: "redacción" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }]
+      - target: "Trabajo en la redacción del diario."
+        ipa: "tɾaˈbaxo en la redakˈθjon del ˈdjaɾjo"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "redacción", base: "redacción" }, { word: "del", base: "del" }, { word: "diario", ref: "es-2084" }]
+  - id: "es-2080"
+    target: "la entrevista"
+    ipa: "la entɾeˈbista"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "entrevista", base: "entrevista" }]
+    examples:
+      - target: "Hago una entrevista al alcalde."
+        ipa: "ˈaɡo ˈuna entɾeˈbista al alˈkalde"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "una", base: "una" }, { word: "entrevista", base: "entrevista" }, { word: "al", base: "al" }, { word: "alcalde", base: "alcalde" }]
+      - target: "La entrevista es en la radio."
+        ipa: "la entɾeˈbista es en la ˈradjo"
+        bases: [{ word: "La", base: "la" }, { word: "entrevista", base: "entrevista" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "radio", ref: "es-2069" }]
+  - id: "es-2081"
+    target: "el reportaje"
+    ipa: "el repoɾˈtaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "reportaje", base: "reportaje" }]
+    examples:
+      - target: "El reportaje es sobre la pobreza."
+        ipa: "el repoɾˈtaxe es ˈsobɾe la poˈbɾeθa"
+        bases: [{ word: "El", base: "el" }, { word: "reportaje", base: "reportaje" }, { word: "es", ref: "es-0022" }, { word: "sobre", base: "sobre" }, { word: "la", base: "la" }, { word: "pobreza", base: "pobreza" }]
+      - target: "Veo un reportaje de la guerra."
+        ipa: "ˈbeo un repoɾˈtaxe de la ˈɡera"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "reportaje", base: "reportaje" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "guerra", base: "guerra" }]
+  - id: "es-2082"
+    target: "el suceso"
+    ipa: "el suˈθeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "suceso", base: "suceso" }]
+    examples:
+      - target: "El suceso ocurre de noche."
+        ipa: "el suˈθeso oˈkure de ˈnotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "suceso", base: "suceso" }, { word: "ocurre", ref: "es-1620" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }]
+      - target: "Leo sobre el suceso en el periódico."
+        ipa: "ˈleo ˈsobɾe el suˈθeso en el peˈɾjodiko"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "suceso", base: "suceso" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "periódico", ref: "es-2053" }]
+  - id: "es-2083"
+    target: "el noticiero"
+    ipa: "el notiˈθjeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "noticiero", base: "noticiero" }]
+    examples:
+      - target: "Veo el noticiero a las nueve."
+        ipa: "ˈbeo el notiˈθjeɾo a las ˈnwebe"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "el", base: "el" }, { word: "noticiero", base: "noticiero" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "El noticiero es muy corto."
+        ipa: "el notiˈθjeɾo es mwi ˈkoɾto"
+        bases: [{ word: "El", base: "el" }, { word: "noticiero", base: "noticiero" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "corto", ref: "es-1320" }]
+  - id: "es-2084"
+    target: "el diario"
+    ipa: "el ˈdjaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "diario", base: "diario" }]
+    examples:
+      - target: "Compro el diario en la esquina."
+        ipa: "ˈkompɾo el ˈdjaɾjo en la esˈkina"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "el", base: "el" }, { word: "diario", base: "diario" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "esquina", ref: "es-0706" }]
+      - target: "Leo el diario con el café."
+        ipa: "ˈleo el ˈdjaɾjo kon el kaˈfe"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "el", base: "el" }, { word: "diario", base: "diario" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }]
+  - id: "es-2085"
+    target: "la prensa"
+    ipa: "la ˈpɾensa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "prensa", base: "prensa" }]
+    examples:
+      - target: "La prensa informa de la noticia."
+        ipa: "la ˈpɾensa inˈfoɾma de la noˈtiθja"
+        bases: [{ word: "La", base: "la" }, { word: "prensa", base: "prensa" }, { word: "informa", ref: "es-2087" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "noticia", ref: "es-2052" }]
+      - target: "La prensa es libre."
+        ipa: "la ˈpɾensa es ˈlibɾe"
+        bases: [{ word: "La", base: "la" }, { word: "prensa", base: "prensa" }, { word: "es", ref: "es-0022" }, { word: "libre", ref: "es-0426" }]
+  - id: "es-2086"
+    target: "el comunicado"
+    ipa: "el komuniˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "comunicado", base: "comunicado" }]
+    examples:
+      - target: "El comunicado dice la verdad."
+        ipa: "el komuniˈkado ˈdiθe la beɾˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "comunicado", base: "comunicado" }, { word: "dice", ref: "es-1627" }, { word: "la", base: "la" }, { word: "verdad", base: "verdad" }]
+      - target: "Hay un comunicado del gobierno."
+        ipa: "aj un komuniˈkado del ɡoˈbjeɾno"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "comunicado", base: "comunicado" }, { word: "del", base: "del" }, { word: "gobierno", base: "gobierno" }]
+  - id: "es-2087"
+    target: "informar"
+    ipa: "infoɾˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "informar", base: "informar" }]
+    examples:
+      - target: "Informo de la noticia."
+        ipa: "inˈfoɾmo de la noˈtiθja"
+        bases: [{ word: "Informo", base: "informar" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "noticia", ref: "es-2052" }]
+      - target: "El periódico informa a los lectores."
+        ipa: "el peˈɾjodiko inˈfoɾma a los lekˈtoɾes"
+        bases: [{ word: "El", base: "el" }, { word: "periódico", ref: "es-2053" }, { word: "informa", base: "informar" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "lectores", base: "lector" }]
+  - id: "es-2088"
+    target: "anunciar"
+    ipa: "anunˈθjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "anunciar", base: "anunciar" }]
+    examples:
+      - target: "El presidente anuncia la ley."
+        ipa: "el pɾesiˈdente aˈnunθja la lej"
+        bases: [{ word: "El", base: "el" }, { word: "presidente", ref: "es-2060" }, { word: "anuncia", base: "anunciar" }, { word: "la", base: "la" }, { word: "ley", ref: "es-2061" }]
+      - target: "Anunciamos el resultado."
+        ipa: "anunˈθjamos el resulˈtado"
+        bases: [{ word: "Anunciamos", base: "anunciar" }, { word: "el", base: "el" }, { word: "resultado", base: "resultado" }]
+  - id: "es-2089"
+    target: "publicar"
+    ipa: "publiˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "publicar", base: "publicar" }]
+    examples:
+      - target: "Publico un artículo hoy."
+        ipa: "puˈbliko un aɾˈtikulo oj"
+        bases: [{ word: "Publico", base: "publicar" }, { word: "un", base: "un" }, { word: "artículo", ref: "es-2057" }, { word: "hoy", ref: "es-0331" }]
+      - target: "El diario publica la noticia."
+        ipa: "el ˈdjaɾjo puˈblika la noˈtiθja"
+        bases: [{ word: "El", base: "el" }, { word: "diario", ref: "es-2084" }, { word: "publica", base: "publicar" }, { word: "la", base: "la" }, { word: "noticia", ref: "es-2052" }]
+  - id: "es-2090"
+    target: "emitir"
+    ipa: "emiˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "emitir", base: "emitir" }]
+    examples:
+      - target: "La radio emite el programa."
+        ipa: "la ˈradjo eˈmite el pɾoˈɡɾama"
+        bases: [{ word: "La", base: "la" }, { word: "radio", ref: "es-2069" }, { word: "emite", base: "emitir" }, { word: "el", base: "el" }, { word: "programa", ref: "es-2071" }]
+      - target: "Emitimos la noticia."
+        ipa: "emiˈtimos la noˈtiθja"
+        bases: [{ word: "Emitimos", base: "emitir" }, { word: "la", base: "la" }, { word: "noticia", ref: "es-2052" }]
+  - id: "es-2091"
+    target: "transmitir"
+    ipa: "tɾansmiˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "transmitir", base: "transmitir" }]
+    examples:
+      - target: "Transmiten el partido en directo."
+        ipa: "tɾansˈmiten el paɾˈtido en diˈɾekto"
+        bases: [{ word: "Transmiten", base: "transmitir" }, { word: "el", base: "el" }, { word: "partido", base: "partido" }, { word: "en", base: "en" }, { word: "directo", base: "directo" }]
+      - target: "Transmito el mensaje."
+        ipa: "tɾansˈmito el menˈsaxe"
+        bases: [{ word: "Transmito", base: "transmitir" }, { word: "el", base: "el" }, { word: "mensaje", ref: "es-1651" }]
