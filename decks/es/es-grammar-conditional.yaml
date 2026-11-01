@@ -1,0 +1,50 @@
+schema: 1
+id: "es-grammar-conditional"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos"]
+  entries:
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "yo": "hablaría", "tú": "hablarías", "él/ella": "hablaría", "nosotros": "hablaríamos", "vosotros": "hablaríais", "ellos": "hablarían" }
+      ipas: { "yo": "ablaˈɾia", "tú": "ablaˈɾias", "él/ella": "ablaˈɾia", "nosotros": "ablaˈɾiamos", "vosotros": "ablaˈɾiajs", "ellos": "ablaˈɾian" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "yo": "comería", "tú": "comerías", "él/ella": "comería", "nosotros": "comeríamos", "vosotros": "comeríais", "ellos": "comerían" }
+      ipas: { "yo": "komeˈɾia", "tú": "komeˈɾias", "él/ella": "komeˈɾia", "nosotros": "komeˈɾiamos", "vosotros": "komeˈɾiajs", "ellos": "komeˈɾian" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "yo": "viviría", "tú": "vivirías", "él/ella": "viviría", "nosotros": "viviríamos", "vosotros": "viviríais", "ellos": "vivirían" }
+      ipas: { "yo": "bibiˈɾia", "tú": "bibiˈɾias", "él/ella": "bibiˈɾia", "nosotros": "bibiˈɾiamos", "vosotros": "bibiˈɾiajs", "ellos": "bibiˈɾian" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "yo": "iría", "tú": "irías", "él/ella": "iría", "nosotros": "iríamos", "vosotros": "iríais", "ellos": "irían" }
+      ipas: { "yo": "iˈɾia", "tú": "iˈɾias", "él/ella": "iˈɾia", "nosotros": "iˈɾiamos", "vosotros": "iˈɾiajs", "ellos": "iˈɾian" }
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "yo": "tendría", "tú": "tendrías", "él/ella": "tendría", "nosotros": "tendríamos", "vosotros": "tendríais", "ellos": "tendrían" }
+      ipas: { "yo": "tenˈdɾia", "tú": "tenˈdɾias", "él/ella": "tenˈdɾia", "nosotros": "tenˈdɾiamos", "vosotros": "tenˈdɾiajs", "ellos": "tenˈdɾian" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "yo": "haría", "tú": "harías", "él/ella": "haría", "nosotros": "haríamos", "vosotros": "haríais", "ellos": "harían" }
+      ipas: { "yo": "aˈɾia", "tú": "aˈɾias", "él/ella": "aˈɾia", "nosotros": "aˈɾiamos", "vosotros": "aˈɾiajs", "ellos": "aˈɾian" }
+    - lemma: "poder"
+      ipa: "poˈdeɾ"
+      forms: { "yo": "podría", "tú": "podrías", "él/ella": "podría", "nosotros": "podríamos", "vosotros": "podríais", "ellos": "podrían" }
+      ipas: { "yo": "poˈdɾia", "tú": "poˈdɾias", "él/ella": "poˈdɾia", "nosotros": "poˈdɾiamos", "vosotros": "poˈdɾiajs", "ellos": "poˈdɾian" }
+    - lemma: "decir"
+      ipa: "deˈθiɾ"
+      forms: { "yo": "diría", "tú": "dirías", "él/ella": "diría", "nosotros": "diríamos", "vosotros": "diríais", "ellos": "dirían" }
+      ipas: { "yo": "diˈɾia", "tú": "diˈɾias", "él/ella": "diˈɾia", "nosotros": "diˈɾiamos", "vosotros": "diˈɾiajs", "ellos": "diˈɾian" }
+    - lemma: "querer"
+      ipa: "keˈɾeɾ"
+      forms: { "yo": "querría", "tú": "querrías", "él/ella": "querría", "nosotros": "querríamos", "vosotros": "querríais", "ellos": "querrían" }
+      ipas: { "yo": "keˈria", "tú": "keˈrias", "él/ella": "keˈria", "nosotros": "keˈriamos", "vosotros": "keˈriajs", "ellos": "keˈrian" }
+    - lemma: "saber"
+      ipa: "saˈbeɾ"
+      forms: { "yo": "sabría", "tú": "sabrías", "él/ella": "sabría", "nosotros": "sabríamos", "vosotros": "sabríais", "ellos": "sabrían" }
+      ipas: { "yo": "saˈbɾia", "tú": "saˈbɾias", "él/ella": "saˈbɾia", "nosotros": "saˈbɾiamos", "vosotros": "saˈbɾiajs", "ellos": "saˈbɾian" }
