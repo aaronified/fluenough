@@ -105,24 +105,17 @@ class _AllTagsPageState extends State<AllTagsPage> {
       body: SafeArea(
         top: false,
         child: ListenableBuilder(
-          listenable: state.progress,
+          listenable: Listenable.merge(<Listenable>[
+            state.progress,
+            // The numbers come back from an isolate (#857).
+            state.progressNumbers,
+          ]),
           builder: (context, _) {
             final language = state.progressLanguage;
-            final languageOf = languageLookupOf(state);
-            final numbers = StatsNumbers.of(
-              state.progress,
-              now: state.now(),
-              range: widget.range,
-              cardOf: cardLookupOf(state),
-              deckFilter: language == null
-                  ? null
-                  : (id) => languageOf(id) == language,
-              tagCount: 1 << 30,
-              parametersOf: (e) => state.progress.parameters.of(
-                languageOf(e.deckId) ?? '',
-                e.mode,
-              ),
-            );
+            final numbers = state.progressNumbers.of(language);
+            if (numbers == null) {
+              return const Center(child: CircularProgressIndicator());
+            }
             // Every tag of the decks learned, answered or not.
             final unanswered = <String>{
               for (final entry in state.decks)
