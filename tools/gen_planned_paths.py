@@ -525,21 +525,6 @@ G = {
                ("passive", ["passive-voice"]),
                ("dialect-variation", ["dialect-variation"])],
     },
-    "aramaic": {
-        "a1": [("roots", ["root-and-pattern"]),
-               ("gender-number", ["gender-number"]),
-               ("states", ["absolute-and-emphatic-state"]),
-               ("participle-present", ["participle-as-present"])],
-        "a2": [("perfect-imperfect", ["perfect-tense", "imperfect-tense"]),
-               ("construct-state", ["construct-state"]),
-               ("pronoun-suffixes", ["pronoun-suffixes"]),
-               ("imperatives", ["imperative"])],
-        "b1": [("verb-stems", ["verb-stems"]),
-               ("relative-clauses", ["relative-clauses"]),
-               ("conditional-clauses", ["conditional-clauses"]),
-               ("passive", ["passive"]),
-               ("reported-speech", ["reported-speech"])],
-    },
 }
 
 # --------------------------------------------------------------------------
@@ -564,7 +549,6 @@ S = {
     "old_english_letters": [("letters", ["old-english-letters"])],
     "greek_polytonic": [("letters", ["greek-letters"]), ("breathings-accents", ["breathings-and-accents"])],
     "devanagari_plain": [("letters", ["devanagari-letters"]), ("conjuncts", ["conjunct-letters"])],
-    "hebrew_square_aramaic": [("letters", ["hebrew-letters"]), ("unpointed", ["unvoweled-text"])],
 }
 
 # --------------------------------------------------------------------------
@@ -654,7 +638,8 @@ LANGS = {
     "enm": L("Middle English", "middle_english", genders=[], ancient=True,
              levels={"A1": 350, "A2": 500, "B1": 700}, sound=["spelling-variation"],
              note="A reading course in the language of about 1100 to 1500."),
-    # The Greek stages, Pali, Aramaic and Ashokan Prakrit (owner, 2026-11-01).
+    # The Greek stages, Pali and Ashokan Prakrit (owner, 2026-11-01). Aramaic
+    # is left out: its phrasebook has 13 cards, below the validator's 15.
     # ISO 639-3 has one code, `grc`, for all Ancient Greek: it is the Classical
     # Attic course, and the other two stages take private-use codes.
     "qgh": L("Archaic Greek", "homeric", genders=["m", "f", "n"], ancient=True, script="greek_polytonic", desc="Archaic Greek, a stage of Ancient Greek",
@@ -669,9 +654,6 @@ LANGS = {
     "pli": L("Pali", "pali", genders=["m", "f", "n"], ancient=True, script="devanagari_plain",
              levels={"A1": 400, "A2": 600, "B1": 900}, sound=["vowel-length"],
              note="A reading course in the language of the Theravada canon. Pali is not the language of Ashoka's inscriptions (see qap)."),
-    "arc": L("Aramaic (Imperial)", "aramaic", genders=["m", "f"], ancient=True, script="hebrew_square_aramaic",
-             levels={"A1": 400, "A2": 600, "B1": 900}, sound=["emphatics"],
-             note="A reading course in Imperial (Official) Aramaic: the Elephantine papyri, Ezra and Daniel."),
     "qap": L("Ashokan Prakrit", "prakrit", genders=["m", "f", "n"], ancient=True, script="devanagari_plain",
              levels={"A1": 400, "A2": 600, "B1": 900}, sound=["vowel-length"],
              note="A reading course in the language of Ashoka's edicts, in the eastern (Magadhi-like) form; the edicts also exist in north-western and western dialects. The edicts are cut in Brahmi (and Kharoshthi); Devanagari stands in until a Brahmi font is added."),

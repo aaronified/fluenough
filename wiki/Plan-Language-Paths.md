@@ -184,8 +184,9 @@ except the sign and fiction ones: the 26 living languages (Portuguese,
 Italian, Catalan, Swedish, Norwegian, Yiddish, Russian, Polish,
 Serbo-Croatian, Greek, Hebrew, Finnish, Hungarian, Turkish, Basque, Irish,
 Arabic, Cantonese, Thai, Vietnamese, Filipino, Malay, Swahili, Hausa, Somali,
-Quechua) and the ancient Vedic Sanskrit, Latin, Old English and Middle
-English. Each path holds the whole plan to B1 from the scheme's template: the
+Quechua) and the nine ancient and reconstructed ones: Vedic Sanskrit,
+Latin, Old English, Middle English, the Archaic, Classical and Koine stages
+of Ancient Greek, Pali and Ashokan Prakrit. Each path holds the whole plan to B1 from the scheme's template: the
 sounds, the first four themes, the script where the language has one to
 learn, then the other themes woven with the grammar of the language's family
 (cases for Slavic, suffixes and harmony for Turkic and Uralic, root and
@@ -194,16 +195,18 @@ classes for Swahili, ergativity for Basque, mutations for Irish). Grammar
 topics are generic category names, never a stated rule of the language. Only
 unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words);
 every other unit is `planned:` with placeholder listening and reading
-passages, to be reworded when written. Egyptian, Sumerian, Mycenaean Greek
-and Proto-Indo-European are not in the generator: they are taken out of this
-change, and their path and first-words files stay as main has them, until the
-validator's phrasebook rule is settled (their phrasebook would be below its
+passages, to be reworded when written. Egyptian, Sumerian, Mycenaean Greek,
+Proto-Indo-European and Imperial Aramaic are not in the generator: they are
+taken out of this change, and their path and first-words files stay as main
+has them (Aramaic has no decks on main, so its files are removed), until the
+validator's phrasebook rule is settled (their phrasebooks would be below its
 15-card minimum).
 
 Living languages use the plan's sizes (A1 700, A2 900, B1 1,200 words); the
-four ancient ones set `levels` (Latin 600, 800 and 1,100; Vedic 300, 400 and
-600; Old English 400, 600 and 800; Middle English 350, 500 and 700) and leave
-out themes of modern life. The generator also turns unit 1 of the courses
+nine ancient ones set `levels` (Latin 600, 800 and 1,100; Vedic 300, 400 and
+600; Old English 400, 600 and 800; Middle English 350, 500 and 700; the three
+Greek stages 400, 600 and 900, Koine 400, 700 and 1,000; Pali and Prakrit 400,
+600 and 900) and leave out themes of modern life. The generator also turns unit 1 of the courses
 that already had a full all-planned path (German, Esperanto, Maithili,
 Malayalam, Odia, Punjabi, Tamil, Lojban, Interslavic) into the written unit
 and touches nothing else of them. `--check` fails when a file differs from the
