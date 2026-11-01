@@ -5,6 +5,7 @@ import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -212,6 +213,91 @@ void main() {
     }
     expect(tops.length, 1, reason: 'the two chips share a line');
   });
+
+  for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('a Hindustani row shows the skill icons at Learn and tells '
+        'its two scripts apart by their letters, at 1.4x in ${mode.name}', (
+      tester,
+    ) async {
+      final state = learner()
+        ..settings.setLanguageSkills('hi', <String, String>{
+          'speak': 'learn',
+          'hear': 'learn',
+          'read:devanagari': 'learn',
+          'write:devanagari': 'learn',
+          'read:perso_arabic': 'know',
+        });
+      await pumpLanguages(tester, state: state, mode: mode);
+      final row = find.byKey(const ValueKey<String>('language-hi'));
+      final chips = find.descendant(of: row, matching: find.byType(SkillBadge));
+      // Spoken, Devanagari and Perso-Arabic.
+      expect(chips, findsNWidgets(3));
+      Finder icon(int i, SkillKind k) => find.descendant(
+        of: chips.at(i),
+        matching: find.byKey(ValueKey<String>('pill-icon-${k.name}')),
+      );
+      expect(icon(0, SkillKind.hear), findsOneWidget);
+      expect(icon(0, SkillKind.speak), findsOneWidget);
+      expect(
+        find.descendant(
+          of: chips.at(0),
+          matching: find.byKey(const ValueKey<String>('pill-mark-learn')),
+        ),
+        findsOneWidget,
+      );
+      expect(icon(1, SkillKind.read), findsOneWidget);
+      expect(icon(1, SkillKind.write), findsOneWidget);
+      expect(icon(2, SkillKind.read), findsOneWidget);
+      expect(icon(2, SkillKind.write), findsNothing);
+      String glyph(int i) => tester
+          .widget<Text>(
+            find.descendant(
+              of: chips.at(i),
+              matching: find.byKey(const ValueKey<String>('pill-glyph')),
+            ),
+          )
+          .data!;
+      expect(
+        find.descendant(
+          of: chips.at(0),
+          matching: find.byKey(const ValueKey<String>('pill-glyph')),
+        ),
+        findsNothing,
+      );
+      expect(glyph(1), scriptGlyph('devanagari', 'Hindustani'));
+      expect(glyph(2), scriptGlyph('perso_arabic', 'Hindustani'));
+      expect(glyph(1), isNot(glyph(2)));
+      // Three wider chips still fit the row: they wrap, none overflows.
+      final rowWidth = tester.getSize(row).width;
+      for (var i = 0; i < 3; i++) {
+        expect(tester.getSize(chips.at(i)).width, lessThan(rowWidth));
+      }
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the sheet pills for a script show no letter and Learn as '
+        'the cap alone, at 1.4x in ${mode.name}', (tester) async {
+      await pumpLanguages(tester, mode: mode);
+      await tapKey(tester, 'language-es');
+      final spoken = find.byKey(const ValueKey<String>('skill-spoken'));
+      expect(
+        find.descendant(
+          of: spoken,
+          matching: find.byKey(const ValueKey<String>('pill-icon-hear')),
+        ),
+        findsNothing,
+      );
+      final script = find.byKey(const ValueKey<String>('skill-script:latin'));
+      expect(
+        find.descendant(
+          of: script,
+          matching: find.byKey(const ValueKey<String>('pill-glyph')),
+        ),
+        findsNothing,
+      );
+      expect(tester.takeException(), isNull);
+    });
+  }
 
   for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
     testWidgets('the sheet has one Spoken pill and one pill for the script, '
