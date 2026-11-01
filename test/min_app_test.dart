@@ -394,15 +394,16 @@ void main() {
         findsOneWidget,
       );
       // A language with no requirement shows none.
+      // The list builds rows lazily, so scroll down to Spanish first.
       final es = find.byKey(const ValueKey<String>('add-es'));
-      await tester.ensureVisible(es);
+      await tester.scrollUntilVisible(es, 200);
       await tester.pumpAndSettle();
       expect(
         find.descendant(of: es, matching: find.textContaining('Needs app')),
         findsNothing,
       );
       // Tapping the greyed row opens the page, not the skills sheet.
-      await tester.ensureVisible(hi);
+      await tester.scrollUntilVisible(hi, -200);
       await tester.pumpAndSettle();
       await tester.tap(hi);
       await tester.pumpAndSettle();
