@@ -22,7 +22,9 @@ import 'skill_widgets.dart';
 
 /// The list's filter pills, in their order: Learning, Know, then the four
 /// skills. A skill's pill matches a language where that skill is not Leave.
-enum LanguageFilter { learning, know, speak, hear, read, write }
+/// Gestures is shown only while a sign language is listed, and matches only
+/// sign languages (owner, 2026-11-01).
+enum LanguageFilter { learning, know, speak, hear, read, write, gesture }
 
 /// "Languages" (#907, the mockup `languages-merged`, approved 2026-10-30):
 /// the languages known and learned in one list. Each language shows its four
@@ -172,9 +174,15 @@ class _LanguagesPageState extends State<LanguagesPage> {
       LanguageFilter.learning => skills.anyLearn,
       LanguageFilter.know => skills.count(SkillState.know, shape) > 0,
       LanguageFilter.speak =>
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave,
+        !view.language.isSign &&
+            skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave,
       LanguageFilter.hear =>
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave,
+        !view.language.isSign &&
+            skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave,
+      LanguageFilter.gesture =>
+        view.language.isSign &&
+            skills.stateOf(const SkillKey(SkillKind.gesture)) !=
+                SkillState.leave,
       LanguageFilter.read => shape.any(
         (k) =>
             k.kind == SkillKind.read && skills.stateOf(k) != SkillState.leave,
@@ -190,6 +198,10 @@ class _LanguagesPageState extends State<LanguagesPage> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final held = _held(state, all);
+    final hasSign = held.any((h) => h.$1.language.isSign);
+    final filter = _filter == LanguageFilter.gesture && !hasSign
+        ? null
+        : _filter;
     if (held.isEmpty) {
       return EmptyState(
         icon: Icons.translate,
@@ -204,7 +216,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
     }
     final shown = <(LanguageView, LanguageSkills)>[
       for (final h in held)
-        if (_matches(state, h.$1, h.$2, _filter)) h,
+        if (_matches(state, h.$1, h.$2, filter)) h,
     ];
     final learning = <(LanguageView, LanguageSkills)>[
       for (final h in shown)
@@ -222,7 +234,8 @@ class _LanguagesPageState extends State<LanguagesPage> {
           DeckUpdateControls(downloads: downloads, names: _names(all)),
         const _Key(),
         _FilterRow(
-          selected: _filter,
+          selected: filter,
+          showGesture: hasSign,
           onChanged: (f) => setState(() => _filter = f),
         ),
         if (shown.isEmpty)
@@ -368,9 +381,14 @@ class _Key extends StatelessWidget {
 /// The filter pills: one row that scrolls sideways, faded at both edges.
 /// One at a time; tapping the chosen one clears it.
 class _FilterRow extends StatelessWidget {
-  const _FilterRow({required this.selected, required this.onChanged});
+  const _FilterRow({
+    required this.selected,
+    required this.showGesture,
+    required this.onChanged,
+  });
 
   final LanguageFilter? selected;
+  final bool showGesture;
   final ValueChanged<LanguageFilter?> onChanged;
 
   @override
@@ -383,6 +401,7 @@ class _FilterRow extends StatelessWidget {
       LanguageFilter.hear => l10n.languagesSkillHear,
       LanguageFilter.read => l10n.languagesSkillRead,
       LanguageFilter.write => l10n.languagesSkillWrite,
+      LanguageFilter.gesture => l10n.languagesGestures,
     };
     IconData icon(LanguageFilter f) => switch (f) {
       LanguageFilter.learning => Icons.school_outlined,
@@ -391,6 +410,7 @@ class _FilterRow extends StatelessWidget {
       LanguageFilter.hear => SkillKind.hear.icon,
       LanguageFilter.read => SkillKind.read.icon,
       LanguageFilter.write => SkillKind.write.icon,
+      LanguageFilter.gesture => SkillKind.gesture.icon,
     };
     return Semantics(
       container: true,
@@ -412,17 +432,18 @@ class _FilterRow extends StatelessWidget {
           child: Row(
             children: <Widget>[
               for (final f in LanguageFilter.values)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 8),
-                  child: FilterChip(
-                    key: ValueKey<String>('filter-${f.name}'),
-                    showCheckmark: false,
-                    avatar: Icon(icon(f), size: 18),
-                    label: Text(text(f)),
-                    selected: selected == f,
-                    onSelected: (_) => onChanged(selected == f ? null : f),
+                if (f != LanguageFilter.gesture || showGesture)
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 8),
+                    child: FilterChip(
+                      key: ValueKey<String>('filter-${f.name}'),
+                      showCheckmark: false,
+                      avatar: Icon(icon(f), size: 18),
+                      label: Text(text(f)),
+                      selected: selected == f,
+                      onSelected: (_) => onChanged(selected == f ? null : f),
+                    ),
                   ),
-                ),
             ],
           ),
         ),
@@ -480,15 +501,16 @@ class _LanguageRow extends StatelessWidget {
     final found = state.levelFound(view.code);
     final learns = skills.anyLearn;
     final speaks =
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave ||
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave;
+        !view.language.isSign &&
+        (skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave ||
+            skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave);
     final hasDecks = downloads?.hasDecks(view.code) ?? false;
     final progress = downloads?.progressOf(view.code);
     final pending =
         hasDecks &&
         !learns &&
         state.settings.languageSkillsOf(view.code) != null;
-    final dialect = !view.language.scriptOnly && !view.language.isSign && speaks
+    final dialect = !view.language.scriptOnly && speaks
         ? dialectOf(l10n, view.language)
         : null;
     final size = downloads == null ? 0 : downloads.sizeOnPhone(view.code);

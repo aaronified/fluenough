@@ -249,16 +249,26 @@ void main() {
   });
 
   testWidgets('a sign language has one skill, Gestures, with its own icon, '
-      'and it cycles and is restored (owner, 2026-11-01)', (tester) async {
+      'and its cycle is stored and restored (owner, 2026-11-01)', (
+    tester,
+  ) async {
     final state = AppState.test(
       settings: SettingsNotifier(
-        spokenLanguages: const <String>['en', 'ase'],
+        spokenLanguages: const <String>['en'],
         learningChosen: true,
-      )..scriptsRead = <String, bool>{'en': true, 'ase': false},
+      )..scriptsRead = <String, bool>{'en': true},
     );
     await pumpLanguages(tester, state: state);
-    await tapKey(tester, 'language-ase');
-    final text = l10n(tester);
+    var text = l10n(tester);
+    await tester.tap(find.byTooltip(text.hintAdd));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey<String>('languages-add-search')),
+      'American Sign',
+    );
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'add-ase');
+    text = l10n(tester);
     Finder pill(String id) => find.byKey(ValueKey<String>('skill-$id'));
     expect(pill('gesture'), findsOneWidget);
     expect(find.text(text.languagesGestures), findsWidgets);
@@ -277,17 +287,60 @@ void main() {
     final used = <IconData>{for (final k in SkillKind.values) k.icon};
     expect(used.length, SkillKind.values.length, reason: 'each its own icon');
 
+    // No course, so the cycle is Leave, Know, Leave.
+    SkillState stored() {
+      final restored = SettingsNotifier()..restore(state.settings.toStored());
+      final map = restored.languageSkillsOf('ase');
+      return map == null
+          ? SkillState.leave
+          : LanguageSkills.fromStored(map)
+                .stateOf(const SkillKey(SkillKind.gesture));
+    }
+
     await tapKey(tester, 'skill-gesture');
-    final ase = pickerSpokenList.singleWhere((l) => l.code == 'ase');
-    expect(state.skillsOf(ase).held, <SkillKey>[
-      const SkillKey(SkillKind.gesture),
-    ]);
-    final restored = SettingsNotifier()..restore(state.settings.toStored());
-    expect(
-      LanguageSkills.fromStored(restored.languageSkillsOf('ase')!)
-          .stateOf(const SkillKey(SkillKind.gesture)),
-      SkillState.know,
+    await tester.tap(
+      find.text(text.languagesAddLanguage('American Sign Language')),
     );
+    await tester.pumpAndSettle();
+    expect(stored(), SkillState.know);
+    await tapKey(tester, 'language-ase');
+    await tapKey(tester, 'skill-gesture');
+    expect(stored(), SkillState.leave);
     expect(tester.takeException(), isNull);
+  });
+
+  group('the Gestures filter (owner, 2026-11-01)', () {
+    AppState withSign(List<String> spoken) => AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: spoken,
+        learningLanguages: const <String>['es'],
+        learningChosen: true,
+      )..scriptsRead = <String, bool>{'en': true},
+    );
+    Finder chip() => find.byKey(const ValueKey<String>('filter-gesture'));
+    Finder row(String code) => find.byKey(ValueKey<String>('language-$code'));
+
+    testWidgets('is absent with no sign language listed', (tester) async {
+      await pumpLanguages(tester);
+      expect(chip(), findsNothing);
+    });
+
+    testWidgets('shows with ASL listed, keeps only sign languages, and Speak '
+        'and Hear leave them out', (tester) async {
+      await pumpLanguages(tester, state: withSign(const <String>['en', 'ase']));
+      expect(chip(), findsOneWidget);
+      expect(row('ase'), findsOneWidget);
+      await tapKey(tester, 'filter-gesture');
+      expect(row('ase'), findsOneWidget);
+      expect(row('es'), findsNothing);
+      expect(row('en'), findsNothing);
+      await tapKey(tester, 'filter-gesture');
+      for (final f in <String>['speak', 'hear']) {
+        await tapKey(tester, 'filter-$f');
+        expect(row('ase'), findsNothing, reason: '$f leaves out signs');
+        await tapKey(tester, 'filter-$f');
+      }
+      expect(tester.takeException(), isNull);
+    });
   });
 }

@@ -582,8 +582,8 @@ class ModeColors extends ThemeExtension<ModeColors> {
   final ModeColor reading;
   final ModeColor pair;
 
-  /// A sign language's one skill, Gestures: red, apart from the seven above,
-  /// in the same tones.
+  /// A sign language's one skill, Gestures: red, apart from the others
+  /// above, in the same tones.
   final ModeColor gesture;
 
   /// The colours for [skill].
