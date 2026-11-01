@@ -691,11 +691,14 @@ units:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
   - decks: ["bn-reading-law"]
     words: 0
-  - planned: { id: "bn-verbs-4", theme: "verbs-4", words: 65 }
+  - decks: ["bn-verbs-4", "bn-verbs-4-sentences", "*"]
+    words: 65
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - decks: ["bn-reading-verbs-4"]
+    words: 0
   - planned: { id: "bn-grammar-passive", grammar: "passive" }
     listening_passages:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
