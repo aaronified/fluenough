@@ -261,12 +261,15 @@ units:
       - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
     reading_passages:
       - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
-  - planned: { id: "kn-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["kn-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "kn-festivals", theme: "festivals", words: 40 }
+  - decks: ["kn-festivals", "*"]
+    words: 40
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
