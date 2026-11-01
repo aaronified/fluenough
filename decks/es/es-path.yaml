@@ -206,7 +206,9 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "es-grammar-comparison", grammar: "comparison" }
+  - decks: ["es-grammar-comparison", "es-reading-comparison"]
+    words: 0
+    grammar: ["comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-comparison"
+name: "Reading: two cities and two phones"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that compare things with más, menos and tan. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-two-cities"
+    title: "Two cities"
+    theme: "geography"
+    sentences:
+      - text: "Madrid es más grande que Toledo."
+      - text: "Toledo es más tranquila que Madrid."
+      - text: "El tren es tan rápido como el metro."
+      - text: "Madrid es la ciudad más cara."
+    questions:
+      - id: "es-1450"
+        prompt: { en: "Which city is bigger?" }
+        options:
+          - { en: "Toledo" }
+          - { en: "Neither" }
+          - { en: "Madrid" }
+        answer: 3
+      - id: "es-1451"
+        prompt: { en: "Which city is quieter?" }
+        options:
+          - { en: "Madrid" }
+          - { en: "Toledo" }
+          - { en: "Both" }
+        answer: 2
+      - id: "es-1452"
+        prompt: { en: "What is said about the train and the metro?" }
+        options:
+          - { en: "They are equally fast" }
+          - { en: "The train is slower" }
+          - { en: "The metro is cheaper" }
+        answer: 1
+  - id: "es-two-phones"
+    title: "Two phones"
+    theme: "geography"
+    sentences:
+      - text: "Este teléfono es más barato que aquel."
+      - text: "Aquel tiene una pantalla mejor."
+      - text: "El segundo teléfono es menos caro."
+      - text: "Es el más bonito de la tienda."
+    questions:
+      - id: "es-1453"
+        prompt: { en: "Which phone is cheaper?" }
+        options:
+          - { en: "The second one" }
+          - { en: "Both the same" }
+          - { en: "The first one" }
+        answer: 3
+      - id: "es-1454"
+        prompt: { en: "Which phone has a better screen?" }
+        options:
+          - { en: "The first" }
+          - { en: "The second" }
+          - { en: "Neither" }
+        answer: 2
+      - id: "es-1455"
+        prompt: { en: "What is said about the most beautiful phone?" }
+        options:
+          - { en: "It is at home" }
+          - { en: "It is the prettiest one in the shop" }
+          - { en: "It is too big" }
+        answer: 2

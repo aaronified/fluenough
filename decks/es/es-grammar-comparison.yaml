@@ -1,0 +1,46 @@
+schema: 1
+id: "es-grammar-comparison"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["más", "menos", "tan", "el más"]
+  entries:
+    - lemma: "caro"
+      ipa: "ˈkaɾo"
+      forms: { "más": "más caro que", "menos": "menos caro que", "tan": "tan caro como", "el más": "el más caro" }
+      ipas: { "más": "mas ˈkaɾo ke", "menos": "ˈmenos ˈkaɾo ke", "tan": "tan ˈkaɾo ˈkomo", "el más": "el mas ˈkaɾo" }
+    - lemma: "barato"
+      ipa: "baˈɾato"
+      forms: { "más": "más barato que", "menos": "menos barato que", "tan": "tan barato como", "el más": "el más barato" }
+      ipas: { "más": "mas baˈɾato ke", "menos": "ˈmenos baˈɾato ke", "tan": "tan baˈɾato ˈkomo", "el más": "el mas baˈɾato" }
+    - lemma: "grande"
+      ipa: "ˈɡɾande"
+      forms: { "más": "más grande que", "menos": "menos grande que", "tan": "tan grande como", "el más": "el más grande" }
+      ipas: { "más": "mas ˈɡɾande ke", "menos": "ˈmenos ˈɡɾande ke", "tan": "tan ˈɡɾande ˈkomo", "el más": "el mas ˈɡɾande" }
+    - lemma: "pequeño"
+      ipa: "peˈkeɲo"
+      forms: { "más": "más pequeño que", "menos": "menos pequeño que", "tan": "tan pequeño como", "el más": "el más pequeño" }
+      ipas: { "más": "mas peˈkeɲo ke", "menos": "ˈmenos peˈkeɲo ke", "tan": "tan peˈkeɲo ˈkomo", "el más": "el mas peˈkeɲo" }
+    - lemma: "rápido"
+      ipa: "ˈrapido"
+      forms: { "más": "más rápido que", "menos": "menos rápido que", "tan": "tan rápido como", "el más": "el más rápido" }
+      ipas: { "más": "mas ˈrapido ke", "menos": "ˈmenos ˈrapido ke", "tan": "tan ˈrapido ˈkomo", "el más": "el mas ˈrapido" }
+    - lemma: "bueno"
+      ipa: "ˈbweno"
+      forms: { "más": "mejor que", "menos": "menos bueno que", "tan": "tan bueno como", "el más": "el mejor" }
+      ipas: { "más": "meˈxoɾ ke", "menos": "ˈmenos ˈbweno ke", "tan": "tan ˈbweno ˈkomo", "el más": "el meˈxoɾ" }
+    - lemma: "malo"
+      ipa: "ˈmalo"
+      forms: { "más": "peor que", "menos": "menos malo que", "tan": "tan malo como", "el más": "el peor" }
+      ipas: { "más": "peˈoɾ ke", "menos": "ˈmenos ˈmalo ke", "tan": "tan ˈmalo ˈkomo", "el más": "el peˈoɾ" }
+    - lemma: "alto"
+      ipa: "ˈalto"
+      forms: { "más": "más alto que", "menos": "menos alto que", "tan": "tan alto como", "el más": "el más alto" }
+      ipas: { "más": "mas ˈalto ke", "menos": "ˈmenos ˈalto ke", "tan": "tan ˈalto ˈkomo", "el más": "el mas ˈalto" }
+    - lemma: "joven"
+      ipa: "ˈxoben"
+      forms: { "más": "más joven que", "menos": "menos joven que", "tan": "tan joven como", "el más": "el más joven" }
+      ipas: { "más": "mas ˈxoben ke", "menos": "ˈmenos ˈxoben ke", "tan": "tan ˈxoben ˈkomo", "el más": "el mas ˈxoben" }
