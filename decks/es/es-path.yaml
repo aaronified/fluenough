@@ -303,7 +303,8 @@ units:
       - { id: "spanish-speaking-map", text: { "en": "A map caption: where Spanish is spoken" } }
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
-  - planned: { id: "es-health", theme: "health", words: 55 }
+  - decks: ["es-health", "es-health-sentences", "es-reading-health", "*"]
+    words: 34
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
