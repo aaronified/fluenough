@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-environment"
+name: "Reading: environment"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short talk at school about waste and water, and a notice about birds. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-environment-talk"
+    title: "A talk on the environment"
+    theme: "environment"
+    sentences:
+      - {"text": "पर्यावरण बचाना हम सबकी ज़िम्मेदारी है।", "reading": "paryāvraṇ bacānā ham sabkī zimmēdārī hai.", "ipa": "pərjaːʋrəɳ bətʃaːnaː ɦəm səbkiː zɪmmeːd̪aːriː ɦɛː"}
+      - {"text": "प्लास्टिक का कूड़ा नदी में मत फेंको।", "reading": "plāsṭik kā kūṛā nadī mēm̐ mat phēṅkō.", "ipa": "plaːsʈɪk kaː kuːɽaː nəd̪iː mẽː mət̪ pʰeːŋkoː"}
+      - {"text": "पेड़ों की कटाई से जानवर बेघर हो जाते हैं।", "reading": "pēṛōm̐ kī kaṭāī sē jānvar bēghar hō jātē haim̐.", "ipa": "peːɽõː kiː kəʈaːiː seː dʒaːnʋər beːɡʱər ɦoː dʒaːt̪eː ɦɛ̃ː"}
+      - {"text": "हरित ऊर्जा और पुनर्चक्रण से प्रदूषण कम होता है।", "reading": "harit ūrjā aur punarcakraṇ sē pradūśaṇ kam hōtā hai.", "ipa": "ɦərɪt̪ uːrdʒaː ɔːr pʊnərtʃəkrəɳ seː prəd̪uːʃəɳ kəm ɦoːt̪aː ɦɛː"}
+    questions:
+      - {"id": "hi-2389", "prompt": {"en": "Saving the environment is everyone's duty."}, "answer": true}
+      - {"id": "hi-2390", "prompt": {"en": "What should not be thrown in the river?"}, "options": [{"en": "Plastic waste"}, {"en": "Flowers"}], "answer": 1}
+      - {"id": "hi-2391", "prompt": {"en": "Cutting trees helps animals."}, "answer": false}
+  - id: "hi-environment-notice"
+    title: "A notice about birds"
+    theme: "environment"
+    sentences:
+      - {"text": "पक्षियों के लिए पानी रखें।", "reading": "pakśiyōm̐ kē liē pānī rakhēm̐.", "ipa": "pəkʃɪjõː keː lɪeː paːniː rəkʰẽː"}
+      - {"text": "जंगल का संरक्षण करें, वन्य जीव सुरक्षित रहेंगे।", "reading": "jaṅgal kā saṁrakśaṇ karēm̐, vany jīv surakśit rahēṅgē.", "ipa": "dʒəŋɡəl kaː sə̃rəkʃəɳ kərẽː ʋənj dʒiːʋ sʊrəkʃɪt̪ rəɦeːŋɡeː"}
+      - {"text": "ओज़ोन परत की सुरक्षा के लिए गैस कम करें।", "reading": "ōzōn parat kī surakśā kē liē gais kam karēm̐.", "ipa": "oːzoːn pərət̪ kiː sʊrəkʃaː keː lɪeː ɡɛːs kəm kərẽː"}
+      - {"text": "लुप्त होते जीवों की रक्षा सबका कर्तव्य है।", "reading": "lupt hōtē jīvōm̐ kī rakśā sabkā kartavy hai.", "ipa": "lʊpt̪ ɦoːt̪eː dʒiːʋõː kiː rəkʃaː səbkaː kərt̪əʋj ɦɛː"}
+    questions:
+      - {"id": "hi-2392", "prompt": {"en": "Water should be kept for birds."}, "answer": true}
+      - {"id": "hi-2393", "prompt": {"en": "What will remain safe?"}, "options": [{"en": "Wildlife"}, {"en": "Factories"}], "answer": 1}
+      - {"id": "hi-2394", "prompt": {"en": "Gas should be increased for the ozone."}, "answer": false}

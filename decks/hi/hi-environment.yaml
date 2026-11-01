@@ -1,0 +1,318 @@
+schema: 1
+id: "hi-environment"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "environment"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2368"
+    target: "पर्यावरण"
+    target_scripts: {"perso_arabic": "ماحول"}
+    reading: "paryāvraṇ"
+    ipa: "pərjaːʋrəɳ"
+    phonetic: "[pərjaːʋrəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पर्यावरण की रक्षा करो।", "reading": "paryāvraṇ kī rakśā karō.", "ipa": "pərjaːʋrəɳ kiː rəkʃaː kəroː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "रक्षा", "base": "रक्षा", "reading": "rakśā"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "हमारा पर्यावरण साफ़ होना चाहिए।", "reading": "hamārā paryāvraṇ sāf hōnā cāhiē.", "ipa": "ɦəmaːraː pərjaːʋrəɳ saːf ɦoːnaː tʃaːɦɪeː", "bases": [{"word": "हमारा", "ref": "hi-0756"}, {"word": "साफ़", "ref": "hi-0901"}, {"word": "होना", "ref": "hi-0780"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+  - id: "hi-2369"
+    target: "प्रदूषण"
+    target_scripts: {"perso_arabic": "آلودگی"}
+    reading: "pradūśaṇ"
+    ipa: "prəd̪uːʃəɳ"
+    phonetic: "[prəd̪uːʃəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शहर में वायु प्रदूषण बढ़ रहा है।", "reading": "śahar mēm̐ vāyu pradūśaṇ baṛh rahā hai.", "ipa": "ʃəɦər mẽː ʋaːjʊ prəd̪uːʃəɳ bəɽʱ rəɦaː ɦɛː", "bases": [{"word": "शहर", "ref": "hi-0195"}, {"word": "में", "ref": "hi-0274"}, {"word": "वायु", "base": "वायु", "reading": "vāyu"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रदूषण कम करो।", "reading": "pradūśaṇ kam karō.", "ipa": "prəd̪uːʃəɳ kəm kəroː", "bases": [{"word": "कम", "ref": "hi-0105"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2370"
+    target: "कूड़ा"
+    target_scripts: {"perso_arabic": "کوڑا"}
+    reading: "kūṛā"
+    ipa: "kuːɽaː"
+    phonetic: "[kuːɽaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सड़क पर कूड़ा पड़ा है।", "reading": "saṛak par kūṛā paṛā hai.", "ipa": "səɽək pər kuːɽaː pəɽaː ɦɛː", "bases": [{"word": "सड़क", "ref": "hi-0298"}, {"word": "पर", "ref": "hi-0275"}, {"word": "पड़ा", "ref": "hi-0115"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कूड़ा अलग रखो।", "reading": "kūṛā alag rakhō.", "ipa": "kuːɽaː ələɡ rəkʰoː", "bases": [{"word": "अलग", "ref": "hi-1985"}, {"word": "रखो", "ref": "hi-0950"}]}
+  - id: "hi-2371"
+    target: "कटाई"
+    target_scripts: {"perso_arabic": "کٹائی"}
+    reading: "kaṭāī"
+    ipa: "kəʈaːiː"
+    phonetic: "[kəʈaːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पेड़ों की कटाई मत करो।", "reading": "pēṛōm̐ kī kaṭāī mat karō.", "ipa": "peːɽõː kiː kəʈaːiː mət̪ kəroː", "bases": [{"word": "पेड़ों", "ref": "hi-1926"}, {"word": "की", "ref": "hi-0279"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "फ़सल की कटाई अप्रैल में होती है।", "reading": "fasal kī kaṭāī aprail mēm̐ hōtī hai.", "ipa": "fəsəl kiː kəʈaːiː əprɛːl mẽː ɦoːt̪iː ɦɛː", "bases": [{"word": "फ़सल", "base": "फ़सल", "reading": "fasal"}, {"word": "की", "ref": "hi-0279"}, {"word": "अप्रैल", "ref": "hi-0323"}, {"word": "में", "ref": "hi-0274"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2372"
+    target: "जानवर"
+    target_scripts: {"perso_arabic": "جانور"}
+    reading: "jānvar"
+    ipa: "dʒaːnʋər"
+    phonetic: "[dʒaːnʋər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "जंगल में कई जानवर रहते हैं।", "reading": "jaṅgal mēm̐ kaī jānvar rahtē haim̐.", "ipa": "dʒəŋɡəl mẽː kəiː dʒaːnʋər rəɦt̪eː ɦɛ̃ː", "bases": [{"word": "जंगल", "ref": "hi-1066"}, {"word": "में", "ref": "hi-0274"}, {"word": "कई", "base": "कई", "reading": "kaī"}, {"word": "रहते", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "जानवरों से प्यार करो।", "reading": "jānvrōm̐ sē pyār karō.", "ipa": "dʒaːnʋrõː seː pjaːr kəroː", "bases": [{"word": "जानवरों", "base": "जानवर", "reading": "jānvar"}, {"word": "से", "ref": "hi-0276"}, {"word": "प्यार", "ref": "hi-0475"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2373"
+    target: "पक्षी"
+    target_scripts: {"perso_arabic": "پرندہ"}
+    reading: "pakśī"
+    ipa: "pəkʃiː"
+    phonetic: "[pəkʃiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आसमान में कई पक्षी उड़ रहे हैं।", "reading": "āsmān mēm̐ kaī pakśī uṛ rahē haim̐.", "ipa": "aːsmaːn mẽː kəiː pəkʃiː ʊɽ rəɦeː ɦɛ̃ː", "bases": [{"word": "आसमान", "ref": "hi-1261"}, {"word": "में", "ref": "hi-0274"}, {"word": "कई", "base": "कई", "reading": "kaī"}, {"word": "उड़", "ref": "hi-1956"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "पक्षियों को दाना डालो।", "reading": "pakśiyōm̐ kō dānā ḍālō.", "ipa": "pəkʃɪjõː koː d̪aːnaː ɖaːloː", "bases": [{"word": "पक्षियों", "base": "पक्षी", "reading": "pakśī"}, {"word": "को", "ref": "hi-0277"}, {"word": "दाना", "base": "दाना", "reading": "dānā"}, {"word": "डालो", "ref": "hi-0941"}]}
+  - id: "hi-2374"
+    target: "विविधता"
+    target_scripts: {"perso_arabic": "تنوع"}
+    reading: "vividhtā"
+    ipa: "ʋɪʋɪd̪ʱt̪aː"
+    phonetic: "[ʋɪʋɪd̪ʱt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "भारत में भाषाओं की विविधता है।", "reading": "bhārat mēm̐ bhāśāōm̐ kī vividhtā hai.", "ipa": "bʱaːrət̪ mẽː bʱaːʃaːõː kiː ʋɪʋɪd̪ʱt̪aː ɦɛː", "bases": [{"word": "भारत", "base": "भारत", "reading": "bhārat"}, {"word": "में", "ref": "hi-0274"}, {"word": "भाषाओं", "ref": "hi-0197"}, {"word": "की", "ref": "hi-0279"}, {"word": "विविधता", "base": "विविधता", "reading": "vividhtā"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जैव विविधता बचाओ।", "reading": "jaiv vividhtā bacāō.", "ipa": "dʒɛːʋ ʋɪʋɪd̪ʱt̪aː bətʃaːoː", "bases": [{"word": "जैव", "base": "जैव", "reading": "jaiv"}, {"word": "विविधता", "base": "विविधता", "reading": "vividhtā"}, {"word": "बचाओ", "ref": "hi-1825"}]}
+  - id: "hi-2375"
+    target: "वन्य"
+    target_scripts: {"perso_arabic": "جنگلی"}
+    reading: "vany"
+    ipa: "ʋənj"
+    phonetic: "[ʋənj]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वन्य जीव सुरक्षित रखो।", "reading": "vany jīv surakśit rakhō.", "ipa": "ʋənj dʒiːʋ sʊrəkʃɪt̪ rəkʰoː", "bases": [{"word": "जीव", "ref": "hi-2376"}, {"word": "सुरक्षित", "ref": "hi-1911"}, {"word": "रखो", "ref": "hi-0950"}]}
+      - {"target": "यह वन्य क्षेत्र है।", "reading": "yah vany kśētr hai.", "ipa": "jəɦ ʋənj kʃeːt̪r ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "क्षेत्र", "ref": "hi-2063"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2376"
+    target: "जीव"
+    target_scripts: {"perso_arabic": "جیو"}
+    reading: "jīv"
+    ipa: "dʒiːʋ"
+    phonetic: "[dʒiːʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हर जीव का जीवन कीमती है।", "reading": "har jīv kā jīvan kīmtī hai.", "ipa": "ɦər dʒiːʋ kaː dʒiːʋən kiːmt̪iː ɦɛː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "जीव", "base": "जीव", "reading": "jīv"}, {"word": "का", "ref": "hi-0279"}, {"word": "जीवन", "base": "जीवन", "reading": "jīvan"}, {"word": "कीमती", "ref": "hi-1984"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जीवों को मत सताओ।", "reading": "jīvōm̐ kō mat satāō.", "ipa": "dʒiːʋõː koː mət̪ sət̪aːoː", "bases": [{"word": "जीवों", "base": "जीव", "reading": "jīv"}, {"word": "को", "ref": "hi-0277"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "सताओ", "base": "सताना", "reading": "satānā"}]}
+  - id: "hi-2377"
+    target: "संरक्षण"
+    target_scripts: {"perso_arabic": "تحفظ"}
+    reading: "saṁrakśaṇ"
+    ipa: "sə̃rəkʃəɳ"
+    phonetic: "[sə̃rəkʃəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "जंगलों का संरक्षण ज़रूरी है।", "reading": "jaṅgalōm̐ kā saṁrakśaṇ zarūrī hai.", "ipa": "dʒəŋɡəlõː kaː sə̃rəkʃəɳ zəruːriː ɦɛː", "bases": [{"word": "जंगलों", "ref": "hi-1066"}, {"word": "का", "ref": "hi-0279"}, {"word": "संरक्षण", "base": "संरक्षण", "reading": "saṁrakśaṇ"}, {"word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पानी का संरक्षण करो।", "reading": "pānī kā saṁrakśaṇ karō.", "ipa": "paːniː kaː sə̃rəkʃəɳ kəroː", "bases": [{"word": "पानी", "ref": "hi-0333"}, {"word": "का", "ref": "hi-0279"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2378"
+    target: "पवन"
+    target_scripts: {"perso_arabic": "ہوا"}
+    reading: "pavan"
+    ipa: "pəʋən"
+    phonetic: "[pəʋən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ठंडी पवन चल रही है।", "reading": "ṭhaṇḍī pavan cal rahī hai.", "ipa": "ʈʰəɳɖiː pəʋən tʃəl rəɦiː ɦɛː", "bases": [{"word": "ठंडी", "ref": "hi-0911"}, {"word": "चल", "ref": "hi-0801"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "पवन ऊर्जा से बिजली बनती है।", "reading": "pavan ūrjā sē bijlī bantī hai.", "ipa": "pəʋən uːrdʒaː seː bɪdʒliː bənt̪iː ɦɛː", "bases": [{"word": "ऊर्जा", "ref": "hi-2319"}, {"word": "से", "ref": "hi-0276"}, {"word": "बिजली", "ref": "hi-1265"}, {"word": "बनती", "ref": "hi-1833"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2379"
+    target: "बंजर"
+    target_scripts: {"perso_arabic": "بنجر"}
+    reading: "bañjar"
+    ipa: "bəɲdʒər"
+    phonetic: "[bəɲdʒər]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह ज़मीन बंजर है।", "reading": "yah zamīn bañjar hai.", "ipa": "jəɦ zəmiːn bəɲdʒər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "ज़मीन", "base": "ज़मीन", "reading": "zamīn"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बंजर धरती पर पेड़ उगाओ।", "reading": "bañjar dhartī par pēṛ ugāō.", "ipa": "bəɲdʒər d̪ʱərt̪iː pər peːɽ ʊɡaːoː", "bases": [{"word": "धरती", "ref": "hi-1938"}, {"word": "पर", "ref": "hi-0275"}, {"word": "पेड़", "ref": "hi-1926"}, {"word": "उगाओ", "ref": "hi-1838"}]}
+  - id: "hi-2380"
+    target: "ग्लोबल"
+    target_scripts: {"perso_arabic": "عالمی"}
+    reading: "glōbal"
+    ipa: "ɡloːbəl"
+    phonetic: "[ɡloːbəl]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह ग्लोबल समस्या है।", "reading": "yah glōbal samasyā hai.", "ipa": "jəɦ ɡloːbəl səməsjaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "समस्या", "base": "समस्या", "reading": "samasyā"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ग्लोबल तापमान बढ़ रहा है।", "reading": "glōbal tāpmān baṛh rahā hai.", "ipa": "ɡloːbəl t̪aːpmaːn bəɽʱ rəɦaː ɦɛː", "bases": [{"word": "तापमान", "ref": "hi-1278"}, {"word": "बढ़", "base": "बढ़ना", "reading": "baṛhnā"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2381"
+    target: "ओज़ोन"
+    target_scripts: {"perso_arabic": "اوزون"}
+    reading: "ōzōn"
+    ipa: "oːzoːn"
+    phonetic: "[oːzoːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ओज़ोन परत को नुकसान हुआ है।", "reading": "ōzōn parat kō nuksān huā hai.", "ipa": "oːzoːn pərət̪ koː nʊksaːn ɦʊaː ɦɛː", "bases": [{"word": "परत", "base": "परत", "reading": "parat"}, {"word": "को", "ref": "hi-0277"}, {"word": "नुकसान", "base": "नुकसान", "reading": "nuksān"}, {"word": "हुआ", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ओज़ोन की रक्षा करो।", "reading": "ōzōn kī rakśā karō.", "ipa": "oːzoːn kiː rəkʃaː kəroː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "रक्षा", "base": "रक्षा", "reading": "rakśā"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2382"
+    target: "पुनर्चक्रण"
+    target_scripts: {"perso_arabic": "ری سائیکلنگ"}
+    reading: "punarcakraṇ"
+    ipa: "pʊnərtʃəkrəɳ"
+    phonetic: "[pʊnərtʃəkrəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "प्लास्टिक का पुनर्चक्रण करो।", "reading": "plāsṭik kā punarcakraṇ karō.", "ipa": "plaːsʈɪk kaː pʊnərtʃəkrəɳ kəroː", "bases": [{"word": "प्लास्टिक", "ref": "hi-1369"}, {"word": "का", "ref": "hi-0279"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "पुनर्चक्रण से कचरा कम होता है।", "reading": "punarcakraṇ sē kacrā kam hōtā hai.", "ipa": "pʊnərtʃəkrəɳ seː kətʃraː kəm ɦoːt̪aː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "कचरा", "ref": "hi-1707"}, {"word": "कम", "ref": "hi-0105"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2383"
+    target: "परिवर्तन"
+    target_scripts: {"perso_arabic": "تبدیلی"}
+    reading: "parivartan"
+    ipa: "pərɪʋərt̪ən"
+    phonetic: "[pərɪʋərt̪ən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मौसम में परिवर्तन हो रहा है।", "reading": "mausam mēm̐ parivartan hō rahā hai.", "ipa": "mɔːsəm mẽː pərɪʋərt̪ən ɦoː rəɦaː ɦɛː", "bases": [{"word": "मौसम", "ref": "hi-1253"}, {"word": "में", "ref": "hi-0274"}, {"word": "हो", "ref": "hi-0780"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जीवन में परिवर्तन आया।", "reading": "jīvan mēm̐ parivartan āyā.", "ipa": "dʒiːʋən mẽː pərɪʋərt̪ən aːjaː", "bases": [{"word": "जीवन", "base": "जीवन", "reading": "jīvan"}, {"word": "में", "ref": "hi-0274"}, {"word": "आया", "ref": "hi-0778"}]}
+  - id: "hi-2384"
+    target: "स्वच्छ"
+    target_scripts: {"perso_arabic": "صاف"}
+    reading: "svacch"
+    ipa: "sʋətʃtʃʰ"
+    phonetic: "[sʋətʃtʃʰ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "स्वच्छ हवा सबका हक है।", "reading": "svacch havā sabkā hak hai.", "ipa": "sʋətʃtʃʰ ɦəʋaː səbkaː ɦək ɦɛː", "bases": [{"word": "हवा", "ref": "hi-1257"}, {"word": "सबका", "ref": "hi-0054"}, {"word": "हक", "base": "हक", "reading": "hak"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "नदी का पानी स्वच्छ रखो।", "reading": "nadī kā pānī svacch rakhō.", "ipa": "nəd̪iː kaː paːniː sʋətʃtʃʰ rəkʰoː", "bases": [{"word": "नदी", "ref": "hi-1064"}, {"word": "का", "ref": "hi-0279"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "रखो", "ref": "hi-0950"}]}
+  - id: "hi-2385"
+    target: "दूषित"
+    target_scripts: {"perso_arabic": "آلودہ"}
+    reading: "dūśit"
+    ipa: "d̪uːʃɪt̪"
+    phonetic: "[d̪uːʃɪt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह पानी दूषित है।", "reading": "yah pānī dūśit hai.", "ipa": "jəɦ paːniː d̪uːʃɪt̪ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "पानी", "ref": "hi-0333"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "दूषित हवा से सेहत खराब होती है।", "reading": "dūśit havā sē sēhat kharāb hōtī hai.", "ipa": "d̪uːʃɪt̪ ɦəʋaː seː seːɦət̪ kʰəraːb ɦoːt̪iː ɦɛː", "bases": [{"word": "हवा", "ref": "hi-1257"}, {"word": "से", "ref": "hi-0276"}, {"word": "सेहत", "ref": "hi-1450"}, {"word": "खराब", "ref": "hi-1876"}, {"word": "होती", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2386"
+    target: "सुरक्षा"
+    target_scripts: {"perso_arabic": "حفاظت"}
+    reading: "surakśā"
+    ipa: "sʊrəkʃaː"
+    phonetic: "[sʊrəkʃaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चों की सुरक्षा ज़रूरी है।", "reading": "baccōm̐ kī surakśā zarūrī hai.", "ipa": "bətʃtʃõː kiː sʊrəkʃaː zəruːriː ɦɛː", "bases": [{"word": "बच्चों", "ref": "hi-0111"}, {"word": "की", "ref": "hi-0279"}, {"word": "सुरक्षा", "base": "सुरक्षा", "reading": "surakśā"}, {"word": "ज़रूरी", "base": "ज़रूरी", "reading": "zarūrī"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जंगल की सुरक्षा करो।", "reading": "jaṅgal kī surakśā karō.", "ipa": "dʒəŋɡəl kiː sʊrəkʃaː kəroː", "bases": [{"word": "जंगल", "ref": "hi-1066"}, {"word": "की", "ref": "hi-0279"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2387"
+    target: "लुप्त"
+    target_scripts: {"perso_arabic": "ناپید"}
+    reading: "lupt"
+    ipa: "lʊpt̪"
+    phonetic: "[lʊpt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह जानवर अब लुप्त है।", "reading": "yah jānvar ab lupt hai.", "ipa": "jəɦ dʒaːnʋər əb lʊpt̪ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "जानवर", "ref": "hi-2372"}, {"word": "अब", "ref": "hi-1704"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कई पक्षी लुप्त हो गए हैं।", "reading": "kaī pakśī lupt hō gaē haim̐.", "ipa": "kəiː pəkʃiː lʊpt̪ ɦoː ɡəeː ɦɛ̃ː", "bases": [{"word": "कई", "base": "कई", "reading": "kaī"}, {"word": "पक्षी", "ref": "hi-2373"}, {"word": "लुप्त", "base": "लुप्त", "reading": "lupt"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गए", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2388"
+    target: "हरित"
+    target_scripts: {"perso_arabic": "سبز"}
+    reading: "harit"
+    ipa: "ɦərɪt̪"
+    phonetic: "[ɦərɪt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हरित ऊर्जा का प्रयोग करो।", "reading": "harit ūrjā kā prayōg karō.", "ipa": "ɦərɪt̪ uːrdʒaː kaː prəjoːɡ kəroː", "bases": [{"word": "ऊर्जा", "ref": "hi-2319"}, {"word": "का", "ref": "hi-0279"}, {"word": "प्रयोग", "ref": "hi-0606"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "यह हरित शहर है।", "reading": "yah harit śahar hai.", "ipa": "jəɦ ɦərɪt̪ ʃəɦər ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "शहर", "ref": "hi-0195"}, {"word": "है", "ref": "hi-0780"}]}
