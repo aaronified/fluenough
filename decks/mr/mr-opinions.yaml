@@ -1,0 +1,244 @@
+schema: 1
+id: "mr-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1362"
+    target: "मत"
+    reading: "mat"
+    ipa: "mət̪"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मत", reading: "mat" }] }
+    examples:
+      - { target: "माझं मत वेगळं आहे.", reading: "mājham̐ mat vegḷam̐ āhe.", ipa: "madzʱə̃ mət̪ ʋeɡɭə̃ aɦe", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "वेगळं", base: "वेगळा", reading: "vegḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तुझं मत काय आहे?", reading: "tujham̐ mat kāy āhe?", ipa: "t̪udzʱə̃ mət̪ kaj aɦe", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1363"
+    target: "सहमत"
+    reading: "sahmat"
+    ipa: "səɦmət̪"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सहमत", reading: "sahmat" }] }
+    examples:
+      - { target: "मी तुझ्याशी सहमत आहे.", reading: "mi tujhyāśi sahmat āhe.", ipa: "mi t̪udʒʱjaʃi səɦmət̪ aɦe", bases: [{ word: "तुझ्याशी", ref: "mr-0675" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सगळे सहमत झाले.", reading: "sagḷe sahmat jhāle.", ipa: "səɡɭe səɦmət̪ dzʱale", bases: [{ word: "सगळे", ref: "mr-0684" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1364"
+    target: "असहमत"
+    reading: "ashmat"
+    ipa: "əsɦmət̪"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "असहमत", reading: "ashmat" }] }
+    examples:
+      - { target: "मी या विचाराशी असहमत आहे.", reading: "mi yā vicārāśi ashmat āhe.", ipa: "mi ja ʋitsaraʃi əsɦmət̪ aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "विचाराशी", ref: "mr-1365" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ती असहमत होती.", reading: "ti ashmat hoti.", ipa: "t̪i əsɦmət̪ ɦot̪i", bases: [{ word: "होती", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1365"
+    target: "विचार"
+    reading: "vicār"
+    ipa: "ʋitsar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विचार", reading: "vicār" }] }
+    examples:
+      - { target: "तुझा विचार चांगला आहे.", reading: "tujhā vicār cāṅgalā āhe.", ipa: "t̪udzʱa ʋitsar tsaŋɡəla aɦe", bases: [{ word: "तुझा", ref: "mr-0675" }, { word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या विषयावर विचार करा.", reading: "yā viṣyāvar vicār karā.", ipa: "ja ʋiʂjaʋər ʋitsar kəra", bases: [{ word: "या", ref: "mr-0679" }, { word: "विषयावर", base: "विषय", reading: "viṣay" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1366"
+    target: "पटणे"
+    reading: "paṭṇe"
+    ipa: "pəʈɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पटणे", reading: "paṭṇe" }] }
+    examples:
+      - { target: "तुझं म्हणणं मला पटलं.", reading: "tujham̐ mhaṇṇam̐ malā paṭlam̐.", ipa: "t̪udzʱə̃ mɦəɳɳə̃ məla pəʈlə̃", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "मला", ref: "mr-0080" }, { word: "पटलं", ref: "mr-1366" }] }
+      - { target: "हे उत्तर पटत नाही.", reading: "he uttar paṭat nāhi.", ipa: "ɦe ut̪t̪ər pəʈət̪ naɦi", bases: [{ word: "हे", ref: "mr-0679" }, { word: "पटत", ref: "mr-1366" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1367"
+    target: "वाद"
+    reading: "vād"
+    ipa: "ʋad̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाद", reading: "vād" }] }
+    examples:
+      - { target: "दोघांमध्ये वाद झाला.", reading: "doghāmmadhye vād jhālā.", ipa: "d̪oɡʱamməd̪ʱje ʋad̪ dzʱala", bases: [{ word: "दोघांमध्ये", base: "दोघे", reading: "doghe" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "वाद मिटवा.", reading: "vād miṭvā.", ipa: "ʋad̪ miʈʋa", bases: [{ word: "मिटवा", base: "मिटवणे", reading: "miṭvṇe" }] }
+  - id: "mr-1368"
+    target: "युक्तिवाद"
+    reading: "yuktivād"
+    ipa: "jukt̪iʋad̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "युक्तिवाद", reading: "yuktivād" }] }
+    examples:
+      - { target: "त्याचा युक्तिवाद पटण्यासारखा होता.", reading: "tyācā yuktivād paṭaṇyāsārkhā hotā.", ipa: "t̪jatsa jukt̪iʋad̪ pəʈəɳjasarkʰa ɦot̪a", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "पटण्यासारखा", ref: "mr-1366" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "युक्तिवाद चुकीचा आहे.", reading: "yuktivād cukicā āhe.", ipa: "jukt̪iʋad̪ tsukitsa aɦe", bases: [{ word: "चुकीचा", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1369"
+    target: "खात्री"
+    reading: "khātri"
+    ipa: "kʰat̪ri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खात्री", reading: "khātri" }] }
+    examples:
+      - { target: "मला खात्री आहे.", reading: "malā khātri āhe.", ipa: "məla kʰat̪ri aɦe", bases: [{ word: "मला", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खात्री करून घ्या.", reading: "khātri karun ghyā.", ipa: "kʰat̪ri kərun ɡʱja", bases: [{ word: "करून", ref: "mr-0712" }, { word: "घ्या", ref: "mr-0722" }] }
+  - id: "mr-1370"
+    target: "शक्यता"
+    reading: "śakyatā"
+    ipa: "ʃəkjət̪a"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शक्यता", reading: "śakyatā" }] }
+    examples:
+      - { target: "पाऊस येण्याची शक्यता आहे.", reading: "pāus yeṇyāci śakyatā āhe.", ipa: "paus jeɳjatʃi ʃəkjət̪a aɦe", bases: [{ word: "येण्याची", ref: "mr-0711" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ही शक्यता नाकारता येत नाही.", reading: "hi śakyatā nākārtā yet nāhi.", ipa: "ɦi ʃəkjət̪a nakart̪a jet̪ naɦi", bases: [{ word: "ही", ref: "mr-0679" }, { word: "नाकारता", base: "नाकारणे", reading: "nākārṇe" }, { word: "येत", ref: "mr-0711" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1371"
+    target: "कदाचित"
+    reading: "kadācit"
+    ipa: "kəd̪atʃit̪"
+    pos: "adverb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कदाचित", reading: "kadācit" }] }
+    examples:
+      - { target: "कदाचित उद्या येईल.", reading: "kadācit udyā yeil.", ipa: "kəd̪atʃit̪ ud̪ja jeil", bases: [{ word: "येईल", ref: "mr-0711" }] }
+      - { target: "कदाचित तो बरोबर असेल.", reading: "kadācit to barobar asel.", ipa: "kəd̪atʃit̪ t̪o bərobər əsel", bases: [{ word: "बरोबर", base: "बरोबर", reading: "barobar" }, { word: "असेल", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1372"
+    target: "खरं"
+    reading: "kharam̐"
+    ipa: "kʰərə̃"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खरं", reading: "kharam̐" }] }
+    examples:
+      - { target: "ते खरं आहे.", reading: "te kharam̐ āhe.", ipa: "t̪e kʰərə̃ aɦe", bases: [{ word: "ते", ref: "mr-0676" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खरं सांग.", reading: "kharam̐ sāṅg.", ipa: "kʰərə̃ saŋɡ", bases: [{ word: "सांग", ref: "mr-0720" }] }
+  - id: "mr-1373"
+    target: "खोटं"
+    reading: "khoṭam̐"
+    ipa: "kʰoʈə̃"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खोटं", reading: "khoṭam̐" }] }
+    examples:
+      - { target: "हे खोटं आहे.", reading: "he khoṭam̐ āhe.", ipa: "ɦe kʰoʈə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खोटं बोलू नको.", reading: "khoṭam̐ bolu nako.", ipa: "kʰoʈə̃ bolu nəko", bases: [{ word: "बोलू", ref: "mr-0713" }, { word: "नको", ref: "mr-0413" }] }
+  - id: "mr-1374"
+    target: "परिणाम"
+    reading: "pariṇām"
+    ipa: "pəriɳam"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "परिणाम", reading: "pariṇām" }] }
+    examples:
+      - { target: "याचा परिणाम वाईट झाला.", reading: "yācā pariṇām vāiṭ jhālā.", ipa: "jatsa pəriɳam ʋaiʈ dzʱala", bases: [{ word: "याचा", ref: "mr-0679" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "चांगल्या परिणामासाठी मेहनत करा.", reading: "cāṅgalyā pariṇāmāsāṭhi mehnat karā.", ipa: "tsaŋɡəlja pəriɳamasaʈʰi meɦnət̪ kəra", bases: [{ word: "चांगल्या", ref: "mr-0759" }, { word: "परिणामासाठी", ref: "mr-1374" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1375"
+    target: "महत्त्व"
+    reading: "mahattv"
+    ipa: "məɦət̪t̪ʋ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "महत्त्व", reading: "mahattv" }] }
+    examples:
+      - { target: "शिक्षणाचं महत्त्व मोठं आहे.", reading: "śikṣaṇācam̐ mahattv moṭham̐ āhe.", ipa: "ʃikʂəɳatsə̃ məɦət̪t̪ʋ moʈʰə̃ aɦe", bases: [{ word: "शिक्षणाचं", base: "शिक्षण", reading: "śikṣaṇ" }, { word: "मोठं", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या गोष्टीला महत्त्व द्या.", reading: "yā goṣṭilā mahattv dyā.", ipa: "ja ɡoʂʈila məɦət̪t̪ʋ d̪ja", bases: [{ word: "या", ref: "mr-0679" }, { word: "गोष्टीला", base: "गोष्ट", reading: "goṣṭ" }, { word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1376"
+    target: "फायदा"
+    reading: "phāydā"
+    ipa: "pʰajd̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फायदा", reading: "phāydā" }] }
+    examples:
+      - { target: "व्यायामाचा फायदा होतो.", reading: "vyāyāmācā phāydā hoto.", ipa: "ʋjajamatsa pʰajd̪a ɦot̪o", bases: [{ word: "व्यायामाचा", ref: "mr-1298" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }
+      - { target: "यात तुमचा फायदा आहे.", reading: "yāt tumcā phāydā āhe.", ipa: "jat̪ t̪umtsa pʰajd̪a aɦe", bases: [{ word: "यात", ref: "mr-0679" }, { word: "तुमचा", ref: "mr-0145" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1377"
+    target: "तोटा"
+    reading: "toṭā"
+    ipa: "t̪oʈa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तोटा", reading: "toṭā" }] }
+    examples:
+      - { target: "या व्यवसायात तोटा झाला.", reading: "yā vyavsāyāt toṭā jhālā.", ipa: "ja ʋjəʋsajat̪ t̪oʈa dzʱala", bases: [{ word: "व्यवसायात", ref: "mr-0250" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "तोटा सहन करावा लागला.", reading: "toṭā sahan karāvā lāglā.", ipa: "t̪oʈa səɦən kəraʋa laɡla", bases: [{ word: "सहन", base: "सहन", reading: "sahan" }, { word: "करावा", ref: "mr-0712" }, { word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1378"
+    target: "सल्ला"
+    reading: "sallā"
+    ipa: "səlla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सल्ला", reading: "sallā" }] }
+    examples:
+      - { target: "डॉक्टरांचा सल्ला घ्या.", reading: "ḍôkṭarāñcā sallā ghyā.", ipa: "ɖɔkʈəraɲtsa səlla ɡʱja", bases: [{ word: "डॉक्टरांचा", ref: "mr-0238" }, { word: "घ्या", ref: "mr-0722" }] }
+      - { target: "मला त्याचा सल्ला आवडला.", reading: "malā tyācā sallā āvḍlā.", ipa: "məla t̪jatsa səlla aʋɖla", bases: [{ word: "मला", ref: "mr-0080" }, { word: "त्याचा", ref: "mr-0676" }, { word: "आवडला", ref: "mr-0585" }] }
+  - id: "mr-1379"
+    target: "टीका"
+    reading: "ṭikā"
+    ipa: "ʈika"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "टीका", reading: "ṭikā" }] }
+    examples:
+      - { target: "त्याच्यावर टीका झाली.", reading: "tyācyāvar ṭikā jhāli.", ipa: "t̪jatʃjaʋər ʈika dzʱali", bases: [{ word: "त्याच्यावर", ref: "mr-0676" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "टीका सहन करणे कठीण असतं.", reading: "ṭikā sahan karṇe kaṭhiṇ astam̐.", ipa: "ʈika səɦən kərɳe kəʈʰiɳ əst̪ə̃", bases: [{ word: "सहन", base: "सहन", reading: "sahan" }, { word: "करणे", ref: "mr-0712" }, { word: "कठीण", ref: "mr-0769" }, { word: "असतं", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1380"
+    target: "पाठिंबा"
+    reading: "pāṭhimbā"
+    ipa: "paʈʰimba"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पाठिंबा", reading: "pāṭhimbā" }] }
+    examples:
+      - { target: "सगळ्यांनी पाठिंबा दिला.", reading: "sagaḷyānni pāṭhimbā dilā.", ipa: "səɡəɭjanni paʈʰimba d̪ila", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "दिला", ref: "mr-0721" }] }
+      - { target: "त्याच्या मताला पाठिंबा आहे.", reading: "tyācyā matālā pāṭhimbā āhe.", ipa: "t̪jatʃja mət̪ala paʈʰimba aɦe", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "मताला", ref: "mr-1362" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1381"
+    target: "मान्य करणे"
+    reading: "māny karṇe"
+    ipa: "manj kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मान्य करणे", reading: "māny karṇe" }] }
+    examples:
+      - { target: "मी तुझं म्हणणं मान्य करतो.", reading: "mi tujham̐ mhaṇṇam̐ māny karto.", ipa: "mi t̪udzʱə̃ mɦəɳɳə̃ manj kərt̪o", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "करतो", ref: "mr-0712" }] }
+      - { target: "सगळ्यांनी प्रस्ताव मान्य केला.", reading: "sagaḷyānni prastāv māny kelā.", ipa: "səɡəɭjanni prəst̪aʋ manj kela", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1382"
+    target: "विरोध करणे"
+    reading: "virodh karṇe"
+    ipa: "ʋirod̪ʱ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विरोध करणे", reading: "virodh karṇe" }] }
+    examples:
+      - { target: "काही लोकांनी विरोध केला.", reading: "kāhi lokānni virodh kelā.", ipa: "kaɦi lokanni ʋirod̪ʱ kela", bases: [{ word: "लोकांनी", ref: "mr-0687" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "मी त्याच्या मताला विरोध करतो.", reading: "mi tyācyā matālā virodh karto.", ipa: "mi t̪jatʃja mət̪ala ʋirod̪ʱ kərt̪o", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "मताला", ref: "mr-1362" }, { word: "करतो", ref: "mr-0712" }] }
+  - id: "mr-1383"
+    target: "सुचवणे"
+    reading: "sucvṇe"
+    ipa: "sutsʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सुचवणे", reading: "sucvṇe" }] }
+    examples:
+      - { target: "मी एक कल्पना सुचवली.", reading: "mi ek kalpanā sucvli.", ipa: "mi ek kəlpəna sutsʋli", bases: [{ word: "सुचवली", ref: "mr-1383" }] }
+      - { target: "तू काय सुचवतोस?", reading: "tu kāy sucvtos?", ipa: "t̪u kaj sutsʋt̪os", bases: [{ word: "तू", ref: "mr-0675" }, { word: "सुचवतोस", ref: "mr-1383" }] }
