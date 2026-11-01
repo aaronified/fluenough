@@ -1,0 +1,355 @@
+schema: 1
+id: "hi-sports"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "sports"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2534"
+    target: "विकेट"
+    target_scripts: {"perso_arabic": "وکٹ"}
+    reading: "vikēṭ"
+    ipa: "ʋɪkeːʈ"
+    phonetic: "[ʋɪkeːʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने दो विकेट लिए।", "reading": "usnē dō vikēṭ liē.", "ipa": "ʊsneː d̪oː ʋɪkeːʈ lɪeː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "दो", "ref": "hi-0199"}, {"word": "लिए", "ref": "hi-0786"}]}
+      - {"target": "विकेट गिर गया।", "reading": "vikēṭ gir gayā.", "ipa": "ʋɪkeːʈ ɡɪr ɡəjaː", "bases": [{"word": "गिर", "ref": "hi-0947"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2535"
+    target: "रन"
+    target_scripts: {"perso_arabic": "رن"}
+    reading: "ran"
+    ipa: "rən"
+    phonetic: "[rən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने सौ रन बनाए।", "reading": "usnē sau ran banāē.", "ipa": "ʊsneː sɔː rən bənaːeː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "सौ", "ref": "hi-0225"}, {"word": "बनाए", "ref": "hi-1502"}]}
+      - {"target": "हमारी टीम को बीस रन चाहिए।", "reading": "hamārī ṭīm kō bīs ran cāhiē.", "ipa": "ɦəmaːriː ʈiːm koː biːs rən tʃaːɦɪeː", "bases": [{"word": "हमारी", "ref": "hi-0756"}, {"word": "टीम", "ref": "hi-1678"}, {"word": "को", "ref": "hi-0277"}, {"word": "बीस", "ref": "hi-0217"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+  - id: "hi-2536"
+    target: "स्टेडियम"
+    target_scripts: {"perso_arabic": "اسٹیڈیم"}
+    reading: "sṭēḍiyam"
+    ipa: "sʈeːɖɪjəm"
+    phonetic: "[sʈeːɖɪjəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "स्टेडियम भरा हुआ है।", "reading": "sṭēḍiyam bharā huā hai.", "ipa": "sʈeːɖɪjəm bʱəraː ɦʊaː ɦɛː", "bases": [{"word": "भरा", "ref": "hi-1732"}, {"word": "हुआ", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हम कल स्टेडियम जाएँगे।", "reading": "ham kal sṭēḍiyam jāēm̐gē.", "ipa": "ɦəm kəl sʈeːɖɪjəm dʒaːẽːɡeː", "bases": [{"word": "हम", "ref": "hi-0053"}, {"word": "कल", "ref": "hi-0300"}, {"word": "जाएँगे", "ref": "hi-0777"}]}
+  - id: "hi-2537"
+    target: "जीत"
+    target_scripts: {"perso_arabic": "جیت"}
+    reading: "jīt"
+    ipa: "dʒiːt̪"
+    phonetic: "[dʒiːt̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमारी टीम की जीत हुई।", "reading": "hamārī ṭīm kī jīt huī.", "ipa": "ɦəmaːriː ʈiːm kiː dʒiːt̪ ɦʊiː", "bases": [{"word": "हमारी", "ref": "hi-0756"}, {"word": "टीम", "ref": "hi-1678"}, {"word": "की", "ref": "hi-0279"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "जीत पर सब खुश हैं।", "reading": "jīt par sab khuś haim̐.", "ipa": "dʒiːt̪ pər səb kʰʊʃ ɦɛ̃ː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "सब", "ref": "hi-0054"}, {"word": "खुश", "ref": "hi-0912"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2538"
+    target: "हार"
+    target_scripts: {"perso_arabic": "ہار"}
+    reading: "hār"
+    ipa: "ɦaːr"
+    phonetic: "[ɦaːr]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हार से मत घबराओ।", "reading": "hār sē mat ghabrāō.", "ipa": "ɦaːr seː mət̪ ɡʱəbraːoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "घबराओ", "ref": "hi-2137"}]}
+      - {"target": "इस हार का कारण क्या है?", "reading": "is hār kā kāraṇ kyā hai?", "ipa": "ɪs ɦaːr kaː kaːrəɳ kjaː ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "हार", "base": "हार", "reading": "hār"}, {"word": "का", "ref": "hi-0279"}, {"word": "कारण", "base": "कारण", "reading": "kāraṇ"}, {"word": "क्या", "ref": "hi-0157"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2539"
+    target: "कोच"
+    target_scripts: {"perso_arabic": "کوچ"}
+    reading: "kōc"
+    ipa: "koːtʃ"
+    phonetic: "[koːtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कोच ने नया अभ्यास दिया।", "reading": "kōc nē nayā abhyās diyā.", "ipa": "koːtʃ neː nəjaː əbʱjaːs d̪ɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "नया", "ref": "hi-0896"}, {"word": "अभ्यास", "ref": "hi-2548"}, {"word": "दिया", "ref": "hi-0785"}]}
+      - {"target": "हमारे कोच बहुत सख़्त हैं।", "reading": "hamārē kōc bahut sak͟ht haim̐.", "ipa": "ɦəmaːreː koːtʃ bəɦʊt̪ səxt̪ ɦɛ̃ː", "bases": [{"word": "हमारे", "ref": "hi-0756"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "सख़्त", "base": "सख़्त", "reading": "sak͟ht"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2540"
+    target: "दौड़"
+    target_scripts: {"perso_arabic": "دوڑ"}
+    reading: "dauṛ"
+    ipa: "d̪ɔːɽ"
+    phonetic: "[d̪ɔːɽ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सौ मीटर की दौड़ शुरू होगी।", "reading": "sau mīṭar kī dauṛ śurū hōgī.", "ipa": "sɔː miːʈər kiː d̪ɔːɽ ʃʊruː ɦoːɡiː", "bases": [{"word": "सौ", "ref": "hi-0225"}, {"word": "मीटर", "base": "मीटर", "reading": "mīṭar"}, {"word": "की", "ref": "hi-0279"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "होगी", "ref": "hi-0780"}]}
+      - {"target": "दौड़ में वह सबसे आगे था।", "reading": "dauṛ mēm̐ vah sabsē āgē thā.", "ipa": "d̪ɔːɽ mẽː ʋəɦ səbseː aːɡeː t̪ʰaː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "वह", "ref": "hi-0749"}, {"word": "सबसे", "base": "सबसे", "reading": "sabsē"}, {"word": "आगे", "ref": "hi-0291"}, {"word": "था", "ref": "hi-0780"}]}
+  - id: "hi-2541"
+    target: "हॉकी"
+    target_scripts: {"perso_arabic": "ہاکی"}
+    reading: "hôkī"
+    ipa: "ɦɔkiː"
+    phonetic: "[ɦɔkiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मुझे हॉकी खेलना पसंद है।", "reading": "mujhē hôkī khēlnā pasand hai.", "ipa": "mʊdʒʱeː ɦɔkiː kʰeːlnaː pəsənd̪ ɦɛː", "bases": [{"word": "मुझे", "ref": "hi-0745"}, {"word": "खेलना", "ref": "hi-0787"}, {"word": "पसंद", "ref": "hi-0469"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "हॉकी की टीम जीत गई।", "reading": "hôkī kī ṭīm jīt gaī.", "ipa": "ɦɔkiː kiː ʈiːm dʒiːt̪ ɡəiː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "टीम", "ref": "hi-1678"}, {"word": "जीत", "ref": "hi-2537"}, {"word": "गई", "ref": "hi-0777"}]}
+  - id: "hi-2542"
+    target: "टेनिस"
+    target_scripts: {"perso_arabic": "ٹینس"}
+    reading: "ṭēnis"
+    ipa: "ʈeːnɪs"
+    phonetic: "[ʈeːnɪs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह टेनिस अच्छा खेलती है।", "reading": "vah ṭēnis acchā khēltī hai.", "ipa": "ʋəɦ ʈeːnɪs ətʃtʃʰaː kʰeːlt̪iː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "खेलती", "ref": "hi-0787"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "टेनिस कोर्ट खाली है।", "reading": "ṭēnis kōrṭ khālī hai.", "ipa": "ʈeːnɪs koːrʈ kʰaːliː ɦɛː", "bases": [{"word": "कोर्ट", "base": "कोर्ट", "reading": "kōrṭ"}, {"word": "खाली", "ref": "hi-1976"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2543"
+    target: "पदक"
+    target_scripts: {"perso_arabic": "تمغہ"}
+    reading: "padak"
+    ipa: "pəd̪ək"
+    phonetic: "[pəd̪ək]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसे सोने का पदक मिला।", "reading": "usē sōnē kā padak milā.", "ipa": "ʊseː soːneː kaː pəd̪ək mɪlaː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "सोने", "ref": "hi-0450"}, {"word": "का", "ref": "hi-0279"}, {"word": "पदक", "base": "पदक", "reading": "padak"}, {"word": "मिला", "ref": "hi-0793"}]}
+      - {"target": "पदक जीतना बड़ी बात है।", "reading": "padak jītnā baṛī bāt hai.", "ipa": "pəd̪ək dʒiːt̪naː bəɽiː baːt̪ ɦɛː", "bases": [{"word": "जीतना", "ref": "hi-0956"}, {"word": "बड़ी", "ref": "hi-0894"}, {"word": "बात", "ref": "hi-1864"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2544"
+    target: "रिकॉर्ड"
+    target_scripts: {"perso_arabic": "ریکارڈ"}
+    reading: "rikôrḍ"
+    ipa: "rɪkɔrɖ"
+    phonetic: "[rɪkɔrɖ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने नया रिकॉर्ड बनाया।", "reading": "usnē nayā rikôrḍ banāyā.", "ipa": "ʊsneː nəjaː rɪkɔrɖ bənaːjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "नया", "ref": "hi-0896"}, {"word": "बनाया", "ref": "hi-1502"}]}
+      - {"target": "यह रिकॉर्ड टूटेगा या नहीं?", "reading": "yah rikôrḍ ṭūṭēgā yā nahīm̐?", "ipa": "jəɦ rɪkɔrɖ ʈuːʈeːɡaː jaː nəɦĩː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "टूटेगा", "ref": "hi-1740"}, {"word": "या", "ref": "hi-0344"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2545"
+    target: "प्रतियोगिता"
+    target_scripts: {"perso_arabic": "مقابلہ"}
+    reading: "pratiyōgitā"
+    ipa: "prət̪ɪjoːɡɪt̪aː"
+    phonetic: "[prət̪ɪjoːɡɪt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "कल एक प्रतियोगिता है।", "reading": "kal ēk pratiyōgitā hai.", "ipa": "kəl eːk prət̪ɪjoːɡɪt̪aː ɦɛː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "एक", "ref": "hi-0198"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रतियोगिता में सब भाग लो।", "reading": "pratiyōgitā mēm̐ sab bhāg lō.", "ipa": "prət̪ɪjoːɡɪt̪aː mẽː səb bʱaːɡ loː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "सब", "ref": "hi-0054"}, {"word": "भाग", "base": "भाग", "reading": "bhāg"}, {"word": "लो", "ref": "hi-0786"}]}
+  - id: "hi-2546"
+    target: "सीटी"
+    target_scripts: {"perso_arabic": "سیٹی"}
+    reading: "sīṭī"
+    ipa: "siːʈiː"
+    phonetic: "[siːʈiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रेफ़री ने सीटी बजाई।", "reading": "rēfrī nē sīṭī bajāī.", "ipa": "reːfriː neː siːʈiː bədʒaːiː", "bases": [{"word": "रेफ़री", "ref": "hi-2547"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "बजाई", "base": "बजाना", "reading": "bajānā"}]}
+      - {"target": "सीटी बजते ही खेल शुरू हुआ।", "reading": "sīṭī bajtē hī khēl śurū huā.", "ipa": "siːʈiː bədʒt̪eː ɦiː kʰeːl ʃʊruː ɦʊaː", "bases": [{"word": "बजते", "ref": "hi-1878"}, {"word": "ही", "base": "ही", "reading": "hī"}, {"word": "खेल", "ref": "hi-1638"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "हुआ", "ref": "hi-0780"}]}
+  - id: "hi-2547"
+    target: "रेफ़री"
+    target_scripts: {"perso_arabic": "ریفری"}
+    reading: "rēfrī"
+    ipa: "reːfriː"
+    phonetic: "[reːfriː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रेफ़री का फ़ैसला अंतिम है।", "reading": "rēfrī kā faislā antim hai.", "ipa": "reːfriː kaː fɛːslaː ənt̪ɪm ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "फ़ैसला", "ref": "hi-2168"}, {"word": "अंतिम", "base": "अंतिम", "reading": "antim"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "रेफ़री ने गोल नहीं दिया।", "reading": "rēfrī nē gōl nahīm̐ diyā.", "ipa": "reːfriː neː ɡoːl nəɦĩː d̪ɪjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "गोल", "ref": "hi-1997"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "दिया", "ref": "hi-0785"}]}
+  - id: "hi-2548"
+    target: "अभ्यास"
+    target_scripts: {"perso_arabic": "مشق"}
+    reading: "abhyās"
+    ipa: "əbʱjaːs"
+    phonetic: "[əbʱjaːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "रोज़ अभ्यास करो।", "reading": "rōz abhyās karō.", "ipa": "roːz əbʱjaːs kəroː", "bases": [{"word": "रोज़", "ref": "hi-0451"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "अभ्यास से सब आता है।", "reading": "abhyās sē sab ātā hai.", "ipa": "əbʱjaːs seː səb aːt̪aː ɦɛː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "सब", "ref": "hi-0054"}, {"word": "आता", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2549"
+    target: "जिम"
+    target_scripts: {"perso_arabic": "جم"}
+    reading: "jim"
+    ipa: "dʒɪm"
+    phonetic: "[dʒɪm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह रोज़ जिम जाता है।", "reading": "vah rōz jim jātā hai.", "ipa": "ʋəɦ roːz dʒɪm dʒaːt̪aː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "रोज़", "ref": "hi-0451"}, {"word": "जाता", "ref": "hi-0777"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जिम में नई मशीन लगी है।", "reading": "jim mēm̐ naī maśīn lagī hai.", "ipa": "dʒɪm mẽː nəiː məʃiːn ləɡiː ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "नई", "ref": "hi-0896"}, {"word": "मशीन", "ref": "hi-2312"}, {"word": "लगी", "ref": "hi-1780"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2550"
+    target: "वॉलीबॉल"
+    target_scripts: {"perso_arabic": "والی بال"}
+    reading: "vôlībôl"
+    ipa: "ʋɔliːbɔl"
+    phonetic: "[ʋɔliːbɔl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चे वॉलीबॉल खेल रहे हैं।", "reading": "baccē vôlībôl khēl rahē haim̐.", "ipa": "bətʃtʃeː ʋɔliːbɔl kʰeːl rəɦeː ɦɛ̃ː", "bases": [{"word": "बच्चे", "ref": "hi-0111"}, {"word": "खेल", "ref": "hi-0787"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "वॉलीबॉल का मैच कल है।", "reading": "vôlībôl kā maic kal hai.", "ipa": "ʋɔliːbɔl kaː mɛːtʃ kəl ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "मैच", "ref": "hi-1675"}, {"word": "कल", "ref": "hi-0300"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2551"
+    target: "ओलंपिक"
+    target_scripts: {"perso_arabic": "اولمپک"}
+    reading: "ōlampik"
+    ipa: "oːləmpɪk"
+    phonetic: "[oːləmpɪk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह ओलंपिक में खेलेगा।", "reading": "vah ōlampik mēm̐ khēlēgā.", "ipa": "ʋəɦ oːləmpɪk mẽː kʰeːleːɡaː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "में", "ref": "hi-0274"}, {"word": "खेलेगा", "ref": "hi-0787"}]}
+      - {"target": "ओलंपिक का झंडा ऊँचा है।", "reading": "ōlampik kā jhaṇḍā ūm̐cā hai.", "ipa": "oːləmpɪk kaː dʒʱəɳɖaː ũːtʃaː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "झंडा", "base": "झंडा", "reading": "jhaṇḍā"}, {"word": "ऊँचा", "ref": "hi-0907"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2552"
+    target: "विजेता"
+    target_scripts: {"perso_arabic": "فاتح"}
+    reading: "vijētā"
+    ipa: "ʋɪdʒeːt̪aː"
+    phonetic: "[ʋɪdʒeːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "विजेता को पुरस्कार मिला।", "reading": "vijētā kō puraskār milā.", "ipa": "ʋɪdʒeːt̪aː koː pʊrəskaːr mɪlaː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "पुरस्कार", "base": "पुरस्कार", "reading": "puraskār"}, {"word": "मिला", "ref": "hi-0793"}]}
+      - {"target": "सबसे तेज़ दौड़ने वाला विजेता है।", "reading": "sabsē tēz dauṛnē vālā vijētā hai.", "ipa": "səbseː t̪eːz d̪ɔːɽneː ʋaːlaː ʋɪdʒeːt̪aː ɦɛː", "bases": [{"word": "सबसे", "base": "सबसे", "reading": "sabsē"}, {"word": "तेज़", "ref": "hi-1289"}, {"word": "दौड़ने", "ref": "hi-0946"}, {"word": "वाला", "base": "वाला", "reading": "vālā"}, {"word": "विजेता", "base": "विजेता", "reading": "vijētā"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2553"
+    target: "कप"
+    target_scripts: {"perso_arabic": "کپ"}
+    reading: "kap"
+    ipa: "kəp"
+    phonetic: "[kəp]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमारी टीम ने कप जीता।", "reading": "hamārī ṭīm nē kap jītā.", "ipa": "ɦəmaːriː ʈiːm neː kəp dʒiːt̪aː", "bases": [{"word": "हमारी", "ref": "hi-0756"}, {"word": "टीम", "ref": "hi-1678"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "कप", "base": "कप", "reading": "kap"}, {"word": "जीता", "ref": "hi-0956"}]}
+      - {"target": "कप अलमारी में रखो।", "reading": "kap almārī mēm̐ rakhō.", "ipa": "kəp əlmaːriː mẽː rəkʰoː", "bases": [{"word": "अलमारी", "base": "अलमारी", "reading": "almārī"}, {"word": "में", "ref": "hi-0274"}, {"word": "रखो", "ref": "hi-0950"}]}
+  - id: "hi-2554"
+    target: "टूर्नामेंट"
+    target_scripts: {"perso_arabic": "ٹورنامنٹ"}
+    reading: "ṭūrnāmēṇṭ"
+    ipa: "ʈuːrnaːmeːɳʈ"
+    phonetic: "[ʈuːrnaːmeːɳʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "राज्य स्तर का टूर्नामेंट शुरू हुआ।", "reading": "rājy star kā ṭūrnāmēṇṭ śurū huā.", "ipa": "raːdʒj st̪ər kaː ʈuːrnaːmeːɳʈ ʃʊruː ɦʊaː", "bases": [{"word": "राज्य", "ref": "hi-2041"}, {"word": "स्तर", "base": "स्तर", "reading": "star"}, {"word": "का", "ref": "hi-0279"}, {"word": "शुरू", "base": "शुरू", "reading": "śurū"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "टूर्नामेंट में कितनी टीमें हैं?", "reading": "ṭūrnāmēṇṭ mēm̐ kitnī ṭīmēm̐ haim̐?", "ipa": "ʈuːrnaːmeːɳʈ mẽː kɪt̪niː ʈiːmẽː ɦɛ̃ː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "कितनी", "ref": "hi-0163"}, {"word": "टीमें", "ref": "hi-1678"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2555"
+    target: "फ़िटनेस"
+    target_scripts: {"perso_arabic": "فٹنس"}
+    reading: "fiṭnēs"
+    ipa: "fɪʈneːs"
+    phonetic: "[fɪʈneːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "फ़िटनेस के लिए रोज़ दौड़ो।", "reading": "fiṭnēs kē liē rōz dauṛō.", "ipa": "fɪʈneːs keː lɪeː roːz d̪ɔːɽoː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "रोज़", "ref": "hi-0451"}, {"word": "दौड़ो", "ref": "hi-0946"}]}
+      - {"target": "उसकी फ़िटनेस अच्छी है।", "reading": "uskī fiṭnēs acchī hai.", "ipa": "ʊskiː fɪʈneːs ətʃtʃʰiː ɦɛː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2556"
+    target: "गोलकीपर"
+    target_scripts: {"perso_arabic": "گول کیپر"}
+    reading: "gōlkīpar"
+    ipa: "ɡoːlkiːpər"
+    phonetic: "[ɡoːlkiːpər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गोलकीपर ने गेंद पकड़ी।", "reading": "gōlkīpar nē gēnd pakṛī.", "ipa": "ɡoːlkiːpər neː ɡeːnd̪ pəkɽiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "गेंद", "ref": "hi-1676"}, {"word": "पकड़ी", "ref": "hi-1798"}]}
+      - {"target": "हमारा गोलकीपर बहुत अच्छा है।", "reading": "hamārā gōlkīpar bahut acchā hai.", "ipa": "ɦəmaːraː ɡoːlkiːpər bəɦʊt̪ ətʃtʃʰaː ɦɛː", "bases": [{"word": "हमारा", "ref": "hi-0756"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
