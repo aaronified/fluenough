@@ -318,6 +318,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
 - [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
+- [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 
 ## Plans
 

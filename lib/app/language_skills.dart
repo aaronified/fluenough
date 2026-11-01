@@ -8,23 +8,33 @@ import 'app_state.dart';
 /// known" goes on working.
 extension LanguageSkillsOnState on AppState {
   /// The scripts [language] has skills for, as decks name them: its own
-  /// first; `latin` where the list names none.
-  List<String> skillScripts(SpokenLanguage language) =>
-      language.scripts.isEmpty ? const <String>['latin'] : language.scripts;
+  /// first. A sign language names none, so it has no Read or Write.
+  List<String> skillScripts(SpokenLanguage language) => language.scripts;
 
   /// The rows of [language]'s skills.
-  List<SkillKey> skillShape(SpokenLanguage language) =>
-      skillsOfLanguage(skillScripts(language), scriptOnly: language.scriptOnly);
+  List<SkillKey> skillShape(SpokenLanguage language) => skillsOfLanguage(
+    skillScripts(language),
+    scriptOnly: language.scriptOnly,
+    sign: language.isSign,
+  );
 
   /// Where [script] of [language] is kept in `scripts_read`.
   String _readKey(SpokenLanguage language, String script) =>
       language.scripts.isEmpty ? language.code : language.readKey(script);
+
+  /// The scripts [language] has an answer for in `scripts_read`: those it has
+  /// skills for, or for a sign language one unnamed, `''`, kept under its
+  /// code, so that "speaks it" is still an answer.
+  List<String> _answered(SpokenLanguage language) =>
+      language.scripts.isEmpty ? const <String>[''] : language.scripts;
 
   /// What the learner said about [language]'s skills: what they set on the
   /// Languages page, else the older lists read as skills, so that nobody
   /// sees a change before they edit.
   LanguageSkills skillsOf(SpokenLanguage language) {
     final code = language.code;
+    // English is fixed: Know in every skill, whatever was saved.
+    if (code == englishCode) return englishKnownByDefault();
     final stored = settings.languageSkillsOf(code);
     if (stored != null) {
       // Skills are kept for the whole app, the learned lists per profile: a
@@ -45,23 +55,21 @@ extension LanguageSkillsOnState on AppState {
       readsScript: (s) =>
           read?.contains(language.scripts.isEmpty ? '' : s) ?? false,
       scriptOnly: language.scriptOnly,
+      sign: language.isSign,
     );
-    // English is known in every skill until the learner says otherwise
-    // (#926); and the Latin script is known for everyone.
-    if (code == 'en' && legacy.isAllLeave) return englishKnownByDefault();
+    // The Latin script is known for everyone.
     return withLatinKnown(legacy, skillScripts(language));
   }
 
-  /// Makes English known in all four skills for a learner who has no entry
-  /// for it (#926): an install from before, or one just set up. The older
+  /// Makes English known in all four skills (#926; locked, owner,
+  /// 2026-10-31): an install from before, or one just set up, and one whose
+  /// English was changed or sent to the pool before it was locked. The older
   /// lists follow, so that everything reading "languages known" sees it.
-  /// English goes last: the languages are in the learner's order. A choice
-  /// made on the Languages page is an entry, and is kept, even all Leave. A
-  /// first launch (no spoken language yet) is left to the setup, which calls
-  /// this after it has saved the answers.
+  /// English goes last: the languages are in the learner's order. A first
+  /// launch (no spoken language yet) is left to the setup, which calls this
+  /// after it has saved the answers.
   void ensureEnglishKnown() {
     if (settings.spokenLanguages.isEmpty) return;
-    if (settings.languageSkillsOf('en') != null) return;
     if (learningCodes.contains('en')) return;
     settings.setLanguageSkills('en', englishKnownByDefault().toStored());
     final spoken = settings.spokenLanguages;
@@ -76,6 +84,34 @@ extension LanguageSkillsOnState on AppState {
     }
   }
 
+  /// Once (owner, 2026-10-31): a saved Learn of the Latin script's Read or
+  /// Write becomes Know, because everyone who knows English knows the Latin
+  /// script. The older default made it Learn for every language learned in
+  /// Latin letters. A language whose only Learn skills are those is left
+  /// alone, so that it is not turned into one that learns nothing. Learn can
+  /// still be chosen by hand afterwards, and is kept.
+  void ensureLatinKnown() {
+    if (settings.latinKnownDone) return;
+    settings.latinKnownDone = true;
+    for (final code in settings.languagesWithSkills.toList()) {
+      if (code == englishCode) continue;
+      final skills = LanguageSkills.fromStored(
+        settings.languageSkillsOf(code) ?? const <String, String>{},
+      );
+      var next = skills;
+      for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
+        final key = SkillKey(kind, latinScript);
+        if (next.stateOf(key) == SkillState.learn) {
+          next = next.withState(key, SkillState.know);
+        }
+      }
+      if (next == skills) continue;
+      if (skills.anyLearn && !next.anyLearn) continue;
+      settings.setLanguageSkills(code, next.toStored());
+      settings.setScriptsLearned(code, next.scriptsIn(SkillState.learn));
+    }
+  }
+
   /// Whether a level was found for [code] (placement credited its words).
   bool levelFound(String code) => settings.placedAtOf(code).isNotEmpty;
 
@@ -85,6 +121,8 @@ extension LanguageSkillsOnState on AppState {
   /// a script read. A language with every skill Leave is back in the pool.
   void applySkills(SpokenLanguage language, LanguageSkills next) {
     final code = language.code;
+    // English is fixed and never changed.
+    if (code == englishCode) return;
     settings.setLanguageSkills(code, next.toStored());
 
     // Learned.
@@ -107,7 +145,8 @@ extension LanguageSkillsOnState on AppState {
     final spoken = <String>[...settings.spokenLanguages];
     final speaks =
         next.stateOf(const SkillKey(SkillKind.speak)) == SkillState.know ||
-        next.stateOf(const SkillKey(SkillKind.hear)) == SkillState.know;
+        next.stateOf(const SkillKey(SkillKind.hear)) == SkillState.know ||
+        next.stateOf(const SkillKey(SkillKind.gesture)) == SkillState.know;
     final reads = next.scriptsIn(
       SkillState.know,
       kinds: const <SkillKind>{SkillKind.read},
@@ -115,7 +154,7 @@ extension LanguageSkillsOnState on AppState {
     final answers = Map<String, bool>.of(settings.scriptsRead);
     if (speaks || reads.isNotEmpty) {
       if (!spoken.contains(code)) spoken.add(code);
-      for (final script in skillScripts(language)) {
+      for (final script in _answered(language)) {
         answers[_readKey(language, script)] = reads.contains(script);
       }
     } else if (spoken.contains(code) && spoken.length > 1) {
@@ -124,7 +163,7 @@ extension LanguageSkillsOnState on AppState {
     } else if (spoken.contains(code)) {
       // The sole spoken language stays listed, but reads nothing, as the
       // page (back in the pool) says.
-      for (final script in skillScripts(language)) {
+      for (final script in _answered(language)) {
         answers[_readKey(language, script)] = false;
       }
     }
@@ -163,9 +202,7 @@ extension LanguageSkillsOnState on AppState {
       // the language keeps its decks.
       if (_anyProfileLearns(code)) continue;
       if (downloads.hasDecks(code)) await downloads.remove(code);
-      // English's Leave is the learner's choice, kept: forgetting it would
-      // make English known again (#926).
-      if (skills.isAllLeave && code != 'en') {
+      if (skills.isAllLeave) {
         settings.setLanguageSkills(code, null);
       }
     }

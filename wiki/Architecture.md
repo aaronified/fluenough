@@ -84,6 +84,13 @@ before and after. A confirmed restore is the one exception to `reviews` and
 `leech_actions` being append-only (AGENTS.md rule 9), and this is its
 log: append-only and guarded like them, and never cleared.
 
+**`replay_snapshots`** — what opening the app works out from the whole review
+log, kept for the next launch (migration 10, #857, ADR-0051): one row, the
+result in compact binary and the stamp of the log, leech actions, fitted
+parameters and app version it was made from. A cache: used only while its
+stamp equals the database's now, otherwise the log is replayed and a new one
+kept. `reviews` is not touched.
+
 **Backup.** Settings → Export review log writes both logs, and the fitted
 parameters, as one JSONL file, and Import merges such a file back, adding
 only the reviews not already there and rebuilding `card_states` from the
@@ -150,6 +157,33 @@ YAML text → DeckParser → Deck → (grammar: PatternExpander) → List<Card> 
 
 Parse failures are reported with file and line, never swallowed. A deck that
 fails to parse is skipped and surfaced in the UI; it must not take the app down.
+
+## Splash screen
+
+A cold start opens on a splash: the mark, the name, a thin determinate bar and
+one status line (`lib/features/splash/`). `FluenoughApp(splash: true)` (set by
+`main.dart` and `main_web.dart`; tests leave it off) puts a `SplashGate` over
+the app in `MaterialApp.builder`. The app stays mounted underneath, so the
+warm-up work goes on, and the gate is never rebuilt, so a resume from the
+background does not show it again.
+
+The splash stays at least 2 s (`SplashGate.minimum`) and until every stage of
+`SplashProgress` has finished, whichever is later. The stages are the
+`StartupMarks` seams:
+
+| Stage | Done when | Bar | Status line |
+|---|---|---|---|
+| history | `progress.ready`: the review log is read and replayed | 35% | Opening your history |
+| catalog | `AppState.status` leaves loading | 35% | Loading courses |
+| today | the first frame after the catalog: Today's numbers are first worked out | 20% | Getting Today ready |
+| minimum time | 2 s have passed | 10% | (Ready, once all are done) |
+
+The bar eases toward the share earned and never goes back; while a stage is
+under way it creeps a little into that stage's share and stays under 95%. It is
+full only when all stages and the minimum time are done; then the splash fades
+out in 250 ms, or goes at once when the phone has animations off. It takes
+taps while it shows, none once it fades. A screen reader hears "Loading" when it
+appears and the bar's value in steps of ten. Its colours are the theme's.
 
 ## Deck downloads
 

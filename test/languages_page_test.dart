@@ -66,7 +66,7 @@ void main() {
         'tall', (tester) async {
       await pumpLanguages(tester, mode: mode);
       await tapKey(tester, 'language-es');
-      final speak = find.byKey(const ValueKey<String>('skill-speak'));
+      final speak = find.byKey(const ValueKey<String>('skill-spoken'));
       expect(speak, findsOneWidget);
       expect(tester.getSize(speak).height, greaterThanOrEqualTo(48));
       expect(tester.takeException(), isNull);
@@ -78,7 +78,7 @@ void main() {
     final state = await pumpLanguages(tester);
     await tapKey(tester, 'language-es');
     final text = l10n(tester);
-    final speak = find.byKey(const ValueKey<String>('skill-speak'));
+    final speak = find.byKey(const ValueKey<String>('skill-spoken'));
     // Null until the learner edits Spanish on this page; the pill reads the
     // older lists (Learn, from the learner fixture) until then.
     final before = state.settings.languageSkillsOf('es');
@@ -89,14 +89,14 @@ void main() {
     expect(
       find.text(
         text.languagesSkillState(
-          SkillKind.speak.label(text),
-          SkillState.learn.label(text),
+          text.languagesSkillSpoken,
+          SpokenLevel.learn.label(text),
         ),
       ),
       findsOneWidget,
     );
     expect(state.settings.languageSkillsOf('es'), before, reason: 'no cycle');
-    await tapKey(tester, 'skill-speak');
+    await tapKey(tester, 'skill-spoken');
     expect(state.settings.languageSkillsOf('es'), isNot(before));
   });
 
@@ -113,21 +113,88 @@ void main() {
     expect(find.text(text.hintInfo), findsOneWidget);
   });
 
-  testWidgets('a tap cycles Know, Learn, Leave; the last Leave sends the '
-      'language back to the pool', (tester) async {
+  testWidgets('English is fixed: both pills show the double tick and a '
+      'tap changes nothing', (tester) async {
     final state = await pumpLanguages(tester);
     await tapKey(tester, 'language-en');
-    // English has no course, so Learn is skipped: Know goes to Leave.
-    await tapKey(tester, 'skill-speak');
-    expect(state.settings.languageSkillsOf('en')!.containsKey('speak'), false);
-    await tapKey(tester, 'skill-hear');
-    await tapKey(tester, 'skill-read:latin');
-    // English is known in Write too, by default (#926).
-    await tapKey(tester, 'skill-write:latin');
-    expect(state.settings.languageSkillsOf('en'), isEmpty);
-    expect(find.byKey(const ValueKey<String>('language-en')), findsNothing);
-    // It stays among the languages spoken, which is never left empty.
-    expect(state.settings.spokenLanguages, <String>['en']);
+    final text = l10n(tester);
+    expect(find.text(text.languagesEnglishLocked), findsOneWidget);
+    for (final id in <String>['spoken', 'script:latin']) {
+      await tapKey(tester, 'skill-$id');
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey<String>('skill-$id')),
+          matching: find.byIcon(Icons.done_all),
+        ),
+        findsOneWidget,
+        reason: id,
+      );
+    }
+    final skills = state.skillsOf(
+      pickerSpokenList.firstWhere((l) => l.code == 'en'),
+    );
+    expect(skills, englishKnownByDefault());
+    expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
+  });
+
+  testWidgets('the skill chips are as wide as their icons and share lines, at '
+      '1.4x text', (tester) async {
+    await pumpLanguages(tester);
+    final row = find.byKey(const ValueKey<String>('language-es'));
+    final chips = find.descendant(of: row, matching: find.byType(SkillBadge));
+    // One Spoken pill and one pill for the Latin script.
+    expect(chips, findsNWidgets(2));
+    final rowWidth = tester.getSize(row).width;
+    final tops = <double>{};
+    for (var i = 0; i < 2; i++) {
+      final size = tester.getSize(chips.at(i));
+      expect(size.width, lessThan(rowWidth / 3), reason: 'chip $i');
+      tops.add(tester.getTopLeft(chips.at(i)).dy);
+    }
+    expect(tops.length, 1, reason: 'the two chips share a line');
+  });
+
+  for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('the sheet has one Spoken pill and one pill for the script, '
+        'at 1.4x in ${mode.name}', (tester) async {
+      await pumpLanguages(tester, mode: mode);
+      await tapKey(tester, 'language-es');
+      final sheet = find.byKey(const ValueKey<String>('skill-spoken'));
+      expect(sheet, findsOneWidget);
+      expect(
+        find.byKey(const ValueKey<String>('skill-script:latin')),
+        findsOneWidget,
+      );
+      // The page's rows of Spanish and English have two chips each; the sheet
+      // adds its two pills.
+      expect(find.byType(SkillBadge), findsNWidgets(6));
+      expect(tester.takeException(), isNull);
+    });
+  }
+
+  testWidgets('a script pill cycles Leave, Learn, Read, Read and Write and '
+      'keeps the stored Read and Write', (tester) async {
+    final state = await pumpLanguages(tester);
+    await tapKey(tester, 'language-es');
+    final es = pickerSpokenList.firstWhere((l) => l.code == 'es');
+    // Latin is known to read and write to begin with.
+    expect(state.skillsOf(es).scriptLevelOf('latin'), ScriptLevel.readWrite);
+    final seen = <ScriptLevel>[];
+    for (var i = 0; i < 4; i++) {
+      await tapKey(tester, 'skill-script:latin');
+      seen.add(state.skillsOf(es).scriptLevelOf('latin'));
+    }
+    expect(seen, <ScriptLevel>[
+      ScriptLevel.leave,
+      ScriptLevel.learn,
+      ScriptLevel.read,
+      ScriptLevel.readWrite,
+    ]);
+    expect(
+      state.settings.languageSkillsOf('es'),
+      containsPair('write:latin', 'know'),
+    );
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('Learn on a skill downloads nothing here but leaves the button '
@@ -135,10 +202,10 @@ void main() {
     final state = await pumpLanguages(tester);
     await tapKey(tester, 'language-es');
     final text = l10n(tester);
-    // Spanish speak is Learn already; set it to Leave, Know, then Learn.
-    await tapKey(tester, 'skill-speak');
-    await tapKey(tester, 'skill-speak');
-    await tapKey(tester, 'skill-speak');
+    // Spanish is Learn already; go round Hear, Hear and Speak, Leave, Learn.
+    for (var i = 0; i < 4; i++) {
+      await tapKey(tester, 'skill-spoken');
+    }
     expect(
       state
           .skillsOf(pickerSpokenList.firstWhere((l) => l.code == 'es'))
@@ -187,7 +254,13 @@ void main() {
       find.text(text.languagesKnownFrom(text.languagesSkillRead, 'Hindustani')),
       findsOneWidget,
     );
-    await tapKey(tester, 'skill-speak');
+    SkillMark spoken() => tester
+        .widget<SkillBadge>(find.byKey(const ValueKey<String>('skill-spoken')))
+        .mark;
+    for (var i = 0; i < 4 && spoken() != SkillMark.knowBoth; i++) {
+      await tapKey(tester, 'skill-spoken');
+    }
+    expect(spoken(), SkillMark.knowBoth);
     await tester.tap(find.text(text.languagesAddLanguage('Marathi')));
     await tester.pumpAndSettle();
     expect(
@@ -223,5 +296,101 @@ void main() {
     expect(find.byKey(const ValueKey<String>('language-en')), findsNothing);
     await tapKey(tester, 'filter-learning');
     expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
+  });
+
+  testWidgets('a sign language has one skill, Gestures, with its own icon, '
+      'and its cycle is stored and restored (owner, 2026-11-01)', (
+    tester,
+  ) async {
+    final state = AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningChosen: true,
+      )..scriptsRead = <String, bool>{'en': true},
+    );
+    await pumpLanguages(tester, state: state);
+    var text = l10n(tester);
+    await tester.tap(find.byTooltip(text.hintAdd));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey<String>('languages-add-search')),
+      'American Sign',
+    );
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'add-ase');
+    text = l10n(tester);
+    Finder pill(String id) => find.byKey(ValueKey<String>('skill-$id'));
+    expect(pill('gesture'), findsOneWidget);
+    expect(find.text(text.languagesGestures), findsWidgets);
+    for (final id in <String>['speak', 'hear', 'read:latin', 'write:latin']) {
+      expect(pill(id), findsNothing, reason: 'a sign language has no $id');
+    }
+    expect(find.text(text.languagesSpeakHear), findsNothing);
+    expect(find.text(text.languagesScriptRW), findsNothing);
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byIcon(SkillKind.gesture.icon),
+      ),
+      findsOneWidget,
+    );
+    final used = <IconData>{for (final k in SkillKind.values) k.icon};
+    expect(used.length, SkillKind.values.length, reason: 'each its own icon');
+
+    // No course, so the cycle is Leave, Know, Leave.
+    SkillState stored() {
+      final restored = SettingsNotifier()..restore(state.settings.toStored());
+      final map = restored.languageSkillsOf('ase');
+      return map == null
+          ? SkillState.leave
+          : LanguageSkills.fromStored(map)
+                .stateOf(const SkillKey(SkillKind.gesture));
+    }
+
+    await tapKey(tester, 'skill-gesture');
+    await tester.tap(
+      find.text(text.languagesAddLanguage('American Sign Language')),
+    );
+    await tester.pumpAndSettle();
+    expect(stored(), SkillState.know);
+    await tapKey(tester, 'language-ase');
+    await tapKey(tester, 'skill-gesture');
+    expect(stored(), SkillState.leave);
+    expect(tester.takeException(), isNull);
+  });
+
+  group('the Gestures filter (owner, 2026-11-01)', () {
+    AppState withSign(List<String> spoken) => AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: spoken,
+        learningLanguages: const <String>['es'],
+        learningChosen: true,
+      )..scriptsRead = <String, bool>{'en': true},
+    );
+    Finder chip() => find.byKey(const ValueKey<String>('filter-gesture'));
+    Finder row(String code) => find.byKey(ValueKey<String>('language-$code'));
+
+    testWidgets('is absent with no sign language listed', (tester) async {
+      await pumpLanguages(tester);
+      expect(chip(), findsNothing);
+    });
+
+    testWidgets('shows with ASL listed, keeps only sign languages, and Speak '
+        'and Hear leave them out', (tester) async {
+      await pumpLanguages(tester, state: withSign(const <String>['en', 'ase']));
+      expect(chip(), findsOneWidget);
+      expect(row('ase'), findsOneWidget);
+      await tapKey(tester, 'filter-gesture');
+      expect(row('ase'), findsOneWidget);
+      expect(row('es'), findsNothing);
+      expect(row('en'), findsNothing);
+      await tapKey(tester, 'filter-gesture');
+      for (final f in <String>['speak', 'hear']) {
+        await tapKey(tester, 'filter-$f');
+        expect(row('ase'), findsNothing, reason: '$f leaves out signs');
+        await tapKey(tester, 'filter-$f');
+      }
+      expect(tester.takeException(), isNull);
+    });
   });
 }
