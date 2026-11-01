@@ -513,10 +513,6 @@
   "@profilesLearningNothing": {
     "description": "Stands in for the list of languages when a profile learns none yet."
   },
-  "pinBackToProfiles": "Back to profiles",
-  "@pinBackToProfiles": {
-    "description": "Back button on the PIN screen."
-  },
   "pinGreeting": "Hi, {name}",
   "@pinGreeting": {
     "description": "Heading of the PIN screen.",
@@ -554,10 +550,6 @@
         "example": "4"
       }
     }
-  },
-  "pinDeleteDigit": "Delete digit",
-  "@pinDeleteDigit": {
-    "description": "Screen-reader label of the backspace key on the PIN pad."
   },
   "pinForgot": "Forgot PIN?",
   "@pinForgot": {
@@ -824,26 +816,6 @@
     "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
     "placeholders": {
       "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionLess": "{minutes, plural, =1{1 minute less} other{{minutes} minutes less}}",
-  "@todayRevisionLess": {
-    "description": "Screen-reader label and tooltip of quick revision's minus button.",
-    "placeholders": {
-      "minutes": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionMore": "{minutes, plural, =1{1 minute more} other{{minutes} minutes more}}",
-  "@todayRevisionMore": {
-    "description": "Screen-reader label and tooltip of quick revision's plus button.",
-    "placeholders": {
-      "minutes": {
         "type": "int",
         "example": "5"
       }
@@ -1164,11 +1136,11 @@
       }
     }
   },
-  "minutesLess": "One minute less",
+  "minutesLess": "Less",
   "@minutesLess": {
     "description": "Screen-reader label of the custom minutes sheet's minus button."
   },
-  "minutesMore": "One minute more",
+  "minutesMore": "More",
   "@minutesMore": {
     "description": "Screen-reader label of the custom minutes sheet's plus button."
   },
@@ -1318,15 +1290,19 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
-  "decksSearchClose": "Close search",
+  "decksSearchClose": "Close",
   "@decksSearchClose": {
-    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
+    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again. One word."
+  },
+  "decksSearchCloseLabel": "Close search",
+  "@decksSearchCloseLabel": {
+    "description": "Screen reader label of the button that closes the search on the Decks tab (its tooltip is decksSearchClose)."
   },
   "decksUnitSearchHint": "Search units in this course",
   "@decksUnitSearchHint": {
     "description": "Hint in the Decks tab's search field. A search finds units of the course of the language the language bar shows, by their name, their decks' names or their theme."
   },
-  "decksWhereIAm": "Where I am",
+  "decksWhereIAm": "Locate",
   "@decksWhereIAm": {
     "description": "Button floating over the Decks tab's path: scrolls the path back to the unit the learner is on."
   },
@@ -2809,9 +2785,9 @@
   "@brailleSpace": {
     "description": "Button of the braille keyboard: adds a space, an empty cell between words, to the answer."
   },
-  "brailleBackspace": "Delete the last cell",
+  "brailleBackspace": "Backspace",
   "@brailleBackspace": {
-    "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer."
+    "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer. The PIN pad's delete button uses the same word."
   },
   "drillCountWrong": "Count it wrong",
   "@drillCountWrong": {
@@ -4885,10 +4861,6 @@
       }
     }
   },
-  "knownReportMistake": "Report a mistake",
-  "@knownReportMistake": {
-    "description": "Tooltip and screen-reader label of the bug icon at the top of the Languages you know sheet, shown only for a language whose own-script texts no speaker has checked (owner, 2026-10-18). It opens a report with the language and those texts, so a speaker can say one is wrong and give the right wording."
-  },
   "knownReadsWhichScripts": "Which scripts do you read {language} in?",
   "@knownReadsWhichScripts": {
     "description": "The sheet's question in Languages you know for a language written in several scripts, such as Punjabi in Gurmukhi and Shahmukhi (#551). Under it, an answer per script to tick, knownCanReadFallback, then knownSpeakOnly.",
@@ -6305,17 +6277,9 @@
       }
     }
   },
-  "settingsLogCopy": "Copy app log",
-  "@settingsLogCopy": {
-    "description": "Settings row that copies the app log as text."
-  },
   "settingsLogCopied": "App log copied",
   "@settingsLogCopied": {
     "description": "SnackBar after the app log is copied."
-  },
-  "settingsLogExport": "Export app log",
-  "@settingsLogExport": {
-    "description": "Settings row that saves the app log as a file."
   },
   "settingsLogExportDesc": "Text file",
   "@settingsLogExportDesc": {
@@ -6324,10 +6288,6 @@
   "settingsLogExportFailed": "Couldn’t save the app log",
   "@settingsLogExportFailed": {
     "description": "SnackBar when saving the app log fails."
-  },
-  "settingsLogClear": "Clear app log",
-  "@settingsLogClear": {
-    "description": "Settings row that deletes everything in the app log."
   },
   "settingsLogClearTitle": "Clear the app log?",
   "@settingsLogClearTitle": {
@@ -8241,7 +8201,7 @@
   },
   "reviewSuggestEditPart": "Suggest a change: {part}",
   "@reviewSuggestEditPart": {
-    "description": "Read by a screen reader, and shown on a long press, for the pencil on one part in Suggest a change, which opens a field for that part.",
+    "description": "Read by a screen reader (its long press shows a one-word hint) for the pencil on one part in Suggest a change, which opens a field for that part.",
     "placeholders": {
       "part": {
         "type": "String",
@@ -8251,7 +8211,7 @@
   },
   "reviewSuggestRemove": "Remove your suggestion: {part}",
   "@reviewSuggestRemove": {
-    "description": "Read by a screen reader, and shown on a long press, for the button that drops the reviewer's suggestion on one part in Suggest a change.",
+    "description": "Read by a screen reader (its long press shows a one-word hint) for the button that drops the reviewer's suggestion on one part in Suggest a change.",
     "placeholders": {
       "part": {
         "type": "String",
@@ -8263,13 +8223,13 @@
   "@reviewSuggestRemoved": {
     "description": "In Suggest a change, on a part whose suggestion the reviewer has removed, before saving. Beside an Undo button."
   },
-  "reviewSuggestDiscard": "Discard changes",
+  "reviewSuggestDiscard": "Discard",
   "@reviewSuggestDiscard": {
-    "description": "Read by a screen reader, and shown on a long press, for the close button at the top of Suggest a change, which closes it without saving."
+    "description": "Tooltip and screen-reader label of the close button at the top of Suggest a change, which closes it without saving."
   },
-  "reviewSuggestSaveAll": "Save every change",
+  "reviewSuggestSaveAll": "Save",
   "@reviewSuggestSaveAll": {
-    "description": "Read by a screen reader, and shown on a long press, for the tick at the top of Suggest a change, which saves the suggestion on every part edited."
+    "description": "Tooltip and screen-reader label of the tick at the top of Suggest a change, which saves the suggestion on every part edited."
   },
   "reviewPartPhonetic": "Narrow IPA",
   "@reviewPartPhonetic": {
@@ -8703,7 +8663,7 @@
   },
   "reviewBaseRemove": "Remove the base {base}",
   "@reviewBaseRemove": {
-    "description": "Read by a screen reader, and shown on a long press, for the delete button on a base word's box in Suggest a change, which marks the base to be removed.",
+    "description": "Read by a screen reader (its long press shows a one-word hint) for the delete button on a base word's box in Suggest a change, which marks the base to be removed.",
     "placeholders": {
       "base": {
         "type": "String",
@@ -8757,7 +8717,7 @@
   },
   "reviewBaseNewRemove": "Remove the new base",
   "@reviewBaseNewRemove": {
-    "description": "Read by a screen reader, and shown on a long press, for the delete button on the box of a new base word in Suggest a change, which drops it."
+    "description": "Read by a screen reader (its long press shows a one-word hint) for the delete button on the box of a new base word in Suggest a change, which drops it."
   },
   "reviewBaseWhich": "Which word does it explain?",
   "@reviewBaseWhich": {
@@ -9390,9 +9350,13 @@
       }
     }
   },
-  "soundsOfWordButton": "The sounds of this word",
+  "soundsOfWordButton": "Symbols",
   "@soundsOfWordButton": {
-    "description": "Tooltip and screen-reader label of the button on a card that opens a session of the IPA course's symbols used in the card's word."
+    "description": "Tooltip of the button on a card that opens a session of the IPA course's symbols used in the card's word. One word, so it does not read as audio beside the speaker."
+  },
+  "soundsOfWordLabel": "The sounds of this word",
+  "@soundsOfWordLabel": {
+    "description": "Screen reader label of the button on a card that opens the IPA symbols of the card's word (its tooltip is soundsOfWordButton)."
   },
   "soundsOfWordOfferTitle": "Add the IPA course?",
   "@soundsOfWordOfferTitle": {
@@ -10372,15 +10336,15 @@
   },
   "appLogCopy": "Copy",
   "@appLogCopy": {
-    "description": "Word under the icon of the app log's Copy action, in its bottom bar. Its tooltip is settingsLogCopy."
+    "description": "Word under the icon of the app log's Copy action, in its bottom bar. Its tooltip is the same word."
   },
   "appLogExport": "Export",
   "@appLogExport": {
-    "description": "Word under the icon of the app log's Export action, in its bottom bar. Its tooltip is settingsLogExport."
+    "description": "Word under the icon of the app log's Export action, in its bottom bar. Its tooltip is the same word."
   },
   "appLogClear": "Clear",
   "@appLogClear": {
-    "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is settingsLogClear."
+    "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is the same word."
   },
   "settingsBackupMadeByYou": "Made by you, {date}",
   "@settingsBackupMadeByYou": {
@@ -11167,10 +11131,6 @@
         "example": "कल, काल"
       }
     }
-  },
-  "ipaInfoDot": "About these sounds",
-  "@ipaInfoDot": {
-    "description": "Hint and screen-reader label of the small info dot beside a card's IPA; it opens the popup that explains each sound."
   },
   "cardWiktionaryLink": "Wiktionary: {word}",
   "@cardWiktionaryLink": {
@@ -12055,9 +12015,13 @@
       }
     }
   },
-  "decksSearchClear": "Clear search",
+  "decksSearchClear": "Clear",
   "@decksSearchClear": {
-    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527)."
+    "description": "Tooltip of the search bar's end button while it holds text or a chip: a first tap clears them, and a tap on the empty bar closes the search (#527). One word."
+  },
+  "decksSearchClearLabel": "Clear search",
+  "@decksSearchClearLabel": {
+    "description": "Screen reader label of the search bar's end button while it holds text or a chip (its tooltip is decksSearchClear)."
   },
   "searchTokensHeader": "Narrow the search",
   "@searchTokensHeader": {
@@ -12443,6 +12407,22 @@
   "@hintAdd": {
     "description": "Hint shown on a long press on the plus icon on the Languages page, which adds a language. One word, no full stop."
   },
+  "hintEdit": "Edit",
+  "@hintEdit": {
+    "description": "Hint shown on a long press on a pencil icon, such as the ones beside each part in Suggest a change, which open a field to edit it. One word, no full stop."
+  },
+  "hintRemove": "Remove",
+  "@hintRemove": {
+    "description": "Hint shown on a long press on a bin or cross icon that removes something, such as a suggestion or a downloaded language. One word, no full stop."
+  },
+  "hintHear": "Hear",
+  "@hintHear": {
+    "description": "Hint shown on hover over the small speaker toggle in the matching drill, which turns hearing a word when it is tapped on or off. One word, no full stop."
+  },
+  "hintUpload": "Upload",
+  "@hintUpload": {
+    "description": "Hint shown on a long press on the cloud icon of Settings > Backup at large text, where the button shows no word: sends the backup to the cloud. One word, no full stop."
+  },
   "languagesTitle": "Languages",
   "@languagesTitle": {
     "description": "Title of the Languages page (#907), where each language's four skills, Speak, Hear, Read and Write, are set to Know, Learn or Leave, and the Settings row that opens it."
@@ -12635,7 +12615,7 @@
   "@languagesPillRead": {
     "description": "Tooltip of a script pill at Read, or of a Read pill that is known."
   },
-  "languagesPillReadWrite": "Reading and writing",
+  "languagesPillReadWrite": "Reading, writing",
   "@languagesPillReadWrite": {
     "description": "Tooltip of a script pill at Read and Write."
   },
@@ -12643,7 +12623,7 @@
   "@languagesPillHear": {
     "description": "Tooltip of the Spoken pill at Hear, or of a Hear pill that is known."
   },
-  "languagesPillHearSpeak": "Listening and speaking",
+  "languagesPillHearSpeak": "Listening, speaking",
   "@languagesPillHearSpeak": {
     "description": "Tooltip of the Spoken pill at Hear and Speak."
   },
@@ -12659,29 +12639,33 @@
   "@languagesPillGesture": {
     "description": "Tooltip of a Gestures pill that is known."
   },
-  "languagesPillLearnRead": "Learning to read",
+  "languagesPillLearnRead": "Learn reading",
   "@languagesPillLearnRead": {
     "description": "Tooltip of a Read pill set to Learn."
   },
-  "languagesPillLearnWrite": "Learning to write",
+  "languagesPillLearnWrite": "Learn writing",
   "@languagesPillLearnWrite": {
     "description": "Tooltip of a Write pill set to Learn."
   },
-  "languagesPillLearnSpeak": "Learning to speak",
+  "languagesPillLearnSpeak": "Learn speaking",
   "@languagesPillLearnSpeak": {
     "description": "Tooltip of a Say pill set to Learn."
   },
-  "languagesPillLearnHear": "Learning to listen",
+  "languagesPillLearnHear": "Learn listening",
   "@languagesPillLearnHear": {
     "description": "Tooltip of a Hear pill set to Learn."
   },
-  "languagesPillLearnGesture": "Learning to sign",
+  "languagesPillLearnGesture": "Learn signing",
   "@languagesPillLearnGesture": {
     "description": "Tooltip of a Gestures pill set to Learn."
   },
+  "languagesPillCheckedHint": "Checked",
+  "@languagesPillCheckedHint": {
+    "description": "Tooltip of a known skill whose level was found by the placement test (the double tick): one word, as every hint is; a screen reader reads the level and this word."
+  },
   "languagesPillChecked": "{tip}, checked",
   "@languagesPillChecked": {
-    "description": "Tooltip of a known skill whose level was found by the placement test (the double tick): Reading, checked.",
+    "description": "What a screen reader reads for a known skill whose level was found by the placement test (the double tick): Reading, checked. The tooltip is the one word of languagesPillCheckedHint.",
     "placeholders": {
       "tip": {
         "type": "String",
@@ -12883,9 +12867,13 @@
       }
     }
   },
-  "languagesInfoClose": "Close details",
+  "languagesInfoClose": "Close",
   "@languagesInfoClose": {
-    "description": "Screen reader label of the details panel's cross."
+    "description": "Tooltip of the details panel's cross. One word."
+  },
+  "languagesInfoCloseLabel": "Close details",
+  "@languagesInfoCloseLabel": {
+    "description": "Screen reader label of the details panel's cross (its tooltip is languagesInfoClose)."
   },
   "languagesPercentB1": "{percent}% of B1",
   "@languagesPercentB1": {

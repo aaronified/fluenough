@@ -20,7 +20,7 @@ class IpaInfoDot extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return IconButton(
-      tooltip: l10n.ipaInfoDot,
+      tooltip: l10n.hintInfo,
       onPressed: () => showPronunciation(context, card),
       icon: const Icon(Icons.info_outline),
       iconSize: 20,
