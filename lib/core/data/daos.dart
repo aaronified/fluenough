@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
@@ -210,7 +208,7 @@ class ReplaySnapshotsDao extends DatabaseAccessor<AppDatabase>
   Future<String?> stamp() async {
     final rows = await customSelect(
       'SELECT stamp FROM replay_snapshots WHERE name = ?',
-      variables: [Variable<String>(ReplaySnapshots.logName)],
+      variables: const [Variable<String>(ReplaySnapshots.logName)],
       readsFrom: {replaySnapshots},
     ).get();
     return rows.isEmpty ? null : rows.single.read<String>('stamp');
