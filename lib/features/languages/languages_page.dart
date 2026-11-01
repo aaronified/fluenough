@@ -743,7 +743,7 @@ class LanguageRow extends StatelessWidget {
       name: name,
       combined: true,
       richIcons: true,
-      glyph: scriptGlyph(script, view.name),
+      glyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
     );
   }
 }

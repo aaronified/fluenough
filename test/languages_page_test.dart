@@ -9,6 +9,7 @@ import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/script_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -264,9 +265,22 @@ void main() {
         ),
         findsNothing,
       );
-      expect(glyph(1), scriptGlyph('devanagari', 'Hindustani'));
-      expect(glyph(2), scriptGlyph('perso_arabic', 'Hindustani'));
+      // The first letter of each script's sample word (नमस्ते, شکریہ).
+      expect(glyph(1), 'न');
+      expect(glyph(2), 'ش');
       expect(glyph(1), isNot(glyph(2)));
+      // The two script chips carry their own names, so a screen reader tells
+      // them apart.
+      final handle = tester.ensureSemantics();
+      expect(
+        find.bySemanticsLabel(RegExp('Script Devanagari')),
+        findsOneWidget,
+      );
+      expect(
+        find.bySemanticsLabel(RegExp('Script Perso-Arabic')),
+        findsOneWidget,
+      );
+      handle.dispose();
       // Three wider chips still fit the row: they wrap, none overflows.
       final rowWidth = tester.getSize(row).width;
       for (var i = 0; i < 3; i++) {
@@ -577,5 +591,24 @@ void main() {
       }
       expect(tester.takeException(), isNull);
     });
+  });
+
+  testWidgets('every script in assets/languages.yaml gives a chip one glyph, '
+      'and one with no sample draws its own name (#981)', (tester) async {
+    await pumpLanguages(tester);
+    final text = l10n(tester);
+    final scripts = <String>{for (final l in pickerSpokenList) ...l.scripts};
+    expect(scripts, isNotEmpty);
+    for (final script in scripts) {
+      final glyph = scriptGlyph(script, text.scriptNameOr(script, 'Language'));
+      expect(glyph, isNotEmpty, reason: script);
+      expect(glyph.characters.length, 1, reason: '$script: "$glyph"');
+    }
+    // No sample for Arabic: the glyph is the first letter of its name.
+    expect(
+      scriptGlyph('arabic', text.scriptNameOr('arabic', 'Language')),
+      text.scriptNameOr('arabic', 'Language').characters.first,
+    );
+    expect(tester.takeException(), isNull);
   });
 }

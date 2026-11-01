@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Language rows show the skill icons and script letters.** On the Languages page a Learn chip now shows its skills' icons beside the cap (ear and microphone for Spoken, eye and keyboard for a script), and each script chip starts with the script's own letter (अ, ا, A), so Hindustani's two scripts are told apart; the key at the top matches, and the skills sheet is unchanged (owner, 2026-11-02).
+- **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
 
 ## [0.8.0] - 2026-11-01
 
