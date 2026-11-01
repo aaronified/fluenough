@@ -1,0 +1,50 @@
+schema: 1
+id: "hi-en-cooking-sentences"
+kind: "layer"
+core: "hi-cooking-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about cooking"
+license: "CC-BY-SA-4.0"
+description: "Short sentences using the words of the cooking unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1546":
+    native: "Knead the dough, roll out the bread and toast it on the griddle."
+    bases: { "गूँधो": "to knead", "बेलो": "to roll out", "तवे": "griddle", "सेंको": "to toast" }
+    confusables: { "w1": { why: "Frying in oil, not toasting: तलना (talnā) is to fry." }, "f2": { why: "The command here is बेलो (belo); बेलना (belnā) is the verb itself." } }
+  "hi-1547":
+    native: "Add turmeric and salt to the dal."
+    bases: { "डालो": "to pour" }
+    confusables: { "w1": { why: "Chilli, not turmeric: मिर्च (mirc) is chilli." }, "f2": { why: "The command is डालो (ḍālo); डालना (ḍālnā) is the verb itself." } }
+  "hi-1548":
+    native: "Fry the cumin in oil."
+    bases: { "भूनो": "to roast" }
+    confusables: { "w1": { why: "Turmeric, not cumin: हल्दी (haldī) is yellow turmeric." }, "f2": { why: "The command is भूनो (bhūno); भूनना (bhūnnā) is the verb itself." } }
+  "hi-1549":
+    native: "Make a vegetable of cauliflower and spinach."
+    bases: { "बनाओ": "to make" }
+    confusables: { "w1": { why: "Okra, not spinach: भिंडी (bhiṇḍī) is okra." }, "f2": { why: "The command is बनाओ (banāo); बनाना (banānā) is the verb itself." } }
+  "hi-1550":
+    native: "Mix the yogurt and the sugar in the bowl."
+    bases: { "कटोरे": "bowl", "मिलाओ": "to mix" }
+    confusables: { "w1": { why: "Salt, not sugar: चीनी (chīnī) is sugar." }, "f2": { why: "The command to one person is मिलाओ (milāo); मिलाए (milāe) is the polite form." } }
+  "hi-1551":
+    native: "Cut the onion with a knife and serve it on a plate."
+    bases: { "काटो": "to cut", "परोसो": "to serve" }
+    confusables: { "w1": { why: "A sieve, not a knife: छलनी (chhalnī) strains flour." }, "f2": { why: "The command is परोसो (parosō); परोसना (parosnā) is the verb itself." } }
+  "hi-1552":
+    native: "Fry the fritters in oil, then serve them hot."
+    bases: { "पकौड़े": "fritter", "तलो": "to fry", "फिर": "then", "परोसो": "to serve" }
+    confusables: { "w1": { why: "Roasting or sautéing, not frying in oil: भूनना (bhūnnā) is to roast." }, "f2": { why: "तले (talē) is the passive; the command is तलो (talo)." } }
+  "hi-1553":
+    native: "Grind the spice and roast it on the griddle."
+    bases: { "पीसो": "to grind", "तवे": "griddle", "भूनो": "to roast" }
+    confusables: { "w1": { why: "Kneading dough, not grinding spice: गूँधना (gūndhnā) is to knead." }, "f2": { why: "The command is पीसो (pīso); पीसे (pīse) is the polite form." } }
+  "hi-1554":
+    native: "Cook the khichdi on a low gas."
+    bases: { "धीमी": "low", "पकाओ": "to cook" }
+    confusables: { "w1": { why: "The stove, not the gas: चूल्हा (chūlhā) is the traditional stove." }, "f2": { why: "धीमा (dhīmā) is masculine; खिचड़ी (khicṛī) is feminine, so धीमी (dhīmī) is right." } }
+  "hi-1555":
+    native: "When you open the lid, steam comes out."
+    bases: { "ढक्कन": "lid", "खोलो": "to open", "तो": "then", "निकलती": "to come out" }
+    confusables: { "w1": { why: "Water, not steam: पानी (pānī) is water." }, "f2": { why: "निकलता (nikaltā) is masculine; भाप (bhāp) is feminine, so निकलती (nikaltī) is right." } }
