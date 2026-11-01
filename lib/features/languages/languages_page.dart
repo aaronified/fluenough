@@ -369,7 +369,7 @@ class _Key extends StatelessWidget {
         for (final icon in extra)
           Icon(icon, size: 16, color: theme.colorScheme.onSurface),
         const SizedBox(width: 4),
-        Text(text, style: theme.textTheme.bodySmall),
+        Flexible(child: Text(text, style: theme.textTheme.bodySmall)),
       ],
     );
     return Semantics(
