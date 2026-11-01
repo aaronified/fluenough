@@ -513,10 +513,6 @@
   "@profilesLearningNothing": {
     "description": "Stands in for the list of languages when a profile learns none yet."
   },
-  "pinBackToProfiles": "Back to profiles",
-  "@pinBackToProfiles": {
-    "description": "Back button on the PIN screen."
-  },
   "pinGreeting": "Hi, {name}",
   "@pinGreeting": {
     "description": "Heading of the PIN screen.",
@@ -554,10 +550,6 @@
         "example": "4"
       }
     }
-  },
-  "pinDeleteDigit": "Delete digit",
-  "@pinDeleteDigit": {
-    "description": "Screen-reader label of the backspace key on the PIN pad."
   },
   "pinForgot": "Forgot PIN?",
   "@pinForgot": {
@@ -824,26 +816,6 @@
     "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
     "placeholders": {
       "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionLess": "{minutes, plural, =1{1 minute less} other{{minutes} minutes less}}",
-  "@todayRevisionLess": {
-    "description": "Screen-reader label and tooltip of quick revision's minus button.",
-    "placeholders": {
-      "minutes": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionMore": "{minutes, plural, =1{1 minute more} other{{minutes} minutes more}}",
-  "@todayRevisionMore": {
-    "description": "Screen-reader label and tooltip of quick revision's plus button.",
-    "placeholders": {
-      "minutes": {
         "type": "int",
         "example": "5"
       }
@@ -4833,10 +4805,6 @@
       }
     }
   },
-  "knownReportMistake": "Report a mistake",
-  "@knownReportMistake": {
-    "description": "Tooltip and screen-reader label of the bug icon at the top of the Languages you know sheet, shown only for a language whose own-script texts no speaker has checked (owner, 2026-10-18). It opens a report with the language and those texts, so a speaker can say one is wrong and give the right wording."
-  },
   "knownReadsWhichScripts": "Which scripts do you read {language} in?",
   "@knownReadsWhichScripts": {
     "description": "The sheet's question in Languages you know for a language written in several scripts, such as Punjabi in Gurmukhi and Shahmukhi (#551). Under it, an answer per script to tick, knownCanReadFallback, then knownSpeakOnly.",
@@ -6253,17 +6221,9 @@
       }
     }
   },
-  "settingsLogCopy": "Copy app log",
-  "@settingsLogCopy": {
-    "description": "Settings row that copies the app log as text."
-  },
   "settingsLogCopied": "App log copied",
   "@settingsLogCopied": {
     "description": "SnackBar after the app log is copied."
-  },
-  "settingsLogExport": "Export app log",
-  "@settingsLogExport": {
-    "description": "Settings row that saves the app log as a file."
   },
   "settingsLogExportDesc": "Text file",
   "@settingsLogExportDesc": {
@@ -6272,10 +6232,6 @@
   "settingsLogExportFailed": "Couldn’t save the app log",
   "@settingsLogExportFailed": {
     "description": "SnackBar when saving the app log fails."
-  },
-  "settingsLogClear": "Clear app log",
-  "@settingsLogClear": {
-    "description": "Settings row that deletes everything in the app log."
   },
   "settingsLogClearTitle": "Clear the app log?",
   "@settingsLogClearTitle": {
@@ -11119,10 +11075,6 @@
         "example": "कल, काल"
       }
     }
-  },
-  "ipaInfoDot": "About these sounds",
-  "@ipaInfoDot": {
-    "description": "Hint and screen-reader label of the small info dot beside a card's IPA; it opens the popup that explains each sound."
   },
   "cardWiktionaryLink": "Wiktionary: {word}",
   "@cardWiktionaryLink": {
