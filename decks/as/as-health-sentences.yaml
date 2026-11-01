@@ -1,0 +1,77 @@
+schema: 1
+id: "as-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3179"
+    target: "প্ৰতিদিনে হাঁটা ভাল।"
+    reading: "protidine hām̐ṭā bhāl."
+    ipa: "pɹotidine hãta bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খাটা", reading: "khāṭā", kind: "word" }
+      - { id: "c2", word: "দৌৰা", reading: "dourā", kind: "word" }
+  - id: "as-3180"
+    target: "নিদ্ৰা ভাল লাগে।"
+    reading: "nidrā bhāl lāge."
+    ipa: "nidɹa bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খোৱা", reading: "khuwā", kind: "word" }
+      - { id: "c2", word: "ব্যায়াম", reading: "byāyām", kind: "word" }
+  - id: "as-3181"
+    target: "স্বাস্থ্যকৰ খাদ্য খোৱা।"
+    reading: "xwāsthyôkôr khādy khuwā."
+    ipa: "sastʰjɔkɔɹ kʰadj kʰʊwa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বাচন", reading: "bāsôn", kind: "word" }
+      - { id: "c2", word: "ভিটামিন", reading: "bhiṭāmin", kind: "word" }
+  - id: "as-3182"
+    target: "তাই যোগ শিকে।"
+    reading: "tāi zog xike."
+    ipa: "tai zʊɡ xike"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "শিকে", ref: "as-2761" }
+    confusables:
+      - { id: "c1", word: "ব্যায়াম", reading: "byāyām", kind: "word" }
+      - { id: "c2", word: "সংগীত", reading: "xôṅgit", kind: "word" }
+  - id: "as-3183"
+    target: "শক্তি বহুত নাই।"
+    reading: "xôkti bohut nāi."
+    ipa: "xokti bohut nai"
+    pos: "phrase"
+    bases:
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "উদ্যম", reading: "udyôm", kind: "word" }
+      - { id: "c2", word: "পুষ্টি", reading: "puxti", kind: "word" }
+  - id: "as-3184"
+    target: "তেওঁ সতৰ্ক।"
+    reading: "teum̐ sôtôrkô."
+    ipa: "teʊ̃ sɔtɔɹk"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অসুস্থ", reading: "ônxusthô", kind: "word" }
+      - { id: "c2", word: "দুৰ্বল", reading: "durbôl", kind: "word" }
+  - id: "as-3185"
+    target: "ব্যায়াম কৰা।"
+    reading: "byāyām kôrā."
+    ipa: "bjajam kɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বিশ্ৰাম", reading: "bixrām", kind: "word" }
+      - { id: "c2", word: "ঘুমোৱা", reading: "ghumuwā", kind: "word" }
+  - id: "as-3186"
+    target: "সুস্থতা ভাল।"
+    reading: "xusthôtā bhāl."
+    ipa: "sustʰɔta bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অসুস্থ", reading: "ônxusthô", kind: "word" }
+      - { id: "c2", word: "ৰোগ", reading: "rôg", kind: "word" }

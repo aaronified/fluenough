@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-health"
+name: "Assamese reading: health and fitness"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-doctor-call"
+    title: "Calling the doctor"
+    theme: "health"
+    sentences:
+      - text: "ডাক্তৰ, মই অসুস্থ।"
+        reading: "dāktôr, moi ônxusthô."
+      - text: "শক্তি নাই আৰু নিদ্ৰা নাই।"
+        reading: "xôkti nāi āru nidrā nāi."
+      - text: "আজি ব্যায়াম নকৰিলোঁ।"
+        reading: "āzi byāyām nôkôrilōm̐."
+      - text: "কালি আহিম।"
+        reading: "kāli āhim."
+    questions:
+      - id: "as-3187"
+        prompt: { en: "The speaker is unwell." }
+        answer: true
+      - id: "as-3188"
+        prompt: { en: "What is missing?" }
+        options:
+          - { en: "Strength and sleep" }
+          - { en: "Money and food" }
+          - { en: "Water and light" }
+        answer: 1
+      - id: "as-3189"
+        prompt: { en: "When will the speaker come?" }
+        options:
+          - { en: "Today" }
+          - { en: "Yesterday" }
+          - { en: "Tomorrow" }
+        answer: 3
+  - id: "as-clinic-notice"
+    title: "A notice at the clinic"
+    theme: "health"
+    sentences:
+      - text: "প্ৰতিদিনে পানী খাওক।"
+        reading: "protidine pāni khāwôk."
+      - text: "স্বাস্থ্যকৰ খাদ্য খাওক।"
+        reading: "xwāsthyôkôr khādy khāwôk."
+      - text: "ব্যায়াম কৰক।"
+        reading: "byāyām kôrôk."
+      - text: "বিশ্ৰাম লওক।"
+        reading: "bixrām lôwôk."
+    questions:
+      - id: "as-3190"
+        prompt: { en: "The notice asks people to drink water." }
+        answer: true
+      - id: "as-3191"
+        prompt: { en: "What kind of food is asked for?" }
+        options:
+          - { en: "Healthy" }
+          - { en: "Sweet" }
+          - { en: "Spicy" }
+        answer: 1
+      - id: "as-3192"
+        prompt: { en: "What else is asked?" }
+        options:
+          - { en: "Exercise" }
+          - { en: "Sleep only" }
+          - { en: "Shouting" }
+        answer: 1

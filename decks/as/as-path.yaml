@@ -428,11 +428,14 @@ units:
   # B1: the themes and grammar of the CEFR's B1.
   - decks: ["as-registers"]
     words: 13
-  - planned: { id: "as-health", theme: "health", words: 55 }
+  - decks: ["as-health", "as-health-sentences", "*"]
+    words: 18
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - decks: ["as-reading-health"]
+    words: 0
   - planned: { id: "as-feelings", theme: "feelings", words: 55 }
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
