@@ -1029,7 +1029,7 @@ class _Note extends StatelessWidget {
 }
 
 class _PlainBadge extends StatelessWidget {
-  const _PlainBadge({required this.text});
+  const _PlainBadge({super.key, required this.text});
 
   final String text;
 
@@ -1323,9 +1323,9 @@ class _SoundCheckDialogState extends State<_SoundCheckDialog> {
   }
 }
 
-/// The i: the language's badge, how much of B1 is written and the learner's
-/// share, its A1 line, dialect, scripts, taught-from, sizes, last update
-/// check, units built and words.
+/// The i: the language's badge and family tag (#698), how much of B1 is written
+/// and the learner's share, its A1 line, dialect, scripts, taught-from, sizes,
+/// last update check, units built and words.
 class _InfoDialog extends StatelessWidget {
   const _InfoDialog({
     required this.view,
@@ -1366,6 +1366,9 @@ class _InfoDialog extends StatelessWidget {
     final onPhone = downloads == null ? 0 : downloads.sizeOnPhone(view.code);
     final checked = downloads?.checkedAt;
     final taught = course?.nativeFor(spoken)?.name;
+    final family = languageFamilies.contains(view.language.family)
+        ? view.language.family
+        : null;
 
     Widget kv(String label, String value) => Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 8),
@@ -1406,6 +1409,11 @@ class _InfoDialog extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
                 if (tag != null) StageTag(tag: tag),
+                if (family != null)
+                  _PlainBadge(
+                    key: const ValueKey<String>('language-family'),
+                    text: l10n.knownFamily(family),
+                  ),
                 if (progress != null && progress.hasPlan)
                   Text(l10n.languagesPercentB1(progress.percent)),
                 if (share != null)
