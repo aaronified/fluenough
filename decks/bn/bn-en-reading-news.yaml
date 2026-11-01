@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-news"
+name: "Reading: news"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A radio news bulletin, and a list of newspaper headlines, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-radio-news"
+    title: "A short radio news bulletin"
+    theme: "news"
+    sentences:
+      - { text: "এখন খবর।", reading: "ekhon khôbor.", ipa: "ekʰon kʰɔbor" }
+      - { text: "আজ সকালে ঢাকায় একটা দুর্ঘটনা ঘটেছে।", reading: "āj sôkāle ḍhākāy ekoṭā durghoṭonā ghôṭeche.", ipa: "adʒ sɔkale ɖʱakaj ekoʈa d̪urɡʱoʈona ɡʱɔʈetʃʰe" }
+      - { text: "রাস্তায় বৃষ্টি, তাই যানজট বেশি।", reading: "rāstāy briśṭi, tāi jānojoṭ beśi.", ipa: "rast̪aj briʃʈi t̪ai dʒanodʒoʈ beʃi" }
+      - { text: "সরকার কাল একটা ঘোষণা করবে।", reading: "sôrokār kāl ekoṭā ghośonā kôrobe.", ipa: "sɔrokar kal ekoʈa ɡʱoʃona kɔrobe" }
+      - { text: "কাল ধর্মঘট হবে না।", reading: "kāl dhôrmoghoṭ hôbe nā.", ipa: "kal d̪ʱɔrmoɡʱoʈ ɦɔbe na" }
+    questions:
+      - id: "bn-2950"
+        prompt: { "en": "The news is about a road accident in Dhaka this morning." }
+        answer: true
+      - id: "bn-2951"
+        prompt: { "en": "Why is there more traffic?" }
+        options: [{ "en": "Because of the rain" }, { "en": "Because of a strike" }]
+        answer: 1
+      - id: "bn-2952"
+        prompt: { "en": "Will there be a strike tomorrow?" }
+        options: [{ "en": "No" }, { "en": "Yes" }]
+        answer: 1
+  - id: "bn-headline-list"
+    title: "A list of newspaper headlines"
+    theme: "news"
+    sentences:
+      - { text: "নির্বাচনের তারিখ ঘোষণা।", reading: "nirrāconer tārikh ghośonā.", ipa: "nirratʃoner t̪arikʰ ɡʱoʃona" }
+      - { text: "নতুন বাজার খুলছে।", reading: "notun bājār khuloche.", ipa: "not̪un badʒar kʰulotʃʰe" }
+      - { text: "স্থানীয় স্কুলে প্রতিযোগিতা।", reading: "sthāniy skule protijogitā.", ipa: "st̪ʰanij skule prot̪idʒoɡit̪a" }
+      - { text: "মিছিল আর প্রতিবাদ শহরে।", reading: "michil ār protibād śôhore.", ipa: "mitʃʰil ar prot̪ibad̪ ʃɔɦore" }
+      - { text: "সম্পাদকের মন্তব্য জানুন।", reading: "sômpādoker môntobb jānun.", ipa: "sɔmpad̪oker mɔnt̪obb dʒanun" }
+    questions:
+      - id: "bn-2953"
+        prompt: { "en": "One headline is about an election date." }
+        answer: true
+      - id: "bn-2954"
+        prompt: { "en": "What is the second headline about?" }
+        options: [{ "en": "A new market opening" }, { "en": "A new school" }]
+        answer: 1
+      - id: "bn-2955"
+        prompt: { "en": "Where are the protests?" }
+        options: [{ "en": "In the town" }, { "en": "In the sea" }]
+        answer: 1

@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-news-sentences"
+kind: "layer"
+core: "bn-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News: sentences"
+description: "Short sentences about news, papers and reporting. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2939":
+    native: "Today's news is good."
+    bases: { "আজকের": "of today" }
+    confusables: { "c1": { why: "the rumour: not the news itself, and not true" }, "c2": { why: "the incident: an event, not the news about it" } }
+  "bn-2940":
+    native: "There is a headline in the newspaper."
+    bases: { "আছে": "there is" }
+    confusables: { "c1": { why: "an essay: a longer piece, not a headline" }, "c2": { why: "the editor: a person, not a headline" } }
+  "bn-2941":
+    native: "I am listening to the news on the radio."
+    bases: { "শুনছি": "listening" }
+    confusables: { "c1": { why: "television: a screen, not a radio" }, "c2": { why: "a newspaper: printed, not heard" } }
+  "bn-2942":
+    native: "The government has announced new rules."
+    confusables: { "c1": { why: "an election: a vote, not a rule" }, "c2": { why: "a protest: a reaction, not an announcement" } }
+  "bn-2943":
+    native: "The news of the accident has spread."
+    bases: { "ছড়িয়েছে": "spread" }
+    confusables: { "c1": { why: "a strike: stopping work, not an accident" }, "c2": { why: "a procession: people walking, not an accident" } }
+  "bn-2944":
+    native: "Do not believe this rumour. (familiar)"
+    bases: { "এই": "this", "বিশ্বাস": "belief", "না": "not" }
+    confusables: { "c1": { why: "the truth: the opposite of a rumour" }, "c2": { why: "a lie: close in meaning, but a word for a false thing" } }
+  "bn-2945":
+    native: "The reporter has gone to the scene."
+    bases: { "ঘটনাস্থলে": "at the scene" }
+    confusables: { "c1": { why: "the editor: works in the office" }, "c2": { why: "a reader: reads the news, does not report it" } }
+  "bn-2946":
+    native: "What is the source of this information?"
+    bases: { "এই": "this", "কী": "what" }
+    confusables: { "c1": { why: "a headline: the title, not the source" }, "c2": { why: "a programme: a show, not a source" } }
+  "bn-2947":
+    native: "The programme will be broadcast live."
+    bases: { "সরাসরি": "live" }
+    confusables: { "c1": { why: "a recording: made earlier, not live" }, "c2": { why: "a repeat: a second showing, not live" } }
+  "bn-2948":
+    native: "The news has finally come."
+    bases: { "অবশেষে": "at last" }
+    confusables: { "c1": { why: "in the end: close in meaning, a different word" }, "c2": { why: "recently: a different time" } }
+  "bn-2949":
+    native: "Thank you for the comment."
+    bases: { "জন্য": "for", "ধন্যবাদ": "thank you" }
+    confusables: { "c1": { why: "praise: a kind word, not a comment" }, "c2": { why: "criticism: a comment too, but not thanks" } }

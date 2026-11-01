@@ -468,11 +468,14 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "bn-news", theme: "news", words: 55 }
+  - decks: ["bn-news", "bn-news-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - decks: ["bn-reading-news"]
+    words: 0
   - planned: { id: "bn-opinions", theme: "opinions", words: 50 }
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
