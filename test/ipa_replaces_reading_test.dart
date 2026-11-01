@@ -4,6 +4,7 @@
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/settings/ipa_replaces_tile.dart';
 import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -13,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
+import 'support/ipa_course.dart';
 
 Future<void> pumpLines(
   WidgetTester tester, {
@@ -49,7 +51,43 @@ Future<void> pumpLines(
   );
 }
 
+Future<void> pumpWordSheet(
+  WidgetTester tester, {
+  required bool replaces,
+}) async {
+  usePhone(tester);
+  final state = ipaApp(<String>['hi']);
+  state.settings
+    ..showIpa = true
+    ..ipaReplacesReading = replaces;
+  await state.load();
+  final entry = state.deckById('hi-en-words')!;
+  await pumpScreen(
+    tester,
+    Scaffold(
+      body: WordSheet(card: entry.cards.first, language: entry.language),
+    ),
+    state: state,
+  );
+}
+
 void main() {
+  testWidgets('word sheet, switch off: the transliteration and the IPA with '
+      'its info dot', (tester) async {
+    await pumpWordSheet(tester, replaces: false);
+    expect(find.text('pattā'), findsOneWidget);
+    expect(find.text('/pʰəɳ/'), findsOneWidget);
+    expect(find.byTooltip(l10nOf(tester).ipaInfoDot), findsOneWidget);
+  });
+
+  testWidgets('word sheet, switch on: the IPA in the transliteration\'s place, '
+      'still with its info dot', (tester) async {
+    await pumpWordSheet(tester, replaces: true);
+    expect(find.text('pattā'), findsNothing);
+    expect(find.text('/pʰəɳ/'), findsOneWidget);
+    expect(find.byTooltip(l10nOf(tester).ipaInfoDot), findsOneWidget);
+  });
+
   testWidgets('IPA on and the switch on: the IPA is the reading, and the '
       'transliteration is gone', (tester) async {
     await pumpLines(tester, ipa: true, replaces: true);

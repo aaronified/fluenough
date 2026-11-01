@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../../app/settings.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';

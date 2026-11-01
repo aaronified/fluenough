@@ -98,7 +98,6 @@ class WordSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
-    final ipa = ipaToShow(context, card.ipa, target: card.target);
     // With "IPA replaces transliteration" on, the IPA is the reading and its
     // small line goes (#697).
     final lines = readingLines(
@@ -149,11 +148,15 @@ class WordSheet extends StatelessWidget {
                   ),
                 ),
                 if (reading != null)
-                  Text(
-                    reading,
-                    style: theme.textTheme.titleMedium!
-                        .copyWith(color: scheme.onSurfaceVariant)
-                        .forIpa(lines.swapped),
+                  ReadingWithInfo(
+                    swapped: lines.swapped,
+                    card: card,
+                    reading: Text(
+                      reading,
+                      style: theme.textTheme.titleMedium!
+                          .copyWith(color: scheme.onSurfaceVariant)
+                          .forIpa(lines.swapped),
+                    ),
                   ),
                 Row(
                   children: <Widget>[
