@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-housing"
+name: "Reading: housing"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A small advertisement for a flat, and a note from a tenant to the owner. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-housing-flat"
+    title: "A flat to rent"
+    theme: "housing"
+    sentences:
+      - {"text": "दो कमरों का फ़्लैट किराये पर उपलब्ध है।", "reading": "dō kamrōm̐ kā flaiṭ kirāyē par uplabdh hai.", "ipa": "d̪oː kəmrõː kaː flɛːʈ kɪraːjeː pər ʊpləbd̪ʱ ɦɛː"}
+      - {"text": "बालकनी से हरा आँगन दिखता है।", "reading": "bālknī sē harā ām̐gan dikhtā hai.", "ipa": "baːlkniː seː ɦəraː ãːɡən d̪ɪkʰt̪aː ɦɛː"}
+      - {"text": "लिफ़्ट और गेट पर चौकीदार है।", "reading": "lifṭ aur gēṭ par caukīdār hai.", "ipa": "lɪfʈ ɔːr ɡeːʈ pər tʃɔːkiːd̪aːr ɦɛː"}
+      - {"text": "सोफ़ा, पलंग और अलमारी सब मौजूद हैं।", "reading": "sōfā, palaṅg aur almārī sab maujūd haim̐.", "ipa": "soːfaː pələŋɡ ɔːr əlmaːriː səb mɔːdʒuːd̪ ɦɛ̃ː"}
+    questions:
+      - {"id": "hi-2608", "prompt": {"en": "The flat has two rooms."}, "answer": true}
+      - {"id": "hi-2609", "prompt": {"en": "What can be seen from the balcony?"}, "options": [{"en": "A green courtyard"}, {"en": "The sea"}], "answer": 1}
+      - {"id": "hi-2610", "prompt": {"en": "There is no watchman at the gate."}, "answer": false}
+  - id: "hi-housing-note"
+    title: "A note to the owner"
+    theme: "housing"
+    sentences:
+      - {"text": "मालिक जी, गैस का सिलेंडर खत्म हो गया है।", "reading": "mālik jī, gais kā silēṇḍar khatm hō gayā hai.", "ipa": "maːlɪk dʒiː ɡɛːs kaː sɪleːɳɖər kʰət̪m ɦoː ɡəjaː ɦɛː"}
+      - {"text": "एसी की मरम्मत करवा दीजिए।", "reading": "ēsī kī marammat karvā dījiē.", "ipa": "eːsiː kiː mərəmmət̪ kərʋaː d̪iːdʒɪeː"}
+      - {"text": "किरायेदार का नया पता यह है।", "reading": "kirāyēdār kā nayā patā yah hai.", "ipa": "kɪraːjeːd̪aːr kaː nəjaː pət̪aː jəɦ ɦɛː"}
+      - {"text": "सोसाइटी की बैठक में मैं भी आऊँगा।", "reading": "sōsāiṭī kī baiṭhak mēm̐ maim̐ bhī āūm̐gā.", "ipa": "soːsaːɪʈiː kiː bɛːʈʰək mẽː mɛ̃ː bʱiː aːũːɡaː"}
+    questions:
+      - {"id": "hi-2611", "prompt": {"en": "The gas cylinder has run out."}, "answer": true}
+      - {"id": "hi-2612", "prompt": {"en": "What needs repairing?"}, "options": [{"en": "The air conditioner"}, {"en": "The lift"}], "answer": 1}
+      - {"id": "hi-2613", "prompt": {"en": "The tenant is moving out of the colony."}, "answer": false}
