@@ -326,7 +326,8 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
-  - planned: { id: "mr-appearance", theme: "appearance", words: 50 }
+  - decks: ["mr-appearance", "*"]
+    words: 13
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
