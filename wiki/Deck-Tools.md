@@ -65,10 +65,12 @@ path, size, SHA-256, schema, kind, and the native language and core id of a
 deck, how many proposals a file holds (`proposed`), and `content_sha256`,
 the file's hash without its proposals and `checked_by`, which a learner's
 phone compares (#444, #449). Languages in
-`HIDDEN` are left out (the planned languages' starter decks, #959, are hidden
-so a 0.7.0 phone sees nothing new; remove them from `HIDDEN`, and add them to
-`SHIPPED` in `tools/test_deck_index.py`, once 0.7.1 and the min-app gate are
-out); `decks/themes.yaml` stays bundled
+`HIDDEN` are left out (the set is empty now: 0.7.1 is released and the planned
+languages' starter decks, #959, are listed, owner, 2026-11-01; add a code to
+hide a language again, and keep `SHIPPED` in `tools/test_deck_index.py` in
+step). The new languages are visible to every phone: a phone still on 0.7.0
+sees them on the Download page and the placement picker but not on the
+Languages page (known and accepted by the owner). `decks/themes.yaml` stays bundled
 in the app. One file is one line, so a changed deck is a one-line diff.
 
 `validate_decks.py decks/` fails while the index is out of date, so CI keeps

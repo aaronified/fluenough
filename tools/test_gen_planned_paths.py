@@ -148,6 +148,15 @@ class Wiring(unittest.TestCase):
         once = gp.wire_unit_one("xx", self.SAMPLE)
         self.assertEqual(gp.wire_unit_one("xx", once), once)
 
+    def test_a_course_without_a_phrasebook_teaches_the_first_words_alone(self) -> None:
+        for source in (self.SAMPLE, gp.wire_unit_one("pt", self.SAMPLE.replace("xx", "pt"))):
+            code = "egy"
+            text = source.replace("xx", code).replace("pt-", code + "-")
+            out = gp.wire_unit_one(code, text)
+            self.assertIn('  - decks: ["egy-first-words", "*"]\n    words: 10\n', out)
+            self.assertNotIn("egy-phrasebook", out.split("units:")[1])
+            self.assertEqual(gp.wire_unit_one(code, out), out)
+
     def test_a_path_without_the_planned_unit_is_refused(self) -> None:
         with self.assertRaises(ValueError):
             gp.wire_unit_one("xx", "units:\n  - [\"*\"]\n")

@@ -192,7 +192,10 @@ learn, then the other themes woven with the grammar of the language's family
 pattern for Semitic, tones for Cantonese, Thai, Vietnamese and Hausa, noun
 classes for Swahili, ergativity for Basque, mutations for Irish). Grammar
 topics are generic category names, never a stated rule of the language. Only
-unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words);
+unit 1 is written (`<code>-phrasebook` and `<code>-first-words`, 10 words;
+Egyptian, Sumerian, Mycenaean Greek and Proto-Indo-European have no
+phrasebook, their cards being below the validator's 15, so unit 1 is
+`<code>-first-words` alone, owner, 2026-11-01; `NO_PHRASEBOOK` in the generator);
 every other unit is `planned:` with placeholder listening and reading
 passages, to be reworded when written.
 
