@@ -256,8 +256,16 @@ void main() {
       );
       expect(icon(1, SkillKind.read), findsOneWidget);
       expect(icon(1, SkillKind.write), findsOneWidget);
+      // Perso-Arabic is at Learn too: its eye and keyboard, with the cap.
       expect(icon(2, SkillKind.read), findsOneWidget);
-      expect(icon(2, SkillKind.write), findsNothing);
+      expect(icon(2, SkillKind.write), findsOneWidget);
+      expect(
+        find.descendant(
+          of: chips.at(2),
+          matching: find.byKey(const ValueKey<String>('pill-mark-learn')),
+        ),
+        findsOneWidget,
+      );
       String glyph(int i) => tester
           .widget<Text>(
             find.descendant(
