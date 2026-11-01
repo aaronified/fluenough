@@ -1,0 +1,241 @@
+schema: 1
+id: isv-first-words
+part: core
+kind: vocab
+language:
+  code: isv
+  iso639_3: isv
+  name: Interslavic
+  script: latin
+  scripts:
+  - latin
+  - cyrillic
+  icon: Me
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: isv-0001
+  target: da
+  target_scripts:
+    cyrillic: да
+  ipa: da
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Da, ja idu.
+    ipa: da, ja idu.
+    bases:
+    - word: idu
+      base: idti
+  - target: Da, voda je dobra.
+    ipa: da, voda je dobra.
+    bases:
+    - word: je
+      base: byti
+    - word: dobra
+      ref: isv-0006
+- id: isv-0002
+  target: ne
+  target_scripts:
+    cyrillic: не
+  ipa: ne
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Ne, ja ne idu.
+    ipa: ne, ja ne idu.
+    bases:
+    - word: idu
+      base: idti
+  - target: Ta voda ne je dobra.
+    ipa: ta voda ne je dobra.
+    bases:
+    - word: ta
+      base: ta
+    - word: je
+      base: byti
+    - word: dobra
+      ref: isv-0006
+- id: isv-0003
+  target: ja
+  target_scripts:
+    cyrillic: ја
+  ipa: ja
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Ja imam vodu.
+    ipa: ja imam vodu.
+    bases:
+    - word: imam
+      base: imati
+    - word: vodu
+      ref: isv-0005
+  - target: Ja ne imam vodu.
+    ipa: ja ne imam vodu.
+    bases:
+    - word: imam
+      base: imati
+    - word: vodu
+      ref: isv-0005
+- id: isv-0004
+  target: vy
+  target_scripts:
+    cyrillic: вы
+  ipa: vɨ
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Vy ste dobri.
+    ipa: vɨ ste dobri.
+    bases:
+    - word: ste
+      base: byti
+    - word: dobri
+      ref: isv-0006
+  - target: Vy idete?
+    ipa: vɨ idete?
+    bases:
+    - word: idete
+      base: idti
+- id: isv-0005
+  target: voda
+  target_scripts:
+    cyrillic: вода
+  ipa: voda
+  pos: noun
+  gender: f
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Voda je dobra.
+    ipa: voda je dobra.
+    bases:
+    - word: je
+      base: byti
+    - word: dobra
+      ref: isv-0006
+  - target: Ja imam vodu.
+    ipa: ja imam vodu.
+    bases:
+    - word: imam
+      base: imati
+    - word: vodu
+      base: voda
+- id: isv-0006
+  target: dobry
+  target_scripts:
+    cyrillic: добры
+  ipa: dobrɨ
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Dobry dom.
+    ipa: dobrɨ dom.
+    bases:
+    - word: dom
+      ref: isv-0009
+  - target: Dobry den!
+    ipa: dobrɨ den!
+    bases:
+    - word: den
+      base: den
+- id: isv-0007
+  target: jedin
+  target_scripts:
+    cyrillic: једин
+  ipa: jedin
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Jedin, dva.
+    ipa: jedin, dva.
+    bases:
+    - word: dva
+      base: dva
+  - target: Jedin dom.
+    ipa: jedin dom.
+    bases:
+    - word: dom
+      ref: isv-0009
+- id: isv-0008
+  target: veliky
+  target_scripts:
+    cyrillic: велики
+  ipa: veliki
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Veliky dom.
+    ipa: veliki dom.
+    bases:
+    - word: dom
+      ref: isv-0009
+  - target: Dom je veliky.
+    ipa: dom je veliki.
+    bases:
+    - word: je
+      base: byti
+- id: isv-0009
+  target: dom
+  target_scripts:
+    cyrillic: дом
+  ipa: dom
+  pos: noun
+  gender: m
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Ja imam dom.
+    ipa: ja imam dom.
+    bases:
+    - word: imam
+      base: imati
+  - target: Dom je dobry.
+    ipa: dom je dobrɨ.
+    bases:
+    - word: je
+      base: byti
+    - word: dobry
+      ref: isv-0006
+- id: isv-0010
+  target: idi
+  target_scripts:
+    cyrillic: иди
+  ipa: idi
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: Idi, idemo!
+    ipa: idi, idemo!
+    bases:
+    - word: idemo
+      base: idti
+  - target: Idi domoj.
+    ipa: idi domoj.
+    bases:
+    - word: domoj
+      base: domoj

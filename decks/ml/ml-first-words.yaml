@@ -1,0 +1,274 @@
+schema: 1
+id: ml-first-words
+part: core
+kind: vocab
+language:
+  code: ml
+  iso639_3: mal
+  name: Malayalam
+  script: malayalam
+  tts: ml-IN
+  icon: മ
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: ml-0001
+  target: അതെ
+  reading: ate
+  ipa: əte
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: അതെ, ഞാൻ വരുന്നു.
+    reading: ate, ñāṉ varunnu.
+    ipa: əte, ɲaːn ʋarunnu.
+    bases:
+    - word: ഞാൻ
+      ref: ml-0003
+    - word: വരുന്നു
+      ref: ml-0010
+  - target: അതെ, ഇത് നല്ലത്.
+    reading: ate, it nallat.
+    ipa: əte, it nəllət.
+    bases:
+    - word: ഇത്
+      base: ഇത്
+      reading: it
+    - word: നല്ലത്
+      ref: ml-0006
+- id: ml-0002
+  target: ഇല്ല
+  reading: illa
+  ipa: illə
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: വെള്ളം ഇല്ല.
+    reading: veḷḷaṁ illa.
+    ipa: ʋeɭɭam illə.
+    bases:
+    - word: വെള്ളം
+      ref: ml-0005
+  - target: ഞാൻ വരില്ല.
+    reading: ñāṉ varilla.
+    ipa: ɲaːn ʋarillə.
+    bases:
+    - word: ഞാൻ
+      ref: ml-0003
+    - word: വരില്ല
+      ref: ml-0010
+- id: ml-0003
+  target: ഞാൻ
+  reading: ñāṉ
+  ipa: ɲaːn
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ഞാൻ വരുന്നു.
+    reading: ñāṉ varunnu.
+    ipa: ɲaːn ʋarunnu.
+    bases:
+    - word: വരുന്നു
+      ref: ml-0010
+  - target: ഞാൻ വെള്ളം കുടിക്കുന്നു.
+    reading: ñāṉ veḷḷaṁ kuṭikkunnu.
+    ipa: ɲaːn ʋeɭɭam kuɖikkunnu.
+    bases:
+    - word: വെള്ളം
+      ref: ml-0005
+    - word: കുടിക്കുന്നു
+      base: കുടിക്കുക
+      reading: kuṭikkuka
+- id: ml-0004
+  target: നിങ്ങൾ
+  reading: niṅṅaḷ
+  ipa: niŋŋaɭ
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: നിങ്ങൾ വരുന്നുണ്ടോ?
+    reading: niṅṅaḷ varunnuṇṭō?
+    ipa: niŋŋaɭ ʋarunnuɳɖoː?
+    bases:
+    - word: വരുന്നുണ്ടോ
+      ref: ml-0010
+  - target: നിങ്ങൾ വെള്ളം കുടിക്കുന്നുണ്ടോ?
+    reading: niṅṅaḷ veḷḷaṁ kuṭikkunnuṇṭō?
+    ipa: niŋŋaɭ ʋeɭɭam kuɖikkunnuɳɖoː?
+    bases:
+    - word: വെള്ളം
+      ref: ml-0005
+    - word: കുടിക്കുന്നുണ്ടോ
+      base: കുടിക്കുക
+      reading: kuṭikkuka
+- id: ml-0005
+  target: വെള്ളം
+  reading: veḷḷaṁ
+  ipa: ʋeɭɭam
+  pos: noun
+  gender: n
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: വെള്ളം നല്ലതാണ്.
+    reading: veḷḷaṁ nallatāṇ.
+    ipa: ʋeɭɭam nəllət̪aːɳ.
+    bases:
+    - word: നല്ലതാണ്
+      base: നല്ലത്
+      reading: nallat
+  - target: ഇത് വെള്ളമാണ്.
+    reading: it veḷḷamāṇ.
+    ipa: it ʋeɭɭamaːɳ.
+    bases:
+    - word: ഇത്
+      base: ഇത്
+      reading: it
+    - word: വെള്ളമാണ്
+      base: വെള്ളം
+      reading: veḷḷaṁ
+- id: ml-0006
+  target: നല്ല
+  reading: nalla
+  ipa: nəlla
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: നല്ല വീട്.
+    reading: nalla vīṭ.
+    ipa: nəlla ʋiːʈ.
+    bases:
+    - word: വീട്
+      ref: ml-0009
+  - target: നല്ല വെള്ളം.
+    reading: nalla veḷḷaṁ.
+    ipa: nəlla ʋeɭɭam.
+    bases:
+    - word: വെള്ളം
+      ref: ml-0005
+- id: ml-0007
+  target: ഒന്ന്
+  reading: onn
+  ipa: onn
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ഒന്ന്, രണ്ട്.
+    reading: onn, raṇṭ.
+    ipa: onn, rəɳɖ.
+    bases:
+    - word: രണ്ട്
+      base: രണ്ട്
+      reading: raṇṭ
+  - target: ഒരു വീട്.
+    reading: oru vīṭ.
+    ipa: oɾu ʋiːʈ.
+    bases:
+    - word: ഒരു
+      base: ഒരു
+      reading: oru
+    - word: വീട്
+      ref: ml-0009
+- id: ml-0008
+  target: വലിയ
+  reading: valiya
+  ipa: ʋəlijə
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: വലിയ വീട്.
+    reading: valiya vīṭ.
+    ipa: ʋəlijə ʋiːʈ.
+    bases:
+    - word: വീട്
+      ref: ml-0009
+  - target: നിങ്ങളുടെ വീട് വലുതാണ്.
+    reading: niṅṅaḷuṭe vīṭ valutāṇ.
+    ipa: niŋŋaɭuʈe ʋiːʈ ʋəlut̪aːɳ.
+    bases:
+    - word: നിങ്ങളുടെ
+      ref: ml-0004
+    - word: വീട്
+      ref: ml-0009
+    - word: വലുതാണ്
+      base: വലുത്
+      reading: valut
+- id: ml-0009
+  target: വീട്
+  reading: vīṭ
+  ipa: ʋiːʈ
+  pos: noun
+  gender: n
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ഇത് എന്റെ വീട്.
+    reading: it eṉṟe vīṭ.
+    ipa: it ʲenɾe ʋiːʈ.
+    bases:
+    - word: ഇത്
+      base: ഇത്
+      reading: it
+    - word: എന്റെ
+      ref: ml-0003
+  - target: വീട്ടിൽ വെള്ളം ഇല്ല.
+    reading: vīṭṭil veḷḷaṁ illa.
+    ipa: ʋiːʈːil ʋeɭɭam illə.
+    bases:
+    - word: വീട്ടിൽ
+      base: വീട്
+      reading: vīṭ
+    - word: വെള്ളം
+      ref: ml-0005
+- id: ml-0010
+  target: വരൂ
+  reading: varū
+  ipa: ʋaruː
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: വരൂ, നമുക്ക് പോകാം.
+    reading: varū, namukk pōkāṁ.
+    ipa: ʋaruː, nəmukk poːkaːm.
+    bases:
+    - word: നമുക്ക്
+      base: നമ്മൾ
+      reading: nammaḷ
+    - word: പോകാം
+      base: പോകുക
+      reading: pōkuka
+  - target: ഞാൻ നാളെ വരും.
+    reading: ñāṉ nāḷe varuṁ.
+    ipa: ɲaːn naːɭe ʋarum.
+    bases:
+    - word: ഞാൻ
+      ref: ml-0003
+    - word: നാളെ
+      base: നാളെ
+      reading: nāḷe
+    - word: വരും
+      base: വരുക
+      reading: varuka
