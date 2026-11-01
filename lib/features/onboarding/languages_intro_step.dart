@@ -64,81 +64,88 @@ class LanguagesIntro extends StatelessWidget {
         Text(label, style: body),
       ],
     );
-    return ListView(
+    // A column in a scroll view, not a lazy list: it is short, and every part
+    // of it is there for a screen reader and a test to find.
+    return SingleChildScrollView(
       padding: const EdgeInsetsDirectional.only(bottom: 16),
-      children: <Widget>[
-        QuestionHeading(
-          title: l10n.onboardingLanguagesTitle,
-          body: l10n.onboardingLanguagesIntro,
-        ),
-        Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
-          child: DefaultTextStyle.merge(
-            style: body,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                term(
-                  SkillMark.learn,
-                  l10n.languagesStateLearn,
-                  l10n.onboardingLanguagesLearnMeaning,
-                ),
-                term(
-                  SkillMark.know,
-                  l10n.languagesStateKnow,
-                  l10n.onboardingLanguagesKnowMeaning,
-                ),
-                term(
-                  SkillMark.leave,
-                  l10n.languagesPillLeave,
-                  l10n.onboardingLanguagesLeaveMeaning,
-                ),
-                Text(l10n.onboardingLanguagesIcons),
-                const SizedBox(height: 6),
-                Wrap(
-                  spacing: 16,
-                  runSpacing: 6,
-                  children: <Widget>[
-                    skill(SkillKind.read, l10n.languagesSkillRead),
-                    skill(SkillKind.write, l10n.languagesSkillWrite),
-                    skill(SkillKind.hear, l10n.languagesSkillHear),
-                    skill(SkillKind.speak, l10n.languagesSkillSpeak),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Text(l10n.onboardingLanguagesPairs),
-                const SizedBox(height: 8),
-                // The four steps a tap goes through.
-                Wrap(
-                  spacing: 6,
-                  runSpacing: 6,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: <Widget>[
-                    spokenPill(SkillMark.leave),
-                    step,
-                    spokenPill(SkillMark.learn),
-                    step,
-                    spokenPill(SkillMark.know),
-                    step,
-                    spokenPill(SkillMark.knowBoth),
-                  ],
-                ),
-                const SizedBox(height: 14),
-                spokenPill(SkillMark.knowBothCovered),
-                const SizedBox(height: 6),
-                Text(l10n.onboardingLanguagesChecked(l10n.languagesFindLevel)),
-              ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          QuestionHeading(
+            title: l10n.onboardingLanguagesTitle,
+            body: l10n.onboardingLanguagesIntro,
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
+            child: DefaultTextStyle.merge(
+              style: body,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  term(
+                    SkillMark.learn,
+                    l10n.languagesStateLearn,
+                    l10n.onboardingLanguagesLearnMeaning,
+                  ),
+                  term(
+                    SkillMark.know,
+                    l10n.languagesStateKnow,
+                    l10n.onboardingLanguagesKnowMeaning,
+                  ),
+                  term(
+                    SkillMark.leave,
+                    l10n.languagesPillLeave,
+                    l10n.onboardingLanguagesLeaveMeaning,
+                  ),
+                  Text(l10n.onboardingLanguagesIcons),
+                  const SizedBox(height: 6),
+                  Wrap(
+                    spacing: 16,
+                    runSpacing: 6,
+                    children: <Widget>[
+                      skill(SkillKind.read, l10n.languagesSkillRead),
+                      skill(SkillKind.write, l10n.languagesSkillWrite),
+                      skill(SkillKind.hear, l10n.languagesSkillHear),
+                      skill(SkillKind.speak, l10n.languagesSkillSpeak),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(l10n.onboardingLanguagesPairs),
+                  const SizedBox(height: 8),
+                  // The four steps a tap goes through.
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: <Widget>[
+                      spokenPill(SkillMark.leave),
+                      step,
+                      spokenPill(SkillMark.learn),
+                      step,
+                      spokenPill(SkillMark.know),
+                      step,
+                      spokenPill(SkillMark.knowBoth),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  spokenPill(SkillMark.knowBothCovered),
+                  const SizedBox(height: 6),
+                  Text(
+                    l10n.onboardingLanguagesChecked(l10n.languagesFindLevel),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        PickerNote(
-          icon: Icons.lock_outline,
-          text: l10n.onboardingSpokenPrivacy(
-            l10n.navSettings,
-            l10n.languagesTitle,
+          PickerNote(
+            icon: Icons.lock_outline,
+            text: l10n.onboardingSpokenPrivacy(
+              l10n.navSettings,
+              l10n.languagesTitle,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

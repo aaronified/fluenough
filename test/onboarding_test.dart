@@ -2,28 +2,36 @@
 // tabs; the tour walks, skips, goes back as Android back does, and claims
 // only what ships; a double tap cannot skip a step; the sound check asks for
 // the microphone only on Record and saves speaking and listening as it
-// found them; Languages you know finds a language by its English or its own
-// name, asks in that language, asks which script where there are several,
-// and reads saves from before #551.
+// found them; the first launch explains what Know and Learn mean, then lists
+// the languages, finds one by its English or its own name or an alias, asks
+// which script is read in the language's own script (the English under the
+// question only), takes Know and Learn on the Languages page's skills sheet,
+// saves them as skills with the older lists in step, and reads saves from
+// before skills as skills.
 
-import 'dart:async' show unawaited;
 import 'dart:io';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/core/sound/sound_check.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
+import 'package:fluenough/features/languages/skill_widgets.dart';
+import 'package:fluenough/features/onboarding/languages_step.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
+import 'package:fluenough/features/onboarding/onboarding_step.dart';
 import 'package:fluenough/features/onboarding/sound_check_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
@@ -443,23 +451,26 @@ void main() {
       await tester.tap(find.text(l10n.onboardingNext));
       await tester.pumpAndSettle();
 
-      expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
-      // What the answer is for, where it is kept, and where to change it.
-      expect(find.text(l10n.onboardingSpokenBody), findsOneWidget);
+      // What Know and Learn mean comes first (owner, 2026-11-01), with what
+      // the answer is for and where it is kept, and where to change it.
+      expect(find.text(l10n.onboardingLanguagesTitle), findsOneWidget);
       final privacy = find.text(
-        l10n.onboardingSpokenPrivacy(l10n.navSettings, l10n.settingsSpoken),
+        l10n.onboardingSpokenPrivacy(l10n.navSettings, l10n.languagesTitle),
       );
       await scrollToFind(tester, privacy);
       expect(privacy, findsOneWidget);
-      await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
+      await tester.tap(find.text(l10n.onboardingLanguagesAction));
       await tester.pumpAndSettle();
+
+      expect(find.text(l10n.onboardingLanguagesListTitle), findsOneWidget);
+      expect(find.text(l10n.onboardingLanguagesListBody), findsOneWidget);
       expect(find.byType(WaveProgress), findsNothing, reason: 'one question');
       expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
       final go = find.widgetWithText(FilledButton, l10n.commonContinue);
       expect(tester.widget<FilledButton>(go).onPressed, isNull);
       // Choosing Hindustani asks which of its scripts are read (#462,
       // #490), which nothing assumes.
-      await knowLanguage(tester, 'Hindustani');
+      await knowLanguage(tester, 'hi', 'Hindustani');
       expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
       expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
       expect(tester.widget<FilledButton>(go).onPressed, isNotNull);
@@ -617,11 +628,12 @@ void main() {
       find.bySemanticsLabel(l10nOf(tester).onboardingSoundRecord),
     );
 
-    /// Goes on to the languages question, picks English and saves.
+    /// Goes on to the languages question, picks Bengali and saves.
     Future<void> finish(WidgetTester tester) async {
       final l10n = l10nOf(tester);
       await tap(tester, find.text(l10n.onboardingNext));
-      await knowLanguage(tester, 'English');
+      await tap(tester, find.text(l10n.onboardingLanguagesAction));
+      await knowLanguage(tester, 'bn', 'Bengali');
       await tap(tester, find.text(l10n.commonContinue));
     }
 
@@ -704,23 +716,56 @@ void main() {
     });
   });
 
-  group('Languages you know', () {
-    Future<void> openPunjabi(WidgetTester tester) async {
-      await tester.enterText(
-        find.byKey(const ValueKey<String>('known-search')),
-        'Punjabi',
+  group('Languages on the first launch', () {
+    // A cached asset's future belongs to the test that first read it.
+    setUp(rootBundle.clear);
+
+    final choices = parseSpokenLanguages(
+      File(spokenLanguagesAsset).readAsStringSync(),
+    );
+    SpokenLanguage language(String code) =>
+        choices.firstWhere((l) => l.code == code);
+
+    const devanagariAnswer = 'मुझे देवनागरी लिपि पढ़नी आती है';
+    const urduAnswer = 'مجھے فارسی-عربی (اردو) رسم الخط پڑھنا آتا ہے';
+
+    /// The first launch at its list of languages, at 1.4x text.
+    Future<AppState> atList(
+      WidgetTester tester, {
+      SettingsNotifier? settings,
+      ThemeMode mode = ThemeMode.light,
+    }) {
+      usePhone(tester, textScale: 1.4);
+      return pumpScreen(
+        tester,
+        OnboardingFlow(startAt: 'languages', choices: choices),
+        state: AppState.test(settings: settings ?? SettingsNotifier()),
+        themeMode: mode,
       );
+    }
+
+    Finder continueButton(WidgetTester tester) =>
+        find.widgetWithText(FilledButton, l10nOf(tester).commonContinue);
+
+    Future<void> tapKey(WidgetTester tester, String key) async {
+      final finder = find.byKey(ValueKey<String>(key));
+      await tester.ensureVisible(finder);
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const ValueKey<String>('lang-pa')));
+      await tester.tap(finder);
       await tester.pumpAndSettle();
     }
 
-    FilledButton done(WidgetTester tester) => tester.widget<FilledButton>(
-      find.byKey(const ValueKey<String>('know-done')),
-    );
-
-    // A cached asset's future belongs to the test that first read it.
-    setUp(rootBundle.clear);
+    /// Add a language, the search and the row of [code]: opens the Know sheet
+    /// of a language that asks one, else its skills sheet.
+    Future<void> openAdd(WidgetTester tester, String code, String name) async {
+      await tapKey(tester, 'onboarding-add-language');
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('languages-add-search')),
+        name,
+      );
+      await tester.pumpAndSettle();
+      await tapKey(tester, 'add-$code');
+    }
 
     /// The language [text] is marked as, for a screen reader, or null.
     Locale? markedAs(WidgetTester tester, Finder text) {
@@ -735,235 +780,393 @@ void main() {
       return found;
     }
 
-    Future<AppState> openPage(WidgetTester tester, [SettingsNotifier? s]) =>
-        pumpScreen(
-          tester,
-          const SpokenLanguagesPage(),
-          state: AppState.test(settings: s ?? SettingsNotifier()),
+    TextDirection directionOf(WidgetTester tester, Finder text) => tester
+        .renderObject<RenderParagraph>(
+          find.descendant(of: text, matching: find.byType(RichText)).first,
+        )
+        .textDirection;
+
+    SkillMark markOfPill(WidgetTester tester, String key) =>
+        tester.widget<SkillBadge>(find.byKey(ValueKey<String>(key))).mark;
+
+    testWidgets('the explanation says what the options mean in plain words, '
+        'then Choose my languages goes on to the list', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      await pumpScreen(
+        tester,
+        OnboardingFlow(startAt: 'languages-intro', choices: choices),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.onboardingLanguagesTitle), findsOneWidget);
+      expect(find.text(l10n.onboardingLanguagesIntro), findsOneWidget);
+      for (final meaning in <String>[
+        l10n.onboardingLanguagesLearnMeaning,
+        l10n.onboardingLanguagesKnowMeaning,
+        l10n.onboardingLanguagesLeaveMeaning,
+      ]) {
+        expect(
+          find.textContaining(meaning, findRichText: true),
+          findsOneWidget,
+          reason: meaning,
         );
-
-    group('Languages you know (#490)', () {
-      testWidgets(
-        'the search finds a language by its English or its own name, and its '
-        'sheet asks in that language',
-        (tester) async {
-          usePhone(tester);
-          await openPage(tester);
-          final l10n = l10nOf(tester);
-          final search = find.byKey(const ValueKey<String>('known-search'));
-          await tester.enterText(search, 'hin');
-          await tester.pumpAndSettle();
-          expect(find.byKey(const ValueKey<String>('lang-hi')), findsOneWidget);
-          expect(find.byKey(const ValueKey<String>('lang-bn')), findsNothing);
-          await tester.enterText(search, 'বাং');
-          await tester.pumpAndSettle();
-          expect(find.byKey(const ValueKey<String>('lang-bn')), findsOneWidget);
-          await tester.enterText(search, 'tel');
-          await tester.pumpAndSettle();
-          // Telugu is Dravidian, which was folded.
-          expect(find.byKey(const ValueKey<String>('lang-te')), findsOneWidget);
-          await tester.enterText(search, 'zzz');
-          await tester.pumpAndSettle();
-          expect(find.text(l10n.knownSearchNone('zzz')), findsOneWidget);
-          await tester.enterText(search, '');
-          await tester.pumpAndSettle();
-          expect(find.byKey(const ValueKey<String>('lang-te')), findsNothing);
-
-          {
-            usePhone(tester);
-            final state = await openPage(tester);
-            final l10n = l10nOf(tester);
-            for (final (name, code, question, read, speak, answered, english)
-                in <(String, String, String, String, String, String, String)>[
-                  (
-                    'Bengali',
-                    'bn',
-                    'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?',
-                    'আমি পূর্ব নাগরী লিপি পড়তে পারি',
-                    'I can only speak Bengali',
-                    'Can read the Eastern Nagari script',
-                    'Eastern Nagari',
-                  ),
-                ]) {
-              await tester.enterText(
-                find.byKey(const ValueKey<String>('known-search')),
-                name,
-              );
-              await tester.pumpAndSettle();
-              await tester.tap(find.byKey(ValueKey<String>('lang-$code')));
-              await tester.pumpAndSettle();
-              // The question and "can read" are in the language's own script,
-              // marked as that language, with the English under each.
-              expect(find.text(question), findsOneWidget);
-              expect(find.text(read), findsOneWidget);
-              expect(markedAs(tester, find.text(question)), Locale(code));
-              expect(markedAs(tester, find.text(read)), Locale(code));
-              expect(find.text(speak), findsOneWidget);
-              expect(find.text('Do you read the $english script?'), findsOne);
-              expect(find.text('I can read the $english script'), findsOne);
-              // Never Yes or No.
-              expect(find.text('Yes'), findsNothing);
-              expect(find.text('No'), findsNothing);
-              // Not chosen yet: nothing to remove.
-              expect(
-                find.byKey(const ValueKey<String>('know-remove')),
-                findsNothing,
-              );
-              await tester.tap(
-                find.byKey(
-                  ValueKey<String>(code == 'bn' ? 'know-read' : 'know-speak'),
-                ),
-              );
-              await tester.pumpAndSettle();
-              expect(
-                find.text(question),
-                findsNothing,
-                reason: 'the sheet closed',
-              );
-              await tester.enterText(
-                find.byKey(const ValueKey<String>('known-search')),
-                '',
-              );
-              await tester.pumpAndSettle();
-              expect(find.text(answered), findsOneWidget, reason: name);
-            }
-            // Saved only by Save.
-            expect(state.settings.spokenLanguages, isEmpty);
-            await tester.tap(find.text(l10n.knownSave));
-            await tester.pumpAndSettle();
-            expect(state.settings.spokenLanguages, ['bn']);
-            expect(state.settings.scriptsRead, <String, bool>{'bn': true});
-          }
-        },
+      }
+      // The pills as the learner will meet them: three levels, the four a tap
+      // steps through, and the double tick. Icons only: a touch and hold says
+      // each in words.
+      expect(find.byType(SkillBadge), findsNWidgets(8));
+      expect(find.byTooltip(l10n.languagesPillLeave), findsNWidgets(2));
+      expect(find.byTooltip(l10n.languagesPillLearning), findsNWidgets(2));
+      expect(
+        find.byTooltip(l10n.languagesPillChecked(l10n.languagesPillHearSpeak)),
+        findsOneWidget,
       );
-
-      testWidgets(
-        'Save keeps the order chosen; a language of several scripts asks '
-        'which are read',
-        (tester) async {
-          usePhone(tester);
-          final state = await pumpApp(tester);
-          final l10n = l10nOf(tester);
-          // Settings opens the merged Languages page (#907); this is the older
-          // spoken-languages page, which first launch still uses.
-          unawaited(
-            Navigator.of(tester.element(find.byType(AppShell))).push(
-              MaterialPageRoute<void>(
-                builder: (_) => const SpokenLanguagesPage(),
-              ),
-            ),
-          );
-          await tester.pumpAndSettle();
-          await knowLanguage(tester, 'Hindustani');
-          await tester.tap(find.text(l10n.knownSave));
-          await tester.pumpAndSettle();
-          expect(state.settings.spokenLanguages, ['en', 'hi']);
-          expect(state.settings.scriptsRead['hi'], isTrue);
-          expect(find.text(l10n.spokenTitle), findsNothing);
-
-          {
-            usePhone(tester, navBar: true);
-            final state = await pumpScreen(
-              tester,
-              const SpokenLanguagesPage(),
-              state: AppState.test(settings: SettingsNotifier()),
-            );
-            final l10n = l10nOf(tester);
-            await openPunjabi(tester);
-            // The unchecked texts are shown, with English under them, naming
-            // each script by its own name (#552, owner, 2026-10-18).
-            expect(
-              find.text('Which scripts do you read Punjabi in?'),
-              findsOne,
-            );
-            expect(find.textContaining('ਤੁਸੀਂ'), findsOneWidget);
-            final sheet = tester.getRect(find.byType(BottomSheet));
-            for (final (key, text) in <(String, String)>[
-              ('know-script-gurmukhi', 'I can read the Gurmukhi script'),
-              ('know-script-shahmukhi', 'I can read the Shahmukhi script'),
-              ('know-speak', 'I can only speak Punjabi'),
-              ('know-cancel', l10n.commonCancel),
-              ('know-done', l10n.knownScriptsDone),
-            ]) {
-              final at = find.byKey(ValueKey<String>(key));
-              expect(
-                find.descendant(of: at, matching: find.text(text)),
-                findsOneWidget,
-                reason: key,
-              );
-              final rect = tester.getRect(at);
-              expect(rect.height, greaterThanOrEqualTo(48), reason: key);
-              expect(rect.top, greaterThanOrEqualTo(sheet.top), reason: key);
-              expect(rect.bottom, lessThanOrEqualTo(sheet.bottom), reason: key);
-              expect(rect.left, greaterThanOrEqualTo(sheet.left), reason: key);
-              expect(rect.right, lessThanOrEqualTo(sheet.right), reason: key);
-              // Above the 3-button bar (#489).
-              expect(rect.bottom, lessThanOrEqualTo(844 - navBarHeight));
-            }
-            // No answer read in one tap: nothing is ticked, and Done waits.
-            expect(
-              find.byKey(const ValueKey<String>('know-read')),
-              findsNothing,
-            );
-            expect(done(tester).onPressed, isNull);
-            await tester.tap(
-              find.byKey(const ValueKey<String>('know-script-shahmukhi')),
-            );
-            await tester.pumpAndSettle();
-            expect(done(tester).onPressed, isNotNull);
-            await tester.tap(find.byKey(const ValueKey<String>('know-done')));
-            await tester.pumpAndSettle();
-            expect(find.byType(BottomSheet), findsNothing);
-            await tester.enterText(
-              find.byKey(const ValueKey<String>('known-search')),
-              '',
-            );
-            await tester.pumpAndSettle();
-            expect(find.text('Can read the Shahmukhi script'), findsOneWidget);
-            await tester.tap(find.text(l10n.knownSave));
-            await tester.pumpAndSettle();
-            expect(state.settings.spokenLanguages, ['pa']);
-            expect(state.settings.scriptsRead, <String, bool>{
-              'pa': false,
-              'pa:shahmukhi': true,
-            });
-          }
-        },
+      for (final skill in <String>[
+        l10n.languagesSkillRead,
+        l10n.languagesSkillWrite,
+        l10n.languagesSkillHear,
+        l10n.languagesSkillSpeak,
+      ]) {
+        expect(find.text(skill), findsOneWidget, reason: skill);
+      }
+      expect(
+        find.text(l10n.onboardingLanguagesChecked(l10n.languagesFindLevel)),
+        findsOneWidget,
       );
+      expect(find.text(l10n.onboardingSkip), findsOneWidget);
+      expect(tester.takeException(), isNull);
+
+      await tester.tap(find.text(l10n.onboardingLanguagesAction));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.onboardingLanguagesListTitle), findsOneWidget);
+      await tester.tap(find.byType(BackButton));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.onboardingLanguagesTitle), findsOneWidget);
+      await tester.tap(find.text(l10n.onboardingSkip));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.onboardingLanguagesListTitle), findsOneWidget);
     });
 
-    group('a language written in several scripts (#551)', () {
-      testWidgets('a save from before #551 reads as the language\'s own '
-          'script, and removing the language drops every answer', (
+    testWidgets('the list starts with English known; Next waits for a '
+        'language besides it, and nothing is saved before the last button', (
+      tester,
+    ) async {
+      final settings = SettingsNotifier();
+      await atList(tester, settings: settings);
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.languagesSectionKnow(1)), findsOneWidget);
+      expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
+      expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
+      expect(
+        tester.widget<FilledButton>(continueButton(tester)).onPressed,
+        isNull,
+      );
+
+      await knowLanguage(tester, 'bn', 'Bengali');
+      expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
+      expect(find.byKey(const ValueKey<String>('language-bn')), findsOneWidget);
+      expect(find.text(l10n.languagesSectionKnow(2)), findsOneWidget);
+      expect(
+        tester.widget<FilledButton>(continueButton(tester)).onPressed,
+        isNotNull,
+      );
+      expect(settings.spokenLanguages, isEmpty);
+      expect(settings.languageSkillsOf('bn'), isNull);
+    });
+
+    testWidgets('Know and Learn set on the shared sheet are saved as skills, '
+        'and the older lists follow', (tester) async {
+      final settings = SettingsNotifier();
+      final state = await atList(tester, settings: settings);
+      final l10n = l10nOf(tester);
+      // Bengali: the Know sheet reads its script, the sheet adds it as known.
+      await knowLanguage(tester, 'bn', 'Bengali');
+      // Spanish is written in Latin letters, which everyone who knows English
+      // reads: no script question, the skills sheet at once, the Latin
+      // script already known from English. Learn it (a check that needs no
+      // voice), then Add.
+      await openAdd(tester, 'es', 'Spanish');
+      expect(find.byKey(const ValueKey<String>('know-read')), findsNothing);
+      expect(markOfPill(tester, 'skill-script:latin'), SkillMark.knowBoth);
+      await tapKey(tester, 'skill-script:latin');
+      await tapKey(tester, 'skill-script:latin');
+      expect(markOfPill(tester, 'skill-script:latin'), SkillMark.learn);
+      await tester.tap(find.text(l10n.languagesCheck));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.languagesAddLanguage('Spanish')));
+      await tester.pumpAndSettle();
+
+      expect(find.text(l10n.languagesSectionLearning(1)), findsOneWidget);
+      expect(find.text(l10n.languagesSectionKnow(2)), findsOneWidget);
+      expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
+      expect(settings.languageSkillsOf('es'), isNull);
+
+      await tester.tap(continueButton(tester));
+      await tester.pumpAndSettle();
+      expect(
+        settings.languageSkillsOf('es'),
+        containsPair('read:latin', 'learn'),
+      );
+      expect(
+        settings.languageSkillsOf('bn'),
+        allOf(
+          containsPair('speak', 'know'),
+          containsPair('hear', 'know'),
+          containsPair('read:bengali', 'know'),
+        ),
+      );
+      expect(state.learningCodes, contains('es'));
+      expect(settings.learningChosen, isTrue);
+      expect(settings.spokenLanguages, ['bn', 'en']);
+      expect(settings.scriptsRead, <String, bool>{'bn': true, 'en': true});
+    });
+
+    for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+      testWidgets('the Know sheet of a language in several scripts asks in its '
+          'own script, with English under the question only, and the '
+          'Perso-Arabic answer reads right to left (${mode.name}, 1.4x)', (
         tester,
       ) async {
-        usePhone(tester);
-        final settings = SettingsNotifier(
-          spokenLanguages: const <String>['pa', 'as'],
-        )..restore(const {'scripts_read': '{"pa":true,"as":true}'});
-        await openPage(tester, settings);
+        await atList(tester, mode: mode);
         final l10n = l10nOf(tester);
-        expect(find.text('Can read the Gurmukhi script'), findsOneWidget);
-        expect(find.text('Can read the Eastern Nagari script'), findsOneWidget);
-        await tester.tap(find.byKey(const ValueKey<String>('lang-pa')));
-        await tester.pumpAndSettle();
+        await openAdd(tester, 'hi', 'Hindustani');
+
+        // The question: own script, with its English under it.
         expect(
-          tester
-              .widget<CheckboxListTile>(
-                find.byKey(const ValueKey<String>('know-script-gurmukhi')),
-              )
-              .value,
-          isTrue,
+          find.text('आप हिन्दुस्तानी किन लिपियों में पढ़ सकते हैं?'),
+          findsOneWidget,
         );
-        await tester.tap(find.byKey(const ValueKey<String>('know-remove')));
+        expect(
+          find.text(l10n.knownReadsWhichScripts('Hindustani')),
+          findsOneWidget,
+        );
+        // Every answer line is its own script alone.
+        expect(find.text('I can read the Devanagari script'), findsNothing);
+        expect(find.text('I can read the Perso-Arabic script'), findsNothing);
+        expect(find.text(devanagariAnswer), findsOneWidget);
+        expect(
+          markedAs(tester, find.text(devanagariAnswer)),
+          const Locale('hi'),
+        );
+        expect(
+          directionOf(tester, find.text(devanagariAnswer)),
+          TextDirection.ltr,
+        );
+        // The Perso-Arabic answer is in Perso-Arabic script: Urdu, right to
+        // left.
+        expect(find.text(urduAnswer), findsOneWidget);
+        expect(markedAs(tester, find.text(urduAnswer)), const Locale('ur'));
+        expect(directionOf(tester, find.text(urduAnswer)), TextDirection.rtl);
+        // Not checked by a speaker yet: the bug icon is there.
+        expect(find.byKey(const ValueKey<String>('know-report')), findsOne);
+        // "Only speak" is English only.
+        expect(find.text('I can only speak Hindustani'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Done waits for a script; Perso-Arabic ticked and the skills sheet
+        // opens with it known and Devanagari not.
+        final done = find.byKey(const ValueKey<String>('know-done'));
+        expect(tester.widget<FilledButton>(done).onPressed, isNull);
+        await tester.tap(
+          find.byKey(const ValueKey<String>('know-script-perso_arabic')),
+        );
         await tester.pumpAndSettle();
-        await tester.tap(find.text(l10n.knownSave));
+        await tester.tap(done);
         await tester.pumpAndSettle();
-        // Saving also makes English known, last (#926).
-        expect(settings.spokenLanguages, ['as', 'en']);
-        expect(settings.scriptsRead['as'], isTrue);
-        expect(settings.scriptsRead.keys, isNot(contains('pa')));
+        expect(markOfPill(tester, 'skill-script:perso_arabic'), SkillMark.know);
+        expect(markOfPill(tester, 'skill-script:devanagari'), SkillMark.leave);
+        expect(markOfPill(tester, 'skill-spoken'), SkillMark.knowBoth);
+        await tester.tap(find.text(l10n.languagesAddLanguage('Hindustani')));
+        await tester.pumpAndSettle();
+        expect(find.byKey(const ValueKey<String>('language-hi')), findsOne);
+        expect(tester.takeException(), isNull);
+      });
+    }
+
+    testWidgets('the Know sheet of a language in one script asks in it, with '
+        'English under the question only', (tester) async {
+      await atList(tester);
+      await openAdd(tester, 'bn', 'Bengali');
+      expect(
+        find.text('আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?'),
+        findsOneWidget,
+      );
+      expect(find.text('Do you read the Eastern Nagari script?'), findsOne);
+      expect(find.text('আমি পূর্ব নাগরী লিপি পড়তে পারি'), findsOneWidget);
+      expect(find.text('I can read the Eastern Nagari script'), findsNothing);
+      expect(
+        markedAs(tester, find.text('আমি পূর্ব নাগরী লিপি পড়তে পারি')),
+        const Locale('bn'),
+      );
+      expect(find.text('I can only speak Bengali'), findsOneWidget);
+      // Never Yes or No.
+      expect(find.text('Yes'), findsNothing);
+      expect(find.text('No'), findsNothing);
+    });
+
+    testWidgets('leaving the Know sheet unanswered goes on to an empty '
+        'skills sheet, which waits for a skill', (tester) async {
+      await atList(tester);
+      final l10n = l10nOf(tester);
+      await openAdd(tester, 'bn', 'Bengali');
+      await tapKey(tester, 'know-cancel');
+      expect(find.text(l10n.languagesSetOne), findsOneWidget);
+      expect(
+        tester
+            .widget<FilledButton>(
+              find.widgetWithText(FilledButton, l10n.languagesSetOne),
+            )
+            .onPressed,
+        isNull,
+      );
+    });
+
+    testWidgets('a language already on the list opens its skills sheet with '
+        'what was set, and setting every skill to Leave takes it off', (
+      tester,
+    ) async {
+      await atList(tester);
+      final l10n = l10nOf(tester);
+      await knowLanguage(tester, 'bn', 'Bengali');
+      await tapKey(tester, 'language-bn');
+      expect(markOfPill(tester, 'skill-spoken'), SkillMark.knowBoth);
+      expect(markOfPill(tester, 'skill-script:bengali'), SkillMark.know);
+      // Hear and Speak to Leave; Read to Read and Write to Leave.
+      await tapKey(tester, 'skill-spoken');
+      await tapKey(tester, 'skill-script:bengali');
+      await tapKey(tester, 'skill-script:bengali');
+      await tester.tap(find.text(l10n.languagesDone));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey<String>('language-bn')), findsNothing);
+      expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
+    });
+
+    testWidgets('the shared list finds a language by its English name, its '
+        'own name or an alias, and leaves English out', (tester) async {
+      await atList(tester);
+      await tapKey(tester, 'onboarding-add-language');
+      final search = find.byKey(const ValueKey<String>('languages-add-search'));
+      await tester.enterText(search, 'Urdu');
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey<String>('add-hi')), findsOneWidget);
+      await tester.enterText(search, 'বাং');
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey<String>('add-bn')), findsOneWidget);
+      expect(find.byKey(const ValueKey<String>('add-hi')), findsNothing);
+      await tester.enterText(search, 'English');
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey<String>('add-en')), findsNothing);
+    });
+
+    test('a language asks which script is read only where that is a question: '
+        'not Latin letters alone, a sign language or a script-only course', () {
+      expect(asksWhichScripts(language('es')), isFalse);
+      expect(asksWhichScripts(language('hi')), isTrue);
+      expect(asksWhichScripts(language('bn')), isTrue);
+      expect(asksWhichScripts(language('ase')), isFalse);
+    });
+
+    test('the Know sheet\'s reply becomes skills: hearing and speaking, and '
+        'Read for each script read', () {
+      final hi = language('hi');
+      final reads = skillsFromKnownReply(
+        hi,
+        const KnownReply.reads(<String>['devanagari']),
+      );
+      expect(reads.spokenLevel, SpokenLevel.hearSpeak);
+      expect(reads.scriptLevelOf('devanagari'), ScriptLevel.read);
+      expect(reads.scriptLevelOf('perso_arabic'), ScriptLevel.leave);
+      final speaks = skillsFromKnownReply(hi, const KnownReply.speaksOnly());
+      expect(speaks.spokenLevel, SpokenLevel.hearSpeak);
+      expect(speaks.scriptLevelOf('devanagari'), ScriptLevel.leave);
+      expect(speaks.anyLearn, isFalse);
+    });
+
+    test('an answer is marked and drawn by its own script: Perso-Arabic is '
+        'Urdu and right to left where it is a second script', () {
+      expect(SpokenLanguage.isRtlText(urduAnswer), isTrue);
+      expect(SpokenLanguage.isRtlText(devanagariAnswer), isFalse);
+      expect(language('hi').localeCodeFor(urduAnswer), 'ur');
+      expect(language('hi').localeCodeFor(devanagariAnswer), 'hi');
+      // Punjabi's Shahmukhi answer is written in Gurmukhi: left to right.
+      final shahmukhi = language('pa').canReadIn('shahmukhi')!;
+      expect(SpokenLanguage.isRtlText(shahmukhi), isFalse);
+      expect(language('pa').localeCodeFor(shahmukhi), 'pa');
+      // Where Perso-Arabic is the language's own script, its own code.
+      expect(language('sd').localeCodeFor(urduAnswer), 'sd');
+    });
+  });
+
+  group('the older lists and skills agree', () {
+    final choices = parseSpokenLanguages(
+      File(spokenLanguagesAsset).readAsStringSync(),
+    );
+    SpokenLanguage language(String code) =>
+        choices.firstWhere((l) => l.code == code);
+
+    test('skills saved by the first launch read back the same, and the older '
+        'lists the other screens read are kept right', () async {
+      final bn = language('bn');
+      final es = language('es');
+      final known = skillsFromKnownReply(
+        bn,
+        const KnownReply.reads(<String>['bengali']),
+      );
+      final learn = LanguageSkills().withScriptLevel(
+        'latin',
+        ScriptLevel.learn,
+      );
+      final state = AppState.test(settings: SettingsNotifier());
+      addTearDown(state.dispose);
+      await state.load();
+      OnboardingAnswers()
+        ..setSkills(bn, known)
+        ..setSkills(es, learn)
+        ..saveTo(state);
+
+      expect(state.skillsOf(bn), known);
+      expect(state.skillsOf(es), learn);
+      expect(state.skillsOf(language('en')), englishKnownByDefault());
+      // What the review-languages, fact-languages and script-offers screens
+      // read: who speaks what, which scripts are read, what is learned.
+      expect(state.settings.spokenLanguages, ['bn', 'en']);
+      expect(state.settings.scriptsRead, <String, bool>{
+        'bn': true,
+        'en': true,
+      });
+      expect(state.learningCodes, {'es'});
+      expect(scriptReaders(choices, state.settings.scriptsRead), {
+        'bengali': ['bn'],
+        'latin': ['en'],
       });
     });
+
+    test('a language set to Leave, or English, is not saved as chosen', () {
+      final answers = OnboardingAnswers()
+        ..setSkills(language('bn'), LanguageSkills())
+        ..setSkills(language('en'), englishKnownByDefault());
+      expect(answers.chosen, isEmpty);
+    });
+
+    test(
+      'saves from before skills read as skills until they are edited',
+      () async {
+        final settings = SettingsNotifier(
+          spokenLanguages: const <String>['bn', 'en'],
+          learningLanguages: const <String>['es'],
+          learningChosen: true,
+        )..restore(const {'scripts_read': '{"bn":true,"en":true}'});
+        final state = AppState.test(settings: settings);
+        addTearDown(state.dispose);
+        await state.load();
+
+        final bn = state.skillsOf(language('bn'));
+        expect(bn.spokenLevel, SpokenLevel.hearSpeak);
+        expect(bn.scriptLevelOf('bengali'), ScriptLevel.read);
+        expect(state.skillsOf(language('es')).anyLearn, isTrue);
+        expect(state.skillsOf(language('hi')).isAllLeave, isTrue);
+        // Nothing was written by reading.
+        expect(settings.languageSkillsOf('bn'), isNull);
+      },
+    );
   });
 }

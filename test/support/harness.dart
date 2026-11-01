@@ -206,35 +206,57 @@ Future<AppState> withDeckTaught(
   return build(progress);
 }
 
-/// Chooses [name] on Languages you know: finds it with the search, taps its
-/// row and answers its sheet, [reads] its script or speaks only (#490).
+/// Adds [name] (language [code]) on the first launch's list of languages, as
+/// a learner does: Add a language, the search, the row, the Know sheet's
+/// answer where the language asks one ([reads] its script, or speaks only),
+/// then the skills sheet's "Add" with what the Know sheet filled in. A
+/// language that asks no script question goes straight to the skills sheet.
 Future<void> knowLanguage(
   WidgetTester tester,
+  String code,
   String name, {
   bool reads = true,
 }) async {
+  final add = find.byKey(const ValueKey<String>('onboarding-add-language'));
+  await tester.ensureVisible(add);
+  await tester.pumpAndSettle();
+  await tester.tap(add);
+  await tester.pumpAndSettle();
   await tester.enterText(
-    find.byKey(const ValueKey<String>('known-search')),
+    find.byKey(const ValueKey<String>('languages-add-search')),
     name,
   );
   await tester.pumpAndSettle();
-  await tester.tap(find.widgetWithText(ListTile, name).first);
+  await tester.tap(find.byKey(ValueKey<String>('add-$code')));
   await tester.pumpAndSettle();
   final oneScript = find.byKey(const ValueKey<String>('know-read'));
-  if (reads && oneScript.evaluate().isEmpty) {
-    // A language written in several scripts: tick its first, then Done.
-    await tester.tap(
-      find
-          .byWidgetPredicate((w) => w.key.toString().contains("'know-script-"))
-          .first,
-    );
+  final severalScripts = find.byKey(const ValueKey<String>('know-done'));
+  if (oneScript.evaluate().isNotEmpty || severalScripts.evaluate().isNotEmpty) {
+    if (!reads) {
+      await tester.tap(find.byKey(const ValueKey<String>('know-speak')));
+    } else if (oneScript.evaluate().isNotEmpty) {
+      await tester.tap(oneScript);
+    } else {
+      // A language written in several scripts: tick its first, then Done.
+      await tester.tap(
+        find
+            .byWidgetPredicate(
+              (w) => w.key.toString().contains("'know-script-"),
+            )
+            .first,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(severalScripts);
+    }
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const ValueKey<String>('know-done')));
-  } else {
-    await tester.tap(
-      find.byKey(ValueKey<String>(reads ? 'know-read' : 'know-speak')),
-    );
   }
+  await tester.tap(
+    find.widgetWithText(
+      FilledButton,
+      AppLocalizations.of(tester.element(find.byType(Scaffold).first))!
+          .languagesAddLanguage(name),
+    ),
+  );
   await tester.pumpAndSettle();
 }
 

@@ -435,20 +435,28 @@ void main() {
   group('First launch', () {
     screen('the tour', page(const OnboardingFlow(startAt: 'tour', page: 1)));
     screen('the sound check', gallery('onboarding-sound'));
-    screen('Languages you know, a language\'s sheet open', (
+    screen('what Know and Learn mean', gallery('onboarding-languages-intro'));
+    screen('the languages question', gallery('onboarding-languages'));
+    screen('the languages question, a language\'s Know sheet open', (
       tester,
       mode,
     ) async {
       await pumpScreen(
         tester,
-        OnboardingFlow(
-          startAt: 'spoken',
-          spoken: const <String>['bn', 'en'],
-          choices: choices,
-        ),
+        OnboardingFlow(startAt: 'languages', choices: choices),
         themeMode: mode,
       );
-      await tapShown(tester, find.byKey(const ValueKey<String>('pick-en')));
+      await tapShown(
+        tester,
+        find.byKey(const ValueKey<String>('onboarding-add-language')),
+      );
+      await tester.pumpAndSettle();
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('languages-add-search')),
+        'Hindustani',
+      );
+      await tester.pumpAndSettle();
+      await tapShown(tester, find.byKey(const ValueKey<String>('add-hi')));
       await tester.pumpAndSettle();
     });
     screen(
@@ -695,12 +703,20 @@ void main() {
 
     await pumpScreen(
       tester,
-      OnboardingFlow(
-        startAt: 'spoken',
-        spoken: const <String>['bn', 'en'],
-        choices: choices,
-      ),
+      OnboardingFlow(startAt: 'languages', choices: choices),
     );
+    await tester.tap(
+      find.byKey(const ValueKey<String>('onboarding-add-language')),
+    );
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey<String>('languages-add-search')),
+      'Bengali',
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey<String>('add-bn')));
+    await tester.pumpAndSettle();
+    // The Know sheet names the language by its own name, read in its voice.
     final bengali = find.text(l10n.spokenOption('Bengali', 'বাংলা'));
     expect(quotedIn(tester, bengali), <String, String>{'বাংলা': 'bn'});
 
@@ -761,14 +777,23 @@ void main() {
           await expectLater(tester, meetsGuideline(textContrastGuideline));
           await tester.tap(find.byType(FilledButton));
           await tester.pumpAndSettle();
-          await knowLanguage(tester, 'Bengali');
-          await tester.enterText(
-            find.byKey(const ValueKey<String>('known-search')),
-            '',
+          // What Know and Learn mean (owner, 2026-11-01), then the list, the
+          // list of languages to add from, the Know sheet, the skills sheet.
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(find.byType(FilledButton));
+          await tester.pumpAndSettle();
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(
+            find.byKey(const ValueKey<String>('onboarding-add-language')),
           );
           await tester.pumpAndSettle();
-          // The sheet, open (#490), then the list with answers.
-          await tester.tap(find.byKey(const ValueKey<String>('pick-en')));
+          await tester.enterText(
+            find.byKey(const ValueKey<String>('languages-add-search')),
+            'Bengali',
+          );
+          await tester.pumpAndSettle();
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(find.byKey(const ValueKey<String>('add-bn')));
           await tester.pumpAndSettle();
           await expectLater(tester, meetsGuideline(textContrastGuideline));
           await tester.tap(find.byKey(const ValueKey<String>('know-read')));

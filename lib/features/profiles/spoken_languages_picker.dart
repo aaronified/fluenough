@@ -504,7 +504,7 @@ class PickerNote extends StatelessWidget {
 }
 
 /// The side padding the picker's rows, headings and notes use, set by
-/// [SpokenLanguagesPicker.gutter].
+/// the page around the rows (24 in onboarding).
 class PickerGutter extends InheritedWidget {
   const PickerGutter({super.key, required this.gutter, required super.child});
 
