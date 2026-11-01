@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-cinema-sentences"
+kind: "layer"
+core: "bn-cinema-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema: sentences"
+description: "Short sentences about films, actors and the cinema hall. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3592":
+    native: "I will watch a film tonight."
+    confusables: { "c1": { why: "a play: performed on a stage, not a film" }, "c2": { why: "a concert: music, not a film" } }
+  "bn-3593":
+    native: "The hero of the film is very good."
+    confusables: { "c1": { why: "villain: the opposite role" }, "c2": { why: "actor: the person who plays any role" } }
+  "bn-3594":
+    native: "There were many viewers in the hall."
+    bases: { "ছিল": "were" }
+    confusables: { "c1": { why: "listener: someone who listens, not a viewer" }, "c2": { why: "staff: people at work, not in a hall" } }
+  "bn-3595":
+    native: "I liked the trailer."
+    confusables: { "c1": { why: "a poster: a printed picture, not a moving trailer" }, "c2": { why: "a review: a written opinion" } }
+  "bn-3596":
+    native: "The song is very sweet."
+    confusables: { "c1": { why: "crying: a sad sound, not a song" }, "c2": { why: "sound: any noise, not a song" } }
+  "bn-3597":
+    native: "Everyone applauded."
+    confusables: { "c1": { why: "a curse: not applause" }, "c2": { why: "fear: a feeling, not applause" } }
+  "bn-3598":
+    native: "The director has made a new film."
+    bases: { "নির্মাণ": "making" }
+    confusables: { "c1": { why: "producer: pays for a film, not directs it" }, "c2": { why: "maker: close in meaning, a different word" } }
+  "bn-3599":
+    native: "The film will be released tomorrow."
+    confusables: { "c1": { why: "cancelled: the opposite" }, "c2": { why: "finished: a different state" } }
+  "bn-3600":
+    native: "On the big screen the film is wonderful."
+    bases: { "চমৎকার": "wonderful" }
+    confusables: { "c1": { why: "small screen: the television, the opposite" }, "c2": { why: "stage: a live performance" } }
+  "bn-3601":
+    native: "It rains now and then."
+    bases: { "মাঝে": "now and then" }
+    confusables: { "c1": { why: "all: the opposite of sometimes" }, "c2": { why: "once: a single time" } }
+  "bn-3602":
+    native: "The story is historical."
+    confusables: { "c1": { why: "imaginary: the opposite of historical" }, "c2": { why: "real: a different quality" } }

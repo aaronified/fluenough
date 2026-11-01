@@ -1,0 +1,110 @@
+schema: 1
+id: "bn-environment-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3441"
+    target: "নদীতে দূষণ বেশি।"
+    reading: "nodite duśon beśi."
+    ipa: "nod̪it̪e d̪uʃon beʃi"
+    phonetic: "[nod̪it̪e d̪uʃon beʃi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নদীতে", ref: "bn-1050" }, { word: "দূষণ", ref: "bn-3392" }, { word: "বেশি", ref: "bn-0555" }]
+    confusables: [{ id: "c1", word: "ঝরনা", reading: "jharnā", kind: "word" }, { id: "c2", word: "খাল", reading: "khāl", kind: "word" }]
+  - id: "bn-3442"
+    target: "গাছ লাগাও, বায়ু পরিষ্কার হবে।"
+    reading: "gāch lāgāo, bāyu poriśkār hôbe."
+    ipa: "ɡatʃʰ laɡao baju poriʃkar ɦɔbe"
+    phonetic: "[ɡatʃʰ laɡao baju poriʃkar ɦɔbe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "গাছ", ref: "bn-2285" }, { word: "লাগাও", base: "লাগানো", reading: "lāgāo" }, { word: "বায়ু", ref: "bn-3415" }, { word: "পরিষ্কার", ref: "bn-0626" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ধুলো", reading: "dhulo", kind: "word" }, { id: "c2", word: "কুয়াশা", reading: "kuyāśā", kind: "word" }]
+  - id: "bn-3443"
+    target: "পৃথিবী ক্রমশ গরম হচ্ছে।"
+    reading: "prithibi krômoś gôrom hôcche."
+    ipa: "prit̪ʰibi krɔmoʃ ɡɔrom ɦɔtʃtʃʰe"
+    phonetic: "[prit̪ʰibi krɔmoʃ ɡɔrom ɦɔtʃtʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পৃথিবী", ref: "bn-3426" }, { word: "ক্রমশ", ref: "bn-3438" }, { word: "গরম", ref: "bn-0060" }, { word: "হচ্ছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ঠান্ডা", reading: "ṭhānḍā", kind: "word" }, { id: "c2", word: "শীতল", reading: "śītal", kind: "word" }]
+  - id: "bn-3444"
+    target: "বর্জ্য ফেলো না, পরিবেশ বাঁচাও।"
+    reading: "bôrjjo phelo nā, poribeś bām̐cāo."
+    ipa: "bɔrdʒdʒ pʰelo na poribeʃ bãtʃao"
+    phonetic: "[bɔrdʒdʒ pʰelo na poribeʃ bãtʃao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বর্জ্য", ref: "bn-3398" }, { word: "ফেলো", ref: "bn-1103" }, { word: "না", base: "না", reading: "nā" }, { word: "পরিবেশ", ref: "bn-3391" }, { word: "বাঁচাও", base: "বাঁচানো", reading: "bām̐cāo" }]
+    confusables: [{ id: "c1", word: "পুনর্ব্যবহার", reading: "punarbyabahār", kind: "word" }, { id: "c2", word: "কুড়ানো", reading: "kuṛānō", kind: "word" }]
+  - id: "bn-3445"
+    target: "প্লাস্টিক কম ব্যবহার করো।"
+    reading: "plāsṭik kôm bêbohār kôro."
+    ipa: "plasʈik kɔm bæboɦar kɔro"
+    phonetic: "[plasʈik kɔm bæboɦar kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "প্লাস্টিক", ref: "bn-3399" }, { word: "কম", base: "কম", reading: "kôm" }, { word: "ব্যবহার", base: "ব্যবহার", reading: "bêbohār" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "কাগজ", reading: "kāgaj", kind: "word" }, { id: "c2", word: "কাচ", reading: "kāc", kind: "word" }]
+  - id: "bn-3446"
+    target: "বন্যপ্রাণী বনে থাকে।"
+    reading: "bonnoprāni bône thāke."
+    ipa: "bonnoprani bɔne t̪ʰake"
+    phonetic: "[bonnoprani bɔne t̪ʰake]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "বন্যপ্রাণী", ref: "bn-3400" }, { word: "বনে", ref: "bn-0053" }, { word: "থাকে", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "গৃহপালিত", reading: "gṛhapālit", kind: "word" }, { id: "c2", word: "শহুরে", reading: "śahure", kind: "word" }]
+  - id: "bn-3447"
+    target: "কার্বন কমানো দরকার।"
+    reading: "kārron kômāno dôrokār."
+    ipa: "karron kɔmano d̪ɔrokar"
+    phonetic: "[karron kɔmano d̪ɔrokar]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কার্বন", ref: "bn-3403" }, { word: "কমানো", base: "কমানো", reading: "kômāno" }, { word: "দরকার", ref: "bn-0577" }]
+    confusables: [{ id: "c1", word: "অক্সিজেন", reading: "oksijen", kind: "word" }, { id: "c2", word: "ধোঁয়া", reading: "dhoẏā", kind: "word" }]
+  - id: "bn-3448"
+    target: "ভূমিকম্পের সময় সাবধান থাকো।"
+    reading: "bhumikomper sômoy sābodhān thāko."
+    ipa: "bʱumikomper sɔmoj sabod̪ʱan t̪ʰako"
+    phonetic: "[bʱumikomper sɔmoj sabod̪ʱan t̪ʰako]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ভূমিকম্পের", ref: "bn-3406" }, { word: "সময়", ref: "bn-0061" }, { word: "সাবধান", base: "সাবধান", reading: "sābodhān" }, { word: "থাকো", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "বন্যা", reading: "banyā", kind: "word" }, { id: "c2", word: "ঝড়", reading: "jhôṛ", kind: "word" }]
+  - id: "bn-3449"
+    target: "এই মাটি উর্বর।"
+    reading: "ei māṭi urror."
+    ipa: "ei maʈi urror"
+    phonetic: "[ei maʈi urror]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "মাটি", ref: "bn-2499" }, { word: "উর্বর", ref: "bn-3429" }]
+    confusables: [{ id: "c1", word: "দূষিত", reading: "dūṣit", kind: "word" }, { id: "c2", word: "শুকনো", reading: "śukno", kind: "word" }]
+  - id: "bn-3450"
+    target: "সবাই সচেতন হচ্ছে।"
+    reading: "sôbāi sôceton hôcche."
+    ipa: "sɔbai sɔtʃet̪on ɦɔtʃtʃʰe"
+    phonetic: "[sɔbai sɔtʃet̪on ɦɔtʃtʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "সচেতন", base: "সচেতন", reading: "sôceton" }, { word: "হচ্ছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "উদাসীন", reading: "udāsīn", kind: "word" }, { id: "c2", word: "সচেতনতা", reading: "sacetanatā", kind: "word" }]
+  - id: "bn-3451"
+    target: "দিনে দিনে বায়ু খারাপ হচ্ছে।"
+    reading: "dine dine bāyu khārāp hôcche."
+    ipa: "d̪ine d̪ine baju kʰarap ɦɔtʃtʃʰe"
+    phonetic: "[d̪ine d̪ine baju kʰarap ɦɔtʃtʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দিনে", ref: "bn-0325" }, { word: "বায়ু", ref: "bn-3415" }, { word: "খারাপ", ref: "bn-0618" }, { word: "হচ্ছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ভালো", reading: "bhālo", kind: "word" }, { id: "c2", word: "পরিষ্কার", reading: "pariṣkār", kind: "word" }]

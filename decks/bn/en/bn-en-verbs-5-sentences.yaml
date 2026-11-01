@@ -1,0 +1,54 @@
+schema: 1
+id: "bn-en-verbs-5-sentences"
+kind: "layer"
+core: "bn-verbs-5-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sequence actions: sentences"
+description: "Short sentences that tell what happened next, step by step. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4525":
+    native: "First she filled in the form, then she submitted it."
+    bases: { "প্রথমে": "first", "পূরণ": "filling" }
+    confusables: { "c1": { why: "cancelled: the opposite of submitting" }, "c2": { why: "correction: a different step" } }
+  "bn-4526":
+    native: "After the test the result was verified."
+    confusables: { "c1": { why: "start: the step before the test" }, "c2": { why: "end: a different stage" } }
+  "bn-4527":
+    native: "At the meeting everyone discussed the proposal."
+    bases: { "বৈঠকে": "at the meeting" }
+    confusables: { "c1": { why: "a quarrel: a different kind of talk" }, "c2": { why: "to sleep: not a meeting activity" } }
+  "bn-4528":
+    native: "She finished her work and returned home."
+    confusables: { "c1": { why: "start: the opposite of finishing" }, "c2": { why: "left: a different step" } }
+  "bn-4529":
+    native: "The doctor planned the dose of the patient's medicine."
+    bases: { "ডোজ": "dose" }
+    confusables: { "c1": { why: "analysis: a different kind of study" }, "c2": { why: "forgot: the opposite of planning" } }
+  "bn-4530":
+    native: "The officer inspected the school."
+    confusables: { "c1": { why: "selection: a different official act" }, "c2": { why: "admit: a different act" } }
+  "bn-4531":
+    native: "Everyone considered it and made a decision."
+    confusables: { "c1": { why: "guess: judging without full thought" }, "c2": { why: "reject: the opposite of deciding to take" } }
+  "bn-4532":
+    native: "The little boy joined the toy."
+    bases: { "খেলনাটা": "the toy" }
+    confusables: { "c1": { why: "broke: the opposite of joining" }, "c2": { why: "matched: a different act" } }
+  "bn-4533":
+    native: "The customer accepted the gift."
+    confusables: { "c1": { why: "returned: the opposite of accepting" }, "c2": { why: "reject: the opposite of accepting" } }
+  "bn-4534":
+    native: "A new edition of the old book was published."
+    confusables: { "c1": { why: "manuscript: before publication" }, "c2": { why: "cover: a part of the book" } }
+  "bn-4535":
+    native: "The pictures were framed."
+    bases: { "ফ্রেমে": "in frames" }
+    confusables: { "c1": { why: "to have opened: a different act" }, "c2": { why: "to have swept: a different cleaning act" } }
+  "bn-4536":
+    native: "She swept the room clean."
+    confusables: { "c1": { why: "dirty: the opposite of clean" }, "c2": { why: "washed: a different cleaning act" } }
+  "bn-4537":
+    native: "I wrapped the gift in paper and gave it."
+    confusables: { "c1": { why: "opened: the opposite of wrapping" }, "c2": { why: "tore: a different action" } }

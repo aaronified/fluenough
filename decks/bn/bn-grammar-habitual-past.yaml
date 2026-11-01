@@ -1,0 +1,75 @@
+schema: 1
+id: "bn-grammar-habitual-past"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["simple past", "habitual past"]
+  entries:
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "simple past": "গেল", "habitual past": "যেত" }
+      readings: { "simple past": "gel", "habitual past": "jet" }
+      ipas: { "simple past": "ɡel", "habitual past": "dʒet̪" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "simple past": "খেল", "habitual past": "খেত" }
+      readings: { "simple past": "khel", "habitual past": "khet" }
+      ipas: { "simple past": "kʰel", "habitual past": "kʰet̪" }
+    - lemma: "পড়া"
+      key: "pora"
+      reading: "pôṛā"
+      ipa: "pɔɽa"
+      forms: { "simple past": "পড়ল", "habitual past": "পড়ত" }
+      readings: { "simple past": "pôṛol", "habitual past": "pôṛot" }
+      ipas: { "simple past": "pɔɽol", "habitual past": "pɔɽot̪" }
+    - lemma: "খেলা"
+      key: "khela"
+      reading: "khelā"
+      ipa: "kʰela"
+      forms: { "simple past": "খেলল", "habitual past": "খেলত" }
+      readings: { "simple past": "khelol", "habitual past": "khelot" }
+      ipas: { "simple past": "kʰelol", "habitual past": "kʰelot̪" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "simple past": "দেখল", "habitual past": "দেখত" }
+      readings: { "simple past": "dekhol", "habitual past": "dekhot" }
+      ipas: { "simple past": "d̪ekʰol", "habitual past": "d̪ekʰot̪" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "simple past": "বলল", "habitual past": "বলত" }
+      readings: { "simple past": "bôlol", "habitual past": "bôlot" }
+      ipas: { "simple past": "bɔlol", "habitual past": "bɔlot̪" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "simple past": "করল", "habitual past": "করত" }
+      readings: { "simple past": "kôrol", "habitual past": "kôrot" }
+      ipas: { "simple past": "kɔrol", "habitual past": "kɔrot̪" }
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "simple past": "এল", "habitual past": "আসত" }
+      readings: { "simple past": "el", "habitual past": "āsot" }
+      ipas: { "simple past": "el", "habitual past": "asot̪" }
+    - lemma: "শোনা"
+      key: "shona"
+      reading: "śonā"
+      ipa: "ʃona"
+      forms: { "simple past": "শুনল", "habitual past": "শুনত" }
+      readings: { "simple past": "śunol", "habitual past": "śunot" }
+      ipas: { "simple past": "ʃunol", "habitual past": "ʃunot̪" }

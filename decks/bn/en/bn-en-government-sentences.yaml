@@ -1,0 +1,48 @@
+schema: 1
+id: "bn-en-government-sentences"
+kind: "layer"
+core: "bn-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government: sentences"
+description: "Short sentences about the government, elections and the law. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3217":
+    native: "The minister will come to the town today."
+    bases: { "আজ": "today" }
+    confusables: { "c1": { why: "a leader of a party: close, but a different office" }, "c2": { why: "a judge: a different office" } }
+  "bn-3218":
+    native: "A new law has passed in parliament."
+    confusables: { "c1": { why: "a court: where cases are heard, not where laws pass" }, "c2": { why: "a cabinet: the ministers together" } }
+  "bn-3219":
+    native: "I have voted."
+    confusables: { "c1": { why: "a candidate: the person standing, not the voter" }, "c2": { why: "a voter: the person voting, not the vote" } }
+  "bn-3220":
+    native: "The judge has given the verdict."
+    bases: { "রায়": "verdict" }
+    confusables: { "c1": { why: "a court case: the matter, not the judge" }, "c2": { why: "a witness: a person who speaks in court" } }
+  "bn-3221":
+    native: "Every citizen has rights."
+    bases: { "প্রতিটি": "every", "আছে": "has" }
+    confusables: { "c1": { why: "a duty: what one must do, not what one may have" }, "c2": { why: "freedom: a different right" } }
+  "bn-3222":
+    native: "The government has raised tax."
+    bases: { "সরকার": "government", "বাড়িয়েছে": "raised" }
+    confusables: { "c1": { why: "a bribe: illegal money, not tax" }, "c2": { why: "a fine: a penalty, not tax" } }
+  "bn-3223":
+    native: "The elected mayor has come today."
+    bases: { "আজ": "today" }
+    confusables: { "c1": { why: "appointed: not elected by vote" }, "c2": { why: "a governor: a different office" } }
+  "bn-3224":
+    native: "Do not forget your duty. (familiar)"
+    bases: { "ভুলো": "forget", "না": "not" }
+    confusables: { "c1": { why: "a right: the opposite side of a duty" }, "c2": { why: "responsibility: close, but a different word" } }
+  "bn-3225":
+    native: "There are many rights in the constitution."
+    bases: { "আছে": "there are" }
+    confusables: { "c1": { why: "a law: a rule, not the constitution itself" }, "c2": { why: "a policy: a plan of action" } }
+  "bn-3226":
+    native: "The legislature has announced a new policy."
+    bases: { "ঘোষণা": "announced" }
+    confusables: { "c1": { why: "society: the people, not the law-making body" }, "c2": { why: "a party: a group, not a legislature" } }

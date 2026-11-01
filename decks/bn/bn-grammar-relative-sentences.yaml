@@ -1,0 +1,55 @@
+schema: 1
+id: "bn-grammar-relative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3034"
+    target: "যে ছেলেটা এসেছে, সে আমার ভাই।"
+    reading: "je cheleṭā eseche, se āmār bhāi."
+    ipa: "dʒe tʃʰeleʈa esetʃʰe se amar bʱai"
+    phonetic: "[dʒe tʃʰeleʈa esetʃʰe se amar bʱai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যে", base: "যে", reading: "je" }, { word: "ছেলেটা", base: "ছেলে", reading: "cheleṭā" }, { word: "এসেছে", ref: "bn-0872" }, { word: "সে", ref: "bn-0839" }, { word: "আমার", ref: "bn-0833" }, { word: "ভাই", base: "ভাই", reading: "bhāi" }]
+    confusables: [{ id: "c1", word: "মেয়েটা", reading: "meyeṭā", kind: "word" }, { id: "c2", word: "লোকটা", reading: "lokṭā", kind: "word" }]
+  - id: "bn-3035"
+    target: "যে বই আমি পড়েছি, সেটা ভালো।"
+    reading: "je boi āmi pôṛechi, seṭā bhālo."
+    ipa: "dʒe boi ami pɔɽetʃʰi seʈa bʱalo"
+    phonetic: "[dʒe boi ami pɔɽetʃʰi seʈa bʱalo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যে", base: "যে", reading: "je" }, { word: "বই", ref: "bn-1139" }, { word: "আমি", ref: "bn-0833" }, { word: "পড়েছি", base: "পড়া", reading: "pôṛechi" }, { word: "সেটা", base: "সেটা", reading: "seṭā" }, { word: "ভালো", ref: "bn-0617" }]
+    confusables: [{ id: "c1", word: "খাতা", reading: "khātā", kind: "word" }, { id: "c2", word: "কাগজ", reading: "kāgaj", kind: "word" }]
+  - id: "bn-3036"
+    target: "যে দোকানে আমি যাই, সেখানে ভালো চা পাওয়া যায়।"
+    reading: "je dokāne āmi jāi, sekhāne bhālo cā pāoyā jāy."
+    ipa: "dʒe d̪okane ami dʒai sekʰane bʱalo tʃa paoja dʒaj"
+    phonetic: "[dʒe d̪okane ami dʒai sekʰane bʱalo tʃa paoja dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যে", base: "যে", reading: "je" }, { word: "দোকানে", ref: "bn-0250" }, { word: "আমি", ref: "bn-0833" }, { word: "যাই", ref: "bn-0873" }, { word: "সেখানে", base: "সেখানে", reading: "sekhāne" }, { word: "চা", ref: "bn-0351" }, { word: "পাওয়া", ref: "bn-0891" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "বাজার", reading: "bājār", kind: "word" }, { id: "c2", word: "স্কুল", reading: "skul", kind: "word" }]
+  - id: "bn-3037"
+    target: "যে মানুষ কাজ করে, সে টাকা পায়।"
+    reading: "je mānuś kāj kôre, se ṭākā pāy."
+    ipa: "dʒe manuʃ kadʒ kɔre se ʈaka paj"
+    phonetic: "[dʒe manuʃ kadʒ kɔre se ʈaka paj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যে", base: "যে", reading: "je" }, { word: "মানুষ", base: "মানুষ", reading: "mānuś" }, { word: "কাজ", ref: "bn-0198" }, { word: "করে", ref: "bn-0102" }, { word: "সে", ref: "bn-0839" }, { word: "টাকা", ref: "bn-0245" }, { word: "পায়", ref: "bn-0891" }]
+    confusables: [{ id: "c1", word: "বেকার", reading: "bekār", kind: "word" }, { id: "c2", word: "অলস", reading: "alas", kind: "word" }]
+  - id: "bn-3038"
+    target: "যে কথা তুমি বললে, সেটা সত্যি নয়।"
+    reading: "je kôthā tumi bôlole, seṭā sotti nôy."
+    ipa: "dʒe kɔt̪ʰa t̪umi bɔlole seʈa sot̪t̪i nɔj"
+    phonetic: "[dʒe kɔt̪ʰa t̪umi bɔlole seʈa sot̪t̪i nɔj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যে", base: "যে", reading: "je" }, { word: "কথা", ref: "bn-2409" }, { word: "তুমি", ref: "bn-0835" }, { word: "বললে", ref: "bn-0879" }, { word: "সেটা", base: "সেটা", reading: "seṭā" }, { word: "সত্যি", base: "সত্যি", reading: "sotti" }, { word: "নয়", ref: "bn-0210" }]
+    confusables: [{ id: "c1", word: "গল্প", reading: "galpa", kind: "word" }, { id: "c2", word: "প্রশ্ন", reading: "praśna", kind: "word" }]

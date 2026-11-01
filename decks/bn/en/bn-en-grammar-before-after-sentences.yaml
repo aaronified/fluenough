@@ -1,0 +1,32 @@
+schema: 1
+id: "bn-en-grammar-before-after-sentences"
+kind: "layer"
+core: "bn-grammar-before-after-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after: sentences"
+description: "Short sentences saying what happens before or after something. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3379":
+    native: "Wash your hands before eating. (familiar)"
+    confusables: { "c1": { why: "of sleeping: a different time" }, "c2": { why: "of running: a different time" } }
+  "bn-3380":
+    native: "I will go home after the work has finished."
+    bases: { "শেষ": "finished", "পরে": "after" }
+    confusables: { "c1": { why: "before: the opposite time" }, "c2": { why: "with: a different relation" } }
+  "bn-3381":
+    native: "Go to the station before the train comes. (familiar)"
+    confusables: { "c1": { why: "car: a different vehicle, not the train" }, "c2": { why: "bus: a different transport" } }
+  "bn-3382":
+    native: "Tell me after you have seen the picture. (familiar)"
+    bases: { "পরে": "after" }
+    confusables: { "c1": { why: "before: the opposite time" }, "c2": { why: "picture: the thing seen, not a time" } }
+  "bn-3383":
+    native: "I exercise before getting up from sleep."
+    bases: { "থেকে": "from", "ওঠার": "getting up" }
+    confusables: { "c1": { why: "of running: a different exercise" }, "c2": { why: "of eating: a different time" } }
+  "bn-3384":
+    native: "Sleep after you have taken the exam. (familiar)"
+    bases: { "পরে": "after", "ঘুমাও": "sleep" }
+    confusables: { "c1": { why: "of taking: the opposite action" }, "c2": { why: "before: the opposite time" } }

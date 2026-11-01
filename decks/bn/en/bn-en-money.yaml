@@ -1,0 +1,325 @@
+schema: 1
+id: "bn-en-money"
+kind: "layer"
+core: "bn-money"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money"
+description: "Money matters: the bank, savings, loans, bills, prices, profit and loss, and the people who lend and buy. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4317":
+    native: "profit"
+    notes:
+      "n1": "{1}: Profit or gain: the money won over the cost."
+    examples:
+      "এই ব্যবসায় ভালো লাভ হলো।": { native: "This business made good profit.", bases: { "এই": "this" } }
+      "লাভের টাকা কোথায়?": { native: "Where is the profit money?", bases: { "লাভের": "profit" } }
+  "bn-4318":
+    native: "savings"
+    notes:
+      "n1": "{1}: Savings: money put aside for later."
+    examples:
+      "তার সঞ্চয় অনেক।": "His savings are a lot."
+      "সঞ্চয় শুরু করো।": "Start saving. (familiar)"
+  "bn-4319":
+    native: "cheque"
+    notes:
+      "n1": "{1}: A cheque: a written order to a bank to pay money."
+    examples:
+      "চেকটা ব্যাংকে জমা দাও।": { native: "Deposit the cheque at the bank. (familiar)", bases: { "চেকটা": "cheque" } }
+      "চেকে সই করো।": { native: "Sign the cheque. (familiar)", bases: { "চেকে": "cheque" } }
+  "bn-4320":
+    native: "investment"
+    notes:
+      "n1": "{1}: Investment: putting money into something to earn more."
+    examples:
+      "জমিতে বিনিয়োগ করা হলো।": "Investment was made in land."
+      "বিনিয়োগের আগে ভাবো।": { native: "Think before investing. (familiar)", bases: { "বিনিয়োগের": "investment" } }
+  "bn-4321":
+    native: "share"
+    notes:
+      "n1": "{1}: A share: a small part of a company that one can own."
+    examples:
+      "কোম্পানির শেয়ার কিনলাম।": "I bought company shares."
+      "শেয়ারের দাম বাড়ল।": { native: "The price of the shares rose.", bases: { "শেয়ারের": "share", "বাড়ল": "rose" } }
+  "bn-4322":
+    native: "wages"
+    notes:
+      "n1": "{1}: Wages: the money paid for work done."
+    examples:
+      "কাজের মজুরি কত?": "How much are the wages for the work? (familiar)"
+      "মজুরি সময়মতো দেওয়া হলো।": "The wages were paid on time."
+  "bn-4323":
+    native: "commission"
+    notes:
+      "n1": "{1}: Commission: a share of a sale paid to the seller."
+    examples:
+      "বিক্রেতা কমিশন পেল।": "The seller got a commission."
+      "কমিশনটা কত শতাংশ?": { native: "What percentage is the commission? (familiar)", bases: { "কমিশনটা": "commission", "শতাংশ": "percent" } }
+  "bn-4324":
+    native: "wealth; assets"
+    notes:
+      "n1": "{1}: Wealth or assets: things of value that one owns."
+    examples:
+      "দেশের সম্পদ অনেক।": "The country's wealth is large."
+      "তার সম্পদ বাড়ছে।": { native: "His assets are growing.", bases: { "বাড়ছে": "growing" } }
+  "bn-4325":
+    native: "debt"
+    notes:
+      "n1": "{1}: A debt: money one owes to someone."
+    examples:
+      "তার অনেক দেনা আছে।": { native: "He has many debts.", bases: { "আছে": "has" } }
+      "দেনা শোধ করো।": { native: "Pay off the debt. (familiar)", bases: { "শোধ": "pay off" } }
+  "bn-4326":
+    native: "due"
+    notes:
+      "n1": "{1}: A due: money that is owed to one."
+    examples:
+      "আমার পাওনা টাকা কোথায়?": "Where is the money I am owed? (familiar)"
+      "পাওনা মিটিয়ে দাও।": { native: "Settle the dues. (familiar)", bases: { "মিটিয়ে": "settle" } }
+  "bn-4327":
+    native: "accountant"
+    notes:
+      "n1": "{1}: An accountant: a person who keeps the accounts."
+    examples:
+      "হিসাবরক্ষক খাতা মিলালেন।": { native: "The accountant checked the books.", bases: { "মিলালেন": "checked" } }
+      "হিসাবরক্ষককে ডাকো।": { native: "Call the accountant. (familiar)", bases: { "হিসাবরক্ষককে": "accountant" } }
+  "bn-4328":
+    native: "dollar"
+    notes:
+      "n1": "{1}: A dollar: the money of the United States."
+    examples:
+      "এর দাম কয়েক ডলার।": { native: "It costs a few dollars.", bases: { "এর": "its" } }
+      "ডলার বদল করা হলো।": { native: "Dollars were exchanged.", bases: { "বদল": "exchange" } }
+  "bn-4329":
+    native: "rupee"
+    notes:
+      "n1": "{1}: A rupee: the money of India."
+    examples:
+      "দাম একশো রুপি।": "The price is one hundred rupees."
+      "পঞ্চাশ রুপি দাও।": "Give fifty rupees. (familiar)"
+  "bn-4330":
+    native: "saving; economy"
+    notes:
+      "n1": "{1}: Saving: spending less, avoiding waste."
+    examples:
+      "বিদ্যুতে সাশ্রয় করো।": "Save electricity. (familiar)"
+      "এতে অনেক সাশ্রয় হয়।": "This saves a lot."
+  "bn-4331":
+    native: "deposit"
+    notes:
+      "n1": "{1}: A deposit: money kept safe in a bank."
+    examples:
+      "ব্যাংকে আমানত রাখা হলো।": "A deposit was kept in the bank."
+      "আমানতের সুদ বাড়ছে।": { native: "The interest on deposits is rising.", bases: { "আমানতের": "deposit", "বাড়ছে": "rising" } }
+  "bn-4332":
+    native: "withdrawal"
+    notes:
+      "n1": "{1}: Withdrawal: taking money out of a bank."
+    examples:
+      "টাকা উত্তোলন করলাম।": "I withdrew money."
+      "উত্তোলনের সীমা কত?": { native: "What is the withdrawal limit? (familiar)", bases: { "উত্তোলনের": "withdrawal" } }
+  "bn-4333":
+    native: "balance"
+    notes:
+      "n1": "{1}: Balance: the amount of money in an account."
+    examples:
+      "আমার ব্যালেন্স কম।": "My balance is low."
+      "ব্যালেন্স দেখো।": "Check the balance. (familiar)"
+  "bn-4334":
+    native: "subscription"
+    notes:
+      "n1": "{1}: A subscription: money given by members to a group or cause."
+    examples:
+      "ক্লাবের চাঁদা দিলাম।": "I paid the club subscription."
+      "চাঁদা জমা দিতে হবে।": "The subscription must be paid."
+  "bn-4335":
+    native: "subsidy"
+    notes:
+      "n1": "{1}: A subsidy: money given by the government to lower the price."
+    examples:
+      "সরকার ভর্তুকি দিল।": "The government gave a subsidy."
+      "ভর্তুকিতে সস্তা হলো।": { native: "It became cheaper with the subsidy.", bases: { "ভর্তুকিতে": "subsidy" } }
+  "bn-4336":
+    native: "profit"
+    notes:
+      "n1": "{1}: Profit: the gain from business after costs."
+    examples:
+      "মুনাফা বেশি হয়েছে।": "The profit was high."
+      "মুনাফার হিসাব দাও।": { native: "Give the profit account. (familiar)", bases: { "মুনাফার": "profit" } }
+  "bn-4337":
+    native: "loss"
+    notes:
+      "n1": "{1}: Loss: money lost in business."
+    examples:
+      "এতে আমার লোকসান হলো।": "I made a loss on this."
+      "লোকসানের ভয় আছে।": { native: "There is fear of loss.", bases: { "লোকসানের": "loss", "আছে": "there is" } }
+  "bn-4338":
+    native: "economy"
+    notes:
+      "n1": "{1}: The economy: the system of production and money in a country."
+    examples:
+      "দেশের অর্থনীতি ভালো।": "The country's economy is good."
+      "অর্থনীতি নিয়ে পড়ছি।": "I am studying economics."
+  "bn-4339":
+    native: "dues"
+    notes:
+      "n1": "{1}: Dues or arrears: money still to be paid."
+    examples:
+      "আমার বাকি টাকা দাও।": "Give me the money that is owed. (familiar)"
+      "বাকি আছে কিছু।": { native: "Some dues remain.", bases: { "আছে": "remain" } }
+  "bn-4340":
+    native: "payment"
+    notes:
+      "n1": "{1}: A payment: money paid for something."
+    examples:
+      "পেমেন্ট হয়ে গেছে।": "The payment has been made."
+      "অনলাইন পেমেন্ট করো।": "Make an online payment. (familiar)"
+  "bn-4341":
+    native: "discount"
+    notes:
+      "n1": "{1}: A discount: a reduction in price."
+    examples:
+      "দোকানে ডিসকাউন্ট আছে।": { native: "The shop has a discount.", bases: { "আছে": "has" } }
+      "ডিসকাউন্টের পর দাম কম।": { native: "After the discount the price is low.", bases: { "ডিসকাউন্টের": "discount" } }
+  "bn-4342":
+    native: "tax"
+    notes:
+      "n1": "{1}: Tax: money paid to the government."
+    examples:
+      "ট্যাক্স দিতে হবে।": "Tax must be paid."
+      "ট্যাক্সের হার বাড়ল।": { native: "The tax rate rose.", bases: { "ট্যাক্সের": "tax", "বাড়ল": "rose" } }
+  "bn-4343":
+    native: "rent; land tax"
+    notes:
+      "n1": "{1}: Rent or land tax: payment for the use of land."
+    examples:
+      "জমির খাজনা দিলাম।": "I paid the land rent."
+      "খাজনা বাকি আছে।": { native: "The rent is overdue.", bases: { "আছে": "is" } }
+  "bn-4344":
+    native: "capital"
+    notes:
+      "n1": "{1}: Capital: the money put into a business at the start."
+    examples:
+      "ব্যবসার মূলধন কম।": "The business's capital is small."
+      "মূলধন জোগাড় করা কঠিন।": { native: "Gathering capital is hard.", bases: { "জোগাড়": "gathering" } }
+  "bn-4345":
+    native: "repayment"
+    notes:
+      "n1": "{1}: Repayment: paying back a debt."
+    examples:
+      "ঋণ পরিশোধের সময় এল।": { native: "The time for repaying the loan came.", bases: { "পরিশোধের": "repayment" } }
+      "পরিশোধ কবে হবে?": "When will the repayment be made? (familiar)"
+  "bn-4346":
+    native: "pocket money"
+    notes:
+      "n1": "{1}: Pocket money: small money for daily personal spending."
+    examples:
+      "ছেলেটা রোজ হাতখরচ পায়।": "The boy gets pocket money every day."
+      "হাতখরচ কম পড়ে গেছে।": "The pocket money has run low."
+  "bn-4347":
+    native: "lender"
+    notes:
+      "n1": "{1}: A lender: a person who gives a loan."
+    examples:
+      "ঋণদাতা টাকা দিলেন।": "The lender gave money."
+      "ঋণদাতার সঙ্গে কথা বললাম।": { native: "I talked with the lender.", bases: { "ঋণদাতার": "lender" } }
+  "bn-4348":
+    native: "customer"
+    notes:
+      "n1": "{1}: A customer: a person who buys from a shop or service."
+    examples:
+      "গ্রাহক দোকানে এলেন।": "The customer came to the shop."
+      "গ্রাহকের সেবা ভালো।": { native: "The service to customers is good.", bases: { "গ্রাহকের": "customer" } }
+  "bn-4349":
+    native: "moneylender"
+    notes:
+      "n1": "{1}: A moneylender: a person who lends money at interest."
+    examples:
+      "মহাজন চড়া সুদে টাকা দেয়।": "The moneylender lends money at high interest."
+      "মহাজনের কাছে ঋণ নিয়েছে।": { native: "He took a loan from the moneylender.", bases: { "মহাজনের": "moneylender" } }
+  "bn-4350":
+    native: "instalment"
+    notes:
+      "n1": "{1}: An instalment: a part of a payment made at intervals."
+    examples:
+      "মাসিক কিস্তি দিতে হয়।": "A monthly instalment has to be paid."
+      "কিস্তিটা এখনো বাকি।": { native: "The instalment is still due.", bases: { "কিস্তিটা": "instalment" } }
+  "bn-4351":
+    native: "money (everyday)"
+    notes:
+      "n1": "{1}: Money, in everyday speech: cash and coins together."
+    examples:
+      "আমার কাছে টাকাপয়সা নেই।": { native: "I have no money on me.", bases: { "নেই": "have no" } }
+      "টাকাপয়সা সাবধানে রেখো।": "Keep the money carefully. (familiar)"
+  "bn-4352":
+    native: "monthly"
+    notes:
+      "n1": "{1}: Monthly: happening once every month."
+    examples:
+      "মাসিক বেতন কত?": "What is the monthly salary? (familiar)"
+      "মাসিক হিসাব মেলাও।": { native: "Match the monthly accounts. (familiar)", bases: { "মেলাও": "match" } }
+  "bn-4353":
+    native: "stingy"
+    notes:
+      "n1": "{1}: Stingy: unwilling to spend money."
+    examples:
+      "সে খুব কৃপণ।": "He is very stingy."
+      "কৃপণ মানুষ টাকা খরচ করে না।": { native: "A stingy person does not spend money.", bases: { "মানুষ": "person" } }
+  "bn-4354":
+    native: "generous"
+    notes:
+      "n1": "{1}: Generous: willing to give."
+    examples:
+      "তিনি খুব উদার মানুষ।": { native: "He is a very generous person.", bases: { "মানুষ": "person" } }
+      "উদার হাতে দান করো।": "Give generously. (familiar)"
+  "bn-4355":
+    native: "well-off"
+    notes:
+      "n1": "{1}: Well-off: having enough money."
+    examples:
+      "তারা এখন স্বচ্ছল।": "They are well-off now."
+      "স্বচ্ছল পরিবার।": "A well-off family."
+  "bn-4356":
+    native: "in need"
+    notes:
+      "n1": "{1}: In need: lacking money or necessities."
+    examples:
+      "অভাবী মানুষকে সাহায্য করো।": { native: "Help people in need. (familiar)", bases: { "মানুষকে": "people" } }
+      "এই পরিবার অভাবী।": { native: "This family is in need.", bases: { "এই": "this" } }
+  "bn-4357":
+    native: "bankrupt"
+    notes:
+      "n1": "{1}: Bankrupt: unable to pay one's debts."
+    examples:
+      "কোম্পানিটা দেউলিয়া হয়ে গেছে।": "The company has gone bankrupt."
+      "দেউলিয়া ব্যবসায়ী।": "A bankrupt businessman."
+  "bn-4358":
+    native: "financial"
+    notes:
+      "n1": "{1}: Financial: relating to money."
+    examples:
+      "আর্থিক সমস্যা আছে।": { native: "There are financial problems.", bases: { "আছে": "there are" } }
+      "আর্থিক সাহায্য দরকার।": "Financial help is needed."
+  "bn-4359":
+    native: "to spend"
+    notes:
+      "n1": "{1}: To spend money: to pay out money for something."
+    examples:
+      "আমি অনেক টাকা খরচ করলাম।": "I spent a lot of money."
+      "বেশি খরচ করো না।": "Do not spend too much. (familiar)"
+  "bn-4360":
+    native: "to save"
+    notes:
+      "n1": "{1}: To save money: to put money aside."
+    examples:
+      "সে মাসে কিছু সঞ্চয় করে।": "She saves something every month."
+      "টাকা সঞ্চয় করো।": "Save money. (familiar)"
+  "bn-4361":
+    native: "to repay"
+    notes:
+      "n1": "{1}: To repay: to pay back money owed."
+    examples:
+      "ঋণটা পরিশোধ করা হলো।": "The loan was repaid."
+      "আমি সব বাকি পরিশোধ করব।": "I will repay all the dues."

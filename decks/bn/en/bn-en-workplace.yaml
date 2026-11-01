@@ -1,0 +1,330 @@
+schema: 1
+id: "bn-en-workplace"
+kind: "layer"
+core: "bn-workplace"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace"
+description: "Words for an office and the work done in it: bosses, meetings, files, approvals, promotions and resignations. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2620":
+    native: "boss"
+    notes:
+      "n1": "{1}: The person you report to at work: a boss."
+    examples:
+      "আমাদের বস খুব ভালো।": "Our boss is very good."
+      "বসের সঙ্গে কথা বলো।": { native: "Talk to the boss. (familiar)", bases: { "বসের": "boss", "সঙ্গে": "with" } }
+  "bn-2621":
+    native: "colleague"
+    notes:
+      "n1": "{1}: A colleague: someone who works with you."
+    examples:
+      "আমার সহকর্মীরা আজ আসেনি।": { native: "My colleagues did not come today.", bases: { "সহকর্মীরা": "colleague", "আজ": "today" } }
+      "সহকর্মীর সঙ্গে চা খাই।": { native: "I have tea with a colleague.", bases: { "সহকর্মীর": "colleague", "সঙ্গে": "with", "চা": "tea" } }
+  "bn-2622":
+    native: "meeting"
+    notes:
+      "n1": "{1}: A meeting, where people gather to talk about work."
+    examples:
+      "আজ বিকেলে একটা সভা আছে।": { native: "There is a meeting this afternoon.", bases: { "আজ": "today", "বিকেলে": "in the afternoon", "আছে": "there is" } }
+      "সভাটা দশটায় শুরু হবে।": { native: "The meeting will start at ten.", bases: { "সভাটা": "meeting", "দশটায়": "at ten o'clock", "শুরু": "start" } }
+  "bn-2623":
+    native: "report"
+    notes:
+      "n1": "{1}: A report: a written account of work done."
+    examples:
+      "রিপোর্টটা আজই পাঠাও।": { native: "Send the report today. (familiar)", bases: { "রিপোর্টটা": "report", "আজই": "today itself" } }
+      "রিপোর্টটা শেষ হয়েছে।": { native: "The report is finished.", bases: { "রিপোর্টটা": "report", "শেষ": "finished" } }
+  "bn-2624":
+    native: "shift"
+    notes:
+      "n1": "{1}: A shift: the set hours of one team's work."
+    examples:
+      "আমার শিফট সকালে।": "My shift is in the morning."
+      "রাতের শিফটে কে আছে?": { native: "Who is on the night shift?", bases: { "শিফটে": "shift", "কে": "who", "আছে": "there is" } }
+  "bn-2625":
+    native: "manager"
+    notes:
+      "n1": "{1}: A manager: the person who runs a team or an office."
+    examples:
+      "ম্যানেজার আজ ছুটিতে।": { native: "The manager is on leave today.", bases: { "আজ": "today" } }
+      "ম্যানেজারের ঘরটা বড়।": { native: "The manager's room is big.", bases: { "ম্যানেজারের": "manager" } }
+  "bn-2626":
+    native: "staff member"
+    notes:
+      "n1": "{1}: A worker on the staff of an office or shop."
+    examples:
+      "নতুন কর্মী আজ এসেছে।": { native: "A new staff member has come today.", bases: { "আজ": "today" } }
+      "কর্মীরা লাঞ্চে গেছে।": { native: "The staff have gone to lunch.", bases: { "কর্মীরা": "staff member", "লাঞ্চে": "at lunch" } }
+  "bn-2627":
+    native: "file"
+    notes:
+      "n1": "{1}: A file: a folder of papers, or a document on a computer."
+    examples:
+      "ফাইলটা টেবিলে আছে।": { native: "The file is on the table.", bases: { "ফাইলটা": "file", "আছে": "there is" } }
+      "ফাইলগুলো আলমারিতে রাখো।": { native: "Put the files in the cupboard. (familiar)", bases: { "ফাইলগুলো": "file" } }
+  "bn-2628":
+    native: "printer"
+    notes:
+      "n1": "{1}: A printer: a machine that prints documents onto paper."
+    examples:
+      "প্রিন্টারটা খারাপ হয়ে গেছে।": { native: "The printer has broken down.", bases: { "প্রিন্টারটা": "printer", "খারাপ": "bad" } }
+      "কাগজ ছাড়া প্রিন্টার চলে না।": { native: "A printer does not run without paper.", bases: { "ছাড়া": "without", "চলে": "to run", "না": "not" } }
+  "bn-2629":
+    native: "project"
+    notes:
+      "n1": "{1}: A project: a planned piece of work with a goal."
+    examples:
+      "নতুন প্রকল্পে কাজ শুরু হলো।": { native: "Work started on the new project.", bases: { "প্রকল্পে": "project", "শুরু": "start" } }
+      "প্রকল্পটা দুই মাসের।": { native: "The project lasts two months.", bases: { "প্রকল্পটা": "project", "দুই": "two", "মাসের": "of a month" } }
+  "bn-2630":
+    native: "document"
+    notes:
+      "n1": "{1}: A document: a formal file of papers."
+    examples:
+      "নথিগুলো আলমারিতে আছে।": { native: "The documents are in the cupboard.", bases: { "নথিগুলো": "document", "আছে": "there is" } }
+      "নথিতে সই করো।": { native: "Sign the document. (familiar)", bases: { "নথিতে": "document" } }
+  "bn-2631":
+    native: "office messenger"
+    notes:
+      "n1": "{1}: An office messenger who carries papers and runs errands."
+    examples:
+      "পিয়ন চিঠিটা নিয়ে গেল।": "The messenger took the letter away."
+      "পিয়নকে ডাকো।": { native: "Call the messenger. (familiar)", bases: { "পিয়নকে": "office messenger", "ডাকো": "to call" } }
+  "bn-2632":
+    native: "security guard"
+    notes:
+      "n1": "{1}: A security guard who watches over a building."
+    examples:
+      "নিরাপত্তারক্ষী গেটে আছেন।": { native: "The security guard is at the gate.", bases: { "গেটে": "at the gate", "আছেন": "is" } }
+      "নিরাপত্তারক্ষীকে পরিচয়পত্র দেখাও।": { native: "Show your ID card to the guard. (familiar)", bases: { "নিরাপত্তারক্ষীকে": "security guard", "দেখাও": "show" } }
+  "bn-2633":
+    native: "signature"
+    notes:
+      "n1": "{1}: A signature: your name written by hand to sign a paper."
+    examples:
+      "এখানে সই করো।": "Sign here. (familiar)"
+      "সইটা ঠিক আছে।": { native: "The signature is correct.", bases: { "সইটা": "signature", "ঠিক": "correct", "আছে": "is" } }
+  "bn-2634":
+    native: "approval"
+    notes:
+      "n1": "{1}: Approval: the official yes from someone in charge."
+    examples:
+      "ম্যানেজারের অনুমোদন লাগবে।": "You need the manager's approval."
+      "অনুমোদনের জন্য অপেক্ষা করো।": { native: "Wait for the approval. (familiar)", bases: { "অনুমোদনের": "approval", "জন্য": "for", "অপেক্ষা": "waiting" } }
+  "bn-2635":
+    native: "promotion"
+    notes:
+      "n1": "{1}: A promotion: a move to a higher post at work."
+    examples:
+      "রিনা পদোন্নতি পেয়েছে।": { native: "Rina got a promotion.", bases: { "রিনা": "Rina (a name)" } }
+      "পদোন্নতির খবর ভালো।": { native: "The news of the promotion is good.", bases: { "পদোন্নতির": "promotion", "খবর": "news" } }
+  "bn-2636":
+    native: "email"
+    notes:
+      "n1": "{1}: An email: a message sent by computer."
+    examples:
+      "ইমেইলটা পড়েছি।": { native: "I have read the email.", bases: { "ইমেইলটা": "email", "পড়েছি": "to read" } }
+      "আমাকে একটা ইমেইল পাঠাও।": { native: "Send me an email. (familiar)", bases: { "আমাকে": "to me", "ইমেইল": "email" } }
+  "bn-2637":
+    native: "training"
+    notes:
+      "n1": "{1}: Training: lessons that teach a skill for work."
+    examples:
+      "নতুন কর্মীদের প্রশিক্ষণ হচ্ছে।": "Training for the new staff is going on."
+      "প্রশিক্ষণে কম্পিউটার শেখানো হবে।": { native: "Computers will be taught in the training.", bases: { "প্রশিক্ষণে": "training" } }
+  "bn-2638":
+    native: "break"
+    notes:
+      "n1": "{1}: A break: a pause from work, such as lunch."
+    examples:
+      "দুপুরে এক ঘণ্টার বিরতি।": { native: "A one-hour break at noon.", bases: { "ঘণ্টার": "of an hour" } }
+      "এখন বিরতির সময়।": { native: "It is break time now.", bases: { "এখন": "now", "বিরতির": "break" } }
+  "bn-2639":
+    native: "workplace"
+    notes:
+      "n1": "{1}: A workplace: the place where you work."
+    examples:
+      "কর্মস্থল আমার বাড়ির কাছে।": { native: "My workplace is near my house.", bases: { "কাছে": "near" } }
+      "কর্মস্থলে পৌঁছাতে কতক্ষণ লাগে?": { native: "How long does it take to reach the workplace?", bases: { "কর্মস্থলে": "workplace", "পৌঁছাতে": "to reach", "কতক্ষণ": "how long" } }
+  "bn-2640":
+    native: "application"
+    notes:
+      "n1": "{1}: An application: a written request for a job or a service."
+    examples:
+      "চাকরির দরখাস্ত জমা দিলাম।": { native: "I submitted a job application.", bases: { "জমা": "submitted" } }
+      "দরখাস্তটা কবে দেখবে?": { native: "When will you look at the application?", bases: { "দরখাস্তটা": "application", "কবে": "when" } }
+  "bn-2641":
+    native: "deadline"
+    notes:
+      "n1": "{1}: A deadline: the last time by which work must be done."
+    examples:
+      "সময়সীমার আগে জমা দাও।": { native: "Submit before the deadline.", bases: { "সময়সীমার": "deadline", "জমা": "submit" } }
+      "সময়সীমা ভুলো না।": { native: "Do not forget the deadline. (familiar)", bases: { "সময়সীমা": "deadline", "ভুলো": "to forget", "না": "not" } }
+  "bn-2642":
+    native: "details"
+    notes:
+      "n1": "{1}: Details: the account of what something is or what happened."
+    examples:
+      "কাজের বিবরণ লিখে দাও।": { native: "Write down the details of the job. (familiar)", bases: { "লিখে": "writing" } }
+      "বিবরণটা পরিষ্কার নয়।": { native: "The details are not clear.", bases: { "বিবরণটা": "details" } }
+  "bn-2643":
+    native: "bonus"
+    notes:
+      "n1": "{1}: A bonus: extra money paid for good work."
+    examples:
+      "এ বছর বোনাস পেলাম।": { native: "I got a bonus this year.", bases: { "এ": "this", "বছর": "year", "বোনাস": "bonus" } }
+      "বোনাসের টাকা ভালো।": { native: "The bonus money is good.", bases: { "বোনাসের": "bonus" } }
+  "bn-2644":
+    native: "owner"
+    notes:
+      "n1": "{1}: An owner: the person who owns a business or shop."
+    examples:
+      "দোকানের মালিক বাইরে গেছেন।": { native: "The owner of the shop has gone out.", bases: { "বাইরে": "outside" } }
+      "মালিককে ডাকো।": { native: "Call the owner. (familiar)", bases: { "মালিককে": "owner", "ডাকো": "to call" } }
+  "bn-2645":
+    native: "layoffs"
+    notes:
+      "n1": "{1}: Layoffs: letting people go from a job."
+    examples:
+      "কোম্পানিতে ছাঁটাই হয়েছে।": { native: "There were layoffs at the company.", bases: { "কোম্পানিতে": "at the company" } }
+      "ছাঁটাইয়ের খবরে সবাই চুপ।": { native: "Everyone is quiet at the news of the layoffs.", bases: { "ছাঁটাইয়ের": "layoffs", "খবরে": "at the news", "সবাই": "everyone", "চুপ": "quiet" } }
+  "bn-2646":
+    native: "trainee"
+    notes:
+      "n1": "{1}: A trainee: someone who learns a job while working in it."
+    examples:
+      "আমি এখন শিক্ষানবিস।": { native: "I am a trainee now.", bases: { "এখন": "now" } }
+      "শিক্ষানবিসদের একটা ঘর আছে।": { native: "The trainees have a room.", bases: { "শিক্ষানবিসদের": "trainee", "আছে": "there is" } }
+  "bn-2647":
+    native: "salary rise"
+    notes:
+      "n1": "{1}: A salary rise: more pay than before."
+    examples:
+      "এ বছর বেতনবৃদ্ধি হবে।": { native: "There will be a rise in pay this year.", bases: { "এ": "this", "বছর": "year" } }
+      "বেতনবৃদ্ধির খবর পেয়েছি।": { native: "I have heard the news of the rise.", bases: { "বেতনবৃদ্ধির": "salary rise", "খবর": "news" } }
+  "bn-2648":
+    native: "office (formal)"
+    notes:
+      "n1": "{1}: A formal word for an office or department."
+    examples:
+      "সরকারি দপ্তরে গেলাম।": { native: "I went to a government office.", bases: { "সরকারি": "government", "দপ্তরে": "office (formal)" } }
+      "দপ্তরটা পাঁচটায় বন্ধ হয়।": { native: "The office closes at five o'clock.", bases: { "দপ্তরটা": "office (formal)", "পাঁচটায়": "at five o'clock" } }
+  "bn-2649":
+    native: "organisation"
+    notes:
+      "n1": "{1}: An organisation or company."
+    examples:
+      "সংস্থাটা নতুন।": { native: "The organisation is new.", bases: { "সংস্থাটা": "organisation" } }
+      "এই সংস্থায় পাঁচশো কর্মী আছে।": { native: "This organisation has five hundred staff.", bases: { "এই": "this", "সংস্থায়": "organisation", "পাঁচশো": "five hundred", "আছে": "there is" } }
+  "bn-2650":
+    native: "experienced"
+    notes:
+      "n1": "{1}: Experienced: has done the work for a long time."
+    examples:
+      "তিনি অভিজ্ঞ শিক্ষক।": { native: "He is an experienced teacher.", bases: { "তিনি": "he (formal)", "শিক্ষক": "teacher" } }
+      "অভিজ্ঞ কর্মীরা সাহায্য করবে।": "Experienced staff will help."
+  "bn-2651":
+    native: "responsible"
+    notes:
+      "n1": "{1}: Responsible: someone you can trust to do their job."
+    examples:
+      "সে খুব দায়িত্বশীল।": "She is very responsible."
+      "দায়িত্বশীল মানুষ সময়মতো আসে।": { native: "A responsible person comes on time.", bases: { "মানুষ": "person" } }
+  "bn-2652":
+    native: "hardworking"
+    notes:
+      "n1": "{1}: Hardworking: works hard and does not stop."
+    examples:
+      "আমার বোন খুব পরিশ্রমী।": "My sister is very hardworking."
+      "পরিশ্রমী কর্মীদের পুরস্কার দেওয়া হবে।": "Hardworking staff will be rewarded."
+  "bn-2653":
+    native: "free"
+    notes:
+      "n1": "{1}: Free: not busy, or costing nothing."
+    examples:
+      "আজ বিকেলে আমি ফ্রি।": { native: "I am free this afternoon.", bases: { "আজ": "today", "বিকেলে": "in the afternoon" } }
+      "ফ্রি ওয়াইফাই আছে।": { native: "There is free wi-fi.", bases: { "আছে": "there is" } }
+  "bn-2654":
+    native: "active"
+    notes:
+      "n1": "{1}: Active: busy and taking part in things."
+    examples:
+      "কোম্পানিটা খুব সক্রিয়।": { native: "The company is very active.", bases: { "কোম্পানিটা": "the company" } }
+      "সক্রিয় কর্মী বেশি কাজ করে।": "Active staff do more work."
+  "bn-2655":
+    native: "important"
+    notes:
+      "n1": "{1}: Important: it matters a great deal."
+    examples:
+      "এই সভা খুব গুরুত্বপূর্ণ।": { native: "This meeting is very important.", bases: { "এই": "this" } }
+      "এটা গুরুত্বপূর্ণ কাগজ।": "This is an important paper."
+  "bn-2656":
+    native: "to join"
+    bases: { "যোগ": "to join" }
+    notes:
+      "n1": "{1}: To join: to start working at a place."
+    examples:
+      "আমি গতকাল নতুন কাজে যোগ দিয়েছি।": { native: "I joined the new job yesterday.", bases: { "গতকাল": "yesterday", "যোগ": "join" } }
+      "সে সোমবার অফিসে যোগ দেবে।": { native: "She will join the office on Monday.", bases: { "সোমবার": "Monday", "যোগ": "join" } }
+  "bn-2657":
+    native: "to resign"
+    bases: { "ইস্তফা": "resignation" }
+    notes:
+      "n1": "{1}: To resign: to give up a job."
+    examples:
+      "তিনি চাকরি থেকে ইস্তফা দিলেন।": { native: "He resigned from the job.", bases: { "তিনি": "he (formal)", "থেকে": "from", "ইস্তফা": "resignation" } }
+      "ইস্তফা দেওয়ার কারণ জানো?": { native: "Do you know the reason for resigning? (familiar)", bases: { "ইস্তফা": "resignation", "জানো": "to know" } }
+  "bn-2658":
+    native: "to finish"
+    bases: { "শেষ": "to finish" }
+    notes:
+      "n1": "{1}: To finish: to bring something to its end."
+    examples:
+      "কাজটা শেষ করেছি।": { native: "I have finished the work.", bases: { "শেষ": "finish" } }
+      "সব কাজ শেষ করো।": { native: "Finish all the work. (familiar)", bases: { "শেষ": "finish" } }
+  "bn-2659":
+    native: "to type"
+    bases: { "টাইপ": "to type" }
+    notes:
+      "n1": "{1}: To type: to write using a keyboard."
+    examples:
+      "চিঠিটা টাইপ করো।": { native: "Type the letter. (familiar)", bases: { "টাইপ": "type" } }
+      "আমি রোজ ইমেইল টাইপ করি।": { native: "I type emails every day.", bases: { "টাইপ": "type" } }
+  "bn-2660":
+    native: "to sign"
+    notes:
+      "n1": "{1}: To sign: to write your name on a paper."
+    examples:
+      "নথিটায় সই করো।": "Sign the document. (familiar)"
+      "নথিতে সই হয়ে গেছে।": "The document has been signed."
+  "bn-2661":
+    native: "to submit"
+    bases: { "জমা": "to submit" }
+    notes:
+      "n1": "{1}: To submit: to hand in a paper or money."
+    examples:
+      "রিপোর্টটা জমা দাও।": { native: "Submit the report. (familiar)", bases: { "জমা": "submit" } }
+      "দরখাস্তটা জমা দিলাম।": { native: "I submitted the application.", bases: { "জমা": "submit" } }
+  "bn-2662":
+    native: "to be late"
+    notes:
+      "n1": "{1}: To be late: to take more time than the time set."
+    examples:
+      "আজ আমি দেরি করেছি।": { native: "I was late today.", bases: { "আজ": "today" } }
+      "বসের সভায় দেরি করো না।": { native: "Do not be late for the boss's meeting. (familiar)", bases: { "না": "not" } }
+  "bn-2663":
+    native: "late"
+    notes:
+      "n1": "{1}: Late: after the time expected."
+    examples:
+      "সে দেরিতে এসেছে।": "He came late."
+      "ট্রেন দেরিতে চলছে।": { native: "The train is running late.", bases: { "চলছে": "running" } }
+  "bn-2664":
+    native: "properly"
+    notes:
+      "n1": "{1}: Properly; in the right way."
+    examples:
+      "কাজটা ঠিকঠাক হয়েছে।": "The work has been done properly."
+      "সব ঠিকঠাক আছে?": { native: "Is everything all right?", bases: { "আছে": "is" } }

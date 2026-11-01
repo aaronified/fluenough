@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-money-sentences"
+kind: "layer"
+core: "bn-money-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money: sentences"
+description: "Short sentences about the bank, prices, savings, loans and bills. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4362":
+    native: "My savings are kept in the bank."
+    bases: { "আছে": "are" }
+    confusables: { "c1": { why: "a loan: money owed, not savings" }, "c2": { why: "wages: money earned, not kept" } }
+  "bn-4363":
+    native: "The shop has a big discount."
+    bases: { "আছে": "has" }
+    confusables: { "c1": { why: "the price rose: the opposite of a discount" }, "c2": { why: "commission: a payment to a seller, not a price cut" } }
+  "bn-4364":
+    native: "The profit was low this month."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "loss: a different result of business" }, "c2": { why: "profit: the same idea, a different word" } }
+  "bn-4365":
+    native: "The lender asked for the money back."
+    confusables: { "c1": { why: "a loan: the thing asked back" }, "c2": { why: "a gift: given, not asked back" } }
+  "bn-4366":
+    native: "The electricity bill is due."
+    bases: { "আছে": "is" }
+    confusables: { "c1": { why: "receipt: proof of payment, not an unpaid bill" }, "c2": { why: "due: money owed to you, not by you" } }
+  "bn-4367":
+    native: "Pay the monthly instalment on time. (familiar)"
+    confusables: { "c1": { why: "delay: the opposite of on time" }, "c2": { why: "a gift: not a payment" } }
+  "bn-4368":
+    native: "The government imposed a new tax."
+    confusables: { "c1": { why: "subsidy: the opposite, money given" }, "c2": { why: "a fine: a penalty, not a tax" } }
+  "bn-4369":
+    native: "In business he spent a lot of money."
+    confusables: { "c1": { why: "savings: the opposite of spending" }, "c2": { why: "income: money coming in" } }
+  "bn-4370":
+    native: "The moneylender's interest is very high."
+    confusables: { "c1": { why: "cheap: the opposite of high" }, "c2": { why: "a loan: the thing lent, not the interest" } }
+  "bn-4371":
+    native: "He repaid the debt."
+    confusables: { "c1": { why: "a loan: the thing taken, not repaid" }, "c2": { why: "due: owed to him, not by him" } }
+  "bn-4372":
+    native: "The interest on deposits is rising."
+    bases: { "বাড়ছে": "rising" }
+    confusables: { "c1": { why: "withdrawal: taking money out" }, "c2": { why: "payment: money out, not kept in the bank" } }
+  "bn-4373":
+    native: "The capital is small, so spend carefully. (familiar)"
+    confusables: { "c1": { why: "plenty: the opposite of small" }, "c2": { why: "budget: a plan, not the capital" } }

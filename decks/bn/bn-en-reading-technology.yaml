@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-technology"
+name: "Reading: technology"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A shop asks about fixing a phone, and the instructions in a phone app, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-fixing-a-phone"
+    title: "Asking a shop to fix a phone"
+    theme: "technology"
+    sentences:
+      - { text: "আমার ফোনটা চালু হচ্ছে না।", reading: "āmār phonoṭā cālu hôcche nā.", ipa: "amar pʰonoʈa tʃalu ɦɔtʃtʃʰe na" }
+      - { text: "ব্যাটারি ঠিক আছে কি না দেখুন।", reading: "bêṭāri ṭhik āche ki nā dekhun.", ipa: "bæʈari ʈʰik atʃʰe ki na d̪ekʰun" }
+      - { text: "সফটওয়্যার আপডেট করতে হবে।", reading: "sôphoṭooyyār āpoḍeṭ kôrote hôbe.", ipa: "sɔpʰoʈoojjar apoɖeʈ kɔrot̪e ɦɔbe" }
+      - { text: "কাল সকালে এসে নিয়ে যাবেন।", reading: "kāl sôkāle ese niye jāben.", ipa: "kal sɔkale ese nije dʒaben" }
+      - { text: "ঠিক আছে, ধন্যবাদ।", reading: "ṭhik āche, dhonnobād.", ipa: "ʈʰik atʃʰe d̪ʱonnobad̪" }
+    questions:
+      - id: "bn-3306"
+        prompt: { "en": "The phone will not switch on." }
+        answer: true
+      - id: "bn-3307"
+        prompt: { "en": "What might need updating?" }
+        options: [{ "en": "The software" }, { "en": "The screen" }]
+        answer: 1
+      - id: "bn-3308"
+        prompt: { "en": "When can the customer collect the phone?" }
+        options: [{ "en": "Tomorrow morning" }, { "en": "Never" }]
+        answer: 1
+  - id: "bn-app-instructions"
+    title: "Instructions inside a phone app"
+    theme: "technology"
+    sentences:
+      - { text: "অ্যাপটি ইনস্টল করতে ক্লিক করুন।", reading: "êāpoṭi inosṭol kôrote klik korun.", ipa: "ɔdʒapoʈi inosʈol kɔrot̪e klik korun" }
+      - { text: "লগইন করার জন্য পাসওয়ার্ড দিন।", reading: "lôgoin kôrār jonn pāsooyārḍ din.", ipa: "lɔɡoin kɔrar dʒonn pasoojarɖ d̪in" }
+      - { text: "মেনুতে সেটিংস খুলুন।", reading: "menute seṭiṅs khulun.", ipa: "menut̪e seʈiŋs kʰulun" }
+      - { text: "ডেটা স্বয়ংক্রিয়ভাবে সংরক্ষিত হবে।", reading: "ḍeṭā sôyoṅkriyobhābe sôṅrokkhit hôbe.", ipa: "ɖeʈa sɔjoŋkrijobʱabe sɔŋrokkʰit̪ ɦɔbe" }
+      - { text: "সমস্যা থাকলে সহায়তা নিন।", reading: "sômossā thākole sôhāyotā nin.", ipa: "sɔmossa t̪ʰakole sɔɦajot̪a nin" }
+    questions:
+      - id: "bn-3309"
+        prompt: { "en": "The user is asked to install the app." }
+        answer: true
+      - id: "bn-3310"
+        prompt: { "en": "What must be entered to log in?" }
+        options: [{ "en": "A password" }, { "en": "A photo" }]
+        answer: 1
+      - id: "bn-3311"
+        prompt: { "en": "How is the data saved?" }
+        options: [{ "en": "Automatically" }, { "en": "On paper" }]
+        answer: 1

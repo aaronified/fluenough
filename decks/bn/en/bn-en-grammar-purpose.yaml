@@ -1,0 +1,23 @@
+schema: 1
+id: "bn-en-grammar-purpose"
+kind: "layer"
+core: "bn-grammar-purpose"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Purpose: to do, for doing"
+license: "CC-BY-SA-4.0"
+description: "Saying why: the তে (te) form says 'to do', and the noun with জন্য (jonno) says 'for doing'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Purpose"
+  slot_name: "form"
+  slots: { "to": "to do (the তে (te) form)", "for": "for doing (the noun with জন্য (jonno))" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "thaka": "to stay"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+  notes: "The তে (te) form says 'to do': যেতে (jete), to go; কিনতে (kinte), to buy. The noun form with জন্য (jonno) says 'for doing': যাওয়ার জন্য (jāoār jonno), for going. Both come before the main verb: আমি বই কিনতে যাচ্ছি (āmi boi kinte jācchi), I am going to buy a book. A verb of motion, like যাওয়া (jāoā), often follows the তে (te) form."

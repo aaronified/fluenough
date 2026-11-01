@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-reported-speech"
+name: "Reading: he said that"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Friends talk about what someone said, and a message thread that passes on a message, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-friends-talk"
+    title: "Friends talk about what someone said"
+    theme: "news"
+    sentences:
+      - { text: "রহিম বলল যে সে কাল আসবে না।", reading: "rohim bôlol je se kāl āsobe nā.", ipa: "roɦim bɔlol dʒe se kal asobe na" }
+      - { text: "আমি ভাবলাম যে সে অসুস্থ।", reading: "āmi bhābolām je se ôsusth.", ipa: "ami bʱabolam dʒe se ɔsust̪ʰ" }
+      - { text: "কিন্তু মা বললেন যেন আমরা ঠিক সময়ে যাই।", reading: "kintu mā bôlolen jen āmorā ṭhik sômoye jāi.", ipa: "kint̪u ma bɔlolen dʒen amora ʈʰik sɔmoje dʒai" }
+      - { text: "সুমন জিজ্ঞেস করল আমরা কখন যাব।", reading: "sumon jigges kôrol āmorā kôkhon jāb.", ipa: "sumon dʒiɡɡes kɔrol amora kɔkʰon dʒab" }
+      - { text: "আমি বললাম যে সন্ধ্যায় যাব।", reading: "āmi bôlolām je sônddhāy jāb.", ipa: "ami bɔlolam dʒe sɔnd̪d̪ʱaj dʒab" }
+    questions:
+      - id: "bn-4390"
+        prompt: { "en": "The friends talk about what Rahim said." }
+        answer: true
+      - id: "bn-4391"
+        prompt: { "en": "Why did the speaker think Rahim would not come?" }
+        options: [{ "en": "Because he might be ill" }, { "en": "Because it is raining" }]
+        answer: 1
+      - id: "bn-4392"
+        prompt: { "en": "What did Sumon ask?" }
+        options: [{ "en": "When they would go" }, { "en": "Where the shop is" }]
+        answer: 1
+  - id: "bn-message-thread"
+    title: "A message that passes on what someone said"
+    theme: "news"
+    sentences:
+      - { text: "বাবা জানাল যে সে দুপুরে ফিরবে।", reading: "bābā jānāl je se dupure phirobe.", ipa: "baba dʒanal dʒe se d̪upure pʰirobe" }
+      - { text: "মা লিখল যে রাতের খাবার তৈরি আছে।", reading: "mā likhol je rāter khābār toiri āche.", ipa: "ma likʰol dʒe rat̪er kʰabar t̪oiri atʃʰe" }
+      - { text: "বোন বলল যে সে বাজার থেকে জিনিস আনবে।", reading: "bon bôlol je se bājār theke jinis ānobe.", ipa: "bon bɔlol dʒe se badʒar t̪ʰeke dʒinis anobe" }
+      - { text: "আমি ভাবলাম যে আমাকে কিছু কিনতে হবে না।", reading: "āmi bhābolām je āmāke kichu kinote hôbe nā.", ipa: "ami bʱabolam dʒe amake kitʃʰu kinot̪e ɦɔbe na" }
+      - { text: "কিন্তু বাবা বললেন যেন আমি তৈরি থাকি।", reading: "kintu bābā bôlolen jen āmi toiri thāki.", ipa: "kint̪u baba bɔlolen dʒen ami t̪oiri t̪ʰaki" }
+    questions:
+      - id: "bn-4393"
+        prompt: { "en": "The father will be back at noon." }
+        answer: true
+      - id: "bn-4394"
+        prompt: { "en": "What has the mother written about?" }
+        options: [{ "en": "Dinner is ready" }, { "en": "A holiday" }]
+        answer: 1
+      - id: "bn-4395"
+        prompt: { "en": "What will the sister bring?" }
+        options: [{ "en": "Things from the market" }, { "en": "A new phone" }]
+        answer: 1

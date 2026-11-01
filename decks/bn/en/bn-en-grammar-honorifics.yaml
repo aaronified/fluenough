@@ -1,0 +1,25 @@
+schema: 1
+id: "bn-en-grammar-honorifics"
+kind: "layer"
+core: "bn-grammar-honorifics"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How you address people"
+license: "CC-BY-SA-4.0"
+description: "Honorifics: the same command has a close, a familiar and a respectful form, and the pronoun changes with it. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Honorifics"
+  slot_name: "form"
+  slots: { "intimate": "to a close friend or a child (তুই (tui), you)", "familiar": "to a friend, a peer, or a stranger you know a little (তুমি (tumi), you)", "respectful": "to an elder, a stranger, or in formal speech (আপনি (āpni), you)" }
+  entries:
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "bola": "to say"
+    "dekha": "to see"
+    "bosa": "to sit"
+    "asa": "to come"
+    "kora": "to do"
+    "shona": "to listen"
+    "lekha": "to write"
+    "pora": "to read"
+  notes: "Bengali has three ways of saying 'you'. তুই (tui) is for close friends and children; তুমি (tumi) is for friends, peers and people you know a little; আপনি (āpni) is for elders, strangers and formal speech. The command form changes with it: যা (jā), go (to a close friend); যাও (jāo), go (familiar); যান (jān), go (respectful). Use আপনি (āpni) with the -ন (-n) form of the verb: আপনি বসুন (āpni bośun), please sit. Never mix the pronoun and the verb form in one sentence."

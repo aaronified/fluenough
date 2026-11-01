@@ -1,0 +1,49 @@
+schema: 1
+id: "bn-en-grammar-causative-sentences"
+kind: "layer"
+core: "bn-grammar-causative-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Causative: sentences"
+description: "Short sentences with the causative: someone makes or gets another person to do something. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3671":
+    native: "The mother feeds the child."
+    bases: { "শিশুকে": "the child" }
+    confusables: { "c1": { why: "eats: the plain verb, the child eats himself" }, "c2": { why: "teaches: a causative of a different verb" } }
+  "bn-3672":
+    native: "I had the tailor sew the shirt."
+    bases: { "দর্জিকে": "the tailor", "করালাম": "had done" }
+    confusables: { "c1": { why: "I sew: I do it myself, no causative" }, "c2": { why: "I wash: a different task" } }
+  "bn-3673":
+    native: "The doctor had the patient take the medicine."
+    bases: { "খাওয়ালেন": "had (him) take" }
+    confusables: { "c1": { why: "ate: the doctor ate, not the patient" }, "c2": { why: "gave: a different verb" } }
+  "bn-3674":
+    native: "The boy told his father a story."
+    bases: { "শোনাল": "told" }
+    confusables: { "c1": { why: "heard: the father hears, not the boy telling" }, "c2": { why: "said: says, without making someone hear" } }
+  "bn-3675":
+    native: "The teacher teaches the students poems."
+    confusables: { "c1": { why: "reads: the teacher reads, not teaching" }, "c2": { why: "writes: a different act" } }
+  "bn-3676":
+    native: "The mother had the girl buy a new shirt."
+    bases: { "কেনালেন": "had (her) buy" }
+    confusables: { "c1": { why: "bought: the mother bought it herself" }, "c2": { why: "sold: the opposite of buying" } }
+  "bn-3677":
+    native: "I had my son clean the room."
+    bases: { "করালাম": "had (him) do" }
+    confusables: { "c1": { why: "a broom: a tool, not an action" }, "c2": { why: "washed: a different task" } }
+  "bn-3678":
+    native: "The tailor showed me a shirt."
+    bases: { "দর্জি": "tailor" }
+    confusables: { "c1": { why: "saw: the tailor sees, not shows" }, "c2": { why: "bought: a different act" } }
+  "bn-3679":
+    native: "The mother seats the child on the bed."
+    bases: { "বাচ্চাকে": "the child", "বসায়": "seats" }
+    confusables: { "c1": { why: "raises: the opposite direction, lifting" }, "c2": { why: "lays down: a different position" } }
+  "bn-3680":
+    native: "He makes everyone sing."
+    bases: { "গাওয়ান": "makes (them) sing" }
+    confusables: { "c1": { why: "sings: he sings himself, not making others sing" }, "c2": { why: "tells or makes hear: a different verb" } }

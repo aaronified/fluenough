@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-agriculture-sentences"
+kind: "layer"
+core: "bn-agriculture-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Farming: sentences"
+description: "Short sentences about fields, crops and selling at the market. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3508":
+    native: "We farm rice."
+    confusables: { "c1": { why: "wheat: a different grain, not rice" }, "c2": { why: "jute: a different crop" } }
+  "bn-3509":
+    native: "The field needs watering."
+    confusables: { "c1": { why: "fertiliser: food for the soil, not water" }, "c2": { why: "rain: nature's water, not the irrigation" } }
+  "bn-3510":
+    native: "The time for sowing the seed has come."
+    confusables: { "c1": { why: "crop: what grows after sowing" }, "c2": { why: "of cutting: the harvest comes later" } }
+  "bn-3511":
+    native: "The yield of the land has gone up."
+    bases: { "বেড়েছে": "gone up" }
+    confusables: { "c1": { why: "less: the opposite of a rise" }, "c2": { why: "drought: a cause, not the yield" } }
+  "bn-3512":
+    native: "Sell the rice at the market. (familiar)"
+    confusables: { "c1": { why: "to buy: the opposite of selling" }, "c2": { why: "a trader: a person, not the act" } }
+  "bn-3513":
+    native: "The tractor is going to the field."
+    confusables: { "c1": { why: "a plough: a tool, not a tractor" }, "c2": { why: "a cow: an animal, not a machine" } }
+  "bn-3514":
+    native: "The crop is slowly ripening."
+    bases: { "ধীরে": "slowly", "পাকছে": "ripening" }
+    confusables: { "c1": { why: "fast: the opposite speed" }, "c2": { why: "unripe: the state before ripening" } }
+  "bn-3515":
+    native: "This year the yield has been good."
+    bases: { "এই": "this", "বছর": "year" }
+    confusables: { "c1": { why: "bad: the opposite" }, "c2": { why: "seasonal: a kind of weather, not a yield" } }
+  "bn-3516":
+    native: "All the crop was cut at once."
+    confusables: { "c1": { why: "slowly: the opposite of at once" }, "c2": { why: "gradually: a different speed" } }
+  "bn-3517":
+    native: "Put compost on the field. (familiar)"
+    confusables: { "c1": { why: "fertiliser: a related material" }, "c2": { why: "water: a different material" } }
+  "bn-3518":
+    native: "Sell after the harvest. (familiar)"
+    bases: { "পর": "after" }
+    confusables: { "c1": { why: "to buy: not to sell" }, "c2": { why: "sowing: the step before harvest" } }

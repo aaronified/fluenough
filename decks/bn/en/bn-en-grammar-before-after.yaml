@@ -1,0 +1,23 @@
+schema: 1
+id: "bn-en-grammar-before-after"
+kind: "layer"
+core: "bn-grammar-before-after"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after: আগে (āge), পরে (pôre)"
+license: "CC-BY-SA-4.0"
+description: "Saying when: a verb's noun form with আগে (āge) says 'before', and with পরে (pôre) it says 'after'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Before and after"
+  slot_name: "form"
+  slots: { "before": "before doing (the noun with আগে (āge))", "after": "after doing (the noun with পরে (pôre))" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "thaka": "to stay"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+  notes: "A verb's noun form with আগে (āge), before, or পরে (pôre), after, says when: খাওয়ার (khāoār) আগে (āge), before eating; খাওয়ার (khāoār) পরে (pôre), after eating. The noun form takes the -র (-r) ending. Put the clause first: খাওয়ার (khāoār) আগে (āge) হাত (hāt) ধোও (dhō), wash your hands before eating."

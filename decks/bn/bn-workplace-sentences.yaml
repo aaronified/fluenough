@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-workplace-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2665"
+    target: "আমার বসের ঘরটা বড়।"
+    reading: "āmār bôser ghôroṭā bôṛ."
+    ipa: "amar bɔser ɡʱɔroʈa bɔɽ"
+    phonetic: "[amar bɔser ɡʱɔroʈa bɔɽ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "বসের", ref: "bn-2620" }, { word: "ঘরটা", ref: "bn-0051" }, { word: "বড়", ref: "bn-0062" }]
+    confusables: [{ id: "c1", word: "ছেলেটা", reading: "chheletā", kind: "word" }, { id: "c2", word: "গাড়িটা", reading: "gāṛiṭā", kind: "word" }]
+  - id: "bn-2666"
+    target: "সভাটা দুপুরে শুরু হবে।"
+    reading: "sôbhāṭā dupure śuru hôbe."
+    ipa: "sɔbʱaʈa d̪upure ʃuru ɦɔbe"
+    phonetic: "[sɔbʱaʈa d̪upure ʃuru ɦɔbe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সভাটা", ref: "bn-2622" }, { word: "দুপুরে", ref: "bn-0645" }, { word: "শুরু", base: "শুরু", reading: "śuru" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "অনুষ্ঠান", reading: "anuṣṭhān", kind: "word" }, { id: "c2", word: "পার্টি", reading: "pārṭi", kind: "word" }]
+  - id: "bn-2667"
+    target: "রিপোর্টটা আজই পাঠাও।"
+    reading: "riporṭoṭā ājoi pāṭhāo."
+    ipa: "riporʈoʈa adʒoi paʈʰao"
+    phonetic: "[riporʈoʈa adʒoi paʈʰao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "রিপোর্টটা", ref: "bn-2623" }, { word: "আজই", base: "আজই", reading: "ājoi" }, { word: "পাঠাও", ref: "bn-1108" }]
+    confusables: [{ id: "c1", word: "পোস্টার", reading: "poṣṭār", kind: "word" }, { id: "c2", word: "পত্রিকা", reading: "patrikā", kind: "word" }]
+  - id: "bn-2668"
+    target: "নিরাপত্তারক্ষী গেটে আছেন।"
+    reading: "nirāpottārokkhi geṭe āchen."
+    ipa: "nirapot̪t̪arokkʰi ɡeʈe atʃʰen"
+    phonetic: "[nirapot̪t̪arokkʰi ɡeʈe atʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "গেটে", base: "গেট", reading: "geṭe" }, { word: "আছেন", base: "আছে", reading: "āchen" }]
+    confusables: [{ id: "c1", word: "দারোয়ান", reading: "dārowān", kind: "word" }, { id: "c2", word: "পুলিশ", reading: "puliś", kind: "word" }]
+  - id: "bn-2669"
+    target: "ম্যানেজার নথিতে সই হয়ে গেছে।"
+    reading: "mênejār nothite soi hôye geche."
+    ipa: "mænedʒar not̪ʰit̪e soi ɦɔje ɡetʃʰe"
+    phonetic: "[mænedʒar not̪ʰit̪e soi ɦɔje ɡetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নথিতে", ref: "bn-2630" }, { word: "সই", ref: "bn-2633" }, { word: "হয়ে", ref: "bn-0874" }, { word: "গেছে", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "লেখা", reading: "lekhā", kind: "word" }, { id: "c2", word: "পড়া", reading: "poṛā", kind: "word" }]
+  - id: "bn-2670"
+    target: "ম্যানেজার আজ ছুটিতে।"
+    reading: "mênejār āj chuṭite."
+    ipa: "mænedʒar adʒ tʃʰuʈit̪e"
+    phonetic: "[mænedʒar adʒ tʃʰuʈit̪e]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছুটিতে", ref: "bn-0463" }, { word: "আজ", base: "আজ", reading: "āj" }]
+    confusables: [{ id: "c1", word: "কাজ", reading: "kāj", kind: "word" }, { id: "c2", word: "অসুস্থ", reading: "asustha", kind: "word" }]
+  - id: "bn-2671"
+    target: "প্রিন্টারটা খারাপ আছে।"
+    reading: "prinṭāroṭā khārāp āche."
+    ipa: "prinʈaroʈa kʰarap atʃʰe"
+    phonetic: "[prinʈaroʈa kʰarap atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "প্রিন্টারটা", ref: "bn-2628" }, { word: "খারাপ", base: "খারাপ", reading: "khārāp" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "স্ক্যানার", reading: "skyānār", kind: "word" }, { id: "c2", word: "ফ্যান", reading: "pyān", kind: "word" }]
+  - id: "bn-2672"
+    target: "এই প্রকল্পের সময়সীমা কাল।"
+    reading: "ei prôkolper sômoyosimā kāl."
+    ipa: "ei prɔkolper sɔmojosima kal"
+    phonetic: "[ei prɔkolper sɔmojosima kal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "প্রকল্পের", ref: "bn-2629" }, { word: "সময়সীমা", ref: "bn-2641" }, { word: "কাল", base: "কাল", reading: "kāl" }]
+    confusables: [{ id: "c1", word: "গতকাল", reading: "gotokāl", kind: "word" }, { id: "c2", word: "পরশু", reading: "poraś", kind: "word" }]
+  - id: "bn-2673"
+    target: "নতুন কর্মীরা কাল যোগ দেবে।"
+    reading: "notun kormirā kāl jog debe."
+    ipa: "not̪un kormira kal dʒoɡ d̪ebe"
+    phonetic: "[not̪un kormira kal dʒoɡ d̪ebe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "কর্মীরা", ref: "bn-2626" }, { word: "কাল", base: "কাল", reading: "kāl" }, { word: "যোগ", base: "যোগ", reading: "jog" }, { word: "দেবে", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "যোগ্য", reading: "jogyo", kind: "word" }, { id: "c2", word: "ভোগ", reading: "bhog", kind: "word" }]
+  - id: "bn-2674"
+    target: "আমি দেরিতে আসব না।"
+    reading: "āmi derite āsob nā."
+    ipa: "ami d̪erit̪e asob na"
+    phonetic: "[ami d̪erit̪e asob na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "আসব", ref: "bn-0872" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "ঘুম", reading: "ghum", kind: "word" }, { id: "c2", word: "খেলা", reading: "khelā", kind: "word" }]

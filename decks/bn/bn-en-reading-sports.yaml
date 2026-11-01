@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-sports"
+name: "Reading: sports"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Friends talk about a cricket match, and a short match report, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-cricket-talk"
+    title: "Friends talk about a cricket match"
+    theme: "sports"
+    sentences:
+      - { text: "কাল ক্রিকেট ম্যাচটা দেখলে?", reading: "kāl krikeṭ mêcoṭā dekhole?", ipa: "kal krikeʈ mætʃoʈa d̪ekʰole" }
+      - { text: "হ্যাঁ, আমাদের দল শেষ ওভারে জিতে গেল।", reading: "hêm̐, āmāder dôl śeś obhāre jite gel.", ipa: "ɦæ̃ amad̪er d̪ɔl ʃeʃ obʱare dʒit̪e ɡel" }
+      - { text: "অধিনায়ক ভালো ব্যাট করলেন আর রানও বেশি হলো।", reading: "ôdhināyok bhālo bêṭ kôrolen ār rānoo beśi hôlo.", ipa: "ɔd̪ʱinajok bʱalo bæʈ kɔrolen ar ranoo beʃi ɦɔlo" }
+      - { text: "একটা উইকেট পড়লেও দল ভেঙে পড়েনি।", reading: "ekoṭā uikeṭ pôṛoleo dôl bheṅe pôṛeni.", ipa: "ekoʈa uikeʈ pɔɽoleo d̪ɔl bʱeŋe pɔɽeni" }
+      - { text: "কী উত্তেজনা ছিল!", reading: "ki uttejonā chil!", ipa: "ki ut̪t̪edʒona tʃʰil" }
+    questions:
+      - id: "bn-3881"
+        prompt: { "en": "The friends talk about a cricket match they saw." }
+        answer: true
+      - id: "bn-3882"
+        prompt: { "en": "How did the team win?" }
+        options: [{ "en": "In the last over" }, { "en": "By a draw" }]
+        answer: 1
+      - id: "bn-3883"
+        prompt: { "en": "What did the captain do?" }
+        options: [{ "en": "Batted well" }, { "en": "Refereed the match" }]
+        answer: 1
+  - id: "bn-match-report"
+    title: "A short match report"
+    theme: "sports"
+    sentences:
+      - { text: "কাল রাতে ফাইনালে দুই দল মুখোমুখি হলো।", reading: "kāl rāte phāināle dui dôl mukhomukhi hôlo.", ipa: "kal rat̪e pʰainale d̪ui d̪ɔl mukʰomukʰi ɦɔlo" }
+      - { text: "প্রথম অর্ধে কেউ গোল করতে পারেনি।", reading: "prôthom ôrdhe keu gol kôrote pāreni.", ipa: "prɔt̪ʰom ɔrd̪ʱe keu ɡol kɔrot̪e pareni" }
+      - { text: "দ্বিতীয় অর্ধে একটি পেনাল্টিতে গোল হলো।", reading: "ditiy ôrdhe ekoṭi penālṭite gol hôlo.", ipa: "d̪it̪ij ɔrd̪ʱe ekoʈi penalʈit̪e ɡol ɦɔlo" }
+      - { text: "রেফারি খেলা শেষ করলেন।", reading: "rephāri khelā śeś kôrolen.", ipa: "repʰari kʰela ʃeʃ kɔrolen" }
+      - { text: "জয়ী দল ট্রফি পেল, আর সমর্থকরা আনন্দ করল।", reading: "joyi dôl ṭrophi pel, ār sômorthokorā ānond kôrol.", ipa: "dʒoji d̪ɔl ʈropʰi pel ar sɔmort̪ʰokora anond̪ kɔrol" }
+    questions:
+      - id: "bn-3884"
+        prompt: { "en": "The match was the final of a contest." }
+        answer: true
+      - id: "bn-3885"
+        prompt: { "en": "How was the winning goal scored?" }
+        options: [{ "en": "From a penalty" }, { "en": "From a corner" }]
+        answer: 1
+      - id: "bn-3886"
+        prompt: { "en": "Who ended the match?" }
+        options: [{ "en": "The referee" }, { "en": "The coach" }]
+        answer: 1

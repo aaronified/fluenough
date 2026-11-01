@@ -1,0 +1,102 @@
+schema: 1
+id: "bn-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2797"
+    target: "আমি রোজ সকালে হাঁটি।"
+    reading: "āmi roj sôkāle hām̐ṭi."
+    ipa: "ami rodʒ sɔkale ɦãʈi"
+    phonetic: "[ami rodʒ sɔkale ɦãʈi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "রোজ", ref: "bn-1528" }, { word: "সকালে", ref: "bn-0318" }, { word: "হাঁটি", ref: "bn-0896" }]
+    confusables: [{ id: "c1", word: "দৌড়াই", reading: "dôṛāi", kind: "word" }, { id: "c2", word: "বসি", reading: "bôsi", kind: "word" }]
+  - id: "bn-2798"
+    target: "সে নিয়মিত ব্যায়াম করে।"
+    reading: "se niyomit bêyām kôre."
+    ipa: "se nijomit̪ bæjam kɔre"
+    phonetic: "[se nijomit̪ bæjam kɔre]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "নিয়মিত", ref: "bn-2795" }, { word: "ব্যায়াম", ref: "bn-2182" }, { word: "করে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ঘুমায়", reading: "ghumāy", kind: "word" }, { id: "c2", word: "খায়", reading: "khāy", kind: "word" }]
+  - id: "bn-2799"
+    target: "ডাক্তার জ্বরের ওষুধ দিয়েছেন।"
+    reading: "ḍāktār jôrer ośudh diyechen."
+    ipa: "ɖakt̪ar dʒɔrer oʃud̪ʱ d̪ijetʃʰen"
+    phonetic: "[ɖakt̪ar dʒɔrer oʃud̪ʱ d̪ijetʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ডাক্তার", ref: "bn-0376" }, { word: "জ্বরের", ref: "bn-0727" }, { word: "ওষুধ", ref: "bn-0378" }, { word: "দিয়েছেন", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "টিকা", reading: "ṭikā", kind: "word" }, { id: "c2", word: "পরীক্ষা", reading: "parīkṣā", kind: "word" }]
+  - id: "bn-2800"
+    target: "ডায়েটে কম চিনি খাও।"
+    reading: "ḍāyeṭe kôm cini khāo."
+    ipa: "ɖajeʈe kɔm tʃini kʰao"
+    phonetic: "[ɖajeʈe kɔm tʃini kʰao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ডায়েটে", ref: "bn-2749" }, { word: "কম", base: "কম", reading: "kôm" }, { word: "চিনি", ref: "bn-0570" }, { word: "খাও", ref: "bn-0876" }]
+    confusables: [{ id: "c1", word: "লবণ", reading: "lôbôṇ", kind: "word" }, { id: "c2", word: "তেল", reading: "tel", kind: "word" }]
+  - id: "bn-2801"
+    target: "হার্ট ভালো রাখতে হাঁটো।"
+    reading: "hārṭ bhālo rākhote hām̐ṭo."
+    ipa: "ɦarʈ bʱalo rakʰot̪e ɦãʈo"
+    phonetic: "[ɦarʈ bʱalo rakʰot̪e ɦãʈo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "হার্ট", ref: "bn-2754" }, { word: "ভালো", ref: "bn-0617" }, { word: "রাখতে", base: "রাখতে", reading: "rākhote" }, { word: "হাঁটো", ref: "bn-0896" }]
+    confusables: [{ id: "c1", word: "ফুসফুস", reading: "phusphus", kind: "word" }, { id: "c2", word: "পেশি", reading: "pēśi", kind: "word" }]
+  - id: "bn-2802"
+    target: "আমার অ্যাপয়েন্টমেন্ট কাল সকালে।"
+    reading: "āmār êāpoyenṭomenṭ kāl sôkāle."
+    ipa: "amar ɔdʒapojenʈomenʈ kal sɔkale"
+    phonetic: "[amar ɔdʒapojenʈomenʈ kal sɔkale]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "অ্যাপয়েন্টমেন্ট", ref: "bn-2751" }, { word: "কাল", base: "কাল", reading: "kāl" }, { word: "সকালে", ref: "bn-0318" }]
+    confusables: [{ id: "c1", word: "ক্লিনিক", reading: "klinik", kind: "word" }, { id: "c2", word: "হাসপাতাল", reading: "hāspātāl", kind: "word" }]
+  - id: "bn-2803"
+    target: "প্রোটিন আর পুষ্টি ডিমে আছে।"
+    reading: "proṭin ār puśṭi ḍime āche."
+    ipa: "proʈin ar puʃʈi ɖime atʃʰe"
+    phonetic: "[proʈin ar puʃʈi ɖime atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "প্রোটিন", ref: "bn-2748" }, { word: "আর", ref: "bn-0361" }, { word: "পুষ্টি", ref: "bn-2747" }, { word: "ডিমে", ref: "bn-0270" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "দুধ", reading: "dudh", kind: "word" }, { id: "c2", word: "মাছ", reading: "māch", kind: "word" }]
+  - id: "bn-2804"
+    target: "সুস্থতার জন্য ঘুম দরকার।"
+    reading: "susthotār jonn ghum dôrokār."
+    ipa: "sust̪ʰot̪ar dʒonn ɡʱum d̪ɔrokar"
+    phonetic: "[sust̪ʰot̪ar dʒonn ɡʱum d̪ɔrokar]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সুস্থতার", ref: "bn-2765" }, { word: "জন্য", base: "জন্য", reading: "jonn" }, { word: "ঘুম", ref: "bn-1247" }, { word: "দরকার", base: "দরকার", reading: "dôrokār" }]
+    confusables: [{ id: "c1", word: "সুখ", reading: "sukh", kind: "word" }, { id: "c2", word: "কষ্ট", reading: "kôṣṭa", kind: "word" }]
+  - id: "bn-2805"
+    target: "জিমটা খুব ভিড় থাকে।"
+    reading: "jimoṭā khub bhiṛ thāke."
+    ipa: "dʒimoʈa kʰub bʱiɽ t̪ʰake"
+    phonetic: "[dʒimoʈa kʰub bʱiɽ t̪ʰake]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "জিমটা", ref: "bn-2744" }, { word: "খুব", ref: "bn-0641" }, { word: "ভিড়", base: "ভিড়", reading: "bhiṛ" }, { word: "থাকে", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "পার্ক", reading: "pārk", kind: "word" }, { id: "c2", word: "মাঠ", reading: "māṭh", kind: "word" }]
+  - id: "bn-2806"
+    target: "পা আর হাত শক্তিশালী।"
+    reading: "pā ār hāt śoktiśāli."
+    ipa: "pa ar ɦat̪ ʃokt̪iʃali"
+    phonetic: "[pa ar ɦat̪ ʃokt̪iʃali]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পা", ref: "bn-0731" }, { word: "আর", ref: "bn-0361" }, { word: "হাত", ref: "bn-0730" }, { word: "শক্তিশালী", ref: "bn-2784" }]
+    confusables: [{ id: "c1", word: "মাথা", reading: "māthā", kind: "word" }, { id: "c2", word: "চোখ", reading: "cokh", kind: "word" }]

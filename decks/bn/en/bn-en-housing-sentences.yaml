@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-housing-sentences"
+kind: "layer"
+core: "bn-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing: sentences"
+description: "Short sentences about renting a flat, the rooms, the furniture and the building. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4005":
+    native: "I want to rent a new flat."
+    bases: { "একটা": "a" }
+    confusables: { "c1": { why: "to buy: a different way to get a home" }, "c2": { why: "to sell: the opposite of buying" } }
+  "bn-4006":
+    native: "The landlady asked for the rent money."
+    confusables: { "c1": { why: "tenant: the person who pays, not the owner" }, "c2": { why: "owner: the owner is the landlady, a different word" } }
+  "bn-4007":
+    native: "Keep the milk and fruit in the fridge."
+    confusables: { "c1": { why: "oven: heats food, does not keep it cold" }, "c2": { why: "cooker: for cooking, not for cold storage" } }
+  "bn-4008":
+    native: "The oven in the kitchen is new."
+    confusables: { "c1": { why: "bedroom: a room for sleeping, not cooking" }, "c2": { why: "balcony: an outside space" } }
+  "bn-4009":
+    native: "The lift was closed, so I climbed the stairs."
+    confusables: { "c1": { why: "gate: a different entrance" }, "c2": { why: "door: a door, not a lift" } }
+  "bn-4010":
+    native: "The watchman is standing at the gate."
+    bases: { "আছেন": "is" }
+    confusables: { "c1": { why: "garden: a place, not a guard" }, "c2": { why: "car: a vehicle, not a guard" } }
+  "bn-4011":
+    native: "The security in this house is very good."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "risk: the opposite of safety" }, "c2": { why: "fear: a feeling, not security" } }
+  "bn-4012":
+    native: "The deposit money was returned."
+    confusables: { "c1": { why: "advance: paid before, a different payment" }, "c2": { why: "a bill: a demand for payment" } }
+  "bn-4013":
+    native: "The room is very neat and airy."
+    confusables: { "c1": { why: "uncomfortable: the opposite of comfortable" }, "c2": { why: "dark: a different quality" } }
+  "bn-4014":
+    native: "There is little furniture in the bedroom."
+    confusables: { "c1": { why: "a lot: the opposite of little" }, "c2": { why: "everything: a different idea" } }
+  "bn-4015":
+    native: "When will the house's renovation finish?"
+    bases: { "শেষ": "finish" }
+    confusables: { "c1": { why: "repair: a smaller fix, a different word" }, "c2": { why: "construction: building new, a different thing" } }
+  "bn-4016":
+    native: "Everyone came on the housewarming day."
+    confusables: { "c1": { why: "a wedding: a different event" }, "c2": { why: "festival: a different occasion" } }

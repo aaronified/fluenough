@@ -1,0 +1,23 @@
+schema: 1
+id: "bn-en-grammar-while"
+kind: "layer"
+core: "bn-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While and during: তে (te) তে (te), সময় (somoy)"
+license: "CC-BY-SA-4.0"
+description: "Saying what happens at the same time: the তে (te) form said twice means 'while doing', and the noun form with সময় (somoy) means 'during'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "While"
+  slot_name: "form"
+  slots: { "while": "while doing (the তে (te) form said twice)", "during": "during (the noun form with সময় (somoy))" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "thaka": "to stay"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+  notes: "A verb's তে (te) form said twice means 'while doing': খেতে (khete) খেতে (khete), while eating. The noun form with সময় (somoy) means 'during': খাওয়ার (khāoār) সময় (somoy), during the meal. Both come before the main clause: খেতে (khete) খেতে (khete) গল্প (galpa) করো (koro), talk while you eat."

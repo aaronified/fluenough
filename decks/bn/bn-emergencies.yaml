@@ -1,0 +1,434 @@
+schema: 1
+id: "bn-emergencies"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "emergencies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4023"
+    target: "দমকল"
+    reading: "dômokol"
+    ipa: "d̪ɔmokol"
+    phonetic: "[d̪ɔmokol]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দমকল", reading: "dômokol" }] }
+    examples:
+      - { target: "দমকল এসেছে।", reading: "dômokol eseche.", ipa: "d̪ɔmokol esetʃʰe", bases: [{ word: "এসেছে", ref: "bn-0872" }] }
+      - { target: "দমকলের গাড়ি খুব জোরে যাচ্ছে।", reading: "dômokoler gāṛi khub jore jācche.", ipa: "d̪ɔmokoler ɡaɽi kʰub dʒore dʒatʃtʃʰe", bases: [{ word: "দমকলের", base: "দমকল", reading: "dômokoler" }, { word: "গাড়ি", ref: "bn-1163" }, { word: "খুব", ref: "bn-0641" }, { word: "জোরে", ref: "bn-1555" }, { word: "যাচ্ছে", ref: "bn-0873" }] }
+  - id: "bn-4024"
+    target: "উদ্ধার"
+    reading: "uddhār"
+    ipa: "ud̪d̪ʱar"
+    phonetic: "[ud̪d̪ʱar]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদ্ধার", reading: "uddhār" }] }
+    examples:
+      - { target: "উদ্ধার কাজ শুরু হলো।", reading: "uddhār kāj śuru hôlo.", ipa: "ud̪d̪ʱar kadʒ ʃuru ɦɔlo", bases: [{ word: "কাজ", ref: "bn-0198" }, { word: "শুরু", ref: "bn-2480" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "উদ্ধারের জন্য লোক এল।", reading: "uddhārer jonn lok el.", ipa: "ud̪d̪ʱarer dʒonn lok el", bases: [{ word: "উদ্ধারের", base: "উদ্ধার", reading: "uddhārer" }, { word: "জন্য", ref: "bn-0297" }, { word: "লোক", base: "লোক", reading: "lok" }, { word: "এল", ref: "bn-0872" }] }
+  - id: "bn-4025"
+    target: "বিস্ফোরণ"
+    reading: "bisphoron"
+    ipa: "bispʰoron"
+    phonetic: "[bispʰoron]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিস্ফোরণ", reading: "bisphoron" }] }
+    examples:
+      - { target: "বিস্ফোরণের শব্দ শোনা গেল।", reading: "bisphoroner śôbdo śonā gel.", ipa: "bispʰoroner ʃɔbd̪ ʃona ɡel", bases: [{ word: "শব্দ", ref: "bn-3413" }, { word: "শোনা", ref: "bn-0878" }, { word: "গেল", ref: "bn-0873" }, { word: "বিস্ফোরণের", base: "বিস্ফোরণ", reading: "bisphoroner" }] }
+      - { target: "বিস্ফোরণে কেউ আহত হয়নি।", reading: "bisphorone keu āhot hôyoni.", ipa: "bispʰorone keu aɦot̪ ɦɔjoni", bases: [{ word: "বিস্ফোরণে", base: "বিস্ফোরণ", reading: "bisphorone" }, { word: "কেউ", base: "কেউ", reading: "keu" }, { word: "আহত", ref: "bn-4048" }, { word: "হয়নি", ref: "bn-0874" }] }
+  - id: "bn-4026"
+    target: "সতর্কতা"
+    reading: "sôtorkotā"
+    ipa: "sɔt̪orkot̪a"
+    phonetic: "[sɔt̪orkot̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সতর্কতা", reading: "sôtorkotā" }] }
+    examples:
+      - { target: "সতর্কতা নাও।", reading: "sôtorkotā nāo.", ipa: "sɔt̪orkot̪a nao", bases: [{ word: "নাও", ref: "bn-0889" }] }
+      - { target: "সতর্কতার জন্য দরজা বন্ধ করো।", reading: "sôtorkotār jonn dôrojā bôndh kôro.", ipa: "sɔt̪orkot̪ar dʒonn d̪ɔrodʒa bɔnd̪ʱ kɔro", bases: [{ word: "সতর্কতার", base: "সতর্কতা", reading: "sôtorkotār" }, { word: "জন্য", ref: "bn-0297" }, { word: "দরজা", ref: "bn-0599" }, { word: "বন্ধ", ref: "bn-1230" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4027"
+    target: "আশ্রয়"
+    reading: "āśroy"
+    ipa: "aʃroj"
+    phonetic: "[aʃroj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আশ্রয়", reading: "āśroy" }] }
+    examples:
+      - { target: "আশ্রয় নিতে হবে।", reading: "āśroy nite hôbe.", ipa: "aʃroj nit̪e ɦɔbe", bases: [{ word: "নিতে", ref: "bn-0889" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "আশ্রয়ের জায়গা কোথায়?", reading: "āśroyer jāyogā kothāy?", ipa: "aʃrojer dʒajoɡa kot̪ʰaj", bases: [{ word: "আশ্রয়ের", base: "আশ্রয়", reading: "āśroyer" }, { word: "জায়গা", base: "জায়গা", reading: "jāyogā" }, { word: "কোথায়", ref: "bn-0163" }] }
+  - id: "bn-4028"
+    target: "ত্রাণ"
+    reading: "trān"
+    ipa: "t̪ran"
+    phonetic: "[t̪ran]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ত্রাণ", reading: "trān" }] }
+    examples:
+      - { target: "ত্রাণ এসেছে।", reading: "trān eseche.", ipa: "t̪ran esetʃʰe", bases: [{ word: "এসেছে", ref: "bn-0872" }] }
+      - { target: "ত্রাণের খাবার সবাই পেল।", reading: "trāner khābār sôbāi pel.", ipa: "t̪raner kʰabar sɔbai pel", bases: [{ word: "ত্রাণের", base: "ত্রাণ", reading: "trāner" }, { word: "খাবার", ref: "bn-0349" }, { word: "সবাই", ref: "bn-0854" }, { word: "পেল", ref: "bn-0891" }] }
+  - id: "bn-4029"
+    target: "বাঁধ"
+    reading: "bām̐dh"
+    ipa: "bãd̪ʱ"
+    phonetic: "[bãd̪ʱ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাঁধ", reading: "bām̐dh" }] }
+    examples:
+      - { target: "বাঁধটা ভেঙে গেছে।", reading: "bām̐dhoṭā bheṅe geche.", ipa: "bãd̪ʱoʈa bʱeŋe ɡetʃʰe", bases: [{ word: "বাঁধটা", base: "বাঁধ", reading: "bām̐dhoṭā" }, { word: "ভেঙে", ref: "bn-1102" }, { word: "গেছে", ref: "bn-0873" }] }
+      - { target: "নদীর বাঁধ মেরামত হচ্ছে।", reading: "nodir bām̐dh merāmot hôcche.", ipa: "nod̪ir bãd̪ʱ meramot̪ ɦɔtʃtʃʰe", bases: [{ word: "নদীর", ref: "bn-1050" }, { word: "বাঁধ", base: "বাঁধ", reading: "bām̐dh" }, { word: "মেরামত", ref: "bn-2591" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+  - id: "bn-4030"
+    target: "বজ্রপাত"
+    reading: "bôjropāt"
+    ipa: "bɔdʒropat̪"
+    phonetic: "[bɔdʒropat̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বজ্রপাত", reading: "bôjropāt" }] }
+    examples:
+      - { target: "বজ্রপাতে একজন আহত হলো।", reading: "bôjropāte ekojon āhot hôlo.", ipa: "bɔdʒropat̪e ekodʒon aɦot̪ ɦɔlo", bases: [{ word: "বজ্রপাতে", base: "বজ্রপাত", reading: "bôjropāte" }, { word: "একজন", base: "একজন", reading: "ekojon" }, { word: "আহত", ref: "bn-4048" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "বজ্রপাতের সময় ঘরে থাকো।", reading: "bôjropāter sômoy ghôre thāko.", ipa: "bɔdʒropat̪er sɔmoj ɡʱɔre t̪ʰako", bases: [{ word: "বজ্রপাতের", base: "বজ্রপাত", reading: "bôjropāter" }, { word: "সময়", ref: "bn-0061" }, { word: "ঘরে", ref: "bn-0051" }, { word: "থাকো", ref: "bn-0875" }] }
+  - id: "bn-4031"
+    target: "অগ্নিকাণ্ড"
+    reading: "ôgnikānḍo"
+    ipa: "ɔɡnikanɖ"
+    phonetic: "[ɔɡnikanɖ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অগ্নিকাণ্ড", reading: "ôgnikānḍo" }] }
+    examples:
+      - { target: "বাজারে অগ্নিকাণ্ড ঘটেছে।", reading: "bājāre ôgnikānḍo ghôṭeche.", ipa: "badʒare ɔɡnikanɖ ɡʱɔʈetʃʰe", bases: [{ word: "বাজারে", ref: "bn-1040" }, { word: "ঘটেছে", base: "ঘটা", reading: "ghôṭeche" }] }
+      - { target: "অগ্নিকাণ্ডের কারণ কী?", reading: "ôgnikānḍer kāron ki?", ipa: "ɔɡnikanɖer karon ki", bases: [{ word: "অগ্নিকাণ্ডের", base: "অগ্নিকাণ্ড", reading: "ôgnikānḍer" }, { word: "কারণ", ref: "bn-0365" }, { word: "কী", ref: "bn-0161" }] }
+  - id: "bn-4032"
+    target: "সাইরেন"
+    reading: "sāiren"
+    ipa: "sairen"
+    phonetic: "[sairen]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাইরেন", reading: "sāiren" }] }
+    examples:
+      - { target: "সাইরেন বাজছে।", reading: "sāiren bājoche.", ipa: "sairen badʒotʃʰe", bases: [{ word: "বাজছে", ref: "bn-2423" }] }
+      - { target: "সাইরেন শুনে সবাই বাইরে এল।", reading: "sāiren śune sôbāi bāire el.", ipa: "sairen ʃune sɔbai baire el", bases: [{ word: "শুনে", ref: "bn-0878" }, { word: "সবাই", ref: "bn-0854" }, { word: "বাইরে", ref: "bn-0586" }, { word: "এল", ref: "bn-0872" }] }
+  - id: "bn-4033"
+    target: "আতঙ্ক"
+    reading: "ātoṅko"
+    ipa: "at̪oŋk"
+    phonetic: "[at̪oŋk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আতঙ্ক", reading: "ātoṅko" }] }
+    examples:
+      - { target: "চারদিকে আতঙ্ক ছড়িয়ে পড়ল।", reading: "cārodike ātoṅko choṛiye pôṛol.", ipa: "tʃarod̪ike at̪oŋk tʃʰoɽije pɔɽol", bases: [{ word: "চারদিকে", base: "চারদিক", reading: "cārodike" }, { word: "ছড়িয়ে", base: "ছড়ানো", reading: "choṛiye" }, { word: "পড়ল", ref: "bn-0119" }] }
+      - { target: "আতঙ্ক কমাতে হবে।", reading: "ātoṅko kômāte hôbe.", ipa: "at̪oŋk kɔmat̪e ɦɔbe", bases: [{ word: "কমাতে", ref: "bn-1715" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4034"
+    target: "বিপর্যয়"
+    reading: "biporjoy"
+    ipa: "bipordʒoj"
+    phonetic: "[bipordʒoj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিপর্যয়", reading: "biporjoy" }] }
+    examples:
+      - { target: "বন্যা এক বড় বিপর্যয়।", reading: "bonnā ek bôṛ biporjoy.", ipa: "bonna ek bɔɽ bipordʒoj", bases: [{ word: "বন্যা", ref: "bn-1610" }, { word: "এক", ref: "bn-0202" }, { word: "বড়", ref: "bn-0062" }] }
+      - { target: "বিপর্যয়ের পর সাহায্য এল।", reading: "biporjoyer pôr sāhājj el.", ipa: "bipordʒojer pɔr saɦadʒdʒ el", bases: [{ word: "বিপর্যয়ের", base: "বিপর্যয়", reading: "biporjoyer" }, { word: "পর", ref: "bn-0114" }, { word: "সাহায্য", ref: "bn-0371" }, { word: "এল", ref: "bn-0872" }] }
+  - id: "bn-4035"
+    target: "ক্ষতি"
+    reading: "kkhoti"
+    ipa: "kkʰot̪i"
+    phonetic: "[kkʰot̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ক্ষতি", reading: "kkhoti" }] }
+    examples:
+      - { target: "বড় ক্ষতি হয়েছে।", reading: "bôṛ kkhoti hôyeche.", ipa: "bɔɽ kkʰot̪i ɦɔjetʃʰe", bases: [{ word: "বড়", ref: "bn-0062" }, { word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "ক্ষতির হিসাব নেওয়া হচ্ছে।", reading: "kkhotir hisāb neoyā hôcche.", ipa: "kkʰot̪ir ɦisab neoja ɦɔtʃtʃʰe", bases: [{ word: "ক্ষতির", base: "ক্ষতি", reading: "kkhotir" }, { word: "হিসাব", ref: "bn-1720" }, { word: "নেওয়া", ref: "bn-0889" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+  - id: "bn-4036"
+    target: "বিপদসংকেত"
+    reading: "bipodosoṅket"
+    ipa: "bipod̪osoŋket̪"
+    phonetic: "[bipod̪osoŋket̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিপদসংকেত", reading: "bipodosoṅket" }] }
+    examples:
+      - { target: "বিপদসংকেত দেওয়া হলো।", reading: "bipodosoṅket deoyā hôlo.", ipa: "bipod̪osoŋket̪ d̪eoja ɦɔlo", bases: [{ word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "বিপদসংকেতের লাল আলো জ্বলছে।", reading: "bipodosoṅketer lāl ālo jôloche.", ipa: "bipod̪osoŋket̪er lal alo dʒɔlotʃʰe", bases: [{ word: "বিপদসংকেতের", base: "বিপদসংকেত", reading: "bipodosoṅketer" }, { word: "লাল", ref: "bn-1204" }, { word: "আলো", ref: "bn-0615" }, { word: "জ্বলছে", base: "জ্বলা", reading: "jôloche" }] }
+  - id: "bn-4037"
+    target: "জরুরি অবস্থা"
+    reading: "joruri ôbosthā"
+    ipa: "dʒoruri ɔbost̪ʰa"
+    phonetic: "[dʒoruri ɔbost̪ʰa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    bases: [{ word: "অবস্থা", base: "অবস্থা", reading: "ôbosthā" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জরুরি অবস্থা", reading: "joruri ôbosthā" }] }
+    examples:
+      - { target: "জরুরি অবস্থা ঘোষণা হলো।", reading: "joruri ôbosthā ghośonā hôlo.", ipa: "dʒoruri ɔbost̪ʰa ɡʱoʃona ɦɔlo", bases: [{ word: "ঘোষণা", ref: "bn-2893" }, { word: "হলো", ref: "bn-0874" }, { word: "অবস্থা", base: "অবস্থা", reading: "ôbosthā" }] }
+      - { target: "জরুরি অবস্থায় ফোন করো।", reading: "joruri ôbosthāy phon kôro.", ipa: "dʒoruri ɔbost̪ʰaj pʰon kɔro", bases: [{ word: "অবস্থায়", base: "অবস্থা", reading: "ôbosthāy" }, { word: "ফোন", ref: "bn-1152" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4038"
+    target: "উদ্ধারকারী"
+    reading: "uddhārokāri"
+    ipa: "ud̪d̪ʱarokari"
+    phonetic: "[ud̪d̪ʱarokari]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদ্ধারকারী", reading: "uddhārokāri" }] }
+    examples:
+      - { target: "উদ্ধারকারীরা নদীতে নামলেন।", reading: "uddhārokārirā nodite nāmolen.", ipa: "ud̪d̪ʱarokarira nod̪it̪e namolen", bases: [{ word: "নদীতে", ref: "bn-1050" }, { word: "নামলেন", ref: "bn-2365" }, { word: "উদ্ধারকারীরা", base: "উদ্ধারকারী", reading: "uddhārokārirā" }] }
+      - { target: "উদ্ধারকারীদের ধন্যবাদ।", reading: "uddhārokārider dhonnobād.", ipa: "ud̪d̪ʱarokarid̪er d̪ʱonnobad̪", bases: [{ word: "উদ্ধারকারীদের", base: "উদ্ধারকারী", reading: "uddhārokārider" }, { word: "ধন্যবাদ", ref: "bn-0141" }] }
+  - id: "bn-4039"
+    target: "স্বেচ্ছাসেবক"
+    reading: "secchāsebok"
+    ipa: "setʃtʃʰasebok"
+    phonetic: "[setʃtʃʰasebok]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্বেচ্ছাসেবক", reading: "secchāsebok" }] }
+    examples:
+      - { target: "স্বেচ্ছাসেবকরা ত্রাণ বিলোলেন।", reading: "secchāsebokorā trān bilolen.", ipa: "setʃtʃʰasebokora t̪ran bilolen", bases: [{ word: "ত্রাণ", ref: "bn-4028" }, { word: "বিলোলেন", base: "বিলানো", reading: "bilolen" }, { word: "স্বেচ্ছাসেবকরা", base: "স্বেচ্ছাসেবক", reading: "secchāsebokorā" }] }
+      - { target: "স্বেচ্ছাসেবক হিসেবে কাজ করি।", reading: "secchāsebok hisebe kāj kori.", ipa: "setʃtʃʰasebok ɦisebe kadʒ kori", bases: [{ word: "হিসেবে", base: "হিসেব", reading: "hisebe" }, { word: "কাজ", ref: "bn-0198" }, { word: "করি", ref: "bn-0102" }] }
+  - id: "bn-4040"
+    target: "প্রাথমিক চিকিৎসা"
+    reading: "prāthomik cikitsā"
+    ipa: "prat̪ʰomik tʃikit̪sa"
+    phonetic: "[prat̪ʰomik tʃikit̪sa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    bases: [{ word: "প্রাথমিক", base: "প্রাথমিক", reading: "prāthomik" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রাথমিক চিকিৎসা", reading: "prāthomik cikitsā" }] }
+    examples:
+      - { target: "প্রাথমিক চিকিৎসার বাক্স কোথায়?", reading: "prāthomik cikitsār bāks kothāy?", ipa: "prat̪ʰomik tʃikit̪sar baks kot̪ʰaj", bases: [{ word: "বাক্স", ref: "bn-1156" }, { word: "কোথায়", ref: "bn-0163" }, { word: "প্রাথমিক", base: "প্রাথমিক", reading: "prāthomik" }, { word: "চিকিৎসার", ref: "bn-1767" }] }
+      - { target: "প্রাথমিক চিকিৎসা জানা জরুরি।", reading: "prāthomik cikitsā jānā joruri.", ipa: "prat̪ʰomik tʃikit̪sa dʒana dʒoruri", bases: [{ word: "জানা", ref: "bn-0881" }, { word: "জরুরি", ref: "bn-1778" }, { word: "প্রাথমিক", base: "প্রাথমিক", reading: "prāthomik" }] }
+  - id: "bn-4041"
+    target: "জলোচ্ছ্বাস"
+    reading: "jôloccchās"
+    ipa: "dʒɔlotʃtʃtʃʰas"
+    phonetic: "[dʒɔlotʃtʃtʃʰas]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জলোচ্ছ্বাস", reading: "jôloccchās" }] }
+    examples:
+      - { target: "জলোচ্ছ্বাসে গ্রাম ডুবে গেল।", reading: "jôloccchāse grām ḍube gel.", ipa: "dʒɔlotʃtʃtʃʰase ɡram ɖube ɡel", bases: [{ word: "জলোচ্ছ্বাসে", base: "জলোচ্ছ্বাস", reading: "jôloccchāse" }, { word: "গ্রাম", ref: "bn-1053" }, { word: "ডুবে", base: "ডোবা", reading: "ḍube" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "জলোচ্ছ্বাসের খবর এসেছে।", reading: "jôloccchāser khôbor eseche.", ipa: "dʒɔlotʃtʃtʃʰaser kʰɔbor esetʃʰe", bases: [{ word: "জলোচ্ছ্বাসের", base: "জলোচ্ছ্বাস", reading: "jôloccchāser" }, { word: "খবর", ref: "bn-2884" }, { word: "এসেছে", ref: "bn-0872" }] }
+  - id: "bn-4042"
+    target: "টর্চ"
+    reading: "ṭôrc"
+    ipa: "ʈɔrtʃ"
+    phonetic: "[ʈɔrtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টর্চ", reading: "ṭôrc" }] }
+    examples:
+      - { target: "টর্চ নিয়ে যাও।", reading: "ṭôrc niye jāo.", ipa: "ʈɔrtʃ nije dʒao", bases: [{ word: "নিয়ে", ref: "bn-0590" }, { word: "যাও", ref: "bn-0873" }] }
+      - { target: "টর্চের আলো জ্বালাও।", reading: "ṭôrcer ālo jālāo.", ipa: "ʈɔrtʃer alo dʒalao", bases: [{ word: "টর্চের", base: "টর্চ", reading: "ṭôrcer" }, { word: "আলো", ref: "bn-0615" }, { word: "জ্বালাও", ref: "bn-2346" }] }
+  - id: "bn-4043"
+    target: "মোমবাতি"
+    reading: "momobāti"
+    ipa: "momobat̪i"
+    phonetic: "[momobat̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মোমবাতি", reading: "momobāti" }] }
+    examples:
+      - { target: "মোমবাতি জ্বলছে।", reading: "momobāti jôloche.", ipa: "momobat̪i dʒɔlotʃʰe", bases: [{ word: "জ্বলছে", base: "জ্বলা", reading: "jôloche" }] }
+      - { target: "মোমবাতি নিভিয়ে দাও।", reading: "momobāti nibhiye dāo.", ipa: "momobat̪i nibʱije d̪ao", bases: [{ word: "নিভিয়ে", ref: "bn-2347" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4044"
+    target: "ত্রাণশিবির"
+    reading: "trānośibir"
+    ipa: "t̪ranoʃibir"
+    phonetic: "[t̪ranoʃibir]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ত্রাণশিবির", reading: "trānośibir" }] }
+    examples:
+      - { target: "ত্রাণশিবিরে অনেক মানুষ আছে।", reading: "trānośibire ônek mānuś āche.", ipa: "t̪ranoʃibire ɔnek manuʃ atʃʰe", bases: [{ word: "ত্রাণশিবিরে", base: "ত্রাণশিবির", reading: "trānośibire" }, { word: "অনেক", ref: "bn-0550" }, { word: "মানুষ", base: "মানুষ", reading: "mānuś" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "ত্রাণশিবির কোথায়?", reading: "trānośibir kothāy?", ipa: "t̪ranoʃibir kot̪ʰaj", bases: [{ word: "ত্রাণশিবির", base: "ত্রাণশিবির", reading: "trānośibir" }, { word: "কোথায়", ref: "bn-0163" }] }
+  - id: "bn-4045"
+    target: "আশ্রয়কেন্দ্র"
+    reading: "āśroyokendro"
+    ipa: "aʃrojokend̪r"
+    phonetic: "[aʃrojokend̪r]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আশ্রয়কেন্দ্র", reading: "āśroyokendro" }] }
+    examples:
+      - { target: "আশ্রয়কেন্দ্রে খাবার পাওয়া যায়।", reading: "āśroyokendre khābār pāoyā jāy.", ipa: "aʃrojokend̪re kʰabar paoja dʒaj", bases: [{ word: "আশ্রয়কেন্দ্রে", base: "আশ্রয়কেন্দ্র", reading: "āśroyokendre" }, { word: "খাবার", ref: "bn-0349" }, { word: "পাওয়া", ref: "bn-0891" }, { word: "যায়", ref: "bn-0873" }] }
+      - { target: "আশ্রয়কেন্দ্রটা স্কুলে।", reading: "āśroyokendroṭā skule.", ipa: "aʃrojokend̪roʈa skule", bases: [{ word: "আশ্রয়কেন্দ্রটা", base: "আশ্রয়কেন্দ্র", reading: "āśroyokendroṭā" }, { word: "স্কুলে", ref: "bn-0123" }] }
+  - id: "bn-4046"
+    target: "সতর্ক"
+    reading: "sôtorko"
+    ipa: "sɔt̪ork"
+    phonetic: "[sɔt̪ork]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সতর্ক", reading: "sôtorko" }] }
+    examples:
+      - { target: "সতর্ক থাকো।", reading: "sôtorko thāko.", ipa: "sɔt̪ork t̪ʰako", bases: [{ word: "থাকো", ref: "bn-0875" }] }
+      - { target: "পুলিশ সতর্ক আছে।", reading: "puliś sôtorko āche.", ipa: "puliʃ sɔt̪ork atʃʰe", bases: [{ word: "পুলিশ", ref: "bn-0375" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4047"
+    target: "ক্ষতিগ্রস্ত"
+    reading: "kkhotigrosto"
+    ipa: "kkʰot̪iɡrost̪"
+    phonetic: "[kkʰot̪iɡrost̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ক্ষতিগ্রস্ত", reading: "kkhotigrosto" }] }
+    examples:
+      - { target: "ক্ষতিগ্রস্ত বাড়ি অনেক।", reading: "kkhotigrosto bāṛi ônek.", ipa: "kkʰot̪iɡrost̪ baɽi ɔnek", bases: [{ word: "বাড়ি", ref: "bn-0196" }, { word: "অনেক", ref: "bn-0550" }] }
+      - { target: "ক্ষতিগ্রস্তদের সাহায্য করা হবে।", reading: "kkhotigrostoder sāhājj kôrā hôbe.", ipa: "kkʰot̪iɡrost̪od̪er saɦadʒdʒ kɔra ɦɔbe", bases: [{ word: "ক্ষতিগ্রস্তদের", base: "ক্ষতিগ্রস্ত", reading: "kkhotigrostoder" }, { word: "সাহায্য", ref: "bn-0371" }, { word: "করা", ref: "bn-0102" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4048"
+    target: "আহত"
+    reading: "āhot"
+    ipa: "aɦot̪"
+    phonetic: "[aɦot̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আহত", reading: "āhot" }] }
+    examples:
+      - { target: "আহত লোককে হাসপাতালে নেওয়া হলো।", reading: "āhot lokoke hāsopātāle neoyā hôlo.", ipa: "aɦot̪ lokoke ɦasopat̪ale neoja ɦɔlo", bases: [{ word: "লোককে", base: "লোক", reading: "lokoke" }, { word: "হাসপাতালে", ref: "bn-0377" }, { word: "নেওয়া", ref: "bn-0889" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "কয়েকজন আহত হয়েছে।", reading: "kôyekojon āhot hôyeche.", ipa: "kɔjekodʒon aɦot̪ ɦɔjetʃʰe", bases: [{ word: "কয়েকজন", ref: "bn-1312" }, { word: "হয়েছে", ref: "bn-0874" }] }
+  - id: "bn-4049"
+    target: "মৃত"
+    reading: "mrit"
+    ipa: "mrit̪"
+    phonetic: "[mrit̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মৃত", reading: "mrit" }] }
+    examples:
+      - { target: "মৃত মানুষ নেই।", reading: "mrit mānuś nei.", ipa: "mrit̪ manuʃ nei", bases: [{ word: "মানুষ", base: "মানুষ", reading: "mānuś" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+      - { target: "মৃতদের পরিবারকে খবর দেওয়া হলো।", reading: "mritoder poribāroke khôbor deoyā hôlo.", ipa: "mrit̪od̪er poribaroke kʰɔbor d̪eoja ɦɔlo", bases: [{ word: "মৃতদের", base: "মৃত", reading: "mritoder" }, { word: "পরিবারকে", ref: "bn-0197" }, { word: "খবর", ref: "bn-2884" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-4050"
+    target: "আপৎকালীন"
+    reading: "āpotkālin"
+    ipa: "apot̪kalin"
+    phonetic: "[apot̪kalin]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আপৎকালীন", reading: "āpotkālin" }] }
+    examples:
+      - { target: "আপৎকালীন নম্বর কত?", reading: "āpotkālin nômbor kôt?", ipa: "apot̪kalin nɔmbor kɔt̪", bases: [{ word: "নম্বর", ref: "bn-2158" }, { word: "কত", ref: "bn-0167" }] }
+      - { target: "এটা আপৎকালীন দরজা।", reading: "eṭā āpotkālin dôrojā.", ipa: "eʈa apot̪kalin d̪ɔrodʒa", bases: [{ word: "এটা", ref: "bn-0849" }, { word: "দরজা", ref: "bn-0599" }] }
+  - id: "bn-4051"
+    target: "ঝুঁকিপূর্ণ"
+    reading: "jhum̐kipurno"
+    ipa: "dʒʱũkipurn"
+    phonetic: "[dʒʱũkipurn]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝুঁকিপূর্ণ", reading: "jhum̐kipurno" }] }
+    examples:
+      - { target: "রাস্তাটা ঝুঁকিপূর্ণ।", reading: "rāstāṭā jhum̐kipurno.", ipa: "rast̪aʈa dʒʱũkipurn", bases: [{ word: "রাস্তাটা", ref: "bn-0313" }] }
+      - { target: "ঝুঁকিপূর্ণ কাজ করবে না।", reading: "jhum̐kipurno kāj kôrobe nā.", ipa: "dʒʱũkipurn kadʒ kɔrobe na", bases: [{ word: "কাজ", ref: "bn-0198" }, { word: "করবে", ref: "bn-0102" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4052"
+    target: "বিপজ্জনক"
+    reading: "bipojjonok"
+    ipa: "bipodʒdʒonok"
+    phonetic: "[bipodʒdʒonok]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিপজ্জনক", reading: "bipojjonok" }] }
+    examples:
+      - { target: "এই জায়গা বিপজ্জনক।", reading: "ei jāyogā bipojjonok.", ipa: "ei dʒajoɡa bipodʒdʒonok", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "জায়গা", base: "জায়গা", reading: "jāyogā" }] }
+      - { target: "বিপজ্জনক খেলা খেলো না।", reading: "bipojjonok khelā khelo nā.", ipa: "bipodʒdʒonok kʰela kʰelo na", bases: [{ word: "খেলা", ref: "bn-0895" }, { word: "খেলো", ref: "bn-0895" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4053"
+    target: "অজ্ঞান"
+    reading: "ôggān"
+    ipa: "ɔɡɡan"
+    phonetic: "[ɔɡɡan]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অজ্ঞান", reading: "ôggān" }] }
+    examples:
+      - { target: "সে অজ্ঞান হয়ে গেল।", reading: "se ôggān hôye gel.", ipa: "se ɔɡɡan ɦɔje ɡel", bases: [{ word: "সে", ref: "bn-0839" }, { word: "হয়ে", ref: "bn-0874" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "অজ্ঞান মানুষকে ধরো।", reading: "ôggān mānuśoke dhôro.", ipa: "ɔɡɡan manuʃoke d̪ʱɔro", bases: [{ word: "মানুষকে", base: "মানুষ", reading: "mānuśoke" }, { word: "ধরো", ref: "bn-1107" }] }
+  - id: "bn-4054"
+    target: "উদ্ধার করা"
+    reading: "uddhār kôrā"
+    ipa: "ud̪d̪ʱar kɔra"
+    phonetic: "[ud̪d̪ʱar kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদ্ধার করা", reading: "uddhār kôrā" }] }
+    examples:
+      - { target: "দমকল কর্মীরা শিশুকে উদ্ধার করল।", reading: "dômokol kormirā śiśuke uddhār kôrol.", ipa: "d̪ɔmokol kormira ʃiʃuke ud̪d̪ʱar kɔrol", bases: [{ word: "কর্মীরা", ref: "bn-2626" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "উদ্ধার", ref: "bn-4024" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "আমাদের উদ্ধার করা হয়েছে।", reading: "āmāder uddhār kôrā hôyeche.", ipa: "amad̪er ud̪d̪ʱar kɔra ɦɔjetʃʰe", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "উদ্ধার", ref: "bn-4024" }, { word: "করা", ref: "bn-0102" }, { word: "হয়েছে", ref: "bn-0874" }] }
+  - id: "bn-4055"
+    target: "সরিয়ে নেওয়া"
+    reading: "soriye neoyā"
+    ipa: "sorije neoja"
+    phonetic: "[sorije neoja]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: [{ word: "সরিয়ে", base: "সরানো", reading: "soriye" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সরিয়ে নেওয়া", reading: "soriye neoyā" }] }
+    examples:
+      - { target: "লোকদের সরিয়ে নেওয়া হলো।", reading: "lokoder soriye neoyā hôlo.", ipa: "lokod̪er sorije neoja ɦɔlo", bases: [{ word: "লোকদের", base: "লোক", reading: "lokoder" }, { word: "হলো", ref: "bn-0874" }, { word: "সরিয়ে", base: "সরানো", reading: "soriye" }] }
+      - { target: "আমাদের নিরাপদ জায়গায় সরিয়ে নেওয়া হবে।", reading: "āmāder nirāpod jāyogāy soriye neoyā hôbe.", ipa: "amad̪er nirapod̪ dʒajoɡaj sorije neoja ɦɔbe", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "নিরাপদ", ref: "bn-3082" }, { word: "জায়গায়", base: "জায়গা", reading: "jāyogāy" }, { word: "হবে", ref: "bn-0874" }, { word: "সরিয়ে", base: "সরানো", reading: "soriye" }] }
+  - id: "bn-4056"
+    target: "আগুন নেভানো"
+    reading: "āgun nebhāno"
+    ipa: "aɡun nebʱano"
+    phonetic: "[aɡun nebʱano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আগুন নেভানো", reading: "āgun nebhāno" }] }
+    examples:
+      - { target: "দমকল আগুন নেভাল।", reading: "dômokol āgun nebhāl.", ipa: "d̪ɔmokol aɡun nebʱal", bases: [{ word: "দমকল", ref: "bn-4023" }, { word: "আগুন", ref: "bn-2107" }, { word: "নেভাল", ref: "bn-2347" }] }
+      - { target: "আগুন নেভাতে জল দাও।", reading: "āgun nebhāte jôl dāo.", ipa: "aɡun nebʱat̪e dʒɔl d̪ao", bases: [{ word: "আগুন", ref: "bn-2107" }, { word: "নেভাতে", ref: "bn-2347" }, { word: "জল", ref: "bn-0350" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4057"
+    target: "পালানো"
+    reading: "pālāno"
+    ipa: "palano"
+    phonetic: "[palano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পালানো", reading: "pālāno" }] }
+    examples:
+      - { target: "লোকজন দ্রুত পালাল।", reading: "lokojon drut pālāl.", ipa: "lokodʒon d̪rut̪ palal", bases: [{ word: "লোকজন", base: "লোক", reading: "lokojon" }, { word: "দ্রুত", ref: "bn-2796" }, { word: "পালাল", base: "পালানো", reading: "pālāl" }] }
+      - { target: "বিপদ দেখে সে পালাল।", reading: "bipod dekhe se pālāl.", ipa: "bipod̪ d̪ekʰe se palal", bases: [{ word: "বিপদ", ref: "bn-1784" }, { word: "দেখে", ref: "bn-0877" }, { word: "সে", ref: "bn-0839" }, { word: "পালাল", base: "পালানো", reading: "pālāl" }] }

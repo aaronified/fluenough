@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-grammar-causative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3671"
+    target: "মা শিশুকে খাওয়ায়।"
+    reading: "mā śiśuke khāoyāy."
+    ipa: "ma ʃiʃuke kʰaojaj"
+    phonetic: "[ma ʃiʃuke kʰaojaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "খাওয়ায়", ref: "bn-0876" }]
+    confusables: [{ id: "c1", word: "খায়", reading: "khāy", kind: "word" }, { id: "c2", word: "পড়ায়", reading: "poṛāy", kind: "word" }]
+  - id: "bn-3672"
+    target: "আমি দর্জিকে দিয়ে জামা সেলাই করালাম।"
+    reading: "āmi dorjike diye jāmā selāi kôrālām."
+    ipa: "ami d̪ordʒike d̪ije dʒama selai kɔralam"
+    phonetic: "[ami d̪ordʒike d̪ije dʒama selai kɔralam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "দর্জিকে", base: "দর্জি", reading: "dorjike" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "জামা", ref: "bn-1189" }, { word: "সেলাই", ref: "bn-2240" }, { word: "করালাম", base: "করানো", reading: "kôrālām" }]
+    confusables: [{ id: "c1", word: "সেলাই করি", reading: "selāi kori", kind: "word" }, { id: "c2", word: "ধুই", reading: "dhui", kind: "word" }]
+  - id: "bn-3673"
+    target: "ডাক্তার রোগীকে ওষুধ খাওয়ালেন।"
+    reading: "ḍāktār rogike ośudh khāoyālen."
+    ipa: "ɖakt̪ar roɡike oʃud̪ʱ kʰaojalen"
+    phonetic: "[ɖakt̪ar roɡike oʃud̪ʱ kʰaojalen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ডাক্তার", ref: "bn-0376" }, { word: "রোগীকে", ref: "bn-1766" }, { word: "ওষুধ", ref: "bn-0378" }, { word: "খাওয়ালেন", base: "খাওয়ানো", reading: "khāoyālen" }]
+    confusables: [{ id: "c1", word: "খেলেন", reading: "khelen", kind: "word" }, { id: "c2", word: "দিলেন", reading: "dilen", kind: "word" }]
+  - id: "bn-3674"
+    target: "ছেলেটা বাবাকে গল্প শোনাল।"
+    reading: "cheleṭā bābāke gôlp śonāl."
+    ipa: "tʃʰeleʈa babake ɡɔlp ʃonal"
+    phonetic: "[tʃʰeleʈa babake ɡɔlp ʃonal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছেলেটা", ref: "bn-0426" }, { word: "বাবাকে", ref: "bn-0423" }, { word: "গল্প", ref: "bn-2214" }, { word: "শোনাল", base: "শোনানো", reading: "śonāl" }]
+    confusables: [{ id: "c1", word: "শুনল", reading: "śunal", kind: "word" }, { id: "c2", word: "বলল", reading: "bolal", kind: "word" }]
+  - id: "bn-3675"
+    target: "শিক্ষক ছাত্রদের কবিতা পড়ান।"
+    reading: "śikkhok chātroder kobitā pôṛān."
+    ipa: "ʃikkʰok tʃʰat̪rod̪er kobit̪a pɔɽan"
+    phonetic: "[ʃikkʰok tʃʰat̪rod̪er kobit̪a pɔɽan]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "ছাত্রদের", ref: "bn-0470" }, { word: "কবিতা", ref: "bn-2216" }, { word: "পড়ান", ref: "bn-2159" }]
+    confusables: [{ id: "c1", word: "পড়েন", reading: "poṛen", kind: "word" }, { id: "c2", word: "লেখেন", reading: "lekhen", kind: "word" }]
+  - id: "bn-3676"
+    target: "মা মেয়েকে নতুন জামা কেনালেন।"
+    reading: "mā meyeke notun jāmā kenālen."
+    ipa: "ma mejeke not̪un dʒama kenalen"
+    phonetic: "[ma mejeke not̪un dʒama kenalen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "মেয়েকে", ref: "bn-0427" }, { word: "নতুন", ref: "bn-0620" }, { word: "জামা", ref: "bn-1189" }, { word: "কেনালেন", base: "কেনানো", reading: "kenālen" }]
+    confusables: [{ id: "c1", word: "কিনলেন", reading: "kinlen", kind: "word" }, { id: "c2", word: "বেচলেন", reading: "becalen", kind: "word" }]
+  - id: "bn-3677"
+    target: "আমি ছেলেকে ঘর পরিষ্কার করালাম।"
+    reading: "āmi cheleke ghôr poriśkār kôrālām."
+    ipa: "ami tʃʰeleke ɡʱɔr poriʃkar kɔralam"
+    phonetic: "[ami tʃʰeleke ɡʱɔr poriʃkar kɔralam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "ছেলেকে", ref: "bn-0426" }, { word: "ঘর", ref: "bn-0051" }, { word: "পরিষ্কার", ref: "bn-0626" }, { word: "করালাম", base: "করানো", reading: "kôrālām" }]
+    confusables: [{ id: "c1", word: "ঝাড়ু", reading: "jhāṛu", kind: "word" }, { id: "c2", word: "ধোয়াল", reading: "dhoyāl", kind: "word" }]
+  - id: "bn-3678"
+    target: "দর্জি আমাকে জামা দেখাল।"
+    reading: "dorji āmāke jāmā dekhāl."
+    ipa: "d̪ordʒi amake dʒama d̪ekʰal"
+    phonetic: "[d̪ordʒi amake dʒama d̪ekʰal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দর্জি", base: "দর্জি", reading: "dorji" }, { word: "আমাকে", ref: "bn-0833" }, { word: "জামা", ref: "bn-1189" }, { word: "দেখাল", ref: "bn-2355" }]
+    confusables: [{ id: "c1", word: "দেখল", reading: "dekhal", kind: "word" }, { id: "c2", word: "কিনল", reading: "kinal", kind: "word" }]
+  - id: "bn-3679"
+    target: "মা বাচ্চাকে বিছানায় বসায়।"
+    reading: "mā bāccāke bichānāy bôsāy."
+    ipa: "ma batʃtʃake bitʃʰanaj bɔsaj"
+    phonetic: "[ma batʃtʃake bitʃʰanaj bɔsaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "বাচ্চাকে", base: "বাচ্চা", reading: "bāccāke" }, { word: "বিছানায়", ref: "bn-0606" }, { word: "বসায়", base: "বসানো", reading: "bôsāy" }]
+    confusables: [{ id: "c1", word: "ওঠায়", reading: "oṭhāy", kind: "word" }, { id: "c2", word: "শোয়ায়", reading: "śoyāy", kind: "word" }]
+  - id: "bn-3680"
+    target: "তিনি সবাইকে গান গাওয়ান।"
+    reading: "tini sôbāike gān gāoyān."
+    ipa: "t̪ini sɔbaike ɡan ɡaojan"
+    phonetic: "[t̪ini sɔbaike ɡan ɡaojan]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "তিনি", ref: "bn-0841" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "গান", ref: "bn-1668" }, { word: "গাওয়ান", base: "গাওয়ানো", reading: "gāoyān" }]
+    confusables: [{ id: "c1", word: "গায়", reading: "gāy", kind: "word" }, { id: "c2", word: "শোনায়", reading: "śonāy", kind: "word" }]

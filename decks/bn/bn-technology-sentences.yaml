@@ -1,0 +1,109 @@
+schema: 1
+id: "bn-technology-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3295"
+    target: "আমি একটা অ্যাপ ডাউনলোড করেছি।"
+    reading: "āmi ekoṭā êāp ḍāunoloḍ kôrechi."
+    ipa: "ami ekoʈa ɔdʒap ɖaunoloɖ kɔretʃʰi"
+    phonetic: "[ami ekoʈa ɔdʒap ɖaunoloɖ kɔretʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "অ্যাপ", ref: "bn-2403" }, { word: "ডাউনলোড", ref: "bn-3250" }, { word: "করেছি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "আপলোড", reading: "āplod", kind: "word" }, { id: "c2", word: "মুছে", reading: "muche", kind: "word" }]
+  - id: "bn-3296"
+    target: "কিবোর্ডটা খারাপ।"
+    reading: "kiborḍoṭā khārāp."
+    ipa: "kiborɖoʈa kʰarap"
+    phonetic: "[kiborɖoʈa kʰarap]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কিবোর্ডটা", ref: "bn-3247" }, { word: "খারাপ", base: "খারাপ", reading: "khārāp" }]
+    confusables: [{ id: "c1", word: "মাউস", reading: "māus", kind: "word" }, { id: "c2", word: "স্পিকার", reading: "spīkār", kind: "word" }]
+  - id: "bn-3297"
+    target: "ইন্টারনেট ধীর।"
+    reading: "inṭāroneṭ dhir."
+    ipa: "inʈaroneʈ d̪ʱir"
+    phonetic: "[inʈaroneʈ d̪ʱir]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ইন্টারনেট", ref: "bn-2398" }, { word: "ধীর", base: "ধীর", reading: "dhir" }]
+    confusables: [{ id: "c1", word: "দ্রুত", reading: "druta", kind: "word" }, { id: "c2", word: "অফলাইন", reading: "aphlāin", kind: "word" }]
+  - id: "bn-3298"
+    target: "নতুন আপডেট এসেছে।"
+    reading: "notun āpoḍeṭ eseche."
+    ipa: "not̪un apoɖeʈ esetʃʰe"
+    phonetic: "[not̪un apoɖeʈ esetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "আপডেট", ref: "bn-3253" }, { word: "এসেছে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "আপলোড", reading: "āplod", kind: "word" }, { id: "c2", word: "ইনস্টল", reading: "insṭal", kind: "word" }]
+  - id: "bn-3299"
+    target: "পাসওয়ার্ড দিয়ে লগইন করো।"
+    reading: "pāsooyārḍ diye lôgoin kôro."
+    ipa: "pasoojarɖ d̪ije lɔɡoin kɔro"
+    phonetic: "[pasoojarɖ d̪ije lɔɡoin kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পাসওয়ার্ড", ref: "bn-2404" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "লগইন", ref: "bn-3261" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "লগআউট", reading: "lagāuṭ", kind: "word" }, { id: "c2", word: "মেনু", reading: "menu", kind: "word" }]
+  - id: "bn-3300"
+    target: "ফোনটা স্বয়ংক্রিয়ভাবে বন্ধ হয়।"
+    reading: "phonoṭā sôyoṅkriyobhābe bôndh hôy."
+    ipa: "pʰonoʈa sɔjoŋkrijobʱabe bɔnd̪ʱ ɦɔj"
+    phonetic: "[pʰonoʈa sɔjoŋkrijobʱabe bɔnd̪ʱ ɦɔj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "স্বয়ংক্রিয়ভাবে", ref: "bn-3291" }, { word: "বন্ধ", ref: "bn-1230" }, { word: "হয়", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "চালু", reading: "cālu", kind: "word" }, { id: "c2", word: "সাবধানে", reading: "sābdhāne", kind: "word" }]
+  - id: "bn-3301"
+    target: "ছবিটা তৎক্ষণাৎ আপলোড করো।"
+    reading: "chobiṭā tôtkkhonāt āpoloḍ kôro."
+    ipa: "tʃʰobiʈa t̪ɔt̪kkʰonat̪ apoloɖ kɔro"
+    phonetic: "[tʃʰobiʈa t̪ɔt̪kkʰonat̪ apoloɖ kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "তৎক্ষণাৎ", ref: "bn-3293" }, { word: "আপলোড", ref: "bn-3251" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "বিলম্বে", reading: "bilambe", kind: "word" }, { id: "c2", word: "অনলাইনে", reading: "anlāinē", kind: "word" }]
+  - id: "bn-3302"
+    target: "ল্যাপটপটা ব্যবহার করো সাবধানে।"
+    reading: "lêpoṭopoṭā bêbohār kôro sābodhāne."
+    ipa: "læpoʈopoʈa bæboɦar kɔro sabod̪ʱane"
+    phonetic: "[læpoʈopoʈa bæboɦar kɔro sabod̪ʱane]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ল্যাপটপটা", ref: "bn-3270" }, { word: "ব্যবহার", base: "ব্যবহার", reading: "bêbohār" }, { word: "করো", ref: "bn-0102" }, { word: "সাবধানে", ref: "bn-3294" }]
+    confusables: [{ id: "c1", word: "অবহেলায়", reading: "abahelāy", kind: "word" }, { id: "c2", word: "দ্রুত", reading: "druta", kind: "word" }]
+  - id: "bn-3303"
+    target: "ওয়াইফাই বিনামূল্যে পাওয়া যায়।"
+    reading: "oyāiphāi bināmulle pāoyā jāy."
+    ipa: "ojaipʰai binamulle paoja dʒaj"
+    phonetic: "[ojaipʰai binamulle paoja dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ওয়াইফাই", ref: "bn-2399" }, { word: "বিনামূল্যে", ref: "bn-3292" }, { word: "পাওয়া", ref: "bn-0891" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "দামি", reading: "dāmi", kind: "word" }, { id: "c2", word: "সস্তা", reading: "sastā", kind: "word" }]
+  - id: "bn-3304"
+    target: "কৃত্রিম বুদ্ধিমত্তা ভবিষ্যতের কথা।"
+    reading: "kritrim buddhimottā bhobiśśoter kôthā."
+    ipa: "krit̪rim bud̪d̪ʱimot̪t̪a bʱobiʃʃot̪er kɔt̪ʰa"
+    phonetic: "[krit̪rim bud̪d̪ʱimot̪t̪a bʱobiʃʃot̪er kɔt̪ʰa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কৃত্রিম", base: "কৃত্রিম", reading: "kritrim" }, { word: "বুদ্ধিমত্তা", ref: "bn-3256" }, { word: "ভবিষ্যতের", base: "ভবিষ্যৎ", reading: "bhobiśśoter" }, { word: "কথা", ref: "bn-2409" }]
+    confusables: [{ id: "c1", word: "বুদ্ধিমান", reading: "buddhimān", kind: "word" }, { id: "c2", word: "যন্ত্র", reading: "yantra", kind: "word" }]
+  - id: "bn-3305"
+    target: "অনুসন্ধান করে দেখো।"
+    reading: "ônusondhān kôre dekho."
+    ipa: "ɔnusond̪ʱan kɔre d̪ekʰo"
+    phonetic: "[ɔnusond̪ʱan kɔre d̪ekʰo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "অনুসন্ধান", ref: "bn-3276" }, { word: "করে", ref: "bn-0102" }, { word: "দেখো", ref: "bn-0877" }]
+    confusables: [{ id: "c1", word: "খোঁজা", reading: "khōjā", kind: "word" }, { id: "c2", word: "দেখা", reading: "dekhā", kind: "word" }]

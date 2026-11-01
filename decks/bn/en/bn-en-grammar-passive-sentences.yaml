@@ -1,0 +1,48 @@
+schema: 1
+id: "bn-en-grammar-passive-sentences"
+kind: "layer"
+core: "bn-grammar-passive-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Passive: sentences"
+description: "Short sentences with the passive, where the thing done is the subject. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4227":
+    native: "The letter was written today."
+    confusables: { "c1": { why: "to read: a different action on the letter" }, "c2": { why: "to send: a different action" } }
+  "bn-4228":
+    native: "The book is read carefully."
+    confusables: { "c1": { why: "to write: a different action on the book" }, "c2": { why: "to buy: a different action" } }
+  "bn-4229":
+    native: "Vegetables are bought from this shop."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "to sell: the opposite action" }, "c2": { why: "to eat: a different action" } }
+  "bn-4230":
+    native: "The door was closed."
+    confusables: { "c1": { why: "to open: the opposite action" }, "c2": { why: "to wipe: a different action" } }
+  "bn-4231":
+    native: "The food is made in the kitchen."
+    bases: { "বানানো": "made" }
+    confusables: { "c1": { why: "to cook: a different action on the food" }, "c2": { why: "to fry: a different action" } }
+  "bn-4232":
+    native: "The language is learnt in many places."
+    bases: { "জায়গায়": "in places" }
+    confusables: { "c1": { why: "to teach: the active verb, not the passive" }, "c2": { why: "to hear: a different action" } }
+  "bn-4233":
+    native: "The story was told to everyone."
+    confusables: { "c1": { why: "to hear: a different action" }, "c2": { why: "to write: a different action" } }
+  "bn-4234":
+    native: "The new book has been bought from the shop."
+    confusables: { "c1": { why: "to read: a different action on the book" }, "c2": { why: "sale: the opposite side of buying" } }
+  "bn-4235":
+    native: "The school door is opened in the morning."
+    confusables: { "c1": { why: "closed: the opposite state" }, "c2": { why: "at night: a different time" } }
+  "bn-4236":
+    native: "This subject is taught at school."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "to learn: the other side, not the teacher's act" }, "c2": { why: "to teach: close, but a different verb" } }
+  "bn-4237":
+    native: "All the tickets have been sold out."
+    bases: { "সমস্ত": "all" }
+    confusables: { "c1": { why: "to buy: the opposite side of selling" }, "c2": { why: "remaining: the opposite state" } }

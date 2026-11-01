@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-verbs-4"
+name: "Reading: story actions"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A story told in a sequence of events, and a short story with a turn, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-long-story"
+    title: "A story told in a sequence of events"
+    theme: "verbs-4"
+    sentences:
+      - { text: "সকালে ঘুম ভাঙতেই দেখি আকাশ মেঘলা।", reading: "sôkāle ghum bhāṅotei dekhi ākāś megholā.", ipa: "sɔkale ɡʱum bʱaŋot̪ei d̪ekʰi akaʃ meɡʱola" }
+      - { text: "আমি জামা পরে বাইরে বেরোলাম।", reading: "āmi jāmā pôre bāire berolām.", ipa: "ami dʒama pɔre baire berolam" }
+      - { text: "পথে একটা কুকুর আমাকে দেখে চিৎকার করল।", reading: "pôthe ekoṭā kukur āmāke dekhe citkār kôrol.", ipa: "pɔt̪ʰe ekoʈa kukur amake d̪ekʰe tʃit̪kar kɔrol" }
+      - { text: "আমি ছুটে গিয়ে একটা ছাতা কুড়িয়ে নিলাম।", reading: "āmi chuṭe giye ekoṭā chātā kuṛiye nilām.", ipa: "ami tʃʰuʈe ɡije ekoʈa tʃʰat̪a kuɽije nilam" }
+      - { text: "শেষে বাড়ি ফিরে এসে চা খেলাম।", reading: "śeśe bāṛi phire ese cā khelām.", ipa: "ʃeʃe baɽi pʰire ese tʃa kʰelam" }
+    questions:
+      - id: "bn-4221"
+        prompt: { "en": "The story starts in the morning." }
+        answer: true
+      - id: "bn-4222"
+        prompt: { "en": "What did the speaker see in the sky?" }
+        options: [{ "en": "Cloudy weather" }, { "en": "A clear sky" }]
+        answer: 1
+      - id: "bn-4223"
+        prompt: { "en": "What did the speaker pick up on the road?" }
+        options: [{ "en": "An umbrella" }, { "en": "A book" }]
+        answer: 1
+  - id: "bn-short-story"
+    title: "A short story with a turn"
+    theme: "verbs-4"
+    sentences:
+      - { text: "ছোট মেয়েটি বাগানে ফুল তুলতে গেল।", reading: "choṭ meyeṭi bāgāne phul tulote gel.", ipa: "tʃʰoʈ mejeʈi baɡane pʰul t̪ulot̪e ɡel" }
+      - { text: "হঠাৎ বাতাসে গাছের পাতা ঝরল।", reading: "hôṭhāt bātāse gācher pātā jhôrol.", ipa: "ɦɔʈʰat̪ bat̪ase ɡatʃʰer pat̪a dʒʱɔrol" }
+      - { text: "সে পাতা কুড়িয়ে একটা মালা গাঁথল।", reading: "se pātā kuṛiye ekoṭā mālā gām̐thol.", ipa: "se pat̪a kuɽije ekoʈa mala ɡãt̪ʰol" }
+      - { text: "মা মালা দেখে খুশি হলেন।", reading: "mā mālā dekhe khuśi hôlen.", ipa: "ma mala d̪ekʰe kʰuʃi ɦɔlen" }
+      - { text: "মেয়েটি মালাটা মাকে উপহার দিল।", reading: "meyeṭi mālāṭā māke upohār dil.", ipa: "mejeʈi malaʈa make upoɦar d̪il" }
+    questions:
+      - id: "bn-4224"
+        prompt: { "en": "The girl went to the garden to pick flowers." }
+        answer: true
+      - id: "bn-4225"
+        prompt: { "en": "What did the girl make from the leaves?" }
+        options: [{ "en": "A garland" }, { "en": "A bag" }]
+        answer: 1
+      - id: "bn-4226"
+        prompt: { "en": "Who was pleased with the garland?" }
+        options: [{ "en": "The mother" }, { "en": "The teacher" }]
+        answer: 1

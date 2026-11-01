@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-purpose"
+name: "Reading: why"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Someone says where they are going and why, and an advert for a course. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-why-are-you-going"
+    title: "Saying what you are going somewhere to do"
+    theme: "cinema"
+    sentences:
+      - { text: "তুমি কোথায় যাচ্ছ?", reading: "tumi kothāy jācch?", ipa: "t̪umi kot̪ʰaj dʒatʃtʃʰ" }
+      - { text: "আমি বই কিনতে বাজারে যাচ্ছি।", reading: "āmi boi kinote bājāre jācchi.", ipa: "ami boi kinot̪e badʒare dʒatʃtʃʰi" }
+      - { text: "বাবা ডাক্তার দেখাতে গেছেন।", reading: "bābā ḍāktār dekhāte gechen.", ipa: "baba ɖakt̪ar d̪ekʰat̪e ɡetʃʰen" }
+      - { text: "মা আমাদের জন্য রান্না করতে ব্যস্ত।", reading: "mā āmāder jonn rānnā kôrote bêst.", ipa: "ma amad̪er dʒonn ranna kɔrot̪e bæst̪" }
+      - { text: "আমরা সিনেমা দেখতে যাব।", reading: "āmorā sinemā dekhote jāb.", ipa: "amora sinema d̪ekʰot̪e dʒab" }
+    questions:
+      - id: "bn-3239"
+        prompt: { "en": "The speaker is going to buy a book." }
+        answer: true
+      - id: "bn-3240"
+        prompt: { "en": "Why did father go out?" }
+        options: [{ "en": "To see a doctor" }, { "en": "To buy food" }]
+        answer: 1
+      - id: "bn-3241"
+        prompt: { "en": "What is mother busy with?" }
+        options: [{ "en": "Cooking for the family" }, { "en": "Reading" }]
+        answer: 1
+  - id: "bn-course-advert"
+    title: "An advert for a course: what it is for"
+    theme: "cinema"
+    sentences:
+      - { text: "ইংরেজি শিখতে চান?", reading: "iṅreji śikhote cān?", ipa: "iŋredʒi ʃikʰot̪e tʃan" }
+      - { text: "কথা বলার জন্য নতুন ক্লাস শুরু হচ্ছে।", reading: "kôthā bôlār jonn notun klās śuru hôcche.", ipa: "kɔt̪ʰa bɔlar dʒonn not̪un klas ʃuru ɦɔtʃtʃʰe" }
+      - { text: "চাকরি পাওয়ার জন্য কম্পিউটার শেখা দরকার।", reading: "cākori pāoyār jonn kompiuṭār śekhā dôrokār.", ipa: "tʃakori paojar dʒonn kompiuʈar ʃekʰa d̪ɔrokar" }
+      - { text: "এখনই নাম লেখাতে আসুন।", reading: "ekhonoi nām lekhāte āsun.", ipa: "ekʰonoi nam lekʰat̪e asun" }
+      - { text: "পরীক্ষা দিতে ভুলবেন না।", reading: "porikkhā dite bhuloben nā.", ipa: "porikkʰa d̪it̪e bʱuloben na" }
+    questions:
+      - id: "bn-3242"
+        prompt: { "en": "The course is for speaking English." }
+        answer: true
+      - id: "bn-3243"
+        prompt: { "en": "What do you need to learn to get a job?" }
+        options: [{ "en": "Computing" }, { "en": "Cooking" }]
+        answer: 1
+      - id: "bn-3244"
+        prompt: { "en": "What should a student not forget?" }
+        options: [{ "en": "To take the exam" }, { "en": "To bring lunch" }]
+        answer: 1

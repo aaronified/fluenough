@@ -1,0 +1,110 @@
+schema: 1
+id: "bn-agriculture-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3508"
+    target: "আমরা ধান চাষ করি।"
+    reading: "āmorā dhān cāś kori."
+    ipa: "amora d̪ʱan tʃaʃ kori"
+    phonetic: "[amora d̪ʱan tʃaʃ kori]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "ধান", ref: "bn-3459" }, { word: "চাষ", ref: "bn-2513" }, { word: "করি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "গম", reading: "gam", kind: "word" }, { id: "c2", word: "পাট", reading: "pāṭ", kind: "word" }]
+  - id: "bn-3509"
+    target: "ক্ষেতে সেচ দেওয়া দরকার।"
+    reading: "kkhete sec deoyā dôrokār."
+    ipa: "kkʰet̪e setʃ d̪eoja d̪ɔrokar"
+    phonetic: "[kkʰet̪e setʃ d̪eoja d̪ɔrokar]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ক্ষেতে", ref: "bn-3467" }, { word: "সেচ", ref: "bn-3464" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "দরকার", ref: "bn-0577" }]
+    confusables: [{ id: "c1", word: "সার", reading: "sār", kind: "word" }, { id: "c2", word: "বৃষ্টি", reading: "bṛṣṭi", kind: "word" }]
+  - id: "bn-3510"
+    target: "বীজ বপনের সময় এসেছে।"
+    reading: "bij bôponer sômoy eseche."
+    ipa: "bidʒ bɔponer sɔmoj esetʃʰe"
+    phonetic: "[bidʒ bɔponer sɔmoj esetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বীজ", ref: "bn-2507" }, { word: "বপনের", ref: "bn-3471" }, { word: "সময়", ref: "bn-0061" }, { word: "এসেছে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "ফসল", reading: "phasal", kind: "word" }, { id: "c2", word: "কাটার", reading: "kāṭār", kind: "word" }]
+  - id: "bn-3511"
+    target: "জমির ফলন বেড়েছে।"
+    reading: "jomir phôlon beṛeche."
+    ipa: "dʒomir pʰɔlon beɽetʃʰe"
+    phonetic: "[dʒomir pʰɔlon beɽetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "জমির", ref: "bn-3463" }, { word: "ফলন", ref: "bn-3470" }, { word: "বেড়েছে", base: "বাড়া", reading: "beṛeche" }]
+    confusables: [{ id: "c1", word: "কম", reading: "kam", kind: "word" }, { id: "c2", word: "খরা", reading: "kharā", kind: "word" }]
+  - id: "bn-3512"
+    target: "বাজারে ধান বিক্রি করো।"
+    reading: "bājāre dhān bikri kôro."
+    ipa: "badʒare d̪ʱan bikri kɔro"
+    phonetic: "[badʒare d̪ʱan bikri kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বাজারে", ref: "bn-1040" }, { word: "ধান", ref: "bn-3459" }, { word: "বিক্রি", ref: "bn-1688" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "কেনা", reading: "kenā", kind: "word" }, { id: "c2", word: "ব্যাপারী", reading: "byāpārī", kind: "word" }]
+  - id: "bn-3513"
+    target: "ট্রাক্টর জমিতে যাচ্ছে।"
+    reading: "ṭrākṭor jomite jācche."
+    ipa: "ʈrakʈor dʒomit̪e dʒatʃtʃʰe"
+    phonetic: "[ʈrakʈor dʒomit̪e dʒatʃtʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ট্রাক্টর", ref: "bn-3476" }, { word: "জমিতে", ref: "bn-3463" }, { word: "যাচ্ছে", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "লাঙল", reading: "lāṅal", kind: "word" }, { id: "c2", word: "গরু", reading: "goru", kind: "word" }]
+  - id: "bn-3514"
+    target: "ধীরে ধীরে ফসল পাকছে।"
+    reading: "dhire dhire phôsol pākoche."
+    ipa: "d̪ʱire d̪ʱire pʰɔsol pakotʃʰe"
+    phonetic: "[d̪ʱire d̪ʱire pʰɔsol pakotʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ধীরে", base: "ধীরে", reading: "dhire" }, { word: "ফসল", ref: "bn-2508" }, { word: "পাকছে", base: "পাকা", reading: "pākoche" }]
+    confusables: [{ id: "c1", word: "দ্রুত", reading: "druta", kind: "word" }, { id: "c2", word: "কাঁচা", reading: "kāccā", kind: "word" }]
+  - id: "bn-3515"
+    target: "এই বছর ফলন ভালো হয়েছে।"
+    reading: "ei bôchor phôlon bhālo hôyeche."
+    ipa: "ei bɔtʃʰor pʰɔlon bʱalo ɦɔjetʃʰe"
+    phonetic: "[ei bɔtʃʰor pʰɔlon bʱalo ɦɔjetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বছর", base: "বছর", reading: "bôchor" }, { word: "ফলন", ref: "bn-3470" }, { word: "ভালো", ref: "bn-0617" }, { word: "হয়েছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "খারাপ", reading: "kharāp", kind: "word" }, { id: "c2", word: "মৌসুমি", reading: "mausumi", kind: "word" }]
+  - id: "bn-3516"
+    target: "সব ফসল একবারে কাটা হলো।"
+    reading: "sôb phôsol ekobāre kāṭā hôlo."
+    ipa: "sɔb pʰɔsol ekobare kaʈa ɦɔlo"
+    phonetic: "[sɔb pʰɔsol ekobare kaʈa ɦɔlo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সব", ref: "bn-0552" }, { word: "ফসল", ref: "bn-2508" }, { word: "একবারে", ref: "bn-3506" }, { word: "কাটা", ref: "bn-1101" }, { word: "হলো", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ধীরে", reading: "dhīre", kind: "word" }, { id: "c2", word: "ক্রমশ", reading: "kramaś", kind: "word" }]
+  - id: "bn-3517"
+    target: "জমিতে কম্পোস্ট দাও।"
+    reading: "jomite kômposṭ dāo."
+    ipa: "dʒomit̪e kɔmposʈ d̪ao"
+    phonetic: "[dʒomit̪e kɔmposʈ d̪ao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "জমিতে", ref: "bn-3463" }, { word: "কম্পোস্ট", ref: "bn-3478" }, { word: "দাও", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "সার", reading: "sār", kind: "word" }, { id: "c2", word: "পানি", reading: "pāni", kind: "word" }]
+  - id: "bn-3518"
+    target: "ফসল কাটার পর বিক্রি করো।"
+    reading: "phôsol kāṭār pôr bikri kôro."
+    ipa: "pʰɔsol kaʈar pɔr bikri kɔro"
+    phonetic: "[pʰɔsol kaʈar pɔr bikri kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ফসল", ref: "bn-2508" }, { word: "কাটার", ref: "bn-1101" }, { word: "পর", base: "পর", reading: "pôr" }, { word: "বিক্রি", ref: "bn-1688" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "কেনা", reading: "kenā", kind: "word" }, { id: "c2", word: "বপন", reading: "bapan", kind: "word" }]

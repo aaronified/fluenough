@@ -1,0 +1,396 @@
+schema: 1
+id: "bn-en-cinema"
+kind: "layer"
+core: "bn-cinema"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema"
+description: "Films and the people who make them: directors, actors, the hall, the trailer, the story and the songs. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3537":
+    native: "director"
+    notes:
+      "n1": "{1}: A director: the person who directs a film."
+    examples:
+      "পরিচালক নতুন ছবি বানাচ্ছেন।": { native: "The director is making a new film.", bases: { "বানাচ্ছেন": "making" } }
+      "পরিচালকের সঙ্গে কথা হলো।": { native: "I talked with the director.", bases: { "পরিচালকের": "director" } }
+  "bn-3538":
+    native: "actor"
+    notes:
+      "n1": "{1}: An actor: a man who performs in a film or play."
+    examples:
+      "অভিনেতা খুব ভালো।": "The actor is very good."
+      "অভিনেতাকে চেনো?": { native: "Do you know the actor? (familiar)", bases: { "অভিনেতাকে": "actor" } }
+  "bn-3539":
+    native: "actress"
+    notes:
+      "n1": "{1}: An actress: a woman who performs in a film or play."
+    examples:
+      "অভিনেত্রী খুব সুন্দর।": "The actress is very beautiful."
+      "অভিনেত্রীর গান শুনলাম।": { native: "I heard the actress's song.", bases: { "অভিনেত্রীর": "actress" } }
+  "bn-3540":
+    native: "hero"
+    notes:
+      "n1": "{1}: A hero: the main male character in a film."
+    examples:
+      "ছবির নায়ক একজন ডাক্তার।": { native: "The film's hero is a doctor.", bases: { "একজন": "one" } }
+      "নায়ককে সবাই পছন্দ করে।": { native: "Everyone likes the hero.", bases: { "নায়ককে": "hero" } }
+  "bn-3541":
+    native: "heroine"
+    notes:
+      "n1": "{1}: A heroine: the main female character in a film."
+    examples:
+      "নায়িকা গান গায়।": "The heroine sings a song."
+      "নায়িকার চরিত্র ভালো।": { native: "The heroine's character is good.", bases: { "নায়িকার": "heroine" } }
+  "bn-3542":
+    native: "cinema hall"
+    notes:
+      "n1": "{1}: A cinema hall, a theatre building where films are shown."
+    examples:
+      "হলে অনেক লোক।": { native: "There are many people in the hall.", bases: { "হলে": "cinema hall", "লোক": "people" } }
+      "হলটা খুব বড়।": { native: "The hall is very big.", bases: { "হলটা": "cinema hall" } }
+  "bn-3543":
+    native: "character"
+    notes:
+      "n1": "{1}: A character: a person played in a film or a story."
+    examples:
+      "চরিত্রটা ভালো লাগল।": { native: "I liked the character.", bases: { "চরিত্রটা": "character" } }
+      "এই চরিত্রে কে অভিনয় করেছে?": { native: "Who has acted in this role?", bases: { "এই": "this", "চরিত্রে": "character" } }
+  "bn-3544":
+    native: "story; plot"
+    notes:
+      "n1": "{1}: A story or plot: what happens in a film or book."
+    examples:
+      "কাহিনিটা সুন্দর।": { native: "The story is beautiful.", bases: { "কাহিনিটা": "story; plot" } }
+      "কাহিনিতে নতুন মোড় আছে।": { native: "The plot has a new turn.", bases: { "কাহিনিতে": "story; plot", "আছে": "has" } }
+  "bn-3545":
+    native: "dialogue"
+    notes:
+      "n1": "{1}: Dialogue: the words spoken by actors in a film."
+    examples:
+      "সংলাপগুলো মজার।": { native: "The dialogues are funny.", bases: { "সংলাপগুলো": "dialogue" } }
+      "ওর সংলাপ মনে আছে।": { native: "I remember his dialogue.", bases: { "ওর": "his", "আছে": "remember" } }
+  "bn-3546":
+    native: "scene"
+    notes:
+      "n1": "{1}: A scene: one part of a film or a view."
+    examples:
+      "এই দৃশ্যটা সুন্দর।": { native: "This scene is beautiful.", bases: { "এই": "this", "দৃশ্যটা": "scene" } }
+      "দৃশ্যের পর দৃশ্য বদলাচ্ছে।": { native: "Scene after scene changes.", bases: { "দৃশ্যের": "scene" } }
+  "bn-3547":
+    native: "shooting"
+    notes:
+      "n1": "{1}: Shooting: filming a movie or a scene."
+    examples:
+      "শুটিং কাল শুরু হবে।": "Shooting will start tomorrow."
+      "শুটিংয়ের সময় ব্যস্ত ছিল।": { native: "She was busy during the shooting.", bases: { "শুটিংয়ের": "shooting", "ছিল": "was" } }
+  "bn-3548":
+    native: "maker"
+    notes:
+      "n1": "{1}: A maker: the person who makes a film."
+    examples:
+      "নির্মাতা নতুন ছবি আনছেন।": "The maker is bringing a new film."
+      "নির্মাতার নাম কী?": { native: "What is the maker's name?", bases: { "নির্মাতার": "maker" } }
+  "bn-3549":
+    native: "trailer"
+    notes:
+      "n1": "{1}: A trailer: a short preview of a film."
+    examples:
+      "ট্রেলারটা দেখো।": { native: "Watch the trailer. (familiar)", bases: { "ট্রেলারটা": "trailer" } }
+      "ট্রেলার ভালো লাগল।": "I liked the trailer."
+  "bn-3550":
+    native: "comedy"
+    notes:
+      "n1": "{1}: Comedy: a funny film or play."
+    examples:
+      "কমেডি ছবি দেখতে যাবে?": { native: "Will you go to see a comedy? (familiar)", bases: { "দেখতে": "to see" } }
+      "কমেডিটা খুব হাসির।": { native: "The comedy is very funny.", bases: { "কমেডিটা": "comedy" } }
+  "bn-3551":
+    native: "action"
+    notes:
+      "n1": "{1}: Action: a film with fights and chases."
+    examples:
+      "অ্যাকশন ছবি বেশি দেখি।": "I watch more action films."
+      "অ্যাকশনের দৃশ্য দারুণ।": { native: "The action scenes are great.", bases: { "অ্যাকশনের": "action", "দারুণ": "great" } }
+  "bn-3552":
+    native: "subtitles"
+    notes:
+      "n1": "{1}: Subtitles: text at the bottom of a screen that gives the words."
+    examples:
+      "সাবটাইটেল পড়ো।": "Read the subtitles. (familiar)"
+      "সাবটাইটেল আছে কি?": { native: "Are there subtitles?", bases: { "সাবটাইটেল": "subtitles", "আছে": "are" } }
+  "bn-3553":
+    native: "singer"
+    notes:
+      "n1": "{1}: A singer: a man who sings."
+    examples:
+      "গায়ক খুব সুন্দর গান গায়।": "The singer sings a very beautiful song."
+      "গায়কের কথা শোনো।": { native: "Listen to the singer. (familiar)", bases: { "গায়কের": "singer" } }
+  "bn-3554":
+    native: "poster"
+    notes:
+      "n1": "{1}: A poster: a large printed picture or notice."
+    examples:
+      "দেয়ালে পোস্টার আছে।": { native: "There is a poster on the wall.", bases: { "আছে": "there is" } }
+      "পোস্টারটা নতুন।": { native: "The poster is new.", bases: { "পোস্টারটা": "poster" } }
+  "bn-3555":
+    native: "stage"
+    notes:
+      "n1": "{1}: A stage: the raised platform where actors perform."
+    examples:
+      "মঞ্চে নাটক হচ্ছে।": { native: "A play is being staged on the stage.", bases: { "মঞ্চে": "stage" } }
+      "মঞ্চটা বড়।": { native: "The stage is big.", bases: { "মঞ্চটা": "stage" } }
+  "bn-3556":
+    native: "dance"
+    notes:
+      "n1": "{1}: Dance: the movement of the body to music, a formal word."
+    examples:
+      "নৃত্য দেখতে ভালো লাগে।": { native: "It is nice to watch dance.", bases: { "দেখতে": "to watch" } }
+      "নৃত্যের জন্য মঞ্চ তৈরি।": { native: "The stage is ready for the dance.", bases: { "নৃত্যের": "dance", "তৈরি": "ready" } }
+  "bn-3557":
+    native: "singer"
+    notes:
+      "n1": "{1}: A singer: a woman who sings."
+    examples:
+      "গায়িকা নতুন গান গাইছেন।": "The singer is singing a new song."
+      "গায়িকার নাম কী?": { native: "What is the singer's name?", bases: { "গায়িকার": "singer" } }
+  "bn-3558":
+    native: "showing"
+    notes:
+      "n1": "{1}: A showing: the showing of a film to the public."
+    examples:
+      "ছবির প্রদর্শন আজ রাতে।": "The film is shown tonight."
+      "প্রদর্শনের টিকিট কোথায়?": { native: "Where are the tickets for the showing?", bases: { "প্রদর্শনের": "showing" } }
+  "bn-3559":
+    native: "release"
+    notes:
+      "n1": "{1}: A release: the first public showing of a film."
+    examples:
+      "ছবির মুক্তি কবে?": "When is the film's release?"
+      "মুক্তির দিন হাততালি।": { native: "On release day, applause.", bases: { "মুক্তির": "release" } }
+  "bn-3560":
+    native: "DVD"
+    notes:
+      "n1": "{1}: A DVD: a disc that holds a film."
+    examples:
+      "ডিভিডিটা কোথায়?": { native: "Where is the DVD?", bases: { "ডিভিডিটা": "DVD" } }
+      "ডিভিডি দেখি চলো।": "Let us watch a DVD."
+  "bn-3561":
+    native: "clip"
+    notes:
+      "n1": "{1}: A clip: a short part of a film or video."
+    examples:
+      "ক্লিপটা দেখো।": { native: "Watch the clip. (familiar)", bases: { "ক্লিপটা": "clip" } }
+      "ক্লিপ শেয়ার করো।": { native: "Share the clip. (familiar)", bases: { "শেয়ার": "share" } }
+  "bn-3562":
+    native: "clap"
+    notes:
+      "n1": "{1}: A clap: a hit of the hands."
+    examples:
+      "তালি দাও।": "Clap. (familiar)"
+      "তালির শব্দ শোনা গেল।": { native: "The sound of clapping was heard.", bases: { "তালির": "clap" } }
+  "bn-3563":
+    native: "applause"
+    notes:
+      "n1": "{1}: Applause: clapping hands for someone."
+    examples:
+      "সবাই হাততালি দিল।": "Everyone applauded."
+      "হাততালির শব্দ বড়।": { native: "The sound of applause is big.", bases: { "হাততালির": "applause" } }
+  "bn-3564":
+    native: "screenplay"
+    notes:
+      "n1": "{1}: A screenplay: the written script of a film."
+    examples:
+      "চিত্রনাট্যটা ভালো।": { native: "The screenplay is good.", bases: { "চিত্রনাট্যটা": "screenplay" } }
+      "চিত্রনাট্যে নতুন সংলাপ আছে।": { native: "There are new dialogues in the screenplay.", bases: { "চিত্রনাট্যে": "screenplay", "আছে": "there are" } }
+  "bn-3565":
+    native: "set"
+    notes:
+      "n1": "{1}: A set: the place built for filming a scene."
+    examples:
+      "সেটটা খুব বড়।": { native: "The set is very big.", bases: { "সেটটা": "set" } }
+      "সেটে অনেক লোক।": { native: "There are many people on the set.", bases: { "সেটে": "set", "লোক": "people" } }
+  "bn-3566":
+    native: "cameraman"
+    notes:
+      "n1": "{1}: A cameraman: the person who films a movie."
+    examples:
+      "ক্যামেরাম্যান কাজ করছেন।": "The cameraman is working."
+      "ক্যামেরাম্যানের কাজ কঠিন।": { native: "The cameraman's work is hard.", bases: { "ক্যামেরাম্যানের": "cameraman" } }
+  "bn-3567":
+    native: "audio"
+    notes:
+      "n1": "{1}: Audio: sound recorded or played."
+    examples:
+      "অডিও ভালো নয়।": "The audio is not good."
+      "অডিওটা বাড়াও।": { native: "Turn up the audio. (familiar)", bases: { "অডিওটা": "audio", "বাড়াও": "turn up" } }
+  "bn-3568":
+    native: "producer"
+    notes:
+      "n1": "{1}: A producer: the person who pays for and organises a film."
+    examples:
+      "প্রযোজক টাকা দিয়েছেন।": "The producer has given the money."
+      "প্রযোজকের সঙ্গে কথা বলো।": { native: "Talk to the producer. (familiar)", bases: { "প্রযোজকের": "producer" } }
+  "bn-3569":
+    native: "Oscar award"
+    notes:
+      "n1": "{1}: An Oscar: the film award given in the United States."
+    examples:
+      "ছবিটা অস্কার জিতেছে।": { native: "The film won an Oscar.", bases: { "অস্কার": "Oscar award" } }
+      "অস্কারের জন্য অনেকে অপেক্ষা করে।": { native: "Many people wait for the Oscars.", bases: { "অস্কারের": "Oscar award", "অনেকে": "many people" } }
+  "bn-3570":
+    native: "blockbuster"
+    notes:
+      "n1": "{1}: A blockbuster: a very successful film."
+    examples:
+      "ছবিটা ব্লকবাস্টার।": "The film is a blockbuster."
+      "ব্লকবাস্টারটা দেখেছি।": { native: "I have seen the blockbuster.", bases: { "ব্লকবাস্টারটা": "blockbuster" } }
+  "bn-3571":
+    native: "cinema hall (formal)"
+    notes:
+      "n1": "{1}: A cinema hall, a formal word for the place where films are shown."
+    examples:
+      "প্রেক্ষাগৃহে অনেক দর্শক।": { native: "There are many viewers in the cinema hall.", bases: { "প্রেক্ষাগৃহে": "cinema hall (formal)" } }
+      "প্রেক্ষাগৃহটা বড়।": { native: "The cinema hall is big.", bases: { "প্রেক্ষাগৃহটা": "cinema hall (formal)" } }
+  "bn-3572":
+    native: "cast"
+    notes:
+      "n1": "{1}: The cast: all the actors in a film."
+    examples:
+      "ছবির কাস্ট ভালো।": "The cast of the film is good."
+      "কাস্টের তালিকা দেখো।": { native: "Look at the list of the cast. (familiar)", bases: { "কাস্টের": "cast" } }
+  "bn-3573":
+    native: "celebrity"
+    notes:
+      "n1": "{1}: A celebrity: a famous person."
+    examples:
+      "সেলিব্রিটি এসেছেন।": "A celebrity has come."
+      "সেলিব্রিটিকে দেখে সবাই খুশি।": { native: "Everyone is happy to see the celebrity.", bases: { "সেলিব্রিটিকে": "celebrity" } }
+  "bn-3574":
+    native: "review"
+    notes:
+      "n1": "{1}: A review: a written opinion about a film or book."
+    examples:
+      "ছবিটার রিভিউ পড়েছি।": { native: "I read the review of the film.", bases: { "রিভিউ": "review" } }
+      "রিভিউটা ভালো।": { native: "The review is good.", bases: { "রিভিউটা": "review" } }
+  "bn-3575":
+    native: "premiere"
+    notes:
+      "n1": "{1}: A premiere: the first public showing of a film."
+    examples:
+      "প্রিমিয়ার কাল।": "The premiere is tomorrow."
+      "প্রিমিয়ারে অনেক লোক।": { native: "There are many people at the premiere.", bases: { "প্রিমিয়ারে": "premiere", "লোক": "people" } }
+  "bn-3576":
+    native: "ghostly; horror"
+    notes:
+      "n1": "{1}: Ghostly or horror: about ghosts and fear."
+    examples:
+      "এই ছবিটা ভৌতিক।": { native: "This film is a horror film.", bases: { "এই": "this" } }
+      "ভৌতিক গল্প শুনে ভয় লাগল।": "Hearing a ghost story I was scared."
+  "bn-3577":
+    native: "funny"
+    notes:
+      "n1": "{1}: Funny: making people laugh."
+    examples:
+      "ছবিটা খুব হাস্যকর।": "The film is very funny."
+      "হাস্যকর দৃশ্য।": "A funny scene."
+  "bn-3578":
+    native: "romantic"
+    notes:
+      "n1": "{1}: Romantic: about love."
+    examples:
+      "এটা একটা রোমান্টিক ছবি।": "This is a romantic film."
+      "রোমান্টিক গান ভালো।": "The romantic song is good."
+  "bn-3579":
+    native: "historical"
+    notes:
+      "n1": "{1}: Historical: about the past."
+    examples:
+      "ছবিটা ঐতিহাসিক।": "The film is historical."
+      "ঐতিহাসিক কাহিনি পছন্দ।": "I like historical stories."
+  "bn-3580":
+    native: "popular"
+    notes:
+      "n1": "{1}: Popular: liked by many people."
+    examples:
+      "ছবিটা খুব জনপ্রিয়।": "The film is very popular."
+      "জনপ্রিয় অভিনেতা এসেছেন।": "A popular actor has come."
+  "bn-3581":
+    native: "to act"
+    notes:
+      "n1": "{1}: To act: to perform in a film or play."
+    examples:
+      "সে ভালো অভিনয় করে।": "She acts well."
+      "সে ছবিতে অভিনয় করেছে।": "She has acted in the film."
+  "bn-3582":
+    native: "to sing"
+    notes:
+      "n1": "{1}: To sing: to make music with the voice."
+    examples:
+      "আমি গান গাই।": "I sing."
+      "গান গাইতে ভালো লাগে।": "It is nice to sing."
+  "bn-3583":
+    native: "to watch a film"
+    notes:
+      "n1": "{1}: To watch a film: to see a film."
+    examples:
+      "আমি রোজ ছবি দেখি।": "I watch films every day."
+      "চলো, ছবি দেখি।": "Let us watch a film. (familiar)"
+  "bn-3584":
+    native: "to film"
+    notes:
+      "n1": "{1}: To film: to shoot a movie or a scene."
+    examples:
+      "কাল শুটিং করা হবে।": "The shooting will be done tomorrow."
+      "শুটিং শেষ করেছি।": { native: "I have finished the shooting.", bases: { "শেষ": "finished" } }
+  "bn-3585":
+    native: "to make a film"
+    bases: { "নির্মাণ": "making" }
+    notes:
+      "n1": "{1}: To make a film: to produce a film."
+    examples:
+      "সে নতুন ছবি নির্মাণ করেছে।": { native: "She has made a new film.", bases: { "নির্মাণ": "making" } }
+      "ছবিটা কে নির্মাণ করেছেন?": { native: "Who has made the film?", bases: { "নির্মাণ": "making" } }
+  "bn-3586":
+    native: "to be released"
+    notes:
+      "n1": "{1}: To be released: to come out for the public to see."
+    examples:
+      "ছবিটা মুক্তি পাবে।": "The film will be released."
+      "ছবিটি কাল মুক্তি পেয়েছে।": "The film was released yesterday."
+  "bn-3587":
+    native: "to applaud"
+    notes:
+      "n1": "{1}: To applaud: to clap hands for someone."
+    examples:
+      "সবাই হাততালি দিয়েছে।": "Everyone has applauded."
+      "হাততালি দাও।": "Applaud. (familiar)"
+  "bn-3588":
+    native: "to play a role"
+    notes:
+      "n1": "{1}: To play a role: to be the character in a film."
+    examples:
+      "সে এই ছবির চরিত্র হয়েছে।": { native: "She has become a character in this film.", bases: { "এই": "this" } }
+      "কে এই চরিত্র হবে?": { native: "Who will play this role?", bases: { "এই": "this" } }
+  "bn-3589":
+    native: "on the big screen"
+    notes:
+      "n1": "{1}: On the big screen: in a cinema."
+    examples:
+      "ছবিটা বড়পর্দায় দেখো।": "Watch the film on the big screen. (familiar)"
+      "বড়পর্দায় ছবিটা চমৎকার।": { native: "On the big screen the film is wonderful.", bases: { "চমৎকার": "wonderful" } }
+  "bn-3590":
+    native: "serially"
+    notes:
+      "n1": "{1}: Serially: one after another, as a series."
+    examples:
+      "ছবিগুলো ধারাবাহিকভাবে চলছে।": "The films are running in a series."
+      "গল্পটা ধারাবাহিকভাবে বেরোবে।": "The story will come out in instalments."
+  "bn-3591":
+    native: "usually"
+    notes:
+      "n1": "{1}: Usually: most of the time, as a habit."
+    examples:
+      "সচরাচর সন্ধ্যায় সিনেমা দেখি।": { native: "I usually watch films in the evening.", bases: { "সচরাচর": "usually" } }
+      "সচরাচর কোন ছবি দেখো?": { native: "Which films do you usually watch? (familiar)", bases: { "সচরাচর": "usually" } }

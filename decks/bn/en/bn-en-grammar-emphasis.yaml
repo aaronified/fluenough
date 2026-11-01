@@ -1,0 +1,25 @@
+schema: 1
+id: "bn-en-grammar-emphasis"
+kind: "layer"
+core: "bn-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Itself: the -ই (-i) form"
+license: "CC-BY-SA-4.0"
+description: "Emphasis: adding -ই (-i) to a word means 'itself', 'only this one' or 'for sure'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Emphasis"
+  slot_name: "form"
+  slots: { "plain": "the word as it is", "emphatic": "the word with -ই (-i): itself, only it, for sure" }
+  entries:
+    "ami": "I"
+    "tumi": "you"
+    "se": "he, she"
+    "amra": "we"
+    "bari": "house"
+    "ekhane": "here"
+    "kal": "tomorrow"
+    "aj": "today"
+    "taka": "money"
+    "kora": "to do"
+  notes: "Add -ই (-i) to a word to stress it: আমিই (āmi-i), I myself; তুমিই (tumi-i), you yourself; বাড়িই (bāṛi-i), the house itself. With a pronoun or a demonstrative it picks out one person or thing: সেই (sei), that very one. A word ending in a vowel sound takes -ই (-i) as it is, and a word that ends in a consonant takes it as well. The -ই (-i) form is said with a clear, stressed voice in speech."

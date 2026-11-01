@@ -1,0 +1,102 @@
+schema: 1
+id: "bn-adjectives-2-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2604"
+    target: "এই ঘরটা খুব উজ্জ্বল।"
+    reading: "ei ghôroṭā khub ujjjol."
+    ipa: "ei ɡʱɔroʈa kʰub udʒdʒdʒol"
+    phonetic: "[ei ɡʱɔroʈa kʰub udʒdʒdʒol]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "ঘরটা", ref: "bn-0051" }]
+    confusables: [{ id: "c1", word: "ঘড়িটা", reading: "ghôṛiṭā", kind: "word" }, { id: "c2", word: "দরজাটা", reading: "dôrjāṭā", kind: "word" }]
+  - id: "bn-2605"
+    target: "দেয়ালে একটা ছবি আছে।"
+    reading: "deyāle ekoṭā chobi āche."
+    ipa: "d̪ejale ekoʈa tʃʰobi atʃʰe"
+    phonetic: "[d̪ejale ekoʈa tʃʰobi atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দেয়ালে", ref: "bn-2576" }, { word: "একটা", ref: "bn-0202" }, { word: "ছবি", ref: "bn-1145" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "বই", reading: "boi", kind: "word" }, { id: "c2", word: "খাতা", reading: "khātā", kind: "word" }]
+  - id: "bn-2606"
+    target: "খাটটা আরামদায়ক, তবে ছোট।"
+    reading: "khāṭoṭā ārāmodāyok, tôbe choṭ."
+    ipa: "kʰaʈoʈa aramod̪ajok t̪ɔbe tʃʰoʈ"
+    phonetic: "[kʰaʈoʈa aramod̪ajok t̪ɔbe tʃʰoʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "খাটটা", ref: "bn-2578" }, { word: "তবে", base: "তবে", reading: "tôbe" }]
+    confusables: [{ id: "c1", word: "বড়", reading: "bôṛo", kind: "word" }, { id: "c2", word: "নরম", reading: "nôrom", kind: "word" }]
+  - id: "bn-2607"
+    target: "আলমারিটা ধুলোমাখা।"
+    reading: "ālomāriṭā dhulomākhā."
+    ipa: "alomariʈa d̪ʱulomakʰa"
+    phonetic: "[alomariʈa d̪ʱulomakʰa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আলমারিটা", ref: "bn-0616" }]
+    confusables: [{ id: "c1", word: "চেয়ারটা", reading: "ceyārṭā", kind: "word" }, { id: "c2", word: "টেবিলটা", reading: "ṭebiltā", kind: "word" }]
+  - id: "bn-2608"
+    target: "ঘরটা ঠাসা, বসার জায়গা নেই।"
+    reading: "ghôroṭā ṭhāsā, bôsār jāyogā nei."
+    ipa: "ɡʱɔroʈa ʈʰasa bɔsar dʒajoɡa nei"
+    phonetic: "[ɡʱɔroʈa ʈʰasa bɔsar dʒajoɡa nei]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "বসার", ref: "bn-0884" }, { word: "জায়গা", base: "জায়গা", reading: "jāyogā" }, { word: "নেই", base: "নেই", reading: "nei" }]
+    confusables: [{ id: "c1", word: "মুক্ত", reading: "mukto", kind: "word" }, { id: "c2", word: "শূন্য", reading: "śunno", kind: "word" }]
+  - id: "bn-2609"
+    target: "বাড়িওয়ালা ঘরটা ভাড়া দেয়।"
+    reading: "bāṛioyālā ghôroṭā bhāṛā dey."
+    ipa: "baɽiojala ɡʱɔroʈa bʱaɽa d̪ej"
+    phonetic: "[baɽiojala ɡʱɔroʈa bʱaɽa d̪ej]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "ভাড়া", ref: "bn-0283" }, { word: "দেয়", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "নেয়", reading: "ney", kind: "word" }, { id: "c2", word: "খায়", reading: "khāy", kind: "word" }]
+  - id: "bn-2610"
+    target: "সিলিংয়ের পাখাটা ঢিলে।"
+    reading: "siliṅyer pākhāṭā ḍhile."
+    ipa: "siliŋjer pakʰaʈa ɖʱile"
+    phonetic: "[siliŋjer pakʰaʈa ɖʱile]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সিলিংয়ের", ref: "bn-2585" }, { word: "পাখাটা", ref: "bn-0609" }]
+    confusables: [{ id: "c1", word: "দেয়ালের", reading: "deyāler", kind: "word" }, { id: "c2", word: "জানালার", reading: "jānālār", kind: "word" }]
+  - id: "bn-2611"
+    target: "দরজায় ছিটকিনি লাগাও।"
+    reading: "dôrojāy chiṭokini lāgāo."
+    ipa: "d̪ɔrodʒaj tʃʰiʈokini laɡao"
+    phonetic: "[d̪ɔrodʒaj tʃʰiʈokini laɡao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দরজায়", ref: "bn-0599" }, { word: "লাগাও", base: "লাগানো", reading: "lāgāo" }]
+    confusables: [{ id: "c1", word: "বাঁধো", reading: "bāndho", kind: "word" }, { id: "c2", word: "খোলো", reading: "kholo", kind: "word" }]
+  - id: "bn-2612"
+    target: "ঘুলঘুলি দিয়ে আলো আসে।"
+    reading: "ghuloghuli diye ālo āse."
+    ipa: "ɡʱuloɡʱuli d̪ije alo ase"
+    phonetic: "[ɡʱuloɡʱuli d̪ije alo ase]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "ঘুলঘুলি", ref: "bn-2598" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "আলো", ref: "bn-0615" }, { word: "আসে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "যায়", reading: "jāy", kind: "word" }, { id: "c2", word: "খায়", reading: "khāy", kind: "word" }]
+  - id: "bn-2613"
+    target: "মেঝেতে কার্পেটটা খুব পুরনো।"
+    reading: "mejhete kārpeṭoṭā khub purono."
+    ipa: "medʒʱet̪e karpeʈoʈa kʰub purono"
+    phonetic: "[medʒʱet̪e karpeʈoʈa kʰub purono]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মেঝেতে", ref: "bn-2577" }, { word: "কার্পেটটা", ref: "bn-2581" }]
+    confusables: [{ id: "c1", word: "মেঝেটা", reading: "mejhṭā", kind: "word" }, { id: "c2", word: "গালিচা", reading: "gālicā", kind: "word" }]

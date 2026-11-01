@@ -1,0 +1,42 @@
+schema: 1
+id: "bn-en-grammar-emphasis-sentences"
+kind: "layer"
+core: "bn-grammar-emphasis-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emphasis: sentences"
+description: "Short sentences with the -ই (-i) form: itself, only this one, for sure. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4075":
+    native: "I will do the work myself."
+    confusables: { "c1": { why: "you: a different person doing the work" }, "c2": { why: "everyone: many people, not one" } }
+  "bn-4076":
+    native: "You are the best."
+    bases: { "সেরা": "best" }
+    confusables: { "c1": { why: "I: the speaker, not the one praised" }, "c2": { why: "good: a weaker word than best" } }
+  "bn-4077":
+    native: "Stay right here. (familiar)"
+    confusables: { "c1": { why: "there: a different place" }, "c2": { why: "home: a place, not 'here'" } }
+  "bn-4078":
+    native: "He will come tomorrow, for sure."
+    confusables: { "c1": { why: "today: a different day" }, "c2": { why: "yesterday: the other direction" } }
+  "bn-4079":
+    native: "That very book is mine."
+    confusables: { "c1": { why: "this: near, not that one" }, "c2": { why: "that: a different distance" } }
+  "bn-4080":
+    native: "Money is not everything."
+    confusables: { "c1": { why: "wealth: a related idea, not money itself" }, "c2": { why: "a price: a different word" } }
+  "bn-4081":
+    native: "The house itself is my shelter."
+    confusables: { "c1": { why: "a building: a larger structure" }, "c2": { why: "a village: a different place" } }
+  "bn-4082":
+    native: "Finish it today, without fail. (familiar)"
+    bases: { "শেষ": "finish" }
+    confusables: { "c1": { why: "tomorrow: the opposite day" }, "c2": { why: "later: not today" } }
+  "bn-4083":
+    native: "We ourselves came first."
+    confusables: { "c1": { why: "last: the opposite of first" }, "c2": { why: "they: other people" } }
+  "bn-4084":
+    native: "I am calling you, and you alone."
+    confusables: { "c1": { why: "everyone: all people, not one" }, "c2": { why: "someone: not a particular person" } }

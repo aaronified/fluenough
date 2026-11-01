@@ -1,0 +1,326 @@
+schema: 1
+id: "bn-en-services"
+kind: "layer"
+core: "bn-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services"
+description: "Post offices, banks, counters and forms: sending a parcel, paying in, getting a token and a receipt. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3116":
+    native: "service"
+    notes:
+      "n1": "{1}: A service: help given to people by an office or a shop."
+    examples:
+      "এখানে ভালো সেবা পাওয়া যায়।": "Good service can be had here."
+      "সেবার জন্য ধন্যবাদ।": { native: "Thank you for the service.", bases: { "সেবার": "of the service", "জন্য": "for", "ধন্যবাদ": "thank you" } }
+  "bn-3117":
+    native: "parcel"
+    notes:
+      "n1": "{1}: A parcel: a package sent through the post."
+    examples:
+      "পার্সেলটা ওজনে ভারী।": { native: "The parcel is heavy in weight.", bases: { "পার্সেলটা": "parcel" } }
+      "পার্সেলটা আজই পাঠাও।": { native: "Send the parcel today. (familiar)", bases: { "পার্সেলটা": "parcel", "আজই": "today itself" } }
+  "bn-3118":
+    native: "form"
+    notes:
+      "n1": "{1}: A form: a printed paper to fill in with details."
+    examples:
+      "ফর্মটা পূরণ করো।": { native: "Fill in the form. (familiar)", bases: { "ফর্মটা": "form", "পূরণ": "fill in" } }
+      "এই ফর্মে সই করো।": { native: "Sign this form. (familiar)", bases: { "এই": "this", "ফর্মে": "form", "সই": "signature" } }
+  "bn-3119":
+    native: "envelope"
+    notes:
+      "n1": "{1}: An envelope: a paper cover for a letter."
+    examples:
+      "খামে চিঠি ভরো।": { native: "Put the letter in the envelope. (familiar)", bases: { "খামে": "envelope", "ভরো": "put in" } }
+      "খামটা সাদা।": { native: "The envelope is white.", bases: { "খামটা": "envelope" } }
+  "bn-3120":
+    native: "counter"
+    notes:
+      "n1": "{1}: A counter: the desk where you are served."
+    examples:
+      "কাউন্টারে লাইন বেশি।": { native: "There is a long queue at the counter.", bases: { "কাউন্টারে": "counter" } }
+      "কাউন্টারটা বন্ধ।": { native: "The counter is closed.", bases: { "কাউন্টারটা": "counter" } }
+  "bn-3121":
+    native: "token"
+    notes:
+      "n1": "{1}: A token: a small ticket that gives a place in a line."
+    examples:
+      "টোকেন নাও।": "Take a token. (familiar)"
+      "টোকেনের নম্বর কত?": { native: "What is the token number?", bases: { "টোকেনের": "token" } }
+  "bn-3122":
+    native: "sender"
+    notes:
+      "n1": "{1}: A sender: the person who sends a parcel or letter."
+    examples:
+      "প্রেরকের নাম লেখো।": { native: "Write the sender's name. (familiar)", bases: { "প্রেরকের": "sender", "নাম": "name", "লেখো": "write" } }
+      "প্রেরক আমি।": "I am the sender."
+  "bn-3123":
+    native: "receiver"
+    notes:
+      "n1": "{1}: A receiver: the person who gets a parcel or letter."
+    examples:
+      "প্রাপকের ঠিকানা কী?": { native: "What is the receiver's address?", bases: { "প্রাপকের": "receiver", "কী": "what" } }
+      "প্রাপককে ফোন করো।": { native: "Phone the receiver. (familiar)", bases: { "প্রাপককে": "receiver" } }
+  "bn-3124":
+    native: "cash"
+    notes:
+      "n1": "{1}: Cash: money in notes and coins, not a card or cheque."
+    examples:
+      "ক্যাশে টাকা দাও।": { native: "Pay in cash. (familiar)", bases: { "ক্যাশে": "cash" } }
+      "ক্যাশ নেই।": { native: "There is no cash.", bases: { "নেই": "there is not" } }
+  "bn-3125":
+    native: "ATM"
+    notes:
+      "n1": "{1}: An ATM: a machine that gives out cash from a bank account."
+    examples:
+      "এটিএম থেকে টাকা তোলো।": { native: "Take money out of the ATM. (familiar)", bases: { "থেকে": "from" } }
+      "এটিএম কোথায়?": "Where is the ATM?"
+  "bn-3126":
+    native: "bank account"
+    notes:
+      "n1": "{1}: A bank account: a record of money kept in a bank."
+    examples:
+      "আমার অ্যাকাউন্ট খোলা।": "My account is open."
+      "অ্যাকাউন্টে টাকা আছে।": { native: "There is money in the account.", bases: { "অ্যাকাউন্টে": "bank account", "আছে": "there is" } }
+  "bn-3127":
+    native: "officer"
+    notes:
+      "n1": "{1}: An officer: a person in charge in an office."
+    examples:
+      "কর্মকর্তা আসবেন।": "The officer will come."
+      "কর্মকর্তাকে জিজ্ঞেস করো।": { native: "Ask the officer. (familiar)", bases: { "কর্মকর্তাকে": "officer", "জিজ্ঞেস": "ask" } }
+  "bn-3128":
+    native: "office (formal)"
+    notes:
+      "n1": "{1}: An office, a formal word for the place where work is done."
+    examples:
+      "কার্যালয় বন্ধ।": "The office is closed."
+      "কার্যালয়ে যাও।": { native: "Go to the office. (familiar)", bases: { "কার্যালয়ে": "office (formal)" } }
+  "bn-3129":
+    native: "permission"
+    notes:
+      "n1": "{1}: Permission: the right to do something, given by someone in charge."
+    examples:
+      "অনুমতি লাগবে।": "Permission is needed."
+      "অনুমতির জন্য অপেক্ষা করো।": { native: "Wait for permission. (familiar)", bases: { "অনুমতির": "permission", "জন্য": "for" } }
+  "bn-3130":
+    native: "licence"
+    notes:
+      "n1": "{1}: A licence: an official paper that allows one to do something."
+    examples:
+      "গাড়ির লাইসেন্স আছে।": { native: "There is a car licence.", bases: { "আছে": "there is" } }
+      "লাইসেন্সটা দেখাও।": { native: "Show the licence. (familiar)", bases: { "লাইসেন্সটা": "licence" } }
+  "bn-3131":
+    native: "application"
+    notes:
+      "n1": "{1}: An application: a formal request for something."
+    examples:
+      "আবেদন জমা দিলাম।": { native: "I submitted the application.", bases: { "জমা": "submitted" } }
+      "আবেদনটা কবে হবে?": { native: "When will the application be done?", bases: { "আবেদনটা": "application", "কবে": "when" } }
+  "bn-3132":
+    native: "insurance"
+    notes:
+      "n1": "{1}: Insurance: a payment that protects against loss."
+    examples:
+      "বীমা করা দরকার।": "Insurance is needed."
+      "বীমার টাকা পাবে।": { native: "You will get the insurance money.", bases: { "বীমার": "insurance" } }
+  "bn-3133":
+    native: "registration"
+    notes:
+      "n1": "{1}: Registration: putting one's name on an official list."
+    examples:
+      "নিবন্ধন করো।": "Register. (familiar)"
+      "নিবন্ধনের ফর্ম কোথায়?": { native: "Where is the registration form?", bases: { "নিবন্ধনের": "registration" } }
+  "bn-3134":
+    native: "public service"
+    notes:
+      "n1": "{1}: A public service: help that the state or an office provides."
+    examples:
+      "পরিষেবা ভালো।": "The service is good."
+      "নতুন পরিষেবা শুরু হলো।": { native: "A new service has started.", bases: { "শুরু": "started" } }
+  "bn-3135":
+    native: "arrangements"
+    notes:
+      "n1": "{1}: Arrangements: the way something is set up to work."
+    examples:
+      "এখানে বসার ব্যবস্থা আছে।": { native: "There is seating arranged here.", bases: { "আছে": "there is" } }
+      "ব্যবস্থাটা ভালো।": { native: "The arrangement is good.", bases: { "ব্যবস্থাটা": "arrangements" } }
+  "bn-3136":
+    native: "help; assistance"
+    notes:
+      "n1": "{1}: Help or assistance given to someone."
+    examples:
+      "সহায়তার জন্য ফোন করো।": { native: "Phone for help. (familiar)", bases: { "সহায়তার": "help; assistance", "জন্য": "for" } }
+      "সহায়তা পাবে।": "You will get help."
+  "bn-3137":
+    native: "stamp"
+    notes:
+      "n1": "{1}: A postage stamp: a small paid label for a letter."
+    examples:
+      "স্ট্যাম্প লাগাও।": { native: "Put a stamp on. (familiar)", bases: { "লাগাও": "put on" } }
+      "স্ট্যাম্পটা পুরনো।": { native: "The stamp is old.", bases: { "স্ট্যাম্পটা": "stamp" } }
+  "bn-3138":
+    native: "validity; period"
+    notes:
+      "n1": "{1}: A period of validity: how long something lasts."
+    examples:
+      "মেয়াদ শেষ।": { native: "The period has ended.", bases: { "শেষ": "ended" } }
+      "মেয়াদ কবে শেষ হবে?": { native: "When will the period end?", bases: { "কবে": "when", "শেষ": "end" } }
+  "bn-3139":
+    native: "loan"
+    notes:
+      "n1": "{1}: A loan: money borrowed and to be paid back."
+    examples:
+      "আমি ঋণ নিয়েছি।": "I have taken a loan."
+      "ঋণের সুদ বেশি।": { native: "The interest on the loan is high.", bases: { "ঋণের": "loan" } }
+  "bn-3140":
+    native: "interest"
+    notes:
+      "n1": "{1}: Interest: the extra money paid for a loan."
+    examples:
+      "সুদের হার কত?": { native: "What is the rate of interest?", bases: { "সুদের": "interest", "হার": "rate" } }
+      "সুদ বেশি।": "The interest is high."
+  "bn-3141":
+    native: "application form"
+    notes:
+      "n1": "{1}: An application form: a printed paper for asking for something."
+    examples:
+      "আবেদনপত্র জমা দাও।": { native: "Submit the application form. (familiar)", bases: { "জমা": "submit" } }
+      "আবেদনপত্রটা ভরো।": { native: "Fill in the application form. (familiar)", bases: { "আবেদনপত্রটা": "application form", "ভরো": "fill" } }
+  "bn-3142":
+    native: "certificate"
+    notes:
+      "n1": "{1}: A certificate: a paper that proves something."
+    examples:
+      "প্রমাণপত্র দেখাও।": "Show the certificate. (familiar)"
+      "প্রমাণপত্রটা নতুন।": { native: "The certificate is new.", bases: { "প্রমাণপত্রটা": "certificate" } }
+  "bn-3143":
+    native: "officer"
+    notes:
+      "n1": "{1}: An officer: a person who works in an office or a service."
+    examples:
+      "অফিসার আছেন।": { native: "The officer is here.", bases: { "আছেন": "is" } }
+      "অফিসারের সঙ্গে কথা বলো।": { native: "Talk to the officer. (familiar)", bases: { "অফিসারের": "officer", "সঙ্গে": "with" } }
+  "bn-3144":
+    native: "delay"
+    notes:
+      "n1": "{1}: A delay: lateness in doing something."
+    examples:
+      "বিলম্বের কারণ কী?": { native: "What is the reason for the delay?", bases: { "বিলম্বের": "delay", "কী": "what" } }
+      "বিলম্ব হলো।": "There has been a delay."
+  "bn-3145":
+    native: "invoice"
+    notes:
+      "n1": "{1}: An invoice or a consignment note: a bill for goods."
+    examples:
+      "চালানটা কোথায়?": { native: "Where is the invoice?", bases: { "চালানটা": "invoice" } }
+      "চালানে দাম লেখা।": { native: "The price is written on the invoice.", bases: { "চালানে": "invoice" } }
+  "bn-3146":
+    native: "valid"
+    notes:
+      "n1": "{1}: Valid: allowed by the rules and accepted."
+    examples:
+      "এই কাগজ বৈধ।": { native: "This paper is valid.", bases: { "এই": "this" } }
+      "বৈধ লাইসেন্স দেখাও।": "Show a valid licence. (familiar)"
+  "bn-3147":
+    native: "invalid"
+    notes:
+      "n1": "{1}: Invalid: not allowed by the rules."
+    examples:
+      "ফর্মটা অবৈধ।": "The form is invalid."
+      "অবৈধ আবেদন বাতিল।": { native: "The invalid application is cancelled.", bases: { "বাতিল": "cancelled" } }
+  "bn-3148":
+    native: "partial"
+    notes:
+      "n1": "{1}: Partial: part of the whole, not all of it."
+    examples:
+      "টাকাটা আংশিক দিলাম।": "I paid part of the money."
+      "আংশিক পরিশোধ।": { native: "Part payment.", bases: { "পরিশোধ": "payment" } }
+  "bn-3149":
+    native: "fixed; set"
+    notes:
+      "n1": "{1}: Fixed or set: a particular time or amount."
+    examples:
+      "নির্দিষ্ট দিনে এসো।": "Come on a set day. (familiar)"
+      "নির্দিষ্ট সময় কত?": "What is the fixed time?"
+  "bn-3150":
+    native: "to apply"
+    notes:
+      "n1": "{1}: To apply: to make a formal request."
+    examples:
+      "আমি আবেদন করেছি।": "I have applied."
+      "আবেদন করো।": "Apply. (familiar)"
+  "bn-3151":
+    native: "to register"
+    notes:
+      "n1": "{1}: To register: to put one's name on an official list."
+    examples:
+      "ছেলের নিবন্ধন করা হলো।": { native: "The boy's registration has been done.", bases: { "ছেলের": "of the boy" } }
+      "আজই নিবন্ধন করো।": { native: "Register today. (familiar)", bases: { "আজই": "today itself" } }
+  "bn-3152":
+    native: "to get permission"
+    notes:
+      "n1": "{1}: To get permission: to take permission to do something."
+    examples:
+      "আমি অনুমতি নিয়েছি।": "I have got permission."
+      "অনুমতি নিতে হবে।": "You will have to get permission."
+  "bn-3153":
+    native: "to withdraw money"
+    notes:
+      "n1": "{1}: To withdraw money: to take money out of a bank."
+    examples:
+      "আমি টাকা তুলেছি।": "I have withdrawn money."
+      "এটিএম থেকে টাকা তোলো।": { native: "Withdraw money from the ATM. (familiar)", bases: { "থেকে": "from" } }
+  "bn-3154":
+    native: "to send money"
+    notes:
+      "n1": "{1}: To send money: to transfer money to someone."
+    examples:
+      "আমি টাকা পাঠিয়েছি।": "I have sent money."
+      "আজই টাকা পাঠাও।": { native: "Send the money today. (familiar)", bases: { "আজই": "today itself" } }
+  "bn-3155":
+    native: "to send a parcel"
+    notes:
+      "n1": "{1}: To send a parcel: to post a package."
+    examples:
+      "আমি একটা পার্সেল পাঠিয়েছি।": "I have sent a parcel."
+      "পার্সেল কাল পাঠাও।": { native: "Send the parcel tomorrow. (familiar)", bases: { "কাল": "tomorrow" } }
+  "bn-3156":
+    native: "to wait"
+    notes:
+      "n1": "{1}: To wait: to stay until something happens."
+    examples:
+      "আমি লাইনে অপেক্ষা করছি।": "I am waiting in the queue."
+      "কিছুক্ষণ অপেক্ষা করো।": { native: "Wait for a while. (familiar)", bases: { "কিছুক্ষণ": "a while" } }
+  "bn-3157":
+    native: "to fill in a form"
+    bases: { "পূরণ": "fill in" }
+    notes:
+      "n1": "{1}: To fill in a form: to write the details on a form."
+    examples:
+      "ফর্মটা পূরণ করো।": { native: "Fill in the form. (familiar)", bases: { "পূরণ": "fill in" } }
+      "ফর্ম পূরণ করেছি।": { native: "I have filled in the form.", bases: { "পূরণ": "fill in" } }
+  "bn-3158":
+    native: "to take a receipt"
+    notes:
+      "n1": "{1}: To take a receipt: to get proof of payment."
+    examples:
+      "রসিদ নিও।": "Take the receipt. (familiar)"
+      "রসিদটা নিয়েছি।": "I have taken the receipt."
+  "bn-3159":
+    native: "online"
+    notes:
+      "n1": "{1}: Online: over the internet."
+    examples:
+      "অনলাইনে আবেদন করো।": "Apply online. (familiar)"
+      "অনলাইনে টাকা পাঠাও।": "Send money online. (familiar)"
+  "bn-3160":
+    native: "on time"
+    notes:
+      "n1": "{1}: On time: at the right time."
+    examples:
+      "যথাসময়ে জমা দাও।": { native: "Submit on time. (familiar)", bases: { "জমা": "submit" } }
+      "যথাসময়ে এসো।": "Come on time. (familiar)"

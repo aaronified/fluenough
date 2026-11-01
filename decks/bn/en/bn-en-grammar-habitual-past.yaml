@@ -1,0 +1,24 @@
+schema: 1
+id: "bn-en-grammar-habitual-past"
+kind: "layer"
+core: "bn-grammar-habitual-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Used to: the -ত (-to) form"
+license: "CC-BY-SA-4.0"
+description: "The habitual past: the verb's stem with -ত (-to) says what someone used to do regularly. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Used to"
+  slot_name: "form"
+  slots: { "simple past": "did it once (he went)", "habitual past": "used to do it (he used to go)" }
+  entries:
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "pora": "to read"
+    "khela": "to play"
+    "dekha": "to see"
+    "bola": "to say"
+    "kora": "to do"
+    "asa": "to come"
+    "shona": "to hear"
+  notes: "The habitual past adds -ত (-to) to the stem: সে স্কুলে যেত (se skule jeto), she used to go to school; আমি রোজ পড়তাম (āmi roj poṛtām), I used to read every day. The simple past adds -ল (-lo) to say what happened once: সে গেল (se gelo), she went. The habitual past is for something that happened often over a long time, often in childhood or long ago."

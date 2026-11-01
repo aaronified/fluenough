@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-concessive"
+name: "Reading: even if, even though"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A short text about a hard choice, and a person who goes on although it is hard. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-even-though"
+    title: "Saying something happened even though it was hard"
+    theme: "daily-life"
+    sentences:
+      - { text: "কষ্ট হলেও আমি রোজ হাঁটতে যাই।", reading: "kôśṭ hôleo āmi roj hām̐ṭote jāi.", ipa: "kɔʃʈ ɦɔleo ami rodʒ ɦãʈot̪e dʒai" }
+      - { text: "বৃষ্টি পড়লেও আমি বাড়িতে বসে থাকি না।", reading: "briśṭi pôṛoleo āmi bāṛite bôse thāki nā.", ipa: "briʃʈi pɔɽoleo ami baɽit̪e bɔse t̪ʰaki na" }
+      - { text: "বাবা না বললেও আমি পড়ার সময় ঠিক রাখি।", reading: "bābā nā bôloleo āmi pôṛār sômoy ṭhik rākhi.", ipa: "baba na bɔloleo ami pɔɽar sɔmoj ʈʰik rakʰi" }
+      - { text: "শরীর ক্লান্ত থাকলেও আমি স্কুলে যাই।", reading: "śorir klānt thākoleo āmi skule jāi.", ipa: "ʃorir klant̪ t̪ʰakoleo ami skule dʒai" }
+      - { text: "সব কিছু করেও আমি খুশি থাকি।", reading: "sôb kichu kôreo āmi khuśi thāki.", ipa: "sɔb kitʃʰu kɔreo ami kʰuʃi t̪ʰaki" }
+    questions:
+      - id: "bn-3824"
+        prompt: { "en": "The speaker keeps going even when things are hard." }
+        answer: true
+      - id: "bn-3825"
+        prompt: { "en": "What does the speaker do when it rains?" }
+        options: [{ "en": "Still goes out" }, { "en": "Stays at home" }]
+        answer: 1
+      - id: "bn-3826"
+        prompt: { "en": "What does the speaker do when the body is tired?" }
+        options: [{ "en": "Still goes to school" }, { "en": "Stays in bed" }]
+        answer: 1
+  - id: "bn-a-hard-choice"
+    title: "A short text about a hard choice"
+    theme: "daily-life"
+    sentences:
+      - { text: "যদিও পরিবার চেয়েছিল, তবু সে শহরে যেতে চাইল না।", reading: "jodio poribār ceyechil, tobu se śôhore jete cāil nā.", ipa: "dʒod̪io poribar tʃejetʃʰil t̪obu se ʃɔɦore dʒet̪e tʃail na" }
+      - { text: "সে জানত গ্রামে থাকলে কষ্ট হবে।", reading: "se jānot grāme thākole kôśṭ hôbe.", ipa: "se dʒanot̪ ɡrame t̪ʰakole kɔʃʈ ɦɔbe" }
+      - { text: "তবু সে বাবা-মাকে দেখাশোনা করার সিদ্ধান্ত নিল।", reading: "tobu se bābā-māke dekhāśonā kôrār siddhānto nil.", ipa: "t̪obu se babamake d̪ekʰaʃona kɔrar sid̪d̪ʱant̪ nil" }
+      - { text: "বন্ধুরা না বললেও সে মন ঠিক রাখল।", reading: "bondhurā nā bôloleo se môn ṭhik rākhol.", ipa: "bond̪ʱura na bɔloleo se mɔn ʈʰik rakʰol" }
+      - { text: "শেষে সে গ্রামেই থেকে গেল।", reading: "śeśe se grāmei theke gel.", ipa: "ʃeʃe se ɡramei t̪ʰeke ɡel" }
+    questions:
+      - id: "bn-3827"
+        prompt: { "en": "The family wanted her to go to the city." }
+        answer: true
+      - id: "bn-3828"
+        prompt: { "en": "Why did she decide to stay in the village?" }
+        options: [{ "en": "To care for her parents" }, { "en": "To open a shop" }]
+        answer: 1
+      - id: "bn-3829"
+        prompt: { "en": "What did she do even though her friends did not agree?" }
+        options: [{ "en": "She kept her mind set" }, { "en": "She left at once" }]
+        answer: 1

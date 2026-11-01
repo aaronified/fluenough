@@ -1,0 +1,82 @@
+schema: 1
+id: "bn-grammar-emphasis"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["plain", "emphatic"]
+  entries:
+    - lemma: "আমি"
+      key: "ami"
+      reading: "āmi"
+      ipa: "ami"
+      forms: { "plain": "আমি", "emphatic": "আমিই" }
+      readings: { "plain": "āmi", "emphatic": "āmii" }
+      ipas: { "plain": "ami", "emphatic": "amii" }
+    - lemma: "তুমি"
+      key: "tumi"
+      reading: "tumi"
+      ipa: "t̪umi"
+      forms: { "plain": "তুমি", "emphatic": "তুমিই" }
+      readings: { "plain": "tumi", "emphatic": "tumii" }
+      ipas: { "plain": "t̪umi", "emphatic": "t̪umii" }
+    - lemma: "সে"
+      key: "se"
+      reading: "se"
+      ipa: "se"
+      forms: { "plain": "সে", "emphatic": "সেই" }
+      readings: { "plain": "se", "emphatic": "sei" }
+      ipas: { "plain": "se", "emphatic": "sei" }
+    - lemma: "আমরা"
+      key: "amra"
+      reading: "āmorā"
+      ipa: "amora"
+      forms: { "plain": "আমরা", "emphatic": "আমরাই" }
+      readings: { "plain": "āmorā", "emphatic": "āmorāi" }
+      ipas: { "plain": "amora", "emphatic": "amorai" }
+    - lemma: "বাড়ি"
+      key: "bari"
+      reading: "bāṛi"
+      ipa: "baɽi"
+      forms: { "plain": "বাড়ি", "emphatic": "বাড়িই" }
+      readings: { "plain": "bāṛi", "emphatic": "bāṛii" }
+      ipas: { "plain": "baɽi", "emphatic": "baɽii" }
+    - lemma: "এখানে"
+      key: "ekhane"
+      reading: "ekhāne"
+      ipa: "ekʰane"
+      forms: { "plain": "এখানে", "emphatic": "এখানেই" }
+      readings: { "plain": "ekhāne", "emphatic": "ekhānei" }
+      ipas: { "plain": "ekʰane", "emphatic": "ekʰanei" }
+    - lemma: "কাল"
+      key: "kal"
+      reading: "kāl"
+      ipa: "kal"
+      forms: { "plain": "কাল", "emphatic": "কালই" }
+      readings: { "plain": "kāl", "emphatic": "kāloi" }
+      ipas: { "plain": "kal", "emphatic": "kaloi" }
+    - lemma: "আজ"
+      key: "aj"
+      reading: "āj"
+      ipa: "adʒ"
+      forms: { "plain": "আজ", "emphatic": "আজই" }
+      readings: { "plain": "āj", "emphatic": "ājoi" }
+      ipas: { "plain": "adʒ", "emphatic": "adʒoi" }
+    - lemma: "টাকা"
+      key: "taka"
+      reading: "ṭākā"
+      ipa: "ʈaka"
+      forms: { "plain": "টাকা", "emphatic": "টাকাই" }
+      readings: { "plain": "ṭākā", "emphatic": "ṭākāi" }
+      ipas: { "plain": "ʈaka", "emphatic": "ʈakai" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "plain": "করি", "emphatic": "করিই" }
+      readings: { "plain": "kori", "emphatic": "korii" }
+      ipas: { "plain": "kori", "emphatic": "korii" }

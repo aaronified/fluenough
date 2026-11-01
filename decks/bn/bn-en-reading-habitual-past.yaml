@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-habitual-past"
+name: "Reading: when I was small"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Telling what you used to do when you were small, and an extract from a memoir about childhood, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-when-i-was-small"
+    title: "Telling what you used to do when you were small"
+    theme: "family"
+    sentences:
+      - { text: "ছোটবেলায় আমরা গ্রামের বাড়িতে থাকতাম।", reading: "choṭobelāy āmorā grāmer bāṛite thākotām.", ipa: "tʃʰoʈobelaj amora ɡramer baɽit̪e t̪ʰakot̪am" }
+      - { text: "আমি রোজ সকালে নদীর ধারে যেতাম।", reading: "āmi roj sôkāle nodir dhāre jetām.", ipa: "ami rodʒ sɔkale nod̪ir d̪ʱare dʒet̪am" }
+      - { text: "দাদু প্রতি রাতে আমাদের রূপকথা বলতেন।", reading: "dādu proti rāte āmāder rupokothā bôloten.", ipa: "d̪ad̪u prot̪i rat̪e amad̪er rupokot̪ʰa bɔlot̪en" }
+      - { text: "আমরা সবাই মন দিয়ে শুনতাম।", reading: "āmorā sôbāi môn diye śunotām.", ipa: "amora sɔbai mɔn d̪ije ʃunot̪am" }
+      - { text: "সেই দিনগুলো এখনো মনে পড়ে।", reading: "sei dinogulo ekhono mône pôṛe.", ipa: "sei d̪inoɡulo ekʰono mɔne pɔɽe" }
+    questions:
+      - id: "bn-4474"
+        prompt: { "en": "The speaker lived in a village house as a child." }
+        answer: true
+      - id: "bn-4475"
+        prompt: { "en": "Where did the speaker go every morning?" }
+        options: [{ "en": "To the river bank" }, { "en": "To the market" }]
+        answer: 1
+      - id: "bn-4476"
+        prompt: { "en": "What did grandfather tell every night?" }
+        options: [{ "en": "Fairy tales" }, { "en": "The news" }]
+        answer: 1
+  - id: "bn-memoir-extract"
+    title: "An extract from a memoir about childhood"
+    theme: "family"
+    sentences:
+      - { text: "আমার মা আমাকে ভোরে জাগাতেন।", reading: "āmār mā āmāke bhore jāgāten.", ipa: "amar ma amake bʱore dʒaɡat̪en" }
+      - { text: "বাবা বাজার থেকে তাজা মাছ আনতেন।", reading: "bābā bājār theke tājā māch ānoten.", ipa: "baba badʒar t̪ʰeke t̪adʒa matʃʰ anot̪en" }
+      - { text: "আমি উঠোনে বসে বই পড়তাম।", reading: "āmi uṭhone bôse boi pôṛotām.", ipa: "ami uʈʰone bɔse boi pɔɽot̪am" }
+      - { text: "বিকেলে বন্ধুরা মিলে খেলতাম।", reading: "bikele bondhurā mile khelotām.", ipa: "bikele bond̪ʱura mile kʰelot̪am" }
+      - { text: "এখন সেই ছোট ঘরটা আর নেই।", reading: "ekhon sei choṭ ghôroṭā ār nei.", ipa: "ekʰon sei tʃʰoʈ ɡʱɔroʈa ar nei" }
+    questions:
+      - id: "bn-4477"
+        prompt: { "en": "The memoir is about the writer's childhood." }
+        answer: true
+      - id: "bn-4478"
+        prompt: { "en": "Who woke the writer early?" }
+        options: [{ "en": "The mother" }, { "en": "The father" }]
+        answer: 1
+      - id: "bn-4479"
+        prompt: { "en": "What did the writer do in the courtyard?" }
+        options: [{ "en": "Read a book" }, { "en": "Cook a meal" }]
+        answer: 1

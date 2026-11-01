@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-verbs-5"
+name: "Reading: what happened next"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A long story told step by step, and a newspaper feature with a short interview, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-what-happened-next"
+    title: "Telling a long story with every step in order"
+    theme: "verbs-5"
+    sentences:
+      - { text: "প্রথমে আমি ঘরটা পরিষ্কার করলাম।", reading: "prôthome āmi ghôroṭā poriśkār kôrolām.", ipa: "prɔt̪ʰome ami ɡʱɔroʈa poriʃkar kɔrolam" }
+      - { text: "তারপর পুরোনো জানালাটা খুলে নতুন কাঁচ লাগালাম।", reading: "tāropor purono jānālāṭā khule notun kām̐c lāgālām.", ipa: "t̪aropor purono dʒanalaʈa kʰule not̪un kãtʃ laɡalam" }
+      - { text: "এরপর বন্ধুরা এসে আমাকে সাহায্য করল।", reading: "eropor bondhurā ese āmāke sāhājj kôrol.", ipa: "eropor bond̪ʱura ese amake saɦadʒdʒ kɔrol" }
+      - { text: "আমরা মিলে চেয়ারগুলো সাজালাম।", reading: "āmorā mile ceyārogulo sājālām.", ipa: "amora mile tʃejaroɡulo sadʒalam" }
+      - { text: "শেষে সবাই মিলে চা খেলাম আর গল্প করলাম।", reading: "śeśe sôbāi mile cā khelām ār gôlp kôrolām.", ipa: "ʃeʃe sɔbai mile tʃa kʰelam ar ɡɔlp kɔrolam" }
+    questions:
+      - id: "bn-4538"
+        prompt: { "en": "The speaker cleaned the room first." }
+        answer: true
+      - id: "bn-4539"
+        prompt: { "en": "What did the speaker fit into the old window?" }
+        options: [{ "en": "New glass" }, { "en": "A curtain" }]
+        answer: 1
+      - id: "bn-4540"
+        prompt: { "en": "What did the friends do after they came?" }
+        options: [{ "en": "Helped arrange the chairs" }, { "en": "Left at once" }]
+        answer: 1
+  - id: "bn-newspaper-feature"
+    title: "A newspaper feature with a short interview"
+    theme: "verbs-5"
+    sentences:
+      - { text: "গ্রামের স্কুলটি গত বছর নতুন করে প্রতিষ্ঠা করা হয়েছে।", reading: "grāmer skuloṭi gôt bôchor notun kôre protiśṭhā kôrā hôyeche.", ipa: "ɡramer skuloʈi ɡɔt̪ bɔtʃʰor not̪un kɔre prot̪iʃʈʰa kɔra ɦɔjetʃʰe" }
+      - { text: "শিক্ষক জানালেন যে তাঁরা নিয়মিত পরীক্ষা আয়োজন করেন।", reading: "śikkhok jānālen je tām̐rā niyomit porikkhā āyojon kôren.", ipa: "ʃikkʰok dʒanalen dʒe t̪ãra nijomit̪ porikkʰa ajodʒon kɔren" }
+      - { text: "ছাত্রদের পড়ার ফলাফল পর্যালোচনা করা হয়।", reading: "chātroder pôṛār phôlāphol pôrjāloconā kôrā hôy.", ipa: "tʃʰat̪rod̪er pɔɽar pʰɔlapʰol pɔrdʒalotʃona kɔra ɦɔj" }
+      - { text: "অনেক বই বিতরণ করা হয়েছে গ্রামের লাইব্রেরিতে।", reading: "ônek boi bitoron kôrā hôyeche grāmer lāibrerite.", ipa: "ɔnek boi bit̪oron kɔra ɦɔjetʃʰe ɡramer laibrerit̪e" }
+      - { text: "আগামী বছর আরও একটা ভবন স্থাপন করা হবে।", reading: "āgāmi bôchor āroo ekoṭā bhôbon sthāpon kôrā hôbe.", ipa: "aɡami bɔtʃʰor aroo ekoʈa bʱɔbon st̪ʰapon kɔra ɦɔbe" }
+    questions:
+      - id: "bn-4541"
+        prompt: { "en": "The village school was founded again last year." }
+        answer: true
+      - id: "bn-4542"
+        prompt: { "en": "What do the teachers organise regularly?" }
+        options: [{ "en": "Tests" }, { "en": "Festivals" }]
+        answer: 1
+      - id: "bn-4543"
+        prompt: { "en": "What will be set up next year?" }
+        options: [{ "en": "Another building" }, { "en": "A new road" }]
+        answer: 1

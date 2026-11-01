@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-grammar-concessive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3814"
+    target: "বৃষ্টি হলেও আমি যাব।"
+    reading: "briśṭi hôleo āmi jāb."
+    ipa: "briʃʈi ɦɔleo ami dʒab"
+    phonetic: "[briʃʈi ɦɔleo ami dʒab]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বৃষ্টি", ref: "bn-1574" }, { word: "হলেও", ref: "bn-0874" }, { word: "আমি", ref: "bn-0833" }, { word: "যাব", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "রোদ", reading: "rod", kind: "word" }, { id: "c2", word: "ঝড়", reading: "jhôṛ", kind: "word" }]
+  - id: "bn-3815"
+    target: "তুমি না এলেও কাজ হবে।"
+    reading: "tumi nā eleo kāj hôbe."
+    ipa: "t̪umi na eleo kadʒ ɦɔbe"
+    phonetic: "[t̪umi na eleo kadʒ ɦɔbe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এলেও", ref: "bn-0872" }, { word: "কাজ", ref: "bn-0198" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ফিরলে", reading: "phirle", kind: "word" }, { id: "c2", word: "ডাকলে", reading: "ḍākle", kind: "word" }]
+  - id: "bn-3816"
+    target: "ডাক্তার বললেও সে ওষুধ খেল না।"
+    reading: "ḍāktār bôloleo se ośudh khel nā."
+    ipa: "ɖakt̪ar bɔloleo se oʃud̪ʱ kʰel na"
+    phonetic: "[ɖakt̪ar bɔloleo se oʃud̪ʱ kʰel na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ডাক্তার", ref: "bn-0376" }, { word: "বললেও", ref: "bn-0879" }, { word: "সে", ref: "bn-0839" }, { word: "ওষুধ", ref: "bn-0378" }, { word: "খেল", ref: "bn-0876" }]
+    confusables: [{ id: "c1", word: "দিল", reading: "dil", kind: "word" }, { id: "c2", word: "কিনল", reading: "kinal", kind: "word" }]
+  - id: "bn-3817"
+    target: "কষ্ট হলেও সে কাজটা শেষ করল।"
+    reading: "kôśṭ hôleo se kājoṭā śeś kôrol."
+    ipa: "kɔʃʈ ɦɔleo se kadʒoʈa ʃeʃ kɔrol"
+    phonetic: "[kɔʃʈ ɦɔleo se kadʒoʈa ʃeʃ kɔrol]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কষ্ট", ref: "bn-1783" }, { word: "হলেও", ref: "bn-0874" }, { word: "সে", ref: "bn-0839" }, { word: "কাজটা", ref: "bn-0198" }, { word: "শেষ", base: "শেষ", reading: "śeś" }, { word: "করল", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "আরাম", reading: "ārām", kind: "word" }, { id: "c2", word: "সুখ", reading: "sukh", kind: "word" }]
+  - id: "bn-3818"
+    target: "না দেখলেও আমি বিশ্বাস করি।"
+    reading: "nā dekholeo āmi biśśās kori."
+    ipa: "na d̪ekʰoleo ami biʃʃas kori"
+    phonetic: "[na d̪ekʰoleo ami biʃʃas kori]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দেখলেও", ref: "bn-0877" }, { word: "আমি", ref: "bn-0833" }, { word: "বিশ্বাস", ref: "bn-2960" }, { word: "করি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "সন্দেহ", reading: "sandeh", kind: "word" }, { id: "c2", word: "ভয়", reading: "bhay", kind: "word" }]
+  - id: "bn-3819"
+    target: "টাকা না পেলেও তিনি খুশি।"
+    reading: "ṭākā nā peleo tini khuśi."
+    ipa: "ʈaka na peleo t̪ini kʰuʃi"
+    phonetic: "[ʈaka na peleo t̪ini kʰuʃi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "টাকা", ref: "bn-0245" }, { word: "পেলেও", ref: "bn-0891" }, { word: "তিনি", ref: "bn-0841" }, { word: "খুশি", ref: "bn-0635" }]
+    confusables: [{ id: "c1", word: "ধার", reading: "dhār", kind: "word" }, { id: "c2", word: "দাম", reading: "dām", kind: "word" }]
+  - id: "bn-3820"
+    target: "যদিও বৃষ্টি হচ্ছিল, তবু আমরা হাঁটতে গেলাম।"
+    reading: "jodio briśṭi hocchil, tobu āmorā hām̐ṭote gelām."
+    ipa: "dʒod̪io briʃʈi ɦotʃtʃʰil t̪obu amora ɦãʈot̪e ɡelam"
+    phonetic: "[dʒod̪io briʃʈi ɦotʃtʃʰil t̪obu amora ɦãʈot̪e ɡelam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বৃষ্টি", ref: "bn-1574" }, { word: "হচ্ছিল", ref: "bn-0874" }, { word: "আমরা", ref: "bn-0834" }, { word: "হাঁটতে", ref: "bn-0896" }, { word: "গেলাম", ref: "bn-0873" }, { word: "যদিও", base: "যদিও", reading: "jodio" }, { word: "তবু", base: "তবু", reading: "tobu" }]
+    confusables: [{ id: "c1", word: "রোদ", reading: "rod", kind: "word" }, { id: "c2", word: "ঠান্ডা", reading: "ṭhānḍā", kind: "word" }]
+  - id: "bn-3821"
+    target: "কথাটা শুনলেও সে রাগ করল না।"
+    reading: "kôthāṭā śunoleo se rāg kôrol nā."
+    ipa: "kɔt̪ʰaʈa ʃunoleo se raɡ kɔrol na"
+    phonetic: "[kɔt̪ʰaʈa ʃunoleo se raɡ kɔrol na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কথাটা", ref: "bn-2409" }, { word: "শুনলেও", ref: "bn-0878" }, { word: "সে", ref: "bn-0839" }, { word: "রাগ", ref: "bn-1249" }, { word: "করল", ref: "bn-0102" }, { word: "না", ref: "bn-0160" }]
+    confusables: [{ id: "c1", word: "খুশি", reading: "khuśi", kind: "word" }, { id: "c2", word: "ভয়", reading: "bhay", kind: "word" }]
+  - id: "bn-3822"
+    target: "ভালো না লাগলেও বইটা পড়ো।"
+    reading: "bhālo nā lāgoleo boiṭā pôṛo."
+    ipa: "bʱalo na laɡoleo boiʈa pɔɽo"
+    phonetic: "[bʱalo na laɡoleo boiʈa pɔɽo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "লাগলেও", ref: "bn-2363" }, { word: "বইটা", ref: "bn-0131" }, { word: "পড়ো", ref: "bn-0119" }]
+    confusables: [{ id: "c1", word: "ফেলো", reading: "phelo", kind: "word" }, { id: "c2", word: "লেখো", reading: "lekho", kind: "word" }]
+  - id: "bn-3823"
+    target: "খুব ক্লান্ত থাকলেও সে কাজ করে।"
+    reading: "khub klānt thākoleo se kāj kôre."
+    ipa: "kʰub klant̪ t̪ʰakoleo se kadʒ kɔre"
+    phonetic: "[kʰub klant̪ t̪ʰakoleo se kadʒ kɔre]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "খুব", ref: "bn-0641" }, { word: "ক্লান্ত", ref: "bn-0636" }, { word: "থাকলেও", ref: "bn-0875" }, { word: "কাজ", ref: "bn-0198" }, { word: "করে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "বিশ্রাম", reading: "biśrām", kind: "word" }, { id: "c2", word: "ঘুম", reading: "ghum", kind: "word" }]

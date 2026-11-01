@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-relative"
+name: "Reading: who and which"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A man described by what he did, and short reviews of a shop and its staff. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-the-man-who-came"
+    title: "The man who came"
+    theme: "travel"
+    sentences:
+      - { text: "যে লোকটা এসেছে, সে আমার কাকা।", reading: "je lokoṭā eseche, se āmār kākā.", ipa: "dʒe lokoʈa esetʃʰe se amar kaka" }
+      - { text: "যে লোকটা চলে গেছে, সে আমার বন্ধু।", reading: "je lokoṭā côle geche, se āmār bondhu.", ipa: "dʒe lokoʈa tʃɔle ɡetʃʰe se amar bond̪ʱu" }
+      - { text: "যে বাচ্চা খেলছে, সে আমার ভাইপো।", reading: "je bāccā kheloche, se āmār bhāipo.", ipa: "dʒe batʃtʃa kʰelotʃʰe se amar bʱaipo" }
+      - { text: "যে মেয়েটা গান গায়, সে আমার বোন।", reading: "je meyeṭā gān gāy, se āmār bon.", ipa: "dʒe mejeʈa ɡan ɡaj se amar bon" }
+      - { text: "যে কাজ শেষ করবে, সে পুরস্কার পাবে।", reading: "je kāj śeś kôrobe, se puroskār pābe.", ipa: "dʒe kadʒ ʃeʃ kɔrobe se puroskar pabe" }
+    questions:
+      - id: "bn-3039"
+        prompt: { "en": "The man who came is the writer's uncle." }
+        answer: true
+      - id: "bn-3040"
+        prompt: { "en": "Who has gone away?" }
+        options: [{ "en": "The writer's friend" }, { "en": "The writer's cousin" }]
+        answer: 1
+      - id: "bn-3041"
+        prompt: { "en": "Who will get a reward?" }
+        options: [{ "en": "The one who finishes the work" }, { "en": "The one who sings" }]
+        answer: 1
+  - id: "bn-shop-reviews"
+    title: "Short reviews of a shop and its staff"
+    theme: "travel"
+    sentences:
+      - { text: "যে দোকানে আমি গেছি, সেখানে ভালো সেবা পেয়েছি।", reading: "je dokāne āmi gechi, sekhāne bhālo sebā peyechi.", ipa: "dʒe d̪okane ami ɡetʃʰi sekʰane bʱalo seba pejetʃʰi" }
+      - { text: "যে কর্মী আমাকে সাহায্য করল, সে খুব ভদ্র ছিল।", reading: "je kormi āmāke sāhājj kôrol, se khub bhôdr chil.", ipa: "dʒe kormi amake saɦadʒdʒ kɔrol se kʰub bʱɔd̪r tʃʰil" }
+      - { text: "যে জিনিস আমি কিনেছি, সেটা ভালো আছে।", reading: "je jinis āmi kinechi, seṭā bhālo āche.", ipa: "dʒe dʒinis ami kinetʃʰi seʈa bʱalo atʃʰe" }
+      - { text: "যে দাম বলা হলো, সেটা একটু বেশি।", reading: "je dām bôlā hôlo, seṭā ekoṭu beśi.", ipa: "dʒe d̪am bɔla ɦɔlo seʈa ekoʈu beʃi" }
+      - { text: "যে ফিরে আসবে, তাকে আমি আবার সুপারিশ করব।", reading: "je phire āsobe, tāke āmi ābār supāriś kôrob.", ipa: "dʒe pʰire asobe t̪ake ami abar supariʃ kɔrob" }
+    questions:
+      - id: "bn-3042"
+        prompt: { "en": "The writer was well served at the shop." }
+        answer: true
+      - id: "bn-3043"
+        prompt: { "en": "What does the writer say about the staff member who helped?" }
+        options: [{ "en": "Very polite" }, { "en": "Very rude" }]
+        answer: 1
+      - id: "bn-3044"
+        prompt: { "en": "What does the writer say about the price?" }
+        options: [{ "en": "A little high" }, { "en": "Very low" }]
+        answer: 1

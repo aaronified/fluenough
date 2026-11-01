@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-history"
+name: "Reading: history"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A guide tells the story of an old fort, and a museum card about a ruler, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-a-fort-visit"
+    title: "A guide tells the story of an old fort"
+    theme: "history"
+    sentences:
+      - { text: "এই দুর্গটি প্রায় চারশো বছর আগের।", reading: "ei durgoṭi prāy cārośo bôchor āger.", ipa: "ei d̪urɡoʈi praj tʃaroʃo bɔtʃʰor aɡer" }
+      - { text: "এখানে এক রাজা অনেক বছর শাসন করেছেন।", reading: "ekhāne ek rājā ônek bôchor śāson kôrechen.", ipa: "ekʰane ek radʒa ɔnek bɔtʃʰor ʃason kɔretʃʰen" }
+      - { text: "যুদ্ধের সময় সৈন্যরা এই দেয়াল রক্ষা করত।", reading: "juddher sômoy soinnorā ei deyāl rôkkhā kôrot.", ipa: "dʒud̪d̪ʱer sɔmoj soinnora ei d̪ejal rɔkkʰa kɔrot̪" }
+      - { text: "ভেতরে একটি প্রাচীন মন্দির আর একটি সমাধি আছে।", reading: "bhetore ekoṭi prācin mondir ār ekoṭi sômādhi āche.", ipa: "bʱet̪ore ekoʈi pratʃin mond̪ir ar ekoʈi sɔmad̪ʱi atʃʰe" }
+      - { text: "আজ এখানে অনেক পর্যটক আসেন।", reading: "āj ekhāne ônek pôrjoṭok āsen.", ipa: "adʒ ekʰane ɔnek pɔrdʒoʈok asen" }
+    questions:
+      - id: "bn-3746"
+        prompt: { "en": "The fort is about four hundred years old." }
+        answer: true
+      - id: "bn-3747"
+        prompt: { "en": "What did the soldiers do in the war?" }
+        options: [{ "en": "They guarded the walls" }, { "en": "They built a temple" }]
+        answer: 1
+      - id: "bn-3748"
+        prompt: { "en": "What is inside the fort?" }
+        options: [{ "en": "An ancient temple and a tomb" }, { "en": "A school and a shop" }]
+        answer: 1
+  - id: "bn-museum-card"
+    title: "A museum card about a ruler"
+    theme: "history"
+    sentences:
+      - { text: "সম্রাট আকবর এক বিশাল সাম্রাজ্য গড়েছিলেন।", reading: "sômrāṭ ākobor ek biśāl sāmrājjo gôṛechilen.", ipa: "sɔmraʈ akobor ek biʃal samradʒdʒ ɡɔɽetʃʰilen" }
+      - { text: "তিনি প্রজাদের কথা শুনতেন এবং ন্যায় বিচার করতেন।", reading: "tini prôjāder kôthā śunoten eboṅ nêy bicār kôroten.", ipa: "t̪ini prɔdʒad̪er kɔt̪ʰa ʃunot̪en eboŋ næj bitʃar kɔrot̪en" }
+      - { text: "তাঁর শাসনের সময় শিল্পকলা আর সংগীতের উন্নতি হয়েছিল।", reading: "tām̐r śāsoner sômoy śilpokolā ār soṅgiter unnoti hôyechil.", ipa: "t̪ãr ʃasoner sɔmoj ʃilpokola ar soŋɡit̪er unnot̪i ɦɔjetʃʰil" }
+      - { text: "রাজধানীতে তাঁর প্রাসাদের ধ্বংসাবশেষ আজও আছে।", reading: "rājodhānite tām̐r prāsāder dhôṅsābośeś ājoo āche.", ipa: "radʒod̪ʱanit̪e t̪ãr prasad̪er d̪ʱɔŋsaboʃeʃ adʒoo atʃʰe" }
+      - { text: "এই কার্ডে তাঁর জীবনের কিছু তথ্য দেওয়া হলো।", reading: "ei kārḍe tām̐r jiboner kichu tottho deoyā hôlo.", ipa: "ei karɖe t̪ãr dʒiboner kitʃʰu t̪ot̪t̪ʰ d̪eoja ɦɔlo" }
+    questions:
+      - id: "bn-3749"
+        prompt: { "en": "The card is about an emperor who built a large empire." }
+        answer: true
+      - id: "bn-3750"
+        prompt: { "en": "What happened to arts and music under his rule?" }
+        options: [{ "en": "They improved" }, { "en": "They were banned" }]
+        answer: 1
+      - id: "bn-3751"
+        prompt: { "en": "What remains of his palace today?" }
+        options: [{ "en": "Its ruins" }, { "en": "A new hotel" }]
+        answer: 1

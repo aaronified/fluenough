@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-services-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3161"
+    target: "এখানে পার্সেল পাঠানো যায়।"
+    reading: "ekhāne pārsel pāṭhāno jāy."
+    ipa: "ekʰane parsel paʈʰano dʒaj"
+    phonetic: "[ekʰane parsel paʈʰano dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এখানে", ref: "bn-0311" }, { word: "পার্সেল", ref: "bn-3117" }, { word: "পাঠানো", ref: "bn-1108" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "চিঠি", reading: "ciṭhi", kind: "word" }, { id: "c2", word: "খাম", reading: "khām", kind: "word" }]
+  - id: "bn-3162"
+    target: "কাউন্টারে লাইন বেশি।"
+    reading: "kāunṭāre lāin beśi."
+    ipa: "kaunʈare lain beʃi"
+    phonetic: "[kaunʈare lain beʃi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কাউন্টারে", ref: "bn-3120" }, { word: "লাইন", ref: "bn-1707" }, { word: "বেশি", ref: "bn-0555" }]
+    confusables: [{ id: "c1", word: "টোকেন", reading: "ṭokeṇ", kind: "word" }, { id: "c2", word: "রসিদ", reading: "rasid", kind: "word" }]
+  - id: "bn-3163"
+    target: "ফর্মটা সঠিক, সুতরাং জমা দাও।"
+    reading: "phôrmoṭā soṭhik, sutorāṅ jômā dāo."
+    ipa: "pʰɔrmoʈa soʈʰik sut̪oraŋ dʒɔma d̪ao"
+    phonetic: "[pʰɔrmoʈa soʈʰik sut̪oraŋ dʒɔma d̪ao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ফর্মটা", ref: "bn-3118" }, { word: "সঠিক", base: "সঠিক", reading: "soṭhik" }, { word: "সুতরাং", base: "সুতরাং", reading: "sutorāṅ" }, { word: "জমা", base: "জমা", reading: "jômā" }, { word: "দাও", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "ভুল", reading: "bhul", kind: "word" }, { id: "c2", word: "অসম্পূর্ণ", reading: "asampūrṇa", kind: "word" }]
+  - id: "bn-3164"
+    target: "অনুমতি ছাড়া কিছু করা যাবে না।"
+    reading: "ônumoti chāṛā kichu kôrā jābe nā."
+    ipa: "ɔnumot̪i tʃʰaɽa kitʃʰu kɔra dʒabe na"
+    phonetic: "[ɔnumot̪i tʃʰaɽa kitʃʰu kɔra dʒabe na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "অনুমতি", ref: "bn-3129" }, { word: "ছাড়া", ref: "bn-0589" }, { word: "কিছু", base: "কিছু", reading: "kichu" }, { word: "করা", ref: "bn-0102" }, { word: "যাবে", ref: "bn-0873" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "সম্মতি", reading: "sammati", kind: "word" }, { id: "c2", word: "লাইসেন্স", reading: "lāisens", kind: "word" }]
+  - id: "bn-3165"
+    target: "টাকা এটিএম থেকে তোলা যায়।"
+    reading: "ṭākā eṭiem theke tolā jāy."
+    ipa: "ʈaka eʈiem t̪ʰeke t̪ola dʒaj"
+    phonetic: "[ʈaka eʈiem t̪ʰeke t̪ola dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "টাকা", ref: "bn-0245" }, { word: "এটিএম", ref: "bn-3125" }, { word: "থেকে", base: "থেকে", reading: "theke" }, { word: "তোলা", ref: "bn-1104" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "জমা", reading: "jamā", kind: "word" }, { id: "c2", word: "ঋণ", reading: "ṛṇa", kind: "word" }]
+  - id: "bn-3166"
+    target: "আবেদনের সময়সীমা আজ।"
+    reading: "ābedoner sômoyosimā āj."
+    ipa: "abed̪oner sɔmojosima adʒ"
+    phonetic: "[abed̪oner sɔmojosima adʒ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আবেদনের", ref: "bn-3131" }, { word: "সময়সীমা", base: "সময়সীমা", reading: "sômoyosimā" }, { word: "আজ", base: "আজ", reading: "āj" }]
+    confusables: [{ id: "c1", word: "কাল", reading: "kāl", kind: "word" }, { id: "c2", word: "গতকাল", reading: "gotokāl", kind: "word" }]
+  - id: "bn-3167"
+    target: "কর্মকর্তা ডাকছেন।"
+    reading: "kôrmokortā ḍākochen."
+    ipa: "kɔrmokort̪a ɖakotʃʰen"
+    phonetic: "[kɔrmokort̪a ɖakotʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কর্মকর্তা", ref: "bn-3127" }, { word: "ডাকছেন", base: "ডাকা", reading: "ḍākochen" }]
+    confusables: [{ id: "c1", word: "অফিসার", reading: "aphisār", kind: "word" }, { id: "c2", word: "কর্মী", reading: "karmī", kind: "word" }]
+  - id: "bn-3168"
+    target: "প্রাপকের ঠিকানা লেখো।"
+    reading: "prāpoker ṭhikānā lekho."
+    ipa: "prapoker ʈʰikana lekʰo"
+    phonetic: "[prapoker ʈʰikana lekʰo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "প্রাপকের", ref: "bn-3123" }, { word: "ঠিকানা", ref: "bn-3068" }, { word: "লেখো", base: "লেখা", reading: "lekho" }]
+    confusables: [{ id: "c1", word: "প্রেরক", reading: "preroka", kind: "word" }, { id: "c2", word: "নাম", reading: "nām", kind: "word" }]
+  - id: "bn-3169"
+    target: "বিলম্বের কারণ কী?"
+    reading: "bilomber kāron ki?"
+    ipa: "bilomber karon ki"
+    phonetic: "[bilomber karon ki]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বিলম্বের", ref: "bn-3144" }, { word: "কারণ", ref: "bn-0365" }, { word: "কী", base: "কী", reading: "ki" }]
+    confusables: [{ id: "c1", word: "সময়", reading: "samay", kind: "word" }, { id: "c2", word: "দেরি", reading: "deri", kind: "word" }]
+  - id: "bn-3170"
+    target: "বৈধ লাইসেন্স দেখাও।"
+    reading: "boidh lāisens dekhāo."
+    ipa: "boid̪ʱ laisens d̪ekʰao"
+    phonetic: "[boid̪ʱ laisens d̪ekʰao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বৈধ", ref: "bn-3146" }, { word: "লাইসেন্স", ref: "bn-3130" }, { word: "দেখাও", ref: "bn-2355" }]
+    confusables: [{ id: "c1", word: "অবৈধ", reading: "abaidh", kind: "word" }, { id: "c2", word: "পুরনো", reading: "purono", kind: "word" }]

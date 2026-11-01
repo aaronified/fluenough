@@ -1,0 +1,397 @@
+schema: 1
+id: "bn-en-travel"
+kind: "layer"
+core: "bn-travel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel"
+description: "Going away: luggage, guides, places to stay and see, and the words for booking, leaving and arriving. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3045":
+    native: "luggage"
+    notes:
+      "n1": "{1}: Luggage: the bags and things one takes on a journey."
+    examples:
+      "আমার মালপত্র ভারী।": "My luggage is heavy."
+      "মালপত্রগুলো গাড়িতে তোলো।": { native: "Put the luggage into the car. (familiar)", bases: { "মালপত্রগুলো": "luggage", "তোলো": "lift; put" } }
+  "bn-3046":
+    native: "guide"
+    notes:
+      "n1": "{1}: A guide: a person who shows visitors around a place."
+    examples:
+      "আমাদের একজন গাইড আছে।": { native: "We have a guide.", bases: { "একজন": "one person", "আছে": "have" } }
+      "গাইডের সঙ্গে ঘুরে দেখো।": { native: "Look around with the guide. (familiar)", bases: { "গাইডের": "guide", "সঙ্গে": "with", "ঘুরে": "walking around" } }
+  "bn-3047":
+    native: "tourist"
+    notes:
+      "n1": "{1}: A tourist: a person who travels for pleasure."
+    examples:
+      "শহরে অনেক পর্যটক এসেছে।": "Many tourists have come to the town."
+      "পর্যটকদের জন্য হোটেল আছে।": { native: "There are hotels for tourists.", bases: { "পর্যটকদের": "tourist", "জন্য": "for", "আছে": "there are" } }
+  "bn-3048":
+    native: "souvenir"
+    notes:
+      "n1": "{1}: A souvenir: a thing bought to remember a trip."
+    examples:
+      "আমি একটা স্মারক কিনেছি।": "I have bought a souvenir."
+      "স্মারকটা খুব সুন্দর।": { native: "The souvenir is very beautiful.", bases: { "স্মারকটা": "souvenir" } }
+  "bn-3049":
+    native: "beach"
+    notes:
+      "n1": "{1}: A beach: the sandy edge of the sea."
+    examples:
+      "সৈকতে অনেক মানুষ।": { native: "There are many people on the beach.", bases: { "সৈকতে": "beach", "মানুষ": "people" } }
+      "সৈকতের বালি নরম।": { native: "The sand of the beach is soft.", bases: { "সৈকতের": "beach" } }
+  "bn-3050":
+    native: "seat"
+    notes:
+      "n1": "{1}: A seat, in a bus, train or hall."
+    examples:
+      "এই আসনটা খালি?": { native: "Is this seat empty?", bases: { "এই": "this", "আসনটা": "seat" } }
+      "জানালার পাশের আসন চাই।": { native: "I want a seat by the window.", bases: { "আসন": "seat" } }
+  "bn-3051":
+    native: "currency"
+    notes:
+      "n1": "{1}: Currency: the money a country uses."
+    examples:
+      "এখানে কোন মুদ্রা চলে?": { native: "Which currency is used here?", bases: { "কোন": "which", "চলে": "used" } }
+      "মুদ্রা বদলাতে ব্যাংকে যাও।": { native: "Go to the bank to change the currency. (familiar)", bases: { "বদলাতে": "to change", "ব্যাংকে": "at the bank" } }
+  "bn-3052":
+    native: "arrival"
+    notes:
+      "n1": "{1}: Arrival: the coming to a place."
+    examples:
+      "আপনার আগমন শুভ হোক।": { native: "May your arrival be happy. (respectful)", bases: { "আপনার": "your (respectful)", "শুভ": "auspicious", "হোক": "may it be" } }
+      "আগমনের খবর পেয়েছি।": { native: "I have heard the news of your arrival.", bases: { "আগমনের": "arrival", "খবর": "news" } }
+  "bn-3053":
+    native: "departure"
+    notes:
+      "n1": "{1}: Departure: the going away from a place."
+    examples:
+      "ট্রেনের প্রস্থান দশটায়।": { native: "The train's departure is at ten.", bases: { "দশটায়": "at ten o'clock" } }
+      "প্রস্থানের আগে টিকিট দেখাও।": { native: "Show your ticket before departure. (familiar)", bases: { "প্রস্থানের": "departure" } }
+  "bn-3054":
+    native: "reservation"
+    notes:
+      "n1": "{1}: A reservation: a seat or room kept for someone."
+    examples:
+      "আমার রিজার্ভেশন আছে।": { native: "I have a reservation.", bases: { "আছে": "have" } }
+      "রিজার্ভেশনের নম্বর কী?": { native: "What is the reservation number?", bases: { "রিজার্ভেশনের": "reservation", "নম্বর": "number", "কী": "what" } }
+  "bn-3055":
+    native: "schedule"
+    notes:
+      "n1": "{1}: A schedule or list of times, such as for trains."
+    examples:
+      "ট্রেনের সূচি দেখো।": "Look at the train timetable. (familiar)"
+      "সূচি বদলেছে।": { native: "The schedule has changed.", bases: { "সূচি": "schedule", "বদলেছে": "changed" } }
+  "bn-3056":
+    native: "itinerary"
+    notes:
+      "n1": "{1}: An itinerary: the plan of places visited on a trip."
+    examples:
+      "ভ্রমণসূচি তৈরি করো।": { native: "Make the itinerary. (familiar)", bases: { "তৈরি": "make" } }
+      "ভ্রমণসূচিতে তিনটে শহর আছে।": { native: "The itinerary has three towns.", bases: { "ভ্রমণসূচিতে": "itinerary", "তিনটে": "three", "আছে": "has" } }
+  "bn-3057":
+    native: "limit; border"
+    notes:
+      "n1": "{1}: A limit or a border: where something stops."
+    examples:
+      "এখানে সীমা শেষ।": { native: "The limit ends here.", bases: { "শেষ": "ends" } }
+      "ওজনের সীমা কত?": "What is the weight limit?"
+  "bn-3058":
+    native: "cab"
+    notes:
+      "n1": "{1}: A cab: a taxi hired by phone or app."
+    examples:
+      "আমি একটা ক্যাব ডাকলাম।": { native: "I called a cab.", bases: { "ডাকলাম": "called" } }
+      "ক্যাবটা এসেছে।": { native: "The cab has come.", bases: { "ক্যাবটা": "cab" } }
+  "bn-3059":
+    native: "bags; luggage"
+    notes:
+      "n1": "{1}: Bags and luggage, as a group."
+    examples:
+      "ব্যাগপত্র গাড়িতে রাখো।": "Put the bags in the car. (familiar)"
+      "আমার ব্যাগপত্র হারিয়েছে।": { native: "My bags have been lost.", bases: { "হারিয়েছে": "lost" } }
+  "bn-3060":
+    native: "hostel"
+    notes:
+      "n1": "{1}: A hostel: a cheap place to stay with shared rooms."
+    examples:
+      "আমরা হোস্টেলে থাকব।": { native: "We will stay in a hostel.", bases: { "হোস্টেলে": "hostel" } }
+      "হোস্টেলটা সস্তা।": { native: "The hostel is cheap.", bases: { "হোস্টেলটা": "hostel" } }
+  "bn-3061":
+    native: "guesthouse"
+    notes:
+      "n1": "{1}: A guesthouse: a place where visitors stay."
+    examples:
+      "অতিথিশালায় ঘর খালি আছে।": { native: "There is a room free at the guesthouse.", bases: { "অতিথিশালায়": "guesthouse", "আছে": "there is" } }
+      "অতিথিশালাটা পাহাড়ে।": { native: "The guesthouse is in the hills.", bases: { "অতিথিশালাটা": "guesthouse" } }
+  "bn-3062":
+    native: "tent"
+    notes:
+      "n1": "{1}: A tent: a cloth shelter for camping."
+    examples:
+      "আমরা তাঁবু খাটালাম।": { native: "We set up the tent.", bases: { "খাটালাম": "set up" } }
+      "তাঁবুতে রাত কাটালাম।": { native: "We spent the night in the tent.", bases: { "তাঁবুতে": "tent", "কাটালাম": "spent" } }
+  "bn-3063":
+    native: "sunscreen"
+    notes:
+      "n1": "{1}: Sunscreen: cream that protects the skin from the sun."
+    examples:
+      "রোদে সানস্ক্রিন লাগাও।": { native: "Put sunscreen on in the sun. (familiar)", bases: { "লাগাও": "put on" } }
+      "সানস্ক্রিনটা ব্যাগে আছে।": { native: "The sunscreen is in the bag.", bases: { "সানস্ক্রিনটা": "sunscreen", "আছে": "is" } }
+  "bn-3064":
+    native: "jacket"
+    notes:
+      "n1": "{1}: A jacket: a warm top worn outside."
+    examples:
+      "ঠান্ডায় একটা জ্যাকেট নাও।": { native: "Take a jacket for the cold. (familiar)", bases: { "ঠান্ডায়": "for the cold" } }
+      "জ্যাকেটটা গরম।": { native: "The jacket is warm.", bases: { "জ্যাকেটটা": "jacket" } }
+  "bn-3065":
+    native: "blanket"
+    notes:
+      "n1": "{1}: A blanket: a thick cover for the bed."
+    examples:
+      "রাতে একটা কম্বল লাগে।": "At night a blanket is needed."
+      "কম্বলটা ভারী।": { native: "The blanket is heavy.", bases: { "কম্বলটা": "blanket" } }
+  "bn-3066":
+    native: "launch (boat)"
+    notes:
+      "n1": "{1}: A launch: a motor boat that carries people on rivers."
+    examples:
+      "লঞ্চে নদী পার হলাম।": { native: "We crossed the river by launch.", bases: { "লঞ্চে": "launch (boat)" } }
+      "লঞ্চটা ছাড়বে দশটায়।": { native: "The launch leaves at ten.", bases: { "লঞ্চটা": "launch (boat)", "ছাড়বে": "leave", "দশটায়": "at ten o'clock" } }
+  "bn-3067":
+    native: "expedition"
+    notes:
+      "n1": "{1}: An expedition or an adventure journey."
+    examples:
+      "সুন্দরবনে একটা অভিযান হবে।": "There will be an expedition to the Sundarbans."
+      "অভিযানের জন্য প্রস্তুত।": { native: "Ready for the expedition.", bases: { "অভিযানের": "expedition", "জন্য": "for", "প্রস্তুত": "ready" } }
+  "bn-3068":
+    native: "address"
+    notes:
+      "n1": "{1}: An address: where a person lives or a place is."
+    examples:
+      "আমার ঠিকানা লিখে নাও।": { native: "Write down my address. (familiar)", bases: { "লিখে": "writing" } }
+      "হোটেলের ঠিকানা কী?": { native: "What is the hotel's address?", bases: { "কী": "what" } }
+  "bn-3069":
+    native: "porter"
+    notes:
+      "n1": "{1}: A porter: a person who carries luggage for travellers."
+    examples:
+      "একজন কুলি মালপত্র নিল।": { native: "A porter took the luggage.", bases: { "একজন": "one person" } }
+      "কুলিকে ডাকো।": { native: "Call the porter. (familiar)", bases: { "কুলিকে": "porter", "ডাকো": "call" } }
+  "bn-3070":
+    native: "museum"
+    notes:
+      "n1": "{1}: A museum: a building where old and important things are kept."
+    examples:
+      "কাল আমরা জাদুঘরে যাব।": { native: "Tomorrow we will go to the museum.", bases: { "কাল": "tomorrow", "জাদুঘরে": "museum" } }
+      "জাদুঘরটা সোমবার বন্ধ।": { native: "The museum is closed on Monday.", bases: { "জাদুঘরটা": "museum", "সোমবার": "Monday" } }
+  "bn-3071":
+    native: "zoo"
+    notes:
+      "n1": "{1}: A zoo: a place where animals are kept to be seen."
+    examples:
+      "চিড়িয়াখানায় বাঘ আছে।": { native: "There are tigers in the zoo.", bases: { "চিড়িয়াখানায়": "zoo", "বাঘ": "tiger", "আছে": "there are" } }
+      "চিড়িয়াখানাটা বড়।": { native: "The zoo is big.", bases: { "চিড়িয়াখানাটা": "zoo" } }
+  "bn-3072":
+    native: "garden; park"
+    notes:
+      "n1": "{1}: A garden or park: a green place to walk."
+    examples:
+      "উদ্যানে অনেক গাছ।": { native: "There are many trees in the park.", bases: { "উদ্যানে": "garden; park", "গাছ": "tree" } }
+      "সকালে উদ্যানে হাঁটি।": { native: "I walk in the park in the morning.", bases: { "উদ্যানে": "garden; park" } }
+  "bn-3073":
+    native: "palace"
+    notes:
+      "n1": "{1}: A palace: a grand house of a king."
+    examples:
+      "এই প্রাসাদটা অনেক পুরনো।": { native: "This palace is very old.", bases: { "এই": "this", "প্রাসাদটা": "palace" } }
+      "প্রাসাদের ভেতরে যাও।": { native: "Go inside the palace. (familiar)", bases: { "প্রাসাদের": "palace", "ভেতরে": "inside" } }
+  "bn-3074":
+    native: "fort"
+    notes:
+      "n1": "{1}: A fort: a strong building to defend a place."
+    examples:
+      "পাহাড়ের উপর একটা দুর্গ।": { native: "A fort on the hill.", bases: { "উপর": "on top" } }
+      "দুর্গটা খুব বড়।": { native: "The fort is very big.", bases: { "দুর্গটা": "fort" } }
+  "bn-3075":
+    native: "monument; pillar"
+    notes:
+      "n1": "{1}: A monument or pillar: a tall stone standing alone."
+    examples:
+      "শহরের মাঝখানে একটা স্তম্ভ আছে।": { native: "There is a monument in the middle of the town.", bases: { "আছে": "there is" } }
+      "স্তম্ভটা ইতিহাসের।": { native: "The monument is from history.", bases: { "স্তম্ভটা": "monument; pillar", "ইতিহাসের": "of history" } }
+  "bn-3076":
+    native: "cafe"
+    notes:
+      "n1": "{1}: A cafe: a small place to sit and have tea or coffee."
+    examples:
+      "ক্যাফেতে বসে কফি খাই।": { native: "I sit in a cafe and have coffee.", bases: { "ক্যাফেতে": "cafe" } }
+      "এই ক্যাফের চা ভালো।": { native: "The tea of this cafe is good.", bases: { "এই": "this", "ক্যাফের": "cafe" } }
+  "bn-3077":
+    native: "lorry"
+    notes:
+      "n1": "{1}: A lorry: a large vehicle that carries goods."
+    examples:
+      "রাস্তায় একটা ট্রাক আছে।": { native: "There is a lorry on the road.", bases: { "আছে": "there is" } }
+      "ট্রাকে মাল যাচ্ছে।": { native: "Goods are going by lorry.", bases: { "ট্রাকে": "lorry", "মাল": "goods", "যাচ্ছে": "going" } }
+  "bn-3078":
+    native: "rest house"
+    notes:
+      "n1": "{1}: A rest house: a place to rest on a long journey."
+    examples:
+      "পথে একটা বিশ্রামাগার আছে।": { native: "There is a rest house on the way.", bases: { "আছে": "there is" } }
+      "বিশ্রামাগারে কিছুক্ষণ থামো।": { native: "Stop for a while at the rest house. (familiar)", bases: { "বিশ্রামাগারে": "rest house", "কিছুক্ষণ": "for a while", "থামো": "stop" } }
+  "bn-3079":
+    native: "gate"
+    notes:
+      "n1": "{1}: A gate: a large door in a wall or fence."
+    examples:
+      "ফটকটা বন্ধ।": { native: "The gate is closed.", bases: { "ফটকটা": "gate" } }
+      "ফটকের কাছে লোক আছে।": { native: "There are people near the gate.", bases: { "ফটকের": "gate", "কাছে": "near", "লোক": "people", "আছে": "there are" } }
+  "bn-3080":
+    native: "worth seeing"
+    notes:
+      "n1": "{1}: Worth seeing: a place that people should visit."
+    examples:
+      "এটা একটা দর্শনীয় স্থান।": { native: "This is a place worth seeing.", bases: { "স্থান": "place" } }
+      "শহরটা খুব দর্শনীয়।": "The town is very worth seeing."
+  "bn-3081":
+    native: "cancelled"
+    notes:
+      "n1": "{1}: Cancelled: no longer going ahead."
+    examples:
+      "ট্রেনটা বাতিল হয়েছে।": "The train has been cancelled."
+      "বাতিল টিকিট ফেরত দাও।": { native: "Return the cancelled ticket. (familiar)", bases: { "ফেরত": "back" } }
+  "bn-3082":
+    native: "safe"
+    notes:
+      "n1": "{1}: Safe: free from danger."
+    examples:
+      "এই হোটেলটা নিরাপদ।": { native: "This hotel is safe.", bases: { "এই": "this" } }
+      "রাতে রাস্তাটা নিরাপদ না।": { native: "At night the road is not safe.", bases: { "না": "not" } }
+  "bn-3083":
+    native: "convenient"
+    notes:
+      "n1": "{1}: Convenient: easy and useful."
+    examples:
+      "ট্রেনটা সুবিধাজনক সময়ে ছাড়ে।": { native: "The train leaves at a convenient time.", bases: { "সময়ে": "at a time", "ছাড়ে": "leaves" } }
+      "হোটেলটা স্টেশনের কাছে, খুব সুবিধাজনক।": { native: "The hotel is near the station, very convenient.", bases: { "কাছে": "near" } }
+  "bn-3084":
+    native: "tiring"
+    notes:
+      "n1": "{1}: Tiring: making one tired."
+    examples:
+      "দীর্ঘ যাত্রা ক্লান্তিকর।": { native: "A long journey is tiring.", bases: { "দীর্ঘ": "long" } }
+      "ক্লান্তিকর দিন শেষ।": { native: "The tiring day has ended.", bases: { "শেষ": "ended" } }
+  "bn-3085":
+    native: "to travel"
+    notes:
+      "n1": "{1}: To travel: to go on a trip."
+    examples:
+      "আমি জাপান ভ্রমণ করেছি।": { native: "I have travelled in Japan.", bases: { "জাপান": "Japan" } }
+      "আমরা পাহাড়ে ভ্রমণ করব।": "We will travel in the hills."
+  "bn-3086":
+    native: "to sightsee"
+    bases: { "ঘুরে": "walking round" }
+    notes:
+      "n1": "{1}: To sightsee: to walk round and look at places."
+    examples:
+      "আমরা শহরটা ঘুরে দেখলাম।": { native: "We walked round the town and saw it.", bases: { "ঘুরে": "walking round" } }
+      "ঘুরে দেখো, ভালো লাগবে।": { native: "Walk round and look, you will like it. (familiar)", bases: { "ঘুরে": "walking round" } }
+  "bn-3087":
+    native: "to book"
+    notes:
+      "n1": "{1}: To book: to reserve a seat or room in advance."
+    examples:
+      "আমি একটা হোটেল বুক করেছি।": "I have booked a hotel."
+      "টিকিটটা আগে থেকে বুক করো।": { native: "Book the ticket in advance. (familiar)", bases: { "থেকে": "from" } }
+  "bn-3088":
+    native: "to cancel"
+    notes:
+      "n1": "{1}: To cancel: to call off a booking or trip."
+    examples:
+      "ট্রেনটা বাতিল করা হয়েছে।": "The train has been cancelled."
+      "যাত্রা বাতিল কোরো না।": { native: "Do not cancel the journey. (familiar)", bases: { "না": "not" } }
+  "bn-3089":
+    native: "to check in"
+    bases: { "চেক": "check", "ইন": "in" }
+    notes:
+      "n1": "{1}: To check in: to register on arrival at a hotel or airport."
+    examples:
+      "আমরা হোটেলে চেক ইন করলাম।": { native: "We checked in at the hotel.", bases: { "চেক": "check", "ইন": "in" } }
+      "চেক ইন করতে পাসপোর্ট লাগে।": { native: "You need a passport to check in.", bases: { "চেক": "check", "ইন": "in" } }
+  "bn-3090":
+    native: "to depart"
+    notes:
+      "n1": "{1}: To depart: to leave a place."
+    examples:
+      "ট্রেনটা প্রস্থান করেছে।": "The train has departed."
+      "সভা থেকে প্রস্থান কোরো না।": { native: "Do not leave the meeting. (familiar)", bases: { "থেকে": "from", "না": "not" } }
+  "bn-3091":
+    native: "to exchange money"
+    notes:
+      "n1": "{1}: To exchange money: to change one currency for another."
+    examples:
+      "আমি ডলার মুদ্রা বিনিময় করেছি।": { native: "I have exchanged the dollars.", bases: { "ডলার": "dollars" } }
+      "মুদ্রা বিনিময়ের হার কত?": { native: "What is the exchange rate?", bases: { "হার": "rate" } }
+  "bn-3092":
+    native: "to buy a ticket"
+    notes:
+      "n1": "{1}: To buy a ticket: to pay for a ticket."
+    examples:
+      "আমি দুটো টিকিট কেটেছি।": { native: "I have bought two tickets.", bases: { "দুটো": "two", "কেটেছি": "bought" } }
+      "আগে টিকিট কাটো।": { native: "Buy the ticket first. (familiar)", bases: { "কাটো": "buy" } }
+  "bn-3093":
+    native: "easily"
+    notes:
+      "n1": "{1}: Easily: without much effort."
+    examples:
+      "এখানে সহজে ট্যাক্সি পাওয়া যায়।": "Taxis can be found easily here."
+      "সহজে পৌঁছানো যায়।": "It can be reached easily."
+  "bn-3094":
+    native: "inside"
+    notes:
+      "n1": "{1}: Inside: in the inner part of a place."
+    examples:
+      "ঘরের ভেতরে কেউ নেই।": { native: "Nobody is inside the room.", bases: { "কেউ": "anybody", "নেই": "is not" } }
+      "ভেতরে আসতে পারি?": { native: "May I come inside?", bases: { "পারি": "can" } }
+  "bn-3095":
+    native: "in advance"
+    notes:
+      "n1": "{1}: In advance: before the time."
+    examples:
+      "আগাম টিকিট কাটো।": { native: "Buy the ticket in advance. (familiar)", bases: { "কাটো": "buy" } }
+      "আগাম কিছু টাকা দিলাম।": { native: "I paid some money in advance.", bases: { "কিছু": "some" } }
+  "bn-3096":
+    native: "early"
+    notes:
+      "n1": "{1}: Early: ahead of time, before the rush."
+    examples:
+      "আগেভাগে স্টেশনে যাও।": "Go to the station early. (familiar)"
+      "আগেভাগে বেরোলে ভিড় কম।": { native: "If you leave early, there is less crowd.", bases: { "বেরোলে": "if leaving", "ভিড়": "crowd", "কম": "less" } }
+  "bn-3097":
+    native: "completely"
+    notes:
+      "n1": "{1}: Completely: entirely, in full."
+    examples:
+      "যাত্রাটা সম্পূর্ণ ঠিক ছিল।": { native: "The journey was completely right.", bases: { "ঠিক": "right", "ছিল": "was" } }
+      "আমি সম্পূর্ণ তৈরি।": { native: "I am completely ready.", bases: { "তৈরি": "ready" } }
+  "bn-3098":
+    native: "travel agency"
+    notes:
+      "n1": "{1}: A travel agency: a firm that books trips and tickets."
+    examples:
+      "ভ্রমণ সংস্থায় যাও।": { native: "Go to the travel agency. (familiar)", bases: { "সংস্থায়": "agency" } }
+      "এই ভ্রমণ সংস্থাটা ভালো।": { native: "This travel agency is good.", bases: { "এই": "this", "সংস্থাটা": "the agency" } }
+  "bn-3099":
+    native: "travel companion"
+    notes:
+      "n1": "{1}: A travel companion: someone who goes on a trip with you."
+    examples:
+      "আমার ভ্রমণসঙ্গী বন্ধু।": "My travel companion is a friend."
+      "ভ্রমণসঙ্গীরা এসেছে।": { native: "The travel companions have come.", bases: { "ভ্রমণসঙ্গীরা": "travel companions" } }

@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-emphasis"
+name: "Reading: only this one"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A person insists on one choice, and a set of short advert slogans, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-only-this-one"
+    title: "Insisting on one choice"
+    theme: "shopping"
+    sentences:
+      - { text: "আমি এই জামাটাই চাই।", reading: "āmi ei jāmāṭāi cāi.", ipa: "ami ei dʒamaʈai tʃai" }
+      - { text: "অন্য কিছু আমার দরকার নেই।", reading: "ônn kichu āmār dôrokār nei.", ipa: "ɔnn kitʃʰu amar d̪ɔrokar nei" }
+      - { text: "তুমি যা বলবে সেটাই করব।", reading: "tumi jā bôlobe seṭāi kôrob.", ipa: "t̪umi dʒa bɔlobe seʈai kɔrob" }
+      - { text: "এখানেই দাঁড়াও, আমি এক্ষুনি আসছি।", reading: "ekhānei dām̐ṛāo, āmi ekkhuni āsochi.", ipa: "ekʰanei d̪ãɽao ami ekkʰuni asotʃʰi" }
+      - { text: "আজ আমি একটাই কাজ করব।", reading: "āj āmi ekoṭāi kāj kôrob.", ipa: "adʒ ami ekoʈai kadʒ kɔrob" }
+    questions:
+      - id: "bn-4085"
+        prompt: { "en": "The speaker wants only this shirt." }
+        answer: true
+      - id: "bn-4086"
+        prompt: { "en": "Does the speaker need anything else?" }
+        options: [{ "en": "No" }, { "en": "Yes, a lot" }]
+        answer: 1
+      - id: "bn-4087"
+        prompt: { "en": "What will the speaker do today?" }
+        options: [{ "en": "Only one task" }, { "en": "Many tasks" }]
+        answer: 1
+  - id: "bn-advert-slogans"
+    title: "Short advert slogans"
+    theme: "shopping"
+    sentences:
+      - { text: "এই দোকানেই সবচেয়ে ভালো দাম।", reading: "ei dokānei sôboceye bhālo dām.", ipa: "ei d̪okanei sɔbotʃeje bʱalo d̪am" }
+      - { text: "আজই কিনুন, কালই পাবেন।", reading: "ājoi kinun, kāloi pāben.", ipa: "adʒoi kinun kaloi paben" }
+      - { text: "ঘরেই আরাম।", reading: "ghôrei ārām.", ipa: "ɡʱɔrei aram" }
+      - { text: "স্বাদেই সেরা।", reading: "sādei serā.", ipa: "sad̪ei sera" }
+      - { text: "আপনার বিশ্বাসেই আমাদের শক্তি।", reading: "āponār biśśāsei āmāder śokti.", ipa: "aponar biʃʃasei amad̪er ʃokt̪i" }
+    questions:
+      - id: "bn-4088"
+        prompt: { "en": "The slogans are for a shop." }
+        answer: true
+      - id: "bn-4089"
+        prompt: { "en": "When do you get the goods if you buy today?" }
+        options: [{ "en": "Tomorrow" }, { "en": "Never" }]
+        answer: 1
+      - id: "bn-4090"
+        prompt: { "en": "What is the best thing according to the taste slogan?" }
+        options: [{ "en": "The taste" }, { "en": "The price" }]
+        answer: 1

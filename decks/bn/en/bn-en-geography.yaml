@@ -1,0 +1,327 @@
+schema: 1
+id: "bn-en-geography"
+kind: "layer"
+core: "bn-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography: the world, maps and places"
+description: "Continents, rivers, places in Bengal and beyond, and the words for a map. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2681":
+    native: "continent"
+    notes:
+      "n1": "{1}: A continent: one of the large bodies of land, such as Asia."
+    examples:
+      "এশিয়া একটা মহাদেশ।": { native: "Asia is a continent.", bases: { "এশিয়া": "Asia" } }
+      "এই মহাদেশে অনেক ভাষা আছে।": { native: "There are many languages on this continent.", bases: { "এই": "this", "মহাদেশে": "continent", "আছে": "there is" } }
+  "bn-2682":
+    native: "island"
+    notes:
+      "n1": "{1}: An island: land with water all round it."
+    examples:
+      "ছোট দ্বীপটায় একটা গ্রাম আছে।": { native: "There is a village on the small island.", bases: { "দ্বীপটায়": "island", "আছে": "there is" } }
+      "দ্বীপে যেতে নৌকা লাগে।": { native: "You need a boat to go to the island.", bases: { "দ্বীপে": "island", "যেতে": "to go", "নৌকা": "boat" } }
+  "bn-2683":
+    native: "desert"
+    notes:
+      "n1": "{1}: A desert: a dry land with little rain."
+    examples:
+      "সাহারা একটা মরুভূমি।": { native: "The Sahara is a desert.", bases: { "সাহারা": "the Sahara" } }
+      "মরুভূমিতে বৃষ্টি কম।": { native: "There is little rain in the desert.", bases: { "মরুভূমিতে": "desert", "বৃষ্টি": "rain", "কম": "little" } }
+  "bn-2684":
+    native: "border"
+    notes:
+      "n1": "{1}: A border: the line where one country meets another."
+    examples:
+      "সীমান্তে বেড়া আছে।": { native: "There is a fence at the border.", bases: { "সীমান্তে": "border", "বেড়া": "fence", "আছে": "there is" } }
+      "সীমান্ত পার হতে পাসপোর্ট লাগে।": { native: "To cross the border you need a passport.", bases: { "পাসপোর্ট": "passport" } }
+  "bn-2685":
+    native: "map"
+    notes:
+      "n1": "{1}: A map: a drawing of a land showing its places."
+    examples:
+      "মানচিত্রে বাংলাদেশ খুঁজো।": { native: "Find Bangladesh on the map. (familiar)", bases: { "মানচিত্রে": "map", "খুঁজো": "to search" } }
+      "এই মানচিত্রটা পুরনো।": { native: "This map is old.", bases: { "এই": "this", "মানচিত্রটা": "map" } }
+  "bn-2686":
+    native: "coast"
+    notes:
+      "n1": "{1}: A coast: the land along the edge of the sea."
+    examples:
+      "উপকূলে বড় শহর আছে।": { native: "There are big cities on the coast.", bases: { "উপকূলে": "coast", "আছে": "there is" } }
+      "সমুদ্রের ধারে উপকূল।": { native: "The coast is by the sea.", bases: { "ধারে": "by the edge" } }
+  "bn-2687":
+    native: "hillock"
+    notes:
+      "n1": "{1}: A small hill, a hillock."
+    examples:
+      "গ্রামের পাশে একটা টিলা।": "A small hill beside the village."
+      "টিলার উপরে উঠলে নদী দেখা যায়।": { native: "From the top of the hill you can see the river.", bases: { "টিলার": "hillock", "উপরে": "on top", "উঠলে": "when you climb" } }
+  "bn-2688":
+    native: "valley"
+    notes:
+      "n1": "{1}: A valley: low land between hills."
+    examples:
+      "নদীর উপত্যকায় ধান হয়।": { native: "Rice grows in the river valley.", bases: { "উপত্যকায়": "valley", "ধান": "rice plant" } }
+      "উপত্যকাটা সবুজ।": { native: "The valley is green.", bases: { "উপত্যকাটা": "valley" } }
+  "bn-2689":
+    native: "plain"
+    notes:
+      "n1": "{1}: A plain: flat land with few hills."
+    examples:
+      "বাংলা অনেকটা সমভূমি।": { native: "Bengal is mostly plain.", bases: { "অনেকটা": "mostly" } }
+      "সমভূমিতে ফসল ভালো হয়।": { native: "Crops grow well on the plain.", bases: { "সমভূমিতে": "plain", "ফসল": "crop" } }
+  "bn-2690":
+    native: "region"
+    notes:
+      "n1": "{1}: A region: an area of a country."
+    examples:
+      "এই অঞ্চলে অনেক নদী আছে।": { native: "There are many rivers in this region.", bases: { "এই": "this", "অঞ্চলে": "region", "আছে": "there is" } }
+      "অঞ্চলটা শান্ত।": { native: "The region is calm.", bases: { "অঞ্চলটা": "region" } }
+  "bn-2691":
+    native: "population"
+    notes:
+      "n1": "{1}: Population: the number of people who live in a place."
+    examples:
+      "শহরের জনসংখ্যা অনেক।": "The population of the city is large."
+      "জনসংখ্যা বাড়ছে।": { native: "The population is growing.", bases: { "বাড়ছে": "growing" } }
+  "bn-2692":
+    native: "Bangladesh"
+    notes:
+      "n1": "{1}: Bangladesh: a country in the east of Bengal."
+    examples:
+      "বাংলাদেশে অনেক নদী আছে।": { native: "There are many rivers in Bangladesh.", bases: { "বাংলাদেশে": "Bangladesh", "আছে": "there is" } }
+      "ঢাকা বাংলাদেশের রাজধানী।": { native: "Dhaka is the capital of Bangladesh.", bases: { "বাংলাদেশের": "Bangladesh" } }
+  "bn-2693":
+    native: "India"
+    notes:
+      "n1": "{1}: India: the large country west of Bangladesh."
+    examples:
+      "ভারত বাংলাদেশের প্রতিবেশী।": { native: "India is a neighbour of Bangladesh.", bases: { "প্রতিবেশী": "neighbour" } }
+      "ভারত একটা বড় দেশ।": "India is a big country."
+  "bn-2694":
+    native: "Kolkata"
+    notes:
+      "n1": "{1}: Kolkata: a big city in West Bengal."
+    examples:
+      "কলকাতা একটা বড় শহর।": "Kolkata is a big city."
+      "কলকাতায় অনেক মানুষ থাকে।": { native: "Many people live in Kolkata.", bases: { "কলকাতায়": "Kolkata", "মানুষ": "people" } }
+  "bn-2695":
+    native: "Dhaka"
+    notes:
+      "n1": "{1}: Dhaka: the capital of Bangladesh."
+    examples:
+      "ঢাকায় অনেক রিকশা আছে।": { native: "There are many rickshaws in Dhaka.", bases: { "ঢাকায়": "Dhaka", "রিকশা": "rickshaw", "আছে": "there is" } }
+      "ঢাকা বাংলাদেশের রাজধানী।": "Dhaka is the capital of Bangladesh."
+  "bn-2696":
+    native: "the Padma (river)"
+    notes:
+      "n1": "{1}: The Padma: a big river in Bangladesh."
+    examples:
+      "পদ্মা একটা বড় নদী।": "The Padma is a big river."
+      "পদ্মার পাড়ে একটা গ্রাম।": { native: "A village on the bank of the Padma.", bases: { "পদ্মার": "the Padma (river)", "পাড়ে": "on the bank" } }
+  "bn-2697":
+    native: "the Ganges"
+    notes:
+      "n1": "{1}: The Ganges: a great river of India."
+    examples:
+      "গঙ্গা ভারতের নদী।": "The Ganges is an Indian river."
+      "গঙ্গার জল পরিষ্কার নয়।": { native: "The water of the Ganges is not clean.", bases: { "গঙ্গার": "the Ganges", "জল": "water" } }
+  "bn-2698":
+    native: "the Himalayas"
+    notes:
+      "n1": "{1}: The Himalayas: the great mountain range to the north."
+    examples:
+      "হিমালয়ে বরফ আছে।": { native: "There is snow in the Himalayas.", bases: { "হিমালয়ে": "the Himalayas", "বরফ": "snow", "আছে": "there is" } }
+      "হিমালয় অনেক উঁচু।": "The Himalayas are very high."
+  "bn-2699":
+    native: "the Sundarbans"
+    notes:
+      "n1": "{1}: The Sundarbans: a large mangrove forest in the south."
+    examples:
+      "সুন্দরবনে বাঘ থাকে।": { native: "There are tigers in the Sundarbans.", bases: { "সুন্দরবনে": "the Sundarbans", "বাঘ": "tiger" } }
+      "সুন্দরবন বিশ্বের বড় বন।": "The Sundarbans is a big forest of the world."
+  "bn-2700":
+    native: "Chittagong"
+    notes:
+      "n1": "{1}: Chittagong: a port city by the sea."
+    examples:
+      "চট্টগ্রাম সমুদ্রের কাছে।": { native: "Chittagong is near the sea.", bases: { "কাছে": "near" } }
+      "চট্টগ্রামের বন্দর বড়।": { native: "The port of Chittagong is big.", bases: { "চট্টগ্রামের": "Chittagong", "বন্দর": "port" } }
+  "bn-2701":
+    native: "delta"
+    notes:
+      "n1": "{1}: A delta: land made where a river spreads into many channels."
+    examples:
+      "বাংলা একটা বড় ডেল্টা।": "Bengal is a big delta."
+      "ডেল্টায় অনেক নদী মেশে।": { native: "Many rivers meet in the delta.", bases: { "ডেল্টায়": "delta", "মেশে": "meet" } }
+  "bn-2702":
+    native: "ocean"
+    notes:
+      "n1": "{1}: An ocean: a very large sea."
+    examples:
+      "ভারত মহাসাগর বড়।": "The Indian Ocean is big."
+      "মহাসাগরের ঢেউ বড়।": { native: "The waves of the ocean are big.", bases: { "মহাসাগরের": "ocean", "ঢেউ": "wave" } }
+  "bn-2703":
+    native: "volcano"
+    notes:
+      "n1": "{1}: A volcano: a mountain that throws out fire and smoke."
+    examples:
+      "আগ্নেয়গিরি থেকে ধোঁয়া বের হয়।": { native: "Smoke comes out of a volcano.", bases: { "থেকে": "from", "ধোঁয়া": "smoke", "বের": "out" } }
+      "আগ্নেয়গিরিটা পাহাড়ের মতো।": { native: "The volcano is like a mountain.", bases: { "আগ্নেয়গিরিটা": "volcano", "মতো": "like" } }
+  "bn-2704":
+    native: "waterfall"
+    notes:
+      "n1": "{1}: A waterfall, or a spring of water from a hill."
+    examples:
+      "পাহাড়ের ঝরনাটা সুন্দর।": { native: "The waterfall from the hill is beautiful.", bases: { "ঝরনাটা": "waterfall" } }
+      "ঝরনার জল ঠান্ডা।": { native: "The water of the waterfall is cold.", bases: { "ঝরনার": "waterfall", "জল": "water" } }
+  "bn-2705":
+    native: "estuary"
+    notes:
+      "n1": "{1}: An estuary: the place where a river meets the sea."
+    examples:
+      "নদী মোহনায় সমুদ্রে মেশে।": { native: "The river meets the sea at the estuary.", bases: { "মোহনায়": "estuary", "মেশে": "meet" } }
+      "মোহনার কাছে বন আছে।": { native: "There is a forest near the estuary.", bases: { "মোহনার": "estuary", "কাছে": "near", "আছে": "there is" } }
+  "bn-2706":
+    native: "land"
+    notes:
+      "n1": "{1}: Land: the ground that people farm and live on."
+    examples:
+      "এই ভূমি উর্বর।": { native: "This land is fertile.", bases: { "এই": "this", "উর্বর": "fertile" } }
+      "কৃষকের ভূমি কম।": { native: "The farmer has little land.", bases: { "কৃষকের": "of the farmer", "কম": "little" } }
+  "bn-2707":
+    native: "metropolis"
+    notes:
+      "n1": "{1}: A metropolis: a very big city."
+    examples:
+      "ঢাকা একটা মহানগর।": "Dhaka is a metropolis."
+      "মহানগরে যানজট বেশি।": { native: "There is more traffic jam in a metropolis.", bases: { "মহানগরে": "metropolis", "যানজট": "traffic jam" } }
+  "bn-2708":
+    native: "city"
+    notes:
+      "n1": "{1}: A city: a large built-up place."
+    examples:
+      "নগরের রাস্তা চওড়া।": { native: "The roads of the city are wide.", bases: { "নগরের": "city" } }
+      "নগরটা বড়, আর ব্যস্ত।": { native: "The city is big, and busy.", bases: { "নগরটা": "city" } }
+  "bn-2709":
+    native: "geography"
+    notes:
+      "n1": "{1}: Geography: the study of the land, the sea and the people on earth."
+    examples:
+      "ভূগোল আমার প্রিয় বিষয়।": { native: "Geography is my favourite subject.", bases: { "প্রিয়": "favourite", "বিষয়": "subject" } }
+      "ভূগোলের বই পড়ো।": { native: "Read a geography book. (familiar)", bases: { "ভূগোলের": "geography", "পড়ো": "read" } }
+  "bn-2710":
+    native: "world"
+    notes:
+      "n1": "{1}: The world: all the countries and people together."
+    examples:
+      "বিশ্বের অনেক দেশ আছে।": { native: "The world has many countries.", bases: { "বিশ্বের": "world", "আছে": "there is" } }
+      "বিশ্বে অনেক ভাষা আছে।": { native: "There are many languages in the world.", bases: { "বিশ্বে": "world", "আছে": "there is" } }
+  "bn-2711":
+    native: "state"
+    notes:
+      "n1": "{1}: A state: a large part of a country with its own government."
+    examples:
+      "ভারতে অনেক রাজ্য আছে।": { native: "India has many states.", bases: { "আছে": "there is" } }
+      "এই রাজ্যের রাজধানী কলকাতা।": { native: "The capital of this state is Kolkata.", bases: { "এই": "this", "রাজ্যের": "state" } }
+  "bn-2712":
+    native: "province"
+    notes:
+      "n1": "{1}: A province: a large region of a country."
+    examples:
+      "প্রদেশ একটা বড় অঞ্চল।": "A province is a big region."
+      "প্রদেশগুলো আলাদা।": { native: "The provinces are separate.", bases: { "প্রদেশগুলো": "province", "আলাদা": "separate" } }
+  "bn-2713":
+    native: "wetland"
+    notes:
+      "n1": "{1}: A wetland: low land that is wet or covered with water."
+    examples:
+      "জলাভূমিতে পাখি থাকে।": { native: "Birds live in the wetland.", bases: { "জলাভূমিতে": "wetland", "পাখি": "bird" } }
+      "জলাভূমিটা শুকিয়ে গেছে।": { native: "The wetland has dried up.", bases: { "জলাভূমিটা": "wetland", "শুকিয়ে": "dried" } }
+  "bn-2714":
+    native: "flat"
+    notes:
+      "n1": "{1}: Flat: level land with no hills."
+    examples:
+      "জমিটা সমতল।": { native: "The land is flat.", bases: { "জমিটা": "the land" } }
+      "সমতল দেশে নদী কম।": { native: "In a flat country there are few rivers.", bases: { "কম": "few" } }
+  "bn-2715":
+    native: "rural"
+    notes:
+      "n1": "{1}: Rural: of the village and the countryside."
+    examples:
+      "গ্রামীণ এলাকায় হাট বসে।": { native: "A market is held in rural areas.", bases: { "এলাকায়": "in the area", "হাট": "market" } }
+      "গ্রামীণ জীবন শান্ত।": { native: "Rural life is calm.", bases: { "জীবন": "life" } }
+  "bn-2716":
+    native: "urban"
+    notes:
+      "n1": "{1}: Urban: of the town and the city."
+    examples:
+      "শহুরে রাস্তা ব্যস্ত।": "The urban roads are busy."
+      "শহুরে মানুষ তাড়াতাড়ি চলে।": { native: "City people walk quickly.", bases: { "মানুষ": "people", "চলে": "walk" } }
+  "bn-2717":
+    native: "cold"
+    notes:
+      "n1": "{1}: Cold: of a cold climate or place."
+    examples:
+      "শীতকালে এখানে শীতল বাতাস।": { native: "In winter there is a cold wind here.", bases: { "শীতকালে": "in winter", "বাতাস": "wind" } }
+      "শীতল দেশে বরফ থাকে।": { native: "In a cold country there is snow.", bases: { "বরফ": "snow" } }
+  "bn-2718":
+    native: "warm; hot"
+    notes:
+      "n1": "{1}: Warm or hot: of a hot climate or place."
+    examples:
+      "উষ্ণ দেশে ধান ভালো হয়।": { native: "In a warm country rice grows well.", bases: { "ধান": "rice" } }
+      "উষ্ণ জলবায়ু।": { native: "A warm climate.", bases: { "জলবায়ু": "climate" } }
+  "bn-2719":
+    native: "to the north"
+    notes:
+      "n1": "{1}: To the north."
+    examples:
+      "নদী উত্তরে বয়ে যায়।": { native: "The river flows north.", bases: { "বয়ে": "flowing" } }
+      "পাহাড় উত্তরে।": "The hills are to the north."
+  "bn-2720":
+    native: "to the south"
+    notes:
+      "n1": "{1}: To the south."
+    examples:
+      "সমুদ্র দক্ষিণে।": "The sea is to the south."
+      "বন দক্ষিণে আছে।": { native: "The forest is to the south.", bases: { "আছে": "is" } }
+  "bn-2721":
+    native: "to the east"
+    notes:
+      "n1": "{1}: To the east."
+    examples:
+      "সূর্য পূর্বে ওঠে।": { native: "The sun rises in the east.", bases: { "সূর্য": "sun", "ওঠে": "rise" } }
+      "পূর্বে একটা বড় নদী।": "To the east there is a big river."
+  "bn-2722":
+    native: "to the west"
+    notes:
+      "n1": "{1}: To the west."
+    examples:
+      "সূর্য পশ্চিমে ডোবে।": { native: "The sun sets in the west.", bases: { "সূর্য": "sun", "ডোবে": "set" } }
+      "পশ্চিমে কলকাতা।": "Kolkata is to the west."
+  "bn-2723":
+    native: "to be located"
+    bases: { "অবস্থিত": "located" }
+    notes:
+      "n1": "{1}: To be located: to lie in a place."
+    examples:
+      "ঢাকা পদ্মার তীরে অবস্থিত।": { native: "Dhaka is located on the bank of the Padma.", bases: { "তীরে": "bank", "অবস্থিত": "located" } }
+      "শহরটা নদীর ধারে অবস্থিত।": { native: "The town is located by the river.", bases: { "ধারে": "by the edge", "অবস্থিত": "located" } }
+  "bn-2724":
+    native: "to flow"
+    bases: { "প্রবাহিত": "flowing" }
+    notes:
+      "n1": "{1}: To flow: of a river, to run along a course."
+    examples:
+      "নদীটা সমুদ্রের দিকে প্রবাহিত।": { native: "The river flows towards the sea.", bases: { "দিকে": "towards", "প্রবাহিত": "flowing" } }
+      "এই নদী অনেক দূর প্রবাহিত হয়েছে।": { native: "This river has flowed a long way.", bases: { "এই": "this", "দূর": "distance", "প্রবাহিত": "flowing" } }
+  "bn-2725":
+    native: "to cross"
+    notes:
+      "n1": "{1}: To cross: to go from one side to the other."
+    examples:
+      "নদী পার হতে নৌকা লাগে।": { native: "To cross the river you need a boat.", bases: { "নৌকা": "boat" } }
+      "সেতু দিয়ে নদী পার হও।": "Cross the river by the bridge. (familiar)"

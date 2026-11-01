@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-passive"
+name: "Reading: it is done"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Something is said about what was done, without saying by whom, and a notice board with announcements. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-it-was-done"
+    title: "Saying what was done, without saying by whom"
+    theme: "news"
+    sentences:
+      - { text: "ঘরটা গত সপ্তাহে রং করা হয়েছে।", reading: "ghôroṭā gôt sôptāhe rôṅ kôrā hôyeche.", ipa: "ɡʱɔroʈa ɡɔt̪ sɔpt̪aɦe rɔŋ kɔra ɦɔjetʃʰe" }
+      - { text: "নতুন জানালা লাগানো হলো।", reading: "notun jānālā lāgāno hôlo.", ipa: "not̪un dʒanala laɡano ɦɔlo" }
+      - { text: "রান্নাঘরের দেয়াল মেরামত করা হবে।", reading: "rānnāghorer deyāl merāmot kôrā hôbe.", ipa: "rannaɡʱorer d̪ejal meramot̪ kɔra ɦɔbe" }
+      - { text: "কাজটা খুব যত্নে করা হয়।", reading: "kājoṭā khub jôtne kôrā hôy.", ipa: "kadʒoʈa kʰub dʒɔt̪ne kɔra ɦɔj" }
+      - { text: "সব কিছু ঠিকঠাক বলা হলো।", reading: "sôb kichu ṭhikoṭhāk bôlā hôlo.", ipa: "sɔb kitʃʰu ʈʰikoʈʰak bɔla ɦɔlo" }
+    questions:
+      - id: "bn-4238"
+        prompt: { "en": "The room was painted last week." }
+        answer: true
+      - id: "bn-4239"
+        prompt: { "en": "What was fitted?" }
+        options: [{ "en": "A new window" }, { "en": "A new door" }]
+        answer: 1
+      - id: "bn-4240"
+        prompt: { "en": "What will be repaired?" }
+        options: [{ "en": "The kitchen wall" }, { "en": "The roof" }]
+        answer: 1
+  - id: "bn-notice-board"
+    title: "A notice board with announcements"
+    theme: "news"
+    sentences:
+      - { text: "আগামী রবিবার সভা ডাকা হয়েছে।", reading: "āgāmi robibār sôbhā ḍākā hôyeche.", ipa: "aɡami robibar sɔbʱa ɖaka ɦɔjetʃʰe" }
+      - { text: "সভায় নতুন নিয়ম জানানো হবে।", reading: "sôbhāy notun niyom jānāno hôbe.", ipa: "sɔbʱaj not̪un nijom dʒanano ɦɔbe" }
+      - { text: "সবাইকে সময়মতো আসতে বলা হচ্ছে।", reading: "sôbāike sômoyomoto āsote bôlā hôcche.", ipa: "sɔbaike sɔmojomot̪o asot̪e bɔla ɦɔtʃtʃʰe" }
+      - { text: "নোটিশটা দরজায় লাগানো হলো।", reading: "noṭiśoṭā dôrojāy lāgāno hôlo.", ipa: "noʈiʃoʈa d̪ɔrodʒaj laɡano ɦɔlo" }
+      - { text: "বিস্তারিত তথ্য অফিসে দেওয়া হবে।", reading: "bistārit tottho ôphise deoyā hôbe.", ipa: "bist̪arit̪ t̪ot̪t̪ʰ ɔpʰise d̪eoja ɦɔbe" }
+    questions:
+      - id: "bn-4241"
+        prompt: { "en": "The notice board announces a meeting." }
+        answer: true
+      - id: "bn-4242"
+        prompt: { "en": "When is the meeting called?" }
+        options: [{ "en": "On Sunday" }, { "en": "On Friday" }]
+        answer: 1
+      - id: "bn-4243"
+        prompt: { "en": "Where will detailed information be given?" }
+        options: [{ "en": "At the office" }, { "en": "On the phone only" }]
+        answer: 1

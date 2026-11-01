@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-relationships"
+name: "Reading: relationships"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Neighbours and old friends talk, and a thank-you note to a neighbour, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-neighbours-and-friends"
+    title: "Talking about neighbours and old friends"
+    theme: "relationships"
+    sentences:
+      - { text: "পড়শি রহিমা খালা আমাদের খুব সাহায্য করেন।", reading: "pôṛośi rohimā khālā āmāder khub sāhājj kôren.", ipa: "pɔɽoʃi roɦima kʰala amad̪er kʰub saɦadʒdʒ kɔren" }
+      - { text: "ছোটবেলার বন্ধু সুমনের সঙ্গে আমার অনেক দিন দেখা হয়নি।", reading: "choṭobelār bondhu sumoner sôṅge āmār ônek din dekhā hôyoni.", ipa: "tʃʰoʈobelar bond̪ʱu sumoner sɔŋɡe amar ɔnek d̪in d̪ekʰa ɦɔjoni" }
+      - { text: "কাল আমরা দেখা করব।", reading: "kāl āmorā dekhā kôrob.", ipa: "kal amora d̪ekʰa kɔrob" }
+      - { text: "তার সঙ্গে আলাপ করতে আমার ভালো লাগে।", reading: "tār sôṅge ālāp kôrote āmār bhālo lāge.", ipa: "t̪ar sɔŋɡe alap kɔrot̪e amar bʱalo laɡe" }
+      - { text: "সে খুব সদয় আর বিশ্বস্ত।", reading: "se khub sôdoy ār biśśosto.", ipa: "se kʰub sɔd̪oj ar biʃʃost̪" }
+    questions:
+      - id: "bn-3943"
+        prompt: { "en": "The speaker often meets an old friend." }
+        answer: false
+      - id: "bn-3944"
+        prompt: { "en": "Who helps the family a lot?" }
+        options: [{ "en": "The neighbour" }, { "en": "The enemy" }]
+        answer: 1
+      - id: "bn-3945"
+        prompt: { "en": "What will the speaker do tomorrow?" }
+        options: [{ "en": "Meet the old friend" }, { "en": "Move house" }]
+        answer: 1
+  - id: "bn-thank-you-note"
+    title: "A thank-you note to a neighbour"
+    theme: "relationships"
+    sentences:
+      - { text: "প্রিয় পড়শি, আপনার সাহায্যের জন্য ধন্যবাদ।", reading: "priy pôṛośi, āponār sāhājjer jonn dhonnobād.", ipa: "prij pɔɽoʃi aponar saɦadʒdʒer dʒonn d̪ʱonnobad̪" }
+      - { text: "আপনি বিপদের দিনে আমাদের পাশে ছিলেন।", reading: "āponi bipoder dine āmāder pāśe chilen.", ipa: "aponi bipod̪er d̪ine amad̪er paʃe tʃʰilen" }
+      - { text: "আপনার এই কৃতজ্ঞতা আমরা কখনো ভুলব না।", reading: "āponār ei kritoggotā āmorā kôkhono bhulob nā.", ipa: "aponar ei krit̪oɡɡot̪a amora kɔkʰono bʱulob na" }
+      - { text: "আবার দেখা হবে।", reading: "ābār dekhā hôbe.", ipa: "abar d̪ekʰa ɦɔbe" }
+      - { text: "শ্রদ্ধা সহ।", reading: "śrôddhā sôh.", ipa: "ʃrɔd̪d̪ʱa sɔɦ" }
+    questions:
+      - id: "bn-3946"
+        prompt: { "en": "The writer thanks a neighbour for help." }
+        answer: true
+      - id: "bn-3947"
+        prompt: { "en": "When was the neighbour there for the family?" }
+        options: [{ "en": "On a difficult day" }, { "en": "On a holiday" }]
+        answer: 1
+      - id: "bn-3948"
+        prompt: { "en": "What will the writer never forget?" }
+        options: [{ "en": "The neighbour's help" }, { "en": "The neighbour's car" }]
+        answer: 1

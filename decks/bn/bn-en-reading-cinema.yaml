@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-cinema"
+name: "Reading: cinema"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Friends talk about a film they saw, and a short film review, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-after-the-film"
+    title: "Friends talk about a film they saw"
+    theme: "cinema"
+    sentences:
+      - { text: "ছবিটা কেমন লাগল?", reading: "chobiṭā kemon lāgol?", ipa: "tʃʰobiʈa kemon laɡol" }
+      - { text: "খুব ভালো লেগেছে, বিশেষ করে নায়িকার অভিনয়।", reading: "khub bhālo legeche, biśeś kôre nāyikār ôbhinoy.", ipa: "kʰub bʱalo leɡetʃʰe biʃeʃ kɔre najikar ɔbʱinoj" }
+      - { text: "কিন্তু শেষটা একটু দুঃখের ছিল।", reading: "kintu śeśoṭā ekoṭu duḥkher chil.", ipa: "kint̪u ʃeʃoʈa ekoʈu d̪uhkʰer tʃʰil" }
+      - { text: "তবু গানগুলো চমৎকার।", reading: "tobu gānogulo cômotkār.", ipa: "t̪obu ɡanoɡulo tʃɔmot̪kar" }
+      - { text: "আমি আবার দেখতে চাই।", reading: "āmi ābār dekhote cāi.", ipa: "ami abar d̪ekʰot̪e tʃai" }
+    questions:
+      - id: "bn-3603"
+        prompt: { "en": "The friends liked the film very much." }
+        answer: true
+      - id: "bn-3604"
+        prompt: { "en": "What did they especially like?" }
+        options: [{ "en": "The heroine's acting" }, { "en": "The price of the ticket" }]
+        answer: 1
+      - id: "bn-3605"
+        prompt: { "en": "What did they find a little sad?" }
+        options: [{ "en": "The ending" }, { "en": "The songs" }]
+        answer: 1
+  - id: "bn-film-review"
+    title: "A short film review"
+    theme: "cinema"
+    sentences:
+      - { text: "ছবির গল্প সহজ আর সুন্দর।", reading: "chobir gôlp sôhoj ār sundor.", ipa: "tʃʰobir ɡɔlp sɔɦodʒ ar sund̪or" }
+      - { text: "পরিচালক দৃশ্যগুলো ভালো সাজিয়েছেন।", reading: "poricālok driśśogulo bhālo sājiyechen.", ipa: "poritʃalok d̪riʃʃoɡulo bʱalo sadʒijetʃʰen" }
+      - { text: "সংলাপ কিছু জায়গায় দুর্বল।", reading: "sôṅlāp kichu jāyogāy durrol.", ipa: "sɔŋlap kitʃʰu dʒajoɡaj d̪urrol" }
+      - { text: "অভিনেতারা সবাই ভালো করেছেন।", reading: "ôbhinetārā sôbāi bhālo kôrechen.", ipa: "ɔbʱinet̪ara sɔbai bʱalo kɔretʃʰen" }
+      - { text: "সব মিলিয়ে ছবিটি দেখার মতো।", reading: "sôb miliye chobiṭi dekhār môto.", ipa: "sɔb milije tʃʰobiʈi d̪ekʰar mɔt̪o" }
+    questions:
+      - id: "bn-3606"
+        prompt: { "en": "The reviewer says the story is simple and beautiful." }
+        answer: true
+      - id: "bn-3607"
+        prompt: { "en": "What is weak in some places?" }
+        options: [{ "en": "The dialogue" }, { "en": "The music" }]
+        answer: 1
+      - id: "bn-3608"
+        prompt: { "en": "What is the overall verdict?" }
+        options: [{ "en": "Worth watching" }, { "en": "Not worth watching" }]
+        answer: 1

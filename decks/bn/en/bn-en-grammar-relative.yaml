@@ -1,0 +1,23 @@
+schema: 1
+id: "bn-en-grammar-relative"
+kind: "layer"
+core: "bn-grammar-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative clauses: যে (je), who, which"
+license: "CC-BY-SA-4.0"
+description: "A relative clause starts with যে (je), who or which, and the verb takes a form for when it happens. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Relative clause"
+  slot_name: "form"
+  slots: { "present": "who or which does (now or usually)", "past": "who or which did", "future": "who or which will do" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "thaka": "to stay"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+  notes: "A relative clause starts with যে (je), who or which: যে আসে (je āse), who comes; যে এসেছে (je esechhe), who came; যে আসবে (je āsbe), who will come. The main clause often starts with সে (se), he, she or that one: যে আসে (je āse), সে ভালো (se bhālo): the one who comes is good. Bengali can put the relative clause first, as in English, or after the main clause."

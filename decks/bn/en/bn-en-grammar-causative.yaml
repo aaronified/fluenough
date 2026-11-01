@@ -1,0 +1,26 @@
+schema: 1
+id: "bn-en-grammar-causative"
+kind: "layer"
+core: "bn-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Making someone do it"
+license: "CC-BY-SA-4.0"
+description: "The causative: a verb with -ানো (-āno) or -ওয়ানো (-oāno) says that the subject makes or gets someone else to do it. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Causative"
+  slot_name: "form"
+  slots: { "simple": "does it himself (the plain verb)", "causative": "makes someone do it, or gets it done" }
+  entries:
+    "khaoa": "to eat"
+    "kora": "to do"
+    "lekha": "to write"
+    "dekha": "to see"
+    "shona": "to hear"
+    "pora": "to read"
+    "bosa": "to sit"
+    "otha": "to get up"
+    "kena": "to buy"
+    "jaoa": "to go"
+    "bola": "to say"
+  notes: "The causative adds -ানো (-āno) to a verb, so the subject makes someone else do it: মা শিশুকে খাওয়ায় (mā śiśuke khāoy), the mother feeds the child; the plain verb is খায় (khāy), he eats. The 3rd-person present is -ায় (-āy), and the stem can change: খাওয়া (khāoā) gives খাওয়ানো (khāoāno), লেখা (lekhā) gives লেখানো (lekhāno). For the doer use the -কে (-ke) form, as in শিশুকে (śiśuke)."

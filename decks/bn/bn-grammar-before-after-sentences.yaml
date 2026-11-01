@@ -1,0 +1,64 @@
+schema: 1
+id: "bn-grammar-before-after-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3379"
+    target: "খাওয়ার আগে হাত ধোও।"
+    reading: "khāoyār āge hāt dhoo."
+    ipa: "kʰaojar aɡe ɦat̪ d̪ʱoo"
+    phonetic: "[kʰaojar aɡe ɦat̪ d̪ʱoo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "খাওয়ার", ref: "bn-0876" }, { word: "আগে", ref: "bn-0299" }, { word: "হাত", ref: "bn-0730" }, { word: "ধোও", ref: "bn-1100" }]
+    confusables: [{ id: "c1", word: "ঘুমানোর", reading: "ghumānor", kind: "word" }, { id: "c2", word: "দৌড়ানোর", reading: "dauṛānor", kind: "word" }]
+  - id: "bn-3380"
+    target: "কাজ শেষ হওয়ার পরে বাড়ি যাব।"
+    reading: "kāj śeś hôoyār pôre bāṛi jāb."
+    ipa: "kadʒ ʃeʃ ɦɔojar pɔre baɽi dʒab"
+    phonetic: "[kadʒ ʃeʃ ɦɔojar pɔre baɽi dʒab]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কাজ", ref: "bn-0198" }, { word: "শেষ", base: "শেষ", reading: "śeś" }, { word: "হওয়ার", ref: "bn-0874" }, { word: "পরে", base: "পরে", reading: "pôre" }, { word: "বাড়ি", ref: "bn-0196" }, { word: "যাব", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "আগে", reading: "āge", kind: "word" }, { id: "c2", word: "সঙ্গে", reading: "saṅge", kind: "word" }]
+  - id: "bn-3381"
+    target: "ট্রেন আসার আগে স্টেশনে যাও।"
+    reading: "ṭren āsār āge sṭeśone jāo."
+    ipa: "ʈren asar aɡe sʈeʃone dʒao"
+    phonetic: "[ʈren asar aɡe sʈeʃone dʒao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ট্রেন", ref: "bn-1164" }, { word: "আসার", ref: "bn-0872" }, { word: "আগে", ref: "bn-0299" }, { word: "স্টেশনে", ref: "bn-0288" }, { word: "যাও", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "গাড়ি", reading: "gāṛi", kind: "word" }, { id: "c2", word: "বাস", reading: "bās", kind: "word" }]
+  - id: "bn-3382"
+    target: "ছবিটা দেখার পরে বলো।"
+    reading: "chobiṭā dekhār pôre bôlo."
+    ipa: "tʃʰobiʈa d̪ekʰar pɔre bɔlo"
+    phonetic: "[tʃʰobiʈa d̪ekʰar pɔre bɔlo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "দেখার", ref: "bn-0877" }, { word: "পরে", base: "পরে", reading: "pôre" }, { word: "বলো", ref: "bn-0879" }]
+    confusables: [{ id: "c1", word: "আগে", reading: "āge", kind: "word" }, { id: "c2", word: "ছবি", reading: "chabi", kind: "word" }]
+  - id: "bn-3383"
+    target: "ঘুম থেকে ওঠার আগে ব্যায়াম করি।"
+    reading: "ghum theke oṭhār āge bêyām kori."
+    ipa: "ɡʱum t̪ʰeke oʈʰar aɡe bæjam kori"
+    phonetic: "[ɡʱum t̪ʰeke oʈʰar aɡe bæjam kori]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ঘুম", ref: "bn-1247" }, { word: "থেকে", base: "থেকে", reading: "theke" }, { word: "ওঠার", base: "ওঠা", reading: "oṭhār" }, { word: "আগে", ref: "bn-0299" }, { word: "ব্যায়াম", ref: "bn-2182" }, { word: "করি", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "দৌড়ানোর", reading: "dauṛānor", kind: "word" }, { id: "c2", word: "খাওয়ার", reading: "khāoār", kind: "word" }]
+  - id: "bn-3384"
+    target: "পরীক্ষা দেওয়ার পরে ঘুমাও।"
+    reading: "porikkhā deoyār pôre ghumāo."
+    ipa: "porikkʰa d̪eojar pɔre ɡʱumao"
+    phonetic: "[porikkʰa d̪eojar pɔre ɡʱumao]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পরীক্ষা", ref: "bn-1776" }, { word: "দেওয়ার", ref: "bn-0888" }, { word: "পরে", base: "পরে", reading: "pôre" }, { word: "ঘুমাও", base: "ঘুমানো", reading: "ghumāo" }]
+    confusables: [{ id: "c1", word: "নেওয়ার", reading: "neyār", kind: "word" }, { id: "c2", word: "আগে", reading: "āge", kind: "word" }]

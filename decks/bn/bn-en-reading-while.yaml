@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-while"
+name: "Reading: while"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "People doing two things at once, and a short story of a bus ride. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-doing-two-things"
+    title: "Saying what people do while doing something else"
+    theme: "history"
+    sentences:
+      - { text: "বাবা খবরের কাগজ পড়তে পড়তে চা খান।", reading: "bābā khôborer kāgoj pôṛote pôṛote cā khān.", ipa: "baba kʰɔborer kaɡodʒ pɔɽot̪e pɔɽot̪e tʃa kʰan" }
+      - { text: "মা রান্না করার সময় গান শোনেন।", reading: "mā rānnā kôrār sômoy gān śonen.", ipa: "ma ranna kɔrar sɔmoj ɡan ʃonen" }
+      - { text: "ভাই হাঁটতে হাঁটতে ফোনে কথা বলে।", reading: "bhāi hām̐ṭote hām̐ṭote phone kôthā bôle.", ipa: "bʱai ɦãʈot̪e ɦãʈot̪e pʰone kɔt̪ʰa bɔle" }
+      - { text: "আমি বাসে যেতে যেতে বই পড়ি।", reading: "āmi bāse jete jete boi poṛi.", ipa: "ami base dʒet̪e dʒet̪e boi poɽi" }
+      - { text: "সবাই কাজ করতে করতে গল্প করে।", reading: "sôbāi kāj kôrote kôrote gôlp kôre.", ipa: "sɔbai kadʒ kɔrot̪e kɔrot̪e ɡɔlp kɔre" }
+    questions:
+      - id: "bn-3531"
+        prompt: { "en": "Father drinks tea while reading the paper." }
+        answer: true
+      - id: "bn-3532"
+        prompt: { "en": "What does mother listen to while cooking?" }
+        options: [{ "en": "Songs" }, { "en": "The news" }]
+        answer: 1
+      - id: "bn-3533"
+        prompt: { "en": "What does the speaker do on the bus?" }
+        options: [{ "en": "Reads a book" }, { "en": "Sleeps" }]
+        answer: 1
+  - id: "bn-a-day-on-the-bus"
+    title: "A short story of a bus ride"
+    theme: "history"
+    sentences:
+      - { text: "বাসে উঠে আমি জানালার পাশে বসলাম।", reading: "bāse uṭhe āmi jānālār pāśe bôsolām.", ipa: "base uʈʰe ami dʒanalar paʃe bɔsolam" }
+      - { text: "যেতে যেতে বৃষ্টি শুরু হলো।", reading: "jete jete briśṭi śuru hôlo.", ipa: "dʒet̪e dʒet̪e briʃʈi ʃuru ɦɔlo" }
+      - { text: "রাস্তায় জ্যাম, তাই আমরা থামতে থামতে এগোলাম।", reading: "rāstāy jêm, tāi āmorā thāmote thāmote egolām.", ipa: "rast̪aj dʒæm t̪ai amora t̪ʰamot̪e t̪ʰamot̪e eɡolam" }
+      - { text: "নামার সময় ছাতা খুঁজে পেলাম।", reading: "nāmār sômoy chātā khum̐je pelām.", ipa: "namar sɔmoj tʃʰat̪a kʰũdʒe pelam" }
+      - { text: "শেষে বাড়ি পৌঁছলাম।", reading: "śeśe bāṛi poum̐cholām.", ipa: "ʃeʃe baɽi poũtʃʰolam" }
+    questions:
+      - id: "bn-3534"
+        prompt: { "en": "The speaker sat by the window." }
+        answer: true
+      - id: "bn-3535"
+        prompt: { "en": "What started while the bus was moving?" }
+        options: [{ "en": "The rain" }, { "en": "A fight" }]
+        answer: 1
+      - id: "bn-3536"
+        prompt: { "en": "What did the speaker find on getting off?" }
+        options: [{ "en": "An umbrella" }, { "en": "A ticket" }]
+        answer: 1

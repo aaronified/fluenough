@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-conditional"
+name: "Reading: if"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Plans that depend on the weather and a short message about a late train. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-rain-plans"
+    title: "Plans if it rains"
+    theme: "weather"
+    sentences:
+      - { text: "বৃষ্টি হলে আমরা বাড়িতে থাকব।", reading: "briśṭi hôle āmorā bāṛite thākob.", ipa: "briʃʈi ɦɔle amora baɽit̪e t̪ʰakob" }
+      - { text: "বৃষ্টি থামলে আমরা হাঁটতে যাব।", reading: "briśṭi thāmole āmorā hām̐ṭote jāb.", ipa: "briʃʈi t̪ʰamole amora ɦãʈot̪e dʒab" }
+      - { text: "না থামলে আমরা সিনেমায় যাব।", reading: "nā thāmole āmorā sinemāy jāb.", ipa: "na t̪ʰamole amora sinemaj dʒab" }
+      - { text: "বাবা না গেলে আমি একা যাব।", reading: "bābā nā gele āmi ekā jāb.", ipa: "baba na ɡele ami eka dʒab" }
+      - { text: "তোমরা এলে আমরা সবাই খুশি হব।", reading: "tomorā ele āmorā sôbāi khuśi hôb.", ipa: "t̪omora ele amora sɔbai kʰuʃi ɦɔb" }
+    questions:
+      - id: "bn-3028"
+        prompt: { "en": "The plans depend on the weather." }
+        answer: true
+      - id: "bn-3029"
+        prompt: { "en": "What happens if it rains?" }
+        options: [{ "en": "They stay at home" }, { "en": "They go to the cinema" }]
+        answer: 1
+      - id: "bn-3030"
+        prompt: { "en": "What happens if the rain stops?" }
+        options: [{ "en": "They go for a walk" }, { "en": "They sleep" }]
+        answer: 1
+  - id: "bn-late-train"
+    title: "A message: the late train"
+    theme: "weather"
+    sentences:
+      - { text: "ট্রেন দেরি করলে আমাকে ফোন করো।", reading: "ṭren deri kôrole āmāke phon kôro.", ipa: "ʈren d̪eri kɔrole amake pʰon kɔro" }
+      - { text: "আমি স্টেশনে অপেক্ষা করব।", reading: "āmi sṭeśone ôpekkhā kôrob.", ipa: "ami sʈeʃone ɔpekkʰa kɔrob" }
+      - { text: "তুমি এলে আমরা বাড়ি যাব।", reading: "tumi ele āmorā bāṛi jāb.", ipa: "t̪umi ele amora baɽi dʒab" }
+      - { text: "না এলে আমি একা যাব।", reading: "nā ele āmi ekā jāb.", ipa: "na ele ami eka dʒab" }
+      - { text: "ধন্যবাদ।", reading: "dhonnobād.", ipa: "d̪ʱonnobad̪" }
+    questions:
+      - id: "bn-3031"
+        prompt: { "en": "If the train is late, the writer asks to be called." }
+        answer: true
+      - id: "bn-3032"
+        prompt: { "en": "Where will the writer wait?" }
+        options: [{ "en": "At the station" }, { "en": "At home" }]
+        answer: 1
+      - id: "bn-3033"
+        prompt: { "en": "If the friend does not come, what will the writer do?" }
+        options: [{ "en": "Go alone" }, { "en": "Stay at the station" }]
+        answer: 1

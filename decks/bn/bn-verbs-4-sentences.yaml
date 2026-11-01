@@ -1,0 +1,118 @@
+schema: 1
+id: "bn-verbs-4-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4209"
+    target: "ছেলেটা বল মারল আর বলটা উড়ে গেল।"
+    reading: "cheleṭā bôl mārol ār bôloṭā uṛe gel."
+    ipa: "tʃʰeleʈa bɔl marol ar bɔloʈa uɽe ɡel"
+    phonetic: "[tʃʰeleʈa bɔl marol ar bɔloʈa uɽe ɡel]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছেলেটা", ref: "bn-0426" }, { word: "বল", ref: "bn-0055" }, { word: "মারল", base: "মারা", reading: "mārol" }, { word: "বলটা", ref: "bn-0055" }, { word: "উড়ে", base: "উড়া", reading: "uṛe" }, { word: "গেল", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "ছুঁড়ল", reading: "chhuṛal", kind: "word" }, { id: "c2", word: "ধরল", reading: "dharal", kind: "word" }]
+  - id: "bn-4210"
+    target: "মা শিশুকে বিছানায় শোয়াল।"
+    reading: "mā śiśuke bichānāy śoyāl."
+    ipa: "ma ʃiʃuke bitʃʰanaj ʃojal"
+    phonetic: "[ma ʃiʃuke bitʃʰanaj ʃojal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "বিছানায়", ref: "bn-0606" }, { word: "শোয়াল", ref: "bn-4194" }]
+    confusables: [{ id: "c1", word: "জাগাল", reading: "jāgāl", kind: "word" }, { id: "c2", word: "বসাল", reading: "bosāl", kind: "word" }]
+  - id: "bn-4211"
+    target: "কেন তুমি এত জোরে চিৎকার করছ?"
+    reading: "ken tumi et jore citkār kôroch?"
+    ipa: "ken t̪umi et̪ dʒore tʃit̪kar kɔrotʃʰ"
+    phonetic: "[ken t̪umi et̪ dʒore tʃit̪kar kɔrotʃʰ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কেন", ref: "bn-0165" }, { word: "তুমি", ref: "bn-0835" }, { word: "এত", base: "এত", reading: "et" }, { word: "জোরে", ref: "bn-1555" }, { word: "চিৎকার", ref: "bn-4206" }, { word: "করছ", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ফিসফিস", reading: "phisphis", kind: "word" }, { id: "c2", word: "হাসছ", reading: "hāsha", kind: "word" }]
+  - id: "bn-4212"
+    target: "পাতা ঝরে পড়ছে।"
+    reading: "pātā jhôre pôṛoche."
+    ipa: "pat̪a dʒʱɔre pɔɽotʃʰe"
+    phonetic: "[pat̪a dʒʱɔre pɔɽotʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পাতা", ref: "bn-2493" }, { word: "ঝরে", base: "ঝরানো", reading: "jhôre" }, { word: "পড়ছে", ref: "bn-0119" }]
+    confusables: [{ id: "c1", word: "গজাচ্ছে", reading: "gajācche", kind: "word" }, { id: "c2", word: "উড়ছে", reading: "uṛche", kind: "word" }]
+  - id: "bn-4213"
+    target: "বৃষ্টিতে রাস্তা পিছলে যায়।"
+    reading: "briśṭite rāstā pichole jāy."
+    ipa: "briʃʈit̪e rast̪a pitʃʰole dʒaj"
+    phonetic: "[briʃʈit̪e rast̪a pitʃʰole dʒaj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বৃষ্টিতে", ref: "bn-1574" }, { word: "রাস্তা", ref: "bn-0313" }, { word: "পিছলে", ref: "bn-4196" }, { word: "যায়", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "শুকনো", reading: "śukno", kind: "word" }, { id: "c2", word: "ভেজা", reading: "bhejā", kind: "word" }]
+  - id: "bn-4214"
+    target: "নতুন ঘর গড়া হলো।"
+    reading: "notun ghôr gôṛā hôlo."
+    ipa: "not̪un ɡʱɔr ɡɔɽa ɦɔlo"
+    phonetic: "[not̪un ɡʱɔr ɡɔɽa ɦɔlo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "ঘর", ref: "bn-0051" }, { word: "গড়া", ref: "bn-4144" }, { word: "হলো", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ভাঙা", reading: "bhāṅā", kind: "word" }, { id: "c2", word: "মেরামত", reading: "merāmat", kind: "word" }]
+  - id: "bn-4215"
+    target: "জামাটা ছিঁড়ে গেল।"
+    reading: "jāmāṭā chim̐ṛe gel."
+    ipa: "dʒamaʈa tʃʰĩɽe ɡel"
+    phonetic: "[dʒamaʈa tʃʰĩɽe ɡel]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "জামাটা", ref: "bn-1189" }, { word: "ছিঁড়ে", base: "ছিঁড়া", reading: "chim̐ṛe" }, { word: "গেল", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "সেলাই", reading: "selāi", kind: "word" }, { id: "c2", word: "ধোয়া", reading: "dhoẏā", kind: "word" }]
+  - id: "bn-4216"
+    target: "সে আমাকে হাসাল।"
+    reading: "se āmāke hāsāl."
+    ipa: "se amake ɦasal"
+    phonetic: "[se amake ɦasal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "আমাকে", ref: "bn-0833" }, { word: "হাসাল", ref: "bn-4181" }]
+    confusables: [{ id: "c1", word: "কাঁদাল", reading: "kāndāl", kind: "word" }, { id: "c2", word: "ভাবাল", reading: "bhābāl", kind: "word" }]
+  - id: "bn-4217"
+    target: "খুব ঠান্ডায় হাত কাঁপছে।"
+    reading: "khub ṭhānḍāy hāt kām̐poche."
+    ipa: "kʰub ʈʰanɖaj ɦat̪ kãpotʃʰe"
+    phonetic: "[kʰub ʈʰanɖaj ɦat̪ kãpotʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "খুব", ref: "bn-0641" }, { word: "ঠান্ডায়", ref: "bn-0622" }, { word: "হাত", ref: "bn-0730" }, { word: "কাঁপছে", ref: "bn-2364" }]
+    confusables: [{ id: "c1", word: "গরম", reading: "garam", kind: "word" }, { id: "c2", word: "শান্ত", reading: "śānta", kind: "word" }]
+  - id: "bn-4218"
+    target: "শিক্ষক বিষয়টা ব্যাখ্যা করলেন।"
+    reading: "śikkhok biśoyoṭā bêkkhā kôrolen."
+    ipa: "ʃikkʰok biʃojoʈa bækkʰa kɔrolen"
+    phonetic: "[ʃikkʰok biʃojoʈa bækkʰa kɔrolen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "বিষয়টা", ref: "bn-2164" }, { word: "ব্যাখ্যা", ref: "bn-4207" }, { word: "করলেন", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "জিজ্ঞেস", reading: "jijñes", kind: "word" }, { id: "c2", word: "লিখলেন", reading: "likhlen", kind: "word" }]
+  - id: "bn-4219"
+    target: "বাবা ছেলেকে ধমকাল।"
+    reading: "bābā cheleke dhômokāl."
+    ipa: "baba tʃʰeleke d̪ʱɔmokal"
+    phonetic: "[baba tʃʰeleke d̪ʱɔmokal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বাবা", ref: "bn-0423" }, { word: "ছেলেকে", ref: "bn-0426" }, { word: "ধমকাল", ref: "bn-4188" }]
+    confusables: [{ id: "c1", word: "আদর", reading: "ādar", kind: "word" }, { id: "c2", word: "মারল", reading: "mārla", kind: "word" }]
+  - id: "bn-4220"
+    target: "বন্যা ঠেকানো যায়নি।"
+    reading: "bonnā ṭhekāno jāyoni."
+    ipa: "bonna ʈʰekano dʒajoni"
+    phonetic: "[bonna ʈʰekano dʒajoni]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বন্যা", ref: "bn-1610" }, { word: "ঠেকানো", ref: "bn-4192" }, { word: "যায়নি", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "থামানো", reading: "thāmāno", kind: "word" }, { id: "c2", word: "বাঁধ", reading: "bādh", kind: "word" }]

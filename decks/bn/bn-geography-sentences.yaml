@@ -1,0 +1,102 @@
+schema: 1
+id: "bn-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2726"
+    target: "ঢাকা বাংলাদেশের রাজধানী।"
+    reading: "ḍhākā bāṅlādeśer rājodhāni."
+    ipa: "ɖʱaka baŋlad̪eʃer radʒod̪ʱani"
+    phonetic: "[ɖʱaka baŋlad̪eʃer radʒod̪ʱani]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বাংলাদেশের", ref: "bn-2692" }, { word: "রাজধানী", ref: "bn-1068" }]
+    confusables: [{ id: "c1", word: "খুলনা", reading: "khulnā", kind: "word" }, { id: "c2", word: "রাজশাহী", reading: "rājśāhī", kind: "word" }]
+  - id: "bn-2727"
+    target: "পদ্মা একটা বড় নদী।"
+    reading: "pôdmā ekoṭā bôṛ nodi."
+    ipa: "pɔd̪ma ekoʈa bɔɽ nod̪i"
+    phonetic: "[pɔd̪ma ekoʈa bɔɽ nod̪i]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "একটা", ref: "bn-0202" }]
+    confusables: [{ id: "c1", word: "যমুনা", reading: "jômunā", kind: "word" }, { id: "c2", word: "ব্রহ্মপুত্র", reading: "brôhmoputrô", kind: "word" }]
+  - id: "bn-2728"
+    target: "সুন্দরবনে বাঘ থাকে।"
+    reading: "sundorobone bāgh thāke."
+    ipa: "sund̪orobone baɡʱ t̪ʰake"
+    phonetic: "[sund̪orobone baɡʱ t̪ʰake]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "সুন্দরবনে", ref: "bn-2699" }, { word: "বাঘ", base: "বাঘ", reading: "bāgh" }, { word: "থাকে", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "সিংহ", reading: "siṅha", kind: "word" }, { id: "c2", word: "হরিণ", reading: "horin", kind: "word" }]
+  - id: "bn-2729"
+    target: "হিমালয় অনেক উঁচু।"
+    reading: "himāloy ônek um̐cu."
+    ipa: "ɦimaloj ɔnek ũtʃu"
+    phonetic: "[ɦimaloj ɔnek ũtʃu]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "অনেক", ref: "bn-0550" }, { word: "উঁচু", ref: "bn-1236" }]
+    confusables: [{ id: "c1", word: "বালিয়াড়ি", reading: "bāliyāṛi", kind: "word" }, { id: "c2", word: "গভীর", reading: "gôbhir", kind: "word" }]
+  - id: "bn-2730"
+    target: "নদী মোহনায় সমুদ্রে মেশে।"
+    reading: "nodi mohonāy somudre meśe."
+    ipa: "nod̪i moɦonaj somud̪re meʃe"
+    phonetic: "[nod̪i moɦonaj somud̪re meʃe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "সমুদ্রে", ref: "bn-1066" }, { word: "মোহনায়", ref: "bn-2705" }, { word: "মেশে", base: "মেশা", reading: "meśe" }]
+    confusables: [{ id: "c1", word: "খাঁড়ি", reading: "khāṛi", kind: "word" }, { id: "c2", word: "ঝিল", reading: "jhil", kind: "word" }]
+  - id: "bn-2731"
+    target: "চট্টগ্রাম সমুদ্রের কাছে।"
+    reading: "côṭṭogrām somudrer kāche."
+    ipa: "tʃɔʈʈoɡram somud̪rer katʃʰe"
+    phonetic: "[tʃɔʈʈoɡram somud̪rer katʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সমুদ্রের", ref: "bn-1066" }, { word: "কাছে", base: "কাছে", reading: "kāche" }]
+    confusables: [{ id: "c1", word: "খুলনা", reading: "khulnā", kind: "word" }, { id: "c2", word: "বন্দর", reading: "bôndar", kind: "word" }]
+  - id: "bn-2732"
+    target: "গঙ্গা ভারতের নদী।"
+    reading: "gôṅgā bhāroter nodi."
+    ipa: "ɡɔŋɡa bʱarot̪er nod̪i"
+    phonetic: "[ɡɔŋɡa bʱarot̪er nod̪i]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ভারতের", ref: "bn-2693" }]
+    confusables: [{ id: "c1", word: "যমুনা", reading: "jômunā", kind: "word" }, { id: "c2", word: "ব্রহ্মপুত্র", reading: "brôhmoputrô", kind: "word" }]
+  - id: "bn-2733"
+    target: "মানচিত্রে বাংলাদেশ খুঁজো।"
+    reading: "mānocitre bāṅlādeś khum̐jo."
+    ipa: "manotʃit̪re baŋlad̪eʃ kʰũdʒo"
+    phonetic: "[manotʃit̪re baŋlad̪eʃ kʰũdʒo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মানচিত্রে", ref: "bn-2685" }, { word: "খুঁজো", base: "খোঁজা", reading: "khum̐jo" }]
+    confusables: [{ id: "c1", word: "জল", reading: "jôl", kind: "word" }, { id: "c2", word: "পৃথিবী", reading: "pṛthibī", kind: "word" }]
+  - id: "bn-2734"
+    target: "মরুভূমিতে বৃষ্টি কম।"
+    reading: "morubhumite briśṭi kôm."
+    ipa: "morubʱumit̪e briʃʈi kɔm"
+    phonetic: "[morubʱumit̪e briʃʈi kɔm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মরুভূমিতে", ref: "bn-2683" }, { word: "বৃষ্টি", base: "বৃষ্টি", reading: "briśṭi" }, { word: "কম", base: "কম", reading: "kôm" }]
+    confusables: [{ id: "c1", word: "ঝড়", reading: "jhôṛ", kind: "word" }, { id: "c2", word: "কুয়াশা", reading: "kuyāśā", kind: "word" }]
+  - id: "bn-2735"
+    target: "উত্তরে পাহাড়, দক্ষিণে সমুদ্র।"
+    reading: "uttore pāhāṛ, dokkhine somudr."
+    ipa: "ut̪t̪ore paɦaɽ d̪okkʰine somud̪r"
+    phonetic: "[ut̪t̪ore paɦaɽ d̪okkʰine somud̪r]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পাহাড়", ref: "bn-1067" }, { word: "সমুদ্র", ref: "bn-1066" }]
+    confusables: [{ id: "c1", word: "পশ্চিমে", reading: "paścime", kind: "word" }, { id: "c2", word: "মাঝখানে", reading: "mājkhāne", kind: "word" }]

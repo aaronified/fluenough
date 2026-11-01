@@ -1,0 +1,360 @@
+schema: 1
+id: "bn-en-agriculture"
+kind: "layer"
+core: "bn-agriculture"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Farming"
+description: "Farming: crops, seeds, fields, water and the people who grow and sell food. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3458":
+    native: "agriculture"
+    notes:
+      "n1": "{1}: Agriculture: the growing of crops and the rearing of animals."
+    examples:
+      "কৃষি আমাদের দেশের প্রধান কাজ।": { native: "Agriculture is the main work of our country.", bases: { "প্রধান": "main" } }
+      "কৃষির উন্নতি দরকার।": { native: "Agriculture needs to improve.", bases: { "কৃষির": "agriculture", "উন্নতি": "improvement" } }
+  "bn-3459":
+    native: "rice"
+    notes:
+      "n1": "{1}: Rice: the grain plant grown in wet fields."
+    examples:
+      "এখানে অনেক ধান হয়।": "A lot of rice grows here."
+      "ধানের খেত সবুজ।": { native: "The rice field is green.", bases: { "ধানের": "rice", "খেত": "field" } }
+  "bn-3460":
+    native: "wheat"
+    notes:
+      "n1": "{1}: Wheat: a grain used to make bread."
+    examples:
+      "গম কাটা হয়েছে।": "The wheat has been cut."
+      "গমের রুটি ভালো।": { native: "Wheat bread is good.", bases: { "গমের": "wheat" } }
+  "bn-3461":
+    native: "jute"
+    notes:
+      "n1": "{1}: Jute: a plant whose fibre is used to make sacks and rope."
+    examples:
+      "পাট বাংলার একটা প্রধান ফসল।": { native: "Jute is one of the main crops of Bengal.", bases: { "প্রধান": "main" } }
+      "পাটের দাম কত?": { native: "What is the price of jute?", bases: { "পাটের": "jute" } }
+  "bn-3462":
+    native: "fertiliser"
+    notes:
+      "n1": "{1}: Fertiliser: material added to soil to help crops grow."
+    examples:
+      "জমিতে সার দাও।": "Put fertiliser on the field. (familiar)"
+      "সারের দাম বেড়েছে।": { native: "The price of fertiliser has gone up.", bases: { "সারের": "fertiliser", "বেড়েছে": "gone up" } }
+  "bn-3463":
+    native: "land; field"
+    notes:
+      "n1": "{1}: Land or a field for farming."
+    examples:
+      "আমার একটা জমি আছে।": { native: "I have a piece of land.", bases: { "আছে": "have" } }
+      "জমিটা উর্বর।": { native: "The land is fertile.", bases: { "জমিটা": "land; field" } }
+  "bn-3464":
+    native: "irrigation"
+    notes:
+      "n1": "{1}: Irrigation: watering fields with water from a source."
+    examples:
+      "সেচের জল কোথায়?": { native: "Where is the irrigation water?", bases: { "সেচের": "irrigation" } }
+      "সেচ ছাড়া ফসল হয় না।": { native: "Crops do not grow without irrigation.", bases: { "না": "not" } }
+  "bn-3465":
+    native: "farm"
+    notes:
+      "n1": "{1}: A farm: a place where crops and animals are kept."
+    examples:
+      "আমাদের খামার বড়।": "Our farm is big."
+      "খামারে গরু আছে।": { native: "There are cows on the farm.", bases: { "খামারে": "farm", "আছে": "there are" } }
+  "bn-3466":
+    native: "pesticide"
+    notes:
+      "n1": "{1}: Pesticide: a substance that kills insects that harm crops."
+    examples:
+      "কীটনাশক ব্যবহার কমাও।": { native: "Reduce the use of pesticide. (familiar)", bases: { "ব্যবহার": "use", "কমাও": "reduce" } }
+      "কীটনাশকটা বিষাক্ত।": { native: "The pesticide is poisonous.", bases: { "কীটনাশকটা": "pesticide", "বিষাক্ত": "poisonous" } }
+  "bn-3467":
+    native: "field"
+    notes:
+      "n1": "{1}: A field: a piece of cultivated land."
+    examples:
+      "ক্ষেতে ধান হচ্ছে।": { native: "Rice is growing in the field.", bases: { "ক্ষেতে": "field" } }
+      "ক্ষেতটা বড়।": { native: "The field is big.", bases: { "ক্ষেতটা": "field" } }
+  "bn-3468":
+    native: "straw"
+    notes:
+      "n1": "{1}: Straw: the dry stalks left after the harvest."
+    examples:
+      "গরুর জন্য খড় আনো।": { native: "Bring straw for the cows. (familiar)", bases: { "গরুর": "of the cow", "জন্য": "for", "আনো": "bring" } }
+      "খড় শুকনো।": "The straw is dry."
+  "bn-3469":
+    native: "seedling"
+    notes:
+      "n1": "{1}: A seedling: a young plant ready to be planted out."
+    examples:
+      "চারা লাগাও।": { native: "Plant the seedlings. (familiar)", bases: { "লাগাও": "plant" } }
+      "চারাগুলো ছোট।": { native: "The seedlings are small.", bases: { "চারাগুলো": "seedling" } }
+  "bn-3470":
+    native: "yield"
+    notes:
+      "n1": "{1}: Yield: the amount of crop produced."
+    examples:
+      "এ বছর ফলন ভালো।": { native: "This year the yield is good.", bases: { "এ": "this", "বছর": "year" } }
+      "ফলন বেড়েছে।": { native: "The yield has gone up.", bases: { "বেড়েছে": "gone up" } }
+  "bn-3471":
+    native: "sowing"
+    notes:
+      "n1": "{1}: Sowing: putting seed into the ground."
+    examples:
+      "বপনের সময় এসেছে।": { native: "The time for sowing has come.", bases: { "বপনের": "sowing" } }
+      "বপন শুরু হলো।": { native: "Sowing has started.", bases: { "শুরু": "started" } }
+  "bn-3472":
+    native: "plough"
+    notes:
+      "n1": "{1}: A plough: a tool pulled by oxen to turn the soil."
+    examples:
+      "লাঙল দিয়ে জমি চাষ হয়।": { native: "The land is ploughed with a plough.", bases: { "চাষ": "tilling" } }
+      "লাঙলটা ভারী।": { native: "The plough is heavy.", bases: { "লাঙলটা": "plough" } }
+  "bn-3473":
+    native: "rose"
+    notes:
+      "n1": "{1}: A rose: a flower with thorns."
+    examples:
+      "গোলাপ খুব সুন্দর।": "The rose is very beautiful."
+      "বাগানে গোলাপ ফুটেছে।": { native: "Roses have bloomed in the garden.", bases: { "ফুটেছে": "bloomed" } }
+  "bn-3474":
+    native: "well"
+    notes:
+      "n1": "{1}: A well: a deep hole in the ground for water."
+    examples:
+      "কুয়ো থেকে জল তোলো।": { native: "Draw water from the well. (familiar)", bases: { "থেকে": "from" } }
+      "কুয়োটা গভীর।": { native: "The well is deep.", bases: { "কুয়োটা": "well", "গভীর": "deep" } }
+  "bn-3475":
+    native: "tube well"
+    notes:
+      "n1": "{1}: A tube well: a pump for water from under the ground."
+    examples:
+      "নলকূপের জল ঠান্ডা।": { native: "The water from the tube well is cold.", bases: { "নলকূপের": "tube well" } }
+      "নলকূপ থেকে জল আনো।": { native: "Bring water from the tube well. (familiar)", bases: { "থেকে": "from", "আনো": "bring" } }
+  "bn-3476":
+    native: "tractor"
+    notes:
+      "n1": "{1}: A tractor: a machine used to pull ploughs."
+    examples:
+      "ট্রাক্টর জমিতে যাচ্ছে।": { native: "The tractor is going to the field.", bases: { "যাচ্ছে": "going" } }
+      "ট্রাক্টরটা নতুন।": { native: "The tractor is new.", bases: { "ট্রাক্টরটা": "tractor" } }
+  "bn-3477":
+    native: "farm"
+    notes:
+      "n1": "{1}: A farm: a place for raising crops or animals."
+    examples:
+      "ফার্মে অনেক মুরগি আছে।": { native: "There are many hens on the farm.", bases: { "ফার্মে": "farm", "আছে": "there are" } }
+      "ফার্মটা বড়।": { native: "The farm is big.", bases: { "ফার্মটা": "farm" } }
+  "bn-3478":
+    native: "compost"
+    notes:
+      "n1": "{1}: Compost: rotted plant matter used as a manure."
+    examples:
+      "কম্পোস্ট জমিতে দাও।": "Put compost on the field. (familiar)"
+      "কম্পোস্ট ভালো সার।": "Compost is good fertiliser."
+  "bn-3479":
+    native: "crop; grain"
+    notes:
+      "n1": "{1}: Crop or grain: food plants grown on a farm."
+    examples:
+      "এ বছর শস্য ভালো হয়েছে।": { native: "This year the crop has been good.", bases: { "এ": "this", "বছর": "year" } }
+      "শস্যের দাম বাড়ছে।": { native: "The price of crops is rising.", bases: { "শস্যের": "crop; grain", "বাড়ছে": "rising" } }
+  "bn-3480":
+    native: "cotton"
+    notes:
+      "n1": "{1}: Cotton: a plant whose fibre is spun into thread."
+    examples:
+      "তুলা থেকে সুতো হয়।": { native: "Thread is made from cotton.", bases: { "থেকে": "from", "সুতো": "thread" } }
+      "তুলার চাষ বাড়ছে।": { native: "Cotton farming is increasing.", bases: { "তুলার": "cotton", "বাড়ছে": "increasing" } }
+  "bn-3481":
+    native: "sugarcane"
+    notes:
+      "n1": "{1}: Sugarcane: a tall grass whose stalks give sugar."
+    examples:
+      "আখ থেকে চিনি হয়।": { native: "Sugar is made from sugarcane.", bases: { "থেকে": "from" } }
+      "আখের খেত বড়।": { native: "The sugarcane field is big.", bases: { "আখের": "sugarcane", "খেত": "field" } }
+  "bn-3482":
+    native: "mustard"
+    notes:
+      "n1": "{1}: Mustard: a plant whose seeds give oil."
+    examples:
+      "সরিষা ফুল হলুদ।": "Mustard flowers are yellow."
+      "সরিষার তেল ভালো।": { native: "Mustard oil is good.", bases: { "সরিষার": "mustard" } }
+  "bn-3483":
+    native: "maize"
+    notes:
+      "n1": "{1}: Maize: a tall grain plant with yellow cobs."
+    examples:
+      "ভুট্টা খেত সবুজ।": { native: "The maize field is green.", bases: { "খেত": "field" } }
+      "ভুট্টা সিদ্ধ করে খাও।": { native: "Boil the maize and eat it. (familiar)", bases: { "সিদ্ধ": "boiled" } }
+  "bn-3484":
+    native: "farmhand"
+    notes:
+      "n1": "{1}: A farmhand: a man who works on the land."
+    examples:
+      "কৃষাণ জমিতে কাজ করছে।": "The farmhand is working in the field."
+      "কৃষাণদের সঙ্গে কথা বলো।": { native: "Talk to the farmhands. (familiar)", bases: { "কৃষাণদের": "farmhand", "সঙ্গে": "with" } }
+  "bn-3485":
+    native: "trader"
+    notes:
+      "n1": "{1}: A trader: a person who buys and sells goods, often at a market."
+    examples:
+      "ব্যাপারী বাজারে এসেছে।": "The trader has come to the market."
+      "ব্যাপারীর কাছে ধান বিক্রি করো।": { native: "Sell the rice to the trader. (familiar)", bases: { "ব্যাপারীর": "trader", "কাছে": "to" } }
+  "bn-3486":
+    native: "production"
+    notes:
+      "n1": "{1}: Production: the making or growing of goods."
+    examples:
+      "উৎপাদন বাড়ছে।": { native: "Production is increasing.", bases: { "বাড়ছে": "increasing" } }
+      "উৎপাদনের খরচ কত?": { native: "What is the cost of production?", bases: { "উৎপাদনের": "production", "খরচ": "cost" } }
+  "bn-3487":
+    native: "price; value"
+    notes:
+      "n1": "{1}: Price or value: how much something costs or is worth."
+    examples:
+      "ফসলের মূল্য কম।": { native: "The value of the crop is low.", bases: { "কম": "low" } }
+      "বাজারে মূল্য বেড়েছে।": { native: "The price has gone up in the market.", bases: { "বেড়েছে": "gone up" } }
+  "bn-3488":
+    native: "season"
+    notes:
+      "n1": "{1}: A season: the time of year for a particular crop or activity."
+    examples:
+      "আম খাওয়ার মৌসুম এসেছে।": "The mango-eating season has come."
+      "ধানের মৌসুম শুরু হলো।": { native: "The rice season has started.", bases: { "শুরু": "started" } }
+  "bn-3489":
+    native: "variety"
+    notes:
+      "n1": "{1}: A variety: a type of crop or animal, bred for certain qualities."
+    examples:
+      "এটা ভালো জাত।": "This is a good variety."
+      "নতুন জাতের ধান এসেছে।": { native: "A new variety of rice has come.", bases: { "জাতের": "variety" } }
+  "bn-3490":
+    native: "thread"
+    notes:
+      "n1": "{1}: Thread: a fine line of cotton or silk."
+    examples:
+      "সুতো দিয়ে কাপড় বোনে।": { native: "They weave cloth with thread.", bases: { "কাপড়": "cloth", "বোনে": "weave" } }
+      "সুতোর দাম বেশি।": { native: "The thread is expensive.", bases: { "সুতোর": "thread" } }
+  "bn-3491":
+    native: "market rates"
+    notes:
+      "n1": "{1}: Market rates: the prices of goods in a market."
+    examples:
+      "আজকের বাজারদর দেখো।": { native: "Look at today's market rates. (familiar)", bases: { "আজকের": "of today", "বাজারদর": "market rates" } }
+      "বাজারদর বাড়ছে।": { native: "Market rates are rising.", bases: { "বাড়ছে": "rising" } }
+  "bn-3492":
+    native: "lush with crops"
+    notes:
+      "n1": "{1}: Lush green with crops: full of growing plants."
+    examples:
+      "এই দেশ শস্যশ্যামল।": { native: "This country is lush with crops.", bases: { "এই": "this" } }
+      "শস্যশ্যামল মাঠ সুন্দর।": "The lush green fields are beautiful."
+  "bn-3493":
+    native: "drought-prone"
+    notes:
+      "n1": "{1}: Drought-prone: likely to have too little rain."
+    examples:
+      "এই এলাকা খরাপ্রবণ।": { native: "This area is prone to drought.", bases: { "এই": "this", "এলাকা": "area" } }
+      "খরাপ্রবণ জমিতে ধান কম হয়।": { native: "Less rice grows on drought-prone land.", bases: { "কম": "less" } }
+  "bn-3494":
+    native: "productive"
+    notes:
+      "n1": "{1}: Productive: giving a good yield."
+    examples:
+      "এটা ফলনশীল জাত।": { native: "This is a productive variety.", bases: { "জাত": "variety" } }
+      "ফলনশীল গাছ বেশি ফল দেয়।": "A productive tree gives more fruit."
+  "bn-3495":
+    native: "seasonal"
+    notes:
+      "n1": "{1}: Seasonal: happening at a certain time of year."
+    examples:
+      "মৌসুমি বৃষ্টি এসেছে।": "The seasonal rain has come."
+      "মৌসুমি ফল বেশি সস্তা।": "Seasonal fruit is cheaper."
+  "bn-3496":
+    native: "to farm"
+    notes:
+      "n1": "{1}: To farm: to grow crops on land."
+    examples:
+      "আমি জমিতে ধান চাষ করি।": "I farm rice in the field."
+      "সে আলু চাষ করেছে।": "She has grown potatoes."
+  "bn-3497":
+    native: "to sow seed"
+    notes:
+      "n1": "{1}: To sow seed: to put seed into the ground."
+    examples:
+      "আমরা বীজ বপন করেছি।": "We have sown the seed."
+      "বীজ বপন করো।": "Sow the seed. (familiar)"
+  "bn-3498":
+    native: "to harvest"
+    notes:
+      "n1": "{1}: To harvest: to cut the crop when it is ready."
+    examples:
+      "ধান কাটা হয়েছে।": "The rice has been harvested."
+      "ফসল কাটার সময় এসেছে।": "The time to harvest the crop has come."
+  "bn-3499":
+    native: "to fertilise"
+    notes:
+      "n1": "{1}: To fertilise: to put fertiliser on the ground."
+    examples:
+      "জমিতে সার দিয়েছি।": "I have fertilised the field."
+      "সার দাও।": "Fertilise. (familiar)"
+  "bn-3500":
+    native: "to irrigate"
+    notes:
+      "n1": "{1}: To irrigate: to water the fields."
+    examples:
+      "ক্ষেতে সেচ দাও।": "Water the field. (familiar)"
+      "গতকাল সেচ দেওয়া হয়েছে।": { native: "The fields were watered yesterday.", bases: { "গতকাল": "yesterday" } }
+  "bn-3501":
+    native: "to gather the crop"
+    notes:
+      "n1": "{1}: To gather the crop: to pick or collect the harvest."
+    examples:
+      "ফসল তুলেছি।": "I have gathered the crop."
+      "ফসল তোলার পর বিক্রি করো।": { native: "Sell after gathering the crop. (familiar)", bases: { "পর": "after" } }
+  "bn-3502":
+    native: "to yield"
+    notes:
+      "n1": "{1}: To yield: to produce a crop."
+    examples:
+      "এ বছর ধানের ফলন হয়েছে।": { native: "This year the rice has yielded well.", bases: { "এ": "this", "বছর": "year" } }
+      "ফলন ভালো হবে।": "The yield will be good."
+  "bn-3503":
+    native: "to sell"
+    notes:
+      "n1": "{1}: To sell: to give goods for money."
+    examples:
+      "আমি বাজারে ধান বিক্রি করেছি।": "I have sold the rice in the market."
+      "সবজি বিক্রি করো।": "Sell the vegetables. (familiar)"
+  "bn-3504":
+    native: "slowly"
+    notes:
+      "n1": "{1}: Slowly, little by little."
+    examples:
+      "ধীরে ধীরে গাছ বড় হচ্ছে।": "The tree is growing bigger slowly."
+      "ধীরে ধীরে ফসল পাকছে।": { native: "The crop is slowly ripening.", bases: { "পাকছে": "ripening" } }
+  "bn-3505":
+    native: "regularly"
+    notes:
+      "n1": "{1}: Regularly, in a steady way."
+    examples:
+      "নিয়মিতভাবে সেচ দাও।": "Irrigate regularly. (familiar)"
+      "ক্ষেতে নিয়মিতভাবে যাও।": "Go to the field regularly. (familiar)"
+  "bn-3506":
+    native: "at once"
+    notes:
+      "n1": "{1}: All at once, in one go."
+    examples:
+      "সব ফসল একবারে কাটা হলো।": "All the crop was cut at once."
+      "একবারে বেশি সার দিও না।": { native: "Do not put too much fertiliser at once. (familiar)", bases: { "না": "not" } }
+  "bn-3507":
+    native: "evenly"
+    notes:
+      "n1": "{1}: Evenly, in an equal way."
+    examples:
+      "সেচ সমানভাবে দাও।": "Irrigate evenly. (familiar)"
+      "বীজ সমানভাবে ছড়াও।": { native: "Scatter the seed evenly. (familiar)", bases: { "ছড়াও": "scatter" } }

@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-sports-sentences"
+kind: "layer"
+core: "bn-sports-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports: sentences"
+description: "Short sentences about matches, teams, coaches and medals. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3870":
+    native: "The referee blew the whistle and the game began."
+    confusables: { "c1": { why: "a teacher: a different role in a class" }, "c2": { why: "spectator: watches, does not referee" } }
+  "bn-3871":
+    native: "The coach taught a new tactic."
+    bases: { "কৌশল": "tactic" }
+    confusables: { "c1": { why: "a student: learns, does not coach" }, "c2": { why: "a doctor: a different profession" } }
+  "bn-3872":
+    native: "The team won and got the trophy."
+    confusables: { "c1": { why: "lost: the opposite result" }, "c2": { why: "a draw: a tie, not a win" } }
+  "bn-3873":
+    native: "Many supporters have come to the stadium."
+    confusables: { "c1": { why: "a house: a place, not a stadium" }, "c2": { why: "a hospital: a different place" } }
+  "bn-3874":
+    native: "At the Olympics she won a gold medal."
+    bases: { "সোনার": "gold" }
+    confusables: { "c1": { why: "silver: a different medal" }, "c2": { why: "bronze: a different medal" } }
+  "bn-3875":
+    native: "He got hurt while playing."
+    confusables: { "c1": { why: "healthy: the opposite of injured" }, "c2": { why: "rest: what one does after an injury" } }
+  "bn-3876":
+    native: "Our team will play in the final."
+    confusables: { "c1": { why: "the match before the final: a different match" }, "c2": { why: "training: a different activity" } }
+  "bn-3877":
+    native: "Everyone follows the captain's word."
+    bases: { "মানে": "follows" }
+    confusables: { "c1": { why: "coach: trains, does not lead the team on the field" }, "c2": { why: "referee: an official, not a captain" } }
+  "bn-3878":
+    native: "The teammates played together."
+    confusables: { "c1": { why: "opponent: the other side" }, "c2": { why: "spectators: they watch, they do not play" } }
+  "bn-3879":
+    native: "A new record was set."
+    confusables: { "c1": { why: "a mistake: the opposite of a success" }, "c2": { why: "win: a result, not a record" } }
+  "bn-3880":
+    native: "Many people ran in the marathon."
+    bases: { "মানুষ": "people" }
+    confusables: { "c1": { why: "a sprint: a short race, not a long one" }, "c2": { why: "swimming: a different sport" } }

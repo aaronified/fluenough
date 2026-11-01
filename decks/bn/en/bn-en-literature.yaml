@@ -1,0 +1,361 @@
+schema: 1
+id: "bn-en-literature"
+kind: "layer"
+core: "bn-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Books and writing"
+description: "Books, poems, stories and the people who write and read them: the author, the chapter, the cover and the sonnet. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4396":
+    native: "poet"
+    notes:
+      "n1": "{1}: A poet: a person who writes poems."
+    examples:
+      "কবি নতুন কবিতা লিখছেন।": "The poet is writing a new poem."
+      "কবির সঙ্গে দেখা হলো।": { native: "I met the poet.", bases: { "কবির": "poet" } }
+  "bn-4397":
+    native: "novel"
+    notes:
+      "n1": "{1}: A novel: a long story in book form."
+    examples:
+      "উপন্যাসটা খুব বড়।": { native: "The novel is very long.", bases: { "উপন্যাসটা": "novel" } }
+      "এই উপন্যাস আমার প্রিয়।": { native: "This novel is my favourite.", bases: { "এই": "this" } }
+  "bn-4398":
+    native: "short story"
+    notes:
+      "n1": "{1}: A short story: a brief piece of fiction."
+    examples:
+      "ছোটগল্পটা দু পাতার।": { native: "The short story is two pages long.", bases: { "ছোটগল্পটা": "short story" } }
+      "ছোটগল্প পড়তে ভালো লাগে।": "I like reading short stories."
+  "bn-4399":
+    native: "poetry"
+    notes:
+      "n1": "{1}: Poetry: a poem or the art of writing verse."
+    examples:
+      "কাব্য পড়তে ভালো লাগে।": "I like reading poetry."
+      "তার কাব্য অনেক জনপ্রিয়।": "His poetry is very popular."
+  "bn-4400":
+    native: "book"
+    notes:
+      "n1": "{1}: A book, a formal word."
+    examples:
+      "এই গ্রন্থ নতুন ছাপা হলো।": { native: "This book has been newly printed.", bases: { "এই": "this", "ছাপা": "printed" } }
+      "গ্রন্থাগারে অনেক গ্রন্থ আছে।": { native: "There are many books in the library.", bases: { "গ্রন্থাগারে": "in the library", "আছে": "there are" } }
+  "bn-4401":
+    native: "publisher"
+    notes:
+      "n1": "{1}: A publisher: a company or person who prints and sells books."
+    examples:
+      "প্রকাশক বইটা ছাপলেন।": { native: "The publisher printed the book.", bases: { "ছাপলেন": "printed" } }
+      "প্রকাশকের নাম কী?": { native: "What is the publisher's name?", bases: { "প্রকাশকের": "publisher" } }
+  "bn-4402":
+    native: "chapter"
+    notes:
+      "n1": "{1}: A chapter: a part of a book."
+    examples:
+      "প্রথম অধ্যায় শেষ হলো।": { native: "The first chapter has ended.", bases: { "শেষ": "ended" } }
+      "এই অধ্যায়টা খুব সুন্দর।": { native: "This chapter is very beautiful.", bases: { "এই": "this", "অধ্যায়টা": "chapter" } }
+  "bn-4403":
+    native: "metre; rhythm"
+    notes:
+      "n1": "{1}: Metre or rhythm: the regular beat of words in a poem."
+    examples:
+      "কবিতার ছন্দ সুন্দর।": "The metre of the poem is beautiful."
+      "এই ছন্দে লেখা।": { native: "Written in this metre.", bases: { "এই": "this", "ছন্দে": "rhythm" } }
+  "bn-4404":
+    native: "simile"
+    notes:
+      "n1": "{1}: A simile or comparison: saying one thing is like another."
+    examples:
+      "কবি মুখকে চাঁদের সঙ্গে উপমা দিলেন।": "The poet compared the face to the moon."
+      "উপমাটা সুন্দর।": { native: "The comparison is beautiful.", bases: { "উপমাটা": "simile" } }
+  "bn-4405":
+    native: "sentence"
+    notes:
+      "n1": "{1}: A sentence: a group of words that makes a complete statement."
+    examples:
+      "এই বাক্যটা ভুল।": { native: "This sentence is wrong.", bases: { "এই": "this", "বাক্যটা": "sentence" } }
+      "বাক্যটা আবার লেখো।": { native: "Write the sentence again. (familiar)", bases: { "বাক্যটা": "sentence" } }
+  "bn-4406":
+    native: "translation"
+    notes:
+      "n1": "{1}: A translation: a text put into another language."
+    examples:
+      "গল্পটার বাংলা অনুবাদ পড়লাম।": "I read the Bengali translation of the story."
+      "অনুবাদ ভালো হয়েছে।": "The translation is good."
+  "bn-4407":
+    native: "autobiography"
+    notes:
+      "n1": "{1}: An autobiography: a book in which a person tells their own life."
+    examples:
+      "তিনি আত্মজীবনী লিখেছেন।": "He has written an autobiography."
+      "আত্মজীবনীটা পড়ো।": { native: "Read the autobiography. (familiar)", bases: { "আত্মজীবনীটা": "autobiography" } }
+  "bn-4408":
+    native: "biography"
+    notes:
+      "n1": "{1}: A biography: a book that tells the life of another person."
+    examples:
+      "রবীন্দ্রনাথের জীবনী পড়লাম।": { native: "I read a biography of Tagore.", bases: { "রবীন্দ্রনাথের": "of Tagore" } }
+      "জীবনীটা খুব ভালো।": { native: "The biography is very good.", bases: { "জীবনীটা": "biography" } }
+  "bn-4409":
+    native: "article; essay"
+    notes:
+      "n1": "{1}: An article or essay: a short piece of writing on one topic."
+    examples:
+      "এই নিবন্ধটা খবরের কাগজে ছাপা হলো।": { native: "This article was printed in the newspaper.", bases: { "এই": "this", "ছাপা": "printed", "নিবন্ধটা": "article" } }
+      "নিবন্ধ লিখতে সময় লাগল।": "Writing the article took time."
+  "bn-4410":
+    native: "preface"
+    notes:
+      "n1": "{1}: A preface or introduction: the opening words of a book."
+    examples:
+      "বইটার ভূমিকা খুব সুন্দর।": "The preface of the book is very beautiful."
+      "ভূমিকাটা আগে পড়ো।": { native: "Read the preface first. (familiar)", bases: { "ভূমিকাটা": "introduction" } }
+  "bn-4411":
+    native: "cover"
+    notes:
+      "n1": "{1}: A cover: the outside of a book."
+    examples:
+      "বইয়ের মলাটটা নীল।": { native: "The book's cover is blue.", bases: { "মলাটটা": "cover" } }
+      "মলাট ছেঁড়া।": { native: "The cover is torn.", bases: { "ছেঁড়া": "torn" } }
+  "bn-4412":
+    native: "quotation"
+    notes:
+      "n1": "{1}: A quotation: words taken from a book or speech."
+    examples:
+      "একটা উদ্ধৃতি মনে আছে।": { native: "I remember a quotation.", bases: { "একটা": "a", "আছে": "remember" } }
+      "উদ্ধৃতিটা কার?": { native: "Whose quotation is it? (familiar)", bases: { "উদ্ধৃতিটা": "quotation" } }
+  "bn-4413":
+    native: "composition"
+    notes:
+      "n1": "{1}: A composition: a piece of writing; the act of writing it."
+    examples:
+      "রচনাটা ভালো লিখেছ।": { native: "You wrote the composition well. (familiar)", bases: { "রচনাটা": "composition" } }
+      "রচনার বিষয় কী?": { native: "What is the subject of the composition?", bases: { "রচনার": "composition" } }
+  "bn-4414":
+    native: "fairy tale"
+    notes:
+      "n1": "{1}: A fairy tale: a story of magic and princes."
+    examples:
+      "ছোটবেলায় রূপকথা শুনতাম।": { native: "As a child I used to hear fairy tales.", bases: { "ছোটবেলায়": "as a child" } }
+      "রূপকথার রাজকুমারী সুন্দর।": { native: "The princess of the fairy tale is beautiful.", bases: { "রূপকথার": "fairy tale", "রাজকুমারী": "princess" } }
+  "bn-4415":
+    native: "folk tale"
+    notes:
+      "n1": "{1}: A folk tale: an old story told by the people."
+    examples:
+      "দাদি একটা উপকথা বললেন।": { native: "Grandmother told a folk tale.", bases: { "দাদি": "grandmother", "একটা": "a" } }
+      "উপকথাটা পুরোনো।": { native: "The folk tale is old.", bases: { "উপকথাটা": "folk tale" } }
+  "bn-4416":
+    native: "description"
+    notes:
+      "n1": "{1}: A description: words that show what something is like."
+    examples:
+      "তার বর্ণনা খুব স্পষ্ট।": { native: "His description is very clear.", bases: { "স্পষ্ট": "clear" } }
+      "বর্ণনাটা পড়ে ছবি ভাসল।": { native: "Reading the description, a picture came to mind.", bases: { "বর্ণনাটা": "description" } }
+  "bn-4417":
+    native: "satire"
+    notes:
+      "n1": "{1}: Satire: humour that makes fun of people or society."
+    examples:
+      "লেখাটায় ব্যঙ্গ আছে।": { native: "The writing has satire.", bases: { "আছে": "has" } }
+      "ব্যঙ্গের ভাষা মজার।": { native: "The language of satire is fun.", bases: { "ব্যঙ্গের": "satire" } }
+  "bn-4418":
+    native: "humour"
+    notes:
+      "n1": "{1}: Humour: the funny side of writing or a play."
+    examples:
+      "গল্পে হাস্যরস আছে।": { native: "The story has humour.", bases: { "আছে": "has" } }
+      "হাস্যরসের লেখক তিনি।": { native: "He is a writer of humour.", bases: { "হাস্যরসের": "humour" } }
+  "bn-4419":
+    native: "tragic"
+    notes:
+      "n1": "{1}: Tragic: ending in sorrow."
+    examples:
+      "নাটকটা বিয়োগান্ত।": "The play is tragic."
+      "বিয়োগান্ত গল্প আমার পছন্দ নয়।": "I do not like tragic stories."
+  "bn-4420":
+    native: "happy-ending"
+    notes:
+      "n1": "{1}: Happy-ending: ending with union or joy."
+    examples:
+      "ছবিটা মিলনান্তক।": "The film has a happy ending."
+      "মিলনান্তক গল্প ভালো লাগে।": "I like happy-ending stories."
+  "bn-4421":
+    native: "epic"
+    notes:
+      "n1": "{1}: An epic: a long poem about heroes and great events."
+    examples:
+      "রামায়ণ একটি মহাকাব্য।": { native: "The Ramayana is an epic.", bases: { "মহাকাব্য": "epic", "রামায়ণ": "the Ramayana" } }
+      "মহাকাব্যের নায়ক বীর।": { native: "The hero of the epic is brave.", bases: { "মহাকাব্যের": "epic", "বীর": "brave" } }
+  "bn-4422":
+    native: "sonnet"
+    notes:
+      "n1": "{1}: A sonnet: a poem of fourteen lines."
+    examples:
+      "এই সনেটটা খুব সুন্দর।": { native: "This sonnet is very beautiful.", bases: { "এই": "this", "সনেটটা": "sonnet" } }
+      "সনেট লিখতে কঠিন।": "Writing a sonnet is hard."
+  "bn-4423":
+    native: "author; composer"
+    notes:
+      "n1": "{1}: An author or composer: the person who wrote a work."
+    examples:
+      "গানটির রচয়িতা কে?": "Who wrote the song? (familiar)"
+      "রচয়িতার নাম লেখো।": { native: "Write the name of the author. (familiar)", bases: { "রচয়িতার": "author; composer" } }
+  "bn-4424":
+    native: "publication"
+    notes:
+      "n1": "{1}: Publication: the act of printing and making a book public."
+    examples:
+      "বইটির প্রকাশ কবে হবে?": "When will the book be published? (familiar)"
+      "প্রকাশের খবর পেলাম।": { native: "I got the news of publication.", bases: { "প্রকাশের": "publication" } }
+  "bn-4425":
+    native: "page"
+    notes:
+      "n1": "{1}: A page: one side of a leaf in a book."
+    examples:
+      "দশম পৃষ্ঠা খোলো।": "Open page ten. (familiar)"
+      "পৃষ্ঠাগুলো পুরোনো।": { native: "The pages are old.", bases: { "পৃষ্ঠাগুলো": "page" } }
+  "bn-4426":
+    native: "letter"
+    notes:
+      "n1": "{1}: A letter of the alphabet."
+    examples:
+      "এই অক্ষরটা কী?": { native: "What is this letter? (familiar)", bases: { "এই": "this", "অক্ষরটা": "letter" } }
+      "অক্ষরগুলো ছোট।": { native: "The letters are small.", bases: { "অক্ষরগুলো": "letter" } }
+  "bn-4427":
+    native: "dictionary"
+    notes:
+      "n1": "{1}: A dictionary: a book that explains the meaning of words."
+    examples:
+      "শব্দটার অর্থ অভিধানে দেখো।": { native: "Look up the meaning of the word in the dictionary. (familiar)", bases: { "অভিধানে": "dictionary" } }
+      "অভিধানটা নতুন।": { native: "The dictionary is new.", bases: { "অভিধানটা": "dictionary" } }
+  "bn-4428":
+    native: "conclusion"
+    notes:
+      "n1": "{1}: A conclusion: the ending of a piece of writing or a talk."
+    examples:
+      "উপসংহারটা খুব ভালো।": { native: "The conclusion is very good.", bases: { "উপসংহারটা": "conclusion" } }
+      "লেখার উপসংহারে কী বলা হলো?": { native: "What was said in the conclusion of the writing?", bases: { "উপসংহারে": "conclusion" } }
+  "bn-4429":
+    native: "beginning"
+    notes:
+      "n1": "{1}: A beginning or opening: the start of a book or a story."
+    examples:
+      "গল্পের সূচনা চমৎকার।": { native: "The beginning of the story is wonderful.", bases: { "চমৎকার": "wonderful" } }
+      "সূচনায় একটা কবিতা আছে।": { native: "There is a poem at the beginning.", bases: { "সূচনায়": "beginning", "একটা": "a", "আছে": "there is" } }
+  "bn-4430":
+    native: "glossary"
+    notes:
+      "n1": "{1}: A glossary or a word-list: a list of words with their meanings."
+    examples:
+      "বইটার শেষে শব্দকোষ আছে।": { native: "There is a glossary at the end of the book.", bases: { "আছে": "there is" } }
+      "শব্দকোষে কঠিন শব্দ খুঁজো।": { native: "Look for hard words in the glossary. (familiar)", bases: { "শব্দকোষে": "glossary" } }
+  "bn-4431":
+    native: "villain"
+    notes:
+      "n1": "{1}: A villain: the bad character in a story or film."
+    examples:
+      "গল্পের খলনায়ক খুব নিষ্ঠুর।": { native: "The villain of the story is very cruel.", bases: { "নিষ্ঠুর": "cruel" } }
+      "খলনায়কের চরিত্র ভালো লেখা।": { native: "The villain's character is well written.", bases: { "খলনায়কের": "villain" } }
+  "bn-4432":
+    native: "lyric poem"
+    notes:
+      "n1": "{1}: A lyric poem: a short poem that expresses feeling."
+    examples:
+      "গীতিকবিতাটা মনে ধরল।": { native: "The lyric poem appealed to me.", bases: { "গীতিকবিতাটা": "lyric poem" } }
+      "গীতিকবিতায় আবেগ থাকে।": { native: "A lyric poem has feeling.", bases: { "গীতিকবিতায়": "lyric poem" } }
+  "bn-4433":
+    native: "literary writer"
+    notes:
+      "n1": "{1}: A literary writer: a person who writes books and poems."
+    examples:
+      "সাহিত্যিক নতুন বই লিখেছেন।": "The writer has written a new book."
+      "সাহিত্যিকদের সভা হবে।": { native: "There will be a meeting of writers.", bases: { "সাহিত্যিকদের": "literary writer" } }
+  "bn-4434":
+    native: "literature"
+    notes:
+      "n1": "{1}: Literature: written works of art, such as poems and novels."
+    examples:
+      "বাংলা সাহিত্য খুব সমৃদ্ধ।": { native: "Bengali literature is very rich.", bases: { "সমৃদ্ধ": "rich" } }
+      "সাহিত্য পড়তে ভালো লাগে।": "I like reading literature."
+  "bn-4435":
+    native: "story writer"
+    notes:
+      "n1": "{1}: A story writer: a person who writes stories."
+    examples:
+      "গল্পকার নতুন গল্প লিখলেন।": "The story writer wrote a new story."
+      "গল্পকারের বই কিনলাম।": { native: "I bought the story writer's book.", bases: { "গল্পকারের": "story writer" } }
+  "bn-4436":
+    native: "novelist"
+    notes:
+      "n1": "{1}: A novelist: a person who writes novels."
+    examples:
+      "ঔপন্যাসিক নতুন উপন্যাস লিখছেন।": "The novelist is writing a new novel."
+      "ঔপন্যাসিকের সঙ্গে কথা হলো।": { native: "I talked with the novelist.", bases: { "ঔপন্যাসিকের": "novelist" } }
+  "bn-4437":
+    native: "narrator"
+    notes:
+      "n1": "{1}: A narrator or storyteller: the person who tells a story."
+    examples:
+      "কথক গল্পটা শুরু করলেন।": "The narrator began the story."
+      "কথকের কণ্ঠ শান্ত।": { native: "The narrator's voice is calm.", bases: { "কথকের": "narrator", "কণ্ঠ": "voice" } }
+  "bn-4438":
+    native: "edition"
+    notes:
+      "n1": "{1}: An edition: one printed version of a book."
+    examples:
+      "এই বইয়ের নতুন সংস্করণ বেরোল।": { native: "A new edition of this book came out.", bases: { "এই": "this" } }
+      "প্রথম সংস্করণটা দুর্লভ।": { native: "The first edition is rare.", bases: { "দুর্লভ": "rare", "সংস্করণটা": "edition" } }
+  "bn-4439":
+    native: "cover design"
+    notes:
+      "n1": "{1}: A book cover design: the picture on the outside of a book."
+    examples:
+      "প্রচ্ছদটা খুব সুন্দর।": { native: "The cover design is very beautiful.", bases: { "প্রচ্ছদটা": "cover design" } }
+      "কে প্রচ্ছদ এঁকেছে?": "Who drew the cover design? (familiar)"
+  "bn-4440":
+    native: "manuscript"
+    notes:
+      "n1": "{1}: A manuscript: a writer's handwritten or typed original text."
+    examples:
+      "লেখকের পাণ্ডুলিপি হারিয়ে গেল।": "The writer's manuscript was lost."
+      "পাণ্ডুলিপিটা যত্ন করে রাখো।": { native: "Keep the manuscript carefully. (familiar)", bases: { "পাণ্ডুলিপিটা": "manuscript" } }
+  "bn-4441":
+    native: "for study"
+    notes:
+      "n1": "{1}: Prescribed for study: a book or text set for reading."
+    examples:
+      "এটা পাঠ্য বই।": "This is a textbook."
+      "পাঠ্য বইটা পড়ো।": "Read the textbook. (familiar)"
+  "bn-4442":
+    native: "to recite"
+    bases: { "আবৃত্তি": "recitation" }
+    notes:
+      "n1": "{1}: To recite: to say a poem aloud from memory."
+    examples:
+      "সে একটা কবিতা আবৃত্তি করল।": { native: "She recited a poem.", bases: { "একটা": "a", "আবৃত্তি": "recitation" } }
+      "ছোটরা সুন্দর আবৃত্তি করে।": { native: "The little ones recite beautifully.", bases: { "আবৃত্তি": "recitation" } }
+  "bn-4443":
+    native: "to memorise"
+    notes:
+      "n1": "{1}: To memorise: to learn something by heart."
+    examples:
+      "কবিতাটা মুখস্থ করো।": "Memorise the poem. (familiar)"
+      "সে সব গান মুখস্থ করেছে।": "She has memorised all the songs."
+  "bn-4444":
+    native: "to translate"
+    notes:
+      "n1": "{1}: To translate: to put a text into another language."
+    examples:
+      "সে বইটা বাংলায় অনুবাদ করল।": "She translated the book into Bengali."
+      "গল্পটা অনুবাদ করো।": "Translate the story. (familiar)"
+  "bn-4445":
+    native: "to compose"
+    notes:
+      "n1": "{1}: To compose: to write a poem, song or story."
+    examples:
+      "তিনি একটা গান রচনা করলেন।": { native: "He composed a song.", bases: { "একটা": "a" } }
+      "কবিতাটি কে রচনা করেছেন?": "Who composed the poem? (familiar)"

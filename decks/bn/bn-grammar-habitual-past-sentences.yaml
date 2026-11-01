@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-grammar-habitual-past-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4464"
+    target: "ছোটবেলায় আমি রোজ নদীতে সাঁতার কাটতাম।"
+    reading: "choṭobelāy āmi roj nodite sām̐tār kāṭotām."
+    ipa: "tʃʰoʈobelaj ami rodʒ nod̪it̪e sãt̪ar kaʈot̪am"
+    phonetic: "[tʃʰoʈobelaj ami rodʒ nod̪it̪e sãt̪ar kaʈot̪am]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছোটবেলায়", base: "ছোটবেলা", reading: "choṭobelāy" }, { word: "আমি", ref: "bn-0833" }, { word: "রোজ", ref: "bn-1528" }, { word: "নদীতে", ref: "bn-1050" }, { word: "সাঁতার", ref: "bn-2223" }, { word: "কাটতাম", ref: "bn-1101" }]
+    confusables: [{ id: "c1", word: "খেলতাম", reading: "khelatām", kind: "word" }, { id: "c2", word: "ঘুমাতাম", reading: "ghumātām", kind: "word" }]
+  - id: "bn-4465"
+    target: "দাদু গল্প বলতেন।"
+    reading: "dādu gôlp bôloten."
+    ipa: "d̪ad̪u ɡɔlp bɔlot̪en"
+    phonetic: "[d̪ad̪u ɡɔlp bɔlot̪en]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দাদু", ref: "bn-0185" }, { word: "গল্প", ref: "bn-2214" }, { word: "বলতেন", ref: "bn-0879" }]
+    confusables: [{ id: "c1", word: "শুনতেন", reading: "śunten", kind: "word" }, { id: "c2", word: "লিখতেন", reading: "likhten", kind: "word" }]
+  - id: "bn-4466"
+    target: "সে প্রতিদিন স্কুলে যেত।"
+    reading: "se protidin skule jet."
+    ipa: "se prot̪id̪in skule dʒet̪"
+    phonetic: "[se prot̪id̪in skule dʒet̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "প্রতিদিন", ref: "bn-0668" }, { word: "স্কুলে", ref: "bn-0123" }, { word: "যেত", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "এল", reading: "el", kind: "word" }, { id: "c2", word: "গেল", reading: "gelo", kind: "word" }]
+  - id: "bn-4467"
+    target: "আমরা বিকেলে মাঠে খেলতাম।"
+    reading: "āmorā bikele māṭhe khelotām."
+    ipa: "amora bikele maʈʰe kʰelot̪am"
+    phonetic: "[amora bikele maʈʰe kʰelot̪am]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "বিকেলে", ref: "bn-1546" }, { word: "মাঠে", ref: "bn-1045" }, { word: "খেলতাম", ref: "bn-0895" }]
+    confusables: [{ id: "c1", word: "পড়তাম", reading: "poṛtām", kind: "word" }, { id: "c2", word: "দেখতাম", reading: "dekhtām", kind: "word" }]
+  - id: "bn-4468"
+    target: "বাবা রাতে বই পড়তেন।"
+    reading: "bābā rāte boi pôṛoten."
+    ipa: "baba rat̪e boi pɔɽot̪en"
+    phonetic: "[baba rat̪e boi pɔɽot̪en]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বাবা", ref: "bn-0423" }, { word: "রাতে", ref: "bn-1547" }, { word: "বই", ref: "bn-1139" }, { word: "পড়তেন", ref: "bn-0119" }]
+    confusables: [{ id: "c1", word: "ঘুমাতেন", reading: "ghumāten", kind: "word" }, { id: "c2", word: "লিখতেন", reading: "likhten", kind: "word" }]
+  - id: "bn-4469"
+    target: "মা আমাকে রোজ গল্প শোনাত।"
+    reading: "mā āmāke roj gôlp śonāt."
+    ipa: "ma amake rodʒ ɡɔlp ʃonat̪"
+    phonetic: "[ma amake rodʒ ɡɔlp ʃonat̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "আমাকে", ref: "bn-0833" }, { word: "রোজ", ref: "bn-1528" }, { word: "গল্প", ref: "bn-2214" }, { word: "শোনাত", base: "শোনানো", reading: "śonāt" }]
+    confusables: [{ id: "c1", word: "শুনত", reading: "śunata", kind: "word" }, { id: "c2", word: "বলত", reading: "bolata", kind: "word" }]
+  - id: "bn-4470"
+    target: "ছোটবেলায় আমরা এই পথে হাঁটতাম।"
+    reading: "choṭobelāy āmorā ei pôthe hām̐ṭotām."
+    ipa: "tʃʰoʈobelaj amora ei pɔt̪ʰe ɦãʈot̪am"
+    phonetic: "[tʃʰoʈobelaj amora ei pɔt̪ʰe ɦãʈot̪am]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছোটবেলায়", base: "ছোটবেলা", reading: "choṭobelāy" }, { word: "আমরা", ref: "bn-0834" }, { word: "এই", base: "এই", reading: "ei" }, { word: "পথে", ref: "bn-0057" }, { word: "হাঁটতাম", ref: "bn-0896" }]
+    confusables: [{ id: "c1", word: "দৌড়াতাম", reading: "dauṛātām", kind: "word" }, { id: "c2", word: "উড়তাম", reading: "uṛtām", kind: "word" }]
+  - id: "bn-4471"
+    target: "সে কখনো মিথ্যা বলত না।"
+    reading: "se kôkhono mitthā bôlot nā."
+    ipa: "se kɔkʰono mit̪t̪ʰa bɔlot̪ na"
+    phonetic: "[se kɔkʰono mit̪t̪ʰa bɔlot̪ na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "কখনো", ref: "bn-1526" }, { word: "মিথ্যা", ref: "bn-2907" }, { word: "বলত", ref: "bn-0879" }, { word: "না", ref: "bn-0160" }]
+    confusables: [{ id: "c1", word: "সত্য", reading: "satya", kind: "word" }, { id: "c2", word: "বলল", reading: "bolal", kind: "word" }]
+  - id: "bn-4472"
+    target: "গ্রামে আমরা নদীর পাড়ে বসতাম।"
+    reading: "grāme āmorā nodir pāṛe bôsotām."
+    ipa: "ɡrame amora nod̪ir paɽe bɔsot̪am"
+    phonetic: "[ɡrame amora nod̪ir paɽe bɔsot̪am]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "গ্রামে", ref: "bn-1053" }, { word: "আমরা", ref: "bn-0834" }, { word: "নদীর", ref: "bn-1050" }, { word: "পাড়ে", base: "পাড়", reading: "pāṛe" }, { word: "বসতাম", ref: "bn-0884" }]
+    confusables: [{ id: "c1", word: "দাঁড়াতাম", reading: "dāṛātām", kind: "word" }, { id: "c2", word: "শুতাম", reading: "śutām", kind: "word" }]
+  - id: "bn-4473"
+    target: "দিদি সেলাই করত।"
+    reading: "didi selāi kôrot."
+    ipa: "d̪id̪i selai kɔrot̪"
+    phonetic: "[d̪id̪i selai kɔrot̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দিদি", ref: "bn-0182" }, { word: "সেলাই", ref: "bn-2240" }, { word: "করত", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "বুনত", reading: "bunata", kind: "word" }, { id: "c2", word: "রাঁধত", reading: "rādhata", kind: "word" }]

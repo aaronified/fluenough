@@ -1,0 +1,793 @@
+schema: 1
+id: "bn-verbs-4"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "verbs-4"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4144"
+    target: "গড়া"
+    reading: "gôṛā"
+    ipa: "ɡɔɽa"
+    phonetic: "[ɡɔɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গড়া", reading: "gôṛā" }] }
+    examples:
+      - { target: "তারা নতুন ঘর গড়ল।", reading: "tārā notun ghôr gôṛol.", ipa: "t̪ara not̪un ɡʱɔr ɡɔɽol", bases: [{ word: "তারা", ref: "bn-0840" }, { word: "নতুন", ref: "bn-0620" }, { word: "ঘর", ref: "bn-0051" }, { word: "গড়ল", base: "গড়া", reading: "gôṛol" }] }
+      - { target: "মাটি দিয়ে পুতুল গড়ে।", reading: "māṭi diye putul gôṛe.", ipa: "maʈi d̪ije put̪ul ɡɔɽe", bases: [{ word: "মাটি", ref: "bn-2499" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "পুতুল", base: "পুতুল", reading: "putul" }, { word: "গড়ে", base: "গড়া", reading: "gôṛe" }] }
+  - id: "bn-4145"
+    target: "মারা"
+    reading: "mārā"
+    ipa: "mara"
+    phonetic: "[mara]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মারা", reading: "mārā" }] }
+    examples:
+      - { target: "সে বল মারল।", reading: "se bôl mārol.", ipa: "se bɔl marol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বল", ref: "bn-0055" }, { word: "মারল", base: "মারা", reading: "mārol" }] }
+      - { target: "কেউ তাকে মারে না।", reading: "keu tāke māre nā.", ipa: "keu t̪ake mare na", bases: [{ word: "কেউ", base: "কেউ", reading: "keu" }, { word: "তাকে", ref: "bn-0839" }, { word: "মারে", base: "মারা", reading: "māre" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4146"
+    target: "ছুটা"
+    reading: "chuṭā"
+    ipa: "tʃʰuʈa"
+    phonetic: "[tʃʰuʈa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছুটা", reading: "chuṭā" }] }
+    examples:
+      - { target: "ছেলেরা মাঠে ছুটল।", reading: "chelerā māṭhe chuṭol.", ipa: "tʃʰelera maʈʰe tʃʰuʈol", bases: [{ word: "ছেলেরা", ref: "bn-0426" }, { word: "মাঠে", ref: "bn-1045" }, { word: "ছুটল", base: "ছুটা", reading: "chuṭol" }] }
+      - { target: "বাস ধরতে ছুটে যাও।", reading: "bās dhôrote chuṭe jāo.", ipa: "bas d̪ʱɔrot̪e tʃʰuʈe dʒao", bases: [{ word: "বাস", ref: "bn-0280" }, { word: "ধরতে", ref: "bn-1107" }, { word: "ছুটে", base: "ছুটা", reading: "chuṭe" }, { word: "যাও", ref: "bn-0873" }] }
+  - id: "bn-4147"
+    target: "উড়া"
+    reading: "uṛā"
+    ipa: "uɽa"
+    phonetic: "[uɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উড়া", reading: "uṛā" }] }
+    examples:
+      - { target: "পাখি আকাশে উড়ছে।", reading: "pākhi ākāśe uṛoche.", ipa: "pakʰi akaʃe uɽotʃʰe", bases: [{ word: "পাখি", ref: "bn-1289" }, { word: "আকাশে", ref: "bn-1571" }, { word: "উড়ছে", base: "উড়া", reading: "uṛoche" }] }
+      - { target: "বিমানটা উড়ল।", reading: "bimānoṭā uṛol.", ipa: "bimanoʈa uɽol", bases: [{ word: "বিমানটা", ref: "bn-1167" }, { word: "উড়ল", base: "উড়া", reading: "uṛol" }] }
+  - id: "bn-4148"
+    target: "ঝাড়া"
+    reading: "jhāṛā"
+    ipa: "dʒʱaɽa"
+    phonetic: "[dʒʱaɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝাড়া", reading: "jhāṛā" }] }
+    examples:
+      - { target: "কাপড়টা ঝেড়ে নাও।", reading: "kāpoṛoṭā jheṛe nāo.", ipa: "kapoɽoʈa dʒʱeɽe nao", bases: [{ word: "কাপড়টা", ref: "bn-1188" }, { word: "ঝেড়ে", base: "ঝাড়া", reading: "jheṛe" }, { word: "নাও", ref: "bn-0889" }] }
+      - { target: "ঘরটা ঝাড়তে হবে।", reading: "ghôroṭā jhāṛote hôbe.", ipa: "ɡʱɔroʈa dʒʱaɽot̪e ɦɔbe", bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "ঝাড়তে", base: "ঝাড়া", reading: "jhāṛote" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4149"
+    target: "মাপা"
+    reading: "māpā"
+    ipa: "mapa"
+    phonetic: "[mapa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মাপা", reading: "māpā" }] }
+    examples:
+      - { target: "দরজাটা মাপলাম।", reading: "dôrojāṭā māpolām.", ipa: "d̪ɔrodʒaʈa mapolam", bases: [{ word: "দরজাটা", ref: "bn-0599" }, { word: "মাপলাম", base: "মাপা", reading: "māpolām" }] }
+      - { target: "কাপড় মেপে দাও।", reading: "kāpoṛ mepe dāo.", ipa: "kapoɽ mepe d̪ao", bases: [{ word: "কাপড়", ref: "bn-1188" }, { word: "মেপে", base: "মাপা", reading: "mepe" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4150"
+    target: "ছিঁড়া"
+    reading: "chim̐ṛā"
+    ipa: "tʃʰĩɽa"
+    phonetic: "[tʃʰĩɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছিঁড়া", reading: "chim̐ṛā" }] }
+    examples:
+      - { target: "জামাটা ছিঁড়ে গেল।", reading: "jāmāṭā chim̐ṛe gel.", ipa: "dʒamaʈa tʃʰĩɽe ɡel", bases: [{ word: "জামাটা", ref: "bn-1189" }, { word: "ছিঁড়ে", base: "ছিঁড়া", reading: "chim̐ṛe" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "কাগজ ছিঁড়ো না।", reading: "kāgoj chim̐ṛo nā.", ipa: "kaɡodʒ tʃʰĩɽo na", bases: [{ word: "কাগজ", ref: "bn-1143" }, { word: "ছিঁড়ো", base: "ছিঁড়া", reading: "chim̐ṛo" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4151"
+    target: "বাছা"
+    reading: "bāchā"
+    ipa: "batʃʰa"
+    phonetic: "[batʃʰa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাছা", reading: "bāchā" }] }
+    examples:
+      - { target: "সে ভালো আম বাছল।", reading: "se bhālo ām bāchol.", ipa: "se bʱalo am batʃʰol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "ভালো", ref: "bn-0617" }, { word: "আম", ref: "bn-0562" }, { word: "বাছল", base: "বাছা", reading: "bāchol" }] }
+      - { target: "কোনটা বাছবে?", reading: "konoṭā bāchobe?", ipa: "konoʈa batʃʰobe", bases: [{ word: "কোনটা", ref: "bn-0168" }, { word: "বাছবে", base: "বাছা", reading: "bāchobe" }] }
+  - id: "bn-4152"
+    target: "চাখা"
+    reading: "cākhā"
+    ipa: "tʃakʰa"
+    phonetic: "[tʃakʰa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চাখা", reading: "cākhā" }] }
+    examples:
+      - { target: "ঝোলটা একটু চাখো।", reading: "jholoṭā ekoṭu cākho.", ipa: "dʒʱoloʈa ekoʈu tʃakʰo", bases: [{ word: "ঝোলটা", ref: "bn-2101" }, { word: "একটু", ref: "bn-0551" }, { word: "চাখো", base: "চাখা", reading: "cākho" }] }
+      - { target: "সে মিষ্টি চাখল।", reading: "se miśṭi cākhol.", ipa: "se miʃʈi tʃakʰol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "মিষ্টি", ref: "bn-2326" }, { word: "চাখল", base: "চাখা", reading: "cākhol" }] }
+  - id: "bn-4153"
+    target: "শুঁকা"
+    reading: "śum̐kā"
+    ipa: "ʃũka"
+    phonetic: "[ʃũka]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শুঁকা", reading: "śum̐kā" }] }
+    examples:
+      - { target: "ফুলটা শুঁকলাম।", reading: "phuloṭā śum̐kolām.", ipa: "pʰuloʈa ʃũkolam", bases: [{ word: "ফুলটা", ref: "bn-2225" }, { word: "শুঁকলাম", base: "শুঁকা", reading: "śum̐kolām" }] }
+      - { target: "গন্ধ শুঁকে বলো।", reading: "gôndh śum̐ke bôlo.", ipa: "ɡɔnd̪ʱ ʃũke bɔlo", bases: [{ word: "গন্ধ", ref: "bn-2120" }, { word: "শুঁকে", base: "শুঁকা", reading: "śum̐ke" }, { word: "বলো", ref: "bn-0879" }] }
+  - id: "bn-4154"
+    target: "ভাসা"
+    reading: "bhāsā"
+    ipa: "bʱasa"
+    phonetic: "[bʱasa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভাসা", reading: "bhāsā" }] }
+    examples:
+      - { target: "নৌকাটা জলে ভাসছে।", reading: "noukāṭā jôle bhāsoche.", ipa: "noukaʈa dʒɔle bʱasotʃʰe", bases: [{ word: "নৌকাটা", ref: "bn-1166" }, { word: "জলে", ref: "bn-0350" }, { word: "ভাসছে", base: "ভাসা", reading: "bhāsoche" }] }
+      - { target: "কাগজের নৌকা ভাসল।", reading: "kāgojer noukā bhāsol.", ipa: "kaɡodʒer nouka bʱasol", bases: [{ word: "কাগজের", ref: "bn-1143" }, { word: "নৌকা", ref: "bn-1166" }, { word: "ভাসল", base: "ভাসা", reading: "bhāsol" }] }
+  - id: "bn-4155"
+    target: "চাটা"
+    reading: "cāṭā"
+    ipa: "tʃaʈa"
+    phonetic: "[tʃaʈa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চাটা", reading: "cāṭā" }] }
+    examples:
+      - { target: "বিড়ালটা দুধ চাটল।", reading: "biṛāloṭā dudh cāṭol.", ipa: "biɽaloʈa d̪ud̪ʱ tʃaʈol", bases: [{ word: "বিড়ালটা", ref: "bn-1278" }, { word: "দুধ", ref: "bn-0271" }, { word: "চাটল", base: "চাটা", reading: "cāṭol" }] }
+      - { target: "আঙুল চেটো না।", reading: "āṅul ceṭo nā.", ipa: "aŋul tʃeʈo na", bases: [{ word: "আঙুল", ref: "bn-1017" }, { word: "চেটো", base: "চাটা", reading: "ceṭo" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4156"
+    target: "ঘষা"
+    reading: "ghôśā"
+    ipa: "ɡʱɔʃa"
+    phonetic: "[ɡʱɔʃa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘষা", reading: "ghôśā" }] }
+    examples:
+      - { target: "থালাটা ঘষে পরিষ্কার করো।", reading: "thālāṭā ghôśe poriśkār kôro.", ipa: "t̪ʰalaʈa ɡʱɔʃe poriʃkar kɔro", bases: [{ word: "থালাটা", ref: "bn-2270" }, { word: "ঘষে", base: "ঘষা", reading: "ghôśe" }, { word: "পরিষ্কার", ref: "bn-0626" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "হাত ঘষল।", reading: "hāt ghôśol.", ipa: "ɦat̪ ɡʱɔʃol", bases: [{ word: "হাত", ref: "bn-0730" }, { word: "ঘষল", base: "ঘষা", reading: "ghôśol" }] }
+  - id: "bn-4157"
+    target: "সাজা"
+    reading: "sājā"
+    ipa: "sadʒa"
+    phonetic: "[sadʒa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাজা", reading: "sājā" }] }
+    examples:
+      - { target: "বউ সেজে বসেছে।", reading: "bou seje bôseche.", ipa: "bou sedʒe bɔsetʃʰe", bases: [{ word: "বউ", ref: "bn-3768" }, { word: "সেজে", base: "সাজা", reading: "seje" }, { word: "বসেছে", ref: "bn-0884" }] }
+      - { target: "ছেলেটা সেজে এল।", reading: "cheleṭā seje el.", ipa: "tʃʰeleʈa sedʒe el", bases: [{ word: "ছেলেটা", ref: "bn-0426" }, { word: "সেজে", base: "সাজা", reading: "seje" }, { word: "এল", ref: "bn-0872" }] }
+  - id: "bn-4158"
+    target: "খুলা"
+    reading: "khulā"
+    ipa: "kʰula"
+    phonetic: "[kʰula]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খুলা", reading: "khulā" }] }
+    examples:
+      - { target: "জুতো খুলে ঢোকো।", reading: "juto khule ḍhoko.", ipa: "dʒut̪o kʰule ɖʱoko", bases: [{ word: "জুতো", ref: "bn-1196" }, { word: "খুলে", base: "খুলা", reading: "khule" }, { word: "ঢোকো", ref: "bn-2354" }] }
+      - { target: "বাঁধনটা খুলল।", reading: "bām̐dhonoṭā khulol.", ipa: "bãd̪ʱonoʈa kʰulol", bases: [{ word: "বাঁধনটা", base: "বাঁধন", reading: "bām̐dhonoṭā" }, { word: "খুলল", base: "খুলা", reading: "khulol" }] }
+  - id: "bn-4159"
+    target: "চড়া"
+    reading: "côṛā"
+    ipa: "tʃɔɽa"
+    phonetic: "[tʃɔɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চড়া", reading: "côṛā" }] }
+    examples:
+      - { target: "সে গাছে চড়ল।", reading: "se gāche côṛol.", ipa: "se ɡatʃʰe tʃɔɽol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "গাছে", ref: "bn-2285" }, { word: "চড়ল", base: "চড়া", reading: "côṛol" }] }
+      - { target: "বাসে চড়ে অফিসে যাই।", reading: "bāse côṛe ôphise jāi.", ipa: "base tʃɔɽe ɔpʰise dʒai", bases: [{ word: "বাসে", ref: "bn-0280" }, { word: "চড়ে", base: "চড়া", reading: "côṛe" }, { word: "অফিসে", ref: "bn-0450" }, { word: "যাই", ref: "bn-0873" }] }
+  - id: "bn-4160"
+    target: "বাঁচা"
+    reading: "bām̐cā"
+    ipa: "bãtʃa"
+    phonetic: "[bãtʃa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাঁচা", reading: "bām̐cā" }] }
+    examples:
+      - { target: "সে দুর্ঘটনায় বাঁচল।", reading: "se durghoṭonāy bām̐col.", ipa: "se d̪urɡʱoʈonaj bãtʃol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "দুর্ঘটনায়", ref: "bn-2896" }, { word: "বাঁচল", base: "বাঁচা", reading: "bām̐col" }] }
+      - { target: "কিভাবে বাঁচব?", reading: "kibhābe bām̐cob?", ipa: "kibʱabe bãtʃob", bases: [{ word: "কিভাবে", ref: "bn-0410" }, { word: "বাঁচব", base: "বাঁচা", reading: "bām̐cob" }] }
+  - id: "bn-4161"
+    target: "মরা"
+    reading: "môrā"
+    ipa: "mɔra"
+    phonetic: "[mɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মরা", reading: "môrā" }] }
+    examples:
+      - { target: "গাছটা মরে গেল।", reading: "gāchoṭā môre gel.", ipa: "ɡatʃʰoʈa mɔre ɡel", bases: [{ word: "গাছটা", ref: "bn-2285" }, { word: "মরে", base: "মরা", reading: "môre" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "পোকাটা মরেছে।", reading: "pokāṭā môreche.", ipa: "pokaʈa mɔretʃʰe", bases: [{ word: "পোকাটা", base: "পোকা", reading: "pokāṭā" }, { word: "মরেছে", base: "মরা", reading: "môreche" }] }
+  - id: "bn-4162"
+    target: "ডুবা"
+    reading: "ḍubā"
+    ipa: "ɖuba"
+    phonetic: "[ɖuba]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ডুবা", reading: "ḍubā" }] }
+    examples:
+      - { target: "নৌকাটা নদীতে ডুবল।", reading: "noukāṭā nodite ḍubol.", ipa: "noukaʈa nod̪it̪e ɖubol", bases: [{ word: "নৌকাটা", ref: "bn-1166" }, { word: "নদীতে", ref: "bn-1050" }, { word: "ডুবল", base: "ডুবা", reading: "ḍubol" }] }
+      - { target: "সূর্য ডুবছে।", reading: "surj ḍuboche.", ipa: "surdʒ ɖubotʃʰe", bases: [{ word: "সূর্য", ref: "bn-1569" }, { word: "ডুবছে", base: "ডুবা", reading: "ḍuboche" }] }
+  - id: "bn-4163"
+    target: "ঝুলা"
+    reading: "jhulā"
+    ipa: "dʒʱula"
+    phonetic: "[dʒʱula]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝুলা", reading: "jhulā" }] }
+    examples:
+      - { target: "দেয়ালে ছবি ঝুলছে।", reading: "deyāle chobi jhuloche.", ipa: "d̪ejale tʃʰobi dʒʱulotʃʰe", bases: [{ word: "দেয়ালে", ref: "bn-2576" }, { word: "ছবি", ref: "bn-1145" }, { word: "ঝুলছে", base: "ঝুলা", reading: "jhuloche" }] }
+      - { target: "গাছে আম ঝুলে আছে।", reading: "gāche ām jhule āche.", ipa: "ɡatʃʰe am dʒʱule atʃʰe", bases: [{ word: "গাছে", ref: "bn-2285" }, { word: "আম", ref: "bn-0562" }, { word: "ঝুলে", base: "ঝুলা", reading: "jhule" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4164"
+    target: "হাঁকা"
+    reading: "hām̐kā"
+    ipa: "ɦãka"
+    phonetic: "[ɦãka]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাঁকা", reading: "hām̐kā" }] }
+    examples:
+      - { target: "সে জোরে হাঁক দিল।", reading: "se jore hām̐k dil.", ipa: "se dʒore ɦãk d̪il", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জোরে", ref: "bn-1555" }, { word: "দিল", ref: "bn-0888" }, { word: "হাঁক", base: "হাঁক", reading: "hām̐k" }] }
+      - { target: "কেউ নাম ধরে হাঁকছে।", reading: "keu nām dhôre hām̐koche.", ipa: "keu nam d̪ʱɔre ɦãkotʃʰe", bases: [{ word: "কেউ", base: "কেউ", reading: "keu" }, { word: "নাম", ref: "bn-0191" }, { word: "ধরে", ref: "bn-1107" }, { word: "হাঁকছে", base: "হাঁকা", reading: "hām̐koche" }] }
+  - id: "bn-4165"
+    target: "ফুলা"
+    reading: "phulā"
+    ipa: "pʰula"
+    phonetic: "[pʰula]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ফুলা", reading: "phulā" }] }
+    examples:
+      - { target: "তার পা ফুলে গেছে।", reading: "tār pā phule geche.", ipa: "t̪ar pa pʰule ɡetʃʰe", bases: [{ word: "তার", ref: "bn-3275" }, { word: "পা", ref: "bn-0731" }, { word: "ফুলে", base: "ফুলা", reading: "phule" }, { word: "গেছে", ref: "bn-0873" }] }
+      - { target: "গরমে ভাত ফুলে যায়।", reading: "gôrome bhāt phule jāy.", ipa: "ɡɔrome bʱat̪ pʰule dʒaj", bases: [{ word: "গরমে", ref: "bn-0060" }, { word: "ভাত", ref: "bn-0352" }, { word: "ফুলে", base: "ফুলা", reading: "phule" }, { word: "যায়", ref: "bn-0873" }] }
+  - id: "bn-4166"
+    target: "ঘুরা"
+    reading: "ghurā"
+    ipa: "ɡʱura"
+    phonetic: "[ɡʱura]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘুরা", reading: "ghurā" }] }
+    examples:
+      - { target: "চাকাটা ঘুরছে।", reading: "cākāṭā ghuroche.", ipa: "tʃakaʈa ɡʱurotʃʰe", bases: [{ word: "চাকাটা", base: "চাকা", reading: "cākāṭā" }, { word: "ঘুরছে", base: "ঘুরা", reading: "ghuroche" }] }
+      - { target: "আমরা শহরে ঘুরে বেড়ালাম।", reading: "āmorā śôhore ghure beṛālām.", ipa: "amora ʃɔɦore ɡʱure beɽalam", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "শহরে", ref: "bn-0199" }, { word: "ঘুরে", base: "ঘুরা", reading: "ghure" }, { word: "বেড়ালাম", base: "বেড়ানো", reading: "beṛālām" }] }
+  - id: "bn-4167"
+    target: "চাপা"
+    reading: "cāpā"
+    ipa: "tʃapa"
+    phonetic: "[tʃapa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চাপা", reading: "cāpā" }] }
+    examples:
+      - { target: "ভারী বই দিয়ে কাগজ চাপা দাও।", reading: "bhāri boi diye kāgoj cāpā dāo.", ipa: "bʱari boi d̪ije kaɡodʒ tʃapa d̪ao", bases: [{ word: "ভারী", ref: "bn-2324" }, { word: "বই", ref: "bn-1139" }, { word: "দিয়ে", ref: "bn-0295" }, { word: "কাগজ", ref: "bn-1143" }, { word: "চাপা", base: "চাপা", reading: "cāpā" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "কষ্টে বুক চাপা পড়ল।", reading: "kôśṭe buk cāpā pôṛol.", ipa: "kɔʃʈe buk tʃapa pɔɽol", bases: [{ word: "কষ্টে", ref: "bn-1783" }, { word: "বুক", ref: "bn-1014" }, { word: "পড়ল", ref: "bn-0119" }] }
+  - id: "bn-4168"
+    target: "ছোঁড়া"
+    reading: "chom̐ṛā"
+    ipa: "tʃʰõɽa"
+    phonetic: "[tʃʰõɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছোঁড়া", reading: "chom̐ṛā" }] }
+    examples:
+      - { target: "সে বল ছুঁড়ল।", reading: "se bôl chum̐ṛol.", ipa: "se bɔl tʃʰũɽol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বল", ref: "bn-0055" }, { word: "ছুঁড়ল", base: "ছোঁড়া", reading: "chum̐ṛol" }] }
+      - { target: "ঢিল ছুঁড়ো না।", reading: "ḍhil chum̐ṛo nā.", ipa: "ɖʱil tʃʰũɽo na", bases: [{ word: "ঢিল", base: "ঢিল", reading: "ḍhil" }, { word: "ছুঁড়ো", base: "ছোঁড়া", reading: "chum̐ṛo" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4169"
+    target: "পোঁছা"
+    reading: "pom̐chā"
+    ipa: "põtʃʰa"
+    phonetic: "[põtʃʰa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পোঁছা", reading: "pom̐chā" }] }
+    examples:
+      - { target: "টেবিলটা মুছে নাও।", reading: "ṭebiloṭā muche nāo.", ipa: "ʈebiloʈa mutʃʰe nao", bases: [{ word: "টেবিলটা", ref: "bn-0608" }, { word: "মুছে", base: "পোঁছা", reading: "muche" }, { word: "নাও", ref: "bn-0889" }] }
+      - { target: "মুখ পোঁছো।", reading: "mukh pom̐cho.", ipa: "mukʰ põtʃʰo", bases: [{ word: "মুখ", ref: "bn-1002" }, { word: "পোঁছো", base: "পোঁছা", reading: "pom̐cho" }] }
+  - id: "bn-4170"
+    target: "মোড়া"
+    reading: "moṛā"
+    ipa: "moɽa"
+    phonetic: "[moɽa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মোড়া", reading: "moṛā" }] }
+    examples:
+      - { target: "উপহারটা কাগজে মোড়া হলো।", reading: "upohāroṭā kāgoje moṛā hôlo.", ipa: "upoɦaroʈa kaɡodʒe moɽa ɦɔlo", bases: [{ word: "উপহারটা", ref: "bn-1664" }, { word: "কাগজে", ref: "bn-1143" }, { word: "মোড়া", base: "মোড়া", reading: "moṛā" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "কাপড়টা মুড়ে রাখো।", reading: "kāpoṛoṭā muṛe rākho.", ipa: "kapoɽoʈa muɽe rakʰo", bases: [{ word: "কাপড়টা", ref: "bn-1188" }, { word: "মুড়ে", base: "মোড়া", reading: "muṛe" }, { word: "রাখো", ref: "bn-0894" }] }
+  - id: "bn-4171"
+    target: "ঘুমানো"
+    reading: "ghumāno"
+    ipa: "ɡʱumano"
+    phonetic: "[ɡʱumano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘুমানো", reading: "ghumāno" }] }
+    examples:
+      - { target: "শিশুটি এখন ঘুমাচ্ছে।", reading: "śiśuṭi ekhon ghumācche.", ipa: "ʃiʃuʈi ekʰon ɡʱumatʃtʃʰe", bases: [{ word: "শিশুটি", base: "শিশু", reading: "śiśuṭi" }, { word: "এখন", ref: "bn-0317" }, { word: "ঘুমাচ্ছে", base: "ঘুমানো", reading: "ghumācche" }] }
+      - { target: "রাতে ভালো করে ঘুমাও।", reading: "rāte bhālo kôre ghumāo.", ipa: "rat̪e bʱalo kɔre ɡʱumao", bases: [{ word: "রাতে", ref: "bn-1547" }, { word: "ভালো", ref: "bn-0617" }, { word: "ঘুমাও", base: "ঘুমানো", reading: "ghumāo" }, { word: "করে", ref: "bn-0102" }] }
+  - id: "bn-4172"
+    target: "বসানো"
+    reading: "bôsāno"
+    ipa: "bɔsano"
+    phonetic: "[bɔsano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বসানো", reading: "bôsāno" }] }
+    examples:
+      - { target: "মা শিশুকে চেয়ারে বসাল।", reading: "mā śiśuke ceyāre bôsāl.", ipa: "ma ʃiʃuke tʃejare bɔsal", bases: [{ word: "মা", ref: "bn-0424" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "চেয়ারে", ref: "bn-0607" }, { word: "বসাল", base: "বসানো", reading: "bôsāl" }] }
+      - { target: "টেবিলে ফুলদানি বসাও।", reading: "ṭebile phulodāni bôsāo.", ipa: "ʈebile pʰulod̪ani bɔsao", bases: [{ word: "টেবিলে", ref: "bn-0608" }, { word: "ফুলদানি", base: "ফুলদানি", reading: "phulodāni" }, { word: "বসাও", base: "বসানো", reading: "bôsāo" }] }
+  - id: "bn-4173"
+    target: "লেখানো"
+    reading: "lekhāno"
+    ipa: "lekʰano"
+    phonetic: "[lekʰano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লেখানো", reading: "lekhāno" }] }
+    examples:
+      - { target: "শিক্ষক ছাত্রকে বোর্ডে লেখাল।", reading: "śikkhok chātroke borḍe lekhāl.", ipa: "ʃikkʰok tʃʰat̪roke borɖe lekʰal", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "ছাত্রকে", ref: "bn-0470" }, { word: "বোর্ডে", ref: "bn-2152" }, { word: "লেখাল", base: "লেখানো", reading: "lekhāl" }] }
+      - { target: "চিঠিটা লেখানো হলো।", reading: "ciṭhiṭā lekhāno hôlo.", ipa: "tʃiʈʰiʈa lekʰano ɦɔlo", bases: [{ word: "চিঠিটা", ref: "bn-1144" }, { word: "লেখানো", base: "লেখানো", reading: "lekhāno" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-4174"
+    target: "সরানো"
+    reading: "sôrāno"
+    ipa: "sɔrano"
+    phonetic: "[sɔrano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সরানো", reading: "sôrāno" }] }
+    examples:
+      - { target: "চেয়ারটা সরাও।", reading: "ceyāroṭā sôrāo.", ipa: "tʃejaroʈa sɔrao", bases: [{ word: "চেয়ারটা", ref: "bn-0607" }, { word: "সরাও", base: "সরানো", reading: "sôrāo" }] }
+      - { target: "সে জিনিসপত্র সরিয়ে রাখল।", reading: "se jinisopotr soriye rākhol.", ipa: "se dʒinisopot̪r sorije rakʰol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জিনিসপত্র", base: "জিনিসপত্র", reading: "jinisopotr" }, { word: "সরিয়ে", base: "সরানো", reading: "soriye" }, { word: "রাখল", ref: "bn-0894" }] }
+  - id: "bn-4175"
+    target: "জড়ানো"
+    reading: "jôṛāno"
+    ipa: "dʒɔɽano"
+    phonetic: "[dʒɔɽano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জড়ানো", reading: "jôṛāno" }] }
+    examples:
+      - { target: "সে গায়ে চাদর জড়াল।", reading: "se gāye cādor jôṛāl.", ipa: "se ɡaje tʃad̪or dʒɔɽal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "গায়ে", base: "গা", reading: "gāye" }, { word: "চাদর", ref: "bn-2280" }, { word: "জড়াল", base: "জড়ানো", reading: "jôṛāl" }] }
+      - { target: "লতাটা গাছে জড়িয়ে আছে।", reading: "lôtāṭā gāche joṛiye āche.", ipa: "lɔt̪aʈa ɡatʃʰe dʒoɽije atʃʰe", bases: [{ word: "লতাটা", base: "লতা", reading: "lôtāṭā" }, { word: "গাছে", ref: "bn-2285" }, { word: "জড়িয়ে", base: "জড়ানো", reading: "joṛiye" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4176"
+    target: "কুড়ানো"
+    reading: "kuṛāno"
+    ipa: "kuɽano"
+    phonetic: "[kuɽano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কুড়ানো", reading: "kuṛāno" }] }
+    examples:
+      - { target: "সে রাস্তা থেকে একটা পয়সা কুড়াল।", reading: "se rāstā theke ekoṭā pôyosā kuṛāl.", ipa: "se rast̪a t̪ʰeke ekoʈa pɔjosa kuɽal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "রাস্তা", ref: "bn-0313" }, { word: "থেকে", ref: "bn-0294" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "কুড়াল", base: "কুড়ানো", reading: "kuṛāl" }] }
+      - { target: "পাতা কুড়ানো হচ্ছে।", reading: "pātā kuṛāno hôcche.", ipa: "pat̪a kuɽano ɦɔtʃtʃʰe", bases: [{ word: "পাতা", ref: "bn-2493" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+  - id: "bn-4177"
+    target: "তাড়ানো"
+    reading: "tāṛāno"
+    ipa: "t̪aɽano"
+    phonetic: "[t̪aɽano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তাড়ানো", reading: "tāṛāno" }] }
+    examples:
+      - { target: "কুকুরটাকে তাড়াল।", reading: "kukuroṭāke tāṛāl.", ipa: "kukuroʈake t̪aɽal", bases: [{ word: "কুকুরটাকে", ref: "bn-1277" }, { word: "তাড়াল", base: "তাড়ানো", reading: "tāṛāl" }] }
+      - { target: "মশা তাড়ানোর জন্য ধূপ জ্বালো।", reading: "môśā tāṛānor jonn dhup jālo.", ipa: "mɔʃa t̪aɽanor dʒonn d̪ʱup dʒalo", bases: [{ word: "মশা", ref: "bn-1295" }, { word: "তাড়ানোর", base: "তাড়ানো", reading: "tāṛānor" }, { word: "জন্য", ref: "bn-0297" }, { word: "ধূপ", ref: "bn-1652" }, { word: "জ্বালো", ref: "bn-2346" }] }
+  - id: "bn-4178"
+    target: "কামড়ানো"
+    reading: "kāmoṛāno"
+    ipa: "kamoɽano"
+    phonetic: "[kamoɽano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কামড়ানো", reading: "kāmoṛāno" }] }
+    examples:
+      - { target: "কুকুরটা হাত কামড়াল।", reading: "kukuroṭā hāt kāmoṛāl.", ipa: "kukuroʈa ɦat̪ kamoɽal", bases: [{ word: "কুকুরটা", ref: "bn-1277" }, { word: "হাত", ref: "bn-0730" }, { word: "কামড়াল", base: "কামড়ানো", reading: "kāmoṛāl" }] }
+      - { target: "মশা কামড়ায়।", reading: "môśā kāmoṛāy.", ipa: "mɔʃa kamoɽaj", bases: [{ word: "মশা", ref: "bn-1295" }, { word: "কামড়ায়", base: "কামড়ানো", reading: "kāmoṛāy" }] }
+  - id: "bn-4179"
+    target: "কাঁপানো"
+    reading: "kām̐pāno"
+    ipa: "kãpano"
+    phonetic: "[kãpano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাঁপানো", reading: "kām̐pāno" }] }
+    examples:
+      - { target: "ঠান্ডায় সে হাত কাঁপাচ্ছে।", reading: "ṭhānḍāy se hāt kām̐pācche.", ipa: "ʈʰanɖaj se ɦat̪ kãpatʃtʃʰe", bases: [{ word: "ঠান্ডায়", ref: "bn-0622" }, { word: "সে", ref: "bn-0839" }, { word: "হাত", ref: "bn-0730" }, { word: "কাঁপাচ্ছে", base: "কাঁপানো", reading: "kām̐pācche" }] }
+      - { target: "ভূমিকম্প মাটি কাঁপাল।", reading: "bhumikompo māṭi kām̐pāl.", ipa: "bʱumikomp maʈi kãpal", bases: [{ word: "ভূমিকম্প", ref: "bn-3406" }, { word: "মাটি", ref: "bn-2499" }, { word: "কাঁপাল", base: "কাঁপানো", reading: "kām̐pāl" }] }
+  - id: "bn-4180"
+    target: "চমকানো"
+    reading: "cômokāno"
+    ipa: "tʃɔmokano"
+    phonetic: "[tʃɔmokano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চমকানো", reading: "cômokāno" }] }
+    examples:
+      - { target: "বিকট শব্দে সবাই চমকাল।", reading: "bikoṭ śôbde sôbāi cômokāl.", ipa: "bikoʈ ʃɔbd̪e sɔbai tʃɔmokal", bases: [{ word: "বিকট", base: "বিকট", reading: "bikoṭ" }, { word: "শব্দে", ref: "bn-3413" }, { word: "সবাই", ref: "bn-0854" }, { word: "চমকাল", base: "চমকানো", reading: "cômokāl" }] }
+      - { target: "খবরটা শুনে চমকে উঠলাম।", reading: "khôboroṭā śune cômoke uṭholām.", ipa: "kʰɔboroʈa ʃune tʃɔmoke uʈʰolam", bases: [{ word: "খবরটা", ref: "bn-2884" }, { word: "শুনে", ref: "bn-0878" }, { word: "চমকে", base: "চমকানো", reading: "cômoke" }, { word: "উঠলাম", ref: "bn-0885" }] }
+  - id: "bn-4181"
+    target: "হাসানো"
+    reading: "hāsāno"
+    ipa: "ɦasano"
+    phonetic: "[ɦasano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাসানো", reading: "hāsāno" }] }
+    examples:
+      - { target: "সে সবাইকে হাসাল।", reading: "se sôbāike hāsāl.", ipa: "se sɔbaike ɦasal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "হাসাল", base: "হাসানো", reading: "hāsāl" }] }
+      - { target: "গল্পটা আমাকে হাসাল।", reading: "gôlpoṭā āmāke hāsāl.", ipa: "ɡɔlpoʈa amake ɦasal", bases: [{ word: "গল্পটা", ref: "bn-2214" }, { word: "আমাকে", ref: "bn-0833" }, { word: "হাসাল", base: "হাসানো", reading: "hāsāl" }] }
+  - id: "bn-4182"
+    target: "কাঁদানো"
+    reading: "kām̐dāno"
+    ipa: "kãd̪ano"
+    phonetic: "[kãd̪ano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাঁদানো", reading: "kām̐dāno" }] }
+    examples:
+      - { target: "ছবিটা সবাইকে কাঁদাল।", reading: "chobiṭā sôbāike kām̐dāl.", ipa: "tʃʰobiʈa sɔbaike kãd̪al", bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "কাঁদাল", base: "কাঁদানো", reading: "kām̐dāl" }] }
+      - { target: "দুঃখের কথা আমাকে কাঁদাল।", reading: "duḥkher kôthā āmāke kām̐dāl.", ipa: "d̪uhkʰer kɔt̪ʰa amake kãd̪al", bases: [{ word: "দুঃখের", ref: "bn-1250" }, { word: "কথা", ref: "bn-2409" }, { word: "আমাকে", ref: "bn-0833" }, { word: "কাঁদাল", base: "কাঁদানো", reading: "kām̐dāl" }] }
+  - id: "bn-4183"
+    target: "রাগানো"
+    reading: "rāgāno"
+    ipa: "raɡano"
+    phonetic: "[raɡano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রাগানো", reading: "rāgāno" }] }
+    examples:
+      - { target: "তার কথা আমাকে রাগাল।", reading: "tār kôthā āmāke rāgāl.", ipa: "t̪ar kɔt̪ʰa amake raɡal", bases: [{ word: "তার", ref: "bn-3275" }, { word: "কথা", ref: "bn-2409" }, { word: "আমাকে", ref: "bn-0833" }, { word: "রাগাল", base: "রাগানো", reading: "rāgāl" }] }
+      - { target: "কেন ওকে রাগাচ্ছ?", reading: "ken oke rāgācch?", ipa: "ken oke raɡatʃtʃʰ", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "ওকে", ref: "bn-0844" }, { word: "রাগাচ্ছ", base: "রাগানো", reading: "rāgācch" }] }
+  - id: "bn-4184"
+    target: "নামানো"
+    reading: "nāmāno"
+    ipa: "namano"
+    phonetic: "[namano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নামানো", reading: "nāmāno" }] }
+    examples:
+      - { target: "সে বাক্সটা নামাল।", reading: "se bāksoṭā nāmāl.", ipa: "se baksoʈa namal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বাক্সটা", ref: "bn-1156" }, { word: "নামাল", base: "নামানো", reading: "nāmāl" }] }
+      - { target: "পতাকাটা নামাও।", reading: "pôtākāṭā nāmāo.", ipa: "pɔt̪akaʈa namao", bases: [{ word: "পতাকাটা", base: "পতাকা", reading: "pôtākāṭā" }, { word: "নামাও", base: "নামানো", reading: "nāmāo" }] }
+  - id: "bn-4185"
+    target: "উঠানো"
+    reading: "uṭhāno"
+    ipa: "uʈʰano"
+    phonetic: "[uʈʰano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উঠানো", reading: "uṭhāno" }] }
+    examples:
+      - { target: "কুলি মাল মাথায় উঠাল।", reading: "kuli māl māthāy uṭhāl.", ipa: "kuli mal mat̪ʰaj uʈʰal", bases: [{ word: "কুলি", ref: "bn-3069" }, { word: "মাল", base: "মাল", reading: "māl" }, { word: "মাথায়", ref: "bn-0728" }, { word: "উঠাল", base: "উঠানো", reading: "uṭhāl" }] }
+      - { target: "হাতটা উঠাও।", reading: "hātoṭā uṭhāo.", ipa: "ɦat̪oʈa uʈʰao", bases: [{ word: "হাতটা", ref: "bn-0730" }, { word: "উঠাও", base: "উঠানো", reading: "uṭhāo" }] }
+  - id: "bn-4186"
+    target: "লুকানো"
+    reading: "lukāno"
+    ipa: "lukano"
+    phonetic: "[lukano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লুকানো", reading: "lukāno" }] }
+    examples:
+      - { target: "সে চাবিটা লুকাল।", reading: "se cābiṭā lukāl.", ipa: "se tʃabiʈa lukal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "চাবিটা", ref: "bn-0605" }, { word: "লুকাল", base: "লুকানো", reading: "lukāl" }] }
+      - { target: "বাচ্চারা খেলার সময় লুকায়।", reading: "bāccārā khelār sômoy lukāy.", ipa: "batʃtʃara kʰelar sɔmoj lukaj", bases: [{ word: "বাচ্চারা", base: "বাচ্চা", reading: "bāccārā" }, { word: "খেলার", ref: "bn-0895" }, { word: "সময়", ref: "bn-0061" }, { word: "লুকায়", base: "লুকানো", reading: "lukāy" }] }
+  - id: "bn-4187"
+    target: "বাঁচানো"
+    reading: "bām̐cāno"
+    ipa: "bãtʃano"
+    phonetic: "[bãtʃano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাঁচানো", reading: "bām̐cāno" }] }
+    examples:
+      - { target: "সে একটা শিশুকে বাঁচাল।", reading: "se ekoṭā śiśuke bām̐cāl.", ipa: "se ekoʈa ʃiʃuke bãtʃal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "বাঁচাল", base: "বাঁচানো", reading: "bām̐cāl" }] }
+      - { target: "আমাদের বাঁচাও।", reading: "āmāder bām̐cāo.", ipa: "amad̪er bãtʃao", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "বাঁচাও", base: "বাঁচানো", reading: "bām̐cāo" }] }
+  - id: "bn-4188"
+    target: "ধমকানো"
+    reading: "dhômokāno"
+    ipa: "d̪ʱɔmokano"
+    phonetic: "[d̪ʱɔmokano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ধমকানো", reading: "dhômokāno" }] }
+    examples:
+      - { target: "বাবা ছেলেকে ধমকাল।", reading: "bābā cheleke dhômokāl.", ipa: "baba tʃʰeleke d̪ʱɔmokal", bases: [{ word: "বাবা", ref: "bn-0423" }, { word: "ছেলেকে", ref: "bn-0426" }, { word: "ধমকাল", base: "ধমকানো", reading: "dhômokāl" }] }
+      - { target: "কেন আমাকে ধমকাচ্ছ?", reading: "ken āmāke dhômokācch?", ipa: "ken amake d̪ʱɔmokatʃtʃʰ", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "আমাকে", ref: "bn-0833" }, { word: "ধমকাচ্ছ", base: "ধমকানো", reading: "dhômokācch" }] }
+  - id: "bn-4189"
+    target: "জাগানো"
+    reading: "jāgāno"
+    ipa: "dʒaɡano"
+    phonetic: "[dʒaɡano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জাগানো", reading: "jāgāno" }] }
+    examples:
+      - { target: "মা ছেলেকে জাগাল।", reading: "mā cheleke jāgāl.", ipa: "ma tʃʰeleke dʒaɡal", bases: [{ word: "মা", ref: "bn-0424" }, { word: "ছেলেকে", ref: "bn-0426" }, { word: "জাগাল", base: "জাগানো", reading: "jāgāl" }] }
+      - { target: "আমাকে সকালে জাগিও।", reading: "āmāke sôkāle jāgio.", ipa: "amake sɔkale dʒaɡio", bases: [{ word: "আমাকে", ref: "bn-0833" }, { word: "সকালে", ref: "bn-1545" }, { word: "জাগিও", base: "জাগানো", reading: "jāgio" }] }
+  - id: "bn-4190"
+    target: "নাচানো"
+    reading: "nācāno"
+    ipa: "natʃano"
+    phonetic: "[natʃano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নাচানো", reading: "nācāno" }] }
+    examples:
+      - { target: "সে পুতুলটাকে নাচাল।", reading: "se putuloṭāke nācāl.", ipa: "se put̪uloʈake natʃal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "পুতুলটাকে", base: "পুতুল", reading: "putuloṭāke" }, { word: "নাচাল", base: "নাচানো", reading: "nācāl" }] }
+      - { target: "হাত নাচিয়ে কথা বলো।", reading: "hāt nāciye kôthā bôlo.", ipa: "ɦat̪ natʃije kɔt̪ʰa bɔlo", bases: [{ word: "হাত", ref: "bn-0730" }, { word: "নাচিয়ে", base: "নাচানো", reading: "nāciye" }, { word: "কথা", ref: "bn-2409" }, { word: "বলো", ref: "bn-0879" }] }
+  - id: "bn-4191"
+    target: "ভাবানো"
+    reading: "bhābāno"
+    ipa: "bʱabano"
+    phonetic: "[bʱabano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভাবানো", reading: "bhābāno" }] }
+    examples:
+      - { target: "গল্পটা আমাকে ভাবাল।", reading: "gôlpoṭā āmāke bhābāl.", ipa: "ɡɔlpoʈa amake bʱabal", bases: [{ word: "গল্পটা", ref: "bn-2214" }, { word: "আমাকে", ref: "bn-0833" }, { word: "ভাবাল", base: "ভাবানো", reading: "bhābāl" }] }
+      - { target: "এই প্রশ্ন সবাইকে ভাবাচ্ছে।", reading: "ei prôśn sôbāike bhābācche.", ipa: "ei prɔʃn sɔbaike bʱabatʃtʃʰe", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "প্রশ্ন", ref: "bn-2156" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "ভাবাচ্ছে", base: "ভাবানো", reading: "bhābācche" }] }
+  - id: "bn-4192"
+    target: "ঠেকানো"
+    reading: "ṭhekāno"
+    ipa: "ʈʰekano"
+    phonetic: "[ʈʰekano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঠেকানো", reading: "ṭhekāno" }] }
+    examples:
+      - { target: "সে বল ঠেকাল।", reading: "se bôl ṭhekāl.", ipa: "se bɔl ʈʰekal", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বল", ref: "bn-0055" }, { word: "ঠেকাল", base: "ঠেকানো", reading: "ṭhekāl" }] }
+      - { target: "বন্যা ঠেকানো যায়নি।", reading: "bonnā ṭhekāno jāyoni.", ipa: "bonna ʈʰekano dʒajoni", bases: [{ word: "বন্যা", ref: "bn-1610" }, { word: "ঠেকানো", base: "ঠেকানো", reading: "ṭhekāno" }, { word: "যায়নি", ref: "bn-0873" }] }
+  - id: "bn-4193"
+    target: "কাটানো"
+    reading: "kāṭāno"
+    ipa: "kaʈano"
+    phonetic: "[kaʈano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাটানো", reading: "kāṭāno" }] }
+    examples:
+      - { target: "আমরা ছুটি কাটালাম।", reading: "āmorā chuṭi kāṭālām.", ipa: "amora tʃʰuʈi kaʈalam", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "ছুটি", ref: "bn-0463" }, { word: "কাটালাম", base: "কাটানো", reading: "kāṭālām" }] }
+      - { target: "সে সময় ভালো কাটায়।", reading: "se sômoy bhālo kāṭāy.", ipa: "se sɔmoj bʱalo kaʈaj", bases: [{ word: "সে", ref: "bn-0839" }, { word: "সময়", ref: "bn-0061" }, { word: "ভালো", ref: "bn-0617" }, { word: "কাটায়", base: "কাটানো", reading: "kāṭāy" }] }
+  - id: "bn-4194"
+    target: "শোয়ানো"
+    reading: "śoyāno"
+    ipa: "ʃojano"
+    phonetic: "[ʃojano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শোয়ানো", reading: "śoyāno" }] }
+    examples:
+      - { target: "মা শিশুকে বিছানায় শোয়াল।", reading: "mā śiśuke bichānāy śoyāl.", ipa: "ma ʃiʃuke bitʃʰanaj ʃojal", bases: [{ word: "মা", ref: "bn-0424" }, { word: "শিশুকে", base: "শিশু", reading: "śiśuke" }, { word: "বিছানায়", ref: "bn-0606" }, { word: "শোয়াল", base: "শোয়ানো", reading: "śoyāl" }] }
+      - { target: "রোগীকে শুইয়ে দাও।", reading: "rogike śuiye dāo.", ipa: "roɡike ʃuije d̪ao", bases: [{ word: "রোগীকে", ref: "bn-1766" }, { word: "শুইয়ে", base: "শোয়ানো", reading: "śuiye" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4195"
+    target: "ঝরানো"
+    reading: "jhôrāno"
+    ipa: "dʒʱɔrano"
+    phonetic: "[dʒʱɔrano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝরানো", reading: "jhôrāno" }] }
+    examples:
+      - { target: "গাছ পাতা ঝরাল।", reading: "gāch pātā jhôrāl.", ipa: "ɡatʃʰ pat̪a dʒʱɔral", bases: [{ word: "গাছ", ref: "bn-2285" }, { word: "পাতা", ref: "bn-2493" }, { word: "ঝরাল", base: "ঝরানো", reading: "jhôrāl" }] }
+      - { target: "সে চোখের জল ঝরাল।", reading: "se cokher jôl jhôrāl.", ipa: "se tʃokʰer dʒɔl dʒʱɔral", bases: [{ word: "সে", ref: "bn-0839" }, { word: "চোখের", ref: "bn-0732" }, { word: "জল", ref: "bn-0350" }, { word: "ঝরাল", base: "ঝরানো", reading: "jhôrāl" }] }
+  - id: "bn-4196"
+    target: "পিছলানো"
+    reading: "picholāno"
+    ipa: "pitʃʰolano"
+    phonetic: "[pitʃʰolano]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পিছলানো", reading: "picholāno" }] }
+    examples:
+      - { target: "রাস্তাটা ভেজা, সে পিছলে পড়ল।", reading: "rāstāṭā bhejā, se pichole pôṛol.", ipa: "rast̪aʈa bʱedʒa se pitʃʰole pɔɽol", bases: [{ word: "রাস্তাটা", ref: "bn-0313" }, { word: "ভেজা", ref: "bn-1599" }, { word: "সে", ref: "bn-0839" }, { word: "পিছলে", base: "পিছলানো", reading: "pichole" }, { word: "পড়ল", ref: "bn-0119" }] }
+      - { target: "বরফে পা পিছলাল।", reading: "bôrophe pā picholāl.", ipa: "bɔropʰe pa pitʃʰolal", bases: [{ word: "বরফে", ref: "bn-1589" }, { word: "পা", ref: "bn-0731" }, { word: "পিছলাল", base: "পিছলানো", reading: "picholāl" }] }
+  - id: "bn-4197"
+    target: "খালি করা"
+    reading: "khāli kôrā"
+    ipa: "kʰali kɔra"
+    phonetic: "[kʰali kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খালি করা", reading: "khāli kôrā" }] }
+    examples:
+      - { target: "বালতিটা খালি করো।", reading: "bālotiṭā khāli kôro.", ipa: "balot̪iʈa kʰali kɔro", bases: [{ word: "বালতিটা", ref: "bn-1158" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "ঘরটা খালি করা হলো।", reading: "ghôroṭā khāli kôrā hôlo.", ipa: "ɡʱɔroʈa kʰali kɔra ɦɔlo", bases: [{ word: "ঘরটা", ref: "bn-0051" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-4198"
+    target: "ওজন করা"
+    reading: "ojon kôrā"
+    ipa: "odʒon kɔra"
+    phonetic: "[odʒon kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ওজন করা", reading: "ojon kôrā" }] }
+    examples:
+      - { target: "ওজন করে দেখো।", reading: "ojon kôre dekho.", ipa: "odʒon kɔre d̪ekʰo", bases: [{ word: "করে", ref: "bn-0102" }, { word: "দেখো", ref: "bn-0877" }] }
+      - { target: "আমি নিজেকে ওজন করলাম।", reading: "āmi nijeke ojon kôrolām.", ipa: "ami nidʒeke odʒon kɔrolam", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "নিজেকে", ref: "bn-0855" }, { word: "করলাম", ref: "bn-0102" }] }
+  - id: "bn-4199"
+    target: "হিসাব করা"
+    reading: "hisāb kôrā"
+    ipa: "ɦisab kɔra"
+    phonetic: "[ɦisab kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হিসাব করা", reading: "hisāb kôrā" }] }
+    examples:
+      - { target: "হিসাব করো।", reading: "hisāb kôro.", ipa: "ɦisab kɔro", bases: [{ word: "করো", ref: "bn-0102" }] }
+      - { target: "সে খরচের হিসাব করছে।", reading: "se khôrocer hisāb kôroche.", ipa: "se kʰɔrotʃer ɦisab kɔrotʃʰe", bases: [{ word: "সে", ref: "bn-0839" }, { word: "খরচের", ref: "bn-1703" }, { word: "করছে", ref: "bn-0102" }] }
+  - id: "bn-4200"
+    target: "সেলাই করা"
+    reading: "selāi kôrā"
+    ipa: "selai kɔra"
+    phonetic: "[selai kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সেলাই করা", reading: "selāi kôrā" }] }
+    examples:
+      - { target: "মা জামা সেলাই করছেন।", reading: "mā jāmā selāi kôrochen.", ipa: "ma dʒama selai kɔrotʃʰen", bases: [{ word: "মা", ref: "bn-0424" }, { word: "জামা", ref: "bn-1189" }, { word: "করছেন", ref: "bn-0102" }] }
+      - { target: "সে নিজেই সেলাই করে।", reading: "se nijei selāi kôre.", ipa: "se nidʒei selai kɔre", bases: [{ word: "সে", ref: "bn-0839" }, { word: "নিজেই", ref: "bn-0855" }, { word: "করে", ref: "bn-0102" }] }
+  - id: "bn-4201"
+    target: "সেদ্ধ করা"
+    reading: "seddh kôrā"
+    ipa: "sed̪d̪ʱ kɔra"
+    phonetic: "[sed̪d̪ʱ kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সেদ্ধ করা", reading: "seddh kôrā" }] }
+    examples:
+      - { target: "ডিমটা সেদ্ধ করো।", reading: "ḍimoṭā seddh kôro.", ipa: "ɖimoʈa sed̪d̪ʱ kɔro", bases: [{ word: "ডিমটা", ref: "bn-0270" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "আলু সেদ্ধ করা হলো।", reading: "ālu seddh kôrā hôlo.", ipa: "alu sed̪d̪ʱ kɔra ɦɔlo", bases: [{ word: "আলু", ref: "bn-0261" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-4202"
+    target: "ঠান্ডা করা"
+    reading: "ṭhānḍā kôrā"
+    ipa: "ʈʰanɖa kɔra"
+    phonetic: "[ʈʰanɖa kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঠান্ডা করা", reading: "ṭhānḍā kôrā" }] }
+    examples:
+      - { target: "চাটা ঠান্ডা করো।", reading: "cāṭā ṭhānḍā kôro.", ipa: "tʃaʈa ʈʰanɖa kɔro", bases: [{ word: "করো", ref: "bn-0102" }, { word: "চাটা", base: "চা", reading: "cāṭā" }] }
+      - { target: "ফ্রিজে জল ঠান্ডা করা হলো।", reading: "phrije jôl ṭhānḍā kôrā hôlo.", ipa: "pʰridʒe dʒɔl ʈʰanɖa kɔra ɦɔlo", bases: [{ word: "ফ্রিজে", ref: "bn-3992" }, { word: "জল", ref: "bn-0350" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-4203"
+    target: "ভরসা করা"
+    reading: "bhôrosā kôrā"
+    ipa: "bʱɔrosa kɔra"
+    phonetic: "[bʱɔrosa kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভরসা করা", reading: "bhôrosā kôrā" }] }
+    examples:
+      - { target: "তাকে ভরসা করা যায়।", reading: "tāke bhôrosā kôrā jāy.", ipa: "t̪ake bʱɔrosa kɔra dʒaj", bases: [{ word: "তাকে", ref: "bn-0839" }, { word: "যায়", ref: "bn-0873" }] }
+      - { target: "আমি তোমার ওপর ভরসা করি।", reading: "āmi tomār opor bhôrosā kori.", ipa: "ami t̪omar opor bʱɔrosa kori", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "তোমার", ref: "bn-0835" }, { word: "ওপর", base: "ওপর", reading: "opor" }, { word: "করি", ref: "bn-0102" }] }
+  - id: "bn-4204"
+    target: "দাবি করা"
+    reading: "dābi kôrā"
+    ipa: "d̪abi kɔra"
+    phonetic: "[d̪abi kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: [{ word: "দাবি", base: "দাবি", reading: "dābi" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দাবি করা", reading: "dābi kôrā" }] }
+    examples:
+      - { target: "সে বেতন বাড়ানোর দাবি করল।", reading: "se beton bāṛānor dābi kôrol.", ipa: "se bet̪on baɽanor d̪abi kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "বেতন", ref: "bn-0472" }, { word: "বাড়ানোর", base: "বাড়ানো", reading: "bāṛānor" }, { word: "করল", ref: "bn-0102" }, { word: "দাবি", base: "দাবি", reading: "dābi" }] }
+      - { target: "লোকেরা ন্যায় দাবি করছে।", reading: "lokerā nêy dābi kôroche.", ipa: "lokera næj d̪abi kɔrotʃʰe", bases: [{ word: "লোকেরা", base: "লোক", reading: "lokerā" }, { word: "ন্যায়", ref: "bn-4110" }, { word: "করছে", ref: "bn-0102" }, { word: "দাবি", base: "দাবি", reading: "dābi" }] }
+  - id: "bn-4205"
+    target: "প্রশ্ন করা"
+    reading: "prôśn kôrā"
+    ipa: "prɔʃn kɔra"
+    phonetic: "[prɔʃn kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রশ্ন করা", reading: "prôśn kôrā" }] }
+    examples:
+      - { target: "আমি একটা প্রশ্ন করব।", reading: "āmi ekoṭā prôśn kôrob.", ipa: "ami ekoʈa prɔʃn kɔrob", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "করব", ref: "bn-0102" }] }
+      - { target: "শিক্ষককে প্রশ্ন করো।", reading: "śikkhokoke prôśn kôro.", ipa: "ʃikkʰokoke prɔʃn kɔro", bases: [{ word: "শিক্ষককে", ref: "bn-0451" }, { word: "প্রশ্ন", ref: "bn-2156" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4206"
+    target: "চিৎকার করা"
+    reading: "citkār kôrā"
+    ipa: "tʃit̪kar kɔra"
+    phonetic: "[tʃit̪kar kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: [{ word: "চিৎকার", base: "চিৎকার", reading: "citkār" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চিৎকার করা", reading: "citkār kôrā" }] }
+    examples:
+      - { target: "সে চিৎকার করল।", reading: "se citkār kôrol.", ipa: "se tʃit̪kar kɔrol", bases: [{ word: "সে", ref: "bn-0839" }, { word: "করল", ref: "bn-0102" }, { word: "চিৎকার", base: "চিৎকার", reading: "citkār" }] }
+      - { target: "কেন চিৎকার করছ?", reading: "ken citkār kôroch?", ipa: "ken tʃit̪kar kɔrotʃʰ", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "করছ", ref: "bn-0102" }, { word: "চিৎকার", base: "চিৎকার", reading: "citkār" }] }
+  - id: "bn-4207"
+    target: "ব্যাখ্যা করা"
+    reading: "bêkkhā kôrā"
+    ipa: "bækkʰa kɔra"
+    phonetic: "[bækkʰa kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাখ্যা করা", reading: "bêkkhā kôrā" }] }
+    examples:
+      - { target: "শিক্ষক বিষয়টা ব্যাখ্যা করলেন।", reading: "śikkhok biśoyoṭā bêkkhā kôrolen.", ipa: "ʃikkʰok biʃojoʈa bækkʰa kɔrolen", bases: [{ word: "শিক্ষক", ref: "bn-0451" }, { word: "বিষয়টা", ref: "bn-2164" }, { word: "ব্যাখ্যা", ref: "bn-2977" }, { word: "করলেন", ref: "bn-0102" }] }
+      - { target: "তুমি কী ব্যাখ্যা করবে?", reading: "tumi ki bêkkhā kôrobe?", ipa: "t̪umi ki bækkʰa kɔrobe", bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কী", ref: "bn-0161" }, { word: "করবে", ref: "bn-0102" }] }
+  - id: "bn-4208"
+    target: "স্বপ্ন দেখা"
+    reading: "sôpno dekhā"
+    ipa: "sɔpn d̪ekʰa"
+    phonetic: "[sɔpn d̪ekʰa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্বপ্ন দেখা", reading: "sôpno dekhā" }] }
+    examples:
+      - { target: "আমি একটা সুন্দর স্বপ্ন দেখলাম।", reading: "āmi ekoṭā sundor sôpno dekholām.", ipa: "ami ekoʈa sund̪or sɔpn d̪ekʰolam", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "সুন্দর", ref: "bn-0625" }, { word: "দেখলাম", ref: "bn-0877" }] }
+      - { target: "রোজ রাতে স্বপ্ন দেখি।", reading: "roj rāte sôpno dekhi.", ipa: "rodʒ rat̪e sɔpn d̪ekʰi", bases: [{ word: "রোজ", ref: "bn-1528" }, { word: "রাতে", ref: "bn-1547" }, { word: "দেখি", ref: "bn-0877" }] }

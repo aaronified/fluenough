@@ -1,0 +1,30 @@
+schema: 1
+id: "bn-en-grammar-relative-sentences"
+kind: "layer"
+core: "bn-grammar-relative-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative clauses: sentences"
+description: "Short sentences with যে (je), who or which. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3034":
+    native: "The boy who came is my brother."
+    bases: { "যে": "who", "ছেলেটা": "the boy", "ভাই": "brother" }
+    confusables: { "c1": { why: "the girl: a different person" }, "c2": { why: "the man: close, but not the one who came" } }
+  "bn-3035":
+    native: "The book that I read is good."
+    bases: { "যে": "which", "পড়েছি": "read", "সেটা": "that" }
+    confusables: { "c1": { why: "a notebook: a school thing, not a book one reads" }, "c2": { why: "paper: a sheet, not a book" } }
+  "bn-3036":
+    native: "At the shop I go to, good tea can be had."
+    bases: { "যে": "which", "সেখানে": "there" }
+    confusables: { "c1": { why: "a market: a place of many shops, not one shop" }, "c2": { why: "a school: not a shop" } }
+  "bn-3037":
+    native: "The person who works gets money."
+    bases: { "যে": "who", "মানুষ": "person" }
+    confusables: { "c1": { why: "unemployed: the opposite of working" }, "c2": { why: "lazy: a habit, not a job" } }
+  "bn-3038":
+    native: "The thing you said is not true."
+    bases: { "যে": "which", "সেটা": "that", "সত্যি": "true" }
+    confusables: { "c1": { why: "a story: not a thing said as fact" }, "c2": { why: "a question: asked, not said" } }
