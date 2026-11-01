@@ -1,0 +1,42 @@
+schema: 1
+id: "bn-en-grammar-reported-speech-sentences"
+kind: "layer"
+core: "bn-grammar-reported-speech-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reported speech: sentences"
+description: "Short sentences that pass on what someone said, with যে (je) for 'that'. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4380":
+    native: "She said that she would come tomorrow."
+    confusables: { "c1": { why: "will go: a different verb in the same sentence" }, "c2": { why: "will say: a different tense of the verb" } }
+  "bn-4381":
+    native: "Mother said that I should go."
+    bases: { "যেন": "that I should" }
+    confusables: { "c1": { why: "said: the same verb, a different sentence type" }, "c2": { why: "heard: a different verb" } }
+  "bn-4382":
+    native: "She informed that she is well."
+    bases: { "জানাল": "informed", "আছে": "is" }
+    confusables: { "c1": { why: "ill: the opposite of well" }, "c2": { why: "happy: a different feeling" } }
+  "bn-4383":
+    native: "She wrote that she passed the exam."
+    confusables: { "c1": { why: "failed: the opposite result" }, "c2": { why: "will write: a different tense" } }
+  "bn-4384":
+    native: "He thought that it would rain tomorrow."
+    confusables: { "c1": { why: "sunshine: the opposite weather" }, "c2": { why: "did not think: a negative form" } }
+  "bn-4385":
+    native: "She asked where you would go."
+    confusables: { "c1": { why: "when: a different question word" }, "c2": { why: "why: a different question word" } }
+  "bn-4386":
+    native: "Father said to stay at home."
+    confusables: { "c1": { why: "to go out: the opposite instruction" }, "c2": { why: "to sleep: a different instruction" } }
+  "bn-4387":
+    native: "I am thinking that I will come tomorrow."
+    confusables: { "c1": { why: "will go: a different verb" }, "c2": { why: "will think: a different tense" } }
+  "bn-4388":
+    native: "They have said that the news is true."
+    confusables: { "c1": { why: "false: the opposite of true" }, "c2": { why: "new: a different quality" } }
+  "bn-4389":
+    native: "She said that she would read a book."
+    confusables: { "c1": { why: "will write: a different verb" }, "c2": { why: "will buy: a different verb" } }

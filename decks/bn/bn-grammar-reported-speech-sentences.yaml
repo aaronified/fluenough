@@ -1,0 +1,80 @@
+schema: 1
+id: "bn-grammar-reported-speech-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4380"
+    target: "সে বলল যে সে কাল আসবে।"
+    reading: "se bôlol je se kāl āsobe."
+    ipa: "se bɔlol dʒe se kal asobe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "বলল", ref: "bn-0879" }, { word: "যে", ref: "bn-0367" }, { word: "কাল", ref: "bn-0316" }, { word: "আসবে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "যাবে", reading: "jābe", kind: "word" }, { id: "c2", word: "বলবে", reading: "bolbe", kind: "word" }]
+  - id: "bn-4381"
+    target: "মা বললেন যেন আমি যাই।"
+    reading: "mā bôlolen jen āmi jāi."
+    ipa: "ma bɔlolen dʒen ami dʒai"
+    pos: "phrase"
+    bases: [{ word: "মা", ref: "bn-0424" }, { word: "বললেন", ref: "bn-0879" }, { word: "যেন", base: "যেন", reading: "jen" }, { word: "আমি", ref: "bn-0833" }, { word: "যাই", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "বললেন", reading: "bolen", kind: "word" }, { id: "c2", word: "শুনলেন", reading: "śunlen", kind: "word" }]
+  - id: "bn-4382"
+    target: "সে জানাল যে সে ভালো আছে।"
+    reading: "se jānāl je se bhālo āche."
+    ipa: "se dʒanal dʒe se bʱalo atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "জানাল", base: "@জানানো", reading: "jānāl" }, { word: "যে", ref: "bn-0367" }, { word: "ভালো", ref: "bn-0617" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "অসুস্থ", reading: "asustha", kind: "word" }, { id: "c2", word: "খুশি", reading: "khuśi", kind: "word" }]
+  - id: "bn-4383"
+    target: "সে লিখল যে সে পরীক্ষায় পাশ করেছে।"
+    reading: "se likhol je se porikkhāy pāś kôreche."
+    ipa: "se likʰol dʒe se porikkʰaj paʃ kɔretʃʰe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "লিখল", ref: "bn-0880" }, { word: "যে", ref: "bn-0367" }, { word: "পরীক্ষায়", ref: "bn-1776" }, { word: "পাশ", ref: "bn-1071" }, { word: "করেছে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ফেল", reading: "phel", kind: "word" }, { id: "c2", word: "লিখবে", reading: "likhbe", kind: "word" }]
+  - id: "bn-4384"
+    target: "সে ভাবল যে কাল বৃষ্টি হবে।"
+    reading: "se bhābol je kāl briśṭi hôbe."
+    ipa: "se bʱabol dʒe kal briʃʈi ɦɔbe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "ভাবল", ref: "bn-1118" }, { word: "যে", ref: "bn-0367" }, { word: "কাল", ref: "bn-0316" }, { word: "বৃষ্টি", ref: "bn-1574" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "রোদ", reading: "rod", kind: "word" }, { id: "c2", word: "ভাবল না", reading: "bhābal nā", kind: "word" }]
+  - id: "bn-4385"
+    target: "সে জিজ্ঞেস করল তুমি কোথায় যাবে।"
+    reading: "se jigges kôrol tumi kothāy jābe."
+    ipa: "se dʒiɡɡes kɔrol t̪umi kot̪ʰaj dʒabe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "জিজ্ঞেস", ref: "bn-0685" }, { word: "করল", ref: "bn-0102" }, { word: "তুমি", ref: "bn-0835" }, { word: "কোথায়", ref: "bn-0163" }, { word: "যাবে", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "কখন", reading: "kakhon", kind: "word" }, { id: "c2", word: "কেন", reading: "keno", kind: "word" }]
+  - id: "bn-4386"
+    target: "বাবা বললেন যে বাড়িতে থাকতে।"
+    reading: "bābā bôlolen je bāṛite thākote."
+    ipa: "baba bɔlolen dʒe baɽit̪e t̪ʰakot̪e"
+    pos: "phrase"
+    bases: [{ word: "বাবা", ref: "bn-0423" }, { word: "বললেন", ref: "bn-0879" }, { word: "যে", ref: "bn-0367" }, { word: "বাড়িতে", ref: "bn-0124" }, { word: "থাকতে", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "বেরোতে", reading: "berote", kind: "word" }, { id: "c2", word: "শুতে", reading: "śute", kind: "word" }]
+  - id: "bn-4387"
+    target: "আমি ভাবছি যে কাল আসব।"
+    reading: "āmi bhābochi je kāl āsob."
+    ipa: "ami bʱabotʃʰi dʒe kal asob"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "ভাবছি", ref: "bn-1118" }, { word: "যে", ref: "bn-0367" }, { word: "কাল", ref: "bn-0316" }, { word: "আসব", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "যাব", reading: "jāb", kind: "word" }, { id: "c2", word: "ভাবব", reading: "bhābab", kind: "word" }]
+  - id: "bn-4388"
+    target: "তারা বলেছে যে খবরটা সত্য।"
+    reading: "tārā bôleche je khôboroṭā sott."
+    ipa: "t̪ara bɔletʃʰe dʒe kʰɔboroʈa sot̪t̪"
+    pos: "phrase"
+    bases: [{ word: "তারা", ref: "bn-0840" }, { word: "বলেছে", ref: "bn-0879" }, { word: "যে", ref: "bn-0367" }, { word: "খবরটা", ref: "bn-2884" }, { word: "সত্য", ref: "bn-2906" }]
+    confusables: [{ id: "c1", word: "মিথ্যা", reading: "mithyā", kind: "word" }, { id: "c2", word: "নতুন", reading: "notun", kind: "word" }]
+  - id: "bn-4389"
+    target: "সে বলল যে সে বই পড়বে।"
+    reading: "se bôlol je se boi pôṛobe."
+    ipa: "se bɔlol dʒe se boi pɔɽobe"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "বলল", ref: "bn-0879" }, { word: "যে", ref: "bn-0367" }, { word: "বই", ref: "bn-1139" }, { word: "পড়বে", ref: "bn-0119" }]
+    confusables: [{ id: "c1", word: "লিখবে", reading: "likhbe", kind: "word" }, { id: "c2", word: "কিনবে", reading: "kinbe", kind: "word" }]

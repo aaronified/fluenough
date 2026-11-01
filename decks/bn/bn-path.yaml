@@ -724,11 +724,15 @@ units:
       - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
   - decks: ["bn-reading-money"]
     words: 0
-  - planned: { id: "bn-grammar-reported-speech", grammar: "reported-speech" }
+  - decks: ["bn-grammar-reported-speech", "bn-grammar-reported-speech-sentences"]
+    words: 0
+    grammar: ["reported-speech"]
     listening_passages:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
+  - decks: ["bn-reading-reported-speech"]
+    words: 0
   - planned: { id: "bn-literature", theme: "literature", words: 50 }
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
