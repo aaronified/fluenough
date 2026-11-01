@@ -1,0 +1,624 @@
+schema: 1
+id: es-en-weather
+kind: layer
+core: es-weather
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Weather
+license: CC-BY-SA-4.0
+description: 'The weather: the sky, rain, snow, wind, heat and cold, and words to say what the weather is like. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1112:
+    native: weather
+    notes:
+      n1: Tiempo is the weather, what the sky and air are doing today. It also means time, as in no tengo tiempo; ¿Qué tiempo hace? asks what the weather is like.
+    bases:
+      el: the
+      tiempo: weather
+    examples:
+      ¿Qué tiempo hace hoy?:
+        native: What is the weather like today?
+        bases:
+          tiempo: weather
+      El tiempo es bueno.:
+        native: The weather is good.
+        bases:
+          El: the
+          tiempo: weather
+  es-1113:
+    native: sun
+    notes:
+      n1: 'Sol is the sun, and it is masculine: el sol. Hace sol means it is sunny.'
+    bases:
+      el: the
+      sol: sun
+    examples:
+      Hoy hay sol.:
+        native: Today it is sunny.
+        bases:
+          hay: there is
+          sol: sun
+      El sol brilla en verano.:
+        native: The sun shines in summer.
+        bases:
+          El: The
+          sol: sun
+          brilla: shines
+          en: in
+  es-1114:
+    native: rain
+    notes:
+      n1: 'Lluvia is rain, the water that falls. Llover is the verb to rain: llueve means it rains.'
+    bases:
+      la: the
+      lluvia: rain
+    examples:
+      Hoy hay lluvia.:
+        native: Today there is rain.
+        bases:
+          hay: there is
+          lluvia: rain
+      Hay lluvia en la ciudad.:
+        native: There is rain in the city.
+        bases:
+          Hay: there is
+          lluvia: rain
+          en: in
+          la: the
+  es-1115:
+    native: wind
+    notes:
+      n1: 'Viento is wind and is masculine: el viento. Hace viento means it is windy.'
+    bases:
+      el: the
+      viento: wind
+    examples:
+      Hace viento hoy.:
+        native: It is windy today.
+        bases:
+          viento: wind
+      El viento es fuerte.:
+        native: The wind is strong.
+        bases:
+          El: The
+          viento: wind
+  es-1116:
+    native: snow
+    notes:
+      n1: 'Nieve is snow and is feminine: la nieve. The verb is nevar, to snow.'
+    bases:
+      la: the
+      nieve: snow
+    examples:
+      En invierno hay nieve.:
+        native: In winter there is snow.
+        bases:
+          En: In
+          hay: there is
+          nieve: snow
+      La nieve es blanca.:
+        native: Snow is white.
+        bases:
+          La: The
+          nieve: snow
+          blanca: white
+  es-1117:
+    native: cloud
+    notes:
+      n1: 'Nube is a cloud and is feminine: la nube. Hay nubes means there are clouds, with the plural nubes.'
+    bases:
+      la: the
+      nube: cloud
+    examples:
+      Hoy hay nubes.:
+        native: Today there are clouds.
+        bases:
+          hay: there is
+          nubes: clouds
+      Una nube grande está en el cielo.:
+        native: A big cloud is in the sky.
+        bases:
+          Una: A
+          nube: cloud
+          en: in
+          el: the
+          cielo: sky
+  es-1118:
+    native: fog
+    notes:
+      n1: 'Niebla is fog or mist, and is feminine: la niebla. It is thicker than a cloud at street level.'
+    bases:
+      la: the
+      niebla: fog
+    examples:
+      Por la mañana hay niebla.:
+        native: In the morning there is fog.
+        bases:
+          Por: In
+          la: the
+          hay: there is
+          niebla: fog
+      Con niebla no veo bien.:
+        native: I cannot see well in fog.
+        bases:
+          Con: With
+          niebla: fog
+          veo: see
+  es-1119:
+    native: storm
+    notes:
+      n1: 'Tormenta is a storm with rain, wind or thunder, and is feminine: la tormenta.'
+    bases:
+      la: the
+      tormenta: storm
+    examples:
+      Esta noche hay una tormenta.:
+        native: Tonight there is a storm.
+        bases:
+          Esta: This
+          hay: there is
+          una: a
+          tormenta: storm
+      La tormenta es muy fuerte.:
+        native: The storm is very strong.
+        bases:
+          La: The
+          tormenta: storm
+  es-1120:
+    native: heat
+    notes:
+      n1: Calor is heat or warm weather, and is masculine. Hace calor says it is hot outside; tener calor says a person is hot.
+    bases:
+      el: the
+      calor: heat
+    examples:
+      Hace mucho calor en verano.:
+        native: It is very hot in summer.
+        bases:
+          calor: heat
+          en: in
+      Tengo calor.:
+        native: I am hot.
+        bases:
+          calor: heat
+  es-1121:
+    native: temperature
+    notes:
+      n1: 'Temperatura is the temperature, and is feminine: la temperatura. Say it with the grados.'
+    bases:
+      la: the
+      temperatura: temperature
+    examples:
+      La temperatura hoy es alta.:
+        native: The temperature is high today.
+        bases:
+          La: The
+          temperatura: temperature
+      ¿Cuál es la temperatura?:
+        native: What is the temperature?
+        bases:
+          la: the
+          temperatura: temperature
+  es-1122:
+    native: sky
+    notes:
+      n1: 'Cielo is the sky, and is masculine: el cielo. The cielo can be azul, gris or nublado.'
+    bases:
+      el: the
+      cielo: sky
+    examples:
+      El cielo está azul.:
+        native: The sky is blue.
+        bases:
+          El: The
+          cielo: sky
+      Hoy el cielo está gris.:
+        native: Today the sky is grey.
+        bases:
+          el: the
+          cielo: sky
+  es-1123:
+    native: umbrella
+    notes:
+      n1: 'Paraguas is an umbrella, masculine and the same in the plural: el paraguas, los paraguas. It is not a parasol.'
+    bases:
+      el: the
+      paraguas: umbrella
+    examples:
+      Lleva el paraguas, va a llover.:
+        native: Take the umbrella, it is going to rain.
+        bases:
+          el: the
+          paraguas: umbrella
+          llover: to rain
+          a: to
+      No olvides el paraguas.:
+        native: Do not forget the umbrella.
+        bases:
+          olvides: forget
+          el: the
+          paraguas: umbrella
+  es-1124:
+    native: degree
+    notes:
+      n1: 'Grado is a degree of temperature, masculine: veinte grados is twenty degrees. Hay cinco grados means it is five degrees outside.'
+    bases:
+      el: the
+      grado: degree
+    examples:
+      Hoy hay veinte grados.:
+        native: Today it is twenty degrees.
+        bases:
+          hay: there is
+          grados: degrees
+      Hay cinco grados en la calle.:
+        native: It is five degrees in the street.
+        bases:
+          Hay: It is
+          grados: degrees
+          en: in
+          la: the
+  es-1125:
+    native: thunder
+    notes:
+      n1: 'Trueno is thunder, masculine: el trueno. The flash of lightning is the rayo.'
+    bases:
+      el: the
+      trueno: thunder
+    examples:
+      Se oye un trueno.:
+        native: A clap of thunder is heard.
+        bases:
+          Se: one
+          oye: hears
+          un: a
+          trueno: thunder
+      El trueno suena muy fuerte.:
+        native: The thunder sounds very loud.
+        bases:
+          El: The
+          trueno: thunder
+          suena: sounds
+  es-1126:
+    native: hail
+    notes:
+      n1: 'Granizo is hail, masculine: el granizo. It comes from storms, and falls as small hard balls of ice.'
+    bases:
+      el: the
+      granizo: hail
+    examples:
+      Hoy cae granizo.:
+        native: Today hail is falling.
+        bases:
+          cae: falls
+          granizo: hail
+      Con granizo no salgo.:
+        native: I do not go out when it hails.
+        bases:
+          Con: With
+          granizo: hail
+  es-1127:
+    native: humidity
+    notes:
+      n1: 'Humedad is humidity, the water in the air, and is feminine: la humedad. Hot and wet weather is calor y humedad.'
+    bases:
+      la: the
+      humedad: humidity
+    examples:
+      Hay mucha humedad hoy.:
+        native: There is a lot of humidity today.
+        bases:
+          Hay: There is
+          humedad: humidity
+      La humedad es alta.:
+        native: The humidity is high.
+        bases:
+          La: The
+          humedad: humidity
+  es-1128:
+    native: climate
+    notes:
+      n1: Clima is the climate, the usual weather of a place over the years. Tiempo is the weather today, so say el clima de una ciudad, but el tiempo de hoy.
+    bases:
+      el: the
+      clima: climate
+    examples:
+      El clima de Madrid es seco.:
+        native: The climate of Madrid is dry.
+        bases:
+          El: The
+          clima: climate
+          de: of
+          Madrid: Madrid
+      El clima cambia mucho.:
+        native: The climate changes a lot.
+        bases:
+          El: The
+          clima: climate
+  es-1129:
+    native: forecast
+    notes:
+      n1: 'Previsión is a forecast, feminine: la previsión del tiempo is the weather forecast. Del is de and el in one word.'
+    bases:
+      la: the
+      previsión: forecast
+    examples:
+      Mira la previsión del tiempo.:
+        native: Look at the weather forecast.
+        bases:
+          la: the
+          previsión: forecast
+          del: of the
+          tiempo: weather
+      La previsión es buena hoy.:
+        native: The forecast is good today.
+        bases:
+          La: The
+          previsión: forecast
+          buena: good
+  es-1130:
+    native: rainbow
+    notes:
+      n1: 'Arcoíris is a rainbow, masculine. It does not change in the plural: los arcoíris.'
+    bases:
+      el: the
+      arcoíris: rainbow
+    examples:
+      Hay un arcoíris en el cielo.:
+        native: There is a rainbow in the sky.
+        bases:
+          Hay: There is
+          un: a
+          arcoíris: rainbow
+          en: in
+          el: the
+          cielo: sky
+      Después de la lluvia sale un arcoíris.:
+        native: After the rain a rainbow comes out.
+        bases:
+          de: of
+          la: the
+          un: a
+          arcoíris: rainbow
+  es-1131:
+    native: shade
+    notes:
+      n1: 'Sombra is shade or a shadow, feminine: la sombra. Estar a la sombra means to be in the shade.'
+    bases:
+      la: the
+      sombra: shade
+    examples:
+      Hace calor, busco la sombra.:
+        native: It is hot, I am looking for the shade.
+        bases:
+          calor: hot
+          la: the
+          sombra: shade
+      Descansamos a la sombra del árbol.:
+        native: We rest in the shade of the tree.
+        bases:
+          a: in
+          la: the
+          sombra: shade
+          del: of the
+          árbol: tree
+  es-1132:
+    native: to rain
+    notes:
+      n1: 'Llover is to rain, and it is used mostly in the él form: llueve. It is an o-to-ue verb.'
+    examples:
+      Hoy llueve mucho.:
+        native: It is raining a lot today.
+        bases:
+          llueve: rains
+      Mañana puede llover.:
+        native: It may rain tomorrow.
+        bases:
+          puede: can
+          llover: to rain
+  es-1133:
+    native: to snow
+    notes:
+      n1: 'Nevar is to snow, and it is used mostly in the él form: nieva. It is an e-to-ie verb.'
+    examples:
+      Hoy nieva en la montaña.:
+        native: It is snowing in the mountains today.
+        bases:
+          nieva: snows
+          en: in
+          la: the
+          montaña: mountain
+      Ayer no nevó.:
+        native: It did not snow yesterday.
+        bases:
+          nevó: snowed
+  es-1134:
+    native: to shine
+    notes:
+      n1: Brillar is to shine or to glow, as the sun or the moon does.
+    examples:
+      El sol brilla.:
+        native: The sun is shining.
+        bases:
+          El: The
+          brilla: shines
+      La luna brilla de noche.:
+        native: The moon shines at night.
+        bases:
+          La: The
+          luna: moon
+          brilla: shines
+          de: at
+  es-1135:
+    native: to blow
+    notes:
+      n1: 'Soplar is to blow, as the wind does: el viento sopla. It is a regular -ar verb.'
+    examples:
+      Hoy sopla un viento fuerte.:
+        native: Today there is a strong wind blowing.
+        bases:
+          sopla: blows
+          un: a
+      El viento sopla desde el norte.:
+        native: The wind blows from the north.
+        bases:
+          El: The
+          sopla: blows
+          desde: from
+  es-1136:
+    native: to freeze
+    notes:
+      n1: 'Helar is to freeze, and it is used mostly in the él form: hiela. It is an e-to-ie verb. Heló is the past form, it froze.'
+    examples:
+      Anoche heló.:
+        native: It froze last night.
+        bases:
+          Anoche: last night
+          heló: froze
+      En invierno hiela.:
+        native: In winter it freezes.
+        bases:
+          En: In
+          hiela: freezes
+  es-1137:
+    native: sunny
+    notes:
+      n1: Soleado is sunny. It is used for the weather and for a place with a lot of sun.
+    bases:
+      soleado: sunny
+    examples:
+      Hoy es un día soleado.:
+        native: Today is a sunny day.
+        bases:
+          un: a
+          soleado: sunny
+      Mañana será soleado.:
+        native: It will be sunny tomorrow.
+        bases:
+          será: will be
+          soleado: sunny
+  es-1138:
+    native: cloudy
+    notes:
+      n1: Nublado is cloudy, with the sky covered in clouds. Its opposite is soleado.
+    bases:
+      nublado: cloudy
+    examples:
+      El cielo está nublado.:
+        native: The sky is cloudy.
+        bases:
+          El: The
+          nublado: cloudy
+      Hoy está nublado.:
+        native: It is cloudy today.
+        bases:
+          nublado: cloudy
+  es-1139:
+    native: rainy
+    notes:
+      n1: Lluvioso is rainy, for a day or a season that has a lot of rain.
+    bases:
+      lluvioso: rainy
+    examples:
+      Es un día lluvioso.:
+        native: It is a rainy day.
+        bases:
+          un: a
+          lluvioso: rainy
+      En abril el tiempo es lluvioso.:
+        native: In April the weather is rainy.
+        bases:
+          En: In
+          el: the
+          lluvioso: rainy
+  es-1140:
+    native: windy
+    notes:
+      n1: Ventoso is windy, for a place or a day with a lot of wind. Hace viento says the same thing.
+    bases:
+      ventoso: windy
+    examples:
+      La playa es ventosa hoy.:
+        native: The beach is windy today.
+        bases:
+          La: The
+          ventosa: windy
+      Hoy es un día muy ventoso.:
+        native: Today is a very windy day.
+        bases:
+          un: a
+          ventoso: windy
+  es-1141:
+    native: humid
+    notes:
+      n1: Húmedo is humid or damp, with a lot of water in the air or on a thing. Mojado means wet, from water on a thing.
+    bases:
+      húmedo: humid
+    examples:
+      El aire es húmedo en verano.:
+        native: The air is humid in summer.
+        bases:
+          El: The
+          aire: air
+          húmedo: humid
+          en: in
+      La ropa está húmeda.:
+        native: The clothes are damp.
+        bases:
+          La: The
+          húmeda: damp
+  es-1142:
+    native: mild
+    notes:
+      n1: 'Templado is mild: not too hot and not too cold, the weather of a good spring day.'
+    bases:
+      templado: mild
+    examples:
+      En primavera el clima es templado.:
+        native: In spring the climate is mild.
+        bases:
+          En: In
+          el: the
+          templado: mild
+      Hace un tiempo templado.:
+        native: The weather is mild.
+        bases:
+          un: a
+          templado: mild
+  es-1143:
+    native: clear
+    notes:
+      n1: Despejado is clear, for a sky with no clouds. It is the opposite of nublado.
+    bases:
+      despejado: clear
+    examples:
+      El cielo está despejado.:
+        native: The sky is clear.
+        bases:
+          El: The
+          despejado: clear
+      Mañana el cielo estará despejado.:
+        native: Tomorrow the sky will be clear.
+        bases:
+          el: the
+          estará: will be
+          despejado: clear
+  es-1144:
+    native: cool
+    notes:
+      n1: Fresco is cool, a little cold but pleasant. Hace fresco says it is cool outside. Its opposite for the weather is caliente.
+    bases:
+      fresco: cool
+    examples:
+      Hoy hace fresco.:
+        native: It is cool today.
+        bases:
+          fresco: cool
+      Por la noche hace fresco.:
+        native: At night it is cool.
+        bases:
+          Por: At
+          la: the
+          fresco: cool
