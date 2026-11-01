@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-11-01
+
 ### Added
 
 - **Planned languages are listed.** Add a language now lists 47 more languages that have no decks yet, so the scope is clear: Portuguese, Italian, Arabic, Thai, Swahili, Quechua and the rest of the language-paths scheme, the ancient and reconstructed Mycenaean Greek, Sumerian, Egyptian, Proto-Indo-European, Vedic Sanskrit, Latin, Old English and Middle English, the Archaic, Classical Attic and Koine stages of Ancient Greek, Pali, Imperial Aramaic and Ashokan Prakrit (the last in Devanagari until a Brahmi font is added), Indian and American Sign Language (one skill, Gestures, in place of Speak, Hear, Read and Write: recognising a sign and making one, with one state for both and its own icon, a raised hand, and a Gestures filter that shows only while a sign language is listed; owner, 2026-11-01: "It is one skill, tested both ways. One cannot write a script without being able to read it."), and Klingon, Sindarin, Quenya, Dothraki and High Valyrian. Each shows as having no course yet, under new families such as Slavic, Hellenic and Afroasiatic. Arabic now has its own script name, apart from the Perso-Arabic of Kashmiri and Sindhi, and a search typed in Arabic, Odia, Linear B, cuneiform or hieroglyphs is told apart correctly (#959).
