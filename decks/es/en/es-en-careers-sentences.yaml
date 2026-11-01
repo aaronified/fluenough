@@ -1,0 +1,32 @@
+schema: 1
+id: "es-en-careers-sentences"
+kind: "layer"
+core: "es-careers-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: careers"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about jobs, CVs and interviews, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2392":
+    native: "I send my CV and wait for the interview."
+    bases: { "la": "the" }
+    confusables: { "referencia": { why: "Referencia is a person who speaks for you, not the CV." }, "empleo": { why: "Empleo is the job itself, the thing applied for." } }
+  "es-2393":
+    native: "I have experience and good training."
+    bases: { "una": "a" }
+    confusables: { "habilidad": { why: "Habilidad is a skill, one part of training." }, "titulo": { why: "Título is a degree, a formal certificate." } }
+  "es-2394":
+    native: "The deadline for the vacancy ends on Monday."
+    bases: { "El": "the", "para": "for", "la": "the", "el": "the" }
+    confusables: { "oportunidad": { why: "Oportunidad is a chance, not a time limit." }, "ascenso": { why: "Ascenso is a promotion, a later step." } }
+  "es-2395":
+    native: "I am responsible and ambitious."
+    confusables: { "motivado": { why: "Motivado is motivated, eager to work." }, "capacidad": { why: "Capacidad is ability, the power to do a task." } }
+  "es-2396":
+    native: "The lawyer and the architect work together."
+    bases: { "El": "the", "el": "the", "juntos": "together" }
+    confusables: { "carrera": { why: "Carrera is a career or degree course, not a race." }, "oficio": { why: "Oficio is a trade with the hands, a craft." } }
+  "es-2397":
+    native: "I graduate and look for a job."
+    bases: { "Me": "to me", "un": "a" }
+    confusables: { "jubilacion": { why: "Jubilación is retirement, the end of working life." }, "presentarse": { why: "Presentarse is to apply, a later step." } }
