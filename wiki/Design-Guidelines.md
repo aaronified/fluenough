@@ -41,3 +41,15 @@ button that repeats while held (the minutes stepper) takes none, since the hint
 would pop up mid-repeat, and the language bar takes none, since its long press
 cancelled the bar's fold on touch. A control that shows its own text needs no
 hint.
+
+- **One word, two at most (owner, 2026-11-01: "All buttons in the UI must
+  have toast. That explains in natural english, but extremely concise. If one
+  word can do it, never ever use 2. If it cannot be one word, try your best
+  for 2").** Every icon-only button's tooltip is a plain word, "Back",
+  "Close", "Edit", "Delete", "Copy", "Search", "Sort", "More", never a phrase
+  and never the app's own skill vocabulary. Where a screen reader needs the
+  longer words (the pencil of one part in Suggest a change), the button is a
+  `LabelledIconButton`: the label is the long text, the hint the short word.
+  `test/button_tooltips_test.dart` walks the main screens and fails for an
+  icon button, floating button or popup button whose tooltip is empty or
+  longer than two words.
