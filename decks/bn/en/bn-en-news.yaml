@@ -1,0 +1,399 @@
+schema: 1
+id: "bn-en-news"
+kind: "layer"
+core: "bn-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News"
+description: "The news and the people who make it: newspapers, television, reporters, headlines, rumours and the facts behind them. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2884":
+    native: "news"
+    notes:
+      "n1": "{1}: News: what has happened, told to others."
+    examples:
+      "আজকের খবর ভালো।": { native: "Today's news is good.", bases: { "আজকের": "of today" } }
+      "খবরটা শুনেছ?": { native: "Have you heard the news? (familiar)", bases: { "খবরটা": "news", "শুনেছ": "to hear" } }
+  "bn-2885":
+    native: "newspaper"
+    notes:
+      "n1": "{1}: A newspaper: a daily paper with news."
+    examples:
+      "সকালে সংবাদপত্র পড়ি।": { native: "I read the newspaper in the morning.", bases: { "পড়ি": "to read" } }
+      "সংবাদপত্রে একটা খবর আছে।": { native: "There is a piece of news in the newspaper.", bases: { "সংবাদপত্রে": "newspaper", "আছে": "there is" } }
+  "bn-2886":
+    native: "newspaper; magazine"
+    notes:
+      "n1": "{1}: A newspaper or magazine that comes out regularly."
+    examples:
+      "এই পত্রিকাটা নতুন।": { native: "This magazine is new.", bases: { "এই": "this", "পত্রিকাটা": "newspaper; magazine" } }
+      "পত্রিকার দাম পাঁচ টাকা।": { native: "The newspaper costs five taka.", bases: { "পত্রিকার": "newspaper; magazine", "পাঁচ": "five" } }
+  "bn-2887":
+    native: "headline"
+    notes:
+      "n1": "{1}: A headline: the title of a news story."
+    examples:
+      "শিরোনামটা বড় অক্ষরে।": { native: "The headline is in big letters.", bases: { "শিরোনামটা": "headline", "অক্ষরে": "in letters" } }
+      "আজকের শিরোনাম কী?": { native: "What is today's headline?", bases: { "আজকের": "of today", "কী": "what" } }
+  "bn-2888":
+    native: "television"
+    notes:
+      "n1": "{1}: Television: a screen that shows programmes."
+    examples:
+      "টেলিভিশনে খবর দেখাচ্ছে।": { native: "The television is showing the news.", bases: { "টেলিভিশনে": "television", "দেখাচ্ছে": "showing" } }
+      "টেলিভিশনটা বন্ধ করো।": { native: "Switch off the television. (familiar)", bases: { "টেলিভিশনটা": "television" } }
+  "bn-2889":
+    native: "radio"
+    notes:
+      "n1": "{1}: A radio: a set that plays news and music."
+    examples:
+      "রেডিওতে গান বাজছে।": { native: "Music is playing on the radio.", bases: { "রেডিওতে": "radio", "গান": "song", "বাজছে": "playing" } }
+      "রেডিওর খবর শুনি।": { native: "I listen to the news on the radio.", bases: { "রেডিওর": "radio", "শুনি": "to listen" } }
+  "bn-2890":
+    native: "essay"
+    notes:
+      "n1": "{1}: An essay: a short written piece on a topic."
+    examples:
+      "সে একটা প্রবন্ধ লিখেছে।": { native: "She has written an essay.", bases: { "লিখেছে": "to write" } }
+      "প্রবন্ধটা পড়ে ভালো লাগল।": { native: "I liked reading the essay.", bases: { "প্রবন্ধটা": "essay", "পড়ে": "reading" } }
+  "bn-2891":
+    native: "editor"
+    notes:
+      "n1": "{1}: An editor: the person who decides what a paper prints."
+    examples:
+      "সম্পাদক আজ অফিসে আছেন।": { native: "The editor is at the office today.", bases: { "আজ": "today", "আছেন": "is" } }
+      "সম্পাদককে একটা চিঠি লিখো।": { native: "Write a letter to the editor. (familiar)", bases: { "সম্পাদককে": "editor", "লিখো": "write" } }
+  "bn-2892":
+    native: "broadcast"
+    notes:
+      "n1": "{1}: Broadcasting: sending programmes on radio or television."
+    examples:
+      "রাতের সম্প্রচার ভালো ছিল।": { native: "The evening broadcast was good.", bases: { "ছিল": "was" } }
+      "সম্প্রচার শুরু হয়েছে।": { native: "The broadcast has started.", bases: { "শুরু": "start" } }
+  "bn-2893":
+    native: "announcement"
+    notes:
+      "n1": "{1}: An announcement: a public statement."
+    examples:
+      "একটা ঘোষণা হলো।": "An announcement was made."
+      "ঘোষণাটা কাল সকালে।": { native: "The announcement is tomorrow morning.", bases: { "ঘোষণাটা": "announcement", "কাল": "tomorrow" } }
+  "bn-2894":
+    native: "election"
+    notes:
+      "n1": "{1}: An election: the vote to choose people for office."
+    examples:
+      "নির্বাচন কবে?": { native: "When is the election?", bases: { "কবে": "when" } }
+      "নির্বাচনে অনেক মানুষ ভোট দেবে।": { native: "Many people will vote in the election.", bases: { "নির্বাচনে": "election", "মানুষ": "people", "ভোট": "vote" } }
+  "bn-2895":
+    native: "incident; event"
+    notes:
+      "n1": "{1}: An incident or event: something that happened."
+    examples:
+      "গতকাল একটা ঘটনা ঘটেছে।": { native: "Yesterday an incident happened.", bases: { "গতকাল": "yesterday", "ঘটেছে": "happened" } }
+      "ঘটনাটা সবাই জানে।": { native: "Everyone knows the incident.", bases: { "ঘটনাটা": "incident; event", "সবাই": "everyone", "জানে": "to know" } }
+  "bn-2896":
+    native: "accident"
+    notes:
+      "n1": "{1}: An accident: an unlucky event that causes harm."
+    examples:
+      "রাস্তায় দুর্ঘটনা হয়েছে।": "There has been an accident on the road."
+      "দুর্ঘটনায় একজন আহত।": { native: "One person was hurt in the accident.", bases: { "দুর্ঘটনায়": "accident", "একজন": "one person", "আহত": "hurt" } }
+  "bn-2897":
+    native: "crime"
+    notes:
+      "n1": "{1}: A crime: an act against the law."
+    examples:
+      "এটা বড় অপরাধ।": "This is a big crime."
+      "অপরাধীকে ধরা হয়েছে।": { native: "The criminal has been caught.", bases: { "অপরাধীকে": "the criminal", "ধরা": "catch" } }
+  "bn-2898":
+    native: "protest"
+    notes:
+      "n1": "{1}: A protest: an act of speaking out against something."
+    examples:
+      "লোকেরা প্রতিবাদ করছে।": { native: "People are protesting.", bases: { "লোকেরা": "people" } }
+      "প্রতিবাদের খবর কাগজে।": { native: "The news of the protest is in the paper.", bases: { "প্রতিবাদের": "protest" } }
+  "bn-2899":
+    native: "strike"
+    notes:
+      "n1": "{1}: A strike: workers stopping work to protest."
+    examples:
+      "কাল ধর্মঘট হবে।": { native: "There will be a strike tomorrow.", bases: { "কাল": "tomorrow" } }
+      "ধর্মঘটে ট্রেন বন্ধ।": { native: "The trains are stopped by the strike.", bases: { "ধর্মঘটে": "strike" } }
+  "bn-2900":
+    native: "procession"
+    notes:
+      "n1": "{1}: A procession: people walking together to protest or celebrate."
+    examples:
+      "রাস্তায় মিছিল যাচ্ছে।": { native: "A procession is going along the road.", bases: { "যাচ্ছে": "going" } }
+      "মিছিলের জন্য রাস্তা বন্ধ।": { native: "The road is closed for the procession.", bases: { "মিছিলের": "procession", "জন্য": "for" } }
+  "bn-2901":
+    native: "medium; means"
+    notes:
+      "n1": "{1}: A medium or means: a way of passing on information."
+    examples:
+      "খবরের মাধ্যম অনেক।": "There are many means of news."
+      "টেলিভিশন একটা মাধ্যম।": "Television is a medium."
+  "bn-2902":
+    native: "website"
+    notes:
+      "n1": "{1}: A website: a set of pages on the internet."
+    examples:
+      "ওয়েবসাইটটা খোলো।": { native: "Open the website. (familiar)", bases: { "ওয়েবসাইটটা": "website", "খোলো": "open" } }
+      "এই ওয়েবসাইটে ছবি আছে।": { native: "There are photos on this website.", bases: { "এই": "this", "ওয়েবসাইটে": "website", "আছে": "there is" } }
+  "bn-2903":
+    native: "source"
+    notes:
+      "n1": "{1}: A source: where information comes from."
+    examples:
+      "সূত্র বলছে, সেটা সত্যি।": { native: "The source says that it is true.", bases: { "বলছে": "says", "সেটা": "that", "সত্যি": "true" } }
+      "সূত্রটা নির্ভরযোগ্য।": { native: "The source is reliable.", bases: { "সূত্রটা": "source", "নির্ভরযোগ্য": "reliable" } }
+  "bn-2904":
+    native: "information"
+    notes:
+      "n1": "{1}: Information: facts about something."
+    examples:
+      "এই তথ্য ঠিক।": { native: "This information is right.", bases: { "এই": "this", "ঠিক": "right" } }
+      "তথ্যের জন্য আমাকে জিজ্ঞেস করো।": { native: "Ask me for the information. (familiar)", bases: { "তথ্যের": "information", "জন্য": "for", "আমাকে": "me", "জিজ্ঞেস": "ask" } }
+  "bn-2905":
+    native: "rumour"
+    notes:
+      "n1": "{1}: A rumour: a story that is passed on but may not be true."
+    examples:
+      "ওটা একটা গুজব।": { native: "That is a rumour.", bases: { "ওটা": "that" } }
+      "গুজবে বিশ্বাস করো না।": { native: "Do not believe rumours. (familiar)", bases: { "গুজবে": "rumour", "বিশ্বাস": "belief", "না": "not" } }
+  "bn-2906":
+    native: "truth"
+    notes:
+      "n1": "{1}: Truth: what is real and correct."
+    examples:
+      "সত্য কথা বলো।": "Tell the truth. (familiar)"
+      "সত্য সবসময় প্রকাশ পায়।": { native: "The truth always comes out.", bases: { "সবসময়": "always", "প্রকাশ": "appearance", "পায়": "comes" } }
+  "bn-2907":
+    native: "lie; false"
+    notes:
+      "n1": "{1}: A lie, or false: something not true."
+    examples:
+      "মিথ্যা বলো না।": { native: "Do not tell lies. (familiar)", bases: { "বলো": "tell", "না": "not" } }
+      "এই খবরটা মিথ্যা।": { native: "This news is false.", bases: { "এই": "this" } }
+  "bn-2908":
+    native: "the public"
+    notes:
+      "n1": "{1}: The public: ordinary people in general."
+    examples:
+      "জনসাধারণ খবর জানতে চায়।": { native: "The public want to know the news.", bases: { "জানতে": "to know", "চায়": "wants" } }
+      "জনসাধারণের জন্য পার্ক খোলা।": { native: "The park is open for the public.", bases: { "জনসাধারণের": "the public", "জন্য": "for" } }
+  "bn-2909":
+    native: "citizen"
+    notes:
+      "n1": "{1}: A citizen: a person who belongs to a country."
+    examples:
+      "আমি এই দেশের নাগরিক।": { native: "I am a citizen of this country.", bases: { "এই": "this" } }
+      "প্রতিটি নাগরিকের অধিকার আছে।": { native: "Every citizen has rights.", bases: { "প্রতিটি": "every", "নাগরিকের": "citizen", "অধিকার": "rights", "আছে": "has" } }
+  "bn-2910":
+    native: "news (formal)"
+    notes:
+      "n1": "{1}: News: a formal word for a report of events."
+    examples:
+      "আজকের সংবাদ শুনলাম।": { native: "I heard today's news.", bases: { "আজকের": "of today", "শুনলাম": "heard" } }
+      "সংবাদটা খুব দুঃখের।": { native: "The news is very sad.", bases: { "সংবাদটা": "news (formal)", "দুঃখের": "sad" } }
+  "bn-2911":
+    native: "government"
+    notes:
+      "n1": "{1}: The government: the people who run a country."
+    examples:
+      "সরকার নতুন নিয়ম আনছে।": { native: "The government is bringing new rules.", bases: { "আনছে": "bringing" } }
+      "সরকারের ঘোষণা আজ।": { native: "The government's announcement is today.", bases: { "সরকারের": "government", "আজ": "today" } }
+  "bn-2912":
+    native: "interview"
+    notes:
+      "n1": "{1}: An interview: questions and answers with someone."
+    examples:
+      "ইন্টারভিউটা ভালো হলো।": { native: "The interview went well.", bases: { "ইন্টারভিউটা": "the interview" } }
+      "ইন্টারভিউয়ে কী জিজ্ঞেস করল?": { native: "What did they ask at the interview?", bases: { "ইন্টারভিউয়ে": "interview", "কী": "what", "জিজ্ঞেস": "ask" } }
+  "bn-2913":
+    native: "reporter; correspondent"
+    notes:
+      "n1": "{1}: A reporter or correspondent who sends news."
+    examples:
+      "সংবাদদাতা ঘটনাস্থলে গেছেন।": { native: "The reporter has gone to the scene.", bases: { "ঘটনাস্থলে": "at the scene" } }
+      "সংবাদদাতার কথা শোনো।": { native: "Listen to the reporter. (familiar)", bases: { "সংবাদদাতার": "reporter; correspondent", "শোনো": "listen" } }
+  "bn-2914":
+    native: "interview (formal)"
+    notes:
+      "n1": "{1}: An interview: a formal meeting to ask questions, often recorded."
+    examples:
+      "মন্ত্রীর সাক্ষাৎকার টেলিভিশনে।": { native: "The minister's interview is on television.", bases: { "মন্ত্রীর": "of the minister" } }
+      "সাক্ষাৎকারটা রেডিওতে শুনলাম।": { native: "I heard the interview on the radio.", bases: { "সাক্ষাৎকারটা": "interview (formal)", "শুনলাম": "heard" } }
+  "bn-2915":
+    native: "publicity; campaign"
+    notes:
+      "n1": "{1}: Publicity or a campaign: spreading a message widely."
+    examples:
+      "নতুন ওষুধের প্রচার হচ্ছে।": "A new medicine is being publicised."
+      "প্রচারে অনেক টাকা লাগে।": { native: "Publicity costs a lot of money.", bases: { "প্রচারে": "publicity; campaign" } }
+  "bn-2916":
+    native: "programme; event"
+    notes:
+      "n1": "{1}: A programme or an event held in public."
+    examples:
+      "আজ রাতে একটা অনুষ্ঠান আছে।": { native: "There is a programme tonight.", bases: { "আজ": "today", "আছে": "there is" } }
+      "অনুষ্ঠানটা টেলিভিশনে দেখাবে।": { native: "The programme will be shown on television.", bases: { "অনুষ্ঠানটা": "programme; event", "দেখাবে": "will show" } }
+  "bn-2917":
+    native: "comment"
+    notes:
+      "n1": "{1}: A comment: a remark about something."
+    examples:
+      "তোমার মন্তব্য ঠিক।": { native: "Your comment is right.", bases: { "ঠিক": "right" } }
+      "মন্তব্যের জন্য ধন্যবাদ।": { native: "Thank you for the comment.", bases: { "মন্তব্যের": "comment", "জন্য": "for", "ধন্যবাদ": "thank you" } }
+  "bn-2918":
+    native: "reader"
+    notes:
+      "n1": "{1}: A reader: a person who reads a paper or book."
+    examples:
+      "পাঠক চিঠি লিখেছেন।": { native: "A reader has written a letter.", bases: { "লিখেছেন": "has written" } }
+      "পাঠকের মতামত জানাও।": { native: "Give the readers' opinions. (familiar)", bases: { "পাঠকের": "reader", "মতামত": "opinions", "জানাও": "tell" } }
+  "bn-2919":
+    native: "viewer"
+    notes:
+      "n1": "{1}: A viewer: a person who watches a show or a match."
+    examples:
+      "দর্শক খুব বেশি।": "There are a lot of viewers."
+      "দর্শকদের হাততালি শোনা গেল।": { native: "The applause of the viewers was heard.", bases: { "দর্শকদের": "viewer", "হাততালি": "applause", "শোনা": "heard" } }
+  "bn-2920":
+    native: "social"
+    notes:
+      "n1": "{1}: Social: of society or of people living together."
+    examples:
+      "সামাজিক খবর ছড়ায়।": { native: "Social news spreads.", bases: { "ছড়ায়": "spreads" } }
+      "এটা একটা সামাজিক সমস্যা।": { native: "This is a social problem.", bases: { "সমস্যা": "problem" } }
+  "bn-2921":
+    native: "national"
+    notes:
+      "n1": "{1}: National: of the whole country."
+    examples:
+      "জাতীয় খবর আজ।": { native: "The national news is today.", bases: { "আজ": "today" } }
+      "এটা জাতীয় দিবস।": { native: "This is a national day.", bases: { "দিবস": "day" } }
+  "bn-2922":
+    native: "international"
+    notes:
+      "n1": "{1}: International: between or across countries."
+    examples:
+      "আন্তর্জাতিক খবর শুনলাম।": { native: "I heard the international news.", bases: { "শুনলাম": "heard" } }
+      "এটা আন্তর্জাতিক সংবাদ।": "This is international news."
+  "bn-2923":
+    native: "local"
+    notes:
+      "n1": "{1}: Local: of the place where one lives."
+    examples:
+      "স্থানীয় খবর কাগজে ছাপা হলো।": { native: "The local news was printed in the paper.", bases: { "ছাপা": "printed" } }
+      "স্থানীয় মানুষ খুশি।": { native: "The local people are happy.", bases: { "মানুষ": "people", "খুশি": "happy" } }
+  "bn-2924":
+    native: "published"
+    notes:
+      "n1": "{1}: Published: printed and made public."
+    examples:
+      "প্রকাশিত বইটা নতুন।": "The published book is new."
+      "খবরটা আজ প্রকাশিত হয়েছে।": { native: "The news has been published today.", bases: { "আজ": "today" } }
+  "bn-2925":
+    native: "secret"
+    notes:
+      "n1": "{1}: Secret: not to be known by others."
+    examples:
+      "এটা গোপন কথা।": "This is a secret."
+      "গোপন খবর ফাঁস হয়েছে।": { native: "A secret news has leaked.", bases: { "ফাঁস": "leak" } }
+  "bn-2926":
+    native: "to report"
+    notes:
+      "n1": "{1}: To report: to tell someone the news."
+    examples:
+      "আমাকে খবর দিও।": { native: "Tell me the news. (familiar)", bases: { "আমাকে": "to me" } }
+      "সে আমাদের খবর দিয়েছে।": "She has told us the news."
+  "bn-2927":
+    native: "to announce"
+    notes:
+      "n1": "{1}: To announce: to make a statement to the public."
+    examples:
+      "সরকার নতুন নিয়ম ঘোষণা করেছে।": "The government has announced new rules."
+      "কাল কী ঘোষণা করবেন?": { native: "What will you announce tomorrow?", bases: { "কাল": "tomorrow", "কী": "what" } }
+  "bn-2928":
+    native: "to publish"
+    bases: { "প্রকাশ": "publish" }
+    notes:
+      "n1": "{1}: To publish: to print and make known."
+    examples:
+      "পত্রিকাটা প্রতিদিন প্রকাশ করা হয়।": { native: "The paper is published every day.", bases: { "প্রকাশ": "publish" } }
+      "খবরটা কে প্রকাশ করেছে?": { native: "Who has published the news?", bases: { "প্রকাশ": "publish", "কে": "who" } }
+  "bn-2929":
+    native: "to broadcast"
+    notes:
+      "n1": "{1}: To broadcast: to send a programme out on air."
+    examples:
+      "রেডিও খবর সম্প্রচার করছে।": "The radio is broadcasting the news."
+      "অনুষ্ঠানটা সরাসরি সম্প্রচার হবে।": { native: "The programme will be broadcast live.", bases: { "সরাসরি": "live" } }
+  "bn-2930":
+    native: "to protest"
+    notes:
+      "n1": "{1}: To protest: to speak out against something."
+    examples:
+      "লোকেরা রাস্তায় প্রতিবাদ করছে।": { native: "People are protesting in the street.", bases: { "লোকেরা": "people" } }
+      "অন্যায়ের প্রতিবাদ করো।": { native: "Protest against injustice. (familiar)", bases: { "অন্যায়ের": "of injustice" } }
+  "bn-2931":
+    native: "to believe"
+    bases: { "বিশ্বাস": "to believe" }
+    notes:
+      "n1": "{1}: To believe: to accept that something is true."
+    examples:
+      "আমি তোমাকে বিশ্বাস করি।": { native: "I believe you.", bases: { "বিশ্বাস": "to believe" } }
+      "এই গুজব কেউ বিশ্বাস করে না।": { native: "Nobody believes this rumour.", bases: { "এই": "this", "বিশ্বাস": "to believe", "কেউ": "nobody", "না": "not" } }
+  "bn-2932":
+    native: "to share"
+    bases: { "শেয়ার": "share" }
+    notes:
+      "n1": "{1}: To share: to pass on something to others."
+    examples:
+      "খবরটা শেয়ার করো।": { native: "Share the news. (familiar)", bases: { "শেয়ার": "share" } }
+      "সে ছবিটা শেয়ার করেছে।": { native: "She has shared the photo.", bases: { "শেয়ার": "share" } }
+  "bn-2933":
+    native: "to enquire"
+    bases: { "খোঁজ": "search; enquiry" }
+    notes:
+      "n1": "{1}: To enquire: to ask about how someone is."
+    examples:
+      "আমি তার খোঁজ নিয়েছি।": { native: "I have enquired after him.", bases: { "খোঁজ": "search; enquiry" } }
+      "ঘটনার খোঁজ নাও।": { native: "Find out about the incident. (familiar)", bases: { "খোঁজ": "search; enquiry" } }
+  "bn-2934":
+    native: "recently"
+    notes:
+      "n1": "{1}: Recently: in the last few days or weeks."
+    examples:
+      "সম্প্রতি একটা খবর শুনেছি।": { native: "Recently I heard some news.", bases: { "শুনেছি": "heard" } }
+      "সে সম্প্রতি এখানে এসেছে।": "She has come here recently."
+  "bn-2935":
+    native: "directly; live"
+    notes:
+      "n1": "{1}: Directly, or live: without a middle step."
+    examples:
+      "আমি সরাসরি খবর দেখছি।": { native: "I am watching the news live.", bases: { "দেখছি": "watching" } }
+      "সরাসরি বলো।": { native: "Say it directly. (familiar)", bases: { "বলো": "say" } }
+  "bn-2936":
+    native: "already"
+    notes:
+      "n1": "{1}: Already, by now: before this time."
+    examples:
+      "ইতিমধ্যে খবরটা ছড়িয়েছে।": { native: "The news has already spread.", bases: { "ছড়িয়েছে": "spread" } }
+      "ইতিমধ্যে সবাই জেনে গেছে।": { native: "By now everyone has come to know.", bases: { "সবাই": "everyone", "জেনে": "knowing" } }
+  "bn-2937":
+    native: "at last"
+    notes:
+      "n1": "{1}: At last, finally: after a long time."
+    examples:
+      "অবশেষে খবরটা এসেছে।": "The news has finally come."
+      "অবশেষে সে ফিরেছে।": { native: "She has returned at last.", bases: { "ফিরেছে": "returned" } }
+  "bn-2938":
+    native: "in the end"
+    notes:
+      "n1": "{1}: In the end: at the close of something."
+    examples:
+      "শেষে সবাই খুশি হলো।": { native: "In the end everyone was happy.", bases: { "সবাই": "everyone", "খুশি": "happy" } }
+      "শেষে একটা ঘোষণা হলো।": "At the end an announcement was made."

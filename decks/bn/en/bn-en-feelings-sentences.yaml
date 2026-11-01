@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-feelings-sentences"
+kind: "layer"
+core: "bn-feelings-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings: sentences"
+description: "Short sentences about how people feel. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2868":
+    native: "I am very happy today."
+    bases: { "আজ": "today" }
+    confusables: { "c1": { why: "sad: the opposite feeling, not happy" }, "c2": { why: "gloomy: the opposite feeling, not happy" } }
+  "bn-2869":
+    native: "She is worried about what I said."
+    confusables: { "c1": { why: "worry: a noun, not the worried state" }, "c2": { why: "fear: a stronger feeling, not worry" } }
+  "bn-2870":
+    native: "Dad forgives me."
+    confusables: { "c1": { why: "anger: the feeling he does not show" }, "c2": { why: "love: a different feeling" } }
+  "bn-2871":
+    native: "Everyone is delighted at this news."
+    bases: { "এই": "this", "খবরে": "at the news", "সবাই": "everyone" }
+    confusables: { "c1": { why: "sorry or sad: a different feeling" }, "c2": { why: "anxious: a worry, not delight" } }
+  "bn-2872":
+    native: "I am a little nervous."
+    confusables: { "c1": { why: "calm: the opposite of nervous" }, "c2": { why: "annoyed: a different feeling" } }
+  "bn-2873":
+    native: "I miss you very much."
+    bases: { "মিস": "miss" }
+    confusables: { "c1": { why: "forgetting: the opposite of missing" }, "c2": { why: "seeing: an act, not a feeling" } }
+  "bn-2874":
+    native: "Do not be afraid, all will be fine. (familiar)"
+    bases: { "না": "not", "ঠিক": "fine" }
+    confusables: { "c1": { why: "panicking: a feeling to avoid, the same idea" }, "c2": { why: "laughing: a happy act" } }
+  "bn-2875":
+    native: "Wait with patience. (familiar)"
+    bases: { "ধরে": "holding", "অপেক্ষা": "waiting" }
+    confusables: { "c1": { why: "hurry: the opposite of patience" }, "c2": { why: "running: a movement, not waiting" } }
+  "bn-2876":
+    native: "My mind is good today."
+    bases: { "আজ": "today" }
+    confusables: { "c1": { why: "mood: close in meaning, but a different word" }, "c2": { why: "body: not the mind" } }
+  "bn-2877":
+    native: "Do not show so much annoyance. (familiar)"
+    bases: { "এত": "so", "দেখিও": "show", "না": "not" }
+    confusables: { "c1": { why: "peace: the opposite of annoyance" }, "c2": { why: "relief: a different feeling" } }

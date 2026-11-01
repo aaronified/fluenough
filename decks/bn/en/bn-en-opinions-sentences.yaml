@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-opinions-sentences"
+kind: "layer"
+core: "bn-opinions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions: sentences"
+description: "Short sentences about giving and weighing opinions. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3006":
+    native: "In my view this is right."
+    bases: { "মতে": "in the view of", "ঠিক": "right" }
+    confusables: { "c1": { why: "wrong: the opposite judgement" }, "c2": { why: "ugly: a look, not a judgement of right" } }
+  "bn-3007":
+    native: "She argues, but is not foolish."
+    confusables: { "c1": { why: "honest: a quality, not a habit of arguing" }, "c2": { why: "useful: a quality of advice" } }
+  "bn-3008":
+    native: "I have understood your reason."
+    bases: { "বুঝেছি": "understood" }
+    confusables: { "c1": { why: "reasonable: a judgement of a reason, not the reason itself" }, "c2": { why: "unreasoned: the opposite of a reason" } }
+  "bn-3009":
+    native: "There is opposition to this proposal."
+    bases: { "এই": "this", "আছে": "there is" }
+    confusables: { "c1": { why: "support: the opposite of opposition" }, "c2": { why: "criticism: a different act" } }
+  "bn-3010":
+    native: "We are all in agreement."
+    bases: { "সবাই": "all" }
+    confusables: { "c1": { why: "a disagreement: the opposite" }, "c2": { why: "a different opinion: the opposite of agreeing" } }
+  "bn-3011":
+    native: "Your advice is useful."
+    confusables: { "c1": { why: "advice given as a lesson: close, but a sermon" }, "c2": { why: "praise: a different kind of word" } }
+  "bn-3012":
+    native: "This is unfair, so I am saying no."
+    bases: { "না": "not", "বলছি": "saying" }
+    confusables: { "c1": { why: "fair: the opposite of unfair" }, "c2": { why: "certainly: an adverb of agreement" } }
+  "bn-3013":
+    native: "I am not at all certain."
+    bases: { "নই": "am not" }
+    confusables: { "c1": { why: "surely: the opposite of uncertain" }, "c2": { why: "relieved: a feeling, not a belief" } }
+  "bn-3014":
+    native: "In reality the problem is big."
+    confusables: { "c1": { why: "a solution: the answer to a problem" }, "c2": { why: "a purpose: an aim, not a problem" } }
+  "bn-3015":
+    native: "Do not say ugly things. (familiar)"
+    bases: { "বোলো": "say", "না": "not" }
+    confusables: { "c1": { why: "beautiful: the opposite of ugly" }, "c2": { why: "sweet: a kind word, not an ugly one" } }

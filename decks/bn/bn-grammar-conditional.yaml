@@ -1,0 +1,68 @@
+schema: 1
+id: "bn-grammar-conditional"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["conditional", "negative conditional"]
+  entries:
+    - lemma: "আসা"
+      key: "asa"
+      reading: "āsā"
+      ipa: "asa"
+      forms: { "conditional": "আসলে", "negative conditional": "না আসলে" }
+      readings: { "conditional": "āsole", "negative conditional": "nā āsole" }
+      ipas: { "conditional": "asole", "negative conditional": "na asole" }
+    - lemma: "যাওয়া"
+      key: "jaoa"
+      reading: "jāoyā"
+      ipa: "dʒaoja"
+      forms: { "conditional": "গেলে", "negative conditional": "না গেলে" }
+      readings: { "conditional": "gele", "negative conditional": "nā gele" }
+      ipas: { "conditional": "ɡele", "negative conditional": "na ɡele" }
+    - lemma: "খাওয়া"
+      key: "khaoa"
+      reading: "khāoyā"
+      ipa: "kʰaoja"
+      forms: { "conditional": "খেলে", "negative conditional": "না খেলে" }
+      readings: { "conditional": "khele", "negative conditional": "nā khele" }
+      ipas: { "conditional": "kʰele", "negative conditional": "na kʰele" }
+    - lemma: "করা"
+      key: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
+      forms: { "conditional": "করলে", "negative conditional": "না করলে" }
+      readings: { "conditional": "kôrole", "negative conditional": "nā kôrole" }
+      ipas: { "conditional": "kɔrole", "negative conditional": "na kɔrole" }
+    - lemma: "থাকা"
+      key: "thaka"
+      reading: "thākā"
+      ipa: "t̪ʰaka"
+      forms: { "conditional": "থাকলে", "negative conditional": "না থাকলে" }
+      readings: { "conditional": "thākole", "negative conditional": "nā thākole" }
+      ipas: { "conditional": "t̪ʰakole", "negative conditional": "na t̪ʰakole" }
+    - lemma: "দেখা"
+      key: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      forms: { "conditional": "দেখলে", "negative conditional": "না দেখলে" }
+      readings: { "conditional": "dekhole", "negative conditional": "nā dekhole" }
+      ipas: { "conditional": "d̪ekʰole", "negative conditional": "na d̪ekʰole" }
+    - lemma: "বলা"
+      key: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
+      forms: { "conditional": "বললে", "negative conditional": "না বললে" }
+      readings: { "conditional": "bôlole", "negative conditional": "nā bôlole" }
+      ipas: { "conditional": "bɔlole", "negative conditional": "na bɔlole" }
+    - lemma: "পাওয়া"
+      key: "paoa"
+      reading: "pāoyā"
+      ipa: "paoja"
+      forms: { "conditional": "পেলে", "negative conditional": "না পেলে" }
+      readings: { "conditional": "pele", "negative conditional": "nā pele" }
+      ipas: { "conditional": "pele", "negative conditional": "na pele" }

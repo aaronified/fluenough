@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-environment"
+name: "Reading: the environment"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Neighbours talk about a river, a flood and an embankment, and a notice for a clean-up, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-floods-and-embankments"
+    title: "Neighbours talk about the river and the flood"
+    theme: "environment"
+    sentences:
+      - { text: "নদীর জল বাড়ছে, বাঁধ কি ঠিক আছে?", reading: "nodir jôl bāṛoche, bām̐dh ki ṭhik āche?", ipa: "nod̪ir dʒɔl baɽotʃʰe bãd̪ʱ ki ʈʰik atʃʰe" }
+      - { text: "গত বছর বন্যায় অনেক ঘর ডুবে গেছে।", reading: "gôt bôchor bonnāy ônek ghôr ḍube geche.", ipa: "ɡɔt̪ bɔtʃʰor bonnaj ɔnek ɡʱɔr ɖube ɡetʃʰe" }
+      - { text: "এবার আমরা বাঁধ মেরামত করব।", reading: "ebār āmorā bām̐dh merāmot kôrob.", ipa: "ebar amora bãd̪ʱ meramot̪ kɔrob" }
+      - { text: "আর পাশে গাছ লাগাব, যাতে মাটি না সরে।", reading: "ār pāśe gāch lāgāb, jāte māṭi nā sôre.", ipa: "ar paʃe ɡatʃʰ laɡab dʒat̪e maʈi na sɔre" }
+      - { text: "সবাইকে সাহায্য করতে হবে।", reading: "sôbāike sāhājj kôrote hôbe.", ipa: "sɔbaike saɦadʒdʒ kɔrot̪e ɦɔbe" }
+    questions:
+      - id: "bn-3452"
+        prompt: { "en": "The neighbours are worried about the river." }
+        answer: true
+      - id: "bn-3453"
+        prompt: { "en": "What happened last year?" }
+        options: [{ "en": "Many houses were flooded" }, { "en": "Nothing" }]
+        answer: 1
+      - id: "bn-3454"
+        prompt: { "en": "What will they do to stop the soil moving?" }
+        options: [{ "en": "Plant trees" }, { "en": "Build a road" }]
+        answer: 1
+  - id: "bn-clean-up-notice"
+    title: "A notice for a neighbourhood clean-up"
+    theme: "environment"
+    sentences:
+      - { text: "আগামী শনিবার পাড়া পরিষ্কার অভিযান।", reading: "āgāmi śonibār pāṛā poriśkār ôbhijān.", ipa: "aɡami ʃonibar paɽa poriʃkar ɔbʱidʒan" }
+      - { text: "সকাল সাতটায় পার্কের সামনে জমা হোন।", reading: "sôkāl sātoṭāy pārker sāmone jômā hon.", ipa: "sɔkal sat̪oʈaj parker samone dʒɔma ɦon" }
+      - { text: "প্লাস্টিক আর বর্জ্য আলাদা করুন।", reading: "plāsṭik ār bôrjjo ālādā korun.", ipa: "plasʈik ar bɔrdʒdʒ alad̪a korun" }
+      - { text: "গাছ লাগানোর জন্য চারা দেওয়া হবে।", reading: "gāch lāgānor jonn cārā deoyā hôbe.", ipa: "ɡatʃʰ laɡanor dʒonn tʃara d̪eoja ɦɔbe" }
+      - { text: "সবাই অংশ নিন।", reading: "sôbāi ôṅś nin.", ipa: "sɔbai ɔŋʃ nin" }
+    questions:
+      - id: "bn-3455"
+        prompt: { "en": "The clean-up is on Saturday." }
+        answer: true
+      - id: "bn-3456"
+        prompt: { "en": "Where do people gather?" }
+        options: [{ "en": "In front of the park" }, { "en": "At the school" }]
+        answer: 1
+      - id: "bn-3457"
+        prompt: { "en": "What will be given out?" }
+        options: [{ "en": "Saplings" }, { "en": "Bags" }]
+        answer: 1

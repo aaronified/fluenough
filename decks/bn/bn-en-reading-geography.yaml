@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-geography"
+name: "Reading: geography"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Places of Bengal and a map caption, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-where-in-bengal"
+    title: "Where in Bengal?"
+    theme: "geography"
+    sentences:
+      - { text: "বাংলাদেশের রাজধানী ঢাকা।", reading: "bāṅlādeśer rājodhāni ḍhākā.", ipa: "baŋlad̪eʃer radʒod̪ʱani ɖʱaka" }
+      - { text: "পদ্মা একটা বড় নদী।", reading: "pôdmā ekoṭā bôṛ nodi.", ipa: "pɔd̪ma ekoʈa bɔɽ nod̪i" }
+      - { text: "পশ্চিমে কলকাতা, একটা বড় শহর।", reading: "pościme kôlokātā, ekoṭā bôṛ śôhor.", ipa: "poʃtʃime kɔlokat̪a ekoʈa bɔɽ ʃɔɦor" }
+      - { text: "দক্ষিণে সুন্দরবন আর সমুদ্র।", reading: "dokkhine sundorobon ār somudr.", ipa: "d̪okkʰine sund̪orobon ar somud̪r" }
+      - { text: "চট্টগ্রাম সমুদ্রের কাছে।", reading: "côṭṭogrām somudrer kāche.", ipa: "tʃɔʈʈoɡram somud̪rer katʃʰe" }
+    questions:
+      - id: "bn-2736"
+        prompt: { "en": "Dhaka is the capital of Bangladesh." }
+        answer: true
+      - id: "bn-2737"
+        prompt: { "en": "Which city is in the west?" }
+        options: [{ "en": "Kolkata" }, { "en": "Dhaka" }]
+        answer: 1
+      - id: "bn-2738"
+        prompt: { "en": "What is in the south?" }
+        options: [{ "en": "The Sundarbans and the sea" }, { "en": "The mountains" }]
+        answer: 1
+  - id: "bn-map-caption"
+    title: "A map caption"
+    theme: "geography"
+    sentences:
+      - { text: "মানচিত্রে বাংলা আর বাংলাদেশ।", reading: "mānocitre bāṅlā ār bāṅlādeś.", ipa: "manotʃit̪re baŋla ar baŋlad̪eʃ" }
+      - { text: "উত্তরে পাহাড়, দক্ষিণে সমুদ্র।", reading: "uttore pāhāṛ, dokkhine somudr.", ipa: "ut̪t̪ore paɦaɽ d̪okkʰine somud̪r" }
+      - { text: "নদীর পাড়ে একটা গ্রাম।", reading: "nodir pāṛe ekoṭā grām.", ipa: "nod̪ir paɽe ekoʈa ɡram" }
+      - { text: "এই অঞ্চলে অনেক জলাভূমি আছে।", reading: "ei ôncole ônek jôlābhumi āche.", ipa: "ei ɔntʃole ɔnek dʒɔlabʱumi atʃʰe" }
+      - { text: "মানচিত্রটা পুরনো।", reading: "mānocitroṭā purono.", ipa: "manotʃit̪roʈa purono" }
+    questions:
+      - id: "bn-2739"
+        prompt: { "en": "The map shows Bangladesh." }
+        answer: true
+      - id: "bn-2740"
+        prompt: { "en": "What is to the north?" }
+        options: [{ "en": "Hills" }, { "en": "The sea" }]
+        answer: 1
+      - id: "bn-2741"
+        prompt: { "en": "What is common in this region?" }
+        options: [{ "en": "Many wetlands" }, { "en": "No water" }]
+        answer: 1

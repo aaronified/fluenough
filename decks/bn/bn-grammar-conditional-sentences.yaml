@@ -1,0 +1,64 @@
+schema: 1
+id: "bn-grammar-conditional-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3022"
+    target: "তুমি আসলে আমি খুশি হব।"
+    reading: "tumi āsole āmi khuśi hôb."
+    ipa: "t̪umi asole ami kʰuʃi ɦɔb"
+    phonetic: "[t̪umi asole ami kʰuʃi ɦɔb]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আসলে", base: "আসা", reading: "āsole" }, { word: "তুমি", ref: "bn-0835" }, { word: "আমি", ref: "bn-0833" }, { word: "খুশি", base: "খুশি", reading: "khuśi" }, { word: "হব", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "দুঃখী", reading: "dukkhī", kind: "word" }, { id: "c2", word: "ব্যস্ত", reading: "byasta", kind: "word" }]
+  - id: "bn-3023"
+    target: "সে না খেলে আমি খাব না।"
+    reading: "se nā khele āmi khāb nā."
+    ipa: "se na kʰele ami kʰab na"
+    phonetic: "[se na kʰele ami kʰab na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "খেলে", ref: "bn-0876" }, { word: "না", base: "না", reading: "nā" }, { word: "আমি", ref: "bn-0833" }, { word: "খাব", ref: "bn-0876" }]
+    confusables: [{ id: "c1", word: "ঘুমালে", reading: "ghumāle", kind: "word" }, { id: "c2", word: "পড়লে", reading: "poṛle", kind: "word" }]
+  - id: "bn-3024"
+    target: "বৃষ্টি হলে আমরা বাড়ি থাকব।"
+    reading: "briśṭi hôle āmorā bāṛi thākob."
+    ipa: "briʃʈi ɦɔle amora baɽi t̪ʰakob"
+    phonetic: "[briʃʈi ɦɔle amora baɽi t̪ʰakob]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বৃষ্টি", base: "বৃষ্টি", reading: "briśṭi" }, { word: "হলে", ref: "bn-0874" }, { word: "আমরা", ref: "bn-0834" }, { word: "বাড়ি", ref: "bn-0196" }, { word: "থাকব", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "রোদ", reading: "rod", kind: "word" }, { id: "c2", word: "ঝড়", reading: "jhôṛ", kind: "word" }]
+  - id: "bn-3025"
+    target: "ট্রেন দেরি করলে আমরা হাঁটব।"
+    reading: "ṭren deri kôrole āmorā hām̐ṭob."
+    ipa: "ʈren d̪eri kɔrole amora ɦãʈob"
+    phonetic: "[ʈren d̪eri kɔrole amora ɦãʈob]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ট্রেন", ref: "bn-1164" }, { word: "করলে", ref: "bn-0102" }, { word: "আমরা", ref: "bn-0834" }, { word: "হাঁটব", ref: "bn-0896" }]
+    confusables: [{ id: "c1", word: "বাস", reading: "bās", kind: "word" }, { id: "c2", word: "নৌকা", reading: "naukā", kind: "word" }]
+  - id: "bn-3026"
+    target: "তুমি বললে আমি যাব।"
+    reading: "tumi bôlole āmi jāb."
+    ipa: "t̪umi bɔlole ami dʒab"
+    phonetic: "[t̪umi bɔlole ami dʒab]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বললে", ref: "bn-0879" }, { word: "তুমি", ref: "bn-0835" }, { word: "আমি", ref: "bn-0833" }, { word: "যাব", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "শুনলে", reading: "śunle", kind: "word" }, { id: "c2", word: "ভাবলে", reading: "bhābale", kind: "word" }]
+  - id: "bn-3027"
+    target: "টাকা পেলে নতুন বই কিনব।"
+    reading: "ṭākā pele notun boi kinob."
+    ipa: "ʈaka pele not̪un boi kinob"
+    phonetic: "[ʈaka pele not̪un boi kinob]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পেলে", ref: "bn-0891" }, { word: "টাকা", ref: "bn-0245" }, { word: "নতুন", ref: "bn-0620" }, { word: "বই", ref: "bn-1139" }, { word: "কিনব", ref: "bn-0890" }]
+    confusables: [{ id: "c1", word: "ধার", reading: "dhār", kind: "word" }, { id: "c2", word: "দাম", reading: "dām", kind: "word" }]

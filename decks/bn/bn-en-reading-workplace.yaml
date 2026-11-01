@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-workplace"
+name: "Reading: the workplace"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A first day at a new job, and an office notice, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-first-day-at-work"
+    title: "A new colleague's first day"
+    theme: "workplace"
+    sentences:
+      - { text: "আজ আমার প্রথম দিন, অফিসে যাচ্ছি।", reading: "āj āmār prôthom din, ôphise jācchi.", ipa: "adʒ amar prɔt̪ʰom d̪in ɔpʰise dʒatʃtʃʰi" }
+      - { text: "ম্যানেজার আমাকে সহকর্মীদের সঙ্গে পরিচয় করিয়ে দিলেন।", reading: "mênejār āmāke sôhokormider sôṅge poricoy koriye dilen.", ipa: "mænedʒar amake sɔɦokormid̪er sɔŋɡe poritʃoj korije d̪ilen" }
+      - { text: "আমার বস খুব ভালো মানুষ।", reading: "āmār bôs khub bhālo mānuś.", ipa: "amar bɔs kʰub bʱalo manuʃ" }
+      - { text: "আমাকে একটা ডেস্ক আর কম্পিউটার দেওয়া হয়েছে।", reading: "āmāke ekoṭā ḍesk ār kompiuṭār deoyā hôyeche.", ipa: "amake ekoʈa ɖesk ar kompiuʈar d̪eoja ɦɔjetʃʰe" }
+      - { text: "দুপুরে এক ঘণ্টার বিরতি।", reading: "dupure ek ghônṭār biroti.", ipa: "d̪upure ek ɡʱɔnʈar birot̪i" }
+    questions:
+      - id: "bn-2675"
+        prompt: { "en": "The writer's first day at work is today." }
+        answer: true
+      - id: "bn-2676"
+        prompt: { "en": "What did the manager do?" }
+        options: [{ "en": "Sent the writer home" }, { "en": "Introduced the writer to colleagues" }]
+        answer: 2
+      - id: "bn-2677"
+        prompt: { "en": "What was the writer given?" }
+        options: [{ "en": "A desk and a computer" }, { "en": "A car and a phone" }]
+        answer: 1
+  - id: "bn-office-notice"
+    title: "An office notice"
+    theme: "workplace"
+    sentences:
+      - { text: "সব কর্মীর জন্য জরুরি সভা।", reading: "sôb kormir jonn joruri sôbhā.", ipa: "sɔb kormir dʒonn dʒoruri sɔbʱa" }
+      - { text: "সভা বৃহস্পতিবার দুপুরে তিনটায়।", reading: "sôbhā brihospotibār dupure tinoṭāy.", ipa: "sɔbʱa briɦospot̪ibar d̪upure t̪inoʈaj" }
+      - { text: "সবাইকে সময়মতো আসতে হবে।", reading: "sôbāike sômoyomoto āsote hôbe.", ipa: "sɔbaike sɔmojomot̪o asot̪e ɦɔbe" }
+      - { text: "রিপোর্ট আজই জমা দিন।", reading: "riporṭ ājoi jômā din.", ipa: "riporʈ adʒoi dʒɔma d̪in" }
+      - { text: "অনুমোদন ছাড়া কেউ ছুটি নিতে পারবে না।", reading: "ônumodon chāṛā keu chuṭi nite pārobe nā.", ipa: "ɔnumod̪on tʃʰaɽa keu tʃʰuʈi nit̪e parobe na" }
+    questions:
+      - id: "bn-2678"
+        prompt: { "en": "The meeting is on Thursday afternoon." }
+        answer: true
+      - id: "bn-2679"
+        prompt: { "en": "What must be done today?" }
+        options: [{ "en": "Submit the report" }, { "en": "Go home early" }]
+        answer: 1
+      - id: "bn-2680"
+        prompt: { "en": "Who may not take leave without approval?" }
+        options: [{ "en": "Everyone" }, { "en": "Nobody" }]
+        answer: 1

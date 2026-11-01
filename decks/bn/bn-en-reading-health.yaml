@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-health"
+name: "Reading: health and fitness"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A doctor's call about an appointment, and a clinic notice, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-doctor-call"
+    title: "Booking a doctor's appointment"
+    theme: "health"
+    sentences:
+      - { text: "নমস্কার, আমি একটা অ্যাপয়েন্টমেন্ট চাই।", reading: "nômoskār, āmi ekoṭā êāpoyenṭomenṭ cāi.", ipa: "nɔmoskar ami ekoʈa ɔdʒapojenʈomenʈ tʃai" }
+      - { text: "কাল সকালে কি সময় আছে?", reading: "kāl sôkāle ki sômoy āche?", ipa: "kal sɔkale ki sɔmoj atʃʰe" }
+      - { text: "হ্যাঁ, দশটায় একটা সময় আছে।", reading: "hêm̐, dôśoṭāy ekoṭā sômoy āche.", ipa: "ɦæ̃ d̪ɔʃoʈaj ekoʈa sɔmoj atʃʰe" }
+      - { text: "আমার জ্বর আর কাশি আছে।", reading: "āmār jôr ār kāśi āche.", ipa: "amar dʒɔr ar kaʃi atʃʰe" }
+      - { text: "ঠিক আছে, দশটায় আসুন।", reading: "ṭhik āche, dôśoṭāy āsun.", ipa: "ʈʰik atʃʰe d̪ɔʃoʈaj asun" }
+    questions:
+      - id: "bn-2807"
+        prompt: { "en": "The caller wants an appointment for tomorrow morning." }
+        answer: true
+      - id: "bn-2808"
+        prompt: { "en": "What does the caller have?" }
+        options: [{ "en": "A fever and a cough" }, { "en": "A broken arm" }]
+        answer: 1
+      - id: "bn-2809"
+        prompt: { "en": "What time is offered?" }
+        options: [{ "en": "Ten o'clock" }, { "en": "Five o'clock" }]
+        answer: 1
+  - id: "bn-clinic-notice"
+    title: "A notice at the clinic"
+    theme: "health"
+    sentences:
+      - { text: "ক্লিনিকে স্বাগতম।", reading: "klinike sāgotom.", ipa: "klinike saɡot̪om" }
+      - { text: "ডাক্তার সকালে দশটা থেকে দেখেন।", reading: "ḍāktār sôkāle dôśoṭā theke dekhen.", ipa: "ɖakt̪ar sɔkale d̪ɔʃoʈa t̪ʰeke d̪ekʰen" }
+      - { text: "অ্যাপয়েন্টমেন্ট ছাড়া অপেক্ষা করুন।", reading: "êāpoyenṭomenṭ chāṛā ôpekkhā korun.", ipa: "ɔdʒapojenʈomenʈ tʃʰaɽa ɔpekkʰa korun" }
+      - { text: "টিকার জন্য আলাদা ঘর আছে।", reading: "ṭikār jonn ālādā ghôr āche.", ipa: "ʈikar dʒonn alad̪a ɡʱɔr atʃʰe" }
+      - { text: "নিয়মিত পরীক্ষা করান।", reading: "niyomit porikkhā kôrān.", ipa: "nijomit̪ porikkʰa kɔran" }
+    questions:
+      - id: "bn-2810"
+        prompt: { "en": "The doctor sees patients from ten in the morning." }
+        answer: true
+      - id: "bn-2811"
+        prompt: { "en": "What should you do without an appointment?" }
+        options: [{ "en": "Wait" }, { "en": "Go home" }]
+        answer: 1
+      - id: "bn-2812"
+        prompt: { "en": "Where do you go for a vaccine?" }
+        options: [{ "en": "A separate room" }, { "en": "The pharmacy" }]
+        answer: 1

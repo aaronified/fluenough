@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-housing"
+name: "Reading: housing"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Someone asks an owner about a flat to rent, and the terms of a rental, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-renting-a-flat"
+    title: "Asking an owner about a flat to rent"
+    theme: "housing"
+    sentences:
+      - { text: "আপনার ফ্ল্যাট ভাড়া দেওয়া আছে কি?", reading: "āponār phlêṭ bhāṛā deoyā āche ki?", ipa: "aponar pʰlæʈ bʱaɽa d̪eoja atʃʰe ki" }
+      - { text: "হ্যাঁ, তিনতলায় একটা ফ্ল্যাট খালি।", reading: "hêm̐, tinotolāy ekoṭā phlêṭ khāli.", ipa: "ɦæ̃ t̪inot̪olaj ekoʈa pʰlæʈ kʰali" }
+      - { text: "সেখানে দুটো শোবার ঘর আর একটা রান্নাঘর আছে।", reading: "sekhāne duṭo śobār ghôr ār ekoṭā rānnāghor āche.", ipa: "sekʰane d̪uʈo ʃobar ɡʱɔr ar ekoʈa rannaɡʱor atʃʰe" }
+      - { text: "বাথরুম আর বারান্দাও আছে।", reading: "bāthorum ār bārāndāo āche.", ipa: "bat̪ʰorum ar barand̪ao atʃʰe" }
+      - { text: "ভাড়া কত?", reading: "bhāṛā kôt?", ipa: "bʱaɽa kɔt̪" }
+    questions:
+      - id: "bn-4017"
+        prompt: { "en": "The speaker asks about a flat to rent." }
+        answer: true
+      - id: "bn-4018"
+        prompt: { "en": "On which floor is the flat?" }
+        options: [{ "en": "The third floor" }, { "en": "The ground floor" }]
+        answer: 1
+      - id: "bn-4019"
+        prompt: { "en": "How many bedrooms does it have?" }
+        options: [{ "en": "Two" }, { "en": "Five" }]
+        answer: 1
+  - id: "bn-rental-terms"
+    title: "The terms of a rental"
+    theme: "housing"
+    sentences:
+      - { text: "ভাড়া প্রতি মাসের পাঁচ তারিখের মধ্যে দিতে হবে।", reading: "bhāṛā proti māser pām̐c tārikher moddhe dite hôbe.", ipa: "bʱaɽa prot̪i maser pãtʃ t̪arikʰer mod̪d̪ʱe d̪it̪e ɦɔbe" }
+      - { text: "অগ্রিম হিসেবে তিন মাসের ভাড়া জমা দিতে হবে।", reading: "ôgrim hisebe tin māser bhāṛā jômā dite hôbe.", ipa: "ɔɡrim ɦisebe t̪in maser bʱaɽa dʒɔma d̪it̪e ɦɔbe" }
+      - { text: "ফ্ল্যাটের সংস্কারের দায়িত্ব মালিকের।", reading: "phlêṭer sôṅskārer dāyitt māliker.", ipa: "pʰlæʈer sɔŋskarer d̪ajit̪t̪ maliker" }
+      - { text: "দারোয়ান রাত দশটা থেকে সকাল ছয়টা পর্যন্ত থাকেন।", reading: "dāroyān rāt dôśoṭā theke sôkāl chôyoṭā pôrjont thāken.", ipa: "d̪arojan rat̪ d̪ɔʃoʈa t̪ʰeke sɔkal tʃʰɔjoʈa pɔrdʒont̪ t̪ʰaken" }
+      - { text: "আপনি রাজি হলে চুক্তিপত্রে সই করবেন।", reading: "āponi rāji hôle cuktipotre soi kôroben.", ipa: "aponi radʒi ɦɔle tʃukt̪ipot̪re soi kɔroben" }
+    questions:
+      - id: "bn-4020"
+        prompt: { "en": "The rent must be paid by the fifth of each month." }
+        answer: true
+      - id: "bn-4021"
+        prompt: { "en": "What must be paid in advance?" }
+        options: [{ "en": "Three months' rent" }, { "en": "Water bills only" }]
+        answer: 1
+      - id: "bn-4022"
+        prompt: { "en": "Who is responsible for renovation?" }
+        options: [{ "en": "The owner" }, { "en": "The tenant" }]
+        answer: 1

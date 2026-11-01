@@ -1,0 +1,64 @@
+schema: 1
+id: "bn-grammar-while-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3525"
+    target: "খেতে খেতে গল্প করো।"
+    reading: "khete khete gôlp kôro."
+    ipa: "kʰet̪e kʰet̪e ɡɔlp kɔro"
+    phonetic: "[kʰet̪e kʰet̪e ɡɔlp kɔro]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "খেতে", ref: "bn-0876" }, { word: "গল্প", base: "গল্প", reading: "gôlp" }, { word: "করো", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "ঘুমোতে", reading: "ghumote", kind: "word" }, { id: "c2", word: "পড়তে", reading: "poṛte", kind: "word" }]
+  - id: "bn-3526"
+    target: "রান্নার সময় গান শুনি।"
+    reading: "rānnār sômoy gān śuni."
+    ipa: "rannar sɔmoj ɡan ʃuni"
+    phonetic: "[rannar sɔmoj ɡan ʃuni]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "রান্নার", base: "রান্না", reading: "rānnār" }, { word: "সময়", ref: "bn-0061" }, { word: "গান", base: "গান", reading: "gān" }, { word: "শুনি", base: "শোনা", reading: "śuni" }]
+    confusables: [{ id: "c1", word: "খাওয়ার", reading: "khāoār", kind: "word" }, { id: "c2", word: "ঘুমের", reading: "ghumer", kind: "word" }]
+  - id: "bn-3527"
+    target: "হাঁটতে হাঁটতে কথা বলছি।"
+    reading: "hām̐ṭote hām̐ṭote kôthā bôlochi."
+    ipa: "ɦãʈot̪e ɦãʈot̪e kɔt̪ʰa bɔlotʃʰi"
+    phonetic: "[ɦãʈot̪e ɦãʈot̪e kɔt̪ʰa bɔlotʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "হাঁটতে", ref: "bn-0896" }, { word: "কথা", ref: "bn-2409" }, { word: "বলছি", ref: "bn-0879" }]
+    confusables: [{ id: "c1", word: "দৌড়াতে", reading: "dauṛāte", kind: "word" }, { id: "c2", word: "বসে", reading: "bose", kind: "word" }]
+  - id: "bn-3528"
+    target: "যাওয়ার সময় দেখো।"
+    reading: "jāoyār sômoy dekho."
+    ipa: "dʒaojar sɔmoj d̪ekʰo"
+    phonetic: "[dʒaojar sɔmoj d̪ekʰo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "যাওয়ার", ref: "bn-0873" }, { word: "সময়", ref: "bn-0061" }, { word: "দেখো", ref: "bn-0877" }]
+    confusables: [{ id: "c1", word: "আসার", reading: "āsār", kind: "word" }, { id: "c2", word: "থাকার", reading: "thākār", kind: "word" }]
+  - id: "bn-3529"
+    target: "ছবি দেখতে দেখতে ঘুমিয়ে পড়লাম।"
+    reading: "chobi dekhote dekhote ghumiye pôṛolām."
+    ipa: "tʃʰobi d̪ekʰot̪e d̪ekʰot̪e ɡʱumije pɔɽolam"
+    phonetic: "[tʃʰobi d̪ekʰot̪e d̪ekʰot̪e ɡʱumije pɔɽolam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ছবি", ref: "bn-1145" }, { word: "দেখতে", ref: "bn-0877" }, { word: "ঘুমিয়ে", base: "ঘুমানো", reading: "ghumiye" }, { word: "পড়লাম", base: "পড়া", reading: "pôṛolām" }]
+    confusables: [{ id: "c1", word: "জেগে", reading: "jāge", kind: "word" }, { id: "c2", word: "উঠে", reading: "uṭhe", kind: "word" }]
+  - id: "bn-3530"
+    target: "কাজ করার সময় গরম লাগে।"
+    reading: "kāj kôrār sômoy gôrom lāge."
+    ipa: "kadʒ kɔrar sɔmoj ɡɔrom laɡe"
+    phonetic: "[kadʒ kɔrar sɔmoj ɡɔrom laɡe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কাজ", ref: "bn-0198" }, { word: "করার", ref: "bn-0102" }, { word: "সময়", ref: "bn-0061" }, { word: "গরম", ref: "bn-0060" }, { word: "লাগে", ref: "bn-2363" }]
+    confusables: [{ id: "c1", word: "ঠান্ডা", reading: "ṭhānḍā", kind: "word" }, { id: "c2", word: "বিশ্রাম", reading: "biśrām", kind: "word" }]

@@ -1,0 +1,110 @@
+schema: 1
+id: "bn-news-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2939"
+    target: "আজকের খবরটা ভালো।"
+    reading: "ājoker khôboroṭā bhālo."
+    ipa: "adʒoker kʰɔboroʈa bʱalo"
+    phonetic: "[adʒoker kʰɔboroʈa bʱalo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আজকের", base: "আজ", reading: "ājoker" }, { word: "খবরটা", ref: "bn-2884" }, { word: "ভালো", ref: "bn-0617" }]
+    confusables: [{ id: "c1", word: "গুজবটা", reading: "gujbaṭā", kind: "word" }, { id: "c2", word: "ঘটনাটা", reading: "ghaṭnāṭā", kind: "word" }]
+  - id: "bn-2940"
+    target: "পত্রিকায় একটা শিরোনাম আছে।"
+    reading: "potrikāy ekoṭā śironām āche."
+    ipa: "pot̪rikaj ekoʈa ʃironam atʃʰe"
+    phonetic: "[pot̪rikaj ekoʈa ʃironam atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "পত্রিকায়", ref: "bn-2886" }, { word: "একটা", ref: "bn-0202" }, { word: "শিরোনাম", ref: "bn-2887" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "প্রবন্ধ", reading: "prabandha", kind: "word" }, { id: "c2", word: "সম্পাদক", reading: "sampādak", kind: "word" }]
+  - id: "bn-2941"
+    target: "রেডিওতে খবর শুনছি।"
+    reading: "reḍiote khôbor śunochi."
+    ipa: "reɖiot̪e kʰɔbor ʃunotʃʰi"
+    phonetic: "[reɖiot̪e kʰɔbor ʃunotʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "রেডিওতে", ref: "bn-2889" }, { word: "খবর", ref: "bn-2884" }, { word: "শুনছি", base: "শোনা", reading: "śunochi" }]
+    confusables: [{ id: "c1", word: "টেলিভিশন", reading: "ṭelibhiśan", kind: "word" }, { id: "c2", word: "সংবাদপত্র", reading: "saṅbādpatra", kind: "word" }]
+  - id: "bn-2942"
+    target: "সরকার নতুন নিয়ম ঘোষণা করেছে।"
+    reading: "sôrokār notun niyom ghośonā kôreche."
+    ipa: "sɔrokar not̪un nijom ɡʱoʃona kɔretʃʰe"
+    phonetic: "[sɔrokar not̪un nijom ɡʱoʃona kɔretʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "সরকার", ref: "bn-2911" }, { word: "নতুন", ref: "bn-0620" }, { word: "নিয়ম", ref: "bn-2284" }, { word: "ঘোষণা", ref: "bn-2893" }, { word: "করেছে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "নির্বাচন", reading: "nirbācan", kind: "word" }, { id: "c2", word: "প্রতিবাদ", reading: "protibād", kind: "word" }]
+  - id: "bn-2943"
+    target: "দুর্ঘটনার খবর ছড়িয়েছে।"
+    reading: "durghoṭonār khôbor choṛiyeche."
+    ipa: "d̪urɡʱoʈonar kʰɔbor tʃʰoɽijetʃʰe"
+    phonetic: "[d̪urɡʱoʈonar kʰɔbor tʃʰoɽijetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "দুর্ঘটনার", ref: "bn-2896" }, { word: "খবর", ref: "bn-2884" }, { word: "ছড়িয়েছে", base: "ছড়ানো", reading: "choṛiyeche" }]
+    confusables: [{ id: "c1", word: "ধর্মঘট", reading: "dharmaghaṭ", kind: "word" }, { id: "c2", word: "মিছিল", reading: "micil", kind: "word" }]
+  - id: "bn-2944"
+    target: "এই গুজবে বিশ্বাস করো না।"
+    reading: "ei gujobe biśśās kôro nā."
+    ipa: "ei ɡudʒobe biʃʃas kɔro na"
+    phonetic: "[ei ɡudʒobe biʃʃas kɔro na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "গুজবে", ref: "bn-2905" }, { word: "বিশ্বাস", base: "বিশ্বাস", reading: "biśśās" }, { word: "করো", ref: "bn-0102" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "সত্য", reading: "satya", kind: "word" }, { id: "c2", word: "মিথ্যা", reading: "mithyā", kind: "word" }]
+  - id: "bn-2945"
+    target: "সংবাদদাতা ঘটনাস্থলে গেছেন।"
+    reading: "sôṅbādodātā ghôṭonāsthole gechen."
+    ipa: "sɔŋbad̪od̪at̪a ɡʱɔʈonast̪ʰole ɡetʃʰen"
+    phonetic: "[sɔŋbad̪od̪at̪a ɡʱɔʈonast̪ʰole ɡetʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ঘটনাস্থলে", base: "ঘটনাস্থল", reading: "ghôṭonāsthole" }, { word: "গেছেন", ref: "bn-0873" }]
+    confusables: [{ id: "c1", word: "সম্পাদক", reading: "sampādak", kind: "word" }, { id: "c2", word: "পাঠক", reading: "pāṭhak", kind: "word" }]
+  - id: "bn-2946"
+    target: "এই তথ্যের সূত্র কী?"
+    reading: "ei totther sutro ki?"
+    ipa: "ei t̪ot̪t̪ʰer sut̪r ki"
+    phonetic: "[ei t̪ot̪t̪ʰer sut̪r ki]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "তথ্যের", ref: "bn-2904" }, { word: "সূত্র", ref: "bn-2903" }, { word: "কী", base: "কী", reading: "ki" }]
+    confusables: [{ id: "c1", word: "শিরোনাম", reading: "śirōnām", kind: "word" }, { id: "c2", word: "অনুষ্ঠান", reading: "anuṣṭhān", kind: "word" }]
+  - id: "bn-2947"
+    target: "অনুষ্ঠানটা সরাসরি সম্প্রচার হবে।"
+    reading: "ônuśṭhānoṭā sôrāsori sômprocār hôbe."
+    ipa: "ɔnuʃʈʰanoʈa sɔrasori sɔmprotʃar ɦɔbe"
+    phonetic: "[ɔnuʃʈʰanoʈa sɔrasori sɔmprotʃar ɦɔbe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "অনুষ্ঠানটা", ref: "bn-2916" }, { word: "সরাসরি", base: "সরাসরি", reading: "sôrāsori" }, { word: "হবে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "রেকর্ড", reading: "rekarḍ", kind: "word" }, { id: "c2", word: "পুনঃপ্রচার", reading: "punaḥpracār", kind: "word" }]
+  - id: "bn-2948"
+    target: "অবশেষে খবরটা এসেছে।"
+    reading: "ôbośeśe khôboroṭā eseche."
+    ipa: "ɔboʃeʃe kʰɔboroʈa esetʃʰe"
+    phonetic: "[ɔboʃeʃe kʰɔboroʈa esetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "অবশেষে", base: "অবশেষে", reading: "ôbośeśe" }, { word: "খবরটা", ref: "bn-2884" }, { word: "এসেছে", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "শেষে", reading: "śēṣe", kind: "word" }, { id: "c2", word: "সম্প্রতি", reading: "samprati", kind: "word" }]
+  - id: "bn-2949"
+    target: "মন্তব্যের জন্য ধন্যবাদ।"
+    reading: "môntobber jonn dhonnobād."
+    ipa: "mɔnt̪obber dʒonn d̪ʱonnobad̪"
+    phonetic: "[mɔnt̪obber dʒonn d̪ʱonnobad̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মন্তব্যের", ref: "bn-2917" }, { word: "জন্য", base: "জন্য", reading: "jonn" }, { word: "ধন্যবাদ", base: "ধন্যবাদ", reading: "dhonnobād" }]
+    confusables: [{ id: "c1", word: "প্রশংসা", reading: "praśaṅsā", kind: "word" }, { id: "c2", word: "সমালোচনা", reading: "samālocanā", kind: "word" }]
