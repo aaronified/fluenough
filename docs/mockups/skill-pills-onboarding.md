@@ -2,6 +2,10 @@
 
 Companion to `skill-pills-onboarding.html` (owner, 2026-11-01). The page holds only the screens and their tweak controls, with what changed outlined in red. Revised 2026-11-01 for the owner's answers: icons only on the pills, tooltips, plain toasts, and the Decks path screen. The checks and notes are here. Nothing below is decided except what the owner answered (marked).
 
+## Owner's verdict, built (2026-11-01)
+
+"Skill pills: perfect. Just differentiate between double tick and single tick. The leave icon can be red, the learning and known be yellow, and the learnt can be dark green." The page now draws it, as built in `feat/skill-pills`: colour by level, not by skill. Leave is the block icon on red (the text NA is dropped, so the "Not learning shows" tweak is gone), Learn a pale yellow with the ring and the cap, Know a stronger yellow, Learnt dark green. Know is one small tick in an outlined circle; Learnt (found by placement) is a bold double tick on a filled capsule. The tint-per-skill ramps and their luminance-step check described below are superseded; the contrast pairs (text, icon and tick on the level colour, 4.5:1) are in the app's tests and the PR notes.
+
 Owner's words, 2026-11-01:
 
 - Pills: "The pill transitions are not very clear. On read it is a double tick, then on write, it is a double tick plus a keyboard! Same confusion on spoken. There needs to be 3 things, we already have skill icons for read write say hear. So use them! Add the double tick as well when it is verified via placement as well. For the combined skill, there is no need for an icon at all! Since there will always be a pill. For leave, instead of -, write NA or something, to make it short and clear. For each level, use a different tint of the same colour. Show me a mockup, and then build exactly like that."

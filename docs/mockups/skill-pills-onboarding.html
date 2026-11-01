@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skill Pills Onboarding</title>
-<meta name="description" content="The skill pills redrawn (NA, Learn, Know, level found, one tint per level) on the Languages page and its sheet, and the first launch asking what you know and what you want to learn. Hindustani and Bengali, light and dark, 1.4x text.">
+<meta name="description" content="The skill pills redrawn (red Leave, yellow Learn and Know, dark green Learnt, one tick and two ticks apart) on the Languages page and its sheet, and the first launch asking what you know and what you want to learn. Hindustani and Bengali, light and dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
@@ -90,8 +90,10 @@ svg.i.s16{width:16px;height:16px}svg.i.s14{width:14px;height:14px}svg.i.s20{widt
 #tt{position:fixed;z-index:100;pointer-events:none;padding:8px 12px;border-radius:8px;font-size:14px;line-height:1.3;font-weight:500;max-width:240px;opacity:0;transition:opacity .08s;font-family:Roboto,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 #tt.on{opacity:1}
 .tipdemo{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--onS);color:var(--s);font-size:13px;line-height:1.3;font-weight:500}
-.pl.na{background:none;color:var(--onSv);border:1px dashed var(--ol)}
-.pl.na.ic{color:var(--onSv)}
+.pl.na{background:var(--bg);color:var(--fg);border:1px dashed var(--fg)}
+.tk1{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border:1.5px solid currentColor;border-radius:50%;box-sizing:border-box}.tk1 svg{width:12px;height:12px}
+.tk2{display:inline-flex;align-items:center;justify-content:center;width:32px;height:22px;border-radius:11px;background:currentColor}.tk2 svg{width:18px;height:18px;fill:var(--bg)}
+.pl.sm .tk1{width:16px;height:16px}.pl.sm .tk1 svg{width:10px;height:10px}.pl.sm .tk2{width:26px;height:18px;border-radius:9px}.pl.sm .tk2 svg{width:14px;height:14px}
 .pl.sm.na{padding:1px 7px}
 .pl[data-act]{cursor:pointer}
 /* sheet */
@@ -170,7 +172,6 @@ svg.i.s16{width:16px;height:16px}svg.i.s14{width:14px;height:14px}svg.i.s20{widt
  <div class="tg">Theme (phones) <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
-  <div class="tg">Not learning shows <span class="seg" data-k="leave"><button data-v="icon">Block icon (recommended)</button><button data-v="NA">The text NA</button></span></div>
  <div class="tg">List row chips <span class="seg" data-k="chips"><button data-v="comb">Combined</button><button data-v="skill">One per skill (icons)</button></span></div>
  <div class="tg">English line <span class="seg" data-k="eng"><button data-v="q">Only under the question</button><button data-v="every">Under every line</button><button data-v="none">None</button></span></div>
  <div class="tg">Perso-Arabic option <span class="seg" data-k="perso"><button data-v="ur">In Perso-Arabic script</button><button data-v="dev">In Devanagari, as built</button></span></div>
@@ -195,11 +196,11 @@ const toh=a=>'#'+a.map(v=>Math.round(v).toString(16).padStart(2,'0')).join('');
 const mix=(a,b,k)=>{const x=hx(a),y=hx(b);return toh(x.map((v,i)=>v+(y[i]-v)*k))};
 const lum=h=>{const[r,g,b]=hx(h).map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*r+.7152*g+.0722*b};
 const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
-/* three tints of one skill colour, "more" is always the stronger one: [Learn, Know, Know both].
-   The middle step is placed so that the two luminance steps are equal (cr(c1,c2) = cr(c2,c3)). bd = the ring on a Learn pill. */
-function tints(th,sk){const[c1,on,c3]=MODE[th][sk];
- let lo=0,hi=1,c2=mix(c1,c3,.5);for(let n=0;n<30;n++){const k=(lo+hi)/2;c2=mix(c1,c3,k);if(cr(c1,c2)<cr(c2,c3))lo=k;else hi=k}
- return [c1,c2,c3].map(bg=>{const cand=[on,'#ffffff','#000000'];let best=cand[0];if(cr(on,bg)<4.5)best=cand.slice(1).sort((p,q)=>cr(q,bg)-cr(p,bg))[0];return{bg,fg:best,bd:c3}})}
+/* the pill colours by level (owner, 2026-11-01): the ModeColors tokens pillLeave, pillLearn, pillKnow, pillVerified as [container, text] */
+const LVC={
+light:{leave:['#FFDAD6','#93000A'],learn:['#FFF3C2','#3A2F00'],know:['#F2C230','#211B00'],ver:['#1B5E20','#FFFFFF']},
+dark:{leave:['#93000A','#FFDAD6'],learn:['#4A3F00','#F6E388'],know:['#E2C23D','#211B00'],ver:['#2E7D32','#FFFFFF']}};
+const lvc=(th,k)=>({bg:LVC[th][k][0],fg:LVC[th][k][1],bd:LVC[th][k][1]});
 const S={theme:'light',course:'hi',hl:'1',leave:'icon',chips:'comb',eng:'q',perso:'ur',speak:'en',fold:'open'};
 const LANG={
  hi:{name:'Hindustani',dialect:'Khari Boli (खड़ी बोली), standard Hindustani',glyph:'हि',scripts:[['dev','Devanagari','अ'],['perso','Perso-Arabic','ا']]},
@@ -216,18 +217,18 @@ const ICONS={sp:['hearing','mic_none'],sc:['visibility','keyboard']};
 const TIP={sp:['Not learning','Learning','Listening','Listening and speaking'],sc:['Not learning','Learning','Reading','Reading and writing'],
  one:{rd:['Not learning','Learning to read','Reading'],wr:['Not learning','Learning to write','Writing'],sy:['Not learning','Learning to speak','Speaking'],hr:['Not learning','Learning to listen','Listening'],gs:['Not learning','Learning to sign','Signing']}};
 const tipOf=(o)=>{const t=o.kind==='one'?TIP.one[o.sk][o.lvl]:TIP[o.kind][o.lvl];return t+(o.ver&&o.lvl>=2?', checked':'')};
-const mark=(lvl,ver)=>lvl===1?'school':(ver?'done_all':'check');
+const markH=(lvl,ver,sm)=>lvl===1?svg('school',sm?'s14':'s16'):ver?`<span class="tk2">${svg('done_all')}</span>`:`<span class="tk1">${svg('check')}</span>`;
 /* one pill. o: kind (sp spoken, sc script, one single skill), sk, lvl, ver, icon (single), sm, act, row, leave */
 function pill(o){return pillT(S.theme,o)}
 function pillT(th,o){
  const tip=tipOf(o);
  const attrs=` data-tip="${tip}" aria-label="${(o.row?o.row+': ':'')+tip}" tabindex="0"`+(o.act?` data-act="${o.act}" role="button"`:' role="img"');
  const a16=o.sm?'s16':'s20',m16=o.sm?'s14':'s16';
- if(o.lvl===0){const lv=o.leave||S.leave;
-  return lv==='NA'?`<span class="pl${o.sm?' sm':''} na"${attrs}>NA</span>`:`<span class="pl${o.sm?' sm':''} na ic"${attrs}>${svg('block',a16)}</span>`}
- const t=tints(th,o.sk)[o.lvl===1?0:(o.kind==='one'?1:o.lvl-1)];
+ if(o.lvl===0){const t=lvc(th,'leave');
+  return `<span class="pl${o.sm?' sm':''} na ic" style="--bg:${t.bg};--fg:${t.fg}"${attrs}>${svg('block',a16)}</span>`}
+ const t=lvc(th,o.lvl===1?'learn':(o.ver?'ver':'know'));
  const ics=o.kind==='one'?[o.icon]:ICONS[o.kind].slice(0,o.lvl-1);
- const body=(o.lvl===1?(o.kind==='one'?[o.icon]:[]):ics).map(n=>svg(n,a16)).join('')+svg(mark(o.lvl,o.ver),m16);
+ const body=(o.lvl===1?(o.kind==='one'?[o.icon]:[]):ics).map(n=>svg(n,a16)).join('')+markH(o.lvl,o.ver,o.sm);
  return `<span class="pl${o.sm?' sm':''}${o.lvl===1?' lrn':''}" style="--bg:${t.bg};--fg:${t.fg};--bd:${t.bd}"${attrs}>${body}</span>`}
 const vars=th=>Object.entries(PAL[th]).map(([k,v])=>`--${k}:${v}`).join(';');
 const rowName=(c,id)=>id==='spoken'?'Spoken':LANG[c].scripts.find(x=>x[0]===id)[1];
@@ -344,12 +345,12 @@ function panel(th){
   return `<div class="prow"><div class="lab">${svg(ic,'s20')}${n}</div>${f(0)}${f(1)}${f(2)}${f(2,true)}</div>`}).join('');
  const comb=(kind,sk,label)=>{const f=(l,v)=>{const o={kind,sk,lvl:l,ver:v,row:label};return cap(P(o),tipOf(o))};
   return `<div class="prow"><div class="lab">${label}</div>${f(0)}${f(1)}${f(2)}${f(3)}${f(2,true)}${f(3,true)}</div>`};
- const lv=(x)=>cap(P({kind:'sp',sk:'hr',lvl:0,leave:x}),x==='NA'?'The text NA':'Block icon (recommended)');
+ const lv=()=>cap(P({kind:'sp',sk:'hr',lvl:0}),'Red block icon');
  return `<div class="tp" style="${vars(th)}"><h2 style="margin-bottom:6px">${th==='light'?'Light':'Dark'}</h2>
  <h3>Single skills: the skill's own icon, then the mark</h3><p class="note">Icons as on the Today tiles: eye, keyboard, microphone, ear, raised hand. No word on any pill. The line under each pill is its tooltip, shown on hover, focus or touch-and-hold.</p>${sRows}
  <h3>Combined pills: only the icons of the levels reached</h3><p class="note">Script: the eye alone is Read, eye and keyboard is Read and Write. Spoken: the ear alone is Hear, ear and microphone is Hear and Say. Learn shows the cap alone, inside a ring.</p>${comb('sc','rd','Script')}${comb('sp','hr','Spoken')}
- <h3>Not learning, two ways (tweak above)</h3><p class="note">Both are dashed and say "Not learning" in the tooltip. The text NA is the one word on any pill and needs a translation per app language (#46). The block icon needs none and keeps every pill icons only.</p><div class="prow"><div class="lab">Both</div>${lv('NA')}${lv('icon')}</div>
- <h3>How the levels differ without the tint</h3><p class="note">Learn: a ring in the strong tint and the cap. Know: no ring, a tick, and one icon (Hear, Read) or two (Hear and Say, Read and Write). Checked: two ticks. The tint steps are equal in luminance but only about 2:1 apart in dark, so the ring, the icon count and the tick count carry the level.</p>
+ <h3>Not learning: the red block icon</h3><p class="note">Dashed, red, icon only; the tooltip says "Not learning". Chosen by the owner (2026-11-01: "The leave icon can be red"); the text NA is dropped.</p><div class="prow"><div class="lab">Leave</div>${lv()}</div>
+ <h3>One tick and two ticks are never alike</h3><p class="note">Colour by level (owner, 2026-11-01): Leave red, Learn pale yellow with a ring and the cap, Know a stronger yellow, Learnt dark green. Know is one small tick in an outlined circle; Learnt, found by placement, is a bold double tick on a filled capsule, bigger and solid, so the two differ in shape, size and fill as well as colour. Icon count (one or two) and the Learn ring stay as cues.</p>
  <div class="prow"><div class="lab">Tooltip</div><div class="pc"><span class="tipdemo">Reading and writing</span><small>The bubble, as on hover</small></div></div></div>`}
 /* ===== section 4: the Decks tab path for a learner of one script ===== */
 const PATHV={
@@ -429,11 +430,9 @@ render();
 const PAIRS=[['body text','onS','s',4.5],['secondary text','onSv','s',4.5],['primary on page','p','s',4.5],['button text','onP','p',4.5],['tile text (Know)','onSc','sc',4.5],['tile text (learning)','onPc','pc',4.5],['sheet text','onS','sLow',4.5],['secondary on sheet','onSv','sLow',4.5],['NA text on page','onSv','s',4.5],['NA dashed outline / block icon on page','ol','s',3],['Your script pill text','onTc','tc',4.5],['Your script pill on card','tc','sHigh',1],['outline button text on sheet-low','p','sLow',4.5],['skipped-section outline on page','olv','s',1],['change outline','E','s',3],['change tag text','onE','E',4.5],['toast / tooltip text','s','onS',4.5],['tooltip box on page','onS','s',3]];
 window.__contrast=[];const add=(theme,pair,ratio,need)=>window.__contrast.push({theme,pair,ratio:Array.isArray(ratio)?ratio.map(v=>+v.toFixed(2)):+ratio.toFixed(2),need,pass:need==='info'||(Array.isArray(ratio)?ratio.every(v=>v>=need):ratio>=need)});
 ['light','dark'].forEach(t=>{PAIRS.forEach(([n,f,b,need])=>add(t,n,cr(PAL[t][f],PAL[t][b]),need));
- ['rd','wr','hr','sy','gs'].forEach(sk=>{const x=tints(t,sk);
-  x.forEach((y,i)=>add(t,sk+' tint '+(i+1)+' icons, ticks and text on tint',cr(y.fg,y.bg),4.5));
-  add(t,sk+' Learn ring on its fill',cr(x[0].bd,x[0].bg),3);
-  add(t,sk+' Learn ring on the page (sheet-low)',cr(x[0].bd,PAL[t].sLow),3);
-  add(t,sk+' tint steps 1-2 / 2-3 (information, the ring, icons and ticks carry the level)',[cr(x[0].bg,x[1].bg),cr(x[1].bg,x[2].bg)],'info');
-  add(t,sk+' Know tint on the page (information)',cr(x[1].bg,PAL[t].s),'info')})});
+ ['leave','learn','know','ver'].forEach(k=>{const y=lvc(t,k);
+  add(t,k+' icons, ticks, ring and text on the level colour',cr(y.fg,y.bg),4.5);
+  add(t,k+' colour on the page (information)',cr(y.bg,PAL[t].s),'info')});
+ add(t,'Learn and Know yellows apart (information)',cr(lvc(t,'learn').bg,lvc(t,'know').bg),'info')});
 console.log('contrast',JSON.stringify(window.__contrast.filter(x=>!x.pass)));
 </script></body></html>
