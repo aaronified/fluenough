@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-adjectives-2"
+name: "Reading: describing a room"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A rented room described, and a short advert for a room to let, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-describing-a-room"
+    title: "Describing a rented room"
+    theme: "adjectives-2"
+    sentences:
+      - { text: "আমার নতুন ঘরটা ছোট, কিন্তু আরামদায়ক।", reading: "āmār notun ghôroṭā choṭ, kintu ārāmodāyok.", ipa: "amar not̪un ɡʱɔroʈa tʃʰoʈ kint̪u aramod̪ajok" }
+      - { text: "জানালা দিয়ে আলো আসে, তাই ঘরটা উজ্জ্বল।", reading: "jānālā diye ālo āse, tāi ghôroṭā ujjjol.", ipa: "dʒanala d̪ije alo ase t̪ai ɡʱɔroʈa udʒdʒdʒol" }
+      - { text: "দেয়ালগুলো সাদা আর মেঝেটা মসৃণ।", reading: "deyālogulo sādā ār mejheṭā mosrin.", ipa: "d̪ejaloɡulo sad̪a ar medʒʱeʈa mosrin" }
+      - { text: "একটা খাট আছে, আর একটা ছোট আলমারি।", reading: "ekoṭā khāṭ āche, ār ekoṭā choṭ ālomāri.", ipa: "ekoʈa kʰaʈ atʃʰe ar ekoʈa tʃʰoʈ alomari" }
+      - { text: "কোনো পর্দা নেই।", reading: "kono pôrdā nei.", ipa: "kono pɔrd̪a nei" }
+    questions:
+      - id: "bn-2614"
+        prompt: { "en": "The room is big." }
+        answer: false
+      - id: "bn-2615"
+        prompt: { "en": "What is in the room?" }
+        options: [{ "en": "A bed and a small cupboard" }, { "en": "A sofa and a table" }]
+        answer: 1
+      - id: "bn-2616"
+        prompt: { "en": "What is missing from the room?" }
+        options: [{ "en": "A curtain" }, { "en": "A window" }]
+        answer: 1
+  - id: "bn-room-to-let"
+    title: "A room to let"
+    theme: "adjectives-2"
+    sentences:
+      - { text: "ভাড়া দেওয়া হবে: একটা ফাঁকা ঘর।", reading: "bhāṛā deoyā hôbe: ekoṭā phām̐kā ghôr.", ipa: "bʱaɽa d̪eoja ɦɔbe ekoʈa pʰãka ɡʱɔr" }
+      - { text: "ঘরটা প্রশস্ত, আলোয় ভরা আর শান্ত।", reading: "ghôroṭā prôśost, āloy bhôrā ār śānt.", ipa: "ɡʱɔroʈa prɔʃost̪ aloj bʱɔra ar ʃant̪" }
+      - { text: "মেঝে ঝকঝকে, দেয়াল সাদা।", reading: "mejhe jhôkojhoke, deyāl sādā.", ipa: "medʒʱe dʒʱɔkodʒʱoke d̪ejal sad̪a" }
+      - { text: "জামানত লাগবে; বাড়িওয়ালা কাল আসবেন।", reading: "jāmānot lāgobe; bāṛioyālā kāl āsoben.", ipa: "dʒamanot̪ laɡobe baɽiojala kal asoben" }
+      - { text: "যোগাযোগ করুন সন্ধ্যায়।", reading: "jogājog korun sônddhāy.", ipa: "dʒoɡadʒoɡ korun sɔnd̪d̪ʱaj" }
+    questions:
+      - id: "bn-2617"
+        prompt: { "en": "The room is to let, that is, for rent." }
+        answer: true
+      - id: "bn-2618"
+        prompt: { "en": "What is the room like?" }
+        options: [{ "en": "Spacious and full of light" }, { "en": "Dark and cramped" }]
+        answer: 1
+      - id: "bn-2619"
+        prompt: { "en": "What must the tenant pay first?" }
+        options: [{ "en": "A deposit" }, { "en": "Nothing" }]
+        answer: 1
