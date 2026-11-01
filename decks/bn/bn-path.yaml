@@ -649,11 +649,15 @@ units:
       - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
   - decks: ["bn-reading-relationships"]
     words: 0
-  - planned: { id: "bn-grammar-indefinites", grammar: "indefinites" }
+  - decks: ["bn-grammar-indefinites", "bn-grammar-indefinites-sentences"]
+    words: 0
+    grammar: ["indefinites"]
     listening_passages:
       - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
     reading_passages:
       - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
+  - decks: ["bn-reading-indefinites"]
+    words: 0
   - planned: { id: "bn-housing", theme: "housing", words: 40 }
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }

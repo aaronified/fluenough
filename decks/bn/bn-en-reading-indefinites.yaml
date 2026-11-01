@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-indefinites"
+name: "Reading: someone, something, somewhere"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A person looks for a lost bag, and a notice about a lost umbrella, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-someone-somewhere"
+    title: "A person looks for a lost bag"
+    theme: "help"
+    sentences:
+      - { text: "কেউ একজন আমার ব্যাগ নিয়ে গেছে।", reading: "keu ekojon āmār bêg niye geche.", ipa: "keu ekodʒon amar bæɡ nije ɡetʃʰe" }
+      - { text: "আমি অনেক জায়গায় খুঁজলাম, কিন্তু কোথাও পেলাম না।", reading: "āmi ônek jāyogāy khum̐jolām, kintu kothāo pelām nā.", ipa: "ami ɔnek dʒajoɡaj kʰũdʒolam kint̪u kot̪ʰao pelam na" }
+      - { text: "কখনো কখনো আমি জিনিস হারাই।", reading: "kôkhono kôkhono āmi jinis hārāi.", ipa: "kɔkʰono kɔkʰono ami dʒinis ɦarai" }
+      - { text: "কিছু লোক সাহায্য করতে চাইল।", reading: "kichu lok sāhājj kôrote cāil.", ipa: "kitʃʰu lok saɦadʒdʒ kɔrot̪e tʃail" }
+      - { text: "শেষে ব্যাগটা পাওয়া গেল।", reading: "śeśe bêgoṭā pāoyā gel.", ipa: "ʃeʃe bæɡoʈa paoja ɡel" }
+    questions:
+      - id: "bn-3959"
+        prompt: { "en": "The speaker lost a bag." }
+        answer: true
+      - id: "bn-3960"
+        prompt: { "en": "What was found in the end?" }
+        options: [{ "en": "The bag" }, { "en": "Some money" }]
+        answer: 1
+      - id: "bn-3961"
+        prompt: { "en": "Did some people want to help?" }
+        options: [{ "en": "Yes, they did" }, { "en": "No, they did not" }]
+        answer: 1
+  - id: "bn-lost-property-notice"
+    title: "A notice about a lost umbrella"
+    theme: "help"
+    sentences:
+      - { text: "কেউ কি একটা কালো ছাতা হারিয়েছেন?", reading: "keu ki ekoṭā kālo chātā hāriyechen?", ipa: "keu ki ekoʈa kalo tʃʰat̪a ɦarijetʃʰen" }
+      - { text: "ছাতাটি এখন অফিসে জমা আছে।", reading: "chātāṭi ekhon ôphise jômā āche.", ipa: "tʃʰat̪aʈi ekʰon ɔpʰise dʒɔma atʃʰe" }
+      - { text: "কিছু খুঁজে না পেলে যোগাযোগ করুন।", reading: "kichu khum̐je nā pele jogājog korun.", ipa: "kitʃʰu kʰũdʒe na pele dʒoɡadʒoɡ korun" }
+      - { text: "কোনো প্রশ্ন থাকলে ফোন করবেন।", reading: "kono prôśn thākole phon kôroben.", ipa: "kono prɔʃn t̪ʰakole pʰon kɔroben" }
+      - { text: "অফিস সকাল দশটা থেকে খোলা।", reading: "ôphis sôkāl dôśoṭā theke kholā.", ipa: "ɔpʰis sɔkal d̪ɔʃoʈa t̪ʰeke kʰola" }
+    questions:
+      - id: "bn-3962"
+        prompt: { "en": "The notice is about a lost umbrella." }
+        answer: true
+      - id: "bn-3963"
+        prompt: { "en": "Where is the umbrella now?" }
+        options: [{ "en": "In the office" }, { "en": "At the station" }]
+        answer: 1
+      - id: "bn-3964"
+        prompt: { "en": "When is the office open?" }
+        options: [{ "en": "From ten in the morning" }, { "en": "All night" }]
+        answer: 1
