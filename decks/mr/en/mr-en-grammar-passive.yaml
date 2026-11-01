@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-passive"
+kind: "layer"
+core: "mr-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Passive: it is done, it was done"
+license: "CC-BY-SA-4.0"
+description: "The food is made, the book was written, the work will be done: saying what happens without saying who does it. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Passive with जाणे (jāṇe): the past participle and जातो, गेला, जाईल"
+  slot_name: "tense"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "जातो": "is done (present)", "गेला": "was done (past)", "जाईल": "will be done (future)" }
+  entries:
+    "karne": "to do"
+    "lihine": "to write"
+    "vachne": "to read"
+    "khaane": "to eat"
+    "paahne": "to see"
+    "banavne": "to make"
+    "pine": "to drink"
+    "dene": "to give"
+    "ghene": "to take"
+    "bolne": "to speak"
+  notes: "The passive uses the past form of the verb, then जाणे (jāṇe), to go, in the tense you need: जेवण केलं जातं (jevaṇ kelaṁ jātaṁ), the food is made; हे पुस्तक लिहिलं गेलं (he pustak lihilaṁ gelaṁ), this book was written; उद्या काम पूर्ण होईल... The form in the table is the masculine base, and it agrees with the thing done in gender and number: घर बांधलं जातं (ghar bāndhlaṁ jātaṁ), the house is built."
