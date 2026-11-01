@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-time"
+name: "Reading: time and days"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the time and the days: a clock and the opening days of a museum, with words such as midi, quart and lundi. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-what-time-is-it"
+    title: "Asking and telling the time"
+    theme: "time"
+    sentences:
+      - text: "Il est sept heures."
+      - text: "Il est midi et quart."
+      - text: "Je mange à midi."
+      - text: "Nous partons le soir."
+    questions:
+      - id: "fr-1059"
+        prompt: { en: "What time is it in the first line?" }
+        options:
+          - { en: "Seven o'clock" }
+          - { en: "Noon" }
+          - { en: "Midnight" }
+        answer: 1
+      - id: "fr-1060"
+        prompt: { en: "When does the speaker eat?" }
+        options:
+          - { en: "At noon" }
+          - { en: "At night" }
+          - { en: "In the morning" }
+        answer: 1
+      - id: "fr-1061"
+        prompt: { en: "When do 'we' leave?" }
+        options:
+          - { en: "In the evening" }
+          - { en: "At noon" }
+          - { en: "At night" }
+        answer: 1
+  - id: "fr-opening-hours"
+    title: "The opening hours on a shop door"
+    theme: "time"
+    sentences:
+      - text: "Le musée est ouvert le lundi."
+      - text: "Il est fermé le dimanche."
+      - text: "Le matin, il est plein."
+      - text: "Demain, il est ouvert."
+    questions:
+      - id: "fr-1062"
+        prompt: { en: "When is the museum open?" }
+        options:
+          - { en: "On Monday" }
+          - { en: "On Sunday" }
+          - { en: "At night" }
+        answer: 1
+      - id: "fr-1063"
+        prompt: { en: "When is it closed?" }
+        options:
+          - { en: "On Sunday" }
+          - { en: "On Monday" }
+          - { en: "At noon" }
+        answer: 1
+      - id: "fr-1064"
+        prompt: { en: "When is it full?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "At midnight" }
+          - { en: "On Sunday" }
+        answer: 1

@@ -1,0 +1,99 @@
+schema: 1
+id: "fr-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1052"
+    target: "Le lundi, je travaille."
+    ipa: "lə lœ̃di ʒə tʁavaj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "lundi", ref: "fr-1044" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "travaille", ref: "fr-0252" }
+    confusables:
+      - { id: "mardi", ref: "fr-1045", kind: "word" }
+      - { id: "dimanche", ref: "fr-1050", kind: "word" }
+  - id: "fr-1053"
+    target: "Il est midi."
+    ipa: "il ɛ midi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "midi", ref: "fr-1036" }
+    confusables:
+      - { id: "minuit", ref: "fr-1037", kind: "word" }
+      - { id: "matin", ref: "fr-1033", kind: "word" }
+  - id: "fr-1054"
+    target: "Je dors la nuit."
+    ipa: "ʒə dɔʁ la nɥi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "dors", ref: "fr-0284" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "nuit", ref: "fr-1035" }
+    confusables:
+      - { id: "soir", ref: "fr-1034", kind: "word" }
+      - { id: "jour", ref: "fr-1032", kind: "word" }
+  - id: "fr-1055"
+    target: "Attendez un moment."
+    ipa: "atɑ̃de œ̃ mɔmɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Attendez", ref: "fr-0303" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "moment", ref: "fr-1039" }
+    confusables:
+      - { id: "minute", ref: "fr-1031", kind: "word" }
+      - { id: "temps", ref: "fr-1040", kind: "word" }
+  - id: "fr-1056"
+    target: "Il est dix heures et quart."
+    ipa: "il ɛ dis œʁ e kaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "heures", ref: "fr-0074" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "quart", ref: "fr-1041" }
+    confusables:
+      - { id: "midi", ref: "fr-1036", kind: "word" }
+      - { id: "minuit", ref: "fr-1037", kind: "word" }
+  - id: "fr-1057"
+    target: "Aujourd'hui, pas hier."
+    ipa: "oʒuʁdɥi pa jɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Aujourd'hui", ref: "fr-0079" }
+      - { word: "pas", base: "pas" }
+      - { word: "hier", ref: "fr-1038" }
+    confusables:
+      - { id: "demain", ref: "fr-0078", kind: "word" }
+      - { id: "tard", ref: "fr-0336", kind: "word" }
+  - id: "fr-1058"
+    target: "Nous partons le soir."
+    ipa: "nu paʁtɔ̃ lə swaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "partons", ref: "fr-0304" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "soir", ref: "fr-1034" }
+    confusables:
+      - { id: "matin", ref: "fr-1033", kind: "word" }
+      - { id: "nuit", ref: "fr-1035", kind: "word" }
