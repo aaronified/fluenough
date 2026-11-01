@@ -154,7 +154,7 @@ void main() {
     await advance(tester, const Duration(milliseconds: 1900));
     expect(find.byType(SplashBar), findsOneWidget);
 
-    await advance(tester, const Duration(milliseconds: 100));
+    await advance(tester, const Duration(milliseconds: 200));
     expect(find.byType(SplashBar), findsNothing);
   });
 

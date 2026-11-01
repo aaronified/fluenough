@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/semantics.dart';
@@ -182,7 +183,13 @@ class _SplashGateState extends State<SplashGate>
             // while it fades.
             child: AbsorbPointer(
               absorbing: _phase != _Phase.fading,
-              child: _SplashScreen(progress: widget.progress, frame: _frame),
+              // The app's text cap (as capTextScale in app.dart, which this
+              // file cannot import without a cycle), so the splash reads at
+              // no more than 1.4x too.
+              child: MediaQuery.withClampedTextScaling(
+                maxScaleFactor: AppSizes.maxTextScale,
+                child: _SplashScreen(progress: widget.progress, frame: _frame),
+              ),
             ),
           ),
       ],
