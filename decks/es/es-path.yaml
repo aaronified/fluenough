@@ -282,7 +282,9 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "es-grammar-por-para", grammar: "por-para" }
+  - decks: ["es-grammar-por-para", "es-reading-por-para"]
+    words: 0
+    grammar: ["por-para"]
     listening_passages:
       - { id: "for-whom-and-why", text: { "en": "Saying what something is for, who it is for and why" } }
     reading_passages:

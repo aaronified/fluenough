@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-por-para"
+name: "Reading: gifts and a waiting time"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short notes with por and para: for whom, for what and why. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-gift-card-notes"
+    title: "Notes on gifts"
+    theme: "relationships"
+    sentences:
+      - text: "Este regalo es para mi madre."
+      - text: "Compré flores por su cumpleaños."
+      - text: "Caminé por el parque para ir a la tienda."
+      - text: "La tarjeta es para el lunes."
+    questions:
+      - id: "es-1846"
+        prompt: { en: "Who is the gift for?" }
+        options:
+          - { en: "Mother" }
+          - { en: "Father" }
+          - { en: "Sister" }
+        answer: 1
+      - id: "es-1847"
+        prompt: { en: "Why were the flowers bought?" }
+        options:
+          - { en: "For the birthday" }
+          - { en: "For the wedding" }
+          - { en: "For the holiday" }
+        answer: 1
+      - id: "es-1848"
+        prompt: { en: "When is the card for?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Friday" }
+          - { en: "Sunday" }
+        answer: 1
+  - id: "es-for-and-by"
+    title: "For work and for the trip"
+    theme: "relationships"
+    sentences:
+      - text: "Trabajo por la mañana para pagar la casa."
+      - text: "Esperé el autobús por media hora."
+      - text: "Llamo para saber la hora."
+      - text: "Este dinero es para el viaje."
+    questions:
+      - id: "es-1849"
+        prompt: { en: "Why does the writer work?" }
+        options:
+          - { en: "To pay for the house" }
+          - { en: "For fun" }
+          - { en: "To travel" }
+        answer: 1
+      - id: "es-1850"
+        prompt: { en: "How long did the writer wait?" }
+        options:
+          - { en: "Half an hour" }
+          - { en: "One hour" }
+          - { en: "Ten minutes" }
+        answer: 1
+      - id: "es-1851"
+        prompt: { en: "What is the money for?" }
+        options:
+          - { en: "The trip" }
+          - { en: "The house" }
+          - { en: "A gift" }
+        answer: 1

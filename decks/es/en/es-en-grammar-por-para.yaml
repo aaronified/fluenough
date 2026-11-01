@@ -1,0 +1,23 @@
+schema: 1
+id: "es-en-grammar-por-para"
+kind: "layer"
+core: "es-grammar-por-para"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Por and para"
+license: "CC-BY-SA-4.0"
+description: "Por and para both mean for, but they are not the same. Por is the reason, the route and the time: lo hago por ti, I do it for you (because of you). Para is the purpose, the recipient and the deadline: es para ti, it is for you. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Por and para in the same sentence"
+  slot_name: "use"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "por (reason)": "por: because of, a reason or an exchange", "para (purpose)": "para: in order to; the purpose", "por (place or time)": "por: through a place, or at a time", "para (deadline or recipient)": "para: by a deadline, or for a person" }
+  entries:
+    "trabajar": "to work"
+    "comprar": "to buy"
+    "viajar": "to travel"
+    "estudiar": "to study"
+    "pagar": "to pay"
+    "caminar": "to walk"
+    "llamar": "to call"
+    "esperar": "to wait"
+  notes: "Por is used for the reason (por dinero, because of money), the route or place (por el parque, through the park), and the time of day or the period (por la noche, at night). Para is used for the purpose (para vivir, in order to live), the recipient (para mi madre, for my mother) and the deadline (para el lunes, by Monday). Por and para are not interchangeable: change one and the sentence changes."
