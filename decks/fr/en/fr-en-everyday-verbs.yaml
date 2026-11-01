@@ -1,0 +1,493 @@
+schema: 1
+id: "fr-en-everyday-verbs"
+kind: "layer"
+core: "fr-everyday-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Everyday verbs"
+license: "CC-BY-SA-4.0"
+description: "Thirty verbs of every day: eating and drinking, sleeping, coming and going, doing, taking, seeing, reading and writing, buying and cooking, opening and closing, and finding your way. Each verb is shown in the form its examples use. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0282":
+    native: "to eat"
+    notes:
+      "n1": "Manger is 'to eat'. Je mange is 'I eat'; for we the form is mangeons."
+    examples:
+      "Je mange une pomme.":
+        native: "I eat an apple."
+        bases:
+          "mange": "eat"
+          "une": "a"
+          "pomme": "apple"
+      "Nous mangeons à la maison.":
+        native: "We eat at home."
+        bases:
+          "mangeons": "eat (we)"
+          "à": "at"
+          "la": "the"
+          "maison": "home; house"
+  "fr-0283":
+    native: "to drink"
+    notes:
+      "n1": "Boire is 'to drink'. Je bois is 'I drink'; for you it is buvez."
+    examples:
+      "Je bois de l'eau.":
+        native: "I drink water."
+        bases:
+          "bois": "drink"
+          "de": "some"
+          "l'eau": "water"
+      "Vous buvez un café ?":
+        native: "Would you like a coffee?"
+        bases:
+          "buvez": "drink (you)"
+          "un": "a"
+          "café": "coffee"
+  "fr-0284":
+    native: "to sleep"
+    notes:
+      "n1": "Dormir is 'to sleep'. Je dors is 'I sleep'; for they it is dorment."
+    examples:
+      "Je dors bien.":
+        native: "I sleep well."
+        bases:
+          "dors": "sleep"
+      "Les enfants dorment ici.":
+        native: "The children sleep here."
+        bases:
+          "enfants": "children"
+          "dorment": "sleep (they)"
+  "fr-0285":
+    native: "to come"
+    notes:
+      "n1": "Venir is 'to come'. Je viens de is 'I come from' a place."
+    examples:
+      "Je viens de Paris.":
+        native: "I come from Paris."
+        bases:
+          "viens": "come"
+          "de": "from"
+          "Paris": "Paris"
+      "Mon ami vient ici.":
+        native: "My friend comes here."
+        bases:
+          "vient": "comes"
+  "fr-0286":
+    native: "to go"
+    notes:
+      "n1": "Aller is 'to go'. Je vais is 'I go' or 'I am going'. With a place it means 'to go to': à la gare, au marché."
+    examples:
+      "Je vais à la gare.":
+        native: "I am going to the station."
+        bases:
+          "vais": "go"
+          "à": "to"
+          "la": "the"
+      "Nous allons au marché.":
+        native: "We are going to the market."
+        bases:
+          "allons": "go (we)"
+          "au": "to the"
+          "marché": "market"
+  "fr-0287":
+    native: "to do; to make"
+    notes:
+      "n1": "Faire is 'to do' and 'to make'. Je fais is 'I do'; for you it is vous faites."
+    examples:
+      "Je fais du sport.":
+        native: "I do sport."
+        bases:
+          "fais": "do"
+          "du": "some"
+      "Vous faites la cuisine.":
+        native: "You are cooking."
+        bases:
+          "faites": "do (you)"
+          "la": "the"
+          "cuisine": "cooking"
+  "fr-0288":
+    native: "to take"
+    notes:
+      "n1": "Prendre is 'to take'. Je prends is 'I take'; for they it is prennent."
+    examples:
+      "Je prends le train.":
+        native: "I take the train."
+        bases:
+          "prends": "take"
+          "le": "the"
+      "Ils prennent le bus.":
+        native: "They take the bus."
+        bases:
+          "prennent": "take (they)"
+          "le": "the"
+          "bus": "bus"
+  "fr-0289":
+    native: "to see"
+    notes:
+      "n1": "Voir is 'to see'. Je vois is 'I see'; for you it is voyez."
+    examples:
+      "Je vois Paul.":
+        native: "I see Paul."
+        bases:
+          "vois": "see"
+          "Paul": "Paul (a first name)"
+      "Vous voyez bien ?":
+        native: "Do you see well?"
+        bases:
+          "voyez": "see (you)"
+  "fr-0290":
+    native: "to read"
+    notes:
+      "n1": "Lire is 'to read'. Je lis is 'I read'; elle lit is 'she reads'."
+    examples:
+      "Je lis un livre.":
+        native: "I read a book."
+        bases:
+          "lis": "read"
+          "un": "a"
+          "livre": "book"
+      "Elle lit le journal.":
+        native: "She reads the newspaper."
+        bases:
+          "lit": "reads"
+          "le": "the"
+          "journal": "newspaper"
+  "fr-0291":
+    native: "to write"
+    notes:
+      "n1": "Écrire is 'to write'. J'écris is 'I write'; for you it is vous écrivez."
+    examples:
+      "J'écris une lettre.":
+        native: "I write a letter."
+        bases:
+          "J'écris": "I write"
+          "une": "a"
+          "lettre": "letter"
+      "Vous écrivez un e-mail ?":
+        native: "Are you writing an e-mail?"
+        bases:
+          "écrivez": "write (you)"
+          "un": "a"
+          "e": "electronic"
+          "mail": "mail"
+  "fr-0292":
+    native: "to listen (to)"
+    notes:
+      "n1": "Écouter is 'to listen to'. J'écoute is 'I listen'. Écoutez is also 'listen!' as a command."
+    examples:
+      "J'écoute la radio.":
+        native: "I listen to the radio."
+        bases:
+          "J'écoute": "I listen"
+          "la": "the"
+          "radio": "radio"
+      "Écoutez bien.":
+        native: "Listen carefully."
+        bases:
+          "Écoutez": "listen"
+  "fr-0293":
+    native: "to look at; to watch"
+    notes:
+      "n1": "Regarder is 'to look at' or 'to watch'. Regardez is 'look!' as a command."
+    examples:
+      "Je regarde la télé.":
+        native: "I watch TV."
+        bases:
+          "regarde": "watch"
+          "la": "the"
+          "télé": "TV"
+      "Regardez ici.":
+        native: "Look here."
+        bases:
+          "Regardez": "look"
+  "fr-0294":
+    native: "to buy"
+    notes:
+      "n1": "Acheter is 'to buy'. J'achète is 'I buy'; the accent changes on the stem: achète, achètes, achètent."
+    examples:
+      "J'achète du pain.":
+        native: "I buy bread."
+        bases:
+          "J'achète": "I buy"
+          "du": "some"
+          "pain": "bread"
+      "Elle achète un journal.":
+        native: "She buys a newspaper."
+        bases:
+          "achète": "buys"
+          "un": "a"
+          "journal": "newspaper"
+  "fr-0295":
+    native: "to prepare"
+    notes:
+      "n1": "Préparer is 'to prepare'. It is also used for making a meal: préparer le dîner."
+    examples:
+      "Je prépare le dîner.":
+        native: "I am preparing dinner."
+        bases:
+          "prépare": "prepare"
+          "le": "the"
+          "dîner": "dinner"
+      "Nous préparons un café.":
+        native: "We are making a coffee."
+        bases:
+          "préparons": "prepare (we)"
+          "un": "a"
+          "café": "coffee"
+  "fr-0296":
+    native: "to wash"
+    notes:
+      "n1": "Laver is 'to wash'. Je lave is 'I wash'. Se laver, not on this card, means 'to wash oneself'."
+    examples:
+      "Je lave la voiture.":
+        native: "I wash the car."
+        bases:
+          "lave": "wash"
+          "la": "the"
+          "voiture": "car"
+      "Il lave les mains.":
+        native: "He washes his hands."
+        bases:
+          "lave": "washes"
+  "fr-0297":
+    native: "to clean"
+    notes:
+      "n1": "Nettoyer is 'to clean'. Je nettoie is 'I clean'; the y becomes i before an e."
+    examples:
+      "Je nettoie la maison.":
+        native: "I clean the house."
+        bases:
+          "nettoie": "clean"
+          "la": "the"
+          "maison": "house"
+      "Vous nettoyez la table ?":
+        native: "Are you cleaning the table?"
+        bases:
+          "nettoyez": "clean (you)"
+          "la": "the"
+          "table": "table"
+  "fr-0298":
+    native: "to open"
+    notes:
+      "n1": "Ouvrir is 'to open'. J'ouvre is 'I open'. Ouvrez is 'open!' as a command."
+    examples:
+      "J'ouvre la porte.":
+        native: "I open the door."
+        bases:
+          "J'ouvre": "I open"
+          "la": "the"
+          "porte": "door"
+      "Ouvrez la fenêtre.":
+        native: "Open the window."
+        bases:
+          "Ouvrez": "open"
+          "la": "the"
+          "fenêtre": "window"
+  "fr-0299":
+    native: "to close; to shut"
+    notes:
+      "n1": "Fermer is 'to close' or 'to shut'. It is the opposite of ouvrir."
+    examples:
+      "Je ferme la porte.":
+        native: "I close the door."
+        bases:
+          "ferme": "close"
+          "la": "the"
+          "porte": "door"
+      "Fermez la fenêtre !":
+        native: "Close the window!"
+        bases:
+          "Fermez": "close"
+          "la": "the"
+          "fenêtre": "window"
+  "fr-0300":
+    native: "to look for"
+    notes:
+      "n1": "Chercher is 'to look for'. Je cherche is 'I am looking for'."
+    examples:
+      "Je cherche la gare.":
+        native: "I am looking for the station."
+        bases:
+          "cherche": "look for"
+          "la": "the"
+      "Vous cherchez quoi ?":
+        native: "What are you looking for?"
+        bases:
+          "cherchez": "look for (you)"
+  "fr-0301":
+    native: "to find"
+    notes:
+      "n1": "Trouver is 'to find'. Je trouve is 'I find'; tu trouves is 'you find'."
+    examples:
+      "Je trouve mon téléphone.":
+        native: "I find my phone."
+        bases:
+          "trouve": "find"
+      "Tu trouves la gare ?":
+        native: "Do you find the station?"
+        bases:
+          "trouves": "find (you)"
+          "la": "the"
+  "fr-0302":
+    native: "to give"
+    notes:
+      "n1": "Donner is 'to give'. Donnez-moi is 'give me' and is a polite way to ask for something."
+    examples:
+      "Je donne un livre à Paul.":
+        native: "I give a book to Paul."
+        bases:
+          "donne": "give"
+          "un": "a"
+          "livre": "book"
+          "à": "to"
+          "Paul": "Paul (a first name)"
+      "Donnez-moi un café.":
+        native: "Give me a coffee."
+        bases:
+          "Donnez": "give"
+          "un": "a"
+          "café": "coffee"
+  "fr-0303":
+    native: "to wait (for)"
+    notes:
+      "n1": "Attendre is 'to wait' (for). Attendez is 'wait!' as a command."
+    examples:
+      "J'attends le train.":
+        native: "I am waiting for the train."
+        bases:
+          "J'attends": "I wait"
+          "le": "the"
+      "Attendez un moment.":
+        native: "Wait a moment."
+        bases:
+          "Attendez": "wait"
+          "un": "a"
+          "moment": "moment"
+  "fr-0304":
+    native: "to leave; to go away"
+    notes:
+      "n1": "Partir is 'to leave' or 'to go away'. Le train part is 'the train leaves'."
+    examples:
+      "Le train part demain.":
+        native: "The train leaves tomorrow."
+        bases:
+          "Le": "the"
+          "part": "leaves"
+      "Nous partons à huit heures.":
+        native: "We leave at eight o'clock."
+        bases:
+          "partons": "leave (we)"
+          "à": "at"
+  "fr-0305":
+    native: "to arrive"
+    notes:
+      "n1": "Arriver is 'to arrive'. Il arrive is 'it arrives' or 'he arrives'."
+    examples:
+      "Le bus arrive ici.":
+        native: "The bus arrives here."
+        bases:
+          "Le": "the"
+          "bus": "bus"
+          "arrive": "arrives"
+      "J'arrive à la gare.":
+        native: "I am arriving at the station."
+        bases:
+          "J'arrive": "I arrive"
+          "à": "at"
+          "la": "the"
+  "fr-0306":
+    native: "to walk"
+    notes:
+      "n1": "Marcher is 'to walk'. À pied means 'on foot'."
+    examples:
+      "Je marche à pied.":
+        native: "I walk."
+        bases:
+          "marche": "walk"
+          "à": "on"
+          "pied": "foot"
+      "Il marche vite.":
+        native: "He walks fast."
+        bases:
+          "marche": "walks"
+          "vite": "fast"
+  "fr-0307":
+    native: "to run"
+    notes:
+      "n1": "Courir is 'to run'. Je cours is 'I run'; for they it is courent."
+    examples:
+      "Je cours au parc.":
+        native: "I run to the park."
+        bases:
+          "cours": "run"
+          "au": "to the"
+          "parc": "park"
+      "Les enfants courent.":
+        native: "The children run."
+        bases:
+          "enfants": "children"
+          "courent": "run (they)"
+  "fr-0308":
+    native: "to play"
+    notes:
+      "n1": "Jouer is 'to play'. Jouer à is 'to play a game or sport'; jouer de is 'to play an instrument'."
+    examples:
+      "Il joue au football.":
+        native: "He plays football."
+        bases:
+          "joue": "plays"
+          "au": "at"
+          "football": "football"
+      "Nous jouons de la musique.":
+        native: "We play music."
+        bases:
+          "jouons": "play (we)"
+          "de": "of"
+          "la": "the"
+  "fr-0309":
+    native: "to cook"
+    notes:
+      "n1": "Cuisiner is 'to cook'. La cuisine is both 'the kitchen' and 'cooking'."
+    examples:
+      "Je cuisine le soir.":
+        native: "I cook in the evening."
+        bases:
+          "cuisine": "cook"
+          "le": "the"
+          "soir": "evening"
+      "Ma mère cuisine bien.":
+        native: "My mother cooks well."
+        bases:
+          "cuisine": "cooks"
+  "fr-0310":
+    native: "to pay"
+    notes:
+      "n1": "Payer is 'to pay'. Je paie is 'I pay'; for you it is vous payez."
+    examples:
+      "Je paie le café.":
+        native: "I pay for the coffee."
+        bases:
+          "paie": "pay"
+          "le": "the"
+          "café": "coffee"
+      "Vous payez combien ?":
+        native: "How much do you pay?"
+        bases:
+          "payez": "pay (you)"
+  "fr-0311":
+    native: "to want"
+    notes:
+      "n1": "Vouloir is 'to want'. Je veux is 'I want'; voulez-vous is 'do you want'."
+    examples:
+      "Je veux un café.":
+        native: "I want a coffee."
+        bases:
+          "veux": "want"
+          "un": "a"
+          "café": "coffee"
+      "Voulez-vous un thé ?":
+        native: "Would you like a tea?"
+        bases:
+          "Voulez": "do you want"
+          "un": "a"
+          "thé": "tea"

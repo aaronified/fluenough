@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-numbers-1-20"
+name: "Reading: numbers 1 to 20"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with numbers from one to twenty: room numbers and times on a notice, and a count. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-room-numbers"
+    title: "Room numbers and times"
+    theme: "numbers-1-20"
+    sentences:
+      - text: "Chambre numéro douze, ici."
+      - text: "Chambre numéro quatorze, là-bas."
+      - text: "Le petit déjeuner est à sept heures."
+      - text: "Le bus part à dix heures."
+    questions:
+      - id: "fr-0237"
+        prompt: { en: "What time does the bus leave?" }
+        options:
+          - { en: "Seven o'clock" }
+          - { en: "Ten o'clock" }
+          - { en: "Eleven o'clock" }
+        answer: 2
+      - id: "fr-0238"
+        prompt: { en: "What is the number of the first room in the text?" }
+        options:
+          - { en: "Twelve" }
+          - { en: "Fourteen" }
+          - { en: "Two" }
+        answer: 1
+      - id: "fr-0239"
+        prompt: { en: "What does 'quatorze' mean?" }
+        options:
+          - { en: "Fourteen" }
+          - { en: "Forty" }
+          - { en: "Four" }
+        answer: 1
+  - id: "fr-a-count"
+    title: "A count"
+    theme: "numbers-1-20"
+    sentences:
+      - text: "Un, deux, trois, quatre, cinq."
+      - text: "Six, sept, huit, neuf, dix."
+      - text: "Onze, douze, treize, quatorze, quinze."
+      - text: "Seize, dix-sept, dix-huit, dix-neuf, vingt."
+    questions:
+      - id: "fr-0240"
+        prompt: { en: "What comes after 'huit' in the count?" }
+        options:
+          - { en: "Neuf" }
+          - { en: "Dix" }
+          - { en: "Sept" }
+        answer: 1
+      - id: "fr-0241"
+        prompt: { en: "What does 'quinze' mean?" }
+        options:
+          - { en: "Fifteen" }
+          - { en: "Fifty" }
+          - { en: "Five" }
+        answer: 1
+      - id: "fr-0242"
+        prompt: { en: "Which number ends the count in the text?" }
+        options:
+          - { en: "Twenty (vingt)" }
+          - { en: "Ten (dix)" }
+          - { en: "Nineteen (dix-neuf)" }
+        answer: 1

@@ -1,0 +1,128 @@
+schema: 1
+id: "fr-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0194"
+    target: "Voici ma famille."
+    ipa: "vwasi ma famij"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Voici", base: "voici" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "famille", ref: "fr-0164" }
+    confusables:
+      - { id: "fille", ref: "fr-0168", kind: "word" }
+      - { id: "brother", ref: "fr-0169", kind: "word" }
+  - id: "fr-0195"
+    target: "Mon père et ma mère sont là."
+    ipa: "mɔ̃ pɛʁ e ma mɛʁ sɔ̃ la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "mère", ref: "fr-0166" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "parents", ref: "fr-0173", kind: "word" }
+      - { id: "grandmother", ref: "fr-0175", kind: "word" }
+  - id: "fr-0196"
+    target: "Ma sœur et mon frère sont ici."
+    ipa: "ma sœʁ e mɔ̃ fʁɛʁ sɔ̃ isi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "frère", ref: "fr-0169" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "ici", ref: "fr-0029" }
+    confusables:
+      - { id: "cousin", ref: "fr-0178", kind: "word" }
+      - { id: "oncle", ref: "fr-0176", kind: "word" }
+  - id: "fr-0197"
+    target: "Le bébé de ma cousine dort."
+    ipa: "lə bebe də ma kuzin dɔʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "bébé", ref: "fr-0180" }
+      - { word: "de", base: "de" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "cousine", ref: "fr-0179" }
+      - { word: "dort", base: "dormir" }
+    confusables:
+      - { id: "boy", ref: "fr-0181", kind: "word" }
+      - { id: "fille", ref: "fr-0168", kind: "word" }
+  - id: "fr-0198"
+    target: "Mon grand-père est un homme gentil."
+    ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ œ̃n ɔm ʒɑ̃ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "grand", base: "grand" }
+      - { word: "père", ref: "fr-0165" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "un", base: "un" }
+      - { word: "homme", ref: "fr-0182" }
+      - { word: "gentil", base: "gentil" }
+    confusables:
+      - { id: "grandmother", ref: "fr-0175", kind: "word" }
+      - { id: "vieux", ref: "fr-0109", kind: "word" }
+  - id: "fr-0199"
+    target: "Tu as une belle famille."
+    ipa: "ty a yn bɛl famij"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "as", base: "avoir" }
+      - { word: "une", base: "une" }
+      - { word: "belle", base: "beau" }
+      - { word: "famille", ref: "fr-0164" }
+    confusables:
+      - { id: "stepmother", ref: "fr-0184", kind: "word" }
+      - { id: "mariage", ref: "fr-0187", kind: "word" }
+  - id: "fr-0200"
+    target: "Ma femme et mon mari sont là."
+    ipa: "ma fam e mɔ̃ maʁi sɔ̃ la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "femme", ref: "fr-0172" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "mari", ref: "fr-0171" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "wife-formal", ref: "fr-0188", kind: "word" }
+      - { id: "fiance", ref: "fr-0191", kind: "word" }
+  - id: "fr-0201"
+    target: "Quel âge a ton fils ?"
+    ipa: "kɛl ɑʒ a tɔ̃ fis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quel", ref: "fr-0072" }
+      - { word: "âge", ref: "fr-0193" }
+      - { word: "a", base: "avoir" }
+      - { word: "ton", ref: "fr-0141" }
+      - { word: "fils", ref: "fr-0167" }
+    confusables:
+      - { id: "boy", ref: "fr-0181", kind: "word" }
+      - { id: "baby", ref: "fr-0180", kind: "word" }

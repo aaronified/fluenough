@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-about-me"
+name: "Reading: about me"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about yourself: a registration form, and a short survey at a station. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-registration-form"
+    title: "A registration form"
+    theme: "about-me"
+    sentences:
+      - text: "Je m'appelle Anne Martin."
+      - text: "J'habite à Lyon, en France."
+      - text: "Je suis étudiante et j'ai vingt ans."
+      - text: "Ma nationalité est française."
+    questions:
+      - id: "fr-0276"
+        prompt: { en: "Where does the speaker live?" }
+        options:
+          - { en: "Lyon" }
+          - { en: "Paris" }
+          - { en: "Marseille" }
+        answer: 1
+      - id: "fr-0277"
+        prompt: { en: "What is the speaker's job?" }
+        options:
+          - { en: "Student" }
+          - { en: "Teacher" }
+          - { en: "Doctor" }
+        answer: 1
+      - id: "fr-0278"
+        prompt: { en: "How old is the speaker?" }
+        options:
+          - { en: "Twenty" }
+          - { en: "Ten" }
+          - { en: "Thirteen" }
+        answer: 1
+  - id: "fr-a-short-survey"
+    title: "A short survey"
+    theme: "about-me"
+    sentences:
+      - text: "Vous êtes marié ?"
+      - text: "Non, je suis célibataire."
+      - text: "Je travaille à la gare et j'aime la musique."
+      - text: "Quelle langue parlez-vous ?"
+    questions:
+      - id: "fr-0279"
+        prompt: { en: "What is the answer to 'Vous êtes marié ?'" }
+        options:
+          - { en: "I am single" }
+          - { en: "I am married" }
+          - { en: "I am a student" }
+        answer: 1
+      - id: "fr-0280"
+        prompt: { en: "Where does the speaker work?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At school" }
+          - { en: "At home" }
+        answer: 1
+      - id: "fr-0281"
+        prompt: { en: "What does the speaker like?" }
+        options:
+          - { en: "Music" }
+          - { en: "Cooking" }
+          - { en: "Sport" }
+        answer: 1

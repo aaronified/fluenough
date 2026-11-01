@@ -1,0 +1,213 @@
+schema: 1
+id: "fr-numbers-1-20"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "numbers-1-20"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0208"
+    target: "un"
+    ipa: "œ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un frère est là.", ipa: "œ̃ fʁɛʁ ɛ la", bases: [{ word: "Un", base: "un" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "J'ai un fils.", ipa: "ʒe œ̃ fis", bases: [{ word: "J'ai", base: "avoir" }, { word: "un", base: "un" }, { word: "fils", ref: "fr-0167" }] }
+  - id: "fr-0209"
+    target: "deux"
+    ipa: "dø"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Deux amis sont là.", ipa: "dø zami sɔ̃ la", bases: [{ word: "Deux", base: "deux" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Nous avons deux fils.", ipa: "nu zavɔ̃ dø fis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", base: "avoir" }, { word: "deux", base: "deux" }, { word: "fils", ref: "fr-0167" }] }
+  - id: "fr-0210"
+    target: "trois"
+    ipa: "tʁwa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trois chats sont là.", ipa: "tʁwa ʃa sɔ̃ la", bases: [{ word: "Trois", base: "trois" }, { word: "chats", base: "chat" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Il est trois heures.", ipa: "il ɛ tʁwa zœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "trois", base: "trois" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0211"
+    target: "quatre"
+    ipa: "katʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père a quatre frères.", ipa: "mɔ̃ pɛʁ a katʁ fʁɛʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "a", base: "avoir" }, { word: "quatre", base: "quatre" }, { word: "frères", ref: "fr-0169" }] }
+      - { target: "Il est quatre heures.", ipa: "il ɛ katʁ œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "quatre", base: "quatre" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0212"
+    target: "cinq"
+    ipa: "sɛ̃k"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cinq enfants jouent.", ipa: "sɛ̃k ɑ̃fɑ̃ ʒu", bases: [{ word: "Cinq", base: "cinq" }, { word: "enfants", base: "enfant" }, { word: "jouent", base: "jouer" }] }
+      - { target: "Nous sommes cinq.", ipa: "nu sɔm sɛ̃k", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "cinq", base: "cinq" }] }
+  - id: "fr-0213"
+    target: "six"
+    ipa: "sis"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Six amis sont ici.", ipa: "si zami sɔ̃ isi", bases: [{ word: "Six", base: "six" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "J'ai six ans.", ipa: "ʒe si zɑ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "six", base: "six" }, { word: "ans", base: "an" }] }
+  - id: "fr-0214"
+    target: "sept"
+    ipa: "sɛt"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est sept heures.", ipa: "il ɛ sɛt œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "sept", base: "sept" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Une semaine a sept jours.", ipa: "yn səmɛn a sɛt ʒuʁ", bases: [{ word: "Une", base: "une" }, { word: "semaine", base: "semaine" }, { word: "a", base: "avoir" }, { word: "sept", base: "sept" }, { word: "jours", base: "jour" }] }
+  - id: "fr-0215"
+    target: "huit"
+    ipa: "ɥit"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est huit heures.", ipa: "il ɛ ɥit œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "huit", base: "huit" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Huit enfants jouent ici.", ipa: "ɥit ɑ̃fɑ̃ ʒu isi", bases: [{ word: "Huit", base: "huit" }, { word: "enfants", base: "enfant" }, { word: "jouent", base: "jouer" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0216"
+    target: "neuf"
+    ipa: "nœf"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est neuf heures.", ipa: "il ɛ nœv œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "neuf", base: "neuf" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Mon fils a neuf ans.", ipa: "mɔ̃ fis a nœv ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "a", base: "avoir" }, { word: "neuf", base: "neuf" }, { word: "ans", base: "an" }] }
+  - id: "fr-0217"
+    target: "dix"
+    ipa: "dis"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est dix heures.", ipa: "il ɛ diz œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dix", base: "dix" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Dix amis parlent français.", ipa: "di zami paʁl fʁɑ̃sɛ", bases: [{ word: "Dix", base: "dix" }, { word: "amis", ref: "fr-0100" }, { word: "parlent", ref: "fr-0023" }, { word: "français", base: "français" }] }
+  - id: "fr-0218"
+    target: "onze"
+    ipa: "ɔ̃z"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est onze heures.", ipa: "il ɛ ɔ̃z œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "onze", base: "onze" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Onze garçons jouent.", ipa: "ɔ̃z ɡaʁsɔ̃ ʒu", bases: [{ word: "Onze", base: "onze" }, { word: "garçons", ref: "fr-0181" }, { word: "jouent", base: "jouer" }] }
+  - id: "fr-0219"
+    target: "douze"
+    ipa: "duz"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est douze heures.", ipa: "il ɛ duz œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "douze", base: "douze" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Douze enfants sont là.", ipa: "duz ɑ̃fɑ̃ sɔ̃ la", bases: [{ word: "Douze", base: "douze" }, { word: "enfants", base: "enfant" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0220"
+    target: "treize"
+    ipa: "tʁɛz"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon fils a treize ans.", ipa: "mɔ̃ fis a tʁɛz ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "a", base: "avoir" }, { word: "treize", base: "treize" }, { word: "ans", base: "an" }] }
+      - { target: "Treize amis sont là.", ipa: "tʁɛz ami sɔ̃ la", bases: [{ word: "Treize", base: "treize" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0221"
+    target: "quatorze"
+    ipa: "katɔʁz"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur a quatorze ans.", ipa: "ma sœʁ a katɔʁz ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "a", base: "avoir" }, { word: "quatorze", base: "quatorze" }, { word: "ans", base: "an" }] }
+      - { target: "Quatorze garçons jouent.", ipa: "katɔʁz ɡaʁsɔ̃ ʒu", bases: [{ word: "Quatorze", base: "quatorze" }, { word: "garçons", ref: "fr-0181" }, { word: "jouent", base: "jouer" }] }
+  - id: "fr-0222"
+    target: "quinze"
+    ipa: "kɛ̃z"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma fille a quinze ans.", ipa: "ma fij a kɛ̃z ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "fille", ref: "fr-0168" }, { word: "a", base: "avoir" }, { word: "quinze", base: "quinze" }, { word: "ans", base: "an" }] }
+      - { target: "Quinze enfants jouent ici.", ipa: "kɛ̃z ɑ̃fɑ̃ ʒu isi", bases: [{ word: "Quinze", base: "quinze" }, { word: "enfants", base: "enfant" }, { word: "jouent", base: "jouer" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0223"
+    target: "seize"
+    ipa: "sɛz"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma nièce a seize ans.", ipa: "ma njɛs a sɛz ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "nièce", ref: "fr-0190" }, { word: "a", base: "avoir" }, { word: "seize", base: "seize" }, { word: "ans", base: "an" }] }
+      - { target: "Seize amis sont là.", ipa: "sɛz ami sɔ̃ la", bases: [{ word: "Seize", base: "seize" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0224"
+    target: "dix-sept"
+    ipa: "disɛt"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon neveu a dix-sept ans.", ipa: "mɔ̃ nəvø a disɛt ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "neveu", ref: "fr-0189" }, { word: "a", base: "avoir" }, { word: "dix", ref: "fr-0217" }, { word: "sept", ref: "fr-0214" }, { word: "ans", base: "an" }] }
+      - { target: "Il est dix-sept heures.", ipa: "il ɛ disɛt œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0225"
+    target: "dix-huit"
+    ipa: "dizɥit"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon cousin a dix-huit ans.", ipa: "mɔ̃ kuzɛ̃ a dizɥit ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "cousin", ref: "fr-0178" }, { word: "a", base: "avoir" }, { word: "dix", ref: "fr-0217" }, { word: "huit", ref: "fr-0215" }, { word: "ans", base: "an" }] }
+      - { target: "Il est dix-huit heures.", ipa: "il ɛ dizɥit œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0226"
+    target: "dix-neuf"
+    ipa: "diznœf"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma cousine a dix-neuf ans.", ipa: "ma kuzin a diznœv ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "cousine", ref: "fr-0179" }, { word: "a", base: "avoir" }, { word: "dix", ref: "fr-0217" }, { word: "neuf", ref: "fr-0216" }, { word: "ans", base: "an" }] }
+      - { target: "Il est dix-neuf heures.", ipa: "il ɛ diznœv œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }, { word: "neuf", ref: "fr-0216" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0227"
+    target: "vingt"
+    ipa: "vɛ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon frère a vingt ans.", ipa: "mɔ̃ fʁɛʁ a vɛ̃t ɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "a", base: "avoir" }, { word: "vingt", base: "vingt" }, { word: "ans", base: "an" }] }
+      - { target: "Vingt amis sont là.", ipa: "vɛ̃t ami sɔ̃ la", bases: [{ word: "Vingt", base: "vingt" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - kind: "set"
+    id: "fr-0228"
+    members: [{ ref: "fr-0208" }, { ref: "fr-0209" }, { ref: "fr-0210" }, { ref: "fr-0211" }, { ref: "fr-0212" }, { ref: "fr-0213" }, { ref: "fr-0214" }, { ref: "fr-0215" }, { ref: "fr-0216" }, { ref: "fr-0217" }]

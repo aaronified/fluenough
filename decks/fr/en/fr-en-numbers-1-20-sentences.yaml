@@ -1,0 +1,64 @@
+schema: 1
+id: "fr-en-numbers-1-20-sentences"
+kind: "layer"
+core: "fr-numbers-1-20-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: numbers 1 to 20"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences that count people, things, years and hours, each with the numbers it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0229":
+    native: "There are two cats."
+    bases:
+      "y": "there"
+      "a": "has"
+      "chats": "cats"
+    confusables:
+      "trois": { why: "Trois is three; this sentence has two cats." }
+      "un": { why: "Un is one, not two." }
+  "fr-0230":
+    native: "My father has four brothers."
+    bases:
+      "a": "has"
+    confusables:
+      "six": { why: "Six is six; this sentence has four brothers." }
+      "cinq": { why: "Cinq is five, one more than four." }
+  "fr-0231":
+    native: "There are five of us."
+    confusables:
+      "quinze": { why: "Quinze is fifteen, not five." }
+      "sept": { why: "Sept is seven, not five." }
+  "fr-0232":
+    native: "It is ten o'clock."
+    confusables:
+      "onze": { why: "Onze is eleven: one hour later." }
+      "huit": { why: "Huit is eight: two hours earlier." }
+  "fr-0233":
+    native: "My daughter is fifteen years old."
+    bases:
+      "a": "has"
+      "ans": "years (of age)"
+    confusables:
+      "seize": { why: "Seize is sixteen: one more than fifteen." }
+      "treize": { why: "Treize is thirteen, not fifteen." }
+  "fr-0234":
+    native: "Twenty friends are here."
+    confusables:
+      "dix": { why: "Dix is ten, not twenty." }
+      "trois": { why: "Trois is three, not twenty." }
+  "fr-0235":
+    native: "My cousin is eighteen years old."
+    bases:
+      "a": "has"
+      "ans": "years (of age)"
+    confusables:
+      "dix-neuf": { why: "Dix-neuf is nineteen, one more than eighteen." }
+      "dix-sept": { why: "Dix-sept is seventeen, one less than eighteen." }
+  "fr-0236":
+    native: "Eleven boys play."
+    bases:
+      "jouent": "play"
+    confusables:
+      "douze": { why: "Douze is twelve, one more than eleven." }
+      "dix": { why: "Dix is ten, not eleven." }

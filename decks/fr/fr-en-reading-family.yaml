@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-family"
+name: "Reading: family"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a family: a family photo, and a grandparents' visit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-family-photo"
+    title: "A family photo"
+    theme: "family"
+    sentences:
+      - text: "Voici ma famille."
+      - text: "Mon père est professeur et ma mère est docteur."
+      - text: "Mon frère est jeune."
+      - text: "Les parents sont là."
+    questions:
+      - id: "fr-0202"
+        prompt: { en: "What is the speaker's mother's job?" }
+        options:
+          - { en: "Doctor" }
+          - { en: "Teacher" }
+          - { en: "Friend" }
+        answer: 1
+      - id: "fr-0203"
+        prompt: { en: "Who is young in the text?" }
+        options:
+          - { en: "The brother" }
+          - { en: "The father" }
+          - { en: "The mother" }
+        answer: 1
+      - id: "fr-0204"
+        prompt: { en: "What does 'Voici' mean when you show a photo?" }
+        options:
+          - { en: "Here is" }
+          - { en: "Thank you" }
+          - { en: "Goodbye" }
+        answer: 1
+  - id: "fr-grandparents"
+    title: "Grandparents"
+    theme: "family"
+    sentences:
+      - text: "Mon grand-père est vieux."
+      - text: "Ma grand-mère parle lentement."
+      - text: "La belle-mère est ici."
+      - text: "Notre bébé dort."
+    questions:
+      - id: "fr-0205"
+        prompt: { en: "Who speaks slowly?" }
+        options:
+          - { en: "The grandmother" }
+          - { en: "The grandfather" }
+          - { en: "The baby" }
+        answer: 1
+      - id: "fr-0206"
+        prompt: { en: "Who is sleeping?" }
+        options:
+          - { en: "The baby" }
+          - { en: "The mother-in-law" }
+          - { en: "The grandfather" }
+        answer: 1
+      - id: "fr-0207"
+        prompt: { en: "Which person is described as old?" }
+        options:
+          - { en: "The grandfather" }
+          - { en: "The baby" }
+          - { en: "The niece" }
+        answer: 1
