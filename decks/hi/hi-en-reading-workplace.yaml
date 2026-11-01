@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-workplace"
+name: "Reading: workplace"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A morning at the office, and a note from the manager. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-workplace-morning"
+    title: "A morning at the office"
+    theme: "workplace"
+    sentences:
+      - {"text": "सुबह दफ़्तर पहुँचकर मैंने मेल देखा।", "reading": "subah daftar pahum̐cakar mainnē mēl dēkhā.", "ipa": "sʊbəɦ d̪əft̪ər pəɦʊ̃tʃəkər mɛːnneː meːl d̪eːkʰaː"}
+      - {"text": "मीटिंग में बॉस ने नई योजना बताई।", "reading": "mīṭiṅg mēm̐ bôs nē naī yōjnā batāī.", "ipa": "miːʈɪŋɡ mẽː bɔs neː nəiː joːdʒnaː bət̪aːiː"}
+      - {"text": "रिपोर्ट आज शाम तक जमा करनी है।", "reading": "ripōrṭ āj śām tak jamā karnī hai.", "ipa": "rɪpoːrʈ aːdʒ ʃaːm t̪ək dʒəmaː kərniː ɦɛː"}
+      - {"text": "इंटरव्यू के लिए कर्मचारियों की सूची बनाओ।", "reading": "iṇṭaravyū kē liē karmacāriyōm̐ kī sūcī banāō.", "ipa": "ɪɳʈərəʋjuː keː lɪeː kərmətʃaːrɪjõː kiː suːtʃiː bənaːoː"}
+    questions:
+      - {"id": "hi-2034", "prompt": {"en": "The writer read the mail in the morning."}, "answer": true}
+      - {"id": "hi-2035", "prompt": {"en": "Who explained the new plan?"}, "options": [{"en": "The boss"}, {"en": "A colleague"}], "answer": 1}
+      - {"id": "hi-2036", "prompt": {"en": "The report is due next week."}, "answer": false}
+  - id: "hi-workplace-note"
+    title: "A note from the manager"
+    theme: "workplace"
+    sentences:
+      - {"text": "प्रिय टीम, प्रोजेक्ट की समय-सीमा अगले सोमवार है।", "reading": "priy ṭīm, prōjēkṭ kī samay-sīmā aglē sōmvār hai.", "ipa": "prɪj ʈiːm proːdʒeːkʈ kiː səməjsiːmaː əɡleː soːmʋaːr ɦɛː"}
+      - {"text": "सारे काग़ज़ मुझे दो।", "reading": "sārē kāġaz mujhē dō.", "ipa": "saːreː kaːɣəz mʊdʒʱeː d̪oː"}
+      - {"text": "नए प्रस्ताव पर सब अपनी राय दें।", "reading": "naē prastāv par sab apnī rāy dēm̐.", "ipa": "nəeː prəst̪aːʋ pər səb əpniː raːj d̪ẽː"}
+      - {"text": "ओवरटाइम के लिए मुझसे बात करें।", "reading": "ōvrṭāim kē liē mujhsē bāt karēm̐.", "ipa": "oːʋrʈaːɪm keː lɪeː mʊdʒʱseː baːt̪ kərẽː"}
+    questions:
+      - {"id": "hi-2037", "prompt": {"en": "The project deadline is on Monday."}, "answer": true}
+      - {"id": "hi-2038", "prompt": {"en": "What should be handed in?"}, "options": [{"en": "The papers"}, {"en": "The keys"}], "answer": 1}
+      - {"id": "hi-2039", "prompt": {"en": "Overtime needs no talk."}, "answer": false}

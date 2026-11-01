@@ -17,8 +17,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Mon pays est la France.", ipa: "mɔ̃ pei ɛ la fʁɑ̃s", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "pays", base: "pays" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "France", base: "France" }] }
-      - { target: "Le pays de Paul est beau.", ipa: "lə pei də pɔl ɛ bo", bases: [{ word: "Le", base: "le" }, { word: "pays", base: "pays" }, { word: "de", base: "de" }, { word: "Paul", base: "Paul" }, { word: "est", ref: "fr-0021" }, { word: "beau", base: "beau" }] }
+      - { target: "Mon pays est la France.", ipa: "mɔ̃ pei ɛ la fʁɑ̃s", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "pays", base: "pays" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "France", base: "France" }] }
+      - { target: "Le pays de Paul est beau.", ipa: "lə pei də pɔl ɛ bo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pays", base: "pays" }, { word: "de", base: "de" }, { word: "Paul", base: "Paul" }, { word: "est", ref: "fr-0021" }, { word: "beau", base: "beau" }] }
   - id: "fr-0244"
     target: "ville"
     ipa: "vil"
@@ -29,7 +29,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Ma ville est petite.", ipa: "ma vil ɛ pəti", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "ville", base: "ville" }, { word: "est", ref: "fr-0021" }, { word: "petite", base: "petit" }] }
-      - { target: "La ville est grande.", ipa: "la vil ɛ ɡʁɑ̃d", bases: [{ word: "La", base: "la" }, { word: "ville", base: "ville" }, { word: "est", ref: "fr-0021" }, { word: "grande", base: "grand" }] }
+      - { target: "La ville est grande.", ipa: "la vil ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "ville", base: "ville" }, { word: "est", ref: "fr-0021" }, { word: "grande", base: "grand" }] }
   - id: "fr-0245"
     target: "nationalité"
     ipa: "nasjɔnalite"
@@ -110,7 +110,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je travaille ici.", ipa: "ʒə tʁavaj isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", base: "travailler" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "Elle travaille à la gare.", ipa: "ɛl tʁavaj a la ɡaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", base: "travailler" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Elle travaille à la gare.", ipa: "ɛl tʁavaj a la ɡaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", base: "travailler" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
   - id: "fr-0253"
     target: "étudier"
     ipa: "etydje"
@@ -119,7 +119,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'étudie le français.", ipa: "ʒetydi lə fʁɑ̃sɛ", bases: [{ word: "J'étudie", base: "étudier" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "J'étudie le français.", ipa: "ʒetydi lə fʁɑ̃sɛ", bases: [{ word: "J'étudie", base: "étudier" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
       - { target: "Mon fils étudie à Paris.", ipa: "mɔ̃ fis etydi a paʁi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "étudie", base: "étudier" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
   - id: "fr-0254"
     target: "étudiant"
@@ -196,7 +196,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quelle est la date ?", ipa: "kɛl ɛ la dat", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", base: "la" }, { word: "date", base: "date" }] }
+      - { target: "Quelle est la date ?", ipa: "kɛl ɛ la dat", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "date", base: "date" }] }
       - { target: "Quelle est votre date de naissance ?", ipa: "kɛl ɛ vɔtʁ dat də nɛsɑ̃s", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "date", base: "date" }, { word: "de", base: "de" }, { word: "naissance", ref: "fr-0261" }] }
   - id: "fr-0261"
     target: "naissance"
@@ -208,7 +208,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je suis né à Paris.", ipa: "ʒə sɥi ne a paʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "né", base: "né" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
-      - { target: "C'est la naissance de mon fils.", ipa: "sɛ la nɛsɑ̃s də mɔ̃ fis", bases: [{ word: "C'est", base: "ce" }, { word: "la", base: "la" }, { word: "naissance", base: "naissance" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }] }
+      - { target: "C'est la naissance de mon fils.", ipa: "sɛ la nɛsɑ̃s də mɔ̃ fis", bases: [{ word: "C'est", base: "ce" }, { word: "la", ref: "fr-0544" }, { word: "naissance", base: "naissance" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }] }
   - id: "fr-0262"
     target: "langue"
     ipa: "lɑ̃ɡ"
@@ -219,7 +219,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Quelle langue parlez-vous ?", ipa: "kɛl lɑ̃ɡ paʁle vu", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "langue", base: "langue" }, { word: "parlez", ref: "fr-0023" }, { word: "vous", ref: "fr-0096" }] }
-      - { target: "Ma langue est le français.", ipa: "ma lɑ̃ɡ ɛ lə fʁɑ̃sɛ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "langue", base: "langue" }, { word: "est", ref: "fr-0021" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Ma langue est le français.", ipa: "ma lɑ̃ɡ ɛ lə fʁɑ̃sɛ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "langue", base: "langue" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
   - id: "fr-0263"
     target: "aimer"
     ipa: "ɛme"
@@ -228,8 +228,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "J'aime la musique.", ipa: "ʒɛm la myzik", bases: [{ word: "J'aime", base: "aimer" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
-      - { target: "Vous aimez le sport ?", ipa: "vu zɛme lə spɔʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "aimez", base: "aimer" }, { word: "le", base: "le" }, { word: "sport", ref: "fr-0265" }] }
+      - { target: "J'aime la musique.", ipa: "ʒɛm la myzik", bases: [{ word: "J'aime", base: "aimer" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "Vous aimez le sport ?", ipa: "vu zɛme lə spɔʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "aimez", base: "aimer" }, { word: "le", ref: "fr-0543" }, { word: "sport", ref: "fr-0265" }] }
   - id: "fr-0264"
     target: "content"
     ipa: "kɔ̃tɑ̃"
@@ -249,8 +249,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le sport est bon.", ipa: "lə spɔʁ ɛ bɔ̃", bases: [{ word: "Le", base: "le" }, { word: "sport", base: "sport" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
-      - { target: "Mon fils aime le sport.", ipa: "mɔ̃ fis ɛm lə spɔʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "aime", base: "aimer" }, { word: "le", base: "le" }, { word: "sport", base: "sport" }] }
+      - { target: "Le sport est bon.", ipa: "lə spɔʁ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sport", base: "sport" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Mon fils aime le sport.", ipa: "mɔ̃ fis ɛm lə spɔʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "aime", base: "aimer" }, { word: "le", ref: "fr-0543" }, { word: "sport", base: "sport" }] }
   - id: "fr-0266"
     target: "musique"
     ipa: "myzik"
@@ -260,8 +260,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "La musique est belle.", ipa: "la myzik ɛ bɛl", bases: [{ word: "La", base: "la" }, { word: "musique", base: "musique" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
-      - { target: "Ma sœur joue de la musique.", ipa: "ma sœʁ ʒu də la myzik", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "joue", base: "jouer" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "musique", base: "musique" }] }
+      - { target: "La musique est belle.", ipa: "la myzik ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "musique", base: "musique" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "Ma sœur joue de la musique.", ipa: "ma sœʁ ʒu də la myzik", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "joue", base: "jouer" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "musique", base: "musique" }] }
   - id: "fr-0267"
     target: "vie"
     ipa: "vi"
@@ -271,5 +271,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "La vie est belle.", ipa: "la vi ɛ bɛl", bases: [{ word: "La", base: "la" }, { word: "vie", base: "vie" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
+      - { target: "La vie est belle.", ipa: "la vi ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "vie", base: "vie" }, { word: "est", ref: "fr-0021" }, { word: "belle", base: "beau" }] }
       - { target: "Ma vie est à Paris.", ipa: "ma vi ɛ a paʁi", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "vie", base: "vie" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }

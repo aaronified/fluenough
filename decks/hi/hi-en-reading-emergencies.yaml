@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-emergencies"
+name: "Reading: emergencies"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short report of an accident, and a notice about help in an emergency. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-emergencies-road"
+    title: "An accident on the road"
+    theme: "emergencies"
+    sentences:
+      - {"text": "सड़क पर दुर्घटना हुई और दो लोग घायल हुए।", "reading": "saṛak par durghaṭnā huī aur dō lōg ghāyal huē.", "ipa": "səɽək pər d̪ʊrɡʱəʈnaː ɦʊiː ɔːr d̪oː loːɡ ɡʱaːjəl ɦʊeː"}
+      - {"text": "एम्बुलेंस और पुलिस तुरंत पहुँच गईं।", "reading": "ēmbulēṁs aur pulis turant pahum̐c gaīm̐.", "ipa": "eːmbʊlẽːs ɔːr pʊlɪs t̪ʊrənt̪ pəɦʊ̃tʃ ɡəĩː"}
+      - {"text": "दमकल ने गाड़ी से आग बुझाई।", "reading": "damkal nē gāṛī sē āg bujhāī.", "ipa": "d̪əmkəl neː ɡaːɽiː seː aːɡ bʊdʒʱaːiː"}
+      - {"text": "सब लोग सावधान रहें, वहाँ खतरा है।", "reading": "sab lōg sāvdhān rahēm̐, vahām̐ khatrā hai.", "ipa": "səb loːɡ saːʋd̪ʱaːn rəɦẽː ʋəɦãː kʰət̪raː ɦɛː"}
+    questions:
+      - {"id": "hi-2666", "prompt": {"en": "Two people were injured in the accident."}, "answer": true}
+      - {"id": "hi-2667", "prompt": {"en": "Who came first to the scene?"}, "options": [{"en": "The ambulance and police"}, {"en": "The fire brigade"}], "answer": 1}
+      - {"id": "hi-2668", "prompt": {"en": "The fire was put out by the police."}, "answer": false}
+  - id: "hi-emergencies-notice"
+    title: "A notice about help"
+    theme: "emergencies"
+    sentences:
+      - {"text": "आपातकाल में हेल्पलाइन पर फोन करें।", "reading": "āpātkāl mēm̐ hēlpalāin par phōn karēm̐.", "ipa": "aːpaːt̪kaːl mẽː ɦeːlpəlaːɪn pər pʰoːn kərẽː"}
+      - {"text": "हेल्पलाइन सारे दिन खुली है।", "reading": "hēlpalāin sārē din khulī hai.", "ipa": "ɦeːlpəlaːɪn saːreː d̪ɪn kʰʊliː ɦɛː"}
+      - {"text": "चेतावनी मिलते ही निकास की ओर चलें।", "reading": "cētāvnī miltē hī nikās kī ōr calēm̐.", "ipa": "tʃeːt̪aːʋniː mɪlt̪eː ɦiː nɪkaːs kiː oːr tʃəlẽː"}
+      - {"text": "आपदा में बचाव दल की मदद लो।", "reading": "āpdā mēm̐ bacāv dal kī madad lō.", "ipa": "aːpd̪aː mẽː bətʃaːʋ d̪əl kiː məd̪əd̪ loː"}
+    questions:
+      - {"id": "hi-2669", "prompt": {"en": "The emergency number is the helpline."}, "answer": true}
+      - {"id": "hi-2670", "prompt": {"en": "When should people move towards the exit?"}, "options": [{"en": "When warned"}, {"en": "Never"}], "answer": 1}
+      - {"id": "hi-2671", "prompt": {"en": "The helpline is closed at night."}, "answer": false}

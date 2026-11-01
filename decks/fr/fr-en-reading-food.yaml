@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-food"
+name: "Reading: food and drink"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a meal out, with words such as soupe, plat, addition and commander. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-at-the-restaurant"
+    title: "At the restaurant"
+    theme: "food"
+    sentences:
+      - text: "Le serveur sert la soupe."
+      - text: "Je commande un plat."
+      - text: "Nous commandons un dessert."
+      - text: "L'addition est chère."
+    questions:
+      - id: "fr-0848"
+        prompt: { en: "What does the waiter serve?" }
+        options:
+          - { en: "The soup" }
+          - { en: "The bill" }
+          - { en: "The menu" }
+        answer: 1
+      - id: "fr-0849"
+        prompt: { en: "What does the speaker order?" }
+        options:
+          - { en: "A dish" }
+          - { en: "A tip" }
+          - { en: "A cup" }
+        answer: 1
+      - id: "fr-0850"
+        prompt: { en: "What is expensive?" }
+        options:
+          - { en: "The bill" }
+          - { en: "The soup" }
+          - { en: "The dessert" }
+        answer: 1
+  - id: "fr-menu-card"
+    title: "A menu card"
+    theme: "food"
+    sentences:
+      - text: "Le repas est délicieux."
+      - text: "La soupe est épicée."
+      - text: "Le porc n'est pas bon."
+      - text: "Je goûte le dessert."
+    questions:
+      - id: "fr-0851"
+        prompt: { en: "What is delicious?" }
+        options:
+          - { en: "The meal" }
+          - { en: "The bill" }
+          - { en: "The menu" }
+        answer: 1
+      - id: "fr-0852"
+        prompt: { en: "Which dish is spicy?" }
+        options:
+          - { en: "The soup" }
+          - { en: "The dessert" }
+          - { en: "The meat" }
+        answer: 1
+      - id: "fr-0853"
+        prompt: { en: "What does the speaker taste?" }
+        options:
+          - { en: "The dessert" }
+          - { en: "The bill" }
+          - { en: "The wine" }
+        answer: 1

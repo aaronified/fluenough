@@ -1,0 +1,193 @@
+schema: 1
+id: "hi-en-history"
+kind: "layer"
+core: "hi-history"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History"
+license: "CC-BY-SA-4.0"
+description: "The past: kings and queens, dynasties and wars, freedom and revolution, and the words for culture, old writings and the ages of history. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2473":
+    native: "king; ruler"
+    notes:
+      "n1": "The ruler of a kingdom, who is a man. The woman ruler is रानी (rānī)."
+    examples:
+      "एक राजा इस किले में रहता था।": { "native": "A king used to live in this fort.", "bases": {} }
+      "राजा ने प्रजा की भलाई की।": { "native": "The king did good for the people.", "bases": {"ने": "by", "प्रजा": "subjects", "भलाई": "welfare"} }
+  "hi-2474":
+    native: "queen"
+    notes:
+      "n1": "The wife of a king, or a woman who rules a kingdom."
+    examples:
+      "रानी महल में बैठी थी।": { "native": "The queen was sitting in the palace.", "bases": {} }
+      "झाँसी की रानी बहादुर थी।": { "native": "The Queen of Jhansi was brave.", "bases": {"झाँसी": "Jhansi", "रानी": "queen", "बहादुर": "brave"} }
+  "hi-2475":
+    native: "dynasty"
+    notes:
+      "n1": "A line of kings from one family, who rule for many years."
+    examples:
+      "मौर्य राजवंश बहुत पुराना है।": { "native": "The Maurya dynasty is very old.", "bases": {"मौर्य": "Maurya"} }
+      "इस राजवंश के कई राजा हुए।": { "native": "Many kings of this dynasty came.", "bases": {"कई": "several"} }
+  "hi-2476":
+    native: "war; battle"
+    notes:
+      "n1": "A fight between armies or countries."
+    examples:
+      "युद्ध में बहुत लोग मारे गए।": { "native": "Many people died in the war.", "bases": {} }
+      "युद्ध के बाद शांति आई।": { "native": "After the war peace came.", "bases": {"बाद": "after"} }
+  "hi-2477":
+    native: "fight; battle"
+    notes:
+      "n1": "A fight between two sides, or a quarrel between people."
+    examples:
+      "दोनों सेनाओं में लड़ाई हुई।": { "native": "There was a battle between the two armies.", "bases": {"दोनों": "both"} }
+      "लड़ाई मत करो।": { "native": "Do not quarrel.", "bases": {"मत": "do not"} }
+  "hi-2478":
+    native: "commander; general"
+    notes:
+      "n1": "The leader of an army in war."
+    examples:
+      "सेनापति ने सेना को आगे बढ़ाया।": { "native": "The commander led the army forward.", "bases": {"ने": "by", "बढ़ाया": "to advance"} }
+      "सेनापति बहादुर था।": { "native": "The commander was brave.", "bases": {"बहादुर": "brave"} }
+  "hi-2479":
+    native: "empire"
+    notes:
+      "n1": "A large group of countries or lands ruled by one king or one power."
+    examples:
+      "मुगल साम्राज्य बहुत बड़ा था।": { "native": "The Mughal empire was very big.", "bases": {"मुगल": "Mughal"} }
+      "साम्राज्य की राजधानी दिल्ली थी।": { "native": "The capital of the empire was Delhi.", "bases": {"दिल्ली": "Delhi"} }
+  "hi-2480":
+    native: "emperor"
+    notes:
+      "n1": "The ruler of an empire, greater than a king."
+    examples:
+      "सम्राट ने नया किला बनवाया।": { "native": "The emperor had a new fort built.", "bases": {"ने": "by", "बनवाया": "to get built"} }
+      "सम्राट का दरबार बड़ा था।": { "native": "The emperor's court was big.", "bases": {} }
+  "hi-2481":
+    native: "ruler"
+    notes:
+      "n1": "A person who governs a country or a region."
+    examples:
+      "शासक प्रजा का भला चाहता था।": { "native": "The ruler wanted the good of the people.", "bases": {"प्रजा": "subjects"} }
+      "वह अच्छा शासक था।": { "native": "He was a good ruler.", "bases": {} }
+  "hi-2482":
+    native: "rule; government; administration"
+    notes:
+      "n1": "The act of ruling a country or a region."
+    examples:
+      "उसका शासन लंबा चला।": { "native": "His rule lasted long.", "bases": {} }
+      "अंग्रेज़ों का शासन कितने साल रहा?": { "native": "How many years did British rule last?", "bases": {"अंग्रेज़ों": "British", "शासन": "rule"} }
+  "hi-2483":
+    native: "freedom; independence"
+    notes:
+      "n1": "The state of being free from control or from another country's rule."
+    examples:
+      "हमें आज़ादी मिली।": { "native": "We got freedom.", "bases": {} }
+      "आज़ादी की लड़ाई बहादुरी से लड़ी गई।": { "native": "The fight for freedom was fought bravely.", "bases": {"बहादुरी": "bravery", "लड़ी": "to fight"} }
+  "hi-2484":
+    native: "liberty; independence (formal)"
+    notes:
+      "n1": "The freedom of a people or a person to decide their own course."
+    examples:
+      "स्वतंत्रता सबका अधिकार है।": { "native": "Liberty is everyone's right.", "bases": {} }
+      "स्वतंत्रता दिवस पर झंडा फहराया गया।": { "native": "On Independence Day the flag was hoisted.", "bases": {"दिवस": "day", "झंडा": "flag", "फहराया": "to hoist"} }
+  "hi-2485":
+    native: "revolution"
+    notes:
+      "n1": "A sudden and great change in the way a country is ruled."
+    examples:
+      "क्रांति ने देश बदल दिया।": { "native": "The revolution changed the country.", "bases": {"ने": "by"} }
+      "क्रांति की कहानी पढ़ो।": { "native": "Read the story of the revolution.", "bases": {"कहानी": "story"} }
+  "hi-2486":
+    native: "treaty; pact"
+    notes:
+      "n1": "A formal agreement between two countries or two sides."
+    examples:
+      "दोनों देशों के बीच संधि हुई।": { "native": "A treaty was made between the two countries.", "bases": {"दोनों": "both", "बीच": "between"} }
+      "संधि टूट गई।": { "native": "The treaty broke.", "bases": {} }
+  "hi-2487":
+    native: "civilisation"
+    notes:
+      "n1": "A way of life of a people in a time, with their cities, writing and customs."
+    examples:
+      "सिंधु घाटी की सभ्यता बहुत पुरानी है।": { "native": "The civilisation of the Indus valley is very old.", "bases": {"सिंधु": "Indus"} }
+      "हमारी सभ्यता बहुत प्राचीन है।": { "native": "Our civilisation is very ancient.", "bases": {} }
+  "hi-2488":
+    native: "culture"
+    notes:
+      "n1": "The customs, arts and beliefs of a people, handed down through time."
+    examples:
+      "भारत की संस्कृति विविध है।": { "native": "India's culture is varied.", "bases": {"भारत": "India", "विविध": "varied"} }
+      "अपनी संस्कृति पर गर्व करो।": { "native": "Be proud of your culture.", "bases": {} }
+  "hi-2489":
+    native: "archaeology"
+    notes:
+      "n1": "The study of old remains of people and their buildings, found in the earth."
+    examples:
+      "पुरातत्व विभाग ने खुदाई की।": { "native": "The archaeology department did the digging.", "bases": {"ने": "by", "खुदाई": "digging"} }
+      "मुझे पुरातत्व पसंद है।": { "native": "I like archaeology.", "bases": {} }
+  "hi-2490":
+    native: "inscription; stone writing"
+    notes:
+      "n1": "Writing cut into stone, which tells something about the past."
+    examples:
+      "यह शिलालेख बहुत पुराना है।": { "native": "This inscription is very old.", "bases": {} }
+      "शिलालेख पर क्या लिखा है?": { "native": "What is written on the inscription?", "bases": {} }
+  "hi-2491":
+    native: "book; scripture; text"
+    notes:
+      "n1": "A book of old writing, or a sacred text."
+    examples:
+      "यह प्राचीन ग्रंथ है।": { "native": "This is an ancient text.", "bases": {} }
+      "ग्रंथ पढ़ो।": { "native": "Read the text.", "bases": {} }
+  "hi-2492":
+    native: "royal court"
+    notes:
+      "n1": "The place where a king or an emperor sits to rule and to hear people."
+    examples:
+      "दरबार में मंत्री बैठे थे।": { "native": "The ministers sat in the court.", "bases": {} }
+      "राजा का दरबार सजा था।": { "native": "The king's court was decorated.", "bases": {} }
+  "hi-2493":
+    native: "ancient"
+    notes:
+      "n1": "Of very old times, of the distant past."
+    examples:
+      "यह मंदिर प्राचीन है।": { "native": "This temple is ancient.", "bases": {} }
+      "प्राचीन भारत में बहुत ज्ञान था।": { "native": "There was much knowledge in ancient India.", "bases": {"भारत": "India", "ज्ञान": "knowledge"} }
+  "hi-2494":
+    native: "medieval"
+    notes:
+      "n1": "Of the middle ages of history, between the ancient and the modern times."
+    examples:
+      "मध्यकालीन किला बहुत मज़बूत था।": { "native": "The medieval fort was very strong.", "bases": {"मध्यकालीन": "medieval"} }
+      "यह मध्यकालीन इतिहास है।": { "native": "This is medieval history.", "bases": {} }
+  "hi-2495":
+    native: "modern"
+    notes:
+      "n1": "Of the present times, new in style or method. The opposite is प्राचीन (prācīn)."
+    examples:
+      "यह आधुनिक इमारत है।": { "native": "This is a modern building.", "bases": {"इमारत": "building"} }
+      "आधुनिक तकनीक सीखो।": { "native": "Learn modern technology.", "bases": {} }
+  "hi-2496":
+    native: "age; era"
+    notes:
+      "n1": "A long period of history, marked by one kind of life or event."
+    examples:
+      "यह स्वर्ण युग था।": { "native": "This was the golden age.", "bases": {"स्वर्ण": "golden"} }
+      "नए युग की शुरुआत हुई।": { "native": "The beginning of a new era has come.", "bases": {"शुरुआत": "beginning"} }
+  "hi-2497":
+    native: "time; period; era"
+    notes:
+      "n1": "A period of time in history, or a time in general."
+    examples:
+      "यह मूर्ति प्राचीन काल की है।": { "native": "This statue is from ancient times.", "bases": {"काल": "time"} }
+      "काल बदलता है।": { "native": "Time changes.", "bases": {} }
+  "hi-2498":
+    native: "century"
+    notes:
+      "n1": "A period of one hundred years."
+    examples:
+      "पंद्रहवीं सदी में यह किला बना।": { "native": "This fort was built in the fifteenth century.", "bases": {"पंद्रहवीं": "fifteenth", "सदी": "century"} }
+      "यह सदियों पुरानी परंपरा है।": { "native": "This is a centuries-old tradition.", "bases": {"सदियों": "century", "परंपरा": "tradition"} }

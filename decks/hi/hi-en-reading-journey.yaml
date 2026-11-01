@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-journey"
+name: "Reading: journey"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a morning at the station and a letter from a trip. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-journey-platform"
+    title: "On the platform"
+    theme: "journey"
+    sentences:
+      - {"text": "हम सुबह स्टेशन पहुँचे।", "reading": "ham subah sṭēśan pahum̐cē.", "ipa": "ɦəm sʊbəɦ sʈeːʃən pəɦʊ̃tʃeː"}
+      - {"text": "प्लेटफ़ॉर्म नंबर चार पर ट्रेन खड़ी थी।", "reading": "plēṭfôrm nambar cār par ṭrēn khaṛī thī.", "ipa": "pleːʈfɔrm nəmbər tʃaːr pər ʈreːn kʰəɽiː t̪ʰiː"}
+      - {"text": "कुली ने हमारा सामान उठाया।", "reading": "kulī nē hamārā sāmān uṭhāyā.", "ipa": "kʊliː neː ɦəmaːraː saːmaːn ʊʈʰaːjaː"}
+      - {"text": "टिकट और पासपोर्ट साथ रखो।", "reading": "ṭikaṭ aur pāspōrṭ sāth rakhō.", "ipa": "ʈɪkəʈ ɔːr paːspoːrʈ saːt̪ʰ rəkʰoː"}
+    questions:
+      - {"id": "hi-1920", "prompt": {"en": "The writer arrived in the morning."}, "answer": true}
+      - {"id": "hi-1921", "prompt": {"en": "What did the porter do?"}, "options": [{"en": "Carried the luggage"}, {"en": "Sold tickets"}], "answer": 1}
+      - {"id": "hi-1922", "prompt": {"en": "The train was on platform one."}, "answer": false}
+  - id: "hi-journey-letter"
+    title: "A letter from a trip"
+    theme: "journey"
+    sentences:
+      - {"text": "हम नाव से झील पार कर गए।", "reading": "ham nāv sē jhīl pār kar gaē.", "ipa": "ɦəm naːʋ seː dʒʱiːl paːr kər ɡəeː"}
+      - {"text": "घाटी बहुत सुंदर है।", "reading": "ghāṭī bahut sundar hai.", "ipa": "ɡʱaːʈiː bəɦʊt̪ sʊnd̪ər ɦɛː"}
+      - {"text": "गाइड ने किले की कहानी सुनाई।", "reading": "gāiḍ nē kilē kī kahānī sunāī.", "ipa": "ɡaːɪɖ neː kɪleː kiː kəɦaːniː sʊnaːiː"}
+      - {"text": "रात को हम होटल में ठहरे।", "reading": "rāt kō ham hōṭal mēm̐ ṭhahrē.", "ipa": "raːt̪ koː ɦəm ɦoːʈəl mẽː ʈʰəɦreː"}
+    questions:
+      - {"id": "hi-1923", "prompt": {"en": "They crossed the lake by boat."}, "answer": true}
+      - {"id": "hi-1924", "prompt": {"en": "Where did they stay at night?"}, "options": [{"en": "In a hotel"}, {"en": "On the train"}], "answer": 1}
+      - {"id": "hi-1925", "prompt": {"en": "The valley is not beautiful."}, "answer": false}

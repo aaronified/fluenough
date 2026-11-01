@@ -1,0 +1,22 @@
+schema: 1
+id: "hi-en-phone-sentences"
+kind: "layer"
+core: "hi-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences using the words of the phone unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1881":
+    native: "The phone rang, but no number showed on the screen."
+    bases: {"फोन": "phone"}
+    confusables: {"w1": {"why": "A text, not a call: मैसेज (maisēj) does not ring."}, "w2": {"why": "A charger, not a ring: चार्जर (cārjar) is the device for power."}}
+  "hi-1882":
+    native: "The battery was low, so the phone switched off."
+    bases: {"फोन": "phone"}
+    confusables: {"w1": {"why": "A signal, not the power: सिग्नल (signal) is the strength of the connection."}, "w2": {"why": "Force, not power: ज़ोर (zōr) is the strength of a push."}}
+  "hi-1883":
+    native: "If you forget the password, send a new message."
+    confusables: {"w1": {"why": "An email, not a text: ईमेल (īmēl) is sent over the internet."}, "w2": {"why": "A file, not a message: फ़ाइल (fāil) is data kept under one name."}}

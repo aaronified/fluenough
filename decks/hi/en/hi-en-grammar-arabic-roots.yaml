@@ -1,0 +1,17 @@
+schema: 1
+id: "hi-en-grammar-arabic-roots"
+kind: "layer"
+core: "hi-grammar-arabic-roots"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arabic roots"
+license: "CC-BY-SA-4.0"
+description: "The Arabic root ʿ-l-m, knowing, and its family of words in Hindustani. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Arabic roots"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"knowledge (the noun)": "the root's noun", "one who knows (the doer)": "a person of the root", "known (the adjective)": "the root's adjective", "teaching (the causal noun)": "the noun of teaching"}
+  entries:
+    "ilm": "the root of knowing: ʿ-l-m"
+  notes: "The Arabic root इल्म (ilm) has three consonants, ʿ-l-m, and each word of its family follows a pattern of vowels. इल्म (ilm) is the noun, knowledge; आलिम (ālim) is a person who knows, a scholar; मालूम (mālūm) is known; तालीम (tālīm) is teaching, from the causal pattern. Each word is taught on its own card, as इल्म (ilm), आलिम (ālim), मालूम (mālūm) and तालीम (tālīm)."

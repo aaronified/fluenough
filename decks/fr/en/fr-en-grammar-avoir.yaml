@@ -1,0 +1,16 @@
+schema: 1
+id: "fr-en-grammar-avoir"
+kind: "layer"
+core: "fr-grammar-avoir"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To have: avoir"
+license: "CC-BY-SA-4.0"
+description: "Avoir is the verb 'to have', and it is irregular in every person. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Conjugation"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "avoir": "to have"
+  notes: "Avoir is 'to have': j'ai (I have), tu as (you have), il a (he has), nous avons (we have), vous avez (you have), ils ont (they have). It is also used in idioms that a learner meets early: avoir chaud (to be hot), avoir froid (to be cold), and avoir ... ans (to be ... years old)."

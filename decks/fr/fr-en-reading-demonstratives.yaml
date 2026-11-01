@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-demonstratives"
+name: "Reading: this and these"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about places and people, with ce, cette and ces. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-guided-walk"
+    title: "A leaflet for a short guided walk"
+    theme: "describing"
+    sentences:
+      - text: "Ce musée est fermé."
+      - text: "Cette gare est loin."
+      - text: "Ces rues sont calmes."
+      - text: "Cet ami est gentil."
+    questions:
+      - id: "fr-0647"
+        prompt: { en: "Which place is closed?" }
+        options:
+          - { en: "This museum" }
+          - { en: "This station" }
+          - { en: "These streets" }
+        answer: 1
+      - id: "fr-0648"
+        prompt: { en: "Which place is far?" }
+        options:
+          - { en: "This museum" }
+          - { en: "This station" }
+          - { en: "These streets" }
+        answer: 2
+      - id: "fr-0649"
+        prompt: { en: "How are the streets?" }
+        options:
+          - { en: "Calm" }
+          - { en: "Noisy" }
+          - { en: "Far" }
+        answer: 1
+  - id: "fr-this-one-or-that-one"
+    title: "This one or that one"
+    theme: "describing"
+    sentences:
+      - text: "Ce train est rapide."
+      - text: "Cette ville est jolie."
+      - text: "Ces tables sont vides."
+      - text: "Cet homme est intelligent."
+    questions:
+      - id: "fr-0650"
+        prompt: { en: "What is fast?" }
+        options:
+          - { en: "This train" }
+          - { en: "This town" }
+          - { en: "These tables" }
+        answer: 1
+      - id: "fr-0651"
+        prompt: { en: "What is empty?" }
+        options:
+          - { en: "This train" }
+          - { en: "These tables" }
+          - { en: "This town" }
+        answer: 2
+      - id: "fr-0652"
+        prompt: { en: "What is the man like?" }
+        options:
+          - { en: "Clever" }
+          - { en: "Poor" }
+          - { en: "Tired" }
+        answer: 1

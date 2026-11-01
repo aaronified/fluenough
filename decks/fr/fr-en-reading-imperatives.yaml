@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-imperatives"
+name: "Reading: commands"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with commands, in class and on signs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-class-instructions"
+    title: "Short instructions in class"
+    theme: "help"
+    sentences:
+      - text: "Écoutez !"
+      - text: "Regardez la table."
+      - text: "Attendez ici."
+      - text: "Ne parlez pas !"
+    questions:
+      - id: "fr-0617"
+        prompt: { en: "What should the students do first?" }
+        options:
+          - { en: "Listen" }
+          - { en: "Leave" }
+          - { en: "Sing" }
+        answer: 1
+      - id: "fr-0618"
+        prompt: { en: "What must they look at?" }
+        options:
+          - { en: "The table" }
+          - { en: "The street" }
+          - { en: "The station" }
+        answer: 1
+      - id: "fr-0619"
+        prompt: { en: "What are they told not to do?" }
+        options:
+          - { en: "Speak" }
+          - { en: "Listen" }
+          - { en: "Wait" }
+        answer: 1
+  - id: "fr-signs-and-rules"
+    title: "Signs saying what to do"
+    theme: "help"
+    sentences:
+      - text: "Entrez !"
+      - text: "Attendez ici."
+      - text: "Ne mangez pas ici."
+      - text: "Allez à droite."
+    questions:
+      - id: "fr-0620"
+        prompt: { en: "What does the first sign tell you to do?" }
+        options:
+          - { en: "Come in" }
+          - { en: "Leave" }
+          - { en: "Sit down" }
+        answer: 1
+      - id: "fr-0621"
+        prompt: { en: "Where should you wait?" }
+        options:
+          - { en: "Here" }
+          - { en: "Outside" }
+          - { en: "At home" }
+        answer: 1
+      - id: "fr-0622"
+        prompt: { en: "What is not allowed?" }
+        options:
+          - { en: "Eating here" }
+          - { en: "Coming in" }
+          - { en: "Waiting" }
+        answer: 1

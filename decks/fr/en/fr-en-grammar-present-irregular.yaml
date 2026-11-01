@@ -1,0 +1,32 @@
+schema: 1
+id: "fr-en-grammar-present-irregular"
+kind: "layer"
+core: "fr-grammar-present-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs in the present"
+license: "CC-BY-SA-4.0"
+description: "These verbs do not follow one pattern in the present, so each is learnt as a row. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Verb"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "aller": "to go"
+    "faire": "to do; to make"
+    "venir": "to come"
+    "prendre": "to take"
+    "pouvoir": "can; to be able to"
+    "vouloir": "to want"
+    "devoir": "must; to have to"
+    "savoir": "to know (a fact)"
+    "voir": "to see"
+    "boire": "to drink"
+    "lire": "to read"
+    "ecrire": "to write"
+    "partir": "to leave"
+    "dormir": "to sleep"
+    "mettre": "to put"
+    "tenir": "to hold"
+    "connaitre": "to know (a person or place)"
+  notes: "These verbs follow no single pattern, so learn each row. The first two persons often share a form: je vais, tu vas; je veux, tu veux. The nous and vous forms usually keep the stem of the infinitive: nous faisons, vous faites. Boire and voir change their stem in the plural: nous buvons, nous voyons. Vouloir, pouvoir and devoir change their stem in the plural: nous voulons, nous pouvons, nous devons. Partir and dormir are learnt as rows: je pars, je dors."

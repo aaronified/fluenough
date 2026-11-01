@@ -1,0 +1,379 @@
+schema: 1
+id: "fr-en-food"
+kind: "layer"
+core: "fr-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+license: "CC-BY-SA-4.0"
+description: "Words for meals and dishes: repas, déjeuner, dîner, soupe, dessert, plat, glace, addition, and the table things assiette, couteau, fourchette and cuillère, with commander, servir and goûter. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0813":
+    native: "meal"
+    notes:
+      "n1": "Repas is 'meal', a masculine noun. Un repas is any meal, from breakfast to dinner."
+    examples:
+      "Le repas est bon.":
+        native: "The meal is good."
+        bases:
+          "repas": "meal"
+      "Nous prenons le repas ensemble.":
+        native: "We have the meal together."
+        bases:
+          "repas": "meal"
+  "fr-0814":
+    native: "lunch"
+    notes:
+      "n1": "Déjeuner is 'lunch', the midday meal, a masculine noun. The verb 'to have lunch' is taught later."
+    examples:
+      "Le déjeuner est prêt.":
+        native: "Lunch is ready."
+        bases:
+          "déjeuner": "lunch"
+      "Je mange le déjeuner.":
+        native: "I have lunch."
+        bases:
+          "déjeuner": "lunch"
+  "fr-0815":
+    native: "dinner; evening meal"
+    notes:
+      "n1": "Dîner is 'dinner', the evening meal, a masculine noun. Its accent is on the i: dîner."
+    examples:
+      "Le dîner est bon.":
+        native: "Dinner is good."
+        bases:
+          "dîner": "dinner; evening meal"
+      "Nous mangeons le dîner.":
+        native: "We have dinner."
+        bases:
+          "dîner": "dinner; evening meal"
+  "fr-0816":
+    native: "soup"
+    notes:
+      "n1": "Soupe is 'soup', a feminine noun. It is often eaten hot, at the start of a meal."
+    examples:
+      "La soupe est chaude.":
+        native: "The soup is hot."
+        bases:
+          "soupe": "soup"
+      "Je prends une soupe.":
+        native: "I have a soup."
+        bases:
+          "soupe": "soup"
+  "fr-0817":
+    native: "dessert; pudding"
+    notes:
+      "n1": "Dessert is 'dessert' or 'pudding', the sweet course at the end of a meal. It is a masculine noun."
+    examples:
+      "Le dessert est bon.":
+        native: "The dessert is good."
+        bases:
+          "dessert": "dessert; pudding"
+      "Le dessert est sucré.":
+        native: "The dessert is sweet."
+        bases:
+          "dessert": "dessert; pudding"
+  "fr-0818":
+    native: "starter"
+    notes:
+      "n1": "Entrée is 'starter' or 'first course'. In France it is the first dish of a meal, not the entrance."
+    examples:
+      "L'entrée est bonne.":
+        native: "The starter is good."
+        bases:
+          "L'entrée": "starter"
+      "Je prends une entrée.":
+        native: "I have a starter."
+        bases:
+          "entrée": "starter"
+  "fr-0819":
+    native: "dish; main course"
+    notes:
+      "n1": "Plat is 'dish' or 'main course', a masculine noun. The main plat comes after the entrée."
+    examples:
+      "Le plat est chaud.":
+        native: "The dish is hot."
+        bases:
+          "plat": "dish; main course"
+      "Je prends le plat.":
+        native: "I take the main dish."
+        bases:
+          "plat": "dish; main course"
+  "fr-0820":
+    native: "beer"
+    notes:
+      "n1": "Bière is 'beer', a feminine noun. It is a drink in cafés and at meals."
+    examples:
+      "Je bois une bière.":
+        native: "I drink a beer."
+        bases:
+          "bière": "beer"
+      "La bière est fraîche.":
+        native: "The beer is cold."
+        bases:
+          "bière": "beer"
+  "fr-0821":
+    native: "ice cream; ice"
+    notes:
+      "n1": "Glace is 'ice cream' or 'ice', a feminine noun. Without another word it usually means ice cream in a café."
+    examples:
+      "Je mange une glace.":
+        native: "I eat an ice cream."
+        bases:
+          "glace": "ice cream; ice"
+      "La glace est froide.":
+        native: "The ice cream is cold."
+        bases:
+          "glace": "ice cream; ice"
+  "fr-0822":
+    native: "kitchen; cooking"
+    notes:
+      "n1": "Cuisine is 'kitchen' or 'cooking', a feminine noun: la cuisine (the kitchen, or the cooking of a country)."
+    examples:
+      "La cuisine est grande.":
+        native: "The kitchen is big."
+        bases:
+          "cuisine": "kitchen; cooking"
+      "J'aime la cuisine.":
+        native: "I like cooking."
+        bases:
+          "cuisine": "kitchen; cooking"
+  "fr-0823":
+    native: "menu; set menu"
+    notes:
+      "n1": "Menu is 'menu' in a restaurant: the list of dishes, or a set meal at a fixed price. It is a masculine noun."
+    examples:
+      "Le menu est long.":
+        native: "The menu is long."
+        bases:
+          "menu": "menu; set menu"
+      "Je lis le menu.":
+        native: "I read the menu."
+        bases:
+          "menu": "menu; set menu"
+  "fr-0824":
+    native: "menu card; map"
+    notes:
+      "n1": "Carte is 'menu card' in a restaurant, or 'map', a feminine noun. A card for a phone is also a carte."
+    examples:
+      "La carte est sur la table.":
+        native: "The menu card is on the table."
+        bases:
+          "carte": "menu card; map"
+      "Je lis la carte.":
+        native: "I read the menu card."
+        bases:
+          "carte": "menu card; map"
+  "fr-0825":
+    native: "bill"
+    notes:
+      "n1": "Addition is 'bill' or 'check' in a restaurant, a feminine noun. It is the same word as the maths 'addition'."
+    examples:
+      "L'addition est chère.":
+        native: "The bill is dear."
+        bases:
+          "L'addition": "bill"
+      "Nous avons l'addition.":
+        native: "We have the bill."
+        bases:
+          "l'addition": "bill"
+  "fr-0826":
+    native: "waiter"
+    notes:
+      "n1": "Serveur is 'waiter', a masculine noun. The feminine is serveuse."
+    examples:
+      "Le serveur parle français.":
+        native: "The waiter speaks French."
+        bases:
+          "serveur": "waiter"
+      "Mon ami est serveur.":
+        native: "My friend is a waiter."
+        bases:
+          "serveur": "waiter"
+  "fr-0827":
+    native: "vegetarian"
+    notes:
+      "n1": "Végétarien is 'vegetarian', a masculine noun. The feminine is végétarienne."
+    examples:
+      "Mon ami est végétarien.":
+        native: "My friend is a vegetarian."
+        bases:
+          "végétarien": "vegetarian"
+      "Elle est végétarienne.":
+        native: "She is a vegetarian."
+        bases:
+          "végétarienne": "vegetarian"
+  "fr-0828":
+    native: "plate; bowl"
+    notes:
+      "n1": "Assiette is 'plate' or 'bowl', a feminine noun: une assiette (a plate). A soup bowl is also an assiette."
+    examples:
+      "L'assiette est pleine.":
+        native: "The plate is full."
+        bases:
+          "L'assiette": "plate; bowl"
+      "Je mets la soupe dans l'assiette.":
+        native: "I put the soup in the bowl."
+        bases:
+          "l'assiette": "plate; bowl"
+  "fr-0829":
+    native: "knife"
+    notes:
+      "n1": "Couteau is 'knife', a masculine noun. The plural is couteaux."
+    examples:
+      "Le couteau est petit.":
+        native: "The knife is small."
+        bases:
+          "couteau": "knife"
+      "Je prends le couteau.":
+        native: "I take the knife."
+        bases:
+          "couteau": "knife"
+  "fr-0830":
+    native: "fork"
+    notes:
+      "n1": "Fourchette is 'fork', a feminine noun. It is placed on the left of the plate."
+    examples:
+      "La fourchette est à gauche.":
+        native: "The fork is on the left."
+        bases:
+          "fourchette": "fork"
+          "à": "to; at; in"
+      "Tu mets la fourchette.":
+        native: "You put down the fork."
+        bases:
+          "fourchette": "fork"
+  "fr-0831":
+    native: "spoon"
+    notes:
+      "n1": "Cuillère is 'spoon', a feminine noun. A teaspoon is a cuillère à café."
+    examples:
+      "La cuillère est dans la tasse.":
+        native: "The spoon is in the cup."
+        bases:
+          "cuillère": "spoon"
+      "Je prends une cuillère.":
+        native: "I take a spoon."
+        bases:
+          "cuillère": "spoon"
+  "fr-0832":
+    native: "sandwich"
+    notes:
+      "n1": "Sandwich is 'sandwich', a masculine noun. It is the same word in French, with the same spelling."
+    examples:
+      "Je mange un sandwich.":
+        native: "I eat a sandwich."
+        bases:
+          "sandwich": "sandwich"
+      "Le sandwich est bon.":
+        native: "The sandwich is good."
+        bases:
+          "sandwich": "sandwich"
+  "fr-0833":
+    native: "pizza"
+    notes:
+      "n1": "Pizza is 'pizza', a feminine noun. It is the same word in French and English."
+    examples:
+      "La pizza est chaude.":
+        native: "The pizza is hot."
+        bases:
+          "pizza": "pizza"
+      "Je mange une pizza.":
+        native: "I eat a pizza."
+        bases:
+          "pizza": "pizza"
+  "fr-0834":
+    native: "beef"
+    notes:
+      "n1": "Bœuf is 'beef' or 'ox', a masculine noun. The plural bœufs is said with a silent s."
+    examples:
+      "Le bœuf est bon.":
+        native: "The beef is good."
+        bases:
+          "bœuf": "beef"
+      "Je mange du bœuf.":
+        native: "I eat beef."
+        bases:
+          "du": "of the (masculine); some"
+          "bœuf": "beef"
+  "fr-0835":
+    native: "pork"
+    notes:
+      "n1": "Porc is 'pork' or 'pig', a masculine noun. Many people do not eat it, for religious or other reasons."
+    examples:
+      "Le porc est bon.":
+        native: "The pork is good."
+        bases:
+          "porc": "pork"
+      "Je ne mange pas de porc.":
+        native: "I do not eat pork."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "pas": "not"
+          "de": "of; from; some"
+          "porc": "pork"
+  "fr-0836":
+    native: "delicious"
+    notes:
+      "n1": "Délicieux is 'delicious'. The feminine is délicieuse (delisjøz)."
+    examples:
+      "Le repas est délicieux.":
+        native: "The meal is delicious."
+        bases:
+          "délicieux": "delicious"
+      "La soupe est délicieuse.":
+        native: "The soup is delicious."
+        bases:
+          "délicieuse": "delicious"
+  "fr-0837":
+    native: "spicy"
+    notes:
+      "n1": "Épicé is 'spicy' or 'hot' with pepper. The feminine is épicée."
+    examples:
+      "Le plat est épicé.":
+        native: "The dish is spicy."
+        bases:
+          "épicé": "spicy"
+      "La soupe est épicée.":
+        native: "The soup is spicy."
+        bases:
+          "épicée": "spicy"
+  "fr-0838":
+    native: "to order"
+    notes:
+      "n1": "Commander is 'to order' food or drink in a restaurant. It is a regular verb, like manger."
+    examples:
+      "Je commande un plat.":
+        native: "I order a dish."
+        bases:
+          "commande": "to order"
+      "Nous commandons un dessert.":
+        native: "We order a dessert."
+        bases:
+          "commandons": "to order"
+  "fr-0839":
+    native: "to serve"
+    notes:
+      "n1": "Servir is 'to serve', as a waiter serves food. It is irregular in the singular: je sers, il sert."
+    examples:
+      "Le serveur sert la soupe.":
+        native: "The waiter serves the soup."
+        bases:
+          "sert": "to serve"
+      "Il sert le repas.":
+        native: "He serves the meal."
+        bases:
+          "sert": "to serve"
+  "fr-0840":
+    native: "to taste"
+    notes:
+      "n1": "Goûter is 'to taste' food. It is a regular verb, and the circumflex is kept in the spelling."
+    examples:
+      "Je goûte le dessert.":
+        native: "I taste the dessert."
+        bases:
+          "goûte": "to taste"
+      "Tu goûtes la soupe.":
+        native: "You taste the soup."
+        bases:
+          "goûtes": "to taste"

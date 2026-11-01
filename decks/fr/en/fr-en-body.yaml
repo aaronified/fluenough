@@ -1,0 +1,339 @@
+schema: 1
+id: "fr-en-body"
+kind: "layer"
+core: "fr-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body"
+license: "CC-BY-SA-4.0"
+description: "Parts of the body and the words for an ache: corps, tête, bras, jambe, pied, genou, dos, ventre, bouche, dent, nez, œil, oreille, cheveu, cœur, doigt, épaule, cou, visage, peau, douleur and gorge, with bouger. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0926":
+    native: "body"
+    notes:
+      "n1": "Corps is 'body', a masculine noun. Its plural is also corps, said the same."
+    examples:
+      "Le corps est fort.":
+        native: "The body is strong."
+        bases:
+          "corps": "body"
+      "Je bouge tout le corps.":
+        native: "I move my whole body."
+        bases:
+          "corps": "body"
+  "fr-0927":
+    native: "head"
+    notes:
+      "n1": "Tête is 'head', a feminine noun. Avoir mal à la tête is 'to have a headache'."
+    examples:
+      "J'ai mal à la tête.":
+        native: "I have a headache."
+        bases:
+          "à": "to; at; in"
+          "tête": "head"
+      "Ma tête est lourde.":
+        native: "My head is heavy."
+        bases:
+          "tête": "head"
+  "fr-0928":
+    native: "arm"
+    notes:
+      "n1": "Bras is 'arm', a masculine noun. It is also used for the arm of a chair."
+    examples:
+      "Le bras est long.":
+        native: "The arm is long."
+        bases:
+          "bras": "arm"
+      "Mon bras est fort.":
+        native: "My arm is strong."
+        bases:
+          "bras": "arm"
+  "fr-0929":
+    native: "leg"
+    notes:
+      "n1": "Jambe is 'leg', a feminine noun. It is the part from the hip to the foot."
+    examples:
+      "La jambe est fatiguée.":
+        native: "The leg is tired."
+        bases:
+          "jambe": "leg"
+      "J'ai mal à la jambe.":
+        native: "My leg hurts."
+        bases:
+          "à": "to; at; in"
+          "jambe": "leg"
+  "fr-0930":
+    native: "foot"
+    notes:
+      "n1": "Pied is 'foot', a masculine noun. À pied is 'on foot', which is how you walk."
+    examples:
+      "Mon pied est petit.":
+        native: "My foot is small."
+        bases:
+          "pied": "foot"
+      "J'ai mal au pied.":
+        native: "My foot hurts."
+        bases:
+          "au": "to the (masculine)"
+          "pied": "foot"
+  "fr-0931":
+    native: "knee"
+    notes:
+      "n1": "Genou is 'knee', a masculine noun. Its plural is genoux."
+    examples:
+      "Le genou est fatigué.":
+        native: "The knee is tired."
+        bases:
+          "genou": "knee"
+      "J'ai mal au genou.":
+        native: "My knee hurts."
+        bases:
+          "au": "to the (masculine)"
+          "genou": "knee"
+  "fr-0932":
+    native: "back"
+    notes:
+      "n1": "Dos is 'back' of the body, a masculine noun. It is said do, and the s is silent."
+    examples:
+      "J'ai mal au dos.":
+        native: "My back hurts."
+        bases:
+          "au": "to the (masculine)"
+          "dos": "back"
+      "Le dos est droit.":
+        native: "The back is straight."
+        bases:
+          "dos": "back"
+  "fr-0933":
+    native: "stomach; belly"
+    notes:
+      "n1": "Ventre is 'stomach' or 'belly', a masculine noun. It is the front of the body below the chest."
+    examples:
+      "J'ai mal au ventre.":
+        native: "My stomach hurts."
+        bases:
+          "au": "to the (masculine)"
+          "ventre": "stomach; belly"
+      "Le ventre est plein.":
+        native: "The stomach is full."
+        bases:
+          "ventre": "stomach; belly"
+  "fr-0934":
+    native: "mouth"
+    notes:
+      "n1": "Bouche is 'mouth', a feminine noun. Ouvrir la bouche is 'to open the mouth'."
+    examples:
+      "Ouvrez la bouche.":
+        native: "Open your mouth."
+        bases:
+          "bouche": "mouth"
+      "La bouche est petite.":
+        native: "The mouth is small."
+        bases:
+          "bouche": "mouth"
+  "fr-0935":
+    native: "tooth"
+    notes:
+      "n1": "Dent is 'tooth', a feminine noun. Les dents is the plural."
+    examples:
+      "J'ai mal à la dent.":
+        native: "My tooth hurts."
+        bases:
+          "à": "to; at; in"
+          "dent": "tooth"
+      "Les dents sont fortes.":
+        native: "The teeth are strong."
+        bases:
+          "dents": "tooth"
+  "fr-0936":
+    native: "nose"
+    notes:
+      "n1": "Nez is 'nose', a masculine noun. The z is silent."
+    examples:
+      "Mon nez est long.":
+        native: "My nose is long."
+        bases:
+          "nez": "nose"
+      "Le nez est petit.":
+        native: "The nose is small."
+        bases:
+          "nez": "nose"
+  "fr-0937":
+    native: "eye"
+    notes:
+      "n1": "Œil is 'eye', a masculine noun. Its plural is yeux, said jø."
+    examples:
+      "J'ai mal à l'œil.":
+        native: "My eye hurts."
+        bases:
+          "à": "to; at; in"
+          "l'œil": "eye"
+      "Les yeux sont fatigués.":
+        native: "The eyes are tired."
+        bases:
+          "yeux": "eye"
+  "fr-0938":
+    native: "ear"
+    notes:
+      "n1": "Oreille is 'ear', a feminine noun. The ending -eille is said ɛj."
+    examples:
+      "J'ai mal à l'oreille.":
+        native: "My ear hurts."
+        bases:
+          "à": "to; at; in"
+          "l'oreille": "ear"
+      "Mon oreille est petite.":
+        native: "My ear is small."
+        bases:
+          "oreille": "ear"
+  "fr-0939":
+    native: "hair (one hair)"
+    notes:
+      "n1": "Cheveu is 'a hair', a masculine noun. The plural cheveux means 'hair' as a whole."
+    examples:
+      "Mes cheveux sont longs.":
+        native: "My hair is long."
+        bases:
+          "cheveux": "hair (one hair)"
+      "Ses cheveux sont courts.":
+        native: "Her hair is short."
+        bases:
+          "cheveux": "hair (one hair)"
+  "fr-0940":
+    native: "heart"
+    notes:
+      "n1": "Cœur is 'heart', a masculine noun. Avoir mal au cœur is 'to feel sick'."
+    examples:
+      "Le cœur est fort.":
+        native: "The heart is strong."
+        bases:
+          "cœur": "heart"
+      "J'ai mal au cœur.":
+        native: "I feel sick."
+        bases:
+          "au": "to the (masculine)"
+          "cœur": "heart"
+  "fr-0941":
+    native: "finger"
+    notes:
+      "n1": "Doigt is 'finger', a masculine noun. The g is silent."
+    examples:
+      "Le doigt est petit.":
+        native: "The finger is small."
+        bases:
+          "doigt": "finger"
+      "J'ai mal au doigt.":
+        native: "My finger hurts."
+        bases:
+          "au": "to the (masculine)"
+          "doigt": "finger"
+  "fr-0942":
+    native: "shoulder"
+    notes:
+      "n1": "Épaule is 'shoulder', a feminine noun. It is the top of the arm."
+    examples:
+      "L'épaule est fatiguée.":
+        native: "The shoulder is tired."
+        bases:
+          "L'épaule": "shoulder"
+      "J'ai mal à l'épaule.":
+        native: "My shoulder hurts."
+        bases:
+          "à": "to; at; in"
+          "l'épaule": "shoulder"
+  "fr-0943":
+    native: "neck"
+    notes:
+      "n1": "Cou is 'neck', a masculine noun. It is the part between the head and the shoulders."
+    examples:
+      "Le cou est long.":
+        native: "The neck is long."
+        bases:
+          "cou": "neck"
+      "J'ai mal au cou.":
+        native: "My neck hurts."
+        bases:
+          "au": "to the (masculine)"
+          "cou": "neck"
+  "fr-0944":
+    native: "face"
+    notes:
+      "n1": "Visage is 'face', a masculine noun. It is the front of the head, with the eyes and mouth."
+    examples:
+      "Le visage est fatigué.":
+        native: "The face is tired."
+        bases:
+          "visage": "face"
+      "Ton visage est joli.":
+        native: "Your face is pretty."
+        bases:
+          "visage": "face"
+  "fr-0945":
+    native: "skin"
+    notes:
+      "n1": "Peau is 'skin', a feminine noun. The plural peaux is said the same."
+    examples:
+      "La peau est froide.":
+        native: "The skin is cold."
+        bases:
+          "peau": "skin"
+      "Sa peau est chaude.":
+        native: "Her skin is warm."
+        bases:
+          "peau": "skin"
+  "fr-0946":
+    native: "pain; ache"
+    notes:
+      "n1": "Douleur is 'pain' or 'ache', a feminine noun. Avoir une douleur is 'to have a pain'."
+    examples:
+      "J'ai une douleur.":
+        native: "I have a pain."
+        bases:
+          "douleur": "pain; ache"
+      "La douleur est forte.":
+        native: "The pain is strong."
+        bases:
+          "douleur": "pain; ache"
+  "fr-0947":
+    native: "blood"
+    notes:
+      "n1": "Sang is 'blood', a masculine noun. It is in the veins of the body."
+    examples:
+      "Le sang est chaud.":
+        native: "The blood is warm."
+        bases:
+          "sang": "blood"
+      "Vous avez du sang ?":
+        native: "Are you bleeding?"
+        bases:
+          "du": "of the (masculine); some"
+          "sang": "blood"
+  "fr-0948":
+    native: "throat"
+    notes:
+      "n1": "Gorge is 'throat', a feminine noun. Avoir mal à la gorge is 'to have a sore throat'."
+    examples:
+      "J'ai mal à la gorge.":
+        native: "My throat hurts."
+        bases:
+          "à": "to; at; in"
+          "gorge": "throat"
+      "Ma gorge est fatiguée.":
+        native: "My throat is sore."
+        bases:
+          "gorge": "throat"
+  "fr-0949":
+    native: "to move"
+    notes:
+      "n1": "Bouger is 'to move', as in bouger le bras (to move the arm). It is a regular verb, like manger."
+    examples:
+      "Je ne bouge pas.":
+        native: "I do not move."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "bouge": "to move"
+          "pas": "not"
+      "Tu bouges souvent.":
+        native: "You move often."
+        bases:
+          "bouges": "to move"

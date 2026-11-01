@@ -65,7 +65,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Bonjour, mademoiselle.", ipa: "bɔ̃ʒuʁ madmwazɛl", bases: [{ word: "Bonjour", base: "bonjour" }, { word: "mademoiselle", base: "mademoiselle" }] }
-      - { target: "Mademoiselle, le train est là.", ipa: "madmwazɛl lə tʁɛ̃ ɛ la", bases: [{ word: "Mademoiselle", base: "mademoiselle" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Mademoiselle, le train est là.", ipa: "madmwazɛl lə tʁɛ̃ ɛ la", bases: [{ word: "Mademoiselle", base: "mademoiselle" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
   - id: "fr-0100"
     target: "ami"
     ipa: "ami"
@@ -89,7 +89,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Mon voisin est professeur.", ipa: "mɔ̃ vwazɛ̃ ɛ pʁɔfesœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "professeur", ref: "fr-0105" }] }
-      - { target: "Le voisin est dans la rue.", ipa: "lə vwazɛ̃ ɛ dɑ̃ la ʁy", bases: [{ word: "Le", base: "le" }, { word: "voisin", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", base: "la" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Le voisin est dans la rue.", ipa: "lə vwazɛ̃ ɛ dɑ̃ la ʁy", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voisin", base: "voisin" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
   - id: "fr-0102"
     target: "enchanté"
     ipa: "ɑ̃ʃɑ̃te"
@@ -134,7 +134,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le professeur est là.", ipa: "lə pʁɔfesœʁ ɛ la", bases: [{ word: "Le", base: "le" }, { word: "professeur", base: "professeur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Le professeur est là.", ipa: "lə pʁɔfesœʁ ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", base: "professeur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
       - { target: "Monsieur, vous êtes professeur ?", ipa: "məsjø vu zɛt pʁɔfesœʁ", bases: [{ word: "Monsieur", ref: "fr-0097" }, { word: "vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "professeur", base: "professeur" }] }
   - id: "fr-0106"
     target: "docteur"
@@ -147,7 +147,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Bonjour, docteur.", ipa: "bɔ̃ʒuʁ dɔktœʁ", bases: [{ word: "Bonjour", base: "bonjour" }, { word: "docteur", base: "docteur" }] }
-      - { target: "Madame, le docteur est là.", ipa: "madam lə dɔktœʁ ɛ la", bases: [{ word: "Madame", ref: "fr-0098" }, { word: "le", base: "le" }, { word: "docteur", base: "docteur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Madame, le docteur est là.", ipa: "madam lə dɔktœʁ ɛ la", bases: [{ word: "Madame", ref: "fr-0098" }, { word: "le", ref: "fr-0543" }, { word: "docteur", base: "docteur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
   - id: "fr-0107"
     target: "salut"
     ipa: "saly"
@@ -168,7 +168,7 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - { target: "Le jeune professeur est là.", ipa: "lə ʒœn pʁɔfesœʁ ɛ la", bases: [{ word: "Le", base: "le" }, { word: "jeune", base: "jeune" }, { word: "professeur", ref: "fr-0105" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Le jeune professeur est là.", ipa: "lə ʒœn pʁɔfesœʁ ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jeune", base: "jeune" }, { word: "professeur", ref: "fr-0105" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
       - { target: "Une jeune amie.", ipa: "yn ʒœn ami", bases: [{ word: "Une", base: "un" }, { word: "jeune", base: "jeune" }, { word: "amie", ref: "fr-0100" }] }
   - id: "fr-0109"
     target: "vieux"

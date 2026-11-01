@@ -1,0 +1,51 @@
+schema: 1
+id: "fr-en-groceries-sentences"
+kind: "layer"
+core: "fr-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: groceries"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about shopping for food, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0800":
+    native: "I add some salt."
+    bases:
+      "du": "of the (masculine); some"
+    confusables:
+      "poivre": { why: "Poivre is 'pepper', a different spice." }
+      "sucre": { why: "Sucre is 'sugar', not salt." }
+  "fr-0801":
+    native: "The bread is fresh."
+    confusables:
+      "beurre": { why: "Beurre is 'butter'." }
+      "gateau": { why: "Gâteau is 'cake'." }
+  "fr-0802":
+    native: "We are out of sugar."
+    bases:
+      "de": "of; from; some"
+    confusables:
+      "ajouter": { why: "Ajouter is 'to add', the opposite of running out." }
+      "liste": { why: "Liste is 'list'." }
+  "fr-0803":
+    native: "I take a coffee."
+    confusables:
+      "the": { why: "Thé is 'tea', another drink." }
+      "jus": { why: "Jus is 'juice'." }
+  "fr-0804":
+    native: "The tin is empty."
+    confusables:
+      "bouteille": { why: "Bouteille is 'bottle'." }
+      "paquet": { why: "Paquet is 'packet'." }
+  "fr-0805":
+    native: "The chicken is ready."
+    confusables:
+      "poisson": { why: "Poisson is 'fish'." }
+      "viande": { why: "Viande is 'meat' in general." }
+  "fr-0806":
+    native: "The grocer's is near the station."
+    bases:
+      "de": "of; from; some"
+    confusables:
+      "magasin": { why: "Magasin is 'shop', a general word." }
+      "marche": { why: "Marché is 'market', not a grocer's." }

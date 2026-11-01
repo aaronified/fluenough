@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-places"
+name: "Reading: places in town"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about places in a town: street signs and a walk round the centre, with words such as pharmacie, théâtre and parc. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-street-signs"
+    title: "Signs along a street"
+    theme: "places"
+    sentences:
+      - text: "La pharmacie est à droite."
+      - text: "L'école est près de la banque."
+      - text: "L'église est loin."
+      - text: "La bibliothèque est ouverte."
+    questions:
+      - id: "fr-0990"
+        prompt: { en: "Where is the pharmacy?" }
+        options:
+          - { en: "On the right" }
+          - { en: "On the left" }
+          - { en: "Far away" }
+        answer: 1
+      - id: "fr-0991"
+        prompt: { en: "What is near the bank?" }
+        options:
+          - { en: "The school" }
+          - { en: "The church" }
+          - { en: "The park" }
+        answer: 1
+      - id: "fr-0992"
+        prompt: { en: "Which place is open?" }
+        options:
+          - { en: "The library" }
+          - { en: "The bank" }
+          - { en: "The church" }
+        answer: 1
+  - id: "fr-around-the-town"
+    title: "A walk round the town"
+    theme: "places"
+    sentences:
+      - text: "Le théâtre est près du musée."
+      - text: "Le cinéma est loin."
+      - text: "Le parc est grand."
+      - text: "Le centre est calme."
+    questions:
+      - id: "fr-0993"
+        prompt: { en: "What is near the museum?" }
+        options:
+          - { en: "The theatre" }
+          - { en: "The cinema" }
+          - { en: "The park" }
+        answer: 1
+      - id: "fr-0994"
+        prompt: { en: "Which place is far?" }
+        options:
+          - { en: "The cinema" }
+          - { en: "The park" }
+          - { en: "The centre" }
+        answer: 1
+      - id: "fr-0995"
+        prompt: { en: "Which place is big?" }
+        options:
+          - { en: "The park" }
+          - { en: "The centre" }
+          - { en: "The cinema" }
+        answer: 1

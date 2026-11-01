@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-prepositions"
+kind: "layer"
+core: "fr-grammar-prepositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Prepositions in sentences"
+license: "CC-BY-SA-4.0"
+description: "Each preposition is followed by a noun, a pronoun or an infinitive, in the way the word shows. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Preposition"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "first": "first example", "second": "second example" }
+  entries:
+    "avec": "with"
+    "pour": "for"
+    "sans": "without"
+    "par": "through; by"
+    "vers": "towards"
+    "apres": "after"
+    "avant": "before"
+    "pendant": "during; for"
+    "dans": "in"
+    "chez": "at the home of"
+  notes: "A preposition is followed by a noun or a pronoun: avec moi, pour toi. Après and avant are the opposites of each other, as are avec and sans. Verbs take a preposition too: parler avec, penser à, but that is a verb's rule and is learnt with the verb. Pendant is 'during' or 'for' with a time: pendant une heure (for an hour)."

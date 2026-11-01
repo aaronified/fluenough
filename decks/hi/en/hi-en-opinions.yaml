@@ -1,0 +1,200 @@
+schema: 1
+id: "hi-en-opinions"
+kind: "layer"
+core: "hi-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions"
+license: "CC-BY-SA-4.0"
+description: "Giving and taking opinions: agreeing and disagreeing, giving reasons, asking for advice and making a suggestion. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2180":
+    native: "opinion; view"
+    notes:
+      "n1": "What a person thinks about something. The phrase राय देना (rāy dēnā) means to give an opinion."
+    examples:
+      "मेरी राय में यह ठीक है।": { "native": "In my opinion this is right.", "bases": {} }
+      "उसकी राय सुनो।": { "native": "Listen to his opinion.", "bases": {} }
+  "hi-2181":
+    native: "thought; idea"
+    notes:
+      "n1": "A thought or an idea, which a person has or puts forward."
+    examples:
+      "उसके विचार अच्छे हैं।": { "native": "His thoughts are good.", "bases": {} }
+      "इस विचार पर सोचो।": { "native": "Think about this idea.", "bases": {} }
+  "hi-2182":
+    native: "agreeing; in agreement"
+    notes:
+      "n1": "Of the same mind as another. The opposite is असहमत (ashmat)."
+    examples:
+      "मैं तुम्हारी बात से सहमत हूँ।": { "native": "I agree with what you say.", "bases": {} }
+      "सब लोग इस पर सहमत हैं।": { "native": "Everyone agrees on this.", "bases": {} }
+  "hi-2183":
+    native: "disagreeing; not in agreement"
+    notes:
+      "n1": "Not of the same mind. The opposite is सहमत (sahmat)."
+    examples:
+      "मैं इस फ़ैसले से असहमत हूँ।": { "native": "I disagree with this decision.", "bases": {} }
+      "वह असहमत दिखता है।": { "native": "He looks as though he disagrees.", "bases": {} }
+  "hi-2184":
+    native: "to believe; to accept; to obey"
+    notes:
+      "n1": "To accept something as true, or to agree to do what is asked."
+    examples:
+      "मैं तुम्हारी बात मानता हूँ।": { "native": "I accept what you say.", "bases": {"मानता": "to accept"} }
+      "बड़ों की बात मानो।": { "native": "Obey your elders.", "bases": {"मानो": "to obey"} }
+  "hi-2185":
+    native: "side; favour"
+    notes:
+      "n1": "One side of an argument or a dispute, or the favour one has for it."
+    examples:
+      "मैं तुम्हारे पक्ष में हूँ।": { "native": "I am on your side.", "bases": {"पक्ष": "side"} }
+      "दोनों पक्षों की बात सुनो।": { "native": "Hear both sides.", "bases": {"दोनों": "both", "पक्षों": "side"} }
+  "hi-2186":
+    native: "argument; reasoning; logic"
+    notes:
+      "n1": "A reason given to support a view, or the reasoning that shows it."
+    examples:
+      "उसका तर्क सही है।": { "native": "His argument is right.", "bases": {} }
+      "बिना तर्क के मत मानो।": { "native": "Do not accept it without reason.", "bases": {"बिना": "without", "मत": "do not"} }
+  "hi-2187":
+    native: "proof; evidence"
+    notes:
+      "n1": "Something that shows a thing is true."
+    examples:
+      "तुम्हारे पास सबूत है?": { "native": "Do you have proof?", "bases": {} }
+      "इस बात का कोई सबूत नहीं।": { "native": "There is no proof of this matter.", "bases": {"सबूत": "proof"} }
+  "hi-2188":
+    native: "truth; honesty"
+    notes:
+      "n1": "The state of being true, or the true facts of a matter."
+    examples:
+      "सच्चाई छिपी नहीं रहती।": { "native": "The truth does not stay hidden.", "bases": {"छिपी": "to be hidden"} }
+      "उसकी सच्चाई पर भरोसा है।": { "native": "I trust his honesty.", "bases": {} }
+  "hi-2189":
+    native: "argument; plea; reason given"
+    notes:
+      "n1": "An argument put forward to persuade someone, or a plea in a court."
+    examples:
+      "उसकी दलील मज़बूत थी।": { "native": "His argument was strong.", "bases": {} }
+      "मेरी दलील कोई नहीं सुनता।": { "native": "No one listens to my argument.", "bases": {} }
+  "hi-2190":
+    native: "idea; thought; care"
+    notes:
+      "n1": "A thought or an idea in the mind. It also means care or concern for someone."
+    examples:
+      "यह ख़याल अच्छा है।": { "native": "This idea is good.", "bases": {} }
+      "अपना ख़याल रखो।": { "native": "Take care of yourself.", "bases": {} }
+  "hi-2191":
+    native: "outlook; point of view"
+    notes:
+      "n1": "The way a person looks at things, or their general view of life."
+    examples:
+      "उसका नज़रिया अलग है।": { "native": "His outlook is different.", "bases": {} }
+      "सबका नज़रिया एक जैसा नहीं होता।": { "native": "Everyone's outlook is not the same.", "bases": {"जैसा": "like"} }
+  "hi-2192":
+    native: "disliked; not liked"
+    notes:
+      "n1": "Not liked, or disliked. The opposite is पसंद (pasand), liked."
+    examples:
+      "मुझे यह रंग नापसंद है।": { "native": "I dislike this colour.", "bases": {} }
+      "उसकी नापसंद चीज़ें मत लाओ।": { "native": "Do not bring the things he dislikes.", "bases": {"मत": "do not"} }
+  "hi-2193":
+    native: "debate; argument"
+    notes:
+      "n1": "A talk in which people give opposing views."
+    examples:
+      "दोनों के बीच बहस हुई।": { "native": "There was a debate between the two.", "bases": {"दोनों": "both", "बीच": "between"} }
+      "इस बहस का कोई अंत नहीं।": { "native": "This debate has no end.", "bases": {"बहस": "debate", "अंत": "end"} }
+  "hi-2194":
+    native: "suggestion"
+    notes:
+      "n1": "An idea or a plan offered for someone to consider."
+    examples:
+      "तुम्हारा सुझाव अच्छा है।": { "native": "Your suggestion is good.", "bases": {} }
+      "मेरा एक सुझाव है।": { "native": "I have a suggestion.", "bases": {} }
+  "hi-2195":
+    native: "advice"
+    notes:
+      "n1": "Words given to someone on what they should do."
+    examples:
+      "डॉक्टर की सलाह मानो।": { "native": "Follow the doctor's advice.", "bases": {} }
+      "मुझे एक सलाह दो।": { "native": "Give me some advice.", "bases": {} }
+  "hi-2196":
+    native: "doubt; suspicion"
+    notes:
+      "n1": "A feeling of not being sure, or of suspecting something wrong."
+    examples:
+      "मुझे उस पर शक है।": { "native": "I have doubts about him.", "bases": {} }
+      "इसमें कोई शक नहीं।": { "native": "There is no doubt about this.", "bases": {"इसमें": "in this"} }
+  "hi-2197":
+    native: "belief; certainty; trust"
+    notes:
+      "n1": "A firm belief that something is true or will happen."
+    examples:
+      "मुझे उसकी बात का यकीन है।": { "native": "I believe what he says.", "bases": {} }
+      "यकीन मानो, यह सच है।": { "native": "Believe me, this is true.", "bases": {"सच": "true"} }
+  "hi-2199":
+    native: "certainly; definitely"
+    notes:
+      "n1": "Without fail, more formal than ज़रूर (zarūr)."
+    examples:
+      "आप अवश्य आइए।": { "native": "Please do come, without fail.", "bases": {} }
+      "यह काम अवश्य होगा।": { "native": "This work will certainly be done.", "bases": {} }
+  "hi-2200":
+    native: "certain; fixed; decided"
+    notes:
+      "n1": "Sure, or settled and fixed."
+    examples:
+      "मीटिंग का समय निश्चित है।": { "native": "The time of the meeting is fixed.", "bases": {"निश्चित": "fixed"} }
+      "मुझे निश्चित पता है।": { "native": "I know this for certain.", "bases": {"पता": "address; knowledge"} }
+  "hi-2201":
+    native: "possible"
+    notes:
+      "n1": "Able to happen or be done. The opposite is असंभव (asambhav)."
+    examples:
+      "क्या यह संभव है?": { "native": "Is this possible?", "bases": {} }
+      "यह काम आज संभव नहीं है।": { "native": "This work is not possible today.", "bases": {} }
+  "hi-2202":
+    native: "impossible"
+    notes:
+      "n1": "Not able to happen or be done. The opposite is संभव (sambhav)."
+    examples:
+      "यह असंभव लगता है।": { "native": "This seems impossible.", "bases": {} }
+      "कुछ भी असंभव नहीं।": { "native": "Nothing is impossible.", "bases": {} }
+  "hi-2203":
+    native: "acceptance"
+    notes:
+      "n1": "The act of agreeing to take or accept something."
+    examples:
+      "उसका प्रस्ताव स्वीकार हुआ।": { "native": "His proposal was accepted.", "bases": {} }
+      "सबने उसका स्वीकार किया।": { "native": "Everyone accepted him.", "bases": {} }
+  "hi-2204":
+    native: "refusal; denial"
+    notes:
+      "n1": "Saying no to something that is asked or offered."
+    examples:
+      "उसने साफ़ इनकार किया।": { "native": "He flatly refused.", "bases": {} }
+      "इनकार मत करो।": { "native": "Do not refuse.", "bases": {"मत": "do not"} }
+  "hi-2205":
+    native: "to suggest"
+    notes:
+      "n1": "To put forward an idea or a plan for others to consider."
+    examples:
+      "मैं एक नया रास्ता सुझाता हूँ।": { "native": "I suggest a new way.", "bases": {"सुझाता": "to suggest"} }
+      "उसने जगह सुझाई।": { "native": "He suggested a place.", "bases": {"जगह": "place", "सुझाई": "to suggest"} }
+  "hi-2206":
+    native: "compromise; agreement"
+    notes:
+      "n1": "An agreement reached by each side giving up something."
+    examples:
+      "दोनों पक्षों में समझौता हुआ।": { "native": "The two sides reached a compromise.", "bases": {"दोनों": "both"} }
+      "थोड़ा समझौता करो।": { "native": "Make a little compromise.", "bases": {} }
+  "hi-2207":
+    native: "to accept"
+    notes:
+      "n1": "To take or agree to a thing that is offered or said."
+    examples:
+      "उसने गलती स्वीकारी।": { "native": "He accepted his mistake.", "bases": {"स्वीकारी": "to accept"} }
+      "सच स्वीकारो।": { "native": "Accept the truth.", "bases": {"सच": "truth", "स्वीकारो": "to accept"} }

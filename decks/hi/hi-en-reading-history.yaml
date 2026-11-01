@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-history"
+name: "Reading: history"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A visitor's note on an old fort, and a short history of a dynasty. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-history-fort"
+    title: "A visit to an old fort"
+    theme: "history"
+    sentences:
+      - {"text": "यह किला मध्यकालीन सम्राट ने बनवाया था।", "reading": "yah kilā madhyakālīn samrāṭ nē banvāyā thā.", "ipa": "jəɦ kɪlaː məd̪ʱjəkaːliːn səmraːʈ neː bənʋaːjaː t̪ʰaː"}
+      - {"text": "इस किले में एक रानी और उसकी सेना रहती थी।", "reading": "is kilē mēm̐ ēk rānī aur uskī sēnā rahtī thī.", "ipa": "ɪs kɪleː mẽː eːk raːniː ɔːr ʊskiː seːnaː rəɦt̪iː t̪ʰiː"}
+      - {"text": "युद्ध के बाद वहाँ संधि हुई।", "reading": "yuddh kē bād vahām̐ sandhi huī.", "ipa": "jʊd̪d̪ʱ keː baːd̪ ʋəɦãː sənd̪ʱɪ ɦʊiː"}
+      - {"text": "आज़ादी के बाद यह किला पर्यटकों के लिए खोला गया।", "reading": "āzādī kē bād yah kilā paryaṭkōm̐ kē liē khōlā gayā.", "ipa": "aːzaːd̪iː keː baːd̪ jəɦ kɪlaː pərjəʈkõː keː lɪeː kʰoːlaː ɡəjaː"}
+    questions:
+      - {"id": "hi-2499", "prompt": {"en": "The fort was built by an emperor in medieval times."}, "answer": true}
+      - {"id": "hi-2500", "prompt": {"en": "Who lived in the fort?"}, "options": [{"en": "A queen and her army"}, {"en": "A poet"}], "answer": 1}
+      - {"id": "hi-2501", "prompt": {"en": "There was no treaty after the war."}, "answer": false}
+  - id: "hi-history-museum"
+    title: "A museum label"
+    theme: "history"
+    sentences:
+      - {"text": "इस शिलालेख में प्राचीन सभ्यता की लिपि है।", "reading": "is śilālēkh mēm̐ prācīn sabhyatā kī lipi hai.", "ipa": "ɪs ʃɪlaːleːkʰ mẽː praːtʃiːn səbʱjət̪aː kiː lɪpɪ ɦɛː"}
+      - {"text": "यह ग्रंथ सदियों पहले लिखा गया।", "reading": "yah granth sadiyōm̐ pahlē likhā gayā.", "ipa": "jəɦ ɡrənt̪ʰ səd̪ɪjõː pəɦleː lɪkʰaː ɡəjaː"}
+      - {"text": "पुरातत्व विभाग ने इस स्थल की खुदाई की।", "reading": "purātatv vibhāg nē is sthal kī khudāī kī.", "ipa": "pʊraːt̪ət̪ʋ ʋɪbʱaːɡ neː ɪs st̪ʰəl kiː kʰʊd̪aːiː kiː"}
+      - {"text": "इस युग की संस्कृति पर शोध जारी है।", "reading": "is yug kī saṁskriti par śōdh jārī hai.", "ipa": "ɪs jʊɡ kiː sə̃skrɪt̪ɪ pər ʃoːd̪ʱ dʒaːriː ɦɛː"}
+    questions:
+      - {"id": "hi-2502", "prompt": {"en": "The inscription is in an ancient script."}, "answer": true}
+      - {"id": "hi-2503", "prompt": {"en": "What did the archaeology department do?"}, "options": [{"en": "Dug the site"}, {"en": "Built a museum"}], "answer": 1}
+      - {"id": "hi-2504", "prompt": {"en": "The research is over."}, "answer": false}

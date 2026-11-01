@@ -1,0 +1,24 @@
+schema: 1
+id: "fr-grammar-au-du-contractions"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["masc", "fem", "plural"]
+  entries:
+    - lemma: "à"
+      key: "a"
+      ipa: "a"
+      forms:
+        "masc": "au musée"
+        "fem": "à la gare"
+        "plural": "aux amis"
+    - lemma: "de"
+      key: "de"
+      ipa: "də"
+      forms:
+        "masc": "du musée"
+        "fem": "de la gare"
+        "plural": "des amis"

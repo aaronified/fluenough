@@ -1,0 +1,207 @@
+schema: 1
+id: "hi-en-geography"
+kind: "layer"
+core: "hi-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography"
+license: "CC-BY-SA-4.0"
+description: "Where places are and what they are like: continents, states and regions, mountains, coasts and rivers, the weather of a land and the distances between places. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2040":
+    native: "continent"
+    notes:
+      "n1": "One of the great masses of land on the earth, as Asia or Africa."
+    examples:
+      "एशिया सबसे बड़ा महाद्वीप है।": { "native": "Asia is the biggest continent.", "bases": {"एशिया": "Asia", "सबसे": "most"} }
+      "भारत एशिया महाद्वीप में है।": { "native": "India is in the continent of Asia.", "bases": {"भारत": "India", "एशिया": "Asia"} }
+  "hi-2041":
+    native: "state"
+    notes:
+      "n1": "A large part of a country that has its own government for some matters."
+    examples:
+      "यह राज्य बहुत बड़ा है।": { "native": "This state is very big.", "bases": {} }
+      "हर राज्य की भाषा अलग है।": { "native": "Each state has a different language.", "bases": {"हर": "every; each"} }
+  "hi-2042":
+    native: "mountain (formal)"
+    notes:
+      "n1": "A high mountain. The everyday word is पहाड़ (pahāṛ)."
+    examples:
+      "हिमालय सबसे ऊँचा पर्वत है।": { "native": "The Himalayas are the highest mountain.", "bases": {"हिमालय": "the Himalayas", "सबसे": "most"} }
+      "पर्वत पर बर्फ़ है।": { "native": "There is snow on the mountain.", "bases": {} }
+  "hi-2043":
+    native: "ocean; sea"
+    notes:
+      "n1": "A large body of salt water, larger than a lake."
+    examples:
+      "सागर का पानी खारा है।": { "native": "The water of the ocean is salty.", "bases": {"खारा": "salty"} }
+      "हम सागर किनारे गए।": { "native": "We went to the seaside.", "bases": {} }
+  "hi-2044":
+    native: "island"
+    notes:
+      "n1": "A piece of land with water all around it."
+    examples:
+      "यह द्वीप बहुत सुंदर है।": { "native": "This island is very beautiful.", "bases": {} }
+      "द्वीप पर नारियल के पेड़ हैं।": { "native": "There are coconut trees on the island.", "bases": {} }
+  "hi-2045":
+    native: "south"
+    notes:
+      "n1": "The direction to the right of the sun at noon, when facing the east. The opposite is उत्तर (uttar)."
+    examples:
+      "दक्षिण में समुद्र है।": { "native": "There is the sea to the south.", "bases": {} }
+      "वह शहर दक्षिण की ओर है।": { "native": "That city is to the south.", "bases": {"ओर": "direction"} }
+  "hi-2046":
+    native: "east"
+    notes:
+      "n1": "The direction where the sun rises. The opposite is पश्चिम (paścim), west."
+    examples:
+      "सूरज पूर्व में उगता है।": { "native": "The sun rises in the east.", "bases": {} }
+      "नदी पूर्व की ओर बहती है।": { "native": "The river flows east.", "bases": {"ओर": "direction"} }
+  "hi-2047":
+    native: "west"
+    notes:
+      "n1": "The direction where the sun sets. The opposite is पूर्व (pūrv), east."
+    examples:
+      "सूरज पश्चिम में डूबता है।": { "native": "The sun sets in the west.", "bases": {} }
+      "पश्चिम की ओर मत जाओ।": { "native": "Do not go towards the west.", "bases": {"ओर": "direction", "मत": "do not"} }
+  "hi-2048":
+    native: "direction"
+    notes:
+      "n1": "The way towards which a thing or a person faces or moves."
+    examples:
+      "कौन सी दिशा में जाना है?": { "native": "Which direction do we have to go?", "bases": {"सी": "which"} }
+      "सही दिशा में चलो।": { "native": "Walk in the right direction.", "bases": {} }
+  "hi-2049":
+    native: "climate"
+    notes:
+      "n1": "The usual weather of a place over a long time."
+    examples:
+      "यहाँ की जलवायु गरम है।": { "native": "The climate here is hot.", "bases": {} }
+      "ठंडी जलवायु पसंद है।": { "native": "I like a cold climate.", "bases": {} }
+  "hi-2050":
+    native: "population"
+    notes:
+      "n1": "The number of people who live in a place."
+    examples:
+      "इस शहर की आबादी बहुत है।": { "native": "This city has a very large population.", "bases": {} }
+      "गाँव की आबादी कम है।": { "native": "The village's population is small.", "bases": {} }
+  "hi-2051":
+    native: "region; province"
+    notes:
+      "n1": "A region or a state of a country, with its own people and language."
+    examples:
+      "यह प्रदेश पहाड़ों में है।": { "native": "This region is in the hills.", "bases": {} }
+      "हर प्रदेश का अपना खाना है।": { "native": "Each region has its own food.", "bases": {"हर": "every; each"} }
+  "hi-2052":
+    native: "border"
+    notes:
+      "n1": "The line that divides one country from another."
+    examples:
+      "सरहद पर सैनिक खड़े हैं।": { "native": "Soldiers are standing at the border.", "bases": {"सैनिक": "soldier", "खड़े": "standing"} }
+      "सरहद पार मत करो।": { "native": "Do not cross the border.", "bases": {"पार": "across", "मत": "do not"} }
+  "hi-2053":
+    native: "port; harbour"
+    notes:
+      "n1": "A place by the sea or a river where ships load and unload."
+    examples:
+      "जहाज़ बंदरगाह पर पहुँचा।": { "native": "The ship reached the port.", "bases": {"बंदरगाह": "port"} }
+      "बंदरगाह पर बहुत भीड़ है।": { "native": "There is a lot of crowd at the port.", "bases": {"भीड़": "crowd"} }
+  "hi-2054":
+    native: "highway"
+    notes:
+      "n1": "A main road that joins large towns and cities."
+    examples:
+      "राजमार्ग बहुत चौड़ा है।": { "native": "The highway is very wide.", "bases": {} }
+      "राजमार्ग पर गाड़ी तेज़ चलाओ।": { "native": "Drive fast on the highway.", "bases": {} }
+  "hi-2055":
+    native: "district"
+    notes:
+      "n1": "A part of a state, with its own town as its centre."
+    examples:
+      "यह ज़िला बहुत हरा है।": { "native": "This district is very green.", "bases": {} }
+      "ज़िले का मुख्यालय यहाँ है।": { "native": "The district headquarters is here.", "bases": {"ज़िले": "district", "मुख्यालय": "headquarters"} }
+  "hi-2056":
+    native: "coast; shore"
+    notes:
+      "n1": "The land along the edge of the sea."
+    examples:
+      "तट पर नारियल के पेड़ हैं।": { "native": "There are coconut trees on the coast.", "bases": {} }
+      "पूर्वी तट बहुत सुंदर है।": { "native": "The east coast is very beautiful.", "bases": {"पूर्वी": "eastern", "तट": "coast"} }
+  "hi-2057":
+    native: "plateau"
+    notes:
+      "n1": "A high, flat stretch of land."
+    examples:
+      "दक्कन एक बड़ा पठार है।": { "native": "The Deccan is a big plateau.", "bases": {"दक्कन": "the Deccan"} }
+      "पठार पर हवा तेज़ है।": { "native": "The wind is strong on the plateau.", "bases": {} }
+  "hi-2058":
+    native: "volcano"
+    notes:
+      "n1": "A mountain with an opening from which hot rock and smoke come out."
+    examples:
+      "यह ज्वालामुखी अब शांत है।": { "native": "This volcano is quiet now.", "bases": {} }
+      "ज्वालामुखी से धुआँ निकला।": { "native": "Smoke came out of the volcano.", "bases": {"निकला": "to come out"} }
+  "hi-2059":
+    native: "earthquake"
+    notes:
+      "n1": "A shaking of the ground, from movements deep under the earth."
+    examples:
+      "कल रात भूकंप आया।": { "native": "There was an earthquake last night.", "bases": {} }
+      "भूकंप में घर गिर गए।": { "native": "The houses fell in the earthquake.", "bases": {} }
+  "hi-2060":
+    native: "mineral"
+    notes:
+      "n1": "A natural substance found in the earth, such as iron or coal."
+    examples:
+      "यहाँ खनिज बहुत है।": { "native": "There are many minerals here.", "bases": {} }
+      "खनिज की खदानें हैं।": { "native": "There are mines of minerals.", "bases": {"खदानें": "mine"} }
+  "hi-2061":
+    native: "city (formal); town"
+    notes:
+      "n1": "A city or a town, the formal word for it."
+    examples:
+      "यह नगर बहुत पुराना है।": { "native": "This city is very old.", "bases": {} }
+      "नगर के बीच में बाज़ार है।": { "native": "There is a market in the middle of the city.", "bases": {"बीच": "middle"} }
+  "hi-2062":
+    native: "planet"
+    notes:
+      "n1": "A large body in space that moves round a star, as the earth does."
+    examples:
+      "पृथ्वी एक ग्रह है।": { "native": "The earth is a planet.", "bases": {"पृथ्वी": "the earth"} }
+      "मंगल भी एक ग्रह है।": { "native": "Mars is also a planet.", "bases": {"मंगल": "Mars"} }
+  "hi-2063":
+    native: "area; zone; field"
+    notes:
+      "n1": "A part of a land or a subject, marked off from the rest."
+    examples:
+      "यह क्षेत्र सूखा है।": { "native": "This area is dry.", "bases": {"सूखा": "dry"} }
+      "पहाड़ी क्षेत्र में बारिश होती है।": { "native": "It rains in the hilly area.", "bases": {"पहाड़ी": "hilly"} }
+  "hi-2065":
+    native: "height; altitude"
+    notes:
+      "n1": "How high a thing is above the ground or the sea."
+    examples:
+      "इस पहाड़ की ऊँचाई बहुत है।": { "native": "This mountain's height is very great.", "bases": {} }
+      "गाँव की ऊँचाई समुद्र से हज़ार मीटर है।": { "native": "The village is a thousand metres above the sea.", "bases": {"मीटर": "metre"} }
+  "hi-2066":
+    native: "depth"
+    notes:
+      "n1": "How deep a thing is below the surface."
+    examples:
+      "झील की गहराई कितनी है?": { "native": "How deep is the lake?", "bases": {} }
+      "पानी की गहराई कम है।": { "native": "The depth of the water is little.", "bases": {} }
+  "hi-2067":
+    native: "width; breadth"
+    notes:
+      "n1": "How wide a thing is, from one side to the other."
+    examples:
+      "नदी की चौड़ाई बड़ी है।": { "native": "The width of the river is great.", "bases": {} }
+      "कमरे की चौड़ाई नापो।": { "native": "Measure the width of the room.", "bases": {} }
+  "hi-2068":
+    native: "distance"
+    notes:
+      "n1": "How far one place is from another."
+    examples:
+      "दोनों शहरों के बीच दूरी दो सौ किलोमीटर है।": { "native": "The distance between the two cities is two hundred kilometres.", "bases": {"दोनों": "both", "बीच": "between", "दूरी": "distance", "किलोमीटर": "kilometre"} }
+      "स्टेशन यहाँ से दूर है।": { "native": "The station is far from here.", "bases": {} }

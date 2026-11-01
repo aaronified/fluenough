@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-groceries"
+name: "Reading: groceries"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts for shopping: a shopping list and some shop labels, with words such as pain, sucre and bouteille. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-shopping-list"
+    title: "A handwritten shopping list"
+    theme: "groceries"
+    sentences:
+      - text: "Pain, beurre et fromage."
+      - text: "Deux œufs et du riz."
+      - text: "Un paquet de sucre."
+      - text: "Ajoutez du café."
+    questions:
+      - id: "fr-0807"
+        prompt: { en: "What is bought in the shop?" }
+        options:
+          - { en: "Bread, butter and cheese" }
+          - { en: "Fish and meat" }
+          - { en: "Juice and tea" }
+        answer: 1
+      - id: "fr-0808"
+        prompt: { en: "How many eggs?" }
+        options:
+          - { en: "Two" }
+          - { en: "One" }
+          - { en: "Ten" }
+        answer: 1
+      - id: "fr-0809"
+        prompt: { en: "What should be added?" }
+        options:
+          - { en: "Coffee" }
+          - { en: "Salt" }
+          - { en: "Chicken" }
+        answer: 1
+  - id: "fr-shop-labels"
+    title: "Labels in a small shop"
+    theme: "groceries"
+    sentences:
+      - text: "La bouteille de vin est pleine."
+      - text: "Le poulet est dans la boîte."
+      - text: "Le poisson est frais."
+      - text: "L'épicerie est ouverte."
+    questions:
+      - id: "fr-0810"
+        prompt: { en: "What is full?" }
+        options:
+          - { en: "The bottle of wine" }
+          - { en: "The tin" }
+          - { en: "The bag" }
+        answer: 1
+      - id: "fr-0811"
+        prompt: { en: "Where is the chicken?" }
+        options:
+          - { en: "In the tin" }
+          - { en: "On the table" }
+          - { en: "In the bag" }
+        answer: 1
+      - id: "fr-0812"
+        prompt: { en: "Which shop is open?" }
+        options:
+          - { en: "The grocer's" }
+          - { en: "The station" }
+          - { en: "The market" }
+        answer: 1

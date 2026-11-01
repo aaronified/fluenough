@@ -1,0 +1,19 @@
+schema: 1
+id: "hi-en-grammar-indefinites"
+kind: "layer"
+core: "hi-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Indefinites: someone, something"
+license: "CC-BY-SA-4.0"
+description: "Someone, something, somewhere and sometime, with their forms for any and for none. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Indefinites: someone, something"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"someone (person)": "a person", "something (thing)": "a thing", "somewhere (place)": "a place", "sometime (time)": "a time"}
+  entries:
+    "koi": "some; any"
+    "koibhi": "anyone, anything, anywhere, at any time"
+    "koinahin": "no one, nothing, nowhere, never"
+  notes: "कोई (kōī) is the word for an unknown person or thing, and the other three follow the same pattern: कुछ (kuch) for a thing, कहीं (kahīm̐) for a place and कभी (kabhī) for a time. भी (bhī) after them means any, as in कोई भी (kōī bhī), anyone at all. नहीं (nahīm̐) after them makes a negative, as in कोई नहीं आया (kōī nahīm̐ āyā), no one came. The verb of a sentence with a negative word is negative too."

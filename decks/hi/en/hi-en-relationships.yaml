@@ -1,0 +1,158 @@
+schema: 1
+id: "hi-en-relationships"
+kind: "layer"
+core: "hi-relationships"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relationships"
+license: "CC-BY-SA-4.0"
+description: "How people are bound to one another: love and friendship, quarrels and apology, respect, and the words for the family by marriage. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2563":
+    native: "love"
+    notes:
+      "n1": "A deep feeling of care and affection, of one person for another."
+    examples:
+      "माँ का प्रेम अनमोल है।": { "native": "A mother's love is priceless.", "bases": {"अनमोल": "priceless"} }
+      "प्रेम से बोलो।": { "native": "Speak with love.", "bases": {} }
+  "hi-2564":
+    native: "female friend"
+    notes:
+      "n1": "A girl or woman who is a friend."
+    examples:
+      "मेरी सहेली कल आएगी।": { "native": "My female friend will come tomorrow.", "bases": {} }
+      "सहेली के साथ घूमो।": { "native": "Go out with your friend.", "bases": {} }
+  "hi-2565":
+    native: "companion; partner"
+    notes:
+      "n1": "A person who goes with another, in work or in life."
+    examples:
+      "वह मेरा अच्छा साथी है।": { "native": "He is a good companion of mine.", "bases": {} }
+      "जीवन का साथी चुनो।": { "native": "Choose a partner for life.", "bases": {"जीवन": "life"} }
+  "hi-2566":
+    native: "quarrel; fight"
+    notes:
+      "n1": "An angry argument or a fight between people."
+    examples:
+      "दोनों भाइयों में झगड़ा हुआ।": { "native": "The two brothers had a quarrel.", "bases": {"दोनों": "both"} }
+      "झगड़ा मत करो।": { "native": "Do not quarrel.", "bases": {"मत": "do not"} }
+  "hi-2567":
+    native: "apology; pardon"
+    notes:
+      "n1": "Asking to be forgiven for a wrong, or forgiving someone."
+    examples:
+      "मैंने उससे माफ़ी माँगी।": { "native": "I asked him for forgiveness.", "bases": {"माँगी": "to ask for"} }
+      "माफ़ी दे दो।": { "native": "Forgive me.", "bases": {} }
+  "hi-2568":
+    native: "respect; honour"
+    notes:
+      "n1": "The good opinion that people have of a person, and the respect they show."
+    examples:
+      "बड़ों की इज़्ज़त करो।": { "native": "Respect your elders.", "bases": {} }
+      "उसकी इज़्ज़त बढ़ी।": { "native": "His honour grew.", "bases": {"बढ़ी": "to grow"} }
+  "hi-2569":
+    native: "respect; honour"
+    notes:
+      "n1": "Admiration and respect for someone, shown in words or in action."
+    examples:
+      "सबको सम्मान दो।": { "native": "Give respect to everyone.", "bases": {} }
+      "उसे सम्मान के साथ बुलाया गया।": { "native": "He was called with honour.", "bases": {"सम्मान": "honour"} }
+  "hi-2570":
+    native: "badness; evil; fault"
+    notes:
+      "n1": "Something bad in a person or a thing. The opposite is भलाई (bhalāī), goodness."
+    examples:
+      "उसमें कोई बुराई नहीं है।": { "native": "There is no fault in him.", "bases": {} }
+      "बुराई से दूर रहो।": { "native": "Stay away from evil.", "bases": {} }
+  "hi-2571":
+    native: "belonging; warmth"
+    notes:
+      "n1": "The feeling of being close and at home with someone."
+    examples:
+      "इस घर में अपनापन है।": { "native": "There is warmth in this house.", "bases": {} }
+      "उसके व्यवहार में अपनापन है।": { "native": "There is warmth in his behaviour.", "bases": {"व्यवहार": "behaviour"} }
+  "hi-2572":
+    native: "friend (formal)"
+    notes:
+      "n1": "A friend, the formal word for दोस्त (dōst)."
+    examples:
+      "वह मेरा पुराना मित्र है।": { "native": "He is my old friend.", "bases": {} }
+      "मित्रों के साथ घूमने जाओ।": { "native": "Go out with your friends.", "bases": {"मित्रों": "friend"} }
+  "hi-2573":
+    native: "brother-in-law (sister's husband)"
+    notes:
+      "n1": "The husband of one's sister, or the elder brother of one's wife."
+    examples:
+      "मेरे जीजा जी डॉक्टर हैं।": { "native": "My brother-in-law is a doctor.", "bases": {} }
+      "जीजा जी से मिलो।": { "native": "Meet your brother-in-law.", "bases": {} }
+  "hi-2574":
+    native: "sister-in-law (brother's wife)"
+    notes:
+      "n1": "The wife of one's elder brother, or a respectful word for a brother's wife."
+    examples:
+      "भाभी ने खाना बनाया।": { "native": "My sister-in-law cooked the food.", "bases": {"ने": "by"} }
+      "भाभी घर पर हैं।": { "native": "My sister-in-law is at home.", "bases": {} }
+  "hi-2575":
+    native: "husband's younger brother"
+    notes:
+      "n1": "The younger brother of one's husband."
+    examples:
+      "मेरा देवर बहुत शरारती है।": { "native": "My husband's younger brother is very mischievous.", "bases": {"शरारती": "mischievous"} }
+      "देवर से मज़ाक मत करो।": { "native": "Do not joke with the younger brother.", "bases": {"मज़ाक": "joke", "मत": "do not"} }
+  "hi-2576":
+    native: "husband's sister"
+    notes:
+      "n1": "The sister of one's husband."
+    examples:
+      "ननद कल आ रही है।": { "native": "My husband's sister is coming tomorrow.", "bases": {} }
+      "ननद के लिए तोहफ़ा लो।": { "native": "Take a gift for the husband's sister.", "bases": {"लिए": "for"} }
+  "hi-2577":
+    native: "daughter-in-law"
+    notes:
+      "n1": "The wife of one's son."
+    examples:
+      "बहू ने चाय बनाई।": { "native": "The daughter-in-law made tea.", "bases": {"ने": "by"} }
+      "हमारी बहू बहुत अच्छी है।": { "native": "Our daughter-in-law is very good.", "bases": {} }
+  "hi-2578":
+    native: "son-in-law"
+    notes:
+      "n1": "The husband of one's daughter."
+    examples:
+      "दामाद जी आ गए हैं।": { "native": "The son-in-law has come.", "bases": {} }
+      "दामाद को मिठाई दो।": { "native": "Give the son-in-law sweets.", "bases": {} }
+  "hi-2579":
+    native: "lover"
+    notes:
+      "n1": "A person who is in love with another, and is loved in return."
+    examples:
+      "वह उसका प्रेमी है।": { "native": "He is her lover.", "bases": {} }
+      "प्रेमी और प्रेमिका साथ घूम रहे हैं।": { "native": "The lover and the beloved are walking together.", "bases": {} }
+  "hi-2580":
+    native: "girlfriend; beloved"
+    notes:
+      "n1": "A woman who is in love with another, and is loved in return."
+    examples:
+      "वह उसकी प्रेमिका है।": { "native": "She is his girlfriend.", "bases": {} }
+      "प्रेमिका को फोन करो।": { "native": "Call your girlfriend.", "bases": {"फोन": "phone"} }
+  "hi-2581":
+    native: "to quarrel"
+    notes:
+      "n1": "To argue angrily with someone, or to fight."
+    examples:
+      "दोनों बच्चे झगड़ रहे हैं।": { "native": "The two children are quarrelling.", "bases": {"दोनों": "both", "झगड़": "to quarrel"} }
+      "उससे मत झगड़ो।": { "native": "Do not quarrel with him.", "bases": {"मत": "do not", "झगड़ो": "to quarrel"} }
+  "hi-2582":
+    native: "to sulk; to be cross"
+    notes:
+      "n1": "To be angry with someone and refuse to speak to them, as a child does."
+    examples:
+      "बच्चा माँ से रूठ गया।": { "native": "The child sulked with his mother.", "bases": {"रूठ": "to sulk"} }
+      "मुझसे मत रूठो।": { "native": "Do not sulk with me.", "bases": {"मत": "do not", "रूठो": "to sulk"} }
+  "hi-2583":
+    native: "to join; to be attached"
+    notes:
+      "n1": "To become part of something, or to be fixed to something else."
+    examples:
+      "हम एक परिवार से जुड़े हैं।": { "native": "We are joined in one family.", "bases": {"जुड़े": "to be joined"} }
+      "इस कहानी से बहुत यादें जुड़ी हैं।": { "native": "Many memories are attached to this story.", "bases": {"कहानी": "story", "जुड़ी": "to be joined"} }
