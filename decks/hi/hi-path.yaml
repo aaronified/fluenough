@@ -470,7 +470,8 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - planned: { id: "hi-travel", theme: "travel", words: 55 }
+  - decks: ["hi-travel", "hi-reading-travel", "*"]
+    words: 24
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
