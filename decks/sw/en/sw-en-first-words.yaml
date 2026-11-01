@@ -1,0 +1,173 @@
+schema: 1
+id: "sw-en-first-words"
+kind: "layer"
+core: "sw-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-0001":
+    native: "yes"
+    notes:
+      "n1": "Ndiyo is yes. The plain no is hapana, on the next card."
+    examples:
+      "Ndiyo, nimeelewa.":
+        native: "Yes, I understand."
+        bases:
+          "Ndiyo": "yes"
+          "nimeelewa": "to understand (I have understood)"
+      "Ndiyo, asante.":
+        native: "Yes, thank you."
+        bases:
+          "Ndiyo": "yes"
+          "asante": "thanks"
+  "sw-0002":
+    native: "no; not"
+    notes:
+      "n1": "Hapana is no. A verb is made negative with si-: sijui is I don't know."
+    examples:
+      "Hapana, asante.":
+        native: "No, thank you."
+        bases:
+          "Hapana": "no"
+          "asante": "thanks"
+      "Sijui lugha hii.":
+        native: "I don't know this language."
+        bases:
+          "Sijui": "to know (I do not know)"
+          "lugha": "language"
+          "hii": "this"
+  "sw-0003":
+    native: "I; me"
+    notes:
+      "n1": "Mimi is I, used alone or for emphasis. The verb carries the subject too: ninapenda is I like."
+    examples:
+      "Mimi ni mwalimu.":
+        native: "I am a teacher."
+        bases:
+          "Mimi": "I"
+          "ni": "am; is"
+          "mwalimu": "teacher"
+      "Mimi ninapenda maji.":
+        native: "I like water."
+        bases:
+          "Mimi": "I"
+          "ninapenda": "to like (I like)"
+          "maji": "water"
+  "sw-0004":
+    native: "you (one person)"
+    notes:
+      "n1": "Wewe is you for one person. The verb carries it too: unapenda is you like."
+    examples:
+      "Wewe ni nani?":
+        native: "Who are you?"
+        bases:
+          "Wewe": "you"
+          "ni": "are"
+          "nani": "who"
+      "Wewe unapenda chai?":
+        native: "Do you like tea?"
+        bases:
+          "Wewe": "you"
+          "unapenda": "to like (you like)"
+          "chai": "tea"
+  "sw-0005":
+    native: "water"
+    notes:
+      "n1": "Maji is water, the same word whether it is in a glass or in a river."
+    examples:
+      "Ninahitaji maji.":
+        native: "I need water."
+        bases:
+          "Ninahitaji": "to need (I need)"
+          "maji": "water"
+      "Maji ni baridi.":
+        native: "The water is cold."
+        bases:
+          "Maji": "water"
+          "ni": "is"
+          "baridi": "cold"
+  "sw-0006":
+    native: "good; nice; fine"
+    notes:
+      "n1": "Nzuri is good, nice or fine. It is the answer to how are you, as in Habari yako? Nzuri."
+    examples:
+      "Habari yako? Nzuri.":
+        native: "How are you? Good."
+        bases:
+          "Habari": "news; how are you"
+          "yako": "your"
+          "Nzuri": "good"
+      "Chai ni nzuri.":
+        native: "The tea is good."
+        bases:
+          "Chai": "tea"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-0007":
+    native: "one"
+    notes:
+      "n1": "Swahili counts moja, mbili, tatu, from one. Mbili is two, on the next card."
+    examples:
+      "Moja, mbili, tatu.":
+        native: "One, two, three."
+        bases:
+          "Moja": "one"
+          "mbili": "two"
+          "tatu": "three"
+      "Ninataka chai moja.":
+        native: "I want one tea."
+        bases:
+          "Ninataka": "to want (I want)"
+          "chai": "tea"
+          "moja": "one"
+  "sw-0008":
+    native: "two"
+    notes:
+      "n1": "Mbili is two. Tatu, three, follows it."
+    examples:
+      "Watoto wawili.":
+        native: "Two children."
+        bases:
+          "Watoto": "children"
+          "wawili": "two"
+      "Nina watoto wawili.":
+        native: "I have two children."
+        bases:
+          "Nina": "to have (I have)"
+          "watoto": "children"
+          "wawili": "two"
+  "sw-0009":
+    native: "here"
+    notes:
+      "n1": "Hapa is here. Pale is there, near the listener, and huko is over there, far away."
+    examples:
+      "Niko hapa.":
+        native: "I am here."
+        bases:
+          "Niko": "to be (I am located)"
+          "hapa": "here"
+      "Njoo hapa.":
+        native: "Come here."
+        bases:
+          "Njoo": "to come (come)"
+          "hapa": "here"
+  "sw-0010":
+    native: "and; with"
+    notes:
+      "n1": "Na joins words and clauses, as 'and' does, and it also means 'with': chai na maziwa is tea with milk."
+    examples:
+      "Chai na maziwa.":
+        native: "Tea with milk."
+        bases:
+          "Chai": "tea"
+          "na": "with"
+          "maziwa": "milk"
+      "Mimi na wewe.":
+        native: "Me and you."
+        bases:
+          "Mimi": "I; me"
+          "na": "and"
+          "wewe": "you"

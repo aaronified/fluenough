@@ -1,0 +1,211 @@
+schema: 1
+id: "ms-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ms", iso639_3: "zsm", name: "Malay", script: "latin", tts: "ms-MY", icon: "Ms" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ms-0011"
+    target: "Hai"
+    ipa: "haj"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Hai", base: "Hai" }
+  - id: "ms-0012"
+    target: "Selamat pagi"
+    ipa: "səlamat pagi"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Selamat", base: "selamat" }
+      - { word: "pagi", base: "pagi" }
+  - id: "ms-0013"
+    target: "Selamat petang"
+    ipa: "səlamat pətaŋ"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Selamat", base: "selamat" }
+      - { word: "petang", base: "petang" }
+  - id: "ms-0014"
+    target: "Selamat malam"
+    ipa: "səlamat malam"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Selamat", base: "selamat" }
+      - { word: "malam", base: "malam" }
+  - id: "ms-0015"
+    target: "Selamat tinggal"
+    ipa: "səlamat tiŋgal"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Selamat", base: "selamat" }
+      - { word: "tinggal", base: "tinggal" }
+  - id: "ms-0016"
+    target: "Tolong"
+    ipa: "tolɔŋ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Tolong", base: "tolong" }
+  - id: "ms-0017"
+    target: "Terima kasih"
+    ipa: "tərima kasih"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Terima", base: "terima" }
+      - { word: "kasih", base: "kasih" }
+  - id: "ms-0018"
+    target: "Terima kasih banyak"
+    ipa: "tərima kasih banjak"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Terima", base: "terima" }
+      - { word: "kasih", base: "kasih" }
+      - { word: "banyak", base: "banyak" }
+  - id: "ms-0019"
+    target: "Maaf"
+    ipa: "maaf"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Maaf", base: "maaf" }
+  - id: "ms-0020"
+    target: "Maaf, boleh saya lalu?"
+    ipa: "maaf bɔleh saja lalu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Maaf", base: "maaf" }
+      - { word: "boleh", base: "boleh" }
+      - { word: "saya", base: "saya" }
+      - { word: "lalu", base: "lalu" }
+  - id: "ms-0021"
+    target: "Saya tidak faham."
+    ipa: "saja tidak faham"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Saya", base: "saya" }
+      - { word: "tidak", base: "tidak" }
+      - { word: "faham", base: "faham" }
+  - id: "ms-0022"
+    target: "Saya tidak tahu bahasa Melayu."
+    ipa: "saja tidak tahu bahasa məlaju"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Saya", base: "saya" }
+      - { word: "tidak", base: "tidak" }
+      - { word: "tahu", base: "tahu" }
+      - { word: "bahasa", base: "bahasa" }
+      - { word: "Melayu", base: "Melayu" }
+  - id: "ms-0023"
+    target: "Boleh cakap perlahan sikit?"
+    ipa: "bɔleh tʃakap pərlahan sikit"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Boleh", base: "boleh" }
+      - { word: "cakap", base: "cakap" }
+      - { word: "perlahan", base: "perlahan" }
+      - { word: "sikit", base: "sikit" }
+  - id: "ms-0024"
+    target: "Siapa nama awak?"
+    ipa: "siapa nama awak"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Siapa", base: "siapa" }
+      - { word: "nama", base: "nama" }
+      - { word: "awak", base: "awak" }
+  - id: "ms-0025"
+    target: "Nama saya Amina."
+    ipa: "nama saja amina"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Nama", base: "nama" }
+      - { word: "saya", base: "saya" }
+      - { word: "Amina", base: "Amina" }
+  - id: "ms-0026"
+    target: "Berapa harga ini?"
+    ipa: "bərapa harga ini"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Berapa", base: "berapa" }
+      - { word: "harga", base: "harga" }
+      - { word: "ini", base: "ini" }
+  - id: "ms-0027"
+    target: "Di mana tandas?"
+    ipa: "di mana tandas"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Di", base: "di" }
+      - { word: "mana", base: "mana" }
+      - { word: "tandas", base: "tandas" }
+  - id: "ms-0028"
+    target: "Tolong saya!"
+    ipa: "tolɔŋ saja"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Tolong", base: "tolong" }
+      - { word: "saya", base: "saya" }
+  - id: "ms-0029"
+    target: "Awak cakap bahasa Inggeris?"
+    ipa: "awak tʃakap bahasa iŋgris"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "awak", base: "awak" }
+      - { word: "cakap", base: "cakap" }
+      - { word: "bahasa", base: "bahasa" }
+      - { word: "Inggeris", base: "Inggeris" }
+  - id: "ms-0030"
+    target: "Apa khabar?"
+    ipa: "apa xabar"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Apa", base: "apa" }
+      - { word: "khabar", base: "khabar" }
