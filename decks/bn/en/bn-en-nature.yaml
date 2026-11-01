@@ -1,0 +1,248 @@
+schema: 1
+id: "bn-en-nature"
+kind: "layer"
+core: "bn-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature: trees, land and water"
+description: "Leaves, rivers, lakes, the sky, the soil and the weather. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2493":
+    native: "leaf"
+    notes:
+      "n1": "A leaf of a tree or plant; a flat green part that grows from a stem."
+    examples:
+      "গাছের পাতা সবুজ।": "The leaves of the tree are green."
+      "পাতাটা খুব বড়।": { native: "The leaf is very big.", bases: { "পাতাটা": "leaf" } }
+  "bn-2494":
+    native: "moon"
+    notes:
+      "n1": "The moon that shines at night."
+    examples:
+      "আজ রাতে চাঁদ উঠবে।": "The moon will rise tonight."
+      "চাঁদটা খুব উজ্জ্বল।": { native: "The moon is very bright.", bases: { "চাঁদটা": "moon", "উজ্জ্বল": "bright" } }
+  "bn-2495":
+    native: "ocean; large sea"
+    notes:
+      "n1": "A very large sea; the everyday word for the sea is সমুদ্র (śomudro)."
+    examples:
+      "সাগরের জল নোনতা।": { native: "The water of the ocean is salty.", bases: { "সাগরের": "ocean; large sea" } }
+      "আমি সাগর দেখতে যাব।": "I will go to see the sea."
+  "bn-2496":
+    native: "jungle; dense forest"
+    notes:
+      "n1": "A thick forest with many trees and plants, and often wild animals."
+    examples:
+      "জঙ্গলে অনেক গাছ।": { native: "There are many trees in the jungle.", bases: { "জঙ্গলে": "jungle; dense forest" } }
+      "জঙ্গলে যেও না।": { native: "Do not go into the jungle. (familiar)", bases: { "জঙ্গলে": "jungle; dense forest" } }
+  "bn-2497":
+    native: "waterfall; spring"
+    notes:
+      "n1": "Water falling down the side of a hill or rock."
+    examples:
+      "ঝরনাটা খুব সুন্দর।": { native: "The waterfall is very beautiful.", bases: { "ঝরনাটা": "waterfall; spring" } }
+      "পাহাড় থেকে ঝরনা নামে।": "A waterfall comes down from the hill."
+  "bn-2498":
+    native: "sand"
+    notes:
+      "n1": "Tiny grains of rock on a beach or in a desert."
+    examples:
+      "বালিতে পা ডুবে যায়।": { native: "The feet sink into the sand.", bases: { "বালিতে": "sand", "ডুবে": "to sink" } }
+      "সমুদ্রের বালি সাদা।": "The sand of the sea is white."
+  "bn-2499":
+    native: "soil; earth; clay"
+    notes:
+      "n1": "The ground in which plants grow, and the material used to make pots."
+    examples:
+      "মাটিতে সার দাও।": { native: "Put manure in the soil. (familiar)", bases: { "মাটিতে": "soil; earth; clay", "সার": "manure; fertiliser" } }
+      "মাটি ভেজা।": "The soil is wet."
+  "bn-2500":
+    native: "stone; rock"
+    notes:
+      "n1": "A hard piece of rock, smaller than a hill."
+    examples:
+      "নদীতে অনেক পাথর।": "There are many stones in the river."
+      "পাথরটা ভারী।": { native: "The stone is heavy.", bases: { "পাথরটা": "stone; rock" } }
+  "bn-2501":
+    native: "wave"
+    notes:
+      "n1": "A moving ridge of water on a sea, lake or river."
+    examples:
+      "সমুদ্রে বড় ঢেউ।": "There are big waves in the sea."
+      "ঢেউগুলো শান্ত।": { native: "The waves are calm.", bases: { "ঢেউগুলো": "wave" } }
+  "bn-2502":
+    native: "grass"
+    notes:
+      "n1": "Short green plants that cover the ground in a field."
+    examples:
+      "ঘাসের উপর বসো।": { native: "Sit on the grass. (familiar)", bases: { "ঘাসের": "grass", "উপর": "on; over" } }
+      "ঘাস কাটা হয়েছে।": "The grass has been cut."
+  "bn-2503":
+    native: "root (of a plant)"
+    notes:
+      "n1": "The part of a plant that grows under the soil and takes in water."
+    examples:
+      "গাছের শিকড় মাটিতে।": "The roots of the tree are in the soil."
+      "শিকড়গুলো লম্বা।": { native: "The roots are long.", bases: { "শিকড়গুলো": "root (of a plant)" } }
+  "bn-2504":
+    native: "lake"
+    notes:
+      "n1": "A large body of water with land all round it."
+    examples:
+      "হ্রদের জল পরিষ্কার।": { native: "The water of the lake is clear.", bases: { "হ্রদের": "lake" } }
+      "আমরা হ্রদে নৌকা চালাই।": { native: "We row a boat on the lake.", bases: { "হ্রদে": "lake" } }
+  "bn-2505":
+    native: "water"
+    notes:
+      "n1": "A common word for water, more often heard in Bangladesh; the word জল (jôl) is used more in West Bengal."
+    examples:
+      "আমাকে একটু পানি দাও।": "Give me a little water. (familiar)"
+      "পানিটা ঠান্ডা।": { native: "The water is cold.", bases: { "পানিটা": "water" } }
+  "bn-2506":
+    native: "animal (large or wild)"
+    notes:
+      "n1": "A large or wild animal, such as a cow, a deer or a tiger."
+    examples:
+      "বনে অনেক পশু থাকে।": "Many animals live in the forest."
+      "পশুটা দৌড়াচ্ছে।": { native: "The animal is running.", bases: { "পশুটা": "animal (large or wild)", "দৌড়াচ্ছে": "to run" } }
+  "bn-2507":
+    native: "seed"
+    notes:
+      "n1": "The small part of a plant from which a new plant grows."
+    examples:
+      "বীজ মাটিতে পোঁতো।": { native: "Plant the seed in the soil. (familiar)", bases: { "পোঁতো": "to plant; to bury" } }
+      "বীজটা ছোট।": { native: "The seed is small.", bases: { "বীজটা": "seed" } }
+  "bn-2508":
+    native: "crop; harvest"
+    notes:
+      "n1": "The plants grown on a farm, and the food gathered from them."
+    examples:
+      "এবার ফসল ভালো।": { native: "The crop is good this year.", bases: { "এবার": "this time" } }
+      "ফসল কাটা হলো।": "The harvest was gathered."
+  "bn-2509":
+    native: "field (for crops)"
+    notes:
+      "n1": "A piece of land where crops are grown."
+    examples:
+      "খেতে ধান হয়েছে।": { native: "Rice has grown in the field.", bases: { "খেতে": "field (for crops)", "ধান": "rice (the plant)" } }
+      "খেতটা বড়।": { native: "The field is big.", bases: { "খেতটা": "field (for crops)" } }
+  "bn-2510":
+    native: "low"
+    notes:
+      "n1": "Not high; the opposite of উঁচু (um̐cu)."
+    examples:
+      "জায়গাটা নিচু।": { native: "The place is low.", bases: { "জায়গাটা": "place" } }
+      "নিচু ছাদ।": "A low roof."
+  "bn-2511":
+    native: "shade; shadow"
+    notes:
+      "n1": "The dark place under a tree or a building, out of the sun."
+    examples:
+      "গাছের ছায়ায় বসো।": { native: "Sit in the shade of the tree. (familiar)", bases: { "ছায়ায়": "shade; shadow" } }
+      "ছায়াটা লম্বা।": { native: "The shadow is long.", bases: { "ছায়াটা": "shade; shadow" } }
+  "bn-2512":
+    native: "hilly; of the hills"
+    notes:
+      "n1": "Of or in the hills; used for the hill roads and villages of an area."
+    examples:
+      "পাহাড়ি রাস্তা দেখো।": "Look at the hill road. (familiar)"
+      "পাহাড়ি গ্রাম সুন্দর।": "The hill village is beautiful."
+  "bn-2513":
+    native: "farming; cultivation"
+    notes:
+      "n1": "The work of growing crops and raising animals on the land."
+    examples:
+      "চাষের জন্য জল দরকার।": { native: "Farming needs water.", bases: { "চাষের": "farming; cultivation" } }
+      "এখানে চাষ ভালো হয়।": "Farming goes well here."
+  "bn-2514":
+    native: "to farm"
+    notes:
+      "n1": "Growing crops on a piece of land."
+    examples:
+      "আমরা ধান চাষ করি।": { native: "We grow rice.", bases: { "ধান": "rice (the plant)" } }
+      "ওরা খেতে সবজি চাষ করেন।": "They grow vegetables in the field. (respectful)"
+  "bn-2515":
+    native: "to bloom (of a flower)"
+    notes:
+      "n1": "A flower opening its petals. The verb ফোটা (phoṭā) also means to boil."
+    examples:
+      "ফুলটা ফুটেছে।": "The flower has bloomed."
+      "গাছে অনেক ফুল ফুটছে।": "Many flowers are blooming on the tree."
+  "bn-2516":
+    native: "bush"
+    notes:
+      "n1": "A small, thick plant with many branches, smaller than a tree."
+    examples:
+      "ঝোপের পাশে সাপ।": { native: "There is a snake by the bush.", bases: { "ঝোপের": "bush" } }
+      "ঝোপটা খুব ঘন।": { native: "The bush is very thick.", bases: { "ঝোপটা": "bush" } }
+  "bn-2517":
+    native: "peak (of a mountain)"
+    notes:
+      "n1": "The top of a mountain or a hill."
+    examples:
+      "পাহাড়ের চূড়ায় বরফ আছে।": { native: "There is snow on the mountain peak.", bases: { "চূড়ায়": "peak (of a mountain)", "আছে": "to be; there is" } }
+      "চূড়াটা উঁচু।": { native: "The peak is high.", bases: { "চূড়াটা": "peak (of a mountain)" } }
+  "bn-2518":
+    native: "bank; shore (of a river or sea)"
+    notes:
+      "n1": "The land beside a river, lake or sea."
+    examples:
+      "নদীর তীরে একটি গাছ আছে।": { native: "There is a tree on the riverbank.", bases: { "তীরে": "bank; shore (of a river or sea)", "আছে": "to be; there is" } }
+      "সমুদ্রের তীর পরিষ্কার।": "The seashore is clean."
+  "bn-2519":
+    native: "trees and plants"
+    notes:
+      "n1": "Trees and smaller plants together."
+    examples:
+      "এখানে অনেক গাছপালা।": "There are many trees and plants here."
+      "গাছপালা ভালো থাকে।": "The trees and plants stay healthy."
+  "bn-2520":
+    native: "honeybee"
+    notes:
+      "n1": "A bee that makes honey."
+    examples:
+      "ফুলে মৌমাছি বসে।": "A honeybee sits on the flower."
+      "মৌমাছিটা উড়ছে।": { native: "The honeybee is flying.", bases: { "মৌমাছিটা": "honeybee", "উড়ছে": "to fly" } }
+  "bn-2521":
+    native: "nature"
+    notes:
+      "n1": "Everything that is not made by people: land, water, plants and animals."
+    examples:
+      "প্রকৃতি খুব সুন্দর।": "Nature is very beautiful."
+      "আমি প্রকৃতি ভালোবাসি।": "I love nature."
+  "bn-2522":
+    native: "sunset"
+    notes:
+      "n1": "The time when the sun goes down in the evening."
+    examples:
+      "সূর্যাস্ত দেখো।": "Look at the sunset. (familiar)"
+      "সূর্যাস্তের সময় বাড়ি ফিরি।": { native: "I come home at sunset.", bases: { "সূর্যাস্তের": "sunset" } }
+  "bn-2523":
+    native: "sunrise"
+    notes:
+      "n1": "The time when the sun comes up in the morning."
+    examples:
+      "সূর্যোদয়ের সময় ঠান্ডা।": { native: "It is cold at sunrise.", bases: { "সূর্যোদয়ের": "sunrise" } }
+      "সূর্যোদয় দেখতে যাব।": "I will go to see the sunrise."
+  "bn-2524":
+    native: "to fall (of leaves)"
+    notes:
+      "n1": "Leaves or petals dropping from a plant."
+    examples:
+      "পাতা ঝরছে।": { native: "The leaves are falling.", bases: { "ঝরছে": "to fall (of leaves)" } }
+      "ফুলগুলো ঝরে গেছে।": { native: "The flowers have fallen.", bases: { "ঝরে": "to fall (of leaves)" } }
+  "bn-2525":
+    native: "to sprout"
+    notes:
+      "n1": "A seed or plant starting to grow and come up out of the soil."
+    examples:
+      "বীজ থেকে চারা গজাল।": { native: "A seedling sprouted from the seed.", bases: { "চারা": "seedling", "গজাল": "to sprout" } }
+      "ঘাস গজাচ্ছে।": { native: "Grass is sprouting.", bases: { "গজাচ্ছে": "to sprout" } }
+  "bn-2526":
+    native: "to grow (of plants)"
+    notes:
+      "n1": "Becoming bigger over time; for people the same verb is used."
+    examples:
+      "গাছটা বড় হচ্ছে।": "The tree is growing."
+      "চারাগুলো বড় হয়েছে।": { native: "The seedlings have grown.", bases: { "চারাগুলো": "seedling" } }

@@ -394,22 +394,27 @@ units:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "bn-phone", theme: "phone", words: 40 }
+  - decks: ["bn-phone", "bn-phone-sentences", "*"]
+    words: 42
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "bn-journey", theme: "journey", words: 55 }
+  - decks: ["bn-journey", "bn-journey-sentences", "*"]
+    words: 38
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "bn-nature", theme: "nature", words: 50 }
+  - decks: ["bn-nature", "bn-nature-sentences", "*"]
+    words: 34
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
     reading_passages:
       - { id: "park-signs", text: { "en": "Signs in a park" } }
-  - planned: { id: "bn-grammar-conjunctive", grammar: "conjunctive" }
+  - decks: ["bn-grammar-conjunctive", "bn-grammar-conjunctive-sentences"]
+    words: 0
+    grammar: ["conjunctive"]
     listening_passages:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:

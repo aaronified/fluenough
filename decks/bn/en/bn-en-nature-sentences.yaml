@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-nature-sentences"
+kind: "layer"
+core: "bn-nature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature: sentences"
+description: "Short sentences about nature. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2527":
+    native: "Many birds sit in the tree."
+    confusables: { "c1": { why: "fish: not a bird in a tree" }, "c2": { why: "flower: not a bird" } }
+  "bn-2528":
+    native: "The river's water is very cold."
+    confusables: { "c1": { why: "hot: the opposite of cold" }, "c2": { why: "salty: a taste, not a temperature" } }
+  "bn-2529":
+    native: "There is snow on the mountain peak."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "on a tree: not a peak" }, "c2": { why: "in a river: not a peak" } }
+  "bn-2530":
+    native: "I walk at sunrise."
+    confusables: { "c1": { why: "of sunset: the opposite time" }, "c2": { why: "at night: not at sunrise" } }
+  "bn-2531":
+    native: "There are clouds in the sky."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "moon: not a cloud" }, "c2": { why: "sun: not a cloud" } }
+  "bn-2532":
+    native: "The soil is wet after the rain."
+    confusables: { "c1": { why: "dry: the opposite of wet" }, "c2": { why: "cold: not wet" } }
+  "bn-2533":
+    native: "The flowers are beautiful."
+    confusables: { "c1": { why: "leaf: not a flower" }, "c2": { why: "stone: not a flower" } }
+  "bn-2534":
+    native: "Leaves fall in the wind."
+    confusables: { "c1": { why: "rain: not the wind" }, "c2": { why: "sunshine: not the wind" } }
+  "bn-2535":
+    native: "There is a tree on the riverbank."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "sea: not a riverbank" }, "c2": { why: "lake: not a riverbank" } }
+  "bn-2536":
+    native: "There are fish in the pond."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "on a tree: not in a pond" }, "c2": { why: "on a stone: not in a pond" } }
+  "bn-2537":
+    native: "Many animals live in the forest."
+    confusables: { "c1": { why: "in the city: not the forest" }, "c2": { why: "at school: not the forest" } }
+  "bn-2538":
+    native: "Look at the hill road. (familiar)"
+    confusables: { "c1": { why: "flat: the opposite of hilly" }, "c2": { why: "sloping: a different shape" } }

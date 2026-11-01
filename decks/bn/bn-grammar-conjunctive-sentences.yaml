@@ -1,0 +1,90 @@
+schema: 1
+id: "bn-grammar-conjunctive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2539"
+    target: "আমি স্নান করে খাই।"
+    reading: "āmi snān kôre khāi."
+    ipa: "ami snan kɔre kʰai"
+    pos: "phrase"
+    bases: [{ word: "স্নান", base: "স্নান", reading: "snān" }, { word: "করে", ref: "bn-0102" }, { word: "খাই", ref: "bn-0876" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "বসি", reading: "bosi", kind: "word" }, { id: "c2", word: "গল্প", reading: "gôlp", kind: "word" }]
+  - id: "bn-2540"
+    target: "সে বই পড়ে ঘুমায়।"
+    reading: "se boi pôṛe ghumāy."
+    ipa: "se boi pɔɽe ɡʱumaj"
+    pos: "phrase"
+    bases: [{ word: "পড়ে", ref: "bn-0119" }, { word: "ঘুমায়", base: "ঘুমানো", reading: "ghumāno" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "খাই", reading: "khāi", kind: "word" }, { id: "c2", word: "বাড়ি", reading: "bāṛi", kind: "word" }]
+  - id: "bn-2541"
+    target: "দোকানে গিয়ে দুধ কিনলাম।"
+    reading: "dokāne giye dudh kinolām."
+    ipa: "d̪okane ɡije d̪ud̪ʱ kinolam"
+    pos: "phrase"
+    bases: [{ word: "দোকানে", ref: "bn-0250" }, { word: "গিয়ে", ref: "bn-0873" }, { word: "কিনলাম", ref: "bn-0890" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "বাড়িতে", reading: "bāṛite", kind: "word" }, { id: "c2", word: "বেচলাম", reading: "becolām", kind: "word" }]
+  - id: "bn-2542"
+    target: "খেয়ে বাইরে যাও।"
+    reading: "kheye bāire jāo."
+    ipa: "kʰeje baire dʒao"
+    pos: "phrase"
+    bases: [{ word: "খেয়ে", ref: "bn-0876" }, { word: "যাও", ref: "bn-0873" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "খাও", reading: "khāo", kind: "word" }, { id: "c2", word: "বাড়ি", reading: "bāṛi", kind: "word" }]
+  - id: "bn-2543"
+    target: "বিছানায় শুয়ে গল্প শুনি।"
+    reading: "bichānāy śuye gôlp śuni."
+    ipa: "bitʃʰanaj ʃuje ɡɔlp ʃuni"
+    pos: "phrase"
+    bases: [{ word: "বিছানায়", ref: "bn-0606" }, { word: "শুয়ে", ref: "bn-1120" }, { word: "শুনি", ref: "bn-0878" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "বসি", reading: "bosi", kind: "word" }, { id: "c2", word: "খাই", reading: "khāi", kind: "word" }]
+  - id: "bn-2544"
+    target: "সে ফোন ধরে কথা বলল।"
+    reading: "se phon dhôre kôthā bôlol."
+    ipa: "se pʰon d̪ʱɔre kɔt̪ʰa bɔlol"
+    pos: "phrase"
+    bases: [{ word: "ধরে", ref: "bn-1107" }, { word: "বলল", ref: "bn-0879" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "ধরল", reading: "dhôrol", kind: "word" }, { id: "c2", word: "রাখল", reading: "rākhol", kind: "word" }]
+  - id: "bn-2545"
+    target: "মা রান্না করে আমাদের ডাকেন।"
+    reading: "mā rānnā kôre āmāder ḍāken."
+    ipa: "ma ranna kɔre amad̪er ɖaken"
+    pos: "phrase"
+    bases: [{ word: "করে", ref: "bn-0102" }, { word: "আমাদের", base: "আমরা", reading: "āmorā" }, { word: "ডাকেন", ref: "bn-0898" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "খান", reading: "khān", kind: "word" }, { id: "c2", word: "যান", reading: "jān", kind: "word" }]
+  - id: "bn-2546"
+    target: "আমি উঠে দাঁড়ালাম।"
+    reading: "āmi uṭhe dām̐ṛālām."
+    ipa: "ami uʈʰe d̪ãɽalam"
+    pos: "phrase"
+    bases: [{ word: "উঠে", ref: "bn-0885" }, { word: "দাঁড়ালাম", ref: "bn-0886" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "বসলাম", reading: "bôsolām", kind: "word" }, { id: "c2", word: "শুলাম", reading: "śulām", kind: "word" }]
+  - id: "bn-2547"
+    target: "বাবা অফিস থেকে এসে চা খান।"
+    reading: "bābā ôphis theke ese cā khān."
+    ipa: "baba ɔpʰis t̪ʰeke ese tʃa kʰan"
+    pos: "phrase"
+    bases: [{ word: "এসে", ref: "bn-0872" }, { word: "খান", ref: "bn-0876" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "যান", reading: "jān", kind: "word" }, { id: "c2", word: "বাড়িতে", reading: "bāṛite", kind: "word" }]
+  - id: "bn-2548"
+    target: "টাকা পেয়ে দোকানে গেলাম।"
+    reading: "ṭākā peye dokāne gelām."
+    ipa: "ʈaka peje d̪okane ɡelam"
+    pos: "phrase"
+    bases: [{ word: "পেয়ে", ref: "bn-0891" }, { word: "দোকানে", ref: "bn-0250" }, { word: "গেলাম", ref: "bn-0873" }]
+    rules: ["bn-rule-conjunctive"]
+    confusables: [{ id: "c1", word: "দিয়ে", reading: "diye", kind: "word" }, { id: "c2", word: "খরচ", reading: "khôroc", kind: "word" }]

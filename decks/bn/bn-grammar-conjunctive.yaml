@@ -1,0 +1,529 @@
+schema: 1
+id: "bn-grammar-conjunctive"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["bn-0251", "bn-0291", "bn-0306", "bn-0322", "bn-2330"]
+  slots: ["conjunctive", "negative"]
+  rows:
+    - word: "bn-0119"
+      forms: { "conjunctive": "পড়ে", "negative": "না পড়ে" }
+      readings: { "conjunctive": "pôṛe", "negative": "nā pôṛe" }
+    - word: "bn-0736"
+      forms: { "conjunctive": "পেরে", "negative": "না পেরে" }
+      readings: { "conjunctive": "pere", "negative": "nā pere" }
+    - word: "bn-0741"
+      forms: { "conjunctive": "চেয়ে", "negative": "না চেয়ে" }
+      readings: { "conjunctive": "ceye", "negative": "nā ceye" }
+    - word: "bn-0872"
+      forms: { "conjunctive": "এসে", "negative": "না এসে" }
+      readings: { "conjunctive": "ese", "negative": "nā ese" }
+    - word: "bn-0873"
+      forms: { "conjunctive": "গিয়ে", "negative": "না গিয়ে" }
+      readings: { "conjunctive": "giye", "negative": "nā giye" }
+    - word: "bn-0874"
+      forms: { "conjunctive": "হয়ে", "negative": "না হয়ে" }
+      readings: { "conjunctive": "hôye", "negative": "nā hôye" }
+    - word: "bn-0875"
+      forms: { "conjunctive": "থেকে", "negative": "না থেকে" }
+      readings: { "conjunctive": "theke", "negative": "nā theke" }
+    - word: "bn-0876"
+      forms: { "conjunctive": "খেয়ে", "negative": "না খেয়ে" }
+      readings: { "conjunctive": "kheye", "negative": "nā kheye" }
+    - word: "bn-0877"
+      forms: { "conjunctive": "দেখে", "negative": "না দেখে" }
+      readings: { "conjunctive": "dekhe", "negative": "nā dekhe" }
+    - word: "bn-0878"
+      forms: { "conjunctive": "শুনে", "negative": "না শুনে" }
+      readings: { "conjunctive": "śune", "negative": "nā śune" }
+    - word: "bn-0879"
+      forms: { "conjunctive": "বলে", "negative": "না বলে" }
+      readings: { "conjunctive": "bôle", "negative": "nā bôle" }
+    - word: "bn-0880"
+      forms: { "conjunctive": "লিখে", "negative": "না লিখে" }
+      readings: { "conjunctive": "likhe", "negative": "nā likhe" }
+    - word: "bn-0881"
+      forms: { "conjunctive": "জেনে", "negative": "না জেনে" }
+      readings: { "conjunctive": "jene", "negative": "nā jene" }
+    - word: "bn-0882"
+      forms: { "conjunctive": "বুঝে", "negative": "না বুঝে" }
+      readings: { "conjunctive": "bujhe", "negative": "nā bujhe" }
+    - word: "bn-0883"
+      forms: { "conjunctive": "শিখে", "negative": "না শিখে" }
+      readings: { "conjunctive": "śikhe", "negative": "nā śikhe" }
+    - word: "bn-0884"
+      forms: { "conjunctive": "বসে", "negative": "না বসে" }
+      readings: { "conjunctive": "bôse", "negative": "nā bôse" }
+    - word: "bn-0885"
+      forms: { "conjunctive": "উঠে", "negative": "না উঠে" }
+      readings: { "conjunctive": "uṭhe", "negative": "nā uṭhe" }
+    - word: "bn-0886"
+      forms: { "conjunctive": "দাঁড়িয়ে", "negative": "না দাঁড়িয়ে" }
+      readings: { "conjunctive": "dām̐ṛiye", "negative": "nā dām̐ṛiye" }
+    - word: "bn-0887"
+      forms: { "conjunctive": "ঘুমিয়ে", "negative": "না ঘুমিয়ে" }
+      readings: { "conjunctive": "ghumiye", "negative": "nā ghumiye" }
+    - word: "bn-0888"
+      forms: { "conjunctive": "দিয়ে", "negative": "না দিয়ে" }
+      readings: { "conjunctive": "diye", "negative": "nā diye" }
+    - word: "bn-0889"
+      forms: { "conjunctive": "নিয়ে", "negative": "না নিয়ে" }
+      readings: { "conjunctive": "niye", "negative": "nā niye" }
+    - word: "bn-0890"
+      forms: { "conjunctive": "কিনে", "negative": "না কিনে" }
+      readings: { "conjunctive": "kine", "negative": "nā kine" }
+    - word: "bn-0891"
+      forms: { "conjunctive": "পেয়ে", "negative": "না পেয়ে" }
+      readings: { "conjunctive": "peye", "negative": "nā peye" }
+    - word: "bn-0892"
+      forms: { "conjunctive": "চলে", "negative": "না চলে" }
+      readings: { "conjunctive": "côle", "negative": "nā côle" }
+    - word: "bn-0893"
+      forms: { "conjunctive": "এনে", "negative": "না এনে" }
+      readings: { "conjunctive": "ene", "negative": "nā ene" }
+    - word: "bn-0894"
+      forms: { "conjunctive": "রেখে", "negative": "না রেখে" }
+      readings: { "conjunctive": "rekhe", "negative": "nā rekhe" }
+    - word: "bn-0895"
+      forms: { "conjunctive": "খেলে", "negative": "না খেলে" }
+      readings: { "conjunctive": "khele", "negative": "nā khele" }
+    - word: "bn-0896"
+      forms: { "conjunctive": "হেঁটে", "negative": "না হেঁটে" }
+      readings: { "conjunctive": "hem̐ṭe", "negative": "nā hem̐ṭe" }
+    - word: "bn-0897"
+      forms: { "conjunctive": "খুলে", "negative": "না খুলে" }
+      readings: { "conjunctive": "khule", "negative": "nā khule" }
+    - word: "bn-0898"
+      forms: { "conjunctive": "ডেকে", "negative": "না ডেকে" }
+      readings: { "conjunctive": "ḍeke", "negative": "nā ḍeke" }
+    - word: "bn-0899"
+      forms: { "conjunctive": "হেসে", "negative": "না হেসে" }
+      readings: { "conjunctive": "hese", "negative": "nā hese" }
+    - word: "bn-1099"
+      forms: { "conjunctive": "রেঁধে", "negative": "না রেঁধে" }
+      readings: { "conjunctive": "rem̐dhe", "negative": "nā rem̐dhe" }
+    - word: "bn-1100"
+      forms: { "conjunctive": "ধুয়ে", "negative": "না ধুয়ে" }
+      readings: { "conjunctive": "dhuye", "negative": "nā dhuye" }
+    - word: "bn-1101"
+      forms: { "conjunctive": "কেটে", "negative": "না কেটে" }
+      readings: { "conjunctive": "keṭe", "negative": "nā keṭe" }
+    - word: "bn-1102"
+      forms: { "conjunctive": "ভেঙে", "negative": "না ভেঙে" }
+      readings: { "conjunctive": "bheṅe", "negative": "nā bheṅe" }
+    - word: "bn-1103"
+      forms: { "conjunctive": "ফেলে", "negative": "না ফেলে" }
+      readings: { "conjunctive": "phele", "negative": "nā phele" }
+    - word: "bn-1104"
+      forms: { "conjunctive": "তুলে", "negative": "না তুলে" }
+      readings: { "conjunctive": "tule", "negative": "nā tule" }
+    - word: "bn-1105"
+      forms: { "conjunctive": "খুঁজে", "negative": "না খুঁজে" }
+      readings: { "conjunctive": "khum̐je", "negative": "nā khum̐je" }
+    - word: "bn-1106"
+      forms: { "conjunctive": "হারিয়ে", "negative": "না হারিয়ে" }
+      readings: { "conjunctive": "hāriye", "negative": "nā hāriye" }
+    - word: "bn-1107"
+      forms: { "conjunctive": "ধরে", "negative": "না ধরে" }
+      readings: { "conjunctive": "dhôre", "negative": "nā dhôre" }
+    - word: "bn-1108"
+      forms: { "conjunctive": "পাঠিয়ে", "negative": "না পাঠিয়ে" }
+      readings: { "conjunctive": "pāṭhiye", "negative": "nā pāṭhiye" }
+    - word: "bn-1109"
+      forms: { "conjunctive": "পৌঁছে", "negative": "না পৌঁছে" }
+      readings: { "conjunctive": "poum̐che", "negative": "nā poum̐che" }
+    - word: "bn-1110"
+      forms: { "conjunctive": "ফিরে", "negative": "না ফিরে" }
+      readings: { "conjunctive": "phire", "negative": "nā phire" }
+    - word: "bn-1111"
+      forms: { "conjunctive": "থেমে", "negative": "না থেমে" }
+      readings: { "conjunctive": "theme", "negative": "nā theme" }
+    - word: "bn-1112"
+      forms: { "conjunctive": "ঢেলে", "negative": "না ঢেলে" }
+      readings: { "conjunctive": "ḍhele", "negative": "nā ḍhele" }
+    - word: "bn-1113"
+      forms: { "conjunctive": "গুনে", "negative": "না গুনে" }
+      readings: { "conjunctive": "gune", "negative": "nā gune" }
+    - word: "bn-1114"
+      forms: { "conjunctive": "শিখিয়ে", "negative": "না শিখিয়ে" }
+      readings: { "conjunctive": "śikhiye", "negative": "nā śikhiye" }
+    - word: "bn-1115"
+      forms: { "conjunctive": "দৌড়িয়ে", "negative": "না দৌড়িয়ে" }
+      readings: { "conjunctive": "douṛiye", "negative": "nā douṛiye" }
+    - word: "bn-1116"
+      forms: { "conjunctive": "উড়ে", "negative": "না উড়ে" }
+      readings: { "conjunctive": "uṛe", "negative": "nā uṛe" }
+    - word: "bn-1117"
+      forms: { "conjunctive": "লাফিয়ে", "negative": "না লাফিয়ে" }
+      readings: { "conjunctive": "lāphiye", "negative": "nā lāphiye" }
+    - word: "bn-1118"
+      forms: { "conjunctive": "ভেবে", "negative": "না ভেবে" }
+      readings: { "conjunctive": "bhebe", "negative": "nā bhebe" }
+    - word: "bn-1119"
+      forms: { "conjunctive": "কেঁদে", "negative": "না কেঁদে" }
+      readings: { "conjunctive": "kem̐de", "negative": "nā kem̐de" }
+    - word: "bn-1120"
+      forms: { "conjunctive": "শুয়ে", "negative": "না শুয়ে" }
+      readings: { "conjunctive": "śuye", "negative": "nā śuye" }
+    - word: "bn-1121"
+      forms: { "conjunctive": "মুছে", "negative": "না মুছে" }
+      readings: { "conjunctive": "muche", "negative": "nā muche" }
+    - word: "bn-1122"
+      forms: { "conjunctive": "ঘুরে", "negative": "না ঘুরে" }
+      readings: { "conjunctive": "ghure", "negative": "nā ghure" }
+    - word: "bn-0677"
+      forms: { "conjunctive": "কাজ করে", "negative": "কাজ না করে" }
+      readings: { "conjunctive": "kāj kôre", "negative": "kāj nā kôre" }
+    - word: "bn-0678"
+      forms: { "conjunctive": "বাজার করে", "negative": "বাজার না করে" }
+      readings: { "conjunctive": "bājār kôre", "negative": "bājār nā kôre" }
+    - word: "bn-0679"
+      forms: { "conjunctive": "ফোন করে", "negative": "ফোন না করে" }
+      readings: { "conjunctive": "phon kôre", "negative": "phon nā kôre" }
+    - word: "bn-0680"
+      forms: { "conjunctive": "গল্প করে", "negative": "গল্প না করে" }
+      readings: { "conjunctive": "gôlp kôre", "negative": "gôlp nā kôre" }
+    - word: "bn-0681"
+      forms: { "conjunctive": "বিশ্রাম করে", "negative": "বিশ্রাম না করে" }
+      readings: { "conjunctive": "biśrām kôre", "negative": "biśrām nā kôre" }
+    - word: "bn-0682"
+      forms: { "conjunctive": "ব্যায়াম করে", "negative": "ব্যায়াম না করে" }
+      readings: { "conjunctive": "bêyām kôre", "negative": "bêyām nā kôre" }
+    - word: "bn-0683"
+      forms: { "conjunctive": "পরিষ্কার করে", "negative": "পরিষ্কার না করে" }
+      readings: { "conjunctive": "poriśkār kôre", "negative": "poriśkār nā kôre" }
+    - word: "bn-0684"
+      forms: { "conjunctive": "বিয়ে করে", "negative": "বিয়ে না করে" }
+      readings: { "conjunctive": "biye kôre", "negative": "biye nā kôre" }
+    - word: "bn-0685"
+      forms: { "conjunctive": "জিজ্ঞেস করে", "negative": "জিজ্ঞেস না করে" }
+      readings: { "conjunctive": "jigges kôre", "negative": "jigges nā kôre" }
+    - word: "bn-0686"
+      forms: { "conjunctive": "শুরু করে", "negative": "শুরু না করে" }
+      readings: { "conjunctive": "śuru kôre", "negative": "śuru nā kôre" }
+    - word: "bn-0687"
+      forms: { "conjunctive": "শেষ করে", "negative": "শেষ না করে" }
+      readings: { "conjunctive": "śeś kôre", "negative": "śeś nā kôre" }
+    - word: "bn-0688"
+      forms: { "conjunctive": "ভুল করে", "negative": "ভুল না করে" }
+      readings: { "conjunctive": "bhul kôre", "negative": "bhul nā kôre" }
+    - word: "bn-0689"
+      forms: { "conjunctive": "ঠিক করে", "negative": "ঠিক না করে" }
+      readings: { "conjunctive": "ṭhik kôre", "negative": "ṭhik nā kôre" }
+    - word: "bn-0690"
+      forms: { "conjunctive": "সাহায্য করে", "negative": "সাহায্য না করে" }
+      readings: { "conjunctive": "sāhājj kôre", "negative": "sāhājj nā kôre" }
+    - word: "bn-0691"
+      forms: { "conjunctive": "চেষ্টা করে", "negative": "চেষ্টা না করে" }
+      readings: { "conjunctive": "ceśṭā kôre", "negative": "ceśṭā nā kôre" }
+    - word: "bn-0692"
+      forms: { "conjunctive": "অপেক্ষা করে", "negative": "অপেক্ষা না করে" }
+      readings: { "conjunctive": "ôpekkhā kôre", "negative": "ôpekkhā nā kôre" }
+    - word: "bn-0693"
+      forms: { "conjunctive": "পছন্দ করে", "negative": "পছন্দ না করে" }
+      readings: { "conjunctive": "pôchond kôre", "negative": "pôchond nā kôre" }
+    - word: "bn-0694"
+      forms: { "conjunctive": "গান করে", "negative": "গান না করে" }
+      readings: { "conjunctive": "gān kôre", "negative": "gān nā kôre" }
+    - word: "bn-0695"
+      forms: { "conjunctive": "রাগ করে", "negative": "রাগ না করে" }
+      readings: { "conjunctive": "rāg kôre", "negative": "rāg nā kôre" }
+    - word: "bn-0696"
+      forms: { "conjunctive": "মনে পড়ে", "negative": "মনে না পড়ে" }
+      readings: { "conjunctive": "mône pôṛe", "negative": "mône nā pôṛe" }
+    - word: "bn-0697"
+      forms: { "conjunctive": "দেরি হয়ে", "negative": "দেরি না হয়ে" }
+      readings: { "conjunctive": "deri hôye", "negative": "deri nā hôye" }
+    - word: "bn-1689"
+      forms: { "conjunctive": "বেচে", "negative": "না বেচে" }
+      readings: { "conjunctive": "bece", "negative": "nā bece" }
+    - word: "bn-1701"
+      forms: { "conjunctive": "বদলিয়ে", "negative": "না বদলিয়ে" }
+      readings: { "conjunctive": "bôdoliye", "negative": "nā bôdoliye" }
+    - word: "bn-1715"
+      forms: { "conjunctive": "কমিয়ে", "negative": "না কমিয়ে" }
+      readings: { "conjunctive": "komiye", "negative": "nā komiye" }
+    - word: "bn-2097"
+      forms: { "conjunctive": "ফুটে", "negative": "না ফুটে" }
+      readings: { "conjunctive": "phuṭe", "negative": "nā phuṭe" }
+    - word: "bn-2098"
+      forms: { "conjunctive": "বেটে", "negative": "না বেটে" }
+      readings: { "conjunctive": "beṭe", "negative": "nā beṭe" }
+    - word: "bn-2099"
+      forms: { "conjunctive": "কুটে", "negative": "না কুটে" }
+      readings: { "conjunctive": "kuṭe", "negative": "nā kuṭe" }
+    - word: "bn-2111"
+      forms: { "conjunctive": "মেখে", "negative": "না মেখে" }
+      readings: { "conjunctive": "mekhe", "negative": "nā mekhe" }
+    - word: "bn-2112"
+      forms: { "conjunctive": "নেড়ে", "negative": "না নেড়ে" }
+      readings: { "conjunctive": "neṛe", "negative": "nā neṛe" }
+    - word: "bn-2113"
+      forms: { "conjunctive": "কষে", "negative": "না কষে" }
+      readings: { "conjunctive": "kôśe", "negative": "nā kôśe" }
+    - word: "bn-2114"
+      forms: { "conjunctive": "মিশিয়ে", "negative": "না মিশিয়ে" }
+      readings: { "conjunctive": "miśiye", "negative": "nā miśiye" }
+    - word: "bn-2115"
+      forms: { "conjunctive": "ছেঁকে", "negative": "না ছেঁকে" }
+      readings: { "conjunctive": "chem̐ke", "negative": "nā chem̐ke" }
+    - word: "bn-2123"
+      forms: { "conjunctive": "কুচিয়ে", "negative": "না কুচিয়ে" }
+      readings: { "conjunctive": "kuciye", "negative": "nā kuciye" }
+    - word: "bn-2128"
+      forms: { "conjunctive": "সেঁকে", "negative": "না সেঁকে" }
+      readings: { "conjunctive": "sem̐ke", "negative": "nā sem̐ke" }
+    - word: "bn-2130"
+      forms: { "conjunctive": "ভাপিয়ে", "negative": "না ভাপিয়ে" }
+      readings: { "conjunctive": "bhāpiye", "negative": "nā bhāpiye" }
+    - word: "bn-2131"
+      forms: { "conjunctive": "ভিজিয়ে", "negative": "না ভিজিয়ে" }
+      readings: { "conjunctive": "bhijiye", "negative": "nā bhijiye" }
+    - word: "bn-2159"
+      forms: { "conjunctive": "পড়িয়ে", "negative": "না পড়িয়ে" }
+      readings: { "conjunctive": "poṛiye", "negative": "nā poṛiye" }
+    - word: "bn-2217"
+      forms: { "conjunctive": "এঁকে", "negative": "না এঁকে" }
+      readings: { "conjunctive": "em̐ke", "negative": "nā em̐ke" }
+    - word: "bn-2221"
+      forms: { "conjunctive": "বাজিয়ে", "negative": "না বাজিয়ে" }
+      readings: { "conjunctive": "bājiye", "negative": "nā bājiye" }
+    - word: "bn-2222"
+      forms: { "conjunctive": "গেয়ে", "negative": "না গেয়ে" }
+      readings: { "conjunctive": "geye", "negative": "nā geye" }
+    - word: "bn-2229"
+      forms: { "conjunctive": "জিতে", "negative": "না জিতে" }
+      readings: { "conjunctive": "jite", "negative": "nā jite" }
+    - word: "bn-2230"
+      forms: { "conjunctive": "হেরে", "negative": "না হেরে" }
+      readings: { "conjunctive": "here", "negative": "nā here" }
+    - word: "bn-2245"
+      forms: { "conjunctive": "নেচে", "negative": "না নেচে" }
+      readings: { "conjunctive": "nece", "negative": "nā nece" }
+    - word: "bn-2248"
+      forms: { "conjunctive": "ভালোবেসে", "negative": "না ভালোবেসে" }
+      readings: { "conjunctive": "bhālobese", "negative": "nā bhālobese" }
+    - word: "bn-2264"
+      forms: { "conjunctive": "ঝাড়ু দিয়ে", "negative": "ঝাড়ু না দিয়ে" }
+      readings: { "conjunctive": "jhāṛu diye", "negative": "jhāṛu nā diye" }
+    - word: "bn-2266"
+      forms: { "conjunctive": "ধুলো ঝেড়ে", "negative": "ধুলো না ঝেড়ে" }
+      readings: { "conjunctive": "dhulo jheṛe", "negative": "dhulo nā jheṛe" }
+    - word: "bn-2271"
+      forms: { "conjunctive": "বাসন মেজে", "negative": "বাসন না মেজে" }
+      readings: { "conjunctive": "bāson meje", "negative": "bāson nā meje" }
+    - word: "bn-2272"
+      forms: { "conjunctive": "কাপড় কেচে", "negative": "কাপড় না কেচে" }
+      readings: { "conjunctive": "kāpoṛ kece", "negative": "kāpoṛ nā kece" }
+    - word: "bn-2273"
+      forms: { "conjunctive": "ইস্ত্রি করে", "negative": "ইস্ত্রি না করে" }
+      readings: { "conjunctive": "istri kôre", "negative": "istri nā kôre" }
+    - word: "bn-2274"
+      forms: { "conjunctive": "ভাঁজ করে", "negative": "ভাঁজ না করে" }
+      readings: { "conjunctive": "bhām̐j kôre", "negative": "bhām̐j nā kôre" }
+    - word: "bn-2275"
+      forms: { "conjunctive": "শুকিয়ে", "negative": "না শুকিয়ে" }
+      readings: { "conjunctive": "śukiye", "negative": "nā śukiye" }
+    - word: "bn-2276"
+      forms: { "conjunctive": "ঝুলিয়ে", "negative": "না ঝুলিয়ে" }
+      readings: { "conjunctive": "jhuliye", "negative": "nā jhuliye" }
+    - word: "bn-2277"
+      forms: { "conjunctive": "গুছিয়ে", "negative": "না গুছিয়ে" }
+      readings: { "conjunctive": "guchiye", "negative": "nā guchiye" }
+    - word: "bn-2278"
+      forms: { "conjunctive": "সাজিয়ে", "negative": "না সাজিয়ে" }
+      readings: { "conjunctive": "sājiye", "negative": "nā sājiye" }
+    - word: "bn-2279"
+      forms: { "conjunctive": "বিছানা করে", "negative": "বিছানা না করে" }
+      readings: { "conjunctive": "bichānā kôre", "negative": "bichānā nā kôre" }
+    - word: "bn-2282"
+      forms: { "conjunctive": "ভাগ করে", "negative": "ভাগ না করে" }
+      readings: { "conjunctive": "bhāg kôre", "negative": "bhāg nā kôre" }
+    - word: "bn-2286"
+      forms: { "conjunctive": "গাছে জল দিয়ে", "negative": "গাছে জল না দিয়ে" }
+      readings: { "conjunctive": "gāche jôl diye", "negative": "gāche jôl nā diye" }
+    - word: "bn-2343"
+      forms: { "conjunctive": "চুল আঁচড়িয়ে", "negative": "চুল না আঁচড়িয়ে" }
+      readings: { "conjunctive": "cul ām̐coṛiye", "negative": "cul nā ām̐coṛiye" }
+    - word: "bn-2344"
+      forms: { "conjunctive": "কেচে", "negative": "না কেচে" }
+      readings: { "conjunctive": "kece", "negative": "nā kece" }
+    - word: "bn-2345"
+      forms: { "conjunctive": "জেগে", "negative": "না জেগে" }
+      readings: { "conjunctive": "jege", "negative": "nā jege" }
+    - word: "bn-2346"
+      forms: { "conjunctive": "জ্বালিয়ে", "negative": "না জ্বালিয়ে" }
+      readings: { "conjunctive": "jāliye", "negative": "nā jāliye" }
+    - word: "bn-2347"
+      forms: { "conjunctive": "নিভিয়ে", "negative": "না নিভিয়ে" }
+      readings: { "conjunctive": "nibhiye", "negative": "nā nibhiye" }
+    - word: "bn-2348"
+      forms: { "conjunctive": "বন্ধ করে", "negative": "বন্ধ না করে" }
+      readings: { "conjunctive": "bôndh kôre", "negative": "bôndh nā kôre" }
+    - word: "bn-2349"
+      forms: { "conjunctive": "গরম করে", "negative": "গরম না করে" }
+      readings: { "conjunctive": "gôrom kôre", "negative": "gôrom nā kôre" }
+    - word: "bn-2352"
+      forms: { "conjunctive": "ভুলে", "negative": "না ভুলে" }
+      readings: { "conjunctive": "bhule", "negative": "nā bhule" }
+    - word: "bn-2353"
+      forms: { "conjunctive": "বেরিয়ে", "negative": "না বেরিয়ে" }
+      readings: { "conjunctive": "beriye", "negative": "nā beriye" }
+    - word: "bn-2354"
+      forms: { "conjunctive": "ঢুকে", "negative": "না ঢুকে" }
+      readings: { "conjunctive": "ḍhuke", "negative": "nā ḍhuke" }
+    - word: "bn-2355"
+      forms: { "conjunctive": "দেখিয়ে", "negative": "না দেখিয়ে" }
+      readings: { "conjunctive": "dekhiye", "negative": "nā dekhiye" }
+    - word: "bn-2356"
+      forms: { "conjunctive": "বুঝিয়ে", "negative": "না বুঝিয়ে" }
+      readings: { "conjunctive": "bujhiye", "negative": "nā bujhiye" }
+    - word: "bn-2357"
+      forms: { "conjunctive": "চিনে", "negative": "না চিনে" }
+      readings: { "conjunctive": "cine", "negative": "nā cine" }
+    - word: "bn-2358"
+      forms: { "conjunctive": "ছুঁয়ে", "negative": "না ছুঁয়ে" }
+      readings: { "conjunctive": "chum̐ye", "negative": "nā chum̐ye" }
+    - word: "bn-2359"
+      forms: { "conjunctive": "ঠেলে", "negative": "না ঠেলে" }
+      readings: { "conjunctive": "ṭhele", "negative": "nā ṭhele" }
+    - word: "bn-2360"
+      forms: { "conjunctive": "টেনে", "negative": "না টেনে" }
+      readings: { "conjunctive": "ṭene", "negative": "nā ṭene" }
+    - word: "bn-2361"
+      forms: { "conjunctive": "চালিয়ে", "negative": "না চালিয়ে" }
+      readings: { "conjunctive": "cāliye", "negative": "nā cāliye" }
+    - word: "bn-2363"
+      forms: { "conjunctive": "লেগে", "negative": "না লেগে" }
+      readings: { "conjunctive": "lege", "negative": "nā lege" }
+    - word: "bn-2364"
+      forms: { "conjunctive": "কেঁপে", "negative": "না কেঁপে" }
+      readings: { "conjunctive": "kem̐pe", "negative": "nā kem̐pe" }
+    - word: "bn-2365"
+      forms: { "conjunctive": "নেমে", "negative": "না নেমে" }
+      readings: { "conjunctive": "neme", "negative": "nā neme" }
+    - word: "bn-2366"
+      forms: { "conjunctive": "ঘুরিয়ে", "negative": "না ঘুরিয়ে" }
+      readings: { "conjunctive": "ghuriye", "negative": "nā ghuriye" }
+    - word: "bn-2367"
+      forms: { "conjunctive": "চালু করে", "negative": "চালু না করে" }
+      readings: { "conjunctive": "cālu kôre", "negative": "cālu nā kôre" }
+    - word: "bn-2372"
+      forms: { "conjunctive": "কামিয়ে", "negative": "না কামিয়ে" }
+      readings: { "conjunctive": "kāmiye", "negative": "nā kāmiye" }
+    - word: "bn-2373"
+      forms: { "conjunctive": "ছেঁটে", "negative": "না ছেঁটে" }
+      readings: { "conjunctive": "chem̐ṭe", "negative": "nā chem̐ṭe" }
+    - word: "bn-2374"
+      forms: { "conjunctive": "তৈরি করে", "negative": "তৈরি না করে" }
+      readings: { "conjunctive": "toiri kôre", "negative": "toiri nā kôre" }
+    - word: "bn-2375"
+      forms: { "conjunctive": "ব্যবহার করে", "negative": "ব্যবহার না করে" }
+      readings: { "conjunctive": "bêbohār kôre", "negative": "bêbohār nā kôre" }
+    - word: "bn-2376"
+      forms: { "conjunctive": "সাঁতার কেটে", "negative": "সাঁতার না কেটে" }
+      readings: { "conjunctive": "sām̐tār keṭe", "negative": "sām̐tār nā keṭe" }
+    - word: "bn-2418"
+      forms: { "conjunctive": "ফোন ধরে", "negative": "ফোন না ধরে" }
+      readings: { "conjunctive": "phon dhôre", "negative": "phon nā dhôre" }
+    - word: "bn-2419"
+      forms: { "conjunctive": "ফোন রেখে", "negative": "ফোন না রেখে" }
+      readings: { "conjunctive": "phon rekhe", "negative": "phon nā rekhe" }
+    - word: "bn-2420"
+      forms: { "conjunctive": "চার্জ দিয়ে", "negative": "চার্জ না দিয়ে" }
+      readings: { "conjunctive": "cārj diye", "negative": "cārj nā diye" }
+    - word: "bn-2421"
+      forms: { "conjunctive": "ডাউনলোড করে", "negative": "ডাউনলোড না করে" }
+      readings: { "conjunctive": "ḍāunoloḍ kôre", "negative": "ḍāunoloḍ nā kôre" }
+    - word: "bn-2422"
+      forms: { "conjunctive": "আপডেট করে", "negative": "আপডেট না করে" }
+      readings: { "conjunctive": "āpoḍeṭ kôre", "negative": "āpoḍeṭ nā kôre" }
+    - word: "bn-2423"
+      forms: { "conjunctive": "বেজে", "negative": "না বেজে" }
+      readings: { "conjunctive": "beje", "negative": "nā beje" }
+    - word: "bn-2424"
+      forms: { "conjunctive": "চালু করে", "negative": "চালু না করে" }
+      readings: { "conjunctive": "cālu kôre", "negative": "cālu nā kôre" }
+    - word: "bn-2425"
+      forms: { "conjunctive": "বন্ধ করে", "negative": "বন্ধ না করে" }
+      readings: { "conjunctive": "bôndh kôre", "negative": "bôndh nā kôre" }
+    - word: "bn-2426"
+      forms: { "conjunctive": "জবাব দিয়ে", "negative": "জবাব না দিয়ে" }
+      readings: { "conjunctive": "jôbāb diye", "negative": "jôbāb nā diye" }
+    - word: "bn-2427"
+      forms: { "conjunctive": "অপেক্ষা করে", "negative": "অপেক্ষা না করে" }
+      readings: { "conjunctive": "ôpekkhā kôre", "negative": "ôpekkhā nā kôre" }
+    - word: "bn-2428"
+      forms: { "conjunctive": "মেসেজ পাঠিয়ে", "negative": "মেসেজ না পাঠিয়ে" }
+      readings: { "conjunctive": "mesej pāṭhiye", "negative": "mesej nā pāṭhiye" }
+    - word: "bn-2429"
+      forms: { "conjunctive": "কল করে", "negative": "কল না করে" }
+      readings: { "conjunctive": "kôl kôre", "negative": "kôl nā kôre" }
+    - word: "bn-2430"
+      forms: { "conjunctive": "ছবি পাঠিয়ে", "negative": "ছবি না পাঠিয়ে" }
+      readings: { "conjunctive": "chobi pāṭhiye", "negative": "chobi nā pāṭhiye" }
+    - word: "bn-2458"
+      forms: { "conjunctive": "থামিয়ে", "negative": "না থামিয়ে" }
+      readings: { "conjunctive": "thāmiye", "negative": "nā thāmiye" }
+    - word: "bn-2459"
+      forms: { "conjunctive": "ফিরে এসে", "negative": "ফিরে না এসে" }
+      readings: { "conjunctive": "phire ese", "negative": "phire nā ese" }
+    - word: "bn-2460"
+      forms: { "conjunctive": "টিকিট কেটে", "negative": "টিকিট না কেটে" }
+      readings: { "conjunctive": "ṭikiṭ keṭe", "negative": "ṭikiṭ nā keṭe" }
+    - word: "bn-2466"
+      forms: { "conjunctive": "দেরি করে", "negative": "দেরি না করে" }
+      readings: { "conjunctive": "deri kôre", "negative": "deri nā kôre" }
+    - word: "bn-2467"
+      forms: { "conjunctive": "গাড়িতে উঠে", "negative": "গাড়িতে না উঠে" }
+      readings: { "conjunctive": "gāṛite uṭhe", "negative": "gāṛite nā uṭhe" }
+    - word: "bn-2468"
+      forms: { "conjunctive": "গাড়ি থেকে নেমে", "negative": "গাড়ি থেকে না নেমে" }
+      readings: { "conjunctive": "gāṛi theke neme", "negative": "gāṛi theke nā neme" }
+    - word: "bn-2469"
+      forms: { "conjunctive": "ট্রেন ধরে", "negative": "ট্রেন না ধরে" }
+      readings: { "conjunctive": "ṭren dhôre", "negative": "ṭren nā dhôre" }
+    - word: "bn-2470"
+      forms: { "conjunctive": "গন্তব্যে পৌঁছে", "negative": "গন্তব্যে না পৌঁছে" }
+      readings: { "conjunctive": "gôntobbe poum̐che", "negative": "gôntobbe nā poum̐che" }
+    - word: "bn-2471"
+      forms: { "conjunctive": "হেঁটে গিয়ে", "negative": "হেঁটে না গিয়ে" }
+      readings: { "conjunctive": "hem̐ṭe giye", "negative": "hem̐ṭe nā giye" }
+    - word: "bn-2472"
+      forms: { "conjunctive": "রিকশা নিয়ে", "negative": "রিকশা না নিয়ে" }
+      readings: { "conjunctive": "rikośā niye", "negative": "rikośā nā niye" }
+    - word: "bn-2473"
+      forms: { "conjunctive": "ট্যাক্সি নিয়ে", "negative": "ট্যাক্সি না নিয়ে" }
+      readings: { "conjunctive": "ṭêksi niye", "negative": "ṭêksi nā niye" }
+    - word: "bn-2474"
+      forms: { "conjunctive": "গাড়ি চালিয়ে", "negative": "গাড়ি না চালিয়ে" }
+      readings: { "conjunctive": "gāṛi cāliye", "negative": "gāṛi nā cāliye" }
+    - word: "bn-2478"
+      forms: { "conjunctive": "ভ্রমণ করে", "negative": "ভ্রমণ না করে" }
+      readings: { "conjunctive": "bhrômon kôre", "negative": "bhrômon nā kôre" }
+    - word: "bn-2514"
+      forms: { "conjunctive": "চাষ করে", "negative": "চাষ না করে" }
+      readings: { "conjunctive": "cāś kôre", "negative": "cāś nā kôre" }
+    - word: "bn-2515"
+      forms: { "conjunctive": "ফুল ফুটে", "negative": "ফুল না ফুটে" }
+      readings: { "conjunctive": "phul phuṭe", "negative": "phul nā phuṭe" }
+    - word: "bn-2524"
+      forms: { "conjunctive": "ঝরে", "negative": "না ঝরে" }
+      readings: { "conjunctive": "jhôre", "negative": "nā jhôre" }
+    - word: "bn-2525"
+      forms: { "conjunctive": "গজিয়ে", "negative": "না গজিয়ে" }
+      readings: { "conjunctive": "gojiye", "negative": "nā gojiye" }
+    - word: "bn-2526"
+      forms: { "conjunctive": "বড় হয়ে", "negative": "বড় না হয়ে" }
+      readings: { "conjunctive": "bôṛ hôye", "negative": "bôṛ nā hôye" }
+rules:
+  - id: "bn-rule-conjunctive"
+    slots: ["conjunctive", "negative"]
+    words: [{ word: "-ে", reading: "-e" }, { word: "করে", reading: "kôre" }, { word: "গিয়ে", reading: "giye" }, { word: "যাওয়া", reading: "jāoyā" }, { word: "নিয়ে", reading: "niye" }, { word: "নেওয়া", reading: "neoyā" }, { word: "-িয়ে", reading: "-iye" }, { word: "না", reading: "nā" }, { word: "না করে", reading: "nā kôre" }]

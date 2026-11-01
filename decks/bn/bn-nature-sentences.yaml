@@ -1,0 +1,94 @@
+schema: 1
+id: "bn-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2527"
+    target: "গাছে অনেক পাখি বসে।"
+    reading: "gāche ônek pākhi bôse."
+    ipa: "ɡatʃʰe ɔnek pakʰi bɔse"
+    pos: "phrase"
+    bases: [{ word: "গাছে", ref: "bn-2285" }, { word: "বসে", ref: "bn-0884" }]
+    confusables: [{ id: "c1", word: "মাছ", reading: "māch", kind: "word" }, { id: "c2", word: "ফুল", reading: "phul", kind: "word" }]
+  - id: "bn-2528"
+    target: "নদীর জল খুব ঠান্ডা।"
+    reading: "nodir jôl khub ṭhānḍā."
+    ipa: "nod̪ir dʒɔl kʰub ʈʰanɖa"
+    pos: "phrase"
+    bases: [{ word: "নদীর", ref: "bn-1050" }]
+    confusables: [{ id: "c1", word: "গরম", reading: "gôrom", kind: "word" }, { id: "c2", word: "নোনতা", reading: "nonotā", kind: "word" }]
+  - id: "bn-2529"
+    target: "পাহাড়ের চূড়ায় বরফ আছে।"
+    reading: "pāhāṛer cuṛāy bôroph āche."
+    ipa: "paɦaɽer tʃuɽaj bɔropʰ atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "পাহাড়ের", ref: "bn-1067" }, { word: "চূড়ায়", ref: "bn-2517" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "গাছে", reading: "gāche", kind: "word" }, { id: "c2", word: "নদীতে", reading: "nodite", kind: "word" }]
+  - id: "bn-2530"
+    target: "সূর্যোদয়ের সময় আমি হাঁটি।"
+    reading: "surjodoyer sômoy āmi hām̐ṭi."
+    ipa: "surdʒod̪ojer sɔmoj ami ɦãʈi"
+    pos: "phrase"
+    bases: [{ word: "সূর্যোদয়ের", ref: "bn-2523" }, { word: "হাঁটি", ref: "bn-0896" }]
+    confusables: [{ id: "c1", word: "সূর্যাস্তের", reading: "surjāster", kind: "word" }, { id: "c2", word: "রাতে", reading: "rāte", kind: "word" }]
+  - id: "bn-2531"
+    target: "আকাশে মেঘ আছে।"
+    reading: "ākāśe megh āche."
+    ipa: "akaʃe meɡʱ atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "আকাশে", ref: "bn-1571" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "চাঁদ", reading: "cām̐d", kind: "word" }, { id: "c2", word: "সূর্য", reading: "surj", kind: "word" }]
+  - id: "bn-2532"
+    target: "বৃষ্টির পর মাটি ভেজা।"
+    reading: "briśṭir pôr māṭi bhejā."
+    ipa: "briʃʈir pɔr maʈi bʱedʒa"
+    pos: "phrase"
+    bases: [{ word: "বৃষ্টির", ref: "bn-1574" }]
+    confusables: [{ id: "c1", word: "শুকনো", reading: "śukono", kind: "word" }, { id: "c2", word: "ঠান্ডা", reading: "ṭhānḍā", kind: "word" }]
+  - id: "bn-2533"
+    target: "ফুলগুলো সুন্দর।"
+    reading: "phulogulo sundor."
+    ipa: "pʰuloɡulo sund̪or"
+    pos: "phrase"
+    bases: [{ word: "ফুলগুলো", ref: "bn-2225" }]
+    confusables: [{ id: "c1", word: "পাতা", reading: "pātā", kind: "word" }, { id: "c2", word: "পাথর", reading: "pāthor", kind: "word" }]
+  - id: "bn-2534"
+    target: "বাতাসে পাতা ঝরে।"
+    reading: "bātāse pātā jhôre."
+    ipa: "bat̪ase pat̪a dʒʱɔre"
+    pos: "phrase"
+    bases: [{ word: "বাতাসে", ref: "bn-1578" }, { word: "ঝরে", ref: "bn-2524" }]
+    confusables: [{ id: "c1", word: "বৃষ্টি", reading: "briśṭi", kind: "word" }, { id: "c2", word: "রোদ", reading: "rod", kind: "word" }]
+  - id: "bn-2535"
+    target: "নদীর তীরে একটি গাছ আছে।"
+    reading: "nodir tire ekoṭi gāch āche."
+    ipa: "nod̪ir t̪ire ekoʈi ɡatʃʰ atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "নদীর", ref: "bn-1050" }, { word: "তীরে", ref: "bn-2518" }, { word: "একটি", ref: "bn-0202" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "সাগর", reading: "sāgor", kind: "word" }, { id: "c2", word: "হ্রদ", reading: "hrôd", kind: "word" }]
+  - id: "bn-2536"
+    target: "পুকুরে মাছ আছে।"
+    reading: "pukure māch āche."
+    ipa: "pukure matʃʰ atʃʰe"
+    pos: "phrase"
+    bases: [{ word: "পুকুরে", ref: "bn-1051" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "গাছে", reading: "gāche", kind: "word" }, { id: "c2", word: "পাথরে", reading: "pāthore", kind: "word" }]
+  - id: "bn-2537"
+    target: "বনে অনেক পশু থাকে।"
+    reading: "bône ônek pośu thāke."
+    ipa: "bɔne ɔnek poʃu t̪ʰake"
+    pos: "phrase"
+    bases: [{ word: "বনে", ref: "bn-0053" }, { word: "থাকে", ref: "bn-0875" }]
+    confusables: [{ id: "c1", word: "শহরে", reading: "śôhore", kind: "word" }, { id: "c2", word: "স্কুলে", reading: "skule", kind: "word" }]
+  - id: "bn-2538"
+    target: "পাহাড়ি রাস্তা দেখো।"
+    reading: "pāhāṛi rāstā dekho."
+    ipa: "paɦaɽi rast̪a d̪ekʰo"
+    pos: "phrase"
+    bases: [{ word: "দেখো", ref: "bn-0877" }]
+    confusables: [{ id: "c1", word: "সমতল", reading: "sômotol", kind: "word" }, { id: "c2", word: "ঢালু", reading: "ḍhālu", kind: "word" }]

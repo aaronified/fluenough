@@ -1,0 +1,18 @@
+schema: 1
+id: "bn-en-grammar-conjunctive"
+kind: "layer"
+core: "bn-grammar-conjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Conjunctive verbs: one action, then the next"
+description: "Doing one thing and then another with the -e form: করে (kôre), doing and then, for every verb the course teaches so far. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "conjunctive": "one action, then the next: did, and then"
+    "negative": "without doing it: not doing, and then"
+rules:
+  "bn-rule-conjunctive":
+    name: "-ে (-e), -িয়ে (-iye): doing and then"
+    explanation: "A verb stem takes {1} to join one action to the next, in order: {2}, doing and then; {3}, going and then. Some stems change first: {4} gives {3}, and {6} gives {5}. Verbs whose stem ends in -ানো (-ānō) take {7}. The negative puts {8} before the form: {9}, without doing it."
