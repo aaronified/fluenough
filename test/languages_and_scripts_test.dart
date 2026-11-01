@@ -1697,6 +1697,98 @@ void main() {
     );
   });
 
+  group('placement\'s written questions', () {
+    const language = LanguageInfo(
+      code: 'bn',
+      iso639_3: 'ben',
+      name: 'Bengali',
+      script: 'bengali',
+    );
+    const english = LanguageInfo(code: 'en', iso639_3: 'eng', name: 'English');
+
+    DeckEntry deckOf(String id, List<model.Card> cards) => DeckEntry(
+      path: '$id.yaml',
+      deck: Deck(
+        id: id,
+        name: id,
+        kind: DeckKind.vocab,
+        language: language,
+        native: english,
+        license: 'CC-BY-SA-4.0',
+        cards: cards,
+      ),
+    );
+
+    List<model.Card> cards(
+      String id,
+      String meaning, {
+      Set<DrillMode> modes = const <DrillMode>{},
+    }) => <model.Card>[
+      for (var i = 0; i < 4; i++)
+        model.Card(
+          id: '$id-$i',
+          deckId: id,
+          target: 'শব্দ$id$i',
+          native: '$meaning $id $i',
+          reading: 'shobdo $id $i',
+          pos: modes.isEmpty ? 'noun' : 'other',
+          modes: modes,
+        ),
+    ];
+
+    test('a card that opts out of production, as a sound or spelling '
+        'description does, is never asked as a word to write, while an '
+        'ordinary word of the same course still is', () {
+      const noProduction = <DrillMode>{
+        DrillMode.production,
+        DrillMode.listening,
+        DrillMode.speaking,
+      };
+      final decks = <DeckEntry>[
+        for (var i = 0; i < 6; i++) deckOf('w$i', cards('w$i', 'word')),
+        deckOf(
+          'sounds',
+          cards(
+            'sounds',
+            'clusters at the start of a word',
+            modes: noProduction,
+          ),
+        ),
+      ];
+      for (var seed = 0; seed < 20; seed++) {
+        final walk = DeckWalk(decks, random: Random(seed));
+        final written = <String>[];
+        var asked = 0;
+        while (!walk.isFinished && asked++ < 100) {
+          final question = walk.question!;
+          if (question is TypeQuestion && question.produce) {
+            written.add(question.card.id);
+          }
+          walk.answer(true);
+        }
+        expect(walk.isFinished, isTrue);
+        expect(written, isNotEmpty, reason: 'ordinary words are written');
+        expect(written.where((id) => id.startsWith('sounds')), isEmpty);
+      }
+    });
+
+    test('a course of descriptions alone is placed with choices, never a '
+        'written question', () {
+      const noProduction = <DrillMode>{DrillMode.production};
+      final decks = <DeckEntry>[
+        for (var i = 0; i < 6; i++)
+          deckOf('s$i', cards('s$i', 'a sound', modes: noProduction)),
+      ];
+      final walk = DeckWalk(decks, random: Random(4));
+      var asked = 0;
+      while (!walk.isFinished && asked++ < 100) {
+        expect(walk.question, isNot(isA<TypeQuestion>()));
+        walk.answer(true);
+      }
+      expect(walk.isFinished, isTrue);
+    });
+  });
+
   group('placement\'s form questions', () {
     late DeckEntry nouns;
     setUpAll(() async {

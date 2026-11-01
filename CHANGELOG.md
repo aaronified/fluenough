@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **No more "write the word" for a sound description.** The level check no longer asks you to write the Bengali, Hindi or Telugu for a description such as "clusters at the start of a word, in Sanskrit words and loans"; cards that the drills never ask you to write, such as the sounds, spelling and register cards, are only chosen among, never typed.
+
 ## [0.8.0] - 2026-11-01
 
 ### Added
