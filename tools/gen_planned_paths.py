@@ -658,13 +658,13 @@ LANGS = {
     # The Greek stages, Pali, Aramaic and Ashokan Prakrit (owner, 2026-11-01).
     # ISO 639-3 has one code, `grc`, for all Ancient Greek: it is the Classical
     # Attic course, and the other two stages take private-use codes.
-    "qgh": L("Ancient Greek (Archaic)", "homeric", genders=["m", "f", "n"], ancient=True, script="greek_polytonic",
+    "qgh": L("Archaic Greek", "homeric", genders=["m", "f", "n"], ancient=True, script="greek_polytonic", desc="Archaic Greek, a stage of Ancient Greek",
              levels={"A1": 400, "A2": 600, "B1": 900}, sound=["vowel-length", "pitch-accent"],
              note="A reading course in the language of the Iliad and the Odyssey."),
-    "grc": L("Ancient Greek (Classical Attic)", "attic", genders=["m", "f", "n"], ancient=True, script="greek_polytonic",
+    "grc": L("Classical Greek", "attic", genders=["m", "f", "n"], ancient=True, script="greek_polytonic", desc="Classical Greek (Attic), a stage of Ancient Greek",
              levels={"A1": 400, "A2": 600, "B1": 900}, sound=["vowel-length", "pitch-accent"],
              note="A reading course in the Attic of Plato, Xenophon and Aristophanes."),
-    "qgk": L("Ancient Greek (Koine)", "koine", genders=["m", "f", "n"], ancient=True, script="greek_polytonic",
+    "qgk": L("Koine Greek", "koine", genders=["m", "f", "n"], ancient=True, script="greek_polytonic", desc="Koine Greek, a stage of Ancient Greek",
              levels={"A1": 400, "A2": 700, "B1": 1000}, sound=["vowel-length", "pitch-accent"],
              note="A reading course in the Greek of the New Testament and the papyri."),
     "pli": L("Pali", "pali", genders=["m", "f", "n"], ancient=True, script="devanagari_plain",
@@ -861,7 +861,7 @@ def render(code: str) -> str:
     units = build_units(code)
     lines = header(code, lang, units)
     lines += ["schema: 1", 'kind: "path"', f"id: {q(code + '-path')}", f"language: {q(code)}",
-              f'description: {q(lang["name"] + ": the planned path to B1. Only the phrasebook and the first words are written.")}']
+              f'description: {q(lang.get("desc", lang["name"]) + ": the planned path to B1. Only the phrasebook and the first words are written.")}']
     if lang.get("genders") is not None:
         lines.append("genders: [" + ", ".join(q(g) for g in lang["genders"]) + "]")
     if lang.get("levels"):
