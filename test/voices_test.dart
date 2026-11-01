@@ -838,8 +838,9 @@ void main() {
   group('the Voices page', () {
     Future<void> tapInstall(WidgetTester tester, AppState state) async {
       usePhone(tester);
-      // Tall enough for every bundled language's row and what is under them.
-      tester.view.physicalSize = const Size(390 * 3, 8000 * 3);
+      // Tall enough for every bundled language's row and what is under them
+      // (about sixty-five courses now, starter decks included).
+      tester.view.physicalSize = const Size(390 * 3, 24000 * 3);
       await pumpScreen(tester, const VoicesPage(), state: state);
       await scrollTo(tester, find.text(l10nOf(tester).voicesInstall));
       await tester.tap(find.text(l10nOf(tester).voicesInstall));

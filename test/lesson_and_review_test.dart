@@ -5007,7 +5007,17 @@ cards:
       'that skill',
       (tester) async {
         usePhone(tester);
-        await pumpToday(tester);
+        // A learner of Bengali: with nothing chosen, Today shows the first
+        // language of the decks, which has no daily facts.
+        await pumpToday(
+          tester,
+          state: AppState.test(
+            settings: SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningLanguages: const <String>['bn'],
+            ),
+          ),
+        );
         final l10n = l10nOf(tester);
         expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
         expect(find.byType(DeckTile), findsNothing);
