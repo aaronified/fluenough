@@ -8,6 +8,7 @@ import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
