@@ -88,11 +88,15 @@ void main() {
         final onIsolate = await progressInIsolate(job);
         final inPlace = state.progressNumbers.of(language)!;
         expect(_shown(onIsolate), _shown(inPlace), reason: '$language');
-        expect(
-          inPlace.weakestTags,
-          isNotEmpty,
-          reason: 'the fixture has tagged cards answered in $language',
-        );
+        // The fixture answers tagged words in Spanish only: Marathi's
+        // answers are script letters, which carry no tags.
+        if (language != 'mr') {
+          expect(
+            inPlace.weakestTags,
+            isNotEmpty,
+            reason: 'the fixture has tagged cards answered in $language',
+          );
+        }
       }
     });
 
@@ -210,7 +214,7 @@ void main() {
         features: FeatureRegistry.all(),
         progressRunner: waiting.call,
       );
-      await pumpScreen(tester, const StatsPage(), state: state);
+      await pumpScreen(tester, const StatsPage(), state: state, settle: false);
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
       expect(find.byType(SkillStarCard), findsNothing);
 
