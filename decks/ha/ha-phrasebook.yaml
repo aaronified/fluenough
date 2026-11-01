@@ -1,0 +1,215 @@
+schema: 1
+id: "ha-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ha", iso639_3: "hau", name: "Hausa", script: "latin", tts: "ha-NG", icon: "Ha" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ha-0011"
+    target: "Sannu"
+    ipa: "sanːu"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Sannu", base: "sannu" }
+  - id: "ha-0012"
+    target: "Barka da safiya."
+    ipa: "barka da safija"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Barka", base: "barka" }
+      - { word: "da", base: "da" }
+      - { word: "safiya", base: "safiya" }
+  - id: "ha-0013"
+    target: "Barka da yamma."
+    ipa: "barka da jamma"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Barka", base: "barka" }
+      - { word: "da", base: "da" }
+      - { word: "yamma", base: "yamma" }
+  - id: "ha-0014"
+    target: "Barka da dare."
+    ipa: "barka da dare"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Barka", base: "barka" }
+      - { word: "da", base: "da" }
+      - { word: "dare", base: "dare" }
+  - id: "ha-0015"
+    target: "Sai an jima."
+    ipa: "sai an dʒima"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Sai", base: "sai" }
+      - { word: "an", base: "an" }
+      - { word: "jima", base: "jima" }
+  - id: "ha-0016"
+    target: "Don Allah."
+    ipa: "don alla"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Don", base: "don" }
+      - { word: "Allah", base: "Allah" }
+  - id: "ha-0017"
+    target: "Na gode."
+    ipa: "na godɛ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "na", base: "ina" }
+      - { word: "gode", base: "gode" }
+  - id: "ha-0018"
+    target: "Na gode sosai."
+    ipa: "na godɛ sosai"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "na", base: "ina" }
+      - { word: "gode", base: "gode" }
+      - { word: "sosai", base: "sosai" }
+  - id: "ha-0019"
+    target: "Yi haƙuri."
+    ipa: "ji hakʼuri"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Yi", base: "yi" }
+      - { word: "haƙuri", base: "haƙuri" }
+  - id: "ha-0020"
+    target: "Don Allah, ka ba ni ruwa."
+    ipa: "don alla ka ba ni ruwa"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Don", base: "don" }
+      - { word: "Allah", base: "Allah" }
+      - { word: "ka", base: "ka" }
+      - { word: "ba", base: "ba" }
+      - { word: "ni", base: "ni" }
+      - { word: "ruwa", base: "ruwa" }
+  - id: "ha-0021"
+    target: "Ba na fahimta."
+    ipa: "ba na fahimta"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ba", base: "ba" }
+      - { word: "na", base: "ina" }
+      - { word: "fahimta", base: "fahimci" }
+  - id: "ha-0022"
+    target: "Ba na iya Hausa sosai."
+    ipa: "ba na ija hausa sosai"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ba", base: "ba" }
+      - { word: "na", base: "ina" }
+      - { word: "iya", base: "iya" }
+      - { word: "Hausa", base: "Hausa" }
+      - { word: "sosai", base: "sosai" }
+  - id: "ha-0023"
+    target: "Don Allah, ka yi magana a hankali."
+    ipa: "don alla ka ji magana a hankali"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Don", base: "don" }
+      - { word: "Allah", base: "Allah" }
+      - { word: "ka", base: "ka" }
+      - { word: "yi", base: "yi" }
+      - { word: "magana", base: "magana" }
+      - { word: "a", base: "a" }
+      - { word: "hankali", base: "hankali" }
+  - id: "ha-0024"
+    target: "Menene sunanka?"
+    ipa: "menene sunanka"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Menene", base: "menene" }
+      - { word: "sunanka", base: "suna" }
+  - id: "ha-0025"
+    target: "Sunana Amina."
+    ipa: "sunana amina"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Sunana", base: "suna" }
+      - { word: "Amina", base: "Amina" }
+  - id: "ha-0026"
+    target: "Nawa ne?"
+    ipa: "nawa ne"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Nawa", base: "nawa" }
+      - { word: "ne", base: "ne" }
+  - id: "ha-0027"
+    target: "Ina bandakin?"
+    ipa: "ina bandakin"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ina", base: "ina" }
+      - { word: "bandakin", base: "bandaki" }
+  - id: "ha-0028"
+    target: "Taimako!"
+    ipa: "tajmako"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Taimako", base: "taimako" }
+  - id: "ha-0029"
+    target: "Kana iya Turanci?"
+    ipa: "kana ija turantʃi"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Kana", base: "kana" }
+      - { word: "iya", base: "iya" }
+      - { word: "Turanci", base: "Turanci" }
+  - id: "ha-0030"
+    target: "Barka da zuwa."
+    ipa: "barka da zuwa"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Barka", base: "barka" }
+      - { word: "da", base: "da" }
+      - { word: "zuwa", base: "zuwa" }

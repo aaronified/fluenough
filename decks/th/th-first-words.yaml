@@ -1,0 +1,139 @@
+schema: 1
+id: "th-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "th", iso639_3: "tha", name: "Thai", script: "thai", tts: "th-TH", icon: "ภา" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "th-0001"
+    target: "ใช่"
+    reading: "châi"
+    ipa: "tɕʰaj˥˩"
+    pos: "adv"
+    tags: ["answer"]
+    words: ["ใช่"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ใช่ ขอบคุณ", reading: "châi khòp khun", ipa: "tɕʰaj˥˩ kʰɔp˨˩ kʰun˧", words: ["ใช่", "ขอบคุณ"], bases: [{ word: "ขอบคุณ", base: "ขอบคุณ", reading: "khòp khun" }] }
+      - { target: "ใช่ ฉันเป็นนักเรียน", reading: "châi chǎn pen nák rian", ipa: "tɕʰaj˥˩ tɕʰan˩˩˦ pen˧ nak˥ rian˧", words: ["ใช่", "ฉัน", "เป็น", "นักเรียน"], bases: [{ word: "เป็น", base: "เป็น", reading: "pen" }, { word: "นักเรียน", base: "นักเรียน", reading: "nák rian" }] }
+  - id: "th-0002"
+    target: "ไม่"
+    reading: "mâi"
+    ipa: "maj˥˩"
+    pos: "adv"
+    tags: ["answer"]
+    words: ["ไม่"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ไม่ ขอบคุณ", reading: "mâi khòp khun", ipa: "maj˥˩ kʰɔp˨˩ kʰun˧", words: ["ไม่", "ขอบคุณ"], bases: [{ word: "ขอบคุณ", base: "ขอบคุณ", reading: "khòp khun" }] }
+      - { target: "ฉันไม่รู้", reading: "chǎn mâi rûu", ipa: "tɕʰan˩˩˦ maj˥˩ ruː˥˩", words: ["ฉัน", "ไม่", "รู้"], bases: [{ word: "รู้", base: "รู้", reading: "rûu" }] }
+  - id: "th-0003"
+    target: "ฉัน"
+    reading: "chǎn"
+    ipa: "tɕʰan˩˩˦"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    words: ["ฉัน"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ฉันชอบกาแฟ", reading: "chǎn chôp kafae", ipa: "tɕʰan˩˩˦ tɕʰɔp˥˩ kaː˧ fɛː˧", words: ["ฉัน", "ชอบ", "กาแฟ"], bases: [{ word: "ชอบ", base: "ชอบ", reading: "chôp" }, { word: "กาแฟ", base: "กาแฟ", reading: "kafae" }] }
+      - { target: "ฉันไม่เข้าใจ", reading: "chǎn mâi khâo-jai", ipa: "tɕʰan˩˩˦ maj˥˩ kʰaw˥˩ tɕaj˧", words: ["ฉัน", "ไม่", "เข้าใจ"], bases: [{ word: "เข้าใจ", base: "เข้าใจ", reading: "khâo-jai" }] }
+  - id: "th-0004"
+    target: "คุณ"
+    reading: "khun"
+    ipa: "kʰun˧"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    words: ["คุณ"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "คุณเป็นคนไทยไหม", reading: "khun pen khon thai mǎi", ipa: "kʰun˧ pen˧ kʰon˧ tʰaj˧ mǎj˩˩˦", words: ["คุณ", "เป็น", "คนไทย", "ไหม"], bases: [{ word: "เป็น", base: "เป็น", reading: "pen" }, { word: "คนไทย", base: "คนไทย", reading: "khon thai" }, { word: "ไหม", base: "ไหม", reading: "mǎi" }] }
+      - { target: "คุณชื่ออะไร", reading: "khun chûe àrai", ipa: "kʰun˧ tɕʰɯ˥˩ ʔa˨˩ rai˧", words: ["คุณ", "ชื่อ", "อะไร"], bases: [{ word: "ชื่อ", base: "ชื่อ", reading: "chûe" }, { word: "อะไร", base: "อะไร", reading: "àrai" }] }
+  - id: "th-0005"
+    target: "และ"
+    reading: "láe"
+    ipa: "lɛ˥"
+    pos: "other"
+    tags: ["linking"]
+    words: ["และ"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "กาแฟและชา", reading: "kafae láe chaa", ipa: "kaː˧ fɛː˧ lɛ˥ tɕʰaː˧", words: ["กาแฟ", "และ", "ชา"], bases: [{ word: "กาแฟ", base: "กาแฟ", reading: "kafae" }, { word: "ชา", base: "ชา", reading: "chaa" }] }
+      - { target: "ฉันและคุณ", reading: "chǎn láe khun", ipa: "tɕʰan˩˩˦ lɛ˥ kʰun˧", words: ["ฉัน", "และ", "คุณ"], bases: [{ word: "ฉัน", base: "ฉัน", reading: "chǎn" }, { word: "คุณ", base: "คุณ", reading: "khun" }] }
+  - id: "th-0006"
+    target: "หรือ"
+    reading: "rǔe"
+    ipa: "rɯ˩˩˦"
+    pos: "other"
+    tags: ["linking"]
+    words: ["หรือ"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ชา หรือ กาแฟ?", reading: "chaa rǔe kafae?", ipa: "tɕʰaː˧ rɯ˩˩˦ kaː˧ fɛː˧", words: ["ชา", "หรือ", "กาแฟ"], bases: [{ word: "ชา", base: "ชา", reading: "chaa" }, { word: "กาแฟ", base: "กาแฟ", reading: "kafae" }] }
+      - { target: "วันนี้ หรือ พรุ่งนี้?", reading: "wan níi rǔe phrûng níi?", ipa: "wan˧ niː˥ rɯ˩˩˦ pʰrʉŋ˥˩ niː˥", words: ["วันนี้", "หรือ", "พรุ่งนี้"], bases: [{ word: "วันนี้", base: "วันนี้", reading: "wan níi" }, { word: "พรุ่งนี้", base: "พรุ่งนี้", reading: "phrûng níi" }] }
+  - id: "th-0007"
+    target: "แต่"
+    reading: "tàe"
+    ipa: "tɛ˨˩"
+    pos: "other"
+    tags: ["linking"]
+    words: ["แต่"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ดี แต่ แพง", reading: "dii tàe phɛɛng", ipa: "diː˧ tɛ˨˩ pʰɛːŋ˧", words: ["ดี", "แต่", "แพง"], bases: [{ word: "แพง", base: "แพง", reading: "phɛɛng" }] }
+      - { target: "ฉันชอบ แต่ ไม่มีเวลา", reading: "chǎn chôp tàe mâi mii wela", ipa: "tɕʰan˩˩˦ tɕʰɔp˥˩ tɛ˨˩ maj˥˩ miː˧ weː˧ laː˧", words: ["ฉัน", "ชอบ", "แต่", "ไม่", "มี", "เวลา"], bases: [{ word: "ชอบ", base: "ชอบ", reading: "chôp" }, { word: "มี", base: "มี", reading: "mii" }, { word: "เวลา", base: "เวลา", reading: "wela" }] }
+  - id: "th-0008"
+    target: "ดี"
+    reading: "dii"
+    ipa: "diː˧"
+    pos: "adj"
+    tags: ["adjective"]
+    words: ["ดี"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "กาแฟดีมาก", reading: "kafae dii mâak", ipa: "kaː˧ fɛː˧ diː˧ maːk˥˩", words: ["กาแฟ", "ดี", "มาก"], bases: [{ word: "กาแฟ", base: "กาแฟ", reading: "kafae" }, { word: "มาก", base: "มาก", reading: "mâak" }] }
+      - { target: "สบายดีไหม", reading: "sabaai dii mǎi", ipa: "sa˧ baːj˧ diː˧ mǎj˩˩˦", words: ["สบาย", "ดี", "ไหม"], bases: [{ word: "สบาย", base: "สบาย", reading: "sabaai" }, { word: "ไหม", base: "ไหม", reading: "mǎi" }] }
+  - id: "th-0009"
+    target: "หนึ่ง"
+    reading: "nùeng"
+    ipa: "nɯŋ˨˩"
+    pos: "adj"
+    tags: ["number"]
+    words: ["หนึ่ง"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "กาแฟหนึ่งแก้ว", reading: "kafae nùeng kâeo", ipa: "kaː˧ fɛː˧ nɯŋ˨˩ kɛːw˥˩", words: ["กาแฟ", "หนึ่ง", "แก้ว"], bases: [{ word: "กาแฟ", base: "กาแฟ", reading: "kafae" }, { word: "แก้ว", base: "แก้ว", reading: "kâeo" }] }
+      - { target: "หนึ่ง สอง สาม", reading: "nùeng sǒng sǎam", ipa: "nɯŋ˨˩ sɔŋ˩˩˦ saːm˩˩˦", words: ["หนึ่ง", "สอง", "สาม"], bases: [{ word: "สอง", base: "สอง", reading: "sǒng" }, { word: "สาม", base: "สาม", reading: "sǎam" }] }
+  - id: "th-0010"
+    target: "น้ำ"
+    reading: "nám"
+    ipa: "naːm˥"
+    pos: "noun"
+    tags: ["drink"]
+    words: ["น้ำ"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ขอ น้ำ หน่อย", reading: "khǒo nám nòi", ipa: "kʰɔː˩˩˦ naːm˥ nɔːj˨˩", words: ["ขอ", "น้ำ", "หน่อย"], bases: [{ word: "ขอ", base: "ขอ", reading: "khǒo" }, { word: "หน่อย", base: "หน่อย", reading: "nòi" }] }
+      - { target: "ฉันชอบน้ำเย็น", reading: "chǎn chôp nám yen", ipa: "tɕʰan˩˩˦ tɕʰɔp˥˩ naːm˥ jen˧", words: ["ฉัน", "ชอบ", "น้ำ", "เย็น"], bases: [{ word: "ชอบ", base: "ชอบ", reading: "chôp" }, { word: "เย็น", base: "เย็น", reading: "yen" }] }
