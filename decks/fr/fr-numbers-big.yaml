@@ -64,7 +64,7 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "quatre", ref: "fr-0211" }, { word: "vingts", ref: "fr-0227" }]
     examples:
       - { target: "Ma tante a quatre-vingts ans.", ipa: "ma tɑ̃t a katʁəvɛ̃ ɑ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tante", ref: "fr-0177" }, { word: "a", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vingts", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
       - { target: "Ils ont quatre-vingts ans.", ipa: "il ɔ̃ katʁəvɛ̃ ɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vingts", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
