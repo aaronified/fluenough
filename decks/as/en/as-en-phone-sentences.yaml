@@ -1,0 +1,54 @@
+schema: 1
+id: "as-en-phone-sentences"
+kind: "layer"
+core: "as-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2962":
+    native: "Will you call?"
+    confusables:
+      "c1": { why: "A message, not a call." }
+      "c2": { why: "A letter on paper, not a call." }
+  "as-2963":
+    native: "My phone has no charge."
+    confusables:
+      "c1": { why: "The battery, close but not the charge." }
+      "c2": { why: "The signal, a different thing." }
+  "as-2964":
+    native: "Open the app."
+    confusables:
+      "c1": { why: "Closed, the opposite of open." }
+      "c2": { why: "Working, not open." }
+  "as-2965":
+    native: "I have got the news."
+    bases:
+      "পাইছোঁ": "to get; to receive"
+    confusables:
+      "c1": { why: "A ring, a sound not news." }
+      "c2": { why: "An email, one way to get the news." }
+  "as-2966":
+    native: "The line is busy."
+    confusables:
+      "c1": { why: "Free, the opposite of busy." }
+      "c2": { why: "News, not the state of the line." }
+  "as-2967":
+    native: "He is talking."
+    bases:
+      "কথা": "talk; speech; matter"
+    confusables:
+      "c1": { why: "To hear, not to talk." }
+      "c2": { why: "To write, not to talk." }
+  "as-2968":
+    native: "There is no internet."
+    confusables:
+      "c1": { why: "The signal, close to the internet." }
+      "c2": { why: "Charge, not the internet." }
+  "as-2969":
+    native: "What is the password?"
+    confusables:
+      "c1": { why: "The account, a related word." }
+      "c2": { why: "An email, not the password." }

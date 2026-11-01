@@ -1,0 +1,86 @@
+schema: 1
+id: "as-phone-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2962"
+    target: "তুমি ফোন কৰিবা নেকি?"
+    reading: "tumi phon kôribā neki?"
+    ipa: "tumi pʰʊn koɹiba neki"
+    pos: "phrase"
+    bases:
+      - { word: "কৰিবা", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "মেচেজ", reading: "mesej", kind: "word" }
+      - { id: "c2", word: "চিঠি", reading: "sithi", kind: "word" }
+  - id: "as-2963"
+    target: "মোৰ ফোনত চাৰ্জ নাই।"
+    reading: "mur phonôt sārj nāi."
+    ipa: "mʊɹ pʰʊnɔt saɹz nai"
+    pos: "phrase"
+    bases:
+      - { word: "ফোনত", ref: "as-2943" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "বেটাৰী", reading: "beṭāri", kind: "word" }
+      - { id: "c2", word: "নেটৱৰ্ক", reading: "neṭôrk", kind: "word" }
+  - id: "as-2964"
+    target: "এপটো খোলা।"
+    reading: "eptu khulā."
+    ipa: "epɔtʊ kʰʊla"
+    pos: "phrase"
+    bases:
+      - { word: "এপটো", ref: "as-2951" }
+    confusables:
+      - { id: "c1", word: "বন্ধ", reading: "bôndhô", kind: "word" }
+      - { id: "c2", word: "চালু", reading: "sālu", kind: "word" }
+  - id: "as-2965"
+    target: "মই বাতৰি পাইছোঁ।"
+    reading: "moi bātôri paisum̐."
+    ipa: "moi batoɹi paisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "পাইছোঁ", base: "পোৱা", reading: "puwā" }
+    confusables:
+      - { id: "c1", word: "ৰিং", reading: "riṅ", kind: "word" }
+      - { id: "c2", word: "ইমেইল", reading: "imeil", kind: "word" }
+  - id: "as-2966"
+    target: "লাইন ব্যস্ত।"
+    reading: "lāin byôstô."
+    ipa: "lain bjɔst"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খালী", reading: "khālī", kind: "word" }
+      - { id: "c2", word: "বাতৰি", reading: "bātôri", kind: "word" }
+  - id: "as-2967"
+    target: "তেওঁ কথা কৈছে।"
+    reading: "teum̐ kôthā kaise."
+    ipa: "teʊ̃ kɔtʰa kɔise"
+    pos: "phrase"
+    bases:
+      - { word: "কথা", base: "কথা", reading: "kôthā" }
+      - { word: "কৈছে", ref: "as-0108" }
+    confusables:
+      - { id: "c1", word: "শুনা", reading: "xunā", kind: "word" }
+      - { id: "c2", word: "লিখা", reading: "likhā", kind: "word" }
+  - id: "as-2968"
+    target: "ইণ্টাৰনেট নাই।"
+    reading: "interenet nāi."
+    ipa: "intaɹɔnet nai"
+    pos: "phrase"
+    bases:
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "নেটৱৰ্ক", reading: "neṭôrk", kind: "word" }
+      - { id: "c2", word: "চাৰ্জ", reading: "sārj", kind: "word" }
+  - id: "as-2969"
+    target: "পাছৱৰ্ড কি?"
+    reading: "pāsvôrḍ ki?"
+    ipa: "pasɔwɔɹd ki"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "একাউন্ট", reading: "ekāunṭ", kind: "word" }
+      - { id: "c2", word: "ইমেইল", reading: "imeil", kind: "word" }

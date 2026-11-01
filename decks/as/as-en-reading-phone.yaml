@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-phone"
+name: "Assamese reading: phone"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-phone-call"
+    title: "A phone call"
+    theme: "phone"
+    sentences:
+      - text: "হেল্লো, মই বাহিৰত।"
+        reading: "hello, moi bāhirôt."
+      - text: "আজি তুমি খালী নেকি?"
+        reading: "āzi tumi khālī neki?"
+      - text: "তেতিয়া ফোন কৰিম।"
+        reading: "tetiyā phon kôrim."
+      - text: "নেটৱৰ্ক ভাল নাই।"
+        reading: "neṭôrk bhāl nāi."
+    questions:
+      - id: "as-2970"
+        prompt: { en: "The speaker is outside." }
+        answer: true
+      - id: "as-2971"
+        prompt: { en: "What is the speaker going to do?" }
+        options:
+          - { en: "Call later" }
+          - { en: "Send a letter" }
+          - { en: "Sleep" }
+        answer: 1
+      - id: "as-2972"
+        prompt: { en: "How is the network?" }
+        options:
+          - { en: "Good" }
+          - { en: "Not good" }
+          - { en: "Very fast" }
+        answer: 2
+  - id: "as-text-messages"
+    title: "Text messages between friends"
+    theme: "phone"
+    sentences:
+      - text: "কি খবৰ?"
+        reading: "ki khôbôr?"
+      - text: "মেচেজ পাইছোঁ।"
+        reading: "mesej paisum̐."
+      - text: "আজি বতৰ ভাল।"
+        reading: "āzi botôr bhāl."
+      - text: "কাইলৈ দেখা কৰোঁ।"
+        reading: "kāilôi dekhā kôrum̐."
+    questions:
+      - id: "as-2973"
+        prompt: { en: "One friend has received a message." }
+        answer: true
+      - id: "as-2974"
+        prompt: { en: "What is the weather like today?" }
+        options:
+          - { en: "Bad" }
+          - { en: "Good" }
+          - { en: "Wet" }
+        answer: 2
+      - id: "as-2975"
+        prompt: { en: "When will they meet?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 2
