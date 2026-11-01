@@ -1,0 +1,90 @@
+schema: 1
+id: "hi-grammar-honorifics"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["तू (intimate)", "तुम (familiar)", "आप (honorific)"]
+  entries:
+    - lemma: "जाना"
+      key: "jana"
+      reading: "jānā"
+      ipa: "dʒaːnaː"
+      forms:
+        "तू (intimate)": "तू जाता है"
+        "तुम (familiar)": "तुम जाते हो"
+        "आप (honorific)": "आप जाते हैं"
+      readings:
+        "तू (intimate)": "tū jātā hai"
+        "तुम (familiar)": "tum jātē hō"
+        "आप (honorific)": "āp jātē haim̐"
+      ipas:
+        "तू (intimate)": "t̪uː dʒaːt̪aː ɦɛː"
+        "तुम (familiar)": "t̪ʊm dʒaːt̪eː ɦoː"
+        "आप (honorific)": "aːp dʒaːt̪eː ɦɛ̃ː"
+    - lemma: "आना"
+      key: "ana"
+      reading: "ānā"
+      ipa: "aːnaː"
+      forms:
+        "तू (intimate)": "तू आता है"
+        "तुम (familiar)": "तुम आते हो"
+        "आप (honorific)": "आप आते हैं"
+      readings:
+        "तू (intimate)": "tū ātā hai"
+        "तुम (familiar)": "tum ātē hō"
+        "आप (honorific)": "āp ātē haim̐"
+      ipas:
+        "तू (intimate)": "t̪uː aːt̪aː ɦɛː"
+        "तुम (familiar)": "t̪ʊm aːt̪eː ɦoː"
+        "आप (honorific)": "aːp aːt̪eː ɦɛ̃ː"
+    - lemma: "करना"
+      key: "karna"
+      reading: "karnā"
+      ipa: "kərnaː"
+      forms:
+        "तू (intimate)": "तू करता है"
+        "तुम (familiar)": "तुम करते हो"
+        "आप (honorific)": "आप करते हैं"
+      readings:
+        "तू (intimate)": "tū kartā hai"
+        "तुम (familiar)": "tum kartē hō"
+        "आप (honorific)": "āp kartē haim̐"
+      ipas:
+        "तू (intimate)": "t̪uː kərt̪aː ɦɛː"
+        "तुम (familiar)": "t̪ʊm kərt̪eː ɦoː"
+        "आप (honorific)": "aːp kərt̪eː ɦɛ̃ː"
+    - lemma: "बोलना"
+      key: "bolna"
+      reading: "bōlnā"
+      ipa: "boːlnaː"
+      forms:
+        "तू (intimate)": "तू बोलता है"
+        "तुम (familiar)": "तुम बोलते हो"
+        "आप (honorific)": "आप बोलते हैं"
+      readings:
+        "तू (intimate)": "tū bōltā hai"
+        "तुम (familiar)": "tum bōltē hō"
+        "आप (honorific)": "āp bōltē haim̐"
+      ipas:
+        "तू (intimate)": "t̪uː boːlt̪aː ɦɛː"
+        "तुम (familiar)": "t̪ʊm boːlt̪eː ɦoː"
+        "आप (honorific)": "aːp boːlt̪eː ɦɛ̃ː"
+    - lemma: "खाना"
+      key: "khana"
+      reading: "khānā"
+      ipa: "kʰaːnaː"
+      forms:
+        "तू (intimate)": "तू खाता है"
+        "तुम (familiar)": "तुम खाते हो"
+        "आप (honorific)": "आप खाते हैं"
+      readings:
+        "तू (intimate)": "tū khātā hai"
+        "तुम (familiar)": "tum khātē hō"
+        "आप (honorific)": "āp khātē haim̐"
+      ipas:
+        "तू (intimate)": "t̪uː kʰaːt̪aː ɦɛː"
+        "तुम (familiar)": "t̪ʊm kʰaːt̪eː ɦoː"
+        "आप (honorific)": "aːp kʰaːt̪eː ɦɛ̃ː"
