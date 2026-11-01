@@ -1,0 +1,108 @@
+schema: 1
+id: "as-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2566"
+    target: "আজি বতৰ ভাল আৰু ৰ'দ আছে।"
+    reading: "āzi botôr bhāl āru rod āse."
+    ipa: "azi bɔtɔɹ bʱal aɹu ɹod ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "বৰষুণ", reading: "bôrôxun", kind: "word" }
+      - { id: "c2", word: "শীত", reading: "xit", kind: "word" }
+  - id: "as-2567"
+    target: "বৰষুণ বহুত আৰু আকাশ মেঘলা।"
+    reading: "bôrôxun bohut āru ākāx meglā."
+    ipa: "bɔɹoxun bohut aɹu akax meɡʱɔla"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ৰ'দ", reading: "rod", kind: "word" }
+      - { id: "c2", word: "শুকান", reading: "xukān", kind: "word" }
+  - id: "as-2568"
+    target: "শীতত বতাহ বহুত।"
+    reading: "xitôt bôtāh bohut."
+    ipa: "xitɔt bɔtah bohut"
+    pos: "phrase"
+    bases:
+      - { word: "শীতত", ref: "as-2539" }
+    confusables:
+      - { id: "c1", word: "গ্ৰীষ্মকাল", reading: "grixmôkāl", kind: "word" }
+      - { id: "c2", word: "বসন্ত", reading: "bôsôntô", kind: "word" }
+  - id: "as-2569"
+    target: "বিজুলী চমকিছে আৰু বাজ পৰিছে।"
+    reading: "bijuli sômkise āru bāz pôrise."
+    ipa: "bizuli sɔmokise aɹu baz poɹise"
+    pos: "phrase"
+    bases:
+      - { word: "চমকিছে", base: "চমকা", reading: "somkā" }
+      - { word: "পৰিছে", ref: "as-2223" }
+    confusables:
+      - { id: "c1", word: "ৰামধেনু", reading: "rāmdhenu", kind: "word" }
+      - { id: "c2", word: "জোন", reading: "zon", kind: "word" }
+  - id: "as-2570"
+    target: "বৰষুণৰ পাছত ৰামধেনু ওলায়।"
+    reading: "bôrôxunôr pāsôt rāmdhenu olāy."
+    ipa: "bɔɹoxunɔɹ pasɔt ɹamɔdʱenu ʊlaj"
+    pos: "phrase"
+    bases:
+      - { word: "বৰষুণৰ", ref: "as-2534" }
+      - { word: "ওলায়", base: "ওলোৱা", reading: "oluwā" }
+    confusables:
+      - { id: "c1", word: "ধুমুহা", reading: "dhumuhā", kind: "word" }
+      - { id: "c2", word: "তৰা", reading: "tôrā", kind: "word" }
+  - id: "as-2571"
+    target: "গ্ৰীষ্মকালত বহুত ঘাম হয়।"
+    reading: "grixmôkālôt bohut ghām hôy."
+    ipa: "ɡɹixmɔkalɔt bohut ɡʱam hɔj"
+    pos: "phrase"
+    bases:
+      - { word: "গ্ৰীষ্মকালত", ref: "as-2540" }
+    confusables:
+      - { id: "c1", word: "শীত", reading: "xit", kind: "word" }
+      - { id: "c2", word: "উম", reading: "um", kind: "word" }
+  - id: "as-2572"
+    target: "বৰফ পাহাৰত থাকে।"
+    reading: "bôrôf pāhārôt thākē."
+    ipa: "bɔɹɔpʰ pahaɹɔt tʰake"
+    pos: "phrase"
+    bases:
+      - { word: "পাহাৰত", ref: "as-2408" }
+      - { word: "থাকে", ref: "as-2207" }
+    confusables:
+      - { id: "c1", word: "বাট", reading: "bāt", kind: "word" }
+      - { id: "c2", word: "শিল", reading: "xil", kind: "word" }
+  - id: "as-2573"
+    target: "এইটো শুকান মাটি।"
+    reading: "eitu xukān māṭi."
+    ipa: "eitʊ xukan mati"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভিজা", reading: "bhijā", kind: "word" }
+      - { id: "c2", word: "ধূলি", reading: "dhuli", kind: "word" }
+  - id: "as-2574"
+    target: "বানত নদীত পানী বহুত।"
+    reading: "bānôt nodit pāni bohut."
+    ipa: "banɔt nodit pani bohut"
+    pos: "phrase"
+    bases:
+      - { word: "বানত", ref: "as-2558" }
+      - { word: "নদীত", ref: "as-2407" }
+    confusables:
+      - { id: "c1", word: "খৰা", reading: "khôrā", kind: "word" }
+      - { id: "c2", word: "শিল", reading: "xil", kind: "word" }
+  - id: "as-2575"
+    target: "এতিয়া উম আছে।"
+    reading: "etiyā um āse."
+    ipa: "etija um ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ঠাণ্ডা", reading: "thāndā", kind: "word" }
+      - { id: "c2", word: "তাপ", reading: "tāp", kind: "word" }

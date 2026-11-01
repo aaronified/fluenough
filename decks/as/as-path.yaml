@@ -244,11 +244,14 @@ units:
   - decks: ["as-daily-life", "as-grammar-negative", "*"]
     words: 9
     grammar: ["negative"]
-  - planned: { id: "as-weather", theme: "weather", words: 45 }
+  - decks: ["as-weather", "as-weather-sentences", "*"]
+    words: 34
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
+  - decks: ["as-reading-weather"]
+    words: 0
   - decks: ["as-calendar", "as-grammar-past", "*"]
     words: 17
     grammar: ["past"]

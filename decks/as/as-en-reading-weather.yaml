@@ -1,0 +1,69 @@
+schema: 1
+id: "as-en-reading-weather"
+name: "Assamese reading: weather"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-weather-forecast"
+    title: "A radio forecast"
+    theme: "weather"
+    sentences:
+      - text: "আজি বতৰ মেঘলা।"
+        reading: "āzi botôr meglā."
+      - text: "আজি বৰষুণ আছে।"
+        reading: "āzi bôrôxun āse."
+      - text: "কাইলৈ বতাহ বহুত।"
+        reading: "kāilôi bôtāh bohut."
+      - text: "বৰষুণৰ পাছত ৰামধেনু ওলায়।"
+        reading: "bôrôxunôr pāsôt rāmdhenu olāy."
+    questions:
+      - id: "as-2576"
+        prompt: { en: "It is cloudy today." }
+        answer: true
+      - id: "as-2577"
+        prompt: { en: "What will be strong tomorrow?" }
+        options:
+          - { en: "The sun" }
+          - { en: "The wind" }
+          - { en: "The rain" }
+        answer: 2
+      - id: "as-2578"
+        prompt: { en: "When does the rainbow come out?" }
+        options:
+          - { en: "Before the rain" }
+          - { en: "After the rain" }
+          - { en: "In winter" }
+        answer: 2
+  - id: "as-weather-message"
+    title: "A message to a friend"
+    theme: "weather"
+    sentences:
+      - text: "বন্ধু, ইয়াত বৰষুণ বহুত।"
+        reading: "bondhu, iyāt bôrôxun bohut."
+      - text: "নদীত বান আহিছে।"
+        reading: "nodit bān āhise."
+      - text: "ঘৰত বিজুলী নাই।"
+        reading: "ghôrôt bijuli nāi."
+      - text: "ইয়াত শীত নাই।"
+        reading: "iyāt xit nāi."
+    questions:
+      - id: "as-2579"
+        prompt: { en: "The writer says there is a flood in the river." }
+        answer: true
+      - id: "as-2580"
+        prompt: { en: "What does the writer say about the cold?" }
+        options:
+          - { en: "It is very cold" }
+          - { en: "It is not cold here" }
+          - { en: "It is snowing" }
+        answer: 2
+      - id: "as-2581"
+        prompt: { en: "Is there electricity in the house?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 2
