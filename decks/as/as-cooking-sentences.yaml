@@ -1,0 +1,75 @@
+schema: 1
+id: "as-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2726"
+    target: "মই ভাত ৰান্ধোঁ।"
+    reading: "moi bhāt rāndhum̐."
+    ipa: "moi bʱat ɹandʱʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "ৰান্ধোঁ", ref: "as-2209" }
+    confusables:
+      - { id: "c1", word: "ভজা", reading: "bhôzā", kind: "word" }
+      - { id: "c2", word: "খোৱা", reading: "khuwā", kind: "word" }
+  - id: "as-2727"
+    target: "চুলাত তেল আৰু পিঁয়াজ ভজে।"
+    reading: "sulāt tel āru pim̐yāz bhôze."
+    ipa: "sulat tel aɹu pĩjaz bʱɔze"
+    pos: "phrase"
+    bases:
+      - { word: "চুলাত", ref: "as-2711" }
+      - { word: "ভজে", ref: "as-2291" }
+    confusables:
+      - { id: "c1", word: "সিজা", reading: "sizā", kind: "word" }
+      - { id: "c2", word: "ধোৱা", reading: "dhuwā", kind: "word" }
+  - id: "as-2728"
+    target: "ঢাকনি খোলা।"
+    reading: "dhākôni khulā."
+    ipa: "dʱakoni kʰʊla"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ধৰা", reading: "dhôrā", kind: "word" }
+      - { id: "c2", word: "ঘূৰা", reading: "ghurā", kind: "word" }
+  - id: "as-2729"
+    target: "ভাতৰ গোন্ধ ভাল।"
+    reading: "bhātôr gondh bhāl."
+    ipa: "bʱatɔɹ ɡʊndʱ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ভাতৰ", ref: "as-0111" }
+    confusables:
+      - { id: "c1", word: "স্বাদ", reading: "xwād", kind: "word" }
+      - { id: "c2", word: "ৰস", reading: "rôs", kind: "word" }
+  - id: "as-2730"
+    target: "মছলা আৰু গুৰি মিহলাওঁ।"
+    reading: "mosolā āru guri mihôlāum̐."
+    ipa: "mɔsɔla aɹu ɡuɹi mihɔlaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মিহলাওঁ", ref: "as-2302" }
+    confusables:
+      - { id: "c1", word: "উপকৰণ", reading: "upôkôrôn", kind: "word" }
+      - { id: "c2", word: "নিমখ", reading: "nimôkh", kind: "word" }
+  - id: "as-2731"
+    target: "পাতত ভাত পৰিবেশন কৰা।"
+    reading: "pātôt bhāt poribeśôn kôrā."
+    ipa: "patɔt bʱat poɹibexɔn kɔɹa"
+    pos: "phrase"
+    bases:
+      - { word: "পাতত", ref: "as-2716" }
+    confusables:
+      - { id: "c1", word: "কড়া", reading: "kôrā", kind: "word" }
+      - { id: "c2", word: "থাল", reading: "thāl", kind: "word" }
+  - id: "as-2732"
+    target: "আজি ভোজন প্ৰস্তুত।"
+    reading: "āzi bhozôn prôstut."
+    ipa: "azi bʱʊzɔn pɹostut"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "গোটা", reading: "gutā", kind: "word" }
+      - { id: "c2", word: "ৰন্ধা", reading: "rôndhā", kind: "word" }

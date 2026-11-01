@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-cooking"
+name: "Assamese reading: cooking"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-recipe-aloud"
+    title: "A dish, told aloud"
+    theme: "cooking"
+    sentences:
+      - text: "প্ৰথমে চুলাত কড়া দিয়া।"
+        reading: "prôthômē sulāt kôrā diyā."
+      - text: "তাত তেল দিয়া।"
+        reading: "tāt tel diyā."
+      - text: "মছলা মিহলাই দিয়া।"
+        reading: "mosolā mihôlāi diyā."
+      - text: "ঢাকনি দি ৰাখা।"
+        reading: "dhākôni di rākhā."
+    questions:
+      - id: "as-2733"
+        prompt: { en: "The first step is to put the pan on the stove." }
+        answer: true
+      - id: "as-2734"
+        prompt: { en: "What goes into the pan after the oil?" }
+        options:
+          - { en: "Salt" }
+          - { en: "Spices" }
+          - { en: "A lid" }
+        answer: 2
+      - id: "as-2735"
+        prompt: { en: "What is put on the pan at the end?" }
+        options:
+          - { en: "A lid" }
+          - { en: "A plate" }
+          - { en: "A cup" }
+        answer: 1
+  - id: "as-recipe-card"
+    title: "A recipe card"
+    theme: "cooking"
+    sentences:
+      - text: "উপকৰণ: চাউল, নিমখ, পানী।"
+        reading: "upôkôrôn: sāul, nimôkh, pāni."
+      - text: "চাউল ধোৱা।"
+        reading: "sāul dhuwā."
+      - text: "পানীত সিজা।"
+        reading: "pānit sizā."
+      - text: "পৰিবেশন কৰা।"
+        reading: "poribeśôn kôrā."
+    questions:
+      - id: "as-2736"
+        prompt: { en: "Rice is the first ingredient on the card." }
+        answer: true
+      - id: "as-2737"
+        prompt: { en: "What is done to the rice first?" }
+        options:
+          - { en: "It is boiled" }
+          - { en: "It is washed" }
+          - { en: "It is fried" }
+        answer: 2
+      - id: "as-2738"
+        prompt: { en: "What is the last step?" }
+        options:
+          - { en: "Washing" }
+          - { en: "Serving" }
+          - { en: "Boiling" }
+        answer: 2

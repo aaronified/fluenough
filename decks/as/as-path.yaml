@@ -298,11 +298,14 @@ units:
     words: 0
   - decks: ["as-eating-out", "*"]
     words: 11
-  - planned: { id: "as-cooking", theme: "cooking", words: 50 }
+  - decks: ["as-cooking", "as-cooking-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - decks: ["as-reading-cooking"]
+    words: 0
   - planned: { id: "as-grammar-comparison", grammar: "comparison" }
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
