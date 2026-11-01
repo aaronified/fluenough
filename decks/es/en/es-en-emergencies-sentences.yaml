@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-emergencies-sentences"
+kind: "layer"
+core: "es-emergencies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: emergencies"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about accidents, fire and help, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2833":
+    native: "The alarm sounds and we evacuate the building."
+    bases: { "Suena": "to sound; to ring", "la": "the", "el": "the" }
+    confusables: { "socorro": { why: "Socorro is a cry for help, not a signal." }, "alerta": { why: "Alerta is a warning of danger, a message." } }
+  "es-2834":
+    native: "There is a fire extinguisher and a first-aid kit in the kitchen."
+    bases: { "Hay": "there is; there are", "un": "a", "en": "in", "la": "the" }
+    confusables: { "seguridad": { why: "Seguridad is safety, the general idea." }, "rescate": { why: "Rescate is a rescue, when a person is saved." } }
+  "es-2835":
+    native: "The child falls and has a cut."
+    bases: { "El": "the", "se": "(reflexive) oneself", "cae": "to fall", "un": "a" }
+    confusables: { "golpe": { why: "Golpe is a blow, a hit, not a cut." }, "quemadura": { why: "Quemadura is a burn, from heat." } }
+  "es-2836":
+    native: "There is an explosion and an earthquake."
+    bases: { "Hay": "there is; there are", "una": "a", "un": "a" }
+    confusables: { "peligro": { why: "Peligro is the danger in general." }, "fractura": { why: "Fractura is a broken bone, an injury." } }
+  "es-2837":
+    native: "They rescue the injured man and take him to the hospital."
+    bases: { "al": "to the", "lo": "it" }
+    confusables: { "ambulancia": { why: "Ambulancia is the vehicle that takes him." }, "grave": { why: "Grave is serious, how bad the injury is." } }
+  "es-2838":
+    native: "I warn the firefighters of the fire."
+    bases: { "Aviso": "warning; notice", "a": "to", "los": "the", "del": "of" }
+    confusables: { "avisar": { why: "Avisar is to warn, the action done." }, "ahogarse": { why: "Ahogarse is to drown, a different danger." } }

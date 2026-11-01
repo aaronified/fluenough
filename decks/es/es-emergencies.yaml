@@ -1,0 +1,309 @@
+schema: 1
+id: "es-emergencies"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "emergencies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2811"
+    target: "el socorro"
+    ipa: "el soˈkoro"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "socorro", base: "socorro" }]
+    examples:
+      - target: "¡Socorro! Necesito ayuda."
+        ipa: "soˈkoro neθeˈsito aˈʝuda"
+        bases: [{ word: "Socorro", base: "socorro" }, { word: "Necesito", ref: "es-0288" }, { word: "ayuda", ref: "es-0303" }]
+      - target: "El socorro llega en diez minutos."
+        ipa: "el soˈkoro ˈʝeɡa en djeθ miˈnutos"
+        bases: [{ word: "El", base: "el" }, { word: "socorro", base: "socorro" }, { word: "llega", ref: "es-0290" }, { word: "en", base: "en" }, { word: "diez", ref: "es-0214" }, { word: "minutos", ref: "es-0839" }]
+  - id: "es-2812"
+    target: "la alarma"
+    ipa: "la aˈlaɾma"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alarma", base: "alarma" }]
+    examples:
+      - target: "Suena la alarma de incendio."
+        ipa: "ˈswena la aˈlaɾma de inˈθendjo"
+        bases: [{ word: "Suena", base: "sonar" }, { word: "la", base: "la" }, { word: "alarma", base: "alarma" }, { word: "de", base: "de" }, { word: "incendio", ref: "es-2063" }]
+      - target: "La alarma es muy fuerte."
+        ipa: "la aˈlaɾma es mwi ˈfweɾte"
+        bases: [{ word: "La", base: "la" }, { word: "alarma", base: "alarma" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-2813"
+    target: "el extintor"
+    ipa: "el ekstinˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "extintor", base: "extintor" }]
+    examples:
+      - target: "El extintor está en el pasillo."
+        ipa: "el ekstinˈtoɾ esˈta en el paˈsiʝo"
+        bases: [{ word: "El", base: "el" }, { word: "extintor", base: "extintor" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "pasillo", ref: "es-0809" }]
+      - target: "Uso el extintor en el fuego."
+        ipa: "ˈuso el ekstinˈtoɾ en el ˈfweɡo"
+        bases: [{ word: "Uso", ref: "es-0287" }, { word: "el", base: "el" }, { word: "extintor", base: "extintor" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "fuego", ref: "es-1767" }]
+  - id: "es-2814"
+    target: "la explosión"
+    ipa: "la eksploˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "explosión", base: "explosión" }]
+    examples:
+      - target: "Hay una explosión en la fábrica."
+        ipa: "aj ˈuna eksploˈsjon en la ˈfabɾika"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "explosión", base: "explosión" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "fábrica", ref: "es-1860" }]
+      - target: "La explosión se oye desde lejos."
+        ipa: "la eksploˈsjon se ˈoʝe ˈdesde ˈlexos"
+        bases: [{ word: "La", base: "la" }, { word: "explosión", base: "explosión" }, { word: "se", base: "se" }, { word: "oye", base: "oye" }, { word: "desde", base: "desde" }, { word: "lejos", ref: "es-0718" }]
+  - id: "es-2815"
+    target: "el terremoto"
+    ipa: "el tereˈmoto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "terremoto", base: "terremoto" }]
+    examples:
+      - target: "El terremoto dura un minuto."
+        ipa: "el tereˈmoto ˈduɾa un miˈnuto"
+        bases: [{ word: "El", base: "el" }, { word: "terremoto", base: "terremoto" }, { word: "dura", ref: "es-1332" }, { word: "un", base: "un" }, { word: "minuto", ref: "es-0839" }]
+      - target: "Hay un terremoto en la costa."
+        ipa: "aj un tereˈmoto en la ˈkosta"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "terremoto", base: "terremoto" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "costa", ref: "es-1776" }]
+  - id: "es-2816"
+    target: "el rescate"
+    ipa: "el resˈkate"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "rescate", base: "rescate" }]
+    examples:
+      - target: "El rescate es rápido."
+        ipa: "el resˈkate es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "rescate", base: "rescate" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+      - target: "Hacen el rescate en la montaña."
+        ipa: "ˈaθen el resˈkate en la monˈtaɲa"
+        bases: [{ word: "Hacen", ref: "es-0025" }, { word: "el", base: "el" }, { word: "rescate", base: "rescate" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "montaña", ref: "es-1750" }]
+  - id: "es-2817"
+    target: "el peligro"
+    ipa: "el peˈliɡɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "peligro", base: "peligro" }]
+    examples:
+      - target: "Hay peligro en el río."
+        ipa: "aj peˈliɡɾo en el ˈrio"
+        bases: [{ word: "Hay", base: "haber" }, { word: "peligro", base: "peligro" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "río", ref: "es-1751" }]
+      - target: "El peligro es grande."
+        ipa: "el peˈliɡɾo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "peligro", base: "peligro" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2818"
+    target: "la seguridad"
+    ipa: "la seɡuɾiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "seguridad", base: "seguridad" }]
+    examples:
+      - target: "La seguridad es lo primero."
+        ipa: "la seɡuɾiˈdad es lo pɾiˈmeɾo"
+        bases: [{ word: "La", base: "la" }, { word: "seguridad", base: "seguridad" }, { word: "es", ref: "es-0022" }, { word: "lo", base: "lo" }, { word: "primero", ref: "es-0551" }]
+      - target: "Hay seguridad en el edificio."
+        ipa: "aj seɡuɾiˈdad en el ediˈfiθjo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "seguridad", base: "seguridad" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "edificio", ref: "es-0786" }]
+  - id: "es-2819"
+    target: "el botiquín"
+    ipa: "el botiˈkin"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "botiquín", base: "botiquín" }]
+    examples:
+      - target: "El botiquín está en el armario."
+        ipa: "el botiˈkin esˈta en el aɾˈmaɾjo"
+        bases: [{ word: "El", base: "el" }, { word: "botiquín", base: "botiquín" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", ref: "es-0814" }]
+      - target: "Necesito un botiquín en casa."
+        ipa: "neθeˈsito un botiˈkin en ˈkasa"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "botiquín", base: "botiquín" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-2820"
+    target: "la quemadura"
+    ipa: "la kemaˈduɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "quemadura", base: "quemadura" }]
+    examples:
+      - target: "Tiene una quemadura en el brazo."
+        ipa: "ˈtjene ˈuna kemaˈduɾa en el ˈbɾaθo"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "quemadura", base: "quemadura" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "brazo", ref: "es-0737" }]
+      - target: "La quemadura es pequeña."
+        ipa: "la kemaˈduɾa es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "quemadura", base: "quemadura" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-2821"
+    target: "la fractura"
+    ipa: "la fɾakˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fractura", base: "fractura" }]
+    examples:
+      - target: "Tiene una fractura en la pierna."
+        ipa: "ˈtjene ˈuna fɾakˈtuɾa en la ˈpjeɾna"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "fractura", base: "fractura" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pierna", ref: "es-0740" }]
+      - target: "La fractura necesita un médico."
+        ipa: "la fɾakˈtuɾa neθeˈsita un ˈmediko"
+        bases: [{ word: "La", base: "la" }, { word: "fractura", base: "fractura" }, { word: "necesita", ref: "es-0288" }, { word: "un", base: "un" }, { word: "médico", ref: "es-0506" }]
+  - id: "es-2822"
+    target: "el golpe"
+    ipa: "el ˈɡolpe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "golpe", base: "golpe" }]
+    examples:
+      - target: "Me di un golpe en la cabeza."
+        ipa: "me di un ˈɡolpe en la kaˈbeθa"
+        bases: [{ word: "Me", base: "me" }, { word: "di", ref: "es-1629" }, { word: "un", base: "un" }, { word: "golpe", base: "golpe" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cabeza", ref: "es-0736" }]
+      - target: "El golpe fue muy fuerte."
+        ipa: "el ˈɡolpe fwe mwi ˈfweɾte"
+        bases: [{ word: "El", base: "el" }, { word: "golpe", base: "golpe" }, { word: "fue", base: "fue" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-2823"
+    target: "el corte"
+    ipa: "el ˈkoɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "corte", base: "corte" }]
+    examples:
+      - target: "Tengo un corte en la mano."
+        ipa: "ˈtenɡo un ˈkoɾte en la ˈmano"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "corte", base: "corte" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }]
+      - target: "El corte es profundo."
+        ipa: "el ˈkoɾte es pɾoˈfundo"
+        bases: [{ word: "El", base: "el" }, { word: "corte", base: "corte" }, { word: "es", ref: "es-0022" }, { word: "profundo", base: "profundo" }]
+  - id: "es-2824"
+    target: "la alerta"
+    ipa: "la aˈleɾta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alerta", base: "alerta" }]
+    examples:
+      - target: "Hay una alerta de tormenta."
+        ipa: "aj ˈuna aˈleɾta de toɾˈmenta"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "alerta", base: "alerta" }, { word: "de", base: "de" }, { word: "tormenta", ref: "es-1119" }]
+      - target: "La alerta llega por el móvil."
+        ipa: "la aˈleɾta ˈʝeɡa poɾ el ˈmobil"
+        bases: [{ word: "La", base: "la" }, { word: "alerta", base: "alerta" }, { word: "llega", ref: "es-0290" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }]
+  - id: "es-2825"
+    target: "herido"
+    ipa: "eˈɾido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "herido", base: "herido" }]
+    examples:
+      - target: "El hombre está herido."
+        ipa: "el ˈombɾe esˈta eˈɾido"
+        bases: [{ word: "El", base: "el" }, { word: "hombre", ref: "es-0001" }, { word: "está", ref: "es-0023" }, { word: "herido", base: "herido" }]
+      - target: "Hay tres heridos en el accidente."
+        ipa: "aj tɾes eˈɾidos en el akθiˈdente"
+        bases: [{ word: "Hay", base: "haber" }, { word: "tres", ref: "es-0207" }, { word: "heridos", base: "herido" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "accidente", ref: "es-0871" }]
+  - id: "es-2826"
+    target: "grave"
+    ipa: "ˈɡɾabe"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "grave", base: "grave" }]
+    examples:
+      - target: "Es un accidente grave."
+        ipa: "es un akθiˈdente ˈɡɾabe"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "accidente", ref: "es-0871" }, { word: "grave", base: "grave" }]
+      - target: "La herida es grave."
+        ipa: "la eˈɾida es ˈɡɾabe"
+        bases: [{ word: "La", base: "la" }, { word: "herida", ref: "es-2825" }, { word: "es", ref: "es-0022" }, { word: "grave", base: "grave" }]
+  - id: "es-2827"
+    target: "rescatar"
+    ipa: "reskaˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rescatar", base: "rescatar" }]
+    examples:
+      - target: "Rescatan al niño del río."
+        ipa: "resˈkatan al ˈniɲo del ˈrio"
+        bases: [{ word: "Rescatan", base: "rescatar" }, { word: "al", base: "al" }, { word: "niño", ref: "es-0003" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }]
+      - target: "Rescato al perro del fuego."
+        ipa: "resˈkato al ˈpero del ˈfweɡo"
+        bases: [{ word: "Rescato", base: "rescatar" }, { word: "al", base: "al" }, { word: "perro", ref: "es-1061" }, { word: "del", base: "del" }, { word: "fuego", ref: "es-1767" }]
+  - id: "es-2828"
+    target: "evacuar"
+    ipa: "ebaˈkwaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "evacuar", base: "evacuar" }]
+    examples:
+      - target: "Evacuan el edificio."
+        ipa: "eˈbakwan el ediˈfiθjo"
+        bases: [{ word: "Evacuan", base: "evacuar" }, { word: "el", base: "el" }, { word: "edificio", ref: "es-0786" }]
+      - target: "Evacuamos la casa por el humo."
+        ipa: "ebaˈkwamos la ˈkasa poɾ el ˈumo"
+        bases: [{ word: "Evacuamos", base: "evacuar" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "humo", ref: "es-2420" }]
+  - id: "es-2829"
+    target: "avisar"
+    ipa: "abiˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "avisar", base: "avisar" }]
+    examples:
+      - target: "Aviso a los bomberos."
+        ipa: "aˈbiso a los bomˈbeɾos"
+        bases: [{ word: "Aviso", base: "avisar" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "bomberos", ref: "es-0872" }]
+      - target: "Avisan a la policía del robo."
+        ipa: "aˈbisan a la poliˈθia del ˈrobo"
+        bases: [{ word: "Avisan", base: "avisar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "policía", ref: "es-0868" }, { word: "del", base: "del" }, { word: "robo", ref: "es-2182" }]
+  - id: "es-2830"
+    target: "ahogarse"
+    ipa: "aoˈɡaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ahogarse", base: "ahogarse" }]
+    examples:
+      - target: "Me ahogo en el mar."
+        ipa: "me aˈoɡo en el maɾ"
+        bases: [{ word: "Me", base: "me" }, { word: "ahogo", base: "ahogarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }]
+      - target: "El niño se ahoga en la piscina."
+        ipa: "el ˈniɲo se aˈoɡa en la pisˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "se", base: "se" }, { word: "ahoga", base: "ahogarse" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "piscina", ref: "es-1423" }]
+  - id: "es-2831"
+    target: "caerse"
+    ipa: "kaˈeɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "caerse", base: "caerse" }]
+    examples:
+      - target: "Me caigo en la escalera."
+        ipa: "me ˈkajɡo en la eskaˈleɾa"
+        bases: [{ word: "Me", base: "me" }, { word: "caigo", base: "caerse" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "escalera", ref: "es-1812" }]
+      - target: "El niño se cae en el parque."
+        ipa: "el ˈniɲo se ˈkae en el ˈpaɾke"
+        bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "se", base: "se" }, { word: "cae", base: "caerse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
+  - id: "es-2832"
+    target: "quemarse"
+    ipa: "keˈmaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "quemarse", base: "quemarse" }]
+    examples:
+      - target: "Me quemo con el agua caliente."
+        ipa: "me ˈkemo kon el ˈaɡwa kaˈljente"
+        bases: [{ word: "Me", base: "me" }, { word: "quemo", base: "quemarse" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "caliente", ref: "es-0407" }]
+      - target: "Se quema la mano."
+        ipa: "se ˈkema la ˈmano"
+        bases: [{ word: "Se", base: "se" }, { word: "quema", base: "quemarse" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }]
