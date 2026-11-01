@@ -1,0 +1,129 @@
+schema: 1
+id: "mr-en-workplace"
+kind: "layer"
+core: "mr-workplace"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Workplace"
+description: "An office day: colleagues and the boss, meetings, reports, files and the words for applying for a job. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1262":
+    native: "office"
+    notes:
+      "n1": "{1} is an office, a formal word. In speech people say ऑफिस (ofis)."
+    examples:
+      "कार्यालय सकाळी नऊला उघडतं.": "The office opens at nine in the morning."
+      "कार्यालयात मीटिंग आहे.": { native: "There is a meeting in the office.", bases: { "आहे": "to be" } }
+  "mr-1263":
+    native: "colleague"
+    notes:
+      "n1": "{1} is a colleague, someone who works with you."
+    examples:
+      "माझे सहकारी चांगले आहेत.": { native: "My colleagues are good.", bases: { "आहेत": "to be" } }
+      "सहकाऱ्यांनी मदत केली.": "The colleagues helped."
+  "mr-1264":
+    native: "boss"
+    notes:
+      "n1": "{1} is a boss, a loanword from English."
+    examples:
+      "बॉस ऑफिसमध्ये आहेत.": { native: "The boss is in the office.", bases: { "आहेत": "to be" } }
+      "बॉसने मला बोलावलं.": { native: "The boss called me.", bases: { "बोलावलं": "to call" } }
+  "mr-1265":
+    native: "interview"
+    notes:
+      "n1": "{1} is an interview for a job."
+    examples:
+      "उद्या माझी मुलाखत आहे.": { native: "I have an interview tomorrow.", bases: { "आहे": "to be" } }
+      "मुलाखत चांगली गेली.": "The interview went well."
+  "mr-1266":
+    native: "application"
+    notes:
+      "n1": "{1} is an application form or a written request."
+    examples:
+      "अर्ज भरा.": "Fill in the application."
+      "नोकरीसाठी अर्ज पाठवला.": "I sent an application for the job."
+  "mr-1267":
+    native: "employee, staff"
+    notes:
+      "n1": "{1} is an employee or a member of staff."
+    examples:
+      "कर्मचारी वेळेवर आले.": "The staff came on time."
+      "कर्मचाऱ्यांना सुट्टी मिळाली.": { native: "The staff got a holiday.", bases: { "मिळाली": "to get" } }
+  "mr-1268":
+    native: "manager"
+    notes:
+      "n1": "{1} is a manager who runs a team or department."
+    examples:
+      "व्यवस्थापक बैठक घेतात.": "The manager holds the meeting."
+      "व्यवस्थापकाने सही केली.": { native: "The manager signed.", bases: { "सही": "signature" } }
+  "mr-1269":
+    native: "meeting"
+    notes:
+      "n1": "{1} is a meeting, a sitting together to discuss."
+    examples:
+      "आज बैठक आहे.": { native: "There is a meeting today.", bases: { "आहे": "to be" } }
+      "बैठकीत चर्चा झाली.": { native: "There was a discussion in the meeting.", bases: { "झाली": "to become" } }
+  "mr-1270":
+    native: "project"
+    notes:
+      "n1": "{1} is a project, a piece of planned work."
+    examples:
+      "नवीन प्रकल्प सुरू झाला.": { native: "The new project started.", bases: { "नवीन": "new", "सुरू": "started", "झाला": "to become" } }
+      "प्रकल्पाचं काम पूर्ण झालं.": { native: "The work on the project was complete.", bases: { "पूर्ण": "complete", "झालं": "to become" } }
+  "mr-1271":
+    native: "report"
+    notes:
+      "n1": "{1} is a written report."
+    examples:
+      "अहवाल तयार आहे.": { native: "The report is ready.", bases: { "आहे": "to be" } }
+      "उद्या अहवाल सादर करायचा आहे.": { native: "I have to submit the report tomorrow.", bases: { "सादर": "submit", "आहे": "to be" } }
+  "mr-1272":
+    native: "printer"
+    notes:
+      "n1": "{1} is a printer, a loanword from English."
+    examples:
+      "प्रिंटर चालत नाही.": { native: "The printer is not working.", bases: { "नाही": "not" } }
+      "अहवाल प्रिंट करा.": "Print the report."
+  "mr-1273":
+    native: "resignation"
+    notes:
+      "n1": "{1} is a resignation, the letter of leaving a job."
+    examples:
+      "त्याने राजीनामा दिला.": "He resigned."
+      "राजीनामा स्वीकारला.": { native: "The resignation was accepted.", bases: { "स्वीकारला": "to accept" } }
+  "mr-1274":
+    native: "promotion"
+    notes:
+      "n1": "{1} is a promotion to a better post."
+    examples:
+      "त्याला बढती मिळाली.": { native: "He got a promotion.", bases: { "मिळाली": "to get" } }
+      "बढतीसाठी मेहनत करा.": "Work hard for a promotion."
+  "mr-1275":
+    native: "worker, labourer"
+    notes:
+      "n1": "{1} is a worker, usually one who does manual work."
+    examples:
+      "कामगार रस्ता बांधत आहेत.": { native: "The workers are building the road.", bases: { "बांधत": "to build", "आहेत": "to be" } }
+      "कामगारांना पगार दिला.": "The workers were paid."
+  "mr-1276":
+    native: "to apply"
+    notes:
+      "n1": "{1} is applying for a job, a course or a permit."
+    examples:
+      "मी नोकरीसाठी अर्ज केला.": "I applied for the job."
+      "तुम्ही अर्ज करू शकता.": { native: "You can apply.", bases: { "शकता": "can" } }
+  "mr-1277":
+    native: "to submit"
+    notes:
+      "n1": "{1} is handing in a report or a document."
+    examples:
+      "उद्या अहवाल सादर करा.": "Submit the report tomorrow."
+      "त्याने कागदपत्रं सादर केली.": "He submitted the papers."
+  "mr-1278":
+    native: "to complete, to finish"
+    notes:
+      "n1": "{1} is finishing a piece of work."
+    examples:
+      "काम पूर्ण झालं.": { native: "The work was completed.", bases: { "झालं": "to become" } }
+      "मी प्रकल्प पूर्ण केला.": { native: "I completed the project.", bases: { "पूर्ण": "complete" } }
