@@ -1,0 +1,163 @@
+schema: 1
+id: "es-en-weddings"
+kind: "layer"
+core: "es-weddings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weddings: the invitation, the rites and the guests"
+license: "CC-BY-SA-4.0"
+description: "Words for a wedding: the marriage and its ceremony, the ring and the veil, the best man and the bridesmaid, the banquet and the toast, the invitation and the honeymoon, and the verbs to marry and to toast. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2651":
+    native: "wedding"
+    notes: { n1: "La boda is a wedding, the marriage ceremony and the party that follows. Its plural is bodas." }
+    bases: { "la": "the", "boda": "wedding" }
+    examples:
+      "La boda es en junio.": { native: "The wedding is in June.", bases: { "La": "the", "boda": "wedding", "en": "in" } }
+      "Vamos a una boda en el pueblo.": { native: "We go to a wedding in the village.", bases: { "a": "to", "una": "a", "boda": "wedding", "en": "in", "el": "the" } }
+  "es-2652":
+    native: "marriage"
+    notes: { n1: "El matrimonio is a marriage, the state of being married, or the couple." }
+    bases: { "el": "the", "matrimonio": "marriage" }
+    examples:
+      "El matrimonio dura toda la vida.": { native: "The marriage lasts a lifetime.", bases: { "El": "the", "matrimonio": "marriage", "toda": "all", "la": "the", "vida": "life" } }
+      "Tienen un matrimonio feliz.": { native: "They have a happy marriage.", bases: { "un": "a", "matrimonio": "marriage" } }
+  "es-2653":
+    native: "to get married"
+    notes: { n1: "Casarse is to get married, to marry someone. Casarse con is to marry a person. Its yo form is me caso." }
+    bases: { "casarse": "to get married" }
+    examples:
+      "Me caso en julio.": { native: "I get married in July.", bases: { "Me": "to me", "caso": "to get married", "en": "in" } }
+      "Mi hermana se casa con Luis.": { native: "My sister marries Luis.", bases: { "se": "(reflexive) oneself", "casa": "to get married", "con": "with", "Luis": "Luis" } }
+  "es-2654":
+    native: "ring"
+    notes: { n1: "El anillo is a ring worn on a finger." }
+    bases: { "el": "the", "anillo": "ring" }
+    examples:
+      "El anillo es de oro.": { native: "The ring is gold.", bases: { "El": "the", "anillo": "ring", "de": "of", "oro": "gold" } }
+      "Llevo un anillo en el dedo.": { native: "I wear a ring on my finger.", bases: { "un": "a", "anillo": "ring", "en": "in", "el": "the" } }
+  "es-2655":
+    native: "invitation"
+    notes: { n1: "La invitación is an invitation, a card or message that asks someone to come. The verb is invitar." }
+    bases: { "la": "the", "invitación": "invitation" }
+    examples:
+      "La invitación es bonita.": { native: "The invitation is pretty.", bases: { "La": "the", "invitación": "invitation" } }
+      "Recibo una invitación a la boda.": { native: "I receive an invitation to the wedding.", bases: { "una": "a", "invitación": "invitation", "a": "to", "la": "the" } }
+  "es-2656":
+    native: "wedding ring"
+    notes: { n1: "La alianza is a wedding ring, worn by a married person." }
+    bases: { "la": "the", "alianza": "wedding ring" }
+    examples:
+      "La alianza brilla.": { native: "The wedding ring shines.", bases: { "La": "the", "alianza": "wedding ring" } }
+      "Llevo la alianza en el dedo.": { native: "I wear the wedding ring on my finger.", bases: { "la": "the", "alianza": "wedding ring", "en": "in", "el": "the" } }
+  "es-2657":
+    native: "honey"
+    notes: { n1: "La miel is honey. The luna de miel is the honeymoon." }
+    bases: { "la": "the", "miel": "honey" }
+    examples:
+      "La miel es dulce.": { native: "Honey is sweet.", bases: { "La": "the", "miel": "honey" } }
+      "Pasamos la luna de miel en la playa.": { native: "We spend the honeymoon at the beach.", bases: { "la": "the", "de": "of", "miel": "honey", "en": "in" } }
+  "es-2658":
+    native: "best man; godfather"
+    notes: { n1: "El padrino is the best man at a wedding, or a godfather. The feminine is la madrina." }
+    bases: { "el": "the", "padrino": "best man; godfather" }
+    examples:
+      "El padrino da un brindis.": { native: "The best man gives a toast.", bases: { "El": "the", "padrino": "best man; godfather", "un": "a" } }
+      "Mi tío es el padrino.": { native: "My uncle is the best man.", bases: { "el": "the", "padrino": "best man; godfather" } }
+  "es-2659":
+    native: "bridesmaid; godmother"
+    notes: { n1: "La madrina is a bridesmaid at a wedding, or a godmother." }
+    bases: { "la": "the", "madrina": "bridesmaid; godmother" }
+    examples:
+      "La madrina lleva un vestido azul.": { native: "The bridesmaid wears a blue dress.", bases: { "La": "the", "madrina": "bridesmaid; godmother", "un": "a" } }
+      "Mi prima es la madrina.": { native: "My cousin is the bridesmaid.", bases: { "la": "the", "madrina": "bridesmaid; godmother" } }
+  "es-2660":
+    native: "witness"
+    notes: { n1: "El testigo is a witness, a person who sees or signs for an event. The feminine is la testigo." }
+    bases: { "el": "the", "testigo": "witness" }
+    examples:
+      "Los testigos firman el papel.": { native: "The witnesses sign the paper.", bases: { "Los": "the", "testigos": "witness", "el": "the" } }
+      "El testigo dice la verdad.": { native: "The witness tells the truth.", bases: { "El": "the", "testigo": "witness", "la": "the" } }
+  "es-2661":
+    native: "ceremony"
+    notes: { n1: "La ceremonia is a ceremony, a formal set of acts for an event." }
+    bases: { "la": "the", "ceremonia": "ceremony" }
+    examples:
+      "La ceremonia empieza a las cinco.": { native: "The ceremony starts at five.", bases: { "La": "the", "ceremonia": "ceremony", "a": "to", "las": "the" } }
+      "La ceremonia es en la iglesia.": { native: "The ceremony is in the church.", bases: { "La": "the", "ceremonia": "ceremony", "en": "in", "la": "the" } }
+  "es-2662":
+    native: "banquet; feast"
+    notes: { n1: "El banquete is a formal meal for many people, a feast at a wedding or an event." }
+    bases: { "el": "the", "banquete": "banquet; feast" }
+    examples:
+      "El banquete es muy largo.": { native: "The banquet is very long.", bases: { "El": "the", "banquete": "banquet; feast" } }
+      "Hay un banquete en el jardín.": { native: "There is a banquet in the garden.", bases: { "Hay": "there is; there are", "un": "a", "banquete": "banquet; feast", "en": "in", "el": "the" } }
+  "es-2663":
+    native: "veil"
+    notes: { n1: "El velo is a veil, a piece of thin cloth over the head or face." }
+    bases: { "el": "the", "velo": "veil" }
+    examples:
+      "La novia lleva un velo.": { native: "The bride wears a veil.", bases: { "La": "the", "un": "a", "velo": "veil" } }
+      "El velo es blanco.": { native: "The veil is white.", bases: { "El": "the", "velo": "veil" } }
+  "es-2664":
+    native: "bouquet"
+    notes: { n1: "El ramo is a bouquet of flowers, given or carried at a wedding." }
+    bases: { "el": "the", "ramo": "bouquet" }
+    examples:
+      "La novia lleva un ramo.": { native: "The bride carries a bouquet.", bases: { "La": "the", "un": "a", "ramo": "bouquet" } }
+      "El ramo es de rosas.": { native: "The bouquet is of roses.", bases: { "El": "the", "ramo": "bouquet", "de": "of", "rosas": "roses" } }
+  "es-2665":
+    native: "photographer"
+    notes: { n1: "El fotógrafo is a photographer, who takes pictures. The feminine is la fotógrafa." }
+    bases: { "el": "the", "fotógrafo": "photographer" }
+    examples:
+      "El fotógrafo hace muchas fotos.": { native: "The photographer takes many photos.", bases: { "El": "the", "fotógrafo": "photographer" } }
+      "La fotógrafa es muy buena.": { native: "The photographer is very good.", bases: { "La": "the", "fotógrafa": "photographer" } }
+  "es-2666":
+    native: "to toast"
+    notes: { n1: "Brindar is to raise a glass and wish good things for someone." }
+    bases: { "brindar": "to toast" }
+    examples:
+      "Brindamos por los novios.": { native: "We toast the couple.", bases: { "Brindamos": "to toast", "por": "for", "los": "the" } }
+      "Brindo por la familia.": { native: "I toast the family.", bases: { "Brindo": "to toast", "por": "for", "la": "the" } }
+  "es-2667":
+    native: "son-in-law"
+    notes: { n1: "El yerno is a son-in-law, the husband of one's daughter." }
+    bases: { "el": "the", "yerno": "son-in-law" }
+    examples:
+      "Mi yerno es médico.": { native: "My son-in-law is a doctor.", bases: { "yerno": "son-in-law" } }
+      "El yerno llega mañana.": { native: "The son-in-law arrives tomorrow.", bases: { "El": "the", "yerno": "son-in-law" } }
+  "es-2668":
+    native: "daughter-in-law"
+    notes: { n1: "La nuera is a daughter-in-law, the wife of one's son." }
+    bases: { "la": "the", "nuera": "daughter-in-law" }
+    examples:
+      "Mi nuera es muy simpática.": { native: "My daughter-in-law is very nice.", bases: { "nuera": "daughter-in-law" } }
+      "La nuera cocina bien.": { native: "The daughter-in-law cooks well.", bases: { "La": "the", "nuera": "daughter-in-law" } }
+  "es-2669":
+    native: "couple; partner"
+    notes: { n1: "La pareja is a couple, two people together, or one's partner." }
+    bases: { "la": "the", "pareja": "couple; partner" }
+    examples:
+      "La pareja se casa en mayo.": { native: "The couple marry in May.", bases: { "La": "the", "pareja": "couple; partner", "se": "(reflexive) oneself", "en": "in" } }
+      "Mi pareja es muy amable.": { native: "My partner is very kind.", bases: { "pareja": "couple; partner", "amable": "kind" } }
+  "es-2670":
+    native: "divorce"
+    notes: { n1: "El divorcio is a divorce, the legal end of a marriage. The verb is divorciarse." }
+    bases: { "el": "the", "divorcio": "divorce" }
+    examples:
+      "El divorcio es difícil.": { native: "Divorce is difficult.", bases: { "El": "the", "divorcio": "divorce" } }
+      "Tramitan el divorcio.": { native: "They process the divorce.", bases: { "Tramitan": "to process", "el": "the", "divorcio": "divorce" } }
+  "es-2671":
+    native: "to divorce"
+    notes: { n1: "Divorciarse is to end a marriage by law. Its yo form is me divorcio." }
+    bases: { "divorciarse": "to divorce" }
+    examples:
+      "Me divorcio en el juzgado.": { native: "I divorce in court.", bases: { "Me": "to me", "divorcio": "to divorce", "en": "in", "el": "the", "juzgado": "court" } }
+      "Se divorcian en primavera.": { native: "They divorce in spring.", bases: { "Se": "(reflexive) oneself", "divorcian": "to divorce", "en": "in" } }
+  "es-2672":
+    native: "widowed"
+    notes: { n1: "Viudo is a widow or widower, a person whose partner has died. It agrees with the noun: viuda." }
+    bases: { "viudo": "widowed" }
+    examples:
+      "Mi abuelo es viudo.": { native: "My grandfather is a widower.", bases: { "viudo": "widowed" } }
+      "Mi abuela es viuda.": { native: "My grandmother is a widow.", bases: { "viuda": "widowed" } }

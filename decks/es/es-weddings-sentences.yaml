@@ -1,0 +1,50 @@
+schema: 1
+id: "es-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2673"
+    target: "La novia y el novio se casan en la iglesia."
+    ipa: "la ˈnobja i el ˈnobjo se ˈkasan en la iˈɡlesja"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "novia", ref: "es-0175" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "novio", ref: "es-0174" }, { word: "se", base: "se" }, { word: "casan", base: "casar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "iglesia", ref: "es-0774" }]
+    confusables: [{ id: "ceremonia", ref: "es-2661", kind: "word" }, { id: "boda", ref: "es-2651", kind: "word" }]
+  - id: "es-2674"
+    target: "El padrino brinda por los novios."
+    ipa: "el paˈdɾino ˈbɾinda poɾ los ˈnobjos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "padrino", ref: "es-2658" }, { word: "brinda", ref: "es-2666" }, { word: "por", base: "por" }, { word: "los", base: "los" }, { word: "novios", ref: "es-0174" }]
+    confusables: [{ id: "madrina", ref: "es-2659", kind: "word" }, { id: "testigo", ref: "es-2660", kind: "word" }]
+  - id: "es-2675"
+    target: "Recibimos una invitación para el banquete."
+    ipa: "reθiˈbimos ˈuna inbitaˈθjon ˈpaɾa el banˈkete"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Recibimos", ref: "es-0301" }, { word: "una", base: "una" }, { word: "invitación", ref: "es-2655" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "banquete", ref: "es-2662" }]
+    confusables: [{ id: "anillo", ref: "es-2654", kind: "word" }, { id: "alianza", ref: "es-2656", kind: "word" }]
+  - id: "es-2676"
+    target: "La novia lleva un ramo y un velo."
+    ipa: "la ˈnobja ˈʝeba un ˈramo i un ˈbelo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "novia", ref: "es-0175" }, { word: "lleva", ref: "es-0623" }, { word: "un", base: "un" }, { word: "ramo", ref: "es-2664" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "velo", ref: "es-2663" }]
+    confusables: [{ id: "vestido", ref: "es-1018", kind: "word" }, { id: "fotografo", ref: "es-2665", kind: "word" }]
+  - id: "es-2677"
+    target: "Mi yerno y mi nuera vienen a la boda."
+    ipa: "mi ˈʝeɾno i mi ˈnweɾa ˈbjenen a la ˈboda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "yerno", ref: "es-2667" }, { word: "y", ref: "es-0048" }, { word: "mi", ref: "es-0129" }, { word: "nuera", ref: "es-2668" }, { word: "vienen", ref: "es-1632" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "boda", ref: "es-2651" }]
+    confusables: [{ id: "primo", ref: "es-0169", kind: "word" }, { id: "cunado", ref: "es-0182", kind: "word" }]
+  - id: "es-2678"
+    target: "Pasamos la luna de miel en el mar."
+    ipa: "paˈsamos la ˈluna de mjel en el maɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pasamos", ref: "es-1533" }, { word: "la", base: "la" }, { word: "luna", ref: "es-1764" }, { word: "de", base: "de" }, { word: "miel", ref: "es-2657" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }]
+    confusables: [{ id: "pareja", ref: "es-2669", kind: "word" }, { id: "divorcio", ref: "es-2670", kind: "word" }]

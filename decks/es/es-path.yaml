@@ -443,7 +443,8 @@ units:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "es-weddings", theme: "weddings", words: 40 }
+  - decks: ["es-weddings", "es-weddings-sentences", "es-reading-weddings", "*"]
+    words: 22
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
