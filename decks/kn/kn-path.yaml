@@ -351,7 +351,8 @@ units:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "kn-nature", theme: "nature", words: 50 }
+  - decks: ["kn-nature", "*"]
+    words: 23
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
     reading_passages:
