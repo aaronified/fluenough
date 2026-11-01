@@ -1,0 +1,395 @@
+schema: 1
+id: "es-phone"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "phone"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1650"
+    target: "la llamada"
+    ipa: "la ʝaˈmada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "llamada", base: "llamada" }]
+    examples:
+      - target: "Recibo una llamada de mi madre."
+        ipa: "reˈθibo ˈuna ʝaˈmada de mi ˈmadɾe"
+        bases: [{ word: "Recibo", ref: "es-0301" }, { word: "una", base: "una" }, { word: "llamada", base: "llamada" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "La llamada es larga"
+        ipa: "la ʝaˈmada es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "llamada", base: "llamada" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-1651"
+    target: "el mensaje"
+    ipa: "el menˈsaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mensaje", base: "mensaje" }]
+    examples:
+      - target: "Envío un mensaje a mi amiga."
+        ipa: "enˈbio un menˈsaxe a mi aˈmiɡa"
+        bases: [{ word: "Envío", ref: "es-1652" }, { word: "un", base: "un" }, { word: "mensaje", base: "mensaje" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "amiga", base: "amiga" }]
+      - target: "Recibo un mensaje de texto."
+        ipa: "reˈθibo un menˈsaxe de ˈteksto"
+        bases: [{ word: "Recibo", ref: "es-0301" }, { word: "un", base: "un" }, { word: "mensaje", base: "mensaje" }, { word: "de", base: "de" }, { word: "texto", base: "texto" }]
+  - id: "es-1652"
+    target: "enviar"
+    ipa: "enˈbjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enviar", base: "enviar" }]
+    examples:
+      - target: "Envío el correo hoy."
+        ipa: "enˈbio el koˈreo oj"
+        bases: [{ word: "Envío", base: "enviar" }, { word: "el", base: "el" }, { word: "correo", ref: "es-0248" }, { word: "hoy", ref: "es-0331" }]
+      - target: "¿Me envías la foto?"
+        ipa: "me enˈbias la ˈfoto"
+        bases: [{ word: "Me", base: "me" }, { word: "envías", base: "enviar" }, { word: "la", base: "la" }, { word: "foto", ref: "es-1184" }]
+  - id: "es-1653"
+    target: "la batería"
+    ipa: "la bateˈɾia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "batería", base: "batería" }]
+    examples:
+      - target: "La batería está casi vacía."
+        ipa: "la bateˈɾia esˈta ˈkasi baˈθia"
+        bases: [{ word: "La", base: "la" }, { word: "batería", base: "batería" }, { word: "está", ref: "es-0023" }, { word: "casi", ref: "es-0325" }, { word: "vacía", ref: "es-0428" }]
+      - target: "Cargo la batería por la noche."
+        ipa: "ˈkaɾɡo la bateˈɾia poɾ la ˈnotʃe"
+        bases: [{ word: "Cargo", ref: "es-1192" }, { word: "la", base: "la" }, { word: "batería", base: "batería" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-1654"
+    target: "la aplicación"
+    ipa: "la aplikaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "aplicación", base: "aplicación" }]
+    examples:
+      - target: "Esta aplicación es gratis."
+        ipa: "ˈesta aplikaˈθjon es ˈɡɾatis"
+        bases: [{ word: "Esta", base: "esta" }, { word: "aplicación", base: "aplicación" }, { word: "es", ref: "es-0022" }, { word: "gratis", ref: "es-1235" }]
+      - target: "Descargo una aplicación."
+        ipa: "desˈkaɾɡo ˈuna aplikaˈθjon"
+        bases: [{ word: "Descargo", ref: "es-1655" }, { word: "una", base: "una" }, { word: "aplicación", base: "aplicación" }]
+  - id: "es-1655"
+    target: "descargar"
+    ipa: "deskaɾˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "descargar", base: "descargar" }]
+    examples:
+      - target: "Descargo la música."
+        ipa: "desˈkaɾɡo la ˈmusika"
+        bases: [{ word: "Descargo", base: "descargar" }, { word: "la", base: "la" }, { word: "música", base: "música" }]
+      - target: "Descargamos los vídeos."
+        ipa: "deskaɾˈɡamos los ˈbideos"
+        bases: [{ word: "Descargamos", base: "descargar" }, { word: "los", base: "los" }, { word: "vídeos", ref: "es-1664" }]
+  - id: "es-1656"
+    target: "internet"
+    ipa: "inteɾˈnet"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "internet", base: "internet" }]
+    examples:
+      - target: "No tengo internet en casa."
+        ipa: "no ˈtenɡo inteɾˈnet en ˈkasa"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "internet", base: "internet" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "El internet es rápido."
+        ipa: "el inteɾˈnet es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "internet", base: "internet" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+  - id: "es-1657"
+    target: "el wifi"
+    ipa: "el ˈwifi"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "wifi", base: "wifi" }]
+    examples:
+      - target: "¿Hay wifi aquí?"
+        ipa: "aj ˈwifi aˈki"
+        bases: [{ word: "Hay", base: "haber" }, { word: "wifi", base: "wifi" }, { word: "aquí", ref: "es-0051" }]
+      - target: "La contraseña del wifi es fácil."
+        ipa: "la kontɾaˈseɲa del ˈwifi es ˈfaθil"
+        bases: [{ word: "La", base: "la" }, { word: "contraseña", ref: "es-1660" }, { word: "del", base: "del" }, { word: "wifi", base: "wifi" }, { word: "es", ref: "es-0022" }, { word: "fácil", ref: "es-0413" }]
+  - id: "es-1658"
+    target: "la señal"
+    ipa: "la seˈɲal"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "señal", base: "señal" }]
+    examples:
+      - target: "No hay señal en el campo."
+        ipa: "no aj seˈɲal en el ˈkampo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "hay", base: "haber" }, { word: "señal", base: "señal" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", base: "campo" }]
+      - target: "La señal es muy débil."
+        ipa: "la seˈɲal es mwi ˈdebil"
+        bases: [{ word: "La", base: "la" }, { word: "señal", base: "señal" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "débil", base: "débil" }]
+  - id: "es-1659"
+    target: "la conexión"
+    ipa: "la konekˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "conexión", base: "conexión" }]
+    examples:
+      - target: "La conexión es lenta."
+        ipa: "la konekˈsjon es ˈlenta"
+        bases: [{ word: "La", base: "la" }, { word: "conexión", base: "conexión" }, { word: "es", ref: "es-0022" }, { word: "lenta", ref: "es-0415" }]
+      - target: "Hay una buena conexión en la oficina."
+        ipa: "aj ˈuna ˈbwena konekˈsjon en la ofiˈθina"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "conexión", base: "conexión" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+  - id: "es-1660"
+    target: "la contraseña"
+    ipa: "la kontɾaˈseɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "contraseña", base: "contraseña" }]
+    examples:
+      - target: "Mi contraseña es segura."
+        ipa: "mi kontɾaˈseɲa es seˈɡuɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "contraseña", base: "contraseña" }, { word: "es", ref: "es-0022" }, { word: "segura", base: "seguro" }]
+      - target: "Olvido la contraseña del correo."
+        ipa: "olˈbido la kontɾaˈseɲa del koˈreo"
+        bases: [{ word: "Olvido", ref: "es-1378" }, { word: "la", base: "la" }, { word: "contraseña", base: "contraseña" }, { word: "del", base: "del" }, { word: "correo", ref: "es-0248" }]
+  - id: "es-1661"
+    target: "el buzón"
+    ipa: "el buˈθon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "buzón", base: "buzón" }]
+    examples:
+      - target: "Dejo un mensaje en el buzón de voz."
+        ipa: "ˈdexo un menˈsaxe en el buˈθon de boθ"
+        bases: [{ word: "Dejo", ref: "es-1190" }, { word: "un", base: "un" }, { word: "mensaje", ref: "es-1651" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "buzón", base: "buzón" }, { word: "de", base: "de" }, { word: "voz", base: "voz" }]
+      - target: "El buzón está lleno."
+        ipa: "el buˈθon esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "buzón", base: "buzón" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+  - id: "es-1662"
+    target: "apagar"
+    ipa: "apaˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "apagar", base: "apagar" }]
+    examples:
+      - target: "Apago el móvil por la noche."
+        ipa: "aˈpaɡo el ˈmobil poɾ la ˈnotʃe"
+        bases: [{ word: "Apago", base: "apagar" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "Apaga la luz, por favor."
+        ipa: "aˈpaɡa la luθ poɾ faˈboɾ"
+        bases: [{ word: "Apaga", base: "apagar" }, { word: "la", base: "la" }, { word: "luz", base: "luz" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-1663"
+    target: "encender"
+    ipa: "enθenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "encender", base: "encender" }]
+    examples:
+      - target: "Enciendo la pantalla."
+        ipa: "enˈθjendo la panˈtaʝa"
+        bases: [{ word: "Enciendo", base: "encender" }, { word: "la", base: "la" }, { word: "pantalla", ref: "es-1185" }]
+      - target: "Enciende la luz."
+        ipa: "enˈθjende la luθ"
+        bases: [{ word: "Enciende", base: "encender" }, { word: "la", base: "la" }, { word: "luz", base: "luz" }]
+  - id: "es-1664"
+    target: "el vídeo"
+    ipa: "el ˈbideo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vídeo", base: "vídeo" }]
+    examples:
+      - target: "Veo un vídeo en el móvil."
+        ipa: "ˈbeo un ˈbideo en el ˈmobil"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "vídeo", base: "vídeo" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "móvil", ref: "es-0920" }]
+      - target: "Este vídeo es muy divertido."
+        ipa: "ˈeste ˈbideo es mwi dibeɾˈtido"
+        bases: [{ word: "Este", base: "este" }, { word: "vídeo", base: "vídeo" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "divertido", ref: "es-0434" }]
+  - id: "es-1665"
+    target: "la tecla"
+    ipa: "la ˈtekla"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tecla", base: "tecla" }]
+    examples:
+      - target: "Pulsa la tecla verde."
+        ipa: "ˈpulsa la ˈtekla ˈbeɾde"
+        bases: [{ word: "Pulsa", base: "pulsar" }, { word: "la", base: "la" }, { word: "tecla", base: "tecla" }, { word: "verde", ref: "es-1009" }]
+      - target: "La tecla está rota."
+        ipa: "la ˈtekla esˈta ˈrota"
+        bases: [{ word: "La", base: "la" }, { word: "tecla", base: "tecla" }, { word: "está", ref: "es-0023" }, { word: "rota", ref: "es-1196" }]
+  - id: "es-1666"
+    target: "la red"
+    ipa: "la red"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "red", base: "red" }]
+    examples:
+      - target: "No tengo red aquí."
+        ipa: "no ˈtenɡo red aˈki"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "red", base: "red" }, { word: "aquí", ref: "es-0051" }]
+      - target: "La red es segura."
+        ipa: "la red es seˈɡuɾa"
+        bases: [{ word: "La", base: "la" }, { word: "red", base: "red" }, { word: "es", ref: "es-0022" }, { word: "segura", base: "seguro" }]
+  - id: "es-1667"
+    target: "la tableta"
+    ipa: "la taˈbleta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tableta", base: "tableta" }]
+    examples:
+      - target: "Leo en la tableta."
+        ipa: "ˈleo en la taˈbleta"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tableta", base: "tableta" }]
+      - target: "La tableta es nueva."
+        ipa: "la taˈbleta es ˈnweba"
+        bases: [{ word: "La", base: "la" }, { word: "tableta", base: "tableta" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }]
+  - id: "es-1668"
+    target: "el cable"
+    ipa: "el ˈkable"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cable", base: "cable" }]
+    examples:
+      - target: "Necesito un cable de carga."
+        ipa: "neθeˈsito un ˈkable de ˈkaɾɡa"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "cable", base: "cable" }, { word: "de", base: "de" }, { word: "carga", ref: "es-1192" }]
+      - target: "El cable está en el cajón."
+        ipa: "el ˈkable esˈta en el kaˈxon"
+        bases: [{ word: "El", base: "el" }, { word: "cable", base: "cable" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cajón", base: "cajón" }]
+  - id: "es-1669"
+    target: "el auricular"
+    ipa: "el awɾikuˈlaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "auricular", base: "auricular" }]
+    examples:
+      - target: "Llevo los auriculares en el bolsillo."
+        ipa: "ˈʝebo los awɾikuˈlaɾes en el bolˈsiʝo"
+        bases: [{ word: "Llevo", ref: "es-0623" }, { word: "los", base: "los" }, { word: "auriculares", base: "auricular" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bolsillo", base: "bolsillo" }]
+      - target: "El auricular izquierdo no funciona."
+        ipa: "el awɾikuˈlaɾ iθˈkjeɾdo no funˈθjona"
+        bases: [{ word: "El", base: "el" }, { word: "auricular", base: "auricular" }, { word: "izquierdo", base: "izquierdo" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }]
+  - id: "es-1670"
+    target: "el altavoz"
+    ipa: "el altaˈboθ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "altavoz", base: "altavoz" }]
+    examples:
+      - target: "El altavoz está roto."
+        ipa: "el altaˈboθ esˈta ˈroto"
+        bases: [{ word: "El", base: "el" }, { word: "altavoz", base: "altavoz" }, { word: "está", ref: "es-0023" }, { word: "roto", ref: "es-1196" }]
+      - target: "Pongo la música en el altavoz."
+        ipa: "ˈponɡo la ˈmusika en el altaˈboθ"
+        bases: [{ word: "Pongo", ref: "es-1628" }, { word: "la", base: "la" }, { word: "música", base: "música" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "altavoz", base: "altavoz" }]
+  - id: "es-1671"
+    target: "el micrófono"
+    ipa: "el miˈkɾofono"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "micrófono", base: "micrófono" }]
+    examples:
+      - target: "El micrófono no funciona."
+        ipa: "el miˈkɾofono no funˈθjona"
+        bases: [{ word: "El", base: "el" }, { word: "micrófono", base: "micrófono" }, { word: "no", ref: "es-0043" }, { word: "funciona", base: "funcionar" }]
+      - target: "Hablo por el micrófono."
+        ipa: "ˈablo poɾ el miˈkɾofono"
+        bases: [{ word: "Hablo", ref: "es-0027" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "micrófono", base: "micrófono" }]
+  - id: "es-1672"
+    target: "el usuario"
+    ipa: "el uˈswaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "usuario", base: "usuario" }]
+    examples:
+      - target: "Soy un usuario nuevo."
+        ipa: "soj un uˈswaɾjo ˈnwebo"
+        bases: [{ word: "Soy", ref: "es-0022" }, { word: "un", base: "un" }, { word: "usuario", base: "usuario" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "El usuario escribe su nombre."
+        ipa: "el uˈswaɾjo esˈkɾibe su ˈnombɾe"
+        bases: [{ word: "El", base: "el" }, { word: "usuario", base: "usuario" }, { word: "escribe", ref: "es-0297" }, { word: "su", ref: "es-0131" }, { word: "nombre", ref: "es-0091" }]
+  - id: "es-1673"
+    target: "el perfil"
+    ipa: "el peɾˈfil"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "perfil", base: "perfil" }]
+    examples:
+      - target: "Mi perfil es público."
+        ipa: "mi peɾˈfil es ˈpubliko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "perfil", base: "perfil" }, { word: "es", ref: "es-0022" }, { word: "público", base: "público" }]
+      - target: "Cambio mi perfil."
+        ipa: "ˈkambjo mi peɾˈfil"
+        bases: [{ word: "Cambio", ref: "es-0588" }, { word: "mi", ref: "es-0129" }, { word: "perfil", base: "perfil" }]
+  - id: "es-1674"
+    target: "borrar"
+    ipa: "boˈraɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "borrar", base: "borrar" }]
+    examples:
+      - target: "Borro el mensaje."
+        ipa: "ˈboro el menˈsaxe"
+        bases: [{ word: "Borro", base: "borrar" }, { word: "el", base: "el" }, { word: "mensaje", ref: "es-1651" }]
+      - target: "Borro la foto vieja."
+        ipa: "ˈboro la ˈfoto ˈbjexa"
+        bases: [{ word: "Borro", base: "borrar" }, { word: "la", base: "la" }, { word: "foto", ref: "es-1184" }, { word: "vieja", ref: "es-0431" }]
+  - id: "es-1675"
+    target: "marcar"
+    ipa: "maɾˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "marcar", base: "marcar" }]
+    examples:
+      - target: "Marco el número."
+        ipa: "ˈmaɾko el ˈnumeɾo"
+        bases: [{ word: "Marco", base: "marcar" }, { word: "el", base: "el" }, { word: "número", ref: "es-0250" }]
+      - target: "Marca el código."
+        ipa: "ˈmaɾka el ˈkodiɡo"
+        bases: [{ word: "Marca", base: "marcar" }, { word: "el", base: "el" }, { word: "código", base: "código" }]
+  - id: "es-1676"
+    target: "el teclado"
+    ipa: "el teˈklado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "teclado", base: "teclado" }]
+    examples:
+      - target: "El teclado está sucio."
+        ipa: "el teˈklado esˈta ˈsuθjo"
+        bases: [{ word: "El", base: "el" }, { word: "teclado", base: "teclado" }, { word: "está", ref: "es-0023" }, { word: "sucio", ref: "es-0417" }]
+      - target: "El teclado tiene muchas teclas."
+        ipa: "el teˈklado ˈtjene ˈmutʃas ˈteklas"
+        bases: [{ word: "El", base: "el" }, { word: "teclado", base: "teclado" }, { word: "tiene", ref: "es-0024" }, { word: "muchas", ref: "es-0053" }, { word: "teclas", ref: "es-1665" }]
+  - id: "es-1677"
+    target: "la impresora"
+    ipa: "la impɾeˈsoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "impresora", base: "impresora" }]
+    examples:
+      - target: "La impresora está en la oficina."
+        ipa: "la impɾeˈsoɾa esˈta en la ofiˈθina"
+        bases: [{ word: "La", base: "la" }, { word: "impresora", base: "impresora" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+      - target: "Imprimo las fotos en la impresora."
+        ipa: "imˈpɾimo las ˈfotos en la impɾeˈsoɾa"
+        bases: [{ word: "Imprimo", base: "imprimir" }, { word: "las", base: "las" }, { word: "fotos", ref: "es-1184" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "impresora", base: "impresora" }]
