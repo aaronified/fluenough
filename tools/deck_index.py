@@ -70,7 +70,17 @@ INDEX_VERSION = 1
 # offered in the app for now. Remove a line to offer the language.
 # Japanese, hidden until 2026-10-20, is offered (owner: write its first
 # decks).
-HIDDEN: set[str] = set()
+# Planned languages' starter decks (#959) are in the repository but hidden
+# from the index, so a phone on 0.7.0 sees nothing new: these are the codes
+# that assets/languages.yaml at v0.7.0 did not list. Remove them once the
+# owner has released 0.7.1 and the min-app gate is in (then unhide, in a
+# later change; add the code to SHIPPED in tools/test_deck_index.py too).
+HIDDEN: set[str] = {
+    "ang", "ar", "arc", "ca", "egy", "el", "enm", "eu", "fi", "fil", "ga",
+    "gmy", "grc", "ha", "hbs", "he", "hu", "ine", "it", "la", "ms", "nb",
+    "pl", "pli", "pt", "qap", "qgh", "qgk", "qu", "ru", "so", "sux", "sv",
+    "sw", "th", "tr", "vi", "vsn", "yi", "yue",
+}
 
 # What ships inside the app rather than downloading (the plan's item 7):
 # the theme list. The spoken languages live in assets/, not here.

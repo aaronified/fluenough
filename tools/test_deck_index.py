@@ -579,5 +579,31 @@ class ContentBytes(unittest.TestCase):
     )
 
 
+class HiddenLanguages(unittest.TestCase):
+    """Languages new since v0.7.0 stay hidden until 0.7.1 (#959)."""
+
+    # assets/languages.yaml at v0.7.0, plus the notation courses.
+    SHIPPED = set("""
+    as awa bgc bho bn brx de doi en eo es fr gbm gom gu hi hne isv ja
+    jbo kfy kha kn ko kok ks lus mag mai ml mni mr ne or pa raj sa sat
+    sd ta tcy te tok zh
+    ipa qbe
+    """.split())
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(TOOLS))
+        import deck_index
+        cls.hidden = deck_index.HIDDEN
+
+    def test_no_shipped_language_is_hidden(self) -> None:
+        self.assertEqual(self.hidden & self.SHIPPED, set())
+
+    def test_every_new_language_with_decks_is_hidden(self) -> None:
+        dirs = {p.name for p in (REPO / "decks").iterdir()
+                if p.is_dir() and p.name != "fonts"}
+        self.assertEqual(dirs - self.SHIPPED - self.hidden, set())
+
+
 if __name__ == "__main__":
     unittest.main()
