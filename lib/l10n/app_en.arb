@@ -6947,7 +6947,7 @@
   },
   "reviewSettingsSection": "Reviewing",
   "@reviewSettingsSection": {
-    "description": "Settings heading over Review decks, the rater code and How reviewing works (docs/plans/deck-browser.md)."
+    "description": "Settings heading over Review decks, the reviewer code and How reviewing works (docs/plans/deck-browser.md)."
   },
   "reviewSettingsSwitch": "Review decks",
   "@reviewSettingsSwitch": {
@@ -6961,17 +6961,17 @@
   "@reviewSettingsSwitchOff": {
     "description": "Under Review decks, while it is off. Switching it on shows a dialog first. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "reviewSettingsCode": "Your rater code",
+  "reviewSettingsCode": "Your reviewer code",
   "@reviewSettingsCode": {
-    "description": "Settings row label over the reviewer's rater code, FL-XXXX-XXXX-C."
+    "description": "Settings row label over the reviewer's reviewer code, FL-XXXX-XXXX-C."
   },
   "reviewSettingsCopy": "Copy code",
   "@reviewSettingsCopy": {
-    "description": "Tooltip of the button that copies the rater code."
+    "description": "Tooltip of the button that copies the reviewer code."
   },
   "reviewSettingsCopied": "Reviewer code copied",
   "@reviewSettingsCopied": {
-    "description": "Shown once the rater code is copied."
+    "description": "Shown once the reviewer code is copied."
   },
   "reviewSettingsToSend": "Reviews to send",
   "@reviewSettingsToSend": {
@@ -6993,7 +6993,7 @@
   },
   "reviewSettingsHelped": "Decks you helped build",
   "@reviewSettingsHelped": {
-    "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
+    "description": "Settings row listing the decks that list this reviewer's reviewer code among their reviewers."
   },
   "reviewSettingsHelpedDeck": "{deck} ({language})",
   "@reviewSettingsHelpedDeck": {
@@ -7459,7 +7459,7 @@
   "@reviewTurnOnTitle": {
     "description": "Title of the dialog shown when turning Review decks on."
   },
-  "reviewTurnOnBody": "You get a rater code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
+  "reviewTurnOnBody": "You get a reviewer code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
   "@reviewTurnOnBody": {
     "description": "First paragraph of the dialog shown when turning Review decks on."
   },
@@ -7519,7 +7519,7 @@
   "@reviewGuideCodeTitle": {
     "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideCodeBody": "Turning on reviewing makes your rater code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
+  "reviewGuideCodeBody": "Turning on reviewing makes your reviewer code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
   "@reviewGuideCodeBody": {
     "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
   },
@@ -7539,7 +7539,7 @@
   "@reviewGuideToReviewWaiting": {
     "description": "Second paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Waiting for review” must match reviewSettingsWaiting."
   },
-  "reviewGuideCheckTitle": "Check cards, then sign off",
+  "reviewGuideCheckTitle": "Check cards, then mark done",
   "@reviewGuideCheckTitle": {
     "description": "Title of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
@@ -7547,9 +7547,9 @@
   "@reviewGuideCheckBody": {
     "description": "First paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Review” must match unitReview, “Looks right” reviewLooksRight."
   },
-  "reviewGuideCheckSignOff": "When every card is checked, Sign off becomes available. It says you checked the whole unit.",
+  "reviewGuideCheckSignOff": "When every card is checked, Mark done becomes available. It says you checked the whole unit.",
   "@reviewGuideCheckSignOff": {
-    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Sign off” must match reviewSignOffReady."
+    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Mark done” must match reviewSignOffReady."
   },
   "reviewGuideSuggestTitle": "Suggest, and answer proposals",
   "@reviewGuideSuggestTitle": {
@@ -7595,7 +7595,7 @@
   "@reviewGuidePublicTitle": {
     "description": "Title of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuidePublicBody": "Public: your rater code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
+  "reviewGuidePublicBody": "Public: your reviewer code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
   "@reviewGuidePublicBody": {
     "description": "First paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
@@ -7665,7 +7665,7 @@
   "@reviewFirstTitle": {
     "description": "Title of the dialog from a unit's Review button while reviewing is off."
   },
-  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your rater code. Then come back here.",
+  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your reviewer code. Then come back here.",
   "@reviewFirstBody": {
     "description": "Body of the Turn on reviewing first dialog. The quoted name must match reviewSettingsSwitch.",
     "placeholders": {
@@ -7685,7 +7685,7 @@
   },
   "reviewThanksTitle": "Thanks for checking this unit",
   "@reviewThanksTitle": {
-    "description": "On a unit whose decks list the reviewer's rater code, in place of the not-yet-checked notice."
+    "description": "On a unit whose decks list the reviewer's reviewer code, in place of the not-yet-checked notice."
   },
   "reviewThanksBy": "{count, plural, =0{Checked by {code}} =1{Checked by {code} and 1 other} other{Checked by {code} and {count} others}}",
   "@reviewThanksBy": {
@@ -7749,7 +7749,7 @@
       }
     }
   },
-  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your rater code.",
+  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your reviewer code.",
   "@reviewPageInfo": {
     "description": "At the top of the review screen."
   },
@@ -7993,7 +7993,7 @@
       }
     }
   },
-  "reviewSignOff": "Sign off · {count} left",
+  "reviewSignOff": "Mark done · {count} left",
   "@reviewSignOff": {
     "description": "Review screen button, disabled until every card is checked.",
     "placeholders": {
@@ -8003,11 +8003,11 @@
       }
     }
   },
-  "reviewSignOffReady": "Sign off",
+  "reviewSignOffReady": "Mark done",
   "@reviewSignOffReady": {
     "description": "Review screen button once every card is checked: the reviewer vouches for the unit."
   },
-  "reviewSignedOff": "Signed off",
+  "reviewSignedOff": "Marked as done",
   "@reviewSignedOff": {
     "description": "Review screen button once the unit is signed off."
   },
@@ -9123,7 +9123,7 @@
   "@reviewSendFailed": {
     "description": "When the phone's share failed."
   },
-  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "reviewMailBody": "Reviews from Fluenough {version}, reviewer code {code}.\n\n{decks}\n\nA file for each deck, and for the daily questions a file for each language. Please send without changing the files. You can review several decks and send them together in one mail.",
   "@reviewMailBody": {
     "description": "Body of the review mail, for people only: the files are the record.",
     "placeholders": {
@@ -10072,7 +10072,7 @@
   "@settingsDataBackup": {
     "description": "A heading on Your data above backing up and restoring."
   },
-  "settingsDataBackupIntro": "One file holds your progress, your settings, your rater code and the languages you downloaded. Their decks download again after a restore.",
+  "settingsDataBackupIntro": "One file holds your progress, your settings, your reviewer code and the languages you downloaded. Their decks download again after a restore.",
   "@settingsDataBackupIntro": {
     "description": "A line under the Backup and restore heading on Your data."
   },
@@ -10116,7 +10116,7 @@
   "@settingsDataRecentNote": {
     "description": "A note on Your data under Recent backups."
   },
-  "settingsDataBackupPrivacy": "A backup holds your whole learning history and your rater code. It leaves this phone only if you share it or send it to the cloud you chose.",
+  "settingsDataBackupPrivacy": "A backup holds your whole learning history and your reviewer code. It leaves this phone only if you share it or send it to the cloud you chose.",
   "@settingsDataBackupPrivacy": {
     "description": "A note on Your data about what a backup holds."
   },
@@ -10409,7 +10409,7 @@
   "@settingsRestoreAlso": {
       "description": "Label in the restore sheet: the other things the backup holds."
   },
-  "settingsRestoreAlsoText": "Your settings, the languages you know, and your rater code",
+  "settingsRestoreAlsoText": "Your settings, the languages you know, and your reviewer code",
   "@settingsRestoreAlsoText": {
       "description": "In the restore sheet: what else is restored."
   },
@@ -12932,20 +12932,6 @@
   "languagesToastPhraseGestures": "sign language",
   "@languagesToastPhraseGestures": {
     "description": "The Gestures skill of a sign language, in a skill toast."
-  },
-  "languagesToastNameScript": "{language} ({script})",
-  "@languagesToastNameScript": {
-    "description": "The name in a skill toast for a language with several scripts. {script} is the script's own name.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
-      },
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
   },
   "languagesToastPool": "{language} removed. Add it back from Add a language.",
   "@languagesToastPool": {

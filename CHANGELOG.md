@@ -7,13 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- **Plain toasts.** Changing a skill on Languages now says what it means ("Hindustani: you’re learning speaking and listening", "you already know reading and writing Devanagari", "not learning sign language now") instead of the level names Know, Learn and Leave; removing a language, finding your level, copying the reviewer code, marking a unit done and a word with no sound symbols are in plain words too, as are the lines beside them on Languages (owner, 2026-11-01: "make the toasts sound natural, do not depend on our invented skill names. People do not know what those are").
-
 ### Added
 
 - **A splash screen with a loading bar.** Every cold start now opens on the app's mark and name over a thin bar that fills as the review history, the courses and Today's first numbers are ready, for at least two seconds and until all three are, then fades out (not at all with animations off); a line under the bar says which is under way (owner, 2026-11-01: "The performance is still not instantaneous. Leave it. Better add a splash screen with a loading bar (min 2 s, max till all calc ends)"). It does not return when the app is reopened from the background.
+
+### Changed
+
+- **Plain toasts.** Changing a skill on Languages now says what it means ("Hindustani: you’re learning speaking and listening", "you already know reading and writing Devanagari", "not learning sign language now") instead of the level names Know, Learn and Leave; removing a language, finding your level, copying the reviewer code, marking a unit done and a word with no sound symbols are in plain words too, as are the lines beside them on Languages (owner, 2026-11-01: "make the toasts sound natural, do not depend on our invented skill names. People do not know what those are").
 
 ## [0.7.1] - 2026-11-01
 
