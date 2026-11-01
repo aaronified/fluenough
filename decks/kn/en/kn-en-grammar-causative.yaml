@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-causative"
+kind: "layer"
+core: "kn-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Causative: have it done, make someone do"
+license: "CC-BY-SA-4.0"
+description: "Getting someone else to do a thing: have the work done, feed a child, make someone read. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Causative"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+    "noodu": "to see"
+    "hoogu": "to go"
+    "baru": "to come"
+  notes: "To make or let someone else do an action, add ಇಸು (isu) (isu) or ಸು (su) (su) to the stem: ತಿನ್ನಿಸು (tinnisu), to feed, and ಬರೆಸು (baresu), to have something written. Past: ಅಮ್ಮ ಮಗುವಿಗೆ ತಿನ್ನಿಸಿದರು (amma maguvige tinnisidaru), mum fed the child."
