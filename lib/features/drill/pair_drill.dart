@@ -258,21 +258,33 @@ class _PairOption extends StatelessWidget {
               color: fg,
             ),
             const SizedBox(height: 4),
-            Text(
-              sound.reading,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.titleMedium!.copyWith(
-                color: fg,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            // How it is said: the choice is shown, so this gives nothing away.
+            // The reading, and how it is said: the choice is shown, so this
+            // gives nothing away. With IPA replaces transliteration on, the
+            // IPA is the reading (#697).
             ListenableBuilder(
               listenable: AppScope.read(context).settings,
-              builder: (context, _) =>
-                  ipaToShow(context, sound.ipa, target: sound.target) == null
-                  ? const SizedBox.shrink()
-                  : IpaLine(sound.ipa!, fontSize: 14),
+              builder: (context, _) {
+                final lines = readingLines(
+                  context,
+                  reading: sound.reading,
+                  ipa: sound.ipa,
+                  target: sound.target,
+                );
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    if (lines.reading case final reading?)
+                      Text(
+                        reading,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.titleMedium!
+                            .copyWith(color: fg, fontWeight: FontWeight.w600)
+                            .forIpa(lines.swapped),
+                      ),
+                    if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 14),
+                  ],
+                );
+              },
             ),
           ],
         ),
