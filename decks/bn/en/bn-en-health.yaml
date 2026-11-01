@@ -1,0 +1,396 @@
+schema: 1
+id: "bn-en-health"
+kind: "layer"
+core: "bn-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health and fitness"
+description: "Fitness, food, the body's systems and a visit to the doctor, for keeping well. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2742":
+    native: "health"
+    notes:
+      "n1": "{1}: Health: the state of a body and mind that is well."
+    examples:
+      "স্বাস্থ্য ভালো রাখো।": "Keep your health well. (familiar)"
+      "স্বাস্থ্যের যত্ন নাও।": { native: "Take care of your health.", bases: { "স্বাস্থ্যের": "of health" } }
+  "bn-2743":
+    native: "yoga"
+    notes:
+      "n1": "{1}: Yoga: a set of exercises for the body and breath."
+    examples:
+      "সকালে যোগব্যায়াম করি।": "I do yoga in the morning."
+      "যোগব্যায়াম শরীরের জন্য ভালো।": { native: "Yoga is good for the body.", bases: { "জন্য": "for" } }
+  "bn-2744":
+    native: "gym"
+    notes:
+      "n1": "{1}: A gym: a room with machines for exercise."
+    examples:
+      "আমি রোজ জিমে যাই।": { native: "I go to the gym every day.", bases: { "জিমে": "gym" } }
+      "জিমটা বড় আর পরিষ্কার।": { native: "The gym is big and clean.", bases: { "জিমটা": "gym" } }
+  "bn-2745":
+    native: "running"
+    notes:
+      "n1": "{1}: Running: moving fast on foot."
+    examples:
+      "সকালের দৌড় ভালো।": "A morning run is good."
+      "দৌড়ের পর পানি খাও।": { native: "Drink water after running. (familiar)", bases: { "দৌড়ের": "running", "পর": "after" } }
+  "bn-2746":
+    native: "food; diet"
+    notes:
+      "n1": "{1}: Food: what a person eats, as a formal word."
+    examples:
+      "স্বাস্থ্যকর খাদ্য খাও।": "Eat healthy food. (familiar)"
+      "খাদ্যের তালিকা ছোট।": { native: "The food list is short.", bases: { "খাদ্যের": "food; diet", "তালিকা": "list" } }
+  "bn-2747":
+    native: "nutrition"
+    notes:
+      "n1": "{1}: Nutrition: the good things food gives the body."
+    examples:
+      "ডালে অনেক পুষ্টি আছে।": { native: "Lentils have a lot of nutrition.", bases: { "আছে": "there is" } }
+      "শিশুদের পুষ্টি দরকার।": { native: "Children need nutrition.", bases: { "শিশুদের": "of children", "দরকার": "need" } }
+  "bn-2748":
+    native: "protein"
+    notes:
+      "n1": "{1}: Protein: a part of food that builds the body."
+    examples:
+      "ডিমে প্রোটিন থাকে।": "Eggs have protein."
+      "মাছ আর মাংসে প্রোটিন বেশি।": "Fish and meat have a lot of protein."
+  "bn-2749":
+    native: "diet"
+    notes:
+      "n1": "{1}: A diet: the food a person eats on purpose."
+    examples:
+      "আমি একটা ডায়েট শুরু করেছি।": { native: "I have started a diet.", bases: { "শুরু": "started" } }
+      "ডায়েট মানে কম তেল আর চিনি।": { native: "A diet means less oil and sugar.", bases: { "মানে": "means", "কম": "less" } }
+  "bn-2750":
+    native: "doctor (formal)"
+    notes:
+      "n1": "{1}: A doctor, a formal word for a person who treats the sick."
+    examples:
+      "চিকিৎসক এখনই আসবেন।": { native: "The doctor will come right away.", bases: { "এখনই": "right now" } }
+      "চিকিৎসককে জিজ্ঞেস করো।": { native: "Ask the doctor. (familiar)", bases: { "চিকিৎসককে": "doctor (formal)", "জিজ্ঞেস": "ask" } }
+  "bn-2751":
+    native: "appointment"
+    notes:
+      "n1": "{1}: An appointment: a fixed time to see a doctor."
+    examples:
+      "কাল সকালে অ্যাপয়েন্টমেন্ট আছে।": { native: "There is an appointment tomorrow morning.", bases: { "কাল": "tomorrow", "আছে": "there is" } }
+      "অ্যাপয়েন্টমেন্টের সময় দশটা।": { native: "The appointment is at ten.", bases: { "অ্যাপয়েন্টমেন্টের": "appointment", "দশটা": "ten o'clock" } }
+  "bn-2752":
+    native: "blood pressure"
+    notes:
+      "n1": "{1}: Blood pressure: the force of blood in the veins."
+    examples:
+      "রক্তচাপ মেপে দেখো।": { native: "Measure your blood pressure. (familiar)", bases: { "মেপে": "measuring" } }
+      "রক্তচাপ বেশি হলে ডাক্তার দেখাও।": { native: "If blood pressure is high, see a doctor. (familiar)", bases: { "হলে": "if it becomes" } }
+  "bn-2753":
+    native: "diabetes"
+    notes:
+      "n1": "{1}: Diabetes: an illness in which the body has too much sugar."
+    examples:
+      "দাদার ডায়াবেটিস আছে।": { native: "Grandfather has diabetes.", bases: { "দাদার": "grandfather's", "আছে": "there is" } }
+      "ডায়াবেটিসে মিষ্টি কম খাও।": { native: "With diabetes, eat less sweets. (familiar)", bases: { "ডায়াবেটিসে": "in diabetes", "মিষ্টি": "sweets", "কম": "less" } }
+  "bn-2754":
+    native: "heart"
+    notes:
+      "n1": "{1}: The heart: the organ that pumps blood."
+    examples:
+      "হার্ট ভালো আছে।": { native: "The heart is well.", bases: { "আছে": "is" } }
+      "হার্টের রোগ হতে পারে।": { native: "A heart disease can happen.", bases: { "হার্টের": "heart", "রোগ": "disease", "পারে": "can" } }
+  "bn-2755":
+    native: "muscle"
+    notes:
+      "n1": "{1}: A muscle: the tissue that moves the body."
+    examples:
+      "পায়ের পেশিতে ব্যথা।": { native: "Pain in the leg muscles.", bases: { "পেশিতে": "muscle" } }
+      "পেশি শক্ত হলে ব্যায়াম করো।": { native: "If the muscles grow firm, exercise. (familiar)", bases: { "শক্ত": "firm", "হলে": "if" } }
+  "bn-2756":
+    native: "vaccine; jab"
+    notes:
+      "n1": "{1}: A vaccine or jab: an injection that protects against an illness."
+    examples:
+      "শিশুর টিকা লাগবে।": { native: "The child needs a vaccine.", bases: { "শিশুর": "of a child" } }
+      "টিকাটা নিয়েছ?": { native: "Did you have the jab? (familiar)", bases: { "টিকাটা": "vaccine; jab" } }
+  "bn-2757":
+    native: "mask"
+    notes:
+      "n1": "{1}: A mask worn over the nose and mouth."
+    examples:
+      "বাইরে গেলে মাস্ক পরো।": { native: "Wear a mask when going outside. (familiar)", bases: { "বাইরে": "outside", "পরো": "wear" } }
+      "মাস্কটা নতুন।": { native: "The mask is new.", bases: { "মাস্কটা": "mask" } }
+  "bn-2758":
+    native: "gym; exercise hall"
+    notes:
+      "n1": "{1}: A gym or exercise hall."
+    examples:
+      "পাড়ায় একটা ব্যায়ামাগার আছে।": { native: "There is a gym in the neighbourhood.", bases: { "পাড়ায়": "in the neighbourhood", "আছে": "there is" } }
+      "ব্যায়ামাগারে ভিড় বেশি।": { native: "The gym is very crowded.", bases: { "ব্যায়ামাগারে": "gym; exercise hall", "ভিড়": "crowd" } }
+  "bn-2759":
+    native: "morning walk"
+    notes:
+      "n1": "{1}: A morning walk, taken for health."
+    examples:
+      "আমি প্রাতঃভ্রমণে যাই।": { native: "I go for a morning walk.", bases: { "প্রাতঃভ্রমণে": "morning walk" } }
+      "প্রাতঃভ্রমণ শরীরের জন্য ভালো।": { native: "A morning walk is good for the body.", bases: { "জন্য": "for" } }
+  "bn-2760":
+    native: "salt"
+    notes:
+      "n1": "{1}: Salt: a white seasoning for food."
+    examples:
+      "ডালে একটু লবণ দাও।": "Add a little salt to the lentils. (familiar)"
+      "বেশি লবণ খেয়ো না।": { native: "Do not eat too much salt. (familiar)", bases: { "খেয়ো": "eat", "না": "not" } }
+  "bn-2761":
+    native: "vegetables"
+    notes:
+      "n1": "{1}: Vegetables: green leaves and other vegetables."
+    examples:
+      "রোজ শাকসবজি খাও।": "Eat vegetables every day. (familiar)"
+      "শাকসবজির দাম বেড়েছে।": { native: "The price of vegetables has gone up.", bases: { "শাকসবজির": "vegetables", "বেড়েছে": "has risen" } }
+  "bn-2762":
+    native: "drink"
+    notes:
+      "n1": "{1}: A drink: anything you drink."
+    examples:
+      "ঠান্ডা পানীয় কম খাও।": { native: "Drink less cold drinks. (familiar)", bases: { "কম": "less" } }
+      "পানীয় হিসেবে জল ভালো।": { native: "Water is a good drink.", bases: { "হিসেবে": "as" } }
+  "bn-2763":
+    native: "breath"
+    notes:
+      "n1": "{1}: Breath: the air you take in and let out."
+    examples:
+      "ধীরে নিঃশ্বাস নাও।": { native: "Breathe in slowly. (familiar)", bases: { "ধীরে": "slowly" } }
+      "নিঃশ্বাসে কষ্ট হচ্ছে।": { native: "I am having trouble breathing.", bases: { "নিঃশ্বাসে": "breath", "কষ্ট": "trouble" } }
+  "bn-2764":
+    native: "calorie"
+    notes:
+      "n1": "{1}: A calorie: a unit of the energy in food."
+    examples:
+      "এই খাবারে অনেক ক্যালোরি।": { native: "This food has a lot of calories.", bases: { "এই": "this", "খাবারে": "in the food" } }
+      "ক্যালোরি কম রাখো।": { native: "Keep the calories low. (familiar)", bases: { "কম": "low" } }
+  "bn-2765":
+    native: "wellness"
+    notes:
+      "n1": "{1}: Wellness: being well and fit."
+    examples:
+      "সুস্থতার জন্য ঘুম দরকার।": { native: "Sleep is needed for wellness.", bases: { "সুস্থতার": "wellness", "জন্য": "for", "দরকার": "needed" } }
+      "সুস্থতা মানে সুখ।": { native: "Wellness means happiness.", bases: { "মানে": "means", "সুখ": "happiness" } }
+  "bn-2766":
+    native: "fat"
+    notes:
+      "n1": "{1}: Fat: the oily part of food and of the body."
+    examples:
+      "ভাজা খাবারে চর্বি বেশি।": { native: "Fried food has a lot of fat.", bases: { "ভাজা": "fried", "খাবারে": "in the food" } }
+      "চর্বি কমাতে হাঁটো।": { native: "To lose fat, walk. (familiar)", bases: { "কমাতে": "to reduce" } }
+  "bn-2767":
+    native: "hunger"
+    notes:
+      "n1": "{1}: Hunger: the feeling of wanting food."
+    examples:
+      "আমার খুব ক্ষুধা পেয়েছে।": "I am very hungry."
+      "ক্ষুধা না থাকলে খেয়ো না।": { native: "If you are not hungry, do not eat. (familiar)", bases: { "থাকলে": "if there is", "খেয়ো": "eat", "না": "not" } }
+  "bn-2768":
+    native: "thirst"
+    notes:
+      "n1": "{1}: Thirst: the feeling of wanting to drink."
+    examples:
+      "গরমে তৃষ্ণা বেশি লাগে।": "In the heat, thirst is strong."
+      "তৃষ্ণা পেলে জল খাও।": "If you are thirsty, drink water. (familiar)"
+  "bn-2769":
+    native: "trainer"
+    notes:
+      "n1": "{1}: A trainer: a person who teaches a skill or exercise."
+    examples:
+      "আমাদের প্রশিক্ষক খুব ভালো।": "Our trainer is very good."
+      "প্রশিক্ষককে প্রশ্ন করো।": { native: "Ask the trainer a question. (familiar)", bases: { "প্রশিক্ষককে": "trainer", "প্রশ্ন": "question" } }
+  "bn-2770":
+    native: "practice"
+    notes:
+      "n1": "{1}: Practice: doing something again and again to get better."
+    examples:
+      "রোজ অনুশীলন করো।": "Practise every day. (familiar)"
+      "অনুশীলনের পর বিশ্রাম নাও।": { native: "Rest after practice. (familiar)", bases: { "অনুশীলনের": "practice", "পর": "after" } }
+  "bn-2771":
+    native: "lifestyle"
+    notes:
+      "n1": "{1}: Lifestyle: the way a person lives day to day."
+    examples:
+      "ভালো জীবনযাত্রা মানে ভালো অভ্যাস।": { native: "A good lifestyle means good habits.", bases: { "মানে": "means" } }
+      "আমার জীবনযাত্রা বদলাতে হবে।": { native: "My lifestyle has to change.", bases: { "বদলাতে": "to change" } }
+  "bn-2772":
+    native: "ambulance"
+    notes:
+      "n1": "{1}: An ambulance: a vehicle that takes the sick to hospital."
+    examples:
+      "অ্যাম্বুলেন্স এসেছে।": "The ambulance has come."
+      "অ্যাম্বুলেন্সে হাসপাতালে যাও।": { native: "Go to hospital by ambulance. (familiar)", bases: { "অ্যাম্বুলেন্সে": "ambulance" } }
+  "bn-2773":
+    native: "heart (organ)"
+    notes:
+      "n1": "{1}: The heart as an organ: the muscle of the chest that beats."
+    examples:
+      "হৃৎপিণ্ড বুকের ভেতরে থাকে।": { native: "The heart is inside the chest.", bases: { "বুকের": "of the chest", "ভেতরে": "inside" } }
+      "হৃৎপিণ্ডের যত্ন নাও।": { native: "Take care of your heart. (familiar)", bases: { "হৃৎপিণ্ডের": "heart (organ)" } }
+  "bn-2774":
+    native: "lungs"
+    notes:
+      "n1": "{1}: The lungs: the two organs that take in air."
+    examples:
+      "ফুসফুসে বাতাস যায়।": { native: "Air goes into the lungs.", bases: { "ফুসফুসে": "lungs" } }
+      "ধূমপান ফুসফুসের ক্ষতি করে।": { native: "Smoking harms the lungs.", bases: { "ধূমপান": "smoking", "ফুসফুসের": "lungs", "ক্ষতি": "harm" } }
+  "bn-2775":
+    native: "brain"
+    notes:
+      "n1": "{1}: The brain: the organ in the head that thinks."
+    examples:
+      "মস্তিষ্ক মাথার ভেতরে।": { native: "The brain is inside the head.", bases: { "ভেতরে": "inside" } }
+      "মস্তিষ্কের জন্য ঘুম দরকার।": { native: "The brain needs sleep.", bases: { "মস্তিষ্কের": "brain", "জন্য": "for", "দরকার": "needed" } }
+  "bn-2776":
+    native: "asthma"
+    notes:
+      "n1": "{1}: Asthma: an illness that makes breathing hard."
+    examples:
+      "দাদীর হাঁপানি আছে।": { native: "Grandmother has asthma.", bases: { "দাদীর": "grandmother's", "আছে": "there is" } }
+      "হাঁপানি হলে ওষুধ রাখো।": { native: "If you have asthma, keep the medicine. (familiar)", bases: { "হলে": "if" } }
+  "bn-2777":
+    native: "cancer"
+    notes:
+      "n1": "{1}: Cancer: a serious illness in which cells grow out of control."
+    examples:
+      "ক্যান্সার একটা গুরুতর রোগ।": { native: "Cancer is a serious illness.", bases: { "গুরুতর": "serious", "রোগ": "illness" } }
+      "ক্যান্সারের চিকিৎসা আছে।": { native: "Cancer has treatment.", bases: { "ক্যান্সারের": "cancer", "চিকিৎসা": "treatment", "আছে": "has" } }
+  "bn-2778":
+    native: "symptom"
+    notes:
+      "n1": "{1}: A symptom: a sign of an illness felt in the body."
+    examples:
+      "জ্বর আর কাশি উপসর্গ।": "Fever and cough are symptoms."
+      "উপসর্গ দেখা দিলে ডাক্তার দেখাও।": "If symptoms appear, see a doctor. (familiar)"
+  "bn-2779":
+    native: "care"
+    notes:
+      "n1": "{1}: Care: looking after a person or thing well."
+    examples:
+      "শিশুর যত্ন নাও।": { native: "Take care of the child. (familiar)", bases: { "শিশুর": "of a child" } }
+      "শরীরের যত্ন নেওয়া দরকার।": { native: "The body needs care.", bases: { "দরকার": "needed" } }
+  "bn-2780":
+    native: "caution"
+    notes:
+      "n1": "{1}: Caution: taking care to avoid harm."
+    examples:
+      "সাবধানতা নেওয়া ভালো।": "It is good to take care."
+      "রোগ থেকে সাবধানতা দরকার।": { native: "Caution is needed against illness.", bases: { "রোগ": "illness", "থেকে": "from", "দরকার": "needed" } }
+  "bn-2781":
+    native: "risk"
+    notes:
+      "n1": "{1}: A risk: a chance of harm."
+    examples:
+      "ধূমপানে ঝুঁকি বাড়ে।": { native: "Smoking increases the risk.", bases: { "ধূমপানে": "from smoking", "বাড়ে": "increases" } }
+      "রোগের ঝুঁকি কম করো।": { native: "Lower the risk of illness. (familiar)", bases: { "রোগের": "of illness", "কম": "lower" } }
+  "bn-2782":
+    native: "fresh"
+    notes:
+      "n1": "{1}: Fresh and full of life."
+    examples:
+      "সকালে শরীর সতেজ লাগে।": "In the morning the body feels fresh."
+      "সতেজ ফল খাও।": "Eat fresh fruit. (familiar)"
+  "bn-2783":
+    native: "healthy"
+    notes:
+      "n1": "{1}: Healthy: good for the health."
+    examples:
+      "এটা স্বাস্থ্যকর খাবার।": { native: "This is healthy food.", bases: { "খাবার": "food" } }
+      "স্বাস্থ্যকর ঘুম জরুরি।": "Healthy sleep is important."
+  "bn-2784":
+    native: "strong"
+    notes:
+      "n1": "{1}: Strong: having a lot of strength."
+    examples:
+      "ওর হাত খুব শক্তিশালী।": { native: "His arms are very strong.", bases: { "ওর": "his" } }
+      "শক্তিশালী শরীর রোগ থেকে বাঁচে।": { native: "A strong body escapes illness.", bases: { "রোগ": "illness", "থেকে": "from", "বাঁচে": "survives" } }
+  "bn-2785":
+    native: "fit"
+    notes:
+      "n1": "{1}: Fit: in good physical condition."
+    examples:
+      "দাদা এখনো ফিট।": { native: "Grandfather is still fit.", bases: { "দাদা": "grandfather", "এখনো": "still" } }
+      "ফিট থাকতে রোজ হাঁটো।": { native: "To stay fit, walk every day. (familiar)", bases: { "থাকতে": "to stay" } }
+  "bn-2786":
+    native: "balanced"
+    notes:
+      "n1": "{1}: Balanced: having the right mix of things."
+    examples:
+      "সুষম খাবার খাও।": { native: "Eat a balanced diet. (familiar)", bases: { "খাবার": "food" } }
+      "সুষম খাবারে সব পুষ্টি থাকে।": { native: "A balanced diet has all the nutrition.", bases: { "খাবারে": "in the food" } }
+  "bn-2787":
+    native: "to exercise"
+    notes:
+      "n1": "{1}: To exercise: to do physical training."
+    examples:
+      "আমি রোজ ব্যায়াম করি।": "I exercise every day."
+      "ব্যায়াম করো, শরীর ভালো থাকবে।": "Exercise, and your body will stay well. (familiar)"
+  "bn-2788":
+    native: "to go for a walk"
+    notes:
+      "n1": "{1}: To go for a walk."
+    examples:
+      "আমরা বিকেলে হাঁটতে যাই।": "We go for a walk in the afternoon."
+      "রাতে খাওয়ার পর হাঁটতে যাও।": { native: "Go for a walk after dinner. (familiar)", bases: { "পর": "after" } }
+  "bn-2789":
+    native: "to lose weight"
+    notes:
+      "n1": "{1}: To lose weight: to make your weight go down."
+    examples:
+      "ওজন কমাতে হাঁটো।": { native: "Walk to lose weight. (familiar)", bases: { "কমাতে": "to reduce" } }
+      "আমি দুই মাসে ওজন কমিয়েছি।": { native: "I have lost weight in two months.", bases: { "দুই": "two", "মাসে": "in months", "কমিয়েছি": "reduced" } }
+  "bn-2790":
+    native: "to see a doctor"
+    notes:
+      "n1": "{1}: To see a doctor: to take someone to a doctor."
+    examples:
+      "তুমি ডাক্তার দেখাও।": "You see a doctor. (familiar)"
+      "বাবাকে ডাক্তার দেখাতে হবে।": "Dad has to be taken to a doctor."
+  "bn-2791":
+    native: "to make an appointment"
+    notes:
+      "n1": "{1}: To make an appointment: to fix a time to see someone."
+    examples:
+      "আমি কাল একটা অ্যাপয়েন্টমেন্ট নিয়েছি।": { native: "I have made an appointment for tomorrow.", bases: { "কাল": "tomorrow" } }
+      "অ্যাপয়েন্টমেন্ট নাও।": "Make an appointment. (familiar)"
+  "bn-2792":
+    native: "to get a vaccine"
+    notes:
+      "n1": "{1}: To get a vaccine: to have a jab."
+    examples:
+      "শিশুরা টিকা নিয়েছে।": { native: "The children have had their vaccines.", bases: { "শিশুরা": "children" } }
+      "টিকা নিতে হাসপাতালে যাও।": "Go to hospital to get the vaccine. (familiar)"
+  "bn-2793":
+    native: "to get checked"
+    bases: { "করানো": "to have done" }
+    notes:
+      "n1": "{1}: To get checked: to have a test done."
+    examples:
+      "বাবা রক্ত পরীক্ষা করিয়েছেন।": { native: "Dad has had a blood test done.", bases: { "করিয়েছেন": "had done" } }
+      "পরীক্ষা করাতে ক্লিনিকে যাও।": { native: "Go to the clinic to get checked. (familiar)", bases: { "করাতে": "to have done" } }
+  "bn-2794":
+    native: "to recover"
+    notes:
+      "n1": "{1}: To recover: to become well again after an illness."
+    examples:
+      "জ্বর কমেছে, এখন সুস্থ।": { native: "The fever has gone down; now well.", bases: { "এখন": "now" } }
+      "সুস্থ হতে বিশ্রাম নাও।": "Rest to get well. (familiar)"
+  "bn-2795":
+    native: "regularly"
+    notes:
+      "n1": "{1}: Regularly: every day, or at set times."
+    examples:
+      "রোজ নিয়মিত হাঁটো।": "Walk regularly every day. (familiar)"
+      "আমি নিয়মিত ব্যায়াম করি।": "I exercise regularly."
+  "bn-2796":
+    native: "quickly"
+    notes:
+      "n1": "{1}: Quickly: fast."
+    examples:
+      "দ্রুত হাঁটো।": "Walk quickly. (familiar)"
+      "রোগী দ্রুত সুস্থ হচ্ছে।": "The patient is recovering quickly."

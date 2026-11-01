@@ -447,11 +447,14 @@ units:
     words: 0
   - decks: ["bn-slang"]
     words: 0
-  - planned: { id: "bn-health", theme: "health", words: 55 }
+  - decks: ["bn-health", "bn-health-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - decks: ["bn-reading-health"]
+    words: 0
   - planned: { id: "bn-feelings", theme: "feelings", words: 55 }
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
