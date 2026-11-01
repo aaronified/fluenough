@@ -44,6 +44,7 @@ class SettingsNotifier extends ChangeNotifier {
     Set<Skill>? enabledSkills,
     this._showRomanisation = true,
     this._showIpa = true,
+    this._ipaReplacesReading = false,
     this._soundOn = true,
     this._autoplay = false,
     this._matchTapToHear = true,
@@ -99,6 +100,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<Skill> _enabledSkills;
   bool _showRomanisation;
   bool _showIpa;
+  bool _ipaReplacesReading;
   bool _soundOn;
   bool _autoplay;
   bool _matchTapToHear;
@@ -913,6 +915,13 @@ class SettingsNotifier extends ChangeNotifier {
   bool get showIpa => _showIpa;
   set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
 
+  /// Whether, with [showIpa] on, a word's IPA shows in the place of its
+  /// transliteration, which then is not shown (#697). Has no effect while
+  /// [showIpa] is off, and does not change what [showIpa] does.
+  bool get ipaReplacesReading => _ipaReplacesReading;
+  set ipaReplacesReading(bool value) =>
+      _set(_ipaReplacesReading, value, (v) => _ipaReplacesReading = v);
+
   /// Sound for the whole app. Off, nothing is spoken, every speaker is
   /// greyed out, and listening is not drilled, as on a phone with no voice.
   bool get soundOn => _soundOn;
@@ -1065,6 +1074,7 @@ class SettingsNotifier extends ChangeNotifier {
     ].join(','),
     'show_romanisation': '$_showRomanisation',
     'show_ipa': '$_showIpa',
+    'ipa_replaces_reading': '$_ipaReplacesReading',
     'sound_on': '$_soundOn',
     'autoplay': '$_autoplay',
     'match_tap_to_hear': '$_matchTapToHear',
@@ -1209,6 +1219,9 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
     if (pick('show_ipa', flag) case final v?) showIpa = v;
+    if (pick('ipa_replaces_reading', flag) case final v?) {
+      ipaReplacesReading = v;
+    }
     // Settings has no Sound switch any more (#243, Decision 9): Sound off was
     // a way to skip listening, so a stored off reads as Heard words off. The
     // key stays readable and is written as on from now.

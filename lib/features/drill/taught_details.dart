@@ -120,12 +120,18 @@ class TaughtDetails extends StatelessWidget {
         final compare = card.warning == 'none'
             ? null
             : pairPartnerOf(state, card);
+        final lines = readingLines(
+          context,
+          reading: card.reading,
+          ipa: card.ipa,
+          target: card.target,
+          showReading: _showsReading(settings),
+        );
         final children = <Widget>[
           if (word) ...<Widget>[
-            ..._word(theme, showReading: _showsReading(settings)),
+            ..._word(theme, lines.reading, lines.swapped),
             // How it is said, under the word and its reading (ADR-0025).
-            if (ipaToShow(context, card.ipa, target: card.target)
-                case final ipa?)
+            if (lines.ipa case final ipa?)
               IpaWithInfo(ipa, card: card, fontSize: 16),
           ],
           if (meaning)
@@ -192,8 +198,8 @@ class TaughtDetails extends StatelessWidget {
   };
 
   /// The word, or its reading first, and its reading under it when it shows.
-  List<Widget> _word(ThemeData theme, {required bool showReading}) {
-    final reading = card.reading;
+  List<Widget> _word(ThemeData theme, String? shownReading, bool swapped) {
+    final reading = shownReading;
     final size = wordSize;
     if (reading != null && this.reading == TaughtReading.first) {
       return <Widget>[
@@ -203,6 +209,9 @@ class TaughtDetails extends StatelessWidget {
           language: language,
           fontSize: size ?? 48,
           color: wordColor,
+          ipaFont: swapped,
+          readingWrapper: (r) =>
+              ReadingWithInfo(reading: r, card: card, swapped: swapped),
         ),
       ];
     }
@@ -222,13 +231,19 @@ class TaughtDetails extends StatelessWidget {
           color: wordColor,
           card: card,
         ),
-      if (reading != null && showReading)
-        Text(
-          reading,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.bodyLarge!.copyWith(
-            fontSize: 18,
-            color: theme.colorScheme.onSurfaceVariant,
+      if (reading != null)
+        ReadingWithInfo(
+          swapped: swapped,
+          card: card,
+          reading: Text(
+            reading,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodyLarge!
+                .copyWith(
+                  fontSize: 18,
+                  color: theme.colorScheme.onSurfaceVariant,
+                )
+                .forIpa(swapped),
           ),
         ),
     ];
@@ -255,6 +270,14 @@ class TaughtExample extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final lines = readingLines(
+      context,
+      reading: example.reading,
+      ipa: example.ipa,
+      target: example.target,
+      showReading: showReading,
+    );
+    final reading = lines.reading;
     return Semantics(
       container: true,
       label: AppLocalizations.of(context)!.drillExample,
@@ -276,17 +299,15 @@ class TaughtExample extends StatelessWidget {
               fontSize: 16,
               color: scheme.onSurface,
             ),
-            if (showReading && example.reading != null)
+            if (reading != null)
               Text(
-                example.reading!,
+                reading,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+                style: theme.textTheme.bodySmall!
+                    .copyWith(color: scheme.onSurfaceVariant)
+                    .forIpa(lines.swapped),
               ),
-            if (ipaToShow(context, example.ipa, target: example.target)
-                case final ipa?)
-              IpaLine(ipa),
+            if (lines.ipa case final ipa?) IpaLine(ipa),
             const SizedBox(height: 2),
             Text(
               example.native,

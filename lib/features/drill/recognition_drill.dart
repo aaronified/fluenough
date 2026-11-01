@@ -50,7 +50,14 @@ class RecognitionDrill extends StatelessWidget {
     final card = session.item.card;
     final language = session.deck.language;
     final revealed = session.phase == DrillPhase.revealed;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+      showReading: session.readsFirst || settings.showRomanisation,
+    );
+    final reading = lines.reading;
 
     return DrillFrame(
       skill: session.skill,
@@ -73,21 +80,30 @@ class RecognitionDrill extends StatelessWidget {
             target: card.target,
             language: language,
             fontSize: 48,
+            ipaFont: lines.swapped,
+            readingWrapper: (r) =>
+                ReadingWithInfo(reading: r, card: card, swapped: lines.swapped),
           )
         else
           TargetText.hero(card.target, language: language, card: card),
-        if (reading != null && settings.showRomanisation && !session.readsFirst)
-          Text(
-            reading,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              fontSize: 18,
-              height: 24 / 18,
-              color: scheme.onSurfaceVariant,
+        if (reading != null && !session.readsFirst)
+          ReadingWithInfo(
+            swapped: lines.swapped,
+            card: card,
+            reading: Text(
+              reading,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge!
+                  .copyWith(
+                    fontSize: 18,
+                    height: 24 / 18,
+                    color: scheme.onSurfaceVariant,
+                  )
+                  .forIpa(lines.swapped),
             ),
           ),
         // How it is said: the word is shown, so this gives nothing away.
-        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+        if (lines.ipa case final ipa?)
           IpaWithInfo(ipa, card: card, fontSize: 16),
         // From the start: hearing the word gives nothing away. Keyed, so
         // that showing the answer does not play it again.
