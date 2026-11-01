@@ -487,7 +487,9 @@ units:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
-  - planned: { id: "es-grammar-imperative-negative", grammar: "imperative-negative" }
+  - decks: ["es-grammar-imperative-negative", "es-reading-imperative-negative"]
+    words: 0
+    grammar: ["imperative-negative"]
     listening_passages:
       - { id: "dont-do-that", text: { "en": "Telling someone not to do something, to a friend and to a stranger" } }
     reading_passages:
