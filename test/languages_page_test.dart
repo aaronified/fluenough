@@ -139,16 +139,20 @@ void main() {
     final before = state.settings.languageSkillsOf('es');
     await tester.ensureVisible(speak);
     await tester.pumpAndSettle();
+    // The pill's own tooltip carries the level in a word: Spanish is Learn.
+    final pillTip = tester.widget<Tooltip>(
+      find.descendant(of: speak, matching: find.byType(Tooltip)),
+    );
+    expect(pillTip.message, text.languagesPillLearning);
+    // The page also shows the word elsewhere (the filter pill, the legend),
+    // so the bubble that the long press opens is counted as one more.
+    final onPage = find.text(text.languagesPillLearning).evaluate().length;
     await tester.longPress(speak);
     await tester.pumpAndSettle();
     expect(
-      find.text(
-        text.languagesSkillState(
-          text.languagesSkillSpoken,
-          SpokenLevel.learn.label(text),
-        ),
-      ),
-      findsOneWidget,
+      find.text(text.languagesPillLearning),
+      findsNWidgets(onPage + 1),
+      reason: 'the long press opens one bubble with the level',
     );
     expect(state.settings.languageSkillsOf('es'), before, reason: 'no cycle');
     await tapKey(tester, 'skill-spoken');
@@ -179,7 +183,7 @@ void main() {
       expect(
         find.descendant(
           of: find.byKey(ValueKey<String>('skill-$id')),
-          matching: find.byIcon(Icons.done_all),
+          matching: find.byKey(const ValueKey<String>('pill-mark-verified')),
         ),
         findsOneWidget,
         reason: id,
@@ -406,10 +410,11 @@ void main() {
     }
     expect(find.text(text.languagesSpeakHear), findsNothing);
     expect(find.text(text.languagesScriptRW), findsNothing);
+    // Leave shows the block mark alone, no skill icon (skill_widgets.dart).
     expect(
       find.descendant(
         of: pill('gesture'),
-        matching: find.byIcon(SkillKind.gesture.icon),
+        matching: find.byKey(const ValueKey<String>('pill-mark-leave')),
       ),
       findsOneWidget,
     );
@@ -427,6 +432,21 @@ void main() {
     }
 
     await tapKey(tester, 'skill-gesture');
+    // Know shows the sign language's own icon, the raised hand.
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byKey(const ValueKey<String>('pill-icon-gesture')),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: pill('gesture'),
+        matching: find.byIcon(SkillKind.gesture.icon),
+      ),
+      findsOneWidget,
+    );
     await tester.tap(
       find.text(text.languagesAddLanguage('American Sign Language')),
     );

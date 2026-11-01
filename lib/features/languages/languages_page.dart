@@ -8,7 +8,7 @@ import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/script_name.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
@@ -332,20 +332,54 @@ class _Key extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final modes = ModeColors.of(context);
     Widget entry(
       SkillMark mark,
       String text, {
-      List<IconData> extra = const <IconData>[],
-    }) => Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Icon(markIcon(mark), size: 16, color: theme.colorScheme.onSurface),
-        for (final icon in extra)
-          Icon(icon, size: 16, color: theme.colorScheme.onSurface),
-        const SizedBox(width: 4),
-        Flexible(child: Text(text, style: theme.textTheme.bodySmall)),
-      ],
-    );
+      List<SkillKind> extra = const <SkillKind>[],
+    }) {
+      final colors = pillColors(modes, mark);
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          CustomPaint(
+            foregroundPainter: mark == SkillMark.leave
+                ? DashedOutline(colors.onContainer, AppRadii.control)
+                : null,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: colors.container,
+                borderRadius: BorderRadius.circular(AppRadii.control),
+                border: mark == SkillMark.learn
+                    ? Border.all(color: colors.onContainer, width: 1.5)
+                    : null,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    for (final kind in extra)
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(end: 2),
+                        child: Icon(
+                          kind.icon,
+                          size: 16,
+                          color: colors.onContainer,
+                        ),
+                      ),
+                    SkillMarkGlyph(mark: mark, colors: colors),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 4),
+          Flexible(child: Text(text, style: theme.textTheme.bodySmall)),
+        ],
+      );
+    }
+
     return Semantics(
       container: true,
       label: l10n.languagesKeyLabel,
@@ -359,7 +393,7 @@ class _Key extends StatelessWidget {
             entry(
               SkillMark.knowBoth,
               l10n.languagesKeyBoth,
-              extra: <IconData>[SkillKind.write.icon, SkillKind.speak.icon],
+              extra: <SkillKind>[SkillKind.write, SkillKind.speak],
             ),
             entry(SkillMark.knowCovered, l10n.languagesKeyLevel),
             entry(SkillMark.learn, l10n.languagesStateLearn),
@@ -665,13 +699,12 @@ class _LanguageRow extends StatelessWidget {
     return SkillBadge(
       kind: SkillKind.gesture,
       mark: markOf(st, covered: covered),
-      label: pillSemantics(l10n, name, st.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, st.label(l10n)),
+      name: name,
     );
   }
 
-  /// The one chip of Speak and Hear: the Hear icon, with the tick and the
-  /// Speak icon at Hear and Speak.
+  /// The one chip of Speak and Hear: the ear alone at Hear, with the
+  /// microphone at Hear and Speak.
   Widget _spokenChip(BuildContext context, bool found) {
     final l10n = AppLocalizations.of(context)!;
     final level = skills.spokenLevel;
@@ -682,14 +715,14 @@ class _LanguageRow extends StatelessWidget {
     final name = l10n.languagesSkillSpoken;
     return SkillBadge(
       kind: SkillKind.hear,
+      combined: true,
       mark: spokenMarkOf(level, covered: covered),
-      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      name: name,
     );
   }
 
-  /// The one chip of a script's Read and Write: its glyph, with the tick and
-  /// the Write icon at Read and Write.
+  /// The one chip of a script's Read and Write: the eye alone at Read, with the
+  /// keyboard at Read and Write.
   Widget _scriptChip(BuildContext context, String script, bool found) {
     final l10n = AppLocalizations.of(context)!;
     final level = skills.scriptLevelOf(script);
@@ -701,9 +734,8 @@ class _LanguageRow extends StatelessWidget {
     return SkillBadge(
       kind: SkillKind.read,
       mark: scriptMarkOf(level, covered: covered),
-      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
-      tip: l10n.languagesSkillState(name, level.label(l10n)),
-      scriptGlyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
+      name: name,
+      combined: true,
     );
   }
 }
