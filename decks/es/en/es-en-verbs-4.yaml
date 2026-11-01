@@ -76,14 +76,14 @@ cards:
     bases: { "huella": "footprint; trace" }
     examples:
       "Veo una huella en la arena.": { native: "I see a footprint in the sand.", bases: { "una": "a", "huella": "footprint; trace", "en": "in", "la": "the" } }
-      "Dejan huellas en el barro.": { native: "They leave tracks in the mud.", bases: { "huellas": "footprint; trace", "en": "in", "el": "the" } }
+      "Dejan huellas en el barro.": { native: "They leave tracks in the mud.", bases: { "huellas": "footprint; trace", "en": "in", "el": "the", "barro": "mud" } }
   "es-2901":
     native: "fox"
     notes: { n1: "El zorro is a fox, a wild animal with a red coat and a bushy tail. The feminine is la zorra." }
     bases: { "zorro": "fox" }
     examples:
       "El zorro corre por el campo.": { native: "The fox runs across the field.", bases: { "El": "the", "zorro": "fox", "por": "for" } }
-      "El zorro es muy listo.": { native: "The fox is very clever.", bases: { "El": "the", "zorro": "fox" } }
+      "El zorro es muy listo.": { native: "The fox is very clever.", bases: { "El": "the", "zorro": "fox", "listo": "clever" } }
   "es-2902":
     native: "treasure"
     notes: { n1: "El tesoro is a treasure, a store of gold, jewels or valuable things." }
@@ -96,8 +96,8 @@ cards:
     notes: { n1: "El camino is a path, a road or the way to get somewhere." }
     bases: { "camino": "path; way" }
     examples:
-      "El camino es largo.": { native: "The path is long.", bases: { "El": "the" } }
-      "Seguimos el camino del río.": { native: "We follow the path of the river.", bases: { "el": "the", "del": "of" } }
+      "El camino es largo.": { native: "The path is long.", bases: { "El": "the", "camino": "path; way" } }
+      "Seguimos el camino del río.": { native: "We follow the path of the river.", bases: { "el": "the", "del": "of", "camino": "path; way" } }
   "es-2904":
     native: "silence"
     notes: { n1: "El silencio is silence, the absence of sound." }
@@ -180,7 +180,7 @@ cards:
     notes: { n1: "Caer is to fall down, or to drop. Its yo form is caigo." }
     bases: { "caer": "to fall" }
     examples:
-      "La hoja cae del árbol.": { native: "The leaf falls from the tree.", bases: { "La": "the", "cae": "to fall", "del": "of" } }
+      "La hoja cae del árbol.": { native: "The leaf falls from the tree.", bases: { "La": "the", "cae": "to fall", "del": "of", "hoja": "leaf" } }
       "Caigo al suelo.": { native: "I fall to the ground.", bases: { "Caigo": "to fall", "al": "to the" } }
   "es-2916":
     native: "to hit; to stick"

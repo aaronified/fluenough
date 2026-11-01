@@ -113,7 +113,7 @@ cards:
     examples:
       - target: "Invierto en la bolsa."
         ipa: "inˈbjeɾto en la ˈbolsa"
-        bases: [{ word: "Invierto", base: "invertir" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "bolsa", ref: "es-0380" }]
+        bases: [{ word: "Invierto", base: "invertir" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }]
       - target: "Invierten el dinero en una casa."
         ipa: "inˈbjeɾten el diˈneɾo en ˈuna ˈkasa"
         bases: [{ word: "Invierten", base: "invertir" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "casa", ref: "es-0006" }]
@@ -141,7 +141,7 @@ cards:
     examples:
       - target: "El coste es alto."
         ipa: "el ˈkoste es ˈalto"
-        bases: [{ word: "El", base: "el" }, { word: "coste", base: "coste" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+        bases: [{ word: "El", base: "el" }, { word: "coste", base: "coste" }, { word: "es", ref: "es-0022" }, { word: "alto", base: "alto" }]
       - target: "Calculo el coste del viaje."
         ipa: "kalˈkulo el ˈkoste del ˈbjaxe"
         bases: [{ word: "Calculo", base: "calcular" }, { word: "el", base: "el" }, { word: "coste", base: "coste" }, { word: "del", base: "del" }, { word: "viaje", ref: "es-1690" }]
@@ -197,7 +197,7 @@ cards:
     examples:
       - target: "La divisa del país es el peso."
         ipa: "la diˈbisa del paˈis es el ˈpeso"
-        bases: [{ word: "La", base: "la" }, { word: "divisa", base: "divisa" }, { word: "del", base: "del" }, { word: "país", ref: "es-0018" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "peso", ref: "es-1569" }]
+        bases: [{ word: "La", base: "la" }, { word: "divisa", base: "divisa" }, { word: "del", base: "del" }, { word: "país", ref: "es-0018" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "peso", base: "peso" }]
       - target: "Cambio dinero en la casa de divisas."
         ipa: "ˈkambjo diˈneɾo en la ˈkasa de diˈbisas"
         bases: [{ word: "Cambio", ref: "es-0588" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "de", base: "de" }, { word: "divisas", base: "divisa" }]
@@ -211,10 +211,10 @@ cards:
     examples:
       - target: "El pago es al contado."
         ipa: "el ˈpaɡo es al konˈtado"
-        bases: [{ word: "El", base: "el" }, { word: "pago", ref: "es-0295" }, { word: "es", ref: "es-0022" }, { word: "al", base: "al" }, { word: "contado", base: "contado" }]
+        bases: [{ word: "El", base: "el" }, { word: "pago", base: "pago" }, { word: "es", ref: "es-0022" }, { word: "al", base: "al" }, { word: "contado", base: "contado" }]
       - target: "Hago el pago con tarjeta."
         ipa: "ˈaɡo el ˈpaɡo kon taɾˈxeta"
-        bases: [{ word: "Hago", ref: "es-0025" }, { word: "el", base: "el" }, { word: "pago", ref: "es-0295" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }]
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "el", base: "el" }, { word: "pago", base: "pago" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }]
   - id: "es-3007"
     target: "el cobro"
     ipa: "el ˈkobɾo"

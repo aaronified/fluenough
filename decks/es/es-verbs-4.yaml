@@ -146,7 +146,7 @@ cards:
         bases: [{ word: "Veo", ref: "es-1625" }, { word: "una", base: "una" }, { word: "huella", base: "huella" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "arena", ref: "es-1763" }]
       - target: "Dejan huellas en el barro."
         ipa: "ˈdexan ˈweʝas en el ˈbaro"
-        bases: [{ word: "Dejan", ref: "es-1190" }, { word: "huellas", base: "huella" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "barro", ref: "es-1508" }]
+        bases: [{ word: "Dejan", ref: "es-1190" }, { word: "huellas", base: "huella" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "barro", base: "barro" }]
   - id: "es-2901"
     target: "zorro"
     ipa: "ˈθoro"
@@ -160,7 +160,7 @@ cards:
         bases: [{ word: "El", base: "el" }, { word: "zorro", base: "zorro" }, { word: "corre", ref: "es-1068" }, { word: "por", base: "por" }, { word: "campo", ref: "es-1772" }]
       - target: "El zorro es muy listo."
         ipa: "el ˈθoro es mwi ˈlisto"
-        bases: [{ word: "El", base: "el" }, { word: "zorro", base: "zorro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "listo", ref: "es-0932" }]
+        bases: [{ word: "El", base: "el" }, { word: "zorro", base: "zorro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "listo", base: "listo" }]
   - id: "es-2902"
     target: "tesoro"
     ipa: "teˈsoɾo"
@@ -185,10 +185,10 @@ cards:
     examples:
       - target: "El camino es largo."
         ipa: "el kaˈmino es ˈlaɾɡo"
-        bases: [{ word: "El", base: "el" }, { word: "camino", ref: "es-0281" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+        bases: [{ word: "El", base: "el" }, { word: "camino", base: "camino" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
       - target: "Seguimos el camino del río."
         ipa: "seˈɡimos el kaˈmino del ˈrio"
-        bases: [{ word: "Seguimos", ref: "es-0722" }, { word: "el", base: "el" }, { word: "camino", ref: "es-0281" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }]
+        bases: [{ word: "Seguimos", ref: "es-0722" }, { word: "el", base: "el" }, { word: "camino", base: "camino" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }]
   - id: "es-2904"
     target: "silencio"
     ipa: "siˈlenθjo"
@@ -343,7 +343,7 @@ cards:
     examples:
       - target: "La hoja cae del árbol."
         ipa: "la ˈoxa ˈkae del ˈaɾbol"
-        bases: [{ word: "La", base: "la" }, { word: "hoja", ref: "es-1386" }, { word: "cae", base: "caer" }, { word: "del", base: "del" }, { word: "árbol", ref: "es-1748" }]
+        bases: [{ word: "La", base: "la" }, { word: "hoja", base: "hoja" }, { word: "cae", base: "caer" }, { word: "del", base: "del" }, { word: "árbol", ref: "es-1748" }]
       - target: "Caigo al suelo."
         ipa: "ˈkajɡo al ˈswelo"
         bases: [{ word: "Caigo", base: "caer" }, { word: "al", base: "al" }, { word: "suelo", ref: "es-0819" }]

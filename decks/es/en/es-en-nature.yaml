@@ -13,7 +13,7 @@ cards:
     bases: { "el": "the", "árbol": "tree" }
     examples:
       "Hay un árbol grande en el parque.": { native: "There is a big tree in the park.", bases: { "Hay": "there is; there are", "un": "a", "árbol": "tree", "en": "in", "el": "the" } }
-      "Las hojas del árbol son verdes.": { native: "The leaves of the tree are green.", bases: { "Las": "the", "del": "of", "árbol": "tree" } }
+      "Las hojas del árbol son verdes.": { native: "The leaves of the tree are green.", bases: { "Las": "the", "del": "of", "árbol": "tree", "hojas": "leaf" } }
   "es-1749":
     native: "forest; wood"
     notes: { n1: "Bosque is a forest, larger and wilder than a park." }
@@ -26,7 +26,7 @@ cards:
     notes: { n1: "Montaña is a mountain. Montañoso means mountainous." }
     bases: { "la": "the", "montaña": "mountain" }
     examples:
-      "La montaña es muy alta.": { native: "The mountain is very high.", bases: { "La": "the", "montaña": "mountain" } }
+      "La montaña es muy alta.": { native: "The mountain is very high.", bases: { "La": "the", "montaña": "mountain", "alta": "high" } }
       "Subimos a la montaña.": { native: "We climb the mountain.", bases: { "a": "to", "la": "the", "montaña": "mountain" } }
   "es-1751":
     native: "river"
@@ -110,7 +110,7 @@ cards:
     notes: { n1: "La piedra is a stone, smaller than a rock." }
     bases: { "la": "the", "piedra": "stone" }
     examples:
-      "Hay una piedra en el camino.": { native: "There is a stone on the path.", bases: { "Hay": "there is; there are", "una": "a", "piedra": "stone", "en": "in", "el": "the" } }
+      "Hay una piedra en el camino.": { native: "There is a stone on the path.", bases: { "Hay": "there is; there are", "una": "a", "piedra": "stone", "en": "in", "el": "the", "camino": "path; way" } }
       "La piedra es gris.": { native: "The stone is grey.", bases: { "La": "the", "piedra": "stone" } }
   "es-1763":
     native: "sand"
@@ -195,7 +195,7 @@ cards:
     bases: { "la": "the", "colina": "hill" }
     examples:
       "Subimos la colina.": { native: "We climb the hill.", bases: { "la": "the", "colina": "hill" } }
-      "La colina es alta.": { native: "The hill is high.", bases: { "La": "the", "colina": "hill" } }
+      "La colina es alta.": { native: "The hill is high.", bases: { "La": "the", "colina": "hill", "alta": "high" } }
   "es-1775":
     native: "cave"
     notes: { n1: "La cueva is a cave, a hole in a rock or a hill." }
@@ -236,7 +236,7 @@ cards:
     notes: { n1: "La cascada is a waterfall." }
     bases: { "la": "the", "cascada": "waterfall" }
     examples:
-      "La cascada es muy alta.": { native: "The waterfall is very high.", bases: { "La": "the", "cascada": "waterfall" } }
+      "La cascada es muy alta.": { native: "The waterfall is very high.", bases: { "La": "the", "cascada": "waterfall", "alta": "high" } }
       "Vemos una cascada.": { native: "We see a waterfall.", bases: { "una": "a", "cascada": "waterfall" } }
   "es-1781":
     native: "volcano"

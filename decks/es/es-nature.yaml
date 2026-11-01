@@ -20,7 +20,7 @@ cards:
         bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "árbol", base: "árbol" }, { word: "grande", ref: "es-0031" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
       - target: "Las hojas del árbol son verdes."
         ipa: "las ˈoxas del ˈaɾbol son ˈbeɾdes"
-        bases: [{ word: "Las", base: "las" }, { word: "hojas", ref: "es-1386" }, { word: "del", base: "del" }, { word: "árbol", base: "árbol" }, { word: "son", ref: "es-0022" }, { word: "verdes", ref: "es-1009" }]
+        bases: [{ word: "Las", base: "las" }, { word: "hojas", base: "hoja" }, { word: "del", base: "del" }, { word: "árbol", base: "árbol" }, { word: "son", ref: "es-0022" }, { word: "verdes", ref: "es-1009" }]
   - id: "es-1749"
     target: "el bosque"
     ipa: "el ˈboske"
@@ -45,7 +45,7 @@ cards:
     examples:
       - target: "La montaña es muy alta."
         ipa: "la monˈtaɲa es mwi ˈalta"
-        bases: [{ word: "La", base: "la" }, { word: "montaña", base: "montaña" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", ref: "es-0254" }]
+        bases: [{ word: "La", base: "la" }, { word: "montaña", base: "montaña" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", base: "alto" }]
       - target: "Subimos a la montaña."
         ipa: "suˈbimos a la monˈtaɲa"
         bases: [{ word: "Subimos", ref: "es-0691" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "montaña", base: "montaña" }]
@@ -213,7 +213,7 @@ cards:
     examples:
       - target: "Hay una piedra en el camino."
         ipa: "aj ˈuna ˈpjedɾa en el kaˈmino"
-        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "piedra", base: "piedra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "camino", ref: "es-0281" }]
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "piedra", base: "piedra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "camino", base: "camino" }]
       - target: "La piedra es gris."
         ipa: "la ˈpjedɾa es ɡɾis"
         bases: [{ word: "La", base: "la" }, { word: "piedra", base: "piedra" }, { word: "es", ref: "es-0022" }, { word: "gris", ref: "es-1013" }]
@@ -384,7 +384,7 @@ cards:
         bases: [{ word: "Subimos", ref: "es-0691" }, { word: "la", base: "la" }, { word: "colina", base: "colina" }]
       - target: "La colina es alta."
         ipa: "la koˈlina es ˈalta"
-        bases: [{ word: "La", base: "la" }, { word: "colina", base: "colina" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }]
+        bases: [{ word: "La", base: "la" }, { word: "colina", base: "colina" }, { word: "es", ref: "es-0022" }, { word: "alta", base: "alto" }]
   - id: "es-1775"
     target: "la cueva"
     ipa: "la ˈkweba"
@@ -465,7 +465,7 @@ cards:
     examples:
       - target: "La cascada es muy alta."
         ipa: "la kasˈkada es mwi ˈalta"
-        bases: [{ word: "La", base: "la" }, { word: "cascada", base: "cascada" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", ref: "es-0254" }]
+        bases: [{ word: "La", base: "la" }, { word: "cascada", base: "cascada" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "alta", base: "alto" }]
       - target: "Vemos una cascada."
         ipa: "ˈbemos ˈuna kasˈkada"
         bases: [{ word: "Vemos", ref: "es-1625" }, { word: "una", base: "una" }, { word: "cascada", base: "cascada" }]
