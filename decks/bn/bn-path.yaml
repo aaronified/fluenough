@@ -406,7 +406,8 @@ units:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "bn-nature", theme: "nature", words: 50 }
+  - decks: ["bn-nature", "bn-nature-sentences", "*"]
+    words: 34
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
     reading_passages:
