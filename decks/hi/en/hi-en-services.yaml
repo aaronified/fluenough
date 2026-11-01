@@ -1,0 +1,193 @@
+schema: 1
+id: "hi-en-services"
+kind: "layer"
+core: "hi-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services"
+license: "CC-BY-SA-4.0"
+description: "Services in town: the bank and the post office, repairs and the tradespeople who do them, and the forms and payments that go with them. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-2244":
+    native: "account (bank)"
+    notes:
+      "n1": "A record of money kept in a bank, under one's name. Also used for a ledger."
+    examples:
+      "मेरा बैंक में खाता है।": { "native": "I have an account in the bank.", "bases": {} }
+      "खाते में पैसे जमा करो।": { "native": "Deposit money in the account.", "bases": {"खाते": "account"} }
+  "hi-2245":
+    native: "ATM"
+    notes:
+      "n1": "A machine in a wall where money can be taken out from a bank account."
+    examples:
+      "एटीएम कहाँ है?": { "native": "Where is the ATM?", "bases": {} }
+      "एटीएम से पैसे निकालो।": { "native": "Take money out from the ATM.", "bases": {} }
+  "hi-2246":
+    native: "post; mail"
+    notes:
+      "n1": "The letters and parcels sent by the post office."
+    examples:
+      "आज डाक आई है।": { "native": "The post has come today.", "bases": {} }
+      "यह चिट्ठी डाक में डालो।": { "native": "Put this letter in the post.", "bases": {"चिट्ठी": "letter", "डाक": "post"} }
+  "hi-2247":
+    native: "parcel"
+    notes:
+      "n1": "A package sent by post or by a courier."
+    examples:
+      "पार्सल आ गया।": { "native": "The parcel has come.", "bases": {} }
+      "पार्सल का वज़न नापो।": { "native": "Weigh the parcel.", "bases": {} }
+  "hi-2248":
+    native: "repair"
+    notes:
+      "n1": "The act of fixing something that is broken or worn."
+    examples:
+      "घड़ी की मरम्मत हो गई।": { "native": "The watch has been repaired.", "bases": {} }
+      "मरम्मत कितने की होगी?": { "native": "How much will the repair cost?", "bases": {} }
+  "hi-2249":
+    native: "service"
+    notes:
+      "n1": "Help given to others, or a service that is provided for payment."
+    examples:
+      "बैंक की सेवा अच्छी है।": { "native": "The bank's service is good.", "bases": {} }
+      "उसने गाँव की सेवा की।": { "native": "He served the village.", "bases": {} }
+  "hi-2250":
+    native: "launderer; washerman"
+    notes:
+      "n1": "A person whose work is washing and ironing clothes for others."
+    examples:
+      "धोबी कपड़े कल देगा।": { "native": "The launderer will give the clothes tomorrow.", "bases": {} }
+      "कपड़े धोबी के पास दो।": { "native": "Give the clothes to the launderer.", "bases": {} }
+  "hi-2251":
+    native: "barber"
+    notes:
+      "n1": "A person who cuts hair and shaves beards for a living."
+    examples:
+      "नाई की दुकान कहाँ है?": { "native": "Where is the barber's shop?", "bases": {} }
+      "नाई से बाल कटवाओ।": { "native": "Get your hair cut by the barber.", "bases": {"कटवाओ": "to get cut"} }
+  "hi-2252":
+    native: "tailor"
+    notes:
+      "n1": "A person who sews and makes clothes to measure."
+    examples:
+      "दर्ज़ी ने कमीज़ सिली।": { "native": "The tailor stitched the shirt.", "bases": {"ने": "by", "सिली": "to stitch"} }
+      "कुर्ता दर्ज़ी से सिलवाओ।": { "native": "Get the kurta stitched by the tailor.", "bases": {"दर्ज़ी": "tailor", "सिलवाओ": "to get stitched"} }
+  "hi-2253":
+    native: "cobbler; shoe-mender"
+    notes:
+      "n1": "A person who mends shoes and sandals."
+    examples:
+      "मोची जूते ठीक करता है।": { "native": "The cobbler mends the shoes.", "bases": {} }
+      "मोची के पास चप्पल है।": { "native": "The sandal is with the cobbler.", "bases": {} }
+  "hi-2254":
+    native: "plumber"
+    notes:
+      "n1": "A person who fits and mends pipes for water and gas."
+    examples:
+      "प्लंबर नल ठीक करेगा।": { "native": "The plumber will fix the tap.", "bases": {} }
+      "प्लंबर को बुलाओ।": { "native": "Call the plumber.", "bases": {} }
+  "hi-2255":
+    native: "mason; mechanic; skilled worker"
+    notes:
+      "n1": "A skilled worker who builds or repairs, such as a mason or a mechanic."
+    examples:
+      "मिस्त्री दीवार बना रहा है।": { "native": "The mason is building the wall.", "bases": {"दीवार": "wall"} }
+      "गाड़ी के मिस्त्री को दिखाओ।": { "native": "Show the car to the mechanic.", "bases": {"मिस्त्री": "mechanic"} }
+  "hi-2256":
+    native: "craftsman; skilled worker"
+    notes:
+      "n1": "A person who makes things by hand with great skill."
+    examples:
+      "यह कारीगर बहुत अच्छा है।": { "native": "This craftsman is very good.", "bases": {} }
+      "कारीगरों ने सुंदर चीज़ें बनाईं।": { "native": "The craftsmen made beautiful things.", "bases": {"कारीगरों": "craftsman", "ने": "by"} }
+  "hi-2257":
+    native: "complaint"
+    notes:
+      "n1": "A statement that something is wrong, made to someone in charge."
+    examples:
+      "उसने दुकान की शिकायत की।": { "native": "He complained about the shop.", "bases": {} }
+      "शिकायत दर्ज करवाओ।": { "native": "Lodge a complaint.", "bases": {"दर्ज": "recorded", "करवाओ": "to get done"} }
+  "hi-2258":
+    native: "application"
+    notes:
+      "n1": "A formal request in writing, for a job, a place or a licence."
+    examples:
+      "नौकरी के लिए आवेदन दो।": { "native": "Apply for the job.", "bases": {"लिए": "for"} }
+      "आवेदन कल तक जमा करो।": { "native": "Submit the application by tomorrow.", "bases": {} }
+  "hi-2259":
+    native: "form (to fill in)"
+    notes:
+      "n1": "A printed paper with spaces to write one's details in."
+    examples:
+      "यह फ़ॉर्म भरो।": { "native": "Fill in this form.", "bases": {} }
+      "फ़ॉर्म पर दस्तखत करो।": { "native": "Sign the form.", "bases": {"दस्तखत": "signature"} }
+  "hi-2260":
+    native: "document; paper"
+    notes:
+      "n1": "A paper that gives proof or information, such as a certificate."
+    examples:
+      "सारे दस्तावेज़ साथ लाओ।": { "native": "Bring all the documents with you.", "bases": {} }
+      "दस्तावेज़ों की जाँच होगी।": { "native": "The documents will be checked.", "bases": {"दस्तावेज़ों": "document"} }
+  "hi-2261":
+    native: "loan; debt"
+    notes:
+      "n1": "Money borrowed from someone, which must be paid back."
+    examples:
+      "उसने बैंक से कर्ज़ लिया।": { "native": "He took a loan from the bank.", "bases": {} }
+      "कर्ज़ चुकाना आसान नहीं।": { "native": "Paying back a debt is not easy.", "bases": {"चुकाना": "to pay off"} }
+  "hi-2262":
+    native: "interest (on money)"
+    notes:
+      "n1": "The extra money paid for borrowing, or earned on savings."
+    examples:
+      "बैंक में ब्याज मिलता है।": { "native": "The bank pays interest.", "bases": {} }
+      "कर्ज़ पर ब्याज कितना है?": { "native": "How much is the interest on the loan?", "bases": {} }
+  "hi-2263":
+    native: "investment"
+    notes:
+      "n1": "Putting money into something, in order to earn more later."
+    examples:
+      "शेयर में निवेश करना खतरनाक है।": { "native": "Investing in shares is risky.", "bases": {"शेयर": "share", "खतरनाक": "dangerous"} }
+      "ध्यान से सोचकर निवेश करो।": { "native": "Think carefully before investing.", "bases": {"ध्यान": "care; attention", "निवेश": "investment"} }
+  "hi-2264":
+    native: "deposited; collected; paid in"
+    notes:
+      "n1": "Put in a place for keeping, or collected together. The verb is जमा करना (jamā karnā)."
+    examples:
+      "पैसे बैंक में जमा हो गए।": { "native": "The money has been deposited in the bank.", "bases": {} }
+      "बिल जमा करो।": { "native": "Pay the bill.", "bases": {} }
+  "hi-2265":
+    native: "PIN; pin"
+    notes:
+      "n1": "The secret number that opens an account or a card. It is also a small pin."
+    examples:
+      "एटीएम का पिन मत बताओ।": { "native": "Do not tell the ATM PIN.", "bases": {"मत": "do not"} }
+      "पिन याद रखो।": { "native": "Remember the PIN.", "bases": {} }
+  "hi-2266":
+    native: "cash; in cash"
+    notes:
+      "n1": "Money in notes or coins, paid at once, not by card or cheque."
+    examples:
+      "नकद पैसे दो।": { "native": "Give cash.", "bases": {} }
+      "क्या आप नकद लेंगे?": { "native": "Will you take cash?", "bases": {} }
+  "hi-2267":
+    native: "payment"
+    notes:
+      "n1": "The act of paying money that is due."
+    examples:
+      "भुगतान कल होगा।": { "native": "The payment will be tomorrow.", "bases": {} }
+      "ऑनलाइन भुगतान करो।": { "native": "Pay online.", "bases": {} }
+  "hi-2268":
+    native: "cheque"
+    notes:
+      "n1": "A paper that tells the bank to pay the money written on it."
+    examples:
+      "उसने चेक से पैसे दिए।": { "native": "He paid the money by cheque.", "bases": {} }
+      "चेक पर दस्तखत करो।": { "native": "Sign the cheque.", "bases": {"दस्तखत": "signature"} }
+  "hi-2269":
+    native: "available"
+    notes:
+      "n1": "Ready to be had or used."
+    examples:
+      "यह किताब बाज़ार में उपलब्ध है।": { "native": "This book is available in the market.", "bases": {} }
+      "सेवा सबको उपलब्ध है।": { "native": "The service is available to all.", "bases": {} }

@@ -1,0 +1,397 @@
+schema: 1
+id: "hi-services"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "services"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2244"
+    target: "खाता"
+    target_scripts: {"perso_arabic": "کھاتہ"}
+    reading: "khātā"
+    ipa: "kʰaːt̪aː"
+    phonetic: "[kʰaːt̪aː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरा बैंक में खाता है।", "reading": "mērā baiṅk mēm̐ khātā hai.", "ipa": "meːraː bɛːŋk mẽː kʰaːt̪aː ɦɛː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "बैंक", "ref": "hi-1057"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "खाते में पैसे जमा करो।", "reading": "khātē mēm̐ paisē jamā karō.", "ipa": "kʰaːt̪eː mẽː pɛːseː dʒəmaː kəroː", "bases": [{"word": "खाते", "base": "खाता", "reading": "khātā"}, {"word": "में", "ref": "hi-0274"}, {"word": "पैसे", "ref": "hi-2227"}, {"word": "जमा", "ref": "hi-2264"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2245"
+    target: "एटीएम"
+    target_scripts: {"perso_arabic": "اے ٹی ایم"}
+    reading: "ēṭīēm"
+    ipa: "eːʈiːeːm"
+    phonetic: "[eːʈiːeːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "एटीएम कहाँ है?", "reading": "ēṭīēm kahām̐ hai?", "ipa": "eːʈiːeːm kəɦãː ɦɛː", "bases": [{"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "एटीएम से पैसे निकालो।", "reading": "ēṭīēm sē paisē nikālō.", "ipa": "eːʈiːeːm seː pɛːseː nɪkaːloː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "पैसे", "ref": "hi-2227"}, {"word": "निकालो", "ref": "hi-1729"}]}
+  - id: "hi-2246"
+    target: "डाक"
+    target_scripts: {"perso_arabic": "ڈاک"}
+    reading: "ḍāk"
+    ipa: "ɖaːk"
+    phonetic: "[ɖaːk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आज डाक आई है।", "reading": "āj ḍāk āī hai.", "ipa": "aːdʒ ɖaːk aːiː ɦɛː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "आई", "ref": "hi-0778"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "यह चिट्ठी डाक में डालो।", "reading": "yah ciṭṭhī ḍāk mēm̐ ḍālō.", "ipa": "jəɦ tʃɪʈʈʰiː ɖaːk mẽː ɖaːloː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "चिट्ठी", "base": "चिट्ठी", "reading": "ciṭṭhī"}, {"word": "डाक", "base": "डाक", "reading": "ḍāk"}, {"word": "में", "ref": "hi-0274"}, {"word": "डालो", "ref": "hi-0941"}]}
+  - id: "hi-2247"
+    target: "पार्सल"
+    target_scripts: {"perso_arabic": "پارسل"}
+    reading: "pārsal"
+    ipa: "paːrsəl"
+    phonetic: "[paːrsəl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पार्सल आ गया।", "reading": "pārsal ā gayā.", "ipa": "paːrsəl aː ɡəjaː", "bases": [{"word": "आ", "ref": "hi-0778"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "पार्सल का वज़न नापो।", "reading": "pārsal kā vazan nāpō.", "ipa": "paːrsəl kaː ʋəzən naːpoː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "वज़न", "ref": "hi-1365"}, {"word": "नापो", "ref": "hi-1808"}]}
+  - id: "hi-2248"
+    target: "मरम्मत"
+    target_scripts: {"perso_arabic": "مرمت"}
+    reading: "marammat"
+    ipa: "mərəmmət̪"
+    phonetic: "[mərəmmət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "घड़ी की मरम्मत हो गई।", "reading": "ghaṛī kī marammat hō gaī.", "ipa": "ɡʱəɽiː kiː mərəmmət̪ ɦoː ɡəiː", "bases": [{"word": "घड़ी", "ref": "hi-1096"}, {"word": "की", "ref": "hi-0279"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गई", "ref": "hi-0777"}]}
+      - {"target": "मरम्मत कितने की होगी?", "reading": "marammat kitnē kī hōgī?", "ipa": "mərəmmət̪ kɪt̪neː kiː ɦoːɡiː", "bases": [{"word": "कितने", "ref": "hi-0163"}, {"word": "की", "ref": "hi-0279"}, {"word": "होगी", "ref": "hi-0780"}]}
+  - id: "hi-2249"
+    target: "सेवा"
+    target_scripts: {"perso_arabic": "خدمت"}
+    reading: "sēvā"
+    ipa: "seːʋaː"
+    phonetic: "[seːʋaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बैंक की सेवा अच्छी है।", "reading": "baiṅk kī sēvā acchī hai.", "ipa": "bɛːŋk kiː seːʋaː ətʃtʃʰiː ɦɛː", "bases": [{"word": "बैंक", "ref": "hi-1057"}, {"word": "की", "ref": "hi-0279"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसने गाँव की सेवा की।", "reading": "usnē gām̐v kī sēvā kī.", "ipa": "ʊsneː ɡãːʋ kiː seːʋaː kiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "गाँव", "ref": "hi-1080"}, {"word": "की", "ref": "hi-0779"}]}
+  - id: "hi-2250"
+    target: "धोबी"
+    target_scripts: {"perso_arabic": "دھوبی"}
+    reading: "dhōbī"
+    ipa: "d̪ʱoːbiː"
+    phonetic: "[d̪ʱoːbiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "धोबी कपड़े कल देगा।", "reading": "dhōbī kapṛē kal dēgā.", "ipa": "d̪ʱoːbiː kəpɽeː kəl d̪eːɡaː", "bases": [{"word": "कपड़े", "ref": "hi-1106"}, {"word": "कल", "ref": "hi-0300"}, {"word": "देगा", "ref": "hi-0785"}]}
+      - {"target": "कपड़े धोबी के पास दो।", "reading": "kapṛē dhōbī kē pās dō.", "ipa": "kəpɽeː d̪ʱoːbiː keː paːs d̪oː", "bases": [{"word": "कपड़े", "ref": "hi-1106"}, {"word": "के", "ref": "hi-0065"}, {"word": "पास", "ref": "hi-0293"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2251"
+    target: "नाई"
+    target_scripts: {"perso_arabic": "نائی"}
+    reading: "nāī"
+    ipa: "naːiː"
+    phonetic: "[naːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नाई की दुकान कहाँ है?", "reading": "nāī kī dukān kahām̐ hai?", "ipa": "naːiː kiː d̪ʊkaːn kəɦãː ɦɛː", "bases": [{"word": "की", "ref": "hi-0279"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "कहाँ", "ref": "hi-0159"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "नाई से बाल कटवाओ।", "reading": "nāī sē bāl kaṭvāō.", "ipa": "naːiː seː baːl kəʈʋaːoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बाल", "ref": "hi-1032"}, {"word": "कटवाओ", "base": "कटवाना", "reading": "kaṭvānā"}]}
+  - id: "hi-2252"
+    target: "दर्ज़ी"
+    target_scripts: {"perso_arabic": "درزی"}
+    reading: "darzī"
+    ipa: "d̪ərziː"
+    phonetic: "[d̪ərziː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दर्ज़ी ने कमीज़ सिली।", "reading": "darzī nē kamīz silī.", "ipa": "d̪ərziː neː kəmiːz sɪliː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "कमीज़", "ref": "hi-1111"}, {"word": "सिली", "base": "सिलना", "reading": "silnā"}]}
+      - {"target": "कुर्ता दर्ज़ी से सिलवाओ।", "reading": "kurtā darzī sē silvāō.", "ipa": "kʊrt̪aː d̪ərziː seː sɪlʋaːoː", "bases": [{"word": "कुर्ता", "ref": "hi-1108"}, {"word": "दर्ज़ी", "base": "दर्ज़ी", "reading": "darzī"}, {"word": "से", "ref": "hi-0276"}, {"word": "सिलवाओ", "base": "सिलवाना", "reading": "silvānā"}]}
+  - id: "hi-2253"
+    target: "मोची"
+    target_scripts: {"perso_arabic": "موچی"}
+    reading: "mōcī"
+    ipa: "moːtʃiː"
+    phonetic: "[moːtʃiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मोची जूते ठीक करता है।", "reading": "mōcī jūtē ṭhīk kartā hai.", "ipa": "moːtʃiː dʒuːt̪eː ʈʰiːk kərt̪aː ɦɛː", "bases": [{"word": "जूते", "ref": "hi-1112"}, {"word": "ठीक", "ref": "hi-1457"}, {"word": "करता", "ref": "hi-0779"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मोची के पास चप्पल है।", "reading": "mōcī kē pās cappal hai.", "ipa": "moːtʃiː keː paːs tʃəppəl ɦɛː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "पास", "ref": "hi-0293"}, {"word": "चप्पल", "ref": "hi-1113"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2254"
+    target: "प्लंबर"
+    target_scripts: {"perso_arabic": "پلمبر"}
+    reading: "plambar"
+    ipa: "pləmbər"
+    phonetic: "[pləmbər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "प्लंबर नल ठीक करेगा।", "reading": "plambar nal ṭhīk karēgā.", "ipa": "pləmbər nəl ʈʰiːk kəreːɡaː", "bases": [{"word": "नल", "ref": "hi-1712"}, {"word": "ठीक", "ref": "hi-1457"}, {"word": "करेगा", "ref": "hi-0779"}]}
+      - {"target": "प्लंबर को बुलाओ।", "reading": "plambar kō bulāō.", "ipa": "pləmbər koː bʊlaːoː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "बुलाओ", "ref": "hi-0961"}]}
+  - id: "hi-2255"
+    target: "मिस्त्री"
+    target_scripts: {"perso_arabic": "مستری"}
+    reading: "mistrī"
+    ipa: "mɪst̪riː"
+    phonetic: "[mɪst̪riː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मिस्त्री दीवार बना रहा है।", "reading": "mistrī dīvār banā rahā hai.", "ipa": "mɪst̪riː d̪iːʋaːr bənaː rəɦaː ɦɛː", "bases": [{"word": "दीवार", "base": "दीवार", "reading": "dīvār"}, {"word": "बना", "ref": "hi-1502"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "गाड़ी के मिस्त्री को दिखाओ।", "reading": "gāṛī kē mistrī kō dikhāō.", "ipa": "ɡaːɽiː keː mɪst̪riː koː d̪ɪkʰaːoː", "bases": [{"word": "गाड़ी", "ref": "hi-1907"}, {"word": "के", "ref": "hi-0065"}, {"word": "मिस्त्री", "base": "मिस्त्री", "reading": "mistrī"}, {"word": "को", "ref": "hi-0277"}, {"word": "दिखाओ", "ref": "hi-1815"}]}
+  - id: "hi-2256"
+    target: "कारीगर"
+    target_scripts: {"perso_arabic": "کاریگر"}
+    reading: "kārīgar"
+    ipa: "kaːriːɡər"
+    phonetic: "[kaːriːɡər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह कारीगर बहुत अच्छा है।", "reading": "yah kārīgar bahut acchā hai.", "ipa": "jəɦ kaːriːɡər bəɦʊt̪ ətʃtʃʰaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कारीगरों ने सुंदर चीज़ें बनाईं।", "reading": "kārīgrōm̐ nē sundar cīzēm̐ banāīm̐.", "ipa": "kaːriːɡrõː neː sʊnd̪ər tʃiːzẽː bənaːĩː", "bases": [{"word": "कारीगरों", "base": "कारीगर", "reading": "kārīgar"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सुंदर", "ref": "hi-0900"}, {"word": "चीज़ें", "ref": "hi-1351"}, {"word": "बनाईं", "ref": "hi-1502"}]}
+  - id: "hi-2257"
+    target: "शिकायत"
+    target_scripts: {"perso_arabic": "شکایت"}
+    reading: "śikāyat"
+    ipa: "ʃɪkaːjət̪"
+    phonetic: "[ʃɪkaːjət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने दुकान की शिकायत की।", "reading": "usnē dukān kī śikāyat kī.", "ipa": "ʊsneː d̪ʊkaːn kiː ʃɪkaːjət̪ kiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "दुकान", "ref": "hi-0239"}, {"word": "की", "ref": "hi-0779"}]}
+      - {"target": "शिकायत दर्ज करवाओ।", "reading": "śikāyat darj karvāō.", "ipa": "ʃɪkaːjət̪ d̪ərdʒ kərʋaːoː", "bases": [{"word": "दर्ज", "base": "दर्ज", "reading": "darj"}, {"word": "करवाओ", "base": "करवाना", "reading": "karvānā"}]}
+  - id: "hi-2258"
+    target: "आवेदन"
+    target_scripts: {"perso_arabic": "درخواست"}
+    reading: "āvēdan"
+    ipa: "aːʋeːd̪ən"
+    phonetic: "[aːʋeːd̪ən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नौकरी के लिए आवेदन दो।", "reading": "naukrī kē liē āvēdan dō.", "ipa": "nɔːkriː keː lɪeː aːʋeːd̪ən d̪oː", "bases": [{"word": "नौकरी", "ref": "hi-0399"}, {"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "आवेदन कल तक जमा करो।", "reading": "āvēdan kal tak jamā karō.", "ipa": "aːʋeːd̪ən kəl t̪ək dʒəmaː kəroː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "तक", "ref": "hi-0278"}, {"word": "जमा", "ref": "hi-2264"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2259"
+    target: "फ़ॉर्म"
+    target_scripts: {"perso_arabic": "فارم"}
+    reading: "fôrm"
+    ipa: "fɔrm"
+    phonetic: "[fɔrm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह फ़ॉर्म भरो।", "reading": "yah fôrm bharō.", "ipa": "jəɦ fɔrm bʱəroː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "भरो", "ref": "hi-1732"}]}
+      - {"target": "फ़ॉर्म पर दस्तखत करो।", "reading": "fôrm par dastakhat karō.", "ipa": "fɔrm pər d̪əst̪əkʰət̪ kəroː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "दस्तखत", "base": "दस्तखत", "reading": "dastakhat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2260"
+    target: "दस्तावेज़"
+    target_scripts: {"perso_arabic": "دستاویز"}
+    reading: "dastāvēz"
+    ipa: "d̪əst̪aːʋeːz"
+    phonetic: "[d̪əst̪aːʋeːz]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सारे दस्तावेज़ साथ लाओ।", "reading": "sārē dastāvēz sāth lāō.", "ipa": "saːreː d̪əst̪aːʋeːz saːt̪ʰ laːoː", "bases": [{"word": "सारे", "ref": "hi-0867"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "लाओ", "ref": "hi-0949"}]}
+      - {"target": "दस्तावेज़ों की जाँच होगी।", "reading": "dastāvēzōm̐ kī jām̐c hōgī.", "ipa": "d̪əst̪aːʋeːzõː kiː dʒãːtʃ ɦoːɡiː", "bases": [{"word": "दस्तावेज़ों", "base": "दस्तावेज़", "reading": "dastāvēz"}, {"word": "की", "ref": "hi-0279"}, {"word": "जाँच", "ref": "hi-1446"}, {"word": "होगी", "ref": "hi-0780"}]}
+  - id: "hi-2261"
+    target: "कर्ज़"
+    target_scripts: {"perso_arabic": "قرض"}
+    reading: "karz"
+    ipa: "kərz"
+    phonetic: "[kərz]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने बैंक से कर्ज़ लिया।", "reading": "usnē baiṅk sē karz liyā.", "ipa": "ʊsneː bɛːŋk seː kərz lɪjaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "बैंक", "ref": "hi-1057"}, {"word": "से", "ref": "hi-0276"}, {"word": "लिया", "ref": "hi-0786"}]}
+      - {"target": "कर्ज़ चुकाना आसान नहीं।", "reading": "karz cukānā āsān nahīm̐.", "ipa": "kərz tʃʊkaːnaː aːsaːn nəɦĩː", "bases": [{"word": "चुकाना", "base": "चुकाना", "reading": "cukānā"}, {"word": "आसान", "ref": "hi-0904"}, {"word": "नहीं", "ref": "hi-0156"}]}
+  - id: "hi-2262"
+    target: "ब्याज"
+    target_scripts: {"perso_arabic": "سود"}
+    reading: "byāj"
+    ipa: "bjaːdʒ"
+    phonetic: "[bjaːdʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बैंक में ब्याज मिलता है।", "reading": "baiṅk mēm̐ byāj miltā hai.", "ipa": "bɛːŋk mẽː bjaːdʒ mɪlt̪aː ɦɛː", "bases": [{"word": "बैंक", "ref": "hi-1057"}, {"word": "में", "ref": "hi-0274"}, {"word": "मिलता", "ref": "hi-0793"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कर्ज़ पर ब्याज कितना है?", "reading": "karz par byāj kitnā hai?", "ipa": "kərz pər bjaːdʒ kɪt̪naː ɦɛː", "bases": [{"word": "कर्ज़", "ref": "hi-2261"}, {"word": "पर", "ref": "hi-0275"}, {"word": "कितना", "ref": "hi-0163"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2263"
+    target: "निवेश"
+    target_scripts: {"perso_arabic": "سرمایہ کاری"}
+    reading: "nivēś"
+    ipa: "nɪʋeːʃ"
+    phonetic: "[nɪʋeːʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "शेयर में निवेश करना खतरनाक है।", "reading": "śēyar mēm̐ nivēś karnā khatrnāk hai.", "ipa": "ʃeːjər mẽː nɪʋeːʃ kərnaː kʰət̪rnaːk ɦɛː", "bases": [{"word": "शेयर", "base": "शेयर", "reading": "śēyar"}, {"word": "में", "ref": "hi-0274"}, {"word": "करना", "ref": "hi-0779"}, {"word": "खतरनाक", "base": "खतरनाक", "reading": "khatrnāk"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ध्यान से सोचकर निवेश करो।", "reading": "dhyān sē sōckar nivēś karō.", "ipa": "d̪ʱjaːn seː soːtʃkər nɪʋeːʃ kəroː", "bases": [{"word": "ध्यान", "base": "ध्यान", "reading": "dhyān"}, {"word": "से", "ref": "hi-0276"}, {"word": "सोचकर", "ref": "hi-0953"}, {"word": "निवेश", "base": "निवेश", "reading": "nivēś"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2264"
+    target: "जमा"
+    target_scripts: {"perso_arabic": "جمع"}
+    reading: "jamā"
+    ipa: "dʒəmaː"
+    phonetic: "[dʒəmaː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पैसे बैंक में जमा हो गए।", "reading": "paisē baiṅk mēm̐ jamā hō gaē.", "ipa": "pɛːseː bɛːŋk mẽː dʒəmaː ɦoː ɡəeː", "bases": [{"word": "पैसे", "ref": "hi-2227"}, {"word": "बैंक", "ref": "hi-1057"}, {"word": "में", "ref": "hi-0274"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गए", "ref": "hi-0777"}]}
+      - {"target": "बिल जमा करो।", "reading": "bil jamā karō.", "ipa": "bɪl dʒəmaː kəroː", "bases": [{"word": "बिल", "ref": "hi-1348"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2265"
+    target: "पिन"
+    target_scripts: {"perso_arabic": "پن"}
+    reading: "pin"
+    ipa: "pɪn"
+    phonetic: "[pɪn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "एटीएम का पिन मत बताओ।", "reading": "ēṭīēm kā pin mat batāō.", "ipa": "eːʈiːeːm kaː pɪn mət̪ bət̪aːoː", "bases": [{"word": "एटीएम", "ref": "hi-2245"}, {"word": "का", "ref": "hi-0279"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "बताओ", "ref": "hi-0796"}]}
+      - {"target": "पिन याद रखो।", "reading": "pin yād rakhō.", "ipa": "pɪn jaːd̪ rəkʰoː", "bases": [{"word": "याद", "ref": "hi-1594"}, {"word": "रखो", "ref": "hi-0950"}]}
+  - id: "hi-2266"
+    target: "नकद"
+    target_scripts: {"perso_arabic": "نقد"}
+    reading: "nakad"
+    ipa: "nəkəd̪"
+    phonetic: "[nəkəd̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "नकद पैसे दो।", "reading": "nakad paisē dō.", "ipa": "nəkəd̪ pɛːseː d̪oː", "bases": [{"word": "पैसे", "ref": "hi-2227"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "क्या आप नकद लेंगे?", "reading": "kyā āp nakad lēṅgē?", "ipa": "kjaː aːp nəkəd̪ leːŋɡeː", "bases": [{"word": "क्या", "ref": "hi-0157"}, {"word": "आप", "ref": "hi-0134"}, {"word": "लेंगे", "ref": "hi-0786"}]}
+  - id: "hi-2267"
+    target: "भुगतान"
+    target_scripts: {"perso_arabic": "ادائیگی"}
+    reading: "bhugtān"
+    ipa: "bʱʊɡt̪aːn"
+    phonetic: "[bʱʊɡt̪aːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "भुगतान कल होगा।", "reading": "bhugtān kal hōgā.", "ipa": "bʱʊɡt̪aːn kəl ɦoːɡaː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "होगा", "ref": "hi-0780"}]}
+      - {"target": "ऑनलाइन भुगतान करो।", "reading": "ônlāin bhugtān karō.", "ipa": "ɔnlaːɪn bʱʊɡt̪aːn kəroː", "bases": [{"word": "ऑनलाइन", "ref": "hi-1870"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2268"
+    target: "चेक"
+    target_scripts: {"perso_arabic": "چیک"}
+    reading: "cēk"
+    ipa: "tʃeːk"
+    phonetic: "[tʃeːk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसने चेक से पैसे दिए।", "reading": "usnē cēk sē paisē diē.", "ipa": "ʊsneː tʃeːk seː pɛːseː d̪ɪeː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "से", "ref": "hi-0276"}, {"word": "पैसे", "ref": "hi-2227"}, {"word": "दिए", "ref": "hi-0785"}]}
+      - {"target": "चेक पर दस्तखत करो।", "reading": "cēk par dastakhat karō.", "ipa": "tʃeːk pər d̪əst̪əkʰət̪ kəroː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "दस्तखत", "base": "दस्तखत", "reading": "dastakhat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2269"
+    target: "उपलब्ध"
+    target_scripts: {"perso_arabic": "دستیاب"}
+    reading: "uplabdh"
+    ipa: "ʊpləbd̪ʱ"
+    phonetic: "[ʊpləbd̪ʱ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह किताब बाज़ार में उपलब्ध है।", "reading": "yah kitāb bāzār mēm̐ uplabdh hai.", "ipa": "jəɦ kɪt̪aːb baːzaːr mẽː ʊpləbd̪ʱ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "किताब", "ref": "hi-1095"}, {"word": "बाज़ार", "ref": "hi-1081"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सेवा सबको उपलब्ध है।", "reading": "sēvā sabkō uplabdh hai.", "ipa": "seːʋaː səbkoː ʊpləbd̪ʱ ɦɛː", "bases": [{"word": "सेवा", "ref": "hi-2249"}, {"word": "सबको", "ref": "hi-0054"}, {"word": "है", "ref": "hi-0780"}]}
