@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-future"
+name: "Reading: the stars and next year"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what will happen, in the future tense: a horoscope column and plans for next year. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-horoscope-column"
+    title: "A short horoscope column"
+    theme: "abstract-words"
+    sentences:
+      - text: "Aries: mañana tendrás suerte en el trabajo."
+      - text: "Tauro: el próximo mes viajarás al sur."
+      - text: "Géminis: pronto recibirás una buena noticia."
+      - text: "Cáncer: en el futuro vivirás con más calma."
+    questions:
+      - id: "es-2046"
+        prompt: { en: "What will Aries have tomorrow?" }
+        options:
+          - { en: "Bad luck" }
+          - { en: "Luck at work" }
+          - { en: "A holiday" }
+        answer: 2
+      - id: "es-2047"
+        prompt: { en: "Where will Taurus travel?" }
+        options:
+          - { en: "To the north" }
+          - { en: "To the sea" }
+          - { en: "To the south" }
+        answer: 3
+      - id: "es-2048"
+        prompt: { en: "What will Gemini receive?" }
+        options:
+          - { en: "A bad letter" }
+          - { en: "A gift" }
+          - { en: "Good news" }
+        answer: 3
+  - id: "es-next-year-plans"
+    title: "Next year"
+    theme: "abstract-words"
+    sentences:
+      - text: "El año que viene viviré en otra ciudad."
+      - text: "Trabajaré en una empresa nueva."
+      - text: "Mi familia viajará a Perú."
+      - text: "Creo que todo irá bien."
+    questions:
+      - id: "es-2049"
+        prompt: { en: "Where will the writer live?" }
+        options:
+          - { en: "In another city" }
+          - { en: "In the same flat" }
+          - { en: "Abroad" }
+        answer: 1
+      - id: "es-2050"
+        prompt: { en: "Where will the family travel?" }
+        options:
+          - { en: "To Spain" }
+          - { en: "To Peru" }
+          - { en: "To Cuba" }
+        answer: 2
+      - id: "es-2051"
+        prompt: { en: "What does the writer think?" }
+        options:
+          - { en: "That nothing will change" }
+          - { en: "That everything will go well" }
+          - { en: "That it will rain" }
+        answer: 2

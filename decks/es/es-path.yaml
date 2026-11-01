@@ -322,7 +322,9 @@ units:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
-  - planned: { id: "es-grammar-future", grammar: "future" }
+  - decks: ["es-grammar-future", "es-reading-future"]
+    words: 0
+    grammar: ["future"]
     listening_passages:
       - { id: "next-year", text: { "en": "Saying what will happen next year" } }
     reading_passages:
