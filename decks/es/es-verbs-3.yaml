@@ -1,0 +1,412 @@
+schema: 1
+id: "es-verbs-3"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-3"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1607"
+    target: "despertar"
+    ipa: "despeɾˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "despertar", base: "despertar" }]
+    examples:
+      - target: "Me despierto a las siete."
+        ipa: "me desˈpjeɾto a las ˈsjete"
+        bases: [{ word: "Me", base: "me" }, { word: "despierto", base: "despertar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+      - target: "El ruido despierta al bebé."
+        ipa: "el ˈrwido desˈpjeɾta al beˈbe"
+        bases: [{ word: "El", base: "el" }, { word: "ruido", base: "ruido" }, { word: "despierta", base: "despertar" }, { word: "al", base: "al" }, { word: "bebé", ref: "es-0138" }]
+  - id: "es-1608"
+    target: "levantar"
+    ipa: "lebanˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "levantar", base: "levantar" }]
+    examples:
+      - target: "Levanto la mano."
+        ipa: "leˈbanto la ˈmano"
+        bases: [{ word: "Levanto", base: "levantar" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }]
+      - target: "Levanto la caja del suelo."
+        ipa: "leˈbanto la ˈkaxa del ˈswelo"
+        bases: [{ word: "Levanto", base: "levantar" }, { word: "la", base: "la" }, { word: "caja", ref: "es-0382" }, { word: "del", base: "del" }, { word: "suelo", ref: "es-0819" }]
+  - id: "es-1609"
+    target: "peinarse"
+    ipa: "pejˈnaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "peinarse", base: "peinarse" }]
+    examples:
+      - target: "Me peino cada mañana."
+        ipa: "me ˈpejno ˈkada maˈɲana"
+        bases: [{ word: "Me", base: "me" }, { word: "peino", base: "peinarse" }, { word: "cada", ref: "es-0366" }, { word: "mañana", ref: "es-0841" }]
+      - target: "Ella se peina el pelo largo."
+        ipa: "ˈeʝa se ˈpejna el ˈpelo ˈlaɾɡo"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "se", base: "se" }, { word: "peina", base: "peinarse" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-1319" }, { word: "largo", ref: "es-0429" }]
+  - id: "es-1610"
+    target: "afeitarse"
+    ipa: "afejˈtaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "afeitarse", base: "afeitarse" }]
+    examples:
+      - target: "Me afeito con agua fría."
+        ipa: "me aˈfejto kon ˈaɡwa ˈfɾia"
+        bases: [{ word: "Me", base: "me" }, { word: "afeito", base: "afeitarse" }, { word: "con", base: "con" }, { word: "agua", ref: "es-0012" }, { word: "fría", ref: "es-0408" }]
+      - target: "Mi padre se afeita los domingos."
+        ipa: "mi ˈpadɾe se aˈfejta los doˈminɡos"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "se", base: "se" }, { word: "afeita", base: "afeitarse" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+  - id: "es-1611"
+    target: "cepillarse"
+    ipa: "θepiˈʝaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cepillarse", base: "cepillarse" }]
+    examples:
+      - target: "Me cepillo los dientes dos veces."
+        ipa: "me θeˈpiʝo los ˈdjentes dos ˈbeθes"
+        bases: [{ word: "Me", base: "me" }, { word: "cepillo", base: "cepillarse" }, { word: "los", base: "los" }, { word: "dientes", ref: "es-0752" }, { word: "dos", ref: "es-0206" }, { word: "veces", ref: "es-0322" }]
+      - target: "Él se cepilla el pelo."
+        ipa: "el se θeˈpiʝa el ˈpelo"
+        bases: [{ word: "Él", ref: "es-0120" }, { word: "se", base: "se" }, { word: "cepilla", base: "cepillarse" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-1319" }]
+  - id: "es-1612"
+    target: "contar"
+    ipa: "konˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "contar", base: "contar" }]
+    examples:
+      - target: "Cuento hasta diez."
+        ipa: "ˈkwento ˈasta djeθ"
+        bases: [{ word: "Cuento", base: "contar" }, { word: "hasta", base: "hasta" }, { word: "diez", ref: "es-0214" }]
+      - target: "Cuenta una historia."
+        ipa: "ˈkwenta ˈuna isˈtoɾja"
+        bases: [{ word: "Cuenta", base: "contar" }, { word: "una", base: "una" }, { word: "historia", base: "historia" }]
+  - id: "es-1613"
+    target: "oír"
+    ipa: "oˈiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "oír", base: "oír" }]
+    examples:
+      - target: "Oigo un ruido."
+        ipa: "ˈojɡo un ˈrwido"
+        bases: [{ word: "Oigo", base: "oír" }, { word: "un", base: "un" }, { word: "ruido", base: "ruido" }]
+      - target: "¿Oyes la música?"
+        ipa: "ˈoʝes la ˈmusika"
+        bases: [{ word: "Oyes", base: "oír" }, { word: "la", base: "la" }, { word: "música", base: "música" }]
+  - id: "es-1614"
+    target: "andar"
+    ipa: "anˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "andar", base: "andar" }]
+    examples:
+      - target: "Ando tres kilómetros al día."
+        ipa: "ˈando tɾes kiˈlometɾos al ˈdia"
+        bases: [{ word: "Ando", base: "andar" }, { word: "tres", ref: "es-0207" }, { word: "kilómetros", base: "kilómetro" }, { word: "al", base: "al" }, { word: "día", ref: "es-0019" }]
+      - target: "El niño anda bien."
+        ipa: "el ˈniɲo ˈanda bjen"
+        bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "anda", base: "andar" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-1615"
+    target: "sentarse"
+    ipa: "senˈtaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sentarse", base: "sentarse" }]
+    examples:
+      - target: "Me siento en el sofá."
+        ipa: "me ˈsjento en el soˈfa"
+        bases: [{ word: "Me", base: "me" }, { word: "siento", base: "sentarse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sofá", ref: "es-0917" }]
+      - target: "Nos sentamos a comer."
+        ipa: "nos senˈtamos a koˈmeɾ"
+        bases: [{ word: "Nos", base: "nos" }, { word: "sentamos", base: "sentarse" }, { word: "a", base: "a" }, { word: "comer", ref: "es-0028" }]
+  - id: "es-1616"
+    target: "quedarse"
+    ipa: "keˈdaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "quedarse", base: "quedarse" }]
+    examples:
+      - target: "Me quedo en casa."
+        ipa: "me ˈkedo en ˈkasa"
+        bases: [{ word: "Me", base: "me" }, { word: "quedo", base: "quedarse" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+      - target: "Se queda con los niños."
+        ipa: "se ˈkeda kon los ˈniɲos"
+        bases: [{ word: "Se", base: "se" }, { word: "queda", base: "quedarse" }, { word: "con", base: "con" }, { word: "los", base: "los" }, { word: "niños", ref: "es-0003" }]
+  - id: "es-1617"
+    target: "pensar"
+    ipa: "penˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pensar", base: "pensar" }]
+    examples:
+      - target: "Pienso en mis amigos."
+        ipa: "ˈpjenso en mis aˈmiɡos"
+        bases: [{ word: "Pienso", base: "pensar" }, { word: "en", base: "en" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }]
+      - target: "No pienso ir hoy."
+        ipa: "no ˈpjenso iɾ oj"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "pienso", base: "pensar" }, { word: "ir", ref: "es-0026" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-1618"
+    target: "creer"
+    ipa: "kɾeˈeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "creer", base: "creer" }]
+    examples:
+      - target: "Creo que llueve."
+        ipa: "ˈkɾeo ke ˈʝwebe"
+        bases: [{ word: "Creo", base: "creer" }, { word: "que", base: "que" }, { word: "llueve", ref: "es-1132" }]
+      - target: "¿Crees en mí?"
+        ipa: "ˈkɾees en mi"
+        bases: [{ word: "Crees", base: "creer" }, { word: "en", base: "en" }, { word: "mí", base: "mí" }]
+  - id: "es-1619"
+    target: "sentir"
+    ipa: "senˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sentir", base: "sentir" }]
+    examples:
+      - target: "Siento frío."
+        ipa: "ˈsjento ˈfɾio"
+        bases: [{ word: "Siento", base: "sentir" }, { word: "frío", ref: "es-0408" }]
+      - target: "Lo siento mucho."
+        ipa: "lo ˈsjento ˈmutʃo"
+        bases: [{ word: "Lo", base: "lo" }, { word: "siento", base: "sentir" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1620"
+    target: "ocurrir"
+    ipa: "okuˈriɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ocurrir", base: "ocurrir" }]
+    examples:
+      - target: "Ocurre algo raro."
+        ipa: "oˈkure ˈalɡo ˈraɾo"
+        bases: [{ word: "Ocurre", base: "ocurrir" }, { word: "algo", ref: "es-0359" }, { word: "raro", base: "raro" }]
+      - target: "¿Qué ocurrió ayer?"
+        ipa: "ke okuˈrjo aˈʝeɾ"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "ocurrió", base: "ocurrir" }, { word: "ayer", ref: "es-0332" }]
+  - id: "es-1621"
+    target: "dormirse"
+    ipa: "doɾˈmiɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dormirse", base: "dormirse" }]
+    examples:
+      - target: "Me duermo temprano."
+        ipa: "me ˈdweɾmo temˈpɾano"
+        bases: [{ word: "Me", base: "me" }, { word: "duermo", base: "dormirse" }, { word: "temprano", ref: "es-0338" }]
+      - target: "El bebé se duerme en el coche."
+        ipa: "el beˈbe se ˈdweɾme en el ˈkotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "bebé", ref: "es-0138" }, { word: "se", base: "se" }, { word: "duerme", base: "dormirse" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-1622"
+    target: "maquillarse"
+    ipa: "makiˈʝaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "maquillarse", base: "maquillarse" }]
+    examples:
+      - target: "Me maquillo para la fiesta."
+        ipa: "me maˈkiʝo ˈpaɾa la ˈfjesta"
+        bases: [{ word: "Me", base: "me" }, { word: "maquillo", base: "maquillarse" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
+      - target: "Ella se maquilla cada día."
+        ipa: "ˈeʝa se maˈkiʝa ˈkada ˈdia"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "se", base: "se" }, { word: "maquilla", base: "maquillarse" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+  - id: "es-1623"
+    target: "sacar"
+    ipa: "saˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sacar", base: "sacar" }]
+    examples:
+      - target: "Saco el dinero del banco."
+        ipa: "ˈsako el diˈneɾo del ˈbanko"
+        bases: [{ word: "Saco", base: "sacar" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "del", base: "del" }, { word: "banco", ref: "es-0770" }]
+      - target: "Saco fotos en la playa."
+        ipa: "ˈsako ˈfotos en la ˈplaʝa"
+        bases: [{ word: "Saco", base: "sacar" }, { word: "fotos", ref: "es-1184" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]
+  - id: "es-1624"
+    target: "meter"
+    ipa: "meˈteɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "meter", base: "meter" }]
+    examples:
+      - target: "Meto la ropa en la maleta."
+        ipa: "ˈmeto la ˈropa en la maˈleta"
+        bases: [{ word: "Meto", base: "meter" }, { word: "la", base: "la" }, { word: "ropa", ref: "es-1027" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }]
+      - target: "Mete la llave en la puerta."
+        ipa: "ˈmete la ˈʝabe en la ˈpweɾta"
+        bases: [{ word: "Mete", base: "meter" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+  - id: "es-1625"
+    target: "ver"
+    ipa: "beɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ver", base: "ver" }]
+    examples:
+      - target: "Veo la televisión."
+        ipa: "ˈbeo la telebiˈsjon"
+        bases: [{ word: "Veo", base: "ver" }, { word: "la", base: "la" }, { word: "televisión", base: "televisión" }]
+      - target: "¿Ves el mar?"
+        ipa: "bes el maɾ"
+        bases: [{ word: "Ves", base: "ver" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }]
+  - id: "es-1626"
+    target: "soñar"
+    ipa: "soˈɲaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "soñar", base: "soñar" }]
+    examples:
+      - target: "Sueño con el mar."
+        ipa: "ˈsweɲo kon el maɾ"
+        bases: [{ word: "Sueño", base: "soñar" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "mar", base: "mar" }]
+      - target: "Sueña con viajar."
+        ipa: "ˈsweɲa kon bjaˈxaɾ"
+        bases: [{ word: "Sueña", base: "soñar" }, { word: "con", base: "con" }, { word: "viajar", base: "viajar" }]
+  - id: "es-1627"
+    target: "decir"
+    ipa: "deˈθiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "decir", base: "decir" }]
+    examples:
+      - target: "Digo la verdad."
+        ipa: "ˈdiɡo la beɾˈdad"
+        bases: [{ word: "Digo", base: "decir" }, { word: "la", base: "la" }, { word: "verdad", base: "verdad" }]
+      - target: "¿Qué dices"
+        ipa: "ke ˈdiθes"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "dices", base: "decir" }]
+  - id: "es-1628"
+    target: "poner"
+    ipa: "poˈneɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "poner", base: "poner" }]
+    examples:
+      - target: "Pongo la mesa."
+        ipa: "ˈponɡo la ˈmesa"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+      - target: "Pongo la radio."
+        ipa: "ˈponɡo la ˈradjo"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "radio", base: "radio" }]
+  - id: "es-1629"
+    target: "dar"
+    ipa: "daɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dar", base: "dar" }]
+    examples:
+      - target: "Doy un paseo por la tarde."
+        ipa: "doj un paˈseo poɾ la ˈtaɾde"
+        bases: [{ word: "Doy", base: "dar" }, { word: "un", base: "un" }, { word: "paseo", ref: "es-0915" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "tarde", ref: "es-0910" }]
+      - target: "Te doy las gracias."
+        ipa: "te doj las ˈɡɾaθjas"
+        bases: [{ word: "Te", base: "te" }, { word: "doy", base: "dar" }, { word: "las", base: "las" }, { word: "gracias", base: "gracias" }]
+  - id: "es-1630"
+    target: "saber"
+    ipa: "saˈbeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "saber", base: "saber" }]
+    examples:
+      - target: "Sé la respuesta."
+        ipa: "se la resˈpwesta"
+        bases: [{ word: "Sé", base: "saber" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }]
+      - target: "¿Sabes dónde está?"
+        ipa: "ˈsabes ˈdonde esˈta"
+        bases: [{ word: "Sabes", base: "saber" }, { word: "dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }]
+  - id: "es-1631"
+    target: "conocer"
+    ipa: "konoˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "conocer", base: "conocer" }]
+    examples:
+      - target: "Conozco a tus padres."
+        ipa: "koˈnoθko a tus ˈpadɾes"
+        bases: [{ word: "Conozco", base: "conocer" }, { word: "a", base: "a" }, { word: "tus", base: "tus" }, { word: "padres", ref: "es-0159" }]
+      - target: "Conozco un buen restaurante."
+        ipa: "koˈnoθko un bwen restawˈɾante"
+        bases: [{ word: "Conozco", base: "conocer" }, { word: "un", base: "un" }, { word: "buen", ref: "es-0033" }, { word: "restaurante", ref: "es-0778" }]
+  - id: "es-1632"
+    target: "venir"
+    ipa: "beˈniɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "venir", base: "venir" }]
+    examples:
+      - target: "Vengo a clase en autobús."
+        ipa: "ˈbenɡo a ˈklase en awtoˈbus"
+        bases: [{ word: "Vengo", base: "venir" }, { word: "a", base: "a" }, { word: "clase", ref: "es-1356" }, { word: "en", base: "en" }, { word: "autobús", ref: "es-0674" }]
+      - target: "¿Vienes con nosotros?"
+        ipa: "ˈbjenes kon noˈsotɾos"
+        bases: [{ word: "Vienes", base: "venir" }, { word: "con", base: "con" }, { word: "nosotros", ref: "es-0122" }]
+  - id: "es-1633"
+    target: "poder"
+    ipa: "poˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "poder", base: "poder" }]
+    examples:
+      - target: "Puedo hablar contigo."
+        ipa: "ˈpwedo aˈblaɾ konˈtiɡo"
+        bases: [{ word: "Puedo", base: "poder" }, { word: "hablar", ref: "es-0027" }, { word: "contigo", base: "contigo" }]
+      - target: "No puedo dormir."
+        ipa: "no ˈpwedo doɾˈmiɾ"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "puedo", base: "poder" }, { word: "dormir", ref: "es-0904" }]
+  - id: "es-1634"
+    target: "entregar"
+    ipa: "entɾeˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "entregar", base: "entregar" }]
+    examples:
+      - target: "Entrego el trabajo el lunes."
+        ipa: "enˈtɾeɡo el tɾaˈbaxo el ˈlunes"
+        bases: [{ word: "Entrego", base: "entregar" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }, { word: "el", base: "el" }, { word: "lunes", ref: "es-0958" }]
+      - target: "Entregan los paquetes en casa."
+        ipa: "enˈtɾeɡan los paˈketes en ˈkasa"
+        bases: [{ word: "Entregan", base: "entregar" }, { word: "los", base: "los" }, { word: "paquetes", ref: "es-0378" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-1635"
+    target: "mostrar"
+    ipa: "mosˈtɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "mostrar", base: "mostrar" }]
+    examples:
+      - target: "Muestro mis fotos."
+        ipa: "ˈmwestɾo mis ˈfotos"
+        bases: [{ word: "Muestro", base: "mostrar" }, { word: "mis", ref: "es-0129" }, { word: "fotos", ref: "es-1184" }]
+      - target: "¿Me muestras el mapa?"
+        ipa: "me ˈmwestɾas el ˈmapa"
+        bases: [{ word: "Me", base: "me" }, { word: "muestras", base: "mostrar" }, { word: "el", base: "el" }, { word: "mapa", ref: "es-0710" }]
+  - id: "es-1636"
+    target: "conducir"
+    ipa: "konduˈθiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "conducir", base: "conducir" }]
+    examples:
+      - target: "Conduzco un coche."
+        ipa: "konˈduθko un ˈkotʃe"
+        bases: [{ word: "Conduzco", base: "conducir" }, { word: "un", base: "un" }, { word: "coche", ref: "es-0678" }]
+      - target: "Conduce despacio."
+        ipa: "konˈduθe desˈpaθjo"
+        bases: [{ word: "Conduce", base: "conducir" }, { word: "despacio", ref: "es-0328" }]
+  - id: "es-1637"
+    target: "crecer"
+    ipa: "kɾeˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "crecer", base: "crecer" }]
+    examples:
+      - target: "Crezco cada día."
+        ipa: "ˈkɾeθko ˈkada ˈdia"
+        bases: [{ word: "Crezco", base: "crecer" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+      - target: "Mi hijo crece rápido."
+        ipa: "mi ˈixo ˈkɾeθe ˈrapido"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "crece", base: "crecer" }, { word: "rápido", ref: "es-0329" }]
