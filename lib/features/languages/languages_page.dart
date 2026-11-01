@@ -171,18 +171,24 @@ class _LanguagesPageState extends State<LanguagesPage> {
     return switch (filter) {
       LanguageFilter.learning => skills.anyLearn,
       LanguageFilter.know => skills.count(SkillState.know, shape) > 0,
+      // The pills' levels: Hear and Speak speak, any Spoken level hears; Read
+      // and Write likewise for a script.
       LanguageFilter.speak =>
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave,
-      LanguageFilter.hear =>
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave,
-      LanguageFilter.read => shape.any(
-        (k) =>
-            k.kind == SkillKind.read && skills.stateOf(k) != SkillState.leave,
-      ),
-      LanguageFilter.write => shape.any(
-        (k) =>
-            k.kind == SkillKind.write && skills.stateOf(k) != SkillState.leave,
-      ),
+        skills.spokenLevel == SpokenLevel.hearSpeak ||
+            skills.spokenLevel == SpokenLevel.learn,
+      LanguageFilter.hear => skills.spokenLevel != SpokenLevel.leave,
+      LanguageFilter.read =>
+        state
+            .skillScripts(view.language)
+            .any((s) => skills.scriptLevelOf(s) != ScriptLevel.leave),
+      LanguageFilter.write =>
+        state
+            .skillScripts(view.language)
+            .any(
+              (s) =>
+                  skills.scriptLevelOf(s) == ScriptLevel.readWrite ||
+                  skills.scriptLevelOf(s) == ScriptLevel.learn,
+            ),
     };
   }
 
@@ -337,10 +343,16 @@ class _Key extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    Widget entry(SkillMark mark, String text) => Row(
+    Widget entry(
+      SkillMark mark,
+      String text, {
+      List<IconData> extra = const <IconData>[],
+    }) => Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Icon(markIcon(mark), size: 16, color: theme.colorScheme.onSurface),
+        for (final icon in extra)
+          Icon(icon, size: 16, color: theme.colorScheme.onSurface),
         const SizedBox(width: 4),
         Text(text, style: theme.textTheme.bodySmall),
       ],
@@ -355,6 +367,11 @@ class _Key extends StatelessWidget {
           runSpacing: 4,
           children: <Widget>[
             entry(SkillMark.know, l10n.languagesStateKnow),
+            entry(
+              SkillMark.knowBoth,
+              l10n.languagesKeyBoth,
+              extra: <IconData>[SkillKind.write.icon, SkillKind.speak.icon],
+            ),
             entry(SkillMark.knowCovered, l10n.languagesKeyLevel),
             entry(SkillMark.learn, l10n.languagesStateLearn),
             entry(SkillMark.leave, l10n.languagesStateLeave),
@@ -474,14 +491,10 @@ class _LanguageRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
     final downloads = state.deckDownloads;
-    final shape = state.skillShape(view.language);
     final scripts = state.skillScripts(view.language);
-    final several = scripts.length > 1;
     final found = state.levelFound(view.code);
     final learns = skills.anyLearn;
-    final speaks =
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave ||
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave;
+    final speaks = skills.spokenLevel != SpokenLevel.leave;
     final hasDecks = downloads?.hasDecks(view.code) ?? false;
     final progress = downloads?.progressOf(view.code);
     final pending =
@@ -559,8 +572,9 @@ class _LanguageRow extends StatelessWidget {
                 spacing: 5,
                 runSpacing: 4,
                 children: <Widget>[
-                  for (final key in shape)
-                    _chip(context, state, key, several, found),
+                  if (!view.language.scriptOnly) _spokenChip(context, found),
+                  for (final script in scripts)
+                    _scriptChip(context, script, found),
                 ],
               ),
             ),
@@ -633,37 +647,48 @@ class _LanguageRow extends StatelessWidget {
     );
   }
 
-  Widget _chip(
-    BuildContext context,
-    AppState state,
-    SkillKey key,
-    bool several,
-    bool found,
-  ) {
+  bool _covered(SkillState know, bool found) =>
+      know == SkillState.know &&
+      levelCovers(
+        levelFound: found,
+        taught: view.canLearn,
+        english: view.code == englishCode,
+      );
+
+  /// The one chip of Speak and Hear: the Hear icon, with the tick and the
+  /// Speak icon at Hear and Speak.
+  Widget _spokenChip(BuildContext context, bool found) {
     final l10n = AppLocalizations.of(context)!;
-    final st = skills.stateOf(key);
-    final covered =
-        st == SkillState.know &&
-        levelCovers(
-          levelFound: found,
-          taught: view.canLearn,
-          english: view.code == englishCode,
-        );
-    final name = skillName(
-      l10n,
-      key,
-      severalScripts: several,
-      fallbackScript: view.name,
+    final level = skills.spokenLevel;
+    final covered = _covered(
+      level.isKnow ? SkillState.know : SkillState.leave,
+      found,
     );
-    final script = key.script;
+    final name = l10n.languagesSkillSpoken;
     return SkillBadge(
-      kind: key.kind,
-      mark: markOf(st, covered: covered),
-      label: skillSemantics(l10n, name, st, covered: covered),
-      tip: l10n.languagesSkillState(name, st.label(l10n)),
-      glyph: script != null && several
-          ? scriptGlyph(script, l10n.scriptNameOr(script, view.name))
-          : null,
+      kind: SkillKind.hear,
+      mark: spokenMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+    );
+  }
+
+  /// The one chip of a script's Read and Write: its glyph, with the tick and
+  /// the Write icon at Read and Write.
+  Widget _scriptChip(BuildContext context, String script, bool found) {
+    final l10n = AppLocalizations.of(context)!;
+    final level = skills.scriptLevelOf(script);
+    final covered = _covered(
+      level.isKnow ? SkillState.know : SkillState.leave,
+      found,
+    );
+    final name = scriptPillName(l10n, script, view.name);
+    return SkillBadge(
+      kind: SkillKind.read,
+      mark: scriptMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      scriptGlyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
     );
   }
 }

@@ -7,6 +7,13 @@ import '../scheduling/daily_budget.dart';
 /// Speak and Hear belong to the language's one taught dialect; Read and
 /// Write belong to a script, so a language written in two scripts has two
 /// Read and two Write skills.
+///
+/// A script is shown as one pill with four levels ([ScriptLevel], owner,
+/// 2026-11-01: "Scripts can actually have one pill, and cycle through read
+/// and write as levels of know."), and so are Speak and Hear ([SpokenLevel],
+/// owner, 2026-11-01: "Same for other skills, if you can speak, you can hear
+/// as well."). The level is derived from the two skills, which stay what is
+/// stored.
 
 /// What the learner says about one skill.
 enum SkillState {
@@ -91,14 +98,68 @@ List<SkillKey> skillsOfLanguage(
   ];
 }
 
-/// The next state a tap on a skill's pill gives: Leave, Know, Learn, Leave.
-/// Where the language has no decks to learn ([canLearn] false) Learn is
+/// The levels of one script's pill (owner, 2026-11-01), in the order a tap
+/// goes through them: Leave, Learn, Read, Read and Write, Leave. Read and
+/// Read and Write are the two levels of Know: one cannot write a script one
+/// cannot read.
+enum ScriptLevel {
+  /// Out: neither read nor written, not learned.
+  leave,
+
+  /// Learned: the script's decks are taught (Read and Write both Learn).
+  learn,
+
+  /// Known to read, not to write (Read Know, Write Leave).
+  read,
+
+  /// Known to read and to write (Read and Write both Know).
+  readWrite;
+
+  /// Whether this is one of the two levels of Know.
+  bool get isKnow => this == read || this == readWrite;
+}
+
+/// The level a tap on a script's pill gives next: Leave, Learn, Read, Read
+/// and Write, Leave. Where the language has no decks to learn ([canLearn]
+/// false) Learn is skipped.
+ScriptLevel nextScriptLevel(ScriptLevel level, {required bool canLearn}) =>
+    switch (level) {
+      ScriptLevel.leave => canLearn ? ScriptLevel.learn : ScriptLevel.read,
+      ScriptLevel.learn => ScriptLevel.read,
+      ScriptLevel.read => ScriptLevel.readWrite,
+      ScriptLevel.readWrite => ScriptLevel.leave,
+    };
+
+/// The levels of the Spoken pill (Speak and Hear together), in the order a
+/// tap goes through them: Leave, Learn, Hear, Hear and Speak, Leave. Hear
+/// and Hear and Speak are the two levels of Know: one cannot speak a
+/// language one cannot hear.
+enum SpokenLevel {
+  /// Out: neither spoken nor heard, not learned.
+  leave,
+
+  /// Learned: Speak and Hear both Learn.
+  learn,
+
+  /// Known to hear, not to speak (Hear Know, Speak Leave).
+  hear,
+
+  /// Known to hear and to speak (Speak and Hear both Know).
+  hearSpeak;
+
+  /// Whether this is one of the two levels of Know.
+  bool get isKnow => this == hear || this == hearSpeak;
+}
+
+/// The level a tap on the Spoken pill gives next: Leave, Learn, Hear, Hear
+/// and Speak, Leave. Without decks to learn ([canLearn] false) Learn is
 /// skipped.
-SkillState nextSkillState(SkillState state, {required bool canLearn}) =>
-    switch (state) {
-      SkillState.leave => SkillState.know,
-      SkillState.know => canLearn ? SkillState.learn : SkillState.leave,
-      SkillState.learn => SkillState.leave,
+SpokenLevel nextSpokenLevel(SpokenLevel level, {required bool canLearn}) =>
+    switch (level) {
+      SpokenLevel.leave => canLearn ? SpokenLevel.learn : SpokenLevel.hear,
+      SpokenLevel.learn => SpokenLevel.hear,
+      SpokenLevel.hear => SpokenLevel.hearSpeak,
+      SpokenLevel.hearSpeak => SpokenLevel.leave,
     };
 
 /// What a learner said about each skill of one language. Immutable; only
@@ -134,9 +195,79 @@ class LanguageSkills {
   LanguageSkills withState(SkillKey key, SkillState state) =>
       LanguageSkills(<SkillKey, SkillState>{..._states, key: state});
 
-  /// [key] after a tap on its pill.
-  LanguageSkills cycled(SkillKey key, {required bool canLearn}) =>
-      withState(key, nextSkillState(stateOf(key), canLearn: canLearn));
+  /// The Read and Write skills of [script].
+  List<SkillKey> keysOfScript(String script) => <SkillKey>[
+    SkillKey(SkillKind.read, script),
+    SkillKey(SkillKind.write, script),
+  ];
+
+  /// The one level of [script]'s pill, read from its Read and Write: Learn
+  /// if either is Learn; else Read and Write if Write is Know (it implies
+  /// Read, so Write alone is read as both); else Read if Read is Know.
+  ScriptLevel scriptLevelOf(String script) {
+    final read = stateOf(SkillKey(SkillKind.read, script));
+    final write = stateOf(SkillKey(SkillKind.write, script));
+    if (read == SkillState.learn || write == SkillState.learn) {
+      return ScriptLevel.learn;
+    }
+    if (write == SkillState.know) return ScriptLevel.readWrite;
+    if (read == SkillState.know) return ScriptLevel.read;
+    return ScriptLevel.leave;
+  }
+
+  /// [script] at [level], written as its two stored skills: Learn is Learn
+  /// and Learn, Read is Know and Leave, Read and Write is Know and Know.
+  LanguageSkills withScriptLevel(String script, ScriptLevel level) {
+    final (read, write) = switch (level) {
+      ScriptLevel.leave => (SkillState.leave, SkillState.leave),
+      ScriptLevel.learn => (SkillState.learn, SkillState.learn),
+      ScriptLevel.read => (SkillState.know, SkillState.leave),
+      ScriptLevel.readWrite => (SkillState.know, SkillState.know),
+    };
+    return withState(
+      SkillKey(SkillKind.read, script),
+      read,
+    ).withState(SkillKey(SkillKind.write, script), write);
+  }
+
+  /// The level of the Spoken pill, read from Speak and Hear: Learn if either
+  /// is Learn; else Hear and Speak if Speak is Know (it implies Hear, so
+  /// Speak alone is read as both); else Hear if Hear is Know.
+  SpokenLevel get spokenLevel {
+    final speak = stateOf(const SkillKey(SkillKind.speak));
+    final hear = stateOf(const SkillKey(SkillKind.hear));
+    if (speak == SkillState.learn || hear == SkillState.learn) {
+      return SpokenLevel.learn;
+    }
+    if (speak == SkillState.know) return SpokenLevel.hearSpeak;
+    if (hear == SkillState.know) return SpokenLevel.hear;
+    return SpokenLevel.leave;
+  }
+
+  /// Speak and Hear at [level], written as the two stored skills.
+  LanguageSkills withSpokenLevel(SpokenLevel level) {
+    final (speak, hear) = switch (level) {
+      SpokenLevel.leave => (SkillState.leave, SkillState.leave),
+      SpokenLevel.learn => (SkillState.learn, SkillState.learn),
+      SpokenLevel.hear => (SkillState.leave, SkillState.know),
+      SpokenLevel.hearSpeak => (SkillState.know, SkillState.know),
+    };
+    return withState(
+      const SkillKey(SkillKind.speak),
+      speak,
+    ).withState(const SkillKey(SkillKind.hear), hear);
+  }
+
+  /// The Spoken pill after a tap.
+  LanguageSkills cycledSpoken({required bool canLearn}) =>
+      withSpokenLevel(nextSpokenLevel(spokenLevel, canLearn: canLearn));
+
+  /// [script] after a tap on its pill.
+  LanguageSkills cycledScript(String script, {required bool canLearn}) =>
+      withScriptLevel(
+        script,
+        nextScriptLevel(scriptLevelOf(script), canLearn: canLearn),
+      );
 
   /// A language with every skill Leave goes back to the pool: it leaves the
   /// list, and its decks are removed the next time the app opens.
@@ -276,7 +407,18 @@ Map<SkillKey, String> autoKnownFrom({
 }
 
 /// How a skill is marked on the list and the pill.
-enum SkillMark { leave, know, knowCovered, learn }
+enum SkillMark {
+  leave,
+  know,
+  knowCovered,
+
+  /// A pill known at its higher level (Read and Write, Hear and Speak: a
+  /// tick and the second skill's icon), and the same with the level covering
+  /// it (a double tick and the icon).
+  knowBoth,
+  knowBothCovered,
+  learn,
+}
 
 /// Whether the found level covers a skill: a level is found for the whole
 /// language at once, and covers everything the app can teach in it, so
@@ -295,6 +437,26 @@ SkillMark markOf(SkillState state, {required bool covered}) => switch (state) {
   SkillState.learn => SkillMark.learn,
   SkillState.know => covered ? SkillMark.knowCovered : SkillMark.know,
 };
+
+/// The mark of a script's pill at [level].
+SkillMark scriptMarkOf(ScriptLevel level, {required bool covered}) =>
+    switch (level) {
+      ScriptLevel.leave => SkillMark.leave,
+      ScriptLevel.learn => SkillMark.learn,
+      ScriptLevel.read => covered ? SkillMark.knowCovered : SkillMark.know,
+      ScriptLevel.readWrite =>
+        covered ? SkillMark.knowBothCovered : SkillMark.knowBoth,
+    };
+
+/// The mark of the Spoken pill at [level].
+SkillMark spokenMarkOf(SpokenLevel level, {required bool covered}) =>
+    switch (level) {
+      SpokenLevel.leave => SkillMark.leave,
+      SpokenLevel.learn => SkillMark.learn,
+      SpokenLevel.hear => covered ? SkillMark.knowCovered : SkillMark.know,
+      SpokenLevel.hearSpeak =>
+        covered ? SkillMark.knowBothCovered : SkillMark.knowBoth,
+    };
 
 /// Whether the sheet says "Fit your level to be able to review" under
 /// [rows]: only with review turned on in Settings, and for a Know skill the
