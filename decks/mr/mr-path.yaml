@@ -487,7 +487,8 @@ units:
       - { id: "monsoon-and-the-dam", text: { "en": "Neighbours talk about the monsoon, the dam and the canal" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "mr-agriculture", theme: "agriculture", words: 50 }
+  - decks: ["mr-agriculture", "*"]
+    words: 20
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's jowar, sugarcane and onions" } }
     reading_passages:
