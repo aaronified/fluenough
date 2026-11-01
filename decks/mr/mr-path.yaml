@@ -253,7 +253,9 @@ units:
       - { id: "who-did-it", text: { "en": "Asking who cooked, wrote or bought something" } }
     reading_passages:
       - { id: "shop-receipts", text: { "en": "Two shop receipts: who bought what" } }
-  - planned: { id: "mr-grammar-perfect", grammar: "perfect" }
+  - decks: ["mr-grammar-perfect"]
+    words: 0
+    grammar: ["perfect"]
     listening_passages:
       - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
     reading_passages:

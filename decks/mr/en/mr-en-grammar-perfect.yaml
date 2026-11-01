@@ -1,0 +1,21 @@
+schema: 1
+id: "mr-en-grammar-perfect"
+kind: "layer"
+core: "mr-grammar-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Perfect: I have gone"
+license: "CC-BY-SA-4.0"
+description: "I have gone, she has come: what has already happened, shown by a past form with आहे. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Perfect of a verb without an object"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "मी (m)": "I, a man", "मी (f)": "I, a woman", "आम्ही": "we", "तू (m)": "you (one person), to a man", "तो": "he", "ती": "she", "ते": "they" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "uthne": "to get up"
+    "jhopne": "to sleep"
+    "bolne": "to speak"
+  notes: "The perfect says what has happened and still counts: the past stem with -ल- (-la-) and an ending for the doer, then a form of आहे (āhe, to be). A man says मी गेलो आहे (mī gelo āhe), I have gone; a woman says मी गेले आहे (mī gele āhe). The ending of आहे agrees with the doer: आहोत (āhot) for आम्ही, आहेस (āhes) for तू, and आहेत (āhet) for ते (te) and the plural. तो (to) and ती (tī) take आहे (āhe) and the ending is the same as in the simple past."
