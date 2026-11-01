@@ -178,11 +178,11 @@ units:
   # dyaúṣ pitā́, Greek Zeû páter, Latin Iuppiter), *wiHróm péḱu (men and
   # livestock), *gʷʰént h₁ógʷʰim (he slew the serpent), *h₁ésti (is), and
   # the fable's title, *h₂ówis h₁éḱwōs-kʷe (the sheep and the horses).
-  # The first words are written: ine-first-words is unit 1 (10 words).
-  # No phrasebook is written: its few cards are below the 15 a phrasebook
-  # needs.
-  - decks: ["ine-first-words", "*"]
-    words: 10
+  - planned: { id: "ine-phrasebook", theme: "first-words", words: 15 }
+    listening_passages:
+      - { id: "formulae-read-aloud", text: { "en": "The formulae read aloud in a reconstructed pronunciation: imperishable fame, father sky, he slew the serpent (a modern reading)" } }
+    reading_passages:
+      - { id: "imperishable-fame", text: { "en": "Imperishable fame in two ancient traditions: a line of the Rigveda with śrávas ákṣitam and a line of the Iliad with kléos áphthiton, and the reconstruction *ḱléwos ń̥dʰgʷʰitom built from them" } }
   # 2. Reconstruction and its notation: the comparative method, cognate
   # sets, regular sound correspondences, the asterisk. In place of a living
   # language's sound-differences unit. Father: पिता (pitā), পিতা (pitā),
