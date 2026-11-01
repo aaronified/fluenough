@@ -1,0 +1,87 @@
+schema: 1
+id: "as-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2780"
+    target: "মই স্কুললৈ যাওঁ।"
+    reading: "moi skullôi zāum̐."
+    ipa: "moi skulɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "স্কুললৈ", ref: "as-2398" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "আহা", reading: "āhā", kind: "word" }
+      - { id: "c2", word: "ঘৰ", reading: "ghôr", kind: "word" }
+  - id: "as-2781"
+    target: "শিক্ষয়ত্ৰী প্ৰশ্ন সুধিছে।"
+    reading: "xikkhôyôtrī prôśn sudhise."
+    ipa: "xikkʰɔjotɹi pɹɔxn sudʱise"
+    pos: "phrase"
+    bases:
+      - { word: "সুধিছে", base: "সুধা", reading: "xudhā" }
+    confusables:
+      - { id: "c1", word: "উত্তৰ", reading: "uttôr", kind: "word" }
+      - { id: "c2", word: "পাঠ", reading: "pāṭh", kind: "word" }
+  - id: "as-2782"
+    target: "ছাত্ৰ উত্তৰ দিছে।"
+    reading: "sātrô uttôr dise."
+    ipa: "satɹ uttɔɹ dise"
+    pos: "phrase"
+    bases:
+      - { word: "দিছে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "ৰবাৰ", reading: "rôbār", kind: "word" }
+      - { id: "c2", word: "খাতা", reading: "khātā", kind: "word" }
+  - id: "as-2783"
+    target: "খাতাত অংক লিখা।"
+    reading: "khātāt ônk likhā."
+    ipa: "kʰatat ɔŋk likʰa"
+    pos: "phrase"
+    bases:
+      - { word: "খাতাত", ref: "as-2754" }
+    confusables:
+      - { id: "c1", word: "চক", reading: "sôk", kind: "word" }
+      - { id: "c2", word: "বেঞ্চ", reading: "benc", kind: "word" }
+  - id: "as-2784"
+    target: "আজি তুমি উপস্থিত আছা নেকি?"
+    reading: "āzi tumi upôsthit āsā neki?"
+    ipa: "azi tumi upostʰit asa neki"
+    pos: "phrase"
+    bases:
+      - { word: "আছা", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "অনুপস্থিত", reading: "ônupôsthit", kind: "word" }
+      - { id: "c2", word: "কিয়", reading: "kiyô", kind: "word" }
+  - id: "as-2785"
+    target: "বিজ্ঞান ভাল লাগে।"
+    reading: "bigyān bhāl lāge."
+    ipa: "biɡjan bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভূগোল", reading: "bhūgol", kind: "word" }
+      - { id: "c2", word: "অংক", reading: "ônk", kind: "word" }
+  - id: "as-2786"
+    target: "ঘন্টা বাজিছে।"
+    reading: "ghôntā bājise."
+    ipa: "ɡʱɔnta bazise"
+    pos: "phrase"
+    bases:
+      - { word: "বাজিছে", base: "বাজা", reading: "bājā" }
+    confusables:
+      - { id: "c1", word: "বিহু", reading: "bihu", kind: "word" }
+      - { id: "c2", word: "বাজ", reading: "bāz", kind: "word" }
+  - id: "as-2787"
+    target: "চিত্ৰ আঁকোঁ।"
+    reading: "citrô ām̐kum̐."
+    ipa: "sitɹ ãkʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "আঁকোঁ", ref: "as-2774" }
+    confusables:
+      - { id: "c1", word: "পঢ়া", reading: "pôrhā", kind: "word" }
+      - { id: "c2", word: "লিখা", reading: "likhā", kind: "word" }

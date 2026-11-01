@@ -318,11 +318,14 @@ units:
   - decks: ["as-help", "as-grammar-irregular", "as-grammar-pitfalls", "*"]
     words: 7
     grammar: ["irregular", "pitfalls"]
-  - planned: { id: "as-school", theme: "school", words: 50 }
+  - decks: ["as-school", "as-school-sentences", "*"]
+    words: 27
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - decks: ["as-reading-school"]
+    words: 0
   - planned: { id: "as-hobbies", theme: "hobbies", words: 50 }
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }

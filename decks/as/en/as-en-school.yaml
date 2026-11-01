@@ -1,0 +1,195 @@
+schema: 1
+id: "as-en-school"
+kind: "layer"
+core: "as-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+license: "CC-BY-SA-4.0"
+description: "The school day: the class, the teacher, the books and the lessons, and what a student does with them. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2753":
+    native: "class; grade (year of school)"
+    notes:
+      "n1": "A class in school, by its year: the first class, the second class and so on."
+    examples:
+      "মই দহম শ্ৰেণীত।": { native: "I am in the tenth class.", bases: { "শ্ৰেণীত": "class; grade (year of school)" } }
+      "শ্ৰেণী ডাঙৰ।": "The class is big."
+  "as-2754":
+    native: "notebook; exercise book"
+    notes:
+      "n1": "A book with blank pages, for writing in."
+    examples:
+      "খাতাত লিখা।": { native: "Write in the notebook.", bases: { "খাতাত": "notebook; exercise book" } }
+      "মোৰ খাতা নাই।": "I have no notebook."
+  "as-2755":
+    native: "eraser; rubber"
+    notes:
+      "n1": "To remove pencil marks from paper."
+    examples:
+      "ৰবাৰ দিয়ক।": "Please give me an eraser."
+      "ৰবাৰ সৰু।": "The eraser is small."
+  "as-2756":
+    native: "chalk"
+    notes:
+      "n1": "The white stick the teacher writes with on the board."
+    examples:
+      "চক বহুত।": "There is a lot of chalk."
+      "চকৰে লিখা।": { native: "Write with chalk.", bases: { "চকৰে": "chalk" } }
+  "as-2757":
+    native: "bench"
+    notes:
+      "n1": "A long seat for two or three students. Written as said in English."
+    examples:
+      "বেঞ্চত বহা।": { native: "Sit on the bench.", bases: { "বেঞ্চত": "bench" } }
+      "বেঞ্চ ডাঙৰ।": "The bench is big."
+  "as-2758":
+    native: "bell; an hour"
+    notes:
+      "n1": "The school bell rings for the start and end of the lessons."
+    examples:
+      "ঘন্টা বাজিছে।": { native: "The bell is ringing.", bases: { "বাজিছে": "to play; to sound; to ring" } }
+      "এক ঘন্টা।": "One hour."
+  "as-2759":
+    native: "lesson"
+    notes:
+      "n1": "One part of a book to study in one period."
+    examples:
+      "আজিৰ পাঠ ভাল।": "Today's lesson is good."
+      "পাঠ বহুত।": "There is a lot to learn."
+  "as-2760":
+    native: "education; learning"
+    notes:
+      "n1": "Learning at school and at home."
+    examples:
+      "শিক্ষা ভাল।": "Education is good."
+      "শিক্ষা আৰু পৰীক্ষা।": "Education and tests."
+  "as-2761":
+    native: "to learn"
+    notes:
+      "n1": "The opposite of teach is শিকোৱা (xikuwā). To learn a language is ভাষা শিকা (bhāxā xikā)."
+    examples:
+      "মই অংক শিকোঁ।": { native: "I am learning maths.", bases: { "শিকোঁ": "to learn" } }
+      "তাই অসমীয়া শিকে।": { native: "She learns Assamese.", bases: { "শিকে": "to learn" } }
+  "as-2762":
+    native: "maths; a sum"
+    notes:
+      "n1": "Maths as a school subject, or one sum to work out."
+    examples:
+      "অংক কঠিন।": "Maths is hard."
+      "এইটো অংক।": "This is a sum."
+  "as-2763":
+    native: "science"
+    notes:
+      "n1": "The school subject of science."
+    examples:
+      "বিজ্ঞান ভাল লাগে।": "I like science."
+      "বিজ্ঞান পঢ়া।": "To study science."
+  "as-2764":
+    native: "geography"
+    notes:
+      "n1": "The school subject of the earth, its places and its countries."
+    examples:
+      "ভূগোল কঠিন।": "Geography is hard."
+      "ভূগোল পঢ়া।": "To study geography."
+  "as-2765":
+    native: "hard; difficult"
+    notes:
+      "n1": "The opposite is সহজ (sôhôzô), easy. Used of work, lessons and questions."
+    examples:
+      "এইটো কঠিন।": "This is hard."
+      "কাম কঠিন।": "The work is hard."
+  "as-2766":
+    native: "present; here"
+    notes:
+      "n1": "When a student or teacher is at school today."
+    examples:
+      "মই উপস্থিত আছোঁ।": { native: "I am present.", bases: { "আছোঁ": "to be; there is; to have" } }
+      "সকলো উপস্থিত।": "Everyone is present."
+  "as-2767":
+    native: "absent"
+    notes:
+      "n1": "The opposite of উপস্থিত (upôsthit)."
+    examples:
+      "তাই অনুপস্থিত।": "She is absent."
+      "মই অনুপস্থিত আছিলোঁ।": { native: "I was absent.", bases: { "আছিলোঁ": "to be; there is; to have" } }
+  "as-2768":
+    native: "homework"
+    notes:
+      "n1": "Work set to do at home after school."
+    examples:
+      "গৃহকাৰ্য কৰা।": "To do homework."
+      "গৃহকাৰ্য বহুত।": "There is a lot of homework."
+  "as-2769":
+    native: "question"
+    notes:
+      "n1": "A question asked in class or on a test."
+    examples:
+      "প্ৰশ্ন সুধিছোঁ।": { native: "I have asked a question.", bases: { "সুধিছোঁ": "to ask" } }
+      "এইটো প্ৰশ্ন কঠিন।": "This question is hard."
+  "as-2770":
+    native: "answer"
+    notes:
+      "n1": "The reply to a question. Give an answer: উত্তৰ দিয়া (uttôr diyā)."
+    examples:
+      "উত্তৰ বেয়া।": "The answer is bad."
+      "উত্তৰ ঠিক।": "The answer is right."
+  "as-2771":
+    native: "marks; score"
+    notes:
+      "n1": "The points a student gets on a test."
+    examples:
+      "নম্বৰ বহুত।": "There are a lot of marks."
+      "নম্বৰ কিমান?": "How many marks?"
+  "as-2772":
+    native: "book; textbook"
+    notes:
+      "n1": "A book for study, such as a textbook. The general word is কিতাপ (kitāp)."
+    examples:
+      "পুথিখন নতুন।": { native: "The book is new.", bases: { "পুথিখন": "book; textbook" } }
+      "পুথিত চিত্ৰ আছে।": { native: "There are pictures in the book.", bases: { "পুথিত": "book; textbook", "আছে": "to be; there is; to have" } }
+  "as-2773":
+    native: "picture; drawing"
+    notes:
+      "n1": "A drawing or a painting in a book."
+    examples:
+      "চিত্ৰ ধুনীয়া।": "The picture is beautiful."
+      "চিত্ৰ আঁকা।": "To draw a picture."
+  "as-2774":
+    native: "to draw; to paint"
+    notes:
+      "n1": "To draw a picture with a pencil or a brush."
+    examples:
+      "মই চিত্ৰ আঁকোঁ।": { native: "I draw a picture.", bases: { "আঁকোঁ": "to draw" } }
+      "তাই ফুল আঁকে।": { native: "She draws a flower.", bases: { "আঁকে": "to draw" } }
+  "as-2775":
+    native: "female student"
+    notes:
+      "n1": "A girl or woman who studies. A boy or man is ছাত্ৰ (sātrô)."
+    examples:
+      "তাই এজনী ছাত্ৰী।": { native: "She is a female student.", bases: { "এজনী": "one person" } }
+      "ছাত্ৰী বহুত।": "There are many female students."
+  "as-2776":
+    native: "female teacher"
+    notes:
+      "n1": "A woman who teaches. The male form is শিক্ষক (xikkhôk)."
+    examples:
+      "শিক্ষয়ত্ৰী ভাল।": "The female teacher is good."
+      "শিক্ষয়ত্ৰী আহিছে।": "The female teacher has come."
+  "as-2777":
+    native: "headmaster; head teacher"
+    notes:
+      "n1": "The head of a school. Literally, the chief teacher."
+    bases:
+      "প্ৰধান": "main; chief"
+    examples:
+  "as-2778":
+    native: "school bag"
+    notes:
+      "n1": "The bag for books and a notebook to school."
+    examples:
+  "as-2779":
+    native: "to answer"
+    notes:
+      "n1": "To give the answer to a question."
+    examples:
