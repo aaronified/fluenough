@@ -1,0 +1,275 @@
+schema: 1
+id: "fr-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0372"
+    target: "tout"
+    ipa: "tu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0373" }]
+    examples:
+      - { target: "Je mange tout.", ipa: "ʒə mɑ̃ʒ tu", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "tout", base: "tout" }] }
+      - { target: "Vous êtes tous là.", ipa: "vu zɛt tu la", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "êtes", ref: "fr-0021" }, { word: "tous", base: "tout" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0373"
+    target: "rien"
+    ipa: "ʁjɛ̃"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0372" }]
+    examples:
+      - { target: "Il ne fait rien.", ipa: "il nə fɛ ʁjɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ne", base: "ne" }, { word: "fait", ref: "fr-0287" }, { word: "rien", base: "rien" }] }
+      - { target: "Ce n'est rien.", ipa: "sə nɛ ʁjɛ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "rien", base: "rien" }] }
+  - id: "fr-0374"
+    target: "aucun"
+    ipa: "okœ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je n'ai aucun ami ici.", ipa: "ʒə nɛ ɛ okœ̃ ami isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "aucun", base: "aucun" }, { word: "ami", ref: "fr-0100" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Aucun ami ne parle français.", ipa: "okœ̃ ami nə paʁl fʁɑ̃sɛ", bases: [{ word: "Aucun", base: "Aucun" }, { word: "ami", ref: "fr-0100" }, { word: "ne", base: "ne" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0375"
+    target: "chaque"
+    ipa: "ʃak"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chaque ami parle français.", ipa: "ʃak ami paʁl fʁɑ̃sɛ", bases: [{ word: "Chaque", base: "Chaque" }, { word: "ami", ref: "fr-0100" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Chaque ami dort ici.", ipa: "ʃak ami dɔʁ isi", bases: [{ word: "Chaque", base: "Chaque" }, { word: "ami", ref: "fr-0100" }, { word: "dort", ref: "fr-0284" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0376"
+    target: "plusieurs"
+    ipa: "plyzjœʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a plusieurs frères.", ipa: "il a plyzjœʁ fʁɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "plusieurs", base: "plusieurs" }, { word: "frères", ref: "fr-0169" }] }
+      - { target: "Plusieurs amis parlent français.", ipa: "plyzjœʁ zami paʁl fʁɑ̃sɛ", bases: [{ word: "Plusieurs", base: "Plusieurs" }, { word: "amis", ref: "fr-0100" }, { word: "parlent", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0377"
+    target: "quelques"
+    ipa: "kɛlkə"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai quelques amis.", ipa: "ʒe kɛlkə zami", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "quelques", base: "quelques" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Elle parle quelques mots.", ipa: "ɛl paʁl kɛlkə mo", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "parle", ref: "fr-0023" }, { word: "quelques", base: "quelques" }, { word: "mots", base: "mot" }] }
+  - id: "fr-0378"
+    target: "autant"
+    ipa: "otɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur mange autant que moi.", ipa: "ma sœʁ mɑ̃ʒ otɑ̃ kə mwa", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "mange", ref: "fr-0282" }, { word: "autant", base: "autant" }, { word: "que", base: "que" }, { word: "moi", ref: "fr-0133" }] }
+      - { target: "Je travaille autant que toi.", ipa: "ʒə tʁavaj otɑ̃ kə twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "autant", base: "autant" }, { word: "que", base: "que" }, { word: "toi", ref: "fr-0134" }] }
+  - id: "fr-0379"
+    target: "tellement"
+    ipa: "tɛlmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est tellement bon.", ipa: "sə ɛ tɛlmɑ̃ bɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "tellement", base: "tellement" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Il travaille tellement.", ipa: "il tʁavaj tɛlmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "tellement", base: "tellement" }] }
+  - id: "fr-0380"
+    target: "moitié"
+    ipa: "mwatje"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange la moitié.", ipa: "ʒə mɑ̃ʒ la mwatje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "la", base: "la" }, { word: "moitié", base: "moitié" }] }
+      - { target: "Ma sœur boit la moitié.", ipa: "ma sœʁ bwa la mwatje", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "boit", ref: "fr-0283" }, { word: "la", base: "la" }, { word: "moitié", base: "moitié" }] }
+  - id: "fr-0381"
+    target: "kilo"
+    ipa: "kilo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est un kilo.", ipa: "sə ɛ œ̃ kilo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "kilo", base: "kilo" }] }
+      - { target: "Il mange un kilo.", ipa: "il mɑ̃ʒ œ̃ kilo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", ref: "fr-0282" }, { word: "un", ref: "fr-0208" }, { word: "kilo", base: "kilo" }] }
+  - id: "fr-0382"
+    target: "gramme"
+    ipa: "gʁam"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est un gramme.", ipa: "sə ɛ œ̃ gʁam", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "gramme", base: "gramme" }] }
+      - { target: "Nous avons un gramme.", ipa: "nu zavɔ̃ œ̃ gʁam", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "gramme", base: "gramme" }] }
+  - id: "fr-0383"
+    target: "litre"
+    ipa: "litʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois un litre de l'eau.", ipa: "ʒə bwa œ̃ litʁ də lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", ref: "fr-0283" }, { word: "un", ref: "fr-0208" }, { word: "litre", base: "litre" }, { word: "de", base: "de" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "Ce est un litre.", ipa: "sə ɛ œ̃ litʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "litre", base: "litre" }] }
+  - id: "fr-0384"
+    target: "morceau"
+    ipa: "mɔʁso"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mange un morceau.", ipa: "il mɑ̃ʒ œ̃ mɔʁso", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", ref: "fr-0282" }, { word: "un", ref: "fr-0208" }, { word: "morceau", base: "morceau" }] }
+      - { target: "Ce est un bon morceau.", ipa: "sə ɛ œ̃ bɔ̃ mɔʁso", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "morceau", base: "morceau" }] }
+  - id: "fr-0385"
+    target: "verre"
+    ipa: "vɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois un verre de l'eau.", ipa: "ʒə bwa œ̃ vɛʁ də lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", ref: "fr-0283" }, { word: "un", ref: "fr-0208" }, { word: "verre", base: "verre" }, { word: "de", base: "de" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "Ce est un verre.", ipa: "sə ɛ œ̃ vɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "verre", base: "verre" }] }
+  - id: "fr-0386"
+    target: "tasse"
+    ipa: "tas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle prend une tasse.", ipa: "ɛl pʁɑ̃ yn tas", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "prend", ref: "fr-0288" }, { word: "une", base: "une" }, { word: "tasse", base: "tasse" }] }
+      - { target: "Ma mère boit une tasse.", ipa: "ma mɛʁ bwa yn tas", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "boit", ref: "fr-0283" }, { word: "une", base: "une" }, { word: "tasse", base: "tasse" }] }
+  - id: "fr-0387"
+    target: "douzaine"
+    ipa: "duzɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une douzaine est douze.", ipa: "yn duzɛn ɛ duz", bases: [{ word: "Une", base: "une" }, { word: "douzaine", base: "douzaine" }, { word: "est", ref: "fr-0021" }, { word: "douze", ref: "fr-0219" }] }
+      - { target: "Je prends une douzaine.", ipa: "ʒə pʁɑ̃ yn duzɛn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", base: "une" }, { word: "douzaine", base: "douzaine" }] }
+  - id: "fr-0388"
+    target: "paire"
+    ipa: "pɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une paire est deux.", ipa: "yn pɛʁ ɛ dø", bases: [{ word: "Une", base: "une" }, { word: "paire", base: "paire" }, { word: "est", ref: "fr-0021" }, { word: "deux", ref: "fr-0209" }] }
+      - { target: "Il a une paire.", ipa: "il a yn pɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", base: "une" }, { word: "paire", base: "paire" }] }
+  - id: "fr-0389"
+    target: "tranche"
+    ipa: "tʁɑ̃ʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange une tranche.", ipa: "ʒə mɑ̃ʒ yn tʁɑ̃ʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "une", base: "une" }, { word: "tranche", base: "tranche" }] }
+      - { target: "Ma sœur prend une tranche.", ipa: "ma sœʁ pʁɑ̃ yn tʁɑ̃ʃ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "prend", ref: "fr-0288" }, { word: "une", base: "une" }, { word: "tranche", base: "tranche" }] }
+  - id: "fr-0390"
+    target: "quantité"
+    ipa: "kɑ̃tite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous mangeons une quantité.", ipa: "nu mɑ̃ʒɔ̃ yn kɑ̃tite", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "une", base: "une" }, { word: "quantité", base: "quantité" }] }
+      - { target: "Quelle quantité ?", ipa: "kɛl kɑ̃tite", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "quantité", base: "quantité" }] }
+  - id: "fr-0391"
+    target: "nombre"
+    ipa: "nɔ̃bʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le nombre est dix.", ipa: "lə nɔ̃bʁ ɛ dis", bases: [{ word: "Le", base: "le" }, { word: "nombre", base: "nombre" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }] }
+      - { target: "Quel est votre nombre ?", ipa: "kɛl ɛ vɔtʁ nɔ̃bʁ", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "votre", ref: "fr-0140" }, { word: "nombre", base: "nombre" }] }
+  - id: "fr-0392"
+    target: "seul"
+    ipa: "sœl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est seul.", ipa: "il ɛ sœl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "seul", base: "seul" }] }
+      - { target: "Je suis seule.", ipa: "ʒə sɥi sœl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "seule", base: "seul" }] }
+  - id: "fr-0393"
+    target: "entier"
+    ipa: "ɑ̃tje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur boit le lait entier.", ipa: "ma sœʁ bwa lə lɛ ɑ̃tje", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "boit", ref: "fr-0283" }, { word: "le", base: "le" }, { word: "lait", ref: "fr-0044" }, { word: "entier", base: "entier" }] }
+      - { target: "Le lait entier est bon.", ipa: "lə lɛ ɑ̃tje ɛ bɔ̃", bases: [{ word: "Le", base: "le" }, { word: "lait", ref: "fr-0044" }, { word: "entier", base: "entier" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0394"
+    target: "environ"
+    ipa: "ɑ̃viʁɔ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a environ vingt ans.", ipa: "il a ɑ̃viʁɔ̃ vɛ̃t ɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "environ", base: "environ" }, { word: "vingt", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Nous sommes environ dix.", ipa: "nu sɔm ɑ̃viʁɔ̃ dis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "environ", base: "environ" }, { word: "dix", ref: "fr-0217" }] }
+  - id: "fr-0395"
+    target: "chacun"
+    ipa: "ʃakœ̃"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chacun joue ici.", ipa: "ʃakœ̃ ʒu isi", bases: [{ word: "Chacun", base: "chacun" }, { word: "joue", ref: "fr-0308" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Chacun parle français.", ipa: "ʃakœ̃ paʁl fʁɑ̃sɛ", bases: [{ word: "Chacun", base: "chacun" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0396"
+    target: "vingtaine"
+    ipa: "vɛ̃tɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une vingtaine est vingt.", ipa: "yn vɛ̃tɛn ɛ vɛ̃t", bases: [{ word: "Une", base: "une" }, { word: "vingtaine", base: "vingtaine" }, { word: "est", ref: "fr-0021" }, { word: "vingt", ref: "fr-0227" }] }
+      - { target: "Il a une vingtaine.", ipa: "il a yn vɛ̃tɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", base: "une" }, { word: "vingtaine", base: "vingtaine" }] }
