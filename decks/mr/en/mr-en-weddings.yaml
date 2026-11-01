@@ -1,0 +1,129 @@
+schema: 1
+id: "mr-en-weddings"
+kind: "layer"
+core: "mr-weddings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weddings"
+description: "A Marathi wedding: the bride and groom, the engagement and the procession, the invitation card, the blessings and the gifts. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1588":
+    native: "bridegroom"
+    notes:
+      "n1": "{1} is the groom at a wedding."
+    examples:
+      "नवरदेव घोड्यावर बसला.": { native: "The groom sat on a horse.", bases: { "बसला": "to sit" } }
+      "नवरदेवाचा सूट छान आहे.": { native: "The groom's suit is nice.", bases: { "सूट": "suit", "आहे": "to be" } }
+  "mr-1589":
+    native: "bride"
+    notes:
+      "n1": "{1} is the bride at a wedding."
+    examples:
+      "नवरी खूप सुंदर दिसत होती.": { native: "The bride looked very beautiful.", bases: { "दिसत": "to appear", "होती": "to be" } }
+      "नवरीने हळदीचा रंग लावला.": { native: "The bride put on the turmeric colour.", bases: { "लावला": "to put on" } }
+  "mr-1590":
+    native: "engagement"
+    notes:
+      "n1": "{1} is an engagement, the ceremony before a wedding."
+    examples:
+      "साखरपुडा पुढच्या महिन्यात आहे.": { native: "The engagement is next month.", bases: { "पुढच्या": "next", "आहे": "to be" } }
+      "साखरपुड्यासाठी सगळे आले.": "Everyone came for the engagement."
+  "mr-1591":
+    native: "wedding procession"
+    notes:
+      "n1": "{1} is the procession in which the groom goes to the bride's house."
+    examples:
+      "वरात गावातून निघाली.": { native: "The procession set out through the village.", bases: { "निघाली": "to set out" } }
+      "वरातीत नाच आणि गाणी होती.": { native: "There was dancing and songs in the procession.", bases: { "होती": "to be" } }
+  "mr-1592":
+    native: "wedding verses"
+    notes:
+      "n1": "{1} is the set of auspicious verses chanted at a Marathi wedding."
+    examples:
+      "मंगलाष्टक सुरू झालं.": { native: "The wedding verses began.", bases: { "सुरू": "began", "झालं": "to become" } }
+      "सगळे मंगलाष्टक ऐकत होते.": { native: "Everyone was listening to the wedding verses.", bases: { "होते": "to be" } }
+  "mr-1593":
+    native: "henna"
+    notes:
+      "n1": "{1} is henna, a paste used to decorate the hands before a wedding."
+    examples:
+      "नवरीच्या हातावर मेहंदी लावली.": { native: "Henna was put on the bride's hands.", bases: { "लावली": "to put on" } }
+      "मेहंदीचा रंग गडद आहे.": { native: "The henna's colour is dark.", bases: { "रंग": "colour", "गडद": "dark", "आहे": "to be" } }
+  "mr-1594":
+    native: "gift at a wedding"
+    notes:
+      "n1": "{1} is a gift given at a wedding or a festival."
+    examples:
+      "आहेर म्हणून साडी दिली.": "I gave a sari as a gift."
+      "आहेर आणायला विसरू नका.": "Do not forget to bring a gift."
+  "mr-1595":
+    native: "rice grains (blessing)"
+    notes:
+      "n1": "{1} is rice grains thrown on the couple as a blessing."
+    examples:
+      "सगळ्यांनी वधू-वरांवर अक्षता टाकल्या.": { native: "Everyone threw rice grains on the couple.", bases: { "टाकल्या": "to throw" } }
+      "अक्षता आशीर्वादाचं प्रतीक असतात.": { native: "Rice grains are a symbol of blessing.", bases: { "प्रतीक": "symbol", "असतात": "to be" } }
+  "mr-1596":
+    native: "wedding necklace"
+    notes:
+      "n1": "{1} is the sacred necklace given to a married woman."
+    examples:
+      "तिने मंगळसूत्र घातलं.": "She wore the wedding necklace."
+      "मंगळसूत्र सोन्याचं आहे.": { native: "The wedding necklace is of gold.", bases: { "सोन्याचं": "of gold", "आहे": "to be" } }
+  "mr-1597":
+    native: "wedding invitation card"
+    notes:
+      "n1": "{1} is an invitation card for a wedding, also used for the horoscope."
+    examples:
+      "लग्नाची पत्रिका आली.": "The wedding invitation came."
+      "पत्रिका सुंदर छापली आहे.": { native: "The card is printed beautifully.", bases: { "छापली": "to print", "आहे": "to be" } }
+  "mr-1598":
+    native: "marriage (formal)"
+    notes:
+      "n1": "{1} is a marriage, a more formal word than लग्न (lagna)."
+    examples:
+      "त्यांचा विवाह झाला.": { native: "Their marriage took place.", bases: { "झाला": "to become" } }
+      "विवाहाचा निर्णय घेतला.": { native: "They decided on the marriage.", bases: { "निर्णय": "decision" } }
+  "mr-1599":
+    native: "married"
+    notes:
+      "n1": "{1} describes someone who is married. Its opposite is अविवाहित (avivāhit), unmarried."
+    examples:
+      "ती विवाहित आहे.": { native: "She is married.", bases: { "आहे": "to be" } }
+      "तो अजून अविवाहित आहे.": { native: "He is still unmarried.", bases: { "अजून": "still", "आहे": "to be" } }
+  "mr-1600":
+    native: "blessing"
+    notes:
+      "n1": "{1} is a blessing given by an elder or a god."
+    examples:
+      "आजीचे आशीर्वाद घ्या.": "Take grandmother's blessings."
+      "सगळ्यांनी नवदाम्पत्याला आशीर्वाद दिले.": "Everyone blessed the newly married couple."
+  "mr-1601":
+    native: "ceremony, function"
+    notes:
+      "n1": "{1} is a ceremony or a formal function."
+    examples:
+      "समारंभ मोठा होता.": { native: "The ceremony was big.", bases: { "होता": "to be" } }
+      "समारंभाला मोठी गर्दी होती.": { native: "There was a big crowd at the ceremony.", bases: { "गर्दी": "crowd", "होती": "to be" } }
+  "mr-1602":
+    native: "row of diners"
+    notes:
+      "n1": "{1} is a row of people sitting down together to eat at a wedding or festival."
+    examples:
+      "पंगत बसली.": { native: "The row of diners sat down.", bases: { "बसली": "to sit" } }
+      "पंगतीत सगळ्यांना जेवण वाढलं.": "Food was served to everyone in the row."
+  "mr-1603":
+    native: "to fix, to decide"
+    notes:
+      "n1": "{1} is fixing or deciding a plan, a date or a match."
+    examples:
+      "लग्नाची तारीख ठरवली.": "We fixed the wedding date."
+      "कुणाशी लग्न ठरलं?": { native: "Who was the wedding fixed with?", bases: { "ठरलं": "to be fixed" } }
+  "mr-1604":
+    native: "to bless"
+    notes:
+      "n1": "{1} is giving a blessing to someone."
+    examples:
+      "आजींनी आशीर्वाद दिला.": "Grandmother gave a blessing."
+      "देव तुम्हाला आशीर्वाद देवो.": "May God bless you."
