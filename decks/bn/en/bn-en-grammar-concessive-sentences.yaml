@@ -1,0 +1,41 @@
+schema: 1
+id: "bn-en-grammar-concessive-sentences"
+kind: "layer"
+core: "bn-grammar-concessive-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Even if: sentences"
+description: "Short sentences with the -লেও (-leo) form for 'even if' and যদিও ... তবু for 'even though'. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3814":
+    native: "Even if it rains, I will go."
+    confusables: { "c1": { why: "sunshine: the opposite weather" }, "c2": { why: "a storm: a different weather" } }
+  "bn-3815":
+    native: "Even if you do not come, the work will be done."
+    confusables: { "c1": { why: "if (you) return: a different verb" }, "c2": { why: "if (one) calls: a different verb" } }
+  "bn-3816":
+    native: "Even though the doctor said so, he did not take the medicine."
+    confusables: { "c1": { why: "gave: a different verb" }, "c2": { why: "bought: a different verb" } }
+  "bn-3817":
+    native: "Even though it was hard, he finished the work."
+    bases: { "শেষ": "finish" }
+    confusables: { "c1": { why: "comfort: the opposite of hardship" }, "c2": { why: "happiness: a different feeling" } }
+  "bn-3818":
+    native: "Even if I have not seen it, I believe it."
+    confusables: { "c1": { why: "doubt: the opposite of believing" }, "c2": { why: "fear: a different feeling" } }
+  "bn-3819":
+    native: "Even if he did not get the money, he is happy."
+    confusables: { "c1": { why: "a loan: not money in hand" }, "c2": { why: "a price: not the money one gets" } }
+  "bn-3820":
+    native: "Although it was raining, we went for a walk."
+    confusables: { "c1": { why: "sunshine: the opposite weather" }, "c2": { why: "cold: a different quality of the weather" } }
+  "bn-3821":
+    native: "Even though he heard the words, he did not get angry."
+    confusables: { "c1": { why: "happy: a different feeling" }, "c2": { why: "fear: a different feeling" } }
+  "bn-3822":
+    native: "Read the book even if you do not like it. (familiar)"
+    confusables: { "c1": { why: "throw away: the opposite of reading" }, "c2": { why: "write: a different act" } }
+  "bn-3823":
+    native: "Even though she is very tired, she works."
+    confusables: { "c1": { why: "rest: the opposite of working" }, "c2": { why: "sleep: a different state" } }

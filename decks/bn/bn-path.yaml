@@ -624,11 +624,15 @@ units:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
   - decks: ["bn-reading-weddings"]
     words: 0
-  - planned: { id: "bn-grammar-concessive", grammar: "concessive" }
+  - decks: ["bn-grammar-concessive", "bn-grammar-concessive-sentences"]
+    words: 0
+    grammar: ["concessive"]
     listening_passages:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
+  - decks: ["bn-reading-concessive"]
+    words: 0
   - planned: { id: "bn-sports", theme: "sports", words: 40 }
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }

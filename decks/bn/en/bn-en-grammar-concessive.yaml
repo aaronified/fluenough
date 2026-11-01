@@ -1,0 +1,25 @@
+schema: 1
+id: "bn-en-grammar-concessive"
+kind: "layer"
+core: "bn-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Even if: the -লেও (-leo) form"
+license: "CC-BY-SA-4.0"
+description: "The concessive: a verb's -লেও (-leo) form says 'even if' or 'even though', and না (nā) before it says 'even if not'. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Even if"
+  slot_name: "form"
+  slots: { "concessive": "even if (it is so), the verb with -লেও", "negative concessive": "even if not (it is not so)" }
+  entries:
+    "asa": "to come"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "kora": "to do"
+    "dekha": "to see"
+    "bola": "to say"
+    "paoa": "to get"
+    "shona": "to hear"
+    "pora": "to read"
+    "thaka": "to stay"
+  notes: "The -লেও (-leo) form of a verb is its 'even if' form: আসলেও (āsleo), even if (he) comes; গেলেও (geleo), even if (you) go. Put না (nā) before it for 'even if not': না আসলেও (nā āsleo). The same stem changes as the conditional: যাওয়া (jāoā) gives গেলেও (geleo), খাওয়া (khāoā) gives খেলেও (kheleo), শোনা (śonā) gives শুনলেও (śunleo). For 'even though ... still', use যদিও (jodio) before the clause and তবু (tobu) before the main verb."
