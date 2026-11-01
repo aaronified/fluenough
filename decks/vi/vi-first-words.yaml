@@ -1,0 +1,119 @@
+schema: 1
+id: "vi-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "vi", iso639_3: "vie", name: "Vietnamese", script: "latin", tts: "vi-VN", icon: "Vi" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "vi-0001"
+    target: "vâng"
+    ipa: "vəŋ˨˩"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vâng, cảm ơn.", ipa: "vəŋ˨˩ kaːm˧˩ ʔəːn˧", bases: [{ word: "cảm", base: "cảm" }, { word: "ơn", base: "ơn" }] }
+      - { target: "Vâng, tôi hiểu.", ipa: "vəŋ˨˩ toi˧˧ hiəw˧˧", bases: [{ word: "tôi", base: "tôi" }, { word: "hiểu", base: "hiểu" }] }
+  - id: "vi-0002"
+    target: "không"
+    ipa: "xəwŋ˧˧"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Không, cảm ơn.", ipa: "xəwŋ˧˧ kaːm˧˩ ʔəːn˧", bases: [{ word: "cảm", base: "cảm" }, { word: "ơn", base: "ơn" }] }
+      - { target: "Tôi không hiểu.", ipa: "toi˧˧ xəwŋ˧˧ hiəw˧˧", bases: [{ word: "Tôi", base: "tôi" }, { word: "hiểu", base: "hiểu" }] }
+  - id: "vi-0003"
+    target: "tôi"
+    ipa: "toi˧˧"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tôi đói.", ipa: "toi˧˧ ɗɔi˧˥", bases: [{ word: "Tôi", base: "tôi" }, { word: "đói", base: "đói" }] }
+      - { target: "Tôi nói tiếng Anh.", ipa: "toi˧˧ noi˧˥ tiəŋ˧˥ ʔajŋ˧", bases: [{ word: "Tôi", base: "tôi" }, { word: "nói", base: "nói" }, { word: "tiếng", base: "tiếng" }, { word: "Anh", base: "Anh" }] }
+  - id: "vi-0004"
+    target: "bạn"
+    ipa: "ɓan˨˩"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bạn có khỏe không?", ipa: "ɓan˨˩ kɔ˧˥ xwɛ˧˩ xəwŋ˧˧", bases: [{ word: "có", base: "có" }, { word: "khỏe", base: "khỏe" }] }
+      - { target: "Bạn đi đâu?", ipa: "ɓan˨˩ ɗi˧ ɗəw˧˥", bases: [{ word: "đi", base: "đi" }, { word: "đâu", base: "đâu" }] }
+  - id: "vi-0005"
+    target: "và"
+    ipa: "va˨˩"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trà và nước.", ipa: "t͡ɕa˨˩ va˨˩ nɨək˧˥", bases: [{ word: "Trà", base: "trà" }, { word: "nước", base: "nước" }] }
+      - { target: "Tôi và bạn.", ipa: "toi˧˧ va˨˩ ɓan˨˩", bases: [{ word: "Tôi", base: "tôi" }, { word: "bạn", base: "bạn" }] }
+  - id: "vi-0006"
+    target: "hoặc"
+    ipa: "hwak˨˩"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trà hoặc nước?", ipa: "t͡ɕa˨˩ hwak˨˩ nɨək˧˥", bases: [{ word: "Trà", base: "trà" }, { word: "nước", base: "nước" }] }
+      - { target: "Hôm nay hoặc mai?", ipa: "hom˧˧ naj˧˧ hwak˨˩ maj˧˧", bases: [{ word: "Hôm", base: "hôm" }, { word: "nay", base: "nay" }, { word: "mai", base: "mai" }] }
+  - id: "vi-0007"
+    target: "nhưng"
+    ipa: "ɲɨŋ˧˧"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ngon, nhưng đắt.", ipa: "ŋɔn˧˧ ɲɨŋ˧˧ ɗat˧˥", bases: [{ word: "Ngon", base: "ngon" }, { word: "đắt", base: "đắt" }] }
+      - { target: "Tôi thích, nhưng mệt.", ipa: "toi˧˧ tʰik˧˥ ɲɨŋ˧˧ mɛt˨˩", bases: [{ word: "Tôi", base: "tôi" }, { word: "thích", base: "thích" }, { word: "mệt", base: "mệt" }] }
+  - id: "vi-0008"
+    target: "tốt"
+    ipa: "tot˧˥"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trà này tốt.", ipa: "t͡ɕa˨˩ naj˨˩ tot˧˥", bases: [{ word: "Trà", base: "trà" }, { word: "này", base: "này" }] }
+      - { target: "Tôi khỏe, cảm ơn.", ipa: "toi˧˧ xwɛ˧˩ kaːm˧˩ ʔəːn˧", bases: [{ word: "Tôi", base: "tôi" }, { word: "khỏe", base: "khỏe" }, { word: "cảm", base: "cảm" }, { word: "ơn", base: "ơn" }] }
+  - id: "vi-0009"
+    target: "một"
+    ipa: "mot˨˩"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Một ly trà, làm ơn.", ipa: "mot˨˩ li˧˧ t͡ɕa˨˩ laːm˨˩ ʔəːn˧", bases: [{ word: "ly", base: "ly" }, { word: "trà", base: "trà" }, { word: "làm", base: "làm" }, { word: "ơn", base: "ơn" }] }
+      - { target: "Một, hai, ba.", ipa: "mot˨˩ haj˧˧ ɓaː˧˧", bases: [{ word: "hai", base: "hai" }, { word: "ba", base: "ba" }] }
+  - id: "vi-0010"
+    target: "nước"
+    ipa: "nɨək˧˥"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nước, làm ơn.", ipa: "nɨək˧˥ laːm˨˩ ʔəːn˧", bases: [{ word: "làm", base: "làm" }, { word: "ơn", base: "ơn" }] }
+      - { target: "Tôi muốn uống nước.", ipa: "toi˧˧ muək˧˥ uəŋ˧˥ nɨək˧˥", bases: [{ word: "Tôi", base: "tôi" }, { word: "muốn", base: "muốn" }, { word: "uống", base: "uống" }] }

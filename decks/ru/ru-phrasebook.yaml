@@ -1,0 +1,174 @@
+schema: 1
+id: "ru-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ru-0011"
+    target: "привет"
+    reading: "privet"
+    ipa: "prʲɪˈvʲet"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "привет", base: "привет", reading: "privet" }]
+  - id: "ru-0012"
+    target: "здравствуйте"
+    reading: "zdravstvuyte"
+    ipa: "zdrɐˈstvujtʲɪ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "здравствуйте", base: "здравствуйте", reading: "zdravstvuyte" }]
+  - id: "ru-0013"
+    target: "доброе утро"
+    reading: "dobroye utro"
+    ipa: "ˈdobrəjə ˈutrə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "доброе", base: "добрый", reading: "dobry" }, { word: "утро", base: "утро", reading: "utro" }]
+  - id: "ru-0014"
+    target: "спокойной ночи"
+    reading: "spokoynoy nochi"
+    ipa: "spɐˈkojnəj ˈnotɕɪ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "спокойной", base: "спокойный", reading: "spokoyny" }, { word: "ночи", base: "ночь", reading: "noch'" }]
+  - id: "ru-0015"
+    target: "до свидания"
+    reading: "do svidaniya"
+    ipa: "də svʲɪˈdanʲɪjə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "до", base: "до", reading: "do" }, { word: "свидания", base: "свидание", reading: "svidanie" }]
+  - id: "ru-0016"
+    target: "пожалуйста"
+    reading: "pozhaluysta"
+    ipa: "pəʐɐˈlustə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "пожалуйста", base: "пожалуйста", reading: "pozhaluysta" }]
+  - id: "ru-0017"
+    target: "спасибо"
+    reading: "spasibo"
+    ipa: "spɐˈsʲibə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "спасибо", base: "спасибо", reading: "spasibo" }]
+  - id: "ru-0018"
+    target: "большое спасибо"
+    reading: "bolshoye spasibo"
+    ipa: "bɐlʲˈʂojə spɐˈsʲibə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "большое", base: "большой", reading: "bolshoy" }, { word: "спасибо", base: "спасибо", reading: "spasibo" }]
+  - id: "ru-0019"
+    target: "извините"
+    reading: "izvinite"
+    ipa: "ɪzvʲɪˈnʲitʲɪ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "извините", base: "извинить", reading: "izvinit'" }]
+  - id: "ru-0020"
+    target: "я не понимаю"
+    reading: "ya ne ponimayu"
+    ipa: "ja nʲe pənʲɪˈmajʊ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "понимаю", base: "понимать", reading: "ponimat'" }]
+  - id: "ru-0021"
+    target: "я не говорю на русском"
+    reading: "ya ne govoryu na russkom"
+    ipa: "ja nʲe gəvɐˈrʲu nə ˈrusskəm"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "говорю", base: "говорить", reading: "govorit'" }, { word: "на", base: "на", reading: "na" }, { word: "русском", base: "русский", reading: "russkiy" }]
+  - id: "ru-0022"
+    target: "говорите медленнее, пожалуйста"
+    reading: "govorite medlennee, pozhaluysta"
+    ipa: "gəvɐˈrʲitʲɪ ˈmʲedlʲɪnʲɪjɪ pəʐɐˈlustə"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "говорите", base: "говорить", reading: "govorit'" }, { word: "медленнее", base: "медленно", reading: "medlenno" }, { word: "пожалуйста", base: "пожалуйста", reading: "pozhaluysta" }]
+  - id: "ru-0023"
+    target: "сколько стоит?"
+    reading: "skolko stoit?"
+    ipa: "ˈskolʲkə ˈstoʲɪt"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "сколько", base: "сколько", reading: "skolko" }, { word: "стоит", base: "стоить", reading: "stoit'" }]
+  - id: "ru-0024"
+    target: "где туалет?"
+    reading: "gde tualet?"
+    ipa: "gdʲe tʊɐˈlʲet"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "где", base: "где", reading: "gde" }, { word: "туалет", base: "туалет", reading: "tualet" }]
+  - id: "ru-0025"
+    target: "помогите!"
+    reading: "pomogite!"
+    ipa: "pəmɐˈɡʲitʲɪ"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "помогите", base: "помогать", reading: "pomogat'" }]
+  - id: "ru-0026"
+    target: "как вас зовут?"
+    reading: "kak vas zovut?"
+    ipa: "kak vas zɐˈvut"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "как", base: "как", reading: "kak" }, { word: "вас", base: "вы", reading: "vy" }, { word: "зовут", base: "звать", reading: "zvat'" }]
+  - id: "ru-0027"
+    target: "меня зовут Анна"
+    reading: "menya zovut Anna"
+    ipa: "mʲɪˈnʲa zɐˈvut ˈanə"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "меня", base: "я", reading: "ya" }, { word: "зовут", base: "звать", reading: "zvat'" }, { word: "Анна", base: "Анна", reading: "Anna" }]
+  - id: "ru-0028"
+    target: "очень приятно"
+    reading: "ochen' priyatno"
+    ipa: "ˈotɕɪnʲ prʲɪˈjatnə"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "очень", base: "очень", reading: "ochen'" }, { word: "приятно", base: "приятно", reading: "priyatno" }]
+  - id: "ru-0029"
+    target: "я не знаю"
+    reading: "ya ne znayu"
+    ipa: "ja nʲe ˈznajʊ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "знаю", base: "знать", reading: "znat'" }]
+  - id: "ru-0030"
+    target: "повторите, пожалуйста"
+    reading: "povtorite, pozhaluysta"
+    ipa: "pəftɐˈrʲitʲɪ pəʐɐˈlustə"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "повторите", base: "повторить", reading: "povtorit'" }, { word: "пожалуйста", base: "пожалуйста", reading: "pozhaluysta" }]

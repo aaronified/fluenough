@@ -1,0 +1,142 @@
+schema: 1
+id: "el-en-first-words"
+kind: "layer"
+core: "el-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Their first sentences are in the examples. The readings are based on ELOT 743 romanisation. Not yet checked by a Greek speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "el-0001":
+    native: "yes"
+    notes:
+      "n1": "The everyday yes. Its opposite is όχι (óchi), no."
+    examples:
+      "Ναι, ευχαριστώ.": "Yes, thank you."
+      "Ναι, καταλαβαίνω.":
+        native: "Yes, I understand."
+        bases:
+          "καταλαβαίνω": "to understand"
+  "el-0002":
+    native: "no; not"
+    notes:
+      "n1": "Before a verb, Greek uses δεν (den), not: δεν καταλαβαίνω (den katalavaíno), I do not understand."
+    examples:
+      "Όχι, ευχαριστώ.": "No, thank you."
+      "Δεν καταλαβαίνω.":
+        native: "I don't understand."
+        bases:
+          "Δεν": "not (before a verb)"
+          "καταλαβαίνω": "to understand"
+  "el-0003":
+    native: "hi; hello; bye"
+    notes:
+      "n1": "A casual hi and bye. Γεια σου (ya su) is to one person you know; γεια σας (ya sas) is to several people, or to a stranger."
+    examples:
+      "Γεια σου, τι κάνεις;":
+        native: "Hi, how are you?"
+        bases:
+          "σου": "you (to you)"
+          "τι": "what"
+          "κάνεις": "to do"
+      "Γεια σας!":
+        native: "Hello (to you, formal)."
+        bases:
+          "σας": "you (plural or polite)"
+  "el-0004":
+    native: "thank you; thanks"
+    notes:
+      "n1": "The I form of the verb to thank. Ευχαριστώ πολύ (efcharistó polý) is thank you very much."
+    examples:
+      "Ευχαριστώ πολύ.": "Thank you very much."
+      "Ευχαριστώ για το νερό.":
+        native: "Thank you for the water."
+        bases:
+          "για": "for"
+          "το": "the (neuter)"
+  "el-0005":
+    native: "please; you're welcome; here you are"
+    notes:
+      "n1": "Also you're welcome, as the answer to thank you. Greeks say it whenever they ask for something."
+    examples:
+      "Ένα νερό, παρακαλώ.":
+        native: "A water, please."
+        bases:
+          "Ένα": "a; one (neuter)"
+      "Παρακαλώ, κάτσε.":
+        native: "Please, sit down."
+        bases:
+          "κάτσε": "to sit"
+  "el-0006":
+    native: "I"
+    notes:
+      "n1": "Often left out, since the verb ending shows who is speaking: καταλαβαίνω (katalavaíno) alone means I understand."
+    examples:
+      "Εγώ είμαι από την Ελλάδα.":
+        native: "I am from Greece."
+        bases:
+          "είμαι": "to be"
+          "από": "from"
+          "την": "the (feminine)"
+          "Ελλάδα": "Greece"
+      "Εγώ δεν ξέρω.":
+        native: "I don't know."
+        bases:
+          "δεν": "not (before a verb)"
+          "ξέρω": "to know"
+  "el-0007":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal, to one person. The polite you, and the plural, is εσείς (esís)."
+    examples:
+      "Εσύ μιλάς ελληνικά;":
+        native: "Do you speak Greek?"
+        bases:
+          "μιλάς": "to speak"
+          "ελληνικά": "Greek (language)"
+      "Εσύ είσαι καλός.":
+        native: "You are good."
+        bases:
+          "είσαι": "to be"
+  "el-0008":
+    native: "water"
+    notes:
+      "n1": "A glass of water is ένα ποτήρι νερό (éna potíri neró)."
+    examples:
+      "Το νερό είναι κρύο.":
+        native: "The water is cold."
+        bases:
+          "Το": "the (neuter)"
+          "είναι": "to be"
+          "κρύο": "cold"
+      "Θέλεις νερό;":
+        native: "Do you want water?"
+        bases:
+          "Θέλεις": "to want"
+  "el-0009":
+    native: "good"
+    notes:
+      "n1": "The masculine form. The feminine is καλή (kalí) and the neuter καλό (kaló)."
+    examples:
+      "Καλό ταξίδι.":
+        native: "Have a good trip."
+        bases:
+          "Καλό": "good"
+          "ταξίδι": "trip; journey"
+      "Καλή μέρα.":
+        native: "Good day."
+        bases:
+          "Καλή": "good"
+          "μέρα": "day"
+  "el-0010":
+    native: "very; much"
+    notes:
+      "n1": "Goes before an adjective or a verb: πολύ καλός (polý kalós), very good."
+    examples:
+      "Είμαι πολύ κουρασμένος.":
+        native: "I am very tired."
+        bases:
+          "Είμαι": "to be"
+          "κουρασμένος": "tired"
+      "Πολύ καλά.": "Very well."

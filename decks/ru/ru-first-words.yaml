@@ -1,0 +1,130 @@
+schema: 1
+id: "ru-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ru-0001"
+    target: "да"
+    reading: "da"
+    ipa: "da"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Да, спасибо.", reading: "da, spasibo.", ipa: "da spɐˈsʲibə", bases: [{ word: "Да", base: "да", reading: "da" }, { word: "спасибо", base: "спасибо", reading: "spasibo" }] }
+      - { target: "Да, я понимаю.", reading: "da, ya ponimayu.", ipa: "da ja pənʲɪˈmajʊ", bases: [{ word: "Да", base: "да", reading: "da" }, { word: "я", base: "я", reading: "ya" }, { word: "понимаю", base: "понимать", reading: "ponimat'" }] }
+  - id: "ru-0002"
+    target: "нет"
+    reading: "net"
+    ipa: "nʲet"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Нет, спасибо.", reading: "net, spasibo.", ipa: "nʲet spɐˈsʲibə", bases: [{ word: "Нет", base: "нет", reading: "net" }, { word: "спасибо", base: "спасибо", reading: "spasibo" }] }
+      - { target: "Нет, я не понимаю.", reading: "net, ya ne ponimayu.", ipa: "nʲet ja nʲe pənʲɪˈmajʊ", bases: [{ word: "Нет", base: "нет", reading: "net" }, { word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "понимаю", base: "понимать", reading: "ponimat'" }] }
+  - id: "ru-0003"
+    target: "я"
+    reading: "ya"
+    ipa: "ja"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Я студент.", reading: "ya student.", ipa: "ja sʊˈdɛnt", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "студент", base: "студент", reading: "student" }] }
+      - { target: "Я не знаю.", reading: "ya ne znayu.", ipa: "ja nʲe ˈznajʊ", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "знаю", base: "знать", reading: "znat'" }] }
+  - id: "ru-0004"
+    target: "вы"
+    reading: "vy"
+    ipa: "vɨ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вы говорите на английском?", reading: "vy govorite na angliyskom?", ipa: "vɨ gəvɐˈrʲitʲɪ nə ɐŋˈɡlʲijskəm", bases: [{ word: "Вы", base: "вы", reading: "vy" }, { word: "говорите", base: "говорить", reading: "govorit'" }, { word: "на", base: "на", reading: "na" }, { word: "английском", base: "английский", reading: "angliyskiy" }] }
+      - { target: "Вы хорошо говорите.", reading: "vy khorosho govorite.", ipa: "vɨ xərɐˈʂo gəvɐˈrʲitʲɪ", bases: [{ word: "Вы", base: "вы", reading: "vy" }, { word: "хорошо", base: "хорошо", reading: "khorosho" }, { word: "говорите", base: "говорить", reading: "govorit'" }] }
+  - id: "ru-0005"
+    target: "и"
+    reading: "i"
+    ipa: "i"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Чай и хлеб.", reading: "chay i khleb.", ipa: "tɕaj i xlʲep", bases: [{ word: "Чай", base: "чай", reading: "chay" }, { word: "и", base: "и", reading: "i" }, { word: "хлеб", base: "хлеб", reading: "khleb" }] }
+      - { target: "Я и вы.", reading: "ya i vy.", ipa: "ja i vɨ", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "и", base: "и", reading: "i" }, { word: "вы", base: "вы", reading: "vy" }] }
+  - id: "ru-0006"
+    target: "или"
+    reading: "ili"
+    ipa: "ilʲi"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Чай или кофе?", reading: "chay ili kofe?", ipa: "tɕaj ilʲi ˈkofʲɪ", bases: [{ word: "Чай", base: "чай", reading: "chay" }, { word: "или", base: "или", reading: "ili" }, { word: "кофе", base: "кофе", reading: "kofe" }] }
+      - { target: "Сегодня или завтра?", reading: "segodnya ili zavtra?", ipa: "sʲɪˈvodnʲə ilʲi ˈzaftrə", bases: [{ word: "Сегодня", base: "сегодня", reading: "segodnya" }, { word: "или", base: "или", reading: "ili" }, { word: "завтра", base: "завтра", reading: "zavtra" }] }
+  - id: "ru-0007"
+    target: "но"
+    reading: "no"
+    ipa: "no"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Да, но я устал.", reading: "da, no ya ustal.", ipa: "da no ja ʊˈstal", bases: [{ word: "Да", base: "да", reading: "da" }, { word: "но", base: "но", reading: "no" }, { word: "я", base: "я", reading: "ya" }, { word: "устал", base: "устать", reading: "ustat'" }] }
+      - { target: "Хорошо, но дорого.", reading: "khorosho, no dorogo.", ipa: "xərɐˈʂo no ˈdorəɡə", bases: [{ word: "Хорошо", base: "хорошо", reading: "khorosho" }, { word: "но", base: "но", reading: "no" }, { word: "дорого", base: "дорого", reading: "dorogo" }] }
+  - id: "ru-0008"
+    target: "хорошо"
+    reading: "khorosho"
+    ipa: "xərɐˈʂo"
+    pos: "adv"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Всё хорошо.", reading: "vsyo khorosho.", ipa: "fsʲo xərɐˈʂo", bases: [{ word: "Всё", base: "всё", reading: "vsyo" }, { word: "хорошо", base: "хорошо", reading: "khorosho" }] }
+      - { target: "Хорошо, спасибо.", reading: "khorosho, spasibo.", ipa: "xərɐˈʂo spɐˈsʲibə", bases: [{ word: "Хорошо", base: "хорошо", reading: "khorosho" }, { word: "спасибо", base: "спасибо", reading: "spasibo" }] }
+  - id: "ru-0009"
+    target: "один"
+    reading: "odin"
+    ipa: "ɐˈdʲin"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Один чай, пожалуйста.", reading: "odin chay, pozhaluysta.", ipa: "ɐˈdʲin tɕaj pəʐɐˈlustə", bases: [{ word: "Один", base: "один", reading: "odin" }, { word: "чай", base: "чай", reading: "chay" }, { word: "пожалуйста", base: "пожалуйста", reading: "pozhaluysta" }] }
+      - { target: "У меня один брат.", reading: "u menya odin brat.", ipa: "u mʲɪˈnʲa ɐˈdʲin brat", bases: [{ word: "У", base: "у", reading: "u" }, { word: "меня", base: "я", reading: "ya" }, { word: "один", base: "один", reading: "odin" }, { word: "брат", base: "брат", reading: "brat" }] }
+  - id: "ru-0010"
+    target: "вода"
+    reading: "voda"
+    ipa: "vɐˈda"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вода, пожалуйста.", reading: "voda, pozhaluysta.", ipa: "vɐˈda pəʐɐˈlustə", bases: [{ word: "Вода", base: "вода", reading: "voda" }, { word: "пожалуйста", base: "пожалуйста", reading: "pozhaluysta" }] }
+      - { target: "Я пью воду.", reading: "ya pyu vodu.", ipa: "ja pʲju ˈvodu", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "пью", base: "пить", reading: "pit'" }, { word: "воду", base: "вода", reading: "voda" }] }

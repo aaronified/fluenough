@@ -25,3 +25,34 @@ cards:
     tags: ["honorific"]
     notes:
       - { id: "n1", kind: "note" }
+  - ref: "hi-0155"
+  - ref: "hi-0156"
+  - ref: "hi-0157"
+  - ref: "hi-0158"
+  - ref: "hi-0333"
+  - ref: "hi-0898"
+  - ref: "hi-0295"
+  - id: "hi-1430"
+    target: "ठीक"
+    target_scripts: { perso_arabic: "ٹھیک" }
+    reading: "ṭhīk"
+    ipa: "ʈʰiːk"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "सब ठीक है।", reading: "sab ṭhīk hai.", ipa: "səb ʈʰiːk ɦɛː.", bases: [{ word: "सब", base: "सब", reading: "sab" }, { word: "ठीक", base: "ठीक", reading: "ṭhīk" }, { word: "है", base: "होना", reading: "hōnā" }] }
+      - { target: "मैं ठीक हूँ।", reading: "maim̐ ṭhīk hūm̐.", ipa: "mɛ̃ ʈʰiːk ɦũː.", bases: [{ word: "मैं", base: "मैं", reading: "maim̐" }, { word: "ठीक", base: "ठीक", reading: "ṭhīk" }, { word: "हूँ", base: "होना", reading: "hōnā" }] }
+  - id: "hi-1431"
+    target: "अब"
+    target_scripts: { perso_arabic: "اب" }
+    reading: "ab"
+    ipa: "əb"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "अब सही है।", reading: "ab sahī hai.", ipa: "əb səɦiː ɦɛː.", bases: [{ word: "अब", base: "अब", reading: "ab" }, { word: "सही", ref: "hi-0822" }, { word: "है", base: "होना", reading: "hōnā" }] }
+      - { target: "अब क्या?", reading: "ab kyā?", ipa: "əb kjaː", bases: [{ word: "अब", base: "अब", reading: "ab" }, { word: "क्या", ref: "hi-0157" }] }

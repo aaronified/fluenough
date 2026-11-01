@@ -1,0 +1,119 @@
+schema: 1
+id: "eu-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "eu", iso639_3: "eus", name: "Basque", script: "latin", tts: "eu-ES", icon: "Eu" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "eu-0001"
+    target: "bai"
+    ipa: "bai"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bai, eskerrik asko.", ipa: "bai eskeˈrik ˈasko", bases: [{ word: "eskerrik", base: "eskerrik" }, { word: "asko", base: "asko" }] }
+      - { target: "Bai, egia da.", ipa: "bai ˈeɡia da", bases: [{ word: "egia", base: "egia" }, { word: "da", base: "izan" }] }
+  - id: "eu-0002"
+    target: "ez"
+    ipa: "ets"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ez, eskerrik asko.", ipa: "ets eskeˈrik ˈasko", bases: [{ word: "eskerrik", base: "eskerrik" }, { word: "asko", base: "asko" }] }
+      - { target: "Ez dakit.", ipa: "ets ˈdakit", bases: [{ word: "dakit", base: "jakin" }] }
+  - id: "eu-0003"
+    target: "ni"
+    ipa: "ni"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ni ikaslea naiz.", ipa: "ni iˈkasleɑ ˈnaiz", bases: [{ word: "ikaslea", base: "ikasle" }, { word: "naiz", base: "izan" }] }
+      - { target: "Ni ere ikaslea naiz.", ipa: "ni ˈere iˈkasleɑ ˈnaiz", bases: [{ word: "ere", base: "ere" }, { word: "ikaslea", base: "ikasle" }, { word: "naiz", base: "izan" }] }
+  - id: "eu-0004"
+    target: "zu"
+    ipa: "t͡su"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zu ikaslea zara?", ipa: "t͡su iˈkasleɑ ˈsara", bases: [{ word: "ikaslea", base: "ikasle" }, { word: "zara", base: "izan" }] }
+      - { target: "Ez zara ikaslea.", ipa: "ets ˈsara iˈkasleɑ", bases: [{ word: "zara", base: "izan" }, { word: "ikaslea", base: "ikasle" }] }
+  - id: "eu-0005"
+    target: "eta"
+    ipa: "ˈeta"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ogia eta esnea.", ipa: "ˈogia ˈeta ˈesnea", bases: [{ word: "Ogia", base: "ogi" }, { word: "esnea", base: "esne" }] }
+      - { target: "Ni eta zu.", ipa: "ni ˈeta t͡su", bases: [{ word: "Ni", base: "ni" }, { word: "zu", base: "zu" }] }
+  - id: "eu-0006"
+    target: "edo"
+    ipa: "ˈeðo"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kafea edo te?", ipa: "kaˈfea ˈeðo ˈte", bases: [{ word: "Kafea", base: "kafe" }, { word: "te", base: "te" }] }
+      - { target: "Gaur edo bihar?", ipa: "ˈɡaur ˈeðo biˈhar", bases: [{ word: "Gaur", base: "gaur" }, { word: "bihar", base: "bihar" }] }
+  - id: "eu-0007"
+    target: "baina"
+    ipa: "ˈbaina"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On da, baina garestia.", ipa: "on da ˈbaina ɡaˈrestia", bases: [{ word: "da", base: "izan" }, { word: "garestia", base: "garesti" }] }
+      - { target: "Ikaslea naiz, baina nekatuta nago.", ipa: "iˈkasleɑ ˈnaiz ˈbaina nekaˈtuta ˈnaɡo", bases: [{ word: "Ikaslea", base: "ikasle" }, { word: "naiz", base: "izan" }, { word: "nekatuta", base: "nekatu" }, { word: "nago", base: "egon" }] }
+  - id: "eu-0008"
+    target: "on"
+    ipa: "on"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kafea on da.", ipa: "kaˈfea on da", bases: [{ word: "Kafea", base: "kafe" }, { word: "da", base: "izan" }] }
+      - { target: "Ondo nago, eskerrik asko.", ipa: "ˈondo ˈnaɡo eskeˈrik ˈasko", bases: [{ word: "Ondo", base: "ondo" }, { word: "nago", base: "egon" }, { word: "eskerrik", base: "eskerrik" }, { word: "asko", base: "asko" }] }
+  - id: "eu-0009"
+    target: "bat"
+    ipa: "bat"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kafe bat, mesedez.", ipa: "ˈkafe ˈbat meˈsedets", bases: [{ word: "Kafe", base: "kafe" }, { word: "mesedez", base: "mesedez" }] }
+      - { target: "Bat, bi, hiru.", ipa: "ˈbat ˈbi ˈiru", bases: [{ word: "bi", base: "bi" }, { word: "hiru", base: "hiru" }] }
+  - id: "eu-0010"
+    target: "ur"
+    ipa: "ur"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ur, mesedez.", ipa: "ur meˈsedets", bases: [{ word: "Ur", base: "ur" }, { word: "mesedez", base: "mesedez" }] }
+      - { target: "Ur hotza nahi dut.", ipa: "ur ˈhot͡sa ˈnai ˈdut", bases: [{ word: "hotza", base: "hotz" }, { word: "nahi", base: "nahi" }, { word: "dut", base: "edun" }] }

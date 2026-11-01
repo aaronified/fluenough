@@ -1,0 +1,137 @@
+schema: 1
+id: "fi-en-first-words"
+kind: "layer"
+core: "fi-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, I, you, water, good, very and the word for and. Their first sentences are in the examples. Not yet checked by a Finnish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "fi-0001":
+    native: "yes"
+    notes:
+      "n1": "The yes. Kyllä vain, yes indeed, is stronger."
+    examples:
+      "Kyllä, kiitos.": "Yes, thanks."
+      "Kyllä minä ymmärrän.":
+        native: "Yes, I understand."
+        bases:
+          "ymmärrän": "to understand"
+  "fi-0002":
+    native: "no; not"
+    notes:
+      "n1": "The no. A verb takes its own negative word, as in en ymmärrä, I do not understand."
+    examples:
+      "Ei, kiitos.": "No, thanks."
+      "En ymmärrä.":
+        native: "I don't understand."
+        bases:
+          "En": "not (the I form of the negative verb)"
+          "ymmärrä": "to understand"
+  "fi-0003":
+    native: "hi; hello; bye"
+    notes:
+      "n1": "A general hello, and bye too. Moi is more casual."
+    examples:
+      "Hei, mitä kuuluu?":
+        native: "Hi, how are you?"
+        bases:
+          "mitä": "what"
+          "kuuluu": "to be heard; to be (how things are)"
+      "Hei, ystävä!":
+        native: "Hi, friend!"
+        bases:
+          "ystävä": "friend"
+  "fi-0004":
+    native: "thanks; thank you"
+    notes:
+      "n1": "Kiitos paljon is thanks a lot."
+    examples:
+      "Kiitos paljon.":
+        native: "Thanks a lot."
+        bases:
+          "paljon": "a lot; much"
+      "Kiitos kysymästä.":
+        native: "Thanks for asking."
+        bases:
+          "kysymästä": "to ask"
+  "fi-0005":
+    native: "I"
+    notes:
+      "n1": "Often left out, since the verb ending shows who is speaking: olen alone is I am."
+    examples:
+      "Minä olen Suomesta.":
+        native: "I am from Finland."
+        bases:
+          "olen": "to be"
+          "Suomesta": "Finland"
+      "Minä puhun suomea.":
+        native: "I speak Finnish."
+        bases:
+          "puhun": "to speak"
+          "suomea": "Finnish (the language)"
+  "fi-0006":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal, to one person. For a polite you, and for more than one person, say te."
+    examples:
+      "Sinä puhut englantia?":
+        native: "Do you speak English?"
+        bases:
+          "puhut": "to speak"
+          "englantia": "English (the language)"
+      "Sinä olet hyvä.":
+        native: "You are good."
+        bases:
+          "olet": "to be"
+  "fi-0007":
+    native: "water"
+    notes:
+      "n1": "The partitive is vettä (vetːæ), some water: haluan vettä, I want some water."
+    examples:
+      "Vesi on kylmä.":
+        native: "The water is cold."
+        bases:
+          "on": "is"
+          "kylmä": "cold"
+      "Haluatko vettä?":
+        native: "Do you want some water?"
+        bases:
+          "Haluatko": "to want"
+          "vettä": "water"
+  "fi-0008":
+    native: "good"
+    notes:
+      "n1": "Hyvää päivää is the greeting good day. Hyvää is the form used there."
+    examples:
+      "Hyvää päivää.":
+        native: "Good day."
+        bases:
+          "Hyvää": "good"
+          "päivää": "day"
+      "Hyvä ystävä.":
+        native: "A good friend."
+        bases:
+          "ystävä": "friend"
+  "fi-0009":
+    native: "very; well"
+    notes:
+      "n1": "Goes before an adjective: hyvin kylmä, very cold. Also well: Hyvin, kiitos, fine, thanks."
+    examples:
+      "Olen hyvin väsynyt.":
+        native: "I am very tired."
+        bases:
+          "Olen": "to be"
+          "väsynyt": "tired"
+      "Hyvin, kiitos.": "Fine, thanks."
+  "fi-0010":
+    native: "and"
+    notes:
+      "n1": "Joins words and sentences. In a list, ja comes before the last item."
+    examples:
+      "Vesi ja kahvi.":
+        native: "Water and coffee."
+        bases:
+          "kahvi": "coffee"
+      "Kyllä ja ei.": "Yes and no."

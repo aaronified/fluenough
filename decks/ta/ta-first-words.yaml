@@ -1,0 +1,265 @@
+schema: 1
+id: ta-first-words
+part: core
+kind: vocab
+language:
+  code: ta
+  iso639_3: tam
+  name: Tamil
+  script: tamil
+  tts: ta-IN
+  icon: த
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: ta-0001
+  target: ஆம்
+  reading: ām
+  ipa: aːm
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ஆம், நான் வருகிறேன்.
+    reading: ām, nāṉ varukiṟēṉ.
+    ipa: aːm naːn varukiɾeːn.
+    bases:
+    - word: நான்
+      ref: ta-0003
+    - word: வருகிறேன்
+      ref: ta-0010
+  - target: ஆம், தண்ணீர் வேண்டும்.
+    reading: ām, taṇṇīr vēṇṭum.
+    ipa: aːm t̪aɳɳiːr veːɳɖum.
+    bases:
+    - word: வேண்டும்
+      base: வேண்டு
+      reading: vēṇṭu
+- id: ta-0002
+  target: இல்லை
+  reading: illai
+  ipa: illaɪ
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: இல்லை, தண்ணீர் இல்லை.
+    reading: illai, taṇṇīr illai.
+    ipa: illaɪ t̪aɳɳiːr illaɪ.
+    bases:
+    - word: தண்ணீர்
+      ref: ta-0005
+  - target: இது நல்லது இல்லை.
+    reading: itu nallatu illai.
+    ipa: idu nallat̪u illaɪ.
+    bases:
+    - word: இது
+      base: இது
+      reading: itu
+- id: ta-0003
+  target: நான்
+  reading: nāṉ
+  ipa: naːn
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: நான் வருகிறேன்.
+    reading: nāṉ varukiṟēṉ.
+    ipa: naːn varukiɾeːn.
+    bases:
+    - word: வருகிறேன்
+      ref: ta-0010
+  - target: நான் தண்ணீர் குடிக்கிறேன்.
+    reading: nāṉ taṇṇīr kuṭikkiṟēṉ.
+    ipa: naːn t̪aɳɳiːr kuʈikkiɾeːn.
+    bases:
+    - word: குடிக்கிறேன்
+      base: குடி
+      reading: kuṭi
+- id: ta-0004
+  target: நீங்கள்
+  reading: nīṅgaḷ
+  ipa: niːŋɡaɭ
+  pos: pronoun
+  tags:
+  - polite
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: நீங்கள் வருகிறீர்களா?
+    reading: nīṅgaḷ varukiṟīrkaḷā?
+    ipa: niːŋɡaɭ varukiɾiːrkaɭaː
+    bases:
+    - word: வருகிறீர்களா
+      ref: ta-0010
+  - target: நீங்கள் தண்ணீர் குடிக்கிறீர்களா?
+    reading: nīṅgaḷ taṇṇīr kuṭikkiṟīrkaḷā?
+    ipa: niːŋɡaɭ t̪aɳɳiːr kuʈikkiɾiːrkaɭaː
+    bases:
+    - word: குடிக்கிறீர்களா
+      base: குடி
+      reading: kuṭi
+- id: ta-0005
+  target: தண்ணீர்
+  reading: taṇṇīr
+  ipa: t̪aɳɳiːr
+  pos: noun
+  gender: n
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: தண்ணீர் வேண்டும்.
+    reading: taṇṇīr vēṇṭum.
+    ipa: t̪aɳɳiːr veːɳɖum.
+    bases:
+    - word: வேண்டும்
+      base: வேண்டு
+      reading: vēṇṭu
+  - target: தண்ணீர் நல்லது.
+    reading: taṇṇīr nallatu.
+    ipa: t̪aɳɳiːr nallat̪u.
+    bases:
+    - word: நல்லது
+      ref: ta-0006
+- id: ta-0006
+  target: நல்லது
+  reading: nallatu
+  ipa: nallat̪u
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: இது நல்லது.
+    reading: itu nallatu.
+    ipa: idu nallat̪u.
+    bases:
+    - word: இது
+      base: இது
+      reading: itu
+  - target: நல்லது, நான் வருகிறேன்.
+    reading: nallatu, nāṉ varukiṟēṉ.
+    ipa: nallat̪u naːn varukiɾeːn.
+    bases:
+    - word: நான்
+      ref: ta-0003
+    - word: வருகிறேன்
+      ref: ta-0010
+- id: ta-0007
+  target: ஒன்று
+  reading: oṉṟu
+  ipa: oɲʈʂu
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ஒன்று, இரண்டு.
+    reading: oṉṟu, iraṇṭu.
+    ipa: oɲʈʂu iɾaɳɖu.
+    bases:
+    - word: இரண்டு
+      base: இரண்டு
+      reading: iraṇṭu
+  - target: ஒரு வீடு நல்லது.
+    reading: oru vīṭu nallatu.
+    ipa: oɾu viːʈu nallat̪u.
+    bases:
+    - word: ஒரு
+      base: ஒரு
+      reading: oru
+    - word: வீடு
+      ref: ta-0009
+    - word: நல்லது
+      ref: ta-0006
+- id: ta-0008
+  target: பெரிய
+  reading: periya
+  ipa: peɾijə
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: பெரிய வீடு.
+    reading: periya vīṭu.
+    ipa: peɾijə viːʈu.
+    bases:
+    - word: வீடு
+      ref: ta-0009
+  - target: நான் பெரிய வீட்டில் இருக்கிறேன்.
+    reading: nāṉ periya vīṭṭil irukkiṟēṉ.
+    ipa: naːn peɾijə viːʈːil irukkiɾeːn.
+    bases:
+    - word: நான்
+      ref: ta-0003
+    - word: வீட்டில்
+      ref: ta-0009
+    - word: இருக்கிறேன்
+      base: இரு
+      reading: iru
+- id: ta-0009
+  target: வீடு
+  reading: vīṭu
+  ipa: viːʈu
+  pos: noun
+  gender: n
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: இது என் வீடு.
+    reading: itu eṉ vīṭu.
+    ipa: idu eɲ viːʈu.
+    bases:
+    - word: இது
+      base: இது
+      reading: itu
+    - word: என்
+      ref: ta-0003
+  - target: வீட்டில் தண்ணீர் இல்லை.
+    reading: vīṭṭil taṇṇīr illai.
+    ipa: viːʈːil t̪aɳɳiːr illaɪ.
+    bases:
+    - word: வீட்டில்
+      base: வீடு
+      reading: vīṭu
+    - word: தண்ணீர்
+      ref: ta-0005
+- id: ta-0010
+  target: வா
+  reading: vā
+  ipa: vaː
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: வா, சாப்பிடலாம்.
+    reading: vā, cāppiṭalām.
+    ipa: vaː saːppiɖəlaːm.
+    bases:
+    - word: சாப்பிடலாம்
+      base: சாப்பிடு
+      reading: cāppiṭu
+  - target: நான் நாளை வருகிறேன்.
+    reading: nāṉ nāḷai varukiṟēṉ.
+    ipa: naːn naːɭai varukiɾeːn.
+    bases:
+    - word: நான்
+      ref: ta-0003
+    - word: நாளை
+      base: நாளை
+      reading: nāḷai
+    - word: வருகிறேன்
+      base: வா
+      reading: vā

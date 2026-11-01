@@ -1,0 +1,179 @@
+schema: 1
+id: "ha-en-first-words"
+kind: "layer"
+core: "ha-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Hausa is taught in Latin letters with its hooked letters; tones are not marked. Not yet checked by a Hausa speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ha-0001":
+    native: "yes"
+    notes:
+      "n1": "Eh is the everyday yes. The no is a'a, on the next card."
+    examples:
+      "Eh, ina so.":
+        native: "Yes, I want."
+        bases:
+          "Eh": "yes"
+          "ina": "I (present tense)"
+          "so": "to want; to love"
+      "Eh, malam.":
+        native: "Yes, teacher."
+        bases:
+          "Eh": "yes"
+          "malam": "teacher; sir"
+  "ha-0002":
+    native: "no; not"
+    notes:
+      "n1": "A'a is no. The apostrophe is a glottal stop, a catch in the throat, as in the middle of uh-oh."
+    examples:
+      "A'a, na gode.":
+        native: "No, thank you."
+        bases:
+          "A'a": "no"
+          "na": "I (completed action)"
+          "gode": "thanks"
+      "A'a, ba ruwa.":
+        native: "No, not water."
+        bases:
+          "A'a": "no"
+          "ba": "not"
+          "ruwa": "water"
+  "ha-0003":
+    native: "I; me"
+    notes:
+      "n1": "Ni is I, alone or for emphasis. Before a verb the subject is ina (I am doing) or na (I have done)."
+    examples:
+      "Ni malami ne.":
+        native: "I am a teacher."
+        bases:
+          "Ni": "I"
+          "malami": "teacher"
+          "ne": "am; is (masculine)"
+      "Ina son ruwa.":
+        native: "I want water."
+        bases:
+          "Ina": "I (present tense)"
+          "son": "to want (wants)"
+          "ruwa": "water"
+  "ha-0004":
+    native: "you (to a man)"
+    notes:
+      "n1": "Kai is you when speaking to a man. To a woman, say ke."
+    examples:
+      "Kai malami ne.":
+        native: "You are a teacher."
+        bases:
+          "Kai": "you (masculine)"
+          "malami": "teacher"
+          "ne": "are; is (masculine)"
+      "Kana so ruwa?":
+        native: "Do you want water?"
+        bases:
+          "Kana": "you (present tense)"
+          "so": "to want"
+          "ruwa": "water"
+  "ha-0005":
+    native: "water"
+    notes:
+      "n1": "Ruwa is water and is a feminine noun, so the words that agree with it say ce, not ne."
+    examples:
+      "Ruwa sanyi ce.":
+        native: "The water is cold."
+        bases:
+          "Ruwa": "water"
+          "sanyi": "cold"
+          "ce": "is (feminine)"
+      "Don Allah, ruwa.":
+        native: "Please, water."
+        bases:
+          "Don": "for; because of"
+          "Allah": "God"
+          "ruwa": "water"
+  "ha-0006":
+    native: "good; fine"
+    notes:
+      "n1": "Kyau is good or fine. Lafiya lau, all is well, is the answer to how are you."
+    examples:
+      "Lafiya lau, na gode.":
+        native: "Fine, thank you."
+        bases:
+          "Lafiya": "health; well"
+          "lau": "fine; well"
+          "na": "I"
+          "gode": "thanks"
+      "Abinci kyau ne.":
+        native: "The food is good."
+        bases:
+          "Abinci": "food"
+          "kyau": "good"
+          "ne": "is (masculine)"
+  "ha-0007":
+    native: "one"
+    notes:
+      "n1": "Daya is one. Biyu is two, on the next card."
+    examples:
+      "Daya, biyu, uku.":
+        native: "One, two, three."
+        bases:
+          "Daya": "one"
+          "biyu": "two"
+          "uku": "three"
+      "Ina son shayi daya.":
+        native: "I want one tea."
+        bases:
+          "Ina": "I (present tense)"
+          "son": "to want"
+          "shayi": "tea"
+          "daya": "one"
+  "ha-0008":
+    native: "two"
+    notes:
+      "n1": "Biyu is two. Uku, three, follows it."
+    examples:
+      "Yara biyu.":
+        native: "Two children."
+        bases:
+          "Yara": "children"
+          "biyu": "two"
+      "Ina da yara biyu.":
+        native: "I have two children."
+        bases:
+          "Ina": "I (present tense)"
+          "da": "have (with ina)"
+          "yara": "children"
+          "biyu": "two"
+  "ha-0009":
+    native: "here"
+    notes:
+      "n1": "Nan is here, near the speaker. Can is there, further off."
+    examples:
+      "Ina nan.":
+        native: "I am here."
+        bases:
+          "Ina": "I (present tense)"
+          "nan": "here"
+      "Zo nan.":
+        native: "Come here."
+        bases:
+          "Zo": "to come"
+          "nan": "here"
+  "ha-0010":
+    native: "and; with"
+    notes:
+      "n1": "Da joins words and clauses, as 'and' does, and it also means 'with'."
+    examples:
+      "Shinkafa da wake.":
+        native: "Rice and beans."
+        bases:
+          "Shinkafa": "rice"
+          "da": "and"
+          "wake": "beans"
+      "Ni da kai.":
+        native: "Me and you."
+        bases:
+          "Ni": "I; me"
+          "da": "and"
+          "kai": "you"

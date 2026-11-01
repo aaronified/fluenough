@@ -1,0 +1,120 @@
+schema: 1
+id: "sw-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-0001"
+    target: "Ndiyo"
+    ipa: "ndijo"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ndiyo, nimeelewa.", ipa: "ndijo nimeelewa", bases: [{ word: "Ndiyo", base: "ndiyo" }, { word: "nimeelewa", base: "elewa" }] }
+      - { target: "Ndiyo, asante.", ipa: "ndijo asante", bases: [{ word: "Ndiyo", base: "ndiyo" }, { word: "asante", base: "asante" }] }
+  - id: "sw-0002"
+    target: "Hapana"
+    ipa: "hapana"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hapana, asante.", ipa: "hapana asante", bases: [{ word: "Hapana", base: "hapana" }, { word: "asante", base: "asante" }] }
+      - { target: "Sijui lugha hii.", ipa: "sidʒui lugha hi", bases: [{ word: "Sijui", base: "jua" }, { word: "lugha", base: "lugha" }, { word: "hii", base: "hii" }] }
+  - id: "sw-0003"
+    target: "Mimi"
+    ipa: "mimi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ni mwalimu.", ipa: "mimi ni mwalimu", bases: [{ word: "Mimi", base: "mimi" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+      - { target: "Mimi ninapenda maji.", ipa: "mimi ninapenda madʒi", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-0004"
+    target: "Wewe"
+    ipa: "wewe"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wewe ni nani?", ipa: "wewe ni nani", bases: [{ word: "Wewe", base: "wewe" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+      - { target: "Wewe unapenda chai?", ipa: "wewe unapenda tʃai", bases: [{ word: "Wewe", base: "wewe" }, { word: "unapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+  - id: "sw-0005"
+    target: "Maji"
+    ipa: "madʒi"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninahitaji maji.", ipa: "ninahitadʒi madʒi", bases: [{ word: "Ninahitaji", base: "hitaji" }, { word: "maji", base: "maji" }] }
+      - { target: "Maji ni baridi.", ipa: "madʒi ni baridi", bases: [{ word: "Maji", base: "maji" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+  - id: "sw-0006"
+    target: "Nzuri"
+    ipa: "nzuri"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Habari yako? Nzuri.", ipa: "habari jako nzuri", bases: [{ word: "Habari", base: "habari" }, { word: "yako", base: "-ako" }, { word: "Nzuri", base: "nzuri" }] }
+      - { target: "Chai ni nzuri.", ipa: "tʃai ni nzuri", bases: [{ word: "Chai", base: "chai" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-0007"
+    target: "Moja"
+    ipa: "moʤa"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Moja, mbili, tatu.", ipa: "modʒa mbili tatu", bases: [{ word: "Moja", base: "moja" }, { word: "mbili", base: "mbili" }, { word: "tatu", base: "tatu" }] }
+      - { target: "Ninataka chai moja.", ipa: "ninataka tʃai modʒa", bases: [{ word: "Ninataka", base: "taka" }, { word: "chai", base: "chai" }, { word: "moja", base: "moja" }] }
+  - id: "sw-0008"
+    target: "Mbili"
+    ipa: "mbili"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Watoto wawili.", ipa: "watoto wawili", bases: [{ word: "Watoto", base: "mtoto" }, { word: "wawili", base: "mbili" }] }
+      - { target: "Nina watoto wawili.", ipa: "nina watoto wawili", bases: [{ word: "Nina", base: "na" }, { word: "watoto", base: "mtoto" }, { word: "wawili", base: "mbili" }] }
+  - id: "sw-0009"
+    target: "Hapa"
+    ipa: "hapa"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Niko hapa.", ipa: "niko hapa", bases: [{ word: "Niko", base: "kuwa" }, { word: "hapa", base: "hapa" }] }
+      - { target: "Njoo hapa.", ipa: "ndʒo hapa", bases: [{ word: "Njoo", base: "kuja" }, { word: "hapa", base: "hapa" }] }
+  - id: "sw-0010"
+    target: "Na"
+    ipa: "na"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chai na maziwa.", ipa: "tʃai na maziwa", bases: [{ word: "Chai", base: "chai" }, { word: "na", base: "na" }, { word: "maziwa", base: "maziwa" }] }
+      - { target: "Mimi na wewe.", ipa: "mimi na wewe", bases: [{ word: "Mimi", base: "mimi" }, { word: "na", base: "na" }, { word: "wewe", base: "wewe" }] }

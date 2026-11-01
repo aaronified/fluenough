@@ -1,0 +1,109 @@
+schema: 1
+id: "tr-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "tr", iso639_3: "tur", name: "Turkish", script: "latin", tts: "tr-TR", icon: "T" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tr-0001"
+    target: "evet"
+    ipa: "ˈevet"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Evet, teşekkürler.", ipa: "ˈevet teʃekˈkyrlɛr", bases: [{ word: "teşekkürler", ref: "tr-0004" }] }
+      - { target: "Evet, anlıyorum.", ipa: "ˈevet anlɯˈjorum", bases: [{ word: "anlıyorum", base: "anlamak" }] }
+  - id: "tr-0002"
+    target: "hayır"
+    ipa: "hajˈɯr"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Hayır, teşekkürler.", ipa: "hajˈɯr teʃekˈkyrlɛr", bases: [{ word: "teşekkürler", ref: "tr-0004" }] }
+      - { target: "Anlamıyorum.", ipa: "anlamɯˈjorum", bases: [{ word: "Anlamıyorum", base: "anlamak" }] }
+  - id: "tr-0003"
+    target: "merhaba"
+    ipa: "ˈmerhaba"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Merhaba, nasılsın?", ipa: "ˈmerhaba naˈsɯlsɯn", bases: [{ word: "nasılsın", base: "nasıl" }] }
+      - { target: "Merhaba, arkadaşım.", ipa: "ˈmerhaba arkadaʃɯm", bases: [{ word: "arkadaşım", base: "arkadaş" }] }
+  - id: "tr-0004"
+    target: "teşekkürler"
+    ipa: "teʃekˈkyrlɛr"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Çok teşekkürler.", ipa: "tʃok teʃekˈkyrlɛr", bases: [{ word: "çok", ref: "tr-0010" }] }
+      - { target: "Teşekkür ederim.", ipa: "teʃekˈkyr ederim", bases: [{ word: "Teşekkür", base: "teşekkür" }, { word: "ederim", base: "etmek" }] }
+  - id: "tr-0005"
+    target: "lütfen"
+    ipa: "ˈlytfɛn"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Bir su, lütfen.", ipa: "bir su ˈlytfɛn", bases: [{ word: "Bir", base: "bir" }, { word: "su", ref: "tr-0008" }] }
+      - { target: "Lütfen oturun.", ipa: "ˈlytfɛn oˈturun", bases: [{ word: "oturun", base: "oturmak" }] }
+  - id: "tr-0006"
+    target: "ben"
+    ipa: "ben"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ben öğrenciyim.", ipa: "ben øːɾenˈdʒijim", bases: [{ word: "öğrenciyim", base: "öğrenci" }] }
+      - { target: "Ben de anlıyorum.", ipa: "ben de anlɯˈjorum", bases: [{ word: "de", base: "de" }, { word: "anlıyorum", base: "anlamak" }] }
+  - id: "tr-0007"
+    target: "sen"
+    ipa: "sen"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Sen Türkçe konuşuyor musun?", ipa: "sen ˈtyrtʃe koˈnuʃujor muˈsun", bases: [{ word: "Türkçe", base: "Türkçe" }, { word: "konuşuyor", base: "konuşmak" }, { word: "musun", base: "mı" }] }
+      - { target: "Sen iyisin.", ipa: "sen ˈijisin", bases: [{ word: "iyisin", ref: "tr-0009" }] }
+  - id: "tr-0008"
+    target: "su"
+    ipa: "su"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Su soğuk.", ipa: "su soˈuk", bases: [{ word: "soğuk", base: "soğuk" }] }
+      - { target: "Su istiyor musun?", ipa: "su isˈtijor muˈsun", bases: [{ word: "istiyor", base: "istemek" }, { word: "musun", base: "mı" }] }
+  - id: "tr-0009"
+    target: "iyi"
+    ipa: "ˈiji"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "İyi günler.", ipa: "ˈiji ˈɟynlɛr", bases: [{ word: "İyi", base: "iyi" }, { word: "günler", base: "gün" }] }
+      - { target: "Bu çok iyi.", ipa: "bu tʃok ˈiji", bases: [{ word: "Bu", base: "bu" }, { word: "çok", ref: "tr-0010" }] }
+  - id: "tr-0010"
+    target: "çok"
+    ipa: "tʃok"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Çok iyi.", ipa: "tʃok ˈiji", bases: [{ word: "iyi", ref: "tr-0009" }] }
+      - { target: "Çok yorgunum.", ipa: "tʃok ˈjorɡunum", bases: [{ word: "yorgunum", base: "yorgun" }] }

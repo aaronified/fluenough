@@ -1,0 +1,120 @@
+schema: 1
+id: "ms-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ms", iso639_3: "zsm", name: "Malay", script: "latin", tts: "ms-MY", icon: "Ms" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ms-0001"
+    target: "Ya"
+    ipa: "ja"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ya, saya faham.", ipa: "ja saja faham", bases: [{ word: "Ya", base: "ya" }, { word: "saya", base: "saya" }, { word: "faham", base: "faham" }] }
+      - { target: "Ya, betul.", ipa: "ja bətul", bases: [{ word: "Ya", base: "ya" }, { word: "betul", base: "betul" }] }
+  - id: "ms-0002"
+    target: "Tidak"
+    ipa: "tidak"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tidak, terima kasih.", ipa: "tidak tərima kasih", bases: [{ word: "Tidak", base: "tidak" }, { word: "terima", base: "terima" }, { word: "kasih", base: "kasih" }] }
+      - { target: "Saya tidak tahu.", ipa: "saja tidak tahu", bases: [{ word: "Saya", base: "saya" }, { word: "tidak", base: "tidak" }, { word: "tahu", base: "tahu" }] }
+  - id: "ms-0003"
+    target: "Saya"
+    ipa: "saja"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saya dari Malaysia.", ipa: "saja dari malajsia", bases: [{ word: "Saya", base: "saya" }, { word: "dari", base: "dari" }, { word: "Malaysia", base: "Malaysia" }] }
+      - { target: "Saya suka air.", ipa: "saja suka ajr", bases: [{ word: "Saya", base: "saya" }, { word: "suka", base: "suka" }] }
+  - id: "ms-0004"
+    target: "Anda"
+    ipa: "anda"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Anda dari mana?", ipa: "anda dari mana", bases: [{ word: "Anda", base: "anda" }, { word: "dari", base: "dari" }, { word: "mana", base: "mana" }] }
+      - { target: "Anda orang baik.", ipa: "anda oraŋ bajk", bases: [{ word: "Anda", base: "anda" }, { word: "orang", base: "orang" }, { word: "baik", base: "baik" }] }
+  - id: "ms-0005"
+    target: "Air"
+    ipa: "ajr"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saya mahu air.", ipa: "saja mahu ajr", bases: [{ word: "Saya", base: "saya" }, { word: "mahu", base: "mahu" }, { word: "air", base: "air" }] }
+      - { target: "Air panas, tolong.", ipa: "ajr panas tolɔŋ", bases: [{ word: "Air", base: "air" }, { word: "panas", base: "panas" }, { word: "tolong", base: "tolong" }] }
+  - id: "ms-0006"
+    target: "Baik"
+    ipa: "bajk"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kopi ini baik.", ipa: "kopi ini bajk", bases: [{ word: "Kopi", base: "kopi" }, { word: "ini", base: "ini" }, { word: "baik", base: "baik" }] }
+      - { target: "Saya baik.", ipa: "saja bajk", bases: [{ word: "Saya", base: "saya" }, { word: "baik", base: "baik" }] }
+  - id: "ms-0007"
+    target: "Satu"
+    ipa: "satu"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Satu, dua, tiga.", ipa: "satu dua tiga", bases: [{ word: "Satu", base: "satu" }, { word: "dua", base: "dua" }, { word: "tiga", base: "tiga" }] }
+      - { target: "Saya ada satu adik.", ipa: "saja ada satu adik", bases: [{ word: "Saya", base: "saya" }, { word: "ada", base: "ada" }, { word: "satu", base: "satu" }, { word: "adik", base: "adik" }] }
+  - id: "ms-0008"
+    target: "Dua"
+    ipa: "dua"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dua kopi, tolong.", ipa: "dua kopi tolɔŋ", bases: [{ word: "Dua", base: "dua" }, { word: "kopi", base: "kopi" }, { word: "tolong", base: "tolong" }] }
+      - { target: "Saya ada dua anak.", ipa: "saja ada dua anak", bases: [{ word: "Saya", base: "saya" }, { word: "ada", base: "ada" }, { word: "dua", base: "dua" }, { word: "anak", base: "anak" }] }
+  - id: "ms-0009"
+    target: "Sini"
+    ipa: "sini"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saya di sini.", ipa: "saja di sini", bases: [{ word: "Saya", base: "saya" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+      - { target: "Datang sini.", ipa: "datəŋ sini", bases: [{ word: "Datang", base: "datang" }, { word: "sini", base: "sini" }] }
+  - id: "ms-0010"
+    target: "Dan"
+    ipa: "dan"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nasi dan ikan.", ipa: "nasi dan ikan", bases: [{ word: "Nasi", base: "nasi" }, { word: "dan", base: "dan" }, { word: "ikan", base: "ikan" }] }
+      - { target: "Saya dan awak.", ipa: "saja dan awak", bases: [{ word: "Saya", base: "saya" }, { word: "dan", base: "dan" }, { word: "awak", base: "awak" }] }

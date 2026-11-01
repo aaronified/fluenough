@@ -1,0 +1,188 @@
+schema: 1
+id: "hbs-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "hbs", iso639_3: "hbs", name: "Serbo-Croatian", script: "latin", scripts: ["latin", "cyrillic"], tts: "sr-RS", icon: "S" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hbs-0011"
+    target: "Dobro jutro."
+    ipa: "ˈdobro ˈjutro"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Добро јутро." }
+    phrasebook: true
+    bases: [{ word: "Dobro", base: "dobar" }, { word: "jutro", base: "jutro" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0012"
+    target: "Vidimo se."
+    ipa: "ˈvidimo se"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Видимо се." }
+    phrasebook: true
+    bases: [{ word: "Vidimo", base: "videti" }, { word: "se", base: "se" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0013"
+    target: "Doviđenja."
+    ipa: "doˈvidʑeɲa"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Довиђења." }
+    phrasebook: true
+    bases: [{ word: "Doviđenja", base: "doviđenje" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0014"
+    target: "Oprostite."
+    ipa: "oˈprostite"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Опростите." }
+    phrasebook: true
+    bases: [{ word: "Oprostite", base: "oprostiti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0015"
+    target: "Žao mi je."
+    ipa: "ˈʒao mi je"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Жао ми је." }
+    phrasebook: true
+    bases: [{ word: "Žao", base: "žao" }, { word: "mi", base: "mi" }, { word: "je", base: "biti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0016"
+    target: "Ne razumem."
+    ipa: "ne razuˈmem"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Не разумем." }
+    phrasebook: true
+    bases: [{ word: "razumem", base: "razumeti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0017"
+    target: "Ne govorim srpski."
+    ipa: "ne ɡoˈvorim ˈsrpski"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Не говорим српски." }
+    phrasebook: true
+    bases: [{ word: "govorim", base: "govoriti" }, { word: "srpski", base: "srpski" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0018"
+    target: "Govorite li engleski?"
+    ipa: "ɡoˈvorite li enˈɡleski"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Говорите ли енглески?" }
+    phrasebook: true
+    bases: [{ word: "Govorite", base: "govoriti" }, { word: "li", base: "li" }, { word: "engleski", base: "engleski" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0019"
+    target: "Govorite sporije, molim."
+    ipa: "ɡoˈvorite ˈsporije ˈmolim"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Говорите спорије, молим." }
+    phrasebook: true
+    bases: [{ word: "Govorite", base: "govoriti" }, { word: "sporije", base: "sporo" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0020"
+    target: "Još jednom, molim."
+    ipa: "jeʃ ˈjednom ˈmolim"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Још једном, молим." }
+    phrasebook: true
+    bases: [{ word: "Još", base: "još" }, { word: "jednom", base: "jedan" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0021"
+    target: "Koliko košta?"
+    ipa: "koˈliko ˈkoʃta"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Колико кошта?" }
+    phrasebook: true
+    bases: [{ word: "Koliko", base: "koliko" }, { word: "košta", base: "koštati" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0022"
+    target: "Račun, molim."
+    ipa: "ˈratɕun ˈmolim"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Рачун, молим." }
+    phrasebook: true
+    bases: [{ word: "Račun", base: "račun" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0023"
+    target: "Upomoć!"
+    ipa: "uˈpomotɕ"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Упомоћ!" }
+    phrasebook: true
+    bases: [{ word: "Upomoć", base: "upomoć" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0024"
+    target: "Gde je stanica?"
+    ipa: "ɡde je ˈstanitsa"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Где је станица?" }
+    phrasebook: true
+    bases: [{ word: "Gde", base: "gde" }, { word: "je", base: "biti" }, { word: "stanica", base: "stanica" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0025"
+    target: "Šta to znači?"
+    ipa: "ʃta to ˈznatɕi"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Шта то значи?" }
+    phrasebook: true
+    bases: [{ word: "Šta", base: "šta" }, { word: "to", base: "to" }, { word: "znači", base: "značiti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0026"
+    target: "Zovem se Ana."
+    ipa: "ˈzovem se ˈana"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Зовем се Ана." }
+    phrasebook: true
+    bases: [{ word: "Zovem", base: "zvati" }, { word: "se", base: "se" }, { word: "Ana", base: "Ana" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0027"
+    target: "Drago mi je."
+    ipa: "ˈdrago mi je"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Драго ми је." }
+    phrasebook: true
+    bases: [{ word: "Drago", base: "drago" }, { word: "mi", base: "mi" }, { word: "je", base: "biti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0028"
+    target: "Odakle si?"
+    ipa: "oˈdakle si"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Одакле си?" }
+    phrasebook: true
+    bases: [{ word: "Odakle", base: "odakle" }, { word: "si", base: "biti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0029"
+    target: "U redu je."
+    ipa: "u ˈredu je"
+    pos: "phrase"
+    target_scripts: { cyrillic: "У реду је." }
+    phrasebook: true
+    bases: [{ word: "U", base: "u" }, { word: "redu", base: "red" }, { word: "je", base: "biti" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hbs-0030"
+    target: "Prijatno!"
+    ipa: "priˈjatno"
+    pos: "phrase"
+    target_scripts: { cyrillic: "Пријатно!" }
+    phrasebook: true
+    bases: [{ word: "Prijatno", base: "prijatan" }]
+    notes:
+      - { id: "n1", kind: "note" }

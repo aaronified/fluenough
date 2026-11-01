@@ -1,0 +1,182 @@
+schema: 1
+id: "pt-en-first-words"
+kind: "layer"
+core: "pt-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Brazilian Portuguese. Not yet checked by a Portuguese speaker: please report any mistake."
+cards:
+  "pt-0001":
+    native: "yes"
+    notes:
+      "n1": "Sim is the plain yes. Answering a negative question is the same: Você não vai? Vou, sim (Aren't you going? Yes, I am)."
+    examples:
+      "Sim, obrigado.":
+        native: "Yes, thank you."
+        bases:
+          "Sim": "yes"
+          "obrigado": "thank you"
+      "Sim, eu falo português.":
+        native: "Yes, I speak Portuguese."
+        bases:
+          "Sim": "yes"
+          "eu": "I"
+          "falo": "I speak"
+          "português": "Portuguese"
+  "pt-0002":
+    native: "no"
+    notes:
+      "n1": "Não is both 'no' and 'not'. Before a verb it means 'not': Não falo inglês (I don't speak English)."
+    examples:
+      "Não, obrigado.":
+        native: "No, thank you."
+        bases:
+          "Não": "no"
+          "obrigado": "thank you"
+      "Não falo inglês.":
+        native: "I don't speak English."
+        bases:
+          "Não": "not"
+          "falo": "I speak"
+          "inglês": "English"
+  "pt-0003":
+    native: "I"
+    notes:
+      "n1": "Eu is I. The subject is often left out, because the verb ending already shows it: falo is 'I speak'."
+    examples:
+      "Eu sou estudante.":
+        native: "I am a student."
+        bases:
+          "Eu": "I"
+          "sou": "I am"
+          "estudante": "student"
+      "Eu falo português.":
+        native: "I speak Portuguese."
+        bases:
+          "Eu": "I"
+          "falo": "I speak"
+          "português": "Portuguese"
+  "pt-0004":
+    native: "you"
+    notes:
+      "n1": "Você is the everyday 'you' in Brazil and takes the verb's third-person form: você fala (you speak). Formal situations use o senhor or a senhora."
+    examples:
+      "Você fala inglês?":
+        native: "Do you speak English?"
+        bases:
+          "Você": "you"
+          "fala": "you speak"
+          "inglês": "English"
+      "Você está bem?":
+        native: "Are you well?"
+        bases:
+          "Você": "you"
+          "está": "are"
+          "bem": "well"
+  "pt-0005":
+    native: "and"
+    notes:
+      "n1": "E is 'and' between two words, as in pão e manteiga (bread and butter)."
+    examples:
+      "Pão e manteiga.":
+        native: "Bread and butter."
+        bases:
+          "Pão": "bread"
+          "e": "and"
+          "manteiga": "butter"
+      "Eu e você.":
+        native: "You and I."
+        bases:
+          "Eu": "I"
+          "e": "and"
+          "você": "you"
+  "pt-0006":
+    native: "or"
+    notes:
+      "n1": "Ou is 'or' in a question offering a choice, as in chá ou café (tea or coffee)."
+    examples:
+      "Chá ou café?":
+        native: "Tea or coffee?"
+        bases:
+          "Chá": "tea"
+          "ou": "or"
+          "café": "coffee"
+      "Hoje ou amanhã?":
+        native: "Today or tomorrow?"
+        bases:
+          "Hoje": "today"
+          "ou": "or"
+          "amanhã": "tomorrow"
+  "pt-0007":
+    native: "but"
+    notes:
+      "n1": "Mas is 'but'. Do not confuse it with mais (more), which is spelled differently and said differently."
+    examples:
+      "Sim, mas estou cansado.":
+        native: "Yes, but I am tired."
+        bases:
+          "Sim": "yes"
+          "mas": "but"
+          "estou": "I am"
+          "cansado": "tired"
+      "Bom, mas caro.":
+        native: "Good, but expensive."
+        bases:
+          "Bom": "good"
+          "mas": "but"
+          "caro": "expensive"
+  "pt-0008":
+    native: "good"
+    notes:
+      "n1": "Bom becomes boa before a feminine noun: uma boa ideia (a good idea). Está bom means 'it is good' or 'it is fine'."
+    examples:
+      "Está bom.":
+        native: "It is good."
+        bases:
+          "Está": "is"
+          "bom": "good"
+      "O café é bom.":
+        native: "The coffee is good."
+        bases:
+          "O": "the"
+          "café": "coffee"
+          "é": "is"
+          "bom": "good"
+  "pt-0009":
+    native: "one"
+    alt_native: ["a"]
+    notes:
+      "n1": "Um is 'one', and 'a' before a masculine noun. Uma is the feminine form."
+    examples:
+      "Um café, por favor.":
+        native: "A coffee, please."
+        bases:
+          "Um": "a"
+          "café": "coffee"
+          "por": "for"
+          "favor": "favour"
+      "Eu tenho um irmão.":
+        native: "I have a brother."
+        bases:
+          "Eu": "I"
+          "tenho": "I have"
+          "um": "a"
+          "irmão": "brother"
+  "pt-0010":
+    native: "water"
+    notes:
+      "n1": "Água is feminine: a água. It is the word for drinking water too, so ask for água com gás (sparkling water) if you want fizz."
+    examples:
+      "Água, por favor.":
+        native: "Water, please."
+        bases:
+          "Água": "water"
+          "por": "for"
+          "favor": "favour"
+      "Eu bebo água.":
+        native: "I drink water."
+        bases:
+          "Eu": "I"
+          "bebo": "I drink"
+          "água": "water"

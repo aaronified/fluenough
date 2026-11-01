@@ -1,0 +1,330 @@
+# The order Old English is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught ang-en-<name> for ang-<name> (ADR-0013, ADR-0036).
+#
+# This is also Old English's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in West Saxon prose and verse.
+#
+# A reading course (owner, 2026-10-31): Old English has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 600 and 800 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "ang-path"
+language: "ang"
+description: "Old English: the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f", "n"]
+levels: { A1: 400, A2: 600, B1: 800 }
+alphabet: []
+units:
+  - decks: ["ang-phrasebook", "ang-first-words", "*"]
+    words: 10
+  - planned: { id: "ang-sound-differences", grammar: ["sound-differences"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Old English showing sound differences, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Old English showing sound differences" } }
+  - planned: { id: "ang-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Old English on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Old English on the theme yes, no and questions" } }
+  - planned: { id: "ang-pronouns", theme: "pronouns", words: 21 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Old English on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Old English on the theme pronouns and people words" } }
+  - planned: { id: "ang-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Old English on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Old English on the theme family" } }
+  - planned: { id: "ang-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Old English on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Old English on the theme numbers 1 to 20" } }
+  - planned: { id: "ang-script-letters", grammar: ["old-english-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short passage in Old English showing old english letters, read aloud" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Old English showing old english letters" } }
+  - planned: { id: "ang-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Old English on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Old English on the theme talking about yourself" } }
+  - planned: { id: "ang-everyday-verbs", theme: "everyday-verbs", words: 21 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Old English on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Old English on the theme everyday verbs" } }
+  - planned: { id: "ang-adverbs", theme: "adverbs", words: 32 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Old English on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Old English on the theme adverbs" } }
+  - planned: { id: "ang-quantities", theme: "quantities", words: 19 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Old English on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Old English on the theme quantities" } }
+  - planned: { id: "ang-grammar-cases-genders", grammar: ["noun-genders", "case-system"] }
+    listening_passages:
+      - { id: "grammar-cases-genders-heard", text: { "en": "A short passage in Old English showing noun genders, case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-cases-genders-text", text: { "en": "A short written text in Old English showing noun genders, case system" } }
+  - planned: { id: "ang-describing", theme: "describing", words: 26 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Old English on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Old English on the theme describing things and feelings" } }
+  - planned: { id: "ang-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Old English on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Old English on the theme time" } }
+  - planned: { id: "ang-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Old English on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Old English on the theme location" } }
+  - planned: { id: "ang-more-verbs", theme: "more-verbs", words: 21 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Old English on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Old English on the theme more verbs" } }
+  - planned: { id: "ang-grammar-strong-weak-nouns", grammar: ["strong-nouns", "weak-nouns"] }
+    listening_passages:
+      - { id: "grammar-strong-weak-nouns-heard", text: { "en": "A short passage in Old English showing strong nouns, weak nouns, read aloud" } }
+    reading_passages:
+      - { id: "grammar-strong-weak-nouns-text", text: { "en": "A short written text in Old English showing strong nouns, weak nouns" } }
+  - planned: { id: "ang-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Old English on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Old English on the theme work" } }
+  - planned: { id: "ang-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Old English on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Old English on the theme tens and big numbers" } }
+  - planned: { id: "ang-food", theme: "food", words: 41 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Old English on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Old English on the theme food" } }
+  - planned: { id: "ang-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short passage in Old English showing present tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Old English showing present tense" } }
+  - planned: { id: "ang-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Old English on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Old English on the theme directions" } }
+  - planned: { id: "ang-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Old English on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Old English on the theme body" } }
+  - planned: { id: "ang-places", theme: "places", words: 27 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Old English on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Old English on the theme places" } }
+  - planned: { id: "ang-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Old English on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Old English on the theme things" } }
+  - planned: { id: "ang-grammar-be-verbs", grammar: ["be-verbs"] }
+    listening_passages:
+      - { id: "grammar-be-verbs-heard", text: { "en": "A short passage in Old English showing be verbs, read aloud" } }
+    reading_passages:
+      - { id: "grammar-be-verbs-text", text: { "en": "A short written text in Old English showing be verbs" } }
+  - planned: { id: "ang-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Old English on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Old English on the theme home" } }
+  - planned: { id: "ang-clothes", theme: "clothes", words: 17 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Old English on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Old English on the theme clothes" } }
+  - planned: { id: "ang-animals", theme: "animals", words: 19 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Old English on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Old English on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "ang-weather", theme: "weather", words: 86 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Old English on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Old English on the theme weather" } }
+  - planned: { id: "ang-calendar", theme: "calendar", words: 29 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Old English on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Old English on the theme calendar" } }
+  - planned: { id: "ang-grammar-strong-weak-verbs", grammar: ["strong-verbs", "weak-verbs"] }
+    listening_passages:
+      - { id: "grammar-strong-weak-verbs-heard", text: { "en": "A short passage in Old English showing strong verbs, weak verbs, read aloud" } }
+    reading_passages:
+      - { id: "grammar-strong-weak-verbs-text", text: { "en": "A short written text in Old English showing strong verbs, weak verbs" } }
+  - planned: { id: "ang-festivals", theme: "festivals", words: 76 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Old English on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Old English on the theme festivals" } }
+  - planned: { id: "ang-grammar-past", grammar: ["past-tense"] }
+    listening_passages:
+      - { id: "grammar-past-heard", text: { "en": "A short passage in Old English showing past tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-past-text", text: { "en": "A short written text in Old English showing past tense" } }
+  - planned: { id: "ang-illness", theme: "illness", words: 95 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Old English on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Old English on the theme illness" } }
+  - planned: { id: "ang-grammar-demonstratives", grammar: ["demonstratives"] }
+    listening_passages:
+      - { id: "grammar-demonstratives-heard", text: { "en": "A short passage in Old English showing demonstratives, read aloud" } }
+    reading_passages:
+      - { id: "grammar-demonstratives-text", text: { "en": "A short written text in Old English showing demonstratives" } }
+  - planned: { id: "ang-cooking", theme: "cooking", words: 95 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Old English on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Old English on the theme cooking" } }
+  - planned: { id: "ang-grammar-adjective-forms", grammar: ["adjective-forms"] }
+    listening_passages:
+      - { id: "grammar-adjective-forms-heard", text: { "en": "A short passage in Old English showing adjective forms, read aloud" } }
+    reading_passages:
+      - { id: "grammar-adjective-forms-text", text: { "en": "A short written text in Old English showing adjective forms" } }
+  - planned: { id: "ang-journey", theme: "journey", words: 114 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Old English on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Old English on the theme journey" } }
+  - planned: { id: "ang-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short passage in Old English showing imperative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Old English showing imperative" } }
+  - planned: { id: "ang-nature", theme: "nature", words: 105 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Old English on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Old English on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "ang-health", theme: "health", words: 68 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Old English on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Old English on the theme health" } }
+  - planned: { id: "ang-feelings", theme: "feelings", words: 68 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Old English on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Old English on the theme feelings" } }
+  - planned: { id: "ang-opinions", theme: "opinions", words: 62 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Old English on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Old English on the theme opinions" } }
+  - planned: { id: "ang-grammar-subjunctive", grammar: ["subjunctive"] }
+    listening_passages:
+      - { id: "grammar-subjunctive-heard", text: { "en": "A short passage in Old English showing subjunctive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-subjunctive-text", text: { "en": "A short written text in Old English showing subjunctive" } }
+  - planned: { id: "ang-travel", theme: "travel", words: 68 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Old English on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Old English on the theme travel" } }
+  - planned: { id: "ang-government", theme: "government", words: 51 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Old English on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Old English on the theme government" } }
+  - planned: { id: "ang-agriculture", theme: "agriculture", words: 62 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Old English on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Old English on the theme agriculture" } }
+  - planned: { id: "ang-grammar-subordinate-clauses", grammar: ["subordinate-clauses"] }
+    listening_passages:
+      - { id: "grammar-subordinate-clauses-heard", text: { "en": "A short passage in Old English showing subordinate clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-subordinate-clauses-text", text: { "en": "A short written text in Old English showing subordinate clauses" } }
+  - planned: { id: "ang-arts", theme: "arts", words: 57 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Old English on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Old English on the theme arts" } }
+  - planned: { id: "ang-history", theme: "history", words: 57 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Old English on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Old English on the theme history" } }
+  - planned: { id: "ang-grammar-verbal-prefixes", grammar: ["verbal-prefixes"] }
+    listening_passages:
+      - { id: "grammar-verbal-prefixes-heard", text: { "en": "A short passage in Old English showing verbal prefixes, read aloud" } }
+    reading_passages:
+      - { id: "grammar-verbal-prefixes-text", text: { "en": "A short written text in Old English showing verbal prefixes" } }
+  - planned: { id: "ang-weddings", theme: "weddings", words: 57 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Old English on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Old English on the theme weddings" } }
+  - planned: { id: "ang-relationships", theme: "relationships", words: 57 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Old English on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Old English on the theme relationships" } }
+  - planned: { id: "ang-law", theme: "law", words: 45 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Old English on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Old English on the theme law" } }
+  - planned: { id: "ang-grammar-alliterative-verse", grammar: ["alliterative-verse"] }
+    listening_passages:
+      - { id: "grammar-alliterative-verse-heard", text: { "en": "A short passage in Old English showing alliterative verse, read aloud" } }
+    reading_passages:
+      - { id: "grammar-alliterative-verse-text", text: { "en": "A short written text in Old English showing alliterative verse" } }
+  - planned: { id: "ang-verbs-4", theme: "verbs-4", words: 80 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Old English on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Old English on the theme story actions" } }
+  - planned: { id: "ang-abstract-words", theme: "abstract-words", words: 68 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Old English on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Old English on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]

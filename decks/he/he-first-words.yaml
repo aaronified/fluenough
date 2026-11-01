@@ -1,0 +1,120 @@
+schema: 1
+id: "he-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "he", iso639_3: "heb", name: "Hebrew", script: "hebrew", rtl: true, tts: "he-IL", icon: "ע" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "he-0001"
+    target: "כֵּן"
+    reading: "ken"
+    ipa: "ken"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "כֵּן, תּוֹדָה.", ipa: "ken toˈda", reading: "ken, toda.", bases: [{ word: "תּוֹדָה", ref: "he-0004" }] }
+      - { target: "כֵּן, אֲנִי מֵבִין.", ipa: "ken ˈani meˈvin", reading: "ken, ani mevín.", bases: [{ word: "מֵבִין", base: "לְהָבִין", reading: "lehavín" }] }
+  - id: "he-0002"
+    target: "לֹא"
+    reading: "lo"
+    ipa: "lo"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "לֹא, תּוֹדָה.", ipa: "lo toˈda", reading: "lo, toda.", bases: [{ word: "תּוֹדָה", ref: "he-0004" }] }
+      - { target: "אֲנִי לֹא יוֹדֵעַ.", ipa: "ˈani lo joˈdeaʕ", reading: "ani lo yodéa.", bases: [{ word: "יוֹדֵעַ", base: "לָדַעַת", reading: "ladáat" }] }
+  - id: "he-0003"
+    target: "שָׁלוֹם"
+    reading: "shalom"
+    ipa: "ʃaˈlom"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "שָׁלוֹם, מָה שְׁלוֹמְךָ?", ipa: "ʃaˈlom ma ʃlomˈxa", reading: "shalom, ma shlomkha?", bases: [{ word: "מָה", base: "מָה", reading: "ma" }, { word: "שְׁלוֹמְךָ", base: "שָׁלוֹם", reading: "shalom" }] }
+      - { target: "שָׁלוֹם, חָבֵר.", ipa: "ʃaˈlom χaˈveʁ", reading: "shalom, khaver.", bases: [{ word: "חָבֵר", base: "חָבֵר", reading: "khaver" }] }
+  - id: "he-0004"
+    target: "תּוֹדָה"
+    reading: "toda"
+    ipa: "toˈda"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "תּוֹדָה רַבָּה.", ipa: "toˈda ʁaˈba", reading: "toda raba.", bases: [{ word: "רַבָּה", base: "רַב", reading: "rav" }] }
+      - { target: "תּוֹדָה, זֶה טוֹב.", ipa: "toˈda ze tov", reading: "toda, ze tov.", bases: [{ word: "זֶה", base: "זֶה", reading: "ze" }, { word: "טוֹב", ref: "he-0009" }] }
+  - id: "he-0005"
+    target: "בְּבַקָּשָׁה"
+    reading: "bevakasha"
+    ipa: "beʋaˈkaʃa"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "כּוֹס מַיִם, בְּבַקָּשָׁה.", ipa: "kos ˈmajim beʋaˈkaʃa", reading: "kos mayim, bevakasha.", bases: [{ word: "כּוֹס", base: "כּוֹס", reading: "kos" }, { word: "מַיִם", ref: "he-0008" }] }
+      - { target: "בְּבַקָּשָׁה, שֵׁב.", ipa: "beʋaˈkaʃa ʃev", reading: "bevakasha, shev.", bases: [{ word: "שֵׁב", base: "יָשַׁב", reading: "yashav" }] }
+  - id: "he-0006"
+    target: "אֲנִי"
+    reading: "ani"
+    ipa: "ˈani"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "אֲנִי רוֹצֶה מַיִם.", ipa: "ˈani ʁoˈtse ˈmajim", reading: "ani rotse mayim.", bases: [{ word: "רוֹצֶה", base: "לִרְצוֹת", reading: "lirtsót" }, { word: "מַיִם", ref: "he-0008" }] }
+      - { target: "אֲנִי לֹא יוֹדֵעַ.", ipa: "ˈani lo joˈdeaʕ", reading: "ani lo yodéa.", bases: [{ word: "לֹא", ref: "he-0002" }, { word: "יוֹדֵעַ", base: "לָדַעַת", reading: "ladáat" }] }
+  - id: "he-0007"
+    target: "אַתָּה"
+    reading: "ata"
+    ipa: "aˈta"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "אַתָּה מְדַבֵּר עִבְרִית?", ipa: "aˈta meˈdaber ivˈrit", reading: "ata medabér ivrít?", bases: [{ word: "מְדַבֵּר", base: "לְדַבֵּר", reading: "ledabér" }, { word: "עִבְרִית", base: "עִבְרִית", reading: "ivrít" }] }
+      - { target: "אַתָּה טוֹב.", ipa: "aˈta tov", reading: "ata tov.", bases: [{ word: "טוֹב", ref: "he-0009" }] }
+  - id: "he-0008"
+    target: "מַיִם"
+    reading: "mayim"
+    ipa: "ˈmajim"
+    gender: "m"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "הַמַּיִם קָרִים.", ipa: "haˈmajim kaˈʁim", reading: "ha-mayim karím.", bases: [{ word: "הַמַּיִם", base: "מַיִם", reading: "mayim" }, { word: "קָרִים", base: "קַר", reading: "kar" }] }
+      - { target: "אַתָּה רוֹצֶה מַיִם?", ipa: "aˈta ʁoˈtse ˈmajim", reading: "ata rotse mayim?", bases: [{ word: "רוֹצֶה", base: "לִרְצוֹת", reading: "lirtsót" }] }
+  - id: "he-0009"
+    target: "טוֹב"
+    reading: "tov"
+    ipa: "tov"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "בֹּקֶר טוֹב.", ipa: "ˈboker tov", reading: "boker tov.", bases: [{ word: "בֹּקֶר", base: "בֹּקֶר", reading: "boker" }] }
+      - { target: "יוֹם טוֹב.", ipa: "jom tov", reading: "yom tov.", bases: [{ word: "יוֹם", base: "יוֹם", reading: "yom" }] }
+  - id: "he-0010"
+    target: "מְאוֹד"
+    reading: "meód"
+    ipa: "meˈod"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "טוֹב מְאוֹד.", ipa: "tov meˈod", reading: "tov meód.", bases: [{ word: "טוֹב", ref: "he-0009" }] }
+      - { target: "אֲנִי עָיֵף מְאוֹד.", ipa: "ˈani aˈjef meˈod", reading: "ani ayéf meód.", bases: [{ word: "עָיֵף", base: "עָיֵף", reading: "ayéf" }] }

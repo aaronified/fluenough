@@ -1,0 +1,197 @@
+schema: 1
+id: "sw-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-0011"
+    target: "Jambo"
+    ipa: "dʒambo"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Jambo", base: "jambo" }
+  - id: "sw-0012"
+    target: "Habari yako?"
+    ipa: "habari jako"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Habari", base: "habari" }
+      - { word: "yako", base: "-ako" }
+  - id: "sw-0013"
+    target: "Habari ya asubuhi."
+    ipa: "habari ja asubuhi"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Habari", base: "habari" }
+      - { word: "ya", base: "-a" }
+      - { word: "asubuhi", base: "asubuhi" }
+  - id: "sw-0014"
+    target: "Habari ya jioni."
+    ipa: "habari ja dʒioni"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Habari", base: "habari" }
+      - { word: "ya", base: "-a" }
+      - { word: "jioni", base: "jioni" }
+  - id: "sw-0015"
+    target: "Lala salama."
+    ipa: "lala salama"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Lala", base: "lala" }
+      - { word: "salama", base: "salama" }
+  - id: "sw-0016"
+    target: "Kwaheri."
+    ipa: "kwaheri"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Kwaheri", base: "kwaheri" }
+  - id: "sw-0017"
+    target: "Tafadhali."
+    ipa: "tafadali"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Tafadhali", base: "tafadhali" }
+  - id: "sw-0018"
+    target: "Asante."
+    ipa: "asante"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Asante", base: "asante" }
+  - id: "sw-0019"
+    target: "Asante sana."
+    ipa: "asante sana"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Asante", base: "asante" }
+      - { word: "sana", base: "sana" }
+  - id: "sw-0020"
+    target: "Samahani."
+    ipa: "samahani"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Samahani", base: "samahani" }
+  - id: "sw-0021"
+    target: "Sielewi."
+    ipa: "sjelewi"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Sielewi", base: "elewa" }
+  - id: "sw-0022"
+    target: "Sizungumzi Kiswahili vizuri."
+    ipa: "sizunguːmzi kiswahili vizuri"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Sizungumzi", base: "zungumza" }
+      - { word: "Kiswahili", base: "Kiswahili" }
+      - { word: "vizuri", base: "vizuri" }
+  - id: "sw-0023"
+    target: "Tafadhali zungumza polepole."
+    ipa: "tafadali zunguːmza polepole"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Tafadhali", base: "tafadhali" }
+      - { word: "zungumza", base: "zungumza" }
+      - { word: "polepole", base: "polepole" }
+  - id: "sw-0024"
+    target: "Jina lako nani?"
+    ipa: "dʒina lako nani"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Jina", base: "jina" }
+      - { word: "lako", base: "-ako" }
+      - { word: "nani", base: "nani" }
+  - id: "sw-0025"
+    target: "Jina langu ni Amina."
+    ipa: "dʒina laŋgu ni amina"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Jina", base: "jina" }
+      - { word: "langu", base: "-angu" }
+      - { word: "ni", base: "ni" }
+      - { word: "Amina", base: "Amina" }
+  - id: "sw-0026"
+    target: "Bei gani?"
+    ipa: "bei gani"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Bei", base: "bei" }
+      - { word: "gani", base: "gani" }
+  - id: "sw-0027"
+    target: "Choo kiko wapi?"
+    ipa: "tʃo kiko wapi"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Choo", base: "choo" }
+      - { word: "kiko", base: "kuwa" }
+      - { word: "wapi", base: "wapi" }
+  - id: "sw-0028"
+    target: "Nisaidie!"
+    ipa: "nisaidie"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Nisaidie", base: "saidia" }
+  - id: "sw-0029"
+    target: "Unazungumza Kiingereza?"
+    ipa: "unazunguːmza kiːŋgɛrɛza"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Unazungumza", base: "zungumza" }
+      - { word: "Kiingereza", base: "Kiingereza" }
+  - id: "sw-0030"
+    target: "Karibu."
+    ipa: "karibu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Karibu", base: "karibu" }

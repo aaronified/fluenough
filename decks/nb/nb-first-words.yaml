@@ -1,0 +1,120 @@
+schema: 1
+id: "nb-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "nb", iso639_3: "nob", name: "Norwegian (Bokmål)", script: "latin", tts: "nb-NO", icon: "Nb" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "nb-0001"
+    target: "ja"
+    ipa: "jɑ"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, takk.", ipa: "jɑ tak", bases: [{ word: "Ja", base: "ja" }, { word: "takk", base: "takk" }] }
+      - { target: "Ja, jeg snakker norsk.", ipa: "jɑ jɛɪ ˈsnakər nɔʂk", bases: [{ word: "Ja", base: "ja" }, { word: "jeg", base: "jeg" }, { word: "snakker", base: "snakke" }, { word: "norsk", base: "norsk" }] }
+  - id: "nb-0002"
+    target: "nei"
+    ipa: "nɑɪ"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nei, takk.", ipa: "nɑɪ tak", bases: [{ word: "Nei", base: "nei" }, { word: "takk", base: "takk" }] }
+      - { target: "Nei, jeg forstår ikke.", ipa: "nɑɪ jɛɪ fɔˈʂtɔr ˈɪkə", bases: [{ word: "Nei", base: "nei" }, { word: "jeg", base: "jeg" }, { word: "forstår", base: "forstå" }, { word: "ikke", base: "ikke" }] }
+  - id: "nb-0003"
+    target: "jeg"
+    ipa: "jɛɪ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jeg er student.", ipa: "jɛɪ æːr stʉˈdɛnt", bases: [{ word: "Jeg", base: "jeg" }, { word: "er", base: "være" }, { word: "student", base: "student" }] }
+      - { target: "Jeg bor i Oslo.", ipa: "jɛɪ buːr i ˈuʂlu", bases: [{ word: "Jeg", base: "jeg" }, { word: "bor", base: "bo" }, { word: "i", base: "i" }, { word: "Oslo", base: "Oslo" }] }
+  - id: "nb-0004"
+    target: "du"
+    ipa: "dʉ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Snakker du engelsk?", ipa: "ˈsnakər dʉ ˈɛŋəlsk", bases: [{ word: "Snakker", base: "snakke" }, { word: "du", base: "du" }, { word: "engelsk", base: "engelsk" }] }
+      - { target: "Du er snill.", ipa: "dʉ æːr ʂnɪl", bases: [{ word: "Du", base: "du" }, { word: "er", base: "være" }, { word: "snill", base: "snill" }] }
+  - id: "nb-0005"
+    target: "og"
+    ipa: "ɔ"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Brød og smør.", ipa: "brøː ɔ smœr", bases: [{ word: "Brød", base: "brød" }, { word: "og", base: "og" }, { word: "smør", base: "smør" }] }
+      - { target: "Jeg og du.", ipa: "jɛɪ ɔ dʉ", bases: [{ word: "Jeg", base: "jeg" }, { word: "og", base: "og" }, { word: "du", base: "du" }] }
+  - id: "nb-0006"
+    target: "eller"
+    ipa: "ˈɛlər"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kaffe eller te?", ipa: "ˈkafə ˈɛlər teː", bases: [{ word: "Kaffe", base: "kaffe" }, { word: "eller", base: "eller" }, { word: "te", base: "te" }] }
+      - { target: "Bor du i Oslo eller Bergen?", ipa: "buːr dʉ i ˈuʂlu ˈɛlər ˈbɛrɡən", bases: [{ word: "Bor", base: "bo" }, { word: "du", base: "du" }, { word: "i", base: "i" }, { word: "Oslo", base: "Oslo" }, { word: "eller", base: "eller" }, { word: "Bergen", base: "Bergen" }] }
+  - id: "nb-0007"
+    target: "men"
+    ipa: "mɛn"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, men jeg er trøtt.", ipa: "jɑ mɛn jɛɪ æːr trœt", bases: [{ word: "Ja", base: "ja" }, { word: "men", base: "men" }, { word: "jeg", base: "jeg" }, { word: "er", base: "være" }, { word: "trøtt", base: "trøtt" }] }
+      - { target: "Bra, men dyrt.", ipa: "bra mɛn dyːt", bases: [{ word: "Bra", base: "bra" }, { word: "men", base: "men" }, { word: "dyrt", base: "dyr" }] }
+  - id: "nb-0008"
+    target: "bra"
+    ipa: "bra"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kaffen er bra.", ipa: "ˈkafən æːr bra", bases: [{ word: "Kaffen", base: "kaffe" }, { word: "er", base: "være" }, { word: "bra", base: "bra" }] }
+      - { target: "Det var bra.", ipa: "de vɑː bra", bases: [{ word: "Det", base: "det" }, { word: "var", base: "være" }, { word: "bra", base: "bra" }] }
+  - id: "nb-0009"
+    target: "én"
+    ipa: "eːn"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Én kaffe, takk.", ipa: "eːn ˈkafə tak", bases: [{ word: "Én", base: "én" }, { word: "kaffe", base: "kaffe" }, { word: "takk", base: "takk" }] }
+      - { target: "Jeg har én bror.", ipa: "jɛɪ hɑr eːn bruːr", bases: [{ word: "Jeg", base: "jeg" }, { word: "har", base: "ha" }, { word: "én", base: "én" }, { word: "bror", base: "bror" }] }
+  - id: "nb-0010"
+    target: "vann"
+    ipa: "van"
+    pos: "noun"
+    gender: "n"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vann, takk.", ipa: "van tak", bases: [{ word: "Vann", base: "vann" }, { word: "takk", base: "takk" }] }
+      - { target: "Jeg drikker vann.", ipa: "jɛɪ ˈdrɪkər van", bases: [{ word: "Jeg", base: "jeg" }, { word: "drikker", base: "drikke" }, { word: "vann", base: "vann" }] }

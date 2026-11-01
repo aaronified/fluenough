@@ -1,0 +1,144 @@
+schema: 1
+id: "hu-en-first-words"
+kind: "layer"
+core: "hu-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Their first sentences are in the examples. Not yet checked by a Hungarian speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "hu-0001":
+    native: "yes"
+    notes:
+      "n1": "The yes. Its opposite is nem, no."
+    examples:
+      "Igen, köszönöm.": "Yes, thank you."
+      "Igen, értem.":
+        native: "Yes, I understand."
+        bases:
+          "értem": "to understand"
+  "hu-0002":
+    native: "no; not"
+    notes:
+      "n1": "Nem also negates a verb: nem értem, I don't understand."
+    examples:
+      "Nem, köszönöm.": "No, thank you."
+      "Nem tudom.":
+        native: "I don't know."
+        bases:
+          "tudom": "to know"
+  "hu-0003":
+    native: "hi; bye"
+    notes:
+      "n1": "Informal hi and bye. For a polite hello, say Jó napot, good day (see the phrasebook)."
+    examples:
+      "Szia, hogy vagy?":
+        native: "Hi, how are you?"
+        bases:
+          "hogy": "how"
+          "vagy": "to be"
+      "Szia, barátom!":
+        native: "Hi, my friend!"
+        bases:
+          "barátom": "friend"
+  "hu-0004":
+    native: "thank you; thanks"
+    notes:
+      "n1": "The I form of köszönni, to thank. Köszönöm szépen is thank you very much."
+    examples:
+      "Köszönöm szépen.":
+        native: "Thank you very much."
+        bases:
+          "szépen": "nicely; very much"
+      "Köszönöm, jól vagyok.":
+        native: "Thanks, I am well."
+        bases:
+          "jól": "well"
+          "vagyok": "to be"
+    bases:
+      "köszönöm": "to thank"
+  "hu-0005":
+    native: "please; pardon?; here you are"
+    notes:
+      "n1": "Kérem is please. It is also pardon? when you did not hear, and here you are."
+    examples:
+      "Egy vizet, kérem.":
+        native: "A water, please."
+        bases:
+          "Egy": "a; one"
+      "Kérem, üljön le.":
+        native: "Please, sit down."
+        bases:
+          "üljön": "to sit (polite)"
+          "le": "down"
+  "hu-0006":
+    native: "I"
+    notes:
+      "n1": "Often left out, since the verb ending shows who is speaking: értem alone means I understand."
+    examples:
+      "Én magyar vagyok.":
+        native: "I am Hungarian."
+        bases:
+          "magyar": "Hungarian"
+          "vagyok": "to be"
+      "Én is értem.":
+        native: "I understand too."
+        bases:
+          "is": "also; too"
+          "értem": "to understand"
+  "hu-0007":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal. For a polite you, Hungarian says Ön, with the third person verb."
+    examples:
+      "Te beszélsz angolul?":
+        native: "Do you speak English?"
+        bases:
+          "beszélsz": "to speak"
+          "angolul": "in English"
+      "Te jó vagy.":
+        native: "You are good."
+        bases:
+          "vagy": "to be"
+  "hu-0008":
+    native: "water"
+    notes:
+      "n1": "The accusative is vizet (ˈviːzɛt), water as the object of a verb."
+    examples:
+      "A víz hideg.":
+        native: "The water is cold."
+        bases:
+          "A": "the"
+          "hideg": "cold"
+      "Kérek vizet.":
+        native: "I would like some water."
+        bases:
+          "Kérek": "to ask for; to want"
+          "vizet": "water"
+  "hu-0009":
+    native: "good"
+    notes:
+      "n1": "The adverb is jól, well. Jó napot is good day."
+    examples:
+      "Ez egy jó ötlet.":
+        native: "This is a good idea."
+        bases:
+          "Ez": "this"
+          "egy": "a; one"
+          "ötlet": "idea"
+      "Jó a víz.":
+        native: "The water is good."
+        bases:
+          "a": "the"
+  "hu-0010":
+    native: "very"
+    notes:
+      "n1": "Goes before an adjective or an adverb: nagyon jó, very good."
+    examples:
+      "Nagyon jó.": "Very good."
+      "Nagyon fáradt vagyok.":
+        native: "I am very tired."
+        bases:
+          "fáradt": "tired"
+          "vagyok": "to be"

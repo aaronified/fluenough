@@ -1,0 +1,123 @@
+schema: 1
+id: ml-en-first-words
+kind: layer
+core: ml-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, come. Not yet checked by a Malayalam speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ml-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer 'yes'. It is said on its own, or before a sentence that agrees.
+    examples:
+      അതെ, ഞാൻ വരുന്നു.: Yes, I am coming.
+      അതെ, ഇത് നല്ലത്.:
+        native: Yes, this is good.
+        bases:
+          ഇത്: this
+  ml-0002:
+    native: no; there is not
+    notes:
+      n1: The short answer 'no', and also 'there is not'. Used on its own, or with a verb as its negative.
+    examples:
+      വെള്ളം ഇല്ല.: There is no water.
+      ഞാൻ വരില്ല.: I will not come.
+  ml-0003:
+    native: I; me
+    notes:
+      n1: Malayalam often leaves it out, since the verb already shows who is speaking.
+    examples:
+      ഞാൻ വരുന്നു.: I am coming.
+      ഞാൻ വെള്ളം കുടിക്കുന്നു.:
+        native: I am drinking water.
+        bases:
+          കുടിക്കുന്നു: to drink
+  ml-0004:
+    native: you (polite); you (plural)
+    notes:
+      n1: Used for an elder, a stranger or more than one person. A friend or a child is addressed as നീ (nī).
+    examples:
+      നിങ്ങൾ വരുന്നുണ്ടോ?: Are you coming?
+      നിങ്ങൾ വെള്ളം കുടിക്കുന്നുണ്ടോ?:
+        native: Are you drinking water?
+        bases:
+          കുടിക്കുന്നുണ്ടോ: to drink
+  ml-0005:
+    native: water
+    notes:
+      n1: The everyday word. In formal writing, ജലം (jalaṁ) is also used.
+    examples:
+      വെള്ളം നല്ലതാണ്.:
+        native: Water is good.
+        bases:
+          നല്ലതാണ്: good
+      ഇത് വെള്ളമാണ്.:
+        native: This is water.
+        bases:
+          ഇത്: this
+          വെള്ളമാണ്: water
+  ml-0006:
+    native: good
+    notes:
+      n1: 'Before a noun: നല്ല വെള്ളം (nalla veḷḷaṁ), good water. Alone, it becomes നല്ലത് (nallat), it is good.'
+    examples:
+      നല്ല വീട്.: A good house.
+      നല്ല വെള്ളം.: Good water.
+  ml-0007:
+    native: one
+    notes:
+      n1: 'The number 1 when counting. Before a noun, Malayalam says ഒരു (oru): ഒരു വീട് (oru vīṭ), one house.'
+    examples:
+      ഒന്ന്, രണ്ട്.:
+        native: One, two.
+        bases:
+          രണ്ട്: two
+      ഒരു വീട്.:
+        native: One house.
+        bases:
+          ഒരു: one (before a noun)
+  ml-0008:
+    native: big; large
+    notes:
+      n1: 'Before a noun: വലിയ വീട് (valiya vīṭ), a big house. Alone, it becomes വലുത് (valut), it is big.'
+    examples:
+      വലിയ വീട്.: A big house.
+      നിങ്ങളുടെ വീട് വലുതാണ്.:
+        native: Your house is big.
+        bases:
+          വലുതാണ്: big
+  ml-0009:
+    native: house; home
+    notes:
+      n1: 'Before a case ending its stem changes to വീട്ടി- (vīṭṭi-): വീട്ടിൽ (vīṭṭil), in the house.'
+    examples:
+      ഇത് എന്റെ വീട്.:
+        native: This is my house.
+        bases:
+          ഇത്: this
+      വീട്ടിൽ വെള്ളം ഇല്ല.:
+        native: There is no water in the house.
+        bases:
+          വീട്ടിൽ: house
+  ml-0010:
+    native: come
+    notes:
+      n1: 'The polite imperative of വരുക (varuka), to come. Its other forms: വരുന്നു (varunnu), I am coming; വരും (varuṁ), will come.'
+    examples:
+      വരൂ, നമുക്ക് പോകാം.:
+        native: Come, let's go.
+        bases:
+          നമുക്ക്: we; let us
+          പോകാം: to go
+      ഞാൻ നാളെ വരും.:
+        native: I will come tomorrow.
+        bases:
+          നാളെ: tomorrow
+          വരും: to come

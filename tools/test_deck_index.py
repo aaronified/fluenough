@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -19,6 +20,14 @@ import unittest
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+
+
+def hide_japanese(text: str) -> str:
+    """The tool's source with Japanese added to HIDDEN, whatever else is in it."""
+    new, n = re.subn(r"^(HIDDEN: set\[str\] = \{[^}]*\}|HIDDEN: set\[str\] = set\(\))",
+                     lambda m: m.group(1) + ' | {"ja"}', text, count=1, flags=re.M)
+    assert n == 1, "the HIDDEN assignment is not where the test expects"
+    return new
 TOOLS = REPO / "tools"
 SAMPLE_DECK = REPO / "tools" / "fixtures" / "index" / "es-en-core-100.yaml"
 B1 = TOOLS / "fixtures" / "b1" / "zz"
@@ -241,9 +250,7 @@ class DeckIndex(unittest.TestCase):
     def _a_hidden_language_is_left_out(self) -> None:
         tool = self.tmp / "tools" / "deck_index.py"
         text = tool.read_text(encoding="utf-8")
-        tool.write_text(text.replace("HIDDEN: set[str] = set()",
-                                     'HIDDEN: set[str] = {"ja"}'),
-                        encoding="utf-8")
+        tool.write_text(hide_japanese(text), encoding="utf-8")
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
         codes = [lang["code"] for lang in self.index()["languages"]]
         self.assertNotIn("ja", codes)
@@ -737,6 +744,36 @@ class ContentBytes(unittest.TestCase):
         '    target: "b"\n'
         '    native: "two"\n'
     )
+
+
+class HiddenLanguages(unittest.TestCase):
+    """No language is hidden: v0.7.1 is released with the planned
+    languages (#959), so every language with decks is listed."""
+
+    # The languages the released app (0.7.1) ships: assets/languages.yaml at
+    # v0.7.0, the notation courses, and the planned languages added in 0.7.1.
+    SHIPPED = set("""
+    as awa bgc bho bn brx de doi en eo es fr gbm gom gu hi hne isv ja
+    jbo kfy kha kn ko kok ks lus mag mai ml mni mr ne or pa raj sa sat
+    sd ta tcy te tok zh
+    ipa qbe
+    ang ar arc ca egy el enm eu fi fil ga gmy grc ha hbs he hu ine it la ms nb
+    pl pli pt qap qgh qgk qu ru so sux sv sw th tr vi vsn yi yue
+    """.split())
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(TOOLS))
+        import deck_index
+        cls.hidden = deck_index.HIDDEN
+
+    def test_no_shipped_language_is_hidden(self) -> None:
+        self.assertEqual(self.hidden & self.SHIPPED, set())
+
+    def test_every_language_with_decks_is_shipped_or_hidden(self) -> None:
+        dirs = {p.name for p in (REPO / "decks").iterdir()
+                if p.is_dir() and p.name != "fonts"}
+        self.assertEqual(dirs - self.SHIPPED - self.hidden, set())
 
 
 if __name__ == "__main__":

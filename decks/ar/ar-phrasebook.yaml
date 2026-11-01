@@ -1,0 +1,168 @@
+schema: 1
+id: "ar-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ar", iso639_3: "arb", name: "Arabic", script: "arabic", rtl: true, tts: "ar-SA", icon: "ع" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ar-0011"
+    target: "مرحبا"
+    reading: "marḥaban"
+    ipa: "marħaban"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "مرحبا", base: "مرحبا", reading: "marḥaban" }]
+  - id: "ar-0012"
+    target: "السلام عليكم"
+    reading: "as-salāmu ʿalaykum"
+    ipa: "assalaːmu ʕalajkum"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "السلام", base: "سلام", reading: "salām" }, { word: "عليكم", base: "على", reading: "ʿalā" }]
+  - id: "ar-0013"
+    target: "مع السلامة"
+    reading: "maʿa as-salāma"
+    ipa: "maʕa assalaːma"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "مع", base: "مع", reading: "maʿa" }, { word: "السلامة", base: "سلامة", reading: "salāma" }]
+  - id: "ar-0014"
+    target: "صباح الخير"
+    reading: "ṣabāḥ al-khayr"
+    ipa: "sˤabaːħ alˈxajr"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "صباح", base: "صباح", reading: "ṣabāḥ" }, { word: "الخير", base: "خير", reading: "khayr" }]
+  - id: "ar-0015"
+    target: "شكراً"
+    reading: "shukran"
+    ipa: "ʃukran"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "شكراً", base: "شكر", reading: "shukr" }]
+  - id: "ar-0016"
+    target: "شكراً جزيلاً"
+    reading: "shukran jazīlan"
+    ipa: "ʃukran dʒaziːlan"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "شكراً", base: "شكر", reading: "shukr" }, { word: "جزيلاً", base: "جزيل", reading: "jazīl" }]
+  - id: "ar-0017"
+    target: "عفواً"
+    reading: "ʿafwan"
+    ipa: "ʕafwan"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "عفواً", base: "عفو", reading: "ʿafw" }]
+  - id: "ar-0018"
+    target: "آسف"
+    reading: "āsif"
+    ipa: "ʔaːsif"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "آسف", base: "آسف", reading: "āsif" }]
+  - id: "ar-0019"
+    target: "من فضلك"
+    reading: "min faḍlika"
+    ipa: "min faˈdˤlika"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "من", base: "من", reading: "min" }, { word: "فضلك", base: "فضل", reading: "faḍl" }]
+  - id: "ar-0020"
+    target: "لا أفهم"
+    reading: "lā afhamu"
+    ipa: "laː ʔafhamu"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "لا", base: "لا", reading: "lā" }, { word: "أفهم", base: "فهم", reading: "fahima" }]
+  - id: "ar-0021"
+    target: "تكلم ببطء, من فضلك"
+    reading: "takallam bi-buṭʾ, min faḍlika"
+    ipa: "takallam bibutˤʔ min faˈdˤlika"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "تكلم", base: "تكلم", reading: "takallama" }, { word: "ببطء", base: "بطء", reading: "buṭʾ" }, { word: "من", base: "من", reading: "min" }, { word: "فضلك", base: "فضل", reading: "faḍl" }]
+  - id: "ar-0022"
+    target: "ما اسمك؟"
+    reading: "mā ismuka?"
+    ipa: "maː ˈismuka"
+    pos: "phrase"
+    tags: ["about-me"]
+    phrasebook: true
+    bases: [{ word: "ما", base: "ما", reading: "mā" }, { word: "اسمك", base: "اسم", reading: "ism" }]
+  - id: "ar-0023"
+    target: "اسمي أحمد."
+    reading: "ismī aḥmad."
+    ipa: "ˈismiː ʔaħmad"
+    pos: "phrase"
+    tags: ["about-me"]
+    phrasebook: true
+    bases: [{ word: "اسمي", base: "اسم", reading: "ism" }, { word: "أحمد", base: "أحمد", reading: "aḥmad" }]
+  - id: "ar-0024"
+    target: "أين الحمام؟"
+    reading: "ayna al-ḥammām?"
+    ipa: "ˈajna alħamaːm"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "أين", base: "أين", reading: "ayna" }, { word: "الحمام", base: "حمام", reading: "ḥammām" }]
+  - id: "ar-0025"
+    target: "بكم هذا؟"
+    reading: "bi-kam hādhā?"
+    ipa: "bikam haːðaː"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "بكم", base: "كم", reading: "kam" }, { word: "هذا", base: "هذا", reading: "hādhā" }]
+  - id: "ar-0026"
+    target: "ساعدني!"
+    reading: "sāʿidnī!"
+    ipa: "saːʕidniː"
+    pos: "phrase"
+    tags: ["emergency"]
+    phrasebook: true
+    bases: [{ word: "ساعدني", base: "ساعد", reading: "sāʿada" }]
+  - id: "ar-0027"
+    target: "هل تتكلم الإنجليزية؟"
+    reading: "hal tatakallamu al-ingilīziyya?"
+    ipa: "hal tatakallam alʔinɡiliːzijja"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "هل", base: "هل", reading: "hal" }, { word: "تتكلم", base: "تكلم", reading: "takallama" }, { word: "الإنجليزية", base: "إنجليزية", reading: "ingilīziyya" }]
+  - id: "ar-0028"
+    target: "لا بأس"
+    reading: "lā baʾs"
+    ipa: "laː baʔs"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "لا", base: "لا", reading: "lā" }, { word: "بأس", base: "بأس", reading: "baʾs" }]
+  - id: "ar-0029"
+    target: "إلى اللقاء"
+    reading: "ilā al-liqāʾ"
+    ipa: "ʔilaː alliqaːʔ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "إلى", base: "إلى", reading: "ilā" }, { word: "اللقاء", base: "لقاء", reading: "liqāʾ" }]
+  - id: "ar-0030"
+    target: "تصبح على خير"
+    reading: "tuṣbiḥu ʿalā khayr"
+    ipa: "tusˤbiħu ʕalaː xajr"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "تصبح", base: "أصبح", reading: "uṣbiḥa" }, { word: "على", base: "على", reading: "ʿalā" }, { word: "خير", base: "خير", reading: "khayr" }]

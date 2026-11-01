@@ -1,0 +1,174 @@
+"schema": 1
+"id": "pli-en-first-words"
+"kind": "layer"
+"core": "pli-first-words"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "First words"
+"description": "Ten words to start with: yes and no, I and you, water, good, one, two, here and and. Pali, the language of the Theravāda canon, written in Devanagari (the Pali tradition writes it in many scripts; Brahmi, the script of Ashoka's inscriptions, is not yet supported). The target is in Devanagari. The reading is in the Roman letters of the Pali Text Society, with the ISO 15919 ṁ for the anusvāra (the PTS writes ṃ): it is based on, not strictly, ISO 15919. The IPA is broad and reconstructed: aspirates are kʰ, ɡʱ and so on, c and j are tʃ and dʒ, ṭ ḍ ṇ ḷ are retroflex, a doubled consonant is long, and e and o are written long only before a single consonant. Pali is not the language of Ashoka's inscriptions, which are in related Middle Indo-Aryan dialects (see the Ashokan Prakrit course). Not yet checked by a Pali scholar: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "unreviewed"
+"cards":
+  "pli-0001":
+    "native": "yes"
+    "notes":
+      "n1": "Āma is yes. Attested in the Pali canon, in answers such as āma, bhante (yes, venerable sir). The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "आम, भन्ते.":
+        "native": "Yes, venerable sir."
+        "bases":
+          "आम": "yes"
+          "भन्ते": "venerable sir (addressed)"
+      "आम, अहं जानामि.":
+        "native": "Yes, I know."
+        "bases":
+          "आम": "yes"
+          "अहं": "I"
+          "जानामि": "to know (I know)"
+  "pli-0002":
+    "native": "not; no"
+    "notes":
+      "n1": "Na is not and no. Attested; it stands before the verb. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "न जानामि.":
+        "native": "I do not know."
+        "bases":
+          "न": "not"
+          "जानामि": "to know (I know)"
+      "न साधु.":
+        "native": "It is not good."
+        "bases":
+          "न": "not"
+          "साधु": "good"
+  "pli-0003":
+    "native": "I"
+    "notes":
+      "n1": "Ahaṁ is I. Attested; the verb ending already says I, so ahaṁ is used for emphasis. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "अहं उदकं पिवामि.":
+        "native": "I drink water."
+        "bases":
+          "अहं": "I"
+          "उदकं": "water"
+          "पिवामि": "to drink (I drink)"
+      "अहं इध अम्हि.":
+        "native": "I am here."
+        "bases":
+          "अहं": "I"
+          "इध": "here"
+          "अम्हि": "to be (I am)"
+  "pli-0004":
+    "native": "you"
+    "notes":
+      "n1": "Tvaṁ is you, one person, as the subject; the canon also writes tuvaṁ. Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "त्वं साधु असि.":
+        "native": "You are good."
+        "bases":
+          "त्वं": "you"
+          "साधु": "good"
+          "असि": "to be (you are)"
+      "त्वं न जानासि.":
+        "native": "You do not know."
+        "bases":
+          "त्वं": "you"
+          "न": "not"
+          "जानासि": "to know (you know)"
+  "pli-0005":
+    "native": "water"
+    "notes":
+      "n1": "Udakaṁ is water, neuter. Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "उदकं साधु.":
+        "native": "The water is good."
+        "bases":
+          "उदकं": "water"
+          "साधु": "good"
+      "उदकं पिवामि.":
+        "native": "I drink water."
+        "bases":
+          "उदकं": "water"
+          "पिवामि": "to drink (I drink)"
+  "pli-0006":
+    "native": "good"
+    "notes":
+      "n1": "Sādhu is good, well, and is also the cry of approval, well said. Attested throughout the canon. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "साधु, भन्ते.":
+        "native": "Good, venerable sir."
+        "bases":
+          "साधु": "good"
+          "भन्ते": "venerable sir (addressed)"
+      "साधु, साधु.":
+        "native": "Good, good!"
+        "bases":
+          "साधु": "good"
+  "pli-0007":
+    "native": "one"
+    "notes":
+      "n1": "Eko is one, masculine nominative; the feminine is ekā and the neuter ekaṁ. Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "इध एको अत्थि.":
+        "native": "There is one here."
+        "bases":
+          "इध": "here"
+          "एको": "one"
+          "अत्थि": "to be (there is)"
+      "एको च द्वे च.":
+        "native": "One and two."
+        "bases":
+          "एको": "one"
+          "च": "and"
+          "द्वे": "two"
+  "pli-0008":
+    "native": "two"
+    "notes":
+      "n1": "Dve is two. Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "इध द्वे सन्ति.":
+        "native": "There are two here."
+        "bases":
+          "इध": "here"
+          "द्वे": "two"
+          "सन्ति": "to be (they are)"
+      "द्वे साधू.":
+        "native": "Two good ones."
+        "bases":
+          "द्वे": "two"
+          "साधू": "good (plural)"
+  "pli-0009":
+    "native": "here"
+    "notes":
+      "n1": "Idha is here. Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "इध अम्हि.":
+        "native": "I am here."
+        "bases":
+          "इध": "here"
+          "अम्हि": "to be (I am)"
+      "इध उदकं अत्थि.":
+        "native": "There is water here."
+        "bases":
+          "इध": "here"
+          "उदकं": "water"
+          "अत्थि": "to be (there is)"
+  "pli-0010":
+    "native": "and"
+    "notes":
+      "n1": "Ca is and; it follows the word it joins (eko ca dve ca). Attested. The example sentences are composed from attested words; they are not quoted from a text."
+    "examples":
+      "अहं च त्वं च.":
+        "native": "You and I."
+        "bases":
+          "अहं": "I"
+          "च": "and"
+          "त्वं": "you"
+      "उदकं च भत्तं च.":
+        "native": "Water and food."
+        "bases":
+          "उदकं": "water"
+          "च": "and"
+          "भत्तं": "food, a meal"

@@ -1,0 +1,139 @@
+schema: 1
+id: "yue-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "yue", iso639_3: "yue", name: "Cantonese", script: "han_traditional", tts: "yue-HK", icon: "粵" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "yue-0001"
+    target: "係"
+    reading: "hai6"
+    ipa: "hɐi˨˨"
+    pos: "adv"
+    tags: ["answer"]
+    words: ["係"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "係，多謝。", reading: "hai6, do1 ze6.", ipa: "hɐi˨˨ tɔː˥˥ tsɛː˨˨", words: ["係", "多謝"], bases: [{ word: "多謝", base: "多謝", reading: "do1 ze6" }] }
+      - { target: "我係學生。", reading: "ngo5 hai6 hok6 saang1.", ipa: "ŋɔ˨˧ hɐi˨˨ hɔk˨ sɐːŋ˥˥", words: ["我", "係", "學生"], bases: [{ word: "學生", base: "學生", reading: "hok6 saang1" }] }
+  - id: "yue-0002"
+    target: "唔係"
+    reading: "m4 hai6"
+    ipa: "m̩˨˨ hɐi˨˨"
+    pos: "adv"
+    tags: ["answer"]
+    words: ["唔係"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "唔係，我唔知。", reading: "m4 hai6, ngo5 m4 zi1.", ipa: "m̩˨˨ hɐi˨˨ ŋɔ˨˧ m̩˨˨ tsiː˥˥", words: ["唔係", "我", "唔知"], bases: [{ word: "唔知", base: "知", reading: "zi1" }] }
+      - { target: "唔係呢度。", reading: "m4 hai6 nei1 dou6.", ipa: "m̩˨˨ hɐi˨˨ nei˥˥ tou˨˨", words: ["唔係", "呢度"], bases: [{ word: "呢度", base: "呢度", reading: "nei1 dou6" }] }
+  - id: "yue-0003"
+    target: "我"
+    reading: "ngo5"
+    ipa: "ŋɔ˨˧"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    words: ["我"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "我鍾意飲茶。", reading: "ngo5 zung1 ji3 jam2 caa4.", ipa: "ŋɔ˨˧ tsʊŋ˥˥ tsi˧˧ jɐm˧˥ tsʰaː˨˩", words: ["我", "鍾意", "飲茶"], bases: [{ word: "鍾意", base: "鍾意", reading: "zung1 ji3" }, { word: "飲茶", base: "飲茶", reading: "jam2 caa4" }] }
+      - { target: "我識講廣東話。", reading: "ngo5 sik1 gong2 gwong2 dung1 waa6.", ipa: "ŋɔ˨˧ sɪk˥˥ kɔːŋ˧˥ kwɔːŋ˥˥ tʊŋ˥˥ waː˨˨", words: ["我", "識", "講", "廣東話"], bases: [{ word: "識", base: "識", reading: "sik1" }, { word: "講", base: "講", reading: "gong2" }, { word: "廣東話", base: "廣東話", reading: "gwong2 dung1 waa6" }] }
+  - id: "yue-0004"
+    target: "你"
+    reading: "nei5"
+    ipa: "nei˨˧"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    words: ["你"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "你好嗎？", reading: "nei5 hou2 maa3?", ipa: "nei˨˧ hou˧˥ maː˧˧", words: ["你", "好", "嗎"], bases: [{ word: "好", base: "好", reading: "hou2" }, { word: "嗎", base: "嗎", reading: "maa3" }] }
+      - { target: "你係邊度人？", reading: "nei5 hai6 bin1 dou6 jan4?", ipa: "nei˨˧ hɐi˨˨ pin˥˥ tou˨˨ jɐn˨˩", words: ["你", "係", "邊度", "人"], bases: [{ word: "邊度", base: "邊度", reading: "bin1 dou6" }, { word: "人", base: "人", reading: "jan4" }] }
+  - id: "yue-0005"
+    target: "同埋"
+    reading: "tung4 maai4"
+    ipa: "tʰʊŋ˨˩ mɐːi˨˩"
+    pos: "other"
+    tags: ["linking"]
+    words: ["同埋"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "咖啡同埋茶。", reading: "gaa3 fe1 tung4 maai4 caa4.", ipa: "kaː˧˧ fɛː˥˥ tʰʊŋ˨˩ mɐːi˨˩ tsʰaː˨˩", words: ["咖啡", "同埋", "茶"], bases: [{ word: "咖啡", base: "咖啡", reading: "gaa3 fe1" }, { word: "茶", base: "茶", reading: "caa4" }] }
+      - { target: "你同我。", reading: "nei5 tung4 ngo5.", ipa: "nei˨˧ tʰʊŋ˨˩ ŋɔ˨˧", words: ["你", "同", "我"], bases: [{ word: "同", base: "同", reading: "tung4" }] }
+  - id: "yue-0006"
+    target: "定係"
+    reading: "ding6 hai6"
+    ipa: "tiŋ˨˨ hɐi˨˨"
+    pos: "other"
+    tags: ["linking"]
+    words: ["定係"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "飲茶定係飲咖啡？", reading: "jam2 caa4 ding6 hai6 jam2 gaa3 fe1?", ipa: "jɐm˧˥ tsʰaː˨˩ tiŋ˨˨ hɐi˨˨ jɐm˧˥ kaː˧˧ fɛː˥˥", words: ["飲茶", "定係", "飲", "咖啡"], bases: [{ word: "飲茶", base: "飲茶", reading: "jam2 caa4" }, { word: "飲", base: "飲", reading: "jam2" }, { word: "咖啡", base: "咖啡", reading: "gaa3 fe1" }] }
+      - { target: "今日定係聽日？", reading: "gam1 jat6 ding6 hai6 ting1 jat6?", ipa: "kɐm˥˥ jɐt˨˨ tiŋ˨˨ hɐi˨˨ tʰiŋ˥˥ jɐt˨˨", words: ["今日", "定係", "聽日"], bases: [{ word: "今日", base: "今日", reading: "gam1 jat6" }, { word: "聽日", base: "聽日", reading: "ting1 jat6" }] }
+  - id: "yue-0007"
+    target: "但係"
+    reading: "daan6 hai6"
+    ipa: "tan˨˨ hɐi˨˨"
+    pos: "other"
+    tags: ["linking"]
+    words: ["但係"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "好，但係好貴。", reading: "hou2, daan6 hai6 hou2 gwai3.", ipa: "hou˧˥ tan˨˨ hɐi˨˨ hou˧˥ kwɐi˧˧", words: ["好", "但係", "好貴"], bases: [{ word: "好貴", base: "貴", reading: "gwai3" }] }
+      - { target: "我好鍾意，但係太貴。", reading: "ngo5 hou2 zung1 ji3, daan6 hai6 taai3 gwai3.", ipa: "ŋɔ˨˧ hou˧˥ tsʊŋ˥˥ tsi˧˧ tan˨˨ hɐi˨˨ tʰaːi˧˧ kwɐi˧˧", words: ["我", "好", "鍾意", "但係", "太", "貴"], bases: [{ word: "鍾意", base: "鍾意", reading: "zung1 ji3" }, { word: "太", base: "太", reading: "taai3" }, { word: "貴", base: "貴", reading: "gwai3" }] }
+  - id: "yue-0008"
+    target: "好"
+    reading: "hou2"
+    ipa: "hou˧˥"
+    pos: "adj"
+    tags: ["adjective"]
+    words: ["好"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "今日好熱。", reading: "gam1 jat6 hou2 jit6.", ipa: "kɐm˥˥ jɐt˨˨ hou˧˥ jit˨˨", words: ["今日", "好", "熱"], bases: [{ word: "今日", base: "今日", reading: "gam1 jat6" }, { word: "熱", base: "熱", reading: "jit6" }] }
+      - { target: "呢個好好食。", reading: "nei1 go3 hou2 hou2 sik6.", ipa: "nei˥˥ kɔː˧˧ hou˧˥ hou˧˥ sik˨", words: ["呢個", "好", "好食"], bases: [{ word: "呢個", base: "呢個", reading: "nei1 go3" }, { word: "好食", base: "食", reading: "sik6" }] }
+  - id: "yue-0009"
+    target: "一"
+    reading: "jat1"
+    ipa: "jɐt˥˥"
+    pos: "adj"
+    tags: ["number"]
+    words: ["一"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "一杯咖啡，唔該。", reading: "jat1 bui1 gaa3 fe1, m4 goi1.", ipa: "jɐt˥˥ pui˥˥ kaː˧˧ fɛː˥˥ m̩˨˨ kɔːi˥˥", words: ["一", "杯", "咖啡", "唔該"], bases: [{ word: "杯", base: "杯", reading: "bui1" }, { word: "咖啡", base: "咖啡", reading: "gaa3 fe1" }, { word: "唔該", base: "唔該", reading: "m4 goi1" }] }
+      - { target: "一、二、三。", reading: "jat1, ji6, saam1.", ipa: "jɐt˥˥ tsi˨˨ saːm˧˧", words: ["一", "二", "三"], bases: [{ word: "二", base: "二", reading: "ji6" }, { word: "三", base: "三", reading: "saam1" }] }
+  - id: "yue-0010"
+    target: "水"
+    reading: "seoi2"
+    ipa: "sɵy˧˥"
+    pos: "noun"
+    tags: ["drink"]
+    words: ["水"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "一杯水，唔該。", reading: "jat1 bui1 seoi2, m4 goi1.", ipa: "jɐt˥˥ pui˥˥ sɵy˧˥ m̩˨˨ kɔːi˥˥", words: ["一", "杯", "水", "唔該"], bases: [{ word: "杯", base: "杯", reading: "bui1" }, { word: "唔該", base: "唔該", reading: "m4 goi1" }] }
+      - { target: "我想飲水。", reading: "ngo5 soeng2 jam2 seoi2.", ipa: "ŋɔ˨˧ sœŋ˧˥ jɐm˧˥ sɵy˧˥", words: ["我", "想", "飲", "水"], bases: [{ word: "想", base: "想", reading: "soeng2" }, { word: "飲", base: "飲", reading: "jam2" }] }

@@ -124,11 +124,10 @@ alphabet: []
 units:
   # 1. The phrasebook, taught whole from the first lesson. pa-first-words
   # joins this unit.
-  - planned: { id: "pa-phrasebook", theme: "first-words", words: 8 }
-    listening_passages:
-      - { id: "first-meeting", text: { "en": "Two people greet each other with sat sri akal and say their names" } }
-    reading_passages:
-      - { id: "welcome-card", text: { "en": "A welcome card: hello, thank you and please" } }
+  # The first words are written: pa-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["pa-phrasebook", "pa-first-words", "*"]
+    words: 10
   # 2. The first word units: the sounds, the tones, then the first words.
   - planned: { id: "pa-sound-differences", grammar: "sound-differences", words: 12 }
     listening_passages:

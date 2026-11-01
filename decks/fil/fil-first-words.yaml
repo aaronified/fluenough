@@ -1,0 +1,119 @@
+schema: 1
+id: "fil-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "fil", iso639_3: "fil", name: "Filipino", script: "latin", tts: "fil-PH", icon: "Fi" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "fil-0001"
+    target: "oo"
+    ipa: "ʔo"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Oo, salamat.", ipa: "ʔo saˈlamat", bases: [{ word: "salamat", base: "salamat" }] }
+      - { target: "Oo, naiintindihan ko.", ipa: "ʔo naj.in.tin.ˈdi.han ko", bases: [{ word: "naiintindihan", base: "intindihin" }, { word: "ko", base: "ako" }] }
+  - id: "fil-0002"
+    target: "hindi"
+    ipa: "hin.ˈdi"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hindi, salamat.", ipa: "hin.ˈdi saˈlamat", bases: [{ word: "salamat", base: "salamat" }] }
+      - { target: "Hindi ko alam.", ipa: "hin.ˈdi ko aˈlam", bases: [{ word: "ko", base: "ako" }, { word: "alam", base: "alam" }] }
+  - id: "fil-0003"
+    target: "ako"
+    ipa: "ˈa.ko"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ako ay estudyante.", ipa: "ˈa.ko aj es.tu.ˈdyan.te", bases: [{ word: "ay", base: "ay" }, { word: "estudyante", base: "estudyante" }] }
+      - { target: "Ako si Maria.", ipa: "ˈa.ko si ma.ˈri.a", bases: [{ word: "si", base: "si" }, { word: "Maria", base: "Maria" }] }
+  - id: "fil-0004"
+    target: "ikaw"
+    ipa: "ˈi.kaw"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ikaw ba si Juan?", ipa: "ˈi.kaw ba si xu.ˈan", bases: [{ word: "ba", base: "ba" }, { word: "si", base: "si" }, { word: "Juan", base: "Juan" }] }
+      - { target: "Ikaw ay mabait.", ipa: "ˈi.kaw aj ma.ˈba.it", bases: [{ word: "ay", base: "ay" }, { word: "mabait", base: "mabait" }] }
+  - id: "fil-0005"
+    target: "at"
+    ipa: "at"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kape at tsaa.", ipa: "ˈka.pe at ˈtsa.a", bases: [{ word: "Kape", base: "kape" }, { word: "tsaa", base: "tsaa" }] }
+      - { target: "Ako at ikaw.", ipa: "ˈa.ko at ˈi.kaw", bases: [{ word: "Ako", base: "ako" }, { word: "ikaw", base: "ikaw" }] }
+  - id: "fil-0006"
+    target: "o"
+    ipa: "o"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kape o tsaa?", ipa: "ˈka.pe o ˈtsa.a", bases: [{ word: "Kape", base: "kape" }, { word: "tsaa", base: "tsaa" }] }
+      - { target: "Ngayon o bukas?", ipa: "ˈŋa.jon o ˈbu.kas", bases: [{ word: "Ngayon", base: "ngayon" }, { word: "bukas", base: "bukas" }] }
+  - id: "fil-0007"
+    target: "pero"
+    ipa: "ˈpe.ro"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Masarap, pero mahal.", ipa: "ma.sa.ˈrap ˈpe.ro ma.ˈhal", bases: [{ word: "Masarap", base: "masarap" }, { word: "mahal", base: "mahal" }] }
+      - { target: "Gusto ko, pero pagod ako.", ipa: "ˈgus.to ko ˈpe.ro pa.ˈgod ˈa.ko", bases: [{ word: "Gusto", base: "gusto" }, { word: "ko", base: "ako" }, { word: "pagod", base: "pagod" }, { word: "ako", base: "ako" }] }
+  - id: "fil-0008"
+    target: "mabuti"
+    ipa: "ma.ˈbu.ti"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mabuti ang kape.", ipa: "ma.ˈbu.ti ang ˈka.pe", bases: [{ word: "ang", base: "ang" }, { word: "kape", base: "kape" }] }
+      - { target: "Mabuti ako, salamat.", ipa: "ma.ˈbu.ti ˈa.ko sa.ˈla.mat", bases: [{ word: "ako", base: "ako" }, { word: "salamat", base: "salamat" }] }
+  - id: "fil-0009"
+    target: "isa"
+    ipa: "ˈi.sa"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Isang kape, pakiusap.", ipa: "ˈi.saŋ ˈka.pe pa.ki.ˈu.sap", bases: [{ word: "Isang", base: "isa" }, { word: "kape", base: "kape" }, { word: "pakiusap", base: "pakiusap" }] }
+      - { target: "Isa, dalawa, tatlo.", ipa: "ˈi.sa da.ˈla.wa ˈtat.lo", bases: [{ word: "dalawa", base: "dalawa" }, { word: "tatlo", base: "tatlo" }] }
+  - id: "fil-0010"
+    target: "tubig"
+    ipa: "ˈtu.big"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tubig, pakiusap.", ipa: "ˈtu.big pa.ki.ˈu.sap", bases: [{ word: "pakiusap", base: "pakiusap" }] }
+      - { target: "Gusto ko ng tubig.", ipa: "ˈgus.to ko ŋ tu.ˈbig", bases: [{ word: "Gusto", base: "gusto" }, { word: "ko", base: "ako" }, { word: "ng", base: "ng" }] }

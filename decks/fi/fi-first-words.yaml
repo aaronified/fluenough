@@ -1,0 +1,109 @@
+schema: 1
+id: "fi-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "fi", iso639_3: "fin", name: "Finnish", script: "latin", tts: "fi-FI", icon: "S" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "fi-0001"
+    target: "kyllä"
+    ipa: "ˈkyllæ"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Kyllä, kiitos.", ipa: "ˈkyllæ ˈkiːtos", bases: [{ word: "kiitos", ref: "fi-0004" }] }
+      - { target: "Kyllä minä ymmärrän.", ipa: "ˈkyllæ ˈminæ ˈymːærːæn", bases: [{ word: "minä", ref: "fi-0005" }, { word: "ymmärrän", base: "ymmärtää" }] }
+  - id: "fi-0002"
+    target: "ei"
+    ipa: "ei"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ei, kiitos.", ipa: "ei ˈkiːtos", bases: [{ word: "kiitos", ref: "fi-0004" }] }
+      - { target: "En ymmärrä.", ipa: "en ˈymːærːæ", bases: [{ word: "En", base: "ei" }, { word: "ymmärrä", base: "ymmärtää" }] }
+  - id: "fi-0003"
+    target: "hei"
+    ipa: "hei"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Hei, mitä kuuluu?", ipa: "hei ˈmitæ ˈkuːluː", bases: [{ word: "mitä", base: "mikä" }, { word: "kuuluu", base: "kuulua" }] }
+      - { target: "Hei, ystävä!", ipa: "hei ˈystæʋæ", bases: [{ word: "ystävä", base: "ystävä" }] }
+  - id: "fi-0004"
+    target: "kiitos"
+    ipa: "ˈkiːtos"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Kiitos paljon.", ipa: "ˈkiːtos ˈpɑljon", bases: [{ word: "paljon", base: "paljon" }] }
+      - { target: "Kiitos kysymästä.", ipa: "ˈkiːtos ˈkysymæstæ", bases: [{ word: "kysymästä", base: "kysyä" }] }
+  - id: "fi-0005"
+    target: "minä"
+    ipa: "ˈminæ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Minä olen Suomesta.", ipa: "ˈminæ ˈolen ˈsuomestɑ", bases: [{ word: "olen", base: "olla" }, { word: "Suomesta", base: "Suomi" }] }
+      - { target: "Minä puhun suomea.", ipa: "ˈminæ ˈpuhun ˈsuomeɑ", bases: [{ word: "puhun", base: "puhua" }, { word: "suomea", base: "suomi" }] }
+  - id: "fi-0006"
+    target: "sinä"
+    ipa: "ˈsinæ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Sinä puhut englantia?", ipa: "ˈsinæ ˈpuhut ˈeŋɡlɑntiɑ", bases: [{ word: "puhut", base: "puhua" }, { word: "englantia", base: "englanti" }] }
+      - { target: "Sinä olet hyvä.", ipa: "ˈsinæ ˈolet ˈhyʋæ", bases: [{ word: "olet", base: "olla" }, { word: "hyvä", ref: "fi-0008" }] }
+  - id: "fi-0007"
+    target: "vesi"
+    ipa: "ˈʋesi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Vesi on kylmä.", ipa: "ˈʋesi on ˈkylmæ", bases: [{ word: "on", base: "olla" }, { word: "kylmä", base: "kylmä" }] }
+      - { target: "Haluatko vettä?", ipa: "ˈhɑluɑtko ˈʋetːæ", bases: [{ word: "Haluatko", base: "haluta" }, { word: "vettä", base: "vesi" }] }
+  - id: "fi-0008"
+    target: "hyvä"
+    ipa: "ˈhyʋæ"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Hyvää päivää.", ipa: "ˈhyʋæː ˈpæiʋæː", bases: [{ word: "Hyvää", base: "hyvä" }, { word: "päivää", base: "päivä" }] }
+      - { target: "Hyvä ystävä.", ipa: "ˈhyʋæ ˈystæʋæ", bases: [{ word: "ystävä", base: "ystävä" }] }
+  - id: "fi-0009"
+    target: "hyvin"
+    ipa: "ˈhyʋin"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Olen hyvin väsynyt.", ipa: "ˈolen ˈhyʋin ˈʋæsynyt", bases: [{ word: "Olen", base: "olla" }, { word: "väsynyt", base: "väsynyt" }] }
+      - { target: "Hyvin, kiitos.", ipa: "ˈhyʋin ˈkiːtos", bases: [{ word: "kiitos", ref: "fi-0004" }] }
+  - id: "fi-0010"
+    target: "ja"
+    ipa: "ja"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Vesi ja kahvi.", ipa: "ˈʋesi ja ˈkɑhʋi", bases: [{ word: "vesi", ref: "fi-0007" }, { word: "kahvi", base: "kahvi" }] }
+      - { target: "Kyllä ja ei.", ipa: "ˈkyllæ ja ei", bases: [{ word: "kyllä", ref: "fi-0001" }, { word: "ei", ref: "fi-0002" }] }

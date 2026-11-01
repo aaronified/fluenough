@@ -1,0 +1,333 @@
+# The order Latin is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught la-en-<name> for la-<name> (ADR-0013, ADR-0036).
+#
+# This is also Latin's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in the classical language.
+#
+# A reading course (owner, 2026-10-31): Latin has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (600, 800 and 1100 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+schema: 1
+kind: "path"
+id: "la-path"
+language: "la"
+description: "Latin: the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f", "n"]
+levels: { A1: 600, A2: 800, B1: 1100 }
+alphabet: []
+units:
+  - decks: ["la-phrasebook", "la-first-words", "*"]
+    words: 10
+  - planned: { id: "la-sound-differences", grammar: ["sound-differences", "classical-pronunciation", "vowel-length"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Latin showing sound differences, classical pronunciation, vowel length, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Latin showing sound differences, classical pronunciation, vowel length" } }
+  - planned: { id: "la-questions", theme: "questions", words: 11 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Latin on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Latin on the theme yes, no and questions" } }
+  - planned: { id: "la-pronouns", theme: "pronouns", words: 32 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Latin on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Latin on the theme pronouns and people words" } }
+  - planned: { id: "la-family", theme: "family", words: 24 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Latin on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Latin on the theme family" } }
+  - planned: { id: "la-numbers-1-20", theme: "numbers-1-20", words: 19 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Latin on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Latin on the theme numbers 1 to 20" } }
+  - planned: { id: "la-about-me", theme: "about-me", words: 7 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Latin on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Latin on the theme talking about yourself" } }
+  - planned: { id: "la-everyday-verbs", theme: "everyday-verbs", words: 32 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Latin on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Latin on the theme everyday verbs" } }
+  - planned: { id: "la-adverbs", theme: "adverbs", words: 49 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Latin on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Latin on the theme adverbs" } }
+  - planned: { id: "la-quantities", theme: "quantities", words: 29 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Latin on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Latin on the theme quantities" } }
+  - planned: { id: "la-grammar-case-system", grammar: ["case-system"] }
+    listening_passages:
+      - { id: "grammar-case-system-heard", text: { "en": "A short passage in Latin showing case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-system-text", text: { "en": "A short written text in Latin showing case system" } }
+  - planned: { id: "la-describing", theme: "describing", words: 39 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Latin on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Latin on the theme describing things and feelings" } }
+  - planned: { id: "la-time", theme: "time", words: 18 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Latin on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Latin on the theme time" } }
+  - planned: { id: "la-location", theme: "location", words: 14 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Latin on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Latin on the theme location" } }
+  - planned: { id: "la-more-verbs", theme: "more-verbs", words: 31 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Latin on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Latin on the theme more verbs" } }
+  - planned: { id: "la-grammar-first-second-declension", grammar: ["first-declension", "second-declension"] }
+    listening_passages:
+      - { id: "grammar-first-second-declension-heard", text: { "en": "A short passage in Latin showing first declension, second declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-first-second-declension-text", text: { "en": "A short written text in Latin showing first declension, second declension" } }
+  - planned: { id: "la-work", theme: "work", words: 19 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Latin on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Latin on the theme work" } }
+  - planned: { id: "la-numbers-big", theme: "numbers-big", words: 13 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Latin on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Latin on the theme tens and big numbers" } }
+  - planned: { id: "la-food", theme: "food", words: 62 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Latin on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Latin on the theme food" } }
+  - planned: { id: "la-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short passage in Latin showing present tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Latin showing present tense" } }
+  - planned: { id: "la-directions", theme: "directions", words: 12 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Latin on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Latin on the theme directions" } }
+  - planned: { id: "la-body", theme: "body", words: 27 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Latin on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Latin on the theme body" } }
+  - planned: { id: "la-places", theme: "places", words: 41 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Latin on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Latin on the theme places" } }
+  - planned: { id: "la-things", theme: "things", words: 38 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Latin on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Latin on the theme things" } }
+  - planned: { id: "la-grammar-be-verb", grammar: ["be-verb"] }
+    listening_passages:
+      - { id: "grammar-be-verb-heard", text: { "en": "A short passage in Latin showing be verb, read aloud" } }
+    reading_passages:
+      - { id: "grammar-be-verb-text", text: { "en": "A short written text in Latin showing be verb" } }
+  - planned: { id: "la-home", theme: "home", words: 19 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Latin on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Latin on the theme home" } }
+  - planned: { id: "la-clothes", theme: "clothes", words: 25 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Latin on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Latin on the theme clothes" } }
+  - planned: { id: "la-animals", theme: "animals", words: 29 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Latin on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Latin on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "la-weather", theme: "weather", words: 114 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Latin on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Latin on the theme weather" } }
+  - planned: { id: "la-calendar", theme: "calendar", words: 38 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Latin on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Latin on the theme calendar" } }
+  - planned: { id: "la-grammar-third-declension", grammar: ["third-declension"] }
+    listening_passages:
+      - { id: "grammar-third-declension-heard", text: { "en": "A short passage in Latin showing third declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-third-declension-text", text: { "en": "A short written text in Latin showing third declension" } }
+  - planned: { id: "la-festivals", theme: "festivals", words: 102 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Latin on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Latin on the theme festivals" } }
+  - planned: { id: "la-grammar-adjectives", grammar: ["adjective-agreement"] }
+    listening_passages:
+      - { id: "grammar-adjectives-heard", text: { "en": "A short passage in Latin showing adjective agreement, read aloud" } }
+    reading_passages:
+      - { id: "grammar-adjectives-text", text: { "en": "A short written text in Latin showing adjective agreement" } }
+  - planned: { id: "la-illness", theme: "illness", words: 127 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Latin on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Latin on the theme illness" } }
+  - planned: { id: "la-grammar-perfect", grammar: ["perfect-tense"] }
+    listening_passages:
+      - { id: "grammar-perfect-heard", text: { "en": "A short passage in Latin showing perfect tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-perfect-text", text: { "en": "A short written text in Latin showing perfect tense" } }
+  - planned: { id: "la-cooking", theme: "cooking", words: 127 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Latin on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Latin on the theme cooking" } }
+  - planned: { id: "la-grammar-imperfect-future", grammar: ["imperfect-tense", "future"] }
+    listening_passages:
+      - { id: "grammar-imperfect-future-heard", text: { "en": "A short passage in Latin showing imperfect tense, future, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperfect-future-text", text: { "en": "A short written text in Latin showing imperfect tense, future" } }
+  - planned: { id: "la-journey", theme: "journey", words: 152 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Latin on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Latin on the theme journey" } }
+  - planned: { id: "la-grammar-imperatives-infinitives", grammar: ["imperative", "infinitive"] }
+    listening_passages:
+      - { id: "grammar-imperatives-infinitives-heard", text: { "en": "A short passage in Latin showing imperative, infinitive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-infinitives-text", text: { "en": "A short written text in Latin showing imperative, infinitive" } }
+  - planned: { id: "la-nature", theme: "nature", words: 140 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Latin on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Latin on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "la-health", theme: "health", words: 94 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Latin on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Latin on the theme health" } }
+  - planned: { id: "la-feelings", theme: "feelings", words: 94 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Latin on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Latin on the theme feelings" } }
+  - planned: { id: "la-grammar-subjunctive", grammar: ["subjunctive"] }
+    listening_passages:
+      - { id: "grammar-subjunctive-heard", text: { "en": "A short passage in Latin showing subjunctive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-subjunctive-text", text: { "en": "A short written text in Latin showing subjunctive" } }
+  - planned: { id: "la-opinions", theme: "opinions", words: 86 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Latin on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Latin on the theme opinions" } }
+  - planned: { id: "la-travel", theme: "travel", words: 94 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Latin on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Latin on the theme travel" } }
+  - planned: { id: "la-grammar-participles", grammar: ["participles"] }
+    listening_passages:
+      - { id: "grammar-participles-heard", text: { "en": "A short passage in Latin showing participles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participles-text", text: { "en": "A short written text in Latin showing participles" } }
+  - planned: { id: "la-government", theme: "government", words: 70 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Latin on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Latin on the theme government" } }
+  - planned: { id: "la-agriculture", theme: "agriculture", words: 86 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Latin on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Latin on the theme agriculture" } }
+  - planned: { id: "la-grammar-ablative-absolute", grammar: ["ablative-absolute"] }
+    listening_passages:
+      - { id: "grammar-ablative-absolute-heard", text: { "en": "A short passage in Latin showing ablative absolute, read aloud" } }
+    reading_passages:
+      - { id: "grammar-ablative-absolute-text", text: { "en": "A short written text in Latin showing ablative absolute" } }
+  - planned: { id: "la-arts", theme: "arts", words: 78 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Latin on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Latin on the theme arts" } }
+  - planned: { id: "la-history", theme: "history", words: 78 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Latin on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Latin on the theme history" } }
+  - planned: { id: "la-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short passage in Latin showing relative clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Latin showing relative clauses" } }
+  - planned: { id: "la-weddings", theme: "weddings", words: 78 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Latin on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Latin on the theme weddings" } }
+  - planned: { id: "la-relationships", theme: "relationships", words: 78 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Latin on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Latin on the theme relationships" } }
+  - planned: { id: "la-grammar-indirect-speech", grammar: ["indirect-speech"] }
+    listening_passages:
+      - { id: "grammar-indirect-speech-heard", text: { "en": "A short passage in Latin showing indirect speech, read aloud" } }
+    reading_passages:
+      - { id: "grammar-indirect-speech-text", text: { "en": "A short written text in Latin showing indirect speech" } }
+  - planned: { id: "la-law", theme: "law", words: 62 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Latin on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Latin on the theme law" } }
+  - planned: { id: "la-verbs-4", theme: "verbs-4", words: 109 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Latin on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Latin on the theme story actions" } }
+  - planned: { id: "la-grammar-passive", grammar: ["passive-voice"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short passage in Latin showing passive voice, read aloud" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Latin showing passive voice" } }
+  - planned: { id: "la-abstract-words", theme: "abstract-words", words: 93 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Latin on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Latin on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]

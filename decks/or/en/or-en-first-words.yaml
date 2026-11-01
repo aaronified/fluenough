@@ -1,0 +1,128 @@
+schema: 1
+id: or-en-first-words
+kind: layer
+core: or-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, come. Not yet checked by an Odia speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  or-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer 'yes'. Said on its own, or to agree with what was just said.
+    examples:
+      ହଁ, ମୁଁ ଆସୁଛି।: Yes, I am coming.
+      ହଁ, ପାଣି ଭଲ।: Yes, the water is good.
+  or-0002:
+    native: no; not
+    notes:
+      n1: 'The short answer ''no''. With a verb, ନାହିଁ (nāhiṁ) makes it negative: ପାଣି ନାହିଁ (pāṇi nāhiṁ), there is no water.'
+    examples:
+      ପାଣି ନାହିଁ।:
+        native: There is no water.
+        bases:
+          ନାହିଁ: no; not
+      ନା, ମୁଁ ଖାଉନାହିଁ।:
+        native: No, I am not eating.
+        bases:
+          ଖାଉନାହିଁ: to eat
+  or-0003:
+    native: I; me
+    notes:
+      n1: The first person. Odia often leaves it out, since the verb already shows who is speaking.
+    examples:
+      ମୁଁ ପାଣି ପିଉଛି।:
+        native: I am drinking water.
+        bases:
+          ପିଉଛି: to drink
+      ମୁଁ ଭଲ ଅଛି।:
+        native: I am well.
+        bases:
+          ଅଛି: to be
+  or-0004:
+    native: you (polite)
+    notes:
+      n1: The polite 'you', for an elder, a stranger or anyone you respect. A close friend is addressed more plainly.
+    examples:
+      ଆପଣ ପାଣି ପିଇବେ?:
+        native: Will you drink water?
+        bases:
+          ପିଇବେ: to drink
+      ଆପଣ ଭଲ ଅଛନ୍ତି।:
+        native: You are well.
+        bases:
+          ଅଛନ୍ତି: to be
+  or-0005:
+    native: water
+    notes:
+      n1: The everyday word for water.
+    examples:
+      ପାଣି ଭଲ।: Water is good.
+      ପାଣି ଦିଅନ୍ତୁ।:
+        native: Please give water.
+        bases:
+          ଦିଅନ୍ତୁ: to give
+  or-0006:
+    native: good; well
+    notes:
+      n1: Also 'well', as in ମୁଁ ଭଲ ଅଛି (muṁ bhala achi), I am well.
+    examples:
+      ଘର ଭଲ।: The house is good.
+      ବହୁତ ଭଲ!:
+        native: Very good!
+        bases:
+          ବହୁତ: very
+  or-0007:
+    native: one
+    notes:
+      n1: 'The number 1 when counting. Before a noun, ଏକ (eka) is used: ଏକ ଘର (eka ghara), one house.'
+    examples:
+      ଏକ, ଦୁଇ।:
+        native: One, two.
+        bases:
+          ଦୁଇ: two
+      ଏକ ଘର।: One house.
+  or-0008:
+    native: big; large
+    notes:
+      n1: 'Before a noun: ବଡ଼ ଘର (baṛa ghara), a big house. Alone, you can say ଏହା ବଡ଼ (ehā baṛa), it is big.'
+    examples:
+      ବଡ଼ ଘର।: A big house.
+      ଏହା ବଡ଼।:
+        native: This is big.
+        bases:
+          ଏହା: this
+  or-0009:
+    native: house; home
+    notes:
+      n1: ଘରେ (ghare) is 'in the house'. The word does not change its stem before the ending.
+    examples:
+      ଏହା ମୋ ଘର।:
+        native: This is my house.
+        bases:
+          ଏହା: this
+      ଘରେ ପାଣି ନାହିଁ।:
+        native: There is no water in the house.
+        bases:
+          ଘରେ: house; in the house
+          ନାହିଁ: no; not
+  or-0010:
+    native: come
+    notes:
+      n1: The imperative. From its stem comes the present ଆସୁଛି (āsuchi), I am coming.
+    examples:
+      ଆସ, ଚାଲ।:
+        native: Come, let's go.
+        bases:
+          ଚାଲ: to go
+      ମୁଁ କାଲି ଆସିବି।:
+        native: I will come tomorrow.
+        bases:
+          କାଲି: tomorrow
+          ଆସିବି: to come

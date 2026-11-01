@@ -1,0 +1,110 @@
+schema: 1
+id: "pl-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pl-0001"
+    target: "tak"
+    ipa: "tak"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Tak, dziękuję.", ipa: "tak dʑɛŋˈkujɛ", bases: [{ word: "dziękuję", ref: "pl-0004" }] }
+      - { target: "Tak, rozumiem.", ipa: "tak rɔˈzumjɛm", bases: [{ word: "rozumiem", base: "rozumieć" }] }
+  - id: "pl-0002"
+    target: "nie"
+    ipa: "ɲɛ"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Nie, dziękuję.", ipa: "ɲɛ dʑɛŋˈkujɛ", bases: [{ word: "dziękuję", ref: "pl-0004" }] }
+      - { target: "Nie rozumiem.", ipa: "ɲɛ rɔˈzumjɛm", bases: [{ word: "rozumiem", base: "rozumieć" }] }
+  - id: "pl-0003"
+    target: "cześć"
+    ipa: "tɕɛɕtɕ"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Cześć! Jak się masz?", ipa: "tɕɛɕtɕ jak ɕɛ maʂ", bases: [{ word: "Jak", base: "jak" }, { word: "się", base: "się" }, { word: "masz", base: "mieć" }] }
+      - { target: "Cześć, do zobaczenia.", ipa: "tɕɛɕtɕ dɔ zɔbaˈtɕɛɲa", bases: [{ word: "do", base: "do" }, { word: "zobaczenia", base: "zobaczenie" }] }
+  - id: "pl-0004"
+    target: "dziękuję"
+    ipa: "dʑɛŋˈkujɛ"
+    pos: "verb"
+    bases: [{ word: "dziękuję", base: "dziękować" }]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Dziękuję bardzo.", ipa: "dʑɛŋˈkujɛ ˈbardzɔ", bases: [{ word: "bardzo", ref: "pl-0010" }] }
+      - { target: "Dziękuję ci.", ipa: "dʑɛŋˈkujɛ tɕi", bases: [{ word: "ci", ref: "pl-0007" }] }
+  - id: "pl-0005"
+    target: "proszę"
+    ipa: "ˈprɔʂɛ"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Poproszę wodę.", ipa: "pɔˈprɔʂɛ ˈvɔdɛ", bases: [{ word: "Poproszę", base: "poprosić" }, { word: "wodę", ref: "pl-0008" }] }
+      - { target: "Proszę bardzo.", ipa: "ˈprɔʂɛ ˈbardzɔ", bases: [{ word: "bardzo", ref: "pl-0010" }] }
+  - id: "pl-0006"
+    target: "ja"
+    ipa: "ja"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ja jestem z Polski.", ipa: "ja ˈjɛstɛm z ˈpɔlskʲi", bases: [{ word: "jestem", base: "być" }, { word: "z", base: "z" }, { word: "Polski", base: "Polska" }] }
+      - { target: "Ja rozumiem.", ipa: "ja rɔˈzumjɛm", bases: [{ word: "rozumiem", base: "rozumieć" }] }
+  - id: "pl-0007"
+    target: "ty"
+    ipa: "tɨ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ty mówisz po polsku.", ipa: "tɨ ˈmuvʲiʂ pɔ ˈpɔlskʊ", bases: [{ word: "mówisz", base: "mówić" }, { word: "po", base: "po" }, { word: "polsku", base: "polski" }] }
+      - { target: "Ty jesteś dobry.", ipa: "tɨ ˈjɛstɛɕ ˈdɔbrɨ", bases: [{ word: "jesteś", base: "być" }] }
+  - id: "pl-0008"
+    target: "woda"
+    ipa: "ˈvɔda"
+    gender: "f"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Woda jest zimna.", ipa: "ˈvɔda jɛst ˈʑimna", bases: [{ word: "jest", base: "być" }, { word: "zimna", base: "zimny" }] }
+      - { target: "Pijesz wodę?", ipa: "ˈpijɛʂ ˈvɔdɛ", bases: [{ word: "Pijesz", base: "pić" }, { word: "wodę", base: "woda" }] }
+  - id: "pl-0009"
+    target: "dobry"
+    ipa: "ˈdɔbrɨ"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Dobry dzień.", ipa: "ˈdɔbrɨ dʑɛɲ", bases: [{ word: "dzień", base: "dzień" }] }
+      - { target: "Dobra woda.", ipa: "ˈdɔbra ˈvɔda", bases: [{ word: "Dobra", base: "dobry" }] }
+  - id: "pl-0010"
+    target: "bardzo"
+    ipa: "ˈbardzɔ"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Bardzo dobrze.", ipa: "ˈbardzɔ ˈdɔbʐɛ", bases: [{ word: "dobrze", ref: "pl-0009" }] }
+      - { target: "Jestem bardzo zmęczony.", ipa: "ˈjɛstɛm ˈbardzɔ zmɛnˈtʂɔnɨ", bases: [{ word: "Jestem", base: "być" }, { word: "zmęczony", base: "zmęczony" }] }

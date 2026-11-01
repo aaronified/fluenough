@@ -1,0 +1,168 @@
+schema: 1
+id: "hu-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "hu", iso639_3: "hun", name: "Hungarian", script: "latin", tts: "hu-HU", icon: "M" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hu-0011"
+    target: "Jó napot."
+    ipa: "joː ˈnɒpot"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Jó", ref: "hu-0009" }, { word: "napot", base: "nap" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0012"
+    target: "Jó reggelt."
+    ipa: "joː ˈrɛɡɛlt"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Jó", ref: "hu-0009" }, { word: "reggelt", base: "reggel" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0013"
+    target: "Jó éjszakát."
+    ipa: "joː ˈeːjsɒkaːt"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Jó", ref: "hu-0009" }, { word: "éjszakát", base: "éjszaka" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0014"
+    target: "Viszontlátásra."
+    ipa: "ˈvisontlaːtaːʃrɒ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Viszontlátásra", base: "viszontlátás" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0015"
+    target: "Bocsánat."
+    ipa: "ˈbotʃaːnɒt"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Bocsánat", base: "bocsánat" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0016"
+    target: "Elnézést kérek."
+    ipa: "ˈɛlneːzeːʃt ˈkeːrɛk"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Elnézést", base: "elnézés" }, { word: "kérek", base: "kér" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0017"
+    target: "Nem értem."
+    ipa: "nɛm ˈeːrtɛm"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Nem", ref: "hu-0002" }, { word: "értem", base: "érteni" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0018"
+    target: "Nem beszélek magyarul."
+    ipa: "nɛm ˈbɛseːlɛk ˈmɒɟɒrul"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Nem", ref: "hu-0002" }, { word: "beszélek", base: "beszélni" }, { word: "magyarul", base: "magyar" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0019"
+    target: "Beszél angolul?"
+    ipa: "ˈbɛseːl ˈɒŋɡolul"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Beszél", base: "beszélni" }, { word: "angolul", base: "angol" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0020"
+    target: "Lassabban, kérem."
+    ipa: "ˈlɒʃːɒbːɒn ˈkeːrɛm"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Lassabban", base: "lassan" }, { word: "kérem", ref: "hu-0005" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0021"
+    target: "Mennyibe kerül?"
+    ipa: "ˈmɛɲːibɛ ˈkɛryl"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Mennyibe", base: "mennyi" }, { word: "kerül", base: "kerül" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0022"
+    target: "A számlát, kérem."
+    ipa: "ɒ ˈsaːmlaːt ˈkeːrɛm"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "A", base: "a" }, { word: "számlát", base: "számla" }, { word: "kérem", ref: "hu-0005" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0023"
+    target: "Segítség!"
+    ipa: "ˈʃɛɡiːtʃeːɡ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Segítség", base: "segítség" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0024"
+    target: "Hol van a vasútállomás?"
+    ipa: "hol vɒn ɒ ˈvɒʃuːtaːlloːmaːʃ"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Hol", base: "hol" }, { word: "van", base: "lenni" }, { word: "a", base: "a" }, { word: "vasútállomás", base: "vasútállomás" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0025"
+    target: "Mit jelent ez?"
+    ipa: "mit ˈjɛlɛnt ɛz"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Mit", base: "mit" }, { word: "jelent", base: "jelent" }, { word: "ez", base: "ez" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0026"
+    target: "Anna vagyok."
+    ipa: "ˈɒnːɒ ˈvɒɟok"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Anna", base: "Anna" }, { word: "vagyok", base: "lenni" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0027"
+    target: "Örvendek."
+    ipa: "ˈørvɛndɛk"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Örvendek", base: "örvend" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0028"
+    target: "Honnan jöttél?"
+    ipa: "ˈhonːɒn ˈjøttel"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Honnan", base: "honnan" }, { word: "jöttél", base: "jön" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0029"
+    target: "Rendben."
+    ipa: "ˈrɛndbɛn"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Rendben", base: "rendben" }]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hu-0030"
+    target: "Jó étvágyat!"
+    ipa: "joː ˈeːtvaːɟɒt"
+    pos: "phrase"
+    phrasebook: true
+    bases: [{ word: "Jó", ref: "hu-0009" }, { word: "étvágyat", base: "étvágy" }]
+    notes:
+      - { id: "n1", kind: "note" }

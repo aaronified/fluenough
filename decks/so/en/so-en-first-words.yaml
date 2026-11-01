@@ -1,0 +1,173 @@
+schema: 1
+id: "so-en-first-words"
+kind: "layer"
+core: "so-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Somali is written in Latin letters: c is a pharyngeal, x a breathy h, kh the sound of German ach. Not yet checked by a Somali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "so-0001":
+    native: "yes"
+    notes:
+      "n1": "Haa is the everyday yes. The no is maya, on the next card."
+    examples:
+      "Haa, mahadsanid.":
+        native: "Yes, thank you."
+        bases:
+          "Haa": "yes"
+          "mahadsanid": "thank you"
+      "Haa, waa sax.":
+        native: "Yes, that's right."
+        bases:
+          "Haa": "yes"
+          "waa": "it is; that is"
+          "sax": "right; correct"
+  "so-0002":
+    native: "no; not"
+    notes:
+      "n1": "Maya is no. Ma before a verb makes it negative, as in ma fahmin, I don't understand."
+    examples:
+      "Maya, mahadsanid.":
+        native: "No, thank you."
+        bases:
+          "Maya": "no"
+          "mahadsanid": "thank you"
+      "Maya, waa biyo.":
+        native: "No, it is water."
+        bases:
+          "Maya": "no"
+          "waa": "it is"
+          "biyo": "water"
+  "so-0003":
+    native: "I; me"
+    notes:
+      "n1": "Aniga is I, on its own or for emphasis. Adiga is you, to one person."
+    examples:
+      "Aniga waa macallin.":
+        native: "I am a teacher."
+        bases:
+          "Aniga": "I"
+          "waa": "am; is"
+          "macallin": "teacher"
+      "Aniga iyo adiga.":
+        native: "Me and you."
+        bases:
+          "Aniga": "I; me"
+          "iyo": "and"
+          "adiga": "you"
+  "so-0004":
+    native: "you (one person)"
+    notes:
+      "n1": "Adiga is you, said to one person. Aniga, on the card before, is I."
+    examples:
+      "Adiga waa macallin?":
+        native: "Are you a teacher?"
+        bases:
+          "Adiga": "you"
+          "waa": "are; is"
+          "macallin": "teacher"
+      "Adiga iyo aniga.":
+        native: "You and me."
+        bases:
+          "Adiga": "you"
+          "iyo": "and"
+          "aniga": "I"
+  "so-0005":
+    native: "water"
+    notes:
+      "n1": "Biyo is water. Qabow is cold and kulul is hot: biyo qabow is cold water."
+    examples:
+      "Biyo qabow.":
+        native: "Cold water."
+        bases:
+          "Biyo": "water"
+          "qabow": "cold"
+      "Biyo kulul.":
+        native: "Hot water."
+        bases:
+          "Biyo": "water"
+          "kulul": "hot"
+  "so-0006":
+    native: "good"
+    notes:
+      "n1": "Wanaagsan is good. The short form waa wanaagsan is it is good."
+    examples:
+      "Waa wanaagsan.":
+        native: "It is good."
+        bases:
+          "Waa": "it is"
+          "wanaagsan": "good"
+      "Guriga waa wanaagsan.":
+        native: "The house is good."
+        bases:
+          "Guriga": "house (the)"
+          "waa": "is"
+          "wanaagsan": "good"
+  "so-0007":
+    native: "one"
+    notes:
+      "n1": "Kow is one, as in counting. Labo, two, follows on the next card."
+    examples:
+      "Kow, labo, saddex.":
+        native: "One, two, three."
+        bases:
+          "Kow": "one"
+          "labo": "two"
+          "saddex": "three"
+      "Shaah kow.":
+        native: "One tea."
+        bases:
+          "Shaah": "tea"
+          "kow": "one"
+  "so-0008":
+    native: "two"
+    notes:
+      "n1": "Labo is two. It is the counting form, as kow is one."
+    examples:
+      "Labo qof.":
+        native: "Two people."
+        bases:
+          "Labo": "two"
+          "qof": "person"
+      "Labo shaah, fadlan.":
+        native: "Two teas, please."
+        bases:
+          "Labo": "two"
+          "shaah": "tea"
+          "fadlan": "please"
+  "so-0009":
+    native: "here"
+    notes:
+      "n1": "Halkan is here. Halkaas is there, near the listener."
+    examples:
+      "Halkan waa biyo.":
+        native: "Here is water."
+        bases:
+          "Halkan": "here"
+          "waa": "is"
+          "biyo": "water"
+      "Halkan waa guriga.":
+        native: "Here is the house."
+        bases:
+          "Halkan": "here"
+          "waa": "is"
+          "guriga": "house (the)"
+  "so-0010":
+    native: "and; with"
+    notes:
+      "n1": "Iyo joins words and clauses, as 'and' does, and it also means 'with'."
+    examples:
+      "Shaah iyo caano.":
+        native: "Tea with milk."
+        bases:
+          "Shaah": "tea"
+          "iyo": "and; with"
+          "caano": "milk"
+      "Labo iyo kow.":
+        native: "Two and one."
+        bases:
+          "Labo": "two"
+          "iyo": "and"
+          "kow": "one"

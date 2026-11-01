@@ -1,0 +1,159 @@
+schema: 1
+id: "ca-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ca", iso639_3: "cat", name: "Catalan", script: "latin", tts: "ca-ES", icon: "Ca" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ca-0011"
+    target: "hola"
+    ipa: "ˈola"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "hola", base: "hola" }]
+  - id: "ca-0012"
+    target: "bon dia"
+    ipa: "bon ˈdia"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "bon", base: "bo" }, { word: "dia", base: "dia" }]
+  - id: "ca-0013"
+    target: "bona nit"
+    ipa: "ˈbonə ˈnit"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "bona", base: "bo" }, { word: "nit", base: "nit" }]
+  - id: "ca-0014"
+    target: "adéu"
+    ipa: "əˈðɛw"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "adéu", base: "adéu" }]
+  - id: "ca-0015"
+    target: "gràcies"
+    ipa: "ˈɡɾasiəs"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "gràcies", base: "gràcies" }]
+  - id: "ca-0016"
+    target: "moltes gràcies"
+    ipa: "ˈmɔltəs ˈɡɾasiəs"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "moltes", base: "molt" }, { word: "gràcies", base: "gràcies" }]
+  - id: "ca-0017"
+    target: "per favor"
+    ipa: "pər fəˈβo"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "per", base: "per" }, { word: "favor", base: "favor" }]
+  - id: "ca-0018"
+    target: "perdó"
+    ipa: "pərˈðo"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "perdó", base: "perdó" }]
+  - id: "ca-0019"
+    target: "ho sento"
+    ipa: "u ˈsɛntu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "ho", base: "ho" }, { word: "sento", base: "sentir" }]
+  - id: "ca-0020"
+    target: "no ho entenc"
+    ipa: "nu u əŋˈtɛŋk"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "no", base: "no" }, { word: "ho", base: "ho" }, { word: "entenc", base: "entendre" }]
+  - id: "ca-0021"
+    target: "no parlo català"
+    ipa: "nu ˈpaɾlu kəˈtalə"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "no", base: "no" }, { word: "parlo", base: "parlar" }, { word: "català", base: "català" }]
+  - id: "ca-0022"
+    target: "parla més lent, per favor"
+    ipa: "ˈpaɾlə mɛs lɛn pər fəˈβo"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "parla", base: "parlar" }, { word: "més", base: "més" }, { word: "lent", base: "lent" }, { word: "per", base: "per" }, { word: "favor", base: "favor" }]
+  - id: "ca-0023"
+    target: "quant costa?"
+    ipa: "kwan ˈkɔstə"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "quant", base: "quant" }, { word: "costa", base: "costar" }]
+  - id: "ca-0024"
+    target: "on és el lavabo?"
+    ipa: "on əz əl ləˈβaβu"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "on", base: "on" }, { word: "és", base: "ser" }, { word: "el", base: "el" }, { word: "lavabo", base: "lavabo" }]
+  - id: "ca-0025"
+    target: "ajuda!"
+    ipa: "əˈdʒuðə"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "ajuda", base: "ajuda" }]
+  - id: "ca-0026"
+    target: "com et dius?"
+    ipa: "kom ət ˈdius"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "com", base: "com" }, { word: "et", base: "tu" }, { word: "dius", base: "dir" }]
+  - id: "ca-0027"
+    target: "em dic Marc"
+    ipa: "əm dik ˈmark"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "em", base: "jo" }, { word: "dic", base: "dir" }, { word: "Marc", base: "Marc" }]
+  - id: "ca-0028"
+    target: "encantat"
+    ipa: "əŋkənˈtat"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "encantat", base: "encantat" }]
+  - id: "ca-0029"
+    target: "no ho sé"
+    ipa: "nu u se"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "no", base: "no" }, { word: "ho", base: "ho" }, { word: "sé", base: "saber" }]
+  - id: "ca-0030"
+    target: "pots repetir?"
+    ipa: "pɔts rəpəˈtiɾ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "pots", base: "poder" }, { word: "repetir", base: "repetir" }]
+  - id: "ca-0031"
+    target: "tot bé?"
+    ipa: "tot ˈbe"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tot", base: "tot" }, { word: "bé", base: "bé" }]

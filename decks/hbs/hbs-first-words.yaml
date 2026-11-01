@@ -1,0 +1,120 @@
+schema: 1
+id: "hbs-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "hbs", iso639_3: "hbs", name: "Serbo-Croatian", script: "latin", scripts: ["latin", "cyrillic"], tts: "sr-RS", icon: "S" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hbs-0001"
+    target: "da"
+    ipa: "da"
+    pos: "particle"
+    target_scripts: { cyrillic: "да" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Da, hvala.", ipa: "da ˈxʋala", bases: [{ word: "hvala", ref: "hbs-0004" }] }
+      - { target: "Da, znam.", ipa: "da znam", bases: [{ word: "znam", base: "znati" }] }
+  - id: "hbs-0002"
+    target: "ne"
+    ipa: "ne"
+    pos: "particle"
+    target_scripts: { cyrillic: "не" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ne, hvala.", ipa: "ne ˈxʋala", bases: [{ word: "hvala", ref: "hbs-0004" }] }
+      - { target: "Ne znam.", ipa: "ne znam", bases: [{ word: "znam", base: "znati" }] }
+  - id: "hbs-0003"
+    target: "zdravo"
+    ipa: "ˈzdravo"
+    pos: "other"
+    target_scripts: { cyrillic: "здраво" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Zdravo, kako si?", ipa: "ˈzdravo ˈkako si", bases: [{ word: "kako", base: "kako" }, { word: "si", base: "biti" }] }
+      - { target: "Zdravo, prijatelju.", ipa: "ˈzdravo prijaˈtelʲu", bases: [{ word: "prijatelju", base: "prijatelj" }] }
+  - id: "hbs-0004"
+    target: "hvala"
+    ipa: "ˈxʋala"
+    pos: "other"
+    target_scripts: { cyrillic: "хвала" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Hvala lepa.", ipa: "ˈxʋala ˈlepa", bases: [{ word: "lepa", base: "lep" }] }
+      - { target: "Hvala ti.", ipa: "ˈxʋala ti", bases: [{ word: "ti", ref: "hbs-0007" }] }
+  - id: "hbs-0005"
+    target: "molim"
+    ipa: "ˈmolim"
+    pos: "other"
+    target_scripts: { cyrillic: "молим" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Molim te, sedi.", ipa: "ˈmolim te ˈsedi", bases: [{ word: "te", ref: "hbs-0007" }, { word: "sedi", base: "sedeti" }] }
+      - { target: "Molim, izvolite.", ipa: "ˈmolim izˈvolite", bases: [{ word: "izvolite", base: "izvoliti" }] }
+  - id: "hbs-0006"
+    target: "ja"
+    ipa: "ja"
+    pos: "pronoun"
+    target_scripts: { cyrillic: "ја" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ja sam iz Srbije.", ipa: "ja sam iz ˈsrbije", bases: [{ word: "sam", base: "biti" }, { word: "iz", base: "iz" }, { word: "Srbije", base: "Srbija" }] }
+      - { target: "Ja znam.", ipa: "ja znam", bases: [{ word: "znam", base: "znati" }] }
+  - id: "hbs-0007"
+    target: "ti"
+    ipa: "ti"
+    pos: "pronoun"
+    target_scripts: { cyrillic: "ти" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ti govoriš srpski?", ipa: "ti ɡoˈvoriʃ ˈsrpski", bases: [{ word: "govoriš", base: "govoriti" }, { word: "srpski", base: "srpski" }] }
+      - { target: "Ti si dobar.", ipa: "ti si ˈdobar", bases: [{ word: "si", base: "biti" }] }
+  - id: "hbs-0008"
+    target: "voda"
+    ipa: "ˈvoda"
+    gender: "f"
+    pos: "noun"
+    target_scripts: { cyrillic: "вода" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Voda je hladna.", ipa: "ˈvoda je ˈxladna", bases: [{ word: "je", base: "biti" }, { word: "hladna", base: "hladan" }] }
+      - { target: "Hoćeš vodu?", ipa: "ˈxotɕeʃ ˈvodu", bases: [{ word: "Hoćeš", base: "htjeti" }, { word: "vodu", base: "voda" }] }
+  - id: "hbs-0009"
+    target: "dobar"
+    ipa: "ˈdobar"
+    pos: "adj"
+    target_scripts: { cyrillic: "добар" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Dobar dan.", ipa: "ˈdobar dan", bases: [{ word: "dan", base: "dan" }] }
+      - { target: "Dobra voda.", ipa: "ˈdobra ˈvoda", bases: [{ word: "Dobra", base: "dobar" }] }
+  - id: "hbs-0010"
+    target: "vrlo"
+    ipa: "ˈvrlo"
+    pos: "adv"
+    target_scripts: { cyrillic: "врло" }
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Vrlo dobro.", ipa: "ˈvrlo ˈdobro", bases: [{ word: "dobro", ref: "hbs-0009" }] }
+      - { target: "Vrlo sam umoran.", ipa: "ˈvrlo sam ˈumoran", bases: [{ word: "sam", base: "biti" }, { word: "umoran", base: "umoran" }] }

@@ -1,0 +1,156 @@
+schema: 1
+id: "th-en-first-words"
+kind: "layer"
+core: "th-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence, in Thai script with RTGS readings and tone marks. Greetings and thanks are in the phrasebook. Not yet checked by a Thai speaker: please report any mistake."
+cards:
+  "th-0001":
+    native: "yes"
+    notes:
+      "n1": "ใช่ (châi) is yes, the answer that agrees with a question. The opposite is ไม่ใช่ (mâi châi), no, it is not."
+    examples:
+      "ใช่ ขอบคุณ":
+        native: "Yes, thank you."
+        bases:
+          "ขอบคุณ": "thank you"
+      "ใช่ ฉันเป็นนักเรียน":
+        native: "Yes, I am a student."
+        bases:
+          "เป็น": "am"
+          "นักเรียน": "student"
+  "th-0002":
+    native: "no; not"
+    notes:
+      "n1": "ไม่ (mâi) is no, and the word that makes a verb negative when it comes before it: ไม่รู้ (mâi rûu), I don't know."
+    examples:
+      "ไม่ ขอบคุณ":
+        native: "No, thank you."
+        bases:
+          "ขอบคุณ": "thank you"
+      "ฉันไม่รู้":
+        native: "I don't know."
+        bases:
+          "รู้": "know"
+  "th-0003":
+    native: "I"
+    notes:
+      "n1": "ฉัน (chǎn) is I, used by women and by many people in everyday speech. Men say ผม (phǒm) in polite speech."
+    examples:
+      "ฉันชอบกาแฟ":
+        native: "I like coffee."
+        bases:
+          "ชอบ": "like"
+          "กาแฟ": "coffee"
+      "ฉันไม่เข้าใจ":
+        native: "I don't understand."
+        bases:
+          "เข้าใจ": "understand"
+  "th-0004":
+    native: "you (polite)"
+    notes:
+      "n1": "คุณ (khun) is you, in polite speech. Before a first name it is Mr or Ms: คุณสมชาย (khun Somchai)."
+    examples:
+      "คุณเป็นคนไทยไหม":
+        native: "Are you Thai?"
+        bases:
+          "เป็น": "are"
+          "คนไทย": "Thai person"
+          "ไหม": "question particle"
+      "คุณชื่ออะไร":
+        native: "What is your name?"
+        bases:
+          "ชื่อ": "name"
+          "อะไร": "what"
+  "th-0005":
+    native: "and"
+    notes:
+      "n1": "และ (láe) is and, mostly in writing. In speech people use กับ (kàp) for and, as in กาแฟกับชา (kafae kàp chaa), coffee and tea."
+    examples:
+      "กาแฟและชา":
+        native: "Coffee and tea."
+        bases:
+          "กาแฟ": "coffee"
+          "ชา": "tea"
+      "ฉันและคุณ":
+        native: "Me and you."
+        bases:
+          "ฉัน": "I"
+          "คุณ": "you"
+  "th-0006":
+    native: "or"
+    notes:
+      "n1": "หรือ (rǔe) is or. In a question it asks for a choice: ชา หรือ กาแฟ (chaa rǔe kafae), tea or coffee?"
+    examples:
+      "ชา หรือ กาแฟ?":
+        native: "Tea or coffee?"
+        bases:
+          "ชา": "tea"
+          "กาแฟ": "coffee"
+      "วันนี้ หรือ พรุ่งนี้?":
+        native: "Today or tomorrow?"
+        bases:
+          "วันนี้": "today"
+          "พรุ่งนี้": "tomorrow"
+  "th-0007":
+    native: "but"
+    notes:
+      "n1": "แต่ (tàe) is but. It comes between two parts of a sentence that go against each other."
+    examples:
+      "ดี แต่ แพง":
+        native: "Good, but expensive."
+        bases:
+          "แพง": "expensive"
+      "ฉันชอบ แต่ ไม่มีเวลา":
+        native: "I like it, but I have no time."
+        bases:
+          "ชอบ": "like"
+          "มี": "have"
+          "เวลา": "time"
+  "th-0008":
+    native: "good"
+    notes:
+      "n1": "ดี (dii) is good. Asked how someone is, the answer is สบายดี (sabaai dii), I am well."
+    examples:
+      "กาแฟดีมาก":
+        native: "The coffee is very good."
+        bases:
+          "กาแฟ": "coffee"
+          "มาก": "very"
+      "สบายดีไหม":
+        native: "Are you well?"
+        bases:
+          "สบาย": "well, comfortable"
+          "ไหม": "question particle"
+  "th-0009":
+    native: "one"
+    notes:
+      "n1": "หนึ่ง (nùeng) is one. With a counter word it counts things: กาแฟหนึ่งแก้ว (kafae nùeng kâeo), one cup of coffee."
+    examples:
+      "กาแฟหนึ่งแก้ว":
+        native: "One cup of coffee."
+        bases:
+          "กาแฟ": "coffee"
+          "แก้ว": "cup"
+      "หนึ่ง สอง สาม":
+        native: "One, two, three."
+        bases:
+          "สอง": "two"
+          "สาม": "three"
+  "th-0010":
+    native: "water"
+    notes:
+      "n1": "น้ำ (nám) is water. Cold water is น้ำเย็น (nám yen), and hot water is น้ำร้อน (nám rôn)."
+    examples:
+      "ขอ น้ำ หน่อย":
+        native: "Some water, please."
+        bases:
+          "ขอ": "ask for"
+          "หน่อย": "a little"
+      "ฉันชอบน้ำเย็น":
+        native: "I like cold water."
+        bases:
+          "ชอบ": "like"
+          "เย็น": "cold"

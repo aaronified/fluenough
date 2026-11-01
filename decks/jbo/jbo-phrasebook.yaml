@@ -1,0 +1,283 @@
+schema: 1
+id: jbo-phrasebook
+part: core
+kind: vocab
+language:
+  code: jbo
+  iso639_3: jbo
+  name: Lojban
+  script: latin
+  icon: Lo
+license: CC-BY-SA-4.0
+tags:
+- beginner
+- unreviewed
+cards:
+- id: jbo-0011
+  target: coi
+  ipa: koi
+  pos: other
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: coi
+    base: coi
+- id: jbo-0012
+  target: co'o
+  ipa: koho
+  pos: other
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: co'o
+    base: co'o
+- id: jbo-0013
+  target: ki'e
+  ipa: kihe
+  pos: other
+  tags:
+  - polite
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: ki'e
+    base: ki'e
+- id: jbo-0014
+  target: .u'u
+  ipa: uhu
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: u'u
+    base: u'u
+- id: jbo-0015
+  target: .e'o
+  ipa: ehɔ
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: e'o
+    base: e'o
+- id: jbo-0016
+  target: je'e
+  ipa: dʒehe
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: je'e
+    base: je'e
+- id: jbo-0017
+  target: mi'e .alis.
+  ipa: mihe alis
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi'e
+    base: mi'e
+  - word: alis
+    base: alis
+- id: jbo-0018
+  target: do mo
+  ipa: do mo
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: do
+    ref: jbo-0004
+  - word: mo
+    base: mo
+- id: jbo-0019
+  target: mi na jimpe
+  ipa: mi na dʒimpe
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: na
+    base: na
+  - word: jimpe
+    base: jimpe
+- id: jbo-0020
+  target: mi na djuno
+  ipa: mi na dʒuno
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: na
+    base: na
+  - word: djuno
+    base: djuno
+- id: jbo-0021
+  target: .ui
+  ipa: ui
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: ui
+    base: ui
+- id: jbo-0022
+  target: ko klama do
+  ipa: ko klama do
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: ko
+    base: ko
+  - word: klama
+    ref: jbo-0010
+  - word: do
+    ref: jbo-0004
+- id: jbo-0023
+  target: xu do xamgu
+  ipa: xu do xamɡu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: xu
+    base: xu
+- id: jbo-0024
+  target: mi nelci do
+  ipa: mi nelci do
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: nelci
+    base: nelci
+  - word: do
+    ref: jbo-0004
+- id: jbo-0025
+  target: mi pinxe djacu
+  ipa: mi pinɕe dʒaʃu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: pinxe
+    base: pinxe
+  - word: djacu
+    ref: jbo-0005
+- id: jbo-0026
+  target: mi klama do
+  ipa: mi klama do
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: klama
+    ref: jbo-0010
+  - word: do
+    ref: jbo-0004
+- id: jbo-0027
+  target: mi ba klama
+  ipa: mi ba klama
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: ba
+    base: ba
+  - word: klama
+    ref: jbo-0010
+- id: jbo-0028
+  target: mi pu klama
+  ipa: mi pu klama
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: pu
+    base: pu
+  - word: klama
+    ref: jbo-0010
+- id: jbo-0029
+  target: mi tavla do
+  ipa: mi tavla do
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: mi
+    ref: jbo-0003
+  - word: tavla
+    base: tavla
+  - word: do
+    ref: jbo-0004
+- id: jbo-0030
+  target: ko sisti
+  ipa: ko sisti
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: ko
+    base: ko
+  - word: sisti
+    base: sisti

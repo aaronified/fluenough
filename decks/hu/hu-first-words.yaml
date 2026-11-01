@@ -1,0 +1,109 @@
+schema: 1
+id: "hu-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "hu", iso639_3: "hun", name: "Hungarian", script: "latin", tts: "hu-HU", icon: "M" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hu-0001"
+    target: "igen"
+    ipa: "ˈiɡɛn"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Igen, köszönöm.", ipa: "ˈiɡɛn ˈkøsønøm", bases: [{ word: "köszönöm", ref: "hu-0004" }] }
+      - { target: "Igen, értem.", ipa: "ˈiɡɛn ˈeːrtɛm", bases: [{ word: "értem", base: "érteni" }] }
+  - id: "hu-0002"
+    target: "nem"
+    ipa: "nɛm"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Nem, köszönöm.", ipa: "nɛm ˈkøsønøm", bases: [{ word: "köszönöm", ref: "hu-0004" }] }
+      - { target: "Nem tudom.", ipa: "nɛm ˈtudom", bases: [{ word: "tudom", base: "tudni" }] }
+  - id: "hu-0003"
+    target: "szia"
+    ipa: "ˈsiɒ"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Szia, hogy vagy?", ipa: "ˈsiɒ hoɟ vɒɟ", bases: [{ word: "hogy", base: "hogy" }, { word: "vagy", base: "lenni" }] }
+      - { target: "Szia, barátom!", ipa: "ˈsiɒ ˈbaraːtom", bases: [{ word: "barátom", base: "barát" }] }
+  - id: "hu-0004"
+    target: "köszönöm"
+    ipa: "ˈkøsønøm"
+    pos: "verb"
+    bases: [{ word: "köszönöm", base: "köszönni" }]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Köszönöm szépen.", ipa: "ˈkøsønøm ˈseːpɛn", bases: [{ word: "szépen", base: "szép" }] }
+      - { target: "Köszönöm, jól vagyok.", ipa: "ˈkøsønøm ˈjoːl ˈvɒɟok", bases: [{ word: "jól", base: "jó" }, { word: "vagyok", base: "lenni" }] }
+  - id: "hu-0005"
+    target: "kérem"
+    ipa: "ˈkeːrɛm"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Egy vizet, kérem.", ipa: "ɛɟ ˈviːzɛt ˈkeːrɛm", bases: [{ word: "Egy", base: "egy" }, { word: "vizet", ref: "hu-0008" }] }
+      - { target: "Kérem, üljön le.", ipa: "ˈkeːrɛm ˈyljøn lɛ", bases: [{ word: "üljön", base: "ülni" }, { word: "le", base: "le" }] }
+  - id: "hu-0006"
+    target: "én"
+    ipa: "eːn"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Én magyar vagyok.", ipa: "eːn ˈmɒɟɒr ˈvɒɟok", bases: [{ word: "magyar", base: "magyar" }, { word: "vagyok", base: "lenni" }] }
+      - { target: "Én is értem.", ipa: "eːn iʃ ˈeːrtɛm", bases: [{ word: "is", base: "is" }, { word: "értem", base: "érteni" }] }
+  - id: "hu-0007"
+    target: "te"
+    ipa: "tɛ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Te beszélsz angolul?", ipa: "tɛ ˈbɛseːlʃ ˈɒŋɡolul", bases: [{ word: "beszélsz", base: "beszélni" }, { word: "angolul", base: "angol" }] }
+      - { target: "Te jó vagy.", ipa: "tɛ joː vɒɟ", bases: [{ word: "jó", ref: "hu-0009" }, { word: "vagy", base: "lenni" }] }
+  - id: "hu-0008"
+    target: "víz"
+    ipa: "viːz"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "A víz hideg.", ipa: "ɒ viːz ˈhidɛɡ", bases: [{ word: "A", base: "a" }, { word: "hideg", base: "hideg" }] }
+      - { target: "Kérek vizet.", ipa: "ˈkeːrɛk ˈviːzɛt", bases: [{ word: "Kérek", base: "kér" }, { word: "vizet", base: "víz" }] }
+  - id: "hu-0009"
+    target: "jó"
+    ipa: "joː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Ez egy jó ötlet.", ipa: "ɛz ɛɟ joː ˈøtlɛt", bases: [{ word: "Ez", base: "ez" }, { word: "egy", base: "egy" }, { word: "ötlet", base: "ötlet" }] }
+      - { target: "Jó a víz.", ipa: "joː ɒ viːz", bases: [{ word: "a", base: "a" }, { word: "víz", ref: "hu-0008" }] }
+  - id: "hu-0010"
+    target: "nagyon"
+    ipa: "ˈnɒɟoːn"
+    pos: "adv"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "Nagyon jó.", ipa: "ˈnɒɟoːn joː", bases: [{ word: "jó", ref: "hu-0009" }] }
+      - { target: "Nagyon fáradt vagyok.", ipa: "ˈnɒɟoːn ˈfaːrɒdt ˈvɒɟok", bases: [{ word: "fáradt", base: "fáradt" }, { word: "vagyok", base: "lenni" }] }

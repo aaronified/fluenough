@@ -147,11 +147,10 @@ alphabet: []
 units:
   # 1. The phrasebook, taught whole from the first lesson. mai-first-words
   # joins this unit.
-  - planned: { id: "mai-phrasebook", theme: "first-words", words: 8 }
-    listening_passages:
-      - { id: "first-meeting", text: { "en": "Two people greet each other with pranam and say their names" } }
-    reading_passages:
-      - { id: "welcome-card", text: { "en": "A welcome card: hello, thank you and please" } }
+  # The first words are written: mai-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["mai-phrasebook", "mai-first-words", "*"]
+    words: 10
   # 2. The first word units. The sounds: the retroflex against the dental,
   # the aspirates, ड़ (ṛa) against ड (ḍa), the vowels ऐ (ai) and औ (au), the
   # nasal vowels of अहाँ (ahā̃), the short final -i of अछि (achi), and the

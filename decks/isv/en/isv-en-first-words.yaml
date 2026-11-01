@@ -1,0 +1,137 @@
+schema: 1
+id: isv-en-first-words
+kind: layer
+core: isv-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, go. Latin script, with the Cyrillic spelling in each card. Not yet checked by an Interslavic speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  isv-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer 'yes', as in most Slavic languages.
+    examples:
+      Da, ja idu.:
+        native: Yes, I am going.
+        bases:
+          idu: to go
+      Da, voda je dobra.:
+        native: Yes, the water is good.
+        bases:
+          je: to be
+  isv-0002:
+    native: no; not
+    notes:
+      n1: 'The short answer ''no'', and the word that makes a verb negative: ne idu, I am not going.'
+    examples:
+      Ne, ja ne idu.:
+        native: No, I am not going.
+        bases:
+          idu: to go
+      Ta voda ne je dobra.:
+        native: This water is not good.
+        bases:
+          ta: this (feminine)
+          je: to be
+  isv-0003:
+    native: I; me
+    notes:
+      n1: The first person. Interslavic often leaves it out, since the verb shows who is speaking.
+    examples:
+      Ja imam vodu.:
+        native: I have water.
+        bases:
+          imam: to have
+      Ja ne imam vodu.:
+        native: I do not have water.
+        bases:
+          imam: to have
+  isv-0004:
+    native: you (polite); you (plural)
+    notes:
+      n1: Used for an elder, a stranger or more than one person. A close friend, or a child, is addressed as ty.
+    examples:
+      Vy ste dobri.:
+        native: You are good.
+        bases:
+          ste: to be
+      Vy idete?:
+        native: Are you going?
+        bases:
+          idete: to go
+  isv-0005:
+    native: water
+    notes:
+      n1: The everyday word for water.
+    examples:
+      Voda je dobra.:
+        native: Water is good.
+        bases:
+          je: to be
+      Ja imam vodu.:
+        native: I have water.
+        bases:
+          imam: to have
+          vodu: water
+  isv-0006:
+    native: good
+    notes:
+      n1: 'Its ending agrees with the noun: dobry dom (a good house), dobra voda (good water), dobri (for several or for vy).'
+    examples:
+      Dobry dom.: A good house.
+      Dobry den!:
+        native: Good day!
+        bases:
+          den: day
+  isv-0007:
+    native: one
+    notes:
+      n1: 'The number 1. It agrees with the noun, as ones do: jedna voda (one water, feminine).'
+    examples:
+      Jedin, dva.:
+        native: One, two.
+        bases:
+          dva: two
+      Jedin dom.: One house.
+  isv-0008:
+    native: big; large
+    notes:
+      n1: 'Its ending agrees with the noun, as dobry does: veliky dom (a big house).'
+    examples:
+      Veliky dom.: A big house.
+      Dom je veliky.:
+        native: The house is big.
+        bases:
+          je: to be
+  isv-0009:
+    native: house; home
+    notes:
+      n1: A masculine noun. Its locative is v domu (in the house), with the ending -u.
+    examples:
+      Ja imam dom.:
+        native: I have a house.
+        bases:
+          imam: to have
+      Dom je dobry.:
+        native: The house is good.
+        bases:
+          je: to be
+  isv-0010:
+    native: go!
+    notes:
+      n1: 'The imperative of idti, to go. Its other forms: idu (I go), idete (you go), idemo (let''s go).'
+    examples:
+      Idi, idemo!:
+        native: Go, let's go!
+        bases:
+          idemo: to go
+      Idi domoj.:
+        native: Go home.
+        bases:
+          domoj: home; homewards

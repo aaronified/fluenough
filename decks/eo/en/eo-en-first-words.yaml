@@ -1,0 +1,183 @@
+schema: 1
+id: "eo-en-first-words"
+kind: "layer"
+core: "eo-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes and no, I and you, water, good, one and two, here, and. Esperanto is a constructed language with one standard. Not yet checked by an Esperanto speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "eo-0001":
+    native: "yes"
+    notes:
+      "n1": "Jes is yes. The no is ne, on the next card."
+    examples:
+      "Jes, mi komprenas.":
+        native: "Yes, I understand."
+        bases:
+          "Jes": "yes"
+          "mi": "I"
+          "komprenas": "to understand (I understand)"
+      "Jes, dankon.":
+        native: "Yes, thank you."
+        bases:
+          "Jes": "yes"
+          "dankon": "thanks"
+  "eo-0002":
+    native: "no; not"
+    notes:
+      "n1": "Ne is no, and it goes before a verb to make it negative: mi ne komprenas, I don't understand."
+    examples:
+      "Ne, dankon.":
+        native: "No, thank you."
+        bases:
+          "Ne": "no"
+          "dankon": "thanks"
+      "Mi ne havas akvon.":
+        native: "I don't have water."
+        bases:
+          "Mi": "I"
+          "ne": "not"
+          "havas": "to have (I have)"
+          "akvon": "water"
+  "eo-0003":
+    native: "I; me"
+    notes:
+      "n1": "Mi is I. Esperanto endings are regular: -o for a noun, -a for an adjective, -as for the present tense."
+    examples:
+      "Mi estas instruisto.":
+        native: "I am a teacher."
+        bases:
+          "Mi": "I"
+          "estas": "to be (is)"
+          "instruisto": "teacher"
+      "Mi trinkas akvon.":
+        native: "I drink water."
+        bases:
+          "Mi": "I"
+          "trinkas": "to drink (drinks)"
+          "akvon": "water"
+  "eo-0004":
+    native: "you"
+    notes:
+      "n1": "Vi is you, for one person or for many. Esperanto has no separate plural you."
+    examples:
+      "Vi estas bona.":
+        native: "You are good."
+        bases:
+          "Vi": "you"
+          "estas": "to be (are)"
+          "bona": "good"
+      "Ĉu vi havas akvon?":
+        native: "Do you have water?"
+        bases:
+          "Ĉu": "question word"
+          "vi": "you"
+          "havas": "to have (have)"
+          "akvon": "water"
+  "eo-0005":
+    native: "water"
+    notes:
+      "n1": "Akvo is water. The stress falls on the first syllable: AK-vo."
+    examples:
+      "Akvo estas freŝa.":
+        native: "The water is fresh."
+        bases:
+          "Akvo": "water"
+          "estas": "is"
+          "freŝa": "fresh"
+      "Mi bezonas akvon.":
+        native: "I need water."
+        bases:
+          "Mi": "I"
+          "bezonas": "to need (need)"
+          "akvon": "water"
+  "eo-0006":
+    native: "good"
+    notes:
+      "n1": "Bona is good. Bone is well: Mi fartas bone, I am well."
+    examples:
+      "Bona tago.":
+        native: "Good day."
+        bases:
+          "Bona": "good"
+          "tago": "day"
+      "Bona libro.":
+        native: "A good book."
+        bases:
+          "Bona": "good"
+          "libro": "book"
+  "eo-0007":
+    native: "one"
+    notes:
+      "n1": "Unu is one. Du, two, follows on the next card."
+    examples:
+      "Unu, du, tri.":
+        native: "One, two, three."
+        bases:
+          "Unu": "one"
+          "du": "two"
+          "tri": "three"
+      "Mi havas unu fraton.":
+        native: "I have one brother."
+        bases:
+          "Mi": "I"
+          "havas": "to have (have)"
+          "unu": "one"
+          "fraton": "brother"
+  "eo-0008":
+    native: "two"
+    notes:
+      "n1": "Du is two. Tri, three, follows it."
+    examples:
+      "Du katoj.":
+        native: "Two cats."
+        bases:
+          "Du": "two"
+          "katoj": "cat"
+      "Mi havas du infanojn.":
+        native: "I have two children."
+        bases:
+          "Mi": "I"
+          "havas": "to have (have)"
+          "du": "two"
+          "infanojn": "child"
+  "eo-0009":
+    native: "here"
+    notes:
+      "n1": "Ĉi tie is here, and tie alone is there."
+    bases:
+      "Ĉi": "this"
+      "tie": "there"
+    examples:
+      "Venu ĉi tien.":
+        native: "Come here."
+        bases:
+          "Venu": "to come (come)"
+          "ĉi": "this"
+          "tien": "there"
+      "Mi estas ĉi tie.":
+        native: "I am here."
+        bases:
+          "Mi": "I"
+          "estas": "to be (am)"
+          "ĉi": "this"
+          "tie": "there"
+  "eo-0010":
+    native: "and"
+    notes:
+      "n1": "Kaj joins words and clauses, as 'and' does in English."
+    examples:
+      "Pano kaj vino.":
+        native: "Bread and wine."
+        bases:
+          "Pano": "bread"
+          "kaj": "and"
+          "vino": "wine"
+      "Mi kaj vi.":
+        native: "Me and you."
+        bases:
+          "Mi": "I"
+          "kaj": "and"
+          "vi": "you"

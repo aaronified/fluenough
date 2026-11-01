@@ -1,0 +1,141 @@
+schema: 1
+id: pa-en-first-words
+kind: layer
+core: pa-first-words
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: First words
+description: 'Ten words to start with: yes and no, I and you, water, good, one, big, house, come. Eastern Punjabi in Gurmukhi. Not yet checked by a Punjabi speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  pa-0001:
+    native: 'yes'
+    notes:
+      n1: The short answer 'yes'. ਹਾਂ (hāṁ) also means 'am', as in ਮੈਂ ਹਾਂ (maiṁ hāṁ), I am.
+    examples:
+      ਹਾਂ, ਮੈਂ ਆ ਰਿਹਾ ਹਾਂ।:
+        native: Yes, I am coming.
+        bases:
+          ਰਿਹਾ: to be (doing something now)
+      ਹਾਂ, ਪਾਣੀ ਚੰਗਾ ਹੈ।:
+        native: Yes, the water is good.
+        bases:
+          ਹੈ: to be
+  pa-0002:
+    native: no; not
+    notes:
+      n1: 'The short answer ''no'', and the negative of a verb: ਪਾਣੀ ਨਹੀਂ ਹੈ (pāṇī nahīṁ hai), there is no water.'
+    examples:
+      ਪਾਣੀ ਨਹੀਂ ਹੈ।:
+        native: There is no water.
+        bases:
+          ਹੈ: to be
+      ਮੈਂ ਨਹੀਂ ਆਵਾਂਗਾ।:
+        native: I will not come.
+        bases:
+          ਆਵਾਂਗਾ: to come
+  pa-0003:
+    native: I; me
+    notes:
+      n1: The first person. Punjabi often leaves it out, since the verb shows who is speaking.
+    examples:
+      ਮੈਂ ਪਾਣੀ ਪੀਂਦਾ ਹਾਂ।:
+        native: I am drinking water.
+        bases:
+          ਪੀਂਦਾ: to drink
+      ਮੈਂ ਠੀਕ ਹਾਂ।:
+        native: I am fine.
+        bases:
+          ਠੀਕ: fine; right
+  pa-0004:
+    native: you (polite); you (plural)
+    notes:
+      n1: Used for an elder, a stranger or more than one person. A close friend is addressed with ਤੂੰ (tūṁ).
+    examples:
+      ਤੁਸੀਂ ਆ ਰਹੇ ਹੋ?:
+        native: Are you coming?
+        bases:
+          ਰਹੇ: to be (doing something now)
+          ਹੋ: to be
+      ਤੁਸੀਂ ਪਾਣੀ ਪੀਂਦੇ ਹੋ?:
+        native: Do you drink water?
+        bases:
+          ਪੀਂਦੇ: to drink
+          ਹੋ: to be
+  pa-0005:
+    native: water
+    notes:
+      n1: The everyday word for water.
+    examples:
+      ਪਾਣੀ ਚੰਗਾ ਹੈ।:
+        native: Water is good.
+        bases:
+          ਹੈ: to be
+      ਇਹ ਪਾਣੀ ਹੈ।:
+        native: This is water.
+        bases:
+          ਇਹ: this
+          ਹੈ: to be
+  pa-0006:
+    native: good
+    notes:
+      n1: 'Its ending changes with the noun: ਚੰਗਾ ਘਰ (caṅgā ghar), a good house; ਚੰਗੀ ਚਾਹ (caṅgī cāh), good tea.'
+    examples:
+      ਚੰਗਾ ਘਰ।: A good house.
+      ਬਹੁਤ ਚੰਗਾ!:
+        native: Very good!
+        bases:
+          ਬਹੁਤ: very
+  pa-0007:
+    native: one
+    notes:
+      n1: 'The number 1 when counting. Before a noun it is used as it is: ਇੱਕ ਘਰ (ikk ghar), one house.'
+    examples:
+      ਇੱਕ, ਦੋ।:
+        native: One, two.
+        bases:
+          ਦੋ: two
+      ਇੱਕ ਘਰ।: One house.
+  pa-0008:
+    native: big; large
+    notes:
+      n1: 'Its ending changes with the noun, as ਚੰਗਾ (caṅgā) does: ਵੱਡਾ ਘਰ (vaḍḍā ghar), a big house.'
+    examples:
+      ਵੱਡਾ ਘਰ।: A big house.
+      ਇਹ ਵੱਡਾ ਹੈ।:
+        native: This is big.
+        bases:
+          ਇਹ: this
+          ਹੈ: to be
+  pa-0009:
+    native: house; home
+    notes:
+      n1: ਘਰ ਵਿੱਚ (ghar vicc) is 'in the house'.
+    examples:
+      ਇਹ ਮੇਰਾ ਘਰ ਹੈ।:
+        native: This is my house.
+        bases:
+          ਇਹ: this
+          ਹੈ: to be
+      ਘਰ ਵਿੱਚ ਪਾਣੀ ਨਹੀਂ।:
+        native: There is no water in the house.
+        bases:
+          ਵਿੱਚ: in
+  pa-0010:
+    native: come (polite)
+    notes:
+      n1: The polite imperative. To a friend, say ਆ (ā). The verb is ਆਉਣਾ (āuṇā), to come, and its stem changes in ਆਵਾਂਗਾ (āvāṁgā), I will come.
+    examples:
+      ਆਓ, ਚੱਲੀਏ।:
+        native: Come, let's go.
+        bases:
+          ਚੱਲੀਏ: to go
+      ਮੈਂ ਕੱਲ੍ਹ ਆਵਾਂਗਾ।:
+        native: I will come tomorrow.
+        bases:
+          ਕੱਲ੍ਹ: tomorrow
+          ਆਵਾਂਗਾ: to come

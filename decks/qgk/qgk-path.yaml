@@ -1,0 +1,355 @@
+# The order Koine Greek is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught qgk-en-<name> for qgk-<name> (ADR-0013, ADR-0036).
+#
+# This is also Koine Greek's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in the Greek of the New Testament and the papyri.
+#
+# A reading course (owner, 2026-10-31): Koine Greek has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 700 and 1000 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "qgk-path"
+language: "qgk"
+description: "Koine Greek, a stage of Ancient Greek: the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f", "n"]
+levels: { A1: 400, A2: 700, B1: 1000 }
+alphabet: []
+units:
+  - decks: ["qgk-phrasebook", "qgk-first-words", "*"]
+    words: 10
+  - planned: { id: "qgk-sound-differences", grammar: ["sound-differences", "vowel-length", "pitch-accent"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Koine Greek showing sound differences, vowel length, pitch accent, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Koine Greek showing sound differences, vowel length, pitch accent" } }
+  - planned: { id: "qgk-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Koine Greek on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Koine Greek on the theme yes, no and questions" } }
+  - planned: { id: "qgk-pronouns", theme: "pronouns", words: 21 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Koine Greek on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Koine Greek on the theme pronouns and people words" } }
+  - planned: { id: "qgk-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Koine Greek on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Koine Greek on the theme family" } }
+  - planned: { id: "qgk-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Koine Greek on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Koine Greek on the theme numbers 1 to 20" } }
+  - planned: { id: "qgk-script-letters", grammar: ["greek-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short passage in Koine Greek showing greek letters, read aloud" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Koine Greek showing greek letters" } }
+  - planned: { id: "qgk-script-breathings-accents", grammar: ["breathings-and-accents"] }
+    listening_passages:
+      - { id: "script-breathings-accents-heard", text: { "en": "A short passage in Koine Greek showing breathings and accents, read aloud" } }
+    reading_passages:
+      - { id: "script-breathings-accents-text", text: { "en": "A short written text in Koine Greek showing breathings and accents" } }
+  - planned: { id: "qgk-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Koine Greek on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Koine Greek on the theme talking about yourself" } }
+  - planned: { id: "qgk-everyday-verbs", theme: "everyday-verbs", words: 21 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Koine Greek on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Koine Greek on the theme everyday verbs" } }
+  - planned: { id: "qgk-adverbs", theme: "adverbs", words: 32 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Koine Greek on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Koine Greek on the theme adverbs" } }
+  - planned: { id: "qgk-grammar-case-system", grammar: ["case-system"] }
+    listening_passages:
+      - { id: "grammar-case-system-heard", text: { "en": "A short passage in Koine Greek showing case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-system-text", text: { "en": "A short written text in Koine Greek showing case system" } }
+  - planned: { id: "qgk-quantities", theme: "quantities", words: 19 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Koine Greek on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Koine Greek on the theme quantities" } }
+  - planned: { id: "qgk-describing", theme: "describing", words: 26 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Koine Greek on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Koine Greek on the theme describing things and feelings" } }
+  - planned: { id: "qgk-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Koine Greek on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Koine Greek on the theme time" } }
+  - planned: { id: "qgk-grammar-definite-article", grammar: ["definite-article"] }
+    listening_passages:
+      - { id: "grammar-definite-article-heard", text: { "en": "A short passage in Koine Greek showing definite article, read aloud" } }
+    reading_passages:
+      - { id: "grammar-definite-article-text", text: { "en": "A short written text in Koine Greek showing definite article" } }
+  - planned: { id: "qgk-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Koine Greek on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Koine Greek on the theme location" } }
+  - planned: { id: "qgk-more-verbs", theme: "more-verbs", words: 21 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Koine Greek on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Koine Greek on the theme more verbs" } }
+  - planned: { id: "qgk-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Koine Greek on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Koine Greek on the theme work" } }
+  - planned: { id: "qgk-grammar-first-second-declension", grammar: ["first-declension", "second-declension"] }
+    listening_passages:
+      - { id: "grammar-first-second-declension-heard", text: { "en": "A short passage in Koine Greek showing first declension, second declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-first-second-declension-text", text: { "en": "A short written text in Koine Greek showing first declension, second declension" } }
+  - planned: { id: "qgk-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Koine Greek on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Koine Greek on the theme tens and big numbers" } }
+  - planned: { id: "qgk-food", theme: "food", words: 41 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Koine Greek on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Koine Greek on the theme food" } }
+  - planned: { id: "qgk-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Koine Greek on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Koine Greek on the theme directions" } }
+  - planned: { id: "qgk-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short passage in Koine Greek showing present tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Koine Greek showing present tense" } }
+  - planned: { id: "qgk-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Koine Greek on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Koine Greek on the theme body" } }
+  - planned: { id: "qgk-places", theme: "places", words: 27 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Koine Greek on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Koine Greek on the theme places" } }
+  - planned: { id: "qgk-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Koine Greek on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Koine Greek on the theme things" } }
+  - planned: { id: "qgk-grammar-be-verb", grammar: ["be-verb"] }
+    listening_passages:
+      - { id: "grammar-be-verb-heard", text: { "en": "A short passage in Koine Greek showing be verb, read aloud" } }
+    reading_passages:
+      - { id: "grammar-be-verb-text", text: { "en": "A short written text in Koine Greek showing be verb" } }
+  - planned: { id: "qgk-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Koine Greek on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Koine Greek on the theme home" } }
+  - planned: { id: "qgk-clothes", theme: "clothes", words: 17 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Koine Greek on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Koine Greek on the theme clothes" } }
+  - planned: { id: "qgk-animals", theme: "animals", words: 19 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Koine Greek on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Koine Greek on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "qgk-weather", theme: "weather", words: 100 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Koine Greek on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Koine Greek on the theme weather" } }
+  - planned: { id: "qgk-grammar-third-declension", grammar: ["third-declension"] }
+    listening_passages:
+      - { id: "grammar-third-declension-heard", text: { "en": "A short passage in Koine Greek showing third declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-third-declension-text", text: { "en": "A short written text in Koine Greek showing third declension" } }
+  - planned: { id: "qgk-calendar", theme: "calendar", words: 33 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Koine Greek on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Koine Greek on the theme calendar" } }
+  - planned: { id: "qgk-grammar-contract-verbs", grammar: ["contract-verbs"] }
+    listening_passages:
+      - { id: "grammar-contract-verbs-heard", text: { "en": "A short passage in Koine Greek showing contract verbs, read aloud" } }
+    reading_passages:
+      - { id: "grammar-contract-verbs-text", text: { "en": "A short written text in Koine Greek showing contract verbs" } }
+  - planned: { id: "qgk-festivals", theme: "festivals", words: 89 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Koine Greek on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Koine Greek on the theme festivals" } }
+  - planned: { id: "qgk-grammar-aorist-imperfect", grammar: ["aorist", "imperfect"] }
+    listening_passages:
+      - { id: "grammar-aorist-imperfect-heard", text: { "en": "A short passage in Koine Greek showing aorist, imperfect, read aloud" } }
+    reading_passages:
+      - { id: "grammar-aorist-imperfect-text", text: { "en": "A short written text in Koine Greek showing aorist, imperfect" } }
+  - planned: { id: "qgk-illness", theme: "illness", words: 111 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Koine Greek on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Koine Greek on the theme illness" } }
+  - planned: { id: "qgk-grammar-middle-passive", grammar: ["middle-voice", "passive-voice"] }
+    listening_passages:
+      - { id: "grammar-middle-passive-heard", text: { "en": "A short passage in Koine Greek showing middle voice, passive voice, read aloud" } }
+    reading_passages:
+      - { id: "grammar-middle-passive-text", text: { "en": "A short written text in Koine Greek showing middle voice, passive voice" } }
+  - planned: { id: "qgk-cooking", theme: "cooking", words: 111 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Koine Greek on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Koine Greek on the theme cooking" } }
+  - planned: { id: "qgk-grammar-imperatives-infinitives", grammar: ["imperative", "infinitive"] }
+    listening_passages:
+      - { id: "grammar-imperatives-infinitives-heard", text: { "en": "A short passage in Koine Greek showing imperative, infinitive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-infinitives-text", text: { "en": "A short written text in Koine Greek showing imperative, infinitive" } }
+  - planned: { id: "qgk-journey", theme: "journey", words: 134 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Koine Greek on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Koine Greek on the theme journey" } }
+  - planned: { id: "qgk-grammar-perfect", grammar: ["perfect-tense"] }
+    listening_passages:
+      - { id: "grammar-perfect-heard", text: { "en": "A short passage in Koine Greek showing perfect tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-perfect-text", text: { "en": "A short written text in Koine Greek showing perfect tense" } }
+  - planned: { id: "qgk-nature", theme: "nature", words: 122 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Koine Greek on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Koine Greek on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "qgk-health", theme: "health", words: 85 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Koine Greek on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Koine Greek on the theme health" } }
+  - planned: { id: "qgk-feelings", theme: "feelings", words: 85 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Koine Greek on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Koine Greek on the theme feelings" } }
+  - planned: { id: "qgk-grammar-participles", grammar: ["participles"] }
+    listening_passages:
+      - { id: "grammar-participles-heard", text: { "en": "A short passage in Koine Greek showing participles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participles-text", text: { "en": "A short written text in Koine Greek showing participles" } }
+  - planned: { id: "qgk-opinions", theme: "opinions", words: 78 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Koine Greek on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Koine Greek on the theme opinions" } }
+  - planned: { id: "qgk-travel", theme: "travel", words: 85 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Koine Greek on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Koine Greek on the theme travel" } }
+  - planned: { id: "qgk-grammar-subjunctive-optative", grammar: ["subjunctive", "optative"] }
+    listening_passages:
+      - { id: "grammar-subjunctive-optative-heard", text: { "en": "A short passage in Koine Greek showing subjunctive, optative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-subjunctive-optative-text", text: { "en": "A short written text in Koine Greek showing subjunctive, optative" } }
+  - planned: { id: "qgk-government", theme: "government", words: 64 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Koine Greek on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Koine Greek on the theme government" } }
+  - planned: { id: "qgk-agriculture", theme: "agriculture", words: 78 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Koine Greek on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Koine Greek on the theme agriculture" } }
+  - planned: { id: "qgk-grammar-case-prepositions", grammar: ["prepositions-with-cases"] }
+    listening_passages:
+      - { id: "grammar-case-prepositions-heard", text: { "en": "A short passage in Koine Greek showing prepositions with cases, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-prepositions-text", text: { "en": "A short written text in Koine Greek showing prepositions with cases" } }
+  - planned: { id: "qgk-arts", theme: "arts", words: 71 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Koine Greek on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Koine Greek on the theme arts" } }
+  - planned: { id: "qgk-history", theme: "history", words: 71 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Koine Greek on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Koine Greek on the theme history" } }
+  - planned: { id: "qgk-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short passage in Koine Greek showing relative clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Koine Greek showing relative clauses" } }
+  - planned: { id: "qgk-weddings", theme: "weddings", words: 71 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Koine Greek on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Koine Greek on the theme weddings" } }
+  - planned: { id: "qgk-relationships", theme: "relationships", words: 71 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Koine Greek on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Koine Greek on the theme relationships" } }
+  - planned: { id: "qgk-grammar-indirect-speech", grammar: ["indirect-speech"] }
+    listening_passages:
+      - { id: "grammar-indirect-speech-heard", text: { "en": "A short passage in Koine Greek showing indirect speech, read aloud" } }
+    reading_passages:
+      - { id: "grammar-indirect-speech-text", text: { "en": "A short written text in Koine Greek showing indirect speech" } }
+  - planned: { id: "qgk-law", theme: "law", words: 57 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Koine Greek on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Koine Greek on the theme law" } }
+  - planned: { id: "qgk-verbs-4", theme: "verbs-4", words: 99 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Koine Greek on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Koine Greek on the theme story actions" } }
+  - planned: { id: "qgk-grammar-conditional-clauses", grammar: ["conditional-clauses"] }
+    listening_passages:
+      - { id: "grammar-conditional-clauses-heard", text: { "en": "A short passage in Koine Greek showing conditional clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-conditional-clauses-text", text: { "en": "A short written text in Koine Greek showing conditional clauses" } }
+  - planned: { id: "qgk-abstract-words", theme: "abstract-words", words: 85 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Koine Greek on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Koine Greek on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]
