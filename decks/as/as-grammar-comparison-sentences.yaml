@@ -1,0 +1,88 @@
+schema: 1
+id: "as-grammar-comparison-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2739"
+    target: "তোমাৰ ঘৰতকৈ মোৰ ঘৰ ডাঙৰ।"
+    reading: "tomār ghôrôtôkôi mur ghôr dāṅôr."
+    ipa: "tʊmaɹ ɡʱɔɹɔtɔkɔi mʊɹ ɡʱɔɹ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "ঘৰতকৈ", ref: "as-0052" }
+    confusables:
+      - { id: "c1", word: "সৰু", reading: "xôru", kind: "word" }
+      - { id: "c2", word: "দীঘল", reading: "dighôl", kind: "word" }
+  - id: "as-2740"
+    target: "মাংসতকৈ মাছ ভাল।"
+    reading: "māṅxôtôkôi mās bhāl."
+    ipa: "maŋsɔtɔkɔi mas bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "মাংসতকৈ", ref: "as-0288" }
+    confusables:
+      - { id: "c1", word: "বেয়া", reading: "beyā", kind: "word" }
+      - { id: "c2", word: "ভাততকৈ", reading: "bhātôtôkôi", kind: "word" }
+  - id: "as-2741"
+    target: "আজি কালিতকৈ গৰম।"
+    reading: "āzi kālitôkôi gôrôm."
+    ipa: "azi kalitɔkɔi ɡɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "কালিতকৈ", ref: "as-0352" }
+    confusables:
+      - { id: "c1", word: "ঠাণ্ডা", reading: "thāndā", kind: "word" }
+      - { id: "c2", word: "তাপ", reading: "tāp", kind: "word" }
+  - id: "as-2742"
+    target: "সি সকলোতকৈ ডাঙৰ।"
+    reading: "xi sôkôlutôkôi dāṅôr."
+    ipa: "si sɔkɔlʊtɔkɔi daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "সকলোতকৈ", ref: "as-2249" }
+    confusables:
+      - { id: "c1", word: "সৰু", reading: "xôru", kind: "word" }
+      - { id: "c2", word: "চুটি", reading: "suti", kind: "word" }
+  - id: "as-2743"
+    target: "আমাৰ শহৰ সকলোতকৈ ডাঙৰ।"
+    reading: "āmār xôhôr sôkôlutôkôi dāṅôr."
+    ipa: "amaɹ xɔhɔɹ sɔkɔlʊtɔkɔi daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "সকলোতকৈ", ref: "as-2249" }
+    confusables:
+      - { id: "c1", word: "গাঁও", reading: "gām̐o", kind: "word" }
+      - { id: "c2", word: "নগৰ", reading: "nôgôr", kind: "word" }
+  - id: "as-2744"
+    target: "চাহতকৈ কফি বেছি ভাল নহয়।"
+    reading: "sāhtôkôi kophi besi bhāl nôhôy."
+    ipa: "sahɔtɔkɔi kopʰi besi bʱal nɔhɔj"
+    pos: "phrase"
+    bases:
+      - { word: "চাহতকৈ", ref: "as-0409" }
+    confusables:
+      - { id: "c1", word: "বেয়া", reading: "beyā", kind: "word" }
+      - { id: "c2", word: "দুই", reading: "dui", kind: "word" }
+  - id: "as-2745"
+    target: "গৌহাটীতকৈ গাঁও সৰু।"
+    reading: "gôuhātītôkôi gām̐o xôru."
+    ipa: "ɡɔuhatitɔkɔi ɡãʊ soɹu"
+    pos: "phrase"
+    bases:
+      - { word: "গৌহাটীতকৈ", ref: "as-0463" }
+    confusables:
+      - { id: "c1", word: "শহৰ", reading: "xôhôr", kind: "word" }
+      - { id: "c2", word: "ডাঙৰ", reading: "dāṅôr", kind: "word" }
+  - id: "as-2746"
+    target: "এইটো সেইটোতকৈ ভাল।"
+    reading: "eitu seitōtôkôi bhāl."
+    ipa: "eitʊ seitʊtɔkɔi bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "সেইটোতকৈ", ref: "as-2194" }
+    confusables:
+      - { id: "c1", word: "সেইটো", reading: "seitu", kind: "word" }
+      - { id: "c2", word: "ওখ", reading: "ukh", kind: "word" }

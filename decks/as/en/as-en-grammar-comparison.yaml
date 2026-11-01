@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-comparison"
+kind: "layer"
+core: "as-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing: bigger than, the biggest"
+license: "CC-BY-SA-4.0"
+description: "How Assamese compares two things with তকৈ (tôkôi), than, and says the most with সকলোতকৈ (sôkôlutôkôi), more than all. Adjectives already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Comparing: bigger than, the biggest"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "basic": "the basic form"
+    "than": "bigger than (comparative)"
+    "most": "the most (superlative)"
+  entries:
+    "dangor": "big; elder"
+    "soru": "small; younger"
+    "bhal": "good"
+    "beya": "bad"
+    "dighol": "long"
+    "ukh": "tall; high"
+    "suti": "short"
+  notes: "To compare two things, put the thing you compare with first and add তকৈ (tôkôi), than: তোমাৰ ঘৰতকৈ মোৰ ঘৰ ডাঙৰ (tomār ghôrôtôkôi mur ghôr dāṅôr), my house is bigger than yours. To say the most, put সকলোতকৈ (sôkôlutôkôi), than all, before the adjective."

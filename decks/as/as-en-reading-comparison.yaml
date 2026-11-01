@@ -1,0 +1,64 @@
+schema: 1
+id: "as-en-reading-comparison"
+name: "Assamese reading: comparing: bigger than, the biggest"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-which-is-better"
+    title: "Which one is better"
+    sentences:
+      - text: "এইটো ডাঙৰ।"
+        reading: "eitu dāṅôr."
+      - text: "সেইটো সৰু।"
+        reading: "seitu xôru."
+      - text: "এইটো সেইটোতকৈ ভাল।"
+        reading: "eitu seitōtôkôi bhāl."
+      - text: "এইটো সস্তা।"
+        reading: "eitu xôstā."
+    questions:
+      - id: "as-2747"
+        prompt: { en: "Which one is bigger?" }
+        options:
+          - { en: "This one" }
+          - { en: "That one" }
+        answer: 1
+      - id: "as-2748"
+        prompt: { en: "Which one is better?" }
+        options:
+          - { en: "This one" }
+          - { en: "That one" }
+        answer: 1
+      - id: "as-2749"
+        prompt: { en: "The other one is bigger." }
+        answer: false
+  - id: "as-two-cities"
+    title: "Two places compared"
+    sentences:
+      - text: "গৌহাটী শহৰ ডাঙৰ।"
+        reading: "gôuhāti xôhôr dāṅôr."
+      - text: "আমাৰ গাঁও সৰু।"
+        reading: "āmār gām̐o xôru."
+      - text: "গাঁও গৌহাটীতকৈ সৰু।"
+        reading: "gām̐o gôuhātītôkôi xôru."
+      - text: "গাঁওত গছ বেছি।"
+        reading: "gām̐ot gôs besi."
+    questions:
+      - id: "as-2750"
+        prompt: { en: "Which is bigger, the city or the village?" }
+        options:
+          - { en: "The city" }
+          - { en: "The village" }
+        answer: 1
+      - id: "as-2751"
+        prompt: { en: "Which place has more trees?" }
+        options:
+          - { en: "The city" }
+          - { en: "The village" }
+        answer: 2
+      - id: "as-2752"
+        prompt: { en: "The village is bigger than the city." }
+        answer: false
