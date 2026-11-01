@@ -505,7 +505,8 @@ units:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "kn-arts", theme: "arts", words: 45 }
+  - decks: ["kn-arts", "*"]
+    words: 17
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:

@@ -1,0 +1,194 @@
+schema: 1
+id: "kn-arts"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1524"
+    target: "ವಾದ್ಯ"
+    reading: "vādya"
+    ipa: "ʋaːd̪ja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಾದ್ಯ ನುಡಿಸು.", reading: "vādya nuḍisu.", ipa: "ʋaːd̪ja nuɖisu" }
+      - { target: "ವಾದ್ಯ ಇದೆ.", reading: "vādya ide.", ipa: "ʋaːd̪ja id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1525"
+    target: "ವೀಣೆ"
+    reading: "vīṇe"
+    ipa: "ʋiːɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೀಣೆ ಸುಂದರ.", reading: "vīṇe sundara.", ipa: "ʋiːɳe sund̪ara" }
+      - { target: "ವೀಣೆ ನುಡಿಸುತ್ತಾಳೆ.", reading: "vīṇe nuḍisuttāḷe.", ipa: "ʋiːɳe nuɖisut̪t̪aːɭe", bases: [{ word: "ನುಡಿಸುತ್ತಾಳೆ", ref: "kn-1142" }] }
+  - id: "kn-1526"
+    target: "ಸಂಗೀತಗಾರ"
+    reading: "saṅgītagāra"
+    ipa: "saŋɡiːt̪aɡaːra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಂಗೀತಗಾರ ಬಂದ.", reading: "saṅgītagāra banda.", ipa: "saŋɡiːt̪aɡaːra band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಸಂಗೀತಗಾರರು ಹಾಡುತ್ತಾರೆ.", reading: "saṅgītagāraru hāḍuttāre.", ipa: "saŋɡiːt̪aɡaːraru haːɖut̪t̪aːre", bases: [{ word: "ಸಂಗೀತಗಾರರು", base: "ಸಂಗೀತಗಾರ", reading: "saṅgītagāra" }, { word: "ಹಾಡುತ್ತಾರೆ", ref: "kn-0646" }] }
+  - id: "kn-1527"
+    target: "ರಂಗಭೂಮಿ"
+    reading: "raṅgabhūmi"
+    ipa: "raŋɡabʱuːmi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಂಗಭೂಮಿ ಇಷ್ಟ.", reading: "raṅgabhūmi iṣṭa.", ipa: "raŋɡabʱuːmi iʂʈa" }
+      - { target: "ರಂಗಭೂಮಿಯಲ್ಲಿ ಕೆಲಸ ಮಾಡು.", reading: "raṅgabhūmiyalli kelasa māḍu.", ipa: "raŋɡabʱuːmijalli kelasa maːɖu", bases: [{ word: "ರಂಗಭೂಮಿಯಲ್ಲಿ", base: "ರಂಗಭೂಮಿ", reading: "raṅgabhūmi" }] }
+  - id: "kn-1528"
+    target: "ನಾಟಕ"
+    reading: "nāṭaka"
+    ipa: "naːʈaka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾಟಕ ನೋಡೋಣ.", reading: "nāṭaka nōḍōṇa.", ipa: "naːʈaka noːɖoːɳa", bases: [{ word: "ನೋಡೋಣ", ref: "kn-0636" }] }
+      - { target: "ನಾಟಕ ಚೆನ್ನಾಗಿತ್ತು.", reading: "nāṭaka cennāgittu.", ipa: "naːʈaka tʃennaːɡit̪t̪u", bases: [{ word: "ಚೆನ್ನಾಗಿತ್ತು", ref: "kn-0664" }] }
+  - id: "kn-1529"
+    target: "ರಂಗ"
+    reading: "raṅga"
+    ipa: "raŋɡa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಂಗ ದೊಡ್ಡದು.", reading: "raṅga doḍḍadu.", ipa: "raŋɡa d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ರಂಗದ ಮೇಲೆ ನಟ ಇದ್ದಾನೆ.", reading: "raṅgada mēle naṭa iddāne.", ipa: "raŋɡad̪a meːle naʈa id̪d̪aːne", bases: [{ word: "ರಂಗದ", base: "ರಂಗ", reading: "raṅga" }, { word: "ಇದ್ದಾನೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1530"
+    target: "ಪ್ರದರ್ಶನ"
+    reading: "pradarśana"
+    ipa: "prad̪arʃana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರದರ್ಶನ ಇದೆ.", reading: "pradarśana ide.", ipa: "prad̪arʃana id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಚಿತ್ರ ಪ್ರದರ್ಶನ ನೋಡೋಣ.", reading: "citra pradarśana nōḍōṇa.", ipa: "tʃit̪ra prad̪arʃana noːɖoːɳa", bases: [{ word: "ನೋಡೋಣ", ref: "kn-0636" }] }
+  - id: "kn-1531"
+    target: "ಕುಂಚ"
+    reading: "kuñca"
+    ipa: "kuɲtʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕುಂಚ ಬೇಕು.", reading: "kuñca bēku.", ipa: "kuɲtʃa beːku" }
+      - { target: "ಕುಂಚದಿಂದ ಬಿಡಿಸು.", reading: "kuñcadinda biḍisu.", ipa: "kuɲtʃad̪ind̪a biɖisu", bases: [{ word: "ಕುಂಚದಿಂದ", base: "ಕುಂಚ", reading: "kuñca" }] }
+  - id: "kn-1532"
+    target: "ಕ್ಯಾನ್ವಾಸ್"
+    reading: "kyānvās"
+    ipa: "kjaːnʋaːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕ್ಯಾನ್ವಾಸ್ ಹೊಸದು.", reading: "kyānvās hosadu.", ipa: "kjaːnʋaːs hosad̪u", bases: [{ word: "ಹೊಸದು", ref: "kn-0404" }] }
+      - { target: "ಕ್ಯಾನ್ವಾಸ್ ಬೇಕು.", reading: "kyānvās bēku.", ipa: "kjaːnʋaːs beːku" }
+  - id: "kn-1533"
+    target: "ಶಿಲ್ಪ"
+    reading: "śilpa"
+    ipa: "ʃilpa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಿಲ್ಪ ಸುಂದರ.", reading: "śilpa sundara.", ipa: "ʃilpa sund̪ara" }
+      - { target: "ಶಿಲ್ಪ ನೋಡು.", reading: "śilpa nōḍu.", ipa: "ʃilpa noːɖu" }
+  - id: "kn-1534"
+    target: "ಮೂರ್ತಿ"
+    reading: "mūrti"
+    ipa: "muːrt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮೂರ್ತಿ ದೊಡ್ಡದು.", reading: "mūrti doḍḍadu.", ipa: "muːrt̪i d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ದೇವಸ್ಥಾನದಲ್ಲಿ ಮೂರ್ತಿ ಇದೆ.", reading: "dēvasthānadalli mūrti ide.", ipa: "d̪eːʋast̪ʰaːnad̪alli muːrt̪i id̪e", bases: [{ word: "ದೇವಸ್ಥಾನದಲ್ಲಿ", ref: "kn-0830" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1535"
+    target: "ಕೆತ್ತು"
+    reading: "kettu"
+    ipa: "ket̪t̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಲ್ಲು ಕೆತ್ತು.", reading: "kallu kettu.", ipa: "kallu ket̪t̪u" }
+      - { target: "ಅವನು ಮೂರ್ತಿ ಕೆತ್ತಿದ.", reading: "avanu mūrti kettida.", ipa: "aʋanu muːrt̪i ket̪t̪id̪a", bases: [{ word: "ಕೆತ್ತಿದ", base: "ಕೆತ್ತು", reading: "kettu" }] }
+  - id: "kn-1536"
+    target: "ಭರತನಾಟ್ಯ"
+    reading: "bharatanāṭya"
+    ipa: "bʱarat̪anaːʈja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭರತನಾಟ್ಯ ಸುಂದರ.", reading: "bharatanāṭya sundara.", ipa: "bʱarat̪anaːʈja sund̪ara" }
+      - { target: "ಅವಳು ಭರತನಾಟ್ಯ ಕಲಿಯುತ್ತಾಳೆ.", reading: "avaḷu bharatanāṭya kaliyuttāḷe.", ipa: "aʋaɭu bʱarat̪anaːʈja kalijut̪t̪aːɭe", bases: [{ word: "ಕಲಿಯುತ್ತಾಳೆ", ref: "kn-0640" }] }
+  - id: "kn-1537"
+    target: "ಯಕ್ಷಗಾನ"
+    reading: "yakṣagāna"
+    ipa: "jakʂaɡaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಯಕ್ಷಗಾನ ನೋಡೋಣ.", reading: "yakṣagāna nōḍōṇa.", ipa: "jakʂaɡaːna noːɖoːɳa", bases: [{ word: "ನೋಡೋಣ", ref: "kn-0636" }] }
+      - { target: "ಯಕ್ಷಗಾನ ಇದೆ.", reading: "yakṣagāna ide.", ipa: "jakʂaɡaːna id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1538"
+    target: "ಸೃಜನಾತ್ಮಕ"
+    reading: "srujanātmaka"
+    ipa: "srudʒanaːt̪maka"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೃಜನಾತ್ಮಕ ಕೆಲಸ.", reading: "srujanātmaka kelasa.", ipa: "srudʒanaːt̪maka kelasa" }
+      - { target: "ಅವಳು ಸೃಜನಾತ್ಮಕ.", reading: "avaḷu srujanātmaka.", ipa: "aʋaɭu srudʒanaːt̪maka" }
+  - id: "kn-1539"
+    target: "ಕಲಾಕೃತಿ"
+    reading: "kalākruti"
+    ipa: "kalaːkrut̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಕಲಾಕೃತಿ ಸುಂದರ.", reading: "ī kalākruti sundara.", ipa: "iː kalaːkrut̪i sund̪ara" }
+      - { target: "ಕಲಾಕೃತಿ ಪ್ರದರ್ಶನದಲ್ಲಿ ಇದೆ.", reading: "kalākruti pradarśanadalli ide.", ipa: "kalaːkrut̪i prad̪arʃanad̪alli id̪e", bases: [{ word: "ಪ್ರದರ್ಶನದಲ್ಲಿ", base: "ಪ್ರದರ್ಶನ", reading: "pradarśana" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1540"
+    target: "ವಾದಕ"
+    reading: "vādaka"
+    ipa: "ʋaːd̪aka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಾದಕ ನುಡಿಸಿದ.", reading: "vādaka nuḍisida.", ipa: "ʋaːd̪aka nuɖisid̪a", bases: [{ word: "ನುಡಿಸಿದ", ref: "kn-1142" }] }
+      - { target: "ತಬಲ ವಾದಕ ಬಂದ.", reading: "tabala vādaka banda.", ipa: "t̪abala ʋaːd̪aka band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
